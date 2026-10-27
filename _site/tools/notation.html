@@ -202,6 +202,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
  <span class="dropdown-text">Tunes</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../practice/tune-directory.html">
+ <span class="dropdown-text">Tune Directory</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../practice/patterns.html">
  <span class="dropdown-text">Tonal Patterns</span></a>
   </li>  
@@ -1253,6 +1257,7 @@ document.addEventListener('DOMContentLoaded', async function () {
           </div>
           <div class="nt-keys" id="nt-q-keys" aria-hidden="true"></div>
           <div class="nt-quick">
+            <div class="nt-field"><label for="nt-q-into" title="New chunk: each take is a chunk of its own after this one. Over the notes: the take replaces the notes and rests from the bar of the active note on (into the chunks after it when it runs past this one); chord symbols stay as they are.">Take goes</label><select id="nt-q-into"><option value="new">New chunk below</option><option value="over">Over the notes here (chords kept)</option></select></div>
             <div class="nt-field"><label for="nt-q-meter">Meter</label><select id="nt-q-meter"></select></div>
             <div class="nt-field"><label for="nt-q-key">Key</label><select id="nt-q-key" data-kind="key"></select></div>
             <div class="nt-field"><label for="nt-q-bpm">Tempo</label><input type="number" id="nt-q-bpm" min="30" max="240" value="90"></div>
@@ -1269,7 +1274,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             <button type="button" class="nt-btn" id="nt-q-redo" disabled="">Redo the last take</button>
             <button type="button" class="nt-btn" id="nt-q-drop" disabled="">Drop the last take</button>
           </div>
-          <p class="nt-hint">Each take is a chunk of its own, after the selected one, in the selected voice. The right hand plays the melody; when the left hand plays chords (two notes or more together below the <strong>Left hand</strong> key) they are named and written over the bars; a take with no left-hand chords is all melody. Notes played in the last bar of the count-in of the piece's first take make a <strong>pickup</strong>, up to almost a whole bar. <kbd>r</kbd> or the sustain pedal records, <kbd>Space</kbd>, the pedal or <kbd>Esc</kbd> stops, <kbd>Shift</kbd>+<kbd>R</kbd> redoes the last take, <kbd>Shift</kbd>+<kbd>Backspace</kbd> drops it.</p>
+          <p class="nt-hint">Each take is a chunk of its own, after the selected one, in the selected voice (with <strong>Take goes</strong> set to <em>Over the notes here</em>, it replaces the notes from the active note's bar on and keeps the chord symbols; count-in notes go in the bar before). The right hand plays the melody; when the left hand plays chords (two notes or more together below the <strong>Left hand</strong> key) they are named and written over the bars; a take with no left-hand chords is all melody. Notes played in the last bar of the count-in of the piece's first take make a <strong>pickup</strong>, up to almost a whole bar. <kbd>r</kbd> or the sustain pedal records, <kbd>Space</kbd>, the pedal or <kbd>Esc</kbd> stops, <kbd>Shift</kbd>+<kbd>R</kbd> redoes the last take, <kbd>Shift</kbd>+<kbd>Backspace</kbd> drops it.</p>
           <p class="nt-hint" id="nt-q-status" aria-live="polite"></p>
         </div>
       </details>
@@ -1562,7 +1567,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../apps/shared/panel-columns.js?v=1"></script>
 <script src="../apps/shared/soundfont.js"></script>
 <script src="../apps/shared/tonality.js?v=10"></script>
-<script src="../apps/shared/abcjs-basic.js?v=2"></script>
+<script src="../apps/shared/abcjs-basic.js?v=3"></script>
 <script src="../apps/rhythms/rhythm-pattern-object.js?v=2"></script>
 <script src="../apps/shared/rhythm-cells.js"></script>
 <script src="../apps/shared/musical-typing.js?v=2"></script>
@@ -1571,10 +1576,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../apps/shared/melody-dwim.js?v=2"></script>
 <script src="../apps/shared/vim-textarea.js?v=1"></script>
 <script src="../apps/shared/abc-core.js?v=3"></script>
-<script src="../apps/shared/abc-events.js?v=3"></script>
+<script src="../apps/shared/abc-events.js?v=4"></script>
 <script src="../apps/shared/phrase-seam.js?v=1"></script>
 <script src="../apps/shared/timestamp-player/section-labels.js?v=1"></script>
-<script src="../apps/shared/notation-doc.js?v=11"></script>
+<script src="../apps/shared/notation-doc.js?v=15"></script>
 <link rel="stylesheet" href="../apps/shared/timestamp-player/player.css?v=2">
 <script src="../apps/shared/timestamp-player/player.js?v=8"></script>
 <script src="../apps/shared/timestamp-player/recording-follow.js?v=4"></script>
@@ -1844,8 +1849,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     try { f.checked = localStorage.getItem("ntFollow") === "1"; } catch (e) {}
     f.addEventListener("change", function () { try { localStorage.setItem("ntFollow", f.checked ? "1" : "0"); } catch (e) {} }); })();
   var BAND_JS = ["/apps/shared/abc-transpose.js?v=4", "/apps/shared/tune-chart.js?v=31", "/apps/tune-assessment/abc-tune.js?v=3", "/apps/shared/voicings.js?v=5",
-    "/apps/shared/band/harmony.js?v=33", "/apps/shared/band/bass.js?v=16", "/apps/shared/band/comp.js?v=32", "/apps/shared/band/catalog.js?v=37",
-    "/apps/shared/band/drums.js?v=17", "/apps/shared/band/congas.js?v=3", "/apps/shared/band/sounds.js?v=17", "/apps/shared/band/player.js?v=121"], bandJs = null;
+    "/apps/shared/band/harmony.js?v=34", "/apps/shared/band/bass.js?v=16", "/apps/shared/band/comp.js?v=32", "/apps/shared/band/catalog.js?v=37",
+    "/apps/shared/band/drums.js?v=17", "/apps/shared/band/congas.js?v=3", "/apps/shared/band/sounds.js?v=17", "/apps/shared/band/player.js?v=125"], bandJs = null;
   function loadBand() {
     if (window.BandPlayer && window.BandCatalog && window.TuneChart) return Promise.resolve();
     if (bandJs) return bandJs;
@@ -2043,23 +2048,35 @@ document.addEventListener('DOMContentLoaded', async function () {
   // (bar.melody on the parsed chart, as the Backing Track does), so the two can't drift apart. A Pickup chunk is the chart's
   // short first bar, sounded at the end of a bar of count-in. -> { player, notes: [[{ pos, dur, hit }]] per form bar } or null
   function makeBand(d, src) {
-    var bd = JSON.parse(JSON.stringify(d)), pick = null, base = 0;
+    var bd = JSON.parse(JSON.stringify(d)), pick = null, base = 0, slot0 = null;
+    // a first chunk that starts with a lead (an anacrusis read from ABC): its lead becomes a Pickup chunk here, as a take's is
+    var c0 = bd.chunks[0], m0 = c0 && D.meterInfo(D.at(bd, 0).meter);
+    if (c0 && !c0.pickup && m0 && c0.lead > 1e-6 && c0.lead < m0.barQ - 1e-6 && D.chunkLen(bd, 0) > c0.lead + 1e-6 && !D.splitAt(bd, 0, c0.lead)) {
+      bd.chunks[0].pickup = true; bd.chunks[0].lead = 0; bd.chunks[1].lead = 0; base = -1;
+      slot0 = bd.voices.map(function (_, v) { return D.part(bd.chunks[0], v).rhythm.length; });   // (page slots in the rest of chunk 0 come after these)
+    }
     if (bd.chunks[0] && bd.chunks[0].pickup && bd.chunks.length > 1) {
-      pick = bd.chunks[0]; var a1 = D.at(bd, 1); bd.meter = a1.meter; bd.key = a1.key; bd.tempo = a1.tempo; bd.chunks.shift(); base = 1;
+      var pickLen = D.chunkLen(bd, 0); pick = bd.chunks[0]; var a1 = D.at(bd, 1); bd.meter = a1.meter; bd.key = a1.key; bd.tempo = a1.tempo; bd.chunks.shift(); base += 1;
       bd.chunks[0].meter = bd.chunks[0].key = bd.chunks[0].tempo = null;
     }
     var chart = D.bandChart(bd), tempos = [], bars = [], abc = chart.abc;
     // each chunk's notes, by the chart's bars (a chunk starts on a bar of its own there)
-    var addNotes = function (ch, ci, into, startBar, barQ, beatQ) {
+    // a voice the band's bass or chords play (voice.plays): its bars go to bar.written[part] instead of the melody
+    var written = {};
+    var addNotes = function (ch, ci, into, startBar, barQ, beatQ, noWritten) {
       for (var v = 0; v < bd.voices.length; v++) {
+        var who = bd.voices[v].plays, tgt = into;
+        if (who) { if (noWritten) continue; tgt = written[who] = written[who] || []; }
         var p = D.part(ch, v), t = 0, k = 0, held = null;
         p.rhythm.forEach(function (r, si) {
+          if (who && r.type === "rest") { for (var rb = Math.floor(t / barQ + 1e-6); rb * barQ < t + r.durQ - 1e-6; rb++) tgt[startBar + rb] = tgt[startBar + rb] || []; }   // a typed rest: the part rests there
           if (r.type === "note") {
             var midi = p.pitches[k++];
-            if (held && held.midi === midi) { held.dur += r.durQ / beatQ; held.hits.push({ voice: v, slot: si, ci: ci }); }
+            if (held && held.midi === midi) { held.dur += r.durQ / beatQ; held.hits.push({ voice: v, slot: si + (slot0 && ci === 0 && ch !== pick ? slot0[v] : 0), ci: ci }); }
             else if (midi != null) {
-              var bi = startBar + Math.floor(t / barQ + 1e-6), n = { pos: (t - (bi - startBar) * barQ) / beatQ, dur: r.durQ / beatQ, midi: midi, hits: [{ voice: v, slot: si, ci: ci }] };
-              (into[bi] = into[bi] || []).push(n); held = n;
+              var bi = startBar + Math.floor(t / barQ + 1e-6), n = { pos: (t - (bi - startBar) * barQ) / beatQ, dur: r.durQ / beatQ, midi: midi, hits: [{ voice: v, slot: si + (slot0 && ci === 0 && ch !== pick ? slot0[v] : 0), ci: ci }] };
+              if (r.also && r.also.length) n.also = r.also.slice();
+              (tgt[bi] = tgt[bi] || []).push(n); held = n;
             } else held = null;
             if (!r.tie) held = null;
           } else held = null;
@@ -2076,13 +2093,16 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (!tempos.length) return null;
     var pkNotes = [];
     if (pick) {
-      var mi0 = D.meterInfo(D.at(d, 0).meter) || D.meterInfo("4/4"), pq = D.chunkLen(d, 0), bq0 = mi0.family === "triple" ? 12 / mi0.d : 4 / mi0.d, tmp = [];
-      addNotes(pick, 0, tmp, 0, 1e9, bq0); pkNotes = tmp[0] || [];
+      var mi0 = D.meterInfo(D.at(d, 0).meter) || D.meterInfo("4/4"), pq = pickLen, bq0 = mi0.family === "triple" ? 12 / mi0.d : 4 / mi0.d, tmp = [];
+      addNotes(pick, 0, tmp, 0, 1e9, bq0, true); pkNotes = tmp[0] || [];
       abc = abc.replace(/^(K:.*\n)/m, "$1x" + Math.round(pq * 2) + " |\n");          // the short first bar (L:1/8)
     }
     var parsed = TuneChart.parse(abc), off = pick ? 1 : 0;
     if (pick && parsed.bars[0]) parsed.bars[0].melody = pkNotes.map(function (n) { return { pos: n.pos + (mi0.family === "triple" ? mi0.n / 3 : mi0.n) - pq / bq0, dur: n.dur, midi: n.midi }; });   // the player sounds these in the count-in bar
     bars.forEach(function (list, bi) { var pb = parsed.bars[bi + off]; if (pb) pb.melody = list.map(function (n) { return { pos: n.pos, dur: n.dur, midi: n.midi }; }); });
+    Object.keys(written).forEach(function (who) {
+      written[who].forEach(function (list, bi) { var pb = parsed.bars[bi + off]; if (!pb || !list) return; pb.written = pb.written || {}; pb.written[who] = list.map(function (n) { return { pos: n.pos, dur: n.dur, midi: n.midi, also: n.also || [] }; }); });
+    });
     var so = BandCatalog.styleOpts((doc.band && doc.band.style) || "pop", "piano"), now = recTempo(0) || tempos[0], opts = Object.assign({}, so.opts, { melodyLevel: 0.85 });
     var toPage = src.toPage || function (ci, v, si) { return { chunk: ci, voice: v, slot: si }; };
     var hitOf = function (n) { return n.hits.map(function (h) { return toPage(h.ci, h.voice, h.slot); }); };
@@ -2097,7 +2117,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       },
       onBeat: function (info) { if (band.at) { band.at.beat = info.beat; band.at.t = performance.now(); } },
       onEnd: function () { band.done = true; } });
-    var band = { player: p, parsed: parsed, notes: notes, pk: pk, pkBeats: pick ? D.chunkLen(d, 0) / (mi0.family === "triple" ? 12 / mi0.d : 4 / mi0.d) : 0, beatsOf: function () { return D.meterInfo(D.at(d, 0).meter) || D.meterInfo("4/4"); },
+    var band = { player: p, parsed: parsed, notes: notes, pk: pk, pkBeats: pick ? pickLen / (mi0.family === "triple" ? 12 / mi0.d : 4 / mi0.d) : 0, beatsOf: function () { return D.meterInfo(D.at(d, 0).meter) || D.meterInfo("4/4"); },
       bpm: function () { return now; }, at: null, done: false };
     return band;
   }
@@ -2326,8 +2346,11 @@ document.addEventListener('DOMContentLoaded', async function () {
     doc.voices.forEach(function (vc, v) {
       var row = document.createElement("div"); row.className = "nt-voice";
       row.innerHTML = '<input type="text" aria-label="Name of voice ' + (v + 1) + '"><select aria-label="Clef of voice ' + (v + 1) + '">' + options(CLEFS) + "</select>" +
+        '<select aria-label="Who plays voice ' + (v + 1) + '" title="The tune: the band plays these notes as the melody. The band\'s bass / chords: in bars where this voice has notes (or rests you typed), that band part plays them instead of making its own; bars left empty, it makes its own as usual."><option value="">The tune</option><option value="bass">The band\'s bass</option><option value="comp">The band\'s chords</option></select>' +
         (doc.voices.length > 1 ? '<button type="button" class="nt-btn">Remove</button>' : "");
-      var nm = row.querySelector("input"), cl = row.querySelector("select"), rm = row.querySelector("button");
+      var nm = row.querySelector("input"), cl = row.querySelector("select"), pl = row.querySelectorAll("select")[1], rm = row.querySelector("button");
+      pl.value = vc.plays || "";
+      pl.onchange = function () { change(function () { if (pl.value) vc.plays = pl.value; else delete vc.plays; }); };
       nm.value = vc.name; cl.value = vc.clef || "treble";
       nm.onchange = function () { var x = nm.value.trim().replace(/[\s\]]+/g, "_"); if (!x || doc.voices.some(function (o, j) { return j !== v && o.name === x; })) { nm.value = vc.name; return; } change(function () { vc.name = x; }); };
       cl.onchange = function () { change(function () { vc.clef = cl.value; }); };
@@ -2757,6 +2780,17 @@ document.addEventListener('DOMContentLoaded', async function () {
     map.forEach(function (m) { if (m.voice !== 0 || m.atQ == null) return; var k = m.chunk + ":" + m.atQ; if (!seen[k]) { seen[k] = 1; out.push(m); } });
     return out;
   }
+  // j / k: the next / last chunk, past folded sections (-1: none)
+  function nextChunk(from, down) {
+    var i = from;
+    do { i += down ? 1 : -1; var sx = i >= 0 && i < doc.chunks.length ? D.sectionOf(doc, i) : null; } while (i >= 0 && i < doc.chunks.length && sx && sx.folded && !doc.chunks[i].heading);
+    return i >= 0 && i < doc.chunks.length ? i : -1;
+  }
+  // in a chord box j / k move chunks, except the j of "maj" (typed after "ma")
+  function chunkKey(e, inp) {
+    if ((e.key !== "j" && e.key !== "k") || e.altKey || e.ctrlKey || e.metaKey) return false;
+    return !(e.key === "j" && /ma$/i.test(inp.value.slice(0, inp.selectionStart)));
+  }
   function chordOf(ci, at) { return doc.chunks[ci].chords.find(function (c) { return Math.abs(c.at - at) < 1e-6; }); }
   function chordInput() {
     var inp = $("nt-chord-ed");
@@ -2769,6 +2803,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       else if (k === "Escape") { e.preventDefault(); closeChord(); }
       else if (k === "ArrowLeft" || k === "ArrowRight" || k === "h" || k === "l") { e.preventDefault(); moveChord(k === "ArrowRight" || k === "l" ? 1 : -1, false); }
       else if (k === "Tab" || k === "H" || k === "L") { e.preventDefault(); moveChord(k === "L" || (k === "Tab" && !e.shiftKey) ? 1 : -1, true); }
+      else if (chunkKey(e, inp)) { e.preventDefault(); chordChunkMove(k === "j"); }
       e.stopPropagation();
     });
     inp.addEventListener("input", function () { chordBars(inp.value.trim()); });
@@ -2802,6 +2837,15 @@ document.addEventListener('DOMContentLoaded', async function () {
       openChord(st[j].chunk, st[j].atQ); return;
     }
     status(dir > 0 ? "That's the last one." : "That's the first one.");
+  }
+  // j / k in the chord box: the first note of the next / last chunk that has notes
+  function chordChunkMove(down) {
+    var st = chordStops(), i = chordEd.ci;
+    while ((i = nextChunk(i, down)) >= 0) {
+      var m = st.find(function (x) { return x.chunk === i; });
+      if (m) { openChord(m.chunk, m.atQ); return; }
+    }
+    status(down ? "That's the last chunk." : "That's the first chunk.");
   }
   // " on the score: a chord at the active note (the top voice's note or rest sounding then)
   function chordAtActive() {
@@ -2869,6 +2913,22 @@ document.addEventListener('DOMContentLoaded', async function () {
   function clickPending(el) {
     var e = pmap.find(function (m) { return covers(el, m); });
     if (e) { sel = { chunk: e.chunk, voice: e.voice, pitch: e.pitch }; cur = e.chunk; voice = e.voice; render(); }
+  }
+  // ( : slots from..to of chunk ci, voice v become three triplet notes in their time; the red note goes to the first one
+  // still without a pitch, so letters fill them
+  function makeTriplet(ci, v, from, to) {
+    if (to == null) { status("A triplet stays inside one chunk."); render(); return; }
+    var p = D.part(doc.chunks[ci], v), err = null;
+    var test = JSON.parse(JSON.stringify(p)); err = D.triplet(test, from, to);
+    if (err) { status(err); sel = { chunk: ci, voice: v, slot: from }; render(); return; }
+    change(function () {
+      D.triplet(D.part(doc.chunks[ci], v), from, to);
+      var q = D.part(doc.chunks[ci], v), k = 0, go = from;
+      for (var i = 0; i < from; i++) if (q.rhythm[i].type === "note") k++;
+      for (var j = from; j < from + 3; j++) { if (q.rhythm[j].type === "note") { if (q.pitches[k] == null) { go = j; break; } k++; } }
+      cur = ci; sel = { chunk: ci, voice: v, slot: go };
+    });
+    status("Triplet. Letters fill its notes; u undoes it.");
   }
   function selPart() { return D.part(doc.chunks[sel.chunk], sel.voice); }
   function spanEnds() { var a = { chunk: sel.chunk, slot: sel.slot }, b = sel.end || a; return (a.chunk < b.chunk || (a.chunk === b.chunk && a.slot <= b.slot)) ? [a, b] : [b, a]; }
@@ -3139,7 +3199,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 
   var HELP = {
-    letters: "Type <kbd>a</kbd> to <kbd>g</kbd> for notes in the key, nearest the last one. <kbd>'</kbd> moves the last note up an octave, <kbd>,</kbd> down. <kbd>+</kbd> raises it a half step, <kbd>-</kbd> lowers it. In a chunk with a rhythm every key acts on the note in red (it moves on as you type): a letter gives it that pitch, <kbd>z</kbd> makes it a rest, <kbd>t</kbd> ties it to the next note, <kbd>T</kbd> to the note before (again: unties), <kbd>U</kbd> takes its pitch away, <kbd>Backspace</kbd> deletes it; <kbd>u</kbd> undoes. In a new chunk with no rhythm the letters just collect pitches; <kbd>|</kbd> draws a double barline to group them (in a chunk with rhythm, <kbd>|</kbd> puts a barline after what's there: the notes before it are a pickup), and Merge puts them onto a rhythm chunk. <kbd>h</kbd> <kbd>l</kbd> (or the arrows) move note by note, <kbd>H</kbd> <kbd>L</kbd> bar by bar, inside the selected chunk (<kbd>j</kbd> <kbd>k</kbd> or a click go to another); <kbd>J</kbd> joins the next chunk on, <kbd>M</kbd> merges it (both need to be on view). <kbd>o</kbd> / <kbd>O</kbd> start a new chunk after / before this one; <kbd>y</kbd><kbd>y</kbd> copies the chunk, <kbd>D</kbd><kbd>D</kbd> cuts it, <kbd>p</kbd> / <kbd>P</kbd> put it after / before this one; <kbd>v</kbd> starts Visual mode, as in vim: <kbd>h</kbd> <kbd>l</kbd> select notes (with a count: <kbd>v</kbd><kbd>8</kbd><kbd>l</kbd>), <kbd>H</kbd> <kbd>L</kbd> whole bars, <kbd>y</kbd> copies them, <kbd>d</kbd> cuts them, then <kbd>p</kbd> / <kbd>P</kbd> put them after / before the red note (<kbd>p</kbd> / <kbd>P</kbd> put whatever you copied last, notes or a chunk). <kbd>Alt</kbd>+<kbd>v</kbd> shows or hides this chunk, <kbd>V</kbd> all the others. <kbd>=</kbd> writes the red note another way (F# / Gb; again: every spelling, double sharp to double flat), <kbd>+</kbd> raises the last note a half step. <kbd>Tab</kbd> jumps to the red note's ABC (selected in the ABC box); <kbd>Tab</kbd> there jumps back to the note at the caret. <kbd>&quot;</kbd> (or a click on a chord symbol) types a chord over the red note; there <kbd>h</kbd> <kbd>l</kbd> or the arrows go note by note, <kbd>Tab</kbd> / <kbd>Shift+Tab</kbd> or <kbd>L</kbd> / <kbd>H</kbd> to the next / last chord or beat 1, <kbd>Enter</kbd> keeps it, <kbd>Esc</kbd> leaves it. <kbd>Space</kbd> plays from the red note to the end of the chunk (again: stop). <kbd>r</kbd> records a take (MIDI or the computer keys) into a new chunk below this one. <kbd>i</kbd> (Insert mode; <kbd>I</kbd>: at the start) puts new rhythm in at a red line you move with <kbd>h</kbd> <kbd>l</kbd>, instead of at the end; the note just before the line is the one keys act on.",
+    letters: "Type <kbd>a</kbd> to <kbd>g</kbd> for notes in the key, nearest the last one. <kbd>'</kbd> moves the last note up an octave, <kbd>,</kbd> down. <kbd>+</kbd> raises it a half step, <kbd>-</kbd> lowers it. In a chunk with a rhythm every key acts on the note in red (it moves on as you type): a letter gives it that pitch, <kbd>z</kbd> makes it a rest, <kbd>t</kbd> ties it to the next note, <kbd>T</kbd> to the note before (again: unties), <kbd>U</kbd> takes its pitch away, <kbd>Backspace</kbd> deletes it; <kbd>u</kbd> undoes. In a new chunk with no rhythm the letters just collect pitches; <kbd>|</kbd> draws a double barline to group them (in a chunk with rhythm, <kbd>|</kbd> puts a barline after what's there: the notes before it are a pickup), and Merge puts them onto a rhythm chunk. <kbd>h</kbd> <kbd>l</kbd> (or the arrows) move note by note, <kbd>H</kbd> <kbd>L</kbd> bar by bar, inside the selected chunk (<kbd>j</kbd> <kbd>k</kbd> or a click go to another); <kbd>J</kbd> joins the next chunk on, <kbd>M</kbd> merges it (both need to be on view). <kbd>o</kbd> / <kbd>O</kbd> start a new chunk after / before this one; <kbd>y</kbd><kbd>y</kbd> copies the chunk, <kbd>D</kbd><kbd>D</kbd> cuts it, <kbd>p</kbd> / <kbd>P</kbd> put it after / before this one; <kbd>v</kbd> starts Visual mode, as in vim: <kbd>h</kbd> <kbd>l</kbd> select notes (with a count: <kbd>v</kbd><kbd>8</kbd><kbd>l</kbd>), <kbd>H</kbd> <kbd>L</kbd> whole bars, <kbd>y</kbd> copies them, <kbd>d</kbd> cuts them, then <kbd>p</kbd> / <kbd>P</kbd> put them after / before the red note (<kbd>p</kbd> / <kbd>P</kbd> put whatever you copied last, notes or a chunk). <kbd>Alt</kbd>+<kbd>v</kbd> shows or hides this chunk, <kbd>V</kbd> all the others. <kbd>=</kbd> writes the red note another way (F# / Gb; again: every spelling, double sharp to double flat), <kbd>+</kbd> raises the last note a half step. <kbd>(</kbd> makes the red note a triplet, three notes in its time (letters then fill them); in Visual mode <kbd>(</kbd> makes the selected notes one. <kbd>Tab</kbd> jumps to the red note's ABC (selected in the ABC box); <kbd>Tab</kbd> there jumps back to the note at the caret. <kbd>&quot;</kbd> (or a click on a chord symbol) types a chord over the red note; there <kbd>h</kbd> <kbd>l</kbd> or the arrows go note by note, <kbd>Tab</kbd> / <kbd>Shift+Tab</kbd> or <kbd>L</kbd> / <kbd>H</kbd> to the next / last chord or beat 1, <kbd>j</kbd> <kbd>k</kbd> to the next / last chunk, <kbd>Enter</kbd> keeps it, <kbd>Esc</kbd> leaves it. The same keys work in Chords by bar. <kbd>Space</kbd> plays from the red note to the end of the chunk (again: stop). <kbd>r</kbd> records a take (MIDI or the computer keys) into a new chunk below this one. <kbd>i</kbd> (Insert mode; <kbd>I</kbd>: at the start) puts new rhythm in at a red line you move with <kbd>h</kbd> <kbd>l</kbd>, instead of at the end; the note just before the line is the one keys act on.",
     piano: "Bottom row <kbd>Z</kbd> to <kbd>/</kbd> are white keys from C, the row above (<kbd>S</kbd> <kbd>D</kbd> <kbd>G</kbd> ...) the black ones. <kbd>Q</kbd> row: an octave higher, with black keys on the numbers. <kbd>↑</kbd> <kbd>↓</kbd> move the octave. <kbd>Backspace</kbd> deletes the note in red.",
     midi: "Play notes one at a time; each goes in the next slot (in red). <kbd>Backspace</kbd> deletes the note in red, <kbd>u</kbd> takes its pitch away."
   };
@@ -3312,6 +3372,7 @@ document.addEventListener('DOMContentLoaded', async function () {
           if (e.key === "y") { sel = { chunk: vst.chunk, voice: sel.voice, slot: vst.slot }; render(); } else deleteSel();
           lastKey = null; e.preventDefault(); return;
         }
+        if (e.key === "(" && !e.altKey) { var tse = spanEnds(); visual = false; e.preventDefault(); makeTriplet(tse[0].chunk, sel.voice, tse[0].slot, tse[1].chunk === tse[0].chunk ? tse[1].slot : null); return; }
         if (e.key === "Escape" || e.key === "v") { visual = false; var vst2 = spanEnds()[0]; sel = { chunk: vst2.chunk, voice: sel.voice, slot: vst2.slot }; status(""); render(); e.preventDefault(); return; }
       }
     }
@@ -3373,9 +3434,8 @@ document.addEventListener('DOMContentLoaded', async function () {
       }
       if (e.altKey) { change(function () { cur = D.move(doc, cur, down ? 1 : -1); sel = null; }); e.preventDefault(); return; }
       if (mode !== "piano") {
-        var i = cur;
-        do { i += down ? 1 : -1; var sx = i >= 0 && i < doc.chunks.length ? D.sectionOf(doc, i) : null; } while (i >= 0 && i < doc.chunks.length && sx && sx.folded && !doc.chunks[i].heading);
-        if (i >= 0 && i < doc.chunks.length) { toChunkStart(i); msg(""); render(); }
+        var i = nextChunk(cur, down);
+        if (i >= 0) { toChunkStart(i); msg(""); render(); }
         e.preventDefault(); return;
       }
     }
@@ -3408,6 +3468,11 @@ document.addEventListener('DOMContentLoaded', async function () {
         e.preventDefault(); return;
       }
       if ((e.key === "Backspace" || e.key === "Delete") && sel.slot !== undefined) { deleteActive(); e.preventDefault(); return; }
+    }
+    if (e.key === "(" && !e.altKey && !chordsIn && !ENDING) {                     // the active note becomes a triplet
+      e.preventDefault(); var ta = activeSlot();
+      if (!ta) { status("Write some rhythm first: ( makes the red note a triplet."); return; }
+      makeTriplet(ta.chunk, ta.voice, ta.slot, ta.slot); return;
     }
     if (e.key === "=" && !e.altKey && !chordsIn && mode !== "piano") { enharmonic(); e.preventDefault(); return; }
     if (chordsIn) return;
@@ -3572,7 +3637,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   // count-in into the bar(s) before (NotationDoc.writeLeadIn). seamAlt: the doc with the earlier notes kept where both sounded.
   // spillPhrases: how many phrases after it the last take ran on into (Back skips past them)
   var phrase = null, seamAlt = null, spillPhrases = 0;
-  var QSTORE = "ntQuick", Q = { bpm: 90, count: "1", pickup: "auto", res: "1", feel: "straight", trip: "off", quiet: "2", split: "60", lh: "chords" }, lastQuick = null;
+  var QSTORE = "ntQuick", Q = { bpm: 90, count: "1", pickup: "auto", into: "new", res: "1", feel: "straight", trip: "off", quiet: "2", split: "60", lh: "chords" }, lastQuick = null;
   try { Object.assign(Q, JSON.parse(localStorage.getItem(QSTORE) || "{}")); } catch (e) {}
   function qSave() { try { localStorage.setItem(QSTORE, JSON.stringify(Q)); } catch (e) {} }
   function pieceBpm() { return Math.max(30, Math.min(240, here().tempo || 90)); }
@@ -3627,7 +3692,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       $("nt-q-key").innerHTML = options(KEYS, "C (not chosen)", KEYNAME);
     }
     setSel($("nt-q-meter"), doc.meter || ""); setSel($("nt-q-key"), doc.keyConfirmed && doc.key ? doc.key : "");
-    ["count", "res", "feel", "trip", "quiet", "split", "lh"].forEach(function (k) { $("nt-q-" + k).value = Q[k]; });
+    ["into", "count", "res", "feel", "trip", "quiet", "split", "lh"].forEach(function (k) { $("nt-q-" + k).value = Q[k]; });
     if (document.activeElement !== $("nt-q-bpm")) $("nt-q-bpm").value = takeBpm();
     qPickupOptions();
     var g = qGeo().g, dots = $("nt-q-beats");
@@ -3738,14 +3803,15 @@ document.addEventListener('DOMContentLoaded', async function () {
   function inPhrase() { return !!phrase && cur === phrase.ci && phrase.ci < doc.chunks.length; }
   function quickApply(r, events) {
     takeKind = kindOf(events, r.beatSec);
+    if (r.redo && lastQuick ? lastQuick.over : (Q.into === "over" && !inPhrase() && hasNotes(chunk()))) { overApply(r, events); return; }
     if (inPhrase() || (r.redo && lastQuick && lastQuick.phrase)) { phraseApply(r, events); return; }
     var g = r.g, mi = r.mi, count = r.count, unitQ = 4 / Math.max(8, mi.d), unitBeats = (+Q.res) / g.beat;
     if (r.redo && lastQuick) { doc = D.upgrade(JSON.parse(lastQuick.before)); cur = lastQuick.cur; }
     var into = isEmpty(chunk()) ? cur : cur + 1, first = into === 0;
     // the pickup: the first note before the downbeat, to the nearest shortest note, at most a bar
     var on0 = Math.min.apply(null, events.filter(function (e) { return e.k === "on"; }).map(function (e) { return e.beat; })), pk = 0;
-    if (first && Q.pickup !== "off") {
-      if (Q.pickup === "auto") { if (on0 < -unitBeats / 2) pk = Math.min(count, Math.round(-on0 / unitBeats) * unitBeats); }
+    if (Q.pickup !== "off") {                       // the first take: a Pickup chunk; a later one: the new chunk's lead
+      if (Q.pickup === "auto") { if (on0 < -unitBeats * (first ? 0.5 : 0.75)) pk = Math.min(count, Math.round(-on0 / unitBeats) * unitBeats); }
       else pk = +Q.pickup / g.beat;
     }
     var tk = CE.take({ kind: "melody", n: mi.n, d: mi.d, bars: 256, beatSec: r.beatSec, count: count, key: here().key || "C", slash: true, res: +Q.res,
@@ -3767,7 +3833,13 @@ document.addEventListener('DOMContentLoaded', async function () {
       if (melL) { var lv = lhVoice(), pl = D.part(ch, lv), wl = short ? D.fromTakeBars(melL.slice(1), g.per, unitQ, nb) : D.fromTakeBars(melL, g.per, unitQ, nb + (got ? 1 : 0)); pl.rhythm = wl.rhythm; pl.pitches = wl.pitches; }
       ch.chords = takeChords(tk, unitQ, short ? 1 : 0, nb + (!short && got ? 1 : 0), 0);
       doc.chunks.splice(into, 0, ch); cur = into;
-      if (short) {
+      if (short && !first) {                         // notes in the count-in lead into the take's first bar (chunk.lead)
+        var lw = D.fromTakeBars([mel[0]], Math.round(got * g.beat * 1e6) / 1e6, unitQ, 1), lq = lw.rhythm.reduce(function (s, x) { return s + x.durQ; }, 0);
+        p.rhythm = lw.rhythm.concat(p.rhythm); p.pitches = lw.pitches.concat(p.pitches); ch.lead = Math.round(lq * 1000) / 1000;
+        if (melL) { var ll = D.fromTakeBars([melL[0]], Math.round(got * g.beat * 1e6) / 1e6, unitQ, 1), plv = D.part(ch, lhVoice()); plv.rhythm = ll.rhythm.concat(plv.rhythm); plv.pitches = ll.pitches.concat(plv.pitches); }
+        ch.chords.forEach(function (c) { c.at = Math.round((c.at + lq) * 1000) / 1000; });
+        ch.chords = takeChords(tk, unitQ, 0, 1, 0).concat(ch.chords);   // no DWIM kept: its bar signatures don't count a lead yet
+      } else if (short) {
         var pc = D.newChunk("Pickup"), pp = D.part(pc, voice), pw = D.fromTakeBars([mel[0]], Math.round(got * g.beat * 1e6) / 1e6, unitQ, 1);
         pc.pickup = true; pp.rhythm = pw.rhythm; pp.pitches = pw.pitches; pc.chords = takeChords(tk, unitQ, 0, 1, 0);
         if (melL) { var plp = D.part(pc, lhVoice()), wlp = D.fromTakeBars([melL[0]], Math.round(got * g.beat * 1e6) / 1e6, unitQ, 1); plp.rhythm = wlp.rhythm; plp.pitches = wlp.pitches; }
@@ -3839,6 +3911,67 @@ document.addEventListener('DOMContentLoaded', async function () {
       (res.conflicts.length ? "; where the pickup and the phrase before both sounded the pickup was kept" : "") + ".");
     renderQuick();
   }
+  // Take goes "Over the notes here": the take replaces the notes and rests of the chunk from the active note's bar on (a chunk with
+  // a lead: from its first full bar), chord symbols kept. Count-in notes overwrite the end of the bar before (at the chunk's start:
+  // writeLeadIn, as a phrase's lead-in). Bars past the chunk's end go into the chunks after it (spillOn, marked draft).
+  function hasNotes(ch) { return D.part(ch, voice).rhythm.some(function (x) { return x.type === "note"; }); }
+  function overApply(r, events) {
+    var g = r.g, mi = r.mi, count = r.count, unitQ = 4 / Math.max(8, mi.d), unitBeats = (+Q.res) / g.beat, qpb = mi.barQ / count;
+    var at;
+    if (r.redo && lastQuick) { doc = D.upgrade(JSON.parse(lastQuick.before)); at = lastQuick.over; }
+    else {
+      var ci = chunk().pickup && doc.chunks[cur + 1] ? cur + 1 : cur, ch = doc.chunks[ci], s = activeSlot();
+      var lead = ch.lead > 1e-6 && ch.lead < mi.barQ - 1e-6 ? ch.lead : 0, t = s && s.chunk === ci ? D.slotTime(D.part(ch, voice), s.slot) : 0;
+      at = { ci: ci, t0: Math.round((lead + Math.max(0, Math.floor((t - lead) / mi.barQ + 1e-6)) * mi.barQ) * 1000) / 1000 };
+    }
+    cur = at.ci;
+    var before = r.redo && lastQuick ? lastQuick.before : JSON.stringify(doc), cut = -unitBeats / 2;
+    var sorted = events.slice().sort(function (a, b) { return a.beat - b.beat; }), open = {}, ld = [], body = [], isLead = {};
+    sorted.forEach(function (e) {
+      if (Q.lh === "notate" && lhNotated() && isLow(e)) return;
+      if (e.k === "on") { isLead[e.n] = e.beat < cut && !(qKind() === "both" && e.n < +Q.split); open[e.n] = e.beat; if (!isLead[e.n]) body.push(e); return; }
+      if (open[e.n] == null) return;
+      if (isLead[e.n]) {
+        var on = Math.round(open[e.n] / unitBeats) * unitBeats, off = Math.max(on + unitBeats, Math.round(e.beat / unitBeats) * unitBeats);
+        if (on < 0) ld.push({ t: on * qpb, d: (Math.min(off, 0) - on) * qpb, midi: e.n });
+      } else body.push(e);
+      delete open[e.n];
+    });
+    var tk = CE.take({ kind: "melody", n: mi.n, d: mi.d, bars: 256, beatSec: r.beatSec, count: count, key: here().key || "C", slash: true, res: +Q.res,
+      swing: Q.feel === "swing" ? CE.swingFor(60 / r.beatSec) : 0, triplets: Q.trip, kind: qKind(), split: +Q.split || 60, pickup: "off" });
+    body.forEach(function (e) { var tt = e.beat * r.beatSec * 1000; if (e.k === "on") tk.on(e.n, 0.8, tt); else tk.off(e.n, tt); });
+    tk.finish();
+    var mel = tk.grid.melody() || [], nb = Math.max(1, Math.ceil((r.lastOff != null ? r.lastOff : 0) / count - 0.02));
+    var melL = lhNotated() ? lhTake(r, events.filter(function (e) { return e.beat >= cut || e.k === "off"; })) : null, spill = null, inserted = 0;
+    change(function () {
+      var ci = at.ci, t0 = at.t0, len = D.chunkLen(doc, ci) || 0, more = ci + 1 < doc.chunks.length;
+      var room = Math.max(0, Math.floor((len - t0) / mi.barQ + 1e-6)), nIn = more ? Math.min(nb, Math.max(1, room)) : nb;
+      var w = D.fromTakeBars(mel, g.per, unitQ, nIn);
+      D.replaceSpan(doc, ci, voice, t0, t0 + nIn * mi.barQ, w.rhythm, w.pitches);
+      if (melL) { var wl = D.fromTakeBars(melL, g.per, unitQ, nIn); D.replaceSpan(doc, ci, lhVoice(), t0, t0 + nIn * mi.barQ, wl.rhythm, wl.pitches); }
+      delete doc.chunks[ci].draft;
+      if (nb > nIn) spill = spillOn(tk, mel, g, unitQ, { ci: ci, bar: 1e6 }, nIn, nb - nIn, mi, melL, true);
+      if (ld.length) {
+        var lt = Math.min.apply(null, ld.map(function (x) { return x.t; }));
+        if (t0 + lt > -1e-6) {                                            // inside the chunk: the end of the bar before
+          var rh = [], pi = [], pos = lt;
+          ld.sort(function (a, b) { return a.t - b.t; }).forEach(function (x) {
+            if (x.t < pos - 1e-6) return;                                 // overlapping notes: the first one kept
+            if (x.t > pos + 1e-6) rh.push({ type: "rest", durQ: Math.round((x.t - pos) * 1000) / 1000 });
+            rh.push({ type: "note", durQ: Math.round(x.d * 1000) / 1000 }); pi.push(x.midi); pos = x.t + x.d;
+          });
+          if (pos < -1e-6) rh.push({ type: "rest", durQ: Math.round(-pos * 1000) / 1000 });
+          D.replaceSpan(doc, ci, voice, Math.round((t0 + lt) * 1000) / 1000, t0, rh, pi);
+        } else if (t0 < 1e-6) { var res = D.writeLeadIn(doc, ci, voice, 0, ld); inserted = res.inserted; }   // the chunk before, or a Pickup chunk
+      }
+      cur = ci + inserted; sel = null;
+    });
+    if (r.redo && lastQuick) history.splice(history.length - 1, 1, lastQuick.before);
+    lastQuick = { before: before, cur: at.ci, over: at, hist: history.length };
+    qStatus(cname(cur) + ": " + nb + " bar" + (nb === 1 ? "" : "s") + " written over the notes, chords kept" + (ld.length ? ", " + ld.length + " pickup note" + (ld.length === 1 ? "" : "s") : "") +
+      (spill ? "; " + spill.bars + " bar" + (spill.bars === 1 ? "" : "s") + " into the chunk" + (spill.chunks === 1 ? "" : "s") + " after it (marked draft)" : "") + ".");
+    renderQuick();
+  }
   // The left hand notated: its notes (below the split) as a take of their own, chords kept as chords (poly), into the voice
   // after the one being recorded (made, bass clef, when there is none). opts: pickup / pickupBeats as the right hand's take.
   function lhVoice() {
@@ -3858,7 +3991,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
   // A take that ran on past its phrase: `extra` bars after the phrase's nb, written bar by bar into the rest of the phrase's chunk
   // and the chunks after it (same meter only; Pickup chunks skipped). Chunks it writes into are marked draft. -> { bars, chunks }
-  function spillOn(tk, mel, g, unitQ, ph, nb, extra, mi, melL) {
+  function spillOn(tk, mel, g, unitQ, ph, nb, extra, mi, melL, keepChords) {
     var ci = ph.ci, b = ph.bar + nb, src = nb, left = Math.max(0, extra), done = 0, touched = 0;
     while (left > 0 && ci < doc.chunks.length) {
       var ch = doc.chunks[ci], cb = Math.ceil(D.info(doc, ci).bars - 1e-6);
@@ -3869,7 +4002,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       D.replaceBars(doc, ci, voice, b, b + n - 1, w.rhythm, w.pitches);
       if (melL) { var wl = D.fromTakeBars(melL.slice(src), g.per, unitQ, n); D.replaceBars(doc, ci, lhVoice(), b, b + n - 1, wl.rhythm, wl.pitches); }
       var hc = takeChords(tk, unitQ, src, n, b * mi.barQ), c0 = b * mi.barQ, c1 = (b + n) * mi.barQ;
-      if (hc.length) ch.chords = ch.chords.filter(function (c) { return c.at < c0 - 1e-6 || c.at >= c1 - 1e-6; }).concat(hc).sort(function (x, y) { return x.at - y.at; });
+      if (hc.length && !keepChords) ch.chords = ch.chords.filter(function (c) { return c.at < c0 - 1e-6 || c.at >= c1 - 1e-6; }).concat(hc).sort(function (x, y) { return x.at - y.at; });
       if (ci !== ph.ci) { ch.draft = true; touched++; }
       left -= n; src += n; b += n; done += n;
     }
@@ -3983,6 +4116,33 @@ document.addEventListener('DOMContentLoaded', async function () {
     chordTimer = setTimeout(function () { var mi = D.meterInfo(here().meter); if (!mi) return; var ci = chordChunk(); change(function () { setChords(ci, D.parseChords(txt, mi.barQ, chordLead(ci))); }); }, 500);
   });
   $("nt-chords-text").addEventListener("blur", function () { editing = null; render(); });
+  // keys in Chords by bar, as on the score: h / l (arrows stay the caret's) the last / next chord or "." , H / L the last / next bar,
+  // j / k this chunk's chords written, then the next / last chunk's (the j of "maj" is typed)
+  function chordTok(inp, dir, bar) {
+    var v = inp.value, toks = [], re = bar ? /[^|]+/g : /[^\s|]+/g, m;
+    while ((m = re.exec(v))) { var a = m.index + (bar ? m[0].length - m[0].trimStart().length : 0), tx = m[0].trim(); if (tx) toks.push([a, a + tx.length]); }
+    if (!toks.length) return;
+    var c = inp.selectionStart, k;
+    if (dir > 0) { k = toks.findIndex(function (x) { return x[0] > c; }); if (k < 0) k = toks.length - 1; }
+    else { k = -1; toks.forEach(function (x, j) { if (x[0] < c) k = j; }); if (k < 0) k = 0; }
+    if (bar && toks[k]) { var w = /[^\s|]+/.exec(v.slice(toks[k][0])); if (w) toks[k] = [toks[k][0], toks[k][0] + w[0].length]; }
+    inp.setSelectionRange(toks[k][0], toks[k][1]);
+  }
+  $("nt-chords-text").addEventListener("keydown", function (e) {
+    var inp = this;
+    if ((e.key === "h" || e.key === "l" || e.key === "H" || e.key === "L") && !e.altKey && !e.ctrlKey && !e.metaKey) {
+      e.preventDefault(); e.stopPropagation(); chordTok(inp, /l/i.test(e.key) ? 1 : -1, e.key === "H" || e.key === "L"); return;
+    }
+    if (chunkKey(e, inp)) {
+      e.preventDefault(); e.stopPropagation();
+      var mi = D.meterInfo(here().meter), ci = chordChunk();
+      if (editing === "chords" && mi) { clearTimeout(chordTimer); var txt = inp.value; change(function () { setChords(ci, D.parseChords(txt, mi.barQ, chordLead(ci))); }); }
+      var i = nextChunk(cur, e.key === "j");
+      if (i < 0) { status(e.key === "j" ? "That's the last chunk." : "That's the first chunk."); return; }
+      editing = null; toChunkStart(i); render(); inp.focus();
+      var f = /[^\s|]+/.exec(inp.value); if (f) inp.setSelectionRange(f.index, f.index + f[0].length); else inp.setSelectionRange(0, 0);
+    }
+  });
   $("nt-chords-play").onclick = function () {
     chordsIn = !chordsIn; this.setAttribute("aria-pressed", String(chordsIn)); chordLis.reset();
     $("nt-chords-heard").textContent = chordsIn ? "Play a chord: it goes in the next bar." : "";
@@ -4324,7 +4484,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       if (!(m.type === "nt-chordpro" && typeof m.chordpro === "string") && !(m.type === "nt-doc" && m.doc && Array.isArray(m.doc.chunks)) && !(m.type === "nt-abc" && typeof m.abc === "string")) return;
       var f = doc.chunks.some(function (c, i) { var x = D.info(doc, i); return x.rhythm || x.pitches || x.chords || x.words; });
       if (f && !confirm("Read in “" + (m.title || "Untitled") + "” from " + (m.host || "Timestamp Notes") + "? It replaces the piece here.")) return;
-      change(function () { doc = m.type === "nt-doc" ? D.upgrade(JSON.parse(JSON.stringify(m.doc))) : m.type === "nt-abc" ? D.upgrade(D.fromAbc(m.abc)) : D.fromChordPro(m.chordpro, doc.meter); if (m.title) doc.title = m.title; if (!doc.tempo && +m.tempo > 0) doc.tempo = Math.round(+m.tempo); cur = 0; voice = 0; sel = null; shownCur = -1; });
+      change(function () { doc = m.type === "nt-doc" ? D.upgrade(JSON.parse(JSON.stringify(m.doc))) : m.type === "nt-abc" ? D.upgrade(D.fromAbc(m.abc)) : D.fromChordPro(m.chordpro, doc.meter); if (m.title) doc.title = m.title; if (!doc.tempo && +m.tempo > 0) doc.tempo = Math.round(+m.tempo); Q.bpmOwn = null; qSave(); cur = 0; voice = 0; sel = null; shownCur = -1; });
       status("Read in from " + (m.host || "Timestamp Notes") + ": add the melody chunk by chunk.");
       try { window.focus(); } catch (err) {}
     });
@@ -4351,7 +4511,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   $("nt-c-tempo").onchange = function () { var v = Math.round(+this.value) || null; if (v) v = Math.max(20, Math.min(320, v)); change(function () { if (cur === 0) doc.tempo = v; else chunk().tempo = v; }); this.blur(); };
   ["nt-meter", "nt-c-meter", "nt-q-meter"].forEach(function (id) { meterPicker($(id)); });
   ["nt-key", "nt-c-key", "nt-q-key"].forEach(function (id) { keyPicker($(id)); });
-  ["bpm", "count", "pickup", "res", "feel", "trip", "quiet", "split", "lh"].forEach(function (k) {
+  ["bpm", "into", "count", "pickup", "res", "feel", "trip", "quiet", "split", "lh"].forEach(function (k) {
     $("nt-q-" + k).onchange = function () {
       // the take's tempo: the piece's at this chunk, unless one is typed here (then the take's chunk gets it)
       if (k === "bpm") { var v = Math.round(+this.value); Q.bpmOwn = v ? Math.max(30, Math.min(240, v)) : null; if (Q.bpmOwn === pieceBpm()) Q.bpmOwn = null; renderQuick(); this.blur(); return; }
@@ -4377,6 +4537,22 @@ document.addEventListener('DOMContentLoaded', async function () {
   })();
   setMode("letters");
   if (!ENDING) connectMidi();
+  // the navbar metronome's From page / To page (practice-widgets.js): the tempo and meter in force at the selected chunk. To page changes
+  // them where they are set (the chunk or section that set them, else the piece)
+  window.PageTempo = {
+    name: "Notation",
+    get: function () { var a = here(), mi = D.meterInfo(a.meter); return { bpm: pieceBpm(), beats: mi ? mi.n : null, where: cname(cur) }; },
+    set: function (x) {
+      var setter = function (k) { for (var j = cur; j > 0; j--) if (doc.chunks[j][k]) return doc.chunks[j]; return null; }, said = [];
+      change(function () {
+        if (+x.bpm > 0) { var tc = setter("tempo"); if (tc) tc.tempo = x.bpm; else doc.tempo = x.bpm; Q.bpmOwn = null; said.push(x.bpm + " bpm"); }
+        var a = D.at(doc, cur), mi = D.meterInfo(a.meter);
+        if (+x.beats > 0 && (!mi || mi.n !== +x.beats)) { var m = x.beats + "/" + (mi ? mi.d : 4), mc = setter("meter"); if (mc) mc.meter = m; else doc.meter = m; said.push(m); }
+      });
+      renderQuick();
+      return said.length ? "Set " + said.join(", ") + " at " + cname(cur) + "." : "Nothing to change.";
+    }
+  };
   window.NotationPage = { makeBand: makeBand, loadBand: loadBand, tuneSrc: function () { return tuneSrc; }, phrase: function (p) { if (p !== undefined) phrase = p; return phrase; }, bt: function () { return bt; }, dwimRun: dwimRun, clip: function () { return clip; }, doc: function () { return doc; }, sel: function () { return sel; }, map: function () { return map; }, cur: function () { return cur; },
     voice: function () { return voice; }, takeCfg: takeCfg, applyTake: applyTake, chordHeard: chordHeard,
     quickStart: quickStart, quickStop: quickStop, rec: function () { return rec; }, Q: Q, lpLoop: lpLoop, lpStop: lpStop, lpAction: lpAction, lp: function () { return lp; }, lpSpans: lpSpans, takeBpm: takeBpm, passStart: passStart, passTakes: function () { return passTakes; }, spill: function () { return spillPhrases; },
@@ -4394,8 +4570,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 <!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
      (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
 <script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/degree-caret.js?v=2"></script>
 <script src="../apps/shared/circle-of-fifths.js?v=2"></script>
-<script src="../apps/shared/practice-widgets.js?v=8"></script>
+<script src="../apps/shared/practice-widgets.js?v=9"></script>
 <!-- A button at the left of the navbar that folds the docked sidebar away on
      every page, and remembers the choice. Below 992px Quarto already tucks the
      sidebar behind its own toggle, so the button is hidden there. -->

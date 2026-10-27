@@ -7,7 +7,11 @@
    ("." holds a chord on), "(2/4)" opens a bar in another meter.
 
    Out: a stamp per section (each labelled line), the bar map (every bar's start and beats), and the ChordPro: a {comment:} heading
-   and chord line per section, and a {start_of_grid} per section (its timing), each one confirmed. */
+   and chord line per section, and a {start_of_grid} per section (its timing), each one confirmed.
+
+   The whole McGill Billboard set is on the site (apps/shared/data/billboard/<id>.txt and index.json, scripts/billboard-import.mjs):
+   "Billboard…" beside Paste… searches it by title or artist and opens a song; ?salami=<id> on the address opens one (with ?v= for a
+   recording). The times are the annotators' audio's: a YouTube upload of the song may start a little earlier or later. */
 (function () {
   "use strict";
 
@@ -183,6 +187,7 @@
       area.value = song ? JSON.stringify(song) : text;
       go.click();                                        // player-log.js opens it
     }
+    billboard(log, open);
     if (go) go.addEventListener('click', function () {
       if (area.value.trim().charAt(0) === '{' && /"app"\s*:/.test(area.value)) return;   // already a song file
       var song = songFrom(area.value);
@@ -200,6 +205,63 @@
       f.text().then(function (t) { open(t, f.name); });
     }, true);
   }
+  // ---- the Billboard set: a search beside Paste…, and ?salami=<id> ----
+  var BB = '/apps/shared/data/billboard/', bbIndex = null;
+  function index() { return bbIndex || (bbIndex = fetch(BB + 'index.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })); }
+  function fold(x) { return String(x).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function billboard(log, open) {
+    var after = log.querySelector('.btp-paste-open'); if (!after) return;
+    var btn = el('button', 'btp-bb-open', 'Billboard…'); btn.type = 'button';
+    btn.title = 'Open one of the 739 McGill Billboard songs (1958–1991): its sections, bars and chords, timed';
+    after.after(btn);
+    var box = el('div', 'btp-bb'); box.hidden = true;
+    var q = el('input'); q.type = 'search'; q.placeholder = 'Title or artist (Beatles, My Girl, 1965…)'; q.setAttribute('aria-label', 'Search the Billboard songs');
+    var info = el('div', 'btp-bb-info'), list = el('ul', 'btp-bb-list'), now = el('div', 'btp-bb-now');
+    box.append(q, info, list); log.querySelector('.btp-log-buttons').after(box); box.after(now);
+    var css = el('style'); css.textContent = '.btp-bb{margin:.4rem 0;padding:.5rem;border:1px solid var(--bs-border-color,#dee2e6);border-radius:6px}' +
+      '.btp-bb input{width:100%;max-width:28rem;padding:.25rem .5rem}.btp-bb-info,.btp-bb-now{font-size:.8rem;opacity:.75;margin:.25rem 0}' +
+      '.btp-bb-list{list-style:none;padding:0;margin:0;max-height:16rem;overflow:auto}.btp-bb-list li{padding:.1rem .2rem;cursor:pointer;border-radius:3px}' +
+      '.btp-bb-list li:hover,.btp-bb-list li:focus{background:rgba(13,110,253,.1);outline:none}.btp-bb-list small{opacity:.6;margin-left:.4rem}';
+    document.head.appendChild(css);
+    function show() {
+      index().then(function (all) {
+        var words = fold(q.value).split(/\s+/).filter(Boolean);
+        var hits = all.filter(function (s) { var t = fold(s.title + ' ' + s.artist + ' ' + (s.year || '')); return words.every(function (w) { return t.indexOf(w) >= 0; }); });
+        list.innerHTML = '';
+        hits.slice(0, 60).forEach(function (s) {
+          var li = el('li', null, s.title + ' — ' + s.artist); li.tabIndex = 0;
+          li.appendChild(el('small', null, [s.year, s.tonic && 'in ' + s.tonic, s.metre, Math.floor(s.secs / 60) + ':' + String(s.secs % 60).padStart(2, '0')].filter(Boolean).join(' · ')));
+          li.addEventListener('click', function () { load(s.id); });
+          li.addEventListener('keydown', function (e) { if (e.key === 'Enter') load(s.id); });
+          list.appendChild(li);
+        });
+        info.textContent = hits.length > 60 ? hits.length + ' songs; the first 60 shown' : hits.length + ' song' + (hits.length === 1 ? '' : 's');
+      }).catch(function () { info.textContent = 'The Billboard list could not be loaded.'; });
+    }
+    var t = 0;
+    q.addEventListener('input', function () { clearTimeout(t); t = setTimeout(show, 120); });
+    btn.addEventListener('click', function () { box.hidden = !box.hidden; if (!box.hidden) { show(); q.focus(); } });
+    function load(id) {
+      return Promise.all([fetch(BB + id + '.txt').then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }), index()]).then(function (r) {
+        open(r[0], id + '.txt');
+        var s = r[1].filter(function (x) { return x.id === +id; })[0];
+        box.hidden = true;
+        var u = new URL(location.href); u.searchParams.set('salami', id); history.replaceState(null, '', u);
+        now.innerHTML = '';
+        if (s) {
+          now.append('Billboard: ' + s.title + ' — ' + s.artist + (s.year ? ' (' + s.year + ')' : '') + '. No recording comes with it: ');
+          var a = el('a', null, 'find it on YouTube'); a.target = '_blank'; a.rel = 'noopener';
+          a.href = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(s.artist + ' ' + s.title);
+          now.append(a, ' and paste the link above. The times are the annotators\' recording\'s, so an upload may be a little early or late.');
+        }
+      }).catch(function () { now.textContent = 'Billboard song ' + id + ' could not be loaded.'; });
+    }
+    var want = new URLSearchParams(location.search).get('salami');
+    if (want && /^\d+$/.test(want)) setTimeout(function () { load(want); }, 300);
+    window.SalamiChords.openBillboard = load;
+  }
+
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();

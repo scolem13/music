@@ -12,6 +12,7 @@ JAZZ = ["lessons/guide-tones.qmd", "lessons/turnarounds.qmd", "lessons/reharmoni
 MT21 = "Hutchinson, Robert. "
 
 SOURCES = [
+    web('LilyPond Development Team. "Writing pitches." *LilyPond Notation Reference*, version 2.24, URL.', "https://lilypond.org/doc/v2.24/Documentation/notation/writing-pitches", ["theory/pitch-basics.qmd"], who="teacher"),
     # Teacher
     book('Aldwell, Edward, Carl Schachter, and Allen Cadwallader. *Harmony and Voice Leading*. 5th ed., Cengage, 2019.', H, who="teacher"),
     book('Caplin, William E. *Classical Form: A Theory of Formal Functions for the Instrumental Music of Haydn, Mozart, and Beethoven*. Oxford UP, 1998.', ["lessons/cadences.qmd", "lessons/write-an-ending.qmd"], who="teacher",
@@ -23,7 +24,7 @@ SOURCES = [
     book('Benadon, Fernando. "Slicing the Beat: Jazz Eighth-Notes as Expressive Microrhythm." *Ethnomusicology*, vol. 50, no. 1, 2006, pp. 73-98.', ["lessons/reading-swing.qmd"], who="teacher", note="Citation confirmed from catalogue records only."),
     book('Covach, John. "Form in Rock Music: A Primer." *Engaging Music: Essays in Music Analysis*, edited by Deborah Stein, Oxford UP, 2005, pp. 65-76.', ["lessons/section-labels.qmd", "lessons/timestamp-player.qmd"], who="teacher"),
     book('Gould, Elaine. *Behind Bars: The Definitive Guide to Music Notation*. Faber Music, 2011.', ["lessons/notation-choices.qmd", "lessons/notation-steps.qmd", "lessons/reading-swing.qmd", "lessons/sing-and-notate.qmd", "lessons/write-an-ending.qmd"], who="teacher"),
-    web('Walshaw, Chris, editor. "The abc Music Standard 2.1." *abcnotation.com*, 2011. URL.', "https://abcnotation.com/wiki/abc:standard:v2.1", ["lessons/notation-steps.qmd", "lessons/notation-choices.qmd", "lessons/sing-and-notate.qmd", "lessons/write-an-ending.qmd"], who="teacher"),
+    web('Walshaw, Chris, editor. "The abc Music Standard 2.1." *abcnotation.com*, 2011. URL.', "https://abcnotation.com/wiki/abc:standard:v2.1", ["lessons/notation-steps.qmd", "lessons/notation-choices.qmd", "lessons/sing-and-notate.qmd", "lessons/write-an-ending.qmd", "theory/pitch-basics.qmd"], who="teacher"),
 
     # Student: Music Theory for the 21st-Century Classroom (open textbook)
     web(MT21 + '"Mode Mixture." *Music Theory for the 21st-Century Classroom*, U of Puget Sound. URL.', "https://musictheory.pugetsound.edu/mt21c/ModeMixture.html", ["lessons/borrowed-chords.qmd"], who="student"),

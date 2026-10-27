@@ -9,7 +9,7 @@ description: "Exercises for Chapter 7 of Hutchinson's Music Theory for the 21st-
 
 ```{=html}
 <link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
-<script src="/apps/shared/abcjs-basic.js?v=2"></script>
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
 <script src="/apps/shared/drills/drills.js?v=14"></script>
 <style>
 .rn-quiz{display:grid;gap:1rem;margin:1rem 0}

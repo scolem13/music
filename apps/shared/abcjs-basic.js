@@ -28253,3 +28253,22 @@ module.exports = version;
 ;
 });
 //# sourceMappingURL=abcjs-basic.js.map
+// ── This site's defaults (not part of abcjs) ──
+// Tune titles (T:) left-aligned at 80% of abcjs's default 20px, so a short example's title sits over its staff, not centred
+// over blank space. Done by adding %%titleleft and %%titlefont after each X: line (abcjs's format option has no titleleft);
+// a tune's own %%titlefont comes later and wins. window.ABC_TITLES_CENTRED = true, or params.siteTitles === false, leaves them alone.
+(function () {
+  var A = typeof window !== "undefined" && window.ABCJS;
+  if (!A || A.__siteDefaults) return;
+  A.__siteDefaults = true;
+  var DIRS = "%%titleleft true\n%%titlefont \"Times New Roman\" 16\n";
+  function withTitles(abc) {
+    if (typeof abc !== "string" || !/^\s*T:/m.test(abc) || /%%titleleft/.test(abc)) return abc;
+    return /^\s*X:/m.test(abc) ? abc.replace(/^(\s*X:[^\n]*\n)/gm, "$1" + DIRS) : DIRS + abc;
+  }
+  var render = A.renderAbc;
+  A.renderAbc = function (el, abc, params) {
+    if (!window.ABC_TITLES_CENTRED && !(params && params.siteTitles === false)) abc = withTitles(abc);
+    return render.apply(this, [el, abc].concat([].slice.call(arguments, 2)));
+  };
+})();

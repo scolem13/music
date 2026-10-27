@@ -21,6 +21,9 @@
   const num = (id) => parseFloat(String(id).replace("-", "."));   // "0739-2" -> 739.2 (MTD splits a few themes)
   const abcOf = (t, tempo) => "X:" + parseInt(t.id, 10) + "\nT:" + t.title + "\nC:" + t.first + " " + t.last + (t.movement || t.cat ? "\nS:" + [t.movement, t.cat].filter(Boolean).join(" · ") : "") + "\nM:" + t.meter +
     "\nL:" + t.unit + (tempo ? "\nQ:1/4=" + tempo : "") + "\n%%id cmt-" + t.id + "\n%%tags " + t.last + (t.bar ? "\n%%bar " + t.bar + (t.barOne ? " one-score" : "") : "") + "\n%%key-fixed\nK:" + t.key + "\n" + t.body + "\n";
+  // recordings live in apps/shared/works/works-data.js (Works); the old one-link "yt" field is the fallback
+  const workOf = (t) => (window.Works ? Works.of("theme", t.id) : null);
+  const hasRec = (r) => { const w = workOf(r.t); return w ? (w.recordings || []).length > 0 : !!r.t.yt; };
   const status = $("#ct-status");
   status.textContent = "Reading " + T.length.toLocaleString() + " themes…";
 
@@ -55,7 +58,7 @@
     rests: ["Rests", (r) => r.t.rests],
     chromatic: ["Notes outside the key", (r) => r.t.chromatic],
     density: ["Notes per bar", (r) => r.t.n / (r.rec.measures || r.t.bars || 1)],
-    yt: ["Has a recording link first", (r) => (r.t.yt ? 0 : 1)],
+    yt: ["Has a recording first", (r) => (hasRec(r) ? 0 : 1)],
     random: ["Random", (r) => r.rand],
   };
 
@@ -102,7 +105,7 @@
     const keys = [...sortRows.querySelectorAll(".ct-sortrow")].map((r) => [r.querySelector("select").value, +r.querySelector(".ct-dir").dataset.dir]).filter((k) => k[0]);
     store.set("sorts", keys);
     let list = (picked || records).map((rec) => recOf[rec.id]).filter(Boolean);
-    if (ytOnly.checked) list = list.filter((r) => r.t.yt);
+    if (ytOnly.checked) list = list.filter(hasRec);
     const val = keys.map(([k, d]) => [SORTS[k][1], d]);
     list.sort((a, b) => {
       for (const [f, d] of val) {
@@ -136,7 +139,8 @@
     shown.forEach((r) => {
       const c = document.createElement("article"); c.className = "ct-card"; c.__r = r;
       c.innerHTML = '<div class="ct-head"><div><div class="ct-title"></div><div class="ct-comp"></div></div><div class="ct-btns"></div></div>' +
-        '<div class="ct-score"></div><div class="ct-meta"></div>';
+        '<div class="ct-score"></div><div class="ct-meta"></div><div class="ct-works" hidden></div>';
+      if (window.Works) Works.mount(c.querySelector(".ct-works"), "theme", r.t.id);
       c.querySelector(".ct-title").textContent = r.t.title;
       if (r.t.movement) { const mv = document.createElement("div"); mv.className = "ct-move"; mv.textContent = r.t.movement; c.querySelector(".ct-title").after(mv); }
       const when = [r.t.composed && "composed " + r.t.composed, r.t.premiere && "first performed " + r.t.premiere,
@@ -146,7 +150,7 @@
       const play = document.createElement("button"); play.type = "button"; play.className = "ct-play"; play.textContent = "▶ Play";
       play.addEventListener("click", () => togglePlay(c));
       btns.appendChild(play);
-      if (r.t.yt) { const a = document.createElement("a"); a.href = r.t.yt; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Recording"; btns.appendChild(a); }
+      if (!workOf(r.t) && r.t.yt) { const a = document.createElement("a"); a.href = r.t.yt; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Recording"; btns.appendChild(a); }
       const m = c.querySelector(".ct-meta"), rec = r.rec;
       const bits = [
         r.t.key.replace(/m$/, " minor").replace(/b/g, "♭").replace(/#/g, "♯") + (r.t.minor && r.t.modeFrom === "melody" ? " (guessed)" : r.t.minor ? "" : " major"),
@@ -320,5 +324,14 @@
     pick.querySelectorAll(".tl-facet > summary").forEach((s) => { if (s.textContent === "Tags") s.textContent = "Composer"; });
     const box = pick.querySelector(".tl-search"); if (box) box.placeholder = "Search title, composer, movement or catalogue (Adagio, BWV 1046…)";
     status.textContent = "";
+    // ?theme=<id> (from the Tune Directory and the Recordings panel): that theme alone, with a way back to all
+    const want = new URLSearchParams(location.search).get("theme");
+    if (want && recOf["cmt-" + want]) {
+      picked = records.filter((rec) => rec.id === "cmt-" + want); apply();
+      status.textContent = "Showing one theme (No. " + want.replace(/^0+/, "") + "). ";
+      const all = document.createElement("button"); all.type = "button"; all.textContent = "Show all themes";
+      all.addEventListener("click", () => { status.textContent = ""; history.replaceState(null, "", location.pathname); picked = null; apply(); });
+      status.appendChild(all);
+    }
   }, 30);
 })();

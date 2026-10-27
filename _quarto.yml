@@ -277,10 +277,16 @@ website:
             - theory/meter-taxonomy.qmd
         - section: "Hutchinson, Music Theory for the 21st-Century Classroom"
           contents:
+            - href: theory/pitch-basics.qmd
+              text: "1. Basic Concepts"
             - href: theory/major-scales.qmd
               text: "2. Major Scales and Key Signatures"
+            - href: theory/minor-scales.qmd
+              text: "3. Minor Scales and Key Signatures"
             - href: theory/rhythm-basics.qmd
               text: "4. Basics of Rhythm"
+            - href: theory/intervals.qmd
+              text: "5. Intervals"
             - href: theory/triads.qmd
               text: "6. Triads"
             - href: theory/roman-numerals.qmd
@@ -336,6 +342,7 @@ website:
             - practice/tonal-sequences.qmd
             - practice/songs.qmd
             - practice/tunes.qmd
+            - practice/tune-directory.qmd
             - practice/patterns.qmd
             - practice/patterns-by-ear.qmd
             - practice/sax-patterns-by-ear.qmd
@@ -476,6 +483,7 @@ website:
           - practice/tonal-sequences.qmd
           - practice/songs.qmd
           - practice/tunes.qmd
+          - practice/tune-directory.qmd
           - practice/patterns.qmd
           - practice/patterns-by-ear.qmd
           - practice/sax-patterns-by-ear.qmd

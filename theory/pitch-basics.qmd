@@ -1,0 +1,183 @@
+---
+title: "Pitch Notation from Do: Letter Names, Clefs and Accidentals"
+toc: true
+toc-depth: 2
+description: "Chapter 1 of Hutchinson's Music Theory for the 21st-Century Classroom for students who already read and write with movable do: letter names, clefs, octave registers, accidentals and enharmonic notes as names for the staff they already read."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
+<script src="/apps/shared/lessons/abc-ex.js?v=15"></script>
+<script src="/apps/shared/drills/drills.js?v=14"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+This page goes with **Chapter 1, Basic Concepts** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/BasicConcepts.html).
+
+**You already know this.** You read and write tonal patterns on the staff: you find do from the do signature and read the rest from
+there. This chapter gives every line and space a fixed **letter name**. Gordon calls letter names "the alphabet of music": knowing
+them is not the same as audiating, but once you can already read, they explain the notation you understand (Gordon 36–37). That is
+the order you have learned in: sound first, then syllables, now letters.
+
+Press ▶ to hear an example, or **▶ Sing** to hear it sung on syllables. Click any heading to fold its section.
+
+## What you know → what the book calls it
+
+| You say (MLT) | The book says (Hutchinson ch. 1) |
+|---|---|
+| do, re, mi … (they move with the do signature) | letter names A–G (they never move) |
+| "do is on the second line" | "do is G", the letter of that line |
+| the same pattern sung higher or lower | the same letters in a different octave register (C4, C5 …) |
+| a note outside the tonality (a chromatic) | a note with an accidental (♯ ♭ ♮) |
+| one sound, two spellings | enharmonic notes (F♯ = G♭) |
+
+## 1.1–1.2 Pitch and the staff
+
+The book's first sections cover what you already use: higher and lower sounds, the five-line staff, and the **clefs** that fix which
+line is which letter.
+[Read 1.1](https://musictheory.pugetsound.edu/mt21c/Pitch.html) ·
+[Read 1.2](https://musictheory.pugetsound.edu/mt21c/Notation.html)
+
+**Syllables move, letters stay.** Your syllables are tied to do: move the do signature and every syllable moves with it. Letters are
+tied to the clef: in treble clef the second line is always G, whatever the signature. So the question changes from *"where is do?"*
+to *"what letter is do on?"*
+
+### A note's name and a note's job
+
+A **letter name** is a note's **name**: G is G in every key, in every piece. A **syllable** is the note's **job** in the music you're
+hearing: home (do), the dominant (so), the leading tone that pulls home (ti). Change the key and the same note gets a new job.
+
+The circle of fifths shows both at once. The outer ring is the letters, and they never move. The inner ring is the syllables. Pick a
+new key with the menu, or click a letter on the wheel, and watch the syllables turn while the letters stay put. Follow one note,
+say G: it's **so** in C, **do** in G, **re** in F, **ti** in A♭. The note keeps its name and changes its job.
+
+<div class="cof-widget" data-rings="notes,syllables" data-picker="key" data-change="key" data-size="380" data-sound="false" style="margin:1rem auto"></div>
+
+The same works for the book's other names. Choose scale degrees as the note names (in the Drone or Circle settings), and the inner
+ring shows 1̂ to 7̂ instead: degree numbers are jobs too.
+
+Here is a tonic pattern, do–mi–so–mi–do, in the treble clef and in the bass clef. Same syllables, same letters, an octave apart:
+
+<div class="abc-ex" data-bpm="90"><script type="text/plain">
+X:1
+T:Treble clef: do is C (middle C)
+M:4/4
+L:1/4
+K:C
+C E G E | C4 |]
+w:C E G E C
+</script></div>
+
+<div class="abc-ex" data-bpm="90"><script type="text/plain">
+X:1
+T:Bass clef: the same letters an octave lower
+M:4/4
+L:1/4
+K:C clef=bass
+C, E, G, E, | C,4 |]
+w:C E G E C
+</script></div>
+
+**A way in from what you know.** The letters run A B C D E F G and start again. Sing do re mi fa so la ti do in C and say the letters
+instead: C D E F G A B C. In the key of C, *do re mi* and *C D E* line up, which makes C a good place to learn the letters.
+
+### Practise: name the note
+
+Treble and bass clef, no accidentals. Open **Settings** to add ledger lines and accidentals.
+
+<div class="drill" data-ex="note" data-settings="clef=treble,bass&ledger=0&acc=none"></div>
+
+## 1.3 Octave registers
+
+The same letter comes back every eight notes. The book tells them apart with a number: **middle C is C4**, the C an octave above is
+C5, and each number runs from C up to the B above it.
+[Read 1.3](https://musictheory.pugetsound.edu/mt21c/OctaveRegisters.html)
+
+You already know this as "the same pattern, higher". In the two examples above, the treble pattern starts on C4 and the bass pattern
+on C3.
+
+::: {.callout-note collapse="true"}
+## The same registers in ABC and LilyPond
+
+Text notations write the register with letter case and marks instead of a number.
+
+| Note | ABC | LilyPond (absolute) |
+|---|---|---|
+| C2 | `C,,` | `c,` |
+| C3 | `C,` | `c` |
+| **C4 (middle C)** | **`C`** | **`c'`** |
+| C5 | `c` | `c''` |
+| C6 | `c'` | `c'''` |
+
+- **ABC:** a capital letter is the octave from middle C (C4–B4) and a lower-case letter the octave above (C5–B5). Each `,` takes a
+  note down an octave and each `'` takes it up one. The C major scale from middle C is `C D E F G A B c`.
+- **LilyPond:** a plain letter is the octave *below* middle C (C3–B3), and each `'` or `,` moves it an octave, so middle C is `c'`.
+  The same scale is `c' d' e' f' g' a' b' c''`.
+- **The trap:** LilyPond's plain `c` is C3 but ABC's plain `C` is C4, so the same-looking letter is an octave apart.
+- LilyPond's `\relative` mode (common in published files) works differently: each note is placed nearest the note before it, and
+  `'` or `,` only marks a jump of more than a fourth.
+:::
+
+## 1.4–1.5 Accidentals and enharmonic notes
+
+A **sharp** (♯) raises a note a half step, a **flat** (♭) lowers it, and a **natural** (♮) cancels either. In a key signature they
+apply to the whole piece; written in the music, to the rest of the bar.
+[Read 1.4](https://musictheory.pugetsound.edu/mt21c/Accidentals.html) ·
+[Read 1.5](https://musictheory.pugetsound.edu/mt21c/EnharmonicNotes.html)
+
+**From what you know.** A key signature's sharps and flats are what put the half steps on mi–fa and ti–do (see
+[Chapter 2](major-scales.qmd)). An accidental *in the music* marks a note outside that pattern, a chromatic. You hear it as a new
+syllable: in harmonic minor, so is raised to **si** (Gordon 70), and the music shows it with a sharp or natural.
+
+**Enharmonic** notes sound the same but are spelled differently: F♯ and G♭, or B and C♭. Which spelling is right depends on the key,
+just as which syllable is right depends on the tonality. In D major, the note between F and G is F♯, because D major is spelled with
+one of each letter: D E F♯ G A B C♯.
+
+**Where the book and MLT see this differently.** Gordon warns against learning letters, accidentals and key signatures *before*
+audiating (Gordon 36–37, 65). You haven't: you're learning them now, as names for music you can already read.
+
+## Bridging: from syllables to letters
+
+1. **Find do and name it.** "Do signature of two sharps: do is on D."
+2. **Sing the pattern on syllables**, then again on letters: do mi so → D F♯ A.
+3. **Every letter in the signature is altered everywhere.** In two sharps, every F and every C is sharp, in any octave.
+4. **Write in both clefs.** Write the pattern in treble, then an octave lower in bass. The letters stay the same; the lines and
+   spaces change.
+
+## Check yourself
+
+1. Treble clef: what letter is the second line? Bass clef: what letter is the fourth line?
+2. Do is on G. Sing do–mi–so. What are the letters?
+3. Which C is middle C, as an octave register?
+4. Give the enharmonic spelling of D♯.
+5. Two sharps are F♯ and C♯. With do on D, which syllable is C♯?
+
+::: {.callout-tip collapse="true"}
+## Answers
+1. G (treble), F (bass).
+2. G B D.
+3. C4.
+4. E♭.
+5. Ti.
+:::
+
+All the note drills are on [Theory Drills](theory-drills.qmd?ex=note). Next: [Major Scales and Key Signatures](major-scales.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp. 111–117), the verbal association warning (p. 108), generalization-aural/oral and -verbal (pp. 131–133); same is easier to hear than different (p. 219); tonal and rhythm patterns kept apart (p. 223); rhythm patterns chanted with vocal inflection like speech (p. 101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp. 187–190).; Theory Concepts pages: Keyality versus key signature (p. xiii); tonality "best refers to what is usually called a mode," the eight tonalities (p. 149); movable-do with la-based minor and the rhythm syllables du de, du da di (p. 105); resting tone and tonic, a tonality in any keyality (p. 150); unitonal and multitonal music (pp. 152, 157); usual duple, triple and combined meter (pp. 175–176); no direct relation between measure signatures and meter, 6/8 as "duple compound" called inaccurate (p. 176); accents and microbeat divisions do not make meter (pp. 176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp. 179–180); key signatures as do signatures, one signature for many tonalities (pp. 155–156); rhythm syllables by beat function (p. 86); time-value names lead to counting (p. 38); writing tonal patterns from a familiar do signature (p. 125); letter names and time-value names as the alphabet of music (pp. 36–37); interval names learned in context of tonality and keyality (p. 65); the raised seventh of harmonic minor as si (p. 70); mi si ti re as a harmonic minor dominant pattern (p. 100).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp. 3, 9); notation as a window (p. 8); patterns as units of meaning (pp. 99–100); the aural/oral level and the pause (pp. 101–102); discrimination and inference learning, theory delayed (p. 106); levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231).
+
+Hutchinson, Robert. "Basic Concepts." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/BasicConcepts.html](https://musictheory.pugetsound.edu/mt21c/BasicConcepts.html). Chapter 1: pitch, notation and clefs, octave registers, accidentals, enharmonic notes.
+
+**For teachers**
+
+LilyPond Development Team. "Writing pitches." *LilyPond Notation Reference*, version 2.24, [lilypond.org/doc/v2.24/Documentation/notation/writing-pitches](https://lilypond.org/doc/v2.24/Documentation/notation/writing-pitches).
+
+Walshaw, Chris, editor. "The abc Music Standard 2.1." *abcnotation.com*, 2011. [abcnotation.com/wiki/abc:standard:v2.1](https://abcnotation.com/wiki/abc:standard:v2.1).
+:::
+<!-- /works-cited -->

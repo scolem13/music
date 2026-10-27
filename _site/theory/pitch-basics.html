@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Chapter 1 of Hutchinson’s Music Theory for the 21st-Century Classroom for students who already read and write with movable do: letter names, clefs, octave registers, accidentals and enharmonic notes as names for the staff they already read.">
+
+<title>Pitch Notation from Do: Letter Names, Clefs and Accidentals – Music Practice</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../theory/major-scales.html" rel="next">
+<link href="../theory/meter-taxonomy.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0c7587e6f6df4385ac2d543e81c42bfa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<!-- Display + mono fonts used throughout the site and in the chord chart -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
+     tool scripts run; injects a step banner when a session is active. -->
+<script src="../apps/shared/session-nav.js"></script>
+<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
+<script src="../apps/shared/audio-tap.js?v=1"></script>
+<!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
+<script src="../apps/shared/help-eye.js?v=1"></script>
+<!-- MIDI learn: a pedal or key presses any button on the page (navbar "MIDI buttons"). -->
+<script src="../apps/shared/midi-learn.js?v=1" defer=""></script>
+<script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
+<style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
+<!-- Click the number shown beside any slider to type a value. -->
+<script src="../apps/shared/num-edit.js?v=1"></script>
+<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text (crisp staff lines are opt-in: html.abc-crisp). -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap">
+<style>
+svg[aria-label^="Sheet Music"] text,svg[aria-label^="Sheet Music"] tspan{font-family:"Source Serif 4",Georgia,serif!important;font-weight:400!important}
+svg[aria-label^="Sheet Music"] .abcjs-title,svg[aria-label^="Sheet Music"] .abcjs-title tspan{font-weight:500!important}
+/* Crisp staff lines: off (abcjs default drawing); some monitors drop or thicken lines with it. Add class "abc-crisp" to <html> to turn it back on. */
+html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-bar,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
+</style>
+<!-- App pages (Tools/Practice): small edge margin so full-bleed apps don't
+     grind against the window. -->
+<style>
+  .column-screen, .column-screen-inset { padding-left: 3px; padding-right: 3px; box-sizing: border-box; }
+  [id$="-root"] { padding: 3px; box-sizing: border-box; }
+
+  /* Sticky bars that assumed no parent navbar — offset them below the Quarto
+     navbar (~56px mobile, ~64px desktop) so they don't slide behind it. */
+  .chord-banner { top: 56px !important; }
+  .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 56px !important; }
+  @media (min-width: 992px) {
+    .chord-banner { top: 64px !important; }
+    .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 64px !important; }
+  }
+</style>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Music Practice</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Course</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-course">    
+        <li>
+    <a class="dropdown-item" href="../course/index.html">
+ <span class="dropdown-text">Your Music Course</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../course/pathway.html">
+ <span class="dropdown-text">Your Pathway</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../course/enrichment.html">
+ <span class="dropdown-text">Enrichment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../course/glossary.html">
+ <span class="dropdown-text">Glossary</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../lessons/index.html"> 
+<span class="menu-text">Lessons</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../theory/index.html" aria-current="page"> 
+<span class="menu-text">Theory</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../practice/session.html">
+ <span class="dropdown-text">Session</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/rhythm-sequences.html">
+ <span class="dropdown-text">Rhythm Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tonal-sequences.html">
+ <span class="dropdown-text">Tonal Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs.html">
+ <span class="dropdown-text">Song Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tunes.html">
+ <span class="dropdown-text">Tunes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tune-directory.html">
+ <span class="dropdown-text">Tune Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns-by-ear.html">
+ <span class="dropdown-text">Patterns by Ear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/sax-patterns-by-ear.html">
+ <span class="dropdown-text">Sax Patterns by Ear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/dictation.html">
+ <span class="dropdown-text">Dictation</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/audiation.html">
+ <span class="dropdown-text">Hear, Compare, Translate</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice.html">
+ <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-rhythm-assessment.html">
+ <span class="dropdown-text">LSA Rhythm Assessment</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Tune Assessment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment.html">
+ <span class="dropdown-text">Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../tools/index.html">
+ <span class="dropdown-text">All tools</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Play with a band</li>
+        <li>
+    <a class="dropdown-item" href="../tools/backing-track.html">
+ <span class="dropdown-text">Backing Track</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../styles/index.html">
+ <span class="dropdown-text">Style Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/accomp-styles.html">
+ <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/sequencers.html">
+ <span class="dropdown-text">Sequencers &amp; Arpeggiators</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/arranger.html">
+ <span class="dropdown-text">Style Arranger</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/polyrhythm.html">
+ <span class="dropdown-text">Polyrhythm</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Chords and harmony</li>
+        <li>
+    <a class="dropdown-item" href="../tools/chord-library.html">
+ <span class="dropdown-text">Chord Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-entry.html">
+ <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chords-solfege.html">
+ <span class="dropdown-text">Chords and Solfège</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Scales and reading</li>
+        <li>
+    <a class="dropdown-item" href="../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/scale-patterns.html">
+ <span class="dropdown-text">Scale Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/part-reader.html">
+ <span class="dropdown-text">Part Reader</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/classical-themes.html">
+ <span class="dropdown-text">Classical Themes</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Write music down</li>
+        <li>
+    <a class="dropdown-item" href="../tools/notation.html">
+ <span class="dropdown-text">Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation-rules.html">
+ <span class="dropdown-text">Notation Rules</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Learn from a recording</li>
+        <li>
+    <a class="dropdown-item" href="../tools/timestamp-notes.html">
+ <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-along.html">
+ <span class="dropdown-text">Tap Along</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-latency.html">
+ <span class="dropdown-text">Tap Latency</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chunk-practice.html">
+ <span class="dropdown-text">Chunk Practice</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Voice</li>
+        <li>
+    <a class="dropdown-item" href="../tools/vocal-warmup.html">
+ <span class="dropdown-text">Vocal Warm-up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/ipa-chart.html">
+ <span class="dropdown-text">IPA Chart for Singers</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Guitar and bass</li>
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-tuning.html">
+ <span class="dropdown-text">Tune Your Guitar by Ear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-setup-check.html">
+ <span class="dropdown-text">Guitar and Bass Setup Check</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-in.html">
+ <span class="dropdown-text">Guitar Input Check</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mis-gear" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">MIS Gear</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-mis-gear">    
+        <li>
+    <a class="dropdown-item" href="../gear/index.html">
+ <span class="dropdown-text">MIS Gear</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../gear/x32-drums-dca.html">
+ <span class="dropdown-text">X32: Drums on One Fader</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/using-a-mic.html">
+ <span class="dropdown-text">Using a Mic: A Guide for Speakers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/modx.html">
+ <span class="dropdown-text">Yamaha MODX</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/modx-band.html">
+ <span class="dropdown-text">Play the Band on the MODX</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teacher" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teacher</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teacher">    
+        <li>
+    <a class="dropdown-item" href="../teacher/session-builder.html">
+ <span class="dropdown-text">Session Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/report.html">
+ <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-directory.html">
+ <span class="dropdown-text">LSA Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-instructions.html">
+ <span class="dropdown-text">LSA Instructions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-chart.html">
+ <span class="dropdown-text">Evaluation Chart</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-analysis.html">
+ <span class="dropdown-text">LSA Data Analysis</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../theory/pitch-basics.html">Hutchinson, Music Theory for the 21st-Century Classroom</a></li><li class="breadcrumb-item"><a href="../theory/pitch-basics.html">1. Basic Concepts</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Theory</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Drills and Exercises</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/theory-drills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Theory Drills</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/exercise-builder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise Builder</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Concepts</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/modes-three-ways.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modes: Three Meanings of One Word</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/meter-taxonomy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Time Signatures: Two Ways to Sort Them</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Hutchinson, Music Theory for the 21st-Century Classroom</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/pitch-basics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">1. Basic Concepts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/major-scales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Major Scales and Key Signatures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/minor-scales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Minor Scales and Key Signatures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/rhythm-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Basics of Rhythm</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/intervals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Intervals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/triads.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Triads</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/roman-numerals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Roman Numerals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/seventh-chords.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Seventh Chords</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/progressions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Harmonic Progression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/non-chord-tones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Non-Chord Tones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/melodic-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Melodic Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/pop-forms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Form in Popular Music</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/accompaniment-textures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Accompanimental Textures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/figured-bass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Figured Bass</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/secondary-dominants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Secondary Dominants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/secondary-diminished.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Secondary Diminished Chords</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/mode-mixture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Mode Mixture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/neapolitan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. The Neapolitan Chord</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/augmented-sixths.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Augmented Sixth Chords</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/modulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Modulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/jazz-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">31. Jazz Theory</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../theory/analysed-scores/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysed Scores</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/modulation-finder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modulation Finder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/bach-o-haupt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bach: “O Haupt voll Blut und Wunden”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/beethoven-moonlight-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Beethoven: “Moonlight” Sonata, I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/reger-modulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reger: On the Theory of Modulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/rimsky-korsakov-harmony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rimsky-Korsakov: Practical Manual of Harmony</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/tchaikovsky-harmony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tchaikovsky: Guide to the Practical Study of Harmony</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/aldwell-schachter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aldwell and Schachter: Harmony and Voice Leading</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/kostka-payne.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kostka and Payne: Tonal Harmony</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#what-you-know-what-the-book-calls-it" id="toc-what-you-know-what-the-book-calls-it" class="nav-link active" data-scroll-target="#what-you-know-what-the-book-calls-it">What you know → what the book calls it</a></li>
+  <li><a href="#pitch-and-the-staff" id="toc-pitch-and-the-staff" class="nav-link" data-scroll-target="#pitch-and-the-staff">1.1–1.2 Pitch and the staff</a></li>
+  <li><a href="#octave-registers" id="toc-octave-registers" class="nav-link" data-scroll-target="#octave-registers">1.3 Octave registers</a></li>
+  <li><a href="#accidentals-and-enharmonic-notes" id="toc-accidentals-and-enharmonic-notes" class="nav-link" data-scroll-target="#accidentals-and-enharmonic-notes">1.4–1.5 Accidentals and enharmonic notes</a></li>
+  <li><a href="#bridging-from-syllables-to-letters" id="toc-bridging-from-syllables-to-letters" class="nav-link" data-scroll-target="#bridging-from-syllables-to-letters">Bridging: from syllables to letters</a></li>
+  <li><a href="#check-yourself" id="toc-check-yourself" class="nav-link" data-scroll-target="#check-yourself">Check yourself</a></li>
+  <li><a href="#works-cited" id="toc-works-cited" class="nav-link" data-scroll-target="#works-cited">Works Cited</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<!-- Auth: injects sign-in controls into the navbar right side via JS.
+     No visible strip — auth lives in a navbar dropdown instead. -->
+<script>
+function _authEsc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function authSignIn() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signInWithPassword({ email, password: pass });
+  if (error) alert(error.message); else location.reload();
+}
+async function authSignUp() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signUp({ email, password: pass });
+  alert(error ? error.message : 'Account created — now sign in.');
+}
+async function authGoogle() {
+  await window.sb.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin + window.location.pathname }
+  });
+}
+async function authSignOut() {
+  await window.sb.auth.signOut();
+  location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+  let session = null;
+  try {
+    const { data } = await window.sb.auth.getSession();
+    session = data.session;
+  } catch (e) {}
+
+  // Find the navbar collapse container and append a right-side auth nav list
+  const collapse = document.getElementById('navbarCollapse')
+    || document.querySelector('.navbar-collapse');
+  if (!collapse) return;
+
+  const ul = document.createElement('ul');
+  ul.className = 'navbar-nav ms-auto';
+  ul.id = 'navbar-auth';
+
+  if (session) {
+    const u = session.user;
+    const name = (u.user_metadata && u.user_metadata.full_name)
+      ? u.user_metadata.full_name.split(' ')[0]
+      : u.email.split('@')[0];
+    ul.innerHTML =
+      '<li class="nav-item dropdown">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" aria-expanded="false">' +
+          _authEsc(name) +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end">' +
+          '<li><span class="dropdown-item-text auth-email-label">' +
+            _authEsc(u.email) +
+          '</span></li>' +
+          '<li><hr class="dropdown-divider"></li>' +
+          '<li><button class="dropdown-item" onclick="authSignOut()">Sign out</button></li>' +
+        '</ul>' +
+      '</li>';
+  } else {
+    ul.innerHTML =
+      '<li class="nav-item dropdown" id="auth-signin-item" hidden>' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
+          'Sign in' +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end auth-signin-menu">' +
+          '<li>' +
+            '<input id="auth-email" type="email" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Email"' +
+            '       onkeydown="if(event.key===\'Enter\')document.getElementById(\'auth-pass\').focus()">' +
+            '<input id="auth-pass" type="password" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Password"' +
+            '       onkeydown="if(event.key===\'Enter\')authSignIn()">' +
+            '<button class="btn btn-primary btn-sm w-100 mb-2" onclick="authSignIn()">Sign in</button>' +
+            '<button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="authSignUp()">Create account</button>' +
+            '<hr class="my-1">' +
+            '<button class="btn btn-outline-secondary btn-sm w-100" onclick="authGoogle()">Sign in with Google</button>' +
+          '</li>' +
+        '</ul>' +
+      '</li>';
+  }
+
+  collapse.appendChild(ul);
+});
+</script>
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../theory/pitch-basics.html">Hutchinson, Music Theory for the 21st-Century Classroom</a></li><li class="breadcrumb-item"><a href="../theory/pitch-basics.html">1. Basic Concepts</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Pitch Notation from Do: Letter Names, Clefs and Accidentals</h1>
+</div>
+
+<div>
+  <div class="description">
+    Chapter 1 of Hutchinson’s Music Theory for the 21st-Century Classroom for students who already read and write with movable do: letter names, clefs, octave registers, accidentals and enharmonic notes as names for the staff they already read.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<link rel="stylesheet" href="../apps/shared/drills/drills.css?v=4">
+<script src="../apps/shared/soundfont.js"></script>
+<script src="../apps/shared/abcjs-basic.js?v=3"></script>
+<script src="../apps/shared/lessons/abc-ex.js?v=15"></script>
+<script src="../apps/shared/drills/drills.js?v=14"></script>
+<script src="../apps/shared/section-fold.js?v=1"></script>
+<p>This page goes with <strong>Chapter 1, Basic Concepts</strong> of Robert Hutchinson’s open textbook <a href="https://musictheory.pugetsound.edu/mt21c/BasicConcepts.html"><em>Music Theory for the 21st-Century Classroom</em></a>.</p>
+<p><strong>You already know this.</strong> You read and write tonal patterns on the staff: you find do from the do signature and read the rest from there. This chapter gives every line and space a fixed <strong>letter name</strong>. Gordon calls letter names “the alphabet of music”: knowing them is not the same as audiating, but once you can already read, they explain the notation you understand (Gordon 36–37). That is the order you have learned in: sound first, then syllables, now letters.</p>
+<p>Press ▶ to hear an example, or <strong>▶ Sing</strong> to hear it sung on syllables. Click any heading to fold its section.</p>
+<section id="what-you-know-what-the-book-calls-it" class="level2">
+<h2 class="anchored" data-anchor-id="what-you-know-what-the-book-calls-it">What you know → what the book calls it</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>You say (MLT)</th>
+<th>The book says (Hutchinson ch.&nbsp;1)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>do, re, mi … (they move with the do signature)</td>
+<td>letter names A–G (they never move)</td>
+</tr>
+<tr class="even">
+<td>“do is on the second line”</td>
+<td>“do is G”, the letter of that line</td>
+</tr>
+<tr class="odd">
+<td>the same pattern sung higher or lower</td>
+<td>the same letters in a different octave register (C4, C5 …)</td>
+</tr>
+<tr class="even">
+<td>a note outside the tonality (a chromatic)</td>
+<td>a note with an accidental (♯ ♭ ♮)</td>
+</tr>
+<tr class="odd">
+<td>one sound, two spellings</td>
+<td>enharmonic notes (F♯ = G♭)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pitch-and-the-staff" class="level2">
+<h2 class="anchored" data-anchor-id="pitch-and-the-staff">1.1–1.2 Pitch and the staff</h2>
+<p>The book’s first sections cover what you already use: higher and lower sounds, the five-line staff, and the <strong>clefs</strong> that fix which line is which letter. <a href="https://musictheory.pugetsound.edu/mt21c/Pitch.html">Read 1.1</a> · <a href="https://musictheory.pugetsound.edu/mt21c/Notation.html">Read 1.2</a></p>
+<p><strong>Syllables move, letters stay.</strong> Your syllables are tied to do: move the do signature and every syllable moves with it. Letters are tied to the clef: in treble clef the second line is always G, whatever the signature. So the question changes from <em>“where is do?”</em> to <em>“what letter is do on?”</em></p>
+<section id="a-notes-name-and-a-notes-job" class="level3">
+<h3 class="anchored" data-anchor-id="a-notes-name-and-a-notes-job">A note’s name and a note’s job</h3>
+<p>A <strong>letter name</strong> is a note’s <strong>name</strong>: G is G in every key, in every piece. A <strong>syllable</strong> is the note’s <strong>job</strong> in the music you’re hearing: home (do), the dominant (so), the leading tone that pulls home (ti). Change the key and the same note gets a new job.</p>
+<p>The circle of fifths shows both at once. The outer ring is the letters, and they never move. The inner ring is the syllables. Pick a new key with the menu, or click a letter on the wheel, and watch the syllables turn while the letters stay put. Follow one note, say G: it’s <strong>so</strong> in C, <strong>do</strong> in G, <strong>re</strong> in F, <strong>ti</strong> in A♭. The note keeps its name and changes its job.</p>
+<div class="cof-widget" data-rings="notes,syllables" data-picker="key" data-change="key" data-size="380" data-sound="false" style="margin:1rem auto">
+
+</div>
+<p>The same works for the book’s other names. Choose scale degrees as the note names (in the Drone or Circle settings), and the inner ring shows 1̂ to 7̂ instead: degree numbers are jobs too.</p>
+<p>Here is a tonic pattern, do–mi–so–mi–do, in the treble clef and in the bass clef. Same syllables, same letters, an octave apart:</p>
+<div class="abc-ex" data-bpm="90">
+<script type="text/plain">
+X:1
+T:Treble clef: do is C (middle C)
+M:4/4
+L:1/4
+K:C
+C E G E | C4 |]
+w:C E G E C
+</script>
+</div>
+<div class="abc-ex" data-bpm="90">
+<script type="text/plain">
+X:1
+T:Bass clef: the same letters an octave lower
+M:4/4
+L:1/4
+K:C clef=bass
+C, E, G, E, | C,4 |]
+w:C E G E C
+</script>
+</div>
+<p><strong>A way in from what you know.</strong> The letters run A B C D E F G and start again. Sing do re mi fa so la ti do in C and say the letters instead: C D E F G A B C. In the key of C, <em>do re mi</em> and <em>C D E</em> line up, which makes C a good place to learn the letters.</p>
+</section>
+<section id="practise-name-the-note" class="level3">
+<h3 class="anchored" data-anchor-id="practise-name-the-note">Practise: name the note</h3>
+<p>Treble and bass clef, no accidentals. Open <strong>Settings</strong> to add ledger lines and accidentals.</p>
+<div class="drill" data-ex="note" data-settings="clef=treble,bass&amp;ledger=0&amp;acc=none">
+
+</div>
+</section>
+</section>
+<section id="octave-registers" class="level2">
+<h2 class="anchored" data-anchor-id="octave-registers">1.3 Octave registers</h2>
+<p>The same letter comes back every eight notes. The book tells them apart with a number: <strong>middle C is C4</strong>, the C an octave above is C5, and each number runs from C up to the B above it. <a href="https://musictheory.pugetsound.edu/mt21c/OctaveRegisters.html">Read 1.3</a></p>
+<p>You already know this as “the same pattern, higher”. In the two examples above, the treble pattern starts on C4 and the bass pattern on C3.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The same registers in ABC and LilyPond
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Text notations write the register with letter case and marks instead of a number.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Note</th>
+<th>ABC</th>
+<th>LilyPond (absolute)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C2</td>
+<td><code>C,,</code></td>
+<td><code>c,</code></td>
+</tr>
+<tr class="even">
+<td>C3</td>
+<td><code>C,</code></td>
+<td><code>c</code></td>
+</tr>
+<tr class="odd">
+<td><strong>C4 (middle C)</strong></td>
+<td><strong><code>C</code></strong></td>
+<td><strong><code>c'</code></strong></td>
+</tr>
+<tr class="even">
+<td>C5</td>
+<td><code>c</code></td>
+<td><code>c''</code></td>
+</tr>
+<tr class="odd">
+<td>C6</td>
+<td><code>c'</code></td>
+<td><code>c'''</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>ABC:</strong> a capital letter is the octave from middle C (C4–B4) and a lower-case letter the octave above (C5–B5). Each <code>,</code> takes a note down an octave and each <code>'</code> takes it up one. The C major scale from middle C is <code>C D E F G A B c</code>.</li>
+<li><strong>LilyPond:</strong> a plain letter is the octave <em>below</em> middle C (C3–B3), and each <code>'</code> or <code>,</code> moves it an octave, so middle C is <code>c'</code>. The same scale is <code>c' d' e' f' g' a' b' c''</code>.</li>
+<li><strong>The trap:</strong> LilyPond’s plain <code>c</code> is C3 but ABC’s plain <code>C</code> is C4, so the same-looking letter is an octave apart.</li>
+<li>LilyPond’s <code>\relative</code> mode (common in published files) works differently: each note is placed nearest the note before it, and <code>'</code> or <code>,</code> only marks a jump of more than a fourth.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="accidentals-and-enharmonic-notes" class="level2">
+<h2 class="anchored" data-anchor-id="accidentals-and-enharmonic-notes">1.4–1.5 Accidentals and enharmonic notes</h2>
+<p>A <strong>sharp</strong> (♯) raises a note a half step, a <strong>flat</strong> (♭) lowers it, and a <strong>natural</strong> (♮) cancels either. In a key signature they apply to the whole piece; written in the music, to the rest of the bar. <a href="https://musictheory.pugetsound.edu/mt21c/Accidentals.html">Read 1.4</a> · <a href="https://musictheory.pugetsound.edu/mt21c/EnharmonicNotes.html">Read 1.5</a></p>
+<p><strong>From what you know.</strong> A key signature’s sharps and flats are what put the half steps on mi–fa and ti–do (see <a href="../theory/major-scales.html">Chapter 2</a>). An accidental <em>in the music</em> marks a note outside that pattern, a chromatic. You hear it as a new syllable: in harmonic minor, so is raised to <strong>si</strong> (Gordon 70), and the music shows it with a sharp or natural.</p>
+<p><strong>Enharmonic</strong> notes sound the same but are spelled differently: F♯ and G♭, or B and C♭. Which spelling is right depends on the key, just as which syllable is right depends on the tonality. In D major, the note between F and G is F♯, because D major is spelled with one of each letter: D E F♯ G A B C♯.</p>
+<p><strong>Where the book and MLT see this differently.</strong> Gordon warns against learning letters, accidentals and key signatures <em>before</em> audiating (Gordon 36–37, 65). You haven’t: you’re learning them now, as names for music you can already read.</p>
+</section>
+<section id="bridging-from-syllables-to-letters" class="level2">
+<h2 class="anchored" data-anchor-id="bridging-from-syllables-to-letters">Bridging: from syllables to letters</h2>
+<ol type="1">
+<li><strong>Find do and name it.</strong> “Do signature of two sharps: do is on D.”</li>
+<li><strong>Sing the pattern on syllables</strong>, then again on letters: do mi so → D F♯ A.</li>
+<li><strong>Every letter in the signature is altered everywhere.</strong> In two sharps, every F and every C is sharp, in any octave.</li>
+<li><strong>Write in both clefs.</strong> Write the pattern in treble, then an octave lower in bass. The letters stay the same; the lines and spaces change.</li>
+</ol>
+</section>
+<section id="check-yourself" class="level2">
+<h2 class="anchored" data-anchor-id="check-yourself">Check yourself</h2>
+<ol type="1">
+<li>Treble clef: what letter is the second line? Bass clef: what letter is the fourth line?</li>
+<li>Do is on G. Sing do–mi–so. What are the letters?</li>
+<li>Which C is middle C, as an octave register?</li>
+<li>Give the enharmonic spelling of D♯.</li>
+<li>Two sharps are F♯ and C♯. With do on D, which syllable is C♯?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Answers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>G (treble), F (bass).</li>
+<li>G B D.</li>
+<li>C4.</li>
+<li>E♭.</li>
+<li>Ti.</li>
+</ol>
+</div>
+</div>
+</div>
+<p>All the note drills are on <a href="theory-drills.qmd?ex=note">Theory Drills</a>. Next: <a href="../theory/major-scales.html">Major Scales and Key Signatures</a>.</p>
+</section>
+<section id="works-cited" class="level2">
+<h2 class="anchored" data-anchor-id="works-cited">Works Cited</h2>
+<!-- works-cited: written by scripts/works-cited.py -->
+<div class="works-cited">
+<p>Gordon, Edwin E. <em>Learning Sequences in Music: A Contemporary Music Learning Theory</em>. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp.&nbsp;111–117), the verbal association warning (p.&nbsp;108), generalization-aural/oral and -verbal (pp.&nbsp;131–133); same is easier to hear than different (p.&nbsp;219); tonal and rhythm patterns kept apart (p.&nbsp;223); rhythm patterns chanted with vocal inflection like speech (p.&nbsp;101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp.&nbsp;187–190).; Theory Concepts pages: Keyality versus key signature (p.&nbsp;xiii); tonality “best refers to what is usually called a mode,” the eight tonalities (p.&nbsp;149); movable-do with la-based minor and the rhythm syllables du de, du da di (p.&nbsp;105); resting tone and tonic, a tonality in any keyality (p.&nbsp;150); unitonal and multitonal music (pp.&nbsp;152, 157); usual duple, triple and combined meter (pp.&nbsp;175–176); no direct relation between measure signatures and meter, 6/8 as “duple compound” called inaccurate (p.&nbsp;176); accents and microbeat divisions do not make meter (pp.&nbsp;176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp.&nbsp;179–180); key signatures as do signatures, one signature for many tonalities (pp.&nbsp;155–156); rhythm syllables by beat function (p.&nbsp;86); time-value names lead to counting (p.&nbsp;38); writing tonal patterns from a familiar do signature (p.&nbsp;125); letter names and time-value names as the alphabet of music (pp.&nbsp;36–37); interval names learned in context of tonality and keyality (p.&nbsp;65); the raised seventh of harmonic minor as si (p.&nbsp;70); mi si ti re as a harmonic minor dominant pattern (p.&nbsp;100).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp.&nbsp;3, 9); notation as a window (p.&nbsp;8); patterns as units of meaning (pp.&nbsp;99–100); the aural/oral level and the pause (pp.&nbsp;101–102); discrimination and inference learning, theory delayed (p.&nbsp;106); levels of the skill learning sequence (from pp.&nbsp;111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp.&nbsp;230–231).</p>
+<p>Hutchinson, Robert. “Basic Concepts.” <em>Music Theory for the 21st-Century Classroom</em>, University of Puget Sound, <a href="https://musictheory.pugetsound.edu/mt21c/BasicConcepts.html">musictheory.pugetsound.edu/mt21c/BasicConcepts.html</a>. Chapter 1: pitch, notation and clefs, octave registers, accidentals, enharmonic notes.</p>
+<p><strong>For teachers</strong></p>
+<p>LilyPond Development Team. “Writing pitches.” <em>LilyPond Notation Reference</em>, version 2.24, <a href="https://lilypond.org/doc/v2.24/Documentation/notation/writing-pitches">lilypond.org/doc/v2.24/Documentation/notation/writing-pitches</a>.</p>
+<p>Walshaw, Chris, editor. “The abc Music Standard 2.1.” <em>abcnotation.com</em>, 2011. <a href="https://abcnotation.com/wiki/abc:standard:v2.1">abcnotation.com/wiki/abc:standard:v2.1</a>.</p>
+</div>
+<!-- /works-cited -->
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../track.js"></script>
+<!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
+     (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/degree-caret.js?v=2"></script>
+<script src="../apps/shared/circle-of-fifths.js?v=2"></script>
+<script src="../apps/shared/practice-widgets.js?v=9"></script>
+<!-- A button at the left of the navbar that folds the docked sidebar away on
+     every page, and remembers the choice. Below 992px Quarto already tucks the
+     sidebar behind its own toggle, so the button is hidden there. -->
+<script>
+(function () {
+  "use strict";
+
+  var KEY = 'site-nav';
+
+  function boot() {
+    var bar = document.querySelector('#quarto-header .navbar-container');
+    if (!bar || !document.getElementById('quarto-sidebar')) return;
+
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'sidebar-toggle';
+    var icon = document.createElement('i');
+    icon.className = 'bi bi-layout-sidebar';
+    button.appendChild(icon);
+    bar.insertBefore(button, bar.firstChild);
+
+    function set(hidden) {
+      document.body.classList.toggle('sidebar-hidden', hidden);
+      var label = hidden ? 'Show menu' : 'Hide menu';
+      button.title = label;
+      button.setAttribute('aria-label', label);
+      button.setAttribute('aria-expanded', String(!hidden));
+    }
+
+    try { set(localStorage.getItem(KEY) === 'hidden'); }
+    catch (e) { set(false); }
+
+    button.addEventListener('click', function () {
+      var hidden = !document.body.classList.contains('sidebar-hidden');
+      set(hidden);
+      try { localStorage.setItem(KEY, hidden ? 'hidden' : 'shown'); } catch (e) {}
+      button.blur();
+      // Anything laid out against the old width (the player's splitter) re-measures.
+      window.dispatchEvent(new Event('resize'));
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
+</script>
+<!-- Marks the navbar tab whose link is this page with .nav-current, so only
+     that tab is coloured. Quarto's own .active also lights a tab for pages
+     beneath it, which is quietened in the stylesheet. -->
+<script>
+(function () {
+  "use strict";
+  function norm(path) { return path.replace(/\/index\.html$/, '/').replace(/\.html$/, ''); }
+  function boot() {
+    var here = norm(location.pathname);
+    // A dropdown tab's own link is "#" (it would match every page): it is current when its menu holds this page.
+    function isHere(a) {
+      var h = a.getAttribute('href');
+      if (!h || h.charAt(0) === '#') return false;
+      return norm(new URL(h, location.href).pathname) === here;
+    }
+    document.querySelectorAll('#quarto-header .navbar-nav .nav-link[href]').forEach(function (a) {
+      var menu = a.classList.contains('dropdown-toggle') && a.parentNode.querySelector('.dropdown-menu');
+      var current = menu ? Array.prototype.some.call(menu.querySelectorAll('a.dropdown-item[href]'), isHere) : isHere(a);
+      if (current) {
+        a.classList.add('nav-current');
+        a.setAttribute('aria-current', 'page');
+      } else {
+        a.classList.remove('nav-current');
+        a.removeAttribute('aria-current');
+      }
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../theory/meter-taxonomy.html" class="pagination-link" aria-label="Time Signatures: Two Ways to Sort Them">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Time Signatures: Two Ways to Sort Them</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../theory/major-scales.html" class="pagination-link" aria-label="2. Major Scales and Key Signatures">
+        <span class="nav-page-text">2. Major Scales and Key Signatures</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -36,7 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../practice/patterns.html" rel="next">
+<link href="../practice/tune-directory.html" rel="next">
 <link href="../practice/songs.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -200,6 +200,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../practice/tunes.html">
  <span class="dropdown-text">Tunes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tune-directory.html">
+ <span class="dropdown-text">Tune Directory</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../practice/patterns.html">
@@ -510,6 +514,12 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
   <div class="sidebar-item-container"> 
   <a href="../practice/tunes.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Tunes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../practice/tune-directory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tune Directory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -932,6 +942,12 @@ document.addEventListener('DOMContentLoaded', async function () {
             // restore the last-viewed tune (so we return where we left off, same key)
             let saved = null; try { saved = JSON.parse(localStorage.getItem("tunesLast")); } catch (e) {}
             if (saved && tunesObject[saved.c]) selectCollection.value = saved.c;
+            // ?tune=<%%id> (from the Tune Directory and the Recordings panel) opens that tune, wherever it is
+            const want = new URLSearchParams(location.search).get("tune");
+            if (want) for (const key in tunesObject) {
+                const at = String(tunesObject[key]).split(/\n(?=X:)/).filter((t) => /^\s*X:/.test(t)).findIndex((t) => new RegExp("^%%id\\s+" + want.replace(/[^\w-]/g, "") + "\\s*$", "m").test(t));
+                if (at >= 0) { selectCollection.value = key; saved = { c: key, i: at, t: 0 }; break; }
+            }
             refreshSongbook(tunesObject[selectCollection.value]);
             if (saved) {
                 const ts = document.getElementById("tune-selector");
@@ -1055,6 +1071,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             synthControl.disable(true);
 
             const visualObj = ABCJS.renderAbc("paper", abcString, abcOptions)[0];
+            if (window.Works) Works.mount(document.getElementById("tune-works"), "tune", (/^%%id\s+(\S+)/m.exec(abc[currentTune]) || [])[1]);
             document.querySelector(".midi").innerHTML = ABCJS.synth.getMidiFile(abc[currentTune]);
 
             let midiTransposeHalfSteps = visualTransposeHalfSteps +
@@ -1111,6 +1128,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             <div class="midi">MIDI</div>
             <div id="paper"></div>
             <div id="audio"></div>
+            <div id="tune-works" hidden=""></div>
             <button class="next">Next Tune</button>
             <br>
             <div class="inflow">
@@ -1196,8 +1214,10 @@ document.addEventListener('DOMContentLoaded', async function () {
         </main>
     </div>
     <script src="../apps/shared/soundfont.js"></script>
-    <script src="../apps/shared/abcjs-basic.js?v=2"></script>
+    <script src="../apps/shared/abcjs-basic.js?v=3"></script>
     <script src="../apps/tunes/tunes-object.js"></script>
+    <script src="../apps/shared/works/works-data.js?v=1"></script>
+    <script src="../apps/shared/works/works.js?v=1"></script>
     <script src="../apps/shared/cursor-synth.js"></script>
     <script src="../apps/shared/tonality.js?v=10"></script>
     <script src="../apps/shared/audio.js?v=10"></script>
@@ -1229,8 +1249,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 <!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
      (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
 <script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/degree-caret.js?v=2"></script>
 <script src="../apps/shared/circle-of-fifths.js?v=2"></script>
-<script src="../apps/shared/practice-widgets.js?v=8"></script>
+<script src="../apps/shared/practice-widgets.js?v=9"></script>
 <!-- A button at the left of the navbar that folds the docked sidebar away on
      every page, and remembers the choice. Below 992px Quarto already tucks the
      sidebar behind its own toggle, so the button is hidden there. -->
@@ -1718,8 +1739,8 @@ document.addEventListener('DOMContentLoaded', async function () {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../practice/patterns.html" class="pagination-link" aria-label="Tonal Patterns">
-        <span class="nav-page-text">Tonal Patterns</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../practice/tune-directory.html" class="pagination-link" aria-label="Tune Directory">
+        <span class="nav-page-text">Tune Directory</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

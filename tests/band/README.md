@@ -18,6 +18,7 @@ Folders keep the names of the worker that wrote them.
 | `meter/` | `t_stop.js` | stop time: one hit, silence on beat 2, bass lead-in |
 | `move/` | `t_move.js`, `t_combo.js` | moving voicings, sixth-diminished style, maj7 as 6, Auto, bass variation; combined voicing styles |
 | `sheet/` | `fingerings.test.js` | Chord Sheet guitar and piano fingerings, hand split |
+| `practice/` | `t_written.js` | a part written out on a bar (`bar.written`): played there instead of made up, empty list rests, transposed |
 | `practice/` | `t_between.js` | the bars a session generates: an intro of chosen form bars, the break between repeats (click, vamp, last bars, chosen bars), tempo steps before it, none after the last pass or in hold mode |
 | `agent-c/`, `sheet/` | `voicings.test.js`, `piano-styles.test.js` | shared voicing library (`sheet/` has the current style lists) |
 | (top) | `phrase.test.js` | BandPhrase: stored phrases with velocity, resolve/schedule, ABC (bar lengths, triplets, ties, dynamics, accents, drum map) |

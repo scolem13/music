@@ -37,5 +37,5 @@
 - Timed ChordPro (`chordpro-timing.js`, `TsChordProTiming`): Save as ChordPro writes the ChordPro box with `x_` directives
   (`x_at` after each heading = its section stamp, `x_bars` bar starts in s with `/n` for a meter change, `x_note`, `x_section`,
   `x_source`, `x_beats_per_bar`); Open file / Paste read it back (an untimed .cho opens as words only). SALAMI chords files
-  (McGill Billboard `salami_chords.txt`, `salami-chords.js`, `SalamiChords`) open the same way; its hooks route both.
+  (McGill Billboard `salami_chords.txt`, `salami-chords.js`, `SalamiChords`) open the same way; its hooks route both. The whole Billboard set (CC0; 739 songs, the 151 second annotations of a song left out; each with its chords as Roman numerals for the Tune Directory's Functions / Progression) is copied to `apps/shared/data/billboard/<id>.txt` + `index.json` by `node scripts/billboard-import.mjs` (from ~/Projects/corpora/billboard): "Billboard…" beside Paste… searches and opens one, `?salami=<id>` opens one from a link (the Tune Directory lists them all); no audio comes with them.
   The big clock is its own part (`clock-panel.js`, #ts-clock, Float), `data-num-edit="off"` so num-edit.js leaves it alone.

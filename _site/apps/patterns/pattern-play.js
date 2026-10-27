@@ -11,7 +11,7 @@
   function singer() {
     if (global.SolfegeSing) return Promise.resolve(global.SolfegeSing);
     return singJs || (singJs = new Promise(function (res, rej) {
-      var need = [global.AbcCore ? null : "/apps/shared/abc-core.js?v=3", global.AbcEvents ? null : "/apps/shared/abc-events.js?v=3", "/apps/shared/solfege-sing.js?v=3"].filter(Boolean);
+      var need = [global.AbcCore ? null : "/apps/shared/abc-core.js?v=3", global.AbcEvents ? null : "/apps/shared/abc-events.js?v=4", "/apps/shared/solfege-sing.js?v=3"].filter(Boolean);
       (function next() { if (!need.length) return res(global.SolfegeSing);
         var sc = document.createElement("script"); sc.src = need.shift(); sc.onload = next; sc.onerror = function () { singJs = null; rej(); }; document.head.appendChild(sc); })();
     }));

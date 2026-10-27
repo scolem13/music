@@ -1,0 +1,178 @@
+---
+title: "Intervals from the Patterns You Sing"
+toc: true
+toc-depth: 2
+description: "Chapter 5 of Hutchinson's Music Theory for the 21st-Century Classroom for students who already sing and read tonal patterns with movable do: interval number and quality, inversion, augmented and diminished intervals, named from syllable pairs they already know."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
+<script src="/apps/shared/lessons/abc-ex.js?v=15"></script>
+<script src="/apps/shared/drills/drills.js?v=14"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+This page goes with **Chapter 5, Intervals** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/Intervals.html).
+
+**You already know this.** Every tonal pattern you sing is made of intervals: do–mi, mi–so, so–do. An **interval** is the distance
+between two of those pitches. This chapter gives each distance a name.
+
+**A caution from Gordon.** He argues that intervals should be learned *in a tonality and keyality*, not as bare distances: patterns
+of three to five pitches carry meaning, while an interval is only two, and C up to F sounds different in F than in C (Gordon 65).
+So on this page every interval starts as a pair of syllables inside a pattern you know.
+
+Press ▶ to hear an example, or **▶ Sing** to hear it sung on syllables. Click any heading to fold its section.
+
+## What you know → what the book calls it
+
+| You sing | The book says |
+|---|---|
+| do–re, re–mi | major 2nd (M2), a whole step |
+| mi–fa, ti–do | minor 2nd (m2), a half step |
+| do–mi, fa–la, so–ti | major 3rd (M3) |
+| re–fa, mi–so, la–do | minor 3rd (m3) |
+| do–fa, so–do | perfect 4th (P4) |
+| do–so, re–la, la–mi | perfect 5th (P5) |
+| fa–ti (up) | augmented 4th (A4), the tritone |
+| ti–fa (up) | diminished 5th (d5), the tritone |
+| do–do | perfect octave (P8) |
+
+## 5.1 Number: count the letters
+
+[Read 5.1](https://musictheory.pugetsound.edu/mt21c/IntervalsIntroduction.html)
+
+The **number** of an interval counts letters, including both ends: C to E is C D E, a **3rd**. In syllables, count the same way:
+do re mi is a 3rd. The number doesn't care about sharps or flats: C to E♭ and C to E♯ are both 3rds.
+
+**Melodic** intervals are one note after the other (as you sing them); **harmonic** intervals sound together.
+
+## 5.2 Quality: major, minor, perfect
+
+[Read 5.2](https://musictheory.pugetsound.edu/mt21c/HowToIdentifyIntervals.html)
+
+The book's method measures from the lower note, as if it were **do** of a major scale:
+
+- If the top note is in that major scale, the interval is **major** (2nds, 3rds, 6ths, 7ths) or **perfect** (unisons, 4ths, 5ths,
+  octaves).
+- If the top note is a half step lower than that, a major interval becomes **minor**.
+
+You already have this: think the lower note as do, sing up to the top note, and ask whether you passed through the major scale's
+notes. Up from do, every interval is major or perfect:
+
+<div class="abc-ex" data-bpm="80"><script type="text/plain">
+X:1
+T:Up from do: M2, M3, P4, P5, M6, M7, P8
+M:2/4
+L:1/4
+K:C
+C D | C E | C F | C G | C A | C B | C c |]
+w:do re do mi do fa do so do la do ti do do
+</script></div>
+
+The minor intervals come from inside your patterns. These are the ones you sing most:
+
+<div class="abc-ex" data-bpm="80"><script type="text/plain">
+X:1
+T:Minor intervals in patterns you know: m2, m3, m3, m6, m7
+M:2/4
+L:1/4
+K:C
+E F | D F | A, C | E c | D c |]
+w:mi fa re fa la do mi do re do
+</script></div>
+
+**Counting half steps** also works and is a good check: m2 = 1, M2 = 2, m3 = 3, M3 = 4, P4 = 5, A4/d5 = 6, P5 = 7, m6 = 8, M6 = 9,
+m7 = 10, M7 = 11, P8 = 12.
+
+### Practise: name the interval
+
+Start with the intervals up from do, then add the minor ones under **Settings**. Set **Show** to *Sound only* for ear training.
+
+<div class="drill" data-ex="interval" data-settings="ints=M2,M3,P4,P5,M6,M7,P8&clef=treble&start=natural&dir=up&shape=melodic"></div>
+
+## 5.3 Writing intervals
+
+[Read 5.3](https://musictheory.pugetsound.edu/mt21c/HowToWriteIntervals.html)
+
+To write "a M6 above F": make F do, sing up to la (do re mi fa so la), and write the letter: F G A B♭ C **D**. For a minor interval,
+write the major one and lower the top note a half step: a m6 above F is D♭.
+
+## 5.4 Inversion
+
+[Read 5.4](https://musictheory.pugetsound.edu/mt21c/InversionOfIntervals.html)
+
+Flip an interval by moving the bottom note up an octave. You already sing both halves: do up to mi is a M3, and mi up to do is a
+m6. The rules:
+
+- The numbers add to **9**: a 3rd inverts to a 6th, a 2nd to a 7th, a 4th to a 5th.
+- **Major ↔ minor**, **perfect stays perfect**, **augmented ↔ diminished**.
+
+<div class="abc-ex" data-bpm="80"><script type="text/plain">
+X:1
+T:Do–mi (M3), then mi–do (m6); do–so (P5), then so–do (P4)
+M:2/4
+L:1/4
+K:C
+C E | E c | C G | G c |]
+w:do mi mi do do so so do
+</script></div>
+
+## 5.5 Augmented and diminished
+
+[Read 5.5](https://musictheory.pugetsound.edu/mt21c/AugmentedAndDiminishedIntervals.html)
+
+Make a major or perfect interval a half step **larger** and it is **augmented**. Make a minor or perfect interval a half step
+**smaller** and it is **diminished**. The one you already sing every day is between **fa and ti**: fa up to ti is an augmented 4th
+(three whole steps, the **tritone**), and ti up to fa is a diminished 5th. Both are 6 half steps. You hear it in the dominant
+seventh, so–ti–re–fa.
+
+<div class="abc-ex" data-bpm="80"><script type="text/plain">
+X:1
+T:Fa up to ti (A4), ti up to fa (d5), then so–ti–re–fa
+M:4/4
+L:1/4
+K:C
+F B B f | G B d f |]
+w:fa ti ti fa so ti re fa
+</script></div>
+
+## Bridging: from syllable pairs to names
+
+1. **Hear it in a pattern.** Find the two pitches inside a tonal pattern you know.
+2. **Name the syllables.** "Re up to fa."
+3. **Count the letters** for the number: re mi fa = 3rd.
+4. **Check the quality** against do: from re, the major 3rd would be fa♯ (re is do of D major: D E F♯). Fa is a half step lower:
+   **minor 3rd**.
+5. **Check by half steps** if you're unsure.
+
+## Check yourself
+
+1. Name the interval do up to la.
+2. Name the interval la up to do.
+3. Mi up to ti: number and quality?
+4. Invert a M2. What do you get?
+5. Write a m3 above G.
+
+::: {.callout-tip collapse="true"}
+## Answers
+1. Major 6th.
+2. Minor 3rd (it's the inversion of do–la).
+3. Perfect 5th (mi fa so la ti, 7 half steps).
+4. A minor 7th.
+5. B♭ (major 3rd G–B, lowered a half step).
+:::
+
+All the interval drills are on [Theory Drills](theory-drills.qmd?ex=interval). Next: [Triads](triads.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp. 111–117), the verbal association warning (p. 108), generalization-aural/oral and -verbal (pp. 131–133); same is easier to hear than different (p. 219); tonal and rhythm patterns kept apart (p. 223); rhythm patterns chanted with vocal inflection like speech (p. 101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp. 187–190).; Theory Concepts pages: Keyality versus key signature (p. xiii); tonality "best refers to what is usually called a mode," the eight tonalities (p. 149); movable-do with la-based minor and the rhythm syllables du de, du da di (p. 105); resting tone and tonic, a tonality in any keyality (p. 150); unitonal and multitonal music (pp. 152, 157); usual duple, triple and combined meter (pp. 175–176); no direct relation between measure signatures and meter, 6/8 as "duple compound" called inaccurate (p. 176); accents and microbeat divisions do not make meter (pp. 176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp. 179–180); key signatures as do signatures, one signature for many tonalities (pp. 155–156); rhythm syllables by beat function (p. 86); time-value names lead to counting (p. 38); writing tonal patterns from a familiar do signature (p. 125); letter names and time-value names as the alphabet of music (pp. 36–37); interval names learned in context of tonality and keyality (p. 65); the raised seventh of harmonic minor as si (p. 70); mi si ti re as a harmonic minor dominant pattern (p. 100).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp. 3, 9); notation as a window (p. 8); patterns as units of meaning (pp. 99–100); the aural/oral level and the pause (pp. 101–102); discrimination and inference learning, theory delayed (p. 106); levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231).
+
+Hutchinson, Robert. "Intervals." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/Intervals.html](https://musictheory.pugetsound.edu/mt21c/Intervals.html). Chapter 5: interval number and quality, identifying and writing, inversion, augmented and diminished.
+:::
+<!-- /works-cited -->

@@ -7,6 +7,9 @@
 // A page can also put the drone in its text: <div class="pw-embed" data-w="drone"></div> (optional data-tuning="pure"|"equal", data-pads="0 4 7" (semitones above Do),
 // data-do="0-11", data-oct="2-4"). It is the same drone as the navbar's (same settings, same sound; start one and the other shows it), laid out in the page.
 //
+// A page with a meter and a tempo of its own offers them as window.PageTempo = { name, get() -> { bpm, beats }, set({ bpm, beats }) -> text }
+// (beats: the meter's top number); the metronome's "From page" / "To page" buttons use it, and are greyed out on pages without it.
+//
 // Everything here is its own: an AudioContext of its own, no Tone.js, nothing shared with the Backing Track.
 (function () {
   "use strict";
@@ -369,6 +372,7 @@
       var show = k === name ? (open == null ? panels[k].hidden : open) : false;
       panels[k].hidden = !show; navBtn[k].classList.toggle("is-open", show);
     });
+    if (name === "metro" && panels.metro && !panels.metro.hidden && panels.metro._sync) panels.metro._sync();
     if (panels.tuner && panels.tuner.hidden && window.TunerPanel) window.TunerPanel.stop();       // the tuner does not listen while its panel is shut
     if (panels.mixer && panels.mixer.hidden && window.MixerPanel) window.MixerPanel.stop();       // nor do the mixer's meters
   }
@@ -384,6 +388,9 @@
       '<input type="range" id="pw-tempo" min="30" max="240" step="1" aria-label="Tempo" style="margin-top:.5rem">' +
       '<div class="pw-row" style="margin-top:.4rem"><button class="pw-btn pw-main" type="button" id="pw-metro-go" style="flex:1">Start</button>' +
         '<button class="pw-btn" type="button" id="pw-tap" title="Tap the tempo">Tap</button></div>' +
+      '<div class="pw-row" style="margin-top:.4rem"><button class="pw-btn" type="button" id="pw-from-page" style="flex:1" title="Take this page\'s tempo and beats in a bar">From page</button>' +
+        '<button class="pw-btn" type="button" id="pw-to-page" style="flex:1" title="Give this page the metronome\'s tempo and beats in a bar">To page</button></div>' +
+      '<p class="pw-note" id="pw-page-note" style="margin:.2rem 0 0" aria-live="polite"></p>' +
       '<div class="pw-lamps" id="pw-lamps"></div>' +
       '<label class="pw-lab" for="pw-beats">Beats in a bar</label>' +
       '<div class="pw-row"><select id="pw-beats"></select><label class="pw-check"><input type="checkbox" id="pw-accent"> Accent beat 1</label></div>' +
@@ -416,6 +423,22 @@
     beats.addEventListener("change", function () { S.beats = +beats.value; metro.beat = 0; lamps(); save(); });
     $("#pw-accent", p).addEventListener("change", function (e) { S.accent = e.target.checked; save(); });
     beats.value = S.beats; $("#pw-accent", p).checked = S.accent; tempo(S.tempo); lamps();
+    // the page's meter and tempo (window.PageTempo)
+    var say = function (t) { $("#pw-page-note", p).textContent = t || ""; };
+    p._sync = function () { var pt = window.PageTempo, ok = !!(pt && pt.get); $("#pw-from-page", p).disabled = !ok; $("#pw-to-page", p).disabled = !(pt && pt.set);
+      if (!ok) say("This page has no tempo to share."); };
+    $("#pw-from-page", p).addEventListener("click", function () {
+      var pt = window.PageTempo, g = pt && pt.get && pt.get(); if (!g) { say("Nothing to take here."); return; }
+      if (+g.bpm > 0) tempo(+g.bpm);
+      if (+g.beats > 0) { if (![].some.call(beats.options, function (o) { return +o.value === +g.beats; })) { var o = el("option"); o.value = g.beats; o.textContent = g.beats; beats.appendChild(o); }
+        S.beats = +g.beats; beats.value = S.beats; metro.beat = 0; lamps(); save(); }
+      say("Took " + S.tempo + " bpm, " + S.beats + " beats" + (g.where ? " (" + g.where + ")" : "") + ".");
+    });
+    $("#pw-to-page", p).addEventListener("click", function () {
+      var pt = window.PageTempo; if (!pt || !pt.set) return;
+      say(pt.set({ bpm: S.tempo, beats: S.beats }) || "Sent " + S.tempo + " bpm, " + S.beats + " beats.");
+    });
+    p._sync();
     return p;
   }
 

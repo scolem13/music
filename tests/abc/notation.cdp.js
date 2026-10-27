@@ -15,7 +15,7 @@ const assert = require("assert");
 
     // notes first: letters, no meter -> they wait; rhythm panel asks for a meter
     for (const l of "gbdcbag") await key({ key: l });
-    await key({ key: "f" }); await key({ key: "=" }); await key({ key: "g" });   // f then raise it: F#
+    await key({ key: "f" }); await key({ key: "+" }); await key({ key: "g" });   // f then raise it: F#
     let d = await doc();
     assert.deepStrictEqual(d.chunks[0].pitches, [67, 71, 74, 72, 71, 69, 67, 66, 67]);
     assert.strictEqual(await b.eval("document.getElementById('nt-rhythm-nometer').hidden"), false);

@@ -24,7 +24,7 @@
 //   AbcEvents.makeEvent(o)             -> an event with the defaults filled in
 // Reads what AbcCore.tokens reads: single notes, rests (z x Z), ties, broken rhythm (> <), bars, written accidentals that
 // last to the barline. Chords "[CEG]" (and "[CEG]2") are one event: notes
-// [all midis, top first], and pitches holds only the top note (pitches are a decoder's alternatives, never simultaneous notes). Not read yet (as in the assessment parsers): tuplets "(3", grace notes, repeats, voltas.
+// [all midis, top first], and pitches holds only the top note (pitches are a decoder's alternatives, never simultaneous notes). Tuplets "(3", "(3:2:n" (p notes in the time of q, over the next r notes; q as ABC 2.1 gives it when left out) are read. Not read yet (as in the assessment parsers): grace notes, repeats, voltas.
 
 (function (global) {
   const Core = global.AbcCore || (typeof require === "function" ? require("./abc-core.js") : null);
@@ -87,6 +87,15 @@
     const text = voiceText(abc, voice);
     const toks = Core.tokens(text, { decorations: true, fields: true });
 
+    // tuplet markers "(p:q:r", found in the text with quoted strings and !decorations! blanked out
+    const compound = meter.n % 3 === 0 && meter.n > 3;
+    const tupQ = { 2: 3, 3: 2, 4: 3, 6: 2, 8: 3 };
+    const tups = [];
+    text.replace(/"[^"]*"|![^!\n]*!/g, m => " ".repeat(m.length)).replace(/\((\d)(?::(\d*))?(?::(\d*))?/g, (m, a, b, c, i) => {
+      const pp = +a, qq = b ? +b : (tupQ[pp] || (compound ? 3 : 2));
+      tups.push({ i, f: qq / pp, r: c ? +c : pp }); return m;
+    });
+    let tupK = 0, tupLeft = 0, tupF = 1;
     const written = [], chords = [], marks = [], fields = [];
     let t = 0, bar = 0, measureAcc = {}, broken = null;   // broken: { first: event, ch } waiting for its partner
     let pendingBroken = null;                             // ">" or "<" read, applies to the next note/rest
@@ -129,7 +138,9 @@
       if (tok.t === "broken") { pendingBroken = tok.ch; continue; }
       if (tok.t === "tie") { const last = written[written.length - 1]; if (last && last.kind === "note") last.tieNext = true; continue; }
       if (tok.t !== "note" && tok.t !== "rest") continue;
+      while (tupK < tups.length && tups[tupK].i < tok.i) { tupF = tups[tupK].f; tupLeft = tups[tupK].r; tupK++; }
       let dur = tok.mult * (tok.t === "rest" && tok.ch === "Z" ? barQuarters / L : 1) * L;
+      if (tupLeft > 0) { dur *= tupF; tupLeft--; }
       const ev = tok.t === "note"
         ? makeEvent({ kind: "note", pitches: [{ midi: Core.noteMidi(tok, ksig, measureAcc), p: 1 }] })
         : makeEvent({ kind: "rest", visible: tok.ch !== "x" });

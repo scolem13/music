@@ -307,8 +307,8 @@ page-layout: full
 <script src="/apps/shared/timestamp-player/player-log.js?v=16"></script>
 <script src="/apps/shared/timestamp-player/bar-map.js?v=18"></script>
 <script src="/apps/shared/abc-core.js?v=3"></script>
-<script src="/apps/shared/abc-events.js?v=3"></script>
-<script src="/apps/shared/notation-doc.js?v=11"></script>
+<script src="/apps/shared/abc-events.js?v=4"></script>
+<script src="/apps/shared/notation-doc.js?v=15"></script>
 <script src="/apps/shared/ug-chordpro.js?v=4"></script>
 <script src="/apps/shared/timestamp-player/words.js?v=20"></script>
 <script src="/apps/shared/tune-chart.js?v=31"></script>
@@ -317,7 +317,15 @@ page-layout: full
 <script src="/apps/shared/timestamp-player/phrases.js?v=8"></script>
 <script src="/apps/shared/timestamp-player/page-nav.js?v=3"></script>
 <script src="/apps/shared/timestamp-player/chordpro-timing.js?v=1"></script>
-<script src="/apps/shared/timestamp-player/salami-chords.js?v=2"></script>
+<script src="/apps/shared/timestamp-player/salami-chords.js?v=4"></script>
 </div>
 ```
 :::
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Burgoyne, John Ashley, Jonathan Wild, and Ichiro Fujinaga. "An Expert Ground Truth Set for Audio Chord Recognition and Music Analysis." *Proceedings of the 12th International Society for Music Information Retrieval Conference*, Miami, 2011, pp. 633–38. The 890 SALAMI chords files of the McGill Billboard Project (songs from the Billboard Hot 100, 1958–1991): sections, bars and chords, timed; released under CC0. [ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/](https://ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/).
+:::
+<!-- /works-cited -->

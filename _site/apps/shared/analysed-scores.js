@@ -9,6 +9,7 @@
 // of coloured key areas above the score (click one: it is lit in the score and played). A table .as-form in the same section, rows
 // whose first cell gives the bars ("12–14", "Upbeat to 5–14"; or <tr data-bars="5-14" data-upbeat>), gets a ▶ in each row that lights and plays those bars in whichever tab's score is showing.
 // AnalysedScores.playBars(score, from, to, upbeat) does the same from other pages' links (?bars=7-9 on the address, too).
+// A score whose data-piece belongs to a work in apps/shared/works/works-data.js gets that work's Recordings & resources panel (Works).
 (function (global) {
   var KEY = "as-score-width", SUP = "⁰¹²³⁴⁵⁶⁷⁸⁹", SUB = "₀₁₂₃₄₅₆₇₈₉", NS = "http://www.w3.org/2000/svg";
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
@@ -326,7 +327,20 @@
       var g = S.paper.querySelector(".as-hi"); (g || S.host).scrollIntoView({ block: "center" });
     }, 600);
   }
-  function init() { [].forEach.call(document.querySelectorAll(".as-score"), setup); spaceControl(); forms(); }
+  // the Recordings & resources panel (apps/shared/works/works.js) under each score that belongs to a work in works-data.js
+  function works() {
+    if (!global.Works) return;
+    [].forEach.call(document.querySelectorAll(".as-score[data-piece]"), function (h) {
+      var box = el("div", "as-works"); box.hidden = true; h.after(box); global.Works.mount(box, "analysed", h.getAttribute("data-piece"));
+    });
+    var q = new URLSearchParams(location.search), pc = q.get("piece");   // ?piece= alone (no bars): open the tab and scroll to it
+    if (pc && !q.get("bars")) setTimeout(function () {
+      var host = document.querySelector('.as-score[data-piece="' + pc.replace(/[^\w-]/g, "") + '"]'); if (!host) return;
+      var pane = host.closest(".tab-pane"); if (pane && pane.id) { var t = document.querySelector('[data-bs-target="#' + pane.id + '"], a[href="#' + pane.id + '"]'); if (t) t.click(); }
+      host.scrollIntoView({ block: "start" });
+    }, 400);
+  }
+  function init() { [].forEach.call(document.querySelectorAll(".as-score"), setup); spaceControl(); forms(); works(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
   // add / remove: scores made after the page loaded (the Modulation Finder's results)
   global.AnalysedScores = { add: function (host) { setup(host); }, remove: function (host) { if (active && active.host === host) { if (active.playing) pause(active); active = null; } scores = scores.filter(function (S) { if (S.host !== host) return true; if (S.playing) pause(S); return false; }); },

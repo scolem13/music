@@ -202,6 +202,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
  <span class="dropdown-text">Tunes</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../practice/tune-directory.html">
+ <span class="dropdown-text">Tune Directory</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../practice/patterns.html">
  <span class="dropdown-text">Tonal Patterns</span></a>
   </li>  
@@ -1321,8 +1325,8 @@ Here comes the sun"></textarea>
 <script src="../apps/shared/timestamp-player/player-log.js?v=16"></script>
 <script src="../apps/shared/timestamp-player/bar-map.js?v=18"></script>
 <script src="../apps/shared/abc-core.js?v=3"></script>
-<script src="../apps/shared/abc-events.js?v=3"></script>
-<script src="../apps/shared/notation-doc.js?v=11"></script>
+<script src="../apps/shared/abc-events.js?v=4"></script>
+<script src="../apps/shared/notation-doc.js?v=15"></script>
 <script src="../apps/shared/ug-chordpro.js?v=4"></script>
 <script src="../apps/shared/timestamp-player/words.js?v=20"></script>
 <script src="../apps/shared/tune-chart.js?v=31"></script>
@@ -1331,11 +1335,19 @@ Here comes the sun"></textarea>
 <script src="../apps/shared/timestamp-player/phrases.js?v=8"></script>
 <script src="../apps/shared/timestamp-player/page-nav.js?v=3"></script>
 <script src="../apps/shared/timestamp-player/chordpro-timing.js?v=1"></script>
-<script src="../apps/shared/timestamp-player/salami-chords.js?v=2"></script>
+<script src="../apps/shared/timestamp-player/salami-chords.js?v=4"></script>
 </div>
 </div>
+<section id="works-cited" class="level2">
+<h2 class="anchored" data-anchor-id="works-cited">Works Cited</h2>
+<!-- works-cited: written by scripts/works-cited.py -->
+<div class="works-cited">
+<p>Burgoyne, John Ashley, Jonathan Wild, and Ichiro Fujinaga. “An Expert Ground Truth Set for Audio Chord Recognition and Music Analysis.” <em>Proceedings of the 12th International Society for Music Information Retrieval Conference</em>, Miami, 2011, pp.&nbsp;633–38. The 890 SALAMI chords files of the McGill Billboard Project (songs from the Billboard Hot 100, 1958–1991): sections, bars and chords, timed; released under CC0. <a href="https://ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/">ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/</a>.</p>
+</div>
+<!-- /works-cited -->
 
 
+</section>
 
 </main> <!-- /main -->
 <!-- Injected before </body> on every page. Loads the tracker. -->
@@ -1343,8 +1355,9 @@ Here comes the sun"></textarea>
 <!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
      (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
 <script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/degree-caret.js?v=2"></script>
 <script src="../apps/shared/circle-of-fifths.js?v=2"></script>
-<script src="../apps/shared/practice-widgets.js?v=8"></script>
+<script src="../apps/shared/practice-widgets.js?v=9"></script>
 <!-- A button at the left of the navbar that folds the docked sidebar away on
      every page, and remembers the choice. Below 992px Quarto already tucks the
      sidebar behind its own toggle, so the button is hidden there. -->

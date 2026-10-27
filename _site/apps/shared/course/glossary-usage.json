@@ -1,5 +1,5 @@
 {
-"generated": "2026-10-25T10:26",
+"generated": "2026-10-26T12:28",
 "terms": {
 "audiation": [
 {
@@ -7,6 +7,20 @@
 "course": "dp1",
 "title": "Baroque Research Feedback",
 "url": "https://classes.seancoleman.org/dp1/2026-09-28.html"
+}
+],
+"sonata": [
+{
+"date": "2026-10-08",
+"course": "dp1",
+"title": "Measure Numbers",
+"url": "https://classes.seancoleman.org/dp1/2026-10-08.html"
+},
+{
+"date": "2026-10-09",
+"course": "dp1",
+"title": "Sonata Form",
+"url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
 }
 ],
 "sonata-form": [
@@ -24,20 +38,6 @@
 }
 ],
 "allegro": [
-{
-"date": "2026-10-08",
-"course": "dp1",
-"title": "Measure Numbers",
-"url": "https://classes.seancoleman.org/dp1/2026-10-08.html"
-},
-{
-"date": "2026-10-09",
-"course": "dp1",
-"title": "Sonata Form",
-"url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
-}
-],
-"sonata": [
 {
 "date": "2026-10-08",
 "course": "dp1",
@@ -199,13 +199,13 @@
 {
 "date": "2026-10-28",
 "course": "myp4",
-"title": "Formative 4 Due: From Evaluation to Final Fixes",
+"title": "Final Fixes Before Crit C",
 "url": "https://classes.seancoleman.org/myp4/2026-10-28.html"
 },
 {
 "date": "2026-10-29",
 "course": "myp4",
-"title": "Crit C Due: Final Work and the Crit D Task",
+"title": "Crit C Due; Formative 4 in Class",
 "url": "https://classes.seancoleman.org/myp4/2026-10-29.html"
 },
 {
@@ -309,7 +309,7 @@
 {
 "date": "2026-10-28",
 "course": "myp4",
-"title": "Formative 4 Due: From Evaluation to Final Fixes",
+"title": "Final Fixes Before Crit C",
 "url": "https://classes.seancoleman.org/myp4/2026-10-28.html"
 },
 {
@@ -321,7 +321,7 @@
 {
 "date": "2026-10-29",
 "course": "myp4",
-"title": "Crit C Due: Final Work and the Crit D Task",
+"title": "Crit C Due; Formative 4 in Class",
 "url": "https://classes.seancoleman.org/myp4/2026-10-29.html"
 },
 {
@@ -357,7 +357,7 @@
 {
 "date": "2026-11-02",
 "course": "myp4",
-"title": "Crit D Due: Closing From Blues to Jazz",
+"title": "Writing Crit D: Closing From Blues to Jazz",
 "url": "https://classes.seancoleman.org/myp4/2026-11-02.html"
 },
 {
@@ -503,7 +503,7 @@
 {
 "date": "2026-11-02",
 "course": "myp4",
-"title": "Crit D Due: Closing From Blues to Jazz",
+"title": "Writing Crit D: Closing From Blues to Jazz",
 "url": "https://classes.seancoleman.org/myp4/2026-11-02.html"
 }
 ],
@@ -539,8 +539,70 @@
 {
 "date": "2026-11-02",
 "course": "myp4",
-"title": "Crit D Due: Closing From Blues to Jazz",
+"title": "Writing Crit D: Closing From Blues to Jazz",
 "url": "https://classes.seancoleman.org/myp4/2026-11-02.html"
+}
+],
+"statement-of-inquiry": [
+{
+"date": "2026-10-07",
+"course": "myp5",
+"title": "Writing the Draft Artistic Intention (Formative 2)",
+"url": "https://classes.seancoleman.org/myp5/2026-10-07.html"
+},
+{
+"date": "2026-10-08",
+"course": "myp4",
+"title": "Formative 1 Due: Choose One Idea and Add a Part",
+"url": "https://classes.seancoleman.org/myp4/2026-10-08.html"
+},
+{
+"date": "2026-10-08",
+"course": "myp5",
+"title": "Formative 2: Draft artistic intention",
+"url": "https://classes.seancoleman.org/assessments/for-myp5/2026-10-08-formative-2.html"
+},
+{
+"date": "2026-10-14",
+"course": "myp4",
+"title": "Survey, Stage 2 Clips and Writing Your Artistic Intention",
+"url": "https://classes.seancoleman.org/myp4/2026-10-14.html"
+},
+{
+"date": "2026-10-14",
+"course": "myp4",
+"title": "Formative 2: Draft artistic intention",
+"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-10-14-formative-2.html"
+},
+{
+"date": "2026-10-15",
+"course": "myp4",
+"title": "Write Artistic Intent in Class",
+"url": "https://classes.seancoleman.org/myp4/2026-10-15.html"
+},
+{
+"date": "2026-10-15",
+"course": "myp4",
+"title": "Formative 2: Draft artistic intention",
+"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-10-15-formative-2.html"
+},
+{
+"date": "2026-10-16",
+"course": "myp5",
+"title": "Summative: Criterion B (Developing)",
+"url": "https://classes.seancoleman.org/assessments/for-myp5/2026-10-16-summative-crit-b.html"
+},
+{
+"date": "2026-10-22",
+"course": "myp4",
+"title": "Summative: Criterion B (Developing)",
+"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-10-22-summative-crit-b.html"
+},
+{
+"date": "2026-10-30",
+"course": "myp5",
+"title": "Crit D Due: Closing the Practice ePortfolio",
+"url": "https://classes.seancoleman.org/myp5/2026-10-30.html"
 }
 ],
 "artistic-intention": [
@@ -625,7 +687,7 @@
 {
 "date": "2026-10-29",
 "course": "myp4",
-"title": "Crit C Due: Final Work and the Crit D Task",
+"title": "Crit C Due; Formative 4 in Class",
 "url": "https://classes.seancoleman.org/myp4/2026-10-29.html"
 },
 {
@@ -639,68 +701,12 @@
 "course": "myp5",
 "title": "Summative: Criterion D (Evaluating)",
 "url": "https://classes.seancoleman.org/assessments/for-myp5/2026-10-30-summative-crit-d.html"
-}
-],
-"statement-of-inquiry": [
-{
-"date": "2026-10-07",
-"course": "myp5",
-"title": "Writing the Draft Artistic Intention (Formative 2)",
-"url": "https://classes.seancoleman.org/myp5/2026-10-07.html"
 },
 {
-"date": "2026-10-08",
+"date": "2026-11-02",
 "course": "myp4",
-"title": "Formative 1 Due: Choose One Idea and Add a Part",
-"url": "https://classes.seancoleman.org/myp4/2026-10-08.html"
-},
-{
-"date": "2026-10-08",
-"course": "myp5",
-"title": "Formative 2: Draft artistic intention",
-"url": "https://classes.seancoleman.org/assessments/for-myp5/2026-10-08-formative-2.html"
-},
-{
-"date": "2026-10-14",
-"course": "myp4",
-"title": "Survey, Stage 2 Clips and Writing Your Artistic Intention",
-"url": "https://classes.seancoleman.org/myp4/2026-10-14.html"
-},
-{
-"date": "2026-10-14",
-"course": "myp4",
-"title": "Formative 2: Draft artistic intention",
-"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-10-14-formative-2.html"
-},
-{
-"date": "2026-10-15",
-"course": "myp4",
-"title": "Write Artistic Intent in Class",
-"url": "https://classes.seancoleman.org/myp4/2026-10-15.html"
-},
-{
-"date": "2026-10-15",
-"course": "myp4",
-"title": "Formative 2: Draft artistic intention",
-"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-10-15-formative-2.html"
-},
-{
-"date": "2026-10-16",
-"course": "myp5",
-"title": "Summative: Criterion B (Developing)",
-"url": "https://classes.seancoleman.org/assessments/for-myp5/2026-10-16-summative-crit-b.html"
-},
-{
-"date": "2026-10-22",
-"course": "myp4",
-"title": "Summative: Criterion B (Developing)",
-"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-10-22-summative-crit-b.html"
-},
-{
-"date": "2026-10-30",
-"course": "myp5",
-"title": "Crit D Due: Closing the Practice ePortfolio",
-"url": "https://classes.seancoleman.org/myp5/2026-10-30.html"
+"title": "Writing Crit D: Closing From Blues to Jazz",
+"url": "https://classes.seancoleman.org/myp4/2026-11-02.html"
 }
 ],
 "eportfolio": [

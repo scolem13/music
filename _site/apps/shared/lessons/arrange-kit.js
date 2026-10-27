@@ -31,7 +31,7 @@
 //     the pedal and the switch alone (opts.organ) while a hand is on them.
 (function (global) {
   var PARTS = [{ id: 'bass', label: 'Bass' }, { id: 'comp', label: 'Chords' }, { id: 'comp2', label: 'Second chords' }, { id: 'drums', label: 'Drums' }, { id: 'congas', label: 'Congas' }];
-  var player = null, now = null, tempoOverride = null, organHand = { swell: null, leslie: null };
+  var player = null, now = null, last = null, tempoOverride = null, organHand = { swell: null, leslie: null };
   function $(id) { return document.getElementById(id); }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
 
@@ -87,6 +87,8 @@
       for (var i = x.from; i <= x.to; i++) {
         var c = el('div', 'ar-gbar'); c.appendChild(el('span', 'ar-gnum', String(i + 1)));
         c.appendChild(el('span', 'ar-gch', bars[i].trim().split(/\s+/).join('  ')));
+        c.title = 'Play from bar ' + (i + 1); c.setAttribute('role', 'button');
+        (function (bar) { c.addEventListener('click', function () { seek(w, bar); }); })(i);
         g.appendChild(c); w.cells[i] = c;
       }
       row.appendChild(g); w.grid.appendChild(row);
@@ -138,9 +140,14 @@
     s.forEach(function (x) { if (b >= x[0]) name = x[1]; });
     return name ? ' · ' + name : '';
   }
-  function play(w) {
-    if (now === w) { stop(); return; }
-    stop(); now = w; w.log = []; w.band = bandOf(w); w.passes = {}; w.showCh = 0; w.cur = -1; w.drawn = null;
+  // A click on a bar of the grid: the band goes there (playing), or starts there (not playing).
+  function seek(w, bar) {
+    if (now === w && player && player.jumpTo && player.jumpTo(bar)) { w.cur = bar; lightBar(w); status('Bar ' + (bar + 1) + secAt(w, bar + 1)); return; }
+    play(w, bar);
+  }
+  function play(w, from) {
+    if (now === w && from == null) { stop(); return; }
+    stop(); now = w; last = w; w.log = []; w.band = bandOf(w); w.passes = {}; w.showCh = 0; w.cur = -1; w.drawn = null;
     var parsed = global.TuneChart.parse(abcOf(w.chart, w.el.dataset.meter)), b = w.band;
     var cfg = { parsed: parsed, tempo: b.tempo, transpose: 0, countIn: 1, choruses: 0, opts: b.opts, volumes: volumes(w),
       onState: function (s) { if (s === 'loading') status('Loading sounds…'); else if (s === 'playing') status(''); },
@@ -155,6 +162,7 @@
     if (!player) player = global.BandPlayer.create(cfg);
     else { player.setChart(parsed); player.setTempo(b.tempo); player.setOpts(b.opts); PARTS.forEach(function (p) { player.setVolume(p.id, cfg.volumes[p.id]); }); }
     player.setInstruments(b.instruments); if (player.setAhead) player.setAhead(!!w.ahead);
+    if (player.setStartBar) player.setStartBar(from || 0);
     w.btn.textContent = '■ Stop'; w.btn.classList.add('ar-on'); var s = $('ar-stop'); if (s) s.disabled = false;
     var t = $('ar-tempo'); if (t && !tempoOverride) { t.value = b.tempo; $('ar-tempo-n').value = b.tempo; }
     // (the player is made once; its callbacks go to whichever demo is playing now)
@@ -203,6 +211,7 @@
     w.ahead = true;   // a demo writes the whole pass out before it sounds (a quiz does not: it would give the answer away)
     w.staff = el('div', 'ar-staff'); w.staff.appendChild(el('p', 'ar-hint', 'Press Play: what the band will play is written out here, a whole time through, before it plays it.'));
     node.appendChild(w.staff);
+    return w;
   }
 
   function buildQuiz(node) {
@@ -392,6 +401,19 @@
     var d = el('div', 'ao-pedal'); d.innerHTML = '<svg viewBox="0 0 80 84" width="80" height="84" aria-hidden="true"><rect x="8" y="70" width="64" height="8" rx="2" class="ao-base"/>'
       + '<g class="ao-plate"><rect x="14" y="58" width="56" height="10" rx="3" class="ao-shoe"/></g><circle cx="20" cy="70" r="4" class="ao-pivot"/></svg>'; return d;
   }
+  // "Notation" in the bottom bar: off hides every staff on the page (the demos' and any abc-ex example's). Remembered.
+  var demos = [];
+  function notationSwitch() {
+    var bar = $('ar-bar'); if (!bar || $('ar-notes')) return;
+    var st = el('style'); st.textContent = 'body.ar-hide-notes .ar-staff{display:none}.ar-gbar{cursor:pointer}.ar-gbar:hover{outline:2px solid var(--site-accent-dk);outline-offset:-2px}';
+    document.head.appendChild(st);
+    var hide = false; try { hide = localStorage.getItem('ar-notation') === 'off'; } catch (e) {}
+    var b = el('button', 'btn btn-sm btn-outline-secondary'); b.type = 'button'; b.id = 'ar-notes'; b.dataset.pri = '3';
+    function paint() { b.textContent = hide ? 'Notation: off' : 'Notation: on'; b.setAttribute('aria-pressed', String(!hide));
+      document.body.classList.toggle('ar-hide-notes', hide); document.body.classList.toggle('ax-hide-notes', hide); }
+    b.addEventListener('click', function () { hide = !hide; try { localStorage.setItem('ar-notation', hide ? 'off' : 'on'); } catch (e) {} paint(); });
+    paint(); bar.appendChild(b);
+  }
   function rotorSvg() {
     var d = el('div', 'ao-rotor'); d.innerHTML = '<svg viewBox="0 0 120 140" width="120" height="140" role="img" aria-label="The two rotors of the speaker, seen from above">'
       + '<rect x="4" y="4" width="112" height="132" rx="6" class="ao-cab"/>'
@@ -403,13 +425,23 @@
   }
 
   function init() {
-    Array.prototype.forEach.call(document.querySelectorAll('.ar-demo'), buildDemo);
+    Array.prototype.forEach.call(document.querySelectorAll('.ar-demo'), function (n) { demos.push(buildDemo(n)); });
     Array.prototype.forEach.call(document.querySelectorAll('.ar-quiz'), buildQuiz);
     Array.prototype.forEach.call(document.querySelectorAll('.ar-organ'), mkOrgan);
     var t = $('ar-tempo'), tn = $('ar-tempo-n');
     function setT(v) { v = Math.max(40, Math.min(220, +v || 100)); tempoOverride = v; t.value = v; tn.value = v; if (player && now) player.setTempo(v); }
     if (t) { t.value = tn.value = 100; t.addEventListener('input', function () { setT(t.value); }); tn.addEventListener('change', function () { setT(tn.value); }); }
     var s = $('ar-stop'); if (s) s.addEventListener('click', stop);
+    notationSwitch();
+    // Space starts and stops the demo last played (or the first one), unless the cursor is in a text box
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== ' ' || e.repeat || e.ctrlKey || e.metaKey || e.altKey) return;
+      var t = e.target, tag = t && t.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable)) return;
+      if (t && t.closest && t.closest('.ao-key, .ar-organ')) return;   // the organ's keys play on Space
+      var w = now || last || demos[0]; if (!w) return;
+      e.preventDefault(); if (now) stop(); else play(w);
+    });
     if (global.PlayBar && $('ar-bar')) global.PlayBar.attach($('ar-bar'), { live: function () { return !!now; } });
   }
   global.ArrangeLesson = { init: init, abcOf: abcOf };

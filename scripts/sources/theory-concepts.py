@@ -3,6 +3,12 @@
 MO = "theory/modes-three-ways.qmd"
 ME = "theory/meter-taxonomy.qmd"
 SOURCES = [
+    web('Hutchinson, Robert. "Basic Concepts." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, URL.', "https://musictheory.pugetsound.edu/mt21c/BasicConcepts.html", ["theory/pitch-basics.qmd"],
+        note="Chapter 1: pitch, notation and clefs, octave registers, accidentals, enharmonic notes."),
+    web('Hutchinson, Robert. "Minor Scales and Key Signatures." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, URL.', "https://musictheory.pugetsound.edu/mt21c/MinorScalesAndKeySignatures.html", ["theory/minor-scales.qmd"],
+        note="Chapter 3: natural, harmonic and melodic minor, minor key signatures, scale degree names."),
+    web('Hutchinson, Robert. "Intervals." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, URL.', "https://musictheory.pugetsound.edu/mt21c/Intervals.html", ["theory/intervals.qmd"],
+        note="Chapter 5: interval number and quality, identifying and writing, inversion, augmented and diminished."),
     web('Hutchinson, Robert. "Major Scales and Key Signatures." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, URL.', "https://musictheory.pugetsound.edu/mt21c/MajorScalesAndKeySignatures.html", ["theory/major-scales.qmd"],
         note="Chapter 2: half and whole steps, the major scale, major key signatures."),
     web('Hutchinson, Robert. "Basics of Rhythm." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, URL.', "https://musictheory.pugetsound.edu/mt21c/BasicsOfRhythm.html", ["theory/rhythm-basics.qmd"],

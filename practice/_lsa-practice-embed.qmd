@@ -99,10 +99,10 @@ Unit 1 is wired up so far.)
   </div>
 </div>
 
-<script src="/apps/shared/abcjs-basic.js?v=2"></script>
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
 <script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
 <script src="/apps/shared/abc-core.js?v=1"></script>
-<script src="/apps/shared/abc-events.js?v=1"></script>
+<script src="/apps/shared/abc-events.js?v=2"></script>
 <script src="/apps/shared/rhythm-chant.js?v=18"></script>
 <script src="/apps/rhythm-assessment/abc-rhythm.js"></script>
 <script src="/apps/lsa/curriculum.js"></script>

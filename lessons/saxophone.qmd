@@ -10,7 +10,7 @@ has: [fingering, interactive, svg]
 
 ```{=html}
 <link rel="stylesheet" href="/apps/shared/sax/sax.css?v=1">
-<script src="/apps/shared/abcjs-basic.js?v=2"></script>
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
 <script src="/apps/shared/sax/sax-chart.js?v=2"></script>
 <script src="/apps/shared/sax/sax-page.js?v=2"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>

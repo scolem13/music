@@ -422,4 +422,36 @@ t("a phrase's lead-in: stitched into the bar before, the bar further back, a Pic
   assert.deepStrictEqual(D.barNotes(d, 0, 0, 1).map(n => n.midi), [62, 71]);
 });
 
+t("ABC that starts with a pickup keeps it (no Pickup chunk needed)", () => {
+  for (const src of ["D2 | G4 A4 | B8 |]", '"G"D2 | "G"G4 A4 | "D"B8 |]', '"^Verse"D2 | G4 A4 | B8 |]'])  {
+    const d = D.fromAbc("X:1\nM:4/4\nL:1/8\nK:G\n" + src);
+    assert.strictEqual(d.chunks[0].lead, 1);
+    assert.strictEqual(music(D.toAbc(d).abc).replace(/"\^Verse"/, ""), src.replace(/"\^Verse"/, ""));
+  }
+});
+
+t("a Pickup chunk with a chunk put before it leads into the bar after it", () => {
+  const d = D.create(); d.meter = "4/4";
+  const a = D.newChunk("Pickup"); a.pickup = true; a.rhythm = [{ type: "note", durQ: 1 }]; a.pitches = [62];
+  const b = D.newChunk("Take 1"); b.rhythm = [{ type: "note", durQ: 4 }]; b.pitches = [67];
+  d.chunks = [D.newChunk("New"), a, b];
+  const abc = music(D.toAbc(d).abc);
+  assert.strictEqual(d.chunks[1].pickup, false); assert.strictEqual(d.chunks[1].lead, 1);
+  assert.ok(/"\^Pickup"x6 D2 \| "\^Take 1"G8 \|/.test(abc), abc);
+});
+
+t("P: / Q: lines in the tune body start chunks with headings and tempos", () => {
+  const d = D.fromAbc("X:1\nM:4/4\nL:1/8\nQ:1/4=128\nK:C\nP:Verse 1\n\"C\"z8 | \"G\"z8 |\nP:Bridge\nQ:1/4=100\n\"F\"z8 |]");
+  assert.deepStrictEqual(d.chunks.map(c => c.heading), ["Verse 1", "Bridge"]);
+  assert.strictEqual(d.tempo, 128); assert.strictEqual(D.at(d, 1).tempo, 100);
+});
+
+t("Merge: chords over rests + a melody with a pickup = the melody with the chords from its first full bar", () => {
+  const abc = 'X:1\nM:3/4\nL:1/8\nQ:1/4=90\nK:D\n"^Chunk 1""D"z2 z2 "A7"z2 | "D"z6 | "Em"z2 "A7"z2 z2 | [Q:1/4=104]"^Take 1"x4 A,2 |\nD/2 z D/2 D2 E2 | F/2 z F/2 F3 F | EF G2 C2 | E2 D2 z2 |]';
+  const d = D.fromAbc(abc);
+  assert.strictEqual(D.combine(d, 0), null);
+  assert.strictEqual(d.chunks.length, 1); assert.strictEqual(d.chunks[0].lead, 1); assert.strictEqual(D.at(d, 0).tempo, 104);
+  assert.ok(/A,2 \| "D"D\/2 z D\/2 D2 "A7"E2 \| "D"F\/2 z F\/2 F3 F \| "Em"EF "A7"G2 C2 \|/.test(music(D.toAbc(d).abc)), D.toAbc(d).abc);
+});
+
 console.log("NOTATION DOC OK (" + n + " tests)");

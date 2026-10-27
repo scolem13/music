@@ -676,7 +676,7 @@ Türk, Daniel Gottlob. *School of Clavier Playing*. Translated by Raymond H. Hag
 
 ```{=html}
 <script src="/apps/shared/soundfont.js"></script>
-<script src="/apps/shared/abcjs-basic.js?v=2"></script>
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
 <style>
 .ob-verdict{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.1rem .5rem;border-radius:3px;margin:.8rem 0 -.2rem}
 .ob-ok{background:color-mix(in srgb,#2e8b57 18%,transparent);color:#2e8b57}

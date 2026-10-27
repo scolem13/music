@@ -1,0 +1,182 @@
+---
+title: "Minor Scales and Key Signatures: From La"
+toc: true
+toc-depth: 2
+description: "Chapter 3 of Hutchinson's Music Theory for the 21st-Century Classroom for students who already read and write in minor with la-based movable do: natural, harmonic and melodic minor, relative and parallel keys, and minor key signatures as names for what they already audiate."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
+<script src="/apps/shared/lessons/abc-ex.js?v=15"></script>
+<script src="/apps/shared/drills/drills.js?v=14"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+This page goes with **Chapter 3, Minor Scales and Key Signatures** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/MinorScalesAndKeySignatures.html).
+
+**You already know this.** You sing in minor with **la** as the resting tone (movable do, la-based minor; Gordon 105), you sing
+harmonic minor with the raised **si** (Gordon 70), and you read both from the do signature. This chapter names what you already
+do. La-based minor gives you a head start: the book's "relative minor" is the minor you've always sung.
+
+Press ▶ to hear an example, or **▶ Sing** to hear it sung on syllables. Click any heading to fold its section.
+
+## What you know → what the book calls it
+
+| You say (MLT) | The book says (Hutchinson ch. 3) |
+|---|---|
+| la, the resting tone in minor | tonic of the minor key, 1̂ |
+| la ti do re mi fa so la | natural minor scale (Gordon: Aeolian tonality) |
+| the same notes with si for so | harmonic minor scale (Gordon: harmonic minor tonality) |
+| the do signature, resting on la | the minor key signature: "A minor" |
+| major and minor with the same do signature | relative keys |
+| the same tonic letter, major and minor | parallel keys |
+
+## 3.1 Three kinds of minor
+
+[Read 3.1](https://musictheory.pugetsound.edu/mt21c/MinorScales.html)
+
+**Natural minor** is la to la with no changes, the notes of the do signature from la. You've sung it as the minor of folk tunes and
+of Gordon's Aeolian tonality.
+
+<div class="abc-ex" data-bpm="90"><script type="text/plain">
+X:1
+T:Natural minor on A: la to la
+M:4/4
+L:1/4
+K:Am
+A, B, C D | E F G A |]
+w:la ti do re mi fa so la
+</script></div>
+
+**Harmonic minor** raises so to **si**, so the scale has a half step into la like the half step ti–do in major. That's the
+dominant sound you sing in harmonic minor patterns such as *mi si ti re* (Gordon 100). The book shows it as an accidental: in A minor,
+G becomes G♯.
+
+<div class="abc-ex" data-bpm="90"><script type="text/plain">
+X:1
+T:Harmonic minor on A: so becomes si (G♯)
+M:4/4
+L:1/4
+K:Am
+A, B, C D | E F ^G A |]
+w:la ti do re mi fa si la
+</script></div>
+
+**Melodic minor** raises both fa and so on the way up, and goes back to natural minor on the way down. This one may be new: you have
+the sound of si, but probably not of the raised fa. In movable do, raised fa is usually sung **fi** *(the syllable is common practice,
+not yet checked against an MLT source)*.
+
+<div class="abc-ex" data-bpm="90"><script type="text/plain">
+X:1
+T:Melodic minor on A: up with fi and si, down natural
+M:4/4
+L:1/4
+K:Am
+A, B, C D | E ^F ^G A | =G =F E D | C B, A,2 |]
+w:la ti do re mi fi si la so fa mi re do ti la
+</script></div>
+
+**Where the book and MLT differ.** The book treats natural, harmonic and melodic minor as three forms of one minor key. Gordon treats
+harmonic minor and Aeolian as two different **tonalities**, each with its own characteristic patterns (Gordon 149). Both see the
+same notes; Gordon names what you hear, the book names what is written.
+
+## 3.2 Minor key signatures: the same do signature
+
+[Read 3.2](https://musictheory.pugetsound.edu/mt21c/MinorKeySignatures.html)
+
+You already read a do signature and rest on la. The book calls that key "the relative minor":
+
+- **Find do, then go down to la** (two letters down, or up six). One sharp: do is G, la is E → **E minor**. Three flats: do is E♭,
+  la is C → **C minor**.
+- **Relative keys** share a signature: C major and A minor, G major and E minor. In MLT terms they share a do signature, with
+  different resting tones (Gordon 155–156).
+- **Parallel keys** share a tonic letter: A major and A minor. In MLT terms, do moves: A major has do on A; A minor has la on A, so do
+  is on C.
+
+The same tune, on the same do signature, ends on do (major) or la (minor):
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:No sharps or flats, resting on do: C major
+M:4/4
+L:1/4
+K:C
+C E G E | F D B, C |]
+w:do mi so mi fa re ti do
+</script></div>
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:No sharps or flats, resting on la: A minor
+M:4/4
+L:1/4
+K:Am
+A, C E C | D B, ^G, A, |]
+w:la do mi do re ti si la
+</script></div>
+
+**The harmonic minor accidental isn't in the signature.** Si is always written in the music. That's why C minor's signature is three
+flats, but its scale needs a B♮.
+
+### Practise: name the minor key
+
+<div class="drill" data-ex="keysig" data-settings="mode=minor&kinds=both&most=3&clef=treble"></div>
+
+## 3.3 Scale degree names in minor
+
+[Read 3.3](https://musictheory.pugetsound.edu/mt21c/ScaleDegreeNames.html)
+
+The book numbers minor from its own tonic, so **la is 1̂**. The names are the ones from [major](major-scales.qmd), with one
+change: **so** (a whole step below la) is the **subtonic**, and **si** (a half step below) is the **leading tone**, as ti is in major.
+
+| Syllable | Degree | Name |
+|---|---|---|
+| la | 1̂ | tonic |
+| ti | 2̂ | supertonic |
+| do | 3̂ | mediant |
+| re | 4̂ | subdominant |
+| mi | 5̂ | dominant |
+| fa | 6̂ | submediant |
+| so / si | 7̂ | subtonic / leading tone |
+
+So "the dominant" in minor is **mi**, the note your harmonic minor dominant patterns start on.
+
+## Bridging: from la to the book's names
+
+1. **Find do, then la.** Say both letters: "do is B♭, la is G: G minor."
+2. **Sing la to la**, then again on letters. That's natural minor.
+3. **Swap in si**: raise the letter under so with a sharp or natural. That's harmonic minor.
+4. **Parallel key?** Keep the tonic letter, move do: G major has do on G (one sharp); G minor has la on G (do on B♭, two flats).
+
+## Check yourself
+
+1. Two sharps. What is the relative minor?
+2. In D minor, what letter is si?
+3. In E minor harmonic, which note gets an accidental?
+4. What is the parallel minor of E♭ major, and its signature?
+5. In minor, which syllable is the dominant, 5̂?
+
+::: {.callout-tip collapse="true"}
+## Answers
+1. B minor (do is D, la is B).
+2. C♯.
+3. D becomes D♯ (so → si).
+4. E♭ minor, six flats (la on E♭, so do is on G♭).
+5. Mi.
+:::
+
+All the key-signature drills are on [Theory Drills](theory-drills.qmd?ex=keysig). Related: [Modes: Three Meanings of One Word](modes-three-ways.qmd).
+Next: [Rhythm Notation from Du De](rhythm-basics.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp. 111–117), the verbal association warning (p. 108), generalization-aural/oral and -verbal (pp. 131–133); same is easier to hear than different (p. 219); tonal and rhythm patterns kept apart (p. 223); rhythm patterns chanted with vocal inflection like speech (p. 101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp. 187–190).; Theory Concepts pages: Keyality versus key signature (p. xiii); tonality "best refers to what is usually called a mode," the eight tonalities (p. 149); movable-do with la-based minor and the rhythm syllables du de, du da di (p. 105); resting tone and tonic, a tonality in any keyality (p. 150); unitonal and multitonal music (pp. 152, 157); usual duple, triple and combined meter (pp. 175–176); no direct relation between measure signatures and meter, 6/8 as "duple compound" called inaccurate (p. 176); accents and microbeat divisions do not make meter (pp. 176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp. 179–180); key signatures as do signatures, one signature for many tonalities (pp. 155–156); rhythm syllables by beat function (p. 86); time-value names lead to counting (p. 38); writing tonal patterns from a familiar do signature (p. 125); letter names and time-value names as the alphabet of music (pp. 36–37); interval names learned in context of tonality and keyality (p. 65); the raised seventh of harmonic minor as si (p. 70); mi si ti re as a harmonic minor dominant pattern (p. 100).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp. 3, 9); notation as a window (p. 8); patterns as units of meaning (pp. 99–100); the aural/oral level and the pause (pp. 101–102); discrimination and inference learning, theory delayed (p. 106); levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231).
+
+Hutchinson, Robert. "Minor Scales and Key Signatures." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/MinorScalesAndKeySignatures.html](https://musictheory.pugetsound.edu/mt21c/MinorScalesAndKeySignatures.html). Chapter 3: natural, harmonic and melodic minor, minor key signatures, scale degree names.
+:::
+<!-- /works-cited -->

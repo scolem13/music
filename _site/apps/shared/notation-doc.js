@@ -51,6 +51,7 @@
 //                                   lead-in (pickup) written into the bar(s) before it, stitched with what is there (phrase-seam.js)
 //   NotationDoc.parseChords(text, barQ) -> { chords, chordLen } from "G | C D | Em" ("C . . D": "." holds a place); chordsText(chunk, barQ) the other way
 //   NotationDoc.syllables(text)  -> [{ s, join }]; setSyllabify(fn) replaces the splitter
+//   NotationDoc.triplet(part, from, to) -> error or null: those slots become three triplet notes in their time
 //   NotationDoc.addPitch(part, midi), nudge(midi, key, how, dir), letterMidi(letter, prev, key), guessKey(doc), meterInfo(meter),
 //   spell(midi, key, barAcc)
 (function (global) {
@@ -72,6 +73,13 @@
     if (!doc.voices) doc.voices = [{ name: "1", clef: "treble" }];
     if (doc.together === undefined) doc.together = true;
     doc.chunks.forEach((c, i) => { const n = newChunk("Chunk " + (i + 1)); Object.keys(n).forEach(k => { if (c[k] === undefined) c[k] = n[k]; }); });
+    // a pickup chunk that is no longer first (a chunk put before it): its notes are the lead into the next chunk's first bar
+    doc.chunks.forEach((c, i) => {
+      if (!i || !c.pickup) return;
+      c.pickup = false;
+      const mi = meterInfo(at(doc, i).meter), len = chunkLen(doc, i);
+      if (mi && len > EPS && len < mi.barQ - EPS && !c.lead) c.lead = r3(len);
+    });
     return doc;
   }
 
@@ -328,6 +336,24 @@
     const pa = part(a, v), pb = part(b, v), pitched = p => p.pitches.some(x => x != null);
     const kind = p => p.rhythm.length ? (pitched(p) ? "both" : "rhythm") : pitched(p) ? "pitches" : "empty";
     const ka = kind(pa), kb = kind(pb);
+    // chords over rests + a chunk of notes: the notes, with the chords laid over them bar for bar from the first full bar (after a lead)
+    const chordsOnly = (c, p) => c.chords.length && !pitched(p) && p.rhythm.every(r => r.type !== "note");
+    const ca = chordsOnly(a, pa), cb = chordsOnly(b, pb);
+    if ((ca && !cb && pitched(pb)) || (cb && !ca && pitched(pa))) {
+      const crd = ca ? a : b, mel = ca ? b : a, mi = meterInfo(at(doc, ci).meter);
+      const lead = mel.lead > EPS && mi && mel.lead < mi.barQ - EPS ? mel.lead : 0;
+      const cLead = crd.lead > EPS && mi && crd.lead < mi.barQ - EPS ? crd.lead : 0;
+      const len = Math.max(...Array.from({ length: voiceCount(doc) }, (_, w) => lengthQ(part(mel, w))));
+      const chords = crd.chords.filter(c => c.at >= cLead - EPS).map(c => ({ at: r3(c.at - cLead + lead), name: c.name })).filter(c => c.at < len - EPS);
+      for (let w = 0; w < voiceCount(doc); w++) { const t = part(a, w), f = part(mel, w); t.rhythm = copy(f.rhythm); t.pitches = f.pitches.slice(); t.breaks = f.breaks; if (!t.breaks) delete t.breaks; }
+      const keepIn = mel.chords.filter(c => c.at < lead - EPS);                  // chords in the melody's pickup stay
+      a.chords = keepIn.concat(chords); a.chordLen = 0; a.lead = mel.lead || 0; a.pickup = ci === 0 && !!mel.pickup;
+      if (!(a.words || "").trim()) a.words = mel.words;
+      if (mel.takes && mel.takes.length) a.takes = copy(mel.takes);
+      if (mel !== a) { if (mel.tempo) a.tempo = mel.tempo; else delete a.tempo; }   // the melody's tempo (played at it)
+      doc.chunks.splice(ci + 1, 1);
+      return null;
+    }
     if ((ka === "rhythm" && kb === "pitches") || (ka === "pitches" && kb === "rhythm")) {
       const r = ka === "rhythm" ? pa : pb, q = ka === "rhythm" ? pb : pa;
       pa.rhythm = copy(r.rhythm); pa.pitches = q.pitches.slice(); delete pa.breaks;
@@ -418,13 +444,37 @@
   // cut slot si of part p at offQ (quarters into it): two slots of the same kind, a note's tied, its pitch and spelling on both
   function splitSlot(p, si, offQ) {
     const r = p.rhythm[si]; if (!r || offQ <= EPS || offQ >= r.durQ - EPS) return false;
-    const a = Object.assign({}, r, { durQ: r3(offQ) }), b = Object.assign({}, r, { durQ: r3(r.durQ - offQ) });
+    const a = Object.assign({}, r, { durQ: snapQ(offQ) }), b = Object.assign({}, r, { durQ: snapQ(r.durQ - offQ) });
     if (r.type === "note") {
       a.tie = true;
       const k = noteIndex(p, si); if (k < p.pitches.length) p.pitches.splice(k + 1, 0, p.pitches[k]);
     }
     p.rhythm.splice(si, 1, a, b);
     return true;
+  }
+  // ( on the score: slots from..to of part p become a triplet, three notes in the time they took (a quarter: three triplet
+  // eighths). Their pitches go on the new notes in order (one note: its pitch on the first, the others empty); a chord's other
+  // notes and the spelling stay with the first, the last one's tie with the last. All rests: three rests. -> error or null
+  function triplet(p, from, to) {
+    const olds = p.rhythm.slice(from, to + 1);
+    if (!olds.length) return "Nothing to make a triplet of.";
+    if (olds.some(r => !onGrid(r.durQ))) return "That's already a triplet.";
+    const span = olds.reduce((a, r) => a + r.durQ, 0), w16 = Math.round(span * 2);
+    if (!WRITABLE.includes(w16) || Math.abs(span * 2 - w16) > EPS) return "A triplet goes in a sixteenth, eighth, quarter, half or whole note's time (dotted too).";
+    const k0 = noteIndex(p, from), notes = olds.filter(r => r.type === "note"), nN = notes.length;
+    const got = p.pitches.slice(k0, k0 + nN).filter(x => x != null).slice(0, 3);
+    const kind = nN ? "note" : olds[0].type, d = span / 3;
+    const fresh = [0, 1, 2].map(() => ({ type: kind, durQ: d }));
+    if (nN) {
+      const f = notes[0]; if (f.also) fresh[0].also = f.also.slice(); if (f.spell) fresh[0].spell = f.spell;
+      if (olds[olds.length - 1].type === "note" && olds[olds.length - 1].tie) fresh[2].tie = true;
+      while (p.pitches.length < k0) p.pitches.push(null);
+      const fill = [0, 1, 2].map(i => got[i] != null ? got[i] : null);
+      p.pitches.splice(k0, Math.min(nN, Math.max(0, p.pitches.length - k0)), ...fill);
+    }
+    p.rhythm.splice(from, olds.length, ...fresh);
+    trim(p);
+    return null;
   }
   function slotTime(p, slot) { let t = 0; for (let i = 0; i < slot; i++) t += p.rhythm[i].durQ; return r3(t); }
 
@@ -457,8 +507,12 @@
   }
   // replace chunk bars a..b (inclusive) of voice v with these slots and pitches (they fill exactly those bars)
   function replaceBars(doc, ci, v, a, b, rhythm, pitches) {
-    const mi = meterInfo(at(doc, ci).meter), p = part(doc.chunks[ci], v);
-    const t0 = a * mi.barQ, t1 = (b + 1) * mi.barQ;
+    const mi = meterInfo(at(doc, ci).meter);
+    replaceSpan(doc, ci, v, a * mi.barQ, (b + 1) * mi.barQ, rhythm, pitches);
+  }
+  // quarters t0..t1 of the chunk's voice v become rhythm / pitches (rest up to t0 when the voice ends before it)
+  function replaceSpan(doc, ci, v, t0, t1, rhythm, pitches) {
+    const p = part(doc.chunks[ci], v);
     const [pre, rest] = cutPart(p, t0), [, post] = cutPart(rest, t1 - t0);
     const preGap = r3(t0 - lengthQ(pre));
     const nr = pre.rhythm.concat(preGap > EPS ? [{ type: "rest", durQ: preGap }] : [], rhythm, post.rhythm);
@@ -543,6 +597,7 @@
         h += "\n";
       });
     } else if (doc.voices[0].clef && doc.voices[0].clef !== "treble") h += "V:" + vid(doc, 0) + " clef=" + doc.voices[0].clef + "\n";
+    doc.voices.forEach((vc, v) => { if (vc.plays) h += "% plays: V:" + vid(doc, v) + " " + vc.plays + "\n"; });   // (a comment: read back by fromAbc)
     const t0 = at(doc, 0).tempo || DEFAULT_TEMPO;
     return h + "Q:1/4=" + t0 + "\n" + "K:" + keyName(doc.key) + "\n";
   }
@@ -583,11 +638,42 @@
       const chords = v === 0 ? ch.chords.slice() : [];
       const syl = v === 0 ? syllables(ch.words) : [];
       let t = -padIn / 4, noteK = 0, sylK = 0, firstPiece = true;
+      const grp = tupletGroups(slots);
       slots.forEach((slot, si) => {
         const pi = slot.type === "note" ? p.pitches[noteK] : undefined;
         const filled = slot.type === "note" && pi != null;
         const midi = slot.type === "note" ? (filled ? pi : 71 + (sig(here.key).B || 0)) : null;   // an empty slot: the key's own B, no accidental
         if (slot.type === "note") noteK++;
+        if (grp[si]) {                              // a triplet note: written 3/2 as long, (3:2:n before the group, never cut
+          const g = grp[si], l16 = slot.durQ * 4, w16 = Math.round(slot.durQ * 6), inBar = pos16 % bar16;
+          let pre = "";
+          if (firstPiece) {
+            pre += fields;
+            if (v === 0 && ch.heading) pre += "[P:" + ch.heading.replace(/[\]\n]/g, "") + "]";
+            if (v === 0 && doc.chunks.length > 1 && ch.name !== ch.heading) pre += '"^' + (ch.name || "Chunk " + (ci + 1)).replace(/"/g, "'") + '"';
+            firstPiece = false;
+          }
+          while (chords.length && chords[0].at <= t + EPS) pre += '"' + chords.shift().name.replace(/"/g, "") + '"';
+          if (g.first) pre += g.n === 3 && mi.family !== "triple" ? "(3" : "(3:2:" + g.n;
+          const L = LEN[w16] != null ? LEN[w16] : w16 / 2 + "";
+          let tok;
+          if (slot.type === "rest") tok = "z" + L;
+          else if (slot.type === "space") tok = "x" + L;
+          else if (filled && slot.also && slot.also.length) tok = "[" + [midi].concat(slot.also).sort((a, b) => a - b).map(m => spell(m, here.key, barAcc, m === midi ? slot.spell : undefined)).join("") + "]" + L;
+          else tok = filled ? spell(midi, here.key, barAcc, slot.spell) + L : "!style=rhythm!B" + L;
+          const item = { pre, tok, tail: slot.type === "note" && slot.tie ? "-" : "", pos: inBar, len: w16, note: slot.type === "note", tuplet: true };   // len: as written, for beaming
+          if (!slot.padding) item.mark = { chunk: ci, voice: v, slot: si, filled: slot.type === "note" ? filled : null, offQ: 0, lenQ: slot.durQ, atQ: r3(t), down: inBar === 0 };
+          if (!bar.items.length) { bar.ci = ci; bar.from = r3(t); bar.lead = !chunkBarSeen[ci] && inBar > 0; chunkBarSeen[ci] = true; }
+          bar.items.push(item);
+          if (slot.type === "note" && v === 0 && syl.length) {
+            if (!tiedOnT(slots, si) && sylK < syl.length) { const x = syl[sylK++]; bar.syl.push(x.hold ? "_" : x.skip ? "*" : x.s.replace(/[|*~_-]/g, "") + (x.join ? "-" : "")); }
+            else bar.syl.push("*");
+          }
+          t += slot.durQ; pos16 += l16; any = true;
+          if (Math.abs(pos16 - Math.round(pos16)) < 1e-6) pos16 = Math.round(pos16);
+          if (g.last && pos16 % bar16 === 0) { bar.endCi = ci; bar.endT = r3(t); close(); }
+          return;
+        }
         const len16 = Math.round(slot.durQ * 4), tiedOn = si > 0 && slots[si - 1].type === "note" && slots[si - 1].tie && slot.type === "note";
         let left = len16, firstOfSlot = !tiedOn;                                         // a note tied on from the one before takes no syllable
         while (left > 0) {
@@ -634,6 +720,26 @@
     return bars;
   }
 
+  // ---- triplets ---------------------------------------------------------------------------------------------------------
+  // A slot whose length is not a whole number of sixteenths (1/3, 2/3, 1/6 of a quarter) is a triplet note. Such slots and the
+  // ones after them, up to where the lengths add back to whole sixteenths, are one group, written (3:2:n with each note 3/2 as
+  // long (three 1/3-quarter notes: (3:2:3 C D E, eighths in L:1/8). -> per slot index { first, last, n } or undefined.
+  const onGrid = x => Math.abs(x * 4 - Math.round(x * 4)) < 1e-6;
+  function tupletGroups(slots) {
+    const out = [];
+    for (let i = 0; i < slots.length; i++) {
+      if (onGrid(slots[i].durQ)) continue;
+      let j = i, sum = 0;
+      do { sum += slots[j].durQ; j++; } while (j < slots.length && !onGrid(sum));
+      for (let k = i; k < j; k++) out[k] = { first: k === i, last: k === j - 1, n: j - i };
+      i = j - 1;
+    }
+    return out;
+  }
+  const tiedOnT = (slots, si) => si > 0 && slots[si - 1].type === "note" && slots[si - 1].tie && slots[si].type === "note";
+  // a length read from ABC, to the nearest 1/48 quarter (sixteenths and triplets of them), so three triplet eighths add to 1
+  const snapQ = x => { const y = Math.round(x * 48) / 48; return Math.abs(y - x) < 2e-3 ? y : r3(x); };
+
   // ---- making it readable: where a note is cut, and which notes are beamed --------------------------------------------
   // In sixteenths from the bar line. 4/4: a note that starts off the beat is cut at the middle of the bar. Compound meters:
   // a note that starts inside a beat is cut at the end of that beat. Irregular meters (5/8, 7/8): at the end of its group.
@@ -660,7 +766,7 @@
     const bar16 = Math.round(mi.barQ * 4), g = groupStarts(mi);
     const beamable = it => it.note && it.len < 4 && !/\[/.test(it.pre);
     const groupOf = pos => { let k = 0; g.forEach((x, i) => { if (pos >= x) k = i; }); return k; };
-    const eighthsOnly = (a, b) => { const its = bar.items.filter(it => it.pos >= a && it.pos < b); return its.length > 1 && its.every(it => it.note && it.len === 2 && !/\[/.test(it.pre)) && its.reduce((s, it) => s + it.len, 0) === b - a; };
+    const eighthsOnly = (a, b) => { const its = bar.items.filter(it => it.pos >= a && it.pos < b); return its.length > 1 && its.every(it => it.note && !it.tuplet && it.len === 2 && !/\[/.test(it.pre)) && its.reduce((s, it) => s + it.len, 0) === b - a; };
     let wide = null;
     if (mi.family === "duple" && mi.d === 4) {
       if ((mi.n === 2 || mi.n === 3) && eighthsOnly(0, bar16)) wide = () => 0;
@@ -769,7 +875,21 @@
     return out;
   }
 
+  // field lines inside the tune body (P:Verse 1, Q:1/4=128, M:, K: after the header's K:) as inline fields on the music after them,
+  // which is where AbcEvents reads them
+  function inlineBodyFields(abc) {
+    const lines = abc.split("\n"), out = []; let inBody = false, held = "";
+    for (const ln of lines) {
+      const f = /^([PQMK]):\s*(.*?)\s*$/.exec(ln);
+      if (!inBody) { out.push(ln); if (/^K:/.test(ln)) inBody = true; continue; }
+      if (f) { held += "[" + f[1] + ":" + f[2].replace(/\]/g, "") + "]"; continue; }
+      if (held && ln.trim() && !/^[A-Za-z]:|^%/.test(ln)) { out.push(held + ln); held = ""; continue; }
+      out.push(ln);
+    }
+    return out.join("\n");
+  }
   function fromAbc(abc) {
+    abc = inlineBodyFields(abc);
     const doc = create();
     const m = /^M:\s*(\d+\/\d+)/m.exec(abc);
     doc.meter = m ? m[1] : null;
@@ -788,6 +908,8 @@
       const cl = hl && /clef=(\w+)/.exec(hl[1]);
       return { name: id, clef: cl ? cl[1] : "treble" };
     });
+    // a voice the band plays (voice.plays "bass" / "comp"): written as a comment in the header
+    abc.replace(/^% plays: V:(\S+) (bass|comp)\s*$/gm, (_, id, who) => { const vc = doc.voices.find(x => x.name === id); if (vc) vc.plays = who; return ""; });
     const reads = (ids.length ? ids : [null]).map(id => Events.fromAbc(abc, id ? { voice: id } : {}));
     const r0 = reads[0];
     // chunk starts (in quarters), from voice 0's labels and fields
@@ -803,7 +925,12 @@
     starts.forEach((s, i) => { if (s.tempo && (i || s.tempo !== doc.tempo)) doc.chunks[i].tempo = i ? s.tempo : null; if (!i && s.tempo) doc.tempo = s.tempo; });
     // a chunk that starts inside a bar: its notes up to the barline are its lead (a pickup)
     starts.forEach((s, i) => {
-      if (!i) return;
+      if (!i) {                                    // the piece starts with a short bar (an anacrusis): the first chunk's lead
+        const w = r0.written, nb = w.length && w.find(e => e.bar > w[0].bar), mI = meterInfo(starts[0].meter || doc.meter);
+        const inC0 = starts.length < 2 || (nb && nb.t_on < starts[1].t - EPS);   // else the chunk is the pickup, named so below
+        if (nb && mI && inC0 && nb.t_on > EPS && nb.t_on < mI.barQ - EPS) doc.chunks[0].lead = r3(nb.t_on);
+        return;
+      }
       const ev = r0.written.find(e => Math.abs(e.t_on - s.t) < EPS); if (!ev) return;
       const inBar = r0.written.filter(e => e.bar === ev.bar), nextBar = r0.written.find(e => e.bar > ev.bar);
       const b0 = Math.min(...inBar.map(e => e.t_on)), b1 = nextBar ? nextBar.t_on : null;
@@ -836,7 +963,7 @@
       ch.words = ch.words.trim();
       for (let v = 0; v < voiceCount(doc); v++) {
         const p = part(ch, v);
-        p.rhythm.forEach(s => { s.durQ = r3(s.durQ); });
+        p.rhythm.forEach(s => { s.durQ = snapQ(s.durQ); });
         while (p.rhythm.length && p.rhythm[p.rhythm.length - 1].type === "space") p.rhythm.pop();   // padding
         trim(p);
       }
@@ -1206,7 +1333,7 @@
     return res;
   }
 
-  const api = { splitSlot, enharmonics, wanted, sharpish, chunkLabels, sectionAbbr, bandChart, takeBand, bandOf, barSig, keepTake, takeAt, changedBars, replaceBars, fromTakeBars, splitAt, sections, sectionOf, moveSection, duplicateSection, extract, removeSpan, insert, slotTime, create, upgrade, newChunk, part, chunkLen, meterInfo, spell, toAbc, pendingAbc, fromAbc, toChordPro, fromChordPro, at, info,
+  const api = { triplet, splitSlot, enharmonics, wanted, sharpish, chunkLabels, sectionAbbr, bandChart, takeBand, bandOf, barSig, keepTake, takeAt, changedBars, replaceBars, fromTakeBars, replaceSpan, splitAt, sections, sectionOf, moveSection, duplicateSection, extract, removeSpan, insert, slotTime, create, upgrade, newChunk, part, chunkLen, meterInfo, spell, toAbc, pendingAbc, fromAbc, toChordPro, fromChordPro, at, info,
                 hasChanges, split, merge, combine, offsets, majorOf, keyName, duplicate, move, remove, addPitch, nudge, letterMidi, guessKey, scalePcs, parseChords, chordsText,
                 syllables, setSyllabify, barNotes, prevBar, writeLeadIn };
   if (typeof module !== "undefined" && module.exports) module.exports = api;

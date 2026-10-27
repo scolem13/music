@@ -202,6 +202,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
  <span class="dropdown-text">Tunes</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../practice/tune-directory.html">
+ <span class="dropdown-text">Tune Directory</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../practice/patterns.html">
  <span class="dropdown-text">Tonal Patterns</span></a>
   </li>  
@@ -2435,7 +2439,7 @@ let showNotation=false,abcLoading=null;
 function loadAbcjs(){
   if(window.ABCJS)return Promise.resolve();
   if(!abcLoading)abcLoading=new Promise((res,rej)=>{
-    const sc=document.createElement('script');sc.src='/apps/shared/abcjs-basic.js?v=2';
+    const sc=document.createElement('script');sc.src='/apps/shared/abcjs-basic.js?v=3';
     sc.onload=res;sc.onerror=()=>{abcLoading=null;rej(new Error('abcjs failed to load'))};
     document.head.appendChild(sc);
   });
@@ -3561,7 +3565,7 @@ renderChips();
 <script src="../apps/shared/audio.js?v=10"></script>
 <script src="../apps/shared/soundfont.js"></script>
 <script src="../apps/shared/band/sounds.js?v=17"></script>
-<script src="../apps/shared/band/player.js?v=111"></script>
+<script src="../apps/shared/band/player.js?v=125"></script>
 <script src="../apps/shared/establish-button.js"></script>
 </div>
 
@@ -3573,8 +3577,9 @@ renderChips();
 <!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
      (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
 <script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/degree-caret.js?v=2"></script>
 <script src="../apps/shared/circle-of-fifths.js?v=2"></script>
-<script src="../apps/shared/practice-widgets.js?v=8"></script>
+<script src="../apps/shared/practice-widgets.js?v=9"></script>
 <!-- A button at the left of the navbar that folds the docked sidebar away on
      every page, and remembers the choice. Below 992px Quarto already tucks the
      sidebar behind its own toggle, so the button is hidden there. -->

@@ -1,4 +1,4 @@
-// tune-library.js — shared tune index + faceted search, used by the tune-assessment
+// tune-library.js — shared tune index + faceted search, used by the tune-assessment, Classical Themes and Tune Directory pages
 // page and the Chord Sheet tool. Replaces the old "collections" organizing principle:
 // every tune is a record with auto-derived attributes (chords / lyrics / meter / key /
 // tonality / measures / pickup) plus HYBRID manual metadata read from the ABC:
@@ -30,6 +30,33 @@
   // (e.g. Dm's DO is F: D = "La", matching pattern-object.js).
   var SOLFEGE = ["Do","Di","Re","Ri","Mi","Fa","Fi","So","Si","La","Li","Ti"];
   var SOLFEGE_IDX = {}; SOLFEGE.forEach(function (s, i){ SOLFEGE_IDX[s.toLowerCase()] = i; });
+  ["ra", "me", "se", "le", "te"].forEach(function (s, i){ SOLFEGE_IDX[s] = [1, 3, 6, 8, 10][i]; });   // the lowered syllables, same steps
+  // a tonal-pattern token: a syllable (Do, Me, Fi…) or a scale degree (1 = Do, b3 = Me, #4 = Fi, b7 = Te; 8 = Do) -> SOLFEGE name
+  var DEG_PC = { 1: 0, 2: 2, 3: 4, 4: 5, 5: 7, 6: 9, 7: 11, 8: 0 };
+  function solfegeToken(t){
+    t = String(t).trim().toLowerCase();
+    if (SOLFEGE_IDX.hasOwnProperty(t)) return SOLFEGE[SOLFEGE_IDX[t]];
+    var m = /^([b#♭♯]*)([1-8])$/.exec(t); if (!m) return null;
+    var pc = DEG_PC[m[2]]; m[1].split("").forEach(function (c){ pc += (c === "#" || c === "♯") ? 1 : -1; });
+    return SOLFEGE[((pc % 12) + 12) % 12];
+  }
+  // a typed Roman numeral -> the labels tunes are indexed by: b/# -> ♭/♯, o / dim / ø -> °, + / aug kept, extensions and
+  // inversion figures dropped (V7 -> V, ii65 -> ii, IVmaj7 -> IV), so "bVII" "V7/V" "viio" match.
+  function romanToken(t){
+    return String(t).trim().split("/").map(function (part){
+      var m = /^([b#♭♯]?)([ivIV]+)(.*)$/.exec(part.trim()); if (!m) return part.trim();
+      var acc = m[1] === "b" ? "♭" : m[1] === "#" ? "♯" : m[1], rest = m[3];
+      var q = /^(o|°|dim|ø|m7b5)/i.test(rest) ? "°" : /^(\+|aug)/i.test(rest) ? "+" : "";
+      return acc + m[2] + q;
+    }).join("/");
+  }
+  // Functions: every chord is in the tune, any order. Progression: those chords one after another, in that order
+  // (romanSeq has repeats of a chord collapsed). Used by filter() and by pages with chord lists of their own (Tune Directory).
+  function romanMatch(crit, romans, romanSeq){
+    if (crit.functions && crit.functions.length && !crit.functions.every(function (f){ return (romans || []).indexOf(f) >= 0; })) return false;
+    if (crit.chordProgression && crit.chordProgression.length && !containsSeq(romanSeq, crit.chordProgression, function (a, b){ return a === b; })) return false;
+    return true;
+  }
   // does `hay` contain `needle` as a contiguous run, compared with `eq`?
   function containsSeq(hay, needle, eq){
     if (!needle || !needle.length) return true;
@@ -267,8 +294,7 @@
       // tonal pattern / chord progression / rhythm pattern: contiguous subsequence search
       if (crit.tonalPattern && crit.tonalPattern.length &&
         !containsSeq(r.solfege, crit.tonalPattern, function (a, b){ return a === b; })) return false;
-      if (crit.chordProgression && crit.chordProgression.length &&
-        !containsSeq(r.romanSeq, crit.chordProgression, function (a, b){ return a === b; })) return false;
+      if (!romanMatch(crit, r.romans, r.romanSeq)) return false;
       if (crit.rhythmPatterns && crit.rhythmPatterns.length){
         var rEq = function (a, b){ return a.type === b.type && Math.abs(a.durQ - b.durQ) < 1e-3; };
         if (!crit.rhythmPatterns.every(function (pat){ return containsSeq(r.rhythmEvents, pat, rEq); })) return false;
@@ -324,7 +350,7 @@
     + '.tl-picker .tl-rt{font-weight:600;line-height:1.2}'
     + '.tl-picker .tl-rmeta{margin-left:auto;display:flex;gap:.5rem;color:var(--tlp-muted);font-size:.72rem;white-space:nowrap}'
     + '.tl-picker .tl-empty{padding:.7rem;color:var(--tlp-muted);font-size:.82rem}'
-    + '.tl-picker .tl-mini-search{width:170px;flex:0 0 auto;text-overflow:ellipsis}'
+    + '.tl-picker .tl-mini-search{width:15.5rem;max-width:100%;flex:0 1 auto;text-overflow:ellipsis}'
     // margin:0 overrides Bootstrap's bare `details{margin-bottom:1em}` reboot rule (see
     // the same fix on .tl-facet above).
     + '.tl-picker .tl-rcell-panel{display:flex;flex-direction:column;gap:.4rem;margin:0}'
@@ -437,8 +463,12 @@
       textResets.push(function (){ input.value = ""; });
       bar.appendChild(input);
     }
-    textFacet("tonalPattern", "Tonal pattern e.g. Do Mi So", function (t){ var i = SOLFEGE_IDX[t.toLowerCase()]; return i != null ? SOLFEGE[i] : null; });
-    textFacet("chordProgression", "Chords e.g. ii V I", function (t){ return t; });
+    textFacet("tonalPattern", "Tonal pattern: Do Mi So or 1 b3 5", solfegeToken);
+    // Functions: has all of these chords (any order); Progression: these chords in this order. A page asking for
+    // "chordProgression" alone (older pages) gets both.
+    if (wantFacets.indexOf("chordProgression") >= 0 && wantFacets.indexOf("functions") < 0) wantFacets.push("functions");
+    textFacet("functions", "Functions: ii V I (any order)", romanToken);
+    textFacet("chordProgression", "Progression: ii V I (in order)", romanToken);
     var clear = document.createElement("button"); clear.type = "button"; clear.className = "tl-clear"; clear.textContent = "Clear";
     clear.addEventListener("click", function (){ renderPickerReset(); }); bar.appendChild(clear);
 
@@ -626,7 +656,7 @@
       });
       count.textContent = lastRes.length + (lastRes.length === 1 ? " tune" : " tunes");
       // opts.onResults(list): the page shows the results itself (Classical Themes); no list here
-      if (opts.onResults){ list.hidden = true; opts.onResults(lastRes.slice()); return; }
+      if (opts.onResults){ list.hidden = true; opts.onResults(lastRes.slice(), crit); return; }
       list.innerHTML = "";
       if (!lastRes.length){ var e = document.createElement("li"); e.className = "tl-empty"; e.textContent = "No tunes match these filters."; list.appendChild(e); return; }
       lastRes.forEach(function (r){
@@ -668,5 +698,5 @@
 
   global.TuneLibrary = { build: build, all: function (){ return records.slice(); },
     byId: function (id){ return byIdMap[id] || null; }, facets: facets, filter: filter, renderPicker: renderPicker, entryLink: entryLink,
-    roman: appliedRoman };   // chord symbol → roman (with applied-chord analysis); used by the chart's roman mode
+    roman: appliedRoman, romanMatch: romanMatch, romanToken: romanToken, solfegeToken: solfegeToken };   // chord symbol → roman (with applied-chord analysis); used by the chart's roman mode
 })(typeof window !== "undefined" ? window : globalThis);

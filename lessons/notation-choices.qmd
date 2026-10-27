@@ -282,7 +282,7 @@ clear notes, and only with labels that point at what to look at.
 .nc-cn .bar{color:var(--site-accent-dk);font-weight:700}
 .nc-legend{font-size:.85rem;color:var(--site-ink-2);display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;margin-top:.5rem}
 </style>
-<script src="/apps/shared/abcjs-basic.js?v=2"></script>
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
 <script src="/apps/shared/lessons/sections.js?v=1"></script>
 <script>
 // Mò Lì Huā, the first phrase, drawn six ways from one list of notes: [degree, MIDI, beats, lyric]

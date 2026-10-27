@@ -1,0 +1,107 @@
+---
+title: "Tune Directory"
+description: "Every tune, classical theme and analysed score on the site in one list, with the recordings, articles and other resources attached to each piece."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<div class="td-top">
+  <input type="search" id="td-q" placeholder="Search titles, composers, sets (autumn, Bach, BWV 1046…)" aria-label="Search the directory" autocomplete="off">
+  <span id="td-stat" aria-live="polite"></span>
+</div>
+<details id="td-music" class="td-music">
+  <summary>Filter by music: tonality, meter, key, tonal pattern, Functions, Progression, rhythm</summary>
+  <p class="td-note">The Tune Assessment's finder, over the tunes and the classical themes. <b>Functions</b> (ii V I) finds pieces with all
+  of those chords in any order; <b>Progression</b> (ii V I) only those with the chords one after another in that order. Both read Roman
+  numerals over the tonic, and also search the Billboard songs. <b>Tonal pattern</b> takes syllables (Do Me So) or scale degrees
+  (1 b3 5; 1 is Do, b3 is Me, #4 is Fi). A filter the Billboard songs or analysed scores have nothing to answer with leaves them out.</p>
+  <div id="td-music-status" class="td-note"></div>
+  <div id="td-picker"></div>
+</details>
+<div id="td-status">Loading the collections…</div>
+```
+
+## Pieces with recordings and resources {#td-works}
+
+```{=html}
+<p class="td-note"><span id="td-works-n"></span>. A piece groups every place it appears on the site (a tune in several keys, a
+classical theme, an analysed score) and holds its recordings and links. They are kept in <code>apps/shared/works/works-data.js</code>.</p>
+<div id="td-works-list"></div>
+```
+
+## Tune Library {#td-tunes}
+
+```{=html}
+<p class="td-note"><span id="td-tunes-n"></span>. A title opens the tune in the <a href="tunes.html">Tune Library</a>; 🎧 jumps to its piece above.</p>
+<div id="td-tunes-list"></div>
+```
+
+## Classical Themes {#td-themes}
+
+```{=html}
+<p class="td-note"><span id="td-themes-n"></span>. A title opens the theme on the <a href="../tools/classical-themes.html">Classical Themes</a> page.</p>
+<div id="td-themes-list"></div>
+```
+
+## Billboard songs (chords and form) {#td-billboard}
+
+```{=html}
+<p class="td-note"><span id="td-bb-n"></span> from the McGill Billboard Project (1958–1991): each song's sections, bars and chords,
+timed. A title opens it in <a href="../tools/timestamp-notes.html">Timestamp Notes</a>; no recording comes with it, so find the song on
+YouTube and paste the link there.</p>
+<div id="td-billboard-list"></div>
+```
+
+## Analysed Scores {#td-analysed}
+
+```{=html}
+<p class="td-note">The analysed scores that belong to a piece above. All of them are on the <a href="../theory/analysed-scores/index.html">Analysed Scores</a> pages.</p>
+<div id="td-analysed-list"></div>
+
+<style>
+.td-top { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin: .5rem 0 1rem; }
+#td-q { flex: 1 1 18rem; max-width: 32rem; padding: .35rem .6rem; border: 1px solid var(--bs-border-color, #ced4da); border-radius: 6px;
+  background: var(--bs-body-bg, #fff); color: inherit; }
+#td-stat, #td-status, .td-note { font-size: .85rem; opacity: .75; }
+.td-group { border-bottom: 1px solid var(--bs-border-color, #e9ecef); }
+.td-group > summary { cursor: pointer; padding: .3rem 0; display: flex; gap: .6rem; align-items: baseline; }
+.td-gname { font-weight: 600; }
+.td-count { font-size: .8rem; opacity: .6; }
+.td-list { list-style: none; padding: 0 0 .5rem .9rem; margin: 0; columns: 2 22rem; column-gap: 2rem; }
+.td-row { break-inside: avoid; padding: .08rem 0; font-size: .92rem; }
+.td-row a { text-decoration: none; }
+.td-sub { font-size: .78rem; opacity: .6; margin-left: .45rem; }
+.td-badge { font-size: .78rem; margin-left: .45rem; padding: 0 .35rem; border-radius: 4px; background: rgba(13, 110, 253, .1); }
+.td-work { scroll-margin-top: 5rem; transition: background .4s; border-radius: 6px; }
+.td-work .wk-panel { margin: .5rem 0; }
+.td-work.td-flash { background: rgba(13, 110, 253, .12); }
+.td-music { margin: 0 0 1rem; border: 1px solid var(--bs-border-color, #dee2e6); border-radius: 6px; padding: .4rem .7rem; }
+.td-music > summary { cursor: pointer; font-weight: 600; }
+.td-music #td-picker > .tl-search:first-child, .td-music .tl-sort { display: none; }
+@media (max-width: 600px) { .td-list { columns: 1; padding-left: .3rem; } }
+</style>
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
+<script src="/apps/shared/abc-core.js?v=1"></script>
+<script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
+<script src="/apps/shared/pitch-spelling.js"></script>
+<script src="/apps/shared/tonality.js?v=10"></script>
+<script src="/apps/shared/tune-chart.js?v=11"></script>
+<script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
+<script src="/apps/shared/rhythm-cells.js?v=1"></script>
+<script src="/apps/shared/tune-library.js?v=20"></script>
+<script src="/apps/tunes/tunes-object.js"></script>
+<script src="/apps/themes/themes-data.js?v=3"></script>
+<script src="/apps/shared/works/works-data.js?v=1"></script>
+<script src="/apps/shared/works/works.js?v=1"></script>
+<script src="/apps/shared/works/tune-directory.js?v=3"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Burgoyne, John Ashley, Jonathan Wild, and Ichiro Fujinaga. "An Expert Ground Truth Set for Audio Chord Recognition and Music Analysis." *Proceedings of the 12th International Society for Music Information Retrieval Conference*, Miami, 2011, pp. 633–38. The 890 SALAMI chords files of the McGill Billboard Project (songs from the Billboard Hot 100, 1958–1991): sections, bars and chords, timed; released under CC0. [ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/](https://ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/).
+:::
+<!-- /works-cited -->
