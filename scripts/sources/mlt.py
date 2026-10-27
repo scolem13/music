@@ -1,9 +1,10 @@
 # Sources for the Music Learning Theory pages (practice/audiation.qmd, the MLT pattern sets on practice/patterns.qmd).
 # Read in full from the books (copies the user holds; GIA and the authors gave permission to reproduce with page citations).
 AU = "practice/audiation.qmd"
+HE = "practice/harmony-ear.qmd"
 RP = ["practice/rhythms.qmd", "practice/rhythm-sequences.qmd", "practice/assessment-rhythm.qmd", "practice/lsa-practice.qmd", "practice/lsa-practice-notated.qmd", "practice/lsa-rhythm-assessment.qmd"]   # the Conversational chant (apps/shared/rhythm-chant.js)
 SOURCES = [
-    book('Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012.', [AU] + RP + ["theory/modes-three-ways.qmd", "theory/meter-taxonomy.qmd", "theory/major-scales.qmd", "theory/rhythm-basics.qmd", "theory/pitch-basics.qmd", "theory/minor-scales.qmd", "theory/intervals.qmd", "course/glossary.qmd", "course/enrichment.qmd"],
+    book('Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012.', [AU, HE] + RP + ["theory/modes-three-ways.qmd", "theory/meter-taxonomy.qmd", "theory/major-scales.qmd", "theory/rhythm-basics.qmd", "theory/pitch-basics.qmd", "theory/minor-scales.qmd", "theory/intervals.qmd", "course/glossary.qmd", "course/enrichment.qmd"],
          "Skill learning sequence: partial synthesis (pp. 111–117), the verbal association warning (p. 108), generalization-aural/oral and -verbal (pp. 131–133); "
          "same is easier to hear than different (p. 219); tonal and rhythm patterns kept apart (p. 223); "
          "rhythm patterns chanted with vocal inflection like speech (p. 101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp. 187–190)." "; Theory Concepts pages: "
@@ -12,18 +13,20 @@ SOURCES = [
          "unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp. 179–180); key signatures as do signatures, one signature for many tonalities (pp. 155–156); rhythm syllables by beat function (p. 86); time-value names lead to counting (p. 38); writing tonal patterns from a familiar do signature (p. 125); letter names and time-value names as the alphabet of music (pp. 36–37); interval names learned in context of tonality and keyality (p. 65); the raised seventh of harmonic minor as si (p. 70); mi si ti re as a harmonic minor dominant pattern (p. 100)." "; Course pages (glossary, enrichment): "
          "audiation defined and compared with imitation (Introduction; pp. 3, 9); notation as a window (p. 8); patterns as units of meaning (pp. 99–100); "
          "the aural/oral level and the pause (pp. 101–102); discrimination and inference learning, theory delayed (p. 106); "
-         "levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231)."),
+         "levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231)."
+         "; Hearing Harmony: four stages of readiness for chord changes (p. 305); harmonic patterns I V7 I, I IV I, I II V7 I, I II7 V7 I (p. 313); "
+         "I V7 I, then I IV I, then I IV V7 I and I V7 IV I in three sung parts, then harmonic minor (pp. 318–319); easy and moderately difficult harmonic patterns, the supertonic delayed (p. 320)."),
     book('Gordon, Edwin E. *Jump Right In: The Music Curriculum. Reference Handbook for Using Learning Sequence Activities*. 2001 revision, GIA Publications, 2001.', [AU] + RP,
          "Tonal sequences (p. 33) and range (p. 32); Tonal Unit 6, partial synthesis (pp. 48–49); Tonal Unit 9, generalization-verbal (pp. 52–54); rhythm patterns and sequences chanted with expressive inflection on one pitch, all durations without pitch (\"A Quick Course on Rhythm\" and \"Techniques for Teaching Class Patterns\")."),
     book('Mullen, Andy. *MLT Any Music Teacher Can Du…De: Teacher\'s Guide to "The Literate Musician."* The Improving Musician, 2021.', [AU] + RP,
          "Bridging and familiar patterns before unfamiliar ones at generalization (pp. 65–67); the audiation-foundation objectives (p. 74); "
          "the tonal sequence (p. 79); partial synthesis in rhythm by naming the microbeat (p. 85); rhythm patterns kept conversational, inflected with style and panache (p. 84)."),
-    book('Mullen, Andy. *The Literate Musician: How to Hear, Speak, Think, Read & Write the Language of Music*. Revised 2nd ed., The Improving Musician, 2020.', [AU, "practice/patterns.qmd", "practice/rhythms.qmd", "practice/rhythm-sequences.qmd"],
+    book('Mullen, Andy. *The Literate Musician: How to Hear, Speak, Think, Read & Write the Language of Music*. Revised 2nd ed., The Improving Musician, 2020.', [AU, HE, "practice/patterns.qmd", "practice/rhythms.qmd", "practice/rhythm-sequences.qmd"],
          "FPIFO, major and minor tonic and dominant (pp. 57, 59), copied into mullen-fpifo-major / -minor in apps/patterns/pattern-set.js; "
          "FPIFO in the Dorian, Mixolydian, Phrygian, Lydian, Aeolian and Locrian tonalities (pp. 22–27), mullen-fpifo-dorian … -locrian, with the keys moved so that C is the book's resting tone; "
          "Major and Minor Subdominant FPIFO (p. 293), mullen-subdominant-major / -minor; the stepwise sets (pp. 71–72) are the site's major-stepwise / minor-stepwise; "
          "rhythm patterns by lesson (duple and triple macrobeat and microbeat, pp. 37, 39–40; divisions, pp. 45, 47; elongation cells, pp. 48–49), copied into the mullen-rhythm-* sets of apps/rhythms/rhythm-pattern-object.js; "
-         "translation lessons (Rhythm 8, 9.3, 10.3; Harmony 9). Reproduced with permission."),
+         "translation lessons (Rhythm 8, 9.3, 10.3; Harmony 9); Hearing Harmony: Harmony lessons 2–5 (major and minor tonic and dominant, pp. 53–58), 7 (comparing major and minor, p. 62), the Harmonic Loops by tonality (pp. 20–27). Reproduced with permission."),
     book('Azzara, Christopher D., and Richard F. Grunow. *Developing Musicianship through Improvisation, Book 1: C Instruments*. GIA Publications, 2006.', ["practice/tunes.qmd", "practice/assessment-tune.qmd", "practice/patterns.qmd", "practice/rhythms.qmd", "practice/rhythm-sequences.qmd"],
          "Unit repertoire songs (melody and chords) transcribed into the dmti set of apps/tunes/tunes-object.js: \"Mary Ann\" (p. 17), \"Joshua\" (p. 33), \"Down by the Riverside\" (p. 69); \"Long, Long Ago\" (p. 1) and \"Simple Gifts\" (p. 51) were already in the collection. "
          "Part 2, Echo Tonal Patterns of Units 4 and 5 (solfège, p. xi), copied into dmti1-unit4-tonal / -unit5-tonal in apps/patterns/pattern-set.js with C as DO (Units 1–3 are the site's major-I-V and minor-i-V); "

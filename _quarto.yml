@@ -352,6 +352,7 @@ website:
         - section: "LSA practice"
           contents:
             - practice/audiation.qmd
+            - practice/harmony-ear.qmd
             - practice/lsa-practice.qmd
             - practice/lsa-practice-notated.qmd
             - practice/lsa-rhythm-assessment.qmd
@@ -492,6 +493,7 @@ website:
           - practice/dictation.qmd
           - text: "---"
           - practice/audiation.qmd
+          - practice/harmony-ear.qmd
           - practice/lsa-practice.qmd
           - practice/lsa-practice-notated.qmd
           - practice/lsa-rhythm-assessment.qmd
