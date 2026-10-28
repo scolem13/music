@@ -640,7 +640,7 @@
   // ---- the record (SiteRecord, apps/shared/report/record.js, loaded on first use). One item a passage, tool "chord-analysis",
   // it.d = { s: its settings and seed (make() rebuilds it exactly), k: key attempts, c: per chord { st: stack attempts, nm: name
   // attempts (each [what, 1 right / 0 wrong, seconds in]), h: steps looked at, rv: 1 when "Show the answers" was pressed } }.
-  var SR_SRC = "/apps/shared/report/record.js?v=1", srWait = [];
+  var SR_SRC = "/apps/shared/report/record.js?v=2", srWait = [];
   function withRecord(f) {
     if (global.SiteRecord) { registerRecord(); return f(global.SiteRecord); }
     srWait.push(f); if (srWait.length > 1 || typeof document === "undefined") return;

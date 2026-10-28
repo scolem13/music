@@ -69,7 +69,7 @@
     ".sr-side{margin-top:1.2rem;padding-top:.6rem;border-top:1px solid var(--bs-border-color,#ddd);font-size:.85rem}.sr-side .sr-row{margin:.3rem 0}.sr-side b{display:block}" +
     ".sr-dialog{width:min(980px,96vw);max-height:92vh;border:1px solid var(--bs-border-color,#ccc);border-radius:8px;padding:1rem;background:var(--bs-body-bg,#fff);color:var(--bs-body-color,#222)}" +
     ".sr-dialog::backdrop{background:rgba(0,0,0,.35)}body.sr-side-on .sr-mybtn{display:none}" +
-    ".sr-print{display:none}body.sr-printing>*:not(.sr-print){display:none!important}body.sr-printing .sr-print{display:block;padding:1rem}";
+    ".sr-print{display:none}body.sr-printing>*:not(.sr-print){display:none!important}body.sr-printing .sr-print{display:block;padding:1rem}.sr-code{white-space:pre-wrap;word-break:break-all;font-size:.75rem;border:1px solid #ccc;padding:.4rem;user-select:all}";
   function css() { if (document.getElementById("sr-css")) return; var s = el("style"); s.id = "sr-css"; s.textContent = CSS; document.head.appendChild(s); }
   function attempts(list) { return list && list.length ? list.map(function (a) { return (a[1] ? "✓ " : "✗ ") + a[0]; }).join("  ·  ") : "—"; }
   function found(it) { return it.rv || it.at.some(function (a) { return a[1]; }); }
@@ -129,8 +129,9 @@
     L.push("Report code (your teacher pastes it on the My Report page to check it):", code(data));
     return L.join("\n");
   }
-  function printNode(node) {
-    var wrap = el("div", "sr-print"); wrap.appendChild(node.cloneNode(true)); document.body.appendChild(wrap); document.body.classList.add("sr-printing");
+  function printNode(node, codeText) {
+    var wrap = el("div", "sr-print"); wrap.appendChild(node.cloneNode(true));
+    if (codeText) { wrap.appendChild(el("h4", "", "Report code")); wrap.appendChild(el("p", "sr-help", "Your teacher pastes this on the My Report page to check the report.")); wrap.appendChild(el("pre", "sr-code", codeText)); } document.body.appendChild(wrap); document.body.classList.add("sr-printing");
     var done = function () { document.body.classList.remove("sr-printing"); wrap.remove(); global.removeEventListener("afterprint", done); };
     global.addEventListener("afterprint", done); global.print(); setTimeout(function () { if (document.body.contains(wrap) && !global.matchMedia("print").matches) done(); }, 1500);
   }
@@ -150,7 +151,7 @@
     function redraw() { var d = data(); ready(d.items, function () { render(out, d, {}); }); }
     nameI.addEventListener("input", function () { nameSet(nameI.value); redraw(); });
     rangeS.addEventListener("change", redraw);
-    pr.addEventListener("click", function () { if (out.firstChild) printNode(out.firstChild); });
+    pr.addEventListener("click", function () { if (out.firstChild) printNode(out.firstChild, code(data())); });
     cp.addEventListener("click", function () { var t = text(data()); if (navigator.clipboard) navigator.clipboard.writeText(t).then(function () { msg.textContent = "Copied, with the report code at the end."; }, function () { msg.textContent = "Couldn't copy."; }); });
     redraw();
     box._sr = { data: data, redraw: redraw, text: function () { return text(data()); } };

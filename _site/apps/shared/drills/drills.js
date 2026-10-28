@@ -1152,7 +1152,7 @@
 
   // ---- the record (SiteRecord, apps/shared/report/record.js, loaded on first use): one item a question, tool "drill",
   // with what was asked, the answer given (typed, a button, or notes played on MIDI), right or wrong, and the seconds it took
-  var SR_SRC = "/apps/shared/report/record.js?v=1", srWait = [];
+  var SR_SRC = "/apps/shared/report/record.js?v=2", srWait = [];
   function withRecord(f) {
     if (global.SiteRecord) return f(global.SiteRecord);
     srWait.push(f); if (srWait.length > 1) return;
