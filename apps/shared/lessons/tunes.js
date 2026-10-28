@@ -5,7 +5,7 @@
 //   BluesTunes.closet            { title, composer, abc, chart ("F7|F7|..." one entry a bar), pickup (quarter notes before bar 1),
 //                                  words: for each line of music, the place of every note in the chord of the moment }
 //   (a tune is written in F unless it says `key`)
-//   BluesTunes.inKey(tune, "Eb", { words: true, octaves: -2, clef: "bass" })
+//   BluesTunes.inKey(tune, "Eb", { words: true | "key", octaves: -2, clef: "bass" })   ("key": scale degrees in the key, from the notes)
 //                                                   -> its ABC in that key (AbcTranspose spells it), with the words under the notes,
 //                                                      moved by whole octaves and put in another clef if asked;
 //                                                      barsPerLine: 2 = two bars to a line instead of four (a narrow screen)
@@ -68,6 +68,28 @@
     try { global.localStorage.setItem("bandHandoff", JSON.stringify({ v: 1, from: "chord-entry", at: Date.now(), abc: tune.abc, tempo: o.tempo || 132, style: o.style || "swing" })); } catch (e){}
     return global.open("/tools/backing-track.html?from=chord-entry", "_blank");
   }
+  // the words for a tune's lines in key degrees (1 = the key note, DegreeFrame.NAMES), worked out from its notes: one word per note,
+  // "*" for the second half of a tie and nothing for a rest, bars split by "|" as tune.words are. (Major keys: K: names the tonic.)
+  var KEY_NAMES = ["1", "\u266d2", "2", "\u266d3", "3", "4", "\u266f4", "5", "\u266d6", "6", "\u266d7", "7"], LETTER_PC = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+  function keyWords(tune){
+    var km = /^K:\s*([A-G])([b#]?)/m.exec(tune.abc), tonic = km ? (LETTER_PC[km[1]] + (km[2] === "b" ? -1 : km[2] === "#" ? 1 : 0) + 12) % 12 : 0;
+    var FIFTHS = { 0: 0, 7: 1, 2: 2, 9: 3, 4: 4, 11: 5, 6: 6, 5: -1, 10: -2, 3: -3, 8: -4, 1: -5 }, n = FIFTHS[tonic], sig = {};
+    for (var i = 0; i < Math.abs(n); i++) sig[(n > 0 ? "FCGDAEB" : "BEADGCF")[i]] = n > 0 ? 1 : -1;
+    var tied = false;                                       // (a tie may cross the end of a line)
+    return tune.abc.split("\n").filter(function (l){ return /\|/.test(l) && !/^[A-Za-z]:/.test(l); }).map(function (l){
+      var out = [], bar = {}, re = /"[^"]*"|![^!]*!|(\|+\]?)|([_^=]*)([A-Ga-g])[,']*[\d\/]*(-?)|z[\d\/]*/g, m;
+      while ((m = re.exec(l))){
+        if (m[1]){ out.push("|"); bar = {}; continue; }
+        if (!m[3]) continue;
+        if (tied){ out.push("*"); tied = !!m[4]; continue; }
+        var L = m[3].toUpperCase(), acc = m[2];
+        if (acc) bar[L] = acc === "=" ? 0 : (acc.match(/\^/g) || []).length - (acc.match(/_/g) || []).length;
+        var a = bar[L] != null ? bar[L] : (sig[L] || 0);
+        out.push(KEY_NAMES[((LETTER_PC[L] + a - tonic) % 12 + 12) % 12]); tied = !!m[4];
+      }
+      return out.join(" ").replace(/ \|/g, " |").replace(/\| \*/g, "| *");
+    });
+  }
   function inKey(tune, key, o){
     var T = global.AbcTranspose, abc = (T && key && key !== (tune.key || "F")) ? T.transpose(tune.abc, key) : tune.abc;
     if (o && o.octaves) abc = octaves(abc, o.octaves);
@@ -78,10 +100,11 @@
       return segs.length < 4 ? [l] : [lead + segs.slice(0, 2).join("|") + "|", segs.slice(2).join("|") + "|" + tail];
     }
     var two = o && o.barsPerLine === 2, words = o && o.words && tune.words, k = 0;
+    if (words && o.words === "key") words = keyWords(tune);
     if (!two && !words) return abc;
     return abc.split("\n").map(function (l){
       if (!/\|/.test(l) || /^[A-Za-z]:/.test(l)) return l;
-      var ms = two ? halves(l, k === 0) : [l], ws = words && tune.words[k] ? (two ? halves(tune.words[k], k === 0) : [tune.words[k]]) : []; k++;
+      var ms = two ? halves(l, k === 0) : [l], ws = words && words[k] ? (two ? halves(words[k], k === 0) : [words[k]]) : []; k++;
       return ms.map(function (m, i){ return m + (ws[i] ? "\nw: " + ws[i] : ""); }).join("\n");
     }).join("\n");
   }
@@ -96,5 +119,5 @@
     return bars;
   }
 
-  global.BluesTunes = { closet: closet, watermelon: watermelon, ode: ode, inKey: inKey, melody: melody, octaves: octaves, backingTrack: backingTrack };
+  global.BluesTunes = { closet: closet, watermelon: watermelon, ode: ode, inKey: inKey, keyWords: keyWords, melody: melody, octaves: octaves, backingTrack: backingTrack };
 })(typeof window !== "undefined" ? window : globalThis);

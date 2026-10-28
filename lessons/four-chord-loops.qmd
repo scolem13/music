@@ -178,8 +178,8 @@ first: does it fall, climb or leap?
 <script src="/apps/shared/abc-core.js?v=1"></script>
 <script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
 <script src="/apps/shared/abc-transpose.js?v=4"></script>
-<script src="/apps/shared/lessons/score.js?v=5"></script>
-<script src="/apps/shared/lessons/tunes.js?v=4"></script>
+<script src="/apps/shared/lessons/score.js?v=6"></script>
+<script src="/apps/shared/lessons/tunes.js?v=5"></script>
 <script src="/apps/shared/lessons/chord-staff.js?v=1"></script>
 <script src="/apps/shared/tune-chart.js?v=31"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>

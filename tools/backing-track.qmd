@@ -4,7 +4,7 @@ title: "Backing Track"
 
 ::: {.column-screen}
 ```{=html}
-<script src="/apps/shared/playbar.js?v=2"></script>
+<script src="/apps/shared/playbar.js?v=3"></script>
 ```
 {{< include _bt-draft-common.qmd >}}
 {{< include _backing-track.qmd >}}

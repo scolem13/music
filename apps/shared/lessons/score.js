@@ -3,6 +3,7 @@
 //
 //   var score = LessonScore.engrave(host, abc, { width, fluid })     -> a score, or null without abcjs
 //        width = staff width in px; fluid = drawn to the width of its box and never wider (a narrow screen shrinks it)
+//        wordGap = least space between notes when there are words under them (w:): default 7, 0 = abcjs's own (none)
 //   score.visual                 the abcjs tune object
 //   score.mark(beat)             light what sounds at that beat, counted in quarter notes from the first note written
 //                                (a pickup included); the timing is abcjs's own, so ties, rests and two voices are right
@@ -30,6 +31,9 @@
     // so nothing is cut off); padding on the left is none so the staff starts at the text's edge
     var opt = { staffwidth: o.width || 600, scale: 0.95, paddingtop: 4, paddingbottom: 4, paddingleft: 0, paddingright: 4, add_classes: true,
       responsive: "resize" };
+    // abcjs makes a note under a word only as wide as the word, with no space between neighbouring words, so short labels under
+    // eighth notes ("♭7" "5") touch. minPadding is abcjs's least space between notes (in its units, about px): given only to scores with words.
+    if (/^w:/m.test(abc) && o.wordGap !== 0) opt.minPadding = o.wordGap || 7;
     host.style.display = "block"; host.style.maxWidth = ((o.width || 600) + 90) + "px"; host.style.flex = "1 1 0"; host.style.minWidth = "0"; host.style.overflow = "visible";
     var out = A.renderAbc(host, abc, opt), visual = out && out[0]; if (!visual) return null;
     // abcjs holds the height open with padding worked out from the width of the box AROUND the staff, which leaves a gap under
@@ -63,6 +67,7 @@
   function stop(){
     var c = cur; cur = null; if (!c) return;
     try { c.synth.stop(); } catch (e){} try { if (c.timer) c.timer.stop(); } catch (e){}
+    if (global.PlayBar) global.PlayBar.sounding("lesson-score", null);
     c.score.clear(); c.button.textContent = c.label; c.button.classList.remove("bl-on");
   }
   function play(button, score, o){
@@ -70,6 +75,7 @@
     if (o.onStart) o.onStart();
     var A = global.ABCJS, synth = new A.synth.CreateSynth(), c = cur = { synth: synth, timer: null, score: score, button: button, label: button.textContent };
     button.textContent = "\u25a0 Stop"; button.classList.add("bl-on");
+    if (global.PlayBar) global.PlayBar.sounding("lesson-score", stop);          // the Stop in the bottom strip stops it too
     var done = function (){ if (cur === c) stop(); };
     (global.getSoundfontUrl ? global.getSoundfontUrl() : Promise.resolve(undefined)).then(function (url){
       return synth.init({ visualObj: score.visual, options: { soundFontUrl: url, chordsOff: true, midiTranspose: o.transpose || 0, swing: score.free ? 0 : swingPercent(o.swing), onEnded: done } }); })

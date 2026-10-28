@@ -311,5 +311,12 @@
     return -1;
   }
 
-  global.AbcPlay = { barStartMs: barStartMs, barIndex: barIndex, play: play, chords: function (v, o) { return playBand(v, o, true); }, hasChords: hasChords, stop: stop, ctx: ctx, playing: function () { return cur; } };
+  // the Stop in a page's bottom strip (PlayBar) is lit while a tune plays and stops it
+  function tracked(h) {
+    var P = global.PlayBar; if (!P || !h) return h;
+    P.sounding("abc-play", stop);
+    if (h.done) h.done.then(function () { if (!cur) P.sounding("abc-play", null); });
+    return h;
+  }
+  global.AbcPlay = { barStartMs: barStartMs, barIndex: barIndex, play: function (v, o) { return tracked(play(v, o)); }, chords: function (v, o) { return tracked(playBand(v, o, true)); }, hasChords: hasChords, stop: stop, ctx: ctx, playing: function () { return cur; } };
 })(window);

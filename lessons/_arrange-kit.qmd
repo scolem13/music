@@ -68,7 +68,7 @@
   <span id="ar-status" aria-live="polite" data-pri="2"></span>
 </div>
 <script src="/apps/shared/soundfont.js"></script>
-<script src="/apps/shared/playbar.js?v=2"></script>
+<script src="/apps/shared/playbar.js?v=3"></script>
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
 <script src="/apps/shared/abc-core.js?v=1"></script>
 <script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
@@ -84,6 +84,6 @@
 <script src="/apps/shared/band/sounds.js?v=17"></script>
 <script src="/apps/shared/band/player.js?v=125"></script>
 <script src="/apps/shared/band/notation.js?v=12"></script>
-<script src="/apps/shared/lessons/arrange-kit.js?v=7"></script>
+<script src="/apps/shared/lessons/arrange-kit.js?v=8"></script>
 <script>ArrangeLesson.init();</script>
 ```

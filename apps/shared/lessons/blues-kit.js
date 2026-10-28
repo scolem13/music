@@ -383,8 +383,8 @@
       bt.addEventListener('click', function () { global.BluesTunes.backingTrack(t, { tempo: state.tempo, style: state.feel }); });
       if (!isMelody) { var nt = check('Leave out the tune'); w.noTune = nt.box; tools.appendChild(nt.lab); nt.box.addEventListener('change', function () { if (player && now && now.w === w) player.setOpts(band(w).opts); }); }
       w.tuneDraw = function () {
-        var abc = global.BluesTunes.inKey(t, keyAbc(), { words: isMelody, barsPerLine: perLine() }), bars = global.BluesTunes.melody(abc, t.pickup), sh = regShift([].concat.apply([], bars).map(function (n) { return n.midi; }));
-        if (sh || horn.clef) abc = global.BluesTunes.inKey(t, keyAbc(), { words: isMelody, octaves: sh / 12, clef: horn.clef, barsPerLine: perLine() });
+        var abc = global.BluesTunes.inKey(t, keyAbc(), { words: isMelody && (byKey() ? 'key' : true), barsPerLine: perLine() }), bars = global.BluesTunes.melody(abc, t.pickup), sh = regShift([].concat.apply([], bars).map(function (n) { return n.midi; }));
+        if (sh || horn.clef) abc = global.BluesTunes.inKey(t, keyAbc(), { words: isMelody && (byKey() ? 'key' : true), octaves: sh / 12, clef: horn.clef, barsPerLine: perLine() });
         hold.s = engrave(staff, abc, 680, true); if (hold.s) hold.s.shift = sh; w.tuneBars = bars;          // (the band is given the notes as they were before the move)
       };
       w.tuneDraw(); tools.appendChild(bt);
@@ -561,6 +561,9 @@
     // the written key's signature, and a note in a bar that remembers its accidentals (st)
     function keySig() { var k = dkey(), sig = {}; MAJOR.forEach(function (iv, d) { var sp = spellFrom(letterOf(k), d, k + iv); sig[sp.l] = sp.acc; }); return sig; }
     function tokIn(sp, midi, st, sig) { var key = sp.l + ':' + octOf(sp, midi), cur = st[key] == null ? sig[sp.l] : st[key], show = cur !== sp.acc; st[key] = sp.acc; return (show ? accTok(sp, true) : '') + pitchTok(sp, midi); }
+    // the numbers under the notes: from the chord of the moment, or from the key (DegreeFrame, one choice for the site)
+    function byKey() { return !!(global.DegreeFrame && global.DegreeFrame.get() === 'key'); }
+    function legend() { return global.DegreeFrame ? global.DegreeFrame.legend() : 'Under each note is its place in the chord of the moment (R = root).'; }
     function melodyAbc(notes, sh) {
       var sig = keySig(), music = [], words = []; sh = sh || 0;
       notes.forEach(function (bar) {
@@ -568,7 +571,7 @@
         bar.forEach(function (n) {
           if (n.pos > at + 1e-6) toks.push('z' + Math.round((n.pos - at) * 2));
           toks.push((n.ch !== last ? '"' + ascii(n.ch.label) + '"' : '') + tokIn(spellTone(n.ch, n.midi), n.midi + sh, st, sig) + Math.round(n.dur * 2));
-          ws.push(lineName(n)); last = n.ch; at = n.pos + n.dur;
+          ws.push(byKey() ? global.DegreeFrame.keyName(n.midi - dkey()) : lineName(n)); last = n.ch; at = n.pos + n.dur;
         });
         if (at < 4 - 1e-6) toks.push('z' + Math.round((4 - at) * 2));
         music.push(toks.join(' ')); words.push(ws.join(' '));
@@ -585,6 +588,7 @@
       alone.type = 'button'; alone.title = 'The line alone, on a piano'; row.appendChild(alone); row.appendChild(staff);
       [row, says, tools, paper].forEach(function (e) { host.appendChild(e); });
       var out = check('Leave out the melody (I will play it)'); w.out = out.box; tools.appendChild(playButton(w)); tools.appendChild(out.lab);
+      if (global.DegreeFrame) tools.appendChild(global.DegreeFrame.toggle());
       out.box.addEventListener('change', function () { if (player && now && now.w === w) player.setOpts(band(w).opts); });
       alone.addEventListener('click', function () { abcPlay(alone, hold.s); });
       var chart = chartIn(paper, w.bars);
@@ -595,12 +599,12 @@
       w.draw = function () {
         abcStop();
         var wr = written();
-        if (isTune) { says.textContent = wr + 'Under each note is its place in the chord of the moment (R = root). A note tied over the barline is named by the chord it lands on.'; return; }
+        if (isTune) { says.textContent = wr + legend() + (byKey() ? '' : ' A note tied over the barline is named by the chord it lands on.'); return; }
         notes = make(w.bars.map(function (b) { return b.split(' ').map(chordOf); }));
         var any = notes.some(function (b) { return b.length; }); row.hidden = !any; out.lab.hidden = !any;
         var sh = regShift([].concat.apply([], notes).map(function (n) { return n.midi; }));
         hold.s = any ? engrave(staff, melodyAbc(notes, sh), 680, true) : null; if (hold.s) hold.s.shift = sh;
-        says.textContent = any ? wr + 'Under each note is its place in the chord of the moment (R = root).' : 'Nothing is written here: the band plays and the chorus is yours.';
+        says.textContent = any ? wr + legend() : 'Nothing is written here: the band plays and the chorus is yours.';
       };
       w.rekey = function () { chart.setTranspose(dsemis(), !SHARP[dkey()]); w.draw(); };
       w.line = function () {};
@@ -761,6 +765,7 @@
     Array.prototype.forEach.call(document.querySelectorAll('.bl-scale'), function (h) { h.classList.add('bl-widget'); scales.push(scaleBlock(h)); });
     Array.prototype.forEach.call(document.querySelectorAll('.bl-notes'), function (h) { var b = scaleNotes(h); if (b) scales.push(b); });
     function rekeyAll() { widgets.forEach(function (w) { w.rekey(); if (w.tuneDraw) w.tuneDraw(); }); scales.forEach(function (b) { b.draw(); }); }
+    if (global.DegreeFrame) global.DegreeFrame.onChange(rekeyAll);
     var wasNarrow = narrow();                                   // turning a phone, or a window dragged past the width: write the lines out again
     global.addEventListener('resize', function () { if (narrow() === wasNarrow) return; wasNarrow = narrow(); rekeyAll(); widgets.forEach(function (w) { if (w.line && !(now && now.w === w)) w.line(); }); });
 
@@ -792,7 +797,7 @@
     if (global.PlayBar && global.PlayBar.swingSlot) {          // Auto (the Feel's own, by tempo) or 50-75 %: the band and the notation both follow
       $('bl-bar').insertBefore(global.PlayBar.swingSlot({ id: 'bl-swing', pri: 4, priLive: 6, onChange: function (r) { state.swing = r; if (player) player.setSwing(r); if (global.LessonScore) global.LessonScore.setSwing(r); } }), $('bl-stop'));
     }
-    if (global.PlayBar) global.PlayBar.attach($('bl-bar'), { live: function () { return !$('bl-stop').disabled; } });
+    if (global.PlayBar) global.PlayBar.attach($('bl-bar'), { stop: $('bl-stop'), live: function () { return !!now; } });
   }
 
   global.BluesLesson = { init: init, CHARTS: CHARTS };
