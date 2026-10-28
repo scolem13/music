@@ -640,7 +640,7 @@
   // ---- the record (SiteRecord, apps/shared/report/record.js, loaded on first use). One item a passage, tool "chord-analysis",
   // it.d = { s: its settings and seed (make() rebuilds it exactly), k: key attempts, c: per chord { st: stack attempts, nm: name
   // attempts (each [what, 1 right / 0 wrong, seconds in]), h: steps looked at, rv: 1 when "Show the answers" was pressed } }.
-  var SR_SRC = "/apps/shared/report/record.js?v=2", srWait = [];
+  var SR_SRC = "/apps/shared/report/record.js?v=3", srWait = [];
   function withRecord(f) {
     if (global.SiteRecord) { registerRecord(); return f(global.SiteRecord); }
     srWait.push(f); if (srWait.length > 1 || typeof document === "undefined") return;
@@ -741,14 +741,14 @@
     var prompt = el("div", "ca-prompt"), paper = el("div", "ca-paper"), row = el("div", "ca-row"), cardBox = el("div", "ca-cards"), panel = el("div"), fb = el("div", "ca-fb"), help = el("div", "ca-help");
     var curP = null;
     function rec(f) {   // this passage's record item, made when the student first does something with it; f(it.d) changes it
-      var qNow = q;
+      var qNow = q; if (host.hasAttribute("data-norecord")) return;   // the teacher's replay on my-report.qmd
       withRecord(function (SR) {
         if (!curP || curP.q !== qNow) curP = { q: qNow, it: SR.add("chord-analysis", { ex: "Chord analysis", d: { s: settingsString(s) + "&seed=" + qNow.seed, k: [], c: qNow.items.map(function () { return { st: [], nm: [], h: 0, rv: 0 }; }) } }) };
         f(curP.it.d, Math.round((Date.now() - curP.it.t) / 1000)); SR.save();
       });
     }
     var repB = el("span");
-    withRecord(function (SR) { var b = SR.button(row); repB.replaceWith(b); repB = b; });
+    if (!host.hasAttribute("data-norecord")) withRecord(function (SR) { var b = SR.button(row); repB.replaceWith(b); repB = b; });
     var checkB = btn("Check the names"), showB = btn("Show the answers"), newB = btn("New passage"), linkB = btn("Copy a link to this passage"), msg = el("span", "ca-help");
     row.appendChild(playBtn(function () { return v; }, function () { return q; })); [checkB, showB, newB, repB, linkB, msg].forEach(function (x) { row.appendChild(x); });
     [prompt, paper, row, cardBox, panel, fb, help].forEach(function (x) { host.appendChild(x); });

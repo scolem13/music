@@ -1115,6 +1115,12 @@
   function settingsString(ex, s) {
     return "ex=" + ex + EX[ex].SETTINGS.map(function (d) { return "&" + d.id + "=" + (d.type === "multi" ? s[d.id].join(",") : s[d.id]); }).join("") + (s.count ? "&count=" + s.count : "");
   }
+  // a question rebuilt from its seed: every engine draws through Math.random, so a seeded one gives the same question again
+  // (the record keeps ex, settings and seed; the teacher's replay on my-report.qmd asks the student's own questions)
+  function seededRandom(seed) { var a = seed >>> 0; return function () { a = (a + 0x6D2B79F5) >>> 0; var t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+  function withSeed(seed, f) { if (seed == null) return f(); var old = Math.random; Math.random = seededRandom(seed); try { return f(); } finally { Math.random = old; } }
+  function exOf(set) { var m = /(?:^|[?&])ex=(\w+)/.exec(set || ""); return m && EX[m[1]] ? m[1] : null; }
+  function makeSeeded(ex, set, seed) { var q = withSeed(seed, function () { return EX[ex].make(parseSettings(ex, set)); }); if (q) q._seed = seed; return q; }
   function store(k, v) { try { if (v === undefined) return JSON.parse(localStorage.getItem(k) || "null"); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, JSON.stringify(v)); } catch (e) { return null; } }
 
   // ---- sound
@@ -1152,7 +1158,7 @@
 
   // ---- the record (SiteRecord, apps/shared/report/record.js, loaded on first use): one item a question, tool "drill",
   // with what was asked, the answer given (typed, a button, or notes played on MIDI), right or wrong, and the seconds it took
-  var SR_SRC = "/apps/shared/report/record.js?v=2", srWait = [];
+  var SR_SRC = "/apps/shared/report/record.js?v=3", srWait = [];
   function withRecord(f) {
     if (global.SiteRecord) return f(global.SiteRecord);
     srWait.push(f); if (srWait.length > 1) return;
@@ -1165,9 +1171,11 @@
     var ex = host.getAttribute("data-ex") || "note", fromUrl = host.hasAttribute("data-from-url"), linkStr = "";
     if (fromUrl) { var m = /[?&]ex=(\w+)/.exec(location.search); if (m && EX[m[1]]) ex = m[1]; linkStr = location.search; }
     else linkStr = host.getAttribute("data-settings") || "";
+    var RP = host._replay || null;   // the teacher's replay: { items: [{ set, seed, at, h, rv }], i, show }
+    if (RP) { ex = exOf(RP.items[0].set) || ex; linkStr = RP.items[0].set; }
     if (!EX[ex]) ex = "note";
     var E = EX[ex], linkS = parseSettings(ex, linkStr), KEY = "drills-v1:" + ex + ":" + settingsString(ex, linkS);
-    var s = store(KEY) || JSON.parse(JSON.stringify(linkS)), locked = /[?&]lock=1\b/.test(linkStr) || host.hasAttribute("data-lock");
+    var s = (!RP && store(KEY)) || JSON.parse(JSON.stringify(linkS)), locked = RP || /[?&]lock=1\b/.test(linkStr) || host.hasAttribute("data-lock");
     var q = null, done = 0, right = 0, streak = 0, times = [], tAsk = 0, pending = "", busy = false, midiBuf = [], midiT = null, wrongs = [];
 
     host.innerHTML = ""; host.classList.add("dr");
@@ -1179,10 +1187,24 @@
     var row = el("div", "dr-row"); row.appendChild(hear);
     var mBtn = el("button", "btn btn-outline-secondary btn-sm", "Use a MIDI keyboard"); mBtn.type = "button"; row.appendChild(mBtn); mBtn.hidden = !!E.noMidi;
     var nextBtn = el("button", "btn btn-outline-secondary btn-sm", "Next ⏎"); nextBtn.type = "button"; nextBtn.hidden = true; row.appendChild(nextBtn);
-    withRecord(function (SR) { row.appendChild(SR.button(row)); });
+    if (!RP) withRecord(function (SR) { row.appendChild(SR.button(row)); });
     var btns = el("div", "dr-answers"), help = el("div", "dr-help");
     [prompt, paper, ear, row, fb, typed, btns, help].forEach(function (x) { host.appendChild(x); });
     var end = el("div", "dr-end"); end.hidden = true; host.appendChild(end);
+    var rpRow = el("div", "dr-row"), rpInfo = el("div", "dr-student");
+    if (RP) {
+      var rb = function (t, f) { var b = el("button", "btn btn-outline-secondary btn-sm", t); b.type = "button"; b.addEventListener("click", f); rpRow.appendChild(b); return b; };
+      var prevB = rb("◀ Previous", function () { RP.i--; next(); }), againB = rb("Ask it again", function () { next(); }), fwdB = rb("Next ▶", function () { RP.i++; next(); });
+      var showB = rb("Show the student's answers", function () { RP.show = !RP.show; studentLine(); });
+      head.after(rpRow); rpRow.after(rpInfo);
+    }
+    function studentLine() {
+      if (!RP) return; var it = RP.items[RP.i];
+      showB.textContent = RP.show ? "Hide the student's answers" : "Show the student's answers";
+      rpInfo.textContent = !RP.show ? "" : "The student: " + (it.at.length ? it.at.map(function (a) { return (a[1] ? "✓ " : "✗ ") + a[0] + " (" + a[2] + " s)"; }).join("  ·  ") : "no answer") +
+        (it.h ? " · hints ×" + it.h : "") + (it.rv ? " · answer shown" : "");
+      prevB.disabled = RP.i <= 0; fwdB.disabled = RP.i >= RP.items.length - 1;
+    }
 
     // settings panel
     var det = el("details", "dr-settings"), sum = el("summary", "", "Settings"); det.appendChild(sum);
@@ -1262,13 +1284,14 @@
       help.textContent = E.keyHelp(s) + " Space plays it.";
     }
     function next() {
-      if (s.count && done >= s.count) return finish();
+      if (!RP && s.count && done >= s.count) return finish();
       var hadFocus = host.contains(document.activeElement);
       busy = false; pending = ""; typed.textContent = ""; fb.textContent = ""; fb.className = "dr-fb"; nextBtn.hidden = true;
-      q = E.make(s);
+      if (RP) { RP.i = Math.max(0, Math.min(RP.items.length - 1, RP.i)); var rit = RP.items[RP.i]; s = parseSettings(ex, rit.set); q = makeSeeded(ex, rit.set, rit.seed); drawAnswers(); studentLine(); }
+      else q = makeSeeded(ex, settingsString(ex, s), Math.floor(Math.random() * 4294967296));
       if (!q) { prompt.textContent = "No question fits these settings. Choose more options."; paper.innerHTML = ""; return; }
-      prompt.textContent = q.label + (s.count ? "  (" + (done + 1) + " of " + s.count + ")" : "");
-      if (ex === "keysig") drawAnswers();
+      prompt.textContent = q.label + (RP ? "  (question " + (RP.i + 1) + " of " + RP.items.length + ")" : s.count ? "  (" + (done + 1) + " of " + s.count + ")" : "");
+      if (ex === "keysig" && !RP) drawAnswers();
       [].forEach.call(btns.querySelectorAll(".dr-ans"), function (b) { b.className = "btn btn-outline-secondary dr-ans"; });
       if (q.ear) { paper.innerHTML = ""; ear.textContent = "Listen, then answer. ▶ Hear it plays it again."; }
       else if (!q.abc) { ear.textContent = ""; paper.innerHTML = ""; paper.appendChild(el("div", "dr-symbol" + (q.words ? " dr-words" : ""), q.show || "")); }
@@ -1287,8 +1310,8 @@
       var ok = E.check ? E.check(q, a) : a === q.answer, dt = (performance.now() - tAsk) / 1000; times.push(dt);
       if (ok) { right++; streak++; } else { streak = 0; wrongs.push(q.answer); }
       var qr = q, given = played ? "played " + played.map(function (m) { return MIDI_NAME[m % 12]; }).join(" ") : a == null ? "(no answer)" : E.answerName && !E.input ? E.answerName(a) : String(a);
-      withRecord(function (SR) {
-        if (!qr._rec) qr._rec = SR.add("drill", { ex: E.title, set: settingsString(ex, s), q: { text: qr.label, abc: qr.ear ? null : qr.abc || null, show: qr.abc ? null : qr.show || (qr.ear ? "(heard, not shown)" : null) },
+      if (!RP) withRecord(function (SR) {
+        if (!qr._rec) qr._rec = SR.add("drill", { ex: E.title, set: settingsString(ex, s), seed: qr._seed, q: { text: qr.label, abc: qr.ear ? null : qr.abc || null, show: qr.abc ? null : qr.show || (qr.ear ? "(heard, not shown)" : null) },
           want: E.answerName ? E.answerName(qr.answer) + " (" + qr.answer + ")" : qr.answer });
         qr._rec.at.push([given, ok ? 1 : 0, Math.round(dt)]); SR.save();
       });
@@ -1301,6 +1324,7 @@
       if (!q.sound && !q.ear) playNotes(q.play, q.times, q.durs).catch(function () {});
       host.setAttribute("data-done", done); host.setAttribute("data-right", right);
       if (q.ear && q.abc) global.ABCJS && global.ABCJS.renderAbc(paper, q.abc, { scale: q.width ? 1.25 : 1.6, staffwidth: q.width || 170, paddingleft: 0, paddingright: 0 });
+      if (RP) return;
       if (ok) setTimeout(function () { if (busy && done === +host.getAttribute("data-done")) next(); }, 900);
       else nextBtn.hidden = false;
     }
@@ -1350,12 +1374,14 @@
     host._drill = { settings: function () { return s; }, question: function () { return q; }, answer: answer, next: next, linkKey: KEY };
   }
 
+  // the teacher's replay: a drill that asks the given recorded questions again (items with set and seed), no record kept
+  function replay(host, items) { host._replay = { items: items, i: 0, show: false }; Drill(host); return host; }
   function init() { [].forEach.call(document.querySelectorAll(".drill"), function (h) { if (!h._drill) Drill(h); }); }
   function keyFrom(tonic, mode) {   // "G", "major" -> the key object makeKey builds (for tests and pages)
     var map = mode === "major" ? MAJ : MIN, k = Object.keys(map).filter(function (x) { return map[x] === tonic; })[0];
     if (k == null) return null; var tName = map[k];
     return { k: +k, mode: mode, tonic: parseName(abcKey(tName)), sig: keySigMap(+k), abc: abcKey(tName) + (mode === "minor" ? "m" : ""), label: tName + " " + mode };
   }
-  global.Drills = { normSec: normSec, normSecDim: normSecDim, rnChord: rnChord, PROGS: PROGS, chordIn7: chordIn7, normRN7: normRN7, parseSymbol7: parseSymbol7, MAJOR_7: MAJOR_7, MINOR_7: MINOR_7, keyFrom: keyFrom, chordIn: chordIn, noteName: name, MINOR_COMMON: MINOR_COMMON, MINOR_RARE: MINOR_RARE, engines: EX, parseSettings: parseSettings, settingsString: settingsString, above: above, init: init };
+  global.Drills = { normSec: normSec, normSecDim: normSecDim, rnChord: rnChord, PROGS: PROGS, chordIn7: chordIn7, normRN7: normRN7, parseSymbol7: parseSymbol7, MAJOR_7: MAJOR_7, MINOR_7: MINOR_7, keyFrom: keyFrom, chordIn: chordIn, noteName: name, MINOR_COMMON: MINOR_COMMON, MINOR_RARE: MINOR_RARE, engines: EX, parseSettings: parseSettings, settingsString: settingsString, above: above, init: init, makeSeeded: makeSeeded, replay: replay };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })(window);

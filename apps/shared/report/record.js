@@ -13,7 +13,10 @@
 //                           when the right sidebar isn't (phones, narrow windows)
 //   The right sidebar (Quarto's #quarto-margin-sidebar) gets a "My report" box at its bottom on any page that loads this:
 //   today's count, Open report (the panel in a dialog) and Copy today's report.
-//   SiteRecord.mountCheck(box) the teacher's box; also every .sr-check on the page when this loads
+//   SiteRecord.mountCheck(box) the teacher's box; also every .sr-check on the page when this loads. Its "In class" view asks the
+//                           student's own questions again as working exercises (classView): drills rebuilt from ex + settings +
+//                           seed (Drills.replay; items recorded before seeds were kept can't be), chord analysis from its seed,
+//                           the student's answers behind a button; nothing the teacher answers there is recorded.
 //   SiteRecord.code(data) / readCode(text) -> { data, ok }   ("SR1." + base64 JSON + "." + checksum: stops casual edits, not a signature)
 // Planned, not built: clearing the record, and reports over a chosen range of dates (now: today, or everything).
 (function (global) {
@@ -38,7 +41,42 @@
   }
   function register(tool, r) { renderers[tool] = r; }
   // tools whose items need their own script to be shown (loaded when a report has their items and the page hasn't got it)
-  var TOOL_SRC = { "chord-analysis": "/apps/shared/analysis/chord-analysis.js?v=3" }, loading = {};
+  var TOOL_SRC = { "chord-analysis": "/apps/shared/analysis/chord-analysis.js?v=4" }, loading = {};
+  // the drills and their extra exercises, for the In class view (drills.js first: the others add to it)
+  var DRILL_SRC = ["/apps/shared/drills/drills.js?v=17", "/apps/shared/drills/figured.js?v=1", "/apps/shared/drills/mixture.js?v=1", "/apps/shared/drills/neapolitan.js?v=1", "/apps/shared/drills/motives.js?v=1", "/apps/shared/drills/jazz.js?v=1"];
+  function scriptOnce(src) { return new Promise(function (res) { if (document.querySelector('script[src="' + src + '"]')) return res(); var sc = document.createElement("script"); sc.src = src; sc.onload = sc.onerror = function () { res(); }; document.head.appendChild(sc); }); }
+  function drillsReady() {
+    if (!document.querySelector('link[href^="/apps/shared/drills/drills.css"]')) { var l = document.createElement("link"); l.rel = "stylesheet"; l.href = "/apps/shared/drills/drills.css?v=4"; document.head.appendChild(l); }
+    if (global.Drills && global.Drills.replay) return Promise.all(DRILL_SRC.slice(1).map(scriptOnce));
+    return scriptOnce(DRILL_SRC[0]).then(function () { return Promise.all(DRILL_SRC.slice(1).map(scriptOnce)); });
+  }
+  function firstWrong(it) { return !(it.at.length && it.at[0][1]) || it.h || it.rv; }
+  // the In class view: each exercise again, working, with the student's own questions
+  function classView(box, data, onlyMissed) {
+    box.innerHTML = ""; css();
+    var r = el("div", "sr-rep"); box.appendChild(r);
+    r.appendChild(el("h3", "", "In class: " + (data.n || "the student") + "'s questions"));
+    r.appendChild(el("p", "sr-help", "Each exercise asks the student's questions again. Answer them together; the student's own answers are behind \"Show the student's answers\". Nothing answered here is recorded."));
+    var pg = null, needDrills = data.items.some(function (x) { return x.tool === "drill"; });
+    (needDrills ? drillsReady() : Promise.resolve()).then(function () { ready(data.items, function () {
+      groups(data.items).forEach(function (g) {
+        var items = onlyMissed ? g.items.filter(function (it) { return it.tool === "chord-analysis" ? true : firstWrong(it); }) : g.items;
+        if (!items.length) return;
+        if (g.pg !== pg) { pg = g.pg; r.appendChild(el("h4", "", pageName(pg))); }
+        var sec = el("div", "sr-class"); sec.appendChild(el("h5", "", g.ex)); r.appendChild(sec);
+        if (g.tool === "drill" && global.Drills && global.Drills.replay) {
+          var can = items.filter(function (it) { return it.seed != null && it.set; }), old = items.length - can.length;
+          if (can.length) { var h = el("div"); sec.appendChild(h); global.Drills.replay(h, can.map(function (it) { return { set: it.set, seed: it.seed, at: it.at, h: it.h, rv: it.rv }; })); }
+          if (old) { sec.appendChild(el("p", "sr-help", old + " question" + (old === 1 ? " was" : "s were") + " answered before the site kept what it needs to ask them again; " + (old === 1 ? "it is" : "they are") + " in the report view.")); }
+        } else if (g.tool === "chord-analysis" && global.ChordAnalysis && global.ChordAnalysis.mount) {
+          items.forEach(function (it) {
+            var h = el("div"); h.setAttribute("data-settings", it.d.s); h.setAttribute("data-lock", ""); h.setAttribute("data-norecord", ""); sec.appendChild(h); global.ChordAnalysis.mount(h);
+            var det = el("details", "sr-help"); det.appendChild(el("summary", "", "Show the student's answers")); det.appendChild(R(it.tool).render(it, true)); sec.appendChild(det);
+          });
+        } else { var tmp = el("div"); render(tmp, { n: data.n, range: data.range, d: data.d, items: items }, { teacher: true }); sec.appendChild(tmp); }
+      });
+    }); });
+  }
   function ready(items, f) {
     var need = []; items.forEach(function (x) { if (!renderers[x.tool] && TOOL_SRC[x.tool] && need.indexOf(x.tool) < 0) need.push(x.tool); });
     if (!need.length || typeof document === "undefined") return f();
@@ -69,7 +107,7 @@
     ".sr-side{margin-top:1.2rem;padding-top:.6rem;border-top:1px solid var(--bs-border-color,#ddd);font-size:.85rem}.sr-side .sr-row{margin:.3rem 0}.sr-side b{display:block}" +
     ".sr-dialog{width:min(980px,96vw);max-height:92vh;border:1px solid var(--bs-border-color,#ccc);border-radius:8px;padding:1rem;background:var(--bs-body-bg,#fff);color:var(--bs-body-color,#222)}" +
     ".sr-dialog::backdrop{background:rgba(0,0,0,.35)}body.sr-side-on .sr-mybtn{display:none}" +
-    ".sr-print{display:none}body.sr-printing>*:not(.sr-print){display:none!important}body.sr-printing .sr-print{display:block;padding:1rem}.sr-code{white-space:pre-wrap;word-break:break-all;font-size:.75rem;border:1px solid #ccc;padding:.4rem;user-select:all}";
+    ".sr-class{margin:.6rem 0 1.4rem}.sr-class .dr-student{font-size:.9rem;margin:.2rem 0 .4rem;color:#6c4a00}.sr-print{display:none}body.sr-printing>*:not(.sr-print){display:none!important}body.sr-printing .sr-print{display:block;padding:1rem}.sr-code{white-space:pre-wrap;word-break:break-all;font-size:.75rem;border:1px solid #ccc;padding:.4rem;user-select:all}";
   function css() { if (document.getElementById("sr-css")) return; var s = el("style"); s.id = "sr-css"; s.textContent = CSS; document.head.appendChild(s); }
   function attempts(list) { return list && list.length ? list.map(function (a) { return (a[1] ? "✓ " : "✗ ") + a[0]; }).join("  ·  ") : "—"; }
   function found(it) { return it.rv || it.at.some(function (a) { return a[1]; }); }
@@ -201,18 +239,25 @@
     if (host._sr) return; host._sr = 1; css();
     host.appendChild(el("p", "", "Paste the report code, or the whole copied report. The page rebuilds the report from the code, checks that nothing was changed, and shows every answer."));
     var ta = el("textarea", "form-control"); ta.rows = 3; ta.setAttribute("aria-label", "Report code"); host.appendChild(ta);
-    var row = el("div", "sr-row"), go = btn("Open the report"), pr = btn("Print"), out = el("div"); row.appendChild(go); row.appendChild(pr); host.appendChild(row); host.appendChild(out);
-    go.addEventListener("click", function () {
+    var row = el("div", "sr-row"), go = btn("Open the report"), cls = btn("In class: the exercises again"), pr = btn("Print"), out = el("div");
+    var missL = el("label", "sr-help"), miss = el("input"); miss.type = "checkbox"; missL.appendChild(miss); missL.appendChild(document.createTextNode(" only questions not right first time"));
+    [go, cls, missL, pr].forEach(function (x) { row.appendChild(x); }); host.appendChild(row); host.appendChild(out);
+    var view = "report";
+    function open() {
       var r = readCode(ta.value);
       if (!r && global.ChordAnalysis && /CA1\./.test(ta.value)) { var c = global.ChordAnalysis.readCode(ta.value); if (c) r = { ok: c.ok, data: { n: c.data.n, range: "all", d: c.data.d, items: c.data.p.map(function (p) { return { tool: "chord-analysis", pg: c.data.pg, t: p.t, at: [], h: 0, rv: 0, d: p }; }) } }; }
       out.innerHTML = "";
       if (!r) { out.appendChild(el("p", "sr-no", "That isn't a report code. It starts with SR1.")); return; }
+      if (view === "class") { if (!r.ok) out.appendChild(el("p", "sr-no", "✗ The code doesn't match its contents: the report was changed after it was made.")); var cv = el("div"); out.appendChild(cv); classView(cv, r.data, miss.checked); return; }
       ready(r.data.items, function () { render(out, r.data, { teacher: true, verified: r.ok }); });
-    });
+    }
+    go.addEventListener("click", function () { view = "report"; open(); });
+    cls.addEventListener("click", function () { view = "class"; open(); });
+    miss.addEventListener("change", function () { if (view === "class" && out.firstChild) open(); });
     pr.addEventListener("click", function () { if (out.firstChild) printNode(out.firstChild); });
   }
 
-  global.SiteRecord = { add: add, save: save, all: all, pick: pick, register: register, code: code, readCode: readCode, render: render, text: text, panel: panel, button: button, mountCheck: mountCheck, openDialog: openDialog, startOfToday: startOfToday };
+  global.SiteRecord = { add: add, save: save, all: all, pick: pick, register: register, code: code, readCode: readCode, render: render, text: text, panel: panel, button: button, mountCheck: mountCheck, openDialog: openDialog, classView: classView, startOfToday: startOfToday };
   function init() { [].forEach.call(document.querySelectorAll(".sr-check"), mountCheck); side(); }
   if (typeof document !== "undefined" && document.querySelectorAll) { if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init(); }
 })(typeof window !== "undefined" ? window : globalThis);
