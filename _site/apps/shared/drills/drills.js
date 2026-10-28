@@ -1150,6 +1150,16 @@
     }, function () { return false; });
   }
 
+  // ---- the record (SiteRecord, apps/shared/report/record.js, loaded on first use): one item a question, tool "drill",
+  // with what was asked, the answer given (typed, a button, or notes played on MIDI), right or wrong, and the seconds it took
+  var SR_SRC = "/apps/shared/report/record.js?v=1", srWait = [];
+  function withRecord(f) {
+    if (global.SiteRecord) return f(global.SiteRecord);
+    srWait.push(f); if (srWait.length > 1) return;
+    var sc = document.createElement("script"); sc.src = SR_SRC; sc.onload = function () { var w = srWait; srWait = []; w.forEach(function (g) { g(global.SiteRecord); }); }; document.head.appendChild(sc);
+  }
+  var MIDI_NAME = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"];
+
   // ---- one drill
   function Drill(host) {
     var ex = host.getAttribute("data-ex") || "note", fromUrl = host.hasAttribute("data-from-url"), linkStr = "";
@@ -1169,6 +1179,7 @@
     var row = el("div", "dr-row"); row.appendChild(hear);
     var mBtn = el("button", "btn btn-outline-secondary btn-sm", "Use a MIDI keyboard"); mBtn.type = "button"; row.appendChild(mBtn); mBtn.hidden = !!E.noMidi;
     var nextBtn = el("button", "btn btn-outline-secondary btn-sm", "Next ⏎"); nextBtn.type = "button"; nextBtn.hidden = true; row.appendChild(nextBtn);
+    withRecord(function (SR) { row.appendChild(SR.button(row)); });
     var btns = el("div", "dr-answers"), help = el("div", "dr-help");
     [prompt, paper, ear, row, fb, typed, btns, help].forEach(function (x) { host.appendChild(x); });
     var end = el("div", "dr-end"); end.hidden = true; host.appendChild(end);
@@ -1263,7 +1274,8 @@
       else if (!q.abc) { ear.textContent = ""; paper.innerHTML = ""; paper.appendChild(el("div", "dr-symbol" + (q.words ? " dr-words" : ""), q.show || "")); }
       else { ear.textContent = ""; if (global.ABCJS) global.ABCJS.renderAbc(paper, q.abc, { scale: q.width ? 1.25 : 1.6, staffwidth: q.width || 170, paddingleft: 0, paddingright: 0, add_classes: true }); else paper.textContent = q.abc; }
       hear.hidden = !q.play.length;
-      if (q.sound || q.ear) playNotes(q.play, q.times, q.durs).catch(function () {});
+      // Only after the user has touched this drill: on load, every drill on the page would play at once.
+      if ((q.sound || q.ear) && touched) playNotes(q.play, q.times, q.durs).catch(function () {});
       if (box) { box.value = ""; box.disabled = false; if (hadFocus) box.focus({ preventScroll: true }); }
       tAsk = performance.now(); score.textContent = scoreText();
       host.setAttribute("data-answer", q.answer);
@@ -1274,6 +1286,12 @@
       busy = true; done++; if (box) box.disabled = false;
       var ok = E.check ? E.check(q, a) : a === q.answer, dt = (performance.now() - tAsk) / 1000; times.push(dt);
       if (ok) { right++; streak++; } else { streak = 0; wrongs.push(q.answer); }
+      var qr = q, given = played ? "played " + played.map(function (m) { return MIDI_NAME[m % 12]; }).join(" ") : a == null ? "(no answer)" : E.answerName && !E.input ? E.answerName(a) : String(a);
+      withRecord(function (SR) {
+        if (!qr._rec) qr._rec = SR.add("drill", { ex: E.title, set: settingsString(ex, s), q: { text: qr.label, abc: qr.ear ? null : qr.abc || null, show: qr.abc ? null : qr.show || (qr.ear ? "(heard, not shown)" : null) },
+          want: E.answerName ? E.answerName(qr.answer) + " (" + qr.answer + ")" : qr.answer });
+        qr._rec.at.push([given, ok ? 1 : 0, Math.round(dt)]); SR.save();
+      });
       [].forEach.call(btns.children, function (b) { var v = b.getAttribute("data-a"); if (v === q.answer) b.classList.add("dr-right"); else if (v === a) b.classList.add("dr-wrong"); });
       var nm = E.answerName ? E.answerName(q.answer) + " (" + q.answer + ")" : q.answer;
       fb.className = "dr-fb " + (ok ? "dr-ok" : "dr-no");
@@ -1287,6 +1305,8 @@
       else nextBtn.hidden = false;
     }
     nextBtn.addEventListener("click", function () { next(); });
+    var touched = false;
+    ["pointerdown", "keydown"].forEach(function (t) { host.addEventListener(t, function () { touched = true; }, true); });
     function finish() {
       q = null; busy = true; paper.innerHTML = ""; prompt.textContent = ""; btns.innerHTML = ""; fb.textContent = "";
       var avg = times.length ? times.reduce(function (a, b) { return a + b; }, 0) / times.length : 0, counts = {};

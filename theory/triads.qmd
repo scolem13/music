@@ -10,7 +10,10 @@ description: "Exercises for Chapter 6 of Hutchinson's Music Theory for the 21st-
 ```{=html}
 <link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
-<script src="/apps/shared/drills/drills.js?v=14"></script>
+<script src="/apps/shared/drills/drills.js?v=16"></script>
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abc-play.js?v=6"></script>
+<script src="/apps/shared/analysis/chord-analysis.js?v=3"></script>
 ```
 
 This page goes with **Chapter 6, Triads** of Robert Hutchinson's open textbook
@@ -150,6 +153,15 @@ Hear the quality without seeing it. Under the gear icon choose the triads only.
 
 <iframe class="dr-embed" src="https://www.musictheory.net/exercises/ear-chord" title="musictheory.net Chord Ear Training" loading="lazy"></iframe>
 :::
+
+## Analysis practice
+
+Now the chords in short passages: for each numbered chord, rearrange its notes into a close root-position stack, then name it. This
+chapter's levels practise chord symbols: first in root position, then with slash chords. **Stage** under Settings changes the texture: a piano right hand, guitar voicings with TAB, an SATB
+chorale, broken chords, or a melody with non-chord tones. The method, with worked examples for each stage, is on
+[Chord Analysis, Step by Step](chord-analysis.qmd).
+
+<div class="chord-analysis" data-settings="level=ch6a&texture=rh" data-upto="ch6b"></div>
 
 ::: {.callout-note collapse="true"}
 ## For teachers

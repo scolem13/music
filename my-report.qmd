@@ -1,0 +1,38 @@
+---
+title: "My Report"
+toc: true
+toc-depth: 2
+description: "A report of your work on the site's exercises (Theory Drills, chord analysis), from this browser: print it or copy it to hand it in. Teachers paste a report code here to check it."
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<script src="/apps/shared/report/record.js?v=1"></script>
+<script src="/apps/shared/analysis/chord-analysis.js?v=3"></script>
+```
+
+## Your report
+
+Everything you answer in the Theory Drills (on the [Theory Drills](theory/theory-drills.qmd) page and every chapter page) and in
+[Chord Analysis](theory/chord-analysis.qmd) is recorded in this browser: each question, every answer you gave, right or wrong, how long
+it took, and the hints and answers you looked at. Type your name, choose **Today** or **Everything**, then **Print or save as PDF**, or
+**Copy the report** to paste it into an assignment. Nothing is sent anywhere, and a different browser or computer has its own record.
+
+The same report opens from the **My report** button on every exercise.
+
+<div id="sr-mine"></div>
+
+```{=html}
+<script>
+(function go() { if (!window.SiteRecord) return setTimeout(go, 50); SiteRecord.panel(document.getElementById("sr-mine")); })();
+</script>
+```
+
+## For teachers: check a report
+
+A copied report ends with a **report code**. Paste it here: the page rebuilds the report from the code, shows every answer (a student's
+own copy shows an answer only once they found it or asked to see it), and says whether the report was changed after it was made.
+The check stops casual edits; it is not a secure signature.
+
+<div class="sr-check"></div>

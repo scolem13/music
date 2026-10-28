@@ -10,7 +10,10 @@ description: "Exercises for Chapter 8 of Hutchinson's Music Theory for the 21st-
 ```{=html}
 <link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
-<script src="/apps/shared/drills/drills.js?v=14"></script>
+<script src="/apps/shared/drills/drills.js?v=16"></script>
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abc-play.js?v=6"></script>
+<script src="/apps/shared/analysis/chord-analysis.js?v=3"></script>
 <style>
 .rn-quiz{display:grid;gap:1rem;margin:1rem 0}
 .rn-quiz figure{margin:0}
@@ -141,6 +144,15 @@ on its page:
 <figure><figcaption>Mozart, Piano Sonata in C major, K. 545, I</figcaption>
 <iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/5NkzTTkqTB4?start=0&end=8&rel=0" title="Sonata K. 545, I" loading="lazy" allowfullscreen></iframe></figure>
 :::
+
+## Analysis practice
+
+Now the chords in short passages: for each numbered chord, rearrange its notes into a close root-position stack, then name it. This
+chapter's levels practise seventh chords: first as chord symbols, then as Roman numerals (the levels from Chapters 6 and 7 are in the list too). **Stage** under Settings changes the texture: a piano right hand, guitar voicings with TAB, an SATB
+chorale, broken chords, or a melody with non-chord tones. The method, with worked examples for each stage, is on
+[Chord Analysis, Step by Step](chord-analysis.qmd).
+
+<div class="chord-analysis" data-settings="level=ch8a&texture=rh" data-upto="ch8b"></div>
 
 ::: {.callout-note collapse="true"}
 ## For teachers

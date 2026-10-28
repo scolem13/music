@@ -1,0 +1,193 @@
+---
+title: "Chord Analysis, Step by Step"
+toc: true
+toc-depth: 2
+description: "How to find and name the chords in a short passage: collect the notes, leave out non-chord tones and doublings, rearrange them into a close root-position stack, then name the chord with a chord symbol, a Roman numeral or a seventh-chord numeral. Five stages from a piano right hand to a melody with non-chord tones, with worked examples and exercises at every level."
+---
+
+```{=html}
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
+<script src="/apps/shared/abc-play.js?v=6"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<script src="/apps/shared/analysis/chord-analysis.js?v=3"></script>
+```
+
+This page teaches one method for working out the chords in a short passage of music, and gives you passages to practise on. The
+method is the same for every kind of music. What changes is how hard the notes are to find: a chord written as three stacked notes
+is easy to read, but a guitar chord, a four-part chorale or a melody with extra notes takes more work.
+
+The exercises follow the chapters of Robert Hutchinson's
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/MusicTheory.html). Chord symbols come first
+([Chapter 6](triads.qmd)), then Roman numerals ([Chapter 7](roman-numerals.qmd)), then seventh chords ([Chapter 8](seventh-chords.qmd)).
+The same exercises also appear on those chapter pages, under **Analysis practice**.
+
+## The method
+
+For each chord:
+
+1. **Collect the notes.** Take every note that sounds from the chord's number to the next number, on every staff.
+2. **Leave out the non-chord tones.** These are short notes that step between chord tones, or step away from one and come back.
+   They first appear in Stage 5.
+3. **Keep one of each.** Cross out repeated letters, in any octave. A chord often doubles a note, and the doubling doesn't change the chord.
+4. **Rearrange into close root position.** Put the notes in the order where each one is a third above the one below: two letters
+   apart, skipping one letter (C–E–G–B, D–F–A–C). The bottom note of that stack is the **root**.
+5. **Find the quality.** Measure the 3rd, 5th (and 7th) above the root: major, minor, diminished or augmented; for sevenths, major 7th,
+   dominant 7th, minor 7th, half-diminished or fully diminished.
+6. **Find the bass.** The lowest note in the passage (not in your stack) tells you the inversion: root, 3rd, 5th or 7th in the bass.
+7. **Name it.** A chord symbol (C, Am/C, G7), or a Roman numeral in the key (I, vi6, V7).
+
+Every exercise below has a **Steps** button on each chord. It walks through these steps for that chord, one at a time.
+
+## Step 4: rearranging into close root position
+
+Step 4 is the one this page practises most. Rearranging a chord is just like solving a word puzzle: you know the letters, and you need
+the order where they all fit. Two quick ways to find that order:
+
+- **Rotate.** Write the notes from the lowest up. If they aren't all thirds apart, move the bottom note to the top and look again. A
+  triad needs at most two moves; a seventh chord, at most three.
+- **Skip a letter.** Start on any note and go up by skipping one letter each time (C, E, G, B, D, F, A, C …). The notes of the chord
+  come up together, one after another; the first one of the run is the root.
+
+Accidentals don't change the order: E♭–G–B♭ stacks exactly as E–G–B does.
+
+**Ways to enter a stack.** Choose one in each exercise's **Settings** (*Enter the stack by*). All four give the same answer:
+
+| Method | How | Good for |
+|---|---|---|
+| Tap the letters | Buttons show the notes in that chord's beats. Tap them from the bottom of the stack up. | Anyone; nothing to misspell |
+| Click notes on a staff | Click a line or space; ♯ ♭ ♮ change the last note. | Practising note reading as well |
+| Rotate the stack | The chord's notes are listed as written; ⤒ moves the bottom note to the top, ✕ takes out a note that doesn't belong. | Seeing inversions turn back into root position |
+| Type the letters | Type `C E G` or `Eb G Bb D`. | Speed, once you're sure |
+
+Your stack is drawn on a staff as you build it. **Check the stack** tells you what's wrong: a note left over, a doubling counted twice,
+or the right notes in the wrong order.
+
+## Stage 1: a piano right hand
+
+Three or four notes, close together on one treble staff. The lowest note is the bass, so a chord that isn't stacked in thirds is an
+inversion. Here is a worked example (open each chord to see its steps):
+
+<div class="chord-analysis" data-example data-settings="level=ch6b&texture=rh&key=C major&prog=I V vi IV&seed=4"></div>
+
+Practise:
+
+<div class="chord-analysis" data-settings="level=ch6a&texture=rh"></div>
+
+## Stage 2: guitar voicings
+
+Guitar chords spread over five or six strings, so they **double** notes (the open-position E chord, E B E G♯ B E, has three Es) and
+reach below the staff on **ledger lines**. Guitar music is written an octave higher than it sounds (the treble clef with a small 8
+under it means the same). The **TAB** under the staff gives the same notes as frets: one line a string, the high E string on top,
+0 an open string, x a string not played. Read whichever is easier; they say the same thing.
+
+<div class="chord-analysis" data-example data-settings="level=ch6b&texture=guitar&key=G major&prog=I V6 vi IV&seed=2"></div>
+
+<div class="chord-analysis" data-settings="level=ch6a&texture=guitar"></div>
+
+## Stage 3: an SATB chorale
+
+Four voices on two staves. In a chorale, soprano and alto share the top staff (stems up for the soprano, down for the alto) and tenor
+and bass share the bottom one. In *keyboard style* the tenor moves up into the treble staff with the soprano and alto, and the bass
+is alone. Choose either under **SATB: the tenor**. The bass is the bass voice; one note (usually the root) is doubled.
+
+<div class="chord-analysis" data-example data-settings="level=ch7b&texture=satb&key=F major&prog=I ii6 V I&seed=3"></div>
+
+<div class="chord-analysis" data-settings="level=ch7a&texture=satb"></div>
+
+## Stage 4: broken chords
+
+The right hand plays the chord one note at a time, over a bass note held in the left hand. Gather every note from the chord's number
+to the next number. The bass note is still the lowest one.
+
+<div class="chord-analysis" data-example data-settings="level=ch7b&texture=broken&key=d minor&prog=i iv6 V i&seed=5"></div>
+
+<div class="chord-analysis" data-settings="level=ch7b&texture=broken"></div>
+
+## Stage 5: a melody with non-chord tones
+
+Now a melody sits over the chords: an Alberti bass (bottom, top, middle, top) or held chords. Most melody notes belong to the chord,
+but some short ones on the second half of a beat don't. A **passing tone** steps between two chord tones (G–**A**–B over a G chord); a
+**neighbor tone** steps away and comes back (E–**F**–E). Leave them out before you stack. Chapter 10 of Hutchinson names the other
+kinds; the exercises here use only these two.
+
+<div class="chord-analysis" data-example data-settings="level=ch8b&texture=melody&key=C major&prog=I vi ii65 V7 I&seed=7"></div>
+
+<div class="chord-analysis" data-settings="level=ch8b&texture=melody"></div>
+
+## Naming the chord
+
+| Level | Name with | The bass | Examples | Read |
+|---|---|---|---|---|
+| Chord symbols, root position | root letter + quality | not asked | C, Am, B°, C+ | [6.2](triads.qmd#lead-sheet-symbols) |
+| Chord symbols with slash chords | the same, + / and the bass | slash | C/E, G/B, Dm/A | [6.3](triads.qmd#inverted-triads-and-slash-chords) |
+| Roman numerals, root position | scale degree of the root; capital = major, small = minor, ° diminished, + augmented | not asked | I, ii, vii° (in minor: i, ii°, III, iv, V, VI, VII, vii°) | [7.1–7.3](roman-numerals.qmd) |
+| Roman numerals with inversions | the same + figure | 6, 64 (or /3rd, /5th) | I6, V64, ii°6 | [7.1](roman-numerals.qmd) |
+| Seventh chords as symbols | maj7, 7, m7, ø7, °7 | slash | Cmaj7, G7/B, Bø7 | [8.1](seventh-chords.qmd) |
+| Seventh chords as Roman numerals | the triad's numeral + 7 type | 7, 65, 43, 42 (or /3rd, /5th, /7th) | V7, ii65, IVM7, viiø7 | [8.3](seventh-chords.qmd) |
+
+A capital letter alone is a major chord (A) and a small letter, or a letter with m, is minor (a, Am), as in the Theory Drills.
+
+## All together
+
+Every level and every stage. Choose **Stage: Any of the five** to mix them, and **The key: Find it yourself** to work out the key first
+(the signature gives two choices; a raised 7th, and the first and last chords, decide between them).
+
+<div class="chord-analysis" data-from-url data-settings="level=ch6a&texture=mixed"></div>
+
+## Reports for your teacher
+
+Every exercise on this page, the **Analysis practice** on the chapter pages, and every Theory Drill keep a record of what you do: each
+stack and name you check, right or wrong, the Steps you looked at, and whether you pressed **Show the answers**. **My report** shows it
+(today's work, or everything), with each passage's score. Type your name, then **Print or save as PDF**, or **Copy the report** to paste
+it into an assignment. Nothing is sent anywhere.
+
+A copied report ends with a **report code**. Your teacher pastes it on the [My Report](../my-report.qmd) page to see the same report
+with every answer, and to check that it wasn't changed.
+
+## What comes next
+
+These steps are planned but not built yet. The checker already reads applied chords (V7/V) and the Neapolitan (N6), so most of the
+work is new progressions and new **Steps** text.
+
+- **Chapter 9, function.** After naming each chord, choose T, TP, PD or D (the book's flowcharts, as in the *Harmonic function* drill),
+  and name the cadence at the end.
+- **Chapter 10, non-chord tones by name.** Mark each non-chord tone and name it (passing, neighbor, suspension, appoggiatura, escape tone,
+  anticipation), with accented ones on the beat. Stage 5 would add suspensions, which change what "the chord's beats" means.
+- **Chapter 16, figures.** Answers in figures only (I6, V65), and the cadential 6/4 (I64 before V, Cad64 accepted).
+- **Chapters 17–18, applied chords.** A note outside the key: look at the next chord. A major chord or dominant 7th a 5th above it is
+  V(7)/x; a diminished chord a half step below it is vii°(7)/x.
+- **Chapter 19, mixture.** ♭3, ♭6 or ♭7 in a major key: a chord borrowed from the parallel minor (iv, ♭VI, ♭VII, ii°, iiø7).
+- **Chapters 20–21, the Neapolitan and augmented sixths.** ♭2 in a major triad: N6. ♭6 in the bass with ♯4 above it: an augmented sixth,
+  which doesn't stack in thirds at all, so Step 4 changes to "find the augmented 6th".
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Links:** each exercise's **Copy a link to this passage** gives a link to this page with that level, stage and passage (`seed=`).
+  Everyone who opens it gets the same passage. Add `&lock=1` to hide the settings.
+- **Settings in a link:** `level` (ch6a ch6b ch7a ch7b ch8a ch8b), `texture` (rh guitar satb broken melody mixed), `task` (both stack name),
+  `entry` (tap staff rotate type), `answer` (auto sym rn), `tenor` (bass treble), `mode`, `most` (0–5), `key` (show find), `rhythm` (auto bar half).
+- **What counts as right:** a name is right when it means the same spelled notes over the same bass: I6 = I/3rd, V65 = V7/3rd, a = Am.
+  Spelling counts (A♭ is not G♯). Root-position levels don't ask for the bass, so a slash or a figure there isn't needed.
+- **The passages** are made by the site from short progressions (the ones in the book's chapters and common pop ones), in a random key.
+  The voicings follow the stage, not the rules of part-writing: the SATB stage spaces the voices sensibly but isn't checked for
+  parallel fifths. Guitar shapes are found by a search for playable shapes in open position or a four-fret span (at most four
+  fingers, no skipped strings); they're common shapes but not always the most usual fingering. The answers and every drawn note are
+  checked by a script for each level and stage (`node tests/analysis/chord-analysis.test.js`).
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Alberti Bass." *Wikipedia*, [en.wikipedia.org/wiki/Alberti_bass](https://en.wikipedia.org/wiki/Alberti_bass). A broken chord played lowest, highest, middle, highest.
+
+Hutchinson, Robert. *Music Theory for the 21st-Century Classroom*. University of Puget Sound, [musictheory.pugetsound.edu/mt21c/MusicTheory.html](https://musictheory.pugetsound.edu/mt21c/MusicTheory.html). Chapters 6-8: triad and seventh-chord qualities, lead-sheet and slash symbols, Roman numerals and their inversion figures, in major and minor.
+
+Hutchinson, Robert. "Non-Chord Tones." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/NonChordTones.html](https://musictheory.pugetsound.edu/mt21c/NonChordTones.html). Chapter 10: passing and neighbor tones, and the other kinds named in the plan.
+
+"Transposing Instrument." *Wikipedia*, [en.wikipedia.org/wiki/Transposing_instrument](https://en.wikipedia.org/wiki/Transposing_instrument). The guitar sounds an octave lower than written.
+:::
+<!-- /works-cited -->

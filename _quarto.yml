@@ -271,6 +271,9 @@ website:
           contents:
             - theory/theory-drills.qmd
             - theory/exercise-builder.qmd
+            - theory/chord-analysis.qmd
+            - href: my-report.qmd
+              text: "My Report"
         - section: "Concepts"
           contents:
             - theory/modes-three-ways.qmd
