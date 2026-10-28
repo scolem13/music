@@ -1,0 +1,15 @@
+// The Worker that serves music.seancoleman.org (the rendered _site, behind a password) and media.seancoleman.org
+// (the MLT recordings in R2, same password). Code: worker/index.js. Password: `npx wrangler secret put SITE_PASSWORD`.
+// Deployed by Cloudflare Workers Builds on each push to main.
+{
+  "name": "music",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-23",
+  "assets": { "directory": "_site", "binding": "ASSETS", "run_worker_first": true },
+  "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "everything-music-mlt" }],
+  "routes": [
+    { "pattern": "music.seancoleman.org", "custom_domain": true },
+    { "pattern": "media.seancoleman.org", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+}
