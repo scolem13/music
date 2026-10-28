@@ -88,7 +88,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
 <script src="../apps/shared/audio-tap.js?v=1"></script>
 <!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
-<script src="../apps/shared/help-eye.js?v=1"></script>
+<script src="../apps/shared/help-eye.js?v=2"></script>
+<script src="../apps/shared/works-cited-fold.js?v=1"></script>
 <!-- MIDI learn: a pedal or key presses any button on the page (navbar "MIDI buttons"). -->
 <script src="../apps/shared/midi-learn.js?v=1" defer=""></script>
 <script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
@@ -218,6 +219,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
  <span class="dropdown-text">Sax Patterns by Ear</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../practice/sax-home.html">
+ <span class="dropdown-text">My Saxophone Practice</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../practice/rhythms.html">
  <span class="dropdown-text">Rhythm Patterns</span></a>
   </li>  
@@ -274,6 +279,38 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../practice/assessment-rhythm.html">
  <span class="dropdown-text">Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mlt" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">MLT</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-mlt">    
+        <li>
+    <a class="dropdown-item" href="../mlt/index.html">
+ <span class="dropdown-text">MLT Books</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../mlt/mullen.html">
+ <span class="dropdown-text">Mullen: MLT Any Music Teacher Can Du…De</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/dmti.html">
+ <span class="dropdown-text">DMTI: Developing Musicianship through Improvisation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/jri-sax.html">
+ <span class="dropdown-text">JRI Recorder, on Saxophone</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/activities.html">
+ <span class="dropdown-text">Classroom Activities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/lesson-builder.html">
+ <span class="dropdown-text">MLT Lesson Planner</span></a>
   </li>  
     </ul>
   </li>
@@ -554,6 +591,12 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
   <div class="sidebar-item-container"> 
   <a href="../practice/sax-patterns-by-ear.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sax Patterns by Ear</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../practice/sax-home.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">My Saxophone Practice</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1273,10 +1316,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 <h2 class="anchored" data-anchor-id="works-cited">Works Cited</h2>
 <!-- works-cited: written by scripts/works-cited.py -->
 <div class="works-cited">
-<p>Azzara, Christopher D., and Richard F. Grunow. <em>Developing Musicianship through Improvisation, Book 1: C Instruments</em>. GIA Publications, 2006. Unit repertoire songs (melody and chords) transcribed into the dmti set of apps/tunes/tunes-object.js: “Mary Ann” (p.&nbsp;17), “Joshua” (p.&nbsp;33), “Down by the Riverside” (p.&nbsp;69); “Long, Long Ago” (p.&nbsp;1) and “Simple Gifts” (p.&nbsp;51) were already in the collection. Part 2, Echo Tonal Patterns of Units 4 and 5 (solfège, p.&nbsp;xi), copied into dmti1-unit4-tonal / -unit5-tonal in apps/patterns/pattern-set.js with C as DO (Units 1–3 are the site’s major-I-V and minor-i-V); Echo Rhythm Patterns of Units 1–5 (pp.&nbsp;2, 18, 34, 52, 71; syllables, pp.&nbsp;vii–ix), dmti1-unit1-rhythm … -unit5-rhythm in apps/rhythms/rhythm-pattern-object.js. Reproduced with permission.</p>
-<p>Azzara, Christopher D., and Richard F. Grunow. <em>Developing Musicianship through Improvisation, Book 2: C Instruments</em>. GIA Publications, 2010. Unit repertoire songs (melody and chords) transcribed into the dmti set of apps/tunes/tunes-object.js: “When the Saints Go Marching In” (p.&nbsp;1) and “Motherless Child” (p.&nbsp;39); “Amazing Grace” was already in the collection. Part 2, Echo Tonal Patterns of Units 1–3 (solfège, p.&nbsp;ix; the lower of the two octaves printed), dmti2-unit1-tonal … -unit3-tonal in apps/patterns/pattern-set.js with C as DO (C as LA in Unit 3); Echo Rhythm Patterns of Units 1–3 (pp.&nbsp;2, 22, 40; syllables, pp.&nbsp;vii–viii), dmti2-unit1-rhythm … -unit3-rhythm in apps/rhythms/rhythm-pattern-object.js. Reproduced with permission.</p>
-<p>Azzara, Christopher D., and Richard F. Grunow. <em>Developing Musicianship through Improvisation, Book 3: C Instruments</em>. GIA Publications, 2010. Unit 1, “Saint Louis Blues”: the twelve Blue Note Patterns (pp.&nbsp;ix, 6), copied into the dmti-blue-notes set of apps/patterns/pattern-set.js with C as DO; the twelve Echo Tonal Patterns of the same page (p.&nbsp;6, solfège p.&nbsp;ix) are dmti3-unit1-tonal, those of Unit 2 “Transformation” (p.&nbsp;x) dmti3-unit2-tonal and of Unit 3 “Red Wings” (p.&nbsp;xi) dmti3-unit3-tonal (lower octave where two are printed); the Echo Rhythm Patterns of the three units (syllables, pp.&nbsp;vii–viii) are dmti3-unit1-rhythm … -unit3-rhythm in apps/rhythms/rhythm-pattern-object.js. Unit repertoire tunes (melody and chords) transcribed into the dmti set of apps/tunes/tunes-object.js: “Transformation” (p.&nbsp;23) and “Red Wings” (pp.&nbsp;47–48), both by Azzara. Reproduced with permission.</p>
-<p>Grunow, Richard F., Edwin E. Gordon, and Christopher D. Azzara. <em>Jump Right In: The Instrumental Series. Teacher’s Guide for Recorder</em>. Rev.&nbsp;ed., GIA Publications, 1999. 24 rote songs transcribed into the jri-recorder set of apps/tunes/tunes-object.js (melody and chords), from the piano-accompaniment pages (pp.&nbsp;258–315). Tonal Patterns from Student Book Two (pp.&nbsp;321–324; major, minor, Dorian and Mixolydian tonic, dominant and subdominant sets, the minor, Dorian and Mixolydian ones being the site’s 322a/b, 323a/b, 324a/b) and the Student Book One tonic and dominant lesson set (pp.&nbsp;46–47), jri-recorder-tonal-* in apps/patterns/pattern-set.js with C as DO (or LA, RE, SO); Rhythm Patterns from Student Book Two (pp.&nbsp;325–334), jri-recorder-rhythm-* in apps/rhythms/rhythm-pattern-object.js. Reproduced with permission.</p>
+<p>Azzara, Christopher D., and Richard F. Grunow. <em>Developing Musicianship through Improvisation, Book 1: C Instruments</em>. GIA Publications, 2006. Unit repertoire songs (melody and chords) transcribed into the dmti set of apps/tunes/tunes-object.js: “Mary Ann” (p.&nbsp;17), “Joshua” (p.&nbsp;33), “Down by the Riverside” (p.&nbsp;69); “Long, Long Ago” (p.&nbsp;1) and “Simple Gifts” (p.&nbsp;51) were already in the collection. Part 2, Echo Tonal Patterns of Units 4 and 5 (solfège, p.&nbsp;xi), copied into dmti1-unit4-tonal / -unit5-tonal in apps/patterns/pattern-set.js with C as DO (Units 1–3 are the site’s major-I-V and minor-i-V); Echo Rhythm Patterns of Units 1–5 (pp.&nbsp;2, 18, 34, 52, 71; syllables, pp.&nbsp;vii–ix), dmti1-unit1-rhythm … -unit5-rhythm in apps/rhythms/rhythm-pattern-object.js. MLT Books: the unit, part and Seven Skills structure and the instructions of every unit (pp.&nbsp;v–vi, 1–89), the tunes “Long, Long Ago” (p.&nbsp;1) and “Simple Gifts” (pp.&nbsp;51–52) as DMTI prints them (dmti-long-long-ago, dmti-simple-gifts); the examples on the page are generated, not copied. Reproduced with permission.</p>
+<p>Azzara, Christopher D., and Richard F. Grunow. <em>Developing Musicianship through Improvisation, Book 2: C Instruments</em>. GIA Publications, 2010. Unit repertoire songs (melody and chords) transcribed into the dmti set of apps/tunes/tunes-object.js: “When the Saints Go Marching In” (p.&nbsp;1) and “Motherless Child” (p.&nbsp;39); “Amazing Grace” was already in the collection. Part 2, Echo Tonal Patterns of Units 1–3 (solfège, p.&nbsp;ix; the lower of the two octaves printed), dmti2-unit1-tonal … -unit3-tonal in apps/patterns/pattern-set.js with C as DO (C as LA in Unit 3); Echo Rhythm Patterns of Units 1–3 (pp.&nbsp;2, 22, 40; syllables, pp.&nbsp;vii–viii), dmti2-unit1-rhythm … -unit3-rhythm in apps/rhythms/rhythm-pattern-object.js. MLT Books: “Amazing Grace” as DMTI prints it (p.&nbsp;21, dmti-amazing-grace, the tune without the upper harmony). Reproduced with permission.</p>
+<p>Azzara, Christopher D., and Richard F. Grunow. <em>Developing Musicianship through Improvisation, Book 3: C Instruments</em>. GIA Publications, 2010. Unit 1, “Saint Louis Blues”: the twelve Blue Note Patterns (pp.&nbsp;ix, 6), copied into the dmti-blue-notes set of apps/patterns/pattern-set.js with C as DO; the twelve Echo Tonal Patterns of the same page (p.&nbsp;6, solfège p.&nbsp;ix) are dmti3-unit1-tonal, those of Unit 2 “Transformation” (p.&nbsp;x) dmti3-unit2-tonal and of Unit 3 “Red Wings” (p.&nbsp;xi) dmti3-unit3-tonal (lower octave where two are printed); the Echo Rhythm Patterns of the three units (syllables, pp.&nbsp;vii–viii) are dmti3-unit1-rhythm … -unit3-rhythm in apps/rhythms/rhythm-pattern-object.js. Unit repertoire tunes (melody and chords) transcribed into the dmti set of apps/tunes/tunes-object.js: “Transformation” (p.&nbsp;23) and “Red Wings” (pp.&nbsp;47–48), both by Azzara. MLT Books: “Saint Louis Blues” section A (p.&nbsp;1, dmti-saint-louis-blues, the upper voice an octave down). Reproduced with permission.</p>
+<p>Grunow, Richard F., Edwin E. Gordon, and Christopher D. Azzara. <em>Jump Right In: The Instrumental Series. Teacher’s Guide for Recorder</em>. Rev.&nbsp;ed., GIA Publications, 1999. 24 rote songs transcribed into the jri-recorder set of apps/tunes/tunes-object.js (melody and chords), from the piano-accompaniment pages (pp.&nbsp;258–315). Tonal Patterns from Student Book Two (pp.&nbsp;321–324; major, minor, Dorian and Mixolydian tonic, dominant and subdominant sets, the minor, Dorian and Mixolydian ones being the site’s 322a/b, 323a/b, 324a/b) and the Student Book One tonic and dominant lesson set (pp.&nbsp;46–47), jri-recorder-tonal-* in apps/patterns/pattern-set.js with C as DO (or LA, RE, SO); Rhythm Patterns from Student Book Two (pp.&nbsp;325–334), jri-recorder-rhythm-* in apps/rhythms/rhythm-pattern-object.js. Reproduced with permission. MLT Books (recorder on saxophone): the Book One lesson plans, Units 1–12, Sections A and B, summarized part by part with their pages (pp.&nbsp;36–177).</p>
 </div>
 <!-- /works-cited -->
 
@@ -1288,10 +1331,11 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../track.js"></script>
 <!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
      (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../apps/shared/page-clock.js?v=1"></script>
 <script src="../apps/shared/degree-names.js?v=1"></script>
 <script src="../apps/shared/degree-caret.js?v=2"></script>
 <script src="../apps/shared/circle-of-fifths.js?v=2"></script>
-<script src="../apps/shared/practice-widgets.js?v=9"></script>
+<script src="../apps/shared/practice-widgets.js?v=10"></script>
 <!-- A button at the left of the navbar that folds the docked sidebar away on
      every page, and remembers the choice. Below 992px Quarto already tucks the
      sidebar behind its own toggle, so the button is hidden there. -->

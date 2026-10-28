@@ -73,8 +73,8 @@ const SCRIPTS = ['/apps/shared/tonality.js?v=10','/apps/shared/lessons/key-tonal
   '/apps/shared/lessons/tunes.js?v=6','/apps/shared/lessons/diagrams.js?v=1','/apps/shared/lessons/chord-staff.js?v=3',
   '/apps/shared/lessons/chord-lesson.js?v=2','/apps/shared/tune-chart.js?v=31','/apps/shared/voicings.js?v=5',
   '/apps/shared/band/harmony.js?v=34','/apps/shared/band/bass.js?v=13','/apps/shared/band/comp.js?v=28',
-  '/apps/shared/band/catalog.js?v=33','/apps/shared/band/drums.js?v=15','/apps/shared/band/sounds.js?v=14',
-  '/apps/shared/band/player.js?v=125'];
+  '/apps/shared/band/catalog.js?v=33','/apps/shared/band/drums.js?v=18','/apps/shared/band/sounds.js?v=14',
+  '/apps/shared/band/player.js?v=128'];
 
 const FENCE = '```{=html}\n';
 function render(c) {

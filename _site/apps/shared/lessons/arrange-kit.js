@@ -442,7 +442,7 @@
       var w = now || last || demos[0]; if (!w) return;
       e.preventDefault(); if (now) stop(); else play(w);
     });
-    if (global.PlayBar && $('ar-bar')) global.PlayBar.attach($('ar-bar'), { live: function () { return !!now; } });
+    if (global.PlayBar && $('ar-bar')) global.PlayBar.attach($('ar-bar'), { stop: $('ar-stop'), live: function () { return !!now; } });
   }
   global.ArrangeLesson = { init: init, abcOf: abcOf };
 })(window);

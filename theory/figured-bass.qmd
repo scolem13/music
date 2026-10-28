@@ -13,7 +13,7 @@ description: "Exercises for Chapter 16 of Hutchinson's Music Theory for the 21st
 <script src="/apps/shared/drills/drills.js?v=17"></script>
 <script src="/apps/shared/drills/figured.js?v=1"></script>
 <script src="/apps/shared/drills/fb-explorer.js?v=1"></script>
-<script src="/apps/shared/lessons/sections.js?v=1"></script>
+<script src="/apps/shared/lessons/sections.js?v=2"></script>
 <style>
 .rn-quiz{display:grid;gap:1rem;margin:1rem 0}
 .rn-quiz figure{margin:0}

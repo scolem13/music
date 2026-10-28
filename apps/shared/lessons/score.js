@@ -29,6 +29,9 @@
     abc = abc.replace(/\s(?:name|nm|subname|sname|snm)=(?:"[^"]*"|\S+)/g, "");
     // every score is fluid: drawn to its natural width, never wider than the box it is in (a narrow screen scales it down whole,
     // so nothing is cut off); padding on the left is none so the staff starts at the text's edge
+    // abcjs only fits the last line to the width when %%stretchlast is set; without it the last line keeps the spacing of the
+    // line above (already spread out) and runs past the others. A last line two-thirds full or more is fitted like the rest.
+    if (!/^%%stretchlast/m.test(abc)) abc = abc.replace(/^(X:.*\n)/, "$1%%stretchlast 0.34\n");
     var opt = { staffwidth: o.width || 600, scale: 0.95, paddingtop: 4, paddingbottom: 4, paddingleft: 0, paddingright: 4, add_classes: true,
       responsive: "resize" };
     // abcjs makes a note under a word only as wide as the word, with no space between neighbouring words, so short labels under

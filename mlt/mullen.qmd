@@ -1,0 +1,99 @@
+---
+title: "Mullen: MLT Any Music Teacher Can Du…De"
+description: "Andy Mullen's teacher's guide to The Literate Musician, unit by unit: First Whole, LSAs, Second Whole and bridges, with the activities to do and the page numbers."
+toc: true
+toc-depth: 2
+---
+
+{{< include _scripts.qmd >}}
+
+## Part I: theory {.mlt-t}
+
+::: {.mlt-t}
+The chapters before the curriculum: audiation, the music/language parallel, skills, content and context, Whole-Part-Whole,
+Gordon's skill learning sequence and content. The units link back to them.
+
+```{=html}
+<div class="mlt-outline" data-book="mullen" data-part="p1"></div>
+```
+:::
+
+## Ch. 12: Learning Sequence Activities
+
+```{=html}
+<div class="mlt-unit" data-book="mullen" data-unit="ch12"></div>
+```
+
+## Ch. 13: Classroom Activities
+
+```{=html}
+<div class="mlt-unit" data-book="mullen" data-unit="ch13"></div>
+```
+
+## Unit 1: Aural/Oral, Major and Duple
+
+```{=html}
+<div class="mlt-unit" data-book="mullen" data-unit="u1"></div>
+```
+
+## Unit 2: Aural/Oral, Minor and Triple
+
+```{=html}
+<div class="mlt-unit" data-book="mullen" data-unit="u2"></div>
+```
+
+## Unit 3: Verbal Association, Major and Duple
+
+```{=html}
+<div class="mlt-unit" data-book="mullen" data-unit="u3"></div>
+```
+
+## Unit 4: Verbal Association, Minor and Triple
+
+```{=html}
+<div class="mlt-unit" data-book="mullen" data-unit="u4"></div>
+```
+
+## Unit 5: Partial Synthesis
+
+```{=html}
+<div class="mlt-unit" data-book="mullen" data-unit="u5"></div>
+```
+
+## Unit 6: Rhythm Reading
+
+```{=html}
+<div class="mlt-unit" data-book="mullen" data-unit="u6"></div>
+```
+
+## Unit 7: Tonal Reading
+
+```{=html}
+<div class="mlt-unit" data-book="mullen" data-unit="u7"></div>
+```
+
+## Unit 8: More Rhythm Content (Divisions)
+
+```{=html}
+<div class="mlt-unit" data-book="mullen" data-unit="u8"></div>
+```
+
+## Unit 9: More Tonal Content (Stepwise Patterns)
+
+```{=html}
+<div class="mlt-unit" data-book="mullen" data-unit="u9"></div>
+```
+
+## Unit 10: Build Your Own Unit
+
+```{=html}
+<div class="mlt-unit" data-book="mullen" data-unit="u10"></div>
+```
+
+## Works Cited {.mlt-t}
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Mullen, Andy. *MLT Any Music Teacher Can Du…De: Teacher's Guide to "The Literate Musician."* The Improving Musician, 2021. Bridging and familiar patterns before unfamiliar ones at generalization (pp. 65–67); the audiation-foundation objectives (p. 74); the tonal sequence (p. 79); partial synthesis in rhythm by naming the microbeat (p. 85); rhythm patterns kept conversational, inflected with style and panache (p. 84); MLT Books: the table of contents, chapters 12–13 (pp. 72–97) and Units 1–10 (pp. 102–267) step by step, and the classroom activities and techniques they describe, with the page numbers on each step and activity.
+:::
+<!-- /works-cited -->

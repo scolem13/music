@@ -110,10 +110,10 @@
 <script src="/apps/shared/band/bass.js?v=13"></script>
 <script src="/apps/shared/band/comp.js?v=27"></script>
 <script src="/apps/shared/band/catalog.js?v=37"></script>
-<script src="/apps/shared/band/drums.js?v=17"></script>
+<script src="/apps/shared/band/drums.js?v=18"></script>
 <script src="/apps/shared/band/congas.js?v=3"></script>
 <script src="/apps/shared/band/sounds.js?v=17"></script>
-<script src="/apps/shared/band/player.js?v=125"></script>
+<script src="/apps/shared/band/player.js?v=128"></script>
 <script>
 (function(){
   var $ = function(id){ return document.getElementById(id); };

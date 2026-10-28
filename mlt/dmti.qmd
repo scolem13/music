@@ -1,0 +1,103 @@
+---
+title: "DMTI: Developing Musicianship through Improvisation"
+description: "Azzara and Grunow's three books, unit by unit: each tune's six parts, with the patterns, the Seven Skills and the improvising generated from the tune so every example can be heard and replaced by a new one."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<script src="/apps/tunes/tunes-object.js"></script>
+<script src="/apps/shared/band/harmony.js?v=34"></script>
+<script src="/apps/shared/mlt/dmti-skills.js?v=5"></script>
+<script src="/apps/shared/mlt/books/dmti.js?v=2"></script>
+```
+
+{{< include _scripts.qmd >}}
+
+## How the units work {.mlt-t}
+
+::: {.mlt-t}
+Every unit of all three books has the same six parts: the tune by ear; rhythm and tonal patterns and series; improvising
+phrases; the Seven Skills; reading and writing; learning solos. The instructions are the same in every unit, so the steps
+here are built from one template, and the exercises are generated from the unit's tune (with its chords), its rhythm
+patterns and its tonal patterns: “New example” makes another. The book's own examples and transcribed solos are not
+reproduced; each step gives the page (📖). The band plays the tune's chords in a style chosen for it.
+:::
+
+## Book 1, Unit 1: Long, Long Ago
+
+```{=html}
+<div class="mlt-unit" data-book="dmti1" data-unit="d1u1"></div>
+```
+
+## Book 1, Unit 2: Mary Ann
+
+```{=html}
+<div class="mlt-unit" data-book="dmti1" data-unit="d1u2"></div>
+```
+
+## Book 1, Unit 3: Joshua
+
+```{=html}
+<div class="mlt-unit" data-book="dmti1" data-unit="d1u3"></div>
+```
+
+## Book 1, Unit 4: Simple Gifts
+
+```{=html}
+<div class="mlt-unit" data-book="dmti1" data-unit="d1u4"></div>
+```
+
+## Book 1, Unit 5: Down by the Riverside
+
+```{=html}
+<div class="mlt-unit" data-book="dmti1" data-unit="d1u5"></div>
+```
+
+## Book 2, Unit 1: When the Saints Go Marching In
+
+```{=html}
+<div class="mlt-unit" data-book="dmti2" data-unit="d2u1"></div>
+```
+
+## Book 2, Unit 2: Amazing Grace
+
+```{=html}
+<div class="mlt-unit" data-book="dmti2" data-unit="d2u2"></div>
+```
+
+## Book 2, Unit 3: Motherless Child
+
+```{=html}
+<div class="mlt-unit" data-book="dmti2" data-unit="d2u3"></div>
+```
+
+## Book 3, Unit 1: Saint Louis Blues
+
+```{=html}
+<div class="mlt-unit" data-book="dmti3" data-unit="d3u1"></div>
+```
+
+## Book 3, Unit 2: Transformation
+
+```{=html}
+<div class="mlt-unit" data-book="dmti3" data-unit="d3u2"></div>
+```
+
+## Book 3, Unit 3: Red Wings
+
+```{=html}
+<div class="mlt-unit" data-book="dmti3" data-unit="d3u3"></div>
+```
+
+## Works Cited {.mlt-t}
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Azzara, Christopher D., and Richard F. Grunow. *Developing Musicianship through Improvisation, Book 1: C Instruments*. GIA Publications, 2006. Unit repertoire songs (melody and chords) transcribed into the dmti set of apps/tunes/tunes-object.js: "Mary Ann" (p. 17), "Joshua" (p. 33), "Down by the Riverside" (p. 69); "Long, Long Ago" (p. 1) and "Simple Gifts" (p. 51) were already in the collection. Part 2, Echo Tonal Patterns of Units 4 and 5 (solfège, p. xi), copied into dmti1-unit4-tonal / -unit5-tonal in apps/patterns/pattern-set.js with C as DO (Units 1–3 are the site's major-I-V and minor-i-V); Echo Rhythm Patterns of Units 1–5 (pp. 2, 18, 34, 52, 71; syllables, pp. vii–ix), dmti1-unit1-rhythm … -unit5-rhythm in apps/rhythms/rhythm-pattern-object.js. MLT Books: the unit, part and Seven Skills structure and the instructions of every unit (pp. v–vi, 1–89), the tunes "Long, Long Ago" (p. 1) and "Simple Gifts" (pp. 51–52) as DMTI prints them (dmti-long-long-ago, dmti-simple-gifts); the examples on the page are generated, not copied. Reproduced with permission.
+
+Azzara, Christopher D., and Richard F. Grunow. *Developing Musicianship through Improvisation, Book 2: C Instruments*. GIA Publications, 2010. Unit repertoire songs (melody and chords) transcribed into the dmti set of apps/tunes/tunes-object.js: "When the Saints Go Marching In" (p. 1) and "Motherless Child" (p. 39); "Amazing Grace" was already in the collection. Part 2, Echo Tonal Patterns of Units 1–3 (solfège, p. ix; the lower of the two octaves printed), dmti2-unit1-tonal … -unit3-tonal in apps/patterns/pattern-set.js with C as DO (C as LA in Unit 3); Echo Rhythm Patterns of Units 1–3 (pp. 2, 22, 40; syllables, pp. vii–viii), dmti2-unit1-rhythm … -unit3-rhythm in apps/rhythms/rhythm-pattern-object.js. MLT Books: "Amazing Grace" as DMTI prints it (p. 21, dmti-amazing-grace, the tune without the upper harmony). Reproduced with permission.
+
+Azzara, Christopher D., and Richard F. Grunow. *Developing Musicianship through Improvisation, Book 3: C Instruments*. GIA Publications, 2010. Unit 1, "Saint Louis Blues": the twelve Blue Note Patterns (pp. ix, 6), copied into the dmti-blue-notes set of apps/patterns/pattern-set.js with C as DO; the twelve Echo Tonal Patterns of the same page (p. 6, solfège p. ix) are dmti3-unit1-tonal, those of Unit 2 "Transformation" (p. x) dmti3-unit2-tonal and of Unit 3 "Red Wings" (p. xi) dmti3-unit3-tonal (lower octave where two are printed); the Echo Rhythm Patterns of the three units (syllables, pp. vii–viii) are dmti3-unit1-rhythm … -unit3-rhythm in apps/rhythms/rhythm-pattern-object.js. Unit repertoire tunes (melody and chords) transcribed into the dmti set of apps/tunes/tunes-object.js: "Transformation" (p. 23) and "Red Wings" (pp. 47–48), both by Azzara. MLT Books: "Saint Louis Blues" section A (p. 1, dmti-saint-louis-blues, the upper voice an octave down). Reproduced with permission.
+:::
+<!-- /works-cited -->

@@ -62,7 +62,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       for (const [busy, want] of [["full", null], ["less", "none"], ["calm", "pad"]]) {
         await setSel("Busyness", busy); await b.eval(`__plays=[];document.querySelector("#blues-ear .pe-go").click()`); await wait(2500);
         const p = JSON.parse(await b.eval(`JSON.stringify(__plays[0]||null)`)); assert(p, "played");
-        if (!want) assert(!p.bandOpts, "style as written"); else if (busy === "less") assert.strictEqual(p.bandOpts.fills, "none"); else assert.strictEqual(p.bandOpts.compRhythm, "pad");
+        assert(p.bandOpts && p.bandOpts.cutEnd, "cutEnd: no ending"); if (!want) assert.deepStrictEqual(Object.keys(p.bandOpts), ["cutEnd"], "style as written"); else if (busy === "less") assert.strictEqual(p.bandOpts.fills, "none"); else assert.strictEqual(p.bandOpts.compRhythm, "pad");
       }
       await setSel("Busyness", "full");
     });

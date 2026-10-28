@@ -20,7 +20,7 @@
 // { pos, choke:"cymbals" } event asks the player to damp whatever cymbal is still ringing. The
 // bar after it comes back in with a crash.
 // A cymbal grabbed with the hand: "^choke" on a bar of the chart (ctx.form[i].choke, or opts.chokeBars = [form index, ...]) puts a crash on its beat 1 and stops it
-// before beat 2; opts.endChoke does the same to the last hit of the tune. The choke event carries `damp`, the time the hand takes.
+// before beat 2; opts.endChoke does the same to the last hit of the tune; opts.cutEnd (no ending) drops crashes from the last bar and damps the cymbals at its barline. The choke event carries `damp`, the time the hand takes.
 // Fills. opts.fills says how often: "auto" (unset; into every chorus and section, and at some phrase ends), "busy" (more of
 // them), "sections" (only into a chorus, a new section and the top of the form) or "none" (only the ones asked for). A fill
 // is asked for on one bar by opts.fillBars = { formIndex: "small" | "medium" | "large" }, by a "^fill" in the chart
@@ -489,7 +489,14 @@
       sinceCrash = 0;
       return ev.sort(function (a, b){ return a.pos - b.pos; });
     }
-    function bar(ctx){ return choked(ctx, plainBar(ctx)); }
+    function bar(ctx){
+      var ev = choked(ctx, plainBar(ctx));
+      if (ctx && ctx.last && ctx.finalChorus && ctx.opts && ctx.opts.cutEnd){      // opts.cutEnd: nothing rings past the last barline
+        ev = ev.filter(function (e){ return e.piece !== "crash"; });
+        ev.push({ pos:Math.max(0, (ctx.beats || 4) - 0.08), choke:"cymbals", damp:GRAB, straight:true });
+      }
+      return ev;
+    }
     function plainBar(ctx){
       if (written(ctx)) return writtenBar(ctx);
       if (ctx.opts && ctx.opts.groove === "click") return clickBar(ctx);

@@ -62,11 +62,11 @@ button.ge-name:hover{color:var(--site-accent-dk);text-decoration:underline}
 <script src="/apps/shared/band/comp.js?v=32"></script>
 <script src="/apps/shared/band/catalog.js?v=37"></script>
 <script src="/apps/shared/band/groove.js?v=4"></script>
-<script src="/apps/shared/band/drums.js?v=17"></script>
+<script src="/apps/shared/band/drums.js?v=18"></script>
 <script src="/apps/shared/band/congas.js?v=4"></script>
 <script src="/apps/shared/band/sounds.js?v=17"></script>
-<script src="/apps/shared/band/player.js?v=125"></script>
-<script src="/apps/shared/lessons/score.js?v=6"></script>
+<script src="/apps/shared/band/player.js?v=128"></script>
+<script src="/apps/shared/lessons/score.js?v=7"></script>
 <script src="/apps/shared/band/groove-library.js?v=1"></script>
 <script src="/apps/shared/band/ride-synth.js?v=1"></script>
 <script src="/apps/shared/band/groove-editor.js?v=2"></script>

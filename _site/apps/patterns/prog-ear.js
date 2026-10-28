@@ -521,7 +521,7 @@
       h = global.AbcPlay.play(v, { sound: clip.sound, qpm: +ST.tempo, light: false });
     } else {
       var abc = abcPlay(clip, cur.q), v2 = visual(abc, ui.scratch);
-      h = global.AbcPlay.play(v2, { abc: abc, style: clip.style, qpm: +ST.tempo, drums: ST.drums === "on", melody: !!cur.q.shared, light: false, bandOpts: busyOpts(clip.style) || undefined });
+      h = global.AbcPlay.play(v2, { abc: abc, style: clip.style, qpm: +ST.tempo, drums: ST.drums === "on", melody: !!cur.q.shared, light: false, bandOpts: Object.assign({ cutEnd: true }, busyOpts(clip.style) || {}) });   // cutEnd: no final crash ringing past the last bar
     }
     playing = h;
     return h.done.then(function () { if (myRun === run) { lightClip(-1); status(""); } });
@@ -574,14 +574,17 @@
     ui.result.innerHTML = "";
     ui.result.appendChild(el("div", ok ? "pe-ok" : "pe-no", (ok ? "Right. " : "Not quite. ") + NAMES[q.oddIndex] + " was the different one."));
     ui.result.appendChild(el("div", null, q.diff.text));
-    var tbl = el("div", "pe-prog");
+    // the answer as a table: one row a clip, one cell a chord, so the bars line up; the style shows on hovering the letter
+    var tbl = el("table", "pe-prog"), body = el("tbody");
     q.clips.forEach(function (clip, j) {
-      var row = el("div", clip.odd ? "pe-oddrow" : null);
-      row.appendChild(el("b", null, NAMES[j] + " "));
-      row.appendChild(el("span", "pe-hint", "(" + (q.melodyMode ? soundLabel(clip.sound) : styleLabel(clip.style)) + ") "));
-      row.appendChild(el("span", null, (clip.odd ? q.odd : q.base).join(q.join || " – ") + "   ·   " + describe(clip)));
-      tbl.appendChild(row);
+      var row = el("tr", clip.odd ? "pe-oddrow" : null), lab = el("th", null, NAMES[j]);
+      lab.title = (q.melodyMode ? soundLabel(clip.sound) : styleLabel(clip.style)) + (clip.odd ? " · the different one" : "");
+      row.appendChild(lab);
+      (clip.odd ? q.odd : q.base).forEach(function (t) { row.appendChild(el("td", null, t)); });
+      row.appendChild(el("td", "pe-syms", describe(clip)));
+      body.appendChild(row);
     });
+    tbl.appendChild(body);
     ui.result.appendChild(tbl);
     ui.result.appendChild(el("div", "pe-hint", "Key: " + q.keyLabel + ". " + (q.level.tier >= 1 ? "Inversions, sevenths and extensions differ between the two same versions on purpose." : "")));
     ui.reveal.hidden = false; drawNotation();

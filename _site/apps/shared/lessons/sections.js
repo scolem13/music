@@ -9,7 +9,9 @@
 
   function init() {
     var main = document.querySelector("main") || document.body;
-    var secs = Array.prototype.slice.call(main.querySelectorAll("section.level2[id]"));
+    var secs = Array.prototype.slice.call(main.querySelectorAll("section.level2[id]:not(.wc-sec)"));
+    // the Works Cited section folds by itself (works-cited-fold.js)
+    secs = secs.filter(function (s) { return !s.querySelector(".works-cited"); });
     if (!secs.length) return;
     var shut = load();
     var css = document.createElement("style");

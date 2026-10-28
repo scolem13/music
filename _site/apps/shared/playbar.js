@@ -7,6 +7,9 @@
 //     Each child of `bar` that may leave carries data-pri (0-9: the higher the number, the sooner it leaves), and optionally
 //     data-pri-live, its importance while playing (the tempo matters before, Fill now during). A child with neither never leaves:
 //     Play and Stop. A child that is hidden takes no room and is left where it is.
+//     o.stop = the bar's Stop button: enabled while o.live() or anything reports sound (below); a click stops all of it.
+//   PlayBar.sounding(id, stopFn)   a player that has started making sound (score.js, abc-play.js); PlayBar.sounding(id, null) when it ends.
+//   PlayBar.stopAll()              stops everything that reported itself
 //   PlayBar.swingSlot(opts)   the Swing menu (Auto / 50-75 %) to put in a bar; see below
 //   PlayBar.HEIGHT   the bar's height as a CSS length (pages pad their foot by it)
 (function (global) {
@@ -25,8 +28,17 @@
       + ".playbar-pop[hidden],.playbar-more[hidden]{display:none}";
     document.head.appendChild(st);
   }
+  // what is making sound now, and the Stop buttons of the bars on the page
+  var sounds = {}, stops = [];
+  function anySound(){ for (var k in sounds) return true; return false; }
+  function update(){ stops.forEach(function (f){ f(); }); }
+  function sounding(id, fn){ if (fn) sounds[id] = fn; else delete sounds[id]; update(); }
+  function stopAll(){ var fs = sounds; sounds = {}; Object.keys(fs).forEach(function (k){ try { fs[k](); } catch (e){} }); update(); }
   function attach(bar, o){
     o = o || {}; css(); bar.classList.add("playbar");
+    if (o.stop){ var sb = o.stop;
+      stops.push(function (){ sb.disabled = !(anySound() || (o.live && o.live())); });
+      sb.addEventListener("click", stopAll); }
     var items = Array.prototype.map.call(bar.children, function (el, i){ return { el: el, at: i }; });
     var more = document.createElement("button"), pop = document.createElement("div"), busy = false;
     more.type = "button"; more.className = "playbar-more"; more.textContent = "Options"; more.hidden = true; more.setAttribute("aria-expanded", "false"); more.title = "The controls there is no room for in the bar";
@@ -76,5 +88,5 @@
     sel.addEventListener("change", function (){ if (o.onChange) o.onChange(sel.value === "auto" ? null : +sel.value / 100); });
     return span;
   }
-  global.PlayBar = { attach: attach, swingSlot: swingSlot, HEIGHT: HEIGHT };
+  global.PlayBar = { attach: attach, sounding: sounding, stopAll: stopAll, swingSlot: swingSlot, HEIGHT: HEIGHT };
 })(typeof window !== "undefined" ? window : globalThis);

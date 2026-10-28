@@ -1,0 +1,123 @@
+---
+title: "MLT Lesson Planner"
+description: "Build a class plan from an MLT book unit and the classroom activities: songs, the LSA, second-whole activities, a bridge. Run it with a timer, and open a class screen for the TV that shows the students only their part."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/sax/sax.css?v=1">
+<script src="/apps/tunes/tunes-object.js"></script>
+<script src="/apps/shared/band/harmony.js?v=34"></script>
+<script src="/apps/shared/mlt/dmti-skills.js?v=5"></script>
+<script src="/apps/shared/mlt/books/dmti.js?v=2"></script>
+<script src="/apps/shared/sax/sax-chart.js?v=2"></script>
+<script src="/apps/shared/sax/sax-page.js?v=2"></script>
+<script src="/apps/shared/mlt/books/jri-sax.js?v=1"></script>
+<script src="/apps/shared/mlt/record-sheet.js?v=1"></script>
+<script src="/apps/shared/mlt/lesson-builder.js?v=6"></script>
+<style>
+.lb-form{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;align-items:end}.lb-form label{display:flex;flex-direction:column;font-size:.9em}
+.lb-stage{border:1px solid var(--bs-border-color,#ccc);border-radius:10px;padding:1rem 1.2rem;background:var(--bs-tertiary-bg,#f7f8fa)}
+.lb-head{display:flex;justify-content:space-between;align-items:center;gap:1rem}.lb-time{font-size:2.4rem;font-weight:700;font-variant-numeric:tabular-nums}
+.lb-time.lb-over{color:#c0392b}.lb-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.6rem}@media (max-width:800px){.lb-cols{grid-template-columns:1fr}}
+.lb-col h4{font-size:.8em;text-transform:uppercase;letter-spacing:.05em;opacity:.7;margin:.2rem 0 .4rem}
+.lb-ctl{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}.lb-next{opacity:.7;margin-top:.4rem}
+.lb-kind{display:inline-block;padding:0 .5em;border-radius:4px;font-size:.8em;font-weight:600;background:#dde7f5;color:#1d3d6b}
+.lb-k-lsa{background:#f5e3c8;color:#6b3d00}.lb-k-first,.lb-k-second{background:#d7efd9;color:#1d5426}.lb-k-bridge{background:#eadcf3;color:#4b2265}
+.lb-list{padding-left:1.4rem}.lb-item{margin:.35rem 0}.lb-item.lb-cur{font-weight:600}.lb-item .lb-min{width:3.6rem}.lb-item button{padding:0 .4rem;margin-left:.15rem}
+.lb-say{font-size:1.1em;font-style:italic;margin:.3rem 0}
+.lb-songs{font-size:1.2em}.lb-tool{width:100%;height:60vh;border:1px solid #ccc;border-radius:6px}.lb-est{color:#888;margin-left:.15em}
+.lb-cs .lb-songs{font-size:2rem}
+.rs-tools{display:flex;gap:.3rem;flex-wrap:wrap;margin:.4rem 0}.rs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(8.5rem,1fr));gap:.35rem}
+.rs-box{display:flex;flex-direction:column;align-items:flex-start;text-align:left;border:1px solid var(--bs-border-color,#ccc);border-radius:6px;background:var(--bs-body-bg,#fff);padding:.3rem .5rem;min-height:3.2rem}
+.rs-high .rs-name{font-weight:700}.rs-low .rs-name{text-decoration:underline}.rs-marks{font-family:ui-monospace,monospace;font-size:1.15em;letter-spacing:.12em;min-height:1.2em}
+.rs-key{font-size:.85em;margin-top:.4rem}.rs-roster{width:100%;max-width:28rem;font-family:ui-monospace,monospace}#lb-rec{margin-top:.8rem}#lb-rec:empty{display:none}
+#lb-class-root{display:none}
+body.lb-class-screen #lb-class-root{display:block}
+body.lb-class-screen header, body.lb-class-screen #quarto-sidebar, body.lb-class-screen #quarto-margin-sidebar, body.lb-class-screen #lesson-builder, body.lb-class-screen .quarto-title-block, body.lb-class-screen footer, body.lb-class-screen .mlt-view{display:none!important}
+body.lb-class-screen main{max-width:none!important;padding:1.5rem 3rem}
+.lb-cs h1{font-size:3rem;margin:.2rem 0 .6rem}.lb-cs-kind{font-size:1.2rem;opacity:.7;text-transform:uppercase;letter-spacing:.06em}
+.lb-cs-time{position:fixed;top:1rem;right:2rem;font-size:3.2rem;font-weight:700;font-variant-numeric:tabular-nums}
+.lb-cs .lb-say,.lb-cs .mlt-act-s{font-size:1.8rem}.lb-cs .mlt-do{font-size:1.25rem}
+</style>
+<div id="lb-class-root"></div>
+```
+
+{{< include _scripts.qmd >}}
+
+::: {#lesson-builder}
+
+## Set up
+
+Choose a unit and the lesson's place in it; the planner fills the time with the unit's song, its LSA, and second-whole
+activities from the book (a different selection for each lesson number). Change anything in **The plan** below.
+
+```{=html}
+<div class="lb-form">
+  <label>Book <select id="lb-book"></select></label>
+  <label>Unit <select id="lb-unit"></select></label>
+  <label>Lesson in this unit <select id="lb-lesson"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
+  <label>Class length <select id="lb-min"><option value="30">30 minutes</option><option value="45" selected>45 minutes</option><option value="60">60 minutes</option><option value="75">75 minutes</option></select></label>
+  <label>LSA time <select id="lb-lsa"><option value="5" selected>5 minutes</option><option value="8">8 minutes</option><option value="10">10 minutes</option></select></label>
+  <button type="button" class="btn btn-primary" id="lb-build">Build the plan</button>
+  <label>Or open <select id="lb-saved"></select></label>
+  <button type="button" class="btn btn-outline-secondary" id="lb-save">Save plan</button>
+  <button type="button" class="btn btn-outline-secondary" id="lb-del">Delete saved</button>
+</div>
+<p id="lb-summary" class="mlt-dim" aria-live="polite"></p>
+```
+
+## Run the lesson
+
+```{=html}
+<div class="lb-stage">
+  <div class="lb-head"><div><span id="lb-count">Build a plan above.</span> <span id="lb-kind"></span><h3 id="lb-title" style="margin:.3rem 0 0">Ready when you are</h3></div>
+    <div id="lb-time" class="lb-time">0:00</div></div>
+  <div class="lb-cols">
+    <div class="lb-col"><h4>For you (teacher)</h4><div id="lb-teach"></div></div>
+    <div class="lb-col"><h4>On the class screen</h4><div id="lb-stu"></div></div>
+  </div>
+  <div class="lb-ctl">
+    <button type="button" class="btn btn-outline-secondary" id="lb-back" disabled>◀ Back</button>
+    <button type="button" class="btn btn-primary" id="lb-play" disabled>▶ Start</button>
+    <button type="button" class="btn btn-outline-secondary" id="lb-skip" disabled>Next ▶</button>
+    <button type="button" class="btn btn-outline-secondary" id="lb-class">Open the class screen</button>
+  </div>
+  <div id="lb-next" class="lb-next"></div>
+  <div id="lb-rec"></div>
+</div>
+```
+
+## Classes and records
+
+The LSA record sheet from Mullen pp. 83–84: a tonal chart and a rhythm chart for each class, a box beside each name. It
+appears under the Run panel while the LSA is on. Kept in this browser only.
+
+```{=html}
+<div id="lb-classes"></div>
+```
+
+## The plan
+
+Change the minutes, move items up or down, remove one, swap an activity for another from the unit, or add any activity from
+the database. Save it to come back to it (saved in this browser).
+
+```{=html}
+<ol id="lb-list" class="lb-list"></ol>
+```
+
+## How it works {.mlt-t}
+
+::: {.mlt-t}
+- A plan follows Mullen's Whole-Part-Whole: a **first whole** (the unit's song), the **part** (the LSA: Pre-LSA, then a
+  three-minute Go Mode), then **second-whole** activities that put the LSA's content back into music, a **bridge** to an
+  inference skill when the unit has one, and a short close.
+- Lesson numbers walk through the unit: lesson 2 takes the unit's next LSA (rhythm after tonal, as Mullen alternates) and a
+  different set of activities.
+- **The class screen** opens in a new window: drag it to the TV (an extended display). It shows only the students' side of the
+  current item and the timer, and follows this window as you go. Both windows must be in the same browser.
+- Planned next: an LSA record sheet (teaching mode | and evaluation mode +) for the class, kept with the plan.
+:::
+
+:::

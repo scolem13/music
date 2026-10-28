@@ -7,8 +7,8 @@ toc-depth: 2
 
 ```{=html}
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
-<script src="/apps/shared/abc-play.js?v=7"></script>
-<script src="/apps/patterns/prog-ear.js?v=6"></script>
+<script src="/apps/shared/abc-play.js?v=11"></script>
+<script src="/apps/patterns/prog-ear.js?v=7"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
 <style>
 .pe-panel { --pe-line: var(--site-line, #ced4da); --pe-mute: var(--site-ink-2, #6c757d); --pe-acc: var(--site-accent, #2780e3);
@@ -33,7 +33,10 @@ toc-depth: 2
 .pe-prompt { font-weight: 700; font-size: 1.05rem; margin-top: .4rem; }
 .pe-status { min-height: 1.4em; color: var(--pe-acc); font-weight: 600; }
 .pe-result { margin: .5rem 0; } .pe-ok { color: var(--pe-good); font-weight: 700; } .pe-no { color: var(--pe-bad); font-weight: 700; }
-.pe-prog { margin: .4rem 0; font-family: var(--bs-font-monospace, monospace); font-size: .9rem; overflow-wrap: anywhere; }
+.pe-prog { margin: .4rem 0; font-family: var(--bs-font-monospace, monospace); font-size: .9rem; border-collapse: collapse; display: block; overflow-x: auto; }
+.pe-prog th, .pe-prog td { padding: .15rem .6rem; border-bottom: 1px solid var(--pe-line); text-align: left; white-space: nowrap; }
+.pe-prog th { cursor: help; text-decoration: underline dotted; }
+.pe-prog td.pe-syms { color: var(--pe-mute); border-left: 1px solid var(--pe-line); }
 .pe-prog .pe-oddrow { color: var(--pe-bad); }
 .pe-hint { color: var(--pe-mute); font-size: .92rem; } .pe-note { margin: .2rem 0 .4rem; }
 .pe-clip { background: #fff; color: #222; border: 1px solid var(--pe-line); border-radius: .4rem; padding: .3rem .5rem; margin: .4rem 0; }

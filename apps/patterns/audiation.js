@@ -43,7 +43,8 @@
   var TONAL = {
     "major": { src: "mullen-fpifo-major" }, "minor": { src: "mullen-fpifo-minor" },
     "major-u": { src: "322b-major", keep: ["D", "A7"] }, "minor-u": { src: ["322a", "322b"], keep: ["Dm", "A7"] },
-    "dorian": { src: "323a" }, "mixolydian": { src: "324a" }
+    "dorian": { src: "323a" }, "mixolydian": { src: "324a" },
+    "major-step": { src: "major-stepwise" }, "minor-step": { src: "minor-stepwise" }     // Mullen's stepwise FPIFO (MLT Books, Unit 9)
   };
   function tonalSet(id, obj) {
     obj = obj || global.patternObject || (typeof patternObject !== "undefined" ? patternObject : {});

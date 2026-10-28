@@ -38,7 +38,7 @@
   function abcPlay() {
     if (global.AbcPlay) return Promise.resolve(global.AbcPlay);
     return playJs || (playJs = new Promise(function (res, rej) {
-      var sc = document.createElement("script"); sc.src = "/apps/shared/abc-play.js?v=6"; sc.onload = function () { res(global.AbcPlay); };
+      var sc = document.createElement("script"); sc.src = "/apps/shared/abc-play.js?v=11"; sc.onload = function () { res(global.AbcPlay); };
       sc.onerror = function () { playJs = null; rej(); }; document.head.appendChild(sc);
     }));
   }
@@ -63,7 +63,7 @@
   function singer() {
     if (global.SolfegeSing && global.AbcEvents) return Promise.resolve(global.SolfegeSing);
     return singJs || (singJs = new Promise(function (res, rej) {
-      var need = [global.AbcCore ? null : "/apps/shared/abc-core.js?v=3", global.AbcEvents ? null : "/apps/shared/abc-events.js?v=4", global.SolfegeSing ? null : "/apps/shared/solfege-sing.js?v=3"].filter(Boolean);
+      var need = [global.AbcCore ? null : "/apps/shared/abc-core.js?v=3", global.AbcEvents ? null : "/apps/shared/abc-events.js?v=4", global.SolfegeSing ? null : "/apps/shared/solfege-sing.js?v=4"].filter(Boolean);
       (function next() { if (!need.length) return res(global.SolfegeSing);
         var sc = document.createElement("script"); sc.src = need.shift(); sc.onload = next; sc.onerror = function () { singJs = null; rej(); }; document.head.appendChild(sc); })();
     }));

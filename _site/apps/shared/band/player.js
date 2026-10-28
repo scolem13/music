@@ -16,6 +16,8 @@
 //                                  // beats it rings) and any bar after it is left empty; onBar gets final:true for those. A tune that ends
 //                                  // on a turnaround, and hold mode when the end is not known in time, get one more bar instead: a hit on
 //                                  // the top chord (onBar: ending:true).
+//                                  // opts.cutEnd: no ending at all. The last bar is played as an ordinary bar and the band stops at its
+//                                  // barline (drums leave out a crash there and damp the cymbals), so nothing rings past it.
 //                                  // opts.ritard (true, or how much: 0.5 = the default, the beat half as long again by the landing) slows
 //                                  // the two bars before the landing; a bar marked "^rit." in the chart starts it there instead. Last pass only.
 //     intro: null,                 // { bars: 4, kind: "vamp" (the first chord) | "last" (the last bars of the form), tacet: "drums" }
@@ -200,6 +202,57 @@
     var ws = ctx.createWaveShaper(); ws.curve = curve; return ws;
   }
   function faderGain(part, v){ v = clamp(v == null ? 1 : v, 0, 1.5); return TRIM[part] * v * v; }   // square taper
+  // ---- output routing: stereo, or one channel per instrument for a mixing desk (an X32 over USB) ----
+  // BandPlayer.output.get() / set(o) / reset() / devices() / maxChannels() / sends() / info()
+  //   o = { mode: "stereo" | "multi", sink: "" (system output) or a deviceId, mix: true (the stereo mix stays on 1-2),
+  //         map: { bass: 3, comp: 4, ..., kick: 8, ... } }   channels counted from 1; 0 = not sent
+  // In "multi" each part leaves dry and mono, after its fader and the Mixer's gain, before the room reverb and
+  // the compressor: the desk does the effects. The drum kit goes out group by group (KIT_GROUPS), after each
+  // group's fader but before the Drums fader. Remembered on this computer; a change applies from the next Play.
+  // Channels the device does not have are skipped (outputInfo().missing). Only for live playing, never a render.
+  var OUT_KEY = "band-output-v1";
+  function sends(){ return [ { id: "bass", label: "Bass" }, { id: "comp", label: "Chords (piano, guitar…)" }, { id: "comp2", label: "Second chord instrument" },
+    { id: "melody", label: "Melody" }, { id: "congas", label: "Congas" } ].concat(KIT_GROUPS.map(function (g){ return { id: g.id, label: "Drums: " + g.label, kit: true }; })); }
+  function outDefault(){ return { mode: "stereo", sink: "", mix: true, map: { bass: 3, comp: 4, comp2: 5, melody: 6, congas: 7, kick: 8, snare: 9, hat: 10, ride: 11, crash: 12, toms: 13 } }; }
+  var outCfg = (function (){ var d = outDefault(); try { var j = JSON.parse(global.localStorage.getItem(OUT_KEY) || "null");
+    if (j){ Object.assign(d, j, { map: Object.assign(d.map, j.map) }); } } catch (e) {} return d; })();
+  var outLast = { channels: 2, missing: [] };
+  function applySink(ctx){
+    if (!ctx || typeof ctx.setSinkId !== "function") return Promise.resolve(false);
+    return ctx.setSinkId(outCfg.sink || "").then(function (){ return true; }, function (){ return false; });
+  }
+  function routeOut(ctx, ins, mx, kitNode, clip){
+    var dest = ctx.destination, multi = outCfg.mode === "multi" && dest.maxChannelCount > 2, nodes = [];
+    outLast = { channels: multi ? dest.maxChannelCount : 2, missing: [] };
+    try { dest.channelCount = multi ? dest.maxChannelCount : 2; dest.channelCountMode = "explicit"; dest.channelInterpretation = multi ? "discrete" : "speakers"; } catch (e) { multi = false; }
+    if (!multi) return nodes;
+    if (outCfg.mix === false) clip.disconnect();
+    var n = dest.channelCount, merger = ctx.createChannelMerger(n); merger.connect(dest); nodes.push(merger);
+    sends().forEach(function (sd){
+      var ch = outCfg.map[sd.id] | 0; if (!ch) return;
+      if (ch > n){ outLast.missing.push(sd.id); return; }
+      var src = sd.kit ? kitNode(sd.id) : mx[sd.id]; if (!src) return;
+      var mono = ctx.createGain(); mono.channelCount = 1; mono.channelCountMode = "explicit"; mono.channelInterpretation = "speakers";
+      src.connect(mono); mono.connect(merger, 0, ch - 1); nodes.push(mono);
+    });
+    return nodes;
+  }
+  var output = {
+    sends: sends,
+    get: function (){ return JSON.parse(JSON.stringify(outCfg)); },
+    set: function (o){ o = o || {}; Object.assign(outCfg, o, { map: Object.assign({}, outCfg.map, o.map) });
+      try { global.localStorage.setItem(OUT_KEY, JSON.stringify(outCfg)); } catch (e) {}
+      return applySink(shared && shared.ctx); },
+    reset: function (){ outCfg = outDefault(); try { global.localStorage.removeItem(OUT_KEY); } catch (e) {} return applySink(shared && shared.ctx); },
+    // the page's audio outputs; names are often blank until the page has been allowed the microphone once
+    devices: function (){ var md = global.navigator && global.navigator.mediaDevices;
+      if (!md || !md.enumerateDevices) return Promise.resolve([]);
+      return md.enumerateDevices().then(function (l){ return l.filter(function (d){ return d.kind === "audiooutput"; }).map(function (d){ return { id: d.deviceId, label: d.label }; }); }, function (){ return []; }); },
+    canChooseDevice: function (){ var AC = global.AudioContext; return !!(AC && AC.prototype && "setSinkId" in AC.prototype); },
+    maxChannels: function (){ var a = audio(); return applySink(a.ctx).then(function (){ return a.ctx.destination.maxChannelCount; }); },
+    info: function (){ return { channels: outLast.channels, missing: outLast.missing.slice() }; }
+  };
+
   function makeBus(ctx, volumes){
     var master = ctx.createGain(), comp = ctx.createDynamicsCompressor(), out = ctx.createGain();
     master.gain.value = 1; out.gain.value = MASTER;
@@ -221,6 +274,7 @@
     // the drum kit's groups (KIT_GROUPS) each pass through a gain of their own into the drums fader, so the Mixer can meter them
     var kitN = {};
     function kitNode(id){ if (!kitN[id]){ kitN[id] = ctx.createGain(); kitN[id].connect(ins.drums); } return kitN[id]; }
+    var direct = live ? routeOut(ctx, ins, mx, kitNode, clip) : [];
     return {
       ins: ins, ctx: ctx, kitNode: kitNode,
       kitIn: function (piece){ for (var i = 0; i < KIT_GROUPS.length; i++) if (KIT_GROUPS[i].pieces.indexOf(piece) >= 0) return kitNode(KIT_GROUPS[i].id); return ins.drums; },
@@ -228,7 +282,7 @@
       tap: function (p, label, hooks){ if (tapped[p] || !live || !global.AudioTap || !mx[p]) return; tapped[p] = true; global.AudioTap.register(ctx, mx[p], label, Object.assign({ gain: mx[p].gain, group: "Backing Track", order: ["bass", "comp", "comp2", "drums", "congas", "melody"].indexOf(p) }, hooks || {})); },
       setVolume: function (p, v){ if (ins[p]) ins[p].gain.setTargetAtTime(faderGain(p === "melody" ? "comp" : p, v), ctx.currentTime, 0.02); },
       fadeOut: function (sec){ var t = ctx.currentTime; out.gain.cancelScheduledValues(t); out.gain.setValueAtTime(out.gain.value, t); out.gain.linearRampToValueAtTime(0, t + sec); },
-      dispose: function (){ try { clip.disconnect(); } catch (e) {} }
+      dispose: function (){ try { clip.disconnect(); } catch (e) {} direct.forEach(function (d){ try { d.disconnect(); } catch (e) {} }); }
     };
   }
 
@@ -506,7 +560,7 @@
     beats = fb.beats; var u = fb.unit || 1;                  // (u: this bar's beat against the tempo's beat, after a change of meter)
     // The ending, on the last pass: what this bar is to it. In hold mode nobody knows the end is coming until the last bar is
     // asked for, so the band can only land there, and only if that is where the last chord arrives.
-    var finalPass = c.choruses > 0 && this.chorus >= c.choruses - 1, plan = finalPass ? this.endPlan(r) : null, role = null;
+    var finalPass = c.choruses > 0 && this.chorus >= c.choruses - 1, plan = finalPass && !(c.opts && c.opts.cutEnd) ? this.endPlan(r) : null, role = null;
     if (plan && c.hold) role = last && this.formIdx === plan.land ? "land" : null;
     else if (plan) role = this.formIdx === plan.land ? "land" : this.formIdx === plan.setup ? "setup" : this.landL != null && plan.ring.indexOf(this.formIdx) >= 0 ? "ring" : null;
     // ... and the ritard into it, when asked for: over the two bars before the landing (or before the end, when the band
@@ -548,6 +602,7 @@
     this.nextL += beats * u; this.barNo++; this.formIdx = nextIdx;
     if (atEnd){ this.chorus++; if (!last){ this.stepTempo(this.nextL); this.gap = this.gapFor(r); this.gapAt = 0; } }
     if (last && this.landL != null){ this.endL = L0; this.done = true; }      // the band has landed: that was the ending
+    else if (last && c.opts && c.opts.cutEnd){ this.endL = L0; this.done = true; }     // cut at the barline: no final hit
     else if (last) this.wantEnding = true;
     var keepT = this.c.ahead ? 600 : 8;                      // (bars written ahead are still to come: keep them findable)
     if (this.timeline.length > keepT) this.timeline.splice(0, this.timeline.length - keepT);
@@ -647,6 +702,7 @@
       if (!AC || !global.BandSounds) throw new Error("BandPlayer: Web Audio / BandSounds unavailable");
       var ctx = new AC({ latencyHint: "interactive" });
       shared = { ctx: ctx, bank: global.BandSounds.create(ctx) };
+      if (outCfg.sink) applySink(ctx);
     }
     return shared;
   }
@@ -729,12 +785,14 @@
       session.start(a.ctx.currentTime + START_DELAY);
       lastEntry = null; lastBeat = -1; annSec = annBar = null;
       setState("playing");
+      if (global.PageClock) global.PageClock.add(clockKey, api.clock);
       tick(); timer = setInterval(tick, TICK_MS);
       if (global.requestAnimationFrame && (cfg.onBar || cfg.onBeat || cfg.onSection)) raf = global.requestAnimationFrame(frame);
     }
     function teardown(natural){
       if (timer){ clearInterval(timer); timer = null; }
       if (raf != null && global.cancelAnimationFrame){ global.cancelAnimationFrame(raf); raf = null; }
+      if (global.PageClock) global.PageClock.remove(clockKey);
       var b = bus, s = session; session = null; bus = null;
       if (b){ b.fadeOut(0.03); if (s) s.bank.stopAll(); setTimeout(b.dispose, 400); }
       if (c.tempo !== baseTempo){ c.tempo = baseTempo; if (cfg.onTempo) cfg.onTempo(baseTempo); }   // tempo steps start over next time
@@ -782,7 +840,7 @@
       return null;
     }
     c.mixHooks = mixHooks;
-    return {
+    var clockKey = {}, api = {
       load: load, play: play, stop: stop,
       isPlaying: function (){ return state === "playing"; },
       state: function (){ return state; },
@@ -794,6 +852,19 @@
         var ctx = session.ctx, L = session.linAt((t == null ? ctx.currentTime : t) - (ctx.outputLatency || 0)), tl = session.timeline, e = null;
         for (var i = 0; i < tl.length; i++){ if (tl[i].L <= L + 1e-6) e = tl[i]; else break; }
         return e ? { info: e.info, pos: (L - e.L) / (e.unit || 1), beats: e.beats } : null;
+      },
+      // Where the beat is, for the navbar metronome (PageClock, see page-clock.js): the beat now, the seconds until the next one (worked out
+      // through the session's own clock, so tempo steps, ritards and meter changes are exact), and that beat's place in its bar. null when not sounding.
+      clock: function (){
+        if (!session) return null;
+        var ctx = session.ctx, hear = ctx.currentTime - (ctx.outputLatency || 0), L = session.linAt(hear), tl = session.timeline, e = null, n = null, i;
+        for (i = 0; i < tl.length; i++){ if (tl[i].L <= L + 1e-6) e = tl[i]; else break; }
+        if (!e) return null;
+        var u = e.unit || 1, k = Math.floor((L - e.L) / u + 1e-6); if (!e.ending && k >= e.beats) return null;
+        var Ln = e.L + (k + 1) * u, nb = k + 1, nbeats = e.beats, quiet = !!e.ending;
+        if (e.ending || nb >= e.beats){ nb = 0; nbeats = 0; for (i = 0; i < tl.length; i++) if (tl[i].L >= Ln - 1e-6){ n = tl[i]; break; } if (n) nbeats = n.beats; else if (session.done) quiet = true; }
+        return { beats: e.beats, beat: e.ending ? 0 : k, bpm: 60 / (session.spb * u), meter: e.info && e.info.meter, nextIn: quiet ? Infinity : Math.max(0, session.timeOf(Ln) - hear),
+                 nextBeat: nb, nextBeats: nbeats || e.beats, ending: !!e.ending, countIn: !!(e.info && e.info.countIn) };
       },
       setTempo: function (bpm){ c.tempo = baseTempo = clamp(+bpm || c.tempo, 30, 400); if (session) session.setTempo(c.tempo); },
       setTranspose: function (n){ c.transpose = n | 0; if (session) session.refreshForm(); redo(); },
@@ -828,6 +899,7 @@
       setCycle: function (from, to){ c.cycle = from == null ? null : { from: from | 0, to: (to == null ? from : to) | 0 }; redo(); },   // live
       setTempoSteps: function (steps){ c.tempoSteps = (steps && steps.length) ? steps.slice() : null; }     // bpm added at each repeat, in turn
     };
+    return api;
   }
 
   // Render a finite performance to a buffer with the SAME session code as live playback.
@@ -917,6 +989,6 @@
   }
   function clickAt(at, accent){ var a = audio(); a.bank.play("kit", { piece: "sticks", vel: accent ? 0.85 : 0.55 }, at, chordOut); }
 
-  global.BandPlayer = { KIT_GROUPS: KIT_GROUPS, hit: hit, chord: chord, release: release, clickLoad: clickLoad, clickAt: clickAt, create: create, renderOffline: renderOffline, swingFor: swingFor, swingAt: swingAt, warp: warp, intensityFor: intensityFor,
+  global.BandPlayer = { KIT_GROUPS: KIT_GROUPS, hit: hit, chord: chord, release: release, clickLoad: clickLoad, clickAt: clickAt, output: output, create: create, renderOffline: renderOffline, swingFor: swingFor, swingAt: swingAt, warp: warp, intensityFor: intensityFor,
     Session: Session };                                      // (for tests: the bars a session generates, without sound)
 })(typeof window !== "undefined" ? window : globalThis);

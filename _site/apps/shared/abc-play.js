@@ -6,6 +6,7 @@
 //   var h = AbcPlay.play(visualObj, opts) -> { stop(), done: Promise }      (one tune at a time: a new play stops the last)
 //   opts.sound      a BandSounds name (default "piano"; "clguitar", "epiano", "organ", ...: BandSounds.sounds(family))
 //   opts.qpm        quarter notes a minute; omitted: the tune's Q:, else opts.defaultQpm, else abcjs's default
+//   opts.onStart()  (band only) called as the band starts playing, e.g. to time a sung cue against its first beat
 //   opts.transpose  semitones added to every note (heard only; draw with visualTranspose for the eye)
 //   opts.light      true (default) lights each note as it sounds with the class opts.litClass ("abc-on"; styled here);
 //                   only for a tune drawn on the page (an off-page tune has nothing to light)
@@ -80,7 +81,7 @@
   // ---- the band (chord symbols) ----
   var BAND_JS = ["/apps/shared/abc-transpose.js?v=4", "/apps/shared/tune-chart.js?v=31", "/apps/tune-assessment/abc-tune.js?v=3", "/apps/shared/voicings.js?v=5",
     "/apps/shared/band/harmony.js?v=34", "/apps/shared/band/bass.js?v=16", "/apps/shared/band/comp.js?v=32", "/apps/shared/band/catalog.js?v=37",
-    "/apps/shared/band/drums.js?v=17", "/apps/shared/band/congas.js?v=3", SOUNDS, "/apps/shared/band/player.js?v=125"], bandJs = null;
+    "/apps/shared/band/drums.js?v=18", "/apps/shared/band/congas.js?v=3", SOUNDS, "/apps/shared/band/player.js?v=128"], bandJs = null;
   function loadBand() {
     if (global.BandPlayer && global.BandCatalog && global.TuneChart && global.BandHarmony) return Promise.resolve();
     return bandJs || (bandJs = BAND_JS.reduce(function (pr, src) {
@@ -98,8 +99,10 @@
     var all = q ? v.setTiming(q / (v.getBeatLength() * 4)) : v.setTiming(), msBar = v.millisecondsPerMeasure ? v.millisecondsPerMeasure() : 2000;
     var bars = [], b = { ms: 0, events: [] };
     all.forEach(function (e) {
-      if (e.type === "bar") { if (b.events.length || bars.length) { bars.push(b); } b = { ms: e.milliseconds, events: [] }; }
-      else if (e.type === "event" && (e.midiPitches || e.midiGraceNotePitches)) b.events.push(e);
+      // a new bar: abcjs 6.6 marks the first event of each measure (measureStart); older builds sent "bar" events
+      if (e.type === "bar" || (e.type === "event" && e.measureStart && e.milliseconds > b.ms)) { if (b.events.length || bars.length) { bars.push(b); } b = { ms: e.milliseconds, events: [] }; }
+      if (e.type === "bar") return;
+      if (e.type === "event" && (e.midiPitches || e.midiGraceNotePitches)) b.events.push(e);
     });
     if (b.events.length) bars.push(b);
     bars.forEach(function (x, i) { x.len = i + 1 < bars.length ? bars[i + 1].ms - x.ms : msBar; });
@@ -159,7 +162,7 @@
         onBeat: function (info) { if (at) { at.beat = info.beat; at.t = performance.now(); } },
         onEnd: function () { done = true; } });
       me._band = p; if (fb) p.setStartBar(fb);
-      return p.play().then(function () { return { p: p, lists: lists, bpm: bpm, at: function () { return at; }, done: function () { return done; } }; });
+      return p.play().then(function () { if (opts.onStart) try { opts.onStart(p.ctx || null); } catch (e) {} return { p: p, lists: lists, bpm: bpm, at: function () { return at; }, done: function () { return done; } }; });
     });
   }
 
@@ -311,5 +314,12 @@
     return -1;
   }
 
-  global.AbcPlay = { barStartMs: barStartMs, barIndex: barIndex, play: play, chords: function (v, o) { return playBand(v, o, true); }, hasChords: hasChords, stop: stop, ctx: ctx, playing: function () { return cur; } };
+  // the Stop in a page's bottom strip (PlayBar) is lit while a tune plays and stops it
+  function tracked(h) {
+    var P = global.PlayBar; if (!P || !h) return h;
+    P.sounding("abc-play", stop);
+    if (h.done) h.done.then(function () { if (!cur) P.sounding("abc-play", null); });
+    return h;
+  }
+  global.AbcPlay = { barStartMs: barStartMs, barIndex: barIndex, play: function (v, o) { return tracked(play(v, o)); }, chords: function (v, o) { return tracked(playBand(v, o, true)); }, hasChords: hasChords, stop: stop, ctx: ctx, playing: function () { return cur; } };
 })(window);

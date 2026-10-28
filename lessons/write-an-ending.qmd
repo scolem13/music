@@ -68,7 +68,7 @@ Then play them back to back. Which sounds more final? Which sounds more like *th
 <script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
 <script src="/apps/tunes/tunes-object.js"></script>
-<script src="/apps/shared/lessons/sections.js?v=1"></script>
+<script src="/apps/shared/lessons/sections.js?v=2"></script>
 <script>
 (function () {
   "use strict";

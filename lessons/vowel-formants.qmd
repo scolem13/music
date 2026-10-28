@@ -16,7 +16,7 @@ Sing *ee* and then *ah* on the same note. The pitch stays the same, yet anyone c
 ```{=html}
 <link rel="stylesheet" href="/apps/shared/ipa/ipa-chart.css?v=2">
 <script src="/apps/shared/ipa/ipa-synth.js?v=2"></script>
-<script src="/apps/shared/lessons/sections.js?v=1"></script>
+<script src="/apps/shared/lessons/sections.js?v=2"></script>
 <style>
 .fm-lab{border:1px solid var(--site-border);border-radius:10px;background:var(--site-surface);padding:.8rem 1rem 1rem;margin:1.1rem 0 1.6rem;max-width:46rem}
 .fm-lab h4{font-family:var(--font-display);font-size:1.05rem;margin:0 0 .5rem}

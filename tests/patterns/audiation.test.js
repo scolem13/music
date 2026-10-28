@@ -34,7 +34,7 @@ t("every tonal set: resting tone near its patterns; functions named", () => {
     const s = A.tonalSet(id), all = s.patterns.flatMap(p => p.midis);
     assert.ok(s.patterns.length >= 8, id);
     assert.ok(Math.min(...all) >= s.rest - 7 && Math.max(...all) <= s.rest + 14, id + " range " + s.rest);
-    assert.ok(s.patterns.every(p => p.fn), id + " has a pattern with no function");
+    if (!/-step$/.test(id)) assert.ok(s.patterns.every(p => p.fn), id + " has a pattern with no function");   // stepwise sets cross functions
   }
   assert.ok(A.tonalSet("major-u").patterns.every(p => /^(D|A7)$/.test(p.chord)));        // unfamiliar: tonic and dominant only
 });

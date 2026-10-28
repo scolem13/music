@@ -1,0 +1,98 @@
+---
+title: "My Saxophone Practice"
+description: "Home practice for a beginning saxophonist, the way it goes in class: sing the song, learn the new notes from fingering pictures, echo patterns by ear (the page listens and tells you what it heard), rhythm, articulation, then play the song with the band."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/sax/sax.css?v=1">
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
+<script src="/apps/shared/abc-core.js"></script>
+<script src="/apps/shared/abc-events.js"></script>
+<script src="/apps/shared/abc-play.js?v=11"></script>
+<script src="/apps/patterns/pattern-set.js?v=4"></script>
+<script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
+<script src="/apps/patterns/audiation.js?v=11"></script>
+<script src="/apps/shared/pitch-detect.js"></script>
+<script src="/apps/tunes/tunes-object.js"></script>
+<script src="/apps/shared/band/harmony.js?v=34"></script>
+<script src="/apps/shared/mlt/dmti-skills.js?v=5"></script>
+<script src="/apps/shared/sax/sax-chart.js?v=2"></script>
+<script src="/apps/shared/sax/sax-page.js?v=2"></script>
+<script src="/apps/shared/mlt/activities.js?v=4"></script>
+<script src="/apps/shared/mlt/books/jri-sax.js?v=1"></script>
+<script src="/apps/shared/mlt/mlt-walk.js?v=9"></script>
+<script src="/apps/shared/rhythm-chant.js?v=18"></script>
+<script src="/apps/shared/solfege-sing.js?v=4"></script>
+<script src="/apps/shared/mlt/establish.js?v=4"></script>
+<script src="/apps/shared/mlt/sax-home.js?v=5"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+.sh-top{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:end;padding:.8rem 1rem;border:1px solid var(--bs-border-color,#ccc);border-radius:10px;background:var(--bs-tertiary-bg,#f7f8fa)}
+.sh-top label{display:flex;flex-direction:column;font-size:.9em}#sh-where{font-weight:600;margin:.6rem 0 .2rem}#sh-progress{opacity:.75}
+.sh-card{border:1px solid var(--bs-border-color,#ddd);border-radius:10px;padding:.8rem 1rem;margin:1rem 0;position:relative}
+.sh-card h3{margin:0 0 .3rem;font-size:1.2rem}.sh-how{margin:.2rem 0 .6rem}.sh-done{position:absolute;top:.7rem;right:1rem;font-size:.9em}
+.sh-row{display:flex;flex-wrap:wrap;gap:.6rem;margin:.4rem 0}.sh-note{width:7rem;text-align:center;border:1px solid var(--bs-border-color,#ddd);border-radius:8px;padding:.35rem}
+.sh-note svg{width:4.4rem;height:auto}.sh-note .btn{padding:.1rem .45rem;margin:.15rem}.sh-mini{width:5rem}.sh-mini svg{width:3rem}.sh-nl{font-size:.9em}
+.sh-res{min-height:1.3em;font-size:.85em}.sh-ok{color:#1e7b34;font-weight:700}.sh-no{color:#b03a2e;font-weight:700}.sh-dim{opacity:.65}
+.sh-stage{border-radius:8px;background:var(--bs-tertiary-bg,#f4f6f9);padding:.8rem;margin:.5rem 0;text-align:center}.sh-big{font-size:1.8rem;font-weight:700;min-height:2.4rem}
+.sh-info{min-height:1.2em}.sh-score{opacity:.7}.sh-ctl{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin:.4rem 0}
+.sh-song{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;margin:.35rem 0}.sh-song b{min-width:12rem}
+.sh-meter{position:relative;height:1.8rem;border-radius:6px;background:var(--bs-secondary-bg,#e8ebef);overflow:hidden;margin:.5rem 0}
+.sh-meter-fill{position:absolute;left:0;top:0;bottom:0;width:0;background:#7fc28b;transition:width .1s}.sh-meter span{position:relative;padding-left:.6rem;line-height:1.8rem}
+.sh-breath{margin:.4rem 0}
+.sh-est{min-height:1.3em;font-size:.9em;margin:.3rem 0}.sh-tip{margin:.3rem 0}.sh-tip summary{cursor:pointer;font-weight:600}.sh-tip ol{margin:.3rem 0}
+.sh-tbl{font-size:.9em;margin:.4rem 0}.sh-tbl td,.sh-tbl th{padding:.2rem .5rem;border-bottom:1px solid var(--bs-border-color,#ddd);vertical-align:top}
+.sh-act{margin:.5rem 0}.sh-act p{margin:.1rem 0}.sh-rpaper{max-width:520px;margin:0 auto}
+</style>
+```
+
+## My lesson
+
+```{=html}
+<div class="sh-top">
+  <label>Where we are in class <select id="sh-sec"></select></label>
+  <label>My saxophone <select id="sh-inst"><option value="alto">E♭ alto</option><option value="tenor">B♭ tenor</option><option value="bari">E♭ baritone</option></select></label>
+  <button type="button" class="btn btn-outline-primary" id="sh-mic">🎤 Turn on the microphone</button>
+  <button type="button" class="btn btn-outline-secondary" id="sh-next">Next lesson ▶</button>
+</div>
+<div id="sh-where"></div><div id="sh-progress"></div>
+```
+
+Your teacher tells you which lesson you're on. Practise a little every day: go through the steps below in order, and tick
+each one when you've done it. The microphone lets the page hear your saxophone and tell you which notes it heard.
+
+## Today's practice
+
+```{=html}
+<div id="sh-steps"></div>
+```
+
+## All my notes
+
+Every note you've learned so far, with its fingering, written for your saxophone.
+
+```{=html}
+<div id="sh-chart"></div>
+```
+
+## Practice tips
+
+- **Sing first.** If you can sing it, you can play it: the song and the patterns go in your ear (audiation) before your fingers.
+- **Breathe before you play** every pattern, the way you do in class.
+- **Short and often.** Fifteen minutes every day beats an hour once a week.
+- **Don't look at the music at first.** Play by ear; the music is there for checking.
+- **Ask:** if a fingering doesn't sound right, show your teacher next lesson.
+
+## For the teacher
+
+This follows the class sequence on [JRI Recorder, on Saxophone](/mlt/jri-sax.qmd) (Book One, Units 1–12), in concert B♭,
+E♭, C minor and G minor. "Where we are in class" picks the section; the notes he knows are the ones introduced up to it. The
+echo patterns use only those notes in the key practised now, starting on the resting tone and moving by step; rhythm patterns
+are the class's sets chanted by the site's conversational chant (RhythmChant), in the song's meter or the other (divisions
+from Unit 5B). Each lesson's songs are the new song and two reviews, plus songs from the JRI Recorder, Mullen and elementary
+collections so that major and minor, duple and triple all come up; songs are moved into the class keys. Before the echo
+patterns, the rhythm patterns and every song with the band, the page establishes tonality, meter or both in one of the ways
+the MLT books describe (`apps/shared/mlt/establish.js`, picked at random by the teacher's weights). The saxophone notes
+(holding it, embouchure, tone, tuning, care) are from [Saxophone](/lessons/saxophone.qmd). Progress is kept in the student's browser only.

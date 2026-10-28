@@ -1,0 +1,34 @@
+---
+title: "MLT Books"
+description: "Music Learning Theory teaching books, step by step in the browser: what each page asks for, with the activity to do and the book page to open."
+toc: true
+toc-depth: 2
+---
+
+{{< include _scripts.qmd >}}
+
+## How these pages work
+
+Each book is walked through in its own order. A step says what happens there and which page of the book it is on
+(📖), lists what the book prints there, and gives the activity to do in the browser. The book itself is not reproduced:
+open it at the page cited.
+
+- **Teacher view** shows everything: the plan, the page numbers, the classroom activities and techniques.
+- **Student view** shows only the activity. Send students the page with `?view=student` at the end of the address.
+
+## The books
+
+- [Mullen, *MLT Any Music Teacher Can Du…De*](mullen.qmd): Chapters 12–13 and all ten units of the Literate Musician curriculum.
+- [JRI Instrumental, *Recorder Teacher's Guide*, on saxophone](jri-sax.qmd): Book One's 24 sections as a skeleton, with saxophone fingerings in concert B♭, E♭, C minor and G minor.
+- [Azzara and Grunow, *Developing Musicianship through Improvisation* 1–3](dmti.qmd): all eleven units, with the exercises generated from each tune.
+- Reynolds, Valerio, Bolton, Taggart and Gordon, *Music Play*: planned.
+- JRI Elementary (*LSA Reference Handbook*): later.
+
+## Lesson planner
+
+Build and run a class plan from any unit, with a separate screen for the class: [MLT Lesson Planner](lesson-builder.qmd).
+
+## Classroom activities
+
+The games, movement, instrument activities and teaching techniques the authors describe, all in one list you can
+filter: [Classroom Activities](activities.qmd).

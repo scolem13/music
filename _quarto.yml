@@ -349,6 +349,7 @@ website:
             - practice/patterns.qmd
             - practice/patterns-by-ear.qmd
             - practice/sax-patterns-by-ear.qmd
+            - practice/sax-home.qmd
             - practice/rhythms.qmd
             - practice/reading-benchmarks.qmd
             - practice/dictation.qmd
@@ -454,6 +455,17 @@ website:
         - gear/using-a-mic.qmd
         - gear/modx.qmd
         - gear/modx-band.qmd
+    - id: mlt
+      title: "MLT"
+      style: docked
+      collapse-level: 1
+      contents:
+        - mlt/index.qmd
+        - mlt/mullen.qmd
+        - mlt/dmti.qmd
+        - mlt/jri-sax.qmd
+        - mlt/activities.qmd
+        - mlt/lesson-builder.qmd
     - id: teacher
       title: "Teacher"
       style: docked
@@ -494,6 +506,7 @@ website:
           - practice/patterns.qmd
           - practice/patterns-by-ear.qmd
           - practice/sax-patterns-by-ear.qmd
+          - practice/sax-home.qmd
           - practice/rhythms.qmd
           - practice/reading-benchmarks.qmd
           - practice/dictation.qmd
@@ -510,6 +523,15 @@ website:
           - practice/assessment-tune.qmd
           - practice/assessment.qmd
           - practice/assessment-rhythm.qmd
+      - text: MLT
+        menu:
+          - mlt/index.qmd
+          - text: "---"
+          - mlt/mullen.qmd
+          - mlt/dmti.qmd
+          - mlt/jri-sax.qmd
+          - mlt/activities.qmd
+          - mlt/lesson-builder.qmd
       - text: Tools
         menu:
           - text: "All tools"

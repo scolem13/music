@@ -1,7 +1,7 @@
 // solfege-sing.js — sings a melody on solfège syllables with a synthesized voice (the rhythm chant's voice, given a pitch).
 // One global (SolfegeSing); loads in Node for tests (plan() needs abc-core.js and abc-events.js; nothing touches Web Audio until play()).
 //
-//   SolfegeSing.plan(abc, { qpm, minor: "la"|"do", fixed, chromatic: "auto"|"flat"|"sharp", voice: "low"|"high"|"auto", octave, transpose, seed })
+//   SolfegeSing.plan(abc, { neutral ("bum": every note on Bum), qpm, minor: "la"|"do", fixed, chromatic: "auto"|"flat"|"sharp", voice: "low"|"high"|"auto", octave, transpose, seed })
 //        transpose: semitones the sound moves (the syllables stay those of the written key). voice "auto": sung at the written pitch
 //        (+ transpose), by the low or the high voice as the melody's middle note says; otherwise moved by octaves into the voice's range.
 //        -> { notes: [{ t, dur, tQ, durQ, midi, sung (midi actually sung), hz, syl, c, v, i, bar }], total, lead, qpm, voice }
@@ -47,7 +47,8 @@
   var PARTS = {
     Do: ["d", "o"], Re: ["r", "e"], Mi: ["m", "i"], Fa: ["f", "a"], So: ["s", "o"], La: ["l", "a"], Ti: ["t", "i"],
     Di: ["d", "i"], Ri: ["r", "i"], Fi: ["f", "i"], Si: ["s", "i"], Li: ["l", "i"],
-    Ra: ["r", "a"], Me: ["m", "e"], Se: ["s", "e"], Le: ["l", "e"], Te: ["t", "e"]
+    Ra: ["r", "a"], Me: ["m", "e"], Se: ["s", "e"], Le: ["l", "e"], Te: ["t", "e"],
+    Bum: ["b", "U"]   // opts.neutral "bum": the neutral syllable MLT teachers sing before solfège (vowel near ʌ; the closing m left out)
   };
   function mod12(n) { return ((n % 12) + 12) % 12; }
   function syllable(midi, doPc, o) {
@@ -88,7 +89,7 @@
     return bpm * (+m[1] / +m[2]) * 4;
   }
   var RANGE = { low: { center: 52, lo: 43, hi: 64, scale: 1 }, high: { center: 64, lo: 55, hi: 76, scale: 1.16 } };
-  var CDUR = { d: 0.045, r: 0.035, m: 0.095, f: 0.085, s: 0.12, l: 0.06, t: 0.06 };
+  var CDUR = { b: 0.045, d: 0.045, r: 0.035, m: 0.095, f: 0.085, s: 0.12, l: 0.06, t: 0.06 };
   function plan(abc, opts) {
     opts = opts || {};
     if (!Events) throw new Error("SolfegeSing.plan needs abc-events.js");
@@ -113,7 +114,7 @@
       var midi = e.pitches[0].midi, k = keys[0].key;
       keys.forEach(function (x) { if (x.t <= e.t_on + 1e-6) k = x.key; });
       var prev = j ? notes[j - 1].pitches[0].midi : null, next = j < notes.length - 1 ? notes[j + 1].pitches[0].midi : null;
-      var syl = syllable(midi, doPc(k, opts), { prev: prev, next: next, chromatic: opts.chromatic, inKey: keyPcs(k) }), p = PARTS[syl];
+      var syl = syllable(midi, doPc(k, opts), { prev: prev, next: next, chromatic: opts.chromatic, inKey: keyPcs(k) }); if (opts.neutral) syl = "Bum"; var p = PARTS[syl];
       var sung = midi + shift;
       return { tQ: e.t_on, durQ: e.t_off - e.t_on, t: e.t_on * spq, dur: (e.t_off - e.t_on) * spq, midi: midi, sung: sung,
                hz: 440 * Math.pow(2, (sung - 69) / 12), syl: syl, c: p[0], v: p[1], i: e.from && ev.written ? firstChar(ev.written, e.from[0]) : null, bar: e.bar };
@@ -126,9 +127,9 @@
   function firstChar(written, id) { for (var i = 0; i < written.length; i++) if (written[i].id === id) return written[i].i; return null; }
 
   // ------------------------------------------------------------------------------------------------ voice
-  var VOWELS = { u: [280, 610, 2200], e: [520, 1900, 2600], a: [760, 1080, 2500], i: [280, 2250, 2950], o: [430, 750, 2400] };
+  var VOWELS = { U: [640, 1190, 2390], u: [280, 610, 2200], e: [520, 1900, 2600], a: [760, 1080, 2500], i: [280, 2250, 2950], o: [430, 750, 2400] };
   var EY = [320, 2250, 2900];                                     // where e glides to: the ɪ of "may" (kept a little apart from i)
-  var LOCUS = { d: [250, 1800, 2900], t: [250, 1800, 2900], r: [350, 1700, 2600], m: [250, 1100, 2300], l: [360, 1300, 2900], f: [300, 1200, 2500], s: [300, 1700, 2600] };
+  var LOCUS = { b: [250, 800, 2200], d: [250, 1800, 2900], t: [250, 1800, 2900], r: [350, 1700, 2600], m: [250, 1100, 2300], l: [360, 1300, 2900], f: [300, 1200, 2500], s: [300, 1700, 2600] };
   var BW = [70, 90, 130, 180, 300];
   function mulberry(seed) { var a = seed >>> 0; return function () { a = (a + 0x6D2B79F5) >>> 0; var t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
   function gauss(r) { var u = r() || 1e-9, v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); }
@@ -179,7 +180,7 @@
       else {
         var u = t / cd;
         switch (c) {
-          case "d": av = 0.06; if (tv > -0.008) burst = 0.5; break;
+          case "b": case "d": av = 0.06; if (tv > -0.008) burst = 0.5; break;
           case "t": av = 0; if (tv > -0.03 && tv < -0.022) burst = 0.6; if (tv >= -0.022) nz = 0.45; break;
           case "r": av = 0.75 - 0.5 * Math.sin(Math.PI * sm(u)); break;
           case "m": av = 0.32 * Math.min(1, u * 4); break;

@@ -32095,7 +32095,62 @@ c | "Eb" (2:3:2Bc G2 F | (2:3:2GB, "Ab" C B, C | "Eb" (2:3:2EF G2 c | B3- B2 c |
 `,
 
 "dmti":
-`X:1
+`X:12
+T:Simple Gifts
+C:Joseph Brackett, Jr.
+N:Source: Azzara & Grunow, Developing Musicianship through Improvisation, Book 1 (GIA), pp. 51-52.
+N:Unit 4 repertoire. Major tonality (tonic, subdominant, dominant), duple meter. No tempo printed.
+M:4/4
+L:1/8
+%%id dmti-simple-gifts
+K:F
+cc | "F"F2 FG AF AB | c2 cB A2 GF | "C7"G2 G2 G2 F2 | "C7"GAGE c2 c2 |
+"F"FEFG A2 GG | A2 B2 c2 c2 | "C7"G2 GA G2 EE | G2 FE "F"F4 |
+"F"c4 A3 G | ABAG F3 G | "F"A2 AB c2 BA | "C7"G2 GA G2 c2 |
+"F"F4 F3 G | "F"A2 AB c2 BA | "C7"G2 G2 G2 AG | "Bb"F2 F2 "F"F2 |]
+
+X:13
+T:Amazing Grace
+C:Lyrics by John Newton
+N:Source: Azzara & Grunow, Developing Musicianship through Improvisation, Book 2 (GIA), p. 21.
+N:Unit 2 repertoire. Major tonality (tonic, subdominant, dominant), triple meter. No tempo printed. The book prints the melody in two parts (the tune with a harmony an octave up); this is the tune.
+M:3/4
+L:1/8
+%%id dmti-amazing-grace
+K:F
+"C7"C2 | "F"F4 AF | A4 G2 | "Bb"F4 D2 | "F"C4 C2 |
+"F"F4 AF | A4 GA | "C7"c6- | c4 A2 |
+"F"c3 A cA | F4 C2 | "Bb"D4 FD | "F"C4 C2 |
+"F"F4 AF | "C7"A4 G2 | "Bb"F6- | "F"F4 |]
+
+X:14
+T:Saint Louis Blues (section A)
+C:W. C. Handy
+N:Source: Azzara & Grunow, Developing Musicianship through Improvisation, Book 3 (GIA), p. 1.
+N:Unit 1 repertoire: the twelve-bar blues of section A (bars 1-12), the progression the unit improvises over. The book prints the melody in two voices an octave up; this is the upper voice an octave down. Sections B (F minor) and C are not entered yet.
+M:C
+L:1/8
+%%id dmti-saint-louis-blues
+K:F
+"F"{^G}A c A F- F4 | "Bb7"z ^C DF _A3 G | "F"F8- | "F7"F6 z2 |
+"Bb7"z D FG- G4 | z D FG _A3 G | "F7"F8- | F6 z2 |
+"C7"EGEC- C C3 | "Caug7"z2 _A_A _A3 G | "F"F8- | F4 "C7"z4 |]
+
+X:11
+T:Long, Long Ago
+C:Thomas Haynes Bayly
+N:Source: Azzara & Grunow, Developing Musicianship through Improvisation, Book 1 (GIA), p. 1.
+N:Unit 1 repertoire. Major tonality (tonic and dominant), duple meter. No tempo printed. The last phrase's dominant is printed "Bb" (not Bb7).
+M:4/4
+L:1/8
+%%id dmti-long-long-ago
+K:Eb
+"Eb"E2 EF G2 GA | B2 cB G2 z2 | "Bb7"B2 AG F2 z2 | A2 GF "Eb"E2 z2 |
+"Eb"E2 EF G2 GA | B2 cB G2 z2 | "Bb7"B2 AG F2 G>F | "Eb"E4 z4 |
+"Bb7"B2 AG F2 BB | A2 GF "Eb"E2 z2 | "Bb7"B2 AG F2 BB | A2 GF "Eb"E2 z2 |
+"Eb"E2 EF G2 GA | B2 cB G2 z2 | "Bb"B2 AG F2 G>F | "Eb"E4 z4 |]
+
+X:1
 T:Mary Ann
 C:Trad.
 N:Source: Azzara & Grunow, Developing Musicianship through Improvisation, Book 1 (GIA), p. 17.

@@ -18,6 +18,8 @@
     if (el.dataset.helpEye === "off" || el.closest("[data-help-eye=off]") || el.hasAttribute("aria-live") || el.getAttribute("role") === "status") return false;
     if (/(^|\s)\S*warn\S*/.test(el.className) || /^(BUTTON|LABEL|SPAN|SMALL|INPUT|SELECT|OPTION|TEXTAREA|SVG)$/i.test(el.tagName)) return false;
     if (el.closest(".he-btn")) return false;
+    // only plain text folds: anything holding a staff, diagram or control is content, not instructions (e.g. the blues kit's .bl-notes scales)
+    if (el.querySelector("svg, canvas, img, button, input, select, textarea, .abcjs-container, .bl-abc")) return false;
     return (el.textContent || "").replace(/\s+/g, " ").trim().length >= MIN;
   }
   function attach(el) {

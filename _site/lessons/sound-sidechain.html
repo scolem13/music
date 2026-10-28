@@ -89,7 +89,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
 <script src="../apps/shared/audio-tap.js?v=1"></script>
 <!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
-<script src="../apps/shared/help-eye.js?v=1"></script>
+<script src="../apps/shared/help-eye.js?v=2"></script>
+<script src="../apps/shared/works-cited-fold.js?v=1"></script>
 <!-- MIDI learn: a pedal or key presses any button on the page (navbar "MIDI buttons"). -->
 <script src="../apps/shared/midi-learn.js?v=1" defer=""></script>
 <script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
@@ -204,6 +205,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
  <span class="dropdown-text">Sax Patterns by Ear</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../practice/sax-home.html">
+ <span class="dropdown-text">My Saxophone Practice</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../practice/rhythms.html">
  <span class="dropdown-text">Rhythm Patterns</span></a>
   </li>  
@@ -260,6 +265,38 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../practice/assessment-rhythm.html">
  <span class="dropdown-text">Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mlt" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">MLT</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-mlt">    
+        <li>
+    <a class="dropdown-item" href="../mlt/index.html">
+ <span class="dropdown-text">MLT Books</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../mlt/mullen.html">
+ <span class="dropdown-text">Mullen: MLT Any Music Teacher Can Du…De</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/dmti.html">
+ <span class="dropdown-text">DMTI: Developing Musicianship through Improvisation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/jri-sax.html">
+ <span class="dropdown-text">JRI Recorder, on Saxophone</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/activities.html">
+ <span class="dropdown-text">Classroom Activities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/lesson-builder.html">
+ <span class="dropdown-text">MLT Lesson Planner</span></a>
   </li>  
     </ul>
   </li>
@@ -2083,7 +2120,7 @@ body.sk-has-bar{padding-bottom:4.5rem}
 </style>
 <script src="../apps/shared/abcjs-basic.js?v=3"></script>
 <script src="../apps/shared/abc-transpose.js?v=4"></script>
-<script src="../apps/shared/lessons/sections.js?v=1"></script>
+<script src="../apps/shared/lessons/sections.js?v=2"></script>
 <script src="../apps/shared/audio-check.js"></script>
 <script src="../apps/shared/pitch-detect.js?v=2"></script>
 <script src="../apps/shared/strobe-view.js?v=1"></script>
@@ -2098,10 +2135,11 @@ body.sk-has-bar{padding-bottom:4.5rem}
 <script src="../track.js"></script>
 <!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
      (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../apps/shared/page-clock.js?v=1"></script>
 <script src="../apps/shared/degree-names.js?v=1"></script>
 <script src="../apps/shared/degree-caret.js?v=2"></script>
 <script src="../apps/shared/circle-of-fifths.js?v=2"></script>
-<script src="../apps/shared/practice-widgets.js?v=9"></script>
+<script src="../apps/shared/practice-widgets.js?v=10"></script>
 <!-- A button at the left of the navbar that folds the docked sidebar away on
      every page, and remembers the choice. Below 992px Quarto already tucks the
      sidebar behind its own toggle, so the button is hidden there. -->

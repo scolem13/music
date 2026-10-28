@@ -171,7 +171,7 @@ listen to. Pick what you heard.
 <script src="/apps/shared/abc-core.js?v=1"></script>
 <script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
 <script src="/apps/shared/abc-transpose.js?v=4"></script>
-<script src="/apps/shared/lessons/score.js?v=6"></script>
+<script src="/apps/shared/lessons/score.js?v=7"></script>
 <script src="/apps/shared/lessons/tunes.js?v=5"></script>
 <script src="/apps/shared/lessons/chord-staff.js?v=1"></script>
 <script src="/apps/shared/tune-chart.js?v=31"></script>
@@ -180,9 +180,9 @@ listen to. Pick what you heard.
 <script src="/apps/shared/band/bass.js?v=15"></script>
 <script src="/apps/shared/band/comp.js?v=30"></script>
 <script src="/apps/shared/band/catalog.js?v=37"></script>
-<script src="/apps/shared/band/drums.js?v=17"></script>
+<script src="/apps/shared/band/drums.js?v=18"></script>
 <script src="/apps/shared/band/sounds.js?v=17"></script>
-<script src="/apps/shared/band/player.js?v=125"></script>
+<script src="/apps/shared/band/player.js?v=128"></script>
 <script>
 // The pop-changes lesson: every chart on the page is drawn by TuneChart and played by the Backing Track band
 // (BandPlayer with a BandCatalog style). Charts are written in C ("A B" = two chords in a bar, "A:2 B C" = A for

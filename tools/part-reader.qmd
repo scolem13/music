@@ -21,7 +21,7 @@ toc-depth: 2
 </style>
 <script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
-<script src="/apps/shared/abc-play.js?v=7"></script>
+<script src="/apps/shared/abc-play.js?v=11"></script>
 <script src="/apps/shared/score-reading.js?v=1"></script>
 ```
 
@@ -129,7 +129,7 @@ ledger lines that the written part was made to avoid. That is the point of the o
   go();
 })();
 </script>
-<script src="/apps/shared/lessons/sections.js?v=1"></script>
+<script src="/apps/shared/lessons/sections.js?v=2"></script>
 ```
 
 ## Works Cited

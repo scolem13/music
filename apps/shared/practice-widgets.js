@@ -10,6 +10,9 @@
 // A page with a meter and a tempo of its own offers them as window.PageTempo = { name, get() -> { bpm, beats }, set({ bpm, beats }) -> text }
 // (beats: the meter's top number); the metronome's "From page" / "To page" buttons use it, and are greyed out on pages without it.
 //
+// While the page's player (BandPlayer, through PageClock in page-clock.js) is sounding and the metronome is on, the metronome follows it: it shows the
+// beat that is sounding at once, clicks on the player's beats, and follows its tempo and meter changes. With no player it is the free metronome.
+//
 // Everything here is its own: an AudioContext of its own, no Tone.js, nothing shared with the Backing Track.
 (function () {
   "use strict";
@@ -60,36 +63,58 @@
     g.gain.exponentialRampToValueAtTime(0.0001, t + 0.055);
     o.connect(g); g.connect(metroMix || master); o.start(t); o.stop(t + 0.07);
   }
-  function metroStep() {
-    var c = audio();
-    while (metro.next < c.currentTime + 0.12) {
-      var spb = 60 / S.tempo, beatInBar = metro.beat % S.beats, first = beatInBar === 0 && S.beats > 1 && S.accent;
-      SUBS.forEach(function (sub) {
-        var lvl = S.vol[sub.k] / 100; if (!lvl) return;
-        sub.at.forEach(function (off) {
-          var accented = sub.k === "q" && first;
-          click(metro.next + off * spb, accented ? sub.hz * 1.5 : sub.hz, lvl * lvl * sub.gain * (accented ? 1 : 0.85));
-        });
+  // One beat at time t: its clicks (and the subdivisions), and a lamp to light when it sounds. beats: the bar's beats.
+  function clickBeat(t, beatInBar, beats, spb) {
+    var first = beatInBar === 0 && beats > 1 && S.accent;
+    SUBS.forEach(function (sub) {
+      var lvl = S.vol[sub.k] / 100; if (!lvl) return;
+      sub.at.forEach(function (off) {
+        var accented = sub.k === "q" && first;
+        click(t + off * spb, accented ? sub.hz * 1.5 : sub.hz, lvl * lvl * sub.gain * (accented ? 1 : 0.85));
       });
-      metro.queue.push({ t: metro.next, beat: beatInBar });
-      metro.next += spb; metro.beat++;
+    });
+    metro.queue.push({ t: t, beat: beatInBar, beats: beats }); metro.lastT = t; metro.lastBeat = beatInBar;
+  }
+  // While the page's player is sounding (PageClock, page-clock.js) the metronome plays its beats: the lamp for the beat that is
+  // sounding now lights at once, and each click comes when the player's next beat does, so a change of tempo or meter in the tune is followed.
+  function followStep(c, g) {
+    var now = c.currentTime;
+    if (!metro.following) { metro.following = true; metro.queue = []; metro.queue.push({ t: now, beat: g.beat, beats: g.beats }); }
+    var bpm = Math.round(g.bpm);
+    if (metro.shown !== bpm || metro.shownBeats !== g.beats) { metro.shown = bpm; metro.shownBeats = g.beats; if (metro.show) metro.show(g); icons(); }
+    if (isFinite(g.nextIn) && g.nextIn < 0.12) {
+      var t = now + g.nextIn, spb = 60 / g.bpm;
+      if (metro.lastT == null || t - metro.lastT > 0.5 * spb || t < metro.lastT - spb) clickBeat(t, g.nextBeat, g.nextBeats, spb);
+    }
+  }
+  function metroStep() {
+    var c = audio(), g = window.PageClock && window.PageClock.now();
+    if (g) { followStep(c, g); return; }
+    if (metro.following) {                                    // the player stopped: carry on by itself from the last beat
+      metro.following = false; metro.shown = metro.shownBeats = null; if (metro.show) metro.show(null); icons();
+      metro.beat = ((metro.lastBeat || 0) + 1) % S.beats; metro.next = Math.max(c.currentTime + 0.02, (metro.lastT || 0) + 60 / S.tempo);
+    }
+    while (metro.next < c.currentTime + 0.12) {
+      clickBeat(metro.next, metro.beat % S.beats, S.beats, 60 / S.tempo);
+      metro.next += 60 / S.tempo; metro.beat++;
     }
   }
   function lampLoop() {
     if (!metro.on) return;
     var now = audio().currentTime, hit = -1;
-    while (metro.queue.length && metro.queue[0].t <= now) hit = metro.queue.shift().beat;
+    while (metro.queue.length && metro.queue[0].t <= now) { var q = metro.queue.shift(); hit = q.beat; if (q.beats && q.beats !== metro.lamps.length && metro.setLamps) metro.setLamps(q.beats); }
     if (hit >= 0) metro.lamps.forEach(function (l, i) { l.classList.toggle("on", i === hit); });
     metro.raf = requestAnimationFrame(lampLoop);
   }
   function metroStart() {
     if (metro.on) return;
-    var c = audio(); metro.on = true; metro.beat = 0; metro.queue = []; metro.next = c.currentTime + 0.06;
+    var c = audio(); metro.on = true; metro.beat = 0; metro.queue = []; metro.next = c.currentTime + 0.06; metro.lastT = null; metro.following = false;
     metroStep(); metro.timer = setInterval(metroStep, 25); lampLoop(); refresh(); if (window.AudioTap && AudioTap.changed) AudioTap.changed();
   }
   function metroStop() {
     if (!metro.on) return;
     metro.on = false; clearInterval(metro.timer); cancelAnimationFrame(metro.raf);
+    if (metro.following) { metro.following = false; metro.shown = metro.shownBeats = null; if (metro.show) metro.show(null); icons(); }
     metro.lamps.forEach(function (l) { l.classList.remove("on"); }); refresh(); if (window.AudioTap && AudioTap.changed) AudioTap.changed();
   }
 
@@ -316,7 +341,7 @@
   function metroIcon() {
     return LIGHT + '<path d="M6.8 21 9.9 3h4.2l3.1 18z"/><path d="M5 21h14"/>' +
       '<g class="pw-pend"><path d="M12 18V4.8"/><rect x="9.9" y="7.4" width="4.2" height="3" rx=".8" fill="currentColor"/></g>' +
-      (metro.on ? '<text class="pw-bpm" x="5" y="14.6" text-anchor="end" style="font:700 8.5px system-ui,sans-serif" fill="currentColor" stroke="none">' + S.tempo + "</text>" : "") + "</svg>";
+      (metro.on ? '<text class="pw-bpm" x="5" y="14.6" text-anchor="end" style="font:700 8.5px system-ui,sans-serif" fill="currentColor" stroke="none">' + (metro.shown || S.tempo) + "</text>" : "") + "</svg>";
   }
   function droneIcon() {
     if (S.mode === "tanpura") return LIGHT + '<g class="pw-breathe"><circle cx="12" cy="17.2" r="4.6"/><path d="M10.9 13V2.8h2.2V13"/>' +
@@ -354,7 +379,7 @@
     return /^(maj|major|ion|ionian|lyd|lydian|mix|mixolydian)$/i.test(mode) ? n : n.charAt(0).toLowerCase() + n.slice(1);
   }
   function icons() {
-    if (navBtn.metro) { navBtn.metro.querySelector(".pw-icon").innerHTML = metroIcon(); navBtn.metro.style.setProperty("--pw-beat", (60 / (S.tempo || 84)).toFixed(3) + "s"); }
+    if (navBtn.metro) { navBtn.metro.querySelector(".pw-icon").innerHTML = metroIcon(); navBtn.metro.style.setProperty("--pw-beat", (60 / (metro.shown || S.tempo || 84)).toFixed(3) + "s"); }
     if (navBtn.drone) navBtn.drone.querySelector(".pw-icon").innerHTML = droneIcon();
     if (navBtn.circle) navBtn.circle.querySelector(".pw-icon").innerHTML = circleIcon();
     if (navBtn.tuner) navBtn.tuner.querySelector(".pw-icon").innerHTML = tunerIcon();
@@ -405,10 +430,18 @@
       r.addEventListener("input", function () { S.vol[sub.k] = +r.value; save(); });
       mix.appendChild(r);
     });
-    function lamps() {
+    function lamps(n) {
+      n = n || S.beats;
       var box = $("#pw-lamps", p); box.innerHTML = ""; metro.lamps = [];
-      for (var i = 0; i < S.beats; i++) { var l = el("div", "pw-lamp" + (i === 0 && S.beats > 1 ? " first" : "")); box.appendChild(l); metro.lamps.push(l); }
+      for (var i = 0; i < n; i++) { var l = el("div", "pw-lamp" + (i === 0 && n > 1 ? " first" : "")); box.appendChild(l); metro.lamps.push(l); }
     }
+    metro.setLamps = lamps;
+    // following the page's player: show its tempo and say so (g null: back to the metronome's own)
+    metro.show = function (g) {
+      $("#pw-bpm", p).textContent = g ? Math.round(g.bpm) : S.tempo;
+      if (g) { $("#pw-page-note", p).textContent = "Following the page's player: " + Math.round(g.bpm) + " bpm, " + g.beats + " beats."; if (metro.lamps.length !== g.beats) lamps(g.beats); }
+      else { if (metro.lamps.length !== S.beats) lamps(); if (p._sync) p._sync(); }
+    };
     function tempo(v) { S.tempo = clamp(Math.round(v) || 84, 30, 240); $("#pw-bpm", p).textContent = S.tempo; $("#pw-tempo", p).value = S.tempo; save(); }
     $("#pw-tempo", p).addEventListener("input", function (e) { tempo(+e.target.value); });
     $("#pw-bpm-dn", p).addEventListener("click", function () { tempo(S.tempo - 1); });
