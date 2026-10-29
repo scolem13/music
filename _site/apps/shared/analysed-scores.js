@@ -92,7 +92,7 @@
     var t = S.tune; try { t.setUpAudio({}); } catch (e) {}
     var bpm = +S.host.getAttribute("data-bpm") || 0, mf = t.getMeterFraction(), q = bpm ? bpm * (4 / mf.den) : 0;   // Q is in the meter's beat
     S.events = (q ? t.setTiming(q / (t.getBeatLength() * 4)) : t.setTiming()).filter(function (e) { return e.type === "event"; });
-    var msWhole = t.millisecondsPerMeasure() / (mf.num / mf.den);
+    var msWhole = t.millisecondsPerMeasure(q ? q / (t.getBeatLength() * 4) : undefined) / (mf.num / mf.den);   // same tempo as setTiming (see abc-play.js header)
     S.notes = []; S.events.forEach(function (e) { (e.midiPitches || []).forEach(function (m) { S.notes.push({ ms: e.milliseconds, end: e.milliseconds + m.duration * msWhole, midi: m.pitch }); }); });
     S.endMs = S.notes.reduce(function (a, n) { return Math.max(a, n.end); }, 0);
     // the analysis's chords: [start (whole notes), pitch classes] from data-chords (the build script, AbcNHT.chordPcs)

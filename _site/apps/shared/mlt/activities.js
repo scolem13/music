@@ -32,7 +32,7 @@
     // ---------- running an LSA ----------
     { id: "rote-song", name: "Rote Song Procedure", kind: "technique", skill: ["A/O"], content: ["tonal", "rhythm"],
       how: "Teach a short song by ear, as a Whole-Part-Whole of its own: establish tonality (tonal sequence or I-V-I); sing the whole song; move macrobeats in the heels (\"Bum bum bum, move like me\", sung on the first pitch), then microbeats with spider fingers, then both; sing the resting tone on BUM (a dropped ball cues it, or throw the ball to one student); students audiate the song and raise a hand when done; then they sing it alone, cued \"Ready, sing!\". A first whole for the patterns that come later.",
-      student: null, refs: [{ book: "mullen", p: "89–92" }, { book: "mullen", p: "104" }, { book: "mullen", p: "118" }] },
+      student: null, tool: "/mlt/rote-song.html", refs: [{ book: "mullen", p: "89–92" }, { book: "mullen", p: "104" }, { book: "mullen", p: "118" }] },
     { id: "jump-breathe", name: "Jump and breathe", kind: "technique", skill: ["A/O"], content: ["rhythm"],
       how: "Chant patterns with an empty fourth macrobeat; everyone jumps on it and breathes before echoing. Move to full four-macrobeat patterns as soon as the class breathes on its own.",
       student: "Listen to the pattern. On the empty beat, jump and breathe, then echo on BAH.", refs: [{ book: "mullen", p: "105" }, { book: "mullen", p: "81" }] },

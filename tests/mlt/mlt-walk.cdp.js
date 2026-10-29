@@ -25,11 +25,14 @@ const U = "http://127.0.0.1:8551";
   check("tune links go to the tune page", await ev(`document.querySelector('.mlt-tunes a').getAttribute('href')`) === "/practice/tunes.html?tune=chew-chew-chew");
   check("teacher sees page citations", await ev(`[...document.querySelectorAll('.mlt-cite')].some(e => e.offsetParent)`));
   check("echo players built", await ev(`document.querySelectorAll('.mlt-do .next').length`) >= 10, String(await ev(`document.querySelectorAll('.mlt-do .next').length`)));
+  check("Unit 1 First Whole lists its recordings", await ev(`document.querySelectorAll('#u1-first-whole .mlt-recs li').length`) === 5);
+  check("recordings say they are not online while the bucket is unset", await ev(`!window.MLT_REC_BASE === /not online/.test(document.querySelector('#u1-first-whole .mlt-recs').textContent)`));
   // play a tonal pattern and a rhythm pattern
-  await ev(`(window.__ab = []), (() => { const p = AbcPlay.play; AbcPlay.play = function (v, o) { __ab.push(o.qpm); return p.call(this, v, o); }; })()`);
+  await ev(`(window.__ab = []), (() => { const p = AbcPlay.play; AbcPlay.play = function (v, o) { __ab.push(o.qpm); return p.call(this, v, o); };
+    if (window.RhythmChant) { const r = RhythmChant.play; RhythmChant.play = function (a, o) { __ab.push((o || {}).qpm); return r.call(this, a, o); }; } })()`);   // the rhythm echo plays through RhythmChant
   await ev(`document.querySelector('#u1-tonal-lsa .next').click()`);
   await ev(`document.querySelector('#u1-rhythm-lsa .next').click()`);
-  check("players call AbcPlay", await wait(`__ab.length >= 2`), await ev(`JSON.stringify(__ab)`));
+  check("players call AbcPlay / RhythmChant", await wait(`__ab.length >= 2`), await ev(`JSON.stringify(__ab)`));
   await ev(`(() => { const s = document.querySelector('#u1-tonal-lsa .m'); s.value = 'rest'; document.querySelector('#u1-tonal-lsa .ans').click(); })()`);
   check("resting-tone answer is DO in major", await wait(`/\\(DO\\)/.test(document.querySelector('#u1-tonal-lsa .mlt-msg').textContent)`));
   // student view
@@ -54,6 +57,19 @@ const U = "http://127.0.0.1:8551";
   const v2 = await ev(`(() => { const c = document.querySelectorAll('#d1u1-p4a .mlt-dmti')[1]; [...c.querySelectorAll('button')].find(x => /notation/.test(x.textContent)).click();
     return [...c.querySelectorAll('.mlt-dim')].map(x => x.textContent).join(' | '); })()`);
   check("DMTI: Skill 2 parts as in the book (DO SO, DO TI, MI FA, SO)", v2 === "Bass line: DO and SO | DO and TI | MI and FA | SO", v2);
+
+  // the bottom strip's Stop: present, lit while sound plays, stops it (DMTI card through the band, and the chant)
+  await b.goto(U + "/mlt/dmti.html?view=teacher");
+  await wait(`document.querySelectorAll('.mlt-dmti').length > 50`, 120);
+  check("Stop: the bottom strip has a disabled Stop when idle", await ev(`(() => { const s = document.querySelector('#mlt-stopbar #mlt-stop'); return !!s && s.disabled && s.offsetParent !== null; })()`));
+  await ev(`(() => { const c = document.querySelectorAll('#d1u1-p4a .mlt-dmti')[0]; [...c.querySelectorAll('button')].find(x => /Example/.test(x.textContent)).click(); })()`);
+  check("Stop: enabled while the band plays a DMTI example", await wait(`!document.querySelector('#mlt-stop').disabled`, 80));
+  await ev(`document.querySelector('#mlt-stop').click()`);
+  check("Stop: click stops it (AbcPlay idle, button disabled again)", await wait(`!AbcPlay.playing() && document.querySelector('#mlt-stop').disabled`, 40));
+  await ev(`window.__ch = RhythmChant.play('X:1\\nM:4/4\\nL:1/4\\nK:C\\nCCCC|CCCC|CCCC|CCCC|', { qpm: 60 })`);
+  check("Stop: enabled while the chant sounds", await ev(`!document.querySelector('#mlt-stop').disabled`));
+  await ev(`document.querySelector('#mlt-stop').click()`);
+  check("Stop: click silences the chant", await wait(`document.querySelector('#mlt-stop').disabled`, 40));
 
   // JRI recorder on saxophone: the notes of a section, written for the chosen saxophone
   await b.goto(U + "/mlt/jri-sax.html?view=teacher");

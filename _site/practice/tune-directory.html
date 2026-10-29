@@ -79,6 +79,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="../config.js"></script>
 <script>
+  // THE SWITCH for the "bah" / solfege singing voice (rhythm-chant.js, solfege-sing.js and their buttons): true = hidden everywhere, false = as before.
+  window.VOICE_HIDDEN = true;
+  // MLT book recordings (apps/shared/mlt/recordings.js): the R2 bucket's public address, served by worker/index.js to logged-in browsers. Empty = players hidden.
+  window.MLT_REC_BASE = "https://media.seancoleman.org";
+</script>
+<script>
   // One shared Supabase client for the whole site. The auth widget and the
   // tracker both reuse window.sb so there's a single session.
   window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
@@ -308,6 +314,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../mlt/activities.html">
  <span class="dropdown-text">Classroom Activities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/rote-song.html">
+ <span class="dropdown-text">Rote Song by Ear</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../mlt/lesson-builder.html">
@@ -721,6 +731,7 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
   <li><a href="#td-works" id="toc-td-works" class="nav-link active" data-scroll-target="#td-works">Pieces with recordings and resources</a></li>
   <li><a href="#td-tunes" id="toc-td-tunes" class="nav-link" data-scroll-target="#td-tunes">Tune Library</a></li>
   <li><a href="#td-themes" id="toc-td-themes" class="nav-link" data-scroll-target="#td-themes">Classical Themes</a></li>
+  <li><a href="#td-mlt" id="toc-td-mlt" class="nav-link" data-scroll-target="#td-mlt">MLT and JRI recordings</a></li>
   <li><a href="#td-billboard" id="toc-td-billboard" class="nav-link" data-scroll-target="#td-billboard">Billboard songs (chords and form)</a></li>
   <li><a href="#td-analysed" id="toc-td-analysed" class="nav-link" data-scroll-target="#td-analysed">Analysed Scores</a></li>
   <li><a href="#works-cited" id="toc-works-cited" class="nav-link" data-scroll-target="#works-cited">Works Cited</a></li>
@@ -876,6 +887,12 @@ classical theme, an analysed score) and holds its recordings and links. They are
 <p class="td-note"><span id="td-themes-n"></span>. A title opens the theme on the <a href="../tools/classical-themes.html">Classical Themes</a> page.</p>
 <div id="td-themes-list"></div>
 </section>
+<section id="td-mlt" class="level2">
+<h2 class="anchored" data-anchor-id="td-mlt">MLT and JRI recordings</h2>
+<p class="td-note"><span id="td-mlt-n"></span> from the MLT / Jump Right In book CDs, for this class only. Click a name to listen; the
+grey text says which CD and track it comes from (and the book page when the track names one).</p>
+<div id="td-mlt-list"></div>
+</section>
 <section id="td-billboard" class="level2">
 <h2 class="anchored" data-anchor-id="td-billboard">Billboard songs (chords and form)</h2>
 <p class="td-note"><span id="td-bb-n"></span> from the McGill Billboard Project (1958–1991): each song's sections, bars and chords,
@@ -905,6 +922,8 @@ YouTube and paste the link there.</p>
 .td-work { scroll-margin-top: 5rem; transition: background .4s; border-radius: 6px; }
 .td-work .wk-panel { margin: .5rem 0; }
 .td-work.td-flash { background: rgba(13, 110, 253, .12); }
+.td-play { cursor: pointer; }
+.td-row audio { display: block; width: 100%; max-width: 26rem; height: 2rem; margin: .2rem 0 .3rem; }
 .td-music { margin: 0 0 1rem; border: 1px solid var(--bs-border-color, #dee2e6); border-radius: 6px; padding: .4rem .7rem; }
 .td-music > summary { cursor: pointer; font-weight: 600; }
 .td-music #td-picker > .tl-search:first-child, .td-music .tl-sort { display: none; }
@@ -923,7 +942,8 @@ YouTube and paste the link there.</p>
 <script src="../apps/themes/themes-data.js?v=3"></script>
 <script src="../apps/shared/works/works-data.js?v=1"></script>
 <script src="../apps/shared/works/works.js?v=1"></script>
-<script src="../apps/shared/works/tune-directory.js?v=3"></script>
+<script src="../apps/shared/mlt/recordings.js?v=1"></script>
+<script src="../apps/shared/works/tune-directory.js?v=4"></script>
 <script src="../apps/shared/section-fold.js?v=1"></script>
 </section>
 <section id="works-cited" class="level2">

@@ -8,7 +8,7 @@ description: "How to find and name the chords in a short passage: collect the no
 ```{=html}
 <script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
-<script src="/apps/shared/abc-play.js?v=11"></script>
+<script src="/apps/shared/abc-play.js?v=13"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
 <script src="/apps/shared/analysis/chord-analysis.js?v=4"></script>
 ```

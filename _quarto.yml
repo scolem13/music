@@ -465,6 +465,7 @@ website:
         - mlt/dmti.qmd
         - mlt/jri-sax.qmd
         - mlt/activities.qmd
+        - mlt/rote-song.qmd
         - mlt/lesson-builder.qmd
     - id: teacher
       title: "Teacher"
@@ -531,6 +532,7 @@ website:
           - mlt/dmti.qmd
           - mlt/jri-sax.qmd
           - mlt/activities.qmd
+          - mlt/rote-song.qmd
           - mlt/lesson-builder.qmd
       - text: Tools
         menu:

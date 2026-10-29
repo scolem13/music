@@ -16,6 +16,16 @@
   function concert(k) { return KEYMAP[k] || null; }
   function S(id, unit, sec, page, song, context, p1, p2, p3) { return { id: id, unit: unit, sec: sec, page: page, song: song, context: context, parts: { 1: p1, 2: p2, 3: p3 } }; }
   function ks(text, notes) { return { notes: notes, text: text }; }
+  // Tracks from the JRI Book 1 CD (MLTRecordings ids jri1-1-NN) per section part. The CD in the collection is the French horn
+  // book's, so its songs are in the horn's key, not the class's concert key: for listening and singing, not for playing along.
+  var REC = {
+    "1A": { 1: ["jri1-1-01", "jri1-1-02"], 2: ["jri1-1-03", "jri1-1-04"], 3: ["jri1-1-01", "jri1-1-03", "jri1-1-04"] },
+    "1B": { 1: ["jri1-1-05", "jri1-1-06"], 2: ["jri1-1-07"], 3: ["jri1-1-05", "jri1-1-07"] },
+    "2A": { 1: ["jri1-1-09", "jri1-1-10"], 2: ["jri1-1-11", "jri1-1-12", "jri1-1-13"], 3: ["jri1-1-09", "jri1-1-13"] },
+    "2B": { 1: ["jri1-1-14", "jri1-1-15"], 2: ["jri1-1-16", "jri1-1-17", "jri1-1-18", "jri1-1-19"], 3: ["jri1-1-14", "jri1-1-17"] },
+    "3A": { 1: ["jri1-1-20", "jri1-1-21"], 2: ["jri1-1-22", "jri1-1-23", "jri1-1-24", "jri1-1-25"], 3: ["jri1-1-20", "jri1-1-25"] },
+    "3B": { 1: ["jri1-1-26", "jri1-1-27"], 2: ["jri1-1-28", "jri1-1-29", "jri1-1-30", "jri1-1-31", "jri1-1-32", "jri1-1-33", "jri1-1-34", "jri1-1-35"], 3: ["jri1-1-26", "jri1-1-32", "jri1-1-35", "jri1-1-36"] }
+  };
   var SECTIONS = [
     S("1A", 1, "A", "36–40", ["Major Duple", "major-duple"], "major, duple",
       { page: "36", teacher: "Establish tonality and meter; teach the rote song “Major Duple” (melody, then bass line). Begin coordination and rhythm readiness (movement to macro- and microbeats)." },
@@ -135,14 +145,14 @@
   };
   function steps(s) {
     var out = [], P = s.parts;
-    out.push({ id: "jr" + s.id + "-1", title: "Part I: " + (s.song ? "rote song “" + s.song[0] + "”" : "rote songs (review)"), page: P[1].page, phase: "first-whole",
+    out.push({ id: "jr" + s.id + "-1", recordings: REC[s.id] && REC[s.id][1], title: "Part I: " + (s.song ? "rote song “" + s.song[0] + "”" : "rote songs (review)"), page: P[1].page, phase: "first-whole",
       teacher: P[1].teacher + (s.song ? " Sung in the class's concert key; the song is in the tune collection." : ""), book: P[1].book,
       activities: ["rote-song"],
       student: s.song ? { type: "tunes", tunes: [{ name: s.song[0], id: s.song[1] }] } : null });
     var st2 = P[2].fing ? { type: "sax", notes: P[2].fing.notes, say: P[2].fing.text + ": the fingering for each note on your saxophone." } : null;
-    out.push({ id: "jr" + s.id + "-2", title: "Part II: executive skills and patterns", page: P[2].page, phase: "lsa", teacher: P[2].teacher, book: P[2].book,
+    out.push({ id: "jr" + s.id + "-2", recordings: REC[s.id] && REC[s.id][2], title: "Part II: executive skills and patterns", page: P[2].page, phase: "lsa", teacher: P[2].teacher, book: P[2].book,
       student: st2 || (P[2].lsa ? LSA[P[2].lsa] : null), extra: st2 && P[2].lsa ? LSA[P[2].lsa] : null });
-    out.push({ id: "jr" + s.id + "-3", title: "Part III: home study", page: P[3].page, phase: "second-whole", teacher: P[3].teacher });
+    out.push({ id: "jr" + s.id + "-3", recordings: REC[s.id] && REC[s.id][3], title: "Part III: home study", page: P[3].page, phase: "second-whole", teacher: P[3].teacher });
     return out;
   }
   var units = [];

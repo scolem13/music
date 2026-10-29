@@ -9,6 +9,8 @@ title: "Tune Assessment"
 ## Chord chart {#sec-chart .panel-jump}
 ## Assessment {#sec-assessment .panel-jump}
 
+{{< include _tune-embed.qmd >}}
+
 ## Works Cited
 
 <!-- works-cited: written by scripts/works-cited.py -->
@@ -22,5 +24,3 @@ Azzara, Christopher D., and Richard F. Grunow. *Developing Musicianship through 
 Grunow, Richard F., Edwin E. Gordon, and Christopher D. Azzara. *Jump Right In: The Instrumental Series. Teacher's Guide for Recorder*. Rev. ed., GIA Publications, 1999. 24 rote songs transcribed into the jri-recorder set of apps/tunes/tunes-object.js (melody and chords), from the piano-accompaniment pages (pp. 258–315). Tonal Patterns from Student Book Two (pp. 321–324; major, minor, Dorian and Mixolydian tonic, dominant and subdominant sets, the minor, Dorian and Mixolydian ones being the site's 322a/b, 323a/b, 324a/b) and the Student Book One tonic and dominant lesson set (pp. 46–47), jri-recorder-tonal-* in apps/patterns/pattern-set.js with C as DO (or LA, RE, SO); Rhythm Patterns from Student Book Two (pp. 325–334), jri-recorder-rhythm-* in apps/rhythms/rhythm-pattern-object.js. Reproduced with permission. MLT Books (recorder on saxophone): the Book One lesson plans, Units 1–12, Sections A and B, summarized part by part with their pages (pp. 36–177).
 :::
 <!-- /works-cited -->
-
-{{< include _tune-embed.qmd >}}

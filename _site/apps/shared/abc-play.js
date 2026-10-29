@@ -6,7 +6,11 @@
 //   var h = AbcPlay.play(visualObj, opts) -> { stop(), done: Promise }      (one tune at a time: a new play stops the last)
 //   opts.sound      a BandSounds name (default "piano"; "clguitar", "epiano", "organ", ...: BandSounds.sounds(family))
 //   opts.qpm        quarter notes a minute; omitted: the tune's Q:, else opts.defaultQpm, else abcjs's default
-//   opts.onStart()  (band only) called as the band starts playing, e.g. to time a sung cue against its first beat
+//   opts.onStart()  called as the sound starts. Band: e.g. to time a sung cue against its first beat. Melody (no band):
+//                   onStart({ ac, t0, events, endMs }): t0 = the audio-clock second of ms 0, events = the setTiming notes played,
+//                   endMs = when the last note ends (Rote Song times its Space tap against this)
+//   opts.fromMs / opts.untilMs  (melody only) play only the notes starting in [fromMs, untilMs) of the full tune (fromMs keeps the
+//                   tune's clock: t0 stays the second the tune's ms 0 would have been)
 //   opts.transpose  semitones added to every note (heard only; draw with visualTranspose for the eye)
 //   opts.light      true (default) lights each note as it sounds with the class opts.litClass ("abc-on"; styled here);
 //                   only for a tune drawn on the page (an off-page tune has nothing to light)
@@ -28,6 +32,11 @@
 //       no bass, no drums, no melody.   AbcPlay.hasChords(abc) -> true when the text has chord symbols.
 //   opts.drums = false   the band without drums;  opts.bandOpts  extra BandPlayer options merged over the style's (e.g. { voicing });
 //   opts.melody = false  the chords alone (the tune's notes are drawn but not played).
+// MELODY AGAINST THE BAND (bug fixed 2026-10-28, MLT/DMTI pages): the band's beat and every melody note's position come from
+// msBar, so msBar must be measured at the tempo given to setTiming: v.millisecondsPerMeasure(bpm) with that same bpm. Called bare it
+// returns the tune's own Q: (or abcjs's default), and with opts.qpm set (a tempo slider) the melody stretched against the band and a
+// pickup was not recognised (every bar one off). Test: tests/lessons/abc-play-align.cdp.js. Earlier, different cause, same symptom:
+// the pickup bar, NOTES.org 2026-10-13 ("Pickups, tuplets ...", BandHarmony.buildForm).
 // If the samples can't load within 12 s, abcjs's own synth plays instead (same tune, same cursor).
 (function (global) {
   var SOUNDS = "/apps/shared/band/sounds.js?v=17", shared = null, cur = null, styled = false;
@@ -96,7 +105,10 @@
   // abcjs's played bars (repeats expanded), each { ms, len, events } with the events' times inside it
   function playedBars(v, q) {
     try { v.setUpAudio({}); } catch (e) {}
-    var all = q ? v.setTiming(q / (v.getBeatLength() * 4)) : v.setTiming(), msBar = v.millisecondsPerMeasure ? v.millisecondsPerMeasure() : 2000;
+    // msBar MUST use the same tempo as setTiming: millisecondsPerMeasure() with no argument is the tune's Q: (or abcjs's default),
+    // not the tempo just set, and every melody position (ms / msBar) and the band's bpm come from it. See "Melody against the band" in the header.
+    var bpmA = q ? q / (v.getBeatLength() * 4) : undefined;
+    var all = v.setTiming(bpmA), msBar = v.millisecondsPerMeasure ? v.millisecondsPerMeasure(bpmA) : 2000;
     var bars = [], b = { ms: 0, events: [] };
     all.forEach(function (e) {
       // a new bar: abcjs 6.6 marks the first event of each measure (measureStart); older builds sent "bar" events
@@ -231,8 +243,8 @@
 
     try { v.setUpAudio({}); } catch (e) {}                    // fills each event's midiPitches (no sound)
     var q = qpmOf(v, opts), timing = q ? v.setTiming(q / (v.getBeatLength() * 4)) : v.setTiming();
-    var from = opts.fromBar > 0 ? barStartMs(timing, opts.fromBar) : 0;
-    var events = timing.filter(function (e) { return e.type === "event" && (e.midiPitches || e.midiGraceNotePitches) && e.milliseconds >= from - 1; })
+    var from = opts.fromBar > 0 ? barStartMs(timing, opts.fromBar) : opts.fromMs > 0 ? opts.fromMs : 0, until = opts.untilMs > 0 ? opts.untilMs : Infinity;
+    var events = timing.filter(function (e) { return e.type === "event" && (e.midiPitches || e.midiGraceNotePitches) && e.milliseconds >= from - 1 && e.milliseconds < until - 1; })
       .map(function (e) { return Object.assign({}, e, { milliseconds: e.milliseconds - from }); });
     var lights = events;
     if (opts.lightTune && light) {
@@ -242,7 +254,7 @@
         .map(function (e) { return Object.assign({}, e, { milliseconds: e.milliseconds - lf }); });
     }
     if (!events.length) { end(); return me; }
-    var mf = v.getMeterFraction ? v.getMeterFraction() : { num: 4, den: 4 }, msBar = v.millisecondsPerMeasure ? v.millisecondsPerMeasure() : 2000;
+    var mf = v.getMeterFraction ? v.getMeterFraction() : { num: 4, den: 4 }, msBar = v.millisecondsPerMeasure ? v.millisecondsPerMeasure(q ? q / (v.getBeatLength() * 4) : undefined) : 2000;   // same tempo as setTiming
     var secPerWhole = msBar / 1000 / ((mf.num || 4) / (mf.den || 4)), tr = opts.transpose || 0;
 
     function cursor(ac, t0, endMs) {
@@ -281,6 +293,7 @@
           });
         });
         endMs = Math.max(endMs, events[events.length - 1].milliseconds);
+        if (opts.onStart) try { opts.onStart({ ac: ac, t0: t0 - from / 1000, events: events, endMs: endMs + from }); } catch (e) {}
         cursor(ac, t0, endMs);
       })
       .catch(function () {                                    // no samples: abcjs's own synth, same cursor
@@ -289,7 +302,11 @@
         var o = { audioContext: ac, visualObj: v, options: { midiTranspose: tr, program: 0, chordsOff: true } };
         Promise.resolve(global.getSoundfontUrl ? global.getSoundfontUrl() : null).then(function (u) { if (u) o.options.soundFontUrl = u; return sy.init(o); })
           .then(function () { return sy.prime(); })
-          .then(function (r) { if (ended) return; sy.start(); cursor(ac, ac.currentTime, r.duration * 1000); })
+          .then(function (r) {
+            if (ended) return; sy.start(); var st = ac.currentTime, len = r.duration * 1000;
+            if (until < Infinity) { len = Math.min(len, until); setTimeout(function () { me.stop(); }, until); }   // the fallback plays from the start
+            if (opts.onStart) try { opts.onStart({ ac: ac, t0: st, events: events, endMs: len }); } catch (e) {}
+            cursor(ac, st, len); })
           .catch(end);
       });
     return me;

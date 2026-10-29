@@ -33,8 +33,13 @@
 //  Onsets    d (Do Di): voice bar, burst at the locus F2 1800.  r (Re Ri Ra): a voiced tap, a 20 ms dip.  m (Mi Me): nasal murmur [250 1100 2300], 95 ms (the user: a touch longer).
 //            f (Fa Fi): weak broad noise, voiceless.  s (So Si Se): sibilant noise ~6 kHz, 120 ms, louder (the user: clearer).  l (La Li Le): lateral [360 1300 2900].
 //            t (Ti Te): burst and aspiration, as the chant's Ta.
+// VOICE HIDDEN (2026-10-28): the sung solfege is not heard anywhere on the site while HIDDEN is true; the code is all still here. The switch is
+// window.VOICE_HIDDEN, set in _includes/head.html (see "VOICE HIDDEN" in apps/shared/rhythm-chant.js); set it to false to bring it back.
+// While hidden, button() draws nothing and play() makes no sound (it returns a stopped handle and calls onEnd); callers that need a sound
+// (establish.js) check SolfegeSing.HIDDEN and use the piano. plan() / render() still work, so the Node test is unaffected.
 (function (global) {
   "use strict";
+  function isHidden() { return global.VOICE_HIDDEN !== false; }   // THE SWITCH: window.VOICE_HIDDEN in _includes/head.html
   var Core = global.AbcCore || (typeof require === "function" ? safeRequire("./abc-core.js") : null);
   var Events = global.AbcEvents || (typeof require === "function" ? safeRequire("./abc-events.js") : null);
   function safeRequire(p) { try { return require(p); } catch (e) { return null; } }
@@ -236,6 +241,7 @@
   }
   var current = null;
   function play(abc, opts) {
+    if (isHidden()) { var dead = { stop: function () {}, plan: null, endsAt: 0 }; if (opts && opts.onEnd) setTimeout(opts.onEnd, 0); return dead; }
     opts = opts || {};
     if (current && !opts.ctx) { try { current.stop(); } catch (e) {} }
     var p = plan(abc, opts), ctx = opts.ctx || ownContext().ctx;
@@ -261,6 +267,7 @@
   }
   function button(parent, o) {
     o = o || {};
+    if (isHidden()) return null;   // voice hidden: no Sing button
     var b = global.document.createElement("button"), h = null, label = o.label || "\u25B6 Sing";
     b.type = "button"; b.className = o.className || "solfege-sing-btn"; b.textContent = label;
     b.title = o.title || "Sing the melody on solfège syllables (movable do).";
@@ -276,7 +283,7 @@
     return b;
   }
 
-  var api = { plan: plan, render: render, play: play, button: button, syllable: syllable, doPc: doPc, VOWELS: VOWELS, CDUR: CDUR,
+  var api = { get HIDDEN() { return isHidden(); }, plan: plan, render: render, play: play, button: button, syllable: syllable, doPc: doPc, VOWELS: VOWELS, CDUR: CDUR,
               stop: function () { if (current) current.stop(); } };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   global.SolfegeSing = api;

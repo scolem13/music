@@ -19,10 +19,10 @@ SOURCES = [
          "; Bass Lines by Ear: macrobeats in usual duple and triple meter (pp. 175–176); same is easier to hear than different (p. 219)."),
     book('Gordon, Edwin E. *Jump Right In: The Music Curriculum. Reference Handbook for Using Learning Sequence Activities*. 2001 revision, GIA Publications, 2001.', [AU] + RP,
          "Tonal sequences (p. 33) and range (p. 32); Tonal Unit 6, partial synthesis (pp. 48–49); Tonal Unit 9, generalization-verbal (pp. 52–54); rhythm patterns and sequences chanted with expressive inflection on one pitch, all durations without pitch (\"A Quick Course on Rhythm\" and \"Techniques for Teaching Class Patterns\")."),
-    book('Mullen, Andy. *MLT Any Music Teacher Can Du…De: Teacher\'s Guide to "The Literate Musician."* The Improving Musician, 2021.', [AU] + RP + ["mlt/mullen.qmd", "mlt/activities.qmd"],
+    book('Mullen, Andy. *MLT Any Music Teacher Can Du…De: Teacher\'s Guide to "The Literate Musician."* The Improving Musician, 2021.', [AU] + RP + ["mlt/mullen.qmd", "mlt/activities.qmd", "mlt/rote-song.qmd"],
          "Bridging and familiar patterns before unfamiliar ones at generalization (pp. 65–67); the audiation-foundation objectives (p. 74); "
          "the tonal sequence (p. 79); partial synthesis in rhythm by naming the microbeat (p. 85); rhythm patterns kept conversational, inflected with style and panache (p. 84); "
-         "MLT Books: the table of contents, chapters 12–13 (pp. 72–97) and Units 1–10 (pp. 102–267) step by step, and the classroom activities and techniques they describe, with the page numbers on each step and activity."),
+         "MLT Books: the table of contents, chapters 12–13 (pp. 72–97) and Units 1–10 (pp. 102–267) step by step, and the classroom activities and techniques they describe, with the page numbers on each step and activity; Rote Song by Ear: the Rote Song Procedure, its steps and cues (\"Bum bum bum, move like me\", \"audiate\", \"ready, sing\") (pp. 90–91)."),
     book('Mullen, Andy. *The Literate Musician: How to Hear, Speak, Think, Read & Write the Language of Music*. Revised 2nd ed., The Improving Musician, 2020.', [AU, HE, "practice/patterns.qmd", "practice/rhythms.qmd", "practice/rhythm-sequences.qmd"],
          "FPIFO, major and minor tonic and dominant (pp. 57, 59), copied into mullen-fpifo-major / -minor in apps/patterns/pattern-set.js; "
          "FPIFO in the Dorian, Mixolydian, Phrygian, Lydian, Aeolian and Locrian tonalities (pp. 22–27), mullen-fpifo-dorian … -locrian, with the keys moved so that C is the book's resting tone; "

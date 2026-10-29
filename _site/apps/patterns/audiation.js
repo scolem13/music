@@ -227,11 +227,13 @@
   // Play a list of { abc, qpm } one after another with gaps (ms). Returns { stop }. onEnd when all done (not when stopped).
   var running = 0;
   function playList(items, o) {
-    var me = ++running, h = null, i = 0;
+    var me = ++running, h = null, i = 0, PB = global.PlayBar;
     if (global.AbcPlay) AbcPlay.stop();
+    function sd(on) { if (PB) PB.sounding("audiation-list", on ? function () { if (me === running) running++; if (h) try { h.stop(); } catch (e) {} } : null); }   // the bottom strip's Stop covers the gaps too
+    sd(true);
     function next() {
       if (me !== running) return;
-      if (i >= items.length) { if (o.onEnd) o.onEnd(); return; }
+      if (i >= items.length) { sd(false); if (o.onEnd) o.onEnd(); return; }
       var it = items[i++];
       if (it.wait != null) { setTimeout(next, it.wait); return; }
       if (o.onItem) o.onItem(it);
@@ -241,7 +243,7 @@
       else h = AbcPlay.play(visual(it.abc), { sound: it.sound || o.sound, qpm: it.qpm, light: false, onEnd: after });
     }
     next();
-    return { stop: function () { if (me === running) running++; if (h) try { h.stop(); } catch (e) {} } };
+    return { stop: function () { if (me === running) { running++; sd(false); } if (h) try { h.stop(); } catch (e) {} } };
   }
   function stopAll() { running++; if (global.AbcPlay) AbcPlay.stop(); if (global.RhythmChant) RhythmChant.stop(); }
 

@@ -14,7 +14,7 @@ description: "Exercises for Chapter 31 of Hutchinson's Music Theory for the 21st
 <script src="/apps/shared/drills/drills.js?v=17"></script>
 <script src="/apps/shared/drills/jazz.js?v=1"></script>
 <script>window.AX_NO_VOICE = true; window.AX_CAPTIONS = true;</script>
-<script src="/apps/shared/lessons/abc-ex.js?v=15"></script>
+<script src="/apps/shared/lessons/abc-ex.js?v=16"></script>
 <style>
 .rn-quiz{display:grid;gap:1rem;margin:1rem 0}
 .rn-quiz figure{margin:0}

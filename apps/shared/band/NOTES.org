@@ -1391,3 +1391,13 @@ history pages.
    Compare with three columns (site / MODX / YC) for the organ rows; organs default to a port whose name has "YC".
    Swell / rotary to the YC's own CCs, and the site's tonebars (setTonebars) to the YC's drawbars over MIDI if it takes them:
    CC numbers unverified, editable like leslieCC. Both boards by USB (powered hub fine); the YC needs its own mixer channel.
+
+* Melody against the band at a slider tempo -- 2026-10-28
+- Symptom (MLT / DMTI pages): the melody drifted against the band; in When the Saints (2/4, pickup) every bar was one off.
+- Cause: abc-play.js timed the notes with =setTiming(bpm)= (the page's tempo) but measured the bar with =millisecondsPerMeasure()= with no
+  argument, i.e. at the tune's Q: (or abcjs's default). Melody positions (ms / msBar) were stretched, the band's bpm came from the wrong bar,
+  and a pickup longer than 98% of the wrong bar was not seen as one. Any page passing =qpm= was affected; tunes whose Q: matched were not.
+- Fix: =millisecondsPerMeasure(bpm)= with the same bpm, in both abc-play.js paths and analysed-scores.js (note lengths).
+- Not the same bug as the 2026-10-13 pickup fix above (buildForm and the tune's last bar), though it sounds the same.
+- Test: tests/lessons/abc-play-align.cdp.js (fails on the old code).
+** VERIFY BY EAR: a DMTI tune at slider 60 and 150, and the Saints.

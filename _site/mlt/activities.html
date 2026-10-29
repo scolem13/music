@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../mlt/lesson-builder.html" rel="next">
+<link href="../mlt/rote-song.html" rel="next">
 <link href="../mlt/jri-sax.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -78,6 +78,12 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="../config.js"></script>
+<script>
+  // THE SWITCH for the "bah" / solfege singing voice (rhythm-chant.js, solfege-sing.js and their buttons): true = hidden everywhere, false = as before.
+  window.VOICE_HIDDEN = true;
+  // MLT book recordings (apps/shared/mlt/recordings.js): the R2 bucket's public address, served by worker/index.js to logged-in browsers. Empty = players hidden.
+  window.MLT_REC_BASE = "https://media.seancoleman.org";
+</script>
 <script>
   // One shared Supabase client for the whole site. The auth widget and the
   // tracker both reuse window.sb so there's a single session.
@@ -293,6 +299,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../mlt/activities.html">
  <span class="dropdown-text">Classroom Activities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/rote-song.html">
+ <span class="dropdown-text">Rote Song by Ear</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../mlt/lesson-builder.html">
@@ -548,6 +558,12 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../mlt/rote-song.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rote Song by Ear</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../mlt/lesson-builder.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">MLT Lesson Planner</span></a>
   </div>
@@ -680,17 +696,21 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../apps/shared/abcjs-basic.js?v=3"></script>
 <script src="../apps/shared/abc-core.js"></script>
 <script src="../apps/shared/abc-events.js"></script>
-<script src="../apps/shared/abc-play.js?v=11"></script>
+<script src="../apps/shared/abc-play.js?v=13"></script>
 <script src="../apps/patterns/pattern-set.js?v=4"></script>
 <script src="../apps/rhythms/rhythm-pattern-object.js?v=2"></script>
-<script src="../apps/patterns/audiation.js?v=11"></script>
-<script src="../apps/shared/mlt/activities.js?v=4"></script>
-<script src="../apps/shared/mlt/books/mullen.js?v=2"></script>
-<script src="../apps/shared/rhythm-chant.js?v=18"></script>
-<script src="../apps/shared/solfege-sing.js?v=4"></script>
-<script src="../apps/shared/mlt/establish.js?v=4"></script>
-<script src="../apps/shared/mlt/mlt-walk.js?v=9"></script>
+<script src="../apps/patterns/audiation.js?v=12"></script>
+<script src="../apps/shared/mlt/activities.js?v=5"></script>
+<script src="../apps/shared/mlt/books/mullen.js?v=3"></script>
+<script src="../apps/shared/rhythm-chant.js?v=19"></script>
+<script src="../apps/shared/solfege-sing.js?v=5"></script>
+<script src="../apps/shared/mlt/establish.js?v=5"></script>
+<script src="../apps/shared/mlt/rote-song.js?v=1"></script>
+<script src="../apps/shared/mlt/recordings.js?v=1"></script>
+<script src="../apps/shared/mlt/mlt-walk.js?v=12"></script>
+<script src="../apps/shared/playbar.js?v=3"></script>
 <script src="../apps/shared/section-fold.js?v=1"></script>
+<script src="../apps/shared/mlt/stop-bar.js?v=1"></script>
 <div class="mlt-view"></div>
 <p>Each entry names the activity and says in a sentence or two what you do, with the book and page (📖) where the author describes it. The student view shows only what the student is asked to do.</p>
 <div class="mlt-activities"></div>
@@ -698,7 +718,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <h2 class="anchored" data-anchor-id="works-cited">Works Cited</h2>
 <!-- works-cited: written by scripts/works-cited.py -->
 <div class="works-cited">
-<p>Mullen, Andy. <em>MLT Any Music Teacher Can Du…De: Teacher’s Guide to “The Literate Musician.”</em> The Improving Musician, 2021. Bridging and familiar patterns before unfamiliar ones at generalization (pp.&nbsp;65–67); the audiation-foundation objectives (p.&nbsp;74); the tonal sequence (p.&nbsp;79); partial synthesis in rhythm by naming the microbeat (p.&nbsp;85); rhythm patterns kept conversational, inflected with style and panache (p.&nbsp;84); MLT Books: the table of contents, chapters 12–13 (pp.&nbsp;72–97) and Units 1–10 (pp.&nbsp;102–267) step by step, and the classroom activities and techniques they describe, with the page numbers on each step and activity.</p>
+<p>Mullen, Andy. <em>MLT Any Music Teacher Can Du…De: Teacher’s Guide to “The Literate Musician.”</em> The Improving Musician, 2021. Bridging and familiar patterns before unfamiliar ones at generalization (pp.&nbsp;65–67); the audiation-foundation objectives (p.&nbsp;74); the tonal sequence (p.&nbsp;79); partial synthesis in rhythm by naming the microbeat (p.&nbsp;85); rhythm patterns kept conversational, inflected with style and panache (p.&nbsp;84); MLT Books: the table of contents, chapters 12–13 (pp.&nbsp;72–97) and Units 1–10 (pp.&nbsp;102–267) step by step, and the classroom activities and techniques they describe, with the page numbers on each step and activity; Rote Song by Ear: the Rote Song Procedure, its steps and cues (“Bum bum bum, move like me”, “audiate”, “ready, sing”) (pp.&nbsp;90–91).</p>
 </div>
 <!-- /works-cited -->
 </section>
@@ -1207,8 +1227,8 @@ document.addEventListener('DOMContentLoaded', async function () {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../mlt/lesson-builder.html" class="pagination-link" aria-label="MLT Lesson Planner">
-        <span class="nav-page-text">MLT Lesson Planner</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../mlt/rote-song.html" class="pagination-link" aria-label="Rote Song by Ear">
+        <span class="nav-page-text">Rote Song by Ear</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

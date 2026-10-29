@@ -8,7 +8,9 @@ const ROOT = path.resolve(__dirname, "../.."), SITE = ROOT + "/tests/band/lead/s
 const RC_DEF = require(ROOT + "/apps/shared/rhythm-chant.js").RULES;
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".woff2": "font/woff2", ".ico": "image/x-icon" };
 const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.split(/[?#]/)[0]), base = /^\/(apps\/|config\.js|track\.js)/.test(u) ? ROOT : SITE, f = path.join(base, u);
-  fs.readFile(f, (e, d) => { if (e) { s.writeHead(404); return s.end(); } s.writeHead(200, { "content-type": TYPES[path.extname(f)] || "application/octet-stream", "cache-control": "no-store" }); s.end(d); }); });
+  fs.readFile(f, (e, d) => { if (e) { s.writeHead(404); return s.end(); } s.writeHead(200, { "content-type": TYPES[path.extname(f)] || "application/octet-stream", "cache-control": "no-store" }); if (path.extname(f) === ".html" && !global.__keepHidden) d = Buffer.from(String(d).replace("window.VOICE_HIDDEN = true;", "window.VOICE_HIDDEN = " + (global.__hidden ? "true" : "false") + ";")); s.end(d); }); });
+// The voice is hidden site-wide (window.VOICE_HIDDEN in _includes/head.html). The tests below bring it back (flag rewritten to false in the served
+// pages) to check the code that is still there; the block "voice hidden" at the end serves the pages as they are.
 (async () => {
   await new Promise(r => srv.listen(0, "127.0.0.1", r)); const host = "http://127.0.0.1:" + srv.address().port;
   const b = await launch({ args: ["--autoplay-policy=no-user-gesture-required"] });
@@ -143,6 +145,14 @@ const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.spl
   check("voice: a swell grows through its note (late rms > 1.5 x early)", res.shape === "swell" && res.swLate > res.swEarly * 1.5, JSON.stringify(res));
   check("voice: a plain quarter decays (silent well before the next beat)", res.dcLate < res.dcEarly * 0.1, "");
   check("voice: no clipping", res.max < 0.95 && res.max > 0.05, res.max);
+
+  // ---- voice hidden (the pages as shipped): no Conversational / syllables / Sing controls, no voice from play()
+  global.__hidden = true;
+  for (const pg of ["assessment-rhythm", "lsa-practice", "rhythms", "rhythm-sequences", "audiation"]) {
+    await b.goto(`${host}/practice/${pg}.html`); await ev(`localStorage.clear()`); await b.goto(`${host}/practice/${pg}.html`); await sleep(1200);
+    check(`hidden: ${pg}: flag set, no chant controls shown`, await ev(`window.VOICE_HIDDEN === true && RhythmChant.HIDDEN === true && RhythmChant.enabled() === false && ![...document.querySelectorAll(".rc-conv-box, .rc-syl-box, .rc-live, .rc-sound")].some(e => e.offsetParent)`));
+  }
+  check("hidden: play() uses the woodblock, no spoken syllables", await ev(`RhythmChant.play("X:1\\nM:2/4\\nL:1/4\\nK:C clef=none\\nB B |", { qpm: 80, syllables: "rhythm" }).plan.sound === "woodblock"`));
 
   await b.close(); srv.close();
   console.log(fails ? fails + " FAILED" : "all passed"); process.exit(fails ? 1 : 0);

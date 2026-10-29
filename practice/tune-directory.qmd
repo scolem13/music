@@ -44,6 +44,14 @@ classical theme, an analysed score) and holds its recordings and links. They are
 <div id="td-themes-list"></div>
 ```
 
+## MLT and JRI recordings {#td-mlt}
+
+```{=html}
+<p class="td-note"><span id="td-mlt-n"></span> from the MLT / Jump Right In book CDs, for this class only. Click a name to listen; the
+grey text says which CD and track it comes from (and the book page when the track names one).</p>
+<div id="td-mlt-list"></div>
+```
+
 ## Billboard songs (chords and form) {#td-billboard}
 
 ```{=html}
@@ -76,6 +84,8 @@ YouTube and paste the link there.</p>
 .td-work { scroll-margin-top: 5rem; transition: background .4s; border-radius: 6px; }
 .td-work .wk-panel { margin: .5rem 0; }
 .td-work.td-flash { background: rgba(13, 110, 253, .12); }
+.td-play { cursor: pointer; }
+.td-row audio { display: block; width: 100%; max-width: 26rem; height: 2rem; margin: .2rem 0 .3rem; }
 .td-music { margin: 0 0 1rem; border: 1px solid var(--bs-border-color, #dee2e6); border-radius: 6px; padding: .4rem .7rem; }
 .td-music > summary { cursor: pointer; font-weight: 600; }
 .td-music #td-picker > .tl-search:first-child, .td-music .tl-sort { display: none; }
@@ -94,7 +104,8 @@ YouTube and paste the link there.</p>
 <script src="/apps/themes/themes-data.js?v=3"></script>
 <script src="/apps/shared/works/works-data.js?v=1"></script>
 <script src="/apps/shared/works/works.js?v=1"></script>
-<script src="/apps/shared/works/tune-directory.js?v=3"></script>
+<script src="/apps/shared/mlt/recordings.js?v=1"></script>
+<script src="/apps/shared/works/tune-directory.js?v=4"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
 ```
 

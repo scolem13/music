@@ -25,6 +25,13 @@ const U = "http://127.0.0.1:8547";
   check("search narrows and opens the groups", /^\d+ match/.test(search) && /Standards:3 of/.test(search), search);
   const badge = await ev(`[...document.querySelectorAll('.td-row')].filter(r => !r.hidden && r.querySelector('.td-badge')).length`);
   check("tunes in a piece carry a badge", badge >= 4, String(badge));
+  // MLT / JRI recordings: listed by CD with their source; a name opens a player on that row
+  const mlt = await ev(`(() => { const q = document.querySelector('#td-q'); q.value = ''; q.dispatchEvent(new Event('input'));
+    window.MLT_REC_BASE = 'https://media.example.org';
+    const a = document.querySelector('#td-mlt-list .td-play'); a.click(); const au = a.parentNode.querySelector('audio');
+    return document.querySelector('#td-mlt-n').textContent + ' | ' + a.parentNode.querySelector('.td-sub').textContent + ' | ' + (au ? au.src : 'no player') +
+      ' | ' + [...document.querySelectorAll('#td-mlt-list .td-row')].some(r => /Gordon Test/i.test(r.textContent)); })()`);
+  check("MLT recordings listed with source, play in place, no Gordon test", /^1,\d{3} recordings in \d+ collections \| .*track \d+.* \| https:\/\/media\.example\.org\/mlt\/.* \| false$/.test(mlt), mlt);
   const errs = await ev(`document.querySelectorAll('.wk-err').length`);
   check("no recording shows an error", errs === 0, String(errs));
 

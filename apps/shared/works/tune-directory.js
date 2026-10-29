@@ -5,7 +5,7 @@
 // Assessment's own finder (TuneLibrary.renderPicker over the tunes and themes: tonality, meter, key, starts on, tonal pattern,
 // Functions, Progression, rhythm cells). Billboard songs answer Functions and Progression from their chords (romans in the index);
 // a filter they have nothing to answer with (a tonal pattern, a meter…) leaves them out, as it does the analysed scores.
-// Sections are the page's ## headings (#td-works, #td-tunes, #td-themes, #td-billboard, #td-analysed), so section-fold.js and the TOC work.
+// Sections are the page's ## headings (#td-works, #td-tunes, #td-themes, #td-mlt, #td-billboard, #td-analysed), so section-fold.js and the TOC work.
 (function () {
   "use strict";
   const $ = (s) => document.querySelector(s);
@@ -78,6 +78,33 @@
   const abox = $("#td-analysed-list"), aul = el("ul", "td-list");
   ids.forEach((id) => (W[id].in && W[id].in.analysed || []).forEach((x) => aul.appendChild(row("analysed", x, W[id].title, x.piece, null, NONE))));
   if (aul.children.length) abox.appendChild(aul);
+
+  // ---- MLT / JRI recordings (apps/shared/mlt/recordings.js), by CD; a name plays the track in place ----
+  const mbox = $("#td-mlt-list"), R = window.MLTRecordings;
+  if (mbox && R) {
+    const mmss = (s) => Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+    R.collections.forEach((c) => {
+      const list = R.list.filter((r) => r.col === c.id); if (!list.length) return;
+      const g = group(mbox, c.title, list.length);
+      list.forEach((r) => {
+        const li = el("li", "td-row"), a = el("a", "td-play", "▶ " + r.title); a.href = R.url(r) || "#"; a.id = "rec-" + r.id;
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          const old = li.querySelector("audio"); if (old) { old.remove(); return; }
+          const url = R.url(r); if (!url) { a.title = "The recordings are not online yet"; return; }
+          document.querySelectorAll("#td-mlt-list audio").forEach((x) => x.remove());   // one at a time
+          const au = document.createElement("audio"); au.controls = true; au.autoplay = true; au.src = url; li.appendChild(au);
+        });
+        li.appendChild(a);
+        const sub = [c.title.replace(/^Jump Right In: /, "JRI "), (r.disc > 1 ? "disc " + r.disc + ", " : "") + "track " + r.track, r.page && "p. " + r.page, r.dur && mmss(r.dur)].filter(Boolean).join(" · ");
+        li.appendChild(el("span", "td-sub", sub));
+        if (c.note) li.title = c.note;
+        rows.push({ el: li, text: fold(r.title + " " + sub + " " + c.title + " mlt " + (r.kind || "") + " " + (r.tonality || "") + " " + (r.meter || "")), group: g.d, music: NONE });
+        g.ul.appendChild(li);
+      });
+    });
+    $("#td-mlt-n").textContent = R.list.length.toLocaleString() + " recordings in " + R.collections.length + " collections";
+  }
 
   // ---- Billboard songs, by decade; they open in Timestamp Notes ----
   // the filters a Billboard song can answer: Functions and Progression (and Tags / "has chords", trivially); anything else leaves it out

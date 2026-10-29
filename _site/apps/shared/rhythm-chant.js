@@ -16,6 +16,13 @@
 //   RhythmChant.checkbox(parent, { label, onchange }) -> <label> with the checkbox; every checkbox on the page follows the setting
 //   RhythmChant.RULES                the thresholds and levels (tune by ear; plan(abc, { rules: {...} }) overrides some)
 //
+// VOICE HIDDEN (2026-10-28): the "bah" voice is in the uncanny valley, so every way of hearing it is switched off. The code is all still here.
+//   THE SWITCH: `window.VOICE_HIDDEN = true;` in _includes/head.html (one line, on every page; unset also means hidden). RhythmChant.HIDDEN,
+//   SolfegeSing.HIDDEN, abc-ex.js's "▶ Sing" and pattern-play.js's "Voice (solfège)" all read it. Set it to false to bring the voice back. While hidden: enabled() / syllablesOn() are
+//   false, checkbox / syllablesBox / mountBar's chant controls are not drawn (mountBar keeps only "Show syllables"), and play() strikes the
+//   same plan on the woodblock (no voice, no spoken syllables) so features that call it (Sax Home echoes, MLT rhythm echoes) still sound.
+//   The Node tests call plan() / render() directly and are unaffected.
+//
 // THE RULES. Source = a book; JUDGEMENT = Sean's / the builder's musical decision, not in the books. Cited in works-cited.py (Gordon 2012, Mullen).
 //  Which notes: position in the macrobeat (crusis = on a macrobeat; weak = anywhere else), length in microbeats, what comes next.
 //  R0  Inflect, don't pitch. Patterns are chanted on no particular pitch, with inflection and expression "as if used in conversation";
@@ -58,6 +65,7 @@
 //  Sound: a whispered "bah": noise and a faint, slightly detuned buzz through vowel formants, a short consonant pop at the onset. See voice().
 (function (global) {
   "use strict";
+  var HIDDEN = global.VOICE_HIDDEN !== false;   // THE SWITCH: window.VOICE_HIDDEN, set in _includes/head.html (true = the voice cannot be heard anywhere; false = as before). Unset counts as hidden.
   var Core = global.AbcCore || (typeof require === "function" ? safeRequire("./abc-core.js") : null);
   var Events = global.AbcEvents || (typeof require === "function" ? safeRequire("./abc-events.js") : null);
   function safeRequire(p) { try { return require(p); } catch (e) { return null; } }
@@ -571,6 +579,7 @@
   var current = null;
   function play(abc, opts) {
     opts = opts || {};
+    if (api.HIDDEN) opts = Object.assign({}, opts, { sound: "woodblock", syllables: null });   // voice hidden: the woodblock, never the voice
     if (current && !opts.ctx) { try { current.stop(); } catch (e) {} }
     var p = plan(abc, opts), ctx, h;
     if (opts.ctx) ctx = opts.ctx; else ctx = ownContext().ctx;
@@ -595,15 +604,17 @@
     try { var v = global.localStorage && global.localStorage.getItem("rc-conv:" + scopeName); if (v === "1") on = true; else if (v === "0") on = false; } catch (e) {}
   }
   function scope(name, defaultOn) { scopeName = name || "default"; scopeDefault = !!defaultOn; load(); loadSyl(); boxes.forEach(function (b) { b.checked = on; }); }
-  function enabled() { return on; }
+  function enabled() { return api.HIDDEN ? false : on; }
   function setEnabled(v) {
     on = !!v; try { global.localStorage.setItem("rc-conv:" + scopeName, on ? "1" : "0"); } catch (e) {}
     boxes.forEach(function (b) { b.checked = on; });
   }
   load();
   // a "Conversational" checkbox. opts: onchange(bool), after (an element to put it after) else appended to parent, label, title. Returns the label.
+  function hiddenLabel() { var l = global.document.createElement("label"); l.style.display = "none"; l.hidden = true; return l; }
   function checkbox(parent, opts) {
     opts = opts || {};
+    if (api.HIDDEN) return hiddenLabel();   // voice hidden: nothing to switch
     var lab = global.document.createElement("label"), cb = global.document.createElement("input");
     lab.className = "rc-conv"; lab.style.cssText = "display:inline-flex;align-items:center;gap:.3rem;white-space:nowrap";
     cb.type = "checkbox"; cb.className = "rc-conv-box"; cb.checked = on;
@@ -619,7 +630,7 @@
   // A page offers it only where hearing the syllables gives nothing away (see apps/patterns/audiation.js).
   var sylOn = false, sylBoxes = [];
   function loadSyl() { sylOn = false; try { sylOn = !!global.localStorage && global.localStorage.getItem("rc-syl:" + scopeName) === "1"; } catch (e) {} }
-  function syllablesOn() { return sylOn; }
+  function syllablesOn() { return api.HIDDEN ? false : sylOn; }
   // "Show syllables" (written under the notes; the page re-draws on change) and the emphasis slider's value, both remembered per scope
   function showSyllablesOn() { try { return global.localStorage.getItem("rc-showsyl:" + scopeName) === "1"; } catch (e) { return false; } }
   // the chant bar's sliders: stored value (what plan() takes) <-> slider position
@@ -685,6 +696,7 @@
   }
   function syllablesBox(parent, opts) {
     opts = opts || {};
+    if (api.HIDDEN) return hiddenLabel();   // voice hidden
     var lab = global.document.createElement("label"), cb = global.document.createElement("input");
     lab.className = "rc-syl"; lab.style.cssText = "display:inline-flex;align-items:center;gap:.3rem;white-space:nowrap";
     cb.type = "checkbox"; cb.className = "rc-syl-box"; loadSyl(); cb.checked = sylOn;
@@ -699,6 +711,12 @@
   // For pages whose own player is abcjs's SynthController (Rhythm Patterns, Rhythm Sequences): a checkbox, and, while it is ticked, a
   // Chant / Stop pair and a tempo box in place of the abcjs control (opts.hide: elements to hide meanwhile). opts.getAbc() -> the ABC now shown.
   function mountBar(parent, opts) {
+    if (api.HIDDEN) {   // voice hidden: no chant controls, only "Show syllables" (notation, not sound) where the page asks for it
+      var hb = global.document.createElement("span"); hb.className = "rc-bar";
+      if (opts.syllables) { hb.style.cssText = "display:inline-flex;align-items:center;gap:.5rem;flex-wrap:wrap"; showSylBox(hb, { onchange: opts.onShowSyllables }); parent.appendChild(hb); }
+      var nb = global.document.createElement("button");
+      return { label: hiddenLabel(), sync: function () {}, play: nb, stop: nb, tempo: global.document.createElement("input") };
+    }
     var d = global.document, bar = d.createElement("span");
     bar.className = "rc-bar"; bar.style.cssText = "display:inline-flex;align-items:center;gap:.5rem;flex-wrap:wrap";
     var h = null;
@@ -761,7 +779,7 @@
   var play_ = function (abc, o) { return api.play(abc, o); };   // through the api object, so a page or test can wrap RhythmChant.play
 
   function stop() { if (current) { try { current.stop(); } catch (e) {} current = null; } }
-  var api = { plan: plan, beats: beats, syllables: syllables, withSyllables: withSyllables, showSyllablesOn: showSyllablesOn, emphasis: emphasisValue, play: play, stop: stop, schedule: schedule, enabled: enabled, setEnabled: setEnabled, scope: scope, checkbox: checkbox, syllablesBox: syllablesBox, syllablesOn: syllablesOn, mountBar: mountBar, RULES: RULES, fixAbc: fixAbc, render: render, SYL: SYL, VOWELS: VOWELS };
+  var api = { HIDDEN: HIDDEN, plan: plan, beats: beats, syllables: syllables, withSyllables: withSyllables, showSyllablesOn: showSyllablesOn, emphasis: emphasisValue, play: play, stop: stop, schedule: schedule, enabled: enabled, setEnabled: setEnabled, scope: scope, checkbox: checkbox, syllablesBox: syllablesBox, syllablesOn: syllablesOn, mountBar: mountBar, RULES: RULES, fixAbc: fixAbc, render: render, SYL: SYL, VOWELS: VOWELS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   global.RhythmChant = api;
 })(typeof window !== "undefined" ? window : globalThis);

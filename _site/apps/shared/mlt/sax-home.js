@@ -325,7 +325,7 @@
     b.appendChild(btn("Next pattern", function () { if (!ready) return; next(); }));
     b.appendChild(btn("Again", function () { if (cur) playCur(); }));
     if (syl) b.appendChild(btn("Show the syllables", function () { if (!cur) return; paper.innerHTML = ""; var d = el("div"); paper.appendChild(d); ABCJS.renderAbc(d, RhythmChant.withSyllables(cur.abc), { responsive: "resize" }); big.textContent = Audiation.rhythmSyllables(cur.abc); }));
-    if (syl) b.appendChild(btn("Hear the syllables", function () { if (cur) RhythmChant.play(cur.abc, { qpm: qpm(), syllables: "rhythm" }); }));
+    if (syl && global.VOICE_HIDDEN === false) b.appendChild(btn("Hear the syllables", function () { if (cur) RhythmChant.play(cur.abc, { qpm: qpm(), syllables: "rhythm" }); }));
     b.appendChild(btn("\u25a0", stopAll));
     sel.onchange = function () { ready = false; big.textContent = "Press Start (the new meter is set first)"; };
     return c;

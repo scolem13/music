@@ -79,6 +79,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="../config.js"></script>
 <script>
+  // THE SWITCH for the "bah" / solfege singing voice (rhythm-chant.js, solfege-sing.js and their buttons): true = hidden everywhere, false = as before.
+  window.VOICE_HIDDEN = true;
+  // MLT book recordings (apps/shared/mlt/recordings.js): the R2 bucket's public address, served by worker/index.js to logged-in browsers. Empty = players hidden.
+  window.MLT_REC_BASE = "https://media.seancoleman.org";
+</script>
+<script>
   // One shared Supabase client for the whole site. The auth widget and the
   // tracker both reuse window.sb so there's a single session.
   window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
@@ -293,6 +299,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../mlt/activities.html">
  <span class="dropdown-text">Classroom Activities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/rote-song.html">
+ <span class="dropdown-text">Rote Song by Ear</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../mlt/lesson-builder.html">
@@ -1994,7 +2004,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../apps/shared/abcjs-basic.js?v=3"></script>
 <script src="../apps/shared/band/sounds.js?v=17"></script>
 <script>window.AX_NO_VOICE = true; window.AX_CAPTIONS = true; window.AX_PARTS = true;</script>
-<script src="../apps/shared/lessons/abc-ex.js?v=15"></script>
+<script src="../apps/shared/lessons/abc-ex.js?v=16"></script>
 <script src="../apps/shared/lessons/elements.js?v=3"></script>
 <script src="../apps/shared/lessons/sections.js?v=2"></script>
 <p>The whole of <a href="../lessons/elements-dynamics.html">Dynamics</a> on one sheet. Every ▶ plays the example at the volumes marked. Press <strong>Full screen</strong> to put the sheet on the whole screen for revision or for the class board.</p>

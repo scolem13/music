@@ -10,24 +10,27 @@ toc-depth: 2
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
 <script src="/apps/shared/abc-core.js"></script>
 <script src="/apps/shared/abc-events.js"></script>
-<script src="/apps/shared/abc-play.js?v=11"></script>
+<script src="/apps/shared/abc-play.js?v=13"></script>
 <script src="/apps/patterns/pattern-set.js?v=4"></script>
 <script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
-<script src="/apps/patterns/audiation.js?v=11"></script>
+<script src="/apps/patterns/audiation.js?v=12"></script>
 <script src="/apps/shared/pitch-detect.js"></script>
 <script src="/apps/tunes/tunes-object.js"></script>
 <script src="/apps/shared/band/harmony.js?v=34"></script>
 <script src="/apps/shared/mlt/dmti-skills.js?v=5"></script>
 <script src="/apps/shared/sax/sax-chart.js?v=2"></script>
 <script src="/apps/shared/sax/sax-page.js?v=2"></script>
-<script src="/apps/shared/mlt/activities.js?v=4"></script>
-<script src="/apps/shared/mlt/books/jri-sax.js?v=1"></script>
-<script src="/apps/shared/mlt/mlt-walk.js?v=9"></script>
-<script src="/apps/shared/rhythm-chant.js?v=18"></script>
-<script src="/apps/shared/solfege-sing.js?v=4"></script>
-<script src="/apps/shared/mlt/establish.js?v=4"></script>
-<script src="/apps/shared/mlt/sax-home.js?v=5"></script>
+<script src="/apps/shared/mlt/activities.js?v=5"></script>
+<script src="/apps/shared/mlt/books/jri-sax.js?v=2"></script>
+<script src="/apps/shared/mlt/recordings.js?v=1"></script>
+<script src="/apps/shared/mlt/mlt-walk.js?v=12"></script>
+<script src="/apps/shared/rhythm-chant.js?v=19"></script>
+<script src="/apps/shared/solfege-sing.js?v=5"></script>
+<script src="/apps/shared/mlt/establish.js?v=5"></script>
+<script src="/apps/shared/mlt/sax-home.js?v=6"></script>
+<script src="/apps/shared/playbar.js?v=3"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
+<script src="/apps/shared/mlt/stop-bar.js?v=1"></script>
 <style>
 .sh-top{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:end;padding:.8rem 1rem;border:1px solid var(--bs-border-color,#ccc);border-radius:10px;background:var(--bs-tertiary-bg,#f7f8fa)}
 .sh-top label{display:flex;flex-direction:column;font-size:.9em}#sh-where{font-weight:600;margin:.6rem 0 .2rem}#sh-progress{opacity:.75}

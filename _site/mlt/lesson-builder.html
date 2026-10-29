@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../mlt/activities.html" rel="prev">
+<link href="../mlt/rote-song.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -77,6 +77,12 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="../config.js"></script>
+<script>
+  // THE SWITCH for the "bah" / solfege singing voice (rhythm-chant.js, solfege-sing.js and their buttons): true = hidden everywhere, false = as before.
+  window.VOICE_HIDDEN = true;
+  // MLT book recordings (apps/shared/mlt/recordings.js): the R2 bucket's public address, served by worker/index.js to logged-in browsers. Empty = players hidden.
+  window.MLT_REC_BASE = "https://media.seancoleman.org";
+</script>
 <script>
   // One shared Supabase client for the whole site. The auth widget and the
   // tracker both reuse window.sb so there's a single session.
@@ -292,6 +298,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../mlt/activities.html">
  <span class="dropdown-text">Classroom Activities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/rote-song.html">
+ <span class="dropdown-text">Rote Song by Ear</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../mlt/lesson-builder.html">
@@ -547,6 +557,12 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../mlt/rote-song.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rote Song by Ear</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../mlt/lesson-builder.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">MLT Lesson Planner</span></a>
   </div>
@@ -685,7 +701,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../apps/shared/mlt/books/dmti.js?v=2"></script>
 <script src="../apps/shared/sax/sax-chart.js?v=2"></script>
 <script src="../apps/shared/sax/sax-page.js?v=2"></script>
-<script src="../apps/shared/mlt/books/jri-sax.js?v=1"></script>
+<script src="../apps/shared/mlt/books/jri-sax.js?v=2"></script>
 <script src="../apps/shared/mlt/record-sheet.js?v=1"></script>
 <script src="../apps/shared/mlt/lesson-builder.js?v=6"></script>
 <style>
@@ -717,17 +733,21 @@ body.lb-class-screen main{max-width:none!important;padding:1.5rem 3rem}
 <script src="../apps/shared/abcjs-basic.js?v=3"></script>
 <script src="../apps/shared/abc-core.js"></script>
 <script src="../apps/shared/abc-events.js"></script>
-<script src="../apps/shared/abc-play.js?v=11"></script>
+<script src="../apps/shared/abc-play.js?v=13"></script>
 <script src="../apps/patterns/pattern-set.js?v=4"></script>
 <script src="../apps/rhythms/rhythm-pattern-object.js?v=2"></script>
-<script src="../apps/patterns/audiation.js?v=11"></script>
-<script src="../apps/shared/mlt/activities.js?v=4"></script>
-<script src="../apps/shared/mlt/books/mullen.js?v=2"></script>
-<script src="../apps/shared/rhythm-chant.js?v=18"></script>
-<script src="../apps/shared/solfege-sing.js?v=4"></script>
-<script src="../apps/shared/mlt/establish.js?v=4"></script>
-<script src="../apps/shared/mlt/mlt-walk.js?v=9"></script>
+<script src="../apps/patterns/audiation.js?v=12"></script>
+<script src="../apps/shared/mlt/activities.js?v=5"></script>
+<script src="../apps/shared/mlt/books/mullen.js?v=3"></script>
+<script src="../apps/shared/rhythm-chant.js?v=19"></script>
+<script src="../apps/shared/solfege-sing.js?v=5"></script>
+<script src="../apps/shared/mlt/establish.js?v=5"></script>
+<script src="../apps/shared/mlt/rote-song.js?v=1"></script>
+<script src="../apps/shared/mlt/recordings.js?v=1"></script>
+<script src="../apps/shared/mlt/mlt-walk.js?v=12"></script>
+<script src="../apps/shared/playbar.js?v=3"></script>
 <script src="../apps/shared/section-fold.js?v=1"></script>
+<script src="../apps/shared/mlt/stop-bar.js?v=1"></script>
 <div class="mlt-view"></div>
 <div id="lesson-builder">
 <section id="set-up" class="level2">
@@ -1282,8 +1302,8 @@ body.lb-class-screen main{max-width:none!important;padding:1.5rem 3rem}
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../mlt/activities.html" class="pagination-link" aria-label="Classroom Activities">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Classroom Activities</span>
+      <a href="../mlt/rote-song.html" class="pagination-link" aria-label="Rote Song by Ear">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Rote Song by Ear</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -1,0 +1,27 @@
+---
+title: "Rote Song by Ear"
+description: "Learn a song by ear through the MLT Rote Song Procedure, one step at a time: tonality, the whole song, macrobeats and microbeats, the resting tone, audiating, then singing it alone. No notation."
+toc: false
+---
+
+{{< include _scripts.qmd >}}
+
+Choose a song, then go through the steps in order with **Next →**, or jump to any step in the list. The notation is
+never shown: the song is learned by listening, moving and audiating. The steps follow Mullen's Rote Song Procedure;
+step 8, **Audiate the ending**, is this site's addition: the song stops suddenly somewhere in its last quarter, and you
+keep it going in your head and press **Space** (or **Tap**) exactly when its last note would sound.
+
+The songs here are the ones the MLT book units name. Each unit's song list also has a 👂 **by ear** button for
+every song.
+
+```{=html}
+<div class="rote-song"></div>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Mullen, Andy. *MLT Any Music Teacher Can Du…De: Teacher's Guide to "The Literate Musician."* The Improving Musician, 2021. Bridging and familiar patterns before unfamiliar ones at generalization (pp. 65–67); the audiation-foundation objectives (p. 74); the tonal sequence (p. 79); partial synthesis in rhythm by naming the microbeat (p. 85); rhythm patterns kept conversational, inflected with style and panache (p. 84); MLT Books: the table of contents, chapters 12–13 (pp. 72–97) and Units 1–10 (pp. 102–267) step by step, and the classroom activities and techniques they describe, with the page numbers on each step and activity; Rote Song by Ear: the Rote Song Procedure, its steps and cues ("Bum bum bum, move like me", "audiate", "ready, sing") (pp. 90–91).
+:::
+<!-- /works-cited -->

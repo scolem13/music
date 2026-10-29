@@ -9,7 +9,7 @@ toc-depth: 2
 <link rel="stylesheet" href="/apps/shared/sax/sax.css?v=1">
 <script src="/apps/shared/sax/sax-chart.js?v=2"></script>
 <script src="/apps/shared/sax/sax-page.js?v=2"></script>
-<script src="/apps/shared/mlt/books/jri-sax.js?v=1"></script>
+<script src="/apps/shared/mlt/books/jri-sax.js?v=2"></script>
 ```
 
 {{< include _scripts.qmd >}}

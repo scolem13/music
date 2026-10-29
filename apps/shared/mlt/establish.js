@@ -208,14 +208,14 @@
   function playOne(p) {
     return new Promise(function (res) {
       var o = p.opts || {};
-      if (p.kind === "sing" && global.SolfegeSing) { cur = SolfegeSing.play(p.abc, Object.assign({ voice: "low", onEnd: res }, o)); return; }
+      if (p.kind === "sing" && global.SolfegeSing && !SolfegeSing.HIDDEN) { cur = SolfegeSing.play(p.abc, Object.assign({ voice: "low", onEnd: res }, o)); return; }
       if (p.kind === "chant" && global.RhythmChant) { cur = RhythmChant.play(p.abc, Object.assign({ onEnd: res }, o)); return; }
       if (global.AbcPlay && global.ABCJS) {
         var a = p.kind === "song" ? lastBars(p.abc, o.last || 4) : p.abc;
         var cueH = null, cueT = null;
         var h = AbcPlay.play(vis(a), { abc: (p.kind === "band" || p.kind === "song") ? a : null, sound: "piano", transpose: o.transpose || 0, qpm: o.qpm, style: "folk", light: false, melody: p.kind !== "band",
           onEnd: function () { clearTimeout(cueT); res(); },
-          onStart: p.cue && global.SolfegeSing ? function () { cueT = setTimeout(function () { cueH = SolfegeSing.play(p.cue.abc, { qpm: p.cue.qpm, neutral: "bum", voice: "auto" }); /* the tune's first note, at its pitch */ }, p.cue.delay * 1000 - 60); } : null });
+          onStart: p.cue && global.SolfegeSing && !SolfegeSing.HIDDEN ? function () { cueT = setTimeout(function () { cueH = SolfegeSing.play(p.cue.abc, { qpm: p.cue.qpm, neutral: "bum", voice: "auto" }); /* the tune's first note, at its pitch */ }, p.cue.delay * 1000 - 60); } : null });
         cur = { stop: function () { clearTimeout(cueT); if (cueH) cueH.stop(); if (h && h.stop) h.stop(); else AbcPlay.stop(); } }; return;
       }
       res();

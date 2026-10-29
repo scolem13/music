@@ -11,7 +11,7 @@
   function singer() {
     if (global.SolfegeSing) return Promise.resolve(global.SolfegeSing);
     return singJs || (singJs = new Promise(function (res, rej) {
-      var need = [global.AbcCore ? null : "/apps/shared/abc-core.js?v=3", global.AbcEvents ? null : "/apps/shared/abc-events.js?v=4", "/apps/shared/solfege-sing.js?v=4"].filter(Boolean);
+      var need = [global.AbcCore ? null : "/apps/shared/abc-core.js?v=3", global.AbcEvents ? null : "/apps/shared/abc-events.js?v=4", "/apps/shared/solfege-sing.js?v=5"].filter(Boolean);
       (function next() { if (!need.length) return res(global.SolfegeSing);
         var sc = document.createElement("script"); sc.src = need.shift(); sc.onload = next; sc.onerror = function () { singJs = null; rej(); }; document.head.appendChild(sc); })();
     }));
@@ -32,7 +32,8 @@
       '<button type="button" class="pp-play" aria-label="Play">▶ Play</button>' +
       '<label class="pp-f">Tempo <input type="range" class="pp-tempo" min="40" max="200" value="90"><span class="pp-bpm">90</span></label>' +
       '<label class="pp-f">Notes <select class="pp-len"><option value="1">beat each</option><option value="2">2 beats each</option></select></label>' +
-      '<label class="pp-f">Sound <select class="pp-sound">' + SOUNDS.map(function (s) { return '<option value="' + s[0] + '">' + s[1] + '</option>'; }).join("") + '</select></label>' +
+      '<label class="pp-f">Sound <select class="pp-sound">' + SOUNDS.filter(function (s) { return s[0] !== "solfege" || global.VOICE_HIDDEN === false; }).map(function (s) {   // voice hidden: no "Voice (solfège)" (switch: window.VOICE_HIDDEN, _includes/head.html)
+ return '<option value="' + s[0] + '">' + s[1] + '</option>'; }).join("") + '</select></label>' +
       '<label class="pp-f pp-chk"><input type="checkbox" class="pp-loop"> Repeat</label>' +
       '<div class="pp-off" aria-hidden="true"></div>';
     var btn = el.querySelector(".pp-play"), tempo = el.querySelector(".pp-tempo"), h = null, run = 0;
