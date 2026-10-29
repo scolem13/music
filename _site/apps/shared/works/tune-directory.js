@@ -99,7 +99,7 @@
         const sub = [c.title.replace(/^Jump Right In: /, "JRI "), (r.disc > 1 ? "disc " + r.disc + ", " : "") + "track " + r.track, r.page && "p. " + r.page, r.dur && mmss(r.dur)].filter(Boolean).join(" · ");
         li.appendChild(el("span", "td-sub", sub));
         if (c.note) li.title = c.note;
-        rows.push({ el: li, text: fold(r.title + " " + sub + " " + c.title + " mlt " + (r.kind || "") + " " + (r.tonality || "") + " " + (r.meter || "")), group: g.d, music: NONE });
+        rows.push({ el: li, text: fold(r.title + " " + sub + " " + c.title + " mlt " + (r.kind || "") + " " + (r.tonality || "") + " " + (r.meter || "") + " " + (r.key || "") + " " + (r.tune || []).join(" ")), group: g.d, music: NONE });
         g.ul.appendChild(li);
       });
     });

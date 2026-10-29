@@ -82,7 +82,10 @@ ul.task-list li input[type="checkbox"] {
   // THE SWITCH for the "bah" / solfege singing voice (rhythm-chant.js, solfege-sing.js and their buttons): true = hidden everywhere, false = as before.
   window.VOICE_HIDDEN = true;
   // MLT book recordings (apps/shared/mlt/recordings.js): the R2 bucket's public address, served by worker/index.js to logged-in browsers. Empty = players hidden.
-  window.MLT_REC_BASE = "https://media.seancoleman.org";
+  // On the site itself the same files come from /media/ (same origin, so the login cookie always goes with them; worker/index.js).
+  window.MLT_REC_BASE = /(^|\.)seancoleman\.org$/.test(location.hostname) ? location.origin + "/media" : "https://media.seancoleman.org";
+  // Works recordings with an r2 path (apps/shared/works/works-data.js) come from the same bucket, under works/.
+  window.WORKS_CONFIG = Object.assign({ r2Base: window.MLT_REC_BASE }, window.WORKS_CONFIG || {});
 </script>
 <script>
   // One shared Supabase client for the whole site. The auth widget and the
@@ -251,6 +254,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
  <span class="dropdown-text">Hearing Harmony</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../practice/ear-grid.html">
+ <span class="dropdown-text">Chord Grid by Ear</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../practice/bass-ear.html">
  <span class="dropdown-text">Bass Lines by Ear</span></a>
   </li>  
@@ -322,6 +329,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../mlt/lesson-builder.html">
  <span class="dropdown-text">MLT Lesson Planner</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/recordings.html">
+ <span class="dropdown-text">Recordings Catalogue</span></a>
   </li>  
     </ul>
   </li>
@@ -653,6 +664,12 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../practice/ear-grid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chord Grid by Ear</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../practice/bass-ear.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bass Lines by Ear</span></a>
   </div>
@@ -871,8 +888,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../apps/shared/sax/sax-page.js?v=2"></script>
 <script src="../apps/shared/mlt/activities.js?v=5"></script>
 <script src="../apps/shared/mlt/books/jri-sax.js?v=2"></script>
-<script src="../apps/shared/mlt/recordings.js?v=1"></script>
-<script src="../apps/shared/mlt/mlt-walk.js?v=12"></script>
+<script src="../apps/shared/mlt/recordings.js?v=2"></script>
+<script src="../apps/shared/mlt/mlt-walk.js?v=13"></script>
 <script src="../apps/shared/rhythm-chant.js?v=19"></script>
 <script src="../apps/shared/solfege-sing.js?v=5"></script>
 <script src="../apps/shared/mlt/establish.js?v=5"></script>

@@ -17,4 +17,25 @@ assert(n > 20, "too few recordings named in the books: " + n);
 assert.deepStrictEqual(bad, [], "unknown recording ids:\n" + bad.join("\n"));
 global.MLT_REC_BASE = "https://x.example/";
 assert.strictEqual(Rec.url(Rec.byId("jri1-1-01")), "https://x.example/mlt/jri1/01%20Singing%20Major%20Duple%20a-Melody%20b-Ba.mp3");
+// tune links, kinds and fields
+const fs = require("fs");
+const tunesSrc = fs.readFileSync(path.join(R, "apps/tunes/tunes-object.js"), "utf8");
+const tuneIds = new Set([...tunesSrc.matchAll(/^%%id\s+(\S+)/gm)].map(m => m[1]));
+const badTune = Rec.list.flatMap(r => (r.tune || []).filter(t => !tuneIds.has(t)).map(t => r.id + " -> " + t));
+if (process.env.NEG) badTune.push("neg -> no-such-tune");
+assert.deepStrictEqual(badTune, [], "recordings linked to tunes not in the collection:\n" + badTune.join("\n"));
+const chew = Rec.forTune("chew-chew-chew").map(r => r.id).sort();
+assert.deepStrictEqual(chew, ["mullen-chew-chew-chew-c-no-vocals", "mullen-chew-chew-chew-c-with-vocals", "mullen-chew-chew-chew-d-no-vocals", "mullen-chew-chew-chew-d-with-vocals"]);
+assert.strictEqual(Rec.byId("mullen-chew-chew-chew-d-no-vocals").key, "D");
+Rec.list.forEach(r => { if (r.kind) assert(Rec.KINDS[r.kind], "unknown kind " + r.kind + " on " + r.id); });
+// every timing file belongs to a recording, is a song file or bar map, and the recording says it has one
+const tdir = path.join(R, "apps/shared/mlt/timings");
+(fs.existsSync(tdir) ? fs.readdirSync(tdir) : []).filter(f => f.endsWith(".json")).forEach(f => {
+  const r = Rec.byId(f.replace(/\.json$/, "")); assert(r, "timing file for no recording: " + f);
+  assert(r.timing, "rerun node scripts/mlt-recordings.mjs: " + f + " is not in recordings.js");
+  const d = JSON.parse(fs.readFileSync(path.join(tdir, f), "utf8")); assert((d.barMap && d.barMap.bars) || d.bars || d.stamps, f + " is not a song file");
+});
+const meta = JSON.parse(fs.readFileSync(path.join(R, "apps/shared/mlt/recordings-meta.json"), "utf8"));
+Object.keys(meta).forEach(id => assert(Rec.byId(id), "recordings-meta.json names no recording " + id));
+console.log(`ok: ${Rec.list.filter(r => r.tune).length} linked to tunes`);
 console.log(`ok: ${Rec.list.length} recordings, ${n} named in the books, all found`);

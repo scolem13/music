@@ -108,6 +108,13 @@
     if (s.kind === "missing") line.appendChild(el("span", "wk-err", "(" + s.why + ")"));
     var u = openUrl(s);
     if (u) { var a = el("a", "wk-open", s.kind === "link" ? "open ↗" : "↗"); a.href = u; a.target = "_blank"; a.rel = "noopener"; a.title = "Open in a new tab"; line.appendChild(a); }
+    if (s.kind === "audio" && r.marks) {                              // open it in Timestamp Notes at start, with these stamps
+      var tn = el("a", "wk-open", "⏱ Timestamp Notes");
+      tn.href = "/tools/timestamp-notes.html?media=" + encodeURIComponent(s.url) + "&at=" + Math.floor(s.start || 0) +
+        "&title=" + encodeURIComponent(r.title || [r.performer, r.year].filter(Boolean).join(", ")) + "&marks=" + encodeURIComponent(JSON.stringify(r.marks));
+      tn.title = "Mark sections and bars on this recording in Timestamp Notes";
+      line.appendChild(tn);
+    }
     li.appendChild(line);
     if (li.__box) li.appendChild(li.__box);
     return li;
@@ -151,13 +158,39 @@
     return p;
   }
 
+  // The MLT / JRI book recordings linked to a tune (apps/shared/mlt/recordings.js, rec.tune), when that file is on the page.
+  function mltPart(id) {
+    var R = global.MLTRecordings, list = R && id ? R.forTune(id) : [];
+    if (!list.length) return null;
+    var p = el("div", "wk-panel wk-mlt");
+    var h = el("div", "wk-head"); h.appendChild(el("span", "wk-title", "MLT / JRI recordings (" + list.length + ")"));
+    var g = el("a", "wk-dir", "▦ Chord grid by ear →"); g.href = "/practice/ear-grid.html?tune=" + encodeURIComponent(id); h.appendChild(g);
+    p.appendChild(h);
+    var ul = el("ul", "wk-recs"); p.appendChild(ul);
+    list.forEach(function (r) {
+      var col = R.collections.filter(function (c) { return c.id === r.col; })[0] || {};
+      var li = el("li", "wk-rec"), line = el("div", "wk-line"), box = el("div", "wk-player"); box.hidden = true;
+      var url = R.url(r), b = el("button", "wk-play" + (url ? "" : " wk-noplay"), "▶"); b.type = "button";
+      b.title = url ? "Play" : "The recordings are not online yet";
+      if (url) b.addEventListener("click", function () { play(b, box, { kind: "audio", url: url }); });
+      line.appendChild(b);
+      line.appendChild(el("span", null, r.title));
+      line.appendChild(el("span", "wk-meta", [r.kind && R.KINDS[r.kind], r.key && "in " + r.key, (col.title || r.col).replace(/^Jump Right In: /, "JRI ")].filter(Boolean).join(" · ")));
+      var gl = el("a", "wk-meta", "▦ grid"); gl.href = "/practice/ear-grid.html?rec=" + encodeURIComponent(r.id); line.appendChild(gl);
+      li.appendChild(line); li.appendChild(box); ul.appendChild(li);
+    });
+    return p;
+  }
+
   function mount(host, kind, id) {
     if (!host) return null;
     if (current && host.contains(current.btn)) stop();
     host.innerHTML = "";
     var w = id == null ? null : of(kind, id);
-    host.hidden = !w;
     if (w) host.appendChild(panel(w, { kind: kind, id: id }));
+    var m = kind === "tune" ? mltPart(id) : null;
+    if (m) host.appendChild(m);
+    host.hidden = !w && !m;
     return w;
   }
 
@@ -180,5 +213,5 @@
   (document.head || document.documentElement).appendChild(css);
 
   global.Works = { of: of, get: get, ids: function () { return Object.keys(W); }, all: function () { return W; }, source: source, href: href, kindLabel: KIND,
-    mount: mount, panel: panel, stop: stop, config: CFG, reindex: function () { W = global.WORKS || {}; build(); } };
+    mount: mount, panel: panel, mltPart: mltPart, stop: stop, config: CFG, reindex: function () { W = global.WORKS || {}; build(); } };
 })(window);

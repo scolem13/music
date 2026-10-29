@@ -104,7 +104,7 @@ const U = "http://127.0.0.1:8547";
   check("analysed score has the panel, linking to the theme", /classical-themes\.html\?theme=0887/.test(as), as);
 
   // r2 without a bucket, and with one
-  const r2 = await ev(`JSON.stringify([Works.source({ r2: 'a b/c.mp3' }), (Works.config.r2Base = 'https://media.example.com/', Works.source({ r2: 'a b/c.mp3', start: '1:05' })), Works.source({ yt: 'https://youtu.be/vcBJLdKtaOQ?t=610' })])`);
+  const r2 = await ev(`JSON.stringify([(Works.config.r2Base = '', Works.source({ r2: 'a b/c.mp3' })), (Works.config.r2Base = 'https://media.example.com/', Works.source({ r2: 'a b/c.mp3', start: '1:05' })), Works.source({ yt: 'https://youtu.be/vcBJLdKtaOQ?t=610' })])`);
   check("sources: r2 waits for the bucket, then builds its URL; YouTube start from t=", r2 === JSON.stringify([{ kind: "missing", why: "the recordings bucket is not set up yet" },
     { kind: "audio", url: "https://media.example.com/a%20b/c.mp3", start: 65, end: 0 }, { kind: "yt", id: "vcBJLdKtaOQ", start: 610, end: 0 }]), r2);
 

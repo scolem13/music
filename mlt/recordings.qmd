@@ -1,0 +1,28 @@
+---
+title: "Recordings Catalogue"
+description: "Every MLT and Jump Right In recording: what kind it is (song, accompaniment, patterns, instructions), its tonality, meter and key, the tune it goes with, and its timing map."
+toc: false
+---
+
+```{=html}
+<script src="/apps/shared/mlt/recordings.js?v=2"></script>
+<script src="/apps/shared/mlt/rec-catalogue.js?v=1"></script>
+```
+
+All the book CD tracks in one list. **Kind**, **tonality**, **meter** and **key** come from the track titles; where the title
+says nothing, tonality and meter are read off the tune it is linked to and shown in *italics with a ?* until checked.
+A recording is linked to a tune in the [tune collection](/practice/tunes.html) when their titles match; that tune's page then
+lists the recording, and so does every MLT step that names the tune.
+
+**Checking and filling in.** Pick *Show: needs checking*, change what is wrong, or press ✓ to confirm a row as it stands.
+Edits stay in this browser until you press **Download recordings-meta.json**, put the file in `apps/shared/mlt/`, and run
+`node scripts/mlt-recordings.mjs`. An empty tune box unlinks a wrong match.
+
+**Timing maps.** ⏱ opens the recording in [Timestamp Notes](/tools/timestamp-notes.html): stamp the sections, tap the
+downbeats, add chords if you like, then **Save** the song file as `apps/shared/mlt/timings/<recording id>.json` (the file name
+it suggests) and rerun the script. ▦ opens the [Chord Grid by Ear](/practice/ear-grid.html) on the recording, using the timing map
+when there is one.
+
+```{=html}
+<div class="rec-cat"></div>
+```

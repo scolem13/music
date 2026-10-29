@@ -357,6 +357,7 @@ website:
           contents:
             - practice/audiation.qmd
             - practice/harmony-ear.qmd
+            - practice/ear-grid.qmd
             - practice/bass-ear.qmd
             - practice/prog-ear.qmd
             - practice/blues-ear.qmd
@@ -467,6 +468,7 @@ website:
         - mlt/activities.qmd
         - mlt/rote-song.qmd
         - mlt/lesson-builder.qmd
+        - mlt/recordings.qmd
     - id: teacher
       title: "Teacher"
       style: docked
@@ -514,6 +516,7 @@ website:
           - text: "---"
           - practice/audiation.qmd
           - practice/harmony-ear.qmd
+          - practice/ear-grid.qmd
           - practice/bass-ear.qmd
           - practice/prog-ear.qmd
           - practice/blues-ear.qmd
@@ -534,6 +537,7 @@ website:
           - mlt/activities.qmd
           - mlt/rote-song.qmd
           - mlt/lesson-builder.qmd
+          - mlt/recordings.qmd
       - text: Tools
         menu:
           - text: "All tools"

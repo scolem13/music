@@ -129,12 +129,26 @@
       reset();
       source = { file: file.name };
       objectUrl = URL.createObjectURL(file);
+      playMedia(objectUrl);
+    }
+    // An audio or video at a URL (a recording in the collection: source { rec, title }).
+    function loadMediaUrl(url, src) {
+      reset();
+      source = src || { media: url };
+      playMedia(url, true);
+    }
+    function playMedia(url, quiet) {
       var v = document.createElement("video");
-      v.src = objectUrl;
+      v.src = url;
       v.controls = true;
       v.playsInline = true;
       v.addEventListener("error", function () {
         err.textContent = "Could not play that file — the browser may not support its codec.";
+        if (!/^(blob|data):/.test(url)) fetch(url, { method: "HEAD", credentials: "include" }).then(function (r) {   // a URL: say why
+          if (r.status === 401 || r.status === 403) err.textContent = "The recording needs the site login: open this page on music.seancoleman.org (logged in), not a local preview.";
+          else if (r.status === 404) err.textContent = "That recording is not in the bucket (" + url + ").";
+          else if (!r.ok) err.textContent = "The recording could not be loaded (" + r.status + ").";
+        }).catch(function () { err.textContent = "The recording could not be reached. On a local preview it needs the site login, so open the page on music.seancoleman.org."; });
       });
       stage.appendChild(v);
       stage.hidden = false;
@@ -143,7 +157,7 @@
       applyRate();
       clock.classList.remove("idle");
       drop.hidden = true;
-      v.play().catch(function () { /* autoplay may be blocked; controls are there */ });
+      if (!quiet) v.play().catch(function () { /* autoplay may be blocked; controls are there */ });
     }
 
     function loadYouTube(id) {
@@ -391,6 +405,8 @@
       seek: seekTo,
       format: fmt,
       source: function () { return source; },
+      // an audio file at a URL (the recordings collection): src is what the song file keeps as its source
+      openMedia: function (url, src) { if (!url) return false; loadMediaUrl(url, src); return true; },
       // a YouTube link from an imported log: embedded, or followed in a tab as it was when saved
       open: function (url, inTab) {
         var id = ytId(url);

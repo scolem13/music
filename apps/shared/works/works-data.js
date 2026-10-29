@@ -7,7 +7,8 @@
 //     in: { tune: [Tune Library %%id …], theme: [Classical Themes id "0887" …],
 //           analysed: [{ piece: data-piece, page: "theory/analysed-scores/<page>" } …] },
 //     recordings: [ one of  yt: "<11-char video id or any YouTube URL>"  |  r2: "<path in the R2 bucket>"  |  url: "<any audio/video URL>",
-//                   plus optional performer, year, start / end (seconds or "m:ss"), note, who: "student" | "teacher" ],
+//                   plus optional performer, year, start / end (seconds or "m:ss"), note, who: "student" | "teacher",
+//                   marks: [["m:ss", "note"] …] (audio only: a ⏱ button opens it in Timestamp Notes at start with these stamps) ],
 //     links: [ { type: "article" | "video" | "lesson" | "sheet" | "other", title, url, note, who } ]
 //   }
 // r2 paths are read against WORKS_CONFIG.r2Base (works.js), so the bucket's address is set once.
@@ -27,7 +28,17 @@ window.WORKS = {
         }
       ]
     },
-    "recordings": [],
+    "recordings": [
+      {
+        "r2": "works/beethoven-moonlight/schoenhals.mp3",
+        "performer": "Joel Schoenhals",
+        "title": "Beethoven, \"Moonlight\" Sonata (Joel Schoenhals)",
+        "start": "0:30",
+        "end": "7:34",
+        "note": "the whole sonata; the first movement is 0:30–7:34",
+        "marks": [["0:00", "Audience noise"], ["0:30", "Almost ready -- please mark measure 1"], ["7:34", "End of Mvt 1"]]
+      }
+    ],
     "links": []
   },
   "autumn-leaves": {

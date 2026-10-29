@@ -22,7 +22,8 @@
 //     activities  the student lines of the step's activities
 //     link        { href, label, say }
 //   step.recordings: [MLTRecordings ids] (recordings.js, the book CDs hosted in R2) drawn as players under the step, in both views;
-//           an id may be { id, note } to say what to do with it. Needs recordings.js on the page.
+//           an id may be { id, note } to say what to do with it. Needs recordings.js on the page. A song in a "tunes" list that
+//           recordings link to (rec.tune) also gets a 🎧 button listing them, in both views; every recording links to the Chord Grid by Ear.
 //
 // Page: <div class="mlt-view"></div> (the switch), <div class="mlt-unit" data-book="mullen" data-unit="u1"></div>,
 // <div class="mlt-outline" data-book="mullen" data-part="p1"></div>. Needs activities.js and the book file; the players
@@ -389,9 +390,10 @@
     var host = el("div"); box.appendChild(host);
     if (s.type === "tunes") {
       host.innerHTML = "<p>Learn these songs by ear" + (global.RoteSong ? ": press \u{1F442} to go through the Rote Song Procedure, step by step, without the notation" : "") + ".</p><ul class=\"mlt-tunes\">" + s.tunes.map(function (t) {
-        return "<li>" + (t.id ? tuneLink(t.id, t.name) + (global.RoteSong ? ' <button type="button" class="mlt-rote" data-id="' + esc(t.id) + '" data-name="' + esc(t.name) + '" title="Learn it by ear (Rote Song Procedure)">\u{1F442} by ear</button>' : "") : esc(t.name) + ' <span class="mlt-dim mlt-t">(not in the tune collection yet)</span>') + "</li>";
+        return "<li>" + (t.id ? tuneLink(t.id, t.name) + (global.RoteSong ? ' <button type="button" class="mlt-rote" data-id="' + esc(t.id) + '" data-name="' + esc(t.name) + '" title="Learn it by ear (Rote Song Procedure)">\u{1F442} by ear</button>' : "") + recButton(t.id) : esc(t.name) + ' <span class="mlt-dim mlt-t">(not in the tune collection yet)</span>') + "</li>";
       }).join("") + "</ul>";
       var rbox = el("div"), rctl = null; host.appendChild(rbox);
+      wireRecButtons(host);
       [].forEach.call(host.querySelectorAll(".mlt-rote"), function (b) {
         b.onclick = function () { if (rctl) rctl.destroy(); rctl = null; RoteSong.mountById(rbox, b.dataset.id, b.dataset.name).then(function (c) { rctl = c; if (rbox.scrollIntoView) rbox.scrollIntoView({ block: "nearest", behavior: "smooth" }); }); };
       });
@@ -419,19 +421,39 @@
 
   // ---------- recordings (the book CDs, recordings.js) ----------
   function fmtDur(s) { return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); }
+  // a tune's recordings (rec.tune links it, recordings.js): a 🎧 button beside the song that opens them under it
+  function recButton(id) {
+    var R = global.MLTRecordings, n = R && id ? R.forTune(id).length : 0;
+    return n ? ' <button type="button" class="mlt-recbtn" data-id="' + esc(id) + '" title="Recordings of this song">\u{1F3A7} ' + n + "</button>" : "";
+  }
+  function wireRecButtons(host) {
+    var R = global.MLTRecordings; if (!R) return;
+    var ORDER = { song: 0, accompaniment: 1, bass: 2 };
+    [].forEach.call(host.querySelectorAll(".mlt-recbtn"), function (b) {
+      b.onclick = function () {
+        var li = b.closest("li"), old = li.querySelector(".mlt-rec-l");
+        if (old) { old.remove(); return; }
+        var list = R.forTune(b.dataset.id).slice().sort(function (x, y) { return (ORDER[x.kind] != null ? ORDER[x.kind] : 9) - (ORDER[y.kind] != null ? ORDER[y.kind] : 9); });
+        var ul = el("ul", "mlt-rec-l"); list.forEach(function (r) { ul.appendChild(recLi(r)); }); li.appendChild(ul);
+      };
+    });
+  }
+  function recLi(r, note) {
+    var R = global.MLTRecordings, col = R.collections.filter(function (c) { return c.id === r.col; })[0] || {};
+    var li = el("li", null, "<b>" + esc(r.title) + "</b> <span class=\"mlt-dim\">" + fmtDur(r.dur) + (r.kind && R.KINDS ? " · " + esc(R.KINDS[r.kind]) : "") + (r.key ? " · in " + esc(r.key) : "") + "</span>" +
+      (note ? " " + esc(note) : "") + ' <a class="mlt-dim" href="/practice/ear-grid.html?rec=' + encodeURIComponent(r.id) + '" title="Chord grid by ear">\u25A6 grid</a>' +
+      ' <span class="mlt-dim mlt-t">(' + esc(col.title || r.col) + ", track " + r.track + ")</span>" + (col.note ? ' <span class="mlt-dim mlt-t">' + esc(col.note) + ".</span>" : ""));
+    var url = R.url(r);
+    if (url) { var a = el("audio"); a.controls = true; a.preload = "none"; a.src = url; a.style.cssText = "display:block;width:100%;max-width:28rem;height:2rem"; li.appendChild(a); }
+    return li;
+  }
   function recordingsPart(list) {
     var R = global.MLTRecordings; if (!list || !list.length || !R) return null;
     var box = el("div", "mlt-do mlt-recs");
     box.appendChild(el("div", "mlt-do-h", "Recordings"));
     var ul = el("ul", "mlt-rec-l"); box.appendChild(ul);
     list.forEach(function (x) {
-      var r = R.byId(x.id || x); if (!r) return;
-      var col = R.collections.filter(function (c) { return c.id === r.col; })[0] || {};
-      var li = el("li", null, "<b>" + esc(r.title) + "</b> <span class=\"mlt-dim\">" + fmtDur(r.dur) + "</span>" +
-        (x.note ? " " + esc(x.note) : "") + ' <span class="mlt-dim mlt-t">(' + esc(col.title || r.col) + ", track " + r.track + ")</span>" + (col.note ? ' <span class="mlt-dim">' + esc(col.note) + ".</span>" : ""));
-      var url = R.url(r);
-      if (url) { var a = el("audio"); a.controls = true; a.preload = "none"; a.src = url; a.style.cssText = "display:block;width:100%;max-width:28rem;height:2rem"; li.appendChild(a); }
-      ul.appendChild(li);
+      var r = R.byId(x.id || x); if (r) ul.appendChild(recLi(r, x.note));
     });
     if (!R.base()) box.appendChild(el("p", "mlt-dim", "The recordings are not online yet (the bucket address is not set)."));
     return box;
@@ -505,7 +527,7 @@
     ".mlt-ctl{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin:.4rem 0}.mlt-ctl button{padding:.25rem .7rem}.mlt-msg{min-height:1.5em;font-weight:600}" +
     ".mlt-act{border:1px solid var(--bs-border-color,#ddd);border-radius:8px;padding:.5rem .8rem;margin:.5rem 0}.mlt-act-h{margin-bottom:.2rem}.mlt-act-s{font-style:italic;margin:.2rem 0}" +
     ".mlt-tag{display:inline-block;font-size:.72em;padding:0 .45em;margin-left:.25em;border-radius:3px;background:var(--bs-secondary-bg,#eee)}.mlt-refs{margin-top:.25rem}" +
-    ".mlt-sax-row{display:flex;flex-wrap:wrap;gap:.6rem;margin:.3rem 0 .8rem}.mlt-sax-card{width:6.5rem;text-align:center;border:1px solid var(--bs-border-color,#ddd);border-radius:6px;padding:.3rem}.mlt-sax-card svg{width:4.2rem;height:auto}.mlt-tunes{columns:2;max-width:44rem}.mlt-rote{font-size:.8em;padding:0 .4em;margin-left:.3em}@media (max-width:600px){.mlt-tunes{columns:1}}";
+    ".mlt-sax-row{display:flex;flex-wrap:wrap;gap:.6rem;margin:.3rem 0 .8rem}.mlt-sax-card{width:6.5rem;text-align:center;border:1px solid var(--bs-border-color,#ddd);border-radius:6px;padding:.3rem}.mlt-sax-card svg{width:4.2rem;height:auto}.mlt-tunes{columns:2;max-width:44rem}.mlt-rote,.mlt-recbtn{font-size:.8em;padding:0 .4em;margin-left:.3em}@media (max-width:600px){.mlt-tunes{columns:1}}";
 
   function init() {
     var st = el("style"); st.textContent = CSS; document.head.appendChild(st);

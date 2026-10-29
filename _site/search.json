@@ -33279,5 +33279,26 @@
       "Learn from a recording",
       "Timestamp Notes"
     ]
+  },
+  {
+    "objectID": "mlt/recordings.html",
+    "href": "mlt/recordings.html",
+    "title": "Recordings Catalogue",
+    "section": "",
+    "text": "All the book CD tracks in one list. Kind, tonality, meter and key come from the track titles; where the title says nothing, tonality and meter are read off the tune it is linked to and shown in italics with a ? until checked. A recording is linked to a tune in the tune collection when their titles match; that tune’s page then lists the recording, and so does every MLT step that names the tune.\nChecking and filling in. Pick Show: needs checking, change what is wrong, or press ✓ to confirm a row as it stands. Edits stay in this browser until you press Download recordings-meta.json, put the file in apps/shared/mlt/, and run node scripts/mlt-recordings.mjs. An empty tune box unlinks a wrong match.\nTiming maps. ⏱ opens the recording in Timestamp Notes: stamp the sections, tap the downbeats, add chords if you like, then Save the song file as apps/shared/mlt/timings/&lt;recording id&gt;.json (the file name it suggests) and rerun the script. ▦ opens the Chord Grid by Ear on the recording, using the timing map when there is one.",
+    "crumbs": [
+      "Recordings Catalogue"
+    ]
+  },
+  {
+    "objectID": "practice/ear-grid.html",
+    "href": "practice/ear-grid.html",
+    "title": "Chord Grid by Ear",
+    "section": "",
+    "text": "Learn a tune’s chords (and melody) from a recording. Each box is one bar: click it to play from there, Shift+click a second bar to loop the bars between, Space plays and pauses. Type what you hear in each bar: a chord name (C, G7, Am) or a Roman numeral (I, V7, vi); two chords in a bar go in with a space between. Check colours each bar: green right, orange the right root but another chord, red wrong. Checking needs the recording to be linked to a tune with chords (see the Recordings Catalogue); chords are compared by function, so a recording in D is checked against notation in C. Set Key to the key the recording is in when you type chord names. Underneath, the tune’s notation (in the recording’s key) checks the melody.\nThe bars come from the recording’s timing map when it has one (made in Timestamp Notes). Without one, set where the first bar starts (play to the first downbeat and press = now), tap the tempo, and the grid is drawn at that steady tempo. Your guesses are kept in this browser, for each recording.",
+    "crumbs": [
+      "LSA practice",
+      "Chord Grid by Ear"
+    ]
   }
 ]

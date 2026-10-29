@@ -518,6 +518,8 @@
     // "Best Day of My Life" -> best-day-of-my-life-2026-10-15, when the tune has a title (words.js's
     // Title box); otherwise the plain name given.
     function fileName(plain) {
+      var src = api() && api().source && api().source();
+      if (src && src.rec) return src.rec;                 // a collection recording: save as apps/shared/mlt/timings/<id>.json
       var box = document.querySelector('.btp-title');
       var slug = box ? box.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
         .replace(/['\u2019]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') : '';
@@ -560,10 +562,49 @@
       if (data.barMap && p.map) p.map.load(data.barMap);
       if (data.phrases && p.phrases) p.phrases.load(data.phrases);
       var src = data.source, cur = a && a.source && a.source();
-      if (src && src.url && !(cur && cur.url === src.url) && a.open && a.open(src.url, src.follow)) loaded = ' Loaded the video.';
+      if (src && src.media && !(cur && cur.media === src.media)) loaded = a.openMedia(src.media, src) ? ' Loaded the recording.' : '';
+      else if (src && src.rec && !(cur && cur.rec === src.rec)) loaded = openRec(src.rec) ? ' Loaded the recording.' : '';
+      else if (src && src.url && !(cur && cur.url === src.url) && a.open && a.open(src.url, src.follow)) loaded = ' Loaded the video.';
       else if (src && src.file && !(cur && cur.file === src.file)) loaded = ' Load ' + src.file + ' to play along.';
       say('Opened ' + (data.title || 'the song file') + '.' + loaded);
     }
+    // ---- a recording in the MLT / JRI collection (apps/shared/mlt/recordings.js): ?rec=<id> opens it with its timing map ----
+    function openRec(id) {
+      var R = window.MLTRecordings, r = R && R.byId(id), a = api();
+      if (!r || !a || !a.openMedia) return false;
+      if (!R.url(r)) { say('The recordings are not online yet.'); return false; }
+      a.openMedia(R.url(r), { rec: r.id, title: r.title });
+      var box = document.querySelector('.btp-title'); if (box && !box.value) box.value = r.title;
+      return true;
+    }
+    // ?media=<audio url>&at=<s>&title=…&marks=[["m:ss","note"]…]: a recording from a Works entry (works.js), its marks as stamps
+    setTimeout(function mediaFromUrl() {                 // after the page has put back its saved stamps
+      var q = new URLSearchParams(location.search), url = q.get('media');
+      if (!url) return;
+      var marks = []; try { marks = JSON.parse(q.get('marks') || '[]'); } catch (e) {}
+      var a = api(), at = parseFloat(q.get('at')) || 0;
+      var secs = function (t) { return String(t).split(':').reduce(function (x, y) { return x * 60 + (parseFloat(y) || 0); }, 0); };
+      var src = { media: url, title: q.get('title') || '' };
+      var cur = a && a.source && a.source();
+      if (cur && cur.media === url && stamps().length) { if (at) a.seek(at); return; }   // came back to the same recording: keep the work
+      openSong({ app: 'timestamp-notes', version: 1, title: src.title, source: src,
+        stamps: marks.map(function (m) { var s = secs(m[0]); return { t: a && a.format ? a.format(s) : m[0], s: s, n: m[1] }; }) });
+      var box = document.querySelector('.btp-title'); if (box && src.title) box.value = src.title;
+      if (at && a) setTimeout(function () { a.seek(at); }, 300);
+    }, 0);
+    (function recFromUrl() {
+      var id = new URLSearchParams(location.search).get('rec'), R = window.MLTRecordings;
+      if (!id) return;
+      if (!R) { say('This page needs recordings.js to open ' + id + '.'); return; }
+      var r = R.byId(id); if (!r) { say('No recording ' + id + ' in the collection.'); return; }
+      fetch(R.timingUrl(r), { cache: 'no-cache' }).then(function (res) { return res.ok ? res.text() : null; }).catch(function () { return null; })
+        .then(function (text) {
+          if (text) { openText(text); if (!(api().source() || {}).rec) openRec(id); say('Opened ' + r.title + ' with its timing map.'); }
+          else { openRec(id); var box = document.querySelector('.btp-title'); if (box) box.value = r.title;
+            say('No timing map yet for ' + r.title + '. Stamp and tap, then Save: keep the file as apps/shared/mlt/timings/' + r.id + '.json.'); }
+        });
+    })();
+
     function openText(text) {
       var t = String(text).trim();
       if (t.charAt(0) === '{') {

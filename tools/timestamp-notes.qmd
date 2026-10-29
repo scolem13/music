@@ -300,11 +300,12 @@ page-layout: full
 </div>
 
 <script src="/apps/shared/panel-columns.js?v=1"></script>
-<script src="/apps/shared/timestamp-player/player.js?v=8"></script>
+<script src="/apps/shared/timestamp-player/player.js?v=10"></script>
 <script src="/apps/shared/timestamp-player/clock-panel.js?v=1"></script>
 <script src="/apps/shared/timestamp-player/time-edit.js?v=1"></script>
 <script src="/apps/shared/timestamp-player/section-labels.js?v=1"></script>
-<script src="/apps/shared/timestamp-player/player-log.js?v=16"></script>
+<script src="/apps/shared/mlt/recordings.js?v=2"></script>
+<script src="/apps/shared/timestamp-player/player-log.js?v=18"></script>
 <script src="/apps/shared/timestamp-player/bar-map.js?v=18"></script>
 <script src="/apps/shared/abc-core.js?v=3"></script>
 <script src="/apps/shared/abc-events.js?v=4"></script>
