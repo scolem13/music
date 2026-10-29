@@ -416,6 +416,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
  <span class="dropdown-text">Timestamp Notes</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../tools/mark-bars.html">
+ <span class="dropdown-text">Mark Bars</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../tools/tap-along.html">
  <span class="dropdown-text">Tap Along</span></a>
   </li>  
@@ -710,10 +714,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 
 <script src="../apps/shared/mlt/recordings.js?v=2"></script>
-<script src="../apps/shared/mlt/rec-catalogue.js?v=1"></script>
+<script src="../apps/shared/mlt/rec-catalogue.js?v=3"></script>
 <p>All the book CD tracks in one list. <strong>Kind</strong>, <strong>tonality</strong>, <strong>meter</strong> and <strong>key</strong> come from the track titles; where the title says nothing, tonality and meter are read off the tune it is linked to and shown in <em>italics with a ?</em> until checked. A recording is linked to a tune in the <a href="../practice/tunes.html">tune collection</a> when their titles match; that tune’s page then lists the recording, and so does every MLT step that names the tune.</p>
 <p><strong>Checking and filling in.</strong> Pick <em>Show: needs checking</em>, change what is wrong, or press ✓ to confirm a row as it stands. Edits stay in this browser until you press <strong>Download recordings-meta.json</strong>, put the file in <code>apps/shared/mlt/</code>, and run <code>node scripts/mlt-recordings.mjs</code>. An empty tune box unlinks a wrong match.</p>
-<p><strong>Timing maps.</strong> ⏱ opens the recording in <a href="../tools/timestamp-notes.html">Timestamp Notes</a>: stamp the sections, tap the downbeats, add chords if you like, then <strong>Save</strong> the song file as <code>apps/shared/mlt/timings/&lt;recording id&gt;.json</code> (the file name it suggests) and rerun the script. ▦ opens the <a href="../practice/ear-grid.html">Chord Grid by Ear</a> on the recording, using the timing map when there is one.</p>
+<p><strong>Timing maps.</strong> 📱 opens <a href="../tools/mark-bars.html">Mark Bars</a> for tapping bars and sections on a phone (kept in the phone’s browser, sent by email at the end). ⏱ opens the recording in <a href="../tools/timestamp-notes.html">Timestamp Notes</a>: stamp the sections, tap the downbeats, add chords if you like, then <strong>Save</strong> the song file as <code>apps/shared/mlt/timings/&lt;recording id&gt;.json</code> (the file name it suggests) and rerun the script. ▦ opens the <a href="../practice/ear-grid.html">Chord Grid by Ear</a> on the recording, using the timing map when there is one.</p>
 <div class="rec-cat"></div>
 
 

@@ -6,7 +6,7 @@ toc: false
 
 ```{=html}
 <script src="/apps/shared/mlt/recordings.js?v=2"></script>
-<script src="/apps/shared/mlt/rec-catalogue.js?v=1"></script>
+<script src="/apps/shared/mlt/rec-catalogue.js?v=3"></script>
 ```
 
 All the book CD tracks in one list. **Kind**, **tonality**, **meter** and **key** come from the track titles; where the title
@@ -18,7 +18,7 @@ lists the recording, and so does every MLT step that names the tune.
 Edits stay in this browser until you press **Download recordings-meta.json**, put the file in `apps/shared/mlt/`, and run
 `node scripts/mlt-recordings.mjs`. An empty tune box unlinks a wrong match.
 
-**Timing maps.** ⏱ opens the recording in [Timestamp Notes](/tools/timestamp-notes.html): stamp the sections, tap the
+**Timing maps.** 📱 opens [Mark Bars](/tools/mark-bars.html) for tapping bars and sections on a phone (kept in the phone's browser, sent by email at the end). ⏱ opens the recording in [Timestamp Notes](/tools/timestamp-notes.html): stamp the sections, tap the
 downbeats, add chords if you like, then **Save** the song file as `apps/shared/mlt/timings/<recording id>.json` (the file name
 it suggests) and rerun the script. ▦ opens the [Chord Grid by Ear](/practice/ear-grid.html) on the recording, using the timing map
 when there is one.

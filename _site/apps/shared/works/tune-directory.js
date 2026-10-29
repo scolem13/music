@@ -17,8 +17,10 @@
 
   function badge(kind, id) {
     const w = Works.of(kind, id); if (!w) return null;
-    const n = (w.recordings || []).length + (w.links || []).length;
-    const a = el("a", "td-badge", (w.recordings || []).length ? "🎧 " + w.recordings.length : "resources"); a.href = "#" + w.id;
+    let teach = false; try { teach = localStorage.getItem("site-teacher") === "1"; } catch (e) {}
+    const recs = (w.recordings || []).filter((r) => !r.draft || teach);   // drafts: the teacher's browser only (rec-sync.js)
+    const n = recs.length + (w.links || []).length;
+    const a = el("a", "td-badge", recs.length ? "🎧 " + recs.length : "resources"); a.href = "#" + w.id;
     a.title = n + " recording" + (n === 1 ? "" : "s") + " and resource" + (n === 1 ? "" : "s") + ": " + w.title;
     return a;
   }
@@ -98,6 +100,8 @@
         li.appendChild(a);
         const sub = [c.title.replace(/^Jump Right In: /, "JRI "), (r.disc > 1 ? "disc " + r.disc + ", " : "") + "track " + r.track, r.page && "p. " + r.page, r.dur && mmss(r.dur)].filter(Boolean).join(" · ");
         li.appendChild(el("span", "td-sub", sub));
+        li.appendChild(el("span", "wk-bars" + (r.timing ? " wk-bars-on" : ""), r.timing ? "bars marked" : "bars not marked"));
+        const tl = el("a", "td-sub", "⏱"); tl.title = "Open in Timestamp Notes"; tl.href = "/tools/timestamp-notes.html?rec=" + encodeURIComponent(r.id) + (r.tune ? "&tune=" + encodeURIComponent(r.tune[0]) : ""); li.appendChild(tl);
         if (c.note) li.title = c.note;
         rows.push({ el: li, text: fold(r.title + " " + sub + " " + c.title + " mlt " + (r.kind || "") + " " + (r.tonality || "") + " " + (r.meter || "") + " " + (r.key || "") + " " + (r.tune || []).join(" ")), group: g.d, music: NONE });
         g.ul.appendChild(li);

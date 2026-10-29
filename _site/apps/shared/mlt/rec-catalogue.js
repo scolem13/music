@@ -91,7 +91,9 @@
       tr.innerHTML =
         '<div class="rc-h"><button type="button" class="rc-play" title="Play">▶</button> <b>' + esc(r.title) + '</b> <span class="rc-dim">' +
         esc(col.title ? col.title.replace(/^Jump Right In: /, "JRI ") : r.col) + " · " + (r.disc > 1 ? "disc " + r.disc + ", " : "") + "track " + r.track + (r.dur ? " · " + mmss(r.dur) : "") + "</span>" +
-        ' <a class="rc-lnk" href="/tools/timestamp-notes.html?rec=' + encodeURIComponent(r.id) + '" title="Make or open its timing map in Timestamp Notes">⏱ ' + (r.timing ? "timing" : "time it") + "</a>" +
+        ' <span class="rc-bars' + (r.timing ? " on" : "") + '">' + (r.timing ? "bars marked" : "bars not marked") + "</span>" +
+        ' <a class="rc-lnk" href="/tools/timestamp-notes.html?rec=' + encodeURIComponent(r.id) + ((c.tune || []).length ? "&tune=" + encodeURIComponent(c.tune[0]) : "") + '" title="Open it in Timestamp Notes (with its bars when marked, and the notation when linked to a tune)">⏱ Timestamp Notes</a>' +
+        ' <a class="rc-lnk" href="/tools/mark-bars.html?rec=' + encodeURIComponent(r.id) + '" title="Mark its bars on a phone">📱 mark bars</a>' +
         ' <a class="rc-lnk" href="/practice/ear-grid.html?rec=' + encodeURIComponent(r.id) + '" title="A blank chord grid over the recording">▦ grid</a></div>' +
         '<div class="rc-fields rc-t">' + sel("rc-kind", Object.keys(R.KINDS), c.kind, R.KINDS, c.guess.indexOf("kind") >= 0) +
         sel("rc-ton", TONAL, c.tonality, null, c.guess.indexOf("tonality") >= 0) + sel("rc-met", METER, c.meter, null, c.guess.indexOf("meter") >= 0) +
@@ -171,6 +173,7 @@
     ".rc-dim{opacity:.7;font-size:.85em}.rc-lnk{font-size:.85em;margin-left:.4em;white-space:nowrap}" +
     ".rc-play{border:1px solid var(--bs-border-color,#ccc);background:none;color:inherit;border-radius:4px;width:1.9rem;padding:0}" +
     ".rc-fields{display:flex;flex-wrap:wrap;gap:.3rem;margin:.25rem 0}.rc-fields select,.rc-fields input{font-size:.85em}.rc-tune{min-width:14rem}.rc-note{min-width:10rem;flex:1}" +
+    ".rc-bars{font-size:.75em;padding:0 .4em;border-radius:3px;background:var(--bs-secondary-bg,#eee);opacity:.8;margin-left:.3em}.rc-bars.on{background:#d7efd9;color:#1d5426;opacity:1}" +
     ".rc-guess{font-style:italic;border-style:dashed}.rc-msg{font-weight:600}.rc-row audio{display:block;width:100%;max-width:28rem;height:2rem;margin-top:.2rem}" +
     "body.mlt-student .rc-t{display:none}";
   function init() {

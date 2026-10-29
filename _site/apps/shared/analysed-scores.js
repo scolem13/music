@@ -10,6 +10,8 @@
 // whose first cell gives the bars ("12–14", "Upbeat to 5–14"; or <tr data-bars="5-14" data-upbeat>), gets a ▶ in each row that lights and plays those bars in whichever tab's score is showing.
 // AnalysedScores.playBars(score, from, to, upbeat) does the same from other pages' links (?bars=7-9 on the address, too).
 // A score whose data-piece belongs to a work in apps/shared/works/works-data.js gets that work's Recordings & resources panel (Works).
+// When that work has a recording with a timing map (rec-sync.js; drafts only in the teacher's browser), a Sound menu appears and the
+// recording is the sound: ▶ plays it from the lit position, the current bar lit and kept in view.
 (function (global) {
   var KEY = "as-score-width", SUP = "⁰¹²³⁴⁵⁶⁷⁸⁹", SUB = "₀₁₂₃₄₅₆₇₈₉", NS = "http://www.w3.org/2000/svg";
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
@@ -31,6 +33,7 @@
     if (S.four) { S.tenorBtn = el("button", "btn btn-sm btn-outline-secondary as-tenor"); S.tenorBtn.type = "button"; bar.appendChild(S.tenorBtn);
       S.tenorBtn.addEventListener("click", function () { setting("as-tenor-up", !setting("as-tenor-up")); }); }
     view(S);
+    recChoice(S, bar);
     bar.appendChild(el("span", "as-help", "Space plays and pauses. Click a note or numeral to hear the chord there (hold, or Shift-click, to sustain)."));
     host.innerHTML = ""; host.appendChild(bar); S.strip = el("div", "as-keys"); host.appendChild(S.strip); box.appendChild(paper); box.appendChild(grip); host.appendChild(box);
     var w0 = store(); if (w0) box.style.width = w0 + "px";
@@ -103,6 +106,29 @@
     S.keys = ks.map(function (k, i) { return { ms: k[0] * msWhole, end: i + 1 < ks.length ? ks[i + 1][0] * msWhole : S.endMs, key: k[1] }; });
     keyStrip(S);
     S.spans = cs.filter(function (c) { return c[1]; }).map(function (c) { return { ms: c[0] * msWhole, pcs: c[1] }; }).sort(function (a, b) { return a.ms - b.ms; });
+    if (S.rec && S.rec.bars) S.rec.o.sync = global.RecSync.sync(S.events, S.rec.bars, { bar1: S.rec.f.bar1, pickup: !!S.pickMs });   // redrawn: new elements
+  }
+  // ---- the recording instead of the piano (rec-sync.js): a Works recording of this piece with a timing map
+  function recChoice(S, bar) {
+    var R = global.RecSync, piece = S.host.getAttribute("data-piece"); if (!R || !piece) return;
+    var found = R.find("analysed", piece); if (!found.length) return;
+    var sel = el("select", "form-select form-select-sm as-sound"); sel.style.cssText = "width:auto;display:inline-block";
+    sel.innerHTML = '<option value="">Sound: piano</option>' + found.map(function (f, i) { return '<option value="' + i + '">Sound: ' + f.label.replace(/</g, "&lt;") + (f.draft ? " (draft)" : "") + "</option>"; }).join("");
+    bar.appendChild(sel);
+    function use(i) {
+      if (S.playing) pause(S);
+      if (S.rec) { S.rec.player.pause(); S.rec.player.clear(); }
+      S.rec = null; if (i === "") return;
+      var f = found[+i];
+      R.load(f).then(function (bars) {
+        var o = { url: f.url, paper: S.paper, sync: R.sync(S.events, bars, { bar1: f.bar1, pickup: !!S.pickMs }),
+          onTick: function (ms) { S.pos = ms; keyNow(S, ms); }, onStop: function () { if (S.playing && S.playing.rec) { S.playing = null; S.btn.textContent = "▶ Play"; } } };
+        S.rec = { f: f, bars: bars, o: o, player: R.player(o) };
+      }).catch(function () { sel.value = ""; alert("The timing map for this recording could not be loaded."); });
+    }
+    sel.addEventListener("change", function () { use(sel.value); sel.blur(); });
+    // a recording is the sound by default once it has a timing map (the choice can go back to the piano)
+    sel.value = "0"; use("0");
   }
   function light(S, ms) {
     S.paper.querySelectorAll(".abc-on").forEach(function (n) { n.classList.remove("abc-on"); });
@@ -118,6 +144,11 @@
     stopHeld(); scores.forEach(function (o) { if (o !== S && o.playing) pause(o); });
     if (S.pos >= S.endMs - 1) S.pos = 0;
     if (!S.ranged) { S.stopAt = null; hiBars(S, 0, -1); } S.ranged = false;
+    if (S.rec) {                                                       // the recording, bar by bar
+      var rm = { rec: true }; S.playing = rm; S.btn.textContent = "❚❚ Pause"; light(S, -1);
+      S.rec.player.play(S.pos, S.stopAt).catch(function () { if (S.playing === rm) { S.playing = null; S.btn.textContent = "▶ Play"; } });
+      return;
+    }
     var from = S.pos, me = { raf: 0 }; S.playing = me; S.btn.textContent = "❚❚ Pause";
     bank().then(function (s) {
       if (S.playing !== me) return;
@@ -139,6 +170,7 @@
   }
   function pause(S) {
     var me = S.playing; S.playing = null; S.btn.textContent = "▶ Play";
+    if (me && me.rec) { if (S.rec) S.rec.player.pause(); return; }
     if (me) { cancelAnimationFrame(me.raf); if (me.s) me.s.bank.stopAll(); }
     var at = 0; S.events.forEach(function (e) { if (e.milliseconds <= S.pos + 1) at = e.milliseconds; }); S.pos = at; light(S, at);   // back to the lit chord
   }

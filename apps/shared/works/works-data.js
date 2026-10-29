@@ -8,6 +8,9 @@
 //           analysed: [{ piece: data-piece, page: "theory/analysed-scores/<page>" } …] },
 //     recordings: [ one of  yt: "<11-char video id or any YouTube URL>"  |  r2: "<path in the R2 bucket>"  |  url: "<any audio/video URL>",
 //                   plus optional performer, year, start / end (seconds or "m:ss"), note, who: "student" | "teacher",
+//                   draft: true (hidden from students: only the teacher's browser, ?teacher=1 once, shows it),
+//                   timing: "<Timestamp Notes song file URL>", bar1 (recording bar of the score's bar 1, default 1): the score plays the
+//                   recording instead of the synth, lighting each bar (rec-sync.js),
 //                   marks: [["m:ss", "note"] …] (audio only: a ⏱ button opens it in Timestamp Notes at start with these stamps) ],
 //     links: [ { type: "article" | "video" | "lesson" | "sheet" | "other", title, url, note, who } ]
 //   }
@@ -36,6 +39,7 @@ window.WORKS = {
         "start": "0:30",
         "end": "7:34",
         "note": "the whole sonata; the first movement is 0:30–7:34",
+        "draft": true,
         "marks": [["0:00", "Audience noise"], ["0:30", "Almost ready -- please mark measure 1"], ["7:34", "End of Mvt 1"]]
       }
     ],

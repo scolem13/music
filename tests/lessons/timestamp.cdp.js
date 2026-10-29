@@ -292,13 +292,13 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   await ev(`document.querySelector('button[data-view=cho]').click()`);
   check("ChordPro alone: one wide box", await ev(`getComputedStyle(document.querySelector('.btp-ug')).display`) === "none" && await ev(`document.querySelector('.btp-cho').getBoundingClientRect().width`) > 400);
   await ev(`document.querySelector('button[data-view=both]').click()`);
-  // the sidebar: every part listed; Fold all folds the player, the words being played and the log too; a click opens one
+  // the sidebar: every part listed; Hide all hides the player, the words being played and the log too; a click shows one
   check("the sidebar lists every part", await ev(`[...document.querySelectorAll('.ts-nav a')].map(a => a.textContent).join('|')`).then(x => /^Clock\|Player\|Chord grid\|Chord timing and MIDI\|Words and chords.*\|Now playing\|Timestamps$/.test(x)));
-  await ev(`document.querySelector('[data-all=fold]').click()`);
-  check("Fold all folds everything", await ev(`!document.querySelector('#ts-player').open && document.querySelector('#ts-now').classList.contains('is-shut') && document.querySelector('#ts-log').classList.contains('is-shut') && getComputedStyle(document.querySelector('#ts-now .ts-fold-body')).display === 'none'`));
+  await ev(`document.querySelector('[data-all=hide]').click()`);
+  check("Hide all hides everything", await ev(`['ts-player','ts-now','ts-log'].every(id => getComputedStyle(document.getElementById(id)).display === 'none')`));
   await ev(`document.querySelector('.ts-nav a[data-for=ts-log]').click()`);
-  check("a sidebar link opens its part", await ev(`!document.querySelector('#ts-log').classList.contains('is-shut') && !document.querySelector('#ts-player').open`));
-  await ev(`document.querySelector('[data-all=open]').click()`);
+  check("a sidebar link shows its part", await ev(`getComputedStyle(document.getElementById('ts-log')).display !== 'none' && getComputedStyle(document.getElementById('ts-player')).display === 'none'`));
+  await ev(`document.querySelector('[data-all=show]').click()`);
 
   // a .txt with a link: imported, the link is loaded too (followed in a tab when it was saved that way)
   await ev(`window.open = () => null; document.querySelector('.btp-paste-open').click(); document.querySelector('.btp-paste textarea').value = "# url: https://www.youtube.com/watch?v=J91ti_MpdHA (in a tab)\\n00:30\\tBridge"; document.querySelector('.btp-paste-go').click()`);

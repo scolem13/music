@@ -1,0 +1,73 @@
+---
+title: "Mark Bars"
+description: "Tap a recording's bars and sections on a phone. Saved in the browser as you go; send the marks by email or the share sheet at the end."
+toc: false
+page-layout: full
+---
+
+```{=html}
+<div class="mark-bars"></div>
+
+<p class="mb-foot">Marks are kept in this browser as you tap, so you can close the page and carry on later. <b>✉ Send</b> attaches
+them (the share sheet: Mail, Gmail, AirDrop, Files) or puts them in an email. Each file is a
+<a href="/tools/timestamp-notes.html">Timestamp Notes</a> song file: open it there to check it, or save it as
+<code>apps/shared/mlt/timings/&lt;name&gt;</code>. With a keyboard: <kbd>Space</kbd> play, <kbd>B</kbd> bar, <kbd>S</kbd> section,
+<kbd>←</kbd> <kbd>→</kbd> 5 seconds, <kbd>u</kbd> undo.</p>
+
+<style>
+:root { --mb-accent: #1f6feb; --mb-sec: #b0620e; }
+.mark-bars { max-width: 32rem; margin: 0 auto; padding: 0 .25rem 6rem; user-select: none; -webkit-user-select: none; }
+.mark-bars input { user-select: text; -webkit-user-select: text; }
+.mb-top input { width: 100%; font-size: 1rem; padding: .55rem .7rem; border: 1px solid var(--bs-border-color, #ccc); border-radius: 10px; background: var(--bs-body-bg, #fff); color: inherit; }
+.mb-title { font-weight: 700; font-size: 1.05rem; margin: .6rem 0 0; text-align: center; }
+.mb-clock { font: 700 clamp(2.6rem, 14vw, 4rem)/1.1 ui-monospace, "SF Mono", Menlo, monospace; font-variant-numeric: tabular-nums; text-align: center; margin: .2rem 0; }
+.mb-info { text-align: center; font-size: .95rem; opacity: .8; }
+.mb-msg { text-align: center; min-height: 1.4em; font-size: .9rem; margin: .2rem 0 .5rem; }
+.mark-bars button { font: inherit; color: inherit; border: 1px solid var(--bs-border-color, #ccc); background: var(--bs-tertiary-bg, #f3f4f6); border-radius: 14px; touch-action: manipulation; cursor: pointer; }
+.mb-transport, .mb-marks, .mb-row { display: grid; gap: .55rem; margin: .55rem 0; }
+.mb-transport { grid-template-columns: 1fr 1.4fr 1fr; }
+.mb-transport button { height: 4.2rem; font-size: 1.5rem; font-weight: 700; }
+.mb-play { background: var(--mb-accent) !important; color: #fff !important; border-color: var(--mb-accent) !important; font-size: 2rem !important; }
+.mb-marks { grid-template-columns: 2fr 1fr; }
+.mb-marks button { height: 7.5rem; font-size: 1.8rem; font-weight: 800; letter-spacing: .05em; }
+.mb-bar { background: #e8f0fe !important; border: 2px solid var(--mb-accent) !important; color: var(--mb-accent) !important; }
+.mb-sec { background: #fdf0e1 !important; border: 2px solid var(--mb-sec) !important; color: var(--mb-sec) !important; font-size: 1.15rem !important; }
+.mark-bars .mb-hit { transform: scale(.97); filter: brightness(.85); }
+.mb-row { grid-template-columns: repeat(3, 1fr); }
+.mb-row button { height: 3rem; font-size: 1rem; }
+.mb-labels { position: fixed; inset: auto 0 0 0; z-index: 1060; background: var(--bs-body-bg, #fff); border-top: 1px solid var(--bs-border-color, #ccc); box-shadow: 0 -8px 30px rgba(0,0,0,.2); padding: .8rem; border-radius: 16px 16px 0 0; }
+.mb-labels-h { font-weight: 700; margin-bottom: .5rem; }
+.mb-labels-l { display: grid; grid-template-columns: repeat(4, 1fr); gap: .4rem; }
+.mb-labels-l button { height: 3rem; font-size: 1rem; }
+.mb-labels .mb-row { grid-template-columns: 2fr 1fr 1fr; }
+.mb-labels input { font-size: 1rem; padding: .4rem; border-radius: 10px; border: 1px solid var(--bs-border-color, #ccc); background: var(--bs-body-bg, #fff); color: inherit; }
+.mb-sheet { position: fixed; inset: 35vh 0 0 0; z-index: 1055; background: var(--bs-body-bg, #fff); border-top: 1px solid var(--bs-border-color, #ccc); box-shadow: 0 -8px 30px rgba(0,0,0,.2); border-radius: 16px 16px 0 0; display: flex; flex-direction: column; }
+.mb-sheet[hidden] { display: none; }
+.mb-sheet-h { display: flex; justify-content: space-between; align-items: center; padding: .6rem .9rem .3rem; }
+.mb-close { width: 2.6rem; height: 2.6rem; font-size: 1.4rem; }
+.mb-strip { padding: 0 .9rem .5rem; }
+.mb-strip-in { position: relative; height: 1.8rem; background: var(--bs-tertiary-bg, #eef0f3); border-radius: 6px; overflow: hidden; }
+.mb-strip-in i { position: absolute; top: 25%; bottom: 25%; width: 1px; background: var(--mb-accent); }
+.mb-strip-in b { position: absolute; top: 0; bottom: 0; width: 3px; background: var(--mb-sec); }
+.mb-strip-in u { position: absolute; top: 0; bottom: 0; width: 2px; background: #d00; }
+.mb-l { list-style: none; margin: 0; padding: 0 .6rem 1rem; overflow-y: auto; flex: 1; }
+.mb-l li { display: flex; gap: .4rem; margin: .25rem 0; }
+.mb-go { flex: 1; text-align: left; padding: .55rem .7rem !important; border-radius: 10px !important; }
+.mb-go span { font-family: ui-monospace, Menlo, monospace; opacity: .8; margin-left: .4rem; } .mb-go em { opacity: .55; font-size: .85em; margin-left: .3rem; }
+.mb-li-sec .mb-go { border-color: var(--mb-sec) !important; color: var(--mb-sec); font-weight: 700; }
+.mb-li-now .mb-go { outline: 2px solid var(--mb-accent); }
+.mb-del { width: 2.8rem; font-size: 1.2rem; border-radius: 10px !important; }
+.mb-empty { opacity: .6; padding: .5rem; }
+.mb-more { margin: 1.2rem 0; font-size: .95rem; } .mb-more summary { cursor: pointer; font-weight: 600; }
+.mb-more label { display: block; margin: .5rem 0; } .mb-more input { font-size: 1rem; max-width: 100%; }
+.mb-saved ul { padding-left: 1rem; } .mb-saved li { margin: .3rem 0; } .mb-saved button { padding: .2rem .5rem; border-radius: 8px; }
+.mb-foot { max-width: 32rem; margin: 0 auto 2rem; font-size: .85rem; opacity: .75; }
+@media (prefers-color-scheme: dark) { .mb-bar { background: #10243f !important; } .mb-sec { background: #3a2410 !important; } }
+@media (max-width: 700px) { #quarto-margin-sidebar, .quarto-title-block .description { display: none; } }
+</style>
+<script src="/apps/shared/works/works-data.js?v=3"></script>
+<script src="/apps/shared/works/works.js?v=5"></script>
+<script src="/apps/shared/rec-sync.js?v=1"></script>
+<script src="/apps/shared/mlt/recordings.js?v=2"></script>
+<script src="/apps/shared/timestamp-player/mark-bars.js?v=1"></script>
+```

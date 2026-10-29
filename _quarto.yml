@@ -403,6 +403,7 @@ website:
         - section: "Learn from a recording"
           contents:
             - tools/timestamp-notes.qmd
+            - tools/mark-bars.qmd
             - tools/tap-along.qmd
             - tools/tap-latency.qmd
             - tools/chunk-practice.qmd
@@ -571,6 +572,7 @@ website:
           - text: "---"
           - text: "Learn from a recording"
           - tools/timestamp-notes.qmd
+          - tools/mark-bars.qmd
           - tools/tap-along.qmd
           - tools/tap-latency.qmd
           - tools/chunk-practice.qmd

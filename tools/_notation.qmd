@@ -2475,7 +2475,7 @@
     else if (e.key === "-") { editLast(function (m) { return m - 1; }); e.preventDefault(); }
   });
 
-  function undo() { if (!history.length) return; doc = D.upgrade(JSON.parse(history.pop())); cur = Math.min(cur, doc.chunks.length - 1); voice = Math.min(voice, doc.voices.length - 1); sel = null; shownCur = -1; save(); render(); }
+  function undo() { if (!history.length) { status("Nothing to undo."); return; } status("Undone (u again goes further back)."); doc = D.upgrade(JSON.parse(history.pop())); cur = Math.min(cur, doc.chunks.length - 1); voice = Math.min(voice, doc.voices.length - 1); sel = null; shownCur = -1; save(); render(); }
 
   // ---- DWIM: the selected bars of a take, read the other ways they could have been meant (apps/shared/NOTATION-DWIM.md) ----
   var dwimAt = null;                 // { ci, v, take }

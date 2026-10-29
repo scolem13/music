@@ -18,3 +18,5 @@
   by the site's rules (notation-doc.js `beam()`) and repeated accidentals dropped, each checked note for note against the
   original with AbcTune and abcjs; a theme sitting very high moved down an octave by a rule fitted on MTD's themes, `%%repaired
   octave`; tied-apart triplets not repaired: their barlines are wrong too), then `node scripts/import-themes.mjs --rough` -> `apps/themes/themes-rough-data.js`. Test: `node tests/lessons/classical-themes.cdp.js` (after rendering it).
+
+- Planned (`research_notes/recordings-to-scores-plan.md`): the teacher's theme-snippet recordings on the cards; the themes' original recordings (MTD's MusicBrainz release + track) found on YouTube as Works recordings starting at the theme; a lesson finding an IMSLP score, the recording and the theme (569 themes start past bar 1, `pdmx-matches.json`).

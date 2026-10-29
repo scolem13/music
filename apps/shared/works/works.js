@@ -88,7 +88,23 @@
     }
   }
 
-  function recRow(r) {
+  // a draft recording (r.draft) shows only in the teacher's browser (RecSync.teacher: opened once with ?teacher=1)
+  function isVisible(r) {
+    if (!r.draft) return true;
+    if (global.RecSync) return global.RecSync.teacher();
+    try { return localStorage.getItem("site-teacher") === "1"; } catch (e) { return false; }
+  }
+  function tuneOf(w) { return w && w.in && w.in.tune && w.in.tune[0] || null; }
+  // Timestamp Notes for a recording: a file at its start, with its timing map or its marks, and the work's tune for notation
+  function tsnUrl(r, w) {
+    var s = source(r), t = tuneOf(w), title = r.title || [w && w.title, [r.performer, r.year].filter(Boolean).join(", ")].filter(Boolean).join(" — ");
+    if (s.kind === "audio") return "/tools/timestamp-notes.html?media=" + encodeURIComponent(s.url) + "&at=" + Math.floor(s.start || 0) +
+      "&title=" + encodeURIComponent(title) + (r.marks ? "&marks=" + encodeURIComponent(JSON.stringify(r.marks)) : "") +
+      (r.timing ? "&timing=" + encodeURIComponent(r.timing) : "") + (t ? "&tune=" + encodeURIComponent(t) : "");
+    if (s.kind === "yt") return "/tools/timestamp-notes.html?v=" + encodeURIComponent("https://www.youtube.com/watch?v=" + s.id) + (t ? "&tune=" + encodeURIComponent(t) : "");
+    return null;
+  }
+  function recRow(r, w) {
     var s = source(r), li = el("li", "wk-rec");
     var line = el("div", "wk-line");
     if (s.kind === "yt" || s.kind === "audio") {
@@ -99,6 +115,8 @@
     } else line.appendChild(el("span", "wk-play wk-noplay", s.kind === "link" ? "↗" : "–"));
     var who = [r.performer, r.year].filter(Boolean).join(", ") || r.title || (s.kind === "yt" ? "YouTube recording" : "Recording");
     line.appendChild(el("span", "wk-who", who));
+    if (r.draft) line.appendChild(el("span", "rs-draft", "draft: hidden from students"));
+    if (r.timing) line.appendChild(el("span", "wk-meta", "the score plays it"));
     var bits = [];
     if (s.start || s.end) bits.push((s.start ? "from " + clock(s.start) : "") + (s.end ? (s.start ? " " : "") + "to " + clock(s.end) : ""));
     bits.push(s.kind === "yt" ? "YouTube" : r.r2 ? "site recording" : s.kind === "audio" ? "audio" : "");
@@ -108,11 +126,11 @@
     if (s.kind === "missing") line.appendChild(el("span", "wk-err", "(" + s.why + ")"));
     var u = openUrl(s);
     if (u) { var a = el("a", "wk-open", s.kind === "link" ? "open ↗" : "↗"); a.href = u; a.target = "_blank"; a.rel = "noopener"; a.title = "Open in a new tab"; line.appendChild(a); }
-    if (s.kind === "audio" && r.marks) {                              // open it in Timestamp Notes at start, with these stamps
-      var tn = el("a", "wk-open", "⏱ Timestamp Notes");
-      tn.href = "/tools/timestamp-notes.html?media=" + encodeURIComponent(s.url) + "&at=" + Math.floor(s.start || 0) +
-        "&title=" + encodeURIComponent(r.title || [r.performer, r.year].filter(Boolean).join(", ")) + "&marks=" + encodeURIComponent(JSON.stringify(r.marks));
-      tn.title = "Mark sections and bars on this recording in Timestamp Notes";
+    var tu = tsnUrl(r, w);
+    if (tu) {                                                         // bars marked or not, and Timestamp Notes for it
+      line.appendChild(el("span", "wk-bars " + (r.timing ? "wk-bars-on" : ""), r.timing ? "bars marked" : "bars not marked"));
+      var tn = el("a", "wk-open", "⏱ Timestamp Notes"); tn.href = tu;
+      tn.title = r.timing ? "Open it in Timestamp Notes with its bars" + (tuneOf(w) ? " and the notation" : "") : "Mark sections and bars on this recording in Timestamp Notes";
       line.appendChild(tn);
     }
     li.appendChild(line);
@@ -127,8 +145,8 @@
     head.appendChild(el("span", "wk-title", here ? "Recordings & resources" : w.title));
     head.appendChild(el("span", "wk-work", here ? w.title + (w.composer ? " · " + w.composer : "") : w.composer || ""));
     p.appendChild(head);
-    var recs = w.recordings || [];
-    if (recs.length) { var ol = el("ul", "wk-recs"); recs.forEach(function (r) { ol.appendChild(recRow(r)); }); p.appendChild(ol); }
+    var recs = (w.recordings || []).filter(isVisible);
+    if (recs.length) { var ol = el("ul", "wk-recs"); recs.forEach(function (r) { ol.appendChild(recRow(r, w)); }); p.appendChild(ol); }
     else p.appendChild(el("div", "wk-none", "No recordings yet."));
     var links = w.links || [];
     if (links.length) {
@@ -176,6 +194,8 @@
       line.appendChild(b);
       line.appendChild(el("span", null, r.title));
       line.appendChild(el("span", "wk-meta", [r.kind && R.KINDS[r.kind], r.key && "in " + r.key, (col.title || r.col).replace(/^Jump Right In: /, "JRI ")].filter(Boolean).join(" · ")));
+      line.appendChild(el("span", "wk-bars " + (r.timing ? "wk-bars-on" : ""), r.timing ? "bars marked" : "bars not marked"));
+      var tl = el("a", "wk-meta", "⏱ Timestamp Notes"); tl.href = "/tools/timestamp-notes.html?rec=" + encodeURIComponent(r.id) + "&tune=" + encodeURIComponent(id); line.appendChild(tl);
       var gl = el("a", "wk-meta", "▦ grid"); gl.href = "/practice/ear-grid.html?rec=" + encodeURIComponent(r.id); line.appendChild(gl);
       li.appendChild(line); li.appendChild(box); ul.appendChild(li);
     });
@@ -204,6 +224,7 @@
     ".wk-play{border:1px solid var(--bs-border-color,#ced4da);background:none;color:inherit;border-radius:4px;width:1.9rem;line-height:1.5;padding:0;text-align:center;cursor:pointer}" +
     ".wk-play:hover{border-color:var(--bs-primary,#0d6efd)}.wk-noplay{cursor:default;opacity:.6}" +
     ".wk-meta,.wk-type{opacity:.65;font-size:.8rem}.wk-type{margin-right:.4rem}.wk-note{font-style:italic;opacity:.85}" +
+    ".wk-bars{font-size:.75rem;padding:0 .4em;border-radius:3px;background:var(--bs-secondary-bg,#eee);opacity:.8}.wk-bars-on{background:#d7efd9;color:#1d5426;opacity:1}" +
     ".wk-err{color:var(--bs-danger,#b02a37);font-size:.8rem}.wk-open{text-decoration:none}" +
     ".wk-player{margin:.35rem 0 .2rem 2.4rem;max-width:560px}.wk-yt{width:100%;aspect-ratio:16/9;border:0;border-radius:4px}.wk-audio{width:100%}" +
     ".wk-links li{padding:.1rem 0}.wk-links .wk-note,.wk-links .wk-meta{margin-left:.5rem}" +
@@ -213,5 +234,5 @@
   (document.head || document.documentElement).appendChild(css);
 
   global.Works = { of: of, get: get, ids: function () { return Object.keys(W); }, all: function () { return W; }, source: source, href: href, kindLabel: KIND,
-    mount: mount, panel: panel, mltPart: mltPart, stop: stop, config: CFG, reindex: function () { W = global.WORKS || {}; build(); } };
+    mount: mount, panel: panel, mltPart: mltPart, tsnUrl: tsnUrl, stop: stop, config: CFG, reindex: function () { W = global.WORKS || {}; build(); } };
 })(window);

@@ -551,9 +551,9 @@
         phrases: p.phrases ? p.phrases.state() : null
       }, null, 1);
     }
-    function openSong(data) {
+    function openSong(data, quiet) {
       var any = stamps().length || (parts().map && parts().map.bars());
-      if (any && !confirm('Open ' + (data.title ? '\u201C' + data.title + '\u201D' : 'this song file') + '? It replaces what is on the page.')) return;
+      if (any && !quiet && !confirm('Open ' + (data.title ? '\u201C' + data.title + '\u201D' : 'this song file') + '? It replaces what is on the page.')) return;
       var p = parts(), a = api(), loaded = '';
       if (data.words && p.words) p.words.load(data.words);
       rows.innerHTML = '';
@@ -566,8 +566,28 @@
       else if (src && src.rec && !(cur && cur.rec === src.rec)) loaded = openRec(src.rec) ? ' Loaded the recording.' : '';
       else if (src && src.url && !(cur && cur.url === src.url) && a.open && a.open(src.url, src.follow)) loaded = ' Loaded the video.';
       else if (src && src.file && !(cur && cur.file === src.file)) loaded = ' Load ' + src.file + ' to play along.';
-      say('Opened ' + (data.title || 'the song file') + '.' + loaded);
+      if (!quiet) say('Opened ' + (data.title || 'the song file') + '.' + loaded);
     }
+
+    // ---- undo (u): the whole song (stamps, bars, words, chord timing, chunks) as it was before the last change ----
+    // Snapshots of the song file, taken whenever it has changed (checked twice a second); u puts the one before back.
+    var undoStack = [], lastState = null;
+    function stateNow() { var d = JSON.parse(songFile()); delete d.saved; return JSON.stringify(d); }
+    setInterval(function () {
+      var st; try { st = stateNow(); } catch (e) { return; }
+      if (lastState === null) { lastState = st; return; }
+      if (st !== lastState) { undoStack.push(lastState); if (undoStack.length > 100) undoStack.shift(); lastState = st; }
+    }, 500);
+    function undo() {
+      var st = stateNow(), back;
+      if (lastState !== null && st !== lastState) back = lastState;      // a change not yet kept: back to before it
+      else back = undoStack.pop();
+      if (!back) { say('Nothing to undo.'); return; }
+      openSong(JSON.parse(back), true);
+      lastState = stateNow();
+      say('Undone (u again goes further back).');
+    }
+    log._btpUndo = undo;
     // ---- a recording in the MLT / JRI collection (apps/shared/mlt/recordings.js): ?rec=<id> opens it with its timing map ----
     function openRec(id) {
       var R = window.MLTRecordings, r = R && R.byId(id), a = api();
@@ -577,7 +597,8 @@
       var box = document.querySelector('.btp-title'); if (box && !box.value) box.value = r.title;
       return true;
     }
-    // ?media=<audio url>&at=<s>&title=…&marks=[["m:ss","note"]…]: a recording from a Works entry (works.js), its marks as stamps
+    // ?media=<audio url>&at=<s>&title=…&marks=[["m:ss","note"]…]&timing=<song file>&tune=<id>: a recording from a Works entry
+    // (works.js): its timing map when it has one, else its marks as stamps; ?tune= shows the notation (tsn-notation.js)
     setTimeout(function mediaFromUrl() {                 // after the page has put back its saved stamps
       var q = new URLSearchParams(location.search), url = q.get('media');
       if (!url) return;
@@ -587,6 +608,18 @@
       var src = { media: url, title: q.get('title') || '' };
       var cur = a && a.source && a.source();
       if (cur && cur.media === url && stamps().length) { if (at) a.seek(at); return; }   // came back to the same recording: keep the work
+      var timing = q.get('timing');                       // its timing map (a song file): opened instead of the marks
+      if (timing) {
+        fetch(timing, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) {
+          if (!d) { say('Its timing map could not be loaded.'); return; }
+          d.source = src; if (!d.title) d.title = src.title;
+          openSong(d, true);
+          var box2 = document.querySelector('.btp-title'); if (box2 && !box2.value) box2.value = src.title;
+          if (at && a) setTimeout(function () { a.seek(at); }, 300);
+          say('Opened ' + (src.title || 'the recording') + ' with its bars.');
+        });
+        return;
+      }
       openSong({ app: 'timestamp-notes', version: 1, title: src.title, source: src,
         stamps: marks.map(function (m) { var s = secs(m[0]); return { t: a && a.format ? a.format(s) : m[0], s: s, n: m[1] }; }) });
       var box = document.querySelector('.btp-title'); if (box && src.title) box.value = src.title;
@@ -780,6 +813,7 @@
         return;
       }
       if (typing) return;
+      if (e.key === 'u') { undo(); e.preventDefault(); return; }
       // C is a letter while a note is being typed, and a stamp otherwise.
       if (e.key === 'c' || e.key === 'C') {
         stamp();

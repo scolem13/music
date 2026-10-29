@@ -22,6 +22,16 @@ toc-depth: 2
 <div id="td-status">Loading the collections…</div>
 ```
 
+## At a glance {#td-sheet}
+
+```{=html}
+<p class="td-note">Everything in one table: every tune, classical theme, piece, and MLT / JRI recording not linked to a tune. Type in the
+box under a column to filter it (in Recordings and Bars marked: <code>&gt;0</code>, <code>0</code>, <code>2</code>); click a column name
+to sort. <b>Bars marked</b> counts recordings with a timing map; ⏱ opens one in Timestamp Notes. The lists below are the same
+collections, grouped.</p>
+<div id="td-sheet-box"></div>
+```
+
 ## Pieces with recordings and resources {#td-works}
 
 ```{=html}
@@ -89,6 +99,17 @@ YouTube and paste the link there.</p>
 .td-music { margin: 0 0 1rem; border: 1px solid var(--bs-border-color, #dee2e6); border-radius: 6px; padding: .4rem .7rem; }
 .td-music > summary { cursor: pointer; font-weight: 600; }
 .td-music #td-picker > .tl-search:first-child, .td-music .tl-sort { display: none; }
+.tds-quick { display: flex; flex-wrap: wrap; gap: .3rem 1rem; align-items: center; font-size: .9rem; margin: .3rem 0 .5rem; }
+.tds-n { font-size: .85rem; opacity: .75; }
+.tds-wrap { max-height: 75vh; overflow: auto; border: 1px solid var(--bs-border-color, #dee2e6); border-radius: 6px; }
+.tds { width: 100%; border-collapse: collapse; font-size: .85rem; }
+.tds th, .tds td { padding: .2rem .45rem; border-bottom: 1px solid var(--bs-border-color, #eee); text-align: left; vertical-align: top; }
+.tds thead th { position: sticky; top: 0; background: var(--bs-body-bg, #fff); z-index: 1; }
+.tds thead tr.tds-f th { top: 1.9rem; }
+.tds th[data-k] { cursor: pointer; white-space: nowrap; }
+.tds-f input, .tds-f select { width: 100%; min-width: 3rem; font-size: .8rem; padding: .1rem .25rem; }
+.tds-c { text-align: center !important; } .tds-dim { opacity: .7; }
+.tds tbody tr:hover { background: var(--bs-tertiary-bg, #f6f8fb); }
 @media (max-width: 600px) { .td-list { columns: 1; padding-left: .3rem; } }
 </style>
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
@@ -102,10 +123,11 @@ YouTube and paste the link there.</p>
 <script src="/apps/shared/tune-library.js?v=20"></script>
 <script src="/apps/tunes/tunes-object.js"></script>
 <script src="/apps/themes/themes-data.js?v=3"></script>
-<script src="/apps/shared/works/works-data.js?v=2"></script>
-<script src="/apps/shared/works/works.js?v=3"></script>
+<script src="/apps/shared/works/works-data.js?v=3"></script>
+<script src="/apps/shared/works/works.js?v=5"></script>
 <script src="/apps/shared/mlt/recordings.js?v=2"></script>
-<script src="/apps/shared/works/tune-directory.js?v=5"></script>
+<script src="/apps/shared/works/tune-directory.js?v=7"></script>
+<script src="/apps/shared/works/td-sheet.js?v=1"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
 ```
 

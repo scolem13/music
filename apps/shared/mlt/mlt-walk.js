@@ -441,7 +441,9 @@
   function recLi(r, note) {
     var R = global.MLTRecordings, col = R.collections.filter(function (c) { return c.id === r.col; })[0] || {};
     var li = el("li", null, "<b>" + esc(r.title) + "</b> <span class=\"mlt-dim\">" + fmtDur(r.dur) + (r.kind && R.KINDS ? " · " + esc(R.KINDS[r.kind]) : "") + (r.key ? " · in " + esc(r.key) : "") + "</span>" +
-      (note ? " " + esc(note) : "") + ' <a class="mlt-dim" href="/practice/ear-grid.html?rec=' + encodeURIComponent(r.id) + '" title="Chord grid by ear">\u25A6 grid</a>' +
+      (note ? " " + esc(note) : "") + ' <span class="mlt-bars' + (r.timing ? " on" : "") + '">' + (r.timing ? "bars marked" : "bars not marked") + "</span>" +
+      ' <a class="mlt-dim mlt-t" href="/tools/timestamp-notes.html?rec=' + encodeURIComponent(r.id) + (r.tune ? "&tune=" + encodeURIComponent(r.tune[0]) : "") + '" title="Open it in Timestamp Notes">\u23F1 Timestamp Notes</a>' +
+      ' <a class="mlt-dim" href="/practice/ear-grid.html?rec=' + encodeURIComponent(r.id) + '" title="Chord grid by ear">\u25A6 grid</a>' +
       ' <span class="mlt-dim mlt-t">(' + esc(col.title || r.col) + ", track " + r.track + ")</span>" + (col.note ? ' <span class="mlt-dim mlt-t">' + esc(col.note) + ".</span>" : ""));
     var url = R.url(r);
     if (url) { var a = el("audio"); a.controls = true; a.preload = "none"; a.src = url; a.style.cssText = "display:block;width:100%;max-width:28rem;height:2rem"; li.appendChild(a); }
@@ -527,7 +529,7 @@
     ".mlt-ctl{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin:.4rem 0}.mlt-ctl button{padding:.25rem .7rem}.mlt-msg{min-height:1.5em;font-weight:600}" +
     ".mlt-act{border:1px solid var(--bs-border-color,#ddd);border-radius:8px;padding:.5rem .8rem;margin:.5rem 0}.mlt-act-h{margin-bottom:.2rem}.mlt-act-s{font-style:italic;margin:.2rem 0}" +
     ".mlt-tag{display:inline-block;font-size:.72em;padding:0 .45em;margin-left:.25em;border-radius:3px;background:var(--bs-secondary-bg,#eee)}.mlt-refs{margin-top:.25rem}" +
-    ".mlt-sax-row{display:flex;flex-wrap:wrap;gap:.6rem;margin:.3rem 0 .8rem}.mlt-sax-card{width:6.5rem;text-align:center;border:1px solid var(--bs-border-color,#ddd);border-radius:6px;padding:.3rem}.mlt-sax-card svg{width:4.2rem;height:auto}.mlt-tunes{columns:2;max-width:44rem}.mlt-rote,.mlt-recbtn{font-size:.8em;padding:0 .4em;margin-left:.3em}@media (max-width:600px){.mlt-tunes{columns:1}}";
+    ".mlt-sax-row{display:flex;flex-wrap:wrap;gap:.6rem;margin:.3rem 0 .8rem}.mlt-sax-card{width:6.5rem;text-align:center;border:1px solid var(--bs-border-color,#ddd);border-radius:6px;padding:.3rem}.mlt-sax-card svg{width:4.2rem;height:auto}.mlt-tunes{columns:2;max-width:44rem}.mlt-bars{font-size:.72em;padding:0 .4em;border-radius:3px;background:var(--bs-secondary-bg,#eee);opacity:.8}.mlt-bars.on{background:#d7efd9;color:#1d5426;opacity:1}.mlt-rote,.mlt-recbtn{font-size:.8em;padding:0 .4em;margin-left:.3em}@media (max-width:600px){.mlt-tunes{columns:1}}";
 
   function init() {
     var st = el("style"); st.textContent = CSS; document.head.appendChild(st);

@@ -36,7 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../tools/tap-along.html" rel="next">
+<link href="../tools/mark-bars.html" rel="next">
 <link href="../tools/notation-rules.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -431,6 +431,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
  <span class="dropdown-text">Timestamp Notes</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../tools/mark-bars.html">
+ <span class="dropdown-text">Mark Bars</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../tools/tap-along.html">
  <span class="dropdown-text">Tap Along</span></a>
   </li>  
@@ -716,6 +720,12 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
   <div class="sidebar-item-container"> 
   <a href="../tools/timestamp-notes.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Timestamp Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tools/mark-bars.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mark Bars</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1120,18 +1130,20 @@ document.addEventListener('DOMContentLoaded', async function () {
 .btp-howto { margin: .25rem 0 0; font-size: .95rem; color: #6c757d; }
 /* the whole width, as the Backing Track has it */
 .ts-root { max-width: 1500px; margin: 0 auto; padding: 0 1rem; }
+/* hidden parts leave the page (page-nav.js); the × in each header hides, the list on the right shows */
+.ts-panel.ts-hidden { display: none !important; }
+.ts-hide { margin-left: auto; border: 0; background: none; color: #6c757d; font-size: 1.2rem; line-height: 1; padding: 0 .3rem; cursor: pointer; }
+.ts-hide:hover { color: #b02a37; }
+.ts-panel > summary, .ts-panel > .ts-fold-h { display: flex; align-items: center; gap: .5rem; cursor: default; }
+.ts-panel > summary { list-style: none; } .ts-panel > summary::-webkit-details-marker { display: none; }
+.ts-nav li { display: flex; align-items: center; }
+.ts-nav li a { flex: 1; }
+.ts-eye { border: 0; background: none; color: #6c757d; padding: 0 .35rem; cursor: pointer; font-size: .9rem; }
+.ts-eye:hover { color: inherit; }
+.ts-help { margin: 2rem 0 1rem; border: 1px solid #dee2e6; border-radius: .4rem; padding: .4rem .8rem; }
+.ts-help > summary { cursor: pointer; font-weight: 600; }
+.ts-i { display: inline-block; width: 1.2em; height: 1.2em; line-height: 1.15em; text-align: center; border: 1.5px solid currentColor; border-radius: 50%; font-family: Georgia, serif; font-style: italic; font-size: .9em; margin-right: .3em; }
 </style>
-
-<ol class="btp-steps">
-  <li><b>Audio</b>: a YouTube link or a file.</li>
-  <li><b>Words and chords</b>: paste them from Ultimate Guitar and Convert — or open a SALAMI chords file (McGill Billboard <code>salami_chords.txt</code>) with <b>Open file</b> or <b>Paste…</b> in Timestamps: its sections, bars and chords come in already timed.</li>
-  <li><b>Sections, bars, chords</b>: <kbd>S</kbd> as each section starts, <kbd>B</kbd> on every downbeat, <kbd>N</kbd> on every chord change
-      — or all three at once from a MIDI keyboard.</li>
-  <li><b>Send on</b>: to the Notation page for the melody, or the Backing Track for a style.</li>
-</ol>
-
-<p class="btp-howto">Every part folds; drag its ⠿ grip, or click ⇄, to move it to the other column.</p>
-<p class="btp-howto">New here? <a href="../lessons/timestamp-player.html">How to map a recording</a>, step by step, including what to do when YouTube won't play a video.</p>
 
 <div class="btp-layout">
 
@@ -1140,6 +1152,12 @@ document.addEventListener('DOMContentLoaded', async function () {
 <details class="btp-fold ts-panel" id="ts-clock" data-nav="Clock" open="">
 <summary><h2 class="anchored">Clock</h2><button type="button" class="ts-clock-float" title="Float it over the page, to drag anywhere">Float</button></summary>
 <div class="ts-bigclock"></div>
+</details>
+
+<details class="btp-fold ts-panel" id="ts-notation" data-nav="Notation" open="">
+<summary><h2 class="anchored">Notation</h2></summary>
+<p class="ts-nt-note btp-log-note" data-help-eye="off"></p>
+<div class="ts-nt-paper" style="max-height:60vh;overflow:auto"></div>
 </details>
 
 <details class="btp-fold ts-panel" id="ts-player" data-nav="Player" open="">
@@ -1381,7 +1399,7 @@ Here comes the sun"></textarea>
   </div>
   <p>On this page</p>
   <ul></ul>
-  <div class="ts-all"><button type="button" data-all="open">Open all</button><button type="button" data-all="fold">Fold all</button></div>
+  <div class="ts-all"><button type="button" data-all="show">Show all</button><button type="button" data-all="hide">Hide all</button></div>
   <div class="ts-all"><button type="button" class="ts-reset-cols" title="Every part back in the column it started in">Reset columns</button></div>
   <div class="ts-clock" aria-live="off" title="Where the playhead is">
     <span class="ts-clock-t">00:00.0</span>
@@ -1391,13 +1409,28 @@ Here comes the sun"></textarea>
 
 </div>
 
+<details class="ts-help" data-help-eye="off">
+<summary><span class="ts-i" aria-hidden="true">i</span> How this page works</summary>
+<ol class="btp-steps">
+  <li><b>Audio</b>: a YouTube link or a file.</li>
+  <li><b>Words and chords</b>: paste them from Ultimate Guitar and Convert — or open a SALAMI chords file (McGill Billboard <code>salami_chords.txt</code>) with <b>Open file</b> or <b>Paste…</b> in Timestamps: its sections, bars and chords come in already timed.</li>
+  <li><b>Sections, bars, chords</b>: <kbd>S</kbd> as each section starts, <kbd>B</kbd> on every downbeat, <kbd>N</kbd> on every chord change
+      — or all three at once from a MIDI keyboard.</li>
+  <li><b>Send on</b>: to the Notation page for the melody, or the Backing Track for a style.</li>
+</ol>
+
+<p class="btp-howto">Each part can be hidden with its ×; the list on the right shows it again (Shift+click a name: only that part). Drag a part's ⠿ grip, or click ⇄, to move it to the other column. <kbd>u</kbd> undoes the last change (a deleted stamp, cleared bars, anything); press it again to go further back.</p>
+<p class="btp-howto">New here? <a href="../lessons/timestamp-player.html">How to map a recording</a>, step by step, including what to do when YouTube won't play a video.</p>
+
+</details>
+
 <script src="../apps/shared/panel-columns.js?v=1"></script>
 <script src="../apps/shared/timestamp-player/player.js?v=10"></script>
 <script src="../apps/shared/timestamp-player/clock-panel.js?v=1"></script>
 <script src="../apps/shared/timestamp-player/time-edit.js?v=1"></script>
 <script src="../apps/shared/timestamp-player/section-labels.js?v=1"></script>
 <script src="../apps/shared/mlt/recordings.js?v=2"></script>
-<script src="../apps/shared/timestamp-player/player-log.js?v=18"></script>
+<script src="../apps/shared/timestamp-player/player-log.js?v=19"></script>
 <script src="../apps/shared/timestamp-player/bar-map.js?v=18"></script>
 <script src="../apps/shared/abc-core.js?v=3"></script>
 <script src="../apps/shared/abc-events.js?v=4"></script>
@@ -1408,7 +1441,10 @@ Here comes the sun"></textarea>
 <script src="../apps/shared/chord-entry.js?v=11"></script>
 <script src="../apps/shared/timestamp-player/live.js?v=20"></script>
 <script src="../apps/shared/timestamp-player/phrases.js?v=8"></script>
-<script src="../apps/shared/timestamp-player/page-nav.js?v=3"></script>
+<script src="../apps/shared/abcjs-basic.js?v=3"></script>
+<script src="../apps/shared/rec-sync.js?v=1"></script>
+<script src="../apps/shared/timestamp-player/tsn-notation.js?v=1"></script>
+<script src="../apps/shared/timestamp-player/page-nav.js?v=4"></script>
 <script src="../apps/shared/timestamp-player/chordpro-timing.js?v=1"></script>
 <script src="../apps/shared/timestamp-player/salami-chords.js?v=4"></script>
 </div>
@@ -1921,8 +1957,8 @@ Here comes the sun"></textarea>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../tools/tap-along.html" class="pagination-link" aria-label="Tap Along">
-        <span class="nav-page-text">Tap Along</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../tools/mark-bars.html" class="pagination-link" aria-label="Mark Bars">
+        <span class="nav-page-text">Mark Bars</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

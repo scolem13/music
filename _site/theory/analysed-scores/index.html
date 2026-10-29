@@ -82,7 +82,10 @@ ul.task-list li input[type="checkbox"] {
   // THE SWITCH for the "bah" / solfege singing voice (rhythm-chant.js, solfege-sing.js and their buttons): true = hidden everywhere, false = as before.
   window.VOICE_HIDDEN = true;
   // MLT book recordings (apps/shared/mlt/recordings.js): the R2 bucket's public address, served by worker/index.js to logged-in browsers. Empty = players hidden.
-  window.MLT_REC_BASE = "https://media.seancoleman.org";
+  // On the site itself the same files come from /media/ (same origin, so the login cookie always goes with them; worker/index.js).
+  window.MLT_REC_BASE = /(^|\.)seancoleman\.org$/.test(location.hostname) ? location.origin + "/media" : "https://media.seancoleman.org";
+  // Works recordings with an r2 path (apps/shared/works/works-data.js) come from the same bucket, under works/.
+  window.WORKS_CONFIG = Object.assign({ r2Base: window.MLT_REC_BASE }, window.WORKS_CONFIG || {});
 </script>
 <script>
   // One shared Supabase client for the whole site. The auth widget and the
@@ -251,6 +254,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
  <span class="dropdown-text">Hearing Harmony</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../practice/ear-grid.html">
+ <span class="dropdown-text">Chord Grid by Ear</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../practice/bass-ear.html">
  <span class="dropdown-text">Bass Lines by Ear</span></a>
   </li>  
@@ -322,6 +329,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../../mlt/lesson-builder.html">
  <span class="dropdown-text">MLT Lesson Planner</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../mlt/recordings.html">
+ <span class="dropdown-text">Recordings Catalogue</span></a>
   </li>  
     </ul>
   </li>
@@ -419,6 +430,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../../tools/timestamp-notes.html">
  <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/mark-bars.html">
+ <span class="dropdown-text">Mark Bars</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../tools/tap-along.html">
@@ -940,9 +955,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../../apps/shared/soundfont.js"></script>
 <script src="../../apps/shared/abcjs-basic.js?v=3"></script>
 <script src="../../apps/shared/abc-play.js?v=13"></script>
-<script src="../../apps/shared/works/works-data.js?v=1"></script>
-<script src="../../apps/shared/works/works.js?v=1"></script>
-<script src="../../apps/shared/analysed-scores.js?v=11"></script>
+<script src="../../apps/shared/works/works-data.js?v=3"></script>
+<script src="../../apps/shared/works/works.js?v=5"></script>
+<script src="../../apps/shared/rec-sync.js?v=1"></script>
+<script src="../../apps/shared/analysed-scores.js?v=12"></script>
 <script src="../../apps/shared/section-fold.js?v=1"></script>
 <style>
 @font-face { font-family: "Bar Numbers Mono"; src: url(../../apps/shared/fonts/BarNumbers-SourceSerif4-200.ttf) format("truetype"); font-display: swap; }
