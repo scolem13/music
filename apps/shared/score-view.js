@@ -10,7 +10,8 @@
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function get(f) { return fetch(BASE + f + ".json?v=" + V).then(function (r) { if (!r.ok) throw new Error(f + ": " + r.status); return r.json(); }); }
   var FIG = { "65": "⁶₅", "43": "⁴₃", "42": "⁴₂", "64": "⁶₄", "6": "⁶", "7": "⁷" };
-  function pretty(t) {   // a RomanText token as the score writes it (V65 -> V⁶₅, viio -> vii°, F#: -> F♯:)
+  function pretty(t) {
+    t = t.replace(/(\d)\/(\d)/g, "$1$2");   // V6/5 -> V65 (some analyses write figures with a slash)   // a RomanText token as the score writes it (V65 -> V⁶₅, viio -> vii°, F#: -> F♯:)
     if (/:$/.test(t)) return t.replace(/^([A-Ga-g])#/, "$1♯").replace(/^([A-Ga-g])-/, "$1♭").replace(/^([A-Ga-g])b/, "$1♭");
     return t.replace(/\/o/g, "ø").replace(/o(?=\d|\/|$)/g, "°").replace(/^([^/]*?)(65|43|42|64|6|7)(?=\/|$)/, function (m, a, f) { return a + FIG[f]; });
   }

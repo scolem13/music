@@ -313,9 +313,9 @@ h2.panel-jump {
 }
 
 
-/* The navbar's sidebar toggle (sidebar-toggle.html). When the sidebar is
-   folded away the left-hand columns collapse, so the body takes the room;
-   the right-hand margin -- the Sections list -- keeps its place. */
+/* Sidebars (sidebar-toggle.html). Each side folds away from its own navbar button (remembered), and a side with nothing
+   in it is not shown (body.no-left-sidebar / body.no-right-sidebar). The page body takes the freed room: one grid for
+   each case, the column names Quarto's own (the left sidebar spans screen-start..body-start, the right body-end..page-end). */
 .sidebar-toggle {
   display: none;
   margin-right: .75rem;
@@ -328,7 +328,9 @@ h2.panel-jump {
   border-radius: .25rem;
   cursor: pointer;
 }
+.sidebar-toggle-right { margin-right: 0; margin-left: .75rem; align-self: center; }
 .sidebar-toggle:hover { color: var(--bs-navbar-hover-color); }
+.sidebar-toggle[hidden] { display: none !important; }
 
 /* Navbar tabs: only the page you are on is blue (nav-current.html marks it);
    Quarto's own .active also lights up a parent tab, so it is quietened. */
@@ -336,8 +338,10 @@ h2.panel-jump {
 #quarto-header .navbar-nav .nav-link.nav-current { color: var(--bs-navbar-active-color); }
 @media (min-width: 992px) {
   .sidebar-toggle { display: inline-block; }
-  body.sidebar-hidden #quarto-sidebar { display: none !important; }
-  body.sidebar-hidden #quarto-content.page-columns {
+  body:is(.sidebar-hidden, .no-left-sidebar) #quarto-sidebar { display: none !important; }
+  body:is(.margin-hidden, .no-right-sidebar) #quarto-margin-sidebar { display: none !important; }
+  /* left folded, right shown */
+  body:is(.sidebar-hidden, .no-left-sidebar):not(.margin-hidden):not(.no-right-sidebar) #quarto-content.page-columns {
     grid-template-columns:
       [screen-start] 1.5em
       [screen-start-inset page-start page-start-inset body-start-outset body-start body-content-start] minmax(0, 1fr)
@@ -347,7 +351,20 @@ h2.panel-jump {
       [page-end-inset] 1.5em
       [page-end screen-end-inset] 1.5em [screen-end];
   }
-  body.sidebar-hidden.fullcontent #quarto-content.page-columns {
+  /* left shown, right folded */
+  body:is(.margin-hidden, .no-right-sidebar):not(.sidebar-hidden):not(.no-left-sidebar) #quarto-content.page-columns {
+    grid-template-columns:
+      [screen-start] 1.5em
+      [screen-start-inset page-start] minmax(50px, 100px)
+      [page-start-inset] 50px
+      [body-start-outset] 50px
+      [body-start] 1.5em
+      [body-content-start] minmax(0, 1fr)
+      [body-content-end] 1.5em
+      [body-end body-end-outset page-end-inset page-end screen-end-inset] 1.5em [screen-end];
+  }
+  /* both folded */
+  body:is(.sidebar-hidden, .no-left-sidebar):is(.margin-hidden, .no-right-sidebar) #quarto-content.page-columns {
     grid-template-columns:
       [screen-start] 1.5em
       [screen-start-inset page-start page-start-inset body-start-outset body-start body-content-start] minmax(0, 1fr)

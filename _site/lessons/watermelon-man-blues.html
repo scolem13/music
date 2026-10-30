@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0c7587e6f6df4385ac2d543e81c42bfa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b064d190078fcbe610621d06cc9250ae.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,6 +106,8 @@ ul.task-list li input[type="checkbox"] {
 <style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
 <!-- Click the number shown beside any slider to type a value. -->
 <script src="../apps/shared/num-edit.js?v=1"></script>
+<!-- Figures like I⁶₄ / Cad⁶₄ in page text drawn stacked (6 over 4); SVG scores are left to their own code -->
+<script src="../apps/shared/fig-stack.js?v=1"></script>
 <!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text (crisp staff lines are opt-in: html.abc-crisp). -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap">
 <style>
@@ -2198,53 +2200,64 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../apps/shared/degree-caret.js?v=2"></script>
 <script src="../apps/shared/circle-of-fifths.js?v=2"></script>
 <script src="../apps/shared/practice-widgets.js?v=10"></script>
-<!-- A button at the left of the navbar that folds the docked sidebar away on
-     every page, and remembers the choice. Below 992px Quarto already tucks the
-     sidebar behind its own toggle, so the button is hidden there. -->
+<!-- Both sidebars fold away, each from its own button in the navbar, and each choice is remembered:
+     the left (site menu) from a button at the navbar's left, the right ("On this page" and page tools) from one at its right.
+     A sidebar with nothing in it is not shown at all and gets no button: the left when the page is in no sidebar section,
+     the right when it has no section list and no tool has put anything there (scripts that add to it later, the score
+     page's spacing slider or the My report box, bring it back: it is watched). The page body takes the freed room; the
+     grids for each case are in custom.css ("Sidebars"). Below 992px Quarto already tucks both away itself, so the buttons hide. -->
 <script>
 (function () {
   "use strict";
+  var SIDES = {
+    left: { key: "site-nav", cls: "sidebar-hidden", empty: "no-left-sidebar", id: "quarto-sidebar", icon: "bi-layout-sidebar", name: "menu" },
+    right: { key: "site-margin", cls: "margin-hidden", empty: "no-right-sidebar", id: "quarto-margin-sidebar", icon: "bi-layout-sidebar-reverse", name: "side panel" }
+  };
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
 
-  var KEY = 'site-nav';
-
-  function boot() {
-    var bar = document.querySelector('#quarto-header .navbar-container');
-    if (!bar || !document.getElementById('quarto-sidebar')) return;
-
-    var button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'sidebar-toggle';
-    var icon = document.createElement('i');
-    icon.className = 'bi bi-layout-sidebar';
-    button.appendChild(icon);
-    bar.insertBefore(button, bar.firstChild);
-
-    function set(hidden) {
-      document.body.classList.toggle('sidebar-hidden', hidden);
-      var label = hidden ? 'Show menu' : 'Hide menu';
-      button.title = label;
-      button.setAttribute('aria-label', label);
-      button.setAttribute('aria-expanded', String(!hidden));
-    }
-
-    try { set(localStorage.getItem(KEY) === 'hidden'); }
-    catch (e) { set(false); }
-
-    button.addEventListener('click', function () {
-      var hidden = !document.body.classList.contains('sidebar-hidden');
-      set(hidden);
-      try { localStorage.setItem(KEY, hidden ? 'hidden' : 'shown'); } catch (e) {}
-      button.blur();
-      // Anything laid out against the old width (the player's splitter) re-measures.
-      window.dispatchEvent(new Event('resize'));
+  // empty: no links in the site menu; in the right sidebar, nothing but an empty "On this page" list
+  function isEmpty(side, el) {
+    if (!el) return true;
+    if (side === "left") return !el.querySelector("a.sidebar-link, .sidebar-item a[href]");
+    if (el.querySelector("#TOC a, nav[role=doc-toc] a")) return false;
+    return ![].some.call(el.children, function (c) {
+      if (c.matches("nav[role=doc-toc], #TOC, .quarto-margin-spacer")) return false;
+      return !!(c.textContent.trim() || c.querySelector("input, button, select, canvas, svg, img"));   // content, not visibility (a hidden sidebar's children are hidden too)
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
-  } else {
-    boot();
+  function boot() {
+    var bar = document.querySelector("#quarto-header .navbar-container");
+    Object.keys(SIDES).forEach(function (side) {
+      var S = SIDES[side], el = document.getElementById(S.id), button = null;
+      function set(hidden) {
+        document.body.classList.toggle(S.cls, hidden);
+        if (!button) return;
+        var label = (hidden ? "Show the " : "Hide the ") + S.name;
+        button.title = label; button.setAttribute("aria-label", label); button.setAttribute("aria-expanded", String(!hidden));
+      }
+      function refresh() {
+        var empty = isEmpty(side, el);
+        document.body.classList.toggle(S.empty, empty);
+        if (button) button.hidden = empty;
+      }
+      if (el && bar) {
+        button = document.createElement("button"); button.type = "button"; button.className = "sidebar-toggle sidebar-toggle-" + side;
+        var icon = document.createElement("i"); icon.className = "bi " + S.icon; button.appendChild(icon);
+        if (side === "left") bar.insertBefore(button, bar.firstChild); else bar.appendChild(button);
+        button.addEventListener("click", function () {
+          var hidden = !document.body.classList.contains(S.cls);
+          set(hidden); store(S.key, hidden ? "hidden" : "shown"); button.blur();
+          window.dispatchEvent(new Event("resize"));   // anything laid out against the old width re-measures
+        });
+      }
+      set(store(S.key) === "hidden");
+      refresh();
+      if (el) new MutationObserver(function () { var was = document.body.classList.contains(S.empty); refresh(); if (was !== document.body.classList.contains(S.empty)) window.dispatchEvent(new Event("resize")); })
+        .observe(el, { childList: true, subtree: true });
+    });
   }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
 })();
 </script>
 <!-- Marks the navbar tab whose link is this page with .nav-current, so only

@@ -2,7 +2,7 @@
 //   <div class="as-score" data-bpm="66" data-pickup="1"><script type="text/plain">ABC</script></div>
 // Drawn as wide as their box, abcjs wrapping the bars to fit; a grip on the right edge resizes every box (double-click resets; kept in
 // localStorage). The first bar of each system is numbered (Classical Themes style). Figures written as superscript + subscript
-// (I⁶₄) are redrawn stacked. Sound: the band's piano from AbcPlay.ctx(), scheduled here from abcjs's timing, so playback can start
+// (I⁶₄) are redrawn stacked. Beams on by default except in chorales (see setup). Sound: the band's piano from AbcPlay.ctx(), scheduled here from abcjs's timing, so playback can start
 // anywhere: ▶ / Space play from the lit position and pause; a click on a note or a Roman numeral moves the position there and sounds
 // the chord at that moment (held while the button is held; with Shift held until the next click; a quick click rings briefly).
 // Keys and form: data-keys (from the build script: [start in whole notes, key] at each change of key in the analysis) draws a strip
@@ -28,8 +28,11 @@
     // two settings for every score on the page, kept in localStorage: beams (the build writes beam groups as ABC backticks; off, they
     // become spaces) and, on four-part scores (soprano and alto above, tenor and bass below), the tenor on the treble staff (keyboard style)
     S.base = S.abc; S.four = /^%%score \(s1v1 s1v2\) \(s2v1 s2v2\)$/m.test(S.abc);
+    // beams: on by default (the site's rule), except in chorales, which are shown as the hymnal editions print them, every note flagged.
+    // Two settings, so turning beams off for a sonata doesn't change the chorales: as-beams (chorales) and as-beams-inst (the rest).
+    S.beamKey = S.four || /chorale|bach-o-haupt/.test(host.getAttribute("data-piece") || "") ? "as-beams" : "as-beams-inst";
     if (/`/.test(S.abc)) { S.beamBtn = el("button", "btn btn-sm btn-outline-secondary as-beam"); S.beamBtn.type = "button"; bar.appendChild(S.beamBtn);
-      S.beamBtn.addEventListener("click", function () { setting("as-beams", !setting("as-beams")); }); }
+      S.beamBtn.addEventListener("click", function () { setting(S.beamKey, !on(S.beamKey)); }); }
     if (S.four) { S.tenorBtn = el("button", "btn btn-sm btn-outline-secondary as-tenor"); S.tenorBtn.type = "button"; bar.appendChild(S.tenorBtn);
       S.tenorBtn.addEventListener("click", function () { setting("as-tenor-up", !setting("as-tenor-up")); }); }
     view(S);
@@ -60,15 +63,15 @@
   }
   // a setting: read (one argument) or set and redraw every score
   function setting(key, v) {
-    if (v === undefined) { try { return localStorage.getItem(key) === "1"; } catch (e) { return false; } }
+    if (v === undefined) { try { var x = localStorage.getItem(key); return x == null ? !!DEFAULTS[key] : x === "1"; } catch (e) { return !!DEFAULTS[key]; } }
     try { localStorage.setItem(key, v ? "1" : "0"); } catch (e) {}
     settings[key] = v; scores.forEach(function (S) { if (view(S)) { S.lastW = 0; draw(S); } });
   }
-  var settings = {};
+  var settings = {}, DEFAULTS = { "as-beams-inst": true };
   function on(key) { return key in settings ? settings[key] : setting(key); }
   // the ABC a score shows under the current settings, and its buttons' labels; true if it changed
   function view(S) {
-    var a = S.base, tenor = S.four && on("as-tenor-up"), beams = on("as-beams");
+    var a = S.base, tenor = S.four && on("as-tenor-up"), beams = on(S.beamKey || "as-beams");
     if (tenor) a = keyboardStyle(a);
     if (!beams) a = a.replace(/`/g, " ");
     if (S.tenorBtn) { S.tenorBtn.textContent = tenor ? "Tenor: treble staff" : "Tenor: bass staff"; S.tenorBtn.setAttribute("aria-pressed", tenor ? "true" : "false");

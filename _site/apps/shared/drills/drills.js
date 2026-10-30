@@ -16,6 +16,8 @@
   var ACC_ABC = { "-2": "__", "-1": "_", "0": "=", "1": "^", "2": "^^" }, ACC_TXT = { "-2": "𝄫", "-1": "♭", "0": "", "1": "♯", "2": "𝄪" };
   function rnd(n) { return Math.floor(Math.random() * n); }
   function pick(a) { return a[rnd(a.length)]; }
+  // figures in shown text (IM65 -> IM⁶₅), stacked by fig-stack.js (loaded on every page)
+  function figs(t) { return global.FigStack ? global.FigStack.figs(t) : t; }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
 
   // a note: { l: letter index 0-6, a: accidental -2..2, o: octave (C4 = middle C) }
@@ -1294,7 +1296,7 @@
       if (ex === "keysig" && !RP) drawAnswers();
       [].forEach.call(btns.querySelectorAll(".dr-ans"), function (b) { b.className = "btn btn-outline-secondary dr-ans"; });
       if (q.ear) { paper.innerHTML = ""; ear.textContent = "Listen, then answer. ▶ Hear it plays it again."; }
-      else if (!q.abc) { ear.textContent = ""; paper.innerHTML = ""; paper.appendChild(el("div", "dr-symbol" + (q.words ? " dr-words" : ""), q.show || "")); }
+      else if (!q.abc) { ear.textContent = ""; paper.innerHTML = ""; paper.appendChild(el("div", "dr-symbol" + (q.words ? " dr-words" : ""), figs(q.show || ""))); }
       else { ear.textContent = ""; if (global.ABCJS) global.ABCJS.renderAbc(paper, q.abc, { scale: q.width ? 1.25 : 1.6, staffwidth: q.width || 170, paddingleft: 0, paddingright: 0, add_classes: true }); else paper.textContent = q.abc; }
       hear.hidden = !q.play.length;
       // Only after the user has touched this drill: on load, every drill on the page would play at once.
@@ -1319,7 +1321,7 @@
       var nm = E.answerName ? E.answerName(q.answer) + " (" + q.answer + ")" : q.answer;
       fb.className = "dr-fb " + (ok ? "dr-ok" : "dr-no");
       fb.textContent = ok ? "Right: " + nm + "." : (played ? "Not that one. " : a ? "No: " + (E.answerName ? E.answerName(a) : a) + ". " : "") + "It's " + nm + ".";
-      if (E.explain) fb.textContent += " " + E.explain(q);
+      if (E.explain) fb.textContent += " " + figs(E.explain(q));
       score.textContent = scoreText();
       if (!q.sound && !q.ear) playNotes(q.play, q.times, q.durs).catch(function () {});
       host.setAttribute("data-done", done); host.setAttribute("data-right", right);
