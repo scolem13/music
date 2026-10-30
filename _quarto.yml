@@ -326,7 +326,11 @@ website:
           href: theory/analysed-scores/index.qmd
           contents:
             - theory/analysed-scores/modulation-finder.qmd
+            - theory/analysed-scores/view.qmd
+            - theory/analysed-scores/harmony-stats.qmd
             - theory/analysed-scores/bach-o-haupt.qmd
+            - theory/analysed-scores/brandenburg-2.qmd
+            - theory/analysed-scores/kodaly-galanta.qmd
             - theory/analysed-scores/beethoven-moonlight-1.qmd
             - theory/analysed-scores/reger-modulation.qmd
             - theory/analysed-scores/rimsky-korsakov-harmony.qmd

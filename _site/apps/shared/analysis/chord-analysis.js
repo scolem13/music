@@ -19,7 +19,8 @@
 // Stages (texture): rh   triads and sevenths in close position, treble staff only (a piano right hand); the lowest note is the bass
 //                   guitar common guitar voicings (open and low-position shapes found by search: contiguous strings, at most four
 //                         fingers, every chord tone, the bass lowest), written an octave up in the treble clef as guitar music is,
-//                         with doublings and ledger lines, and the same frets as TAB under it (heard an octave down)
+//                         with doublings and ledger lines, the same frets as TAB straight under each chord (heard an octave down), and a
+//                         fretboard chart a chord (LessonDiagrams, loaded on first use)
 //                   satb  four voices on two staves; tenor in the bass clef (S A / T B) or the treble (S A T / B, keyboard style)
 //                   broken broken chords in the right hand over a held bass
 //                   melody a melody with non-chord tones (passing and neighbor, on the off-beat eighth; listed in q.ncts) over an
@@ -340,16 +341,18 @@
     for (var a = 5; a < n.o; a++) s += "'"; for (var b = 4; b > n.o; b--) s += ",";
     return s;
   }
-  function voiceAbc(evs, key, numbered) {
-    var out = [], pos = 0, st = {}, seen = {};
+  // beam: eighths beamed in each half bar of 4/4 (the usual rule); off for chorales, which are written unbeamed
+  function voiceAbc(evs, key, numbered, beam) {
+    var out = "", pos = 0, st = {}, seen = {}, prev = null;
     evs.forEach(function (e) {
-      if (pos && pos % 8 === 0) { out.push("|"); st = {}; }
+      if (pos && pos % 8 === 0) { out += " |"; st = {}; prev = null; }
       var ns = e.notes.map(function (n) { return noteTok(n, key.sig, st); }), s = "";
       if (numbered && !seen[e.ci]) { s += '"^' + (e.ci + 1) + '"'; seen[e.ci] = 1; }
       s += (ns.length > 1 ? "[" + ns.join("") + "]" : ns[0]) + (e.dur === 1 ? "" : e.dur);
-      out.push(s); pos += e.dur;
+      var join = beam && prev && prev.dur === 1 && e.dur === 1 && Math.floor(prev.at / 4) === Math.floor(pos / 4);
+      out += (out && !join ? " " : "") + s; prev = { dur: e.dur, at: pos }; pos += e.dur;
     });
-    return out.join(" ") + " |]";
+    return out + " |]";
   }
   // the passage in one stage -> { voices: [{ id, clef, evs }], score, shapes, transpose }
   function arrange(tex, chords, spans, key, tenorTreble) {
@@ -409,7 +412,7 @@
         });
         var abc = "X:1\nM:4/4\nL:1/8\n" + (arr.score ? "%%score " + arr.score + "\n" : "") +
           arr.voices.map(function (v) { return "V:" + v.id + " clef=" + v.clef + (arr.satb ? " stem=" + (+v.id % 2 ? "up" : "down") : ""); }).join("\n") + "\nK:" + key.abc + "\n" +
-          arr.voices.map(function (v, k) { return "[V:" + v.id + "] " + voiceAbc(v.evs, key, k === 0); }).join("\n") + "\n";
+          arr.voices.map(function (v, k) { return "[V:" + v.id + "] " + voiceAbc(v.evs, key, k === 0, !arr.satb && tex !== "satb"); }).join("\n") + "\n";
         var ncts = [];
         arr.voices.forEach(function (v) { var at = 0; v.evs.forEach(function (e) { if (e.nct) ncts.push({ ci: e.ci, t: at, note: e.notes[0], kind: e.nct }); at += e.dur; }); });
         var items = chords.map(function (c, i) {
@@ -494,8 +497,20 @@
   }
 
   // ---- drawing
-  function stackAbc(list) {   // a close stack from about middle C, explicit accidentals (no key signature)
-    var v = closeFrom(list, 28), st = {};
+  // a close stack, explicit accidentals (no key signature). Its bottom note goes where the stack needs the fewest ledger lines;
+  // between equal choices, nearest nearD (the last stack's second note), so rotating moves one note, not the octave
+  function ledgers(v) { return v.reduce(function (t, n) { var d = dia(n); return t + (d < 30 ? Math.floor((30 - d) / 2) : d > 38 ? Math.floor((d - 38) / 2) : 0); }, 0); }
+  function stackVoicing(list, nearD) {
+    var best = null;
+    for (var s = 21; s <= 35; s++) {
+      if (s % 7 !== list[0].l) continue;
+      var v = closeFrom(list, s), sc = ledgers(v) * 100 + Math.abs(s - (nearD == null ? 30 : nearD));
+      if (!best || sc < best.sc) best = { v: v, sc: sc };
+    }
+    return best.v;
+  }
+  function stackAbc(list, v) {
+    v = v || stackVoicing(list); var st = {};
     return "X:1\nL:1/4\nK:C\n[" + v.map(function (n) { var s = noteTok(n, [0, 0, 0, 0, 0, 0, 0], st); return n.a === 0 ? s.replace(/^=/, "") : s; }).join("") + "]4 |]\n";
   }
   function tabSvg(q, xs, W) {   // the frets of each chord under its notes (xs: each chord's x on the score), high E string on top
@@ -510,11 +525,28 @@
     });
     return svg;
   }
-  function placeTab(paper, holder, q) {   // after abcjs has drawn: one TAB column under each chord of voice 1
-    var old = paper.querySelector(".ca-tab"); if (old) old.remove();
-    var W = holder.clientWidth || 600, base = holder.getBoundingClientRect().left, xs = [];
-    [].forEach.call(holder.querySelectorAll(".abcjs-note.abcjs-v0"), function (e) { var r = e.getBoundingClientRect(); xs.push(r.left - base + r.width / 2); });
-    paper.appendChild(tabSvg(q, xs.length === q.shapes.length ? xs : [], W));
+  function placeTab(paper, holder, q) {   // after abcjs has drawn: one TAB column straight under each chord of voice 1, in the score's own pixels
+    var box = holder.parentNode, old = box.querySelector(".ca-tab"); if (old) old.remove();
+    var sv = holder.querySelector("svg"), sr = sv ? sv.getBoundingClientRect() : null, W = sr && sr.width ? sr.width : 600, xs = [];
+    [].forEach.call(holder.querySelectorAll(".abcjs-note.abcjs-v0"), function (e) { var r = e.getBoundingClientRect(); xs.push(r.left - sr.left + r.width / 2); });
+    var t = tabSvg(q, xs.length === q.shapes.length ? xs : [], W); t.setAttribute("width", W); t.setAttribute("height", t.viewBox.baseVal.height); box.appendChild(t);
+  }
+  // the guitar stage's chord charts: one fretboard a chord (LessonDiagrams, as on the Chord Sheet and in the lessons), labelled by number
+  var LD_SRC = "/apps/shared/lessons/diagrams.js?v=5";
+  function withDiagrams(f) {
+    if (global.LessonDiagrams) return f(global.LessonDiagrams);
+    var sc = document.querySelector('script[data-ca-ld]');
+    if (!sc) { sc = document.createElement("script"); sc.src = LD_SRC; sc.setAttribute("data-ca-ld", "1"); document.head.appendChild(sc); }
+    sc.addEventListener("load", function () { if (global.LessonDiagrams) f(global.LessonDiagrams); });
+  }
+  function placeCharts(paper, q) {
+    var host = el("div", "ca-charts"); paper.appendChild(host);
+    withDiagrams(function (LD) {
+      q.shapes.forEach(function (sh, i) {
+        var notes = []; sh.frets.forEach(function (f, s) { if (f != null) notes.push({ string: s, fret: f, text: "" }); });
+        var card = el("div", "ca-chart"); card.appendChild(LD.fretboard([{ label: String(i + 1), notes: notes }], { strings: ["E", "A", "D", "G", "B", "E"] })); host.appendChild(card);
+      });
+    });
   }
 
   // ---- the four ways to enter a stack. Each calls set(list) with the notes bottom up; view() redraws.
@@ -547,27 +579,23 @@
       setTimeout(changed, 0);
     } else {   // staff: click a line or space; the note takes the spelling the passage gives that letter; ♯ ♭ ♮ change the last one
       box.appendChild(el("div", "ca-help", "Click a line or space to add a note there (click it again to take it off). ♯ ♭ ♮ change the last note you added. Build it from the bottom up."));
-      var ns = "http://www.w3.org/2000/svg", W = 220, gap = 7, bottomD = 26, topD = 42, Y = function (d) { return 16 + (topD - d) * gap / 2 * 1; };
-      var svg = document.createElementNS(ns, "svg"); svg.setAttribute("viewBox", "0 0 " + W + " " + (Y(bottomD) + 14)); svg.setAttribute("class", "ca-staff");
-      var placed = [], lastD = null;
+      var bottomD = 26, topD = 42, sheet = el("div", "ca-staff"), placed = [], lastD = null;
       function spell(d) { var l = d % 7, n = lets.filter(function (x) { return x.l === l; })[0]; return { l: l, a: n ? n.a : q.key.sig[l], o: Math.floor(d / 7) }; }
       function redraw() {
-        while (svg.firstChild) svg.removeChild(svg.firstChild);
-        for (var d = 30; d <= 38; d += 2) { var ln = document.createElementNS(ns, "line"); ln.setAttribute("x1", 4); ln.setAttribute("x2", W - 4); ln.setAttribute("y1", Y(d)); ln.setAttribute("y2", Y(d)); svg.appendChild(ln); }
-        var gc = document.createElementNS(ns, "text"); gc.setAttribute("x", 6); gc.setAttribute("y", Y(31) + 8); gc.setAttribute("class", "ca-clef"); gc.textContent = "𝄞"; svg.appendChild(gc);
         placed.sort(function (a, b) { return dia(a) - dia(b); });
-        placed.forEach(function (n) {
-          var d = dia(n), x = 120, y = Y(d);
-          for (var l = (d <= 28 ? 28 : 40); d <= 28 ? l >= d : l <= d; l += d <= 28 ? -2 : 2) { var lg = document.createElementNS(ns, "line"); lg.setAttribute("x1", x - 13); lg.setAttribute("x2", x + 13); lg.setAttribute("y1", Y(l)); lg.setAttribute("y2", Y(l)); svg.appendChild(lg); }
-          var e = document.createElementNS(ns, "ellipse"); e.setAttribute("cx", x); e.setAttribute("cy", y); e.setAttribute("rx", 6.5); e.setAttribute("ry", 4.6); e.setAttribute("class", "ca-head"); svg.appendChild(e);
-          if (n.a) { var tx = document.createElementNS(ns, "text"); tx.setAttribute("x", x - 22); tx.setAttribute("y", y + 4); tx.setAttribute("class", "ca-acc"); tx.textContent = ACC_TXT[n.a]; svg.appendChild(tx); }
-          var lb = document.createElementNS(ns, "text"); lb.setAttribute("x", x + 16); lb.setAttribute("y", y + 4); lb.setAttribute("class", "ca-lab"); lb.textContent = nm(n); svg.appendChild(lb);
-        });
-        var hit = document.createElementNS(ns, "rect"); hit.setAttribute("x", 0); hit.setAttribute("y", 0); hit.setAttribute("width", W); hit.setAttribute("height", Y(bottomD) + 14); hit.setAttribute("fill", "transparent"); svg.appendChild(hit);
+        var st = {}, toks = placed.map(function (n) { var t = noteTok(n, [0, 0, 0, 0, 0, 0, 0], st); return n.a === 0 ? t.replace(/^=/, "") : t; });
+        var abc = "X:1\nL:1/4\nK:C\n" + (toks.length ? '"_' + placed.map(nm).join(" ") + '"[' + toks.join("") + "]4" : "x4") + " |]\n";
+        sheet.innerHTML = "";
+        if (global.ABCJS) global.ABCJS.renderAbc(sheet, abc, { scale: STAFF_SCALE, staffwidth: 150, paddingleft: 0, paddingright: 0, paddingtop: 30, paddingbottom: 10, add_classes: true });
         cur = placed.map(function (n) { return { l: n.l, a: n.a }; }); changed();
       }
-      svg.addEventListener("click", function (e) {
-        var r = svg.getBoundingClientRect(), y = (e.clientY - r.top) * (Y(bottomD) + 14) / r.height, d = Math.round(topD - (y - 16) * 2 / gap);
+      function lines() {   // the five staff lines' screen y, top first
+        var ys = []; [].forEach.call(sheet.querySelectorAll(".abcjs-staff"), function (e) { var r = e.getBoundingClientRect(); ys.push(r.top, r.bottom); });
+        if (!ys.length) return null; return { top: Math.min.apply(null, ys), bot: Math.max.apply(null, ys) };
+      }
+      sheet.addEventListener("click", function (e) {
+        var L = lines(); if (!L) return;
+        var half = (L.bot - L.top) / 8, d = Math.round(38 - (e.clientY - L.top) / half);   // the top line is F5
         if (d < bottomD || d > topD) return;
         var k = placed.map(dia).indexOf(d);
         if (k >= 0) { placed.splice(k, 1); lastD = null; } else { placed.push(spell(d)); lastD = d; }
@@ -578,29 +606,30 @@
         var b = btn(p[0]); b.addEventListener("click", function () { var n = placed.filter(function (x) { return dia(x) === lastD; })[0]; if (n) { n.a = p[1]; redraw(); } }); accRow.appendChild(b);
       });
       var clr2 = btn("Clear"); clr2.addEventListener("click", function () { placed = []; lastD = null; redraw(); }); accRow.appendChild(clr2);
-      box.appendChild(svg); box.appendChild(accRow); redraw();
+      box.appendChild(sheet); box.appendChild(accRow); redraw();
       box._place = function (d) { placed.push(spell(d)); lastD = d; redraw(); };   // for tests
     }
     return box;
   }
 
   // ---- the widget
+  var STAFF_SCALE = 1.25;   // every staff the same size, as in the Theory Drills
   var CSS = ".ca{border:1px solid var(--bs-border-color,#ccc);border-radius:8px;padding:.8rem 1rem;margin:1rem 0}" +
     ".ca-top{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:baseline}.ca-title{font-size:1.05rem;font-weight:600;margin:0}" +
-    ".ca-prompt{margin:.4rem 0}.ca-paper{overflow-x:auto}.ca-row{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin:.35rem 0}" +
+    ".ca-prompt{margin:.4rem 0}.ca-paper{overflow-x:auto;background:#fff;color:#222;border-radius:6px;padding:.4rem;display:flex;flex-direction:column;align-items:center}.ca-paper>div{max-width:100%}.ca-charts{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:.4rem}.ca-chart{border:1px solid #ccc;border-radius:.5rem;background:#fff;padding:6px 6px 0}.ca-chart svg{display:block;width:125px;height:auto}.ca-row{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin:.35rem 0}" +
     ".ca-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(8.5rem,1fr));gap:.5rem;margin:.6rem 0}" +
     ".ca-card{border:1px solid var(--bs-border-color,#ddd);border-radius:6px;padding:.35rem .45rem}.ca-card>b{font-size:.9rem}" +
     ".ca-card input{width:100%;margin:.15rem 0}.ca-card.ok{border-color:#198754;background:rgba(25,135,84,.08)}.ca-card.no{border-color:#b02a37;background:rgba(176,42,55,.07)}" +
     ".ca-card.on{outline:2px solid #6c8ebf}.ca-want{font-size:.85rem;color:#b02a37}.ca-mark{font-size:.8rem}" +
     ".ca-panel{margin:.6rem 0;padding:.6rem .8rem;border-left:3px solid #6c8ebf;background:rgba(108,142,191,.08)}" +
     ".ca-panel ol{margin:.2rem 0;padding-left:1.3rem}.ca-panel li{margin:.15rem 0}.ca-fb{font-weight:600}.ca-fb.ok,.ca-ok{color:#198754}.ca-no{color:#b02a37}" +
-    ".ca-stackview{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}.ca-stackview .ca-mini{width:110px}" +
+    ".ca-stackview{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}.ca-stackview .ca-mini{background:#fff;color:#222;border-radius:6px;padding:0 .3rem}" +
     ".ca-settings{margin-top:.6rem}.ca-form{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.4rem .8rem;margin:.4rem 0}" +
     ".ca-form label{font-size:.85rem;display:block}.ca-help{font-size:.85rem;opacity:.85}" +
     ".ca-chip{display:inline-flex;align-items:center;border:1px solid var(--bs-border-color,#bbb);border-radius:4px;padding:.1rem .1rem .1rem .45rem;font-weight:600}" +
-    ".ca-x{border:0;background:none;color:inherit;opacity:.6;padding:0 .3rem}.ca-staff{width:240px;max-width:100%;cursor:pointer}" +
+    ".ca-x{border:0;background:none;color:inherit;opacity:.6;padding:0 .3rem}.ca-staff{display:inline-block;background:#fff;color:#222;border-radius:6px;cursor:pointer}" +
     ".ca-staff line,.ca-tab line{stroke:currentColor;stroke-width:1}.ca-head{fill:currentColor}.ca-acc,.ca-lab,.ca-clef{fill:currentColor;font-size:13px}.ca-clef{font-size:34px}" +
-    ".ca-tab{width:100%;max-width:720px;color:var(--bs-body-color,#222)}.ca-tab text{fill:currentColor;font:12px monospace;text-anchor:middle}.ca-tab .ca-tab-l{text-anchor:start;font-weight:700}.ca-tab-bg{fill:var(--bs-body-bg,#fff)}" +
+    ".ca-tab{display:block;color:#222}.ca-tab text{fill:currentColor;font:12px monospace;text-anchor:middle}.ca-tab .ca-tab-l{text-anchor:start;font-weight:700}.ca-tab-bg{fill:#fff}" +
     ".ca-ex summary{font-weight:600}.ca-rep h3{font-size:1.15rem}.ca-rep h4{font-size:1rem;margin-top:1rem}.ca-rep-t td,.ca-rep-t th{font-size:.85rem;vertical-align:top}.ca-rep-p{break-inside:avoid}" +
     "body.ca-printing>*:not(.ca-print){display:none!important}.ca-print{display:none}body.ca-printing .ca-print{display:block;padding:1rem}" +
     "@media print{body.ca-printing>*:not(.ca-print){display:none!important}body.ca-printing .ca-print{display:block}}";
@@ -610,15 +639,21 @@
   function css() { if (!document.getElementById("ca-css")) { var st = el("style"); st.id = "ca-css"; st.textContent = CSS; document.head.appendChild(st); } }
   function draw(paper, q) {
     paper.innerHTML = "";
-    var holder = el("div"); paper.appendChild(holder);
+    var wrap = el("div"), holder = el("div"); wrap.appendChild(holder); paper.appendChild(wrap);   // abcjs clips holder to the score; the TAB goes under it in wrap
     var v = null;
-    if (global.ABCJS) v = global.ABCJS.renderAbc(holder, q.abc, { responsive: "resize", add_classes: true, staffwidth: Math.max(420, 150 * q.bars), paddingleft: 0, paddingright: 0 })[0];
+    if (global.ABCJS) v = global.ABCJS.renderAbc(holder, q.abc, { scale: STAFF_SCALE, add_classes: true, staffwidth: Math.max(300, 140 * q.bars), paddingleft: 0, paddingright: 0 })[0];
     else holder.textContent = q.abc;
-    if (q.shapes) { placeTab(paper, holder, q); if (!paper._tabHook) { paper._tabHook = 1; global.addEventListener("resize", function () { if (paper._q && paper._q.shapes) placeTab(paper, paper.firstChild, paper._q); }); } }
+    if (q.shapes) { placeTab(paper, holder, q); placeCharts(paper, q); }
     paper._q = q;
     return v;
   }
-  function miniStack(target, list) { target.innerHTML = ""; if (list && list.length && global.ABCJS) global.ABCJS.renderAbc(target, stackAbc(list), { scale: 0.9, staffwidth: 90, paddingleft: 0, paddingright: 0 }); }
+  function miniStack(target, list) {
+    target.innerHTML = ""; if (!list || !list.length || !global.ABCJS) { target._v = null; return; }
+    var prev = target._v, near = null;
+    if (prev) near = prev.length > 1 && nm(list[0]) === nm(prev[1]) ? dia(prev[1]) : dia(prev[0]);   // rotated: the old second note is the new bottom
+    var v = stackVoicing(list, near); target._v = v;
+    global.ABCJS.renderAbc(target, stackAbc(list, v), { scale: STAFF_SCALE, staffwidth: 90, paddingleft: 0, paddingright: 0 });
+  }
   function playBtn(getV, getQ) {
     var b = btn("▶ Play"), h = null;
     b.addEventListener("click", function () {

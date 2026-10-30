@@ -1,9 +1,10 @@
-/* Timestamp Notes: each part can be hidden (not folded: it leaves the page), and the sidebar on the right lists every part:
+/* Timestamp Notes: each part folds (the triangle in its header; remembered in localStorage "ts-folds") and can be hidden
+   (it leaves the page), and the sidebar on the right lists every part:
    a click shows a hidden part, scrolls to it and flashes it; Shift+click shows it and hides every other part; the eye beside
    each name hides or shows it. Show all / Hide all. Which parts are hidden is remembered (localStorage "ts-hidden").
 
-   A part is any .ts-panel with an id and a data-nav label: a <details> (kept open; its summary no longer folds it) or anything
-   with a .ts-fold-h header. Each header gets a × that hides the part. */
+   A part is any .ts-panel with an id and a data-nav label: a <details> (its summary folds it) or anything with a .ts-fold-h
+   header that folds its .ts-fold-body. Each header gets a × that hides the part. */
 (function () {
   "use strict";
   var KEY = 'ts-hidden';
@@ -13,7 +14,16 @@
     if (!nav) return;
     var hidden = {};
     try { hidden = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) {}
-    try { localStorage.removeItem('ts-folds'); } catch (e) {}           // (folding is gone)
+    var shut = {};
+    try { shut = JSON.parse(localStorage.getItem('ts-folds') || '{}') || {}; } catch (e) {}
+    function isOpen(p) { return p.tagName === 'DETAILS' ? p.open : !p.classList.contains('is-shut'); }
+    function fold(p, open) {
+      if (p.tagName === 'DETAILS') p.open = open;
+      else { p.classList.toggle('is-shut', !open); var h = p.querySelector('.ts-fold-h'); if (h) h.setAttribute('aria-expanded', String(open)); }
+      shut[p.id] = !open;
+      try { localStorage.setItem('ts-folds', JSON.stringify(shut)); } catch (e) {}
+      if (open) window.dispatchEvent(new Event('resize'));
+    }
     var list = nav.querySelector('ul'), links = {}, eyes = {};
     // every part moves between the two columns (panel-columns.js), first, so the sidebar lists them where they are
     if (window.PanelColumns) PanelColumns.init({ columns: [document.querySelector('.btp-main'), document.querySelector('.btp-side')],
@@ -25,7 +35,6 @@
     function set(p, show) {
       p.classList.toggle('ts-hidden', !show);
       p.hidden = !show;
-      if (show) { if (p.tagName === 'DETAILS') p.open = true; p.classList.remove('is-shut'); }
       hidden[p.id] = !show;
       try { localStorage.setItem(KEY, JSON.stringify(hidden)); } catch (e) {}
       links[p.id].classList.toggle('is-shut', !show);
@@ -34,7 +43,7 @@
       if (show) window.dispatchEvent(new Event('resize'));
     }
     function jump(p) {
-      set(p, true);
+      set(p, true); if (!isOpen(p)) fold(p, true);
       p.scrollIntoView({ behavior: 'smooth', block: 'start' });
       p.classList.add('is-lit'); setTimeout(function () { p.classList.remove('is-lit'); }, 1400);
     }
@@ -52,15 +61,15 @@
       eye.addEventListener('click', function () { set(p, !shown(p)); eye.blur(); });
       li.appendChild(a); li.appendChild(eye); list.appendChild(li); links[p.id] = a; eyes[p.id] = eye;
 
-      // the header: no folding; a × hides the part
+      // the header folds the part; its × hides it
       var head = p.tagName === 'DETAILS' ? p.querySelector(':scope > summary') : p.querySelector('.ts-fold-h');
       if (p.tagName === 'DETAILS') {
-        p.open = true;
-        p.addEventListener('toggle', function () { if (!p.open) p.open = true; });
-        if (head) head.addEventListener('click', function (e) { if (!e.target.closest('a, button, input, select, label, .pc-tools')) e.preventDefault(); });
-      } else {
-        p.classList.remove('is-shut');
-        if (head) { head.removeAttribute('role'); head.removeAttribute('tabindex'); head.title = ''; }
+        p.addEventListener('toggle', function () { if (shown(p)) fold(p, p.open); });
+        if (head) head.addEventListener('click', function (e) { if (e.target.closest('a, button, input, select, .pc-tools')) e.preventDefault(); });
+      } else if (head) {
+        head.setAttribute('role', 'button'); head.setAttribute('tabindex', '0');
+        head.addEventListener('click', function (e) { if (e.target.closest('a, button, input, select, .pc-tools')) return; fold(p, !isOpen(p)); });
+        head.addEventListener('keydown', function (e) { if (e.target === head && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); e.stopPropagation(); fold(p, !isOpen(p)); } });
       }
       if (head) {
         var x = document.createElement('button');
@@ -69,6 +78,7 @@
         x.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); set(p, false); });
         head.appendChild(x);
       }
+      if (shut[p.id] != null && shut[p.id] === isOpen(p)) fold(p, !shut[p.id]);
       set(p, !hidden[p.id]);
     });
     nav.querySelectorAll('[data-all]').forEach(function (b) {

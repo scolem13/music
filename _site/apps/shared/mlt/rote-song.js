@@ -18,7 +18,7 @@
 // Sound: AbcPlay (piano), cues by Establish ("move-like-me", "audiate" and the tonality ways the teacher weighted).
 (function (global) {
   "use strict";
-  var TUNES = "/apps/tunes/tunes-object.js?v=1", loading = null;
+  var TUNES = "/apps/tunes/tunes-object.js?v=2", loading = null;
   var STEPS = [
     { id: "tonality", phase: "Whole", title: "Establish the tonality", say: "Listen. This sets the song's tonality. The last pitch is the resting tone, home." },
     { id: "whole", phase: "Whole", title: "Hear the whole song", say: "Just listen to the whole song." },

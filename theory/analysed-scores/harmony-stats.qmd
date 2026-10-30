@@ -1,0 +1,114 @@
+---
+title: "Harmony by the Numbers"
+subtitle: "What 1,300 analysed pieces say about which chords composers use, what follows what, and where the music modulates"
+toc: true
+toc-depth: 2
+description: "A count of every Roman-numeral label in the When in Rome corpus, from Monteverdi to Grieg: the most common chords in each repertoire, what follows ii, IV, vi and V, how often applied chords, mixture, the Neapolitan, augmented sixths and the cadential six-four appear, where keys move to, and pieces to find each chromatic chord in."
+---
+
+```{=html}
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<script src="/apps/shared/harmony-stats.js?v=1"></script>
+<style>
+:root { --hs-bar: #2a78d6; --hs-track: #ebe9e4; --hs-muted: #6b6b6b; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --hs-bar: #5598e7; --hs-track: #33332f; --hs-muted: #a8a8a3; } }
+:root[data-theme="dark"] { --hs-bar: #5598e7; --hs-track: #33332f; --hs-muted: #a8a8a3; }
+.hs-bars { display: grid; gap: 3px; margin: .3rem 0 .8rem; }
+.hs-row { display: grid; grid-template-columns: minmax(5rem, 9rem) 1fr 3.4rem; align-items: center; gap: .5rem; font-size: .85rem; border-radius: 3px; }
+.hs-row:hover, .hs-row:focus { outline: 1px solid var(--hs-bar); outline-offset: 1px; }
+.hs-lab { text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hs-track { height: 12px; background: var(--hs-track); border-radius: 0 4px 4px 0; }
+.hs-bar { display: block; height: 100%; background: var(--hs-bar); border-radius: 0 4px 4px 0; }
+.hs-val { font-variant-numeric: tabular-nums; color: var(--hs-muted); }
+.hs-two { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; } @media (max-width: 700px) { .hs-two { grid-template-columns: 1fr; } }
+.hs-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1rem; }
+.hs-card-h { font-weight: 600; } .hs-ch { font-size: .75rem; color: var(--hs-muted); font-weight: 400; }
+.hs-heat-wrap { overflow-x: auto; } .hs-heat { font-size: .85rem; } .hs-heat th { vertical-align: bottom; }
+.hs-cell { text-align: center; font-variant-numeric: tabular-nums; border: 2px solid var(--bs-body-bg, #fff); }
+.hs-cell:hover, .hs-cell:focus { outline: 2px solid #0d366b; outline-offset: -2px; }
+.hs-pick { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; margin-bottom: .4rem; } .hs-pick select { max-width: 24rem; }
+#hs-group-facts { font-size: .9rem; color: var(--hs-muted); }
+.hs-ex { font-size: .9rem; } .hs-ex li { margin: .2rem 0; } .hs-who { color: var(--hs-muted); }
+.hs-tag { font-size: .7rem; border: 1px solid var(--hs-muted); border-radius: 3px; padding: 0 .3rem; margin-left: .4rem; color: var(--hs-muted); white-space: nowrap; }
+.hs-tag.hs-on { border-color: var(--hs-bar); color: var(--hs-bar); }
+.hs-tip { position: absolute; z-index: 1000; background: var(--bs-body-bg, #fff); border: 1px solid #aaa; border-radius: 4px; padding: .25rem .5rem; font-size: .8rem; pointer-events: none; box-shadow: 0 2px 6px rgba(0,0,0,.15); max-width: 20rem; }
+</style>
+```
+
+Every Roman-numeral label in the *When in Rome* corpus, counted: <span id="hs-total">…</span>, from Monteverdi's madrigals to Grieg's
+*Lyric Pieces*. The textbook examples are left out, since they are written to show a chord rather than a style. Each piece counts
+once, with one analysis. The analysed scores on this site come from the same corpus: [the library](view.qmd).
+
+## Chromatic chords in each repertoire
+
+How many of every 100 chords are each kind of chromatic chord from the theory chapters (click a heading for its chapter). Darker
+means more, compared with the other repertoires in the same column.
+
+```{=html}
+<div id="hs-heat" class="hs-heat-wrap"></div>
+```
+
+Things to notice: applied dominants are the most common chromatic chord everywhere, and Romantic piano music uses them most. The
+Neapolitan and the augmented sixths are rare in every repertoire, about one chord in a hundred at most. Mixture hardly appears in
+Bach's chorales but grows through the 19th century.
+
+## The chords each style uses
+
+```{=html}
+<div class="hs-pick"><label for="hs-group">Repertoire</label><select id="hs-group" class="form-select form-select-sm"></select></div>
+<p id="hs-group-facts"></p>
+<div class="hs-two"><div><h3 class="anchored">In major keys</h3><div id="hs-major"></div></div><div><h3 class="anchored">In minor keys</h3><div id="hs-minor"></div></div></div>
+```
+
+Each bar is a share of all the chords in the repertoire (major and minor together), so the two lists can be compared. The repertoire
+picker also changes the next two sections.
+
+## What comes next
+
+When a chord moves to a different chord in the same key, which one is it? (A chord repeated or re-voiced, ii to ii⁶, is not a move.) "An applied chord" is any V/x or vii°/x.
+
+```{=html}
+<div id="hs-next" class="hs-cards"></div>
+```
+
+## Where the music modulates
+
+Every change of key in the analyses, as a Roman numeral of the old key: "major → V" is a move to the dominant, "minor → III" to the
+relative major.
+
+```{=html}
+<div id="hs-dest"></div>
+```
+
+## Find an example
+
+Pieces that use the chord more than once, taken in turn from each repertoire; those with their score in [the library](view.qmd)
+come first. The others open the analysis on GitHub.
+
+```{=html}
+<div class="hs-pick"><label for="hs-kind">Chord</label><select id="hs-kind" class="form-select form-select-sm"></select></div>
+<div id="hs-examples"></div>
+```
+
+## How this was counted
+
+- **Labels, not time.** A chord held for four bars counts the same as one lasting an eighth note.
+- **Analysts differ.** Most of the Bach chorales were analysed by one person (Dmitri Tymoczko), who marks a new key at most phrases;
+  that is why the chorales show 38 key changes per 100 bars and Mozart under 4. Some of the difference between repertoires is the
+  analysts' and not the composers'.
+- **Applied chords** are V or vii° of another degree (V/V, vii°⁷/ii). Chords inside a tonicized key written that way (I/V, ii/V) are
+  not counted as applied.
+- **Mixture** counts only in major keys: iv, i, v, ♭III, ♭VI, ♭VII, ii° / iiø⁷ and a fully diminished vii°⁷.
+- **The cadential six-four** is a label written Cad64, or I⁶₄ followed by V.
+- About 250 of the 186,000 labels could not be read and are left out.
+- Made by `scripts/when-in-rome/stats.mjs`. The numbers are counts of the analysts' labels; the analyses have not been checked here.
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Chen, Tsung-Ping, and Li Su. *BPS-FH: Beethoven Piano Sonata with Functional Harmony* dataset (ISMIR 2018). GitHub. [github.com/Tsung-Ping/functional-harmony](https://github.com/Tsung-Ping/functional-harmony). The source of the Moonlight analysis, converted to RomanText and proof-read by Mark Gotham for When in Rome.
+
+Gotham, Mark, et al. *When in Rome: A Meta-Corpus of Functional Harmony*. GitHub. [github.com/MarkGotham/When-in-Rome](https://github.com/MarkGotham/When-in-Rome). The analyses on this page (RomanText files), licensed CC BY-SA 4.0.
+
+Tymoczko, Dmitri, analyst. Roman-numeral analyses of the Bach chorales and of Beethoven, Piano Sonata Op. 27 No. 2, in *When in Rome*. [github.com/MarkGotham/When-in-Rome/tree/master/Corpus](https://github.com/MarkGotham/When-in-Rome/tree/master/Corpus). The chorale's analysis; his readings of the Moonlight are quoted where they differ from Chen and Su's.
+:::
+<!-- /works-cited -->

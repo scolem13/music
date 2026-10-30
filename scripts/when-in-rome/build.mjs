@@ -25,6 +25,7 @@ function kernPitch(s) {   // "cc#" -> { l, a, o }
 export function parseKern(text) {
   const lines = text.split("\n").filter(l => l && !l.startsWith("!"));
   let cols = null, kinds = [], key = null, meter = null, mm = null, met = null, clefs = {}, keysig = null;
+  const meters = [], clefChanges = {};   // later changes of meter: { t, meter }; of clef, by staff: { t, clef }
   const voices = new Map(), bars = [];   // voice id "staff.layer" -> events; bars: { t, n, style }
   let cursor = [], T = 0, measure = 0;
   const vid = c => c.staff + "." + c.layer;
@@ -37,10 +38,15 @@ export function parseKern(text) {
       for (let i = 0; i < tok.length; i++) {
         const t = tok[i], c = cols[i];
         const st = /^\*staff(\d+)$/.exec(t); if (st) c.staff = +st[1];
-        if (/^\*clef/.test(t) && c.kern) clefs[c.staff] = t.slice(5);
+        if (/^\*clef/.test(t) && c.kern) {   // the first clef is the staff's; later ones are changes, at this column's time
+          const cl = t.slice(5);
+          if (!(c.staff in clefs)) clefs[c.staff] = cl;
+          else { const ch = clefChanges[c.staff] = clefChanges[c.staff] || [], last = ch.length ? ch[ch.length - 1].clef : clefs[c.staff];
+            if (cl !== last && !ch.some(x => x.t === cursor[i] && x.clef === cl)) ch.push({ t: cursor[i], clef: cl }); } }
         if (/^\*k\[/.test(t)) keysig = t;
         const km = /^\*([a-gA-G][#-]?):(\w*)$/.exec(t); if (km) key = km[1];   // *a: or with a mode, *a:dor (the signature still comes from *k[])
-        if (/^\*M\d+\/\d+$/.test(t)) meter = t.slice(2);
+        if (/^\*M\d+\/\d+$/.test(t)) { const nm = t.slice(2), at = Math.max(0, ...cursor.filter((x, j) => cols[j] && cols[j].kern));
+          if (!meter) meter = nm; else { const last = meters.length ? meters[meters.length - 1].meter : meter; if (nm !== last) { if (meters.length && meters[meters.length - 1].t === at) meters.pop(); meters.push({ t: at, meter: nm }); } } }
         if (/^\*met\(/.test(t)) met = t;
         if (/^\*MM\d+/.test(t) && !mm) mm = +t.slice(3);
         if (t === "*^") {
@@ -80,7 +86,7 @@ export function parseKern(text) {
       cursor[i] = t0 + dur;
     }
   }
-  return { voices, bars, key, meter, mm, met, clefs, keysig };
+  return { voices, bars, key, meter, mm, met, clefs, keysig, meters, clefChanges };
 }
 
 // ---- MusicXML -> the same shape parseKern returns. Each staff of each part is a staff here, and each voice on it a layer
@@ -90,7 +96,8 @@ export function parseKern(text) {
 export const r6 = x => Math.round(x * 1e6) / 1e6;   // tuplets other than triplets give fractional ticks
 export const SHARPS = "fcgdaeb", FLATS = "beadgcf", MAJ_FIFTHS = ["Cb", "Gb", "Db", "Ab", "Eb", "Bb", "F", "C", "G", "D", "A", "E", "B", "F#", "C#"];
 export function parseMusicXml(xml, opt = {}) {
-  const voices = new Map(), clefs = {}, clefSeen = {}, ksAt = []; let meter = null, ends = [];   // ksAt: key signatures, from the bar they start
+  // ksAt: key signatures, from the bar they start; clefAt: staff -> [{ t, clef }] in score order
+  const voices = new Map(), clefs = {}, clefSeen = {}, clefAt = {}, clefChanges = {}, ksAt = []; let meter = null, ends = [];
   const parts = [...xml.matchAll(/<part id="[^"]*">([\s\S]*?)<\/part>/g)].map(m => m[1]);
   const fifths = +((/<fifths>(-?\d+)/.exec(xml) || [0, 0])[1]), minor = /<mode>minor/.test(xml);
   const merge = opt.merge !== false && parts.length === 4 && !/<chord\/>|<staves>[2-9]/.test(xml) && !/<voice>[2-9]/.test(xml) && !/<sign>C/.test(xml);
@@ -104,12 +111,16 @@ export function parseMusicXml(xml, opt = {}) {
       if (pi === 0) { const kf = /<key\b[^>]*>\s*<fifths>(-?\d+)<\/fifths>(?:\s*<mode>(\w+))?/.exec(body); if (kf) ksAt.push({ measure, fifths: +kf[1], minor: kf[2] === "minor" }); }
       const dv = /<divisions>(\d+)/.exec(body); if (dv) div = +dv[1];
       const ts = /<beats>(\d+)<\/beats>\s*<beat-type>(\d+)/.exec(body); if (ts && !meter) meter = ts[1] + "/" + ts[2];
+      const pend = [];
       for (const c of body.matchAll(/<clef(?: number="(\d)")?[^>]*>([\s\S]*?)<\/clef>/g)) {
         const sign = /<sign>([GFC])/.exec(c[2]), line = /<line>(\d)/.exec(c[2]), oct = /<clef-octave-change>-1/.test(c[2]); if (!sign) continue;
         const st = merge ? (pi < 2 ? 1 : 2) : staffBase + (+c[1] || 1);
-        (clefSeen[st] = clefSeen[st] || []).push(sign[1] === "G" && oct ? "Gv2" : sign[1] + (line ? line[1] : ""));
+        const cl = sign[1] === "G" && oct ? "Gv2" : sign[1] + (line ? line[1] : "");
+        (clefSeen[st] = clefSeen[st] || []).push(cl); pend.push({ st, cl, at: c.index });   // its time: when the notes before it in the measure end
       }
+      const placeClefs = (idx, time) => { while (pend.length && pend[0].at < idx) { const c = pend.shift(); (clefAt[c.st] = clefAt[c.st] || []).push({ t: time, clef: c.cl }); } };
       for (const el of body.matchAll(/<(note|backup|forward)\b[^>]*>([\s\S]*?)<\/\1>/g)) {
+        placeClefs(el.index, t);
         const d = +(/<duration>(\d+)/.exec(el[2]) || [0, 0])[1] * (W / 4) / div;
         if (el[1] === "backup") { t -= d; continue; } if (el[1] === "forward") { t += d; far = Math.max(far, t); continue; }
         const n = el[2]; if (/<grace|<cue\/>/.test(n)) continue;
@@ -128,6 +139,7 @@ export function parseMusicXml(xml, opt = {}) {
           if (!raw.has(key)) raw.set(key, []); raw.get(key).push(ev); last[v] = ev; t = r6(t + d); far = Math.max(far, t);
         }
       }
+      placeClefs(Infinity, far);   // a clef after the last note: at the bar's end
       t = far;
       if (pi === 0) ends.push({ t, n: measure, back: /<repeat direction="backward"/.test(body), fwd: /<repeat direction="forward"/.test(body) });
       mi++;
@@ -140,7 +152,11 @@ export function parseMusicXml(xml, opt = {}) {
     const vs = [...raw.keys()].filter(k => +k.split("|")[0] === st).sort((a, b) => a.split("|")[1] - b.split("|")[1]);
     vs.forEach((k, i) => voices.set(st + "." + (i + 1), raw.get(k).sort((a, b) => a.t - b.t)));
     const seen = [...new Set(clefSeen[st] || ["G2"])];
-    if (seen.length === 1) clefs[st] = seen[0];
+    if (!merge && clefAt[st] && clefAt[st].length) {   // the first clef is the staff's; later ones are written where they change (as in parseKern)
+      const at = clefAt[st].slice().sort((x, y) => x.t - y.t); clefs[st] = at[0].clef;
+      at.slice(1).forEach(c => { const ch = clefChanges[st] = clefChanges[st] || [], prev = ch.length ? ch[ch.length - 1].clef : clefs[st]; if (c.clef !== prev) ch.push(c); });
+    }
+    else if (seen.length === 1) clefs[st] = seen[0];
     else {   // a clef change: the clef nearer the staff's middle note
       const ps = vs.flatMap(k => raw.get(k)).flatMap(e => e.notes.map(n => n.o * 7 + n.l)).sort((a, b) => a - b), mid = ps[ps.length >> 1];
       clefs[st] = mid >= 4 * 7 + 6 ? seen.find(c => c[0] === "G") || seen[0] : seen.find(c => c[0] === "F") || seen[0];
@@ -152,7 +168,7 @@ export function parseMusicXml(xml, opt = {}) {
   const sig = fifths > 0 ? SHARPS.slice(0, fifths).split("").map(c => c + "#").join("") : FLATS.slice(0, -fifths).split("").map(c => c + "-").join("");
   let key = MAJ_FIFTHS[fifths + 7];
   if (minor) key = ["ab", "eb", "bb", "f", "c", "g", "d", "a", "e", "b", "f#", "c#", "g#", "d#", "a#"][fifths + 7];
-  return { voices, bars, key: key.replace(/b$/, "-").replace(/^(.)b/, "$1-"), meter: meter || "4/4", mm: null, met: null, clefs, keysig: "*k[" + sig + "]", fifths, ksAt };
+  return { voices, bars, key: key.replace(/b$/, "-").replace(/^(.)b/, "$1-"), meter: meter || "4/4", mm: null, met: null, clefs, clefChanges, keysig: "*k[" + sig + "]", fifths, ksAt };
 }
 
 // abcjs plays a tie from inside a chord wrongly (it joins it to the next chord with that pitch, skipping lone notes), so a held note
@@ -194,9 +210,13 @@ const ACC = { "-2": "__", "-1": "_", "0": "=", "1": "^", "2": "^^" };
 function keySigMap(ks) { const m = [0, 0, 0, 0, 0, 0, 0]; (/\[(.*)\]/.exec(ks)[1].match(/[a-g][#-]+/g) || []).forEach(x => { m[LET.indexOf(x[0].toUpperCase())] = x[1] === "#" ? 1 : -1; }); return m; }
 function abcPitch(n) { let s = n.o >= 5 ? LET[n.l].toLowerCase() : LET[n.l]; for (let k = 5; k < n.o; k++) s += "'"; for (let k = 4; k > n.o; k--) s += ","; return s; }
 const U = W / 32;   // ticks per ABC unit (1/32)
-function lenStr(ticks) { const u = ticks / U; if (u === 1) return ""; if (Number.isInteger(u)) return String(u); if (Number.isInteger(u * 2)) return (u * 2) + "/2"; throw new Error("length " + ticks); }
+function lenStr(ticks) { const u = r6(ticks / U); if (u === 1) return ""; if (Number.isInteger(u)) return String(u); for (const q of [2, 4, 8]) if (Number.isInteger(r6(u * q))) return r6(u * q) + "/" + q; throw new Error("length " + ticks); }
 function normal(x) { for (let p = W * 2; p >= U / 2; p /= 2) if (x === p || x === p * 1.5 || x === p * 1.75) return true; return false; }
 function isTriplet(d) { return !normal(d) && normal(d * 3 / 2); }
+// Other tuplets, unmarked in kern (a "20" is a quintuplet sixteenth): [p, q] when d is p notes in the time of q, q the power of 2 below p.
+function oddTup(d) { if (normal(d) || isTriplet(d)) return null; for (const p of [5, 6, 7, 9, 10, 11, 12, 13, 14, 15]) { const q = 2 ** Math.floor(Math.log2(p)); if (normal(r6(d * p / q))) return [p, q]; } return null; }
+const ABCCLEF = c => /F4/.test(c) ? "bass" : /Gv2/.test(c) ? "treble-8" : /C3/.test(c) ? "alto" : /C4/.test(c) ? "tenor" : "treble";
+const meterAt = (k, t) => { let m = k.meter; for (const x of k.meters || []) if (x.t <= t + 1e-6) m = x.meter; return m; };
 export function toAbc(k, opt) {
   const sig = keySigMap(k.keysig), ids = [...k.voices.keys()].sort((a, b) => { const [sa, la] = a.split(".").map(Number), [sb, lb] = b.split(".").map(Number); return sa - sb || la - lb; });
   // bar spans: from each barline to the next; the music before the first barline is a pickup (measure 0)
@@ -206,15 +226,18 @@ export function toAbc(k, opt) {
   const out = {}, ann = opt.annotations || {};   // ann: voiceId -> Map(t -> text[])
   for (const id of ids) {
     const evs = k.voices.get(id), parts = [], up8 = /Gv2/.test(k.clefs[id.split(".")[0]] || "") ? 1 : 0;   // treble-8: written an octave above the sound
+    // a clef change inside the staff: written [K:clef=...] before the first note or rest at or after it (abcjs keeps the key)
+    const changes = ((k.clefChanges || {})[id.split(".")[0]] || []).slice().sort((a, b) => a.t - b.t); let ci = 0;
+    const clefTo = at => { let out = ""; while (ci < changes.length && changes[ci].t <= at + 1e-6) { out = `[K:clef=${ABCCLEF(changes[ci].clef)}] `; ci++; } return out; };
     for (const sp of spans) {
       const inBar = evs.filter(e => e.t >= sp.s && e.t < sp.e), state = {};
       let t = sp.s, s2 = "", tup = null, last = null;   // last: the note before, if it may take a beam to the next ({ key, at: index of its trailing space })
-      const flushTup = () => { if (!tup) return; s2 += `(${tup.a || 3}:${tup.nn || 2}:${tup.n}` + tup.str + " "; tup = null; last = null; };
+      const flushTup = () => { if (!tup) return; s2 += (tup.lead || "") + `(${tup.a || 3}:${tup.nn || 2}:${tup.n}` + tup.str + " "; tup = null; last = null; };
       // Beams, by the site's rule (apps/shared/notation-doc.js, beam()): notes shorter than a quarter are beamed within a beat (a dotted
       // quarter in compound meters); eighths filling half a bar of 4/4, or a whole bar of 2/4 or 3/4, take one beam. A rest, a longer
       // note or a tuplet breaks the beam. Written as ABC's backtick (beam, no space), so a page can show the score without beams by
       // turning backticks into spaces.
-      const [mn, md] = k.meter.split("/").map(Number), barT = W * mn / md, beatT = mn % 3 === 0 && md >= 8 ? W * 3 / md : W / md;
+      const mAt = meterAt(k, sp.s), [mn, md] = mAt.split("/").map(Number), barT = W * mn / md, beatT = mn % 3 === 0 && md >= 8 ? W * 3 / md : W / md;
       const zero = sp.e - sp.s < barT - 1e-6 && sp.measure === 0 ? sp.e - barT : sp.s;   // a pickup counts from where its bar would start
       const beamable = e => !e.rest && e.d < W / 4 - 1e-6 && !e.tup && !isTriplet(e.d);
       const eighthsOnly = (a, b) => { const its = inBar.filter(e => e.t - zero >= a - 1e-6 && e.t - zero < b - 1e-6);
@@ -224,9 +247,11 @@ export function toAbc(k, opt) {
       else if (md === 4 && mn === 4) { const h1 = eighthsOnly(0, barT / 2), h2 = eighthsOnly(barT / 2, barT); if (h1 || h2) wide = pos => pos < barT / 2 ? (h1 ? "a" : null) : (h2 ? "b" : null); }
       const beamKey = e => { const pos = e.t - zero, w = wide && wide(pos); return w || "g" + Math.floor((pos + 1e-6) / beatT); };
       const emit = (e) => {
-        let pre = "";
+        let pre = "", cl = clefTo(e.t);   // a clef change goes before a tuplet's (3:2:3, never inside it
         const texts = ann[id] && ann[id].get(e.t); if (texts) pre += texts.map(x => `"${x}"`).join("");
         if (e.fermata) pre += "H";
+        const odd = !e.tup && oddTup(e.d);
+        if (odd) e = { ...e, tup: odd, oddTup: true };
         const trip = e.tup ? true : isTriplet(e.d), wd = r6(e.tup ? e.d * e.tup[0] / e.tup[1] : trip ? e.d * 3 / 2 : e.d), L = lenStr(wd);
         let body;
         if (e.rest) body = (e.invisible && !trip ? "x" : "z") + L;   // abcjs can't draw an invisible rest inside a triplet
@@ -239,23 +264,26 @@ export function toAbc(k, opt) {
           body = ns.length > 1 ? "[" + ns.join("") + "]" + L : ns[0].replace(/-$/, "") + L + (/-$/.test(ns[0]) ? "-" : "");   // a lone note: the tie after its length
           if (ns.length > 1 && body.includes("-]")) body = body;   // ties inside the chord stay on their notes
         }
-        if (e.tup) { if (!tup || e.tupStart || tup.a !== e.tup[0]) { flushTup(); tup = { n: 0, str: "", sum: 0, a: e.tup[0], nn: e.tup[1] }; } tup.n++; tup.str += pre + body; if (e.tupStop) flushTup(); }
-        else if (trip) { if (tup && tup.a) flushTup(); if (!tup) tup = { n: 0, str: "", sum: 0 }; tup.n++; tup.str += pre + body; tup.sum += e.d; if (tup.sum * 3 / 2 % (wd * 3) === 0 || tup.n === 3) flushTup(); else tup.str += ""; }
+        if (e.tup) { if (!tup || e.tupStart || tup.a !== e.tup[0]) { flushTup(); tup = { n: 0, str: "", sum: 0, a: e.tup[0], nn: e.tup[1], goal: e.oddTup ? r6(e.tup[1] * wd) : 0 }; } if (cl) tup.lead = (tup.lead || "") + cl; tup.n++; tup.str += pre + body; tup.sum = r6(tup.sum + e.d);
+          if (e.tupStop || (tup.goal && tup.sum >= tup.goal - 1e-6)) flushTup(); }
+        else if (trip) { if (tup && tup.a) flushTup(); if (!tup) tup = { n: 0, str: "", sum: 0 }; if (cl) tup.lead = (tup.lead || "") + cl; tup.n++; tup.str += pre + body; tup.sum += e.d; if (tup.sum * 3 / 2 % (wd * 3) === 0 || tup.n === 3) flushTup(); else tup.str += ""; }
         else {
-          flushTup();
+          flushTup(); if (cl) { s2 += cl; last = null; }
           const kk = beamable(e) ? beamKey(e) : null;
           if (kk && last && last.key === kk) s2 = s2.slice(0, last.at) + "`" + s2.slice(last.at + 1);
           s2 += pre + body + " "; last = kk ? { key: kk, at: s2.length - 1 } : null;
         }
       };
       for (const e of inBar) {
+        if (e.t > t + 1e-6) { const c = clefTo(t); if (c) s2 += c; }
         if (e.t > t + 1e-6) { flushTup(); const gap = r6(e.t - t); s2 += fill(gap, ann[id], t); last = null; }
         emit(e); t = r6(e.t + e.d);
       }
       flushTup();
       if (t < sp.e - 1e-6) s2 += fill(r6(sp.e - t), ann[id], t);
       const b = sp.bar.style, bar = /:\|/.test(b) ? ":|" : /\|:/.test(b) ? "|:" : sp.bar.final ? "|]" : "|";
-      parts.push(s2.trim() + " " + bar);
+      const mChange = (k.meters || []).some(x => Math.abs(x.t - sp.s) < 1e-6) ? `[M:${mAt}] ` : "";   // a change of meter starts this bar
+      parts.push(mChange + s2.trim() + " " + bar);
     }
     out[id] = parts;
   }
@@ -265,7 +293,8 @@ function fill(gap, ann, t) {   // invisible rests, in note values ABC can write
   let s = "", left = gap;
   const pieces = []; for (let p = W; left > 0 && p >= U; p /= 2) while (left >= p) { pieces.push(p); left -= p; }
   if (left > 0) pieces.push(left);
-  let at = t; for (const p of pieces) { const txt = ann && ann.get(at); s += (txt ? txt.map(x => `"${x}"`).join("") : "") + "x" + lenStr(isTriplet(p) ? p * 3 / 2 : p) + " "; at += p; }
+  let at = t; for (const p of pieces) { const txt = ann && ann.get(at), o = !isTriplet(p) && oddTup(p);
+    s += (txt ? txt.map(x => `"${x}"`).join("") : "") + (o ? `(${o[0]}:${o[1]}:1x${lenStr(r6(p * o[0] / o[1]))} ` : "x" + lenStr(isTriplet(p) ? p * 3 / 2 : p) + " "); at += p; }
   return s;
 }
 

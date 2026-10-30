@@ -90,3 +90,5 @@
 .btp .btp-speed-pct { min-width: 3em; font-variant-numeric: tabular-nums; }
 .btp .btp-speed-bpm-in { width: 4.5em; }
 .btp .btp-speed-note { color: #6c757d; }
+/* an audio file: only the controls bar (player.js sets is-audio when the media has no picture) */
+.btp .btp-stage.is-audio { aspect-ratio: auto; height: 3.4rem; background: transparent; }

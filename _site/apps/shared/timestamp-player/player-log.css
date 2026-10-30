@@ -87,11 +87,13 @@ body.btp-resizing iframe, body.btp-resizing video { pointer-events: none; }
   overflow-y: auto;   /* parts moved into it scroll with it */
 }
 .btp-side > * { flex: none; }
-.btp-side > .btp-log { flex: 1 1 auto; }
+/* the timestamps: never squeezed by the parts above them (the column scrolls instead), at most a screen tall, and
+   their rows scroll inside */
+.btp-side > .btp-log { flex: 0 0 auto; }
+.btp-log:not(.is-shut) { min-height: min(30rem, calc(100vh - var(--btp-top) - 1rem)); max-height: calc(100vh - var(--btp-top) - 1rem); }
 .btp-main.pc-empty, .btp-side.pc-empty { min-height: 12rem; }
 .btp-log {
   flex: 1 1 auto;
-  min-height: 0;
   display: flex;
   flex-direction: column;
   gap: .75rem;

@@ -1,0 +1,87 @@
+---
+title: "Analysed Scores Library"
+subtitle: "Bach's chorales and preludes, Beethoven's and Mozart's piano sonatas, and 19th-century songs, with Roman numerals under the notes"
+toc: true
+toc-depth: 2
+description: "The Bach chorales, the preludes of the Well-Tempered Clavier Book I, Beethoven and Mozart piano sonata movements and 19th-century songs analysed in the When in Rome corpus, each with its Roman-numeral analysis under the notes. Search, filter by collection, open a piece, play along."
+---
+
+{{< include _head.qmd >}}
+
+```{=html}
+<script src="/apps/shared/score-view.js?v=4"></script>
+<style>
+#sv-title { margin-bottom: .1rem; } #sv-sub { opacity: .75; margin-bottom: .5rem; }
+#sv-nav { display: flex; gap: .4rem; flex-wrap: wrap; margin: .4rem 0 .8rem; }
+.sv-h { font-weight: 600; margin: .8rem 0 .2rem; }
+.sv-filters { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin-bottom: .5rem; }
+.sv-filters input { max-width: 22rem; } .sv-filters select { max-width: 16rem; }
+#sv-count { font-size: .85rem; opacity: .75; }
+.sv-wrap { max-height: 70vh; overflow: auto; }
+#sv-table { font-size: .88rem; } #sv-table th[data-sort] { cursor: pointer; white-space: nowrap; position: sticky; top: 0; background: var(--bs-body-bg, #fff); }
+#sv-table th[data-sort]::after { content: " ⇅"; opacity: .4; }
+.sv-sub { font-size: .8rem; opacity: .7; }
+</style>
+```
+
+The chorale and sonata scores come from Craig Sapp's Humdrum encodings, the preludes and songs from the MusicXML in *When in Rome*
+(the songs from the OpenScore Lieder Corpus, their words left out), all converted to ABC here; the analyses are *When in Rome*'s. How to read
+the labels and use a score: [Analysed Scores](index.qmd#reading-the-labels). A piece is left out when its score and analysis don't line
+up bar for bar, or when its bars don't add up after conversion.
+
+## The score
+
+```{=html}
+<div id="sv-piece">
+  <h3 id="sv-title" class="anchored">Loading…</h3>
+  <div id="sv-sub"></div>
+  <div id="sv-nav"></div>
+  <p id="sv-who"></p>
+  <p id="sv-status" aria-live="polite"></p>
+  <div id="sv-score"></div>
+</div>
+```
+
+## Notes and other readings
+
+```{=html}
+<div id="sv-extra"></div>
+```
+
+## All the pieces
+
+```{=html}
+<div id="sv-list">
+  <div class="sv-filters">
+    <input id="sv-q" class="form-control form-control-sm" type="search" placeholder="Search: title, BWV, key, analyst…" aria-label="Search the pieces">
+    <select id="sv-set" class="form-select form-select-sm" aria-label="Collection"><option value="">Every collection</option></select>
+    <span id="sv-count" aria-live="polite"></span>
+  </div>
+  <div class="sv-wrap"><table id="sv-table" class="table table-sm table-hover">
+    <thead><tr><th data-sort="title">Piece</th><th data-sort="key">Key</th><th data-sort="meter">Meter</th><th data-sort="bars">Bars</th><th data-sort="who">Analyst</th></tr></thead>
+    <tbody id="sv-rows"></tbody>
+  </table></div>
+</div>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Chen, Tsung-Ping, and Li Su. *BPS-FH: Beethoven Piano Sonata with Functional Harmony* dataset (ISMIR 2018). GitHub. [github.com/Tsung-Ping/functional-harmony](https://github.com/Tsung-Ping/functional-harmony). The source of the Moonlight analysis, converted to RomanText and proof-read by Mark Gotham for When in Rome.
+
+Digital and Cognitive Musicology Lab (DCML). *Beethoven Piano Sonatas* (harmony annotations). GitHub. [github.com/DCMLab/beethoven_piano_sonatas](https://github.com/DCMLab/beethoven_piano_sonatas). Analyses of the Beethoven movements not in the BPS dataset (CC BY-NC-SA), converted to RomanText in When in Rome.
+
+Digital and Cognitive Musicology Lab (DCML). *The Annotated Mozart Sonatas*. GitHub. [github.com/DCMLab/mozart_piano_sonatas](https://github.com/DCMLab/mozart_piano_sonatas). The Mozart sonatas' analyses (CC BY-NC-SA), converted to RomanText in When in Rome.
+
+Gotham, Mark, et al. *When in Rome: A Meta-Corpus of Functional Harmony*. GitHub. [github.com/MarkGotham/When-in-Rome](https://github.com/MarkGotham/When-in-Rome). The analyses on this page (RomanText files), licensed CC BY-SA 4.0.
+
+OpenScore. *OpenScore Lieder Corpus*. GitHub. [github.com/OpenScore/Lieder](https://github.com/OpenScore/Lieder). The songs' notes (MusicXML, CC0), from which the finder's song passages are cut and the library's songs are drawn; the words are left out.
+
+Sapp, Craig Stuart, encoder. *370 Four-part Chorales by J. S. Bach in the Humdrum File Format*. GitHub. [github.com/craigsapp/bach-370-chorales](https://github.com/craigsapp/bach-370-chorales). The chorale's notes (after Dörffel's edition, Breitkopf & Härtel, c. 1875), converted to ABC for this page.
+
+Sapp, Craig Stuart, encoder. *Beethoven Piano Sonatas in the Humdrum File Format* (after the Durand 1915 edition, ed. Paul Dukas). GitHub. [github.com/craigsapp/beethoven-piano-sonatas](https://github.com/craigsapp/beethoven-piano-sonatas). The sonata's notes, converted to ABC for this page.
+
+Sapp, Craig Stuart, encoder. *Mozart Piano Sonatas in the Humdrum File Format* (after the Alte Mozart-Ausgabe, vol. 20, 1878). GitHub. [github.com/craigsapp/mozart-piano-sonatas](https://github.com/craigsapp/mozart-piano-sonatas). The Mozart sonatas' notes (CC BY-NC-SA 4.0), converted to ABC for the library.
+
+Tymoczko, Dmitri, analyst. Roman-numeral analyses of the Bach chorales and of Beethoven, Piano Sonata Op. 27 No. 2, in *When in Rome*. [github.com/MarkGotham/When-in-Rome/tree/master/Corpus](https://github.com/MarkGotham/When-in-Rome/tree/master/Corpus). The chorale's analysis; his readings of the Moonlight are quoted where they differ from Chen and Su's.
+:::
+<!-- /works-cited -->

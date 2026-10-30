@@ -4,27 +4,44 @@ IDX, BACH, MOON = "theory/analysed-scores/index.qmd", "theory/analysed-scores/ba
 REGER = "theory/analysed-scores/reger-modulation.qmd"
 RK, TCH, ALD, KP = ("theory/analysed-scores/" + x + ".qmd" for x in ["rimsky-korsakov-harmony", "tchaikovsky-harmony", "aldwell-schachter", "kostka-payne"])
 MF = "theory/analysed-scores/modulation-finder.qmd"
+HS = "theory/analysed-scores/harmony-stats.qmd"   # the meta-analysis (scripts/when-in-rome/stats.mjs)
+VIEW = "theory/analysed-scores/view.qmd"   # the library: every bundled chorale and sonata movement (scripts/when-in-rome/bundle.mjs)
 BOOKS = [REGER, RK, TCH, ALD, KP, MF]
-AS = [IDX, BACH, MOON] + BOOKS
+AS = [IDX, BACH, MOON, VIEW, HS] + BOOKS
 SOURCES = [
     web('Gotham, Mark, et al. *When in Rome: A Meta-Corpus of Functional Harmony*. GitHub. URL.',
         "https://github.com/MarkGotham/When-in-Rome", AS, who="student",
         note="The analyses on this page (RomanText files), licensed CC BY-SA 4.0."),
     web('Tymoczko, Dmitri, analyst. Roman-numeral analyses of the Bach chorales and of Beethoven, Piano Sonata Op. 27 No. 2, in *When in Rome*. URL.',
-        "https://github.com/MarkGotham/When-in-Rome/tree/master/Corpus", [BACH, MOON, MF, "theory/modulation.qmd"], who="student",
+        "https://github.com/MarkGotham/When-in-Rome/tree/master/Corpus", [BACH, MOON, MF, VIEW, HS, "theory/modulation.qmd"], who="student",
         note="The chorale's analysis; his readings of the Moonlight are quoted where they differ from Chen and Su's."),
     web('Chen, Tsung-Ping, and Li Su. *BPS-FH: Beethoven Piano Sonata with Functional Harmony* dataset (ISMIR 2018). GitHub. URL.',
-        "https://github.com/Tsung-Ping/functional-harmony", [IDX, MOON], who="student",
+        "https://github.com/Tsung-Ping/functional-harmony", [IDX, MOON, VIEW, HS], who="student",
         note="The source of the Moonlight analysis, converted to RomanText and proof-read by Mark Gotham for When in Rome."),
     web('Nápoles López, Néstor, et al. *BCMH: The Bach Chorales Melody-Harmony Corpus*. GitHub. URL.',
         "https://github.com/napulen/BCMH", [IDX], who="teacher",
         note="A second analysis of the chorale (automated translation to RomanText), not shown on the site."),
     web('Sapp, Craig Stuart, encoder. *370 Four-part Chorales by J. S. Bach in the Humdrum File Format*. GitHub. URL.',
-        "https://github.com/craigsapp/bach-370-chorales", [BACH, MF], who="student",
+        "https://github.com/craigsapp/bach-370-chorales", [BACH, MF, VIEW], who="student",
         note="The chorale's notes (after Dörffel's edition, Breitkopf & Härtel, c. 1875), converted to ABC for this page."),
     web('Sapp, Craig Stuart, encoder. *Beethoven Piano Sonatas in the Humdrum File Format* (after the Durand 1915 edition, ed. Paul Dukas). GitHub. URL.',
-        "https://github.com/craigsapp/beethoven-piano-sonatas", [MOON], who="student",
+        "https://github.com/craigsapp/beethoven-piano-sonatas", [MOON, VIEW], who="student",
         note="The sonata's notes, converted to ABC for this page."),
+]
+
+# The library (view.qmd). Checked 30 Oct 2026 in the local copies (~/Projects/corpora, ~/Projects/When-in-Rome): the LICENSE.txt of Sapp's
+# Mozart and chorale editions (CC BY-NC-SA 4.0, Alte Mozart-Ausgabe vol. 20, 1878); the DCML repository addresses and licence as written in
+# the analysis files' headers and remote.json; the chorale analysts as named in each file's header (Jones, Tymoczko and others).
+SOURCES += [
+    web('Sapp, Craig Stuart, encoder. *Mozart Piano Sonatas in the Humdrum File Format* (after the Alte Mozart-Ausgabe, vol. 20, 1878). GitHub. URL.',
+        "https://github.com/craigsapp/mozart-piano-sonatas", [VIEW], who="student",
+        note="The Mozart sonatas' notes (CC BY-NC-SA 4.0), converted to ABC for the library."),
+    web('Digital and Cognitive Musicology Lab (DCML). *Beethoven Piano Sonatas* (harmony annotations). GitHub. URL.',
+        "https://github.com/DCMLab/beethoven_piano_sonatas", [VIEW], who="student",
+        note="Analyses of the Beethoven movements not in the BPS dataset (CC BY-NC-SA), converted to RomanText in When in Rome."),
+    web('Digital and Cognitive Musicology Lab (DCML). *The Annotated Mozart Sonatas*. GitHub. URL.',
+        "https://github.com/DCMLab/mozart_piano_sonatas", [VIEW], who="student",
+        note="The Mozart sonatas' analyses (CC BY-NC-SA), converted to RomanText in When in Rome."),
 ]
 
 # theory/modulation.qmd (ch. 22) and the Moonlight form outline. Checked 21 Oct 2026: each chapter section fetched.
@@ -45,8 +62,8 @@ SOURCES += [
     # Checked 23 Oct 2026: IMSLP work page (first edition); Tchaikovsky Research (writing, Jurgenson 1872, English 1900);
     # McGraw-Hill table of contents (Kostka chapters 18 and 19).
     # Checked 23 Oct 2026: the OpenScore Lieder README (CC0) in ~/Projects/corpora/OpenScore_Lieder; When in Rome's Lieder analysis headers.
-    web('OpenScore. *OpenScore Lieder Corpus*. GitHub. URL.', "https://github.com/OpenScore/Lieder", [MF], who="student",
-        note="The songs' notes (MusicXML, CC0), from which the finder's song passages are cut; the words are left out."),
+    web('OpenScore. *OpenScore Lieder Corpus*. GitHub. URL.', "https://github.com/OpenScore/Lieder", [MF, VIEW], who="student",
+        note="The songs' notes (MusicXML, CC0), from which the finder's song passages are cut and the library's songs are drawn; the words are left out."),
     web('*Working in Harmony* (app). Fourscore and More. URL.', "https://fourscoreandmore.org/apps/working-in-harmony/", [MF], who="teacher",
         note="Where the song analyses in When in Rome were made, by contributors, and proof-read by Mark Gotham."),
     web('Rimsky-Korsakov, Nikolay. *Practical Manual of Harmony*. A. Büttner, 1886. IMSLP. URL.',
