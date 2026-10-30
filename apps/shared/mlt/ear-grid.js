@@ -17,7 +17,7 @@
 // EarGrid.same(a, b) -> 2 (same chord) | 1 (same root) | 0.
 (function (global) {
   "use strict";
-  var TUNES = "/apps/tunes/tunes-object.js?v=1";
+  var TUNES = "/apps/tunes/tunes-object.js?v=2";
   var LET = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
   var MAJ = [0, 2, 4, 5, 7, 9, 11], MIN = [0, 2, 3, 5, 7, 8, 10];
   var ROM = ["i", "ii", "iii", "iv", "v", "vi", "vii"];

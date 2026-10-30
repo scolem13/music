@@ -67,6 +67,7 @@
       if (objectUrl) { URL.revokeObjectURL(objectUrl); objectUrl = null; }
       stage.innerHTML = "";
       stage.hidden = true;
+      stage.classList.remove("is-audio");
       clock.textContent = "00:00";
       clock.classList.add("idle");
     }
@@ -150,6 +151,8 @@
           else if (!r.ok) err.textContent = "The recording could not be loaded (" + r.status + ").";
         }).catch(function () { err.textContent = "The recording could not be reached. On a local preview it needs the site login, so open the page on music.seancoleman.org."; });
       });
+      // audio only (no picture): just the controls bar, no empty video box
+      v.addEventListener("loadedmetadata", function () { stage.classList.toggle("is-audio", !v.videoWidth); });
       stage.appendChild(v);
       stage.hidden = false;
       mediaEl = v;

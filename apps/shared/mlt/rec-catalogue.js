@@ -15,7 +15,7 @@
 // Page: <div class="rec-cat"></div>, after recordings.js.
 (function (global) {
   "use strict";
-  var EDITS = "mlt-rec-meta-edits", META_URL = "/apps/shared/mlt/recordings-meta.json", TUNES = "/apps/tunes/tunes-object.js?v=1";
+  var EDITS = "mlt-rec-meta-edits", META_URL = "/apps/shared/mlt/recordings-meta.json", TUNES = "/apps/tunes/tunes-object.js?v=2";
   var TONAL = ["major", "minor", "harmonic minor", "dorian", "phrygian", "lydian", "mixolydian", "aeolian", "locrian", "multitonal"];
   var METER = ["duple", "triple", "unusual", "combined", "multimetric"];
   var FIELDS = ["kind", "tonality", "meter", "key", "tune", "note"];

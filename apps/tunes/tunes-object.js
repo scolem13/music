@@ -30245,204 +30245,177 @@ F/-| "F7"F A/F/ B A/F/ | "F7"B A/F/- F/ C F/- | "F7"F A/F/ B A/F/- | "F7" F/ C3/
 
 "Mullen":
 `X:1
-T:A SAUNTER
+T:A Saunter
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:4/4
 L:1/8
 %%id a-saunter
 K:G
-I:linebreak $
-|: "^With a lilt""^D"A4 F4 | "^C"ED C2 "^D""^Part 1: Mixolydian"D4 | AB cB AG FD |
-w: I *|VII * * I||
-"^C"E2 C2 "^D"D4 :| $
-"^C"C4 G4 | C4 G4 | C4 G4 | [M:2/4]"^G"B2 A2 | [M:4/4]"^C"G8 |: $
-w: VII * I|VII *|||IV *|VII|
-[K:C]"^Dm"A4 F4 | "^C"ED C2 "^Dm""^Part 2: Dorian"D4 | AB cB AG FD | "^C"E2 C2 "^Dm"D4 :| $
-w: i *|VII * * i||VII * i|
-[K:C]"^C"C4 G4 | C4 G4 | C4 G4 | [M:2/4]"^G"B2 A2 | [M:4/4]"^C"G8 |]
-w: VII *|||IV *|VII|
+|: "^With a lilt""D"A4 F4 | "C"ED C2 "D""^Part 1: Mixolydian"D4 | AB cB AG FD | "C"E2 C2 "D"D4 :|
+"C"C4 G4 | C4 G4 | C4 G4 | [M:2/4] "G"B2 A2 |
+[M:4/4] "C"G8 |:
+[K:C] "Dm"A4 F4 | "C"ED C2 "Dm""^Part 2: Dorian"D4 | AB cB AG FD | "C"E2 C2 "Dm"D4 :|
+[K:C] "C"C4 G4 | C4 G4 | C4 G4 | [M:2/4] "G"B2 A2 |
+[M:4/4] "C"G8 |]
 
 X:2
-T:AEOLIAN ACCULTURATION
+T:Aeolian Acculturation
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:3/4
 L:1/8
 %%id aeolian-acculturation
 K:G
-I:linebreak $
-"^Em""^i"E2 G2 B2 | B4 G2 | "^VII""^D"A4 F2 | "^Em""^i"E6 | $
-"^VI""^C"G3 F E2 | "^VII""^D"F2 E2 D2 | "^Em""^i"E6- | E6 | $
-"^Em""^i"B3 c B2 | E2 G2 B2 | "^VII""^D"A2 G2 F2 | "^Em""^i"G6 | $
-"^VI""^C"G3 F E2 | "^VII""^D"F2 E2 D2 | "^Em""^i"E6- | E6 |]
+"Em"E2 G2 B2 | B4 G2 | "D"A4 F2 | "Em"E6 |
+"C"G3 F E2 | "D"F2 E2 D2 | "Em"E6- | E6 |
+"Em"B3 c B2 | E2 G2 B2 | "D"A2 G2 F2 | "Em"G6 |
+"C"G3 F E2 | "D"F2 E2 D2 | "Em"E6- | E6 |]
 
 X:3
-T:AH, POOR SNAIL
+T:Ah, Poor Snail
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/2
 L:1/8
 %%id ah-poor-snail
 K:C
-I:linebreak $
-"^Bº""^i˚"B,4 D4 | "^Am""^vii"C2 A,2 "^Bº""^i˚"B,4 | "^Bº""^i˚""_*"D2 FF B,2 FF |
-w: Snail, snail,|oh, so slow.|What do you do when you|
-"^Am""^vii"E2 C2 "^Bº""^i˚"D4 | $
-"^Bº""^i˚""_*"FF D2 FF D2 | "^Am""^vii"A,2 E2 "^Bº""^i˚"F4 |
-w: see that crow?|In the wind, in the snow|and the hail.|
-"^Bº""^i˚""_*"B,4 B,4 | "^Am""^vii"A,4 "^Bº""^i˚"B,4 |]
-w: Poor snail.|Poor snail.|
+"Bdim"B,4 D4 | "Am"C2 A,2 "Bdim"B,4 | "Bdim""_*"D2 FF B,2 FF | "Am"E2 C2 "Bdim"D4 |
+w: Snail, snail,|oh, so slow.|What do you do when you|see that crow?|
+"Bdim""_*"FF D2 FF D2 | "Am"A,2 E2 "Bdim"F4 | "Bdim""_*"B,4 B,4 | "Am"A,4 "Bdim"B,4 |]
+w: In the wind, in the snow|and the hail.|Poor snail.|Poor snail.|
 
 X:4
-T:BY THE BREAK OF DAY
+T:By the Break of Day
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:4/4
 L:1/8
 %%id by-the-break-of-day
 K:Eb
-I:linebreak $
-"^Eb""^I"B4 "^Ab""^IV"E4 | "^Eb""^I"B4 "^Bb""^V"d4 | "^Eb""^I""_*"e2 E2 "^Ab""^IV"c2 B2 |
-w: Two ships|sail- ing,|car- ried by a|
-"^Eb""^I"G2 E2 "^Bb""^V"F4 | $
-"^Eb""^I""_*"G2 GG "^Ab""^IV"A4 | "^Eb""^I"E2 G2 "^Bb""^V"(B2 A2) |
-w: good- ly wind.|With an- y luck,|we'll be home _|
-"^Eb""^I""_*"EE EE "^Ab""^IV"A4 | "^Eb""^I"EE EE "^Bb""^V"B4 |]
-w: by the break of day,|by the break of day.|
+"Eb"B4 "Ab"E4 | "Eb"B4 "Bb"d4 | "Eb""_*"e2 E2 "Ab"c2 B2 | "Eb"G2 E2 "Bb"F4 |
+w: Two ships|sail- ing,|car- ried by a|good- ly wind.|
+"Eb""_*"G2 GG "Ab"A4 | "Eb"E2 G2 "Bb"(B2 A2) | "Eb""_*"EE EE "Ab"A4 | "Eb"EE EE "Bb"B4 |]
+w: With an- y luck,|we'll be home _|by the break of day,|by the break of day.|
 
 X:5
-T:CAN YOU TELL ME THE METER?
+T:Can You Tell Me the Meter?
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/2
 L:1/8
 %%id can-you-tell-me-the-meter
 K:C
-I:linebreak $
-"^C""^I"c4 G4 | "^IV""^F"F2 AA "^C""^I"GE EE | "^C""^I"c2 c2 c2 G2 |
-w: Can you|tell me the me- ter? Do ya|know your "Du De"s|
-"^IV""^F"F2 A2 "^G7""^V"(3G2E2D2 | $
-"^C""^I"c4 G4 | "^IV""^F"F2 AA "^C""^I"G2 E2 |
-w: from your "Du Da Di"s?|Can you|tell me the me- ter?|
-"^C""^I"G2 GG G2 EE | "^G7""^V"(3D2C2B,2 "^C""^I"C2 z2 |]
-w: An- swer with "DU DE" or|"DU DA DI DU!"|
+"C"c4 G4 | "F"F2 AA "C"GEEE | "C"c2 c2 c2 G2 | "F"F2 A2 "G7"(3G2E2D2 |
+w: Can you|tell me the me- ter? Do ya|know your "Du De"s|from your "Du Da Di"s?|
+"C"c4 G4 | "F"F2 AA "C"G2 E2 | "C"G2 GG G2 EE | "G7"(3D2C2B,2 "C"C2 z2 |]
+w: Can you|tell me the me- ter?|An- swer with "DU DE" or|"DU DA DI DU!"|
 
 X:6
-T:CHEW, CHEW, CHEW
+T:Chew, Chew, Chew
 C:New Lyrics by Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
 %%id chew-chew-chew
 K:C
-I:linebreak $
-"^C""^I"CE G/G/G | "^G7""^V"DE F2 | "^C""^I"CE G/G/G | "^G7""^V"FE D2 | $
-"^C""^I"CE G/G/G |
-w: I like bub- ble gum,|chew, chew, chew!|I like bub- ble gum,|chew, chew, chew.|I like bub- ble gum,|
-"^G7""^V"DE FF | "^C""^I"EE "^G7""^V"D/D/D/D/ | "^C""^I"C"^G7""^V"G "^C""^I"C2 |]
-w: chew, chew, chew! But|I don't like it on my|shoe, shoe, shoe.|
+"C"CE G/G/G | "G7"DE F2 | "C"CE G/G/G | "G7"FE D2 |
+w: I like bub- ble gum,|chew, chew, chew!|I like bub- ble gum,|chew, chew, chew.|
+"C"CE G/G/G | "G7"DE FF | "C"EE "G7"D/D/D/D/ | "C"C"G7"G "C"C2 |]
+w: I like bub- ble gum,|chew, chew, chew! But|I don't like it on my|shoe, shoe, shoe.|
 
 X:7
-T:CROOKED CREEK
+T:Crooked Creek
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:5/8
 L:1/8
 %%id crooked-creek
 K:G
-I:linebreak $
-|: "^D""^I"d2 d A/ G/ F | "^IV""^G"G2 B "^D""^I"A/ G/ F | d2 d A/ G/ F | "^VII""^C"E2 C "^D""^I"D/ E/ D "^D""^I"F2 F F/ E/ D | $
-F2 F A/ B/ A/ G/ | F2 F F/ E/ D | "^VII""^C"C/ D/ E/ D/ C/ E/ "^D""^I"D D :|
+|: "D"d2 d A/G/F | "G"G2 B "D"A/G/F | d2 d A/G/F | "C"E2 C "D"D/E/D "D"F2 FF/E/D |
+F2 F A/B/A/G/ | F2 F F/E/D | "C"C/D/E/D/C/E/ "D"DD :|
 
 X:8
-T:DORIAN ACCULTURATION
+T:Dorian Acculturation
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:6/8
 L:1/8
 %%id dorian-acculturation
 K:C
-I:linebreak $
-"^Dm""^i"A2D A2D | "^VII""^C"EDC "^Dm""^i"D3 | "^Dm""^i"A2D ABc | "^G""^IV"B2G "^Dm""^i"A3 | $
-"^Dm""^i"F2D A2F | "^VII""^C"GFE "^Dm""^i"F2A | "^G""^IV"BAG "^Dm""^i"AGF | "^VII""^C"EDC "^Dm""^i"D3 |]
+"Dm"A2 D A2 D | "C"EDC "Dm"D3 | "Dm"A2 D ABc | "G"B2 G "Dm"A3 |
+"Dm"F2 D A2 F | "C"GFE "Dm"F2 A | "G"BAG "Dm"AGF | "C"EDC "Dm"D3 |]
 
 X:9
-T:DUPLE ACCULTURATION
+T:Duple Acculturation
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:2/4
 L:1/8
 %%id duple-acculturation
 K:C
-I:linebreak $
-GG/G/ GG | GG G/G/G | GG GG | G/G/G/G/ G2 | $
-G/GG/ GG | G G3 | G/GG/ GG | z GG G | $
+GG/G/ GG | GG G/G/G | GG GG | G/G/G/G/ G2 |
+G/GG/ GG | G G3 | G/GG/ GG | z G GG |
 GG/G/ GG | GG G/G/G | GG GG | G/G/G/G/ G2 |]
 
 X:10
-T:FLAMINGO
+T:Flamingo
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:3/4
 L:1/8
 %%id flamingo-3
 K:D
-I:linebreak $
-x4 D2 | "^D""^I"F2 A2 F2 | "^IV""^G"G2 B2 _B2 | "^D""^I"A=B A2 F2 | "^A""^V"E4 D2 | $
-w: Fla-|min- go, fla-|min- go, why|are your legs so|long? "Well,|
-"^D""^I"F2 A2 F2 | "^IV""^G"G2 B2 _B2 | "^A""^V"A=B A2 C2 | "^D""^I"D4 x2 || $
-x4 D2 |
-w: if they were|shor- ter, you|would- n't have this|song."|Chi-|
-"^D"F2 A2 F2 | "^G"G2 B2 _B2 | "^D"A=B A2 F2 | "^A"E4 D2 | $
-"^D"F2 A2 F2 | "^G"G2 B2 _B2 |
-w: hua- hua, chi-|hua hua, why|do you bark like|that? "Well,|if I me-|owed, I sup-|
-"^A"A=B A2 C2 | "^D"D6 || $
-"^D"FF A2 F2 | "^G"GG B2 _B2 | "^D"A=B A2 F2 | "^A"E4 D2 | $
-w: pose I'd be a|cat."|Kit- ty cat, oh,|kit- ty cat, why|do you sleep 'til|noon? "If|
-"^D"F2 A2 F2 | "^G"G2 B2 _B2 | "^A"A=B A2 C2 | "^D"D4 x2 || $
-x4 D2 | "^D"F2 A2 F2 |
-w: I was up|ear- ly, you|would- n't have this|tune."|Hy-|e- nas, hy-|
-"^G"G2 B2 _B2 | "^D"A=B A2 F2 | "^A"E E3 D2 | $
-"^D"F2 A2 F2 | "^G"G2 B2 _B2 | "^A"A=B A2 C2 |
-w: e- nas, why|are you all so|gid- dy? "Well,|if we were|cry- ing, you|would- n't have this|
-"^D"D D3 z2 |]
+x4 D2 | "D"F2 A2 F2 | "G"G2 B2 _B2 | "D"A=B A2 F2 |
+w: Fla-|min- go, fla-|min- go, why|are your legs so|
+"A"E4 D2 | "D"F2 A2 F2 | "G"G2 B2 _B2 | "A"A=B A2 C2 |
+w: long? "Well,|if they were|shor- ter, you|would- n't have this|
+"D"D4 x2 ||
+w: song."|
+x4 D2 | "D"F2 A2 F2 | "G"G2 B2 _B2 | "D"A=B A2 F2 |
+w: Chi-|hua- hua, chi-|hua hua, why|do you bark like|
+"A"E4 D2 | "D"F2 A2 F2 | "G"G2 B2 _B2 | "A"A=B A2 C2 |
+w: that? "Well,|if I me-|owed, I sup-|pose I'd be a|
+"D"D6 ||
+w: cat."|
+"D"FF A2 F2 | "G"GG B2 _B2 | "D"A=B A2 F2 | "A"E4 D2 |
+w: Kit- ty cat, oh,|kit- ty cat, why|do you sleep 'til|noon? "If|
+"D"F2 A2 F2 | "G"G2 B2 _B2 | "A"A=B A2 C2 | "D"D4 x2 ||
+w: I was up|ear- ly, you|would- n't have this|tune."|
+x4 D2 | "D"F2 A2 F2 | "G"G2 B2 _B2 | "D"A=B A2 F2 |
+w: Hy-|e- nas, hy-|e- nas, why|are you all so|
+"A"E E3 D2 | "D"F2 A2 F2 | "G"G2 B2 _B2 | "A"A=B A2 C2 |
+w: gid- dy? "Well,|if we were|cry- ing, you|would- n't have this|
+"D"D D3 z2 |]
 w: dit- ty."|
 
 X:11
-T:FLOW THE RATTLESNAKE
+T:Flow the Rattlesnake
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:6/8
 L:1/8
 %%id flow-the-rattlesnake
 K:Ab
-I:linebreak $
-"^C""^I"C=EG "^Bbm""^vii"FDB, | "^C""^I"C/D/CB, C2C | "^Db""^II"DFD "^C""^I"C/=E/GG | $
-w: Deep in the des- ert, where|most of us won't go, there|lived a big rat- tle- snake whose|
-"^Db""^II"AFA "^C""^I"G2G | "^C""^I"cGG "^Db""^II"A/G/FF | $
-"^C""^I"=E/F/EC "^Bbm""^vii"D2D/D/ |
-w: name it was Flow. Now,|don't get too close to her (I've|nev- er seen her miss), if she|
-"^C""^I"C=EG "^Db""^II"FDB, | "^C""^I"C/D/CB, C3 |] $
-"^C""^I"C=EG "^Bbm""^vii"FDB, |
-w: asks you a ques- tion, just|an- swer with a hiss.|Deep in the des- ert, where|
-"^C""^I"C/D/CB, C2C | "^Db""^II"DFD "^C""^I"CGG | $
-"^Db""^II"AFA "^C""^I"G2G |
-w: most of us won't go, I|see you've met Flor- ence, who|just goes by "Flow." She|
-"^C""^I"cGG "^Db""^II"AGF | "^C""^I"=E/F/EC "^Bbm""^vii"D2 z/ D/ | $
+"C"C=EG "Bbm"FDB, | "C"C/D/CB, C2 C |
+w: Deep in the des- ert, where|most of us won't go, there|
+"Db"DFD "C"C/=E/GG | "Db"AFA "C"G2 G |
+w: lived a big rat- tle- snake whose|name it was Flow. Now,|
+"C"cGG "Db"A/G/FF | "C"=E/F/EC "Bbm"D2 D/D/ |
+w: don't get too close to her (I've|nev- er seen her miss), if she|
+"C"C=EG "Db"FDB, | "C"C/D/CB, C3 |]
+w: asks you a ques- tion, just|an- swer with a hiss.|
+"C"C=EG "Bbm"FDB, | "C"C/D/CB, C2 C |
+w: Deep in the des- ert, where|most of us won't go, I|
+"Db"DFD "C"CGG | "Db"AFA "C"G2 G |
+w: see you've met Flor- ence, who|just goes by "Flow." She|
+"C"cGG "Db"AGF | "C"=E/F/EC "Bbm"D2 z/ D/ |
 w: does- n't like ech- oes, she|sees it as a diss. Be|
-"^C""^I"C/=E/ z z/ G/"^Db""^II"FD B, | "^C""^I"C/D/CB, C3 |]
+"C"C/=E/ z z/ G/ "Db"FDB, | "C"C/D/CB, C3 |]
 w: care- ful, be cau- tious, be|diff- 'rent with your hiss.|
 
 X:12
-T:FUR EDWIN
+T:Fur Edwin
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
@@ -30451,147 +30424,136 @@ L:1/8
 %%id fur-edwin
 K:G
 I:linebreak $
-"^In a hurry"G |: "^C""^I"FG FG !>!cG FG | [M:3/4]FG FG !>!EG | $
-[M:4/4]FG FG !>!cG FG |1
+"^In a hurry"G |: "C"FG FG !>!cG FG | [M:3/4] FG FG !>!EG |
+[M:4/4] FG FG !>!cG FG | [1
 w: A|lam- ma lam- ma ding- a- lam- ma|ding- a ding- a dong. A|lam- ma lam- ma ding- a- lam- ma|
-FG FG !>!C3 G :|2 FG F"_V"G !fine!C4 || $
-"^II""^D"(DF AF "^G""^V"GD B,D | "^C""^I"CG FG C4) |
+FG FG !>!C3 G :| [2 FG FG !fine!C4 ||
+"D"(DF AF "G"GD B,D | "C"CG FG C4) |
 w: ding- a- ding- a dong. A|ding- a- ding- a dong.|Did- dle dei- dle did- dle dei- dle|did- dle dei- dle doo.|
-"^II""^D"(DF AF "^G"GD B,D | $
+"D"(DF AF "G"GD B,D |
 !>!G,)"_sub p"G FG F"^Repeat ad nauseum, a la Fur Elise?"G FG |
 w: Did- dle dei- dle did- dle dei- dle|Doo. A lam- ma lam- ma lam- ma|
 FG FG F!<(!G F!D.S.!!<)!G |]
 w: lam- ma lam- ma lam- ma lam- A|
 
 X:13
-T:HAMBURGERS, HOT DOGS
+T:Hamburgers, Hot Dogs
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
 %%id hamburgers-hot-dogs
 K:D
-I:linebreak $
-!fermata!A2 !fermata!A2 || "^D""^I"DD/D/ DD | DD/D/ FA | $
-"^A7""^V"A/A/A GE/E/ | A/A/A/A/ GE | $
-w: I like|ham- burg- ers, hot dogs,|piz- za and ice cream,|gum- my bears, meat- balls, and|chick- en fin- gers. Why can't|
-"^D""^I"DD/D/ DD | DD/D/ FA | "^A7""^V"AA GE | "^D""^I"D4 || $
-[K:Dmin]!fermata!A4 |
-w: ham- burg- ers, hot dogs,|piz- za and ice cream|just be good for|me?|I|
-!fermata!A2 !fermata!A2 || "^Dm""^i"DD DD | DD/D/ F/F/A/A/ | $
-"^A7""^V"A/A/A/A/ GE/E/ |
-w: don't like|broc- coli, kale chips,|bean sprouts or ru- ta- ba- ga,|caul- i- flow- er, mush- rooms or|
-A/A/A GE | $
-"^Dm""^i"DD DD | DD/D/ F/F/A/A/ | "^A7""^V"AA GE | "^Dm""^i"D4 || $
-w: art- i- chokes. Why can't|broc- coli, kale chips,|bean sprouts and ru- ta- ba- ga|just be bad for|me?|
-[K:Bmin]!fermata!A4 | !fermata!A2 !fermata!A2 | "^D""^I"DD/D/ DD | DD/D/ FA | $
+!fermata!A2 !fermata!A2 ||
+w: I like|
+"D"DD/D/ DD | DD/D/ FA | "A7"A/A/A GE/E/ | A/A/A/A/ GE |
+w: ham- burg- ers, hot dogs,|piz- za and ice cream,|gum- my bears, meat- balls, and|chick- en fin- gers. Why can't|
+"D"DD/D/ DD | DD/D/ FA | "A7"AA GE | "D"D4 ||
+w: ham- burg- ers, hot dogs,|piz- za and ice cream|just be good for|me?|
+[K:Dmin] !fermata!A4 | !fermata!A2 !fermata!A2 ||
+w: I|don't like|
+"Dm"DD DD | DD/D/ F/F/A/A/ | "A7"A/A/A/A/ GE/E/ | A/A/A GE |
+w: broc- coli, kale chips,|bean sprouts or ru- ta- ba- ga,|caul- i- flow- er, mush- rooms or|art- i- chokes. Why can't|
+"Dm"DD DD | DD/D/ F/F/A/A/ | "A7"AA GE | "Dm"D4 ||
+w: broc- coli, kale chips,|bean sprouts and ru- ta- ba- ga|just be bad for|me?|
+[K:Bmin] !fermata!A4 | !fermata!A2 !fermata!A2 | "D"DD/D/ DD | DD/D/ FA |
 w: 'Cause|I like|ham- burg- ers, hot dogs,|piz- za and ice cream,|
-"^A7""^V"A/A/A GE/E/ | A/A/A/A/ GE | $
-"^D""^I"DD/D/ DD | DD/D/ FA | "^A7""^V"AA GE | "^D""^I"D4 |]
-w: gum- my bears, meat- balls, and|chick- en fin- gers. Why can't|ham- burg- ers, hot dogs,|piz- za and ice cream|just be good for|me?|
+"A7"A/A/A GE/E/ | A/A/A/A/ GE | "D"DD/D/ DD | DD/D/ FA |
+w: gum- my bears, meat- balls, and|chick- en fin- gers. Why can't|ham- burg- ers, hot dogs,|piz- za and ice cream|
+"A7"AA GE | "D"D4 |]
+w: just be good for|me?|
 
 X:14
-T:HELLO, MR. CANDYMAN
+T:Hello, Mr. Candyman
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
 %%id hello-mr-candyman
 K:C
-I:linebreak $
-F/F/F/F/ F/F/F | FF/F/ F/F/F | $
-FF FF/F/ | F/F/F F2 | $
-FF/F/ F/F/F | FF/F/ F/F/F | $
-w: Hel- lo Mis- ter Can- dy man!|How do you do, to- day?|Have you got a- ny|can- dy for me?|Twizz- lers and Toot- sie Rolls,|Jaw- break- ers, lol- li- pops.|
+F/F/F/F/ F/F/F | FF/F/ F/F/F |
+w: Hel- lo Mis- ter Can- dy man!|How do you do, to- day?|
+FF FF/F/ | F/F/F F2 |
+w: Have you got a- ny|can- dy for me?|
+FF/F/ F/F/F | FF/F/ F/F/F |
+w: Twizz- lers and Toot- sie Rolls,|Jaw- break- ers, lol- li- pops.|
 F/F/F/F/ F/F/F/F/ | F/F/F/F/ FF |]
 w: Reese- 's Piec- es Jol- ly Ranch- er|Doub- le Bub- ble gum. Yum!|
 
 X:15
-T:I AM A BRONTOSAURUS
+T:I Am a Brontosaurus
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:4/4
 L:1/8
 %%id i-am-a-brontosaurus
 %%tags needs-repair
 K:G
-I:linebreak $
-x6 !fermata!A2 | "^D""^I"DD "^VII""^C"EG "^D""^I"FD z A | [M:6/8]"^IV""^G"BAG "^D""^I"AGF | $
-w: I|am a Bron- to- saur- us. My|bod- y is huge, but my|
-[M:2/4]"^VII""^C"G2 E2 | [M:6/8]"^D""^I"D3 "^VII""^C"C3 | "^D""^I"!fermata!D3 !fermata!A3 || $
-w: head is|small, small,|small. I|
-[M:4/4]"^D"DD "^C"EG "^D"FD z A | [M:6/8]"^G"BAG "^D"A2D | "^G"BAG "^D"AGF | $
-[M:2/4]"^C"G2 E2 |
+x6 !fermata!A2 | "D"DD "C"EG "D"FD z A | [M:6/8] "G"BAG "D"AGF | [M:2/4] "C"G2 E2 |
+w: I|am a Bron- to- saur- us. My|bod- y is huge, but my|head is|
+[M:6/8] "D"D3 "C"C3 | "D"!fermata!D3 !fermata!A3 ||
+w: small, small,|small. I|
+[M:4/4] "D"DD "C"EG "D"FD z A | [M:6/8] "G"BAG "D"A2 D | "G"BAG "D"AGF | [M:2/4] "C"G2 E2 |
 w: am a Bron- to- saur- us. My|neck is so long. My|bod- y is huge, but my|head is|
-[M:6/8]"^D"D3 "^C"C3 | "^D"!fermata!D3 !fermata!A3 | $
-[M:4/4]"^D"DD "^C"EG "^D"FD z A |
-w: small, small,|small. I|am a Bron- to- saur- us. My|
-[M:6/8]"^G"BAG "^D"ADD | "^G"BAG "^D"A2D | $
-[M:6/8]"^G"BAG "^D"AGF | [M:2/4]"^C"G2 E2 |
-w: feet are gi- gan- tic, my|neck is so long. My|bod- y is huge, but my|head is|
-[M:6/8]"^D"D3 "^C"C3 | "^D"!fermata!D3 !fermata!A3 | $
-[M:4/4]"^D"DD "^C"EG "^D"FD z A |
-w: small, small,|small. I|am a Bron- to- saur- us. My|
-[M:6/8]"^G"BAG "^D"ADD | "^G"BAG "^D"ADD | $
-"^G"BAG "^D"A2D | [M:6/8]"^G"BAG "^D"AGF |
-w: tail is tre- men- dous, my|feet are gi- gan- tic, my|neck is so long. My|bod- y is huge, but my|
-[M:2/4]"^C"G2 E2 | [M:6/8]"^D"D3 "^C"C3 | "^D"!fermata!D3 !fermata!A3 | $
-w: head is|small, small,|small. I|
-[M:4/4]"^D"DD "^C"EG "^D"FD z A | [M:6/8]"^G"BAG "^D"ADD | "^G"BAG "^D"ADD | $
-"^G"BAG "^D"ADD |
-w: am a Bron- to- saur- us. My|legs are e- nor- mous, my|tail is tre- men- dous, my|feet are gi- gan- tic, my|
-"^G"BAG "^D"A2D | $
-[M:6/8]"^G"BAG "^D"AGF | [M:2/4]"^C"G2 E2 | [M:6/8]"^D"D3 "^C"C3 |
+[M:6/8] "D"D3 "C"C3 | "D"!fermata!D3 !fermata!A3 | [M:4/4] "D"DD "C"EG "D"FD z A | [M:6/8] "G"BAG "D"ADD |
+w: small, small,|small. I|am a Bron- to- saur- us. My|feet are gi- gan- tic, my|
+"G"BAG "D"A2 D | [M:6/8] "G"BAG "D"AGF | [M:2/4] "C"G2 E2 | [M:6/8] "D"D3 "C"C3 |
 w: neck is so long. My|bod- y is huge, but my|head is|small, small,|
-"^D"!fermata!D6 |]
-w: small.|
+"D"!fermata!D3 !fermata!A3 | [M:4/4] "D"DD "C"EG "D"FD z A | [M:6/8] "G"BAG "D"ADD | "G"BAG "D"ADD |
+w: small. I|am a Bron- to- saur- us. My|tail is tre- men- dous, my|feet are gi- gan- tic, my|
+"G"BAG "D"A2 D | [M:6/8] "G"BAG "D"AGF | [M:2/4] "C"G2 E2 | [M:6/8] "D"D3 "C"C3 |
+w: neck is so long. My|bod- y is huge, but my|head is|small, small,|
+"D"!fermata!D3 !fermata!A3 | [M:4/4] "D"DD "C"EG "D"FD z A | [M:6/8] "G"BAG "D"ADD | "G"BAG "D"ADD |
+w: small. I|am a Bron- to- saur- us. My|legs are e- nor- mous, my|tail is tre- men- dous, my|
+"G"BAG "D"ADD | "G"BAG "D"A2 D | [M:6/8] "G"BAG "D"AGF | [M:2/4] "C"G2 E2 |
+w: feet are gi- gan- tic, my|neck is so long. My|bod- y is huge, but my|head is|
+[M:6/8] "D"D3 "C"C3 | "D"!fermata!D6 |]
+w: small, small,|small.|
 
 X:16
-T:I KNOW A SONG
+T:I Know a Song
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
 %%id i-know-a-song
 K:C
-I:linebreak $
-"^G""^V"GF/F/ E/E/D | "^C""^I"CE G z/ G/ | "^G""^V"F/F/D/D/ B,/B,/D | "^C""^I"EG C z/ G/ || $
-w: I know a song, it goes|"Bum Bum Bum." I|bet you know a song, it goes|" _ " I|
-[K:Eb]"^G""^V"G/G/F/F/ E/E/D | "^Cm""^i"GE C z/ G/ | "^G""^V"F/F/D/D/ =B,/B,/D |
-w: know a- noth- er song, it goes|"Bum Bum Bum." I|bet you know a song, it goes|
-"^Cm""^i"EC G z || $
-[K:C]"^G""^V"GF/F/ E/E/D | "^C""^I"CE G z/ G/ | "^G""^V"F/F/D/D/ B,/B,/D |
-w: " _ "|Jen has a cat that goes|"Meow meow meow." I|bet you know a cat that goes|
-"^C""^I"GC E z/ G/ || $
-[K:Eb]"^G""^V"G/G/F/F/ E/E/D | "^Cm""^i"GE C z/ G/ |
-w: " _ " Na-|tash- a has a dog that goes|"Woof woof woof." I|
-"^G""^V"F/F/D/D/ =B,/B,/D | "^Cm""^i"CE C z |]
+"G"GF/F/ E/E/D | "C"CE G z/ G/ |
+w: I know a song, it goes|"Bum Bum Bum." I|
+"G"F/F/D/D/ B,/B,/D | "C"EG C z/ G/ ||
+w: bet you know a song, it goes|" _ " I|
+[K:Eb] "G"G/G/F/F/ E/E/D | "Cm"GE C z/ G/ |
+w: know a- noth- er song, it goes|"Bum Bum Bum." I|
+"G"F/F/D/D/ =B,/B,/D | "Cm"EC G z ||
+w: bet you know a song, it goes|" _ "|
+[K:C] "G"GF/F/ E/E/D | "C"CE G z/ G/ |
+w: Jen has a cat that goes|"Meow meow meow." I|
+"G"F/F/D/D/ B,/B,/D | "C"GC E z/ G/ ||
+w: bet you know a cat that goes|" _ " Na-|
+[K:Eb] "G"G/G/F/F/ E/E/D | "Cm"GE C z/ G/ |
+w: tash- a has a dog that goes|"Woof woof woof." I|
+"G"F/F/D/D/ =B,/B,/D | "Cm"CE C z |]
 w: bet you know a dog that goes|" _ "|
 
 X:17
-T:IN THE SHADE
+T:In the Shade
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:4/4
 L:1/8
 %%id in-the-shade
 K:G
-I:linebreak $
-"^D""^I"FF FF AD F2 | "^VII""^C"ED CD- "^D""^I"D4 | "^D""^I""^*"AA AA c2 A2 |
-w: Sit- tin' on the dock of the|lake in the shade. _|Pitch- er full of sweet tea,|
-"^VII""^C"GF EF- "^D""^I"F4 | $
-"^D""^I""_*"D F2 D F2 D2 | "^VII""^C"cB GA- "^D""^I"A A3 |
-w: I got it made. _|Noth- in' to do, my|bed's al- read- y made. _|
-"^D""^I""_*"DD DD DD D2 | "^VII""^C"CC CD- "^D""^I"D4 |]
+"D"FF FF AD F2 | "C"ED CD- "D"D4 |
+w: Sit- tin' on the dock of the|lake in the shade. _|
+"D""^*"AA AA c2 A2 | "C"GF EF- "D"F4 |
+w: Pitch- er full of sweet tea,|I got it made. _|
+"D""_*"D F2 D F2 D2 | "C"cB GA- "D"A A3 |
+w: Noth- in' to do, my|bed's al- read- y made. _|
+"D""_*"DD DD DD D2 | "C"CC CD- "D"D4 |]
 w: Sit- tin' on the dock of the|lake in the shade. *|
 
 X:18
-T:JOHNNY, CLEAN UP BEFORE 
+T:Johnny, Clean Up Before 
 MOM GETS HOME
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
@@ -30599,253 +30561,225 @@ M:4/4
 L:1/8
 %%id johnny-clean-up-before
 K:F
-I:linebreak $
-"^C""^I""^Cautiously"(C2 G2 E2 c2 | B2 A2 !fermata!G4) | "^VII""^Bb"!>!B/"^Quickly"A/G/F/ !>!A/G/F/E/ !>!G/F/E/D/ "^C""^I".C2 :| "^C""^I"C"^Spirited"C/D/ EG BA G2 | $
-(B/A/G) (B/A/G) "^C""^I"E"^VII""^Bb"F "^C""^I"G2 | "^C""^I"CC/D/ EG BA G2 | (B/A/G) (B/A/G) "^C""^I"E"^VII""^Bb"F "^C""^I".G2 || "^C""^I"(C2 "^Cautiously"G2 E2 c2 | $
-B2 A2 !fermata!G4) | "^VII""^Bb"!>!B/"^Quickly"A/G/F/ !>!A/G/F/E/ !>!G/F/E/D/ "^C""^I".C2 |]
+"C""^Cautiously"(C2 G2 E2 c2 | B2 A2 !fermata!G4) |
+"Bb"!>!B/"^Quickly"A/G/F/ !>!A/G/F/E/ !>!G/F/E/D/ "C".C2 :|
+"C"C"^Spirited"C/D/ EG BA G2 | (B/A/G) (B/A/G) "C"E"Bb"F "C"G2 |
+"C"CC/D/ EG BA G2 | (B/A/G) (B/A/G) "C"E"Bb"F "C".G2 ||
+"C"(C2 "^Cautiously"G2 E2 c2 | B2 A2 !fermata!G4) |
+"Bb"!>!B/"^Quickly"A/G/F/ !>!A/G/F/E/ !>!G/F/E/D/ "C".C2 |]
 
 X:19
-T:KARL THE OWL
+T:Karl the Owl
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
 %%id karl-the-owl
 K:D
-I:linebreak $
-A2 | "^D"D2 "^Em7"E"^D/F#"E | F2 D2 | "^Em7"E2 "^D/F#"FF | "^G"G2 z2 | $
-"^D"AA AB | "^B7"AG FE |
-w: There|once was an|owl, his|name, it was|Karl.|He was not the|fi- nest sing- er|
-"^Em7"D2 FF | "^A"E2 z2 | $
-"^D"D2 "^Em7"EE | "^D/F#"F2 DD | "^G"G2 B2 | d2 z d | "^D"d2 F2 |
-w: I e- ver|knew.|All of his|friends would sing|"Hoo hoo|hoo" and|"Hoo hoo|
-A2 z d | $
-"^G"d2 D2 | G2 z2 | "^D"AA AB | "^B7"A_A GF | "^Em7"E2 "^A"=A2 | "^D"D4 || $
-w: hoo" and|"Hoo hoo|hoo."|He was ver- y|sat- is- fied to|just sing|"Hoo.|
-[M:2/4]x2 A2 | [M:2/4]"^D"D2 "^Em7"E"^D/F#"E | F2 D2 | "^Em7"E2 "^D/F#"FF | "^G"G2 z2 |
-w: Re-|mem- ber that|owl, his|name, it was|Karl?|
-"^D"AA AB | "^B7"AG FE | "^Em7"D2 FF | $
-"^A"E2 AA | "^D"D2 "^Em7"EE | "^D/F#"F2 DD | "^G"G2 B2 |
-w: He was not the|fi- nest sing- er|I e- ver|knew. But he|prac- ticed and|prac- ticed and|then one|
-d2 dd | "^D"d2 F2 | $
-A2 z d | "^G"d2 D2 | G2 z2 | "^D"AA AB | "^B7"A_A GF | "^Em7"E2 "^A"=A2 |
-w: day, he sang|"Hoo hoo|hoo" and|"Hoo hoo|hoo."|May- be if you|prac- tice, you could|do that|
-"^D"D4 |]
+A2 | "D"D2 "Em7"E"D/F#"E | F2 D2 | "Em7"E2 "D/F#"FF | "G"G2 z2 |
+w: There|once was an|owl, his|name, it was|Karl.|
+"D"AA AB | "B7"AG FE | "Em7"D2 FF | "A"E2 z2 |
+w: He was not the|fi- nest sing- er|I e- ver|knew.|
+"D"D2 "Em7"EE | "D/F#"F2 DD | "G"G2 B2 | d2 z d |
+w: All of his|friends would sing|"Hoo hoo|hoo" and|
+"D"d2 F2 | A2 z d | "G"d2 D2 | G2 z2 |
+w: "Hoo hoo|hoo" and|"Hoo hoo|hoo."|
+"D"AA AB | "B7"A_A GF | "Em7"E2 "A"=A2 | "D"D4 ||
+w: He was ver- y|sat- is- fied to|just sing|"Hoo.|
+[M:2/4] x2 A2 | [M:2/4] "D"D2 "Em7"E"D/F#"E | F2 D2 | "Em7"E2 "D/F#"FF |
+w: Re-|mem- ber that|owl, his|name, it was|
+"G"G2 z2 | "D"AA AB | "B7"AG FE | "Em7"D2 FF |
+w: Karl?|He was not the|fi- nest sing- er|I e- ver|
+"A"E2 AA | "D"D2 "Em7"EE | "D/F#"F2 DD | "G"G2 B2 |
+w: knew. But he|prac- ticed and|prac- ticed and|then one|
+d2 dd | "D"d2 F2 | A2 z d | "G"d2 D2 |
+w: day, he sang|"Hoo hoo|hoo" and|"Hoo hoo|
+G2 z2 | "D"AA AB | "B7"A_A GF | "Em7"E2 "A"=A2 |
+w: hoo."|May- be if you|prac- tice, you could|do that|
+"D"D4 |]
 w: too.|
 
 X:20
-T:LISTEN, PEOPLE, TO MY CHANT
+T:Listen, People, to My Chant
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
 %%id listen-people-to-my-chant
 K:C
-I:linebreak $
-GG G/GG/ | GG GG/G/ | GG GG/G/ | GG G2 | $
+GG G/GG/ | GG GG/G/ | GG GG/G/ | GG G2 |
+w: Lis- ten, peo- ple, to|what I chant. If you|think you can, or you|think you can't:|
 GG GG | GG G2 | GG G/G/G | GG G2 |]
-w: Lis- ten, peo- ple, to|what I chant. If you|think you can, or you|think you can't:|don't just ech- o|what I do,|you make up your own|"Du De Du."|
+w: don't just ech- o|what I do,|you make up your own|"Du De Du."|
 
 X:21
 T:LISTEN, PEOPLE, TO MY CHANT (Triple)
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:6/8
 L:1/8
 %%id listen-people-to-my-chant-triple
 K:C
-I:linebreak $
-G2G GGG | G2G GGG | G2G GGG | G2G G3 | $
-G2G GG2 | G2G G3 | G2G GGG | GGG G3 |]
-w: Lis- ten, peo- ple, to|what I chant. If you|think you can, or you|think you can't:|don't just ech- o|what I do.|You make up your own|"Du Da Di Du."|
+G2 G GGG | G2 G GGG | G2 G GGG | G2 G G3 |
+w: Lis- ten, peo- ple, to|what I chant. If you|think you can, or you|think you can't:|
+G2 G G G2 | G2 G G3 | G2 G GGG | GGG G3 |]
+w: don't just ech- o|what I do.|You make up your own|"Du Da Di Du."|
 
 X:22
-T:LISTEN, PEOPLE, TO MY SONG
+T:Listen, People, to My Song
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
 %%id listen-people-to-my-song
 K:C
-I:linebreak $
 U:s=!stemless!
-"^C""^I"EE GG | EE G2 | "^G""^V"FF D2 | "^C""^I"EE G2 | $
-"^IV""^F"FF AA | "^I""^C"EE G2 |
-w: Lis- ten, peo- ple|to my song.|It won't take|ver- y long.|If you like it,|make a clone.|
-"^V""^G"DF ED | "^C""^I"CC C2 || $
-"^T sings antecedent phrase""^I"G2 E2 | G2 E2 | "^V"FE DG |
-w: If you don't, make|up your own.||||
-"^I"E2 C2 || "^I""^S echoes or improvises consequent phrase"B2 B2 | B2 B2 | "^V"B2 B2 |
-w: ||||
-"^I"B2 B2 || $
-"^I"CD E2 | EF G2 | "^V"GG F2 | DD B,2 || "^I"B2 B2 | B2 B2 | "^V"B2 B2 |
-w: ||||||||
-B2 B2 || $
-"^I"CD E2 | "^IV"FG A2 | "^V"GA GF | E2 D2 || "^I"B2 B2 | "^IV"B2 B2 |
-w: |||||||
-"^V"B2 B2 | B2 B2 || $
-"^IV"AG F2 | "^I"GF E2 | "^II7"DE ^FD | G4 || "^IV"B2 B2 |
-w: |||||||
-"^I"B2 B2 | "^II7"B2 B2 | "^V"B2 B2 || $
-"^V"GG D2 | GG D2 | GF ED | "^I"C2 E2 |
-w: |||||||
-"^V"B2 B2 | B2 B2 | B2 B2 | "^I"B2 B2 || $
-[K:Eb][M:2/4]"^Cm""^i"EE GG | EE G2 |
-w: ||||Lis- ten, peo- ple|to my song.|
-"^G""^V"FF D2 | "^Cm""^i"EE G2 | $
-"^Fm""^iv"FF AA | "^Cm""^i"EE G2 | "^V""^G"DF ED |
-w: It won't take|ver- y long.|If you like it,|make a clone.|If you don't, make|
-"^Cm""^i"CC C2 || $
-"^T sings antecedent phrase""^i"G2 E2 | G2 E2 | "^V"FE DG | "^i"E2 C2 ||
-w: up your own.|||||
-"^i""^S echoes or improvises consequent phrase"=B2 B2 | =B2 B2 | "^V"=B2 B2 |
-w: |||
-"^i"=B2 B2 || $
-"^i"CD E2 | EF G2 | "^V"GG F2 | DD =B,2 || "^i"=B2 B2 | =B2 B2 |
-w: |||||||
-"^V"=B2 B2 | =B2 B2 || $
-"^i"CD E2 | "^iv"FG A2 | "^V"GA GF | E2 D2 || "^i"=B2 B2 |
-w: |||||||
-"^iv"=B2 B2 | "^V"=B2 B2 | =B2 B2 || $
-"^iv"AG F2 | "^i"GF E2 | "^II7"D=E ^FD | G4 ||
-w: |||||||
-"^iv"=B2 B2 | "^i"=B2 B2 | "^II7"=B2 B2 | "^V"=B2 B2 || $
-"^V"GG D2 | GG D2 | GF ED |
-w: |||||||
-"^i"C2 E2 | "^V"=B2 B2 | =B2 B2 | =B2 B2 | "^i"=B2 B2 ||
-w: |||||
+"C"EE GG | EE G2 | "G"FF D2 | "C"EE G2 |
+w: Lis- ten, peo- ple|to my song.|It won't take|ver- y long.|
+"F"FF AA | "C"EE G2 | "G"DF ED | "C"CC C2 ||
+w: If you like it,|make a clone.|If you don't, make|up your own.|
+"^T sings antecedent phrase"G2 E2 | G2 E2 | FE DG | E2 C2 ||
+"^S echoes or improvises consequent phrase"B2 B2 | B2 B2 | B2 B2 | B2 B2 ||
+CD E2 | EF G2 | GG F2 | DD B,2 ||
+B2 B2 | B2 B2 | B2 B2 | B2 B2 ||
+CD E2 | FG A2 | GA GF | E2 D2 ||
+B2 B2 | B2 B2 | B2 B2 | B2 B2 ||
+AG F2 | GF E2 | DE ^FD | G4 ||
+B2 B2 | B2 B2 | B2 B2 | B2 B2 ||
+GG D2 | GG D2 | GF ED | C2 E2 |
+B2 B2 | B2 B2 | B2 B2 | B2 B2 ||
+[K:Eb] [M:2/4] "Cm"EE GG | EE G2 | "G"FF D2 | "Cm"EE G2 |
+w: Lis- ten, peo- ple|to my song.|It won't take|ver- y long.|
+"Fm"FF AA | "Cm"EE G2 | "G"DF ED | "Cm"CC C2 ||
+w: If you like it,|make a clone.|If you don't, make|up your own.|
+"^T sings antecedent phrase"G2 E2 | G2 E2 | FE DG | E2 C2 ||
+"^S echoes or improvises consequent phrase"=B2 B2 | =B2 B2 | =B2 B2 | =B2 B2 ||
+CD E2 | EF G2 | GG F2 | DD =B,2 ||
+=B2 B2 | =B2 B2 | =B2 B2 | =B2 B2 ||
+CD E2 | FG A2 | GA GF | E2 D2 ||
+=B2 B2 | =B2 B2 | =B2 B2 | =B2 B2 ||
+AG F2 | GF E2 | D=E ^FD | G4 ||
+=B2 B2 | =B2 B2 | =B2 B2 | =B2 B2 ||
+GG D2 | GG D2 | GF ED | C2 E2 |
+=B2 B2 | =B2 B2 | =B2 B2 | =B2 B2 ||
 
 X:23
-T:LOCRIAN ACCULTURATION
+T:Locrian Acculturation
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:4/4
 L:1/8
 %%id locrian-acculturation
 K:Eb
-I:linebreak $
-"^Dº""^iº"DE FG AG FE | "^Dº""^iº"D2 DE "^Cm""^vii"z C z D- | "^Dº""^iº"DE FG AG FE | "^Dº""^iº"D2 DE "^Cm""^vii"z G z D- | $
-"^Dº""^iº"DE FG AG FE | "^Dº""^iº"D2 DE "^Cm""^vii"z C z D- | "^Dº""^iº"DD DE "^Cm""^vii"z G z D | "^Dº""^iº"z8 |]
+"Ddim"DE FG AG FE | "Ddim"D2 DE "Cm"z C z D- | "Ddim"DE FG AG FE | "Ddim"D2 DE "Cm"z G z D- |
+"Ddim"DE FG AG FE | "Ddim"D2 DE "Cm"z C z D- | "Ddim"DD DE "Cm"z G z D | "Ddim"z8 |]
 
 X:24
-T:LOOK AT ALL THE HAPPY FACES
+T:Look at All the Happy Faces
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:7/8
 L:1/8
 %%id look-at-all-the-happy-faces
 K:Eb
-I:linebreak $
-|: "^Cm"G "^i"A G A "^VII""^Bb"B/ A/ G F | F G F G "^VI""^Ab"A/ G/ F "^Cm"E | "^i"E F E F "^VI""^Ab"G/ F/ E "^Gm"D | "^v"D G D "^Cm"G "^i"C (C/ D/ E/ F/) "^III""^Eb"G A G A B/ A/ G F | $
-"^VII""^Bb"F G F G "^G7b9""^V"A/ G/ F E | "^Cm""^i"E F E F "^IV""^F9"G/ F/ E D |1 "^VII""^Bb13"D G D "^Cm"G "^i"C (C/ D/ E/ F/) :|2 "^VII""^Bb13"D G D G "^Cm""^i"C3 |]
+|: "Cm"GA GA "Bb"B/A/GF | FG FG "Ab"A/G/F"Cm"E |
+EF EF "Ab"G/F/E"Gm"D | DG D"Cm"G C(C/D/E/F/) "Eb"GAGAB/A/GF |
+"Bb"FG FG "G7b9"A/G/FE | "Cm"EF EF "F9"G/F/ED |
+[1 "Bb13"DG D"Cm"G C(C/D/E/F/) :|
+[2 "Bb13"DG DG "Cm"C3 |]
 
 X:25
-T:LYDIAN ACCULTURATION
+T:Lydian Acculturation
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:4/4
 L:1/8
 %%id lydian-acculturation
 K:G
-I:linebreak $
-G | "^C""^I"FG cG FG EG | "^II""^D"FA FA "^C""^I"G2 EG | "^C""^I"FG cG FG EG | $
-"^D""^II"FE DB, "^C""^I"C4 |]
+G | "C"FG cG FG EG | "D"FA FA "C"G2 EG |
+"C"FG cG FG EG | "D"FE DB, "C"C4 |]
 
 X:26
-T:MAJOR ACCULTURATION
+T:Major Acculturation
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:2/4
 L:1/8
 %%id major-acculturation
 K:C
-I:linebreak $
-"^C""^I"CE GC | "^IV""^F"FA "^C""^I"GE | "^G7""^V"GF DB, | "^C""^I"C4 | $
-"^C""^I"CE GC | "^IV""^F"FA "^C""^I"GE | "^G7""^V"GF DB, | "^C""^I"C4 | $
-"^IV""^F"AA "^C""^I"GC | "^G7""^V"FF "^C""^I"EC | "^G7""^V"B,B, DF | G2 G2 | $
-"^C""^I"CE GC | "^IV""^F"FA "^C""^I"G"^G7"E | "^V"GF DB, | "^C""^I"C4 |]
+"C"CE GC | "F"FA "C"GE | "G7"GF DB, | "C"C4 |
+"C"CE GC | "F"FA "C"GE | "G7"GF DB, | "C"C4 |
+"F"AA "C"GC | "G7"FF "C"EC | "G7"B,B, DF | G2 G2 |
+"C"CE GC | "F"FA "C"G"G7"E | GF DB, | "C"C4 |]
 
 X:27
-T:MIDDLE CHILD
+T:Middle Child
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:4/4
 L:1/8
 %%id middle-child
 K:A
-I:linebreak $
-"^D""^I"D2 D"^V""^A"E "^D""^I"F2 D2 | "^II""^E"E2 E2 E2 "^D""^I"D2 | "^D""^I""_*"F2 AA AG A2 |
-w: My li- tle bro- ther's|two years young- er.|My old- er bro- ther is|
-"^II""^E"G2 G2 B2 "^D""^I"A2 | $
-"^D""^I""^*"A2 (D"^V""^A"C) "^D""^I"D2 F2 |
-w: two years old- er.|Here I _ am stuck|
-"^II""^E"B2 c2 G2 "^D""^I"F2 | "_*""^D""^I"DD z2 D2 z2 | "^II""^E"EE z2 z2 "^D""^I"D2 |]
-w: in the mid- dle.|Mid- dle child.|Mid- dle child.|
+"D"D2 D"A"E "D"F2 D2 | "E"E2 E2 E2 "D"D2 | "D""_*"F2 AA AG A2 | "E"G2 G2 B2 "D"A2 |
+w: My li- tle bro- ther's|two years young- er.|My old- er bro- ther is|two years old- er.|
+"D""^*"A2 (D"A"C) "D"D2 F2 | "E"B2 c2 G2 "D"F2 | "_*""D"DD z2 D2 z2 | "E"EE z2 z2 "D"D2 |]
+w: Here I _ am stuck|in the mid- dle.|Mid- dle child.|Mid- dle child.|
 
 X:28
-T:MINOR ACCULTURATION
+T:Minor Acculturation
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:4/4
 L:1/8
 %%id minor-acculturation
 K:Dmin
-"^Dm""^i"DE FG A2 d2 | "^V""^A"^c2 e2 "^Dm""^i"A4 | "^Gm""^iv"BA G2 "^Dm""^i"A2 D2 | "^V""^A"A2 A2 "^Dm""^i"D4 |]
+"Dm"DE FG A2 d2 | "A"^c2 e2 "Dm"A4 | "Gm"BA G2 "Dm"A2 D2 | "A"A2 A2 "Dm"D4 |]
 
 X:29
-T:MINOR TRIPLE DANCE
+T:Minor Triple Dance
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:3/4
 L:1/8
 %%id minor-triple-dance
 K:F
-I:linebreak $
-"^Dm""^i"D3 DE F | "^Gm""^iv"G3 GF E | "^Dm""^i"F3 ED F | "^A""^V"E4 A2 | $
-"^Gm""^iv"B3 AG B | "^Dm""^i"A3 GF E | D3 DE F | "^A""^V"E4 A,2 || $
-"^Dm""^i"D3 DE F | "^Gm""^iv"G3 GF E | "^Dm""^i"F3 ED F | "^A""^V"E4 A2 | $
-"^Gm""^iv"B3 AG B | "^Dm""^i"A3 GF D | "^A""^V"^C3 CD E | "^Dm""^i"D6 |: $
-"^Bb""^VI"B2 B2 G2 | "^III""^F"A4 F2 | "^VII""^C"G4 E2 | "^Dm""^i"F4 A2 | $
-"^Bb""^VI"B2 B2 G2 | "^III""^F"A4 F2 | "^VII""^C"G4 E2 | "^Dm""^i"D6 :| $
-"^Dm""^i"D^C DE FG | A2 F2 D2 | "^A""^V"G2 E2 ^C2 | "^Dm""^i"D2 F2 A2 | $
-"^Gm""^iv"BA GB AG | "^Dm""^i"A2 G2 F2 | "^A""^V"E2 F2 G2 | "^Dm""^i"A6 || $
-"^Dm""^i"D^C DE FG | A2 F2 D2 | "^A""^V"G2 E2 ^C2 | "^Dm""^i"D2 F2 A2 | $
-"^Gm""^iv"BA GB AG | "^Dm""^i"A2 G2 F2 | "^A""^V"E2 A2 A,2 | "^Dm""^i"D6 |]
+"Dm"D3 D EF | "Gm"G3 G FE | "Dm"F3 E DF | "A"E4 A2 |
+"Gm"B3 A GB | "Dm"A3 G FE | D3 D EF | "A"E4 A,2 ||
+"Dm"D3 D EF | "Gm"G3 G FE | "Dm"F3 E DF | "A"E4 A2 |
+"Gm"B3 A GB | "Dm"A3 G FD | "A"^C3 C DE | "Dm"D6 |:
+"Bb"B2 B2 G2 | "F"A4 F2 | "C"G4 E2 | "Dm"F4 A2 |
+"Bb"B2 B2 G2 | "F"A4 F2 | "C"G4 E2 | "Dm"D6 :|
+"Dm"D^C DE FG | A2 F2 D2 | "A"G2 E2 ^C2 | "Dm"D2 F2 A2 |
+"Gm"BA GB AG | "Dm"A2 G2 F2 | "A"E2 F2 G2 | "Dm"A6 ||
+"Dm"D^C DE FG | A2 F2 D2 | "A"G2 E2 ^C2 | "Dm"D2 F2 A2 |
+"Gm"BA GB AG | "Dm"A2 G2 F2 | "A"E2 A2 A,2 | "Dm"D6 |]
 
 X:30
-T:MIXOLYDIAN ACCULTURATION
+T:Mixolydian Acculturation
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:4/4
 L:1/8
 %%id mixolydian-acculturation
 K:G
-I:linebreak $
-"^D""^I"A2 F2 A2 F2 | "^C""^VII"ED C2 "^D""^I"D4 | "^D""^I"A2 F2 AB c2 | "^IV""^G"BA G2 "^D""^I"A4 | $
-"^D""^I"A2 F2 A2 F2 | "^C""^VII"GF E2 "^D""^I"F2 A2 | "^G""^IV"BA G2 "^D""^I"FE D2 | "^C""^VII"ED C2 "^D""^I"D4 |]
+"D"A2 F2 A2 F2 | "C"ED C2 "D"D4 | "D"A2 F2 AB c2 | "G"BA G2 "D"A4 |
+"D"A2 F2 A2 F2 | "C"GF E2 "D"F2 A2 | "G"BA G2 "D"FE D2 | "C"ED C2 "D"D4 |]
 
 X:31
-T:MOE THE CROW
+T:Moe the Crow
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:5/8
 L:1/8
 %%id moe-the-crow
 K:C
-I:linebreak $
-G2 | "^C""^I"c c B c G | E E F G2 | c c B c G/ G/ | $
-"^G""^V"F E D "^C""^I"C G, |
-w: There|once was a crow, his|name it was Moe.|He loved to sing, but he|did- n't know "Do." Or|
-"^C""^I"C D E "^G""^V"B,/ B,/ "^C""^I"C | $
-"^C""^I"E F E "^G""^V"B,/ B,/ "^C""^I"C |
+G2 | "C"ccB cG | EEF G2 |
+w: There|once was a crow, his|name it was Moe.|
+ccB cG/G/ | "G"FED "C"CG, |
+w: He loved to sing, but he|did- n't know "Do." Or|
+"C"CDE "G"B,/B,/"C"C | "C"EFE "G"B,/B,/"C"C |
 w: "Do Re Mi" Did- n't know.|"Mi Fa Mi." Did- n't know.|
-"^C""^I"G A G "^G""^V"B,/ B,/ "^C""^I"C | "^G""^V"G D G "^C""^I"C2 |]
+"C"GAG "G"B,/B,/"C"C | "G"GDG "C"C2 |]
 w: "So La So" Did- n't know.|Let's help out Moe!|
 
 X:32
@@ -30856,12 +30790,11 @@ M:5/8
 L:1/8
 %%id mr-and-amp-mrs-mackenzie
 K:F
-I:linebreak $
-|: "^C""^I"C E G "^VII""^Bb"B/ A/ G | "^C""^I"F E2- E2 | "^C""^I"C E G "^VII""^Bb"F/ E/ D | "^C""^I"D C2- C2 "^C""^I"c B G "^IV""^F"A2 | $
-"^C""^I"G E C "^IV""^F"F2 | "^C""^I"C E G "^VII""^Bb"F/ E/ D | "^C""^I"D C2- C2 |]
+|: "C"CEG "Bb"B/A/G | "C"F E2- E2 | "C"CEG "Bb"F/E/D | "C"D C2- C2 "C"cBG "F"A2 |
+"C"GEC "F"F2 | "C"CEG "Bb"F/E/D | "C"D C2- C2 |]
 
 X:33
-T:MY FAVORITE FOOD
+T:My Favorite Food
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
@@ -30871,173 +30804,134 @@ L:1/8
 %%tags needs-repair
 K:D
 I:linebreak $
-x11 A | "^V""^A"A2A E2E C3 z2 C | C2C E2E A3 z2 A | $
-A2A G2G E2E C2C |
+x11 A | "A"A2 A E2 E C3 z2 C | C2 C E2 E A3 z2 A |
+A2 A G2 G E2 E C2 C |
 w: I'd|eat it with a fork, I'd|eat it with a spoon. I'd|eat it in the morn- ing, eve- ning,|
-"^D""^I"D2D F2F D3 F3 || $
-"^D""^I"F6 G3 F3 | "^V""^A"E3 A,3- A,6 | E6 F3 E3 |
+"D"D2 D F2 F D3 F3 ||
+"D"F6 G3 F3 | "A"E3 A,3- A,6 | E6 F3 E3 |
 w: and the af- ter- noon. It's|my fa- v'rite|food. _ _|My fa- v'rite|
-"^D""^I"D6 z3 z2 A || $
-"^V""^A"A2A E2E C3 z2 C | C2C E2E A3 z2 A | $
-A2A G2G E2E C2C |
+"D"D6 z3 z2 A ||
+"A"A2 A E2 E C3 z2 C | C2 C E2 E A3 z2 A |
+A2 A G2 G E2 E C2 C |
 w: food. I'd|eat it off a plate. I'd|eat it off the floor. I'd|eat it 'til my bel- ly bursts, and|
-"^D""^I"D2D F2F D3 F3 |: $
-"^D""^I"FAG BFA | "^V""^A"EGA, CA,G |
+"D"D2 D F2 F D3 F3 |:
+"D"FAG BFA | "A"EGA, CA,G |
 w: then I'd ask for more! It's|my fa- v'rite|food. _ _|
-EGF AEG |1 "^D""^I"DF z6 :|2 "^D""^I"DF z3 z z A || $
-"^V""^A"A2A E2E C3 z2 C |
+EGF AEG | [1 "D"DF z6 :| [2 "D"DF z3 z z A ||
+"A"A2 A E2 E C3 z2 C |
 w: My fa- v'rite|food.|food. I'd|eat it with my hands. I'd|
-C2C E2E A3 z2 A | $
-A2A G2G EEE C2C | "^D""^I"D2D F2F D3 F3 |: $
+C2 C E2 E A3 z2 A |
+A2 A G2 G EEE C2 C | "D"D2 D F2 F D3 F3 |:
 w: eat it with my feet. I'd|eat it if it fell off a truck and|land- ed on the street. It's|
-"^D""^I"FAd GBe FAd | "^V""^A"EGc A,CE A,CE | EGc FAd EGc |1
+"D"FAd GBe FAd | "A"EGc A,CE A,CE | EGc FAd EGc | [1
 w: my fa- v'rite|food. _ _|My fa- v'rite|
-"^D""^I"DFA z6 :|3 "^D""^I"DFA z3 z z A || $
-"^V""^A"A2A E2E C3 z2 C | C2C E2E A3 z2 A | $
+"D"DFA z6 :| [3 "D"DFA z3 z z A ||
+"A"A2 A E2 E C3 z2 C | C2 C E2 E A3 z2 A |
 w: food.|food. I'd|eat it off the dog. I'd|eat it off the cat. I'd|
-A2A G2G E2E C2C | "^D""^I"DDD F2F D3 F3 |: $
-"^D""^I"FAd GBe FAd |
+A2 A G2 G E2 E C2 C | "D"DDD F2 F D3 F3 |:
+"D"FAd GBe FAd |
 w: eat it off a porc- u- pine, so|wha- da- ya think of that?! It's|my fa- v'rite|
-"^V""^A"EGc A,CE A,CE | EGc FAd EGc |1 "^D""^I"DFA z6 :|3
+"A"EGc A,CE A,CE | EGc FAd EGc | [1 "D"DFA z6 :| [3
 w: food. _ _|My fa- v'rite|food.|
-"^D""^I"DFA z6 |]
+"D"DFA z6 |]
 w: food.|
 
 X:34
-T:MYRTLE THE TURTLE
+T:Myrtle the Turtle
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:3/4
 L:1/8
 %%id myrtle-the-turtle
 K:Bb
-I:linebreak $
-"^Cm""^i"C E3 G2 | "^IV""^F"F A3 c2 | "^Cm""^i"c2 G2 C2 | "^IV""^F"F6 | $
-"^Cm""^i"C2 E2 G2 |
-w: Myr- tle the|tur- tle would|swim through the|sea.|Then she'd come|
-G2 E2 C2 | "^VII""^Bb"F D3 B,2 | "^Cm""^i"F6- | F6 |]
-w: home and make|mu- sic with|me.|_|
+"Cm"C E3 G2 | "F"F A3 c2 | "Cm"c2 G2 C2 | "F"F6 |
+w: Myr- tle the|tur- tle would|swim through the|sea.|
+"Cm"C2 E2 G2 | G2 E2 C2 | "Bb"F D3 B,2 | "Cm"F6- |
+w: Then she'd come|home and make|mu- sic with|me.|
+F6 |]
+w: _|
 
 X:35
-T:NOT THE MAN IN BROWN
+T:Not the Man in Brown
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
 %%id not-the-man-in-brown
 K:G
-I:linebreak $
-"^D""^I"AG cB | "^G""^IV"BA GD | "^VII""^C"EE GG | "^D""^I"F4 | $
-"^D""^I""_*"F2 dF |
-w: Once there was a|man in brown, he'd|rule o'er ev- ry|town.|Un- til the|
-"^G""^IV"DD DG | "^VII""^C"GG cB | "^D""^I"AG FE | $
-"^D""^I""_*"D2 A2 | "^G""^IV"d2 BB |
-w: King found out; he|sent his men a-|round. And then the|King rode|in with his|
-"^VII""^C"cc EE | "^D""^I"D2 A2 | $
-"^D""^I""_*"DD DD | "^G""^IV"G4 | "^VII""^C"CC CC |
-w: sword of great re-|known. It's|good to be the|King,|not the man in|
-"^D""^I"D4 |]
-w: brown.|
+"D"AG cB | "G"BA GD | "C"EE GG | "D"F4 |
+w: Once there was a|man in brown, he'd|rule o'er ev- ry|town.|
+"D""_*"F2 dF | "G"DD DG | "C"GG cB | "D"AG FE |
+w: Un- til the|King found out; he|sent his men a-|round. And then the|
+"D""_*"D2 A2 | "G"d2 BB | "C"cc EE | "D"D2 A2 |
+w: King rode|in with his|sword of great re-|known. It's|
+"D""_*"DD DD | "G"G4 | "C"CC CC | "D"D4 |]
+w: good to be the|King,|not the man in|brown.|
 
 X:36
-T:OLD MOE CLARK
+T:Old Moe Clark
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:7/8
 L:1/8
 %%id old-moe-clark
 K:Bb
-I:linebreak $
-|: "^Dm"A B "^Cm"c B "^Dm"A F D | "^Dm"A B "^Cm"c B "^Dm"A3 | "^Dm"A B "^Cm"c B "^Dm"A F D |
-w: |||
-w: |||
-w: |||
-w: |||
-w: |||
-w: i * vii * i * *|i * vii * i|i * vii * i * *|
-"^Dm"D F "^Cm"E C "^Dm"D3 $
-"^Dm"D2 D2 A F D | D2 D2 "^Cm"G E C | "^Dm"D2 D2 A F D |
-w: ||||
-w: ||||
-w: ||||
-w: ||||
-w: ||||
-w: i * vii * i|i * * * *|* * vii * *|i * * * *|
-"^Dm"D F "^Cm"E C "^Dm"D3 :|
-w: |
-w: |
-w: |
-w: |
-w: |
-w: i * vii * i|
+|: "Dm"AB "Cm"cB "Dm"AFD | "Dm"AB "Cm"cB "Dm"A3 | "Dm"AB "Cm"cB "Dm"AFD | "Dm"DF "Cm"EC "Dm"D3
+"Dm"D2 D2 AFD | D2 D2 "Cm"GEC | "Dm"D2 D2 AFD | "Dm"DF "Cm"EC "Dm"D3 :|
 
 X:37
-T:PHRYGIAN ACCULTURATION
+T:Phrygian Acculturation
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:6/8
 L:1/8
 %%id phrygian-acculturation
 K:Ab
-I:linebreak $
-"^Cm"G | "^i"E2G c2"^Cm"G | "^i"E2G C2G | "^Bbm""^vii"FED B,2D | $
-"^Cm""^i"C3 z2 G | "^Cm""^i"E2G c2G | "^Cm""^i"E2G C2G | "^Db""^II"FED F2D | $
-"^Cm""^i"C6 |: "^Db""^II"!>!D3 !>!F3 | !>!A3 z3 | "^Cm""^i"(GAG FED | $
-C3) z3 :|
+"Cm"G | E2 G c2 "Cm"G | E2 G C2 G | "Bbm"FED B,2 D | "Cm"C3 z2 G |
+"Cm"E2 G c2 G | "Cm"E2 G C2 G | "Db"FED F2 D | "Cm"C6 |:
+"Db"!>!D3 !>!F3 | !>!A3 z3 | "Cm"(GAG FED | C3) z3 :|
 
 X:38
-T:PIZZA PIE
+T:Pizza Pie
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
 %%id pizza-pie
 K:C
-I:linebreak $
-"^C""^I"C2 GG | C2 G2 | E2 C2 | G4 | $
-"^C""^I"GE CE | GE CE | G4 | c4 |]
-w: I like- a|piz- za,|piz- za|pie.|Pep- per- o- ni,|pep- per- o- ni,|cheese,|cheese!|
+"C"C2 GG | C2 G2 | E2 C2 | G4 |
+w: I like- a|piz- za,|piz- za|pie.|
+"C"GE CE | GE CE | G4 | c4 |]
+w: Pep- per- o- ni,|pep- per- o- ni,|cheese,|cheese!|
 
 X:39
-T:SHOO, FLY, SHOO
+T:Shoo, Fly, Shoo
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
 %%id shoo-fly-shoo
 K:Cmin
-I:linebreak $
-"^Cm""^i"CC/C/ E/E/E | "^G""^V"DD/D/ =B,"^Cm"G, | "^i"C2 E2 | G2 z2 | $
+"Cm"CC/C/ E/E/E | "G"DD/D/ =B,"Cm"G, | C2 E2 | G2 z2 |
 w: Flies in the but- ter milk,|flies in the gra- vy.|Shoo, fly,|shoo!|
-"^Additional Lyrics2. Flies on the peppercorns, flies in the salt cellar. Flies on the Gummy Bears, flies on the marshmellers.3. Flies on the pancakes, flies on the waffles. Flies on the syrup, isn't that awful?!4. Flies on the ketchup and flies on the mustard. Flies on the berries on the cream on the custard.5. Flies on the fries on the flies on the fries. On the flies on the fries on the flies on the fries.""^Cm""^i"cc/c/ cG |
-w: Flies in the kitch- en,|
-"^G""^V"G/G/G A"^Cm"G | "^i"G2 E2 | C2 z2 |]
-w: dri- ving me cra- zy.|Shoo, fly,|shoo!|
+"^Additional Lyrics2. Flies on the peppercorns, flies in the salt cellar. Flies on the Gummy Bears, flies on the marshmellers.3. Flies on the pancakes, flies on the waffles. Flies on the syrup, isn't that awful?!4. Flies on the ketchup and flies on the mustard. Flies on the berries on the cream on the custard.5. Flies on the fries on the flies on the fries. On the flies on the fries on the flies on the fries.""Cm"cc/c/ cG | "G"G/G/G A"Cm"G | G2 E2 | C2 z2 |]
+w: Flies in the kitch- en,|dri- ving me cra- zy.|Shoo, fly,|shoo!|
 
 X:40
 T:SHOO, FLY, SHOO (Major)
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
 %%id shoo-fly-shoo-major
 K:C
-I:linebreak $
-"^C"CC/C/ E/E/E | "^G"DD/D/ B,G, | "^C"C2 E2 | G2 z2 | $
+"C"CC/C/ E/E/E | "G"DD/D/ B,G, | "C"C2 E2 | G2 z2 |
 w: Flies in the but- ter milk,|flies in the gra- vy.|SHOO FLY,|SHOO!|
-"^Additional Lyrics2. Flies on the peppercorns, flies in the salt cellar. Flies on the Gummy Bears, flies on the marshmellers.3. Flies on the pancakes, flies on the waffles. Flies on the syrup, isn't that awful?!4. Flies on the ketchup and flies on the mustard. Flies on the berries on the cream on the custard.5. Flies on the fries on the flies on the fries. On the flies on the fries on the flies on the fries.""^C"cc/c/ cG |
-w: Flies in the kitch- en,|
-"^G"G/G/G AG | "^C"G2 E2 | C2 z2 |]
-w: dri- ving me cra- zy.|SHOO FLY|SHOO.|
+"^Additional Lyrics2. Flies on the peppercorns, flies in the salt cellar. Flies on the Gummy Bears, flies on the marshmellers.3. Flies on the pancakes, flies on the waffles. Flies on the syrup, isn't that awful?!4. Flies on the ketchup and flies on the mustard. Flies on the berries on the cream on the custard.5. Flies on the fries on the flies on the fries. On the flies on the fries on the flies on the fries.""C"cc/c/ cG | "G"G/G/G AG | "C"G2 E2 | C2 z2 |]
+w: Flies in the kitch- en,|dri- ving me cra- zy.|SHOO FLY|SHOO.|
 
 X:41
-T:THE DOLL...
+T:The Doll...
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:4/4
@@ -31045,43 +30939,40 @@ L:1/8
 %%id the-doll
 K:C
 I:linebreak $
-"^Broadly, with a lilt"x6 (3G,A,B, |: "^C""^I"z2 c2 AG Ac | E E2 E- E2 (3G,A,B, | z2 c2 AG Ac | $
-"^G""^V"D D2 D- D2 (3G,A,B, | "^C""^I"z2 c2 AG Ac | E E2 E- E4 | "^F""^IV"A^G AB cB c^c |1 $
-"^G""^V"d=c BA =G2 (3=G,A,B, :|2 "^G""^V"dc BA GF ED || "^F""^IV"z2 (F2 A2 F2) | "^C""^I"z2 (E2 G2 E2) | $
-"^G""^V"z2 (D2 F2 D2) | "^C""^I"(3E_ED (3=EF^F "^C7""^I7"G2 _B2 | "^F""^IV"z2 (A2 c2 A2) | "^C""^I"z2 (G2 c2 G2) | $
-"^D7""^II7"z2 (^F2 A2 F2 | "^G""^V""^Vocal Ad Libs"!fermata!G6) (3G,A,B, || "^C""^I"z2 c2 AG Ac | E E2 E- E2 (3G,A,B, | $
-z2 c2 AG Ac | "^G""^V"D D2 D- D2 (3G,A,B, | "^C""^I"z2 c2 AG Ac | E E2 E- E4 | $
-"^F""^IV"A^G AB cB c^c | "^G""^V"d=c BA =GF ED | z2 "^C""^I"C2 z4 |]
+"^Broadly, with a lilt"x6 (3G,A,B, |: "C"z2 c2 AG Ac | E E2 E- E2 (3G,A,B, | z2 c2 AG Ac |
+"G"D D2 D- D2 (3G,A,B, | "C"z2 c2 AG Ac | E E2 E- E4 | "F"A^G AB cB c^c | [1
+"G"d=c BA =G2 (3=G,A,B, :| [2 "G"dc BA GF ED || "F"z2 (F2 A2 F2) | "C"z2 (E2 G2 E2) |
+"G"z2 (D2 F2 D2) | "C"(3E_ED (3=EF^F "C7"G2 _B2 | "F"z2 (A2 c2 A2) | "C"z2 (G2 c2 G2) |
+"D7"z2 (^F2 A2 F2 | "G""^Vocal Ad Libs"!fermata!G6) (3G,A,B, || "C"z2 c2 AG Ac | E E2 E- E2 (3G,A,B, |
+z2 c2 AG Ac | "G"D D2 D- D2 (3G,A,B, | "C"z2 c2 AG Ac | E E2 E- E4 |
+"F"A^G AB cB c^c | "G"d=c BA =GF ED | z2 "C"C2 z4 |]
 
 X:42
-T:THE PATTERN FACTORY
+T:The Pattern Factory
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:4/4
 L:1/8
 %%id the-pattern-factory
 K:D
-I:linebreak $
-A,A, | "^D""^I"DD "^IV""^G"DD "^D""^I"D2 DE | "^D""^I"FF "^IV""^G"GG "^D""^I"F2 z2 | $
+A,A, | "D"DD "G"DD "D"D2 DE | "D"FF "G"GG "D"F2 z2 |
 w: In the|pat- tern fac- to- ry, in the|pat- tern fac- to- ry.|
-"^D""^I"AA AB AF DE | "^D""^I"FF "^A""^V"EE "^D""^I"D2 z2 |]
+"D"AA AB AF DE | "D"FF "A"EE "D"D2 z2 |]
 w: We make rhy- thm pat- terns in the|pat- tern fac- to- ry.|
 
 X:43
-T:TRIPLE ACCULTURATION
+T:Triple Acculturation
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:6/8
 L:1/8
 %%id triple-acculturation
 K:C
-I:linebreak $
-GGG GGG | G/G/G/G/G/G/ G3 | G/G/GG GGG/G/ | G/GGG/ G3 | $
-G2G GG2 | z GGG G/G/G/G/ | GG/G/G/G/ GG/G/G/G/ | z GG G3 |]
+GGG GGG | G/G/G/G/G/G/ G3 | G/G/GG GGG/G/ | G/GGG/ G3 |
+G2 G G G2 | z GG GG/G/G/G/ | GG/G/G/G/ GG/G/G/G/ | z GG G3 |]
 
 X:44
-T:TURN OF A PHRASE
+T:Turn of a Phrase
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:6/8
@@ -31089,49 +30980,51 @@ L:1/8
 %%id turn-of-a-phrase
 %%tags needs-repair
 K:D
-I:linebreak $
-|: "^D"(DEF "^A7"GFE | "^D"FED "^A7"EC2) | "^D"(DEF "^G"GAB | "^A7"A/B/A/G/F/E/ "^D"D3) :| $
-[M:2/4]"^Bm".B,.C .D.B, | "^F#7""_sim"CB, ^A,C | "^Bm"B,C D"^F#7b9"B, | (G2 "^F#7"F2) | $
-"^D".D.E .FD | "^A7"ED CE | "^D"DE F"^A7b9"D | (!fermata!_B2 "^A7"!fermata!A2) | $
-[M:6/8]"^D"(DEF "^A7"GFE | "^D"FED "^A7"EC2) | "^D"(DEF "^G"GAB | "^A7"A/B/A/G/F/E/ "^D"D3) |]
+|: "D"(DEF "A7"GFE | "D"FED "A7"E C2) | "D"(DEF "G"GAB | "A7"A/B/A/G/F/E/ "D"D3) :|
+[M:2/4] "Bm".B,.C .D.B, | "F#7""_sim"CB, ^A,C | "Bm"B,C D"F#7b9"B, | (G2 "F#7"F2) |
+"D".D.E .FD | "A7"ED CE | "D"DE F"A7b9"D | (!fermata!_B2 "A7"!fermata!A2) |
+[M:6/8] "D"(DEF "A7"GFE | "D"FED "A7"E C2) | "D"(DEF "G"GAB | "A7"A/B/A/G/F/E/ "D"D3) |]
 
 X:45
-T:TWO CHATTY SHEEP
+T:Two Chatty Sheep
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
 %%id two-chatty-sheep
 K:C
-I:linebreak $
-G/G/G/G/ GG | GG GG | G/G/G/G/ GG | G2 z2 | $
-G/G/G/G/ GG | GG G/G/G | GG GG | G2 z2 |] $
-w: Once u- pon a time, there|were two sheep, and|might- y chat- ty sheep were|they!|Ev- 'ry af- ter noon, they'd|have a "Bah bah bah."|This is what they'd|say:|
-[M:2/4]G/G/G/G/ GG | GG GG | G/G/G/G/ GG | G2 z2 | $
-GG/G/ GG | GG GG | GG GG | G2 z2 |] $
-w: Once u- pon a time, there|were two sheep, and|might- y chat- ty sheep were|they!|I got- ta go and|take a walk, so|tell me what they|say.|
-[M:2/4]G/G/G/G/ GG | GG GG | G/G/G/G/ GG | G2 z2 | $
+G/G/G/G/ GG | GG GG | G/G/G/G/ GG | G2 z2 |
+w: Once u- pon a time, there|were two sheep, and|might- y chat- ty sheep were|they!|
+G/G/G/G/ GG | GG G/G/G | GG GG | G2 z2 |]
+w: Ev- 'ry af- ter noon, they'd|have a "Bah bah bah."|This is what they'd|say:|
+[M:2/4] G/G/G/G/ GG | GG GG | G/G/G/G/ GG | G2 z2 |
+w: Once u- pon a time, there|were two sheep, and|might- y chat- ty sheep were|they!|
+GG/G/ GG | GG GG | GG GG | G2 z2 |]
+w: I got- ta go and|take a walk, so|tell me what they|say.|
+[M:2/4] G/G/G/G/ GG | GG GG | G/G/G/G/ GG | G2 z2 |
+w: Once u- pon a time, there|were two sheep, and|might- y chat- ty sheep were|they!|
 GG/G/ GG/G/ | GG G2 | GG GG | G2 z2 |]
-w: Once u- pon a time, there|were two sheep, and|might- y chat- ty sheep were|they!|If one of them were to|"Bah" at you,|tell me what you'd|say.|
+w: If one of them were to|"Bah" at you,|tell me what you'd|say.|
 
 X:46
-T:WATERMELON
+T:Watermelon
 C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
-N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
 %%id watermelon
 K:D
-I:linebreak $
-"^D""^I"D2 "^IV""^G"G2 | "^D""^I"D2 "^V""^A"A2 | "^D""^I"D2 "^IV""^G"G2 | "^D""^I"D2 "^V""^A"A2 | $
-w: Wat- er-|mel- on,|Wat- er-|mel- on,|
-"^D""^I"DF "^IV""^G"GB | "^D""^I"AF "^V""^A"EC | "^D""^I"DF "^IV""^G"GB | "^D""^I"AF "^V""^A"EC | $
-w: Wat- er- mel- on,|wat- er- mel- on,|Wat- er- mel- on,|wat- er- mel- on,|
-"^D""^I"D/F/A/F/ "^IV""^G"D/G/B/G/ | "^D""^I"D/F/A/F/ "^V""^A"E/C/E/A/ | $
+"D"D2 "G"G2 | "D"D2 "A"A2 |
+w: Wat- er-|mel- on,|
+"D"D2 "G"G2 | "D"D2 "A"A2 |
+w: Wat- er-|mel- on,|
+"D"DF "G"GB | "D"AF "A"EC |
+w: Wat- er- mel- on,|wat- er- mel- on,|
+"D"DF "G"GB | "D"AF "A"EC |
+w: Wat- er- mel- on,|wat- er- mel- on,|
+"D"D/F/A/F/ "G"D/G/B/G/ | "D"D/F/A/F/ "A"E/C/E/A/ |
 w: Wat- er- mel- on, wat- er- mel- on,|wat- er- mel- on, wat- er- mel- on.|
-"^D""^I"D/F/A/F/ "^IV""^G"D/G/B/G/ | "^D""^I"D/F/A/F/ "^V""^A"E/C/E/A/ |]
+"D"D/F/A/F/ "G"D/G/B/G/ | "D"D/F/A/F/ "A"E/C/E/A/ |]
 w: Wat- er- mel- on, wat- er- mel- on,|wat- er- mel- on, wat- er- mel- on.|
 
 X:47
@@ -31142,9 +31035,8 @@ M:6/8
 L:1/8
 %%id admiral-anderson-2
 K:Dmin
-I:linebreak $
-"^i"DDD "^V"EEE | "^i"F3 F3 | "^i"FFF "^V"GGG | "^i"A3 A3 | $
-"^i"FFF "^V"EEE | "^i"D3 D3 | DDD "^V"^CCC | "^i"D3 D3 |]
+DDD EEE | F3 F3 | FFF GGG | A3 A3 |
+FFF EEE | D3 D3 | DDD ^CCC | D3 D3 |]
 
 X:48
 T:Little Johnny Johnson
@@ -31154,9 +31046,8 @@ M:2/4
 L:1/8
 %%id little-johnny-johnson-2
 K:D
-I:linebreak $
-"^I"DD "^V"EE | "^I"F2 F2 | "^I"FF "^V"GG | "^I"A2 A2 | $
-"^I"FF "^V"EE | "^I"D2 D2 | "^I"DD "^V"CC | "^I"D2 D2 |]
+DD EE | F2 F2 | FF GG | A2 A2 |
+FF EE | D2 D2 | DD CC | D2 D2 |]
 
 X:49
 T:Principal Pinkerton
@@ -31166,9 +31057,8 @@ M:6/8
 L:1/8
 %%id principal-pinkerton-2
 K:D
-I:linebreak $
-"^I"DDD "^V"EEE | "^I"F3 F3 | "^I"FFF "^V"GGG | "^I"A3 A3 | $
-"^I"FFF "^V"EEE | "^I"D3 D3 | "^I"DDD "^V"CCC | "^I"D3 D3 |]
+DDD EEE | F3 F3 | FFF GGG | A3 A3 |
+FFF EEE | D3 D3 | DDD CCC | D3 D3 |]
 
 X:50
 T:Sister Mary Margaret
@@ -31178,9 +31068,8 @@ M:2/4
 L:1/8
 %%id sister-mary-margaret-2
 K:Dmin
-I:linebreak $
-"^i"DD "^V"EE | "^i"F2 F2 | "^i"FF "^V"GG | "^i"A2 A2 | $
-"^i"FF "^V"EE | "^i"D2 D2 | "^i"DD "^V"^CC | "^i"D2 D2 |]
+DD EE | F2 F2 | FF GG | A2 A2 |
+FF EE | D2 D2 | DD ^CC | D2 D2 |]
 
 X:51
 T:Unfinished Song #1
@@ -31190,9 +31079,8 @@ M:2/4
 L:1/8
 %%id unfinished-song-1
 K:D
-I:linebreak $
-"D""^I"DE FG | AF D2 | "A""^V"CD EA | "D""^I"F2 D2 | $
-"D""^I"DE FG | "A""^V"AB A2 | "A""^(V)"x4 | "D""^(I)"x4 |]
+"D"DE FG | AF D2 | "A"CD EA | "D"F2 D2 |
+"D"DE FG | "A"AB A2 | "A"x4 | "D"x4 |]
 
 X:52
 T:Unfinished Song #2
@@ -31202,9 +31090,8 @@ M:6/8
 L:1/8
 %%id unfinished-song-2
 K:Dm
-I:linebreak $
-"Dm""^i"A2B A2G | F2E D3 | "A""^V"^C2D E2A | "Dm""^i"F3 D3 | $
-"Dm""^i"A2B A2G | F2G A3 | "A""^(V)"x6 | "Dm""^(i)"x6 ||
+"Dm"A2 B A2 G | F2 E D3 | "A"^C2 D E2 A | "Dm"F3 D3 |
+"Dm"A2 B A2 G | F2 G A3 | "A"x6 | "Dm"x6 ||
 
 X:53
 T:Unfinished Song #3
@@ -31214,9 +31101,8 @@ M:2/4
 L:1/8
 %%id unfinished-song-3
 K:D
-I:linebreak $
-"D""^I"D/D/D/D/ FF | AF d2 | "A""^V"c2 A2 | G2 E2 | $
-"D""^I"D/D/D/D/ FF | AF d2 | "A""^(V)"x4 | "D""^(I)"x4 |]
+"D"D/D/D/D/ FF | AF d2 | "A"c2 A2 | G2 E2 |
+"D"D/D/D/D/ FF | AF d2 | "A"x4 | "D"x4 |]
 
 X:54
 T:Unfinished Song #4
@@ -31226,9 +31112,8 @@ M:6/8
 L:1/8
 %%id unfinished-song-4
 K:Dm
-I:linebreak $
-"Dm""^i"DDE FED | FFG AFD | "A""^V"A2B A2B | "Dm""^i"A2G FED | $
-"Dm""^i"DDE FED | FFG "A""^V"A3 | "A""^(V)"x6 | "Dm""^(i)"x6 |]
+"Dm"DDE FED | FFG AFD | "A"A2 B A2 B | "Dm"A2 G FED |
+"Dm"DDE FED | FFG "A"A3 | "A"x6 | "Dm"x6 |]
 
 X:55
 T:Unfinished Song #5
@@ -31238,9 +31123,8 @@ M:2/4
 L:1/8
 %%id unfinished-song-5
 K:D
-I:linebreak $
-"D""^I"A2 FE | DE F2 | "A""^V"GE CE | A,2 A2 | $
-"D""^I"A2 FD | "G""^IV"GA B2 | "A""^(V)"x4 | "D""^(I)"x4 |]
+"D"A2 FE | DE F2 | "A"GE CE | A,2 A2 |
+"D"A2 FD | "G"GA B2 | "A"x4 | "D"x4 |]
 `,
 
 "test":
@@ -31326,8 +31210,8 @@ L:1/8
 Q:"Moderate"
 %%id hopscotch
 K:D
-I:linebreak $
-F2 A G2 A | F A d c A G | F2 A E2 F | D z2 A G E |$ F2 A G2 A | F A d c A G | F2 A E2 F | D F E D3 |]
+F2 A G2 A | FAd cAG | F2 A E2 F | D z2 AGE |
+F2 A G2 A | FAd cAG | F2 A E2 F | DFE D3 |]
 
 X:2
 T:Jacks
@@ -31339,8 +31223,8 @@ L:1/8
 Q:"Moderate"
 %%id jacks
 K:D
-I:linebreak $
-F A D2 | C/D/E/F/ G2 | (F A) D2 | A/G/F/E/ D2 |$ B/A/G/F/ E/F/G | A/G/F/E/ D/E/F | G/F/E/D/ C/D/E | A/G/F/E/ D2 |]
+FA D2 | C/D/E/F/ G2 | (FA) D2 | A/G/F/E/ D2 |
+B/A/G/F/ E/F/G | A/G/F/E/ D/E/F | G/F/E/D/ C/D/E | A/G/F/E/ D2 |]
 
 X:3
 T:Clouds
@@ -31352,8 +31236,10 @@ L:1/8
 Q:"Fast"
 %%id clouds-2
 K:Dmin
-I:linebreak $
-D4 F2 | A6 | B A G2 B2 | A6 |$ B4 ^c2 | d4 B2 | A6-|A6 |$ D4 F2 | A6 | G F E2 F2 | D6 |$ ^C2 A4-|A6 | D6-|D6 |]
+D4 F2 | A6 | BA G2 B2 | A6 |
+B4 ^c2 | d4 B2 | A6- | A6 |
+D4 F2 | A6 | GF E2 F2 | D6 |
+^C2 A4- | A6 | D6- | D6 |]
 
 X:4
 T:Hide And Seek
@@ -31365,8 +31251,9 @@ L:1/8
 Q:"Moderate"
 %%id hide-and-seek
 K:Emin
-I:linebreak $
-B G E2 | ^D/E/F/G/ A2 | B G E2 | c A c A |$ B/A/G/A/ B2 | A F A F | G/F/E/G/ !fermata!F2 | B G E2 |$ ^D/E/F/G/ A2 | B2 B2 | B/A/G/F/ !fermata!E2 |]
+BG E2 | ^D/E/F/G/ A2 | BG E2 | cA cA |
+B/A/G/A/ B2 | AF AF | G/F/E/G/ !fermata!F2 | BG E2 |
+^D/E/F/G/ A2 | B2 B2 | B/A/G/F/ !fermata!E2 |]
 
 X:5
 T:Dr. Kate
@@ -31378,8 +31265,8 @@ L:1/8
 Q:"Fast"
 %%id dr-kate
 K:D
-I:linebreak $
-F A D2 | F A D2 | E F2 G | A4 |$ F A D2 | F A D2 | G F2 E | D4 |]
+FA D2 | FA D2 | E F2 G | A4 |
+FA D2 | FA D2 | G F2 E | D4 |]
 
 X:6
 T:Pancakes
@@ -31391,8 +31278,9 @@ L:1/8
 Q:"Fast"
 %%id pancakes
 K:D
-I:linebreak $
-z d d d | B A3 | z F F F | E D3 | z d d d |$ B A3 | z F F F | E D3 | F D E D | !fermata!A4 |]
+z d dd | B A3 | z F FF | E D3 |
+z d dd | B A3 | z F FF | E D3 |
+FD ED | !fermata!A4 |]
 
 X:7
 T:Dancing
@@ -31403,8 +31291,10 @@ M:2/4
 L:1/8
 %%id dancing
 K:Edor
-I:linebreak $
-B2 E2 | D F E2 | G F !breath!E2 | B2 E2 | D F E2 |$ G F !breath!E2 | B2 c A | B4 | d c B A | !breath!B4 |$ d c B A | B G E2 | D2 F2 | E4 |]
+B2 E2 | DF E2 | GF !breath!E2 | B2 E2 |
+DF E2 | GF !breath!E2 | B2 cA | B4 |
+dc BA | !breath!B4 | dc BA | BG E2 |
+D2 F2 | E4 |]
 
 X:8
 T:Pickles
@@ -31416,8 +31306,8 @@ L:1/8
 Q:"Fast"
 %%id pickles
 K:Dmix
-I:linebreak $
-A | c B A G F E | D6 | C3 E2 C |$ D6 | C3 E2 C | D2 E D2 A | c B A G F E | F D2-D3 |]
+A | cBA GFE | D6 | C3 E2 C | D6 |
+C3 E2 C | D2 E D2 A | cBA GFE | F D2- D3 |]
 
 X:9
 T:The Little Yellow Cub
@@ -31429,8 +31319,8 @@ L:1/8
 Q:"Moderate"
 %%id the-little-yellow-cub
 K:Gmix
-I:linebreak $
-B G B A F/ A3/2 | G/ B3/2-B-B3 | B G B A F/ A3/2 | G6 |$ B G B A F/ A3/2 | G/ B3/2-B-B3 | d/4 B/4 G/ F/ A3/2-A3 | G6 |]
+BGB AF/A3/2 | G/B3/2-B- B3 | BGB AF/A3/2 | G6 |
+BGB AF/A3/2 | G/B3/2-B- B3 | d/4B/4G/F/A3/2- A3 | G6 |]
 
 X:10
 T:Elisabeth's Song
@@ -31442,8 +31332,8 @@ L:1/8
 Q:"Fast"
 %%id elisabeth-s-song
 K:G
-I:linebreak $
-D | B B A A | G G D D | B B A A | G3 D |$ B B A A | G G D D | E E F F | z D G z |]
+D | BB AA | GG DD | BB AA | G3 D |
+BB AA | GG DD | EE FF | z D G z |]
 
 X:11
 T:Spinning
@@ -31455,8 +31345,10 @@ L:1/8
 Q:"Fast"
 %%id spinning-2
 K:D
-I:linebreak $
-A B ^G A B G | A3 d3 | D3 E3 | F6 |$ A B ^G A B G | A3 d3 | F3 E3 | D6 |$ D3 A3 | d3 A3 | D3 A3 | d6 |$ A B ^G A B G | A3 d3 | F3 E3 | D6 |]
+AB^G ABG | A3 d3 | D3 E3 | F6 |
+AB^G ABG | A3 d3 | F3 E3 | D6 |
+D3 A3 | d3 A3 | D3 A3 | d6 |
+AB^G ABG | A3 d3 | F3 E3 | D6 |]
 
 X:12
 T:Winter Day
@@ -31468,8 +31360,8 @@ L:1/8
 Q:1/4=108
 %%id winter-day
 K:Dmin
-I:linebreak $
-A F D E F/E/ | D3-D2 | A F D E F/E/ | D3-D2 |$ E F G A2 | B A G A2 | F E D E D/^C/ | D3-D2 |]
+AFD EF/E/ | D3- D2 | AFD EF/E/ | D3- D2 |
+EFG A2 | BAG A2 | FED ED/^C/ | D3- D2 |]
 
 X:13
 T:Goodbye
@@ -31481,8 +31373,10 @@ L:1/8
 Q:1/4=100
 %%id goodbye
 K:Ephr
-I:linebreak $
-B2 | E4 E2 | c B A2 c2 | B6-|B6 |$ B3 A G2 | A2 G4 | F6-|F4 B2 | E4 E2 |$ c B A2 c2 | B6-|B6 | B3 A G2 |$ F2 D4 | E6-|E4 |]
+B2 | E4 E2 | cB A2 c2 | B6- | B6 |
+B3 A G2 | A2 G4 | F6- | F4 B2 |
+E4 E2 | cB A2 c2 | B6- | B6 |
+B3 A G2 | F2 D4 | E6- | E4 |]
 
 X:14
 T:Taking A Nap
@@ -31494,8 +31388,10 @@ L:1/8
 Q:1/4=108
 %%id taking-a-nap
 K:Gmin
-I:linebreak $
-G2 | B4 A2 | c4 B2 | G6-|$G4 G2 | E4 D2 | F4 E2 | G6-|$G6 | B2 A2 c2 | B6 | B2 A2 c2 |$B6 | B4 A2 | G4 F2 | E6-|E4 |]
+G2 | B4 A2 | c4 B2 | G6- | G4 G2 |
+E4 D2 | F4 E2 | G6- | G6 |
+B2 A2 c2 | B6 | B2 A2 c2 | B6 |
+B4 A2 | G4 F2 | E6- | E4 |]
 
 X:15
 T:Stephan
@@ -31508,8 +31404,8 @@ Q:1/4=144
 %%id stephan
 %%tags needs-repair
 K:D
-I:linebreak $
-z E F G E A F | B A G F2 E2 | z E F G E A F | B A G F2 E2 |$[M:6/8] z d c B c B | [M:7/8] A G F E2 D2 | [M:6/8] z d c B c B | [M:7/8] A G F E2 D2 |]
+z E FG EAF | BA G F2 E2 | z E FG EAF | BA G F2 E2 |
+[M:6/8] z dc BcB | [M:7/8] AG F E2 D2 | [M:6/8] z dc BcB | [M:7/8] AG F E2 D2 |]
 
 X:16
 T:Daydreams
@@ -31521,8 +31417,8 @@ L:1/8
 Q:1/4=66
 %%id daydreams
 K:Dphr
-I:linebreak $
-D E F2 | F G A2 | A G F E | D4 |$ A2 C2 | D4 | D D E C | D4 |]
+DE F2 | FG A2 | AG FE | D4 |
+A2 C2 | D4 | DD EC | D4 |]
 
 X:17
 T:Fingers And Toes
@@ -31534,8 +31430,8 @@ L:1/8
 Q:1/4=108
 %%id fingers-and-toes
 K:Dmin
-I:linebreak $
-D E F/A3/2 | F/A3/2 F/A3/2 | D ^C D/A3/2 |$ B/B/B/B/B2 | A A/A/D2 |]
+DE F/A3/2 | F/A3/2 F/A3/2 | D^C D/A3/2 | B/B/B/B/ B2 |
+AA/A/ D2 |]
 
 X:18
 T:The Clown
@@ -31547,8 +31443,8 @@ L:1/8
 Q:1/4=144
 %%id the-clown
 K:D
-I:linebreak $
-d | c A G E | D3 d | c A G E | D4 |$ D F E G | F A !fermata!d d | c A G E | D3 |]
+d | cA GE | D3 d | cA GE | D4 |
+DF EG | FA !fermata!dd | cA GE | D3 |]
 
 X:19
 T:Merry Go Round
@@ -31561,8 +31457,10 @@ Q:1/4=108
 %%id merry-go-round
 %%tags needs-repair
 K:F
-I:linebreak $
-c A F2 | D G C2 | D F E G | F G A2 |$ c A F2 | D G C2 | D F E G | A G F2 ||$[M:5/8] A c A F F | A c A3 | A c A F F | G E F3 |$ A c A F F | A c A3 | A c A F F | G E F3 |]
+cA F2 | DG C2 | DF EG | FG A2 |
+cA F2 | DG C2 | DF EG | AG F2 ||
+[M:5/8] AcA FF | Ac A3 | AcA FF | GE F3 |
+AcA FF | Ac A3 | AcA FF | GE F3 |]
 
 X:20
 T:Icicles
@@ -31574,8 +31472,8 @@ L:1/8
 Q:1/4=108
 %%id icicles
 K:Dmin
-I:linebreak $
-A D A F D | E F E D2 | E F G A2 |$ B A G A2 | A D A F D | E D ^C D2 |]
+ADA FD | EFE D2 | EFG A2 | BAG A2 |
+ADA FD | ED^C D2 |]
 
 X:21
 T:To Market
@@ -31587,8 +31485,8 @@ L:1/8
 Q:1/4=108
 %%id to-market
 K:Dmin
-I:linebreak $
-D3 A3 | B B B A3 | A2 B A2 B | A2 F D3 |$ D3 A3 | B B B A3 | A2 G F2 ^C | D6 |]
+D3 A3 | BBB A3 | A2 B A2 B | A2 F D3 |
+D3 A3 | BBB A3 | A2 G F2 ^C | D6 |]
 
 X:22
 T:The Cowboy
@@ -31600,8 +31498,8 @@ L:1/8
 Q:1/4=108
 %%id the-cowboy
 K:Ddor
-I:linebreak $
-D | G3 B-B3 G | A3 F-F2 A2 |$ G3 E-E2 C2 | D2 z2 z2 z D | G3 B-B2 G2 |$ A3 F-F2 A2 | C D2 E-E G C2 | D2 z2 z2 z |]
+D | G3 B- B3 G | A3 F- F2 A2 | G3 E- E2 C2 | D2 z2 z2 z D |
+G3 B- B2 G2 | A3 F- F2 A2 | C D2 E- EG C2 | D2 z2 z2 z |]
 
 X:23
 T:Go To Sleep
@@ -31613,9 +31511,9 @@ M:2/4
 L:1/8
 %%id go-to-sleep
 K:C
-I:linebreak $
-BBBB | BBB2 | BBB2 | B/B/B/B/BB $
-BBB2 | BBB2 | B/B/BB/B/B | BBB2 | BBB2 |]
+BB BB | BB B2 | BB B2 | B/B/B/B/ BB
+BB B2 | BB B2 | B/B/B B/B/B | BB B2 |
+BB B2 |]
 
 X:24
 T:No, Sir!
@@ -31628,9 +31526,8 @@ M:2/4
 L:1/8
 %%id no-sir
 K:C
-I:linebreak $
-B/B/B/B/B/B3/2 | B/B/B/B/B/B3/2 | !>!B2!>!B2 | !breath!BBBB $
-BBB2 | !breath!B/B/B/B/B/B3/2 | B/B/B/B/B/B3/2 | !>!B2!>!B2 |]
+B/B/B/B/ B/B3/2 | B/B/B/B/ B/B3/2 | !>!B2 !>!B2 | !breath!BB BB
+BB B2 | !breath!B/B/B/B/ B/B3/2 | B/B/B/B/ B/B3/2 | !>!B2 !>!B2 |]
 
 X:25
 T:Going To The Fair
@@ -31642,9 +31539,8 @@ M:6/8
 L:1/8
 %%id going-to-the-fair
 K:C
-I:linebreak $
-B | BBB BBB | B3-B2 B | BBB BBB | B6 $
-BBB B3 | BBB B2 B | BBB B3/2B/2B | B3-B3 |]
+B | BBB BBB | B3- B2 B | BBB BBB | B6
+BBB B3 | BBB B2 B | BBB B3/2B/2B | B3- B3 |]
 
 X:26
 T:Mud Pies
@@ -31657,9 +31553,8 @@ M:6/8
 L:1/8
 %%id mud-pies
 K:C
-I:linebreak $
-!>!B BB BBB | BBB B3 | !>!B BB BBB | B6 $
-!>!B BB BBB | BBB B3 | B6- | !>!B z z3 |]
+!>!BBB BBB | BBB B3 | !>!BBB BBB | B6
+!>!BBB BBB | BBB B3 | B6- | !>!B z z3 |]
 
 X:27
 T:Buffalo
@@ -31672,7 +31567,8 @@ M:6/8
 L:1/8
 %%id buffalo
 K:C
-!>!BBB BBB | [M:2/4] !>!BB BB | [M:6/8] !>!BBB BBB | !>!B BB BB B | !>!B BB BB B |]
+!>!BBB BBB | [M:2/4] !>!BB BB | [M:6/8] !>!BBB BBB | !>!BBB BBB |
+!>!BBB BBB |]
 
 X:28
 T:Sweet Potato
@@ -31684,7 +31580,8 @@ M:7/8
 L:1/8
 %%id sweet-potato
 K:C
-B/B/B/B/BBB BB | B/B/B/B/BBB B2 | B/B/B/B/BBB B/B/B/B/ | B/B/B/B/BBB B2 |]
+B/B/B/B/ BB BBB | B/B/B/B/ BB B B2 |
+B/B/B/B/ BB BB/B/B/B/ | B/B/B/B/ BB B B2 |]
 
 X:29
 T:Rain
@@ -31709,9 +31606,8 @@ M:2/4
 L:1/8
 %%id walking-with-my-mom
 K:C
-I:linebreak $
-BB BB | B/B/B/B/B2 | B/BB/BB | B4 $
-BBBB | B/B/B/B/B2 | !>!B2!>!B2 | !>!B4 |]
+BB BB | B/B/B/B/ B2 | B/BB/ BB | B4
+BB BB | B/B/B/B/ B2 | !>!B2 !>!B2 | !>!B4 |]
 
 X:31
 T:Walking With My Dad
@@ -31723,9 +31619,8 @@ M:2/4
 L:1/8
 %%id walking-with-my-dad
 K:C
-I:linebreak $
-BB BB | B/B/B B2 | B/BB/BB | B4 $
-BB BB | B/B/B B2 | B/B/B/B/B/B/B/B/ | B4 |]
+BB BB | B/B/B B2 | B/BB/ BB | B4
+BB BB | B/B/B B2 | B/B/B/B/ B/B/B/B/ | B4 |]
 
 X:32
 T:Strong
@@ -31737,9 +31632,8 @@ M:2/4
 L:1/8
 %%id strong
 K:C
-I:linebreak $
-BB BB/B/ | BB B2 | BB BB | B4 $
-BB BB/B/ | BB B2 | B/BB/BB | B4 |]
+BB BB/B/ | BB B2 | BB BB | B4
+BB BB/B/ | BB B2 | B/BB/ BB | B4 |]
 
 X:33
 T:Giants And Elves
@@ -31751,8 +31645,7 @@ M:6/8
 L:1/8
 %%id giants-and-elves
 K:C
-I:linebreak $
-B2 B B2 B | B3/2B/2B B3 | BBB BBB | B6 $
+B2 B B2 B | B3/2B/2B B3 | BBB BBB | B6
 BBB BBB | B3/2B/2B B3 | B2 B B2 B | B6 |]
 
 X:34
@@ -31766,7 +31659,7 @@ M:2/4
 L:1/8
 %%id follow-me
 K:C
-B/B/ | BB/B/BB/B/ | B/B/B/B/B/B/B | BB/B/BB/B/ | !>!B!>!B!>!B |]
+B/B/ | BB/B/ BB/B/ | B/B/B/B/ B/B/B | BB/B/ BB/B/ | !>!B!>!B !>!B |]
 
 X:35
 T:Sun Chant
@@ -31778,9 +31671,10 @@ M:2/4
 L:1/8
 %%id sun-chant
 K:C
-I:linebreak $
-B/B/B/B/BB | BB B2- | BB B/B/B | B4 | BB B/B/B $
-BB B2- | B/B/B/B/BB | B2- B/B/B/B/ | B/B/BBB | B4 |]
+B/B/B/B/ BB | BB B2- | BB B/B/B | B4 |
+BB B/B/B
+BB B2- | B/B/B/B/ BB | B2- B/B/B/B/ | B/B/B BB |
+B4 |]
 `,
 
 "jri-recorder":
@@ -31793,8 +31687,8 @@ L:1/8
 Q:3/8=63
 %%id triple-twinkle
 K:Eb
-|: "Eb" E2 E B2 B | "Ab" c2 c "Eb" B3 | "Bb7" A2 A "Eb" G2 G | "Bb7" F2 F "Eb" E3 !fine! :|
-"Eb" B2 B "Bb7" A2 A | "Eb" G2 G "Bb7" F3 | "Eb" B2 B "Bb7" A2 A | "Eb" G2 G "Bb7" F3 !D.C.! |]
+|: "Eb"E2 E B2 B | "Ab"c2 c "Eb"B3 | "Bb7"A2 A "Eb"G2 G | "Bb7"F2 F "Eb"E3 !fine! :|
+"Eb"B2 B "Bb7"A2 A | "Eb"G2 G "Bb7"F3 | "Eb"B2 B "Bb7"A2 A | "Eb"G2 G "Bb7"F3 !D.C.! |]
 
 X:2
 T:Triple Pierrot
@@ -31805,8 +31699,8 @@ L:1/8
 Q:3/8=72
 %%id triple-pierrot
 K:Eb
-"Eb" E2 E E2 "Bb7" F | "Eb" G3 "Bb7" F3 | "Eb" E2 G "Bb7" F2 F | "Eb" E6 |
-"Eb" E2 E E2 "Bb7" F | "Eb" G3 "Bb7" F3 | "Eb" E2 G "Bb7" F2 F | "Eb" E6 |]
+"Eb"E2 E E2 "Bb7"F | "Eb"G3 "Bb7"F3 | "Eb"E2 G "Bb7"F2 F | "Eb"E6 |
+"Eb"E2 E E2 "Bb7"F | "Eb"G3 "Bb7"F3 | "Eb"E2 G "Bb7"F2 F | "Eb"E6 |]
 
 X:3
 T:Patsy, Ory, Ory, Aye
@@ -31817,10 +31711,10 @@ L:1/8
 Q:3/8=116
 %%id patsy-ory-ory-aye
 K:F
-"F" A2 A A2 A | A2 B c3 | "C7" G2 G G2 G | G2 A B3 |
-"F" A2 A A2 A | A2 B c2 A | "C7" G2 B A2 G | "F" F3 F3 |
-"F" A2 A A2 A | A2 B c3 | "C7" G2 G G2 G | G2 A B3 |
-"F" A2 A A2 A | A2 B c2 A | "Bb" G2 B "C7" A2 G | "F" F3 F3 |]
+"F"A2 A A2 A | A2 B c3 | "C7"G2 G G2 G | G2 A B3 |
+"F"A2 A A2 A | A2 B c2 A | "C7"G2 B A2 G | "F"F3 F3 |
+"F"A2 A A2 A | A2 B c3 | "C7"G2 G G2 G | G2 A B3 |
+"F"A2 A A2 A | A2 B c2 A | "Bb"G2 B "C7"A2 G | "F"F3 F3 |]
 
 X:4
 T:Baa, Baa, Black Sheep
@@ -31831,9 +31725,9 @@ L:1/8
 Q:1/4=100
 %%id baa-baa-black-sheep
 K:Eb
-"Eb" E E B B | "Ab" c/c/c/c/ "Eb" B2 | "Bb7" A A "Eb" G G | "Bb7" F F "Eb" E2 |
-"Eb" B B/B/ "Bb7" A A | "Eb" G G/G/ "Bb7" F2 | "Eb" B B/B/ "Bb7" A/A/A/A/ | "Eb" G G/G/ "Bb7" F2 |
-"Eb" E E B B | "Ab" c/c/c/c/ "Eb" B2 | "Bb7" A A "Eb" G G | "Bb7" F F "Eb" E2 |]
+"Eb"EE BB | "Ab"c/c/c/c/ "Eb"B2 | "Bb7"AA "Eb"GG | "Bb7"FF "Eb"E2 |
+"Eb"BB/B/ "Bb7"AA | "Eb"GG/G/ "Bb7"F2 | "Eb"BB/B/ "Bb7"A/A/A/A/ | "Eb"GG/G/ "Bb7"F2 |
+"Eb"EE BB | "Ab"c/c/c/c/ "Eb"B2 | "Bb7"AA "Eb"GG | "Bb7"FF "Eb"E2 |]
 
 X:5
 T:Oats, Peas, Beans
@@ -31844,8 +31738,8 @@ L:1/8
 Q:3/8=108
 %%id oats-peas-beans
 K:F
-"F" A2 A A2 "C7" G | "F" F2 F F3 | "C7" B2 B B2 A | G2 G G2 G |
-"F" A2 "C7" B c2 B | "F" A A B c2 A | "Bb" G2 B "C7" A2 G | "F" F2 F F3 |]
+"F"A2 A A2 "C7"G | "F"F2 F F3 | "C7"B2 B B2 A | G2 G G2 G |
+"F"A2 "C7"B c2 B | "F"AAB c2 A | "Bb"G2 B "C7"A2 G | "F"F2 F F3 |]
 
 X:6
 T:Clementine
@@ -31856,8 +31750,8 @@ L:1/8
 Q:1/4=92
 %%id clementine
 K:Eb
-E3/2 E/ | "Eb" E2 B,2 G3/2 G/ | G2 E2 E3/2 G/ | B3 B A G | "Bb7" F4 F3/2 G/ |
-"Bb7" A2 A2 G3/2 F/ | "Eb" G2 E2 E3/2 G/ | "Bb7" F2 B,2 D3/2 F/ | "Eb" E4 |]
+E3/2E/ | "Eb"E2 B,2 G3/2G/ | G2 E2 E3/2G/ | B3 B AG | "Bb7"F4 F3/2G/ |
+"Bb7"A2 A2 G3/2F/ | "Eb"G2 E2 E3/2G/ | "Bb7"F2 B,2 D3/2F/ | "Eb"E4 |]
 
 X:7
 T:Hush Little Baby
@@ -31868,8 +31762,8 @@ L:1/16
 Q:1/4=48
 %%id hush-little-baby
 K:Eb
-"Eb" B,2 GG G2 A2 | "Bb7" G2 FF F4 | B,B,FF F2 FG | "Eb" F2 E2 E4 |
-"Eb" B,2 G2 G2 A2 | "Bb7" G2 F2 F4 | B,B,FF F2 FG | "Eb" F2 E2 E4 |]
+"Eb"B,2GG G2A2 | "Bb7"G2FF F4 | B,B,FF F2FG | "Eb"F2E2 E4 |
+"Eb"B,2G2 G2A2 | "Bb7"G2F2 F4 | B,B,FF F2FG | "Eb"F2E2 E4 |]
 
 X:8
 T:Coventry Carol
@@ -31880,8 +31774,8 @@ L:1/8
 Q:1/8=92
 %%id coventry-carol
 K:Cm
-"Cm" C C =B, C2 E | "G7" D2 C =B,3 | "Cm" C D E "Fm" F2 D | "Cm" C3- C2 G |
-"Fm" F2 E D2 E | "Fm" D2 C "G7" =B,3 | "Cm" C =B, C "Fm" F2 D | "C" =E6 |]
+"Cm"CC=B, C2 E | "G7"D2 C =B,3 | "Cm"CDE "Fm"F2 D | "Cm"C3- C2 G |
+"Fm"F2 E D2 E | "Fm"D2 C "G7"=B,3 | "Cm"C=B,C "Fm"F2 D | "C"=E6 |]
 
 X:9
 T:Snake Dance
@@ -31892,8 +31786,9 @@ L:1/8
 Q:1/4=92
 %%id snake-dance
 K:Cm
-C D | "Cm" E2 "G7" D2 "Cm" C2 C D | "Cm" E G "G7" D E "Cm" C2 E F | "Cm" G/G/G/G/ G A G F D E | "G7" F/F/F/F/ F G F E C D |
-"Cm" E2 "G7" D2 "Cm" C2 C D | "Cm" E G "G7" D E "Cm" C2 |]
+CD | "Cm"E2 "G7"D2 "Cm"C2 CD | "Cm"EG "G7"DE "Cm"C2 EF |
+"Cm"G/G/G/G/ GA GF DE | "G7"F/F/F/F/ FG FE CD |
+"Cm"E2 "G7"D2 "Cm"C2 CD | "Cm"EG "G7"DE "Cm"C2 |]
 
 X:10
 T:This Old Hammer
@@ -31904,10 +31799,10 @@ L:1/16
 Q:1/4=58
 %%id this-old-hammer
 K:Cm
-C2 E2 | "Cm" G G3- G4- | G4 G2 F2 | E C3- C4- | C4 C2 E2 |
-"Fm" G F3- F4- | F4 G2 F2 | "Cm" E C3- C4- | C4 C2 E2 |
-"Cm" G G3- G4- | G4 G2 F2 | E C3- C4- | C4 C2 C2 |
-"G7" E D3- D4- | D4 E2 E2 | "Cm" C4- "Fm" C4- | "Cm" C4 |]
+C2E2 | "Cm"GG3- G4- | G4 G2F2 | EC3- C4- | C4 C2E2 |
+"Fm"GF3- F4- | F4 G2F2 | "Cm"EC3- C4- | C4 C2E2 |
+"Cm"GG3- G4- | G4 G2F2 | EC3- C4- | C4 C2C2 |
+"G7"ED3- D4- | D4 E2E2 | "Cm"C4- "Fm"C4- | "Cm"C4 |]
 
 X:11
 T:America
@@ -31918,10 +31813,10 @@ L:1/8
 Q:1/4=80
 %%id america
 K:Eb
-"Eb" E2 E2 F2 | "Bb7" D3 E F2 | "Eb" G2 G2 "Ab" A2 | "Eb" G3 F E2 |
-"Ab" F2 "Eb/Bb" E2 "Bb7" D2 | "Eb" E6 | "Eb" B2 B2 B2 | B3 A G2 |
-"Bb7" A2 A2 A2 | A3 G F2 | "Eb" G2 A G F E | G3 A B2 |
-"Ab" c A "Eb/Bb" G2 "Bb7" F2 | "Eb" E6 |]
+"Eb"E2 E2 F2 | "Bb7"D3 E F2 | "Eb"G2 G2 "Ab"A2 | "Eb"G3 F E2 |
+"Ab"F2 "Eb/Bb"E2 "Bb7"D2 | "Eb"E6 | "Eb"B2 B2 B2 | B3 A G2 |
+"Bb7"A2 A2 A2 | A3 G F2 | "Eb"G2 AG FE | G3 A B2 |
+"Ab"cA "Eb/Bb"G2 "Bb7"F2 | "Eb"E6 |]
 
 X:12
 T:Sleep, Baby, Sleep
@@ -31932,9 +31827,9 @@ L:1/4
 Q:1/2=52
 %%id sleep-baby-sleep
 K:Eb
-"Eb" G2 "Bb7" F F | "Eb" E3 B, | "Eb" G G "Bb7" F F | "Eb" E3 B, |
-"Bb7" A A F F | "Eb" B B G G | "Bb7" A A F F | "Eb" B B G2 |
-"Eb" G2 "Bb7" F F | "Eb" E3 z | "Eb" G2 "Bb7" F F | "Eb" E4 |]
+"Eb"G2 "Bb7"F F | "Eb"E3 B, | "Eb"G G "Bb7"F F | "Eb"E3 B, |
+"Bb7"A A F F | "Eb"B B G G | "Bb7"A A F F | "Eb"B B G2 |
+"Eb"G2 "Bb7"F F | "Eb"E3 z | "Eb"G2 "Bb7"F F | "Eb"E4 |]
 
 X:13
 T:Little Brown Jug
@@ -31945,10 +31840,10 @@ L:1/8
 Q:1/4=84
 %%id little-brown-jug
 K:G
-D | "G" B, D D D | "C" C E E E/E/ | "D7" F/F/F E F | "G" G A B2 |
-"G" B, D D D | "C" C E E E | "D7" F/F/F E F | "G" G G G2 |
-"G" B, D D2 | "C" C E E2 | "D7" F/F/F E F | "G" G A B2 |
-"G" B, D D2 | "C" C E E2 | "D7" F/F/F E F | "G" G G G |]
+D | "G"B,D DD | "C"CE EE/E/ | "D7"F/F/F EF | "G"GA B2 |
+"G"B,D DD | "C"CE EE | "D7"F/F/F EF | "G"GG G2 |
+"G"B,D D2 | "C"CE E2 | "D7"F/F/F EF | "G"GA B2 |
+"G"B,D D2 | "C"CE E2 | "D7"F/F/F EF | "G"GG G |]
 
 X:14
 T:Simple Gifts
@@ -31959,8 +31854,8 @@ L:1/8
 Q:1/4=92
 %%id simple-gifts
 K:Eb
-B, B, | "Eb" E2 E F G E G A | B2 B A G2 F E | "Bb7" F2 B,2 F2 B,2 | F G F D B,2 B,2 |
-"Eb" E D E F (G E) G A | B2 (B A) G2 (F E) | "Bb7" F2 F F G2 G F | "Ab" E2 E3/2 E/ "Eb" E2 |]
+B,B, | "Eb"E2 EF GE GA | B2 BA G2 FE | "Bb7"F2 B,2 F2 B,2 | FG FD B,2 B,2 |
+"Eb"ED EF (GE) GA | B2 (BA) G2 (FE) | "Bb7"F2 FF G2 GF | "Ab"E2 E3/2E/ "Eb"E2 |]
 
 X:15
 T:Long, Long Ago
@@ -31971,8 +31866,8 @@ L:1/8
 Q:1/4=92
 %%id long-long-ago
 K:Eb
-"Eb" E2 E F G2 G A | B2 c B G4 | "Bb7" B2 A G F4 | A2 G F "Eb" E4 |
-"Eb" E2 E F G2 G A | B2 c B G4 | "Bb7" B2 A G F2 G3/2 F/ | "Eb" E8 |]
+"Eb"E2 EF G2 GA | B2 cB G4 | "Bb7"B2 AG F4 | A2 GF "Eb"E4 |
+"Eb"E2 EF G2 GA | B2 cB G4 | "Bb7"B2 AG F2 G3/2F/ | "Eb"E8 |]
 
 X:16
 T:O Susanna
@@ -31983,12 +31878,12 @@ L:1/8
 Q:1/4=100
 %%id o-susanna
 K:Eb
-E/F/ | "Eb" G B B3/2 c/ | B G E3/2 F/ | G G F E | "Bb7" F3 E/F/ |
-"Eb" G B B3/2 c/ | B G E3/2 F/ | G G "Bb7" F F | "Eb" E3 E/F/ |
-"Eb" G B B3/2 c/ | B G E3/2 F/ | G G F E | "Bb7" F3 E/F/ |
-"Eb" G B B3/2 c/ | B G E3/2 F/ | G G "Bb7" F F | "Eb" E3 z |
-"Ab" A2 A2 | c c2 c | "Eb" B B G E | "Bb7" F3 E/F/ |
-"Eb" G B B3/2 c/ | B G E3/2 F/ | G G "Bb7" F F | "Eb" E3 |]
+E/F/ | "Eb"GB B3/2c/ | BG E3/2F/ | GG FE | "Bb7"F3 E/F/ |
+"Eb"GB B3/2c/ | BG E3/2F/ | GG "Bb7"FF | "Eb"E3 E/F/ |
+"Eb"GB B3/2c/ | BG E3/2F/ | GG FE | "Bb7"F3 E/F/ |
+"Eb"GB B3/2c/ | BG E3/2F/ | GG "Bb7"FF | "Eb"E3 z |
+"Ab"A2 A2 | c c2 c | "Eb"BB GE | "Bb7"F3 E/F/ |
+"Eb"GB B3/2c/ | BG E3/2F/ | GG "Bb7"FF | "Eb"E3 |]
 
 X:17
 T:A La Nanita Nana
@@ -31999,8 +31894,8 @@ L:1/16
 Q:1/8=88
 %%id a-la-nanita-nana
 K:Cm
-|: "Cm" C2 C D E F | G2 G G "Fm" A F | "Cm" G2 G G "Fm" A F | "Cm" c2 G4 |
-"Fm" F2 G A B A | "Cm" G F E F G E | "G7" F E D E F D | "Cm" (E D) C4 :|
+|: "Cm"C2CDEF | G2GG"Fm"AF | "Cm"G2GG"Fm"AF | "Cm"c2 G4 |
+"Fm"F2GABA | "Cm"GFEFGE | "G7"FEDEFD | "Cm"(ED) C4 :|
 
 X:18
 T:Morning Song
@@ -32011,8 +31906,8 @@ L:1/8
 Q:1/4=63
 %%id morning-song
 K:Ddor
-|: "Dm" D E F F | "C" E D C C | "Dm" D F A A | "G" B2 z2 |
-"Dm" A G F2 | "C" G F E2 | "Dm" D F "C" E C | "Dm" D2 z2 :|
+|: "Dm"DE FF | "C"ED CC | "Dm"DF AA | "G"B2 z2 |
+"Dm"AG F2 | "C"GF E2 | "Dm"DF "C"EC | "Dm"D2 z2 :|
 
 X:19
 T:Drunken Sailor
@@ -32023,10 +31918,10 @@ L:1/4
 Q:1/2=104
 %%id drunken-sailor
 K:Ddor
-"Dm" A A/A/ A A/A/ | A D F A | "C" G G/G/ G G/G/ | G C E G |
-"Dm" A A/A/ A A/A/ | A B c d | "C" c A G E | "Dm" D2 D2 |
-"Dm" A2 A3/2 A/ | A D F A | "C" G2 G3/2 G/ | G C E G |
-"Dm" A2 A3/2 A/ | A B c d | "C" c A G E | "Dm" D2 D2 |]
+"Dm"A A/A/ A A/A/ | A D F A | "C"G G/G/ G G/G/ | G C E G |
+"Dm"A A/A/ A A/A/ | A B c d | "C"c A G E | "Dm"D2 D2 |
+"Dm"A2 A3/2 A/ | A D F A | "C"G2 G3/2 G/ | G C E G |
+"Dm"A2 A3/2 A/ | A B c d | "C"c A G E | "Dm"D2 D2 |]
 
 X:20
 T:Old Joe Clark
@@ -32037,11 +31932,12 @@ L:1/8
 Q:1/4=108
 %%id old-joe-clark
 K:Cmix
-"C" C3/2 C/ C2 | G F E2 | C3/2 C/ D C | "Bb" B,2 z2 |
-"C" C3/2 C/ C2 | G F E3/2 C/ | "Bb" E E D D | "C" C2 z2 |
-"C" G A B A | G F E2 | G A B A | G2 z2 | "C" G A B A | G F E C |
-"C" E E "Bb" D D | "C" C2 z2 | C3/2 C/ C2 | G F E2 | C3/2 C/ D C |
-"Bb" B,2 z2 | "C" C3/2 C/ C2 | G F E3/2 C/ | "Bb" E E D D | "C" C2 z2 |]
+"C"C3/2C/ C2 | GF E2 | C3/2C/ DC | "Bb"B,2 z2 |
+"C"C3/2C/ C2 | GF E3/2C/ | "Bb"EE DD | "C"C2 z2 |
+"C"GA BA | GF E2 | GA BA | G2 z2 |
+"C"GA BA | GF EC | "C"EE "Bb"DD | "C"C2 z2 |
+C3/2C/ C2 | GF E2 | C3/2C/ DC | "Bb"B,2 z2 |
+"C"C3/2C/ C2 | GF E3/2C/ | "Bb"EE DD | "C"C2 z2 |]
 
 X:21
 T:Peasant Dance
@@ -32052,8 +31948,8 @@ L:1/8
 Q:1/8=200
 %%id peasant-dance
 K:Ddor
-"Dm" D F A "C" G G/E/ | "C" C E C "Dm" D2 | "Dm" D F A "G" G G/E/ | "C" F E C "Dm" D2 |
-"Dm" A A/F/ "C" G E D | "C" G G/E/ "Dm" F E D | "Dm" D F A "C" G G/E/ | "C" C E C "Dm" D2 |]
+"Dm"DFA "C"GG/E/ | "C"CEC "Dm"D2 | "Dm"DFA "G"GG/E/ | "C"FEC "Dm"D2 |
+"Dm"AA/F/"C"G ED | "C"GG/E/"Dm"F ED | "Dm"DFA "C"GG/E/ | "C"CEC "Dm"D2 |]
 
 X:22
 T:Three Young Men from Volos
@@ -32065,9 +31961,10 @@ L:1/8
 Q:1/8=120
 %%id three-young-men-from-volos
 K:Em
-|: "Em" B3 G2 B2 | E2 B, E2 F G | B2 B G2 _B2 |1 "Em" =B3- B2 z2 :|2 "B" =B3- B2 z B, |
-"Em" E2 E F2 G2 | "Am" A3 A2 A2 | "Em" B2 B G2 B2 | "Em" E3- E2 z B, |
-"Em" E2 E F2 G2 | "Am" A3 A2 _B2 | "Em" =B B B G2 B2 | E3- E2 z2 |]
+|: "Em"B3 G2 B2 | E2 B, E2 FG | B2 B G2 _B2 | [1 "Em"=B3- B2 z2 :|
+[2 "B"=B3- B2 z B, | "Em"E2 E F2 G2 | "Am"A3 A2 A2 | "Em"B2 B G2 B2 |
+"Em"E3- E2 z B, | "Em"E2 E F2 G2 | "Am"A3 A2 _B2 | "Em"=BB B G2 B2 |
+E3- E2 z2 |]
 
 X:23
 T:Monkey Song
@@ -32078,8 +31975,8 @@ L:1/8
 Q:1/4=66
 %%id monkey-song
 K:G
-D | "G" (3GGG (3GFE | "D7" F F D D | "D7" A A G A | "G" B2- (3:2:2B2D |
-"G" (3GGG (3GFE | "D7" F F D D | "D7" A A B A | "G" G2- G :|
+D | "G"(3GGG (3GFE | "D7"FF DD | "D7"AA GA | "G"B2- (3:2:2B2D |
+"G"(3GGG (3GFE | "D7"FF DD | "D7"AA BA | "G"G2- G :|
 
 X:24
 T:The Banks of Newfoundland
@@ -32090,8 +31987,8 @@ L:1/8
 Q:3/8=56
 %%id the-banks-of-newfoundland
 K:Eb
-c | "Eb" (2:3:2Bc G2 F | (2:3:2GB, "Ab" C B, C | "Eb" (2:3:2EF G2 c | B3- B2 c |
-"Eb" B2 c (2:3:2GF | "Ab" G2 B, C2 E/F/ | "Eb" (2:3:2GG "Bb7" G2 F | "Eb" E3- E2 |]
+c | "Eb"(2:3:2Bc G2 F | (2:3:2GB, "Ab"CB,C | "Eb"(2:3:2EF G2 c | B3- B2 c |
+"Eb"B2 c (2:3:2GF | "Ab"G2 B, C2 E/F/ | "Eb"(2:3:2GG "Bb7"G2 F | "Eb"E3- E2 |]
 `,
 
 "dmti":
@@ -32104,9 +32001,9 @@ M:4/4
 L:1/8
 %%id dmti-simple-gifts
 K:F
-cc | "F"F2 FG AF AB | c2 cB A2 GF | "C7"G2 G2 G2 F2 | "C7"GAGE c2 c2 |
-"F"FEFG A2 GG | A2 B2 c2 c2 | "C7"G2 GA G2 EE | G2 FE "F"F4 |
-"F"c4 A3 G | ABAG F3 G | "F"A2 AB c2 BA | "C7"G2 GA G2 c2 |
+cc | "F"F2 FG AF AB | c2 cB A2 GF | "C7"G2 G2 G2 F2 | "C7"GA GE c2 c2 |
+"F"FE FG A2 GG | A2 B2 c2 c2 | "C7"G2 GA G2 EE | G2 FE "F"F4 |
+"F"c4 A3 G | AB AG F3 G | "F"A2 AB c2 BA | "C7"G2 GA G2 c2 |
 "F"F4 F3 G | "F"A2 AB c2 BA | "C7"G2 G2 G2 AG | "Bb"F2 F2 "F"F2 |]
 
 X:13
@@ -32132,9 +32029,9 @@ M:C
 L:1/8
 %%id dmti-saint-louis-blues
 K:F
-"F"{^G}A c A F- F4 | "Bb7"z ^C DF _A3 G | "F"F8- | "F7"F6 z2 |
+"F"{^G}Ac AF- F4 | "Bb7"z ^C DF _A3 G | "F"F8- | "F7"F6 z2 |
 "Bb7"z D FG- G4 | z D FG _A3 G | "F7"F8- | F6 z2 |
-"C7"EGEC- C C3 | "Caug7"z2 _A_A _A3 G | "F"F8- | F4 "C7"z4 |]
+"C7"EG EC- C C3 | "Caug7"z2 _A_A _A3 G | "F"F8- | F4 "C7"z4 |]
 
 X:11
 T:Long, Long Ago
@@ -32159,8 +32056,8 @@ M:4/4
 L:1/8
 %%id dmti-mary-ann
 K:C
-|: "C"e2 g2 c2 e2 | "G7"e d/f/- f6 | "G7"d2 f f B2 d2 | "C"d c/e/- e6 |
-"C"e e g g c2 e e | "G7"e d/f/- f6 | "G7"d2 f f B2 d2 | "C"d c/c/- c6 :|
+|: "C"e2 g2 c2 e2 | "G7"ed/f/- f6 | "G7"d2 ff B2 d2 | "C"dc/e/- e6 |
+"C"ee gg c2 ee | "G7"ed/f/- f6 | "G7"d2 ff B2 d2 | "C"dc/c/- c6 :|
 
 X:2
 T:Joshua
@@ -32171,10 +32068,10 @@ M:4/4
 L:1/8
 %%id dmti-joshua
 K:Dm
-"Dm"d ^c d e f e (f g) | a a2 a- a2 z2 | "A7"g g2 g- g2 z2 | "Dm"a a2 a- a g f e |
-"Dm"d ^c d e f e (f g) | a a2 a- a2 f g | "A7"a2 g2 f2 e2 | "Dm"d6 "^Fine"d d |
-"Dm"d A A A A2 A2 | A A A4 A A | "Dm"A A G G F G3 | A4 z2 d2 |
-"Dm"d2 A2 A A3 | A2 A4 F G | "A7"A A G2 F2 E2 | "Dm"D4 z4 "^D.C. al Fine"|]
+"Dm"d^c de fe (fg) | a a2 a- a2 z2 | "A7"g g2 g- g2 z2 | "Dm"a a2 a- ag fe |
+"Dm"d^c de fe (fg) | a a2 a- a2 fg | "A7"a2 g2 f2 e2 | "Dm"d6 "^Fine"dd |
+"Dm"dA AA A2 A2 | AA A4 AA | "Dm"AA GG F G3 | A4 z2 d2 |
+"Dm"d2 A2 A A3 | A2 A4 FG | "A7"AA G2 F2 E2 | "Dm"D4 z4 "^D.C. al Fine" |]
 
 X:3
 T:Down by the Riverside
@@ -32185,10 +32082,11 @@ M:4/4
 L:1/8
 %%id dmti-down-by-the-riverside
 K:F
-"F"a a ^g | a2 c4 d2 | f f2 a- a4 | z2 a2 a3 ^g | a g2 f- f4 |
-"C7"z2 g2 g3 ^f | g f2 e- e4 | "F"z2 a2 a3 ^g | a g2 f- f a a ^g | a2 c4 d2 |
-f f2 a- a4 | z2 a2 a3 ^g | a g2 f- f z f2 | "C7"a2 g4 _b2 | a4 g4 |
-"F"f8 | z2 f2 g2 a a | "Bb"_b _b3 _b2 _b _b- | _b z _b2 c'2 _b _b | "F"a a3 a2 g f- | f4 z4 |]
+"F"a a^g | a2 c4 d2 | f f2 a- a4 | z2 a2 a3 ^g | a g2 f- f4 |
+"C7"z2 g2 g3 ^f | g f2 e- e4 | "F"z2 a2 a3 ^g | a g2 f- fa a^g |
+a2 c4 d2 | f f2 a- a4 | z2 a2 a3 ^g | a g2 f- f z f2 |
+"C7"a2 g4 _b2 | a4 g4 | "F"f8 | z2 f2 g2 aa |
+"Bb"_b _b3 _b2 _b_b- | _b z _b2 c'2 _b_b | "F"a a3 a2 gf- | f4 z4 |]
 
 X:4
 T:When the Saints Go Marching In
@@ -32199,9 +32097,10 @@ M:2/4
 L:1/8
 %%id dmti-when-the-saints
 K:Bb
-B d e | "Bb"f4- | f B d e | f4- | f B d e |
-f2 d2 | B2 d2 | "F7"c4- | c d d c | "Bb"B3 B | d2 f f |
-"Eb"f e3- | e2 d e | "Bb"f2 d2 | B2 "F7"c2 | "Bb"B4- | B |]
+B de | "Bb"f4- | fB de | f4- | fB de |
+f2 d2 | B2 d2 | "F7"c4- | cd dc |
+"Bb"B3 B | d2 ff | "Eb"f e3- | e2 de |
+"Bb"f2 d2 | B2 "F7"c2 | "Bb"B4- | B |]
 
 X:5
 T:Motherless Child
@@ -32212,9 +32111,9 @@ M:C
 L:1/8
 %%id dmti-motherless-child
 K:Dm
-"Dm"F A2 F A2 F G | A G F D- D4 | "Gm"G G2 F "A7"G2 F G | "Dm"_A G F D- D4 |
-A d2 _A G2 F G | A G F D- D3 D | "Dm"F3 D "A7"C A, ^C2 | "Gm"E3 D F3 D |
-"Dm/A"F3 D "A7"C A, ^C2 | "Dm"D8 |]
+"Dm"F A2 F A2 FG | AG FD- D4 | "Gm"G G2 F "A7"G2 FG | "Dm"_AG FD- D4 |
+A d2 _A G2 FG | AG FD- D3 D | "Dm"F3 D "A7"CA, ^C2 | "Gm"E3 D F3 D |
+"Dm/A"F3 D "A7"CA, ^C2 | "Dm"D8 |]
 
 X:6
 T:Transformation
@@ -32225,11 +32124,11 @@ M:C
 L:1/8
 %%id dmti-transformation
 K:Bb
-"Bb"D2 F2 "Gm7"B3 F | "Cm7"E2 B A- "F7"A2 G F- | "Dm7"F4 "G7"G F D E- | "Cm7"E c B A- "F7"A2 F B- |
-"Bb6"B2 c _A "Bb7"G F2 G- | "Eb6"G2 A B "Edim7"A G2 F- | "Bb/F"F D z E "G7"F G F =E | "Cm7"E D E F "F7"_A _G F E |
-"Bb"D2 F2 "Gm7"B3 F | "Cm7"E2 B A- "F7"A2 G F- | "Dm7"F4 "G7"G F D E- | "Cm7"E c B A- "F7"A2 F B- |
-"Bb6"B2 c _A "Bb7"G F2 G- | "Eb6"G2 A B "Edim7"A G2 F- | "Bb/F"F D z E "F7"F G A B- | "Bb6"B2 z2 z4 |
-"D7"z2 D2 =E3 D | =E2 =B A- A3 D |]
+"Bb"D2 F2 "Gm7"B3 F | "Cm7"E2 BA- "F7"A2 GF- | "Dm7"F4 "G7"GF DE- | "Cm7"Ec BA- "F7"A2 FB- |
+"Bb6"B2 c_A "Bb7"G F2 G- | "Eb6"G2 AB "Edim7"A G2 F- | "Bb/F"FD z E "G7"FG F=E | "Cm7"ED EF "F7"_A_G FE |
+"Bb"D2 F2 "Gm7"B3 F | "Cm7"E2 BA- "F7"A2 GF- | "Dm7"F4 "G7"GF DE- | "Cm7"Ec BA- "F7"A2 FB- |
+"Bb6"B2 c_A "Bb7"G F2 G- | "Eb6"G2 AB "Edim7"A G2 F- | "Bb/F"FD z E "F7"FG AB- | "Bb6"B2 z2 z4 |
+"D7"z2 D2 =E3 D | =E2 =BA- A3 D |]
 
 X:7
 T:Red Wings
@@ -32240,11 +32139,13 @@ M:C
 L:1/8
 %%id dmti-red-wings
 K:F
-"F6"d c A F- F2 G A- | A4 z C D E | "Gm7"G F E F "C7"A2 c G- | "FMaj7"G4 z C D E | "F6"G F G F- F2 z2 |
-"Abdim7"G F G F- F2 z2 | "Gm7"E D ^C D F2 A c- | "C7"c4 z2 ^c d- | "Gm7"d3 B A G2 c- | c4 "Daug7"z2 A B- |
-"Gm7"B3 D ^C D2 A- | "C7"A6 z c | "Gm7"z B2 D F A G F | "C7"E2 z2 d c A F- | "F6"F2 z2 z4 | z8 |
-"F9"c A3 z2 d2 | c A3 z4 | "Eb9"z2 c d _e e d _d | "D7"c B A G ^F d c A | "Gm7"B G3 z2 c2 | B G3 z4 |
-"Gm7"z D F c B2 z D | "C13sus4"F A G F "C7(b9)"E2 z2 | "F6"d c A F- F2 A B- | "Gm7"B D ^C D "C7"A2 c G- | "Am7(b5)"G8 |
-"Am7(b5)"z A G F "D7(b9)"^F _E D C | "Gm7"B, D F A G3 F | "C7"E F G B d c A F- | "F"F2 z2 z4 | z8 |]
+"F6"dc AF- F2 GA- | A4 z C DE | "Gm7"GF EF "C7"A2 cG- | "FMaj7"G4 z C DE |
+"F6"GF GF- F2 z2 | "Abdim7"GF GF- F2 z2 | "Gm7"ED ^CD F2 Ac- | "C7"c4 z2 ^cd- |
+"Gm7"d3 B A G2 c- | c4 "Daug7"z2 AB- | "Gm7"B3 D ^C D2 A- | "C7"A6 z c |
+"Gm7"z B2 D FA GF | "C7"E2 z2 dc AF- | "F6"F2 z2 z4 | z8 |
+"F9"c A3 z2 d2 | c A3 z4 | "Eb9"z2 cd _ee d_d | "D7"cB AG ^Fd cA |
+"Gm7"B G3 z2 c2 | B G3 z4 | "Gm7"z D Fc B2 z D | "C13sus4"FA GF "C7(b9)"E2 z2 |
+"F6"dc AF- F2 AB- | "Gm7"BD ^CD "C7"A2 cG- | "Am7(b5)"G8 | "Am7(b5)"z A GF "D7(b9)"^F_E DC |
+"Gm7"B,D FA G3 F | "C7"EF GB dc AF- | "F"F2 z2 z4 | z8 |]
 `
 };

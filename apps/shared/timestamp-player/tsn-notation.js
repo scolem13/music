@@ -5,7 +5,7 @@
    the score to read along. Needs abcjs, rec-sync.js; loads the tune collection (1.2 MB) only when there is a tune. */
 (function () {
   "use strict";
-  var TUNES = "/apps/tunes/tunes-object.js?v=1";
+  var TUNES = "/apps/tunes/tunes-object.js?v=2";
 
   function tuneId() {
     var q = new URLSearchParams(location.search), t = q.get("tune");

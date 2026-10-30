@@ -551,9 +551,12 @@
         phrases: p.phrases ? p.phrases.state() : null
       }, null, 1);
     }
-    function openSong(data, quiet) {
+    function openSong(data, quiet, sameSong) {
       var any = stamps().length || (parts().map && parts().map.bars());
       if (any && !quiet && !confirm('Open ' + (data.title ? '\u201C' + data.title + '\u201D' : 'this song file') + '? It replaces what is on the page.')) return;
+      // a song file opened (not undo, not the library): the work on the page is kept under its recording first, and the
+      // opened file belongs to the recording it names
+      if (!sameSong && curKey) libPut(curKey, JSON.parse(songFile()));
       var p = parts(), a = api(), loaded = '';
       if (data.words && p.words) p.words.load(data.words);
       rows.innerHTML = '';
@@ -567,6 +570,7 @@
       else if (src && src.url && !(cur && cur.url === src.url) && a.open && a.open(src.url, src.follow)) loaded = ' Loaded the video.';
       else if (src && src.file && !(cur && cur.file === src.file)) loaded = ' Load ' + src.file + ' to play along.';
       if (!quiet) say('Opened ' + (data.title || 'the song file') + '.' + loaded);
+      if (!sameSong) { var nk = libKey(data.source || (a && a.source && a.source())); if (nk) { setCur(nk); libSaved = null; } }
     }
 
     // ---- undo (u): the whole song (stamps, bars, words, chord timing, chunks) as it was before the last change ----
@@ -583,11 +587,150 @@
       if (lastState !== null && st !== lastState) back = lastState;      // a change not yet kept: back to before it
       else back = undoStack.pop();
       if (!back) { say('Nothing to undo.'); return; }
-      openSong(JSON.parse(back), true);
+      openSong(JSON.parse(back), true, true);
       lastState = stateNow();
       say('Undone (u again goes further back).');
     }
     log._btpUndo = undo;
+
+    // ---- the song library: every recording's notes kept in the browser (localStorage "tsn-lib:<key>", index "tsn-lib-index") ----
+    // The key is the recording loaded (rec:<id>, media:<url>, yt:<video id>, file:<name>). The page's work is saved under it as it
+    // changes; loading a different recording saves the one before and brings back the new one's notes (stamps, bars, words and
+    // chords, chord timing, chunks, title), or blanks the page when it has none. "tsn-current" is the key the work belongs to.
+    // The Saved songs part (#ts-library) lists them: open, download, delete; download all (one .json, opened again by Open file) and clear all.
+    var LIB = 'tsn-lib:', LIB_INDEX = 'tsn-lib-index', LIB_CUR = 'tsn-current';
+    function libKey(src) {
+      if (!src) return null;
+      if (src.rec) return 'rec:' + src.rec;
+      if (src.media) return 'media:' + src.media;
+      if (src.url) { var m = /[?&]v=([\w-]{6,})|youtu\.be\/([\w-]{6,})/.exec(src.url); return 'yt:' + (m ? (m[1] || m[2]) : src.url); }
+      if (src.file) return 'file:' + src.file;
+      return null;
+    }
+    function libIndex() { try { return JSON.parse(localStorage.getItem(LIB_INDEX) || '{}') || {}; } catch (e) { return {}; } }
+    function libGet(k) { try { return JSON.parse(localStorage.getItem(LIB + k) || 'null'); } catch (e) { return null; } }
+    function hasWork(d) {
+      return !!(d && ((d.stamps && d.stamps.length) || (d.barMap && d.barMap.bars && d.barMap.bars.length) ||
+        (d.words && (d.words.ug || d.words.chordpro || (d.words.hits && d.words.hits.length)))));
+    }
+    function libPut(k, d) {
+      if (!k || !d) return;
+      var idx = libIndex();
+      if (!hasWork(d) && !idx[k]) return;                 // nothing to keep for a recording only listened to
+      if (libKey(d.source) !== k) {                        // saved just after the next recording loaded: keep its own link
+        var before = libGet(k); d.source = before && before.source || null;
+      }
+      try {
+        localStorage.setItem(LIB + k, JSON.stringify(d));
+        idx[k] = { title: d.title || '', saved: d.saved || new Date().toISOString(), stamps: (d.stamps || []).length,
+          bars: (d.barMap && d.barMap.bars || []).length, words: !!(d.words && (d.words.ug || d.words.chordpro)) };
+        localStorage.setItem(LIB_INDEX, JSON.stringify(idx));
+      } catch (e) { say('The browser’s storage is full: download the saved songs and clear some.'); }
+      renderLib();
+    }
+    function libDel(k) {
+      var idx = libIndex(); delete idx[k];
+      try { localStorage.removeItem(LIB + k); localStorage.setItem(LIB_INDEX, JSON.stringify(idx)); } catch (e) {}
+      renderLib();
+    }
+    var curKey = null; try { curKey = localStorage.getItem(LIB_CUR); } catch (e) {}
+    function setCur(k) { curKey = k; try { if (k) localStorage.setItem(LIB_CUR, k); else localStorage.removeItem(LIB_CUR); } catch (e) {} renderLib(); }
+    var BLANK = { app: 'timestamp-notes', version: 1, title: '', stamps: [], barMap: { bars: [] }, words: {}, phrases: { size: 4 } };
+    function loadInto(d) {                               // the notes only (the recording is already there)
+      var copy = JSON.parse(JSON.stringify(d)); delete copy.source;
+      openSong(copy, true, true);
+      undoStack = []; lastState = stateNow();
+    }
+    var libSaved = null;
+    function libTick() {                                 // twice a second: follow the recording, keep the work
+      var a = api(), k = libKey(a && a.source && a.source());
+      if (k && k !== curKey) {
+        var now = JSON.parse(songFile());
+        if (curKey) libPut(curKey, now);
+        var kept = libGet(k);
+        if (kept) { loadInto(kept); say('Brought back your notes for ' + (kept.title || k.replace(/^\w+:/, '')) + '.'); }
+        else if (curKey || !hasWork(now)) loadInto(BLANK);
+        var t = a.source().title, box = document.querySelector('.btp-title');
+        if (t && box && !box.value) { box.value = t; box.dispatchEvent(new Event('input', { bubbles: true })); }
+        // (no key yet but work on the page: work done before the library existed, now this recording's)
+        setCur(k); libSaved = null;
+      }
+      if (!curKey) return;
+      var st; try { st = stateNow(); } catch (e) { return; }
+      if (st !== libSaved) { libSaved = st; libPut(curKey, JSON.parse(songFile())); }
+    }
+    setInterval(libTick, 500);
+    function downloadJson(obj, name) {
+      var url = URL.createObjectURL(new Blob([JSON.stringify(obj, null, 1) + '\n'], { type: 'application/json' }));
+      var el = document.createElement('a'); el.href = url; el.download = name;
+      document.body.appendChild(el); el.click(); document.body.removeChild(el);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    }
+    function slug(t) { return String(t || 'song').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60) || 'song'; }
+    function importLibrary(data) {
+      var n = 0;
+      Object.keys(data.songs || {}).forEach(function (k) {
+        if (k === curKey) return;                        // the one on the page stays as it is
+        var d = data.songs[k]; if (d && d.app === 'timestamp-notes') { libPut(k, d); n++; }
+      });
+      say('Added ' + n + (n === 1 ? ' song' : ' songs') + ' to the saved songs' + (data.songs && data.songs[curKey] ? ' (not the one on the page)' : '') + '.');
+    }
+    var libBox = document.querySelector('#ts-library');
+    function renderLib() {
+      if (!libBox) return;
+      var ul = libBox.querySelector('.tsn-lib-rows'), idx = libIndex(), keys = Object.keys(idx);
+      keys.sort(function (a, b) { return String(idx[b].saved).localeCompare(String(idx[a].saved)); });
+      ul.innerHTML = '';
+      keys.forEach(function (k) {
+        var e = idx[k], li = document.createElement('li');
+        li.className = 'tsn-lib-row' + (k === curKey ? ' is-cur' : '');
+        var what = [e.stamps ? e.stamps + ' stamps' : '', e.bars ? e.bars + ' bars' : '', e.words ? 'words' : ''].filter(Boolean).join(', ') || 'empty';
+        li.innerHTML = '<label><input type="checkbox" class="tsn-lib-pick"></label><span class="tsn-lib-name"></span>' +
+          '<span class="tsn-lib-what"></span><button type="button" class="tsn-lib-open">Open</button>' +
+          '<button type="button" class="tsn-lib-dl" title="Download its song file">↓</button><button type="button" class="tsn-lib-del" title="Delete it from this browser">×</button>';
+        li.querySelector('.tsn-lib-pick').dataset.key = k;
+        li.querySelector('.tsn-lib-name').textContent = (e.title || k.replace(/^\w+:/, '').split('/').pop()) + (k === curKey ? ' (on the page)' : '');
+        li.querySelector('.tsn-lib-name').title = k;
+        li.querySelector('.tsn-lib-what').textContent = what + ' · ' + String(e.saved).slice(0, 10);
+        li.querySelector('.tsn-lib-open').addEventListener('click', function () {
+          var d = libGet(k); if (!d) return;
+          if (curKey && k !== curKey) libPut(curKey, JSON.parse(songFile()));
+          setCur(k); libSaved = null;
+          openSong(d, true, true); undoStack = []; lastState = stateNow();
+          var src = d.source || {};
+          say('Opened ' + (d.title || k) + '.' + (src.file ? ' Load ' + src.file + ' to play along.' : ''));
+        });
+        li.querySelector('.tsn-lib-dl').addEventListener('click', function () { var d = libGet(k); if (d) downloadJson(d, slug(d.title || k) + '.json'); });
+        li.querySelector('.tsn-lib-del').addEventListener('click', function () {
+          if (k === curKey) { say('That one is on the page: Clear all data in Timestamps clears it.'); return; }
+          if (!confirm('Delete the notes for ' + (e.title || k) + ' from this browser?')) return;
+          libDel(k);
+        });
+        ul.appendChild(li);
+      });
+      libBox.querySelector('.tsn-lib-empty').hidden = keys.length > 0;
+    }
+    if (libBox) {
+      var picked = function () { return Array.prototype.map.call(libBox.querySelectorAll('.tsn-lib-pick:checked'), function (c) { return c.dataset.key; }); };
+      libBox.querySelector('.tsn-lib-dl-all').addEventListener('click', function () {
+        if (curKey) libPut(curKey, JSON.parse(songFile()));
+        var keys = picked(); if (!keys.length) keys = Object.keys(libIndex());
+        var songs = {}; keys.forEach(function (k) { var d = libGet(k); if (d) songs[k] = d; });
+        downloadJson({ app: 'timestamp-notes-library', version: 1, saved: new Date().toISOString(), songs: songs },
+          'timestamp-notes-library-' + new Date().toISOString().slice(0, 10) + '.json');
+      });
+      libBox.querySelector('.tsn-lib-del-picked').addEventListener('click', function () {
+        var keys = picked(); if (!keys.length) { say('Tick the songs to delete first.'); return; }
+        if (!confirm('Delete ' + keys.length + (keys.length === 1 ? ' song' : ' songs') + ' from this browser?')) return;
+        keys.forEach(function (k) { if (k !== curKey) libDel(k); });
+        if (keys.indexOf(curKey) >= 0) say('The song on the page is kept: Clear all data in Timestamps clears it.');
+      });
+      libBox.querySelector('.tsn-lib-clear').addEventListener('click', function () {
+        if (!confirm('Delete every saved song from this browser except the one on the page? Download them first to keep them.')) return;
+        Object.keys(libIndex()).forEach(function (k) { if (k !== curKey) libDel(k); });   // (Clear all data clears the page's own)
+      });
+      renderLib();
+    }
     // ---- a recording in the MLT / JRI collection (apps/shared/mlt/recordings.js): ?rec=<id> opens it with its timing map ----
     function openRec(id) {
       var R = window.MLTRecordings, r = R && R.byId(id), a = api();
@@ -608,6 +751,8 @@
       var src = { media: url, title: q.get('title') || '' };
       var cur = a && a.source && a.source();
       if (cur && cur.media === url && stamps().length) { if (at) a.seek(at); return; }   // came back to the same recording: keep the work
+      var mine = libGet(libKey(src));                    // notes of your own for it (the song library) come before its map
+      if (mine && libKey(src) !== curKey) { mine.source = src; openSong(mine, true); if (at && a) setTimeout(function () { a.seek(at); }, 300); say('Brought back your notes for ' + (mine.title || src.title || 'it') + '.'); return; }
       var timing = q.get('timing');                       // its timing map (a song file): opened instead of the marks
       if (timing) {
         fetch(timing, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) {
@@ -630,6 +775,9 @@
       if (!id) return;
       if (!R) { say('This page needs recordings.js to open ' + id + '.'); return; }
       var r = R.byId(id); if (!r) { say('No recording ' + id + ' in the collection.'); return; }
+      var mine = libGet('rec:' + id);
+      if (mine && curKey !== 'rec:' + id) { openSong(mine, true); if (!(api().source() || {}).rec) openRec(id); say('Brought back your notes for ' + r.title + '.'); return; }
+      if (mine) { if (!(api().source() || {}).rec) openRec(id); return; }   // already on the page: just the recording
       fetch(R.timingUrl(r), { cache: 'no-cache' }).then(function (res) { return res.ok ? res.text() : null; }).catch(function () { return null; })
         .then(function (text) {
           if (text) { openText(text); if (!(api().source() || {}).rec) openRec(id); say('Opened ' + r.title + ' with its timing map.'); }
@@ -644,6 +792,7 @@
         var data = null;
         try { data = JSON.parse(t); } catch (e) {}
         if (data && data.app === 'timestamp-notes') { openSong(data); return; }
+        if (data && data.app === 'timestamp-notes-library') { importLibrary(data); return; }
         if (data && Array.isArray(data.bars) && parts().map) {
           if (parts().map.load(data)) say('Read ' + data.bars.length + ' bars. Section names come from the stamps.');
           return;
@@ -703,6 +852,8 @@
         var a = api(), cur = a && a.source && a.source();
         if (src.kind === 'url' && !(cur && cur.url === src.value) && a && a.open && a.open(src.value, src.tab)) loaded = ' Loaded ' + src.value + '.';
         else if (src.kind === 'file' && !(cur && cur.file === src.value)) loaded = ' These were made on ' + src.value + ': load it to play along.';
+        var nk = libKey(a && a.source && a.source());     // the stamps belong to the recording they name (not blanked by the switch)
+        if (nk && nk !== curKey) { setCur(nk); libSaved = null; }
       }
       if (!found.length) {
         say((skipped ? 'No timestamps found in that text.' : 'Nothing new to import.') + loaded);
@@ -779,7 +930,8 @@
       disarm();
       // everything kept for the song: stamps, bars, words and ChordPro, chord timing, grids, phrases, the chorus length
       // (the page's own settings -- widths, folds, MIDI -- stay). Then the page starts afresh, with nothing loaded.
-      ['btp-stamps', 'btp-bars', 'btp-words', 'btp-chord-hits', 'btp-confirmed', 'btp-grid-sigs', 'btp-phrases', 'btp-form-bars']
+      if (curKey) libDel(curKey);
+      ['tsn-current', 'btp-stamps', 'btp-bars', 'btp-words', 'btp-chord-hits', 'btp-confirmed', 'btp-grid-sigs', 'btp-phrases', 'btp-form-bars']
         .forEach(function (k) { try { localStorage.removeItem(k); } catch (e) {} });
       location.replace(location.pathname);
     });

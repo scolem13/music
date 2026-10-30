@@ -41,7 +41,7 @@
   }
   function register(tool, r) { renderers[tool] = r; }
   // tools whose items need their own script to be shown (loaded when a report has their items and the page hasn't got it)
-  var TOOL_SRC = { "chord-analysis": "/apps/shared/analysis/chord-analysis.js?v=4" }, loading = {};
+  var TOOL_SRC = { "chord-analysis": "/apps/shared/analysis/chord-analysis.js?v=5" }, loading = {};
   // the drills and their extra exercises, for the In class view (drills.js first: the others add to it)
   var DRILL_SRC = ["/apps/shared/drills/drills.js?v=17", "/apps/shared/drills/figured.js?v=1", "/apps/shared/drills/mixture.js?v=1", "/apps/shared/drills/neapolitan.js?v=1", "/apps/shared/drills/motives.js?v=1", "/apps/shared/drills/jazz.js?v=1"];
   function scriptOnce(src) { return new Promise(function (res) { if (document.querySelector('script[src="' + src + '"]')) return res(); var sc = document.createElement("script"); sc.src = src; sc.onload = sc.onerror = function () { res(); }; document.head.appendChild(sc); }); }

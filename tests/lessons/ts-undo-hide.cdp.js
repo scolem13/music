@@ -27,7 +27,8 @@ const U = "http://127.0.0.1:8562";
   check("× hides the part", await ev(`getComputedStyle(document.getElementById('ts-barmap')).display === 'none' && document.querySelector('.ts-nav a[data-for="ts-barmap"]').classList.contains('is-shut')`));
   await ev(`document.querySelector('.ts-nav a[data-for="ts-barmap"]').click()`);
   check("the list shows it again", await ev(`getComputedStyle(document.getElementById('ts-barmap')).display !== 'none'`));
-  check("summary no longer folds", await ev(`(() => { const d = document.getElementById('ts-words'); d.querySelector('summary').click(); return d.open; })()`));
+  check("summary folds and opens again", await ev(`(() => { const d = document.getElementById('ts-words'), sm = d.querySelector('summary'); sm.click(); const a = d.open; sm.click(); return !a && d.open; })()`));
+  check("the Timestamps header folds", await ev(`(() => { const p = document.getElementById('ts-log'), h = p.querySelector('.ts-fold-h'); h.click(); const a = p.classList.contains('is-shut') && getComputedStyle(p.querySelector('.ts-fold-body')).display === 'none'; h.click(); return a && !p.classList.contains('is-shut'); })()`));
   // undo: stamp twice, delete one, u brings it back
   await ev(`(() => { document.querySelector('.btp-paste-open').click(); document.querySelector('.btp-paste textarea').value = "00:10\\tFirst\\n00:20\\tSecond"; document.querySelector('.btp-paste-go').click(); })()`);
   await b.sleep(700);
@@ -38,6 +39,25 @@ const U = "http://127.0.0.1:8562";
   await key("u"); await b.sleep(300);
   const n2 = await ev(`document.querySelectorAll('.btp-log-rows li').length`);
   check("u undoes a deleted stamp", n0 === 2 && n1 === 1 && n2 === 2, [n0, n1, n2].join(" → "));
+
+  // the song library: each recording's notes put away and brought back
+  const P = `document.querySelector('.btp')._btp`;
+  await ev(`${P}.openMedia('/x/a.mp3', { media: '/x/a.mp3', title: 'Song A' }), 0`); await b.sleep(800);
+  const aRows = await ev(`document.querySelectorAll('.btp-log-rows li').length`);
+  await ev(`document.querySelector('.btp-ug').value = 'words of A'; document.querySelector('.btp-ug').dispatchEvent(new Event('input', { bubbles: true })), 0`);
+  await b.sleep(800);
+  await ev(`${P}.openMedia('/x/b.mp3', { media: '/x/b.mp3', title: 'Song B' }), 0`); await b.sleep(900);
+  check("a new recording starts blank", await ev(`document.querySelectorAll('.btp-log-rows li').length === 0 && document.querySelector('.btp-ug').value === '' && document.querySelector('.btp-title').value === 'Song B'`), "A had " + aRows);
+  await ev(`(() => { document.querySelector('.btp-paste-open').click(); document.querySelector('.btp-paste textarea').value = "00:05\\tB only"; document.querySelector('.btp-paste-go').click(); })()`);
+  await b.sleep(800);
+  await ev(`${P}.openMedia('/x/a.mp3', { media: '/x/a.mp3', title: 'Song A' }), 0`); await b.sleep(900);
+  check("going back brings its notes and words back", await ev(`document.querySelectorAll('.btp-log-rows li').length === ${aRows} && document.querySelector('.btp-ug').value === 'words of A'`));
+  check("Saved songs lists both", await ev(`document.querySelectorAll('#ts-library .tsn-lib-row').length === 2 && !!document.querySelector('#ts-library .tsn-lib-row.is-cur')`));
+  await ev(`(() => { [...document.querySelectorAll('#ts-library .tsn-lib-row')].find(r => !r.classList.contains('is-cur')).querySelector('.tsn-lib-open').click(); })()`); await b.sleep(400);
+  check("Open in the list loads B's notes", await ev(`[...document.querySelectorAll('.btp-log-rows li')].some(li => /B only/.test([...li.querySelectorAll('input, textarea')].map(i => i.value).join(' ')))`));
+  await ev(`window.confirm = () => true, 0`);
+  await ev(`document.querySelector('.tsn-lib-clear').click(), 0`); await b.sleep(300);
+  check("Delete all keeps only the one on the page", await ev(`document.querySelectorAll('#ts-library .tsn-lib-row').length === 1`));
 
   // notation for a linked recording
   await ev(`localStorage.clear(), 0`);
