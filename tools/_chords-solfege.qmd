@@ -100,19 +100,19 @@
     </div>
   </div>
 </div>
-<script src="/apps/shared/soundfont.js"></script>
-<script src="/apps/shared/audio-check.js"></script>
-<script src="/apps/shared/pitch-spelling.js"></script>
-<script src="/apps/shared/degree-names.js"></script>
+<script src="/apps/shared/soundfont.js?v=1"></script>
+<script src="/apps/shared/audio-check.js?v=1"></script>
+<script src="/apps/shared/pitch-spelling.js?v=1"></script>
+<script src="/apps/shared/degree-names.js?v=1"></script>
 <script src="/apps/shared/chord-entry.js?v=11"></script>
 <script src="/apps/shared/musical-typing.js?v=2"></script>
 <script src="/apps/shared/band/harmony.js?v=34"></script>
-<script src="/apps/shared/band/bass.js?v=13"></script>
-<script src="/apps/shared/band/comp.js?v=27"></script>
+<script src="/apps/shared/band/bass.js?v=16"></script>
+<script src="/apps/shared/band/comp.js?v=32"></script>
 <script src="/apps/shared/band/catalog.js?v=37"></script>
 <script src="/apps/shared/band/drums.js?v=18"></script>
-<script src="/apps/shared/band/congas.js?v=3"></script>
-<script src="/apps/shared/band/sounds.js?v=17"></script>
+<script src="/apps/shared/band/congas.js?v=4"></script>
+<script src="/apps/shared/band/sounds.js?v=19"></script>
 <script src="/apps/shared/band/player.js?v=128"></script>
 <script>
 (function(){

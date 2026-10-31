@@ -2,30 +2,34 @@
 // <script type="text/plain"> child and becomes a staff with tablature under it and a ▶ button that plays it on a guitar.
 // Write the music for a guitar: K:C clef=treble-8 (sounds an octave below where it is written, as guitarists read it).
 // Slurs are hammer-ons and pull-offs.
-//   data-program  General MIDI program to play with (default 24, nylon guitar; 25 is steel)
+//   data-program  24 (default) plays it on the band's nylon guitar, 25 on its steel-string guitar (General MIDI numbers)
 //   data-pos      the hand's position, the fret the index finger is on (default 0, the open strings); the tab keeps to it
 //   data-tempo    beats per minute (overrides Q:)
 //   data-loop     "true": a Loop button repeats the exercise
 // The tablature is worked out from the notes (the lowest fret that suits, and one string for both notes of a slur, so a
 // hammer-on or pull-off lies on a single string); H or P is written over each slur. The tab is in the first voice only.
-// Needs abcjs and soundfont.js (getSoundfontUrl).
+// Needs abcjs; plays through AbcPlay (abc-play.js, loaded on first use).
 (function (global) {
   var playing = null;
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
-  function stop() { if (playing) { try { playing.synth.stop(); } catch (e) {} playing.btn.textContent = playing.label; playing.btn.classList.remove("at-on"); playing = null; } }
+  function stop() { var p = playing; if (p) { playing = null; try { p.synth.stop(); } catch (e) {} p.btn.textContent = p.label; p.btn.classList.remove("at-on"); } }
+  // played on the band's guitar samples (AbcPlay, loaded here on first use): program 25 = steel strings, else nylon
+  var ABC_PLAY = "/apps/shared/abc-play.js?v=17", abcPlayP = null;
+  function abcPlay() {
+    if (global.AbcPlay) return Promise.resolve(global.AbcPlay);
+    return abcPlayP || (abcPlayP = new Promise(function (ok, no) { var e = document.createElement("script"); e.src = ABC_PLAY; e.onload = function () { ok(global.AbcPlay); }; e.onerror = function () { abcPlayP = null; no(); }; document.head.appendChild(e); }));
+  }
   function play(ex, btn, label, loop) {
     var was = playing && playing.btn === btn; stop(); if (was) return;
-    if (!global.ABCJS || !ABCJS.synth.supportsAudio() || !global.getSoundfontUrl) return;
-    var s = new ABCJS.synth.CreateSynth(), me = { synth: s, btn: btn, label: label }; playing = me;
+    var me = { synth: { stop: function () {} }, btn: btn, label: label }; playing = me;
     btn.textContent = "■ Stop"; btn.classList.add("at-on");
-    getSoundfontUrl().then(function (u) {
-      return s.init({ audioContext: new (global.AudioContext || global.webkitAudioContext)(), visualObj: ex.tune,
-        options: { soundFontUrl: u, program: ex.program } });
-    }).then(function () { return s.prime(); }).then(function (r) {
-      if (playing !== me) return;
-      s.start();
-      (function again() { setTimeout(function () { if (playing !== me) return; if (loop) { try { s.stop(); s.start(); } catch (e) {} again(); } else stop(); }, r.duration * 1000 + 200); })();
-    }).catch(function () { if (playing === me) stop(); });
+    var sound = +ex.program === 25 ? "aguitar" : "nguitar";
+    abcPlay().then(function (P) {
+      (function go() {
+        if (playing !== me) return;
+        me.synth = P.play(ex.tune, { sound: sound, onEnd: function () { if (playing !== me) return; if (loop) setTimeout(go, 150); else stop(); } });
+      })();
+    }, function () { if (playing === me) stop(); });
   }
   var TUN = [40, 45, 50, 55, 59, 64], NS = "http://www.w3.org/2000/svg";
   function fretsOf(m, max) { var r = []; TUN.forEach(function (o, i) { if (m >= o && m - o <= max) r.push({ string: i, fret: m - o }); }); return r; }

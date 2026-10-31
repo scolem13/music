@@ -616,7 +616,7 @@
   function openTuner() {
     if (tunerState) { if (tunerState === 2 && window.TunerPanel) window.TunerPanel.refresh(); return; } tunerState = 1;
     var chain = Promise.resolve();
-    [["PitchDetect", "/apps/shared/pitch-detect.js?v=1"], ["StrobeView", "/apps/shared/strobe-view.js?v=1"], ["AudioTap", "/apps/shared/audio-tap.js?v=1"], ["AudioCheck", "/apps/shared/audio-check.js"], ["TunerPanel", "/apps/shared/tuner-panel.js?v=1"]]
+    [["PitchDetect", "/apps/shared/pitch-detect.js?v=2"], ["StrobeView", "/apps/shared/strobe-view.js?v=1"], ["AudioTap", "/apps/shared/audio-tap.js?v=1"], ["AudioCheck", "/apps/shared/audio-check.js"], ["TunerPanel", "/apps/shared/tuner-panel.js?v=1"]]
       .forEach(function (d) { chain = chain.then(function () { return window[d[0]] ? null : loadScript(d[1]); }); });
     chain.then(function () {
       var host = $("#pw-tuner-host", panels.tuner); host.innerHTML = ""; window.TunerPanel.build(host); tunerState = 2;

@@ -7,7 +7,7 @@ toc-depth: 2
 
 ```{=html}
 <link rel="stylesheet" href="/apps/shared/sax/sax.css?v=1">
-<script src="/apps/tunes/tunes-object.js"></script>
+<script src="/apps/tunes/tunes-object.js?v=2"></script>
 <script src="/apps/shared/band/harmony.js?v=34"></script>
 <script src="/apps/shared/mlt/dmti-skills.js?v=5"></script>
 <script src="/apps/shared/mlt/books/dmti.js?v=2"></script>

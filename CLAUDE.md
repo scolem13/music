@@ -58,13 +58,15 @@ Feature docs. A CLAUDE.md inside a folder loads by itself when you work there; t
   links to the lessons using it). Add a source there, not on the page; sources for a group of pages go in `scripts/sources/*.py` (one file each, `SOURCES = [...]`, `who="student"` / `"teacher"` splits a page's list under For students / For teachers; duplicates across files merge). `bibliography.qmd` is the last entry of the lessons sidebar.
 - Rules for any new tool or lesson (learned the hard way):
   1. New ABC is checked by a script for bar lengths (`AbcTune` / the check in `scripts/clean-tunes.mjs`), never only counted by eye.
-  2. After changing a shared script, bump its `?v=` everywhere it is loaded (pages and scripts that load it lazily), or browsers keep the old copy.
+  2. After changing a shared script, bump its `?v=` everywhere it is loaded with `node scripts/check-pages.mjs --bump apps/<path>.js` (pages and lazy loaders alike), or browsers keep the old copy. Run `node scripts/check-pages.mjs` before committing a new page: it fails on mixed or missing `?v=` and warns on rule 3 (ABCJS.synth, AudioTap) and pages with no `## ` headings; `--fix` sets every script to its highest version. Copy script tags from a page it passes on.
   3. Sound: ABC plays through `AbcPlay.play(visualObj, { sound, qpm, transpose, onEnd })` (`apps/shared/abc-play.js`: the band's
      samples timed by abcjs, ornament signs played out by `ornament-play.js`, the sounding notes lit `abc-on`; abcjs's synth only as its fallback), not `ABCJS.synth`; other notes
      through `BandSounds` (`spec.bend` slides pitch). With chord symbols (`opts.abc`) the band plays them with the melody (`opts.style`), and `AbcPlay.chords` plays only held piano
      chords. Lesson examples (`abc-ex.js`: `data-sound`, `data-style`, a "▶ Chords" button when there are chords; test
-     `node tests/lessons/abc-play-band.cdp.js`) use it; the older pages still on
-     `ABCJS.synth` are switched one at a time. Every new AudioContext registers with `AudioTap.register`.
+     `node tests/lessons/abc-play-band.cdp.js`) use it; every tune player is on it (Tunes, Songs,
+     Dictation, Write an Ending, Reading Swing (`opts.swing`), Notation, LessonScore, AbcTab; tune melodies on wind/string sounds: family
+     "melody" in `band/sounds.js`, test `tests/tunes/tunes-play.cdp.js`). Still on `ABCJS.synth` on purpose: the rhythm and pattern pages,
+     one-note click previews, and the Tune Assessment (its own ABC arranger; to be replaced by the band, not yet done). Every new AudioContext registers with `AudioTap.register`.
   4. A fact or quotation from memory is checked and cited in `scripts/works-cited.py` before it ships, or marked unverified.
   5. abcjs timing at a chosen tempo: whatever is passed to `setTiming(bpm)` must also go to `millisecondsPerMeasure(bpm)`; called bare it
      uses the tune's Q:, and the melody drifts against the band (fixed 2026-10-28 in `abc-play.js`, `analysed-scores.js`;

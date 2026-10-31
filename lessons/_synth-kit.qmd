@@ -86,9 +86,9 @@ body.sk-has-bar{padding-bottom:4.5rem}
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
 <script src="/apps/shared/abc-transpose.js?v=4"></script>
 <script src="/apps/shared/lessons/sections.js?v=2"></script>
-<script src="/apps/shared/audio-check.js"></script>
+<script src="/apps/shared/audio-check.js?v=1"></script>
 <script src="/apps/shared/pitch-detect.js?v=2"></script>
 <script src="/apps/shared/strobe-view.js?v=1"></script>
 <script src="/apps/shared/lessons/diagrams.js?v=5"></script>
-<script src="/apps/shared/lessons/synth-kit.js?v=11"></script>
+<script src="/apps/shared/lessons/synth-kit.js?v=12"></script>
 ```

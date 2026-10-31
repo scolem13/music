@@ -55,7 +55,7 @@ toc: false
 .gt-keys{font-size:.8rem;color:var(--site-ink-2)}
 @media (max-width:640px){.gt-r-note{font-size:1.6rem}}
 </style>
-<script src="/apps/shared/audio-check.js"></script>
+<script src="/apps/shared/audio-check.js?v=1"></script>
 <script src="/apps/shared/pitch-detect.js?v=2"></script>
 
 <div class="gt">

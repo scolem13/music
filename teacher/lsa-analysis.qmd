@@ -93,12 +93,12 @@ is 80%).
     <button type="button" class="lsa-btn lsa-danger" id="lsa-reset-btn">Reset data</button>
   </div>
 
-  <script src="/apps/patterns/pattern-object.js"></script>
+  <script src="/apps/patterns/pattern-object.js?v=1"></script>
   <script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
-  <script src="/apps/lsa/toc.js"></script>
-  <script src="/apps/lsa/curriculum.js"></script>
-  <script src="/apps/lsa/store.js"></script>
-  <script src="/apps/lsa/prompt-engine.js"></script>
-  <script src="/apps/lsa/analysis-app.js"></script>
+  <script src="/apps/lsa/toc.js?v=1"></script>
+  <script src="/apps/lsa/curriculum.js?v=1"></script>
+  <script src="/apps/lsa/store.js?v=1"></script>
+  <script src="/apps/lsa/prompt-engine.js?v=1"></script>
+  <script src="/apps/lsa/analysis-app.js?v=1"></script>
 </div>
 ```

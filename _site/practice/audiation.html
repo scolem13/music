@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b064d190078fcbe610621d06cc9250ae.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-9d7f26cb4b5836e1be3a3abd64495181.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -94,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
 </script>
 <!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
      tool scripts run; injects a step banner when a session is active. -->
-<script src="../apps/shared/session-nav.js"></script>
+<script src="../apps/shared/session-nav.js?v=1"></script>
 <!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
 <script src="../apps/shared/audio-tap.js?v=1"></script>
 <!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
@@ -881,9 +881,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 
 <script src="../apps/shared/abcjs-basic.js?v=3"></script>
-<script src="../apps/shared/abc-core.js"></script>
-<script src="../apps/shared/abc-events.js"></script>
-<script src="../apps/shared/abc-play.js?v=13"></script>
+<script src="../apps/shared/abc-core.js?v=3"></script>
+<script src="../apps/shared/abc-events.js?v=4"></script>
+<script src="../apps/shared/abc-play.js?v=17"></script>
 <script src="../apps/patterns/pattern-set.js?v=4"></script>
 <script src="../apps/rhythms/rhythm-pattern-object.js?v=2"></script>
 <script src="../apps/shared/pitch-detect.js?v=2"></script>
@@ -1069,7 +1069,9 @@ document.addEventListener('DOMContentLoaded', async function () {
       if (el && bar) {
         button = document.createElement("button"); button.type = "button"; button.className = "sidebar-toggle sidebar-toggle-" + side;
         var icon = document.createElement("i"); icon.className = "bi " + S.icon; button.appendChild(icon);
-        if (side === "left") bar.insertBefore(button, bar.firstChild); else bar.appendChild(button);
+        // the left button first in the navbar; the right one at the navbar's right end, after the last menu (the collapsible part)
+        if (side === "left") bar.insertBefore(button, bar.firstChild);
+        else (document.querySelector("#quarto-header .navbar-collapse") || bar).appendChild(button);
         button.addEventListener("click", function () {
           var hidden = !document.body.classList.contains(S.cls);
           set(hidden); store(S.key, hidden ? "hidden" : "shown"); button.blur();

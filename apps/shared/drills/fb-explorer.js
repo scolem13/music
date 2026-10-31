@@ -123,7 +123,7 @@
         var bank = global.BandSounds.create(ac); bank.load(["piano"]).then(function () { res({ ac: ac, bank: bank, out: out }); }, rej);
       }
       if (global.BandSounds) return go();
-      var sc = document.createElement("script"); sc.src = "/apps/shared/band/sounds.js?v=17"; sc.onload = go; sc.onerror = function () { snd = null; rej(); }; document.head.appendChild(sc);
+      var sc = document.createElement("script"); sc.src = "/apps/shared/band/sounds.js?v=19"; sc.onload = go; sc.onerror = function () { snd = null; rej(); }; document.head.appendChild(sc);
     });
     return snd;
   }

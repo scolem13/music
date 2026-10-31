@@ -266,26 +266,26 @@
   </details>
 <div id="taHiddenNotation" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden"></div>
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
-<script src="/apps/tunes/tunes-object.js"></script>
-<script src="/apps/shared/abc-core.js?v=1"></script>
+<script src="/apps/tunes/tunes-object.js?v=2"></script>
+<script src="/apps/shared/abc-core.js?v=3"></script>
 <script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
-<script src="/apps/shared/session-log.js"></script>
-<script src="/apps/shared/pitch-spelling.js"></script>
+<script src="/apps/shared/session-log.js?v=1"></script>
+<script src="/apps/shared/pitch-spelling.js?v=1"></script>
 <script src="/apps/shared/tonality.js?v=10"></script>
-<script src="/apps/shared/abc-transpose.js?v=1"></script>
+<script src="/apps/shared/abc-transpose.js?v=4"></script>
 <script src="/apps/shared/abc-octave.js?v=1"></script>
-<script src="/apps/shared/tune-chart.js?v=11"></script>
+<script src="/apps/shared/tune-chart.js?v=31"></script>
 <script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
 <script src="/apps/shared/rhythm-cells.js?v=1"></script>
 <script src="/apps/shared/tune-library.js?v=20"></script>
 <script src="/apps/shared/satb.js?v=2"></script>
 <script src="/apps/shared/arranger.js?v=16"></script>
-<script src="/apps/shared/audio-check.js"></script>
+<script src="/apps/shared/audio-check.js?v=1"></script>
 <script src="/apps/shared/pitch-detect.js?v=2"></script>
 <script src="/apps/tune-assessment/app.js?v=40"></script>
 </div>
 <script src="/apps/shared/audio.js?v=10"></script>
-<script src="/apps/shared/establish-button.js"></script>
+<script src="/apps/shared/establish-button.js?v=1"></script>
 <script>
 (function(){
   // Map from TOC anchor IDs to collapsible panel IDs.

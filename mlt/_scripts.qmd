@@ -1,8 +1,8 @@
 ```{=html}
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
-<script src="/apps/shared/abc-core.js"></script>
-<script src="/apps/shared/abc-events.js"></script>
-<script src="/apps/shared/abc-play.js?v=13"></script>
+<script src="/apps/shared/abc-core.js?v=3"></script>
+<script src="/apps/shared/abc-events.js?v=4"></script>
+<script src="/apps/shared/abc-play.js?v=17"></script>
 <script src="/apps/patterns/pattern-set.js?v=4"></script>
 <script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
 <script src="/apps/patterns/audiation.js?v=12"></script>

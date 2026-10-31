@@ -8,7 +8,7 @@ toc-title: "On this page"
 
 ```{=html}
 <script src="/apps/shared/band/modx.js?v=1"></script>
-<script src="/apps/shared/band/sounds.js?v=17"></script>
+<script src="/apps/shared/band/sounds.js?v=19"></script>
 <script src="/apps/shared/lessons/sections.js?v=2"></script>
 <style>
 .mx-row { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin: .5rem 0; }

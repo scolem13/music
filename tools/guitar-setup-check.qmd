@@ -28,7 +28,7 @@ toc: false
 .sc-care{border-left:3px solid #d9822b;padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.94rem}
 #sc-report{position:relative}
 </style>
-<script src="/apps/shared/audio-check.js"></script>
+<script src="/apps/shared/audio-check.js?v=1"></script>
 <script src="/apps/shared/pitch-detect.js?v=2"></script>
 
 <div class="sc">

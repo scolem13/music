@@ -31,7 +31,7 @@ toc: true
 .gi-good{color:#2e9e5b;font-weight:700}.gi-bad{color:#c0392b;font-weight:700}
 .gi-note{font-size:.86rem;color:var(--site-ink-2)}
 </style>
-<script src="/apps/shared/audio-check.js"></script>
+<script src="/apps/shared/audio-check.js?v=1"></script>
 <script src="/apps/shared/pitch-detect.js?v=2"></script>
 <script src="/apps/shared/guitar-in.js?v=1"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>

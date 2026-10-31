@@ -67,11 +67,11 @@ rendered PDF pages. Click a row's key to open that criterion in the
   </table>
 </div>
 
-<script src="/apps/patterns/pattern-object.js"></script>
+<script src="/apps/patterns/pattern-object.js?v=1"></script>
 <script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
-<script src="/apps/lsa/toc.js"></script>
-<script src="/apps/lsa/curriculum.js"></script>
-<script src="/apps/lsa/instructions.js"></script>
+<script src="/apps/lsa/toc.js?v=1"></script>
+<script src="/apps/lsa/curriculum.js?v=1"></script>
+<script src="/apps/lsa/instructions.js?v=1"></script>
 <script>
 (function () {
   function lsaLink(register, key) {

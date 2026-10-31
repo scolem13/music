@@ -7,10 +7,10 @@ toc-depth: 2
 
 ```{=html}
 <link rel="stylesheet" href="/apps/shared/sax/sax.css?v=1">
-<script src="/apps/shared/abc-core.js"></script>
+<script src="/apps/shared/abc-core.js?v=3"></script>
 <script src="/apps/shared/midi-feel.js?v=2"></script>
-<script src="/apps/shared/musical-typing.js"></script>
-<script src="/apps/shared/pitch-detect.js"></script>
+<script src="/apps/shared/musical-typing.js?v=2"></script>
+<script src="/apps/shared/pitch-detect.js?v=2"></script>
 <script src="/apps/patterns/pattern-set.js?v=4"></script>
 <script src="/apps/patterns/pattern-gen.js?v=3"></script>
 <script src="/apps/patterns/ear-piano.js?v=2"></script>

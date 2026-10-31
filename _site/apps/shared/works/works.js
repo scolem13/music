@@ -1,6 +1,6 @@
 // works.js: the pieces in works-data.js (window.WORKS) and the "Recordings & resources" panel shown with them.
-//   <script src="/apps/shared/works/works-data.js?v=1"></script>
-//   <script src="/apps/shared/works/works.js?v=1"></script>
+//   <script src="/apps/shared/works/works-data.js?v=3"></script>
+//   <script src="/apps/shared/works/works.js?v=5"></script>
 //   Works.mount(host, "tune" | "theme" | "analysed", id)   draws the panel for whatever work holds that item (hides host if none)
 //   Works.of(kind, id) -> work or null · Works.get(workId) · Works.ids() · Works.href(kind, ref) · Works.source(recording)
 // A recording is yt (video id or URL), r2 (a path in the bucket, read against WORKS_CONFIG.r2Base) or url (audio/video file, or

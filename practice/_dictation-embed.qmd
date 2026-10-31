@@ -47,7 +47,8 @@
  <div id="dc-hidden" style="position:absolute;left:-9999px;width:800px"></div>
 </div>
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
-<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/soundfont.js?v=1"></script>
+<script src="/apps/shared/abc-play.js?v=17"></script>
 <script src="/apps/shared/abc-core.js?v=3"></script>
 <script src="/apps/shared/abc-events.js?v=4"></script>
 <script src="/apps/shared/dictation.js?v=1"></script>
@@ -86,12 +87,8 @@
     var abc = cur.abc.replace(/^K:(.*)$/m, function (m) { return "Q:1/4=" + $("dc-tempo").value + "\n" + m; });
     if ($("dc-tonic").checked) abc = abc.replace(/(^K:.*\n)/m, "$1" + tonicAbc() + " ");
     var vo = ABCJS.renderAbc("dc-hidden", abc)[0];
-    ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
-    var s = synth = new ABCJS.synth.CreateSynth();
     plays++; $("dc-plays").textContent = plays;
-    getSoundfontUrl().then(function (u) { return s.init({ audioContext: ctx, visualObj: vo, options: { soundFontUrl: u } }); })
-      .then(function () { return s.prime(); }).then(function () { if (synth === s) s.start(); })
-      .catch(function (e) { $("dc-status").textContent = "Couldn't play: " + e; });
+    synth = AbcPlay.play(vo, { light: false });   // the band's piano samples (AbcPlay), not abcjs's synth
   }
   function openNotation() {
     if (win && !win.closed) { send(); win.focus(); return; }

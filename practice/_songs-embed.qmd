@@ -800,7 +800,7 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
 	let phrases_s = [];
 	let pendingExpansionIndex_s = null;
 	let fullVisualObj_s = null;
-	let fullTiming_s = null;
+	let fullTiming_s = null, fullAbc_s = "";
 	let activeTab_s = null;
 	let noteFilter_s = null;       /* number of notes shown in the all-patterns view, or null for any */
 	let chordFilter_s = null;      /* chord symbol (in C) shown in the all-patterns view, or null for any */
@@ -1640,6 +1640,7 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
 
 	function renderFullPaper_s(abcString) {
 		stopPlayback_s();
+		fullAbc_s = abcString;
 		fullVisualObj_s = renderPaper_s("full-paper", abcString, staffClicked_s);
 		fullTiming_s = new ABCJS.TimingCallbacks(fullVisualObj_s, { eventCallback: showPlayingNote_s });
 		markChordCursor_s();
@@ -1683,33 +1684,23 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
 		markChordCursor_s();
 	}
 
+	// playback through AbcPlay (the band's samples; with "Play chords" on and chord symbols in the song, the band plays them)
 	function stopPlayback_s() {
 		clearTimeout(playTimeout_s);
-		if (fullTiming_s) fullTiming_s.stop();
+		const h = activeSynth_s; activeSynth_s = null;
+		if (h) h.stop();
 		showPlayingNote_s(null);
-		if (activeSynth_s) { activeSynth_s.stop(); activeSynth_s = null; }
 		document.getElementById("play-button").textContent = "\u25B6 Play";
 	}
 
 	function togglePlayback_s() {
 		if (activeSynth_s) { stopPlayback_s(); return; }
-		if (!fullVisualObj_s || !ABCJS.synth.supportsAudio()) return;
-		const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-		const synth = new ABCJS.synth.CreateSynth();
-		activeSynth_s = synth;
+		if (!fullVisualObj_s || !window.AbcPlay) return;
+		const opts = { litClass: "sq-playing", onEnd: function () { if (activeSynth_s === h) stopPlayback_s(); } };
+		if (document.getElementById("play-chords-s").checked && AbcPlay.hasChords(fullAbc_s)) { opts.abc = fullAbc_s; opts.drums = false; }
+		const h = AbcPlay.play(fullVisualObj_s, opts);
+		activeSynth_s = h;
 		document.getElementById("play-button").textContent = "\u25A0 Stop";
-		getSoundfontUrl().then(function(sfUrl) {
-			return synth.init({
-				audioContext: audioContext,
-				visualObj: fullVisualObj_s,
-				options: { soundFontUrl: sfUrl, chordsOff: !document.getElementById("play-chords-s").checked }
-			});
-		}).then(function() { return synth.prime(); }).then(function(result) {
-			if (activeSynth_s !== synth) return;
-			synth.start();
-			fullTiming_s.start();
-			playTimeout_s = setTimeout(stopPlayback_s, result.duration * 1000 + 300);
-		}).catch(function(error) { console.warn("Audio problem:", error); stopPlayback_s(); });
 	}
 
 	function renderAll_s() {
@@ -1953,12 +1944,13 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
 
 </div>
 
-<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/soundfont.js?v=1"></script>
+<script src="/apps/shared/abc-play.js?v=17"></script>
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
 <script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
 <script src="/apps/patterns/pattern-set.js?v=4"></script>
 <script src="/apps/shared/tonality.js?v=10"></script>
-<script src="/apps/shared/abc-transpose.js"></script>
+<script src="/apps/shared/abc-transpose.js?v=4"></script>
 <script>
 	load_s();
 </script>

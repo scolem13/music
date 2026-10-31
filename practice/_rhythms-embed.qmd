@@ -294,17 +294,17 @@
 			<pre class="feedback"></pre>
 		</main>
 	</div>
-	<script src="/apps/shared/soundfont.js"></script>
+	<script src="/apps/shared/soundfont.js?v=1"></script>
 	<script src="/apps/shared/abcjs-basic.js?v=3"></script>
 	<script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
-	<script src="/apps/shared/abc-core.js?v=1"></script>
-	<script src="/apps/shared/abc-events.js?v=2"></script>
+	<script src="/apps/shared/abc-core.js?v=3"></script>
+	<script src="/apps/shared/abc-events.js?v=4"></script>
 	<script src="/apps/shared/rhythm-chant.js?v=19"></script>
-	<script src="/apps/shared/cursor-synth.js"></script>
+	<script src="/apps/shared/cursor-synth.js?v=1"></script>
 	<script>
 		const cursorControl = new CursorControl();
 		load();
 	</script>
 </div>
-<script src="/apps/shared/space-play.js"></script>
+<script src="/apps/shared/space-play.js?v=2"></script>
 ```

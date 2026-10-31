@@ -2334,7 +2334,7 @@ renderChips();
 })();
 </script>
 </div>
-<script src="/apps/shared/pitch-spelling.js"></script>
+<script src="/apps/shared/pitch-spelling.js?v=1"></script>
 <script src="/apps/shared/tonality.js?v=10"></script>
 <script>
 // The chord-sheet tool is an IIFE, so all integration goes through the DOM:
@@ -2545,8 +2545,8 @@ renderChips();
 })();
 </script>
 <script src="/apps/shared/audio.js?v=10"></script>
-<script src="/apps/shared/soundfont.js"></script>
-<script src="/apps/shared/band/sounds.js?v=17"></script>
+<script src="/apps/shared/soundfont.js?v=1"></script>
+<script src="/apps/shared/band/sounds.js?v=19"></script>
 <script src="/apps/shared/band/player.js?v=128"></script>
-<script src="/apps/shared/establish-button.js"></script>
+<script src="/apps/shared/establish-button.js?v=1"></script>
 ```

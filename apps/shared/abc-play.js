@@ -11,6 +11,10 @@
 //                   endMs = when the last note ends (Rote Song times its Space tap against this)
 //   opts.fromMs / opts.untilMs  (melody only) play only the notes starting in [fromMs, untilMs) of the full tune (fromMs keeps the
 //                   tune's clock: t0 stays the second the tune's ms 0 would have been)
+//   opts.tracks     true: play EVERY track abcjs makes (setUpAudio), not just the drawn notes: each voice on the band sound for its
+//                   %%MIDI program (GM_SOUND below), and the %%MIDI drum channel on the band's kit and congas (GM_DRUM). For ABC that
+//                   carries its own accompaniment and drums (arranger.js output: the Accompaniment Styles page). No band, no swing, from 0.
+//   opts.swing      (melody only) 50 = even eighths (default), 66.7 = triplet swing, 75 = dotted; off-beat eighths moved within each quarter
 //   opts.transpose  semitones added to every note (heard only; draw with visualTranspose for the eye)
 //   opts.light      true (default) lights each note as it sounds with the class opts.litClass ("abc-on"; styled here);
 //                   only for a tune drawn on the page (an off-page tune has nothing to light)
@@ -39,7 +43,7 @@
 // the pickup bar, NOTES.org 2026-10-13 ("Pickups, tuplets ...", BandHarmony.buildForm).
 // If the samples can't load within 12 s, abcjs's own synth plays instead (same tune, same cursor).
 (function (global) {
-  var SOUNDS = "/apps/shared/band/sounds.js?v=17", shared = null, cur = null, styled = false;
+  var SOUNDS = "/apps/shared/band/sounds.js?v=19", shared = null, cur = null, styled = false;
 
   function ctx() {
     if (shared) return shared;
@@ -90,7 +94,7 @@
   // ---- the band (chord symbols) ----
   var BAND_JS = ["/apps/shared/abc-transpose.js?v=4", "/apps/shared/tune-chart.js?v=31", "/apps/tune-assessment/abc-tune.js?v=3", "/apps/shared/voicings.js?v=5",
     "/apps/shared/band/harmony.js?v=34", "/apps/shared/band/bass.js?v=16", "/apps/shared/band/comp.js?v=32", "/apps/shared/band/catalog.js?v=37",
-    "/apps/shared/band/drums.js?v=18", "/apps/shared/band/congas.js?v=3", SOUNDS, "/apps/shared/band/player.js?v=128"], bandJs = null;
+    "/apps/shared/band/drums.js?v=18", "/apps/shared/band/congas.js?v=4", SOUNDS, "/apps/shared/band/player.js?v=128"], bandJs = null;
   function loadBand() {
     if (global.BandPlayer && global.BandCatalog && global.TuneChart && global.BandHarmony) return Promise.resolve();
     return bandJs || (bandJs = BAND_JS.reduce(function (pr, src) {
@@ -218,6 +222,37 @@
     return me;
   }
 
+  // opts.tracks: General MIDI program -> band sound, GM percussion note -> [bank instrument, piece]
+  var GM_SOUND = { 0: "piano", 1: "piano", 2: "piano", 3: "piano", 4: "rhodes", 5: "epiano", 11: "vibes", 16: "hammond", 17: "hammond", 18: "hammond", 19: "organ", 20: "organ",
+    24: "nguitar", 25: "aguitar", 26: "guitar", 27: "clguitar", 28: "clguitar", 29: "odguitar", 30: "odguitar", 32: "bass", 33: "ebass", 34: "ebass", 35: "ebass",
+    40: "violin", 41: "violin", 42: "cello", 43: "cello", 56: "trumpet", 57: "trombone", 58: "tuba", 64: "asax", 65: "asax", 66: "tsax", 67: "tsax", 68: "clarinet",
+    71: "clarinet", 72: "flute", 73: "flute", 74: "flute" };
+  function gmSound(prog) { return GM_SOUND[prog] || (prog >= 32 && prog < 40 ? "bass" : "piano"); }
+  var GM_DRUM = { 31: ["kit", "sticks"], 33: ["kit", "click"], 34: ["kit", "clickHi"], 35: ["kit", "kick"], 36: ["kit", "kick"], 37: ["kit", "rim"], 38: ["kit", "snare"], 39: ["kit", "clap"],
+    40: ["kit", "snare"], 41: ["kit", "tomLo"], 42: ["kit", "hatClosed"], 43: ["kit", "tomLo"], 44: ["kit", "hatFoot"], 45: ["kit", "tomMid"], 46: ["kit", "hatOpen"],
+    47: ["kit", "tomMid"], 48: ["kit", "tomHi"], 49: ["kit", "crash"], 50: ["kit", "tomHi"], 51: ["kit", "ride"], 52: ["kit", "stacker"], 53: ["kit", "rideBell"],
+    54: ["kit", "tamb"], 56: ["kit", "cowbell"], 57: ["kit", "crash"], 59: ["kit", "ride2"],
+    60: ["congas", "bongoHi"], 61: ["congas", "bongoLo"], 62: ["congas", "congaMute"], 63: ["congas", "congaOpen"], 64: ["congas", "tumbaOpen"] };
+  // every note of every track, in seconds from the start: { at, dur, sound, midi | piece, vel }
+  function trackNotes(v, secPerWhole) {
+    var au; try { au = v.setUpAudio({}); } catch (e) { return []; }
+    var out = [];
+    // a %%MIDI drum channel (its notes have no startChar) is the drums; percussion notes drawn on a staff (clef=perc, no %%percmap)
+    // carry staff positions, not GM drum numbers, so with a drum channel present they are left silent
+    var drumCh = (au.tracks || []).some(function (tr) { return tr.some(function (e) { return e.cmd === "note" && e.instrument === 128 && e.startChar == null; }); });
+    (au.tracks || []).forEach(function (tr) {
+      var prog = 0;
+      tr.forEach(function (e) {
+        if (e.cmd === "program") prog = e.instrument;
+        if (e.cmd !== "note") return;
+        var ins = e.instrument != null ? e.instrument : prog, vel = Math.min(1, (e.volume || 80) / 127 * 0.9);
+        if (ins === 128) { if (drumCh && e.startChar != null) return; var d = GM_DRUM[e.pitch]; if (d) out.push({ at: e.start * secPerWhole, dur: 0, sound: d[0], piece: d[1], vel: vel }); return; }
+        out.push({ at: e.start * secPerWhole, dur: e.duration * secPerWhole, sound: gmSound(ins), midi: e.pitch, vel: vel });
+      });
+    });
+    return out.sort(function (a, b) { return a.at - b.at; });
+  }
+
   function play(v, opts) {
     opts = opts || {};
     if (opts.abc && opts.band !== false && hasChords(opts.abc)) return playBand(v, opts, false);
@@ -253,9 +288,24 @@
       lights = lt.filter(function (e) { return e.type === "event" && e.milliseconds >= lf - 1; })
         .map(function (e) { return Object.assign({}, e, { milliseconds: e.milliseconds - lf }); });
     }
-    if (!events.length) { end(); return me; }
+    if (!events.length && !opts.tracks) { end(); return me; }
     var mf = v.getMeterFraction ? v.getMeterFraction() : { num: 4, den: 4 }, msBar = v.millisecondsPerMeasure ? v.millisecondsPerMeasure(q ? q / (v.getBeatLength() * 4) : undefined) : 2000;   // same tempo as setTiming
     var secPerWhole = msBar / 1000 / ((mf.num || 4) / (mf.den || 4)), tr = opts.transpose || 0;
+    // swing (melody only): within each quarter note, the off-beat eighth moves from 50% to opts.swing% of the beat
+    // (50 = even, 66.7 = triplet, 75 = dotted); notes keep their ends on the moved grid, so a long-short pair stays legato
+    var sw = opts.swing > 50 && opts.swing < 100 ? opts.swing / 100 : 0, msQ = secPerWhole * 1000 / 4;
+    function swung(ms) {
+      if (!sw) return ms;
+      var q = Math.floor(ms / msQ + 1e-6), f = ms / msQ - q;
+      return (q + (f <= 0.5 ? f / 0.5 * sw : sw + (f - 0.5) / 0.5 * (1 - sw))) * msQ;
+    }
+    if (sw) {
+      events = events.map(function (e) {
+        var s = swung(e.milliseconds), scale = function (m) { var d = m.duration * secPerWhole * 1000; return Object.assign({}, m, { duration: (swung(e.milliseconds + d) - s) / secPerWhole / 1000 }); };
+        return Object.assign({}, e, { milliseconds: s, midiPitches: (e.midiPitches || []).map(scale) });
+      });
+      if (!opts.lightTune) lights = events;
+    }
 
     function cursor(ac, t0, endMs) {
       var i = -1;
@@ -273,10 +323,22 @@
     }
 
     var timer = new Promise(function (res, rej) { setTimeout(function () { rej(new Error("samples timed out")); }, 12000); });
-    Promise.race([ctx().then(function (s) { return s.ac.resume().then(function () { return s.bank.load([sound]); }).then(function () { return s; }); }), timer])
+    var all = opts.tracks ? trackNotes(v, secPerWhole) : null;
+    var need = all ? all.map(function (n) { return n.sound; }).filter(function (x, i, a) { return a.indexOf(x) === i; }) : [sound];
+    Promise.race([ctx().then(function (s) { return s.ac.resume().then(function () { return s.bank.load(need); }).then(function () { return s; }); }), timer])
       .then(function (s) {
         if (ended) return;
         var ac = s.ac, t0 = ac.currentTime + 0.12, endMs = 0;
+        if (all) {                                            // every track: the voices on their sounds, the drum channel on the kit
+          all.forEach(function (n) {
+            if (n.piece) s.bank.play(n.sound, { piece: n.piece, vel: n.vel }, t0 + n.at, s.out);
+            else s.bank.play(n.sound, { midi: n.midi + tr, vel: n.vel, dur: n.dur * 0.95 }, t0 + n.at, s.out);
+            endMs = Math.max(endMs, (n.at + (n.dur || 0.2)) * 1000);
+          });
+          if (opts.onStart) try { opts.onStart({ ac: ac, t0: t0, events: events, endMs: endMs }); } catch (e) {}
+          cursor(ac, t0, endMs);
+          return;
+        }
         var orn = ornOf(v, opts, secPerWhole);
         events.forEach(function (e) {
           var at = t0 + e.milliseconds / 1000, took = 0;

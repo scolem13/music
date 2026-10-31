@@ -1136,7 +1136,7 @@
         var bank = global.BandSounds.create(ac); bank.load(["piano"]).then(function () { res({ ac: ac, bank: bank, out: out }); }, rej);
       }
       if (global.BandSounds) return go();
-      var sc = document.createElement("script"); sc.src = "/apps/shared/band/sounds.js?v=17"; sc.onload = go; sc.onerror = function () { snd = null; rej(); }; document.head.appendChild(sc);
+      var sc = document.createElement("script"); sc.src = "/apps/shared/band/sounds.js?v=19"; sc.onload = go; sc.onerror = function () { snd = null; rej(); }; document.head.appendChild(sc);
     });
     return snd;
   }
@@ -1160,7 +1160,7 @@
 
   // ---- the record (SiteRecord, apps/shared/report/record.js, loaded on first use): one item a question, tool "drill",
   // with what was asked, the answer given (typed, a button, or notes played on MIDI), right or wrong, and the seconds it took
-  var SR_SRC = "/apps/shared/report/record.js?v=3", srWait = [];
+  var SR_SRC = "/apps/shared/report/record.js?v=4", srWait = [];
   function withRecord(f) {
     if (global.SiteRecord) return f(global.SiteRecord);
     srWait.push(f); if (srWait.length > 1) return;

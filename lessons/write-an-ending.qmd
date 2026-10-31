@@ -65,9 +65,10 @@ Write two different endings for the same song. Write one that steps down 3â€“2â€
 Then play them back to back. Which sounds more final? Which sounds more like *this* song?
 
 ```{=html}
-<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/soundfont.js?v=1"></script>
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
-<script src="/apps/tunes/tunes-object.js"></script>
+<script src="/apps/shared/abc-play.js?v=17"></script>
+<script src="/apps/tunes/tunes-object.js?v=2"></script>
 <script src="/apps/shared/lessons/sections.js?v=2"></script>
 <script>
 (function () {
@@ -87,15 +88,11 @@ Then play them back to back. Which sounds more final? Which sounds more like *th
   function mine(s) { try { return localStorage.getItem(KEY + s.id); } catch (e) { return null; } }
   function draw(el, abc) { return ABCJS.renderAbc(el, abc, { responsive: "resize", add_classes: true })[0]; }
 
-  var sfUrl = null; if (window.getSoundfontUrl) getSoundfontUrl().then(function (u) { sfUrl = u; });
   var synth = null;
-  function play(abc) {
+  function play(abc) {   // the band's samples (AbcPlay): the tune, and its chords on piano and bass when it has them
     if (synth) { synth.stop(); synth = null; }
     var tmp = document.createElement("div"), vo = ABCJS.renderAbc(tmp, abc)[0];
-    var s = new ABCJS.synth.CreateSynth(), opts = { visualObj: vo, options: { chordsOff: false } };
-    if (sfUrl) opts.options.soundFontUrl = sfUrl;
-    s.init(opts).then(function () { return s.prime(); }).then(function () { synth = s; s.start(); })
-      .catch(function (e) { $("we-msg").textContent = "Couldn't play: " + e.message; });
+    synth = AbcPlay.play(vo, { light: false, abc: abc, drums: false });
   }
 
   function send() {

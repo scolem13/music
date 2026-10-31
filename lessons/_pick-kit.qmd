@@ -10,10 +10,10 @@
 .sh-ids{font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink-2)}
 .pk-note{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
 </style>
-<script src="/apps/shared/audio.js"></script>
-<script src="/apps/shared/chord-catalog.js"></script>
-<script src="/apps/shared/lessons/diagrams.js?v=4"></script>
-<script src="/apps/shared/lessons/shape-steps.js?v=3"></script>
-<script src="/apps/shared/lessons/abc-tab.js?v=1"></script>
+<script src="/apps/shared/audio.js?v=10"></script>
+<script src="/apps/shared/chord-catalog.js?v=1"></script>
+<script src="/apps/shared/lessons/diagrams.js?v=5"></script>
+<script src="/apps/shared/lessons/shape-steps.js?v=5"></script>
+<script src="/apps/shared/lessons/abc-tab.js?v=5"></script>
 <script src="/apps/shared/lessons/sections.js?v=2"></script>
 ```

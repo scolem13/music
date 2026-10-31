@@ -462,16 +462,17 @@ Then practise both tunes in this lesson at three tempos each, and play the slide
 the tables until you can hear the difference without looking.
 
 ```{=html}
-<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/soundfont.js?v=1"></script>
 <script src="/apps/shared/abcjs-basic.js?v=3"></script>
+<script src="/apps/shared/abc-play.js?v=17"></script>
 <script src="/apps/shared/midi-feel.js?v=2"></script>
 <script>
 // Each .sw-ex holds an ABC tune in a <script type="text/plain">; render it and give it Play, Tempo and (unless
-// data-noslider) a Swing slider. Playback is abcjs's synth with its `swing` option (50 = even, 66 = triplet, 75 = dotted).
+// data-noslider) a Swing slider. Playback is AbcPlay (the band's samples) with its `swing` option (50 = even, 66 = triplet, 75 = dotted).
 (function () {
-  var ac = null, current = null;
+  var current = null;
   function ratio(p) { var r = p / (100 - p); return p <= 50 ? 'even (1:1)' : p >= 74 ? 'dotted (3:1)' : r.toFixed(2).replace(/0$/, '') + ':1' + (Math.abs(p - 66.7) < 1.5 ? ' (triplet)' : ''); }
-  function stop() { if (current) { current.synth.stop(); current.btn.textContent = '▶ Play'; current = null; } }
+  function stop() { var c = current; if (c) { current = null; c.synth.stop(); c.btn.textContent = '▶ Play'; } }
   Array.prototype.forEach.call(document.querySelectorAll('.sw-ex'), function (ex, i) {
     var abc = ex.querySelector('script').textContent.trim();
     var swing = +(ex.dataset.swing || 50), tempo = +(ex.dataset.tempo || 120);
@@ -487,18 +488,12 @@ the tables until you can hear the difference without looking.
     function show() { if (out) out.textContent = slider.value + '% — ' + ratio(+slider.value); }
     if (slider) { slider.addEventListener('input', function () { show(); if (current && current.ex === ex) play(); }); show(); }
     Array.prototype.forEach.call(ex.querySelectorAll('.sw-presets .btn'), function (b) { b.addEventListener('click', function () { slider.value = b.dataset.p; show(); play(); }); });
-    function play() {
+    function play() {   // the band's piano samples (AbcPlay) with the slider's swing; the melody alone, so the swing heard is the slider's
       stop();
-      ac = ac || new (window.AudioContext || window.webkitAudioContext)();
-      ac.resume();
-      var synth = new ABCJS.synth.CreateSynth(), me = { synth: synth, btn: btn, ex: ex };
+      var me = { btn: btn, ex: ex };
       current = me; btn.textContent = '■ Stop';
-      getSoundfontUrl().then(function (url) {
-        return synth.init({ audioContext: ac, visualObj: vo, millisecondsPerMeasure: 4 * 60000 / (+tIn.value || tempo),
-          options: { soundFontUrl: url, swing: slider ? +slider.value : swing, chordsOff: false, program: 0,
-            onEnded: function () { if (current === me) { btn.textContent = '▶ Play'; current = null; } } } });
-      }).then(function () { return synth.prime(); }).then(function () { if (current === me) synth.start(); })
-        .catch(function (e) { btn.textContent = '▶ Play'; console.error(e); });
+      me.synth = AbcPlay.play(vo, { qpm: +tIn.value || tempo, swing: slider ? +slider.value : swing,
+        onEnd: function () { if (current === me) { btn.textContent = '▶ Play'; current = null; } } });
     }
     btn.addEventListener('click', function () { if (current && current.ex === ex) stop(); else play(); });
     if (window.MidiFeel) MidiFeel.attach(ex, { abc: abc, getBpm: function () { return +tIn.value || tempo; } });

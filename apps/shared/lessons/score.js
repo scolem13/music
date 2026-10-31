@@ -9,7 +9,7 @@
 //                                (a pickup included); the timing is abcjs's own, so ties, rests and two voices are right
 //   score.markMeasure(k)         light every note of written measure k (0 = the first; for notation that is not in time)
 //   score.clear()
-//   LessonScore.play(button, score, { transpose, onStart })   abcjs plays the notation (piano) and lights each note as it
+//   LessonScore.play(button, score, { transpose, onStart })   AbcPlay plays the notation (the band's piano) and lights each note as it
 //        sounds; the button becomes Stop. One score plays at a time. transpose = semitones added to the sound.
 //        swing = how late the off-beat eighth is played, as abcjs counts it: 50 or unset = even, 66 = a triplet's last note
 //        (the lit note keeps even time, so in a swung pair it changes a little before the second note sounds).
@@ -73,20 +73,23 @@
     if (global.PlayBar) global.PlayBar.sounding("lesson-score", null);
     c.score.clear(); c.button.textContent = c.label; c.button.classList.remove("bl-on");
   }
+  // the notation played on the band's piano samples (AbcPlay, loaded here on first use), each note lit ("ls-on") as it sounds
+  var ABC_PLAY = "/apps/shared/abc-play.js?v=17", abcPlayP = null;
+  function abcPlay(){
+    if (global.AbcPlay) return Promise.resolve(global.AbcPlay);
+    return abcPlayP || (abcPlayP = new Promise(function (ok, no){ var e = document.createElement("script"); e.src = ABC_PLAY; e.onload = function (){ ok(global.AbcPlay); }; e.onerror = function (){ abcPlayP = null; no(); }; document.head.appendChild(e); }));
+  }
   function play(button, score, o){
-    o = o || {}; var same = cur && cur.button === button; stop(); if (same || !score || !global.ABCJS || !global.ABCJS.synth) return;
+    o = o || {}; var same = cur && cur.button === button; stop(); if (same || !score) return;
     if (o.onStart) o.onStart();
-    var A = global.ABCJS, synth = new A.synth.CreateSynth(), c = cur = { synth: synth, timer: null, score: score, button: button, label: button.textContent };
+    var c = cur = { synth: { stop: function (){} }, timer: null, score: score, button: button, label: button.textContent };
     button.textContent = "\u25a0 Stop"; button.classList.add("bl-on");
     if (global.PlayBar) global.PlayBar.sounding("lesson-score", stop);          // the Stop in the bottom strip stops it too
     var done = function (){ if (cur === c) stop(); };
-    (global.getSoundfontUrl ? global.getSoundfontUrl() : Promise.resolve(undefined)).then(function (url){
-      return synth.init({ visualObj: score.visual, options: { soundFontUrl: url, chordsOff: true, midiTranspose: o.transpose || 0, swing: score.free ? 0 : swingPercent(o.swing), onEnded: done } }); })
-      .then(function (){ return synth.prime(); })
-      .then(function (){ if (cur !== c) return;
-        c.timer = new A.TimingCallbacks(score.visual, { eventCallback: function (ev){ if (cur !== c) return; if (!ev) return; score.light(flat(ev.elements)); } });
-        synth.start(); c.timer.start(); })
-      .catch(done);
+    abcPlay().then(function (P){
+      if (cur !== c) return;
+      c.synth = P.play(score.visual, { litClass: "ls-on", transpose: o.transpose || 0, swing: score.free ? 0 : swingPercent(o.swing), onEnd: done });
+    }, done);
   }
 
   global.LessonScore = { engrave: engrave, play: play, stop: stop, setSwing: setSwing, swing: function (){ return userSwing; } };

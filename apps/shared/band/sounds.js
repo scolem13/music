@@ -159,6 +159,18 @@
       // for hymns: the piano's voicings on a church organ (level a first guess; the samples are a few seconds long, so very long chords fade)
       organ:  { family: "piano", label: "Church organ", gain: 1.3, release: 0.18,
                 zones: soundfontZones(sf, "church_organ", 36, 84, 3) },
+      // melody instruments (family "melody"): a tune played on its own or over the band (AbcPlay opts.sound, the band's melodySound).
+      // Ranges are each instrument's written-for range with a little spare; levels are a first guess, not yet listened to.
+      flute:    { family: "melody", label: "Flute",          gain: 1.6, release: 0.10, zones: soundfontZones(sf, "flute", 58, 98, 3) },
+      clarinet: { family: "melody", label: "Clarinet",       gain: 1.6, release: 0.10, zones: soundfontZones(sf, "clarinet", 48, 94, 3) },
+      asax:     { family: "melody", label: "Alto sax",       gain: 1.4, release: 0.10, zones: soundfontZones(sf, "alto_sax", 47, 84, 3) },
+      tsax:     { family: "melody", label: "Tenor sax",      gain: 1.4, release: 0.10, zones: soundfontZones(sf, "tenor_sax", 42, 79, 3) },
+      trumpet:  { family: "melody", label: "Trumpet",        gain: 1.4, release: 0.10, zones: soundfontZones(sf, "trumpet", 52, 86, 3) },
+      trombone: { family: "melody", label: "Trombone",       gain: 1.5, release: 0.10, zones: soundfontZones(sf, "trombone", 38, 74, 3) },
+      tuba:     { family: "melody", label: "Tuba",           gain: 1.8, release: 0.10, zones: soundfontZones(sf, "tuba", 26, 62, 3) },
+      violin:   { family: "melody", label: "Violin",         gain: 1.5, release: 0.12, zones: soundfontZones(sf, "violin", 55, 100, 3) },
+      cello:    { family: "melody", label: "Cello",          gain: 1.6, release: 0.12, zones: soundfontZones(sf, "cello", 36, 76, 3) },
+      vibes:    { family: "melody", label: "Vibraphone",     gain: 1.6, release: 0.30, zones: soundfontZones(sf, "vibraphone", 53, 89, 3) },
       kit:    { family: "kit", gain: 1.25,
                 zones: soundfontKit(sf, { kick:36, rim:37, snare:38, hatClosed:42, hatFoot:44, hatOpen:46,
                                           crash:49, ride:51, ride2:59, rideBell:53, tomLo:43, tomMid:45, tomHi:48, sticks:31, clap:39, tamb:54,
