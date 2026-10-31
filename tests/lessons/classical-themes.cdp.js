@@ -41,7 +41,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   t0 = Date.now();
   const all = await ev(`(() => { const p = document.querySelector('#ct-per'); p.value = 'all'; p.dispatchEvent(new Event('change'));
     return document.querySelectorAll('.ct-card').length + '|' + document.querySelectorAll('.ct-card svg').length + '|' + document.querySelector('.ct-pager').hidden; })()`);
-  await b.sleep(300);
+  for (let k = 0; k < 30 && !(await ev(`document.querySelectorAll(".ct-card svg").length`)); k++) await b.sleep(100);   // 2,067 Works panels take a moment
   const drawn = await ev(`document.querySelectorAll('.ct-card svg').length`);
   check("All: every card laid out, only those near the screen drawn", /^2067\|0\|true$/.test(all) && drawn > 0 && drawn < 100, all + " drawn " + drawn + " (" + (Date.now() - t0) + " ms)");
   const cols = await ev(`(() => { const c = document.querySelector('#ct-cols'); c.value = '3'; c.dispatchEvent(new Event('change')); const r = [...document.querySelectorAll('.ct-card')].slice(0, 3).map(x => Math.round(x.getBoundingClientRect().top)); return new Set(r).size; })()`);
