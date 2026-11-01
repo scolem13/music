@@ -1,0 +1,2915 @@
+// song-page.js: Words & Chords (songs/index.qmd). One page draws every song: ?id=<slug> shows that song, big for
+// projection, with chords over the words and the band under them; no id shows the list (written into the page by
+// scripts/songs/build.py, so site search finds titles and first lines).
+//
+//   ?id=winter-wonderland            the song, as written
+//   &prog=conrad-2026                its programme: numbered, prev / next (← →) stay inside it; default: the first
+//                                    programme that has the song
+//   &ver=Songbook                    open on another version of the changes (band and chords over the words)
+//   ?teacher=1 / ?teacher=0          the site's teacher switch (localStorage site-teacher), as on the Works drafts
+//
+// Versions: a song's file holds every version ({start_of_version} blocks, scripts/songs/chordpro.py). Students see
+// the one their programme names (programmes.json "slug@Version"), or the song as written; only the teacher view
+// shows the menu of all of them (v steps through).
+//
+// Data: window.SONGS from apps/shared/data/songs.js (built, never edited). Below the mount come the carols site's
+// page scripts, one block each, changed only where they assumed one page per song (window.SONG_PATH is the song's
+// own address, for saved settings and the linked second window) and for the band's file paths.
+// Runs once the page is parsed: the right-hand sidebar (#quarto-margin-sidebar), where the keys put the Sections
+// list and the band its panel, comes after <main> in Quarto's layout.
+function songPageRun() {
+(function () {
+  "use strict";
+  var S = window.SONGS || { songs: {}, programmes: [] };
+  var q = new URLSearchParams(location.search);
+  var id = q.get("id");
+  var song = id && S.songs[id];
+  window.songPath = function (href) {
+    var u = new URL(href, location.href);
+    return u.pathname + "?id=" + (u.searchParams.get("id") || "");
+  };
+  if (!song) {
+    if (id) {
+      var st = document.getElementById("song-status");
+      if (st) st.textContent = "No song called “" + id + "”. Pick one below.";
+    }
+    return;
+  }
+  window.SONG_ID = id;
+  window.SONG_PATH = location.pathname + "?id=" + id;
+
+  // its programme, and its place in it
+  function slugOf(entry) { return String(entry).split("@")[0]; }
+  var progs = S.programmes.filter(function (p) { return p.songs.some(function (e) { return slugOf(e) === id; }); });
+  var prog = progs.filter(function (p) { return p.id === q.get("prog"); })[0] || progs[0] || null;
+  var order = prog ? prog.songs.map(slugOf) : [];
+  var at = order.indexOf(id);
+  var entry = prog ? prog.songs[at] : id;
+  window.SONG_VERSION = q.get("ver") || (String(entry).split("@")[1] || "");
+
+  // the page: list away, song in, its classes on the body (lyrics, has-chords, day-reveal)
+  var main = document.querySelector("main.content") || document.querySelector("main");
+  [].slice.call(main.querySelectorAll("section.level2")).forEach(function (s) { s.remove(); });
+  var intro = document.getElementById("songs-intro"); if (intro) intro.remove();
+  String(song.classes || "lyrics").split(/\s+/).forEach(function (c) { if (c) document.body.classList.add(c); });
+  var title = (at >= 0 ? (at + 1) + ". " : "") + song.title;
+  var h1 = document.querySelector("h1.title"); if (h1) h1.textContent = title;
+  [].slice.call(document.querySelectorAll("#title-block-header p.subtitle, #title-block-header .description")).forEach(function (el) { el.remove(); });
+  document.title = song.title + " – Words & Chords";
+  var box = document.getElementById("song-body");
+  box.innerHTML = song.html;
+  if (song.unverified) {
+    var warn = document.createElement("p");
+    warn.className = "song-unverified";
+    warn.textContent = "Unverified: these chords were written from memory and have known errors. The words are reliable.";
+    box.insertBefore(warn, box.firstChild);
+  }
+  // Quarto gives each heading data-anchor-id; the keys read the section, so only the id matters
+  [].slice.call(box.querySelectorAll("section.level2")).forEach(function (s) {
+    var h = s.querySelector("h2"); if (h) h.setAttribute("data-anchor-id", s.id);
+  });
+  // prev / next, inside the last section as before (keys.js reads .songnav a for ← →)
+  function link(slug, text, cls) {
+    var a = document.createElement("a");
+    a.className = cls;
+    a.href = slug ? "?id=" + encodeURIComponent(slug) + (prog ? "&prog=" + encodeURIComponent(prog.id) : "")
+                  : "./" + (prog ? "#" + prog.id : "");
+    a.innerHTML = text;
+    return a;
+  }
+  function name(slug) { return (S.songs[slug] || {}).title || slug; }
+  var nav = document.createElement("div");
+  nav.className = "songnav";
+  var p = document.createElement("p");
+  if (at > 0) p.appendChild(link(order[at - 1], "&larr; " + name(order[at - 1]), "nav-prev"));
+  else p.appendChild(link(null, "&larr; " + (prog ? prog.title : "All songs"), "nav-prev"));
+  p.appendChild(document.createTextNode(" "));
+  if (at >= 0 && at + 1 < order.length) p.appendChild(link(order[at + 1], name(order[at + 1]) + " &rarr;", "nav-next"));
+  else if (prog) p.appendChild(link(null, prog.title + " &rarr;", "nav-next"));
+  nav.appendChild(p);
+  var secs = box.querySelectorAll("section.level2");
+  (secs.length ? secs[secs.length - 1] : box).appendChild(nav);
+})();
+
+// The carols site's page scripts: only on a song.
+if (window.SONG_ID) (function () {
+// ==== fonts (from the carols site, fonts.html; ran in the head there) ====
+// How a song page is set is a matter of taste and of the room you are in, so
+// it is chosen from the sidebar rather than settled in the stylesheet. This
+// runs in the head, before anything paints, so a saved choice is what you
+// first see rather than something that swaps in a moment later.
+//
+// Lyric size is not here: b toggles it, per song, as it always has.
+window.CAROL_TYPE = {
+  lyric: {
+    label: 'Lyrics',
+    options: [
+      { id: 'lexend-300', name: 'Lexend Light',
+        vars: { '--lyric-font': '"Lexend", system-ui, sans-serif',
+                '--lyric-weight': '300' } },
+      { id: 'lexend-400', name: 'Lexend Regular',
+        vars: { '--lyric-font': '"Lexend", system-ui, sans-serif',
+                '--lyric-weight': '400' } },
+      { id: 'system', name: 'System sans',
+        vars: { '--lyric-font': 'system-ui, -apple-system, "Segoe UI", sans-serif',
+                '--lyric-weight': '400' } },
+      { id: 'atkinson', name: 'Atkinson Hyperlegible',
+        vars: { '--lyric-font': '"Atkinson Hyperlegible", system-ui, sans-serif',
+                '--lyric-weight': '400' } },
+      { id: 'serif', name: 'Serif',
+        vars: { '--lyric-font': 'Georgia, "Iowan Old Style", "Times New Roman", serif',
+                '--lyric-weight': '400' } }
+    ]
+  },
+  chord: {
+    label: 'Chords',
+    options: [
+      { id: 'commit', name: 'CommitMono',
+        vars: { '--chord-font': '"CommitMono", ui-monospace, monospace',
+                '--chord-weight': '400' } },
+      { id: 'system-mono', name: 'System mono',
+        vars: { '--chord-font': 'ui-monospace, "SF Mono", Menlo, monospace',
+                '--chord-weight': '500' } },
+      { id: 'jetbrains', name: 'JetBrains Mono',
+        vars: { '--chord-font': '"JetBrains Mono", ui-monospace, monospace',
+                '--chord-weight': '400' } },
+      { id: 'match', name: 'Same as lyrics',
+        vars: { '--chord-font': 'var(--lyric-font)', '--chord-weight': '500' } }
+    ]
+  },
+  chordSize: {
+    label: 'Chord size',
+    options: [
+      { id: 'half', name: 'Half', vars: { '--chord-size': '.5em' } },
+      { id: 'two-thirds', name: 'Two thirds', vars: { '--chord-size': '.66em' } },
+      { id: 'three-quarters', name: 'Three quarters', vars: { '--chord-size': '.75em' } },
+      { id: 'match', name: 'Match lyrics', vars: { '--chord-size': '1em' } }
+    ]
+  },
+  staffWidth: {
+    label: 'Staff width',
+    control: 'range',
+    min: 320, max: 1400, step: 20, fallback: 720, unit: 'px',
+    cssVar: '--staff-width', cssUnit: 'px'
+  },
+  staffHeight: {
+    label: 'Staff height',
+    control: 'range',
+    min: 50, max: 220, step: 5, fallback: 100, unit: '%',
+    cssVar: '--staff-height', cssUnit: '%'
+  },
+  // The words under the chord the band is on, when the chords are hidden.
+  sung: {
+    label: 'Sung words',
+    options: [
+      { id: 'marked', name: 'Highlighted',
+        vars: { '--sung-now': '#0d6efd', '--sung-line': '#0d6efd', '--sung-stroke': '.03em' } },
+      { id: 'plain', name: 'Not highlighted',
+        vars: { '--sung-now': 'currentColor', '--sung-line': 'transparent', '--sung-stroke': '0' } }
+    ]
+  },
+  chordColour: {
+    label: 'Chord colour',
+    options: [
+      { id: 'rust', name: 'Rust', vars: { '--chord-colour': '#b4531f' } },
+      { id: 'blue', name: 'Blue', vars: { '--chord-colour': '#0d6efd' } },
+      { id: 'deep', name: 'Deep blue', vars: { '--chord-colour': '#2761e3' } },
+      { id: 'ink', name: 'Ink', vars: { '--chord-colour': '#1a1f26' } },
+      { id: 'green', name: 'Green', vars: { '--chord-colour': '#1d7a4c' } },
+      { id: 'plum', name: 'Plum', vars: { '--chord-colour': '#7b3f8f' } }
+    ]
+  }
+};
+
+window.carolType = function (kind, id) {
+  var group = window.CAROL_TYPE[kind];
+  if (!group) return null;
+  var root = document.documentElement;
+
+  if (group.control === 'range') {
+    var n = Number(id);
+    if (!isFinite(n)) n = group.fallback;
+    n = Math.min(group.max, Math.max(group.min, n));
+    root.style.setProperty(group.cssVar, n + (group.cssUnit || ''));
+    return n;
+  }
+
+  var choice = null, i;
+  for (i = 0; i < group.options.length; i++) {
+    if (group.options[i].id === id) choice = group.options[i];
+  }
+  if (!choice) return null;
+  for (var name in choice.vars) root.style.setProperty(name, choice.vars[name]);
+  return choice.id;
+};
+
+// What a control is set to now, saved or not. The engraver asks for these.
+window.carolTypeValue = function (kind) {
+  var group = window.CAROL_TYPE[kind];
+  if (!group) return null;
+  var saved = window.carolTypeChoice()[kind];
+  if (group.control === 'range') {
+    var n = Number(saved);
+    return isFinite(n) ? n : group.fallback;
+  }
+  return saved || (group.options[0] && group.options[0].id);
+};
+
+window.carolTypeChoice = function () {
+  try { return JSON.parse(localStorage.getItem('carols-type') || '{}'); }
+  catch (e) { return {}; }
+};
+
+(function () {
+  var saved = window.carolTypeChoice();
+  for (var kind in window.CAROL_TYPE) {
+    if (saved[kind]) window.carolType(kind, saved[kind]);
+  }
+})();
+
+// ==== teacher (from the carols site, teacher.html) ====
+// Teacher view and student view, on one site. A student sees each song as it
+// is written. A teacher also gets what is marked `teacher-only`: the other
+// versions of a song's changes, and tapping in the bars.
+//
+// Nothing is secret -- this hides, it does not lock. The view is kept by the
+// browser: open any page with ?teacher=1 once to turn it on there, ?teacher=0
+// to turn it off. On this machine (localhost) it is on unless turned off.
+(function () {
+  var KEY = 'site-teacher', kept = null;
+  var asked = /[?&]teacher(?:=([^&]*))?/.exec(location.search);
+  try {
+    if (asked) if (/^(0|off|no)$/i.test(asked[1] || '')) localStorage.setItem(KEY, '0'); else localStorage.setItem(KEY, '1');
+    kept = localStorage.getItem(KEY);
+  } catch (e) {}
+  var local = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+  var teacher = kept === '1' || (kept !== '0' && local);
+  document.documentElement.classList.toggle('teacher', teacher);
+  window.carolTeacher = teacher;
+  if (!teacher) return;
+  var link = document.createElement('a');
+  link.className = 'teacher-flag';
+  link.href = location.pathname + location.search.replace(/[?&]teacher=[^&]*/, '') + (location.search.replace(/[?&]teacher=[^&]*/, '') ? '&' : '?') + 'teacher=0';
+  link.textContent = 'Teacher view';
+  link.title = 'Students do not see the other versions or the tapping panel. Click to see the page as they do; add ?teacher=1 to any address to come back.';
+  document.body.appendChild(link);
+})();
+
+// ==== keys (from the carols site, keys.html) ====
+(function () {
+  // Quarto puts the anchor id on the wrapping <section>, not the heading.
+  var heads = Array.prototype.slice
+    .call(document.querySelectorAll('main.content section.level2'))
+    .map(function (s) {
+      var h = s.querySelector('h2');
+      return {
+        section: s,
+        heading: h,
+        // A da capo sends you back to the top -- once. On the second pass
+        // through it, j stops rather than looping the song forever.
+        dacapo: !!h && /^d\.?\s*[cs]\b/i.test(h.textContent.trim()),
+        // Fine is where that second pass ends.
+        fine: !!h && /^fine$/i.test(h.textContent.trim()),
+        // Segno is where a dal segno (D.S.) goes back to, in place of the top.
+        segno: !!h && /^segno$/i.test(h.textContent.trim()),
+        // Played once on the way down, an interlude is skipped on the repeat.
+        interlude: !!h && /^interlude$/i.test(h.textContent.trim()),
+        taken: false
+      };
+    })
+    .filter(function (h) { return h.heading; });
+
+  // A direction tells you what to do; it is not a place in the song, so
+  // neither j nor k nor a click in the list ever lands on one.
+  function isDirection(h) { return h.dacapo || h.fine || h.segno; }
+  // Where the jump written at heads[n] goes: a D.S. to the section after the
+  // Segno above it, anything else (and a D.S. with no Segno) to the top.
+  function start(n) {
+    if (!heads[n] || !/^d\.?\s*s/i.test(heads[n].heading.textContent.trim())) return 0;
+    for (var i = n - 1; i >= 0; i--) {
+      if (!heads[i].segno) continue;
+      for (var to = i + 1; to < n; to++) if (!isDirection(heads[to])) return to;
+    }
+    return 0;
+  }
+
+  // A Fine is where the repeat ends, so it means nothing until the da capo
+  // has been read. Until then it is there to be seen, but greyed back.
+  var fineMarks = [];
+
+  function markFine() {
+    var repeating = heads.some(function (h) { return h.taken; });
+    fineMarks.forEach(function (mark) {
+      mark.head.heading.classList.toggle('pending', !repeating);
+      mark.note.classList.toggle('pending', !repeating);
+    });
+  }
+
+  // Set when the page had to invent a Fine, which is the one case worth a
+  // second look: the song says "al Fine" without saying where.
+  var supplied = false;
+
+  // A flag on a jump nobody has verified yet, on the page and in the list.
+  function check() {
+    var mark = document.createElement('span');
+    mark.className = 'check';
+    mark.textContent = 'CHECK';
+    mark.title = 'Verify this jump: where it goes back to, and where it ends';
+    return mark;
+  }
+
+  // "D.C. al Fine" with no Fine to stop at means the song ends where it ends.
+  // Wrapped, because everything below depends on it: a page whose shape this
+  // does not expect should cost the song its Fine, not its keys.
+  (function supplyFine() {
+    try {
+      var main = document.querySelector('main.content');
+      if (!main) return;
+      var promised = heads.some(function (h) {
+        return h.dacapo && /\bfine\s*$/i.test(h.heading.textContent.trim());
+      });
+      if (!promised) return;               // al Coda, or a plain D.C.
+      if (heads.some(function (h) { return h.fine; })) return;
+      var section = document.createElement('section');
+      section.className = 'level2';
+      section.id = 'fine';
+      var h = document.createElement('h2');
+      h.textContent = 'Fine';
+      section.appendChild(h);
+      // The prev/next links sit inside the last section rather than beside
+      // it, so the Fine goes in wherever they are, just above them.
+      var nav = main.querySelector('.songnav');
+      if (nav && nav.parentNode) nav.parentNode.insertBefore(section, nav);
+      else main.appendChild(section);
+      heads.push({ section: section, heading: h, dacapo: false, fine: true, segno: false,
+                   interlude: false, taken: false });
+      supplied = true;
+    } catch (e) { /* no Fine on this page; the song still works */ }
+  })();
+  // Our own section list, built from the song itself. Quarto's table of
+  // contents is hidden on these pages: it is keyed to scroll position, it
+  // fights any marking of its own we apply, and its links navigate by anchor
+  // rather than by section. This list does exactly what j and k do.
+  //
+  // The page's own label stays plain -- VERSE, CHORUS -- because you are
+  // reading the words underneath it. The list numbers the repeats, because
+  // there you are choosing which one to go to.
+  var entries = [];
+
+  (function buildSectionList() {
+   try {
+    var total = {}, seen = {};
+    var labels = heads.map(function (h) {
+      var written = h.heading.textContent.trim();
+      var m = /^(.*?)\s+(\d+)$/.exec(written);
+      var base = m ? m[1] : written;
+      total[base] = (total[base] || 0) + 1;
+      // A verse the song itself numbers keeps that number, so a repeat of
+      // verse 2 is still verse 2. Anything else is counted as it comes.
+      return { base: base, number: m ? m[2] : null };
+    });
+
+    heads.forEach(function (h, n) {
+      var label = labels[n];
+      h.heading.textContent = label.base;
+      seen[label.base] = (seen[label.base] || 0) + 1;
+      var number = label.number
+        || (total[label.base] > 1 ? String(seen[label.base]) : '');
+      labels[n].text = number ? label.base + ' ' + number : label.base;
+    });
+
+    var sidebar = document.getElementById('quarto-margin-sidebar');
+    if (!sidebar || !heads.length) return;
+
+    var nav = document.createElement('nav');
+    nav.className = 'song-sections';
+    nav.setAttribute('aria-label', 'Sections of this song');
+    var title = document.createElement('div');
+    title.className = 'section-buttons-title';
+    title.textContent = 'Sections';
+    nav.appendChild(title);
+
+    var list = document.createElement('ol');
+    heads.forEach(function (h, n) {
+      var item = document.createElement('li');
+      if (isDirection(h)) {
+        var note = document.createElement('span');
+        note.className = 'direction';
+        note.textContent = labels[n].text + ' ';
+        h.heading.classList.add('direction');
+        // Where a song jumps is worth reading twice: a da capo written over a
+        // song that ends on a coda may want to be a dal segno instead.
+        if (h.dacapo && supplied) {
+          note.appendChild(check());
+          h.heading.appendChild(check());
+        }
+        if (h.fine) fineMarks.push({ head: h, note: note });
+        item.appendChild(note);
+        list.appendChild(item);
+        entries.push(null);
+        return;
+      }
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = labels[n].text;
+      button.addEventListener('click', function () {
+        // While the band is playing, a click asks the band to go there; the
+        // words follow when it does.
+        if (band('goto', n)) { button.blur(); return; }
+        heads.forEach(function (head) { head.taken = false; });
+        focus(n);
+        send({ kind: 'section', index: n });
+        button.blur();
+      });
+      item.appendChild(button);
+      list.appendChild(item);
+      entries.push(button);
+    });
+    nav.appendChild(list);
+    sidebar.appendChild(nav);
+    markFine();
+   } catch (e) { /* no list; the keys still move through the song */ }
+  })();
+
+
+  var at = -1;
+
+  // Two windows, one song: the same site open twice -- one on the projector
+  // with the words only, one in front of the player with the chords -- moves
+  // together. Only the section and the song travel between them; whether
+  // chords are showing, and how big the text is, belong to each window.
+  var LINK_KEY = 'carols-link';
+  var linked = true;
+  try { linked = localStorage.getItem(LINK_KEY) !== 'off'; } catch (e) { linked = true; }
+  var applying = false;          // a remote update is being applied just now
+  var channel = null;
+  var linkButton = null;
+  var followTimer = null;
+
+  try {
+    if (window.BroadcastChannel) channel = new BroadcastChannel('carols');
+  } catch (e) { channel = null; }
+
+  function send(message) {
+    if (!linked || applying) return;
+    // A nav message names where it is going; everything else means here.
+    if (!message.path) message.path = window.SONG_PATH;
+    message.at = Date.now();
+    if (channel) {
+      try { channel.postMessage(message); return; } catch (e) { /* fall through */ }
+    }
+    // No BroadcastChannel (or it failed): a storage write other tabs hear.
+    try { localStorage.setItem('carols-sync', JSON.stringify(message)); } catch (e) {}
+  }
+
+  function showFollowing() {
+    if (!linkButton) return;
+    linkButton.classList.add('following');
+    if (followTimer) clearTimeout(followTimer);
+    followTimer = setTimeout(function () {
+      linkButton.classList.remove('following');
+    }, 1200);
+  }
+
+  function receive(message) {
+    if (!linked || !message) return;
+    if (message.kind === 'nav') {
+      // The other window changed song; follow it there.
+      if (message.path && message.path !== window.SONG_PATH) {
+        applying = true;
+        location.href = message.path;
+      }
+      return;
+    }
+    if (message.kind === 'chord' && message.path === window.SONG_PATH) {
+      // The chord the band is on, in the window that is playing it.
+      if (window.carolBand && window.carolBand.lightAt) {
+        window.carolBand.lightAt(message.head, message.n);
+      }
+      return;
+    }
+    if (message.kind === 'chords' && message.path === window.SONG_PATH) {
+      // Another version of the changes was chosen in the other window.
+      if (window.carolBand && window.carolBand.labels) {
+        window.carolBand.labels(message.list);
+      }
+      return;
+    }
+    if (message.kind !== 'section' || message.path !== window.SONG_PATH) return;
+    applying = true;
+    showFollowing();
+    if (message.reset) heads.forEach(function (h) { h.taken = false; });
+    if (heads[message.dacapo]) heads[message.dacapo].taken = true;
+    if (heads[message.untake]) heads[message.untake].taken = false;
+    focus(message.index);
+    applying = false;
+  }
+
+  if (channel) {
+    channel.addEventListener('message', function (e) { receive(e.data); });
+  }
+  window.addEventListener('storage', function (e) {
+    if (e.key !== 'carols-sync' || !e.newValue) return;
+    try { receive(JSON.parse(e.newValue)); } catch (err) { /* ignore */ }
+  });
+
+  // The Twelve Days page holds one fixed verse and reveals it a day at a time
+  // instead of scrolling between twelve near-identical ones.
+  var reveal = document.body.classList.contains('day-reveal');
+  var gifts = Array.prototype.slice.call(document.querySelectorAll('.gift'));
+  var opening = document.getElementById('day-opening');
+  // The ordinal has its own span so that rewriting it leaves the rest of the
+  // line -- chords included -- standing. Older pages name no span; there the
+  // whole line is rewritten as before.
+  var ordinal = document.getElementById('day-ordinal');
+  var ORDINALS = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth',
+                  'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth'];
+
+  function showDay(day) {
+    gifts.forEach(function (g) {
+      // Hidden, not removed: the lines already sung hold their place.
+      g.classList.toggle('unsung', +g.getAttribute('data-day') > day);
+      // A gift that goes one way on the early days and another later is
+      // written once for each; only the day's own is on the page.
+      g.classList.toggle('other-days', day < +(g.getAttribute('data-from') || 1) ||
+                                       day > +(g.getAttribute('data-until') || 12));
+    });
+    if (ordinal) {
+      ordinal.textContent = ORDINALS[day - 1];
+    } else if (opening) {
+      opening.textContent = opening.textContent.replace(
+        /\b(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth)\b/,
+        ORDINALS[day - 1]);
+    }
+  }
+
+  function focus(i) {
+    at = Math.max(0, Math.min(heads.length - 1, i));
+    heads.forEach(function (h, n) { h.heading.classList.toggle('current', n === at); });
+    if (reveal) {
+      showDay(at + 1);
+    } else if (at === 0) {
+      // Going back to the first section means the top of the song: scroll the
+      // page itself so the title is on screen, not just the opening verse.
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      heads[at].section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    markFine();
+    entries.forEach(function (button, n) {
+      if (!button) return;
+      var on = n === at;
+      button.classList.toggle('is-current', on);
+      if (on) {
+        button.setAttribute('aria-current', 'true');
+        button.style.setProperty('color', '#2761e3', 'important');
+        button.style.setProperty('font-weight', '700', 'important');
+        button.style.setProperty('border-left-color', '#2761e3', 'important');
+        button.style.setProperty('background', 'rgba(39, 97, 227, .08)', 'important');
+      } else {
+        button.removeAttribute('aria-current');
+        button.style.removeProperty('color');
+        button.style.removeProperty('font-weight');
+        button.style.removeProperty('border-left-color');
+        button.style.removeProperty('background');
+      }
+    });
+  }
+
+  function nearest() {
+    // Which heading is at, or just above, the top of the viewport.
+    var i = 0;
+    heads.forEach(function (h, n) {
+      if (h.section.getBoundingClientRect().top < 80) i = n;
+    });
+    return i;
+  }
+
+  if (reveal && heads.length) {
+    focus(0);
+    document.querySelectorAll('#TOC a').forEach(function (a) {
+      a.addEventListener('click', function (ev) {
+        var id = (a.getAttribute('href') || '').slice(1);
+        heads.forEach(function (h, n) {
+          if (h.section.getAttribute('id') === id) { ev.preventDefault(); focus(n); }
+        });
+      });
+    });
+  }
+
+  function go(index, extra) {
+    focus(index);
+    var message = { kind: 'section', index: at };
+    if (extra) for (var key in extra) message[key] = extra[key];
+    send(message);
+  }
+
+  // The band (band.html), when it is playing, may take a move for itself:
+  // holding a section, j and the pedal tell the band to move on, and the
+  // words change when the band gets there.
+  function band(what, arg) {
+    var b = window.carolBand;
+    try { return !!(b && b.intercept && b.intercept(what, arg)); }
+    catch (e) { return false; }
+  }
+
+  // The song from top to bottom as j would walk it: each stop is a section
+  // and the da capos read before reaching it. This is the order the band
+  // plays in, so the rules here are the rules in step() below.
+  function road() {
+    var out = [], taken = [], repeating = false, n = 0, guard = 0;
+    while (n < heads.length && guard++ < 1000) {
+      var h = heads[n];
+      if (repeating && h.interlude) { n++; continue; }
+      if (h.dacapo) {
+        if (taken.indexOf(n) < 0) { taken.push(n); repeating = true; n = start(n); }
+        else n++;
+        continue;
+      }
+      if (h.segno) { n++; continue; }
+      if (h.fine) { if (repeating) break; n++; continue; }
+      out.push({ head: n, taken: taken.slice() });
+      n++;
+    }
+    return out;
+  }
+
+  window.carolSong = {
+    road: road,
+    count: function () { return heads.length; },
+    folds: function (box, name) { folds(box, name); },
+    send: function (message) { send(message); },
+    section: function (n) { return heads[n] ? heads[n].section : null; },
+    at: function () { return at; },
+    // Put this window, and the linked one, on a stop of the road.
+    show: function (stop) {
+      if (!stop || !heads[stop.head]) return;
+      heads.forEach(function (h, n) { h.taken = stop.taken.indexOf(n) >= 0; });
+      focus(stop.head);
+      var message = { kind: 'section', index: stop.head, reset: true };
+      if (stop.taken.length) message.dacapo = stop.taken[stop.taken.length - 1];
+      send(message);
+    }
+  };
+
+  function step(dir) {
+    if (band('step', dir)) return;
+    var base = at < 0 ? nearest() : at;
+    var repeating = heads.some(function (h) { return h.taken; });
+    var i;
+
+    if (dir > 0) {
+      var next = at < 0 ? base : base + 1;
+      while (heads[next]) {
+        var ahead = heads[next];
+        // Played on the way down, an interlude is passed over on the repeat.
+        if (repeating && ahead.interlude) { next++; continue; }
+        if (ahead.dacapo) {
+          if (!ahead.taken) {           // read it once: back to the beginning
+            ahead.taken = true;         // (or to the segno)
+            go(start(next), { dacapo: next });
+            return;
+          }
+          next++;                        // read already: carry on past it
+          continue;
+        }
+        if (ahead.segno) { next++; continue; }
+        if (ahead.fine) {
+          if (repeating) return;         // the second pass ends here
+          next++;                        // first time through, Fine is passed
+          continue;
+        }
+        break;
+      }
+      if (!heads[next]) return;
+      go(next);
+      return;
+    }
+
+    // Backwards is the same road travelled the other way. Where a dal segno
+    // put us is not the top of the song, but going back from there is the
+    // same: give the marker back and return to where it was read.
+    var dc = -1;
+    for (i = heads.length - 1; i >= 0; i--) {
+      if (heads[i].dacapo && heads[i].taken) { dc = i; break; }
+    }
+    if (dc >= 0 && base > 0 && start(dc) === base) {
+      heads[dc].taken = false;
+      var from = dc - 1;
+      while (from >= 0 && isDirection(heads[from])) from--;
+      go(Math.max(0, from), { untake: dc });
+      return;
+    }
+    var prev = base - 1;
+    while (prev >= 0) {
+      if (repeating && heads[prev].interlude) { prev--; continue; }
+      if (isDirection(heads[prev])) { prev--; continue; }
+      break;
+    }
+    if (prev >= 0) { go(prev); return; }
+
+    // At the top of the song. If a da capo put us here, give the marker back
+    // and return to the section it was read from.
+    if (dc < 0) { go(0); return; }
+    heads[dc].taken = false;
+    var back = dc - 1;
+    while (back >= 0 && isDirection(heads[back])) back--;
+    go(Math.max(0, back), { untake: dc });
+  }
+
+  // Anything that can advance the song -- a key, a click, a pedal on the way
+  // in over MIDI -- comes through here.
+  window.carolNext = function () { step(1); };
+  window.carolPrev = function () { step(-1); };
+
+  var hasChords = document.body.classList.contains('has-chords');
+
+  // A song opens as words alone, and what you ask for belongs to the window
+  // you ask in: sessionStorage follows this tab through the songs and is gone
+  // when it closes. That is what keeps the two windows apart -- chords on the
+  // player's screen, words alone on the projector, which was never touched.
+  function remember(name, on) {
+    try {
+      window.sessionStorage.setItem('carols-' + name, on ? 'on' : 'off');
+    } catch (e) {}
+  }
+  function remembered(name) {
+    try { return window.sessionStorage.getItem('carols-' + name) === 'on'; }
+    catch (e) { return false; }
+  }
+  // The chord view was briefly kept in localStorage; drop that leftover so an
+  // old setting cannot outlive the window it was made in.
+  try { window.localStorage.removeItem('carols-chords'); } catch (e) {}
+  if (hasChords && remembered('chords')) document.body.classList.add('chords');
+  if (remembered('big')) document.body.classList.add('big');
+  // Pronunciation notes (IPA, and an English sound-alike), where a song has them.
+  var keepInWindow = remember;  // (a later block declares another `remember`)
+  var hasPron = !!document.querySelector('.pr.ipa, .pr.say');
+  var pronBody = { ipa: 'show-ipa', say: 'show-say' }, pronButtons = {};
+  Object.keys(pronBody).forEach(function (n) {
+    if (remembered(n)) document.body.classList.add(pronBody[n]);
+  });
+  function togglePron(n) {
+    var on = document.body.classList.toggle(pronBody[n]);
+    keepInWindow(n, on);
+    if (pronButtons[n]) pronButtons[n].setAttribute('aria-pressed', String(on));
+  }
+
+  function toggleChords() {
+    remember('chords', document.body.classList.toggle('chords'));
+  }
+
+  function toBeginning() {
+    // Back to the top of the song, ready to run the da capo again.
+    heads.forEach(function (h) { h.taken = false; });
+    focus(0);
+    send({ kind: 'section', index: 0, reset: true });
+  }
+
+  function toggleLink() {
+    linked = !linked;
+    try { localStorage.setItem(LINK_KEY, linked ? 'on' : 'off'); } catch (e) {}
+    if (linkButton) {
+      linkButton.setAttribute('aria-pressed', String(linked));
+      linkButton.firstChild.nodeValue = linked ? 'Linked ' : 'Not linked ';
+    }
+  }
+
+  // A panel that folds under its title. Folded until asked for, and it stays
+  // the way it was left; the keys work either way.
+  function folds(box, name) {
+    var head = box.querySelector('.section-buttons-title');
+    if (!head) return;
+    var key = 'carols-fold-' + name, open = false;
+    try { open = localStorage.getItem(key) === 'open'; } catch (e) {}
+    head.classList.add('folds');
+    head.setAttribute('role', 'button');
+    head.tabIndex = 0;
+    function set(on) {
+      open = on;
+      box.classList.toggle('folded', !open);
+      head.setAttribute('aria-expanded', String(open));
+      try { localStorage.setItem(key, open ? 'open' : 'shut'); } catch (e) {}
+    }
+    head.addEventListener('click', function () { set(!open); });
+    head.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { set(!open); e.preventDefault(); e.stopPropagation(); }
+    });
+    set(open);
+  }
+
+  // Buttons under the section list, for clicking or tapping a whiteboard.
+  if (heads.length) {
+    var sidebar = document.getElementById('quarto-margin-sidebar');
+    if (sidebar) {
+      var panel = document.createElement('div');
+      panel.className = 'section-buttons';
+      panel.innerHTML = '<div class="section-buttons-title">Section Navigation</div>';
+      folds(panel, 'nav');
+      var specs = [['Previous', 'k', function () { step(-1); }],
+                   ['Next', 'j', function () { step(1); }],
+                   ['Beginning', 'g', toBeginning]];
+      if (hasChords) specs.push(['Chords', 'c', toggleChords]);
+      if (hasPron) {
+        if (document.querySelector('.pr.ipa')) specs.push(['IPA', 'i', function () { togglePron('ipa'); }]);
+        if (document.querySelector('.pr.say')) specs.push(['Say it', 'e', function () { togglePron('say'); }]);
+      }
+      specs.push([linked ? 'Linked' : 'Not linked', 'l', toggleLink]);
+      specs.forEach(function (spec) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.appendChild(document.createTextNode(spec[0] + ' '));
+        var key = document.createElement('span');
+        key.className = 'key';
+        key.textContent = spec[1];
+        b.appendChild(key);
+        b.addEventListener('click', function () { spec[2](); b.blur(); });
+        if (spec[1] === 'i' || spec[1] === 'e') {
+          var pn = spec[1] === 'i' ? 'ipa' : 'say';
+          b.className = 'link-button';
+          b.setAttribute('aria-pressed', String(document.body.classList.contains(pronBody[pn])));
+          b.title = pn === 'ipa' ? 'Show or hide the IPA under each line'
+                                 : 'Show or hide the English sound-alike under each line';
+          pronButtons[pn] = b;
+        }
+        if (spec[1] === 'l') {
+          b.className = 'link-button';
+          b.setAttribute('aria-pressed', String(linked));
+          b.title = 'Move both open windows through the song together';
+          linkButton = b;
+        }
+        panel.appendChild(b);
+      });
+      sidebar.appendChild(panel);
+
+      // Type pickers. Each choice is remembered and applied in the head
+      // before the page paints, so a song opens the way you left it.
+      if (window.CAROL_TYPE && window.carolType) {
+        var type = document.createElement('div');
+        type.className = 'type-panel';
+        var typeTitle = document.createElement('div');
+        typeTitle.className = 'section-buttons-title';
+        typeTitle.textContent = 'Display style';
+        type.appendChild(typeTitle);
+        folds(type, 'type');
+
+        var saved = window.carolTypeChoice();
+        function remember(kind, value) {
+          var keep = window.carolTypeChoice();
+          keep[kind] = value;
+          try { localStorage.setItem('carols-type', JSON.stringify(keep)); }
+          catch (e) { /* the choice holds for this page either way */ }
+        }
+
+        Object.keys(window.CAROL_TYPE).forEach(function (kind) {
+          var group = window.CAROL_TYPE[kind];
+          var label = document.createElement('label');
+          label.appendChild(document.createTextNode(group.label));
+
+          if (group.control === 'range') {
+            // Only worth showing where there is a stave to size.
+            if (!document.querySelector('.abc[data-abc]')) return;
+            var slider = document.createElement('input');
+            slider.type = 'range';
+            slider.id = 'type-' + kind;
+            slider.min = group.min;
+            slider.max = group.max;
+            slider.step = group.step;
+            slider.value = window.carolTypeValue(kind);
+            var readout = document.createElement('span');
+            readout.className = 'readout';
+            readout.textContent = slider.value + (group.unit || '');
+            slider.addEventListener('input', function () {
+              var value = window.carolType(kind, slider.value);
+              readout.textContent = value + (group.unit || '');
+              remember(kind, value);
+              if (window.carolDrawAbc) window.carolDrawAbc();
+            });
+            label.appendChild(readout);
+            label.appendChild(slider);
+            label.className = 'range';
+            type.appendChild(label);
+            return;
+          }
+
+          var select = document.createElement('select');
+          select.id = 'type-' + kind;
+          group.options.forEach(function (option) {
+            var el = document.createElement('option');
+            el.value = option.id;
+            el.textContent = option.name;
+            select.appendChild(el);
+          });
+          if (saved[kind]) select.value = saved[kind];
+          select.addEventListener('change', function () {
+            remember(kind, window.carolType(kind, select.value));
+          });
+          label.appendChild(select);
+          type.appendChild(label);
+        });
+        sidebar.appendChild(type);
+      }
+    }
+  }
+
+  function goTo(href) {
+    // Take the other window along before this one leaves.
+    send({ kind: 'nav', path: window.songPath(href) });
+    window.location.href = href;
+  }
+
+  // Clicking the prev/next links moves both windows, as the arrow keys do.
+  document.querySelectorAll('.songnav a').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+      e.preventDefault();
+      goTo(a.getAttribute('href'));
+    });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.target.matches('input, textarea, [contenteditable]')) return;
+    var k = e.key;
+
+    if ((k === 'c' || k === 'C') && hasChords) {
+      toggleChords();
+      e.preventDefault();
+      return;
+    }
+    if ((k === 'i' || k === 'I') && hasPron && document.querySelector('.pr.ipa')) {
+      togglePron('ipa');
+      e.preventDefault();
+      return;
+    }
+    if ((k === 'e' || k === 'E') && hasPron && document.querySelector('.pr.say')) {
+      togglePron('say');
+      e.preventDefault();
+      return;
+    }
+    if (k === 'g' || k === 'G') {
+      toBeginning();
+      e.preventDefault();
+      return;
+    }
+    if (k === 'l' || k === 'L') {
+      toggleLink();
+      e.preventDefault();
+      return;
+    }
+    if (k === 'b' || k === 'B') {
+      remember('big', document.body.classList.toggle('big'));
+      if (!reveal && at === 0) window.scrollTo({ top: 0 });
+      else if (!reveal && at > 0) heads[at].section.scrollIntoView({ block: 'start' });
+      e.preventDefault();
+      return;
+    }
+    if ((k === 'j' || k === 'k') && heads.length) {
+      step(k === 'j' ? 1 : -1);
+      e.preventDefault();
+      return;
+    }
+    var sel = k === 'ArrowRight' ? '.songnav .nav-next'
+            : k === 'ArrowLeft' ? '.songnav .nav-prev' : null;
+    if (!sel) return;
+    var a = document.querySelector(sel);
+    if (a) { goTo(a.getAttribute('href')); e.preventDefault(); }
+  });
+})();
+
+// ==== abc (from the carols site, abc.html) ====
+// Tunes embedded in a song page: the intro line, an interlude, anything
+// written as {start_of_abc} in the ChordPro. They belong with the chords, so
+// they appear and hide with them, and abcjs is fetched only if a page has
+// one. The library is vendored under libs/, so this works offline.
+(function () {
+  var blocks = Array.prototype.slice.call(
+    document.querySelectorAll('.abc[data-abc]'));
+  if (!blocks.length) return;
+
+  // Both dimensions are given, never measured. These staves are drawn while
+  // the chord view is hidden, where there is nothing to measure -- which is
+  // what made the engraving come out differently from one load to the next.
+  function size(kind, fallback) {
+    if (window.carolTypeValue) {
+      var n = window.carolTypeValue(kind);
+      if (typeof n === 'number' && isFinite(n)) return n;
+    }
+    return fallback;
+  }
+
+  function draw() {
+    if (!window.ABCJS) return;
+    var width = size('staffWidth', 720);
+    var scale = size('staffHeight', 100) / 100;
+    blocks.forEach(function (block) {
+      var tune = block.getAttribute('data-abc');
+      try {
+        window.ABCJS.renderAbc(block, tune, {
+          staffwidth: width,
+          scale: scale,
+          paddingtop: 0,
+          paddingbottom: 0,
+          paddingleft: 0,
+          paddingright: 0
+        });
+      } catch (e) {
+        plain(block, tune);
+      }
+    });
+  }
+
+  // The sliders redraw through this.
+  var pending = null;
+  window.carolDrawAbc = function () {
+    if (pending) cancelAnimationFrame(pending);
+    pending = requestAnimationFrame(function () { pending = null; draw(); });
+  };
+
+  // No engraving: the notes themselves are still worth reading.
+  function plain(block, tune) {
+    var pre = document.createElement('pre');
+    pre.className = 'abc-source';
+    pre.textContent = tune;
+    block.textContent = '';
+    block.appendChild(pre);
+  }
+
+  if (window.ABCJS) { draw(); return; }
+  var script = document.createElement('script');
+  var depth = '';
+  script.src = depth + '/apps/shared/abcjs-basic.js?v=3';
+  script.onload = draw;
+  script.onerror = function () {
+    blocks.forEach(function (block) {
+      plain(block, block.getAttribute('data-abc'));
+    });
+  };
+  document.head.appendChild(script);
+})();
+
+// ==== midi (from the carols site, midi.html) ====
+// A footswitch on a keyboard, arriving as MIDI, does what j does: next
+// section, both windows if they are linked. Needs a secure context, so the
+// site has to be served over localhost or https -- opening the file directly
+// will not do. Chrome and Edge implement Web MIDI; Safari may not.
+(function () {
+  var sidebar = document.getElementById('quarto-margin-sidebar');
+  if (!sidebar || !document.querySelector('main.content section.level2')) return;
+
+  var KEY = 'carols-midi';
+  // Until a pedal is learned, only switch-like controllers count: sustain and
+  // its neighbours, and the general purpose switches. A mod wheel or an
+  // expression pedal sweeping past halfway must not turn the page.
+  var SWITCHES = [64, 65, 66, 67, 68, 69, 80, 81, 82, 83];
+  var access = null;
+  var learning = false;
+  var last = {};                 // the value each control last sent
+
+  function saved() {
+    try { return JSON.parse(localStorage.getItem(KEY) || '{}'); }
+    catch (e) { return {}; }
+  }
+  function remember(pedal) {
+    try { localStorage.setItem(KEY, JSON.stringify(pedal)); } catch (e) {}
+  }
+  function forget() {
+    try { localStorage.removeItem(KEY); } catch (e) {}
+  }
+
+  var panel = document.createElement('div');
+  panel.className = 'midi-panel';
+  var title = document.createElement('div');
+  title.className = 'section-buttons-title';
+  title.textContent = 'Pedal';
+  panel.appendChild(title);
+
+  var status = document.createElement('div');
+  status.className = 'midi-status';
+  panel.appendChild(status);
+
+  var monitor = document.createElement('div');
+  monitor.className = 'midi-monitor';
+  panel.appendChild(monitor);
+
+  var connect = document.createElement('button');
+  connect.type = 'button';
+  connect.className = 'plain-button';
+  panel.appendChild(connect);
+
+  var learn = document.createElement('button');
+  learn.type = 'button';
+  learn.className = 'plain-button';
+  learn.textContent = 'Learn pedal';
+  learn.hidden = true;
+  panel.appendChild(learn);
+
+  var forgetButton = document.createElement('button');
+  forgetButton.type = 'button';
+  forgetButton.className = 'plain-button';
+  forgetButton.textContent = 'Forget pedal';
+  forgetButton.hidden = true;
+  panel.appendChild(forgetButton);
+
+  // A MODX footswitch can be assigned to more than a control change: it may
+  // arrive as a note, or as a program change. Read them all.
+  function read(data) {
+    if (!data || data.length < 2) return null;
+    var kind = data[0] & 0xf0, channel = data[0] & 0x0f;
+    if (kind === 0xb0) return { kind: 'cc', channel: channel, id: data[1],
+                                value: data.length > 2 ? data[2] : 0 };
+    if (kind === 0x90) return { kind: 'note', channel: channel, id: data[1],
+                                value: data.length > 2 ? data[2] : 0 };
+    if (kind === 0x80) return { kind: 'note', channel: channel, id: data[1],
+                                value: 0 };
+    // A program change is momentary: it has no release to wait for.
+    if (kind === 0xc0) return { kind: 'pc', channel: channel, id: data[1],
+                                value: 127, momentary: true };
+    return null;
+  }
+
+  function name(msg) {
+    if (msg.kind === 'cc') return 'controller ' + msg.id;
+    if (msg.kind === 'note') return 'note ' + msg.id;
+    return 'program change ' + msg.id;
+  }
+
+  function describe() {
+    var pedal = saved();
+    if (pedal.kind === undefined) return 'any footswitch';
+    return name(pedal) + ', channel ' + (pedal.channel + 1);
+  }
+
+  function say(text) { status.textContent = text; }
+
+  var seen = null;               // the last message, to drop a duplicate
+
+  function onMessage(event) {
+    var msg = read(event.data);
+    if (!msg) return;
+    // The same press can reach us down two paths; count it once.
+    var mark = event.timeStamp + ':' + msg.kind + ':' + msg.channel + ':'
+             + msg.id + ':' + msg.value;
+    if (mark === seen) return;
+    seen = mark;
+    // Show everything that arrives, learned or not: if the pedal sends
+    // something unexpected, this is where it becomes visible.
+    monitor.textContent = name(msg) + ' ch ' + (msg.channel + 1)
+                        + ' = ' + msg.value;
+
+    if (learning) {
+      if (msg.value < 64) return;                    // wait for a press
+      learning = false;
+      remember({ kind: msg.kind, id: msg.id, channel: msg.channel });
+      learn.textContent = 'Learn pedal';
+      forgetButton.hidden = false;
+      last = {};
+      say('Listening for ' + describe());
+      return;
+    }
+
+    var pedal = saved();
+    if (pedal.kind === undefined) {
+      if (msg.kind !== 'cc' || SWITCHES.indexOf(msg.id) < 0) return;
+    } else if (msg.kind !== pedal.kind || msg.id !== pedal.id
+               || msg.channel !== pedal.channel) {
+      return;
+    }
+    var slot = msg.kind + ':' + msg.id;
+    var was = last[slot] === undefined ? 0 : last[slot];
+    last[slot] = msg.momentary ? 0 : msg.value;
+    // A press, not the release that follows it.
+    if (msg.value >= 64 && was < 64 && window.carolNext) window.carolNext();
+  }
+
+  // Attach to a port every way the spec allows. Setting onmidimessage is
+  // meant to open the port by itself; Firefox has not been reliable about
+  // either the implicit open or that handler, so the port is opened
+  // explicitly, a listener is added as well, and the handler is re-attached
+  // once the open resolves. Belt and braces means a press can arrive twice,
+  // which onMessage drops by its timestamp.
+  function attach(input) {
+    input.onmidimessage = onMessage;
+    if (input.addEventListener && !input._carolBound) {
+      input._carolBound = true;
+      input.addEventListener('midimessage', onMessage);
+    }
+    if (input.open) {
+      try {
+        var opening = input.open();
+        if (opening && opening.then) {
+          opening.then(function () { input.onmidimessage = onMessage; },
+                       function () {});
+        }
+      } catch (e) {}
+    }
+  }
+
+  function listen() {
+    var names = [];
+    access.inputs.forEach(function (input) {
+      attach(input);
+      names.push(input.name);
+    });
+    connect.hidden = true;
+    learn.hidden = false;
+    forgetButton.hidden = saved().kind === undefined;
+    say(names.length ? names.join(', ') + ' — listening for ' + describe()
+                     : 'No MIDI device found. Plug one in, then reload.');
+  }
+
+  function open(prompted) {
+    if (!navigator.requestMIDIAccess) {
+      say('This browser has no Web MIDI. Chrome or Edge, served over '
+          + 'localhost, will do it.');
+      connect.hidden = true;
+      return;
+    }
+    navigator.requestMIDIAccess({ sysex: false }).then(function (midi) {
+      access = midi;
+      try { localStorage.setItem('carols-midi-on', 'yes'); } catch (e) {}
+      midi.onstatechange = listen;
+      listen();
+    }, function () {
+      // Firefox gates MIDI behind a site permission add-on it offers to
+      // install, and that flow does not reliably appear on a localhost page.
+      var firefox = /Firefox\//.test(navigator.userAgent || '');
+      say(prompted
+            ? (firefox
+                 ? 'Firefox asks to install a site permission add-on before '
+                   + 'it will grant MIDI, and that prompt often does not '
+                   + 'appear on localhost. Chrome is the easier path.'
+                 : 'MIDI was refused. Allow it for this site and try again.')
+            : 'Not connected.');
+      connect.hidden = false;
+    });
+  }
+
+  connect.textContent = 'Connect pedal';
+  connect.addEventListener('click', function () { open(true); });
+  learn.addEventListener('click', function () {
+    learning = !learning;
+    learn.textContent = learning ? 'Press the pedal…' : 'Learn pedal';
+    if (learning) say('Waiting for the pedal');
+    else say('Listening for ' + describe());
+  });
+  forgetButton.addEventListener('click', function () {
+    forget();
+    last = {};
+    forgetButton.hidden = true;
+    say('Listening for ' + describe());
+  });
+
+  sidebar.appendChild(panel);
+
+  if (!navigator.requestMIDIAccess) {
+    say('This browser has no Web MIDI. Chrome or Edge, served over '
+        + 'localhost, will do it.');
+    connect.hidden = true;
+  } else if (!window.isSecureContext) {
+    say('Needs https or localhost; opened as a file, MIDI is not offered.');
+    connect.hidden = true;
+  } else {
+    say('Not connected.');
+    var was = null;
+    try { was = localStorage.getItem('carols-midi-on'); } catch (e) {}
+    if (was === 'yes') open(false);          // permission already given once
+  }
+})();
+
+// ==== band (from the carols site, band.html) ====
+// A backing band under the words. A song page carries its bars as data
+// (#band-chart, written by tools/chordpro.py from the grids in the .cho), and
+// the band engine -- the one behind the Backing Track page of the music site,
+// copied into libs/band by tools/build.sh -- plays them.
+//
+// The song is played in the order j walks it (window.carolSong.road, in
+// keys.html), one section of the chart for each stop. Two ways of moving on:
+//   through   the band plays the song as written and the words follow it;
+//   hold      the band goes round each section until j, a click or the pedal
+//             says to move on; the drummer fills, and the words change when
+//             the band does.
+// Only the window where Play is pressed makes a sound; a linked window
+// follows the sections as it always has.
+//
+// A song may carry other versions of its changes (chart.versions, from the
+// {start_of_version} blocks of its file). In the teacher view they can be
+// chosen here, with v or in the Backing Track window; the band plays them and
+// the chords over the words are relabelled to match, as they are when the ABC
+// is edited in that window. A page always opens on the song as written.
+(function () {
+  var data = document.getElementById('band-chart');
+  var sidebar = document.getElementById('quarto-margin-sidebar');
+  var song = window.carolSong;
+  if (!data || !sidebar || !song) return;
+  var chart;
+  try { chart = JSON.parse(data.textContent); } catch (e) { return; }
+  if (!chart || !chart.sections) return;
+
+  var FILES = ['/apps/shared/tune-chart.js?v=31', '/apps/shared/voicings.js?v=5', '/apps/shared/band/harmony.js?v=34', '/apps/shared/band/bass.js?v=16',
+               '/apps/shared/band/comp.js?v=32', '/apps/shared/band/presets.js?v=7', '/apps/shared/band/catalog.js?v=37', '/apps/shared/band/drums.js?v=18', '/apps/shared/band/sounds.js?v=19',
+               '/apps/shared/band/player.js?v=128'];
+  if (!window.ABCJS && chart.sections.some(function (x) { return x.abc; })) {
+    FILES.unshift('/apps/shared/abcjs-basic.js?v=3');
+  }
+  var depth = '';
+
+  // ---- what was chosen for this song, in this browser ----
+  var KEY = 'carols-band';
+  function allSaved() {
+    try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; }
+    catch (e) { return {}; }
+  }
+  var saved = allSaved()[window.SONG_PATH] || {};
+  function keep(name, value) {
+    saved[name] = value;
+    try {
+      var all = allSaved();
+      all[window.SONG_PATH] = saved;
+      localStorage.setItem(KEY, JSON.stringify(all));
+    } catch (e) {}
+  }
+  function choice(name, fallback) {
+    return saved[name] === undefined ? fallback : saved[name];
+  }
+
+  // ---- the chart, as one ABC tune with a P: line for each stop ----
+  var stops = song.road();
+  var meter = /^(\d+)\s*\/\s*(\d+)$/.exec(chart.time || '') || [0, 4, 4];
+  var meterN = +meter[1], meterD = +meter[2];
+
+  function mark(bar) {
+    return (bar.feel === 'half' ? '"^half time' + (bar.half === 'ballad' ? ' ballad' : '') + '"' : '')
+         + (bar.rit ? '"^rit."' : '')
+         + (bar.end ? '"^phrase"' : '')
+         + (bar.plain ? '"^plain"' : '')
+         + (bar.stop ? '"^stop"' : '')
+         + (bar.fill ? '"^' + (bar.fill === 'small' ? 'small fill'
+                             : bar.fill === 'large' ? 'big fill' : 'fill') + '"'
+                     : '');
+  }
+
+  // A grid bar's own meter, if the grid changed it (`| 2/4 G |`).
+  function barMeter(bar) {
+    var own = /^(\d+)\/(\d+)$/.exec(bar.m || '');
+    return own ? { n: +own[1], d: +own[2] } : { n: meterN, d: meterD };
+  }
+
+  // A grid bar: its chords share the bar evenly, a dot holding the one before.
+  function gridBar(bar) {
+    var m = barMeter(bar);
+    var units = Math.round(m.n * 8 / m.d), cells = bar.c || [], out = mark(bar);
+    if (!cells.length) return out + 'z' + units;
+    var each = Math.max(1, Math.floor(units / cells.length));
+    cells.forEach(function (cell, k) {
+      var len = k === cells.length - 1 ? units - each * k : each;
+      if (len < 1) return;
+      out += (cell === '.' ? '' : '"' + cell.replace(/"/g, '') + '"') + 'z' + len;
+    });
+    return out;
+  }
+
+  // A tune written out in the song: keep its chord symbols where they fall.
+  // A score with several voices (V:): only the first one is the tune.
+  function firstVoice(abc) {
+    var first = null, keep = true;
+    return abc.split('\n').filter(function (line) {
+      var v = /^\s*V:\s*(\S+)/.exec(line);
+      if (v) { if (first === null) first = v[1]; keep = v[1] === first; return false; }
+      if (/^%%score/.test(line)) return false;
+      return keep;
+    }).join('\n');
+  }
+
+  function tuneBars(abc) {
+    abc = firstVoice(abc);
+    var p = window.TuneChart.parse(abc), out = [];
+    (p.playOrder && p.playOrder.length ? p.playOrder
+       : p.bars.map(function (_, i) { return i; })).forEach(function (i) {
+      var bar = p.bars[i];
+      if (!bar || bar.anacrusis) return;
+      var m = bar.meter || { n: p.meterN, d: p.meterD };
+      var units = Math.round(m.n * 8 / m.d), text = mark(bar), at = 0;
+      (bar.chords || []).forEach(function (c) {
+        var on = Math.max(at, Math.min(units - 1,
+                                       Math.round(c.onset * p.unitL * 8)));
+        if (on > at) { text += 'z' + (on - at); at = on; }
+        text += '"' + (c.nc ? 'N.C.' : c.sym) + '"';
+      });
+      text += 'z' + (units - at);
+      out.push({ text: text, n: m.n, d: m.d, melody: [] });
+    });
+    // The notes of the tune, from abcjs (its first voice), a bar at a time:
+    // the band plays them on its chord instrument.
+    try {
+      var audio = window.ABCJS.renderAbc('*', abc)[0].setUpAudio();
+      var from = p.anacrusis ? p.anacrusisUnits * p.unitL : 0, starts = [], t = from;
+      out.forEach(function (b) { starts.push(t); t += b.n / b.d; });
+      (audio.tracks[0] || []).forEach(function (note) {
+        if (note.cmd !== 'note' || note.start < from - 1e-6) return;
+        var k = starts.length - 1;
+        while (k > 0 && starts[k] > note.start + 1e-6) k--;
+        var b = out[k];
+        if (note.start >= starts[k] + b.n / b.d - 1e-6) return;
+        b.melody.push({ pos: (note.start - starts[k]) * b.d,
+                        dur: note.duration * b.d, midi: note.pitch });
+      });
+    } catch (e) { /* chords only */ }
+    return out;
+  }
+
+  // Sections that have no bars, by name: the band cannot play past them.
+  var missing = [];
+  var melodies = [];             // for each bar of the chart, its tune or null
+
+  function buildAbc(version) {
+    var heading = document.querySelector('h1.title');
+    var lines = ['X:1', 'T:' + (heading ? heading.textContent.trim() : document.title), 'M:' + meterN + '/' + meterD,
+                 'L:1/8', 'K:' + (chart.key || 'C')];
+    var nowN = meterN, nowD = meterD;
+    missing = [];
+    melodies = [];
+    stops.forEach(function (stop) {
+      var part = chart.sections[stop.head], bars = [];
+      var other = version && version.sections[stop.head];
+      if (other || (part && part.bars && part.bars.length)) {
+        bars = (other || part.bars).map(function (b) {
+          var m = barMeter(b);
+          return { text: gridBar(b), n: m.n, d: m.d };
+        });
+        // Another version's chords under the tune the section has written out,
+        // or a melody written for the grid's own bars ({start_of_abc} next to it).
+        var tune = other && part && part.abc ? part.abc : !other && part ? part.melody_abc : null;
+        if (tune) {
+          try {
+            var sung = tuneBars(tune);
+            if (sung.length === bars.length) {
+              bars.forEach(function (b, k) { b.melody = sung[k].melody; });
+            }
+          } catch (e) {}
+        }
+      } else if (part && part.abc) {
+        try { bars = tuneBars(part.abc); } catch (e) { bars = []; }
+      }
+      if (!bars.length) {
+        var name = part ? part.name : 'section ' + (stop.head + 1);
+        if (missing.indexOf(name) < 0) missing.push(name);
+        return;
+      }
+      lines.push('P:' + (part.name || 'Section'));
+      // A section's own style ({style: ...} under its heading in the song file).
+      if (part.style) lines.push('%%style ' + String(part.style).replace(/[\r\n]/g, ' '));
+      // Four bars to a line: the Backing Track's chart draws a row for each.
+      var texts = bars.map(function (b) {
+        var change = '';
+        melodies.push(b.melody && b.melody.length ? b.melody : null);
+        if (b.n !== nowN || b.d !== nowD) {
+          change = '[M:' + b.n + '/' + b.d + ']';
+          nowN = b.n; nowD = b.d;
+        }
+        return change + b.text;
+      });
+      for (var at = 0; at < texts.length; at += 4) {
+        lines.push(texts.slice(at, at + 4).join(' | ') + ' |');
+      }
+    });
+    return lines.join('\n');
+  }
+
+  // ---- the panel ----
+  var panel = document.createElement('div');
+  panel.className = 'section-buttons band-panel';
+  var title = document.createElement('div');
+  title.className = 'section-buttons-title';
+  title.textContent = 'Band';
+  panel.appendChild(title);
+
+  function button(text, key, action) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.appendChild(document.createTextNode(text + ' '));
+    var k = document.createElement('span');
+    k.className = 'key';
+    k.textContent = key;
+    b.appendChild(k);
+    b.addEventListener('click', function () { action(); b.blur(); });
+    panel.appendChild(b);
+    return b;
+  }
+  // The choices fold away: the margin is narrow and the buttons matter more.
+  var more = document.createElement('details');
+  more.className = 'band-more';
+  var moreTitle = document.createElement('summary');
+  moreTitle.textContent = 'Tempo, style, fills';
+  more.appendChild(moreTitle);
+  function label(text, control) {
+    var l = document.createElement('label');
+    l.className = 'band-field';
+    l.appendChild(document.createTextNode(text));
+    l.appendChild(control);
+    more.appendChild(l);
+    return control;
+  }
+  function select(options, value) {
+    var s = document.createElement('select');
+    options.forEach(function (o) {
+      var el = document.createElement('option');
+      el.value = o[0];
+      el.textContent = o[1];
+      s.appendChild(el);
+    });
+    s.value = value;
+    if (s.selectedIndex < 0) s.selectedIndex = 0;
+    return s;
+  }
+
+  var playButton = button('Play', 'p', function () { toggle(); });
+  playButton.title = 'Play or stop: p, or the space bar';
+  var holdButton = button('', 'h', toggleHold);
+  var fillButton = button('Drum fill', 'd', fillNow);
+  var tuneButton = button('', 'm', toggleTune);
+  tuneButton.hidden = true;
+  // A song whose bars are not all sung by a written melody (none at all, or only
+  // an intro and an interlude): the Chord Entry page of the music site, with this
+  // song's chords loaded, set to record the melody against the band.
+  var entryButton = button('Enter the melody', '', enterMelody);
+  entryButton.hidden = true;
+  entryButton.firstChild.nodeValue = 'Enter the melody';
+  entryButton.removeChild(entryButton.lastChild);
+  var status = document.createElement('div');
+  status.className = 'midi-status';
+  panel.appendChild(status);
+
+  // Other versions of the changes: for the teacher only.
+  var versions = chart.versions || [], versionNow = null;
+  var versionWrap = document.createElement('label');
+  versionWrap.className = 'band-version teacher-only';
+  versionWrap.appendChild(document.createTextNode('Changes (v)'));
+  var versionBox = select([['', 'As written']].concat(versions.map(function (v) {
+    return [v.name, v.name];
+  })).concat([['*', 'Edited in the other window']]), '');
+  versionBox.lastChild.hidden = true;
+  versionWrap.appendChild(versionBox);
+  var versionNote = document.createElement('div');
+  versionNote.className = 'band-version-note';
+  versionWrap.appendChild(versionNote);
+  if (versions.length) panel.appendChild(versionWrap);
+
+  var tempoBox = document.createElement('input');
+  tempoBox.type = 'number';
+  tempoBox.min = 40; tempoBox.max = 260; tempoBox.step = 1;
+  tempoBox.value = choice('tempo', (chart.setup && parseInt(chart.setup.tempo, 10)) || parseInt(chart.tempo, 10) || 110);
+  label('Tempo', tempoBox);
+  var styleBox = label('Style', select([], ''));
+  var fillsBox = label('Fills', select([
+    ['sections', 'Into each section'], ['auto', 'As they come'],
+    ['busy', 'Busier'], ['none', 'Only when asked']],
+    choice('fills', 'sections')));
+  var countBox = label('Count-in', select([
+    ['1', '1 bar'], ['2', '2 bars'], ['0', 'None']], choice('count', '1')));
+  if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+    var siteBox = document.createElement('input');
+    siteBox.type = 'text';
+    siteBox.placeholder = 'http://localhost:4455';
+    try { siteBox.value = localStorage.getItem('carols-music-url') || ''; } catch (e) {}
+    siteBox.addEventListener('change', function () {
+      try { localStorage.setItem('carols-music-url', siteBox.value.trim()); } catch (e) {}
+    });
+    siteBox.title = 'Where the music site is running on this machine (quarto preview)';
+    label('Music site', siteBox).style.width = '100%';
+  }
+  panel.appendChild(more);
+  // Under the section buttons, above the type pickers and the pedal.
+  var below = sidebar.querySelector('.type-panel') || sidebar.querySelector('.midi-panel');
+  if (below) sidebar.insertBefore(panel, below); else sidebar.appendChild(panel);
+
+  var windowButton = button('', 'w', toggleWindow);
+  var hold = !!choice('hold', !!chart.loop);
+  var tune = choice('tune', true) !== false, hasTune = false;
+  function showTune() {
+    tuneButton.firstChild.nodeValue = tune ? 'Tune played ' : 'Tune left out ';
+    tuneButton.title = 'Where the song has a tune written out, the band plays it on its chord instrument';
+  }
+  function toggleTune() {
+    tune = !tune;
+    keep('tune', tune);
+    showTune();
+    if (player) player.setOpts(bandOpts());
+  }
+  showTune();
+  // Bars that have a melody, of all the bars the band plays (the chart as the
+  // road walks it; the same bar twice counts twice).
+  function melodyCount() {
+    return { have: melodies.filter(function (m) { return m; }).length, total: melodies.length };
+  }
+  function showEntry(known) {
+    var c = melodyCount();
+    entryButton.hidden = !known || !c.total || c.have >= c.total;
+    if (entryButton.hidden) return;
+    entryButton.firstChild.nodeValue = c.have
+      ? 'Enter the melody (' + c.have + ' of ' + c.total + ' bars have one)'
+      : 'Enter the melody';
+    entryButton.title = 'Opens the Chord Entry page of the music site with this song\'s chords loaded, set to record the melody with the band';
+  }
+  function enterMelody() {
+    var c = melodyCount(), abc = window.carolBandAbc;
+    if (!abc) return;
+    var heading = document.querySelector('h1.title');
+    var d = { abc: abc.replace(/^T:\s*\d+\.\s*/m, 'T:'), have: c.have, total: c.total, tempo: tempo(), style: styleBox.value,
+              title: (heading ? heading.textContent : document.title).replace(/^\d+\.\s*/, '').trim() };
+    // The song's own file goes too, so the page can put its words under the notes and
+    // hand the file back with the melody written in; and the melody it already has.
+    var source = null;
+    try { source = JSON.parse(document.getElementById('band-source').textContent); } catch (e) {}
+    if (source && source.cho) { d.cho = source.cho; d.slug = source.slug || ''; }
+    if (c.have) d.melody = melodies.map(function (m) {
+      return m ? m.map(function (n) { return { pos: Math.round(n.pos * 1000) / 1000, dur: Math.round(n.dur * 1000) / 1000, midi: n.midi }; }) : null;
+    });
+    var page = musicSite() + '/tools/chord-entry.html#from=tune&d=' + encodeURIComponent(JSON.stringify(d));
+    if (!window.open(page, 'carols-chord-entry')) say('The browser blocked the new window. Allow pop-ups for this site.');
+  }
+  var here = null, handlers = null;
+  // The Backing Track page in a window of its own, playing for this one.
+  var away = null, awayOrigin = null, awayState = 'idle';
+  var AWAY = 'The Backing Track window is playing. Every option is there.';
+  var player = null, playing = false, ready = false, nowStop = -1, movingOn = false;
+
+  function say(text) { status.textContent = text; }
+  function showHold() {
+    holdButton.firstChild.nodeValue = hold ? 'Holding sections ' : 'Playing through ';
+    holdButton.setAttribute('aria-pressed', String(hold));
+    holdButton.title = hold
+      ? 'The band goes round each section until j or the pedal moves it on'
+      : 'The band plays the song as written and the words follow';
+  }
+  function showState() {
+    playButton.firstChild.nodeValue = playing ? 'Stop ' : 'Play ';
+    fillButton.disabled = !playing;
+    if (!playing) say(ready ? '' : status.textContent);
+  }
+  showHold();
+  fillButton.disabled = true;
+  playButton.disabled = true;
+  say('Loading the band…');
+
+  // ---- the engine ----
+  function loadAll(done, failed) {
+    var n = 0;
+    (function next() {
+      if (n >= FILES.length) { done(); return; }
+      var s = document.createElement('script');
+      var file = FILES[n++];
+      s.src = file;
+      s.onload = next;
+      s.onerror = failed;
+      document.head.appendChild(s);
+    })();
+  }
+
+  function styleSetup() {
+    var so = window.BandCatalog.styleOpts(styleBox.value), S = window.BandSounds;
+    // The setup's own instruments, while its style is the one chosen here:
+    // the chord instrument (and so whose voicings are played), the bass, a
+    // second chord instrument, congas, and the octave each is played in.
+    var f = setup && styleBox.value === setup.style && setup.fields;
+    if (f && S && S.family) {
+      var lead = f['bt-comp'], fam = lead && S.family(lead);
+      if (fam === 'piano' || fam === 'guitar') {
+        so = window.BandCatalog.styleOpts(styleBox.value, fam);
+        so.instruments[1] = lead;
+        so.opts.comp = fam;
+        so.opts.compSound = lead;
+      }
+      if (f['bt-bass-sound']) {
+        so.opts.bassSound = f['bt-bass-sound'];
+        so.instruments[0] = f['bt-bass-sound'] === 'electric' ? 'ebass' : 'bass';
+      }
+      var two = f['bt-second'], fam2 = two && S.family(two);
+      if (fam2 === 'piano' || fam2 === 'guitar') {
+        so.opts.second = { comp: fam2, compSound: two, compRhythm: f['bt-second-rhythm'] || 'pad',
+                           voicing: f['bt-second-voicing'] || undefined };
+        if (so.instruments.indexOf(two) < 0) so.instruments.push(two);
+      }
+      if (setup.congas) {
+        so.opts.congas = setup.congas;
+        var at = so.instruments.indexOf('congas');
+        if (setup.congas === 'none' && at >= 0) so.instruments.splice(at, 1);
+        if (setup.congas !== 'none' && at < 0) so.instruments.push('congas');
+      }
+      so.opts.octave = { bass: parseInt(f['bt-oct-bass'], 10) || 0, comp: parseInt(f['bt-oct-comp'], 10) || 0,
+                         comp2: parseInt(f['bt-oct-comp2'], 10) || 0 };
+    }
+    // the sounds of any section the setup gives settings of its own
+    sectionSetup().sounds.forEach(function (n) { if (so.instruments.indexOf(n) < 0) so.instruments.push(n); });
+    return so;
+  }
+  // The setup's faders, with its instruments: 100 is the band's own balance.
+  function setVolumes(to) {
+    var f = setup && styleBox.value === setup.style && setup.fields;
+    [['bass', 'bt-vol-bass'], ['comp', 'bt-vol-comp'], ['comp2', 'bt-vol-comp2'],
+     ['drums', 'bt-vol-drums'], ['congas', 'bt-vol-congas']].forEach(function (one) {
+      var v = f ? parseInt(f[one[1]], 10) : NaN;
+      if (to && to.setVolume) to.setVolume(one[0], v >= 0 ? v / 100 : 1);
+    });
+  }
+  // What the setup keeps for single sections (set section by section on the
+  // Backing Track page): put on the sections of this chart that have those
+  // names, as the Backing Track itself does. Only while the setup's own
+  // style is the one chosen here.
+  function sectionSetup() {
+    var out = { map: {}, sounds: [] }, C = window.BandCatalog;
+    if (!setup || !Array.isArray(setup.sections) || styleBox.value !== setup.style || !C.placeSections || !form) return out;
+    var names = [];
+    form.forEach(function (b) { if (b.section != null || !names.length) names.push(b.section || ''); });
+    var put = C.placeSections(setup.sections, names);
+    // The bars of the choruses, as the Backing Track counts them: a strum
+    // that is muted in the verse and open in the chorus has to know them.
+    var chorus = [], name = '';
+    form.forEach(function (b, i) {
+      if (b.section != null) name = b.section;
+      if (/^(chorus|refrain)\b/i.test(name)) chorus.push(i);
+    });
+    Object.keys(put).forEach(function (k) {
+      out.map[k] = /^(chorus|refrain)\b/i.test(names[k]) ? Object.assign({}, put[k].opts, { lift: chorus }) : put[k].opts;
+      (put[k].sounds || []).forEach(function (n) { if (out.sounds.indexOf(n) < 0) out.sounds.push(n); });
+    });
+    return out;
+  }
+  // The setup saved on the Backing Track page and kept beside the song. The
+  // band on this page takes what it understands of it; the Backing Track
+  // window gets all of it.
+  var setup = chart.setup || null;
+  function bandOpts() {
+    var o = styleSetup().opts;
+    if (setup && styleBox.value === setup.style) {
+      if (setup.feel) o.feel = setup.feel;
+      if (setup.bass) o.bassFeel = setup.bass;
+      if (setup.groove) o.groove = setup.groove;
+      // a blend of bass lines or of grooves ("walk+two"): how much of each (0-100 on the sliders)
+      [['bmix', 'bassMix'], ['gmix', 'grooveMix']].forEach(function (k) {
+        if (!setup[k[0]] || typeof setup[k[0]] !== 'object') return;
+        o[k[1]] = {};
+        Object.keys(setup[k[0]]).forEach(function (id) { o[k[1]][id] = (+setup[k[0]][id] || 0) / 100; });
+      });
+      if (setup.rhythm) o.compRhythm = setup.rhythm;
+      if (setup.voicing) o.voicing = setup.voicing;
+    }
+    o.sectionOverrides = sectionSetup().map;
+    o.fills = fillsBox.value;
+    o.variation = 0.6;
+    o.melody = tune;
+    return o;
+  }
+  function tempo() {
+    var t = parseInt(tempoBox.value, 10);
+    return t >= 40 && t <= 260 ? t : 110;
+  }
+
+  function start() {
+    var group = null, last = null;
+    window.BandCatalog.styles.forEach(function (st) {
+      if (st.group !== last) {
+        last = st.group;
+        group = document.createElement('optgroup');
+        group.label = st.group || 'Styles';
+        styleBox.appendChild(group);
+      }
+      var el = document.createElement('option');
+      el.value = st.id;
+      el.textContent = st.label;
+      group.appendChild(el);
+    });
+    // The song file may name a style by its id or by its name in the menu.
+    var named = String((setup && setup.style) || chart.style || '').trim().toLowerCase(), wanted = 'carol';
+    window.BandCatalog.styles.forEach(function (st) {
+      if (st.id === named || st.label.toLowerCase() === named) wanted = st.id;
+    });
+    styleBox.value = choice('style', wanted);
+    if (styleBox.selectedIndex < 0) styleBox.value = 'carol';
+
+    var abc = buildAbc();
+    if (missing.length) {
+      say('No bars yet for ' + missing.join(', ')
+          + '. Give each a {start_of_grid} in the song file.');
+      return;
+    }
+    var parsed = window.TuneChart.parse(abc);
+    hasTune = melodies.some(function (m) { return m; });
+    if (parsed.bars.length === melodies.length) {
+      parsed.bars.forEach(function (b, k) { if (melodies[k]) b.melody = melodies[k]; });
+    } else hasTune = false;
+    tuneButton.hidden = !hasTune;
+    showEntry(parsed.bars.length === melodies.length);
+    form = window.BandHarmony.buildForm(parsed, 0);
+    starts = [];
+    form.forEach(function (bar, i) { if (bar.section != null) starts.push(i); });
+    findSpots();
+    writtenAbc = abc;
+    handlers = {
+      onState: function (s) {
+        playing = s === 'playing';
+        if (s === 'loading') say('Loading sounds…');
+        if (s === 'idle') { nowStop = -1; movingOn = false; say(away ? AWAY : ''); nowBar = null; light(null); }
+        if (s === 'playing') say('');
+        showState();
+      },
+      onLoadProgress: function (done, total) {
+        if (player && player.state() === 'loading') {
+          say('Loading sounds ' + done + ' of ' + total);
+        }
+      },
+      onBar: function (info) {
+        if (info.countIn) say('Count-in');
+        // (back: a loop in the Backing Track window has gone round to an earlier bar)
+        var fresh = !nowBar, back = !!nowBar && info.index <= nowBar.index;
+        nowBar = info.countIn || info.ending || info.intro ? null : info;
+        if (nowBar && (info.sectionBar === 0 || fresh || back)) chordsOf(info.section, info.index);
+      },
+      onBeat: function (info) { chordBeat(info.beat); },
+      onSection: function (sc) {
+        nowStop = sc.index;
+        movingOn = false;
+        song.show(stops[sc.index]);
+        tell();
+      }
+    };
+    var sounds = styleSetup();
+    here = window.BandPlayer.create({
+      parsed: parsed,
+      tempo: tempo(),
+      countIn: parseInt(countBox.value, 10),
+      choruses: 1,
+      hold: hold,
+      sectionLead: 1,
+      instruments: sounds.instruments,
+      opts: bandOpts(),
+      // The sampled cymbals ring loudly; this is the Backing Track's default.
+      kit: { ride: 0.53, rideBell: 0.53, crash: 0.53 },
+      onState: function (s) { if (!away) handlers.onState(s); },
+      onLoadProgress: function (d, t) { if (!away) handlers.onLoadProgress(d, t); },
+      onBar: function (i) { if (!away) handlers.onBar(i); },
+      onBeat: function (i) { if (!away) handlers.onBeat(i); },
+      onSection: function (sc) { if (!away) handlers.onSection(sc); }
+    });
+    player = here;
+    setVolumes(here);
+    window.carolBandAbc = abc;         // the chart as the band reads it
+    window.carolBandChart = parsed;    // ... parsed, with the tune on its bars
+    ready = true;
+    playButton.disabled = false;
+    say('');
+    findWindow();
+    // The version the programme (or ?ver=) chose: students hear and see it without choosing (song-page.js).
+    if (window.SONG_VERSION) pickVersion(window.SONG_VERSION);
+  }
+
+  // ---- the chord being played, lit up over the words ----
+  // The band's chords and the chords written over the words are two lists of
+  // the same changes. Each time the band strikes a chord, the next written
+  // chord of that name (looking a little way ahead) is the one to light.
+  var nowBar = null, written = [], writtenAt = 0, lit = null, form = null, missed = 0;
+  var starts = [];               // the form bar each stop of the road begins on
+  // With the chords showing, the chord itself is lit and stays lit until the
+  // next. With the words alone, the words under that chord flash and fade:
+  // a word is not held the way a chord is. `tell` is false for a light that
+  // came from the other window.
+  function light(el, tell) {
+    if (lit) lit.classList.remove('now');
+    lit = el;
+    if (!lit) return;
+    lit.classList.add('now');
+    var words = lit.closest('.cw');
+    if (words && !document.body.classList.contains('chords')) {
+      words.classList.remove('flash');
+      void words.offsetWidth;                 // start the fade again
+      words.classList.add('flash');
+    }
+    if (tell === false || !song.send) return;
+    var box = lit.closest('section.level2');
+    for (var n = 0; n < song.count(); n++) {
+      if (song.section(n) === box) {
+        song.send({ kind: 'chord', head: n,
+                    n: Array.prototype.indexOf.call(box.querySelectorAll('.ch'), lit) });
+      }
+    }
+  }
+  // The same chord, near enough: the words may say Ebadd11 where the band's
+  // chart says Eb. Same root, and both minor or neither.
+  function plain(x) {
+    var m = /^([A-G][#b]?)(m(?!aj))?/.exec(x.replace(/\s+/g, ''));
+    return m ? m[1] + (m[2] || '') : x;
+  }
+  function same(a, b) { return plain(a) === plain(b); }
+  function writtenIn(stopIndex) {
+    var stop = stops[stopIndex], box = stop ? song.section(stop.head) : null;
+    // The Twelve Days page has one verse for all its days: the day's chords
+    // are those of the opening and of the gifts sung so far.
+    if (stop && document.body.classList.contains('day-reveal')) {
+      return Array.prototype.filter.call(document.querySelectorAll('#verse .ch'), function (el) {
+        var gift = el.closest('.gift');
+        var day = stop.head + 1;
+        return !gift || (+gift.getAttribute('data-day') <= day &&
+                         day >= +(gift.getAttribute('data-from') || 1) &&
+                         day <= +(gift.getAttribute('data-until') || 12));
+      });
+    }
+    return box ? Array.prototype.slice.call(box.querySelectorAll('.ch')) : [];
+  }
+  // The band strikes a chord: which written one is that? The next one only --
+  // unless the two lists have plainly parted company, when looking a couple
+  // further finds the place again.
+  //
+  // Where the song is written so that each row of a section's grid is one
+  // line of its words (as many rows as lines with a chord in them), the row
+  // says which line: a chord struck in a bar of row 3 is looked for among the
+  // chords of the third such line and nowhere else. Then a chord held for
+  // four bars and written once cannot run on into the next line's.
+  var lines = null;
+  function linesOf(stopIndex, list) {
+    var first = starts[stopIndex];
+    var end = stopIndex + 1 < starts.length ? starts[stopIndex + 1] : form.length;
+    var rowAt = [], row = 0, spans = [], line = null, loose = false;
+    for (var i = first; i < end; i++) { rowAt.push(row); if (form[i].phraseEnd) row++; }
+    list.forEach(function (el, n) {
+      var ln = el.closest('.ln');
+      if (!ln) loose = true;
+      if (ln !== line || !spans.length) { spans.push({ from: n, to: n + 1 }); line = ln; }
+      else spans[spans.length - 1].to = n + 1;
+    });
+    var rows = rowAt.length ? rowAt[rowAt.length - 1] + 1 : 0;
+    if (loose || rows < 2 || rows !== spans.length) return null;
+    return { first: first, rowAt: rowAt, spans: spans };
+  }
+  function strike(sym, index) {
+    var span = lines && index != null ? lines.spans[lines.rowAt[index - lines.first]] : null;
+    if (span) {
+      // One written chord may be passed over, since the words and the grid do
+      // not always name the same chords -- but not by a chord the band is only
+      // holding from the bar before, which is written once and already lit.
+      var from = Math.max(writtenAt, span.from);
+      var held = lines.last && lines.last.span === span && same(lines.last.sym, sym);
+      lines.last = { span: span, sym: sym };
+      for (var n = from; n < Math.min(span.to, from + (held ? 1 : 2)); n++) {
+        if (same(written[n].textContent, sym)) { writtenAt = n + 1; missed = 0; return written[n]; }
+      }
+      return null;
+    }
+    var reach = missed >= 2 ? 3 : 1;
+    for (var k = writtenAt; k < Math.min(written.length, writtenAt + reach); k++) {
+      if (same(written[k].textContent, sym)) {
+        writtenAt = k + 1;
+        missed = 0;
+        return written[k];
+      }
+    }
+    missed++;
+    return null;
+  }
+  function barChords(index) {
+    return ((form[index] || {}).chords || []).filter(function (c) {
+      return c.chord && c.chord.sym;
+    });
+  }
+  // Start a section's list, already advanced past the bars before `upTo`
+  // when playing begins part-way through it.
+  function chordsOf(stopIndex, upTo) {
+    written = writtenIn(stopIndex);
+    lines = linesOf(stopIndex, written);
+    writtenAt = 0;
+    missed = 0;
+    light(null);
+    for (var i = starts[stopIndex]; upTo != null && i < upTo; i++) {
+      barChords(i).forEach(function (c) { strike(c.chord.sym, i); });
+    }
+  }
+  // Under another version the names no longer tell the two lists apart (a
+  // held chord is written several times), so the place does: the written
+  // chord that falls in this bar at this chord's turn, or on this beat.
+  var changed = false;
+  function spotsAt(stopIndex, index) {
+    var head = stops[stopIndex] ? stops[stopIndex].head : -1, rel = index - starts[stopIndex];
+    return spots.filter(function (s) { return s.head === head && s.rel === rel; });
+  }
+  function chordBeat(beat) {
+    if (nowBar && changed) {
+      var mine = spotsAt(nowBar.section, nowBar.index), now = barChords(nowBar.index);
+      now.forEach(function (c, k) {
+        if (c.pos !== beat) return;
+        var hit = null;
+        mine.forEach(function (s) {
+          if (now.length === s.count ? s.order === k : Math.abs(s.pos - beat) < 1e-6) hit = hit || s;
+        });
+        if (hit) light(hit.el);
+      });
+      return;
+    }
+    if (!nowBar || !written.length) return;
+    barChords(nowBar.index).forEach(function (c) {
+      if (c.pos !== beat) return;
+      var el = strike(c.chord.sym, nowBar.index);
+      if (el) light(el);
+    });
+  }
+  // The bar of the band's chart in which a chord written over the words is
+  // struck: the same matching, run silently from the top of its section.
+  function barOf(el, stopIndex) {
+    if (changed) {
+      var at = spots.filter(function (s) { return s.el === el; })[0];
+      return starts[stopIndex] + (at ? at.rel : 0);
+    }
+    var keep = [written, writtenAt, missed, lines], found = -1;
+    written = writtenIn(stopIndex); writtenAt = 0; missed = 0; lines = linesOf(stopIndex, written);
+    var end = stopIndex + 1 < starts.length ? starts[stopIndex + 1] : form.length;
+    for (var i = starts[stopIndex]; i < end && found < 0; i++) {
+      barChords(i).forEach(function (c) {
+        if (found < 0 && strike(c.chord.sym, i) === el) found = i;
+      });
+    }
+    written = keep[0]; writtenAt = keep[1]; missed = keep[2]; lines = keep[3];
+    return found < 0 ? starts[stopIndex] : found;
+  }
+  // ---- other versions of the changes ----
+  // Where each written chord falls in the band's chart as written: its bar,
+  // and which chord of that bar it is. Another set of changes with the same
+  // bars is then shown over the words by putting, on each written chord, the
+  // chord it has in that place.
+  var spots = [], writtenAbc = null;
+  function findSpots() {
+    spots = [];
+    if (document.body.classList.contains('day-reveal')) return;
+    var seen = {}, keep = [written, writtenAt, missed, lines];
+    stops.forEach(function (stop, k) {
+      if (seen[stop.head]) return;
+      seen[stop.head] = true;
+      written = writtenIn(k); writtenAt = 0; missed = 0; lines = linesOf(k, written);
+      var all = written;
+      var end = k + 1 < starts.length ? starts[k + 1] : form.length;
+      for (var i = starts[k]; i < end; i++) {
+        barChords(i).forEach(function (c, order, inBar) {
+          var el = strike(c.chord.sym, i);
+          if (el) spots.push({ el: el, text: el.textContent, head: stop.head,
+                               n: all.indexOf(el), bar: i, rel: i - starts[k], pos: c.pos,
+                               order: order, count: inBar.length, sym: c.chord.sym });
+        });
+      }
+    });
+    written = keep[0]; writtenAt = keep[1]; missed = keep[2]; lines = keep[3];
+  }
+  // A written chord that the version turns into the chord before it is
+  // dimmed: nothing changes there.
+  function relabel() {
+    var list = [], last = null;
+    spots.forEach(function (s) {
+      var inBar = barChords(s.bar), to = null;
+      if (inBar.length === s.count) to = inBar[s.order];
+      else {
+        inBar.forEach(function (c) { if (c.pos <= s.pos + 1e-6) to = c; });
+        for (var i = s.bar - 1; !to && i >= 0; i--) {
+          var before = barChords(i);
+          if (before.length) to = before[before.length - 1];
+        }
+      }
+      var text = !to || to.chord.sym === s.sym ? s.text : to.chord.sym;
+      var held = text !== s.text && last && last.head === s.head && last.text === text;
+      last = { head: s.head, text: text };
+      if (s.el.textContent !== text) s.el.textContent = text;
+      s.el.classList.toggle('alt', text !== s.text);
+      s.el.classList.toggle('held', held);
+      list.push([s.head, s.n, text, text !== s.text, held]);
+    });
+    if (song.send) song.send({ kind: 'chords', list: list });
+  }
+  // Take a new set of changes for the same bars: the band here plays them and
+  // the chords over the words follow. False when the bars are not the same.
+  function adopt(abc) {
+    var parsed, next;
+    try {
+      parsed = window.TuneChart.parse(abc);
+      next = window.BandHarmony.buildForm(parsed, 0);
+    } catch (e) { return false; }
+    var begin = [];
+    next.forEach(function (bar, i) { if (bar.section != null) begin.push(i); });
+    if (next.length !== form.length || begin.join() !== starts.join()) {
+      say('Those changes do not have the same bars as the song: the chords over the words are left as they were.');
+      return false;
+    }
+    if (parsed.bars.length === melodies.length) {
+      parsed.bars.forEach(function (b, k) { if (melodies[k]) b.melody = melodies[k]; });
+    }
+    form = next;
+    here.setChart(parsed);
+    window.carolBandAbc = abc;
+    window.carolBandChart = parsed;
+    light(null);
+    relabel();
+    changed = abc !== writtenAbc;
+    return true;
+  }
+  var own = null;
+  function showVersion() {
+    versionBox.value = versionNow ? versionNow.name : '';
+    var v = versionNow, bits = [];
+    if (v && v.note) bits.push(v.note);
+    if (v && v.source) bits.push('Source: ' + v.source);
+    versionNote.textContent = bits.join('\n');
+  }
+  // `fromAway`: the Backing Track window chose it and is already playing it.
+  function pickVersion(name, fromAway) {
+    if (!ready) return;
+    versionNow = null;
+    versions.forEach(function (v) { if (v.name === name) versionNow = v; });
+    var abc = buildAbc(versionNow);
+    if (!adopt(abc)) { versionNow = null; adopt(buildAbc(null)); }
+    showVersion();
+    var v = versionNow;
+    // A version may name a tempo and a style; the song's own come back after.
+    if (own) { tempoBox.value = own.tempo; styleBox.value = own.style; own = null; }
+    if (v && (v.tempo || v.style)) own = { tempo: tempoBox.value, style: styleBox.value };
+    if (v && v.tempo && parseInt(v.tempo, 10) >= 40) tempoBox.value = parseInt(v.tempo, 10);
+    if (v && v.style) {
+      var named = v.style.trim().toLowerCase();
+      window.BandCatalog.styles.forEach(function (st) {
+        if (st.id === named || st.label.toLowerCase() === named) styleBox.value = st.id;
+      });
+    }
+    here.setTempo(tempo());
+    here.setInstruments(styleSetup().instruments);
+    here.setOpts(bandOpts());
+    if (away && !fromAway) {
+      post({ type: 'bt-chart', abc: window.carolBandAbc, melody: melodies,
+             version: versionNow ? versionNow.name : '',
+             style: styleBox.value, tempo: tempo() });
+    }
+  }
+  function nextVersion() {
+    if (!versions.length || !window.carolTeacher) return;
+    var at = versionNow ? versions.indexOf(versionNow) : -1;
+    pickVersion(at + 1 < versions.length ? versions[at + 1].name : '');
+  }
+  versionBox.addEventListener('change', function () {
+    pickVersion(versionBox.value);
+    versionBox.blur();
+  });
+  // Every version as the band reads it, for the Backing Track window's menu.
+  function versionAbcs() {
+    var out = versions.map(function (v) { return { name: v.name, abc: buildAbc(v) }; });
+    buildAbc(versionNow);              // (leaves the tune as it is being played)
+    return out;
+  }
+
+  // The stop of the road that shows this section of the page.
+  function stopFor(head) {
+    if (nowStop >= 0 && stops[nowStop].head === head) return nowStop;
+    for (var k = 0; k < stops.length; k++) if (stops[k].head === head) return k;
+    return -1;
+  }
+
+  function tell() {
+    if (!playing || nowStop < 0) return;
+    var part = chart.sections[stops[nowStop].head];
+    var name = part ? part.name : '';
+    say(!hold ? name
+        : movingOn ? name + ' — moving on'
+        : name + ' — going round until j or the pedal');
+  }
+
+  // Play begins at the section the page is on (or at `fromBar`, a click on a
+  // chord), after the count-in.
+  function toggle(fromBar) {
+    if (!ready) return;
+    if (away && away.closed) comeBack();
+    if (!away) findWindow();           // (a key press may look where a page load may not)
+    if (fromBar == null && (playing || player.state() !== 'idle')) { player.stop(); return; }
+    if (player.state() !== 'idle') player.stop();
+    var k = stopFor(Math.max(0, song.at()));
+    player.setStartBar(fromBar != null ? fromBar : k > 0 ? starts[k] : 0);
+    player.setTempo(tempo());
+    player.setCountIn(parseInt(countBox.value, 10));
+    player.setHold(hold);
+    player.setOpts(bandOpts());
+    player.setInstruments(styleSetup().instruments);
+    player.play().catch(function () {
+      say('The sounds could not be loaded. They come from the internet.');
+    });
+  }
+  function toggleHold() {
+    hold = !hold;
+    keep('hold', hold);
+    showHold();
+    if (player) player.setHold(hold);
+    tell();
+  }
+  function fillNow() {
+    if (playing) player.fill('medium');
+  }
+
+  tempoBox.addEventListener('change', function () {
+    keep('tempo', tempo());
+    if (player) player.setTempo(tempo());
+  });
+  styleBox.addEventListener('change', function () {
+    keep('style', styleBox.value);
+    if (!player) return;
+    player.setInstruments(styleSetup().instruments);
+    player.setOpts(bandOpts());
+    setVolumes(here);
+  });
+  fillsBox.addEventListener('change', function () {
+    keep('fills', fillsBox.value);
+    if (player) player.setOpts(bandOpts());
+  });
+  countBox.addEventListener('change', function () {
+    keep('count', countBox.value);
+  });
+
+  // ---- a click on a chord: play from the bar it is struck in ----
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest ? e.target.closest('main.content .ch') : null;
+    if (!el || !ready) return;
+    var box = el.closest('section.level2'), head = -1;
+    for (var n = 0; n < song.count(); n++) if (song.section(n) === box) head = n;
+    var k = stopFor(head);
+    if (k < 0) return;
+    toggle(barOf(el, k));
+  });
+
+  // ---- the Backing Track page, in its own window ----
+  // The page itself, from the music site: nothing of it is copied here. This
+  // window sends it the song and the transport, and it reports back where it
+  // is. On this machine that is the local preview of the music site; online,
+  // the published one.
+  var LOCAL = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+  function musicSite() {
+    var set = '';
+    try { set = localStorage.getItem('carols-music-url') || ''; } catch (e) {}
+    return (set || location.origin).replace(/\/+$/, '');
+  }
+  function post(message) {
+    if (!away || away.closed) { comeBack(); return false; }
+    try { away.postMessage(message, awayOrigin || '*'); return true; }
+    catch (e) { return false; }
+  }
+  var proxy = {
+    start: 0,
+    state: function () { return awayState; },
+    play: function () { post({ type: 'bt-play', startBar: proxy.start }); return Promise.resolve(); },
+    stop: function () { post({ type: 'bt-stop' }); },
+    setStartBar: function (i) { proxy.start = i; },
+    setHold: function (on) { post({ type: 'bt-hold', on: on }); },
+    setOpts: function (o) { post({ type: 'bt-melody', on: o.melody !== false }); },
+    next: function () { post({ type: 'bt-next' }); },
+    goSection: function (i) { post({ type: 'bt-goto', section: i }); },
+    fill: function () { post({ type: 'bt-fill' }); },
+    // Tempo, style and the rest are chosen in that window once it has the song.
+    setTempo: function () {}, setCountIn: function () {}, setInstruments: function () {}
+  };
+  function showWindow() {
+    windowButton.firstChild.nodeValue = away ? 'Band: other window ' : 'Band: this page ';
+    windowButton.title = away
+      ? 'The Backing Track page is playing, in its own window. Press to play from this page again.'
+      : 'Open the Backing Track page in its own window and let it play, with all of its options';
+    windowButton.setAttribute('aria-pressed', String(!!away));
+  }
+  // The Backing Track window outlives this page: a reload, or the next song,
+  // and the page no longer has hold of it. Whether it was playing there is
+  // kept for the tab, and the window is looked for again by its name -- which
+  // finds it without loading anything into it -- and given this page's song.
+  function remember(on) {
+    try {
+      if (on) sessionStorage.setItem('carols-band-away', '1');
+      else sessionStorage.removeItem('carols-band-away');
+    } catch (e) {}
+  }
+  function sendSong() {
+    var others = window.carolTeacher ? versionAbcs() : [];
+    post({ type: 'bt-load', abc: window.carolBandAbc, melody: melodies,
+           versions: others, version: versionNow ? versionNow.name : '',
+           written: others.length ? buildAbc(null) : null,
+           tempo: tempo(), style: styleBox.value, hold: hold, setup: setup,
+           fills: fillsBox.value, countIn: parseInt(countBox.value, 10),
+           title: (document.querySelector('h1.title') || {}).textContent || '' });
+  }
+  function findWindow() {
+    var was = false, found = null, blank = false;
+    try { was = sessionStorage.getItem('carols-band-away') === '1'; } catch (e) {}
+    if (!was || away || !ready) return;
+    try { found = window.open('', 'carols-backing-track'); } catch (e) {}
+    if (!found) return;                // not allowed just now: the next Play asks again
+    // No window of that name was left, and the browser made an empty one.
+    // (The real one is another site's page, and may not be looked at.)
+    try { blank = found.location.href === 'about:blank'; } catch (e) {}
+    if (blank) { found.close(); remember(false); return; }
+    if (here.state() !== 'idle') here.stop();
+    away = found; awayState = 'idle';
+    try { awayOrigin = new URL(musicSite()).origin; } catch (e) { awayOrigin = null; }
+    player = proxy;
+    showWindow();
+    sendSong();
+  }
+  function comeBack() {
+    if (!away) return;
+    remember(false);
+    try { if (!away.closed) away.postMessage({ type: 'bt-stop' }, awayOrigin || '*'); } catch (e) {}
+    away = null; awayOrigin = null; awayState = 'idle';
+    player = here;
+    handlers.onState('idle');
+    showWindow();
+  }
+  function toggleWindow() {
+    if (!ready) return;
+    if (away) { comeBack(); return; }
+    if (here.state() !== 'idle') here.stop();
+    away = window.open(musicSite() + '/tools/backing-track.html?remote=1', 'carols-backing-track');
+    if (!away) { say('The browser blocked the new window. Allow pop-ups for this site.'); return; }
+    player = proxy;
+    remember(true);
+    showWindow();
+    say('Opening ' + musicSite() + ' …');
+  }
+  window.addEventListener('message', function (e) {
+    var m = e.data;
+    if (!away || e.source !== away || !m || typeof m.type !== 'string') return;
+    if (m.type === 'bt-ready') {
+      awayOrigin = e.origin;
+      sendSong();
+    } else if (m.type === 'bt-loaded') {
+      say(m.bars ? AWAY + ' Click in it once so it may make sound.'
+                 : 'The Backing Track window could not read this song.');
+    } else if (m.type === 'bt-state') {
+      awayState = m.state;
+      handlers.onState(m.state);
+    } else if (m.type === 'bt-bar') handlers.onBar(m.info);
+    else if (m.type === 'bt-beat') handlers.onBeat(m);
+    else if (m.type === 'bt-section') handlers.onSection(m);
+    else if (m.type === 'bt-abc' && typeof m.abc === 'string') {
+      // That window changed its changes: a version from its menu, or the ABC
+      // edited by hand. Where the bars are the same, the words follow.
+      if (m.version != null && window.carolTeacher) {
+        if ((versionNow ? versionNow.name : '') !== m.version || m.abc !== window.carolBandAbc) pickVersion(m.version, true);
+      } else if (m.abc !== window.carolBandAbc && adopt(m.abc)) {
+        versionNow = null;
+        showVersion();
+        versionBox.value = '*';
+      }
+    }
+  });
+  showWindow();
+
+  // ---- j, k, the pedal and a click in the section list, while playing ----
+  window.carolBand = {
+    intercept: function (what, arg) {
+      if (!playing || !player) return false;
+      if (what === 'goto') {
+        // The next time that section comes round, or the first if it is past.
+        var to = -1, k;
+        for (k = Math.max(0, nowStop); k < stops.length && to < 0; k++) {
+          if (stops[k].head === arg) to = k;
+        }
+        for (k = 0; k < stops.length && to < 0; k++) {
+          if (stops[k].head === arg) to = k;
+        }
+        if (to < 0) return false;
+        player.goSection(to);
+        movingOn = hold;
+        tell();
+        return true;
+      }
+      if (what !== 'step' || !hold) return false;   // playing through: the words move by hand as before
+      if (arg > 0) player.next();
+      else if (nowStop > 0) player.goSection(nowStop - 1);
+      else return true;
+      movingOn = true;
+      tell();
+      return true;
+    },
+    playing: function () { return playing; },
+    // The window that is playing lit a chord; light the same one here.
+    // The window that is playing took other changes: show the same chords.
+    labels: function (list) {
+      (list || []).forEach(function (one) {
+        var box = song.section(one[0]);
+        var el = box ? box.querySelectorAll('.ch')[one[1]] : null;
+        if (!el) return;
+        if (el.textContent !== one[2]) el.textContent = one[2];
+        el.classList.toggle('alt', !!one[3]);
+        el.classList.toggle('held', !!one[4]);
+      });
+    },
+    lightAt: function (head, n) {
+      var box = song.section(head);
+      var el = box ? box.querySelectorAll('.ch')[n] : null;
+      if (el) light(el, false);
+    }
+  };
+
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey || e.repeat) return;
+    if (e.target.matches && e.target.matches('input, textarea, select, [contenteditable]')) return;
+    var k = (e.key || '').toLowerCase();
+    // The space bar plays and stops too -- unless it is on a button or a
+    // link, where it presses that. (While a tap take runs, it is the take's.)
+    if (k === ' ' || k === 'spacebar') {
+      if (e.target.closest && e.target.closest('button, a, summary, [role=button]')) return;
+      toggle();
+    }
+    else if (k === 'p') toggle();
+    else if (k === 'w') toggleWindow();
+    else if (k === 'h') toggleHold();
+    else if (k === 'm' && hasTune) toggleTune();
+    else if (k === 'v' && versions.length && window.carolTeacher) nextVersion();
+    else if (k === 'd') fillNow();       // (f, s and / belong to the site search)
+    else return;
+    e.preventDefault();
+  });
+
+  loadAll(function () {
+    try { start(); }
+    catch (e) { say('The band could not start: ' + e.message); }
+  }, function () {
+    say('The band is not installed here. Reload the page.');
+  });
+})();
+
+// ==== tap (from the carols site, tap.html) ====
+// Tapping in the bars. The words of a song carry its chords in order but not
+// how long each lasts. Here the drummer plays, the space bar is pressed where
+// each written chord falls, and the page writes the bars out -- as chord grids
+// in the song's own ChordPro file, and as ABC.
+//
+// It is the Record of the music site's "Enter chords from MIDI" page with the
+// space bar for the keyboard: the same drummer (libs/band), the same grid that
+// snaps what was played to the beat (ChordEntry.grid, libs/band/chord-entry.js),
+// and the chord is the next one written over the words instead of the one
+// heard. The song file rides along in the page (#band-source, tools/chordpro.py).
+//
+//   t          start, and stop
+//   space      the next written chord falls here
+//   backspace  take the last one back
+(function () {
+  var data = document.getElementById('band-source');
+  var sidebar = document.getElementById('quarto-margin-sidebar');
+  var song = window.carolSong;
+  if (!data || !sidebar || !song || !window.carolTeacher) return;
+  var src;
+  try { src = JSON.parse(data.textContent); } catch (e) { return; }
+  if (!src || !src.cho) return;
+
+  var FILES = ['/apps/shared/tune-chart.js?v=31', '/apps/shared/voicings.js?v=5', '/apps/shared/chord-entry.js?v=11', '/apps/shared/band/harmony.js?v=34',
+               '/apps/shared/band/bass.js?v=16', '/apps/shared/band/comp.js?v=32', '/apps/shared/band/presets.js?v=7', '/apps/shared/band/catalog.js?v=37', '/apps/shared/band/drums.js?v=18',
+               '/apps/shared/band/sounds.js?v=19', '/apps/shared/band/player.js?v=128'];
+  var depth = '';
+
+  // ---- the written chords, in the order of the page ----
+  function symbol(el) {
+    return el.textContent.trim().replace(/♭/g, 'b').replace(/♯/g, '#')
+             .replace(/\*+$/, '');
+  }
+  function written() {
+    var out = [];
+    for (var n = 0; n < song.count(); n++) {
+      var box = song.section(n);
+      if (!box) continue;
+      Array.prototype.forEach.call(box.querySelectorAll('.ch'), function (el) {
+        var sym = symbol(el);
+        if (/^[A-G]/.test(sym)) out.push({ el: el, sym: sym, head: n });
+      });
+    }
+    return out;
+  }
+
+  // ---- the panel ----
+  var panel = document.createElement('div');
+  panel.className = 'section-buttons band-panel tap-panel';
+  var title = document.createElement('div');
+  title.className = 'section-buttons-title';
+  title.textContent = 'Tap in the bars';
+  panel.appendChild(title);
+  function button(text, key, action) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.appendChild(document.createTextNode(text + ' '));
+    if (key) {
+      var k = document.createElement('span');
+      k.className = 'key';
+      k.textContent = key;
+      b.appendChild(k);
+    }
+    b.addEventListener('click', function () { action(); b.blur(); });
+    return b;
+  }
+  var goButton = button('Tap the chords', 't', toggle);
+  panel.appendChild(goButton);
+  var status = document.createElement('div');
+  status.className = 'midi-status';
+  panel.appendChild(status);
+  var more = document.createElement('details');
+  more.className = 'band-more';
+  var moreTitle = document.createElement('summary');
+  moreTitle.textContent = 'Tempo, meter, snap';
+  more.appendChild(moreTitle);
+  function label(text, control) {
+    var l = document.createElement('label');
+    l.className = 'band-field';
+    l.appendChild(document.createTextNode(text));
+    l.appendChild(control);
+    more.appendChild(l);
+    return control;
+  }
+  function select(options, value) {
+    var s = document.createElement('select');
+    options.forEach(function (o) {
+      var el = document.createElement('option');
+      el.value = o[0];
+      el.textContent = o[1];
+      s.appendChild(el);
+    });
+    s.value = value;
+    if (s.selectedIndex < 0) s.selectedIndex = 0;
+    return s;
+  }
+  var tempoBox = document.createElement('input');
+  tempoBox.type = 'number';
+  tempoBox.min = 40; tempoBox.max = 260; tempoBox.step = 1;
+  tempoBox.value = parseInt(src.tempo, 10) || 100;
+  label('Tempo', tempoBox);
+  var meterBox = label('Meter', select([
+    ['4/4', '4/4'], ['3/4', '3/4'], ['2/4', '2/4'], ['6/8', '6/8'], ['12/8', '12/8']],
+    (src.time || '4/4').replace(/\s/g, '')));
+  var snapBox = label('Snap to', select([
+    ['bar', 'Bar'], ['half', 'Half bar'], ['beat', 'Beat'], ['eighth', 'Eighth note']],
+    'beat'));
+  var soundBox = label('With', select([['drums', 'Drums'], ['click', 'A click']], 'drums'));
+  var countBox = label('Count-in', select([['1', '1 bar'], ['2', '2 bars']], '1'));
+  panel.appendChild(more);
+  var below = sidebar.querySelector('.type-panel') || sidebar.querySelector('.midi-panel');
+  if (below) sidebar.insertBefore(panel, below); else sidebar.appendChild(panel);
+  if (song.folds) song.folds(panel, 'tap');      // rarely wanted: folded until asked for
+
+  function say(text) { status.textContent = text; }
+
+  // ---- the take ----
+  var loaded = false, player = null, state = 'idle', grid = null;
+  var list = [], at = 0, taps = [], lit = null, nowBar = 0, hadChords = true, result = null, swung = false;
+
+  function load(done) {
+    if (loaded) { done(); return; }
+    var k = 0;
+    (function next() {
+      if (k >= FILES.length) { loaded = true; done(); return; }
+      var s = document.createElement('script');
+      s.src = FILES[k++];
+      s.onload = next;
+      s.onerror = function () { say('The band is not installed here. Reload the page.'); };
+      document.head.appendChild(s);
+    })();
+  }
+  function meter() {
+    var m = meterBox.value.split('/');
+    return { n: +m[0], d: +m[1] };
+  }
+  function tempo() {
+    var t = parseInt(tempoBox.value, 10);
+    return t >= 40 && t <= 260 ? t : 100;
+  }
+  function styleId() {
+    var named = String(src.style || '').trim().toLowerCase(), id = 'rock';
+    window.BandCatalog.styles.forEach(function (st) {
+      if (st.id === named || st.label.toLowerCase() === named) id = st.id;
+    });
+    return id;
+  }
+  function light(el) {
+    if (lit) lit.classList.remove('now');
+    lit = el;
+    if (!lit) return;
+    lit.classList.add('now');
+    lit.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }
+  function upNext() {
+    var next = list[at];
+    say(next ? 'Bar ' + (nowBar + 1) + ' · next: ' + next.sym
+             : 'Bar ' + (nowBar + 1) + ' · that was the last chord: t to finish');
+  }
+  function showSection(head) {
+    var stop = null;
+    song.road().some(function (s) { if (s.head === head) { stop = s; return true; } return false; });
+    if (stop) song.show(stop);
+  }
+
+  function begin() {
+    list = written();
+    if (!list.length) { say('There are no chords written over these words.'); return; }
+    var m = meter(), setup = window.BandCatalog.styleOpts(styleId(), 'piano');
+    var opts = setup.opts;
+    opts.fills = 'none'; opts.build = false; opts.variation = 0;
+    swung = opts.feel === 'swing';
+    if (soundBox.value === 'click') opts.groove = 'click';
+    var rest = 'z' + (m.n * 8 / m.d);
+    var parsed = window.TuneChart.parse('X:1\nM:' + m.n + '/' + m.d + '\nL:1/8\nK:C\n'
+                                        + [rest, rest, rest, rest].join(' | ') + ' |');
+    if (!player) {
+      player = window.BandPlayer.create({
+        parsed: parsed, tempo: tempo(), countIn: 1, choruses: 0,
+        instruments: setup.instruments, opts: opts,
+        kit: { ride: 0.53, rideBell: 0.53, crash: 0.53 },
+        onState: function (s) {
+          var was = state;
+          state = s;
+          if (s === 'loading') say('Loading sounds…');
+          if (s === 'idle' && was !== 'idle') finish();
+          showState();
+        },
+        onLoadProgress: function (d, t) { if (state === 'loading') say('Loading sounds ' + d + ' of ' + t); },
+        onBar: function (info) {
+          if (info.countIn) { say('Count-in · first chord: ' + list[0].sym); return; }
+          nowBar = info.bar;
+          upNext();
+        }
+      });
+    }
+    grid = window.ChordEntry.grid(m);
+    taps = []; at = 0; nowBar = 0; result = null;
+    closeResult();
+    hadChords = document.body.classList.contains('chords');
+    document.body.classList.add('chords', 'tapping');
+    showSection(list[0].head);
+    player.setChart(parsed);
+    player.setTempo(tempo());
+    player.setCountIn(parseInt(countBox.value, 10));
+    player.setChoruses(0);
+    player.setInstruments(setup.instruments);
+    player.setOpts(opts);
+    player.setVolume('bass', 0);
+    player.setVolume('comp', 0);
+    player.play().catch(function () {
+      say('The sounds could not be loaded. They come from the internet.');
+      document.body.classList.remove('tapping');
+    });
+  }
+  function showState() {
+    goButton.firstChild.nodeValue = state === 'idle' ? 'Tap the chords ' : 'Finish ';
+    goButton.setAttribute('aria-pressed', state === 'idle' ? 'false' : 'true');
+  }
+  function toggle() {
+    if (state !== 'idle') { player.stop(); return; }
+    load(begin);
+  }
+
+  // Where a moment falls: the bar, counted from the first after the count-in,
+  // and the beats into it.
+  function where(stamp) {
+    var ctx = player && player.context();
+    if (!ctx) return null;
+    var w = player.where(ctx.currentTime - (performance.now() - stamp) / 1000);
+    if (!w || w.info.ending || w.info.intro) return null;
+    if (w.info.countIn) return w.info.bar === -1 ? { bar: -1, pos: w.pos, beats: w.beats } : { bar: 0, pos: 0, beats: w.beats };
+    return { bar: w.info.bar, pos: w.pos, beats: w.beats };
+  }
+  function tap(stamp) {
+    var next = list[at];
+    if (!next) return;
+    var w = where(stamp);
+    if (!w) return;
+    var pos = w.pos;
+    if (w.bar < 0 && pos < w.beats - 0.5) { w.bar = 0; pos = 0; }     // well inside the count-in: bar 1
+    if (swung && !grid.compound) pos = window.ChordEntry.unswing(pos, window.BandPlayer.swingFor(tempo()));
+    grid.setLength(Math.max(grid.length(), w.bar + 3));
+    var hit = grid.place(next.sym, w.bar, pos, snapBox.value);
+    if (!hit) { grid.setLength(Math.max(grid.length(), 1)); hit = grid.place(next.sym, 0, 0, snapBox.value); }
+    var last = taps[taps.length - 1];
+    if (last && (hit.bar < last.bar || (hit.bar === last.bar && hit.pos <= last.pos))) {
+      // Two taps inside one snap: the second goes a step on, not on top.
+      var per = grid.unitsPerBar, step = grid.span(snapBox.value);
+      var u = last.bar * per + last.pos + step;
+      hit = { bar: Math.floor(u / per), pos: u % per };
+      grid.setLength(Math.max(grid.length(), hit.bar + 1));
+      grid.bars()[hit.bar][hit.pos] = next.sym;
+    }
+    taps.push({ bar: hit.bar, pos: hit.pos, head: next.head, sym: next.sym });
+    if (!last || last.head !== next.head) showSection(next.head);
+    light(next.el);
+    at++;
+    upNext();
+  }
+  function back() {
+    var last = taps.pop();
+    if (!last) return;
+    delete grid.bars()[last.bar][last.pos];
+    at--;
+    light(taps.length ? list[at - 1].el : null);
+    upNext();
+  }
+
+  // ---- what was tapped, written out ----
+  // One bar of the grid as the song file writes it: its chords in as few
+  // places as will hold them, a dot for a place that holds what came before.
+  function cell(bar, per, first) {
+    var ps = Object.keys(bar).map(Number).sort(function (a, b) { return a - b; });
+    if (!ps.length) return first ? 'N.C.' : '%';
+    var places = per;
+    [1, 2, 3, 4, 6, 8, 12].some(function (n) {
+      if (per % n) return false;
+      if (ps.every(function (p) { return p % (per / n) === 0; })) { places = n; return true; }
+      return false;
+    });
+    var out = [];
+    for (var k = 0; k < places; k++) out.push(bar[k * per / places] || '.');
+    return out.join(' ');
+  }
+  function abcBar(bar, per) {
+    var ps = Object.keys(bar).map(Number).sort(function (a, b) { return a - b; });
+    if (!ps.length) return 'z' + per;
+    var out = ps[0] > 0 ? ['z' + ps[0]] : [];
+    ps.forEach(function (p, i) {
+      out.push('"' + bar[p] + '"z' + ((i + 1 < ps.length ? ps[i + 1] : per) - p));
+    });
+    return out.join(' ');
+  }
+  function baseName(name) { return name.replace(/\s+\d+$/, '').trim().toLowerCase(); }
+
+  // The song file's sections, as tools/chordpro.py counts them: where each
+  // heading is, so a grid can go under it.
+  var STARTS = /^(start_of_(verse|chorus|bridge|tab|part)|so[vcbt]|comment|c|comment_italic|ci)$/;
+  function sourceSections(lines) {
+    var out = [], open = false, skip = null;
+    lines.forEach(function (line, i) {
+      var text = line.trim(), m = /^\{\s*([a-z_]+)\s*(?::\s*(.*?))?\s*\}$/i.exec(text);
+      var name = m ? m[1].toLowerCase() : '';
+      if (skip) { if (m && skip.test(name)) skip = null; return; }
+      if (!text || text.charAt(0) === '#') return;
+      if (name === 'start_of_grid' || name === 'sog') {
+        if (!open) { out.push({ line: i - 1, name: (m[2] || 'Lyrics') }); open = true; }
+        skip = /^(end_of_grid|eog)$/; return;
+      }
+      if (name === 'start_of_abc') {
+        var band = (m[2] || '').toLowerCase() === 'band';
+        if (!band && !open) { out.push({ line: i - 1, name: 'Tune' }); open = true; }
+        skip = /^end_of_abc$/; return;
+      }
+      if (m) {
+        if (STARTS.test(name)) { out.push({ line: i, name: m[2] || '' }); open = true; }
+        else if (name === 'chorus' || name === 'recall') { out.push({ line: -1, name: m[2] || 'Chorus', copy: true }); open = false; }
+        else if (/^(end_of_|eo[vcbt]$)/.test(name)) open = false;
+        return;
+      }
+      if (!open) { out.push({ line: i - 1, name: 'Lyrics' }); open = true; }
+    });
+    return out;
+  }
+
+  function finish() {
+    document.body.classList.remove('tapping');
+    if (!hadChords) document.body.classList.remove('chords');
+    light(null);
+    if (!taps.length) { say('Nothing was tapped.'); return; }
+    var m = meter(), per = grid.unitsPerBar, bars = grid.bars();
+    var end = Math.max(taps[taps.length - 1].bar + 1, nowBar + 1);
+    // Each section runs from the bar of its first chord to the next one's.
+    var parts = [];
+    taps.forEach(function (t) {
+      var last = parts[parts.length - 1];
+      if (last && last.head === t.head) return;
+      parts.push({ head: t.head, start: last ? Math.max(t.bar, last.start + 1) : 0 });
+    });
+    parts.forEach(function (p, k) {
+      p.end = k + 1 < parts.length ? parts[k + 1].start : end;
+      p.bars = [];
+      for (var i = p.start; i < p.end; i++) p.bars.push(bars[i] || {});
+      p.rows = [];
+      for (var r = 0; r < p.bars.length; r += 4) {
+        p.rows.push('| ' + p.bars.slice(r, r + 4).map(function (b, j) {
+          return cell(b, per, r + j === 0);
+        }).join(' | ') + ' |');
+      }
+    });
+
+    var lines = src.cho.split('\n'), secs = sourceSections(lines);
+    var names = {}, heads = song.count();
+    var matched = secs.length === heads;
+    parts.forEach(function (p) {
+      var box = song.section(p.head), h = box && box.querySelector('h2');
+      p.name = matched && secs[p.head].name ? secs[p.head].name
+             : h ? h.textContent.replace(/\s+/g, ' ').trim() : 'Section ' + (p.head + 1);
+    });
+
+    // ABC: one tune, a P: line for each section.
+    var abc = ['X:1', 'T:' + (src.title || document.title), 'M:' + m.n + '/' + m.d, 'L:1/8',
+               'Q:1/4=' + tempo(), 'K:' + (src.key || 'C')];
+    parts.forEach(function (p) {
+      abc.push('P:' + p.name);
+      for (var r = 0; r < p.bars.length; r += 4) {
+        abc.push(p.bars.slice(r, r + 4).map(function (b) { return abcBar(b, per); }).join(' | ') + ' |');
+      }
+    });
+
+    // ChordPro: the song file again, each grid under its section's heading.
+    // A section that plays the bars of the one before it of the same kind is
+    // left without, as the song file allows.
+    var cho;
+    var latest = {};
+    parts.forEach(function (p) {
+      var key = baseName(p.name), text = p.rows.join('\n');
+      p.same = latest[key] === text;
+      latest[key] = text;
+    });
+    if (matched) {
+      var under = {};
+      parts.forEach(function (p) {
+        var s = secs[p.head];
+        if (!s.copy && !p.same) under[s.line] = ['{start_of_grid}'].concat(p.rows, ['{end_of_grid}']);
+      });
+      var out = [], inGrid = false, hasTempo = /\{\s*tempo\s*:/i.test(src.cho), hasTime = /\{\s*time\s*:/i.test(src.cho);
+      var top = [];
+      if (!hasTempo) top.push('{tempo: ' + tempo() + '}');
+      if (!hasTime) top.push('{time: ' + m.n + '/' + m.d + '}');
+      var placed = false;
+      if (under[-1]) out = out.concat(under[-1]);
+      lines.forEach(function (line, i) {
+        var text = line.trim();
+        if (/^\{\s*(start_of_grid|sog)\b/i.test(text)) { inGrid = true; return; }
+        if (inGrid) { if (/^\{\s*(end_of_grid|eog)\s*\}/i.test(text)) inGrid = false; return; }
+        out.push(line);
+        if (!placed && /^\{\s*title\s*:/i.test(text)) { out = out.concat(top); placed = true; }
+        if (under[i]) out = out.concat(under[i]);
+      });
+      if (!placed) out = top.concat(out);
+      cho = out.join('\n');
+    } else {
+      cho = ['# The sections of the page and of the song file could not be matched;',
+             '# paste each grid under its heading.', '{tempo: ' + tempo() + '}',
+             '{time: ' + m.n + '/' + m.d + '}', ''].concat(parts.reduce(function (acc, p) {
+        return acc.concat(['{comment: ' + p.name + '}', '{start_of_grid}'], p.rows, ['{end_of_grid}', '']);
+      }, [])).join('\n');
+    }
+    result = { cho: cho, abc: abc.join('\n'), bars: end, chords: taps.length, left: list.length - taps.length };
+    window.carolTap = result;
+    say(taps.length + ' chords over ' + end + ' bars'
+        + (result.left ? ' · ' + result.left + ' not reached' : '') + '.');
+    openResult();
+  }
+
+  // ---- the result: a sheet along the bottom ----
+  var sheet = null, shown = 'cho';
+  function closeResult() { if (sheet) { sheet.remove(); sheet = null; } }
+  function openResult() {
+    closeResult();
+    sheet = document.createElement('div');
+    sheet.className = 'tap-sheet';
+    var bar = document.createElement('div');
+    bar.className = 'tap-sheet-bar';
+    var text = document.createElement('textarea');
+    text.spellcheck = false;
+    function show(kind) {
+      shown = kind;
+      text.value = result[kind];
+      choB.setAttribute('aria-pressed', kind === 'cho');
+      abcB.setAttribute('aria-pressed', kind === 'abc');
+    }
+    var choB = button('ChordPro', '', function () { show('cho'); });
+    var abcB = button('ABC', '', function () { show('abc'); });
+    var note = document.createElement('span');
+    note.className = 'tap-sheet-note';
+    var copy = button('Copy', '', function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text.value).then(function () { note.textContent = 'Copied.'; },
+          function () { note.textContent = 'The browser would not copy it; use Download.'; });
+      } else { text.select(); note.textContent = 'Select all and copy.'; }
+    });
+    var down = button('Download', '', function () {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([text.value + '\n'], { type: 'text/plain' }));
+      a.download = (src.slug || 'song') + (shown === 'cho' ? '.cho' : '.abc');
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+      note.textContent = shown === 'cho' ? 'Put it in site/extra in place of the old one, then tools/build.sh ' + (src.slug || '') + '.' : 'Downloaded.';
+    });
+    var shut = button('Close', '', closeResult);
+    [choB, abcB, copy, down, shut, note].forEach(function (el) { bar.appendChild(el); });
+    sheet.appendChild(bar);
+    sheet.appendChild(text);
+    document.body.appendChild(sheet);
+    show('cho');
+  }
+
+  // The space bar belongs to the take while one is running. Capturing, so the
+  // page's own keys (and the browser's scroll) do not get it first.
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.target.matches && e.target.matches('input, textarea, select, [contenteditable]')) return;
+    var k = e.key;
+    if (state === 'playing' && (k === ' ' || k === 'Spacebar')) {
+      if (!e.repeat) tap(e.timeStamp || performance.now());
+    } else if (state === 'playing' && k === 'Backspace') {
+      back();
+    } else if ((k === 't' || k === 'T') && !e.repeat) {
+      toggle();
+    } else return;
+    e.preventDefault();
+    e.stopPropagation();
+  }, true);
+})();
+
+})();
+
+}
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", songPageRun); else songPageRun();

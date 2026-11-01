@@ -1,0 +1,63 @@
+# The day-reveal page is hand-built markup, not generated from this file --
+# the build skips *-seed.cho. This is the editable source of that verse;
+# tools/twelve-days.py folds it back into site/songs/twelve-days-of-christmas.qmd.
+#
+# The band: the chords are written once. The grid has one row for each line of
+# the verse, in the same order, and each day is played as the two opening rows
+# and then the rows of the gifts sung that day. Every row names its own meter,
+# since the rows are put together differently each day.
+#
+# The verse below is how it goes from the fifth day on. A section after it
+# called "Until day N" holds the gifts from day N down as they go on the days
+# up to N, with a grid row for each (no grid: the rows above are kept).
+{tempo: 120}
+{time: 4/4}
+{key: D}
+{style: carol}
+{comment: The verse}
+{start_of_grid}
+| 4/4 D . Bm . |
+| 4/4 Em A D . |
+| 3/4 A |
+| 3/4 A |
+| 3/4 A |
+| 3/4 A |
+| 3/4 A |
+| 3/4 A |
+| 3/4 A |
+| 4/4 D . E . | A |
+| 3/4 D |
+| 3/4 Bm |
+| 4/4 E . A . |
+| 4/4 D/F# G D/A A | D |
+{end_of_grid}
+On the [D]first day of [Bm]Christmas,
+My [Em]true love [A]sent to [D]me
+[A]Twelve drummers drumming,
+[A]Eleven pipers piping,
+[A]Ten lords a-leaping,
+[A]Nine ladies dancing,
+[A]Eight maids a-milking,
+[A]Seven swans a-swimming,
+[A]Six geese a-laying,
+[D]Five [E]golden [A]rings,
+[D]Four calling birds,
+[Bm]Three French hens,
+[E]Two turtle [A]doves,
+And a [D/F#]partr[G]idge [D/A]in a [A]pear [D]tree!
+
+# Before the five golden rings come in, these three go to the tune of the
+# gifts above them: all on A, and the doves still a bar of four.
+{comment: Until day 4}
+{start_of_grid}
+| 3/4 A |
+| 3/4 A |
+| 4/4 A |
+{end_of_grid}
+[A]Four calling birds,
+[A]Three French hens,
+[A]Two turtle doves,
+
+# On the first day there is nothing before the partridge for an "And".
+{comment: Until day 1}
+A [D/F#]partr[G]idge [D/A]in a [A]pear [D]tree!

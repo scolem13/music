@@ -62,6 +62,23 @@ grey text says which CD and track it comes from (and the book page when the trac
 <div id="td-mlt-list"></div>
 ```
 
+## Words & Chords {#td-songs}
+
+```{=html}
+<p class="td-note">Songs with their words and chords over them, for singing in class and in concerts: <a href="/songs/">Words &amp; Chords</a>.</p>
+<ul id="td-songs-list"></ul>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var ul = document.getElementById("td-songs-list"), L = (window.SONG_INDEX || []).slice();
+  L.sort(function (a, b) { return a.title.localeCompare(b.title); });
+  ul.innerHTML = L.map(function (g) {
+    var t = g.title.replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; });
+    return '<li><a href="/songs/?id=' + encodeURIComponent(g.id) + '">' + t + '</a>' + (g.key ? ' <span class="td-dim">' + g.key + '</span>' : '') + '</li>';
+  }).join("");
+});
+</script>
+```
+
 ## Billboard songs (chords and form) {#td-billboard}
 
 ```{=html}
@@ -123,11 +140,11 @@ YouTube and paste the link there.</p>
 <script src="/apps/shared/tune-library.js?v=20"></script>
 <script src="/apps/tunes/tunes-object.js?v=2"></script>
 <script src="/apps/themes/themes-data.js?v=3"></script>
-<script src="/apps/shared/works/works-data.js?v=3"></script>
-<script src="/apps/shared/works/works.js?v=5"></script>
+<script src="/apps/shared/works/works-data.js?v=4"></script>
+<script src="/apps/shared/works/works.js?v=6"></script>
 <script src="/apps/shared/mlt/recordings.js?v=2"></script>
 <script src="/apps/shared/works/tune-directory.js?v=7"></script>
-<script src="/apps/shared/works/td-sheet.js?v=1"></script>
+<script src="/apps/shared/works/td-sheet.js?v=2"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
 ```
 

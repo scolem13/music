@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.20">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -45,7 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-17888a1159294d3eb470f19f6f52f5a5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-9d7f26cb4b5836e1be3a3abd64495181.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -209,6 +209,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../practice/songs.html">
  <span class="dropdown-text">Song Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../songs/index.html">
+ <span class="dropdown-text">Words &amp; Chords</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../practice/tunes.html">
@@ -593,6 +597,12 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../songs/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Words &amp; Chords</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../practice/tunes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tunes</span></a>
   </div>
@@ -756,6 +766,7 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
   <li><a href="#td-tunes" id="toc-td-tunes" class="nav-link" data-scroll-target="#td-tunes">Tune Library</a></li>
   <li><a href="#td-themes" id="toc-td-themes" class="nav-link" data-scroll-target="#td-themes">Classical Themes</a></li>
   <li><a href="#td-mlt" id="toc-td-mlt" class="nav-link" data-scroll-target="#td-mlt">MLT and JRI recordings</a></li>
+  <li><a href="#td-songs" id="toc-td-songs" class="nav-link" data-scroll-target="#td-songs">Words &amp; Chords</a></li>
   <li><a href="#td-billboard" id="toc-td-billboard" class="nav-link" data-scroll-target="#td-billboard">Billboard songs (chords and form)</a></li>
   <li><a href="#td-analysed" id="toc-td-analysed" class="nav-link" data-scroll-target="#td-analysed">Analysed Scores</a></li>
   <li><a href="#works-cited" id="toc-works-cited" class="nav-link" data-scroll-target="#works-cited">Works Cited</a></li>
@@ -925,6 +936,21 @@ classical theme, an analysed score) and holds its recordings and links. They are
 grey text says which CD and track it comes from (and the book page when the track names one).</p>
 <div id="td-mlt-list"></div>
 </section>
+<section id="td-songs" class="level2">
+<h2 class="anchored" data-anchor-id="td-songs">Words &amp; Chords</h2>
+<p class="td-note">Songs with their words and chords over them, for singing in class and in concerts: <a href="../songs/">Words &amp; Chords</a>.</p>
+<ul id="td-songs-list"></ul>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var ul = document.getElementById("td-songs-list"), L = (window.SONG_INDEX || []).slice();
+  L.sort(function (a, b) { return a.title.localeCompare(b.title); });
+  ul.innerHTML = L.map(function (g) {
+    var t = g.title.replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; });
+    return '<li><a href="/songs/?id=' + encodeURIComponent(g.id) + '">' + t + '</a>' + (g.key ? ' <span class="td-dim">' + g.key + '</span>' : '') + '</li>';
+  }).join("");
+});
+</script>
+</section>
 <section id="td-billboard" class="level2">
 <h2 class="anchored" data-anchor-id="td-billboard">Billboard songs (chords and form)</h2>
 <p class="td-note"><span id="td-bb-n"></span> from the McGill Billboard Project (1958–1991): each song's sections, bars and chords,
@@ -983,11 +1009,11 @@ YouTube and paste the link there.</p>
 <script src="../apps/shared/tune-library.js?v=20"></script>
 <script src="../apps/tunes/tunes-object.js?v=2"></script>
 <script src="../apps/themes/themes-data.js?v=3"></script>
-<script src="../apps/shared/works/works-data.js?v=3"></script>
-<script src="../apps/shared/works/works.js?v=5"></script>
+<script src="../apps/shared/works/works-data.js?v=4"></script>
+<script src="../apps/shared/works/works.js?v=6"></script>
 <script src="../apps/shared/mlt/recordings.js?v=2"></script>
 <script src="../apps/shared/works/tune-directory.js?v=7"></script>
-<script src="../apps/shared/works/td-sheet.js?v=1"></script>
+<script src="../apps/shared/works/td-sheet.js?v=2"></script>
 <script src="../apps/shared/section-fold.js?v=1"></script>
 </section>
 <section id="works-cited" class="level2">

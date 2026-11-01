@@ -348,6 +348,7 @@ website:
             - practice/rhythm-sequences.qmd
             - practice/tonal-sequences.qmd
             - practice/songs.qmd
+            - songs/index.qmd
             - practice/tunes.qmd
             - practice/tune-directory.qmd
             - practice/patterns.qmd
@@ -509,6 +510,7 @@ website:
           - practice/rhythm-sequences.qmd
           - practice/tonal-sequences.qmd
           - practice/songs.qmd
+          - songs/index.qmd
           - practice/tunes.qmd
           - practice/tune-directory.qmd
           - practice/patterns.qmd

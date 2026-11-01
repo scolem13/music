@@ -1,5 +1,5 @@
 // td-sheet.js: the Tune Directory's spreadsheet (#td-sheet on practice/tune-directory.qmd): one row per tune, classical theme,
-// piece in works-data.js that is neither, and MLT / JRI recording not linked to a tune. Columns: title, type, set or composer,
+// piece in works-data.js that is neither, song in Words & Chords (SONG_INDEX, in works-data.js), and MLT / JRI recording not linked to a tune. Columns: title, type, set or composer,
 // key, meter, notation, recordings, bars marked (recordings with a timing map), chords, and links. Each column filters (type in
 // the box under its name: words match anywhere; in a number column ">0", "0", "2"); quick boxes for "has recordings", "bars
 // marked", "notation", "chords"; a click on a column name sorts by it (again: the other way). Shows 200 rows at a time.
@@ -43,6 +43,10 @@
       recs: recs.length, timed: recs.filter((r) => r.timing).length, chords: 0, href: (Wk ? Wk.config.directory : "") + "#" + wid,
       tsn: recs.length && Wk.tsnUrl ? Wk.tsnUrl(recs[0], Object.assign({ id: wid }, w)) : null, id: wid });
   });
+  (window.SONG_INDEX || []).forEach((g) => {                           // Words & Chords (songs/index.qmd), list from scripts/songs/build.py
+    rows.push({ title: g.title, type: "Song", where: "Words & Chords", by: g.artist || g.first || "", key: g.key || "", meter: g.time || "", notation: 0,
+      recs: 0, timed: 0, chords: g.chords ? 1 : 0, href: "/songs/?id=" + encodeURIComponent(g.id), tsn: null, id: g.id });
+  });
   if (R) R.list.forEach((r) => {
     if (r.tune && r.tune.length) return;                                  // counted with its tune
     const col = R.collections.find((c) => c.id === r.col) || {};
@@ -53,7 +57,7 @@
 
   // ---- table ----
   const COLS = [
-    { k: "title", label: "Title" }, { k: "type", label: "Type", sel: ["Tune", "Theme", "Piece", "Recording"] }, { k: "where", label: "Set / composer" },
+    { k: "title", label: "Title" }, { k: "type", label: "Type", sel: ["Tune", "Theme", "Piece", "Song", "Recording"] }, { k: "where", label: "Set / composer" },
     { k: "by", label: "Composer / movement / kind" }, { k: "key", label: "Key", w: "4rem" }, { k: "meter", label: "Meter", w: "5rem" },
     { k: "notation", label: "Notation", yn: 1 }, { k: "recs", label: "Recordings", num: 1 }, { k: "timed", label: "Bars marked", num: 1 }, { k: "chords", label: "Chords", yn: 1 }
   ];

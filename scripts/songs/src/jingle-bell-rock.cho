@@ -1,0 +1,130 @@
+{title: Jingle Bell Rock}
+{tempo: 136}
+{time: 2/4}
+{key: G}
+
+{comment: Intro}
+{start_of_abc: melody}
+M:2/4
+L:1/8
+K:G
+%%score (1 2) (3 4)
+V:1 clef=treble
+"G"B B B2 | "G"B B B2 | "G6"B d "G+"G A | "G"B A "C"G E | "D/F#"D2 ^c2 | "A7"D2 ^c2 | "D"D2 z2 | "D7"z2 z2 |]
+V:2 clef=treble
+G G G2 | F F F2 | E2 _E2 | D2 C2 | D2 d2 | D2 d2 | z4 | z4 |]
+V:3 clef=bass
+G,,2 G,2 | G,,2 G,2 | G,,2 G,2 | G,,2 G,2 | F,2 z2 | E,2 z2 | z D, C,2 | B,,2 A,,2 |]
+V:4 clef=bass
+z4 | z4 | z4 | z4 | z4 | z4 | z D,, C,,2 | B,,,2 A,,,2 |]
+{end_of_abc}
+{start_of_grid}
+| G | % | G6 G+ | G C | D/F# | A7 | D | D7 |
+{end_of_grid}
+# Intro as first entered (in C, 4/4), before transposing to G:
+# V:1  e e e2 e e e2 | e g c d e d c A | G2 ^f2 G2 ^f2 | G2 z2 z2 z2 |
+# V:2  c c c2 B B B2 | A2 _A2 G2 F2 | G2 g2 G2 g2 | z8 |
+# V:3  C,2 C2 C,2 C2 | C,2 C2 C,2 C2 | B,2 z2 A,2 z2 | z G, F,2 E,2 D,2 |
+# V:4  z8 | z8 | z8 | z G,, F,,2 E,,2 D,,2 |
+
+{comment: Segno}
+
+{start_of_verse: Verse 1}
+{start_of_grid}
+| G | Gmaj7 | G6 | G |
+| G6 | G | Am | D7 |
+| Am | D7 | Am | D7 |
+| D | Am | D7 | % |
+{end_of_grid}
+[G]Jingle bell, [Gmaj7]jingle bell, [G6]jingle bell [G]rock
+[G6]Jingle bells [G]swing and [Am]jingle bells [D7]ring
+[Am]Snowin’ and [D7]blowin’ up [Am]bushels of [D7]fun
+[D]Now the jingle hop [Am]has be[D7]gun
+{end_of_verse}
+
+{start_of_verse: Verse 2}
+{start_of_grid}
+| G | Gmaj7 | G6 | G |
+| G6 | G | Am | D7 |
+| Am | D7 | Am | D7 |
+| Am | D | G | G7 |
+{end_of_grid}
+[G]Jingle bell, [Gmaj7]jingle bell, [G6]jingle bell [G]rock
+[G6]Jingle bells [G]swing and [Am]jingle bells [D7]ring
+[Am]Dancin’ and [D7]prancin’ in [Am]Jingle Bell [D7]Square
+[Am]In the [D]frosty air [G] [G7]
+{end_of_verse}
+
+{start_of_chorus: Chorus}
+{start_of_grid}
+| C | % | Cm | % |
+| G | % | G7 | % |
+| A | % | A7 | % |
+| D stop | D7 | D | D7 |
+{end_of_grid}
+*What a [C]bright time, it’s the [Cm] right time*
+*To [G]rock the night a[G7]way*
+*Jingle [A]bell time is a [A7] swell time*
+*[D] To go [D7]glidin’ in a [D]one-horse [D7]sleigh*
+{end_of_chorus}
+
+{start_of_verse: Verse 3}
+{start_of_grid}
+| G | Gmaj7 | G6 | G |
+| E7 | % | % | % |
+| C | Cm | A7 | Cm |
+| Am | D7 | G | % |
+{end_of_grid}
+[G]Giddy-up, [Gmaj7]jingle horse, [G6]pick up your [G]feet
+Jingle around the [E7]clock
+[C]Mix and [Cm]mingle in a [A7]jinglin’ [Cm]beat
+[Am] That’s the [D7]jingle bell [G]rock!
+{end_of_verse}
+
+{start_of_verse: Verse 2}
+{start_of_grid}
+| G | Gmaj7 | G6 | G |
+| G6 | G | Am | D7 |
+| Am | D7 | Am | D7 |
+| Am | D | G | G7 |
+{end_of_grid}
+[G]Jingle [Gmaj7]bell, jingle [G6]bell, [G]jingle bell rock
+[G6]Jingle [G]bells chime [Am]in [D7]jingle bell time
+[Am]Dancin’ and [D7]prancin’ in [Am]Jingle Bell [D7]Square
+[Am]In the [D]frosty air [G] [G7]
+{end_of_verse}
+
+{start_of_chorus: Chorus}
+*What [C]a bright time, [Cm]it’s the right time*
+*To [G]rock the [G7]night away*
+*Jingle [A]bell time is a [A7] swell time*
+*[D] To go [D7]glidin’ in a [D]one-horse [D7]sleigh*
+{end_of_chorus}
+
+{comment: First Ending}
+{start_of_grid}
+| G | Gmaj7 | G6 | G |
+| E7 | % | % | % |
+| C | Cm | A7 | Cm |
+| Am | D7 | G | % |
+{end_of_grid}
+[G]Giddy-up, [Gmaj7]jingle [G6]horse, pick [G]up your feet
+Jingle around the [E7]clock
+[C]Mix and [Cm]mingle in a [A7]jinglin’ [Cm]beat
+[Am] That’s the [D7]jingle bell [G]rock!
+
+{comment: D.S.}
+
+{comment: Second Ending}
+{start_of_grid}
+| G | Gmaj7 | G6 | G |
+| E7 | % | % | % |
+| C | Cm | A7 | Cm |
+| Am | % | D7 | % |
+| Am | D7 | G | % |
+{end_of_grid}
+[G]Giddy-up, [Gmaj7]jingle horse, [G6]pick up your [G]feet
+Jingle around [E7]the clock
+[C]Mix and [Cm]mingle in a [A7]jinglin’ [Cm]beat
+[Am]That’s the jingle bell, [D7]that’s the jingle bell
+[Am]That’s the [D7]jingle bell [G]rock!

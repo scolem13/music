@@ -1,0 +1,93 @@
+{title: O Tannenbaum (O Christmas Tree )}
+{tempo: 100}
+{time: 3/4}
+{setup: O Tannenbaum}
+
+{comment: Intro}
+# The last beat is the "O" that starts Verse 1.
+{start_of_abc: melody}
+M:3/4
+L:1/8
+K:D
+A | "D"D/ z D/ D2 "A7"E2 | "D"F/ z F/ F2 z F | "Em"E F "A7"G2 C2 | E2 D2 A,2 |]
+{end_of_abc}
+{start_of_grid}
+| D . A7 | D | Em A7 . | A7 |
+{end_of_grid}
+
+{comment: Verse 1}
+{start_of_grid}
+| D . A7 | D | Em A7 . | A D . |
+| D . A7 | D | Em A7 . | A D . |
+{end_of_grid}
+{start_of_abc: melody}
+M:3/4
+L:1/8
+K:D
+"D"D/ z D/ D2 "A7"E2 | "D"F/ z F/ F3 F | "Em"E F "A7"G2 C2 | "A"E2 "D"D z A,2 |
+"D"D/ z D/ D2 "A7"E2 | "D"F/ z F/ F3 F | "Em"E F "A7"G2 C2 | "A"E2 "D"D2 z2 |]
+{end_of_abc}
+O [D]Tannenbaum, [A7]o [D]Tannenbaum
+{ipa: ʔoː ˈtanənbaʊm ʔoː ˈtanənbaʊm}
+{say: OH TAH-nuhn-bowm OH TAH-nuhn-bowm}
+Wie [Em]treu sind [A7]deine [A]Blät[D]ter
+{ipa: viː ˈtrɔʏ zɪnt ˈdaɪnə ˈblɛtɐ}
+{say: vee TROY zint DY-nuh BLET-uh}
+O [D]Tannenbaum, [A7]o [D]Tannenbaum
+{ipa: ʔoː ˈtanənbaʊm ʔoː ˈtanənbaʊm}
+{say: OH TAH-nuhn-bowm OH TAH-nuhn-bowm}
+Wie [Em]treu sind [A7]deine [A]Blät[D]ter
+{ipa: viː ˈtrɔʏ zɪnt ˈdaɪnə ˈblɛtɐ}
+{say: vee TROY zint DY-nuh BLET-uh}
+
+{comment: Verse 2}
+{start_of_grid}
+| D G . | A7 . . . . Em | . A7 . | D |
+| D . A7 | D | Em A7 . | A D . |
+{end_of_grid}
+[D]Du grünst nicht [G]nur zur [A7]Sommerzeit
+{ipa: duː ˈɡryːnst nɪçt ˈnuːɐ̯ tsuːɐ̯ ˈzɔmɐˌtsaɪt}
+{say: doo GREWNST nihyt NOOR tsoor ZOM-uh-tsite}
+[Em]Nein auch im [A7]Winter, [D]wenn es schneit
+{ipa: ˈnaɪn ʔaʊx ʔɪm ˈvɪntɐ vɛn ʔɛs ˈʃnaɪt}
+{say: NINE owkh im VIN-tuh ven ess SHNITE}
+O [D]Tannenbaum, [A7]o [D]Tannenbaum
+{ipa: ʔoː ˈtanənbaʊm ʔoː ˈtanənbaʊm}
+{say: OH TAH-nuhn-bowm OH TAH-nuhn-bowm}
+Wie [Em]treu sind [A7]deine [A]Blät[D]ter
+{ipa: viː ˈtrɔʏ zɪnt ˈdaɪnə ˈblɛtɐ}
+{say: vee TROY zint DY-nuh BLET-uh}
+
+{comment: Interlude}
+{start_of_grid}
+| D . A7 | D | Em A7 . | A D . |
+| D . A7 | D | Em A7 . | A D . |
+{end_of_grid}
+# The pickup is shown, not played (Verse 2 has no melody to carry it).
+{start_of_abc: melody}
+M:3/4
+L:1/8
+K:D
+A,2 | "D"D/ z D/ D2 "A7"E2 | "D"F/ z F/ F2 z F | "Em"E F "A7"G2 C2 | "A"E2 "D"D2 z2 |
+"D"z6 | z6 | z6 | z6 |]
+{end_of_abc}
+
+{comment: Verse 3}
+{start_of_grid}
+| D . A7 | D | Em A7 . | A D . |
+| D . A7 | D | Em A7 . | A D . |
+{end_of_grid}
+O [D]Christmas tree, [A7]O [D]Christmas tree
+You [Em]stand in [A7]splendid [A]beau[D]ty
+O [D]Christmas tree, [A7]O [D]Christmas tree
+You [Em]stand in [A7]splendid [A]beau[D]ty
+
+{comment: Verse 4}
+{start_of_grid}
+| D G . | A7 . . . . Em | . A7 . | D |
+| D . A7 | D | Em A7 . | A D . |
+{end_of_grid}
+[D]Your branches [G]green in [A7]summer’s glow
+[Em]And ever[A7]green in [D]winter’s snow
+O [D]Christmas tree, [A7]O [D]Christmas tree
+You [Em]stand in [A7]splendid [A]beau[D]ty

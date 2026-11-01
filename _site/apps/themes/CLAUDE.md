@@ -20,3 +20,9 @@
   octave`; tied-apart triplets not repaired: their barlines are wrong too), then `node scripts/import-themes.mjs --rough` -> `apps/themes/themes-rough-data.js`. Test: `node tests/lessons/classical-themes.cdp.js` (after rendering it).
 
 - Planned (`research_notes/recordings-to-scores-plan.md`): the teacher's theme-snippet recordings on the cards; the themes' original recordings (MTD's MusicBrainz release + track) found on YouTube as Works recordings starting at the theme; a lesson finding an IMSLP score, the recording and the theme (569 themes start past bar 1, `pdmx-matches.json`).
+- MTD recordings: each theme's clip from the Musical Theme Dataset (excerpts of commercial CDs, NOT under MTD's CC BY licence,
+  so only in the private bucket) is a Works recording, `r2: "mtd/<id>.mp3"` in `everything-music-mlt` (served at /media/ behind
+  the site password). `node scripts/mtd-recordings.mjs` writes `apps/themes/themes-recordings.js` (loaded on Classical Themes
+  only, between works-data.js and works.js): added to a theme's work if it has one, else a work `mtd-<id>` of its own. MP3s
+  (128k) in `~/Downloads/mtd-mp3/`; upload with `cf r2 buckets objects upload mtd/<id>.mp3 --bucket-name everything-music-mlt
+  --file <id>.mp3 --content-type audio/mpeg`.

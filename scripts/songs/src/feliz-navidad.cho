@@ -1,0 +1,64 @@
+{title: Feliz Navidad}
+{tempo: 148}
+{time: 4/4}
+{key: D}
+{style: strum}
+
+{comment: Intro}
+{start_of_abc: melody}
+M:4/4
+L:1/8
+K:D
+"Em7"z2 z2 GA B/2 z/2 A | "A7"z A AA G z GF | "D"z8 | z8 |]
+{end_of_abc}
+{start_of_grid}
+| Em7 | A7 | D | stop D |
+{end_of_grid}
+
+{comment: Verse}
+# Eight bars. The words start on the and of one of the bars before each verse
+{start_of_grid}
+| Em7 | A7 | D | Bm7 | Em7 | A7 | D | D|
+{end_of_grid}
+Feliz Navidad[Em7] [A7]
+Feliz Navidad[D] [Bm7]
+Feliz Navidad[Em7]
+Próspero [A7]año y felici[D]dad
+
+{comment: Verse}
+Feliz Navidad[Em7] [A7]
+Feliz Navidad[D] [Bm7]
+Feliz Navidad[Em7]
+Próspero [A7]año y felici[D]dad
+
+{comment: Chorus}
+{start_of_grid}
+| Em7 | A7 | D | Bm7 | Em7 | A7 | D | stop D|
+{end_of_grid}
+*I wanna wish you a [Em7]Merry Christmas[A7]*
+*I wanna wish you a [D]Merry Christmas[Bm7]*
+*I wanna wish you a [Em7]Merry Christmas*
+*From the [A7]bottom of my [D]heart.*
+
+{comment: Interlude}
+{start_of_grid}
+| Em7 | A7 | D | Bm7 | Em7 | A7 | D | stop D|
+{end_of_grid}
+
+{comment: Verse}
+Feliz Navidad[Em7] [A7]
+Feliz Navidad[D] [Bm7]
+Feliz Navidad[Em7]
+Próspero [A7]año y felici[D]dad
+
+{comment: Verse}
+Feliz Navidad[Em7] [A7]
+Feliz Navidad[D] [Bm7]
+Feliz Navidad[Em7]
+Próspero [A7]año y felici[D]dad
+
+{comment: Chorus}
+*I wanna wish you a [Em7]Merry Christmas[A7]*
+*I wanna wish you a [D]Merry Christmas[Bm7]*
+*I wanna wish you a [Em7]Merry Christmas*
+*From the [A7]bottom of my [D]heart.*

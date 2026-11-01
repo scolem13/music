@@ -14,3 +14,5 @@ tests/band/**/*.png
 /_site/tests/
 research_notes/mlt-sources/
 .dev.vars
+
+__pycache__/
