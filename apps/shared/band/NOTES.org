@@ -1401,3 +1401,10 @@ history pages.
 - Not the same bug as the 2026-10-13 pickup fix above (buildForm and the tune's last bar), though it sounds the same.
 - Test: tests/lessons/abc-play-align.cdp.js (fails on the old code).
 ** VERIFY BY EAR: a DMTI tune at slider 60 and 150, and the Saints.
+
+* Planned: full scores played by a DAW over MIDI -- 2026-10-31
+** TODO Try the full-score player sending one MIDI channel per staff to Logic Pro (Mac, IAC Driver) and to Ableton Live,
+   on both Mac (IAC Driver) and Windows (the school lab: loopMIDI virtual port, Chrome/Edge Web MIDI).
+   Open questions: which Ableton edition the lab has (orchestral packs are Suite-only as far as known; Lite/Intro limit tracks),
+   16 channels per port (Sadko needs ~21: two ports or shared channels), ASIO on the lab PCs. modx.js sends to the MODX only,
+   so the port choice and per-staff channels are new. In-browser samples stay the default.

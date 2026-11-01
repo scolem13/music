@@ -1,0 +1,55 @@
+---
+title: "Full Scores"
+subtitle: "Orchestral scores to read and hear: every staff drawn, played on the site's instrument samples"
+toc: false
+page-layout: full
+description: "Full orchestral scores drawn in the browser and played on sampled instruments: choose which instruments to see and hear, follow the music page by page or along one long line, start from any note or bar, and even out the loudness."
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
+<script src="/apps/shared/abc-play.js?v=20"></script>
+<script src="/apps/shared/full-score.js?v=1"></script>
+<style>
+#fsp { --fs-paper: #fffdf8; --fs-rule: var(--bs-border-color, #ccc); --fs-accent: #7a2e2a; }
+#fsp-list a { font-weight: 600; } #fsp-list .fsp-sub { font-size: .88rem; opacity: .75; }
+#fsp-head h2 { margin: 0 0 .1rem; } #fsp-head p { margin: 0 0 .6rem; opacity: .8; }
+#fsp .notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: .5rem 1.5rem; font-size: .92rem; }
+#fsp .notes h2 { font-size: 1rem; margin: .4rem 0; }
+</style>
+```
+
+## Scores
+
+<div id="fsp-list"></div>
+
+<div id="fsp-head"></div>
+<div id="fsp"></div>
+
+## How to use a score
+
+- **Play** (or Space) plays from the start, from a clicked note, or from a bar typed in the **Bar** box; Space again pauses.
+- **Choose instruments** shows and plays only some of the orchestra; views can be saved by name.
+- **Layout**: pages scrolling down, pages side by side (◀ ▶ or the arrow keys turn them), or one long line; bar numbers; bar lines through
+  each family or the whole score; staff spacing even or kept apart; size, bar width and page height. Your layout is kept in this browser.
+- **Even out the loudness** brings soft and loud passages, and solos and tutti, closer together, for hearing inner parts.
+
+```{=html}
+<script>
+(function () {
+  var BASE = "/apps/shared/data/full-scores/", V = "1";
+  var id = new URLSearchParams(location.search).get("id");
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  fetch(BASE + "index.json?v=" + V).then(function (r) { return r.json(); }).then(function (list) {
+    document.getElementById("fsp-list").innerHTML = "<ul>" + list.map(function (s) {
+      return '<li><a href="?id=' + encodeURIComponent(s.id) + '">' + esc(s.composer + ": " + s.title + ", " + s.movement) + '</a><br><span class="fsp-sub">' + esc(s.orchestra) + "</span></li>";
+    }).join("") + "</ul>";
+    var s = list.filter(function (x) { return x.id === id; })[0];
+    if (!s) return;
+    document.getElementById("fsp-head").innerHTML = "<h2>" + esc(s.composer + ": " + s.title) + "</h2><p>" + esc(s.movement + " · " + s.orchestra) + "</p>";
+    return Promise.all([fetch(BASE + s.abc + "?v=" + V).then(function (r) { return r.text(); }), s.notes ? fetch(BASE + s.notes + "?v=" + V).then(function (r) { return r.text(); }) : ""])
+      .then(function (a) { window.score = FullScore.mount("#fsp", { abc: a[0], id: s.id, notes: a[1] }); });
+  }).catch(function (e) { document.getElementById("fsp-list").textContent = "The score list did not load: " + e.message; });
+})();
+</script>
+```

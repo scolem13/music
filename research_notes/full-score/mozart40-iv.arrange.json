@@ -1,0 +1,5 @@
+{ "order": ["5", "1", "2", "3", "4", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"],
+  "names": { "1": "Oboi", "5": "Flauto", "3": "Clarinetti in B", "8": "Fagotti", "10": "Corni in B", "11": "Corni in G",
+             "12": "Violino I", "14": "Violino II", "16": "Viola", "18": "Violoncello e Basso" },
+  "staves": [["18", "19"]],
+  "doubles": { "19": { "of": "18", "octave": -1, "name": "Basso" } } }
