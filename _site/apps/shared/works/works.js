@@ -1,6 +1,6 @@
 // works.js: the pieces in works-data.js (window.WORKS) and the "Recordings & resources" panel shown with them.
-//   <script src="/apps/shared/works/works-data.js?v=5"></script>
-//   <script src="/apps/shared/works/works.js?v=8"></script>
+//   <script src="/apps/shared/works/works-data.js?v=7"></script>
+//   <script src="/apps/shared/works/works.js?v=10"></script>
 //   Works.mount(host, "tune" | "theme" | "analysed", id)   draws the panel for whatever work holds that item (hides host if none)
 //   kinds: tune, theme, analysed, score (the full-score player: { analysed: id } or { id }, href adds &bar= when x.bar is set)
 //   Works.of(kind, id) -> work or null · Works.get(workId) · Works.ids() · Works.href(kind, ref) · Works.source(recording)

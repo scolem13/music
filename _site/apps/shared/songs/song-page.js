@@ -37,6 +37,14 @@ function songPageRun() {
   }
   window.SONG_ID = id;
   window.SONG_PATH = location.pathname + "?id=" + id;
+  // What this page offers the navbar's metronome, drone and circle ("From page" buttons, practice-widgets.js): the song's own
+  // key / tempo / meter, from its ChordPro directives. The band section below updates the tempo (and fills a missing key from its chart).
+  window.PAGE_MUSIC = { name: "this song", key: song.key || "", tempo: parseInt(song.tempo, 10) || null, meter: song.time || "" };
+  window.setPageMusic = function (o) {
+    var m = window.PAGE_MUSIC, changed = false;
+    Object.keys(o || {}).forEach(function (k) { if (o[k] != null && o[k] !== "" && m[k] !== o[k]) { m[k] = o[k]; changed = true; } });
+    if (changed) { try { window.dispatchEvent(new CustomEvent("page-music-change")); } catch (e) {} }
+  };
 
   // its programme, and its place in it
   function slugOf(entry) { return String(entry).split("@")[0]; }
@@ -1038,7 +1046,7 @@ window.carolTypeChoice = function () {
   if (window.ABCJS) { draw(); return; }
   var script = document.createElement('script');
   var depth = '';
-  script.src = depth + '/apps/shared/abcjs-basic.js?v=3';
+  script.src = depth + '/apps/shared/abcjs-basic.js?v=4';
   script.onload = draw;
   script.onerror = function () {
     blocks.forEach(function (block) {
@@ -1310,7 +1318,7 @@ window.carolTypeChoice = function () {
                '/apps/shared/band/comp.js?v=32', '/apps/shared/band/presets.js?v=7', '/apps/shared/band/catalog.js?v=37', '/apps/shared/band/drums.js?v=18', '/apps/shared/band/sounds.js?v=20',
                '/apps/shared/band/player.js?v=128'];
   if (!window.ABCJS && chart.sections.some(function (x) { return x.abc; })) {
-    FILES.unshift('/apps/shared/abcjs-basic.js?v=3');
+    FILES.unshift('/apps/shared/abcjs-basic.js?v=4');
   }
   var depth = '';
 
@@ -1560,13 +1568,34 @@ window.carolTypeChoice = function () {
   tempoBox.min = 40; tempoBox.max = 260; tempoBox.step = 1;
   tempoBox.value = choice('tempo', (chart.setup && parseInt(chart.setup.tempo, 10)) || parseInt(chart.tempo, 10) || 110);
   label('Tempo', tempoBox);
+  // the navbar's From page reads this tempo (and the key the chart is written in, for a song whose directives name none)
+  function publishMusic() {
+    window.setPageMusic({ tempo: parseInt(tempoBox.value, 10) || null, key: window.PAGE_MUSIC.key ? '' : chart.key || '', meter: window.PAGE_MUSIC.meter ? '' : chart.time || '' });
+  }
+  tempoBox.addEventListener('input', publishMusic);
+  tempoBox.addEventListener('change', publishMusic);
+  publishMusic();
   var styleBox = label('Style', select([], ''));
   var fillsBox = label('Fills', select([
     ['sections', 'Into each section'], ['auto', 'As they come'],
     ['busy', 'Busier'], ['none', 'Only when asked']],
     choice('fills', 'sections')));
+  // A song whose arrangement opens with an intro before the first sung line starts with no count-in (the intro itself sets the
+  // time); a count-in the user picked is kept. Read from the drawn page: walking the sections in order, a heading "Intro..." before
+  // any section with sung words (a .ln line) means yes; the first section with words and another heading means no.
+  function introFirst() {
+    var secs = document.querySelectorAll('#song-body section.level2');
+    for (var i = 0; i < secs.length; i++) {
+      var h = secs[i].querySelector('h2');
+      if (h && /^\s*intro/i.test(h.textContent)) return true;
+      var words = secs[i].querySelector('.ln');
+      if (words && /[A-Za-z\u00c0-\u00ff]{2,}/.test(words.textContent.replace(/\s+/g, ' '))) return false;
+    }
+    return false;
+  }
+  window.songIntroFirst = introFirst;
   var countBox = label('Count-in', select([
-    ['1', '1 bar'], ['2', '2 bars'], ['0', 'None']], choice('count', '1')));
+    ['1', '1 bar'], ['2', '2 bars'], ['0', 'None']], choice('count', introFirst() ? '0' : '1')));
   if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
     var siteBox = document.createElement('input');
     siteBox.type = 'text';

@@ -71,7 +71,7 @@ toc: false
   <div id="ct-list"></div>
   <div class="ct-pager"><button type="button" id="ct-prev2">← Previous</button><span class="ct-pagelab"></span><button type="button" id="ct-next2">Next →</button></div>
 </div>
-<script src="/apps/shared/abcjs-basic.js?v=3"></script>
+<script src="/apps/shared/abcjs-basic.js?v=4"></script>
 <script src="/apps/shared/abc-core.js?v=3"></script>
 <script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
 <script src="/apps/shared/pitch-spelling.js?v=1"></script>
@@ -83,9 +83,9 @@ toc: false
 <script src="/apps/shared/audio.js?v=10"></script>
 <script src="/apps/themes/themes-data.js?v=3"></script>
 <script src="/apps/shared/ornament-play.js?v=1"></script>
-<script src="/apps/shared/works/works-data.js?v=5"></script>
+<script src="/apps/shared/works/works-data.js?v=7"></script>
 <script src="/apps/themes/themes-recordings.js?v=1"></script>
-<script src="/apps/shared/works/works.js?v=8"></script>
+<script src="/apps/shared/works/works.js?v=10"></script>
 <script src="/apps/themes/themes-page.js?v=10"></script>
 ```
 

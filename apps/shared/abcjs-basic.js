@@ -5206,6 +5206,10 @@ var ParseHeader = function ParseHeader(tokenizer, warn, multilineVars, tune, tun
       var endChar = multilineVars.iChar + e + 1;
       switch (line.substring(i, i + 3)) {
         case "[I:":
+          // everything-music-site addition: [I:stem up|down|auto] switches a voice's stems from here on (auto = by pitch, as
+          // for one voice on a staff); abcjs's engraver already handles mid-voice "stem" elements (it makes them for overlays)
+          var stemSet = /^\s*stems?\s+(up|down|auto)\s*$/.exec(line.substring(i + 3, e));
+          if (stemSet) { if (tuneBuilder.hasBeginMusic()) tuneBuilder.appendElement('stem', startChar, endChar, { direction: stemSet[1] }); return [e - i + 1 + ws]; }
           var err = parseDirective.addDirective(line.substring(i + 3, e));
           if (err) warn(err, line, i);
           return [e - i + 1 + ws];

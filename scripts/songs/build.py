@@ -109,7 +109,7 @@ def main():
         first = first_words(html)
         unverified = bool(re.search(r'UNVERIFIED', src.read_text(encoding='utf-8'))) if src.exists() else False
         song = {'title': title, 'classes': meta.get('body-classes') or 'lyrics', 'html': html,
-                'key': d.get('key', ''), 'time': d.get('time', ''), 'tempo': d.get('tempo', ''),
+                'key': d.get('key', '') or meta.get('key', ''), 'time': d.get('time', ''), 'tempo': d.get('tempo', ''),
                 'artist': d.get('artist') or d.get('composer') or '', 'first': first}
         if unverified:
             song['unverified'] = True

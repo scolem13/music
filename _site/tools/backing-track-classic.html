@@ -2421,7 +2421,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   function loadAbcjs(){
     if (window.ABCJS) return Promise.resolve();
     if (!abcjsLoad) abcjsLoad = new Promise(function(res, rej){ var sc = document.createElement("script");
-      sc.src = "/apps/shared/abcjs-basic.js?v=3"; sc.onload = res; sc.onerror = function(){ abcjsLoad = null; rej(); }; document.head.appendChild(sc); });
+      sc.src = "/apps/shared/abcjs-basic.js?v=4"; sc.onload = res; sc.onerror = function(){ abcjsLoad = null; rej(); }; document.head.appendChild(sc); });
     return abcjsLoad;
   }
   var drawnFirst = null;
@@ -3596,7 +3596,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../apps/shared/degree-names.js?v=1"></script>
 <script src="../apps/shared/degree-caret.js?v=2"></script>
 <script src="../apps/shared/circle-of-fifths.js?v=2"></script>
-<script src="../apps/shared/practice-widgets.js?v=10"></script>
+<script src="../apps/shared/practice-widgets.js?v=12"></script>
 <!-- Both sidebars fold away, each from its own button in the navbar, and each choice is remembered:
      the left (site menu) from a button at the navbar's left, the right ("On this page" and page tools) from one at its right.
      A sidebar with nothing in it is not shown at all and gets no button: the left when the page is in no sidebar section,

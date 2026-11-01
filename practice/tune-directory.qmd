@@ -129,7 +129,7 @@ YouTube and paste the link there.</p>
 .tds tbody tr:hover { background: var(--bs-tertiary-bg, #f6f8fb); }
 @media (max-width: 600px) { .td-list { columns: 1; padding-left: .3rem; } }
 </style>
-<script src="/apps/shared/abcjs-basic.js?v=3"></script>
+<script src="/apps/shared/abcjs-basic.js?v=4"></script>
 <script src="/apps/shared/abc-core.js?v=3"></script>
 <script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
 <script src="/apps/shared/pitch-spelling.js?v=1"></script>
@@ -140,8 +140,8 @@ YouTube and paste the link there.</p>
 <script src="/apps/shared/tune-library.js?v=20"></script>
 <script src="/apps/tunes/tunes-object.js?v=2"></script>
 <script src="/apps/themes/themes-data.js?v=3"></script>
-<script src="/apps/shared/works/works-data.js?v=5"></script>
-<script src="/apps/shared/works/works.js?v=8"></script>
+<script src="/apps/shared/works/works-data.js?v=7"></script>
+<script src="/apps/shared/works/works.js?v=10"></script>
 <script src="/apps/shared/mlt/recordings.js?v=2"></script>
 <script src="/apps/shared/works/tune-directory.js?v=8"></script>
 <script src="/apps/shared/works/td-sheet.js?v=2"></script>

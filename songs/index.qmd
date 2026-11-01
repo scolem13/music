@@ -9,7 +9,7 @@ description: "Words and chords for the songs we sing in class and in concerts: c
 ```{=html}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400&family=JetBrains+Mono:wght@400&family=Lexend:wght@300;400&display=swap">
 <link rel="stylesheet" href="/apps/shared/songs/songs.css?v=1">
-<script src="/apps/shared/data/songs.js?v=1"></script>
+<script src="/apps/shared/data/songs.js?v=3"></script>
 <script>if (!/[?&]id=/.test(location.search)) document.write('<script src="/apps/shared/section-fold.js?v=1"><\/script>');</script>
 ```
 
@@ -61,27 +61,28 @@ Choir moves on stage by 18:45. Countdown and lighting of the tree at 19:35, befo
 ::: {.songs-list}
 | Song | Key | Begins | In |
 |---|---|---|---|
-| [Count on Me](?id=count-on-me) |  | [If you ever find yourself stuck in the middle of the sea I'll sail the world to…]{.sl-first} |  |
+| [Count on Me](?id=count-on-me) | C | [If you ever find yourself stuck in the middle of the sea I'll sail the world to…]{.sl-first} |  |
 | [Deck The Halls](?id=deck-the-halls) | D | [Deck the halls with boughs of holly Fa-la-la-la-la, la-la, la, la ’Tis the…]{.sl-first} | Conrad Tree Lighting |
-| [End of Beginning](?id=end-of-beginning) |  | [Just one more tear to cry One teardrop from my eye You better save it for The…]{.sl-first} | Winter Concert |
+| [End of Beginning](?id=end-of-beginning) | D | [Just one more tear to cry One teardrop from my eye You better save it for The…]{.sl-first} | Winter Concert |
 | [Feliz Navidad](?id=feliz-navidad) | D | [Feliz Navidad Feliz Navidad Feliz Navidad Próspero año y felicidad]{.sl-first} | Conrad Tree Lighting |
-| [Frosty the Snowman](?id=frosty-the-snowman) |  | [Frosty the Snowman Was a jolly happy soul, With a corn cob pipe and a button…]{.sl-first} |  |
+| [Frosty the Snowman](?id=frosty-the-snowman) | C | [Frosty the Snowman Was a jolly happy soul, With a corn cob pipe and a button…]{.sl-first} |  |
 | [Jingle Bell Rock](?id=jingle-bell-rock) | G | [Jingle bell, jingle bell, jingle bell rock Jingle bells swing and jingle bells…]{.sl-first} | Conrad Tree Lighting |
 | [La Navidad](?id=la-navidad) | G | [La Navidad. Todos celebramos! La Navidad. Let us celebrate!]{.sl-first} | Conrad Tree Lighting |
 | [Merry Christmas Bells](?id=merry-christmas-bells) | C | [Oh, the bells are ringing out today In a joyous Christmas kind of way. They’re…]{.sl-first} | Conrad Tree Lighting |
-| [Notion](?id=notion) |  | [Sure it’s a calming notion, perpetual in motion But I don’t need the comfort of…]{.sl-first} |  |
+| [Notion](?id=notion) | Bm | [Sure it’s a calming notion, perpetual in motion But I don’t need the comfort of…]{.sl-first} |  |
 | [O Hanukkah](?id=o-hanukkah) | Am | [Hanukkah, Oh Hanukkah Come light the menorah Let’s have a party We’ll all dance…]{.sl-first} | Conrad Tree Lighting |
-| [O Tannenbaum (O Christmas Tree )](?id=o-tannenbaum-o-christmas-tree) |  | [O Tannenbaum, o Tannenbaum Wie treu sind deine Blätter O Tannenbaum, o…]{.sl-first} | Conrad Tree Lighting |
-| [Santa Claus is Coming to Town](?id=santa-claus-is-coming-to-town) |  | [Oh, you better watch out You better not cry You better not pout I'm telling you…]{.sl-first} | Conrad Tree Lighting |
-| [Silent Night](?id=silent-night) |  | [Silent night, Holy night, All is calm all is bright Round yon virgin mother and…]{.sl-first} |  |
+| [O Tannenbaum (O Christmas Tree )](?id=o-tannenbaum-o-christmas-tree) | D | [O Tannenbaum, o Tannenbaum Wie treu sind deine Blätter O Tannenbaum, o…]{.sl-first} | Conrad Tree Lighting |
+| [Santa Claus is Coming to Town](?id=santa-claus-is-coming-to-town) | A | [Oh, you better watch out You better not cry You better not pout I'm telling you…]{.sl-first} | Conrad Tree Lighting |
+| [Silent Night](?id=silent-night) | F | [Silent night, Holy night, All is calm all is bright Round yon virgin mother and…]{.sl-first} |  |
+| [Take Me to the River](?id=take-me-to-the-river) | E | [I don't know why I love you like I do All the changes that you put me through…]{.sl-first} |  |
 | [Twelve Days of Christmas](?id=twelve-days-of-christmas) | D | [On the first day of Christmas, My true love sent to me Twelve drummers…]{.sl-first} | Conrad Tree Lighting |
-| [Viva la Vida](?id=viva-la-vida) |  | [I used to rule the world Seas would rise when I gave the word Now in the…]{.sl-first} | Winter Concert |
-| [We Wish You a Merry Christmas](?id=we-wish-you-a-merry-christmas) |  | [We wish you a Merry Christmas We wish you a Merry Christmas We wish you a Merry…]{.sl-first} | Conrad Tree Lighting |
+| [Viva la Vida](?id=viva-la-vida) | Db | [I used to rule the world Seas would rise when I gave the word Now in the…]{.sl-first} | Winter Concert |
+| [We Wish You a Merry Christmas](?id=we-wish-you-a-merry-christmas) | Eb | [We wish you a Merry Christmas We wish you a Merry Christmas We wish you a Merry…]{.sl-first} | Conrad Tree Lighting |
 | [Winter Wonderland](?id=winter-wonderland) | Eb | [Sleigh bells ring, are you listening? In the lane, snow is glistening A…]{.sl-first} | Conrad Tree Lighting |
 :::
 
 <!-- songs:end -->
 
 ```{=html}
-<script src="/apps/shared/songs/song-page.js?v=1"></script>
+<script src="/apps/shared/songs/song-page.js?v=3"></script>
 ```

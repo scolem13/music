@@ -19,6 +19,19 @@
 //           one staff's bottom line and the next one's top; with "apart", more where the two staves' outlines, compared in
 //           6-unit strips as MuseScore's skylines are, would come closer than 3 units), stretches the family
 //           brackets, and draws bar lines between staves (within a family, or through the whole score).
+// PLAYED ORDER: the played form is written out bar by bar in playing order (|: :| :: and first / second endings taken here, not
+// by abcjs); "Skip repeats" plays each bar once and only the last ending. Every played bar's start time (barMs) is the one
+// timeline that the bar highlight while playing, Follow, Go to bar, a clicked note and Pause all use. (Two abcjs traps met on the
+// way: a T: line such as "… K. 550" throws off every startChar abcjs reports, so the played form has no title; and abcjs sometimes
+// times a bar's first event on the bar line before it, which counts as the next bar.)
+// STEMS (each drawn bar, staff by staff; Gould, Behind Bars, ch. "Stems" and "Two parts on a staff"):
+//   one voice on a staff: by pitch (abcjs: below the middle line up, on or above it down; a chord or beamed group by its
+//     average);
+//   two voices on a staff, both with something to see in the bar (notes or written rests): the first voice up, the second down,
+//     whatever the pitch, so each player's line stays clear;
+//   two voices, the other one silent in the bar (only invisible x, e.g. the parts written as one line or as chords "a 2"):
+//     by pitch, as for one voice.
+//   Written as [I:stem up|down|auto] at the bar where it changes (an addition to apps/shared/abcjs-basic.js).
 // Each drawn note is matched to the played form through its place in its voice's line (voice id + character offset, after the
 // same tidying on both sides), so lighting, Follow and "play from here" work in every layout. A display line (the bass where
 // it doubles the cello) is not matched: those notes light through the voice they double.
@@ -92,7 +105,8 @@
     var bars = {}; Object.keys(body).forEach(function (v) { bars[v] = splitBars(body[v]); });
     Object.keys(display).forEach(function (v) { display[v].bars = splitBars(display[v].body); });
     var nBars = Math.max.apply(null, Object.keys(bars).map(function (v) { return bars[v].length; }).concat([0]));
-    return { head: head, decl: decl, body: body, bars: bars, nBars: nBars, parts: parts, staffOf: staffOf, drawStaff: drawStaff, display: display };
+    var ref = order.filter(function (v) { return bars[v] && bars[v].length === nBars; })[0];
+    return { repeats: ref ? repeatMap(bars[ref]) : [], head: head, decl: decl, body: body, bars: bars, nBars: nBars, parts: parts, staffOf: staffOf, drawStaff: drawStaff, display: display };
   }
 
   // a voice's line cut into bars: [{ start, end, text, notes }] (text = the bar's music and the bar line that ends it; a bar line
@@ -125,6 +139,73 @@
       b.text = src.slice(b.start, b.end);
       b.notes = /[A-Ga-g]/.test(b.text.replace(/\[[A-Za-z]:[^\]]*\]|"[^"]*"|![^!]*!/g, ""));
     });
+    return out;
+  }
+
+  // the bar lines and volta marks inside a bar's text (outside quotes, !decorations!, chords and inline fields): [{ at, text }]
+  function barTokens(src) {
+    var out = [], i = 0, depth = 0, q = false, bang = false;
+    while (i < src.length) {
+      var c = src[i], r;
+      if (q) { if (c === '"') q = false; i++; continue; }
+      if (bang) { if (c === "!") bang = false; i++; continue; }
+      if (c === '"') { q = true; i++; continue; }
+      if (c === "!") { bang = true; i++; continue; }
+      if (c === "[" && /^\[[A-Za-z]:/.test(src.slice(i))) { i = src.indexOf("]", i) + 1 || src.length; continue; }
+      if (c === "[" && (r = /^\[\d[\d,-]*/.exec(src.slice(i)))) { out.push({ at: i, text: r[0] }); i += r[0].length; continue; }
+      if (c === "[") { depth++; i++; continue; }
+      if (c === "]" && depth) { depth--; i++; continue; }
+      if (!depth && (r = /^(?::*\|[\]|:]*[\d,-]*|::)/.exec(src.slice(i)))) { out.push({ at: i, text: r[0] }); i += r[0].length; continue; }
+      i++;
+    }
+    return out;
+  }
+  // the repeats, read off one voice's bars (all voices share their bar lines): per bar { start: a repeat starts here, end: one
+  // ends here, volta: [ending numbers] or null }. A volta runs to the bar that ends a repeat, or to the next volta, or (the last
+  // one, with neither) to the next bar line that is not a plain one, at most 8 bars.
+  function repeatMap(bars) {
+    var R = bars.map(function () { return { start: false, end: false, volta: null }; }), open = null, len = 0;
+    bars.forEach(function (b, k) {
+      var music = b.text.search(/[A-Ga-gzxZ]/), toks = barTokens(b.text);
+      toks.forEach(function (t) {
+        var lead = music >= 0 && t.at < music, num = /([\d][\d,-]*)$/.exec(t.text);
+        if (/^\[\d/.test(t.text)) { (lead ? R[k] : R[k + 1] || {}).voltaAt = num[1]; return; }
+        if (/:$|::/.test(t.text.replace(/[\d,-]+$/, ""))) (lead ? R[k] : R[k + 1] || {}).start = true;
+        if (/^:/.test(t.text) && !lead) R[k].end = true;
+        if (num && !lead && R[k + 1]) R[k + 1].voltaAt = num[1];
+      });
+    });
+    R.forEach(function (r, k) {
+      if (r.voltaAt) { open = r.voltaAt.split(",").map(Number); len = 0; }
+      if (open) { r.volta = open; len++; }
+      var plain = /^\s*\|\s*$/.test(((barTokens(bars[k].text).filter(function (t) { return t.at > bars[k].text.search(/[A-Ga-gzxZ]/); }).pop() || {}).text) || "|");
+      if (open && (r.end || (R[k + 1] && R[k + 1].voltaAt) || !plain || len >= 8)) open = null;
+      delete r.voltaAt;
+    });
+    return R;
+  }
+  // the bars in the order they are played: repeats taken (and each volta on its pass), or with skip, each bar once and only the
+  // last ending of each set of endings
+  function playOrder(R, skip) {
+    var n = R.length, out = [];
+    if (skip) {
+      R.forEach(function (r, k) {
+        if (!r.volta) { out.push(k); return; }
+        var a = k; while (a > 0 && R[a - 1].volta) a--; var b = k; while (b + 1 < n && R[b + 1].volta) b++;
+        var last = 0; for (var j = a; j <= b; j++) last = Math.max.apply(null, [last].concat(R[j].volta));
+        if (r.volta.indexOf(last) >= 0) out.push(k);
+      });
+      return out;
+    }
+    var k = 0, pass = 1, from = 0, taken = {}, guard = 0;
+    while (k < n && guard++ < n * 4) {
+      if (R[k].start && k !== from) { from = k; pass = 1; }
+      if (R[k].volta && R[k].volta.indexOf(pass) < 0) { k++; continue; }
+      out.push(k);
+      if (R[k].end && !taken[k]) { taken[k] = true; pass++; k = from; continue; }
+      if (R[k].end) { from = k + 1; pass = 1; }
+      k++;
+    }
     return out;
   }
 
@@ -224,6 +305,7 @@
       '<div class="fs-bar"><button type="button" class="fs-play">▶ Play</button><button type="button" class="fs-stop">■ Stop</button>' +
       '<label for="fs-q-' + id + '">♩ = <input id="fs-q-' + id + '" type="range" class="fs-q" min="40" max="' + Math.max(320, q0) + '" step="4" value="' + q0 + '"><span class="fs-tempo">' + q0 + '</span></label>' +
       '<label><input type="checkbox" class="fs-follow" checked> Follow</label>' +
+      '<label title="Each bar once; of first and second endings, only the last"><input type="checkbox" class="fs-skip"> Skip repeats</label>' +
       '<span class="fs-pageturn" hidden><button type="button" class="fs-chip fs-prev" aria-label="Previous page">◀ Page</button> <button type="button" class="fs-chip fs-next" aria-label="Next page">Page ▶</button></span>' +
       '<form class="fs-go"><label>Bar <input type="number" class="fs-goto" min="0" max="' + S.nBars + '" inputmode="numeric" aria-label="Go to bar number"></label><button type="submit" class="fs-chip">Go</button></form>' +
       '<button type="button" class="fs-chip fs-fromclear" hidden>From the start</button><span class="fs-status" aria-live="polite"></span></div>' +
@@ -537,7 +619,9 @@
           var vid = text.flat[k++]; if (!vid || !matchable[vid]) return;
           els.forEach(function (e) {
             if (e.el_type !== "note" || e.startChar == null || !e.abselem) return;
-            var key = vid + ":" + (e.startChar - text.start[vid] + (base[vid] || 0));
+            var off = base[vid] ? base[vid](e.startChar - text.start[vid]) : e.startChar - text.start[vid];
+            if (off == null) return;
+            var key = vid + ":" + off;
             keyOf.set(e, key);
             (elMap[key] = elMap[key] || []).push(e.abselem.elemset || []);
           });
@@ -600,13 +684,32 @@
         }).filter(Boolean);
       }).filter(function (st) { return st.length; });
       if (!cf.length) cf = [[[fams[0][0][0]]]];
-      var base = {};
+      var base = {}, staffOf = {};
+      cf.forEach(function (st) { st.forEach(function (g) { g.forEach(function (v) { staffOf[v] = g; }); }); });
+      function barsOf(v) { return S.display[v] && shownV[S.display[v].of] ? S.display[v].bars : S.bars[v]; }
+      function what(v, k) {                               // "notes" | "rests" (visible ones) | "none" (only x, nothing to see)
+        var b = barsOf(v)[k]; if (!b) return "none"; if (b.notes) return "notes";
+        return /(^|[^A-Za-z"!])[zZ]/.test(b.text.replace(/"[^"]*"|![^!]*!|\[[A-Za-z]:[^\]]*\]/g, "")) ? "rests" : "none";
+      }
       var t = assemble(S, cf, function (v) {
-        var d = S.display[v] && shownV[S.display[v].of], bs = d ? S.display[v].bars : S.bars[v], src = d ? S.display[v].body : S.body[v];
-        var a = bs[s], b = bs[e - 1]; if (!a) return "";
-        var pre = stateBefore(S, v, s);
-        base[v] = a.start - pre.length;                   // the carried fields are not in the voice's line
-        return pre + src.slice(a.start, b.end);
+        var d = S.display[v] && shownV[S.display[v].of], bs = barsOf(v), src = d ? S.display[v].body : S.body[v];
+        if (!bs[s]) return "";
+        // stems, bar by bar (see STEMS in the header): two voices with something to see on the staff = first up, second down;
+        // the other voice silent (only x) = by pitch. A one-voice staff is left to abcjs (by pitch)
+        var g = staffOf[v] || [v], out = stateBefore(S, v, s), segs = [], last = null;
+        for (var k = s; k < e && bs[k]; k++) {
+          var b = bs[k], text = src.slice(b.start, b.end), dir = null;
+          if (g.length > 1) dir = g.every(function (o) { return o === v || what(o, k) === "none"; }) ? "auto" : g.indexOf(v) === 0 ? "up" : "down";
+          var lead = dir && dir !== last ? /^(?:\s*(?::*\|[\]|:]*[\d,-]*|::|\[\d[\d,-]*))*/.exec(text)[0].length : 0;
+          if (lead) { segs.push({ d: out.length, o: b.start, n: lead }); out += text.slice(0, lead); }
+          if (dir && dir !== last) { out += "[I:stem " + dir + "]"; last = dir; }
+          segs.push({ d: out.length, o: b.start + lead, n: text.length - lead }); out += text.slice(lead);
+        }
+        base[v] = function (off) {                         // a drawn offset -> the offset in the voice's own line
+          for (var i = segs.length - 1; i >= 0; i--) if (off >= segs[i].d) return off - segs[i].d < segs[i].n ? segs[i].o + off - segs[i].d : null;
+          return null;
+        };
+        return out;
       }, { noTitle: true, noTempo: sys > 0, short: sys > 0, noNames: noNames, directives: ["%%sysstaffsep 0", "%%staffsep 0", "%%stretchlast 1"] });
       t.fams = cf; t.base = base;
       return t;
@@ -708,16 +811,22 @@
       if (pg) sheet.scrollLeft = pg.offsetLeft - 10;
       if (L.mode === "line") { var r0 = at.el.getBoundingClientRect(), sr = sheet.getBoundingClientRect(); sheet.scrollLeft += r0.left - sr.left - 140; }
       var r = at.target.getBoundingClientRect(); global.scrollBy({ top: r.top - 80 });
-      var svg = at.target.querySelector("svg"), bb = at.el.getBBox(), nx = barAt[idx + 1] && barAt[idx + 1].target === at.target ? barAt[idx + 1].el.getBBox().x : bb.x + L.barWidth;
-      var vb = (svg.getAttribute("viewBox") || "0 0 0 0").split(/[\s,]+/).map(Number), fl = document.createElementNS(NS, "rect");
-      fl.setAttribute("class", "fs-flash"); fl.setAttribute("x", bb.x - 4); fl.setAttribute("width", Math.max(10, nx - bb.x)); fl.setAttribute("y", vb[1]); fl.setAttribute("height", vb[3]);
-      svg.insertBefore(fl, svg.firstChild); setTimeout(function () { fl.remove(); }, 1800);
-      // play from here: the first moment of the played form in that bar or later
+      var fl = highlight(idx, "fs-flash"); if (fl) setTimeout(function () { fl.remove(); }, 1800);
+      // play from here: the bar's first time in the playing order (skipped bars: the next one that is played)
       playForm();
-      var hit = timing().filter(function (e) { return e.keys.some(function (key) { return barOfKey(key) >= idx; }); })[0];
-      clearFrom(true); if (!hit) return;
-      fromMs = hit.ms; $(".fs-fromclear").hidden = false; status.textContent = "Play starts at bar " + n + ".";
+      var j = played.order.indexOf(idx); if (j < 0) j = played.order.findIndex(function (k) { return k > idx; });
+      clearFrom(true); if (j < 0) return;
+      fromMs = barMs()[j]; $(".fs-fromclear").hidden = false; status.textContent = "Play starts at bar " + n + ".";
       if (playing) play();
+    }
+    // the shaded band over bar idx, the whole system tall (goBar's flash, and the bar now playing)
+    function highlight(idx, cls, rect) {
+      var at = barAt[idx]; if (!at) return null;
+      var svg = at.target.querySelector("svg"), bb = at.el.getBBox(), nx = barAt[idx + 1] && barAt[idx + 1].target === at.target ? barAt[idx + 1].el.getBBox().x : bb.x + L.barWidth * 0.9;
+      var vb = (svg.getAttribute("viewBox") || "0 0 0 0").split(/[\s,]+/).map(Number), fl = rect || document.createElementNS(NS, "rect");
+      fl.setAttribute("class", cls); fl.setAttribute("x", bb.x - 4); fl.setAttribute("width", Math.max(10, nx - bb.x)); fl.setAttribute("y", vb[1]); fl.setAttribute("height", vb[3]);
+      if (fl.parentNode !== svg) svg.insertBefore(fl, svg.firstChild);
+      return fl;
     }
     function barOfKey(key) {
       var c = key.lastIndexOf(":"), v = key.slice(0, c), off = +key.slice(c + 1), bs = S.bars[v] || [];
@@ -732,30 +841,63 @@
     var rt, lastW = 0; global.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { var w = sheet.clientWidth; if (Math.abs(w - lastW) > 8) { lastW = w; var keep = playing; stop(); draw(); if (keep) play(); } }, 250); });
 
     // ---------- the played form and its timing
+    // The played form is written out in playing order (repeats unrolled here, not by abcjs: in a score of many voices abcjs's own
+    // repeat handling put whole bars of some voices minutes away). Each bar's repeat signs and volta marks become spaces (offsets
+    // kept) and it ends with "|"; a bar played after a jump gets the key / meter / clef in force there. segs[v][j] = where order[j]'s
+    // text starts in the voice's played line and in its own line, so every played character maps back to "voice:offset" and to j.
+    function blank(t) { var a = t.split(""); barTokens(t).forEach(function (x) { for (var i = 0; i < x.text.length; i++) a[x.at + i] = " "; }); return a.join(""); }
     function playForm() {
       if (played) return played;
-      var shownV = shownVoices();
-      played = assemble(S, staves(S, chosen, S.staffOf), function (v) { return S.body[v]; }, { directives: [] });
+      var order = playOrder(S.repeats, !!L.skipRepeats), segs = {};
+      played = assemble(S, staves(S, chosen, S.staffOf), function (v) {
+        var out = "", bs = S.bars[v], sg = segs[v] = [];
+        order.forEach(function (k, j) {
+          var b = bs[k]; if (!b) { sg.push(null); return; }
+          if (j && order[j - 1] !== k - 1) out += stateBefore(S, v, k) + " ";
+          sg.push({ p: out.length, o: b.start, n: b.text.length }); out += blank(b.text) + "|";
+        });
+        return out;
+      }, { directives: [], noTitle: true });   // no T:/C: — a title such as "… K. 550" throws every startChar abcjs reports off
+      played.order = order;
       var hid = document.getElementById("fs-play-" + id);
       if (!hid) { hid = document.createElement("div"); hid.id = "fs-play-" + id; hid.setAttribute("aria-hidden", "true");
         hid.style.cssText = "position:absolute;left:-100000px;top:0;width:1200px;visibility:hidden"; document.body.appendChild(hid); }
       playVisual = ABCJS.renderAbc(hid, played.abc, { staffwidth: 1100, wrap: { minSpacing: 1.5, maxSpacing: 2.7, preferredMeasuresPerLine: 4 } })[0];
-      var ranges = played.flat.map(function (v) { return { v: v, a: played.start[v], b: played.start[v] + S.body[v].length }; });
-      played.keyAt = function (ch) { for (var i = 0; i < ranges.length; i++) if (ch >= ranges[i].a && ch <= ranges[i].b) return ranges[i].v + ":" + (ch - ranges[i].a); return null; };
+      var vs = played.flat.slice().sort(function (a, b) { return played.start[a] - played.start[b]; });
+      played.at = function (ch) {                         // -> { key: "voice:offset", j } or null
+        var v = null; for (var i = 0; i < vs.length; i++) if (ch >= played.start[vs[i]]) v = vs[i];
+        if (!v) return null; var off = ch - played.start[v], sg = segs[v], lo = 0, hi = sg.length - 1, j = -1;
+        while (lo <= hi) { var m = (lo + hi) >> 1; if (sg[m] && sg[m].p <= off) { j = m; lo = m + 1; } else if (sg[m]) hi = m - 1; else lo = m + 1; }
+        // past bar j's own text (its closing "|", or the key / clef carried in before the next bar after a jump): abcjs sometimes
+        // times a bar's start there, so it counts as the start of the next played bar
+        if (j < 0) return { key: null, j: 0 };
+        if (off - sg[j].p >= sg[j].n) return { key: null, j: j + 1 };
+        return { key: v + ":" + (sg[j].o + off - sg[j].p), j: j };
+      };
       return played;
     }
+    // the played form's events ({ ms, keys, j }) and the time each played bar starts (barMs[j]: its first event), at the slider's tempo
+    var timed = null;
     function timing() {
-      var q = +qIn.value, tm = playVisual.setTiming(q / (playVisual.getBeatLength() * 4));
-      return tm.filter(function (e) { return e.type === "event"; }).map(function (e) {
-        return { ms: e.milliseconds, keys: (e.startCharArray || [e.startChar]).map(played.keyAt).filter(Boolean) };
+      var q = +qIn.value; if (timed && timed.q === q && timed.played === played) return timed.ev;
+      var tm = playVisual.setTiming(q / (playVisual.getBeatLength() * 4)), barMs = [];
+      var ev = tm.filter(function (e) { return e.type === "event"; }).map(function (e) {
+        var at = (e.startCharArray || [e.startChar]).map(played.at).filter(Boolean), j = Math.min.apply(null, at.map(function (x) { return x.j; }).concat([1e9]));
+        if (j < 1e9 && barMs[j] == null) barMs[j] = e.milliseconds;
+        return { ms: e.milliseconds, keys: at.map(function (x) { return x.key; }).filter(Boolean), j: j };
       });
+      for (var j = 0; j < played.order.length; j++) if (barMs[j] == null) barMs[j] = j ? barMs[j - 1] : 0;   // a bar with no new note: held over
+      timed = { q: q, played: played, ev: ev, barMs: barMs };
+      return ev;
     }
+    function barMs() { timing(); return timed.barMs; }
+    function jAt(ms) { var b = barMs(), lo = 0, hi = b.length - 1, r = 0; while (lo <= hi) { var m = (lo + hi) >> 1; if (b[m] <= ms + 1) { r = m; lo = m + 1; } else hi = m - 1; } return r; }
 
     // ---------- from here: a drawn note's place in the played form, its first time through
     function clicked(abcElem) {
       var key = keyOf.get(abcElem); if (!key) { status.textContent = "That note is drawn but not matched to playback; click another."; return; }
       playForm();
-      var hit = timing().filter(function (e) { return e.keys.indexOf(key) >= 0; })[0]; if (!hit) return;
+      var hit = timing().filter(function (e) { return e.keys.indexOf(key) >= 0; })[0]; if (!hit) { status.textContent = "That note is not played (an ending left out when repeats are skipped)."; return; }
       clearFrom(); fromMs = hit.ms; fromKey = key;
       (elMap[key] || []).forEach(function (set) { set.forEach(function (g) { g.classList.add("fs-from"); }); });
       $(".fs-fromclear").hidden = false; status.textContent = "Play starts from the marked note.";
@@ -766,6 +908,10 @@
       fromKey = null; fromMs = 0; $(".fs-fromclear").hidden = true; if (!keepStatus) status.textContent = "";
     }
     $(".fs-fromclear").addEventListener("click", function () { clearFrom(); });
+    $(".fs-skip").checked = !!L.skipRepeats;
+    $(".fs-skip").addEventListener("change", function (e) {
+      L.skipRepeats = e.target.checked; store.set(KY, L); var keep = playing; stop(); played = null; playVisual = null; clearFrom(true); if (keep) play();
+    });
 
     function apply() {
       stop(); played = null; playVisual = null;
@@ -777,17 +923,22 @@
 
     // ---------- playing: AbcPlay sounds the played form; the lit notes and Follow are ours
     var raf = 0, curMs = 0;
-    function unlight() { lit.forEach(function (g) { g.classList.remove("abc-on"); }); lit = []; }
-    function cursor(ac, t0, events) {
-      var i = -1;
+    // the bar now playing: one band over it (the same as Go to bar's), moved when the next bar starts (barMs, the times Go to bar
+    // and a clicked note start from); Follow brings it into view
+    var band = null, curBar = -1;
+    function unlight() { if (band) band.remove(); band = null; curBar = -1; lit = []; }
+    function cursor(ac, t0) {
+      playForm(); var order = played.order;
       (function tick() {
         if (!playing) return;
         var now = (ac.currentTime - t0) * 1000 + fromMs; curMs = now;
-        if (i + 1 < events.length && events[i + 1].ms <= now) {
-          while (i + 1 < events.length && events[i + 1].ms <= now) i++;
-          unlight();
-          events[i].keys.forEach(function (k) { (elMap[k] || []).forEach(function (set) { set.forEach(function (g) { if (g.classList) { g.classList.add("abc-on"); lit.push(g); } }); }); });
-          if ($(".fs-follow").checked && lit[0]) follow(lit[0]);
+        var k = order[jAt(now)];
+        if (k !== curBar && now >= fromMs) {
+          curBar = k;
+          var b = barAt[k] ? null : job && job.systems.findIndex(function (r) { return k >= r.s && k < r.e; }); if (b != null && b >= 0) job.ensure(b);
+          var nb = highlight(k, "fs-flash fs-cur", band && band.ownerSVGElement === (barAt[k] && barAt[k].target.querySelector("svg")) ? band : null);
+          if (band && band !== nb) band.remove(); band = nb;
+          if ($(".fs-follow").checked && band) follow(band);
         }
         raf = requestAnimationFrame(tick);
       })();
@@ -843,10 +994,10 @@
       if (!global.AbcPlay) { status.textContent = "Playback is not loaded."; return; }
       status.textContent = "Loading the instruments…";
       playForm();
-      var events = timing();
+      timing();
       compressor();
       var me = playing = global.AbcPlay.play(playVisual, { tracks: true, qpm: +qIn.value, fromMs: fromMs, light: false, shape: shape,
-        onStart: function (s) { if (playing !== me) return; status.textContent = "Playing" + (fromMs ? " from the marked note" : "") + "…"; cursor(s.ac, s.t0, events); },
+        onStart: function (s) { if (playing !== me) return; status.textContent = "Playing" + (fromKey ? " from the marked note" : fromMs ? " from bar " + (played.order[jAt(fromMs)] - (pickup ? 1 : 0) + 1) : "") + "…"; cursor(s.ac, s.t0); },
         onEnd: function () { if (playing === me) { playing = null; cancelAnimationFrame(raf); unlight(); status.textContent = ""; } } });
     }
     function stop() {
@@ -878,7 +1029,11 @@
     showLayout(); lastW = sheet.clientWidth; apply();
     return { view: function (keys) { chosen = keys.slice(); apply(); }, play: play, stop: stop, parts: S.parts,
       layout: function (x) { if (x) { Object.assign(L, x); store.set(KY, L); showLayout(); stop(); draw(true); } return Object.assign({}, L); },
-      goBar: function (n) { goBar(n); }, flush: function () { job.ensure(1e9); },
+      goBar: function (n) { goBar(n); },
+      // for tests: where play would start (ms and bar index), the bars of the lit notes, the bar of an event time
+      debug: function () { playForm(); var ev = timing(); return { ev: ev, fromMs: fromMs, pickup: pickup, curMs: curMs, curBar: curBar, order: played.order, barMs: barMs(),
+        barsAt: function (ms) { var e = ev.filter(function (x) { return Math.abs(x.ms - ms) < 1; }); return e.map(function (x) { return x.keys.map(barOfKey); }); } }; },
+      flush: function () { job.ensure(1e9); },
       abc: function () { return drawnText; }, shape: shape, playedAbc: function () { return playForm().abc; }, matched: function () { return Object.keys(elMap).length; } };
   }
   function barLen(t) {                                    // a bar's length in L units, roughly (for spotting a pickup)
@@ -888,5 +1043,5 @@
     return n;
   }
 
-  global.FullScore = { mount: mount, parse: parse, splitBars: splitBars, shortName: shortName, INSTRUMENTS: INSTRUMENTS, FAMILIES: FAMILIES };
+  global.FullScore = { mount: mount, parse: parse, playOrder: playOrder, repeatMap: repeatMap, splitBars: splitBars, shortName: shortName, INSTRUMENTS: INSTRUMENTS, FAMILIES: FAMILIES };
 })(typeof window !== "undefined" ? window : this);

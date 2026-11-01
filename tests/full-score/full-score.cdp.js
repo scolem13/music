@@ -16,9 +16,21 @@ const srv = http.createServer((q, s) => { if (/-mp3\//.test(q.url)) sampleHits.p
   const DONE = `!!document.querySelector('.fs-paper svg') && !document.querySelector('#score').dataset.drawing`;   // the background drawing finished
   await b.resize(1280, 900);
   await b.goto("http://127.0.0.1:8571/");
+  // one timeline: every played bar starts later than the one before; Go to bar starts on that bar in every voice; repeats taken
+  // or skipped; stems switched bar by bar on two-voice staves
+  const timeline = async () => ev(`(() => { const d = score.debug(); const up = d.barMs.every((m, j) => !j || m > d.barMs[j - 1]);
+    const go = [1, 20, 71, 124, 125, 200, 309].map(n => { score.goBar(n); const e = score.debug(); const bars = [...new Set(e.barsAt(e.fromMs).flat())]; return bars.length === 1 && bars[0] === n ? "" : n + ":" + bars; }).filter(Boolean);
+    return JSON.stringify({ n: d.order.length, up, go }); })()`);
   check("score drawn", await wait(`!!document.querySelector('.fs-paper svg')`));
   check("first screen drawn before the rest", true, (await ev(`document.querySelector('#score').dataset.firstMs`)) + " ms to the first screen");
   await wait(DONE);
+  const tl = JSON.parse(await timeline());
+  check("played bars in order, repeats taken (620 played bars), Go to bar lands on its bar", tl.n === 620 && tl.up && !tl.go.length, JSON.stringify(tl));
+  await ev(`document.querySelector('.fs-skip').click()`);
+  const tl2 = JSON.parse(await timeline());
+  check("Skip repeats: each bar once, last ending only (310 bars; bar 309, a first ending, is not played)", tl2.n === 310 && tl2.up && /^309:(310)?$/.test(tl2.go.join()), JSON.stringify(tl2));
+  await ev(`document.querySelector('.fs-skip').click()`);
+  check("stems: by pitch where a part's second voice is silent, up / down where both play", await ev(`/\[I:stem auto\]/.test(score.abc()) && /\[I:stem up\]/.test(score.abc()) && /\[I:stem down\]/.test(score.abc())`));
   const parts = await ev(`score.parts.length`), voices = await ev(`score.parts.reduce((n, p) => n + p.voices.length, 0)`);
   check("every instrument found", parts === 11 && voices === 17, `${parts} parts, ${voices} voices`);
   check("render time", true, (await ev(`document.querySelector('#score').dataset.renderMs`)) + " ms for the full score");
@@ -51,7 +63,7 @@ const srv = http.createServer((q, s) => { if (/-mp3\//.test(q.url)) sampleHits.p
   const want = ["oboe", "clarinet", "flute", "bassoon", "horn", "violin", "viola", "cello", "contrabass"];
   check("every instrument sounds from the embedded samples (bass in full)", want.every(w => hits[w] > 50) && hits.contrabass > 1000, JSON.stringify(hits));
   check("no sample fetched over the network", sampleHits.length === 0, sampleHits.slice(0, 3).join(" "));
-  check("notes lit while playing", await wait(`!!document.querySelector('.fs-paper .abc-on')`, 60));
+  check("the playing bar shaded while playing", await wait(`!!document.querySelector('.fs-paper .fs-cur')`, 60));
   await ev(`document.querySelector('.fs-stop').click()`);
   // from here: click a note in a late bar, then play: the notes start at once (the earlier ones are not scheduled)
   await ev(`(() => { const ns = document.querySelectorAll('.fs-paper .abcjs-note'); const n = ns[Math.floor(ns.length * 0.6)]; n.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, clientX: 1, clientY: 1 })); n.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, clientX: 1, clientY: 1 })); n.dispatchEvent(new MouseEvent('click', { bubbles: true })); })()`);
@@ -173,7 +185,7 @@ const srv = http.createServer((q, s) => { if (/-mp3\//.test(q.url)) sampleHits.p
   check("cutaway: the opening (strings only, piano) leaves the winds out", cut2[0] < 10, "first system " + cut2[0] + " staves");
   check("cutaway: drawn notes matched", (await ev(`score.matched()`)) > 3000, String(await ev(`score.matched()`)));
   await ev(`window.__hits = {}; document.querySelector('.fs-play').click()`);
-  check("cutaway plays and lights", await wait(`!!document.querySelector('.fs-paper .abc-on')`, 200));
+  check("cutaway plays and shades the bar", await wait(`!!document.querySelector('.fs-paper .fs-cur')`, 200));
   await ev(`document.querySelector('.fs-stop').click(); score.layout({ cutaway: false, barWidth: 200 })`);
   // loudness: at 100% the tutti and the solo bars end up closer in summed level
   const lv = await ev(`(() => { const ns = []; for (let t = 0; t < 17; t++) for (let i = 0; i < 40; i++) ns.push({ at: i * 0.5, dur: 0.5, vel: t < 2 ? 0.4 : 0.9, track: i < 20 ? t : (t < 2 ? t : -1) }); const use = ns.filter(n => n.track >= 0);

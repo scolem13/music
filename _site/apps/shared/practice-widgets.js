@@ -10,6 +10,12 @@
 // A page with a meter and a tempo of its own offers them as window.PageTempo = { name, get() -> { bpm, beats }, set({ bpm, beats }) -> text }
 // (beats: the meter's top number); the metronome's "From page" / "To page" buttons use it, and are greyed out on pages without it.
 //
+// The page's music, for the "From page" buttons of the metronome (tempo, beats), the drone and the circle (key). Two ways to offer it:
+//   window.PAGE_MUSIC = { name, key: "Bb" | "F#m" | "D dor", tempo: quarter-note bpm, meter: "3/4" }   plain data, a page that knows them when it loads
+//       (a page that draws its music with script updates it and fires window event "page-music-change", so the buttons look again)
+//   window.PageTempo = { name, get() -> { bpm, beats, key, meter, where }, set({ bpm, beats }) }       live, and the metronome's "To page"
+// pageInfo() merges the two (PageTempo wins). A button with nothing to take is greyed out and says so. Songs (songs/?id=) use PAGE_MUSIC.
+//
 // While the page's player (BandPlayer, through PageClock in page-clock.js) is sounding and the metronome is on, the metronome follows it: it shows the
 // beat that is sounding at once, clicks on the player's beats, and follows its tempo and meter changes. With no player it is the free metronome.
 //
@@ -18,7 +24,7 @@
   "use strict";
 
   var KEY = "practiceWidgets.v1";
-  var S = { tempo: 84, beats: 4, vol: { q: 80, e: 0, t: 0, s: 0 }, accent: true,
+  var S = { tempo: 84, unit: "4", tuplets: [], beats: 4, vol: { q: 80, e: 0, t: 0, s: 0 }, accent: true,
             droneDo: 0, droneOct: 3, tuning: "equal", tone: "soft", droneVol: 60, a4: 440, lowDo: false, pads: [0, 7],
             mode: "sustain", tanFirst: 7, tanRate: 50, tanTone: "string" };
   try { var saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved) Object.keys(saved).forEach(function (k) { S[k] = saved[k]; }); } catch (e) {}
@@ -49,12 +55,54 @@
 
   // ───────────────────────── Metronome ─────────────────────────
   var metro = { on: false, next: 0, beat: 0, timer: null, lamps: [], queue: [], raf: 0 };
-  var SUBS = [   // key, label, offsets within the beat, pitch, level in the mix
-    { k: "q", label: "Quarter notes", at: [0], hz: 1000, gain: 1 },
-    { k: "e", label: "Eighths", at: [0.5], hz: 780, gain: 0.7 },
-    { k: "t", label: "Triplets", at: [1 / 3, 2 / 3], hz: 660, gain: 0.6 },
-    { k: "s", label: "Sixteenths", at: [0.25, 0.5, 0.75], hz: 560, gain: 0.5 }
-  ];
+  // The beat unit (whole note .. sixteenth, dotted where it is natural): the tempo counts these. The mix is the beat itself (a row
+  // for the unit's note) and what divides it: halves, thirds (triplets), quarters (sixths in a dotted unit), and any division the user adds.
+  var UNITS = [ { id: "1", den: 1, dot: 0, name: "Whole note" }, { id: "2.", den: 2, dot: 1, name: "Dotted half note" }, { id: "2", den: 2, dot: 0, name: "Half note" },
+    { id: "4.", den: 4, dot: 1, name: "Dotted quarter note" }, { id: "4", den: 4, dot: 0, name: "Quarter note" }, { id: "8.", den: 8, dot: 1, name: "Dotted eighth note" },
+    { id: "8", den: 8, dot: 0, name: "Eighth note" }, { id: "16", den: 16, dot: 0, name: "Sixteenth note" } ];
+  function unitOf(id) { id = id == null ? S.unit : id; for (var i = 0; i < UNITS.length; i++) if (UNITS[i].id === id) return UNITS[i]; return UNITS[4]; }
+  function unitQ(u) { u = u || unitOf(); return (4 / u.den) * (u.dot ? 1.5 : 1); }            // quarter notes in one unit
+  function tempoRange(u) { var q = unitQ(u); return [Math.max(5, Math.round(30 / q)), Math.round(240 / q)]; }   // the same speeds as 30-240 quarter notes
+  var HZ = { 1: 1000, 2: 780, 3: 660, 4: 560, 6: 520 }, GAIN = { 1: 1, 2: 0.7, 3: 0.6, 4: 0.5, 6: 0.45 };
+  var BUILTIN = { q: 1, e: 2, t: 3, s: 4 };
+  function isPow2(n) { return (n & (n - 1)) === 0; }
+  function floorPow2(n) { var m = 1; while (m * 2 <= n) m *= 2; return m; }
+  function mixRows() {
+    var u = unitOf(), rows = [];
+    [["q", 1], ["e", 2], ["t", 3], ["s", u.dot ? 6 : 4]].forEach(function (f) { rows.push({ k: f[0], n: f[1] }); });
+    (S.tuplets || []).forEach(function (n) { rows.push({ k: "u" + n, n: n, custom: true }); });
+    rows.forEach(function (r) {
+      r.at = []; for (var i = r.n === 1 ? 0 : 1; i < r.n; i++) r.at.push(i / r.n);
+      r.hz = HZ[r.n] || 400 + r.n * 25; r.gain = GAIN[r.n] || 0.5;
+      r.label = r.n === 1 ? u.name + "s (the beat)" : r.n + " to the beat";
+      r.icon = divIcon(r.n, u, r.custom);
+      if (S.vol[r.k] == null) S.vol[r.k] = 50;
+    });
+    return rows;
+  }
+  // ---- note symbols, drawn (Unicode music symbols are missing from many fonts) ----
+  // noteSvg: one note, or two beamed (count 2), with a bracket and number over them when `num` is given.
+  function noteSvg(den, o) {
+    o = o || {}; var count = o.count || 1, dot = o.dot, num = o.num, flags = Math.max(0, Math.round(Math.log2(Math.min(64, Math.max(1, den)))) - 2);
+    var hollow = den <= 2, xs = count === 2 ? [6, 18] : [6], w = count === 2 ? 26 : dot ? 19 : 17, out = "";
+    xs.forEach(function (x, i) {
+      out += '<ellipse cx="' + x + '" cy="24" rx="4.2" ry="3" transform="rotate(-20 ' + x + ' 24)" ' + (hollow ? 'fill="none" stroke="currentColor" stroke-width="1.5"' : 'fill="currentColor"') + "/>";
+      if (den >= 2) out += '<path d="M' + (x + 3.9) + " 23.2V8" + '" stroke="currentColor" stroke-width="1.4" fill="none"/>';
+      if (count === 1 && flags) for (var f = 0; f < flags; f++) out += '<path d="M' + (x + 3.9) + " " + (8 + f * 3.6) + "c0 4 5.5 5 4.6 10.4" + '" stroke="currentColor" stroke-width="1.5" fill="none"/>';
+      if (dot && (count === 1 || i === 1)) out += '<circle cx="' + (x + 8) + '" cy="24.5" r="1.4" fill="currentColor"/>';
+    });
+    if (count === 2) for (var f2 = 0; f2 < Math.max(1, flags); f2++) out += '<rect x="9.1" y="' + (7.6 + f2 * 3.2) + '" width="12" height="2.2" fill="currentColor"/>';
+    if (num) out += '<path d="M3 8V5h7M16 5h7v3" stroke="currentColor" stroke-width="1" fill="none"/><text x="13" y="7.6" text-anchor="middle" style="font:italic 700 8px system-ui,sans-serif" fill="currentColor">' + num + "</text>";
+    return '<svg class="pw-nsym" viewBox="0 0 ' + w + ' 30" width="' + Math.round(w * 0.9) + '" height="27" aria-hidden="true" focusable="false">' + out + "</svg>";
+  }
+  function unitIcon(u) { return noteSvg(u.den, { dot: u.dot }); }
+  // the symbol for "n to the beat" over a unit: one note for the beat, otherwise a beamed pair of the note that n of them take, with the number for a tuplet
+  function divIcon(n, u, custom) {
+    if (n === 1) return unitIcon(u);
+    if (u.dot && n === 2) return noteSvg(u.den * 2, { count: 2, dot: 1 });
+    var den = u.den * (isPow2(n) ? n : floorPow2(n));
+    return noteSvg(den, { count: 2, num: custom ? n : (!u.dot && !isPow2(n) ? n : 0) });
+  }
   function click(t, hz, level) {
     if (level <= 0) return;
     var c = audio(), o = c.createOscillator(), g = c.createGain();
@@ -66,8 +114,8 @@
   // One beat at time t: its clicks (and the subdivisions), and a lamp to light when it sounds. beats: the bar's beats.
   function clickBeat(t, beatInBar, beats, spb) {
     var first = beatInBar === 0 && beats > 1 && S.accent;
-    SUBS.forEach(function (sub) {
-      var lvl = S.vol[sub.k] / 100; if (!lvl) return;
+    (metro.rows || (metro.rows = mixRows())).forEach(function (sub) {
+      var lvl = (S.vol[sub.k] || 0) / 100; if (!lvl) return;
       sub.at.forEach(function (off) {
         var accented = sub.k === "q" && first;
         click(t + off * spb, accented ? sub.hz * 1.5 : sub.hz, lvl * lvl * sub.gain * (accented ? 1 : 0.85));
@@ -301,6 +349,7 @@
     " padding:.8rem .95rem 1rem;font:400 .9rem/1.4 Inter,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}",
     ".pw-panel[hidden]{display:none}",
     ".pw-panel.pw-wide{width:min(24rem,calc(100vw - 1.5rem))}",
+    ".pw-panel.pw-circlep{width:min(38rem,calc(100vw - 1.5rem))}",
     ".pw-panel *{box-sizing:border-box}",
     ".pw-head{display:flex;align-items:center;justify-content:space-between;margin:0 0 .6rem}",
     ".pw-head h2{margin:0;padding:0;border:0;font-size:.95rem;font-weight:600}",
@@ -315,12 +364,25 @@
     ".pw-panel input[type=number]{width:4.6rem;text-align:center}",
     ".pw-panel input[type=range]{width:100%;accent-color:var(--site-accent-dk,#2b9c90)}",
     ".pw-bpm{font:600 2rem/1 var(--font-mono,ui-monospace,monospace);min-width:3.2ch;text-align:center}",
+    ".pw-tline{display:flex;align-items:center;justify-content:center;gap:.35rem}",
+    ".pw-eq{font:600 1.6rem/1 var(--font-mono,ui-monospace,monospace)}",
+    ".pw-unit{position:relative;display:inline-block}",
+    ".pw-panel button.pw-unitbtn{display:inline-flex;align-items:center;gap:.15rem;height:2.6rem;padding:0 .35rem;border:1px solid var(--site-border,#e0d8ce);border-radius:8px;background:var(--site-surface,#fff);color:inherit;cursor:pointer}",
+    ".pw-panel button.pw-unitbtn:disabled{opacity:.6;cursor:default}",
+    ".pw-caret{font-size:.7rem;color:var(--site-ink-2,#5c5246)}",
+    ".pw-unitmenu{position:absolute;z-index:6;left:0;top:calc(100% + 2px);margin:0;padding:.2rem;list-style:none;min-width:12.5rem;background:var(--site-surface,#fff);border:1px solid var(--site-border,#e0d8ce);border-radius:8px;box-shadow:0 8px 22px rgba(30,28,24,.2);text-align:left}",
+    ".pw-unitmenu[hidden]{display:none}",
+    ".pw-unitmenu button{display:flex;align-items:center;gap:.5rem;width:100%;padding:.1rem .4rem;border:0;border-radius:6px;background:none;color:inherit;font:inherit;font-size:.85rem;cursor:pointer;text-align:left}",
+    ".pw-unitmenu button:hover,.pw-unitmenu button.is-sel{background:var(--site-accent-bg,rgba(63,194,180,.15))}",
+    ".pw-nsym{display:block;flex:none}",
+    ".pw-mixcell{display:flex;align-items:center;gap:.3rem}",
+    "button.pw-mixx{border:0;background:none;font-size:1.1rem;line-height:1;color:var(--site-ink-2,#5c5246);cursor:pointer;padding:0 .2rem}",
     ".pw-lamps{display:flex;gap:.4rem;margin:.7rem 0 .2rem}",
     ".pw-lamp{flex:1;height:.7rem;border-radius:4px;background:var(--site-border,#e0d8ce);transition:background .05s}",
     ".pw-lamp.on{background:var(--site-accent,#3fc2b4)}",
     ".pw-lamp.on.first{background:#d9566b}",
-    ".pw-mix{display:grid;grid-template-columns:7.2rem 1fr;gap:.35rem .6rem;align-items:center}",
-    ".pw-mix span{font-size:.85rem}",
+    ".pw-mix{display:grid;grid-template-columns:2.4rem 1fr;gap:.2rem .6rem;align-items:center}",
+    ".pw-mixic{display:flex;align-items:center;justify-content:center}",
     ".pw-pads{display:grid;grid-template-columns:repeat(4,1fr);gap:.35rem}",
     ".pw-pad{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.05rem;padding:.35rem 0;border:1px solid var(--site-border,#e0d8ce);border-radius:8px;background:var(--site-surface,#fff);color:inherit;cursor:pointer;font:inherit}",
     ".pw-pad b{font-size:.92rem}.pw-pad small{font-size:.7rem;color:var(--site-ink-2,#5c5246)}",
@@ -379,7 +441,7 @@
     return /^(maj|major|ion|ionian|lyd|lydian|mix|mixolydian)$/i.test(mode) ? n : n.charAt(0).toLowerCase() + n.slice(1);
   }
   function icons() {
-    if (navBtn.metro) { navBtn.metro.querySelector(".pw-icon").innerHTML = metroIcon(); navBtn.metro.style.setProperty("--pw-beat", (60 / (metro.shown || S.tempo || 84)).toFixed(3) + "s"); }
+    if (navBtn.metro) { navBtn.metro.querySelector(".pw-icon").innerHTML = metroIcon(); navBtn.metro.style.setProperty("--pw-beat", (60 / (metro.shown || S.tempo * unitQ() || 84)).toFixed(3) + "s"); }
     if (navBtn.drone) navBtn.drone.querySelector(".pw-icon").innerHTML = droneIcon();
     if (navBtn.circle) navBtn.circle.querySelector(".pw-icon").innerHTML = circleIcon();
     if (navBtn.tuner) navBtn.tuner.querySelector(".pw-icon").innerHTML = tunerIcon();
@@ -397,18 +459,41 @@
       var show = k === name ? (open == null ? panels[k].hidden : open) : false;
       panels[k].hidden = !show; navBtn[k].classList.toggle("is-open", show);
     });
-    if (name === "metro" && panels.metro && !panels.metro.hidden && panels.metro._sync) panels.metro._sync();
+    if (name && panels[name] && !panels[name].hidden && panels[name]._sync) panels[name]._sync();   // look at the page's music again
     if (panels.tuner && panels.tuner.hidden && window.TunerPanel) window.TunerPanel.stop();       // the tuner does not listen while its panel is shut
     if (panels.mixer && panels.mixer.hidden && window.MixerPanel) window.MixerPanel.stop();       // nor do the mixer's meters
   }
 
+  // ---- the page's music: window.PAGE_MUSIC (data) merged under window.PageTempo.get() (live) ----
+  function pageInfo() {
+    var o = {}, pm = window.PAGE_MUSIC, pt = window.PageTempo, g = null, m;
+    try { if (typeof pm === "function") pm = pm(); } catch (e) { pm = null; }
+    if (pm) {
+      if (+pm.tempo > 0) o.bpm = +pm.tempo;
+      if (pm.key) o.key = String(pm.key);
+      if (pm.meter && (m = /^\s*(\d+)\s*\/\s*(\d+)/.exec(pm.meter))) { o.meter = m[1] + "/" + m[2]; o.beats = +m[1]; }
+      if (pm.name) o.name = pm.name;
+    }
+    try { g = pt && pt.get && pt.get(); } catch (e) { g = null; }
+    if (g) Object.keys(g).forEach(function (k) { if (g[k] != null && g[k] !== "") o[k] = g[k]; });
+    return o;
+  }
+  // a key as the page writes it ("Bb", "F#m", "D dor", "A minor") -> { pc: its tonic, mode, text }, or null
+  function keyInfo(k) {
+    var m = /^\s*([A-Ga-g])\s*([#b♯♭]?)\s*([A-Za-z]*)/.exec(String(k || "")); if (!m) return null;
+    var pc = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 }[m[1].toUpperCase()] + (/[#♯]/.test(m[2]) ? 1 : /[b♭]/.test(m[2]) ? -1 : 0);
+    var w = (m[3] || "").toLowerCase(), minor = /^(m|min|minor|aeo|aeolian)$/.test(w);
+    return { pc: ((pc % 12) + 12) % 12, minor: minor, text: m[1].toUpperCase() + m[2].replace("#", "♯").replace("b", "♭") + (minor ? " minor" : w && !/^(maj|major|ion|ionian)$/.test(w) ? " " + w : " major") };
+  }
   function buildMetro() {
     var p = el("div", "pw-panel"); p.id = "pw-metro"; p.hidden = true; p.setAttribute("role", "dialog"); p.setAttribute("aria-label", "Metronome");
     p.innerHTML =
       '<div class="pw-head"><h2>Metronome</h2><button class="pw-x" type="button" aria-label="Close">×</button></div>' +
       '<div class="pw-row" style="justify-content:space-between">' +
         '<button class="pw-btn" type="button" id="pw-bpm-dn" aria-label="Slower">−</button>' +
-        '<div style="text-align:center"><div class="pw-bpm" id="pw-bpm">84</div><div class="pw-note" style="margin:0">beats per minute</div></div>' +
+        '<div style="text-align:center"><div class="pw-tline"><span class="pw-unit"><button class="pw-unitbtn" type="button" id="pw-unit-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Beat unit"></button>' +
+          '<ul class="pw-unitmenu" id="pw-unit-menu" role="listbox" aria-label="Beat unit" hidden></ul></span><span class="pw-eq">=</span><span class="pw-bpm" id="pw-bpm">84</span></div>' +
+          '<div class="pw-note" style="margin:0" id="pw-bpm-cap">quarter notes per minute</div></div>' +
         '<button class="pw-btn" type="button" id="pw-bpm-up" aria-label="Faster">+</button></div>' +
       '<input type="range" id="pw-tempo" min="30" max="240" step="1" aria-label="Tempo" style="margin-top:.5rem">' +
       '<div class="pw-row" style="margin-top:.4rem"><button class="pw-btn pw-main" type="button" id="pw-metro-go" style="flex:1">Start</button>' +
@@ -420,16 +505,55 @@
       '<label class="pw-lab" for="pw-beats">Beats in a bar</label>' +
       '<div class="pw-row"><select id="pw-beats"></select><label class="pw-check"><input type="checkbox" id="pw-accent"> Accent beat 1</label></div>' +
       '<span class="pw-lab">Mix</span><div class="pw-mix" id="pw-mix"></div>' +
-      '<p class="pw-note">Turn a line up to hear it. The quarter notes are the beat; the others fill in between.</p>';
+      '<div class="pw-row" style="margin-top:.5rem"><label class="pw-note" style="margin:0" for="pw-tup">Add a division:</label><input type="number" id="pw-tup" min="2" max="16" value="5" aria-label="Notes to the beat">' +
+        '<span class="pw-note" style="margin:0">to the beat</span><button class="pw-btn" type="button" id="pw-tup-add">Add</button></div>' +
+      '<p class="pw-note" id="pw-mix-note">Turn a line up to hear it. The first row is the beat; the others fill in between. A division you add (5, 7, ...) is that many evenly spaced notes to the beat.</p>' +
+      '<p class="pw-note"><i>Multi-meter support is coming later.</i></p>';
     var beats = $("#pw-beats", p);
     [1, 2, 3, 4, 5, 6, 7, 8, 9, 12].forEach(function (n) { var o = el("option"); o.value = n; o.textContent = n; beats.appendChild(o); });
-    var mix = $("#pw-mix", p);
-    SUBS.forEach(function (sub) {
-      mix.appendChild(el("span", "", sub.label));
-      var r = el("input"); r.type = "range"; r.min = 0; r.max = 100; r.step = 5; r.value = S.vol[sub.k]; r.setAttribute("aria-label", sub.label + " level");
-      r.addEventListener("input", function () { S.vol[sub.k] = +r.value; save(); });
-      mix.appendChild(r);
+    var mix = $("#pw-mix", p), rangeNote = "";
+    function buildMix() {
+      metro.rows = mixRows(); mix.innerHTML = "";
+      metro.rows.forEach(function (sub) {
+        var ic = el("span", "pw-mixic", sub.icon); ic.title = sub.label; mix.appendChild(ic);
+        var r = el("input"); r.type = "range"; r.min = 0; r.max = 100; r.step = 5; r.value = S.vol[sub.k]; r.setAttribute("aria-label", sub.label + " level");
+        r.addEventListener("input", function () { S.vol[sub.k] = +r.value; save(); });
+        if (!sub.custom) { mix.appendChild(r); return; }
+        var cell = el("span", "pw-mixcell"); cell.appendChild(r);
+        var x = el("button", "pw-mixx", "×"); x.type = "button"; x.title = "Take " + sub.n + " to the beat out of the mix"; x.setAttribute("aria-label", x.title);
+        x.addEventListener("click", function () { S.tuplets = S.tuplets.filter(function (n) { return n !== sub.n; }); buildMix(); save(); });
+        cell.appendChild(x); mix.appendChild(cell);
+      });
+    }
+    $("#pw-tup-add", p).addEventListener("click", function () {
+      var n = Math.round(+$("#pw-tup", p).value), note = $("#pw-mix-note", p);
+      if (!(n >= 2 && n <= 16)) { note.textContent = "Choose a number from 2 to 16."; return; }
+      if (metro.rows.some(function (r) { return r.n === n; })) { note.textContent = n + " to the beat is already in the mix."; return; }
+      if (S.tuplets.length >= 6) { note.textContent = "Six added divisions at most; take one out first."; return; }
+      S.tuplets.push(n); S.vol["u" + n] = 50; buildMix(); save(); note.textContent = "Added " + n + " to the beat.";
     });
+    // the beat unit: a menu of drawn notes
+    var uBtn = $("#pw-unit-btn", p), uMenu = $("#pw-unit-menu", p);
+    UNITS.forEach(function (u) {
+      var li = el("li"), b = el("button", "", unitIcon(u) + "<span>" + u.name + "</span>"); b.type = "button"; b.setAttribute("role", "option"); b.dataset.id = u.id;
+      b.addEventListener("click", function () { setUnit(u.id); uMenu.hidden = true; uBtn.setAttribute("aria-expanded", "false"); uBtn.focus(); });
+      li.appendChild(b); uMenu.appendChild(li);
+    });
+    uBtn.addEventListener("click", function () { uMenu.hidden = !uMenu.hidden; uBtn.setAttribute("aria-expanded", String(!uMenu.hidden)); });
+    p.addEventListener("click", function (e) { if (!uMenu.hidden && !e.target.closest(".pw-unit")) { uMenu.hidden = true; uBtn.setAttribute("aria-expanded", "false"); } });
+    function showUnit() {
+      var u = unitOf(), r = tempoRange(u);
+      uBtn.innerHTML = unitIcon(u) + '<span class="pw-caret">▾</span>'; uBtn.title = u.name;
+      $("#pw-bpm-cap", p).textContent = u.name.toLowerCase() + "s per minute";
+      $("#pw-tempo", p).min = r[0]; $("#pw-tempo", p).max = r[1];
+      Array.prototype.forEach.call(uMenu.querySelectorAll("button"), function (b) { b.setAttribute("aria-selected", String(b.dataset.id === u.id)); b.classList.toggle("is-sel", b.dataset.id === u.id); });
+    }
+    function setUnit(id) {                       // the same speed in the new unit
+      var q = S.tempo * unitQ(); S.unit = id; var r = tempoRange(); S.tempo = clamp(Math.round(q / unitQ()), r[0], r[1]);
+      showUnit(); buildMix(); tempo(S.tempo);
+    }
+    metro.setUnit = setUnit;
+    buildMix(); showUnit();
     function lamps(n) {
       n = n || S.beats;
       var box = $("#pw-lamps", p); box.innerHTML = ""; metro.lamps = [];
@@ -439,10 +563,11 @@
     // following the page's player: show its tempo and say so (g null: back to the metronome's own)
     metro.show = function (g) {
       $("#pw-bpm", p).textContent = g ? Math.round(g.bpm) : S.tempo;
+      uBtn.disabled = !!g; if (g) { uBtn.innerHTML = unitIcon(unitOf("4")) + '<span class="pw-caret">\u25be</span>'; $("#pw-bpm-cap", p).textContent = "quarter notes per minute"; } else showUnit();
       if (g) { $("#pw-page-note", p).textContent = "Following the page's player: " + Math.round(g.bpm) + " bpm, " + g.beats + " beats."; if (metro.lamps.length !== g.beats) lamps(g.beats); }
       else { if (metro.lamps.length !== S.beats) lamps(); if (p._sync) p._sync(); }
     };
-    function tempo(v) { S.tempo = clamp(Math.round(v) || 84, 30, 240); $("#pw-bpm", p).textContent = S.tempo; $("#pw-tempo", p).value = S.tempo; save(); }
+    function tempo(v) { var r = tempoRange(); S.tempo = clamp(Math.round(v) || Math.round(84 / unitQ()), r[0], r[1]); $("#pw-bpm", p).textContent = S.tempo; $("#pw-tempo", p).value = S.tempo; save(); }
     $("#pw-tempo", p).addEventListener("input", function (e) { tempo(+e.target.value); });
     $("#pw-bpm-dn", p).addEventListener("click", function () { tempo(S.tempo - 1); });
     $("#pw-bpm-up", p).addEventListener("click", function () { tempo(S.tempo + 1); });
@@ -456,20 +581,22 @@
     beats.addEventListener("change", function () { S.beats = +beats.value; metro.beat = 0; lamps(); save(); });
     $("#pw-accent", p).addEventListener("change", function (e) { S.accent = e.target.checked; save(); });
     beats.value = S.beats; $("#pw-accent", p).checked = S.accent; tempo(S.tempo); lamps();
-    // the page's meter and tempo (window.PageTempo)
+    // the page's tempo and meter (pageInfo: window.PAGE_MUSIC and / or window.PageTempo). The page's tempo is in quarter notes.
     var say = function (t) { $("#pw-page-note", p).textContent = t || ""; };
-    p._sync = function () { var pt = window.PageTempo, ok = !!(pt && pt.get); $("#pw-from-page", p).disabled = !ok; $("#pw-to-page", p).disabled = !(pt && pt.set);
-      if (!ok) say("This page has no tempo to share."); };
+    p._sync = function () { var pi = pageInfo(), pt = window.PageTempo, ok = !!(pi.bpm > 0 || pi.beats > 0);
+      $("#pw-from-page", p).disabled = !ok; $("#pw-to-page", p).disabled = !(pt && pt.set);
+      if (!ok && !metro.following) say("This page has no tempo to share."); };
     $("#pw-from-page", p).addEventListener("click", function () {
-      var pt = window.PageTempo, g = pt && pt.get && pt.get(); if (!g) { say("Nothing to take here."); return; }
-      if (+g.bpm > 0) tempo(+g.bpm);
+      var g = pageInfo(); if (!(g.bpm > 0 || g.beats > 0)) { say("Nothing to take here."); return; }
+      if (+g.bpm > 0) tempo(+g.bpm / unitQ());
       if (+g.beats > 0) { if (![].some.call(beats.options, function (o) { return +o.value === +g.beats; })) { var o = el("option"); o.value = g.beats; o.textContent = g.beats; beats.appendChild(o); }
         S.beats = +g.beats; beats.value = S.beats; metro.beat = 0; lamps(); save(); }
-      say("Took " + S.tempo + " bpm, " + S.beats + " beats" + (g.where ? " (" + g.where + ")" : "") + ".");
+      say("Took " + (+g.bpm > 0 ? Math.round(+g.bpm) + " quarter notes per minute (" + S.tempo + " " + unitOf().name.toLowerCase() + "s)" : "the beats") + ", " + S.beats + " beats" + (g.where ? " (" + g.where + ")" : "") + ".");
     });
     $("#pw-to-page", p).addEventListener("click", function () {
       var pt = window.PageTempo; if (!pt || !pt.set) return;
-      say(pt.set({ bpm: S.tempo, beats: S.beats }) || "Sent " + S.tempo + " bpm, " + S.beats + " beats.");
+      var qb = Math.round(S.tempo * unitQ());
+      say(pt.set({ bpm: qb, beats: S.beats }) || "Sent " + qb + " bpm, " + S.beats + " beats.");
     });
     p._sync();
     return p;
@@ -481,7 +608,9 @@
     var p = el("div", "pw-panel" + (inline ? " pw-inline" : "")); if (!inline) { p.id = "pw-drone"; p.hidden = true; p.setAttribute("role", "dialog"); } p.setAttribute("aria-label", "Drone");
     p.innerHTML =
       '<div class="pw-head"><h2>Drone</h2><button class="pw-x" type="button" aria-label="Close">×</button></div>' +
-      '<div class="pw-row"><button class="pw-btn pw-main" type="button" id="pw-drone-go" style="flex:1">Start</button></div>' +
+      '<div class="pw-row"><button class="pw-btn pw-main" type="button" id="pw-drone-go" style="flex:1">Start</button>' +
+        '<button class="pw-btn" type="button" id="pw-drone-page" style="flex:1" title="Take the key of this page as the drone\'s home note">From page</button></div>' +
+      '<p class="pw-note pw-page-note" id="pw-drone-page-note" style="margin:.3rem 0 0" aria-live="polite"></p>' +
       '<div class="pw-row" id="pw-mode" style="margin-top:.5rem"></div>' +
       '<span class="pw-lab">Name the notes with</span><div class="pw-row"><select id="pw-sys" aria-label="Name the notes with"></select></div>' +
       '<span class="pw-lab" id="pw-do-lab">Do is</span>' +
@@ -574,12 +703,19 @@
     $("#pw-a4", p).addEventListener("change", function (e) { S.a4 = clamp(+e.target.value || 440, 400, 480); e.target.value = S.a4; save(); droneSync(); });
     $("#pw-tan-tone", p).addEventListener("change", function (e) { S.tanTone = e.target.value; save(); });
     $("#pw-tan-rate", p).addEventListener("input", function (e) { S.tanRate = +e.target.value; save(); });
+    var dnote = function (t) { $("#pw-drone-page-note", p).textContent = t || ""; };
+    $("#pw-drone-page", p).addEventListener("click", function () {
+      var ki = keyInfo(pageInfo().key); if (!ki) { dnote("This page has no key to take."); return; }
+      S.droneDo = ki.pc; save(); p._sync(); if (droneOn) droneSync();
+      dnote("Took the key: " + ki.text + ", so the drone sounds " + NAMES[ki.pc] + ".");
+    });
     $("#pw-drone-go", p).addEventListener("click", function () {
       if (!droneOn && S.mode !== "tanpura" && !S.pads.length) { S.pads = [0]; padState(); save(); }
       droneToggle();
     });
     p._sync = function () {                              // show the shared settings (another copy of the drone may have changed them)
       doSel.value = S.droneDo; octSel.value = S.droneOct; $("#pw-low", p).checked = S.lowDo; $("#pw-tone", p).value = S.tone;
+      var kk = keyInfo(pageInfo().key); $("#pw-drone-page", p).disabled = !kk; if (!kk) dnote("This page has no key to take.");
       $("#pw-dvol", p).value = S.droneVol; $("#pw-a4", p).value = S.a4; $("#pw-tan-rate", p).value = S.tanRate; $("#pw-tan-tone", p).value = S.tanTone; padState(); tuned(); moded(); words();
     };
     p._sync();
@@ -593,7 +729,15 @@
   function loadScript(src) { return new Promise(function (res, rej) { var t = document.createElement("script"); t.src = src; t.onload = res; t.onerror = rej; document.head.appendChild(t); }); }
   function buildCircle() {
     var p = el("div", "pw-panel pw-wide"); p.id = "pw-circle"; p.hidden = true; p.setAttribute("role", "dialog"); p.setAttribute("aria-label", "Circle of fifths");
-    p.innerHTML = '<div class="pw-head"><h2>Circle of fifths</h2><button class="pw-x" type="button" aria-label="Close">\u00d7</button></div><div id="pw-circle-host"><p class="pw-note">Loading\u2026</p></div>';
+    p.innerHTML = '<div class="pw-head"><h2>Circle of fifths</h2><button class="pw-x" type="button" aria-label="Close">\u00d7</button></div><div class="pw-row"><button class="pw-btn" type="button" id="pw-circle-page" title="Take the key of this page">From page</button><span class="pw-note" id="pw-circle-note" style="margin:0" aria-live="polite"></span></div><div id="pw-circle-host" style="margin-top:.5rem"><p class="pw-note">Loading\u2026</p></div>';
+    p.classList.add("pw-circlep");
+    p._sync = function () { var ki = keyInfo(pageInfo().key); $("#pw-circle-page", p).disabled = !ki; $("#pw-circle-note", p).textContent = ki ? "" : "This page has no key to take."; };
+    $("#pw-circle-page", p).addEventListener("click", function () {
+      var pk = pageInfo().key, ki = keyInfo(pk), note = $("#pw-circle-note", p); if (!ki) { note.textContent = "This page has no key to take."; return; }
+      var go = function () { window.Tonality.setFromKey(String(pk).replace(/\s+/g, "").replace(/\u266f/g, "#").replace(/\u266d/g, "b"), "page"); note.textContent = "Took the key: " + ki.text + "."; };
+      if (window.Tonality) go(); else loadScript("/apps/shared/tonality.js?v=10").then(go);
+    });
+    p._sync();
     return p;
   }
   function openCircle() {
@@ -602,7 +746,7 @@
     if (!window.Tonality) chain = chain.then(function () { return loadScript("/apps/shared/tonality.js?v=10"); });
     chain.then(function () {
       var host = $("#pw-circle-host", panels.circle); host.innerHTML = "";
-      circle = window.CircleOfFifths.mount(host, { rings: "roman,notes,syllables", picker: "key,mode,names", undo: true, sound: true, tonality: !!window.Tonality, link: document.getElementById("bl-key") });
+      circle = window.CircleOfFifths.mount(host, { rings: "roman,notes,syllables", picker: "key,mode,sharps,names", undo: true, sound: true, tonality: !!window.Tonality, link: document.getElementById("bl-key") });
     }).catch(function () { $("#pw-circle-host", panels.circle).innerHTML = '<p class="pw-note">Couldn\u2019t load the circle. Check your connection and try again.</p>'; circleLoading = false; });
   }
 
@@ -653,6 +797,7 @@
     }
     icons();
     window.addEventListener("tuner-panel-state", function (e) { if (navBtn.tuner) navBtn.tuner.classList.toggle("is-on", !!(e.detail && e.detail.running)); });
+    window.addEventListener("page-music-change", function () { Object.keys(panels).forEach(function (k) { if (panels[k]._sync) panels[k]._sync(); }); syncDrones(); });   // a page changed its tempo / key
     window.addEventListener("tonality-change", icons);                                  // a page (or the circle) changed the shared key
     window.addEventListener("storage", function (e) { if (/^tonal/.test(e.key || "")) icons(); });   // ... or another tab did
     panels.metro = buildMetro(); panels.drone = buildDrone(); panels.tuner = buildTuner(); panels.circle = buildCircle(); panels.mixer = buildMixer();
@@ -677,7 +822,7 @@
     });
     if (inlineDrones.length) { syncDrones(); Object.keys(panels).forEach(function (k) { if (panels[k]._sync) panels[k]._sync(); }); }
     refresh();
-    window.PracticeWidgets = { metronome: { start: metroStart, stop: metroStop, running: function () { return metro.on; } },
+    window.PracticeWidgets = { metronome: { start: metroStart, stop: metroStop, running: function () { return metro.on; }, rows: function () { return (metro.rows || []).map(function (r) { return { k: r.k, n: r.n, at: r.at.slice() }; }); } },
                                circle: function () { return circle; },
                                drone: { toggle: droneToggle, running: function () { return droneOn; }, state: function () { return S; } } };
   }

@@ -1,6 +1,7 @@
 ---
 title: "4. Frosty the Snowman"
 body-classes: lyrics
+key: C
 ---
 
 ## Verse 1

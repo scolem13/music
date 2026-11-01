@@ -14,7 +14,7 @@
 .sh-fing{font-family:var(--font-mono);font-size:.8rem}.sh-bar-lbl{font-size:.88rem}
 .sh-ids{font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink-2)}
 </style>
-<script src="/apps/shared/abcjs-basic.js?v=3"></script>
+<script src="/apps/shared/abcjs-basic.js?v=4"></script>
 <script src="/apps/shared/audio.js?v=10"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>
 <script src="/apps/shared/chord-catalog.js?v=1"></script>
