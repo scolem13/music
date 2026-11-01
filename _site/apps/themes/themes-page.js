@@ -150,6 +150,11 @@
       const play = document.createElement("button"); play.type = "button"; play.className = "ct-play"; play.textContent = "▶ Play";
       play.addEventListener("click", () => togglePlay(c));
       btns.appendChild(play);
+      // the whole movement in the full-score player, opened at the theme (a pickup: the bar before the one it leads into)
+      const sc = workOf(r.t) && ((workOf(r.t).in || {}).score || [])[0];
+      if (sc) { const a = document.createElement("a"); const at = r.t.bar ? Math.max(0, r.t.bar - (r.rec && r.rec.hasPickup ? 1 : 0)) : null;
+        a.href = Works.href("score", Object.assign({}, sc, at != null ? { bar: at } : {})); a.className = "ct-fullscore";
+        a.textContent = "Full score" + (at != null ? " from bar " + at : ""); a.title = "The whole movement, with this theme in context"; btns.appendChild(a); }
       if (!workOf(r.t) && r.t.yt) { const a = document.createElement("a"); a.href = r.t.yt; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Recording"; btns.appendChild(a); }
       const m = c.querySelector(".ct-meta"), rec = r.rec;
       const bits = [

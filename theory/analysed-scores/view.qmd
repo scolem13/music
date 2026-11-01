@@ -9,7 +9,7 @@ description: "The Bach chorales, the preludes of the Well-Tempered Clavier Book 
 {{< include _head.qmd >}}
 
 ```{=html}
-<script src="/apps/shared/score-view.js?v=4"></script>
+<script src="/apps/shared/score-view.js?v=5"></script>
 <style>
 #sv-title { margin-bottom: .1rem; } #sv-sub { opacity: .75; margin-bottom: .5rem; }
 #sv-nav { display: flex; gap: .4rem; flex-wrap: wrap; margin: .4rem 0 .8rem; }

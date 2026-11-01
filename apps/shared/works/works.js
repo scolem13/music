@@ -1,7 +1,8 @@
 // works.js: the pieces in works-data.js (window.WORKS) and the "Recordings & resources" panel shown with them.
-//   <script src="/apps/shared/works/works-data.js?v=4"></script>
-//   <script src="/apps/shared/works/works.js?v=6"></script>
+//   <script src="/apps/shared/works/works-data.js?v=5"></script>
+//   <script src="/apps/shared/works/works.js?v=8"></script>
 //   Works.mount(host, "tune" | "theme" | "analysed", id)   draws the panel for whatever work holds that item (hides host if none)
+//   kinds: tune, theme, analysed, score (the full-score player: { analysed: id } or { id }, href adds &bar= when x.bar is set)
 //   Works.of(kind, id) -> work or null · Works.get(workId) · Works.ids() · Works.href(kind, ref) · Works.source(recording)
 // A recording is yt (video id or URL), r2 (a path in the bucket, read against WORKS_CONFIG.r2Base) or url (audio/video file, or
 // any page, which is then only linked). start / end are seconds or "m:ss". Only one recording plays at a time on a page.
@@ -10,16 +11,17 @@
   "use strict";
   var CFG = global.WORKS_CONFIG = Object.assign({ r2Base: "", directory: "/practice/tune-directory.html" }, global.WORKS_CONFIG || {});
   var W = global.WORKS || {}, index = null, current = null;
-  var KIND = { tune: "Tune Library", theme: "Classical Themes", analysed: "Analysed score" };
+  var KIND = { tune: "Tune Library", theme: "Classical Themes", analysed: "Analysed score", score: "Full score" };
   var LINK = { article: "Article", video: "Video", lesson: "Lesson", sheet: "Sheet music", other: "Link" };
 
   function build() {
     index = {};
     Object.keys(W).forEach(function (wid) {
       var inn = W[wid].in || {};
-      Object.keys(inn).forEach(function (kind) { (inn[kind] || []).forEach(function (x) { index[kind + ":" + (x && x.piece || x)] = wid; }); });
+      Object.keys(inn).forEach(function (kind) { (inn[kind] || []).forEach(function (x) { index[kind + ":" + refId(x)] = wid; }); });
     });
   }
+  function refId(x) { return x && (x.piece || x.analysed || x.id) || x; }
   function of(kind, id) { if (!index) build(); var wid = index[kind + ":" + id]; return wid ? Object.assign({ id: wid }, W[wid]) : null; }
   function get(wid) { return W[wid] ? Object.assign({ id: wid }, W[wid]) : null; }
 
@@ -52,6 +54,8 @@
     if (kind === "tune") return "/practice/tunes.html?tune=" + encodeURIComponent(x);
     if (kind === "theme") return "/tools/classical-themes.html?theme=" + encodeURIComponent(x);
     if (kind === "analysed") return "/" + x.page.replace(/\.(qmd|html)$/, "") + ".html?piece=" + encodeURIComponent(x.piece);
+    if (kind === "score") return "/theory/analysed-scores/full-scores.html?" + (x.analysed ? "analysed=" + encodeURIComponent(x.analysed) : "id=" + encodeURIComponent(x.id)) +
+      (x.bar != null ? "&bar=" + encodeURIComponent(x.bar) : "");
     return "#";
   }
   function openUrl(s) {
@@ -165,9 +169,9 @@
     also.appendChild(el("span", "wk-type", here ? "Also in" : "In"));
     Object.keys(w.in || {}).forEach(function (kind) {
       (w.in[kind] || []).forEach(function (x) {
-        var id = x && x.piece || x;
+        var id = refId(x);
         if (here && here.kind === kind && String(here.id) === String(id)) return;
-        var a = el("a", null, KIND[kind] + " · " + (kind === "theme" ? "No. " + String(id).replace(/^0+/, "") : id)); a.href = href(kind, x);
+        var a = el("a", null, kind === "score" ? KIND.score : KIND[kind] + " · " + (kind === "theme" ? "No. " + String(id).replace(/^0+/, "") : id)); a.href = href(kind, x);
         also.appendChild(a); any = true;
       });
     });

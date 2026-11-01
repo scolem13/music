@@ -42,7 +42,7 @@
   // short names for the systems after the first, the usual score abbreviations; anything else: its first word cut to 3 letters
   var SHORT = [[/^flaut|^flute/i, "Fl."], [/^picc/i, "Picc."], [/^obo/i, "Ob."], [/^clar/i, "Cl."], [/^fag|^bassoon/i, "Fg."], [/^corn|^horn/i, "Cor."],
     [/^tromb[ae]\b|^trumpet/i, "Tr."], [/^trombon/i, "Trb."], [/^timp/i, "Timp."], [/^violino|^violin/i, "Vl."], [/^viola/i, "Vla."],
-    [/^violoncello e bass|^cello and bass/i, "Vc. e B."], [/^violon?cell|^cello/i, "Vc."], [/^contrab|^bass|^double/i, "Cb."]];
+    [/^violoncello e bass|^cello and bass/i, "Vc. e B."], [/^violon?cell|^cello/i, "Vc."], [/^contrab|^bass|^double/i, "Cb."], [/^piano/i, "Pno."]];
   function shortName(n) {
     var s = SHORT.filter(function (x) { return x[0].test(n); })[0], head = s ? s[1] : n.split(/\s+/)[0].slice(0, 3) + ".";
     var tail = (/\s((?:I{1,3}|IV|1|2|3)|in [A-G][b♭#]?)$/.exec(n) || [, ""])[1];

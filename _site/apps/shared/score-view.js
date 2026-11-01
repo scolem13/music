@@ -58,6 +58,8 @@
     [[sib(i - 1), "← "], [sib(i + 1), ""]].forEach(function (s, k) {
       if (!s[0]) return; var a = el("a", "btn btn-sm btn-outline-secondary", k ? navName(s[0]) + " →" : "← " + navName(s[0])); a.href = PAGE + "?id=" + s[0].id; nav.appendChild(a);
     });
+    var fs = el("a", "btn btn-sm btn-outline-secondary", "Full score"); fs.href = "full-scores.html?analysed=" + encodeURIComponent(id);
+    fs.title = "Open in the full-score player: pages or one long line, play from any note or bar, follow"; nav.appendChild(fs);
     var all = el("a", "btn btn-sm btn-outline-secondary", "All pieces"); all.href = "#all-the-pieces"; nav.appendChild(all);
     $("sv-status").textContent = "Loading the " + p.setName.toLowerCase() + "…";
     get(p.file).then(function (B) {

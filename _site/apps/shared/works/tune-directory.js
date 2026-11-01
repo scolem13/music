@@ -79,6 +79,7 @@
   // ---- analysed scores that belong to a piece ----
   const abox = $("#td-analysed-list"), aul = el("ul", "td-list");
   ids.forEach((id) => (W[id].in && W[id].in.analysed || []).forEach((x) => aul.appendChild(row("analysed", x, W[id].title, x.piece, null, NONE))));
+  ids.forEach((id) => (W[id].in && W[id].in.score || []).forEach((x) => aul.appendChild(row("score", x, W[id].title, "full score", null, NONE))));
   if (aul.children.length) abox.appendChild(aul);
 
   // ---- MLT / JRI recordings (apps/shared/mlt/recordings.js), by CD; a name plays the track in place ----

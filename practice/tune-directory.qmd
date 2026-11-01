@@ -91,7 +91,7 @@ YouTube and paste the link there.</p>
 ## Analysed Scores {#td-analysed}
 
 ```{=html}
-<p class="td-note">The analysed scores that belong to a piece above. All of them are on the <a href="../theory/analysed-scores/index.html">Analysed Scores</a> pages.</p>
+<p class="td-note">The analysed scores and full scores that belong to a piece above. All of them are on the <a href="../theory/analysed-scores/index.html">Analysed Scores</a> pages; a full score opens in the <a href="../theory/analysed-scores/full-scores.html">full-score player</a>.</p>
 <div id="td-analysed-list"></div>
 
 <style>
@@ -140,10 +140,10 @@ YouTube and paste the link there.</p>
 <script src="/apps/shared/tune-library.js?v=20"></script>
 <script src="/apps/tunes/tunes-object.js?v=2"></script>
 <script src="/apps/themes/themes-data.js?v=3"></script>
-<script src="/apps/shared/works/works-data.js?v=4"></script>
-<script src="/apps/shared/works/works.js?v=6"></script>
+<script src="/apps/shared/works/works-data.js?v=5"></script>
+<script src="/apps/shared/works/works.js?v=8"></script>
 <script src="/apps/shared/mlt/recordings.js?v=2"></script>
-<script src="/apps/shared/works/tune-directory.js?v=7"></script>
+<script src="/apps/shared/works/tune-directory.js?v=8"></script>
 <script src="/apps/shared/works/td-sheet.js?v=2"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
 ```

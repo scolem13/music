@@ -1923,7 +1923,7 @@
     "href": "theory/analysed-scores/beethoven-moonlight-1.html",
     "title": "Beethoven: “Moonlight” Sonata, I",
     "section": "",
-    "text": "The whole first movement (Adagio sostenuto). Triplets run under a slow melody throughout. The harmony changes slowly, usually once or twice a bar, so this is a good piece for following an analysis by ear. How to read the labels and use the score: Analysed Scores.\nThings to find:\nAbove the score, the key strip shows every key the analysts name, in order: c♯, E, e, b, f♯ and home. Click a key to light its bars and hear them.\nAnalysis: Tsung-Ping Chen and Li Su (BPS dataset), proof-read by Mark Gotham.",
+    "text": "The whole first movement (Adagio sostenuto). Triplets run under a slow melody throughout. The harmony changes slowly, usually once or twice a bar, so this is a good piece for following an analysis by ear. How to read the labels and use the score: Analysed Scores.\nThings to find:\nAbove the score, the key strip shows every key the analysts name, in order: c♯, E, e, b, f♯ and home. Click a key to light its bars and hear them.\nAnalysis: Tsung-Ping Chen and Li Su (BPS dataset), proof-read by Mark Gotham.\nTo read it in the full-score player (pages side by side or one long line, play from any note or bar, follow, choose staves): open it as a full score.",
     "crumbs": [
       "Theory",
       "Analysed Scores",
@@ -30497,7 +30497,7 @@
     "href": "practice/tune-directory.html#td-analysed",
     "title": "Tune Directory",
     "section": "Analysed Scores",
-    "text": "Analysed Scores\nThe analysed scores that belong to a piece above. All of them are on the Analysed Scores pages.",
+    "text": "Analysed Scores\nThe analysed scores and full scores that belong to a piece above. All of them are on the Analysed Scores pages; a full score opens in the full-score player.",
     "crumbs": [
       "Practise",
       "Tune Directory"
@@ -33677,6 +33677,30 @@
     "crumbs": [
       "Learn from a recording",
       "Timestamp Notes"
+    ]
+  },
+  {
+    "objectID": "theory/analysed-scores/full-scores.html",
+    "href": "theory/analysed-scores/full-scores.html",
+    "title": "Full Scores",
+    "section": "",
+    "text": "Any piece in the Analysed Scores Library also opens here, Roman numerals and all: the Full score button on its page, e.g. Beethoven, “Moonlight” Sonata, I.",
+    "crumbs": [
+      "Theory",
+      "Analysed Scores",
+      "Full Scores"
+    ]
+  },
+  {
+    "objectID": "theory/analysed-scores/full-scores.html#scores",
+    "href": "theory/analysed-scores/full-scores.html#scores",
+    "title": "Full Scores",
+    "section": "",
+    "text": "Any piece in the Analysed Scores Library also opens here, Roman numerals and all: the Full score button on its page, e.g. Beethoven, “Moonlight” Sonata, I.",
+    "crumbs": [
+      "Theory",
+      "Analysed Scores",
+      "Full Scores"
     ]
   }
 ]

@@ -5,7 +5,9 @@
 //   "<work-id>": {
 //     title, composer, from (optional: the larger work, e.g. "Symphony No. 9"),
 //     in: { tune: [Tune Library %%id …], theme: [Classical Themes id "0887" …],
-//           analysed: [{ piece: data-piece, page: "theory/analysed-scores/<page>" } …] },
+//           analysed: [{ piece: data-piece, page: "theory/analysed-scores/<page>" } …],
+//           score: [{ analysed: "<Analysed Scores Library id>" } | { id: "<full-scores/index.json id>" } …] },   the full-score player
+//           (theory/analysed-scores/full-scores.qmd); a theme of the work gets a button that opens it at the theme's bar
 //     recordings: [ one of  yt: "<11-char video id or any YouTube URL>"  |  r2: "<path in the R2 bucket>"  |  url: "<any audio/video URL>",
 //                   plus optional performer, year, start / end (seconds or "m:ss"), note, who: "student" | "teacher",
 //                   draft: true (hidden from students: only the teacher's browser, ?teacher=1 once, shows it),
@@ -29,6 +31,9 @@ window.WORKS = {
           "piece": "beethoven-moonlight-1",
           "page": "theory/analysed-scores/beethoven-moonlight-1"
         }
+      ],
+      "score": [
+        { "analysed": "beethoven-sonata-14-1" }
       ]
     },
     "recordings": [
@@ -263,6 +268,21 @@ window.WORKS = {
         "start": 2
       }
     ]
+  },
+  "mozart-symphony-40-iv": {
+    "title": "Symphony No. 40 in G minor, K. 550, 4th movement (Allegro assai)",
+    "composer": "Wolfgang Amadeus Mozart",
+    "in": {
+      "theme": [
+        "4605",
+        "4606"
+      ],
+      "score": [
+        { "id": "mozart40-iv" }
+      ]
+    },
+    "recordings": [],
+    "links": []
   },
   "mozart-concerto-in-d-minor-4096": {
     "title": "Concerto in D minor, K 466, 1st Movement - 1st Theme",
