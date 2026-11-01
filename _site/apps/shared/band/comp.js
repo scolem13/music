@@ -297,6 +297,7 @@
     //   foreshadowing - its last bar is already the pattern that comes next (40% before a change);
     //   a break      - its third bar is some other pattern, and the fourth returns (30% otherwise).
     // Only patterns with some weight take part, so one slider up and the rest at zero is still that pattern alone.
+    function splitable(m){ var g = GRID[m]; return !!(g && !g.ballad && !g.pick && !g.arp && !g.tune && !g.waltz && !g.exact && typeof g.bars !== "function" && g.bars.length === 1); }
     function planSpan(ch, su){
       var W = su.weights, live = W ? ch.filter(function (m){ return m === "figs" ? su.figs.some(function (x){ return W[x] == null || W[x] > 0; }) : (W[m] == null || W[m] > 0); }) : ch;
       if (!live.length) live = ch;
@@ -307,6 +308,15 @@
         if (prev && prev !== home && live.indexOf(prev) >= 0 && rng() < 0.35) span[1] = prev;
         if (next !== home && rng() < 0.4) span[3] = next;
         else if (others.length && rng() < 0.3) span[2] = W ? byWeight(others, W, su.figs) : others[Math.floor(rng() * others.length)];
+      }
+      // two beats of one pattern and two of another (in 4/4): a bar of the span (not its first) may be split, half
+      // home and half a visitor, both set patterns (driving eighths for two beats, say). 25% of spans have one.
+      var halves = live.filter(function (m){ return splitable(m); });
+      if (su.beats === 4 && halves.length > 1 && splitable(home) && rng() < 0.25){
+        var hb = 1 + Math.floor(rng() * 3), vis = halves.filter(function (m){ return m !== home; });
+        var v = W ? byWeight(vis, W, su.figs) : vis[Math.floor(rng() * vis.length)];
+        span[hb] = rng() < 0.5 ? span[hb] + "|" + v : v + "|" + span[hb];
+        if (span[hb].split("|")[0] === span[hb].split("|")[1]) span[hb] = home;
       }
       st.home = home; st.nextHome = next; span.forEach(function (m){ st.modePlan.push(m); });
     }
@@ -389,8 +399,20 @@
         var ch = su.tex.slice(); if (su.figs.length) ch.push("figs");
         var sig = su.rhythm + "|" + (su.weights ? ch.map(function (m){ return m + ":" + su.weights[m]; }).join(",") : "");
         if (st.modeSet !== sig || !st.modePlan){ st.modeSet = sig; st.modePlan = []; st.home = null; st.nextHome = null; }
+        su.beats = ctx.beats;
         while (st.modePlan.length < 2) planSpan(ch, su);
         st.mode = st.modePlan.shift();
+        if (st.mode.indexOf("|") > 0){
+          var hh = st.mode.split("|"), half = ctx.beats / 2;
+          if (ctx.beats !== 4 || su.calm || ctx.compound) st.mode = hh[0];
+          else {
+            var A = gridBar(ctx, Object.assign({}, su, { grid: hh[0] })).filter(function (e){ return e.pos < half - 1e-6; });
+            A.forEach(function (e){ if (e.pos + e.dur > half) e.dur = Math.round(Math.max(0.1, half - e.pos - 0.05) * 1000) / 1000; });
+            var B = gridBar(ctx, Object.assign({}, su, { grid: hh[1] })).filter(function (e){ return e.pos >= half - 1e-6; });
+            if (!B.length && !A.some(function (e){ return e.pos < 1e-6; })) return A;
+            return A.concat(B);
+          }
+        }
         su.four = st.mode === "four"; su.stabs = st.mode === "stabs"; su.grid = GRID[st.mode] ? st.mode : null;
         phraseEnds = st.modePlan[0] !== st.mode;                              // the next bar is another texture
       }

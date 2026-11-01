@@ -83,5 +83,11 @@ console.log("CALM OK");
   // the blend has random numbers of its own: the comping plays the same notes whether or not the drums are blended
   assert.strictEqual(JSON.stringify(run({}, 7).map(function (b){ return b.parts.comp; })), JSON.stringify(run({ groove: "rock+rock" }, 7).map(function (b){ return b.parts.comp; })));
   assert.strictEqual(BandHarmony.blendFirst({ bassFeel: "walk+two", groove: "auto" }).bassFeel, "walk"); var same = { bassFeel: "walk" }; assert.strictEqual(BandHarmony.blendFirst(same), same);
+  // a blend of grooves holds for a section, or for eight bars of a longer one: never a change inside four bars
+  var SEC = "X:1\nM:4/4\nL:1/8\nK:C\nP:Verse\n" + Array(17).join('"C"z8|') + "\nP:Chorus\n" + Array(9).join('"F"z8|') + "\n";
+  for (seed = 1; seed <= 10; seed++){
+    var gs = BandMidi.generate(TuneChart.parse(SEC), { bars: 48, tempo: 110, rng: mulberry(seed), opts: Object.assign(C.styleOpts("rock").opts, { groove: "rock+motown+dance" }) }).map(function (b){ return b.opts.groove; });
+    for (var gi = 1; gi < gs.length; gi++) if (gs[gi] !== gs[gi - 1]) assert([0, 8, 16].indexOf(gi % 24) >= 0, "groove changed at bar " + (gi + 1) + ": " + gs.join(" "));
+  }
   console.log("BLEND OK");
 })();

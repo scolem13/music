@@ -629,7 +629,8 @@
   // ---- blends of bass lines and of grooves ----
   // opts.bassFeel and opts.groove may each name several patterns joined by "+", as opts.compRhythm does. The
   // player (and BandMidi.generate) asks blendOpts for each bar's options, in which each is one pattern again,
-  // so every part sees the same bass line and the same groove for the bar. They are planned four bars at a time,
+  // so every part sees the same bass line and the same groove for the bar. Grooves go by sections (grooveSpan,
+  // below). Bass lines are planned four bars at a time,
   // the way the comping plans its rhythms (comp.js, planSpan): one pattern is at home for the phrase, chosen by
   // its share of the blend (opts.bassMix / opts.grooveMix: { id: 0..1 }, unlisted = 0.5; with no shares, mostly
   // a different one from last time), and the phrase may hold visitors: its second bar goes back to the
@@ -658,6 +659,27 @@
     }
     s.home = home; s.next = next; s.span = span;
   }
+  // A drummer keeps a groove far longer than a pianist keeps a figure: a blend of grooves changes only where a
+  // section starts, or after eight bars of a longer section (and then half the time stays), at the top of a
+  // four-bar phrase. No visitors inside the span: a one-bar change of beat is a fill, and fills are asked for apart.
+  function grooveSpan(s, ids, W, ctx, rng){
+    function w(id){ return !W || W[id] == null ? 0.5 : Math.max(0, +W[id] || 0); }
+    var live = W ? ids.filter(function (id){ return w(id) > 0; }) : ids; if (!live.length) live = ids;
+    function choose(not){
+      var pool = !W && live.length > 1 && not != null && rng() < 0.7 ? live.filter(function (id){ return id !== not; }) : live;
+      if (!W) return pool[Math.floor(rng() * pool.length)];
+      var sum = pool.reduce(function (a, id){ return a + w(id); }, 0), r = rng() * sum;
+      for (var i = 0; i < pool.length - 1; i++){ r -= w(pool[i]); if (r < 0) return pool[i]; } return pool[pool.length - 1];
+    }
+    var fb = ctx && ctx.form && ctx.form[ctx.index], top = !!(fb && fb.section != null), pos = (((ctx && ctx.phrase && ctx.phrase.bar) | 0) % 4 + 4) % 4;
+    if (s.at !== ctx.bar){
+      if (!s.home || live.indexOf(s.home) < 0) { s.home = W ? choose(null) : live[Math.floor(rng() * live.length)]; s.run = 0; }
+      else if (top && s.run > 0) { s.home = choose(s.home); s.run = 0; }
+      else if (s.run >= 8 && pos === 0) { if (rng() < 0.5) s.home = choose(s.home); s.run = 0; }
+      s.run++; s.at = ctx.bar;
+    }
+    return s.home;
+  }
   function blendOpts(st, opts, ctx, rng){
     if (!opts || !BLENDS.some(function (b){ return String(opts[b[0]] || "").indexOf("+") >= 0; })) return opts;
     st = st || {}; rng = rng || Math.random;
@@ -665,7 +687,8 @@
     BLENDS.forEach(function (b){
       var ids = blendIds(opts[b[0]]); if (ids.length < 2){ if (ids.length) o[b[0]] = ids[0]; return; }
       var W = opts[b[1]] || null, sig = ids.join("+") + "|" + (W ? ids.map(function (id){ return W[id]; }).join(",") : ""), s = st[b[0]] || (st[b[0]] = {});
-      if (s.sig !== sig){ s.sig = sig; s.span = null; s.home = null; s.next = null; }
+      if (s.sig !== sig){ s.sig = sig; s.span = null; s.home = null; s.next = null; s.run = 0; }
+      if (b[0] === "groove"){ o.groove = grooveSpan(s, ids, W, ctx, rng); return; }
       if (!s.span || (pos === 0 && s.at !== ctx.bar)) blendSpan(s, ids, W, rng);
       s.at = ctx.bar; o[b[0]] = s.span[pos];
     });

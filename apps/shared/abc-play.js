@@ -95,7 +95,7 @@
 
   // ---- the band (chord symbols) ----
   var BAND_JS = ["/apps/shared/abc-transpose.js?v=4", "/apps/shared/tune-chart.js?v=31", "/apps/tune-assessment/abc-tune.js?v=3", "/apps/shared/voicings.js?v=5",
-    "/apps/shared/band/harmony.js?v=34", "/apps/shared/band/bass.js?v=16", "/apps/shared/band/comp.js?v=32", "/apps/shared/band/catalog.js?v=37",
+    "/apps/shared/band/harmony.js?v=35", "/apps/shared/band/bass.js?v=16", "/apps/shared/band/comp.js?v=33", "/apps/shared/band/catalog.js?v=37",
     "/apps/shared/band/drums.js?v=18", "/apps/shared/band/congas.js?v=4", SOUNDS, "/apps/shared/band/player.js?v=128"], bandJs = null;
   function loadBand() {
     if (global.BandPlayer && global.BandCatalog && global.TuneChart && global.BandHarmony) return Promise.resolve();
