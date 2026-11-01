@@ -24,6 +24,15 @@ const srv = http.createServer((q, s) => { if (/-mp3\//.test(q.url)) sampleHits.p
   check("score drawn", await wait(`!!document.querySelector('.fs-paper svg')`));
   check("first screen drawn before the rest", true, (await ev(`document.querySelector('#score').dataset.firstMs`)) + " ms to the first screen");
   await wait(DONE);
+  // click a note, Tab: its characters selected in the score's ABC; Tab there: back to a marked note
+  const tabTo = JSON.parse(await ev(`(() => { const n = [...document.querySelectorAll('.fs-sys')[1].querySelectorAll('.abcjs-note')][3], b = n.getBoundingClientRect(), o = { bubbles: true, clientX: b.left + b.width / 2, clientY: b.top + b.height / 2 };
+    n.dispatchEvent(new MouseEvent("mousedown", o)); n.dispatchEvent(new MouseEvent("mouseup", o)); document.activeElement.blur();
+    window.dispatchEvent(new KeyboardEvent("keydown", { key: "Tab", cancelable: true })); const ta = document.querySelector('.fs-abc');
+    const sel = ta.value.slice(ta.selectionStart, ta.selectionEnd); ta.setSelectionRange(ta.selectionStart + 30, ta.selectionStart + 30);
+    ta.dispatchEvent(new KeyboardEvent("keydown", { key: "Tab", bubbles: true, cancelable: true }));
+    return JSON.stringify({ focus: true, sel, back: document.querySelectorAll('.fs-from').length }); })()`));
+  check("click a note, Tab: its ABC selected (a note, no spaces); Tab in the ABC: a note marked", /^[.!"^_=A-Ga-gz[\]x,'\d\/()<>-]+$/.test(tabTo.sel) && /[A-Ga-g]/.test(tabTo.sel) && tabTo.back > 0, JSON.stringify(tabTo));
+  await ev(`document.querySelector('.fs-fromclear').click(); 1`);
   const tl = JSON.parse(await timeline());
   check("played bars in order, repeats taken (620 played bars), Go to bar lands on its bar", tl.n === 620 && tl.up && !tl.go.length, JSON.stringify(tl));
   await ev(`document.querySelector('.fs-skip').click()`);

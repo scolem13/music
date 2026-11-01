@@ -9,7 +9,7 @@ description: "Full orchestral scores drawn in the browser and played on sampled 
 ```{=html}
 <script src="/apps/shared/abcjs-basic.js?v=4"></script>
 <script src="/apps/shared/abc-play.js?v=20"></script>
-<script src="/apps/shared/full-score.js?v=4"></script>
+<script src="/apps/shared/full-score.js?v=5"></script>
 <style>
 #fsp { --fs-paper: #fffdf8; --fs-rule: var(--bs-border-color, #ccc); --fs-accent: #7a2e2a; }
 #fsp-list a { font-weight: 600; } #fsp-list .fsp-sub { font-size: .88rem; opacity: .75; }
