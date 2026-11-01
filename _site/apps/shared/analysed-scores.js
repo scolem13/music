@@ -10,6 +10,9 @@
 // whose first cell gives the bars ("12–14", "Upbeat to 5–14"; or <tr data-bars="5-14" data-upbeat>), gets a ▶ in each row that lights and plays those bars in whichever tab's score is showing.
 // AnalysedScores.playBars(score, from, to, upbeat) does the same from other pages' links (?bars=7-9 on the address, too).
 // A score whose data-piece belongs to a work in apps/shared/works/works-data.js gets that work's Recordings & resources panel (Works).
+// Tempo: click the drawn tempo mark (♩ = 54 …; a score without a Q: gets one from data-bpm) for a box with the number and a slider;
+// the mark, the timing and the piano follow it, mid-play too (the place in the music is kept). Kept per piece in localStorage
+// ("as-tempo-<piece>"); Reset goes back to the score's own. A recording plays at its own speed.
 // When that work has a recording with a timing map (rec-sync.js; drafts only in the teacher's browser), a Sound menu appears and the
 // recording is the sound: ▶ plays it from the lit position, the current bar lit and kept in view.
 (function (global) {
@@ -20,6 +23,7 @@
 
   function setup(host) {
     var src = host.querySelector('script[type="text/plain"]'); if (!src) return;
+    if (!document.getElementById("as-tempo-css")) { var st = el("style"); st.id = "as-tempo-css"; st.textContent = TEMPO_CSS; document.head.appendChild(st); }
     var S = { host: host, abc: src.textContent, pos: 0, playing: null, tune: null, events: [], notes: [], lastW: 0 };
     var box = el("div", "as-box"), paper = el("div", "as-paper"), grip = el("div", "as-grip"), bar = el("div", "as-bar");
     grip.title = "Drag to resize · double-click to reset"; grip.setAttribute("role", "separator"); grip.setAttribute("aria-orientation", "vertical");
@@ -27,7 +31,7 @@
     bar.appendChild(play);
     // two settings for every score on the page, kept in localStorage: beams (the build writes beam groups as ABC backticks; off, they
     // become spaces) and, on four-part scores (soprano and alto above, tenor and bass below), the tenor on the treble staff (keyboard style)
-    S.base = S.abc; S.four = /^%%score \(s1v1 s1v2\) \(s2v1 s2v2\)$/m.test(S.abc);
+    S.base = tempoBase(S, S.abc); S.four = /^%%score \(s1v1 s1v2\) \(s2v1 s2v2\)$/m.test(S.abc);
     // beams: on by default (the site's rule), except in chorales, which are shown as the hymnal editions print them, every note flagged.
     // Two settings, so turning beams off for a sonata doesn't change the chorales: as-beams (chorales) and as-beams-inst (the rest).
     S.beamKey = S.four || /chorale|bach-o-haupt/.test(host.getAttribute("data-piece") || "") ? "as-beams" : "as-beams-inst";
@@ -43,7 +47,11 @@
     S.paper = paper;
     new ResizeObserver(function () { draw(S); }).observe(paper);
     play.addEventListener("click", function () { active = S; toggle(S); });
-    paper.addEventListener("pointerdown", function (e) { active = S; clickAt(S, e); });
+    paper.addEventListener("pointerdown", function (e) {
+      active = S;
+      var tm = e.target.closest && e.target.closest(".abcjs-tempo"); if (tm && S.q) { e.preventDefault(); tempoBox(S, tm); return; }
+      clickAt(S, e);
+    });
     grip.addEventListener("pointerdown", function (e) {
       e.preventDefault(); grip.setPointerCapture(e.pointerId); document.body.classList.add("as-resizing");
       var x0 = e.clientX, start = box.getBoundingClientRect().width;
@@ -74,6 +82,7 @@
     var a = S.base, tenor = S.four && on("as-tenor-up"), beams = on(S.beamKey || "as-beams");
     if (tenor) a = keyboardStyle(a);
     if (!beams) a = a.replace(/`/g, " ");
+    if (S.q) a = a.replace(/^Q:.*$/m, "Q:" + S.q.unit + "=" + S.tempo);
     if (S.tenorBtn) { S.tenorBtn.textContent = tenor ? "Tenor: treble staff" : "Tenor: bass staff"; S.tenorBtn.setAttribute("aria-pressed", tenor ? "true" : "false");
       S.tenorBtn.title = tenor ? "Move the tenor back to the bass staff (chorale style)" : "Move the tenor to the treble staff (keyboard style)"; }
     if (S.beamBtn) { S.beamBtn.textContent = beams ? "Beams: on" : "Beams: off"; S.beamBtn.setAttribute("aria-pressed", beams ? "true" : "false");
@@ -81,6 +90,63 @@
     var changed = a !== S.abc; S.abc = a; return changed;
   }
 
+  // ---- tempo: S.q = the score's own mark { unit "1/2", val 54 }, S.tempo = the one in use (the same beat)
+  // the beat's note drawn as a small SVG (the music characters are missing from most fonts): head, stem, flags, dot
+  function noteSvg(unit) {
+    var m = /^(\d+)\/(\d+)$/.exec(unit) || [0, 1, 4], n = +m[1], d = +m[2], dot = n === 3; if (dot) d /= 2;
+    var hollow = d <= 2, stem = d >= 2, flags = d >= 8 ? Math.round(Math.log2(d) - 2) : 0, w = 14 + (flags ? 6 : 0) + (dot ? 6 : 0);
+    var out = '<svg class="as-tempo-sym" width="' + w + '" height="24" viewBox="0 0 ' + w + ' 24" aria-hidden="true">' +
+      '<ellipse cx="6" cy="19" rx="5" ry="3.6" transform="rotate(-20 6 19)" fill="' + (hollow ? "none" : "currentColor") + '" stroke="currentColor" stroke-width="1.6"/>';
+    if (stem) out += '<line x1="10.4" y1="18" x2="10.4" y2="2" stroke="currentColor" stroke-width="1.4"/>';
+    for (var f = 0; f < flags; f++) out += '<path d="M10.4 ' + (2 + f * 4) + ' q5 3 4 9" fill="none" stroke="currentColor" stroke-width="1.6"/>';
+    if (dot) out += '<circle cx="' + (w - 3) + '" cy="19" r="1.6" fill="currentColor"/>';
+    return out + "</svg>";
+  }
+  var NAME = { "1/1": "whole note", "1/2": "half note", "1/4": "quarter note", "1/8": "eighth note", "3/8": "dotted quarter", "3/4": "dotted half", "3/16": "dotted eighth", "1/16": "sixteenth note" };
+  function tempoKey(S) { return "as-tempo-" + (S.host.getAttribute("data-piece") || "piece"); }
+  function tempoBase(S, abc) {
+    var m = /^Q:\s*(\d+\/\d+)\s*=\s*(\d+)/m.exec(abc), bpm = +S.host.getAttribute("data-bpm") || 0;
+    if (!m && bpm) {                                     // no mark: one in the meter's beat at data-bpm, just before K:
+      var mm = /^M:\s*(\d+)\/(\d+)/m.exec(abc), C = /^M:\s*C\|?\s*$/m.exec(abc), den = mm ? +mm[2] : C ? (/\|/.test(C[0]) ? 2 : 4) : 4;
+      var unit = mm && +mm[2] === 8 && +mm[1] % 3 === 0 && +mm[1] > 3 ? "3/8" : "1/" + den;
+      abc = abc.replace(/^K:/m, "Q:" + unit + "=" + bpm + "\nK:"); m = [null, unit, String(bpm)];
+    }
+    if (m) { S.q = { unit: m[1], val: +m[2] }; var kept = 0; try { kept = +localStorage.getItem(tempoKey(S)) || 0; } catch (e) {} S.tempo = kept || S.q.val; }
+    return abc;
+  }
+  function setTempo(S, v) {
+    v = Math.max(10, Math.min(400, Math.round(v))); if (!S.q || v === S.tempo) return;
+    var was = !!(S.playing && !S.playing.rec), at = S.pos * S.tempo / v;   // the same place in the music at the new speed
+    if (S.playing) pause(S);
+    S.tempo = v; try { if (v === S.q.val) localStorage.removeItem(tempoKey(S)); else localStorage.setItem(tempoKey(S), v); } catch (e) {}
+    view(S); S.lastW = 0; draw(S); S.pos = at; light(S, at);
+    if (was) start(S);
+  }
+  var TEMPO_CSS = ".as-score{position:relative}.as-score .abcjs-tempo{cursor:pointer}.as-score .abcjs-tempo:hover{fill:#0d6efd}" +
+    ".as-tempo-pop{position:absolute;z-index:20;display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 10px;background:var(--bs-body-bg,#fff);" +
+    "border:1px solid var(--bs-border-color,#ccc);border-radius:6px;box-shadow:0 6px 20px -8px rgba(0,0,0,.35);font-size:14px}" +
+    ".as-tempo-pop input[type=number]{width:4.5em}.as-tempo-pop input[type=range]{width:160px}.as-tempo-sym{vertical-align:middle}.as-tempo-pop label{display:flex;align-items:center;gap:4px}.as-tempo-note{flex-basis:100%;font-size:12px;opacity:.75}";
+  function tempoBox(S, mark) {
+    if (!document.getElementById("as-tempo-css")) { var st = el("style"); st.id = "as-tempo-css"; st.textContent = TEMPO_CSS; document.head.appendChild(st); }
+    var old = S.host.querySelector(".as-tempo-pop"); if (old) { old.remove(); return; }
+    var pop = el("div", "as-tempo-pop");
+    pop.innerHTML = '<label title="' + (NAME[S.q.unit] || S.q.unit) + 's a minute">' + noteSvg(S.q.unit) + ' = <input type="number" min="10" max="400" step="1" aria-label="' + (NAME[S.q.unit] || S.q.unit) + 's a minute"></label>' +
+      '<input type="range" min="' + Math.max(10, Math.round(S.q.val * 0.4)) + '" max="' + Math.round(S.q.val * 2) + '" step="1">' +
+      '<button type="button" class="btn btn-sm btn-outline-secondary">Reset (' + S.q.val + ')</button><button type="button" class="btn-close" aria-label="Close"></button>' +
+      (S.rec ? '<div class="as-tempo-note">The recording plays at its own speed; this tempo is for the piano.</div>' : "");
+    var num = pop.querySelector("input[type=number]"), rng = pop.querySelector("input[type=range]");
+    function show() { num.value = S.tempo; rng.value = S.tempo; }
+    var t; function later(v) { clearTimeout(t); t = setTimeout(function () { setTempo(S, v); show(); }, 120); }
+    num.addEventListener("change", function () { if (+num.value > 0) setTempo(S, +num.value); show(); });
+    num.addEventListener("keydown", function (e) { if (e.key === "Enter") { num.blur(); } if (e.key === "Escape") pop.remove(); e.stopPropagation(); });
+    rng.addEventListener("input", function () { num.value = rng.value; later(+rng.value); });
+    pop.querySelector(".btn-outline-secondary").addEventListener("click", function () { setTempo(S, S.q.val); show(); });
+    pop.querySelector(".btn-close").addEventListener("click", function () { pop.remove(); });
+    var hr = S.host.getBoundingClientRect(), mr = mark.getBoundingClientRect();
+    pop.style.left = Math.max(0, mr.left - hr.left) + "px"; pop.style.top = (mr.bottom - hr.top + 4) + "px";
+    S.host.appendChild(pop); show(); num.focus(); num.select();
+    setTimeout(function () { document.addEventListener("pointerdown", function off(e) { if (!pop.contains(e.target)) { pop.remove(); document.removeEventListener("pointerdown", off, true); } }, true); }, 0);
+  }
   function draw(S) {
     var w = Math.floor(S.paper.clientWidth); if (!w || Math.abs(w - S.lastW) < 8) return; S.lastW = w;
     if (S.playing) pause(S);
@@ -96,7 +162,7 @@
   // abcjs's timing: events (with their drawn elements) and every note's start, end and pitch, in ms
   function timing(S) {
     var t = S.tune; try { t.setUpAudio({}); } catch (e) {}
-    var bpm = +S.host.getAttribute("data-bpm") || 0, mf = t.getMeterFraction(), q = bpm ? bpm * (4 / mf.den) : 0;   // Q is in the meter's beat
+    var bpm = (+S.host.getAttribute("data-bpm") || 0) * (S.q ? S.tempo / S.q.val : 1), mf = t.getMeterFraction(), q = bpm ? bpm * (4 / mf.den) : 0;   // Q is in the meter's beat; the chosen tempo scales it
     S.events = (q ? t.setTiming(q / (t.getBeatLength() * 4)) : t.setTiming()).filter(function (e) { return e.type === "event"; });
     var msWhole = t.millisecondsPerMeasure(q ? q / (t.getBeatLength() * 4) : undefined) / (mf.num / mf.den);   // same tempo as setTiming (see abc-play.js header)
     S.notes = []; S.events.forEach(function (e) { (e.midiPitches || []).forEach(function (m) { S.notes.push({ ms: e.milliseconds, end: e.milliseconds + m.duration * msWhole, midi: m.pitch }); }); });
@@ -378,6 +444,7 @@
   function init() { [].forEach.call(document.querySelectorAll(".as-score"), setup); spaceControl(); forms(); works(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
   // add / remove: scores made after the page loaded (the Modulation Finder's results)
-  global.AnalysedScores = { add: function (host) { setup(host); }, remove: function (host) { if (active && active.host === host) { if (active.playing) pause(active); active = null; } scores = scores.filter(function (S) { if (S.host !== host) return true; if (S.playing) pause(S); return false; }); },
+  global.AnalysedScores = { add: function (host) { setup(host); },
+    info: function (host) { var S = scores.filter(function (x) { return x.host === host; })[0]; return S ? { tempo: S.tempo, own: S.q && S.q.val, endMs: S.endMs, pos: S.pos } : null; }, remove: function (host) { if (active && active.host === host) { if (active.playing) pause(active); active = null; } scores = scores.filter(function (S) { if (S.host !== host) return true; if (S.playing) pause(S); return false; }); },
     scores: function () { return scores; }, chordAt: chordAt, chordTones: chordTones, playBars: playBars, hiBars: hiBars, barMs: barMs };
 })(window);

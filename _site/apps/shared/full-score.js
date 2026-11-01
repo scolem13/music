@@ -13,7 +13,8 @@
 //           its full line; drawn out of sight and handed to AbcPlay, which times and sounds it
 //   drawn:  voices sharing staves (%fs-staves), display lines, short names after the first system, cut into the page's own
 //           systems of a fixed bar width (so pages, pages side by side and one long line all space bars alike): pages
-//           scrolling down ("pages"), pages side by side scrolling across, page-turn buttons and arrow keys ("paged"), or one
+//           scrolling down ("pages"), pages side by side scrolling across (1, 1.3 = a page and the start of the next as a
+//           preview, 2 or 3 a screen), page-turn buttons and arrow keys ("paged"), or one
 //           system ("line", names kept at the left edge). Cutaway: a system leaves out the staves that only rest in it.
 //           abcjs draws each system with its own gaps at their smallest; respace() then places the staves (staffGap between
 //           one staff's bottom line and the next one's top; with "apart", more where the two staves' outlines, compared in
@@ -279,7 +280,8 @@
     ".fs-page{flex:none;box-sizing:border-box;background:var(--fs-paper,#fffdf8);padding:8px 14px 18px;border-radius:2px;box-shadow:0 1px 0 var(--fs-rule,#ccc),0 10px 26px -18px rgba(0,0,0,.5);scroll-snap-align:start}" +
     ".fs-go{display:inline-flex;gap:6px;align-items:center}.fs-goto{width:4.5em;font:inherit;padding:3px 4px}.fs-flash{fill:var(--fs-accent,#7a2e2a);opacity:.16;pointer-events:none}.fs-sheet.fs-line .fs-paper{display:flex;align-items:flex-start}.fs-sheet.fs-line .fs-sys+.fs-sys{margin-top:0}.fs-pageno{font:italic 12px Georgia,serif;opacity:.6;text-align:right}.fs-barjoin{fill:#1a1915;stroke:none}.fs-pageturn{display:inline-flex;gap:6px}" +
     ".fs-names{position:sticky;left:0;width:0;height:0;z-index:2}.fs-names span{position:absolute;left:0;transform:translateY(-50%);font:600 12px/1.1 Georgia,serif;white-space:nowrap;background:var(--fs-paper,#fffdf8);padding:2px 6px 2px 2px;box-shadow:4px 0 6px -4px rgba(0,0,0,.35)}" +
-    ".fs-paper .abcjs-note,.fs-paper .abcjs-rest{cursor:pointer}.fs-paper .fs-from{fill:var(--fs-accent,#7a2e2a)}.fs-paper .abc-on{fill:#b3372f}.fs-src{max-height:360px;overflow:auto;font-size:11px;white-space:pre}";
+    ".fs-paper .abcjs-note,.fs-paper .abcjs-rest{cursor:pointer}.fs-paper .fs-from{fill:var(--fs-accent,#7a2e2a)}.fs-paper .abc-on{fill:#b3372f}.fs-src{max-height:360px;overflow:auto;font-size:11px;white-space:pre}" +
+    ".fs-abc{width:100%;height:320px;font:11px/1.4 ui-monospace,Menlo,monospace;white-space:pre;overflow:auto;background:var(--fs-paper,#fffdf8);color:#1a1915;border:1px solid var(--fs-rule,#ccc);border-radius:3px;padding:6px}";
 
   var LAYOUT0 = { mode: "pages", across: 2, cutaway: false, scale: 0.9, barWidth: 200, staffGap: 16, apart: true, sysGap: 40, pageH: 100, numbers: "system", barlines: "family", barWeight: "abcjs", headroom: 64, rests: true,
     even: 0, evenDyn: true, evenDense: true, evenComp: true };
@@ -314,7 +316,7 @@
       '<form class="fs-save"><input type="text" maxlength="40" placeholder="Name this view, e.g. Horns + low strings" aria-label="View name"><button type="submit">Save view</button></form></details>' +
       '<details class="fs-layout"><summary>Layout <span class="fs-laysum fs-status"></span></summary><div class="fs-lay">' +
         '<label>Show <select data-k="mode"><option value="pages">Pages, scrolling down</option><option value="paged">Pages side by side, scrolling across</option><option value="line">One long line</option></select></label>' +
-        '<label>Pages across <select data-k="across"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></label>' +
+        '<label>Pages across <select data-k="across"><option value="1">1</option><option value="1.3">1.3 (the next page peeks in)</option><option value="2">2</option><option value="3">3</option></select></label>' +
         '<label>Page height <input type="range" data-k="pageH" min="40" max="250" step="5"><output></output></label>' +
         '<label><input type="checkbox" data-k="cutaway"> Hide staves that rest through a system (cutaway)</label>' +
         '<label>Bar numbers <select data-k="numbers"><option value="off">Off</option><option value="system">Start of each system</option><option value="1">Every bar</option><option value="5">Every 5 bars</option><option value="10">Every 10 bars</option></select></label>' +
@@ -337,7 +339,9 @@
       '</div></details>' +
       '<div class="fs-sheet"><div class="fs-names"></div><div class="fs-paper"></div></div>' +
       (o.notes || "") +
-      '<details><summary>The ABC of what is shown</summary><pre class="fs-src"></pre></details>';
+      '<details class="fs-abcbox"><summary>The score\'s ABC <span class="fs-status">(click a note, then Tab: its place here; Tab in here: back to the note)</span></summary>' +
+        '<textarea class="fs-abc" readonly spellcheck="false" aria-label="The score\'s ABC, one line per voice"></textarea></details>' +
+      '<details><summary>The ABC of what is drawn (systems)</summary><pre class="fs-src"></pre></details>';
     var $ = function (s) { return el.querySelector(s); }, paper = $(".fs-paper"), sheet = $(".fs-sheet"), status = $(".fs-status"), qIn = $(".fs-q");
 
     // ---------- instruments and views
@@ -898,7 +902,7 @@
       var key = keyOf.get(abcElem); if (!key) { status.textContent = "That note is drawn but not matched to playback; click another."; return; }
       playForm();
       var hit = timing().filter(function (e) { return e.keys.indexOf(key) >= 0; })[0]; if (!hit) { status.textContent = "That note is not played (an ending left out when repeats are skipped)."; return; }
-      clearFrom(); fromMs = hit.ms; fromKey = key;
+      clearFrom(); fromMs = hit.ms; fromKey = key; lastLen = (abcElem.endChar - abcElem.startChar) || 1;
       (elMap[key] || []).forEach(function (set) { set.forEach(function (g) { g.classList.add("fs-from"); }); });
       $(".fs-fromclear").hidden = false; status.textContent = "Play starts from the marked note.";
       if (playing) play();
@@ -908,6 +912,50 @@
       fromKey = null; fromMs = 0; $(".fs-fromclear").hidden = true; if (!keepStatus) status.textContent = "";
     }
     $(".fs-fromclear").addEventListener("click", function () { clearFrom(); });
+
+    // ---------- the score's ABC beside the drawing (as the Notation page does): the file's header, then each voice's line as the
+    // player reads it, so a note's "voice:offset" is a place in this text. Click a note, Tab: its characters selected here; Tab
+    // in the text: the note at the caret marked in the score (and play starts there).
+    var src = null, lastLen = 1;
+    function source() {
+      if (src) return src;
+      var t = S.head.join("\n") + "\n", at = {};
+      S.parts.forEach(function (p) { p.voices.forEach(function (v) { t += S.decl[v][0] + "\n"; }); });
+      S.parts.forEach(function (p) { p.voices.forEach(function (v) { t += "V:" + v + "\n"; at[v] = t.length; t += S.body[v] + "\n"; }); });
+      $(".fs-abc").value = t;
+      return (src = { at: at });
+    }
+    function toText() {
+      if (!fromKey) return false;
+      var c = fromKey.lastIndexOf(":"), v = fromKey.slice(0, c), a = source().at[v] + +fromKey.slice(c + 1), ta = $(".fs-abc");
+      var z = a + Math.max(1, lastLen); while (a < z - 1 && /\s/.test(ta.value[a] || "")) a++; while (z > a + 1 && /\s/.test(ta.value[z - 1] || "")) z--;   // the note itself, no spaces
+      $(".fs-abcbox").open = true; ta.focus({ preventScroll: true }); ta.setSelectionRange(a, z);
+      var line = ta.value.slice(0, a).split("\n").length - 1, lh = parseFloat(getComputedStyle(ta).lineHeight) || 15;   // bring the line and column into view
+      ta.scrollTop = Math.max(0, line * lh - ta.clientHeight / 2);
+      var col = a - ta.value.lastIndexOf("\n", a - 1) - 1, cw = ta.scrollWidth / Math.max(1, ta.value.split("\n").reduce(function (m, l) { return Math.max(m, l.length); }, 0));
+      ta.scrollLeft = Math.max(0, col * cw - ta.clientWidth / 2);
+      ta.scrollIntoView({ block: "nearest" });
+      return true;
+    }
+    function fromText() {
+      var ta = $(".fs-abc"), pos = ta.selectionStart, at = source().at, v = null;
+      Object.keys(at).forEach(function (x) { if (pos >= at[x] && pos <= at[x] + S.body[x].length && (!v || at[x] > at[v])) v = x; });
+      if (!v) { status.textContent = "Put the caret in a voice's music line."; return; }
+      var off = pos - at[v], best = null;          // the drawn note at or just before the caret in that voice
+      keyOf.forEach(function (key, e) { var c = key.lastIndexOf(":"); if (key.slice(0, c) !== v) return; var o = +key.slice(c + 1); if (o <= off && (!best || o > best.o)) best = { o: o, e: e }; });
+      if (!best) { status.textContent = "No drawn note there yet (the page may still be drawing that part)."; return; }
+      clicked(best.e);
+      var g = (elMap[fromKey] || [])[0] && elMap[fromKey][0][0];
+      if (g) { var pg = g.closest(".fs-page"); if (pg) sheet.scrollLeft = pg.offsetLeft - 10; g.scrollIntoView({ block: "center", inline: "center" }); }
+    }
+    global.addEventListener("keydown", function (e) {
+      if (e.key !== "Tab" || e.shiftKey || e.altKey || e.ctrlKey || e.metaKey) return;
+      var a = document.activeElement || {};
+      if (a === $(".fs-abc")) { e.preventDefault(); fromText(); return; }
+      if (/^(INPUT|SELECT|TEXTAREA|BUTTON|SUMMARY|A)$/.test(a.tagName || "") && !el.contains(a)) return;
+      if (/^(INPUT|SELECT|TEXTAREA)$/.test(a.tagName || "")) return;
+      if (fromKey && toText()) e.preventDefault();
+    });
     $(".fs-skip").checked = !!L.skipRepeats;
     $(".fs-skip").addEventListener("change", function (e) {
       L.skipRepeats = e.target.checked; store.set(KY, L); var keep = playing; stop(); played = null; playVisual = null; clearFrom(true); if (keep) play();
