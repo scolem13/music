@@ -1,0 +1,22 @@
+[
+ {
+  "v": 1,
+  "name": "Take Me to the River",
+  "tempo": 120,
+  "style": "rock",
+  "unlock": true,
+  "feel": "straight",
+  "bass": "motown",
+  "groove": "rock",
+  "rhythm": "stabs",
+  "mix": {},
+  "fields": {
+   "bt-comp": "wurli",
+   "bt-bass-sound": "electric",
+   "bt-second": "hammond",
+   "bt-second-rhythm": "pad",
+   "bt-vol-comp2": "35"
+  },
+  "checks": {}
+ }
+]

@@ -2,7 +2,8 @@
 {key: E}
 {tempo: 120}
 {time: 4/4}
-{style: motown}
+{style: rock}
+# Band: take-me-to-the-river.band.json (rock drums, Motown bass, Wurlitzer stabs).
 # Al Green and Teenie Hodges (1974); this is the Talking Heads version.
 # Bar counts follow the timestamp notes (recording: Talking Heads, about 120 bpm).
 # Guessed, not heard: Pre-chorus A7 x3 (the timing has 5 bars), Chorus = the intro riff,
@@ -26,7 +27,10 @@
 | E7 | % | % | E7 . D A |
 | E7 | % | % | E7 . D A |
 {end_of_grid}
-[E7][E7][E7][E7][D][A][x2]
+[E7](Take me to the [E7]river)
+[E7](Drop me in the [E7]water)
+[E7](Take me to the [E7]river)
+[E7](Drop me in the [E7]water)
 
 {comment: Verse 1}
 {start_of_grid}
@@ -133,7 +137,6 @@ Washing me down
 Washing me down
 
 {comment: Breakdown}
-{style: funk}
 {start_of_grid}
 | E7 | % | % | % | % | % | % | % |
 | % | % | % | % | % | % | % | % |
@@ -143,7 +146,6 @@ Washing me down
 [E7]
 
 {comment: Vamp}
-{style: funk}
 {start_of_grid}
 | E7 | % | % | % | % | % | % | % |
 | % | % | % | % | % | % | % | % |
