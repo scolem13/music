@@ -947,10 +947,9 @@
     function follow(g) {
       var now = performance.now(); if (now - lastFollow < 250) return; lastFollow = now;
       var r = g.getBoundingClientRect(), vh = global.innerHeight, sr = sheet.getBoundingClientRect(), pg = g.closest && g.closest(".fs-page");
-      if (pg) {                                         // side by side: turn to the page when it is not all in view
-        var pr = pg.getBoundingClientRect();
+      if (pg) {                                         // side by side: turn to the page when it is not all in view; the
+        var pr = pg.getBoundingClientRect();            // window's up-and-down scroll is left to the reader
         if (pr.left < sr.left - 2 || pr.right > sr.right + 2) sheet.scrollTo({ left: pg.offsetLeft - 10, behavior: "smooth" });
-        if (r.top < 70 || r.bottom > vh - 40) global.scrollBy({ top: r.top - vh * 0.35, behavior: "smooth" });
         return;
       }
       if (r.top < 70 || r.bottom > vh - 40) global.scrollBy({ top: r.top - vh * 0.35, behavior: "smooth" });
