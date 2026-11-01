@@ -1307,7 +1307,7 @@ window.carolTypeChoice = function () {
   if (!chart || !chart.sections) return;
 
   var FILES = ['/apps/shared/tune-chart.js?v=31', '/apps/shared/voicings.js?v=5', '/apps/shared/band/harmony.js?v=34', '/apps/shared/band/bass.js?v=16',
-               '/apps/shared/band/comp.js?v=32', '/apps/shared/band/presets.js?v=7', '/apps/shared/band/catalog.js?v=37', '/apps/shared/band/drums.js?v=18', '/apps/shared/band/sounds.js?v=19',
+               '/apps/shared/band/comp.js?v=32', '/apps/shared/band/presets.js?v=7', '/apps/shared/band/catalog.js?v=37', '/apps/shared/band/drums.js?v=18', '/apps/shared/band/sounds.js?v=20',
                '/apps/shared/band/player.js?v=128'];
   if (!window.ABCJS && chart.sections.some(function (x) { return x.abc; })) {
     FILES.unshift('/apps/shared/abcjs-basic.js?v=3');
@@ -2456,7 +2456,7 @@ window.carolTypeChoice = function () {
 
   var FILES = ['/apps/shared/tune-chart.js?v=31', '/apps/shared/voicings.js?v=5', '/apps/shared/chord-entry.js?v=11', '/apps/shared/band/harmony.js?v=34',
                '/apps/shared/band/bass.js?v=16', '/apps/shared/band/comp.js?v=32', '/apps/shared/band/presets.js?v=7', '/apps/shared/band/catalog.js?v=37', '/apps/shared/band/drums.js?v=18',
-               '/apps/shared/band/sounds.js?v=19', '/apps/shared/band/player.js?v=128'];
+               '/apps/shared/band/sounds.js?v=20', '/apps/shared/band/player.js?v=128'];
   var depth = '';
 
   // ---- the written chords, in the order of the page ----

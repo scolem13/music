@@ -13,7 +13,9 @@
 //                   tune's clock: t0 stays the second the tune's ms 0 would have been)
 //   opts.tracks     true: play EVERY track abcjs makes (setUpAudio), not just the drawn notes: each voice on the band sound for its
 //                   %%MIDI program (GM_SOUND below), and the %%MIDI drum channel on the band's kit and congas (GM_DRUM). For ABC that
-//                   carries its own accompaniment and drums (arranger.js output: the Accompaniment Styles page). No band, no swing, from 0.
+//                   carries its own accompaniment and drums (arranger.js output: the Accompaniment Styles page), and full scores (full-score.js).
+//                   No band, no swing; opts.fromBar / fromMs start it later. opts.shape(notes) -> notes: each { at, dur, sound,
+//                   midi | piece, vel, track } may change vel or set gain (a level trim) before it is scheduled.
 //   opts.swing      (melody only) 50 = even eighths (default), 66.7 = triplet swing, 75 = dotted; off-beat eighths moved within each quarter
 //   opts.transpose  semitones added to every note (heard only; draw with visualTranspose for the eye)
 //   opts.light      true (default) lights each note as it sounds with the class opts.litClass ("abc-on"; styled here);
@@ -43,7 +45,7 @@
 // the pickup bar, NOTES.org 2026-10-13 ("Pickups, tuplets ...", BandHarmony.buildForm).
 // If the samples can't load within 12 s, abcjs's own synth plays instead (same tune, same cursor).
 (function (global) {
-  var SOUNDS = "/apps/shared/band/sounds.js?v=19", shared = null, cur = null, styled = false;
+  var SOUNDS = "/apps/shared/band/sounds.js?v=20", shared = null, cur = null, styled = false;
 
   function ctx() {
     if (shared) return shared;
@@ -225,8 +227,8 @@
   // opts.tracks: General MIDI program -> band sound, GM percussion note -> [bank instrument, piece]
   var GM_SOUND = { 0: "piano", 1: "piano", 2: "piano", 3: "piano", 4: "rhodes", 5: "epiano", 11: "vibes", 16: "hammond", 17: "hammond", 18: "hammond", 19: "organ", 20: "organ",
     24: "nguitar", 25: "aguitar", 26: "guitar", 27: "clguitar", 28: "clguitar", 29: "odguitar", 30: "odguitar", 32: "bass", 33: "ebass", 34: "ebass", 35: "ebass",
-    40: "violin", 41: "violin", 42: "cello", 43: "cello", 56: "trumpet", 57: "trombone", 58: "tuba", 64: "asax", 65: "asax", 66: "tsax", 67: "tsax", 68: "clarinet",
-    71: "clarinet", 72: "flute", 73: "flute", 74: "flute" };
+    40: "violin", 41: "viola", 42: "cello", 43: "contrabass", 48: "violin", 56: "trumpet", 57: "trombone", 58: "tuba", 60: "horn", 64: "asax", 65: "asax", 66: "tsax", 67: "tsax",
+    68: "oboe", 69: "oboe", 70: "bassoon", 71: "clarinet", 72: "flute", 73: "flute", 74: "flute" };   // 48 (string ensemble): a full score's strings, voice by clef in FullScore
   function gmSound(prog) { return GM_SOUND[prog] || (prog >= 32 && prog < 40 ? "bass" : "piano"); }
   var GM_DRUM = { 31: ["kit", "sticks"], 33: ["kit", "click"], 34: ["kit", "clickHi"], 35: ["kit", "kick"], 36: ["kit", "kick"], 37: ["kit", "rim"], 38: ["kit", "snare"], 39: ["kit", "clap"],
     40: ["kit", "snare"], 41: ["kit", "tomLo"], 42: ["kit", "hatClosed"], 43: ["kit", "tomLo"], 44: ["kit", "hatFoot"], 45: ["kit", "tomMid"], 46: ["kit", "hatOpen"],
@@ -240,14 +242,14 @@
     // a %%MIDI drum channel (its notes have no startChar) is the drums; percussion notes drawn on a staff (clef=perc, no %%percmap)
     // carry staff positions, not GM drum numbers, so with a drum channel present they are left silent
     var drumCh = (au.tracks || []).some(function (tr) { return tr.some(function (e) { return e.cmd === "note" && e.instrument === 128 && e.startChar == null; }); });
-    (au.tracks || []).forEach(function (tr) {
+    (au.tracks || []).forEach(function (tr, ti) {
       var prog = 0;
       tr.forEach(function (e) {
         if (e.cmd === "program") prog = e.instrument;
         if (e.cmd !== "note") return;
         var ins = e.instrument != null ? e.instrument : prog, vel = Math.min(1, (e.volume || 80) / 127 * 0.9);
         if (ins === 128) { if (drumCh && e.startChar != null) return; var d = GM_DRUM[e.pitch]; if (d) out.push({ at: e.start * secPerWhole, dur: 0, sound: d[0], piece: d[1], vel: vel }); return; }
-        out.push({ at: e.start * secPerWhole, dur: e.duration * secPerWhole, sound: gmSound(ins), midi: e.pitch, vel: vel });
+        out.push({ at: e.start * secPerWhole, dur: e.duration * secPerWhole, sound: gmSound(ins), midi: e.pitch, vel: vel, track: ti });
       });
     });
     return out.sort(function (a, b) { return a.at - b.at; });
@@ -322,8 +324,10 @@
       })();
     }
 
-    var timer = new Promise(function (res, rej) { setTimeout(function () { rej(new Error("samples timed out")); }, 12000); });
+    var timer = new Promise(function (res, rej) { setTimeout(function () { rej(new Error("samples timed out")); }, opts.tracks ? 40000 : 12000); });   // a full score loads many instruments
     var all = opts.tracks ? trackNotes(v, secPerWhole) : null;
+    if (all && opts.shape) all = opts.shape(all) || all;     // opts.shape(notes): change vel / set gain before scheduling (full-score.js: even out loudness)
+    if (all && from > 0) all = all.filter(function (n) { return n.at >= from / 1000 - 0.001; }).map(function (n) { return Object.assign({}, n, { at: n.at - from / 1000 }); });   // opts.fromBar / fromMs
     var need = all ? all.map(function (n) { return n.sound; }).filter(function (x, i, a) { return a.indexOf(x) === i; }) : [sound];
     Promise.race([ctx().then(function (s) { return s.ac.resume().then(function () { return s.bank.load(need); }).then(function () { return s; }); }), timer])
       .then(function (s) {
@@ -332,7 +336,7 @@
         if (all) {                                            // every track: the voices on their sounds, the drum channel on the kit
           all.forEach(function (n) {
             if (n.piece) s.bank.play(n.sound, { piece: n.piece, vel: n.vel }, t0 + n.at, s.out);
-            else s.bank.play(n.sound, { midi: n.midi + tr, vel: n.vel, dur: n.dur * 0.95 }, t0 + n.at, s.out);
+            else s.bank.play(n.sound, { midi: n.midi + tr, vel: n.vel, dur: n.dur * 0.95, gain: n.gain }, t0 + n.at, s.out);
             endMs = Math.max(endMs, (n.at + (n.dur || 0.2)) * 1000);
           });
           if (opts.onStart) try { opts.onStart({ ac: ac, t0: t0, events: events, endMs: endMs }); } catch (e) {}
