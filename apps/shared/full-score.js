@@ -13,7 +13,8 @@
 //           its full line; drawn out of sight and handed to AbcPlay, which times and sounds it
 //   drawn:  voices sharing staves (%fs-staves), display lines, short names after the first system, cut into the page's own
 //           systems of a fixed bar width (so pages, pages side by side and one long line all space bars alike): pages
-//           scrolling down ("pages"), pages side by side scrolling across, page-turn buttons and arrow keys ("paged"), or one
+//           scrolling down ("pages"), pages side by side scrolling across (1, 1.3 = a page and the start of the next as a
+//           preview, 2 or 3 a screen), page-turn buttons and arrow keys ("paged"), or one
 //           system ("line", names kept at the left edge). Cutaway: a system leaves out the staves that only rest in it.
 //           abcjs draws each system with its own gaps at their smallest; respace() then places the staves (staffGap between
 //           one staff's bottom line and the next one's top; with "apart", more where the two staves' outlines, compared in
@@ -315,7 +316,7 @@
       '<form class="fs-save"><input type="text" maxlength="40" placeholder="Name this view, e.g. Horns + low strings" aria-label="View name"><button type="submit">Save view</button></form></details>' +
       '<details class="fs-layout"><summary>Layout <span class="fs-laysum fs-status"></span></summary><div class="fs-lay">' +
         '<label>Show <select data-k="mode"><option value="pages">Pages, scrolling down</option><option value="paged">Pages side by side, scrolling across</option><option value="line">One long line</option></select></label>' +
-        '<label>Pages across <select data-k="across"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></label>' +
+        '<label>Pages across <select data-k="across"><option value="1">1</option><option value="1.3">1.3 (the next page peeks in)</option><option value="2">2</option><option value="3">3</option></select></label>' +
         '<label>Page height <input type="range" data-k="pageH" min="40" max="250" step="5"><output></output></label>' +
         '<label><input type="checkbox" data-k="cutaway"> Hide staves that rest through a system (cutaway)</label>' +
         '<label>Bar numbers <select data-k="numbers"><option value="off">Off</option><option value="system">Start of each system</option><option value="1">Every bar</option><option value="5">Every 5 bars</option><option value="10">Every 10 bars</option></select></label>' +
