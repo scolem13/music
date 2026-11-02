@@ -578,3 +578,10 @@ body.vid-on { padding-bottom: 260px; }
 
 /* the first heading grows upward (scale 2) when current: room so it clears the title */
 body.lyrics #song-body section.level2:first-of-type > h2 { margin-top: 2.2rem; }
+
+/* a section's chord grid printed in place of words ({show_grid} in the .cho) */
+.grid-row { display: block; white-space: nowrap; font-weight: 600; }
+.grid-row .gbl { color: #999; margin: 0 .5em; font-weight: 400; }
+.grid-row .gbar { display: inline-block; min-width: 4.5em; }
+.grid-row .gch { color: #b4531f; }
+.grid-row .gsame { color: #999; font-weight: 400; }

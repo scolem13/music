@@ -13,23 +13,23 @@
 {start_of_grid}
 | N.C. | % | % | % |
 {end_of_grid}
-[N.C.][N.C.][N.C.][N.C.]
+{show_grid}
 
 {comment: Intro (add instruments)}
 {start_of_grid}
 | E7 | % | % | E7 . D A |
 | E7 | % | % | E7 . D A |
 {end_of_grid}
-[E7][E7][E7][E7][D][A][x2]
+{show_grid}
 
 {comment: Intro (add choir)}
 {start_of_grid}
 | E7 | % | % | E7 . D A |
 | E7 | % | % | E7 . D A |
 {end_of_grid}
-[E7](Take me to the [E7]river)
-[E7](Drop me in the [E7]water)
-[E7](Take me to the [E7]river)
+[E7](Take me to the [E7]river) [D] [A]
+[E7](Drop me in the [E7]water) [D] [A]
+[E7](Take me to the [E7]river) [D] [A]
 [E7](Drop me in the [E7]water)
 
 {comment: Verse 1}
@@ -61,20 +61,18 @@ Take me to the river
 (Take me to the river)
 Dip me in the water
 (Drop me in the water)
-Washing me down
-Washing me down
 
 {comment: Solo 1}
 {start_of_grid}
 | E7 | % | % | E7 . D A |
 | E7 | % | % | E7 . D A |
 {end_of_grid}
-[E7][E7][E7][E7][D][A][x2]
+{show_grid}
 
 {comment: Verse 2}
-[E7]I don't know why you treat me so [D]bad [A]
-[E7]Think about the things we could have [D]had [A]
-[E7]Love is emotion that I can't for[D]get [A]
+[E7]I don't know why you treat me so [D]bad (ooh [A]ooh ooh)
+[E7]Think about the things we could have [D]had (ooh [A]ooh ooh)
+[E7]Love is emotion that I can't for[D]get (ooh [A]ooh ooh)
 [E7]My sweet sixteen I would never regret
 
 {comment: Pre-chorus 2}
@@ -89,8 +87,6 @@ Take me to the river
 (Take me to the river)
 Dip me in the water
 (Drop me in the water)
-Washing me down
-Washing me down
 
 {comment: Bridge}
 {start_of_grid}
@@ -109,16 +105,18 @@ Take me to the river
 (Take me to the river)
 Dip me in the water
 (Drop me in the water)
-Washing me down
-Washing me down
 
 {comment: Solo 2}
-[E7][E7][E7][E7][D][A][x2]
+{start_of_grid}
+| E7 | % | % | E7 . D A |
+| E7 | % | % | E7 . D A |
+{end_of_grid}
+{show_grid}
 
 {comment: Verse 3}
-[E7]I don't know why I love you like I [D]do [A]
-[E7]After all the trouble you put me [D]through [A]
-[E7]Sixteen candles burn on my [D]wall [A]
+[E7]I don't know why I love you like I [D]do (ooh [A]ooh ooh)
+[E7]After all the trouble you put me [D]through (ooh [A]ooh ooh)
+[E7]Sixteen candles burn on my [D]wall (ooh [A]ooh ooh)
 [E7]And here am I, the biggest fool of them all
 
 {comment: Pre-chorus 3}
@@ -133,8 +131,6 @@ Take me to the river
 (Take me to the river)
 Dip me in the water
 (Drop me in the water)
-Washing me down
-Washing me down
 
 {comment: Breakdown}
 {start_of_grid}
@@ -172,8 +168,6 @@ Take me to the river
 (Take me to the river)
 Dip me in the water
 (Drop me in the water)
-Washing me down
-Washing me down
 
 {comment: Outro}
 {start_of_grid}

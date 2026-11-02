@@ -36,7 +36,9 @@ The page hides them until the sidebar's IPA / Say it buttons (keys i, e) ask.
 Neither reaches the band.
 
 The band. A section can say what the backing band plays under it, bar by bar,
-in a chord grid. It is not shown on the page; the Band panel reads it.
+in a chord grid. It is not shown on the page (unless {show_grid} follows it in
+the section: then its rows are printed, bar lines and all, where the words go;
+for intros and solos with no words); the Band panel reads it.
 
     {tempo: 112}  {time: 4/4}  {style: carol}     for the whole song
     {style: bossa nova}            under a heading: for that section only (and
@@ -599,6 +601,7 @@ def parse(text):
     """
     meta, sections, current, verses = {}, [], None, 0
     grids = {}
+    raw_grids = {}                                 # the grid rows as written, for {show_grid}
     # For each section, its lines as the band counts them: (chords, sung, times).
     shapes, per_line = {}, {}
     meta['_shapes'], meta['_per_line'] = shapes, per_line
@@ -630,6 +633,7 @@ def parse(text):
                     begin(grid[0] or 'Lyrics')
                 at = len(sections) - 1
                 grids[at] = grids.get(at, []) + parse_grid(grid[1])
+                raw_grids[at] = raw_grids.get(at, []) + [r for r in grid[1] if r.strip()]
                 grid = None
             elif not m and not line.lstrip().startswith('#'):
                 grid[1].append(line)
@@ -668,6 +672,14 @@ def parse(text):
             if name == 'start_of_version':
                 version = (value or 'Version %d'
                            % (len(meta.get('versions', [])) + 1), [])
+                continue
+            if name == 'show_grid':
+                rows = raw_grids.get(len(sections) - 1) if current is not None else None
+                if not rows:
+                    print('   {show_grid} with no grid above it in the section')
+                    continue
+                for row in rows:
+                    current[1].append(grid_html(row))
                 continue
             if name in GRID_START:
                 # A grid with a label and no section open names its own.
@@ -730,6 +742,19 @@ def parse(text):
         out = render_line(segs)
         current[1].append('<em>%s</em>' % out if italic else out)
     return meta, sections, grids
+
+
+def grid_html(row):
+    """One grid row for the page: | E7 | % | E7 . D A | as bars between bar lines. The chords are
+    .gch, not .ch, so the band's lighting (which counts a section's .ch) is not thrown off."""
+    bars = [b.strip() for b in row.strip().strip('|').split('|')]
+    def bar(b):
+        return ' '.join('<span class="gch">%s</span>' % html.escape(tok) if tok not in ('%', '.')
+                        else '<span class="gsame">%s</span>' % ('%' if tok == '%' else '\u00b7')
+                        for tok in b.split())
+    return ('<span class="grid-row"><span class="gbl">|</span>'
+            + '<span class="gbl">|</span>'.join('<span class="gbar">%s</span>' % bar(b) for b in bars)
+            + '<span class="gbl">|</span></span>')
 
 
 def programme():
