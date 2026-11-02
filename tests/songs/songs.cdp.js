@@ -73,12 +73,20 @@ const NSONGS = Object.keys(DATA.songs).length + (process.env.NEG ? 1 : 0);
   check("video: bar counts by the headings", await wait(`(document.querySelector('#verse-1 .vid-bars') || {}).textContent === '\u2014 8 bars'`),
     await ev(`(document.querySelector('#verse-1 .vid-bars') || {}).textContent`));
   check("video: bar counts in the sidebar", await wait(`[...document.querySelectorAll('.song-sections .vid-bars')].length >= 15`));
-  await ev(`window.__t = 56; window.YT = { Player: function (id, o) { this.getCurrentTime = () => window.__t; this.seekTo = t => window.__t = t; this.playVideo = this.pauseVideo = () => {}; setTimeout(o.events.onReady, 10); } }; document.querySelector('.vid-open').click()`);
+  await ev(`window.__t = 56; window.YT = { Player: function (id, o) { this.getCurrentTime = () => window.__t; this.seekTo = t => window.__t = t; this.playVideo = () => { window.__played = (window.__played || 0) + 1; this.st = 1; }; this.pauseVideo = () => { this.st = 2; }; this.getPlayerState = () => this.st || 5; setTimeout(o.events.onReady, 10); } }; document.querySelector('.vid-open').click()`);
   check("video: active section y/x", await wait(`(document.querySelector('#verse-1 .vid-bars') || {}).textContent === '\u2014 7/8 bars'`),
     await ev(`(document.querySelector('#verse-1 .vid-bars') || {}).textContent`));
   check("video: last two bars as ....|....", await ev(`document.querySelector('#verse-1 .vid-dots').textContent.slice(0, 9)`) === "\u2022\u2022\u2022\u2022|\u2022\u2022\u2022\u2022");
   check("video: a beat lit", await wait(`document.querySelectorAll('#verse-1 .vid-dot.on').length === 1`));
   check("video: pickup 'I wanna' over the last beats", await ev(`(document.querySelector('#verse-1 .pick-start') || {}).dataset?.pick`) === "I wanna");
+  check("video: 'I wanna' on 2 beats", await ev(`document.querySelectorAll('#verse-1 .vid-dot.pick').length`) === 2);
+  await ev(`window.__t = 67`);
+  check("video: 'Take me to the' on the last 2 beats before the chorus", await wait(`(document.querySelector('#pre-chorus-1 .pick-start') || {}).dataset?.pick === 'Take me to the'`)
+    && await ev(`[...document.querySelectorAll('#pre-chorus-1 .vid-dot')].slice(-2).every(d => d.classList.contains('pick')) && document.querySelectorAll('#pre-chorus-1 .vid-dot.pick').length === 2`));
+  await ev(`window.__played = 0; document.body.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', bubbles: true }))`);
+  check("video: Space plays the video, not the band", await ev(`window.__played === 1 && !(window.carolBand && window.carolBand.playing())`), await ev(`window.__played + ' ' + window.carolBand.playing()`));
+  await ev(`[...document.querySelectorAll('.song-sections li')][5].querySelector('button').click()`);
+  check("video: a sidebar section seeks the video", await ev(`Math.abs(window.__t - 68.51) < 0.05`), await ev(`window.__t`));
   check("no errors with the video", errs().length === 0, errs().join(" | "));
   await b.close(); srv.close();
   console.log(fails ? fails + " failed" : "all passed"); process.exit(fails ? 1 : 0);

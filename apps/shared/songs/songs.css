@@ -563,18 +563,18 @@ body.show-ipa .ln, body.show-say .ln { margin-bottom: .35rem; }
 section.level2.vid-now { box-shadow: -6px 0 0 #e8a33d; }
 body.vid-on h2.vid-seekable { cursor: pointer; }
 body.vid-on { padding-bottom: 260px; }
-.vid-bars { color: #999; font-weight: 400; font-size: 0.55em; margin-left: 0.5em; white-space: nowrap; }
-.song-sections .vid-bars { font-size: 0.8em; }
+.vid-bars { color: #999; font-weight: 400; font-size: 1em; margin-left: 0.5em; white-space: nowrap; }
+.song-sections .vid-bars { font-size: 1em; }
 .vid-bars.is-on { color: #e8a33d; }
-.vid-dots { margin: 0.6rem 0 0.2rem; font-size: 1.6rem; letter-spacing: 0.15em; line-height: 1; display: flex; align-items: flex-end; flex-wrap: wrap; padding-top: 1.1rem; }
+.vid-dots { margin: 0.6rem 0 0.2rem; font-size: 3.2rem; letter-spacing: 0.15em; line-height: 1; display: flex; align-items: flex-end; flex-wrap: wrap; padding-top: 1.1rem; }
 .vid-dot { color: #bbb; position: relative; transition: color .08s; }
 .vid-dot.past { color: #8a6a3a; }
 .vid-dot.on { color: #e8a33d; transform: scale(1.35); }
 .vid-dot.pick { color: #6fa8dc; }
 .vid-dot.pick.past, .vid-dot.pick.on { color: #1f6fd1; }
-.vid-dot.pick-start::before { content: attr(data-pick); position: absolute; bottom: 100%; left: 0; font-size: 0.75rem; letter-spacing: 0; white-space: nowrap; color: #1f6fd1; font-style: italic; }
+.vid-dot.pick-start::before { content: attr(data-pick); position: absolute; bottom: 100%; left: 0; font-size: 0.75rem; letter-spacing: 0; white-space: nowrap; color: #1f6fd1; font-style: italic; line-height: 1.2; }
 .vid-bl { color: #888; margin: 0 0.15em; }
-.vid-dnext { font-size: 0.8rem; letter-spacing: 0; color: #999; margin-left: 0.4em; }
+.vid-dnext { font-size: 1rem; letter-spacing: 0; color: #999; margin-left: 0.4em; }
 
 /* the first heading grows upward (scale 2) when current: room so it clears the title */
 body.lyrics #song-body section.level2:first-of-type > h2 { margin-top: 2.2rem; }

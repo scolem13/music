@@ -2412,6 +2412,7 @@ window.carolTypeChoice = function () {
       return true;
     },
     playing: function () { return playing; },
+    stop: function () { if (playing) toggle(); },     // the video box (song.video) plays instead
     // The window that is playing lit a chord; light the same one here.
     // The window that is playing took other changes: show the same chords.
     labels: function (list) {
@@ -2985,7 +2986,10 @@ if (window.SONG_ID) (function () {
     marks.forEach(function (m, i) {
       if (!m.count || m.side) return;
       var b = m.el ? bs[secs.indexOf(m.el)] : null;     // the list has one entry per section, in order
-      if (b) { m.side = document.createElement("span"); m.side.className = "vid-bars"; b.appendChild(m.side); }
+      if (b) {
+        m.side = document.createElement("span"); m.side.className = "vid-bars"; b.appendChild(m.side);
+        b.addEventListener("click", function () { if (!box.hidden) open(m.t); });   // the video jumps there too
+      }
     });
   }
   function labels(active, bi) {
@@ -3008,7 +3012,13 @@ if (window.SONG_ID) (function () {
     if (!cw || cw.querySelector(".ch")) return "";
     return cw.textContent.trim();
   }
-  function syllables(s) { return (String(s).toLowerCase().match(/[aeiouy]+/g) || []).length || 1; }
+  function syllables(s) {                             // per word: vowel groups, a silent final e dropped ("take" = 1)
+    return String(s).toLowerCase().split(/[^a-z']+/).filter(Boolean).reduce(function (n, w) {
+      var c = (w.match(/[aeiouy]+/g) || []).length;
+      if (c > 1 && /[^aeiouyl]e$/.test(w)) c--;
+      return n + Math.max(1, c);
+    }, 0) || 1;
+  }
   var dots = document.createElement("div"); dots.className = "vid-dots";
   function drawDots(mi) {
     var m = marks[mi]; dots.innerHTML = "";
@@ -3060,7 +3070,7 @@ if (window.SONG_ID) (function () {
     var s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(s);
   }
   function open(at) {
-    box.hidden = false; document.body.classList.add("vid-on");
+    box.hidden = false; document.body.classList.add("vid-on"); bandOff();
     if (yt) { if (at != null) { yt.seekTo(at, true); yt.playVideo(); } return; }
     loadApi(function () {
       yt = new YT.Player("vid-player", { videoId: v.yt, playerVars: { playsinline: 1, rel: 0 },
@@ -3090,6 +3100,19 @@ if (window.SONG_ID) (function () {
     box.querySelector(".vid-note").textContent = note ? " · " + note[1] : "";
   }
   btn.addEventListener("click", function () { open(null); });
+  // While the video is open it is what plays: Space (and p) play / pause it, never the band; the band is stopped.
+  function bandOff() { var cb = window.carolBand; if (cb && cb.stop) cb.stop(); }
+  window.addEventListener("keydown", function (e) {
+    if (box.hidden || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.target.matches && e.target.matches("input, textarea, select, [contenteditable]")) return;
+    var k = (e.key || "").toLowerCase();
+    if (k !== " " && k !== "spacebar" && k !== "p") return;
+    if (k !== "p" && e.target.closest && e.target.closest("a, summary, [role=button]")) return;
+    e.preventDefault(); e.stopImmediatePropagation();
+    if (e.repeat || !yt || !yt.getPlayerState) return;
+    if (document.activeElement && document.activeElement.blur && document.activeElement.tagName === "BUTTON") document.activeElement.blur();
+    if (yt.getPlayerState() === 1) yt.pauseVideo(); else { bandOff(); yt.playVideo(); }
+  }, true);
   box.querySelector(".vid-close").addEventListener("click", function () {
     box.hidden = true; document.body.classList.remove("vid-on"); if (yt && yt.pauseVideo) yt.pauseVideo();
   });
