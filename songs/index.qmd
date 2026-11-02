@@ -8,8 +8,8 @@ description: "Words and chords for the songs we sing in class and in concerts: c
 
 ```{=html}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400&family=JetBrains+Mono:wght@400&family=Lexend:wght@300;400&display=swap">
-<link rel="stylesheet" href="/apps/shared/songs/songs.css?v=8">
-<script src="/apps/shared/data/songs.js?v=11"></script>
+<link rel="stylesheet" href="/apps/shared/songs/songs.css?v=9">
+<script src="/apps/shared/data/songs.js?v=12"></script>
 <script>if (!/[?&]id=/.test(location.search)) document.write('<script src="/apps/shared/section-fold.js?v=1"><\/script>');</script>
 ```
 
@@ -84,5 +84,5 @@ Choir moves on stage by 18:45. Countdown and lighting of the tree at 19:35, befo
 <!-- songs:end -->
 
 ```{=html}
-<script src="/apps/shared/songs/song-page.js?v=10"></script>
+<script src="/apps/shared/songs/song-page.js?v=11"></script>
 ```

@@ -87,6 +87,12 @@ const NSONGS = Object.keys(DATA.songs).length + (process.env.NEG ? 1 : 0);
   check("video: Space plays the video, not the band", await ev(`window.__played === 1 && !(window.carolBand && window.carolBand.playing())`), await ev(`window.__played + ' ' + window.carolBand.playing()`));
   await ev(`[...document.querySelectorAll('.song-sections li')][5].querySelector('button').click()`);
   check("video: a sidebar section seeks the video", await ev(`Math.abs(window.__t - 68.51) < 0.05`), await ev(`window.__t`));
+  // the printed grid lights its chord one by one: Intro (add instruments) bar 4 is E7 . D A
+  await ev(`(() => { const b = SONGS.songs['take-me-to-the-river'].video.bars; window.__t = b[7] + 0.6 * (b[8] - b[7]); })()`);
+  check("video: grid chord lit (D in E7 . D A)", await wait(`(document.querySelector('#intro-add-instruments .gch.now') || {}).textContent === 'D'`),
+    await ev(`(document.querySelector('.gch.now') || {}).textContent`));
+  check("video: one grid chord lit", await ev(`document.querySelectorAll('.gch.now').length === 1`));
+  check("solos on E7 only", await ev(`[...document.querySelectorAll('#solo-1 .gch')].every(c => c.textContent === 'E7')`));
   check("no errors with the video", errs().length === 0, errs().join(" | "));
   await b.close(); srv.close();
   console.log(fails ? fails + " failed" : "all passed"); process.exit(fails ? 1 : 0);

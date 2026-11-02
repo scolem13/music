@@ -6,7 +6,7 @@
 # Band: take-me-to-the-river.band.json (rock drums, Motown bass, Wurlitzer stabs).
 # Al Green and Teenie Hodges (1974); this is the Talking Heads version.
 # Bar counts follow the timestamp notes (recording: Talking Heads, about 120 bpm).
-# Guessed, not heard: Pre-chorus A7 x3 (the timing has 5 bars), Chorus = the intro riff,
+# Guessed, not heard: Pre-chorus A7 x3 (the timing has 5 bars), Chorus = the intro riff, solos on E7 throughout,
 # Breakdown / Vamp / Chorus 5 all on E7, Outro 4 bars.
 
 {comment: Intro (only drums)}
@@ -64,8 +64,8 @@ Dip me in the water
 
 {comment: Solo 1}
 {start_of_grid}
-| E7 | % | % | E7 . D A |
-| E7 | % | % | E7 . D A |
+| E7 | % | % | % |
+| E7 | % | % | % |
 {end_of_grid}
 {show_grid}
 
@@ -108,8 +108,8 @@ Dip me in the water
 
 {comment: Solo 2}
 {start_of_grid}
-| E7 | % | % | E7 . D A |
-| E7 | % | % | E7 . D A |
+| E7 | % | % | % |
+| E7 | % | % | % |
 {end_of_grid}
 {show_grid}
 

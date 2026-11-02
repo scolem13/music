@@ -750,16 +750,16 @@ def grid_html(row):
     The chords are .gch, not .ch, so the band's lighting (which counts a section's .ch) is not thrown off."""
     last, out = '', []
     for b in [b.strip() for b in row.strip().strip('|').split('|')]:
-        parts = []
-        for tok in b.split():
+        parts, toks = [], [x for x in b.split() if not re.fullmatch(r'\d+/\d+', x)]
+        for k, tok in enumerate(toks):                # data-at: where in the bar it falls (k of len(toks)), for lighting
             if tok == '%':
                 tok = last
             if tok == '.':
                 parts.append('<span class="ghold"></span>')
-            elif tok and not re.fullmatch(r'\d+/\d+', tok):
+            elif tok:
                 last = tok
-                parts.append('<span class="gch">%s</span>' % html.escape(tok))
-        out.append('<span class="gbar">%s</span>' % ''.join(parts))
+                parts.append('<span class="gch" data-at="%d">%s</span>' % (k, html.escape(tok)))
+        out.append('<span class="gbar" data-n="%d">%s</span>' % (max(1, len(toks)), ''.join(parts)))
     return '<span class="grid-row">%s</span>' % ''.join(out)
 
 

@@ -587,3 +587,5 @@ body.lyrics .grid-row .gbar { flex: 1 1 0; position: static; display: flex; gap:
 body.lyrics .grid-row .gbar:last-child { border-right: 3px solid #999; }
 body.lyrics .grid-row .gch { position: static; color: #b4531f; }
 body.lyrics .grid-row .ghold { width: 1.1em; }
+body.lyrics .grid-row .gch { transition: color .08s, background-color .08s; border-radius: 4px; padding: 0 .1em; }
+body.lyrics .grid-row .gch.now { color: #fff; background: #b4531f; }

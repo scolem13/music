@@ -36,6 +36,21 @@ function songPageRun() {
     return;
   }
   window.SONG_ID = id;
+  // A section's printed grid ({show_grid}): light the chord sounding in bar `bar` of the section (0 = its first),
+  // `frac` of the way through the bar; the video and the band both call it. null section: all off.
+  var gridLit = null;
+  window.songGridLight = function (section, bar, frac) {
+    var bars = section ? section.querySelectorAll(".grid-row .gbar") : [], el = null;
+    var gb = bars[bar];
+    if (gb) {
+      var at = Math.floor((frac || 0) * (+gb.dataset.n || 1));
+      [].forEach.call(gb.querySelectorAll(".gch"), function (c) { if (+c.dataset.at <= at) el = c; });
+    }
+    if (el === gridLit) return;
+    if (gridLit) gridLit.classList.remove("now");
+    gridLit = el;
+    if (el) el.classList.add("now");
+  };
   window.SONG_PATH = location.pathname + "?id=" + id;
   // What this page offers the navbar's metronome, drone and circle ("From page" buttons, practice-widgets.js): the song's own
   // key / tempo / meter, from its ChordPro directives. The band section below updates the tempo (and fills a missing key from its chart).
@@ -1854,7 +1869,11 @@ window.carolTypeChoice = function () {
         nowBar = info.countIn || info.ending || info.intro ? null : info;
         if (nowBar && (info.sectionBar === 0 || fresh || back)) chordsOf(info.section, info.index);
       },
-      onBeat: function (info) { chordBeat(info.beat); },
+      onBeat: function (info) {
+        chordBeat(info.beat);
+        var st = nowBar && stops[nowStop];
+        if (window.songGridLight) window.songGridLight(st ? song.section(st.head) : null, nowBar ? nowBar.sectionBar : -1, info.beat / ((nowBar && nowBar.beats) || 4));
+      },
       onSection: function (sc) {
         nowStop = sc.index;
         movingOn = false;
@@ -3094,6 +3113,7 @@ if (window.SONG_ID) (function () {
     box.querySelector(".vid-now-name").textContent = m ? m.name : "Before the first section";
     var bi = barAt(t), first = m ? barAt(m.t) : -1, end = nx ? barAt(nx.t) : bars.length;
     labels(mi, bi); lightDots(t, bi);
+    window.songGridLight(m && m.el, bi - first, bi >= 0 ? (t - bars[bi]) / (barEnd(bi) - bars[bi]) : 0);
     box.querySelector(".vid-bar").textContent = m && bi >= first && first >= 0 && end > first ? "· bar " + (bi - first + 1) + " of " + (end - first) : "";
     box.querySelector(".vid-next").textContent = nx ? "Next: " + nx.name + " in " + (end > bi && bi >= 0 ? (end - bi) + (end - bi === 1 ? " bar" : " bars") : fmt(nx.t - t)) : "";
     var note = (v.notes || []).filter(function (n) { return n[0] <= t && t < n[0] + 6; }).pop();
