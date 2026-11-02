@@ -2940,5 +2940,165 @@ window.carolTypeChoice = function () {
 
 })();
 
+
+// ==== the recording's video, in time with the words (song.video, from scripts/songs/src/<slug>.timing.json) ====
+// A Timestamp Notes song file gives each section's start (stamps named as the headings) and every bar's start. "Watch
+// the video" opens it in a box at the bottom right; while it plays the section being sung is lit (.vid-now) and
+// scrolled to (Follow), the box shows the section, its bar ("bar 3 of 8") and the next section; a click on a heading
+// plays the video from there. YouTube's IFrame API, time read five times a second.
+if (window.SONG_ID) (function () {
+  var v = ((window.SONGS || {}).songs || {})[window.SONG_ID];
+  v = v && v.video;
+  if (!v || !v.yt) return;
+  var body = document.getElementById("song-body");
+  var secs = [].slice.call(body.querySelectorAll("section.level2"));
+  function headName(s) { var h = s.querySelector("h2"); return h ? h.textContent.trim().toLowerCase() : ""; }
+  var used = {};
+  var marks = v.sections.map(function (x, i) {        // each stamp's section: by name, else the next unused in order
+    var n = String(x[1]).trim().toLowerCase(), el = null, slug = n.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    secs.some(function (s) { if (!used[s.id] && s.id === slug) { el = s; return true; } });      // pandoc's id keeps "verse-1"
+    if (!el) secs.some(function (s) { if (!used[s.id] && headName(s) === n) { el = s; return true; } });
+    if (el) used[el.id] = true;
+    return { t: x[0], name: x[1], el: el };
+  });
+  var bars = v.bars || [];
+  function barAt(t) { var lo = -1; for (var i = 0; i < bars.length; i++) { if (bars[i] <= t + 0.05) lo = i; else break; } return lo; }
+  function markAt(t) { var m = -1; marks.forEach(function (x, i) { if (x.t <= t + 0.05) m = i; }); return m; }
+  function beatsOf(b) { return (v.beats && v.beats[b]) || v.beatsPerBar || 4; }
+  function barEnd(b) { return b + 1 < bars.length ? bars[b + 1] : bars[b] + (bars[b] - (bars[b - 1] || 0)); }
+
+  // Bars in each section: from its stamp's bar to the next stamp's ("— 8 bars" beside the heading and in the sidebar,
+  // "3/8 bars" while it plays). Two stamps at one time (a section and a loose note) share a bar; the later wins.
+  marks.forEach(function (m, i) {
+    m.first = barAt(m.t);
+    var nx = marks[i + 1];
+    m.end = nx ? barAt(nx.t) : bars.length;
+    m.count = m.first >= 0 && m.end > m.first ? m.end - m.first : 0;
+    if (m.el && m.count) {
+      var h = m.el.querySelector("h2");
+      m.label = document.createElement("span"); m.label.className = "vid-bars";
+      if (h) h.appendChild(m.label);
+    }
+  });
+  function sideButtons() {                             // the Sections list (keys block), matched by heading text, else order
+    var bs = [].slice.call(document.querySelectorAll(".song-sections li")).map(function (li) { return li.querySelector("button"); });
+    marks.forEach(function (m, i) {
+      if (!m.count || m.side) return;
+      var b = m.el ? bs[secs.indexOf(m.el)] : null;     // the list has one entry per section, in order
+      if (b) { m.side = document.createElement("span"); m.side.className = "vid-bars"; b.appendChild(m.side); }
+    });
+  }
+  function labels(active, bi) {
+    sideButtons();
+    marks.forEach(function (m, i) {
+      if (!m.count) return;
+      var txt = i === active && bi >= m.first ? "\u2014 " + (bi - m.first + 1) + "/" + m.count + " bars" : "\u2014 " + m.count + (m.count === 1 ? " bar" : " bars");
+      [m.label, m.side].forEach(function (el) { if (el) { el.textContent = txt; el.classList.toggle("is-on", i === active); } });
+    });
+  }
+
+  // The last two bars of the section playing, as beats: ....|.... (a bar's own beats from the bar map, so a 5/4 bar
+  // among 2/4 shows ..|.....), the beat being played lit, the ones gone dimmer. A pickup (the next section's first
+  // line starts with words before its first chord: they are sung in this section's last bar) sits over the last
+  // beats of the final bar, so the students see where to come in. Its length is guessed: about two syllables a
+  // beat, at least one beat, never the whole bar (not timed in the bar map).
+  function pickupOf(m) {
+    var el = m && m.el; if (!el) return "";
+    var cw = el.querySelector(".ln > .cw, .ln > .nb > .cw");
+    if (!cw || cw.querySelector(".ch")) return "";
+    return cw.textContent.trim();
+  }
+  function syllables(s) { return (String(s).toLowerCase().match(/[aeiouy]+/g) || []).length || 1; }
+  var dots = document.createElement("div"); dots.className = "vid-dots";
+  function drawDots(mi) {
+    var m = marks[mi]; dots.innerHTML = "";
+    if (!m || !m.count || !m.el) { dots.remove(); return; }
+    var from = Math.max(m.first, m.end - 2), pick = pickupOf(marks[mi + 1]);
+    for (var b = from; b < m.end; b++) {
+      if (b > from) { var bl = document.createElement("span"); bl.className = "vid-bl"; bl.textContent = "|"; dots.appendChild(bl); }
+      var n = beatsOf(b), pk = b === m.end - 1 && pick ? Math.min(n - 1, Math.max(1, Math.ceil(syllables(pick) / 2))) : 0;
+      for (var k = 0; k < n; k++) {
+        var d = document.createElement("span"); d.className = "vid-dot"; d.dataset.bar = b; d.dataset.beat = k; d.textContent = "\u2022";
+        if (pk && k === n - pk) { d.classList.add("pick-start"); d.setAttribute("data-pick", pick); }
+        if (pk && k >= n - pk) d.classList.add("pick");
+        dots.appendChild(d);
+      }
+    }
+    var end = document.createElement("span"); end.className = "vid-bl"; end.textContent = "\u2016";
+    dots.appendChild(end);
+    if (marks[mi + 1]) { var nx = document.createElement("span"); nx.className = "vid-dnext"; nx.textContent = marks[mi + 1].name; dots.appendChild(nx); }
+    var nav = m.el.querySelector(".songnav");
+    m.el.insertBefore(dots, nav || null);
+  }
+  function lightDots(t, bi) {
+    var beat = -1;
+    if (bi >= 0) beat = Math.floor((t - bars[bi]) / ((barEnd(bi) - bars[bi]) / beatsOf(bi)));
+    [].forEach.call(dots.querySelectorAll(".vid-dot"), function (d) {
+      var b = +d.dataset.bar, k = +d.dataset.beat;
+      d.classList.toggle("on", b === bi && k === beat);
+      d.classList.toggle("past", b < bi || (b === bi && k < beat));
+    });
+  }
+  labels(-1, -1);
+  setTimeout(function () { labels(-1, -1); }, 500);   // the sidebar list may be drawn after this block
+
+  var btn = document.createElement("button");
+  btn.type = "button"; btn.className = "vid-open"; btn.textContent = "▶ Watch the video, in time with the words";
+  body.insertBefore(btn, body.firstChild);
+  var box = document.createElement("div");
+  box.className = "vid-box"; box.hidden = true;
+  box.innerHTML = '<div class="vid-frame"><div id="vid-player"></div></div>' +
+    '<div class="vid-info"><span class="vid-now-name"></span> <span class="vid-bar"></span><br><span class="vid-next"></span><span class="vid-note"></span></div>' +
+    '<div class="vid-ctl"><label><input type="checkbox" class="vid-follow" checked> Follow</label>' +
+    '<button type="button" class="vid-size" title="Bigger / smaller">⤢</button><button type="button" class="vid-close" title="Close">×</button></div>';
+  document.body.appendChild(box);
+  var yt = null, timer = null, lastMark = -2;
+  function loadApi(cb) {
+    if (window.YT && YT.Player) return cb();
+    var prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = function () { if (prev) prev(); cb(); };
+    var s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(s);
+  }
+  function open(at) {
+    box.hidden = false; document.body.classList.add("vid-on");
+    if (yt) { if (at != null) { yt.seekTo(at, true); yt.playVideo(); } return; }
+    loadApi(function () {
+      yt = new YT.Player("vid-player", { videoId: v.yt, playerVars: { playsinline: 1, rel: 0 },
+        events: { onReady: function () { if (at != null) { yt.seekTo(at, true); yt.playVideo(); } } } });
+      timer = setInterval(tick, 200);
+    });
+  }
+  function fmt(s) { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ":" + ("0" + s % 60).slice(-2); }
+  function tick() {
+    if (!yt || !yt.getCurrentTime) return;
+    var t = yt.getCurrentTime(), mi = markAt(t), m = marks[mi], nx = marks[mi + 1];
+    if (mi !== lastMark) {
+      marks.forEach(function (x) { if (x.el) x.el.classList.remove("vid-now"); });
+      if (m && m.el) {
+        m.el.classList.add("vid-now");
+        if (box.querySelector(".vid-follow").checked && lastMark !== -2) m.el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      lastMark = mi;
+      drawDots(mi);
+    }
+    box.querySelector(".vid-now-name").textContent = m ? m.name : "Before the first section";
+    var bi = barAt(t), first = m ? barAt(m.t) : -1, end = nx ? barAt(nx.t) : bars.length;
+    labels(mi, bi); lightDots(t, bi);
+    box.querySelector(".vid-bar").textContent = m && bi >= first && first >= 0 && end > first ? "· bar " + (bi - first + 1) + " of " + (end - first) : "";
+    box.querySelector(".vid-next").textContent = nx ? "Next: " + nx.name + " in " + (end > bi && bi >= 0 ? (end - bi) + (end - bi === 1 ? " bar" : " bars") : fmt(nx.t - t)) : "";
+    var note = (v.notes || []).filter(function (n) { return n[0] <= t && t < n[0] + 6; }).pop();
+    box.querySelector(".vid-note").textContent = note ? " · " + note[1] : "";
+  }
+  btn.addEventListener("click", function () { open(null); });
+  box.querySelector(".vid-close").addEventListener("click", function () {
+    box.hidden = true; document.body.classList.remove("vid-on"); if (yt && yt.pauseVideo) yt.pauseVideo();
+  });
+  box.querySelector(".vid-size").addEventListener("click", function () { box.classList.toggle("is-big"); });
+  marks.forEach(function (m) {                         // a heading plays the video from its section (once the video is open)
+    var h = m.el && m.el.querySelector("h2"); if (!h) return;
+    h.classList.add("vid-seekable"); h.title = "Play the video from here (" + fmt(m.t) + ")";
+    h.addEventListener("click", function () { if (!box.hidden) open(m.t); });
+  });
+})();
 }
 if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", songPageRun); else songPageRun();

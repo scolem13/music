@@ -66,6 +66,20 @@ const NSONGS = Object.keys(DATA.songs).length + (process.env.NEG ? 1 : 0);
   check("Tune Directory: a Song row each", await ev(`TdSheet.rows().filter(r => r.type === 'Song').length`) === NSONGS);
   check("Tune Directory: Words & Chords list", await ev(`document.querySelectorAll('#td-songs-list li').length`) === NSONGS);
 
+  // the recording's video (song.video): bar counts by the headings and in the sidebar, the last two bars as beats,
+  // the next section's pickup over the final beats. YouTube is replaced by a clock the test sets (window.__t).
+  b.errors.length = 0;
+  await b.goto(U + "?id=take-me-to-the-river");
+  check("video: bar counts by the headings", await wait(`(document.querySelector('#verse-1 .vid-bars') || {}).textContent === '\u2014 8 bars'`),
+    await ev(`(document.querySelector('#verse-1 .vid-bars') || {}).textContent`));
+  check("video: bar counts in the sidebar", await wait(`[...document.querySelectorAll('.song-sections .vid-bars')].length >= 15`));
+  await ev(`window.__t = 56; window.YT = { Player: function (id, o) { this.getCurrentTime = () => window.__t; this.seekTo = t => window.__t = t; this.playVideo = this.pauseVideo = () => {}; setTimeout(o.events.onReady, 10); } }; document.querySelector('.vid-open').click()`);
+  check("video: active section y/x", await wait(`(document.querySelector('#verse-1 .vid-bars') || {}).textContent === '\u2014 7/8 bars'`),
+    await ev(`(document.querySelector('#verse-1 .vid-bars') || {}).textContent`));
+  check("video: last two bars as ....|....", await ev(`document.querySelector('#verse-1 .vid-dots').textContent.slice(0, 9)`) === "\u2022\u2022\u2022\u2022|\u2022\u2022\u2022\u2022");
+  check("video: a beat lit", await wait(`document.querySelectorAll('#verse-1 .vid-dot.on').length === 1`));
+  check("video: pickup 'I wanna' over the last beats", await ev(`(document.querySelector('#verse-1 .pick-start') || {}).dataset?.pick`) === "I wanna");
+  check("no errors with the video", errs().length === 0, errs().join(" | "));
   await b.close(); srv.close();
   console.log(fails ? fails + " failed" : "all passed"); process.exit(fails ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(1); });

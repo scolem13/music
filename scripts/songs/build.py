@@ -5,6 +5,7 @@
 
 Sources, all in scripts/songs/src (edit these, never the output):
   <slug>.cho            ChordPro: words, chords, band grids, versions (format: top of chordpro.py)
+  <slug>.timing.json  a Timestamp Notes song file (source.url = the YouTube video): the page plays it, synced
   <slug>.page.md        a song written by hand as a page (Frosty, words only)
   twelve-days-of-christmas-seed.cho + .template.md   built by twelve-days.py
   *-seed.cho            scratch, not built
@@ -80,6 +81,27 @@ def first_words(html):
     return ''
 
 
+def video_of(path):
+    """<slug>.timing.json: a Timestamp Notes song file whose source is a YouTube link. The song page plays the video
+    beside the words: section stamps (named as the song's headings) light and scroll to the section, bars count."""
+    if not path.exists():
+        return None
+    d = json.loads(path.read_text(encoding='utf-8'))
+    url = (d.get('source') or {}).get('url') or ''
+    m = re.search(r'(?:[?&]v=|youtu\.be/)([\w-]{6,})', url)
+    if not m:
+        print('%s: no YouTube link in source.url' % path.name)
+        return None
+    stamps = sorted(d.get('stamps') or [], key=lambda s: s.get('s', 0))
+    r = lambda x: round(float(x), 2)
+    return {'yt': m.group(1),
+            'sections': [[r(s['s']), s.get('n', '')] for s in stamps if s.get('k') == 's'],
+            'notes': [[r(s['s']), s.get('n', '')] for s in stamps if s.get('k') != 's' and s.get('n')],
+            'bars': [r(b) for b in ((d.get('barMap') or {}).get('bars') or [])],
+            'beats': (d.get('barMap') or {}).get('beats') or [],
+            'beatsPerBar': (d.get('barMap') or {}).get('beatsPerBar') or 4}
+
+
 def main():
     import os
     tmp = Path(tempfile.mkdtemp(prefix='songs-'))
@@ -113,6 +135,9 @@ def main():
                 'artist': d.get('artist') or d.get('composer') or '', 'first': first}
         if unverified:
             song['unverified'] = True
+        video = video_of(SRC / (slug + '.timing.json'))
+        if video:
+            song['video'] = video
         songs[slug] = song
         index.append({'id': slug, 'title': title, 'key': song['key'], 'time': song['time'],
                       'artist': song['artist'], 'first': first, 'chords': 'class="ch"' in html,

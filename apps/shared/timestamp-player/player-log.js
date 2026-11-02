@@ -564,13 +564,19 @@
       save(); showEmpty();
       if (data.barMap && p.map) p.map.load(data.barMap);
       if (data.phrases && p.phrases) p.phrases.load(data.phrases);
-      var src = data.source, cur = a && a.source && a.source();
-      if (src && src.media && !(cur && cur.media === src.media)) loaded = a.openMedia(src.media, src) ? ' Loaded the recording.' : '';
-      else if (src && src.rec && !(cur && cur.rec === src.rec)) loaded = openRec(src.rec) ? ' Loaded the recording.' : '';
-      else if (src && src.url && !(cur && cur.url === src.url) && a.open && a.open(src.url, src.follow)) loaded = ' Loaded the video.';
-      else if (src && src.file && !(cur && cur.file === src.file)) loaded = ' Load ' + src.file + ' to play along.';
+      var src = data.source, cur = a && a.source && a.source(), switched = false;
+      if (src && src.media && !(cur && cur.media === src.media)) loaded = (switched = !!a.openMedia(src.media, src)) ? ' Loaded the recording.' : '';
+      else if (src && src.rec && !(cur && cur.rec === src.rec)) loaded = (switched = !!openRec(src.rec)) ? ' Loaded the recording.' : '';
+      else if (src && src.url && !(cur && cur.url === src.url) && a.open && a.open(src.url, src.follow)) { loaded = ' Loaded the video.'; switched = true; }
+      else if (src && src.file && !(cur && cur.file === src.file)) loaded = cur ? ' These were made on ' + src.file + ': they now go with the recording that is loaded.' : ' Load ' + src.file + ' to play along.';
       if (!quiet) say('Opened ' + (data.title || 'the song file') + '.' + loaded);
-      if (!sameSong) { var nk = libKey(data.source || (a && a.source && a.source())); if (nk) { setCur(nk); libSaved = null; } }
+      // notes opened while a recording is loaded, which did not load their own (a file, or none named), go with the one
+      // that is loaded; otherwise the library swaps in that recording's own (often empty) notes half a second later
+      if (!sameSong) {
+        var nk = switched ? libKey(src) : (libKey(cur) || libKey(src));
+        if (nk) { setCur(nk); libSaved = null; }
+      }
+      return switched;
     }
 
     // ---- undo (u): the whole song (stamps, bars, words, chord timing, chunks) as it was before the last change ----
@@ -696,9 +702,11 @@
           var d = libGet(k); if (!d) return;
           if (curKey && k !== curKey) libPut(curKey, JSON.parse(songFile()));
           setCur(k); libSaved = null;
-          openSong(d, true, true); undoStack = []; lastState = stateNow();
-          var src = d.source || {};
-          say('Opened ' + (d.title || k) + '.' + (src.file ? ' Load ' + src.file + ' to play along.' : ''));
+          var a = api(), pk = libKey(a && a.source && a.source());
+          var switched = openSong(d, true, true); undoStack = []; lastState = stateNow();
+          var src = d.source || {}, moved = !switched && pk && pk !== k;
+          if (moved) { setCur(pk); libSaved = null; }        // a recording is loaded and these notes did not load theirs: they go with it
+          say('Opened ' + (d.title || k) + '.' + (moved ? ' They now go with the recording that is loaded.' : src.file ? ' Load ' + src.file + ' to play along.' : ''));
         });
         li.querySelector('.tsn-lib-dl').addEventListener('click', function () { var d = libGet(k); if (d) downloadJson(d, slug(d.title || k) + '.json'); });
         li.querySelector('.tsn-lib-del').addEventListener('click', function () {
