@@ -745,16 +745,22 @@ def parse(text):
 
 
 def grid_html(row):
-    """One grid row for the page: | E7 | % | E7 . D A | as bars between bar lines. The chords are
-    .gch, not .ch, so the band's lighting (which counts a section's .ch) is not thrown off."""
-    bars = [b.strip() for b in row.strip().strip('|').split('|')]
-    def bar(b):
-        return ' '.join('<span class="gch">%s</span>' % html.escape(tok) if tok not in ('%', '.')
-                        else '<span class="gsame">%s</span>' % ('%' if tok == '%' else '\u00b7')
-                        for tok in b.split())
-    return ('<span class="grid-row"><span class="gbl">|</span>'
-            + '<span class="gbl">|</span>'.join('<span class="gbar">%s</span>' % bar(b) for b in bars)
-            + '<span class="gbl">|</span></span>')
+    """One grid row for the page: | E7 | % | E7 . D A | as bars, each a box with its bar line on the left (the
+    row's last bar closes it). % is written out as the chord it repeats; a . (a beat held) is a gap: | E7   D A |.
+    The chords are .gch, not .ch, so the band's lighting (which counts a section's .ch) is not thrown off."""
+    last, out = '', []
+    for b in [b.strip() for b in row.strip().strip('|').split('|')]:
+        parts = []
+        for tok in b.split():
+            if tok == '%':
+                tok = last
+            if tok == '.':
+                parts.append('<span class="ghold"></span>')
+            elif tok and not re.fullmatch(r'\d+/\d+', tok):
+                last = tok
+                parts.append('<span class="gch">%s</span>' % html.escape(tok))
+        out.append('<span class="gbar">%s</span>' % ''.join(parts))
+    return '<span class="grid-row">%s</span>' % ''.join(out)
 
 
 def programme():

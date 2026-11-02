@@ -579,9 +579,11 @@ body.vid-on { padding-bottom: 260px; }
 /* the first heading grows upward (scale 2) when current: room so it clears the title */
 body.lyrics #song-body section.level2:first-of-type > h2 { margin-top: 2.2rem; }
 
-/* a section's chord grid printed in place of words ({show_grid} in the .cho) */
-.grid-row { display: block; white-space: nowrap; font-weight: 600; }
-.grid-row .gbl { color: #999; margin: 0 .5em; font-weight: 400; }
-.grid-row .gbar { display: inline-block; min-width: 4.5em; }
-.grid-row .gch { color: #b4531f; }
-.grid-row .gsame { color: #999; font-weight: 400; }
+/* a section's chord grid printed in place of words ({show_grid} in the .cho): bars of equal width, a bar line on
+   the left of each and on the right of the last */
+body.lyrics .grid-row, body.lyrics .grid-row * { text-indent: 0; }
+body.lyrics .grid-row { display: flex !important; margin-left: -2ch; position: static; width: 100%; max-width: 46em; font-weight: 600; white-space: nowrap; }
+body.lyrics .grid-row .gbar { flex: 1 1 0; position: static; display: flex; gap: .55em; padding: 0 .6em; border-left: 3px solid #999; }
+body.lyrics .grid-row .gbar:last-child { border-right: 3px solid #999; }
+body.lyrics .grid-row .gch { position: static; color: #b4531f; }
+body.lyrics .grid-row .ghold { width: 1.1em; }
