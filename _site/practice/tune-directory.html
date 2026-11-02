@@ -763,6 +763,7 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
   <ul class="collapse">
   <li><a href="#td-sheet" id="toc-td-sheet" class="nav-link active" data-scroll-target="#td-sheet">At a glance</a></li>
   <li><a href="#td-works" id="toc-td-works" class="nav-link" data-scroll-target="#td-works">Pieces with recordings and resources</a></li>
+  <li><a href="#td-print" id="toc-td-print" class="nav-link" data-scroll-target="#td-print">Print anthologies</a></li>
   <li><a href="#td-tunes" id="toc-td-tunes" class="nav-link" data-scroll-target="#td-tunes">Tune Library</a></li>
   <li><a href="#td-themes" id="toc-td-themes" class="nav-link" data-scroll-target="#td-themes">Classical Themes</a></li>
   <li><a href="#td-mlt" id="toc-td-mlt" class="nav-link" data-scroll-target="#td-mlt">MLT and JRI recordings</a></li>
@@ -908,7 +909,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <div id="td-status">Loading the collections…</div>
 <section id="td-sheet" class="level2">
 <h2 class="anchored" data-anchor-id="td-sheet">At a glance</h2>
-<p class="td-note">Everything in one table: every tune, classical theme, piece, and MLT / JRI recording not linked to a tune. Type in the
+<p class="td-note">Everything in one table: every tune, classical theme, piece (including those known only from a print anthology), and MLT / JRI recording not linked to a tune. <b>Year</b> is the year of composition (or publication); <b>Print</b> the anthology figure. Type in the
 box under a column to filter it (in Recordings and Bars marked: <code>&gt;0</code>, <code>0</code>, <code>2</code>); click a column name
 to sort. <b>Bars marked</b> counts recordings with a timing map; ⏱ opens one in Timestamp Notes. The lists below are the same
 collections, grouped.</p>
@@ -919,6 +920,14 @@ collections, grouped.</p>
 <p class="td-note"><span id="td-works-n"></span>. A piece groups every place it appears on the site (a tune in several keys, a
 classical theme, an analysed score) and holds its recordings and links. They are kept in <code>apps/shared/works/works-data.js</code>.</p>
 <div id="td-works-list"></div>
+</section>
+<section id="td-print" class="level2">
+<h2 class="anchored" data-anchor-id="td-print">Print anthologies</h2>
+<p class="td-note"><span id="td-print-n"></span> from the analysis anthologies used in class, by the book's figure number
+(chapter–figure; ★ a complete movement), with the year of composition where Wikidata or the theme data has it. Most have no
+notation or recording here yet; a <b>theme</b> link opens the same piece on the Classical Themes page. The concepts each figure shows
+are in the <a href="../course/glossary.html">glossary</a>.</p>
+<div id="td-print-list"></div>
 </section>
 <section id="td-tunes" class="level2">
 <h2 class="anchored" data-anchor-id="td-tunes">Tune Library</h2>
@@ -1008,12 +1017,12 @@ YouTube and paste the link there.</p>
 <script src="../apps/shared/rhythm-cells.js?v=1"></script>
 <script src="../apps/shared/tune-library.js?v=20"></script>
 <script src="../apps/tunes/tunes-object.js?v=2"></script>
-<script src="../apps/themes/themes-data.js?v=3"></script>
-<script src="../apps/shared/works/works-data.js?v=7"></script>
-<script src="../apps/shared/works/works.js?v=10"></script>
-<script src="../apps/shared/mlt/recordings.js?v=2"></script>
-<script src="../apps/shared/works/tune-directory.js?v=8"></script>
-<script src="../apps/shared/works/td-sheet.js?v=2"></script>
+<script src="../apps/themes/themes-data.js?v=4"></script>
+<script src="../apps/shared/works/works-data.js?v=9"></script>
+<script src="../apps/shared/works/works.js?v=14"></script>
+<script src="../apps/shared/mlt/recordings.js?v=3"></script>
+<script src="../apps/shared/works/tune-directory.js?v=10"></script>
+<script src="../apps/shared/works/td-sheet.js?v=3"></script>
 <script src="../apps/shared/section-fold.js?v=1"></script>
 </section>
 <section id="works-cited" class="level2">
@@ -1021,6 +1030,9 @@ YouTube and paste the link there.</p>
 <!-- works-cited: written by scripts/works-cited.py -->
 <div class="works-cited">
 <p>Burgoyne, John Ashley, Jonathan Wild, and Ichiro Fujinaga. “An Expert Ground Truth Set for Audio Chord Recognition and Music Analysis.” <em>Proceedings of the 12th International Society for Music Information Retrieval Conference</em>, Miami, 2011, pp.&nbsp;633–38. The 890 SALAMI chords files of the McGill Billboard Project (songs from the Billboard Hot 100, 1958–1991): sections, bars and chords, timed; released under CC0. <a href="https://ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/">ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/</a>.</p>
+<p><strong>For teachers</strong></p>
+<p>Cutler, Timothy. <em>Anthology of Music for Analysis</em>. W. W. Norton, 2019. Its Index of Composers and Works and Index of Concepts: the figure numbers in the Tune Directory and the examples under glossary terms.</p>
+<p>Wikidata. Wikimedia Foundation. <a href="https://www.wikidata.org/">www.wikidata.org/</a>. Years of composition (inception) or publication of the pieces, matched by composer and catalogue number; CC0.</p>
 </div>
 <!-- /works-cited -->
 

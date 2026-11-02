@@ -40,6 +40,13 @@
 .gl-tok { margin: .5rem 0; padding: .45rem .7rem; border-left: 3px solid var(--c-past); background: var(--c-surf); border-radius: .25rem; }
 .gl-tok .gl-q { margin: .2rem 0; }
 .gl-tok .gl-q small { color: var(--c-ink2); }
+.gl-cutler { margin: .5rem 0; }
+.gl-cutler > summary { cursor: pointer; font-weight: 600; }
+.gl-cutler .gl-cc { margin: .4rem 0 .1rem; }
+.gl-cutler .gl-figs { margin: .1rem 0 .3rem; line-height: 1.7; }
+.gl-cutler .gl-subs { margin: .2rem 0 .4rem; padding-left: 1.1rem; line-height: 1.7; }
+.gl-cutler .gl-fig { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.gl-cutler .gl-fig small { color: var(--c-ink2); }
 .gl-uses { font-size: .8rem; }
 .gl-uses select { font-size: .8rem; max-width: 100%; }
 .gl-compact { width: 100%; border-collapse: collapse; font-size: .9rem; }

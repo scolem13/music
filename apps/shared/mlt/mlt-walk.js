@@ -446,7 +446,7 @@
       ' <a class="mlt-dim" href="/practice/ear-grid.html?rec=' + encodeURIComponent(r.id) + '" title="Chord grid by ear">\u25A6 grid</a>' +
       ' <span class="mlt-dim mlt-t">(' + esc(col.title || r.col) + ", track " + r.track + ")</span>" + (col.note ? ' <span class="mlt-dim mlt-t">' + esc(col.note) + ".</span>" : ""));
     var url = R.url(r);
-    if (url) { var a = el("audio"); a.controls = true; a.preload = "none"; a.src = url; a.style.cssText = "display:block;width:100%;max-width:28rem;height:2rem"; li.appendChild(a); }
+    if (url) { var a = el("audio"); a.controls = true; a.preload = "none"; a.src = R.playUrl(r); a.style.cssText = "display:block;width:100%;max-width:28rem;height:2rem"; li.appendChild(a); }
     return li;
   }
   function recordingsPart(list) {

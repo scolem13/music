@@ -43,7 +43,10 @@
 
   // ---- pieces with resources ----
   const wbox = $("#td-works-list"), ids = Object.keys(W).sort((a, b) => fold(W[a].title).localeCompare(fold(W[b].title)));
-  ids.forEach((id) => {
+  // a piece known only from a print anthology (nothing to play or open yet) is listed under Print anthologies, not as a panel
+  const printOnly = (w) => { const inn = w.in || {}; return (inn.print || []).length && !(w.recordings || []).length && !(w.links || []).length &&
+    !Object.keys(inn).some((k) => k !== "print" && k !== "theme" && (inn[k] || []).length) && !(inn.theme || []).length; };
+  ids.filter((id) => !printOnly(W[id])).forEach((id) => {
     const w = Works.get(id), card = el("div", "td-work"); card.id = id;
     card.appendChild(Works.panel(w, null));
     wbox.appendChild(card);
@@ -51,7 +54,31 @@
     rows.push({ el: card, text: fold(w.title + " " + (w.composer || "") + " " + id), group: null,
       music: (c, set) => (inn.tune || []).some((t) => set.has(t)) || (inn.theme || []).some((t) => set.has("cmt-" + t)) });
   });
-  $("#td-works-n").textContent = ids.length + " pieces";
+  $("#td-works-n").textContent = ids.filter((id) => !printOnly(W[id])).length + " pieces";
+
+  // ---- print anthologies: every piece with a figure in a book, by composer; theme links where the piece has themes ----
+  const pbox = $("#td-print-list");
+  if (pbox) {
+    const PB = window.PRINT_BOOKS || {}, byc = {};
+    let n = 0;
+    ids.forEach((id) => { const w = W[id]; if (!(w.in && w.in.print || []).length) return; n++;
+      const c = w.composer || "(no composer)", k = c.split(" ").pop() + ", " + c.split(" ").slice(0, -1).join(" "); (byc[k] = byc[k] || []).push(id); });
+    Object.keys(byc).sort((a, b) => fold(a).localeCompare(fold(b))).forEach((k) => {
+      const g = group(pbox, k.replace(/, $/, ""), byc[k].length);
+      byc[k].forEach((id) => {
+        const w = W[id], li = el("li", "td-row"); if (printOnly(w)) { li.id = id; li.classList.add("td-work"); }
+        li.appendChild(el("span", null, w.title));
+        const yr = Works.year(w); if (yr) li.appendChild(el("span", "td-sub", yr));
+        (w.in.print || []).forEach((x) => { const b = el("span", "td-badge", ((PB[x.book] || {}).short || x.book).split(",")[0] + " " + x.fig + (x.whole ? " ★" : ""));
+          b.title = Works.printLabel(x); li.appendChild(b); });
+        (w.in.theme || []).forEach((t) => { const a = el("a", "td-sub", "theme " + String(t).replace(/^0+/, "")); a.href = Works.href("theme", t); li.appendChild(a); });
+        if (!printOnly(w)) { const a = el("a", "td-sub", "recordings & resources ↑"); a.href = "#" + encodeURIComponent(id); li.appendChild(a); }
+        g.ul.appendChild(li);
+        rows.push({ el: li, text: fold(w.title + " " + (w.composer || "") + " " + id + " " + (w.in.print || []).map((x) => x.fig).join(" ")), group: g.d, music: NONE });
+      });
+    });
+    $("#td-print-n").textContent = n + " pieces";
+  }
 
   // ---- Tune Library, by set ----
   const tbox = $("#td-tunes-list"); let nTunes = 0;
@@ -96,7 +123,7 @@
           const old = li.querySelector("audio"); if (old) { old.remove(); return; }
           const url = R.url(r); if (!url) { a.title = "The recordings are not online yet"; return; }
           document.querySelectorAll("#td-mlt-list audio").forEach((x) => x.remove());   // one at a time
-          const au = document.createElement("audio"); au.controls = true; au.autoplay = true; au.src = url; li.appendChild(au);
+          const au = document.createElement("audio"); au.controls = true; au.autoplay = true; au.src = R.playUrl(r); li.appendChild(au);
         });
         li.appendChild(a);
         const sub = [c.title.replace(/^Jump Right In: /, "JRI "), (r.disc > 1 ? "disc " + r.disc + ", " : "") + "track " + r.track, r.page && "p. " + r.page, r.dur && mmss(r.dur)].filter(Boolean).join(" · ");

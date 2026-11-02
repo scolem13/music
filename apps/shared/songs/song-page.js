@@ -43,7 +43,7 @@ function songPageRun() {
     var bars = section ? section.querySelectorAll(".grid-row .gbar") : [], el = null;
     var gb = bars[bar];
     if (gb) {
-      var at = Math.floor((frac || 0) * (+gb.dataset.n || 1));
+      var at = Math.floor(Math.min(0.999, Math.max(0, frac || 0)) * (+gb.dataset.n || 1));   // (a bar is counted from 50 ms early)
       [].forEach.call(gb.querySelectorAll(".gch"), function (c) { if (+c.dataset.at <= at) el = c; });
     }
     if (el === gridLit) return;

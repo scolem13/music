@@ -52,5 +52,15 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   check("MIDI export leaves the audio track out (tempo + 3)", amid === 4, amid);
   await b.resize(390, 800); await b.goto(U("daw-export")); await b.sleep(400);
   check("no sideways page scroll at phone width", await ev(`document.documentElement.scrollWidth <= 390`), await ev(`document.documentElement.scrollWidth`));
+  // Backing Track -> Open in the DAW: the band's MIDI handed over through localStorage and opened as tracks
+  await b.goto("http://127.0.0.1:8527/tools/backing-track.html"); await b.sleep(1500);
+  const sent = await ev(`(() => { window.open = () => null; document.getElementById('bt-mid-daw').click(); const h = JSON.parse(localStorage.getItem('mdaw:handoff') || 'null');
+    return h && h.midi ? 'yes ' + h.name : 'no ' + document.getElementById('bt-mid-note').textContent; })()`);
+  check("backing track: Open in the DAW leaves the MIDI for the DAW", /^yes .+\.mid$/.test(sent), sent);
+  await b.goto(U("daw-export")); await b.sleep(600);
+  const got = await ev(`(() => { const D = MiniDaw.all[0]; return D.p.tracks.map(t => t.inst + ':' + t.clips[0].notes.length).join(' ') + ' | ' + (localStorage.getItem('mdaw:handoff') === null) + ' | ' + D.statusEl.textContent; })()`);
+  check("daw-export: opened the band's tracks, hand-off used up", /kit:\d+/.test(got) && /bass:\d+/.test(got) && / \| true \| Opened/.test(got), got);
+  const undo = await ev(`(() => { const D = MiniDaw.all[0]; D.doUndo(true); return D.p.tracks.map(t => t.name).join(','); })()`);
+  check("daw-export: Undo puts the song back", undo === "Drums,Bass,Keys", undo);
   await b.close(); srv.close(); console.log(fails ? fails + " failed" : "all passed"); process.exit(fails ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(1); });

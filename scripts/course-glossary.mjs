@@ -7,6 +7,20 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+// Cutler, Anthology of Music for Analysis: the Index of Concepts (scripts/print-books/cutler/cutler-index.json) and each figure's
+// piece (figures.json, from scripts/print-books/build.py). A term's :CUTLER: names top-level concepts; their figures and sub-entries
+// go into the term as `cutler`, the figures' pieces once into `cutlerFigs`.
+const CUT_DIR = path.join(ROOT, 'scripts/print-books/cutler');
+const CUT = fs.existsSync(path.join(CUT_DIR, 'cutler-index.json')) ? JSON.parse(fs.readFileSync(path.join(CUT_DIR, 'cutler-index.json'), 'utf8')) : null;
+const CUT_FIGS = fs.existsSync(path.join(CUT_DIR, 'figures.json')) ? JSON.parse(fs.readFileSync(path.join(CUT_DIR, 'figures.json'), 'utf8')) : {};
+function cutlerFor(label, slug) {
+  const top = CUT.concepts.find(c => c.depth === 0 && c.label === label);
+  if (!top) { errors.push(`${slug}: :CUTLER: "${label}" is not a top-level concept in the Cutler index`); return null; }
+  const refs = c => c.refs.map(r => r.note ? [r.ref, r.note] : [r.ref]);
+  const subs = CUT.concepts.filter(c => c.parent === top.term || c.parent.startsWith(top.term + ' › '))
+    .map(c => ({ l: c.term.slice(top.term.length + 3), refs: refs(c) })).filter(c => c.refs.length);
+  return { c: top.label, see: top.see || undefined, refs: refs(top), subs };
+}
 const SRC = path.join(ROOT, 'course/glossary.org');
 const OUT = path.join(ROOT, 'apps/shared/course/glossary.json');
 
@@ -67,11 +81,21 @@ for (const block of text.split(/^(?=\*{1,2} )/m)) {
   for (const s of sources) if (!/^https?:/.test(s) && !SOURCE_KEYS[s]) errors.push(`${slug}: unknown source key ${s}`);
   if (!props.SHORT) errors.push(`${slug}: no :SHORT:`);
   if (!['core', 'enriching', 'expert'].includes(props.IMPORTANCE)) errors.push(`${slug}: importance "${props.IMPORTANCE}"`);
+  const cutler = props.CUTLER && CUT ? props.CUTLER.split(/\s*;\s*/).map(l => cutlerFor(l, slug)).filter(Boolean) : null;
   terms.push({
+    ...(cutler && cutler.length ? { cutler } : {}),
     slug, title, group, short: props.SHORT || '', long: paras(body),
     importance: props.IMPORTANCE, levels, cats: (props.CATS || '').split(/\s+/).filter(Boolean),
     see: (props.SEE || '').split(/\s+/).filter(Boolean), link: props.LINK || null, sources,
   });
+}
+let cutlerFigs = null;
+if (CUT) {
+  const used = new Set(terms.flatMap(t => (t.cutler || []).flatMap(c => c.refs.concat(c.subs.flatMap(x => x.refs)).map(r => r[0]))));
+  cutlerFigs = { book: 'Timothy Cutler, Anthology of Music for Analysis', figs: Object.fromEntries([...used].sort().map(f => {
+    const x = CUT_FIGS[f];
+    return [f, x ? [x.title, x.composer, x.work, x.whole ? 1 : 0] : ['(not in the Index of Composers and Works)', '', '', 0]];
+  })) };
 }
 const bySlug = new Map();
 for (const t of terms) { if (bySlug.has(t.slug)) errors.push(`duplicate slug ${t.slug}`); bySlug.set(t.slug, t); }
@@ -83,5 +107,5 @@ for (const t of terms) if (t.link && !fs.existsSync(path.join(ROOT, t.link.repla
 for (const c of TOK_CONCEPTS) if (bySlug.has(c)) bySlug.get(c).usedBy = terms.filter(t => (t.tok || []).some(x => x.concept === c)).map(t => t.slug);
 
 if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
-fs.writeFileSync(OUT, JSON.stringify({ generated: 'scripts/course-glossary.mjs from course/glossary.org', groups, sources: SOURCE_KEYS, tokConcepts: TOK_CONCEPTS, terms }, null, 0) + '\n');
+fs.writeFileSync(OUT, JSON.stringify({ generated: 'scripts/course-glossary.mjs from course/glossary.org', groups, sources: SOURCE_KEYS, tokConcepts: TOK_CONCEPTS, ...(cutlerFigs ? { cutlerFigs } : {}), terms }, null, 0) + '\n');
 console.log(`${terms.length} terms, ${[...tok.values()].flat().length} TOK connections on ${tok.size} terms -> ${path.relative(ROOT, OUT)}`);

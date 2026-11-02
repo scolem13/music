@@ -3,7 +3,7 @@
 //   quarto render practice/tune-directory.qmd practice/tunes.qmd tools/classical-themes.qmd tools/timestamp-notes.qmd practice/assessment-tune.qmd theory/analysed-scores/beethoven-moonlight-1.qmd
 //   node tests/works/works.cdp.js
 const http = require("http"), fs = require("fs"), path = require("path");
-const ROOT = path.resolve(__dirname, "../.."), SITE = process.env.SITE || ROOT + "/_site", { launch } = require(ROOT + "/tests/band/lead/cdp.js");
+const NEG = !!process.env.NEG, ROOT = path.resolve(__dirname, "../.."), SITE = process.env.SITE || ROOT + "/_site", { launch } = require(ROOT + "/tests/band/lead/cdp.js");
 const type = f => f.endsWith(".js") ? "text/javascript" : f.endsWith(".css") ? "text/css" : f.endsWith(".json") ? "application/json" : f.endsWith(".txt") ? "text/plain; charset=utf-8" : "text/html";
 const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURIComponent(q.url.split(/[?#]/)[0]));
   fs.readFile(f, (e, d) => { if (e) { s.writeHead(404); s.end(); return; } s.writeHead(200, { "content-type": type(f) }); s.end(d); }); }).listen(8547);
@@ -20,6 +20,19 @@ const U = "http://127.0.0.1:8547";
   await wait(`document.querySelectorAll('.td-row').length > 3000`);
   const counts = await ev(`[document.querySelector('#td-works-n').textContent, document.querySelector('#td-tunes-n').textContent, document.querySelector('#td-themes-n').textContent, document.querySelectorAll('.td-work').length].join(' | ')`);
   check("directory lists pieces, tunes and themes", /^\d+ pieces \| [\d,]+ tunes in \d+ sets \| 2,067 themes by \d+ composers \| \d+$/.test(counts), counts);
+  // print anthologies: Cutler's figures by composer, years, theme links; #id of a print-only piece lands on its row; sheet columns
+  const pa = await ev(`(() => { const n = document.querySelector("#td-print-n").textContent, rows = document.querySelectorAll('#td-print-list .td-row');
+    const m = [...rows].find(r => /Moonlight/.test(r.textContent)) || {};
+    return [n, rows.length, (m.textContent || '').replace(/\\s+/g, ' ').trim(), !!(m.querySelector && m.querySelector('a[href*="theme=0887"]'))].join(' | '); })()`);
+  check("print anthologies: Cutler pieces with figure, year and theme link", /^8\d\d pieces \| 8\d\d \| .*Moonlight.*1801.*Cutler 23-2.*theme 887.* \| true$/.test(pa) !== NEG, pa);
+  await ev(`location.hash = 'alkan-esquisse-op-63-no-5'`); await b.sleep(400);
+  const pj = await ev(`(() => { const r = document.getElementById('alkan-esquisse-op-63-no-5'); if (!r) return 'none'; const y = r.getBoundingClientRect().top; return [r.closest('#td-print-list') ? 'print list' : 'elsewhere', y > -5 && y < 400].join(' | '); })()`);
+  check("#id of a print-only piece lands on its row", pj === "print list | true", pj);
+  const sh = await ev(`(() => { const ths = [...document.querySelectorAll('#td-sheet-box th[data-k]')].map(t => t.dataset.k);
+    const f = document.querySelector('[data-f="print"]'); f.value = 'Cutler 23-2'; f.dispatchEvent(new Event('input'));
+    return new Promise(r => setTimeout(() => { const tr = [...document.querySelectorAll('#td-sheet-box tbody tr')].map(t => t.textContent.replace(/\\s+/g, ' ')); f.value = ''; f.dispatchEvent(new Event('input'));
+      r([ths.includes('year') && ths.includes('print'), tr.length, tr.some(t => /1801/.test(t))].join(' | ')); }, 400)); })()`);
+  check("sheet: Year and Print columns; filtering Print finds the Moonlight themes with their year", /^true \| [1-9]\d* \| true$/.test(sh), sh);
   const search = await ev(`(() => { const q = document.querySelector('#td-q'); q.value = 'autumn leaves'; q.dispatchEvent(new Event('input')); return new Promise(r => setTimeout(() => r(
     document.querySelector('#td-stat').textContent + ' | ' + [...document.querySelectorAll('.td-group')].filter(d => !d.hidden).map(d => d.querySelector('.td-gname').textContent + ':' + d.querySelector('.td-count').textContent).join(',')), 300)); })()`);
   check("search narrows and opens the groups", /^\d+ match/.test(search) && /Standards:3 of/.test(search), search);

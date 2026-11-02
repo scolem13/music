@@ -2036,6 +2036,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <ol type="1">
 <li>Press <strong>Bounce to WAV</strong>. It renders the song faster than real time and tells you the peak level. Over 0 dBFS? Pull the master down and bounce again.</li>
 <li>Press <strong>Export MIDI</strong> and open <code>mini-daw.mid</code> in another DAW (below).</li>
+<li><strong>Open MIDI</strong> brings a <code>.mid</code> file in as tracks: one from another DAW, MuseScore, or the Backing Track (its Export MIDI panel also has <strong>Open in the DAW</strong>, which sends the band’s parts straight here). It replaces the song; Undo brings yours back.</li>
 <li><strong>Save project</strong> keeps everything in a <code>.json</code> file you can open here again. (The page also remembers your work in this browser.)</li>
 </ol>
 <div class="mdaw" data-id="daw-full" data-preset="empty" data-bars="16">
@@ -2241,7 +2242,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../apps/shared/band/sounds.js?v=20"></script>
 <script src="../apps/shared/band/player.js?v=128"></script>
 <script src="../apps/shared/band/midi.js?v=20"></script>
-<script src="../apps/shared/daw/mini-daw.js?v=3"></script>
+<script src="../apps/shared/daw/mini-daw.js?v=4"></script>
 <script>MiniDaw.init();</script>
 
 

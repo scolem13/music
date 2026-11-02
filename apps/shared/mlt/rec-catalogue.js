@@ -106,7 +106,7 @@
         var old = tr.querySelector("audio"); if (old) { old.remove(); return; }
         var url = R.url(r); if (!url) { this.title = "The recordings are not online yet"; return; }
         [].forEach.call(host.querySelectorAll("audio"), function (a) { a.remove(); });
-        var a = el("audio"); a.controls = true; a.autoplay = true; a.src = url; tr.appendChild(a);
+        var a = el("audio"); a.controls = true; a.autoplay = true; a.src = R.playUrl(r); tr.appendChild(a);
       };
       function commit() {
         var e = {};

@@ -5,6 +5,9 @@ Scripts and data in `apps/shared/course/`; shared helpers `course-common.js` (lo
 links `?p=<packed>`), styles `course.css` (site tokens; light and dark come from `custom.css`).
 
 ## Glossary
+- Group "Harmony and form (analysis)": terms from the Index of Concepts of Cutler's *Anthology of Music for Analysis*; any term's
+  `:CUTLER:` names top-level concepts, and the build adds the book's figures (and the sub-entries) to it (`cutler`, `cutlerFigs` in
+  glossary.json; data from `scripts/print-books/`). Definitions checked against the Wikipedia page cited as :SOURCE:.
 - Source: `course/glossary.org` (format in its header; `:LEVELS:` lists only the years whose units teach the term, `none` for MYP concepts no unit uses). Build: `node scripts/course-glossary.mjs` → `apps/shared/course/glossary.json`.
   It stops on a broken `:SEE:`, an unknown source key, a TOK concept that is not one of the twelve, or a `:LINK:` with no page.
 - Imported once (Oct 2026) from `~/Projects/website/music-website/music-dictionary.org`, `myp-concepts-website` and

@@ -15,6 +15,8 @@ and stops with an error if a :SEE: link, a TOK concept or a source key is wrong.
   - :CATS: space-separated filter tags
   - :SEE: related slugs
   - :LINK: a page on this site that teaches it (/lessons/...html)
+  - :CUTLER: concept(s) from the Index of Concepts in Cutler's Anthology of Music for Analysis, separated by "; " (top-level
+    headings, as in scripts/print-books/cutler/cutler-index.json); the build lists the book's examples under the term, sub-entries below
   - :SOURCE: a URL, or a key in SOURCE_KEYS of scripts/course-glossary.mjs; :SOURCE_2: a second one
 - The body is the long definition. *bold* and /italic/ work; a blank line starts a paragraph.
 - TOK connections live in the last section, "* TOK connections": one =**= heading per slug, one
@@ -297,6 +299,7 @@ the consistent direction of movement.
 :LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Atonality
+:CUTLER: atonality, free
 :END:
 Music that avoids organizing pitch around a central tonic, rejecting
 the hierarchy of tonal harmony. Developed most systematically by
@@ -348,6 +351,7 @@ third and an augmented fifth.
 :LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Cadence_(music)
+:CUTLER: authentic cadences
 :END:
 The strongest cadential formula in tonal music: the dominant chord (V
 or V7) resolving to the tonic (I). A perfect authentic cadence (PAC)
@@ -487,6 +491,7 @@ backbeat).
 :LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Binary_form
+:CUTLER: binary and ternary forms
 :END:
 A musical form consisting of two sections (A and B), usually both
 repeated. Simple binary form has two contrasting sections; rounded
@@ -538,6 +543,7 @@ chord may move in a freer or repeating pattern (e.g., Alberti bass).
 :LEVELS: dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Cadence_(music)
+:CUTLER: cadences
 :END:
 A sequence of two or more chords that creates a sense of arrival,
 punctuation, or conclusion. The four main cadence types in tonal music
@@ -892,6 +898,7 @@ Development is the act or process of growth, progress or evolution, sometimes th
 :LEVELS: dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Diatonic_scale
+:CUTLER: diatonic collections
 :END:
 Relating to notes, intervals, chords, or harmonies that belong to a
 given major or minor scale without chromatic alteration. Diatonic harmony
@@ -985,6 +992,7 @@ quality rather than merely quiet dynamics.
 :LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Dominant_(music)
+:CUTLER: dominant harmony
 :END:
 The fifth scale degree and the chord built on it. The dominant chord
 (V) has a strong tendency to resolve to the tonic (I), making V–I the
@@ -1307,6 +1315,7 @@ understanding a piece's pacing and energy.
 :LEVELS: dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Hemiola
+:CUTLER: hemiola
 :END:
 A rhythmic pattern in which the regular metre is temporarily displaced
 by grouping beats differently. In 6/8, for example, two bars of 3+3
@@ -1594,6 +1603,7 @@ syllabic singing, in which each syllable receives a single note.
 :LEVELS: myp2 myp4 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Metre_(music)
+:CUTLER: meter
 :END:
 The organized pattern of strong and weak beats that provides a rhythmic
 framework for music. Duple metre groups beats in twos (2/4, 4/4);
@@ -1696,6 +1706,7 @@ appropriate space in the frequency spectrum and stereo field.
 :LEVELS: myp2 myp4 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Modulation_(music)
+:CUTLER: modulation
 :END:
 The process of moving from one key (tonal center) to another within a
 piece. Common modulation techniques include pivot chord modulation
@@ -1797,6 +1808,7 @@ separately. Pioneered in the 1940s by Les Paul.
 :LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Nonchord_tone
+:CUTLER: passing tones
 :END:
 A non-chord tone that fills in the stepwise space between two chord
 tones, approached and left by step in the same direction. A diatonic
@@ -1814,6 +1826,7 @@ melodic writing and counterpoint.
 :LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Pedal_point
+:CUTLER: pedals
 :END:
 A sustained or repeated pitch — most commonly in the bass — held while
 the harmony above it changes. Named after the organ pedal, which can
@@ -1848,6 +1861,7 @@ more open-sounding slendro.
 :LEVELS: myp4 dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Pentatonic_scale
+:CUTLER: pentatonic collections
 :END:
 A scale consisting of five pitches per octave. The major pentatonic
 (e.g., C–D–E–G–A) and minor pentatonic (e.g., A–C–D–E–G) are the most
@@ -1899,6 +1913,7 @@ arco or con arco marks the return to bowing.
 :LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Cadence_(music)
+:CUTLER: Plagal progressions and cadences (IV-I)
 :END:
 A cadential formula in which the subdominant chord (IV) resolves to the
 tonic (I). Produces a softer, more settled effect than the authentic
@@ -1932,6 +1947,7 @@ fugue represent the highest development of Western polyphonic writing.
 :LEVELS: dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Polyrhythm
+:CUTLER: polyrhythm
 :END:
 The simultaneous use of two or more conflicting rhythmic patterns. A
 common example is three against two (3:2), in which one voice plays
@@ -2125,6 +2141,7 @@ more groove-oriented.
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Rondo
 :SOURCE_2: https://www.britannica.com/art/rondo
+:CUTLER: rondo forms
 :END:
 A musical form built around a recurring main theme (the refrain, A)
 that alternates with contrasting episodes (B, C, etc.). Common patterns
@@ -2194,6 +2211,7 @@ surprising character. The form is typically A–B–A (scherzo–trio–scherzo)
 :LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Sequence_(music)
+:CUTLER: sequences, harmonic
 :END:
 A compositional device in which a melodic or harmonic pattern is
 repeated immediately at a higher or lower pitch. A tonal sequence adjusts
@@ -2280,6 +2298,7 @@ from Classical and Romantic ones.
 :LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Sonata_form
+:CUTLER: sonata forms
 :END:
 The primary formal structure of the first movement (and sometimes other
 movements) of Classical-era sonatas, symphonies, and chamber works.
@@ -2396,6 +2415,7 @@ fingerboard), which produces a softer, flutier sound.
 :LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Suspension_(music)
+:CUTLER: suspensions
 :END:
 A suspension occurs when a note from a previous chord is held or
 repeated while the harmony changes beneath it, creating a dissonance
@@ -2414,6 +2434,7 @@ prominent in Renaissance and Baroque counterpoint.
 :LEVELS: myp2 myp4 dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Syncopation
+:CUTLER: syncopation
 :END:
 A rhythmic technique in which accents fall on beats or parts of beats
 that are normally unaccented, displacing the expected rhythmic emphasis.
@@ -2516,6 +2537,7 @@ Distinct from staccato (short) and accent (forceful).
 :LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Ternary_form
+:CUTLER: binary and ternary forms
 :END:
 A musical form consisting of three sections: an opening section (A), a
 contrasting middle section (B), and a return of the opening section (A).
@@ -2709,6 +2731,7 @@ reinforce a melody across sections.
 :LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Variation_(music)
+:CUTLER: variation techniques
 :END:
 A compositional technique in which a theme is repeated with alterations
 to melody, harmony, rhythm, texture, timbre, or dynamics while
@@ -3005,6 +3028,506 @@ I denotes the tonic — the first scale degree and the chord built on it.
 The tonic chord is the harmonic center of gravity in tonal music; most
 pieces begin and end on I. In major keys it is a major triad; in minor
 keys it is minor (i).
+
+* Harmony and form (analysis)
+
+Terms from the Index of Concepts in Cutler, /Anthology of Music for Analysis/; each lists the book's examples (built from
+scripts/print-books/cutler/cutler-index.json by scripts/course-glossary.mjs through the :CUTLER: property).
+
+** six-four techniques
+:PROPERTIES:
+:SLUG: six-four-techniques
+:SHORT: Uses of a second-inversion (6/4) chord: cadential, passing, neighbor (pedal) and arpeggiated.
+:IMPORTANCE: expert
+:LEVELS: none
+:CATS: harmony
+:SEE: cadential-six-four
+:SOURCE: https://en.wikipedia.org/wiki/Second_inversion
+:CUTLER: 6/4 techniques
+:END:
+A 6/4 chord has the chord's fifth in the bass, a fourth above it, and in common-practice music it is treated as unstable.
+It appears in a few set ways: over a held bass as a /neighbor/ (pedal) 6/4, between two positions of another chord as a
+/passing/ 6/4, as part of a bass line that /arpeggiates/ one chord, and before the dominant as the /cadential/ 6/4.
+
+** cadential six-four
+:PROPERTIES:
+:SLUG: cadential-six-four
+:SHORT: A tonic 6/4 over the dominant bass that resolves to V: the 6 and 4 fall to 5 and 3.
+:IMPORTANCE: enriching
+:LEVELS: none
+:CATS: harmony
+:SEE: six-four-techniques half-cadence authentic-perfect-cadence
+:SOURCE: https://en.wikipedia.org/wiki/Second_inversion
+:CUTLER: cadential 6/4
+:END:
+Written V6/4–5/3 (or I6/4–V): the bass already has the dominant note while the upper voices hold the tonic triad, then move
+down by step to the dominant triad. It most often comes just before an authentic or half cadence.
+
+** anticipation
+:PROPERTIES:
+:SLUG: anticipation
+:SHORT: A non-chord tone that sounds a note of the next chord early.
+:IMPORTANCE: enriching
+:LEVELS: none
+:CATS: harmony
+:SEE: nonharmonic-tones suspensions
+:SOURCE: https://en.wikipedia.org/wiki/Nonchord_tone
+:CUTLER: anticipations
+:END:
+The note arrives (usually by step) before its chord does and is held or repeated when the chord changes. Common in the top
+voice just before a cadence.
+
+** augmented sixth chords
+:PROPERTIES:
+:SLUG: augmented-sixth-chords
+:SHORT: Predominant chords with an augmented sixth (usually ♭6 in the bass and ♯4 above) that expands out to the dominant octave.
+:IMPORTANCE: expert
+:LEVELS: none
+:CATS: harmony
+:SEE: neapolitan-harmony mixture
+:SOURCE: https://en.wikipedia.org/wiki/Augmented_sixth_chord
+:CUTLER: augmented sixth chords
+:END:
+Three kinds are named by the other notes they add: /Italian/ (the tonic), /French/ (the tonic and the second degree) and
+/German/ (the tonic and the lowered third degree). A German sixth sounds like a dominant seventh, so it can be respelled to
+modulate.
+
+
+** common-tone harmonies
+:PROPERTIES:
+:SLUG: common-tone-harmonies
+:SHORT: Chromatic chords (a diminished seventh or an augmented sixth) that decorate a chord by sharing a note with it.
+:IMPORTANCE: expert
+:LEVELS: none
+:CATS: harmony
+:SEE: neighbor-chords augmented-sixth-chords
+:SOURCE: https://en.wikipedia.org/wiki/Common_tone_(chord)
+:SOURCE_2: https://en.wikipedia.org/wiki/Diminished_seventh_chord
+:CUTLER: common-tone harmonies
+:END:
+The common-tone diminished seventh (ct°7) and the common-tone augmented sixth hold one note of the chord they embellish while
+the other voices move by step around it. They act as neighbor chords, not as dominants.
+
+** equal subdivisions of the octave
+:PROPERTIES:
+:SLUG: equal-subdivisions-of-the-octave
+:SHORT: Progressions whose roots move by one interval that divides the octave equally: major thirds or minor thirds.
+:IMPORTANCE: expert
+:LEVELS: none
+:CATS: harmony
+:SEE: whole-tone-collections octatonic-collections
+:SOURCE: https://en.wikipedia.org/wiki/Equal_temperament
+:CUTLER: equal subdivisions of the octave
+:END:
+In twelve-tone equal temperament the octave splits evenly into two tritones, three major thirds or four minor thirds.
+Chromatic music uses these steps to move through keys a third apart and come back home.
+
+** half cadence
+:PROPERTIES:
+:SLUG: half-cadence
+:SHORT: A phrase ending on the dominant (V), heard as a pause rather than an ending.
+:IMPORTANCE: core
+:LEVELS: none
+:CATS: harmony
+:SEE: cadence authentic-perfect-cadence phrygian-cadence periods
+:SOURCE: https://en.wikipedia.org/wiki/Cadence
+:CUTLER: half cadences
+:END:
+Any chord can lead to the closing V. A half cadence often ends the first phrase of a period.
+
+** scales (major and minor)
+:PROPERTIES:
+:SLUG: major-and-minor-scales
+:SHORT: The major scale and the three forms of the minor scale: natural, harmonic and melodic.
+:IMPORTANCE: core
+:LEVELS: none
+:CATS: harmony
+:SEE: relative-major-minor diatonic
+:SOURCE: https://en.wikipedia.org/wiki/Major_scale
+:SOURCE_2: https://en.wikipedia.org/wiki/Minor_scale
+:CUTLER: major scales; minor scales; scales
+:END:
+Major: whole, whole, half, whole, whole, whole, half. Natural minor lowers the third, sixth and seventh degrees; harmonic minor
+raises the seventh again (a leading note); melodic minor raises the sixth and seventh going up and often lowers them coming down.
+
+** mediant harmony
+:PROPERTIES:
+:SLUG: mediant-harmony
+:SHORT: Chords on the third scale degree: III in minor, iii in major.
+:IMPORTANCE: enriching
+:LEVELS: none
+:CATS: harmony
+:SOURCE: https://en.wikipedia.org/wiki/Mediant
+:CUTLER: mediant harmony
+:END:
+In minor, III is the relative major's tonic and a common goal. In major, iii is less common; a "iii6" often turns out to be a
+dominant with a note held over (the sixth above the bass decorating V).
+
+** mixture
+:PROPERTIES:
+:SLUG: mixture
+:SHORT: Borrowing notes or chords from the parallel mode (e.g. iv or ♭VI in a major key).
+:IMPORTANCE: enriching
+:LEVELS: none
+:CATS: harmony
+:SEE: neapolitan-harmony augmented-sixth-chords
+:SOURCE: https://en.wikipedia.org/wiki/Borrowed_chord
+:CUTLER: mixture
+:END:
+/Simple/ mixture takes a chord from the parallel minor (or major) unchanged; /secondary/ mixture changes the quality of a chord
+on a degree that does not change between the modes (a major iii, say); /double/ mixture does both.
+
+** Neapolitan harmony
+:PROPERTIES:
+:SLUG: neapolitan-harmony
+:SHORT: The major chord on the lowered second degree (♭II), usually in first inversion as a predominant.
+:IMPORTANCE: enriching
+:LEVELS: none
+:CATS: harmony
+:SEE: augmented-sixth-chords mixture
+:SOURCE: https://en.wikipedia.org/wiki/Neapolitan_chord
+:CUTLER: Neapolitan harmony
+:END:
+Usually written ♭II6 (the "Neapolitan sixth") and leading to V, often through a cadential 6/4. More common in minor keys.
+
+** neighbor chords
+:PROPERTIES:
+:SLUG: neighbor-chords
+:SHORT: A chord made by neighbor motion in the upper voices over a held or repeated bass, e.g. I–IV6/4–I.
+:IMPORTANCE: expert
+:LEVELS: none
+:CATS: harmony
+:SEE: neighbor-tones six-four-techniques passing-chords
+:SOURCE: https://en.wikipedia.org/wiki/Nonchord_tone
+:CUTLER: neighbor chords
+:END:
+The voices step away from a chord and back, and the notes they reach together form a new chord that decorates the first one
+rather than having a function of its own.
+
+** neighbor tones
+:PROPERTIES:
+:SLUG: neighbor-tones
+:SHORT: A non-chord tone a step above or below a chord tone, between two sounds of that same note.
+:IMPORTANCE: core
+:LEVELS: none
+:CATS: harmony
+:SEE: passing-tone nonharmonic-tones neighbor-chords
+:SOURCE: https://en.wikipedia.org/wiki/Nonchord_tone
+:CUTLER: neighbor tones
+:END:
+Kinds: /accented/ (on the beat), /chromatic/ (a semitone off the scale), /double/ (both neighbors, above and below, before the
+return) and /incomplete/ (only the approach or only the departure is by step).
+
+** nonharmonic tones
+:PROPERTIES:
+:SLUG: nonharmonic-tones
+:SHORT: Notes that are not part of the chord sounding with them: passing, neighbor, suspension, anticipation and others.
+:IMPORTANCE: core
+:LEVELS: none
+:CATS: harmony
+:SEE: passing-tone neighbor-tones suspensions anticipation pedal-tone
+:SOURCE: https://en.wikipedia.org/wiki/Nonchord_tone
+:CUTLER: nonharmonic tones
+:END:
+Also called non-chord tones or embellishing tones. They are named by how they are approached and left (by step, by leap, or
+held) and whether they fall on or off the beat.
+
+** octatonic collections
+:PROPERTIES:
+:SLUG: octatonic-collections
+:SHORT: The eight-note scale of alternating whole and half steps.
+:IMPORTANCE: expert
+:LEVELS: none
+:CATS: harmony
+:SEE: whole-tone-collections equal-subdivisions-of-the-octave
+:SOURCE: https://en.wikipedia.org/wiki/Octatonic_scale
+:CUTLER: octatonic collections
+:END:
+Symmetrical: it repeats every minor third, so there are only three different octatonic collections.
+
+** omnibus progressions
+:PROPERTIES:
+:SLUG: omnibus-progressions
+:SHORT: A chromatic progression in which two voices move by semitone in opposite directions around a dominant seventh.
+:IMPORTANCE: expert
+:LEVELS: none
+:CATS: harmony
+:SEE: voice-exchange
+:SOURCE: https://en.wikipedia.org/wiki/Omnibus_progression
+:CUTLER: omnibus progressions
+:END:
+First described by nineteenth-century Viennese theorists. The chords pass through dominant sevenths and augmented sixths
+while the outer voices wedge apart (or together) chromatically.
+
+** one-part forms
+:PROPERTIES:
+:SLUG: one-part-forms
+:SHORT: A piece made of a single section that does not divide into contrasting parts.
+:IMPORTANCE: enriching
+:LEVELS: none
+:CATS: form
+:SEE: binary-form ternary-form form
+:SOURCE: https://en.wikipedia.org/wiki/Musical_form
+:CUTLER: one-part forms
+:END:
+Many short preludes are one continuous section, often a single period or phrase group, sometimes with a short codetta.
+
+** parallel six-three chords
+:PROPERTIES:
+:SLUG: parallel-six-three-chords
+:SHORT: A run of first-inversion (6/3) triads moving in parallel, usually stepwise.
+:IMPORTANCE: expert
+:LEVELS: none
+:CATS: harmony
+:SEE: passing-chords
+:SOURCE: https://en.wikipedia.org/wiki/Fauxbourdon
+:CUTLER: parallel 6/3 chords
+:END:
+Because each chord has a third and a sixth above the bass, the voices can move in parallel without parallel fifths. The
+technique descends from medieval and Renaissance fauxbourdon.
+
+** passing chords
+:PROPERTIES:
+:SLUG: passing-chords
+:SHORT: A chord formed by passing motion that connects two positions of a chord or two chords.
+:IMPORTANCE: enriching
+:LEVELS: none
+:CATS: harmony
+:SEE: passing-tone neighbor-chords six-four-techniques
+:SOURCE: https://en.wikipedia.org/wiki/Passing_chord
+:CUTLER: passing chords
+:END:
+Typical examples: the passing V4/3 or vii°6 between I and I6, and the passing 6/4 between IV and IV6.
+
+** period
+:PROPERTIES:
+:SLUG: periods
+:SHORT: Two phrases heard as a question and answer: the first ends weakly (often a half cadence), the second more strongly.
+:IMPORTANCE: core
+:LEVELS: none
+:CATS: form
+:SEE: phrase sentence half-cadence authentic-perfect-cadence
+:SOURCE: https://en.wikipedia.org/wiki/Period_(music)
+:CUTLER: periods
+:END:
+/Parallel/ when both phrases start alike, /contrasting/ when they do not; /modulating/ when the second ends in a new key;
+/sequential/ when the second repeats the first a step higher or lower; a /double/ period has four phrases.
+
+** phrase
+:PROPERTIES:
+:SLUG: phrase
+:SHORT: A musical thought that ends with a cadence.
+:IMPORTANCE: core
+:LEVELS: none
+:CATS: form
+:SEE: periods sentence cadence
+:SOURCE: https://en.wikipedia.org/wiki/Phrase_(music)
+:CUTLER: phrases
+:END:
+Built from motives; phrases in turn combine into periods, sentences and larger sections.
+
+** Phrygian cadence
+:PROPERTIES:
+:SLUG: phrygian-cadence
+:SHORT: In minor, iv6 to V: a half cadence whose bass falls a semitone to the dominant.
+:IMPORTANCE: enriching
+:LEVELS: none
+:CATS: harmony
+:SEE: half-cadence
+:SOURCE: https://en.wikipedia.org/wiki/Cadence
+:CUTLER: Phrygian cadences
+:END:
+The falling half step in the bass recalls the Phrygian mode. Common in Baroque slow movements before a faster one.
+
+** polytonality
+:PROPERTIES:
+:SLUG: polytonality
+:SHORT: More than one key at once (bitonality: two).
+:IMPORTANCE: expert
+:LEVELS: none
+:CATS: harmony
+:SOURCE: https://en.wikipedia.org/wiki/Polytonality
+:CUTLER: polytonality
+:END:
+Each layer of the texture keeps to its own key or collection, often a different key signature in each hand or part.
+
+** sentence
+:PROPERTIES:
+:SLUG: sentence
+:SHORT: A phrase built as basic idea, its repeat, then a continuation that speeds up and reaches a cadence.
+:IMPORTANCE: enriching
+:LEVELS: none
+:CATS: form
+:SEE: periods phrase
+:SOURCE: https://en.wikipedia.org/wiki/Sentence_(music)
+:CUTLER: sentence
+:END:
+Often eight bars: 2 + 2 (presentation) + 4 (continuation and cadence), the continuation breaking the idea into shorter
+fragments.
+
+** species counterpoint
+:PROPERTIES:
+:SLUG: species-counterpoint
+:SHORT: Counterpoint taught in five steps against a cantus firmus: note against note, two notes, four notes, syncopated, then free.
+:IMPORTANCE: expert
+:LEVELS: none
+:CATS: harmony
+:SEE: counterpoint suspensions voice-leading
+:SOURCE: https://en.wikipedia.org/wiki/Counterpoint
+:CUTLER: species counterpoint; contrapuntal procedures
+:END:
+The method is Fux's /Gradus ad Parnassum/ (1725). The fourth species (syncopation) teaches suspensions; the fifth mixes the
+others.
+
+** subdominant harmony
+:PROPERTIES:
+:SLUG: subdominant-harmony
+:SHORT: Chords on the fourth degree (IV, iv) and their uses: predominant, plagal, and after V.
+:IMPORTANCE: core
+:LEVELS: none
+:CATS: harmony
+:SEE: iv plagal-cadence phrygian-cadence
+:SOURCE: https://en.wikipedia.org/wiki/Subdominant
+:CUTLER: subdominant harmony
+:END:
+IV usually leads to V (a predominant) or back to I (plagal). IV6 often moves to V in minor as a Phrygian cadence. IV7 and its
+inversions add a seventh that resolves down.
+
+** submediant harmony
+:PROPERTIES:
+:SLUG: submediant-harmony
+:SHORT: Chords on the sixth degree (vi, VI): between I and the predominant, and the deceptive V–vi.
+:IMPORTANCE: core
+:LEVELS: none
+:CATS: harmony
+:SEE: vi cadence
+:SOURCE: https://en.wikipedia.org/wiki/Submediant
+:CUTLER: submediant harmony; deceptive progressions and cadences
+:END:
+vi often comes between I and IV or ii, as part of a descent by thirds. V–vi in place of V–I is the deceptive progression
+(a deceptive cadence when it ends a phrase).
+
+** subtonic harmony
+:PROPERTIES:
+:SLUG: subtonic-harmony
+:SHORT: The major chord a whole step below the tonic (VII in minor, ♭VII in major).
+:IMPORTANCE: enriching
+:LEVELS: none
+:CATS: harmony
+:SEE: vii mixture
+:SOURCE: https://en.wikipedia.org/wiki/Subtonic
+:CUTLER: subtonic harmony
+:END:
+In minor, VII is often V of the relative major (III).
+
+** supertonic harmony
+:PROPERTIES:
+:SLUG: supertonic-harmony
+:SHORT: Chords on the second degree (ii, ii°, ii7 and inversions), the most common predominant.
+:IMPORTANCE: core
+:LEVELS: none
+:CATS: harmony
+:SEE: subdominant-harmony neapolitan-harmony
+:SOURCE: https://en.wikipedia.org/wiki/Supertonic
+:CUTLER: supertonic harmony
+:END:
+ii6 and ii6/5 have the subdominant note in the bass, so they move to V the same way IV does.
+
+** tone row
+:PROPERTIES:
+:SLUG: tone-row
+:SHORT: An ordering of the twelve pitch classes used as the basis of a twelve-tone piece.
+:IMPORTANCE: expert
+:LEVELS: none
+:CATS: harmony
+:SEE: twelve-tone-technique
+:SOURCE: https://en.wikipedia.org/wiki/Tone_row
+:CUTLER: tone rows
+:END:
+Also series or set. A row is used in four forms (prime, inversion, retrograde, retrograde inversion), each at any of twelve
+transpositions.
+
+** twelve-tone technique
+:PROPERTIES:
+:SLUG: twelve-tone-technique
+:SHORT: Composing from a tone row so that all twelve notes are used without one becoming a tonic.
+:IMPORTANCE: expert
+:LEVELS: none
+:CATS: harmony
+:SEE: tone-row atonal
+:SOURCE: https://en.wikipedia.org/wiki/Twelve-tone_technique
+:CUTLER: twelve-tone techniques
+:END:
+Also dodecaphony or twelve-tone serialism, the method associated with Schoenberg and his students Berg and Webern.
+
+** tonic harmony
+:PROPERTIES:
+:SLUG: tonic-harmony
+:SHORT: The chord on the first degree (I, i) and its first inversion, the home of the key.
+:IMPORTANCE: core
+:LEVELS: none
+:CATS: harmony
+:SEE: dominant subdominant-harmony
+:SOURCE: https://en.wikipedia.org/wiki/Tonic_(music)
+:CUTLER: tonic harmony
+:END:
+I6 extends the tonic and often leads on to a predominant; I can also decorate another chord (e.g. over a dominant pedal).
+
+** tonicization
+:PROPERTIES:
+:SLUG: tonicization
+:SHORT: Making a chord other than the tonic sound like a temporary tonic, using its own dominant (an applied or secondary chord).
+:IMPORTANCE: enriching
+:LEVELS: none
+:CATS: harmony
+:SEE: modulation-in-music dominant
+:SOURCE: https://en.wikipedia.org/wiki/Tonicization
+:SOURCE_2: https://en.wikipedia.org/wiki/Secondary_chord
+:CUTLER: tonicization
+:END:
+Written V/V, V7/IV, vii°7/V and so on. A tonicization is brief; when the new key is confirmed by a cadence, it becomes a
+modulation.
+
+** voice exchange
+:PROPERTIES:
+:SLUG: voice-exchange
+:SHORT: Two voices swap notes (often the bass and the melody) while one harmony is prolonged.
+:IMPORTANCE: expert
+:LEVELS: none
+:CATS: harmony
+:SEE: voice-leading passing-chords
+:SOURCE: https://en.wikipedia.org/wiki/Voice_exchange
+:CUTLER: voice exchange
+:END:
+The voices usually move in contrary motion through a passing chord, e.g. bass 1–2–3 against soprano 3–2–1 over I–V4/3–I6.
+/Chromatic/ voice exchanges swap a note for its altered form.
+
+** voice leading
+:PROPERTIES:
+:SLUG: voice-leading
+:SHORT: How the individual lines (voices) move from chord to chord.
+:IMPORTANCE: core
+:LEVELS: none
+:CATS: harmony
+:SEE: counterpoint species-counterpoint
+:SOURCE: https://en.wikipedia.org/wiki/Voice_leading
+:CUTLER: voice leading
+:END:
+Common-practice voice leading keeps voices smooth (mostly steps and common tones), independent (no parallel fifths or
+octaves) and resolves tendency tones such as the leading note and chord sevenths.
+
+** whole-tone collections
+:PROPERTIES:
+:SLUG: whole-tone-collections
+:SHORT: The six-note scale made only of whole steps.
+:IMPORTANCE: expert
+:LEVELS: none
+:CATS: harmony
+:SEE: octatonic-collections equal-subdivisions-of-the-octave
+:SOURCE: https://en.wikipedia.org/wiki/Whole-tone_scale
+:CUTLER: whole-tone collections
+:END:
+There are only two whole-tone collections. With no semitones and no perfect fifths, it gives no pull toward one tonic.
 
 * MYP key concepts
 

@@ -23,7 +23,8 @@ Everything from the other lessons in one place. Make a short song (let the band 
 
 1. Press **Bounce to WAV**. It renders the song faster than real time and tells you the peak level. Over 0 dBFS? Pull the master down and bounce again.
 2. Press **Export MIDI** and open `mini-daw.mid` in another DAW (below).
-3. **Save project** keeps everything in a `.json` file you can open here again. (The page also remembers your work in this browser.)
+3. **Open MIDI** brings a `.mid` file in as tracks: one from another DAW, MuseScore, or the Backing Track (its Export MIDI panel also has **Open in the DAW**, which sends the band's parts straight here). It replaces the song; Undo brings yours back.
+4. **Save project** keeps everything in a `.json` file you can open here again. (The page also remembers your work in this browser.)
 
 <div class="mdaw" data-id="daw-full" data-preset="empty" data-bars="16"></div>
 

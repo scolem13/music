@@ -14,6 +14,9 @@ const src = path.resolve(ROUGH ? "scripts/theme-sources/rough" : "scripts/theme-
 const out = path.resolve(ROUGH ? "apps/themes/themes-rough-data.js" : "apps/themes/themes-data.js");
 // catalogue numbers and dates (scripts/theme-works.py); keyed by the EDM number, so a split theme's parts share them
 const WORKS = fs.existsSync("scripts/theme-sources/theme-works.json") ? JSON.parse(fs.readFileSync("scripts/theme-sources/theme-works.json", "utf8")) : {};
+// a second source of years for the themes theme-works.py found none for: composer + catalogue number on Wikidata
+// (python3 -I scripts/print-books/work-years.py --themes); theme-works.json wins where both have one
+const YEARS2 = fs.existsSync("scripts/theme-sources/theme-years-wikidata.json") ? JSON.parse(fs.readFileSync("scripts/theme-sources/theme-years-wikidata.json", "utf8")) : {};
 const ids = fs.readdirSync(src).filter((f) => f.endsWith(".abc")).map((f) => f.slice(0, -4)).sort();
 const SHARPS = "FCGDAEB", ORDER = ["Cb","Gb","Db","Ab","Eb","Bb","F","C","G","D","A","E","B","F#","C#"];
 const MINOR = ["Abm","Ebm","Bbm","Fm","Cm","Gm","Dm","Am","Em","Bm","F#m","C#m","G#m","D#m","A#m"];
@@ -114,6 +117,8 @@ for (const id of ids) {
     ...(() => { const w = WORKS[id.split("-")[0]] || {}, o = {};
       if (w.catalogue) o.cat = w.catalogue;
       for (const k of ["composed", "published", "premiere"]) if (w[k]) o[k] = w[k];
+      const y2 = YEARS2[id] || YEARS2[id.split("-")[0]];
+      if (y2 && !o.composed && !o.published && !o.premiere) o[y2.kind] = y2.year;
       return o; })(),
     qpm: +((/^Q:\s*1\/4\s*=\s*(\d+)/m.exec(abc) || [])[1] || 0) || undefined,   // the recording's tempo, for Play only
     key: minor ? MINOR[fifths + 7] : key, sigKey: key, minor, modeFrom: from, fifths, meter, unit,

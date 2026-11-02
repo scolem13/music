@@ -97,6 +97,28 @@
     return '<div class="gl-meta gl-uses">In class: first ' + esc(fmtDate(u[0].date)) + " (" + esc(COURSE_NAMES[u[0].course] || u[0].course) + ') · <select aria-label="Class pages that used this term"><option value="">' +
       u.length + (u.length === 1 ? " lesson" : " lessons") + " ▾</option>" + opts + "</select></div>";
   }
+  // Cutler, Anthology of Music for Analysis: the book's examples of the term (Index of Concepts), its sub-entries below.
+  // Each figure links to its piece on the Tune Directory; hover shows composer and title.
+  function figHtml(r) {
+    var f = (D.cutlerFigs && D.cutlerFigs.figs[r[0]]) || [], tip = [f[1], f[0]].filter(Boolean).join(", ") + (f[3] ? " (whole movement)" : "");
+    var a = f[2] ? '<a href="/practice/tune-directory.html#' + encodeURIComponent(f[2]) + '" title="' + esc(tip) + '">' + esc(r[0]) + "</a>" : '<span title="' + esc(tip) + '">' + esc(r[0]) + "</span>";
+    return '<span class="gl-fig">' + a + (r[1] ? " <small>(" + esc(r[1]) + ")</small>" : "") + "</span>";
+  }
+  function cutlerBlock(t) {
+    if (!t.cutler || !t.cutler.length) return "";
+    var n = 0, h = "";
+    t.cutler.forEach(function (c) {
+      n += c.refs.length; c.subs.forEach(function (x) { n += x.refs.length; });
+      if (t.cutler.length > 1 || c.c.toLowerCase() !== t.title.toLowerCase()) h += '<p class="gl-cc"><strong>' + esc(c.c) + "</strong>" + (c.see ? " <small>see " + esc(c.see) + "</small>" : "") + "</p>";
+      if (c.refs.length) h += '<p class="gl-figs">' + c.refs.map(figHtml).join(", ") + "</p>";
+      if (c.subs.length) h += '<ul class="gl-subs">' + c.subs.map(function (x) {
+        return "<li><em>" + esc(x.l) + "</em>: " + x.refs.map(figHtml).join(", ") + "</li>";
+      }).join("") + "</ul>";
+    });
+    if (!n) return "";
+    return '<details class="gl-cutler"><summary>Examples in Cutler, <i>Anthology of Music for Analysis</i> (' + n + ")</summary>" +
+      '<p class="gl-meta">Figure numbers are chapter–figure in the book; measures in brackets. A number opens the piece in the Tune Directory.</p>' + h + "</details>";
+  }
   function termHtml(t, open) {
     var badges = '<span class="crs-badge ' + t.importance + '">' + t.importance + "</span> " + '<span class="crs-badge">' + esc(t.group) + "</span> " +
       '<span class="crs-badge">' + esc(levelText(t.levels)) + "</span>" + ((t.tok && t.tok.length) ? ' <span class="crs-badge tok">TOK</span>' : "");
@@ -107,7 +129,7 @@
     return '<div class="gl-term' + (open ? " open" : "") + '" id="' + esc(t.slug) + '">' +
       '<div class="gl-head" role="button" tabindex="0" aria-expanded="' + !!open + '"><span class="gl-tw">▸</span><h3>' + esc(t.title) + "</h3>" + badges + "</div>" +
       '<p class="gl-short">' + md(t.short) + "</p>" +
-      '<div class="gl-body">' + (t.long || "") + tokBlock(t) + (meta.length ? '<div class="gl-meta">' + meta.join(" · ") + "</div>" : "") + usesBlock(t) + "</div></div>";
+      '<div class="gl-body">' + (t.long || "") + tokBlock(t) + cutlerBlock(t) + (meta.length ? '<div class="gl-meta">' + meta.join(" · ") + "</div>" : "") + usesBlock(t) + "</div></div>";
   }
   function render() {
     var list = sorted(D.terms.filter(matches)), out = document.getElementById("gl-results");
@@ -226,7 +248,7 @@
 
   function init() {
     if (!document.getElementById("gl-results")) return;
-    K.json("/apps/shared/course/glossary.json?v=2").then(function (data) {
+    K.json("/apps/shared/course/glossary.json?v=3").then(function (data) {
       if (!data) { document.getElementById("gl-results").textContent = "The glossary could not be loaded."; return; }
       D = data; D.terms.forEach(function (t) { bySlug[t.slug] = t; });
       st = readState(); controls(); render(); tokSection(); ladders(); wire();

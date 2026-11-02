@@ -36,6 +36,10 @@ const U = p => `http://127.0.0.1:${PORT}/${p}`;
   check("glossary: compact view", g4 > 100, g4);
   const g5 = await b.eval(`(() => { const s = document.querySelector('#gl-q'); s.value = 'contemporary music'; s.oninput(); return new Promise(r => setTimeout(() => r(document.querySelectorAll('.gl-compact tr').length), 300)); })()`);
   check("glossary: search", g5 >= 1 && g5 < 10, g5);
+  await b.goto(U("course/glossary.html#supertonic-harmony")); await b.sleep(900);
+  const g6 = await b.eval(`(() => { const el = document.getElementById('supertonic-harmony'), d = el && el.querySelector('.gl-cutler'); if (!d) return 'none';
+    const a = d.querySelector('.gl-fig a'); return [/\\(\\d+\\)/.test(d.querySelector('summary').textContent), d.querySelectorAll('.gl-subs li').length, a ? a.getAttribute('href') : '', a ? a.title : ''].join(' | '); })()`);
+  check("glossary: a term lists Cutler's examples, sub-entries below, each linked to its piece", /^true \| [4-9]\d* \| \/practice\/tune-directory\.html#\S+ \| .+/.test(g6) !== !!process.env.NEG, g6);
   check("glossary: no errors", !errs().length, errs().join(" | "));
 
   // ── pathway ──

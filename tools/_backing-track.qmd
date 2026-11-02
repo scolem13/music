@@ -696,6 +696,7 @@
         <select id="bt-mid-range"><option value="chorus">Last full chorus</option><option value="last">Last N bars</option><option value="all">Everything played</option></select></div>
       <div class="bt-field" id="bt-mid-n-field" hidden><label for="bt-mid-n">N</label><input type="number" id="bt-mid-n" min="1" max="999" step="1" value="12"></div>
       <button type="button" class="bt-btn" id="bt-mid-go">Download .mid</button>
+      <button type="button" class="bt-btn" id="bt-mid-daw" title="Open these parts as tracks in the site's DAW (a new tab), to edit them in the piano roll, mix them and bounce them">Open in the DAW</button>
     </div>
     <p class="bt-hint" id="bt-mid-note" role="status">Exports the notes the band actually played, with the swing written into the timing. If nothing has been played yet, the bars are generated fresh with the current settings.</p>
   </details>
@@ -1802,7 +1803,7 @@
       if (only && secs[drawnSection]) $("bt-nt-which").textContent = (secs[drawnSection].name || "Section " + (drawnSection + 1)) + (fresh ? ": an example of what the band would play" : state === "idle" ? ", as last played" : bars[0].bar > nowBar ? ", coming up" : ", playing now");
     }).catch(function(){ $("bt-score").textContent = "The notation library didn't load."; });
   }
-  function exportMidi(){
+  function exportMidi(toDaw){
     var parts = ["bass","comp","drums","congas"].filter(function(p){ return $("bt-mid-" + p).checked && (p !== "congas" || congasOn()); }), note = $("bt-mid-note");
     if (!parts.length){ note.textContent = "Tick at least one part to export."; return; }
     var mode = $("bt-mid-range").value, n = Math.max(1, parseInt($("bt-mid-n").value, 10) || 12), b = played(), bars, what;
@@ -1814,9 +1815,17 @@
     if (parts.indexOf("comp") >= 0 && bars.some(function(x){ return x.parts && x.parts.comp2 && x.parts.comp2.length; })) parts.splice(parts.indexOf("comp") + 1, 0, "comp2");   // the second chord instrument goes with the first
     var bytes = BandMidi.build(bars, { parts: parts });
     var name = (parsedC.title || "backing-track").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") + "-" + keyField() + "-" + Math.round(bars[0].tempo) + "bpm.mid";
+    window.__btLastMidi = bytes;                                         // for tests
+    if (toDaw === true){                                                 // the DAW page reads it from localStorage "mdaw:handoff" (mini-daw.js)
+      try { var bin = ""; for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+        localStorage.setItem("mdaw:handoff", JSON.stringify({ at: Date.now(), name: name, midi: btoa(bin) })); }
+      catch (e){ note.textContent = "The browser would not hold the file for the DAW (" + e.message + "). Download it and use Open MIDI in the DAW instead."; return; }
+      window.open("/lessons/daw-export.html", "_blank");
+      note.textContent = "Sent " + bars.length + " bars, " + parts.join(" + ") + " (" + what + ") to the DAW, in a new tab. It replaces the song there; Undo in the DAW brings that back.";
+      return;
+    }
     var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([bytes], { type: "audio/midi" })); a.download = name;
     document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
-    window.__btLastMidi = bytes;                                         // for tests
     note.textContent = "Saved " + name + ": " + bars.length + " bars, " + parts.join(" + ") + " (" + what + ").";
   }
 
@@ -2565,7 +2574,8 @@
   notationSync();
   $("bt-nt-refresh").addEventListener("click", drawNotation);
   $("bt-mid-range").addEventListener("change", function(){ $("bt-mid-n-field").hidden = $("bt-mid-range").value !== "last"; });
-  $("bt-mid-go").addEventListener("click", exportMidi);
+  $("bt-mid-go").addEventListener("click", function(){ exportMidi(false); });
+  $("bt-mid-daw").addEventListener("click", function(){ exportMidi(true); });
 
   // ---- the chord diagram beside the chart: the Chord Sheet's superimposed view, embedded ----
   // The first four different chords of the changes on one keyboard (or fretboard, when the guitar comps),

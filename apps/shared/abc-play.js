@@ -55,7 +55,7 @@
     }).then(loadOrn).then(function () {
       var ac = new (global.AudioContext || global.webkitAudioContext)(), out = ac.createGain();
       out.connect(ac.destination);
-      if (global.AudioTap) try { global.AudioTap.register(ac, out, "Score playback"); } catch (e) {}
+      if (global.AudioTap) try { global.AudioTap.register(ac, out, "Score playback", { group: "Score playback", master: true, mixLabel: "Master" }); } catch (e) {}
       return { ac: ac, out: out, bank: global.BandSounds.create(ac) };
     });
     shared.catch(function () { shared = null; });
@@ -255,6 +255,20 @@
     return out.sort(function (a, b) { return a.at - b.at; });
   }
 
+  // opts.tracks: each sound gets its own Mixer strip (group "Score playback"), a gain into the shared output, shown while tracks play
+  var tracksOn = null;
+  function soundLabel(id) {
+    var B = global.BandSounds, fam = B && B.family ? B.family(id) : null, hit = fam && B.sounds ? B.sounds(fam).filter(function (x) { return x.id === id; })[0] : null;
+    return hit ? hit.label : id === "kit" ? "Drums" : id === "congas" ? "Congas" : id.charAt(0).toUpperCase() + id.slice(1);
+  }
+  function strip(s, id) {
+    s.strips = s.strips || {};
+    if (s.strips[id]) return s.strips[id];
+    var g = s.strips[id] = s.ac.createGain(); g.connect(s.out);
+    if (global.AudioTap) try { global.AudioTap.register(s.ac, g, "Score: " + id, { group: "Score playback", mixLabel: soundLabel(id), active: function () { return !!tracksOn; } }); } catch (e) {}
+    return g;
+  }
+
   function play(v, opts) {
     opts = opts || {};
     if (opts.abc && opts.band !== false && hasChords(opts.abc)) return playBand(v, opts, false);
@@ -334,9 +348,11 @@
         if (ended) return;
         var ac = s.ac, t0 = ac.currentTime + 0.12, endMs = 0;
         if (all) {                                            // every track: the voices on their sounds, the drum channel on the kit
+          tracksOn = me; need.forEach(function (id) { strip(s, id); }); if (global.AudioTap) global.AudioTap.changed();
+          me.done.then(function () { if (tracksOn === me) { tracksOn = null; if (global.AudioTap) global.AudioTap.changed(); } });
           all.forEach(function (n) {
-            if (n.piece) s.bank.play(n.sound, { piece: n.piece, vel: n.vel }, t0 + n.at, s.out);
-            else s.bank.play(n.sound, { midi: n.midi + tr, vel: n.vel, dur: n.dur * 0.95, gain: n.gain }, t0 + n.at, s.out);
+            if (n.piece) s.bank.play(n.sound, { piece: n.piece, vel: n.vel }, t0 + n.at, strip(s, n.sound));
+            else s.bank.play(n.sound, { midi: n.midi + tr, vel: n.vel, dur: n.dur * 0.95, gain: n.gain }, t0 + n.at, strip(s, n.sound));
             endMs = Math.max(endMs, (n.at + (n.dur || 0.2)) * 1000);
           });
           if (opts.onStart) try { opts.onStart({ ac: ac, t0: t0, events: events, endMs: endMs }); } catch (e) {}

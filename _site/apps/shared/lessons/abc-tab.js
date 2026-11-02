@@ -14,7 +14,7 @@
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function stop() { var p = playing; if (p) { playing = null; try { p.synth.stop(); } catch (e) {} p.btn.textContent = p.label; p.btn.classList.remove("at-on"); } }
   // played on the band's guitar samples (AbcPlay, loaded here on first use): program 25 = steel strings, else nylon
-  var ABC_PLAY = "/apps/shared/abc-play.js?v=22", abcPlayP = null;
+  var ABC_PLAY = "/apps/shared/abc-play.js?v=23", abcPlayP = null;
   function abcPlay() {
     if (global.AbcPlay) return Promise.resolve(global.AbcPlay);
     return abcPlayP || (abcPlayP = new Promise(function (ok, no) { var e = document.createElement("script"); e.src = ABC_PLAY; e.onload = function () { ok(global.AbcPlay); }; e.onerror = function () { abcPlayP = null; no(); }; document.head.appendChild(e); }));

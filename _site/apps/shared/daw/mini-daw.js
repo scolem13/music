@@ -156,6 +156,84 @@
     var head = [0x4d, 0x54, 0x68, 0x64, 0, 0, 0, 6, 0, 1, (chunks.length >> 8) & 255, chunks.length & 255, (ppq >> 8) & 255, ppq & 255];
     return new Uint8Array(chunks.reduce(function (a, c) { return a.concat(c); }, head));
   }
+  // ---------------- reading a MIDI file ----------------
+  // fromMidi(bytes) -> { project, notes: [what was left out or changed] }. Any Standard MIDI File (format 0 or 1): one DAW track per
+  // file track and channel, one clip each from the top. Channel 10 becomes the drum kit (GM notes back to kit pieces; a track of only
+  // conga notes becomes the congas), other channels the nearest of this DAW's instruments by GM program. Times stay in quarter notes,
+  // so 6/8 and other meters come in as 4/4 bars; only the first tempo is kept.
+  var GM_KIT = { 35: 'kick', 36: 'kick', 37: 'rim', 38: 'snare', 39: 'snare', 40: 'snare', 42: 'hatClosed', 44: 'hatClosed', 46: 'hatOpen',
+    49: 'crash', 52: 'crash', 55: 'crash', 57: 'crash', 51: 'ride', 53: 'ride', 59: 'ride', 41: 'tomLo', 43: 'tomLo', 45: 'tomMid', 47: 'tomMid', 48: 'tomHi', 50: 'tomHi' };
+  var GM_CONGA = { 62: 'congaMute', 63: 'congaOpen', 64: 'tumbaOpen' };
+  function instOfProgram(pg) {
+    return pg === 32 ? 'bass' : pg >= 33 && pg <= 39 ? 'ebass' : pg >= 4 && pg <= 7 ? 'rhodes' : pg >= 16 && pg <= 23 ? 'hammond'
+      : pg === 24 || pg === 25 ? 'aguitar' : pg >= 26 && pg <= 28 ? 'clguitar' : pg >= 29 && pg <= 31 ? 'odguitar' : 'piano';
+  }
+  function fromMidi(bytes) {
+    var b = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes), pos = 0, notes = [];
+    function u(n) { var v = 0; for (var i = 0; i < n; i++) v = v * 256 + b[pos++]; return v; }
+    function str4() { var s = String.fromCharCode(b[pos], b[pos + 1], b[pos + 2], b[pos + 3]); pos += 4; return s; }
+    function vl() { var v = 0, c; do { c = b[pos++]; v = v * 128 + (c & 0x7f); } while (c & 0x80 && pos < b.length); return v; }
+    if (b.length < 14 || str4() !== 'MThd') throw new Error('not a MIDI file');
+    var hl = u(4), fmt = u(2), ntr = u(2), div = u(2); pos = 8 + hl;
+    if (div & 0x8000) throw new Error('SMPTE-timed MIDI files are not supported');
+    if (fmt === 2) notes.push('a format 2 file: its patterns are laid end to end');
+    var tempos = [], lanes = {}, order = [], endTick = 0, offset = 0;
+    for (var t = 0; t < ntr && pos + 8 <= b.length; t++) {
+      var id = str4(), len = u(4), end = Math.min(b.length, pos + len);
+      if (id !== 'MTrk') { pos = end; continue; }
+      var tick = fmt === 2 ? offset : 0, run = 0, tname = '', prog = {}, open = {};
+      while (pos < end) {
+        tick += vl(); var st = b[pos];
+        if (st === 0xff) { pos++; var ty = b[pos++], ml = vl(), d = b.subarray(pos, pos + ml); pos += ml;
+          if (ty === 0x51 && ml === 3) tempos.push({ tick: tick, us: d[0] * 65536 + d[1] * 256 + d[2] });
+          else if ((ty === 0x03 || ty === 0x04) && !tname) tname = String.fromCharCode.apply(null, d).replace(/[^\x20-\x7e]/g, '').trim();
+          else if (ty === 0x2f) break; continue; }
+        if (st === 0xf0 || st === 0xf7) { pos++; pos += vl(); continue; }
+        if (st & 0x80) { run = st; pos++; } else if (!run) { pos++; continue; }
+        var hi = run & 0xf0, ch = run & 15, d1 = b[pos++], d2 = hi === 0xc0 || hi === 0xd0 ? 0 : b[pos++];
+        if (hi === 0xc0) { prog[ch] = d1; continue; }
+        if (hi !== 0x90 && hi !== 0x80) continue;
+        var key = t + ':' + ch, ln = lanes[key];
+        if (!ln) { ln = lanes[key] = { ch: ch, name: tname, prog: null, notes: [] }; order.push(key); }
+        if (ln.prog == null && prog[ch] != null) ln.prog = prog[ch];
+        if (!ln.name && tname) ln.name = tname;
+        var k = ch + ':' + d1;
+        if (hi === 0x90 && d2 > 0) { (open[k] = open[k] || []).push(ln.notes.length); ln.notes.push({ on: tick, off: null, m: d1, v: d2 / 127 }); }
+        else { var q = open[k]; if (q && q.length) ln.notes[q.shift()].off = tick; }
+        if (tick > endTick) endTick = tick;
+      }
+      order.forEach(function (kk) { var l = lanes[kk]; if (kk.split(':')[0] === String(t) && l.prog == null && prog[l.ch] != null) l.prog = prog[l.ch]; });   // a program change after the first note
+      if (fmt === 2) offset = tick;
+      pos = end;
+    }
+    tempos.sort(function (a, c) { return a.tick - c.tick; });
+    var tempo = tempos.length ? Math.round(60000000 / tempos[0].us) : 120;
+    if (tempos.some(function (x) { return Math.abs(Math.round(60000000 / x.us) - tempo) > 0; })) notes.push('the tempo changes in the file; the DAW keeps ' + tempo + ' BPM');
+    if (tempo < 40 || tempo > 220) { notes.push('tempo ' + tempo + ' BPM set to ' + clamp(tempo, 40, 220)); tempo = clamp(tempo, 40, 220); }
+    var beats = Math.max(4, Math.ceil(endTick / div / 4) * 4), bars = beats / 4;
+    if (bars > 64) { notes.push('cut to the first 64 bars (it has ' + bars + ')'); bars = 64; beats = 256; }
+    var tracks = [], dropped = 0, used = {};
+    order.forEach(function (kk) {
+      var ln = lanes[kk]; if (!ln.notes.length) return;
+      var drum = ln.ch === 9, conga = drum && ln.notes.every(function (n) { return GM_CONGA[n.m]; });
+      var inst = conga ? 'congas' : drum ? 'kit' : instOfProgram(ln.prog || 0), out = [];
+      ln.notes.forEach(function (n) {
+        var t0 = n.on / div; if (t0 >= beats) return;
+        var m = conga ? GM_CONGA[n.m] : drum ? GM_KIT[n.m] : n.m; if (m == null) { dropped++; return; }
+        var d = drum ? 0.25 : Math.max(1 / 48, ((n.off == null ? n.on + div / 2 : n.off) - n.on) / div);
+        out.push({ t: Math.round(t0 * 480) / 480, d: Math.round(Math.min(d, beats - t0) * 480) / 480, m: m, v: clamp(n.v, 0.05, 1) });
+      });
+      if (!out.length) return;
+      var name = ln.name || instOf(inst).label; if (used[name]) name += ' ' + (++used[name]); else used[name] = 1;
+      tracks.push(track(name, inst, [{ start: 0, len: beats, notes: out }]));
+    });
+    if (dropped) notes.push(dropped + ' drum hit' + (dropped > 1 ? 's' : '') + ' with no kit piece here left out');
+    if (!tracks.length) throw new Error('no notes in the file');
+    if (tracks.length > 12) { notes.push('only the first 12 of its ' + tracks.length + ' tracks'); tracks = tracks.slice(0, 12); }
+    return { project: { tempo: tempo, bars: bars, loop: { on: false, from: 0, to: Math.min(4, bars) }, click: false, tracks: tracks }, notes: notes };
+  }
+  function b64(bytes) { var s = ''; for (var i = 0; i < bytes.length; i++) s += String.fromCharCode(bytes[i]); return btoa(s); }
+  function unb64(s) { var t = atob(s), a = new Uint8Array(t.length); for (var i = 0; i < t.length; i++) a[i] = t.charCodeAt(i); return a; }
   function wav(buf) {
     var n = buf.length, chs = buf.numberOfChannels, data = new DataView(new ArrayBuffer(44 + n * chs * 2)), pos = 0;
     function s(t) { for (var i = 0; i < t.length; i++) data.setUint8(pos++, t.charCodeAt(i)); }
@@ -229,6 +307,14 @@
   Daw.prototype.fixSel = function () {
     var s = this.sel; s.track = clamp(s.track, 0, Math.max(0, this.p.tracks.length - 1)); var tr = this.p.tracks[s.track];
     if (!tr || s.clip >= tr.clips.length) s.clip = tr && tr.clips.length ? tr.clips.length - 1 : -1; s.notes = [];
+  };
+  // a MIDI file in place of the song (undoable)
+  Daw.prototype.openMidi = function (bytes, name) {
+    var r; try { r = fromMidi(bytes); } catch (e) { return this.say('Could not open ' + (name || 'the MIDI file') + ': ' + e.message), false; }
+    var self = this; this.stop();
+    this.change(function () { self.p = r.project; self.sel = { track: 0, clip: 0, notes: [] }; self.pos = 0; });
+    this.say('Opened ' + (name || 'the MIDI file') + ': ' + r.project.tracks.length + ' tracks, ' + r.project.bars + ' bars, ' + r.project.tempo + ' BPM' + (r.notes.length ? ' (' + r.notes.join('; ') + ')' : '') + '. Undo puts your song back.');
+    return true;
   };
   Daw.prototype.say = function (t) { this.statusEl.textContent = t; };
   Daw.prototype.track = function () { return this.p.tracks[this.sel.track]; };
@@ -319,7 +405,8 @@
     if (this.show.files) {
       var fl = el('div', 'mdaw-tools mdaw-files'); n.appendChild(fl);
       var bMid = btn('Export MIDI', 'Save the clips as a .mid file to open in another DAW'), bWav = btn('Bounce to WAV', 'Render the song to an audio file'),
-        bSave = btn('Save project', 'Save to a .json file'), bOpen = btn('Open project', 'Open a .json file saved here'), bReset = btn('Reset', 'Back to how this DAW started');
+        bSave = btn('Save project', 'Save to a .json file'), bOpen = btn('Open project', 'Open a .json file saved here'), bReset = btn('Reset', 'Back to how this DAW started'),
+        bImp = btn('Open MIDI', 'Open a .mid file (from the Backing Track, MuseScore, another DAW…) as tracks here. It replaces the song; Undo brings it back.');
       bMid.onclick = function () { download(new Blob([toMidi(self.p)], { type: 'audio/midi' }), 'mini-daw.mid'); self.say('MIDI file saved.'); };
       bWav.onclick = function () { self.bounce(); };
       bSave.onclick = function () { download(new Blob([JSON.stringify({ kind: 'mini-daw', version: 1, project: self.p }, null, 1)], { type: 'application/json' }), 'mini-daw.json'); };
@@ -327,8 +414,11 @@
       bOpen.onclick = function () { file.click(); };
       file.onchange = function () { var f = file.files[0]; if (!f) return; f.text().then(function (t) { var j = JSON.parse(t); if (!j || j.kind !== 'mini-daw') throw new Error('not a Mini DAW project');
         self.change(function () { self.p = j.project; self.fixSel(); }); self.loadTakes(); self.say('Opened ' + f.name); }).catch(function (e) { self.say('Could not open: ' + e.message); }); file.value = ''; };
+      var mfile = el('input'); mfile.type = 'file'; mfile.accept = '.mid,.midi,audio/midi'; mfile.hidden = true; fl.appendChild(mfile);
+      bImp.onclick = function () { mfile.click(); };
+      mfile.onchange = function () { var f = mfile.files[0]; if (!f) return; f.arrayBuffer().then(function (ab) { self.openMidi(new Uint8Array(ab), f.name); }).catch(function (e) { self.say('Could not open: ' + e.message); }); mfile.value = ''; };
       bReset.onclick = function () { if (!confirm('Throw away your changes to this DAW?')) return; self.stop(); self.change(function () { self.p = self.fresh(); self.sel = { track: 0, clip: self.p.tracks[0] && self.p.tracks[0].clips.length ? 0 : -1, notes: [] }; }); };
-      [bMid, bWav, bSave, bOpen, bReset].forEach(function (x) { fl.appendChild(x); });
+      [bMid, bImp, bWav, bSave, bOpen, bReset].forEach(function (x) { fl.appendChild(x); });
     }
     n.addEventListener('keydown', function (e) { self.key(e, true); });
     n.addEventListener('keyup', function (e) { self.key(e, false); });
@@ -838,9 +928,20 @@
   };
 
   var all = [];
+  // a hand-off: localStorage "mdaw:handoff" = { at, name, midi (base64) }, opened by the first DAW with the Files row, within ten minutes
+  var HANDOFF = 'mdaw:handoff';
+  function takeHandoff() {
+    var h = store(HANDOFF); if (!h || !h.midi) return; var d = null;
+    for (var i = 0; i < all.length; i++) if (all[i].show.files) { d = all[i]; break; }
+    if (!d) return; store(HANDOFF, null);
+    if (Date.now() - (h.at || 0) > 10 * 60 * 1000) return;
+    if (d.openMidi(unb64(h.midi), h.name)) setTimeout(function () { d.node.scrollIntoView({ block: 'start' }); }, 300);
+  }
   global.MiniDaw = {
-    init: function () { Array.prototype.forEach.call(document.querySelectorAll('.mdaw'), function (n) { if (!n.dataset.ready) { n.dataset.ready = '1'; try { all.push(new Daw(n)); } catch (e) { n.textContent = 'The DAW could not start: ' + e.message; if (global.console) console.error(e); } } }); return all; },
-    all: all, PRESETS: PRESETS, toMidi: toMidi, bandParts: bandParts, INSTS: INSTS
+    init: function () { Array.prototype.forEach.call(document.querySelectorAll('.mdaw'), function (n) { if (!n.dataset.ready) { n.dataset.ready = '1'; try { all.push(new Daw(n)); } catch (e) { n.textContent = 'The DAW could not start: ' + e.message; if (global.console) console.error(e); } } }); takeHandoff(); return all; },
+    // another page (the Backing Track) hands this page a MIDI file: MiniDaw.handOff(bytes, name, url) keeps it and opens url
+    handOff: function (bytes, name, url) { store(HANDOFF, { at: Date.now(), name: name || 'the band.mid', midi: b64(bytes) }); if (url) global.open(url, '_blank'); },
+    all: all, PRESETS: PRESETS, toMidi: toMidi, fromMidi: fromMidi, bandParts: bandParts, INSTS: INSTS
   };
   // only one DAW plays at a time
   document.addEventListener('pointerdown', function (e) { all.forEach(function (d) { if (d.playing && !d.node.contains(e.target) && e.target.closest && e.target.closest('.mdaw')) d.stop(); }); }, true);

@@ -144,6 +144,7 @@ for (const [rel, col] of COLLECTIONS) {
       tonality: m.tonality || tonality, meter: m.meter || meter, key: m.key || k.key,
       tune: m.tune || (tl.length ? tl.map(x => x.id) : undefined),
       note: m.note,
+      start: m.start,   // seconds where the music begins (a spoken introduction before it is skipped); players seek here
       page: (title.match(/\bP\.\s*(\d+)/) || [])[1] && +title.match(/\bP\.\s*(\d+)/)[1],
       r2: `mlt/${col.id}/${path.relative(dir, f).split(path.sep).join("/")}`.replace(/\.{2,}/g, "."),   // Cloudflare's firewall refuses ".." in a URL
       file: path.relative(ROOT, f), size: t.size,
@@ -165,7 +166,7 @@ const js = `// recordings.js: the MLT / JRI recordings catalogue. WRITTEN BY scr
 // teacher's students with permission; "Edwin E. Gordon Test" is never catalogued.
 // rec: { id, col, disc, track, title, dur (s), kind? (KINDS), tonality?, meter?, key? (letter name), tune? ([tune collection %%ids]),
 //        tuneChecked? (tune links checked by hand), guess? ([fields read off the linked tune, not checked]), note?, page? (book page
-//        printed in the title), timing? (1: a Timestamp Notes song file at timings/<id>.json), r2 }
+//        printed in the title), start? (s: where the music begins, after a spoken introduction), timing? (1: a Timestamp Notes song file at timings/<id>.json), r2 }
 // Hand-checked fields come from apps/shared/mlt/recordings-meta.json (edited on mlt/recordings.qmd).
 (function (g) {
   var collections = ${JSON.stringify(cols, null, 0).replace(/},{/g, "},\n    {")};
@@ -182,6 +183,8 @@ ${clean.map(r => "    " + JSON.stringify(r)).join(",\n")}
     forTune: function (tid) { return list.filter(function (r) { return r.tune && r.tune.indexOf(tid) >= 0; }); },
     timingUrl: function (r) { return "/apps/shared/mlt/timings/" + encodeURIComponent(r.id || r) + ".json"; },
     base: function () { return String(g.MLT_REC_BASE || (g.WORKS_CONFIG && g.WORKS_CONFIG.r2Base) || "").replace(/\\/+$/, ""); },
+    // url with #t=start: audio elements begin where the music does (the JRI solo tracks open with a spoken introduction)
+    playUrl: function (r) { var u = this.url(r); return u && r.start ? u + "#t=" + r.start : u; },
     url: function (r) { var b = this.base(); return b ? b + "/" + r.r2.split("/").map(encodeURIComponent).join("/") : ""; }
   };
 })(typeof window !== "undefined" ? window : globalThis);

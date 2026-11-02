@@ -5,7 +5,9 @@
 //
 // Unit: { id, book (1-3), n (unit number), title, tune (%%id in the tune collection), key (as the book names it: "E♭ major"),
 //         meter, style (BandCatalog style for the band), rhythm (rhythmPatternObject id), tonal (patternObject id),
-//         functions (names, in order), pages: { 1..6 } (printed pages of each part), ready (false: the tune is not DMTI's yet) }
+//         functions (names, in order), pages: { 1..6 } (printed pages of each part), ready (false: the tune is not DMTI's yet),
+//         recs: { p1, p2r, p2t, p3, p4a, p4b, p5, p6: [MLTRecordings id or { id, note }] } (the book's CD tracks, in R2, drawn under
+//         that step by mlt-walk.js; a track may sit under more than one step) }
 // Printed pages: read from the page numbers in the OCR (research_notes/mlt-sources/text/dmti*.txt), which drift from the PDF
 // page by 11-15 pages through each book.
 (function (global) {
@@ -20,7 +22,23 @@
     { id: "d1u4", book: 1, n: 4, title: "Simple Gifts", tune: "dmti-simple-gifts", key: "F major", meter: "duple, with divisions", style: "folk",
       rhythm: "dmti1-unit4-rhythm", tonal: "dmti1-unit4-tonal", functions: "tonic, subdominant and dominant", pages: { 1: "51", 2: "52–57", 3: "58–59", 4: "60–63", 5: "64–65", 6: "66" }, ready: true },
     { id: "d1u5", book: 1, n: 5, title: "Down by the Riverside", tune: "dmti-down-by-the-riverside", key: "F major", meter: "duple (swing)", style: "swing",
-      rhythm: "dmti1-unit5-rhythm", tonal: "dmti1-unit5-tonal", functions: "tonic, subdominant and dominant", pages: { 1: "69", 2: "70–76", 3: "77–78", 4: "79–84", 5: "85–88", 6: "89" }, ready: true },
+      rhythm: "dmti1-unit5-rhythm", tonal: "dmti1-unit5-tonal", functions: "tonic, subdominant and dominant", pages: { 1: "69", 2: "70–76", 3: "77–78", 4: "79–84", 5: "85–88", 6: "89" }, ready: true,
+      recs: {
+        p1: [{ id: "dmti-2-27", note: "Listen, then sing along with the melody." }, { id: "dmti-2-28", note: "The bass line alone: sing it, then play it." },
+             { id: "dmti-2-29", note: "The band without the melody: sing or play the melody, then the bass line, with it." }],
+        p2r: [{ id: "dmti-2-31", note: "Echo each pattern on “bah”, then answer with a different one." }, { id: "dmti-2-32", note: "The same patterns in rhythm syllables." },
+              { id: "dmti-2-33", note: "Two-bar phrases on “bah”: echo, then improvise a different phrase." }, { id: "dmti-2-34", note: "The phrases in rhythm syllables." }],
+        p2t: [{ id: "dmti-2-35", note: "Echo each pattern on “bum”; name its function." }, { id: "dmti-2-36", note: "The same patterns in solfège." },
+              { id: "dmti-2-37", note: "Series over the I–IV–V progression on a neutral syllable: echo, then sing the bass line." }, { id: "dmti-2-38", note: "The progressions in solfège." },
+              { id: "dmti-2-30", note: "Melodic patterns from the tune: echo them on your instrument." }],
+        p3: [{ id: "dmti-2-39", note: "Hear how the answering phrases go." }, { id: "dmti-2-40", note: "Your turn: the first phrase is played, you improvise the answer in the gaps." }],
+        p4a: [{ id: "dmti-2-41", note: "Skill 1 example: rhythms on the chord roots with the bass line." }, { id: "dmti-2-29", note: "Practise Skills 1–4 with the accompaniment." }],
+        p4b: [{ id: "dmti-2-42", note: "Skill 5 example: tonal patterns in macrobeats." }, { id: "dmti-2-43", note: "Skill 6 example: tonal and rhythm patterns together." },
+              { id: "dmti-2-44", note: "Skill 7 example: the melody decorated." }, { id: "dmti-2-49", note: "The long accompaniment: improvise freely over it." }],
+        p5: [{ id: "dmti-2-29", note: "Read the tune with the accompaniment, then improvise to its progression." }],
+        p6: [{ id: "dmti-2-45", note: "Melody, then a trumpet solo: learn a phrase you like by ear." }, { id: "dmti-2-46", note: "Trombone." }, { id: "dmti-2-47", note: "Alto sax." },
+             { id: "dmti-2-48", note: "Tenor sax." }, { id: "dmti-2-49", note: "Your solo: melody, then improvise over the long accompaniment." }]
+      } },
     { id: "d2u1", book: 2, n: 1, title: "When the Saints Go Marching In", tune: "dmti-when-the-saints", key: "B♭ major", meter: "duple", style: "swing",
       rhythm: "dmti2-unit1-rhythm", tonal: "dmti2-unit1-tonal", functions: "tonic, subdominant and dominant", pages: { 1: "1", 2: "2–8", 3: "9–10", 4: "11–14", 5: "15–18", 6: "19" }, ready: true },
     { id: "d2u2", book: 2, n: 2, title: "Amazing Grace", tune: "dmti-amazing-grace", key: "F major", meter: "triple", style: "waltz",
@@ -81,12 +99,15 @@
         student: x(["backing"], "Improvise a solo over the band.") }
     ];
   }
+  function withRecs(u) {
+    return steps(u).map(function (st) { var k = st.id.slice(u.id.length + 1); if (u.recs && u.recs[k]) st.recordings = u.recs[k]; return st; });
+  }
   var books = [1, 2, 3].map(function (b) {
     return { id: "dmti" + b, title: "Developing Musicianship through Improvisation, Book " + b, author: "Christopher D. Azzara and Richard F. Grunow", year: b === 1 ? 2006 : 2010,
       note: "Every unit: a tune, then six parts. The exercises are generated from the tune, its rhythm patterns and its tonal patterns, so “New example” gives another.",
       parts: [{ id: "units", title: "Units", page: "1", units: U.filter(function (u) { return u.book === b; }).map(function (u) {
         var unit = { id: u.id, title: "Unit " + u.n + ": “" + u.title + "”", page: u.pages[1], skill: "A/O, VA, C/I", tonality: u.key, meter: u.meter, dmti: u };
-        if (u.ready) unit.steps = steps(u); else unit.todo = u.todo;
+        if (u.ready) unit.steps = withRecs(u); else unit.todo = u.todo;
         return unit;
       }) }] };
   });

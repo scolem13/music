@@ -1,8 +1,10 @@
 // works.js: the pieces in works-data.js (window.WORKS) and the "Recordings & resources" panel shown with them.
-//   <script src="/apps/shared/works/works-data.js?v=7"></script>
-//   <script src="/apps/shared/works/works.js?v=10"></script>
+//   <script src="/apps/shared/works/works-data.js?v=10"></script>
+//   <script src="/apps/shared/works/works.js?v=16"></script>
 //   Works.mount(host, "tune" | "theme" | "analysed", id)   draws the panel for whatever work holds that item (hides host if none)
-//   kinds: tune, theme, analysed, score (the full-score player: { analysed: id } or { id }, href adds &bar= when x.bar is set)
+//   kinds: tune, theme, analysed, score (the full-score player: { analysed: id } or { id }, href adds &bar= when x.bar is set),
+//   print (a figure in a print anthology: { book, fig, whole }, books in window.PRINT_BOOKS; shown, not linked)
+//   Works.year(w) -> "1801" | "pub. 1802" | ""  (w.composed / w.published, from scripts/print-books/build.py or by hand)
 //   Works.of(kind, id) -> work or null · Works.get(workId) · Works.ids() · Works.href(kind, ref) · Works.source(recording)
 // A recording is yt (video id or URL), r2 (a path in the bucket, read against WORKS_CONFIG.r2Base) or url (audio/video file, or
 // any page, which is then only linked). start / end are seconds or "m:ss". Only one recording plays at a time on a page.
@@ -11,7 +13,7 @@
   "use strict";
   var CFG = global.WORKS_CONFIG = Object.assign({ r2Base: "", directory: "/practice/tune-directory.html" }, global.WORKS_CONFIG || {});
   var W = global.WORKS || {}, index = null, current = null;
-  var KIND = { tune: "Tune Library", theme: "Classical Themes", analysed: "Analysed score", score: "Full score" };
+  var KIND = { tune: "Tune Library", theme: "Classical Themes", analysed: "Analysed score", score: "Full score", print: "Print anthology" };
   var LINK = { article: "Article", video: "Video", lesson: "Lesson", sheet: "Sheet music", other: "Link" };
 
   function build() {
@@ -21,7 +23,12 @@
       Object.keys(inn).forEach(function (kind) { (inn[kind] || []).forEach(function (x) { index[kind + ":" + refId(x)] = wid; }); });
     });
   }
-  function refId(x) { return x && (x.piece || x.analysed || x.id) || x; }
+  function refId(x) { return x && (x.piece || x.analysed || x.id || x.fig) || x; }
+  function year(w) { return !w ? "" : w.composed != null ? String(w.composed) : w.published != null ? "pub. " + w.published : ""; }
+  function printLabel(x) {
+    var b = (global.PRINT_BOOKS || {})[x.book] || {};
+    return (b.short || x.book) + " · fig. " + x.fig + (x.whole ? " (whole movement)" : "");
+  }
   function of(kind, id) { if (!index) build(); var wid = index[kind + ":" + id]; return wid ? Object.assign({ id: wid }, W[wid]) : null; }
   function get(wid) { return W[wid] ? Object.assign({ id: wid }, W[wid]) : null; }
 
@@ -147,11 +154,17 @@
     var p = el("section", "wk-panel");
     var head = el("div", "wk-head");
     head.appendChild(el("span", "wk-title", here ? "Recordings & resources" : w.title));
-    head.appendChild(el("span", "wk-work", here ? w.title + (w.composer ? " · " + w.composer : "") : w.composer || ""));
+    var who = [w.composer, year(w)].filter(Boolean).join(", ");
+    head.appendChild(el("span", "wk-work", here ? w.title + (who ? " · " + who : "") : who));
     p.appendChild(head);
     var recs = (w.recordings || []).filter(isVisible);
     if (recs.length) { var ol = el("ul", "wk-recs"); recs.forEach(function (r) { ol.appendChild(recRow(r, w)); }); p.appendChild(ol); }
-    else p.appendChild(el("div", "wk-none", "No recordings yet."));
+    else p.appendChild(el("div", "wk-none", w.note || "No recordings yet."));
+    if (w.jri) {      // JRI book data (scripts/jri/build.py, OCR-derived)
+      var j = w.jri, bits = [j.tonality, j.meter, j.key && "key " + j.key, j.tempo, j.form, j.activity, j.lsaTonal && "LSA tonal " + j.lsaTonal, j.lsaRhythm && "LSA rhythm " + j.lsaRhythm].filter(Boolean);
+      if (bits.length) p.appendChild(el("div", "wk-meta", bits.join(" · ")));
+      if (recs.length && w.note) p.appendChild(el("div", "wk-note", w.note));
+    }
     var links = w.links || [];
     if (links.length) {
       var ul = el("ul", "wk-links");
@@ -171,6 +184,11 @@
       (w.in[kind] || []).forEach(function (x) {
         var id = refId(x);
         if (here && here.kind === kind && String(here.id) === String(id)) return;
+        if (kind === "print") {
+          var b = (global.PRINT_BOOKS || {})[x.book] || {};
+          var sp = el("span", "wk-print", printLabel(x)); sp.title = [b.author, b.title].filter(Boolean).join(", ") + (b.figure ? " (" + b.figure + ")" : "");
+          also.appendChild(sp); any = true; return;
+        }
         var a = el("a", null, kind === "score" ? KIND.score : KIND[kind] + " · " + (kind === "theme" ? "No. " + String(id).replace(/^0+/, "") : id)); a.href = href(kind, x);
         also.appendChild(a); any = true;
       });
@@ -194,7 +212,7 @@
       var li = el("li", "wk-rec"), line = el("div", "wk-line"), box = el("div", "wk-player"); box.hidden = true;
       var url = R.url(r), b = el("button", "wk-play" + (url ? "" : " wk-noplay"), "▶"); b.type = "button";
       b.title = url ? "Play" : "The recordings are not online yet";
-      if (url) b.addEventListener("click", function () { play(b, box, { kind: "audio", url: url }); });
+      if (url) b.addEventListener("click", function () { play(b, box, { kind: "audio", url: url, start: r.start }); });
       line.appendChild(b);
       line.appendChild(el("span", null, r.title));
       line.appendChild(el("span", "wk-meta", [r.kind && R.KINDS[r.kind], r.key && "in " + r.key, (col.title || r.col).replace(/^Jump Right In: /, "JRI ")].filter(Boolean).join(" · ")));
@@ -233,10 +251,11 @@
     ".wk-player{margin:.35rem 0 .2rem 2.4rem;max-width:560px}.wk-yt{width:100%;aspect-ratio:16/9;border:0;border-radius:4px}.wk-audio{width:100%}" +
     ".wk-links li{padding:.1rem 0}.wk-links .wk-note,.wk-links .wk-meta{margin-left:.5rem}" +
     ".wk-also{display:flex;flex-wrap:wrap;gap:.2rem .8rem;align-items:baseline;margin:.2rem 0}" +
+    ".wk-print{font-size:.85rem;opacity:.8}" +
     ".wk-none{opacity:.65;margin-bottom:.3rem}.wk-dir{font-size:.8rem;display:inline-block;margin-top:.15rem}" +
     "@media (max-width:600px){.wk-player{margin-left:0}}";
   (document.head || document.documentElement).appendChild(css);
 
   global.Works = { of: of, get: get, ids: function () { return Object.keys(W); }, all: function () { return W; }, source: source, href: href, kindLabel: KIND,
-    mount: mount, panel: panel, mltPart: mltPart, tsnUrl: tsnUrl, stop: stop, config: CFG, reindex: function () { W = global.WORKS || {}; build(); } };
+    mount: mount, panel: panel, year: year, printLabel: printLabel, mltPart: mltPart, tsnUrl: tsnUrl, stop: stop, config: CFG, reindex: function () { W = global.WORKS || {}; build(); } };
 })(window);

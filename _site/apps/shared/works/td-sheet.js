@@ -1,6 +1,7 @@
 // td-sheet.js: the Tune Directory's spreadsheet (#td-sheet on practice/tune-directory.qmd): one row per tune, classical theme,
 // piece in works-data.js that is neither, song in Words & Chords (SONG_INDEX, in works-data.js), and MLT / JRI recording not linked to a tune. Columns: title, type, set or composer,
-// key, meter, notation, recordings, bars marked (recordings with a timing map), chords, and links. Each column filters (type in
+// key, meter, year (composed, else published: Works / theme data), print (figures in a print anthology, e.g. "Cutler 12-3"), notation,
+// recordings, bars marked (recordings with a timing map), chords, and links. Each column filters (type in
 // the box under its name: words match anywhere; in a number column ">0", "0", "2"); quick boxes for "has recordings", "bars
 // marked", "notation", "chords"; a click on a column name sorts by it (again: the other way). Shows 200 rows at a time.
 // Reads what the page already loads: tunesObject, CLASSICAL_THEMES, WORKS (Works), MLTRecordings.
@@ -15,6 +16,9 @@
 
   // ---- rows ----
   const rows = [];
+  const PB = window.PRINT_BOOKS || {};
+  const printOf = (w) => ((w && w.in && w.in.print) || []).map((x) => ((PB[x.book] || {}).short || x.book).split(",")[0] + " " + x.fig).join(", ");
+  const yearOf = (o) => (o && (o.composed || o.published)) || "";
   function worksRecs(kind, id) {
     const w = Wk && Wk.of(kind, id); if (!w) return [];
     return (w.recordings || []).filter(visible).map((r) => ({ timed: !!r.timing, tsn: Wk.tsnUrl ? Wk.tsnUrl(r, w) : null }));
@@ -33,13 +37,15 @@
     const recs = worksRecs("theme", t.id); if (t.yt) recs.push({ timed: false, tsn: "/tools/timestamp-notes.html?v=" + encodeURIComponent(t.yt) });
     rows.push({ title: t.title, type: "Theme", where: [t.last, t.first].filter(Boolean).join(", "), by: [t.movement, t.cat].filter(Boolean).join(" · "),
       key: (t.key || "") + (t.minor && !/m$/.test(t.key || "") ? "m" : ""), meter: t.meter || "", notation: 1, recs: recs.length, timed: recs.filter((r) => r.timed).length, chords: 0,
+      year: yearOf(t) || yearOf(Wk && Wk.of("theme", t.id)), print: printOf(Wk && Wk.of("theme", t.id)),
       bar: t.bar, href: "/tools/classical-themes.html?theme=" + encodeURIComponent(t.id), tsn: (recs[0] || {}).tsn || null, id: t.id });
   });
   Object.keys(W).forEach((wid) => {
     const w = W[wid], inn = w.in || {};
     if ((inn.tune || []).length || (inn.theme || []).length) return;     // listed under its tune or theme
     const recs = (w.recordings || []).filter(visible);
-    rows.push({ title: w.title, type: "Piece", where: w.composer || "", by: w.from || "", key: "", meter: "", notation: (inn.analysed || []).length ? 1 : 0,
+    rows.push({ title: w.title, type: "Piece", where: w.composer || "", by: w.from || "", key: (w.jri && w.jri.key) || "", meter: w.jri ? [w.jri.tonality, w.jri.meter].filter(Boolean).join(" ") : "", year: yearOf(w), print: printOf(w),
+      notation: (inn.analysed || []).length || (inn.score || []).length ? 1 : 0,
       recs: recs.length, timed: recs.filter((r) => r.timing).length, chords: 0, href: (Wk ? Wk.config.directory : "") + "#" + wid,
       tsn: recs.length && Wk.tsnUrl ? Wk.tsnUrl(recs[0], Object.assign({ id: wid }, w)) : null, id: wid });
   });
@@ -59,15 +65,16 @@
   const COLS = [
     { k: "title", label: "Title" }, { k: "type", label: "Type", sel: ["Tune", "Theme", "Piece", "Song", "Recording"] }, { k: "where", label: "Set / composer" },
     { k: "by", label: "Composer / movement / kind" }, { k: "key", label: "Key", w: "4rem" }, { k: "meter", label: "Meter", w: "5rem" },
+    { k: "year", label: "Year", num: 1, w: "4.5rem", ph: "<1800" }, { k: "print", label: "Print", w: "6rem" },
     { k: "notation", label: "Notation", yn: 1 }, { k: "recs", label: "Recordings", num: 1 }, { k: "timed", label: "Bars marked", num: 1 }, { k: "chords", label: "Chords", yn: 1 }
   ];
   const head = COLS.map((c) => `<th data-k="${c.k}" title="Sort">${c.label} <span class="tds-arrow"></span></th>`).join("") + "<th>Open</th>";
   const filt = COLS.map((c) => `<th>${c.sel ? `<select data-f="${c.k}"><option value="">all</option>${c.sel.map((o) => `<option>${o}</option>`).join("")}</select>` :
     c.yn ? `<select data-f="${c.k}"><option value="">all</option><option value="1">yes</option><option value="0">no</option></select>` :
-    `<input data-f="${c.k}" placeholder="${c.num ? ">0" : "filter"}" ${c.w ? `style="width:${c.w}"` : ""}>`}</th>`).join("") + "<th></th>";
+    `<input data-f="${c.k}" placeholder="${c.ph || (c.num ? ">0" : "filter")}" ${c.w ? `style="width:${c.w}"` : ""}>`}</th>`).join("") + "<th></th>";
   host.innerHTML = `<div class="tds-quick"><label><input type="checkbox" data-q="recs"> has recordings</label> <label><input type="checkbox" data-q="timed"> bars marked</label>
     <label><input type="checkbox" data-q="notation"> has notation</label> <label><input type="checkbox" data-q="both"> notation and a recording</label>
-    <label><input type="checkbox" data-q="chords"> has chords</label> <button type="button" class="tds-reset">Clear filters</button> <span class="tds-n"></span></div>
+    <label><input type="checkbox" data-q="chords"> has chords</label> <label><input type="checkbox" data-q="print"> in a print anthology</label> <button type="button" class="tds-reset">Clear filters</button> <span class="tds-n"></span></div>
     <div class="tds-wrap"><table class="tds"><thead><tr>${head}</tr><tr class="tds-f">${filt}</tr></thead><tbody></tbody></table></div><button type="button" class="tds-more" hidden>Show more</button>`;
   const tbody = host.querySelector("tbody"), more = host.querySelector(".tds-more");
   let sortK = "title", sortDir = 1, shown = 200;
@@ -81,7 +88,7 @@
     const q = {}; host.querySelectorAll("[data-q]").forEach((x) => { q[x.dataset.q] = x.checked; });
     const list = rows.filter((r) => {
       if (q.recs && !r.recs) return false; if (q.timed && !r.timed) return false; if (q.notation && !r.notation) return false;
-      if (q.both && !(r.notation && r.recs)) return false; if (q.chords && !r.chords) return false;
+      if (q.both && !(r.notation && r.recs)) return false; if (q.chords && !r.chords) return false; if (q.print && !r.print) return false;
       return COLS.every((c) => {
         const v = f[c.k]; if (v == null) return true;
         if (c.num) return numOk(r[c.k], v);
@@ -103,7 +110,7 @@
     const list = filtered();
     tbody.innerHTML = list.slice(0, shown).map((r) => `<tr>
       <td><a href="${esc(r.href)}">${esc(r.title)}</a></td><td>${r.type}</td><td>${esc(r.where)}</td><td class="tds-dim">${esc(r.by)}</td>
-      <td>${esc(r.key)}</td><td>${esc(r.meter)}</td><td class="tds-c">${r.notation ? "✓" : ""}</td><td class="tds-c">${r.recs || ""}</td>
+      <td>${esc(r.key)}</td><td>${esc(r.meter)}</td><td class="tds-c">${esc(r.year || "")}</td><td class="tds-dim">${esc(r.print || "")}</td><td class="tds-c">${r.notation ? "✓" : ""}</td><td class="tds-c">${r.recs || ""}</td>
       <td class="tds-c">${r.timed ? "✓" + (r.timed > 1 ? " " + r.timed : "") : r.recs ? "–" : ""}</td><td class="tds-c">${r.chords ? "✓" : ""}</td>
       <td>${r.tsn ? `<a href="${esc(r.tsn)}" title="Open in Timestamp Notes">⏱</a>` : ""}</td></tr>`).join("");
     more.hidden = list.length <= shown;
