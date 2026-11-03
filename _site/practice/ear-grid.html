@@ -878,7 +878,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 <script src="../apps/shared/abcjs-basic.js?v=4"></script>
 <script src="../apps/shared/mlt/recordings.js?v=3"></script>
-<script src="../apps/shared/mlt/ear-grid.js?v=1"></script>
+<script src="../apps/shared/mlt/ear-grid.js?v=2"></script>
 <p>Learn a tune’s chords (and melody) from a recording. Each box is one bar: <strong>click</strong> it to play from there, <strong>Shift+click</strong> a second bar to loop the bars between, <strong>Space</strong> plays and pauses. Type what you hear in each bar: a chord name (<code>C</code>, <code>G7</code>, <code>Am</code>) or a Roman numeral (<code>I</code>, <code>V7</code>, <code>vi</code>); two chords in a bar go in with a space between. <strong>Check</strong> colours each bar: green right, orange the right root but another chord, red wrong. Checking needs the recording to be linked to a tune with chords (see the <a href="../mlt/recordings.html">Recordings Catalogue</a>); chords are compared by function, so a recording in D is checked against notation in C. Set <strong>Key</strong> to the key the recording is in when you type chord names. Underneath, the tune’s notation (in the recording’s key) checks the melody.</p>
 <p>The bars come from the recording’s timing map when it has one (made in <a href="../tools/timestamp-notes.html">Timestamp Notes</a>). Without one, set where the first bar starts (play to the first downbeat and press <strong>= now</strong>), tap the tempo, and the grid is drawn at that steady tempo. Your guesses are kept in this browser, for each recording.</p>
 <div class="ear-grid"></div>

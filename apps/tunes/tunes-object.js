@@ -32077,7 +32077,7 @@ X:3
 T:Down by the Riverside
 C:American Folk Song
 N:Source: Azzara & Grunow, Developing Musicianship through Improvisation, Book 1 (GIA), p. 69.
-N:Unit 5 repertoire. Major tonality (tonic, subdominant, dominant), duple meter. No tempo printed. Starts with a pick-up of three eighths.
+N:Unit 5 repertoire. Major tonality (tonic, subdominant, dominant), duple meter. No tempo printed. Starts with a pick-up of three eighths; the last bar completes it. Pp. 69-70 (the last three lines are over the page).
 M:4/4
 L:1/8
 %%id dmti-down-by-the-riverside
@@ -32086,7 +32086,10 @@ K:F
 "C7"z2 g2 g3 ^f | g f2 e- e4 | "F"z2 a2 a3 ^g | a g2 f- fa a^g |
 a2 c4 d2 | f f2 a- a4 | z2 a2 a3 ^g | a g2 f- f z f2 |
 "C7"a2 g4 _b2 | a4 g4 | "F"f8 | z2 f2 g2 aa |
-"Bb"_b _b3 _b2 _b_b- | _b z _b2 c'2 _b_b | "F"a a3 a2 gf- | f4 z4 |]
+"Bb"_b _b3 _b2 _b_b- | _b z _b2 c'2 _b_b | "F"a a3 a2 gf- | f4 z4 |
+"C7"g2 g6 | "Bb/C"f4 "C7"g4 | "F"a8 | "F7"z2 f2 g2 aa |
+"Bb"_b _b3 _b2 _b_b- | _b z _b2 c'2 _b_b | "F"a a3 a2 gf- | f4 z4 |
+"C7"g2 g4 _b2 | a4 g4 | "F"f8- | f4 z |]
 
 X:4
 T:When the Saints Go Marching In

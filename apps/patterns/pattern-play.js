@@ -1,8 +1,8 @@
 // pattern-play.js — the play bar for Tonal Patterns and Tonal Sequences.
 // The pattern data writes every note with zero length ("C0 D0 E0", drawn without stems), which abcjs's synth
 // can't play. Here each note is given a beat before playing, and the tune plays through AbcPlay (the band's samples).
-//   PatternPlay.bar(el, { abc: () => string, transpose: () => semitones, onEnd }) -> { play(), stop(), playing() }
-// SPACE starts / stops (ignored while typing).
+//   PatternPlay.bar(el, { abc: () => string, transpose: () => semitones, onEnd, space }) -> { play(), stop(), playing() }
+// SPACE starts / stops (ignored while typing); space: false leaves Space alone (pages with many bars).
 (function (global) {
   var SOUNDS = [["piano", "Piano"], ["flute", "Flute"], ["clarinet", "Clarinet"], ["trumpet", "Trumpet"],
                 ["violin", "Violin"], ["cello", "Cello"], ["trombone", "Trombone"], ["solfege", "Voice (solfège)"]];
@@ -62,7 +62,7 @@
         light: false, onEnd: ended });
     }
     btn.onclick = function () { h ? stop() : play(); };
-    document.addEventListener("keydown", function (e) {
+    if (o.space !== false) document.addEventListener("keydown", function (e) {
       if (e.code !== "Space" || e.ctrlKey || e.metaKey) return;
       var a = document.activeElement;
       if (a && /^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(a.tagName) && a.type !== "checkbox" && a.type !== "range") return;

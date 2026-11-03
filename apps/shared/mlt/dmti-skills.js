@@ -16,8 +16,8 @@
 //        macro     Skill 5: tonal patterns of each chord's function, a note per macrobeat (opts.macro quarters, default the tune's)
 //        tonalRhy  Skill 6: those tonal patterns in rhythms from the unit's set
 //        embellish Skill 7: the melody with passing and neighbour tones added
-//        series    Part 2: a series of tonal patterns over the tune's first four chords
-//        rseries   Part 2: two rhythm patterns joined into a phrase
+//        series    Part 2: a series of tonal patterns over I x y I, three rows (listen-echo, roots, improvise), Tonal Sequences style
+//        rseries   Part 2: a four-bar rhythm phrase on a one-line staff (part .play: the sounding abc) and an Improvise line
 //        answer    Part 3: the tune with every second phrase's melody left out (the band keeps the chords)
 //   Triplets (thirds of a beat) are written as (3:2:n tuplets; notes within a beat are beamed.
 //   Every abc has chord symbols, so AbcPlay with { abc } plays it with the band; { melody: false } gives the backing alone.
@@ -260,6 +260,31 @@
   function bassOf(c, tune) { return place(c.root, tune.rest + 3, tune.rest, tune.rest + 11); }   // DO up to TI (the book writes SO above DO)
 
   // ---------- generators ----------
+  // Part 2 series (DMTI 1 pp. 75-76): four chords, starting and ending on the tonic, middle two from the tune's other chords; a
+  // tonal pattern of each chord's function. Written like Tonal Sequences (pattern-set.js): stemless zero-length notes ("C0"),
+  // M:none, the chord over each pattern, "||" between patterns. Three rows as the book prints them: Listen-echo, Roots, Improvise.
+  function series(tune, T, r) {
+    var seen = {}, chs = tune.ch.filter(function (c) { if (seen[c.sym]) return false; seen[c.sym] = 1; return true; });
+    var ton = chs.filter(function (c) { return c.fn === "tonic"; })[0] || chs[0], other = chs.filter(function (c) { return c !== ton; });
+    var prog;
+    do { prog = [ton, pick(chs, r), pick(chs, r), ton]; } while (other.length && prog[1] === ton && prog[2] === ton);
+    var sp = tune.spell, prevM = tune.rest + 7, head = "X:1\nM:none\nL:1/4\nK:" + tune.key + "\n";
+    var row = function (f) { return head + prog.map(function (c, i) { var acc = {}; return '"' + c.sym + '"' + f(c, i, acc); }).join(" || ") + " ||"; };
+    var pats = prog.map(function (c) {
+      var pool = T.filter(function (p) { return p.fn === c.fn; }), p = pool.length ? pick(pool, r) : { steps: c.tones.slice(0, 3).map(function (x) { return mod(c.root - tune.tonic + x, 12); }) };
+      return p.steps.map(function (st) { var m = place(mod(tune.rest + st, 12), prevM, tune.rest - 1, tune.rest + 12); prevM = m; return m; });
+    });
+    // every bar padded to the same number of note places with invisible x0, so the three rows line up bar for bar
+    var slots = Math.max.apply(null, pats.map(function (x) { return x.length; }));
+    var pad = function (notes) { while (notes.length < slots) notes.push("x0"); return notes.join(" "); };
+    var root = function (c) { return place(mod(c.root, 12), tune.rest + 5, tune.rest - 1, tune.rest + 12); };
+    return { parts: [
+      { label: "Listen\u2013echo", abc: row(function (c, i, acc) { return pad(pats[i].map(function (m) { return noteName(m, sp, acc) + "0"; })); }),
+        syl: pats.map(function (ms) { return ms.map(function (m) { return solfege(m, tune); }).join(" "); }).join(" | ") },
+      { label: "Roots", abc: row(function (c, i, acc) { return pad([noteName(root(c), sp, acc) + "0"]); }),
+        syl: prog.map(function (c) { return solfege(root(c), tune); }).join(" | ") },
+      { label: "Improvise", abc: row(function () { return pad([]); }), empty: true }] };
+  }
   function make(skill, tune, sets, seed, o) {
     o = o || {};
     var r = rng(seed || 1), bq = tune.bq, bars = tune.bars, R = sets.rhythm && sets.rhythm.length ? sets.rhythm : [[{ t: 0, dur: bq }]];
@@ -325,18 +350,7 @@
         var m = place(mod(tune.rest + cur.steps[idx++], 12), prevM, tune.rest - 5, tune.rest + 12);
         prevM = m; return m;
       }
-      if (skill === "series") {
-        var n0 = [], chs = tune.ch.slice(0, 4), tt = 0, series = { bq: tune.bq, bars: chs.length, n: tune.n, d: tune.d, key: tune.key, spell: tune.spell, ch: [] };
-        chs.forEach(function (c) {
-          var pool = T.filter(function (p) { return p.fn === c.fn; }), p = pool.length ? pick(pool, r) : { steps: [mod(c.root - tune.tonic, 12)] };
-          series.ch.push({ t: tt, sym: c.sym });
-          var per = tune.macro, k = Math.min(p.steps.length, Math.round(tune.bq / per));   // a note a macrobeat; the last holds to the bar line
-          p.steps.slice(0, k).forEach(function (s, i) { var m = place(mod(tune.rest + s, 12), prevM, tune.rest - 5, tune.rest + 12); prevM = m;
-            n0.push({ t: tt + i * per, dur: i === k - 1 ? tune.bq - i * per : per, midi: m, word: solfege(m, tune) }); });
-          tt += tune.bq;
-        });
-        return { parts: [{ label: "A series of patterns over " + chs.map(function (c) { return c.sym; }).join(" – "), abc: toAbc(n0, series, { words: true }) }] };
-      }
+      if (skill === "series") return series(tune, T, r);
       var notes = [];
       if (skill === "macro") {
         var mq = o.macro || tune.macro;
@@ -364,9 +378,16 @@
       return { parts: [{ label: "The melody, decorated", abc: toAbc(outN, tune) }] };
     }
     if (skill === "rseries") {
-      var a = pick(R, r), b2 = pick(R, r), ph = { bq: tune.bq, bars: 2, n: tune.n, d: tune.d, key: tune.key, spell: tune.spell, ch: [] };
-      var nr = a.map(function (x) { return { t: x.t, dur: x.dur, midi: tune.rest }; }).concat(b2.map(function (x) { return { t: bq + x.t, dur: x.dur, midi: tune.rest }; }));
-      return { parts: [{ label: "A two-bar rhythm phrase", abc: toAbc(nr, ph).replace(/^K:(.*)$/m, "K:$1 clef=none") }] };
+      // four bars (DMTI 1 p. 72), each a bar from the unit's set, on the resting tone for the sound; drawn on a one-line rhythm
+      // staff (pitch dropped), with an Improvise line of slashes below, a slash a beat
+      var ph = { bq: tune.bq, bars: 4, n: tune.n, d: tune.d, key: tune.key, spell: tune.spell, ch: [] }, nr = [];
+      for (var rb = 0; rb < 4; rb++) pick(R, r).forEach(function (x) { nr.push({ t: rb * bq + x.t, dur: x.dur, midi: tune.rest }); });
+      var pitched = toAbc(nr, ph), hd = pitched.split("\n"), ki = hd.findIndex(function (l) { return /^K:/.test(l); });
+      var head1 = hd.slice(0, ki).join("\n") + "\nK:C clef=perc stafflines=1\n", body = hd.slice(ki + 1).join("\n");
+      var slash = []; for (var sb = 0; sb < 4; sb++) slash.push(new Array(Math.round(bq / (tune.d === 8 ? 1.5 : 1)) + 1).join("B" + lenStr(tune.d === 8 ? 1.5 : 1) + " ").trim());
+      return { parts: [
+        { label: "Listen", abc: head1 + body.replace(/[_=^]*[A-Ga-g][,']*/g, "B"), play: pitched },
+        { label: "Improvise", abc: head1.replace("stafflines=1", "stafflines=1 style=rhythm") + slash.join(" | ") + " |]", empty: true }] };
     }
     if (skill === "answer") {
       var phrase = (o.phraseBars || 4) * bq, keep = tune.mel.filter(function (x) { return Math.floor(x.t / phrase + EPS) % 2 === 0; });

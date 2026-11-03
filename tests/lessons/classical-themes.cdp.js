@@ -69,6 +69,21 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
     const e = v.setTiming(1).filter(e => e.type == 'event')[5], o = OrnamentPlay.prepare(v, { composer: 'Johann Sebastian Bach' });
     const r = o.notes(e.midiPitches[0], 0, 0.8, e).map(n => n.midi).join(' '); d.remove(); return r; })()`);
   check("a prall in Bach plays from the note above", orn === "75 73 75 73", orn);
+  // Roman numerals (themes-rn.js): off until ticked; then the themes with an analysis show them under the notes, the filter keeps only those
+  const rnSet = async (id, on) => ev(`(() => { const c = document.querySelector('#${id}'); c.checked = ${on}; c.dispatchEvent(new Event('change')); return 1; })()`);
+  await ev(`(() => { const s = document.querySelector('#ct-picker .tl-search'); s.value = ''; s.dispatchEvent(new Event('input')); const p = document.querySelector('#ct-per'); p.value = '10'; p.dispatchEvent(new Event('change')); return 1; })()`);
+  await rnSet("ct-rnonly", true); await b.sleep(600);
+  const rnCount = await ev(`(() => { const n = Object.keys(window.THEME_RN).length; return n + '|' + document.querySelector('#ct-rncount').textContent + '|' + document.querySelector('#ct-count').textContent; })()`);
+  check("only themes with numerals: the filter keeps those", /^(\d+)\|\1\|Themes 1–10 of \d+/.test(rnCount) && +rnCount.split("|")[0] > 40, rnCount);
+  const off = await ev(`document.querySelectorAll('.ct-score svg .abcjs-annotation').length`);
+  check("numerals are off by default", off === 0, String(off));
+  await rnSet("ct-rn", true); await b.sleep(800);
+  const on = await ev(`(() => { const t = [...document.querySelectorAll('.ct-score svg .abcjs-annotation')].map(x => x.textContent); return t.length + '|' + t.slice(0, 6).join(' '); })()`);
+  check("ticking Show Roman numerals draws them", /^[1-9]\d*\|/.test(on), on);
+  await rnSet("ct-rn", false); await b.sleep(600);
+  const off2 = await ev(`document.querySelectorAll('.ct-score svg .abcjs-annotation').length`);
+  check("and unticking removes them", off2 === 0, String(off2));
+  await rnSet("ct-rnonly", false);
   const errs = await ev(`(window.__errs || []).length`);
   await b.close(); srv.close();
   console.log(fails ? fails + " failed" : "all passed"); process.exit(fails ? 1 : 0);

@@ -1169,6 +1169,9 @@ document.addEventListener('DOMContentLoaded', async function () {
       <div class="ct-line"><label for="ct-tempo">Play at</label><input type="number" id="ct-tempo" min="10" max="600" placeholder="as recorded"> per quarter note</div>
       <div class="ct-line"><label><input type="checkbox" id="ct-yt"> Only themes with a recording</label>
         <button type="button" id="ct-reshuffle" title="New order for the Random sort">Reshuffle</button></div>
+      <div class="ct-line"><label><input type="checkbox" id="ct-rn"> Show Roman numerals</label>
+        <label><input type="checkbox" id="ct-rnonly"> Only themes that have them</label>
+        <span class="ct-note">(<span id="ct-rncount"></span> themes whose piece is in the When in Rome corpus)</span></div>
     </div>
   </div>
   <div id="ct-status" aria-live="polite"></div>
@@ -1189,14 +1192,18 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../apps/shared/audio.js?v=10"></script>
 <script src="../apps/themes/themes-data.js?v=4"></script>
 <script src="../apps/shared/ornament-play.js?v=1"></script>
-<script src="../apps/shared/works/works-data.js?v=9"></script>
+<script src="../apps/shared/works/works-data.js?v=10"></script>
 <script src="../apps/themes/themes-recordings.js?v=1"></script>
-<script src="../apps/shared/works/works.js?v=14"></script>
-<script src="../apps/themes/themes-page.js?v=10"></script>
+<script src="../apps/themes/themes-rn.js?v=1"></script>
+<script src="../apps/shared/works/works.js?v=16"></script>
+<script src="../apps/themes/themes-page.js?v=11"></script>
 <section id="works-cited" class="level2">
 <h2 class="anchored" data-anchor-id="works-cited">Works Cited</h2>
 <!-- works-cited: written by scripts/works-cited.py -->
 <div class="works-cited">
+<p><strong>For students</strong></p>
+<p>Gotham, Mark, et al.&nbsp;<em>When in Rome: A Meta-Corpus of Functional Harmony</em>. GitHub. <a href="https://github.com/MarkGotham/When-in-Rome">github.com/MarkGotham/When-in-Rome</a>. The analyses on this page (RomanText files), licensed CC BY-SA 4.0.</p>
+<p><strong>For teachers</strong></p>
 <p>Barlow, Harold, and Sam Morgenstern. <em>A Dictionary of Musical Themes</em>. Crown, 1948. The book MTD’s themes are taken from; not consulted directly.</p>
 <p>International Audio Laboratories Erlangen. <em>MTD: Musical Theme Dataset</em>, version 1.0.0. <a href="https://www.audiolabs-erlangen.de/resources/MIR/MTD">www.audiolabs-erlangen.de/resources/MIR/MTD</a>. The themes on this page, converted to ABC; licensed CC BY 4.0.</p>
 <p>Zalkow, Frank, Stefan Balke, Vlora Arifi-Müller, and Meinard Müller. “MTD: A Multimodal Dataset of Musical Themes for MIR Research.” <em>Transactions of the International Society for Music Information Retrieval</em>, 2020, doi:10.5334/tismir.68. <a href="https://doi.org/10.5334/tismir.68">doi.org/10.5334/tismir.68</a>.</p>

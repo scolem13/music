@@ -6,10 +6,11 @@ toc-depth: 2
 ---
 
 ```{=html}
-<script src="/apps/tunes/tunes-object.js?v=2"></script>
+<script src="/apps/tunes/tunes-object.js?v=3"></script>
 <script src="/apps/shared/band/harmony.js?v=35"></script>
-<script src="/apps/shared/mlt/dmti-skills.js?v=5"></script>
-<script src="/apps/shared/mlt/books/dmti.js?v=3"></script>
+<script src="/apps/shared/mlt/dmti-skills.js?v=7"></script>
+<script src="/apps/shared/mlt/books/dmti.js?v=5"></script>
+<script src="/apps/patterns/pattern-play.js?v=4"></script>
 ```
 
 {{< include _scripts.qmd >}}

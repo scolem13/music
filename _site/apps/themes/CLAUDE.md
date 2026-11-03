@@ -27,3 +27,11 @@
   only, between works-data.js and works.js): added to a theme's work if it has one, else a work `mtd-<id>` of its own. MP3s
   (128k) in `~/Downloads/mtd-mp3/`; upload with `cf r2 buckets objects upload mtd/<id>.mp3 --bucket-name everything-music-mlt
   --file <id>.mp3 --content-type audio/mpeg`.
+- Roman numerals (optional, "Show Roman numerals" on the page, off by default; "Only themes that have them" filters): `node scripts/theme-romantext.mjs [--report]`
+  matches each theme to a When in Rome RomanText analysis (composer + Op./K./BWV + movement from the corpus folders and the theme's title; ids
+  and rules in its header), puts the theme's bars on the movement's bars from `t.bar` (+ pickup) and keeps the match only if the notes fit the
+  chords (a theme with a sourced bar needs fit >= 0.6; one with no bar, bar 1 assumed, must also beat every other starting bar by 0.05, so
+  few pass: **78 of 2,067 so far**, almost all Beethoven / Haydn / Mozart / Bach). Writes `themes-rn.js` (`window.THEME_RN`, id -> body length
+  + [char offset in the theme's body, label]), drawn as `"_label"` annotations by `withRn` in themes-page.js. Rerun after themes-data.js
+  changes (an entry whose body length no longer matches is ignored). More themes would need their bar: a PDMX match, or matching against the
+  analysed scores' ABC. Test in `tests/lessons/classical-themes.cdp.js`.

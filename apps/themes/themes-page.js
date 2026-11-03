@@ -98,6 +98,21 @@
   ["#ct-next", "#ct-next2"].forEach((s) => $(s).addEventListener("click", () => { page++; draw(true); }));
   const ytOnly = $("#ct-yt");
   ytOnly.addEventListener("change", apply);
+  // Roman numerals (apps/themes/themes-rn.js, scripts/theme-romantext.mjs: When in Rome's RomanText under the notes of the themes
+  // whose piece it analyses). Off until asked for; the choice is kept.
+  const RN = window.THEME_RN || {}, hasRn = (t) => !!(RN[t.id] && RN[t.id].len === (t.body || "").length);
+  const rnOn = $("#ct-rn"), rnOnly = $("#ct-rnonly");
+  rnOn.checked = store.get("rn", false); rnOnly.checked = store.get("rnonly", false);
+  $("#ct-rncount").textContent = T.filter(hasRn).length;
+  rnOn.addEventListener("change", () => { store.set("rn", rnOn.checked); redrawShown(); });
+  rnOnly.addEventListener("change", () => { store.set("rnonly", rnOnly.checked); apply(); });
+  // the theme's ABC with each chord's Roman numeral as an annotation under the note it starts on
+  const withRn = (t, abc) => {
+    if (!rnOn.checked || !hasRn(t)) return abc;
+    let body = t.body;
+    RN[t.id].at.slice().sort((a, b) => b[0] - a[0]).forEach(([i, lab]) => { body = body.slice(0, i) + '"_' + lab.replace(/"/g, "") + '"' + body.slice(i); });
+    return abc.replace(t.body, () => body);
+  };
 
   // ---- sort + page ----
   let picked = null, page = 0;
@@ -106,6 +121,7 @@
     store.set("sorts", keys);
     let list = (picked || records).map((rec) => recOf[rec.id]).filter(Boolean);
     if (ytOnly.checked) list = list.filter(hasRec);
+    if (rnOnly.checked) list = list.filter((r) => hasRn(r.t));
     const val = keys.map(([k, d]) => [SORTS[k][1], d]);
     list.sort((a, b) => {
       for (const [f, d] of val) {
@@ -161,7 +177,7 @@
         r.t.key.replace(/m$/, " minor").replace(/b/g, "♭").replace(/#/g, "♯") + (r.t.minor && r.t.modeFrom === "melody" ? " (guessed)" : r.t.minor ? "" : " major"),
         rec.meterStr, (rec.measures || r.t.bars) + " bars" + (rec.hasPickup ? " + pickup" : ""), r.t.n + " notes",
         "range " + pname(r.t.lo) + "–" + pname(r.t.hi) + " (" + r.t.range + ")", "largest leap " + r.t.maxLeap,
-        rec.startDegree ? "starts on " + rec.startDegree : "", r.t.chromatic ? r.t.chromatic + " outside the key" : "", r.t.fixed ? "hand-corrected" : "", r.t.barOne ? "bar numbers from one score" : "", r.t.twoVoice ? "melody of a two-voice score" : "", r.t.from === "mtd" ? "corrected (MTD)" : "", /\boctave\b/.test(r.t.repaired || "") ? "octave lowered (guessed)" : "",
+        rec.startDegree ? "starts on " + rec.startDegree : "", r.t.chromatic ? r.t.chromatic + " outside the key" : "", r.t.fixed ? "hand-corrected" : "", r.t.barOne ? "bar numbers from one score" : "", hasRn(r.t) ? "Roman numerals: When in Rome" + (r.t.bar ? "" : ", bar 1 assumed") : "", r.t.twoVoice ? "melody of a two-voice score" : "", r.t.from === "mtd" ? "corrected (MTD)" : "", /\boctave\b/.test(r.t.repaired || "") ? "octave lowered (guessed)" : "",
       ];
       bits.filter(Boolean).forEach((b) => { const s = document.createElement("span"); s.textContent = b; m.appendChild(s); });
       frag.appendChild(c); io.observe(c);
@@ -172,7 +188,7 @@
   function renderCard(c) {
     const el = c.querySelector(".ct-score");
     c.__audio = false;
-    try { c.__v = ABCJS.renderAbc(el, abcOf(c.__r.t).replace(/^[TCS]:.*\n/gm, ""), { responsive: "resize", add_classes: true, paddingtop: 0, paddingbottom: 0, staffwidth: 640 })[0]; }
+    try { c.__v = ABCJS.renderAbc(el, withRn(c.__r.t, abcOf(c.__r.t)).replace(/^[TCS]:.*\n/gm, ""), { responsive: "resize", add_classes: true, paddingtop: 0, paddingbottom: 0, staffwidth: 640 })[0]; }
     catch (e) { el.textContent = "This theme's ABC could not be drawn."; }
     if (c.__v) numberBars(el, c.__r);
     c.__drawn = true;

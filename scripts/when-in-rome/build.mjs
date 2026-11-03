@@ -301,7 +301,7 @@ function fill(gap, ann, t) {   // invisible rests, in note values ABC can write
 // ---- RomanText -> [{ m, beat, text }]
 const FIG = { "65": "⁶₅", "43": "⁴₃", "42": "⁴₂", "64": "⁶₄", "2": "⁴₂", "6": "⁶", "7": "⁷", "9": "⁹" };
 const stack = s => s.replace(/^([^/]*?)(65|43|42|64|6|7|9|2)(?=\/|$)/, (m, a, f) => a + FIG[f]);   // V65/V -> V⁶₅/V
-const PRETTY = s => stack(s.replace(/\/o/g, "ø").replace(/o(?=\d|\/|$)/g, "°").replace(/6\/5/g, "65").replace(/4\/3/g, "43").replace(/4\/2/g, "42").replace(/6\/4/g, "64")
+export const PRETTY = s => stack(s.replace(/\/o/g, "ø").replace(/o(?=\d|\/|$)/g, "°").replace(/6\/5/g, "65").replace(/4\/3/g, "43").replace(/4\/2/g, "42").replace(/6\/4/g, "64")
   .replace(/^b(?=[IViv])/, "♭").replace(/^#(?=[IViv])/, "♯").replace(/maj7/, "M7"));
 export const PKEY = k => k.replace(/^([A-Ga-g])bb/, "$1𝄫").replace(/^([A-Ga-g])b/, "$1♭").replace(/^([A-Ga-g])##/, "$1𝄪").replace(/^([A-Ga-g])#/, "$1♯").replace(/:$/, "") + ":";
 export function parseRomanText(text) {

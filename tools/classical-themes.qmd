@@ -63,6 +63,9 @@ toc: false
       <div class="ct-line"><label for="ct-tempo">Play at</label><input type="number" id="ct-tempo" min="10" max="600" placeholder="as recorded"> per quarter note</div>
       <div class="ct-line"><label><input type="checkbox" id="ct-yt"> Only themes with a recording</label>
         <button type="button" id="ct-reshuffle" title="New order for the Random sort">Reshuffle</button></div>
+      <div class="ct-line"><label><input type="checkbox" id="ct-rn"> Show Roman numerals</label>
+        <label><input type="checkbox" id="ct-rnonly"> Only themes that have them</label>
+        <span class="ct-note">(<span id="ct-rncount"></span> themes whose piece is in the When in Rome corpus)</span></div>
     </div>
   </div>
   <div id="ct-status" aria-live="polite"></div>
@@ -85,14 +88,21 @@ toc: false
 <script src="/apps/shared/ornament-play.js?v=1"></script>
 <script src="/apps/shared/works/works-data.js?v=10"></script>
 <script src="/apps/themes/themes-recordings.js?v=1"></script>
+<script src="/apps/themes/themes-rn.js?v=1"></script>
 <script src="/apps/shared/works/works.js?v=16"></script>
-<script src="/apps/themes/themes-page.js?v=10"></script>
+<script src="/apps/themes/themes-page.js?v=11"></script>
 ```
 
 ## Works Cited
 
 <!-- works-cited: written by scripts/works-cited.py -->
 ::: {.works-cited}
+**For students**
+
+Gotham, Mark, et al. *When in Rome: A Meta-Corpus of Functional Harmony*. GitHub. [github.com/MarkGotham/When-in-Rome](https://github.com/MarkGotham/When-in-Rome). The analyses on this page (RomanText files), licensed CC BY-SA 4.0.
+
+**For teachers**
+
 Barlow, Harold, and Sam Morgenstern. *A Dictionary of Musical Themes*. Crown, 1948. The book MTD's themes are taken from; not consulted directly.
 
 International Audio Laboratories Erlangen. *MTD: Musical Theme Dataset*, version 1.0.0. [www.audiolabs-erlangen.de/resources/MIR/MTD](https://www.audiolabs-erlangen.de/resources/MIR/MTD). The themes on this page, converted to ABC; licensed CC BY 4.0.

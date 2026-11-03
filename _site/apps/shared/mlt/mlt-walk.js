@@ -245,9 +245,9 @@
     tune: ["The tune", "Listen, then sing the melody with the band (words, then \u201cdoo\u201d). Then play it by ear."],
     bass: ["The bass line", "Sing the chord roots while the band plays; then play them."],
     recho: ["Echo rhythm patterns", "Echo on \u201cbah\u201d, then with syllables; then answer with a different pattern."],
-    rseries: ["Rhythm phrases", "Echo the two-bar phrase, then improvise a different phrase."],
+    rseries: ["Rhythm phrases", "Echo the four-bar phrase on \u201cbah\u201d, then with syllables; then improvise a different phrase on the Improvise line."],
     techo: ["Echo tonal patterns", "Echo on \u201cbum\u201d, then in solf\u00e8ge; sing the root and name the function; then sing a different pattern with the same function."],
-    series: ["A series of patterns over a progression", "Echo the series, sing its bass line, then improvise a different series over the same chords."],
+    series: ["A series of patterns over a progression", "Echo the series on \u201cbum\u201d, then in solf\u00e8ge; sing the roots; then improvise a different series over the same chords."],
     answer: ["Antecedent and consequent", "The melody plays a phrase, then stops while the band goes on: sing (then play) your own answering phrase. Aim for chord tones."],
     roots: ["Skill 1: rhythms on the chord roots", "Hear the example, then improvise your own rhythms on the roots with the band."],
     voices: ["Skill 2: four parts of the harmony", "Sing each part in solf\u00e8ge, then play it. In a group, each person takes a part."],
@@ -279,7 +279,11 @@
     host.appendChild(tempo);
     var qpm = function () { return +tempo.querySelector(".dq").value; };
     tempo.querySelector(".dq").oninput = function () { tempo.querySelector(".dqv").textContent = qpm(); };
-    s.skills.forEach(function (sk) { host.appendChild(dmtiCard(d, sk, qpm)); });
+    s.skills.forEach(function (sk) {
+      var card = dmtiCard(d, sk, qpm), recs = recordingsPart(u.recs && u.recs[sk], "From the book's CD");   // its CD tracks (books/dmti.js recs)
+      if (recs) card.appendChild(recs);
+      host.appendChild(card);
+    });
   }
   function dmtiCard(d, sk, qpm) {
     var info = DSK[sk] || [sk, ""], card = el("div", "mlt-act mlt-dmti"), seed = 1, part = 0;
@@ -294,6 +298,7 @@
       try { (sk === "recho" ? rhythmEcho : tonalEcho)(hostE, spec); } catch (e) { hostE.textContent = "(Could not load the pattern set " + (spec.set) + ".)"; }
       return card;
     }
+    if (sk === "series" && global.PatternPlay) return seriesCard(d, card, ctl, sc, msg);
     function current() {
       if (sk === "tune" || sk === "read" || sk === "backing") return [{ label: d.u.title, abc: d.abc }];
       var o = { part: part };
@@ -311,7 +316,7 @@
       AbcPlay.play(vo || visual(abc), { abc: abc, style: d.u.style, qpm: qpm(), melody: melody !== false, light: !!vo });
     }
     var label = sk === "tune" ? "\u25b6 With the band" : sk === "backing" ? "\u25b6 Band" : sk === "read" ? "\u25b6 Check" : "\u25b6 Example";
-    btn(label, function () { cur = cur || current(); var many = cur.length > 1; var p = cur[many ? part % cur.length : 0]; playAbc(p.abc, p.vo, sk !== "backing"); msg.textContent = many ? "Playing: " + p.label : ""; });
+    btn(label, function () { cur = cur || current(); var many = cur.filter(function (x) { return !x.empty; }).length > 1; var p = cur[many ? part % cur.length : 0]; if (p.play) { playAbc(p.play, null, true); msg.textContent = ""; return; } playAbc(p.abc, p.vo, sk !== "backing"); msg.textContent = many ? "Playing: " + p.label : ""; });
     if (sk !== "backing") btn("\u25b6 Band only", function () { playAbc(d.abc, null, false); msg.textContent = "The band alone: your turn."; });
     if (sk === "tune") btn("\u25b6 Bass line", function () { var p = DMTISkills.make("bass", d.tune, d.sets, 1).parts[0]; playAbc(p.abc, null, true); });
     if (["roots", "partRhy", "macro", "macro2", "tonalRhy", "embellish", "series", "rseries"].indexOf(sk) >= 0) btn("New example", function () { seed++; draw(); msg.textContent = "A new example."; });
@@ -321,6 +326,35 @@
     }
     btn("Show notation", function () { shown = !shown; this.textContent = shown ? "Hide notation" : "Show notation"; draw(); }, "mlt-shownot");
     if (sk === "read") { shown = true; ctl.querySelector(".mlt-shownot").textContent = "Hide notation"; }
+    draw();
+    return card;
+  }
+
+  // Part 2 series, drawn and played like Tonal Sequences (stemless notes, a chord over each pattern; PatternPlay plays them a
+  // beat a note with a rest between patterns): the book's three rows, Listen-echo, Roots, Improvise (DMTI 1 pp. 75-76)
+  function seriesCard(d, card, ctl, sc, msg) {
+    var seed = 1, cur, which = 0, solf = false, ROWS = ["Listen\u2013echo", "Roots", "Listen\u2013echo, then the roots"];
+    var pb = el("div"), sel = el("select"), sb = el("button", null, "Solf\u00e8ge"), nb = el("button", null, "New example");
+    sb.type = nb.type = "button";
+    ROWS.forEach(function (n, i) { var o = el("option", null, n); o.value = i; sel.appendChild(o); });
+    var lab = el("label", null, "Play "); lab.appendChild(sel);
+    [lab, nb, sb].forEach(function (x) { ctl.appendChild(x); ctl.appendChild(document.createTextNode(" ")); });
+    card.insertBefore(pb, sc);
+    function body(abc) { return abc.split("\n").filter(function (l) { return l && !/^[A-Za-z]:/.test(l); }).join(" "); }
+    function draw() {
+      cur = DMTISkills.make("series", d.tune, d.sets, seed).parts; sc.innerHTML = "";
+      cur.forEach(function (p) {
+        sc.appendChild(el("div", "mlt-dim", "<b>" + esc(p.label.toUpperCase()) + "</b>" + (solf && p.syl ? " \u00b7 " + esc(p.syl) : "")));
+        var div = el("div"); sc.appendChild(div); ABCJS.renderAbc(div, p.abc, { responsive: "resize", add_classes: true, paddingtop: 0 });
+      });
+    }
+    PatternPlay.bar(pb, { space: false, abc: function () {
+      var a = cur[0].abc; if (which === 1) return cur[1].abc;
+      return which === 2 ? a + " " + body(cur[1].abc) : a;
+    } });
+    sel.onchange = function () { which = +sel.value; };
+    nb.onclick = function () { seed++; draw(); msg.textContent = "A new series."; };
+    sb.onclick = function () { solf = !solf; draw(); };
     draw();
     return card;
   }
@@ -449,10 +483,10 @@
     if (url) { var a = el("audio"); a.controls = true; a.preload = "none"; a.src = R.playUrl(r); a.style.cssText = "display:block;width:100%;max-width:28rem;height:2rem"; li.appendChild(a); }
     return li;
   }
-  function recordingsPart(list) {
+  function recordingsPart(list, head) {
     var R = global.MLTRecordings; if (!list || !list.length || !R) return null;
     var box = el("div", "mlt-do mlt-recs");
-    box.appendChild(el("div", "mlt-do-h", "Recordings"));
+    box.appendChild(el("div", "mlt-do-h", head || "Recordings"));
     var ul = el("ul", "mlt-rec-l"); box.appendChild(ul);
     list.forEach(function (x) {
       var r = R.byId(x.id || x); if (r) ul.appendChild(recLi(r, x.note));
