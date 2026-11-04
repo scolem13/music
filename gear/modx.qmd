@@ -1,10 +1,14 @@
 ---
 title: "Yamaha MODX"
-description: "The basics of our Yamaha MODX synthesizer, and how to use it as an audio interface: one USB cable to the computer."
+description: "The MODX8+: the basics, using it as an audio interface, playing the site's band on it (routing, timing, a kit per style), percussion auditions on its kits, and a whole-band A/B of site and MODX sounds."
 toc: true
 toc-depth: 2
+toc-title: "On this page"
 ---
 
+```{=html}
+<script src="/apps/shared/band/modx.js?v=4"></script>
+```
 The **Yamaha MODX** is a synthesizer keyboard. It has pianos, organs, strings, synths and drum kits built in.
 It can also be a **sound card for the computer**. Plug in one USB cable, and the computer can record the
 MODX and play sound back through it. You don't need a separate audio interface.
@@ -81,15 +85,461 @@ one, and on the exact number of USB audio channels (often quoted as 10 out to th
 
 ## Play the site's band on it
 
-The [MODX band page](modx-band.qmd) sends the Backing Track band's notes to the MODX, so its bass, keys, guitar or
+The [band section below](#play-the-band-on-the-modx) sends the Backing Track band's notes to the MODX, so its bass, keys, guitar or
 drums play on the board instead of in the browser. It compares each sound side by side so you can pick which
 instruments to send. If the computer's sound also comes out of the MODX (set the computer's output to the MODX), both
 come out of the same speakers, and the timing is easier to line up.
 
-## Manuals
+## Play the band on the MODX {#play-the-band-on-the-modx}
 
-- Yamaha, *MODX Owner's Manual* and *MODX Reference Manual*: on Yamaha's website under Support → Manuals.
 
 ```{=html}
-<script src="/apps/shared/lessons/sections.js?v=2"></script>
+<script src="/apps/shared/band/sounds.js?v=22"></script>
+
+<style>
+.mx-row { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin: .5rem 0; }
+.mx-note { font-size: .88rem; opacity: .8; }
+.mx-status { font-weight: 600; }
+.mx-status.ok { color: #2a9d8f; } .mx-status.bad { color: #c0392b; }
+.mx-table { border-collapse: collapse; font-size: .9rem; width: 100%; }
+.mx-table th, .mx-table td { padding: .3rem .5rem; border-bottom: 1px solid rgba(128,128,128,.25); text-align: left; vertical-align: middle; }
+.mx-table input[type=number] { width: 4.2rem; }
+.mx-v button { font-size: .8rem; padding: .1rem .45rem; }
+.mx-v button.on { background: #2a9d8f; color: #fff; border-color: #2a9d8f; }
+.mx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 1rem; }
+.mx-modes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: .8rem; }
+.mx-modes > div { border: 1px solid rgba(128,128,128,.3); border-radius: 8px; padding: .6rem .8rem; font-size: .9rem; }
+</style>
 ```
+
+Send the band's notes to a Yamaha MODX over USB instead of playing the site's own samples, one instrument at a time. Works in
+Chrome or Edge (Web MIDI). Nothing changes for anyone without a MODX: until you switch it on here, every page sounds as before.
+To audition the board's congas, timbales and brushes, see [the percussion auditions below](#percussion-auditions).
+
+### Connect
+
+```{=html}
+<div class="mx-row">
+  <button type="button" id="mx-connect">Connect</button>
+  <label>Port <select id="mx-port"><option>(not connected)</option></select></label>
+  <label><input type="checkbox" id="mx-on"> Use the MODX on every band page</label>
+  <span id="mx-status" class="mx-status bad">Not connected</span>
+</div>
+<p class="mx-note">Plug the MODX in by USB and switch it on first. The browser asks once whether this site may use MIDI.
+With the box ticked, every Backing Track, lesson and tool that uses the band connects by itself and sends the instruments
+ticked under <a href="#routing">Routing</a> to the MODX.</p>
+<div class="mx-modes">
+  <div><b>Site only</b><br>Box unticked. The site's samples, as before.</div>
+  <div><b>Sound module</b><br>Box ticked, some instruments routed. Those play on the MODX; the rest stay on the site.</div>
+  <div><b>Play along</b><br>Sound module, with Local Control on (the board's default): you play the MODX keys over the band.</div>
+</div>
+```
+
+### The Site Band Performance
+
+```{=html}
+<p>Make this once on the board and save it in a User slot. Each Part listens on its own channel, so the site can play several
+instruments at once without touching the board again.</p>
+<table class="mx-table">
+  <tr><th>Part</th><th>Channel</th><th>Put on it</th><th>Site instruments</th></tr>
+  <tr><td>1</td><td>1</td><td>Upright bass</td><td>bass (upright)</td></tr>
+  <tr><td>2</td><td>2</td><td>Wurlitzer electric piano</td><td>Wurlitzer</td></tr>
+  <tr><td>3</td><td>3</td><td>Organ with rotary speaker</td><td>tonewheel organ</td></tr>
+  <tr><td>4</td><td>4</td><td>Clean electric guitar</td><td>electric guitar (clean)</td></tr>
+  <tr><td>5</td><td>5</td><td>Distorted electric guitar</td><td>electric guitar (distorted)</td></tr>
+  <tr><td>7</td><td>7</td><td>Grand piano</td><td>piano</td></tr>
+  <tr><td>8</td><td>8</td><td>Rhodes electric piano</td><td>Rhodes</td></tr>
+  <tr><td>9</td><td>9</td><td>Pop Latin Kit</td><td>congas, bongos</td></tr>
+  <tr><td>10</td><td>10</td><td>Electric bass</td><td>bass (electric)</td></tr>
+  <tr><td>11</td><td>11</td><td>Steel-string acoustic guitar</td><td>acoustic guitar (steel)</td></tr>
+  <tr><td>12</td><td>12</td><td>Brush Kit</td><td>drums: brush grooves, and every brush stroke</td></tr>
+  <tr><td>13</td><td>13</td><td>BeechwoodSnare Kit</td><td>drums: jazz time, Latin, blues shuffles</td></tr>
+  <tr><td>14</td><td>14</td><td>Rock Stereo Kit 1</td><td>drums: rock, half-time, train beat</td></tr>
+  <tr><td>15</td><td>15</td><td>Dry Standard Kit</td><td>drums: pop, ballads, dance, Motown, folk</td></tr>
+  <tr><td>16</td><td>16</td><td>R&amp;B Kit 1</td><td>drums: funk, reggaeton</td></tr>
+</table>
+<p class="mx-note">Five drum kits, because one kit made some styles sound wrong. Which groove goes to which kit is set under
+<a href="#drum-maps">Drum maps</a>. On R&amp;B Kit 1 the tom keys play 808-style kicks (Data List), so tom fills in funk sound odd.</p>
+<p class="mx-note">Then, in Utility → Settings → MIDI, check that the MODX receives Bank Select and Program Change, so the button below
+can call the Performance up. Bank and number: in the Performance list, the User bank is shown with the number of each slot.
+The defaults below (MSB 63, LSB 32, program 0 = User 1, first slot) are from memory of Yamaha's MIDI tables and not yet checked on the board.</p>
+<div class="mx-row">
+  <label>Channel <input type="number" id="mx-pch" min="1" max="16"></label>
+  <label>Bank MSB <input type="number" id="mx-msb" min="0" max="127"></label>
+  <label>LSB <input type="number" id="mx-lsb" min="0" max="127"></label>
+  <label>Program <input type="number" id="mx-pc" min="0" max="127"></label>
+  <button type="button" id="mx-perf">Call it up</button>
+  <label><input type="checkbox" id="mx-perf-auto"> on connect</label>
+</div>
+```
+
+### Timing
+
+```{=html}
+<p>The computer's speakers and the MODX's are late by different amounts. Press Start: the site plays a stick click and the MODX
+a rim click at the same time. Move the slider until you hear one click instead of two. Use the speakers or headphones you'll play with.</p>
+<div class="mx-row">
+  <button type="button" id="mx-sync">Start</button>
+  <label>MODX offset <input type="range" id="mx-off" min="-150" max="250" step="1"> <span id="mx-off-n"></span> ms</label>
+</div>
+<p class="mx-note">More than zero holds the MODX back; less than zero sends it earlier (only as far as the site's own delay allows).</p>
+```
+
+### Compare
+
+```{=html}
+<p>Each row plays the same phrase twice, the site and then the MODX (with the Site Band Performance loaded), so you can pick
+the better one. Your choices are kept. <b>Route the winners</b> sends every instrument where the MODX won to the board.</p>
+<div class="mx-row"><button type="button" id="mx-stop">Stop</button> <button type="button" id="mx-win">Route the winners</button> <span id="mx-win-msg" class="mx-note"></span></div>
+<table class="mx-table" id="mx-compare"></table>
+```
+
+### Routing
+
+```{=html}
+<p>Which instruments go to the MODX, and on which channel. Instruments sharing a channel share a Part.</p>
+<p class="mx-note"><b>Shift</b> moves an instrument's notes on the way to the MODX: 12 = an octave up, −12 = an octave down. Use it
+when a MODX voice sounds an octave off from the site (▶ both plays the site's phrase and then the MODX's). <b>Velocity</b> spreads
+the band's soft-to-loud over that range of MIDI velocities: 1–127 sends what the band plays; raising the low number (say 40–120)
+keeps a piano or Rhodes out of its dullest, softest layers. Before blaming a voice, check on the board: Utility → Settings → MIDI,
+<i>MIDI I/O Mode</i> = Multi (else one channel plays every keyboard Part); Arp Master and each Part's arpeggio and motion sequencer
+off; no Note Shift or Note Limit left on a Part; and no Mega Voices — the Reference Manual says they "have a very complex structure
+with many different layers that are not suitable for playing manually" and should be played only by their own arpeggios.</p>
+<table class="mx-table" id="mx-routes"></table>
+<div class="mx-row">
+  <label>Pitch-bend range <input type="number" id="mx-pb" min="1" max="24"> semitones</label>
+  <label>Rotary speed CC <input type="number" id="mx-les" min="0" max="127"></label>
+  <button type="button" id="mx-reset">Reset everything here</button>
+</div>
+<p class="mx-note">The pitch-bend range must match the Part's (2 is the usual default) or slides land on the wrong note.
+The rotary speed CC is what the organ's slow/fast switch sends: 1 (the mod wheel) is a guess, so check which control your organ
+Performance uses for it.</p>
+```
+
+### Drum maps
+
+```{=html}
+<p>Which MODX key each drum is on. The drum keys are the General MIDI layout, which all five kits follow (checked against the Data List); the hand drums are the Pop Latin Kit's keys. Press ▶
+to hear one on the MODX and change the number if it's the wrong drum.</p>
+<p>Which kit each groove plays on: five Parts, one kit each. A groove not listed plays on the jazz kit.</p>
+<table class="mx-table" id="mx-kits"></table>
+<div class="mx-grid"><table class="mx-table" id="mx-kit"></table><table class="mx-table" id="mx-congas"></table></div>
+```
+
+```{=html}
+<script src="/apps/shared/band/modx-page.js?v=4"></script>
+```
+
+
+## Percussion auditions {#percussion-auditions}
+
+
+```{=html}
+
+<style>
+.mp-row { display: flex; flex-wrap: wrap; gap: .4rem .8rem; align-items: center; margin: .4rem 0; }
+.mp-note { font-size: .88rem; opacity: .8; margin: .2rem 0; }
+.mp-status { font-weight: 600; } .mp-now { font-size: .88rem; color: #2a9d8f; }
+.mp-bpm { width: 4.2rem; }
+.mp-card { border: 1px solid rgba(128,128,128,.3); border-radius: 8px; padding: .6rem .8rem; margin: .8rem 0; }
+.mp-card.mp-playing { border-color: #2a9d8f; box-shadow: 0 0 0 1px #2a9d8f; }
+.mp-card h3 { font-size: 1.05rem; margin: 0 0 .2rem; }
+.mp-star { border: none; background: none; font-size: 1.15rem; padding: 0 .2rem; color: #e9a23b; cursor: pointer; }
+.mp-grid { overflow-x: auto; margin-top: .4rem; font-size: .75rem; }
+.mp-line { display: flex; align-items: center; gap: .4rem; white-space: nowrap; }
+.mp-key { flex: 0 0 13rem; overflow: hidden; text-overflow: ellipsis; font-family: var(--bs-font-monospace, monospace); }
+.mp-cells { display: flex; gap: 1px; }
+.mp-cell { width: 10px; height: 12px; background: rgba(128,128,128,.12); border-radius: 2px; }
+.mp-cell.beat { margin-left: 2px; } .mp-cell.bar { margin-left: 6px; }
+.mp-cell.vX { background: #1d6f66; } .mp-cell.vx { background: #2a9d8f; } .mp-cell.vo { background: #7cc5bc; } .mp-cell.vg { background: #c4e6e1; }
+.mp-cell.vh { background: rgba(42,157,143,.25); }
+.mp-cell.on { outline: 2px solid #e76f51; }
+.mp-walknow { font-weight: 600; font-family: var(--bs-font-monospace, monospace); min-height: 1.4em; }
+@media (max-width: 600px) { .mp-key { flex-basis: 8rem; } }
+</style>
+```
+
+Loops written for four MODX+ drum kits, sent straight to the board over USB. Use them to hear the congas, bongos, timbales,
+bells and brushes, and mark the ones you'd use with ☆. Works in Chrome or Edge (Web MIDI). The key maps come from Yamaha's
+MODX6+/7+/8+ Data List (Drum Kit Assign List); each loop says what was checked against a source (listed under Works Cited) and what is still the site's own guess.
+
+### Connect
+
+```{=html}
+<div id="mp-connect"></div>
+<p class="mp-note">Set up a Performance with the kits on these channels (change the numbers if yours differ). Press Esc to stop.
+The board's own offset from <a href="#timing">Timing, in the band section</a> applies here too.</p>
+```
+
+### Your picks
+
+```{=html}
+<div id="mp-picks"></div>
+```
+
+### Latin percussion (Pop Latin Kit)
+
+```{=html}
+<div id="mp-latin"></div>
+```
+
+### Brushes (Real Brushes, Jazz Brushes, Brush Kit)
+
+```{=html}
+<p class="mp-note">Every brush loop uses keys that mean the same thing on all three kits, so <b>⇄ Take turns</b> plays it on each
+kit in turn (two bars each) and you can hear which you like.</p>
+<div id="mp-brush"></div>
+```
+
+### Test slots (rock, pop, R&B, hip-hop)
+
+```{=html}
+<p>The patterns below play on whichever kits you put in four spare Parts. Load a kit into each Part on the MODX, then choose
+the same kit here so the names and the ☆ marks match. <b>⇄ Take turns</b> plays a pattern on all four, two bars each. Every
+kit listed keeps the General MIDI layout on the keys these patterns use (kick C1, snare D1, hats F#1/A#1, toms F1–D2, crash
+C#2, ride D#2), checked against the Data List; the grids show the drum's role, the kit walk its sample names.</p>
+<div id="mp-slots"></div>
+```
+
+### Rock
+
+```{=html}
+<div id="mp-rock"></div>
+```
+
+### Pop
+
+```{=html}
+<div id="mp-pop"></div>
+```
+
+### R&B and funk
+
+```{=html}
+<div id="mp-rnb"></div>
+```
+
+### Hip-hop
+
+```{=html}
+<div id="mp-hiphop"></div>
+```
+
+### Kit walk
+
+```{=html}
+<div id="mp-walk"></div>
+<script src="/apps/shared/band/modx-kits.js?v=1"></script>
+<script src="/apps/shared/band/modx-perc.js?v=3"></script>
+<script>ModxPerc.mount(document);</script>
+```
+
+
+
+## Band A/B: site and MODX {#band-ab}
+
+
+```{=html}
+<style>
+.ab-bar { display: flex; flex-wrap: wrap; gap: .5rem .9rem; align-items: center; margin: .5rem 0; position: sticky; top: 3.5rem; z-index: 5;
+  background: var(--site-surface, #fff); border: 1px solid var(--site-border, #ccc); border-radius: 8px; padding: .5rem .8rem; }
+.ab-on { background: var(--site-accent-dk, #2a9d8f) !important; border-color: var(--site-accent-dk, #2a9d8f) !important; color: #fff !important; }
+.ab-now { font-weight: 600; } .ab-note { font-size: .88rem; opacity: .8; }
+.ab-verdict { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin: -1.2rem 0 1.6rem; font-size: .9rem; }
+#ab-bars { width: 3.5rem; }
+</style>
+```
+
+Each example below is the Backing Track band in one style. Press ▶ Play, then flip **Site** and **MODX** while it plays
+(or press **m**), or tick **Switch every … bars** to hear them take turns. Mark which sounds better under each one; the
+tally is at the top. The MODX plays each instrument on its Part of the Site Band Performance and the drums on the kit for
+that style (set on [the band section above](#play-the-band-on-the-modx)); an instrument with no Part stays on the site.
+
+### Connect and switch
+
+```{=html}
+<div class="ab-bar">
+  <button type="button" class="btn btn-sm btn-primary" id="ab-connect">Connect the MODX</button>
+  <span id="ab-status" class="ab-note">Not connected</span>
+  <button type="button" class="btn btn-sm btn-outline-secondary" id="ab-site">Site</button>
+  <button type="button" class="btn btn-sm btn-outline-secondary" id="ab-modx">MODX</button>
+  <label><input type="checkbox" id="ab-auto"> Switch every <input type="number" id="ab-bars" min="1" max="16" value="2"> bars</label>
+  <span id="ab-now" class="ab-now"></span>
+</div>
+<p class="ab-note">The automatic switch times bars from the tempo, not from the band itself, so it can land a little off the barline.
+Set the MODX's timing offset on the MODX page first, or the two will not line up.</p>
+<p><b>So far:</b> <span id="ab-summary"></span></p>
+```
+
+### Swing
+
+Walking upright bass, piano, ride time on the jazz kit (BeechwoodSnare).
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="132" data-staves="comp bass drums"></div>
+
+### Jazz ballad
+
+Bass in two, piano pads; the drums on the jazz kit.
+
+<div class="ar-demo" data-style="ballad" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="66" data-staves="comp bass drums"></div>
+
+### Bossa nova
+
+Cross-stick bossa on the jazz kit, nylon or jazz guitar on the site, piano.
+
+<div class="ar-demo" data-style="bossa" data-chart="Dm7|G7|Cmaj7|Cmaj7|Em7|A7|Dm7 G7|Cmaj7" data-tempo="132" data-staves="comp bass drums"></div>
+
+### Son montuno
+
+The clave groove on the jazz kit and the tumbao on the Pop Latin Kit's congas (channel 9).
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="100" data-staves="comp bass drums"></div>
+
+### Jump blues
+
+Boogie bass and a shuffle on the jazz kit.
+
+<div class="ar-demo" data-style="jump" data-chart="C7|F7|C7|C7|F7|F7|C7|C7|G7|F7|C7|G7" data-tempo="160" data-staves="comp bass drums"></div>
+
+### Straight-eighth rock
+
+Rock Stereo Kit 1 (channel 14), electric bass.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="120" data-staves="comp bass drums"></div>
+
+### Rock, distorted guitar
+
+The same with the distorted guitar comping (channel 5).
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="120" data-comp="odguitar" data-staves="comp bass drums"></div>
+
+### Acoustic strum
+
+Steel-string guitar (channel 11), the pop kit (Dry Standard, channel 15).
+
+<div class="ar-demo" data-style="strum" data-chart="G|C|D|G" data-tempo="100" data-staves="comp bass drums"></div>
+
+### Piano ballad
+
+Piano (channel 7) and the pop kit.
+
+<div class="ar-demo" data-style="pop" data-chart="C|G|Am|F" data-tempo="72" data-staves="comp bass drums"></div>
+
+### Motown / soul
+
+Snare on every beat on the pop kit, electric bass.
+
+<div class="ar-demo" data-style="motown" data-chart="C|Am|F|G" data-tempo="120" data-staves="comp bass drums"></div>
+
+### Soul with organ
+
+The Motown groove with the tonewheel organ comping (channel 3; the MODX's rotary speed on the CC set on the MODX page).
+
+<div class="ar-demo" data-style="motown" data-chart="C|Am|F|G" data-tempo="120" data-comp="hammond" data-staves="comp bass drums"></div>
+
+### Dance pop
+
+Four on the floor on the pop kit.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="122" data-staves="comp bass drums"></div>
+
+### Dance pop on Rhodes
+
+The same with the Rhodes comping (channel 8).
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="122" data-comp="rhodes" data-staves="comp bass drums"></div>
+
+### Reggaeton
+
+Dembow on the R&B kit (channel 16).
+
+<div class="ar-demo" data-style="reggaeton" data-chart="Am|F|C|G" data-tempo="95" data-staves="comp bass drums"></div>
+
+### Folk carol (brushes)
+
+Brushes on the Brush Kit (channel 12).
+
+<div class="ar-demo" data-style="carol" data-chart="G|C|D|G" data-tempo="96" data-staves="comp bass drums"></div>
+
+### Funk on Wurlitzer
+
+A Wurlitzer comping (channel 2) over the soul band; switch the groove to Funk below to hear the R&B kit.
+
+<div class="ar-demo" data-style="motown" data-chart="C7|C7|F7|C7" data-tempo="100" data-comp="wurli" data-staves="comp bass drums" data-choice-label="Drums:" data-choices='[{"label":"Motown","opts":{"groove":"motown"}},{"label":"Funk","opts":{"groove":"funk"}}]'></div>
+
+{{< include ../lessons/_arrange-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/band/modx-ab.js?v=1"></script>
+```
+
+
+
+
+## Manuals
+
+- Yamaha, *MODX+ Owner's Manual*, *Reference Manual* and *Data List*: on Yamaha's website under Support → Manuals (copies in the teacher's ~/Documents/Manuals).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Absil, Frans. "Band Latin." [www.fransabsil.nl/archpdf/bandlatn.pdf](https://www.fransabsil.nl/archpdf/bandlatn.pdf). Forward and reversed (2-3) cáscara side by side.
+
+"Beating the Bongos." *Dummies*, Wiley. [www.dummies.com/article/academics-the-arts/music/instruments/drums/beating-the-bongos-199618/](https://www.dummies.com/article/academics-the-arts/music/instruments/drums/beating-the-bongos-199618/). Martillo: slaps on the small drum, the open tone on the large drum, soft left-hand tones.
+
+"Bell pattern." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Bell_pattern](https://en.wikipedia.org/wiki/Bell_pattern). The 12/8 standard pattern: 1, 1a, 2&, 2a, 3&, 4, 4a.
+
+"Benny Benjamin." *Rock & Roll Hall of Fame*, 2003. [rockhall.com/wp-content/uploads/2024/03/Benny_Benjamin_2003.pdf](https://rockhall.com/wp-content/uploads/2024/03/Benny_Benjamin_2003.pdf). His constant quarter-note snare (seen in search excerpt).
+
+"Bernard Purdie." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Bernard_Purdie](https://en.wikipedia.org/wiki/Bernard_Purdie). The Purdie shuffle: triplets against a half-time backbeat, ghost notes on the snare.
+
+"Bongo Patterns." [www.lx.iriss.org.uk/read/bongo-patterns.html](https://www.lx.iriss.org.uk/read/bongo-patterns.html). Martillo: eight strokes, accents on 1, 3 and 4, beat 4 on the hembra (seen in search excerpt only; page refused direct reading).
+
+"Boom bap." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Boom_bap](https://en.wikipedia.org/wiki/Boom_bap). Kick on 1 and 3, snare on 2 and 4, highly swung programming on the MPC and SP-1200.
+
+"Brushes." *BYU Percussion*, Brigham Young University. [percussion.byu.edu/brushes](https://percussion.byu.edu/brushes). Swing: right hand swings, left stirs, the hands trade places on 2 and 4; ballads: both hands stir in opposite directions.
+
+"Cascara Rhythms." *Salsa Forums*. [www.salsaforums.com/threads/cascara-rhythms.26232/](https://www.salsaforums.com/threads/cascara-rhythms.26232/). The 3-2 and 2-3 cáscara counts used here (a member's transcription).
+
+"Cascara." *Soundbrenner*. [www.soundbrenner.com/blogs/articles/cascara](https://www.soundbrenner.com/blogs/articles/cascara). Cáscara follows the clave's direction; its printed grid differs from the one used here.
+
+"Disco." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Disco](https://en.wikipedia.org/wiki/Disco). Four-on-the-floor bass drum, 'an open hissing hi-hat on the off-beat'.
+
+"Drum beat." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Drum_beat](https://en.wikipedia.org/wiki/Drum_beat). Straight rock groove (kick and snare on the beats, hats on the eighths); half-time (snare on 3, hats in quarters); the delayed backbeat of funk.
+
+"Four on the floor (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Four_on_the_floor_(music)](https://en.wikipedia.org/wiki/Four_on_the_floor_(music)). The bass drum on every beat; disco and dance music.
+
+"Groove: How J Dilla Changed Rhythm." *The Pudding*, June 2023. [pudding.cool/2023/06/groove/](https://pudding.cool/2023/06/groove/). Straight, swung and shifted parts at once; swung (quintuplet) hi-hat, slightly early snare.
+
+"How to Play the Pandeiro for Capoeira." *Dende Arts*. [dendearts.com/blog/how-to-play-the-pandeiro-for-capoeira/](https://dendearts.com/blog/how-to-play-the-pandeiro-for-capoeira/). Thumb, fingertips, heel, fingertips.
+
+"Latin Percussion Applications in the Jazz Band." *Jazz Education Network*. [jazzednet.org/resources/latin-percussion-applications-in-the-jazz-band/](https://jazzednet.org/resources/latin-percussion-applications-in-the-jazz-band/). Cha-cha-chá: bell in quarters, güiro long quarter + two eighths.
+
+"Motown Groove." *Soundbrenner*. [www.soundbrenner.com/blogs/articles/motown-groove](https://www.soundbrenner.com/blogs/articles/motown-groove). Snare on 2 and 4 or on all four beats; tambourine in eighths; kick on 1 and 3.
+
+"New jack swing." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/New_jack_swing](https://en.wikipedia.org/wiki/New_jack_swing). Offbeat-accented sixteenth-note triplets; the TR-808 snare; TR-808, LinnDrum, SP-1200.
+
+"The Pandeiro." *Acoustics Today*, July 2007, p. 41. [acousticstoday.org/issues/2007AT/Jul2007/files/basic-html/page41.html](https://acousticstoday.org/issues/2007AT/Jul2007/files/basic-html/page41.html). Pandeiro batida: thumb, fingertips, heel, fingertips.
+
+"Salsa (musical structure)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Salsa_(musical_structure)](https://en.wikipedia.org/wiki/Salsa_(musical_structure)). Conga marcha (tumbao) and its alignment with clave; the timbale bell from the cáscara.
+
+"Salsa Rhythm: How to Play Tumbao." *Salsa Vida*. [www.salsavida.com/?p=509](https://www.salsavida.com/?p=509). Open tones on 4 and 4&, the slap on 2.
+
+"Timbale: Playing the Son." *Artdrum*. [www.artdrum.com/TIMBALE_PLAYING_THE_SON.HTM](https://www.artdrum.com/TIMBALE_PLAYING_THE_SON.HTM). Paila: left hand muffled on 2, open on 4; the tumbao is the cha-cha-chá conga part, faster.
+
+"Trap music." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Trap_music](https://en.wikipedia.org/wiki/Trap_music). About 140 bpm in half-time, deep 808 kicks with long decay, double- and triple-time hi-hats.
+
+"Tumbao." *Soundbrenner*. [www.soundbrenner.com/blogs/articles/tumbao](https://www.soundbrenner.com/blogs/articles/tumbao). Heel-toe, slap and open tones of the tumbao.
+
+"Tumbao." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tumbao](https://en.wikipedia.org/wiki/Tumbao). Cites Rebeca Mauleón, *Salsa Guidebook*.
+
+Yamaha Corporation. *MODX6+ / MODX7+ / MODX8+ Data List*. Yamaha. [usa.yamaha.com/files/download/other_assets/5/1583935/modx_plus_en_dl_a0.pdf](https://usa.yamaha.com/files/download/other_assets/5/1583935/modx_plus_en_dl_a0.pdf). Drum Kit Assign List: the key of every sound in Pop Latin Kit, Real Brushes Kit, Jazz Brushes Kit and Brush Kit (kit-to-table match read from the page layout).
+
+**For students**
+
+"Backbeat." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Backbeat](https://en.wikipedia.org/wiki/Backbeat). The backbeat on 2 and 4; the delayed or late backbeat.
+:::
+<!-- /works-cited -->
+
+<script src="/apps/shared/lessons/sections.js?v=2"></script>

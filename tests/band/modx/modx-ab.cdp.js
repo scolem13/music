@@ -14,7 +14,7 @@ const FAKE = `(() => { window.__sent = []; const out = { id: "o1", name: "MODX-1
   const ons = () => b.eval(`window.__sent.filter(m => (m[0] & 0xF0) === 0x90).map(m => (m[0] & 15) + 1)`);
   try {
     await b.send("Page.addScriptToEvaluateOnNewDocument", { source: FAKE });
-    await b.goto("http://127.0.0.1:8520/gear/modx-ab.html"); await b.sleep(1200);
+    await b.goto("http://127.0.0.1:8520/gear/modx.html"); await b.sleep(1200);
     await b.eval(`localStorage.clear(); document.getElementById("ab-connect").click()`); await b.sleep(400);
     if (!/MODX-1/.test(await b.eval(`document.getElementById("ab-status").textContent`))) throw new Error("not connected");
     const demos = await b.eval(`document.querySelectorAll(".ar-demo").length`); if (demos < 12) throw new Error("demos: " + demos);

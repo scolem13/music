@@ -1,4 +1,4 @@
-// modx-ab.js — whole-band A/B between the site's samples and the MODX (gear/modx-ab.qmd, global ModxAB).
+// modx-ab.js — whole-band A/B between the site's samples and the MODX (gear/modx.qmd, section Band A/B, global ModxAB).
 // The page's band examples are the lessons' .ar-demo (arrange-kit.js); this only decides where their notes sound. BandModx asks
 // routed(inst) before every note, so BandModx.force flips a playing band between the two at once:
 //   "site": every instrument forced to the site's samples.

@@ -16,7 +16,7 @@
 // funk's delayed backbeat, the Purdie-style half-time shuffle, new jack swing, the Dilla feel, boom bap, trap; the conga tumbao,
 // the bongo martillo and the 12/8 bell. What a source gives is the skeleton (which drum on which beats, the kind of swing); where
 // the kick or a ghost note goes beyond that is the site's, and each item's note says so. The same patterns play on the MODX in
-// gear/modx-perc.qmd (apps/shared/band/modx-perc.js), with the same sources (scripts/sources/modx-perc.py).
+// gear/modx.qmd (Percussion auditions) (apps/shared/band/modx-perc.js), with the same sources (scripts/sources/modx-perc.py).
 // Fills, bossa, samba, songo and cáscara are NOT here yet: no source checked gives them as text.
 
 (function (global) {

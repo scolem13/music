@@ -1,6 +1,6 @@
 # Sampling the MODX+ into one software kit (exploration, 2026-11-04)
 
-Goal: one drum/percussion kit that combines the MODX sounds Sean picks on the Auditions page (gear/modx-perc.qmd) and
+Goal: one drum/percussion kit that combines the MODX sounds Sean picks on the Auditions page (gear/modx.qmd, Percussion auditions) and
 plays when the MODX isn't there: in a DAW, and maybe in the site's band.
 
 ## What the licence allows

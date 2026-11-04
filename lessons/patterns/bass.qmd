@@ -1,0 +1,2032 @@
+---
+title: "Bass lines"
+subtitle: "Every bass line the band plays, each built up a step at a time"
+description: "A lesson for every bass line the Backing Track band plays: built up from simpler ones, played on the band and written out as it plays."
+toc: true
+toc-depth: 2
+toc-title: "Bass lines"
+---
+
+[All the accompaniment patterns](index.qmd) · each lesson below is a section of this page; the list on the right jumps to one.
+
+## Walking {#bass-walk}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Walking**. It is built up from 3 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+One note on every beat (four quarter notes in 4/4, three in 3/4, dotted quarters in 12/8): the root on beat 1 when the chord changes, chord tones and scale steps in between, and an approach note on beat 4 that leads into the next bar.
+
+It belongs in *Swing* and *Jazz ballad*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Walking","opts":{"bassFeel":"walk"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Two-feel
+
+Half notes on beats 1 and 3, root then fifth, with an occasional pickup into the next bar. The lighter feel a band often plays on the head before the bass starts to walk.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-two) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Two-feel","opts":{"bassFeel":"two"}}]'></div>
+
+### Step 3: Chord tones (learning to walk)
+
+The chord spelled out, one note on every beat: root, 3rd, 5th, 7th, the same in every bar. When a bar has two chords, each gets its root and one more note. A step between playing roots and walking.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-arp) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
+### Step 4: Walking, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Beat 1: the root. Beats 2 and 3: any two other chord tones or scale steps. Beat 4: a note one fret above or below the next bar's root. Start from the chord tones of the step before and change only beat 4, then free up beats 2 and 3.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Walking","opts":{"bassFeel":"walk"}},{"label":"Chord tones (learning to walk) (the step before)","opts":{"bassFeel":"arp"}}]'></div>
+
+### Step 5: Up to tempo, with the band
+
+The whole band, at 120 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Walking","opts":{"bassFeel":"walk"}}]'></div>
+
+### Step 6: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7 G7|Em7 A7|Dm7 G7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Walking","opts":{"bassFeel":"walk"}}]'></div>
+
+### Step 7: In 3/4
+
+The same pattern in a jazz waltz: three beats to the bar. Listen for what it keeps and what it drops when the bar is a beat shorter.
+
+<div class="ar-demo" data-style="swing" data-chart="C|C|F|F|G7|G7|C|C" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-meter="3/4" data-choice-label="Bass line:" data-choices='[{"label":"Walking","opts":{"bassFeel":"walk"}}]'></div>
+
+### In other styles
+
+The same bass line in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Jazz ballad**
+
+<div class="ar-demo" data-style="ballad" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="66" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Walking","opts":{"bassFeel":"walk"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves), [Two-feel](bass.qmd#bass-two), [Chord tones (learning to walk)](bass.qmd#bass-arp).
+- **Leads to:** [Boogaloo riff, walking at times](bass.qmd#bass-riffwalk): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Four to the bar](chords.qmd#chords-four) (comping rhythm), [Quarter notes (learning swing, 1)](drums.qmd#drums-quarters) (drum groove), [Ride pattern (learning swing, 2)](drums.qmd#drums-ridetime) (drum groove).
+- **Plays with, in swing:** [Varied](chords.qmd#chords-auto) (comping rhythm), [Jazz time](drums.qmd#drums-auto) (drum groove).
+- **Other bass lines in the Jazz group:** [Chord tones (learning to walk)](bass.qmd#bass-arp), [Two-feel](bass.qmd#bass-two), [Boogaloo riff](bass.qmd#bass-riff), [Boogie-woogie](bass.qmd#bass-boogie), [Boogie-woogie octaves](bass.qmd#bass-boogie-oct), [Yancey figure](bass.qmd#bass-yancey), [Boogaloo riff, walking at times](bass.qmd#bass-riffwalk).
+
+## Chord tones (learning to walk) {#bass-arp}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Chord tones (learning to walk)**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The chord spelled out, one note on every beat: root, 3rd, 5th, 7th, the same in every bar. When a bar has two chords, each gets its root and one more note. A step between playing roots and walking.
+
+It belongs in *Swing*, *Jazz ballad*, *Boogaloo* and *Boogie-woogie*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Roots on every beat
+
+The root of the chord on every beat and nothing else. The plainest line there is, under driving eighths or a strummed song.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-roots) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 3: Chord tones (learning to walk), slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Root, 3rd, 5th, 7th, one to a beat, the same shape every bar. On a minor seventh chord the 3rd is three frets above the root; on a dominant or major chord, four. Say the chord tones as you play them.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}},{"label":"Roots on every beat (the step before)","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 120 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7 G7|Em7 A7|Dm7 G7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
+### In other styles
+
+The same bass line in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Jazz ballad**
+
+<div class="ar-demo" data-style="ballad" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="66" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
+**Boogaloo**
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
+**Boogie-woogie**
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves), [Roots on every beat](bass.qmd#bass-roots).
+- **Leads to:** [Walking](bass.qmd#bass-walk), [Boogie-woogie](bass.qmd#bass-boogie), [Boogaloo riff, walking at times](bass.qmd#bass-riffwalk), [Footprints: waltz ostinato](bass.qmd#bass-footprints): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Arpeggio, up and down](chords.qmd#chords-arp) (comping rhythm), [Arpeggio, low and high](chords.qmd#chords-arp2) (comping rhythm), [Alberti bass](chords.qmd#chords-alberti) (comping rhythm), [Boogie-woogie](bass.qmd#bass-boogie) (bass line), [Boogie-woogie right hand](chords.qmd#chords-boogie) (comping rhythm), [Blues shuffle](drums.qmd#drums-shuffle) (drum groove).
+- **Plays with, in swing:** [Varied](chords.qmd#chords-auto) (comping rhythm), [Jazz time](drums.qmd#drums-auto) (drum groove).
+- **Other bass lines in the Jazz group:** [Walking](bass.qmd#bass-walk), [Two-feel](bass.qmd#bass-two), [Boogaloo riff](bass.qmd#bass-riff), [Boogie-woogie](bass.qmd#bass-boogie), [Boogie-woogie octaves](bass.qmd#bass-boogie-oct), [Yancey figure](bass.qmd#bass-yancey), [Boogaloo riff, walking at times](bass.qmd#bass-riffwalk).
+
+## Two-feel {#bass-two}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Two-feel**. It is built up from a simpler pattern, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+Half notes on beats 1 and 3, root then fifth, with an occasional pickup into the next bar. The lighter feel a band often plays on the head before the bass starts to walk.
+
+It belongs in *Swing*, *Jazz ballad* and *Stride piano*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Two-feel","opts":{"bassFeel":"two"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Two-feel, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Half notes on 1 and 3, root then fifth, with a swung pickup into the next bar now and then. Let each note ring for its full two beats: the line breathes in two while the drummer plays in four.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Two-feel","opts":{"bassFeel":"two"}},{"label":"Roots on 1 and 3 (the step before)","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 3: Up to tempo, with the band
+
+The whole band, at 120 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Two-feel","opts":{"bassFeel":"two"}}]'></div>
+
+### Step 4: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7 G7|Em7 A7|Dm7 G7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Two-feel","opts":{"bassFeel":"two"}}]'></div>
+
+### In other styles
+
+The same bass line in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Jazz ballad**
+
+<div class="ar-demo" data-style="ballad" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="66" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Two-feel","opts":{"bassFeel":"two"}}]'></div>
+
+**Stride piano**
+
+<div class="ar-demo" data-style="stride" data-chart="C|A7|D7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Two-feel","opts":{"bassFeel":"two"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves).
+- **Leads to:** [12/8 ballad](bass.qmd#bass-twelve8), [Walking](bass.qmd#bass-walk), [So What: the bass call](bass.qmd#bass-sowhat), [Killer Joe: two-bar vamp](bass.qmd#bass-killerjoe): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Stride](chords.qmd#chords-stride) (comping rhythm), [Boom-chick / oom-pah-pah](chords.qmd#chords-oompah) (comping rhythm), [Root and fifth](bass.qmd#bass-alt) (bass line).
+- **Plays with, in swing:** [Varied](chords.qmd#chords-auto) (comping rhythm), [Jazz time](drums.qmd#drums-auto) (drum groove).
+- **Other bass lines in the Jazz group:** [Walking](bass.qmd#bass-walk), [Chord tones (learning to walk)](bass.qmd#bass-arp), [Boogaloo riff](bass.qmd#bass-riff), [Boogie-woogie](bass.qmd#bass-boogie), [Boogie-woogie octaves](bass.qmd#bass-boogie-oct), [Yancey figure](bass.qmd#bass-yancey), [Boogaloo riff, walking at times](bass.qmd#bass-riffwalk).
+
+## Boogaloo riff {#bass-riff}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Boogaloo riff**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+A repeated straight-eighths figure: root on 1, root pushed on the and of 2, then a fifth and flat seventh on beat 4 leading back to the root. The kind of line under Watermelon Man. In 6/8 and 12/8 it becomes a shuffle: each beat played long-short, climbing root, 3rd, 5th, 6th.
+
+It belongs in *Boogaloo*. Here it is in the boogaloo style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Boogaloo riff","opts":{"bassFeel":"riff"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Dotted (1, and of 2, 3)
+
+The root on beat 1, again on the and of 2 and on beat 3, the same rhythm as the kick drum. Every second bar ends with an eighth note that leads into the next chord.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-dotted) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### Step 3: Boogaloo riff, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** A straight-eighths riff: root on 1, root again on the and of 2, then fifth and flat seventh on beat 4 climbing back to the root. The push on the and of 2 is the same one as the dotted line; the ending is new. Play every bar the same.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Boogaloo riff","opts":{"bassFeel":"riff"}},{"label":"Dotted (1, and of 2, 3) (the step before)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 112 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Boogaloo riff","opts":{"bassFeel":"riff"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|Bb7 C7|F7|Gm7 C7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Boogaloo riff","opts":{"bassFeel":"riff"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted).
+- **Leads to:** [Boogaloo riff, walking at times](bass.qmd#bass-riffwalk): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Boogaloo riff, walking at times](bass.qmd#bass-riffwalk) (bass line), [Boogaloo stabs](chords.qmd#chords-stabs) (comping rhythm), [Funk](drums.qmd#drums-funk) (drum groove).
+- **Plays with, in boogaloo:** [Boogaloo stabs](chords.qmd#chords-stabs) (comping rhythm), [Jazz time](drums.qmd#drums-auto) (drum groove), [Tumbao](congas.qmd#congas-tumbao) (conga part).
+- **Other bass lines in the Jazz group:** [Walking](bass.qmd#bass-walk), [Chord tones (learning to walk)](bass.qmd#bass-arp), [Two-feel](bass.qmd#bass-two), [Boogie-woogie](bass.qmd#bass-boogie), [Boogie-woogie octaves](bass.qmd#bass-boogie-oct), [Yancey figure](bass.qmd#bass-yancey), [Boogaloo riff, walking at times](bass.qmd#bass-riffwalk).
+
+## Boogie-woogie {#bass-boogie}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Boogie-woogie**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+Eight swung eighth notes a bar walking up the chord and back down: root, 3rd, 5th, 6th, flat 7th, 6th, 5th, 3rd, the same every bar. It is the boogie-woogie pianist's left hand, played on the bass. A chord that arrives on beat 3 starts the walk again from its root.
+
+It belongs in *Boogie-woogie* and *Jump blues*. Here it is in the boogie-woogie style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Boogie-woogie","opts":{"bassFeel":"boogie"}}]'></div>
+
+### Step 1: Roots on every beat
+
+Start with something simpler. The root of the chord on every beat and nothing else. The plainest line there is, under driving eighths or a strummed song.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-roots) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 2: Chord tones (learning to walk)
+
+The chord spelled out, one note on every beat: root, 3rd, 5th, 7th, the same in every bar. When a bar has two chords, each gets its root and one more note. A step between playing roots and walking.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-arp) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
+### Step 3: Boogie-woogie, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Eight swung eighths a bar, up the chord and back down: root, 3rd, 5th, 6th, flat 7th, 6th, 5th, 3rd. Learn the shape on one chord until the hand knows it, then move it up a fourth for the IV chord and a fifth for the V. The shape stays the same; only the root changes. Lean on beats 1 and 3.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Boogie-woogie","opts":{"bassFeel":"boogie"}},{"label":"Chord tones (learning to walk) (the step before)","opts":{"bassFeel":"arp"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 132 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Boogie-woogie","opts":{"bassFeel":"boogie"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|F7 F#dim7|C7|G7 F7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Boogie-woogie","opts":{"bassFeel":"boogie"}}]'></div>
+
+### In other styles
+
+The same bass line in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Jump blues**
+
+<div class="ar-demo" data-style="jump" data-chart="C7|F7|C7|G7" data-tempo="160" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Boogie-woogie","opts":{"bassFeel":"boogie"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on every beat](bass.qmd#bass-roots), [Chord tones (learning to walk)](bass.qmd#bass-arp).
+- **The same idea elsewhere in the band:** [Chord tones (learning to walk)](bass.qmd#bass-arp) (bass line), [Boogie-woogie right hand](chords.qmd#chords-boogie) (comping rhythm), [Blues shuffle](drums.qmd#drums-shuffle) (drum groove).
+- **Plays with, in boogie-woogie:** [Boogie-woogie right hand](chords.qmd#chords-boogie) (comping rhythm), [Blues shuffle](drums.qmd#drums-shuffle) (drum groove).
+- **Other bass lines in the Jazz group:** [Walking](bass.qmd#bass-walk), [Chord tones (learning to walk)](bass.qmd#bass-arp), [Two-feel](bass.qmd#bass-two), [Boogaloo riff](bass.qmd#bass-riff), [Boogie-woogie octaves](bass.qmd#bass-boogie-oct), [Yancey figure](bass.qmd#bass-yancey), [Boogaloo riff, walking at times](bass.qmd#bass-riffwalk).
+
+## Boogie-woogie octaves {#bass-boogie-oct}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Boogie-woogie octaves**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+Rolling octaves: the root and the root an octave higher in swung eighths, low on every beat and high on every and, the same every bar. A chord that arrives on beat 3 starts again from its low root.
+
+It belongs in *Boogie-woogie* and *Jump blues*. Here it is in the boogie-woogie style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Boogie-woogie octaves","opts":{"bassFeel":"boogieOct"}}]'></div>
+
+### Step 1: Roots on every beat
+
+Start with something simpler. The root of the chord on every beat and nothing else. The plainest line there is, under driving eighths or a strummed song.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-roots) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 2: Octaves (disco)
+
+The root on every beat and the root an octave up on every off-beat.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-octaves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Octaves (disco)","opts":{"bassFeel":"octaves"}}]'></div>
+
+### Step 3: Boogie-woogie octaves, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Root low, octave high, in swung eighths: the low note on the beat, the high one on the and. Keep the hand loose and let it roll rather than hit. Each new chord starts on its low root.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Boogie-woogie octaves","opts":{"bassFeel":"boogieOct"}},{"label":"Octaves (disco) (the step before)","opts":{"bassFeel":"octaves"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 132 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Boogie-woogie octaves","opts":{"bassFeel":"boogieOct"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|F7 F#dim7|C7|G7 F7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Boogie-woogie octaves","opts":{"bassFeel":"boogieOct"}}]'></div>
+
+### In other styles
+
+The same bass line in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Jump blues**
+
+<div class="ar-demo" data-style="jump" data-chart="C7|F7|C7|G7" data-tempo="160" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Boogie-woogie octaves","opts":{"bassFeel":"boogieOct"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on every beat](bass.qmd#bass-roots), [Octaves (disco)](bass.qmd#bass-octaves).
+- **Plays with, in boogie-woogie:** [Boogie-woogie right hand](chords.qmd#chords-boogie) (comping rhythm), [Blues shuffle](drums.qmd#drums-shuffle) (drum groove).
+- **Other bass lines in the Jazz group:** [Walking](bass.qmd#bass-walk), [Chord tones (learning to walk)](bass.qmd#bass-arp), [Two-feel](bass.qmd#bass-two), [Boogaloo riff](bass.qmd#bass-riff), [Boogie-woogie](bass.qmd#bass-boogie), [Yancey figure](bass.qmd#bass-yancey), [Boogaloo riff, walking at times](bass.qmd#bass-riffwalk).
+
+## Yancey figure {#bass-yancey}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Yancey figure**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+After Jimmy Yancey's slow-blues left hand: root on 1, fifth on the and of 1, root on the and of 2, fifth on 3, root on 4. A lilting, habanera-like figure for a slow blues. A chord that arrives on beat 3 starts on its root.
+
+It belongs in *Boogie-woogie*. Here it is in the boogie-woogie style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="84" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Yancey figure","opts":{"bassFeel":"yancey"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="58" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Tango (habanera)
+
+The habanera rhythm: root held for a beat and a half, the fifth on the and of 2, then the root an octave up on 3 and the fifth on 4.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-tango) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="58" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Tango (habanera)","opts":{"bassFeel":"tango"}}]'></div>
+
+### Step 3: Yancey figure, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Clap it first: 1, the and of 1, the and of 2, 3, 4. Then play root on 1, fifth on the and, root on the and of 2, fifth on 3, root on 4. Play it slowly and lazily, like a slow blues; the notes between the beats give the lilt, so do not rush them.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="58" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Yancey figure","opts":{"bassFeel":"yancey"}},{"label":"Tango (habanera) (the step before)","opts":{"bassFeel":"tango"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 84 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="84" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Yancey figure","opts":{"bassFeel":"yancey"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|F7 F#dim7|C7|G7 F7" data-tempo="84" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Yancey figure","opts":{"bassFeel":"yancey"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves), [Tango (habanera)](bass.qmd#bass-tango).
+- **Plays with, in boogie-woogie:** [Boogie-woogie right hand](chords.qmd#chords-boogie) (comping rhythm), [Blues shuffle](drums.qmd#drums-shuffle) (drum groove).
+- **Other bass lines in the Jazz group:** [Walking](bass.qmd#bass-walk), [Chord tones (learning to walk)](bass.qmd#bass-arp), [Two-feel](bass.qmd#bass-two), [Boogaloo riff](bass.qmd#bass-riff), [Boogie-woogie](bass.qmd#bass-boogie), [Boogie-woogie octaves](bass.qmd#bass-boogie-oct), [Boogaloo riff, walking at times](bass.qmd#bass-riffwalk).
+
+## Boogaloo riff, walking at times {#bass-riffwalk}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Boogaloo riff, walking at times**. It is built up from 3 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The boogaloo riff, but about half the four-bar phrases end with a bar of walking quarter notes that leads into the next phrase, and now and then two bars.
+
+It belongs in *Boogaloo*. Here it is in the boogaloo style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Boogaloo riff, walking at times","opts":{"bassFeel":"riffwalk"}}]'></div>
+
+### Step 1: Boogaloo riff
+
+Start with something simpler. A repeated straight-eighths figure: root on 1, root pushed on the and of 2, then a fifth and flat seventh on beat 4 leading back to the root. The kind of line under Watermelon Man. In 6/8 and 12/8 it becomes a shuffle: each beat played long-short, climbing root, 3rd, 5th, 6th.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-riff) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Boogaloo riff","opts":{"bassFeel":"riff"}}]'></div>
+
+### Step 2: Chord tones (learning to walk)
+
+The chord spelled out, one note on every beat: root, 3rd, 5th, 7th, the same in every bar. When a bar has two chords, each gets its root and one more note. A step between playing roots and walking.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-arp) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
+### Step 3: Walking
+
+One note on every beat (four quarter notes in 4/4, three in 3/4, dotted quarters in 12/8): the root on beat 1 when the chord changes, chord tones and scale steps in between, and an approach note on beat 4 that leads into the next bar.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-walk) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Walking","opts":{"bassFeel":"walk"}}]'></div>
+
+### Step 4: Boogaloo riff, walking at times, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Riff most of the time; at the end of some four-bar phrases, walk one bar of quarter notes into the next phrase. The skill is the switch: feel where the phrase ends and land on the next root exactly on 1.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Boogaloo riff, walking at times","opts":{"bassFeel":"riffwalk"}},{"label":"Walking (the step before)","opts":{"bassFeel":"walk"}}]'></div>
+
+### Step 5: Up to tempo, with the band
+
+The whole band, at 112 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Boogaloo riff, walking at times","opts":{"bassFeel":"riffwalk"}}]'></div>
+
+### Step 6: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|Bb7 C7|F7|Gm7 C7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Boogaloo riff, walking at times","opts":{"bassFeel":"riffwalk"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Boogaloo riff](bass.qmd#bass-riff), [Chord tones (learning to walk)](bass.qmd#bass-arp), [Walking](bass.qmd#bass-walk).
+- **The same idea elsewhere in the band:** [Boogaloo riff](bass.qmd#bass-riff) (bass line), [Boogaloo stabs](chords.qmd#chords-stabs) (comping rhythm), [Funk](drums.qmd#drums-funk) (drum groove).
+- **Plays with, in boogaloo:** [Boogaloo stabs](chords.qmd#chords-stabs) (comping rhythm), [Jazz time](drums.qmd#drums-auto) (drum groove), [Tumbao](congas.qmd#congas-tumbao) (conga part).
+- **Other bass lines in the Jazz group:** [Walking](bass.qmd#bass-walk), [Chord tones (learning to walk)](bass.qmd#bass-arp), [Two-feel](bass.qmd#bass-two), [Boogaloo riff](bass.qmd#bass-riff), [Boogie-woogie](bass.qmd#bass-boogie), [Boogie-woogie octaves](bass.qmd#bass-boogie-oct), [Yancey figure](bass.qmd#bass-yancey).
+
+## So What: the bass call {#bass-sowhat}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **So What: the bass call**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The bass has the melody. A two-bar figure: the root, then eighth notes up the scale from the fifth (5, 6, 7, root, 9) and back through the seventh to the root on the next downbeat. Then it waits for the chords to answer. Pair it with the So What comping rhythm.
+
+It belongs in *Swing*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|Dm7|Dm7|Dm7|Ebm7|Ebm7|Dm7|Dm7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"So What: the bass call","opts":{"bassFeel":"sowhat"}}]'></div>
+
+### Step 1: Held roots (the bass voice)
+
+Start with something simpler. The root of every chord, held until the next chord: the bass part of a four-part hymn.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-held) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|Dm7|Dm7|Dm7|Ebm7|Ebm7|Dm7|Dm7" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Held roots (the bass voice)","opts":{"bassFeel":"held"}}]'></div>
+
+### Step 2: Two-feel
+
+Half notes on beats 1 and 3, root then fifth, with an occasional pickup into the next bar. The lighter feel a band often plays on the head before the bass starts to walk.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-two) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|Dm7|Dm7|Dm7|Ebm7|Ebm7|Dm7|Dm7" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Two-feel","opts":{"bassFeel":"two"}}]'></div>
+
+### Step 3: So What: the bass call, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The bass has the tune here. Root, then eighth notes up from the fifth (5, 6, 7, root, 9), back down through the seventh to the root. Then wait while the chords answer. Sing it before playing it.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|Dm7|Dm7|Dm7|Ebm7|Ebm7|Dm7|Dm7" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"So What: the bass call","opts":{"bassFeel":"sowhat"}},{"label":"Two-feel (the step before)","opts":{"bassFeel":"two"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 132 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|Dm7|Dm7|Dm7|Ebm7|Ebm7|Dm7|Dm7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"So What: the bass call","opts":{"bassFeel":"sowhat"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7 G7|Em7 A7|Dm7 G7|Cmaj7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"So What: the bass call","opts":{"bassFeel":"sowhat"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Held roots (the bass voice)](bass.qmd#bass-held), [Two-feel](bass.qmd#bass-two).
+- **The same idea elsewhere in the band:** [So What: the answer](chords.qmd#chords-sowhat) (comping rhythm).
+- **Plays with, in swing:** [Varied](chords.qmd#chords-auto) (comping rhythm), [Jazz time](drums.qmd#drums-auto) (drum groove).
+- **Other bass lines in the From tunes group:** [Killer Joe: two-bar vamp](bass.qmd#bass-killerjoe), [Song for My Father: root, fifth, octave](bass.qmd#bass-songfather), [Footprints: waltz ostinato](bass.qmd#bass-footprints), [All Blues: 6/8 vamp](bass.qmd#bass-allblues), [Chameleon: chromatic pickup](bass.qmd#bass-chameleon), [Maiden Voyage: roots on the rhythm](bass.qmd#bass-maiden), [Take Five: 3 + 2](bass.qmd#bass-takefive).
+
+## Killer Joe: two-bar vamp {#bass-killerjoe}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Killer Joe: two-bar vamp**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+A two-bar figure for two chords a whole step apart: the root held for two beats, then two quarter notes that climb into the next root from below (C, G, A into B flat; B flat, G, B into C).
+
+It belongs in *Swing* and *Boogaloo*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="swing" data-chart="C7|Bb7|C7|Bb7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Killer Joe: two-bar vamp","opts":{"bassFeel":"killerjoe"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="C7|Bb7|C7|Bb7" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Two-feel
+
+Half notes on beats 1 and 3, root then fifth, with an occasional pickup into the next bar. The lighter feel a band often plays on the head before the bass starts to walk.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-two) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="C7|Bb7|C7|Bb7" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Two-feel","opts":{"bassFeel":"two"}}]'></div>
+
+### Step 3: Killer Joe: two-bar vamp, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Two chords a whole step apart, two bars each. Hold the root for two beats, then two quarter notes climbing into the next root from below. The same shape takes you down from C7 to B♭7 and back up.
+
+<div class="ar-demo" data-style="swing" data-chart="C7|Bb7|C7|Bb7" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Killer Joe: two-bar vamp","opts":{"bassFeel":"killerjoe"}},{"label":"Two-feel (the step before)","opts":{"bassFeel":"two"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 112 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="swing" data-chart="C7|Bb7|C7|Bb7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Killer Joe: two-bar vamp","opts":{"bassFeel":"killerjoe"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7 G7|Em7 A7|Dm7 G7|Cmaj7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Killer Joe: two-bar vamp","opts":{"bassFeel":"killerjoe"}}]'></div>
+
+### In other styles
+
+The same bass line in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Boogaloo**
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Killer Joe: two-bar vamp","opts":{"bassFeel":"killerjoe"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves), [Two-feel](bass.qmd#bass-two).
+- **Plays with, in swing:** [Varied](chords.qmd#chords-auto) (comping rhythm), [Jazz time](drums.qmd#drums-auto) (drum groove).
+- **Other bass lines in the From tunes group:** [So What: the bass call](bass.qmd#bass-sowhat), [Song for My Father: root, fifth, octave](bass.qmd#bass-songfather), [Footprints: waltz ostinato](bass.qmd#bass-footprints), [All Blues: 6/8 vamp](bass.qmd#bass-allblues), [Chameleon: chromatic pickup](bass.qmd#bass-chameleon), [Maiden Voyage: roots on the rhythm](bass.qmd#bass-maiden), [Take Five: 3 + 2](bass.qmd#bass-takefive).
+
+## Song for My Father: root, fifth, octave {#bass-songfather}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Song for My Father: root, fifth, octave**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The figure the tune opens with: the root for a beat and a half, the fifth on the and of 2, the octave on beat 3 held to the end of the bar. Steely Dan borrowed it for Rikki Don't Lose That Number.
+
+It belongs in *Bossa nova*. Here it is in the bossa nova style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="bossa" data-chart="Fm7|Fm7|Eb7|Eb7|Db7|C7|Fm7|Fm7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Song for My Father: root, fifth, octave","opts":{"bassFeel":"songfather"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="bossa" data-chart="Fm7|Fm7|Eb7|Eb7|Db7|C7|Fm7|Fm7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Dotted (1, and of 2, 3)
+
+The root on beat 1, again on the and of 2 and on beat 3, the same rhythm as the kick drum. Every second bar ends with an eighth note that leads into the next chord.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-dotted) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="bossa" data-chart="Fm7|Fm7|Eb7|Eb7|Db7|C7|Fm7|Fm7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### Step 3: Song for My Father: root, fifth, octave, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Root for a beat and a half, fifth on the and of 2, octave on beat 3 held to the end of the bar. It is the dotted line with the octave on beat 3. Hold the octave its full length.
+
+<div class="ar-demo" data-style="bossa" data-chart="Fm7|Fm7|Eb7|Eb7|Db7|C7|Fm7|Fm7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Song for My Father: root, fifth, octave","opts":{"bassFeel":"songfather"}},{"label":"Dotted (1, and of 2, 3) (the step before)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 120 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="bossa" data-chart="Fm7|Fm7|Eb7|Eb7|Db7|C7|Fm7|Fm7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Song for My Father: root, fifth, octave","opts":{"bassFeel":"songfather"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7 D7|Gmaj7 Em7|Am7 D7|Gmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Song for My Father: root, fifth, octave","opts":{"bassFeel":"songfather"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted).
+- **The same idea elsewhere in the band:** [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted) (bass line), [Pop backbeat](drums.qmd#drums-strum) (drum groove), [Ballad](drums.qmd#drums-ballad) (drum groove).
+- **Plays with, in bossa nova:** [Bossa nova](chords.qmd#chords-bossa) (comping rhythm), [Bossa nova](drums.qmd#drums-bossa) (drum groove).
+- **Other bass lines in the From tunes group:** [So What: the bass call](bass.qmd#bass-sowhat), [Killer Joe: two-bar vamp](bass.qmd#bass-killerjoe), [Footprints: waltz ostinato](bass.qmd#bass-footprints), [All Blues: 6/8 vamp](bass.qmd#bass-allblues), [Chameleon: chromatic pickup](bass.qmd#bass-chameleon), [Maiden Voyage: roots on the rhythm](bass.qmd#bass-maiden), [Take Five: 3 + 2](bass.qmd#bass-takefive).
+
+## Footprints: waltz ostinato {#bass-footprints}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Footprints: waltz ostinato**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+A two-bar figure in 3/4 (one bar of 6/4): root, fifth, octave in quarter notes, then the third above that octave held for two beats and the fifth to lead back.
+
+It belongs in *Swing*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="swing" data-chart="Cm7|Cm7|Cm7|Cm7|Fm7|Fm7|Cm7|Cm7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass drums" data-meter="3/4" data-choice-label="Bass line:" data-choices='[{"label":"Footprints: waltz ostinato","opts":{"bassFeel":"footprints"}}]'></div>
+
+### Step 1: Root and fifth
+
+Start with something simpler. The boom of boom-chick: the root on beat 1 and the fifth on beat 3, short, the same every bar. In 3/4 it is one note a bar, root one bar and fifth the next.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-alt) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Cm7|Cm7|Cm7|Cm7|Fm7|Fm7|Cm7|Cm7" data-tempo="92" data-on="bass drums" data-staves="bass" data-meter="3/4" data-choice-label="Step:" data-choices='[{"label":"Root and fifth","opts":{"bassFeel":"alt"}}]'></div>
+
+### Step 2: Chord tones (learning to walk)
+
+The chord spelled out, one note on every beat: root, 3rd, 5th, 7th, the same in every bar. When a bar has two chords, each gets its root and one more note. A step between playing roots and walking.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-arp) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Cm7|Cm7|Cm7|Cm7|Fm7|Fm7|Cm7|Cm7" data-tempo="92" data-on="bass drums" data-staves="bass" data-meter="3/4" data-choice-label="Step:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
+### Step 3: Footprints: waltz ostinato, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** A two-bar figure in 3/4: root, fifth, octave in the first bar, then the third above the octave held for two beats and the fifth leading back down. Feel it as one long bar of six.
+
+<div class="ar-demo" data-style="swing" data-chart="Cm7|Cm7|Cm7|Cm7|Fm7|Fm7|Cm7|Cm7" data-tempo="92" data-on="bass drums" data-staves="bass" data-meter="3/4" data-choice-label="Compare:" data-choices='[{"label":"Footprints: waltz ostinato","opts":{"bassFeel":"footprints"}},{"label":"Chord tones (learning to walk) (the step before)","opts":{"bassFeel":"arp"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 132 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="swing" data-chart="Cm7|Cm7|Cm7|Cm7|Fm7|Fm7|Cm7|Cm7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass drums" data-meter="3/4" data-choice-label="Bass line:" data-choices='[{"label":"Footprints: waltz ostinato","opts":{"bassFeel":"footprints"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Root and fifth](bass.qmd#bass-alt), [Chord tones (learning to walk)](bass.qmd#bass-arp).
+- **The same idea elsewhere in the band:** [Waltz in one](chords.qmd#chords-waltz) (comping rhythm).
+- **Plays with, in swing:** [Varied](chords.qmd#chords-auto) (comping rhythm), [Jazz time](drums.qmd#drums-auto) (drum groove).
+- **Other bass lines in the From tunes group:** [So What: the bass call](bass.qmd#bass-sowhat), [Killer Joe: two-bar vamp](bass.qmd#bass-killerjoe), [Song for My Father: root, fifth, octave](bass.qmd#bass-songfather), [All Blues: 6/8 vamp](bass.qmd#bass-allblues), [Chameleon: chromatic pickup](bass.qmd#bass-chameleon), [Maiden Voyage: roots on the rhythm](bass.qmd#bass-maiden), [Take Five: 3 + 2](bass.qmd#bass-takefive).
+
+## All Blues: 6/8 vamp {#bass-allblues}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **All Blues: 6/8 vamp**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+A two-bar figure in 6/8. Each bar is a long note and two short ones: root, fifth, sixth, then seventh, sixth, fifth.
+
+It belongs in *Swing*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="swing" data-chart="G7|G7|G7|G7|Gm7|Gm7|G7|G7" data-tempo="60" data-on="bass comp drums congas" data-staves="bass drums" data-meter="6/8" data-choice-label="Bass line:" data-choices='[{"label":"All Blues: 6/8 vamp","opts":{"bassFeel":"allblues"}}]'></div>
+
+### Step 1: Held roots (the bass voice)
+
+Start with something simpler. The root of every chord, held until the next chord: the bass part of a four-part hymn.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-held) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="G7|G7|G7|G7|Gm7|Gm7|G7|G7" data-tempo="50" data-on="bass drums" data-staves="bass" data-meter="6/8" data-choice-label="Step:" data-choices='[{"label":"Held roots (the bass voice)","opts":{"bassFeel":"held"}}]'></div>
+
+### Step 2: 12/8 ballad
+
+Long notes on beats 1 and 3, root then fifth, each set up by a short note on the last eighth of the beat before.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-twelve8) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="G7|G7|G7|G7|Gm7|Gm7|G7|G7" data-tempo="50" data-on="bass drums" data-staves="bass" data-meter="6/8" data-choice-label="Step:" data-choices='[{"label":"12/8 ballad","opts":{"bassFeel":"twelve8"}}]'></div>
+
+### Step 3: All Blues: 6/8 vamp, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** 6/8: two beats of three eighths. Each bar is a long note and two short ones: root, fifth, sixth, then seventh, sixth, fifth. Rock gently on the long notes.
+
+<div class="ar-demo" data-style="swing" data-chart="G7|G7|G7|G7|Gm7|Gm7|G7|G7" data-tempo="50" data-on="bass drums" data-staves="bass" data-meter="6/8" data-choice-label="Compare:" data-choices='[{"label":"All Blues: 6/8 vamp","opts":{"bassFeel":"allblues"}},{"label":"12/8 ballad (the step before)","opts":{"bassFeel":"twelve8"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 60 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="swing" data-chart="G7|G7|G7|G7|Gm7|Gm7|G7|G7" data-tempo="60" data-on="bass comp drums congas" data-staves="bass drums" data-meter="6/8" data-choice-label="Bass line:" data-choices='[{"label":"All Blues: 6/8 vamp","opts":{"bassFeel":"allblues"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Held roots (the bass voice)](bass.qmd#bass-held), [12/8 ballad](bass.qmd#bass-twelve8).
+- **The same idea elsewhere in the band:** [12/8 ballad](bass.qmd#bass-twelve8) (bass line).
+- **Plays with, in swing:** [Varied](chords.qmd#chords-auto) (comping rhythm), [Jazz time](drums.qmd#drums-auto) (drum groove).
+- **Other bass lines in the From tunes group:** [So What: the bass call](bass.qmd#bass-sowhat), [Killer Joe: two-bar vamp](bass.qmd#bass-killerjoe), [Song for My Father: root, fifth, octave](bass.qmd#bass-songfather), [Footprints: waltz ostinato](bass.qmd#bass-footprints), [Chameleon: chromatic pickup](bass.qmd#bass-chameleon), [Maiden Voyage: roots on the rhythm](bass.qmd#bass-maiden), [Take Five: 3 + 2](bass.qmd#bass-takefive).
+
+## Chameleon: chromatic pickup {#bass-chameleon}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Chameleon: chromatic pickup**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The root on beat 1, then two eighth notes on beat 4 that climb by semitones into the next bar's root. Only the skeleton of the record's line.
+
+It belongs in *Boogaloo* and *Straight-eighth rock*. Here it is in the boogaloo style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="Bbm7|Eb7|Bbm7|Eb7" data-tempo="100" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Chameleon: chromatic pickup","opts":{"bassFeel":"chameleon"}}]'></div>
+
+### Step 1: Held roots (the bass voice)
+
+Start with something simpler. The root of every chord, held until the next chord: the bass part of a four-part hymn.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-held) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="Bbm7|Eb7|Bbm7|Eb7" data-tempo="70" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Held roots (the bass voice)","opts":{"bassFeel":"held"}}]'></div>
+
+### Step 2: Roots on every beat
+
+The root of the chord on every beat and nothing else. The plainest line there is, under driving eighths or a strummed song.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-roots) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="Bbm7|Eb7|Bbm7|Eb7" data-tempo="70" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 3: Chameleon: chromatic pickup, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The root on beat 1, then two eighths on beat 4 climbing by half steps into the next root. Leave beats 2 and 3 empty: the silence is half the groove.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="Bbm7|Eb7|Bbm7|Eb7" data-tempo="70" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Chameleon: chromatic pickup","opts":{"bassFeel":"chameleon"}},{"label":"Roots on every beat (the step before)","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 100 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="Bbm7|Eb7|Bbm7|Eb7" data-tempo="100" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Chameleon: chromatic pickup","opts":{"bassFeel":"chameleon"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|Bb7 C7|F7|Gm7 C7" data-tempo="100" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Chameleon: chromatic pickup","opts":{"bassFeel":"chameleon"}}]'></div>
+
+### In other styles
+
+The same bass line in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Straight-eighth rock**
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Chameleon: chromatic pickup","opts":{"bassFeel":"chameleon"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Held roots (the bass voice)](bass.qmd#bass-held), [Roots on every beat](bass.qmd#bass-roots).
+- **Plays with, in boogaloo:** [Boogaloo stabs](chords.qmd#chords-stabs) (comping rhythm), [Jazz time](drums.qmd#drums-auto) (drum groove), [Tumbao](congas.qmd#congas-tumbao) (conga part).
+- **Other bass lines in the From tunes group:** [So What: the bass call](bass.qmd#bass-sowhat), [Killer Joe: two-bar vamp](bass.qmd#bass-killerjoe), [Song for My Father: root, fifth, octave](bass.qmd#bass-songfather), [Footprints: waltz ostinato](bass.qmd#bass-footprints), [All Blues: 6/8 vamp](bass.qmd#bass-allblues), [Maiden Voyage: roots on the rhythm](bass.qmd#bass-maiden), [Take Five: 3 + 2](bass.qmd#bass-takefive).
+
+## Maiden Voyage: roots on the rhythm {#bass-maiden}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Maiden Voyage: roots on the rhythm**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The bass plays the comping rhythm: 1, the and of 2 and 4 in the first bar, the and of 2 and 4 in the second.
+
+It belongs in *Boogaloo* and *Bossa nova*. Here it is in the bossa nova style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="bossa" data-chart="Dsus|Dsus|Fsus|Fsus|Dsus|Dsus|Fsus|Fsus" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Maiden Voyage: roots on the rhythm","opts":{"bassFeel":"maiden"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="bossa" data-chart="Dsus|Dsus|Fsus|Fsus|Dsus|Dsus|Fsus|Fsus" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Dotted (1, and of 2, 3)
+
+The root on beat 1, again on the and of 2 and on beat 3, the same rhythm as the kick drum. Every second bar ends with an eighth note that leads into the next chord.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-dotted) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="bossa" data-chart="Dsus|Dsus|Fsus|Fsus|Dsus|Dsus|Fsus|Fsus" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### Step 3: Maiden Voyage: roots on the rhythm, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The bass plays the same rhythm as the chords: 1, the and of 2 and 4 in the first bar (the note on 4 held over the barline), then the and of 2 and 4. Play with the piano's left hand, not against it.
+
+<div class="ar-demo" data-style="bossa" data-chart="Dsus|Dsus|Fsus|Fsus|Dsus|Dsus|Fsus|Fsus" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Maiden Voyage: roots on the rhythm","opts":{"bassFeel":"maiden"}},{"label":"Dotted (1, and of 2, 3) (the step before)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 112 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="bossa" data-chart="Dsus|Dsus|Fsus|Fsus|Dsus|Dsus|Fsus|Fsus" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Maiden Voyage: roots on the rhythm","opts":{"bassFeel":"maiden"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7 D7|Gmaj7 Em7|Am7 D7|Gmaj7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Maiden Voyage: roots on the rhythm","opts":{"bassFeel":"maiden"}}]'></div>
+
+### In other styles
+
+The same bass line in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Boogaloo**
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Maiden Voyage: roots on the rhythm","opts":{"bassFeel":"maiden"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted).
+- **The same idea elsewhere in the band:** [Maiden Voyage](chords.qmd#chords-maiden) (comping rhythm).
+- **Plays with, in bossa nova:** [Bossa nova](chords.qmd#chords-bossa) (comping rhythm), [Bossa nova](drums.qmd#drums-bossa) (drum groove).
+- **Other bass lines in the From tunes group:** [So What: the bass call](bass.qmd#bass-sowhat), [Killer Joe: two-bar vamp](bass.qmd#bass-killerjoe), [Song for My Father: root, fifth, octave](bass.qmd#bass-songfather), [Footprints: waltz ostinato](bass.qmd#bass-footprints), [All Blues: 6/8 vamp](bass.qmd#bass-allblues), [Chameleon: chromatic pickup](bass.qmd#bass-chameleon), [Take Five: 3 + 2](bass.qmd#bass-takefive).
+
+## Take Five: 3 + 2 {#bass-takefive}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Take Five: 3 + 2**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+For 5/4: root on 1, fifth on the and of 2, then the root on 4 and 5.
+
+It belongs in *Swing*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="swing" data-chart="Ebm7|Bbm7|Ebm7|Bbm7" data-tempo="168" data-on="bass comp drums congas" data-staves="bass drums" data-meter="5/4" data-choice-label="Bass line:" data-choices='[{"label":"Take Five: 3 + 2","opts":{"bassFeel":"takefive"}}]'></div>
+
+### Step 1: Held roots (the bass voice)
+
+Start with something simpler. The root of every chord, held until the next chord: the bass part of a four-part hymn.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-held) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Ebm7|Bbm7|Ebm7|Bbm7" data-tempo="118" data-on="bass drums" data-staves="bass" data-meter="5/4" data-choice-label="Step:" data-choices='[{"label":"Held roots (the bass voice)","opts":{"bassFeel":"held"}}]'></div>
+
+### Step 2: Roots on 1 and 3
+
+The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Ebm7|Bbm7|Ebm7|Bbm7" data-tempo="118" data-on="bass drums" data-staves="bass" data-meter="5/4" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 3: Take Five: 3 + 2, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Count 1-2-3, 4-5. Root on 1, fifth on the and of 2, root on 4 and 5. Say the count aloud until 5/4 stops feeling like 4/4 with a beat too many.
+
+<div class="ar-demo" data-style="swing" data-chart="Ebm7|Bbm7|Ebm7|Bbm7" data-tempo="118" data-on="bass drums" data-staves="bass" data-meter="5/4" data-choice-label="Compare:" data-choices='[{"label":"Take Five: 3 + 2","opts":{"bassFeel":"takefive"}},{"label":"Roots on 1 and 3 (the step before)","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 168 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="swing" data-chart="Ebm7|Bbm7|Ebm7|Bbm7" data-tempo="168" data-on="bass comp drums congas" data-staves="bass drums" data-meter="5/4" data-choice-label="Bass line:" data-choices='[{"label":"Take Five: 3 + 2","opts":{"bassFeel":"takefive"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Held roots (the bass voice)](bass.qmd#bass-held), [Roots on 1 and 3](bass.qmd#bass-halves).
+- **The same idea elsewhere in the band:** [Take Five vamp](chords.qmd#chords-takefive) (comping rhythm).
+- **Plays with, in swing:** [Varied](chords.qmd#chords-auto) (comping rhythm), [Jazz time](drums.qmd#drums-auto) (drum groove).
+- **Other bass lines in the From tunes group:** [So What: the bass call](bass.qmd#bass-sowhat), [Killer Joe: two-bar vamp](bass.qmd#bass-killerjoe), [Song for My Father: root, fifth, octave](bass.qmd#bass-songfather), [Footprints: waltz ostinato](bass.qmd#bass-footprints), [All Blues: 6/8 vamp](bass.qmd#bass-allblues), [Chameleon: chromatic pickup](bass.qmd#bass-chameleon), [Maiden Voyage: roots on the rhythm](bass.qmd#bass-maiden).
+
+## Roots on every beat {#bass-roots}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Roots on every beat**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The root of the chord on every beat and nothing else. The plainest line there is, under driving eighths or a strummed song.
+
+It belongs in *Straight-eighth rock*, *Piano ballad*, *Boom-chick*, *Ska / reggae*, *Acoustic strum*, *Hymn (four parts)*, *Folk carol* and *Emo / pop-punk*. Here it is in the straight-eighth rock style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 1: Held roots (the bass voice)
+
+Start with something simpler. The root of every chord, held until the next chord: the bass part of a four-part hymn.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-held) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Held roots (the bass voice)","opts":{"bassFeel":"held"}}]'></div>
+
+### Step 2: Roots on 1 and 3
+
+The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 3: Roots on every beat, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** A root on every beat, every note the same length. Keep the plucking hand alternating (index, middle) and the fretting finger down for the whole bar. The test is evenness: record yourself and listen for one beat that is louder or later than the others.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}},{"label":"Roots on 1 and 3 (the step before)","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 112 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="rock" data-chart="C G|Am F|C G|F G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 6: In 3/4
+
+The same pattern in a waltz: three beats to the bar. Listen for what it keeps and what it drops when the bar is a beat shorter.
+
+<div class="ar-demo" data-style="waltz" data-chart="C|C|F|F|G7|G7|C|C" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-meter="3/4" data-choice-label="Bass line:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+### In other styles
+
+The same bass line in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Piano ballad**
+
+<div class="ar-demo" data-style="pop" data-chart="C|Am|F|G" data-tempo="72" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+**Boom-chick**
+
+<div class="ar-demo" data-style="folk" data-chart="G|C|D|G" data-tempo="104" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+**Ska / reggae**
+
+<div class="ar-demo" data-style="reggae" data-chart="C|F|G|C" data-tempo="80" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Held roots (the bass voice)](bass.qmd#bass-held), [Roots on 1 and 3](bass.qmd#bass-halves).
+- **Leads to:** [Root eighths](bass.qmd#bass-eighths), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted), [Octaves (disco)](bass.qmd#bass-octaves), [Root and fifth on every beat](bass.qmd#bass-polka), [Chord tones (learning to walk)](bass.qmd#bass-arp), [Boogie-woogie](bass.qmd#bass-boogie), [Boogie-woogie octaves](bass.qmd#bass-boogie-oct), [Chameleon: chromatic pickup](bass.qmd#bass-chameleon): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Quarter-note chords](chords.qmd#chords-quarters) (comping rhythm), [Strum: downstrokes on the beat](chords.qmd#chords-strum-quarters) (comping rhythm), [Hi-hat: quarter notes](drums.qmd#drums-hhquarters) (drum groove).
+- **Plays with, in straight-eighth rock:** [Strum: down-up eighths](chords.qmd#chords-strum-eights) (comping rhythm), [Rock backbeat](drums.qmd#drums-rock) (drum groove).
+- **Other bass lines in the Folk, rock and pop group:** [Root and fifth](bass.qmd#bass-alt), [Root and fifth on every beat](bass.qmd#bass-polka), [3+3+2 (tresillo)](bass.qmd#bass-tresillo), [Root eighths](bass.qmd#bass-eighths), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted), [Octaves (disco)](bass.qmd#bass-octaves), [Motown: root, fifth, octave](bass.qmd#bass-motown), [12/8 ballad](bass.qmd#bass-twelve8).
+
+## Root and fifth {#bass-alt}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Root and fifth**. It is built up from a simpler pattern, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The boom of boom-chick: the root on beat 1 and the fifth on beat 3, short, the same every bar. In 3/4 it is one note a bar, root one bar and fifth the next.
+
+It belongs in *Boom-chick*, *Calypso*, *Ska / reggae*, *Country train beat*, *Acoustic strum*, *Folk carol*, *Waltz (in one)*, *John Prine Fingerpicking*, *Stride piano* and *Ragtime*. Here it is in the boom-chick style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="folk" data-chart="G|C|D|G" data-tempo="104" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Root and fifth","opts":{"bassFeel":"alt"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="folk" data-chart="G|C|D|G" data-tempo="72" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Root and fifth, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Root on 1, fifth on 3, both short so the chords can be heard on 2 and 4. The fifth is one string up and two frets up from the root, or on the string below at the same fret: use whichever is closer to the next root.
+
+<div class="ar-demo" data-style="folk" data-chart="G|C|D|G" data-tempo="72" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Root and fifth","opts":{"bassFeel":"alt"}},{"label":"Roots on 1 and 3 (the step before)","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 3: Up to tempo, with the band
+
+The whole band, at 104 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="folk" data-chart="G|C|D|G" data-tempo="104" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Root and fifth","opts":{"bassFeel":"alt"}}]'></div>
+
+### Step 4: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="folk" data-chart="G C|D G|C D|G" data-tempo="104" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Root and fifth","opts":{"bassFeel":"alt"}}]'></div>
+
+### Step 5: In 3/4
+
+The same pattern in a waltz: three beats to the bar. Listen for what it keeps and what it drops when the bar is a beat shorter.
+
+<div class="ar-demo" data-style="waltz" data-chart="C|C|F|F|G7|G7|C|C" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-meter="3/4" data-choice-label="Bass line:" data-choices='[{"label":"Root and fifth","opts":{"bassFeel":"alt"}}]'></div>
+
+### In other styles
+
+The same bass line in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Calypso**
+
+<div class="ar-demo" data-style="calypso" data-chart="C|F|G7|C" data-tempo="110" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Root and fifth","opts":{"bassFeel":"alt"}}]'></div>
+
+**Ska / reggae**
+
+<div class="ar-demo" data-style="reggae" data-chart="C|F|G|C" data-tempo="80" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Root and fifth","opts":{"bassFeel":"alt"}}]'></div>
+
+**Country train beat**
+
+<div class="ar-demo" data-style="train" data-chart="G|G|C|D" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Root and fifth","opts":{"bassFeel":"alt"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves).
+- **Leads to:** [Root and fifth on every beat](bass.qmd#bass-polka), [Motown: root, fifth, octave](bass.qmd#bass-motown), [Bossa nova](bass.qmd#bass-bossa), [Tumbao](bass.qmd#bass-tumbao), [Cha-cha](bass.qmd#bass-chacha), [Footprints: waltz ostinato](bass.qmd#bass-footprints): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Boom-chick / oom-pah-pah](chords.qmd#chords-oompah) (comping rhythm), [Two-beat](drums.qmd#drums-boomchick) (drum groove), [Fingerpicking: thumb, pinch-and](chords.qmd#chords-prine) (comping rhythm), [Fingerpicking: Travis pattern](chords.qmd#chords-travis) (comping rhythm), [Stride](chords.qmd#chords-stride) (comping rhythm), [Two-feel](bass.qmd#bass-two) (bass line).
+- **Plays with, in boom-chick:** [Boom-chick / oom-pah-pah](chords.qmd#chords-oompah) (comping rhythm), [Two-beat](drums.qmd#drums-boomchick) (drum groove).
+- **Other bass lines in the Folk, rock and pop group:** [Roots on every beat](bass.qmd#bass-roots), [Root and fifth on every beat](bass.qmd#bass-polka), [3+3+2 (tresillo)](bass.qmd#bass-tresillo), [Root eighths](bass.qmd#bass-eighths), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted), [Octaves (disco)](bass.qmd#bass-octaves), [Motown: root, fifth, octave](bass.qmd#bass-motown), [12/8 ballad](bass.qmd#bass-twelve8).
+
+## Root and fifth on every beat {#bass-polka}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Root and fifth on every beat**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+Root, fifth, root, fifth: a note on every beat, short. Now and then, mostly at the end of a four-bar phrase, the last three eighth notes of the bar run up the scale (5-6-7) into the next bar's root. In 3/4 it is root, fifth, fifth.
+
+It belongs in *Freylekhs / polka* and *Boom-chick*. Here it is in the freylekhs / polka style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="freylekhs" data-chart="Dm|Dm|A7|Dm" data-tempo="132" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Root and fifth on every beat","opts":{"bassFeel":"polka"}}]'></div>
+
+### Step 1: Root and fifth
+
+Start with something simpler. The boom of boom-chick: the root on beat 1 and the fifth on beat 3, short, the same every bar. In 3/4 it is one note a bar, root one bar and fifth the next.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-alt) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="freylekhs" data-chart="Dm|Dm|A7|Dm" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Root and fifth","opts":{"bassFeel":"alt"}}]'></div>
+
+### Step 2: Roots on every beat
+
+The root of the chord on every beat and nothing else. The plainest line there is, under driving eighths or a strummed song.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-roots) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="freylekhs" data-chart="Dm|Dm|A7|Dm" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 3: Root and fifth on every beat, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Root, fifth, root, fifth: a short note on every beat. Get it steady at a slow tempo first, then add the run: the last three eighths of a phrase's last bar step up the scale (5, 6, 7) into the next root.
+
+<div class="ar-demo" data-style="freylekhs" data-chart="Dm|Dm|A7|Dm" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Root and fifth on every beat","opts":{"bassFeel":"polka"}},{"label":"Roots on every beat (the step before)","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 132 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="freylekhs" data-chart="Dm|Dm|A7|Dm" data-tempo="132" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Root and fifth on every beat","opts":{"bassFeel":"polka"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="freylekhs" data-chart="Dm Gm|A7 Dm|Gm A7|Dm" data-tempo="132" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Root and fifth on every beat","opts":{"bassFeel":"polka"}}]'></div>
+
+### Step 6: In 3/4
+
+The same pattern in a waltz: three beats to the bar. Listen for what it keeps and what it drops when the bar is a beat shorter.
+
+<div class="ar-demo" data-style="waltz" data-chart="C|C|F|F|G7|G7|C|C" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-meter="3/4" data-choice-label="Bass line:" data-choices='[{"label":"Root and fifth on every beat","opts":{"bassFeel":"polka"}}]'></div>
+
+### In other styles
+
+The same bass line in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Boom-chick**
+
+<div class="ar-demo" data-style="folk" data-chart="G|C|D|G" data-tempo="104" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Root and fifth on every beat","opts":{"bassFeel":"polka"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Root and fifth](bass.qmd#bass-alt), [Roots on every beat](bass.qmd#bass-roots).
+- **The same idea elsewhere in the band:** [Every off-beat](chords.qmd#chords-upbeats) (comping rhythm).
+- **Plays with, in freylekhs / polka:** [Every off-beat](chords.qmd#chords-upbeats) (comping rhythm), [Two-beat](drums.qmd#drums-boomchick) (drum groove).
+- **Other bass lines in the Folk, rock and pop group:** [Roots on every beat](bass.qmd#bass-roots), [Root and fifth](bass.qmd#bass-alt), [3+3+2 (tresillo)](bass.qmd#bass-tresillo), [Root eighths](bass.qmd#bass-eighths), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted), [Octaves (disco)](bass.qmd#bass-octaves), [Motown: root, fifth, octave](bass.qmd#bass-motown), [12/8 ballad](bass.qmd#bass-twelve8).
+
+## 3+3+2 (tresillo) {#bass-tresillo}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **3+3+2 (tresillo)**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The root on beat 1 and on the and of 2, the fifth on beat 4: eight eighth notes grouped 3+3+2.
+
+It belongs in *Dance pop*, *Straight-eighth rock* and *Reggaeton*. Here it is in the dance pop style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"3+3+2 (tresillo)","opts":{"bassFeel":"tresillo"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Dotted (1, and of 2, 3)
+
+The root on beat 1, again on the and of 2 and on beat 3, the same rhythm as the kick drum. Every second bar ends with an eighth note that leads into the next chord.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-dotted) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### Step 3: 3+3+2 (tresillo), slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Count eight eighth notes and play on 1, 4 and 7: ONE two three FOUR five six SEVEN eight. That is beat 1, the and of 2 and beat 4. The first two notes are the root, the last the fifth. It is the dotted line with its third note moved later.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"3+3+2 (tresillo)","opts":{"bassFeel":"tresillo"}},{"label":"Dotted (1, and of 2, 3) (the step before)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 120 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"3+3+2 (tresillo)","opts":{"bassFeel":"tresillo"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="dance" data-chart="Am F|C G|Am F|C G" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"3+3+2 (tresillo)","opts":{"bassFeel":"tresillo"}}]'></div>
+
+### In other styles
+
+The same bass line in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Straight-eighth rock**
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"3+3+2 (tresillo)","opts":{"bassFeel":"tresillo"}}]'></div>
+
+**Reggaeton**
+
+<div class="ar-demo" data-style="reggaeton" data-chart="Am|F|C|G" data-tempo="92" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"3+3+2 (tresillo)","opts":{"bassFeel":"tresillo"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted).
+- **The same idea elsewhere in the band:** [3+3+2 (tresillo)](chords.qmd#chords-tresillo) (comping rhythm), [Strum: 3-3-2 accents](chords.qmd#chords-strum332) (comping rhythm), [Ballad: syncopated](chords.qmd#chords-ball-sync) (comping rhythm), [Reggaeton (dembow)](drums.qmd#drums-dembow) (drum groove).
+- **Plays with, in dance pop:** [3+3+2 (tresillo)](chords.qmd#chords-tresillo) (comping rhythm), [Four on the floor](drums.qmd#drums-dance) (drum groove).
+- **Other bass lines in the Folk, rock and pop group:** [Roots on every beat](bass.qmd#bass-roots), [Root and fifth](bass.qmd#bass-alt), [Root and fifth on every beat](bass.qmd#bass-polka), [Root eighths](bass.qmd#bass-eighths), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted), [Octaves (disco)](bass.qmd#bass-octaves), [Motown: root, fifth, octave](bass.qmd#bass-motown), [12/8 ballad](bass.qmd#bass-twelve8).
+
+## Root eighths {#bass-eighths}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Root eighths**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The root on every eighth note, the beats a little louder: the rock bass line under With or Without You and a thousand others.
+
+It belongs in *Straight-eighth rock* and *Emo / pop-punk*. Here it is in the straight-eighth rock style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Root eighths","opts":{"bassFeel":"eighths"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Roots on every beat
+
+The root of the chord on every beat and nothing else. The plainest line there is, under driving eighths or a strummed song.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-roots) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 3: Root eighths, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Eight even roots a bar, a little heavier on the beats. On bass, alternate two fingers or use downstrokes with a pick, and mute with the fretting hand between notes so they do not blur. Lock with the kick drum: the beats are where it lands.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Root eighths","opts":{"bassFeel":"eighths"}},{"label":"Roots on every beat (the step before)","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 112 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Root eighths","opts":{"bassFeel":"eighths"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="rock" data-chart="C G|Am F|C G|F G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Root eighths","opts":{"bassFeel":"eighths"}}]'></div>
+
+### In other styles
+
+The same bass line in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Emo / pop-punk**
+
+<div class="ar-demo" data-style="emo" data-chart="C|G|Am|F" data-tempo="150" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Root eighths","opts":{"bassFeel":"eighths"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves), [Roots on every beat](bass.qmd#bass-roots).
+- **Leads to:** [Octaves (disco)](bass.qmd#bass-octaves): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Driving eighths](chords.qmd#chords-eighths) (comping rhythm), [Strum: down-up eighths](chords.qmd#chords-strum-eights) (comping rhythm), [Hi-hat: eighth notes](drums.qmd#drums-hheighths) (drum groove), [Strum: muted eighths, open in the chorus](chords.qmd#chords-strum-punk) (comping rhythm), [Rock backbeat](drums.qmd#drums-rock) (drum groove).
+- **Plays with, in straight-eighth rock:** [Strum: down-up eighths](chords.qmd#chords-strum-eights) (comping rhythm), [Rock backbeat](drums.qmd#drums-rock) (drum groove).
+- **Other bass lines in the Folk, rock and pop group:** [Roots on every beat](bass.qmd#bass-roots), [Root and fifth](bass.qmd#bass-alt), [Root and fifth on every beat](bass.qmd#bass-polka), [3+3+2 (tresillo)](bass.qmd#bass-tresillo), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted), [Octaves (disco)](bass.qmd#bass-octaves), [Motown: root, fifth, octave](bass.qmd#bass-motown), [12/8 ballad](bass.qmd#bass-twelve8).
+
+## Dotted (1, and of 2, 3) {#bass-dotted}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Dotted (1, and of 2, 3)**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The root on beat 1, again on the and of 2 and on beat 3, the same rhythm as the kick drum. Every second bar ends with an eighth note that leads into the next chord.
+
+It belongs in *Acoustic strum*, *Piano ballad*, *Straight-eighth rock* and *Emo / pop-punk*. Here it is in the acoustic strum style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="96" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="68" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Roots on every beat
+
+The root of the chord on every beat and nothing else. The plainest line there is, under driving eighths or a strummed song.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-roots) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="68" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 3: Dotted (1, and of 2, 3), slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Say it: ONE (and) two AND three. The note on the and of 2 is the push that makes it pop music. Every second bar, the last eighth note walks into the next root from a step below or above.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="68" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}},{"label":"Roots on every beat (the step before)","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 96 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="96" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="strum" data-chart="C G|Am F|C G|F G" data-tempo="96" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### In other styles
+
+The same bass line in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Piano ballad**
+
+<div class="ar-demo" data-style="pop" data-chart="C|Am|F|G" data-tempo="72" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}}]'></div>
+
+**Straight-eighth rock**
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}}]'></div>
+
+**Emo / pop-punk**
+
+<div class="ar-demo" data-style="emo" data-chart="C|G|Am|F" data-tempo="150" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves), [Roots on every beat](bass.qmd#bass-roots).
+- **Leads to:** [3+3+2 (tresillo)](bass.qmd#bass-tresillo), [Motown: root, fifth, octave](bass.qmd#bass-motown), [Tango (habanera)](bass.qmd#bass-tango), [Boogaloo riff](bass.qmd#bass-riff), [Song for My Father: root, fifth, octave](bass.qmd#bass-songfather), [Maiden Voyage: roots on the rhythm](bass.qmd#bass-maiden): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Pop backbeat](drums.qmd#drums-strum) (drum groove), [Song for My Father: root, fifth, octave](bass.qmd#bass-songfather) (bass line), [Ballad](drums.qmd#drums-ballad) (drum groove), [Ballad: rocking](chords.qmd#chords-ball-rock) (comping rhythm).
+- **Plays with, in acoustic strum:** [Strum: D, D-U, U-D-U](chords.qmd#chords-strum-camp) (comping rhythm), [Pop backbeat](drums.qmd#drums-strum) (drum groove).
+- **Other bass lines in the Folk, rock and pop group:** [Roots on every beat](bass.qmd#bass-roots), [Root and fifth](bass.qmd#bass-alt), [Root and fifth on every beat](bass.qmd#bass-polka), [3+3+2 (tresillo)](bass.qmd#bass-tresillo), [Root eighths](bass.qmd#bass-eighths), [Octaves (disco)](bass.qmd#bass-octaves), [Motown: root, fifth, octave](bass.qmd#bass-motown), [12/8 ballad](bass.qmd#bass-twelve8).
+
+## Octaves (disco) {#bass-octaves}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Octaves (disco)**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The root on every beat and the root an octave up on every off-beat.
+
+It belongs in *Dance pop*. Here it is in the dance pop style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Octaves (disco)","opts":{"bassFeel":"octaves"}}]'></div>
+
+### Step 1: Roots on every beat
+
+Start with something simpler. The root of the chord on every beat and nothing else. The plainest line there is, under driving eighths or a strummed song.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-roots) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+### Step 2: Root eighths
+
+The root on every eighth note, the beats a little louder: the rock bass line under With or Without You and a thousand others.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-eighths) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Root eighths","opts":{"bassFeel":"eighths"}}]'></div>
+
+### Step 3: Octaves (disco), slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Root on the beat, the same note an octave higher on the off-beat. The octave is two strings up and two frets up: the hand stays in one place and the plucking hand jumps strings. Keep both notes short and the off-beats as loud as the beats.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Octaves (disco)","opts":{"bassFeel":"octaves"}},{"label":"Root eighths (the step before)","opts":{"bassFeel":"eighths"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 120 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Octaves (disco)","opts":{"bassFeel":"octaves"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="dance" data-chart="Am F|C G|Am F|C G" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Octaves (disco)","opts":{"bassFeel":"octaves"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on every beat](bass.qmd#bass-roots), [Root eighths](bass.qmd#bass-eighths).
+- **Leads to:** [Boogie-woogie octaves](bass.qmd#bass-boogie-oct): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Four on the floor](drums.qmd#drums-dance) (drum groove), [Hi-hat: open off-beats](drums.qmd#drums-hhdance) (drum groove).
+- **Plays with, in dance pop:** [3+3+2 (tresillo)](chords.qmd#chords-tresillo) (comping rhythm), [Four on the floor](drums.qmd#drums-dance) (drum groove).
+- **Other bass lines in the Folk, rock and pop group:** [Roots on every beat](bass.qmd#bass-roots), [Root and fifth](bass.qmd#bass-alt), [Root and fifth on every beat](bass.qmd#bass-polka), [3+3+2 (tresillo)](bass.qmd#bass-tresillo), [Root eighths](bass.qmd#bass-eighths), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted), [Motown: root, fifth, octave](bass.qmd#bass-motown), [12/8 ballad](bass.qmd#bass-twelve8).
+
+## Motown: root, fifth, octave {#bass-motown}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Motown: root, fifth, octave**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+A two-bar line: the root on 1 and the and of 2, the fifth on 3, then the octave and fifth in eighths; the second bar ends by leading into the next chord. A plain stand-in for a Motown bass part, which would move far more.
+
+It belongs in *Motown / soul*. Here it is in the motown / soul style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="motown" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Motown: root, fifth, octave","opts":{"bassFeel":"motown"}}]'></div>
+
+### Step 1: Root and fifth
+
+Start with something simpler. The boom of boom-chick: the root on beat 1 and the fifth on beat 3, short, the same every bar. In 3/4 it is one note a bar, root one bar and fifth the next.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-alt) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="motown" data-chart="C|Am|F|G" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Root and fifth","opts":{"bassFeel":"alt"}}]'></div>
+
+### Step 2: Dotted (1, and of 2, 3)
+
+The root on beat 1, again on the and of 2 and on beat 3, the same rhythm as the kick drum. Every second bar ends with an eighth note that leads into the next chord.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-dotted) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="motown" data-chart="C|Am|F|G" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### Step 3: Motown: root, fifth, octave, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** A two-bar line. The first bar is the dotted rhythm with the fifth on beat 3, then octave and fifth in eighths. The second bar leads by step into the next chord. Play it lightly and short; a Motown bass part bounces.
+
+<div class="ar-demo" data-style="motown" data-chart="C|Am|F|G" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Motown: root, fifth, octave","opts":{"bassFeel":"motown"}},{"label":"Dotted (1, and of 2, 3) (the step before)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 112 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="motown" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Motown: root, fifth, octave","opts":{"bassFeel":"motown"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="motown" data-chart="C Am|F G|C Am|F G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Motown: root, fifth, octave","opts":{"bassFeel":"motown"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Root and fifth](bass.qmd#bass-alt), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted).
+- **The same idea elsewhere in the band:** [The Barbara Ann rhythm](chords.qmd#chords-barbara) (comping rhythm), [Motown](drums.qmd#drums-motown) (drum groove).
+- **Plays with, in motown / soul:** [The Barbara Ann rhythm](chords.qmd#chords-barbara) (comping rhythm), [Motown](drums.qmd#drums-motown) (drum groove).
+- **Other bass lines in the Folk, rock and pop group:** [Roots on every beat](bass.qmd#bass-roots), [Root and fifth](bass.qmd#bass-alt), [Root and fifth on every beat](bass.qmd#bass-polka), [3+3+2 (tresillo)](bass.qmd#bass-tresillo), [Root eighths](bass.qmd#bass-eighths), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted), [Octaves (disco)](bass.qmd#bass-octaves), [12/8 ballad](bass.qmd#bass-twelve8).
+
+## 12/8 ballad {#bass-twelve8}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **12/8 ballad**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+Long notes on beats 1 and 3, root then fifth, each set up by a short note on the last eighth of the beat before.
+
+It belongs in *12/8 doo-wop*. Here it is in the 12/8 doo-wop style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="doowop" data-chart="C|Am|F|G" data-tempo="66" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"12/8 ballad","opts":{"bassFeel":"twelve8"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="doowop" data-chart="C|Am|F|G" data-tempo="50" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Two-feel
+
+Half notes on beats 1 and 3, root then fifth, with an occasional pickup into the next bar. The lighter feel a band often plays on the head before the bass starts to walk.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-two) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="doowop" data-chart="C|Am|F|G" data-tempo="50" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Two-feel","opts":{"bassFeel":"two"}}]'></div>
+
+### Step 3: 12/8 ballad, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Count the bar as four beats of three: ONE-and-a TWO-and-a. The long notes on 1 and 3 (root, then fifth) each have a short pickup on the last eighth before them. Let the long notes ring; keep the pickup light.
+
+<div class="ar-demo" data-style="doowop" data-chart="C|Am|F|G" data-tempo="50" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"12/8 ballad","opts":{"bassFeel":"twelve8"}},{"label":"Two-feel (the step before)","opts":{"bassFeel":"two"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 66 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="doowop" data-chart="C|Am|F|G" data-tempo="66" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"12/8 ballad","opts":{"bassFeel":"twelve8"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="doowop" data-chart="C Am|F G|C Am|F G" data-tempo="66" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"12/8 ballad","opts":{"bassFeel":"twelve8"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves), [Two-feel](bass.qmd#bass-two).
+- **Leads to:** [All Blues: 6/8 vamp](bass.qmd#bass-allblues): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Triplet chords (12/8)](chords.qmd#chords-triplets) (comping rhythm), [12/8](drums.qmd#drums-twelve8) (drum groove), [Blues shuffle](drums.qmd#drums-shuffle) (drum groove), [All Blues: 6/8 vamp](bass.qmd#bass-allblues) (bass line).
+- **Plays with, in 12/8 doo-wop:** [Triplet chords (12/8)](chords.qmd#chords-triplets) (comping rhythm), [12/8](drums.qmd#drums-twelve8) (drum groove).
+- **Other bass lines in the Folk, rock and pop group:** [Roots on every beat](bass.qmd#bass-roots), [Root and fifth](bass.qmd#bass-alt), [Root and fifth on every beat](bass.qmd#bass-polka), [3+3+2 (tresillo)](bass.qmd#bass-tresillo), [Root eighths](bass.qmd#bass-eighths), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted), [Octaves (disco)](bass.qmd#bass-octaves), [Motown: root, fifth, octave](bass.qmd#bass-motown).
+
+## Held roots (the bass voice) {#bass-held}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Held roots (the bass voice)**. It is one of the first patterns to learn, so this page starts from it and takes it into the band. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The root of every chord, held until the next chord: the bass part of a four-part hymn.
+
+It belongs in *Hymn (four parts)*, *Folk carol* and *Piano ballad*. Here it is in the hymn (four parts) style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="hymn" data-chart="C|F|G|C" data-tempo="80" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Held roots (the bass voice)","opts":{"bassFeel":"held"}}]'></div>
+
+### Step 1: Held roots (the bass voice), slowly
+
+**How to play it.** Pluck once, then let the note ring right through the bar: the left hand keeps the string down until the chord changes. This is the whole job of the bass in a hymn: the lowest voice, held. Listen to how each new root moves the chord above it.
+
+<div class="ar-demo" data-style="hymn" data-chart="C|F|G|C" data-tempo="56" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Held roots (the bass voice)","opts":{"bassFeel":"held"}}]'></div>
+
+### Step 2: Up to tempo, with the band
+
+The whole band, at 80 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="hymn" data-chart="C|F|G|C" data-tempo="80" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Held roots (the bass voice)","opts":{"bassFeel":"held"}}]'></div>
+
+### Step 3: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="hymn" data-chart="C F|G C|Am F|G C" data-tempo="80" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Held roots (the bass voice)","opts":{"bassFeel":"held"}}]'></div>
+
+### Step 4: In 3/4
+
+The same pattern in a waltz: three beats to the bar. Listen for what it keeps and what it drops when the bar is a beat shorter.
+
+<div class="ar-demo" data-style="waltz" data-chart="C|C|F|F|G7|G7|C|C" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-meter="3/4" data-choice-label="Bass line:" data-choices='[{"label":"Held roots (the bass voice)","opts":{"bassFeel":"held"}}]'></div>
+
+### In other styles
+
+The same bass line in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Folk carol**
+
+<div class="ar-demo" data-style="carol" data-chart="G|C|D|G" data-tempo="96" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Held roots (the bass voice)","opts":{"bassFeel":"held"}}]'></div>
+
+**Piano ballad**
+
+<div class="ar-demo" data-style="pop" data-chart="C|Am|F|G" data-tempo="72" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Held roots (the bass voice)","opts":{"bassFeel":"held"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Leads to:** [Roots on 1 and 3](bass.qmd#bass-halves), [Roots on every beat](bass.qmd#bass-roots), [So What: the bass call](bass.qmd#bass-sowhat), [All Blues: 6/8 vamp](bass.qmd#bass-allblues), [Chameleon: chromatic pickup](bass.qmd#bass-chameleon), [Take Five: 3 + 2](bass.qmd#bass-takefive): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Roots on 1 and 3](bass.qmd#bass-halves) (bass line), [Long notes](chords.qmd#chords-pad) (comping rhythm), [Hymn: four parts](chords.qmd#chords-hymn) (comping rhythm), [Light time](drums.qmd#drums-brushes) (drum groove).
+- **Plays with, in hymn (four parts):** [Hymn: four parts](chords.qmd#chords-hymn) (comping rhythm).
+- **Other bass lines in the Hymns and carols group:** [Roots on 1 and 3](bass.qmd#bass-halves).
+
+## Roots on 1 and 3 {#bass-halves}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Roots on 1 and 3**. It is built up from a simpler pattern, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+It belongs in *Folk carol*, *Hymn (four parts)*, *Piano ballad* and *Acoustic strum*. Here it is in the folk carol style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="carol" data-chart="G|C|D|G" data-tempo="96" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 1: Held roots (the bass voice)
+
+Start with something simpler. The root of every chord, held until the next chord: the bass part of a four-part hymn.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-held) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="carol" data-chart="G|C|D|G" data-tempo="68" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Held roots (the bass voice)","opts":{"bassFeel":"held"}}]'></div>
+
+### Step 2: Roots on 1 and 3, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Two notes a bar, both the root. Count 1-2-3-4 aloud and pluck on 1 and 3. Let each note last its full two beats; the gap before the next one should be tiny. When a bar has two chords, the second root simply arrives on beat 3.
+
+<div class="ar-demo" data-style="carol" data-chart="G|C|D|G" data-tempo="68" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}},{"label":"Held roots (the bass voice) (the step before)","opts":{"bassFeel":"held"}}]'></div>
+
+### Step 3: Up to tempo, with the band
+
+The whole band, at 96 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="carol" data-chart="G|C|D|G" data-tempo="96" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 4: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="carol" data-chart="G C|D G|C D|G" data-tempo="96" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 5: In 3/4
+
+The same pattern in a waltz: three beats to the bar. Listen for what it keeps and what it drops when the bar is a beat shorter.
+
+<div class="ar-demo" data-style="waltz" data-chart="C|C|F|F|G7|G7|C|C" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-meter="3/4" data-choice-label="Bass line:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### In other styles
+
+The same bass line in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Hymn (four parts)**
+
+<div class="ar-demo" data-style="hymn" data-chart="C|F|G|C" data-tempo="80" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+**Piano ballad**
+
+<div class="ar-demo" data-style="pop" data-chart="C|Am|F|G" data-tempo="72" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+**Acoustic strum**
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="96" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Held roots (the bass voice)](bass.qmd#bass-held).
+- **Leads to:** [Roots on every beat](bass.qmd#bass-roots), [Root and fifth](bass.qmd#bass-alt), [Root eighths](bass.qmd#bass-eighths), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted), [3+3+2 (tresillo)](bass.qmd#bass-tresillo), [12/8 ballad](bass.qmd#bass-twelve8), [Bossa nova](bass.qmd#bass-bossa), [Tango (habanera)](bass.qmd#bass-tango), [Cha-cha](bass.qmd#bass-chacha), [Two-feel](bass.qmd#bass-two), [Chord tones (learning to walk)](bass.qmd#bass-arp), [Walking](bass.qmd#bass-walk), [Yancey figure](bass.qmd#bass-yancey), [Boogaloo riff](bass.qmd#bass-riff), [Killer Joe: two-bar vamp](bass.qmd#bass-killerjoe), [Song for My Father: root, fifth, octave](bass.qmd#bass-songfather), [Maiden Voyage: roots on the rhythm](bass.qmd#bass-maiden), [Take Five: 3 + 2](bass.qmd#bass-takefive): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Held roots (the bass voice)](bass.qmd#bass-held) (bass line), [Long notes](chords.qmd#chords-pad) (comping rhythm), [Hymn: four parts](chords.qmd#chords-hymn) (comping rhythm), [Light time](drums.qmd#drums-brushes) (drum groove).
+- **Plays with, in folk carol:** [Strum: D, D-U, D, D-U](chords.qmd#chords-strum-folk) (comping rhythm), [Light time](drums.qmd#drums-brushes) (drum groove).
+- **Other bass lines in the Hymns and carols group:** [Held roots (the bass voice)](bass.qmd#bass-held).
+
+## Bossa nova {#bass-bossa}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Bossa nova**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+Root on 1 and fifth on 3, each one set up by an eighth note just before it: the fifth on the and of 2, the next chord's root on the and of 4.
+
+It belongs in *Bossa nova*. Here it is in the bossa nova style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7|D7|Gmaj7|Gmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Bossa nova","opts":{"bassFeel":"bossa"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7|D7|Gmaj7|Gmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Root and fifth
+
+The boom of boom-chick: the root on beat 1 and the fifth on beat 3, short, the same every bar. In 3/4 it is one note a bar, root one bar and fifth the next.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-alt) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7|D7|Gmaj7|Gmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Root and fifth","opts":{"bassFeel":"alt"}}]'></div>
+
+### Step 3: Bossa nova, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Root on 1, fifth on 3, and each one set up by an eighth note just before it: the fifth on the and of 2, and on the and of 4 the root of the next bar's chord. The low notes sound like a heartbeat: long, short-long, short.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7|D7|Gmaj7|Gmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Bossa nova","opts":{"bassFeel":"bossa"}},{"label":"Root and fifth (the step before)","opts":{"bassFeel":"alt"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 120 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7|D7|Gmaj7|Gmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Bossa nova","opts":{"bassFeel":"bossa"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7 D7|Gmaj7 Em7|Am7 D7|Gmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Bossa nova","opts":{"bassFeel":"bossa"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves), [Root and fifth](bass.qmd#bass-alt).
+- **Leads to:** [Tumbao](bass.qmd#bass-tumbao): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Bossa nova](chords.qmd#chords-bossa) (comping rhythm), [Bossa nova](drums.qmd#drums-bossa) (drum groove).
+- **Plays with, in bossa nova:** [Bossa nova](chords.qmd#chords-bossa) (comping rhythm), [Bossa nova](drums.qmd#drums-bossa) (drum groove).
+- **Other bass lines in the Latin group:** [Tango (habanera)](bass.qmd#bass-tango), [Tumbao](bass.qmd#bass-tumbao), [Cha-cha](bass.qmd#bass-chacha).
+
+## Tango (habanera) {#bass-tango}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Tango (habanera)**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The habanera rhythm: root held for a beat and a half, the fifth on the and of 2, then the root an octave up on 3 and the fifth on 4.
+
+It belongs in *Tango*. Here it is in the tango style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="tango" data-chart="Am|Am|E7|Am" data-tempo="104" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Tango (habanera)","opts":{"bassFeel":"tango"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="tango" data-chart="Am|Am|E7|Am" data-tempo="72" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Dotted (1, and of 2, 3)
+
+The root on beat 1, again on the and of 2 and on beat 3, the same rhythm as the kick drum. Every second bar ends with an eighth note that leads into the next chord.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-dotted) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="tango" data-chart="Am|Am|E7|Am" data-tempo="72" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### Step 3: Tango (habanera), slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The habanera: a long root (a beat and a half), the fifth on the and of 2, then the octave on 3 and the fifth on 4. Play it marked and a little heavy, with every note clearly separated.
+
+<div class="ar-demo" data-style="tango" data-chart="Am|Am|E7|Am" data-tempo="72" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Tango (habanera)","opts":{"bassFeel":"tango"}},{"label":"Dotted (1, and of 2, 3) (the step before)","opts":{"bassFeel":"dotted"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 104 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="tango" data-chart="Am|Am|E7|Am" data-tempo="104" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Tango (habanera)","opts":{"bassFeel":"tango"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="tango" data-chart="Am Dm|E7 Am|Dm E7|Am" data-tempo="104" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Tango (habanera)","opts":{"bassFeel":"tango"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves), [Dotted (1, and of 2, 3)](bass.qmd#bass-dotted).
+- **Leads to:** [Yancey figure](bass.qmd#bass-yancey): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Tango (habanera)](chords.qmd#chords-tango) (comping rhythm), [Tango](drums.qmd#drums-tango) (drum groove).
+- **Plays with, in tango:** [Tango (habanera)](chords.qmd#chords-tango) (comping rhythm), [Tango](drums.qmd#drums-tango) (drum groove).
+- **Other bass lines in the Latin group:** [Bossa nova](bass.qmd#bass-bossa), [Tumbao](bass.qmd#bass-tumbao), [Cha-cha](bass.qmd#bass-chacha).
+
+## Tumbao {#bass-tumbao}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Tumbao**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The Cuban bass line that never plays beat 1: the fifth on the and of 2, then on beat 4 the root of the NEXT bar's chord, held over the barline.
+
+It belongs in *Son montuno* and *Cha-cha*. Here it is in the son montuno style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="100" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Tumbao","opts":{"bassFeel":"tumbao"}}]'></div>
+
+### Step 1: Root and fifth
+
+Start with something simpler. The boom of boom-chick: the root on beat 1 and the fifth on beat 3, short, the same every bar. In 3/4 it is one note a bar, root one bar and fifth the next.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-alt) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="70" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Root and fifth","opts":{"bassFeel":"alt"}}]'></div>
+
+### Step 2: Bossa nova
+
+Root on 1 and fifth on 3, each one set up by an eighth note just before it: the fifth on the and of 2, the next chord's root on the and of 4.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-bossa) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="70" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Bossa nova","opts":{"bassFeel":"bossa"}}]'></div>
+
+### Step 3: Tumbao, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Do not play on beat 1. The fifth lands on the and of 2; on beat 4 you play the root of the next bar's chord early and hold it across the barline. Count aloud and clap beat 1 while you play, so you feel where the chord changes even though you are ahead of it.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="70" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Tumbao","opts":{"bassFeel":"tumbao"}},{"label":"Bossa nova (the step before)","opts":{"bassFeel":"bossa"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 100 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="100" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Tumbao","opts":{"bassFeel":"tumbao"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="montuno" data-chart="C F|G7 C|C F|G7 C" data-tempo="100" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Tumbao","opts":{"bassFeel":"tumbao"}}]'></div>
+
+### In other styles
+
+The same bass line in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Cha-cha**
+
+<div class="ar-demo" data-style="chacha" data-chart="Am|Dm|E7|Am" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Tumbao","opts":{"bassFeel":"tumbao"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Root and fifth](bass.qmd#bass-alt), [Bossa nova](bass.qmd#bass-bossa).
+- **The same idea elsewhere in the band:** [Tumbao](congas.qmd#congas-tumbao) (conga part), [Tumbao, two drums](congas.qmd#congas-tumbao2) (conga part), [Son montuno](chords.qmd#chords-montuno) (comping rhythm), [Son clave (2-3)](drums.qmd#drums-clave) (drum groove).
+- **Plays with, in son montuno:** [Son montuno](chords.qmd#chords-montuno) (comping rhythm), [Son clave (2-3)](drums.qmd#drums-clave) (drum groove), [Tumbao, two drums](congas.qmd#congas-tumbao2) (conga part).
+- **Other bass lines in the Latin group:** [Bossa nova](bass.qmd#bass-bossa), [Tango (habanera)](bass.qmd#bass-tango), [Cha-cha](bass.qmd#bass-chacha).
+
+## Cha-cha {#bass-chacha}
+
+*For bass, built up a step at a time.*
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Cha-cha**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+Root held through beats 1 and 2, the fifth on 3 and the root again on 4.
+
+It belongs in *Cha-cha*. Here it is in the cha-cha style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="chacha" data-chart="Am|Dm|E7|Am" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Cha-cha","opts":{"bassFeel":"chacha"}}]'></div>
+
+### Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-halves) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="chacha" data-chart="Am|Dm|E7|Am" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+### Step 2: Root and fifth
+
+The boom of boom-chick: the root on beat 1 and the fifth on beat 3, short, the same every bar. In 3/4 it is one note a bar, root one bar and fifth the next.
+
+This is a pattern of its own: [the lesson on it](bass.qmd#bass-alt) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="chacha" data-chart="Am|Dm|E7|Am" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Root and fifth","opts":{"bassFeel":"alt"}}]'></div>
+
+### Step 3: Cha-cha, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Root held through 1 and 2, fifth on 3, root on 4: three notes that sit under the cha-cha-cha of the chords. Keep beat 3 and beat 4 short and even, like the dancers' feet.
+
+<div class="ar-demo" data-style="chacha" data-chart="Am|Dm|E7|Am" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Cha-cha","opts":{"bassFeel":"chacha"}},{"label":"Root and fifth (the step before)","opts":{"bassFeel":"alt"}}]'></div>
+
+### Step 4: Up to tempo, with the band
+
+The whole band, at 112 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="chacha" data-chart="Am|Dm|E7|Am" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Cha-cha","opts":{"bassFeel":"chacha"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="chacha" data-chart="Am Dm|E7 Am|Dm E7|Am" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Cha-cha","opts":{"bassFeel":"chacha"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass.qmd#bass-halves), [Root and fifth](bass.qmd#bass-alt).
+- **The same idea elsewhere in the band:** [Cha-cha](chords.qmd#chords-chacha) (comping rhythm), [Cha-cha](drums.qmd#drums-chacha) (drum groove), [Tumbao](congas.qmd#congas-tumbao) (conga part).
+- **Plays with, in cha-cha:** [Cha-cha](chords.qmd#chords-chacha) (comping rhythm), [Cha-cha](drums.qmd#drums-chacha) (drum groove), [Tumbao](congas.qmd#congas-tumbao) (conga part).
+- **Other bass lines in the Latin group:** [Bossa nova](bass.qmd#bass-bossa), [Tango (habanera)](bass.qmd#bass-tango), [Tumbao](bass.qmd#bass-tumbao).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=2"></script>

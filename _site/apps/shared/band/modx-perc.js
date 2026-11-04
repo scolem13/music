@@ -1,4 +1,4 @@
-// modx-perc.js — percussion auditions on the MODX (gear/modx-perc.qmd, global ModxPerc). Short loops written key for key
+// modx-perc.js — percussion auditions on the MODX (gear/modx.qmd, section Percussion auditions, global ModxPerc). Short loops written key for key
 // against four MODX+ drum kits, sent straight out over Web MIDI through BandModx.note, so you can hear the congas, bongos,
 // timbales, bells and brushes on the board and mark the ones you'd use.
 //

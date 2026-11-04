@@ -1,28 +1,1414 @@
 ---
 title: "Style Notes"
 subtitle: "The history behind each Backing Track style, and what to listen to"
-toc: false
+description: "Every Backing Track style: what it is, a little history, what the band plays and what it leaves out, and recordings to hear it played properly."
+toc: true
+toc-depth: 3
+toc-title: "Styles"
 ---
 
-Each style in the [Backing Track](../tools/backing-track.qmd) imitates a real band. These pages say which
+Each style in the [Backing Track](../tools/backing-track.qmd) imitates a real band. This page says which
 one: where the style came from, what the band's bass, comping and drums are copying (and what they leave
 out), and the recordings to hear it played properly.
 
 ## Jazz
-- [Swing](swing.qmd) · [Jazz ballad](ballad.qmd) · [Boogaloo](boogaloo.qmd) ·
-  [Ragtime](ragtime.qmd) · [Stride piano](stride.qmd) · [Boogie-woogie](boogie.qmd) · [Jump blues](jump.qmd)
+
+### Swing {#swing}
+
+*Walking bass, the ride cymbal and syncopated comping*
+
+[Open the Swing style in the Backing Track](../tools/backing-track.html?style=swing){.btn .btn-outline-primary}
+
+#### What it is
+
+The rhythm section of small-group jazz from the late 1930s onward: a bass that plays a note on
+every beat, a drummer whose main voice is the ride cymbal (*ding, ding-a, ding, ding-a*) with the hi-hat
+closing on 2 and 4, and a piano or guitar that "comps" (accompanies, complements): short chords placed
+off the beat, answering the soloist instead of marking time.
+
+#### A little history
+
+In the 1920s the bass part of a jazz band was usually a tuba or a slapped string bass playing on beats 1
+and 3 (the *two-beat* feel; see [Jazz ballad](#ballad)). In the Count Basie band of the mid-1930s,
+bassist Walter Page walked four even beats a bar, guitarist Freddie Green strummed a quiet chord on every
+beat, and drummer Jo Jones moved the time-keeping from the bass drum to the hi-hat. Basie himself played
+sparse fills instead of a full stride left hand. That "All-American Rhythm Section" is where the modern
+swing feel comes from.
+
+In the 1940s bebop drummers (Kenny Clarke, then Max Roach) moved the pulse to the ride cymbal and used the
+snare and bass drum for accents ("dropping bombs"). Pianists such as Bud Powell stopped playing on every
+beat and comped in short syncopated stabs. By the late 1950s, rootless left-hand voicings (Bill Evans,
+Wynton Kelly, Red Garland) became the standard piano sound: the bassist has the root, so the pianist plays
+the 3rd, 7th and colour tones. That is the sound the band's piano uses here.
+
+#### The band's version
+
+- **Bass:** *Walking*: root on beat 1, chord tones and scale steps, an approach note on beat 4.
+- **Comping:** syncopated rhythms chosen from a set of figures (the Charleston, anticipations, and so on).
+- **Drums:** ride-cymbal pattern, hi-hat on 2 and 4, light comping on the snare.
+- **Voicings:** rootless piano voicings, shell voicings on guitar. Players add unmarked 9ths and 13ths.
+
+Real walking lines move far more freely than any rule set; the band's bassist is a beginner's model.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Count Basie Orchestra, *One O'Clock Jump* | 1937 | Walter Page's four-to-the-bar bass, Freddie Green's guitar, Jo Jones on hi-hat. |
+| Count Basie, *Lester Leaps In* (Kansas City Seven) | 1939 | The same rhythm section in a small group behind Lester Young. |
+| Miles Davis Quintet, *Oleo* (*Relaxin'*) | 1956 | Paul Chambers walking, Philly Joe Jones on the ride, Red Garland's comping. |
+| Miles Davis, *Freddie Freeloader* (*Kind of Blue*) | 1959 | A jazz blues; Wynton Kelly's comping behind the horns. |
+| Oscar Peterson Trio, *C Jam Blues* (*Night Train*) | 1962 | Ray Brown's walking bass at its most driving. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Tony Bennett & Lady Gaga, *Anything Goes* (*Cheek to Cheek*) | 2014 | A small group walking and swinging behind two singers. |
+| Jon Batiste, *I Need You* (*We Are*) | 2021 | Swing-era rhythm in a Grammy-winning pop record. |
+
+#### Sources
+
+- Gunther Schuller, *The Swing Era* (Oxford, 1989), on the Basie rhythm section.
+- Paul Berliner, *Thinking in Jazz* (Chicago, 1994), chapters on the rhythm section and comping.
+- Mark Levine, *The Jazz Piano Book* (Sher, 1989), on rootless voicings.
+
+### Jazz ballad {#ballad}
+
+*Bass in two, long chords, quiet time*
+
+[Open the Jazz ballad style in the Backing Track](../tools/backing-track.html?style=ballad){.btn .btn-outline-primary}
+
+#### What it is
+
+A slow standard played by a jazz rhythm section: the bass on beats 1 and 3 (a *two-feel*), held chords on
+the piano, and brushes stirring the snare or a soft ride. The band leaves room for the melody.
+
+#### A little history
+
+The two-feel is older than walking bass. New Orleans and 1920s dance bands put the tuba or string bass on
+1 and 3, and when the bass began walking in the 1930s (see [Swing](#swing)), the two-feel stayed on as the
+lighter gear: bands play the head of a tune in two and start walking for the solos. On ballads it never
+has to leave. Brushes, used on drums since the 1920s, became the ballad sound through drummers such as Jo
+Jones and later Philly Joe Jones and Ed Thigpen. Pianists filled the long chords with the rich voicings
+that came from Ellington, Billy Strayhorn and later Bill Evans.
+
+#### The band's version
+
+- **Bass:** *Two-feel*: root on 1, fifth on 3, now and then a pickup into the next bar.
+- **Comping:** long held chords (*pad*).
+- **Drums:** quiet time. **Voicings:** rootless, with unmarked extensions.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Coleman Hawkins, *Body and Soul* | 1939 | The tenor ballad everyone learned; the band barely there. |
+| Miles Davis, *'Round Midnight* (*'Round About Midnight*) | 1956 | Harmon mute over Paul Chambers in two. |
+| Bill Evans Trio, *My Foolish Heart* (*Waltz for Debby*) | 1961 | Paul Motian's brushes; Scott LaFaro's bass. |
+| John Coltrane, *Ballads* | 1962 | A whole album of the form; McCoy Tyner's voicings. |
+| John Coltrane & Johnny Hartman, *My One and Only Love* | 1963 | Ballad accompaniment behind a singer. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Tony Bennett & Amy Winehouse, *Body and Soul* | 2011 | The same tune as Hawkins, with a quiet trio under the voices. |
+| Laufey, *Valentine* (*Everything I Know About Love*) | 2022 | A jazz-ballad band under a young pop singer. |
+
+#### Sources
+
+- Paul Berliner, *Thinking in Jazz* (Chicago, 1994), on the two-feel and on brushes.
+- Ted Gioia, *The Jazz Standards* (Oxford, 2012), entries for the tunes above.
+
+### Boogaloo {#boogaloo}
+
+*Straight eighths, a bass riff and chord stabs, from soul jazz*
+
+[Open the Boogaloo style in the Backing Track](../tools/backing-track.html?style=boogaloo){.btn .btn-outline-primary}
+
+#### What it is
+
+A jazz band playing straight (not swung) eighth notes over a repeated bass figure, with piano or organ
+chords locked to the riff and a backbeat on the drums. It sits between hard bop, R&B and Latin music.
+
+#### A little history
+
+The word covers two related things from the mid-1960s. **Latin boogaloo** was a New York dance music that
+mixed Cuban son and mambo with R&B; Joe Cuba's *Bang! Bang!* (1966) and Pete Rodríguez's *I Like It Like
+That* (1967) were hits. In jazz, **soul jazz** players on labels like Blue Note took up the same straight
+eighths. Herbie Hancock's *Watermelon Man* (1962) and Lee Morgan's *The Sidewinder* (recorded 1963) came first,
+and Lou Donaldson's *Alligator Bogaloo* (1967) put the name on the jazz version. Drummers such as Idris
+Muhammad and Bernard Purdie played a backbeat with busy sixteenth-note hi-hats; the tunes were often blues
+forms over one riff. Mongo Santamaría's cover of *Watermelon Man* (1963) carried the Latin side, with
+congas, back into the charts, which is why the band adds a conga tumbao.
+
+#### The band's version
+
+- **Bass:** *Boogaloo riff*: root on 1, root pushed on the and of 2, fifth and flat seventh on 4.
+- **Comping:** stabs on the same rhythm as the riff.
+- **Drums:** straight-eighth backbeat. **Congas:** a tumbao.
+- **Voicings:** rootless jazz voicings.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Herbie Hancock, *Watermelon Man* (*Takin' Off*) | 1962 | The riff in the bass and piano left hand; Billy Higgins' even eighths. |
+| Mongo Santamaría, *Watermelon Man* | 1963 | The same tune with congas and a Latin band. |
+| Lee Morgan, *The Sidewinder* | 1963 rec., 1964 | A 24-bar blues on a boogaloo groove; the record that sold Blue Note on the feel. |
+| Joe Cuba Sextet, *Bang! Bang!* | 1966 | Latin boogaloo: party noise over a piano montuno. |
+| Lou Donaldson, *Alligator Bogaloo* | 1967 | Improvised as filler in the studio; Lonnie Smith's organ, George Benson's guitar, Idris Muhammad (then Leo Morris) on drums. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Us3, *Cantaloop (Flip Fantasia)* | 1993 | Built on Herbie Hancock's *Cantaloupe Island* (1964): the soul-jazz riff under hip-hop drums. |
+| Herbie Hancock, *Watermelon Man* (*Head Hunters*) | 1973 | The same tune redone as funk, for comparison. |
+
+#### Sources
+
+- [Blue Note, "Lou Donaldson: the fortuitously funky Alligator Bogaloo"](https://www.bluenote.com/spotlight/lou-donaldson-the-fortuitous-funk-of-alligato/)
+- [Wikipedia, *Alligator Bogaloo*](https://en.wikipedia.org/wiki/Alligator_Bogaloo): recorded 7 April 1967, Van Gelder Studio.
+- Juan Flores, *From Bomba to Hip-Hop* (Columbia, 2000), chapter on Latin boogaloo.
+
+### Ragtime {#ragtime}
+
+*A march for the piano, with the melody ragged against it*
+
+[Open the Ragtime style in the Backing Track](../tools/backing-track.html?style=ragtime){.btn .btn-outline-primary}
+
+#### What it is
+
+Composed piano music from about 1895 to 1920, built like a march: several 16-bar strains, a left hand
+that plays a bass note on the beat and a chord off it, and a right hand whose melody is syncopated
+("ragged") against that steady left hand. Its eighth notes are straight, not swung.
+
+Ragtime is where [stride](#stride) came from: the stride left hand is the ragtime left hand, played
+faster and swung, with songs and the blues in place of written rags. The lesson
+[Two Left Hands](../lessons/stride-boogie.qmd) plays the two one after the other.
+
+#### A little history
+
+Ragtime grew among Black pianists in the saloons and dance halls of the Mississippi valley in the
+1890s, and became the first African American music to sell across the country, mostly as sheet music
+for parlour pianos. Scott Joplin's *Maple Leaf Rag* (1899), published in Sedalia, Missouri, sold
+hundreds of thousands of copies. Joplin, James Scott and Joseph Lamb wrote the "classic rags"; Tin Pan
+Alley turned out ragtime songs by the thousand. Bands played rags too, and ragtime fed straight into
+early jazz in New Orleans and into Harlem stride.
+
+It was largely forgotten until the 1970s, when Joshua Rifkin's recordings of Joplin and the film *The
+Sting* (1973), with Marvin Hamlisch's arrangement of *The Entertainer*, brought it back.
+
+#### The band's version
+
+- **Comping:** *Stride*: on the piano, a low bass note on 1 and 3 and the chord on 2 and 4, in straight
+  time.
+- **Bass:** *Root and fifth* on 1 and 3, like the tuba in a march band.
+- **Drums:** *Boom-chick*: kick on 1 and 3, snare on 2 and 4.
+- **Voicings:** plain triads and seventh chords, all their notes.
+
+A rag is written down, and its right-hand melody is the point. The band plays only the left hand's
+pattern; the ragged melody is yours.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Scott Joplin, *Maple Leaf Rag* (piano roll) | 1916 | Joplin's own playing, as near as a roll allows. |
+| Jelly Roll Morton, *Maple Leaf Rag* (Library of Congress) | 1938 | Morton showing how New Orleans turned the rag into jazz. |
+| Joshua Rifkin, *Piano Rags by Scott Joplin* | 1970 | Rags played as written, slowly, as Joplin asked. |
+| Marvin Hamlisch, *The Entertainer* (*The Sting*) | 1973 | The record that brought ragtime back. |
+
+#### Sources
+
+- Edward A. Berlin, *Ragtime: A Musical and Cultural History* (California, 1980).
+- Rudi Blesh and Harriet Janis, *They All Played Ragtime* (Knopf, 1950).
+- Gunther Schuller, *Early Jazz* (Oxford, 1968).
+
+### Stride Piano {#stride}
+
+*A left hand that leaps: bass note, chord, bass note, chord*
+
+[Open the Stride piano style in the Backing Track](../tools/backing-track.html?style=stride){.btn .btn-outline-primary}
+
+#### What it is
+
+Solo piano music from Harlem in the late 1910s to the 1930s. The left hand does the work of a whole rhythm
+section: a low bass note on beats 1 and 3 and a chord in the middle of the keyboard on 2 and 4, the hand
+leaping ("striding") between them on every beat. The right hand plays the melody, decorated, over it.
+
+Stride and [boogie-woogie](#boogie) grew up side by side: both are piano music for dancing at parties,
+both put a whole band into the left hand, and both feed into swing. They differ in what the left hand
+does. The lesson [Two Left Hands](../lessons/stride-boogie.qmd) plays them side by side.
+
+#### A little history
+
+Stride comes out of [ragtime](#ragtime). A Scott Joplin rag already has the oom-pah left hand, written as a march.
+In New York around the First World War, pianists such as James P. Johnson, Luckey Roberts and Willie
+"The Lion" Smith played it faster and swung it, took it from rags to popular songs and the blues, and
+added runs, tenths and cross-rhythms. They played at *rent parties*, where tenants paid the rent by
+charging for food, drink and music, and in *cutting contests* against each other. Johnson's *Carolina
+Shout* was the test piece: Duke Ellington learned it from a piano roll, slowed down.
+
+Johnson's pupil Fats Waller made stride popular on records and radio, from 1934 with a small band,
+*Fats Waller and His Rhythm*: bass, drums and guitar playing in two under the piano's left hand. That
+is the sound this style copies. Art Tatum took stride to its technical limit; Count Basie began as a
+stride pianist and pared it down to almost nothing; Thelonious Monk kept stride passages in his playing
+all his life.
+
+Johnson also wrote *Charleston* (1923). Its rhythm, a long note on 1 and a short one on the and of 2, is
+the [Charleston comping figure](../lessons/patterns/chords.qmd#chords-charleston) jazz pianists still use.
+
+#### The band's version
+
+- **Comping:** *Stride*: on the piano, a low bass note on 1 and 3 (the root as an octave where a chord
+  starts, its fifth on beat 3) and the chord in the middle of the keyboard on 2 and 4. On the guitar it
+  is plain boom-chick.
+- **Bass:** *Two-feel*: half notes on 1 and 3, with the piano's left hand.
+- **Drums:** *Jazz time*, lightly.
+- **Voicings:** plain triads and seventh chords, all their notes.
+
+Real stride left hands reach for tenths, walk them up and down between chords, and break the pattern for
+a run; the right hand carries the tune. The band's pianist keeps the pattern and plays no melody. That is
+your part.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| James P. Johnson, *Carolina Shout* | 1921 | The test piece of the Harlem pianists. |
+| Fats Waller, *Handful of Keys* | 1929 | Stride at speed, solo. |
+| Fats Waller, *Ain't Misbehavin'* (solo piano) | 1929 | The same left hand under a song. |
+| Fats Waller and His Rhythm, *I'm Gonna Sit Right Down and Write Myself a Letter* | 1935 | Stride piano with bass and drums: this style. |
+| Art Tatum, *Tiger Rag* | 1933 | Stride as virtuoso display. |
+| Willie "The Lion" Smith, *Echoes of Spring* | 1939 | A gentler, more harmonic stride. |
+
+#### Sources
+
+- Gunther Schuller, *Early Jazz* (Oxford, 1968), on James P. Johnson and the Harlem pianists.
+- Willie "The Lion" Smith with George Hoefer, *Music on My Mind* (Doubleday, 1964), on rent parties and cutting contests.
+- Scott E. Brown, *James P. Johnson: A Case of Mistaken Identity* (Scarecrow, 1986).
+- Riccardo Scivales, *Jazz Piano: The Left Hand* (Ekay, 1990), on stride and boogie-woogie left hands.
+
+### Boogie-Woogie {#boogie}
+
+*A left hand that walks: eight to the bar on the blues*
+
+[Open the Boogie-woogie style in the Backing Track](../tools/backing-track.html?style=boogie){.btn .btn-outline-primary}
+
+#### What it is
+
+Blues piano with a left hand that never stops: eight notes to the bar, swung, repeating one figure up
+and down the chord while the right hand plays riffs, tremolos and blue notes against it. It is almost
+always a 12-bar blues.
+
+Boogie-woogie and [stride](#stride) are close relations: both are piano music for dancing at
+parties, both put a band into the left hand, and the same pianists often played both. Stride's left
+hand leaps between bass and chord on the beats; boogie-woogie's walks along the bass in eighth notes.
+The lesson [Two Left Hands](../lessons/stride-boogie.qmd) plays them side by side.
+
+#### A little history
+
+The style began in the lumber, turpentine and railroad camps of Texas and Louisiana in the first years
+of the 1900s, played on "barrelhouse" pianos in the camps' bars, and travelled north with the
+migration. In Chicago in the 1920s it was the music of rent parties, as stride was in Harlem. Pinetop
+Smith's *Pine Top's Boogie Woogie* (1928) gave the style its name; Jimmy Yancey, Meade Lux Lewis and
+Albert Ammons played it in Chicago.
+
+In December 1938 the producer John Hammond put Ammons, Lewis and Pete Johnson on stage at Carnegie Hall
+in the *From Spirituals to Swing* concert, and boogie-woogie became a national craze. Big bands
+arranged it (Count Basie's *Boogie Woogie*, Tommy Dorsey's version of Pinetop's piece), and the
+Andrews Sisters sang it. Its eight-to-the-bar bass went into [jump blues](#jump), rhythm and blues and early
+rock and roll: Chuck Berry's guitar plays a boogie left hand.
+
+#### The band's version
+
+- **Bass:** *Boogie-woogie*: swung eighths walking up the chord and back down, root 3rd 5th 6th flat-7th
+  6th 5th 3rd, every bar. The pianist's left hand, on the bass.
+- **Comping:** *Boogie-woogie right hand*: a two-bar riff of short swung chords against the bass.
+- **Drums:** *Blues shuffle*: swung eighths on the cymbal, kick on 1 and 3, snare on 2 and 4.
+- **Voicings:** plain triads and seventh chords, all their notes.
+
+Boogie-woogie pianists have dozens of left-hand patterns (rolling octaves, the Yancey bass, broken
+sixths) and their right hands play the lead. The band's bassist has one pattern and its pianist one
+riff, so a melody or a solo on top is your part.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Meade Lux Lewis, *Honky Tonk Train Blues* | 1927 | A train in the left hand, cross-rhythms in the right. |
+| Pinetop Smith, *Pine Top's Boogie Woogie* | 1928 | The record that named the style; Smith calls out to the dancers. |
+| Albert Ammons, *Boogie Woogie Stomp* | 1936 | The walking left hand at full power. |
+| Count Basie, *Boogie Woogie* (with Jimmy Rushing) | 1936 | Boogie-woogie from a small swing band. |
+| Big Joe Turner and Pete Johnson, *Roll 'Em Pete* | 1938 | Boogie-woogie under a blues shouter: a short step to rock and roll. |
+| Jimmy Yancey, *Yancey Stomp* | 1939 | A lighter, older Chicago style. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Jerry Lee Lewis, *Whole Lotta Shakin' Goin' On* | 1957 | The boogie left hand in rock and roll. |
+
+#### Sources
+
+- Peter J. Silvester, *A Left Hand Like God: A History of Boogie-Woogie Piano* (Quartet, 1988).
+- Ted Gioia, *The History of Jazz* (Oxford, 1997), on Chicago and the 1938 Carnegie Hall concert.
+- Riccardo Scivales, *Jazz Piano: The Left Hand* (Ekay, 1990), on stride and boogie-woogie left hands.
+
+### Jump Blues {#jump}
+
+*Boogie-woogie for a small band, loud, on the backbeat*
+
+[Open the Jump blues style in the Backing Track](../tools/backing-track.html?style=jump){.btn .btn-outline-primary}
+
+#### What it is
+
+Up-tempo blues for dancing, played by small bands of the 1940s: a rhythm section, two or three horns
+riffing together, and a singer. The bass plays the [boogie-woogie](#boogie) left hand, the drums play
+a shuffle with a hard backbeat on 2 and 4, and the horns and piano play short riffs. It is the bridge
+from swing and boogie-woogie to rhythm and blues and rock and roll.
+
+#### A little history
+
+When the big bands became too costly during the Second World War, many of their players formed small
+groups that kept the swing bands' riffs and the boogie-woogie bass but played them louder, on the
+backbeat, for dancers and jukeboxes. Louis Jordan and his Tympany Five were the most popular: *Caldonia*
+(1945) and *Choo Choo Ch'Boogie* (1946) topped the race-record charts, which *Billboard* renamed
+*rhythm and blues* in 1949. Big Joe Turner, Wynonie Harris, Roy Brown and Amos Milburn sang it; Lionel
+Hampton's *Flying Home* gave it a honking tenor sax. By the early 1950s the same music, with an electric
+guitar in front, was being called rock and roll.
+
+#### The band's version
+
+- **Bass:** *Boogie-woogie*: swung eighths, root 3rd 5th 6th flat-7th 6th 5th 3rd.
+- **Comping:** *Boogie-woogie right hand*: a two-bar riff of short swung chords.
+- **Drums:** *Jump blues*: the shuffle on the cymbal, the kick feathered on every beat, a loud snare on
+  2 and 4.
+- **Voicings:** plain triads and seventh chords, all their notes.
+
+The horns are what most people remember of a jump band, and the band has none. Play the riffs yourself,
+or sing.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Lionel Hampton, *Flying Home* | 1942 | Illinois Jacquet's tenor solo, the model for every honking sax after it. |
+| Louis Jordan and his Tympany Five, *Caldonia* | 1945 | Riffing horns over a shuffle; the singer as entertainer. |
+| Louis Jordan and his Tympany Five, *Choo Choo Ch'Boogie* | 1946 | A boogie bass under a country-flavoured song. |
+| Roy Brown, *Good Rockin' Tonight* | 1947 | The backbeat that rock and roll took. |
+| Big Joe Turner, *Shake, Rattle and Roll* | 1954 | Jump blues on the edge of rock and roll. |
+
+#### Sources
+
+- Arnold Shaw, *Honkers and Shouters: The Golden Years of Rhythm and Blues* (Collier, 1978).
+- John Chilton, *Let the Good Times Roll: The Story of Louis Jordan and His Music* (Michigan, 1994).
 
 ## Latin
-- [Bossa nova](bossa.qmd) · [Son montuno](montuno.qmd) · [Cha-cha](chacha.qmd) · [Tango](tango.qmd)
+
+### Bossa nova {#bossa}
+
+*Root-and-fifth bass, a two-bar comping pattern and the bossa clave*
+
+[Open the Bossa nova style in the Backing Track](../tools/backing-track.html?style=bossa){.btn .btn-outline-primary}
+
+#### What it is
+
+Brazilian song style from Rio de Janeiro in the late 1950s: samba slowed and quietened for a voice and a
+nylon-string guitar. The guitarist's thumb plays the bass on beats 1 and 3 (in 2/4 counting, the two
+beats of the bar) while the fingers play syncopated chords that repeat over two bars.
+
+#### A little history
+
+Samba's percussion section (the surdo bass drum, tamborim, agogô) was too loud for the small apartments and
+clubs of Copacabana. João Gilberto moved the parts onto the guitar: the thumb took the surdo, the fingers
+took the tamborim's syncopations. His single *Chega de Saudade* (1958, song by Antônio Carlos Jobim and
+Vinícius de Moraes) is usually called the first bossa nova record. Jobim's harmony (major sevenths, ninths,
+chromatic inner lines) came from jazz and from Debussy and Ravel.
+
+American jazz musicians took it up after Charlie Byrd and Stan Getz's *Jazz Samba* (1962). *Getz/Gilberto*
+(recorded 1963, released 1964), with Astrud Gilberto singing *The Girl from Ipanema*, made it a world
+style. Jazz drummers turned the guitar's rhythm into the brush or cross-stick pattern the band plays: a
+two-bar figure close to the son clave, over a steady bass drum on 1 and 3.
+
+#### The band's version
+
+- **Bass:** root and fifth with pickups. **Comping:** the two-bar pattern.
+- **Drums:** bossa clave on the cross-stick. **Voicings:** jazz voicings with added 9ths.
+- **Feel:** straight eighths. Bossa never swings.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| João Gilberto, *Chega de Saudade* | 1958 | The guitar rhythm that started it. |
+| Stan Getz & Charlie Byrd, *Desafinado* (*Jazz Samba*) | 1962 | The first American hit version. |
+| Stan Getz & João Gilberto, *The Girl from Ipanema* | 1964 | Milton Banana's drums; Jobim on piano. |
+| Antônio Carlos Jobim, *Wave* | 1967 | Jobim's own arrangement, Ron Carter on bass. |
+| Elis Regina & Tom Jobim, *Águas de Março* | 1974 | A later, freer bossa groove. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Bebel Gilberto, *Samba da Bênção* (*Tanto Tempo*) | 2000 | João Gilberto's daughter: bossa with electronic beats. |
+| Laufey, *From the Start* | 2023 | A bossa groove that went viral: guitar rhythm, cross-stick, root-and-fifth bass. |
+
+#### Sources
+
+- Ruy Castro, *Bossa Nova: The Story of the Brazilian Music That Seduced the World* (A Cappella, 2000).
+- Chris McGowan and Ricardo Pessanha, *The Brazilian Sound* (Temple, 2009 ed.).
+
+### Son montuno {#montuno}
+
+*Tumbao bass, the montuno, son clave and congas*
+
+[Open the Son montuno style in the Backing Track](../tools/backing-track.html?style=montuno){.btn .btn-outline-primary}
+
+#### What it is
+
+The groove of Cuban son and of salsa: a two-bar repeating piano figure (the *montuno* or *guajeo*), a
+bass that plays ahead of the beat (the *tumbao*), and a clave pattern every part is fitted to.
+
+#### A little history
+
+**Son** grew up in eastern Cuba and reached Havana around 1910-20, played by small groups on tres (a guitar
+with three doubled strings), guitar, bongó, maracas, claves and a *marímbula* or bass. The second half of
+a son, the *montuno*, is a vamp where a lead singer improvises against a chorus. In the late 1930s and
+1940s Arsenio Rodríguez enlarged the group into the *conjunto*: piano, trumpets, and a conga. He is credited
+with the anticipated bass: the bass skips beat 1 and lands on the *and of 2* and on 4, so that each
+chord is heard a little before the bar it belongs to. Mambo bands (Pérez Prado, Machito) and the New York
+salsa of the 1960s and '70s (Eddie Palmieri, Fania Records) built on the same parts.
+
+**Clave** is the two-bar rhythm (3-2: three hits then two; or 2-3) that the parts are written around. The
+band plays 2-3.
+
+#### The band's version
+
+- **Bass:** tumbao, anticipating each bar. **Comping:** the two-bar montuno.
+- **Drums:** clave. **Congas:** a tumbao moving to the second drum every other bar.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Septeto Nacional (Ignacio Piñeiro), *Échale salsita* | 1930 | Early son with the old sextet line-up. |
+| Arsenio Rodríguez y su Conjunto, *Dame un cachito pa' huelé* | 1946 | The conjunto sound and the anticipated bass. |
+| Machito and his Afro-Cubans, *Tanga* | composed 1943, recorded later in the 1940s | Son and mambo meeting big-band jazz. |
+| Eddie Palmieri, *Azúcar Pa' Ti* | 1965 | The piano montuno stretched out over a long vamp. |
+| Buena Vista Social Club, *Chan Chan* | 1997 | Compay Segundo's son; easy to count the clave. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Celia Cruz, *La Vida Es un Carnaval* | 1998 | Salsa: the piano montuno under the coro. |
+| Marc Anthony, *Vivir Mi Vida* | 2013 | Modern salsa; count the clave against the piano. |
+| Camila Cabello ft. Young Thug, *Havana* | 2017 | A pop hit on a piano montuno-style figure. |
+
+#### Sources
+
+- Ned Sublette, *Cuba and Its Music* (Chicago Review Press, 2004).
+- David Peñalosa, *The Clave Matrix* (Bembe, 2009).
+- [Discography of American Historical Recordings, Victor CU-1433](https://adp.library.ucsb.edu/index.php/matrix/refer/300007924): *Dame un cachito pa' huelé*, 1946.
+- Rebeca Mauleón, *Salsa Guidebook for Piano and Ensemble* (Sher, 1993).
+
+### Cha-cha {#chacha}
+
+*A steady bell and the cha-cha-chá on 3, the and of 3, and 4*
+
+[Open the Cha-cha style in the Backing Track](../tools/backing-track.html?style=chacha){.btn .btn-outline-primary}
+
+#### What it is
+
+A medium-tempo Cuban dance rhythm, steadier and simpler than mambo, with a cowbell on every beat and the
+three quick steps (*cha-cha-chá*) on beat 3, the and of 3, and beat 4.
+
+#### A little history
+
+Violinist Enrique Jorrín, of the *charanga* orchestra Orquesta América, wrote *La engañadora* (1951, recorded
+1953). The orchestra's dancers found its rhythm easier than the danzón-mambo, and the steps' scuffing sound
+named the dance. Charangas played it on flute, violins, piano, bass, timbales, güiro and conga; Orquesta
+Aragón made it famous across Latin America. By the late 1950s it was a ballroom dance in the US and Europe,
+and American pop recorded "cha-cha" versions of everything.
+
+#### The band's version
+
+- **Bass:** the cha-cha bass line. **Comping:** chords on the cha-cha figure.
+- **Drums:** a bell on the beats. **Congas:** a tumbao. **Voicings:** plain triads and sevenths.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Orquesta América, *La engañadora* | 1953 | The first cha-cha-chá. |
+| Orquesta Aragón, *El bodeguero* | mid-1950s (year not checked) | The charanga sound: flute, violins, güiro. |
+| Tito Puente, *Oye Cómo Va* | 1963 | A cha-cha that Santana later made a rock hit (1970). |
+| Cal Tjader, *Soul Sauce (Guachi Guaro)* | 1965 | Latin jazz on a cha-cha groove. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Santana, *Oye Como Va* | 1970 | Tito Puente's cha-cha as Latin rock. |
+| Michael Bublé, *Sway* | 2003 | A 1950s mambo/cha-cha song in a pop big-band arrangement. |
+
+#### Sources
+
+- Ned Sublette, *Cuba and Its Music* (2004), on Jorrín and the charanga.
+- Sue Steward, *¡Música!: Salsa, Rumba, Merengue and More* (Chronicle, 1999).
+
+### Tango {#tango}
+
+*The habanera rhythm in the bass and chords*
+
+[Open the Tango style in the Backing Track](../tools/backing-track.html?style=tango){.btn .btn-outline-primary}
+
+#### What it is
+
+The dance music of Buenos Aires and Montevideo, in 2/4 or 4/4, played here on its oldest rhythm: the
+*habanera* (dotted eighth, sixteenth, two eighths), which also underlies the 3+3+2 of a lot of later pop.
+
+#### A little history
+
+The **habanera** was a Cuban song and dance of the mid-1800s that spread through Spain, Mexico and the
+Río de la Plata ports (Bizet borrowed one for *Carmen*, 1875). In the poor neighbourhoods of Buenos Aires
+in the 1880s and '90s it mixed with the milonga, Spanish and Italian song, and African Argentine candombe
+into the tango. Early groups were flute, violin and guitar; the bandoneón (a German button accordion)
+arrived around 1900 and became the tango's voice. Carlos Gardel's *Mi noche triste* (1917) began the sung
+tango. The 1940s *orquestas típicas* (Juan D'Arienzo, Aníbal Troilo, Osvaldo Pugliese) moved to a driving
+*marcato* in four; from the 1950s Astor Piazzolla's *nuevo tango* added jazz and classical counterpoint.
+
+The band plays the habanera rhythm, the older and more widely useful of tango's rhythms; the four-beat
+*marcato* of the dance orchestras is not modelled.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Ángel Villoldo, *El Choclo* (many recordings) | 1903 | An early tango built on the habanera. |
+| Carlos Gardel, *Mi noche triste* | 1917 | The first sung tango. |
+| Juan D'Arienzo, *La cumparsita* | 1937 | The 1930s marcato for dancing. |
+| Osvaldo Pugliese, *La yumba* | 1946 | The heavy *yumba* beat. |
+| Astor Piazzolla, *Adiós Nonino* | 1959 | Nuevo tango. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Gotan Project, *Santa María (Del Buen Ayre)* | 2001 | Electronic tango: bandoneón over programmed beats. |
+| *El Tango de Roxanne* (*Moulin Rouge!*) | 2001 | Tango in a film musical, habanera rhythm under a pop song. |
+
+#### Sources
+
+- Simon Collier et al., *¡Tango! The Dance, the Song, the Story* (Thames & Hudson, 1995).
+- Robert Farris Thompson, *Tango: The Art History of Love* (Pantheon, 2005).
 
 ## Caribbean
-- [Calypso](calypso.qmd) · [Ska / reggae](reggae.qmd) · [Reggaeton](reggaeton.qmd)
+
+### Calypso {#calypso}
+
+*Root-and-fifth bass with chords on every off-beat*
+
+[Open the Calypso style in the Backing Track](../tools/backing-track.html?style=calypso){.btn .btn-outline-primary}
+
+#### What it is
+
+The topical song of Trinidad: a singer (the *calypsonian*) with a witty, often political lyric over a
+bouncing 2/4, with a strummed guitar or cuatro, a bass on root and fifth, and chords on the off-beats.
+
+#### A little history
+
+Calypso (earlier *kaiso*) grew out of the songs of Trinidad's Carnival in the 1800s: the *chantwell*
+leading call-and-response songs in French Creole, stick-fighting songs, and the music of the Spanish
+Venezuelan string bands. By the 1910s-20s it was sung in English and recorded in New York. Calypso tents
+competed each Carnival season, and singers took grand names: Atilla the Hun, Roaring Lion, Lord Invader,
+Lord Kitchener, the Mighty Sparrow. Lord Invader's *Rum and Coca-Cola* (sung at the 1943 Carnival) became an American hit for the
+Andrews Sisters in 1945, and Invader later won a lawsuit over its royalties; and Harry Belafonte's album *Calypso* (1956) was the first LP to sell a million
+copies. Jamaica's **mento** is a cousin, and in the 1970s Lord Shorty mixed calypso with Indian rhythms
+into **soca**, now Carnival's main music.
+
+#### The band's version
+
+- **Bass:** *Root and fifth*. **Comping:** chords on every off-beat. **Drums:** a calypso beat.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Lord Invader, *Rum and Coca-Cola* | 1946 (New York) | His own record of the 1943 Carnival song the Andrews Sisters covered. |
+| Lord Kitchener, *London Is the Place for Me* | 1951 | Calypso of the Windrush generation in Britain. |
+| Harry Belafonte, *Day-O (The Banana Boat Song)* | 1956 | Jamaican folk song, calypso arrangement. |
+| The Mighty Sparrow, *Jean and Dinah* | 1956 | The Carnival Road March that made Sparrow's name. |
+| Lord Shorty, *Endless Vibrations* | 1974 | Early soca. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Arrow, *Hot Hot Hot* | 1982 | Soca: the calypso off-beats sped up for a worldwide party hit. |
+| Harry Belafonte, *Jump in the Line* (in *Beetlejuice*) | 1961, film 1988 | A calypso brought back to a new audience by a film. |
+
+#### Sources
+
+- Donald R. Hill, *Calypso Calaloo: Early Carnival Music in Trinidad* (Florida, 1993).
+- [Wikipedia, *London Is the Place for Me*](https://en.wikipedia.org/wiki/London_Is_the_Place_for_Me): sung on arrival in 1948, recorded 1951.
+- Gordon Rohlehr, *Calypso and Society in Pre-Independence Trinidad* (1990).
+
+### Ska / reggae {#reggae}
+
+*Off-beat chords over a one-drop*
+
+[Open the Ska / reggae style in the Backing Track](../tools/backing-track.html?style=reggae){.btn .btn-outline-primary}
+
+#### What it is
+
+Jamaican popular music since about 1960: guitar and keyboard chords on the off-beats (the *skank*), a bass
+that carries the melody of the groove, and, in reggae, a **one-drop** drum beat with nothing on beat 1 and
+the kick and snare (or rim) together on beat 3.
+
+#### A little history
+
+**Ska** (c. 1960-66) came from Jamaican musicians playing American R&B for sound systems and stressing
+the off-beat; studio bands such as the Skatalites played it fast with horns. Around 1966 the tempo slowed
+into **rocksteady**, with the bass more prominent (Alton Ellis, the Paragons). By 1968 the beat had
+changed again into **reggae**: Toots and the Maytals' *Do the Reggay* (1968) is one of the first records
+to use the word. Drummer Carlton Barrett of Bob Marley's Wailers made the one-drop the standard reggae
+beat, and Island Records' *Catch a Fire* (1973) took the Wailers worldwide. Later strands include dub,
+roots, lovers rock, dancehall (see [Reggaeton](#reggaeton)) and Britain's 2 Tone ska revival (c. 1979).
+
+#### The band's version
+
+- **Bass:** *Roots on every beat*, plainer than a real reggae bass line, which moves and leaves gaps.
+- **Comping:** off-beat chords. **Drums:** one-drop.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| The Skatalites, *Guns of Navarone* | 1965 | Ska: fast, horns, the off-beat guitar. |
+| Alton Ellis, *Rock Steady* | 1967 | The slower rocksteady groove. |
+| Desmond Dekker & the Aces, *Israelites* | 1968 | Early reggae; a UK number one in 1969. |
+| Toots and the Maytals, *Do the Reggay* | 1968 | The name on a record. |
+| Bob Marley & the Wailers, *Stir It Up* (*Catch a Fire*) | 1973 | Carlton Barrett's one-drop, Aston Barrett's bass. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Sublime, *Santeria* | 1996 | Off-beat guitar and a one-drop feel in American alt-rock. |
+| No Doubt, *Underneath It All* | 2001 | Recorded in Jamaica with Sly & Robbie. |
+| Damian Marley, *Welcome to Jamrock* | 2005 | Modern roots reggae. |
+| Rihanna, *Man Down* | 2011 | A one-drop under a pop singer. |
+
+#### Sources
+
+- Lloyd Bradley, *Bass Culture: When Reggae Was King* (Penguin, 2000).
+- David Katz, *Solid Foundation: An Oral History of Reggae* (Bloomsbury, 2003).
+
+### Reggaeton {#reggaeton}
+
+*The dembow drum pattern under long chords, the bass on a 3+3+2*
+
+[Open the Reggaeton style in the Backing Track](../tools/backing-track.html?style=reggaeton){.btn .btn-outline-primary}
+
+#### What it is
+
+Spanish-language dance music from Puerto Rico and Panama, built on the **dembow**: the kick on every beat,
+and the snare on the last sixteenth of beat 1 and the and of 2 (and again in beats 3 and 4), a 3+3+2 in
+sixteenths over each half bar, under long synth chords and a rapped or sung vocal.
+
+#### A little history
+
+The rhythm is named after Shabba Ranks' Jamaican dancehall record *Dem Bow* (1990), whose riddim (the
+backing track, by Steely & Clevie, built on their *Poco Man Jam*) was copied everywhere. In Panama,
+artists such as El General sang Spanish lyrics over dancehall riddims (*reggae en español*). In Puerto Rico
+in the 1990s DJ Playero and others made underground mixtapes on the same beats; the name *reggaeton* took
+hold around the turn of the century. Daddy Yankee's *Gasolina* (2004) was the international breakthrough,
+Luis Fonsi and Daddy Yankee's *Despacito* (2017) one of the most-streamed songs ever, and Bad Bunny the
+genre's biggest star of the 2020s.
+
+#### The band's version
+
+- **Bass:** *3+3+2 (tresillo)*. **Comping:** long held chords. **Drums:** dembow.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Shabba Ranks, *Dem Bow* | 1990 | The record the rhythm is named after. |
+| El General, *Te Ves Buena* | 1991 | Reggae en español from Panama. |
+| Daddy Yankee, *Gasolina* | 2004 | The breakthrough. |
+| Luis Fonsi ft. Daddy Yankee, *Despacito* | 2017 | Dembow under a pop song. |
+| Bad Bunny, *Tití Me Preguntó* | 2022 | The current sound. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Karol G & Nicki Minaj, *Tusa* | 2019 | Dembow under a pop-ballad chord loop. |
+
+#### Sources
+
+- Raquel Z. Rivera, Wayne Marshall and Deborah Pacini Hernandez (eds.), *Reggaeton* (Duke, 2009).
+- Petra R. Rivera-Rideau, *Remixing Reggaetón* (Duke, 2015).
 
 ## Folk, rock and pop
-- [Straight-eighth rock](rock.qmd) · [Emo / pop-punk](emo.qmd) · [Acoustic strum](strum.qmd) ·
-  [Piano ballad](pop.qmd) · [Dance pop](dance.qmd) · [Motown / soul](motown.qmd) ·
-  [12/8 doo-wop](doowop.qmd) · [Country train beat](train.qmd) · [Boom-chick](folk.qmd) ·
-  [Freylekhs / polka](freylekhs.qmd) · [John Prine Fingerpicking](prine.qmd)
+
+### Straight-eighth rock {#rock}
+
+*Root eighths, down-up strumming and a backbeat*
+
+[Open the Straight-eighth rock style in the Backing Track](../tools/backing-track.html?style=rock){.btn .btn-outline-primary}
+
+#### What it is
+
+The basic rock band: drums with a snare **backbeat** on 2 and 4 and even eighth notes on the hi-hat, an
+electric bass on the root in eighths, and guitar strumming every eighth note.
+
+#### A little history
+
+Rhythm and blues of the late 1940s and early '50s was mostly shuffled (swung) eighths. Through the 1950s,
+records by Little Richard, Chuck Berry and Ray Charles mixed straight eighths in, and by the early 1960s
+even eighths were the norm in rock and soul; Alexander Stewart traces the shift through New Orleans
+drummers such as Earl Palmer. The backbeat came from gospel handclaps and R&B. The British Invasion, then
+punk's down-stroke eighths (the Ramones, 1976) and new wave, kept the plain driving eighths at the centre
+of the style.
+
+#### The band's version
+
+- **Bass:** *Root eighths*. **Comping:** down-up eighths on the guitar. **Drums:** a backbeat whose kick
+  varies from bar to bar. Chords are **pushed** (they arrive an eighth early) the way rock bands do.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Little Richard, *Lucille* | 1957 | Often cited as an early straight-eighth rock and roll record. |
+| Chuck Berry, *Johnny B. Goode* | 1958 | The guitar boogie that became rock rhythm guitar. |
+| The Kinks, *You Really Got Me* | 1964 | Power chords and driving eighths. |
+| Ramones, *Blitzkrieg Bop* | 1976 | Eighths on everything. |
+| U2, *With or Without You* | 1987 | Adam Clayton's root eighths, the whole song. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| The Strokes, *Last Nite* | 2001 | Garage-rock eighths on guitar and bass. |
+| The Killers, *Mr. Brightside* | 2003 | Driving eighths the whole song. |
+| Arctic Monkeys, *I Bet You Look Good on the Dancefloor* | 2005 | Fast straight eighths and a backbeat. |
+
+#### Sources
+
+- Alexander Stewart, "'Funky Drummer': New Orleans, James Brown and the rhythmic transformation of American
+  popular music", *Popular Music* 19/3 (2000).
+- Robert Palmer, *Rock & Roll: An Unruly History* (Harmony, 1995).
+
+### Emo / pop-punk {#emo}
+
+*Palm-muted power chords that open up in the chorus*
+
+[Open the Emo / pop-punk style in the Backing Track](../tools/backing-track.html?style=emo){.btn .btn-outline-primary}
+
+#### What it is
+
+Guitar-band rock at punk tempos with melodic, often confessional singing: a distorted guitar chugging
+palm-muted power chords in the verse, ringing open in the chorus, over root eighths and a rock beat, with
+half-time choruses and breakdowns.
+
+#### A little history
+
+**Emo** ("emotional hardcore") began in Washington, D.C., in 1985 with Rites of Spring and Embrace, who
+took hardcore punk's speed into more personal songs. The 1990s brought a quieter, intricate "Midwest emo"
+(Cap'n Jazz, American Football). **Pop-punk** runs from the Buzzcocks and the Ramones to Green Day's
+*Dookie* (1994), which sold millions, then Blink-182. Around 2000-2007 the two merged into a mainstream
+sound: Jimmy Eat World, My Chemical Romance, Fall Out Boy, Paramore. It came back in the 2020s, from
+Olivia Rodrigo to a revival of the bands themselves.
+
+#### The band's version
+
+- **Bass:** *Root eighths*. **Comping:** palm-muted chugging in verses, open strumming in Chorus bars.
+- **Drums:** rock backbeat; mark bars Half-time for a half-time chorus or breakdown.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Green Day, *Basket Case* | 1994 | Pop-punk: muted verse, open chorus. |
+| Blink-182, *All the Small Things* | 1999 | Root eighths and simple power chords. |
+| Jimmy Eat World, *The Middle* | 2001 | Emo goes mainstream. |
+| My Chemical Romance, *Helena* | 2004 | Half-time sections against fast ones. |
+| Paramore, *Misery Business* | 2007 | Palm-muted riffing under a strong vocal. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Machine Gun Kelly, *bloody valentine* | 2020 | The pop-punk revival. |
+| Olivia Rodrigo, *good 4 u* | 2021 | Pop-punk verse-to-chorus lift on a number one record. |
+
+#### Sources
+
+- Andy Greenwald, *Nothing Feels Good: Punk Rock, Teenagers, and Emo* (St. Martin's, 2003).
+- Chris Payne, *Where Are Your Boys Tonight? The Oral History of Emo's Mainstream Explosion* (Dey St., 2023).
+
+### Acoustic strum {#strum}
+
+*A steel-string guitar over a light backbeat*
+
+[Open the Acoustic strum style in the Backing Track](../tools/backing-track.html?style=strum){.btn .btn-outline-primary}
+
+#### What it is
+
+The singer-songwriter's band: a steel-string acoustic guitar strumming a syncopated pattern (down, down-up,
+up-down-up), a bass and kick together on 1, the and of 2, and 3, and a light backbeat.
+
+#### A little history
+
+The steel-string guitar became a popular accompanying instrument through country and blues players in the
+1920s-30s and the folk revival of the 1950s-60s (Woody Guthrie, then Bob Dylan, Joan Baez). From the
+late 1960s singer-songwriters (James Taylor, Joni Mitchell, Cat Stevens) put a band around the strummed
+guitar. The 1990s Britpop and "unplugged" years (Oasis's *Wonderwall*) and the 2000s-2010s folk-pop of
+Jason Mraz, Mumford & Sons and Ed Sheeran kept it among the most common sounds in pop.
+
+#### The band's version
+
+- **Bass:** *Dotted (1, and of 2, 3)*, with the kick. **Comping:** a campfire strum. **Drums:** light.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Cat Stevens, *Wild World* | 1970 | Strummed guitar leading a band. |
+| Tom Petty, *Free Fallin'* | 1989 | Twelve-string strum, the band joining bit by bit. |
+| Oasis, *Wonderwall* | 1995 | The syncopated strum everyone learned. |
+| Jason Mraz, *I'm Yours* | 2008 | A reggae-tinged strum. |
+| Ed Sheeran, *Thinking Out Loud* | 2014 | Acoustic guitar at the centre of a pop record. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Vance Joy, *Riptide* | 2013 | A strummed ukulele pattern leading the band. |
+| Noah Kahan, *Stick Season* | 2022 | Folk-pop strum, kick and bass locked together. |
+
+#### Sources
+
+- David Hajdu, *Positively 4th Street* (FSG, 2001), on the folk revival.
+- Richie Unterberger, *Turn! Turn! Turn! The '60s Folk-Rock Revolution* (Backbeat, 2002).
+
+### Piano ballad {#pop}
+
+*Left-hand octaves, a broken right hand, half-time drums*
+
+[Open the Piano ballad style in the Backing Track](../tools/backing-track.html?style=pop){.btn .btn-outline-primary}
+
+#### What it is
+
+The slow pop or rock song led from the piano: octaves in the left hand, the chord broken or rocked in
+the right (often in first inversion, so the top moves smoothly), and a band that comes in half-time, with
+the backbeat on beat 3.
+
+#### A little history
+
+The piano was the home instrument of popular song long before rock: Tin Pan Alley sold sheet music for
+it. In the 1970s singer-songwriters at the piano (Carole King's *Tapestry*, 1971; Elton John; Billy Joel)
+made the piano ballad a staple of rock. The 1980s power ballad put it under big drums, and from the 2000s
+Coldplay, Alicia Keys and Adele (*Someone Like You*, 2011, over nothing but broken piano chords) kept it
+at the top of the charts.
+
+#### The band's version
+
+- **Comping:** three right-hand patterns (rocking, half-broken, syncopated) in four-bar spans.
+- **Bass and drums:** half time; a quiet kick and a cross-stick on 3. The hi-hat sits low.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Elton John, *Your Song* | 1970 | Broken chords under the voice, the band joining softly. |
+| Carole King, *So Far Away* | 1971 | A singer-songwriter's left hand and right hand. |
+| Billy Joel, *She's Always a Woman* | 1977 | Rocking right-hand patterns. |
+| Coldplay, *The Scientist* | 2002 | Piano figure first, half-time band later. |
+| Adele, *Someone Like You* | 2011 | Broken chords and nothing else. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Lewis Capaldi, *Someone You Loved* | 2018 | Piano chords under the voice, the band arriving later. |
+| Billie Eilish, *when the party's over* | 2018 | Sparse piano ballad. |
+| Olivia Rodrigo, *drivers license* | 2021 | Piano verses, half-time band in the bridge. |
+
+#### Sources
+
+- Philip Furia, *The Poets of Tin Pan Alley* (Oxford, 1990), on the piano and popular song.
+- Carole King, *A Natural Woman: A Memoir* (Grand Central, 2012), on writing and playing *Tapestry*.
+
+### Dance pop {#dance}
+
+*Four on the floor, open hi-hat off-beats, octave bass*
+
+[Open the Dance pop style in the Backing Track](../tools/backing-track.html?style=dance){.btn .btn-outline-primary}
+
+#### What it is
+
+The disco beat and its descendants: a kick drum on every beat (*four on the floor*), the open hi-hat on
+every off-beat, a bass jumping between the root and its octave, and chords on a 3+3+2.
+
+#### A little history
+
+Disco grew out of New York and Philadelphia clubs in the early 1970s. Earl Young, the drummer of
+Philadelphia International's house band MFSB, is often credited with the steady kick and open hi-hat
+(*The Love I Lost*, Harold Melvin & the Blue Notes, 1973). The octave bass became disco's other mark
+(Chic's Bernard Edwards). Giorgio Moroder and Donna Summer's *I Feel Love* (1977) put the beat on
+synthesizers and pointed toward house and techno (Chicago and Detroit, mid-1980s). Since then the
+four-on-the-floor beat has stayed at the centre of dance pop: Madonna, Kylie Minogue, Daft Punk, Dua Lipa.
+
+#### The band's version
+
+- **Bass:** *Octaves*. **Comping:** a 3+3+2, on the electric piano. **Drums:** four on the floor.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Harold Melvin & the Blue Notes, *The Love I Lost* | 1973 | Earl Young's kick and hi-hat. |
+| Donna Summer, *I Feel Love* | 1977 | The beat on a sequencer. |
+| Bee Gees, *Stayin' Alive* | 1977 | Disco at its most famous. |
+| Chic, *Le Freak* | 1978 | Nile Rodgers' guitar, Bernard Edwards' bass. |
+| Dua Lipa, *Don't Start Now* | 2019 | The octave bass, forty years on. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Daft Punk ft. Pharrell Williams & Nile Rodgers, *Get Lucky* | 2013 | Disco with Rodgers on guitar. |
+| Doja Cat, *Say So* | 2019 | Disco revival: four on the floor, octave-style bass. |
+
+#### Sources
+
+- Alice Echols, *Hot Stuff: Disco and the Remaking of American Culture* (Norton, 2010).
+- Tim Lawrence, *Love Saves the Day: A History of American Dance Music Culture, 1970-1979* (Duke, 2003).
+
+### Motown / soul {#motown}
+
+*Snare on every beat, tambourine on 2 and 4*
+
+[Open the Motown / soul style in the Backing Track](../tools/backing-track.html?style=motown){.btn .btn-outline-primary}
+
+#### What it is
+
+The 1960s Detroit sound of Motown Records: a snare (often with a tambourine) hitting every beat, a busy
+electric bass, guitars chopping chords, and a song built for radio and dancing.
+
+#### A little history
+
+Berry Gordy started Motown in Detroit in 1959. Its records were cut by a house band later known as the
+**Funk Brothers**: drummer Benny Benjamin, bassist James Jamerson, pianist Earl Van Dyke, and others,
+playing in Studio A ("the Snakepit"). The songwriting team Holland-Dozier-Holland wrote the mid-'60s run of
+hits for the Supremes and the Four Tops, many on a stomping four-beat snare. Jamerson's bass lines,
+played with one finger on a Fender Precision, moved far more than any pattern can show.
+The band played uncredited until the film *Standing in the Shadows of Motown* (2002).
+
+#### The band's version
+
+- **Bass:** *Motown: root, fifth, octave*, a stand-in for Jamerson's lines.
+- **Comping:** the two-bar rhythm of *You Can't Hurry Love*. **Drums:** snare on every beat.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| The Supremes, *Where Did Our Love Go* | 1964 | The stomp on every beat. |
+| Four Tops, *I Can't Help Myself (Sugar Pie Honey Bunch)* | 1965 | Holland-Dozier-Holland at full speed. |
+| The Supremes, *You Can't Hurry Love* | 1966 | The rhythm the band's comping copies. |
+| Marvin Gaye & Tammi Terrell, *Ain't No Mountain High Enough* | 1967 | Jamerson's bass. |
+| Martha and the Vandellas, *Heat Wave* | 1963 | Tambourine and snare driving every beat. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Amy Winehouse, *Tears Dry on Their Own* | 2006 | Built on *Ain't No Mountain High Enough*. |
+| Mark Ronson ft. Amy Winehouse, *Valerie* | 2007 | The Motown stomp: snare on every beat. |
+| Duffy, *Mercy* | 2008 | A 60s soul beat on a 2000s hit. |
+
+#### Sources
+
+- Allan Slutsky, *Standing in the Shadows of Motown: The Life and Music of Legendary Bassist James Jamerson*
+  (Hal Leonard, 1989).
+- Gerald Posner, *Motown: Music, Money, Sex, and Power* (Random House, 2002).
+
+### 12/8 doo-wop {#doowop}
+
+*Triplet piano chords over a slow backbeat*
+
+[Open the 12/8 doo-wop style in the Backing Track](../tools/backing-track.html?style=doowop){.btn .btn-outline-primary}
+
+#### What it is
+
+The slow 1950s ballad: piano chords repeated in triplets, three to every beat, over a slow backbeat,
+usually on the *I-vi-IV-V* chords, behind a lead singer and vocal group.
+
+#### A little history
+
+**Doo-wop** came from African American vocal groups on street corners in New York, Philadelphia,
+Baltimore and Chicago in the late 1940s and '50s, following the Ink Spots and the Mills Brothers. The
+backing singers sang nonsense syllables (*doo-wop, sh-boom*) in place of instruments. On record, small
+bands added a pianist hammering triplets, an idea from New Orleans rhythm and blues (Fats Domino) and
+the slow blues. The same 12/8 feel carries soul ballads into the 1960s, from Etta James's *At Last* onward.
+
+#### The band's version
+
+- **Bass:** *12/8 ballad*. **Comping:** triplets. **Drums:** slow 12/8 backbeat.
+- On a 4/4 chart the band plays the triplets over each beat.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Fats Domino, *Blueberry Hill* | 1956 | New Orleans triplet piano. |
+| The Penguins, *Earth Angel* | 1954 | I-vi-IV-V and doo-wop backing voices. |
+| The Platters, *Only You (And You Alone)* | 1955 | Triplets on the piano from the first bar. |
+| The Five Satins, *In the Still of the Nite* | 1956 | *Shoo-doop shoobee-doo* backing. |
+| Etta James, *At Last* | 1960 | The 12/8 ballad with strings. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Ed Sheeran, *Perfect* | 2017 | A slow 12/8: hear three pulses in every beat. |
+
+#### Sources
+
+- Stuart L. Goosman, *Group Harmony: The Black Urban Roots of Rhythm and Blues* (Penn, 2005).
+- Anthony J. Gribin and Matthew M. Schiff, *The Complete Book of Doo-Wop* (Krause, 2000).
+
+### Country train beat {#train}
+
+*Boom-chicka strum and the snare on every eighth*
+
+[Open the Country train beat style in the Backing Track](../tools/backing-track.html?style=train){.btn .btn-outline-primary}
+
+#### What it is
+
+The country rhythm that sounds like a steam train: a snare (often with brushes) on every eighth note,
+accented on 2 and 4, a bass on root and fifth, and a *boom-chicka* guitar.
+
+#### A little history
+
+The sound is most associated with Johnny Cash's Tennessee Two at Sun Records in Memphis: Luther Perkins'
+muted *boom-chicka* electric guitar and Marshall Grant's slapped bass on *Folsom Prison Blues* (1955) and
+*I Walk the Line* (1956). Drummer W. S. Holland joined in 1960 and the train beat became a drum pattern.
+Train songs had been part of country and blues since the 1920s (Jimmie Rodgers), and the beat has stayed
+in rockabilly, bluegrass-flavoured country and country rock.
+
+#### The band's version
+
+- **Bass:** *Root and fifth*. **Comping:** a boom-chicka strum. **Drums:** train beat.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Johnny Cash, *Folsom Prison Blues* | 1955 | Luther Perkins' boom-chicka; no drummer. |
+| Johnny Cash, *I Walk the Line* | 1956 | The same band, the train feel without drums. |
+| Johnny Cash, *Orange Blossom Special* | 1965 | A train song with the full band. |
+| Merle Haggard, *Mama Tried* | 1968 | Bakersfield country on the beat. |
+| Marty Stuart, *Hillbilly Rock* | 1989 | A later country rock version. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Dwight Yoakam, *Guitars, Cadillacs* | 1986 | Bakersfield country revival; the beat behind a twangy guitar. |
+
+#### Sources
+
+- Michael Streissguth, *Johnny Cash: The Biography* (Da Capo, 2006).
+- Bill C. Malone, *Country Music, U.S.A.* (Texas, 3rd ed. 2010).
+
+### Boom-chick {#folk}
+
+*Bass on 1 and 3, chords on 2 and 4; oom-pah-pah in 3/4*
+
+[Open the Boom-chick style in the Backing Track](../tools/backing-track.html?style=folk){.btn .btn-outline-primary}
+
+#### What it is
+
+The oldest accompaniment in popular music: a bass note on the strong beats and a chord on the weak ones.
+In 2/4 or 4/4 it is *boom-chick*; in 3/4 it is *oom-pah-pah*.
+
+#### A little history
+
+Brass bands and dance orchestras of the 1800s split the beat between the tuba (or bass) and the horns or
+second violins: marches, polkas and waltzes all run on it, and so does the stride and ragtime piano left
+hand (bass note, chord, bass note, chord). Guitarists in American old-time and country music used the same
+idea, a thumbed bass on the beat and a strum after it: Maybelle Carter's guitar with the Carter Family
+from 1927, and later the folk revival. Sing-along songs from campfire to music hall still use it.
+
+#### The band's version
+
+- **Bass:** *Root and fifth*. **Comping:** *oompah*. **Drums:** boom-chick.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Scott Joplin, *Maple Leaf Rag* (many recordings) | 1899 | The boom-chick in a ragtime left hand. |
+| The Carter Family, *Can the Circle Be Unbroken* | 1935 | Maybelle Carter's bass and strum. |
+| Woody Guthrie, *This Land Is Your Land* | 1944 rec. | Folk guitar boom-chick. |
+| Hank Williams, *Jambalaya (On the Bayou)* | 1952 | Country two-beat. |
+| Frankie Yankovic, *Blue Skirt Waltz* | 1949 | Oom-pah-pah with accordion. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Old Crow Medicine Show, *Wagon Wheel* | 2004 | Boom-chick under a sing-along. |
+| Mumford & Sons, *Little Lion Man* | 2009 | Banjo and kick drum on the boom-chick. |
+| The Lumineers, *Ho Hey* | 2012 | Kick on the beat, guitar and claps after it. |
+
+#### Sources
+
+- Bill C. Malone, *Country Music, U.S.A.* (Texas, 3rd ed. 2010).
+- [Wikipedia, *Can the Circle Be Unbroken*](https://en.wikipedia.org/wiki/Can_the_Circle_Be_Unbroken_(By_and_By)): recorded 6 May 1935.
+- Edward A. Berlin, *Ragtime: A Musical and Cultural History* (California, 1980).
+
+### Freylekhs / polka {#freylekhs}
+
+*Bass on every beat, the whole chord on every off-beat*
+
+[Open the Freylekhs / polka style in the Backing Track](../tools/backing-track.html?style=freylekhs){.btn .btn-outline-primary}
+
+#### What it is
+
+The fast 2/4 of Eastern European dance music: the bass on every beat, alternating root and fifth, and the
+full chord on every off-beat (*oom-pa oom-pa*). A **freylekhs** ("joyful") is the most common klezmer
+dance tune; the **polka** is its Central European cousin.
+
+#### A little history
+
+The **polka** started in Bohemia in the 1830s and was danced across Europe and America within a decade. Its
+bands (brass, then accordion) gave it the bass-and-off-beat accompaniment. **Klezmer** is the instrumental
+music of Ashkenazi Jewish weddings in Eastern Europe. Immigrant clarinettists Naftule Brandwein and Dave
+Tarras recorded it in New York in the 1920s, with bands that played the same driving off-beats on piano,
+brass and drums. It faded after the war and came back in the 1970s revival (the Klezmorim, Andy Statman,
+Kapelye, later the Klezmatics). Songs like *Hava Nagila* and Hanukkah songs are still played this way.
+
+#### The band's version
+
+- **Bass:** *Root and fifth on every beat*, with a run up into the next bar now and then.
+- **Comping:** chords on the off-beats. In half-time bars the piano switches to ballad patterns.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Naftule Brandwein, *Der Heyser Bulgar* | 1923 | Clarinet over off-beat backing. |
+| Dave Tarras, *Dave Tarras' Freylekhs* (many dance sides) | 1920s-50s | New York klezmer dance band. |
+| Frankie Yankovic, *Just Because* | 1947 | American polka. |
+| The Klezmatics, *Rhythm + Jews* | 1991 | Revival klezmer. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Gogol Bordello, *Start Wearing Purple* | 2005 | Eastern European off-beats as punk. |
+| "Weird Al" Yankovic, *Polka Face* (*Alpocalypse*) | 2011 | A polka medley of pop hits: bass on the beat, chords off it. |
+
+#### Sources
+
+- Henry Sapoznik, *Klezmer! Jewish Music from Old World to Our World* (Schirmer, 1999; 2nd ed. 2006).
+- Walter Zev Feldman, *Klezmer: Music, History, and Memory* (Oxford, 2016).
+- [DAHR, Naftule Brandwein](https://adp.library.ucsb.edu/names/111839): *Heiser bulgar*, Victor, 10 May 1923.
+- Victor Greene, *A Passion for Polka* (California, 1992).
+
+### John Prine Fingerpicking {#prine}
+
+*Thumb on alternating bass strings, fingers pinching on 2 and 4*
+
+[Open the John Prine Fingerpicking style in the Backing Track](../tools/backing-track.html?style=prine){.btn .btn-outline-primary}
+
+#### What it is
+
+A steel-string guitar played with the thumb and fingers at once: the thumb alternates between two bass
+strings on every beat while the fingers pluck the chord on the off-beats or pinch with the thumb. No drums,
+an upright bass doubling the thumb.
+
+#### A little history
+
+Alternating-thumb picking runs back to Black guitarists in the South of the 1920s: Mississippi John Hurt
+recorded for OKeh in 1928, and Elizabeth Cotten played *Freight Train* left-handed. In Kentucky, Arnold
+Shultz, Ike Everly and Mose Rager handed it to **Merle Travis**, after whom "Travis picking" is named, and
+Chet Atkins spread it through country guitar. The 1960s folk revival brought it to singer-songwriters.
+**John Prine** (1946-2020), the Chicago postman whose first album (*John Prine*, 1971) contains *Paradise*,
+*Hello in There* and *Angel from Montgomery*, played a plain thumb-and-fingers style under plain-spoken songs.
+
+#### The band's version
+
+- **Comping:** the *prine* and *travis* patterns. **Bass:** root and fifth with the thumb. **Drums:** none.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Mississippi John Hurt, *Candy Man Blues* | 1928 | Steady alternating thumb. |
+| Merle Travis, *Cannonball Rag* | 1940s | Travis picking itself. |
+| Elizabeth Cotten, *Freight Train* | late 1950s | The folk-revival classic. |
+| John Prine, *Paradise* (*John Prine*) | 1971 | The style the band copies. |
+| John Prine, *Angel from Montgomery* (*John Prine*) | 1971 | Thumb and fingers under a slow song. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Jason Isbell, *Elephant* | 2013 | A fingerpicked song from one of Prine's heirs. |
+| Taylor Swift, *invisible string* (*folklore*) | 2020 | Thumb-and-fingers guitar under a pop song. |
+
+#### Sources
+
+- Eddie Huffman, *John Prine: In Spite of Himself* (Texas, 2015).
+- Bobby Anderson, *That Muhlenberg Sound* (1993), on Shultz, Rager and Travis.
 
 ## Hymns and carols
-- [Waltz (in one)](waltz.qmd) · [Hymn (four parts)](hymn.qmd) · [Folk carol](carol.qmd)
+
+### Waltz (in one) {#waltz}
+
+*A quick 3/4 felt one to the bar*
+
+[Open the Waltz (in one) style in the Backing Track](../tools/backing-track.html?style=waltz){.btn .btn-outline-primary}
+
+#### What it is
+
+A fast 3/4 in which the listener feels one beat a bar, not three: the bass on 1, light chords on 2 and 3,
+brushes, bars grouped in fours.
+
+#### A little history
+
+The waltz rose from Austrian and South German country dances in the late 1700s and took over the ballrooms
+of Vienna in the early 1800s with Joseph Lanner and the Strauss family (Johann Strauss II's *The Blue
+Danube*, 1867). Played fast, the pulse is one per bar, and phrases come in fours and eights. The waltz then
+spread everywhere: music-hall and parlour songs, country waltzes (*Tennessee Waltz*), jazz waltzes, and
+many carols and folk songs that are sung in a quick 3/4.
+
+#### The band's version
+
+- **Bass:** root on 1 (root one bar, fifth the next). **Comping:** *waltz*. **Drums:** brushed waltz.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Johann Strauss II, *The Blue Danube* (any Vienna Philharmonic recording) | 1867 | The Viennese waltz, the second beat slightly early. |
+| Bill Monroe, *Kentucky Waltz* | 1946 (not checked) | A country waltz. |
+| Patti Page, *Tennessee Waltz* | 1950 | A pop hit in 3/4. |
+| Bill Evans, *Waltz for Debby* | 1961 | Jazz waltz, for contrast. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Billy Joel, *Piano Man* | 1973 | A pop song in 3/4, the bass on 1. |
+| Norah Jones, *Come Away With Me* | 2002 | A slower 3/4, for contrast with the waltz in one. |
+
+#### Sources
+
+- Eduard Reeser, *The History of the Waltz* (1949); Mosco Carner, *The Waltz* (1948).
+
+### Hymn (four parts) {#hymn}
+
+*Every chord held until the next, the bass doubling the root*
+
+[Open the Hymn (four parts) style in the Backing Track](../tools/backing-track.html?style=hymn){.btn .btn-outline-primary}
+
+#### What it is
+
+Congregational hymn accompaniment: soprano, alto, tenor and bass moving together, one chord per melody
+note or two, each held until the next, no drums. The organ is the obvious instrument.
+
+#### A little history
+
+Martin Luther's chorales (from the 1520s) gave Protestant congregations hymns to sing; J. S. Bach's
+four-part harmonisations of them in his cantatas and passions (1720s-40s) became the model of how to
+write harmony, and still are in theory classes. In England, Isaac Watts and Charles Wesley in the 1700s
+wrote the texts; the collection *Hymns Ancient and Modern* (1861) and *The English Hymnal* (1906, music
+edited by Ralph Vaughan Williams) set the four-part style of the Anglican hymnal. American hymnals, gospel
+song and shape-note singing grew from the same roots.
+
+#### The band's version
+
+- **Bass:** *Held roots*. **Comping:** *hymn*: three voices over the root. **Drums:** none.
+- Choose Church organ as the instrument for the other obvious sound.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| J. S. Bach, *Wachet auf* chorale (Cantata 140, final movement) | 1731 | Four-part chorale. |
+| Choir of King's College, Cambridge, *Once in Royal David's City* | any year | The hymn that opens their Christmas Eve service. |
+| Vaughan Williams, *Down Ampney* (*Come Down, O Love Divine*) | 1906 | An English Hymnal tune. |
+| Any congregational recording of *Old Hundredth* | 1551 tune | The oldest hymn tune still in common use. |
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Keith Getty & Stuart Townend, *In Christ Alone* | 2001 | A modern hymn, often sung in four parts. |
+| Chris Tomlin, *Amazing Grace (My Chains Are Gone)* | 2006 | An old hymn tune with a band. |
+
+#### Sources
+
+- Erik Routley, *The Music of Christian Hymns* (GIA, 1981).
+- J. R. Watson, *The English Hymn* (Oxford, 1997).
+
+### Folk carol {#carol}
+
+*Strummed guitar, bass on 1 and 3, very light time*
+
+[Open the Folk carol style in the Backing Track](../tools/backing-track.html?style=carol){.btn .btn-outline-primary}
+
+#### What it is
+
+Traditional carols played by a folk-rock band: a strummed steel-string guitar, upright bass on 1 and 3,
+light brushes. Between the four-part [hymn](#hymn) and [acoustic strum](#strum).
+
+#### A little history
+
+Many English carols are older than the hymns sung beside them: dance songs and wassails collected by
+Cecil Sharp and Ralph Vaughan Williams in the early 1900s and published in *The Oxford Book of Carols*
+(1928). The British folk revival of the 1960s and the folk-rock bands that followed (Steeleye Span,
+Fairport Convention) played them with guitars, fiddles and drums, and many carol albums since have done
+the same.
+
+#### The band's version
+
+- **Bass:** *Roots on 1 and 3*. **Comping:** folk strum. **Drums:** brushes, very light.
+
+#### Listening
+
+| Recording | Year | Listen for |
+|---|---|---|
+| The Watersons, *Frost and Fire* | 1965 | Unaccompanied ritual songs and carols: the source material. |
+| Steeleye Span, *Gaudete* | 1973 | A Latin carol in a folk-rock band's hands (sung unaccompanied). |
+| Jethro Tull, *Ring Out, Solstice Bells* | 1976 | Folk rock for Christmas. |
+| Sufjan Stevens, *Songs for Christmas* | 2006 | Traditional carols with banjo and guitar. |
+
+Track details on this page have not been checked against discographies yet.
+
+##### More recent
+
+| Recording | Year | Listen for |
+|---|---|---|
+| Sufjan Stevens, *O Come O Come Emmanuel* (*Songs for Christmas*) | 2006 | A folk-band carol (album already listed above). |
+
+#### Sources
+
+- Hugh Keyte and Andrew Parrott (eds.), *The New Oxford Book of Carols* (Oxford, 1992).
+- Rob Young, *Electric Eden: Unearthing Britain's Visionary Music* (Faber, 2010).
+
+<script src="/apps/shared/lessons/sections.js?v=2"></script>

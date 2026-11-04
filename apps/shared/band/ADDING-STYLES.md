@@ -66,22 +66,23 @@ entries before writing a new one.
    - `tests/band/pat/t_pop.js` lists the style ids of some groups in order; update the list if you added to one.
    - `tests/band/styles/t_sections.js`, `tests/band/fills/t_fills.js`, `tests/band/meter/t_change.js`
      must still pass.
-6. **Publish it to the pages.** In `tools/_backing-track.qmd` and `tools/_accomp-styles.qmd`, raise the
-   `?v=` number on every script you changed (browsers cache them). Then
-   `quarto render tools/backing-track.qmd` and check that `.gitignore` did not change (Quarto appends to it).
+6. **Publish it.** A changed engine script needs no `?v=` bump and no re-render: browsers re-check every script on each load
+   (CLAUDE.md rule 2). Render only pages whose text changed, by folder (`quarto render styles`), and check that `.gitignore`
+   did not change (Quarto appends to it).
    The lyrics site copies the engine: `bash ~/Projects/carols/tools/build.sh`.
 7. **Write its pages.** A style is taught as well as played:
-   - **Style Notes** (history and listening): `styles/<style id>.qmd`, linked from the page by `BandCatalog.article(id)`. Copy
-     `styles/swing.qmd`: What it is, A little history, The band's version (and what it leaves out), Listening, Sources. Add it to
-     `styles/index.qmd` under its group, and end it with `<script src="/apps/shared/lessons/sections.js?v=1"></script>`.
+   - **Style Notes** (history and listening): a section of the one Style Notes page, `styles/index.qmd`, under its group:
+     `### Style name {#<style id>}` (the id is what `BandCatalog.article(id)` links to), then the subtitle in italics and
+     `#### What it is`, `#### A little history`, `#### The band's version` (and what it leaves out), `#### Listening`, `#### Sources`;
+     copy the Swing section. (The old one-page-per-style addresses, styles/<id>.html, redirect there: worker/index.js.)
    - **Pattern lessons**: every new bass line, comping rhythm, drum groove or conga part needs a `PLAN` entry (ladder, tips) in
      `scripts/pattern-lessons.mjs`, its style a `STYLE` chart, and any rhythm it shares a `SAME` group; then
-     `node scripts/pattern-lessons.mjs` (it lists parts with no plan) and `quarto render lessons/patterns`.
+     `node scripts/pattern-lessons.mjs` (it lists parts with no plan) and `quarto render lessons/patterns`. The lessons are
+     sections of four pages (`lessons/patterns/bass|chords|drums|congas.qmd`), each anchored by its old page name (`#bass-walk`);
+     the old addresses redirect there (worker/index.js).
    - **A lesson** when the style needs teaching beyond its patterns, or when two styles overlap (`lessons/stride-boogie.qmd`):
      `.ar-demo` examples from `lessons/_arrange-kit.qmd`, listed in `lessons/index.qmd` and the Lessons menu in `_quarto.yml`.
-   - The pages that load a changed engine file include every lesson that has a band: bump `?v=` in all of them
-     (`grep -rlE 'band/(bass|comp|catalog)\.js\?v=' --include='*.qmd' lessons tools`) and render them.
-   - Check: `tests/band/lessons/patterns.cdp.js` with `PAGES=` the new lessons (copy `_site/lessons/patterns` into `tests/band/lead/site/lessons/`).
+   - Check: `tests/band/lessons/patterns.cdp.js` with `PAGES=` the new lessons' section ids (copy `_site/lessons/patterns` into `tests/band/lead/site/lessons/`).
 8. **Say what was not verified.** Nothing here can be listened to from a terminal. Report the pattern
    in beats, what the tests cover, and that it needs ears. Do not commit unless asked.
 

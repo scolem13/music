@@ -13,7 +13,7 @@ const FAKE = `(() => { window.__sent = []; const out = { id: "o1", name: "MODX-1
   const b = await launch(); let ok = false;
   try {
     await b.send("Page.addScriptToEvaluateOnNewDocument", { source: FAKE });
-    await b.goto("http://127.0.0.1:8517/gear/modx-band.html"); await b.sleep(500);
+    await b.goto("http://127.0.0.1:8517/gear/modx.html"); await b.sleep(500);
     await b.eval(`localStorage.clear(); document.getElementById("mx-connect").click()`); await b.sleep(300);
     const st = await b.eval(`document.getElementById("mx-status").textContent`);
     if (!/MODX-1/.test(st)) throw new Error("not connected: " + st);

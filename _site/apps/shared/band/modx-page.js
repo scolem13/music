@@ -1,4 +1,4 @@
-// modx-page.js — the MODX page (gear/modx-band.qmd): connect, call up the Performance, set the offset by ear, compare each site
+// modx-page.js — the MODX page (gear/modx.qmd, section Play the band on the MODX): connect, call up the Performance, set the offset by ear, compare each site
 // sound with the MODX's, route the winners, edit the drum maps. Everything it changes lives in BandModx.cfg (modx.js).
 (function () {
   var M = window.BandModx, S = window.BandSounds, $ = function (id){ return document.getElementById(id); };

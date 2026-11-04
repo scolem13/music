@@ -1,4 +1,4 @@
-// modx-kits.js — key maps of 32 MODX+ drum kits (global ModxKits: { kit name: { "C1": wave name, … } }), for gear/modx-perc.qmd.
+// modx-kits.js — key maps of 32 MODX+ drum kits (global ModxKits: { kit name: { "C1": wave name, … } }), for gear/modx.qmd (Percussion auditions).
 // From the MODX6+/7+/8+ Data List, Drum Kit Assign List (~/Documents/Manuals/Yamaha-MODX-plus-Data-List.pdf), read from the PDF's text;
 // which table is which kit was inferred from the page layout. Yamaha note names: C3 = MIDI 60. Every kit here keeps the General MIDI
 // roles on the keys the auditions use (kick C1/B0, rim C#1, snare D1, clap D#1, hats F#1/A#1, toms F1–D2, crash C#2, ride D#2,

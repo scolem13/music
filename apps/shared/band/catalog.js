@@ -21,7 +21,7 @@
 //   BandCatalog.feels / .cymbals -> [{ id, label, desc }]         ids = opts.feel / opts.ride
 //   BandCatalog.url({ style, bass, rhythm, drums, feel, comp, congas }) -> link that opens the Backing Track
 //       page with those choices preselected (it reads the same query names).
-//   BandCatalog.article(styleId) -> link to the style's article (history, listening): styles/<id>.qmd
+//   BandCatalog.article(styleId) -> link to the style's article (history, listening): styles/index.html#<id>
 // tune on a bass / comp entry = the tune the figure comes from (group "From tunes"); after = what the
 // band plays instead once the head is over, when the page's "Figure from the tune" says first chorus only.
 // feel on an entry = the feel it is written for ("swing" | "straight" | "any").
@@ -497,9 +497,9 @@
     ["style", "bass", "rhythm", "drums", "feel", "comp", "congas"].forEach(function (k){ if (o[k]) q.push(k + "=" + encodeURIComponent(o[k])); });
     return "/tools/backing-track.html" + (q.length ? "?" + q.join("&") : "");
   }
-  // the style's article (history and listening): styles/<id>.qmd
+  // the style's article (history and listening): its section of the one Style Notes page, styles/index.qmd ("### Name {#id}")
   function article(id){
-    return "/styles/" + encodeURIComponent(id) + ".html";
+    return "/styles/index.html#" + encodeURIComponent(id);
   }
   function byId(list, id){ for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i]; return null; }
 

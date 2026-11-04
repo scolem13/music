@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 // Site consistency check for pages and shared scripts. Run before committing a new page.
 //
+// ?v= numbers are no longer needed (2026-11-04): the Worker serves every file with "Cache-Control: private, no-cache" and an
+// ETag (worker/index.js; checked on `wrangler dev`: a repeat request gets 304, a changed file 200), so a browser re-checks each
+// script on every page load and picks up a change whatever its ?v= says. Changing a script needs no bump and no re-render.
+// The numbers already in the pages are harmless; --bump and --fix still work, and the two version checks are warnings now.
+//
 //   node scripts/check-pages.mjs            report problems (exit 1 if any version problems)
 //   node scripts/check-pages.mjs --fix      every apps/ script loaded at its highest ?v= everywhere; ?v=1 added to
 //                                           <script src> tags that have none
@@ -10,8 +15,8 @@
 //                                           because of that (a lazy loader) is bumped in turn
 //
 // Checks:
-//   versions   one script loaded at different ?v= numbers (browsers keep whichever copy came first)   [error]
-//   unversioned  <script src="/apps/...js"> with no ?v= (never refreshes)                              [error]
+//   versions   one script loaded at different ?v= numbers (harmless now: see above)                    [warning]
+//   unversioned  <script src="/apps/...js"> with no ?v= (fine now: see above)                          [not reported]
 //   synth      ABCJS.synth outside abc-play.js / cursor-synth.js (rule 3)                               [warning]
 //   audiotap   new AudioContext in a file with no AudioTap.register (rule 3)                            [warning]
 //   sections   lesson/theory/practice/tool page with no "## " heading (empty jump bar)                  [warning]
@@ -63,14 +68,14 @@ for (const [p, vers] of Object.entries(uses)) {
   if (FIX && !BUMP) {
     for (const f of files) rewrite(f, (t) => t.replace(REF, (all, q) => (q === p ? all.replace(/\?v=[\w.-]+/, "?v=" + top) : all)));
   } else if (!BUMP) {
-    errors.push(`versions  ${p}: ` + Object.entries(vers).map(([v, s]) => `v${v} (${[...s].join(", ")})`).join("; "));
+    warnings.push(`versions  ${p}: ` + Object.entries(vers).map(([v, s]) => `v${v} (${[...s].join(", ")})`).join("; "));
   }
 }
 
 const UNV = /(<script[^>]*\ssrc=")(\/?apps\/[\w\/.-]+\.js)(")/g;
 for (const f of files.filter((f) => /\.(qmd|html)$/.test(f))) {
   if (FIX) rewrite(f, (t) => t.replace(UNV, (a, pre, p, post) => pre + p + "?v=" + (highest(p.replace(/^\//, "")) || 1) + post));
-  else for (const m of text[f].matchAll(UNV)) errors.push(`unversioned  ${f}: ${m[2]}`);
+  // (a script with no ?v= is fine: the server makes every browser re-check it)
 }
 
 for (const f of files) {

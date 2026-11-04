@@ -79,7 +79,7 @@ console.log("modx.test: ok");
 // the loader in sounds.js asks for the same modx.js version as the pages
 { const fs = require("fs"), path = require("path"), root = path.join(__dirname, "../../..");
   const loader = +/var MODX_V = (\d+)/.exec(fs.readFileSync(root + "/apps/shared/band/sounds.js", "utf8"))[1];
-  const page = +/band\/modx\.js\?v=(\d+)/.exec(fs.readFileSync(root + "/gear/modx-band.qmd", "utf8"))[1];
+  const page = +/band\/modx\.js\?v=(\d+)/.exec(fs.readFileSync(root + "/gear/modx.qmd", "utf8"))[1];
   assert.equal(loader, page, "sounds.js MODX_V (" + loader + ") = the pages' modx.js?v= (" + page + ")"); }
 console.log("modx.test: shift, velocity and loader version ok");
 // old saved settings (before the five kits): drums and congas take today's defaults; the rest is kept

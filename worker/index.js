@@ -51,6 +51,21 @@ async function media(req, env, path) {
   return new Response(req.method === "HEAD" ? null : obj.body, { headers: h });
 }
 
+// Pages merged into others (2026-11-04): the old address goes to the section that now holds it.
+//   /lessons/patterns/<kind>-<id>.html -> /lessons/patterns/<kind>.html#<kind>-<id>   (122 lessons on four pages, scripts/pattern-lessons.mjs)
+//   /styles/<id>.html                 -> /styles/index.html#<id>                    (the Style Notes, one page)
+//   /gear/modx-band|perc|ab.html      -> /gear/modx.html#<section>                  (the MODX pages, one page)
+const MODX = { "modx-band": "play-the-band-on-the-modx", "modx-perc": "percussion-auditions", "modx-ab": "band-ab" };
+function movedTo(path) {
+  let m = path.match(/^\/lessons\/patterns\/(bass|chords|drums|congas)-([a-z0-9-]+)(?:\.html|\.qmd)?$/);
+  if (m) return `/lessons/patterns/${m[1]}.html#${m[1]}-${m[2]}`;
+  m = path.match(/^\/styles\/([a-z0-9-]+)(?:\.html|\.qmd)?$/);
+  if (m && m[1] !== "index") return `/styles/index.html#${m[1]}`;
+  m = path.match(/^\/gear\/(modx-band|modx-perc|modx-ab)(?:\.html|\.qmd)?$/);
+  if (m) return `/gear/modx.html#${MODX[m[1]]}`;
+  return null;
+}
+
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -73,6 +88,8 @@ export default {
     }
     if (isMedia) return media(req, env, url.pathname);
     if (url.pathname.startsWith("/media/")) return media(req, env, url.pathname.slice(6));   // same files, same origin
+    const moved = movedTo(url.pathname);                                                     // pages merged into others (2026-11-04)
+    if (moved) return new Response(null, { status: 301, headers: { Location: moved, "Cache-Control": "no-store" } });
     const res = await env.ASSETS.fetch(req);
     const out = new Response(res.body, res);
     out.headers.set("Cache-Control", "private, no-cache");   // pages behind the password must not sit in shared caches

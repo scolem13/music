@@ -16,8 +16,8 @@ page plays them on the band one at a time, then side by side, then swaps their p
 
 How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read
 what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows
-everything down. For the history of each, see the Style Notes on [Stride piano](../styles/stride.qmd)
-and [Boogie-woogie](../styles/boogie.qmd).
+everything down. For the history of each, see the Style Notes on [Stride piano](../styles/index.qmd#stride)
+and [Boogie-woogie](../styles/index.qmd#boogie).
 
 ## 1. Where they meet
 
@@ -43,7 +43,7 @@ boom-chick, where the bass note is left to the bass player.
 
 **What to look for.** On the staff the left hand jumps about two octaves on every beat. Stride
 pianists practise the jump with their eyes on the landing note: the low one. Start with the root on 1
-and 3, then play the fifth on 3. Full lesson: [Stride](patterns/chords-stride.qmd).
+and 3, then play the fifth on 3. Full lesson: [Stride](patterns/chords.qmd#chords-stride).
 
 ## 3. Boogie-woogie: eight to the bar
 
@@ -55,7 +55,7 @@ it is built from.
 
 **What to look for.** The shape is the same on every chord; only the root moves. On the piano the
 hand stays in one position, fingers 5 1 on the root and 6th. Full lesson:
-[Boogie-woogie](patterns/bass-boogie.qmd).
+[Boogie-woogie](patterns/bass.qmd#bass-boogie).
 
 ## 4. Side by side on a blues
 
@@ -92,7 +92,7 @@ the drums. Switch between each pair and listen for what changes and what stays.
 
 <div class="ar-demo" data-style="jump" data-chart="C7|F7|C7|G7" data-tempo="160" data-on="bass comp drums" data-staves="drums bass" data-choice-label="Drums:" data-choices='[{"label":"Jump blues","opts":{"groove":"jump"}},{"label":"Boogie-woogie shuffle","opts":{"groove":"shuffle"}}]'></div>
 
-See the Style Notes on [Ragtime](../styles/ragtime.qmd) and [Jump blues](../styles/jump.qmd).
+See the Style Notes on [Ragtime](../styles/index.qmd#ragtime) and [Jump blues](../styles/index.qmd#jump).
 
 ## 7. Try it
 

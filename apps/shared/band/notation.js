@@ -199,6 +199,7 @@
     return { abc: out, carry: carry };
   }
 
+  var LH_TOP = 62;   // D4: the lowest note a shared chord's left hand gives to the right
   // How many of a chord's notes (ascending) the left hand takes when the hands share it (as Chord Sheet's leftHandCount).
   function leftCount(ms, rootPc){
     var n = ms.length, top = ms[n - 1]; if (!n) return 0;
@@ -215,7 +216,10 @@
     if (e.hand === "L") return { R: [], L: ms };
     if (separate || e.hand === "R") return { R: ms, L: [] };
     var k = leftCount(ms, ch && !ch.nc ? ch.root : null);
-    return { L: ms.slice(0, k), R: ms.slice(k) };
+    // a shared chord's left hand takes only notes below D4: a voicing moved up (the organ an octave higher, opts.octave) would
+    // otherwise land in the bass clef on ledger lines; those notes go to the right hand (treble clef) instead
+    var L = ms.slice(0, k).filter(function (m){ return m < LH_TOP; }), R = ms.filter(function (m){ return L.indexOf(m) < 0; });
+    return { L: L, R: R };
   }
 
   function chordName(c){
@@ -280,7 +284,10 @@
           if (e.piece === "kick" && e.vel != null && e.vel < FEATHER) return;
           var g = snap(e.pos, cmp, e.six), it = items[g] || (items[g] = { short: true, want: 1, hits: [], tok: function (){
             var seen = {}, t = []; this.hits.forEach(function (h){ if (seen[h[0]]) return; seen[h[0]] = 1; t.push(h[1] + h[0]); });      // (two pieces on one line: the first)
-            return (this.grab ? '"^choke"!staccato!' : "") + (this.acc ? "!>!" : "") + (t.length > 1 ? "[" + t.join("") + "]" : t[0]); } });
+            // a decoration that is not a head style (!open!) goes before the chord: inside "[...]" abcjs stops reading the chord there
+            // and the bar comes out split in two (the drum staff's bar lines then miss the staves above)
+            var pre = ""; if (t.length > 1) t = t.map(function (x){ return x.replace(/!open!/g, function (m){ pre = m; return ""; }); });
+            return (this.grab ? '"^choke"!staccato!' : "") + (this.acc ? "!>!" : "") + pre + (t.length > 1 ? "[" + t.join("") + "]" : t[0]); } });
           if (loud.indexOf(e) >= 0) it.acc = true;
           if (e.piece === "crash" && grabs.some(function (x){ return x > e.pos && x - e.pos < 1; })) it.grab = true;
           it.hits.push(d); }); }

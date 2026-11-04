@@ -225,7 +225,8 @@ const slug = (kind, id) => `${KINDS[kind].dir}-${id.replace(/[A-Z]/g, (c) => "-"
 const entry = (kind, id) => C.byId ? C.byId(KINDS[kind].list, id) : KINDS[kind].list.find((e) => e.id === id);
 const style = (id) => C.styles.find((s) => s.id === id);
 const plan = (kind, id) => PLAN[kind][id] || {};
-const link = (kind, id) => { const e = entry(kind, id); return e ? `[${e.label}](${slug(kind, id)}.qmd)` : id; };
+const href = (kind, id) => `${KINDS[kind].dir}.qmd#${slug(kind, id)}`;   // one page per kind, one section per pattern (its old page name is the anchor)
+const link = (kind, id) => { const e = entry(kind, id); return e ? `[${e.label}](${href(kind, id)})` : id; };
 const kindWord = { bass: "bass line", comp: "comping rhythm", drums: "drum groove", congas: "conga part" };
 const lc = (s) => s.charAt(0).toLowerCase() + s.slice(1);
 
@@ -261,12 +262,12 @@ function page(kind, e) {
   const fits = (e.fits || []).map(style).filter(Boolean);
   const who = kind === "comp" ? insts.join(" or ") : K.who;
   const L = [];
-  L.push("---", `title: "${K.noun}: ${e.label.replace(/"/g, "'")}"`, `subtitle: "For ${who}, built up a step at a time"`, "toc: true", "toc-depth: 2", "---", "");
+  L.push(`## ${e.label} {#${slug(kind, e.id)}}`, "", `*For ${who}, built up a step at a time.*`, "");
   L.push(`This is a lesson on one ${kindWord[kind]} the [Backing Track](../../tools/backing-track.qmd) band plays: **${e.label}**. ` +
     (ladder.length ? `It is built up from ${ladder.length === 1 ? "a simpler pattern" : ladder.length + " simpler patterns"}, one step at a time, and every step is played by the band and written out as it plays.` :
       "It is one of the first patterns to learn, so this page starts from it and takes it into the band.") +
     ` How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.`, "");
-  L.push(`[All the accompaniment patterns](index.qmd) · [${K.noun}s](index.qmd#${K.dir})`, "");
+  L.push(`[All the accompaniment patterns](index.qmd)`, "");
 
   L.push("## The pattern", "", e.desc, "");
   if (fits.length) L.push(`It belongs in ${fits.map((s) => `*${s.label}*`).join(", ").replace(/, ([^,]*)$/, " and $1")}. Here it is in the ${S.label.toLowerCase()} style with the whole band. Switch the other players off to hear it alone.`, "");
@@ -277,7 +278,7 @@ function page(kind, e) {
     const r = entry(kind, id);
     L.push(`## Step ${n++}: ${r.label}`, "");
     L.push(i === 0 ? `Start with something simpler. ${r.desc}` : r.desc, "");
-    L.push(`This is a pattern of its own: [the lesson on it](${slug(kind, id)}.qmd) takes it further. Here it is only a step on the way, slowly.` +
+    L.push(`This is a pattern of its own: [the lesson on it](${href(kind, id)}) takes it further. Here it is only a step on the way, slowly.` +
       (kind === "drums" ? " The drums play alone first; switch the bass and chords on when it is steady." : kind === "congas" ? " The bass plays with you; switch the drums and chords on when it is steady." : " The drums keep time with you; switch the others on when it is steady."), "");
     L.push(demo({ st, chart, meter, tempo: slow(tempo), on: rungOn, staves: part, comp, choices: [{ label: r.label, opts: opt(id) }], label: "Step:" }), "");
   });
@@ -330,8 +331,8 @@ function page(kind, e) {
   if (partners.length) L.push(`- **Plays with, in ${S.label.toLowerCase()}:** ${partners.map(([k, id]) => `${link(k, id)} (${kindWord[k]})`).join(", ")}.`);
   const sib = K.list.filter((x) => x.id !== e.id && x.group === e.group && !(SKIP[kind] || []).includes(x.id)).slice(0, 8);
   if (sib.length) L.push(`- **Other ${kindWord[kind]}s in the ${e.group} group:** ${sib.map((x) => link(kind, x.id)).join(", ")}.`);
-  L.push("", "{{< include ../_arrange-kit.qmd >}}", "", '<script src="/apps/shared/lessons/sections.js?v=2"></script>', "");
-  return L.join("\n");
+  // the lesson's own headings sit one level under its "## Name" (the jump bar lists the lessons)
+  return L.map((l) => /^## /.test(l) && !/\{#/.test(l) ? "#" + l : l).join("\n") + "\n";
 }
 
 fs.mkdirSync(OUT, { recursive: true });
@@ -340,21 +341,27 @@ const idx = ["---", 'title: "Accompaniment Patterns"', 'subtitle: "A lesson for 
 let count = 0;
 for (const kind of Object.keys(KINDS)) {
   const K = KINDS[kind];
-  idx.push(`## ${K.noun}s {#${K.dir}}`, "");
+  idx.push(`## ${K.noun}s {#${K.dir}}`, "", `All on one page: [${K.noun}s](${K.dir}.qmd).`, "");
+  const sections = [];
   const groups = [...new Set(K.list.map((x) => x.group))];
   for (const g of groups) {
     const items = K.list.filter((x) => x.group === g && !(SKIP[kind] || []).includes(x.id));
     if (!items.length) continue;
     idx.push(`**${g}**`, "");
     for (const e of items) {
-      fs.writeFileSync(path.join(OUT, slug(kind, e.id) + ".qmd"), page(kind, e)); count++;
+      sections.push(page(kind, e)); count++;
       const lad = (plan(kind, e.id).ladder || []);
-      idx.push(`- ${lad.length ? "" : "○ "}[${e.label}](${slug(kind, e.id)}.qmd)${lad.length ? ` — from ${lad.map((id) => entry(kind, id)?.label).join(" → ")}` : ""}`);
+      idx.push(`- ${lad.length ? "" : "○ "}[${e.label}](${href(kind, e.id)})${lad.length ? ` — from ${lad.map((id) => entry(kind, id)?.label).join(" → ")}` : ""}`);
     }
     idx.push("");
   }
+  fs.writeFileSync(path.join(OUT, K.dir + ".qmd"), ["---", `title: "${K.noun}s"`, `subtitle: "Every ${kindWord[kind]} the band plays, each built up a step at a time"`,
+    `description: "A lesson for every ${kindWord[kind]} the Backing Track band plays: built up from simpler ones, played on the band and written out as it plays."`,
+    "toc: true", "toc-depth: 2", `toc-title: "${K.noun}s"`, "---", "",
+    `[All the accompaniment patterns](index.qmd) · each lesson below is a section of this page; the list on the right jumps to one.`, "",
+    ...sections, "{{< include ../_arrange-kit.qmd >}}", "", '<script src="/apps/shared/lessons/sections.js?v=2"></script>', ""].join("\n"));
 }
 idx.push('<script src="/apps/shared/lessons/sections.js?v=2"></script>', "");
 fs.writeFileSync(path.join(OUT, "index.qmd"), idx.join("\n"));
 const missing = Object.keys(KINDS).flatMap((k) => KINDS[k].list.filter((e) => !(SKIP[k] || []).includes(e.id) && !PLAN[k][e.id]).map((e) => k + ":" + e.id));
-console.log(`wrote ${count} lessons and the index to lessons/patterns/` + (missing.length ? `; no plan for: ${missing.join(", ")}` : ""));
+console.log(`wrote ${count} lessons on ${Object.keys(KINDS).length} pages and the index to lessons/patterns/` + (missing.length ? `; no plan for: ${missing.join(", ")}` : ""));

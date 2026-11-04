@@ -422,37 +422,7 @@ website:
             - tools/guitar-tuning.qmd
             - tools/guitar-setup-check.qmd
             - tools/guitar-in.qmd
-        - section: "Style Notes"
-          href: styles/index.qmd
-          contents:
-            - styles/ballad.qmd
-            - styles/boogaloo.qmd
-            - styles/boogie.qmd
-            - styles/bossa.qmd
-            - styles/calypso.qmd
-            - styles/carol.qmd
-            - styles/chacha.qmd
-            - styles/dance.qmd
-            - styles/doowop.qmd
-            - styles/emo.qmd
-            - styles/folk.qmd
-            - styles/freylekhs.qmd
-            - styles/hymn.qmd
-            - styles/jump.qmd
-            - styles/montuno.qmd
-            - styles/motown.qmd
-            - styles/pop.qmd
-            - styles/prine.qmd
-            - styles/ragtime.qmd
-            - styles/reggae.qmd
-            - styles/reggaeton.qmd
-            - styles/rock.qmd
-            - styles/stride.qmd
-            - styles/strum.qmd
-            - styles/swing.qmd
-            - styles/tango.qmd
-            - styles/train.qmd
-            - styles/waltz.qmd
+        - styles/index.qmd
     - id: gear
       title: "MIS Gear"
       style: docked
@@ -462,9 +432,6 @@ website:
         - gear/x32-drums-dca.qmd
         - gear/using-a-mic.qmd
         - gear/modx.qmd
-        - gear/modx-band.qmd
-        - gear/modx-perc.qmd
-        - gear/modx-ab.qmd
     - id: mlt
       title: "MLT"
       style: docked
@@ -601,9 +568,6 @@ website:
           - gear/x32-drums-dca.qmd
           - gear/using-a-mic.qmd
           - gear/modx.qmd
-          - gear/modx-band.qmd
-          - gear/modx-perc.qmd
-          - gear/modx-ab.qmd
       - text: Teacher
         menu:
           - teacher/session-builder.qmd

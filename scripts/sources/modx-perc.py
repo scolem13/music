@@ -1,5 +1,5 @@
-# Sources for the MODX Percussion Auditions (gear/modx-perc.qmd, apps/shared/band/modx-perc.js). Read 2026-11-04.
-P = ["gear/modx-perc.qmd"]
+# Sources for the MODX Percussion Auditions (gear/modx.qmd, section Percussion auditions; apps/shared/band/modx-perc.js). Read 2026-11-04.
+P = ["gear/modx.qmd"]
 SOURCES = [
     web('Yamaha Corporation. *MODX6+ / MODX7+ / MODX8+ Data List*. Yamaha. URL.', "https://usa.yamaha.com/files/download/other_assets/5/1583935/modx_plus_en_dl_a0.pdf", P,
         note="Drum Kit Assign List: the key of every sound in Pop Latin Kit, Real Brushes Kit, Jazz Brushes Kit and Brush Kit (kit-to-table match read from the page layout)."),
