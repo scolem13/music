@@ -44,6 +44,7 @@
 // Sounds: opts.bassSound "electric" plays the bass part on "ebass"; opts.compSound (any sound of the comping instrument's family, BandSounds.family) e.g. "epiano" plays
 // piano comping on "epiano"; opts.rideSound "ride2" swaps the ride cymbal. The parts never know.
 // Octaves: opts.octave = { bass: -1, comp: 1, comp2: 0 } moves a player's notes by whole octaves (sound, notation and MIDI alike).
+// The tonewheel organ ("hammond") comping, first or second, is always one octave higher than written for the piano (organUp).
 // Stop time: opts.stops = [form bar index, ...]. On those bars ctx.stop is true (the band hits beat 1
 // and only the bass leads back in) and the bar before gets ctx.nextStop, so nothing rings across.
 //   player.setStartBar(i)          // form bar the next play() starts on (after the count-in)
@@ -429,8 +430,15 @@
   };
   // opts.octave = { bass: n, comp: n, comp2: n }: that player's notes n octaves up (or down). The part chooses its notes as ever;
   // they are moved afterwards, so the sound, the notation and the MIDI file all carry the move.
+  // The tonewheel organ comps an octave above the piano's voicings (Sean, 2026-11-04: it sat in the bass's range; its default
+  // registration 888000000 has the 16' bar, which already sounds an octave below the keys). Added to opts.octave for that part.
+  function organUp(part, opts){
+    if (!opts) return 0;
+    var snd = part === "comp" ? opts.compSound : part === "comp2" && opts.second && opts.second.comp ? (opts.second.compSound || opts.second.comp) : null;
+    return snd === "hammond" ? 1 : 0;
+  }
   function octaves(part, evs, opts){
-    var n = opts && opts.octave ? Math.max(-3, Math.min(3, opts.octave[part] | 0)) : 0; if (!n) return evs;
+    var n = (opts && opts.octave ? Math.max(-3, Math.min(3, opts.octave[part] | 0)) : 0) + organUp(part, opts); if (!n) return evs;
     evs.forEach(function (e){ if (!e) return; if (e.midi != null) e.midi += 12 * n; if (e.midis) e.midis = e.midis.map(function (m){ return m + 12 * n; }); });
     return evs;
   }

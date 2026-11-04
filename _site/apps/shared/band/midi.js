@@ -96,8 +96,15 @@
 
   // Bars generated straight from the parts, from the top of the form, with no audio.
   // opts.octave, as in player.js: a player's notes moved by whole octaves
+  // The tonewheel organ comps an octave above the piano's voicings (Sean, 2026-11-04: it sat in the bass's range; its default
+  // registration 888000000 has the 16' bar, which already sounds an octave below the keys). Added to opts.octave for that part.
+  function organUp(part, opts){
+    if (!opts) return 0;
+    var snd = part === "comp" ? opts.compSound : part === "comp2" && opts.second && opts.second.comp ? (opts.second.compSound || opts.second.comp) : null;
+    return snd === "hammond" ? 1 : 0;
+  }
   function octaves(part, evs, opts){
-    var n = opts && opts.octave ? Math.max(-3, Math.min(3, opts.octave[part] | 0)) : 0; if (!n) return evs;
+    var n = (opts && opts.octave ? Math.max(-3, Math.min(3, opts.octave[part] | 0)) : 0) + organUp(part, opts); if (!n) return evs;
     evs.forEach(function (e){ if (!e) return; if (e.midi != null) e.midi += 12 * n; if (e.midis) e.midis = e.midis.map(function (m){ return m + 12 * n; }); });
     return evs;
   }

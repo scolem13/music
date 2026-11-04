@@ -111,3 +111,12 @@ Settings are kept in the browser (`localStorage.btOrgan`, and `btAmp` for the am
 [fractal]: https://forum.fractalaudio.com/threads/leslie-different-speeds-for-treble-horn-and-bass-speaker.16193/
 [cantabile]: https://community.cantabilesoftware.com/t/corky-s-vst-organ-tips-and-tweaks-page/3330?page=13
 [kc]: https://forums.musicplayer.com/topic/173796-leslie-speed-control-foot-switch-or-half-moon-and-why/page/3/
+
+## Register (2026-11-04)
+
+The organ comps **one octave above** the piano's voicings (player.js / midi.js `organUp`, test `tests/band/organ/t_octave.js`).
+It plays the same voicings as the piano, which sit around and below middle C because a pianist has a left hand; with the
+16′ tonebar of the default 888000000 (sounding an octave below the key) the organ was in the bass player's range. Sean
+asked for it by ear. That an organist comping beside a bass keeps the chords from about middle C up is general knowledge,
+UNVERIFIED against a source. The church organ (hymns, sung along with) is not moved.
+
