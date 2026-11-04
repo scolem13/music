@@ -1,0 +1,73 @@
+---
+title: "MODX Percussion Auditions"
+description: "Short loops on four MODX+ kits (Pop Latin, Real Brushes, Jazz Brushes, Brush Kit) to hear the congas, bongos, timbales, bells and brushes and mark the ones to use."
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+---
+
+```{=html}
+<script src="/apps/shared/band/modx.js?v=2"></script>
+<script src="/apps/shared/lessons/sections.js?v=2"></script>
+<style>
+.mp-row { display: flex; flex-wrap: wrap; gap: .4rem .8rem; align-items: center; margin: .4rem 0; }
+.mp-note { font-size: .88rem; opacity: .8; margin: .2rem 0; }
+.mp-status { font-weight: 600; } .mp-now { font-size: .88rem; color: #2a9d8f; }
+.mp-bpm { width: 4.2rem; }
+.mp-card { border: 1px solid rgba(128,128,128,.3); border-radius: 8px; padding: .6rem .8rem; margin: .8rem 0; }
+.mp-card.mp-playing { border-color: #2a9d8f; box-shadow: 0 0 0 1px #2a9d8f; }
+.mp-card h3 { font-size: 1.05rem; margin: 0 0 .2rem; }
+.mp-star { border: none; background: none; font-size: 1.15rem; padding: 0 .2rem; color: #e9a23b; cursor: pointer; }
+.mp-grid { overflow-x: auto; margin-top: .4rem; font-size: .75rem; }
+.mp-line { display: flex; align-items: center; gap: .4rem; white-space: nowrap; }
+.mp-key { flex: 0 0 13rem; overflow: hidden; text-overflow: ellipsis; font-family: var(--bs-font-monospace, monospace); }
+.mp-cells { display: flex; gap: 1px; }
+.mp-cell { width: 10px; height: 12px; background: rgba(128,128,128,.12); border-radius: 2px; }
+.mp-cell.beat { margin-left: 2px; } .mp-cell.bar { margin-left: 6px; }
+.mp-cell.vX { background: #1d6f66; } .mp-cell.vx { background: #2a9d8f; } .mp-cell.vo { background: #7cc5bc; } .mp-cell.vg { background: #c4e6e1; }
+.mp-cell.vh { background: rgba(42,157,143,.25); }
+.mp-cell.on { outline: 2px solid #e76f51; }
+.mp-walknow { font-weight: 600; font-family: var(--bs-font-monospace, monospace); min-height: 1.4em; }
+@media (max-width: 600px) { .mp-key { flex-basis: 8rem; } }
+</style>
+```
+
+Loops written for four MODX+ drum kits, sent straight to the board over USB. Use them to hear the congas, bongos, timbales,
+bells and brushes, and mark the ones you'd use with ☆. Works in Chrome or Edge (Web MIDI). The key maps come from Yamaha's
+MODX6+/7+/8+ Data List (Drum Kit Assign List); the grooves are this site's own sketches of each style, not transcriptions.
+
+## Connect
+
+```{=html}
+<div id="mp-connect"></div>
+<p class="mp-note">Set up a Performance with the kits on these channels (change the numbers if yours differ). Press Esc to stop.
+The board's own offset from <a href="modx-band.qmd#timing">Play the Band on the MODX</a> applies here too.</p>
+```
+
+## Your picks
+
+```{=html}
+<div id="mp-picks"></div>
+```
+
+## Latin percussion (Pop Latin Kit)
+
+```{=html}
+<div id="mp-latin"></div>
+```
+
+## Brushes (Real Brushes, Jazz Brushes, Brush Kit)
+
+```{=html}
+<p class="mp-note">Every brush loop uses keys that mean the same thing on all three kits, so <b>⇄ Take turns</b> plays it on each
+kit in turn (two bars each) and you can hear which you like.</p>
+<div id="mp-brush"></div>
+```
+
+## Kit walk
+
+```{=html}
+<div id="mp-walk"></div>
+<script src="/apps/shared/band/modx-perc.js?v=1"></script>
+<script>ModxPerc.mount(document);</script>
+```

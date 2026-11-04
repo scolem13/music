@@ -11,6 +11,7 @@
 //   BandModx.force(inst, "site" | "modx" | null)   the comparison page: one instrument this way whatever the routing says
 //   BandModx.selectPerformance()  Bank Select MSB/LSB + Program Change from cfg.perf, on cfg.perf.ch
 //   BandModx.cc(ch, num, value)   one controller now (ch 1..16)
+//   BandModx.note(ch, key, vel, atMs, durMs)   one raw note (ch 1..16, vel 0..1) at performance.now() time atMs (+ cfg.offsetMs), queued like play()
 //   BandModx.cfg / save() / reset()   the settings (localStorage "modx.cfg"); BandModx.DEFAULTS
 //   BandModx._setOutput(fake)     tests: any { send(bytes, ts) }
 //
@@ -118,6 +119,11 @@
     held = {};
   }
   function cc(ch, num, value){ if (out) try { out.send([0xB0 | (Math.max(1, Math.min(16, ch)) - 1), num & 127, Math.max(0, Math.min(127, Math.round(value)))]); } catch (e) {} }
+  function note(ch, key, vel, atMs, durMs){
+    var c = Math.max(1, Math.min(16, ch | 0)) - 1, k = Math.max(0, Math.min(127, Math.round(key))), t = (atMs == null ? now() : atMs) + (+cfg.offsetMs || 0);
+    var v = Math.min(127, Math.max(1, Math.round((vel == null ? 0.7 : vel) * 127)));
+    push(t, "on", [0x90 | c, k, v]); push(t + Math.max(20, durMs || 200), "off", [0x80 | c, k, 0]);
+  }
   function selectPerformance(){
     if (!out) return false; var p = cfg.perf, c = Math.max(1, Math.min(16, p.ch || 1)) - 1;
     out.send([0xB0 | c, 0, p.msb & 127]); out.send([0xB0 | c, 32, p.lsb & 127]); out.send([0xC0 | c, p.pc & 127]); return true;
@@ -146,7 +152,7 @@
   function notify(){ listeners.forEach(function (fn){ try { fn(); } catch (e) {} }); }
 
   var api = {
-    connect: connect, outputs: outputs, useOutput: useOutput, routed: routed, play: play, control: control, stop: stop, cc: cc,
+    connect: connect, outputs: outputs, useOutput: useOutput, routed: routed, play: play, control: control, stop: stop, cc: cc, note: note,
     selectPerformance: selectPerformance, force: function (inst, how){ if (how) forced[inst] = how; else delete forced[inst]; },
     connected: function (){ return !!out; }, portName: function (){ return out ? out.name : null; }, onChange: onChange,
     cfg: cfg, save: save, reset: reset, DEFAULTS: defaults(), GM_KIT: GM_KIT, GM_CONGAS: GM_CONGAS,

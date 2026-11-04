@@ -7,8 +7,8 @@ toc-title: "On this page"
 ---
 
 ```{=html}
-<script src="/apps/shared/band/modx.js?v=1"></script>
-<script src="/apps/shared/band/sounds.js?v=20"></script>
+<script src="/apps/shared/band/modx.js?v=2"></script>
+<script src="/apps/shared/band/sounds.js?v=21"></script>
 <script src="/apps/shared/lessons/sections.js?v=2"></script>
 <style>
 .mx-row { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin: .5rem 0; }
@@ -28,6 +28,7 @@ toc-title: "On this page"
 
 Send the band's notes to a Yamaha MODX over USB instead of playing the site's own samples, one instrument at a time. Works in
 Chrome or Edge (Web MIDI). Nothing changes for anyone without a MODX: until you switch it on here, every page sounds as before.
+To audition the board's congas, timbales and brushes, see [MODX Percussion Auditions](modx-perc.qmd).
 
 ## Connect
 

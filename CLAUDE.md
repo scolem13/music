@@ -5,6 +5,7 @@
 - The band's history, open questions and what nobody has listened to yet: `apps/shared/band/NOTES.org`.
 - Tests and headless page drivers: `tests/band/README.md`.
 - The band through a Yamaha MODX (Web MIDI out, routing, compare page `gear/modx-band.qmd`): `apps/shared/band/modx.js`, NOTES.org "MODX" round.
+- MODX percussion auditions (`gear/modx-perc.qmd`, `apps/shared/band/modx-perc.js`: loops for Pop Latin Kit ch 9, Real Brushes 10, Jazz Brushes 11, Brush Kit 12, key maps from the MODX+ Data List in ~/Documents/Manuals, ☆ picks, kit walk). Tests `node tests/band/modx/modx-perc.test.js` (`NEG=1` must fail), `tests/band/modx/modx-perc.cdp.js`.
 - The band out to a mixing desk (one channel per instrument, e.g. X32 over USB): `BandPlayer.output` in `apps/shared/band/player.js` (search "output routing"), panel `output-panel.js` under Mixer → Outputs on the Backing Track. Test `PORT=<port> node tests/band/bt/outputs.cdp.js` (headless has 2 channels, so the many-channel path is only checked with the desk connected).
 - The tonewheel organ (tonebars, swell pedal, Leslie, and the rules the band's organist follows, with sources):
   `apps/shared/band/ORGAN.md`.
