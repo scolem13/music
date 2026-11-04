@@ -7,7 +7,7 @@ toc-title: "On this page"
 ---
 
 ```{=html}
-<script src="/apps/shared/band/modx.js?v=3"></script>
+<script src="/apps/shared/band/modx.js?v=4"></script>
 <script src="/apps/shared/lessons/sections.js?v=2"></script>
 <style>
 .mp-row { display: flex; flex-wrap: wrap; gap: .4rem .8rem; align-items: center; margin: .4rem 0; }

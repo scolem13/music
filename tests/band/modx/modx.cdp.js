@@ -29,7 +29,7 @@ const FAKE = `(() => { window.__sent = []; const out = { id: "o1", name: "MODX-1
     // drums row on channel 10
     await b.eval(`window.__sent.length = 0; [...document.querySelectorAll("#mx-compare tr")].find(r => /rock beat/.test(r.textContent)).querySelector("button[data-w=modx]").click()`); await b.sleep(1500);
     const kit = await b.eval(`window.__sent.filter(m => (m[0] & 0xF0) === 0x90).map(m => m[0])`);
-    if (!kit.length || kit.some(s => s !== 0x99)) throw new Error("drums not on ch 10: " + kit);
+    if (!kit.length || kit.some(s => s !== 0x9D)) throw new Error("rock drums not on the rock kit, ch 14: " + kit);
     await b.eval(`document.getElementById("mx-stop").click()`);
     // pick MODX for the bass, Site for the piano, route the winners
     await b.eval(`const r = [...document.querySelectorAll("#mx-compare tr")]; r[1].querySelector("button[data-v=modx]").click();

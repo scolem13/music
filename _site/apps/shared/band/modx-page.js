@@ -119,15 +119,29 @@
   // ---- routing ----
   function nameOf(k){ var r = ROWS.filter(function (x){ return x.inst === k; })[0]; return k === "kit" ? "Drums" : k === "congas" ? "Congas" : r ? r.label : k; }
   function drawRoutes(){
-    $("mx-routes").innerHTML = "<tr><th>Instrument</th><th>To the MODX</th><th>Channel</th></tr>" + Object.keys(M.cfg.routes).map(function (k){
-      var r = M.cfg.routes[k];
-      return "<tr><td>" + nameOf(k) + "</td><td><input type=\"checkbox\" data-k=\"" + k + "\"" + (r.on ? " checked" : "") + "></td><td><input type=\"number\" min=\"1\" max=\"16\" data-c=\"" + k + "\" value=\"" + r.ch + "\"></td></tr>";
+    // per instrument: on the MODX or not, its channel, a shift in semitones (pitched instruments), the MIDI velocity range, and ▶ to hear
+    // its Compare phrase on the MODX with these settings
+    $("mx-routes").innerHTML = "<tr><th>Instrument</th><th>To the MODX</th><th>Channel</th><th>Shift (semitones)</th><th>Velocity low–high</th><th></th></tr>" + Object.keys(M.cfg.routes).map(function (k){
+      var r = M.cfg.routes[k], pitched = k !== "kit" && k !== "congas", hasRow = ROWS.some(function (x){ return x.inst === k; });
+      return "<tr><td>" + nameOf(k) + "</td><td><input type=\"checkbox\" data-k=\"" + k + "\"" + (r.on ? " checked" : "") + "></td>" +
+        "<td><input type=\"number\" min=\"1\" max=\"16\" data-c=\"" + k + "\" value=\"" + r.ch + "\"></td>" +
+        "<td>" + (pitched ? "<input type=\"number\" min=\"-24\" max=\"24\" step=\"1\" data-s=\"" + k + "\" value=\"" + (r.shift || 0) + "\" title=\"12 = an octave up, -12 = an octave down\">" : "") + "</td>" +
+        "<td><input type=\"number\" min=\"1\" max=\"127\" data-vl=\"" + k + "\" value=\"" + (r.velLo == null ? 1 : r.velLo) + "\"> – <input type=\"number\" min=\"1\" max=\"127\" data-vh=\"" + k + "\" value=\"" + (r.velHi == null ? 127 : r.velHi) + "\"></td>" +
+        "<td>" + (hasRow ? "<button type=\"button\" data-t=\"" + k + "\" title=\"Its phrase on the MODX\">▶ MODX</button> <button type=\"button\" data-tb=\"" + k + "\" title=\"The site, then the MODX\">▶ both</button>" : "") + "</td></tr>";
     }).join("");
   }
   $("mx-routes").onchange = function (e){
-    var t = e.target; if (t.dataset.k) M.cfg.routes[t.dataset.k].on = t.checked;
-    if (t.dataset.c) M.cfg.routes[t.dataset.c].ch = Math.max(1, Math.min(16, +t.value || 1));
-    M.save();
+    var t = e.target, d = t.dataset, clamp = function (v, lo, hi, dflt){ v = Math.round(+v); return isNaN(v) ? dflt : Math.max(lo, Math.min(hi, v)); };
+    if (d.k) M.cfg.routes[d.k].on = t.checked;
+    if (d.c) M.cfg.routes[d.c].ch = clamp(t.value, 1, 16, 1);
+    if (d.s) M.cfg.routes[d.s].shift = clamp(t.value, -24, 24, 0);
+    if (d.vl){ var r = M.cfg.routes[d.vl]; r.velLo = clamp(t.value, 1, 127, 1); if (r.velHi < r.velLo) r.velHi = r.velLo; }
+    if (d.vh){ var q = M.cfg.routes[d.vh]; q.velHi = clamp(t.value, 1, 127, 127); if (q.velLo > q.velHi) q.velLo = q.velHi; }
+    M.save(); if (d.vl || d.vh) drawRoutes();
+  };
+  $("mx-routes").onclick = function (e){
+    var d = e.target.dataset || {}, k = d.t || d.tb; if (!k) return;
+    var r = ROWS.filter(function (x){ return x.inst === k; })[0]; if (r) run(r, d.tb ? "both" : "modx");
   };
   [["mx-pb","pbRange"],["mx-les","leslieCC"]].forEach(function (p){ var el = $(p[0]); el.value = M.cfg[p[1]]; el.onchange = function (){ M.cfg[p[1]] = +el.value; M.save(); }; });
   $("mx-reset").onclick = function (){ if (!confirm("Reset routing, channels, offset and drum maps here?")) return; M.reset(); location.reload(); };

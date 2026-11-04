@@ -67,3 +67,29 @@ assert.deepEqual(sent.map(s => s.b), [[0xB2, 11, 64], [0xB2, 1, 127]]);
 sent.length = 0; M.selectPerformance(); assert.deepEqual(sent.map(s => s.b), [[0xB0, 0, 63], [0xB0, 32, 32], [0xC0, 0]]);
 M.save(); assert.equal(store["modx.on"], "1");
 console.log("modx.test: ok");
+// shift and velocity range per instrument
+{ const sent2 = []; M._setOutput({ send: (b, ts) => sent2.push(Array.from(b)) });
+  M.cfg.routes.bass.shift = 12; M.play("bass", { midi: 28, vel: 1 }, 0, ctx); assert.equal(sent2[0][1], 40, "bass shifted an octave up");
+  M.cfg.routes.bass.shift = 0; M.cfg.routes.bass.velLo = 40; M.cfg.routes.bass.velHi = 120; sent2.length = 0;
+  M.play("bass", { midi: 28, vel: 0 }, 0, ctx); assert.equal(sent2.length, 0, "a silent note stays silent");
+  M.play("bass", { midi: 28, vel: 0.5 }, 0, ctx); assert.equal(sent2[0][2], 80, "vel 0.5 -> halfway between 40 and 120");
+  M.play("bass", { midi: 28, vel: 1 }, 0, ctx); assert.equal(sent2.filter(b => (b[0] & 0xF0) === 0x90)[1][2], 120, "full -> 120");
+  M.cfg.routes.kit.shift = 12; sent2.length = 0; M.play("kit", { piece: "snare", vel: 0.5 }, 0, ctx); assert.equal(sent2[0][1], 38, "drums are never shifted");
+  M.cfg.routes.kit.shift = 0; M.cfg.routes.bass.velLo = 1; M.cfg.routes.bass.velHi = 127; }
+// the loader in sounds.js asks for the same modx.js version as the pages
+{ const fs = require("fs"), path = require("path"), root = path.join(__dirname, "../../..");
+  const loader = +/var MODX_V = (\d+)/.exec(fs.readFileSync(root + "/apps/shared/band/sounds.js", "utf8"))[1];
+  const page = +/band\/modx\.js\?v=(\d+)/.exec(fs.readFileSync(root + "/gear/modx-band.qmd", "utf8"))[1];
+  assert.equal(loader, page, "sounds.js MODX_V (" + loader + ") = the pages' modx.js?v= (" + page + ")"); }
+console.log("modx.test: shift, velocity and loader version ok");
+// old saved settings (before the five kits): drums and congas take today's defaults; the rest is kept
+{ const vm = require("vm"), fs = require("fs"), path = require("path");
+  const old = { on: true, offsetMs: 30, routes: { bass: { on: true, ch: 1 }, piano: { on: false, ch: 2 }, kit: { on: false, ch: 10 }, congas: { on: false, ch: 11 } }, congas: { congaOpen: 63 } };
+  const store2 = { "modx.cfg": JSON.stringify(old) }, g = { performance: { now: () => 0 }, setInterval: () => 1, clearInterval: () => {}, console,
+    localStorage: { getItem: k => store2[k] ?? null, setItem: (k, v) => { store2[k] = String(v); } } };
+  g.globalThis = g; vm.createContext(g); vm.runInContext(fs.readFileSync(path.join(__dirname, "../../../apps/shared/band/modx.js"), "utf8").replace("typeof window !== \"undefined\" ? window : globalThis", "globalThis"), g);
+  const c = g.BandModx.cfg;
+  assert.equal(c.routes.kit.on, true, "drums on the MODX after the update"); assert.equal(c.routes.congas.ch, 9, "congas to the Pop Latin Kit");
+  assert.equal(c.congas.congaOpen, 36, "conga keys of the Pop Latin Kit"); assert.equal(c.routes.piano.on, false, "the piano choice kept");
+  assert.equal(c.offsetMs, 30, "offset kept"); assert.equal(c.ver, 2);
+  console.log("modx.test: old settings updated"); }

@@ -656,7 +656,9 @@
   try {
     if (!global.BandModx && global.document && global.localStorage && global.localStorage.getItem("modx.on") === "1"){
       var me = global.document.currentScript && global.document.currentScript.src;
-      if (me){ var sc = global.document.createElement("script"); sc.src = me.replace(/sounds\.js.*$/, "modx.js?v=1"); global.document.head.appendChild(sc); }
+      // MODX_V must match the pages' modx.js?v= (check-pages --bump does not see this string; tests/band/modx/modx.test.js checks it)
+      var MODX_V = 4;
+      if (me){ var sc = global.document.createElement("script"); sc.src = me.replace(/sounds\.js.*$/, "modx.js?v=" + MODX_V); global.document.head.appendChild(sc); }
     }
   } catch (e) {}
 })(typeof window !== "undefined" ? window : globalThis);

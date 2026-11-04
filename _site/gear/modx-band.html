@@ -735,8 +735,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 </header>
 
 
-<script src="../apps/shared/band/modx.js?v=3"></script>
-<script src="../apps/shared/band/sounds.js?v=20"></script>
+<script src="../apps/shared/band/modx.js?v=4"></script>
+<script src="../apps/shared/band/sounds.js?v=22"></script>
 <script src="../apps/shared/lessons/sections.js?v=2"></script>
 <style>
 .mx-row { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin: .5rem 0; }
@@ -910,6 +910,13 @@ the better one. Your choices are kept. <b>Route the winners</b> sends every inst
 <section id="routing" class="level2">
 <h2 class="anchored" data-anchor-id="routing">Routing</h2>
 <p>Which instruments go to the MODX, and on which channel. Instruments sharing a channel share a Part.</p>
+<p class="mx-note"><b>Shift</b> moves an instrument's notes on the way to the MODX: 12 = an octave up, −12 = an octave down. Use it
+when a MODX voice sounds an octave off from the site (▶ both plays the site's phrase and then the MODX's). <b>Velocity</b> spreads
+the band's soft-to-loud over that range of MIDI velocities: 1–127 sends what the band plays; raising the low number (say 40–120)
+keeps a piano or Rhodes out of its dullest, softest layers. Before blaming a voice, check on the board: Utility → Settings → MIDI,
+<i>MIDI I/O Mode</i> = Multi (else one channel plays every keyboard Part); Arp Master and each Part's arpeggio and motion sequencer
+off; no Note Shift or Note Limit left on a Part; and no Mega Voices — the Reference Manual says they "have a very complex structure
+with many different layers that are not suitable for playing manually" and should be played only by their own arpeggios.</p>
 <table class="mx-table" id="mx-routes"></table>
 <div class="mx-row">
   <label>Pitch-bend range <input type="number" id="mx-pb" min="1" max="24"> semitones</label>
@@ -927,7 +934,7 @@ to hear one on the MODX and change the number if it's the wrong drum.</p>
 <p>Which kit each groove plays on: five Parts, one kit each. A groove not listed plays on the jazz kit.</p>
 <table class="mx-table" id="mx-kits"></table>
 <div class="mx-grid"><table class="mx-table" id="mx-kit"></table><table class="mx-table" id="mx-congas"></table></div>
-<script src="../apps/shared/band/modx-page.js?v=3"></script>
+<script src="../apps/shared/band/modx-page.js?v=4"></script>
 
 
 </section>

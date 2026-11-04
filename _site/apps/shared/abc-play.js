@@ -45,7 +45,7 @@
 // the pickup bar, NOTES.org 2026-10-13 ("Pickups, tuplets ...", BandHarmony.buildForm).
 // If the samples can't load within 12 s, abcjs's own synth plays instead (same tune, same cursor).
 (function (global) {
-  var SOUNDS = "/apps/shared/band/sounds.js?v=20", shared = null, cur = null, styled = false;
+  var SOUNDS = "/apps/shared/band/sounds.js?v=22", shared = null, cur = null, styled = false;
 
   function ctx() {
     if (shared) return shared;

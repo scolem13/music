@@ -13,6 +13,8 @@
 //   BandModx.cc(ch, num, value)   one controller now (ch 1..16)
 //   BandModx.note(ch, key, vel, atMs, durMs)   one raw note (ch 1..16, vel 0..1) at performance.now() time atMs (+ cfg.offsetMs), queued like play()
 //   BandModx.cfg / save() / reset()   the settings (localStorage "modx.cfg"); BandModx.DEFAULTS
+//   cfg.routes[inst] = { on, ch, shift, velLo, velHi }: shift = semitones on the way out (pitched instruments only); velLo..velHi = the
+//                                 MIDI velocities the band's 0..1 is spread over (1..127 as played). Set per instrument on the MODX page.
 //   BandModx.kitSlot(spec)        -> "jazz" | "rock" | "pop" | "rnb" | "brush": which kit (cfg.kits[slot].ch) a drum note goes to (by spec.groove)
 //   BandModx._setOutput(fake)     tests: any { send(bytes, ts) }
 //
@@ -51,12 +53,18 @@
   // Pop Latin Kit's keys for the conga part (Data List): high conga A#0 tip … C1 open, low conga G1 open, G#1 mute, B1 open; bongos C2 / F#2.
   var LATIN_CONGAS = { congaHeel:35, congaToe:34, congaSlap:39, congaOpen:36, congaMute:37, congaBass:47, tumbaOpen:43, tumbaMute:44, tumbaBass:47, bongoHi:48, bongoLo:54 };
   function defaults(){
-    var routes = {}; Object.keys(CH).forEach(function (k){ routes[k] = { on: !!ROUTED_ON[k], ch: CH[k] }; });
+    // shift: semitones added to the instrument's notes on the way out (not drums or hand drums), for a MODX voice mapped an octave off.
+    // velLo / velHi: the MIDI velocity range the band's 0..1 is spread over (1..127 = as played; a higher velLo reaches the brighter layers).
+    var routes = {}; Object.keys(CH).forEach(function (k){ routes[k] = { on: !!ROUTED_ON[k], ch: CH[k], shift: 0, velLo: 1, velHi: 127 }; });
     var kits = {}; Object.keys(KITS).forEach(function (k){ kits[k] = Object.assign({}, KITS[k]); });
-    return { on: false, outId: null, outName: null, offsetMs: 0, pbRange: 2, leslieCC: 1,
+    return { ver: CFG_VER, on: false, outId: null, outName: null, offsetMs: 0, pbRange: 2, leslieCC: 1,
              perf: { ch: 1, msb: 63, lsb: 32, pc: 0, sendOnConnect: false }, routes: routes, kit: Object.assign({}, GM_KIT), congas: Object.assign({}, LATIN_CONGAS),
              kits: kits, kitFor: Object.assign({}, KIT_FOR), brushKeys: Object.assign({}, BRUSH_KEYS) };
   }
+  // Saved settings older than the five-kit Performance (no ver): their drum and conga settings are the old ones (drums off, congas on
+  // channel 11 with General MIDI keys, which now land on the steel guitar's Part), so those are replaced by today's defaults once;
+  // everything else saved (the other instruments' routing, the port, the offset) is kept.
+  var CFG_VER = 2;
   function load(){
     var d = defaults(), s; try { s = JSON.parse(global.localStorage.getItem(KEY) || "null"); } catch (e) { s = null; }
     if (!s) return d;
@@ -64,9 +72,15 @@
     Object.assign(d.perf, s.perf || {}); Object.assign(d.kit, s.kit || {}); Object.assign(d.congas, s.congas || {});
     Object.keys(s.kits || {}).forEach(function (k){ d.kits[k] = Object.assign(d.kits[k] || {}, s.kits[k]); }); Object.assign(d.kitFor, s.kitFor || {}); Object.assign(d.brushKeys, s.brushKeys || {});
     Object.keys(s.routes || {}).forEach(function (k){ d.routes[k] = Object.assign(d.routes[k] || { on: false, ch: 1 }, s.routes[k]); });
+    if (!(s.ver >= CFG_VER)){
+      var fresh = defaults();
+      d.congas = fresh.congas; d.routes.kit = fresh.routes.kit; d.routes.congas = fresh.routes.congas; d.kits = fresh.kits; d.kitFor = fresh.kitFor; d.brushKeys = fresh.brushKeys;
+      d.ver = CFG_VER; d.migrated = true;
+    }
     return d;
   }
   var cfg = load(), out = null, access = null, queue = [], held = {}, forced = {}, timer = null, seq = 0;
+  if (cfg.migrated){ delete cfg.migrated; try { global.localStorage.setItem(KEY, JSON.stringify(cfg)); } catch (e) {} }   // the update, once
   function save(){ try { global.localStorage.setItem(KEY, JSON.stringify(cfg)); global.localStorage.setItem("modx.on", cfg.on ? "1" : "0"); } catch (e) {} }
   function reset(){ var keepOut = { outId: cfg.outId, outName: cfg.outName, on: cfg.on }; cfg = Object.assign(defaults(), keepOut); api.cfg = cfg; save(); }
 
@@ -103,7 +117,12 @@
     var r = routeOf(inst); return !!(cfg.on && r && r.on);
   }
   function chOf(inst){ var r = routeOf(inst); return Math.min(16, Math.max(1, (r && r.ch) || CH[inst] || 1)) - 1; }
-  function velByte(spec){ var v = (spec.vel == null ? 0.7 : spec.vel) * Math.sqrt(spec.gain == null ? 1 : Math.max(0, spec.gain)); return Math.min(127, Math.max(1, Math.round(v * 127))); }
+  function velByte(spec, r){
+    var v = Math.min(1, Math.max(0, (spec.vel == null ? 0.7 : spec.vel) * Math.sqrt(spec.gain == null ? 1 : Math.max(0, spec.gain))));
+    var lo = r && r.velLo != null ? +r.velLo : 1, hi = r && r.velHi != null ? +r.velHi : 127;
+    lo = Math.max(1, Math.min(127, lo)); hi = Math.max(lo, Math.min(127, hi));
+    return Math.min(127, Math.max(1, Math.round(lo + v * (hi - lo))));
+  }
   function bendBytes(ch, semis){ var r = Math.max(1, +cfg.pbRange || 2), v = Math.round(8192 + Math.max(-1, Math.min(1, semis / r)) * 8191); v = Math.max(0, Math.min(16383, v)); return [0xE0 | ch, v & 127, v >> 7]; }
 
   // which kit slot a drum note goes to: the brushes to "brush", else by the bar's groove (spec.groove, from player.js), else "jazz"
@@ -120,7 +139,8 @@
       if (slot === "brush" && cfg.brushKeys[spec.piece] != null) spec = Object.assign({}, spec, { piece: null, midi: cfg.brushKeys[spec.piece] });
     }
     if (spec.piece != null){ var map = inst === "congas" ? cfg.congas : cfg.kit; note = map[spec.piece]; if (note == null) return null; }
-    else note = spec.midi; if (note == null || !(spec.vel == null || spec.vel > 0)) return null;
+    else { note = spec.midi; var rt = routeOf(inst); if (note != null && inst !== "kit" && inst !== "congas" && rt && rt.shift) note += (+rt.shift | 0); }
+    if (note == null || !(spec.vel == null || spec.vel > 0)) return null;
     note = Math.max(0, Math.min(127, Math.round(note)));
     var len = spec.dur != null ? Math.max(0.03, spec.dur) : (spec.piece != null ? 0.25 : 2.5);
     if (spec.bend && spec.bend.length){
@@ -133,7 +153,7 @@
       }
       push(t + len * 1000 + 5, "raw", bendBytes(ch, 0));
     }
-    push(t, "on", [0x90 | ch, note, velByte(spec)]);
+    push(t, "on", [0x90 | ch, note, velByte(spec, routeOf(inst))]);
     push(t + len * 1000, "off", [0x80 | ch, note, 0]);
     // a stand-in voice: sounds.js and the player only keep these to stop them
     return { modx: true, inst: inst, t: when, src: { stop: function (){} }, g: { gain: { cancelScheduledValues: function (){}, setTargetAtTime: function (){} } } };

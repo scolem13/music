@@ -7,7 +7,7 @@ toc-title: "On this page"
 ---
 
 ```{=html}
-<script src="/apps/shared/band/modx.js?v=3"></script>
+<script src="/apps/shared/band/modx.js?v=4"></script>
 <style>
 .ab-bar { display: flex; flex-wrap: wrap; gap: .5rem .9rem; align-items: center; margin: .5rem 0; position: sticky; top: 3.5rem; z-index: 5;
   background: var(--site-surface, #fff); border: 1px solid var(--site-border, #ccc); border-radius: 8px; padding: .5rem .8rem; }
