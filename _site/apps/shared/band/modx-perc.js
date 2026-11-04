@@ -28,6 +28,7 @@
     11: { name: "Jazz Brushes Kit", keys: {"C0": "HH Dark Pedal 1-2 L", "C#0": "Sd Brush Soft St", "D0": "Sd Brush Swir St", "D#0": "Sd Brush Med St", "E0": "Sd Brush SwirAtt St", "F0": "Sd Roll Mono", "F#0": "Castanet1", "G0": "Sd NJz 1 St", "G#0": "Stick2", "A0": "Bd Jazz1St", "A#0": "Sd Metal OpRm 1-2 St", "B0": "Bd FK Jazz St", "C1": "Bd FK Jazz St", "C#1": "Sd NJz ClRm St", "D1": "Sd Brush vari St", "D#1": "Sd Brush Soft St", "E1": "Sd Brush Med St", "F1": "Tom Brush Floor St", "F#1": "HH Brush Closed", "G1": "Tom Brush Low St", "G#1": "HH Brush Pedal", "A1": "Tom Brush Mid St", "A#1": "HH NJz Open 1-2 St", "B1": "Tom Brush Mid St", "C2": "Tom Brush Hi St", "C#2": "Crash Brush2 St", "D2": "Tom Brush Hi St", "D#2": "Ride Brush2 St", "E2": "Crash Brush1 St", "F2": "Crash Brush Cup St", "F#2": "Tambourine2 Sw", "G2": "Splash2 St", "G#2": "Cowbell3 Sw", "A2": "Crash Brush2 St", "A#2": "Vibraslap2", "B2": "Ride Brush1 R", "C3": "Bongo2 Hi Open 2", "C#3": "Bongo2 Lo Open 2", "D3": "Conga2 Hi Slap 2", "D#3": "Conga2 Hi Open 2", "E3": "Conga2 Lo Open 1", "F3": "Timbale2 Hi 2", "F#3": "Timbale2 Lo 2", "G3": "Agogo1 Hi", "G#3": "Agogo1 Lo", "A3": "Cabasa1B 1-4", "A#3": "Maracas1 Slur", "B3": "Whistle", "C4": "Whistle", "C#4": "MetalGuiro Short 1-2", "D4": "MetalGuiro Long", "D#4": "Claves2", "E4": "Resin Block Small", "F4": "Resin Block Large", "F#4": "Cuica1 Hi", "G4": "Cuica1 Lo", "G#4": "Triangle1 Mute", "A4": "Triangle1 Open", "A#4": "ShakerB Sw", "B4": "Sleigh Bell2", "C5": "Wind Chime 1", "C#5": "Finger Snap3", "D5": "Surdo2 Open", "D#5": "Conga2 Hi Tip", "E5": "Conga2 Hi Heel", "F5": "Conga2 Hi Slap 1-2", "F#5": "Conga2 Hi Mute", "G5": "Conga2 Hi Open 1-2", "G#5": "Conga2 Lo Slide", "A5": "Conga2 Lo Open 1-2", "A#5": "Djembe2 Mute", "B5": "Djembe2 Lo", "C6": "Djembe2 Slap"} },
     12: { name: "Brush Kit", keys: {"C0": "Claves1", "C#0": "Sd Brush Soft St", "D0": "Sd Brush Swir St", "D#0": "Sd Brush Med St", "E0": "Sd Brush SwirAtt St", "F0": "Sd LiveRoll St", "F#0": "Castanet1", "G0": "Sd Brush Soft St", "G#0": "Stick1", "A0": "Bd Funk St1-2", "A#0": "Sd Basic 3St", "B0": "Bd Jazz1-2St", "C1": "Bd FK Jazz St", "C#1": "Sd Closed Rim4 St", "D1": "Sd Brush Med St", "D#1": "Hand Clap1 St", "E1": "Sd Brush vari St", "F1": "Tom Brush Floor St", "F#1": "HH Power ClTip 1-4St", "G1": "Tom Brush Low St", "G#1": "HH Power ClPedal St", "A1": "Tom Brush Low St", "A#1": "HH Power Open EdgeSt", "B1": "Tom Brush Mid St", "C2": "Tom Brush Mid St", "C#2": "Crash Brush1 St", "D2": "Tom Brush Hi St", "D#2": "Ride Brush1 St", "E2": "China1 St", "F2": "Crash Brush Cup St", "F#2": "Tambourine1 Sw", "G2": "Splash1 St", "G#2": "Cowbell2", "A2": "Crash Brush2 St", "A#2": "Vibraslap1", "B2": "Ride Brush2 St", "C3": "Bongo1 Hi 1Fingr 1-2", "C#3": "Bongo1 Lo 1Fingr 1-2", "D3": "Conga1 Hi SlpMute1-2", "D#3": "Conga1 Hi Open 1-2", "E3": "Conga1 Lo Open 1-2", "F3": "Timbale1 Hi 1-3", "F#3": "Timbale1 Lo 1-2", "G3": "Agogo1 Hi", "G#3": "Agogo1 Lo", "A3": "Cabasa1A 1-2", "A#3": "Maracas1 Slur", "B3": "Whistle", "C4": "Whistle", "C#4": "Guiro1 Short", "D4": "Guiro1 Long", "D#4": "Claves1", "E4": "Wood Block", "F4": "Wood Block", "F#4": "Cuica1 Hi", "G4": "Cuica1 Lo", "G#4": "Triangle1 Mute", "A4": "Triangle1 Open", "A#4": "ShakerA 13", "B4": "Sleigh Bell1", "C5": "Wind Chime 1", "C#5": "Sd Bld St1-4", "D5": "Sd Blues 3St", "D#5": "Sd Hip St1-2", "E5": "Sd Funk St1-3", "F5": "Sd Soul St1-4", "F#5": "Sd LdwHMono", "G5": "Sd Heavy", "G#5": "Sd Tight St1-4", "A5": "Sd BluesHeart St1-3", "A#5": "Bd Snap 1-2", "B5": "Bd Tight 1-2", "C6": "Bd Funk St1-2"} },
   };
+  var SLOTS = ["s1", "s2", "s3", "s4"];
   var CLAVE23_8 = "..x.x...|x..x..x.";
   var PATTERNS = [
     // ---------------- Pop Latin Kit (channel 9) ----------------
@@ -119,113 +120,204 @@
                "F3": "x.xx.x.x|x.x.xx.x", "F#3": "........|......x.", "D#4": CLAVE23_8 } },
     { id: "conga2", name: "Conga2 tumbao (Jazz Brushes, D#5–A5)", group: "brush", chs: [11], bpm: 100, beats: 4, steps: 8,
       about: "The same tumbao as on the Pop Latin Kit, on the Jazz Brushes Kit's second conga samples: compare it with the first pattern.",
-      parts: { "E5": "o...o...|o...o...", "D#5": ".g.g.g..|.g.g.g..", "F5": "..X.....|..X.....", "G5": "......xx|......x.", "A5": "........|.......x", "D#4": CLAVE23_8 } }
+      parts: { "E5": "o...o...|o...o...", "D#5": ".g.g.g..|.g.g.g..", "F5": "..X.....|..X.....", "G5": "......xx|......x.", "A5": "........|.......x", "D#4": CLAVE23_8 } },
+    // ---------------- rock, pop, R&B, hip-hop: any kit, in the four test slots ----------------
+    { id: "rock8", name: "Basic rock beat", group: "rock", chs: SLOTS, bpm: 112, beats: 4, steps: 8,
+      about: "Hi-hat eighths, kick on 1 and 3, snare on 2 and 4 (the backbeat), a crash to start.",
+      checked: "Kick and snare alternating on the beats with the hi-hat on the eighths, the snare on 2 and 4: Wikipedia, Drum beat ('straight blues/rock groove') and Backbeat. The crash: the site's.",
+      parts: { "F#1": "xoxoxoxo|xoxoxoxo", "C1": "X...X...|X...X...", "D1": "..X...X.|..X...X.", "C#2": "X.......|........" } },
+    { id: "halftime", name: "Half-time rock", group: "rock", chs: SLOTS, bpm: 140, beats: 4, steps: 8,
+      about: "The snare moves to beat 3 and the hi-hat plays only quarter notes: the song feels half as fast.",
+      checked: "Snare on 3, hi-hat on the quarter notes: Wikipedia, Drum beat (half-time). The kick's extra note: the site's.",
+      parts: { "F#1": "x.x.x.x.|x.x.x.x.", "C1": "X.......|X....x..", "D1": "....X...|....X...", "C#2": "X.......|........" } },
+    { id: "rockfill", name: "Rock groove, tom fill, crash", group: "rock", chs: SLOTS, bpm: 116, beats: 4, steps: 16,
+      about: "A bar of eighth-note rock on the ride, then a sixteenth-note fill down the toms into a crash on the next 1. Good for hearing each kit's toms. (Hip Hop Kit 4 has T8 congas on the tom keys, R&B Kits 1 and 3 have T8 kicks on some.)",
+      parts: { "D#2": "x.x.x.x.x.x.x.x.|x.x.x.x.........", "C1": "X.......X.x.....|X.......X.......", "D1": "....X.......X...|....X...........",
+               "D2": "................|........xx......", "C2": "................|..........xx....", "B1": "................|............xx..",
+               "F1": "................|..............xx", "C#2": "X...............|................" } },
+    { id: "fourfloor", name: "Four on the floor (disco / dance-pop)", group: "pop", chs: SLOTS, bpm: 122, beats: 4, steps: 16,
+      about: "Kick on every beat, the open hi-hat on every offbeat, snare and clap together on 2 and 4.",
+      checked: "Kick on every beat: Wikipedia, Four on the floor. 'An open hissing hi-hat on the off-beat': Wikipedia, Disco. Snare/clap on 2 and 4: the backbeat (Wikipedia, Backbeat).",
+      parts: { "C1": "X...X...X...X...", "A#1": "..x...x...x...x.", "F#1": "x...x...x...x...", "D1": "....x.......x...", "D#1": "....X.......X..." } },
+    { id: "motown", name: "Motown: snare on every beat, tambourine", group: "pop", chs: SLOTS, bpm: 124, beats: 4, steps: 8,
+      about: "The snare on all four beats (heavier on 2 and 4), tambourine in eighths, kick on 1 and 3.",
+      checked: "Snare on all four beats in some Motown grooves, tambourine in eighths, kick on 1 and 3: Soundbrenner, Motown groove; Benny Benjamin's quarter-note snare: Rock & Roll Hall of Fame. Accents: the site's.",
+      parts: { "D1": "o.X.o.X.|o.X.o.X.", "F#2": "xoxoxoxo|xoxoxoxo", "C1": "X...X...|X...X..x" } },
+    { id: "popballad", name: "Pop ballad: side stick, then snare", group: "pop", chs: SLOTS, bpm: 72, beats: 4, steps: 16,
+      about: "A verse bar on the side stick (rim click), a chorus bar on the full snare with the crash, hi-hat eighths, kick on 1 and the & of 2.",
+      parts: { "F#1": "x.o.x.o.x.o.x.o.|x.o.x.o.x.o.x.o.", "C#1": "....x.......x...|................", "D1": "................|....X.......X...",
+               "C1": "X.....x.X.......|X.....x.X.....x.", "C#2": "................|X..............." } },
+    { id: "funk16", name: "Funk sixteenths, ghost notes, delayed backbeat", group: "rnb", chs: SLOTS, bpm: 98, beats: 4, steps: 16,
+      about: "Hi-hat sixteenths, a syncopated kick, ghost notes on the snare, and the second backbeat pushed from 4 to the & of 4.",
+      checked: "The delayed backbeat (snare on the last eighth of the bar), funk: Wikipedia, Drum beat. Ghost notes, kick and hats: the site's.",
+      parts: { "F#1": "xoxoxoxoxoxoxoxo", "C1": "X.x.......x..x..", "D1": "....X..g.g.g..X.", "A#1": "..............o." } },
+    { id: "purdie", name: "Half-time shuffle (Purdie-style)", group: "rnb", chs: SLOTS, bpm: 84, beats: 4, steps: 12,
+      about: "Shuffled triplets on the hi-hat, the backbeat on 3 (half-time), soft ghost notes on the snare in the middle of each triplet.",
+      checked: "'Triplets against a half-time backbeat' with 'syncopated ghost notes on the snare drum': Wikipedia, Bernard Purdie. Where each ghost note and kick goes: the site's.",
+      parts: { "F#1": "x.xx.xx.xx.x", "D1": ".g..g.Xg..g.", "C1": "X....x...x.." } },
+    { id: "newjack", name: "New jack swing", group: "rnb", chs: SLOTS, bpm: 106, beats: 4, steps: 24,
+      about: "Swung sixteenths on the hi-hat with the offbeat accented, a hard snare and clap on 2 and 4, a syncopated kick. Try it on the Analog T8 / T9 and R&B kits.",
+      checked: "'Offbeat accented 16th note triplets' and a prominent TR-808 snare: Wikipedia, New jack swing. The kick: the site's.",
+      parts: { "F#1": "o.oX.oo.oX.oo.oX.oo.oX.o", "C1": "X........x.....X.....x..", "D1": "......X...........X.....", "D#1": "......x...........x....." } },
+    { id: "neosoul", name: "Neo-soul (Dilla feel)", group: "rnb", chs: SLOTS, bpm: 86, beats: 4, steps: 16,
+      swing: { amt: 0.6, unit: 1, keys: ["F#1"] }, nudge: { "D1": -14, "C1": 8 },
+      about: "Straight kick and snare under a swung hi-hat (quintuplet-like swing, 60%), the snare a little early and the kick a little late, so the parts sit at different feels.",
+      checked: "Straight, swung and shifted parts together; the hi-hat swung (quintuplet), the snare shifted slightly early: The Pudding, 'Dilla time' groove analysis. The amounts (60%, −14 ms, +8 ms): the site's.",
+      parts: { "F#1": "xgxgxgxgxgxgxgxg", "C1": "X......x..X.....", "D1": "....X.......X..." } },
+    { id: "boombap", name: "Boom bap", group: "hiphop", chs: SLOTS, bpm: 90, beats: 4, steps: 16,
+      swing: { amt: 0.58, unit: 2 },
+      about: "Kick on 1 and 3, snare on 2 and 4, hi-hat eighths with sampler-style swing (58%); an extra kick on the & of 3 in the second bar.",
+      checked: "Kick on 1 and 3, snare on 2 and 4, 'highly swung programming' on an MPC / SP-1200: Wikipedia, Boom bap. Tempo, swing amount and the extra kick: the site's.",
+      parts: { "F#1": "x.o.x.o.x.o.x.o.|x.o.x.o.x.o.x.o.", "C1": "X.......X.......|X.......X.x.....", "D1": "....X.......X...|....X.......X..." } },
+    { id: "trap", name: "Trap (half-time, hi-hat rolls)", group: "hiphop", chs: SLOTS, bpm: 140, beats: 4, steps: 16,
+      about: "Counted at 140, felt at 70: clap and snare on 3, a long low kick (B0; on the Analog T8 Kit that is 'T8 Kick Bass'), hi-hat eighths and sixteenths with a triplet roll and a 32nd-note roll.",
+      checked: "Around 140 bpm programmed in half-time, 'deep 808 kick drums' with long decay, double- and triple-time hi-hats: Wikipedia, Trap music. Where the rolls and kicks go: the site's.",
+      parts: { "B0": "X-----....x-x---|X-----......X---", "D1": "........X.......|........X.......", "D#1": "........X.......|........X.......",
+               "F#1": "x.x.x.x.x.x.....|x.x.x.xxx.x.x...", "F#1/24": "..................xxxxxx|........................",
+               "F#1/32": "................................|............................goxX" } }
+
   ];
 
   var LET = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 }, VEL = { X: 0.95, x: 0.75, o: 0.55, g: 0.3 };
-  function midi(name){ var m = /^([A-G])(#?)(-?\d)$/.exec(name); return m ? 12 * (+m[3] + 2) + LET[m[1]] + (m[2] ? 1 : 0) : null; }
+  function keyOf(part){ return part.split("/")[0]; }
+  function midi(name){ var m = /^([A-G])(#?)(-?\d)$/.exec(keyOf(name)); return m ? 12 * (+m[3] + 2) + LET[m[1]] + (m[2] ? 1 : 0) : null; }
+  function stepsOf(p, part){ var n = part.split("/")[1]; return n ? +n : p.steps; }
+  // hits: { t (beats from the loop's start, swing included), ms (nudge), key, midi, vel, len (beats), cell (main-grid column for the lit display) }
   function parse(p){
-    var bars = 1, hits = [];
-    Object.keys(p.parts).forEach(function (key){
-      var bs = p.parts[key].split("|"); bars = Math.max(bars, bs.length);
-      var cells = bs.join("").split("");
+    var bars = 1, hits = [], sw = p.swing || null;
+    Object.keys(p.parts).forEach(function (part){
+      var bs = p.parts[part].split("|"), n = stepsOf(p, part), cellB = p.beats / n; bars = Math.max(bars, bs.length);
+      var cells = bs.join("").split(""), key = keyOf(part);
       cells.forEach(function (c, i){
         if (!VEL[c]) return;
         var len = 1; while (cells[i + len] === "-") len++;
-        hits.push({ step: i, key: key, midi: midi(key), vel: VEL[c], len: len });
+        var t = i * cellB;
+        // swing: the second cell of each pair of `unit` cells comes late by (amt - 0.5) * 2 of a unit
+        if (sw && (!sw.keys || sw.keys.indexOf(part) >= 0) && n === p.steps && (i % (2 * sw.unit)) === sw.unit) t += (sw.amt - 0.5) * 2 * sw.unit * cellB;
+        hits.push({ t: t, ms: (p.nudge && p.nudge[part]) || 0, key: key, midi: midi(key), vel: VEL[c], len: len * cellB, cell: Math.floor(i * cellB / (p.beats / p.steps) + 1e-9) });
       });
     });
-    return { bars: bars, steps: bars * p.steps, hits: hits.sort(function (a, b){ return a.step - b.step; }) };
+    return { bars: bars, steps: bars * p.steps, beats: bars * p.beats, hits: hits.sort(function (a, b){ return a.t - b.t; }) };
   }
 
   // ---------------- page ----------------
   var LS = "modx-perc", saved = {}; try { saved = JSON.parse(global.localStorage.getItem(LS) || "{}") || {}; } catch (e) { saved = {}; }
   saved.picks = saved.picks || {}; saved.chs = saved.chs || {};
+  var SLOT_DEFAULT = [{ ch: 13, kit: "Real Drums Kit" }, { ch: 14, kit: "Rock Stereo Kit 1" }, { ch: 15, kit: "R&B Kit 1" }, { ch: 16, kit: "Hip Hop Kit 1" }];
+  saved.slots = (saved.slots && saved.slots.length === 4) ? saved.slots : SLOT_DEFAULT.map(function (s){ return Object.assign({}, s); });
   function store(){ try { global.localStorage.setItem(LS, JSON.stringify(saved)); } catch (e) {} }
-  function chFor(kitCh){ return +saved.chs[kitCh] || +kitCh; }
+  // a "kit" c is a channel number (the fixed Latin / brush kits) or "s1".."s4" (a test slot: any kit in ModxKits on its channel)
+  function slotOf(c){ return typeof c === "string" && c[0] === "s" ? saved.slots[+c.slice(1) - 1] : null; }
+  function kitFor(c){ var s = slotOf(c); if (s) return { name: s.kit, keys: (global.ModxKits || {})[s.kit] || {} }; return KITS[c]; }
+  function chFor(c){ var s = slotOf(c); return s ? +s.ch : (+saved.chs[c] || +c); }
   function h(tag, attrs, kids){
     var e = document.createElement(tag); attrs = attrs || {};
     Object.keys(attrs).forEach(function (k){ if (k === "text") e.textContent = attrs[k]; else if (k.slice(0, 2) === "on") e.addEventListener(k.slice(2), attrs[k]); else e.setAttribute(k, attrs[k]); });
     (kids || []).forEach(function (c){ if (c != null) e.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
     return e;
   }
-  var play = null; // { p, parsed, order:[kitCh], turnBars, step, t, timer, card }
+  var play = null;
   function stopAll(){
     if (play){ clearInterval(play.timer); play.card.classList.remove("mp-playing"); lit(play, -1); play = null; }
     if (global.BandModx) global.BandModx.stop();
     var s = document.getElementById("mp-now"); if (s) s.textContent = "";
   }
-  function lit(pl, step){
+  var onLit = null;
+  function lit(pl, cell){
     pl.card.querySelectorAll(".mp-cell.on").forEach(function (c){ c.classList.remove("on"); });
-    if (step >= 0) pl.card.querySelectorAll('.mp-cell[data-s="' + step + '"]').forEach(function (c){ c.classList.add("on"); });
+    if (cell >= 0) pl.card.querySelectorAll('.mp-cell[data-s="' + cell + '"]').forEach(function (c){ c.classList.add("on"); });
+    if (onLit) onLit(pl, cell);
   }
   function start(p, card, order, bpmIn){
     stopAll();
     var M = global.BandModx; if (!M || !M.connected()){ alert("Connect the MODX first (top of the page)."); return; }
-    var parsed = parse(p), byStep = {}; parsed.hits.forEach(function (x){ (byStep[x.step] = byStep[x.step] || []).push(x); });
-    var bpm = +bpmIn.value || p.bpm, stepMs = 60000 / bpm * p.beats / p.steps;
-    var turnBars = Math.max(2, parsed.bars);
-    play = { p: p, parsed: parsed, order: order, step: 0, t: performance.now() + 120, card: card };
+    var parsed = parse(p), bpm = +bpmIn.value || p.bpm, beatMs = 60000 / bpm, loopMs = parsed.beats * beatMs, cellMs = beatMs * p.beats / p.steps;
+    var turnLoops = Math.max(1, Math.ceil(2 / parsed.bars));   // at least two bars on each kit when taking turns
+    var t0 = performance.now() + 120, now = document.getElementById("mp-now"), lastKit = null;
+    play = { p: p, order: order, card: card, loop: 0, i: 0, cell: 0 };
     card.classList.add("mp-playing");
-    var now = document.getElementById("mp-now"), lastKit = null;
     play.timer = setInterval(function (){
       var pl = play; if (!pl) return;
       var lim = performance.now() + 250;
-      while (pl.t < lim){
-        var bar = Math.floor(pl.step / p.steps), kitCh = pl.order[Math.floor(bar / turnBars) % pl.order.length], s = pl.step % parsed.steps;
-        (byStep[s] || []).forEach(function (x){ M.note(chFor(kitCh), x.midi, x.vel, pl.t, x.len * stepMs * 0.95); });
-        (function (s, at, kitCh){ setTimeout(function (){ if (play === pl){ lit(pl, s); if (kitCh !== lastKit){ lastKit = kitCh; now.textContent = "Playing: " + p.name + " — " + KITS[kitCh].name + " (channel " + chFor(kitCh) + ")"; } } }, Math.max(0, at - performance.now())); })(s, pl.t, kitCh);
-        pl.step++; pl.t += stepMs;
+      // notes
+      while (true){
+        if (pl.i >= parsed.hits.length){ pl.i = 0; pl.loop++; }
+        var x = parsed.hits[pl.i], at = t0 + pl.loop * loopMs + x.t * beatMs + x.ms;
+        if (at > lim) break;
+        var kc = pl.order[Math.floor(pl.loop / turnLoops) % pl.order.length];
+        M.note(chFor(kc), x.midi, x.vel, at, x.len * beatMs * 0.95);
+        pl.i++;
+      }
+      // the lit column and the "Playing" line
+      while (t0 + pl.cell * cellMs < lim){
+        (function (c, at){
+          var loop = Math.floor(c / parsed.steps), kc = pl.order[Math.floor(loop / turnLoops) % pl.order.length];
+          setTimeout(function (){ if (play === pl){ lit(pl, c % parsed.steps); if (kc !== lastKit){ lastKit = kc; now.textContent = "Playing: " + p.name + " — " + kitFor(kc).name + " (channel " + chFor(kc) + ")"; } } }, Math.max(0, at - performance.now()));
+        })(pl.cell, t0 + pl.cell * cellMs);
+        pl.cell++;
       }
     }, 30);
   }
-  function walk(kitCh, bpm){
-    var keys = Object.keys(KITS[kitCh].keys).sort(function (a, b){ return midi(a) - midi(b); });
-    var parts = {}; keys.forEach(function (k, i){ var c = []; for (var j = 0; j < keys.length * 2; j++) c.push(j === 2 * i ? "x" : j === 2 * i + 1 ? "o" : "."); parts[k] = c.join(""); });
-    return { id: "walk" + kitCh, name: "Kit walk", chs: [kitCh], bpm: bpm, beats: keys.length * 2, steps: keys.length * 2, parts: parts };
+  function walkKeys(c){ return Object.keys(kitFor(c).keys).sort(function (a, b){ return midi(a) - midi(b); }); }
+  function walk(c, bpm){
+    var keys = walkKeys(c), parts = {};
+    keys.forEach(function (k, i){ var a = []; for (var j = 0; j < keys.length * 2; j++) a.push(j === 2 * i ? "x" : j === 2 * i + 1 ? "o" : "."); parts[k] = a.join(""); });
+    return { id: "walk", name: "Kit walk", chs: [c], bpm: bpm, beats: keys.length * 2, steps: keys.length * 2, parts: parts };
   }
-  function pickKey(p, kitCh){ return p.id + "@" + kitCh; }
+  function pickKey(p, c){ var s = slotOf(c); return p.id + "@" + (s ? s.kit : c); }
+  function pickLabel(k){ var a = k.split("@"), p = PATTERNS.filter(function (x){ return x.id === a[0]; })[0]; return p ? p.name + " — " + (KITS[a[1]] ? KITS[a[1]].name : a[1]) : null; }
   function renderPicks(){
     var box = document.getElementById("mp-picks"); if (!box) return; box.innerHTML = "";
-    var ks = Object.keys(saved.picks).filter(function (k){ return saved.picks[k]; });
+    var ks = Object.keys(saved.picks).filter(function (k){ return saved.picks[k] && pickLabel(k); });
     if (!ks.length){ box.appendChild(h("p", { class: "mp-note", text: "Nothing marked yet: press ☆ next to a kit button to keep it here." })); return; }
-    var ul = h("ul");
-    ks.forEach(function (k){ var a = k.split("@"), p = PATTERNS.filter(function (x){ return x.id === a[0]; })[0]; if (p) ul.appendChild(h("li", { text: p.name + " — " + KITS[a[1]].name })); });
-    box.appendChild(ul);
+    // count per kit, so the kit you'd use most stands out
+    var per = {}; ks.forEach(function (k){ var kit = k.split("@")[1]; kit = KITS[kit] ? KITS[kit].name : kit; per[kit] = (per[kit] || 0) + 1; });
+    box.appendChild(h("p", { class: "mp-note", text: "By kit: " + Object.keys(per).sort(function (a, b){ return per[b] - per[a]; }).map(function (k){ return k + " ×" + per[k]; }).join(" · ") }));
+    var ul = h("ul"); ks.forEach(function (k){ ul.appendChild(h("li", { text: pickLabel(k) })); }); box.appendChild(ul);
   }
+  var cardsBySlot = [];
+  function refreshSlotCards(){ cardsBySlot.forEach(function (f){ f(); }); }
   function card(p){
     var parsed = parse(p), bpm = h("input", { type: "number", min: 30, max: 300, value: p.bpm, class: "mp-bpm" });
     var el = h("div", { class: "mp-card", id: "mp-" + p.id });
     el.appendChild(h("h3", { text: p.name }));
+    el.appendChild(h("p", { class: "mp-note", text: p.about + "  (" + p.bpm + " bpm, " + parsed.bars + " bar" + (parsed.bars > 1 ? "s" : "") + (p.swing ? ", swung" : "") + ")" }));
     el.appendChild(h("p", { class: "mp-note mp-checked", text: (p.checked ? "Checked: " + p.checked : "Not checked against a source: the site's own.") }));
-    el.insertBefore(h("p", { class: "mp-note", text: p.about + "  (" + p.beats + "/" + (p.steps % 3 === 0 && p.steps !== 3 ? "triplets" : "4") + " grid, " + parsed.bars + " bar" + (parsed.bars > 1 ? "s" : "") + ")" }), el.lastChild);
     var row = h("div", { class: "mp-row" });
-    p.chs.forEach(function (kc){
-      row.appendChild(h("button", { type: "button", class: "btn btn-sm btn-outline-primary", text: "▶ " + KITS[kc].name, onclick: function (){ start(p, el, [kc], bpm); } }));
-      var star = h("button", { type: "button", class: "mp-star", title: "Mark: I'd use this", text: saved.picks[pickKey(p, kc)] ? "★" : "☆" });
-      star.onclick = function (){ var k = pickKey(p, kc); saved.picks[k] = !saved.picks[k]; star.textContent = saved.picks[k] ? "★" : "☆"; store(); renderPicks(); };
-      row.appendChild(star);
-    });
-    if (p.chs.length > 1) row.appendChild(h("button", { type: "button", class: "btn btn-sm btn-outline-secondary", text: "⇄ Take turns", title: "Two bars (or the whole pattern) on each kit in turn", onclick: function (){ start(p, el, p.chs.slice(), bpm); } }));
-    row.appendChild(h("button", { type: "button", class: "btn btn-sm btn-outline-secondary", text: "■ Stop", onclick: stopAll }));
-    row.appendChild(h("label", {}, ["Tempo ", bpm]));
+    function buttons(){
+      row.innerHTML = "";
+      p.chs.forEach(function (kc){
+        row.appendChild(h("button", { type: "button", class: "btn btn-sm btn-outline-primary", text: "▶ " + kitFor(kc).name, onclick: function (){ start(p, el, [kc], bpm); } }));
+        var star = h("button", { type: "button", class: "mp-star", title: "Mark: I'd use this", text: saved.picks[pickKey(p, kc)] ? "★" : "☆" });
+        star.onclick = function (){ var k = pickKey(p, kc); saved.picks[k] = !saved.picks[k]; star.textContent = saved.picks[k] ? "★" : "☆"; store(); renderPicks(); };
+        row.appendChild(star);
+      });
+      if (p.chs.length > 1) row.appendChild(h("button", { type: "button", class: "btn btn-sm btn-outline-secondary", text: "⇄ Take turns", title: "Two bars (or the whole pattern) on each kit in turn", onclick: function (){ start(p, el, p.chs.slice(), bpm); } }));
+      row.appendChild(h("button", { type: "button", class: "btn btn-sm btn-outline-secondary", text: "■ Stop", onclick: stopAll }));
+      row.appendChild(h("label", {}, ["Tempo ", bpm]));
+    }
+    buttons(); if (slotOf(p.chs[0])) cardsBySlot.push(buttons);
     el.appendChild(row);
-    // the grid: one row per key, the playing column lit
-    var grid = h("div", { class: "mp-grid" }), names = KITS[p.chs[0]].keys;
-    Object.keys(p.parts).sort(function (a, b){ return midi(b) - midi(a); }).forEach(function (key){
-      var r = h("div", { class: "mp-line" }), cells = p.parts[key].split("|").join("");
-      var label = p.chs.map(function (kc){ return KITS[kc].keys[key]; }).filter(function (v, i, a){ return a.indexOf(v) === i; }).join(" / ");
-      r.appendChild(h("span", { class: "mp-key", title: label, text: key + " " + (names[key] || "?") }));
-      var cs = h("span", { class: "mp-cells" });
-      for (var i = 0; i < parsed.steps; i++){
-        var c = cells[i] || ".";
-        cs.appendChild(h("span", { class: "mp-cell v" + (c === "-" ? "h" : c === "." ? "0" : c) + (i % p.steps === 0 ? " bar" : (i % (p.steps / p.beats) === 0 ? " beat" : "")), "data-s": String(i) }));
+    var grid = h("div", { class: "mp-grid" }), names = kitFor(p.chs[0]).keys, CW = 11;
+    Object.keys(p.parts).sort(function (a, b){ return midi(b) - midi(a) || stepsOf(p, a) - stepsOf(p, b); }).forEach(function (part){
+      var key = keyOf(part), n = stepsOf(p, part), r = h("div", { class: "mp-line" }), cells = p.parts[part].split("|").join("");
+      r.appendChild(h("span", { class: "mp-key", title: names[key] || "", text: key + " " + (slotOf(p.chs[0]) ? ROLE(key) : (names[key] || "?")) + (n !== p.steps ? " (" + (n % 3 ? n / p.beats * 4 + "ths" : "triplets") + ")" : "") }));
+      var cs = h("span", { class: "mp-cells" }), w = CW * p.steps / n;
+      for (var i = 0; i < cells.length; i++){
+        var c = cells[i], col = Math.floor(i * p.steps / n + 1e-9);
+        var cell = h("span", { class: "mp-cell v" + (c === "-" ? "h" : c === "." ? "0" : c), "data-s": String(col) });
+        cell.style.width = (w - 1) + "px"; if (i % n === 0 && i) cell.style.marginLeft = "6px";
+        cs.appendChild(cell);
       }
       r.appendChild(cs); grid.appendChild(r);
     });
     el.appendChild(grid);
     return el;
   }
+  // the drum names the slot patterns use (General MIDI roles; each kit's own wave name is in the tooltip of the kit walk)
+  var ROLES = { "B0": "Kick 2", "C1": "Kick", "C#1": "Rim / side stick", "D1": "Snare", "D#1": "Clap", "E1": "Snare 2", "F#1": "Hi-hat closed", "A#1": "Hi-hat open",
+    "F1": "Floor tom", "G1": "Low tom", "A1": "Low-mid tom", "B1": "Mid tom", "C2": "High-mid tom", "D2": "High tom", "C#2": "Crash", "D#2": "Ride", "F2": "Ride bell", "F#2": "Tambourine", "G#2": "Cowbell" };
+  function ROLE(k){ return ROLES[k] || k; }
   function mount(el){
     var M = global.BandModx;
     var status = h("span", { class: "mp-status", text: M && M.connected() ? "Connected: " + M.portName() : "Not connected" });
@@ -234,23 +326,40 @@
     if (M) M.onChange(function (){ status.textContent = M.connected() ? "Connected: " + M.portName() : "Not connected"; });
     var chRow = h("div", { class: "mp-row" });
     Object.keys(KITS).forEach(function (kc){
-      var inp = h("input", { type: "number", min: 1, max: 16, value: chFor(kc), class: "mp-bpm" });
+      var inp = h("input", { type: "number", min: 1, max: 16, value: chFor(+kc), class: "mp-bpm" });
       inp.onchange = function (){ saved.chs[kc] = +inp.value; store(); };
       chRow.appendChild(h("label", {}, [KITS[kc].name + " on channel ", inp]));
     });
     var conBox = el.querySelector("#mp-connect"); conBox.appendChild(h("div", { class: "mp-row" }, [conn, status, h("span", { id: "mp-now", class: "mp-now" })])); conBox.appendChild(chRow);
-    ["latin", "brush"].forEach(function (g){ var box = el.querySelector("#mp-" + g); PATTERNS.filter(function (p){ return p.group === g; }).forEach(function (p){ box.appendChild(card(p)); }); });
+    // the four test slots
+    var slotBox = el.querySelector("#mp-slots");
+    if (slotBox){
+      var names = Object.keys(global.ModxKits || {});
+      saved.slots.forEach(function (s, i){
+        var sel = h("select", { class: "form-select-sm" }); names.forEach(function (n){ var o = h("option", { value: n, text: n }); if (n === s.kit) o.selected = true; sel.appendChild(o); });
+        var ch = h("input", { type: "number", min: 1, max: 16, value: s.ch, class: "mp-bpm" });
+        sel.onchange = function (){ s.kit = sel.value; store(); refreshSlotCards(); };
+        ch.onchange = function (){ s.ch = +ch.value; store(); };
+        slotBox.appendChild(h("div", { class: "mp-row" }, [h("b", { text: "Slot " + (i + 1) }), h("label", {}, ["channel ", ch]), sel]));
+      });
+    }
+    ["latin", "brush", "rock", "pop", "rnb", "hiphop"].forEach(function (g){ var box = el.querySelector("#mp-" + g); if (box) PATTERNS.filter(function (p){ return p.group === g; }).forEach(function (p){ box.appendChild(card(p)); }); });
     var wb = el.querySelector("#mp-walk"), wbpm = h("input", { type: "number", min: 30, max: 240, value: 100, class: "mp-bpm" }), wcard = h("div", { class: "mp-card" });
-    var wrow = h("div", { class: "mp-row" });
-    Object.keys(KITS).forEach(function (kc){ wrow.appendChild(h("button", { type: "button", class: "btn btn-sm btn-outline-primary", text: "▶ " + KITS[kc].name, onclick: function (){ start(walk(kc, +wbpm.value), wcard, [kc], wbpm); } })); });
-    wrow.appendChild(h("button", { type: "button", class: "btn btn-sm btn-outline-secondary", text: "■ Stop", onclick: stopAll }));
-    wrow.appendChild(h("label", {}, ["Tempo ", wbpm]));
+    var wrow = h("div", { class: "mp-row" }), wnow = h("p", { class: "mp-walknow" });
+    function wbuttons(){
+      wrow.innerHTML = "";
+      Object.keys(KITS).map(Number).concat(["s1", "s2", "s3", "s4"]).forEach(function (c){
+        wrow.appendChild(h("button", { type: "button", class: "btn btn-sm btn-outline-primary", text: "▶ " + kitFor(c).name + (slotOf(c) ? " (slot " + c.slice(1) + ")" : ""), onclick: function (){ start(walk(c, +wbpm.value), wcard, [c], wbpm); } }));
+      });
+      wrow.appendChild(h("button", { type: "button", class: "btn btn-sm btn-outline-secondary", text: "■ Stop", onclick: stopAll }));
+      wrow.appendChild(h("label", {}, ["Tempo ", wbpm]));
+    }
+    wbuttons(); cardsBySlot.push(wbuttons);
     wcard.appendChild(wrow); wcard.appendChild(h("p", { class: "mp-note", text: "Every key from C0 up, twice each (loud, then soft). The key and its sample name show while it plays." }));
-    var wnow = h("p", { class: "mp-walknow" }); wcard.appendChild(wnow); wb.appendChild(wcard);
-    // the walk shows the key it is on
-    var orig = lit; lit = function (pl, step){ orig(pl, step); if (pl.card === wcard && step >= 0){ var kc = pl.order[0], keys = Object.keys(KITS[kc].keys).sort(function (a, b){ return midi(a) - midi(b); }), k = keys[Math.floor(step / 2)]; wnow.textContent = k + " — " + KITS[kc].keys[k]; } };
+    wcard.appendChild(wnow); wb.appendChild(wcard);
+    onLit = function (pl, cell){ if (pl.card === wcard && cell >= 0){ var c = pl.order[0], k = walkKeys(c)[Math.floor(cell / 2)]; wnow.textContent = k + " — " + kitFor(c).keys[k]; } };
     renderPicks();
     document.addEventListener("keydown", function (e){ if (e.key === "Escape") stopAll(); });
   }
-  global.ModxPerc = { KITS: KITS, PATTERNS: PATTERNS, parse: parse, midi: midi, mount: mount, stop: stopAll };
+  global.ModxPerc = { KITS: KITS, PATTERNS: PATTERNS, parse: parse, midi: midi, keyOf: keyOf, stepsOf: stepsOf, ROLES: ROLES, mount: mount, stop: stopAll, slots: function (){ return saved.slots; } };
 })(typeof window !== "undefined" ? window : globalThis);

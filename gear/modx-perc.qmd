@@ -1,6 +1,6 @@
 ---
 title: "MODX Percussion Auditions"
-description: "Short loops on four MODX+ kits (Pop Latin, Real Brushes, Jazz Brushes, Brush Kit) to hear the congas, bongos, timbales, bells and brushes and mark the ones to use."
+description: "Short loops on MODX+ drum kits — Latin percussion, brushes, and rock, pop, R&B and hip-hop on any of 32 kits — to hear them and mark the ones to use."
 toc: true
 toc-depth: 2
 toc-title: "On this page"
@@ -64,11 +64,46 @@ kit in turn (two bars each) and you can hear which you like.</p>
 <div id="mp-brush"></div>
 ```
 
+## Test slots (rock, pop, R&B, hip-hop)
+
+```{=html}
+<p>The patterns below play on whichever kits you put in four spare Parts. Load a kit into each Part on the MODX, then choose
+the same kit here so the names and the ☆ marks match. <b>⇄ Take turns</b> plays a pattern on all four, two bars each. Every
+kit listed keeps the General MIDI layout on the keys these patterns use (kick C1, snare D1, hats F#1/A#1, toms F1–D2, crash
+C#2, ride D#2), checked against the Data List; the grids show the drum's role, the kit walk its sample names.</p>
+<div id="mp-slots"></div>
+```
+
+## Rock
+
+```{=html}
+<div id="mp-rock"></div>
+```
+
+## Pop
+
+```{=html}
+<div id="mp-pop"></div>
+```
+
+## R&B and funk
+
+```{=html}
+<div id="mp-rnb"></div>
+```
+
+## Hip-hop
+
+```{=html}
+<div id="mp-hiphop"></div>
+```
+
 ## Kit walk
 
 ```{=html}
 <div id="mp-walk"></div>
-<script src="/apps/shared/band/modx-perc.js?v=2"></script>
+<script src="/apps/shared/band/modx-kits.js?v=1"></script>
+<script src="/apps/shared/band/modx-perc.js?v=3"></script>
 <script>ModxPerc.mount(document);</script>
 ```
 
@@ -82,7 +117,13 @@ Absil, Frans. "Band Latin." [www.fransabsil.nl/archpdf/bandlatn.pdf](https://www
 
 "Bell pattern." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Bell_pattern](https://en.wikipedia.org/wiki/Bell_pattern). The 12/8 standard pattern: 1, 1a, 2&, 2a, 3&, 4, 4a.
 
+"Benny Benjamin." *Rock & Roll Hall of Fame*, 2003. [rockhall.com/wp-content/uploads/2024/03/Benny_Benjamin_2003.pdf](https://rockhall.com/wp-content/uploads/2024/03/Benny_Benjamin_2003.pdf). His constant quarter-note snare (seen in search excerpt).
+
+"Bernard Purdie." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Bernard_Purdie](https://en.wikipedia.org/wiki/Bernard_Purdie). The Purdie shuffle: triplets against a half-time backbeat, ghost notes on the snare.
+
 "Bongo Patterns." [www.lx.iriss.org.uk/read/bongo-patterns.html](https://www.lx.iriss.org.uk/read/bongo-patterns.html). Martillo: eight strokes, accents on 1, 3 and 4, beat 4 on the hembra (seen in search excerpt only; page refused direct reading).
+
+"Boom bap." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Boom_bap](https://en.wikipedia.org/wiki/Boom_bap). Kick on 1 and 3, snare on 2 and 4, highly swung programming on the MPC and SP-1200.
 
 "Brushes." *BYU Percussion*, Brigham Young University. [percussion.byu.edu/brushes](https://percussion.byu.edu/brushes). Swing: right hand swings, left stirs, the hands trade places on 2 and 4; ballads: both hands stir in opposite directions.
 
@@ -90,9 +131,21 @@ Absil, Frans. "Band Latin." [www.fransabsil.nl/archpdf/bandlatn.pdf](https://www
 
 "Cascara." *Soundbrenner*. [www.soundbrenner.com/blogs/articles/cascara](https://www.soundbrenner.com/blogs/articles/cascara). Cáscara follows the clave's direction; its printed grid differs from the one used here.
 
+"Disco." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Disco](https://en.wikipedia.org/wiki/Disco). Four-on-the-floor bass drum, 'an open hissing hi-hat on the off-beat'.
+
+"Drum beat." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Drum_beat](https://en.wikipedia.org/wiki/Drum_beat). Straight rock groove (kick and snare on the beats, hats on the eighths); half-time (snare on 3, hats in quarters); the delayed backbeat of funk.
+
+"Four on the floor (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Four_on_the_floor_(music)](https://en.wikipedia.org/wiki/Four_on_the_floor_(music)). The bass drum on every beat; disco and dance music.
+
+"Groove: How J Dilla Changed Rhythm." *The Pudding*, June 2023. [pudding.cool/2023/06/groove/](https://pudding.cool/2023/06/groove/). Straight, swung and shifted parts at once; swung (quintuplet) hi-hat, slightly early snare.
+
 "How to Play the Pandeiro for Capoeira." *Dende Arts*. [dendearts.com/blog/how-to-play-the-pandeiro-for-capoeira/](https://dendearts.com/blog/how-to-play-the-pandeiro-for-capoeira/). Thumb, fingertips, heel, fingertips.
 
 "Latin Percussion Applications in the Jazz Band." *Jazz Education Network*. [jazzednet.org/resources/latin-percussion-applications-in-the-jazz-band/](https://jazzednet.org/resources/latin-percussion-applications-in-the-jazz-band/). Cha-cha-chá: bell in quarters, güiro long quarter + two eighths.
+
+"Motown Groove." *Soundbrenner*. [www.soundbrenner.com/blogs/articles/motown-groove](https://www.soundbrenner.com/blogs/articles/motown-groove). Snare on 2 and 4 or on all four beats; tambourine in eighths; kick on 1 and 3.
+
+"New jack swing." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/New_jack_swing](https://en.wikipedia.org/wiki/New_jack_swing). Offbeat-accented sixteenth-note triplets; the TR-808 snare; TR-808, LinnDrum, SP-1200.
 
 "The Pandeiro." *Acoustics Today*, July 2007, p. 41. [acousticstoday.org/issues/2007AT/Jul2007/files/basic-html/page41.html](https://acousticstoday.org/issues/2007AT/Jul2007/files/basic-html/page41.html). Pandeiro batida: thumb, fingertips, heel, fingertips.
 
@@ -102,10 +155,16 @@ Absil, Frans. "Band Latin." [www.fransabsil.nl/archpdf/bandlatn.pdf](https://www
 
 "Timbale: Playing the Son." *Artdrum*. [www.artdrum.com/TIMBALE_PLAYING_THE_SON.HTM](https://www.artdrum.com/TIMBALE_PLAYING_THE_SON.HTM). Paila: left hand muffled on 2, open on 4; the tumbao is the cha-cha-chá conga part, faster.
 
+"Trap music." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Trap_music](https://en.wikipedia.org/wiki/Trap_music). About 140 bpm in half-time, deep 808 kicks with long decay, double- and triple-time hi-hats.
+
 "Tumbao." *Soundbrenner*. [www.soundbrenner.com/blogs/articles/tumbao](https://www.soundbrenner.com/blogs/articles/tumbao). Heel-toe, slap and open tones of the tumbao.
 
 "Tumbao." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tumbao](https://en.wikipedia.org/wiki/Tumbao). Cites Rebeca Mauleón, *Salsa Guidebook*.
 
 Yamaha Corporation. *MODX6+ / MODX7+ / MODX8+ Data List*. Yamaha. [usa.yamaha.com/files/download/other_assets/5/1583935/modx_plus_en_dl_a0.pdf](https://usa.yamaha.com/files/download/other_assets/5/1583935/modx_plus_en_dl_a0.pdf). Drum Kit Assign List: the key of every sound in Pop Latin Kit, Real Brushes Kit, Jazz Brushes Kit and Brush Kit (kit-to-table match read from the page layout).
+
+**For students**
+
+"Backbeat." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Backbeat](https://en.wikipedia.org/wiki/Backbeat). The backbeat on 2 and 4; the delayed or late backbeat.
 :::
 <!-- /works-cited -->
