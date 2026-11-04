@@ -5,7 +5,7 @@ PR = ["lessons/poly-basics.qmd", "lessons/poly-west-africa.qmd", "lessons/poly-a
 SOURCES = [
     wiki("Polyrhythm", "Polyrhythm", PR, who="student", note="Unverified: definitions, 3:2 and 4:3, cross-rhythm. Not yet re-read."),
     wiki("Bell pattern", "Bell_pattern", ["lessons/poly-west-africa.qmd", "lessons/poly-afro-cuban.qmd"], who="student",
-         note="Unverified: the 12-pulse standard pattern, gankogui, A. M. Jones's term. Not yet re-read."),
+         note="The 12-pulse standard pattern (1, 1a, 2&, 2a, 3&, 4, 4a) re-read 2026-11-04 and confirmed; gankogui and A. M. Jones's term not yet re-read."),
     wiki("Clave (rhythm)", "Clave_(rhythm)", ["lessons/poly-afro-cuban.qmd"], who="student",
          note="Unverified: son and rumba clave, 3-2 / 2-3, tresillo. Not yet re-read."),
     wiki("Math rock", "Math_rock", ["lessons/poly-math-rock.qmd"], who="student",

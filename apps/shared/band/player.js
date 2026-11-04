@@ -653,7 +653,7 @@
     if (ev.choke){ if (this.bank.choke) this.bank.choke(ev.choke, this.timeOf(L), ev.damp); return; }
     if (p.part === "drums"){
       var piece = (ev.piece === "ride" && o.rideSound === "ride2") ? "ride2" : ev.piece, kv = this.c.kit && this.c.kit[ev.piece];
-      this.bank.play("kit", { piece: piece, vel: vel, gain: kv == null ? 1 : kv * kv }, t, this.bus.kitIn ? this.bus.kitIn(ev.piece) : dest);
+      this.bank.play("kit", { piece: piece, vel: vel, gain: kv == null ? 1 : kv * kv, groove: o.groove }, t, this.bus.kitIn ? this.bus.kitIn(ev.piece) : dest);
     }
     else if (p.part === "congas") this.bank.play("congas", { piece: ev.piece, vel: vel }, t, dest);
     else if (p.part === "bass") this.bank.play(o.bassSound === "electric" ? "ebass" : "bass", { midi: ev.midi, vel: vel, dur: (ev.dur || 0.9) * this.spb * (p.unit || 1) }, t, dest);

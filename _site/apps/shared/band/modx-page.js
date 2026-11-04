@@ -77,14 +77,14 @@
   var ROWS = [];
   ["bass","piano","guitar"].forEach(function (fam){ S.sounds(fam).forEach(function (s){ ROWS.push({ id: s.id, inst: s.id, label: s.label || s.id, notes: PHRASE[fam] }); }); });
   ROWS.forEach(function (r){ if (r.inst === "bass") r.label = "Bass (upright)"; if (r.inst === "ebass") r.label = "Bass (electric)"; if (r.inst === "piano") r.label = "Piano"; });
-  ROWS.push({ id: "kit:rock", inst: "kit", label: "Drums: rock beat, crash", notes: ROCK }, { id: "kit:jazz", inst: "kit", label: "Drums: jazz ride", notes: JAZZ },
+  ROWS.push({ id: "kit:rock", inst: "kit", label: "Drums: rock beat, crash", notes: ROCK, groove: "rock" }, { id: "kit:jazz", inst: "kit", label: "Drums: jazz ride", notes: JAZZ },
             { id: "kit:fill", inst: "kit", label: "Drums: tom fill", notes: FILL }, { id: "kit:brush", inst: "kit", label: "Drums: brushes", notes: BRUSH },
             { id: "congas", inst: "congas", label: "Congas: tumbao", notes: CONGA });
   function length(notes){ return notes.reduce(function (m, n){ return Math.max(m, n.at + (n.dur || 1)); }, 0) * SPB + 0.6; }
   function playRow(r, how, at){
     M.force(r.inst, how);
     var t0 = ctx.currentTime + 0.15 + (at || 0);
-    r.notes.forEach(function (n){ bank.play(r.inst, n.piece ? { piece: n.piece, vel: n.vel } : { midi: n.midi, vel: n.vel, dur: n.dur * SPB }, t0 + n.at * SPB); });
+    r.notes.forEach(function (n){ bank.play(r.inst, n.piece ? { piece: n.piece, vel: n.vel, groove: r.groove } : { midi: n.midi, vel: n.vel, dur: n.dur * SPB }, t0 + n.at * SPB); });   // groove: which MODX kit (modx.js kitSlot)
   }
   function run(r, which){
     stopAll();
@@ -143,6 +143,18 @@
       audio().then(function (){ M.play(inst, { piece: p, vel: 0.8 }, ctx.currentTime + 0.05, ctx); }); };
   }
 
+  // ---- the five drum kits: channel and name of each, and the grooves that go to it ----
+  function drawKits(){
+    var el = $("mx-kits"); if (!el) return;
+    el.innerHTML = "<tr><th>Kit</th><th>MODX kit</th><th>Channel</th><th>Grooves</th></tr>" + Object.keys(M.cfg.kits).map(function (k){
+      var gs = Object.keys(M.cfg.kitFor).filter(function (g){ return M.cfg.kitFor[g] === k; });
+      if (k === "jazz") gs.unshift("jazz time and any groove not listed");
+      if (k === "brush") gs.push("every brush stroke");
+      return "<tr><td>" + k + "</td><td><input type=\"text\" data-kn=\"" + k + "\" value=\"" + (M.cfg.kits[k].name || "") + "\"></td><td><input type=\"number\" min=\"1\" max=\"16\" data-kc=\"" + k + "\" value=\"" + M.cfg.kits[k].ch + "\"></td><td>" + gs.join(", ") + "</td></tr>";
+    }).join("");
+    el.onchange = function (e){ var t = e.target; if (t.dataset.kc) M.cfg.kits[t.dataset.kc].ch = Math.max(1, Math.min(16, +t.value || 1)); if (t.dataset.kn) M.cfg.kits[t.dataset.kn].name = t.value; M.save(); };
+  }
+  drawKits();
   drawCompare(); drawRoutes(); drawMap("mx-kit", "kit", "kit", "Drum"); drawMap("mx-congas", "congas", "congas", "Hand drum"); status();
   if (M.cfg.on && !M.connected()) M.connect().then(status, function (){});
 })();

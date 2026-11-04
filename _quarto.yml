@@ -464,6 +464,7 @@ website:
         - gear/modx.qmd
         - gear/modx-band.qmd
         - gear/modx-perc.qmd
+        - gear/modx-ab.qmd
     - id: mlt
       title: "MLT"
       style: docked
@@ -602,6 +603,7 @@ website:
           - gear/modx.qmd
           - gear/modx-band.qmd
           - gear/modx-perc.qmd
+          - gear/modx-ab.qmd
       - text: Teacher
         menu:
           - teacher/session-builder.qmd

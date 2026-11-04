@@ -176,7 +176,7 @@ const PLAN = {
     waltz: { ladder: ["boomchick"], style: "waltz", meter: "3/4", chart: WALTZ, tips: "Kick on 1, brushed snare on 2 and 3, felt in one. Lean on the first and third bars of each four-bar phrase." },
     brushes: { ladder: ["hheighths"], style: "carol", tips: "Very quiet hat eighths, soft kick on 1 and 3, light cross-stick on 2 and 4. No fills. Stay under the singer." },
     brushswing: { ladder: ["ridetime"], style: "swing", tips: "Left hand: a circle on the snare head, a swish on every beat, a little more on 2 and 4. Right hand: the ride pattern in taps. The foot closes the hat on 2 and 4. Keep the circle going even when the taps rest." },
-    brushballad: { ladder: ["quarters"], style: "ballad", tips: "One slow circle across the snare head to the bar, a long sweep landing on 1 and again on 3, a light tap on 2 and 4. Let the sound hang; do not press the wires." },
+    brushballad: { ladder: ["quarters"], style: "ballad", tips: "Both hands stir, circling in opposite directions: the left hand's long sweep landing on 1 and again on 3, the right hand's sweep leaning in on 2 and 4 (no taps). Let the sound hang; do not press the wires." },
     brushfolk: { ladder: ["brushes"], style: "folk", tips: "A swish on every beat with the weight on 2 and 4, light taps between, a soft kick on 1 and 3. It stays under the singer like Light time, with a backbeat you can hear." },
     twelve8: { ladder: ["hhquarters", "shuffle"], style: "doowop", tips: "Three eighths to every beat on the cymbal, kick on 1 and 3, snare on 2 and 4. Count 1-and-a 2-and-a." },
     bossa: { ladder: ["hheighths"], style: "bossa", tips: "Eighths on the cymbal; kick on 1 and 3 with a pickup before each; the two-bar bossa clave on the cross-stick. Learn hands and feet apart, then together." },
@@ -330,12 +330,12 @@ function page(kind, e) {
   if (partners.length) L.push(`- **Plays with, in ${S.label.toLowerCase()}:** ${partners.map(([k, id]) => `${link(k, id)} (${kindWord[k]})`).join(", ")}.`);
   const sib = K.list.filter((x) => x.id !== e.id && x.group === e.group && !(SKIP[kind] || []).includes(x.id)).slice(0, 8);
   if (sib.length) L.push(`- **Other ${kindWord[kind]}s in the ${e.group} group:** ${sib.map((x) => link(kind, x.id)).join(", ")}.`);
-  L.push("", "{{< include ../_arrange-kit.qmd >}}", "", '<script src="/apps/shared/lessons/sections.js?v=1"></script>', "");
+  L.push("", "{{< include ../_arrange-kit.qmd >}}", "", '<script src="/apps/shared/lessons/sections.js?v=2"></script>', "");
   return L.join("\n");
 }
 
 fs.mkdirSync(OUT, { recursive: true });
-const idx = ["---", 'title: "Accompaniment Patterns"', 'subtitle: "A lesson for every bass line, comping rhythm, drum groove and conga part the band plays"', "toc: true", "toc-depth: 2", "---", "",
+const idx = ["---", 'title: "Accompaniment Patterns"', 'subtitle: "A lesson for every bass line, comping rhythm, drum groove and conga part the band plays"', "toc: true", "toc-depth: 2", 'description: "A lesson for every bass line, comping rhythm, drum groove and conga part the band plays, each built up from simpler ones, played on the band and written out."', "instruments: [bass, guitar, piano, drums, other]", "topics: [pop, jazz, latin, rhythm]", "has: [interactive]", "---", "",
   "Every pattern the [Backing Track](../../tools/backing-track.qmd) band can play has a lesson here. Each one starts from simpler patterns in the same list, plays every step on the band and writes out what it played, then takes the pattern into its styles and shows how it relates to the rest. A pattern marked ○ is a starting point: it builds on nothing else.", ""];
 let count = 0;
 for (const kind of Object.keys(KINDS)) {
@@ -354,7 +354,7 @@ for (const kind of Object.keys(KINDS)) {
     idx.push("");
   }
 }
-idx.push('<script src="/apps/shared/lessons/sections.js?v=1"></script>', "");
+idx.push('<script src="/apps/shared/lessons/sections.js?v=2"></script>', "");
 fs.writeFileSync(path.join(OUT, "index.qmd"), idx.join("\n"));
 const missing = Object.keys(KINDS).flatMap((k) => KINDS[k].list.filter((e) => !(SKIP[k] || []).includes(e.id) && !PLAN[k][e.id]).map((e) => k + ":" + e.id));
 console.log(`wrote ${count} lessons and the index to lessons/patterns/` + (missing.length ? `; no plan for: ${missing.join(", ")}` : ""));

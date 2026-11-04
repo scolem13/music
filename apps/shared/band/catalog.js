@@ -246,7 +246,7 @@
     { id:"brushswing", label:"Brushes, swing", feel:"swing", group:"Hymns and carols", tags:["Jazz","Brushes","Ballad"],
       desc:"Brushes on the snare: a swish on every beat, leaning on 2 and 4, and taps on the ride pattern (1, 2, the skip after 2, 3, 4, the skip after 4). Hi-hat foot on 2 and 4, a kick you feel more than hear. No fills.", three:true },
     { id:"brushballad", label:"Brushes, ballad", feel:"any", group:"Hymns and carols", tags:["Jazz","Brushes","Ballad"],
-      desc:"One long sweep of the brush across the snare on 1 and another on 3, a tap on 2 and 4, a soft kick on 1 and the hi-hat foot on 2 and 4. In 3/4 one sweep to the bar and a tap on 2 and 3. No fills.", three:true },
+      desc:"Both brushes stir the snare, circling in opposite directions: the left hand's long sweep from 1 and from 3, the right hand's sweep leaning in on 2 and 4. A soft kick on 1, the hi-hat foot on 2 and 4. In 3/4 one long sweep to the bar and the right hand on 2 and 3. No fills.", three:true },
     { id:"brushfolk", label:"Brushes, folk", feel:"straight", group:"Hymns and carols", tags:["Folk","Country","Brushes"],
       desc:"A swish on every beat that leans on 2 and 4, light taps on the off-beat eighths and a soft kick on 1 and 3. A quiet country backbeat. No fills.", three:true },
     { id:"twelve8", label:"12/8", feel:"any", group:"Folk, rock and pop", tags:["Doo-wop","Blues","Ballad"],

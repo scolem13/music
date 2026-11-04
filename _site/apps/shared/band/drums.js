@@ -225,8 +225,10 @@
                           [1, "hatFoot", 0.38], [2, "hatFoot", 0.38], [0, "kick", 0.26]], fills: false },
     // The ballad: the circle slowed to one long sweep on 1 and another on 3, a tap on 2 and 4, a soft kick on 1 and the foot on 2 and 4. In 3/4 one
     // sweep to the bar and a tap on 2 and 3. No fills.
-    brushballad: { bars: [ [[0, "brushSweep", 0.36], [2, "brushSweep", 0.32], [1, "brushTap", 0.30], [3, "brushTap", 0.32], [0, "kick", 0.30], [1, "hatFoot", 0.30], [3, "hatFoot", 0.30]] ],
-                    three: [[0, "brushSweep", 0.36], [1, "brushTap", 0.28], [2, "brushTap", 0.30], [0, "kick", 0.30], [1, "hatFoot", 0.28], [2, "hatFoot", 0.28]], fills: false },
+    // both hands stir (BYU Percussion, "Brushes": in ballads the hands circle in opposite directions); 2 and 4 are the right hand's
+    // sweep leaning in, not a tap (changed 2026-11-04: it was a tap on 2 and 4)
+    brushballad: { bars: [ [[0, "brushSweep", 0.36], [2, "brushSweep", 0.32], [1, "brushSwish", 0.32], [3, "brushSwish", 0.34], [0, "kick", 0.30], [1, "hatFoot", 0.30], [3, "hatFoot", 0.30]] ],
+                    three: [[0, "brushSweep", 0.36], [1, "brushSwish", 0.30], [2, "brushSwish", 0.32], [0, "kick", 0.30], [1, "hatFoot", 0.28], [2, "hatFoot", 0.28]], fills: false },
     // Straight brushes for a country or folk song: a swish on every beat that leans on 2 and 4 (the backbeat), a tap on the off-beat eighths and
     // the kick on 1 and 3. In 3/4 the swish leans on 2 and 3.
     brushfolk: { bars: [ [[0, "brushSwish", 0.34], [1, "brushSwish", 0.52], [2, "brushSwish", 0.34], [3, "brushSwish", 0.52],

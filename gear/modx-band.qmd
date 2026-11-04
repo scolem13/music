@@ -7,8 +7,8 @@ toc-title: "On this page"
 ---
 
 ```{=html}
-<script src="/apps/shared/band/modx.js?v=2"></script>
-<script src="/apps/shared/band/sounds.js?v=21"></script>
+<script src="/apps/shared/band/modx.js?v=3"></script>
+<script src="/apps/shared/band/sounds.js?v=20"></script>
 <script src="/apps/shared/lessons/sections.js?v=2"></script>
 <style>
 .mx-row { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin: .5rem 0; }
@@ -56,13 +56,24 @@ ticked under <a href="#routing">Routing</a> to the MODX.</p>
 instruments at once without touching the board again.</p>
 <table class="mx-table">
   <tr><th>Part</th><th>Channel</th><th>Put on it</th><th>Site instruments</th></tr>
-  <tr><td>1</td><td>1</td><td>Electric or upright bass</td><td>bass, electric bass</td></tr>
-  <tr><td>2</td><td>2</td><td>Grand piano or electric piano</td><td>piano, electric pianos</td></tr>
-  <tr><td>3</td><td>3</td><td>Organ with rotary speaker</td><td>tonewheel organ, church organ</td></tr>
-  <tr><td>4</td><td>4</td><td>Guitar</td><td>every guitar</td></tr>
-  <tr><td>10</td><td>10</td><td>Drum kit</td><td>drums, brushes</td></tr>
-  <tr><td>11</td><td>11</td><td>Latin percussion kit</td><td>congas, bongos</td></tr>
+  <tr><td>1</td><td>1</td><td>Upright bass</td><td>bass (upright)</td></tr>
+  <tr><td>2</td><td>2</td><td>Wurlitzer electric piano</td><td>Wurlitzer</td></tr>
+  <tr><td>3</td><td>3</td><td>Organ with rotary speaker</td><td>tonewheel organ</td></tr>
+  <tr><td>4</td><td>4</td><td>Clean electric guitar</td><td>electric guitar (clean)</td></tr>
+  <tr><td>5</td><td>5</td><td>Distorted electric guitar</td><td>electric guitar (distorted)</td></tr>
+  <tr><td>7</td><td>7</td><td>Grand piano</td><td>piano</td></tr>
+  <tr><td>8</td><td>8</td><td>Rhodes electric piano</td><td>Rhodes</td></tr>
+  <tr><td>9</td><td>9</td><td>Pop Latin Kit</td><td>congas, bongos</td></tr>
+  <tr><td>10</td><td>10</td><td>Electric bass</td><td>bass (electric)</td></tr>
+  <tr><td>11</td><td>11</td><td>Steel-string acoustic guitar</td><td>acoustic guitar (steel)</td></tr>
+  <tr><td>12</td><td>12</td><td>Brush Kit</td><td>drums: brush grooves, and every brush stroke</td></tr>
+  <tr><td>13</td><td>13</td><td>BeechwoodSnare Kit</td><td>drums: jazz time, Latin, blues shuffles</td></tr>
+  <tr><td>14</td><td>14</td><td>Rock Stereo Kit 1</td><td>drums: rock, half-time, train beat</td></tr>
+  <tr><td>15</td><td>15</td><td>Dry Standard Kit</td><td>drums: pop, ballads, dance, Motown, folk</td></tr>
+  <tr><td>16</td><td>16</td><td>R&amp;B Kit 1</td><td>drums: funk, reggaeton</td></tr>
 </table>
+<p class="mx-note">Five drum kits, because one kit made some styles sound wrong. Which groove goes to which kit is set under
+<a href="#drum-maps">Drum maps</a>. On R&amp;B Kit 1 the tom keys play 808-style kicks (Data List), so tom fills in funk sound odd.</p>
 <p class="mx-note">Then, in Utility → Settings → MIDI, check that the MODX receives Bank Select and Program Change, so the button below
 can call the Performance up. Bank and number: in the Performance list, the User bank is shown with the number of each slot.
 The defaults below (MSB 63, LSB 32, program 0 = User 1, first slot) are from memory of Yamaha's MIDI tables and not yet checked on the board.</p>
@@ -115,11 +126,13 @@ Performance uses for it.</p>
 ## Drum maps
 
 ```{=html}
-<p>Which MODX key each drum is on. These start as the General MIDI layout, which Yamaha's standard kits mostly follow. Press ▶
+<p>Which MODX key each drum is on. The drum keys are the General MIDI layout, which all five kits follow (checked against the Data List); the hand drums are the Pop Latin Kit's keys. Press ▶
 to hear one on the MODX and change the number if it's the wrong drum.</p>
+<p>Which kit each groove plays on: five Parts, one kit each. A groove not listed plays on the jazz kit.</p>
+<table class="mx-table" id="mx-kits"></table>
 <div class="mx-grid"><table class="mx-table" id="mx-kit"></table><table class="mx-table" id="mx-congas"></table></div>
 ```
 
 ```{=html}
-<script src="/apps/shared/band/modx-page.js?v=2"></script>
+<script src="/apps/shared/band/modx-page.js?v=3"></script>
 ```

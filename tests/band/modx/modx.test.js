@@ -12,9 +12,11 @@ const ctx = { currentTime: 0, getOutputTimestamp: () => ({ contextTime: 0, perfo
 assert.equal(M.routed("bass", ctx), false, "off until switched on");
 M.cfg.on = true; M.cfg.routes.bass.on = true; M.cfg.routes.kit.on = true;
 assert.equal(M.routed("bass", ctx), true);
-assert.equal(M.routed("piano", ctx), false, "piano not routed");
+assert.equal(M.routed("organ", ctx), false, "church organ not routed by default");
+assert.equal(M.routed("piano", ctx), true, "piano routed by default (Sean's Performance)");
 assert.equal(M.routed("bass", new OfflineAudioContext()), false, "renders never go out");
-M.force("piano", "modx"); assert.equal(M.routed("piano", ctx), true); M.force("piano", null);
+M.force("organ", "modx"); assert.equal(M.routed("organ", ctx), true); M.force("organ", null);
+M.force("piano", "site"); assert.equal(M.routed("piano", ctx), false, "forced to the site"); M.force("piano", null);
 
 M.play("bass", { midi: 40, vel: 1, dur: 0.5 }, 0, ctx);
 assert.deepEqual(sent.map(s => s.b), [[0x90, 40, 127]], "note-on now on channel 1; the off waits in the queue");
@@ -22,7 +24,14 @@ T += 400; M._flush();
 assert.deepEqual(sent[1].b, [0x80, 40, 0]); assert.equal(Math.round(sent[1].ts), 1500, "off stamped at 0.5 s");
 
 sent.length = 0; M.play("kit", { piece: "snare", vel: 0.5 }, 0, ctx);
-assert.deepEqual(sent[0].b, [0x99, 38, 64], "snare = GM 38 on channel 10");
+assert.deepEqual(sent[0].b, [0x9C, 38, 64], "snare = GM 38 on the jazz kit, channel 13 (no groove)");
+// the kit by groove: rock -> 14, dance -> 15, funk -> 16, brushes -> 12 on the Brush Kit's own keys; a blend takes its first
+for (const [g, ch] of [["rock", 14], ["dance", 15], ["funk+rock", 16], ["bossa", 13]]) { sent.length = 0; M.play("kit", { piece: "kick", vel: 0.5, groove: g }, 0, ctx);
+  assert.deepEqual(sent[0].b, [0x90 | (ch - 1), 36, 64], g + " kick on channel " + ch); }
+sent.length = 0; M.play("kit", { piece: "brushSweep", vel: 0.5, groove: "rock" }, 0, ctx);
+assert.deepEqual(sent[0].b, [0x9B, 26, 64], "a brush sweep goes to the Brush Kit (ch 12) on D0 = 26 whatever the groove");
+sent.length = 0; M.cfg.routes.congas.on = true; M.play("congas", { piece: "congaOpen", vel: 0.5 }, 0, ctx);
+assert.deepEqual(sent[0].b, [0x98, 36, 64], "conga open tone on the Pop Latin Kit, ch 9, C1 = 36");
 assert.equal(M.play("kit", { piece: "nosuch" }, 0, ctx), null);
 
 // the same key twice: released only when the last one lets go
