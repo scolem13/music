@@ -432,6 +432,7 @@ website:
         - gear/x32-drums-dca.qmd
         - gear/using-a-mic.qmd
         - gear/modx.qmd
+        - gear/modx-orchestra.qmd
     - id: mlt
       title: "MLT"
       style: docked

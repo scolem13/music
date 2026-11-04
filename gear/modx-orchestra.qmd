@@ -1,0 +1,104 @@
+---
+title: "MODX Orchestra"
+description: "Sixteen Parts of a MODX Performance for reading full scores: one per section of the orchestra, with voices to try for each and a button to hear each one on the board."
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+---
+
+```{=html}
+<script src="/apps/shared/band/modx.js"></script>
+<script src="/apps/shared/band/modx-orchestra.js"></script>
+<style>
+.mo-row { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin: .5rem 0; }
+.mo-note { font-size: .88rem; opacity: .8; }
+.mo-table { border-collapse: collapse; font-size: .9rem; width: 100%; }
+.mo-table th, .mo-table td { padding: .35rem .5rem; border-bottom: 1px solid rgba(128,128,128,.25); text-align: left; vertical-align: top; }
+.mo-table input[type=text] { width: 100%; min-width: 9rem; }
+.mo-pick { margin: 0; padding-left: 1.1rem; } .mo-pick li:first-child { font-weight: 600; }
+.mo-also { font-size: .82rem; opacity: .8; margin-top: .2rem; }
+@media (max-width: 700px) { .mo-table .mo-hide { display: none; } }
+</style>
+```
+
+Set up for later: a second Performance on the MODX for the [full scores](../theory/analysed-scores/full-scores.qmd), one Part per
+section of the orchestra, so a score can play on the board's orchestral voices instead of the site's samples. The full-score player
+does not send to the MODX yet; this page is the plan for its sixteen Parts and lets you try each voice on the board now.
+
+## Make the Performance
+
+1. Start from an empty Performance (or any one, then replace its Parts) and give each Part below its voice: touch the Part,
+   then **[CATEGORY SEARCH]** and the category shown (Strings, Woodwind, Brass, Chromatic Perc, Drum/Perc) to find the name.
+2. **Part n plays on channel n**: with Utility → Settings → MIDI → *MIDI I/O Mode* = **Multi**, each channel reaches only its Part.
+3. Arpeggios and motion sequences off on every Part; Keyboard Control off on all but the one you want to play from the keys.
+4. A hall reverb for the whole Performance; each Part's reverb send a little higher for the strings than for the brass.
+5. Store it as a User Performance named **Site Orchestra**, separate from the Site Band one.
+
+The names below come from Yamaha's MODX+ Data List, read through its PDF text, where the table's columns run together: check
+the spelling on the board. Bold is the first to try. Write what you choose in the last column; it is kept in this browser.
+
+## Connect
+
+```{=html}
+<div class="mo-row">
+  <button type="button" class="btn btn-sm btn-primary" id="mo-connect">Connect the MODX</button>
+  <span id="mo-status" class="mo-note">Not connected</span>
+  <button type="button" class="btn btn-sm btn-outline-secondary" id="mo-all">▶ Every Part in turn</button>
+  <button type="button" class="btn btn-sm btn-outline-secondary" id="mo-stop">■ Stop</button>
+</div>
+<p class="mo-note">▶ plays a short broken chord in the middle of that instrument's range on its channel (a few hits on the
+percussion Part), so you can hear the voice you loaded. Load the Site Orchestra Performance first.</p>
+```
+
+## The sixteen Parts
+
+```{=html}
+<table class="mo-table" id="mo-parts"></table>
+<p class="mo-note">Staff names: which full-score staves go to the Part (the full-score player names its instruments in
+Italian, English or German). A score with more staves than this (two flutes and a piccolo, four horns) shares a Part within the
+family; the "also" line says which voice to use if a doubling instrument has its own staff.</p>
+```
+
+## Still to do
+
+- The full-score player sends each staff to its Part (as the band does through `modx.js`), with a Site / MODX switch.
+- Pizzicato, tremolo and mutes: a score marks them and the player does not play them yet. On the MODX they need another voice
+  (Pizzicato Strings, Tremolo Strings) or a Scene on the string Parts; no Parts are left in sixteen, so a Scene switch is the likely way.
+- Dynamics: the player shapes velocity from the written dynamics ("Even out the loudness"); the MODX string and brass voices
+  change colour with velocity, so they may need the velocity range set per Part, as the band's instruments have on the MODX page.
+
+```{=html}
+<script>
+(function () {
+  var O = window.ModxOrchestra, M = window.BandModx, $ = function (id) { return document.getElementById(id); }, LS = "modx-orchestra";
+  var mine = {}; try { mine = JSON.parse(localStorage.getItem(LS) || "{}") || {}; } catch (e) {}
+  var CAT = { Flutes: "Woodwind", Oboes: "Woodwind", Clarinets: "Woodwind", Bassoons: "Woodwind", Horns: "Brass", Trumpets: "Brass", Trombones: "Brass",
+    Tuba: "Brass", Timpani: "Drum/Perc", Percussion: "Drum/Perc", "Harp, keyboards": "Chromatic Perc / Keyboard" };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  $("mo-parts").innerHTML = "<tr><th>Part</th><th>Voices to try</th><th class='mo-hide'>Staff names</th><th></th><th>Your choice</th></tr>" + O.PARTS.map(function (p) {
+    return "<tr><td><b>" + p.ch + "</b> " + esc(p.part) + "<div class='mo-also'>" + esc(CAT[p.part] || "Strings") + "</div></td>" +
+      "<td><ol class='mo-pick'>" + p.pick.map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") + "</ol>" +
+      (p.also ? "<div class='mo-also'>Also: " + p.also.map(esc).join("; ") + "</div>" : "") + (p.note ? "<div class='mo-also'>" + esc(p.note) + "</div>" : "") + "</td>" +
+      "<td class='mo-hide mo-also'>" + esc(p.staves) + "</td>" +
+      "<td><button type='button' class='btn btn-sm btn-outline-primary' data-ch='" + p.ch + "'>▶</button></td>" +
+      "<td><input type='text' data-c='" + p.ch + "' value='" + esc(mine[p.ch] || "") + "' placeholder='" + esc(p.pick[0]) + "'></td></tr>";
+  }).join("");
+  $("mo-parts").oninput = function (e) { var c = e.target.dataset.c; if (!c) return; mine[c] = e.target.value; try { localStorage.setItem(LS, JSON.stringify(mine)); } catch (x) {} };
+  var timers = [];
+  function stop() { timers.forEach(clearTimeout); timers = []; if (M) M.stop(); }
+  function play(p, at0) {
+    var beat = 600; O.phrase(p).forEach(function (n) { M.note(p.ch, n.midi, n.vel, at0 + n.at * beat, n.dur * beat); });
+    return at0 + 5 * beat;
+  }
+  function ready() { if (!M || !M.connected()) { $("mo-status").textContent = "Connect the MODX first."; return false; } return true; }
+  $("mo-parts").onclick = function (e) { var c = e.target.dataset && e.target.dataset.ch; if (!c || !ready()) return; stop(); play(O.PARTS[c - 1], performance.now() + 100); };
+  $("mo-all").onclick = function () { if (!ready()) return; stop(); var t = performance.now() + 100;
+    O.PARTS.forEach(function (p) { (function (p, at) { timers.push(setTimeout(function () { $("mo-status").textContent = "Playing: " + p.ch + " " + p.part; }, Math.max(0, at - performance.now()))); })(p, t); t = play(p, t); }); };
+  $("mo-stop").onclick = stop;
+  $("mo-connect").onclick = function () { M.connect().then(function (n) { $("mo-status").textContent = "Connected: " + n; }, function (e) { $("mo-status").textContent = e.message; }); };
+  if (M && M.connected()) $("mo-status").textContent = "Connected: " + M.portName();
+})();
+</script>
+```
+
+<script src="/apps/shared/lessons/sections.js?v=2"></script>
