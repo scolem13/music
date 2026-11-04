@@ -601,6 +601,7 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
   <li><a href="#latin-percussion-pop-latin-kit" id="toc-latin-percussion-pop-latin-kit" class="nav-link" data-scroll-target="#latin-percussion-pop-latin-kit">Latin percussion (Pop Latin Kit)</a></li>
   <li><a href="#brushes-real-brushes-jazz-brushes-brush-kit" id="toc-brushes-real-brushes-jazz-brushes-brush-kit" class="nav-link" data-scroll-target="#brushes-real-brushes-jazz-brushes-brush-kit">Brushes (Real Brushes, Jazz Brushes, Brush Kit)</a></li>
   <li><a href="#kit-walk" id="toc-kit-walk" class="nav-link" data-scroll-target="#kit-walk">Kit walk</a></li>
+  <li><a href="#works-cited" id="toc-works-cited" class="nav-link" data-scroll-target="#works-cited">Works Cited</a></li>
   </ul>
 </nav>
     </div>
@@ -746,7 +747,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 .mp-walknow { font-weight: 600; font-family: var(--bs-font-monospace, monospace); min-height: 1.4em; }
 @media (max-width: 600px) { .mp-key { flex-basis: 8rem; } }
 </style>
-<p>Loops written for four MODX+ drum kits, sent straight to the board over USB. Use them to hear the congas, bongos, timbales, bells and brushes, and mark the ones you’d use with ☆. Works in Chrome or Edge (Web MIDI). The key maps come from Yamaha’s MODX6+/7+/8+ Data List (Drum Kit Assign List); the grooves are this site’s own sketches of each style, not transcriptions.</p>
+<p>Loops written for four MODX+ drum kits, sent straight to the board over USB. Use them to hear the congas, bongos, timbales, bells and brushes, and mark the ones you’d use with ☆. Works in Chrome or Edge (Web MIDI). The key maps come from Yamaha’s MODX6+/7+/8+ Data List (Drum Kit Assign List); each loop says what was checked against a source (listed under Works Cited) and what is still the site’s own guess.</p>
 <section id="connect" class="level2">
 <h2 class="anchored" data-anchor-id="connect">Connect</h2>
 <div id="mp-connect"></div>
@@ -770,8 +771,31 @@ kit in turn (two bars each) and you can hear which you like.</p>
 <section id="kit-walk" class="level2">
 <h2 class="anchored" data-anchor-id="kit-walk">Kit walk</h2>
 <div id="mp-walk"></div>
-<script src="../apps/shared/band/modx-perc.js?v=1"></script>
+<script src="../apps/shared/band/modx-perc.js?v=2"></script>
 <script>ModxPerc.mount(document);</script>
+</section>
+<section id="works-cited" class="level2">
+<h2 class="anchored" data-anchor-id="works-cited">Works Cited</h2>
+<!-- works-cited: written by scripts/works-cited.py -->
+<div class="works-cited">
+<p>Absil, Frans. “Band Latin.” <a href="https://www.fransabsil.nl/archpdf/bandlatn.pdf">www.fransabsil.nl/archpdf/bandlatn.pdf</a>. Forward and reversed (2-3) cáscara side by side.</p>
+<p>“Beating the Bongos.” <em>Dummies</em>, Wiley. <a href="https://www.dummies.com/article/academics-the-arts/music/instruments/drums/beating-the-bongos-199618/">www.dummies.com/article/academics-the-arts/music/instruments/drums/beating-the-bongos-199618/</a>. Martillo: slaps on the small drum, the open tone on the large drum, soft left-hand tones.</p>
+<p>“Bell pattern.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Bell_pattern">en.wikipedia.org/wiki/Bell_pattern</a>. The 12/8 standard pattern: 1, 1a, 2&amp;, 2a, 3&amp;, 4, 4a.</p>
+<p>“Bongo Patterns.” <a href="https://www.lx.iriss.org.uk/read/bongo-patterns.html">www.lx.iriss.org.uk/read/bongo-patterns.html</a>. Martillo: eight strokes, accents on 1, 3 and 4, beat 4 on the hembra (seen in search excerpt only; page refused direct reading).</p>
+<p>“Brushes.” <em>BYU Percussion</em>, Brigham Young University. <a href="https://percussion.byu.edu/brushes">percussion.byu.edu/brushes</a>. Swing: right hand swings, left stirs, the hands trade places on 2 and 4; ballads: both hands stir in opposite directions.</p>
+<p>“Cascara Rhythms.” <em>Salsa Forums</em>. <a href="https://www.salsaforums.com/threads/cascara-rhythms.26232/">www.salsaforums.com/threads/cascara-rhythms.26232/</a>. The 3-2 and 2-3 cáscara counts used here (a member’s transcription).</p>
+<p>“Cascara.” <em>Soundbrenner</em>. <a href="https://www.soundbrenner.com/blogs/articles/cascara">www.soundbrenner.com/blogs/articles/cascara</a>. Cáscara follows the clave’s direction; its printed grid differs from the one used here.</p>
+<p>“How to Play the Pandeiro for Capoeira.” <em>Dende Arts</em>. <a href="https://dendearts.com/blog/how-to-play-the-pandeiro-for-capoeira/">dendearts.com/blog/how-to-play-the-pandeiro-for-capoeira/</a>. Thumb, fingertips, heel, fingertips.</p>
+<p>“Latin Percussion Applications in the Jazz Band.” <em>Jazz Education Network</em>. <a href="https://jazzednet.org/resources/latin-percussion-applications-in-the-jazz-band/">jazzednet.org/resources/latin-percussion-applications-in-the-jazz-band/</a>. Cha-cha-chá: bell in quarters, güiro long quarter + two eighths.</p>
+<p>“The Pandeiro.” <em>Acoustics Today</em>, July 2007, p.&nbsp;41. <a href="https://acousticstoday.org/issues/2007AT/Jul2007/files/basic-html/page41.html">acousticstoday.org/issues/2007AT/Jul2007/files/basic-html/page41.html</a>. Pandeiro batida: thumb, fingertips, heel, fingertips.</p>
+<p>“Salsa (musical structure).” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Salsa_(musical_structure)">en.wikipedia.org/wiki/Salsa_(musical_structure)</a>. Conga marcha (tumbao) and its alignment with clave; the timbale bell from the cáscara.</p>
+<p>“Salsa Rhythm: How to Play Tumbao.” <em>Salsa Vida</em>. <a href="https://www.salsavida.com/?p=509">www.salsavida.com/?p=509</a>. Open tones on 4 and 4&amp;, the slap on 2.</p>
+<p>“Timbale: Playing the Son.” <em>Artdrum</em>. <a href="https://www.artdrum.com/TIMBALE_PLAYING_THE_SON.HTM">www.artdrum.com/TIMBALE_PLAYING_THE_SON.HTM</a>. Paila: left hand muffled on 2, open on 4; the tumbao is the cha-cha-chá conga part, faster.</p>
+<p>“Tumbao.” <em>Soundbrenner</em>. <a href="https://www.soundbrenner.com/blogs/articles/tumbao">www.soundbrenner.com/blogs/articles/tumbao</a>. Heel-toe, slap and open tones of the tumbao.</p>
+<p>“Tumbao.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Tumbao">en.wikipedia.org/wiki/Tumbao</a>. Cites Rebeca Mauleón, <em>Salsa Guidebook</em>.</p>
+<p>Yamaha Corporation. <em>MODX6+ / MODX7+ / MODX8+ Data List</em>. Yamaha. <a href="https://usa.yamaha.com/files/download/other_assets/5/1583935/modx_plus_en_dl_a0.pdf">usa.yamaha.com/files/download/other_assets/5/1583935/modx_plus_en_dl_a0.pdf</a>. Drum Kit Assign List: the key of every sound in Pop Latin Kit, Real Brushes Kit, Jazz Brushes Kit and Brush Kit (kit-to-table match read from the page layout).</p>
+</div>
+<!-- /works-cited -->
 
 
 </section>

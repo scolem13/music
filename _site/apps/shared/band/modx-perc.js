@@ -15,8 +15,11 @@
 // Brush patterns use the keys that mean the same thing on all three brush kits (C#0–E0 and D1 brush snares, C1 kick, C#1 rim click,
 // G#1 hi-hat foot, D#2 / B2 brush ride, F1–D2 toms, C3–F#3 the small Latin set), so "Take turns" can play one pattern on each kit.
 //
-// The grooves are the site's own, written from general knowledge of the styles (tumbao, martillo, cascara, cha-cha-chá, bembé,
-// samba, bossa, brush swing): UNVERIFIED against a teacher or a transcription — good enough to hear the sounds, not to teach a style.
+// `checked` (shown on the card) says what in a pattern was checked against which source (scripts/sources/modx-perc.py, Works
+// Cited on the page) and what is still the site's own; a pattern without it is UNVERIFIED throughout. Checked 2026-11-04: tumbao,
+// martillo, cáscara orientation (it was written 3-2 under a 2-3 title; fixed), paila left hand, cha-cha-chá bell and güiro,
+// the 12/8 bell, pandeiro, brush ballad and swing hands. Most sources give grids as images or count them differently, so these are
+// the commonest readings, not the only ones.
 (function (global) {
   "use strict";
   var KITS = {
@@ -29,7 +32,8 @@
   var PATTERNS = [
     // ---------------- Pop Latin Kit (channel 9) ----------------
     { id: "tumbao", name: "Conga tumbao, son clave 2-3", group: "latin", chs: [9], bpm: 100, beats: 4, steps: 8,
-      about: "One high conga: heel, tip, slap, tip, heel, tip, two open tones; the second bar answers on the low conga.",
+      about: "One high conga: heel, tip, slap, tip, heel, tip, two open tones (4 and its &); the second bar puts the last open tone on the low conga.",
+      checked: "Heel-tip-slap-tip-heel-tip-open-open with the slap on 2 and the open tones on 4 and 4&: Wikipedia (Tumbao; Salsa), Salsa Vida, Soundbrenner.",
       parts: { "B0": "o...o...|o...o...", "A#0": ".g.g.g..|.g.g.g..", "D#1": "..X.....|..X.....", "C1": "......xx|......x.", "G1": "........|.......x", "C0": CLAVE23_8 } },
     { id: "conga-strokes", name: "Every conga stroke in turn", group: "latin", chs: [9], bpm: 80, beats: 4, steps: 4,
       about: "High conga then low: tip, heel, open, mute, slap open, slap, slap-mute — one a beat, to learn which key is which.",
@@ -38,18 +42,22 @@
                "F1": "....|....|x...|....", "F#1": "....|....|.x..|....", "G1": "....|....|..x.|....", "G#1": "....|....|...x|....",
                "A1": "....|....|....|x...", "B1": "....|....|....|.x.." } },
     { id: "martillo", name: "Bongo martillo with güiro (bolero feel)", group: "latin", chs: [9], bpm: 84, beats: 4, steps: 8,
-      about: "Bongos: index-finger open tones on the high drum, thumb tips between, an open low drum on beat 4; güiro long on 1 and 3.",
-      parts: { "C2": "x...x...|x...x...", "D#2": ".g.g.g.g|.g.g.g.g", "C#2": "..o.....|..o.....", "F#2": "......x.|......xx",
-               "F4": "x...x...|x...x...", "E4": "..o...o.|..o...o.", "C5": "oooooooo|oooooooo", "G1": ".......x|.......x" } },
+      about: "Eight strokes on the small drum (macho) — slap, fingers, open, thumb, slap, fingers — then an open tone on the big drum (hembra) on beat 4, thumb; accents on 1, 3 and 4. Güiro long-short-short, maracas, low conga open on 4.",
+      checked: "Stroke order and accents: the bongo martillo as described by Dummies and the Bongo Patterns page (both say the 4th beat is on the hembra). Güiro and maracas: the site's.",
+      parts: { "F2": "X...X...|X...X...", "D#2": ".g...g..|.g...g..", "C2": "..x.....|..x.....", "E2": "...g...g|...g...g", "F#2": "......X.|......X.",
+               "F4": "x...x...|x...x...", "E4": "..oo..oo|..oo..oo", "C5": "oooooooo|oooooooo", "G1": "......x.|......x." } },
     { id: "cascara", name: "Timbales: cascara on the shell, clave 2-3", group: "latin", chs: [9], bpm: 96, beats: 4, steps: 8,
-      about: "Right hand on the paila (timbale shell), the low timbale on beat 4 of the clave's 3-side, conga open tones under it.",
-      parts: { "F3": "x.xx.x.x|x.x.xx.x", "C3": "........|......X.", "F#3": "........|.......x", "C0": CLAVE23_8, "C1": "......xx|......xx" } },
+      about: "Right hand on the paila (timbale shell): 1, 2, 3, &3, &4 on the clave's 2-side, then 1, 2, &2, &3, &4 on its 3-side. Left hand on the low drum: muffled on 2, open on 4. Conga tumbao underneath.",
+      checked: "Cáscara grid: the 2-3 reading in the Salsa Forums thread (a transcription, asked for confirmation), matching the 3-2 halves swapped as Soundbrenner and Absil describe; Soundbrenner's own grid differs, so hear it against a recording. Left hand: Artdrum's paila lesson (muffled on 2, open on 4).",
+      parts: { "F3": "x.x.xx.x|x.xx.x.x", "C3": "..g...X.|..g...X.", "C0": CLAVE23_8, "B0": "o...o...|o...o...", "D#1": "..x.....|..x.....", "C1": "......xx|......x.", "G1": "........|.......x" } },
     { id: "abanico", name: "Timbale fills (abanico) into a cowbell groove", group: "latin", chs: [9], bpm: 104, beats: 4, steps: 16,
-      about: "Bongo bell (Cowbell2) on the beats, a timbale roll-and-crash (abanico) at the end of every second bar.",
-      parts: { "C4": "X...x...X...x...|X...x...X.......", "F#5": "..o...o...o...o.|..o...o.........", "C3": "................|..........x.x.x.",
-               "F#3": "................|...........x.x.X", "G0": "................|...............X", "C1": "......xx......xx|......xx........", "C0": "....x...x.......|x.....x.....x..." } },
+      about: "Bongo bell (Cowbell2) on the beats, accented on 1 and 3; at the end of every second bar a quick roll on the high timbale (the abanico, a pick-up) lands with a hard hit on the next 1.",
+      checked: "Unverified: the abanico's exact rhythm varies (open, closed or single strokes by tempo); this is one short form. The bongo-bell part is simplified to the beats.",
+      parts: { "C4": "X...x...X...x...|X...x...X.......", "F#3": "X...............|............xxxx", "C3": "................|.......x...x....",
+               "C1": "......xx......xx|......xx........", "C0": "....x...x.......|x.....x.....x..." } },
     { id: "chacha", name: "Cha-cha-chá: bell, güiro, conga", group: "latin", chs: [9], bpm: 116, beats: 4, steps: 8,
       about: "Big bell (Cowbell1) on the beats, güiro long-short-short, the conga's tumbao, the timbale on 4 and its &.",
+      checked: "Bell in steady quarters and the güiro's long quarter + two short eighths: Jazz Education Network. The conga is the tumbao (Artdrum: same as cha-cha-chá, faster). Timbale hits: the site's.",
       parts: { "F5": "x.x.x.x.|x.x.x.x.", "F4": "x...x...|x...x...", "E4": "..oo..oo|..oo..oo",
                "B0": "o...o...|o...o...", "D#1": "..X.....|..X.....", "C1": "......xx|......xx", "C3": "......x.|......x.", "F#3": ".......x|.......x" } },
     { id: "bells", name: "Bell check: every bell and metal", group: "latin", chs: [9], bpm: 90, beats: 4, steps: 8,
@@ -59,10 +67,12 @@
                "A5": "........|........|........|........|xxxxxxx.|........", "A#5": "........|........|........|........|.......x|........",
                "G5": "........|........|........|........|........|x.x.x.x.", "G#5": "........|........|........|........|........|.x.x.x.x" } },
     { id: "bembe", name: "Bembé in 12/8: bell, shekere, congas", group: "latin", chs: [9], bpm: 96, beats: 4, steps: 12,
+      checked: "Bell: the standard pattern, strokes on 1, 1a, 2&, 2a, 3&, 4, 4a (Wikipedia, Bell pattern). Shekere and congas: the site's.",
       about: "The long 12/8 bell (Mambo Bell Body), shekere on the beats, low conga open tones and high-conga slaps.",
       parts: { "F#5": "x.x.xx.x.x.x|x.x.xx.x.x.x", "G5": "x..x..x..x..|x..x..x..x..", "G#5": ".x..x..x..x.|.x..x..x..x.",
                "G1": "x.....x.....|x.....x..x..", "D#1": "...X.....X..|...X.....X..", "A#0": ".g.g.g.g.g.g|.g.g.g.g.g.g" } },
     { id: "samba", name: "Samba: pandeiro, tamborim, shaker, cuíca", group: "latin", chs: [9], bpm: 96, beats: 4, steps: 16,
+      checked: "Pandeiro: thumb, fingertips, heel, fingertips on 1 e & a (Acoustics Today; Dende Arts). Tamborim (a teleco-teco-like figure), shaker and cuíca: unverified, the site's.",
       about: "Pandeiro thump/tip/heel sixteenths with the open slap on 2 and 4, tamborim, shaker, a cuíca answering each second bar.",
       parts: { "G#3": "x.......x.......|x.......x.......", "G3": "....X.......X...|....X.......X...", "A3": ".g.g.g.g.g.g.g.g|.g.g.g.g.g.g.g.g", "A#3": "..o...o...o...o.|..o...o...o...o.",
                "A4": "X.x..x.x..x.x...|X.x..x.x.x..x...", "B4": "...x.........x..|...x.......x....", "C#5": "xgogxgogxgogxgog|xgogxgogxgogxgog",
@@ -74,14 +84,16 @@
 
     // ---------------- brush kits (channels 10, 11, 12) ----------------
     { id: "ballad", name: "Brush ballad: swirls on every beat", group: "brush", chs: [10, 11, 12], bpm: 64, beats: 4, steps: 16,
-      about: "Left-hand swirl held each beat, a right-hand tap on 2 and 4, feathered kick, hi-hat foot on 2 and 4.",
-      parts: { "D0": "o---o---o---o---", "D#0": "....x.......x...", "C1": "g.......g.......", "G#1": "....x.......x..." } },
+      about: "Both brushes stir on the head (a swirl held through each beat), with the swirl's attack marking 2 and 4; feathered kick, hi-hat foot on 2 and 4.",
+      checked: "Ballad: both hands stir in opposite directions (BYU Percussion, Brushes). Hi-hat and kick: the usual jazz-kit habit, not checked.",
+      parts: { "D0": "o---o---o---o---", "E0": "....o.......o...", "C1": "g.......g.......", "G#1": "....x.......x..." } },
     { id: "snare-sounds", name: "The brush snare keys in turn", group: "brush", chs: [10, 11, 12], bpm: 72, beats: 4, steps: 4,
       about: "C#0, D0, D#0, E0, then D1, D#1, E1 — the brush snare keys each kit has, one a beat (Real Brushes has more on C0–G0).",
       parts: { "C#0": "x...|....", "D0": ".x..|....", "D#0": "..x.|....", "E0": "...x|....", "D1": "....|x...", "D#1": "....|.x..", "E1": "....|..x." } },
     { id: "swing-snare", name: "Medium swing on the snare (brushes)", group: "brush", chs: [10, 11, 12], bpm: 132, beats: 4, steps: 12,
-      about: "The swirl on 1 and 3, taps on 2 and 4 with the triplet pickup, hi-hat foot on 2 and 4, feathered kick.",
-      parts: { "D0": "o-----o-----", "D#0": "...X.....X..", "D1": "..g.g...g.gg", "G#1": "...x.....x..", "C1": "g..g..g..g.." } },
+      about: "Left hand stirs (swirl from 1 and 3), the right hand swings the ride rhythm on the snare and accents 2 and 4 where the hands cross; hi-hat foot on 2 and 4, feathered kick.",
+      checked: "Right hand swings while the left stirs, the hands trading places on 2 and 4 (BYU Percussion, Brushes). Exact taps: the site's.",
+      parts: { "D0": "o-----o-----", "D#0": "x..X.xx..X.x", "G#1": "...x.....x..", "C1": "g..g..g..g.." } },
     { id: "swing-ride", name: "Medium swing on the brush ride", group: "brush", chs: [10, 11, 12], bpm: 132, beats: 4, steps: 12,
       about: "Ride brush spang-a-lang, a soft snare swirl under it, hi-hat foot on 2 and 4, a comp on the snare every so often.",
       parts: { "D#2": "x..x.xx..x.x|x..x.xx..x.x", "D0": "g-----g-----|g-----g-----", "G#1": "...x.....x..|...x.....x..", "D#0": "............|.....o....o.", "C1": "g.....g.....|g.....g....." } },
@@ -89,6 +101,7 @@
       about: "Ride brush on the beats with skips, kick on 1 and 3 (the bass's two-feel), hi-hat foot on 2 and 4.",
       parts: { "B2": "x..x.xx..x.x", "C1": "o.....o.....", "G#1": "...x.....x..", "D1": ".......g...." } },
     { id: "bossa", name: "Brush bossa nova", group: "brush", chs: [10, 11, 12], bpm: 140, beats: 4, steps: 8,
+      checked: "Unverified: the cross-stick bossa figure and the kick's dotted-quarter + eighth are the usual drum-kit bossa, not checked against a source here.",
       about: "Rim click on the bossa pattern, a swirl on every beat, the kick's long-short, hi-hat foot on the ands.",
       parts: { "C#1": "x..x..x.|..x..x..", "D0": "g-g-g-g-|g-g-g-g-", "C1": "x..xx..x|x..xx..x", "G#1": ".o.o.o.o|.o.o.o.o" } },
     { id: "waltz", name: "Jazz waltz, brushes", group: "brush", chs: [10, 11, 12], bpm: 150, beats: 3, steps: 9,
@@ -184,7 +197,8 @@
     var parsed = parse(p), bpm = h("input", { type: "number", min: 30, max: 300, value: p.bpm, class: "mp-bpm" });
     var el = h("div", { class: "mp-card", id: "mp-" + p.id });
     el.appendChild(h("h3", { text: p.name }));
-    el.appendChild(h("p", { class: "mp-note", text: p.about + "  (" + p.beats + "/" + (p.steps % 3 === 0 && p.steps !== 3 ? "triplets" : "4") + " grid, " + parsed.bars + " bar" + (parsed.bars > 1 ? "s" : "") + ")" }));
+    el.appendChild(h("p", { class: "mp-note mp-checked", text: (p.checked ? "Checked: " + p.checked : "Not checked against a source: the site's own.") }));
+    el.insertBefore(h("p", { class: "mp-note", text: p.about + "  (" + p.beats + "/" + (p.steps % 3 === 0 && p.steps !== 3 ? "triplets" : "4") + " grid, " + parsed.bars + " bar" + (parsed.bars > 1 ? "s" : "") + ")" }), el.lastChild);
     var row = h("div", { class: "mp-row" });
     p.chs.forEach(function (kc){
       row.appendChild(h("button", { type: "button", class: "btn btn-sm btn-outline-primary", text: "▶ " + KITS[kc].name, onclick: function (){ start(p, el, [kc], bpm); } }));

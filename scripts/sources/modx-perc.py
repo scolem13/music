@@ -1,0 +1,24 @@
+# Sources for the MODX Percussion Auditions (gear/modx-perc.qmd, apps/shared/band/modx-perc.js). Read 2026-11-04.
+P = ["gear/modx-perc.qmd"]
+SOURCES = [
+    web('Yamaha Corporation. *MODX6+ / MODX7+ / MODX8+ Data List*. Yamaha. URL.', "https://usa.yamaha.com/files/download/other_assets/5/1583935/modx_plus_en_dl_a0.pdf", P,
+        note="Drum Kit Assign List: the key of every sound in Pop Latin Kit, Real Brushes Kit, Jazz Brushes Kit and Brush Kit (kit-to-table match read from the page layout)."),
+    wiki("Tumbao", "Tumbao", P, note="Conga tumbao: slaps and open tones on the offbeats; the ponche."),
+    wiki("Salsa (musical structure)", "Salsa_(musical_structure)", P, note="Conga marcha (tumbao) and its alignment with clave; the timbale bell from the cáscara."),
+    web('"Salsa Rhythm: How to Play Tumbao." *Salsa Vida*. URL.', "https://www.salsavida.com/?p=509", P, note="Open tones on 4 and 4&, the slap on 2."),
+    web('"Tumbao." *Soundbrenner*. URL.', "https://www.soundbrenner.com/blogs/articles/tumbao", P, note="Heel-toe, slap and open tones of the tumbao."),
+    web('"Beating the Bongos." *Dummies*, Wiley. URL.', "https://www.dummies.com/article/academics-the-arts/music/instruments/drums/beating-the-bongos-199618/", P,
+        note="Martillo: slaps on the small drum, the open tone on the large drum, soft left-hand tones."),
+    web('"Bongo Patterns." URL.', "https://www.lx.iriss.org.uk/read/bongo-patterns.html", P, note="Martillo: eight strokes, accents on 1, 3 and 4, beat 4 on the hembra (seen in search excerpt only; page refused direct reading)."),
+    web('"Cascara." *Soundbrenner*. URL.', "https://www.soundbrenner.com/blogs/articles/cascara", P, note="Cáscara follows the clave's direction; its printed grid differs from the one used here."),
+    web('"Cascara Rhythms." *Salsa Forums*. URL.', "https://www.salsaforums.com/threads/cascara-rhythms.26232/", P, note="The 3-2 and 2-3 cáscara counts used here (a member's transcription)."),
+    web('Absil, Frans. "Band Latin." URL.', "https://www.fransabsil.nl/archpdf/bandlatn.pdf", P, note="Forward and reversed (2-3) cáscara side by side."),
+    web('"Timbale: Playing the Son." *Artdrum*. URL.', "https://www.artdrum.com/TIMBALE_PLAYING_THE_SON.HTM", P, note="Paila: left hand muffled on 2, open on 4; the tumbao is the cha-cha-chá conga part, faster."),
+    web('"Latin Percussion Applications in the Jazz Band." *Jazz Education Network*. URL.', "https://jazzednet.org/resources/latin-percussion-applications-in-the-jazz-band/", P,
+        note="Cha-cha-chá: bell in quarters, güiro long quarter + two eighths."),
+    wiki("Bell pattern", "Bell_pattern", P, note="The 12/8 standard pattern: 1, 1a, 2&, 2a, 3&, 4, 4a."),
+    web('"The Pandeiro." *Acoustics Today*, July 2007, p. 41. URL.', "https://acousticstoday.org/issues/2007AT/Jul2007/files/basic-html/page41.html", P, note="Pandeiro batida: thumb, fingertips, heel, fingertips."),
+    web('"How to Play the Pandeiro for Capoeira." *Dende Arts*. URL.', "https://dendearts.com/blog/how-to-play-the-pandeiro-for-capoeira/", P, note="Thumb, fingertips, heel, fingertips."),
+    web('"Brushes." *BYU Percussion*, Brigham Young University. URL.', "https://percussion.byu.edu/brushes", P,
+        note="Swing: right hand swings, left stirs, the hands trade places on 2 and 4; ballads: both hands stir in opposite directions."),
+]
