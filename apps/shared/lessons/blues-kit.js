@@ -282,6 +282,11 @@
       });
       var head = 'X:1\nM:none\nL:1/4\n';
       if (fretted) return head + 'K:C clef=' + (cfg.instrument === 'bass' ? 'bass' : 'treble') + '\n' + R.join(' | ') + ' |]';
+      // one hand with nothing to play: draw only the other hand's staff (no empty staff pushing the chord names away)
+      var blank = function (a) { return a.every(function (s) { return /^x\d+$/.test(s.replace(/^"[^"]*"/, '')); }); };
+      var labs = R.map(function (s) { var m = s.match(/^"[^"]*"/); return m ? m[0] : ''; });
+      if (blank(R) && !blank(L)) return head + 'K:C clef=bass\n' + L.map(function (s, k) { return labs[k] + s; }).join(' | ') + ' |]';
+      if (blank(L) && !blank(R)) return head + 'K:C clef=treble\n' + R.join(' | ') + ' |]';
       return head + '%%score {R L}\nV:R clef=treble\nV:L clef=bass\nK:C\n[V:R] ' + R.join(' | ') + ' |]\n[V:L] ' + L.join(' | ') + ' |]';
     }
     // fluid: a full line of music, drawn to the width of its box and never wider (a narrow screen shrinks it)
