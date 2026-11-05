@@ -1034,7 +1034,8 @@ window.carolTypeChoice = function () {
           paddingtop: 0,
           paddingbottom: 0,
           paddingleft: 0,
-          paddingright: 0
+          paddingright: 0,
+          visualTranspose: window.SongKey ? window.SongKey.shift : 0
         });
       } catch (e) {
         plain(block, tune);
@@ -1061,7 +1062,7 @@ window.carolTypeChoice = function () {
   if (window.ABCJS) { draw(); return; }
   var script = document.createElement('script');
   var depth = '';
-  script.src = depth + '/apps/shared/abcjs-basic.js?v=4';
+  script.src = depth + '/apps/shared/abcjs-basic.js?v=5';
   script.onload = draw;
   script.onerror = function () {
     blocks.forEach(function (block) {
@@ -1300,6 +1301,149 @@ window.carolTypeChoice = function () {
   }
 })();
 
+// ==== playback key (window.SongKey) ====
+// One choice per song, kept in this browser: how many semitones to move the song. The band (and the tune it plays) is
+// transposed by BandPlayer's own `transpose`; the chords over the words keep the written chord in data-orig and show it
+// moved; the written-out staves are drawn with abcjs's visualTranspose. The band's matching of written chords to its
+// chart reads data-orig (SongKey.text), so it is untouched by the shift. Keys - and + (or =) move it a semitone.
+(function () {
+  var NAMES_S = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+  var NAMES_F = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
+  var PC = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+  // Keys spelt with flats: major F Bb Eb Ab Db Gb; minor (as their relative major) d g c f bb eb.
+  var FLAT_MAJOR = [5, 10, 3, 8, 1, 6];
+  function pcOf(name) {
+    var m = /^\s*([A-Ga-g])([#b♯♭]?)/.exec(name || '');
+    if (!m) return null;
+    var p = PC[m[1].toUpperCase()];
+    if (m[2] === '#' || m[2] === '♯') p++;
+    if (m[2] === 'b' || m[2] === '♭') p--;
+    return (p + 12) % 12;
+  }
+  function isMinor(name) { return /^\s*[A-Ga-g][#b♯♭]?\s*(m(?!aj)|min)/.test(name || ''); }
+  function homeKey() { return (window.PAGE_MUSIC && window.PAGE_MUSIC.key) || window.SONG_CHART_KEY || ''; }
+  var KEY = 'songs-key', shift = 0, listeners = [];
+  function store() { try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { return {}; } }
+  shift = +(store()[window.SONG_PATH || location.search] || 0) || 0;
+  // Whether the key `shift` semitones away is spelt with flats.
+  function flats(s) {
+    var home = homeKey(), p = pcOf(home);
+    if (p == null) return false;
+    var major = (p + (isMinor(home) ? 3 : 0) + s + 120) % 12;
+    return FLAT_MAJOR.indexOf(major) >= 0;
+  }
+  function name(pc, useFlats) { return (useFlats ? NAMES_F : NAMES_S)[(pc + 120) % 12]; }
+  function moveNote(note, s, f) { var p = pcOf(note); return p == null ? note : name(p + s, f); }
+  // A chord symbol moved: its root and a slash bass; the rest (m7, sus4, add9 ...) as written.
+  function chord(sym, s) {
+    if (s == null) s = shift;
+    if (!s || !sym) return sym;
+    var f = flats(s);
+    return sym.replace(/^(\s*\(?)([A-G][#b♯♭]?)/, function (_, pre, r) { return pre + moveNote(r, s, f); })
+              .replace(/\/([A-G][#b♯♭]?)/, function (_, b) { return '/' + moveNote(b, s, f); });
+  }
+  function keyName(s) {
+    var home = homeKey(), p = pcOf(home);
+    if (p == null) return (s > 0 ? '+' : '') + s;
+    return name(p + s, flats(s)) + (isMinor(home) ? 'm' : '');
+  }
+  function text(el) { return el.hasAttribute('data-orig') ? el.getAttribute('data-orig') : el.textContent; }
+  // Show a written chord (or the chord another version puts there) in the chosen key.
+  function show(el, written) {
+    if (written == null) written = text(el);
+    el.setAttribute('data-orig', written);
+    var t = chord(written);
+    if (el.textContent !== t) el.textContent = t;
+  }
+  function showAll() { Array.prototype.forEach.call(document.querySelectorAll('.ch'), function (el) { show(el); }); }
+  function set(s) {
+    s = Math.max(-11, Math.min(11, s | 0));
+    if (s === shift) return;
+    shift = s;
+    try { var all = store(); if (s) all[window.SONG_PATH || location.search] = s; else delete all[window.SONG_PATH || location.search]; localStorage.setItem(KEY, JSON.stringify(all)); } catch (e) {}
+    showAll();
+    if (window.carolDrawAbc) window.carolDrawAbc();
+    listeners.forEach(function (fn) { try { fn(shift); } catch (e) {} });
+  }
+  window.SongKey = {
+    get shift() { return shift; }, set: set, chord: chord, keyName: keyName, text: text, show: show, showAll: showAll,
+    onChange: function (fn) { listeners.push(fn); }
+  };
+  if (shift) showAll();
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.target.matches && e.target.matches('input, textarea, select, [contenteditable]')) return;
+    if (e.key === '-' || e.key === '_') set(shift - 1);
+    else if (e.key === '=' || e.key === '+') set(shift + 1);
+    else return;
+    e.preventDefault();
+  });
+})();
+
+// ==== the lead-in (window.SongLeadIn) ====
+// The last two bars of the section playing, as beats: ....|.... (a bar's own beats, so a 5/4 bar among 2/4 shows
+// ..|.....), the beat being played lit, the ones gone dimmer, then the next section's name. A pickup (the next section's
+// first line starts with words before its first chord: they are sung in this section's last bar) sits over the last
+// beats of the final bar, so the students see where to come in. Its length is guessed: about two syllables a beat, at
+// least one beat, never the whole bar. Drawn by the band (every song) and by the video (songs with a timing map).
+// On by default; the Band panel's "Lead-in" box turns it off (localStorage songs-leadin = "off").
+(function () {
+  var KEY = 'songs-leadin', on = true;
+  try { on = localStorage.getItem(KEY) !== 'off'; } catch (e) {}
+  var dots = document.createElement('div'); dots.className = 'vid-dots';
+  function pickupOf(el) {
+    if (!el) return '';
+    var cw = el.querySelector('.ln > .cw, .ln > .nb > .cw');
+    if (!cw || cw.querySelector('.ch')) return '';
+    return cw.textContent.trim();
+  }
+  function syllables(s) {                             // per word: vowel groups, a silent final e dropped ("take" = 1)
+    return String(s).toLowerCase().split(/[^a-z']+/).filter(Boolean).reduce(function (n, w) {
+      var c = (w.match(/[aeiouy]+/g) || []).length;
+      if (c > 1 && /[^aeiouyl]e$/.test(w)) c--;
+      return n + Math.max(1, c);
+    }, 0) || 1;
+  }
+  var last = null;
+  // el: the section; bars: [{ id, beats }] for its last two bars; next: the next section's element (for its pickup), nextName.
+  function draw(el, bars, next, nextName) {
+    last = [el, bars, next, nextName];
+    dots.innerHTML = '';
+    if (!on || !el || !bars || !bars.length) { dots.remove(); return; }
+    var pick = pickupOf(next);
+    bars.forEach(function (bar, j) {
+      if (j) { var bl = document.createElement('span'); bl.className = 'vid-bl'; bl.textContent = '|'; dots.appendChild(bl); }
+      var n = bar.beats || 4, pk = j === bars.length - 1 && pick ? Math.min(n - 1, Math.max(1, Math.ceil(syllables(pick) / 2))) : 0;
+      for (var k = 0; k < n; k++) {
+        var d = document.createElement('span'); d.className = 'vid-dot'; d.dataset.bar = bar.id; d.dataset.beat = k; d.textContent = '•';
+        if (pk && k === n - pk) { d.classList.add('pick-start'); d.setAttribute('data-pick', pick); }
+        if (pk && k >= n - pk) d.classList.add('pick');
+        dots.appendChild(d);
+      }
+    });
+    var end = document.createElement('span'); end.className = 'vid-bl'; end.textContent = '‖';
+    dots.appendChild(end);
+    if (nextName) { var nx = document.createElement('span'); nx.className = 'vid-dnext'; nx.textContent = nextName; dots.appendChild(nx); }
+    el.insertBefore(dots, el.querySelector('.songnav') || null);
+  }
+  // bar: the id of the bar sounding (ids rise through the song), beat: from 0.
+  function light(bar, beat) {
+    [].forEach.call(dots.querySelectorAll('.vid-dot'), function (d) {
+      var b = +d.dataset.bar, k = +d.dataset.beat;
+      d.classList.toggle('on', b === bar && k === beat);
+      d.classList.toggle('past', b < bar || (b === bar && k < beat));
+    });
+  }
+  function clear() { last = null; dots.innerHTML = ''; dots.remove(); }
+  function set(v) {
+    on = !!v;
+    try { localStorage.setItem(KEY, on ? 'on' : 'off'); } catch (e) {}
+    if (last) draw.apply(null, last); else dots.remove();
+  }
+  window.SongLeadIn = { draw: draw, light: light, clear: clear, set: set, pickupOf: pickupOf,
+                        get on() { return on; }, el: dots };
+})();
+
 // ==== band (from the carols site, band.html) ====
 // A backing band under the words. A song page carries its bars as data
 // (#band-chart, written by tools/chordpro.py from the grids in the .cho), and
@@ -1330,10 +1474,10 @@ window.carolTypeChoice = function () {
   if (!chart || !chart.sections) return;
 
   var FILES = ['/apps/shared/tune-chart.js?v=31', '/apps/shared/voicings.js?v=5', '/apps/shared/band/harmony.js?v=35', '/apps/shared/band/bass.js?v=16',
-               '/apps/shared/band/comp.js?v=33', '/apps/shared/band/presets.js?v=7', '/apps/shared/band/catalog.js?v=38', '/apps/shared/band/drums.js?v=19', '/apps/shared/band/sounds.js?v=22',
+               '/apps/shared/band/comp.js?v=33', '/apps/shared/band/presets.js?v=7', '/apps/shared/band/catalog.js?v=38', '/apps/shared/band/drums.js?v=19', '/apps/shared/band/sounds.js?v=23',
                '/apps/shared/band/player.js?v=130'];
   if (!window.ABCJS && chart.sections.some(function (x) { return x.abc; })) {
-    FILES.unshift('/apps/shared/abcjs-basic.js?v=4');
+    FILES.unshift('/apps/shared/abcjs-basic.js?v=5');
   }
   var depth = '';
 
@@ -1562,6 +1706,45 @@ window.carolTypeChoice = function () {
   var status = document.createElement('div');
   status.className = 'midi-status';
   panel.appendChild(status);
+
+  // The playback key: band, tune, chords over the words and staves move together (SongKey, above). - and + step it.
+  if (!window.PAGE_MUSIC.key && chart.key) window.SONG_CHART_KEY = chart.key;
+  var keyWrap = document.createElement('label');
+  keyWrap.className = 'band-field band-key';
+  keyWrap.title = 'Play the song in another key: - and + move it a semitone';
+  keyWrap.appendChild(document.createTextNode('Key (\u2212 +) '));
+  var keyBox = document.createElement('select');
+  function keyLabel(s) {
+    return window.SongKey.keyName(s) + (s ? ' (' + (s > 0 ? '+' : '\u2212') + Math.abs(s) + ')' : ' (as written)');
+  }
+  function fillKeys() {
+    keyBox.textContent = '';
+    var now = window.SongKey.shift;
+    for (var s = Math.min(-6, now); s <= Math.max(6, now); s++) {
+      var o = document.createElement('option');
+      o.value = s; o.textContent = keyLabel(s);
+      keyBox.appendChild(o);
+    }
+    keyBox.value = String(now);
+  }
+  fillKeys();
+  keyBox.addEventListener('change', function () { window.SongKey.set(+keyBox.value); keyBox.blur(); });
+  window.SongKey.onChange(function (s) {
+    fillKeys();
+    if (here) here.setTranspose(s);
+  });
+  keyWrap.appendChild(keyBox);
+  panel.appendChild(keyWrap);
+  // The two-bar lead-in under each section (SongLeadIn): on unless turned off here.
+  var leadWrap = document.createElement('label');
+  leadWrap.className = 'band-field band-leadin';
+  leadWrap.title = 'The last two bars of each section as beats, so you can see where the next one comes in';
+  var leadBox = document.createElement('input');
+  leadBox.type = 'checkbox'; leadBox.checked = window.SongLeadIn.on;
+  leadBox.addEventListener('change', function () { window.SongLeadIn.set(leadBox.checked); leadBox.blur(); });
+  leadWrap.appendChild(leadBox);
+  leadWrap.appendChild(document.createTextNode(' Lead-in (two bars)'));
+  panel.appendChild(leadWrap);
 
   // Other versions of the changes: for the teacher only.
   var versions = chart.versions || [], versionNow = null;
@@ -1853,7 +2036,7 @@ window.carolTypeChoice = function () {
       onState: function (s) {
         playing = s === 'playing';
         if (s === 'loading') say('Loading sounds…');
-        if (s === 'idle') { nowStop = -1; movingOn = false; say(away ? AWAY : ''); nowBar = null; light(null); }
+        if (s === 'idle') { nowStop = -1; movingOn = false; say(away ? AWAY : ''); nowBar = null; light(null); window.SongLeadIn.clear(); }
         if (s === 'playing') say('');
         showState();
       },
@@ -1867,10 +2050,11 @@ window.carolTypeChoice = function () {
         // (back: a loop in the Backing Track window has gone round to an earlier bar)
         var fresh = !nowBar, back = !!nowBar && info.index <= nowBar.index;
         nowBar = info.countIn || info.ending || info.intro ? null : info;
-        if (nowBar && (info.sectionBar === 0 || fresh || back)) chordsOf(info.section, info.index);
+        if (nowBar && (info.sectionBar === 0 || fresh || back)) { chordsOf(info.section, info.index); leadIn(info.section); }
       },
       onBeat: function (info) {
         chordBeat(info.beat);
+        if (nowBar) window.SongLeadIn.light(nowBar.index, info.beat);
         var st = nowBar && stops[nowStop];
         if (window.songGridLight) window.songGridLight(st ? song.section(st.head) : null, nowBar ? nowBar.sectionBar : -1, info.beat / ((nowBar && nowBar.beats) || 4));
       },
@@ -1884,6 +2068,7 @@ window.carolTypeChoice = function () {
     var sounds = styleSetup();
     here = window.BandPlayer.create({
       parsed: parsed,
+      transpose: window.SongKey.shift,
       tempo: tempo(),
       countIn: parseInt(countBox.value, 10),
       choruses: 1,
@@ -1998,13 +2183,13 @@ window.carolTypeChoice = function () {
       var held = lines.last && lines.last.span === span && same(lines.last.sym, sym);
       lines.last = { span: span, sym: sym };
       for (var n = from; n < Math.min(span.to, from + (held ? 1 : 2)); n++) {
-        if (same(written[n].textContent, sym)) { writtenAt = n + 1; missed = 0; return written[n]; }
+        if (same(window.SongKey.text(written[n]), sym)) { writtenAt = n + 1; missed = 0; return written[n]; }
       }
       return null;
     }
     var reach = missed >= 2 ? 3 : 1;
     for (var k = writtenAt; k < Math.min(written.length, writtenAt + reach); k++) {
-      if (same(written[k].textContent, sym)) {
+      if (same(window.SongKey.text(written[k]), sym)) {
         writtenAt = k + 1;
         missed = 0;
         return written[k];
@@ -2012,6 +2197,15 @@ window.carolTypeChoice = function () {
     }
     missed++;
     return null;
+  }
+  // The lead-in (SongLeadIn) under the section the band has reached: its last two bars, then the next stop's name.
+  function leadIn(stopIndex) {
+    var stop = stops[stopIndex], el = stop ? song.section(stop.head) : null;
+    if (!el || starts[stopIndex] == null) { window.SongLeadIn.clear(); return; }
+    var end = stopIndex + 1 < starts.length ? starts[stopIndex + 1] : form.length, list = [];
+    for (var i = Math.max(starts[stopIndex], end - 2); i < end; i++) list.push({ id: i, beats: Math.round((form[i] && form[i].beats) || meterN) });
+    var nx = stops[stopIndex + 1], nxEl = nx ? song.section(nx.head) : null, h = nxEl && nxEl.querySelector('h2');
+    window.SongLeadIn.draw(el, list, nxEl, h ? h.firstChild && h.firstChild.nodeType === 3 ? h.firstChild.nodeValue.trim() : h.textContent.trim() : '');
   }
   function barChords(index) {
     return ((form[index] || {}).chords || []).filter(function (c) {
@@ -2095,7 +2289,7 @@ window.carolTypeChoice = function () {
       for (var i = starts[k]; i < end; i++) {
         barChords(i).forEach(function (c, order, inBar) {
           var el = strike(c.chord.sym, i);
-          if (el) spots.push({ el: el, text: el.textContent, head: stop.head,
+          if (el) spots.push({ el: el, text: window.SongKey.text(el), head: stop.head,
                                n: all.indexOf(el), bar: i, rel: i - starts[k], pos: c.pos,
                                order: order, count: inBar.length, sym: c.chord.sym });
         });
@@ -2120,7 +2314,7 @@ window.carolTypeChoice = function () {
       var text = !to || to.chord.sym === s.sym ? s.text : to.chord.sym;
       var held = text !== s.text && last && last.head === s.head && last.text === text;
       last = { head: s.head, text: text };
-      if (s.el.textContent !== text) s.el.textContent = text;
+      window.SongKey.show(s.el, text);
       s.el.classList.toggle('alt', text !== s.text);
       s.el.classList.toggle('held', held);
       list.push([s.head, s.n, text, text !== s.text, held]);
@@ -2309,7 +2503,7 @@ window.carolTypeChoice = function () {
     goSection: function (i) { post({ type: 'bt-goto', section: i }); },
     fill: function () { post({ type: 'bt-fill' }); },
     // Tempo, style and the rest are chosen in that window once it has the song.
-    setTempo: function () {}, setCountIn: function () {}, setInstruments: function () {}
+    setTempo: function () {}, setCountIn: function () {}, setInstruments: function () {}, setTranspose: function () {}
   };
   function showWindow() {
     windowButton.firstChild.nodeValue = away ? 'Band: other window ' : 'Band: this page ';
@@ -2439,7 +2633,7 @@ window.carolTypeChoice = function () {
         var box = song.section(one[0]);
         var el = box ? box.querySelectorAll('.ch')[one[1]] : null;
         if (!el) return;
-        if (el.textContent !== one[2]) el.textContent = one[2];
+        window.SongKey.show(el, one[2]);
         el.classList.toggle('alt', !!one[3]);
         el.classList.toggle('held', !!one[4]);
       });
@@ -2505,7 +2699,7 @@ window.carolTypeChoice = function () {
 
   var FILES = ['/apps/shared/tune-chart.js?v=31', '/apps/shared/voicings.js?v=5', '/apps/shared/chord-entry.js?v=11', '/apps/shared/band/harmony.js?v=35',
                '/apps/shared/band/bass.js?v=16', '/apps/shared/band/comp.js?v=33', '/apps/shared/band/presets.js?v=7', '/apps/shared/band/catalog.js?v=38', '/apps/shared/band/drums.js?v=19',
-               '/apps/shared/band/sounds.js?v=22', '/apps/shared/band/player.js?v=130'];
+               '/apps/shared/band/sounds.js?v=23', '/apps/shared/band/player.js?v=130'];
   var depth = '';
 
   // ---- the written chords, in the order of the page ----
@@ -3020,53 +3214,19 @@ if (window.SONG_ID) (function () {
     });
   }
 
-  // The last two bars of the section playing, as beats: ....|.... (a bar's own beats from the bar map, so a 5/4 bar
-  // among 2/4 shows ..|.....), the beat being played lit, the ones gone dimmer. A pickup (the next section's first
-  // line starts with words before its first chord: they are sung in this section's last bar) sits over the last
-  // beats of the final bar, so the students see where to come in. Its length is guessed: about two syllables a
-  // beat, at least one beat, never the whole bar (not timed in the bar map).
-  function pickupOf(m) {
-    var el = m && m.el; if (!el) return "";
-    var cw = el.querySelector(".ln > .cw, .ln > .nb > .cw");
-    if (!cw || cw.querySelector(".ch")) return "";
-    return cw.textContent.trim();
-  }
-  function syllables(s) {                             // per word: vowel groups, a silent final e dropped ("take" = 1)
-    return String(s).toLowerCase().split(/[^a-z']+/).filter(Boolean).reduce(function (n, w) {
-      var c = (w.match(/[aeiouy]+/g) || []).length;
-      if (c > 1 && /[^aeiouyl]e$/.test(w)) c--;
-      return n + Math.max(1, c);
-    }, 0) || 1;
-  }
-  var dots = document.createElement("div"); dots.className = "vid-dots";
+  // The lead-in under the section playing: SongLeadIn (above), its bars from the bar map.
   function drawDots(mi) {
-    var m = marks[mi]; dots.innerHTML = "";
-    if (!m || !m.count || !m.el) { dots.remove(); return; }
-    var from = Math.max(m.first, m.end - 2), pick = pickupOf(marks[mi + 1]);
-    for (var b = from; b < m.end; b++) {
-      if (b > from) { var bl = document.createElement("span"); bl.className = "vid-bl"; bl.textContent = "|"; dots.appendChild(bl); }
-      var n = beatsOf(b), pk = b === m.end - 1 && pick ? Math.min(n - 1, Math.max(1, Math.ceil(syllables(pick) / 2))) : 0;
-      for (var k = 0; k < n; k++) {
-        var d = document.createElement("span"); d.className = "vid-dot"; d.dataset.bar = b; d.dataset.beat = k; d.textContent = "\u2022";
-        if (pk && k === n - pk) { d.classList.add("pick-start"); d.setAttribute("data-pick", pick); }
-        if (pk && k >= n - pk) d.classList.add("pick");
-        dots.appendChild(d);
-      }
-    }
-    var end = document.createElement("span"); end.className = "vid-bl"; end.textContent = "\u2016";
-    dots.appendChild(end);
-    if (marks[mi + 1]) { var nx = document.createElement("span"); nx.className = "vid-dnext"; nx.textContent = marks[mi + 1].name; dots.appendChild(nx); }
-    var nav = m.el.querySelector(".songnav");
-    m.el.insertBefore(dots, nav || null);
+    var m = marks[mi];
+    if (!m || !m.count || !m.el) { window.SongLeadIn.clear(); return; }
+    var list = [];
+    for (var b = Math.max(m.first, m.end - 2); b < m.end; b++) list.push({ id: b, beats: beatsOf(b) });
+    var nx = marks[mi + 1];
+    window.SongLeadIn.draw(m.el, list, nx && nx.el, nx && nx.name);
   }
   function lightDots(t, bi) {
     var beat = -1;
     if (bi >= 0) beat = Math.floor((t - bars[bi]) / ((barEnd(bi) - bars[bi]) / beatsOf(bi)));
-    [].forEach.call(dots.querySelectorAll(".vid-dot"), function (d) {
-      var b = +d.dataset.bar, k = +d.dataset.beat;
-      d.classList.toggle("on", b === bi && k === beat);
-      d.classList.toggle("past", b < bi || (b === bi && k < beat));
-    });
+    window.SongLeadIn.light(bi, beat);
   }
   labels(-1, -1);
   setTimeout(function () { labels(-1, -1); }, 500);   // the sidebar list may be drawn after this block
@@ -3079,8 +3239,12 @@ if (window.SONG_ID) (function () {
   box.innerHTML = '<div class="vid-frame"><div id="vid-player"></div></div>' +
     '<div class="vid-info"><span class="vid-now-name"></span> <span class="vid-bar"></span><br><span class="vid-next"></span><span class="vid-note"></span></div>' +
     '<div class="vid-ctl"><label><input type="checkbox" class="vid-follow" checked> Follow</label>' +
+    '<label title="The last two bars of each section as beats"><input type="checkbox" class="vid-leadin"> Lead-in</label>' +
     '<button type="button" class="vid-size" title="Bigger / smaller">⤢</button><button type="button" class="vid-close" title="Close">×</button></div>';
   document.body.appendChild(box);
+  var leadBox = box.querySelector('.vid-leadin');
+  leadBox.checked = window.SongLeadIn.on;
+  leadBox.addEventListener('change', function () { window.SongLeadIn.set(leadBox.checked); var b = document.querySelector('.band-leadin input'); if (b) b.checked = leadBox.checked; });
   var yt = null, timer = null, lastMark = -2;
   function loadApi(cb) {
     if (window.YT && YT.Player) return cb();
