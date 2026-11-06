@@ -2,7 +2,7 @@
 
 Run: python3 -I scripts/full-score/xml-notes.py score.mxl > score.xml.json
 
-Out: { parts: [{ id, name, transpose, measures: [{ n, len, time, key, notes: [[on, midi, dur, tie]] }] }] }
+Out: { parts: [{ id, name, transpose, measures: [{ n, len, time, key, trans (the transposition in force), notes: [[on, midi, dur, tie]] }] }] }
 - times in quarter notes from the start of the bar; len = the bar's sounding length (from its notes, so a pickup is short)
 - midi = SOUNDING pitch: written pitch + <transpose> chromatic + 12 * octave-change (a clef's octave sign is display only)
 - tie: 0 none, 1 starts a tie, 2 ends one, 3 both (a tied-over note is still listed: the checker merges ties itself)
@@ -64,7 +64,7 @@ def main(path):
                     tie = 0
                     for t in e.findall("tie"): tie |= 1 if t.get("type") == "start" else 2
                     notes.append([float(on), midi, float(dur), tie])
-            measures.append({"n": m.get("number"), "len": float(mx), "time": time, "key": key, "notes": notes})
+            measures.append({"n": m.get("number"), "len": float(mx), "time": time, "key": key, "trans": trans, "notes": notes})
         out.append({"id": part.get("id"), "name": names.get(part.get("id"), ""), "transpose": trans, "measures": measures})
     json.dump({"parts": out, "hidden": hidden[0]}, sys.stdout)
 

@@ -51,12 +51,31 @@ function abcVoices(abc) {
   const sc = (/^%%score(.*)$/m.exec(abc) || [, decl.map(m => m[1]).join(" ")])[1];
   const order = sc.match(/[^\s()[\]{}|]+/g);
   const V = order.map(id => ({ id, name: (/nm="([^"]*)"/.exec(head[id] || "") || [])[1], bars: [] }));
+  // staves from %%score: ids in ( ) share a staff. abcjs adds a voice overlay (&) as an extra voice of its staff, after the
+  // declared ones: its notes go into the staff's first voice, bar for bar, and it takes no part in the length / alignment checks
+  const staves = []; { let grp = null;
+    for (const t of sc.match(/[()]|[^\s()[\]{}|]+/g) || []) { if (t === "(") grp = []; else if (t === ")") { staves.push(grp); grp = null; } else if (grp) grp.push(t); else staves.push([t]); } }
+  const byId = {}; V.forEach(v => { byId[v.id] = v; });
+  const overlays = [];
   let first = true;
-  tune.lines.forEach(line => {
+  tune.lines.forEach((line, li) => {
     if (!line.staff) return;
     let k = 0;
-    line.staff.forEach(st => st.voices.forEach(v => {
-      const voice = V[k++]; if (!voice) return;
+    line.staff.forEach((st, si) => st.voices.forEach((v, vi) => {
+      const ids = staves[si] || [];
+      if (staves.length && vi >= ids.length) {                 // an overlay voice
+        const host = byId[ids[0]]; if (!host) return;
+        let bi = 0, cur = { len: 0, notes: [] }, tup = 1;
+        for (const e of v) {
+          if (e.el_type === "note") { if (e.startTriplet && e.tripletMultiplier) tup = e.tripletMultiplier;
+            if (!e.rest) (e.midiPitches || []).forEach(p => cur.notes.push([R6(cur.len), p.pitch, R6(p.duration * 4), e.gracenotes ? 1 : 0]));
+            cur.len = R6(cur.len + (e.duration || 0) * tup * 4); if (e.endTriplet) tup = 1; }
+          else if (e.el_type === "bar") { overlays.push({ host, line: li, bar: bi++, notes: cur.notes }); cur = { len: 0, notes: [] }; }
+        }
+        return;
+      }
+      const voice = staves.length ? byId[ids[vi]] : V[k]; k++; if (!voice) return;
+      voice.lineStarts = voice.lineStarts || {}; voice.lineStarts[li] = voice.bars.length;   // overlay bars on this line count from here
       let cur = { len: 0, notes: [] }, tup = 1;
       if (!first && voice.open) cur = voice.open;
       for (const e of v) {
@@ -73,6 +92,9 @@ function abcVoices(abc) {
     first = false;
   });
   V.forEach(v => { if (v.open) v.bars.push(v.open); delete v.open; });
+  overlays.forEach(o => { const b = o.host.bars[(o.host.lineStarts || {})[o.line] + o.bar]; if (b) b.notes.push(...o.notes); });
+  V.forEach(v => { delete v.lineStarts; });
+  if (process.env.SHOW_BAR) V.forEach(v => { const b = v.bars[+process.env.SHOW_BAR - 1]; console.error(`V${v.id} bar ${process.env.SHOW_BAR}: len ${b && b.len} notes ${b && JSON.stringify(b.notes)}`); });   // debugging: one bar as the checker reads it
   return { V, warnings, meter: tune.getMeterFraction() };
 }
 

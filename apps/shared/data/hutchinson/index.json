@@ -1,0 +1,1447 @@
+[
+ {
+  "id": "_40V2lcxM7k-3",
+  "video": "_40V2lcxM7k",
+  "start": 3,
+  "end": 8,
+  "title": "Blue Monk",
+  "composer": "Thelonious Monk",
+  "work": "hutch-monk-blue-monk",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:blue-monk",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "_4IRMYuE1hI-12",
+  "video": "_4IRMYuE1hI",
+  "start": 12,
+  "end": 21,
+  "title": "Symphony No. 5, I",
+  "composer": "Beethoven",
+  "work": "beethoven-symphony-no-5-1074",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "full:pdmx-711",
+   "title": "Beethoven, Symphony No. 5",
+   "path": "apps/shared/data/full-scores/pdmx-711.abc",
+   "also": [
+    "theme:1074"
+   ]
+  },
+  "abc": null
+ },
+ {
+  "id": "_zO6lWfvM0g-0-riff",
+  "video": "_zO6lWfvM0g",
+  "start": 0,
+  "end": 18,
+  "title": "Smoke on the Water",
+  "composer": "Deep Purple",
+  "work": "hutch-purple-smoke-on-the-water",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "riff",
+  "bars": null,
+  "barsWhy": null,
+  "source": null,
+  "abc": "_zO6lWfvM0g-0-riff.abc",
+  "unverified": true,
+  "part": "guitar riff (top line; played in fourths)",
+  "why": "pitches G B♭ C / G B♭ D♭ C / G B♭ C / B♭ G as commonly taught; rhythm approximate. Not checked against a transcription."
+ },
+ {
+  "id": "-qgpewMCVjs-61",
+  "video": "-qgpewMCVjs",
+  "start": 61,
+  "end": 66,
+  "title": "I Want You to Want Me",
+  "composer": "Cheap Trick",
+  "work": "hutch-trick-i-want-you-to-want-me",
+  "pages": [
+   "secondary-dominants.qmd",
+   "secondary-dominants.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:188",
+   "path": "apps/shared/data/billboard/188.txt"
+  },
+  "abc": "-qgpewMCVjs-61.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "A",
+  "meter": "4/4",
+  "romans": [
+   "I",
+   "I",
+   "I",
+   "I",
+   "vi",
+   "II7",
+   "bVII",
+   "I I",
+   "vi",
+   "II",
+   "bVII",
+   "bVII",
+   "vi",
+   "vi"
+  ],
+  "form": [
+   "A intro @7s",
+   "C verse @26s",
+   "D chorus @70s",
+   "C verse @89s",
+   "D chorus @119s",
+   "solo @138s",
+   "C verse @166s",
+   "E outro @184s"
+  ]
+ },
+ {
+  "id": "04854XqcfCY-46",
+  "video": "04854XqcfCY",
+  "start": 46,
+  "end": 55,
+  "title": "We Are the Champions",
+  "composer": "Queen",
+  "work": "hutch-queen-we-are-the-champions",
+  "pages": [
+   "secondary-diminished.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:588",
+   "path": "apps/shared/data/billboard/588.txt"
+  },
+  "abc": "04854XqcfCY-46.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "F",
+  "meter": "4/4",
+  "romans": [
+   "I iii7",
+   "IV VI7",
+   "ii",
+   "iv III7 III7"
+  ],
+  "form": [
+   "A verse @0s",
+   "B chorus @34s",
+   "C trans @66s",
+   "A verse @78s",
+   "B chorus @110s",
+   "B chorus @143s"
+  ]
+ },
+ {
+  "id": "1vDxlnJVvW8-180",
+  "video": "1vDxlnJVvW8",
+  "start": 180,
+  "end": 206,
+  "title": "Piano Sonata in C, K. 545, II AnswerEight bars.",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-in-c-k-545-ii-answereight-bars",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:mozart-sonata-16-2",
+   "title": "Mozart, Piano Sonata No. 16, K. 545, movement 2",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-16-2",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "2n2YIxXJXac-0",
+  "video": "2n2YIxXJXac",
+  "start": 0,
+  "end": 17,
+  "title": "Winterreise, \"Die Nebensonnen\"",
+  "composer": "Schubert",
+  "work": "hutch-schubert-winterreise-die-nebensonnen",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:lied-schubert-franz-winterreise-d-911-23-die-nebensonnen",
+   "title": "Schubert, “23: Die Nebensonnen”, Franz Schubert, Winterreise, D.911",
+   "path": "apps/shared/data/scores/lieder.json#lied-schubert-franz-winterreise-d-911-23-die-nebensonnen",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "450p7goxZqg-0",
+  "video": "450p7goxZqg",
+  "start": 0,
+  "end": 16,
+  "title": "All of Me",
+  "composer": "John Legend",
+  "work": "hutch-legend-all-of-me",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:all-of-me",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "450p7goxZqg-62",
+  "video": "450p7goxZqg",
+  "start": 62,
+  "end": 80,
+  "title": "All of Me",
+  "composer": "John Legend",
+  "work": "hutch-legend-all-of-me",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:all-of-me",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "4iUwkJuRdiY-12",
+  "video": "4iUwkJuRdiY",
+  "start": 12,
+  "end": 19,
+  "title": "Rigoletto, \"La donna è mobile\"",
+  "composer": "Verdi",
+  "work": "hutch-verdi-rigoletto-la-donna-e-mobile",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "full:pdmx-672",
+   "title": "Verdi, La donna e mobile",
+   "path": "apps/shared/data/full-scores/pdmx-672.abc",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "4Tr0otuiQuU-0",
+  "video": "4Tr0otuiQuU",
+  "start": 0,
+  "end": 23,
+  "title": "Moonlight Sonata, Op. 27 No. 2, I",
+  "composer": "Beethoven",
+  "work": "hutch-beethoven-moonlight-sonata-op-27-no-2-i",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:beethoven-sonata-14-1",
+   "title": "Beethoven, Piano Sonata No. 14 (“Moonlight”), Op. 27 No. 2(Moonlight), movement 1",
+   "path": "apps/shared/data/scores/beethoven-sonatas.json#beethoven-sonata-14-1",
+   "also": [
+    "full:pdmx-159"
+   ]
+  },
+  "abc": null
+ },
+ {
+  "id": "5kaA3X2qSPU-0",
+  "video": "5kaA3X2qSPU",
+  "start": 0,
+  "end": 20,
+  "title": "Winterreise, \"Gute Nacht\"",
+  "composer": "Schubert",
+  "work": "hutch-schubert-winterreise-gute-nacht",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:lied-schubert-franz-winterreise-d-911-01-gute-nacht",
+   "title": "Schubert, “1: Gute Nacht”, Franz Schubert, Winterreise, D.911",
+   "path": "apps/shared/data/scores/lieder.json#lied-schubert-franz-winterreise-d-911-01-gute-nacht",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "5NkzTTkqTB4-0",
+  "video": "5NkzTTkqTB4",
+  "start": 0,
+  "end": 8,
+  "title": "Piano Sonata K. 545, I",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-545-i",
+  "pages": [
+   "accompaniment-textures.qmd",
+   "seventh-chords.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:mozart-sonata-16-1",
+   "title": "Mozart, Piano Sonata No. 16, K. 545, movement 1",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-16-1",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "5NkzTTkqTB4-34",
+  "video": "5NkzTTkqTB4",
+  "start": 34,
+  "end": 43,
+  "title": "Piano Sonata in C, K. 545, I",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-in-c-k-545-i",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:mozart-sonata-16-1",
+   "title": "Mozart, Piano Sonata No. 16, K. 545, movement 1",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-16-1",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "8QZ0WkwZ5Uc-21",
+  "video": "8QZ0WkwZ5Uc",
+  "start": 21,
+  "end": 32,
+  "title": "Chorale 175, \"Jesus, meine Zuversicht\"",
+  "composer": "S. Bach",
+  "work": "hutch-bach-chorale-175-jesus-meine-zuversicht",
+  "pages": [
+   "figured-bass.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:bach-chorale-175",
+   "title": "Bach, Jesus, meine Zuversicht, Chorale 175 (Riemenschneider), BWV 365",
+   "path": "apps/shared/data/scores/chorales.json#bach-chorale-175",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "8uMb3CnP6L8-32",
+  "video": "8uMb3CnP6L8",
+  "start": 32,
+  "end": 38,
+  "title": "Rigoletto, \"La donna è mobile\"",
+  "composer": "Verdi",
+  "work": "hutch-verdi-rigoletto-la-donna-e-mobile",
+  "pages": [
+   "secondary-dominants.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "full:pdmx-672",
+   "title": "Verdi, La donna e mobile",
+   "path": "apps/shared/data/full-scores/pdmx-672.abc",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "9JtlCuIqcrM-12",
+  "video": "9JtlCuIqcrM",
+  "start": 12,
+  "end": 25,
+  "title": "Heartbreaker",
+  "composer": "Pat Benatar",
+  "work": "hutch-benatar-heartbreaker",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:1053",
+   "path": "apps/shared/data/billboard/1053.txt"
+  },
+  "abc": "9JtlCuIqcrM-12.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "F",
+  "meter": "4/4",
+  "romans": [
+   "i",
+   "I bIII",
+   "i",
+   "i",
+   "I",
+   "bVII",
+   "bVI",
+   "IV V bVII",
+   "I",
+   "bVII",
+   "bVI",
+   "IV V bVII",
+   "i bVII",
+   "bVI",
+   "IV",
+   "V"
+  ],
+  "form": [
+   "A intro @0s",
+   "B verse @13s",
+   "C chorus @39s",
+   "B verse @57s",
+   "C' chorus @84s",
+   "D bridge @102s",
+   "B' verse @120s",
+   "C'' chorus @134s",
+   "C''' solo @159s",
+   "D outro @195s"
+  ]
+ },
+ {
+  "id": "a01QQZyl-_I-5-riff",
+  "video": "a01QQZyl-_I",
+  "start": 5,
+  "end": 15,
+  "title": "Under Pressure",
+  "composer": "Queen and David Bowie",
+  "work": "hutch-bowie-under-pressure",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "riff",
+  "bars": null,
+  "barsWhy": null,
+  "source": null,
+  "abc": "a01QQZyl-_I-5-riff.abc",
+  "unverified": true,
+  "part": "bass line",
+  "why": "the repeated D with the low A pickup, from memory; rhythm approximate. Not checked against a transcription."
+ },
+ {
+  "id": "bT6WmWVYPhI-22",
+  "video": "bT6WmWVYPhI",
+  "start": 22,
+  "end": 48,
+  "title": "Moonlight Sonata, Op. 27, No. 2, I",
+  "composer": "Beethoven",
+  "work": "hutch-beethoven-moonlight-sonata-op-27-no-2-i",
+  "pages": [
+   "neapolitan.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:beethoven-sonata-14-1",
+   "title": "Beethoven, Piano Sonata No. 14 (“Moonlight”), Op. 27 No. 2(Moonlight), movement 1",
+   "path": "apps/shared/data/scores/beethoven-sonatas.json#beethoven-sonata-14-1",
+   "also": [
+    "full:pdmx-159"
+   ]
+  },
+  "abc": null
+ },
+ {
+  "id": "bVeOdm-29pU-1",
+  "video": "bVeOdm-29pU",
+  "start": 1,
+  "end": 19,
+  "title": "Nocturne in E♭ major, Op. 9 No. 2",
+  "composer": "Chopin",
+  "work": "chopin-nocturne-in-e-major-op-9-no-2",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "theme:9248"
+  },
+  "abc": null
+ },
+ {
+  "id": "bZZqSZqJz4Y-11",
+  "video": "bZZqSZqJz4Y",
+  "start": 11,
+  "end": 19,
+  "title": "Piano Sonata K. 310, I",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-310-i",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:mozart-sonata-8-1",
+   "title": "Mozart, Piano Sonata No. 8, K. 310, movement 1",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-8-1",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "d22CiKMPpaY-10",
+  "video": "d22CiKMPpaY",
+  "start": 10,
+  "end": 24,
+  "title": "As Time Goes By",
+  "composer": "Herman Hupfeld",
+  "work": "hutch-hupfeld-as-time-goes-by",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:as-time-goes-by",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "d22CiKMPpaY-17",
+  "video": "d22CiKMPpaY",
+  "start": 17,
+  "end": 23,
+  "title": "As Time Goes By",
+  "composer": "Herman Hupfeld",
+  "work": "hutch-hupfeld-as-time-goes-by",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:as-time-goes-by",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "ep6rzB1Kx3U-42",
+  "video": "ep6rzB1Kx3U",
+  "start": 42,
+  "end": 48,
+  "title": "Sonatina in C, Op. 55 No. 1, I",
+  "composer": "Kuhlau",
+  "work": "hutch-kuhlau-sonatina-in-c-op-55-no-1-i",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "full:pdmx-73",
+   "title": "Kuhlau, Sonatina Op. 55 No. 1",
+   "path": "apps/shared/data/full-scores/pdmx-73.abc",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "Gs069dndIYk-51",
+  "video": "Gs069dndIYk",
+  "start": 51,
+  "end": 59,
+  "title": "Wind & Fire, \"September\"",
+  "composer": "Earth",
+  "work": "hutch-earth-wind-fire-september",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:804",
+   "path": "apps/shared/data/billboard/804.txt"
+  },
+  "abc": "Gs069dndIYk-51.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "D",
+  "meter": "4/4",
+  "romans": [
+   "I7 vii7 vi7",
+   "VII7 iii7",
+   "V",
+   "V",
+   "vi7 II",
+   "vii7 iii7",
+   "vi7 II",
+   "V iii7",
+   "vi7 II",
+   "vii7 iii7",
+   "V7",
+   "V7"
+  ],
+  "form": [
+   "A intro @0s",
+   "A verse @20s",
+   "C chorus @51s",
+   "A verse @67s",
+   "C chorus @98s",
+   "C chorus @113s",
+   "C chorus @129s",
+   "D coda @144s"
+  ]
+ },
+ {
+  "id": "HaA3YZ6QdJU-7",
+  "video": "HaA3YZ6QdJU",
+  "start": 7,
+  "end": 16,
+  "title": "Just the Way You Are",
+  "composer": "Billy Joel",
+  "work": "hutch-joel-just-the-way-you-are",
+  "pages": [
+   "secondary-diminished.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:240",
+   "path": "apps/shared/data/billboard/240.txt"
+  },
+  "abc": "HaA3YZ6QdJU-7.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "D",
+  "meter": "4/4",
+  "romans": [
+   "I ii7ø",
+   "I IV I",
+   "I ii7ø",
+   "I IV I",
+   "I",
+   "vi7",
+   "IV7",
+   "vi7 I7",
+   "IV7",
+   "iv7",
+   "I",
+   "v I7"
+  ],
+  "form": [
+   "A intro @0s",
+   "B verse @8s",
+   "A interlude @60s",
+   "B verse @67s",
+   "A interlude @119s",
+   "C bridge @126s",
+   "B verse @153s",
+   "A interlude @178s",
+   "B solo @185s",
+   "B verse @212s",
+   "C' outro @237s",
+   "B outro @247s"
+  ]
+ },
+ {
+  "id": "hSqwR_dsecg-37",
+  "video": "hSqwR_dsecg",
+  "start": 37,
+  "end": 44,
+  "title": "Piano Sonata in C, K. 545, II",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-in-c-k-545-ii",
+  "pages": [
+   "non-chord-tones.qmd",
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:mozart-sonata-16-2",
+   "title": "Mozart, Piano Sonata No. 16, K. 545, movement 2",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-16-2",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "iqlUlr2yzY8-0",
+  "video": "iqlUlr2yzY8",
+  "start": 0,
+  "end": 15,
+  "title": "Carmen, Habanera",
+  "composer": "Bizet",
+  "work": "hutch-bizet-carmen-habanera",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "full:pdmx-896",
+   "title": "Bizet, Carmen: Habanera",
+   "path": "apps/shared/data/full-scores/pdmx-896.abc",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "IZ-cCZklhac-5",
+  "video": "IZ-cCZklhac",
+  "start": 5,
+  "end": 21,
+  "title": "Dichterliebe, Op. 48, 1. \"Im wunderschönen Monat Mai\"",
+  "composer": "Robert Schumann",
+  "work": "hutch-schumann-dichterliebe-op-48-1-im-wunderschonen-monat-mai",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:lied-schumann-robert-dichterliebe-op-48-01-im-wunderschonen-monat-mai",
+   "title": "Schumann, “Im wunderschönen Monat Mai”, Robert Schumann, Dichterliebe, Op.48",
+   "path": "apps/shared/data/scores/lieder.json#lied-schumann-robert-dichterliebe-op-48-01-im-wunderschonen-monat-mai",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "jYgW5PhsQOE-0",
+  "video": "jYgW5PhsQOE",
+  "start": 0,
+  "end": 8,
+  "title": "\"Sie liebten sich beide\", Op. 13 No. 2",
+  "composer": "Clara Schumann",
+  "work": "hutch-schumann-sie-liebten-sich-beide-op-13-no-2",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:lied-schumann-clara-6-lieder-op-13-2-sie-liebten-sich-beide",
+   "title": "Schumann, “Sie liebten sich beide”, Clara Schumann, 6 Lieder, Op.13",
+   "path": "apps/shared/data/scores/lieder.json#lied-schumann-clara-6-lieder-op-13-2-sie-liebten-sich-beide",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "lOdjXYp13-Y-0",
+  "video": "lOdjXYp13-Y",
+  "start": 0,
+  "end": 8,
+  "title": "Dichterliebe, \"Ich grolle nicht\"",
+  "composer": "Schumann",
+  "work": "hutch-schumann-dichterliebe-ich-grolle-nicht",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:lied-schumann-robert-dichterliebe-op-48-07-ich-grolle-nicht",
+   "title": "Schumann, “7: Ich grolle nicht”, Robert Schumann, Dichterliebe, Op.48",
+   "path": "apps/shared/data/scores/lieder.json#lied-schumann-robert-dichterliebe-op-48-07-ich-grolle-nicht",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "LPn0KFlbqX8-60",
+  "video": "LPn0KFlbqX8",
+  "start": 60,
+  "end": 75,
+  "title": "True Colors",
+  "composer": "Cyndi Lauper",
+  "work": "hutch-lauper-true-colors",
+  "pages": [
+   "roman-numerals.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:803",
+   "path": "apps/shared/data/billboard/803.txt"
+  },
+  "abc": "LPn0KFlbqX8-60.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "C",
+  "meter": "4/4",
+  "romans": [
+   "IV I",
+   "IV I",
+   "V",
+   "vi7 V",
+   "I7 IV",
+   "vi7 V",
+   "I7 IV"
+  ],
+  "form": [
+   "A intro-a @0s",
+   "B intro-b @6s",
+   "C verse @17s",
+   "D chorus @39s",
+   "B trans @64s",
+   "C verse @75s",
+   "D chorus @98s",
+   "B trans @123s",
+   "C verse @134s",
+   "D' chorus @157s",
+   "B' trans @209s",
+   "A' outro @214s"
+  ]
+ },
+ {
+  "id": "LYfF9VKMp4w-18",
+  "video": "LYfF9VKMp4w",
+  "start": 18,
+  "end": 23,
+  "title": "It Don't Mean a Thing (If It Ain't Got That Swing)",
+  "composer": "Duke Ellington",
+  "work": "hutch-ellington-it-don-t-mean-a-thing-if-it-ain-t-got-that-swing",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:it-don-t-mean-a-thing",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "oHDsywpCHj4-18",
+  "video": "oHDsywpCHj4",
+  "start": 18,
+  "end": 22,
+  "title": "Mr. P.C.",
+  "composer": "John Coltrane",
+  "work": "hutch-coltrane-mr-p-c",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:mr-p-c",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "OmQQoohTW80-0",
+  "video": "OmQQoohTW80",
+  "start": 0,
+  "end": 7,
+  "title": "Piano Sonata K. 283, I",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-283-i",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:mozart-sonata-5-1",
+   "title": "Mozart, Piano Sonata No. 5, K. 283, movement 1",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-5-1",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "OPapxr8GvGA-18",
+  "video": "OPapxr8GvGA",
+  "start": 18,
+  "end": 26,
+  "title": "All the Things You Are",
+  "composer": "Jerome Kern",
+  "work": "hutch-kern-all-the-things-you-are",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:all-the-things-you-are",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "PMFUeLdhhuM-0",
+  "video": "PMFUeLdhhuM",
+  "start": 0,
+  "end": 13,
+  "title": "Dichterliebe, \"Am leuchtenden Sommermorgen\"",
+  "composer": "Schumann",
+  "work": "hutch-schumann-dichterliebe-am-leuchtenden-sommermorgen",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:lied-schumann-robert-dichterliebe-op-48-12-am-leuchtenden-sommermorgen",
+   "title": "Schumann, “Am leuchtenden Sommermorgen”, Robert Schumann, Dichterliebe, Op.48",
+   "path": "apps/shared/data/scores/lieder.json#lied-schumann-robert-dichterliebe-op-48-12-am-leuchtenden-sommermorgen",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "PmO3Wlono6w-282",
+  "video": "PmO3Wlono6w",
+  "start": 282,
+  "end": 286,
+  "title": "Piano Sonata K. 333, I. The book's question",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-333-i-the-book-s-question",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-excerpt",
+  "bars": [
+   1,
+   1
+  ],
+  "barsWhy": "page text: \"beat 4 of the first bar\" (the book's Figure 10.6.3). The clip is 282 s into the video, so it may be a later return of the same music (not checked by ear).",
+  "source": {
+   "id": "scores:mozart-sonata-13-1",
+   "title": "Mozart, Piano Sonata No. 13, K. 333, movement 1",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-13-1",
+   "also": []
+  },
+  "abc": "PmO3Wlono6w-282.abc",
+  "pickup": true,
+  "checked": "4 bars in 4 voices"
+ },
+ {
+  "id": "pNjpTOB4ksY-19",
+  "video": "pNjpTOB4ksY",
+  "start": 19,
+  "end": 35,
+  "title": "Heart and Soul",
+  "composer": "Carmichael and Loesser",
+  "work": "hutch-loesser-heart-and-soul",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:heart-and-soul",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "QYHxGBH6o4M-0",
+  "video": "QYHxGBH6o4M",
+  "start": 0,
+  "end": 16,
+  "title": "Super Freak",
+  "composer": "Rick James",
+  "work": "hutch-james-super-freak",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:812",
+   "path": "apps/shared/data/billboard/812.txt"
+  },
+  "abc": "QYHxGBH6o4M-0.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "A",
+  "meter": "4/4",
+  "romans": [
+   "i i",
+   "bVII i",
+   "i i",
+   "bVII i",
+   "i i",
+   "bVII i",
+   "i i",
+   "bVII i",
+   "i i",
+   "bVII i",
+   "i i",
+   "bVII i"
+  ],
+  "form": [
+   "A intro @1s",
+   "A verse @16s",
+   "B chorus @45s",
+   "C bridge @60s",
+   "A interlude @72s",
+   "A verse @87s",
+   "B chorus @116s",
+   "C bridge @131s",
+   "A interlude @144s",
+   "A verse @166s",
+   "B solo @181s",
+   "fadeout @188s"
+  ]
+ },
+ {
+  "id": "r2G1fKYFgVU-11",
+  "video": "r2G1fKYFgVU",
+  "start": 11,
+  "end": 18,
+  "title": "Take the 'A' Train",
+  "composer": "Duke Ellington",
+  "work": "hutch-ellington-take-the-a-train",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:take-the-a-train",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "rTVjnBo96Ug-57",
+  "video": "rTVjnBo96Ug",
+  "start": 57,
+  "end": 68,
+  "title": "(Sittin' On) The Dock of the Bay",
+  "composer": "Otis Redding",
+  "work": "hutch-redding-sittin-on-the-dock-of-the-bay",
+  "pages": [
+   "secondary-dominants.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:645",
+   "path": "apps/shared/data/billboard/645.txt"
+  },
+  "abc": "rTVjnBo96Ug-57.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "G",
+  "meter": "4/4",
+  "romans": [
+   "I",
+   "III",
+   "IV",
+   "II",
+   "I",
+   "vi",
+   "I",
+   "vi"
+  ],
+  "form": [
+   "A intro @0s",
+   "B verse @9s",
+   "C chorus @28s",
+   "B verse @47s",
+   "C chorus @65s",
+   "D bridge @84s",
+   "B verse @102s",
+   "C chorus @121s",
+   "A' outro @140s",
+   "fadeout @149s"
+  ]
+ },
+ {
+  "id": "s6fPN5aQVDI-0",
+  "video": "s6fPN5aQVDI",
+  "start": 0,
+  "end": 8,
+  "title": "Sir Duke",
+  "composer": "Stevie Wonder",
+  "work": "hutch-wonder-sir-duke",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:sir-duke",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "VKNcvMcGlvI-0",
+  "video": "VKNcvMcGlvI",
+  "start": 0,
+  "end": 8,
+  "title": "\"Liebster Jesu, wir sind hier\", BWV 373",
+  "composer": "Bach",
+  "work": "hutch-bach-liebster-jesu-wir-sind-hier-bwv-373",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:bach-chorale-131",
+   "title": "Bach, Liebster Jesu, wir sind hier, Chorale 131 (Riemenschneider), BWV 373",
+   "path": "apps/shared/data/scores/chorales.json#bach-chorale-131",
+   "also": [
+    "scores:bach-chorale-328"
+   ]
+  },
+  "abc": null
+ },
+ {
+  "id": "vqM4tCZ7RV8-0",
+  "video": "vqM4tCZ7RV8",
+  "start": 0,
+  "end": 14,
+  "title": "Well-Tempered Clavier I, Prelude in C major",
+  "composer": "Bach",
+  "work": "hutch-bach-well-tempered-clavier-i-prelude-in-c-major",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:bach-wtc1-prelude-1",
+   "title": "Bach, Prelude No. 1, The Well-Tempered Clavier, Book I",
+   "path": "apps/shared/data/scores/bach-preludes.json#bach-wtc1-prelude-1",
+   "also": [
+    "full:pdmx-80"
+   ]
+  },
+  "abc": null
+ },
+ {
+  "id": "W4271Rm9TSU-117",
+  "video": "W4271Rm9TSU",
+  "start": 117,
+  "end": 137,
+  "title": "Well-Tempered Clavier I, Prelude in C, BWV 846",
+  "composer": "Bach",
+  "work": "hutch-bach-well-tempered-clavier-i-prelude-in-c-bwv-846",
+  "pages": [
+   "non-chord-tones.qmd",
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:bach-wtc1-prelude-1",
+   "title": "Bach, Prelude No. 1, The Well-Tempered Clavier, Book I",
+   "path": "apps/shared/data/scores/bach-preludes.json#bach-wtc1-prelude-1",
+   "also": [
+    "full:pdmx-80"
+   ]
+  },
+  "abc": null
+ },
+ {
+  "id": "xti0xkrIZjQ-0",
+  "video": "xti0xkrIZjQ",
+  "start": 0,
+  "end": 14,
+  "title": "Winterreise, \"Der Wegweiser\"",
+  "composer": "Schubert",
+  "work": "hutch-schubert-winterreise-der-wegweiser",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:lied-schubert-franz-winterreise-d-911-20-der-wegweiser",
+   "title": "Schubert, “20: Der Wegweiser”, Franz Schubert, Winterreise, D.911",
+   "path": "apps/shared/data/scores/lieder.json#lied-schubert-franz-winterreise-d-911-20-der-wegweiser",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "y4bZu56EylA-8",
+  "video": "y4bZu56EylA",
+  "start": 8,
+  "end": 19,
+  "title": "Blue Moon",
+  "composer": "Richard Rodgers",
+  "work": "hutch-rodgers-blue-moon",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:blue-moon",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "YOG89TrL4Vk-0",
+  "video": "YOG89TrL4Vk",
+  "start": 0,
+  "end": 23,
+  "title": "Little Brown Jug",
+  "composer": "Glenn Miller",
+  "work": "hutch-miller-little-brown-jug",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:little-brown-jug",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "YQHsXMglC9A-141",
+  "video": "YQHsXMglC9A",
+  "start": 141,
+  "end": 154,
+  "title": "Hello",
+  "composer": "Adele",
+  "work": "hutch-adele-hello",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:hello",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "ZEcqHA7dbwM-7",
+  "video": "ZEcqHA7dbwM",
+  "start": 7,
+  "end": 24,
+  "title": "Fly Me to the Moon",
+  "composer": "Bart Howard",
+  "work": "hutch-howard-fly-me-to-the-moon",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:fly-me-to-the-moon",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "ZixdOZh7zo4-638",
+  "video": "ZixdOZh7zo4",
+  "start": 638,
+  "end": 646,
+  "title": "Piano Sonata K. 279, III",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-279-iii",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:mozart-sonata-1-3",
+   "title": "Mozart, Piano Sonata No. 1, K. 279, movement 3",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-1-3",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "zXt56MB-3vc-45",
+  "video": "zXt56MB-3vc",
+  "start": 45,
+  "end": 56,
+  "title": "Red Red Wine",
+  "composer": "UB40",
+  "work": "hutch-ub40-red-red-wine",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:83",
+   "path": "apps/shared/data/billboard/83.txt"
+  },
+  "abc": "zXt56MB-3vc-45.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "Db",
+  "meter": "4/4",
+  "romans": [
+   "I IV",
+   "V IV",
+   "V",
+   "I",
+   "IV",
+   "I"
+  ],
+  "form": [
+   "A chorus @0s",
+   "A chorus @23s",
+   "B' trans @45s",
+   "C verse @50s",
+   "A chorus @72s",
+   "B trans @93s",
+   "C verse @104s",
+   "A chorus @126s",
+   "D bridge @149s",
+   "A chorus @170s",
+   "B' trans @192s",
+   "C verse @197s",
+   "A chorus @219s",
+   "B trans @240s",
+   "C verse @251s",
+   "A chorus @272s",
+   "B' trans @294s",
+   "B outro @299s",
+   "fadeout @305s"
+  ]
+ }
+]

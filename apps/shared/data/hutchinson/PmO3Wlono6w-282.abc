@@ -1,0 +1,16 @@
+X:1
+T:Piano Sonata K. 333, I. The book's question, bars 1
+%%hutchinson PmO3Wlono6w-282 video PmO3Wlono6w 282-286 s; cut from apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-13-1 by scripts/works/hutchinson-abc.mjs
+M:C
+L:1/32
+Q:1/4=76
+%%score (s1v1 s1v2) (s2v1 s2v2)
+V:s1v1 clef=treble
+V:s1v2 clef=treble
+V:s2v1 clef=bass
+V:s2v2 clef=bass
+K:Bb
+[V:s1v1] "_B♭: I"g2`f2`e2`d2 | c4`B4 B12 d4 g4`d4 |
+[V:s1v2] x8 | x32 |
+[V:s2v1] z8 | [K:clef=treble] z4 B,4 D4`F4 "_vi⁶"D4`B,4`D4`G4 |
+[V:s2v2] x8 | x32 |

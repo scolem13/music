@@ -14,6 +14,8 @@
 //   - rests of lengths abcjs cannot write (x8/3, x13/2) split into ones it can (thirds in a (3:2:n tuplet)
 //   - U: macros dropped (stemless s), decorations and chords inside grace notes (a chord keeps its top note), fingerings
 //     with more than one number, |]: written |] |:
+//   - grace notes before a bar line moved after it (abcjs gave them a rest of their own)
+//   - a part that changes its octave transposition partway (to piccolo): those bars moved to sounding pitch
 //   - pedal marks (!ped! / !ped-up!) dropped: abcjs has no pedal decoration
 //   - w: lyric lines dropped (a line with words is counted and reported)
 //   - in a transposing voice an inline clef with an octave sign ([K:bass+8]) becomes [K:bass octave=1] (abcjs bug, see tidy)
@@ -31,10 +33,10 @@ const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "fullscore-"));
 
 execFileSync("python3", ["-I", X2A, "-d", "8", "-x", "-m", "1", "-o", tmp, src], { stdio: ["ignore", "ignore", "inherit"] });
 const raw = fs.readFileSync(path.join(tmp, fs.readdirSync(tmp).find(f => f.endsWith(".abc"))), "utf8");
-fs.writeFileSync(out, tidy(raw));
-
 const json = path.join(tmp, "score.json");
-fs.writeFileSync(json, execFileSync("python3", ["-I", path.join(here, "xml-notes.py"), src], { maxBuffer: 1 << 28 }));
+const xmlJson = execFileSync("python3", ["-I", path.join(here, "xml-notes.py"), src], { maxBuffer: 1 << 28 });
+fs.writeFileSync(json, xmlJson);
+fs.writeFileSync(out, octaveChanges(tidy(raw), JSON.parse(xmlJson)));
 const r = spawnSync("node", [path.join(here, "score-check.cjs"), out, json, ...process.argv.slice(4)], { stdio: "inherit" });
 console.log("wrote " + out);
 process.exit(r.status);
@@ -69,9 +71,63 @@ export function splitRests(t, dropped = {}) {
   });
 }
 
+// a part that changes its octave transposition partway (flute 2 to piccolo, a voice part to an octave-down tenor clef):
+// xml2abc writes one transpose= for the whole voice, from the first, so those bars sound an octave off. They are moved to
+// sounding pitch (drawn so, as in a concert-pitch score). Parts: a named voice starts one (as score-check reads them).
+export function octaveChanges(abc, X) {
+  const lines = abc.split("\n"), head = lines.filter(l => /^V:\S+\s/.test(l));
+  const parts = []; head.forEach(h => { const id = /^V:(\S+)/.exec(h)[1]; if (/\bnm="/.test(h) || !parts.length) parts.push([id]); else parts[parts.length - 1].push(id); });
+  if (parts.length !== X.parts.length) return abc;
+  let moved = 0;
+  X.parts.forEach((xp, pi) => {
+    const t0 = xp.measures.length ? xp.measures[0].trans : 0;
+    const shift = xp.measures.map(m => { const d = (m.trans || 0) - (t0 || 0); return d && d % 12 === 0 ? d / 12 : 0; });
+    if (!shift.some(Boolean)) return;
+    for (const id of parts[pi]) {
+      const k = lines.findIndex(l => l.trim() === "V:" + id); if (k < 0) continue;
+      const bars = splitBars(lines[k + 1]);
+      if (bars.length < shift.length) continue;
+      lines[k + 1] = bars.map((b, i) => shift[i] ? (moved++, moveOctaves(b, shift[i])) : b).join("");
+    }
+  });
+  if (moved) console.error(`note: ${moved} bars moved by octaves where a part changes its octave transposition (e.g. to piccolo), drawn at sounding pitch`);
+  return lines.join("\n");
+}
+// a voice's music cut after each bar line (each piece keeps its closing bar line); skips "text", !marks! and [K:…] fields
+function splitBars(t) {
+  const out = []; let cur = "", i = 0;
+  while (i < t.length) {
+    const c = t[i];
+    if (c === '"') { const j = t.indexOf('"', i + 1); cur += t.slice(i, j + 1); i = j + 1; continue; }
+    if (c === "!") { const j = t.indexOf("!", i + 1); cur += t.slice(i, j + 1); i = j + 1; continue; }
+    if (c === "[" && /^\[[A-Za-z]:/.test(t.slice(i, i + 3))) { const j = t.indexOf("]", i); cur += t.slice(i, j + 1); i = j + 1; continue; }
+    const m = /^(?::*\|[\]|:]*|\[\|[:]*|::)\s*(?:\[?\d(?:[,-]\d)*)?/.exec(t.slice(i));
+    if (m && m[0].includes("|")) { cur += m[0]; i += m[0].length; if (cur.replace(/[\s|:\]\[\d,-]/g, "")) { out.push(cur); cur = ""; } continue; }
+    cur += c; i++;
+  }
+  if (cur) out.push(cur);
+  return out;
+}
+function moveOctaves(t, n) {
+  let out = "", i = 0;
+  while (i < t.length) {
+    const c = t[i];
+    if (c === '"') { const j = t.indexOf('"', i + 1); out += t.slice(i, j + 1); i = j + 1; continue; }
+    if (c === "!") { const j = t.indexOf("!", i + 1); out += t.slice(i, j + 1); i = j + 1; continue; }
+    if (c === "[" && /^\[[A-Za-z]:/.test(t.slice(i, i + 3))) { const j = t.indexOf("]", i); out += t.slice(i, j + 1); i = j + 1; continue; }
+    const m = /^([\^=_]*)([A-Ga-g])([,']*)/.exec(t.slice(i));
+    if (m && !/[A-Za-z]/.test(t[i - 1] || "")) {
+      const v = (m[2] === m[2].toLowerCase() ? 1 : 0) - (m[3].match(/,/g) || []).length + (m[3].match(/'/g) || []).length + n, L = m[2].toUpperCase();
+      out += m[1] + (v >= 1 ? L.toLowerCase() + "'".repeat(v - 1) : L + ",".repeat(-v)); i += m[0].length; continue;
+    }
+    out += c; i++;
+  }
+  return out;
+}
+
 export function tidy(abc) {
   const lines = abc.split("\n"), head = [], body = {}, order = [];
-  let cur = null; const dropped = { words: 0, clefs: 0, ped: 0, cross: 0, ott: 0, names: 0, tempo: 0, marks: 0, nest: 0, keys: 0, rests: 0 };
+  let cur = null; const dropped = { words: 0, clefs: 0, ped: 0, cross: 0, ott: 0, names: 0, tempo: 0, marks: 0, nest: 0, keys: 0, rests: 0, graces: 0 };
   for (let ln of lines) {
     if (/^I:linebreak/.test(ln)) continue;
     const v = /^V:(\S+)\s*$/.exec(ln);                       // a bare V:n starts that voice's music
@@ -107,6 +163,9 @@ export function tidy(abc) {
     t = t.replace(/\|\]:/g, "|] |:");
     t = t.replace(/!(R\.H\.|L\.H\.|m\.d\.|m\.s\.)!/g, (m, w) => `"^${w}"`);   // hand marks as text
     t = splitRests(t, dropped);
+    // grace notes at the end of a bar (a trill's closing turn, "{ga} |"): abcjs gives them a rest of their own, so the bar runs long;
+    // they move over the bar line onto the next note
+    t = t.replace(/(\{[^}]*\})\s*((?:\|[\]:|]*|:\|)\s*(?:\[[A-Za-z]:[^\]]*\]\s*)*)/g, (m, g, bar) => /\|/.test(bar) ? (dropped.graces++, bar + g) : m);
     t = t.replace(/!dacoda!/g, '"^D.C. al Coda"').replace(/!dacapo!/g, '"^D.C."').replace(/!(?:[6-9]|\d\d+)!/g, "");
     body[id] = [t];
   }
@@ -135,6 +194,7 @@ export function tidy(abc) {
   if (dropped.tempo) console.error(`note: ${dropped.tempo} runs of tempo marks kept as their last one`);
   if (dropped.marks) console.error(`note: ${dropped.marks} dashed slurs, tremolo strokes, stemless marks, grace-note fingerings / chords, multi-number fingerings left out (abcjs cannot read them)`);
   if (dropped.rests) console.error(`note: ${dropped.rests} rests of lengths abcjs cannot write split into ones it can`);
+  if (dropped.graces) console.error(`note: ${dropped.graces} grace-note groups at a bar's end moved onto the next bar's first note`);
   if (dropped.names) console.error(`note: ${dropped.names} staff names numbered (the same name twice)`);
   if (dropped.ped) console.error(`note: ${dropped.ped} pedal marks left out (abcjs cannot draw them)`);
   if (dropped.words) console.error(`note: ${dropped.words} lyric lines with words left out`);

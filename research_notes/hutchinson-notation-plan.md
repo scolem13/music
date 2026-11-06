@@ -43,3 +43,24 @@ As of 2026-11-06 it holds 244 clips from 222 pieces.
 2. Tier 4(a) progressions for the clips already in the Billboard/SALAMI data. That chord data is already on the site.
 3. Tier 2, piece by piece, starting with the clips used most: Star-Spangled Banner (PD), Beethoven 1, Bach Invention 1.
 4. Tier 3 last.
+
+## Progress (2026-11-06)
+Script `scripts/works/hutchinson-abc.mjs` writes `apps/shared/data/hutchinson/` (`index.json` + `<video>-<start>.abc`); test
+`node tests/works/hutchinson-abc.test.js`. The org file's last column ("Clip notation") is filled from that index. Of 230 distinct clips:
+- **Tier 1 (score on the site): 26 clips matched** to a piece already on the site (21 in the When in Rome / Sapp / OpenScore bundles,
+  5 in the PDMX full scores: Kuhlau Op. 55/1, La donna è mobile ×2, Carmen Habanera, Beethoven 5). **1 cut** (Mozart K. 333 I, bar 1,
+  from the page's "first bar"; the clip is 282 s in, so it may be a later return of that music). The other 25 are `score-source`:
+  the whole piece is there, the clip's bars are not. They are not guessed from timing. To finish one, listen, add a row to `BARS` in the
+  script (with `why`), and rerun. The cutter is tested on all these sources.
+- Also `score-source`: 15 tune-collection clips (melody and chords already on the site, mostly in copyright) and 1 Classical Theme
+  (Chopin Op. 9/2; a theme covers only the opening).
+- **Tier 2/3 (PD, score elsewhere): not started.** These include Bach Invention 1, Star-Spangled Banner, Beethoven Symphonies 1 and 7,
+  Pathétique I, Waldstein I, Op. 2/1 IV, Op. 2/3 I, Handel, Brandenburg 2, Mozart 40 i–iii, and others.
+  The PDMX Nutcracker is a band arrangement, so it was not used.
+- **Tier 4 chords: 9 clips** (Heartbreaker, Red Red Wine, Super Freak, September, True Colors, Just the Way You Are,
+  We Are the Champions, I Want You to Want Me, Dock of the Bay) have Billboard chords, form and Roman numerals.
+  `aligned: false` everywhere: Billboard times come from the album track, so the sections chosen are right only if the video plays that
+  track from 0 s. The other ~140 in-copyright clips have no chord source on the site.
+- **Melodies / bass lines for in-copyright clips: 2 riffs, both `unverified: true`** (Smoke on the Water, Under Pressure bass),
+  written from memory with approximate rhythm, to show the format. No other melodies were written: the site has no transcription
+  source for them. Each needs a cited published transcription (e.g. a Hal Leonard book the teacher owns) or a listening check.
