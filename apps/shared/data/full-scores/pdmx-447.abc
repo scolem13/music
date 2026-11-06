@@ -1,0 +1,19 @@
+X:1
+C:Ólafur Arnalds
+%%score { 1 | ( 2 3 ) }
+L:1/8
+Q:3/4=30
+M:3/4
+K:A
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:3 bass 
+%%MIDI program 0
+V:1
+A6 | G6 | A2- A(B (3:2:2B A2 |{G2A2} G4) z2 |{A} G6 | F4- FG | F6 | ^E2- (EF GA) | B6 | A6 | B2- B(c/B/ (3:2:2c B2 |{A2B2} A4) A2 | G4 A2 | G6 | F4- FG | F2- F(G/F/ (3:2:2G F2 | {^E2D2)} E4- EF | (3(F=DF (3GFD (3FDF) | (3(FDF (3GFD (3FDF) | (3(FDF (3GFD (3FDF) | (3(FDF (3GFD (3FDF) | (3(FCF (3GFC (3FCF) | (3(FCF (3GFC (3FCF) | (3(^ECE (3GEC (3ECE) | (3(^ECE (3GEC (3ECE) | (3(FDF (3GFD (3FDF) | (3(FDF (3AFA (3cFD) | (3(FDF (3dFD (3FDF) | (3(Fdc (3BAG (3F^ED) | (3(FCF (3GFC (3FCF) | (3(FCF (3GFC (3ACF) | (3(^ECE (3GEC (3ECE) | (3(^ECE (3GEC (3EFG) | A4 z2 | G4 z2 | A2- A(B (3:2:2B A2 |{G2A2} G4) A2 | G6 | F4- FG | F6 | ^E4- EF | F6- | F6 |]
+V:2
+!pp! z z [A,C]2 [A,C]2 | z z [B,D]2 [B,D]2 | z z [A,C]2 [A,C]2 | z z [B,D]2 [B,D]2 | z z [B,C]2 [B,C]2 | z z [A,C]2 [A,C]2 | z z [G,C]2 [G,C]2 |!<(! z z [G,C]2 [G,C]2!<)! | !mp! z z [A,D]2 [A,D]2 | z z [A,C]2 [A,C]2 | z z [A,D]2 [A,D]2 |!>(! z z [A,C]2 [A,C]2!>)! | !pp! z z [^E,B,]2 [E,B,]2 | z z [F,B,]2 [F,B,]2 | z z [F,A,]2 [F,A,]2 | z z [F,A,]2 [F,A,]2 | z z [^E,B,]2 [E,B,]2 |!mf! z z [F,A,]2 [F,A,]2 | z z [F,A,]2 [F,A,]2 | z z [F,A,]2 [F,A,]2 | z z [F,G,]2 [F,G,]2 | z z [F,A,]2 [F,A,]2 | z z [F,A,]2 [F,A,]2 | z z [^E,G,]2 [E,G,]2 | z z [^E,B,]2 [E,B,]2 |!f! z z [D,F,]2 [D,F,]2 | z z [F,A,]2 [F,A,]2 | z z [D,B,]2 [D,B,]2 | !>(! z z [F,B,]2 [F,A,]2!>)! |!mp! z z [F,A,]2 [F,A,]2 | z z [F,A,]2 [F,A,]2 | !>(! z z [^E,G,]2 [E,G,]2 | z z [^E,G,]2 [E,G,]2!>)! |!pp! z z [A,C]2 [A,C]2 | z z [B,D]2 [B,D]2 | z z [A,C]2 [A,C]2 | z z [B,D]2 [B,D]2 | z z [B,C]2 [B,C]2 | z z [A,C]2 [A,C]2 | z z [G,C]2 [G,C]2 | z z [^E,B,]2 [E,B,]2 | z z [A,C]2 [A,C]2- | z z z4 |]
+V:3
+D,6 | F,6 | F,6 | F,6 | F,6 | F,6 | F,6 | C,6 | F,6 | F,6 | F,6 | F,6 | C,6 | D,6 | D,6 | C,6 | C,6 | D,6 | D,6 | B,,6 | B,,6 | F,,6 | F,,6 | G,,6 | C,6 | A,,6 | A,,6 | B,,6 | B,,6 | C,6 | C,6 | C,6 | C,6 | F,6 | F,6 | F,6 | F,6 | F,6 | F,6 | F,6 | C,6 | F,6 | [A,C]6 |]

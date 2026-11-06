@@ -28,6 +28,14 @@ const RANGES = [[/piano|pianoforte|fl[uü]gel|klavier|keyboard|organ|orgel|harps
   [/e-?flat clar|clarinet in e|es-klar|piccolo clar/i, 55, 98], [/picc/i, 74, 110], [/flaut|flute|fl\b/i, 59, 98], [/obo/i, 58, 93], [/clar/i, 50, 94], [/fag|bassoon/i, 34, 77],
   [/corn|horn/i, 33, 79], [/tromba|trumpet/i, 52, 84], [/trombon/i, 34, 77], [/tuba/i, 26, 65], [/timp/i, 38, 60],
   [/violino|violin/i, 55, 105], [/viol[ae]\b|viola/i, 48, 91], [/violoncell|cello/i, 36, 81], [/contrab|double bass|basso\b/i, 28, 67]];
+function tieOnly(miss, extra) {
+  const P = k => { const [on, p, l] = k.split(","); return { on: +on, p: +p, l: l === "g" ? 0 : +l }; };
+  const A = miss.map(P), B = extra.map(P), used = new Set();
+  const inside = (x, ys) => ys.some(y => y.p === x.p && x.on >= y.on - 0.03 && x.on + x.l <= y.on + y.l + 0.03);
+  for (const a of A) { const j = B.findIndex((b, k) => !used.has(k) && b.p === a.p && Math.abs(b.on - a.on) < 0.03); if (j >= 0) used.add(j); else if (!inside(a, B)) return false; }
+  return B.every((b, k) => used.has(k) || inside(b, A));
+}
+const R2 = x => Math.round(x * 100) / 100;
 const MARGIN = 4;   // semitones past a range's edge allowed: the check is for octave / transposition errors, not a low extension
 const R6 = x => Math.round(x * 1e4) / 1e4;
 
@@ -94,7 +102,7 @@ function main() {
   const fsParts = (/^%fs-parts (.*)$/m.exec(abc) || [])[1];      // arrange.mjs: which XML parts, in this order (others dropped)
   if (fsParts) { const ids = fsParts.trim().split(/\s+/); X.parts = ids.map(id => X.parts.find(p => p.id === id)).filter(Boolean); }
   const { V, warnings } = abcVoices(abc);
-  const INFO = new Set(["hidden", "grace", "tacet"]);
+  const INFO = new Set(["hidden", "grace", "tacet", "tie"]);
   const issues = [], add = (kind, where, msg) => issues.push({ kind, where, msg });
 
   // 1. parts: a named voice starts a part
@@ -123,7 +131,9 @@ function main() {
   const qs = abc.match(/^Q:.*$|\[Q:[^\]]*\]/gm) || []; if (qs.length > 1) add("tempo", "score", `${qs.length} tempo marks: ${qs.join(" ")} — a ritardando entered as tempo changes?`);
 
   // 4. alignment, per voice: the start of every bar
-  const starts = V.map(v => { let s = 0; return v.bars.map(b => { const x = s; s = R6(s + b.len); return x; }); });
+  // each bar's length rounded to 1/48 quarter first: a whole bar is a clean fraction of a beat, and summing tuplet decimals over
+  // hundreds of bars drifts (99.99 against 100)
+  const starts = V.map(v => { let s = 0; return v.bars.map(b => { const x = s; s = R6(s + Math.round(b.len * 48) / 48); return x; }); });
   const nb = Math.min(...V.map(v => v.bars.length));
   for (let k = 0; k < nb; k++) {
     const xs = starts.map(s => s[k]);                                     // triplets add rounding: 0.01 of a quarter allowed
@@ -152,12 +162,16 @@ function main() {
       // 5. notes
       // a note with grace notes: abcjs plays the graces out of its time, so its length is compared apart (kind "grace", not a fault)
       const graced = new Set(P.voices.flatMap(v => v.bars[mi].notes).filter(n => n[3]).map(n => Math.round(n[0] * 100) / 100 + "," + n[1]));
-      const key = a => graced.has(Math.round(a[0] * 100) / 100 + "," + a[1]) ? [Math.round(a[0] * 100) / 100, a[1], "g"].join(",") : [Math.round(a[0] * 100) / 100, a[1], Math.round(a[2] * 100) / 100].join(","), A = P.voices.flatMap(v => v.bars[mi].notes).map(key).sort(), B = XA[mi].map(key).sort();
+      const key = a => graced.has(Math.round(a[0] * 100) / 100 + "," + a[1]) ? [Math.round(a[0] * 48) / 48, a[1], "g"].join(",") : [R2(Math.round(a[0] * 48) / 48), a[1], R2(Math.round(a[2] * 48) / 48)].join(","), A = P.voices.flatMap(v => v.bars[mi].notes).map(key).sort(), B = XA[mi].map(key).sort();
       const cnt = arr => arr.reduce((m, k) => (m[k] = (m[k] || 0) + 1, m), {});
       const ca = cnt(A), cb = cnt(B), miss = [], extra = [];
       for (const k in cb) for (let i = (ca[k] || 0); i < cb[k]; i++) miss.push(k);
       for (const k in ca) for (let i = (cb[k] || 0); i < ca[k]; i++) extra.push(k);
-      if (miss.length || extra.length) add("notes", where, `missing in ABC [${miss.join(" | ")}] extra in ABC [${extra.join(" | ")}]  (onset,midi,length)`);
+      // tie differences only: every leftover has a partner of the same pitch starting together (held longer or shorter: a tie
+      // drawn differently, e.g. across voices, which abcjs cannot do) or lies inside a same-pitch note on the other side (one long
+      // note against the same note re-struck). Pitches and onsets agree; bar lengths are checked on their own. Kind "tie", a notice
+      if ((miss.length || extra.length) && tieOnly(miss, extra)) add("tie", where, `tied lengths differ: XML [${miss.join(" | ")}] ABC [${extra.join(" | ")}]`);
+      else if (miss.length || extra.length) add("notes", where, `missing in ABC [${miss.join(" | ")}] extra in ABC [${extra.join(" | ")}]  (onset,midi,length)`);
       // 6. range
       if (range.length && !unpitched) P.voices.forEach(v => v.bars[mi].notes.forEach(nt => {
         if (nt[1] < range[1] - MARGIN || nt[1] > range[2] + MARGIN) add("range", where, `voice ${v.id} sounds MIDI ${nt[1]}, outside ${range[1]}-${range[2]} for ${XP.name.trim()}`);

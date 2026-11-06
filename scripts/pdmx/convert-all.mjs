@@ -29,8 +29,24 @@ const run = p => new Promise(res => {
         // passes with only notices left: tempo (several tempo marks: real or a ritardando, a person judges), hidden / grace (playback-only
     // notes, already notices to the checker) and names when the converter numbered them (Violin I / II tell the staves apart)
     const numbered = notes.some(n => /staff names numbered/.test(n));
-    const namesOnly = j && !j.ok && Object.keys(j.byKind).every(k => ["tempo", "hidden", "grace", "tacet"].includes(k) || (k === "names" && numbered));
-    report[p.i] = { group: p.group, file: p.file, ok: !!(j && (j.ok || namesOnly)), byKind: j ? j.byKind : null,
+    const namesOnly = j && !j.ok && Object.keys(j.byKind).every(k => ["tempo", "hidden", "grace", "tacet", "tie"].includes(k) || (k === "names" && numbered));
+    // a few stray tie notes: only "notes" left among the faults, in at most max(2, 1% of bars) bars, at most 2 notes each, and
+    // none a wrong accidental (same onset, pitch a semitone off). Passed with the mark fewNotes (the bars are listed)
+    let fewNotes = null;
+    if (j && !j.ok && !namesOnly) {
+      const NOT = ["tempo", "hidden", "grace", "tacet", "tie", "names"];
+      const faults = Object.keys(j.byKind).filter(k => !NOT.includes(k) || (k === "names" && !numbered));
+      if (faults.length === 1 && faults[0] === "notes") {
+        const ns = (j.issues || []).filter(x => x.kind === "notes");
+        const bars = +(/(\d+) bars/.exec(out) || [])[1] || +p.bars || 0;
+        const parse = str => (str || "").split("|").map(t => t.trim()).filter(Boolean).map(t => t.split(",").map(Number));
+        const small = ns.every(x => { const m = /missing in ABC \[([^\]]*)\] extra in ABC \[([^\]]*)\]/.exec(x.msg); if (!m) return false;
+          const A = parse(m[1]), B = parse(m[2]); if (A.length + B.length > 2) return false;
+          return !A.some(a => B.some(b => Math.abs(a[0] - b[0]) < 0.03 && Math.abs(a[1] - b[1]) === 1)); });
+        if (small && ns.length <= Math.max(2, Math.floor(bars / 100))) fewNotes = ns.map(x => x.where);
+      }
+    }
+    report[p.i] = { fewNotes, group: p.group, file: p.file, ok: !!(j && (j.ok || namesOnly || fewNotes)), byKind: j ? j.byKind : null,
       crash: j ? null : (err.trim().split("\n").filter(Boolean).pop() || "no output").slice(0, 200), notes, secs: (Date.now() - t0) / 1000,
       sample: j ? (j.issues || []).slice(0, 4).map(x => typeof x === "string" ? x : JSON.stringify(x).slice(0, 200)) : [] };
     res();

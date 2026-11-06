@@ -25,7 +25,7 @@ const HARD = { names: "the same staff name twice in the MusicXML (Violin, Violin
   overfull: "a bar longer than its time signature (a cadenza or a MusicXML error)", length: "a bar the wrong length",
   notes: "notes differ from the MusicXML (ties across bars, voices swapping)", align: "bars out of line across voices",
   bars: "bar counts differ between voices / the MusicXML", parts: "a part missing in the ABC", crash: "converter crashed or timed out" };
-const NOTICE = ["tempo", "hidden", "grace", "tacet"];
+const NOTICE = ["tempo", "hidden", "grace", "tacet", "tie"];
 picks.forEach((p, i) => {
   const nb = N[i];
   const v = nb ? { orig: "arr", conf: nb.conf, work: nb.work, composer: (V[i] || {}).composer, why: nb.why, arranger: nb.arranger } : V[i];
@@ -76,6 +76,6 @@ for (const f of Object.keys(groups).sort((a, b) => Object.keys(HARD).indexOf(a) 
   for (const { k, c } of groups[f].sort((a, b) => (Object.values(a.c?.byKind || {}).reduce((s, n) => s + n, 0)) - Object.values(b.c?.byKind || {}).reduce((s, n) => s + n, 0)))
     co += `| ${c && c.byKind ? JSON.stringify(c.byKind).replace(/[{}"]/g, "") : (c ? c.crash : "")} | ${k.title.replace(/\|/g, "/")} | ${k.parts} | ${k.bars} | ${((c && c.sample[0]) || "").replace(/\|/g, "/").slice(0, 100)} |\n`;
 }
-co += "* Converted\n" + done.map(k => `- ${k.title} (${k.scoring}, ${k.bars} bars) [[/theory/analysed-scores/full-scores.html?id=${k.id}]]`).join("\n") + "\n";
+co += "* Converted\nfew notes = passed with a few stray tie notes left (at most max(2, 1% of bars) bars, 2 notes each, no wrong accidentals): the bars are listed\n" + done.map(k => { const c = C[+k.id.slice(5)] || {}; return `- ${k.title} (${k.scoring}, ${k.bars} bars) [[/theory/analysed-scores/full-scores.html?id=${k.id}]]` + (c.fewNotes ? ` — few notes: ${c.fewNotes.join("; ")}` : ""); }).join("\n") + "\n";
 fs.writeFileSync(path.join(root, "research_notes/pdmx-conversion.org"), co);
 console.log(`${kept.length} kept, ${done.length} converted, ${left.length} left`, Object.fromEntries(Object.entries(groups).map(([k, v]) => [k, v.length])));

@@ -1,0 +1,47 @@
+X:1
+C:Marco Enrico Bossi (1861 - 1925)
+%%score [ ( 1 2 ) ( 3 4 ) ( 5 6 ) ( 7 8 ) ( 9 10 ) ]
+L:1/8
+Q:1/4=65
+M:4/4
+K:Gb
+V:1 treble nm="Soprano" snm="S"
+%%MIDI program 52
+V:2 treble 
+%%MIDI program 52
+V:3 treble nm="Alto" snm="A"
+%%MIDI program 52
+V:4 treble 
+%%MIDI program 52
+V:5 treble-8 nm="Tenore (I)" snm="T (I)"
+%%MIDI program 52
+V:6 treble-8 
+%%MIDI program 52
+V:7 treble-8 nm="Tenore II" snm="T II"
+%%MIDI program 52
+V:8 treble-8 
+%%MIDI program 52
+V:9 bass nm="Basso" snm="B"
+%%MIDI program 52
+V:10 bass 
+%%MIDI program 52
+V:1
+"^Lento, maestoso" z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |[K:Eb] z4 z2!pp! G2 | G6 G2 | B3 B B4 | c4- cd e2 | d4 d z B2 | e2 c2 B2 E2 | A3 A G2 B2 | (F4 CD E2) | F4- F z z2 | z8 | z8 | z8 | z4 z2 C2 | A3 A (Bc) _d2 | c6 _c2 | B3 E (FG) F2 | E4- E z z2 ||[K:Ebmin] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |[K:Eb] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2!mf! _G2 | B6 B2 | _d3 d d4 | e4- ef _g2 | f4 f z A2 | _f3 _F (_GA) =A2 | A3 A A2"^cresc." B2 || (B3 E FG) A2 | B3 G (AB) c2 |"^cresc." e3 B (cd) e2 | a6 e2 | a6 e2 | (a2 e2) f2 c2 | (g4 a4 | g4 a4) | g2 g2 (e2 B2 | c2 de f2) g2 | g4- g z GG"^marcato"!ff! | B4 B4 | (c4- cd) e>d | d3- d/d/ d z B>B | e2 B2 A2 G2 | c4- c>B B2 | B2 A2 E2 F2 | G2 A2 B2 c2 | d>e e2 f4 | e4- e z ee | e6 e2 | e4 e z e2 | e4 f4 | g8- | g z z2 z4 | z8 | z8 |]
+V:2
+x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |[K:Eb] x8 | x8 | x8 | B4 B2 =A2 | B4 B z F2 | A2 A2 F2 E2 | F3 F D2 E2 | (D4 CD E2) | D4- D z z2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 ||[K:Ebmin] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |[K:Eb] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 || x8 | x8 | x8 | x8 | e6 e2 | e4 f2 c2 | e8- | e6 e2 | e2 G2 (G2 B2 | c2 de e2) d2 | e4- e z GG | x8 | x8 | x8 | x8 | x8 | x8 | x8 | d>e e2 d4 | x8 | x8 | x8 | e4 f2 d2 | e8- | e z z2 z4 | x8 | x8 |]
+V:3
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |[K:Eb] z4 z2!pp! E2 | E6 E2 | G3 G G4 | G4 F2 F2 | F4 F z D2 | C2 E2 D2 C2 | C3 C B,2 G,2 | ((B,4 C4)) | B,4- B, z!pp! B,2 | D6 D2 | F3 F F4 | G4- G=A B2 | =A4 A z C2 | C2 A2 A2 G2 | A2 G2 ^F2 F2 | (G2 E4 D2) | E4- E z z2 ||[K:Ebmin] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |[K:Eb] z4 z2!mp! E2 | E6 E2 | _G3 G G4 | A4- AB _c2 | B4 B z _G2 | _c2 A2 _G2 _C2 | _F3 F E z _G2 | (_D4 A,B, _C2) | _D4- D z z2 | z8 | z8 | z8 | z8 | z8 | z4 z2!mf! B2 ||"^cresc." B3 E (FG) A2 | B3 G (AB) c2 |"^cresc." (B4 A2) B2 | c4 A4 | c4 A4 | (c2 B2) c2 A2 | (G4 c4 | G4) c4 | G4 G4 | c6 B2 | B4 B z G"^marcato"!ff!G | B4 B4 | (c4- cd) e>d | d3- d/d/ d z B>B | e2 B2 A2 G2 | c4- c>B B2 | B2 A2 E2 F2 | G2 A2 B2 c2 | d>e e2 B4 | B4- B z BB | B6 c2 | c4 c z c2 | c4 d4 | B8- | B z z2 z4 | z8 | z8 |]
+V:4
+x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |[K:Eb] x8 | x8 | D4 G2 F2 | (E2 DC) F2 F,2 | B,4 B, z B,2 | A,2 A,2 B,2 C2 | F,2 F,2 G,2 E,2 | x8 | x8 | x8 | D3 F F4 | F4 F2 =E2 | F4 F z C2 | C2 C2 B,2 B2 | x8 | (G2 E2 B,4) | B,4- B, z z2 ||[K:Ebmin] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | [K:Eb] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 || x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |]
+V:5
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |[K:Eb] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2!pp! B2 | B6 B2 | =A3 d d4 | d4 c2 c2 | c4 c z =A2 | A2 c2 e3 e | (e2 =e4) _e2 | e2 G2 (B2 A2) | G4- G z z2 ||[K:Ebmin] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |[K:Eb] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |"^tenore I" z4 z2!mf! _G2 | B6 B2 | _d3 d d4 | e4- ef _g2 | f4 f z A2 | _f3 _F (_GA) =A2 | A3 A A2"^cresc." B2 ||"^divisi" B4 c4 | e8 |"^cresc." e4 e4 | a3 f (ed) e2 | a3 f (ed) e2 | a3 g (fe) f2 | (b3 g ed) e2 | b3 g (ed) e2 | b2 g4 e2 | a6 g2 | g4- g z GG"^marcato"!ff! | B4 B4 |"^tenore I & II unisono" (c4- cd) e>d | d3- d/d/ d z B>B | e2 B2 A2 G2 | c4- c>B B2 | B2 A2 E2 F2 | G2 A2 B2 c2 | d>e e2 a4 | g4- g z gg | g6 g2 | g4 g z a2 | a4 a4 | [Bg]8- | g z z2 z4 | z8 | z8 |]
+V:6
+x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |[K:Eb] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | G6 G2 | D4 d2 c2 | (B2 =AG) c2 C2 | F4 F z F2 | _F2 E4 EE | A3 A =A2 A2 | (B4 B,4) | E4- E z z2 || [K:Ebmin] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |[K:Eb] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 || x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | d>e e2 B4 | B4- B z gg | x8 | x8 | e4 B4 | x8 | B z z2 z4 | x8 | x8 |]
+V:7
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |[K:Eb] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:Ebmin] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | [K:Eb] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || z2!mf! E2"^cresc." A2 F2 | G2 E2 F3 F |"^cresc." G2 E2 c2 B2 |"^divisi" e4 c4 | e4 d4 | e2 e4 e2 | (e4 f4 | e4) f4 | e2 d2 (cd e2- | e2 d2 c2) d2 | e4- e z G"^marcato"!ff!G | B4 B4 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:8
+x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |[K:Eb] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 ||[K:Ebmin] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | [K:Eb] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 || x8 | x8 | x6 B2 | A6 A2 | A6 A2 | (A2 B2) A2 A2 | (B4 A4 | B4) A4 | B4 G4 | A6 B2 | B4- B z GG | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |]
+V:9
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |[K:Eb] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:Ebmin] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | [K:Eb] z4 z2!mp! E,2 | E,6 E,2 | _G,3 G, G,4 | A,4- A,B, _C2 | B,4 B, z _G,2 | _C2 A,2 _G,2 _C,2 | _F,3 F, E, z _G,2 | (_D,4 A,,B,, _C,2) | _D,4- D, z z2 | z8 | z8 | z8 | z8 | z8 | z8 || z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2 G,G, | G,4 G, z G,"^marcato"!ff!G, | B,4 B,4 | (C4- CD) E>D | D3- D/D/ D z B,>B, | E2 B,2 A,2 G,2 | C4- C>B, B,2 | B,2 A,2 E,2 F,2 | G,2 A,2 B,2 C2 | D>E E2 B,4 | E4- E z EE | E6 C2 | C4 C z A,2 | (A,2 C2) B,4 | E8- | E z z2 z4 | z8 | z8 |]
+V:10
+x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |[K:Eb] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 ||[K:Ebmin] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | [K:Eb] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 || x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | E,4- E, z EE | x8 | x8 | A,4 (G,2 F,2) | E,8- | E, z z2 z4 | x8 | x8 |]

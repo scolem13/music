@@ -1,0 +1,22 @@
+X:1
+%%score { ( 1 2 3 ) | 4 }
+L:1/8
+Q:1/4=76
+M:2/8
+K:C
+V:1 treble nm="Piano"
+%%MIDI program 0
+V:2 treble 
+%%MIDI program 0
+V:3 treble 
+%%MIDI program 0
+V:4 bass 
+%%MIDI program 0
+V:1
+"^Agitato" (3z/ G,/C/(3:2:2GA/ | (3z/ G,/D/(3:2:2GA/ | (3z/ G,/C/(3:2:2GA/ | (3z/ B,/E/(3:2:2Bc/ | (3z/ E/A/(3:2:2ed/ | (3z/ E/A/(3:2:2ed/ | (3z/ E/G/(3:2:2ed/ | (3z/ B,/D/(3:2:2BA/ | (3z/ G,/C/(3:2:2GA/ | (3z/ G,/D/(3:2:2GA/ | (3z/ G,/C/(3:2:2GA/ | (3z/ B,/E/(3:2:2Bc/ | (3z/ ^C/F/"_cresc."(3:2:2^cd/ | (3z/ ^D/G/(3:2:2^de/ | (3z/ G/A/(3:2:2gf/ | (3z/ ^D/G/(3:2:2^de/ | (3z/ E/A/(3:2:2ef/ | ^F/B/(3:2:2^fg/ | ^G/c/(3:2:2^ga/ | ^A/d/(3:2:2^ab/ | !ff! (3z/ d/e/!ff!(3:2:2d'c'/ | (3z/ B/c/(3:2:2ba/ | A/c/(3:2:2ag/ | (3z/ E/G/(3:2:2ed/ | G,/C/!p!(3:2:2GA/ | E/G/(3:2:2ed/ |!<(! (3z/ G,/C/(3:2:2G!<)!A/ |!>(! (3z/ E/G/(3:2:2e!>)!d/ | (3z/ C/F/ c- |c c- |[Q:1/4=70]"^rit."!p!!>(! c c- |[Q:1/4=64] c c!>)! | [Q:1/4=58] z (3E,/-[E,G,]/-[E,G,C]/- |[Q:1/4=20] !fermata![E,G,CE]2 |]
+V:2
+(6:4:4z/ G,-G,A,/ | (6:4:4z/ G,-G,A,/ | (6:4:4z/ G,-G,A,/ | (6:4:4z/ B,-B,C/ | (6:4:4z/ E3/2x/D/ | (6:4:4z/ E3/2x/D/ | (6:4:4z/ E3/2x/D/ | (6:4:4z/ B,3/2x/A,/ | (6:4:4z/ G,3/2x/A,/ | (6:4:4z/ G,3/2z/A,/ | (6:4:4z/ G,3/2z/A,/ | (6:4:4z/ B,3/2z/C/ | (6:4:4z/ ^C3/2x/D/ | (6:4:4z/ ^D3/2x/E/ | (6:4:4z/ G3/2x/F/ | (6:4:4z/ ^D3/2x/E/ | (6:4:4z/ E3/2x/F/ | (6:4:3^F3/2xG/ | (6:4:3^G3/2xA/ | (6:4:3^A3/2xB/ | (6:4:4z/ d3/2x/c/ | (6:4:4z/ B3/2x/A/ | (6:4:3A3/2zG/ | (6:4:4z/ E3/2x/D/ | (6:4:3G,3/2xA,/ | (6:4:3E3/2xD/ | (6:4:4z/ G,3/2z/A,/ | (6:4:4z/ E3/2x/D/ | (3:2:2z/ C x | (3:2:2z/ C z | (3:2:2z/ C z | (3:2:2z/ C z | x2 | x2 |]
+V:3
+x (3E/C/A,/ | x (3F/D/A,/ | x (3E/C/A,/ | x (3G/E/C/ | x (3c/A/D/ | x (3c/A/D/ | x (3B/G/D/ | x (3F/D/A,/ | x (3E/C/A,/ | x (3F/D/A,/ | x (3E/C/A,/ | x (3G/E/C/ | x (3A/F/D/ | x (3c/G/E/ | x (3c/A/F/ | x (3c/G/E/ | x (3c/A/F/ | x (3d/B/G/ | x (3e/c/A/ | x (3g/d/B/ | x (3g/e/c/ | x (3^d/c/A/ | x (3e/c/G/ | x (3B/G/D/ | x (3E/C/A,/ | x (3B/G/D/ | x (3E/C/A,/ | x (3B/G/D/ | x (3A/F/[EG]/ | (3z/ C/F/(3A/F/[EG]/ | (3z/ C/F/(3A/F/[EG]/ | (3z/ C/F/(3A/F/[EG]/ | x2 | x2 |]
+V:4
+!mf! (3C,,/G,,/E,/ z | (3B,,,/G,,/F,/ z | (3C,,/G,,/E,/ z | (3E,,/C,/G,/ z | (3F,,/C,/A,/ z | (3^F,,/D,/C/ z | (3G,,/=F,/B,/ z | (3G,,,/G,,/F,/ z | (3C,,/G,,/E,/ z | (3B,,,/G,,/F,/ z | (3C,,/G,,/E,/ z | (3E,,/C,/G,/ z | (3F,,/=C,/A,/ z | (3G,,/C,/_B,/ z | (3A,,/F,/C/ z | (3G,,/C,/C/ z | (3A,,/F,/C/ z | (3B,,/G,/D/ z | (3C,/=G,/E/ z | (3D,/G,/F/ z | (3E,/C/G/!>(! z | (3^F,,/^D,/C/ z | (3G,,/E,/C/ z | (3G,,/=F,/B,/!>)! z | !p! (3C,,/G,,/E,/ z | (3C,,/G,,/F,/ z |!p! (3C,,/G,,/E,/ z | (3C,,/G,,/F,/ z | (3C,,/G,,/G,/ z | (3C,,/G,,/G,/ z | (3C,,/G,,/G,/ z |!p! (3C,,/G,,/G,/ z | !pp! (3C,,/-[C,,G,,]/-[C,,G,,C,]/-[C,,G,,C,]- | !fermata![C,,G,,C,]2 |]

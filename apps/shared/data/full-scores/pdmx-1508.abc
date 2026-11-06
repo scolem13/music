@@ -1,0 +1,19 @@
+X:1
+C:Orlando di Lasso
+%%score [ 1 2 3 ]
+L:1/8
+Q:1/4=80
+M:2/2
+K:F
+V:1 treble nm="Superius" snm="S"
+%%MIDI program 52
+V:2 treble-8 nm="Tenor" snm="T"
+%%MIDI program 52
+V:3 bass nm="Bassus" snm="B"
+%%MIDI program 52
+V:1
+F4 B4 | A4 z2 d2- | d2 c2 B3 B | A4 D2 F2- | F2 E2 z4 | C4 F4 | E4 z2 A2- | A2 G2 F3 F | E4 z2 A2- | A2 G2 F3 F | E4 D2 F2- | FE/D/ C2 D2 d2- | d2 c2 B3 B | A2 A2 G2 F2- | FF E2 G2 F2- | F2 E2 z2 d2- | d2 c2 B3 B | A2 A4 G2 | F3 F E4 | D3 E FG AF | B2 G3 F F2- | FE/D/ E2 F4- | F4 z2 D2 | B3 A G2 G2 | F4 F4 | z2 C4 D2 | E4 z2 C2- | C2 D2 E2 G2 | C3 C C2 D2- | D2 C2 C4 | c3 B AG FE | FG A2 E2 E2 | A4 A4 | D2 F3 E ED/C/ | D4 E2 G2 | AB cA Bc d2 | c2 A2 D2 F2 | GA BG AB c2 | F4 z2 C2 | DE FD EF G2 | F2 E2 F4 | z4 z2 A2 | F2 F2 E4 | A4 G4 | C2 F3 E/D/ E2 | F2 c2 A2 A2 | F4 E4 | z2 A2 F2 F2 | E4 F3 E | D2 d2 cB AG | F2 B3 A/G/ A2 | F2 B2 G2 G2 | F4 G2 c2 | A2 A2 G4 | C2 F4 E2 | F2 C2 z4 | z4 z2 A2 | F2 F2 E4 | F2 E2 A2 c2 | G4 z2 F2 | D2 D2 C4 | D2 D2 DE FG | A3 G/F/ E2 G2- | GF F3 E/D/ E2 | F8 |]
+V:2
+z4 z4 | F4 B4 | A4 z2 d2- | d2 c2 B3 B | A4 D2 F2- | FE F2 D2 d2- | d2 c2 BA f2- | f2 e2 d2 c2 | C4 c4- | c4 z2 d2- | d2 c2 B3 B | A2 A2 G2 F2- | FF E2 G2 d2- | d2 c2 z2 d2- | d2 c2 B3 B | A2 A2 G2 F2- | FF E2 G2 d2- | d2 cB AB cG | B2 A2 z2 c2- | c2 B2 A3 A | G2 B2 A3 G/F/ | G4 F4 | z2 D2 B3 A | G2 F2 cB BA/G/ | BA d3 c B2 | A4 F4 | G2 A2 F2 G2 | A4 G2 E2- | EE E2 F3 E/D/ | F3 F E2 FG | AG AB c4 | A2 F2 c4- | c2 c2 c2 f2- | fe d3 c c2- | "^-natural""^-natural" cB/A/ B2 c4- | c4 z2 G2 | AB cA Bc d2 | c2 de fd ef | d4 G4 | z2 F2 GA BG | AB c2 B2 AB | cA Bc dc c2- | cB/A/ B2 c4- | c4 z2 c2 | A2 A2 G4 | A3 G FE D2 | BA AG/F/ G2 A2- | AG FE D2 d2- | dc/B/ cG B2 A2 | z4 z2 f2 | d2 d2 c4 |"^b" d3 c B2 e2- | e2 d2 c4 | c4 z2 c2 | A2 A2 G4 | A4 B2 A2- | AG GF/E/ F3 G | AB A3 B cA | d2 c4 A2 | z2 c2 A2 A2 | G4 A2 F2- | F2 B4 A2- | AB c3 B/A/ GA | BA AG/F/ G4 | F8 |]
+V:3
+z8 | z8 | z8 | z4 z2 D,2- | D,2 C,2 B,,3 B,, | A,,4 z4 | A,,4 D,4 | C,4 z2 A,2- | A,2 G,2 F,3 F, | E,2 E,2 D,4 | A,4 z4 | F,,4 B,,4 | A,,4 z4 | F,4 B,4 | A,4 z2 D,2- | D,2 C,2 B,,3 B,, | A,,4 z4 | F,6 E,2 | D,3 D, C,2 C,2 | G,4 D,4 | z2 G,,2 D,4 | C,4 z2 D,2 | B,3 A, G,3 F, | _E,2 D,2 E,4 | "^-natural" D,3 C, B,,C, D,E, | F,4 z4 | C,4 D,2 E,2 | F,4 C,4 | A,,2 A,,4 B,,2- | B,,2 A,,2 A,,2 A,G, | F,E, F,3 G, A,2 | D,4 z2 C,2 | F,4 F,2 D,2 | B,4 A,4 | G,4 z2 E,2 | F,G, A,F, G,A, B,2 | F,4 G,2 D,2 | z4 z2 A,,2 | B,,C, D,B,, C,D, E,2 | (3B,,3 C, D,2 C,2 G,,2 | z2 C,2 D,E, F,D, | E,F, G,2 F,4 | D,4 A,,2 A,2 | F,2 F,2 E,4 | F,2 D,2 B,,2 C,2 | F,,4 z2 F,2 | D,2 D,2 C,4 | D,4 z4 | z4 D,4 | B,,2 B,,2 A,,4 | B,,4 F,3 E, | D,2 B,,2 _E,4 | B,4 z2 A,2 | F,2 F,2 E,4 | F,2 D,2 B,,2 C,2 | F,,2 F,2 D,2 D,2 | C,4 D,4 | z8 | z2 A,2 F,2 F,2 | E,4 F,2 D,2 | B,,2 B,,2 A,,4 | B,,2 G,,A,, B,,C, D,E, | F,3 E,/D,/ C,D, _E,2 | D,4 C,4 | F,,8 |]
