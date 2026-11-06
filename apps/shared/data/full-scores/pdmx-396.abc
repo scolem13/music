@@ -1,0 +1,23 @@
+X:1
+C:Felix Mendelssohn
+%%score { ( 1 3 ) | ( 2 4 ) }
+L:1/8
+Q:3/8=126
+M:6/8
+K:C
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:3 treble 
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:4 bass 
+%%MIDI program 0
+V:1
+!p! .G.A.G .G.A.G | .G.A.G .G.A.G | GAB cde | fAd c2 B | .G.A.G .G.A.G | .G.A.G .G.A.G | cBA Gce | [Gg]de c z (e | E) z (e F) z (e | A) z (e ^G) z (e | E)^F^G ABc |({/d} c)BA ^GB(e | E) z (e F) z (e | A) z (e ^G) z (e | A)Bc({/d} c)BA |({/A} G)^FE ^DF(B | B,) z (B!<(! C) z (B | E) z (B ^D) z (B | E) z (B G) z (B | [G^A]) z (B ^F) z (B!<)! |!f! b) z (B [cb]) z (B | [eb]) z (B [^db]) z (B | e)^fg{/a} gfe | [B^d]cB BcB | ([E^A]6 | [^DB])cB BcB | ([E^A]6 | [^DB])cB!>(! BcB | ^ABA ABA | ABA ABA | ^GAG GAG!>)! |!p! .G.A.G .G.A.G | .G.A.G .G.A.G | GAB cde | fAd c2 B | .G.A.G .G.A.G | .G.A.G .G.A.G | cBA Gce | [Gg]de ceA | cBA Gce | [Gg]de ceA | ABA ABA | ABA GAG | GAG FGF | GAG FGF | ^FGF E=FE | EFE DED | [DF] z z [CE] z2 | [CE] z z [B,D] z2 | C z z4 | [CE] z z [B,D] z2 | [CG] z z4 |[K:bass] [G,CE] z z [F,B,D] z2 | [E,C] z z z2 C | [A,CF] z z [^F,C^D] z z | [G,CE] z z [E,G,_B,^C] z z | [F,G,D] z z [D,F,G,B,] z z | [E,G,C]DC CDC |!>(! CDC CDC | CDC CDC | CDC CDC | G, z z [F,A,] z z!>)! |!pp!!>(! G, z z .C,.D,.C, |[K:treble] z3 .c.d.c!>)! | !ppp! .[egc'] z z !fermata!z3 |]
+V:2
+[CE]2 z [B,D]2 z | [A,C]2 z [G,B,]2 z | [F,G,D][F,G,D][F,G,D] [E,G,C][E,G,C][E,G,C] | [D,F,A,D][D,F,A,D][D,F,A,D] E2 D | [B,,G,]2 z [C,G,]2 z | [D,G,B,]2 z [E,G,C]2 z | [^F,CD][F,CD][F,CD] [G,CE][G,CE][G,CE] | [G,B,F][G,B,F][G,B,F] [CE] z2 | [E,^G,B,][E,G,B,] z [E,A,C][E,A,C] z | [E,CE][E,CE] z [E,B,D][E,B,D] z | [A,C]2 z [G,A,C]2 z | [F,A,^D]2 z [E,B,E]2 z | [E,^G,B,][E,G,B,] z [E,A,C][E,A,C] z | [E,CE][E,CE] z [E,B,D][E,B,D] z | [A,CE]2 z [C,E,A,]2 z | [C,E,^A,]2 z [B,,^F,B,]2 z | [B,,^D,^F,][B,,D,F,] z [B,,E,G,][B,,E,G,] z | [B,,G,B,][B,,G,B,] z [B,,^F,A,][B,,F,A,] z | [B,,G,B,][B,,G,B,] z [B,,E,B,][B,,E,B,] z | [B,,E,B,][B,,E,B,] z [B,,^D,B,][B,,D,B,] z | [B,,^D,B,][B,,D,B,] z [B,,E,B,][B,,E,B,] z | [B,,G,B,][B,,G,B,] z [B,,^F,B,][B,,F,B,] z | [B,,G,B,]3 ([B,,^C,E,^A,]3 | [B,,^F,B,]2) z z3 | .C,.D,.C, .C,.D,.C, | B,,2 z4 | .C,,.D,,.C,, .C,,.D,,.C,, | B,,,2 z [B,^D]2 z | [^CE]2 z [B,,B,]2 z | [^D^F]2 z [B,,B,]2 z | E2 z [B,,B,]2 z | [CE]2 z [B,D]2 z | [A,C]2 z [G,B,]2 z | [F,G,D][F,G,D][F,G,D] [E,G,C][E,G,C][E,G,C] | [D,F,A,D][D,F,A,D][D,F,A,D] E2 D | [B,,G,]2 z [C,G,]2 z | [D,G,B,]2 z [E,G,C]2 z | [^F,CD][F,CD][F,CD] [G,CE][G,CE][G,CE] | [G,B,F][G,B,F][G,B,F] [A,CE] z2 | [^F,CD] z z [G,CE] z z | [G,B,F] z z [A,CE] z z | [^F,D] z z z3 | [^F,D] z z [G,D] z z | [E,C] z z [F,C] z z | [E,C] z z [F,C] z z | [^D,B,] z z [E,B,] z z | [^C,A,] z z [D,A,] z z | B,, z z C, z z | G,, z z [F,,F,] z z | [E,,E,] z z z3 | [G,,G,] z z [F,,F,] z z | [E,,E,] z z z3 | .C,,.D,,.C,, .C,,.D,,.C,, | .C,,.D,,.C,, .C,,.D,,.C,, | .C,,.D,,.C,, .C,,.D,,.C,, | .C,,.D,,.C,, .C,,.D,,.C,, | .C,,.D,,.C,, .C,,.D,,.C,, | .C,, z z z2 C,, | F,, z z ^D,, z z | E,, z z C,, z z | A,,, z z F,,, z z | .C,,.D,,.C,, z3 | .C,,.D,,.C,, z3 | .C.D.C z3 | .[C,,C,] z z !fermata!z3 |]
+V:3
+x6 | x6 | x6 | x3 E3 | [DF] x2 E x2 | F x2 G x2 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x3 E3 | [DF] x2 E x2 | F x2 G x2 | x6 | x6 | x6 | x6 | c x4 x | c x2 B x2 | _B x2 A x2 | _B x2 A x2 | A x2 ^G x2 | G x2 ^F x2 | G,A,G, G,A,G, | G,A,G, G,A,G, | G,A,G, CEG | G,A,G, G,A,G, | G,A,G, CEG |[K:bass] x6 | x6 | x6 | x6 | x6 | x6 | A, x2 ^F, x2 | G, x2 E, x2 | F, x2 A, x2 | E, x2 .C,.D,.C, | E, x4 x |[K:treble] x6 | x6 |]
+V:4
+x6 | x6 | x6 | x3 G,3 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x3 G,3 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 |]

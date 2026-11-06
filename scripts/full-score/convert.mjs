@@ -9,6 +9,9 @@
 //     wraps after 6 bars against one that wraps after 19 puts the wrong bars together); the page breaks lines itself (wrap option)
 //   - ottava marks (8va / 8vb / 15ma) dropped, notes already at sounding pitch; cross-staff [I:staff ±1] dropped; the same staff name
 //     twice numbered (Violin I, Violin II); !dacoda! / !dacapo! as text
+//   - %%score brackets / braces nested in another one dropped (abcjs reads one level)
+//   - a voice's own K: in the header (percussion K:none) moved into that voice's music (abcjs gave it to every later voice)
+//   - rests of lengths abcjs cannot write (x8/3, x13/2) split into ones it can (thirds in a (3:2:n tuplet)
 //   - pedal marks (!ped! / !ped-up!) dropped: abcjs has no pedal decoration
 //   - w: lyric lines dropped (a line with words is counted and reported)
 //   - in a transposing voice an inline clef with an octave sign ([K:bass+8]) becomes [K:bass octave=1] (abcjs bug, see tidy)
@@ -34,9 +37,39 @@ const r = spawnSync("node", [path.join(here, "score-check.cjs"), out, json, ...p
 console.log("wrote " + out);
 process.exit(r.status);
 
+// a rest whose length abcjs cannot write as one note (x8/3, x13/2): split into ones it can, in L: units. Lengths in thirds go in a
+// tuplet "(3:2:n" of pieces 3/2 as long; anything else is left as it was. Only rests: a note split would need ties.
+function gcd(a, b) { return b ? gcd(b, a % b) : a; }
+function binaryParts(n, d) {          // n/d with d a power of two, as the fewest plain / dotted lengths
+  const out = []; let num = n;
+  for (let p = 1 << 20; p >= 1 && num > 0; p >>= 1) {
+    const v = p;                        // v / d
+    if (num >= v) { if (num >= v * 1.75 && (v * 7) % 4 === 0) { out.push([v * 7 / 4, d]); num -= v * 7 / 4; }
+      else if (num >= v * 1.5 && v % 2 === 0) { out.push([v * 3 / 2, d]); num -= v * 3 / 2; } else { out.push([v, d]); num -= v; } }
+  }
+  return num === 0 ? out : null;
+}
+function fmt(n, d) { const g = gcd(n, d); n /= g; d /= g; return d === 1 ? (n === 1 ? "" : String(n)) : (n === 1 ? "" : n) + "/" + d; }
+function pow2(d) { return (d & (d - 1)) === 0; }
+function representable(n, d) { const g = gcd(n, d); n /= g; d /= g; return pow2(d) && (pow2(n) || (n % 3 === 0 && pow2(n / 3)) || (n % 7 === 0 && pow2(n / 7))); }
+export function splitRests(t, dropped = {}) {
+  return t.replace(/(^|[\s|\]])([xz])(\d+)?(?:\/(\d+))?(?=[\s|\[]|$)/g, (m, pre, r, a, b) => {
+    const n = +(a || 1), d = +(b || 1); if (representable(n, d)) return m;
+    const g = gcd(n, d), N = n / g, D = d / g;
+    if (pow2(D)) { const ps = binaryParts(N, D); if (!ps) return m; dropped.rests = (dropped.rests || 0) + 1; return pre + ps.map(([u, v]) => r + fmt(u, v)).join(" "); }
+    if (D % 3 === 0 && pow2(D / 3)) {                     // thirds: (3:2:k with pieces of N/D * 3/2
+      const ps2 = binaryParts(N, (D / 3) * 2);             // N/D * 3/2 = N / (2D/3)
+      const use = ps2 && ps2.length <= 9 ? ps2 : null; if (!use) return m;
+      dropped.rests = (dropped.rests || 0) + 1;
+      return pre + `(3:2:${use.length}` + use.map(([u, v]) => r + fmt(u, v)).join(" ");
+    }
+    return m;
+  });
+}
+
 export function tidy(abc) {
   const lines = abc.split("\n"), head = [], body = {}, order = [];
-  let cur = null; const dropped = { words: 0, clefs: 0, ped: 0, cross: 0, ott: 0, names: 0, tempo: 0, marks: 0 };
+  let cur = null; const dropped = { words: 0, clefs: 0, ped: 0, cross: 0, ott: 0, names: 0, tempo: 0, marks: 0, nest: 0, keys: 0, rests: 0 };
   for (let ln of lines) {
     if (/^I:linebreak/.test(ln)) continue;
     const v = /^V:(\S+)\s*$/.exec(ln);                       // a bare V:n starts that voice's music
@@ -62,8 +95,24 @@ export function tidy(abc) {
     for (let k = 0; k < 3; k++) t = t.replace(/((?:![^!\s]*!\s*|"[^"]*"\s*|\(\s*)+)(\[[A-Za-z]:[^\]]*\])/g, "$2 $1");
     // dashed slurs (!-(! … !-)!) and tremolo strokes (!/-!, !//-!, !///-!): abcjs cannot read them; slur dropped, notes kept
     t = t.replace(/!-[()]!|!\/{1,3}-!/g, () => (dropped.marks++, ""));
+    t = splitRests(t, dropped);
     t = t.replace(/!dacoda!/g, '"^D.C. al Coda"').replace(/!dacapo!/g, '"^D.C."').replace(/!(?:[6-9]|\d\d+)!/g, "");
     body[id] = [t];
+  }
+  // a K: under a V: definition in the header (xml2abc: K:none for a percussion staff): abcjs applies it to every voice defined
+  // after it (the strings lose their key), so it goes to the start of that voice's own music
+  { let vdef = null, firstK = true;
+    for (let k = 0; k < head.length; k++) {
+      const vm = /^V:(\S+)/.exec(head[k]); if (vm) { vdef = vm[1]; continue; }
+      if (/^K:/.test(head[k])) { if (vdef && body[vdef]) { body[vdef].unshift(`[${head[k].trim()}]`); head.splice(k--, 1); dropped.keys++; } else firstK = false; }
+    } }
+  // %%score with brackets / braces inside brackets ([ [ 1 (2 3) ] 4 ]): abcjs reads one level only, so inner ones go
+  for (let k = 0; k < head.length; k++) if (/^%%score/.test(head[k])) {
+    let depth = 0;
+    head[k] = "%%score" + head[k].slice(7).replace(/[[\]{}]/g, c => {
+      if (c === "[" || c === "{") return depth++ ? (dropped.nest++, "") : c;
+      return --depth ? "" : c;
+    });
   }
   // two staves with the same name (Violin, Violin): numbered, so the views and the checker can tell them apart
   const seen = {};
@@ -74,6 +123,7 @@ export function tidy(abc) {
   if (dropped.ott) console.error(`note: ${dropped.ott} ottava lines left out (notes already at sounding pitch, drawn with ledger lines)`);
   if (dropped.tempo) console.error(`note: ${dropped.tempo} runs of tempo marks kept as their last one`);
   if (dropped.marks) console.error(`note: ${dropped.marks} dashed slurs / tremolo strokes left out (abcjs cannot read them)`);
+  if (dropped.rests) console.error(`note: ${dropped.rests} rests of lengths abcjs cannot write split into ones it can`);
   if (dropped.names) console.error(`note: ${dropped.names} staff names numbered (the same name twice)`);
   if (dropped.ped) console.error(`note: ${dropped.ped} pedal marks left out (abcjs cannot draw them)`);
   if (dropped.words) console.error(`note: ${dropped.words} lyric lines with words left out`);

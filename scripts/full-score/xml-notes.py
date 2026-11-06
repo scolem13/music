@@ -7,6 +7,7 @@ Out: { parts: [{ id, name, transpose, measures: [{ n, len, time, key, notes: [[o
 - midi = SOUNDING pitch: written pitch + <transpose> chromatic + 12 * octave-change (a clef's octave sign is display only)
 - tie: 0 none, 1 starts a tie, 2 ends one, 3 both (a tied-over note is still listed: the checker merges ties itself)
 - hidden notes (print-object="no": a transcriber's playback-only notes, e.g. a faked ritardando) are left out and counted
+- unpitched (percussion) notes have midi -1
 - grace notes are left out (they take no time in MusicXML); cue notes too
 """
 import json, re, sys, zipfile
@@ -50,8 +51,14 @@ def main(path):
                     on = last_on if e.find("chord") is not None else at
                     if e.find("chord") is None: last_on = at; at += dur
                     mx = max(mx, at)
-                    if e.find("rest") is not None or e.find("pitch") is None: continue
+                    if e.find("rest") is not None: continue
                     if e.get("print-object") == "no": hidden[0] += 1; continue
+                    if e.find("pitch") is None:      # unpitched (percussion): midi -1, the checker compares onsets and lengths only
+                        if e.find("unpitched") is not None:
+                            tie = 0
+                            for t in e.findall("tie"): tie |= 1 if t.get("type") == "start" else 2
+                            notes.append([float(on), -1, float(dur), tie])
+                        continue
                     p = e.find("pitch")
                     midi = 12 * (int(text(p, "octave")) + 1) + STEP[text(p, "step")] + round(float(text(p, "alter", 0))) + trans
                     tie = 0

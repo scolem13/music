@@ -21,7 +21,9 @@ ctx.self = ctx.window; vm.createContext(ctx);
 vm.runInContext(fs.readFileSync(path.resolve(__dirname, "../../apps/shared/abcjs-basic.js"), "utf8"), ctx);
 
 // sounding ranges, MIDI numbers, a little wide on purpose: only gross faults (an octave or a transposition off) should trip
-const RANGES = [[/piano|pianoforte|fl[uü]gel|klavier|keyboard|organ|orgel|harpsi|cembalo/i, 21, 108], [/picc/i, 74, 110], [/flaut|flute|fl\b/i, 59, 98], [/obo/i, 58, 93], [/clar/i, 50, 94], [/fag|bassoon/i, 34, 77],
+const RANGES = [[/piano|pianoforte|fl[uü]gel|klavier|keyboard|organ|orgel|harpsi|cembalo/i, 21, 108], [/bass\s*clar|clarinetto basso|bassklar|clarinette basse/i, 34, 79], [/contra\s*bassoon|contrafag|kontrafag|contrebasson/i, 21, 58],
+  [/bass\s*trombone|trombone basso|basspos/i, 28, 74], [/alto flute|flauto contralto/i, 53, 89], [/english horn|cor anglais|corno inglese|englischhorn/i, 52, 84],
+  [/e-?flat clar|clarinet in e|es-klar|piccolo clar/i, 55, 98], [/picc/i, 74, 110], [/flaut|flute|fl\b/i, 59, 98], [/obo/i, 58, 93], [/clar/i, 50, 94], [/fag|bassoon/i, 34, 77],
   [/corn|horn/i, 33, 79], [/tromba|trumpet/i, 52, 84], [/trombon/i, 34, 77], [/tuba/i, 26, 65], [/timp/i, 38, 60],
   [/violino|violin/i, 55, 105], [/viol[ae]\b|viola/i, 48, 91], [/violoncell|cello/i, 36, 81], [/contrab|double bass|basso\b/i, 28, 67]];
 const R6 = x => Math.round(x * 1e4) / 1e4;
@@ -104,8 +106,8 @@ function main() {
   const starts = V.map(v => { let s = 0; return v.bars.map(b => { const x = s; s = R6(s + b.len); return x; }); });
   const nb = Math.min(...V.map(v => v.bars.length));
   for (let k = 0; k < nb; k++) {
-    const set = new Set(starts.map(s => Math.round(s[k] * 100) / 100));   // triplets add rounding
-    if (set.size > 1) { add("align", `bar ${k + 1}`, "bar starts at different times: " + V.map((v, i) => `V${v.id}=${starts[i][k]}`).join(" ")); break; }
+    const xs = starts.map(s => s[k]);                                     // triplets add rounding: 0.01 of a quarter allowed
+    if (Math.max(...xs) - Math.min(...xs) > 0.01) { add("align", `bar ${k + 1}`, "bar starts at different times: " + V.map((v, i) => `V${v.id}=${starts[i][k]}`).join(" ")); break; }
   }
 
   const n = Math.min(parts.length, X.parts.length);
@@ -114,6 +116,9 @@ function main() {
     // 2. bar count
     P.voices.forEach(v => { if (v.bars.length !== XP.measures.length) add("bars", tag, `voice ${v.id}: ${v.bars.length} bars, MusicXML ${XP.measures.length}`); });
     const range = RANGES.find(r => r[0].test(XP.name)) || [], XA = xmlAttacks(XP.measures);
+    // a percussion part (unpitched notes, midi -1): its ABC notes' drawn pitches mean nothing, so onsets and lengths only
+    const unpitched = XP.measures.some(m => m.notes.some(n => n[1] === -1));
+    if (unpitched) P.voices.forEach(v => v.bars.forEach(b => b.notes.forEach(n => { n[1] = -1; })));
     const mm = Math.min(XP.measures.length, ...P.voices.map(v => v.bars.length));
     for (let mi = 0; mi < mm; mi++) {
       const xm = XP.measures[mi], [b, c] = xm.time.split("/").map(Number), full = 4 * b / c, where = `${tag} bar ${mi + 1} (m. ${xm.n})`;
@@ -134,7 +139,7 @@ function main() {
       for (const k in ca) for (let i = (cb[k] || 0); i < ca[k]; i++) extra.push(k);
       if (miss.length || extra.length) add("notes", where, `missing in ABC [${miss.join(" | ")}] extra in ABC [${extra.join(" | ")}]  (onset,midi,length)`);
       // 6. range
-      if (range.length) P.voices.forEach(v => v.bars[mi].notes.forEach(nt => {
+      if (range.length && !unpitched) P.voices.forEach(v => v.bars[mi].notes.forEach(nt => {
         if (nt[1] < range[1] || nt[1] > range[2]) add("range", where, `voice ${v.id} sounds MIDI ${nt[1]}, outside ${range[1]}-${range[2]} for ${XP.name.trim()}`);
       }));
     }
