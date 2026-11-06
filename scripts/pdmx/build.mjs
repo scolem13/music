@@ -10,6 +10,8 @@
 import fs from "node:fs"; import os from "node:os"; import path from "node:path";
 const here = path.dirname(new URL(import.meta.url).pathname), root = path.join(here, "../..");
 const J = f => JSON.parse(fs.readFileSync(path.join(here, f), "utf8"));
+// notable.json: celebrated arrangements (Ravel's Pictures, Liszt's Beethoven, Busoni's Bach ...), kept with their arranger
+const N = fs.existsSync(path.join(here, "notable.json")) ? J("notable.json") : {};
 const picks = J("picks.json"), V = J("verdicts.json"), C = fs.existsSync(path.join(here, "convert-report.json")) ? J("convert-report.json") : {};
 const FS = path.join(root, "apps/shared/data/full-scores"), PD = path.join(root, "apps/shared/data/pdmx");
 fs.mkdirSync(PD, { recursive: true });
@@ -23,12 +25,14 @@ const HARD = { names: "the same staff name twice in the MusicXML (Violin, Violin
   overfull: "a bar longer than its time signature (a cadenza or a MusicXML error)", length: "a bar the wrong length",
   notes: "notes differ from the MusicXML (ties across bars, voices swapping)", align: "bars out of line across voices",
   bars: "bar counts differ between voices / the MusicXML", parts: "a part missing in the ABC", crash: "converter crashed or timed out" };
-const NOTICE = ["tempo", "hidden", "grace"];
+const NOTICE = ["tempo", "hidden", "grace", "tacet"];
 picks.forEach((p, i) => {
-  const v = V[i]; if (!v || v.orig !== "yes") return;
+  const nb = N[i];
+  const v = nb ? { orig: "arr", conf: nb.conf, work: nb.work, composer: (V[i] || {}).composer, why: nb.why, arranger: nb.arranger } : V[i];
+  if (!v || (v.orig !== "yes" && !nb)) return;
   const c = C[i] || null, id = "pdmx-" + i;
   const row = { id, title: v.work || p.title, composer: v.composer || p.composer, scoring: p.kind || SCORING[p.group], group: p.group, parts: +p.parts, bars: +p.bars,
-    conf: v.conf, why: v.why, pdmxTitle: p.title, rating: +p.rating, converted: !!(c && c.ok) };
+    conf: v.conf, why: v.why, ...(v.arranger ? { arranger: v.arranger } : {}), pdmxTitle: p.title, rating: +p.rating, converted: !!(c && c.ok) };
   if (row.converted) {
     const src = path.join(os.homedir(), "Downloads/PDMX-abc", p.group, p.file.replace(/\.mxl$/, ".abc"));
     let abc = fs.readFileSync(src, "utf8").replace(/^T:.*\n/gm, "");     // the page has the title
@@ -48,6 +52,8 @@ const all = picks.map((p, i) => ({ p, v: V[i] || { orig: "unsure", conf: 0, why:
 const cnt = o => all.filter(x => x.v.orig === o).length;
 org += `* Summary\n- ${picks.length} scores: ${cnt("yes")} original (kept), ${cnt("no")} arrangements, ${cnt("unsure")} unsure (left out)\n`;
 for (const b of ["high (0.85+)", "medium (0.65-0.84)", "low (<0.65)"]) org += `- kept, confidence ${b}: ${kept.filter(k => bucket(k.conf) === b).length}\n`;
+org += "* Celebrated arrangements (in the directory)\nJudged a transcription of the famous arrangement itself (instrumentation matches); conf = that.\n| conf | work | arranger | PDMX title | why |\n|-\n";
+for (const [i, nb] of Object.entries(N).sort((a, b) => b[1].conf - a[1].conf)) org += `| ${nb.conf} | ${nb.work} | ${nb.arranger} | ${picks[i].title.replace(/\|/g, "/")} | ${nb.why} |\n`;
 for (const o of ["yes", "unsure", "no"]) {
   org += `* ${{ yes: "Original (in the directory)", unsure: "Unsure (left out)", no: "Not original (left out)" }[o]}\n`;
   for (const g of Object.keys(SCORING)) {

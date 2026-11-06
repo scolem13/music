@@ -21,11 +21,14 @@ ctx.self = ctx.window; vm.createContext(ctx);
 vm.runInContext(fs.readFileSync(path.resolve(__dirname, "../../apps/shared/abcjs-basic.js"), "utf8"), ctx);
 
 // sounding ranges, MIDI numbers, a little wide on purpose: only gross faults (an octave or a transposition off) should trip
-const RANGES = [[/piano|pianoforte|fl[uü]gel|klavier|keyboard|organ|orgel|harpsi|cembalo/i, 21, 108], [/bass\s*clar|clarinetto basso|bassklar|clarinette basse/i, 34, 79], [/contra\s*bassoon|contrafag|kontrafag|contrebasson/i, 21, 58],
+const RANGES = [[/piano|pianoforte|fl[uü]gel|klavier|keyboard|organ|orgel|harpsi|cembalo|basso continuo|^\s*continuo|\d+\s*['′’]|\bped(al)?\b|manual/i, 21, 108],
+  [/bassetto|basset/i, 41, 84], [/alto\s*clar|clarinetto alto|altklar/i, 43, 86], [/post\s*horn/i, 50, 90],
+  [/althob|oboe da caccia|oboe d.amore|oboe d.caccia/i, 52, 86], [/tromba|trumpet|clarin(o|i)\b/i, 52, 88], [/bass\s*clar|clarinetto basso|bassklar|clarinette basse/i, 34, 79], [/contra\s*bassoon|contrafag|kontrafag|contrebasson/i, 21, 58],
   [/bass\s*trombone|trombone basso|basspos/i, 28, 74], [/alto flute|flauto contralto/i, 53, 89], [/english horn|cor anglais|corno inglese|englischhorn/i, 52, 84],
   [/e-?flat clar|clarinet in e|es-klar|piccolo clar/i, 55, 98], [/picc/i, 74, 110], [/flaut|flute|fl\b/i, 59, 98], [/obo/i, 58, 93], [/clar/i, 50, 94], [/fag|bassoon/i, 34, 77],
   [/corn|horn/i, 33, 79], [/tromba|trumpet/i, 52, 84], [/trombon/i, 34, 77], [/tuba/i, 26, 65], [/timp/i, 38, 60],
   [/violino|violin/i, 55, 105], [/viol[ae]\b|viola/i, 48, 91], [/violoncell|cello/i, 36, 81], [/contrab|double bass|basso\b/i, 28, 67]];
+const MARGIN = 4;   // semitones past a range's edge allowed: the check is for octave / transposition errors, not a low extension
 const R6 = x => Math.round(x * 1e4) / 1e4;
 
 function abcVoices(abc) {
@@ -91,11 +94,28 @@ function main() {
   const fsParts = (/^%fs-parts (.*)$/m.exec(abc) || [])[1];      // arrange.mjs: which XML parts, in this order (others dropped)
   if (fsParts) { const ids = fsParts.trim().split(/\s+/); X.parts = ids.map(id => X.parts.find(p => p.id === id)).filter(Boolean); }
   const { V, warnings } = abcVoices(abc);
-  const INFO = new Set(["hidden", "grace"]);
+  const INFO = new Set(["hidden", "grace", "tacet"]);
   const issues = [], add = (kind, where, msg) => issues.push({ kind, where, msg });
 
   // 1. parts: a named voice starts a part
   const parts = []; V.forEach(v => { if (v.name || !parts.length) parts.push({ name: v.name || v.id, voices: [v] }); else parts[parts.length - 1].voices.push(v); });
+  // xml2abc leaves out some parts with no notes (a movement's tacet trumpets): when the counts differ, each ABC part is matched by
+  // name to the next XML part of that name; XML parts skipped over must be empty (a notice), else it is a "parts" fault
+  if (parts.length < X.parts.length) {
+    const nm = x => String(x || "").replace(/\\n/g, " ").replace(/\s+/g, " ").trim();   // ABC writes a line break in a name as \n
+    const kept = [], skipped = []; let xi = 0, ok = true;
+    for (const P of parts) {
+      const want = [nm(P.name), nm(P.name).replace(/ (?:I|II|III|IV|V|VI)$/, "")];   // convert.mjs numbers names used twice
+      let j = xi; while (j < X.parts.length && want.indexOf(nm(X.parts[j].name)) < 0) j++;
+      if (j === X.parts.length) { ok = false; break; }
+      for (let q = xi; q < j; q++) skipped.push(X.parts[q]);
+      kept.push(X.parts[j]); xi = j + 1;
+    }
+    for (let q = xi; q < X.parts.length; q++) skipped.push(X.parts[q]);
+    if (ok && skipped.every(p => !p.measures.some(m => m.notes.length))) {
+      X.parts = kept; add("tacet", "score", `${skipped.length} parts with no notes left out by xml2abc: ${skipped.map(p => nm(p.name)).join(", ")}`);
+    }
+  }
   if (parts.length !== X.parts.length) add("parts", "score", `ABC has ${parts.length} parts, MusicXML ${X.parts.length}`);
   const seen = {}; X.parts.forEach(p => { const n = p.name.trim(); if (seen[n]) add("names", p.id, `part name "${n}" also used by ${seen[n]}: check which instrument this is`); seen[n] = p.id; });
   if (X.hidden) add("hidden", "score", `${X.hidden} hidden MusicXML notes (print-object="no", playback only) left out: the ABC should have x rests there`);
@@ -140,7 +160,7 @@ function main() {
       if (miss.length || extra.length) add("notes", where, `missing in ABC [${miss.join(" | ")}] extra in ABC [${extra.join(" | ")}]  (onset,midi,length)`);
       // 6. range
       if (range.length && !unpitched) P.voices.forEach(v => v.bars[mi].notes.forEach(nt => {
-        if (nt[1] < range[1] || nt[1] > range[2]) add("range", where, `voice ${v.id} sounds MIDI ${nt[1]}, outside ${range[1]}-${range[2]} for ${XP.name.trim()}`);
+        if (nt[1] < range[1] - MARGIN || nt[1] > range[2] + MARGIN) add("range", where, `voice ${v.id} sounds MIDI ${nt[1]}, outside ${range[1]}-${range[2]} for ${XP.name.trim()}`);
       }));
     }
   }

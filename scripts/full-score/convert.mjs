@@ -12,6 +12,8 @@
 //   - %%score brackets / braces nested in another one dropped (abcjs reads one level)
 //   - a voice's own K: in the header (percussion K:none) moved into that voice's music (abcjs gave it to every later voice)
 //   - rests of lengths abcjs cannot write (x8/3, x13/2) split into ones it can (thirds in a (3:2:n tuplet)
+//   - U: macros dropped (stemless s), decorations and chords inside grace notes (a chord keeps its top note), fingerings
+//     with more than one number, |]: written |] |:
 //   - pedal marks (!ped! / !ped-up!) dropped: abcjs has no pedal decoration
 //   - w: lyric lines dropped (a line with words is counted and reported)
 //   - in a transposing voice an inline clef with an octave sign ([K:bass+8]) becomes [K:bass octave=1] (abcjs bug, see tidy)
@@ -83,6 +85,7 @@ export function tidy(abc) {
   }
   // ottava lines (!8va(! … !8va)!, 8vb, 15ma): abcjs has none; xml2abc already writes the notes at sounding pitch (the checker
   // agrees), so only the marks go and the notes are drawn with ledger lines. Cross-staff notes ([I:staff ±1]) stay on their own staff
+  for (let k = head.length - 1; k >= 0; k--) if (/^U:/.test(head[k])) head.splice(k, 1);
   for (const id of order) {
     let t = body[id].join(" ");
     t = t.replace(/\[I:staff [+-]\d+\]/g, () => (dropped.cross++, ""));
@@ -94,7 +97,15 @@ export function tidy(abc) {
     // marks that belong to the next note (!pp!, "^text", (, {grace}) written before an inline field: the field goes first
     for (let k = 0; k < 3; k++) t = t.replace(/((?:![^!\s]*!\s*|"[^"]*"\s*|\(\s*)+)(\[[A-Za-z]:[^\]]*\])/g, "$2 $1");
     // dashed slurs (!-(! … !-)!) and tremolo strokes (!/-!, !//-!, !///-!): abcjs cannot read them; slur dropped, notes kept
-    t = t.replace(/!-[()]!|!\/{1,3}-!/g, () => (dropped.marks++, ""));
+    t = t.replace(/!-[()]!|!\/{1,4}-?!/g, () => (dropped.marks++, ""));
+    // xml2abc's U:s=!stemless! macro: abcjs has no U: macros, so the s before a note goes (the note keeps its stem)
+    t = t.replace(/(^|[\s|\]\)}!(.~TH])s(?=[\^=_]*[A-Ga-g\[xz])/g, (m, a) => (dropped.marks++, a));
+    // grace notes: abcjs takes no decorations and no chords inside {…}; a chord keeps its top note
+    t = t.replace(/\{(\/?)([^}]*)\}/g, (m, sl, g) => "{" + sl + g.replace(/![^!]*!/g, () => (dropped.marks++, "")).replace(/\[([^\]]*)\]/g, (c, n) => (dropped.marks++, (n.match(/[\^=_]*[A-Ga-g][,']*/g) || [""]).pop())) + "}");
+    // fingerings with more than one number (!4 2!, !45!): abcjs reads only !1!..!5!
+    t = t.replace(/!\d[^!A-Za-z]*!/g, m => /^![1-5]!$/.test(m) ? m : (dropped.marks++, ""));   // separators can be any space character
+    t = t.replace(/\|\]:/g, "|] |:");
+    t = t.replace(/!(R\.H\.|L\.H\.|m\.d\.|m\.s\.)!/g, (m, w) => `"^${w}"`);   // hand marks as text
     t = splitRests(t, dropped);
     t = t.replace(/!dacoda!/g, '"^D.C. al Coda"').replace(/!dacapo!/g, '"^D.C."').replace(/!(?:[6-9]|\d\d+)!/g, "");
     body[id] = [t];
@@ -122,7 +133,7 @@ export function tidy(abc) {
   if (dropped.cross) console.error(`note: ${dropped.cross} cross-staff marks left out (the notes stay on their own staff)`);
   if (dropped.ott) console.error(`note: ${dropped.ott} ottava lines left out (notes already at sounding pitch, drawn with ledger lines)`);
   if (dropped.tempo) console.error(`note: ${dropped.tempo} runs of tempo marks kept as their last one`);
-  if (dropped.marks) console.error(`note: ${dropped.marks} dashed slurs / tremolo strokes left out (abcjs cannot read them)`);
+  if (dropped.marks) console.error(`note: ${dropped.marks} dashed slurs, tremolo strokes, stemless marks, grace-note fingerings / chords, multi-number fingerings left out (abcjs cannot read them)`);
   if (dropped.rests) console.error(`note: ${dropped.rests} rests of lengths abcjs cannot write split into ones it can`);
   if (dropped.names) console.error(`note: ${dropped.names} staff names numbered (the same name twice)`);
   if (dropped.ped) console.error(`note: ${dropped.ped} pedal marks left out (abcjs cannot draw them)`);

@@ -84,7 +84,7 @@
   // PDMX scores judged to be in the piece's original scoring (scripts/pdmx/build.mjs): type "Score"; converted ones open in the full-score player
   const pdReady = fetch("/apps/shared/data/pdmx/index.json").then((r) => r.json()).then((all) => {
     all.forEach((g) => { rows.push({ title: g.title.replace(/^[^:]+:\s*/, ""), type: "Score", where: g.composer || "",
-      by: g.scoring + " · PDMX · original? " + Math.round(g.conf * 100) + "%" + (g.converted ? "" : " · MusicXML only"), key: "", meter: "", year: "",
+      by: g.scoring + " · PDMX · " + (g.arranger ? "arr. " + g.arranger + " " : "original? ") + Math.round(g.conf * 100) + "%" + (g.converted ? "" : " · MusicXML only"), key: "", meter: "", year: "",
       notation: g.converted ? 1 : 0, recs: 0, timed: 0, chords: 0, href: g.converted ? "/theory/analysed-scores/full-scores.html?id=" + g.id : "#", tsn: null, id: g.id,
       uses: [], nconc: 0, concepts: "", cset: new Set(), sset: new Set() }); });
   }).catch(() => {});

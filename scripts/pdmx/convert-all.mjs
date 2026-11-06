@@ -9,7 +9,8 @@ const jobs = +(arg("--jobs") || 6);
 let picks = JSON.parse(fs.readFileSync(path.join(here, "picks.json"), "utf8")).map((p, i) => ({ ...p, i }));
 if (arg("--only") === "originals") {
   const v = JSON.parse(fs.readFileSync(path.join(here, "verdicts.json"), "utf8"));
-  picks = picks.filter(p => v[p.i] && v[p.i].orig === "yes");
+  const nf = path.join(here, "notable.json"), nb = fs.existsSync(nf) ? JSON.parse(fs.readFileSync(nf, "utf8")) : {};   // celebrated arrangements, kept too
+  picks = picks.filter(p => (v[p.i] && v[p.i].orig === "yes") || nb[p.i]);
 }
 const outDir = path.join(os.homedir(), "Downloads/PDMX-abc");
 const repPath = path.join(here, "convert-report.json");
@@ -28,7 +29,7 @@ const run = p => new Promise(res => {
         // passes with only notices left: tempo (several tempo marks: real or a ritardando, a person judges), hidden / grace (playback-only
     // notes, already notices to the checker) and names when the converter numbered them (Violin I / II tell the staves apart)
     const numbered = notes.some(n => /staff names numbered/.test(n));
-    const namesOnly = j && !j.ok && Object.keys(j.byKind).every(k => ["tempo", "hidden", "grace"].includes(k) || (k === "names" && numbered));
+    const namesOnly = j && !j.ok && Object.keys(j.byKind).every(k => ["tempo", "hidden", "grace", "tacet"].includes(k) || (k === "names" && numbered));
     report[p.i] = { group: p.group, file: p.file, ok: !!(j && (j.ok || namesOnly)), byKind: j ? j.byKind : null,
       crash: j ? null : (err.trim().split("\n").filter(Boolean).pop() || "no output").slice(0, 200), notes, secs: (Date.now() - t0) / 1000,
       sample: j ? (j.issues || []).slice(0, 4).map(x => typeof x === "string" ? x : JSON.stringify(x).slice(0, 200)) : [] };

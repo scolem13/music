@@ -1,0 +1,13 @@
+X:1
+%%score [ 1 2 ]
+L:1/8
+M:4/4
+K:Eb
+V:1 bass nm="Tenor" snm="T"
+%%MIDI program 52
+V:2 bass nm="Bass" snm="B"
+%%MIDI program 52
+V:1
+B,4 B,2 A,2 | G,4 E,4 | E,2 B,2 B,2 B,2 | B,8 || B,4 A,2 G,2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:2
+E,4 B,,2 B,,2 | C,4 G,,4 | A,,2 B,,2 C,2 D,2 | E,8 || E,2 D,2 C,2 B,,2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |]

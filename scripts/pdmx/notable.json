@@ -1,0 +1,114 @@
+{
+"212": {
+"i": 212,
+"arranger": "Liszt",
+"work": "Schubert (trans. Liszt): Erlkönig",
+"conf": 0.8,
+"why": "Piano transcription titled arr. F. Liszt"
+},
+"4": {
+"i": 4,
+"arranger": "Liszt",
+"work": "Schubert (trans. Liszt): Ständchen",
+"conf": 0.8,
+"why": "Titled Schubert/Liszt Ständchen, piano"
+},
+"322": {
+"i": 322,
+"arranger": "Liszt",
+"work": "Paganini (trans. Liszt): La Campanella (Grandes études de Paganini No.3)",
+"conf": 0.7,
+"why": "Liszt Paganini étude No.3 piano"
+},
+"365": {
+"i": 365,
+"arranger": "Busoni",
+"work": "Bach (trans. Busoni): Nun komm der Heiden Heiland",
+"conf": 0.9,
+"why": "Titled Arr. F. Busoni, piano"
+},
+"491": {
+"i": 491,
+"arranger": "Liszt",
+"work": "Beethoven (trans. Liszt): Symphony No. 3 Eroica",
+"conf": 0.9,
+"why": "Titled Eroica L.v.Beethoven Op.55 - F.Liszt, piano"
+},
+"420": {
+"i": 420,
+"arranger": "Rachmaninoff",
+"work": "Rimsky-Korsakov (trans. Rachmaninoff): Flight of the Bumblebee",
+"conf": 0.85,
+"why": "Titled arr. Rachmaninoff, piano"
+},
+"440": {
+"i": 440,
+"arranger": "Bülow",
+"work": "Wagner (trans. von Bülow): Die Meistersinger Vorspiel",
+"conf": 0.5,
+"why": "Piano title credits H.v.Bülow"
+},
+"825": {
+"i": 825,
+"arranger": "Ravel",
+"work": "Mussorgsky (orch. Ravel): Pictures at an Exhibition",
+"conf": 0.85,
+"why": "Full orchestra with cor anglais, mislabelled Tchaikovsky"
+},
+"952": {
+"i": 952,
+"arranger": "Ravel",
+"work": "Mussorgsky (orch. Ravel): Pictures: The Great Gate of Kiev",
+"conf": 0.95,
+"why": "Ravel orchestral parts, French names"
+},
+"971": {
+"i": 971,
+"arranger": "Ravel",
+"work": "Mussorgsky (orch. Ravel): Pictures: Bydlo",
+"conf": 0.95,
+"why": "Ravel orchestral parts"
+},
+"981": {
+"i": 981,
+"arranger": "Ravel",
+"work": "Mussorgsky (orch. Ravel): Pictures at an Exhibition",
+"conf": 0.92,
+"why": "Tableaux d'une Exposition, Ravel orchestra"
+},
+"1021": {
+"i": 1021,
+"arranger": "Ravel",
+"work": "Mussorgsky (orch. Ravel): Pictures: Hut on Hen's Legs",
+"conf": 0.95,
+"why": "Ravel orchestral parts"
+},
+"1041": {
+"i": 1041,
+"arranger": "Ravel",
+"work": "Mussorgsky (orch. Ravel): Pictures: The Old Castle",
+"conf": 0.95,
+"why": "Ravel orchestral parts"
+},
+"1055": {
+"i": 1055,
+"arranger": "Ravel",
+"work": "Mussorgsky (orch. Ravel): Pictures: Ballet of Unhatched Chicks",
+"conf": 0.95,
+"why": "Ravel orchestral parts"
+},
+"1058": {
+"i": 1058,
+"arranger": "Ravel",
+"work": "Mussorgsky (orch. Ravel): Pictures: Catacombs",
+"conf": 0.95,
+"why": "Ravel orchestral parts"
+},
+"1082": {
+"i": 1082,
+"arranger": "Ravel",
+"work": "Mussorgsky (orch. Ravel): Pictures: Samuel Goldenberg and Schmuyle",
+"conf": 0.95,
+"why": "Ravel orchestral parts"
+}
+}

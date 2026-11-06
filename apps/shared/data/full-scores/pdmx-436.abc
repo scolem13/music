@@ -1,0 +1,15 @@
+X:1
+C:Robert Schumann, Op. 68, No. 11
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=112
+M:6/8
+K:C
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+!p!"^Schalkhaft" e | !2!^G2 G (.G.A.B) | !3!A2 !2!A !1!A2 (!5!e | !2!^G2) G (.G.A.B) | !^!A3- A2 (!1!=G | !2!^F2)"_cresc." F !1!F!3!^A!5!^c | !4!B2 B !5!B2!f! !4!=A | !3!G^FE !5!B2 !1!B, | !^!!3!E3- E2 ::!p! (g | !2!^A2) A (.A.B.^c) | !3!B2 !2!B !1!B2 g | !2!^A2 A (.A.B.^c) |{B^c} !^!!1!B3- B2 !2!!4![^F=A] | !3!G2 G G^FE | "_cresc." !5![Ec]2 [Ec] [Ec]2!f! !4!c | !3!BAG d2 D |1 !^!G3- G2 :|2 !<(! !2!G2!f!!>(! !1!!3![E^G]-!<)! !fermata![EG]2!>)!!p! e || ^G2 G (.G.A.B) | A2 A A2 (e | ^G2) G (.G.A.B) | !^!A3- A2 (=G | ^F2)"_cresc." F F^A^c | B2 B B2!f! =A | G^FE B2 B, | !^!E3- E2 z ||[M:2/4]!p! (!1!A/!2!c/!4!e/!1!c/) (!>!!4!f/!2!d/!3!e/!1!c/) | (!>!f/d/e/c/) (!4!d/!2!B/.!1!A) | (A/c/e/c/) (!>!f/d/e/c/) | (!>!f/d/e/c/) (d/B/.A) || (!1!A/B/c/A/) (!>!!5!e/!3!c/!2!B/!1!G/) | (!>!e/c/B/G/) (!2!!3![^D^F]/!4!G/.!1!E) | (A/B/c/A/) (!>!e/c/B/G/) | (!>!e/c/B/G/) ([^D^F]/G/.E) || (A/c/e/c/) (!>!f/d/e/c/) | (!>!f/d/e/c/) (d/B/.A) | (A/c/e/c/) (!>!f/d/e/c/) | (!>!f/d/e/c/) (d/B/.!fermata!A) |]
+V:2
+z |[K:treble] !4!!2![B,D]2 [B,D] [B,D]3 | !3!!1![CE]2 [CE] [CE]3 | [B,D]2 [B,D] [B,D]3 | !^![CE]3- [CE]2 (!3!!1![B,D] | !4!!2![^A,^C]2) [A,C] [A,C]3 | [K:bass] !3!!1![B,^D]2 [B,D] [B,D]2 !2!B, | (E2 G,) !1!B,2 B,, | !^!!3!E,3- E,2 :: z | [K:treble] !4!!2![^CE]2 [CE] [CE]3 | !3!!1![^D^F]2 [DF] [DF]3 | [^CE]2 [CE] [CE]3 | !^![^D^F]3- [DF]2 D | E2 E E z z |[K:bass] !3!!1![A,C]2 [A,C] [A,C]2 !1!C | B,A,G, D2 D, |1 !^!G,3- G,2 :|2 !3!E,2 [E,B,]- !fermata![E,B,]2 z ||[K:treble] [B,D]2 [B,D] [B,D]3 | [CE]2 [CE] [CE]3 | [B,D]2 [B,D] [B,D]3 | !^![CE]3- [CE]2 ([B,D] | [^A,^C]2) [A,C] [A,C]3 | [K:bass] [B,^D]2 [B,D] [B,D]2 B, | (E2 G,) B,2 B,, |"_Schluß" !^!E,3- E,2 z || [M:2/4] !4![A,CE]2 !3![A,DF][A,CE] | [A,DF][A,CE] !4![E,^G,D]!3!!2![A,C] | [A,CE]2 [A,DF][A,CE] | [A,DF][A,CE] [E,^G,D][A,C] || !4![A,CE]2 (!5!!3![^F,A,E]!4!!2![=G,B,]) | ([^F,A,E][G,B,]) (!1!B,!5!E,) | [A,CE]2 ([^F,A,E][=G,B,]) | ([^F,A,E][G,B,]) (!1!B,E,) || [A,CE]2 [A,DF][A,CE] | [A,DF][A,CE] [E,^G,D][A,C] | "_Vom Anfang ohne Wiederholungen\nbis zum Schluß.\n" [A,CE]2 [A,DF][A,CE] | [A,DF][A,CE] [E,^G,D]!fermata![A,C] |]

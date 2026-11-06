@@ -1,0 +1,18 @@
+X:1
+C:Farrenc, Louise (1804–1875)
+%%score { 1 | ( 2 3 ) }
+L:1/8
+M:6/8
+K:C
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:3 bass 
+%%MIDI program 0
+V:1
+"^Andantino" e>fe a>gf | e>fe b>^ge/d/ | c>dc !turn!B>df | (A3 ^G2) z | e>fe a>gf | e>fe g>fe | "^♯\n" !turn!d>ef c>dB | c3 z2 [EG] | [FA]2 [FA]({AB)} [Ac]>[GB][FA] | [EG]2 [Ec]({cd)} e2 [EG] | [FA]2 [FA]({AB)} [Ac]>[GB][FA] | [EG]>[Gc][ce] [eg]2 G | T^G>^FG"_cresc." TA>GA | TB>AB Tc>Bc | d2 d Td3 |!p!{^cd} e2 z!>(! ([A=c^f]3!>)! | [^GBe]2) z!>(! ([Ac^f]3!>)! | [^GBe]>^de/d/ e/d/e/d/e/d/) |"_Dol." e>fe a>gf | e>fe b>^ge/d/ | c>dc !turn!B>df | (A3 ^G2) z | B>cB f'>d'b | A>BA e'>c'a | _B>df A>=B^G | (A>Bc/d/ e>fe/d/) | (c/B/A/B/c/d/ e/f/e/d/c/B/) | [Ac]3 [^GB]3 | [EAce]3 [DE^G]3 | ([CEA]>EC/A,/) z z2 | z6 |]
+V:2
+"^Dol." [A,CE]2 [A,CE] [A,CE]2 [A,CE] | [^G,B,E]2 [G,B,E] [G,B,E]2 [G,B,E] | [A,CE]2 [A,CE] [D,F,B,]2 [D,F,B,] | [E,A,C]2 [E,A,C] [E,B,]2 [E,E] | [A,CE]2 [A,CE] [A,CE]2 [A,CE] | [G,_B,^CE]2 [G,B,CE] [E,G,B,C]2 [E,G,B,C] | [F,A,D]2 D, [G,E]2 [G,D] | C>G,E, C,2 z | C,>CC C,>CC | C,>CC C,>CC | C,>CC C,>CC | C,>CC C2 [CE] | [B,E]2 [B,E] [CE]2 [CE] | [^G,E]2 [G,E] [A,E]2 [A,E] | [F,A,]2 [F,A,] [F,A,]2 [F,A,] | (E,>^G,B,/E/ ^D>CB,/A,/) | (E,>^G,B,/E/ ^D>CB,/A,/) | E,2 z z3 | A,/C/E/C/A,/C/ A,/C/E/C/A,/C/ | ^G,/B,/E/B,/G,/B,/ G,/B,/E/B,/G,/B,/ | A,/C/E/C/A,/C/ D,/F,/B,/F,/D,/F,/ | E,/A,/C/A,/E,/A,/ E,/B,/^G,/E,/G,/B,/ | D,/F,/B,/D/B,/F,/ D,/F,/B,/D/B,/F,/ | C,/E,/A,/C/A,/E,/ C,/E,/A,/C/A,/E,/ | D,/F,/_B,/D/B,/F,/ E,/A,/C/A,/E,/=B,/ | A,/C/ E2 ^G,/B,/ E2 | A,/C/ E2 ^G,/B,/ E2 | (A,>B,C/D/ E/F/E/D/C/B,/) | (A,/C/B,/A,/G,/F,/ E,/F,/E,/D,/C,/B,,/) | A,,2 z (E,/A,/E,/C,/E,/C,/) | A,,2 z z3 |]
+V:3
+x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | A,2 A, ^G,2 G, | A,2 A, ^G,2 G, | x6 | x6 | x6 | x6 |]

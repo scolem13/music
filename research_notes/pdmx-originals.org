@@ -3,9 +3,29 @@
 
 * Summary
 - 1625 scores: 869 original (kept), 546 arrangements, 210 unsure (left out)
-- kept, confidence high (0.85+): 484
-- kept, confidence medium (0.65-0.84): 256
-- kept, confidence low (<0.65): 129
+- kept, confidence high (0.85+): 496
+- kept, confidence medium (0.65-0.84): 259
+- kept, confidence low (<0.65): 130
+* Celebrated arrangements (in the directory)
+Judged a transcription of the famous arrangement itself (instrumentation matches); conf = that.
+| conf | work | arranger | PDMX title | why |
+|-
+| 0.95 | Mussorgsky (orch. Ravel): Pictures: The Great Gate of Kiev | Ravel | 10 La grande porte de Kiev | Ravel orchestral parts, French names |
+| 0.95 | Mussorgsky (orch. Ravel): Pictures: Bydlo | Ravel | 4 Bydlo | Ravel orchestral parts |
+| 0.95 | Mussorgsky (orch. Ravel): Pictures: Hut on Hen's Legs | Ravel | 9 La Cabane sur des pattes de poule | Ravel orchestral parts |
+| 0.95 | Mussorgsky (orch. Ravel): Pictures: The Old Castle | Ravel | 2 Il vecchio castello | Ravel orchestral parts |
+| 0.95 | Mussorgsky (orch. Ravel): Pictures: Ballet of Unhatched Chicks | Ravel | 5 Ballet des poussins dans leurs coques | Ravel orchestral parts |
+| 0.95 | Mussorgsky (orch. Ravel): Pictures: Catacombs | Ravel | 8 Catacombae | Ravel orchestral parts |
+| 0.95 | Mussorgsky (orch. Ravel): Pictures: Samuel Goldenberg and Schmuyle | Ravel | 6 Samuel Goldberg and Schmuyle | Ravel orchestral parts |
+| 0.92 | Mussorgsky (orch. Ravel): Pictures at an Exhibition | Ravel | Tableaux d'une Exposition | Tableaux d'une Exposition, Ravel orchestra |
+| 0.9 | Bach (trans. Busoni): Nun komm der Heiden Heiland | Busoni | J.S. Bach Choralvorspiel ''Nun komm' der Heiden Heiland'' (Arrt F. Busoni) | Titled Arr. F. Busoni, piano |
+| 0.9 | Beethoven (trans. Liszt): Symphony No. 3 Eroica | Liszt | Symphony No.3.Eroica (L.v.Beethoven.Op.55.- F.Liszt) | Titled Eroica L.v.Beethoven Op.55 - F.Liszt, piano |
+| 0.85 | Rimsky-Korsakov (trans. Rachmaninoff): Flight of the Bumblebee | Rachmaninoff | The flight of the Bumblebee Korsakov Arr. Rachmaninoff | Titled arr. Rachmaninoff, piano |
+| 0.85 | Mussorgsky (orch. Ravel): Pictures at an Exhibition | Ravel | Pictures At An Exhibition | Full orchestra with cor anglais, mislabelled Tchaikovsky |
+| 0.8 | Schubert (trans. Liszt): Ständchen | Liszt | Schubert/Liszt - Ständchen | Titled Schubert/Liszt Ständchen, piano |
+| 0.8 | Schubert (trans. Liszt): Erlkönig | Liszt | Erlkönig - F. Schubert arr. F. Liszt | Piano transcription titled arr. F. Liszt |
+| 0.7 | Paganini (trans. Liszt): La Campanella (Grandes études de Paganini No.3) | Liszt | Franz Liszt: Grandes études de Paganini No.3 in G-sharp minor La Campanella | Liszt Paganini étude No.3 piano |
+| 0.5 | Wagner (trans. von Bülow): Die Meistersinger Vorspiel | Bülow | Die Meistersinger Von Nürnberg - Vorspiel (R.Wagner - H.v.Bülow) | Piano title credits H.v.Bülow |
 * Original (in the directory)
 ** Piano (284)
 | conf | work | PDMX title | parts | why |
