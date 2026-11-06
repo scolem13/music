@@ -69,13 +69,13 @@ const U = "http://127.0.0.1:8562";
 
   // spreadsheet
   await b.goto(U + "/practice/tune-directory.html");
-  check("spreadsheet drawn", await wait(`document.querySelectorAll('.tds tbody tr').length === 200`, 120));
+  check("spreadsheet drawn", await wait(`document.querySelectorAll('.tds tbody tr').length >= 200`, 120));
   await ev(`(() => { const x = document.querySelector('[data-q="both"]'); x.checked = true; x.dispatchEvent(new Event('change')); })()`);
   await b.sleep(400);
   const both = await ev(`[...document.querySelectorAll('.tds tbody tr')].map(r => r.cells[0].textContent)`);
   check("notation and a recording: Chew Chew Chew among them", both.some(t => /chew/i.test(t)), both.length + " rows");
   await ev(`document.querySelector('th[data-k="recs"]').click()`); await b.sleep(200);
-  const top = await ev(`+document.querySelector('.tds tbody tr').cells[7].textContent`);
+  const top = await ev(`+document.querySelector('.tds tbody tr').cells[[...document.querySelectorAll('.tds thead tr:first-child th')].findIndex(t => /^Recordings/.test(t.textContent))].textContent`);
   check("sort by recordings, most first", top >= 4, String(top));
 
   await b.close(); srv.close();

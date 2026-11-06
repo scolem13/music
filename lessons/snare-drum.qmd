@@ -1,0 +1,219 @@
+---
+title: "The Snare Drum"
+toc: true
+toc-depth: 2
+description: "A beginner's snare drum: a labelled drum, stand and stick to click through, set-up, grip and playing position, the first strokes, rim shots and cross-stick, snares off, brushes, rolls, and a rudiment player that draws the sticking and plays it."
+instruments: [percussion, drums]
+topics: [instruments, technique]
+has: [interactive, svg, notation]
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/percussion/percussion.css?v=1">
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/band/sounds.js?v=23"></script>
+<script src="/apps/shared/percussion/rudiments.js?v=1"></script>
+<script src="/apps/shared/percussion/percussion-page.js?v=1"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+The snare drum is the first drum most players meet, and the one whose technique carries over to the rest of the section. It has a
+shallow shell, a **batter head** on top that you hit, and a bottom head with a set of **snares** (wires) stretched across it that buzz
+when the top head is struck. This page follows the percussion chapter of a teacher book (Kjos W74), in this site's own words. The
+sticks, grips, strokes, head changing and tuning are on [the Percussion page](percussion.qmd).
+
+## The parts {#parts}
+
+Click a number, a name or the drawing. **Quiz me** hides the names and asks for a part.
+
+::: {#sd-drum data-kind="snare"}
+:::
+
+::: {#sd-stick data-kind="stick"}
+:::
+
+## Set-up {#setup}
+
+1. Take the stand out of its case, open the legs and tighten the leg lock. Make the stand level on the floor.
+2. If the stand is in pieces, fit the top into the base. Set the height so the **top rim of the drum is a little below your waist**.
+   Many snare stands are made for a drum set and sit too low for concert playing. If so, an extension tube is needed.
+3. Open the support arms all the way and set their angle so the drum is level, or tilted a little.
+4. Take the drum out of its case and lay it on the arms with the **snares facing the floor** and the release lever straight in front of
+   you. The arms should hold it snugly (not over-tight) and must not touch the strainer, the snare head or the snares.
+5. Adjust the snare tension knob until the sound is crisp and clear.
+6. Put the music stand directly in front of the drum, just below eye level.
+
+## Stick grip {#grip}
+
+1. Bend your arm at the elbow so the forearm slopes slightly away from the floor.
+2. Pick a stick and find the spot about **a third of the way from the butt**. Pinch it between the first joint of your index finger and
+   the pad of your thumb. That is the **fulcrum**, the pivot point. The stick should feel tip-heavy, not evenly balanced. (Some
+   players make the fulcrum with the middle finger instead of the index finger.)
+3. Wrap the other fingers lightly round the stick so they touch it but stay relaxed. Leave a little gap between your thumb and index
+   finger. The thumb points toward the tip. Turn your wrist so your palm faces down.
+4. Do the same with the other hand so the two grips mirror each other. This is **matched grip**.
+
+**Traditional grip** (the left hand only; the right hand is as above). Put the stick in the web between thumb and index finger,
+about a third up from the butt, gripped just tightly enough to keep it there. Rest the shaft on the **ring finger** between its first and
+second joints, with the little finger beside it, the other two fingers on top of the stick and the thumb resting lightly on the index
+finger. A left-hand stroke comes from the forearm and wrist turning, as if turning a doorknob.
+
+## Playing position {#position}
+
+1. Stand behind the drum, feet comfortably apart, weight even, body free of tension.
+2. Hold the sticks loosely with the forearms angled slightly downward, palms down, elbows level with the sides of the body but slightly
+   away from them.
+3. Put the stick tips together at about **90 degrees**.
+4. Move toward the drum until the sticks are above the head a little off-centre and **1 to 2 inches** up. This is the ready position.
+   Change the stand height if you need to. (A tip from the book: "air drum" on an imaginary drum first, then go to the real one and set
+   the stand to match how you naturally stand.)
+
+## First strokes {#first-strokes}
+
+1. Raise the tip 8 to 12 inches above the head with your wrist, then drop it and let the stick **rebound** to where it began. That
+   is a full stroke. Use a relaxed wrist motion, like bouncing a ball. Hit slightly off-centre, directly above the snares, and adjust
+   until it sounds best.
+2. To play again with the same hand, go straight into the down motion of the next stroke. To stop between strokes, let the stick
+   bounce up to rest at 1-2 inches (a down stroke).
+3. Change volume by changing the height the stick starts from. Starting lower is softer, there is less rebound, and the wrist does
+   more of the work. At every volume aim for a **round, crisp** sound.
+
+Where on the head? Just off-centre rings best. The edge is often good for soft passages. Dead centre is drier, which helps when a
+passage needs lots of articulation.
+
+### Snare drum checklist
+
+- Standing up straight, weight on both feet, a good distance from the drum?
+- Forearms at a slight angle to the floor?
+- Sticks held correctly?
+- Right and left strokes sounding the same?
+- Striking the right place; sticks rebounding; good tone?
+
+## Rim work, snares off and brushes {#techniques}
+
+- **Playing on the rim.** Hit the rim with the shoulder or shaft of the stick, in either or both hands, for a wooden sound.
+- **Rim shot.** A sharp "crack". *One hand:* a forceful stroke that hits the head with the tip and the rim with the shoulder or shaft
+  at the same time; always loud, and good when rim shots fall among normal strokes. *Two hands:* lay the tip of one stick on the head,
+  shaft held up at an angle, and hit that shaft with the shoulder or shaft of the other stick. It is easier and any volume, but the set-up
+  means it can only be an isolated note.
+- **Cross-stick** (also rim click or side stick). Lay a stick across the drum with its tip on the head and the butt over the rim. Using
+  the tip as a pivot, lift with the index finger and thumb, then lower to the rim. The tip stays on the head the whole time. It
+  combines the wooden sound of the rim with the drum's resonance.
+- **Snares off.** The part tells you to throw off the release lever. The drum then sounds like a high-pitched tenor drum or tom when the
+  batter head is struck. The way you play does not change.
+- **Brushes.** Used a lot in jazz and show music, and for special effects on other instruments too. They are held with matched or
+  traditional grip. For ordinary rhythms use the same strokes as with sticks, but there is less rebound, so the wrist has to supply it.
+  For a smooth "swishing" or "stirring" sound, slide the wires of one brush (usually the left) round the head in steady circles or ovals,
+  like stirring a pot, while the other hand taps the rhythm on a part of the head that is out of the way. At slow tempos the
+  hand may make a whole circle on each beat; faster, about half that. Brushes need a head that has some roughness to grip the wires, such as
+  a coated or textured one. Brush parts are seldom written out in detail; the player chooses. See also [Drum Brushes](drum-brushes.qmd).
+
+## Rolls {#rolls}
+
+On the snare drum there are two ways to make the sound of a roll.
+
+- **Multiple bounce stroke** (a *buzz*, also called a press, closed or concert roll). One wrist movement makes **three or more** sounds,
+  each softer than the last, five to nine being usual. Think of putting the stick on the head with a little downward weight, not
+  hitting it; pressing too hard chokes the tone. A squeeze at the fulcrum, then easing the pressure once the stick has landed, makes a
+  sustained buzz. Practise with each hand alone, then join them: long buzzes in each hand with a fairly slow alternation of hands
+  (the roll's *primary strokes* or *skeleton*), overlapped so it sounds continuous. If the primary strokes are too fast the
+  sound tightens.
+- **Open double stroke** (an *open* or *rudimental* roll). One wrist movement makes **two equal** sounds. Pressure at the fulcrum just after
+  the first note makes the second; you have to experiment to find the pressure that gives two, and only two, even sounds. The fingers
+  pulling the stick toward the palm also help.
+
+Rolls in a part are normally written with **slashes through the stem** (or a trill sign), whichever kind of roll you play, and the
+composer seldom says which kind to use. The book's steps for reading one:
+
+1. Decide whether the music is in a duple or triple pulse.
+2. Count the slashes (including beams and flags) through the note to be rolled. That gives the rhythmic base of the roll.
+3. Divide the note into that many notes (triplets if the music is triple).
+4. Halve that number to get the number of hand motions (the primary strokes).
+5. Play a buzz or an open double stroke on each hand motion, and finish with a single stroke. Which kind suits the music is your choice.
+
+Example from the book: three slashes on a quarter note in 2/4 make eight thirty-second notes, so four hand motions plus the single stroke at
+the end. That roll is called a **quarter-note roll**, and with open double strokes a **nine-stroke roll** (four doubles and a single).
+Two slashes on an eighth note give four thirty-seconds, two hand motions and a single: an **eighth-note roll**, or with open doubles a **five-stroke
+roll**. The book also describes a **long roll**, made by playing repeated multiple bounce strokes.
+
+## Rudiments {#rudiments}
+
+**Rudiments** are the basic rhythm patterns of the snare drum: they do for the drummer what scales, thirds and arpeggios do for a
+flute or trombone player. Rudimental drumming grew in the military in the 1600s and 1700s as a way to send orders and messages to troops at
+a volume they could hear, and each army had its own patterns. Charles Stewart Ashworth's *A New, Useful and Complete System of Drum
+Beating* (1812) helped begin a formal list. Today there are **forty** International Drum Rudiments of the Percussive Arts Society in four families:
+
+I. **Roll** rudiments, II. **Diddle** rudiments, III. **Flam** rudiments, IV. **Drag** rudiments.
+
+There are many other "hybrid" rudiments from marching bands and drum corps. The book says to practise rudiments slowly at first and speed up only once the slow
+tempo is mastered; eventually play each from slow to fast and back (high strokes at first, closer to the head as it speeds up), and
+also at an even, moderate march tempo.
+
+### The families
+
+- **Rolls.** A single stroke roll is simply right, left, right, left, in even strokes. It is a rudiment, though the single stroke
+  itself is not counted as a roll stroke. It is the basis of all drumming and used on timpani, mallet instruments and other
+  instruments. The other rolls use the bounce or double strokes above.
+- **Diddles.** The **single paradiddle** (R L R R, L R L L) is the fundamental one. It gives the alternate stickings that
+  matter when music gets more technical or you play across several surfaces (timpani, concert toms, temple blocks, a kit). Both
+  strokes of every double (RR or LL) must be equal in tone and strength. For speed, use the open double stroke on the doubles.
+- **Flams.** A flam is a quiet **grace note** just before a louder **main note**, so it sounds like "f-LAM". It is named for the hand
+  that plays the *main* note: in a **right flam** the left plays the grace; in a **left flam** the right does. Lead into it with both sticks starting
+  at once, the grace-note stick a half to two inches above the head, the main stick three to ten inches: they land at slightly
+  different times. Do not start both at the same height and just move the sticks at different speeds; it looks and sounds sloppy.
+  With consecutive right flams the left plays the graces as taps and the right plays full strokes. With **alternating** flams the
+  grace is an *up stroke* and the main note a *down stroke*, so the hands are ready for the next flam. Learn right flams, then left, then
+  alternating; slowly, in a mirror if you can, as "faaa-LAM", then "fa-LAM", then "f-LAM".
+- **Drags.** A drag is **two** quiet grace notes by one hand, then a stronger main note by the other. It is to the drag family what the
+  flam is to flams. *Open* drag: the graces are an open double stroke, or two separate strokes at very slow tempos, but not so open that they
+  stop sounding like grace notes. *Closed* drag: the graces are a multiple bounce. The book would have you hold drags back until Flams and basic rolls are secure,
+  the second year for most students.
+- **Ruffs.** A note with three or more grace notes: the **four-stroke ruff** is three graces and a main note, graces usually single strokes, or
+  doubles when the speed or rhythm calls for it. A drag is a kind of ruff, sometimes called a three-stroke ruff.
+
+### Rudiment player
+
+Pick a rudiment. The staff shows the pattern as written, with the hand above each note; **R** and **L** are the right and left hands, letters in
+brackets before a hand are its grace notes (a flam is **(L)R**: the left hand's grace, then the right hand's main note), and a boxed chip is an accent. Press Play and the chips light as it sounds.
+Start slow.
+
+::: {#sd-rudiments}
+:::
+
+**What this player is.** Notation and sound are made from the same table of stickings, which is checked by a script so every bar has the right number of beats.
+The sticking of the single paradiddle's accents and the grace-note hands of the flam, drag and ruff are from the book. The stickings of the flam tap,
+flam accent, double paradiddle, paradiddle-diddle and five-stroke roll are the common ones written from memory of the Percussive Arts Society list and have **not been checked**
+against it; check them there. Note lengths are practice values (the list does not fix a speed). The grace notes and buzz are placed by the site's rules of thumb (the flam
+grace about 45 ms before the main note, each further grace 45 ms earlier, buzz hits 40 ms apart and fading), not measured from a drummer. The sound is the band's sampled snare,
+the same for both hands.
+
+## Care and maintenance {#care}
+
+1. When the drum or stand is dusty, wipe it with a soft clean cloth.
+2. Put a little light household lubricant on the snare strainer when needed.
+3. Tune the batter and snare heads now and then, and replace them when they are worn, dented or punctured. How is on the
+   [Percussion page](percussion.qmd#heads).
+4. Replace any rubber tips or insulators on the stand that are worn or missing.
+5. Keep sticks in a stick bag with your other mallets and beaters. When moving the drum and stand, put them in their cases and make
+   sure the **snare strainer is engaged** so the snares are not damaged.
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Percussion." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 266-303. Grip, the four basic strokes, snare drum parts / set-up / playing / rim work / snares off / brushes / rolls / rudiments, bass drum, changing and tuning heads. Retold in the page's own words; the labelled drawings are redrawn, not copied. Only the scanned pages were read (contents, pp. 273, 276, 285-302); the rest of the chapter was not.
+
+Percussive Arts Society. "International Drum Rudiments." PAS, [pas.org/resources/rudiments/](https://pas.org/resources/rudiments/). The forty rudiments the book names. Not read for this page: the stickings of the flam tap, flam accent, double paradiddle, paradiddle-diddle and five-stroke roll in the rudiment player are from memory and unchecked.
+:::
+<!-- /works-cited -->
+
+```{=html}
+<script>
+(function () {
+  function go() {
+    PercussionPage.diagram(document.getElementById("sd-drum"));
+    PercussionPage.diagram(document.getElementById("sd-stick"));
+    PercussionPage.rudiments(document.getElementById("sd-rudiments"));
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go); else go();
+})();
+</script>
+```

@@ -2,22 +2,23 @@
 title: "My Report"
 toc: true
 toc-depth: 2
-description: "A report of your work on the site's exercises (Theory Drills, chord analysis), from this browser: print it or copy it to hand it in. Teachers paste a report code here to check it."
+description: "A report of your work on the site's exercises (Theory Drills, chord analysis, Hearing Harmony), from this browser: print it or copy it to hand it in. Teachers paste a report code here to check it."
 ---
 
 ```{=html}
 <script src="/apps/shared/abcjs-basic.js?v=5"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
-<script src="/apps/shared/report/record.js?v=6"></script>
-<script src="/apps/shared/analysis/chord-analysis.js?v=8"></script>
+<script src="/apps/shared/report/record.js?v=8"></script>
+<script src="/apps/shared/analysis/chord-analysis.js?v=10"></script>
 ```
 
 ## Your report
 
 Everything you answer in the Theory Drills (on the [Theory Drills](theory/theory-drills.qmd) page and every chapter page) and in
-[Chord Analysis](theory/chord-analysis.qmd) is recorded in this browser: each question, every answer you gave, right or wrong, how long
-it took, and the hints and answers you looked at. Type your name, choose **Today** or **Everything**, then **Print or save as PDF**, or
+[Chord Analysis](theory/chord-analysis.qmd), and in [Hearing Harmony](practice/harmony-ear.qmd), is recorded in this browser: each question, every answer you gave, right or wrong, how long
+it took, and the hints and answers you looked at. Type your name, choose **Today**, **Last 7 days**, **Everything** or **Choose dates…** (a first and last day), then **Print or save as PDF**, or
 **Copy the report** to paste it into an assignment. Nothing is sent anywhere, and a different browser or computer has its own record.
+**Clear the record** (under the report) deletes everything, or only what is older than a date, after asking you to confirm; print or copy the report first if you need it.
 
 The same report opens from the **My report** button on every exercise.
 

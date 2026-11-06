@@ -1,0 +1,94 @@
+---
+title: "Shouldice: Everyday Musicality"
+description: "Heather Shouldice's podcast and blog (Research to Real Life) on Music Learning Theory, post by post: a link, a short summary, the MLT ideas, a class activity where there is one, and the matching steps in the Mullen and Gordon books."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<script src="/apps/shared/mlt/books/jri-lsa.js?v=1"></script>
+<script src="/apps/shared/mlt/books/shouldice.js?v=1"></script>
+```
+
+{{< include _scripts.qmd >}}
+
+Heather Nelson Shouldice (Eastern Michigan University; author of *Weaving It All Together*) writes
+[Everyday Musicality](https://everydaymusicality.com): a podcast on Music Learning Theory and the blog *Research to Real Life*. These pages
+link to every post with the site's own summary; the posts themselves are read at her site, used with her permission. The podcast pages are
+short show notes, so an episode's summary here comes from the notes and the title, not the audio (each step says which). Songs and pieces a
+post names are in the [Tune Directory](../practice/tune-directory.qmd).
+
+## The podcast
+
+### Episodes 0-19 (2020 to January 2021)
+
+```{=html}
+<div class="mlt-unit" data-book="shouldice" data-unit="ep2020"></div>
+```
+
+### Episodes 20-37 (2021)
+
+```{=html}
+<div class="mlt-unit" data-book="shouldice" data-unit="ep2021"></div>
+```
+
+### Episodes 38-51 (2022)
+
+```{=html}
+<div class="mlt-unit" data-book="shouldice" data-unit="ep2022"></div>
+```
+
+### Episodes 52-59 (2023)
+
+```{=html}
+<div class="mlt-unit" data-book="shouldice" data-unit="ep2023"></div>
+```
+
+### Episodes 60-65 (2024)
+
+```{=html}
+<div class="mlt-unit" data-book="shouldice" data-unit="ep2024"></div>
+```
+
+### Episodes 66-72 (2025 to 2026)
+
+```{=html}
+<div class="mlt-unit" data-book="shouldice" data-unit="ep2025"></div>
+```
+
+## The blog: Research to Real Life
+
+### RTRL.01-33 (2019)
+
+```{=html}
+<div class="mlt-unit" data-book="shouldice" data-unit="rtrl2019"></div>
+```
+
+### RTRL.34-50 (2020)
+
+```{=html}
+<div class="mlt-unit" data-book="shouldice" data-unit="rtrl2020"></div>
+```
+
+### RTRL.51-64 (2021)
+
+```{=html}
+<div class="mlt-unit" data-book="shouldice" data-unit="rtrl2021"></div>
+```
+
+### RTRL.65-72 (2022 to 2023)
+
+```{=html}
+<div class="mlt-unit" data-book="shouldice" data-unit="rtrl2022"></div>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Shouldice, Heather Nelson. *Everyday Musicality* (podcast and Research to Real Life blog). [everydaymusicality.com](https://everydaymusicality.com). Posts linked and summarised only, with the author's permission; podcast steps from show notes, audio not heard.
+
+Shouldice, Heather Nelson. *Weaving It All Together*. GIA Publications. Year unverified; not read for this page.
+:::
+<!-- /works-cited -->
+

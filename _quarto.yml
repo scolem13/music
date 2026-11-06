@@ -61,6 +61,17 @@ website:
           contents:
             - lessons/saxophone.qmd
             - lessons/brass-fingerings.qmd
+            - lessons/flute.qmd
+            - lessons/oboe.qmd
+            - lessons/clarinet.qmd
+            - lessons/bassoon.qmd
+            - lessons/trumpet.qmd
+            - lessons/horn.qmd
+            - lessons/trombone.qmd
+            - lessons/euphonium.qmd
+            - lessons/tuba.qmd
+            - lessons/percussion.qmd
+            - lessons/snare-drum.qmd
         - section: "Polyrhythm"
           contents:
             - lessons/poly-basics.qmd
@@ -80,8 +91,10 @@ website:
             - lessons/guitar-harmonics.qmd
             - lessons/travis-picking.qmd
             - lessons/guitar-picking.qmd
+            - lessons/justinguitar.qmd
             - lessons/guitar-for-bassists.qmd
             - lessons/bass-for-guitarists.qmd
+            - lessons/electric-bass.qmd
         - section: "Piano Technique"
           contents:
             - lessons/chord-shapes-piano.qmd
@@ -356,6 +369,14 @@ website:
             - practice/patterns.qmd
             - practice/patterns-by-ear.qmd
             - practice/sax-patterns-by-ear.qmd
+          - practice/flute-patterns-by-ear.qmd
+          - practice/clarinet-patterns-by-ear.qmd
+          - practice/horn-patterns-by-ear.qmd
+          - practice/bass-patterns-by-ear.qmd
+            - practice/flute-patterns-by-ear.qmd
+            - practice/clarinet-patterns-by-ear.qmd
+            - practice/horn-patterns-by-ear.qmd
+            - practice/bass-patterns-by-ear.qmd
             - practice/sax-home.qmd
             - practice/rhythms.qmd
             - practice/reading-benchmarks.qmd
@@ -444,6 +465,9 @@ website:
         - mlt/dmti.qmd
         - mlt/jri-lsa.qmd
         - mlt/jri-sax.qmd
+        - mlt/shouldice.qmd
+        - mlt/bluestine.qmd
+        - mlt/rasmussen.qmd
         - mlt/activities.qmd
         - mlt/rote-song.qmd
         - mlt/lesson-builder.qmd
@@ -515,6 +539,9 @@ website:
           - mlt/dmti.qmd
           - mlt/jri-lsa.qmd
           - mlt/jri-sax.qmd
+          - mlt/shouldice.qmd
+          - mlt/bluestine.qmd
+          - mlt/rasmussen.qmd
           - mlt/activities.qmd
           - mlt/rote-song.qmd
           - mlt/lesson-builder.qmd

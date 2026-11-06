@@ -1,0 +1,23 @@
+X:1
+Z:Set by C. Höcker - Feb. 2016 - CC0
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=85
+M:6/8
+K:E
+V:1 treble nm="S"
+%%MIDI program 0
+V:2 treble nm="A"
+%%MIDI program 0
+V:3 treble-8 nm="T"
+%%MIDI program 0
+V:4 bass nm="B"
+%%MIDI program 0
+V:1
+!p!"^Andante sostenuto" G3!<(! A2 G!<)! |!>(! c2 B!>)!!p! !fermata!B3 | [Q:1/4=95] !f! "^più animato" B3{/c} B ^A B | e3 B3 | G3{/A} G ^^F G | (B2 A) G3 | F3 FG A | c3 B2!p! B |{/c} B ^A B ed c | (B3- B^A) G | F B d d2 c | B2 z z2 z |!p! d2 z z2 z |!f! g3- g2 z | ^A2 B dc B | !fermata!B6 |!p!"^ritard." F3!<(! G2 F!<)! |!>(! B2 A!>)!!p! !fermata!A3 | !f! G3!<(! A2 G!<)! |!>(! c2 B!>)! !fermata!B3 |[Q:1/4=85]"^Tempo 1" z6 | z6 |!f! =d3 f e B | =d3 c3 | e3 eA c | c3 B3 |!pp! ^A2 z z2 z | c2 z z2 z | D2 E GF E | E3- E2 F |!p! F2 F F2 F | "^cresc." (F6 |!<(! FGA Bcd!<)! |!>(! egf ed)!>)! c |!mf! B2 G G2 F | E2 z!<(! G3 | "^ritard." A2 G!<)! c2 B | !fermata!B6 |!pp! E3 F2 E | (G3- GF) E | !fermata!E6 |]
+V:2
+!p! E3!<(! E2 E!<)! |!>(! A2 G!>)!!p! !fermata!G3 | z6 | z6 |!f!!f! E3 E E E | E3 E3 | D3 DE F | D3 E2!p! E | E E E EF G | (F3 GF) E | D D F F2 E | D2 z z2 z |!p! A2 z z2 z |!f! G3- G2 z | C2 D FE D | !fermata!D6 |!p! D3!<(! E2 D!<)! |!>(! G2 F!>)!!p! !fermata!F3 |!f! E3!<(! E2 E!<)! | !>(! A2 G!>)! !fermata!G3 | z6 | z6 |!f! A3 B E E | E3 E3 | A3 A2 E | E3 E3 |!pp! F2 z z2 z | F2 z z2 z | B,2 E D2 E | E3- E2 E |!p! E2 E E2 E |"^cresc." (E6 |!<(! D3- DEF!<)! | !>(! GBA GF)!>)! E |!mf! G2 E D2 D | E2 z!<(! E3 | E2 E!<)! A2 G | !fermata!G6 |!pp! B,3 C2 B, | D3- D2 B, | !fermata!B,6 |]
+V:3
+!p! B3!<(! c2 B!<)! |!>(! d2 e!>)!!p! !fermata!e3 | z6 | z6 | B3{/c} B ^A B | e3 B3 | B3 B2 B | B3 B2!p! B | B B B B2 B | B3 e3 | B B B ^A2 A | B6- |!<(! B6-!<)! |!f! B3- B2 z | F2 B ^A2 B | !fermata!B6 |!p! B3!<(! B2 B!<)! |!>(! B2 B!>)!!p! !fermata!B3 |!f! B3!<(! c2 B!<)! | !>(! e2 =d!>)! !fermata!d3 |!f! =d3 f e B | =d3 c3 |!f! =d3 d c B | B3 A3 | e3 e2 A | A3 G3 | !pp! e6- | e6 | F2 G BA G | G3 z2 z |!p! c2 z z2 B |"^cresc." B2 B B2 B |!<(! B6-!<)! | !>(! B3- B2!>)! c |!mf! e2 B B2 A | G2 z!<(! B3 | c2 B!<)! d2 e | !fermata!e6 |!pp! G3 A2 G | (B3- BA) G | !fermata!G6 |]
+V:4
+!p! E,3!<(! E,2 E,!<)! |!>(! E,2 E,!>)!!p! !fermata!E,3 | z6 | z6 |!f!!f! E,3 E, E, E, | C3 B,3 | A,3 A,2 A, | A,3 G,2!p! G, | G, G, G, G,F, E, | D,3 E,3 | F, F, F, F,2 F, | G,2 z z2 z | !p! F,2 z z2 z |!f! E,3- E,2 z | F,2 F, F,2 B,, | !fermata!B,,6 | z6 | z6 |!f! E,3!<(! E,2 E,!<)! | !>(! E,2 E,!>)! !fermata!E,3 | z6 | z6 |!f! F,3 G, G, G, | G,3 A,3 | C3 C2 A, | A,3 B,3 | !pp! C2 z z2 z | ^A,2 z z2 z | B,,2 B,, B,,2 B,, | C,3 z2 z |!p! ^A,2 z z2 z | z2 z z2 A, | "^cresc."!<(! A,2 A, A,2 A,!<)! |!>(! G,3- G,2!>)! A, |!mf! B,2 B,, B,,2 B,, | E,2 z z2 z | z6 | !fermata!z6 |!pp! E,3 E,2 E, | B,,3- B,,2 B,, | !fermata![E,,E,]6 |]

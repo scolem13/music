@@ -1,0 +1,62 @@
+---
+title: "Rasmussen: Audiation in the Wild"
+description: "Eric Rasmussen and Beau Taillefer's podcast on audiation and Music Learning Theory, episode by episode: a link, a short summary, the MLT ideas, whether a transcript is published, and the matching steps in the Mullen, Gordon, Shouldice and Bluestine pages; plus Rasmussen's courses and book."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<script src="/apps/shared/mlt/books/jri-lsa.js?v=1"></script>
+<script src="/apps/shared/mlt/books/shouldice.js?v=1"></script>
+<script src="/apps/shared/mlt/books/bluestine.js?v=1"></script>
+<script src="/apps/shared/mlt/books/rasmussen.js?v=1"></script>
+```
+
+{{< include _scripts.qmd >}}
+
+Eric Rasmussen (Early Childhood Music, Peabody Preparatory at Johns Hopkins; a student of Edwin Gordon) and the guitarist and teacher Beau
+Taillefer make [Audiation in the Wild](https://audiation-in-the-wild.simplecast.com), 108 episodes from 2022. Rasmussen's own site is
+[teachmusictokids.com](https://teachmusictokids.com). These pages link to every episode with the site's own summary; the episodes are heard at
+the show. A summary here comes from the episode's show notes and its title, **not the audio**, and each step says which; many notes are
+only the hosts' contact lines, so those are "Title only". No episode has a published transcript, and each step says so. Songs and pieces
+the notes name are in the [Tune Directory](../practice/tune-directory.qmd). Related: [Shouldice](shouldice.qmd), [Bluestine](bluestine.qmd).
+
+## The podcast
+
+### Episodes 1-39 (2022)
+
+```{=html}
+<div class="mlt-unit" data-book="rasmussen" data-unit="ep2022"></div>
+```
+
+### Episodes 40-83 (2023)
+
+```{=html}
+<div class="mlt-unit" data-book="rasmussen" data-unit="ep2023"></div>
+```
+
+### Episodes 84-97 (2024)
+
+```{=html}
+<div class="mlt-unit" data-book="rasmussen" data-unit="ep2024"></div>
+```
+
+### Episodes 98-108 (2026)
+
+```{=html}
+<div class="mlt-unit" data-book="rasmussen" data-unit="ep2026"></div>
+```
+
+## Courses, book and videos
+
+```{=html}
+<div class="mlt-unit" data-book="rasmussen" data-unit="courses"></div>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Rasmussen, Eric, and Beau Taillefer. *Audiation in the Wild*. Simplecast, 2022-2026. [feeds.simplecast.com/zxKr0BsI](https://feeds.simplecast.com/zxKr0BsI). Show notes read, audio not heard; no transcripts found.
+:::
+<!-- /works-cited -->

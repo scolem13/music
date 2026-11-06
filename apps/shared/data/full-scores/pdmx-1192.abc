@@ -1,0 +1,23 @@
+X:1
+C:Arr: Peter Christian Lutkin (1858-1931)
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=72
+M:4/4
+K:C
+V:1 treble nm="Soprano"
+%%MIDI program 52
+V:2 treble nm="Alto"
+%%MIDI program 52
+V:3 treble-8 nm="Tenor"
+%%MIDI program 52
+V:4 bass nm="Bass"
+%%MIDI program 52
+V:1
+"^Andante"!p! G2 | G4 E2 C C | (D2 F2) E3 G |!<(! G2!<)! E G c3/2 B/ A E |!>(! (G2 ^F2)!>)! G2 z2 | z E F E A2 z2 | z G A G c z z!<(! G | (GE)!<)! G c e3/2 c/ G E |!>(! (G2 F2)!>)! E2 E A | G4- G G"^poco cresc." E G |!<(! c3 c!<)!!>(! c2 A2!>)! | z2 z!p! A G3 C | !<(! A!<)!!>(! G!>)! z2 G2"^dim." F2 | E4!>(! D4 | C2!>)! z2 z4 | z8 | z2!mp! (B2 e2 d2) | "^cresc." c2 (e2 g2 f2 |!f! e2 d2 c2 B2) |"^dim. poco a poco e rit." A6 (BA) | G6 (AG | F2 D2) (G2 A2) | G8 |!pp!!>(! !fermata!G8!>)! |]
+V:2
+!p! C2 | C4 C2 C C | (C2 B,2) C3 E |!<(! E2!<)! C E E3/2 E/ E E |!>(! D4!>)! D2 z2 | z ^C C C D2 z2 | z D D D C G (G!<(!F) | (EC)!<)! E2 E3/2 E/ E C |!>(! (E2 D2)!>)! C2 z2 | z2 C D E E z2 | z2 F G A2 F2 | z2 z!p! C C3 C |!<(! C!<)!!>(! C!>)! z2 ^C2"^dim." D2 | =C4!>(! B,4 | C2!>)! z2 z4 | z2 (C2 F2 E2) | D4 E4- | E2 ^F2"^cresc." G4 |!f! G2 ^G2 A2 E2- | "^dim. poco a poco e rit." E2 FE D4- | D2 ED ^C4 | D2 B,2 =C4- | C2 DC B,4 | !pp!!>(! !fermata!C8!>)! |]
+V:3
+!p! E2 | E4 G2 E E | (A2 G2) G3 c |!<(! c2!<)! G G A3/2 ^G/ A A |!>(! (B2 A2)!>)! B2 z2 | z A A A A2 z2 | z B c B c G (A!<(!B) | c2!<)! c2 c3/2 c/ c c |!>(! (c2 B2)!>)! c2 z2 | z2 A B c c z2 | z2 c _B A2 c2 | z2 z!p! c _B3 B |!<(! _B!<)!!>(! B!>)! z2 A2"^dim." A2 | G6!>(! F2 | E2!>)!!p! (G2 c2 B2) | A2 (A2 d2 c2) | B4 (G2 AB) | c4"^cresc." (B2 cd) |!f! (e6 B2) | "^dim. poco a poco e rit." (c2 dc B4- | B2 cB) A4 | (A2 _A2 G2 ^F2) | =F4 F4 | !pp!!>(! !fermata!E8!>)! |]
+V:4
+!p! C,2 | C,4 C,2 C, C, | (F,,2 G,,2) C,3 C, |!<(! C,2!<)! C, C, A,,3/2 B,,/ C, C, | !>(! D,4!>)! G, G, G, G, | (G,4 F,)!<(! F, F, F,!<)! | (F,4 E,) E,!<(! D,2 | (C,C)!<)! (G,E,) C,3/2 G,/ G, G, |!>(! (G,2 ^G,2)!>)! A,2 z2 | z2 F, F, E, E, z2 | z2 D, E, F,2 F,2 | z2 z!p! F, E,3 E, |!<(! F,!<)!!>(! E,!>)! z2 E,2"^dim." D,2 | G,,4!>(! G,,4 | C,2!>)! z2!p! (C,2 D,E,) | F,4 (D,2 E,F,) | G,4 (E,2 F,G,) | A,4"^cresc." (G,2 A,B, | !f! C2 B,2 A,2 G,2) |"^dim. poco a poco e rit." F,6 (G,F,) | E,6 (F,E, | D,2 F,2 E,2 _E,2) | D,4 G,,4 |!pp!!>(! !fermata!C,8!>)! |]

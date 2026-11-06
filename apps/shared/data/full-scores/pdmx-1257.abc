@@ -1,0 +1,31 @@
+X:1
+C:Francis Poulenc
+%%score [ ( 1 2 ) ( 3 4 ) 5 6 ]
+L:1/8
+Q:1/4=66
+M:4/4
+K:D
+V:1 treble nm="Soprano" snm="S."
+%%MIDI program 52
+V:2 treble 
+%%MIDI program 52
+V:3 treble nm="Altos" snm="A."
+%%MIDI program 52
+V:4 treble 
+%%MIDI program 52
+V:5 treble-8 nm="Tenors" snm="T."
+%%MIDI program 52
+V:6 bass nm="Basses" snm="B."
+%%MIDI program 52
+V:1
+"^quem vidistis, pastores? dicite, annuntiate\nnobis, in terris quis apparuit? Natum vidimus,\net choros Angelorum collaudantes Dominum.\nDicite quidnam vidistis? et annuntiate\nChristi Nativitatem.\n""^Allegretto"!pp! B2 c d e z d !>!c | d z !>!c B f z f2 | e d c B A z B d | c z F E !>!F B F z |"^1" z8 | z8 | z8 | z8 | !p! !>!d2 c z !>!B G F z |!mf! F (!>!A B/) z/ d c e B z |[M:3/4] B B !>!d2 B z | [M:4/4]!>(! F4 F2!>)! F z |!p!"^2" B2 c d e z d c | d z c B f z f2 | e d c B A z B d | c z F E !>!F B F z |!mf! d2 c z B G F z | F (!>!=A B/) z/ d c !>!e B z | z!f! B2 B !>!d2 B z | F3 [Q:1/4=56]"^cédez" F !fermata!F2- F z |[Q:1/4=66] "^3" "^a tempo, sans ralentir"!ff! B3 B f z B2 | c z z ^d !>!B2 F z | B4- B z (!>!BA) |[M:5/4] ^A z z e ^d e !>!^g2 f z | [M:4/4]"^4" B3 c d z (cA) | B z z c !>!B2 F z | B3 B ^d2 (B=A) |[M:5/4] ^A z z e ^d e ^g2 f z | [M:3/4] z B!>(! c d B2!>)! |[M:2/4]!p! F3/2 z/ z2 | [M:4/4]"^5"!pp!"_Bouche fermée\n\n" B2 c d e z d c | d z c B f z f2 | e d c B A z B d | c z F E F B F z | f2 e z [EB] [=G=c] [Fd] z | F (!>!A B/) z/ d c e B z |"^6" z!mf! B2 B d2 B z | z!f! B2 [Q:1/4=56]"^cédez" B f2 B z |[M:3/4][Q:1/4=46] !ff! "^cédez encore" F4 F2 | "^court" !fermata!F6- | F z z4 |]
+V:2
+x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |[M:3/4] x6 |[M:4/4] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |[M:5/4] x10 |[M:4/4] x8 | x8 | x8 |[M:5/4] x10 |[M:3/4] x6 | [M:2/4] x4 |[M:4/4] (DEFG cAGF | FGFE Ac/) z/ f2 | x8 | x8 | (A=c) (^GB/) z/ x4 | x8 | x8 | x8 | [M:3/4] x6 | x6 | x6 |]
+V:3
+"_Bouche fermée\n\n"!pp! ([DF][EG][FA][GB] [Ac][GB][FA][EG] | [FA][EG][DF][EG] [Ac]) z (dc) | B A G D (DF/) z/ F G | (AC/) z/ D C !>!D G C z |"_Bouche fermée\n\n" (B!pp!FGE CDEG | F2 ED C) z (CD | GF^AG c) z (dB | =A2 BGFE F) z |!p! (FB) (AC/) z/ D B, C z | !mf! D2 E/ z/ ^G E A G z |[M:3/4] F E !>!F2 D z |[M:4/4]!>(! C4 C2!>)! C z | "_Bouche fermée\n\n" (DEFG cAGF | FGFE Ac/) z/ [FB]2 | G B, G E C z F G | C z D2 !>!B, B, C z | (FB) (AC/) z/ D D C z | D2 E/ z/ ^G E !>!=A G z | z!f! E2 D !>!G2 F z | C3 C !fermata!^D2- D z | B3 B B z ^G2 | F z z ^G !>!G2 C z | F4- F z !>!E2 |[M:5/4] c z z B ^A B !>!^d2 c z | [M:4/4] B3 A =G z F2 | G z z F !>!G2 C z | F3 F ^G2 E2 |[M:5/4] c z z B ^A B ^d2 c z | [M:3/4] z B =A G (EG) |[M:2/4] F3/2 z/ z2 |[M:4/4]!pp! B,2 C D E z D C | D z C B, F z [FB]2 | G B, G E C z F G | C z D2 B, B, C z | (A=c) (^GB/) z/ [B,E] [C=G] [DF] z | (D2 E/) z/ ^G E A G z | z E2 F G2 F z | z E2 F G2 F z |[M:3/4] C4 C2 | !fermata!^D6- | D z z4 |]
+V:4
+x8 | x6 F2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |[M:3/4] x6 |[M:4/4] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |[M:5/4] x10 |[M:4/4] x8 | x8 | x8 |[M:5/4] x10 |[M:3/4] x6 | [M:2/4] x4 |[M:4/4] x8 | x8 | x8 | x8 | F2 E z x4 | x8 | x8 | x8 |[M:3/4] x6 | x6 | x6 |]
+V:5
+!pp! B2 c d e z d !>!c | d z !>!c B f z (BA) | G F E G F z d B | F z G B !>!G E F z | "_Bouche fermée\n\n" (C2 Bc ^ABcA!pp! | BFBG ^A) z (AB | cBeg fe/) z/ (fB | c=A dBdG ^A) z | !p! !>!B2 F z G E F z |!mf! B (!>!A ^G/) z/ E A c e z |[M:3/4] d c !>!B2 =G z | [M:4/4] (FGAB cd F) z | B2 c d e z d c | d z c B f z (dc) | B f B d c z d f | (ac/) z/ B c !>!d e f z | d2 c2 f B ^A z | B (!>!=A ^G/) z/ E A !>!c e z | z!mf! (Bc d) !>!e2 g z |!f! B3 ^A !fermata!B2- B z | B3 B f z B2 | c z z ^d !>!B2 c z | "^éclatant\n" B c ^d !>!e f z (!>!^ge) |[M:5/4] f z z c B c !>!e2 f z |[M:4/4] B3 c d z (cA) | B z z c !>!B2 c z |"^éclatant\n" B c ^d e f z (^ge) |[M:5/4] f z z ^g f g e2 f z | [M:3/4] z B!>(! c d B2!>)! |[M:2/4] F3/2 z/ z2 |[M:4/4]!p! f2 d2 c z B A | B z d B c z (dc) | B f B d c z d f | (ac/) z/ B c d e f z | ^d2 =d z B f d z | B (!>!A ^G/) z/ E A c e z | (Bc d) e f2 g z | (Bc d) e f2 g z |[M:3/4] B4 ^A2 | !fermata!^d6- | d z z4 |]
+V:6
+z8 | z8 | z8 | z8 |!f! B,,2 C, D, E, z D, C, | D, z !>!C, B,, F, z F,2 | E, D, C, B,, ^A,, z B,, D, | F, z F, E, F, B, F, z | z8 | z8 |[M:3/4] z6 | [M:4/4]"_Bouche fermée\n\n"!mf!"^1. Solo"!>(! D,4!>)! D,2 D, z |"^Tutti" B,,3 B, A,2 A,, z | G,,3 G, F, z B,,2 | C, D, E, G, F, z B, G, | F, z G,2 !>!G, G, F, z | B,2 F,2 G, E, F, z | z8 | !mf! G,2 F,2 E,2- E, z |!f! F,3 G,, !fermata!B,,2- B,, z | B,3 B, B, z ^G,2 | F, z z ^G, !>!G,2 F, z | z8 |[M:5/4] z10 |[M:4/4] B,3 A, =G, z F,2 | G, z z F, !>!G,2 F, z | z8 | [M:5/4] z10 |[M:3/4] z B, =A, G, (E,G,) |[M:2/4] F,3/2 z/ z2 |[M:4/4]!pp! B,,3 B, A,2 A,, z | G,,3 G, F, z B,,2 | C, D, E, G, F, z B, G, | F, z G,2 G, G, F, z | B,2 E, z G, B, B,, z | z8 | G,2 F,2 E,2- E, z | G,2 F,2 E,2- E, z |[M:3/4] F,4 F,,2 | !fermata!B,,6- | B,, z z4 |]

@@ -3,6 +3,8 @@ title: "Interactive Tools"
 description: "Every interactive tool used in the lessons, and the lessons that use each one."
 ---
 
+## The tools
+
 Each tool below is used in the lessons listed under it. The foot of every lesson also lists the other lessons
 sharing its tools. Written by `node scripts/tool-catalog.cjs`.
 

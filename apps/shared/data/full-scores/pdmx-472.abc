@@ -1,0 +1,24 @@
+X:1
+C:G.F. Handel
+Z:AB 3909
+%%score { ( 1 3 ) | ( 2 4 ) }
+L:1/8
+Q:3/8=76
+M:6/8
+K:Ab
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:3 treble 
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:4 bass 
+%%MIDI program 0
+V:1
+c | AFf =ec'g | a=eTf gce | f2 A G2 =e | fga B=ef | G(f=e) Ff/_e/d/c/ | d3 G3 | c3 F3 | B3 E3 | A3 D3 | E2 z E2 z | EBc Ecd | Ee/d/c/B/ cGA | B,BG [CEA]3 | a3 =B3 | f3 Gg/f/e/=d/ | ef/e/=d/c/ T=B3 | gc'/b/a/g/ a3 | =d3 g3 | c3 f3 | =B3 z3 | G=Bc Gc=d | G=de Gef | Gg/f/e/=d/ e=Bc | =D(c=B) [=EGc]2 c | =egG ACF | =EGc AF z | z2 =A [FB]3 | [Fc]3 [Fd]3 | cf/e/d/c/ d=AB | C(B=A) [DFB]D/C/ B,/A,/ | z eB cC/B,/A,/G,/ |  z dA BB,/A,/G,/F,/ | z c'/b/a/g/ z f/e/d/c/ | z b/a/g/f/ z e/d/c/B/ | z a/g/f/=e/ z d/c/B/A/ | z g/f/=e/=d/ cef | cfg cga | cab cc'/b/a/g/ | a=ef Gge | Ff/e/d/c/ z B/A/G/F/ | z e/d/c/B/ z A/G/F/=E/ | z d/c/B/A/ z G/F/=E/=D/ | z c/B/A/G/ AB/A/G/F/ | C=EF CFG | CGA CAB | Cc/B/A/G/ A=EF | G,G=E [A,CF]3 |]
+V:2
+z | z6 | z3 z2 C | A,F, [K:treble]F =EcG | A=EF GCD |[K:bass] B,G,C A,F,A, | B,D,B,, E,G,E, | A,C,A,, D,F,D, | G,B,,G,, C,E,C, | F,A,F, B,,D,B,, | E,,2 z E,,2 z | E,,G,A, E,,A,B, | G,E,G, A,E,F, | D,B,,E, A,,C/B,/A,/G,/ | F,A,/G,/F,/E,/ =D,F,/E,/D,/C,/ | =B,,=D,/C,/B,,/=A,,/ G,,=B,G, | CF,A, G,,G,/F,/E,/=D,/ | C,E,C, F,A,F, | B,=D,B,, E,G,E, | A,CA, =D,F,D, | G,=B,G, CF,A, | G,,G,=A, G,,A,=B, | G,,=B,C G,,C=D | =B,G,B, CG,A, | F,=D,G, C,2 z | z6 | z3 z2 F, | =A,CC, D,F,,B,, | =A,,C,F, D,B,,B, | =A,F,A, B,F,_G, | E,C,F, B,,2 x | [G,B,]2 G,, A,,2 x | [F,A,]2 F,, G,,2 x | [=E,G,]3 F,A,F, | B,D,B,, E,G,E, | A,CA, DF,D, | G,B,G, C,C=D | C,=D=E C,EF | C,FG =ECE | FCD B,G,C | A,F,A, B,D,B,, | E,G,E, A,C,A,, | D,F,D, G,B,,G,, | C,=E,C, F,B,,D, | C,,C,=D, C,,D,=E, | C,,=E,F, C,,F,G, | =E,C,E, F,C,D, | B,,G,,C, [F,,F,]3 |]
+V:3
+x | x6 | x6 | x6 | x6 | x6 | z B/A/G/F/ z e/d/c/B/ | z A/G/F/E/ z d/c/B/A/ | z G/F/E/=D/ z c/B/A/G/ | z F/E/D/C/ z B/A/G/F/ | z GA z AB | x6 | x6 | x6 | x6 | x6 | x6 | x3 z f/e/=d/c/ | z b/a/g/f/ z e/=d/c/=B/ | z a/g/f/e/ z =d/c/=B/=A/ | z g/f/e/=d/ ef/e/d/c/ | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x3 a3 | d3 g3 | c3 f3 | B3 x3 | x6 | x6 | x6 | x3 d3 | G3 c3 | F3 B3 | =E3 x3 | x6 | x6 | x6 | x6 |]
+V:4
+x | x6 | x6 | x2 [K:treble] x4 | x6 |[K:bass] x6 | x6 | x6 | x6 | x6 | z E,F, z F,G, | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 |]

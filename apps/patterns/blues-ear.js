@@ -175,7 +175,7 @@
 
   var ST = function () { return P._ST(); };
   P.mount("blues-ear", {
-    store: "bluesEar.v1",
+    store: "bluesEar.v1", title: "Blues Changes by Ear",
     defaults: { blues: "major", level: "1", mlevel: "m1", drums: "on", pool: "level", key: "random", tempo: 126, notation: "off", syms: "after", tune: "off", bars: "phrase", from: 1, to: 4, busy: "full", hist: {} },
     question: function (S) {
       var w = null;

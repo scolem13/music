@@ -1,0 +1,22 @@
+X:1
+C:Francesco Cortevvia (1502-1571)
+%%score [ 1 2 3 4 ]
+L:1/8
+M:6/8
+K:G
+V:1 treble nm="Soprano"
+%%MIDI program 52
+V:2 treble nm="Alto"
+%%MIDI program 52
+V:3 treble-8 nm="Tenor"
+%%MIDI program 52
+V:4 bass nm="Bass"
+%%MIDI program 52
+V:1
+G2 c B2 G | A B c d2 z | e2 d c2 B | A B G A2 z | G2 c B2 G | A B c d2 z | e2 d c2 B | A G F G2 B | c A2 B3 | z3 z2 B | c A2 B2 G | G2 B G3!fine! || d2 e d2 c | B c d B2 z | e2 B d2 A | c B A B2 z | d2 e d2 c | B e d B2 z | d2 B B2 A | G G F G3!D.C.! |]
+V:2
+G2 E G2 D | F G G F2 z | G2 G E2 G | F G D F2 z | G2 E G2 D | F D A F2 z | G2 G E2 G | F B, D D2 G | E F2 G3 | z3 z2 G | E A2 G2 E | D2 D D3 || G2 G G2 E | G A F G2 z | G2 G G2 E | A G E F2 z | G2 G G2 E | G G F G2 z | A2 G G2 E | E D D D3 |]
+V:3
+d2 c d2 B | d d G A2 z | c2 B c2 d | d d B d2 z | d2 c d2 B | d B e d A B | c2 B c2 d | d G A B3 | z2 d B2 B | c A2 B2 d | c d2 d2 c | B2 A G3 || B2 c B2 c | d e d d2 z | c2 d B2 c | c d e d2 z | B2 c B2 c | d c A G d d | f2 d d B c- | c A A G3 |]
+V:4
+G,2 A, G,2 G, | D, G, E, D,2 z | C,2 G, A,2 G, | D, G, G, D,2 z | G,2 A, G,2 D, | D, G, A, D,2 z | C,2 G, A,2 G, | D, E, D, G,3 | z2 D, G,2 G, | E, F,2 G,3 | z2 D, G,2 C, | G,2 D, G,,3 || G,2 C, G,2 A, | B, A, D, G,2 z | C,2 G, G,2 A, | A, B, C B,2 z | G,2 C, G,2 A, | G, C, D, G,2 z | D,2 G, G,2 C, | C, D, D, G,3 |]

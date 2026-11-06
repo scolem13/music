@@ -1,0 +1,157 @@
+---
+title: "The Electric Bass"
+toc: true
+toc-depth: 2
+description: "Everything a beginning electric bassist needs: where the bass came from, why it is written an octave higher than it sounds, the parts, amplifier and cabinet, setting up, posture, the fretting and plucking hands, tuning, tone problems, care, and an interactive fretboard with a find-the-note quiz."
+instruments: [bass]
+topics: [instruments, technique]
+has: [fingering, interactive, svg]
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/ebass/ebass.css?v=1">
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/band/sounds.js?v=23"></script>
+<script src="/apps/shared/ebass/ebass-chart.js?v=1"></script>
+<script src="/apps/shared/ebass/ebass-page.js?v=1"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+The electric bass is the **low voice** of a rock, jazz or pop band. It has four thick strings, frets like a guitar, and it is plugged into an **amplifier**. This page walks through the instrument and then gives you an interactive fretboard to learn where the notes are. Already a guitarist? [Bass for Guitarists](bass-for-guitarists.qmd) covers what changes in your hands.
+
+## Where it came from {#history}
+
+- The electric bass **descends from the acoustic double bass**, the largest and lowest of the bowed string instruments. The double bass played mostly in orchestras with a bow, and it was also the usual bass instrument in jazz and dance bands.
+- Electric guitars began to be used in **1936**, and they were loud. Bands needed a bass that could keep up in volume.
+- The first successful electric bass was built in the United States by **Leo Fender** and first sold in **1951**.
+- It was louder, but it was also **smaller and easier to carry**, and easier to play accurately. Its body and neck were borrowed from the electric guitar, while its range and job stayed the same as the double bass's.
+- **Monk Montgomery**, bassist with Lionel Hampton, was a pioneer of striking the strings with **downward thumb strokes**, which acted like the strong downward bow or finger strokes on the double bass.
+- Today it is played in jazz groups, rock bands and other contemporary groups. Makers keep changing the wiring (**circuitry**) and the shapes of body and neck.
+
+## Written higher than it sounds {#transposition}
+
+The electric bass **sounds an octave lower than it is written**, as the double bass does. This keeps the music on the staff instead of down on a pile of ledger lines. Fingering fretboard notes and reading the staff are two different tasks: the chart below shows both, the **sounding** note you hear and the **written** note you read.
+
+The four open strings sound **E1, A1, D2, G2** (middle C is C4). They are written **E2, A2, D3, G3** in the bass clef.
+
+## The parts {#parts}
+
+- **Body**: carries the **pickup** (a magnet that turns string vibration into an electrical signal), the **pickguard**, the **bridge** where the strings end, the **volume knobs** and **tone knob**, and the **output jack** where the cable plugs in.
+- **Strap buttons**: one at the bottom of the body, one on the upper shoulder, for the strap.
+- **Neck**: the **fingerboard** with its metal **frets**, from the **nut** (where the strings leave the headstock) down to the body. The first fret is the one nearest the nut.
+- **Headstock**: holds the **tuners** (tuning pegs). On some basses all four are on one side, on others they are split on both sides.
+- **Strings**: **E A D G**, thickest to thinnest.
+
+## Amplifier, head and cabinet {#amp}
+
+A bass needs an amplifier. A **combo** has the amp and the speaker in one box. A **head** (the amp alone) can be paired with a separate speaker **cabinet**, so you can pick a good head and upgrade the cabinet later. The book's points:
+
+- **Impedance** is measured in ohms (Ω). Both heads and cabinets have a rating. The book's rule of thumb is that the head's rating should generally be **lower** than the cabinet's: a 4 Ω head into an 8 Ω cabinet is safe, but an 8 Ω head into a 4 Ω cabinet can overheat the head. (Check the amp's own manual before you connect anything. The rule is the book's, not checked here.)
+- **Two cabinets**: in **series** the ohms add (8 + 8 = 16 Ω; safe, a bit less power). In **parallel** the formula is (A × B) ÷ (A + B), so two 8 Ω cabinets make 4 Ω, which uses a 4 Ω head to its full capacity.
+- **Speaker size** changes the sound. Smaller speakers have more punch and midrange but give up low end. Larger ones have more low-mids and lows but can lose definition. More speakers add low end. Common cabinets: 2×10″ or 1×12″ (work for many styles), 1×15″ (good for rock, a bit muddy for concert or jazz band), 1×10″ (a little thin for electric bass).
+
+## Setting up {#setup}
+
+::: {.ebp-steps}
+1. **Strap**: connect it to the strap buttons (bottom of the body, top left shoulder).
+2. Put it over your shoulder and set it so the bass sits about at **belly-button height**, with the neck angled slightly **up**.
+3. **Turn the amp volume down**, then plug the amp into a power outlet.
+4. **Turn the volume on the bass down** too.
+5. Cable: one end into the bass's **output jack**, the other into the amp's **input jack**.
+6. Turn the amp on, then raise the volume on the amp and on the bass to a comfortable level.
+:::
+
+## Holding it {#posture}
+
+1. **Always use a strap**, sitting or standing. Standing, the strap carries the full weight of the bass.
+2. Sitting: **straight, on the front of the chair, feet flat**. Rest the curve of the body on your **right thigh** and the back of the bass against you.
+3. Correctly held, the **thickest string (E) is closest to the ceiling** and the thinnest (G) closest to the floor.
+4. **Left (fretting) hand**: grip the neck gently. The **thumb sits behind the neck at about the second fret**, pointing up with a slight curve.
+
+## The two hands {#hands}
+
+**Fretting hand.** The fingers are numbered **1 (index) to 4 (little finger)**. Press the string **all the way down** just **behind the fret** (on the nut side) for a clear tone. When two neighbouring strings are played at the same fret, the lower one is pressed with the **tip** of the finger and the higher one with the **pad**, so the finger rolls between them.
+
+**Plucking hand.** Use the **index (i)** and **middle (m)** fingers, one after the other. The thumb rests on the **E string**, on the top edge of the **pickup**, or on the body. Pluck **upward**; to rest, the finger comes to the next lower-sounding string (to stop on the G, use the D string). Plucked open strings at normal volume should not buzz on the frets. Both fingers should sound the **same**.
+
+**Where to pluck**: between the end of the fingerboard and the bridge. The tone is fuller further toward the neck and thinner toward the bridge (a general fact, not in the book).
+
+## The fretboard {#fretboard}
+
+Fretboard diagrams in the book stand the neck up with the headstock at the top and show the strings **E A D G** left to right. The one below lies on its side the way **tab** is written: the **G string on top**, **E at the bottom**. A dot on a fret means "press here"; "open" means the unfretted string. On the first four frets, **one finger per fret**: fret 1 with finger 1, fret 2 with finger 2, and so on (the book's chart does this).
+
+Because the strings are tuned in fourths (E to A to D to G), each note a string higher is 5 frets **lower** on the next string: fret 5 of the E string is the same pitch as the open A string. That makes the same note available in several places.
+
+### Explorer {#explorer}
+
+Click any fret to **hear** it, see its **written** note on the bass clef, and light up the other places the same pitch lives (orange). Or choose a note name to see all of its positions.
+
+```{=html}
+<div id="eb-explorer"></div>
+```
+
+### Find the note {#quiz}
+
+You get a note and find it on the fretboard. In **staff** mode it must be exactly that pitch; in **name** mode any octave will do. Wrong clicks play the note you chose, so you learn what it was.
+
+```{=html}
+<div id="eb-quiz"></div>
+```
+
+## Tuning {#tuning}
+
+In a group every instrument has to be in tune with the others. You tune by turning the **tuning pegs**: **loosen** a string to lower the pitch, **tighten** it to raise it. Press an open string and listen to the sound here:
+
+```{=html}
+<div id="eb-strings"></div>
+```
+
+With an **electronic tuner**:
+
+1. Plug the bass's cable straight into the tuner's input and turn the tuner on.
+2. Pluck an open string. The needle (or light) shows the note. Pointing **left** means **flat**: tighten. Pointing **right** means **sharp**: loosen.
+3. Approach the note **from below**: if a string is sharp, first loosen it under the pitch, then tighten up to it. This keeps the tension steady.
+4. In the middle of the dial (or a green light) the string is in tune. Do the **E, A, D and G** strings one at a time.
+5. Always **double-check by ear** while playing with the band. A bass player must keep listening.
+
+Another way to check by ear (not in the book): the note at **fret 5** of one string matches the next open string up. Play fret 5 of E, then open A; they should sound the same.
+
+## Articulation {#articulation}
+
+How a note starts (its **attack**) comes from the plucking fingers, **alternating i and m**. The strength of the pluck shapes the note. Aim for an **even sound** from both fingers. A note can ring on, or you can **mute** it: use the index or middle finger (usually the one that did not pluck) to stop the string.
+
+## Tone problems {#tone-problems}
+
+| What you hear | Probably because… | Try this |
+|---|---|---|
+| **No sound** | Amp not plugged in or not switched on | Check the amp plug and power switch |
+| | Amp volume or bass volume turned down | Turn up both volume knobs |
+| **Buzzing** | Fretting in the wrong place on the fret | Move the finger to just behind the fret |
+| | Not enough pressure in the left hand | Press harder |
+| **Crackling** | Bad cable or connector | Check both ends are pushed in; replace the cable |
+
+## Check yourself {#checklist}
+
+Have a friend or teacher check these: standing or sitting straight · shoulders relaxed · bass positioned right · right forearm and hand in the right place · right-hand fingers curved · left thumb behind the neck · left wrist straight, fingers arched · right hand between the end of the fingerboard and the bridge · plucking action correct · finger rests on the next string (or on the thumb after the E string) · index and middle make the same sound.
+
+## Looking after it {#care}
+
+After each practice: **turn the volume down** on the amp and the bass, switch the amp **off**, **unplug** the cable from both ends, **wipe the strings** with a soft cloth to remove dirt and oil, take off the strap and put the bass and strap in the case.
+
+## Why start electric bass in a band? {#band}
+
+For band directors, the book lists four reasons: it gives the band a solid bass voice and supports the tuba section; it supplies bassists for the jazz band, and some can move later to string bass (which advanced concert-band music uses); it gives a place in school music to students who aren't drawn to a traditional band instrument; and it can recruit low brass and woodwind players (a student could start tuba and electric bass at once, since some ideas carry over).
+
+```{=html}
+<script>
+EBassPage.explorer(document.getElementById("eb-explorer"));
+EBassPage.quiz(document.getElementById("eb-quiz"));
+EBassPage.strings(document.getElementById("eb-strings"));
+</script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Electric Bass." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 254-63. History, transposition, parts diagram, amplifier head and cabinet (impedance, speaker sizes), selecting players, setting up, posture, plucking and fretting hands, daily care, checklist, tone problems, tuning, articulation, and the fingering chart (p. 263). Retold in the page's own words. The fretboard on the page is redrawn; frets above 5 and the open-string frequencies are not from the book (unverified).
+:::
+<!-- /works-cited -->

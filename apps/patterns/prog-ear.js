@@ -474,7 +474,7 @@
   function save() { try { localStorage.setItem(KEY, JSON.stringify(ST)); } catch (e) {} }
   var DEF = { mode: "band", level: "1", mlevel: "m1", drums: "on", pool: "level", key: "random", tempo: 100, notation: "off", syms: "after", tonality: "major", borrowed: "off", tune: "off", busy: "full", hist: {} };
   var PROG_CFG = {
-    store: "progEar.v1", defaults: DEF,
+    store: "progEar.v1", title: "Odd Progression Out", defaults: DEF,
     question: function (ST) { return question(lv().id, { pool: ST.pool, tonality: ST.tonality, borrowed: ST.borrowed === "on", tune: ST.tune === "on", key: ST.key === "random" ? null : ST.key }); },
     hk: function (ST) { return lv().id + (ST.tonality === "major" ? "" : ":" + ST.tonality); },
     note: function (ST) { return levelText(lv(), ST.borrowed === "on").note; },
@@ -535,6 +535,14 @@
   }
   function one(i) { if (!cur) return; stop(); playClip(i, run); }
   function lv() { return level(ST.mode === "melody" ? ST.mlevel : ST.level); }
+  // ---- the student's report (SiteRecord, record.js loaded on first use): one item a question, tool "prog-ear"
+  var SR_SRC = "/apps/shared/report/record.js?v=8", srWait = [];
+  function withRecord(f) {
+    if (global.SiteRecord) return f(global.SiteRecord);
+    if (typeof document === "undefined") return;
+    srWait.push(f); if (srWait.length > 1) return;
+    var sc = document.createElement("script"); sc.src = SR_SRC; sc.onload = function () { var w = srWait; srWait = []; w.forEach(function (g) { if (global.SiteRecord) g(global.SiteRecord); }); }; document.head.appendChild(sc);
+  }
   function hk() { return CFG.hk(ST); }
   function score() { var h = ST.hist[hk()] || [], n = h.reduce(function (a, b) { return a + b; }, 0);
     ui.score.textContent = h.length ? "Last " + h.length + ": " + n + " right" + (h.length >= 10 && n >= 8 ? " · ready for the next level ✓" : "") : "No answers yet at this level."; }
@@ -542,7 +550,7 @@
     stop();
     var q = CFG.question(ST);
     if (!q) { status(CFG.none ? CFG.none(ST) : "No question could be made with these settings."); return; }
-    cur = { q: q, answered: false };
+    cur = { q: q, answered: false, t0: Date.now() };
     ui.result.innerHTML = ""; ui.reveal.hidden = true;
     ui.choices.forEach(function (b) { b.disabled = false; b.classList.remove("pe-right", "pe-wrong"); });
     ui.prompt.textContent = q.melodyMode ? "Three melodies over chords. Two outline the same progression. Which is different?"
@@ -570,6 +578,8 @@
   function answer(i) {
     if (!cur || cur.answered) return; cur.answered = true;
     var q = cur.q, ok = i === q.oddIndex, h = ST.hist[hk()] || []; h.push(ok ? 1 : 0); if (h.length > 10) h.shift(); ST.hist[hk()] = h; save(); score();
+    var t0 = cur.t0;
+    withRecord(function (SR) { var it = SR.add("prog-ear", { ex: CFG.title || "Odd Progression Out", q: { text: "Level " + (q.melodyMode ? ST.mlevel : ST.level) + ": " + ui.prompt.textContent }, want: NAMES[q.oddIndex] + " (" + q.diff.text + ")" }); it.at.push([NAMES[i], ok ? 1 : 0, Math.round((Date.now() - t0) / 1000)]); SR.save(); });
     ui.choices.forEach(function (b, j) { b.disabled = true; if (j === q.oddIndex) b.classList.add("pe-right"); else if (j === i) b.classList.add("pe-wrong"); });
     ui.result.innerHTML = "";
     ui.result.appendChild(el("div", ok ? "pe-ok" : "pe-no", (ok ? "Right. " : "Not quite. ") + NAMES[q.oddIndex] + " was the different one."));
@@ -616,6 +626,7 @@
     ui.clipBtns = NAMES.map(function (n, i) { var b = btnEl("▶ " + n, null, function () { one(i); }); bar.appendChild(b); return b; });
     bar.appendChild(btnEl("■", null, function () { stop(); status(""); }));
     h.appendChild(bar);
+    withRecord(function (SR) { if (bar.isConnected) bar.appendChild(SR.button(bar)); });
     ui.prompt = el("div", "pe-prompt", "Press Start."); h.appendChild(ui.prompt);
     var ch = el("div", "pe-choices");
     ui.choices = NAMES.map(function (n, i) { var b = btnEl(n + " is different", "pe-choice", function () { answer(i); }); b.disabled = true; ch.appendChild(b); return b; });

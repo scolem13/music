@@ -8,6 +8,7 @@
 //   { id, title, author, year, note, parts: [{ id, title, page, units: [unit] }] }
 //   unit: { id, title, page, skill?, tonality?, meter?, steps?: [step] }      (no steps = outline only, not entered yet)
 //   step: { id, title, page, phase: plan | first-whole | lsa | second-whole | bridge, lesson?,
+//           (link steps also: href, hrefLabel? (default "Read the post"), site?, transcript?: url | false (a published transcript, or none), xref)
 //           teacher: what happens here, in our words;  book: [what is printed there: names, sets, lists];
 //           activities: [MLTActivities ids];  student: { type, ... } }
 //   student types:
@@ -30,15 +31,22 @@
 // need abcjs, abc-core, abc-events, abc-play, pattern-set, rhythm-pattern-object, audiation.js.
 (function (global) {
   "use strict";
-  var BOOK_NAMES = { mullen: "Mullen, MLT Any Music Teacher Can Du…De", recorder: "JRI Recorder Teacher's Guide", dmti1: "Azzara and Grunow, DMTI Book 1", dmti2: "DMTI Book 2", dmti3: "DMTI Book 3", "jri-lsa": "Gordon, JRI Reference Handbook for LSAs", "lange-harmony": "Lange, Together in Harmony", "lange-harmony-again": "Lange, Together Again in Harmony" };
-  var PHASE = { plan: "Plan", "first-whole": "First Whole", lsa: "Part (LSA)", "second-whole": "Second Whole", bridge: "Bridge" };
+  var BOOK_NAMES = { mullen: "Mullen, MLT Any Music Teacher Can Du…De", recorder: "JRI Recorder Teacher's Guide", dmti1: "Azzara and Grunow, DMTI Book 1", dmti2: "DMTI Book 2", dmti3: "DMTI Book 3", "jri-lsa": "Gordon, JRI Reference Handbook for LSAs", bluestine: "Bluestine, Helping Children Audiate Music (blog)", justin: "JustinGuitar", shouldice: "Shouldice, Everyday Musicality", rasmussen: "Rasmussen and Taillefer, Audiation in the Wild (podcast)", "lange-harmony": "Lange, Together in Harmony", "lange-harmony-again": "Lange, Together Again in Harmony" };
+  var PHASE = { lesson: "Lesson", plan: "Plan", "first-whole": "First Whole", lsa: "Part (LSA)", "second-whole": "Second Whole", bridge: "Bridge" };
   var KIND = { technique: "Technique", game: "Game", movement: "Movement", instruments: "Instruments", singing: "Singing", bridge: "Bridge" };
 
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function pp(p) { return /[–-]/.test(String(p)) ? "pp. " + p : "p. " + p; }
+  function pp(p) { if (/^(posts?|lessons?|modules?) /.test(String(p))) return String(p); return /[–-]/.test(String(p)) ? "pp. " + p : "p. " + p; }
   function cite(refs) {
     return (refs || []).map(function (r) { return '<span class="mlt-cite">' + esc(BOOK_NAMES[r.book] || r.book) + ", " + pp(r.p) + "</span>"; }).join(" ");
+  }
+  // step.xref: [{ book, step?, unit?, page }] links to the same idea in another book's page (BOOK_PAGE), shown in the teacher view
+  var BOOK_PAGE = { mullen: "mullen.html", "jri-lsa": "jri-lsa.html", dmti: "dmti.html", bluestine: "bluestine.html", shouldice: "shouldice.html", rasmussen: "rasmussen.html" };
+  function xrefLink(r) {
+    var name = esc(BOOK_NAMES[r.book] || r.book), where = r.label ? esc(r.label) + ", " : "", pg = r.page ? pp(r.page) : "";
+    var h = BOOK_PAGE[r.book]; if (h && (r.step || r.unit)) h = "/mlt/" + h + "#" + (r.step || r.unit);
+    return h && (r.step || r.unit) ? '<a href="' + h + '">' + name + "</a>, " + where + pg : name + ", " + where + pg;
   }
   function actById(id) { return (global.MLTActivities || []).filter(function (a) { return a.id === id; })[0]; }
   function tuneLink(id, name) { return '<a href="/practice/tunes.html?tune=' + encodeURIComponent(id) + '">' + esc(name || id) + "</a>"; }
@@ -511,6 +519,10 @@
       t.innerHTML = '<div class="mlt-meta"><span class="mlt-phase mlt-ph-' + esc(st.phase) + '">' + esc(PHASE[st.phase] || st.phase) + "</span> " +
         '<span class="mlt-cite">' + pp(st.page) + "</span>" + (st.lesson ? ' <span class="mlt-dim">' + esc(st.lesson) + "</span>" : "") + "</div>" +
         "<p>" + esc(st.teacher) + "</p>" +
+        (st.href ? '<p><a href="' + esc(st.href) + '" target="_blank" rel="noopener">' + esc(st.hrefLabel || "Read the post") + (st.site ? " on " + esc(st.site) : "") + ' →</a>' +
+          (st.transcript ? ' · <a href="' + esc(st.transcript) + '" target="_blank" rel="noopener">Transcript →</a>' : st.transcript === false ? ' <span class="mlt-dim">· no transcript published</span>' : "") + "</p>" : "") +
+        (st.siteLinks ? '<p class="mlt-dim">On this site: ' + st.siteLinks.map(function (l) { return '<a href="' + esc(l.href) + '">' + esc(l.label) + "</a>"; }).join("; ") + "</p>" : "") +
+        (st.xref ? '<p class="mlt-dim">See also: ' + st.xref.map(xrefLink).join("; ") + "</p>" : "") +
         (st.book ? '<details class="mlt-book"><summary>In the book</summary><ul>' + st.book.map(function (b) { return "<li>" + esc(b) + "</li>"; }).join("") + "</ul></details>" : "");
       sec.appendChild(t);
       var acts = (st.activities || []).map(actById).filter(Boolean);

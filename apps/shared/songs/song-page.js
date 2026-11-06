@@ -81,6 +81,7 @@ function songPageRun() {
   document.title = song.title + " – Words & Chords";
   var box = document.getElementById("song-body");
   box.innerHTML = song.html;
+  var jg = window.JustinLink && JustinLink.line("song:" + id); if (jg) box.insertBefore(jg, box.firstChild);   // "On JustinGuitar" (works/justin-link.js)
   if (song.unverified) {
     var warn = document.createElement("p");
     warn.className = "song-unverified";

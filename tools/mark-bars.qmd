@@ -5,6 +5,8 @@ toc: false
 page-layout: full
 ---
 
+## Mark the bars
+
 ```{=html}
 <div class="mark-bars"></div>
 
@@ -66,7 +68,7 @@ them (the share sheet: Mail, Gmail, AirDrop, Files) or puts them in an email. Ea
 @media (max-width: 700px) { #quarto-margin-sidebar, .quarto-title-block .description { display: none; } }
 </style>
 <script src="/apps/shared/works/works-data.js?v=10"></script>
-<script src="/apps/shared/works/works.js?v=16"></script>
+<script src="/apps/shared/works/works.js?v=18"></script>
 <script src="/apps/shared/rec-sync.js?v=1"></script>
 <script src="/apps/shared/mlt/recordings.js?v=3"></script>
 <script src="/apps/shared/timestamp-player/mark-bars.js?v=1"></script>

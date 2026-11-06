@@ -1,0 +1,26 @@
+X:1
+%%score 1 [ ( 2 3 ) ( 4 5 ) ]
+L:1/8
+Q:1/4=60
+M:4/4
+K:Bb
+V:1 treble-8 nm="Tenor I"
+%%MIDI program 52
+V:2 treble-8 nm="Tenor II"
+%%MIDI program 52
+V:3 treble-8 
+%%MIDI program 52
+V:4 bass nm="Bass"
+%%MIDI program 52
+V:5 bass 
+%%MIDI program 52
+V:1
+"^Moderato""_dolce" F3/2 G/ | F6 d3/2 c/ | B2 A2 z2 (AB) | c3 F({/A} G3) F | F6!mf! d3/2 ^c/ | d4 B2 d3/2 ^c/ | d4 A2 (FG) | A3 A ^c2 A2 |!<(! d6!<)!!mf! f2 | e2 d2 c2 =B2 | !<(! (c3 d)!<)! e2 (dc) |!>(! B3!>)! A B2 d2 | c6 z2 | z8 | z8 | z8 | z8 | z8 | z2!<(! F2!<)! f4 | z2 c2 (cd) e2 | z2!p! B2!<(! B2 c2!<)! | _d8- | d2!>(! _d2!>)! c2 B2 |!>(! g2!>)! f2 z4 | z2!p! =d2 !>!d3 c | B8- | !fermata!B6 |]
+V:2
+z2 | z2!p! d3/2 d/ d2 z2 | z2 e3/2 e/ e e z2 | z2 e z z2 e e | z2 d3/2 d/ d2 z2 | z2 d3/2 d/ d2 d2 | z2!pp! .d3/2 .d/ .d2 .d2 | z .f .=e .d e2 ^c2 |!<(! d6!<)!"^poco piu moto" f2 | _e2 d2 c2 d2 |!<(! (e3 f)!<)! g2 e2 |!>(! d3!>)! c B2 d2 | c6"^a tempo"!p! F2 | F6 F2 | (F3 G) F2 d2 | c3 =B (c2 d2) | B2 z2 z2 d2 | c3 =B!<(! (c!<)!!>(! e2)!>)! d | B6 f2 | =e2 z2 z2 _e2 | d2 d2 z4 | z2!>(! g2 g2!>)! f2 | =e2 z2 z2!p! e2 | f4 F4 | G4 A4 | B3 d"_diminuendo" d3 ^c | !fermata!d6 |]
+V:3
+x2 | x2 B3/2 B/ B2 x2 | x2 c3/2 c/ c c x2 | x2 A x3 A A | x2 B3/2 B/ B2 x2 | x2 B3/2 B/ B2 B2 | x2 A3/2 A/ A2 A2 | x d ^c d A2 A2 | A6 d2 | c2 =B2 c2 d2 | G4 G2 c2 | B3 A B2 B2 | A6 F2 | F6 F2 | (F3 G) F2 B2 | A3 ^G A4 | F2 x4 B2 | A3 ^G (A _B2) A | F6 d2 | c2 x4 c2 | B2 B2 x4 | x2 _d2 d2 d2 | _d2 x4 d2 | =d4 F4 | G4 F4 | F3 B B3 B | B6 |]
+V:4
+z2 | z2!p! F,3/2 F,/ F,2 z2 | z2 F,3/2 F,/ F, F, z2 | z2 F, z z2 F, F, | z2 F,3/2 F,/ F,2 z2 | z2 G,3/2 G,/ G,2 G,2 | z2!pp! F,3/2 F,/ F,2 F,2 | z A, G, F, G,2 =E,2 |!<(! F,6!<)! _A,2 | G,2 G,2 G,2 G,2 |!<(! (G,3 F,)!<)! E,2 F,2 |!>(! F,3!>)! F, F,2 F,2 | F,6!p! F,2 | F,6 F,2 | (F,3 G,) F,2 F,2 | E,3 D, (E,2 F,2) | D,2 z2 z2 F,2 | E,3 D,!<(! (E,!<)!!>(! G,2)!>)! F, | D,6 _A,2 | G,2 z2 z2 F,2 | F,2 F,2 z4 | z2!>(! B,2 B,2!>)! B,2 | B,2 z2 z2!p! B,2 | B,4 F,4 | =E,4 _E,4 | D,3 F, F,3 G, | F,6 |]
+V:5
+x2 | x2 B,,3/2 B,,/ B,,2 x2 | x2 B,,3/2 B,,/ B,, B,, x2 | x2 B,, x3 B,, B,, | x2 B,,3/2 B,,/ B,,2 x2 | x2 G,,3/2 G,,/ G,,2 B,,2 | x2 D,3/2 D,/ D,2 D,2 | x A,, A,, A,, A,,2 A,2 | D,6 =B,,2 | C,2 D,2 E,2 F,2 | (E,3 D,) C,2 A,,2 | B,,3 C, D,2 B,,2 | F,6 F,2 | F,6 F,2 | (F,3 G,) F,2 F,2 | F,6 F,2 | (F,3 G,) F,2 [F,,F,,]2 | F,,4 F,,4 | F,,6 =B,,2 | C,2 x4 A,,2 | B,,2 B,,2 x4 | x2 =E,2 E,2 F,2 | G,2 x4 G,2 | F,4 F,4 | F,,4 F,,4 | B,,3 B,, B,,3 B,, | !fermata!B,,6 |]

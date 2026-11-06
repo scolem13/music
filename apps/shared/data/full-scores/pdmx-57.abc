@@ -1,0 +1,18 @@
+X:1
+%%score { 1 | ( 2 3 ) }
+L:1/8
+Q:1/4=60
+M:4/4
+K:C
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:3 bass 
+%%MIDI program 0
+V:1
+"^Lent" (aa^dd ^ff- f2) | z2 (ee ^ddcc | BB- B2) z4 | z8 | "^Conseillez-vous soigneusement: consider carefully." (aa^dd ^ff- f2) | z2 (ee ^ddcc | BB- B2) z4 | {/B} (d2 BB cc- c2 | BB- B2) z4 |{/B} d8- | d2"^Munissez-vous de clairvoyance: arm yourself with clairvoyance." (BB ddBB | ^GABd B!<(!AGA | B!<)!dB!>(!A ^GABd!>)! | ffAA- A2 z2 | z8 | "^Seul, pendant un instant: alone for an instant." ee^AA ^cc- c2) | z2 (BB ^AAGG | ^FF- F2) z4 | z8 | (ee^AA ^cc- c2) | z2 (BB ^AAGG | ^FF- F2) z4 |{/^F} A8 | "^De manière à obtenir un creux: so as to form a hollow." (E^FG^A B^cec |!<(! B^AG^F EFGA!<)! | B^cec!>(! B^AG^F | E^FG!>)!^A B^cec | dd- d2) z4 | z8 |"^Très perdu: very lost." (E^FG^A B^cec | !<(! B^AG^F EFGA!<)! | B^ce!>(!c B^AG^F | E^FG!>)!^A B^cec | dd- d2) z4 | "^Portez cela plus loin: carry it further."{/^F} A8- | A4 z4 |{/c} _A8- | A4 z4 | "^Ouvrez la tête: open your head."!<(! (_ABc_e!<)!!>(! dcBA!>)! | cc- c2) z4 |{/B} d8- | d4 z4 | !<(! (_ABc_e!<)! dcBA |!>(! cc- c2)!>)! z4 |{/B} d8 | (aa^dd ^ff- f2) | z2 (ee ^ddcc | BB- B2) z4 | z8 |"^Enfouissez le son: bury the sound." aa^dd ^ff- f2 | z2 (ee ^ddcc | BB- B2) z2 BB | ee- e2 z4 | z8 |]
+V:2
+z2 [CEA]4 [CEA]2 | z2 [CEA]4 [CEA]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [CEA]4 [CEA]2 | z2 [CEA]4 [CEA]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [A,DF]4 [A,DF]2 | z2 [^G,B,E]4 [G,B,E]2 | z2 [A,DF]4 [A,DF]2 | z2 [A,DF]4 [A,DF]2 | z2 [A,DF]4 [A,DF]2 | z2 [A,DF]4 [A,DF]2 | z2 [A,CE]4 [A,CE]2 | z2 [A,CE]4 [A,CE]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [^F,B,D]4 [F,B,D]2 | z2 [^F,B,D]4 [F,B,D]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [^F,B,D]4 [F,B,D]2 | z2 [A,^C^F]4 [A,CF]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [^F,B,D]4 [F,B,D]2 | z2 [^F,B,D]4 [F,B,D]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [^F,B,D]4 [F,B,D]2 | z2 [A,CE]4 [A,CE]2 | z2 [A,CE]4 [A,CE]2 | z2 [_A,CF]4 [A,CF]2 | z2 [_A,CF]4 [A,CF]2 | z2 [_A,CF]4 [A,CF]2 | z2 [_A,CF]4 [A,CF]2 | z2 [A,DF]4 [A,DF]2 | z2 [A,DF]4 [A,DF]2 | z2 [_A,CF]4 [A,CF]2 | z2 [_A,CF]4 [A,CF]2 | z2 [A,DF]4 [A,DF]2 | z2 [CEA]4 [CEA]2 | z2 [CEA]4 [CEA]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [CEA]4 [CEA]2 | z2 [CEA]4 [CEA]2 | z2 [G,B,E]4 [G,B,E]2 | z2 [A,CE]4 [A,CE]2 | z2 [A,CE]4 [A,CE]2 |]
+V:3
+A,,8 | A,,8 | E,,8 | E,,8 | A,,8 | A,,8 | E,,8 | D,,8 | E,,8 | D,,8 | D,,8 | D,,8 | D,,8 | A,,,8 | A,,8 | E,,8 | E,,8 | B,,,8 | B,,,8 | E,,8 | E,,8 | B,,,8 | ^F,,,8 | E,,8 | E,,8 | E,,8 | E,,8 | B,,,8 | B,,,8 | E,,8 | E,,8 | E,,8 | E,,8 | B,,,8 | A,,,8 | A,,8 | F,,8 | F,,8 | F,,8 | F,,8 | D,,8 | D,,8 | F,,8 | F,,8 | D,,8 | A,,8 | A,,8 | E,,8 | E,,8 | A,,8 | A,,8 | E,,8 | A,,,8 | A,,8 |]

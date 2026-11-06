@@ -1,0 +1,15 @@
+X:1
+Z:Transcription © R.S.B 2012
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=110
+M:3/4
+K:F
+V:1 treble nm="Part_1"
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+dd/^c/ Md2 d/4e/4f3/2 | f/4e/4d/e A4 | ee/d/ Me2 e/4f/4g3/2 | ff/e/ ff/e/ Md2 | f(3f/g/a/ ge{d} c2 | gg/a/ ba b2 | ag/f/ Mg2 Te2 | ff/e/ Mf2 F2 :: aa/g/ Ma2 a/4b/4c'3/2 | aa/g/ aa/g/ Mf2 | cB/A/ dc TBA | Gg{f} e4 | G/c/e/c/ G/c/e/c/ G/c/e/d/ | c(3e/f/g/ B4 | {c/} B/A/B/G/ MA4 | A>d{d} T^c4 | d>e fa d'a | g/f/e/f/ Md2 D2 :|
+V:2
+D,2 F,2 D,2 | A,,2 A,2 E,2 | ^C,2 A,,2 C,2 | D,2 A,,2 D,,2 | D,2 E,2 E,2 | C,2 C,2 E,2 | F,2 A,,2 C,2 | F,,6 :: F,,2 F,2 E,2 | F,2 C,2 F,,2 | A,2 B,2 G,2 | B,2 C2 C,2 | C,2 C,2 C,2 | C,2 E,2 D,2 | C,2 F,2 E,2 | D,2 A,2 G,2 | F,2 D,2 F,2 | A,2 D,4 :|

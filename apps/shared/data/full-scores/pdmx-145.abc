@@ -1,0 +1,15 @@
+X:1
+C:Anton Diabelli
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=126
+M:4/4
+K:F
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+"_dolce" (!1!AB |!p! !4!d2 c2) z z (!5!f!1!A | !2!A2 G2) z2!<(! (!2!Bd!<)! | !>(! !3!d2 c2)!>)! z2 (!1!G^G | !3!A2 F2)!<(! z2 (!1!AB!<)! |!mf! .d) z (c3!<(! def!<)! | .f2)"_cresc." !>!!1!G3 .!4!G.!3!G.!2!G |!f! (!1!G!5!edc!>(! !4!c=BAB!>)! | !p! !1!c2) z .!1!G (!>!!5!f.d) z .!1!G | (!>!!5!e.c) z .!2!c!<(! .=B.d.g!<)!.B | !>(! (!>!!3!d.c)!>)! z (!1!G/A/) .G.f .d"_cresc." (G/A/ | .G).e .c (!1!G/A/!<(! =B/!1!c/d/e/ !1!f/g/a/=b/!<)! |!f! .c') z !1!!3!!5![Gce] z !2!C z :| (!1!=c=d |!p! _e2 d2) z2 (!4!dA | !3!c2 B2) z2!<(! (!1!d!4!g!<)! | !>(! !3!g2 ^f2)!>)! z z!<(! (d!5!a!<)! |!>(! !4!a2 g2)!>)! z2 (!2!^fg | "_cresc." !4!_a2 =f2) z2 (!1!fg | !3!_a>g !2!f2) z2 (!1!f>g | !3!_a>g f2) z .!2!f (!1!e/f/g/f/ | .e) z!f! !arpeggio!.!1!!3!!5![ceg]2 !arpeggio!.[=Bdfg]2 (!2!^f/g/a/g/ | .e) z !arpeggio!.!1!!3!!5![ceg]2 !arpeggio!.[=Bdfg]2 (!2!^f/g/a/g/ | (!1!c/)!2!=B/!4!d/!1!c/ !3!e/d/!4!=f/!1!e/!>(! !3!g/!2!f/!4!a/!1!g/ !3!_b/!2!a/!4!c'/!>)!!3!b/ | !p! (.d').c'.b.a .!1!g.!4!f.e.d |"_rallentando" .!1!c) z !3!=B z !fermata!!2!_B2"^a tempo" AB | !p! !4!d2 c2 z z (!5!f!1!A | !2!A2 G2) z2!<(! (!2!Bd!<)! |!>(! !3!d2 c2)!>)! z2 (!1!G^G | !3!A2 F2)!<(! z2 (!1!AB!<)! |!mf! .d) z (c3!<(! def!<)! | .f2)"_cresc." !>!!1!G3 .!4!d.!3!d.!2!d | !f! (!1!c!5!a!3!f!1!d!>(! !4!cB!1!GA!>)! |!p! F2) z .!1!c (!>!!5!b.g) z .!1!c | (!>!!5!a.f) z .!2!f!<(! .e.!3!g.c'!<)!.e | !>(! (!>!!3!g.f)!>)! z (!1!c/d/) .c.!5!b .g"_cresc." (c/d/ | .c).!5!a .f (!1!c/d/!<(! e/!1!f/g/a/ !1!b/c'/d'/e'/!<)! | !f! .f') z (!1!e/g/c'/e/ .f) z (!1!E/G/c/E/ | .F) z!ff! .[cfa]2 .[Acf]2 .[cfa]2 | [A,CF]4 !fermata!z4 |]
+V:2
+z2 | (!4!F,CA,C F,CA,C |"_legato" !5!B,,)G,D,G, B,,G,D,G, | !5!C,!1!B,!3!E,B, C,B,E,B, | !4!F,CA,C F,CA,C | !5!A,,!1!F,!3!C,F, A,,F,C,F, | !5!B,,G,!3!D,G, !5!=B,,G,!3!D,G, | !4!C,G,E,G, G,,!1!F,!2!D,F, | (!4!!2![C,E,]G,[C,E,]G, [=B,,D,]G,[B,,D,]G, | !4!!2![C,E,]G,!5!!3![C,E,]G, [D,F,]G,[D,F,]G, | [C,E,]G,[C,E,]G, [=B,,D,]G,[B,,D,]G, | !4!!2![C,E,]G,[C,E,]!2!G,) (!5!!2![G,,D,]F,[G,,D,]F, | .!4!!2![C,E,]) z [C,E,G,] z [C,E,G,] z :| z2 | (!4!^F,CA,C F,CA,C |"_legato" !4!G,)DB,D G,DB,D |"_legato" !5!D,C!2!A,C D,CA,C | "_legato" !5!D,!1!B,!2!G,B, D,B,G,B, | !5!D,!1!=B,!2!_A,B, D,B,A,B, | !5!C,!1!_A,!2!F,A, C,A,F,A, | !5!=B,,!1!_A,!2!D,A, B,,A,D,A, | .!5!C,.!3!!1![E,G,].C,.[E,G,] .C,.!4!!2!!1![D,F,G,].C,.[D,F,G,] | .C,.[E,G,].C,.[E,G,] .C,.[D,F,G,].C,.[D,F,G,] | .[C,E,G,] z z2 z4 | z8 | z8 | (!4!F,CA,C F,CA,C | "_legato" !5!B,,)G,D,G, B,,G,D,G, | !5!C,!1!B,!3!E,B, C,B,E,B, | !4!F,CA,C F,CA,C | !5!A,,!1!F,!3!C,F, A,,F,C,F, | !5!B,,G,!3!D,G, !5!=B,,!1!_A,!2!D,A, | [C,F,=A,]4 (!tenuto![C,E,B,]4 | (!4!!2![F,A,])!1!C!4!!2![F,A,]C [E,G,]C[E,G,]C | !4!!2![F,A,]C!5!!3![F,A,]C !4!!2![G,B,]C[G,B,]C | [F,A,]C[F,A,]C [E,G,]C[E,G,]C | !4!!2![F,A,]C[F,A,]!2!C) (!5!!2![C,G,]B,[C,G,]B, | .!4!!2![F,A,]) z [K:treble] ([CGB]2 .!3!!1![FA]) z [K:bass] ([C,G,B,]2 | .!3!!1![F,A,]) z .!5!!3!!1![F,,A,,C,]2 .[F,,A,,C,]2 .[F,,A,,C,]2 | [F,,A,,C,]4 !fermata!z4 |]

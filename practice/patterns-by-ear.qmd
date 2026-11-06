@@ -12,7 +12,7 @@ toc-depth: 2
 <script src="/apps/shared/musical-typing.js?v=2"></script>
 <script src="/apps/patterns/pattern-set.js?v=4"></script>
 <script src="/apps/patterns/pattern-gen.js?v=3"></script>
-<script src="/apps/patterns/ear-piano.js?v=2"></script>
+<script src="/apps/patterns/ear-piano.js?v=5"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
 <style>
 #ep-root { --ep-ink: var(--site-ink, #212529); --ep-mute: var(--site-ink-2, #6c757d); --ep-line: var(--site-line, #ced4da);

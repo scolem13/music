@@ -17,7 +17,7 @@ vm.runInContext(fs.readFileSync(R + "apps/shared/analysis/chord-analysis.js", "u
 const SR = win.SiteRecord;
 const CA = win.ChordAnalysis;
 let fails = 0, total = 0;
-function fail(...a) { fails++; if (fails <= 15) console.log("FAIL", ...a); }
+function fail(...a) { fails++; if (fails <= 15 || process.env.ALL) console.log("FAIL", ...a); }
 function ok(c, ...a) { total++; if (!c) fail(...a); }
 
 const LET = "CDEFGAB", NAT = [0, 2, 4, 5, 7, 9, 11], pc = m => ((m % 12) + 12) % 12;
@@ -89,6 +89,71 @@ CA.LEVELS.forEach(L => CA.STAGES.concat(["satb-treble"]).forEach(stage => {
     if (tex === "melody") ok(true); // non-chord tones counted above
   }
 }));
+// ch. 9 function: labels from a table written out here (Hutchinson's Harmonic Function chapter: T = I; TP = vi iii, IV into I; PD = ii IV;
+// D = V vii, I64 into V), the cadence from the last two chords; the checkers take a right label and refuse the others
+const FN = { I: "T", i: "T", ii: "PD", "ii°": "PD", iii: "TP", III: "TP", IV: "PD", iv: "PD", V: "D", vi: "TP", VI: "TP", "vii°": "D" };
+if (process.env.NEG) FN.ii = "D";
+for (let k = 0; k < 150; k++) {
+  const q = CA.make(CA.parseSettings("level=ch9&texture=" + CA.STAGES[k % 5] + "&mode=both&most=3&seed=" + (k * 104729 + 7))), tag = "ch9/" + k;
+  if (!q) { ok(false, tag, "no passage"); continue; }
+  const toks = q.prog.split(" "), base = t => t.replace(/(64|6)$/, "");
+  ok(q.fn === true && q.items.every(it => it.fn), tag, "no functions");
+  toks.forEach((t, i) => {
+    let want = FN[base(t)];
+    if (/^IV$|^iv$/.test(base(t)) && toks[i + 1] && /^[Ii]$/.test(toks[i + 1])) want = "TP";
+    if (/^[Ii]64$/.test(t) && /^V$/.test(toks[i + 1])) want = "D";
+    ok(q.items[i].fn === want, tag, t, "function", q.items[i].fn, "table", want, q.prog);
+    ok(CA.checkFn(q, i, q.items[i].fn) && CA.checkFn(q, i, " " + q.items[i].fn.toLowerCase()), tag, "right function refused");
+    ["T", "TP", "PD", "D"].filter(f => f !== q.items[i].fn).forEach(f => ok(!CA.checkFn(q, i, f), tag, "wrong function accepted", f));
+    ok(!CA.checkFn(q, i, ""), tag, "empty function accepted");
+    const st = CA.steps(q, i); ok(/^Function$/.test(st[st.length - 2].h) && st[st.length - 2].t.indexOf("Answer: " + q.items[i].fn) > 0, tag, "function step");
+  });
+  const n = toks.length, last = base(toks[n - 1]), prev = base(toks[n - 2] || "");
+  const cad = /^V$/.test(last) ? "half" : /^[Ii]$/.test(last) && /^(V|vii°)$/.test(prev) ? "authentic" : /^[Ii]$/.test(last) && /^[Ii][Vv]$/.test(prev) ? "plagal" : /^(vi|VI)$/.test(last) && prev === "V" ? "deceptive" : null;
+  ok(q.cadence === cad && cad, tag, "cadence", q.cadence, "table", cad, q.prog);
+  const wrongs = { authentic: "plagal", plagal: "half", deceptive: "authentic", half: "deceptive" };
+  ok(CA.checkCadence(q, q.cadence) && !CA.checkCadence(q, wrongs[q.cadence]) && !CA.checkCadence(q, ""), tag, "cadence check", q.cadence);
+}
+const cq = CA.make(CA.parseSettings("level=ch9&key=C major&prog=I IV I64 V I&texture=broken"));
+ok(cq.items.map(x => x.fn).join() === "T,PD,D,D,T" && cq.cadence === "authentic" && CA.checkCadence(cq, "PAC") && CA.checkCadence(cq, "Authentic"), "ch9 worked example", cq.items.map(x => x.fn).join());
+const cp = CA.make(CA.parseSettings("level=ch9&key=C major&prog=I V I IV I&texture=broken"));
+ok(cp.items.map(x => x.fn).join() === "T,D,T,TP,T" && cp.cadence === "plagal", "ch9 IV into I is TP", cp.items.map(x => x.fn).join());
+// a ch. 9 passage rebuilt from its settings (the report replay) has the same functions
+{ const q0 = CA.make(CA.parseSettings("level=ch9&texture=satb&seed=4242")), q1 = CA.make(CA.parseSettings("level=ch9&texture=satb&seed=4242"));
+  ok(q0.abc === q1.abc && q0.items.map(x => x.fn).join() === q1.items.map(x => x.fn).join() && q0.cadence === q1.cadence, "ch9 replay"); }
+
+// ch. 10 non-chord tones: read back from the drawn ABC (voice 1, one note at a time), each marked note must obey its kind's rule
+// (Hutchinson ch. 10: passing = step in, step on the same way; neighbor = step in, step back to the same note; escape = step in, leap out
+// the other way; appoggiatura = leap in, step out, on the beat; suspension = the last note held over onto the beat, steps down;
+// anticipation = a step in, the next chord's note early and then repeated)
+{
+  const seen = {}, pcs = c => new Set(c.notes.map(n => pc(NAT[n.l] + n.a))), sg = x => Math.sign(x);
+  for (let k = 0; k < 250; k++) {
+    const q = CA.make(CA.parseSettings("level=ch10&texture=" + CA.STAGES[k % 5] + "&mode=both&most=4&seed=" + (k * 3331 + 5))), tag = "ch10/" + k;
+    if (!q) { ok(false, tag, "no passage"); continue; }
+    ok(q.texture === "melody" && q.nctNamed && q.ncts.length >= 1 && q.ncts.every(x => x.label && CA.NCT_KINDS.includes(x.kind)), tag, "marked non-chord tones");
+    ok(q.ncts.every(x => q.abc.includes('"_' + x.label + '"')), tag, "labels drawn");
+    const mel = Ev.fromAbc(q.abc, { voice: "1" }).sounding.map(x => ({ t: x.t_on, m: (x.notes || x.pitches.map(p => p.midi))[0] }));
+    q.ncts.forEach(x => {
+      const i = mel.findIndex(n => Math.abs(n.t - x.t / 2) < 1e-9); if (i < 0) { ok(false, tag, "nct not in the melody", x.label); return; }
+      const p = mel[i - 1], n = mel[i + 1], m = mel[i].m, onBeat = Math.abs(mel[i].t % 1) < 1e-9, step = d => Math.abs(d) === 1 || Math.abs(d) === 2;
+      seen[x.kind] = (seen[x.kind] || 0) + 1;
+      ok(x.acc === onBeat, tag, x.kind, "accent flag", x.acc, onBeat);
+      const cs = q.items.map(it => pcs(it.chord)), mp = pc(m);
+      ok(!cs[x.ci].has(mp) || x.kind === "suspension", tag, x.kind, "is a chord tone"); if (x.kind === "suspension") ok(!cs[x.ci].has(mp), tag, "suspension in the chord");
+      if (!p || !n) { ok(x.kind === "anticipation" ? !!p : false, tag, x.kind, "needs a note each side"); }
+      if (x.kind === "passing") ok(p && n && step(m - p.m) && step(n.m - m) && sg(m - p.m) === (process.env.NEG ? -sg(n.m - m) : sg(n.m - m)) && !onBeat, tag, "passing", p && p.m, m, n && n.m);
+      if (x.kind === "neighbor") ok(p && n && step(m - p.m) && n.m === p.m && !onBeat, tag, "neighbor");
+      if (x.kind === "escape") ok(p && n && step(m - p.m) && Math.abs(n.m - m) >= 3 && sg(n.m - m) === -sg(m - p.m) && !onBeat, tag, "escape");
+      if (x.kind === "appoggiatura") ok(p && n && Math.abs(m - p.m) >= 3 && step(n.m - m) && onBeat && cs[x.ci].has(pc(n.m)), tag, "appoggiatura");
+      if (x.kind === "suspension") ok(p && n && p.m === m && n.m < m && step(n.m - m) && onBeat && cs[x.ci - 1].has(mp) && cs[x.ci].has(pc(n.m)), tag, "suspension");
+      if (x.kind === "anticipation") ok(p && n && step(m - p.m) && n.m === m && !onBeat && cs[x.ci + 1].has(mp) && !cs[x.ci].has(mp), tag, "anticipation");
+    });
+    q.ncts.forEach((x, j) => { ok(CA.checkNct(q, j, x.kind), tag, "right kind refused"); CA.NCT_KINDS.filter(kd => kd !== x.kind).forEach(kd => ok(!CA.checkNct(q, j, kd), tag, "wrong kind accepted", kd)); });
+  }
+  CA.NCT_KINDS.forEach(kd => ok((seen[kd] || 0) >= 10, "ch10: kind made often enough", kd, seen[kd] || 0));
+}
+
 // typed forms the page promises
 const q7 = CA.make(CA.parseSettings("level=ch8b&texture=broken&key=C major&prog=I V65 I ii42 V7 I"));
 [["V65", 1, true], ["V6/5", 1, true], ["V7/3rd", 1, true], ["V7", 1, false], ["v65", 1, false], ["ii42", 3, true], ["ii2", 3, true], ["ii7/7th", 3, true], ["II42", 3, false]]

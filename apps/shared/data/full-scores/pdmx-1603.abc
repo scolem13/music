@@ -1,0 +1,24 @@
+X:1
+C:M. Hauptmann
+Z:Goethe
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=50
+M:4/4
+K:E
+V:1 treble nm="Soprano"
+%%MIDI program 52
+V:2 treble nm="Alto"
+%%MIDI program 52
+V:3 treble-8 nm="Tenor"
+%%MIDI program 52
+V:4 bass nm="Bass"
+%%MIDI program 52
+V:1
+"^Adagio ma non troppo"!mf! B3/2 A/ | G2 F2 E2 F F | G3 G"^cresc." A2 B2 |!f! c3 B"^dim." A2 G2 | F2 z2!pp! B2 F B | G2 z2 z4 | z2!mf! B3/2 A/ G2 B2 | e4"^cresc." d2 =d2 |!f! c2 e2"^dim." B2 B2 | B2 z2!pp! F2 B F | G2 z2 z2!p! G2 | G3/2 G/ G2 A2!<(! A A!<)! |!>(! c G G2!>)! z4 | !mf! A3/2 A/ A2"^cresc." B3/2 B/ B2 |!f! (c2 e) c B2 z2 |!p! A4 .G2 z2 | F2 B F G2 z2 | !mf! A3/2 A/ A2"^cresc." B3/2 B/ B2 |!f! (c2 e) c B2 z2 |!p! A4 .G2 z2 | F2 B F G2 z2 | A4 .G2 z2 | F2 B F G2 z2 |!mf! c4!<(! B4!<)! |!f! (^Ac) e A B2"^dim." (B2- | B2 A) G({G} F2) G F | E2!p! B4 G2 | E4 E3 E | E2 z2 F2 z2 |!<(!!>(! !fermata!G8!<)!!>)! |]
+V:2
+z2 | z8 | z2!mf! E2"^cresc." E2 E2 |!f! E3 E"^dim." D2 E2 | F2 z2!pp! D2 D D | E2 z2 z4 | z2!mf! D D E2 B,2 | B,2 E"^cresc." E E2 E2 |!f! E3 E"^dim." D2 E2 | F2 z2!pp! D2 D D | E2!p! E2 E3/2 E/ E2 | D2 D2 F2!<(! F F!<)! |!>(! G E E2!>)! z4 | !mf! F3/2 F/ F2"^cresc." G3/2 G/ G2 |!f! A3 A G2 z2 |!p! D4 .E2 E2- | E2 D D E2!mf! E3/2 E/ | E2 E3/2 E/"^cresc." E2 E E |!f! E3 E E2 z2 |!p! D4 .E2 E2- | E2 D D E2 z2 | E4 .E2 E2- | E2 D D E2!mf! E3/2 E/ | E2!<(! E4 E2!<)! |!f! E4 F3"^dim." F | B,2 E4 D D | E2 z2 z4 | z2!p! E4 C2 | B,2 z2 D2 z2 |!<(!!>(! !fermata!E8!<)!!>)! |]
+V:3
+z2 | z2!mf! B3/2 A/ G2 B2 | e4"^cresc." d2 =d2 |!f! c2 e2"^dim." B2 B2 | B2 z2!pp! F2 B B | B2 z2 z2!mf! B3/2 A/ | G2 F2 E2 F F | G3"^cresc." G A2 B2 |!f! c3 B"^dim." A2 G2 | F2 z2!pp! B2 F B | B2 z2 z2!p! c2 | ^B3/2 B/ B2 c2!<(! c c!<)! |!>(! G c c2!>)! z2!mf! c3/2 c/ | c2 c3/2 c/"^cresc." e2 e e |!f! (e2 c) e e2 z2 |!p! B4 .B2 z2 | B2 F B B2 z2 | !mf! c3/2 c/ c2"^cresc." G3/2 G/ G2 |!f! A3 A G2 z2 |!p! B4 .B2 z2 | B2 F B B2 z2 | A4 .B2 z2 | c2 F B B2 z2 |!mf! A4!<(! G4!<)! |!f! (F^Ac) e (dc)"^dim." B =A | G2 c B ^A2 B =A | G2 z2 z4 | z2!p! c4 A2 | G2 z2 B2 z2 |!<(!!>(! !fermata!B8!<)!!>)! |]
+V:4
+z2 | z8 | z2!mf! E,2"^cresc." F,2 G,2 |!f! A,3 G,"^dim." F,2 E,2 | D,2 z2!pp! B,,2 B,, B,, | E,2 z2 z4 | z2!mf! B,, B,, C,2 D,2 | E,2 E,"^cresc." E, F,2 G,2 |!f! A,3 G,"^dim." F,2 E,2 | D,2 z2!pp! B,,2 B,, B,, | E,2 z2 z2!p! C,2 | G,3/2 G,/ G,2 F,2!<(! F, F,!<)! | !>(! E,2 C,2!>)! z4 |!mf! F,3/2 F,/ F,2"^cresc." E,3/2 E,/ E,2 |!f! A,3 A, E,2 z2 | !p! F,4 .E,2 z2 | B,,2 B,, B,, E,2 z2 |!mf! A,3/2 A,/ A,2"^cresc." E,3/2 E,/ E,2 | !f! (A,,2 C,) A,, E,2 z2 |!p! F,4 .E,2 z2 | B,,2 B,, B,, E,2 z2 | C,4 .B,,2 z2 | ^A,,2 B,, B,, E,2 z2 |!mf! =A,,4!<(! B,,4!<)! |!f! C,4 D,3"^dim." D, | E,2 A,, B,, C,2 B,, B,, | E,2 z2 z4 | z2!p! A,,4 C,2 | E,2 z2 B,,2 z2 |!<(!!>(! !fermata![E,,E,]8!<)!!>)! |]

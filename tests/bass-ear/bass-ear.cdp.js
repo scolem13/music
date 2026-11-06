@@ -64,6 +64,19 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       assert(/ 0$/.test(bad), bad);
     });
     await check(`[${w}] no sideways scroll`, async () => assert(await b.eval(`document.documentElement.scrollWidth<=innerWidth+1`)));
+    await check(`[${w}] two answers, right then wrong, are two records in the student's report`, async () => {
+      await setSel("Style", "mlt"); await setSel("Level", "2");
+      await b.eval(`SiteRecord.clear()`);
+      await b.eval(`document.querySelector("#bass-ear .be-go").click()`); await wait(200);
+      let same = await b.eval(`BassEar._cur().q.same`); await b.eval(`document.querySelectorAll("#bass-ear .be-choice")[${same ? 0 : 1}].click()`);
+      await b.eval(`document.querySelector("#bass-ear .be-result").nextElementSibling.querySelector(".be-go").click()`); await wait(150);
+      same = await b.eval(`BassEar._cur().q.same`); await b.eval(`document.querySelectorAll("#bass-ear .be-choice")[${same ? 1 : 0}].click()`); await wait(200);
+      const it = JSON.parse(await b.eval(`JSON.stringify(SiteRecord.all())`));
+      assert.strictEqual(it.length, 2, "records: " + it.length);
+      assert(it.every(x => x.tool === "bass-ear" && x.ex === "Bass Lines by Ear" && x.at.length === 1 && x.want && x.q.text), JSON.stringify(it[0]));
+      assert.deepStrictEqual(it.map(x => x.at[0][1]), [1, 0]);
+      assert(await b.eval(`!!document.querySelector("#bass-ear .sr-mybtn")`), "My report button");
+    });
     await b.close();
   }
   server.close(); console.log(failed ? failed + " failed" : "all passed"); process.exit(failed ? 1 : 0);

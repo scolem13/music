@@ -1,0 +1,23 @@
+X:1
+C:J. Arcadelt (1514-1557)
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=160
+M:2/2
+K:G
+V:1 treble nm="Soprano"
+%%MIDI program 52
+V:2 treble nm="Alto"
+%%MIDI program 52
+V:3 treble-8 nm="Tenor"
+%%MIDI program 52
+V:4 bass nm="Bass"
+%%MIDI program 52
+V:1
+"^Allegro" G8 | G8- | G4 G4 | A4 A4 | B8 | !breath!G4 G4 | A4 B4 | c8 | B8 | z4 G4 | G2 G2 G4 | A8 | !breath!=F8 | z4 ^F4 | G4 G4- | G4 F4 | E4 E4 | D8 | !breath!D8 | z4 G4 | G2 G2 G4 | A8 | A8 | z4 A4 | c4 B4- | !breath!B4 A4- | A2 G2 G4- | !breath!G4 F4 | G8 | z4 G4 | G4 G4 | A4 A4 | B4 B4 | z4 B4 | B4 A4 | B4 c4 | B4 B4 | z4 B4 | B2 B2 A4 | !breath!B4 c4 | (B6 c2 | d2 B2 c4- | c2 B2 B4- | B4 A4) | B8- | B8- | !breath!B8 | B8 | B4 B4 | B4 B4 | c8 | A8- | !breath!A4 A4 | B4 A4 | G4 G4 | F4 G4 | !breath!E4 E4 | D8 | !breath!D8 | F8 | F4 F4 | G8- | !breath!G4 E4 | G4 E4 | F4 F4 | G8 | F8- | F8- | F8 | z8 | z4 G4 | c6 B2 | A4 G4 | !breath!F4 A4 | A2 G2 G4- | G4 F4 | G8- | G8 | z4 G4 | c6 B2 | A4 G4 | !breath!F4 A4 | A2 G2 G4- | G4 F4 | G8- | G8- | G8- | G8- | !breath!G4 G4 | G8 | G8 |]
+V:2
+D8 | E8- | E4 D4 | E4 F4 | (G6 (FE)) | !breath!D4 E4 | E2 D2 (G4- | G4 F4) | !breath!G8 | D8 | D2 D2 D4 | =F8 | !breath!C8 | F8 | E4 D4- | D4 D4 | B,4 C4 | A,8 | !breath!B,8 | D8 | D2 D2 D4 | =F8 | !breath!=F8 | F8 | G4 G4- | !breath!G4 F4 | E4 E4 | D8 | B,8 | z4 D4 | E6 D2 | E4 F4 | G4 G4 | z4 G4- | G4 F4- | F4 E4 | F4 G4 | F4 G4 | z4 F4 | F2 F2 E4 | F8 | G4 (A4 | F4 G4- | G2 F2 E4- | !breath!E4 ^D2 ^C2 | ^D8) | E8 | z4 G4 | G4 G4 | G4 G4 | G8 | F8 | z4 F4 | F4 D4 | D4 C4 | D4 B,4 | !breath!A,4 G,4- | G,4 F,4 | !breath!G,8 | A,8 | A,4 A,4 | C8- | !breath!C4 G,4 | C6 B,2 | A,4 D4- | D4 C4 | D4 A,4 | D6 C2 | B,4 A,4 | !breath!G,4 D4 | G8- | G4 F4 | E4 E4 | D8 | z4 G,4 | D6 C2 | B,6 A,2 | !breath!G,4 D4 | G8- | G4 F4 | E4 E4 | D8 | z4 G,4 | D6 C2 | B,6 A,2 | G,4 B,4 | C6 D2 | E6 D2 | !breath!C4 D4 | E8 | D8 |]
+V:3
+G8 | c8- | c4 B4 | c4 d4 | (G6 A2) | !breath!B4 c4 | c4 B4 | A8 | !breath!G8 | B8 | B2 B2 B4 | c8 | !breath!A8 | A8 | c4 B4- | B4 A4- | A2 G2 G4- | !breath!G4 F4 | !breath!G8 | B8 | B2 B2 B4 | c8 | !breath!c8 | d8 | e4 d4- | !breath!d4 d4 | B4 c4 | A8 | G8 | z4 G4 | c6 B2 | c4 (d4- | d2 c2 B2 A2) | G4 G4 | z4 d4 | d4 c4 | d4 e4 | d4 d4 | z4 d4 | d2 d2 c4 | d8 | z4 e4 | e2 e2 B4 | !breath!e4 e4 | f8- | f8 | g8 | z4 e4 | e4 e4 | d4 d4 | e8 | d8 | z4 d4 | d4 d4 | B4 G4 | A4 G4 | !breath!c6 B2 | A8 | !breath!B8 | z4 d4 | d4 d4 | e8- | !breath!e4 c4 | e4 e4 | d4 d4 | G8 | A8 | z4 A4 | d6 c2 | B6 A2 | !breath!G4 B4 | e6 d2 | c6 B2 | !breath!A4 d4 | B4 c4 | A4 !breath!A2 A2 | d6 c2 | B6 A2 | !breath!G4 B4 | e6 d2 | c6 B2 | !breath!A4 d4 | B4 c4 | A8 | !breath!G4 d4 | g6 f2 | e6 d2 | c6 d2 | !breath!e4 d4 | c8 | B8 |]
+V:4
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | G,8 | G,2 G,2 G,4 | =F,8 | !breath!=F,8 | D,8 | C,4 G,4- | G,4 D,4 | E,4 C,4 | D,8 | !breath!G,,8 | G,8 | G,2 G,2 G,4 | =F,8 | !breath!=F,8 | D,8 | C,4 G,4- | !breath!G,4 D,4 | E,4 C,4 | D,8 | G,,8- | G,,8 | z8 | z4 D,4 | G,6 F,2 | E,4 E,4 | D,4 D,4 | z8 | z8 | z8 | z8 | z8 | z4 B,4 | B,2 B,2 A,4 | !breath!B,4 B,4 | C8 | B,8- | B,8 | E,8 | z4 E,4 | E,4 E,4 | G,4 G,4 | C,8 | D,8 | z4 D,4 | D,4 D,4 | E,4 E,4 | D,4 E,4 | !breath!C,4 C,4 | D,8 | !breath!G,,8 | D,8 | D,4 D,4 | C,8- | !breath!C,4 C,4 | C,4 C,4 | D,4 D,4 | E,8 | D,8- | D,8 | z4 D,4 | G,6 F,2 | E,6 D,2 | C,8- | C,8 | D,8 | E,4 C,4 | D,8 | !breath!G,,4 G,,4 | G,6 F,2 | E,6 D,2 | C,8- | !breath!C,8 | D,8 | E,4 C,4 | D,4 !breath!D,2 D,2 | G,6 F,2 | E,6 D,2 | C,8 | z4 C,4 | !breath!C,4 B,,4 | C,8 | [G,,D,]8 |]

@@ -1,0 +1,213 @@
+---
+title: "Percussion: Sticks, Strokes and the Bass Drum"
+toc: true
+toc-depth: 2
+description: "Starting out in the percussion section: what the section plays, choosing sticks and mallets, matched and traditional grip, the four basic strokes, the concert bass drum (with a labelled diagram), and how to change and tune a drum head, with a tuning-order figure."
+instruments: [percussion, drums]
+topics: [instruments, technique]
+has: [interactive, svg]
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/percussion/percussion.css?v=1">
+<script src="/apps/shared/percussion/percussion-page.js?v=1"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+Percussion is the biggest family in the band by number of instruments, and the one where a single player is most likely to switch
+between several in one piece. This lesson is the common ground: how to pick up a stick, how a stroke is made, how to play the
+concert bass drum, and how any drum is looked after and tuned. The [snare drum](snare-drum.qmd) has its own page, with the parts,
+the rudiments and a player that sounds them.
+
+## What the section covers {#section}
+
+The teacher book's percussion chapter lists these topics, in this order: the world of percussion, percussion notation, selecting
+players, technique fundamentals, snare drum / bass drum / toms / tenor drum, mallet percussion, tonal and coloristic effect
+instruments, timpani, cymbals / gong / tam-tam, triangle, tambourine, shakers and rattles, blocks / cowbell / claves / castanets,
+drum set, the school percussion section, the Percussive Arts Society's rudiments, and a keyboard layout chart for mallet
+instruments. Only some of that is on this site so far:
+
+| Topic | Where |
+|---|---|
+| Sticks, grip, strokes, bass drum, heads and tuning | this page |
+| Snare drum: parts, set-up, rolls, the rudiments, rim work, brushes | [Snare Drum](snare-drum.qmd) |
+| Drum set grips and other differences | [Stick Grips and Other Ways Drummers Differ](drum-grips.qmd) |
+| Brushes on the drum set | [Drum Brushes](drum-brushes.qmd) |
+| Mallet percussion, timpani, accessories | not written yet (not in the pages this lesson was made from) |
+
+## Sticks, mallets and beaters {#implements}
+
+Most percussion instruments are played with something held in the hand: a stick, a mallet or a beater. The size, weight and
+material of that tool change the sound a great deal, and some techniques cannot be done with the wrong one. A snare drum roll will
+not work with yarn mallets, and snare sticks are no use when a part asks for brushes. Learn early to choose **the right tool for the
+job**.
+
+## Grip {#grip}
+
+*Grip* is how you hold the stick or mallet. Two are in common use.
+
+- **Matched grip:** both hands hold the stick the same way.
+- **Traditional grip:** the hands hold it differently. It began as a way to hold the left stick when a drum hung from a strap at
+  the player's side, so the drum sat at a slant. Concert stands were made to tilt a drum to the same angle, and the habit came
+  with them.
+
+The book's advice is to start beginners, even on snare drum, with **matched grip**, for these reasons:
+
+1. A percussionist has to be able to play nearly everything, and matched grip works on almost all of it.
+2. The same hold in both hands means fewer things to learn. Traditional grip tends to need a lot of extra practice for the left hand.
+3. It is more natural for most beginners (though a teacher still has to check it is correct, not just natural).
+4. The two hands look alike, so the sound is easier to even out.
+5. Marching bands today mostly use a carrier that holds the drum level, so the old reason for the slant has gone.
+6. The arm, hand and wrist motions are the same as those used when playing with the hands, which is a skill needed for a lot of
+   instruments.
+
+When you start on **mallet percussion**, matched grip is the only choice. Traditional grip is still worth knowing: a student may
+have learned it from another teacher, or a local marching band may use it, and then the book suggests teaching it alongside
+matched grip so progress on the other instruments is not held up.
+
+Step by step, [matched grip](snare-drum.qmd#grip) and traditional grip are on the snare drum page.
+
+## The four basic strokes {#strokes}
+
+A stroke has three parts: the stick moves **toward** the surface, **strikes** it, and moves **away**, using the natural bounce. It
+comes mostly from the fingers, hand and wrist; some arm movement is fine. The four basic strokes differ in where the stick starts
+and where it ends up.
+
+| Stroke | Starts | Ends | Sounds and used for |
+|---|---|---|---|
+| **Full** (F) | 45–90° above the surface | back where it started | Often accented; any dynamic |
+| **Down** (D) | 45–90° above | low, near the surface: the hand stops the rebound | Often accented; going from loud to soft |
+| **Up** (u) | near the surface | 45–90° above | Not accented; going from soft to loud |
+| **Tap** (t) | near the surface | near the surface | Soft, unaccented |
+
+Which one you use depends on how loud the note must be and where the stick has to be for the next note. Practise combinations of
+F, D, u and t one hand at a time until each hand makes each stroke equally well. The same ideas return when you read about
+[flams](snare-drum.qmd#flams): the quiet grace note is a tap, and in alternating flams the grace is an up stroke and the main note
+a down stroke.
+
+## The bass drum {#bass-drum}
+
+The concert bass drum sits on a stand with wheels, tilted toward the player. Click a part, or press **Quiz me**.
+
+::: {#pc-bass data-kind="bass"}
+:::
+
+### Mallet and set-up
+
+- Use a **felt-covered bass drum mallet** with a heavy, weighted feel. Hold it between the first joint of the index finger and the
+  pad of the thumb, as you would a snare stick, and let the other fingers steer.
+- **Lock the wheels** and tilt the drum. The angle depends on the music and what is comfortable.
+- Stand behind the drum and a little to the right of it, with your weight even on both feet. Stand on a small riser, step or stool
+  if you need one to line up with the drum.
+
+### Playing it
+
+1. Strike the batter head **off-centre** for a deep, dark, open sound. Use a direct forearm and wrist movement, then **lift the
+   mallet straight off** so the sound is drawn out of the drum. Avoid glancing, circular or figure-eight movements.
+2. Dead centre gives a dead tone, and close to the rim a thin one. They are useful in some music but are not the usual way to play.
+3. A concert bass drum rings after you hit it. Let it, or for a drier, crisper sound **dampen** the head with your fingers.
+
+### Dampening
+
+- The free hand's fingers are the first choice. A small hand towel, or even a soft oven mitt on that hand, also works.
+- If the drum is tilted close to upright, the **knee** can press on the head: rest the right foot on the stand or a stool and press the
+  knee on the batter head. This suits a stream of short notes, such as a march or show tune where the drum doubles a quarter-note
+  bass line. The left hand can also muffle the resonant head.
+- Dampening **after** the stroke (let it sound for a moment, then stop it) is often better than damping before, even on short
+  notes where you want a full sound at the moment of impact. Listen to the other bass instruments to decide how much to damp.
+
+### Rolls
+
+Use a **matched pair** of bass drum mallets made for rolling, the same size, style and weight. Hit the head between the centre and the
+rim with alternating slow to moderately slow single strokes, both mallets the same distance from the rim. Tilting the drum makes
+the roll easier. Rolls are usually played with matched grip (traditional also works, for a softer effect). In **concert**
+playing only the batter head is used; a marching bass drum is different, with a hand on each head.
+
+### Bass drum checklist
+
+- Weight even on both feet?
+- Body in the right position for the drum?
+- Mallet held correctly?
+- Striking the right place on the head?
+- Right stroke technique?
+- Good tone?
+
+## Changing a drum head {#heads}
+
+Most drum maintenance is changing or tuning heads. Replace a head that is old, worn, dented or punctured even if it has not broken
+(batter heads need changing more often than the bottom heads), and keep spares, because heads break at any time. Before the late 1950s
+heads were made of animal skin; plastic heads are the better choice for most playing now, but use a head made for the drum's job
+(a marching head can be too thick for concert work).
+
+The book's procedure for a snare, bass or tom head:
+
+1. With a **drum key**, take out each tension rod, then lift off the rim(s) and the head(s). Take the snares off too if the bottom head is
+   coming off.
+2. Clear out dirt from inside the drum; tighten or replace any loose screws, nuts or bolts on the shell.
+3. Wipe the edge of the shell.
+4. Clean the lugs and tension rods and put on a little light household lubricant.
+5. Fit the new head, put the rim back and run the rods in. Tighten first with the fingers, then with the key, in a **criss-cross**
+   order: tighten opposite rods one after another, **no more than a half turn on each** before moving on, and repeat until all the
+   slack is out.
+6. If you need to, seat the head by pressing the centre lightly with your fingers or the heel of your hand.
+7. Tune it (below), and make small adjustments daily for a week or two, which helps the heads hold their tuning and last longer.
+8. Reattach the snares on a snare drum if you took them off.
+
+### The tightening order {#tuning-order}
+
+The book's figure numbers ten lugs round a head from 1 to 10. The lugs that follow each other (1 and 2, 3 and 4, …) are on opposite
+sides of the head. Reading the numbers as the order to tighten them is this site's reading of the figure; the text says only "criss-cross".
+Step through it.
+
+::: {#pc-tuning}
+:::
+
+## Tuning and muffling {#tuning}
+
+Tune the heads whenever you change them, and now and then after that to keep the drum sounding its best.
+
+1. Set the drum on a towel or soft surface to deaden the bottom head. **Tap the batter head** two or three inches from each tension
+   rod (with the snares off, on a snare drum) and adjust in small steps, with the criss-cross order, until every point gives exactly the
+   same pitch and a clear, resonant sound. On a snare the head should also bounce back well.
+2. Turn the drum over and do the same for the bottom head. On a snare drum, put a soft cloth or foam between the snares and the head
+   in the middle to mute the snares, and take care not to over-tighten that thin head.
+3. On a snare, after the heads are done, adjust the snares until it is crisp and responsive at every dynamic.
+
+**How high?** Depends on the drum's natural range. Too tight and the drum sounds choked and loses its depth; too loose and it
+sounds flabby, with little tone or stick response.
+
+**Two heads, two pitches.** Either both heads are tuned to the same pitch, or one is higher than the other. Try both. On a snare drum,
+the snare (bottom) head is generally higher than the batter head, usually by about a perfect fourth or fifth. On a bass drum, the
+book suggests the batter head low and the resonant head higher, or both the same, so the drum is deep and resonant with no clear
+pitch. A bass drum tuned to a definite note will sooner or later clash with the rest of the band.
+
+**Muffling.** The less muffling, the bigger, richer and fuller the sound, so use as little as you can, especially on a concert bass
+drum. Options include plastic film rings (snare, toms and tenor drums), gaffer's tape, paper towels, foam rubber, felt strips and
+special mufflers. Near the outer edge of the head usually works best, and it is better to make it temporary (a handkerchief, or
+removable gel patches), so you can adjust it to the music. Some drums have a built-in muffler worked by a knob.
+
+The book ends this section with a reminder that drum tuning and muffling are a matter of personal taste, and that what it gives is
+a starting point.
+
+## Try next
+
+- Go to the [snare drum](snare-drum.qmd): its parts, how to stand and hold the sticks, and the rudiments with a player.
+- Compare with [Stick Grips and Other Ways Drummers Differ](drum-grips.qmd) for the drum-set view.
+
+```{=html}
+<script>
+(function () {
+  function go() {
+    PercussionPage.diagram(document.getElementById("pc-bass"));
+    PercussionPage.tuningOrder(document.getElementById("pc-tuning"));
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go); else go();
+})();
+</script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Percussion." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 266-303. Grip, the four basic strokes, snare drum parts / set-up / playing / rim work / snares off / brushes / rolls / rudiments, bass drum, changing and tuning heads. Retold in the page's own words; the labelled drawings are redrawn, not copied. Only the scanned pages were read (contents, pp. 273, 276, 285-302); the rest of the chapter was not.
+:::
+<!-- /works-cited -->

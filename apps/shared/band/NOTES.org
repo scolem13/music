@@ -219,7 +219,8 @@ Roots in eighths, root-fifth, bossa, tresillo, shuffle, pedal, octaves. Suggeste
 Each needs an entry in bass.js and catalog.js.
 
 * Known defects and rough edges
-** TODO Chord Sheet auto-detects the wrong key for ii-V-I-VI (G for Dm7 G7 Cmaj7 A7); the key travels in the hand-off
+** DONE Chord Sheet auto-detects the wrong key for ii-V-I-VI (G for Dm7 G7 Cmaj7 A7); the key travels in the hand-off
+   (2026-11-06) Now C: the page asks =PitchSpelling.keyFromChords= (major profile minus 2 per tone outside the scale); pitch-spelling.js is loaded before the page script. Test =node tests/band/faults/key-and-roman.test.js=. =PitchSpelling.detectKey= gives A minor for Am Dm E7 Am (first/last chord the minor tonic, or its V7); =tonicPc= stays the relative major for do, the label says "A min" and Roman numerals use the minor key.
 ** TODO Pinned keyboard voicings omit greyed notes (Standard greys the 5th, so Dm7 arrives as D-F-C)
 ** DONE jsDelivr refuses one guitar sample (F4); add a per-file fallback host in sounds.js (2026-10-18, see the end)
 ** TODO Notation: comping sits low on the treble staff (use a grand staff); stabs have no staccato
@@ -227,10 +228,13 @@ Each needs an entry in bass.js and catalog.js.
 ** TODO Count-in and the final ending hit are not notated or exported
 ** TODO Meters other than 4/4, 3/4, 6/8, 9/8, 12/8 are untested in comp figures, notation and MIDI
 ** TODO "Both" Roman mode is crowded at phone width in two-chord bars with a flat root
-** TODO "Start at bar" still shows its old number while a cycle is on
+** DONE "Start at bar" still shows its old number while a cycle is on
+   (2026-11-06) =practiceSync= writes the cycle's first bar into the disabled field; test =node tests/band/faults/start-bar.test.js= (runs the page's practice block on stubs).
 ** TODO Chord Sheet print preview with notation on has not been checked; staff is small (180px)
-** TODO pitch-spelling.js defines romanNumeral twice (second wins)
-** TODO Three chord parsers on the site (Chord Sheet, band, arranger.js) can disagree
+** DONE pitch-spelling.js defines romanNumeral twice (second wins)
+   (2026-11-06) Kept the first (mode-aware, documented; the only caller is the Chord Sheet's Roman display, which copes: dim shows °, maj7 as maj7); second deleted. Same test as the key fault.
+** DONE Three chord parsers on the site (Chord Sheet, band, arranger.js) can disagree
+   (2026-11-06) =node tests/band/parsers/chord-parsers.test.js= feeds 35 symbols to all three and lists disagreements. Fixed: arranger.js gave maj7/Δ/dim7/ø/9/11/13 the wrong or no seventh, sus chords a major third, b5/#5 a perfect fifth (now exports =chordMidis=); the Chord Sheet now reads M7, Ma7, mMaj7, mM7, min7, -, -7, sus, 7sus. Left, listed as KNOWN in the test: C5 (arranger keeps a third, triads only), C11 (band plays it as C9sus4 on purpose). Not compared: slash basses, ChordCatalog.parseSymbol and AbcCore.chordMidis (two more parsers).
 ** TODO iOS Safari untested
 
 * Never started

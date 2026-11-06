@@ -24,12 +24,21 @@
     if (/^(aug|\+)/.test(s)) return "aug";
     if (/^m(?!aj)/.test(s)) return "min";
     return "maj"; }
-  function has7(sym){ var s = (sym||"").replace(/^[A-G][#b]*/,""); return /7/.test(s) && !/6/.test(s); }
+  function has7(sym){ var s = (sym||"").replace(/^[A-G][#b]*/,"").replace(/add\d+|sus\d?|[#b]\d+/g, ""); return (/(7|9|11|13)/.test(s) && !/6/.test(s)) || /[Δ△]/.test(s); }
   // chord symbol -> { bass: low root midi, voicing: close triad (+7th) midis in octave 4 }
+  // The triad's third becomes the 2nd / 4th for sus chords; the seventh is major for maj7 / M7 / Δ, diminished (9) for dim7,
+  // otherwise minor (10); 9, 11 and 13 chords carry their seventh; b5 / #5 / + alter the fifth.
   function chordMidis(sym, transpose){
     var r = rootPc(sym); if (r == null) return null; r = ((r + (transpose||0)) % 12 + 12) % 12;
-    var ivs = (TRIAD[quality(sym)] || TRIAD.maj).slice();
-    if (has7(sym)) ivs.push(quality(sym) === "maj" ? 10 : 10);   // add a dominant/min 7th
+    var s = (sym||"").replace(/^[A-G][#b]*/,""), q = quality(sym);
+    var ivs = (TRIAD[q] || TRIAD.maj).slice();
+    var sus = /sus/.test(s) ? (/sus2/.test(s) ? 2 : 5) : 0; if (sus) ivs[1] = sus;
+    if (q === "maj" && /b5|-5/.test(s)) ivs[2] = 6;
+    if (q === "maj" && /#5|\+/.test(s)) ivs[2] = 8;
+    if (has7(sym) || /^(m7b5|ø|dim7|°7|o7)/.test(s)) {
+      var maj7 = /(maj|Maj|ma|M)\s*\(?(7|9|11|13)|[Δ△]/.test(s), dim7 = q === "dim" && /^(dim7|°7|o7)/.test(s);
+      ivs.push(maj7 ? 11 : dim7 ? 9 : 10);
+    }
     var voicing = ivs.map(function (i){ return 60 + ((r + i) % 12); });   // close voicing, octave 4
     return { bass: 36 + r, voicing: voicing };
   }
@@ -1134,6 +1143,7 @@
     handPatterns: handPatternsFor,  // handPatternsFor(meterStr?) → [{id,label}]
     meterCategory: meterCategory,   // meterCategory(n, d) → 'duple'|'triple'|'compound'
     toAbc: toAbc,
+    chordMidis: chordMidis,         // chordMidis(sym, transpose) → { bass, voicing } close triad (+7th), or null
     play: play, stop: stop
   };
 })(typeof window !== "undefined" ? window : globalThis);

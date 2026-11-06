@@ -1,0 +1,44 @@
+/* horn.css — lever diagrams (horn-chart.js) and the horn page widgets (horn-page.js). Prefixes hnc- (diagram), hnp- (widgets). */
+.hnc { width: 100%; height: auto; display: block; }
+.hnc .hnc-k { fill: var(--hn-open, #fff); stroke: var(--hn-ink, #231f20); stroke-width: 6; transition: fill .12s; }
+.hnc .hnc-n { font: 700 64px system-ui, sans-serif; fill: var(--hn-ink, #231f20); pointer-events: none; }
+.hnc .hnc-nt { font-size: 52px; }
+.hnc .hnc-down .hnc-k { fill: var(--hn-ink, #231f20); }
+.hnc .hnc-down .hnc-n { fill: var(--hn-open, #fff); }
+.hnc-live .hnc-v { cursor: pointer; outline: none; }
+.hnc-live .hnc-v:hover .hnc-k, .hnc-live .hnc-v:focus-visible .hnc-k { stroke: var(--site-accent, #2780e3); stroke-width: 12; }
+@media (prefers-color-scheme: dark) { :root { --hn-open: #f1f3f5; } }
+
+.hnp-bar { display: flex; flex-wrap: wrap; gap: .5rem .9rem; align-items: center; margin: .4rem 0; }
+.hnp-bar select { width: auto; max-width: 100%; }
+.hnp-chk { display: inline-flex; gap: .3rem; align-items: center; margin: 0; font-size: .9rem; }
+.hnp-strip { margin: .4rem 0; }
+.hnp-row { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin: 3px 0; }
+.hnp-rowlab { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--site-ink-2, #6c757d); width: 6rem; }
+.hnp-nb { min-width: 2.9rem; padding: .15rem .35rem; font-size: .85rem; }
+.hnp-nb sub { font-size: .65em; bottom: -.1em; }
+.hnp-card { border: 1px solid var(--site-line, #ced4da); border-radius: .5rem; padding: .8rem 1rem; margin: .5rem 0 1rem; background: var(--site-surface-2, #f8f9fa); }
+.hnp-head { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+.hnp-staff svg { max-width: 100%; }
+.hnp-big { font-size: 1.8rem; font-weight: 800; line-height: 1.1; }
+.hnp-muted { color: var(--site-ink-2, #6c757d); font-size: .9rem; margin: .3rem 0; }
+.hnp-diags { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: .6rem; }
+.hnp-fig { margin: 0; text-align: center; }
+.hnp-fig figcaption { font-size: .85rem; color: var(--site-ink-2, #6c757d); margin-top: .2rem; max-width: 12rem; }
+.hnp-fig.rec { outline: 2px solid var(--site-accent, #2780e3); outline-offset: 4px; border-radius: .3rem; }
+.hnp-valtxt { font-size: 1.4rem; font-weight: 800; }
+.hnp-d { width: 120px; max-width: 100%; }
+.hnp-d-big { width: min(220px, 60vw); flex: none; }
+.hnp-build { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; }
+.hnp-side { flex: 1 1 240px; }
+.hnp-ask { font-size: 1.05rem; margin-bottom: .3rem; }
+.hnp-out { min-height: 1.6em; margin: .4rem 0; }
+.hnp-valbig { font-size: 1.3rem; font-weight: 800; }
+.hnp-notes { margin: .3rem 0; padding-left: 1.4rem; }
+.hnp-nname { font-weight: 700; }
+.hnp-good { color: #2f9e44; font-weight: 700; } .hnp-bad { color: #e03131; font-weight: 700; }
+.hnp-table-wrap { overflow-x: auto; }
+.hnp-table { border-collapse: collapse; margin: .3rem 0; }
+.hnp-table th, .hnp-table td { border: 1px solid var(--site-line, #ced4da); padding: .2rem .5rem; text-align: center; font-size: .9rem; }
+.hnp-table tr.sw td, .hnp-table tr.sw th { border-bottom: 3px solid var(--site-accent, #2780e3); }
+.hnp-table td .btn { padding: .1rem .3rem; min-width: 2.6rem; }

@@ -1,0 +1,16 @@
+X:1
+C:Franz Schubert
+Z:Public Domain (PianoXML typeset)
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=116
+M:3/4
+K:Bb
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+!mf!"^Allegretto" [FBd]2 | [FBd]3 .[FAc] .[FAc]2 | (.[FAc]2 .[FBd]2 .[Fce]2) | !>![Fdf]4 [FBd]2 | !>![Fdf]4 .[FBd]2 | !>![FBd]3 .[FAc] .[FAc]2 | (.[FAc]2 .[FGB]2 .[FAc]2) | [FBd]4 [DFB]2 | [DFB]4!pp! [FBd]2 | [FBd]3 .[FAc] .[FAc]2 | (.[FAc]2 .[FBd]2 .[Fce]2) | !>![Fdf]4 [FBd]2 | !>![Fdf]4 .[FBd]2 | !>![FBd]3 .[FAc] .[FAc]2 | (.[FAc]2 .[FGB]2 .[FAc]2) | [FBd]4 [DFB]2 | [DFB]4!mf! [_ABd]2 | !>![_ABf]3 [ABd] [ABd]2 | !>![_ABf]3 [ABd] [ABd]2 | [_ABf]3 [GBe]!>(! [GBe]2 | (.[Ge]2 .[FGd]2!>)! .[EGc]2) |!p! [DFc]3 .[DFB] .[DFB]2 | (.[DF]2 .[DFB]2 .[DFc]2) |"_rit." !>![EFd]4 [EFc]2 | [DFB]4!f!"^a tempo" [_ABd]2 | !>![_ABf]3 [ABd] [ABd]2 | !>![_ABf]3 [ABd] [ABd]2 | [_ABf]3 [GBe]!>(! [GBe]2 | (.[Ge]2 .[FGd]2!>)! .[EGc]2) |!p! [DFc]3 .[DFB] .[DFB]2 | (.[DF]2 .[DFB]2 .[DFc]2) | "_rit." !>![EFd]4 [EFc]2 | !fermata![DFB]4 |]
+V:2
+z2 | F,,2 [F,E]2 [F,E]2 | F,,2 [F,E]2 [F,E]2 | "_Ped. simile" B,,,2 [F,D]2 [F,D]2 | B,,,2 [F,D]2 [F,D]2 | F,,2 [F,E]2 [F,E]2 | F,,2 [F,E]2 [F,E]2 | B,,2 [F,B,D]2 [F,B,]2 | B,,2 [F,B,]2 z2 | F,,2 [F,E]2 [F,E]2 | F,,2 [F,E]2 [F,E]2 | B,,,2 [F,D]2 [F,D]2 | B,,,2 [F,D]2 [F,D]2 | F,,2 [F,E]2 [F,E]2 | F,,2 [F,E]2 [F,E]2 | B,,2 [F,B,D]2 [F,B,]2 | B,,2 [F,B,]2 z2 | [B,,,B,,]2 [B,F]2 [B,F]2 | [B,,,B,,]2 [B,F]2 [B,F]2 | [E,,E,]2 [E,B,E]2 [E,B,E]2 | [C,G,C]2 [D,G,=B,]2 [E,G,C]2 | F,,2 [F,B,]2 [F,B,]2 | F,,2 [F,B,]2 [F,B,]2 | F,,2 [F,A,]2 [F,A,]2 | [B,,F,B,]4 z2 | [B,,,B,,]2 [B,F]2 [B,F]2 | [B,,,B,,]2 [B,F]2 [B,F]2 | [E,,E,]2 [E,B,E]2 [E,B,E]2 | [C,G,C]2 [D,G,=B,]2 [E,G,C]2 | F,,2 [F,B,]2 [F,B,]2 | F,,2 [F,B,]2 [F,B,]2 | F,,2 [F,A,]2 [F,A,]2 | !fermata![B,,F,B,]4 |]

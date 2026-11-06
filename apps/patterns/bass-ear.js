@@ -406,6 +406,14 @@
   function both() { return play(cur.q.a, true, "♪ Melody and bass…").then(function () { return new Promise(function (r) { timers.push(setTimeout(r, 700)); }); })
     .then(function () { return play(cur.q.b, ST.second === "melody", ST.second === "melody" ? "♪ Melody and bass, second time…" : "♪ Bass alone…"); }); }
 
+  // ---- the student's report (SiteRecord, record.js loaded on first use): one item a question, tool "bass-ear"
+  var SR_SRC = "/apps/shared/report/record.js?v=8", srWait = [];
+  function withRecord(f) {
+    if (global.SiteRecord) return f(global.SiteRecord);
+    if (typeof document === "undefined") return;
+    srWait.push(f); if (srWait.length > 1) return;
+    var sc = document.createElement("script"); sc.src = SR_SRC; sc.onload = function () { var w = srWait; srWait = []; w.forEach(function (g) { if (global.SiteRecord) g(global.SiteRecord); }); }; document.head.appendChild(sc);
+  }
   function hk() { return ST.style + ":" + ST.level; }
   function score() { var h = ST.hist[hk()] || [], n = h.reduce(function (a, b) { return a + b; }, 0);
     ui.score.textContent = h.length ? "Last " + h.length + ": " + n + " right" + (h.length >= 10 && n >= 8 ? " · ready for the next level ✓" : "") : "No answers yet at this level."; }
@@ -415,15 +423,18 @@
     if (!q) { status("No question could be made with these settings."); return; }
     // transpose so the tonic sits low; the bass line is built around G1-G3 already
     var tr = ST.key === "random" ? Math.floor(Math.random() * 12) - 5 : 0;
-    cur = { q: q, tune: q.tune, base: q.base, tr: tr, btr: tr, answered: false };
+    cur = { q: q, tune: q.tune, base: q.base, tr: tr, btr: tr, answered: false, t0: Date.now() };
     ui.result.innerHTML = ""; ui.reveal.hidden = true; cur.showB = false; drawNotation(); ui.same.disabled = ui.diff.disabled = false;
     ui.prompt.textContent = "Listen: melody with bass, then " + (ST.second === "melody" ? "the melody with a bass line" : "a bass line alone") + ". Same line, or different?";
     both();
   }
   function answer(saidSame) {
     if (!cur || cur.answered) return; cur.answered = true;
+    var t0 = cur.t0;
     var ok = saidSame === cur.q.same, h = ST.hist[hk()] || []; h.push(ok ? 1 : 0); if (h.length > 10) h.shift(); ST.hist[hk()] = h; save(); score();
     ui.same.disabled = ui.diff.disabled = true;
+    var cq = cur.q, ct = cur.tune;
+    withRecord(function (SR) { var it = SR.add("bass-ear", { ex: "Bass Lines by Ear", q: { text: STYLES[ST.style].label + " level " + ST.level + ": " + ct.title + ", the bass line twice: same or different?" }, want: (cq.same ? "Same" : "Different") + (cq.same ? "" : " (" + cq.diff.text + ")") }); it.at.push([saidSame ? "Same" : "Different", ok ? 1 : 0, Math.round((Date.now() - t0) / 1000)]); SR.save(); });
     ui.result.innerHTML = "";
     ui.result.appendChild(el("div", ok ? "be-ok" : "be-no", (ok ? "Right. " : "Not quite. ") + (cur.q.same ? "They were the same." : "They were different.")));
     if (!cur.q.same) ui.result.appendChild(el("div", null, cur.q.diff.text));
@@ -484,6 +495,7 @@
     bar.appendChild(btn("■", null, function () { stop(); status(""); }));
     bar.appendChild(ui.notaBtn = btn("♫ Show notation", "be-nota-btn", function () { ST.notation = +ST.notation ? 0 : 1; save(); drawNotation(); }));
     h.appendChild(bar);
+    withRecord(function (SR) { if (bar.isConnected) bar.appendChild(SR.button(bar)); });
     ui.prompt = el("div", "be-prompt", "Press Start.");
     h.appendChild(ui.prompt);
     var ch = el("div", "be-choices");

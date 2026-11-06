@@ -1,0 +1,22 @@
+X:1
+C:Pierre Certon
+%%score [ 1 2 3 4 ]
+L:1/8
+M:2/2
+K:Bb
+V:1 treble nm="Soprano" snm="S."
+%%MIDI program 52
+V:2 treble nm="Alto" snm="A."
+%%MIDI program 52
+V:3 treble-8 nm="Tenor" snm="T."
+%%MIDI program 52
+V:4 bass nm="Bass" snm="B."
+%%MIDI program 52
+V:1
+G2 ^F2 |[M:4/4] G2 B B B2 A A | A2 G3 G G G | ^F2 G2 B2 A2 | G4 G G G ^F | G2 A2 B2 A2 | G4 G G G ^F | G4 G2 G2 | G2 B2 A2 G2 | ^F2 G2 B3 B | A2 G2 G2 ^F2 | G4 B3 B | B2 B2 d2 B2 | A2 G2 B3 B | A2 G2 F2 E2 | D2 G2 G2 ^F2 | G2 B B B2 A A | A2 G3 G G G | ^F2 G2 B2 A2 | G4 G G G ^F | G2 A2 B2 A2 | G4 G G G ^F | !fermata!G4 :|
+V:2
+D2 D2 |[M:4/4] B,2 G G D2 F F | C2 E3 E D D | D2 B,2 G2 F2 | E4 E E D D | B,2 F2 G2 F2 | E4 E E D D | B,4 D2 D2 | D2 F2 F2 D2 | D2 B,2 D3 G | F2 E2 E2 D2 | B,4 G3 G | G2 G2 A2 G2 | ^F2 G2 G2 =F2 | F2 D2 D2 B,2 | B,2 D2 E2 D2 | B,2 G G D2 F F | C2 E3 E D D | D2 B,2 G2 F2 | E4 E E D D | B,2 F2 G2 F2 | E4 E E D D | !fermata!B,4 :|
+V:3
+B2 A2 |[M:4/4] G4 B c d2 | A B c2 G A B G | A2 G2 d2 d2 | B4 c c B A | G2 d2 d2 d2 | B4 c c B A | G4 B2 B2 | B2 d2 c2 B2 | A2 G2 (GAB) c | d2 B2 c2 A2 | G4 d3 d | d2 d2 d2 d2 | d2 B2 B2 d2 | c2 B2 A2 G2 | F2 B2 A2 A2 | G4 B c d2 | A B c2 G A B G | A2 G2 d2 d2 | B4 c c B A | G2 d2 d2 d2 | B4 c c B A | !fermata!G4 :|
+V:4
+G,2 D,2 |[M:4/4] G,4 G, G, D,2 | F, F, C,2 C, C, G, G, | D,2 G,2 G,2 D,2 | E,4 C, C, D, D, | G,2 D,2 G,2 D,2 | E,4 C, C, D, D, | G,4 G,2 G,2 | G,2 D,2 F,2 G,2 | D,2 G,2 G,3 G, | D,2 E,2 C,2 D,2 | G,4 G,3 G, | G,2 G,2 F,2 G,2 | D,2 G,2 G,2 B,2 | F,2 G,2 D,2 E,2 | B,,2 B,,2 C,2 D,2 | G,4 G, G, D,2 | F, F, C,2 C, C, G, G, | D,2 G,2 G,2 D,2 | E,4 C, C, D, D, | G,2 D,2 G,2 D,2 | E,4 C, C, D, D, | !fermata!G,4 :|

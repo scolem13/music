@@ -1,0 +1,20 @@
+X:1
+C:Carl Philipp Emanuel Bach
+Z:Public Domain (PianoXML typeset)
+%%score { ( 1 3 ) | 2 }
+L:1/8
+Q:1/4=100
+M:3/4
+K:Bb
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:3 treble 
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+!mf!"^Allegretto" (G/A/B) (A/^F/G) !tenuto!E2 | (G/A/B) (A/^F/G) !tenuto!D2 | d(d/G/ [ce])[Bd][Ac][GB] | [^FA](([FA]/[GB]/ A4)) |!mp! (G/A/B) (A/^F/G) !tenuto!E2 | (G/A/B) (A/^F/G) !tenuto!D2 | d(d/G/ [ce])[Bd][Ac][GB] | [^FA](G/F/ [B,DG]4) :: !f! (B/c/d) (c/A/B) !tenuto![Bg]2 | (B/c/d) (c/A/B) !tenuto![Bf]2 | [eg] [eg]2 [df][ce][Bd] | [Ac][Ac]/[Bd]/ c4 | [ce]/[=Bd]/[ce] [ce]/[Bd]/[ce] !tenuto![ce]2- | [ce]/[=Bd]/[ce] [ce]/[Bd]/[ce]!f! !tenuto!e2 |!>(! d(d/_a/ e)(e/f/ d)(d/e/!>)! | c)(c/=B/!<(! c4)!<)! |!p! (G/c/e) (F/c/e) !tenuto!d2 | (F/B/d) (E/B/d) !tenuto!c2 | E/A/c D/A/c- c/!<(!B/A/G/ | ^c/!<)!d/B/G/!>(! A/^F/G/A/ D2!>)! |!mf! G/A/B A/^F/G !tenuto!E2 | (G/A/B) (A/^F/G) !tenuto!D2 | d!<(!(d/G/ [ce])!<)![Bd][Ac][GB] | A(G/^F/!>(! G4)!>)! :|
+V:2
+(G,/A,/B,) (A,/^F,/G,) !tenuto!E,2 | (G,/A,/B,) (A,/^F,/G,) !tenuto!D,2 | [B,,G,]2 C,2 C,2 | (D,2- D,/C,/D,/=E,/ ^F,/E,/F,/D,/) | (G,/A,/B,) (A,/^F,/G,) !tenuto!E,2 | (G,/A,/B,) (A,/^F,/G,) !tenuto!D,2 | [B,,G,]2 C,2 C,2 | D,D,, (G,,B,,/D,/ G,2) :: (B,/C/D) (C/A,/B,) !tenuto!E,2 | (B,/C/D) (C/A,/B,) !tenuto!D,2 | E,2 E,,2 E,2 | (F,2- F,/E,/F,/G,/ F,/E,/F,/D,/ | C,2) C2- C/B,/A,/G,/ | _A,,2 _A,2- A,/G,/F,/E,/ | F,2 G,2 G,,2 | C,,2- C,,/(C,/D,/E,/ F,/G,/A,/=B,/ | C_B,A,F,) (B,,/F,/B,- | B,A,G,E,) (A,,/E,/A,- | A,G,^F,D,) G,,G, | D,2 D,,2- D,,/(=C/B,/A,/ | G,/A,/B,) (A,/^F,/G,) !tenuto!E,2 | (G,/A,/B,) (A,/^F,/G,) !tenuto!D,2 | [B,,G,]2 C,2 C,2 | D,D,, (G,,B,,/D,/ G,2) :|
+V:3
+x6 | x6 | x6 | x2 ^F2 D2 | x6 | x6 | x6 | x6 :: x6 | x6 | x6 | x2 A2 F2 | x6 | x4 c2- | c=B c2 B2 | [EG]2 [EG]4 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | ^F2 [B,D]4 :|

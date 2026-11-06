@@ -1,0 +1,22 @@
+X:1
+C:Tomás Luis de Victoria
+%%score [ 1 2 3 4 ]
+L:1/8
+M:2/2
+K:G
+V:1 treble nm="Soprano" snm="S."
+%%MIDI program 52
+V:2 treble nm="Alto" snm="A."
+%%MIDI program 52
+V:3 treble-8 nm="Tenor" snm="T."
+%%MIDI program 52
+V:4 bass nm="Bass" snm="B."
+%%MIDI program 52
+V:1
+z8 | E8 | ^G4 A4- | A2 G2 =F4- | F4 E4- | E4 z2 E2- | E2 E2 G4 | A6 A2 | B8 | E8 | z8 | z2 E2 A4- | A2 A2 A4 | A4 ^G4 | A8 | ^G4 z4 | z8 | z4 A4- | A4 G4 | =F8 | E4 z2 E2- | E2 DC D2 D2 | E8 | z2 E4 E2 | E2 E2 =F2 E2- | E2 D2 E2 ^G2- | G2 ^G2 G2 G2 | A8 | G8 | z2 E4 E2 | E2 E2 =F4- | F4 E4- | E4 z4 | A4 c4- | c2 B2 B4- | B4 z2 B2- | B2 B2 B2 B2 | A6 A2 | ^G4 z4 | c8 | B4 A3 B | c4 d4 | G8 | z8 | z4 B4- | B4 c4 | B2 B4 A2 | B2 G4 c2- | c2 A4 B2- | BA A4 ^G2 | A4 z4 | z8 | z4 A4- | A4 G4 | =F8 | E4 z2 E2- | E2 DC D2 D2 | E8 | z2 E4 E2 | E2 E2 =F2 E2- | E2 D2 E2 ^G2- | G2 ^G2 G2 G2 | A8 | G8 | z2 E4 E2 | E2 E2 =F4- | F4 E4- | E8- | E8 |]
+V:2
+z4 A,4- | A,4 E4- | E4 C4- | C4 D4- | D4 G,4 | G6 G2 | G4 E2 G2- | G2 F4 E2 | D8 | ^C8 | z4 E4 | E6 E2 | E8 | =F4 E2 E2- | E2 DC D4 | E4 z4 | z4 E4- | E4 D4 | E8 | A,4 D3 C | B,2 A,4 ^G,2 | A,6 A,2 | B,4 z2 B,2- | B,2 B,2 B,2 B,2 | C6 B,2 | A,4 B,4 | z2 E4 E2 | E2 E2 =F4 | E2 DC D4 | E2 C4 C2 | B,2 ^C2 D4- | D4 B,4- | B,4 z4 | z4 E4 | G6 F2 | F8 | G3 G G2 G2 | =F2 E4 D2 | E4 z4 | E8- | E4 C4- | C4 =F4 | E4 z2 E2 | =F6 E2 | D4 E4 | z2 E2 G4- | G2 =F2 E4 | E4 z2 E2 | C4 =F4 | E8 | ^C4 z4 | z4 E4- | E4 D4 | E8 | A,4 D3 C | B,2 A,4 ^G,2 | A,6 A,2 | B,4 z2 B,2- | B,2 B,2 B,2 B,2 | C6 B,2 | A,4 B,4 | z2 E4 E2 | E2 E2 =F4 | E2 DC D4 | E2 C4 C2 | B,2 ^C2 D4- | D4 B,4 | B,4 ^C4- | C8 |]
+V:3
+A8 | c8 | B4 A3 G | AB c4 BA | B4 c4- | c4 B4- | B2 B2 B4 | d2 DE FG A2- | A2 ^GF G4 | A8 | z4 B4 | c6 c2 | c8 | d4 B2 c2- | cBAG A4 | B4 z4 | c8 | B4 A4 | B8 | d3 c B2 A2 | ^G2 c2 B2 c2- | c2 B2 A4- | A2 ^GF G2 E2- | E2 E2 E2 E2 | A6 G2 | =F4 E2 B2- | B2 B2 B2 B2 | c3 B c2 d2- | dc c4 B2 | c4 z2 A2- | A2 ^G2 A2 A2 | B2 A4 ^GF | ^G4 z4 | z4 A4 | e6 ^d2 | ^d8 | e3 e e2 d2 | c3 B A2 A2 | B4 z4 | A8 | ^G4 A3 G | AB c4 B2 | c4 B4 | c6 B2 | A6 ^GF | G2 E2 e4- | e2 d2 c4 | B2 B2 e4 | A4 d4 | c2 BA B4 | A4 z4 | c8 | B4 A4 | B8 | d3 c B2 A2 | ^G2 c2 B2 c2- | c2 B2 A4- | A2 ^GF G2 E2- | E2 E2 E2 E2 | A6 G2 | =F4 E2 B2- | B2 B2 B2 B2 | c3 B c2 d2- | dc c4 B2 | c4 z2 A2- | A2 ^G2 A2 A2 | B2 A4 ^GF | ^G4 A4- | A8 |]
+V:4
+z8 | A,,8 | E,4 =F,4- | F,2 E,2 D,4- | D,4 C,4- | C,4 E,4- | E,2 E,2 E,4 | D,6 C,2 | B,,8 | A,,8 | z4 E,4 | A,6 A,2 | A,8 | D,4 E,4 | =F,8 | E,4 z4 | A,8 | G,4 =F,4 | E,8 | D,8 | E,8 | =F,6 F,2 | E,8 | z8 | z8 | z4 z2 E,2- | E,2 E,2 E,2 E,2 | A,4 =F,4 | G,8 | C,2 A,,4 A,,2 | E,2 E,2 D,4- | D,4 E,4- | E,4 z4 | z8 | E,4 B,4- | B,2 B,2 B,4 | E,3 E, E,2 G,2 | A,3 G, =F,2 F,2 | E,4 z4 | A,,8 | E,4 F,4- | F,2 E,2 D,4 | C,4 E,4 | A,6 G,2 | =F,4 E,4- | E,4 z4 | z4 z2 A,,2 | E,4 C,4 | =F,4 D,4 | E,8 | A,,4 z4 | A,8 | G,4 =F,4 | E,8 | D,8 | E,8 | =F,6 F,2 | E,8 | z8 | z8 | z4 z2 E,2- | E,2 E,2 E,2 E,2 | A,4 =F,4 | G,8 | C,2 A,,4 A,,2 | E,2 E,2 D,4- | D,4 E,4- | E,4 A,,4- | A,,8 |]

@@ -1,0 +1,24 @@
+X:1
+C:Thomas Arne (1710-1778)
+Z:www.sangerforum.no
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=60
+M:2/4
+K:Bb
+V:1 treble nm="I"
+%%MIDI program 52
+V:2 treble nm="II"
+%%MIDI program 52
+V:3 treble nm="III I"
+%%MIDI program 52
+V:4 treble nm="III II"
+%%MIDI program 52
+V:1
+|: F2 | D B, z F | D B, B2 | B2 A3/2 A/ | B B d2 | e2 c3/2 B/ | f2 B2 | e2 d3/2 d/ | c2 A2 | B2 A3/2 G/ | A F A2 | B2 A3/2 G/ | A F z f | f4- | f4- | f2 f f | f F d2 | e2 e d | e2 c2 | d2 d c | d2 f2 | f2 e e | e2 d2 | c2 c3/2 c/ | d2 :|
+V:2
+|: z2 | z2 B3/2 A/ | B F z B | c2 c3/2 c/ | d3/2 f/ B2- | B2 A A | B2 z d | c2 B3/2 B/ | A2 c3/2 c/ | d B z2 | z2 z3/2 c/ | d2 z2 | z2 z A | B2 B3/2 B/ | A2 z c | _d2 d3/2 d/ | c2 F2 | C2 c =B | c c A2 | B2 B A | B2 B B | B B c2 | c c B2 | B2 A3/2 A/ | B2 :|
+V:3
+|: F3/2 F/ | B F z f | f f f F | G2 F3/2 F/ | F2 z F | G G z E | F F z F | G2 G3/2 B/ | F2 z2 | z2 f3/2 =e/ | f c z2 | z2 f3/2 =e/ | f c F2 | d2 d3/2 d/ | c2 A2 | B2 B3/2 B/ | A2 _A3/2 A/ | _A G z G | G G F2 | F2 F F | F2 F F | G G z G | A A B2 | G2 F F | F2 :|
+V:4
+|: Tf2 | f2 d c | d2 D2 | E2 F F | B,2 B,2 | E2 E3/2 E/ | D2 D2 | E2 =E3/2 E/ | F4- | F4- | F4- | F4- | F2 F2 | B,2 B, B, | F2 F2 | B,2 B, B, | F2 z2 | z2 G2 | C2 z2 | z2 F2 | B,2 D D | E2 C2 | F2 G D | E2 F F | B,2 :|

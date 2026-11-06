@@ -1,0 +1,290 @@
+---
+title: "The Clarinet"
+toc: true
+toc-depth: 2
+description: "Everything a beginning clarinetist needs: where the clarinet came from, the family (B♭, E♭ alto, B♭ bass and the rest), the parts, reeds and ligatures, putting it together, holding it, your embouchure and first note, an interactive fingering chart and trill chart, the registers and the break, fixing tone problems, tuning, vibrato, care, and players to listen to."
+instruments: [clarinet]
+topics: [instruments, technique]
+has: [fingering, interactive, svg]
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/clarinet/clarinet.css?v=1">
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/clarinet/clarinet-chart.js?v=1"></script>
+<script src="/apps/shared/clarinet/clarinet-page.js?v=1"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+The clarinet is a **woodwind** with a **single reed**: one thin strip of cane vibrates against the flat side of a mouthpiece. Its tube
+is a long **cylinder** (the same width most of the way), and that is why it behaves differently from other woodwinds. This page follows the
+standard **B♭ clarinet**, the one most beginners start on, and shows how the bigger members of the family differ.
+
+Want to practise patterns by ear with these fingerings? Try [Clarinet Patterns by Ear](../practice/clarinet-patterns-by-ear.qmd).
+
+## Where it came from {#history}
+
+This is the story as the teacher book tells it. The dates and names are **its**, retold here, and I have not checked them against another
+source (one of them looks doubtful, see below).
+
+- Single-reed instruments are very old: the book names the *zummara* (Egypt), the *pungi* or *magudi* (India) and the *aulos* (Greece),
+  and puts the oldest ancestors as far back as 2700 B.C.E.
+- The clarinet's direct ancestor was the **chalumeau**, a simple single-reed pipe. The instrument maker **Johann Christoph Denner** of
+  Nuremberg is traditionally credited with inventing the clarinet by adding a **speaker (register) key** to it, between 1701 and 1704.
+  The first clarinets may have been called "mock trumpets" because they sounded like early trumpets.
+- In the 1700s more keys were added, and clarinets in **C** and **B♭** appeared. Composers began to write for it. The book says Johann
+  Christian Bach brought it to London in **1751** (*doubtful: he was a teenager then, so check this before you repeat it*), Haydn used it
+  for the first time in his First Mass, and Mozart loved its tone for being so close to the human voice. By 1800 it had become more common
+  than the oboe in wind bands.
+- **1806**: Iwan Müller invented key **pads glued inside pad cups**, which made airtight keys for the first time. His clarinet had seven
+  finger holes and thirteen keys and could play in any key.
+- In the mid-1800s **Hyacinthe Klosé** and **Auguste Buffet** adapted Theobald Boehm's flute key system to the clarinet. Boehm had
+  nothing to do with the clarinet, but the fingering system is still called the **Boehm system**.
+
+## The clarinet family {#family}
+
+The clarinets are the biggest family in the woodwind section. They are all **transposing instruments**: a written note is fingered the
+same on every one, but each *sounds* a different pitch (see the [fingering chart](#fingering-chart)).
+
+| Clarinet | Sounds (written C is…) | Notes |
+|---|---|---|
+| **E♭ soprano** | a minor 3rd **higher** | Small and shrill; used in bands and orchestras. The book says not for beginners. |
+| **B♭ soprano** | a major 2nd lower | **The standard clarinet and the usual first one.** |
+| A soprano | a minor 3rd lower | Often used in symphony orchestras (the book says so). Same fingering as the B♭. |
+| **E♭ alto** | a major 6th lower | Suitable for beginners, says the book. Has a neck and a neck strap. |
+| **B♭ bass** | a major 9th lower (an octave and a 2nd) | Also suitable for beginners. Has a neck and a neck strap. |
+| E♭ contra-alto | an octave and a major 6th lower | Not recommended as a first instrument. |
+| B♭ contrabass | two octaves and a major 2nd lower | Not recommended as a first instrument. |
+| Basset horn (in F) | a perfect 5th lower | Another member, used in orchestras. |
+
+The pitches in the third column are **not from the book** (it gives none). They are the usual ones, and the page uses them to sound the
+examples. They are not yet checked against a second source. The book does say that **fingerings and written ranges are the same for the
+whole family**, except at the extreme ends of the low members, and that this chapter follows the B♭ clarinet.
+
+## The parts {#parts}
+
+From the end you blow into, down to the bell:
+
+- **Reed**: the cane strip. Its thin tip vibrates against the mouthpiece. (Not in the book's picture because you attach it yourself.)
+- **Mouthpiece**: holds the reed. Some have two horizontal lines on them (see ligature).
+- **Ligature**: the band with screws that clamps the reed to the mouthpiece.
+- **Barrel**: the short tube between the mouthpiece and the body. On alto and bass clarinets the barrel is replaced by a curved **neck**.
+- **Upper section** (upper joint): the **tone hole rings**, the **register key** and the left-hand holes.
+- **Bridge keys**: the linked keys that cross from the upper section to the lower one. They must line up when you join the sections.
+- **Lower section** (lower joint): the right-hand holes and the little-finger keys. The **thumb rest** for the right thumb is on its back.
+- **Tenon corks**: the corked rings where the sections plug into each other. They need a little **cork grease** now and then.
+- **Pad cups**: the cups of the big keys; do not squeeze them as you hold the clarinet.
+- **Bell**: the flared end.
+
+## Reeds and ligatures {#reeds}
+
+**Choosing a reed.** Look at each reed before you buy it, even from a box. Single reeds are mass-produced and differ a lot in quality.
+
+1. It should be **free of chips and cracks**.
+2. The cane should be a **deep golden yellow**. Pale yellow or a greenish tint usually means the cane has not seasoned well.
+3. Hold it up to the light. The **grain should run straight** with the darker streaks evenly spread, and the **heart** (the darker middle
+   part) should be centered.
+
+The book lists these reed brands as recommended: La Voz, Mitchell Lurie, Rico, Rico Royal and Vandoren.
+
+**Adjusting a reed.** Reeds in the same box marked with the same strength still differ, and most can be made to play better. All you
+need is a **reed clipper** and **fine wet/dry sandpaper** (400 to 800 grit). Do it when the reed is **wet**.
+
+- **Too soft**: clip a *tiny* piece off the tip. Repeat only if it is still too soft: you cannot put cane back.
+- **Too hard**: sand the **shoulders** of the reed lightly. Never sand the heart.
+
+**Ligatures.** The ligature must hold the reed firmly but not tightly: too loose and the reed is not secure; too tight and the reed
+cannot vibrate, so the clarinet is hard to play. If your mouthpiece has two horizontal lines, center the ligature **between the lines**;
+otherwise put it about **halfway** along the mouthpiece. The ligature that comes with a student clarinet is fine at first. Recommended
+upgrades in the book: BG, Bois Classique, Bonade, Luyben, Rico H, Rovner and Vandoren Optimum.
+
+**Who suits the clarinet?** The book's list of qualities for a successful beginner: hands big enough to reach all the keys, with fingertips
+that cover the holes; thumbs that are **not double-jointed**; an orthodontist who agrees; a good sense of pitch; good eye-hand coordination;
+and above-average reading skills.
+
+## Putting it together {#assembly}
+
+1. **Wet the reed**: put the thin end in your mouth for a moment. Grease the corks if they are stiff. On an alto or bass, put the neck
+   strap round your neck first.
+2. Push and twist the **bell** onto the lower section. On alto and bass clarinets, line up the **bridge keys**.
+3. Press the **tone hole rings** down so the bridge key on the upper section lifts, hold the lower section by the **pad cups** with
+   your palm, and twist the sections together gently. Keep the bridge keys lined up. (Alto and bass clarinets may have only one body piece.)
+4. Twist the **barrel** onto the upper section, again keeping the bridge keys lined up.
+5. Push the **mouthpiece** into the barrel with the **flat, open side** lined up with the **register key**.
+6. Slide the ligature over the mouthpiece with the screws loose, slip the reed in behind it, and slide the ligature down.
+7. **Center the reed** with a hairline of mouthpiece showing above its tip. Tighten the ligature screws only until **snug**.
+8. Alto or bass: put the **neck** into the body and tighten the **neck screw**.
+
+## Holding it {#posture}
+
+1. Sit **straight at the front edge** of your chair, feet flat on the floor.
+2. Keep your body relaxed, **chin parallel to the floor**, elbows **away** from your body.
+3. **Right thumb** under the **thumb rest**, kept straight. **Left thumb** over the **thumb hole** on the back, at about 45 degrees.
+4. Hold the clarinet **straight in front of you**, the bell near your knees. An alto or bass clarinet goes **between your knees**.
+5. **Curve your fingers** on both hands into a relaxed "C", as if holding a tennis ball. Keep your **wrists straight**.
+6. Cover each hole with the **soft pad of the fingertip**, so the whole hole is covered. A finger that misses even part of a hole lets
+   the note squeak.
+
+## Embouchure and your first note {#embouchure}
+
+The **embouchure** is how your mouth sits on the mouthpiece. A trick from the book to find the right place:
+
+1. Take off the mouthpiece and barrel (or neck).
+2. Slip a **piece of paper** between the reed and the mouthpiece and slide it down toward the barrel until it stops.
+3. Put the tip of your **thumb** just below the line the paper makes. This line is where your **lower lip** goes.
+4. Keep your thumb there and take the paper away. Shape your mouth as if you were saying **"whee"** while saying **"too"**.
+5. Cover your bottom teeth with a little of your **lower lip**.
+6. Put the mouthpiece in your mouth so your lower lip bumps your thumb. Rest your **top teeth directly on the mouthpiece**.
+7. Close your lips round it **like a drawstring**. Your **chin is flat and pointed**. Check in a mirror.
+8. Take a full breath **through your mouth** and play a long, steady **F♯** (written, on the B♭ clarinet). The book says **B** on the alto
+   clarinet and **D♭** on the bass clarinet.
+
+**Checklist** (from the book): sitting straight · clarinet in the middle of the body, bell near or between the knees · right angle ·
+both thumbs in place · fingers gently curved · wrists straight · elbows away from the body · head up · mouthpiece at the right
+distance in the mouth · top teeth on the mouthpiece · chin flat and pointed · even pressure on all sides of the mouthpiece · breathing
+correctly · a good tone.
+
+## Fingering chart {#fingering-chart}
+
+Pick a note. **Dark keys are pressed down**, white keys are open. Hover over a key (or long-press on a phone) for its name. Where there's
+more than one fingering, the first is the one the book shows first; the others (**alternate fingerings**) help some passages.
+
+```{=html}
+<div id="clr-explorer"></div>
+```
+
+How to read the diagram: the **teardrop** at the top left is the **register key**, and the circle under it is the **thumb hole** (left
+thumb). The six big circles are the finger holes: the left hand's first, second and third fingers on top, then the line between the hands,
+then the right hand's first, second and third. The **two ovals** at the top right are the little keys by the left first finger that the
+throat notes use. The **four small circles** on the left are the right hand's **side keys**, and the **leaf** is a small key beside the
+holes. The **tulip** (three petals) and the **four ovals at the bottom** are the little-finger keys used for the lowest notes and for G♯.
+Where the book prints **L**, **R** or **LR** under a low fingering, it is copied here; what each little-finger key is called is **not on the
+book's chart**, so the page does not name them.
+
+**The registers.** These are the usual names, but they are **not from the book** and I have not checked them in a source yet:
+
+- **Chalumeau** (the low register): written E3 up to about F♯4, played with the register key **not** pressed.
+- **Throat tones**: the four notes G4 to B♭4, made with almost no fingers down. They are a little weaker and stuffier.
+- **Clarion** (the middle register): from written B4, the same fingerings as the low notes but with the **register key** pressed. It is a
+  **twelfth** higher, not an octave: that is what a clarinet does because the tube is a cylinder. The chart shows this: B4 is E3 plus the
+  register key.
+- **Altissimo**: the notes from about C♯6 up, with their own special fingerings.
+
+The jump between **A♯4** (register key plus A) and **B4** (all fingers) is the **break**: the one place where your fingers change a lot.
+Practise slow slurs across it with a steady air stream.
+
+## Build a fingering {#build}
+
+Press keys on the diagram yourself (the B♭ clarinet chart). In **What note is this?** the page names the note your fingering makes. In the
+**Quiz** it gives you a note and you build its fingering.
+
+```{=html}
+<div id="clr-builder"></div>
+```
+
+## Trill chart {#trills}
+
+A **trill** is a fast wobble between two notes. Some trills are awkward with the normal fingerings, so there are special ones:
+hold the dark keys down and move only the **gray** key(s). The book's chart is for the B♭ clarinet; some notes have two ways.
+
+```{=html}
+<div id="clr-trills"></div>
+```
+
+## Alto, bass and the larger clarinets {#bigger}
+
+The book gives one chart for the **alto, bass, contra-alto and contrabass** clarinets. It is the same as the B♭ chart with two
+differences:
+
+- an extra low note, **written E♭3** (the book's first column), played with the E fingering and one more little-finger key;
+- the highest notes, **C♯6 to F6**, are fingered with the **first hole half covered** ("h.h." = half hole). The explorer above shows
+  it when you pick one of these clarinets and one of those notes. (The half-covered hole is drawn as a half-dark circle.)
+
+Everything else is the same, so you can read the B♭ chart for all of them. I compared the two charts at E♭3 and C♯6 to F6 only
+and did not check every column.
+
+## When the tone goes wrong {#tone-problems}
+
+| What it sounds like | Probably because… | Try this |
+|---|---|---|
+| **No tone**, just rushing air | Not enough embouchure support | More support |
+| | Too much reed in your mouth | Take in a bit less mouthpiece |
+| | The reed is too stiff | If it is already broken in enough, sand it |
+| **Squawky, flat** | Not enough embouchure support | Shape your mouth like an "oo" |
+| | The reed is too soft | Clip it |
+| | Too much reed in your mouth | Check how much mouthpiece should go in, and adjust |
+| | Air too slow | Faster air |
+| **Squeaks, a high squeal** | Not enough embouchure support | "Oo" shape, more support and faster air |
+| | Too much reed in your mouth | Check how much should go in, and adjust |
+| | The reed is too soft | A stiffer reed, or clip it |
+| | Clarinet too far out from your body | Bring it in closer |
+| | Fingers not covering the holes | Cover the holes completely |
+| **Stopped, or no sound** | Pinching or biting the reed | Shape your mouth with more "O" |
+| | The reed is too soft | A stiffer reed, or clip it |
+| | The reed is not in the right place | Put it right |
+| | Too much embouchure pressure | More "O" |
+| | The ligature is too high on the reed | Move the ligature |
+| **Thin, sharp** | Too little reed in your mouth | Check how much should go in, and adjust |
+| | Tight, closed throat | Open your throat with a relaxed yawn, and use more "O" |
+| | The reed is too hard | A softer reed, or sand the one you have |
+
+**Loud and soft.** Most woodwinds drift when the volume changes, so keep a tuner nearby and practise **long tones**: hold one note for
+four bars, growing from *pp* to *ff* and back, keeping the pitch still. (General practice advice, not from the book.)
+
+## Playing in tune {#tuning}
+
+The scanned pages I have do not include the book's tuning chart, so this section is **general advice, not from the book**, and I have not
+checked it in a source. Ask your teacher what your clarinet needs.
+
+- **Good tone first.** You can't tune a bad tone.
+- You tune mostly by moving the **barrel**: pulling it out makes the pitch **lower** (flatter), pushing it in makes it **higher**. Warm the clarinet with your breath first, because it goes **sharper as it warms up**.
+- The clarinet is not equally in tune on every note: some notes in the throat and across the break need adjusting with your embouchure
+  or an alternate fingering. A tuner (the navbar has one) shows you which.
+- An alto or bass clarinet is tuned the same way, with the **neck** and the mouthpiece.
+
+## Vibrato {#vibrato}
+
+Clarinetists **generally don't use vibrato**, even though other woodwinds do. If you do choose it later, use **jaw vibrato**, and only
+after you have a beautiful tone. Here is the book's way of learning it:
+
+1. Metronome at **76**. Hold a comfortable note, such as the C in the third space.
+2. Move your jaw slightly as if saying "ya" **once** on each click.
+3. Then **twice** per click ("ya-ya"), evenly spaced.
+4. Then **three** times, then **four** per click, still evenly. Four per beat at 76 suits most music.
+5. Use it on slow scales in whole notes, then in simple melodies.
+
+## Looking after it {#care}
+
+After every practice:
+
+1. Take off the **ligature and reed**. Put the reed in a **reed holder** to dry, never left on the mouthpiece.
+2. Take each section apart and **swab it out** carefully. Wipe the tenon corks and joints.
+3. Wipe the outside with a **soft, clean cloth**.
+4. Put each part back in its own place in the case as you finish with it. **Latch the case.**
+
+## Players to listen to {#listening}
+
+Ask your teacher before you look these up: not every recording is suitable for school. The book suggests: **Jonathan Cohler, Larry
+Combs, Stanley Drucker, Thea King, Mitchell Lurie, Sabine Meyer and Richard Stoltzman.**
+
+```{=html}
+<script>
+ClarPage.explorer(document.getElementById("clr-explorer"));
+ClarPage.builder(document.getElementById("clr-builder"));
+ClarPage.trills(document.getElementById("clr-trills"));
+</script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Clarinet." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Clarinet](https://en.wikipedia.org/wiki/Clarinet). Unverified: the transpositions of the family in the lesson's table (B♭ M2, A m3, E♭ soprano m3 up, alto M6, bass M9, contra-alto octave + M6, contrabass two octaves + M2, basset horn P5), the register names (chalumeau, throat tones, clarion, altissimo) and the tuning advice. Not yet re-read.
+
+**For teachers**
+
+"Clarinet." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 118-39. History (Denner, Müller, Klosé and Buffet), family, selecting players, reeds and reed adjustment, ligatures, parts, assembly, posture, embouchure, care, checklist, tone problems, vibrato, listening list, B♭ clarinet fingering chart (p. 136), trill chart (p. 137), alto / bass / contralto / contrabass chart (p. 138) and its trill chart (p. 139). Retold in the page's own words; charts redrawn from the book's key template. Not in the scanned pages: the tuning chart.
+:::
+<!-- /works-cited -->

@@ -2,7 +2,7 @@
 // Each question type on a few levels and paths: answering right scores, a wrong answer shows the right one; phone width has no sideways scroll.
 // Run: quarto render practice/harmony-ear.qmd && node tests/harmony/harmony-ear.cdp.js
 const http = require("http"), fs = require("fs"), path = require("path"), assert = require("assert");
-const ROOT = path.resolve(__dirname, "../.."), SITE = path.join(ROOT, "_site");
+const ROOT = path.resolve(__dirname, "../.."), SITE = process.env.SITE || path.join(ROOT, "_site");
 const { launch } = require(path.join(ROOT, "tests/band/lead/cdp.js"));
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".svg": "image/svg+xml", ".woff2": "font/woff2", ".json": "application/json" };
 const server = http.createServer((req, res) => {
@@ -137,6 +137,21 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       await b.goto(host + "/practice/harmony-ear.html"); await wait(800);
       assert.strictEqual(await b.eval(`JSON.parse(localStorage.getItem("harmonyEar.v1")).voices`), 3);
       assert(await b.eval(`document.documentElement.scrollWidth<=innerWidth+1`), "scrollWidth " + await b.eval(`document.documentElement.scrollWidth`));
+    });
+    await check(`[${w}] each checked question goes into the student's report (SiteRecord)`, async () => {
+      await b.eval(`SiteRecord.clear()`);
+      await setSel("Path", "mlt"); await setSel("Level", "B2"); await setSel("Question", "rn");
+      await b.eval(`document.querySelector("#harmony-ear .he-go").click()`); await wait(150);
+      await answerAll(true);
+      await b.eval(`document.querySelector("#harmony-ear .he-go").click()`); await wait(100);
+      await answerAll(false); await wait(300);
+      const items = JSON.parse(await b.eval(`JSON.stringify(SiteRecord.all())`));
+      assert.strictEqual(items.length, 2, "two items: " + items.length);
+      assert(items.every(x => x.tool === "harmony-ear" && x.ex === "Hearing Harmony" && x.at.length === 1 && x.want && /B2/.test(x.q.text)), JSON.stringify(items[0]));
+      assert.deepStrictEqual(items.map(x => x.at[0][1]), [1, 0]);
+      assert(await b.eval(`!!document.querySelector("#harmony-ear .he-bar .sr-mybtn")`), "My report button in the bar");
+      await b.eval(`document.querySelector("#harmony-ear .he-bar .sr-mybtn").click()`); await wait(300);
+      assert(/Hearing Harmony: 2 question/.test(await b.eval(`document.querySelector(".sr-rep").textContent`)) || /2 questions answered/.test(await b.eval(`document.querySelector(".sr-rep").textContent`)), "report lists them");
     });
     await b.close();
   }

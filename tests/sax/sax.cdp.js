@@ -1,7 +1,7 @@
 // The saxophone lesson (fingering chart, build a fingering, trills) and Sax Patterns by Ear, in headless Chrome.
 // Run: quarto render lessons/saxophone.qmd && quarto render practice/sax-patterns-by-ear.qmd && node tests/sax/sax.cdp.js [--shots <dir>]
 const http = require("http"), fs = require("fs"), path = require("path"), assert = require("assert");
-const ROOT = path.resolve(__dirname, "../.."), SITE = path.join(ROOT, "_site");
+const ROOT = path.resolve(__dirname, "../.."), SITE = process.env.SITE || path.join(ROOT, "_site");
 const { launch } = require(path.join(ROOT, "tests/band/lead/cdp.js"));
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".svg": "image/svg+xml", ".woff2": "font/woff2", ".json": "application/json" };
 const shotsAt = process.argv.indexOf("--shots"), SHOTS = shotsAt > 0 ? process.argv[shotsAt + 1] : null;
@@ -71,6 +71,17 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       await play(await cur());
       await until(`EarSax.session.results.length===1`);
       assert.strictEqual(await b.eval(`EarSax.session.results[0].result`), "first");
+    });
+    await check(`[${w}] sax by-ear results are in the student's report: one right, one shown`, async () => {
+      await until(`/Pattern 2 of/.test(document.getElementById("es-ear-head").textContent) && /Your turn/.test(document.getElementById("es-ear-msg").textContent)`);
+      const c = await cur(); await play([c[0] + 1]);
+      await until(`EarSax.session.results.length===2`);
+      const it = JSON.parse(await b.eval(`JSON.stringify(SiteRecord.all().filter(x => x.tool === "ear-sax"))`));
+      assert.strictEqual(it.length, 2, "records: " + it.length);
+      assert(it.every(x => x.ex === "Sax Patterns by Ear" && x.at.length === 1 && x.want), JSON.stringify(it[0]));
+      assert.deepStrictEqual(it.map(x => x.at[0][1]), [1, 0]);
+      assert.deepStrictEqual(it.map(x => x.rv), [0, 1]);
+      assert(await b.eval(`!!document.querySelector(".sr-mybtn")`), "My report button");
     });
     await b.close();
   }

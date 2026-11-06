@@ -1,4 +1,4 @@
-// The trumpet / tuba fingering lesson in headless Chrome.
+// The trumpet / euphonium / tuba fingering lesson in headless Chrome.
 // Run: quarto render lessons/brass-fingerings.qmd && node tests/brass/brass.cdp.js [--shots <dir>]
 const http = require("http"), fs = require("fs"), path = require("path"), assert = require("assert");
 const ROOT = path.resolve(__dirname, "../.."), SITE = path.join(ROOT, "_site");
@@ -50,13 +50,33 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     });
     await check(`[${w}] tuba explorer: bass clef and valve 4`, async () => {
       await setSel("#br-explorer", ".brp-inst", "tuba");
-      assert.strictEqual(await n("#br-explorer .brp-nb"), 26);
+      assert.strictEqual(await n("#br-explorer .brp-nb"), 31, "BB♭ tuba 28..58");
       await click('#br-explorer .brp-nb[data-m="29"]');
       assert.strictEqual(await n("#br-explorer .brp-fig"), 2, "13 and 4");
       assert.strictEqual(await n("#br-explorer .brc-v"), 8, "4 valves drawn twice");
       assert(await b.eval(`document.querySelector("#br-explorer .brp-staff svg").innerHTML.length>200`));
       assert(/F♯1|F1/.test(await txt("#br-explorer .brp-big")));
       if (SHOTS) await b.shot(path.join(SHOTS, `brass-tuba-${w}.png`), false);
+      await setSel("#br-explorer", ".brp-inst", "trumpet");
+    });
+    await check(`[${w}] euphonium: B.C. and T.C. charts from the book`, async () => {
+      await setSel("#br-explorer", ".brp-inst", "euph");
+      assert.strictEqual(await n("#br-explorer .brp-nb"), 31);
+      await click('#br-explorer .brp-nb[data-m="47"]');   // B2: 1 2 3 or 2 4
+      assert.strictEqual(await n("#br-explorer .brp-fig"), 2);
+      assert(/harmonic/.test(await txt("#br-explorer .brp-card")), "harmonic wording, not chart rows");
+      await b.eval("__notes.length=0");
+      await setSel("#br-explorer", ".brp-inst", "euphtc");
+      assert(await b.eval(`document.querySelector("#br-explorer .brp-pitch").hidden === false`), "concert / written shown for T.C.");
+      await click('#br-explorer .brp-nb[data-m="61"]');   // written C#4 = B2 (47) + 14
+      assert(/C♯\/D♭4/.test(await txt("#br-explorer .brp-big")), await txt("#br-explorer .brp-big"));
+      assert.strictEqual(await txt("#br-explorer .brp-valtxt"), "123", "written C#4 = 123");
+      assert.strictEqual((await b.eval(`__notes`)).pop(), 47, "written C#4 sounds a major ninth lower: B2");
+      await setSel("#br-explorer", ".brp-pitch", "concert");
+      assert(/B2/.test(await txt("#br-explorer .brp-big")));
+      await setSel("#br-explorer", ".brp-pitch", "written");
+      await setSel("#br-explorer", ".brp-inst", "tubaeb");
+      assert.strictEqual(await n("#br-explorer .brp-nb"), 26);
       await setSel("#br-explorer", ".brp-inst", "trumpet");
     });
     await check(`[${w}] builder: which notes, and quiz`, async () => {

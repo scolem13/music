@@ -1,0 +1,59 @@
+---
+title: "Bluestine's Blog"
+description: "Eric Bluestine's blog and podcast Helping Children Audiate Music, post by post: a link, a short summary, the MLT ideas, a class activity where there is one, and the matching steps in the Mullen and Gordon books."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<script src="/apps/shared/mlt/books/jri-lsa.js?v=1"></script>
+<script src="/apps/shared/mlt/books/bluestine.js?v=1"></script>
+```
+
+{{< include _scripts.qmd >}}
+
+Eric Bluestine wrote *The Ways Children Learn Music* (GIA). His blog, [Helping Children Audiate Music](https://ericmbluestine.substack.com), is
+on Substack. These pages link to each post, with the site's own summary; the posts themselves are read at his site, used with his
+permission. Songs and pieces a post uses are in the [Tune Directory](../practice/tune-directory.qmd).
+
+## Teaching, rote songs, same and different
+
+```{=html}
+<div class="mlt-unit" data-book="bluestine" data-unit="teaching"></div>
+```
+
+## Audiation lectures
+
+```{=html}
+<div class="mlt-unit" data-book="bluestine" data-unit="audiation"></div>
+```
+
+## Recordings played by Bluestine
+
+```{=html}
+<div class="mlt-unit" data-book="bluestine" data-unit="performing"></div>
+```
+
+## Guest appearances
+
+Bluestine as the guest on other people's podcasts: [Audiation in the Wild](rasmussen.qmd) (2022) and the two-part Keys to Music Learning
+interview (2025). The Keys to Music Learning pages publish transcripts; Audiation in the Wild does not.
+
+```{=html}
+<div class="mlt-unit" data-book="bluestine" data-unit="guests"></div>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Bluestine, Eric. "Helping Children Audiate Music." *Substack*, 2025-2026. [ericmbluestine.substack.com](https://ericmbluestine.substack.com). Posts linked and summarised only, with the author's permission.
+
+Bluestine, Eric. *The Ways Children Learn Music: An Introduction and Practical Guide to Music Learning Theory*. GIA Publications. Cited by the blog; not read for this page.
+
+Jadro and Mayo. "Getting to know Eric Bluestine," parts 1-2. *Keys to Music Learning*, Buzzsprout, 30 Jan. and 6 Feb. 2025. [www.buzzsprout.com/1595053](https://www.buzzsprout.com/1595053). Host names as given in the feed; unverified.
+
+Rasmussen, Eric, and Beau Taillefer. *Audiation in the Wild*. Simplecast, 2022-2026. [feeds.simplecast.com/zxKr0BsI](https://feeds.simplecast.com/zxKr0BsI). Show notes read, audio not heard; no transcripts found.
+:::
+<!-- /works-cited -->
+

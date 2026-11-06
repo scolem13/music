@@ -1,0 +1,218 @@
+---
+title: "The Bassoon"
+toc: true
+toc-depth: 2
+description: "Everything a beginning bassoonist needs: where the bassoon came from, the family, the parts, putting it together, holding it, your embouchure and first sound, an interactive fingering chart and trill chart, fixing tone problems, vibrato, care, and players to listen to."
+instruments: [bassoon]
+topics: [instruments, technique]
+has: [fingering, interactive, svg]
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/bassoon/bassoon.css?v=1">
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/bassoon/bassoon-chart.js?v=1"></script>
+<script src="/apps/shared/bassoon/bassoon-page.js?v=1"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+The bassoon is a **double reed** woodwind, a cousin of the oboe. Instead of one reed against a mouthpiece (like a clarinet or sax),
+you blow into **two thin blades of cane tied together**, and their vibrating gap makes the sound. It is the **tenor voice** of the
+double-reed family: low, warm, and surprisingly agile. Its music is written in **bass clef** (with tenor clef higher up) and it is
+**not a transposing instrument**: the note you read is the note that sounds.
+
+## Where it came from {#history}
+
+Everything in this section is the teacher book's account (see Works Cited); the names and dates have not been checked elsewhere.
+
+- The bassoon descends from the **shawm** family, specifically the bass shawm. In the Renaissance the shawm turned into the **curtal**
+  (or *dulcian*), which was carved from one piece of wood.
+- In the 1500s the first **fagotto** was built, "most likely" by **Martin Hotteterre**, who is also credited with the early oboe
+  (*hautbois*). The word is Italian for a *bundle of sticks*, which is what an instrument built in separate sections looks like.
+  It was made in sections, as the bassoon still is, and eventually had four keys.
+- Vivaldi, J. S. Bach and Telemann all wrote for it.
+- In the 1800s it reached its modern form. Much of today's design is credited to **Carl Almenräder**, who went into business with
+  **Johann Adam Heckel** in **1831**. The Heckel firm kept improving the instrument, and the Heckel bassoon became the standard
+  for tone quality.
+
+## The family {#family}
+
+- The bassoon is the **tenor** of the double-reed family. Its main sibling is the **contrabassoon**, the *bass* voice.
+- The contrabassoon is written in bass clef and sounds an **octave lower** than written. It does the job of a tuba or string bass:
+  it adds depth. Its earliest models, the book says, date from **1739** and had holes you plugged with wooden pegs to change keys.
+- Many contrabassoon fingerings match the bassoon's from low B♭ to the A at the top line of the bass staff; higher up they are
+  quite different. Its reeds are almost twice the size of a bassoon's. It is rare in band and used more in orchestras, and it is
+  **not recommended for beginners**.
+- The bassoon is made of **maple**, not a hard wood such as grenadilla, so (the book says) it tends to improve with age.
+
+## Who should start on bassoon? {#selecting}
+
+Many teachers wait until a student is about **twelve**, or until they have done well on another instrument, because the
+instrument is big and its fingering needs **large stretches**. The book's checklist of what helps:
+
+- hands big enough for the stretches; teeth that meet evenly when closed;
+- a good sense of pitch and good eye-hand coordination;
+- perseverance, confidence and strong work habits; a wish to play the bassoon that does not waver; home support;
+- previous success on another instrument (the book says **saxophonists often make good bassoonists**).
+
+## The parts {#parts}
+
+The bassoon comes in four sections, plus the bocal and reed:
+
+- **Reed**: two blades of cane tied to a small tube. It goes on the bocal.
+- **Bocal** (the thin curved metal tube): carries the sound from the reed into the body. It has a small **vent hole** that lines up
+  with the **whisper key pad**.
+- **Wing joint**: the first section of the body after the bocal.
+- **Boot joint**: the U-shaped bottom, where the tube turns back on itself. The **hand rest** is fixed to it.
+- **Long joint**: the long straight section that fits into the boot beside the wing joint. It has a **locking mechanism**.
+- **Bell**: the flared top end (it points up in the playing position). **Connecting levers** link its key to the long joint.
+- **Tenon joints**: the places where the sections slide together, covered with cork or wound thread.
+
+## Putting it together {#assembly}
+
+::: {.bnp-steps}
+1. **Soak the reed** in a small container of water. Grease the tenon joints if they are **corked**; **never** put cork grease on
+   thread-wrapped tenons.
+2. **Wing joint into the boot joint**: line up the inside curve with the hole for the long joint.
+3. **Long joint into the boot** (beside the wing joint): line up the left-thumb keys, then engage the locking mechanism.
+4. **Bell on**: push it in gently while pressing its key (the pad cup) with your thumb, so the connecting levers line up.
+5. **Hand rest and strap**: put in the hand rest and adjust it; hook on the neck strap or seat strap.
+6. **Bocal in**: hold it near the cork and push it gently into place. Take care of the **whisper key pad**, and line the vent hole
+   up with it.
+7. **Reed on the bocal**, then adjust it to playing position.
+:::
+
+## Holding it {#posture}
+
+1. Sit up straight, at the **edge of the chair**, feet flat on the floor.
+2. Adjust the **seat strap or neck strap** so the reed reaches your lower lip.
+3. Adjust the bocal and reed so your **head stays straight**: bring the bassoon to you, not you to it.
+4. Relax. **Chin level** with the floor, **elbows away** from your body.
+5. Set the **hand rest** so your right fingers reach the tone holes easily.
+6. The bassoon rests against the base of your **left index finger**. Place the left hand so your **thumb touches the whisper key**.
+7. Curve the fingers of both hands into a relaxed "C", as if holding a tennis ball. **Wrists straight.**
+
+## Embouchure and your first sound {#embouchure}
+
+Your **embouchure** (*OM-boo-shur*) is the shape of your mouth around the reed. Start with the reed alone, off the bocal.
+
+1. Take the reed off the bocal and hold it with your first two fingers and thumb.
+2. Open your mouth and rest the reed on your **lower lip**, tip centered.
+3. Shape your mouth **as if whistling**.
+4. Cover your **bottom teeth** with your lower lip.
+5. Put the reed in so your **upper lip almost touches the wire**.
+6. Close your lips around it like a **drawstring**, with equal pressure on all sides. Check in a mirror. Take a full breath through
+   your mouth and blow one long, steady sound: the book calls it a **"crow"**.
+
+**Checklist** (have a friend or teacher watch): sitting straight · strap adjusted · bassoon at the right angle · thumbs in place ·
+fingers curved · wrists straight · elbows out · mouth shaped as if whistling · the right amount of reed in the mouth · chin down ·
+equal pressure on all sides of the reed · breathing correctly · a good tone.
+
+## Fingering chart {#fingering-chart}
+
+Pick a note. **Dark keys are pressed down**, white keys are open. Hover over a key (or long-press on a phone) for its name. Where
+there's more than one fingering, the first is the usual one and the others are **alternate fingerings** that make some passages easier.
+
+```{=html}
+<div id="bn-explorer"></div>
+```
+
+How to read the diagram. It is a drawing made for this page, **not to scale**: the book's photograph-style chart shows the real
+key shapes.
+
+- **Holes (big circles)**: the left hand covers holes **1, 2, 3** (top) and the right hand holes **4, 5, 6** (bottom), as the
+  book's chart does. The **½** key beside hole 1 is the **half hole** (the first finger rolls to cover half the hole).
+- **Keys on the right of each hand**: the left hand's **LXX, LX, L1, L2** and the right hand's **C♯ trill, R1, R2, R3, R4**. The
+  names are the book's.
+- **Thumb keys** are on the **back** of the instrument, so they are drawn in separate boxes: left thumb **D, T1 to T7** and the
+  **W** (whisper) key; right thumb **T8 to T11**. The left thumb also has to stay near the whisper key.
+- The chart stretches from **B♭1** (the lowest note) up to **B♭4**. The book's chart stops there; the bassoon goes higher.
+- Which **physical** key is which on your own bassoon varies from model to model. Check with your teacher before you trust a diagram.
+
+## Build a fingering {#build}
+
+Press keys on the diagram yourself. In **What note is this?** the page names the note your fingering makes. In the **Quiz** it gives
+you a note and you build its fingering (any of the printed fingerings counts).
+
+```{=html}
+<div id="bn-builder"></div>
+```
+
+## Trill chart {#trills}
+
+A **trill** is a fast wobble between two notes. Some are awkward with the normal fingerings, so there are special ones: hold the dark
+keys down and move only the **gray** key(s). Some notes appear twice because the book prints two ways to do the trill.
+
+```{=html}
+<div id="bn-trills"></div>
+```
+
+## When the tone goes wrong {#tone-problems}
+
+| What it sounds like | Probably because… | Try this |
+|---|---|---|
+| **High-pitched crow with too few sounds** | The opening of the reed tip is too small | Squeeze the first wire to open the tip |
+| | Embouchure too tight, pinched | Less pressure; shape the mouth more like an "O" |
+| | Not enough reed in your mouth | Take in more reed |
+| **Unsupported** sound | Weak, uncontrolled embouchure | Reshape it and strengthen it with long tones |
+| | Not enough support from the lower jaw | Support more with the lower jaw |
+| | Too much reed in your mouth | Check how much should go in, and adjust |
+| | Not enough air support | More support, faster air |
+| **Low-pitched crow** on the reed | Not enough air support | More support, faster air |
+| | Reed too soft | Change to a stiffer reed |
+| **Stopped** or no sound | Pinching or biting the reed | More of an "O" in the embouchure |
+| | Reed too soft | Change to a stiffer reed |
+
+**Loud and soft.** Adjust your embouchure and your air to keep the tone good at every volume. In a **crescendo** let the embouchure
+relax gradually so the reed tip opens as the air increases. In a **diminuendo** tighten around the reed as the air decreases. Keep the
+air moving fast by supporting with your **abdominal muscles**.
+
+## Playing in tune {#tuning}
+
+The book has no tuning notes for the bassoon (its tuning pages are not in the scan this page was made from). Until that is added,
+tune with a **tuner or a drone** and your teacher, and check the notes you find sharp or flat. *(Unverified: bassoon tuning
+tendencies are not given here.)*
+
+## Vibrato {#vibrato}
+
+**Vibrato** is a small, even wobble in pitch that adds warmth. It never replaces a good tone, and the book says to wait until your
+tone is beautiful. On bassoon it is **diaphragm vibrato**: pulses of air from your breath. Steps:
+
+1. Metronome at **76**, the quarter note = a click. On each click say "ha".
+2. Then "ha-ha" evenly (like eighth notes), then "ha-ha-ha" (triplets), then four "ha"s per click (sixteenths).
+3. Do the same while blowing "who-oo-oo-oo", connecting each breath push.
+4. Play a comfortable note, such as the D on the third line, using that technique.
+5. Put it in a slow melody.
+
+Then practise long tones with the speed of the pulses changing (slow to fast to slow, and fast to slow to fast) and the depth
+changing (shallow to deep and back). In the end the pulses should not sound like a rhythm.
+
+## Looking after it {#care}
+
+After every practice:
+
+1. Take off the reed and **blow out the extra water**. Put it in a **reed holder** to dry.
+2. Blow the water out of the **bocal** from the cork end before storing it.
+3. Take each joint apart and **swab** the wing and boot joints carefully.
+4. Wipe the outside with a soft clean cloth.
+5. Put each part back in its place in the case as you finish with it. Latch the case.
+
+## Players to listen to {#listening}
+
+The book lists these bassoonists. Ask your teacher before you look them up: not every recording is suitable for school.
+
+Bernard Garfield, Dag Jansen, David McGill, Chris Millard, John W. Miller Jr., Klaus Thunemann, Milan Turkovic, Christopher Weait.
+
+```{=html}
+<script>
+BassoonPage.explorer(document.getElementById("bn-explorer"));
+BassoonPage.builder(document.getElementById("bn-builder"));
+BassoonPage.trills(document.getElementById("bn-trills"));
+</script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Bassoon." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 102-3, 106-8, 113, 116-17. History, family, selecting players, parts, assembly, posture, embouchure, care, checklist, tone problems, vibrato, listening list, fingering chart (p. 116) and trill chart (p. 117). Retold in the page's own words; the key diagram is drawn for the page, not copied.
+:::
+<!-- /works-cited -->

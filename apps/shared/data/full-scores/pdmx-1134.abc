@@ -1,0 +1,25 @@
+X:1
+C:William Henry Monk (1823–1889), 1861
+Z:Henry Francis Lyte (1793–1847), 1847
+Z:gemeinfrei; MuseScore-Notensatz © (wo anwendbar) 2018 mirabilos Ⓕ The MirOS Licence
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=82
+M:4/4
+K:Eb
+V:1 treble nm="Sopran" snm="S."
+%%MIDI program 52
+V:2 treble nm="Alt" snm="A."
+%%MIDI program 52
+V:3 treble-8 nm="Tenor" snm="T."
+%%MIDI program 52
+V:4 bass nm="Baß" snm="B."
+%%MIDI program 52
+V:1
+"^Andante" G4 G2 F2 | E4 B4 | c2 B2 B2 A2 | G8 || G4 A2 B2 | c4 B4 | A2 F2 G2 =A2 | B8 || G4 G2 F2 | E4 B4 | B2 A2 A2 G2 | F8 || F4 G2 A2 | G2 F2 E2 A2 | G4 F4 | E8 :|5 A4 G4 |]
+V:2
+E4 D2 D2 | E4 E4 | E2 D2 E2 F2 | E8 || E4 E2 E2 | E4 E4 | E2 F2 E2 E2 | D8 || E4 D2 D2 | E4 E4 | E2 E2 =E2 E2 | F8 || D4 E2 D2 | E2 D2 E2 F2 | E4 D4 | E8 :|5 E4 E4 |]
+V:3
+B4 B2 A2 | G4 E4 | E2 B2 B2 B2 | B8 || B4 A2 G2 | A4 G4 | c2 B2 B2 E2 | F8 || (G2 A2) B2 A2 | G4 (e2 d2) | c2 c2 c2 B2 | A8 || B4 B2 B2 | B2 A2 G2 c2 | B6 A2 | G8 :|5 c4 B4 |]
+V:4
+E,4 B,,2 B,,2 | C,4 G,,4 | A,,2 B,,2 C,2 D,2 | E,8 || (E,2 D,2) C,2 B,,2 | A,,4 E,4 | F,2 D,2 E,2 C,2 | B,,8 || E,4 B,,2 B,,2 | C,4 G,,4 | A,,3 B,, C,2 C,2 | F,8 || A,4 G,2 F,2 | E,2 B,,2 C,2 A,,2 | B,,4 B,,4 | E,8 :|5 A,,4 E,4 |]

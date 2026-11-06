@@ -1,0 +1,16 @@
+X:1
+C:Frédéric Chopin
+Z:Public Domain
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=120
+M:3/4
+K:C
+V:1 treble nm="Piano"
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+"^Allegretto" (E2 | AB c2) c2 | (de f4) | (Bcdagf) |{ef} (e^d e4) | (AB c2) c2 | (de f4) | (BcdagB | c2) z2 E2 | AB c2 c2 | de f4 | Bcdagf |{ef} e^d e4 | cd e2 e2 | fg a4 | g2 ^fgd'=f | e6 |: (e^f^gabc' |{bc'} baeb) a2 |{ab} (a^gef e2) |{ef} (ecAB A2) | (3(E^GB (5:4:5e/^g/b/e'/^g'/ b'>c'') |{b'c''} (b'a'e'b') a'2 |{a'b'} (a'^g'e'e'' e''2 | a'4) z2 :: (AB c2) c2 | (de f4) | (Bcdagf) |{ef} (e^d e4) | (cd e2) e2 | (fg a4) | (^de ^f2) f2 | (^ga b4) | (b^c'd'^f'e'd' | P^c'bc'^ga^f) |(({e^f} e)d^Gf e2) |({e^f} e^cAf e2) | (b^c'd'^f'e'd' | P^c'bc'^ga^f) |({e^f} ed^GfeG | A2) z2 E2 :| (AB =c2) c2 | (de f4) | (Bcdagf) | {ef} (e^d e4) | (AB c2) c2 | (de f4) | (BcdagB | c2) z2 E2 | (AB c2) c2 | (de f4) | z (Pe^deb=d | c4) z2 | z (c'bagf | ed^cdef) | (!trill(!Te2!trill)! ^def^G) | A4 z2 |]
+V:2
+z2 | A,,,2 [A,CE]2 [A,CE]2 | D,,2 [A,DF]2 [A,DF]2 | G,,2 [G,B,F]2 [G,B,F]2 | C,2 [G,CE]2 [G,CE]2 | A,,2 [A,CE]2 [A,CE]2 | D,,2 [A,DF]2 [A,DF]2 | G,,2 [G,B,F]2 [G,DF]2 | C,2 [G,CE]2 z2 | A,,,2 [A,CE]2 [A,CE]2 | D,,2 [A,DF]2 [A,DF]2 | G,,2 [G,B,F]2 [G,B,F]2 | C,2 [G,CE]2 [G,CE]2 | A,,2 [A,CE]2 [A,CE]2 | D,,2 [A,DF]2 [A,DF]2 | G,,2 [G,B,F]2 [G,B,F]2 | C,2 [G,CE]2 [G,CE]2 |: E,,2 [E,B,D]2 [E,^G,D]2 | A,,2 [E,A,C]2 [E,A,C]2 | E,,2 [E,B,D]2 [E,B,D]2 | A,,2 [E,A,C]2 [E,A,C]2 | E,,2 [E,B,D]2 [E,^G,D]2 | A,,2 [E,A,C]2 [E,A,C]2 | E,,2 [E,B,D]2 [E,B,D]2 | A,,2 [E,A,C]2 [E,A,C]2 :: A,,,2 [A,CE]2 [A,CE]2 | D,,2 [A,DF]2 [A,DF]2 | G,,2 [G,B,F]2 [G,B,F]2 | C,2 [G,CE]2 [G,CE]2 | A,,2 [A,CE]2 [A,CE]2 | D,,2 [A,DF]2 [A,DF]2 | B,,,2 [A,B,^D]2 [A,B,D]2 | E,,2 [E,B,=D]2 z2 | E,,2 [E,^G,D]2 [E,G,D]2 | A,,2 [E,A,^C]2 [E,A,C]2 | E,,2 [E,B,D]2 [E,B,D]2 | A,,2 [E,A,^C]2 [E,A,C]2 | E,,2 [E,^G,D]2 [E,G,D]2 | A,,2 [E,A,^C]2 [E,A,C]2 | E,,2 [E,B,D]2 [E,B,D]2 | A,,2 [E,^C]2 z2 :| A,,,2 [A,=CE]2 [A,CE]2 | D,,2 [A,DF]2 [A,DF]2 | G,,2 [G,B,F]2 [G,B,F]2 | C,2 [G,CE]2 [G,CE]2 | A,,2 [A,CE]2 [A,CE]2 | D,,2 [A,DF]2 [A,DF]2 | G,,2 [G,B,F]2 [G,DF]2 | C,2 [G,E]2 z2 | A,,,2 [A,CE]2 [A,CE]2 | D,,2 [A,DF]2 [A,DF]2 | E,,2 [E,^G,D]2 [E,G,D]2 | A,,2 [E,A,C]2 [E,A,C]2 | C,2 [E,A,E]2 z2 | D,2 [A,B,F]2 z2 | E,,2 [E,C]2 [E,B,=D]2 | A,,2 [E,C]2 z2 |]

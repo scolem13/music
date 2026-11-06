@@ -303,7 +303,7 @@ if __name__ == "__main__" and "--all" not in sys.argv:
 import unicodedata
 from concurrent.futures import ProcessPoolExecutor
 
-CSVF = HOME + "/Downloads/PDMX.csv"
+CSVF = HOME + "/Downloads/PDMX-trim.csv"  # from PDMX.csv by scripts/pdmx-trim.py
 MAXC = 24
 NAMES = {"Saint": "saint-saens", "Rimsky": "rimsky", "Coleridge": "coleridge", "Dvorak": "dvorak"}
 CATS = {"Op": r"op", "KV": r"k\.?\s*v?", "BWV": r"bwv", "Hob": r"hob", "D": r"d", "L": r"l", "B": r"b", "HWV": r"hwv",
@@ -373,7 +373,7 @@ def theme_movement(meta, title):
     return int(m.group(1)) if m else None
 
 def candidates(works, themes, titles):
-    rows = [r for r in csv.DictReader(open(CSVF)) if r["subset:no_license_conflict"] == "True" and r["mxl"] != "NA"]
+    rows = list(csv.DictReader(open(CSVF)))
     for r in rows:
         r["_who"] = norm(r["composer_name"] + " " + r["artist_name"] + " " + r["title"])
         r["_t"] = norm(" ".join(r[k] for k in ("title", "song_name", "subtitle")))

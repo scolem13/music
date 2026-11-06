@@ -1,0 +1,31 @@
+X:1
+Z:Set by C. Höcker - Sep. 2018 - CC0
+%%score [ ( 1 2 ) 3 4 ( 5 6 ) ]
+L:1/8
+Q:1/4=106
+M:3/4
+K:F
+V:1 treble nm="Soprano"
+%%MIDI program 0
+V:2 treble 
+%%MIDI program 0
+V:3 treble nm="Alto"
+%%MIDI program 0
+V:4 treble-8 nm="Tenore"
+%%MIDI program 0
+V:5 bass nm="Basso"
+%%MIDI program 0
+V:6 bass 
+%%MIDI program 0
+V:1
+!p!"^Zart bewegt"!<(! F2 | (A3 G)!<)!!mp! A2 | (c2 d2) A2 |!>(! G6 | F4!>)!!pp! c2 | (d3 c) B2 | (c2 A2) B2 | (A3 G)!>(! ^F2!>)! |!pp! G4!mp!!<(! G2 | (F2 A2) B2 | (c2 d2) =B2!<)! | !mf! (e4!>(! d2) |!mp! c4!>)!!<(! c2 | =B4!<)!!>(! A2 | G4!>)!!p! A2 | d3!>(! !courtesy!_B G2!>)! | !pp! F4!p!!<(! F2 | (A3 G) A2!<)! |!mp! (c2 d2) A2 | G4!>(! G2!>)! |!p! F4!<(! c2 | (d3!<)! c) B2 | (c2 A2) B2 |!>(! (A3 G) ^F2!>)! |!p! G4!mf! G2 |!<(! (F2 A2) B2 | (c2 d2) =B2!<)! |!f! (e4 d2) | !>(! c4 c2!>)! |!mf! =B4 A2 | G4 A2 |!>(! (d3 !courtesy!_B) G2!>)! |!p! F6 ||[M:4/4]!f! G4 A2 F2 | !courtesy!=E4 z2!<(! A2 | d4 d4!<)! |!ff! e4 ^c2 c2 | d4!>(! d4 | G4!>)! z2!f!!<(! G2 | B4 c4!<)! |"^>"!ff! F4 G4 |!>(! A4!mf! B2!>)!!<(! c2 | d4 d4!<)! |!ff! _e4!>(! e4!>)! | !mf! !fermata!d4!mp!"^ritardando" !courtesy!=e4 | c4!>(! d4 | (B2 A2) G4!>)! |!pp! !fermata!F8 |]
+V:2
+x2 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 ||[M:4/4] _E4 E2 D2 | E4 x2 A2 | A4 B4 | B4 F2 A2 | A4 (B2 A2) | G4 x2 G2 | G4 _E4 | _E4 (D2 =E2) | ^F4 G2 G2 | A4 B4 | B4 A4 | D4 c4 | A4 A4 | (B2 F2) (D2 E2) | x8 |]
+V:3
+!p!!<(! C2 | (F3 E)!<)!!mp! F2 | F4 F2 |!>(! (F4 E2) | D4!>)!!pp! G2 | D4 G2 | (G2 F2) F2 | _E4!>(! D2!>)! |!pp! D4!mp!!<(! !courtesy!=E2 | (D2 E2) G2 | (G2 A2) G2!<)! |!mf! (G3 A!>(! B2) | !mp! A4!>)!!<(! A2 | (G2 F2)!<)!!>(! F2 | D4!>)!!p! F2 | F3!>(! F E2!>)! |!pp! C4!p!!<(! C2 | (F3 E) F2!<)! |!mp! F4 F2 | F4!>(! E2!>)! |!p! D4!<(! G2!<)! | D4 G2 | (G2 F2) F2 | !>(! _E4 D2!>)! |!p! D4!mf! !courtesy!=E2 |!<(! (D2 E2) G2 | (G2 A2) G2!<)! | !f! (G3 A !courtesy!_B2) |!>(! A4 A2!>)! |!mf! (G2 F2) F2 | D4 F2 |!>(! F4 E2!>)! |!p! C6 || [M:4/4]!f! B,4 C2 F2 | ^C4 z2!<(! E2 | D4 F4!<)! |!ff! E4 A2 G2 | F4!>(! (G2 F2) | E4!>)! z2!f!!<(! D2 | B4 A4!<)! |"^>"!ff! F4 (B,2 G2) |!>(! ^F4!mf! D2!>)!!<(! C2 | !courtesy!=F4 F4!<)! |!ff! _E4!>(! c4!>)! |!mf! !fermata!=B4!mp! G4 | G4!>(! F4 | F6 E2!>)! | !pp! !fermata!C8 |]
+V:4
+!p!!<(! A2 | (A3 B)!<)!!mp! A2 | (f2 d2) d2 |!>(! (G3 A B2) | A4!>)!!pp! c2 | A4 d2 | c4 B2 | c4!>(! A2!>)! |!pp! B4!mp!!<(! c2 | (A2 c2) d2 | (c2 f2) d2!<)! |!mf! (e4!>(! g2) | !mp! e4!>)!!<(! d2 | d4!<)!!>(! c2 | =B4!>)!!p! d2 | d3!>(! d !courtesy!_B2!>)! | !pp! A4!p!!<(! A2 | (A3 B) A2!<)! |!mp! (f2 d2) d2 | (G3 A)!>(! B2!>)! |!p! A4!<(! c2 | A4!<)! d2 | c4 B2 |!>(! c4 A2!>)! |!p! B4!mf! c2 |!<(! (A2 c2) d2 | (c2 f2) d2!<)! |!f! (e4 g2) | !>(! e4 d2!>)! |!mf! d4 c2 | =B4 d2 |!>(! d4 !courtesy!_B2!>)! |!p! A6 ||[M:4/4]!f! G4 cA d2 | ^c4 z2!<(! c2 | A4 d4!<)! |!ff! g4 f2 e2 | d4!>(! d4 | e4!>)! z2!f!!<(! d2 | _e4 e4!<)! | "^>"!ff! (_e2 A2) d4 |!>(! c4!mf! d2!>)!!<(! G2 | d4 d4!<)! |!ff! g4!>(! _e4!>)! | !mf! !fermata!=B4!mp!!mp! c4 | c4!>(! (f2 d2) | d6 c2!>)! |!pp! !fermata!c8 |]
+V:5
+!p!!<(! F,2 | D,4!<)!!mp! D,2 | (A,,2 B,,2) =B,,2 |!>(! (C,4 ^C,2) | D,4!>)!!pp! E,2 | ^F,4 G,2 | (_E,2 F,2) D,2 | (C,2 A,,2)!>(! D,2!>)! |!pp! G,,4!mp!!<(! C,2 | (D,2 C,2) G,2 | (E,2 F,2) G,2!<)! |!mf! (C4!>(! G,2) |!mp! A,4!>)!!<(! F,2 | (G,2 D,2)!<)!!>(! F,2 | G,4!>)!!p! D,2 | B,3!>(! G, C,2!>)! |!pp! F,4!p!!<(! F,2 | D,4 D,2!<)! |!mp! (A,,2 B,,2) =B,,2 | C,4!>(! ^C,2!>)! |!p! D,4!<(! E,2 | ^F,4!<)! G,2 | (_E,2 F,2) D,2 |!>(! (C,2 A,,2) D,2!>)! | !p! G,,4!mf! C,2 |!<(! (D,2 C,2) G,2 | (E,2 F,2) G,2!<)! |!f! (C4 G,2) |!>(! A,4 F,2!>)! | !mf! (G,2 D,2) F,2 | G,4 D,2 |!>(! (B,3 G,) C,2!>)! |!p! F,6 ||[M:4/4]!f! B,4 A,2 A,2 | A,4 z2!<(! A,2 | F,4 F,4!<)! |!ff! B,4 A,2 A,2 | D4!>(! G,4 | G,4!>)! z2!f!!<(! B,2 | G,4 A,4!<)! |"^>"!ff! A,4 B,4 |!>(! C4!mf! G,2!>)!!<(! C2 | C4 B,4!<)! |!ff! D4!>(! C4!>)! | !mf! G,4!mp! G,4 | A,4!>(! A,4 | (G,2 A,2) B,4!>)! |!pp! !fermata![F,A,]8 |]
+V:6
+x2 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 ||[M:4/4] _E,4 C,2 D,2 | A,,4 x2 A,2 | F,4 B,,4 | G,,4 A,,2 A,,2 | B,,4 G,,4 | C,4 x2 G,2 | _E,4 C,4 | D,4 B,,4 | A,,4 G,,2 _E,2 | D,4 G,4 | C,4 ^F,4 | !fermata!G,4 !courtesy!=E,4 | F,4 D,4 | G,,4 C,4 | F,,8 |]

@@ -1,0 +1,22 @@
+X:1
+%%score 1 2 3 4
+L:1/8
+Q:1/4=80
+M:2/2
+K:Eb
+V:1 treble nm="Soprano"
+%%MIDI program 52
+V:2 treble nm="Alto"
+%%MIDI program 52
+V:3 treble-8 nm="Tenor"
+%%MIDI program 52
+V:4 bass nm="Bariton"
+%%MIDI program 52
+V:1
+"^A: Vom Himmel hoch (to be inserted between 2 and 3)" z8 | z4 e4 | d4 c4 | d4 B4 | c4 d4 | e4 z4 | z8 | z4 e4 | e4 B4 | B4 G4 | B4 A4 | G4 z4 | z8 | z8 | z4 G4 | c4 c4 | B4 d4 | e4 c4 | B4 z4 | z8 | z8 | z4 e4 | d4 c4 | B4 c4 | A4 G4 | F8 | E8- | E8- | E8 |]
+V:2
+z4 z BAG | A2 F2 G2 =A2 | .B3 B, CDEF | DcBA BGAB | EBAG AFGA | .G4 z BBF | FEDE FGFE | DddG GFEF | GAGF .E3 A | GFED E2 _DC | B,BBF FEDE | FGFE DDGG | EG A2- AG/F/Gc | FFBB ABcA | GF/E/FE/D/ E2 D3/2E/4F/4 | ECAA G=BcA | GA B2- BA/G/FB | EF G2- GF/E/ F2- | FG A2- AG/F/Gc | FBAG F2 GF | ED C2 B,DGE | C/D/C/D<DC/4D/4 .E4 | z AGF =EC F2- | FG/F/EF/G/ AGF=E | FC F2- FE/F/ .G2 | z edc Bc A/G/F | .B4 z2 z B | AGFG AB/G/ A2- | A2 GF G4 |]
+V:3
+z edc d2 B2 | c2 d2 ecfF | Bcde f4- | fdef g4- | ggfe fdef | BeeB BAGA | BcBA G4- | G=Bcd ed c2- | cFGA BeeB | BAGA BcBA | .G4 z ffc | dc=Bc .B4 | z Gcc Bd e2- | ed/c/dg ceed | dcc=B c2 B3/2c/4d/4 | .G4 z Gee | dfge df B2- | B=A B2- BA/G/Ac | .F3 d e3 d/c/ | .d3 e dc B2 | cBAG FG/A/ B2- | BE A/G/A Gedc | BF B2- Bc/B/AG/F/ | BAGf e_dcB | c3 F c3 B/c/ | Agfe deed | ee_dc BdcB | c2- c/_d/c/d/ e/f/d/e/ c2- | c2 BA B4 |]
+V:4
+z8 | z8 | z B,=A,G, A,F,G,A, | B,A,G,F, E,_D,C,B,, | A,,2 F,2 B,2 B,,2 | .E,4 z4 | z G,G,C, C,E,D,C, | =B,,G,,=A,,B,, C,B,,C,D, | E,D,E,F, G,A,G,F, | E,2 G,2 G,2 E,2 | E,2 B,,2 _D,2 C,2 | =B,,2 C,2 .G,,4 | z4 z B,,E,E, | D,E,F,G, A,G, F,2 | E,=A,,D,D, C,E,F,D, | C,E, F,2- F,E,/D,/E,F, | G,B,,G,G, F,A,B,A, | G,F,E,D, E,C,F,E, | D,B,,F,F, E,G,C=A, | .B,4 z4 | z2 z E, D,C,B,,C | A,G, F,2 E,F,G,A, | .B,4 z G,F,E, | D,2 E,D, C,B,,A,,G,, | F,,G,,A,,B,, C,D, E,2- | E,D,/E,/F,G, A,G,/A,/B,A, | .G,3 A, G,F,E,_D, | C,B,,A,,B,, C,B,,C,D, | E,8 |]

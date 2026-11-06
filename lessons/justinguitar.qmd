@@ -1,0 +1,127 @@
+---
+title: "JustinGuitar, Lesson by Lesson"
+description: "JustinGuitar's Beginner Course (modules 1-9) and Practical Music Theory lessons, each linked with a one-line summary and the pages and tools on this site that cover the same ground. Links only."
+toc: true
+toc-depth: 2
+instruments: [guitar]
+topics: [technique, theory]
+has: []
+---
+
+```{=html}
+<script src="/apps/shared/guitar/justin-course.js?v=1"></script>
+```
+
+{{< include ../mlt/_scripts.qmd >}}
+
+[JustinGuitar](https://www.justinguitar.com) is an online guitar school by Justin Sandercoe. This page lists its Beginner Course and its Practical Music Theory lessons in order. Each step links to the lesson at justinguitar.com, says in a line what the title promises, and points to the pages and tools on this site that cover the same ground (tuning, chord shapes, picking, scales, chord analysis and more). The lessons themselves are not copied: open each at his site. The songs he teaches are in the [Tune Directory](../practice/tune-directory.qmd).
+
+The one-line summaries are written from the lesson titles, because his site did not let the page text be read; they say what a title suggests, not what the lesson contains.
+
+## Beginner Course
+
+### Module 1 (Grade 1)
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="m1"></div>
+```
+
+### Module 2 (Grade 1)
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="m2"></div>
+```
+
+### Module 3 (Grade 1)
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="m3"></div>
+```
+
+### Module 4 (Grade 1)
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="m4"></div>
+```
+
+### Module 5 (Grade 1)
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="m5"></div>
+```
+
+### Module 6 (Grade 1)
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="m6"></div>
+```
+
+### Module 7 (Grade 1)
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="m7"></div>
+```
+
+### Module 8
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="m8"></div>
+```
+
+### Module 9
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="m9"></div>
+```
+
+## Practical Music Theory
+
+### Notes, octaves and the twelve pitches
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="t-notes"></div>
+```
+
+### Reading tab and chord boxes, first chord vocabulary
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="t-guitar-basics"></div>
+```
+
+### Major scales, key signatures and power chords
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="t-scales-keys"></div>
+```
+
+### Triads, chords in a key, the fretboard and the circle of fifths
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="t-triads-keys"></div>
+```
+
+### Intervals, seventh chords, sus chords, pentatonic and minor scales, harmonic analysis
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="t-intervals-sevenths"></div>
+```
+
+### Chord shapes (E and A), extensions
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="t-shapes-1"></div>
+```
+
+### Chord shapes (D, C, G), sixth chords and modes
+
+```{=html}
+<div class="mlt-unit" data-book="justin" data-unit="t-shapes-2"></div>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Sandercoe, Justin. "JustinGuitar." *JustinGuitar*. [www.justinguitar.com](https://www.justinguitar.com). Beginner Course, Practical Music Theory and song lessons linked and summarised only; lesson pages could not be read by script, so summaries come from titles (unverified).
+:::
+<!-- /works-cited -->

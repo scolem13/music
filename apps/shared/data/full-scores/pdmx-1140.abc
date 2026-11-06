@@ -1,0 +1,39 @@
+X:1
+Z:1854
+%%score 1 [ 2 3 4 5 ] { ( 6 8 ) | 7 }
+L:1/8
+Q:1/4=65
+M:4/4
+K:Eb
+V:1 treble nm="Voice"
+%%MIDI program 52
+V:2 treble nm="Soprano"
+%%MIDI program 52
+V:3 treble nm="Alto"
+%%MIDI program 52
+V:4 treble-8 nm="Tenor"
+%%MIDI program 52
+V:5 bass nm="Bass"
+%%MIDI program 52
+V:6 treble nm="Piano"
+%%MIDI program 0
+V:8 treble 
+%%MIDI program 0
+V:7 bass 
+%%MIDI program 0
+V:1
+"^Moderato." z2 | z8 | z8 | z8 | z4 z2 |: EF |"Eb" G2 GG G B2 G |"Bb7" FEEF"Eb" G2"Ab" c>B | "Eb/Bb" B2 G2 GE"Bb7" F>F |"Eb" E4 z2 EF | G2 GG G B2 G |"Bb7" FEEF"Eb" G2"Ab" !fermata!c2 | "Eb/Bb" B2 G2"Bb7" GE F>F |"Eb" E4 z2 ||"^CHORUS." GA |"Eb" B2 z B B2 =AB |"Ab/Eb" c4"Eb" B2 z2 | e2 B2"Ab/Eb" c2"Eb" B2 | GG"F7" F>E"Bb" !fermata!F2 EF |"Eb" G2 GG G B2 G | "Bb7" F>E EF"Eb" G2"Ab" !fermata!c2 |"Eb/Bb" B2 G2 GE"Bb7" F>F |"Eb" E6 z2 || z8 | z8 | z8 | z4 z2 :: EF |"Eb" G2 GG G B2 G |"Bb7" FEEF"Eb" G2"Ab" c>B |"Eb/Bb" B2 GG GE"Bb7" F>F | "Eb" E4 z2 EF | G2 GG G B2 G |"Bb7" FEEF"Eb" G2"Ab" !fermata!c2 |"Eb/Bb" B2 G2"Bb7" GE F>F | "Eb" E4 z2 ||"^CHORUS." z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || z8 | z8 | z8 | z4 z2 :|
+V:2
+z2 | z8 | z8 | z8 | z4 z2 |: z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2 || z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || z8 | z8 | z8 | z4 z2 :: z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2 || GA |"Eb" B2 z B B2 =AB |"Ab/Eb" c4"Eb" B2 z2 | e2 B2"Ab/Eb" c2"Eb" B2 | GG"F7"FE"Bb" !fermata!F2 EF |"Eb" G2 GG G B2 G |"Bb7" FEEF"Eb" G2"Ab" !fermata!c2 | "Eb/Bb" B2 G2 GE"Bb7" F>F |"Eb" E6 z2 || z8 | z8 | z8 | z4 z2 :|
+V:3
+z2 | z8 | z8 | z8 | z4 z2 |: z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2 || z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || z8 | z8 | z8 | z4 z2 :: z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2 || EF | G2 z G G2 ^FG | A4 G2 z2 | G2 E2 A2 G2 | EEEE !fermata!D2 EE | E2 EE E G2 E | DCCD E2 !fermata!E2 | E2 E2 EE D>D | E6 z2 || z8 | z8 | z8 | z4 z2 :|
+V:4
+z2 | z8 | z8 | z8 | z4 z2 |: z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2 || z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || z8 | z8 | z8 | z4 z2 :: z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2 || ee | e2 z e e2 ee | e4 e2 z2 | e2 e2 e2 e2 | BB=AA !fermata!B2 GA | B2 BB B B2 B | BBBB B2 !fermata!A2 | G2 B2 BB A>A | G6 z2 || z8 | z8 | z8 | z4 z2 :|
+V:5
+z2 | z8 | z8 | z8 | z4 z2 |: z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2 || z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || z8 | z8 | z8 | z4 z2 :: z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2 || E,E, | E,2 z E, E,2 E,E, | E,4 E,2 z2 | E,2 E,2 E,2 E,2 | E,E,F,F, !fermata!B,,2 E,E, | E,2 E,E, E, E,2 E, | B,,B,,B,,B,, E,2 !fermata!A,,2 | B,,2 B,,2 B,,B,, B,,>B,, | E,6 z2 || z8 | z8 | z8 | z4 z2 :|
+V:6
+EF | G2 G2 G B2 G | FEEF G2 GA | B2 B2({/f} e)def | g2 gf e2 |: z2 | [B,EG] z [B,EG] z [B,EG] z [B,EG] z | [B,DA] z [B,DA] z [B,EG] z [CEA] z | [B,EG] z [B,EG] z [B,EG] z [A,B,DF] z | [G,B,E]2 [G,B,E]2 [G,B,E]2 z2 | [EG]B,[EG]B, [EG]B,[EG]B, | [DA]B,[DA]B,- [B,EG]2 !fermata![CEA]2 | z B,[EG]B, z A,[DF]A, | z G,B,E z2 || z2 | [B,EG]2 z [B,EG] [B,EG]2 [B,EG]2 | [CEA]4 [B,EG]2 z2 | [B,EG] z [B,EG] z [CEA] z [B,EG] z | [B,EG] z [EF=A] z !fermata![DFB]2 [CE][DF] | [EG]B,[EG]B, [EG]B,[EG]B, | [DA]B,[DA]B,- [B,EG]2 !fermata![CEA]2 | [B,EG]2 [B,EG]2 [B,EG]2 [A,B,DF]2 | [G,B,E]2 [G,B,E]2 [G,B,E]2 z2 ||  [ge']2 [gb]2 [gc']2 [gb]2 | agfe c'2 d'e' | b2 g2 ge[df]A | [Ge]6 :: z2 | [B,EG] z [B,EG] z [B,EG] z [B,EG] z | [B,DA] z [B,DA] z [B,EG] z [CEA] z | [B,EG] z [B,EG] z [B,EG] z [A,B,DF] z | [G,B,E]2 [G,B,E]2 [G,B,E]2 z2 | [EG]B,[EG]B, [EG]B,[EG]B, | [DA]B,[DA]B,- [B,EG]2 !fermata![CEA]2 | z B,[EG]B, z A,[DF]A, | z G,B,E z2 || z2 | [B,EG]2 z [B,EG] [B,EG]2 [B,EG]2 | [CEA]4 [B,EG]2 z2 | [B,EG] z [B,EG] z [CEA] z [B,EG] z | [B,EG] z [EF=A] z !fermata![DFB]2 [CE][DF] | [EG]B,[EG]B, [EG]B,[EG]B, | [DA]B,[DA]B,- [B,EG]2 !fermata![CEA]2 | [B,EG]2 [B,EG]2 [B,EG]2 [A,B,DF]2 | [G,B,E]2 [G,B,E]2 [G,B,E]2 z2 ||  [ge']2 [gb]2 [gc']2 [gb]2 | agfe c'2 d'e' | b2 g2 ge[df]A | [Ge]6 :|
+V:7
+z2 | E,B,G,B, E,B,G,B, | D,B,F,B, E,2 z2 | E2 _D2 C2 _C2 | B,2 B,,2 [E,,E,]2 |: z2 | [E,,E,] z [E,,E,] z [E,,E,] z [E,,E,] z | [B,,,B,,] z [B,,,B,,] z [E,,E,] z [A,,,A,,] z | [B,,,B,,] z [B,,,B,,] z [B,,,B,,] z [B,,,B,,] z | [E,,E,]2 [E,,E,]2 [E,,E,]2 z2 | [E,,E,]4 [E,,E,]4 | [B,,,B,,]4 [E,,E,]2 !fermata![A,,,A,,]2 | [B,,,B,,]4 [B,,,B,,]4 | [E,,E,]4 [E,,E,]2 || z2 | [E,,E,]2 z [E,,E,] [E,,E,]2 [E,,E,]2 | [E,,E,]4 [E,,E,]2 z2 | [E,,E,] z [E,,E,] z [E,,E,] z [E,,E,] z | [E,,E,] z [F,,C,] z !fermata![B,,,B,,]2 z2 | [E,,E,]4 [E,,E,]4 | [B,,,B,,]4 [E,,E,]2 !fermata![A,,,A,,]2 | [B,,,B,,]2 [B,,,B,,]2 [B,,,B,,]2 [B,,,B,,]2 | [E,,E,]2 [E,,E,]2 [E,,E,]2 z2 || E,B,EB, E,B,EB, | G,B,EB, A,CFC | B,EGE B,2 B,,2 | E,2 B,,2 E,,2 :: z2 | [E,,E,] z [E,,E,] z [E,,E,] z [E,,E,] z | [B,,,B,,] z [B,,,B,,] z [E,,E,] z [A,,,A,,] z | [B,,,B,,] z [B,,,B,,] z [B,,,B,,] z [B,,,B,,] z | [E,,E,]2 [E,,E,]2 [E,,E,]2 z2 | [E,,E,]4 [E,,E,]4 | [B,,,B,,]4 [E,,E,]2 !fermata![A,,,A,,]2 | [B,,,B,,]4 [B,,,B,,]4 | [E,,E,]4 [E,,E,]2 || z2 | [E,,E,]2 z [E,,E,] [E,,E,]2 [E,,E,]2 | [E,,E,]4 [E,,E,]2 z2 | [E,,E,] z [E,,E,] z [E,,E,] z [E,,E,] z | [E,,E,] z [F,,C,] z !fermata![B,,,B,,]2 z2 | [E,,E,]4 [E,,E,]4 | [B,,,B,,]4 [E,,E,]2 !fermata![A,,,A,,]2 | [B,,,B,,]2 [B,,,B,,]2 [B,,,B,,]2 [B,,,B,,]2 | [E,,E,]2 [E,,E,]2 [E,,E,]2 z2 || E,B,EB, E,B,EB, | G,B,EB, A,CFC | B,EGE B,2 B,,2 | E,2 B,,2 E,,2 :|
+V:8
+x2 | x8 | x8 | x8 | x2 [Ad]2 x2 |: x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x6 || x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 || x8 | x8 | x8 | x6 :: x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x6 || x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 || x8 | x8 | x8 | x6 :|

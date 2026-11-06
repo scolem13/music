@@ -1,0 +1,15 @@
+X:1
+C:Johann Sebastian Bach
+Z:Public Domain (PianoXML typeset)
+%%score { 1 | 2 }
+L:1/8
+M:2/4
+K:D
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+!f! a2 (g/f/e/d/) | a2 (g/f/e/d/) | (F/G/.A) .G.F | .E.A.F.D | a2 (g/f/e/d/) | a2 (g/f/e/d/) | (F/G/.A) .G.F | .E.A !tenuto!D2 ::!f! (c/d/e) (c/d/e) | (ae) !tenuto!e2 | (ae) (ae) | (d/c/B/A/ .B).E | (e^d).E(=d- | dc).a.^g | ((e^d)).E((=d- | dc)).a.^g | !<(! (e/^d/c/d/ e/d/c/d/!<)! | .e).^G.A.=d | (c/d/.e) .A!>(!.D | (C/D/E) !tenuto!A,2!>)! | !f! a2 (g/f/e/d/) | a2 (g/f/e/d/) | (F/G/.A) .G.F | .E.A.F.D | a2 (g/f/e/d/) | a2 (g/f/e/d/) | (F/G/.A) .G.F | .E.A !tenuto!D2 :|
+V:2
+.D,,.D, .D,,.D, | .D,,.D, .D,,.D, | (F,/G,/.A,) .G,.F, | .E,.A,.F,.D, | .D,,.D, .D,,.D, | .D,,.D, .D,,.D, | (F,/G,/.A,) .G,.F, | .E,.A, !tenuto!D,2 :: .A,,.A, .A,,.A, | .A,,.A, .A,,.A, | .A,,.A, .A,,.A, | .A,,.A, .E,,.E, | .E,,.E, .E,,.E, | .E,,.E, .E,,.E, | .E,,.E, .E,,.E, | .E,,.E, .E,,.E, | .E,,.E, .E,,.E, | .E,,.D,.C,.D, | E,2 .A,,.D, | (C,/D,/E,) !tenuto!A,,2 | .D,,.D, .D,,.D, | .D,,.D, .D,,.D, | (F,/G,/.A,) .G,.F, | .E,.A,.F,.D, | .D,,.D, .D,,.D, | .D,,.D, .D,,.D, | (F,/G,/.A,) .G,.F, | .E,.A, !tenuto!D,2 :|

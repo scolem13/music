@@ -1,0 +1,43 @@
+/* bassoon.css — fingering diagrams (bassoon-chart.js) and the bassoon page widgets (bassoon-page.js) */
+.bnc { width: 100%; height: auto; display: block; }
+.bnc .bnc-k circle, .bnc .bnc-k rect { fill: var(--bn-open, #fff); stroke: var(--bn-ink, #231f20); stroke-width: 2.5; transition: fill .12s; }
+.bnc .bnc-k text { font: 600 12px system-ui, sans-serif; fill: var(--bn-ink, #231f20); pointer-events: none; }
+.bnc .bnc-k.bnc-down circle, .bnc .bnc-k.bnc-down rect { fill: var(--bn-ink, #231f20); }
+.bnc .bnc-k.bnc-down text { fill: var(--bn-open, #fff); }
+.bnc .bnc-k.bnc-trill circle, .bnc .bnc-k.bnc-trill rect { fill: #9aa0a6; }
+.bnc .bnc-k.bnc-trill text { fill: #111; }
+.bnc .bnc-deco rect, .bnc .bnc-deco line { fill: none; stroke: var(--bn-ink, #231f20); stroke-width: 1.5; opacity: .35; }
+.bnc .bnc-deco .bnc-dash { stroke-dasharray: 5 4; }
+.bnc .bnc-cap { font: 600 10px system-ui, sans-serif; fill: var(--bn-ink, #231f20); opacity: .7; }
+.bnc-live .bnc-k { cursor: pointer; }
+.bnc-live .bnc-k:hover circle, .bnc-live .bnc-k:hover rect { stroke: var(--site-accent, #2780e3); stroke-width: 4; }
+.bnc-small .bnc-k circle, .bnc-small .bnc-k rect { stroke-width: 4; }
+.bnc-small .bnc-k text { font-size: 15px; }
+@media (prefers-color-scheme: dark) { :root { --bn-open: #f1f3f5; } }
+
+.bnp-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .4rem 0; }
+.bnp-strip { margin: .4rem 0; }
+.bnp-row { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin: 3px 0; }
+.bnp-rowlab { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--site-ink-2, #6c757d); width: 9.5rem; }
+.bnp-nb { min-width: 2.6rem; padding: .15rem .35rem; font-size: .85rem; }
+.bnp-card { border: 1px solid var(--site-line, #ced4da); border-radius: .5rem; padding: .8rem 1rem; margin: .5rem 0 1rem; background: var(--site-surface-2, #f8f9fa); }
+.bnp-head { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+.bnp-staff svg { max-width: 100%; }
+.bnp-staff-s { min-height: 60px; }
+.bnp-big { font-size: 1.8rem; font-weight: 800; line-height: 1.1; }
+.bnp-muted { color: var(--site-ink-2, #6c757d); font-size: .9rem; margin: .3rem 0; }
+.bnp-diags { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: .6rem; }
+.bnp-fig { margin: 0; text-align: center; }
+.bnp-fig figcaption { font-size: .85rem; color: var(--site-ink-2, #6c757d); margin-top: .2rem; }
+.bnp-d { width: 150px; }
+.bnp-d-big { width: min(250px, 55vw); flex: none; }
+.bnp-d-s { width: 100px; margin: .3rem auto; }
+.bnp-build { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; }
+.bnp-side { flex: 1 1 240px; }
+.bnp-ask { font-size: 1.05rem; margin-bottom: .3rem; }
+.bnp-out { min-height: 1.6em; font-size: 1.05rem; margin: .4rem 0; }
+.bnp-good { color: #2f9e44; font-weight: 700; } .bnp-bad { color: #e03131; font-weight: 700; }
+.bnp-tgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: .6rem; }
+.bnp-tcard { border: 1px solid var(--site-line, #ced4da); border-radius: .4rem; padding: .4rem; text-align: center; }
+.bnp-tlab { font-weight: 700; font-size: .9rem; }
+.bnp-steps li { margin-bottom: .25rem; }

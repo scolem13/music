@@ -1,0 +1,186 @@
+---
+title: "The Flute"
+toc: true
+toc-depth: 2
+description: "A beginning flutist's page: the parts, putting it together, holding it, your embouchure and first note, an interactive fingering chart and trill chart, fixing tone problems, tuning, care, and players to listen to."
+instruments: [flute]
+topics: [instruments, technique]
+has: [fingering, interactive, svg]
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/flute/flute.css?v=1">
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/flute/flute-chart.js?v=1"></script>
+<script src="/apps/shared/flute/flute-page.js?v=1"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+The flute is a **woodwind** you play without a reed: you blow a thin stream of air **across** a hole, and the edge of the hole splits
+the air so that the tube sings. The flute is **non-transposing**: the note written is the note you hear, so there is nothing to
+convert between the page and the instrument.
+
+Want to practise patterns by ear with these fingerings? Try [Flute Patterns by Ear](../practice/flute-patterns-by-ear.qmd).
+
+*What this page covers.* It follows the pages of the teacher book we have for the flute (the parts, assembly, posture, embouchure,
+care, tone problems, the fingering and trill charts, the listening list). The book's history, family and tuning pages were not in the
+scan, so those are not here yet.
+
+## Choosing and starting {#start}
+
+Your teacher will help you decide whether the flute suits you. The book lists signs of a good fit:
+
+- Your **arms are long enough** to hold the flute out to the side and still reach the keys.
+- Your **upper lip** is suited to an embouchure. A very short upper lip, or a bead of skin in the middle of it, makes the shape harder.
+- Your **closed teeth meet evenly**.
+- A **clear tone comes easily on the head joint** (you will try this below).
+- Good eye-hand coordination, reading above average, strong work habits.
+
+When buying an instrument, ask a teacher or other expert to help. The book names makers with a good reputation (Armstrong, Artley,
+Bundy, Emerson, Gemeinhardt, Haynes, Muramatsu, Powell, Yamaha; Haynes, Muramatsu and Powell are marked "professional").
+
+## The parts {#parts}
+
+The flute comes apart into **three joints**:
+
+- **Head joint**: has the **embouchure hole** (you blow across it), set into the **embouchure plate** (also called the lip plate). Inside is a **cork** whose position affects tuning.
+- **Middle joint**: the **tone holes** (covered by the keys and your fingers), and the long **rod** the keys are mounted on.
+- **Foot joint**: the keys for the little finger of the right hand, including the **E♭ key** (called D♯ on this page's chart).
+
+```{=html}
+<figure class="flp-fig" style="max-width:640px"><div class="flp-d" style="width:100%"><svg viewBox="0 0 640 70" role="img" aria-label="Flute in three parts: head joint, middle joint, foot joint" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+<g fill="none" stroke="currentColor" stroke-width="2">
+<rect x="4" y="22" width="190" height="14" rx="4"/><ellipse cx="60" cy="29" rx="9" ry="4" fill="currentColor"/>
+<rect x="204" y="22" width="270" height="14" rx="4"/><circle cx="270" cy="29" r="5"/><circle cx="310" cy="29" r="5"/><circle cx="350" cy="29" r="5"/><circle cx="390" cy="29" r="5"/><circle cx="420" cy="29" r="5"/><circle cx="450" cy="29" r="5"/>
+<rect x="484" y="22" width="150" height="14" rx="4"/><circle cx="560" cy="29" r="6"/><circle cx="600" cy="29" r="6"/></g>
+<g font-size="11" fill="currentColor" font-family="sans-serif" text-anchor="middle"><text x="100" y="56">head joint</text><text x="340" y="56">middle joint (tone holes)</text><text x="560" y="56">foot joint</text><text x="60" y="14">embouchure hole</text></g></svg></div><figcaption>A sketch only, not to scale: where the three joints, the embouchure hole and the tone holes are.</figcaption></figure>
+```
+
+## Putting it together {#assembly}
+
+::: {.flp-steps}
+1. **Head joint into the middle joint** with a gentle twisting motion.
+2. **Line up the embouchure hole** with the centre of the tone holes (look along the flute).
+3. **Foot joint**: twist it on gently, lining the **rod** up with the centre of the tone holes.
+:::
+
+Twist, never force. These parts are delicate.
+
+## Holding it {#posture}
+
+1. Sit up straight near the edge of your chair, feet flat on the floor.
+2. Relax. Keep your **chin parallel to the floor** and your **elbows away** from your body.
+3. Make a **"C" with your left hand**, so the base of your index finger forms a shelf.
+4. Rest the flute on that shelf, between the knuckle and first joint. Put your **left thumb** on the long straight key underneath (the B key).
+5. Put the tip of your **right thumb** under the flute, between your first and second fingers of the right hand.
+6. **Curve your fingers** into a relaxed "C", as if holding a tennis ball. Right little finger on the **E♭ key**, other fingers on the right keys. Keep your **right wrist as straight as you can**.
+
+The flute sits out to your **right**, pointing a little downward, and your head stays straight: bring the flute to you.
+
+## Embouchure and your first note {#embouchure}
+
+Your **embouchure** (*OM-boo-shur*) is the shape of your lips on the lip plate. Start with the head joint alone.
+
+1. **Take the head joint off** and cover the open end (with the palm of your hand).
+2. Relax your face and shape your mouth as if saying **"whee"** while you say **"too"**, with your lower lip drooping slightly at the corners.
+3. Set the lip plate so your **lower lip covers about a third of the embouchure hole**, rolled out a little. The head joint must be **parallel to your lips**.
+4. Take a full breath and blow over the hole, aiming a **thin stream of air at the far edge** of the hole while whispering "too". Check in a mirror.
+5. Take a full breath through your mouth and play a long, steady **A**.
+
+**Checklist** (a friend or teacher can watch): sitting straight · flute to your right · pointing slightly down · both thumbs placed ·
+right little finger on E♭ · left hand a "C" · fingers curved · elbows out · lip opening centred on the plate · right amount of the hole covered ·
+lips parallel with the flute · air stream aimed over the hole · breathing well · a good tone.
+
+## Fingering chart {#fingering-chart}
+
+Pick a note. **Dark keys are pressed down**, white keys are open. Hover over a key (or long-press on a phone) for its name. Where there is
+more than one fingering, the first is the usual one; the others (**alternate fingerings**) make some passages easier.
+
+```{=html}
+<div id="fl-explorer"></div>
+```
+
+How to read the diagram: the top row is the **left hand** (three circles: index, middle, ring) then a line, then the **right hand**
+(three circles). The long shape under the left hand is the **B thumb key**, with the round **B♭ thumb key** next to it. The curved key
+above the third left circle is the **G♯ lever** (left little finger). At the right end are the **D♯ (E♭) key** (the teardrop) and, for
+the lowest notes, the two **foot-joint C and C♯ keys** (stacked at the far right). The two small drops under the right hand are the
+**trill keys**, and the small bar under the first right circle is the **B♭ side lever**.
+
+Many notes use **the same fingers in two octaves** (G and G, or C♯ and C♯). What changes the octave is your **air**: aim the stream
+a little higher and faster for the upper one.
+
+## Build a fingering {#build}
+
+Press keys on the diagram yourself. In **What note is this?** the page names the note your fingering makes (letters, since most
+fingerings serve two octaves). In the **Quiz** it gives you a note and you build its fingering.
+
+```{=html}
+<div id="fl-builder"></div>
+```
+
+## Trill chart {#trills}
+
+A **trill** is a fast wobble between two notes. Some trills are awkward with the normal fingerings, so there are special ones: hold the
+dark keys down and move only the **gray** key(s).
+
+```{=html}
+<div id="fl-trills"></div>
+```
+
+## When the tone goes wrong {#tone-problems}
+
+| What it sounds like | Probably because… | Try this |
+|---|---|---|
+| **Hollow** | Not enough air speed | Improve your breathing |
+| | Opening between the lips too large | Reshape the embouchure to be more elliptical (oval) |
+| | Air going across the hole instead of into it | Blow more into the hole |
+| **Shrill** | Blowing too hard | Blow less hard |
+| | Weak embouchure | Build a better embouchure |
+| | Not enough support | Increase your breath support |
+| **Airy** | Not enough air speed | Improve your breathing |
+| | Head joint and lips not parallel | Make lips and head joint parallel |
+| | Embouchure hole not lined up with the opening in your lips | Line them up |
+| **Flat** | Head joint cork not adjusted properly | Ask your teacher to adjust the cork |
+| | Covering too much of the embouchure hole | Roll the head joint out, raise the head slightly |
+| **Sharp** | Head joint cork not adjusted properly | Ask your teacher to adjust the cork |
+| | Covering too little of the embouchure hole | Roll the head joint in, lower the head slightly |
+| **No clean start to the note** | Not tonguing properly | Review your tonguing technique with your teacher |
+| **Harsh start** | Tongue action too hard | Lighten the tongue action, review tonguing technique |
+
+## Playing in tune {#tuning}
+
+This table is the whole of what the book page we have says about pitch: if you are **flat**, the usual fixes are the cork (your teacher's
+job) or covering **less** of the hole by rolling the head joint out and raising your head a little; if **sharp**, the reverse. The book's
+page on adjusting the head joint cork, and its tuning notes, are not in the scan used for this page. Until those are added, practise with a
+tuner and ask your teacher about the cork.
+
+## Looking after it {#care}
+
+After every practice:
+
+1. Take the flute apart and **shake the water out of the head joint**. Wipe the joints clean.
+2. **Dry the inside** with a soft cloth placed over a cleaning rod.
+3. **Wipe the outside** of each part with a soft, clean cloth.
+4. Each time you finish caring for a part, put it back in its own place in the case. Latch the case.
+
+## Players to listen to {#listening}
+
+Ask your teacher before you look these up: not every recording is suitable for school. The book's list (names as printed; the spelling
+of Marcusson and Patillo is unverified):
+
+Julius Baker, Ian Clarke, Joe Corral, James Galway, Goran Marcusson, Greg Patillo, Marina Piccinini, Amy Porter, Jean-Pierre Rampal,
+Thomas Robertello, Alexa Still, Mimi Stillman, Carol Wincenc.
+
+```{=html}
+<script>
+FlutePage.explorer(document.getElementById("fl-explorer"));
+FlutePage.builder(document.getElementById("fl-builder"));
+FlutePage.trills(document.getElementById("fl-trills"));
+</script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Flute." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 67-70, 77-79. Selecting players, parts, assembly, posture and hand position, embouchure, daily care, checklist, tone problems and remedies, listening list, fingering chart (p. 78) and trill chart (p. 79). Retold in the page's own words; the charts redrawn from the book's key template. Pages on history, family, head joint cork adjustment, tonguing and tuning were not in the scan.
+:::
+<!-- /works-cited -->

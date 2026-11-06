@@ -1,0 +1,135 @@
+mt-0001|Pitch and the idea of a note.|pitch
+mt-0002|What an octave is and how it shows on the guitar.|pitch
+mt-0003|The twelve notes arranged in a circle.|pitch,fifths
+mt-0004|Sharps and flats as the notes between the natural ones.|pitch
+mt-0005|Tones and semitones as the measures of distance.|pitch,scales
+mt-0006|A memorisation method for the twelve notes: writing them out.|pitch
+mt-0007|A memorisation method: saying the notes aloud.|pitch
+mt-0008|A memorisation method: quizzing with a partner.|pitch
+mt-0009|Learning the names of the open strings.|pitch
+mt-013|Exploring melodic sequences.|scalesx
+mt-201|Notes in the first five frets.|pitch,fretboard
+mt-202|How to read tab.|tab
+mt-203|Reading chord boxes.|chordlib
+mt-204|Collecting chords in your own chord book.|chordlib
+mt-205|Fretboard diagrams for scales.|scalesx
+mt-206|How chords, scales and arpeggios relate.|triads
+mt-207|Thinking about chords as a vocabulary.|triads
+mt-301|The six notes to know first on the fretboard.|pitch,fretboard
+mt-302|How the major scale is built from tones and semitones.|major
+mt-303|Playing major scales on one string.|major,scalesx
+mt-304|The first major-scale pattern on the neck.|major,scalesx
+mt-306|Key signatures on the staff.|major
+mt-307|Recognising key signatures.|major
+mt-308|A trick for finding the key from its signature.|major,fifths
+mt-309|Recalling the notes of a major scale.|major
+mt-310|What a power chord is made of.|intervals,power
+mt-311|Playing power chords.|power
+mt-396|Traditional note names such as crotchet and quaver.|rhythm
+mt-397|Double sharps, double flats and naturals.|pitch
+mt-398|The teacher's case for studying theory.|theory
+mt-401|How triads are stacked from thirds.|triads
+mt-402|A worksheet for triad construction.|triads
+mt-403|Analysing the triads in a piece.|triads,analysis
+mt-404|Inversions of triads.|triads,inversions
+mt-405|Finding triads under the fingers.|triads,chordlib
+mt-406|Turning major grips into minor ones.|triads,chordlib
+mt-407|Major triad grips on the top three strings.|triads,chordlib
+mt-408|Memory exercises for major triad grips.|triads,chordlib
+mt-409|Minor triad grips on the top three strings.|triads,chordlib
+mt-410|Triad grips on other string sets.|triads,chordlib
+mt-411|Playing triads as arpeggios.|triads
+mt-421|The triads that belong to a major key.|triads,roman
+mt-422|The usual chord progressions.|prog,roman
+mt-423|Where a key's chords lie on the neck.|roman,chordlib
+mt-424|Working out the key from a chord sequence.|prog,analysis
+mt-425|Chords outside the key.|borrowed
+mt-426|Minor keys and their chords.|minor,roman
+mt-427|The sections of a song.|form
+mt-429|The six chords most songs in a key use.|roman,prog
+mt-431|Octave shapes on the guitar.|fretboard
+mt-432|Playing with octave shapes.|fretboard
+mt-433|Learning all the notes on the neck.|fretboard
+mt-434|An exercise for finding any note quickly.|fretboard
+mt-435|Seeing the fretboard in your head.|fretboard
+mt-436|The cycle of fifths.|fifths
+mt-437|The cycle of fifths in practice.|fifths,prog
+mt-501|What an interval is.|intervals
+mt-502|Perfect intervals.|intervals
+mt-503|A worksheet on perfect intervals.|intervals
+mt-504|Major intervals above the tonic.|intervals
+mt-505|A worksheet on major-scale intervals.|intervals
+mt-506|Chromatic intervals.|intervals
+mt-507|A worksheet on chromatic intervals.|intervals
+mt-508|Intervals on the fretboard.|intervals,fretboard
+mt-520|Four-note chords.|sevenths
+mt-521|The movable E and A chord shapes.|chordshapes
+mt-522|Major seventh chords.|sevenths
+mt-523|Dominant seventh chords.|sevenths
+mt-524|What matters most about chord construction.|sevenths,triads
+mt-525|Minor seventh chords.|sevenths
+mt-526|Half-diminished chords.|sevenths
+mt-527|Analysing the four-note chords of a key.|sevenths,roman
+mt-528|A shorthand for four-note chords.|sevenths
+mt-529|A sequence of a key's four-note chords.|sevenths,prog
+mt-530|Chord sequences common in major keys.|prog,jazz
+mt-550|Suspended chords.|triads
+mt-551|A breakdown of a sus chord in a progression.|triads,analysis
+mt-552|Sus chord grips.|chordlib
+mt-561|The minor pentatonic scale.|penta
+mt-562|Playing the minor pentatonic.|penta
+mt-563|Playing the major pentatonic.|penta
+mt-564|The major pentatonic in blues.|penta,blues
+mt-565|The blues scale.|blues
+mt-570|Introduction to minor scales.|minor
+mt-571|The natural minor scale.|minor
+mt-572|The harmonic minor scale.|minor
+mt-573|The melodic minor scale.|minor
+mt-574|The dorian and phrygian modes.|modes
+mt-575|A summary of minor keys.|minor
+mt-590|What harmonic analysis is.|analysis,roman
+mt-591|Adding notes and function to an analysis.|analysis,roman
+mt-602|Moving from major to minor chords by one note.|chordshapes
+mt-603|E-shape major seventh chords.|chordshapes,sevenths
+mt-604|E-shape dominant seventh chords.|chordshapes,sevenths
+mt-605|E-shape minor seventh chords.|chordshapes,sevenths
+mt-606|E-shape half-diminished chords.|chordshapes,sevenths
+mt-607|Comparing the E-shape seventh chords.|chordshapes,sevenths
+mt-610|Exploring the A shape.|chordshapes
+mt-611|A shape: major to minor.|chordshapes
+mt-612|A-shape seventh chords.|chordshapes,sevenths
+mt-613|Naming the chords you find.|chordshapes,analysis
+mt-615|A chord-naming game.|chordshapes,analysis
+mt-616|Finding your own chords.|chordshapes
+mt-620|Suspended chords in the shapes.|chordshapes
+mt-621|A-shape sus4 chords.|chordshapes
+mt-622|A-shape sus2 chords.|chordshapes
+mt-623|E-shape sus4 chords.|chordshapes
+mt-624|E-shape sus2 chords.|chordshapes
+mt-625|Consolidating the sus shapes.|chordshapes
+mt-652|Common chord extensions.|jazz
+mt-653|Telling an extension from an addition.|jazz
+mt-654|Altered chords.|jazz
+mt-701|How the D shape relates to the others.|chordshapes
+mt-702|D shape: major and minor.|chordshapes
+mt-703|D shape: sus2 and sus4.|chordshapes
+mt-704|D shape: four-note chords.|chordshapes,sevenths
+mt-705|The major sixth chord.|jazz
+mt-706|Major sixth chords in other shapes.|jazz,chordshapes
+mt-707|The C shape.|chordshapes
+mt-708|C shape: major to minor.|chordshapes
+mt-709|C shape: suspensions.|chordshapes
+mt-710|C shape: four-note chords.|chordshapes,sevenths
+mt-711|The minor sixth chord.|jazz
+mt-712|Minor sixth chords in other shapes.|jazz,chordshapes
+mt-713|The G shape.|chordshapes
+mt-714|G shape: major and minor.|chordshapes
+mt-715|G shape: suspensions.|chordshapes
+mt-716|G shape: four-note chords.|chordshapes,sevenths
+mt-719|Consolidating the chord shapes.|chordshapes
+mt-721|An introduction to the modes.|modes
+mt-722|What to know before learning modes.|modes
+mt-723|A revision of a key's four-note chords.|sevenths,roman
+mt-724|Why use modes.|modes
+mt-725|Modes in series.|modes
+mt-726|Modes in parallel.|modes

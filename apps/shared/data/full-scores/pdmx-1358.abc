@@ -1,0 +1,23 @@
+X:1
+Z:Set by C. Höcker - Jan. 2016 - CC0
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/8=100
+M:3/8
+K:Ab
+V:1 treble nm="S"
+%%MIDI program 0
+V:2 treble nm="A"
+%%MIDI program 0
+V:3 treble-8 nm="T"
+%%MIDI program 0
+V:4 bass nm="B"
+%%MIDI program 0
+V:1
+"^Andante"!p! E | c2 B |!<(! A3/2 B/ c/ d/!<)! | e2 f | f e!>(! c/ A/!>)! |!p! c B2 | "^cresc."!<(! B d3/2 c/ | B/ d/ f3/2 e/ | d2!<)!!f! e | a3/2 e/ d/ c/ | B c z | z!p! (c B/) A/ | G A z | z z E | e3/2 d/ c/ B/ | A2 A | A3 | z/!p! E/ (E/F/) (G/A/) | B/ G/ (G/A/)"^cresc."!<(! (B/c/) | (d/B/) (B/c/) (d/e/)!<)! |!f! (fe/d/) (c/B/) | A/ c/ e3/2 A/ | d c2 | z3 | z z!pp! E | c2 B | A3/2!<(! B/ c/ d/!<)! | e2 f | f e c/ A/ | c B2 | "^cresc."!<(! B d3/2 c/ | B/ d/ f3/2 e/ | d2!<)!!p! d | c3/2 B/ A/ G/ | G F F | "^cresc."!<(! f3/2 e/ d/ c/ | c B!<)!!f! e | a3/2 e/ d/ c/ | B c z | z!p! (c B/) A/ | G A2- | A3- | A3- | A d3/2 G/ |!p! G A !fermata!z |]
+V:2
+!p! E | A2 E |!<(! C3/2 E/ A/ B/!<)! | c2 d | d c!>(! A/ A/!>)! |!p! A G2 | "^cresc."!<(! G B3/2 A/ | G/ B/ d3/2 c/ | B2!<)!!f! d | c3/2 c/ B/ A/ | G A!p! E | A3/2 E/ D/ C/ | B, C z | z z E | E3/2 G/ A/ A/ | (AG) (F/G/) | A3 | z3 | z/!p! E/ (E/F/)"^cresc."!<(! (G/A/) | B/ G/ (G/A/) (B/c/)!<)! |!f! (dc/B/) (A/G/) | A3/2 A/ G/ A/ | E E2 | z/!p! C/ E E | E E z | !pp! E A G | E3/2!<(! A/ A/ A/!<)! | _G2 F | =G A A/ A/ | A G2 |"^cresc."!<(! _G F F | F/ F/ B =A | B2!<)!!p! F | F3/2 F/ F/ =E/ | =E F F |"^cresc."!<(! F3/2 A/ A/ A/ |!<(! A2!<)!!f! G!<)! | A3/2 A/ B/ A/ | G A z | z!p! E F | D C z/!pp! A/ | .A .G z | .F .E z | (=D_D3/2) D/ | !p! D C !fermata!z |]
+V:3
+z | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z z!p!!p! E | c2 B | A3/2!<(! B/ c/ d/!<)! | e2 f | f e!>(! c/ A/!>)! |!p! c B2 | B d3/2"^cresc."!<(! c/ | B/ d/ f3/2 e/ | d2!<)!!f! e | a3/2 e/ d/ c/ | B c z | z!p! (c B/) A/ | G A z |!pp! E e d | c3/2!<(! d/ e/ f/!<)! | c2 d | d c =d/ d/ | =d e2 |"^cresc."!<(! B B =A | B/ B/ _d c | d2!<)!!p! B | A3/2 d/ c/ B/ | B A A |"^cresc."!<(! d3/2 c/ d/ e/ |!<(! (f2!<)!!f! e)!<)! | e2 f | d c!p! e | a3/2 e/ d/ c/ | B A z/!pp! f/ | .f .e z | .d .c z | B2- B/ B/ |!p! B A !fermata!z |]
+V:4
+z | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z z!p! E, | A,2 E, | C,3/2!<(! E,/ A,/ B,/!<)! | C2 D | D C!>(! A,/ A,/!>)! |!p! A, G,2 | G, B,3/2"^cresc."!<(! A,/ | G,/ B,/ D3/2 C/ | B,2!<)!!f! D | C3/2 C/ B,/ A,/ | G, A,!p! E, | A,3/2 E,/ D,/ C,/ | B,, C, z | !pp! E, E, E, | A,,3/2!<(! A,/ A,/ A,/!<)! | A,2 A, | A, A, A,/ F,/ | E, E,2 | "^cresc."!<(! E, F, E, | D,/ B,,/ F, F, | B,2!<)!!p! B,, | C,3/2 C,/ C,/ C,/ | C, D, D, | "^cresc."!<(! D,3/2 E,/ F,/ E,/ |!<(! (=D,2!<)!!f! _D,)!<)! | C,2 D,/ D,/ | E, A, z | z!p! C, D, | E, A,, z | z3 | z3 | z E,3/2 E,/ |!p! E, A,, !fermata!z |]

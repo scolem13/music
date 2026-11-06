@@ -1,0 +1,25 @@
+X:1
+C:W Peterson-Berger
+Z:©CPDL Edition may be freely distributed, duplicated, performed and recorded
+Z:PA Aglert
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=120
+M:12/8
+K:Dmin
+V:1 treble nm="S"
+%%MIDI program 52
+V:2 treble nm="A"
+%%MIDI program 52
+V:3 treble-8 nm="T"
+%%MIDI program 52
+V:4 bass nm="B"
+%%MIDI program 52
+V:1
+"^Andante maestoso"!mp! (D/D/) | D3 D2 D (D3 D2) D |"^cresc." E3 E2 E E3- E2 E | F3 E2 F G3 F2 G | A3 A2 A A3- A2 A |!f! (d3 d2) d A3- A2!mp! A | (d6!>(! A3) G3!>)! | A6- A3- A z!p! D | D3 D2 D D3 D2 D |"^cresc." D3 D2 D D3 D2 D | D3 D2 D D3 D2 D |!f! D3 D2 D D3 D2 D | !mp! (D3 D2) D!>(! D3 D2 D!>)! |!p! D6- D3- D z!mf! A | A3 A2 A B3 B2 B | B3- BcB A3- A!p!(FG) | !<(! A3 A2 A c3 c2!<)! c | (d3 d2) d!>(! c3- c2!>)! c |!p!!<(! (A6 G3)!<)! G3 | A6- A3- A z z | z6 z2 z z2!mp! ^G | ^G3 G2 G A3 E2 =G | F3 E3 z6 | z6 z2 z z2!mf! ^c | ^c3 c2 c d3 A2 =c | B3 A3 z2 z!<(! D3!<)! | (A3 G2) F F3!>(! E2 D!>)! |!<(! (C6!<)! D3-) D z!pp! D | "^cresc." (D6 D3) D3 | D6 E3 E3 |!mf! ^F6-!>(! F3-!>)! F2 z |]
+V:2
+!mp! (D/D/) | D3 D2 D (D3 D2) D |"^cresc." D3 D2 D D3- D2 D | D3 D2 D D3 D2 D | D3 D2 D D3- D2 D | !f! (D3 D2) D D3- D2!mp! D | (D6!>(! D3) D3!>)! | ^C6- C3- C z!p! D | D3 D2 D D3 D2 D | "^cresc." C3 C2 C C3 C2 C | B,3 C2 B, A,3 B,2 A, |!f! G,3 G,2 G, G,3 G,2 G, | !mp! (A,3 A,2) A,!>(! =B,3 _B,2 B,!>)! |!p! A,6- A,3- A, z!mf! A | A3 A2 A A3 A2 A | G3- GAG D3- D!p!(DD) |!<(! D3 D2 D E3 E2!<)! E | (F3 F2) F!>(! E3- E2!>)! E | !p!!<(! (D6 =B,3) D3!<)! | ^C6- C3- C z z | z6 z2 z z2!mp! D | D3 D2 D ^C3 C2 C | D3 ^C3 z6 | z6 z2 z z2!mf! G | G3 G2 G ^F3 F2 F | G3 ^F3 z2 z!<(! D3!<)! | (B,3 B,2) B, B,3!>(! B,2 B,!>)! | !<(! A,6-!<)! A,3- A, z!pp! D |"^cresc." (D6 ^C3) =C3 | =B,6 _B,3 B,3 | !mf! A,6-!>(! A,3-!>)! A,2 z |]
+V:3
+!mp! (D/D/) | D3 D2 D (D3 D2) D |"^cresc." E3 E2 E E3- E2 E | F3 E2 F G3 F2 G | A3 A2 A A3- A2 A | !f! (F3 F2) F F3- F2!mp! F | (F6!>(! F3) E3!>)! | E6- E3- E z!p! D | D3 D2 D D3 D2 D | "^cresc." D3 D2 D D3 D2 D | D3 D2 D D3 D2 D |!f! D3 D2 D D3 D2 D |!mp! (^F3 F2) F!>(! G3 G2 G!>)! | !p! ^F6- F3- F z!mf! A | A3 A2 A B3 B2 B | B3- BcB A3- A!p!(DE) |!<(! F3 F2 F G3 G2!<)! G | (B3 B2) B!>(! G3- G2 G!>)! |!p!!<(! (F6 D3)!<)! D3 | E6- E3- E z z | z6 z2 z z2!mp! B | B3 B2 B A3 A2 A | A3 A3 z6 | z6 z2 z z2!mf! e | e3 _e2 e d3 d2 d | d3 d3 z2 z!<(! D3!<)! | (D3 D2) D A3!>(! G2 F!>)! |!<(! (E6!<)! ^F3-) F z!pp! D |"^cresc." (D6 E3) ^F3 | G6 G3 G3 | !mf! d6-!>(! d3-!>)! d2 z |]
+V:4
+!mp! (D,/D,/) | D,3 D,2 D, (D,3 D,2) D, |"^cresc." D,3 D,2 D, D,3- D,2 D, | D,3 D,2 D, D,3 D,2 D, | D,3 D,2 D, D,3- D,2 D, |!f! (B,,3 B,,2) B,, D,3- D,2!mp! D, | (B,,6!>(! B,,3) B,,3!>)! | A,,6- A,,3- A,, z!p! D, | D,3 D,2 D, D,3 D,2 D, |"^cresc." C,3 C,2 C, C,3 C,2 C, | B,,3 C,2 B,, A,,3 B,,2 A,, |!f! G,,3 G,,2 G,, G,,3 G,,2 G,, | !mp! (A,,3 A,,2) A,,!>(! A,,3 A,,2 A,,!>)! |!p! D,6- D,3- D, z!mf! A, | A,3 A,2 A, A,3 A,2 A, | G,3- G,A,G, D,3- D,!p!(D,D,) |!<(! D,3 D,2 D, C,3 C,2!<)! C, | (B,,3 B,,2) B,,!>(! C,3- C,2 C,!>)! |!p!!<(! (D,6 G,,3)!<)! =B,,3 | A,,6- A,,3- A,, z!mp! A,, | B,,3 B,,2 B,, (F,6- | F,6 E,6 | D,3) A,,3 z2 z z2!mf! A,, |!<(! B,,3 B,,2 B,,!<)! (B,6- | B,6 A,6 | G,3) D,3 z2 z!<(! D,3!<)! | (G,,3 G,,2) G,, G,,3!>(! G,,2 G,,!>)! | !<(! (A,,6!<)! D,3-) D, z!pp! D, |"^cresc." (D,6 D,3) D,3 | D,6 D,3 D,3 | !mf! D,6-!>(! D,3-!>)! D,2 z |]

@@ -1,0 +1,16 @@
+X:1
+C:William Smallwood (1831-1897)
+Z:by Mutopia - Pubblico dominio
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=120
+M:3/8
+K:F
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+"^Allegretto" c>dc | agf | A2 d | c3 | cGA | BDE | F3 | A3 | c>dc | agf | A2 d | c3 | cGA | BDE | F2 A | F3 || B2 A | Gdc | c2 F | A3 | B2 A | Gdc | c3 | A3 | c>dc | agf | A2 d | c3 | cGA | BDE | F2 A | F3 || G2 c | edc | c2 =B | d3 | G2 d | fed | d2 c | e3 | G2 c | edc | c2 =B | d3 | G2 d | fed | c2 e | c3 || c>dc | agf | A2 d | c3 | cGA | BDE | F3 | A3 | c>dc | agf | A2 d | c3 | cGA | BDE | F2 A | F3 || B2 A | Gdc | c2 F | A3 | B2 A | Gdc | c3 | A3 | c>dc | agf | A2 d | c3 | cGA | BDE | F2 A | F3 |]
+V:2
+F,A,C | F,A,C | F,A,C | F,A,C | C,G,B, | C,G,B, | F,A,C | F,A,C | F,A,C | F,A,C | F,A,C | F,A,C | C,G,B, | C,G,B, | F,A,C | [F,A,]3 || C,G,B, | C,G,B, | F,A,C | F,A,C | C,G,B, | C,G,B, | F,A,C | F,A,C | F,A,C | F,A,C | F,A,C | F,A,C | C,G,B, | C,G,B, | F,A,C | [F,A,]3 || C,E,G, | C,E,G, | D,F,G, | =B,,F,G, | G,,D,G, | G,,D,G, | C,E,G, | C,E,G, | C,E,G, | C,E,G, | D,F,G, | =B,,F,G, | G,,D,G, | G,,D,G, | C,E,G, | [C,E,]3 || F,A,C | F,A,C | F,A,C | F,A,C | C,G,B, | C,G,B, | F,A,C | F,A,C | F,A,C | F,A,C | F,A,C | F,A,C | C,G,B, | C,G,B, | F,A,C | [F,A,]3 || C,G,B, | C,G,B, | F,A,C | F,A,C | C,G,B, | C,G,B, | F,A,C | F,A,C | F,A,C | F,A,C | F,A,C | F,A,C | C,G,B, | C,G,B, | F,A,C | [F,A,]3 |]

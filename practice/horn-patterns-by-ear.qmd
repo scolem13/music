@@ -1,0 +1,188 @@
+---
+title: "Horn Patterns by Ear"
+description: "French horn, no notation to read: learn the first tonal patterns of a set from lever diagrams, then play the rest back by ear on your horn (the page listens through the microphone) and see how many you got on the first try."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/horn/horn.css?v=1">
+<script src="/apps/shared/abc-core.js?v=3"></script>
+<script src="/apps/shared/midi-feel.js?v=2"></script>
+<script src="/apps/shared/musical-typing.js?v=2"></script>
+<script src="/apps/shared/pitch-detect.js?v=2"></script>
+<script src="/apps/patterns/pattern-set.js?v=4"></script>
+<script src="/apps/patterns/pattern-gen.js?v=3"></script>
+<script src="/apps/patterns/ear-piano.js?v=2"></script>
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/band/sounds.js?v=23"></script>
+<script src="/apps/shared/horn/horn-chart.js?v=1"></script>
+<script src="/apps/shared/horn/horn-page.js?v=1"></script>
+<script src="/apps/patterns/ear-horn.js?v=1"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+#ep-root { --ep-ink: var(--site-ink, #212529); --ep-mute: var(--site-ink-2, #6c757d); --ep-line: var(--site-line, #ced4da);
+  --ep-surf: var(--site-surface, #fff); --ep-surf2: var(--site-surface-2, #f8f9fa); --ep-acc: var(--site-accent, #2780e3);
+  --ep-good: #2f9e44; --ep-bad: #e03131; --ep-key-w: #fff; --ep-key-b: #222; }
+@media (prefers-color-scheme: dark) { #ep-root { --ep-key-w: #f1f3f5; --ep-key-b: #111; } }
+.ep-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: .6rem 1rem; margin: .4rem 0 .8rem; }
+.ep-grid label { display: flex; flex-direction: column; gap: .2rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--ep-mute); margin: 0; }
+.ep-grid select, .ep-grid input[type=number], .ep-grid input[type=range] { font-size: .95rem; text-transform: none; letter-spacing: 0; }
+.ep-checks { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin: .3rem 0 .7rem; font-size: .92rem; }
+.ep-checks label { display: inline-flex; gap: .35rem; align-items: center; margin: 0; }
+.ep-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .5rem 0; }
+.ep-panel { border: 1px solid var(--ep-line); border-radius: .5rem; padding: .8rem 1rem; background: var(--ep-surf2); margin: .4rem 0 1rem; }
+.ep-head { font-weight: 700; font-size: 1.05rem; }
+.ep-solf { font-size: clamp(1.4rem, 5vw, 2.2rem); font-weight: 800; letter-spacing: .02em; min-height: 1.2em; }
+.ep-chord { color: var(--ep-mute); font-size: .95rem; }
+.ep-msg { min-height: 1.6em; font-size: 1.05rem; font-weight: 600; margin: .4rem 0; }
+.ep-msg.ep-good { color: var(--ep-good); } .ep-msg.ep-bad { color: var(--ep-bad); }
+.ep-kb { margin: .5rem 0; } .ep-kb svg { width: 100%; height: auto; display: block; max-height: 230px; }
+.ep-k.ep-w { fill: var(--ep-key-w); stroke: #555; stroke-width: 1; } .ep-k.ep-b { fill: var(--ep-key-b); stroke: #000; }
+.ep-k.ep-target.ep-w { fill: #d0e3fb; } .ep-k.ep-target.ep-b { fill: #1c5aa6; }
+.ep-k.ep-on { fill: #ffd43b !important; } .ep-k.ep-good { fill: #8ce99a !important; } .ep-k.ep-bad { fill: #ffa8a8 !important; }
+.ep-c { font-size: 9px; fill: #868e96; font-family: var(--font-mono, monospace); }
+.ep-mark circle { fill: var(--ep-acc); stroke: #fff; stroke-width: 1.5; }
+.ep-mark text { fill: #fff; font-weight: 700; font-size: 13px; font-family: system-ui, sans-serif; }
+.ep-mark text.ep-ord { fill: var(--ep-mute); font-size: 9px; font-weight: 600; }
+.ep-fing { font-family: var(--font-mono, monospace); font-size: .9rem; color: var(--ep-mute); }
+.ep-dots { display: flex; flex-wrap: wrap; gap: 4px; margin: .3rem 0; }
+.ep-dot { width: 13px; height: 13px; border-radius: 50%; border: 1.5px solid #adb5bd; background: transparent; }
+.ep-dot-learn { border-radius: 3px; } .ep-dot-done { background: #adb5bd; }
+.ep-dot-first { background: var(--ep-good); border-color: var(--ep-good); } .ep-dot-later { background: #94d82d; border-color: #94d82d; }
+.ep-dot-shown { background: var(--ep-bad); border-color: var(--ep-bad); } .ep-dot-skipped { background: #dee2e6; }
+.ep-dot-cur { outline: 2px solid var(--ep-acc); outline-offset: 2px; }
+#eh-in-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #adb5bd; margin-right: .3rem; }
+#eh-in-dot.on { background: var(--ep-good); }
+.ep-big { font-size: 1.05rem; font-weight: 600; padding: .45rem 1.1rem; }
+.ep-table .ep-r-first td:nth-child(4) { color: var(--ep-good); font-weight: 600; } .ep-table .ep-r-shown td:nth-child(4) { color: var(--ep-bad); font-weight: 600; }
+.ep-muted { color: var(--ep-mute); font-size: .9rem; }
+</style>
+<style>
+.eh-fings { display: flex; flex-wrap: wrap; gap: .8rem; margin: .5rem 0; }
+.eh-fig { width: 92px; } .eh-d { width: 70px; margin: 0 auto; } .eh-staff { height: 62px; overflow: hidden; }
+</style>
+<div id="ep-root">
+```
+
+The horn version of [Patterns by Ear](patterns-by-ear.qmd). The first few patterns of a set are taught with lever diagrams.
+Then the page plays the rest, one at a time, and you play each back on your horn. New to the fingerings? See the
+[horn page](../lessons/horn.qmd#explore).
+
+## Set up {#setup}
+
+```{=html}
+<div class="ep-bar">
+  <button type="button" class="btn btn-primary" id="eh-mic">🎤 Listen to my horn</button>
+  <button type="button" class="btn btn-outline-secondary" id="eh-midi">Connect MIDI (keyboard or wind controller)</button>
+  <span><span id="eh-in-dot" class="eh-dot"></span><span id="eh-in-status" class="ep-muted">Not listening yet. Use headphones if you can, so the page doesn't hear itself.</span></span>
+</div>
+<p id="eh-heard" class="ep-muted"></p>
+<div class="ep-grid">
+  <label>Horn <select id="eh-type" class="form-select form-select-sm"><option value="double">Double (F / B♭)</option><option value="f">Single F</option><option value="bb">Single B♭</option></select></label>
+  <label>Pattern set <select id="eh-set" class="form-select form-select-sm"></select></label>
+  <label>Written key <select id="eh-key" class="form-select form-select-sm"></select></label>
+  <label>Teach the first <input type="number" id="eh-teach" class="form-control form-control-sm" value="3" min="1" max="12"></label>
+  <label>Right in a row to learn one <input type="number" id="eh-need" class="form-control form-control-sm" value="2" min="1" max="5"></label>
+  <label>Tries by ear <input type="number" id="eh-tries" class="form-control form-control-sm" value="3" min="1" max="6"></label>
+  <label>Tempo <input type="range" id="eh-tempo" min="40" max="120" value="72"></label>
+</div>
+<div class="ep-checks">
+  <label><input type="checkbox" id="eh-anyoct" checked> Any octave counts</label>
+  <label><input type="checkbox" id="eh-shuffle"> Shuffle the by-ear patterns</label>
+  <label><input type="checkbox" id="eh-echo" checked> Sound MIDI / computer keys</label>
+  <label><input type="checkbox" id="eh-typing" checked> Computer keys play notes (Z = written C4)</label>
+  <label><input type="checkbox" id="eh-solf-learn" checked> Solfège while learning</label>
+  <label><input type="checkbox" id="eh-solf-ear"> Solfège by ear</label>
+</div>
+<p id="eh-set-info" class="ep-muted"></p>
+<div class="ep-bar">
+  <button type="button" class="btn btn-primary ep-big" id="eh-start">▶ Start</button>
+  <button type="button" class="btn btn-outline-secondary" id="eh-skip-learn">Skip to by ear</button>
+</div>
+<p class="ep-muted">Sets you make on <a href="patterns.html">Tonal Patterns</a> (Make a set) show up here with a ★.</p>
+```
+
+## Learn {#learn}
+
+```{=html}
+<div class="ep-panel">
+  <div class="ep-dots" id="eh-dots"></div>
+  <div class="ep-head" id="eh-learn-head">Press Start above.</div>
+  <div class="ep-solf" id="eh-learn-solf"></div>
+  <div class="ep-chord" id="eh-learn-chord"></div>
+  <div class="eh-fings" id="eh-learn-fing"></div>
+  <div class="ep-msg" id="eh-learn-msg" aria-live="polite"></div>
+  <div class="ep-bar">
+    <button type="button" class="btn btn-outline-primary" id="eh-learn-hear">🔊 Hear it again</button>
+    <button type="button" class="btn btn-primary" id="eh-to-ear" hidden>Go on: by ear ▶</button>
+  </div>
+  <p class="ep-muted">One diagram per note, in order (dark = pressed; on a double horn the thumb lever is the bar under the three levers). The page hears the notes, not your fingers, so watch your hands.</p>
+</div>
+```
+
+## By ear {#by-ear}
+
+```{=html}
+<div class="ep-panel">
+  <div class="ep-dots" id="eh-dots2"></div>
+  <div class="ep-head" id="eh-ear-head">Learn the first patterns, then come here.</div>
+  <div class="ep-solf" id="eh-ear-solf"></div>
+  <div class="eh-fings" id="eh-ear-fing"></div>
+  <div class="ep-msg" id="eh-ear-msg" aria-live="polite"></div>
+  <div class="ep-bar">
+    <button type="button" class="btn btn-outline-primary" id="eh-ear-hear">🔊 Hear it again</button>
+    <button type="button" class="btn btn-outline-secondary" id="eh-ear-key">Hear the key</button>
+    <button type="button" class="btn btn-outline-secondary" id="eh-ear-show">Show me</button>
+    <button type="button" class="btn btn-outline-secondary" id="eh-ear-skip">Skip</button>
+    <button type="button" class="btn btn-primary" id="eh-ear-next" hidden>Next ▶</button>
+  </div>
+  <p class="ep-muted">The key is played first (I – V7 – I). Then each pattern: listen, then play it back. A wrong note stops the
+  try and the pattern plays again. "Show me" and running out of tries count as a miss.</p>
+</div>
+```
+
+## Results {#results}
+
+```{=html}
+<p id="eh-reh-sum" class="ep-muted">Results show here when the by-ear patterns are done.</p>
+<div id="eh-reh-table"></div>
+<div class="ep-bar">
+  <button type="button" class="btn btn-primary" id="eh-again" hidden>Try the missed ones again</button>
+  <button type="button" class="btn btn-outline-secondary" id="eh-restart">Start the set over</button>
+</div>
+```
+
+## How it works {#how}
+
+- **Written notes.** Everything on this page is in *written* pitch, the notes on your part. The page plays them at the
+  pitch the horn really sounds (a perfect fifth lower than written), and the microphone turns what it hears back into written notes.
+- **Range.** Each set is moved to the written key you pick and placed between written C4 and G5 when it fits. That range is a rule of thumb for
+  a first-year player, not from the book (unverified).
+- **Levers.** The usual fingering from the [horn chart](../lessons/horn.qmd#explore). On a double horn the page shows the F side below written
+  G♯4/A♭4 and the B♭ side (thumb down) from there up, the switch point the book recommends. Your teacher may prefer something else.
+- **What counts.** The notes in order; rhythm isn't checked. Each new note must hold steady for about a tenth of a second. To play the
+  same note twice, stop the sound briefly between them (tongue it). With *Any octave counts* on, the whole pattern may be an octave away.
+  Stopping for more than four seconds starts the try again.
+- **The microphone** ignores everything while the page is playing. Headphones still help. Low horn notes are hard for pitch detection, so
+  a wrong octave is common: leave *Any octave counts* on.
+- **No horn handy?** A MIDI keyboard or wind controller, or the computer keys, count as written notes.
+
+```{=html}
+</div>
+<script>EarHorn.mount(document.getElementById("ep-root"));</script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"French horn." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/French_horn](https://en.wikipedia.org/wiki/French_horn). Unverified: that a horn in F sounds a perfect fifth below written pitch, and the sizes the levers lower the pitch (1 whole step, 2 half step, 3 step and a half). Not yet re-read.
+
+**For teachers**
+
+"Horn." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 176-89. Scan pages checked: history, instrument family p. 176; selecting players and parts diagram p. 183; assembly, posture, hand position p. 184; notes on posture and embouchure p. 185; daily care p. 186; oiling and greasing p. 187; stringing a rotary valve p. 188; Horn Fingering Chart (written pitch, treble clef, F3-C6: F-horn fingering on top, B-flat horn in brackets, 'use either on a double horn', switch at G-sharp4/A-flat4) p. 189. The Tone Production Problems and Remedies table is read from the scan's printed p. 169 (trumpet chapter). No tuning section for horn in the pages seen. Retold in the page's own words; the lever picture is traced from a three-lever template (horn.ai), the thumb lever is the page's own. Printed page numbers of the chart page and of the pages with clipped headers are unverified.
+:::
+<!-- /works-cited -->

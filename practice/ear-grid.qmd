@@ -10,6 +10,8 @@ toc: false
 <script src="/apps/shared/mlt/ear-grid.js?v=2"></script>
 ```
 
+## Chord grid
+
 Learn a tune's chords (and melody) from a recording. Each box is one bar: **click** it to play from there, **Shift+click** a
 second bar to loop the bars between, **Space** plays and pauses. Type what you hear in each bar: a chord name (`C`, `G7`,
 `Am`) or a Roman numeral (`I`, `V7`, `vi`); two chords in a bar go in with a space between. **Check** colours each bar:

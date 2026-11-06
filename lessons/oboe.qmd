@@ -1,0 +1,229 @@
+---
+title: "The Oboe"
+toc: true
+toc-depth: 2
+description: "Everything a beginning oboist needs: where the oboe came from, its family, reeds, the parts, putting it together, holding it, your embouchure and first sound, an interactive fingering chart and trill chart, fixing tone problems, care, and players to listen to."
+instruments: [oboe]
+topics: [instruments, technique]
+has: [fingering, interactive, svg]
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/oboe/oboe.css?v=1">
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/band/sounds.js?v=23"></script>
+<script src="/apps/shared/oboe/oboe-chart.js?v=1"></script>
+<script src="/apps/shared/oboe/oboe-page.js?v=1"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+The oboe is a **double-reed woodwind**. Its sound starts where **two thin blades of cane** vibrate against each other, not where a single reed
+buzzes against a mouthpiece (clarinet, sax) and not where your lips buzz (brass). It plays in **concert pitch**: the note you finger is the
+note you hear. Its early ancestors were loud and piercing, and the sound is still bright and strong.
+
+## Where it came from {#history}
+
+- Like most woodwinds, the oboe has **ancient roots**. Pictures and writings from Japan, China, Mongolia, India, Arabia and Greece show
+  double-reed instruments.
+- Its direct ancestor is usually said to be the **shawm**, which reached Europe around the **Crusades** (11th to 13th centuries). The shawm was
+  **loud and piercing**, so it was mostly played outdoors, for dances and military occasions.
+- In the **mid-1600s**, two French families are thought to have made a refined indoor version, the **hautbois** (French for "high wood").
+  It had a **narrower bore**, a **narrower reed** and was built in **three sections** joined together, and the sound became gentler.
+  As it spread across Europe, the name was spelled in different ways (*hautboy*, *hoboy*) and turned into the English word **oboe**.
+- Over the years the bore got narrower still, to make high notes easier, and **keys** were added so the instrument could play the
+  complicated music that composers such as **Mozart, Beethoven and Haydn** wrote for it.
+- In the **1800s** the **Triebert** family in Paris applied the ideas of the Boehm flute's keys and fingerings to the oboe. Different makers
+  built different key systems with no thought of standardizing them. Since the **mid-1940s**, when it was agreed to tune to **A = 440**, there has been no
+  big change to the instrument.
+
+## The oboe family {#family}
+
+The **English horn** (French *cor anglais*) is the **tenor voice** of the family. It came along soon after the oboe, in the late 1600s. It
+is pitched in **F, a perfect fifth lower** than the oboe, and is about **one and a half times as long**. Its name is a mix-up: the German
+*engellisches Horn* meant "angelic horn", but *engellisch* also means "English", and "English horn" stuck. It is **not recommended for beginners**.
+
+**Playing range.** The book's staff shows a normal range from **B♭3** (below the staff) up to about **A5** (one ledger line above the
+staff; read from the printed staff, so check it against the chart below), and an *extreme range* above that. The chart on this page goes up to **D♯6**.
+
+## Reeds {#reeds}
+
+Reeds matter more to an oboist's success than almost anything else. The reed is also **delicate, hard to make and soon worn out**, so:
+
+- A beginner should **buy** reeds rather than make them, until playing well enough to judge which reeds suit them.
+- The best source is **your teacher**, or a professional oboist who makes and sells reeds. Your teacher can also show you how to adjust older reeds, and
+  later how reeds are made.
+- Two kinds are sold. The **long scrape** (the "American" reed) has most of the bark scraped off. From the tip back it has a **thin vibrating
+  tip**, a thicker part under it called the **heart** or **plateau**, and a slightly thinner part that shows as two long channels, the **back**.
+  The **short scrape** (the "European" reed) keeps much of its bark near the thread and has a **long, thin tip**. It gives a bright, "transparent", nasal
+  tone. Most American oboists prefer the long scrape; in much of Europe and Asia the short scrape is more popular.
+
+A reed also changes your **tuning**. A reed that gives a good tone and answers well in every register will usually be in tune too. A reed that
+is **too stiff** plays **sharp** everywhere and exaggerates the oboe's natural tuning tendencies. One that is **too soft** plays **flat**, most of all in
+the lowest and highest notes. **The longer you play a reed, the softer it gets**, so change reeds often.
+
+## Is the oboe for you? {#players}
+
+Many teachers suggest waiting until about **age 12**, or first doing well on another instrument (clarinet, flute or sax). Your fingers have
+**big stretches** to reach, your muscles are stronger for air support and a controlled embouchure, and you will be handling a delicate
+reed and (later) sharp reed-making tools. The book's list of things that help:
+
+1. Hands big enough for the stretches.
+2. Self-confidence: the oboe is often a solo voice.
+3. Smooth teeth that meet evenly when closed. Braces make it very hard and uncomfortable; a severe underbite would be a problem.
+4. A good sense of pitch, good eye-hand coordination and good reading skills.
+5. Liking classical music (the book says both student and parents).
+6. Perseverance, good work habits, a real wish to play oboe, and support at home.
+
+## The parts {#parts}
+
+From the end you blow into, down to the bell:
+
+- **Reed**: the two cane blades, tied (with thread) onto a short cork-covered tube.
+- **Reed receiver**: the socket at the top of the upper joint that the reed's cork goes into.
+- **Upper joint**: the top section, with the first three holes (left hand), the thumb key at the back, and the first keys.
+- **Cork** (tenon cork): the cork rings where one section fits into the next. Greased so the joints slide on.
+- **Bridge key**: the link between the keys of the upper and lower joints. Its levers have to line up when you put the sections together.
+- **Lower joint**: the middle section, with the right-hand holes and the little-finger keys.
+- **Bell**: the flared end at the bottom.
+
+## Putting it together {#assembly}
+
+::: {.obp-steps}
+1. **Soak the reed** in a small container of water. If a cork is dry, put a little cork grease on it.
+2. **Bell onto the lower section**: push and twist it on.
+3. **Join the upper and lower joints.** If your oboe has a **connecting lever** (the bridge key), press the key that raises the lever first, push the sections
+   together gently, and check that the connecting levers line up.
+4. **Reed in**: push it into the reed receiver.
+:::
+
+## Holding it {#posture}
+
+1. Sit up straight near the **front edge of the chair**, feet flat on the floor.
+2. **Right thumb** under the thumb rest, kept straight. **Left thumb** over the octave key at about a **45° angle**.
+3. Hold the oboe **straight in front of you**, so it points down from your body at about **45°**.
+4. Curve the fingers of both hands into a relaxed "C", as if holding a tennis ball. **Wrists straight.**
+5. Relax. **Chin parallel to the floor** and **elbows away** from your body.
+
+## Embouchure and your first sound {#embouchure}
+
+Your **embouchure** (*OM-boo-shur*) is the shape of your mouth on the reed. Start with the **reed alone**, taken out of the oboe:
+
+1. Hold the soaked reed between your first finger and thumb.
+2. Shape your mouth as if you were **whistling**: chin flat, the corners of your mouth pushed in toward the middle.
+3. Open your mouth and rest the reed on the **middle of your lower lip**.
+4. **Fold both lips over your teeth.** Your teeth stay covered the whole time.
+5. Roll the reed and your lips into your mouth **very slightly**. The tip of the reed should be just inside your lips, **free to vibrate**.
+6. Close your lips with **just enough pressure to hold the reed** and as little tension as you can. Use a mirror.
+7. Take a full breath and play one long, steady sound called a **"tip peep"**.
+
+**Loud and soft.** Keep a good tone whether you play loudly or softly by adjusting your **embouchure, air speed and stomach muscles**
+together. For a **crescendo**, let the embouchure relax gradually (so the reed tip opens) while the air speeds up. For a **diminuendo**, press the reed
+slightly more into one lip than the other while the air slows down. Throughout, keep the air supported with your **abdominal muscles**.
+
+**Checklist** (have a friend or teacher watch): sitting straight · oboe away from the body · thumbs placed · fingers gently curved ·
+wrists straight · elbows away from the body · both lips rolled over the teeth · the right amount of reed in the mouth · chin down and pointed · even
+pressure on all sides of the reed · breathing correctly · a good tone.
+
+## Fingering chart {#fingering-chart}
+
+Pick a note. **Dark keys are pressed down**, white keys are open. Hover over a key (or long-press on a phone) for its name. Where there's
+more than one fingering, the first is the usual one; the other is an **alternate fingering**. The oboe does not transpose: written and sounding notes are the same.
+
+```{=html}
+<div id="ob-explorer"></div>
+```
+
+How to read the diagram, which follows the book's chart: the **teardrop** on the left is the **thumb key** on the back of the oboe. The **six big circles** are the finger holes,
+three for the left hand (above the line across the body) and three for the right hand (below it). The small circle at the bottom left of the top hole is the **half-hole**: a note marked
+**h.h.** has that hole *rolled open*, so the big circle is **empty** and the small one is **filled**. The small **vertical key** at the top right (A5 and up) is
+a **side key** for the left first finger. On the right: a **curved key** by the third finger (used for G♯), then **three small keys** (the left little finger), and a **flat oval
+key** between the fifth and sixth holes (the F key). The keys at the bottom left are the **right little finger's**: three stacked keys (the upper is C, the
+small middle one is C♯, the lower is E♭).
+
+*Unverified:* the book names none of these keys except the half-hole, so the names above come from which notes use each key.
+
+## Build a fingering {#build}
+
+Press keys on the diagram yourself. In **What note is this?** the page names the note your fingering makes. In the **Quiz** it gives you
+a note and you build its fingering.
+
+```{=html}
+<div id="ob-builder"></div>
+```
+
+## Trill chart {#trills}
+
+A **trill** is a fast wobble between two notes. Some trills are awkward with the normal fingerings, so there are special ones:
+hold the dark keys down and move only the **gray** key(s).
+
+```{=html}
+<div id="ob-trills"></div>
+```
+
+## When the tone goes wrong {#tone-problems}
+
+| What it sounds like | Probably because… | Try this |
+|---|---|---|
+| **Small, thin, pinched** | Embouchure too tight, pinched | Less pressure; shape your mouth in more of an "O" |
+| | The opening at the reed tip is too small | Reshape the opening by gently pushing the sides of the reed away from the tip |
+| | Not enough reed in your mouth | Put more reed in |
+| | Reed worn out | Replace it |
+| **Hard, cold, squawky** | Weak, uncontrolled embouchure | Reshape it and strengthen it with long tones |
+| | Reed too stiff | Adjust the reed, or buy a softer one |
+| | Too much reed in your mouth | Check how much should go in, and use that amount |
+| **Flat all over** | Not enough air support | More support, faster air |
+| | Oboe held too far from your body | Reduce the angle: bring the oboe closer |
+| | Reed too long or too soft | Change to a shorter, stiffer reed |
+| **Rushing air (air leaking)** | Embouchure too loose | Firmer lips, roll the lower lip in slightly, a more "O" shape |
+| | Not enough support | More support, faster air |
+| **Stopped, or no sound** | Pinching or biting the reed | A more "O" shaped embouchure |
+| | Reed too open | Pinch the soaked reed closed on the heart (plateau) for 15 seconds |
+| | Reed too closed or worn | A new reed |
+| | Reed too bulky (too much cane) | Remove a small amount of cane from the heart |
+| | Reed too hard | A softer reed |
+
+## Playing in tune {#tuning}
+
+Good tone comes first: you can't tune a bad sound. Oboes are tuned to **A = 440**. The biggest thing you control is the **reed** (see [Reeds](#reeds)): too stiff gives
+sharp, too soft gives flat, and a bad angle or poor air support pulls the pitch down. The book's tone table also says an oboe held too far from the body plays flat.
+*Not covered here:* which individual notes run sharp or flat on the oboe, and how to adjust the length of the instrument. Ask your teacher and check with a tuner (the navbar has one).
+
+## Vibrato {#vibrato}
+
+**Vibrato** is a small, even pulsing of the pitch. Oboists make it from the **diaphragm** (the air), not the jaw. Once you know how to pulse the air, practise **long tones** where
+you change the **speed** of the pulses (slow to fast to slow, then fast to slow to fast) and the **depth** (shallow dips to deep dips, and back). The goal is pulses
+so even that you can't hear any rhythm in them.
+
+## Looking after it {#care}
+
+After every practice:
+
+1. Take the reed off and blow out the extra water. Put it in a **reed holder** to dry.
+2. Take the oboe apart in the **reverse order** to how you put it together. Clean the upper and lower joints with a **cleaning feather** or swab.
+3. Dry each joint and wipe the outside with a **soft, clean cloth**.
+4. Put each part back in its place in the case as you finish with it. Latch the case.
+
+**Oiling the bore** (wood oboes). Some repair people recommend oiling a wood oboe's bore to guard against cracking and to lessen the wear from constant wetting
+and drying. It matters most for a **new** oboe, *before* it is played heavily, and it is far more important for the **upper joint**, which is more likely
+to crack from water. Have a **professional repair person** (ideally one who knows oboes) do it. The lower joint has pads that oil can harm, so leave
+it to a professional. Wood oboes, unlike string instruments, **do wear out**: after a few years the bore and wood can change, affecting some notes' pitch and the tone. Ask a professional when it's time to replace yours.
+
+## Players to listen to {#listening}
+
+Ask your teacher before you look these up: not every recording is suitable for school.
+
+John de Lancie, Elaine Douvas, Heinz Holliger, Alex Klein, John Mack, Pierre Pierlot, Robert Sprenkle, Ray Still, Marcel Tabuteau, Richard Woodhams.
+
+```{=html}
+<script>
+OboePage.explorer(document.getElementById("ob-explorer"));
+OboePage.builder(document.getElementById("ob-builder"));
+OboePage.trills(document.getElementById("ob-trills"));
+</script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Oboe." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 80-89, 100-01. Scan pages checked: history, instrument family and playing range p. 80; reeds pp. 83 (the start of the reed section, the page before, and the tuning page, if the book has one, are not in the scan); selecting players and parts p. 84; assembly and posture p. 85 (page number cut off in the scan); embouchure, care and checklist p. 86; tone problems p. 87; dynamics and oiling the bore p. 88; vibrato practice and listening list p. 89 (the page before is not in the scan); Oboe Fingering Chart p. 100; Oboe Trill Fingering Chart p. 101. Retold in the page's own words. The key diagram is drawn for this site, after the book's chart (no source drawing was supplied); the book names none of the keys except the half hole, so the key names are the site's reading (see the header of apps/shared/oboe/oboe-chart.js).
+:::
+<!-- /works-cited -->

@@ -21,13 +21,15 @@ ctx.self = ctx.window; vm.createContext(ctx);
 vm.runInContext(fs.readFileSync(path.resolve(__dirname, "../../apps/shared/abcjs-basic.js"), "utf8"), ctx);
 
 // sounding ranges, MIDI numbers, a little wide on purpose: only gross faults (an octave or a transposition off) should trip
-const RANGES = [[/picc/i, 74, 110], [/flaut|flute|fl\b/i, 59, 98], [/obo/i, 58, 93], [/clar/i, 50, 94], [/fag|bassoon/i, 34, 77],
+const RANGES = [[/piano|pianoforte|fl[uü]gel|klavier|keyboard|organ|orgel|harpsi|cembalo/i, 21, 108], [/picc/i, 74, 110], [/flaut|flute|fl\b/i, 59, 98], [/obo/i, 58, 93], [/clar/i, 50, 94], [/fag|bassoon/i, 34, 77],
   [/corn|horn/i, 33, 79], [/tromba|trumpet/i, 52, 84], [/trombon/i, 34, 77], [/tuba/i, 26, 65], [/timp/i, 38, 60],
   [/violino|violin/i, 55, 105], [/viol[ae]\b|viola/i, 48, 91], [/violoncell|cello/i, 36, 81], [/contrab|double bass|basso\b/i, 28, 67]];
 const R6 = x => Math.round(x * 1e4) / 1e4;
 
 function abcVoices(abc) {
-  const tune = ctx.ABCJS.parseOnly(abc)[0];
+  // inline tempo changes out first: abcjs scales midiPitches' lengths by them, so every note after a [Q:] would look the wrong
+  // length (tempo marks are checked on their own, from the text)
+  const tune = ctx.ABCJS.parseOnly(abc.replace(/\[Q:[^\]]*\]/g, ""))[0];
   const warnings = (tune.warnings || []).slice();
   { const log = console.log; console.log = () => {}; try { tune.setUpAudio({}); } finally { console.log = log; } }                                  // fills each note's midiPitches: sounding pitch, ties merged
   // voice order: the V: ids in %%score order, which is the (staff, voice) order abcjs builds
@@ -154,7 +156,7 @@ function main() {
     issues.slice(0, max).forEach(i => console.log(`  [${i.kind}] ${i.where}: ${i.msg}`));
     if (issues.length > max) console.log(`  … ${issues.length - max} more (--max N, or --json)`);
   }
-  process.exit(issues.some(i => !INFO.has(i.kind)) ? 1 : 0);
+  process.exitCode = issues.some(i => !INFO.has(i.kind)) ? 1 : 0;   // not process.exit: a long --json report into a pipe would be cut off
 }
 if (require.main === module) main();
 module.exports = { abcVoices };

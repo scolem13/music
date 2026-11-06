@@ -1,7 +1,7 @@
 // The trumpet and tuba fingering tables (apps/shared/brass/brass-chart.js). Run: node tests/brass/brass-chart.test.js
 const assert = require("assert"), path = require("path");
 const C = require(path.join(__dirname, "../../apps/shared/brass/brass-chart.js"));
-for (const inst of ["trumpet", "tuba"]) {
+for (const inst of Object.keys(C.INSTRUMENTS)) {
   const I = C.INSTRUMENTS[inst], F = C.FINGERINGS[inst];
   for (let m = I.low; m <= I.high; m++) {
     assert(F[m] && F[m].length, inst + " fingering for " + m);
@@ -25,11 +25,30 @@ assert.strictEqual(C.lookup("trumpet", [1, 2, 3]).filter(x => x.slide).length, 1
 assert.deepStrictEqual(C.lookup("trumpet", [3]), [], "valve 3 alone is not on the chart");
 assert.strictEqual(C.concert("trumpet", 60), 58);
 // tuba, as printed (concert pitch, bass clef)
-assert.deepStrictEqual(C.lookup("tuba", []).map(x => x.midi), [34, 41, 46, 50, 53], "B♭1 F2 B♭2 D3 F3");
+assert.deepStrictEqual(C.lookup("tuba", []).map(x => x.midi), [34, 41, 46, 50, 53, 58], "B♭1 F2 B♭2 D3 F3 B♭3 (book's BB♭ chart adds B♭3)");
 assert.deepStrictEqual(C.lookup("tuba", [1, 3]).map(x => x.midi), [29, 36]);
 assert.deepStrictEqual(C.lookup("tuba", [4]).map(x => x.midi), [29, 36], "valve 4 = the 1+3 notes");
 assert.deepStrictEqual(C.lookup("tuba", [2, 4]).map(x => x.midi), [28, 35]);
 assert(C.lookup("tuba", [4]).every(x => x.alt));
 assert.strictEqual(C.FINGERINGS.tuba[29].length, 2);
 assert.strictEqual(C.name(34, "flat"), "B♭1");
+// baritone / euphonium, as printed in the book (B.C. p. 233, T.C. p. 234)
+assert.deepStrictEqual(C.lookup("euph", []).map(x => x.midi), [46, 53, 58, 62, 65, 70], "B♭2 F3 B♭3 D4 F4 B♭4");
+assert.deepStrictEqual(C.lookup("euph", [1, 2, 3]).map(x => x.midi), [40, 47], "E2 and B2 (book: 1 2 3 or 2 4)");
+assert.deepStrictEqual(C.lookup("euph", [2, 4]).map(x => x.midi), [40, 47]);
+assert.deepStrictEqual(C.lookup("euph", [4]).map(x => x.midi), [41, 48], "F2 C3 (book: 1 3 or 4)");
+assert.strictEqual(C.name(40, "sharp"), "E2");
+// the T.C. chart is the B.C. one written a major ninth higher
+for (const m of Object.keys(C.FINGERINGS.euph)) assert.deepStrictEqual(C.FINGERINGS.euphtc[+m + 14], C.FINGERINGS.euph[m], "euphonium T.C. " + m);
+assert.strictEqual(C.INSTRUMENTS.euphtc.transpose, -14);
+assert.strictEqual(C.concert("euphtc", 54), 40, "written F#3 on 1 2 3 sounds E2");
+assert.strictEqual(C.concert("euphtc", 84), 70, "written C6 open sounds B♭4");
+// tuba: the T.C. chart is the BB♭ one +26 (first and last note of the printed chart)
+assert.strictEqual(C.concert("tubatc", 54), 28);
+assert.strictEqual(C.concert("tubatc", 84), 58);
+for (const m of Object.keys(C.FINGERINGS.tuba)) assert.deepStrictEqual(C.FINGERINGS.tubatc[+m + 26], C.FINGERINGS.tuba[m]);
+// E♭ tuba: A (1 2 3 or 2 4) up to B♭ open; 0 valves = E♭1 A♭... as printed D# row
+assert.deepStrictEqual(C.lookup("tubaeb", []).map(x => x.midi), [27, 34, 39, 43, 46], "E♭1 B♭1 E♭2 G2 B♭2");
+assert.deepStrictEqual(C.lookup("tubaeb", [1, 2, 3]).map(x => x.midi), [21, 28]);
+assert.strictEqual(C.name(21, "sharp"), "A0");
 console.log("brass-chart: all ok");

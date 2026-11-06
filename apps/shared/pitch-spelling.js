@@ -357,38 +357,41 @@
     return accStr + numeral + spec.symbol + spec.figure;
   }
 
-  // ── Roman numeral analysis ────────────────────────────────────────────────
-
-  // Returns a roman numeral string for a chord root + quality given a key context.
-  // e.g. romanNumeral(7, "7", {tonicPc:0}) → "V7"  (G dominant 7 in C major)
-  function romanNumeral(rootPc, quality, keyContext) {
-    var tonicPc = keyContext ? ((((keyContext.tonicPc || 0) % 12) + 12) % 12) : 0;
-    var semis = (((rootPc - tonicPc) % 12) + 12) % 12;
-
-    // semitones above tonic → {scale degree 1-7, accidental prefix}
-    var ROMAN_TABLE = [
-      {n:1,p:""},{n:2,p:"b"},{n:2,p:""},{n:3,p:"b"},
-      {n:3,p:""},{n:4,p:""},{n:5,p:"b"},{n:5,p:""},
-      {n:6,p:"b"},{n:6,p:""},{n:7,p:"b"},{n:7,p:""}
-    ];
-    var NUMERALS = ["I","II","III","IV","V","VI","VII"];
-    var entry = ROMAN_TABLE[semis];
-    var base  = NUMERALS[entry.n - 1];
-
-    var QUAL = {
-      "maj":    {lo:false,s:""},    "min":    {lo:true, s:""},
-      "dim":    {lo:true, s:"o"},   "aug":    {lo:false,s:"+"},
-      "6":      {lo:false,s:"6"},   "m6":     {lo:true, s:"6"},
-      "7":      {lo:false,s:"7"},   "maj7":   {lo:false,s:"M7"},
-      "min7":   {lo:true, s:"7"},   "7#5":    {lo:false,s:"+7"},
-      "dim7":   {lo:true, s:"o7"},  "m7b5":   {lo:true, s:"ø7"},
-      "7b5":    {lo:false,s:"7b5"}, "mmaj7":  {lo:true, s:"M7"},
-      "maj7#5": {lo:false,s:"+M7"},"dimMaj7": {lo:true, s:"oM7"},
-      "7add9":  {lo:false,s:"9"},   "7addb9": {lo:false,s:"7b9"},
-      "maj7add9":{lo:false,s:"M9"}
-    };
-    var qi = QUAL[quality] || {lo:false, s:"?"};
-    return entry.p + (qi.lo ? base.toLowerCase() : base) + qi.s;
+  // Major key (tonic pitch class) that best fits a list of chords, [{ rootPc, intervals }], for the Chord Sheet's Auto-detect.
+  // Krumhansl major profile over the chord tones, minus a penalty for every tone outside the candidate's major scale:
+  // the profile alone chose G for Dm7 G7 Cmaj7 A7 (ii-V-I-VI), because A7's C# and G pulled it sideways.
+  var KEY_PROFILE = [6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88];
+  var KEY_OUTSIDE_PENALTY = 2;
+  function majorFromChords(chords) {
+    var w = new Array(12).fill(0), total = 0;
+    (chords || []).forEach(function (c) {
+      (c.intervals || []).forEach(function (iv) { w[(((c.rootPc + iv) % 12) + 12) % 12] += 1; total += 1; });
+    });
+    if (total < 3) return 0;
+    var bestPc = 0, bestScore = -Infinity;
+    for (var t = 0; t < 12; t++) {
+      var score = 0;
+      for (var i = 0; i < 12; i++) {
+        var d = (i - t + 12) % 12;
+        score += KEY_PROFILE[d] * w[i];
+        // no penalty for the raised 7th of the relative minor (G# over Am in C): E7 is the usual way into it
+        if (d !== 8 && MAJOR_DEGREE_SEMITONES.indexOf(d) < 0) score -= KEY_OUTSIDE_PENALTY * w[i];
+      }
+      if (score > bestScore) { bestScore = score; bestPc = t; }
+    }
+    return bestPc;
+  }
+  // The major key (tonic pc) that fits the chords: also what a minor tune is "in" for movable do (Am Dm E7 Am -> C).
+  function keyFromChords(chords) { return majorFromChords(chords); }
+  // { tonicPc, mode, doPc }: the relative minor instead when the first or last chord is its minor tonic chord, or its V7 appears
+  // (Am ... E7 in C). doPc is the major key either way.
+  function detectKey(chords) {
+    var maj = majorFromChords(chords), min = (maj + 9) % 12;
+    chords = chords || [];
+    function isMinorTonic(c) { return c && ((c.rootPc % 12) + 12) % 12 === min && (c.intervals || []).indexOf(3) >= 0; }
+    function isV7(c) { var iv = c.intervals || []; return ((c.rootPc % 12) + 12) % 12 === (min + 7) % 12 && iv.indexOf(4) >= 0 && iv.indexOf(10) >= 0; }
+    var minor = chords.length >= 2 && (isMinorTonic(chords[0]) || isMinorTonic(chords[chords.length - 1]) || chords.some(isV7));
+    return minor ? { tonicPc: min, mode: "minor", doPc: maj } : { tonicPc: maj, mode: "major", doPc: maj };
   }
 
   // ── Exports ────────────────────────────────────────────────────────────────
@@ -402,6 +405,8 @@
     keyTonicLOF:      keyTonicLOF,
     // Key estimation
     estimateKey:      estimateKey,
+    keyFromChords:    keyFromChords,
+    detectKey:        detectKey,
     // Note utilities
     parseNote:        parseNote,
     parseNoteToLOF:   parseNoteToLOF,

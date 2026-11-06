@@ -1,9 +1,9 @@
 ---
-title: "Trumpet and Tuba Fingering Charts"
+title: "Trumpet, Euphonium and Tuba Fingering Charts"
 toc: true
 toc-depth: 2
-description: "How valves change the pitch of a brass instrument, and interactive trumpet and tuba fingering charts: pick a note, press valves to see which notes they play, quiz yourself, and switch the staff and note names on and off."
-instruments: [trumpet, tuba]
+description: "How valves change the pitch of a brass instrument, and interactive trumpet, baritone / euphonium and tuba fingering charts (bass and treble clef, B♭ and E♭ tuba): pick a note, press valves to see which notes they play, quiz yourself, and switch the staff and note names on and off."
+instruments: [trumpet, euphonium, tuba]
 topics: [instruments, technique]
 has: [fingering, interactive, svg, notation]
 ---
@@ -11,13 +11,15 @@ has: [fingering, interactive, svg, notation]
 ```{=html}
 <link rel="stylesheet" href="/apps/shared/brass/brass.css?v=1">
 <script src="/apps/shared/abcjs-basic.js?v=5"></script>
-<script src="/apps/shared/brass/brass-chart.js?v=1"></script>
-<script src="/apps/shared/brass/brass-page.js?v=1"></script>
+<script src="/apps/shared/brass/brass-chart.js?v=2"></script>
+<script src="/apps/shared/brass/brass-page.js?v=2"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
 ```
 
-Trumpet and tuba are **brass** instruments: the sound starts with your **lips buzzing** in a cup-shaped mouthpiece, and the tube of
-the instrument decides which pitches come out. The charts on this page are redrawn from two printed fingering charts (see the Works Cited).
+Trumpet, baritone / euphonium and tuba are **brass** instruments: the sound starts with your **lips buzzing** in a cup-shaped mouthpiece, and the tube of
+the instrument decides which pitches come out. The trumpet and tuba charts are redrawn from two printed StepWise fingering charts and checked against the charts in a teacher's
+resource book; the euphonium charts, the E♭ tuba and the treble-clef readings are from that book (see the Works Cited).
+Lessons on the instruments themselves (history, parts, posture, embouchure, tone problems, tuning, care): [trumpet](trumpet.qmd), [baritone and euphonium](euphonium.qmd), [tuba](tuba.qmd).
 Use the controls above each chart to show or hide the **staff** and the **letter names**, so you can practise reading
 notes, hearing notes, or matching a fingering to a name.
 
@@ -31,8 +33,8 @@ notes, hearing notes, or matching a fingering to a name.
   Those sizes are the standard ones, but they are not printed on these charts (see "What is unverified").
 - That is why **one fingering plays many notes**: a note is a *fingering* (which valves) plus a *partial* (how your lips and air are set).
   The charts print the partials in rows: the row number is the **partial** and the column is the **fingering**.
-- A **tuba** often has a **fourth valve**. On the tuba chart, valve **4** is printed as an alternate for the notes of **1 + 3**, and **2 + 4** as an alternate
-  for **1 + 2 + 3**.
+- A **tuba** or **euphonium** often has a **fourth valve**. On these charts, valve **4** is printed as an alternate for the notes of **1 + 3** (a perfect fourth, five half steps, lower than open),
+  and **2 + 4** as an alternate for **1 + 2 + 3**. The book's charts tie these alternates to particular notes (E and B, F and C on a BB♭ tuba or B.C. euphonium).
 
 ## Explore the chart {#explore}
 
@@ -41,7 +43,10 @@ notes the same fingering plays. **Hear it** plays a synthesized brass-like buzz.
 
 * **Trumpet** is a transposing instrument: the chart is for a **B♭ trumpet**. The staff and names show **written** pitch (what the player reads); choose
   **Concert pitch** to see what you hear: a whole step lower.
-* **Tuba** is read in the **bass clef**. This chart does not say which tuba it is for; the page shows it as **B♭ tuba at concert pitch**.
+* **Baritone / euphonium** is a B♭ instrument. In **bass clef** it is read at concert pitch (open notes B♭2, F3, B♭3, D4, F4, B♭4). The **treble-clef** reading is the same fingering
+  written a **major ninth** higher than it sounds. Choose **Concert pitch** to see the sounding note.
+* **Tuba** is read in the **bass clef** at concert pitch: **BB♭ tuba** (the book's chart is headed "BB♭ Tuba and Sousaphone") or **E♭ tuba**, which is the same pattern a perfect fifth lower
+  (open E♭1, B♭1, E♭2, G2, B♭2). The treble-clef tuba chart is the BB♭ chart written two octaves and a whole step higher than it sounds.
 
 ```{=html}
 <div id="br-explorer"></div>
@@ -68,15 +73,17 @@ Each column is a valve combination. Each row is one of the chart's partials. Thi
 
 These are the things this page is not sure of. Check them with your teacher.
 
-- The tuba chart does not say whether it is for a **B♭, C, E♭ or F tuba**. The notes it prints fit a **B♭ tuba** (open notes B♭, F, B♭, D, F), so that is how the page
-  shows it. Other tubas use the same valve patterns for different note names.
-- The charts number the partials from "1st" at the lowest row they print. Acoustically those are not the 1st partial of the tube (the **pedal tone** is below them), so
-  the numbers are the chart's own.
-- The sizes of what each valve does (half step, whole step, step and a half, perfect fourth for the tuba's 4th valve) and the trumpet's
-  B♭ transposition are standard textbook facts, listed in the Works Cited, but not printed on the two charts.
-- The footnote "move the 3rd valve slide out for low D and C♯" is on the trumpet chart; the page shows the star but not how far to move the slide.
-- Valve-4 fingerings are shown for the tuba notes F, C (with 4) and E, B (with 2 + 4) only, as the chart prints them.
-- The sounds are a synthesized buzz, not a recording of a real trumpet or tuba.
+- **Checked against the book.** The trumpet table is note for note the book's chart. The BB♭ tuba table is the StepWise tuba chart plus one more row of notes (up to B♭3), as the book prints.
+  The page now reads the tuba as a **BB♭ tuba** because the book's chart says so; the StepWise chart did not.
+- The book's **treble-clef tuba** chart does not say which tuba it is for. Its notes fit the BB♭ chart written 26 half steps higher, so this page reads it as a BB♭ tuba.
+- The charts do not number partials the same way. The StepWise charts number the lowest row "1st partial", which is not acoustically the 1st partial (the **pedal tone** is below it).
+  The book prints no rows at all, so for the euphonium the page shows the **harmonic number** of the open tube (4, 6, 8, 10, 12, 16), worked out by this page.
+- The sizes of what each valve does (half step, whole step, step and a half, perfect fourth for the fourth valve) and the **transpositions** (B♭ trumpet a whole step; euphonium and tuba in treble
+  clef a major ninth and two octaves plus a whole step) are standard facts, not printed in the book; the treble-clef sizes were read from the book's charts, first and last note.
+- The footnote "move the 3rd valve slide out for low D and C♯" is on the StepWise trumpet chart; the page shows the star but not how far to move the slide. The book says only that
+  **1 + 3** and **1 + 2 + 3** sound sharp and to extend the third valve slide, by an amount that **varies from trumpet to trumpet**.
+- The book's notes on **compensating** tubas ("Compensating or 4") are not turned into fingerings: this page gives only the printed ones. There is no chart for the **E♭ alto horn**.
+- The sounds are a synthesized buzz, not a recording of a real brass instrument.
 
 ```{=html}
 <script>
@@ -97,6 +104,8 @@ BrassPage.chartTable(document.getElementById("br-table"));
 **For teachers**
 
 "Essential Range Tuba Fingering Chart." StepWise Flashcards, [www.fingeringcharts.org](https://www.fingeringcharts.org). One-page chart (file name tubaFingeringChart.pdf), 'Correlates with StepWise Flashcards, www.fingeringcharts.org'. Bass clef, valves 0-123 and the valve-4 alternates (4, 24). The chart does not say which tuba it is for; the page reads it as B-flat tuba at concert pitch (unverified). Year and author not printed.
+
+"Trumpet," "Baritone, Euphonium, and E-flat Alto Horn," "Tuba." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 160-70, 216-34, 243-53. Scan pages checked. Trumpet: history and family p. 160; mouthpieces p. 165; mutes, selecting players, parts p. 166; assembly to care p. 167; oiling and checklist p. 168; tone problems p. 169; tuning p. 170; B-flat Trumpet, Cornet and Flugelhorn chart p. 173. Baritone / euphonium: history and family p. 216; selecting players and parts p. 223-24; assembly, posture, embouchure, care pp. 224-26; tone problems p. 227; tuning p. 228; B.C. chart p. 233; T.C. chart p. 234. Tuba: parts, assembly, posture p. 243; embouchure and care pp. 244-45; tone problems and tuning p. 246; BB-flat Tuba and Sousaphone chart p. 251; E-flat Tuba chart p. 252; Tuba T.C. chart p. 253. The tuba history and family, the flugelhorn description and the horn and trombone chapters between are not in the scan. Page numbers are the book's own print numbers; some are partly cut off in the scan (unverified for those). Retold in the page's own words; fingering tables read off the charts and checked note by note against the harmonic series.
 
 "Trumpet Fingering Chart." StepWise Flashcards, StepWise Publications, 2022, [stepwisepublications.com](https://stepwisepublications.com). One-page chart (file name 2022_new_trumpet_fingering_chart.pdf), (c) stepwisepublications.com, 'Correlates with NinGenius Music StepWise Flashcards'. Redrawn: every fingering, the printed partial rows, the 'skipped partial (too flat)' note and the 3rd-valve-slide footnote for low D and C-sharp. URL is the one printed on the chart, not a link to the chart itself (unverified).
 :::

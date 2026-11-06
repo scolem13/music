@@ -65,6 +65,18 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       }
       await setSel("Busyness", "full");
     });
+    await check(`[${w}] two answers, right then wrong, are two records in the student's report`, async () => {
+      await b.eval(`SiteRecord&&SiteRecord.clear()`);
+      await b.eval(`__plays=[];document.querySelector("#prog-ear .pe-go").click()`); await wait(800);
+      let odd = await b.eval(`ProgEar._cur().q.oddIndex`); await b.eval(`document.querySelectorAll("#prog-ear .pe-choice")[${odd}].click()`);
+      await b.eval(`document.querySelector("#prog-ear .pe-result").nextElementSibling.querySelector(".pe-go").click()`); await wait(800);
+      odd = await b.eval(`ProgEar._cur().q.oddIndex`); await b.eval(`document.querySelectorAll("#prog-ear .pe-choice")[${(odd + 1) % 3}].click()`); await wait(300);
+      const it = JSON.parse(await b.eval(`JSON.stringify(SiteRecord.all())`));
+      assert.strictEqual(it.length, 2, "records: " + it.length);
+      assert(it.every(x => x.tool === "prog-ear" && x.ex === "Odd Progression Out" && x.at.length === 1 && x.want && x.q.text), JSON.stringify(it[0]));
+      assert.deepStrictEqual(it.map(x => x.at[0][1]), [1, 0]);
+      assert(await b.eval(`!!document.querySelector("#prog-ear .sr-mybtn")`), "My report button");
+    });
     await b.close();
   }
   server.close(); console.log(failed ? failed + " failed" : "all passed"); process.exit(failed ? 1 : 0);

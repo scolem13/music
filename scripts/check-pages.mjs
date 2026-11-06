@@ -81,7 +81,10 @@ for (const f of files.filter((f) => /\.(qmd|html)$/.test(f))) {
 for (const f of files) {
   const t = text[f];
   if (/ABCJS\.synth/.test(t) && !/(abc-play|cursor-synth)\.js$/.test(f)) warnings.push(`synth  ${f}: uses ABCJS.synth, not AbcPlay.play`);
-  if (/new\s*\(?\s*(window\.)?(webkit)?AudioContext|new \(window\.AudioContext/.test(t) && !/AudioTap\.register/.test(t))
+  // AudioTap.register needs a node (audio-tap.js returns at once without one), so a bare register(ctx) does not count.
+  // audio-check.js is the microphone check: its context is an input, not a sound source, so it is not listed.
+  const TAP_EXEMPT = /(^|\/)apps\/shared\/audio-check\.js$/;
+  if (/new\s*\(?\s*(window\.)?(webkit)?AudioContext|new \(window\.AudioContext/.test(t) && !TAP_EXEMPT.test(f) && !/AudioTap\.register\(\s*[^,()]+,\s*[^,()]/.test(t))
     warnings.push(`audiotap  ${f}: AudioContext not registered with AudioTap`);
   if (/^(lessons|theory|practice|tools)\/[^_][^/]*\.qmd$/.test(f) && !/^## /m.test(t) && !/\{\{< include/.test(t))
     warnings.push(`sections  ${f}: no "## " headings`);

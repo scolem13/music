@@ -7,6 +7,9 @@
 //     there are none, and any left are an error
 //   - each voice's music joined onto one line, so every voice has the same systems (abcjs pairs voices line by line: a voice that
 //     wraps after 6 bars against one that wraps after 19 puts the wrong bars together); the page breaks lines itself (wrap option)
+//   - ottava marks (8va / 8vb / 15ma) dropped, notes already at sounding pitch; cross-staff [I:staff ±1] dropped; the same staff name
+//     twice numbered (Violin I, Violin II); !dacoda! / !dacapo! as text
+//   - pedal marks (!ped! / !ped-up!) dropped: abcjs has no pedal decoration
 //   - w: lyric lines dropped (a line with words is counted and reported)
 //   - in a transposing voice an inline clef with an octave sign ([K:bass+8]) becomes [K:bass octave=1] (abcjs bug, see tidy)
 //   - "%" bar-number comments dropped, "I:linebreak $" dropped
@@ -33,7 +36,7 @@ process.exit(r.status);
 
 export function tidy(abc) {
   const lines = abc.split("\n"), head = [], body = {}, order = [];
-  let cur = null; const dropped = { words: 0, clefs: 0 };
+  let cur = null; const dropped = { words: 0, clefs: 0, ped: 0, cross: 0, ott: 0, names: 0, tempo: 0, marks: 0 };
   for (let ln of lines) {
     if (/^I:linebreak/.test(ln)) continue;
     const v = /^V:(\S+)\s*$/.exec(ln);                       // a bare V:n starts that voice's music
@@ -42,8 +45,37 @@ export function tidy(abc) {
     if (/^w:/.test(ln)) { if (/[^\s|*_-]/.test(ln.slice(2))) dropped.words++; continue; }   // lyric lines (xml2abc writes empty ones)
     if (/^[A-Za-z]:/.test(ln) && !/^[A-Za-z]:\S*\]/.test(ln)) { body[cur].push(` [${ln.trim()}] `); continue; }   // a field inside the music: inline
     ln = ln.replace(/(^|[^\\])%.*$/, "$1");                  // bar-number comments
+    ln = ln.replace(/!ped(?:-up)?!/g, () => (dropped.ped++, ""));   // pedal marks: abcjs has no pedal decoration
     if (ln.trim()) body[cur].push(ln.trim());
   }
+  // ottava lines (!8va(! … !8va)!, 8vb, 15ma): abcjs has none; xml2abc already writes the notes at sounding pitch (the checker
+  // agrees), so only the marks go and the notes are drawn with ledger lines. Cross-staff notes ([I:staff ±1]) stay on their own staff
+  for (const id of order) {
+    let t = body[id].join(" ");
+    t = t.replace(/\[I:staff [+-]\d+\]/g, () => (dropped.cross++, ""));
+    t = t.replace(/!(?:8va|8vb|15ma|15mb)[()]!/g, (m) => (m.endsWith("(!") && dropped.ott++, ""));
+    // an inline field straight after a note ("c[Q:1/4=150]") reads to abcjs as a chord: a space before it; several tempo
+    // marks in a row (a ritardando written as steps) kept as the last one
+    t = t.replace(/(?:\[Q:[^\]]*\]\s*){2,}/g, m => (dropped.tempo++, m.trim().split(/(?=\[Q:)/).pop() + " "));
+    t = t.replace(/([^\s|:\[])\[([A-Za-z]):/g, "$1 [$2:");
+    // marks that belong to the next note (!pp!, "^text", (, {grace}) written before an inline field: the field goes first
+    for (let k = 0; k < 3; k++) t = t.replace(/((?:![^!\s]*!\s*|"[^"]*"\s*|\(\s*)+)(\[[A-Za-z]:[^\]]*\])/g, "$2 $1");
+    // dashed slurs (!-(! … !-)!) and tremolo strokes (!/-!, !//-!, !///-!): abcjs cannot read them; slur dropped, notes kept
+    t = t.replace(/!-[()]!|!\/{1,3}-!/g, () => (dropped.marks++, ""));
+    t = t.replace(/!dacoda!/g, '"^D.C. al Coda"').replace(/!dacapo!/g, '"^D.C."').replace(/!(?:[6-9]|\d\d+)!/g, "");
+    body[id] = [t];
+  }
+  // two staves with the same name (Violin, Violin): numbered, so the views and the checker can tell them apart
+  const seen = {};
+  head.forEach(h => { const m = /^V:\S+.*\bnm="([^"]*)"/.exec(h); if (m) seen[m[1]] = (seen[m[1]] || 0) + 1; });
+  const nth = {};
+  for (let k = 0; k < head.length; k++) head[k] = head[k].replace(/^(V:\S+.*\bnm=")([^"]*)(")/, (m, a, n, b) => seen[n] > 1 ? (nth[n] = (nth[n] || 0) + 1, dropped.names++, a + n + " " + ["I","II","III","IV","V","VI"][nth[n] - 1] + b) : m);
+  if (dropped.cross) console.error(`note: ${dropped.cross} cross-staff marks left out (the notes stay on their own staff)`);
+  if (dropped.ott) console.error(`note: ${dropped.ott} ottava lines left out (notes already at sounding pitch, drawn with ledger lines)`);
+  if (dropped.tempo) console.error(`note: ${dropped.tempo} runs of tempo marks kept as their last one`);
+  if (dropped.marks) console.error(`note: ${dropped.marks} dashed slurs / tremolo strokes left out (abcjs cannot read them)`);
+  if (dropped.names) console.error(`note: ${dropped.names} staff names numbered (the same name twice)`);
+  if (dropped.ped) console.error(`note: ${dropped.ped} pedal marks left out (abcjs cannot draw them)`);
   if (dropped.words) console.error(`note: ${dropped.words} lyric lines with words left out`);
   if (head.some(h => /^L:/.test(h)) && head.filter(h => /^L:/.test(h)).length > 1) throw new Error("more than one L: in the header: rerun xml2abc with -d");
   // abcjs drops a voice's transpose= after an inline clef with an octave sign ([K:bass+8] in a horn part sounds 5 semitones off);

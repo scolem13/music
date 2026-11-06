@@ -5,8 +5,11 @@ SX = ["lessons/saxophone.qmd", "practice/sax-patterns-by-ear.qmd"]
 SOURCES = [
     book('"Saxophone." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 140-59.',
          SX, who="teacher",
-         note="History, family, parts, assembly, posture, embouchure, care, checklist, tone problems, tuning, vibrato, listening list, "
-              "fingering chart (p. 158) and trill chart (p. 159). Retold in the page's own words; charts redrawn from the book's key template."),
+         note="Scan pages checked: history p. 140; family p. 140; parts p. 147; assembly and posture p. 148; embouchure and care p. 149; "
+              "alto checklist p. 150; tone problems p. 151; tuning p. 152; vibrato and listening p. 157; sax fingering chart p. 158 "
+              "(E-flat alto, B-flat tenor, E-flat bari, one chart in written pitch); sax trill chart p. 159. Pages 141-146 and 153-156 are not in the scan. "
+              "The book prints 'Duffayet' and 'Adderly' in the listening list; the lesson keeps the usual spellings (unverified which is the printed form). "
+              "Retold in the page's own words; charts redrawn from the book's key template."),
     wiki("Saxophone", "Saxophone", SX, who="student",
          note="Unverified: the transpositions (alto M6, tenor M9, bari octave + M6 below written). Not yet re-read."),
     book("Sinta, Donald J., and Denise C. Dabney. <em>Voicing: An Approach to the Saxophone's Third Register</em>. Sintafest Music, 1992.",

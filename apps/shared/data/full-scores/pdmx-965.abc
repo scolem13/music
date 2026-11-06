@@ -1,0 +1,85 @@
+X:1
+C:George F. Handel
+Z:Thomas Morell
+Z:Sequenced by Edward James Maurath
+%%score { 1 2 } [ { 3 4 } ( 5 6 ) ] [ { 7 8 } 9 ] [ 10 11 12 13 14 ] 15 16 17 { 18 19 }
+L:1/8
+Q:1/4=108
+M:2/2
+K:G
+V:1 treble nm="French\nHorn I" snm="HRN\nONE"
+%%MIDI program 60
+V:2 treble nm="French\nHorn II" snm="HRN\nTWO"
+%%MIDI program 60
+V:3 treble nm="Flute I" snm="Fl."
+%%MIDI program 73
+V:4 treble nm="Flute II" snm="Fl."
+%%MIDI program 73
+V:5 treble nm="Oboe" snm="OBO"
+%%MIDI program 68
+V:6 treble 
+%%MIDI program 68
+V:7 treble nm="Violin I" snm="VN1"
+%%MIDI program 48
+V:8 treble nm="Violin II" snm="VN2"
+%%MIDI program 48
+V:9 alto nm="Viola" snm="VLA"
+%%MIDI program 41
+V:10 alto1 nm="Soprano I" snm="SOP"
+%%MIDI program 52
+V:11 alto1 nm="Soprano II" snm="SOP\nTWO"
+%%MIDI program 52
+V:12 alto nm="Alto" snm="ALT"
+%%MIDI program 52
+V:13 tenor nm="Tenor" snm="TEN"
+%%MIDI program 52
+V:14 bass nm="Bass" snm="BAS"
+%%MIDI program 52
+V:15 bass nm="Cello\nContinuo" snm="VCL"
+%%MIDI program 42
+V:16 bass nm="Cortrebass\nContinuo" snm="CTB"
+%%MIDI program 43
+V:17 alto nm="Organ as\nby Handel" snm="ORG"
+%%MIDI program 22
+V:18 treble nm="Organ\nContinuo" snm="ORG"
+%%MIDI program 22
+V:19 bass nm="Organo\nContinuo" snm="ORG"
+%%MIDI program 23
+V:1
+"^CHORUS OF YOUTHS" z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | d4 B3 c | d4 G4 | ABcd c2 B2 | A8 | Bcde d2 d2 | g4 d4 | c2 BA A3 G | G8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | d4 B3 c | d6 G2 | ABcd c2 B2 | A8 | Bcde d2 d2 | g4 d4 | c2 BA A3 G | G4 z4 |:[Q:1/4=108]"^CHORUS OF VIRGINS" z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 :| z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |:[Q:1/4=108]"^CHORUS" d4 B3 c | d4 G4 | ABcd c2 B2 | A8 | B2 GG B2 BB | d4 B4 | c2 BA A3 G | G8!fine! :| BABc B2 B2 | A4 G4 | c2 B2 A2 G2 | G8 | GFGA G2 G2 | e4 ^c4 | d2 ed ^c3 d | d8 | d4 B3 c | d4 G4 | ABcd c2 B2 | A8 | Bcde d2 d2 |[Q:1/4=110] g4 d4 | [Q:1/4=100] c2 BA A3 G |[Q:1/4=90] G8 |]
+V:2
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | "^Shown here in concert pitch.\nHandel had \"Corno ex G\"" B4 G3 A | B4 B,4 | D2 A2 A2 G2 | D8 | GABc B2 B2 | B2 GA B2 D2 | A2 G2 D3 D | B,8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | B4 G3 A | B6 B,2 | D2 A2 A2 G2 | D8 | GABc B2 B2 | B2 GA B2 D2 | A2 G2 D3 D | B,4 z4 |: z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 :| z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: B4 G3 A | B4 B,4 | D2 A2 A2 G2 | D8 | B,2 B,B, D2 GG | B4 G4 | A2 G2 D2 DD | B,8 :| GFGA G2 G2 | F4 E4 | A2 G2 F2 E2 | ^D8 | E^DEF E2 E2 | G4- G2 G2 | F2 G2 G2 A2 | A8 | B4 G3 A | B4 B,4 | D2 A2 A2 G2 | D8 | GABc B2 B2 | B2 GA B2 D2 | A2 G2 D3 D | B,8 |]
+V:3
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: d'4 b3 c' | d'4 g4 | abc'd' c'2 b2 | a8 | Bcde d2 d2 | g6 d'2 | c'2 bc' a3 g | !fermata!g4 z4 :| babc' b2 b2 | a4 g4 | c'2 b2 a2 g2 | f6 f2 | gfga g2 b2 | g4 a4 | f2 gf e2 ^c'2 | d'8 | d'4 b3 c' | d'4 z2 g2 | abc'd' c'2 b2 | a4 z ABc | dcde d2 d2 | g4 d'4 | c'2 b2 a3 g | g4 z4 |: d'4 b3 c' | d'4 g4 | abc'd' c'2 b2 | a8 | d'c'd'e' d'2 d'2 | d'4 g4 | c'2 b2 a4 | g8 :| babc' b2 b2 | a4 g4 | c'2 b2 a2 g2 | f8 | gfga g2 g2 | g4 ^c'4 | d'2 gf e2 ^c'2 | d'8 | d'4 b3 c' | d'4 g4 | abc'd' c'2 b2 | a8 | d'c'd'e' d'2 d'2 | d'4 g4 | c'2 b2 a4 | g8 |]
+V:4
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: b4 g3 a | b4 d4 | fgab a2 g2 | f8 | GABc B2 B2 | dcde d2 b2 | a2 ga f3 g | g4 z4 :| gfga g2 g2 | f4 e4 | f2 g2 f2 e2 | ^d6 d2 | e^def e2 g2 | e4 ^c4 | d2 ed ^c2 e2 | f8 | b4 g3 a | b4 z2 d2 | fgab a2 g2 | f6 ga | babc' b2 B2 | d4 g4 | f2 g2 g2 f2 | g4 z4 |: b4 g3 a | b4 d4 | fgab a2 g2 | f8 | g6 g2 | g4 d4 | f2 g2 g2 f>c | B8 :| gfga g2 g2 | f4 e4 | a2 g2 f2 e2 | ^d8 | e^def e2 e2 | e4 e3 f/g/ | f2 ed ^c2 e2 | f8 | b4 g3 a | b4 d4 | fgab a2 g2 | f8 | g6 g2 | g4 d4 | f2 g2 g2 f>c | B8 |]
+V:5
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 :| z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: [Bd]4 [GB]3 [Ac] | [Bd]4 [dg]4 | [FA][GB][Ac][Bd] [Ac]2 [GB]2 | [FA]8 | dcde d2 [Gd]2 | [dg]4 [Bd]4 | [Fc]2 [GB]2 [GA-]2 [FA]2 | G8 :| [GB][FA][GB][Ac] [GB]2 [GB]2 | [FA]4 [EG]4 | [Ac]2 [GB]2 [FA]2 [EG]2 | [^DF]8 | gfga g2 [Bg]2 | [Ag-]4 [^c-g]2 [cg]2 | [df]2 [eg][df] [^ce]3 d | d8 | [Bd]4 [GB]3 [Ac] | [Bd]4 [dg]4 | [FA][GB][Ac][Bd] [Ac]2 [GB]2 | [FA]8 | dcde d2 [Gd]2 | [dg]4 [Bd]4 | [Fc]2 [G-B]2 [GA-]2 [FA]2 | G8 |]
+V:6
+x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |: x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 :| x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |: x8 | x8 | x8 | x8 | G6 x2 | x8 | x8 | x8 :| x8 | x8 | x8 | x8 | G6 x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | G4 x4 | x8 | x8 | x8 |]
+V:7
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 :| z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: d'4 b3 c' | d'4 g4 | abc'd' c'2 b2 | a8 | d'c'd'e' d'2 d'2 | d'4 g4 | c'2 b2 a4 | g8 :| babc' b2 b2 | a4 g4 | c'2 b2 a2 g2 | f8 | gfga g2 g2 | g4 ^c'4 | d'2 gf e2 ^c'2 | d'8 | d'4 b3 c' | d'4 g4 | abc'd' c'2 b2 | a8 | d'c'd'e' d'2 d'2 | d'4 g4 | c'2 b2 a4 | g8 |]
+V:8
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 :| z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: b4 g3 a | b4 d4 | fgab a2 g2 | f8 | g6 g2 | g4 d4 | f2 g2 g2 f>c | B8 :| gfga g2 g2 | f4 e4 | a2 g2 f2 e2 | ^d8 | e^def e2 e2 | e4 e3 f/g/ | f2 ed ^c2 e2 | f8 | b4 g3 a | b4 d4 | fgab a2 g2 | f8 | g6 g2 | g4 d4 | f2 g2 g2 f>c | B8 |]
+V:9
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 :| z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: G4 D4 | G4 G4 | C2 F2 F2 D2 | D8 | D6 D2 | B4 B,4 | C2 D2 D2 C2 | D8 :| D6 D2 | C4 B,4 | ^D2 E2 C2 B,2 | B,8 | B2 B2 B2 B2 | A4 E4 | D2 B2 E2 A2 | F8 | G4 D4 | G4 G4 | C2 F2 F2 D2 | D8 | D6 D2 | B4 B,4 | C2 D2 D2 C2 | D8 |]
+V:10
+d4 B3 c | d4 G4 | ABcd c2 B2 | A8 | Bcde d2 d2 | g4 d4 | c2 BA A3 G | G8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | BABc B2 B2 | A2 BA G2 G2 | c2 B2 A2 G2 | F8 | e^def e2 e2 | g4 e4 | f2 ed ^c3 d | d8 | d4 B3 c | d6 G2 | ABcd c2 B2 | A8 | Bcde d2 d2 | g4 d4 | c2 BA A3 G | !fermata!G4 z4 |: d4 B3 c | d4 G4 | ABcd c2 B2 | A8 | Bcde d2 d2 | g6 d2 | c2 Bc A2- AG | G4 z4 :| BABc B2 B2 | A4 G4 | c2 B2 A2 G2 | F6 F2 | GFGA G2 G2 | e4 ^c4 | d2 ed ^c3 d | d8 | d4 B3 c | d6 G2 | ABcd c2 B2 | A6 Bc | dcde d2 d2 | g4 d4 | c2 B2 A3 G | !fermata!G4 z4 |: d4 B3 c | d4 G4 | ABcd c2 B2 | A8 | dcde d2 d2 | g4 d4 | c2 B2 A4 | G8 :| BABc B2 B2 | A4 G4 | c2 B2 A2 G2 | F8 | GFGA G2 G2 | e4 ^c4 | d2 ed ^c3 d | d8 | d4 B3 c | d4 G4 | ABcd c2 B2 | A8 | dcde d2 d2 | g4 d4 | c2 B2 A4 | G8 |]
+V:11
+B4 G3 A | B4 G4 | FGAB A2 G2 | F8 | GABc B2 B2 | d4 B4 | A2 G4 F2 | G8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | GFGA G2 G2 | F2 GF E2 E2 | A2 G2 F2 E2 | ^D8 | B6 ^d2 | e4 ^c4 | d2 ^cB A2 G2 | F8 | B4 G3 A | G6 D2 | FGAB A2 G2 | F8 | GABc B2 B2 | d4 B4 | A2 G4 F2 | G4 z4 |: G4 G3 F | G4 D4 | FGAB A2 G2 | F8 | GABc B2 B2 | d6 B2 | A2 GA F2- FG | G4 z4 :| GFGA G2 G2 | F4 E4 | F2 G2 F2 E2 | ^D6 D2 | E^DEF E2 E2 | G4 A4 | F2 GF E2 A2 | F8 | B4 G3 A | B6 D2 | FGAB A2 G2 | F6 GA | BABc B2 B2 | d4 B4 | A2 G4 F2 | G4 z4 |: z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 :| z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:12
+G6 D2 | G4 B,4 | D6 G2 | D8 | G6 G2 | B4 G4 | F2 G2 D2 D2 | G8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | G2 F2 G2 E2 | F2 ^D2 E2 C2 | A,6 A,2 | B,8 | GFGA G2 F2 | E4 A4 | D2 G2 A2 A,2 | D8 | G6 D2 | G6 B,2 | D6 G,2 | D8 | G6 G2 | B4 G4 | F2 G2 D4 | G,4 z4 |: z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 :| z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: G4 G3 F | G4 D4 | FGAB A2 G2 | F8 | G6 G2 | G4 G4 | F2 G4 F2 | G8 :| GFGA G2 G2 | F4 E4 | A2 G2 F2 E2 | ^D8 | E^DEF E2 E2 | G6 G2 | F2 GF E2 A2 | A8 | G4 G3 F | G4 D4 | FGAB A2 G2 | F8 | G6 G2 | G4 G4 | F2 G4 F2 | G8 |]
+V:13
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 :| z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: B,4 D3 C | B,4 D4 | C2 A,2 D2 D2 | D8 | D2 D2 D2 D2 | D4 B,4 | C2 D2 D2 C2 | B,8 :| D6 D2 | C4 B,4 | ^D2 E2 C2 B,2 | B,8 | B,6 B,2 | ^C4 E4 | D2 B,2 E2 E2 | F8 | B,4 D3 C | B,4 D4 | C2 A,2 D2 D2 | D8 | D6 D2 | D4 B,4 | C2 D4 C2 | B,8 |]
+V:14
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 :| z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: G,4 B,3 A, | G,4 B,4 | A,3 G, F,2 G,2 | D,8 | B,A,B,C B,2 B,2 | B,4 G,4 | A,2 B,C D2 D,2 | G,8 :| G,6 G,2 | D,4 E,4 | F,2 G,2 A,2 E,2 | B,8 | E,6 D2 | ^C4 A,4 | B,2 G,2 A,2 A,2 | D,8 | G,4 B,3 A, | G,4 B,4 | A,3 G, F,2 G,2 | D,8 | B,A,B,C B,2 B,2 | B,4 G,4 | A,2 B,C D2 D,2 | G,8 |]
+V:15
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 :| z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: "^From here, hidden continuo part by Edward\nJ. Maurath based on Chrysander Score" G,4 B,3 A, | G,4 B,4 | A,3 G, F,2 G,2 | D,8 | B,A,B,C B,2 B,2 | B,4 G,4 | A,2 B,C D2 D,2 | G,8 :| G,6 G,2 | D,4 E,4 | F,2 G,2 A,2 E,2 | B,8 | E,6 B,2 | ^C4 A,4 | B,2 G,2 A,2 A,2 | D,8 | G,4 B,3 A, | G,4 B,4 | A,3 G, F,2 G,2 | D,8 | B,A,B,C B,2 B,2 | B,4 G,4 | A,2 B,C D2 D,2 | G,8 |]
+V:16
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 :| z4 z4 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: G,,4 B,,2- B,,A,, | G,,4 B,,4 | A,,2- A,,G,, F,,2 G,,2 | D,,8 | B,,A,,B,,C, B,,2 B,,2 | B,,4 G,,4 | A,,2 B,,C, D,2 D,,2 | G,,8 :| G,,6 G,,2 | D,,4 E,,4 | F,,2 G,,2 A,,2 E,,2 | B,,8 | E,,6 B,,2 | ^C,4 A,,4 | B,,2 G,,2 A,,2 A,,2 | D,,8 | G,,4 B,,3 A,, | G,,4 B,,4 | A,,3 G,, F,,2 G,,2 | D,,8 | B,,A,,B,,C, B,,2 B,,2 | B,,4 G,,4 | A,,2 B,,C, D,2 D,,2 | G,,8 |]
+V:17
+G4 G,4 | G4 B,4 | D2 G,2 F,2 G,2 | D8 | G6 G2 | B4 G4 | F2 G2 D4 | G,8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | G2 F2 G2 E2 | F2 ^D2 E2 C2 | A,6 A,2 | B,2 A,2 G,2 F,2 | GFGA G2 F2 | E4 A4 | D2 G2 A2 A,2 | D8 | G6 G2 | B4 G4 | F2 G2 D4 | D8 | G6 G2 | B4 G4 | F2 G2 D4 | G,4 z4 |: G4 G,4 | G4 B,4 | D4 G,2 A,2 | DCDE DCB,A, | G,4 G2 G2 | BABc B2 G2 | F2 G2 D2 D,2 | G,4 z4 :| G4 G,4 | G4 B,4 | D4 F,2 G,2 | DCDE DCB,A, | G,4 G2 G2 | BABc B2 G2 | F2 G2 D2 D,2 | G,8 | G4 G,4 | G4 z2 B,2 | D3 G, F,2 G,2 | DCDE DCB,A, | G,6 G,2 | B4 G4 | F2 G2 D2 D,2 | G,4 z4 |: z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 :| z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:18
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 :| z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: [Bd]4 [GB]3 [Ac] | [Bd]4 G4 | [FA][GB][Ac][Bd] [Ac]2 [GB]2 | [FA]8 | B[Ac][Bd][ce] [Bd]2 [Bd]2 | [dg]4 [Bd]4 | c2 BA A3 G | G8 :| BA[GB][Ac] B2 [GB]2 | A2 [GB][FA] G2 [EG]2 | [Ac]2 [GB]2 [FA]2 [EG]2 | [^DF]8 | [Ge][F^d][Ge][Af] [GBe]2 [df]2 | [eg]4 [^ce]4 | [df]2 [^ce][Bd] c3 d | d8 | [Bd]4 [GB]3 [Ac] | [Bd]4 G4 | [FA][GB][Ac][Bd] [Ac]2 [GB]2 | [FA]8 | B[Ac][Bd][ce] [Bd]2 [Bd]2 | [dg]4 [Bd]4 | c2 BA A3 [G,B,DG] | [B,DG]8 |]
+V:19
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 :| z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |: G,4 B,3 A, | G,4 B,4 | A,3 G, F,2 G,2 | D,8 | B,A,B,C B,2 B,2 | B,4 G,4 | A,2 B,C D2 D,2 | G,8 :| G,6 G,2 | D,4 E,4 | F,2 G,2 A,2 E,2 | B,8 | E,6 B,2 | ^C4 A,4 | B,2 G,2 A,2 A,2 | D,8 | G,4 B,3 A, | G,4 B,4 | A,3 G, F,2 G,2 | D,8 | B,A,B,C B,2 B,2 | B,4 G,4 | A,2 B,C D2 [D,A,F] z | G,8 |]

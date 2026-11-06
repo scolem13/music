@@ -286,6 +286,7 @@ html.embed-super #establish-tonality-btn{display:none!important}
   <p class="extras" id="extras"><button type="button" id="btn-extra-preview">Show the preview bar (print, play with the band)</button> · <button type="button" id="btn-extra-insts">Show banjo, mandolin and vihuela</button></p>
 
 <script src="/apps/shared/degree-names.js?v=1"></script>
+<script src="/apps/shared/pitch-spelling.js?v=2"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>
 <script src="/apps/shared/chord-entry.js?v=11"></script>
 <script>
@@ -508,7 +509,6 @@ function chordDisplayName(rootPc,chord){
 }
 
 // ===== KEY CONTEXT & SOLFEGE =====
-const MAJOR_PROFILE=[6.35,2.23,3.48,2.33,4.38,4.09,2.52,5.19,2.39,3.66,2.29,2.88];
 let manualKeyPc=null;
 let showSolfege=false;
 
@@ -523,17 +523,14 @@ function buildPcWeight(){
 }
 
 function currentKeyContext(){
-  if(manualKeyPc!=null)return{tonicPc:manualKeyPc};
-  const w=buildPcWeight();
-  const total=w.reduce((s,v)=>s+v,0);
-  if(total<3)return{tonicPc:0};
-  let bestPc=0,bestScore=-Infinity;
-  for(let t=0;t<12;t++){
-    let score=0;
-    for(let i=0;i<12;i++)score+=MAJOR_PROFILE[(i-t+12)%12]*w[i];
-    if(score>bestScore){bestScore=score;bestPc=t;}
-  }
-  return{tonicPc:bestPc};
+  if(manualKeyPc!=null)return{tonicPc:manualKeyPc,mode:'major'};
+  // the shared detector (pitch-spelling.js). tonicPc is the major key (the do for solfege and typed numerals, so ii-V-I-VI is C, not G);
+  // a tune that opens or closes on its minor tonic chord, or uses that key's V7, also says mode:'minor' and minorPc
+  const chords=[];
+  parsedTokens.forEach(t=>{if(!t.valid)return;const c=getChord(t.chordId);if(c)chords.push({rootPc:t.rootPc,intervals:c.intervals})});
+  if(!window.PitchSpelling)return{tonicPc:0,mode:'major'};
+  const k=PitchSpelling.detectKey(chords);
+  return k.mode==='minor'?{tonicPc:k.doPc,mode:'minor',minorPc:k.tonicPc}:{tonicPc:k.doPc,mode:'major'};
 }
 
 const SOLFEGE=['Do','Ra','Re','Me','Mi','Fa','Se','So','Le','La','Te','Ti'];
@@ -1268,7 +1265,9 @@ DATA.chordGroups.forEach(g=>g.items.forEach(item=>{
   if(!SYMBOL_MAP.has(item.symbol)) SYMBOL_MAP.set(item.symbol, item.id);
 }));
 [['maj','major'],['major','major'],['M','major'],['min','minor'],['minor','minor'],
- ['+','aug'],['o','dim'],['°','dim'],['ø','m7b5'],['Δ','maj7'],['Δ7','maj7'],['dom7','7'],['dom','7']
+ ['+','aug'],['o','dim'],['°','dim'],['ø','m7b5'],['Δ','maj7'],['Δ7','maj7'],['dom7','7'],['dom','7'],
+ ['M7','maj7'],['Ma7','maj7'],['ma7','maj7'],['Maj7','maj7'],['M9','maj9'],['min7','m7'],['-','minor'],['-7','m7'],
+ ['mMaj7','mMaj7'],['mM7','mMaj7'],['mmaj7','mMaj7'],['m(M7)','mMaj7'],['sus','sus4'],['7sus','7sus4']
 ].forEach(([sym,id])=>{ if(!SYMBOL_MAP.has(sym)) SYMBOL_MAP.set(sym,id); });
 const SYMBOL_ENTRIES=[...SYMBOL_MAP.entries()].sort((a,b)=>b[0].length-a[0].length);
 
@@ -1401,11 +1400,12 @@ const ROMAN_QUALITY={
 };
 // "ii7", "V7", "Imaj7" … for a chord token in the key context; '' when the shared roman logic
 // (apps/shared/pitch-spelling.js) is not loaded or knows no figure.
+function romanKey(){const k=currentKeyContext();return k.mode==='minor'?{tonicPc:k.minorPc,mode:'minor'}:{tonicPc:k.tonicPc,mode:'major'}}
 function romanForToken(t){
   const spec=ROMAN_QUALITY[t.chordId];
   if(!spec||!window.PitchSpelling)return'';
   try{
-    const r=PitchSpelling.romanNumeral(t.rootPc,spec[0],{tonicPc:currentKeyContext().tonicPc});
+    const r=PitchSpelling.romanNumeral(t.rootPc,spec[0],romanKey());
     return r.replace('M','maj')+spec[1];            // the library writes a major 7th as M7
   }catch(e){return''}
 }
@@ -1856,7 +1856,7 @@ function updateKeyLabel(){
   const w=buildPcWeight();
   const total=w.reduce((s,v)=>s+v,0);
   if(total<3){el.textContent='';return;}
-  el.textContent='Auto: '+KEY_LABELS[currentKeyContext().tonicPc]+' maj';
+  const kc=currentKeyContext();el.textContent='Auto: '+(kc.mode==='minor'?KEY_LABELS[kc.minorPc]+' min':KEY_LABELS[kc.tonicPc]+' maj');
 }
 
 function initUI(){
@@ -2334,7 +2334,6 @@ renderChips();
 })();
 </script>
 </div>
-<script src="/apps/shared/pitch-spelling.js?v=1"></script>
 <script src="/apps/shared/tonality.js?v=10"></script>
 <script>
 // The chord-sheet tool is an IIFE, so all integration goes through the DOM:

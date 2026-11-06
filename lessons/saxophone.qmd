@@ -11,7 +11,7 @@ has: [fingering, interactive, svg]
 ```{=html}
 <link rel="stylesheet" href="/apps/shared/sax/sax.css?v=1">
 <script src="/apps/shared/abcjs-basic.js?v=5"></script>
-<script src="/apps/shared/sax/sax-chart.js?v=2"></script>
+<script src="/apps/shared/sax/sax-chart.js?v=3"></script>
 <script src="/apps/shared/sax/sax-page.js?v=2"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
 ```
@@ -193,11 +193,11 @@ Altissimo fingerings change from horn to horn, so if one won't speak, try anothe
 | | Ligature too high on the reed | Move it down |
 | **Rough, squawky** | Too much mouthpiece in your mouth | Take in a bit less |
 | | Embouchure too loose | Firm up into more of an "oo" shape |
-| | Reed too hard | Use a softer reed |
+| | Reed too hard | Use a softer reed, or sand the one you have |
 | **Nasal**, thin | Air too slow | More support, faster air |
-| | Reed too soft | Use a stronger reed |
+| | Reed too soft | Use a reed of greater strength, or clip the one you have |
 | **Wobbly** | Top lip on the mouthpiece instead of top teeth | Put your top teeth on the mouthpiece |
-| **Hard to blow** | Reed too hard | Use a softer reed |
+| **Hard to blow** | Reed too hard | Use a softer reed, or sand the one you have |
 | | Reed too high on the mouthpiece | Line it up with a sliver of mouthpiece showing |
 | | Ligature too high | Move it down |
 | | Leaking pads | Take it to a repair shop |
@@ -224,7 +224,7 @@ Some notes are out of tune on most saxophones, so listen for them and adjust:
 **Vibrato** is a small, quick, even wobble in pitch that makes a note warmer. It never replaces a solid tone, and you should always be in
 control of how fast and how wide it is. Saxophonists make it with the **jaw**, as if saying "ya-ya-ya".
 
-1. Metronome at **76**. Hold a comfortable note, such as B on the middle line.
+1. Metronome at **76**. Hold a comfortable note, such as B on the third line (the middle line of the treble staff).
 2. Move your jaw slightly as if saying "ya" **once** on each click.
 3. Then **twice** per click ("ya-ya"), evenly.
 4. Then **three** times, then **four**. Four per beat at 76 suits most music.
@@ -279,7 +279,7 @@ Jones, Emma. "Short Summary of the Books." <em>Learning the Altissimo Register o
 
 Pimentel, Bret. "Saxophone Altissimo Books: Raschèr vs. Rousseau." 19 Nov. 2013, [bretpimentel.com/saxophone-altissimo-books-rascher-vs-rousseau](https://bretpimentel.com/saxophone-altissimo-books-rascher-vs-rousseau). Further reading: Raschèr's Top-Tones and Rousseau's Saxophone High Tones compared. Their own dates not verified.
 
-"Saxophone." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 140-59. History, family, parts, assembly, posture, embouchure, care, checklist, tone problems, tuning, vibrato, listening list, fingering chart (p. 158) and trill chart (p. 159). Retold in the page's own words; charts redrawn from the book's key template.
+"Saxophone." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 140-59. Scan pages checked: history p. 140; family p. 140; parts p. 147; assembly and posture p. 148; embouchure and care p. 149; alto checklist p. 150; tone problems p. 151; tuning p. 152; vibrato and listening p. 157; sax fingering chart p. 158 (E-flat alto, B-flat tenor, E-flat bari, one chart in written pitch); sax trill chart p. 159. Pages 141-146 and 153-156 are not in the scan. The book prints 'Duffayet' and 'Adderly' in the listening list; the lesson keeps the usual spellings (unverified which is the printed form). Retold in the page's own words; charts redrawn from the book's key template.
 
 Sinta, Donald J., and Denise C. Dabney. <em>Voicing: An Approach to the Saxophone's Third Register</em>. Sintafest Music, 1992. Not read directly. Year, publisher (Laurel, MD) and co-author from the East Carolina University catalogue record (one listing names Blaris Publications); the definition of voicing as quoted in Jones's summary below.
 :::

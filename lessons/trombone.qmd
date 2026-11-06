@@ -1,0 +1,276 @@
+---
+title: "The Trombone"
+toc: true
+toc-depth: 2
+description: "A beginning trombonist's guide: where the trombone came from, the family, the parts, putting it together, holding it, your buzz and first note, an interactive slide-position chart (drag the slide, bass clef and treble clef readings), the F attachment, fixing tone problems, tuning, mutes, care and players to hear."
+instruments: [trombone]
+topics: [instruments, technique]
+has: [fingering, interactive, svg, notation]
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/trombone/trombone.css?v=1">
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/trombone/trombone-art.js?v=1"></script>
+<script src="/apps/shared/trombone/trombone-chart.js?v=1"></script>
+<script src="/apps/shared/trombone/trombone-page.js?v=1"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+The trombone is a **brass** instrument: the sound starts with your **lips buzzing** in a cup-shaped mouthpiece, like a trumpet. What makes it different
+is that it has no valves to change the length of the tube. It has a **slide**, so you change the pitch by moving your right arm. That means a trombonist can play
+every pitch in between the notes too, and has to **find each note by ear** as well as by position.
+
+This page follows the **tenor trombone**, the one most beginners start on. The slide chart on this page is redrawn from the position charts in a teacher's
+instrument guide (see the Works Cited), on the teacher's own drawing of the trombone.
+
+## Where it came from {#history}
+
+- The trombone has been the **tenor-baritone voice of the brass family** for roughly **600 years**. It comes from the **sackbut**, an older English name for the
+  instrument, and first appears around the **middle of the 1400s**. It is believed to have been made first by **Flemish** craftsmen.
+- It has changed **less** than most other brass instruments. The sackbut had a **much smaller bell flare**, so its tone was **softer and more supple**, and composers
+  of its time liked it.
+- Up to the 1600s it was mostly an **outdoor and church** instrument (masses and cantatas). In the Classical period it was used only a little, though Mozart and Beethoven
+  did call for it in their masses.
+- Makers built soprano, alto, tenor and bass versions, added **tuning slides** in the early 1800s, and sometimes **rotary valves** with extra tubing to reach lower notes.
+- In the Romantic period it came back into favour, largely because **Beethoven used trombones in his symphonies**. Composers had written for an **alto, tenor and bass**
+  trio; by the 1900s the band and orchestra normally used **tenor and bass**. The 1900s also brought new materials, mouthpieces, bore and bell sizes, and the
+  option of a rotary valve with a tube extension.
+
+## The trombone family {#family}
+
+The book names four main members.
+
+| Trombone | What to know |
+|---|---|
+| **Tenor** | The one people mean by "trombone". Beginners to professionals play it. A cylindrical tube, a bell 6 to 8½ inches across, a bore from 0.480 to 0.547 inches. **Not a transposing instrument** (it sounds as written). Usually read in **bass clef**; advanced players also read **tenor, alto and treble clef**. Many have a valve (see the F attachment below). |
+| **Bass** | Looks very like the tenor. Bell about 9½ to 11½ inches, bore 0.562 inches, and a **much bigger mouthpiece**, which gives a darker tone, especially low down. Most have one or two valves. |
+| **Alto** | Named in the book but not described in the pages used for this lesson. |
+| **Valve trombone** | Named in the book but not described in the pages used for this lesson. |
+
+## The parts {#parts}
+
+**Bell section**
+
+- **Bell**: the flared end the sound comes out of.
+- **Bell brace**: the support bar between the bell tube and the slide. Your left thumb goes around it.
+- **Tuning slide**: the U-bend at the back of the bell section. Pulling it out makes the whole instrument longer and lower.
+- **Lock**: the nut that holds the two sections together.
+
+**Slide section**
+
+- **Slide braces**: two cross bars that hold the slide tubes together. Your left hand holds the first, your right hand the second.
+- **Slide lock**: a small catch that keeps the slide from moving when it is not in use.
+- **Water key**: the lever that lets the water out.
+- **Stockings**: the slightly thicker ends of the inner slide tubes, where the slide moves against the outer tubes. They need oil (see Looking after it).
+
+**Mouthpiece**: the **cup** you buzz into, a **shank** that fits into the **mouthpiece receiver** at the front of the slide.
+
+### Is the trombone for you? {#selecting}
+
+The book lists five things that help: you are **tall enough** to handle it, your **arms reach** the low positions, your lips are **medium to thick** (thin lips tend to suit trumpet and horn),
+you can **sing a familiar folk song**, and your **sense of pitch** is good. These are guidelines, not tests.
+
+## Putting it together {#assembly}
+
+1. Hold the **slide section** by its braces in your **right hand**, with the **taller side of the slide toward you**.
+2. Hold the **bell section** in your **left hand**. Put the bell section's receiver over the taller side of the slide so that the two make a **"V"**.
+3. Tighten the **lock** that holds the two sections together.
+4. Put the **mouthpiece** into the receiver. Twist it in gently, **not too tight**.
+
+## Holding it {#posture}
+
+1. Sit up straight, near the **edge of your chair**, feet flat on the floor.
+2. **Left thumb** around the bell brace; **left index finger** on or near the stem of the mouthpiece.
+3. The rest of your **left fingers** wrap around the **first slide brace**.
+4. **Right hand** on the **second slide brace**: thumb on top, two fingers underneath.
+5. Bring the trombone to your mouth, resting on your **left shoulder**.
+6. **Left wrist straight**, in line with your forearm. **Right wrist loose.** **Elbows away** from your body.
+
+## Your buzz and first note {#embouchure}
+
+Your **embouchure** (*OM-boo-shur*) is the shape of your mouth and lips on the mouthpiece.
+
+1. Wet your lips. Shape the inside of your mouth and throat as if saying **"oh"**, and bring your lips together as if saying **"em"**.
+2. Take a full breath through your mouth and **blow through closed lips** so they make a relaxed **buzz**.
+3. Hold the **mouthpiece by the shank** on its own. Put it over the middle of the buzz with **equal amounts of mouthpiece on the top and bottom lip**,
+   and no heavy pressure. Check in a mirror.
+4. Take a full breath and play a long, steady buzz on the mouthpiece.
+5. Put the mouthpiece in the trombone and play a long, steady note in **1st position** (slide all the way in).
+
+**Checklist** (have a friend or teacher watch): sitting straight · head up · left hand and wrist · right hand and wrist · trombone at the right angle to your body ·
+fingers gently curved · elbows away from your body · mouthpiece in the right place · corners of the lips firm and the centre relaxed · chin flat and pointed · breathing properly · relaxed buzz.
+
+## Slide positions: the chart {#slide-chart}
+
+The slide makes the tube longer. **A longer tube sounds lower.** Each of the **seven positions** is about a **half step** lower than the one before it
+(1st is the shortest tube, 7th the longest). That is the usual rule, and the chart agrees with it, though the chart itself does not state it.
+
+Like every brass instrument, the trombone also plays several notes from one position, the **partials** of that tube. Tighter lips and faster air go up to the next
+partial. In **1st position** the chart's notes are B♭2, F3, B♭3, D4, F4 and B♭4. So **a note is a slide position plus a partial**: where your arm is, and how your lips and air are set.
+
+**Reading the number.** The chart's numbers are positions 1 to 7. A **minus** (−3) means a **shortened** position: a little closer to you than the number says.
+**"or"** means a second choice for the same note (for example A♯/B♭3 is **1st or 5th**).
+
+**Two clefs.** The first chart in the book is in **bass clef** (the note you hear). The second is the **T.C.** chart, in **treble clef**. It prints the same positions, but each note is written
+**a major 9th higher than it sounds** (a B♭ treble clef part). So a low E2 in 7th position is read as F♯3 in treble clef.
+Use the first box on each chart to switch between the two readings.
+
+### Explore the chart {#explore}
+
+Pick a note. The card shows the staff, the slide in the usual position, any alternate, and the other notes the same position plays. **Hear it** plays a synthesized
+brass-like buzz. Turn the **staff** or the **names** off to practise reading, hearing or matching a position to a note.
+
+```{=html}
+<div id="tb-explorer"></div>
+```
+
+### Drag the slide {#build}
+
+Drag the slide, click a position number, or focus the slide and use the arrow keys (or the keys 1 to 7). The page lists every note on the chart that position can play.
+In the **quiz** you are given a note, and put the slide where it is played. In treble clef reading the note is a **written** note.
+
+```{=html}
+<div id="tb-builder"></div>
+```
+
+### Slide and listen {#glide}
+
+Because there are no fixed steps, you can slide **between** the positions. Choose a partial, press the button, and drag the slide while the note sounds: the pitch follows your arm,
+about a half step lower each time you pass a position. This is a plain physical model (position 1 is the pitch you chose, each step out lowers it by a semitone), so each position is exactly in tune here,
+but a real trombone's positions are **not** equal in spacing, and the page does not claim the picture's distances are measured.
+
+```{=html}
+<div id="tb-glide"></div>
+```
+
+### The charts as a table {#table}
+
+Each row is a slide position and each column a partial. This is the same information as the two printed charts. Click a note to hear it.
+
+```{=html}
+<div id="tb-table"></div>
+```
+
+## The F attachment {#attachment}
+
+Many tenor trombones and most bass trombones have a **rotary valve** with extra tubing, called the **F attachment**. You work it with a **trigger** under your left thumb.
+(Bass trombones may have a second one, the **E attachment**.) The F attachment has two main purposes.
+
+1. **Extra range.** With the trigger pressed the trombone switches to the **F series**: the tube is longer and its partials are those of F.
+   The book's picture shows them as F1 (the **fundamental**, the lowest note and not one you normally play), F2, C3, F3, A3 and C4.
+2. **Easier positions.** For students with **shorter arms**, the far positions (5th, 6th, 7th) are hard to reach. The book says some teachers recommend:
+   **C (in the staff, C3)** in **1st position with the trigger** instead of 6th, and **B natural (B2)** in **2nd position with the trigger** instead of 7th.
+
+The explorer shows those two as a third picture, labelled "with the F-attachment trigger down". The page does **not** show F-side positions for other notes: those
+pages of the book were not available for this lesson (see below).
+
+## When the tone goes wrong {#tone-problems}
+
+| What it sounds like | Probably because… | Try this |
+|---|---|---|
+| **No tone, just rushing air** | Lips not firm enough | Firm up your embouchure |
+| | You are blowing, not buzzing | Practise buzzing the lips without a mouthpiece |
+| | Air stream blocked: closed throat, tongue too high | Think "oh" to open the throat; keep the tongue down |
+| **Thin, pinched** | Lips squeezed too tight | Relax your lips; use a wider stream of air |
+| | Not enough air going through | Review your breathing; use faster air |
+| **Garbled** | Lips not firm enough | Firm up your embouchure |
+| | Lips folding over the teeth | Re-form the embouchure; use a mouthpiece ring to check lip position |
+| **Stopped, intense air** | Lips pinched completely together | Relax your lips |
+| | Not enough air between the lips | Check the tongue position with "oh"; increase air speed |
+| **Sharp in the upper register** | Too much pressure on the lips | Faster air, less pressure |
+| **Flat, flabby low notes** | Air too slow | Use faster air |
+| | Loose, flabby lips | Firm up your embouchure |
+| **Hard to play high** | Air not fast enough | Increase air speed |
+| **Hard to play low** | Too much pressure | Relax your lips |
+
+## Playing in tune {#tuning}
+
+**Good tone comes first.** To tune, play an agreed pitch **in 1st position** and move the **tuning slide**. For most instruments the tuning slide is pulled out about **¾ to 1 inch**.
+The book's tuning pitches (in the bass clef) are **B♭2, then F3** for beginners, and **F3, then B♭3** for more advanced players.
+Check them against a tuner (the navbar has one).
+
+Because the slide can fine-tune any note, the trombone **does not have the built-in tuning problems of valved brass** and can play perfectly in tune. But a beginner cannot easily
+**tell whether the slide is in the right place**, so good ears matter more than on any valved instrument. Sing or hum the note before you play it, and use a tuner to see how close your positions are.
+
+- **Short arms.** Playing in tune is hardest if you cannot reach the 5th, 6th and 7th positions. An F attachment can help (see above).
+- **Don't touch the bell.** The 3rd position is near the bell, and many beginners touch the bell with a finger to find it. That stops you from adjusting the slide, causes
+  tuning trouble, and slows your technique. Learn to find 3rd by ear and by arm.
+
+## Mouthpieces and mutes {#mutes}
+
+**Mouthpieces.** A beginner should use a mouthpiece of **moderate** cup diameter, cup depth, throat and rim. As your embouchure strengthens, a larger cup is often recommended, and advanced players
+pick mouthpieces to suit what they play. **Ask a trombone teacher before choosing.** The book lists (all trombone mouthpieces named by size):
+
+| Level | Mouthpieces the book lists |
+|---|---|
+| Beginner | Bach 12C, 11C, 7C, 6½AL |
+| Intermediate | Bach 7C, 6½AL, 5GS; Schilke 50 |
+| Advanced | Bach 6½AL, 5G, 5GS, 4G; Schilke 51, 51B, 51D, 52D, 52E2 |
+| Bass trombone | Bach 1¼G, 1½G, 2G, 3G; Schilke 57, 58, 59, 60 |
+
+**Mutes** change the tone colour, and they also make the instrument **quieter**, so play a little louder to make up for it. **Most mutes make the trombone play sharp**,
+especially in the **low register**. Pull the **tuning slide out** when you put a mute in, and push it back when you take the mute out. Common mutes: **straight, cup, bucket, plunger and derby**.
+If the composer does not say which mute, use a **straight mute**. In a section, **everyone uses the same kind** unless the music says otherwise.
+
+## Looking after it {#care}
+
+**Putting it away**
+
+1. Press the **water key** and **blow** (do not buzz) through the trombone to empty the water.
+2. Wipe the trombone with a soft, clean cloth.
+3. Take out the mouthpiece and put it in the case.
+4. Undo the lock, take off the bell section and put it in the case.
+5. Clean the slide, **lock it**, put it in the case, and latch the case.
+
+**Oiling the slide (daily)**
+
+1. Unlock the slide and carefully extend it until the tops of the **stockings** (the raised parts of the inner slide) show.
+2. Put **5 or 6 drops of slide oil** on both stockings. A little **slide cream** works too; if you use cream, spray the slide often with water.
+3. Move the slide in and out to spread the oil or cream evenly.
+
+**Greasing the tuning slide (regularly)**
+
+1. Take the tuning slide off. 2. Wipe off the old grease with a rag. 3. Put a **generous** amount of grease on it. 4. Put it back and move it in and out to work the grease in.
+5. Push it all the way in and wipe off the extra. 6. Put it back where it was.
+
+## Players to listen to {#listening}
+
+The book lists these trombonists. Ask your teacher before you look them up, because not every recording is suitable for school.
+
+Joseph Alessi · Ronald Borror · J. J. Johnson · Christian Lindberg · Ralph Sauer · Henry Charles Smith · Jack Teagarden · Alain Trudel · Kai Winding
+
+## What is unverified {#unverified}
+
+Check these with your teacher.
+
+- **Which book.** The pages come from a teacher's instrument guide (footer code "W74", the same as the saxophone lesson). The title and authors are not printed on the scanned pages, so the Works Cited says so.
+- The book's pages **197 to 200 and 207 to 212** were not in the scan. That is why the **alto** and **valve** trombone, and any F-side positions beyond the book's two named alternates, are not here.
+- The chart is read as **sounding pitch in bass clef**. The tenor trombone is non-transposing, and the positions agree with the usual series (each is checked on this page, so every printed position really plays that note).
+- The **treble clef** chart is **B♭ treble clef** (written a major 9th above the sound). This was worked out from the printed letters (every note is two letter names higher than in the bass clef chart); the staff octave was checked against the printed ledger lines only at the two ends.
+- The **partial numbers** are worked out on this page; the chart does not print them. The 7th partial is naturally a little flat, which is why the chart shortens those positions.
+- How far a **shortened** position is drawn from its number is a guess (the chart only shows a minus sign). The chart prints **G♯4 as "−3"**, like F♯4; by the series that is a 3rd position note and needs no shortening, but the page keeps what is printed.
+- The **distances between positions in the drawing** are the teacher's drawing, not measured on an instrument.
+- That a position is about a half step from its neighbours is a standard fact (see Works Cited), not printed on the chart.
+- The sound is a synthesized buzz, not a recording of a trombone.
+
+```{=html}
+<script>
+TrombonePage.explorer(document.getElementById("tb-explorer"));
+TrombonePage.builder(document.getElementById("tb-builder"));
+TrombonePage.glide(document.getElementById("tb-glide"));
+TrombonePage.chartTable(document.getElementById("tb-table"));
+</script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Trombone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Trombone](https://en.wikipedia.org/wiki/Trombone). Unverified: that each slide position lowers the pitch about a half step and the partial series of a B-flat tenor trombone. Not yet re-read.
+
+**For teachers**
+
+"Trombone." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 196-215. Scan pages checked: history and family p. 196; mouthpieces and mutes p. 201; parts, player qualifications and assembly p. 202; posture, embouchure and putting away p. 203; oiling and greasing, brass checklist p. 204; tone problems table p. 205; tuning, F attachment (first purpose) p. 206; listening suggestions p. 213; Trombone B.C. Position Chart p. 214 (every position read note by note from a 250 dpi render); Trombone T.C. Position Chart p. 215 (same positions, treble clef). Pages 197-200 and 207-212 are not in the scan, so the alto and valve trombone, bass trombone valves and the second purpose of the F attachment beyond the two examples on p. 206 are not covered. Retold in the page's own words; the slide drawing is the teacher's (trombone SVGs folder).
+:::
+<!-- /works-cited -->

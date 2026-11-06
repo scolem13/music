@@ -1,0 +1,15 @@
+X:1
+C:Euphemia Allen
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=240
+M:3/4
+K:C
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+!p! [fg]2 [fg]2 [fg]2 | [fg]2 [fg]2 [fg]2 | [eg]2 [eg]2 [eg]2 | [eg]2 [eg]2 [eg]2 | [db]2 [db]2 [db]2 | [db]2 [db]2 [db]2 | [cc']2 [cc']2 [cc']2 | [cc']2 [db]2 [ea]2 | [fg]2 [fg]2 [fg]2 | [fg]2 [fg]2 [fg]2 | [eg]2 [eg]2 [eg]2 | [eg]2 [eg]2 [eg]2 | [db]2 [db]2 [db]2 | [db]2 [db]2 [db]2 | c'2 g2 e2 | c2 z2!f! [c'e']2!fine! |] [bd']2 z2 [ac']2 | [gb]2 z2 [fa]2 | [eg]2 z2 [c'e']2 | [c'e']2 z2 [eg]2 | [df]2 z2 [bd']2 | [bd']2 z2 [df]2 | [ce]2 z2 [ec']2 | [ec']2 z2 [c'e']2 | [bd']2 z2 [ac']2 | [gb]2 z2 [fa]2 | [eg]2 z2 [c'e']2 | [c'e']2 z2 [eg]2 | [df]2 z2 [bd']2 | [bd']2 z2 b2 | c'2 g2 e2 | c2 z4 |!p! fg fg fg | fg fg fg | eg eg eg | eg eg eg | db db db | db db db | cc' cc' cc' | cc' db ea | fg fg fg | fg fg fg | eg eg eg | eg eg eg | db db db | db db db | c'2 g2 e2 | c2 z2!f! [c'e']2 | [bd']2 z2 [ac']2 | [gb]2 z2 [fa]2 | [eg]2 g4 | g''2 z2 [eg]2 | [df]2 f4 |  f''2 z2 [df]2 | [ce]2 e4 | e''2 z2 [c'e']2 | [bd']2 z2 [ac']2 | [gb]2 z2 [fa]2 | [eg]2 g4 | g''2 z2 [eg]2 | [df]2 f4 |  f''2 z2 b2 | c'2 g2 e2 | c2 z4!D.C.! |]
+V:2
+G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | C,2 [G,CE]2 [G,CE]2 | G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | C,2 [G,CE]2 [G,CE]2 | G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | C,2 [G,CE]2 [G,CE]2 | G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | [C,C]2 z4 |] G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | C,2 [G,CE]2 [G,CE]2 | G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | C,2 [G,CE]2 [G,CE]2 | G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | C,2 [G,CE]2 [G,CE]2 | G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | [C,C]2 z4 | G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | C,2 [G,CE]2 [G,CE]2 | G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | C,2 [G,CE]2 [G,CE]2 | G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | C,2 [G,CE]2 [G,CE]2 | G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | [C,C]2 z4 | G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | C,2 [G,CE]2 [G,CE]2 | G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | C,2 [G,CE]2 [G,CE]2 | G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | C,2 [G,CE]2 [G,CE]2 | G,2 [B,DF]2 [B,DF]2 | G,2 [B,DF]2 [B,DF]2 | C,2 [G,CE]2 [G,CE]2 | [C,C]2 z4 |]

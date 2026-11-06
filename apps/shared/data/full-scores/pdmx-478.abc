@@ -1,0 +1,24 @@
+X:1
+C:Carl Philipp Emanuel Bach
+Z:Public Domain (PianoXML typeset)
+%%score { 1 | ( 2 3 4 ) }
+L:1/8
+Q:1/4=144
+M:2/2
+K:G
+V:1 treble nm="Piano"
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:3 bass 
+%%MIDI program 0
+V:4 bass 
+%%MIDI program 0
+V:1
+"^Allegro"!mf! dGGG z fge | d x x2 z dec | B x7 | agfe d2 c2 | BGGg gGGg | g^ccg gAAg | f2 ed T^c3 d | dAAF FAAF | D8 :: dAAA dFFF | dDDD DEFG | AGAB =cBcd |({/c} B2) AB Gdef | gddd gBBB | gGGG GABc | dcde =fefg |({/=f} e2) ce cBcd | eccA Affg | dBBG Gffg | c2 BA TA3 G | GDDB, B,DDB, | G,8 :|
+V:2
+x4 GABc | BGGG GBcA | GGBd gd (ga/b/) | C,2 E,2 F,2 D,2 | G,2 G,,4 F,2 | E,2 A,,4 ^C,2 | D,2 F,2 A,2 A,,2 | D,A,A,F, F,A,A,F, | D,8 :: D,,2 D,,2 D,,2 D,,2 | D,,D,,D,,D,, D,,2 E,,2 | F,,2 D,,4 E,,F,, | G,,2 D,2 G,2 D,2 | G,,2 G,,2 G,,2 G,,2 | G,,G,,G,,G,, G,,2 A,,2 | B,,2 G,,4 A,,B,, | C,2 G,2 C2 G,2 | C,4 z2 C,2 | B,,4 z2 B,,2 | A,,2 G,,2 D,2 D,,2 | G,,D,D,B,, B,,D,D,B,, | G,,8 :|
+V:3
+z G,,G,,G,, G,, z z2 | x8 | z2 G,,2 B,,2 F,,2 | x8 | x8 | x8 | x8 | x8 | x8 :: x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 :|
+V:4
+x8 | z G,,G,,G,, G,, z z2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 :: x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 :|

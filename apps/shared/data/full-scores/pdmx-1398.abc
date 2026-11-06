@@ -1,0 +1,26 @@
+X:1
+%%score 1 2 3 4 5
+L:1/8
+Q:1/4=60
+M:4/4
+K:Eb
+V:1 treble nm="Soprano I" snm="S."
+%%MIDI program 52
+V:2 treble nm="Soprano II" snm="S."
+%%MIDI program 52
+V:3 treble nm="Alto" snm="A."
+%%MIDI program 52
+V:4 treble-8 nm="Tenor" snm="T."
+%%MIDI program 52
+V:5 bass nm="Bass" snm="B."
+%%MIDI program 52
+V:1
+"^Lento" z2 c2 _d4- | d2 A2 A3 G | G4 G4- | G4 z2 d2 | e2 =e2 f4- | f4 z2 A2 | G8 | =A4 z4 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2 c2 | _d6 A2 | A3 G G4 | G4 z F c A | G3 F G4 | z2 G2 G2 A2 | B4 B4 | z G G G c3 =B | c4 c G G G | d6 c2 | d4 d4 | z2 c2 _d4- | d2 A2 A3 G | G4 G4- | G4 z2 d2 | e2 =e2 f4- | f4 z2 A2 | G8 | !fermata!=A8 |]
+V:2
+z2 =A2 B4- | B2 F2 F3 F | =E4 E4- | E4 z4 | z2 B2 c2 c2 | _d4 F4 | (=E2 F4 E2) | F4 z4 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2 =A2 | B6 F2 | F3 F =E4 | =E4 z F F F | F3 F =E4 | z2 =E2 E2 F2 | G4 G G G G | c4 F4 | G4 G4 | z G G G =A2 A2 | =B4 B4 | z2 =A2 B4- | B2 F2 F3 F | =E4 E4- | E4 z4 | z2 B2 c2 c2 | _d4 F4 | (=E2 F4 E2) | !fermata!F8 |]
+V:3
+z8 | z8 | z4 z2 F2 | =E2 D2 C4- | C2 G2 A2 =A2 | B6 F2 | C8 | C4 z4 | z B, F _D C3 B, | C4 z2 C2 | C2 _D2 E4 | E4 z C C C | F3 =E F4 | F C C C G4- | G2 F2 G4 | G4 z4 | z8 | z8 | z4 z C C C | C2 B,2 G,4 | z2 C2 C2 C2 | _E4 E4 | z E E E F2 D2 | =E4 E4 | z D D D =E2 E2 | G4 G4 | z8 | z8 | z4 z2 F2 | =E2 D2 C4- | C2 G2 A2 =A2 | B4 z2 F2 | C8 | !fermata!C8 |]
+V:4
+z8 | z8 | z8 | z2 f2 =e2 d2 | c6 _e2 | _d2 c2 B4- | B2 A2 G4 | F4 z f f f | _d2 B6 | =A4 z2 A2 | =A2 B2 c4 | c c c c f4 | B4 c4 | c4 z c c c | d2 d2 =e4 | =e4 z4 | z8 | z8 | z c c c A2 F2- | F4 c4 | z2 G2 G2 F2 | B4 B4 | z G G G =A2 F2 | c4 c4 | z G G G c2 c2 | G4 G4 | z8 | z8 | z8 | z2 f2 =e2 d2 | c6 _e2 | _d2 c2 B4- | B2 A2 G4 | !fermata!F8 |]
+V:5
+C6 B,2- | B,2 B,2 B,2 B,2 | C4 C4- | C4 z2 B,2 | A,2 G,2 F,4 | B,,8 | C,8 | F,4 z4 | z B, B, B, _G,3 G, | F,3 F, F,4- | F,2 B,2 A,4 | A,4 z A, A, A, | G,3 G, F,4 | F,4 z =E, E, E, | F,2 F,2 C4 | C4 C4- | C2 B,4 B,2 | B,2 B,2 C4 | C4 z F, F, F, | _D,3 D, C,3 C, | C,6 F,2 | E,4 E,4 | z E, E, E, D,3 D, | C,4 C,4 | z =B,, B,, B,, C,3 C, | G,4 G,4 | C6 B,2- | B,2 B,2 B,2 B,2 | C4 C4- | C4 z2 B,2 | A,2 G,2 F,4 | B,,8 | C,8 | !fermata!F,8 |]

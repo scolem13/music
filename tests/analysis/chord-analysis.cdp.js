@@ -18,7 +18,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   await b.goto(`http://127.0.0.1:${PORT}/theory/chord-analysis.html`); await wait(1500);
   const counts = JSON.parse(await ev(`JSON.stringify({ ex: document.querySelectorAll('.chord-analysis[data-example]').length, all: document.querySelectorAll('.chord-analysis').length,
     drawn: [...document.querySelectorAll('.chord-analysis')].filter(h => h.querySelector('.ca-paper svg')).length, tabs: document.querySelectorAll('.ca-tab').length })`));
-  check("guide: every widget drew its score", counts.ex === 5 && counts.all === 11 && counts.drawn === 11, JSON.stringify(counts));
+  check("guide: every widget drew its score", counts.ex === 7 && counts.all === 15 && counts.drawn === 15, JSON.stringify(counts));
   check("guide: the guitar stage draws TAB", counts.tabs >= 2, counts.tabs);
   check("guide: no page errors", errs().length === 0, errs().slice(0, 3).join(" | "));
 
@@ -60,11 +60,36 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
     return JSON.stringify({ rows, head: box.querySelector('.sr-rep').textContent.slice(0, 300), svg: !!box.querySelector('.ca-rep-p svg'), code: box._sr.text().match(/SR1\\.\\S+/)[0] }); })()`));
   check("report: chord analysis recorded, score redrawn", rep.svg && /Test Student/.test(rep.head) && /Chord analysis/.test(rep.head), rep.head.slice(0, 120));
   check("report: stack attempts, names and steps in the rows", rep.rows.some(r => /✓/.test(r[1])) && rep.rows.some(r => /✗/.test(r[1])) && rep.rows.some(r => /✗ X/.test(r[2])) && rep.rows.some(r => /Steps ×/.test(r[3])), JSON.stringify(rep.rows[0]));
+  // ch. 9: a function select on every chord and a cadence card; right answers all count, a wrong function turns that card red
+  await setSel("Stage", "satb"); await setSel("Level", "ch9"); await wait(300);
+  const f9 = await ev(`(() => { const q = ${H}._ca.question(), cs = ${H}._ca.cards(); return JSON.stringify({ fn: q.fn, sels: cs.filter(c => c.sel && !c.cad).length, items: q.items.length, cad: cs.filter(c => c.cad).length, hasCad: !!q.cadence }); })()`);
+  const f9o = JSON.parse(f9);
+  check("ch9: a function select on every chord, a cadence card", f9o.fn && f9o.sels === f9o.items && f9o.cad === 1 && f9o.hasCad, f9);
+  const g9 = await ev(`(() => { const q = ${H}._ca.question(), cs = ${H}._ca.cards(), A = ${H}._ca;
+    const fill = bad => cs.forEach(c => { if (c.inp) c.inp.value = ChordAnalysis.expected(q, c.i); if (c.sel) c.sel.value = c.cad ? q.cadence : q.items[c.i].fn; });
+    fill(); A.grade(false); const good = ${H}.getAttribute('data-right') + '/' + ${H}.getAttribute('data-total');
+    const c0 = cs.find(c => !c.cad && !c.key), real = c0.sel.value; c0.sel.value = ['T','TP','PD','D'].find(f => f !== real); A.grade(false);
+    return good + ' ' + ${H}.getAttribute('data-right') + ' ' + c0.box.className; })()`);
+  const [gg, gr, gc] = g9.split(" ");
+  check("ch9: right names + functions + cadence all count; a wrong function is red", gg.split("/")[0] === gg.split("/")[1] && +gr === +gg.split("/")[1] - 1 && /no/.test(g9), g9);
+  check("ch9: the Steps list carries a Function step", await ev(`(() => { const q = ${H}._ca.question(); return ChordAnalysis.steps(q, 0).some(x => x.h === 'Function'); })()`));
+  // ch. 10: always the melody stage, a card with a type select for each marked non-chord tone; right types count, a wrong one is red
+  await setSel("Level", "ch10"); await wait(300);
+  const n10 = await ev(`(() => { const q = ${H}._ca.question(), cs = ${H}._ca.cards(); return JSON.stringify({ tex: q.texture, nct: q.ncts.length, cards: cs.filter(c => c.nct != null).length, labelled: q.ncts.every(x => q.abc.includes('"_' + x.label + '"')) }); })()`);
+  const n10o = JSON.parse(n10);
+  check("ch10: melody stage, one type card per marked non-chord tone", n10o.tex === "melody" && n10o.nct >= 1 && n10o.cards === n10o.nct && n10o.labelled, n10);
+  const g10 = await ev(`(() => { const q = ${H}._ca.question(), cs = ${H}._ca.cards(), A = ${H}._ca;
+    cs.forEach(c => { if (c.inp) c.inp.value = ChordAnalysis.expected(q, c.i); if (c.nct != null) c.sel.value = q.ncts[c.nct].kind; });
+    A.grade(false); const good = ${H}.getAttribute('data-right') + '/' + ${H}.getAttribute('data-total');
+    const c0 = cs.find(c => c.nct != null); c0.sel.value = ChordAnalysis.NCT_KINDS.find(k => k !== q.ncts[c0.nct].kind); A.grade(false);
+    return good + ' ' + ${H}.getAttribute('data-right') + ' ' + c0.box.className; })()`);
+  const [g10a, g10b] = g10.split(" ");
+  check("ch10: right types all count; a wrong type is red", g10a.split("/")[0] === g10a.split("/")[1] && +g10b === +g10a.split("/")[1] - 1 && /no/.test(g10), g10);
   // every stage and level draws
   for (const st of ["rh", "guitar", "satb", "broken", "melody"]) {
     await setSel("Stage", st); await wait(150);
-    for (const lv of ["ch6a", "ch6b", "ch7a", "ch7b", "ch8a", "ch8b"]) { await setSel("Level", lv); await wait(120);
-      const r = await ev(`(() => { const q = ${H}._ca.question(); return !!q && q.texture === ${JSON.stringify(st)} && !!${H}.querySelector('.ca-paper svg') && (${JSON.stringify(st)} !== 'guitar' || !!${H}.querySelector('.ca-tab')); })()`);
+    for (const lv of ["ch6a", "ch6b", "ch7a", "ch7b", "ch8a", "ch8b", "ch9", "ch10"]) { await setSel("Level", lv); await wait(120);
+      const r = await ev(`(() => { const q = ${H}._ca.question(); return !!q && q.texture === (${JSON.stringify(lv)} === 'ch10' ? 'melody' : ${JSON.stringify(st)}) && !!${H}.querySelector('.ca-paper svg') && (${JSON.stringify(st)} !== 'guitar' || ${JSON.stringify(lv)} === 'ch10' || !!${H}.querySelector('.ca-tab')); })()`);
       if (!r) check(`stage ${st}, level ${lv} draws`, false);
     }
   }

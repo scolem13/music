@@ -1,0 +1,187 @@
+---
+title: "Clarinet Patterns by Ear"
+description: "Clarinet, no notation to read: learn the first tonal patterns of a set from fingering diagrams, then play the rest back by ear on your clarinet (the page listens through the microphone) and see how many you got on the first try."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/clarinet/clarinet.css?v=1">
+<script src="/apps/shared/abc-core.js?v=3"></script>
+<script src="/apps/shared/midi-feel.js?v=2"></script>
+<script src="/apps/shared/musical-typing.js?v=2"></script>
+<script src="/apps/shared/pitch-detect.js?v=2"></script>
+<script src="/apps/patterns/pattern-set.js?v=4"></script>
+<script src="/apps/patterns/pattern-gen.js?v=3"></script>
+<script src="/apps/patterns/ear-piano.js?v=2"></script>
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/clarinet/clarinet-chart.js?v=2"></script>
+<script src="/apps/shared/clarinet/clarinet-page.js?v=2"></script>
+<script src="/apps/patterns/ear-clarinet.js?v=2"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+#ep-root { --ep-ink: var(--site-ink, #212529); --ep-mute: var(--site-ink-2, #6c757d); --ep-line: var(--site-line, #ced4da);
+  --ep-surf: var(--site-surface, #fff); --ep-surf2: var(--site-surface-2, #f8f9fa); --ep-acc: var(--site-accent, #2780e3);
+  --ep-good: #2f9e44; --ep-bad: #e03131; --ep-key-w: #fff; --ep-key-b: #222; }
+@media (prefers-color-scheme: dark) { #ep-root { --ep-key-w: #f1f3f5; --ep-key-b: #111; } }
+.ep-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: .6rem 1rem; margin: .4rem 0 .8rem; }
+.ep-grid label { display: flex; flex-direction: column; gap: .2rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--ep-mute); margin: 0; }
+.ep-grid select, .ep-grid input[type=number], .ep-grid input[type=range] { font-size: .95rem; text-transform: none; letter-spacing: 0; }
+.ep-checks { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin: .3rem 0 .7rem; font-size: .92rem; }
+.ep-checks label { display: inline-flex; gap: .35rem; align-items: center; margin: 0; }
+.ep-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .5rem 0; }
+.ep-panel { border: 1px solid var(--ep-line); border-radius: .5rem; padding: .8rem 1rem; background: var(--ep-surf2); margin: .4rem 0 1rem; }
+.ep-head { font-weight: 700; font-size: 1.05rem; }
+.ep-solf { font-size: clamp(1.4rem, 5vw, 2.2rem); font-weight: 800; letter-spacing: .02em; min-height: 1.2em; }
+.ep-chord { color: var(--ep-mute); font-size: .95rem; }
+.ep-msg { min-height: 1.6em; font-size: 1.05rem; font-weight: 600; margin: .4rem 0; }
+.ep-msg.ep-good { color: var(--ep-good); } .ep-msg.ep-bad { color: var(--ep-bad); }
+.ep-kb { margin: .5rem 0; } .ep-kb svg { width: 100%; height: auto; display: block; max-height: 230px; }
+.ep-k.ep-w { fill: var(--ep-key-w); stroke: #555; stroke-width: 1; } .ep-k.ep-b { fill: var(--ep-key-b); stroke: #000; }
+.ep-k.ep-target.ep-w { fill: #d0e3fb; } .ep-k.ep-target.ep-b { fill: #1c5aa6; }
+.ep-k.ep-on { fill: #ffd43b !important; } .ep-k.ep-good { fill: #8ce99a !important; } .ep-k.ep-bad { fill: #ffa8a8 !important; }
+.ep-c { font-size: 9px; fill: #868e96; font-family: var(--font-mono, monospace); }
+.ep-mark circle { fill: var(--ep-acc); stroke: #fff; stroke-width: 1.5; }
+.ep-mark text { fill: #fff; font-weight: 700; font-size: 13px; font-family: system-ui, sans-serif; }
+.ep-mark text.ep-ord { fill: var(--ep-mute); font-size: 9px; font-weight: 600; }
+.ep-fing { font-family: var(--font-mono, monospace); font-size: .9rem; color: var(--ep-mute); }
+.ep-dots { display: flex; flex-wrap: wrap; gap: 4px; margin: .3rem 0; }
+.ep-dot { width: 13px; height: 13px; border-radius: 50%; border: 1.5px solid #adb5bd; background: transparent; }
+.ep-dot-learn { border-radius: 3px; } .ep-dot-done { background: #adb5bd; }
+.ep-dot-first { background: var(--ep-good); border-color: var(--ep-good); } .ep-dot-later { background: #94d82d; border-color: #94d82d; }
+.ep-dot-shown { background: var(--ep-bad); border-color: var(--ep-bad); } .ep-dot-skipped { background: #dee2e6; }
+.ep-dot-cur { outline: 2px solid var(--ep-acc); outline-offset: 2px; }
+#ec-in-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #adb5bd; margin-right: .3rem; }
+#ec-in-dot.on { background: var(--ep-good); }
+.ep-big { font-size: 1.05rem; font-weight: 600; padding: .45rem 1.1rem; }
+.ep-table .ep-r-first td:nth-child(4) { color: var(--ep-good); font-weight: 600; } .ep-table .ep-r-shown td:nth-child(4) { color: var(--ep-bad); font-weight: 600; }
+.ep-muted { color: var(--ep-mute); font-size: .9rem; }
+</style>
+<style>
+.ec-fings { display: flex; flex-wrap: wrap; gap: .8rem; margin: .5rem 0; }
+.ec-fig { width: 112px; } .ec-d { width: 84px; margin: 0 auto; } .ec-staff { height: 62px; overflow: hidden; }
+</style>
+<div id="ep-root">
+```
+
+The clarinet version of [Patterns by Ear](patterns-by-ear.qmd). The first few patterns of a set are taught with fingering diagrams.
+Then the page plays the rest, one at a time, and you play each back on your clarinet. New to the fingerings? See the
+[fingering chart](../lessons/clarinet.qmd#fingering-chart).
+
+## Set up {#setup}
+
+```{=html}
+<div class="ep-bar">
+  <button type="button" class="btn btn-primary" id="ec-mic">🎤 Listen to my clarinet</button>
+  <button type="button" class="btn btn-outline-secondary" id="ec-midi">Connect MIDI (keyboard or wind controller)</button>
+  <span><span id="ec-in-dot" class="ec-dot"></span><span id="ec-in-status" class="ep-muted">Not listening yet. Use headphones if you can, so the page doesn't hear itself.</span></span>
+</div>
+<p id="ec-heard" class="ep-muted"></p>
+<div class="ep-grid">
+  <label>Clarinet <select id="ec-inst" class="form-select form-select-sm"><option value="bb">B♭ clarinet</option><option value="a">A clarinet</option><option value="eb">E♭ clarinet</option><option value="alto">E♭ alto clarinet</option><option value="bass">B♭ bass clarinet</option><option value="contra">E♭ contra-alto clarinet</option><option value="cbass">B♭ contrabass clarinet</option></select></label>
+  <label>Pattern set <select id="ec-set" class="form-select form-select-sm"></select></label>
+  <label>Written key <select id="ec-key" class="form-select form-select-sm"></select></label>
+  <label>Teach the first <input type="number" id="ec-teach" class="form-control form-control-sm" value="3" min="1" max="12"></label>
+  <label>Right in a row to learn one <input type="number" id="ec-need" class="form-control form-control-sm" value="2" min="1" max="5"></label>
+  <label>Tries by ear <input type="number" id="ec-tries" class="form-control form-control-sm" value="3" min="1" max="6"></label>
+  <label>Tempo <input type="range" id="ec-tempo" min="40" max="120" value="72"></label>
+</div>
+<div class="ep-checks">
+  <label><input type="checkbox" id="ec-anyoct" checked> Any octave counts</label>
+  <label><input type="checkbox" id="ec-shuffle"> Shuffle the by-ear patterns</label>
+  <label><input type="checkbox" id="ec-echo" checked> Sound MIDI / computer keys</label>
+  <label><input type="checkbox" id="ec-typing" checked> Computer keys play notes (Z = written C4)</label>
+  <label><input type="checkbox" id="ec-solf-learn" checked> Solfège while learning</label>
+  <label><input type="checkbox" id="ec-solf-ear"> Solfège by ear</label>
+</div>
+<p id="ec-set-info" class="ep-muted"></p>
+<div class="ep-bar">
+  <button type="button" class="btn btn-primary ep-big" id="ec-start">▶ Start</button>
+  <button type="button" class="btn btn-outline-secondary" id="ec-skip-learn">Skip to by ear</button>
+</div>
+<p class="ep-muted">Sets you make on <a href="patterns.html">Tonal Patterns</a> (Make a set) show up here with a ★.</p>
+```
+
+## Learn {#learn}
+
+```{=html}
+<div class="ep-panel">
+  <div class="ep-dots" id="ec-dots"></div>
+  <div class="ep-head" id="ec-learn-head">Press Start above.</div>
+  <div class="ep-solf" id="ec-learn-solf"></div>
+  <div class="ep-chord" id="ec-learn-chord"></div>
+  <div class="ec-fings" id="ec-learn-fing"></div>
+  <div class="ep-msg" id="ec-learn-msg" aria-live="polite"></div>
+  <div class="ep-bar">
+    <button type="button" class="btn btn-outline-primary" id="ec-learn-hear">🔊 Hear it again</button>
+    <button type="button" class="btn btn-primary" id="ec-to-ear" hidden>Go on: by ear ▶</button>
+  </div>
+  <p class="ep-muted">One diagram per note, in order (dark = pressed). The page hears the notes, not your fingers, so watch your hands.</p>
+</div>
+```
+
+## By ear {#by-ear}
+
+```{=html}
+<div class="ep-panel">
+  <div class="ep-dots" id="ec-dots2"></div>
+  <div class="ep-head" id="ec-ear-head">Learn the first patterns, then come here.</div>
+  <div class="ep-solf" id="ec-ear-solf"></div>
+  <div class="ec-fings" id="ec-ear-fing"></div>
+  <div class="ep-msg" id="ec-ear-msg" aria-live="polite"></div>
+  <div class="ep-bar">
+    <button type="button" class="btn btn-outline-primary" id="ec-ear-hear">🔊 Hear it again</button>
+    <button type="button" class="btn btn-outline-secondary" id="ec-ear-key">Hear the key</button>
+    <button type="button" class="btn btn-outline-secondary" id="ec-ear-show">Show me</button>
+    <button type="button" class="btn btn-outline-secondary" id="ec-ear-skip">Skip</button>
+    <button type="button" class="btn btn-primary" id="ec-ear-next" hidden>Next ▶</button>
+  </div>
+  <p class="ep-muted">The key is played first (I – V7 – I). Then each pattern: listen, then play it back. A wrong note stops the
+  try and the pattern plays again. "Show me" and running out of tries count as a miss.</p>
+</div>
+```
+
+## Results {#results}
+
+```{=html}
+<p id="ec-rec-sum" class="ep-muted">Results show here when the by-ear patterns are done.</p>
+<div id="ec-rec-table"></div>
+<div class="ep-bar">
+  <button type="button" class="btn btn-primary" id="ec-again" hidden>Try the missed ones again</button>
+  <button type="button" class="btn btn-outline-secondary" id="ec-restart">Start the set over</button>
+</div>
+```
+
+## How it works {#how}
+
+- **Written notes.** Everything on this page is in *written* pitch, the notes on your part. The page plays them at the
+  pitch your clarinet really sounds (B♭ clarinet a major 2nd lower, A a minor 3rd, alto a major 6th, bass a major 9th, and so on),
+  and the microphone turns what it hears back into written notes. So pick your clarinet above. The transpositions are not from the book:
+  see the [lesson](../lessons/clarinet.qmd#family).
+- **Range.** Each set is moved to the written key you pick and placed between written G3 and F5, from the lowest note that needs no
+  little-finger key up past the break, when it fits. (A rule of thumb, not checked.) Some patterns cross the break between A♯4 and B4.
+- **Fingerings.** The first fingering the book shows for each note, from the [fingering chart](../lessons/clarinet.qmd#fingering-chart). Your teacher may prefer an alternate.
+- **What counts.** The notes in order; rhythm isn't checked. Each new note must hold steady for about a tenth of a second. To play the
+  same note twice, stop the sound briefly between them (tongue it). With *Any octave counts* on, the whole pattern may be an octave away.
+  Stopping for more than four seconds starts the try again.
+- **The microphone** ignores everything while the page is playing. Headphones still help: a loud room can confuse it.
+- **No clarinet handy?** A MIDI keyboard or wind controller, or the computer keys, count as written notes.
+
+```{=html}
+</div>
+<script>EarClar.mount(document.getElementById("ep-root"));</script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Clarinet." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Clarinet](https://en.wikipedia.org/wiki/Clarinet). Unverified: the transpositions of the family in the lesson's table (B♭ M2, A m3, E♭ soprano m3 up, alto M6, bass M9, contra-alto octave + M6, contrabass two octaves + M2, basset horn P5), the register names (chalumeau, throat tones, clarion, altissimo) and the tuning advice. Not yet re-read.
+
+**For teachers**
+
+"Clarinet." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 118-39. History (Denner, Müller, Klosé and Buffet), family, selecting players, reeds and reed adjustment, ligatures, parts, assembly, posture, embouchure, care, checklist, tone problems, vibrato, listening list, B♭ clarinet fingering chart (p. 136), trill chart (p. 137), alto / bass / contralto / contrabass chart (p. 138) and its trill chart (p. 139). Retold in the page's own words; charts redrawn from the book's key template. Not in the scanned pages: the tuning chart.
+:::
+<!-- /works-cited -->

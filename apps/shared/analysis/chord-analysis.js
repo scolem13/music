@@ -25,7 +25,18 @@
 //                   broken broken chords in the right hand over a held bass
 //                   melody a melody with non-chord tones (passing and neighbor, on the off-beat eighth; listed in q.ncts) over an
 //                         Alberti bass or held chords
-// After seventh chords (ch. 9 function, 10 named non-chord tones, 16 figures, 17-21 chromatic chords): the plan is in
+// Level ch9 (harmonic function): after the Roman numeral each chord gets T, TP, PD or D, and the passage's last two chords a cadence
+// (authentic / plagal / deceptive / half). Labels follow Hutchinson's Harmonic Function chapter: T = I; TP = vi, iii (and IV when it
+// goes straight to I); PD = IV, ii; D = V, vii° (and I64 when it goes to V). Minor III as TP and PAC / IAC left undivided are this
+// site's reading (unverified). q.items[i].fn, q.cadence; seeded like every level, so the report replay works unchanged.
+// Level ch10 (non-chord tones by name): always the melody stage, a bar a chord. Every non-chord tone is marked with a small letter
+// under the staff (q.ncts[k] = { ci, t, note, kind, label, acc }) and named: passing, neighbor, escape tone, appoggiatura, suspension,
+// anticipation. Rules (Hutchinson ch. 10: passing = step in, step on the same way; neighbor = step in, step back; appoggiatura = leap in,
+// step out, usually accented; escape tone = step in, leap out the other way; suspension = held over from the chord before, accented on
+// the downbeat, steps down; anticipation = the next chord's note sounding early). Passing, neighbor, escape and anticipation are off the
+// beat here; appoggiatura and suspension on it (the book lets passing tones be accented too; this site's choice). Pedal point, retardation
+// and the double / incomplete neighbor are named in the chapter but not made here. Whether an escape tone is accented the book doesn't say.
+// After ch. 10 (16 figures, 17-21 chromatic chords): the plan is in
 // theory/chord-analysis.qmd, "What comes next". parseRN already reads V7/V and N6 for them.
 // Test: node tests/analysis/chord-analysis.test.js
 (function (global) {
@@ -175,13 +186,42 @@
     .concat(T("minor", ["i V6 i iv6 V i", "i ii°6 V i", "i iv6 V i", "i VI iv ii°6 V i", "i vii°6 i6 iv V i"]));
   var SEVENTH = T("major", ["I vi ii7 V7 I", "I IV ii65 V7 I", "I V65 I V43 I6 ii65 V7 I", "IM7 vi7 ii7 V7 IM7", "I IVM7 viiø7 iii7 vi7 ii7 V7 I", "I ii7 V42 I6 V7 I", "I V7 vi IV ii7 V7 I"])
     .concat(T("minor", ["i iv7 V7 i", "i iiø65 V7 i", "i VI iiø7 V7 i", "i vii°7 i V65 i", "i iv V42 i6 iiø65 V7 i", "i VIM7 iv7 V7 i"]));
+  var FUNC = T("major", ["I IV V I", "I vi ii V I", "I ii6 V I", "I iii IV V I", "I vi IV V I", "I IV I V I", "I vii°6 I6 IV V I", "I IV I64 V I", "I V I IV I", "I ii V vi", "I vi ii V", "I IV V vi"])
+    .concat(T("minor", ["i iv V i", "i VI iv V i", "i iv i V i", "i III iv V i", "i ii°6 V i", "i VI ii° V i", "i iv V VI", "i iv V", "i VI V"]));
+  // harmonic function of chord i in a list of Roman-numeral tokens (see the header); cadence of the last two
+  function fnParse(tok) {
+    var m = /^(♭|♯|b|#)?(VII|VI|IV|V|III|II|I|vii|vi|iv|v|iii|ii|i)(°|o|ø|h|\+)?(.*)$/.exec(String(tok || "")); if (!m) return null;
+    return { deg: NUMS[m[2].toLowerCase()], c64: /^(7)?64$/.test(m[4]) };
+  }
+  function fnOf(toks, i) {
+    var p = fnParse(toks[i]), nx = toks[i + 1] ? fnParse(toks[i + 1]) : null; if (!p) return null;
+    if (p.deg === 1) return p.c64 && nx && nx.deg === 5 ? "D" : "T";
+    if (p.deg === 5 || p.deg === 7) return "D";
+    if (p.deg === 2) return "PD";
+    if (p.deg === 4) return nx && nx.deg === 1 && !nx.c64 ? "TP" : "PD";
+    return "TP";
+  }
+  function cadenceOf(toks) {
+    var n = toks.length, a = n > 1 ? fnParse(toks[n - 2]) : null, b = fnParse(toks[n - 1]); if (!b) return null;
+    if (a && b.deg === 1 && (a.deg === 5 || a.deg === 7)) return "authentic";
+    if (a && b.deg === 1 && a.deg === 4) return "plagal";
+    if (a && b.deg === 6 && a.deg === 5) return "deceptive";
+    if (b.deg === 5) return "half";
+    return null;
+  }
+  var CADENCES = { authentic: "Authentic (V to I)", plagal: "Plagal (IV to I)", deceptive: "Deceptive (V to vi)", half: "Half (ends on V)" };
+  var FNAMES = { T: "T tonic", TP: "TP tonic prolongation", PD: "PD pre-dominant", D: "D dominant" };
+  var NCT10 = T("major", ["I IV V I", "I vi ii V I", "I ii V I", "I IV ii V I", "I vi IV V I", "I iii vi IV V I"])
+    .concat(T("minor", ["i iv V i", "i VI iv V i", "i iv i V i", "i III iv V i", "i VI ii° V i"]));
   var LEVELS = [
     { id: "ch6a", ch: 6, name: "6. Chord symbols, root position", answer: "sym", inv: false, rhythm: "bar", tpl: POP, most: 2 },
     { id: "ch6b", ch: 6, name: "6. Chord symbols with slash chords", answer: "sym", inv: true, rhythm: "half", tpl: SLASH },
     { id: "ch7a", ch: 7, name: "7. Roman numerals, root position", answer: "rn", inv: false, rhythm: "bar", tpl: RN_ROOT },
     { id: "ch7b", ch: 7, name: "7. Roman numerals with inversions", answer: "rn", inv: true, rhythm: "half", tpl: RN_INV },
     { id: "ch8a", ch: 8, name: "8. Seventh chords as symbols", answer: "sym", inv: true, rhythm: "half", tpl: SEVENTH },
-    { id: "ch8b", ch: 8, name: "8. Seventh chords as Roman numerals", answer: "rn", inv: true, rhythm: "half", tpl: SEVENTH }
+    { id: "ch8b", ch: 8, name: "8. Seventh chords as Roman numerals", answer: "rn", inv: true, rhythm: "half", tpl: SEVENTH },
+    { id: "ch9", ch: 9, name: "9. Harmonic function (T, TP, PD, D) and cadences", answer: "rn", inv: true, rhythm: "half", fn: true, tpl: FUNC },
+    { id: "ch10", ch: 10, name: "10. Non-chord tones by name", answer: "rn", inv: false, rhythm: "bar", nct: true, tpl: NCT10 }
   ];
   var LV = {}, LEVEL_NAMES = {}; LEVELS.forEach(function (L) { LV[L.id] = L; LEVEL_NAMES[L.id] = L.name; });
   var STAGES = ["rh", "guitar", "satb", "broken", "melody"];
@@ -304,19 +344,111 @@
   function stepOk(a, b) { var d = Math.abs(midi(a) - midi(b)); return d === 1 || d === 2; }
   // the melody: quarters on chord tones (a chord tone the left hand leaves out comes first), the last chord held; some quarters
   // split into a chord tone and a passing or neighbor tone (eighths) that is not a chord tone and is spelled from the key
-  function melody(chords, vs, spans, key) {
-    var ev = [], prev = 35;
-    chords.forEach(function (c, i) {
-      var miss = c.notes.filter(function (n) { return !vs[i].lh.some(function (x) { return pcOf(x) === pcOf(n); }); });
-      var last = i === chords.length - 1, beats = last ? 1 : spans[i].len / 2;
-      for (var b = 0; b < beats; b++) {
-        var pool = b === 0 && miss.length ? miss : c.notes, cand = [];
-        pool.forEach(function (n) { for (var o = 4; o <= 5; o++) { var d = o * 7 + n.l; if (d >= 30 && d <= 39) cand.push({ l: n.l, a: n.a, o: o }); } });
-        cand.sort(function (x, y) { return Math.abs(dia(x) - prev) - Math.abs(dia(y) - prev) || rng() - 0.5; });
-        var ch = cand.filter(function (x) { return dia(x) !== prev; })[0] || cand[0];
-        ev.push({ n: ch, dur: last ? spans[i].len : 2, ci: i }); prev = dia(ch);
+  // ch. 10: the quarter-note melody ev (chord tones) with non-chord tones of six kinds put in, each by the book's rule
+  var NCT_KINDS = ["passing", "neighbor", "escape", "appoggiatura", "suspension", "anticipation"];
+  var NCT_NAMES = { passing: "Passing tone", neighbor: "Neighbor tone", escape: "Escape tone", appoggiatura: "Appoggiatura", suspension: "Suspension", anticipation: "Anticipation" };
+  var NCT_WHY = {
+    passing: "a note between two chord tones, reached by step and left by step in the same direction",
+    neighbor: "a note reached by step from a chord tone and left by step back to that same chord tone",
+    escape: "a note reached by step and left by a leap in the opposite direction",
+    appoggiatura: "a note reached by a leap and left by step (to a chord tone), on the beat",
+    suspension: "the note of the chord before, held over onto the downbeat of the new chord where it doesn't belong, then stepping down to a chord tone",
+    anticipation: "a note of the next chord that arrives early, approached by step and then repeated as that chord arrives" };
+  function nctName(k) { return /^(passing|neighbor|escape)$/.test(k) ? k + " tone" : k; }
+  function decorate(ev, chords, vs, key) {
+    var focus = pick(NCT_KINDS), fixed = {}, labels = "abcdefghijklmnop", cnt = 0, made = 0, limit = Math.max(2, Math.floor(chords.length * 0.9));
+    function isCT(c, n) { return c.notes.some(function (y) { return pcOf(y) === pcOf(n); }); }
+    function spellings(d, cs) {   // the notes at diatonic step d: as the key has them, or as one of the chords spells that letter
+      var l = ((d % 7) + 7) % 7, out = [{ l: l, a: key.sig[l], o: Math.floor(d / 7) }];
+      cs.forEach(function (c) { c.notes.forEach(function (y) { if (y.l === l && !out.some(function (z) { return z.a === y.a; })) out.push({ l: l, a: y.a, o: Math.floor(d / 7) }); }); });
+      return out;
+    }
+    function want(kind, p) { return rng() < (kind === focus ? 0.9 : p); }
+    function missOf(i) { return chords[i].notes.filter(function (n) { return !vs[i].lh.some(function (x) { return pcOf(x) === pcOf(n); }); }); }
+    var k, e, nx, pv, cj, res;
+    for (k = 1; k < ev.length - 1; k++) {   // pass 1, in place: suspension (first beat of a chord) and appoggiatura (a later beat)
+      e = ev[k]; pv = ev[k - 1]; nx = ev[k + 1]; cj = chords[e.ci];
+      if (e.dur !== 2 || fixed[k] || fixed[k - 1] || fixed[k + 1] || nx.ci !== e.ci || nx.dur !== 2 || pv.dur !== 2) continue;
+      if (pv.ci !== e.ci) {   // suspension
+        if (!want("suspension", 0.3)) continue;
+        var x = { l: pv.n.l, a: pv.n.a, o: pv.n.o }, d = dia(x) - 1;
+        if (isCT(cj, x) || !isCT(chords[pv.ci], x)) continue;
+        res = cj.notes.filter(function (y) { return y.l === ((d % 7) + 7) % 7; }).map(function (y) { return { l: y.l, a: y.a, o: Math.floor(d / 7) }; }).filter(function (y) { return stepOk(x, y) && midi(y) < midi(x); })[0];
+        var ms = missOf(e.ci);
+        if (!res || (ms.length && !(ms.length === 1 && pcOf(ms[0]) === pcOf(res)))) continue;
+        ev[k] = { n: x, dur: 2, ci: e.ci, nct: "suspension", acc: true }; ev[k + 1] = { n: res, dur: 2, ci: nx.ci }; fixed[k] = fixed[k + 1] = 1; made++;
+      } else {   // appoggiatura
+        if (pv.nct || !want("appoggiatura", 0.3)) continue;
+        var dirs = rng() < 0.5 ? [1, -1] : [-1, 1], done = false;
+        dirs.forEach(function (dr) {
+          if (done) return;
+          spellings(dia(nx.n) + dr, [cj]).forEach(function (cx) {
+            if (done || isCT(cj, cx) || !stepOk(cx, nx.n) || Math.abs(dia(cx) - dia(pv.n)) < 2 || midi(cx) < 60 || midi(cx) > 86) return;
+            ev[k] = { n: cx, dur: 2, ci: e.ci, nct: "appoggiatura", acc: true }; fixed[k] = 1; done = true; made++;
+          });
+        });
       }
+    }
+    var out = [];
+    for (k = 0; k < ev.length; k++) {   // pass 2: off-beat eighths after a quarter: passing, neighbor, escape, anticipation
+      e = ev[k]; nx = ev[k + 1];
+      if (e.nct || fixed[k] || !nx || fixed[k + 1] || e.dur !== 2 || made >= limit || rng() > 0.3) { out.push(e); continue; }
+      var cands = [], c = chords[e.ci], gap = dia(nx.n) - dia(e.n);
+      function addNew(kind, n, e2, nx2) { cands.push({ kind: kind, n: n, e: e2 || e.n, nx: nx2 }); }
+      var again = gap === 0 || fixed[k + 2] ? gap === 0 : nx.ci === e.ci || (nx.ci !== e.ci ? chords[nx.ci].notes.some(function (y) { return sameName(y, e.n); }) && (!missOf(nx.ci).length || (missOf(nx.ci).length === 1 && pcOf(missOf(nx.ci)[0]) === pcOf(e.n))) : false);
+      spellings(dia(e.n) + (Math.abs(gap) === 2 ? gap / 2 : 1), [c, chords[nx.ci]]).forEach(function (cx) {
+        if (isCT(c, cx) || !stepOk(e.n, cx)) return;
+        if (Math.abs(gap) === 2 && dia(cx) === dia(e.n) + gap / 2 && stepOk(cx, nx.n)) addNew("passing", cx);
+      });
+      if (again) [1, -1].forEach(function (dr) {   // neighbor: a step away from e and back (the next note is e again)
+        spellings(dia(e.n) + dr, [c, chords[nx.ci]]).forEach(function (cx) { if (!isCT(c, cx) && stepOk(e.n, cx)) addNew("neighbor", cx, null, gap === 0 ? null : { l: e.n.l, a: e.n.a, o: e.n.o }); });
+      });
+      [1, -1].forEach(function (dr) {   // escape tone: a step one way, then a leap the other
+        spellings(dia(e.n) + dr, [c]).forEach(function (cx) {
+          if (isCT(c, cx) || !stepOk(e.n, cx) || midi(cx) < 60 || midi(cx) > 86) return;
+          if (dr > 0 ? dia(nx.n) <= dia(cx) - 2 : dia(nx.n) >= dia(cx) + 2) addNew("escape", cx);
+        });
+      });
+      if (nx.ci === e.ci + 1 && k > 0 && ev[k - 1].ci === e.ci && !isCT(c, nx.n) && !(out.length && out[out.length - 1].nct)) {   // anticipation: a chord tone of this chord, a step from the next chord's note, which then sounds early
+        [1, -1].forEach(function (dr) {
+          var dd = dia(nx.n) + dr, ce = c.notes.filter(function (y) { return y.l === ((dd % 7) + 7) % 7; })[0];
+          if (ce) { var cn = { l: ce.l, a: ce.a, o: Math.floor(dd / 7) }; if (stepOk(cn, nx.n)) addNew("anticipation", { l: nx.n.l, a: nx.n.a, o: nx.n.o }, cn); }
+        });
+      }
+      if (!cands.length) { out.push(e); continue; }
+      var kinds = cands.map(function (x) { return x.kind; }).filter(function (x, j, a) { return a.indexOf(x) === j; }), kd = kinds.indexOf(focus) >= 0 && rng() < 0.6 ? focus : pick(kinds);
+      var pool = cands.filter(function (x) { return x.kind === kd; }), ch = pool[rnd(pool.length)];
+      if (ch.nx) ev[k + 1] = { n: ch.nx, dur: nx.dur, ci: nx.ci };
+      out.push({ n: ch.e, dur: 1, ci: e.ci }); out.push({ n: ch.n, dur: 1, ci: e.ci, nct: ch.kind, acc: false }); made++;
+    }
+    return out.map(function (x) {
+      var r = { notes: [x.n], dur: x.dur, ci: x.ci };
+      if (x.nct) { r.nct = x.nct; r.acc = !!x.acc; r.label = labels.charAt(cnt++); }
+      return r;
     });
+  }
+  function melody(chords, vs, spans, key, rich) {
+    function base() {
+      var ev = [], prev = 35;
+      chords.forEach(function (c, i) {
+        var miss = c.notes.filter(function (n) { return !vs[i].lh.some(function (x) { return pcOf(x) === pcOf(n); }); });
+        var last = i === chords.length - 1, beats = last ? 1 : spans[i].len / 2;
+        for (var b = 0; b < beats; b++) {
+          var pool = b === 0 && miss.length ? miss : c.notes, cand = [];
+          pool.forEach(function (n) { for (var o = 4; o <= 5; o++) { var d = o * 7 + n.l; if (d >= 30 && d <= 39) cand.push({ l: n.l, a: n.a, o: o }); } });
+          cand.sort(function (x, y) { return Math.abs(dia(x) - prev) - Math.abs(dia(y) - prev) || rng() - 0.5; });
+          var ch = cand.filter(function (x) { return dia(x) !== prev; })[0] || cand[0];
+          ev.push({ n: ch, dur: last ? spans[i].len : 2, ci: i }); prev = dia(ch);
+        }
+      });
+      return ev;
+    }
+    if (rich) {
+      var got = null;
+      for (var at = 0; at < 30; at++) { got = decorate(base(), chords, vs, key); if (got.some(function (e) { return e.nct; })) break; }
+      return got;
+    }
+    var ev = base();
     var out = [];
     ev.forEach(function (e, k) {
       var nx = ev[k + 1];
@@ -348,6 +480,7 @@
       if (pos && pos % 8 === 0) { out += " |"; st = {}; prev = null; }
       var ns = e.notes.map(function (n) { return noteTok(n, key.sig, st); }), s = "";
       if (numbered && !seen[e.ci]) { s += '"^' + (e.ci + 1) + '"'; seen[e.ci] = 1; }
+      if (numbered && e.label) s += '"_' + e.label + '"';   // ch. 10: the non-chord tone's letter under the staff
       s += (ns.length > 1 ? "[" + ns.join("") + "]" : ns[0]) + (e.dur === 1 ? "" : e.dur);
       var join = beam && prev && prev.dur === 1 && e.dur === 1 && Math.floor(prev.at / 4) === Math.floor(pos / 4);
       out += (out && !join ? " " : "") + s; prev = { dur: e.dur, at: pos }; pos += e.dur;
@@ -355,7 +488,7 @@
     return out + " |]";
   }
   // the passage in one stage -> { voices: [{ id, clef, evs }], score, shapes, transpose }
-  function arrange(tex, chords, spans, key, tenorTreble) {
+  function arrange(tex, chords, spans, key, tenorTreble, rich) {
     var V = function (id, clef, evs) { return { id: id, clef: clef, evs: evs }; };
     if (tex === "rh") {
       var vr = voice(chords, true);
@@ -382,7 +515,7 @@
         for (var j = 0; j < len; j++) lh.push({ notes: [ap[j % 4]], dur: 1, ci: i });
       } else lh.push({ notes: v.lh, dur: len, ci: i });
     });
-    if (tex === "melody") rh = melody(chords, vs, spans, key);
+    if (tex === "melody") rh = melody(chords, vs, spans, key, rich);
     return { voices: [V("1", "treble", rh), V("2", "bass", lh)], score: "{1 2}" };
   }
 
@@ -404,7 +537,8 @@
         if (chords.some(function (c) { return !c; })) { if (s.prog) return null; continue; }
         if (!s.prog && chords.some(function (c) { return c.notes.some(function (n) { return Math.abs(n.a) > 1; }); })) continue;
         var tex = s.texture === "mixed" || STAGES.indexOf(s.texture) < 0 ? pick(STAGES) : s.texture;
-        var spans = spansFor(chords.length, rhythm), arr = arrange(tex, chords, spans, key, s.tenor === "treble");
+        if (L.nct) tex = "melody";   // the non-chord tones need a melody
+        var spans = spansFor(chords.length, rhythm), arr = arrange(tex, chords, spans, key, s.tenor === "treble", !!L.nct);
         if (!arr) { if (s.prog) return null; continue; }
         if (tex === "rh") chords = chords.map(function (c, i) {   // the right hand alone: its lowest note is the bass
           var lo = arr.voices[0].evs[i].notes[0], k = c.notes.map(nm).indexOf(nm(lo));
@@ -414,13 +548,15 @@
           arr.voices.map(function (v) { return "V:" + v.id + " clef=" + v.clef + (arr.satb ? " stem=" + (+v.id % 2 ? "up" : "down") : ""); }).join("\n") + "\nK:" + key.abc + "\n" +
           arr.voices.map(function (v, k) { return "[V:" + v.id + "] " + voiceAbc(v.evs, key, k === 0, !arr.satb && tex !== "satb"); }).join("\n") + "\n";
         var ncts = [];
-        arr.voices.forEach(function (v) { var at = 0; v.evs.forEach(function (e) { if (e.nct) ncts.push({ ci: e.ci, t: at, note: e.notes[0], kind: e.nct }); at += e.dur; }); });
+        arr.voices.forEach(function (v) { var at = 0; v.evs.forEach(function (e) { if (e.nct) ncts.push({ ci: e.ci, t: at, note: e.notes[0], kind: e.nct, label: e.label || null, acc: !!e.acc }); at += e.dur; }); });
         var items = chords.map(function (c, i) {
           var tok = c.tok;
           if (tex === "rh" && c.inv !== build(key, parseRN(tok)).inv) tok = tok.replace(/(64|65|43|42|6|7)$/, "") + (c.notes.length === 4 ? "7" : "");
           return { chord: c, rn: rnText(tok, c, "fig"), rnSlash: rnText(tok, c, "slash"), sym: symText(c, true), symRoot: symText(c, false), span: spans[i] };
         });
-        return { seed: seed, key: key, level: L.id, inv: L.inv, answer: answer, findKey: s.key === "find", texture: tex, abc: abc, items: items, ncts: ncts,
+        var cad = null;
+        if (L.fn) { var ft = tpl[1].split(" "); items.forEach(function (it, i) { it.fn = fnOf(ft, i); }); cad = cadenceOf(ft); }
+        return { seed: seed, key: key, level: L.id, fn: !!L.fn, nctNamed: !!L.nct, cadence: cad, inv: L.inv, answer: answer, findKey: s.key === "find", texture: tex, abc: abc, items: items, ncts: ncts,
           qpm: tex === "melody" || tex === "broken" ? 84 : 66, voices: arr.voices, shapes: arr.shapes || null, transpose: arr.transpose || 0, bars: (spans[spans.length - 1].start + spans[spans.length - 1].len) / 8, prog: tpl[1] };
       }
       return null;
@@ -446,6 +582,19 @@
     if (q.answer === "sym") { var sy = parseSym(t); return sameChord(sy, c, !q.inv); }
     var mine = build(q.key, parseRN(t)); return !!mine && mine.cat === c.cat && sameChord(mine, c, !q.inv);
   }
+  function checkNct(q, k, typed) { return !!q.ncts[k] && String(typed || "") === q.ncts[k].kind; }
+  function checkFn(q, i, typed) { var t = String(typed || "").trim().toUpperCase(); return !!t && !!q.items[i] && q.items[i].fn === t; }
+  function checkCadence(q, typed) {
+    var t = String(typed || "").trim().toLowerCase(), k = /^(auth|pac|iac|ac$)/.test(t) ? "authentic" : /^(plag|pc$)/.test(t) ? "plagal" : /^(dec|dc$)/.test(t) ? "deceptive" : /^(half|hc$)/.test(t) ? "half" : null;
+    return !!k && k === q.cadence;
+  }
+  function fnWhy(q, i) {
+    var it = q.items[i], toks = q.prog.split(" "), p = fnParse(toks[i]), nx = toks[i + 1] ? fnParse(toks[i + 1]) : null, f = it.fn;
+    if (f === "T") return "I is the tonic chord: T.";
+    if (f === "D") return p.deg === 1 ? "I64 that goes on to V has dominant function: D." : "V and vii° are the dominant chords: D.";
+    if (f === "PD") return p.deg === 4 && nx && nx.deg === 1 ? "IV before I64 stays pre-dominant: PD." : "ii and IV lead toward the dominant: PD.";
+    return p.deg === 4 ? "IV that goes straight to I (a plagal motion) is labelled TP." : "iii and vi (III and VI in minor: the minor case is this site's reading) prolong the tonic: TP.";
+  }
   function checkKey(q, typed) { var k = keyNamed(typed); return !!k && k.mode === q.key.mode && sameName(k.tonic, q.key.tonic); }
   // a stack (spelled notes, bottom up) -> { ok, msg }
   function checkStack(q, i, list) {
@@ -455,7 +604,7 @@
     var extra = names.filter(function (x) { return wn.indexOf(x) < 0; }), dup = names.filter(function (x, k) { return names.indexOf(x) !== k; });
     if (extra.length) {
       var nct = q.ncts.filter(function (x) { return x.ci === i && extra.indexOf(nm(x.note)) >= 0; });
-      if (nct.length) return { ok: false, msg: extra.join(", ") + " is a " + nct[0].kind + " tone, not part of the chord: leave it out." };
+      if (nct.length) return { ok: false, msg: extra.join(", ") + " is a " + nctName(nct[0].kind) + ", not part of the chord: leave it out." };
       return { ok: false, msg: extra.join(", ") + (heard.indexOf(extra[0]) < 0 ? " isn't in chord " + (i + 1) + ". Check the spelling against the score." : " doesn't belong in the stack.") };
     }
     if (dup.length) return { ok: false, msg: "Each note goes in once: " + dup[0] + " is there twice. Doublings drop out of the stack." };
@@ -478,13 +627,14 @@
     var it = q.items[i], c = it.chord, key = q.key, out = [], ns = sounding(q, i, true), lets = letters(q, i);
     var nc = q.ncts.filter(function (x) { return x.ci === i; });
     out.push({ h: "Collect the notes", t: "Chord " + (i + 1) + " (" + where(it) + "): " + ns.map(nm).join(" ") + ". " + READ[q.texture] });
-    if (nc.length) out.push({ h: "Leave out the non-chord tones", t: nc.map(function (x) { return nm(x.note) + " is a " + x.kind + " tone: a short off-beat note that " + (x.kind === "passing" ? "steps between two chord tones" : "steps away and comes back"); }).join("; ") + "." });
+    if (nc.length) out.push({ h: "Leave out the non-chord tones", t: nc.map(function (x) { return nm(x.note) + (x.label ? " (marked " + x.label + ")" : "") + " is a " + nctName(x.kind) + ": " + NCT_WHY[x.kind]; }).join("; ") + "." });
     var chordLets = lets.filter(function (n) { return !nc.some(function (x) { return sameName(x.note, n); }); });
     out.push({ h: "One of each", t: "Cross out repeats" + (ns.length > chordLets.length + nc.length ? " (doublings)" : "") + ": " + chordLets.map(nm).join(", ") + "." });
     out.push({ h: "Rearrange into close root position", t: "Find the order where every note is a third above the one below: " + c.notes.map(nm).join("–") + ". The bottom note of that stack is the root, " + nm(c.notes[0]) + ". (Letters a third apart skip one letter: C–E–G–B.)" });
     var r = c.notes[0];
     out.push({ h: "Quality", t: "Above " + nm(r) + ": a " + IV3[semis(r, c.notes[1])] + " and a " + IV5[semis(r, c.notes[2])] + (c.notes[3] ? ", and a " + IV7[semis(r, c.notes[3])] : "") + ". That is a " + QNAME[c.q] + "." });
     if (q.inv) out.push({ h: "Bass", t: "The lowest note is " + nm(c.bass) + ", the " + MEMBER[c.inv] + ": " + INV_NAME[c.inv] + "." });
+    if (q.fn) out.push({ h: "Function", t: fnWhy(q, i) + " Answer: " + it.fn + "." });
     if (q.answer === "sym") { out.push({ h: "Answer", t: (q.inv ? it.sym : it.symRoot) + (q.inv && c.inv ? " (the slash and the bass note show the inversion)" : "") }); return out; }
     var dg = ((r.l - key.tonic.l) % 7 + 7) % 7 + 1, num = ["i", "ii", "iii", "iv", "v", "vi", "vii"][dg - 1], big = /^(maj|aug|dom7|maj7)$/.test(c.q);
     var raised = key.mode === "minor" && c.notes.filter(function (n) { return n.l === (key.tonic.l + 6) % 7 && n.a === key.sig[n.l] + 1; })[0];
@@ -492,6 +642,7 @@
     out.push({ h: "Scale degree", t: nm(r) + " is the " + ORD[dg - 1] + " degree of " + key.label + (low ? ", lowered: ♭" + dg : "") + ". " + (big ? "A major quality takes a capital numeral, " : "A minor or diminished quality takes a small one, ") + (low ? "♭" : "") + (big ? num.toUpperCase() : num) + "." +
       (raised ? " " + nm(raised) + " is the raised 7th (the leading tone), as usual in minor." : "") });
     if (q.inv) out.push({ h: "Inversion", t: c.notes.length === 4 ? "Seventh chords: 7 (root position), 65, 43, 42 (or /3rd, /5th, /7th)." : "Triads: nothing for root position, 6 for first inversion, 64 for second (or /3rd, /5th)." });
+    if (q.fn) out.push({ h: "Function", t: fnWhy(q, i) + " Answer: " + it.fn + "." });
     out.push({ h: "Answer", t: expected(q, i) + (q.inv && it.rnSlash !== it.rn ? " (or " + it.rnSlash + ")" : "") });
     return out;
   }
@@ -634,6 +785,11 @@
     "body.ca-printing>*:not(.ca-print){display:none!important}.ca-print{display:none}body.ca-printing .ca-print{display:block;padding:1rem}" +
     "@media print{body.ca-printing>*:not(.ca-print){display:none!important}body.ca-printing .ca-print{display:block}}";
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function fnSelect(opts, label) {
+    var sel = el("select", "form-select form-select-sm"); sel.setAttribute("aria-label", label);
+    [["", label]].concat(opts).forEach(function (o) { var op = el("option", "", o[1]); op.value = o[0]; sel.appendChild(op); });
+    return sel;
+  }
   function btn(text) { var b = el("button", "btn btn-outline-secondary btn-sm", text); b.type = "button"; return b; }
   function store(k, v) { try { if (v === undefined) return JSON.parse(localStorage.getItem(k) || "null"); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, JSON.stringify(v)); } catch (e) { return null; } }
   function css() { if (!document.getElementById("ca-css")) { var st = el("style"); st.id = "ca-css"; st.textContent = CSS; document.head.appendChild(st); } }
@@ -675,7 +831,7 @@
   // ---- the record (SiteRecord, apps/shared/report/record.js, loaded on first use). One item a passage, tool "chord-analysis",
   // it.d = { s: its settings and seed (make() rebuilds it exactly), k: key attempts, c: per chord { st: stack attempts, nm: name
   // attempts (each [what, 1 right / 0 wrong, seconds in]), h: steps looked at, rv: 1 when "Show the answers" was pressed } }.
-  var SR_SRC = "/apps/shared/report/record.js?v=6", srWait = [];
+  var SR_SRC = "/apps/shared/report/record.js?v=8", srWait = [];
   function withRecord(f) {
     if (global.SiteRecord) { registerRecord(); return f(global.SiteRecord); }
     srWait.push(f); if (srWait.length > 1 || typeof document === "undefined") return;
@@ -683,7 +839,7 @@
   }
   function attempts(list) { return list && list.length ? list.map(function (a) { return (a[1] ? "✓ " : "✗ ") + a[0]; }).join("  ·  ") : "—"; }
   function secs(t) { return t < 60 ? t + " s" : Math.floor(t / 60) + " min " + (t % 60) + " s"; }
-  function touched(c) { return c.st.length || c.nm.length || c.h || c.rv; }
+  function touched(c) { return c.st.length || c.nm.length || (c.fn && c.fn.length) || c.h || c.rv; }
   function summaryOf(passages) {
     var o = { chords: 0, stackFirst: 0, stackRight: 0, nameFirst: 0, nameRight: 0, named: 0, stacked: 0, steps: 0, shown: 0 };
     passages.forEach(function (p) { p.c.forEach(function (c) {
@@ -714,19 +870,23 @@
     ["Chord", "Stack", "Name", "Help", "Answer"].forEach(function (h) { th.appendChild(el("th", "", h)); }); tb.appendChild(th);
     qq.items.forEach(function (it, i) {
       var c = p.c[i] || { st: [], nm: [], h: 0, rv: 0 }, tr = el("tr"), found = c.rv || c.nm.some(function (a) { return a[1]; }) || c.st.some(function (a) { return a[1]; });
-      [String(i + 1), attempts(c.st), attempts(c.nm), [c.h ? "Steps ×" + c.h : "", c.rv ? "answers shown" : ""].filter(Boolean).join(", ") || "—",
-        teacher || found ? expected(qq, i) + " (" + it.chord.notes.map(nm).join("–") + ")" : "—"].forEach(function (x) { tr.appendChild(el("td", "", x)); });
+      [String(i + 1), attempts(c.st), attempts(c.nm) + (qq.fn ? "  |  function " + attempts(c.fn) : ""), [c.h ? "Steps ×" + c.h : "", c.rv ? "answers shown" : ""].filter(Boolean).join(", ") || "—",
+        teacher || found ? expected(qq, i) + (qq.fn ? " " + it.fn : "") + " (" + it.chord.notes.map(nm).join("–") + ")" : "—"].forEach(function (x) { tr.appendChild(el("td", "", x)); });
       tb.appendChild(tr);
     });
     sec.appendChild(tb);
+    if (qq.nctNamed && qq.ncts.length) sec.appendChild(el("p", "", "Non-chord tones: " + qq.ncts.map(function (x, k) { return x.label + " " + attempts(p.nc && p.nc[k]) + (teacher || (p.nc && p.nc[k] || []).some(function (a) { return a[1]; }) ? " (" + x.kind + ")" : ""); }).join("; ")));
+    if (qq.fn && qq.cadence) sec.appendChild(el("p", "", "Cadence: " + attempts(p.cd) + (teacher || (p.cd || []).some(function (a) { return a[1]; }) ? "  (answer: " + qq.cadence + ")" : "")));
     return sec;
   }
   function passageText(p) {
     var qq = make(parseSettings(p.s)), L = []; if (!qq) return L;
     L.push("  Passage: " + LV[qq.level].name + ", " + STAGE_NAMES[qq.texture] + ", " + qq.key.label);
     if (p.k && p.k.length) L.push("    Key: " + attempts(p.k));
+    if (p.cd && p.cd.length) L.push("    Cadence: " + attempts(p.cd));
+    if (p.nc) qq.ncts.forEach(function (x, k) { if (p.nc[k] && p.nc[k].length) L.push("    Non-chord tone " + x.label + ": " + attempts(p.nc[k])); });
     qq.items.forEach(function (it, i) { var c = p.c[i]; if (!c || !touched(c)) return;
-      L.push("    Chord " + (i + 1) + ": stack " + attempts(c.st) + " | name " + attempts(c.nm) + (c.h ? " | steps ×" + c.h : "") + (c.rv ? " | answers shown" : "")); });
+      L.push("    Chord " + (i + 1) + ": stack " + attempts(c.st) + " | name " + attempts(c.nm) + (c.fn && c.fn.length ? " | function " + attempts(c.fn) : "") + (c.h ? " | steps ×" + c.h : "") + (c.rv ? " | answers shown" : "")); });
     return L;
   }
   var registered = false;
@@ -813,6 +973,8 @@
       var what = q.answer === "sym" ? "a chord symbol (" + (q.inv ? "C, Am, G7, C/E" : "C, Am, G7") + ")" : "a Roman numeral" + (q.inv ? " with its inversion (I6 or I/3rd, V65 or V7/3rd)" : " (I, ii, V7)");
       var job = doStack() && doName() ? "For each numbered chord, stack its notes in root position, then name it with " + what + "."
         : doStack() ? "Stack the notes of each numbered chord in close root position." : "Name each numbered chord with " + what + ".";
+      if (q.nctNamed && doName()) job += " The small letters under the melody mark non-chord tones: name each one (passing, neighbor, escape, appoggiatura, suspension, anticipation).";
+      if (q.fn && doName()) job += " Then choose its function: T, TP, PD or D" + (q.cadence ? ", and name the cadence at the end" : "") + ".";
       prompt.textContent = (q.findKey ? "Find the key first. " : "Key: " + q.key.label + ". ") + job;
       v = draw(paper, q);
       if (q.findKey) {
@@ -828,9 +990,20 @@
           inp.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); grade(false); } });
           c.appendChild(inp);
         }
+        var fsel = null;
+        if (q.fn && doName()) { fsel = fnSelect([["T", "T"], ["TP", "TP"], ["PD", "PD"], ["D", "D"]], "Function"); c.appendChild(fsel); }
         var hb = btn("Steps"); hb.addEventListener("click", function () { openSteps(i); }); c.appendChild(hb); c.appendChild(want);
-        cardBox.appendChild(c); cards.push({ box: c, inp: inp, mark: mark, want: want, i: i }); stackOk.push(false);
+        cardBox.appendChild(c); cards.push({ box: c, inp: inp, sel: fsel, mark: mark, want: want, i: i }); stackOk.push(false);
       });
+      if (q.nctNamed && doName()) q.ncts.forEach(function (x, k) {
+        var nc = el("div", "ca-card"), nw = el("div", "ca-want"); nc.appendChild(el("b", "", "Note " + x.label + " (chord " + (x.ci + 1) + ")"));
+        var nsel = fnSelect(NCT_KINDS.map(function (kd) { return [kd, NCT_NAMES[kd]]; }), "Type of non-chord tone");
+        nc.appendChild(nsel); nc.appendChild(nw); cardBox.appendChild(nc); cards.push({ box: nc, sel: nsel, nct: k, want: nw });
+      });
+      if (q.fn && doName() && q.cadence) {
+        var cc = el("div", "ca-card"), cw = el("div", "ca-want"); cc.appendChild(el("b", "", "Cadence")); var csel = fnSelect(Object.keys(CADENCES).map(function (k) { return [k, CADENCES[k]]; }), "Final cadence");
+        cc.appendChild(csel); cc.appendChild(cw); cardBox.appendChild(cc); cards.push({ box: cc, sel: csel, cad: true, want: cw });
+      }
       help.textContent = !doName() ? "" : q.answer === "sym" ? "Capital letter = major (A), small letter or m = minor (a, Am), ° or o diminished, + augmented; 7, maj7, m7, ø7 (m7b5), °7" + (q.inv ? "; a slash and the bass for an inversion (C/E)" : "") + ". # and b for ♯ and ♭."
         : "Capitals for major (V), small for minor (ii), ° or o diminished, ø or h half-diminished, + augmented; 7 or M7 for sevenths" + (q.inv ? "; 6 64 65 43 42, or /3rd /5th /7th, for inversions" : "") + ". b before a numeral for ♭ (bVII).";
       host.setAttribute("data-seed", q.seed);
@@ -859,18 +1032,23 @@
       focusCard(i); panel.innerHTML = ""; var p = el("div", "ca-panel"); p.appendChild(el("strong", "", "Chord " + (i + 1) + ", step by step"));
       p.appendChild(stepsList(q, i, false, function () { rec(function (d) { d.c[i].h++; }); })); panel.appendChild(p);
     }
+    function selOk(x) { return x.cad ? checkCadence(q, x.sel.value) : x.nct != null ? checkNct(q, x.nct, x.sel.value) : checkFn(q, x.i, x.sel.value); }
     function grade(reveal) {
       if (!q) return; var n = 0, ok = 0;
       var typed = cards.filter(function (x) { return x.inp && x.inp.value.trim(); }).map(function (x) { var v0 = x.inp.value.trim(); return { key: x.key, i: x.i, v: v0, ok: x.key ? checkKey(q, v0) : check(q, x.i, v0) }; });
+      var fns = cards.filter(function (x) { return x.sel && x.sel.value; }).map(function (x) { return { cad: x.cad, nct: x.nct, i: x.i, v: x.sel.value, ok: selOk(x) }; });
       if (reveal) rec(function (d) { d.c.forEach(function (c) { c.rv = 1; }); });
-      else if (typed.length) rec(function (d, t0) {   // each name (and key) typed since the last check
+      else if (typed.length || fns.length) rec(function (d, t0) {   // each name (and key, function, cadence) chosen since the last check
         typed.forEach(function (x) { var list = x.key ? d.k : d.c[x.i].nm, last = list[list.length - 1]; if (!last || last[0] !== x.v) list.push([x.v, x.ok ? 1 : 0, t0]); });
+        fns.forEach(function (x) { var list = x.cad ? (d.cd = d.cd || []) : x.nct != null ? ((d.nc = d.nc || {})[x.nct] = (d.nc[x.nct] || [])) : (d.c[x.i].fn = d.c[x.i].fn || []), last = list[list.length - 1]; if (!last || last[0] !== x.v) list.push([x.v, x.ok ? 1 : 0, t0]); });
       });
       cards.forEach(function (x) {
-        var good = x.key ? checkKey(q, x.inp.value) : x.inp ? check(q, x.i, x.inp.value) : stackOk[x.i];
-        if (x.key || x.inp) { n++; if (good) ok++; }
+        var nameOk = x.key ? checkKey(q, x.inp.value) : x.inp ? check(q, x.i, x.inp.value) : null;
+        var fnOk = x.sel ? selOk(x) : null;
+        var good = nameOk == null && fnOk == null ? stackOk[x.i] : (nameOk == null || nameOk) && (fnOk == null || fnOk);
+        if (x.key || x.inp || x.sel) { n++; if (good) ok++; }
         x.box.classList.remove("ok", "no"); x.box.classList.add(good ? "ok" : "no");
-        if (x.want) x.want.textContent = good || !reveal ? "" : (x.inp ? expected(q, x.i) + (doStack() ? " · " : "") : "") + (doStack() ? q.items[x.i].chord.notes.map(nm).join("–") : "");
+        if (x.want) x.want.textContent = good || !reveal ? "" : x.cad ? CADENCES[q.cadence] : x.nct != null ? NCT_NAMES[q.ncts[x.nct].kind] : (x.inp ? expected(q, x.i) + (x.sel ? " " + q.items[x.i].fn : "") + (doStack() ? " · " : "") : "") + (doStack() ? q.items[x.i].chord.notes.map(nm).join("–") : "");
         if (x.key && !good && reveal) x.inp.value = q.key.label;
       });
       if (!reveal) { total += n; right += ok; score.textContent = right + " / " + total + " names right so far"; }
@@ -892,7 +1070,7 @@
   }
   function init() { [].forEach.call(document.querySelectorAll(".chord-analysis"), mount); }
 
-  global.ChordAnalysis = { LEVELS: LEVELS, STAGES: STAGES, SETTINGS: SETTINGS, make: make, check: check, checkKey: checkKey, checkStack: checkStack, expected: expected, steps: steps,
+  global.ChordAnalysis = { LEVELS: LEVELS, STAGES: STAGES, SETTINGS: SETTINGS, make: make, check: check, checkKey: checkKey, checkFn: checkFn, checkNct: checkNct, NCT_KINDS: NCT_KINDS, checkCadence: checkCadence, fnOf: fnOf, cadenceOf: cadenceOf, checkStack: checkStack, expected: expected, steps: steps,
     build: build, parseRN: parseRN, parseSym: parseSym, parseNotes: parseNotes, keyOn: keyOn, keyNamed: keyNamed, sameChord: sameChord, parseSettings: parseSettings,
     sounding: sounding, letters: letters, readCode: readCode, summaryOf: summaryOf, passageText: passageText, withRecord: withRecord, guitarShape: guitarShape, stackAbc: stackAbc, nm: nm, midi: midi, mount: mount, init: init };
   registerRecord();   // when the record script is already on the page (a report showing chord-analysis items loads this file)

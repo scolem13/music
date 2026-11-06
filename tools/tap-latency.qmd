@@ -3,6 +3,8 @@ title: "Tap Latency"
 toc: false
 ---
 
+## Measure your tap lag
+
 ```{=html}
 <link rel="stylesheet" href="/apps/shared/tap-along/tap-along.css?v=1">
 <script src="/apps/shared/tap-along/tap-latency.js?v=1"></script>

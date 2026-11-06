@@ -1,0 +1,208 @@
+---
+title: "The French Horn"
+toc: true
+toc-depth: 2
+description: "Everything a beginning horn player needs: where the horn came from, single and double horns, the parts, putting it together, holding it and the right hand in the bell, your embouchure and first buzz, an interactive fingering chart (F side, B-flat side and the thumb lever), fixing tone problems, and care."
+instruments: [horn]
+topics: [instruments, technique]
+has: [fingering, interactive, svg, notation]
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/horn/horn.css?v=1">
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/band/sounds.js?v=23"></script>
+<script src="/apps/shared/horn/horn-chart.js?v=1"></script>
+<script src="/apps/shared/horn/horn-page.js?v=1"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+The horn is a **brass** instrument from the middle of the brass family: the sound starts with your **lips buzzing** in a small funnel-shaped
+mouthpiece, and a long coiled tube (and your right hand in the bell) shapes it. This page follows a beginner's horn book (see the Works
+Cited), and its fingering chart is redrawn from that book's chart. Use the controls above each chart to show or hide the **staff** and the
+**letter names**.
+
+## Where it came from {#history}
+
+- The earliest horns were **hunting horns**: brass tubes wound in a circle or coil with a flared bell. They signalled danger for night
+  watchmen and called hounds on the hunt, and the tone was loved because it is like a **human voice**.
+- Composers carried that over into the orchestra, where the horn stands for **nobility** or for **the hunt**.
+- Early horns had **no valves**, so each could play only the notes of the harmonic series of **one pitch**. To change key, players added
+  **crooks**, extra lengths of tubing.
+- In the **19th century** players found that putting the **right hand in the bell** changed the pitch ("hand-tuning", "hand-horn"). By the
+  middle of the century **pistons**, and then **rotary valves**, were added so that crooks did not have to be changed during a performance.
+  As with the trumpet, many traditionalists stayed with the valveless "natural" horn for a while.
+- Two styles of horn followed: the **French** made smaller horns with piston valves, and the **Germans** made larger horns with rotary
+  valves. Today the larger German-style horn is the one most used in the United States and Canada, and it is the one called the
+  "French horn" or just the "horn".
+- Orchestra and concert band music usually asks for **four horn parts**, and they **interlock**: first and third play the higher notes,
+  second and fourth the lower. Players often call themselves a **high horn** or a **low horn** player.
+
+## Single and double horns {#family}
+
+| Horn | What it is | What the book says |
+|---|---|---|
+| **Single F horn** | One set of tubing in F. | Often thought to have the nicer tone, but it is harder to play accurately, because its **partials sit closer together**. |
+| **Single B♭ horn** | One set of tubing in B♭, shorter, so higher. | Easier to hit notes (the partials are **further apart**) and a **brighter** tone. |
+| **Double horn (F/B♭)** | Both in one instrument; a **thumb lever** switches sides. | You can use either fingering; press the thumb lever for the B♭ side. |
+
+Horns are in **F** (the E♭ alto horn is a different instrument, in the baritone and euphonium chapter of the book). The notes a horn player
+reads are **written a perfect fifth higher** than they sound (written C sounds F). That fifth is standard knowledge, not printed on the
+book's chart (see "What is unverified").
+
+## Parts of the horn {#parts}
+
+Starting at the player's lips: the **mouthpiece**, its **shank**, the **mouthpiece receiver**, and the **lead pipe** that carries the air into the
+**body** (the coiled tubing). On it are the **main tuning slide** (on the back of the horn), the **first, second and third valve slides** and the
+**levers** (valve levers 1, 2 and 3 for the first three fingers) with the **thumb hook** or, on a double horn, the **thumb valve lever**.
+A **hook** near the levers holds your little finger. The **bell** is the big flared end.
+
+## Putting it together {#assembly}
+
+1. Put the **mouthpiece** into the receiver on the lead pipe.
+2. Twist it in **gently**, not too tight.
+
+## Holding it {#posture}
+
+1. Sit up straight at the **edge of your chair**, feet on the floor.
+2. **Left hand:** little finger in the **hook** by the levers to help hold the horn up; fingertips of fingers 1-3 on the levers; thumb in the
+   thumb hook (single horn) or on the **thumb lever** (double horn).
+3. Make a relaxed **"C"** with the left hand, as if holding a tennis ball. **Wrist straight**, **elbows away** from your body.
+4. Bring the horn to you: the **lead pipe and mouthpiece** meet your head at an **angle**, your head stays straight and looks forward.
+5. Set the mouthpiece with about **two thirds on your upper lip and one third on your lower** (touch the bottom lip first), then notice where the bell
+   naturally rests. You may need to rest it on your **right knee**.
+6. Sit on the **right corner** of your chair at about **45 degrees**; your right leg may be right beside the chair or toward its back right
+   corner. Adjust your right knee until the lead pipe meets your lips at the right angle. The mouth angle is the same for everyone; where the
+   bell sits changes with the player's size, and some players hold the bell off the leg.
+
+### The right hand in the bell {#righthand}
+
+1. The right hand must cover **part of the bell opening** to "catch" the sound.
+2. Close the fingers together. Line up the **first knuckle of your thumb** with the **largest knuckle of your index finger** and bend the thumb a little.
+3. **Cup** the hand as if catching rainwater.
+4. Slide it into the bell so that only the **nail sides of your fingers** touch the side of the bell away from your body, until your **knuckles** meet the horn.
+   Keep the fingers together and the hand cupped.
+
+## Embouchure and your first buzz {#embouchure}
+
+1. Wet your lips and shape the inside of your mouth and throat as if saying **"oh" or "ah"**; bring your lips together as if saying **"em"**.
+2. Take a full breath and blow through the closed lips: a relaxed **buzz**.
+3. Take the mouthpiece off the horn, hold it by the shank, and keep your head straight. Bring it to your lips angled slightly down and **centred
+   on the buzz**, about **two thirds up, one third down**. **Not too much pressure**, and check in a mirror (the bottom of the mouthpiece may sit
+   in the middle of your bottom lip).
+4. Take a full breath and play a **long, steady buzz**.
+
+## Explore the chart {#explore}
+
+Pick a type of horn, then a note. The card shows the staff, the levers (dark = pressed down) and the fingering for each side, and the other
+notes the same fingering plays. On a **double horn** both sides are shown; the outlined one is the side the book suggests at that height
+(**F side below written G♯4/A♭4, B♭ side from there up**). **Hear it** plays the band's French horn sound (a synthesized buzz if the samples do not load).
+
+* The staff and names show **written** pitch (what the player reads); choose **Concert pitch** to see what you hear, a fifth lower.
+* One fingering gives **many notes**: a note is a *fingering* (which levers, which side) plus a *partial* (how tight your lips and how fast
+  your air). The partial numbers on this page are worked out by the page, not printed on the chart.
+
+```{=html}
+<div id="hn-explorer"></div>
+```
+
+## Press levers: which notes? {#build}
+
+Press levers (and the thumb on a double horn) and the page lists every note on the chart that fingering can play on that side. In the quiz you
+are given a note and press its levers; on a double horn either side is accepted.
+
+```{=html}
+<div id="hn-builder"></div>
+```
+
+## The printed chart, as a table {#table}
+
+Each row is a written note; the columns are the F-horn fingering and the B♭-horn fingering as printed. This is the same information as the book's
+chart. Two cells print two choices on the F side (C♯5: **2** or **1 2**; D5: **0** or **1**).
+
+```{=html}
+<div id="hn-table"></div>
+```
+
+## Fixing tone problems {#tone}
+
+The book's table of tone problems (it appears in its trumpet chapter and fits horn too, because the sound starts the same way):
+
+| Sound | Possible causes | What to try |
+|---|---|---|
+| **No tone, rushing air** | lips not together; too much pucker; blowing instead of buzzing; dry lips or mouthpiece; not enough air | re-form the "em" lips; practise buzzing without the mouthpiece; wet lips and mouthpiece; review breathing and use faster air |
+| **Airy tone** (a little is normal until the lips begin to vibrate on their own) | lips not together; too much pucker | re-form and keep the "em" position |
+| **Tight, thin, pinched tone** | tense, tightly pursed lips (biting); too much pucker; tight, closed throat | relax, re-form "em" with less pursing and no pucker; review breathing, a **yawn** with the head up |
+| **Stopped sound** (throat or buzz restricted) | tense, pursed lips; too much mouthpiece pressure; tight, closed throat | relax; ease the grip of the hand on the instrument (the book's wording here is written for trumpet); review breathing, yawn with the head up |
+
+## Playing in tune {#tuning}
+
+The book's horn pages do not have a tuning section. What they do say about pitch: the horn's **partials are closer together on the F side**, so notes
+are easier to miss there than on the B♭ side; and the right hand in the bell changes the pitch (the old "hand-horn" technique). Everything else on
+tuning (how far to pull the main tuning slide, which notes run sharp or flat) is not in the book and not claimed here: ask your teacher.
+
+## Daily care {#care}
+
+**Emptying water (general).** Hold the horn on your lap with the mouthpiece pointing up and the bell to the right. Take the mouthpiece out with your
+right hand. Keeping the horn square to your lap, **rotate it to the right** until the lead pipe points to the floor over your right leg (it may
+take more than one full turn to move the water into the slide), take out the slide that now points down, empty it, and put it back.
+
+**Emptying the valve slides.** With the bell on your lap and the valves up, **press all three levers and the thumb lever**, and slowly turn the horn left until the
+bell faces the ceiling. Let go of the first and second levers, keeping the third down. Turn the horn back to the right with the bell on your thigh,
+remove the **third valve slide** and empty it, then put it back **with its lever still pressed**. Empty the other slides the same way (always press the
+matching lever when taking a slide out or putting it in).
+
+**Oiling the valves (daily).** Take out **one** valve slide (matching lever pressed), turn the horn so the slide's opening in the body faces up, put **3 or 4 drops**
+of rotary or valve oil in that hole while moving the lever up and down, turn back and replace the slide with the lever pressed. Do it for every valve.
+
+**Oiling the valve bearings (often).** Unscrew the valve cap at the top or bottom of the valve (depending on the model) without touching the valve, put **one drop** of oil
+on the small raised circle, put the cap back and work the valve quickly. Do it for each valve, then add a drop to each valve stem.
+
+**Greasing the slides (regularly).** One slide at a time: press its lever and pull it out (no lever for the main tuning slide), wipe off the old grease, put on **plenty** of new grease,
+put the slide back with the lever pressed, work it in and out, push it fully in and wipe off the extra.
+
+**Stringing a rotary valve.** Strings on the levers wear out and may need replacing **twice a year**. You need a small screwdriver, scissors, rotary-valve string,
+two craft sticks and tape. Loosen the two string screws (not so far that they fall out), take out the broken string, tape two craft sticks together and slide them over
+the levers to keep the heights even, knot one end of about **8 inches** of string, thread it through the hole in the lever arm, take it past the centre cylinder and
+**counter-clockwise** around it, wrap it **clockwise** around the loosened screw, then pull it tight around the screw on the far side. (The book shows pictures for steps 4-7; this is a summary, so follow the book or your teacher the first time.)
+
+**Putting it away.** Take the mouthpiece off and put it in the case, wipe the horn with a soft clean cloth, put it in the case and latch it.
+
+## Choosing a horn player {#selecting}
+
+The book lists the qualities it recommends for a student horn player (this is for teachers): lips thin to medium; straight, even front teeth (an overbite matters less
+on horn than on trumpet); can sing a common folk song; a very good sense of pitch; confidence; good work habits and achievement; and parental support. These are the book's
+opinions about picking players, not rules.
+
+## What is unverified {#unverified}
+
+These are the things this page is not sure of. Check them with your teacher.
+
+- The **book's title, author and publisher** are not on the pages seen: only the footer code "W74". The page cites it as an unidentified teacher resource.
+- The **written-to-concert fifth** (a horn in F sounds a perfect fifth below the written note) and the **sizes the levers lower the pitch** (lever 1 a whole step, 2 a half step, 3 a step and a half) are standard facts, not printed on the chart.
+- The **partial numbers** and the "other notes this fingering plays" lists are worked out by this page from those sizes. The chart does not print partials.
+- The chart shows B♭-side fingerings for A♭4 (2 3) and A4 (1 2) as printed; a B♭ horn can also play A4 as an open harmonic, which this page does not show.
+- The chart's switch point on a double horn (written G♯4/A♭4) is the book's recommendation. Players and teachers differ.
+- The levers in the diagram are traced from a template with three tear-drop shapes; the **thumb lever** picture is the page's own.
+- The horn pages of the book have **no tuning section**; the tone-problems table is from the book's trumpet chapter.
+- The sound is the band's French horn sample set (a soundfont, not a recording of a particular horn); if it fails to load the page falls back to a synthesized buzz.
+
+```{=html}
+<script>
+HornPage.explorer(document.getElementById("hn-explorer"));
+HornPage.builder(document.getElementById("hn-builder"));
+HornPage.chartTable(document.getElementById("hn-table"));
+</script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"French horn." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/French_horn](https://en.wikipedia.org/wiki/French_horn). Unverified: that a horn in F sounds a perfect fifth below written pitch, and the sizes the levers lower the pitch (1 whole step, 2 half step, 3 step and a half). Not yet re-read.
+
+**For teachers**
+
+"Horn." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 176-89. Scan pages checked: history, instrument family p. 176; selecting players and parts diagram p. 183; assembly, posture, hand position p. 184; notes on posture and embouchure p. 185; daily care p. 186; oiling and greasing p. 187; stringing a rotary valve p. 188; Horn Fingering Chart (written pitch, treble clef, F3-C6: F-horn fingering on top, B-flat horn in brackets, 'use either on a double horn', switch at G-sharp4/A-flat4) p. 189. The Tone Production Problems and Remedies table is read from the scan's printed p. 169 (trumpet chapter). No tuning section for horn in the pages seen. Retold in the page's own words; the lever picture is traced from a three-lever template (horn.ai), the thumb lever is the page's own. Printed page numbers of the chart page and of the pages with clipped headers are unverified.
+:::
+<!-- /works-cited -->

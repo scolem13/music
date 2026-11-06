@@ -10,7 +10,7 @@ description: "How to find and name the chords in a short passage: collect the no
 <script src="/apps/shared/abcjs-basic.js?v=5"></script>
 <script src="/apps/shared/abc-play.js?v=27"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
-<script src="/apps/shared/analysis/chord-analysis.js?v=8"></script>
+<script src="/apps/shared/analysis/chord-analysis.js?v=10"></script>
 ```
 
 This page teaches one method for working out the chords in a short passage of music, and gives you passages to practise on. The
@@ -109,11 +109,50 @@ to the next number. The bass note is still the lowest one.
 Now a melody sits over the chords: an Alberti bass (bottom, top, middle, top) or held chords. Most melody notes belong to the chord,
 but some short ones on the second half of a beat don't. A **passing tone** steps between two chord tones (G–**A**–B over a G chord); a
 **neighbor tone** steps away and comes back (E–**F**–E). Leave them out before you stack. Chapter 10 of Hutchinson names the other
-kinds; the exercises here use only these two.
+kinds; the stage's exercises use only these two (the chapter 10 level, below, uses all six).
 
 <div class="chord-analysis" data-example data-settings="level=ch8b&texture=melody&key=C major&prog=I vi ii65 V7 I&seed=7"></div>
 
 <div class="chord-analysis" data-settings="level=ch8b&texture=melody"></div>
+
+## Function and cadences (chapter 9)
+
+Once you can name the chords, say what each one does. Hutchinson's chapter on harmonic function sorts the chords into four jobs:
+**T** (tonic: I), **TP** (tonic prolongation: vi and iii, and IV when it goes straight to I), **PD** (pre-dominant: ii and IV) and
+**D** (dominant: V and vii°, and I64 when it goes on to V). Choose the label under each chord, then name the cadence at the end:
+**authentic** (V to I), **plagal** (IV to I), **deceptive** (V to vi) or **half** (the passage stops on V). Choose "9. Harmonic function"
+in the level setting below.
+
+<div class="chord-analysis" data-example data-settings="level=ch9&texture=satb&key=C major&prog=I vi ii V I&seed=3"></div>
+
+<div class="chord-analysis" data-settings="level=ch9&texture=satb"></div>
+
+Two things here are the site's reading, not checked against the book: minor III as TP, and calling every V-to-I ending "authentic"
+(the book's perfect and imperfect authentic cadences depend on the voices, which the exercise doesn't ask about).
+
+## Non-chord tones by name (chapter 10)
+
+Stage 5 only asked you to leave non-chord tones out. In this level each one is marked with a small letter under the staff, and you
+name it. The six kinds, as Hutchinson defines them by how the note is approached and left:
+
+| Kind | Approached by | Left by | Here |
+|---|---|---|---|
+| Passing tone | step | step, the same direction | off the beat |
+| Neighbor tone | step | step back to the same note | off the beat |
+| Escape tone | step | leap, the opposite direction | off the beat |
+| Appoggiatura | leap | step | on the beat |
+| Suspension | the same note (held over from the chord before) | step down | on the beat |
+| Anticipation | step | the same note again (it belongs to the next chord) | off the beat |
+
+The level always uses the melody stage, whatever the Stage setting says. Name each chord as usual, then choose a type under each letter.
+
+<div class="chord-analysis" data-example data-settings="level=ch10&texture=melody&key=C major&prog=I IV V I&seed=11"></div>
+
+<div class="chord-analysis" data-settings="level=ch10"></div>
+
+Not made here: the pedal point (a held note under changing chords, which the exercise's bass line can't show), the retardation (a
+suspension that resolves up), and the double and incomplete neighbors. Passing tones can also be accented in the book; here they are
+all off the beat. The book doesn't say whether an escape tone is accented.
 
 ## Naming the chord
 
@@ -150,10 +189,10 @@ with every answer, and to check that it wasn't changed.
 These steps are planned but not built yet. The checker already reads applied chords (V7/V) and the Neapolitan (N6), so most of the
 work is new progressions and new **Steps** text.
 
-- **Chapter 9, function.** After naming each chord, choose T, TP, PD or D (the book's flowcharts, as in the *Harmonic function* drill),
-  and name the cadence at the end.
-- **Chapter 10, non-chord tones by name.** Mark each non-chord tone and name it (passing, neighbor, suspension, appoggiatura, escape tone,
-  anticipation), with accented ones on the beat. Stage 5 would add suspensions, which change what "the chord's beats" means.
+- **Chapter 9, function: built** (level 9 above). Still to add: perfect and imperfect authentic cadences, the cadential 64 as its own
+  label, and the minor VII (which the book says only goes to III).
+- **Chapter 10, non-chord tones by name: built** (level 10 above). Still to add: the pedal point, the retardation, double and incomplete
+  neighbors, accented passing tones, and non-chord tones in the other stages.
 - **Chapter 16, figures.** Answers in figures only (I6, V65), and the cadential 6/4 (I64 before V, Cad64 accepted).
 - **Chapters 17–18, applied chords.** A note outside the key: look at the next chord. A major chord or dominant 7th a 5th above it is
   V(7)/x; a diminished chord a half step below it is vii°(7)/x.
@@ -166,7 +205,7 @@ work is new progressions and new **Steps** text.
 
 - **Links:** each exercise's **Copy a link to this passage** gives a link to this page with that level, stage and passage (`seed=`).
   Everyone who opens it gets the same passage. Add `&lock=1` to hide the settings.
-- **Settings in a link:** `level` (ch6a ch6b ch7a ch7b ch8a ch8b), `texture` (rh guitar satb broken melody mixed), `task` (both stack name),
+- **Settings in a link:** `level` (ch6a ch6b ch7a ch7b ch8a ch8b ch9 ch10), `texture` (rh guitar satb broken melody mixed), `task` (both stack name),
   `entry` (tap staff rotate type), `answer` (auto sym rn), `tenor` (bass treble), `mode`, `most` (0–5), `key` (show find), `rhythm` (auto bar half).
 - **What counts as right:** a name is right when it means the same spelled notes over the same bass: I6 = I/3rd, V65 = V7/3rd, a = Am.
   Spelling counts (A♭ is not G♯). Root-position levels don't ask for the bass, so a slash or a figure there isn't needed.

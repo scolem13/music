@@ -1,0 +1,23 @@
+X:1
+C:Harry Rowe Shelley
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=95
+M:6/8
+K:Bb
+V:1 treble-8 nm="Tenor 1" snm="T1"
+%%MIDI program 52
+V:2 treble-8 nm="Tenor 2" snm="T2"
+%%MIDI program 52
+V:3 bass nm="Bass 1" snm="B1"
+%%MIDI program 52
+V:4 bass nm="Bass 2" snm="B2"
+%%MIDI program 52
+V:1
+"^Gracefully"!p! d3 B2 c | d3 B2 c |!<(! d3!<)!!>(! f2 e!>)! | d6 | =B2 c (e2 d) | !<(! =B c2- c2!<)! c | (!>!f2 d) (!>!f2 d) |!>(! (c3 ^c3)!>)! | d3 B2 =c |"^cresc." d3 B2 c | !f! d !>!g2- g2 f | B6 | e3 d2 c | e"^dim." c2- c2 d |!p! B6- | B z [Q:1/4=115]!mf!"^animato"!<(! B c2 d!<)! | c2 B G2 B | c2 d c2 d | c2 B !>!e!>!d!>!c | !>!d!>!c!>!d c3 |!<(! B3!<)! !>!g2 !>!g | !>!g3- g2 f | e2 d [Q:1/4=80]"^rit." (cB)c | !>(! !fermata!d6!>)! |[Q:1/4=95]"^Tempo I" (ede) =B2 c | e c2- c3 |!<(! f3-!<)! f2 !>!f | !>!f d2- d3 |!f! !>!B!>!B!>!c (!>!d!>!!fermata!g) f | (eB) c!>(! !fermata!^c3!>)! |1!p! (d6 | !fermata!e6) |!<(! d z f =e2!<)! f |!>(! !fermata!d6!>)! :|2 d d2 z2!p! !fermata!g || f3 !fermata!e2 z | z2!<(! f =e2!<)!!>(! f | !fermata!d6!>)! |]
+V:2
+!p! B3 G2 A | B3 G2 A |!<(! B3!<)!!>(! B2 B!>)! | B6 | =B2 c (e2 d) |!<(! =B c2- c2!<)! c | (!>!d2 A) (!>!d2 A) |!>(! A6!>)! | B3 G2 A |"^cresc." B3 G2 A |!f! B !>!d2- d2 d | B6 | B3 B2 B | A"^dim." A2- A2 A |!p!!<(! B2 F!<)!!>(! G2 F!>)! | B z z z3 |!p! G3 B3 | _A3 A3 | G3 B3 | _A3 A3 | !<(! (G_AB)!<)! !>!e2 !>!e | !>!f3- f2 d | c2 G"^rit." G2 G |!>(! !fermata!A6!>)! | A3 A2 A | A A2 A3 |!<(! (ede!<)! =B2) !>!c | !>!d _B2- B3 |!f! !>!B!>!B!>!c !>!!fermata!d2 d | B2 B!>(! !fermata!B3!>)! |1!p! (B6 | !fermata!A6) |!<(! F z F G2!<)! F |!>(! !fermata!F6!>)! :|2 B B2 z2!p! !fermata!=e || _e3 !fermata!c2 z | z2!<(! F G2!<)! F | !fermata!F6 |]
+V:3
+!p! (F,2 B,) G,2 _G, | (F,2 B,) =G,2 _G, |!<(! (F,2 D,)!<)!!>(! A,2 G,!>)! | F,6 | ^G,2 A, (C2 B,) |!<(! ^G, A,2- A,2!<)! A, | (!>!A,2 F,) (!>!A,2 F,) |!>(! F,6!>)! | (F,2 B,) G,2 _G, |"^cresc." (F,2 B,) =G,2 _G, |!f! F, !>!B,2- B,2 _A, | G,6 | G,3 F,2 E, | G,"^dim." E,2- E,2 F, |!p!!<(! D,2 D,!<)!!>(! =E,2 D,!>)! | D, z z z3 |!p! E,3 G,3 | F,3 F,3 | E,3 G,3 | F,3 D,3 |!<(! (E,F,G,)!<)! !>!B,2 !>!B, | =B,2 !>!B, !>!D2 B, | G,2 F,"^rit." E,2 G, | !>(! !fermata!^F,6!>)! | (G,F,G,) D,2 E, | G, E,2- E,3 |!<(! (C=B,C!<)! ^G,2) !>!A, | !>!B, F,2- F,3 |!f! !>!B,!>!B,!>!B, !>!D!>!!fermata!B, _A, | G,2 G,!>(! !fermata!_G,3!>)! |1 "^Solo" D F,2 z2 D | C F,2 !fermata!z2 C |!<(! B,6-!<)! |!>(! !fermata!B,6!>)! :|2 D F,2 z2!p! !fermata!_D || C3 !fermata!A,2 C |!<(!!>(! B,6-!<)!!>)! | !fermata!B,6 |]
+V:4
+!p! B,,3 B,,2 B,, | B,,3 B,,2 B,, |!<(! B,,3!<)!!>(! B,,2 B,,!>)! | B,,6 | F,2 F, F,3 | !<(! F, F,2- F,2!<)! F, | (!>!F,2 F,) (!>!F,2 F,) |!>(! (E,3 F,,3)!>)! | B,,3 B,,2 B,, | "^cresc." B,,3 B,,2 B,, |!f! B,, !>!B,,2- B,,2 B,, | E,6 | C,3 C,2 C, | F,,"^dim." F,,2- F,,2 F,, | !p!!<(! B,,2 D,!<)!!>(! ^C,2 D,!>)! | B,, z z z3 |!p! E,3 B,,3 | D,3 B,,3 | E,3 B,,3 | F,3 B,,3 | !<(! E,3!<)! !>!E,2 !>!E, | G,2 !>!G, !>!=B,2 G, | C,2 C,"^rit." (E,3 | D,2) A,,!>(! !fermata!D,3!>)! | F,,3 F,,2 F,, | F,, F,,2- F,,3 |!<(! F,3-!<)! F,2 !>!F, | !>!B, B,,2- B,,3 |!f! !>!B,!>!B,!>!B, !>!B,!>!!fermata!_A, B,, | E,2 E,!>(! !fermata!=E,3!>)! |1 !p! F,,6- | !fermata!F,,6 |!<(! B,, z D, ^C,2!<)! D, |!>(! !fermata!B,,6!>)! :|2 F, F,,2 z2!p! !fermata!B, || A,3 !fermata!F,,2 z | z2!<(! D,!<)!!>(! ^C,2 D,!>)! | !fermata!B,,6 |]

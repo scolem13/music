@@ -4,6 +4,8 @@ description: "Every tool on the site, grouped by what you're doing."
 toc: false
 ---
 
+## Tools by task
+
 ```{=html}
 <style>
 .home-intro { font-size: 1.05rem; color: var(--site-ink-2); max-width: 48rem; margin: 0 0 1.25rem; line-height: 1.7; }

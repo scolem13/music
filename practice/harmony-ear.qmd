@@ -10,7 +10,7 @@ toc-depth: 2
 <script src="/apps/shared/band/sounds.js?v=23"></script>
 <script src="/apps/shared/satb.js?v=2"></script>
 <script src="/apps/shared/degree-names.js?v=1"></script>
-<script src="/apps/patterns/harmony-ear.js?v=8"></script>
+<script src="/apps/patterns/harmony-ear.js?v=11"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
 <style>
 .he-panel { --he-line: var(--site-line, #ced4da); --he-mute: var(--site-ink-2, #6c757d); --he-acc: var(--site-accent, #2780e3);

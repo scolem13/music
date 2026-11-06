@@ -1,0 +1,22 @@
+X:1
+Z:Das Wohltemperierte Klavier I
+%%score { ( 1 4 ) | ( 2 3 ) }
+L:1/8
+M:4/4
+K:C
+V:1 treble nm="1."
+%%MIDI program 0
+V:4 treble 
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:3 bass 
+%%MIDI program 0
+V:1
+z G/c/ e/G/c/e/ z G/c/ e/G/c/e/ | z A/d/ f/A/d/f/ z A/d/ f/A/d/f/ | z G/d/ f/G/d/f/ z G/d/ f/G/d/f/ | z G/c/ e/G/c/e/ z G/c/ e/G/c/e/ | z A/e/ a/A/e/a/ z A/e/ a/A/e/a/ | z ^F/A/ d/F/A/d/ z F/A/ d/F/A/d/ | z G/d/ g/G/d/g/ z G/d/ g/G/d/g/ | z E/G/ c/E/G/c/ z E/G/ c/E/G/c/ | z E/G/ c/E/G/c/ z E/G/ c/E/G/c/ | z D/^F/ c/D/F/c/ z D/F/ c/D/F/c/ | z D/G/ B/D/G/B/ z D/G/ B/D/G/B/ | z E/G/ ^c/E/G/c/ z E/G/ c/E/G/c/ | z D/A/ d/D/A/d/ z D/A/ d/D/A/d/ | z D/F/ B/D/F/B/ z D/F/ B/D/F/B/ | z C/G/ c/C/G/c/ z C/G/ c/C/G/c/ | z A,/C/ F/A,/C/F/ z A,/C/ F/A,/C/F/ | z A,/C/ F/A,/C/F/ z A,/C/ F/A,/C/F/ | z G,/B,/ F/G,/B,/F/ z G,/B,/ F/G,/B,/F/ | z G,/C/ E/G,/C/E/ z G,/C/ E/G,/C/E/ | z _B,/C/ E/B,/C/E/ z B,/C/ E/B,/C/E/ | z A,/C/ E/A,/C/E/ z A,/C/ E/A,/C/E/ | z A,/C/ _E/A,/C/E/ z A,/C/ E/A,/C/E/ | z B,/C/ D/B,/C/D/ z B,/C/ D/B,/C/D/ | z G,/B,/ D/G,/B,/D/ z G,/B,/ D/G,/B,/D/ | z G,/C/ E/G,/C/E/ z G,/C/ E/G,/C/E/ | z G,/C/ F/G,/C/F/ z G,/C/ F/G,/C/F/ | z G,/B,/ F/G,/B,/F/ z G,/B,/ F/G,/B,/F/ | z A,/C/ ^F/A,/C/F/ z A,/C/ F/A,/C/F/ | z G,/C/ G/G,/C/G/ z G,/C/ G/G,/C/G/ | z G,/C/ F/G,/C/F/ z G,/C/ F/G,/C/F/ | z G,/B,/ F/G,/B,/F/ z G,/B,/ F/G,/B,/F/ | z G,/_B,/ E/G,/B,/E/ z G,/B,/ E/G,/B,/E/ | z F,/A,/ C/F/C/A,/ C/A,/F,/A,/ F,/D,/F,/D,/ |  z G/B/ d/f/d/B/ d/B/G/B/ D/F/E/D/ | !fermata!C,8 |]
+V:2
+z/ E3/2- E2 z/ E3/2- E2 | z/ D3/2- D2 z/ D3/2- D2 | z/ D3/2- D2 z/ D3/2- D2 | z/ E3/2- E2 z/ E3/2- E2 | z/ E3/2- E2 z/ E3/2- E2 | z/ D3/2- D2 z/ D3/2- D2 | z/ D3/2- D2 z/ D3/2- D2 | z/ C3/2- C2 z/ C3/2- C2 | z/ C3/2- C2 z/ C3/2- C2 | z/ A,3/2- A,2 z/ A,3/2- A,2 | z/ B,3/2- B,2 z/ B,3/2- B,2 | z/ _B,3/2- B,2 z/ B,3/2- B,2 | z/ A,3/2- A,2 z/ A,3/2- A,2 | z/ _A,3/2- A,2 z/ A,3/2- A,2 | z/ G,3/2- G,2 z/ G,3/2- G,2 | z/ F,3/2- F,2 z/ F,3/2- F,2 | z/ F,3/2- F,2 z/ F,3/2- F,2 | z/ D,3/2- D,2 z/ D,3/2- D,2 | z/ E,3/2- E,2 z/ E,3/2- E,2 | z/ G,3/2- G,2 z/ G,3/2- G,2 | z/ F,3/2- F,2 z/ F,3/2- F,2 | z/ C,3/2- C,2 z/ C,3/2- C,2 | z/ F,3/2- F,2 z/ F,3/2- F,2 | z/ F,3/2- F,2 z/ F,3/2- F,2 | z/ E,3/2- E,2 z/ E,3/2- E,2 | z/ D,3/2- D,2 z/ D,3/2- D,2 | z/ D,3/2- D,2 z/ D,3/2- D,2 | z/ _E,3/2- E,2 z/ E,3/2- E,2 | z/ E,3/2- E,2 z/ E,3/2- E,2 | z/ D,3/2- D,2 z/ D,3/2- D,2 | z/ D,3/2- D,2 z/ D,3/2- D,2 | z/ C,3/2- C,2 z/ C,3/2- C,2 | z/ C,3/2- C,2- C,4 | z/ C,3/2- C,2- C,4 | !fermata!C,,8 |]
+V:3
+C4 C4 | C4 C4 | B,4 B,4 | C4 C4 | C4 C4 | C4 C4 | B,4 B,4 | B,4 B,4 | A,4 A,4 | D,4 D,4 | G,4 G,4 | G,4 G,4 | F,4 F,4 | F,4 F,4 | E,4 E,4 | E,4 E,4 | D,4 D,4 | G,,4 G,,4 | C,4 C,4 | C,4 C,4 | F,,4 F,,4 | ^F,,4 F,,4 | _A,,4 A,,4 | G,,4 G,,4 | G,,4 G,,4 | G,,4 G,,4 | G,,4 G,,4 | G,,4 G,,4 | G,,4 G,,4 | G,,4 G,,4 | G,,4 G,,4 | C,,4 C,,4 | C,,4- C,,4 | C,,4- C,,4 | x8 |]
+V:4
+x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | !fermata![EGc]8 |]

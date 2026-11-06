@@ -1,0 +1,16 @@
+X:1
+C:Béla Bartók
+Z:Public Domain (PianoXML typeset)
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=120
+M:2/4
+K:C
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+"^Allegro" !tenuto!C2 .C._B, | !tenuto!C2 .C._B, |!<(! .C.D._E.G!<)! |!>(! .F.D.!1!C.!2!_B, | .!4!D!>)! !tenuto!!3!C3 |!mf! !tenuto!G2 .G.F | !tenuto!G2 .G.F |!<(! .G.A._B.d!<)! | !>(! .c.A.G.F!>)! | .A !tenuto!G3 ||!mf! !tenuto!!3!c2 .c._B | .!1!c.d._e.g | !tenuto!!2!_A2 .A.G | !>(! ._A._B.c.d!>)! |!p! !tenuto!!1!F2!<(! .F.!2!_E | .!1!F.G._A._B!<)! | !>(! .c._B.!1!G.!3!_E!>)! | ._B, C3- | C4 |!>(! !3!_B!1!G!3!_E!4!F!>)! |"_dim." .!2!_B, C3- | !pp! C2"_sempre" .!3!C._B, |"_cresc." C2 .C._B, | C2 .C._B, | C2 .C._B, | C2 .C._B, | !mf! .C!<(!.D._E.F!<)! |!>(! .G.F._E.C!>)! |!p! ._B, C3- | C2 z2 |!p! !tenuto!!3!c2!>(! .c._B | .!1!c.d._e.g!>)! | !tenuto!!2!_A2 .A.G |!>(! ._A._B.c.d!>)! | z4 | !tenuto!!3!F2 .F._E | !<(! .!1!F.G._A._B!<)! |!>(! .!5!c._B.!1!G.!3!_E!>)! | .!2!_B, !3!C3- | C4 | !pp! .!4!_A.!5!_B.!2!_E.!3!F | ._B, C3- | C4- | C2"_accel." .C._B, | !tenuto!C2 .C._B, | !pp!"^Tempo I" !tenuto!C2"_cresc." .C._B, | !tenuto!C2 .C._B, | !tenuto!C2 .C._B, | !tenuto!C2 .C._B, |!<(! .!1!C.D._E.F!<)! |!>(! .G.F._E.C!>)! | .!2!_B, C3- | C4 |]
+V:2
+!p! z4 | z4 | z4 | z4 | z4 | !tenuto!G,2 .G,.F, | !tenuto!G,2 .G,.F, | .G,.A,.!3!_B,.!1!D | .!2!C.!3!A,.G,.F, | .A, !tenuto!G,3 ||!p! .[_A,_B,].[A,B,] z2 | .[G,_B,].[G,B,] z2 | .[F,G,].[F,G,] z2 | .[_E,G,].[E,G,] z2 | .[D,_E,].[D,E,] z2 | .[C,_E,].[C,E,] z2 | z4 | .[_B,,_E,].[B,,E,] z2 | .[_A,,_E,].[A,,E,] z2 | z4 | .[G,,C,].[G,,C,] z2 | .[F,,C,].[F,,C,] z2 | z4 | .[F,,C,].[F,,C,] z2 | .[F,,C,].[F,,C,] z2 | .[F,,C,].[F,,C,] z2 | .[F,,C,].[F,,C,] z2 | z4 | z4 |!pp! .[C,,G,,].[C,,G,,] z2 | z4 |!pp! .[G,_B,].[G,B,] z2 | .[F,_A,].[F,A,] z2 | .[_E,G,].[E,G,] z2 | .[D,F,].[D,F,] z2 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | !ppp! .[G,,C,].[G,,C,] z2 | .[F,,C,].[F,,C,] z2 | z4 | ([F,A,]C,[F,A,]C, | [F,A,]C,[F,A,]C, | [F,A,]C,[F,A,]C, | [F,A,]C,[F,A,]C, | [F,A,]C,[F,A,]C, | [F,A,]C,[F,A,]C, | [C,_E,G,]4-) | [C,E,G,]4 |]

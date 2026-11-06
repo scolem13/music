@@ -1,4 +1,4 @@
-// node tests/harmony/harmony-ear.test.js — the pure parts of apps/patterns/harmony-ear.js
+// node tests/harmony/harmony-ear.test.js — the pure parts of apps/patterns/harmony-ear.js  (NEG=1 puts a chord outside a level's answer buttons: must fail)
 const assert = require("assert");
 global.SATB = require("../../apps/shared/satb.js") && globalThis.SATB;
 const H = require("../../apps/patterns/harmony-ear.js");
@@ -20,6 +20,7 @@ let n = 0;
 for (const p of H.PATHS) for (const lv of p.levels) {
   for (const m of lv.modes) {
     const set = H.modeSet(lv, m, { len: 4 });
+    if (process.env.NEG && lv.id === "A1" && m === "major") set.progs[0] = set.progs[0].concat(["bII7"]);
     assert.ok(set.pool.length, lv.id + " pool");
     for (const pr of set.progs) for (const t of pr) {
       assert.ok(H.parse(t), lv.id + " bad token " + t);
@@ -66,3 +67,24 @@ for (const toks of [["I", "IV", "V7", "I"], ["i", "iv", "V7", "i"], ["Imaj7", "v
   const e = ["I", "V7/V", "V7", "I"], abc3 = H.toAbc([e], [H.voice(e, 0, { voices: 4, own: true })], [[0, 0, 0, 0]], { restPc: 0, mode: "major" });
   assert.ok(/\^F/.test(abc3), "V7/V in C has F#: " + abc3); }
 console.log("harmony-ear: ok,", n, "questions");
+
+// Q2, the sung bass: Segmenter makes notes from mic frames; sungFill puts them against the expected bass (NEG=1 breaks the check: must fail)
+{
+  const got = []; const seg = H.Segmenter(m => got.push(m));
+  const fr = (m, k) => { for (let i = 0; i < k; i++) seg.frame({ midi: m, hz: m ? 440 : 0 }); };
+  fr(48, 4); fr(0, 2); fr(48, 3); fr(55, 5); fr(0, 1); fr(48, 2);   // C3, gap, C3 again, G3, a one-frame gap, a two-frame blip (no note)
+  assert.deepEqual(got, [48, 48, 55], "segmenter notes " + got);
+  const q = H.question(H.path("mlt").levels[0], "sing", { len: 3, inv: "many" }, Math.random);
+  assert.equal(q.kind, "bass"); assert.ok(q.sing); assert.ok(q.invs[0].every(x => x === 0), "sung bass is the roots");
+  const rest = 7, mode = q.mode, ans = q.answer;
+  const rel = a => H.sylToRel(a, mode);
+  // every expected note sung in another octave: all right
+  const right = ans.map((a, i) => 36 + 12 * (i % 2) + (rest + rel(a)) % 12);
+  assert.deepEqual(H.sungFill(ans, right, rest, mode), ans);
+  // one note a semitone off is marked wrong; a missing note stays empty
+  const off = right.slice(); off[0] += 1;
+  const f = H.sungFill(ans, off, rest, mode); assert.notEqual(f[0], ans[0], "wrong note must not match");
+  const short = H.sungFill(ans, right.slice(0, 1), rest, mode); assert.equal(short[1], null);
+  if (process.env.NEG) assert.deepEqual(H.sungFill(ans, off, rest, mode), ans, "NEG: a wrong note must fail");
+}
+console.log("harmony-ear sung bass: ok");

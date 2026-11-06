@@ -1,0 +1,24 @@
+X:1
+C:Sigurd Lie
+Z:Andres Aas
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=70
+M:4/4
+K:Bb
+V:1 treble-8 nm="T1"
+%%MIDI program 52
+V:2 treble-8 nm="T2"
+%%MIDI program 52
+V:3 bass nm="Baryton"
+%%MIDI program 52
+V:4 bass nm="Bass"
+%%MIDI program 52
+V:1
+"^Ikke for langsomt"!f! B3 B F2 G2 | D2 E2 F2 F2 | z2!mf! B3/2 B/ B3/2 c/ c d | f6 z2 | g3 g d2 f2 | B2 c2 d2 d2 | z2 c3/2 c/ c3/2 c/ d =e | f6 z2 | f3 c d3/2 d/ d3/2 d/ | e2 e2 z2 e3/2 e/ | d3 B f2 d2 | c6 z2 |!f! (f3 f) f2 z2 |!ff! (g3 g) g2 z2 | g3/2 g/ d d f e d c | B2 c2 d2 e2 | c4 f4 | B6 z2 :|!f!"^Coda" d3 d d3/2 d/ d3/2 d/ | !^!d2 !^!d2 z4 | d3 d d3/2 d/ d3/2 d/ | !^!f2 !^!f2 z4 | !^!g7/2 g/ f3 z | !^!g7/2 g/ f3 z | z4 z2 f3/2 f/ | !ff! b6 z2 |]
+V:2
+!f! B3 B F2 G2 | D2 E2 F2 F2 | z2!mf! F3/2 F/ F3/2 A/ A B | d6 z2 | d3 d B2 c2 | G2 A2 B2 B2 | z2 B3/2 B/ B3/2 B/ B B | A6 z2 | c3 A B3/2 B/ B3/2 B/ | F2 F2 z2 A3/2 A/ | B3 B B2 F2 | F6 z2 | !f! (d3 d) c2 z2 |!ff! (e3 e) d2 z2 | d3/2 d/ d d B B G G | F2 B2 d2 c2 | B4 A4 | B6 z2 :| !f! d3 d d3/2 d/ d3/2 d/ | !^!B2 !^!B2 z4 | B3 B B3/2 B/ B3/2 B/ | !^!d2 !^!d2 z4 | !^!e7/2 e/ d3 z | !^!e7/2 e/ d3 z | z4 c7/2 c/ |!ff! f6 z2 |]
+V:3
+!f! B,3 B, F,2 G,2 | D,2 E,2 F,2 F,2 | z2!mf! D,3/2 C,/ D,3/2 F,/ F, F, | B,6 z2 | B,3 B, B,2 A,2 | G,2 E,2 F,2 F,2 | z2 =E,3/2 E,/ C3/2 B,/ A, G, | F,6 z2 | A,3 C B,3/2 A,/ G,3/2 F,/ | B,2 A,2 z2 F,3/2 F,/ | F,3 G, F,2 B,2 | A,6 z2 |!f! (B,3 B,) A,2 z2 |!ff! (C3 C) B,2 z2 | B,3/2 B,/ B, B, A, G, F, E, | D,2 E,2 B,2 B,2 | C4 C4 | B,6 z2 :| z8 | z4!f! F,3/2 F,/ F,2 | z8 | z4!f! B,3/2 B,/ B,2 | z2 B,3/2 C/ D3 z | z2 B,3/2 C/ D3 z | z2 A,4- A,3/2 A,/ |!ff! D6 z2 |]
+V:4
+!f! B,3 B, F,2 G,2 | D,2 E,2 F,2 F,2 | z2!mf!!mf! D,3/2 C,/ D,3/2 F,/ F, F, | B,6 z2 | G,3 G, G,2 F,2 | E,2 C,2 B,,2 B,,2 | z2 C,3/2 C,/ C,3/2 C,/ C, C, | F,6 z2 | F,3 A, G,3/2 F,/ E,3/2 D,/ | C,2 C,2 z2 _C,3/2 C,/ | B,,3 E, D,2 B,,2 | F,6 z2 | !f! (B,3 B,) A,2 z2 |!ff! (C3 C) B,2 z2 | B,3/2 B,/ B, B, A, G, F, E, | D,2 E,2 G,2 _G,2 | F,4 F,4 | B,6 z2 :| z8 | z4!f! B,,3/2 B,,/ B,,2 | z8 | z4!f! B,,3/2 B,,/ B,,2 | z2 G,3/2 A,/ B,3 z | z2 G,3/2 A,/ B,3 z | F,4 F, z F,3/2 F,/ |!ff! [B,,B,]6 z2 |]

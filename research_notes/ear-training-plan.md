@@ -177,6 +177,32 @@ the tonal vocabulary.
 7. Works cited: `scripts/sources/mlt.py` entries for every page above, then `python3 scripts/works-cited.py`. Bump `?v=` on every
    shared script that changes.
 
+### Already covered (checked 2026-11-06)
+
+Hearing Harmony (`practice/harmony-ear.qmd`, `apps/patterns/harmony-ear.js`, 872 lines) was built after this plan was written and covers
+most of steps 1, 2 and 4 and part of 5. The ladder lives inside `harmony-ear.js` (`PATHS`), not in a separate `harmony-ladder.js`.
+
+| Step | Status |
+|---|---|
+| 1. Ladder data + Node test | DONE inside harmony-ear.js: paths mlt (A1-F2), rock (R1-R9), jazz (J1-J9), classical (K1-K8), custom. Test `node tests/harmony/harmony-ear.test.js` (6840 questions: every token parses, answers are among the buttons, voicings 3/4 voices, notation spelled; `NEG=1` now fails as the site's tests do). Not done: a separate `harmony-ladder.js` for the MLT planner and the `prog` drill to read (they can read `HarmonyEar.PATHS`; split the file only when one of them needs it). The ladder follows the plan's A-F with these differences: no A4 (I/V conversations are the longer A1/A2 progressions), B1-B3 are major IV, joined, minor (plan had B1 major, B2 minor, B3 joined), the 3-part singing mode (B4) is not there, Stage G is the rock/jazz/classical paths rather than hand-off links. |
+| 2. Engine + page, Stages A-B, Q1-Q3, Q5 | DONE and wider: question kinds `change` (Q1), `func` (Q3), `bass` (bass in solfege, a self-answered Q5-like), `same` (Q4), `mode`, `next` (Q6), `rn` (Q7), `inv`, `voice`. Test `tests/harmony/harmony-ear.cdp.js`. |
+| 3. Q2 sung bass with PitchDetect; tool 2 | NOT done. Harmony-ear is "no microphone" by design. Bass Lines by Ear (`bass-ear.js`) is a different task (same/different bass line over a tune), not Mullen L8 singing. |
+| 4. Stages C-F, Q4, Q6 | DONE (C1-C5, D1, E1-E2, F1-F2 present; Q4 `same`, Q6 `next`). Plan's D2/D3 (multitonal, parallel major-minor) are not separate levels. |
+| 5. Stage G hand-off, `prog level=`, Q7-Q8 | Q7 DONE (`rn`). Q8 (write via Dictation) not done. `prog` drill `level=` and the "Ear" boxes on theory chapters not done. Odd Progression Out (`prog-ear.js`) and Blues Changes by Ear (`blues-ear.js`) cover G2/G8-style "which clip differs" tasks. |
+| 6. Tool 4 (change-tapping in Timestamp Notes), tool 6 (improvise) | NOT done. |
+| 7. Works cited | Check `scripts/sources/` for the four pages; not checked here. |
+
+So the real remaining work is: Q2/tool 2 (sung bass, mic), B4 three-part singing, A4/D2/D3 as named levels, Q8 and Q9, tool 4, tool 6,
+the `prog level=` link and the theory "Ear" boxes, and Mullen's three Harmonic Translation kinds (Q5 as a verbal answer).
+
+### Reversible defaults for the open questions (section 7), until the teacher decides
+1. Voicing A-B: Hearing Harmony's setting (3 or 4 voices, voice-led); default stays as built. Switch is the existing "Voices" setting.
+2. Sung answers: self-check first (no mic), as built. Mic scoring is step 3 and sits behind a setting.
+3. Supertonic: Gordon's order in the "mlt" path (ii last); the "classical" path already brings ii in early. Both exist, so nothing to undo.
+4. One page or several: one page with modes. Splitting later only needs new .qmd files calling `HarmonyEar`.
+5. Progress: localStorage only (key `harmonyEar.v1`), as built.
+6. Mullen's videos: not linked; only the site's own band plays.
+
 ## 7. Open questions for Sean
 
 1. **Voicing in Stages A-B:** Gordon's three sung parts (closest to the books), or piano SATB from the start?
