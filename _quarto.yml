@@ -48,6 +48,7 @@ website:
             - lessons/pop-changes-piano.qmd
             - lessons/pop-changes-bass.qmd
             - lessons/four-chord-loops.qmd
+            - lessons/fills-riffs.qmd
         - section: "Rhythm and Percussion"
           contents:
             - lessons/hihat-grooves.qmd
@@ -441,6 +442,7 @@ website:
         - mlt/index.qmd
         - mlt/mullen.qmd
         - mlt/dmti.qmd
+        - mlt/jri-lsa.qmd
         - mlt/jri-sax.qmd
         - mlt/activities.qmd
         - mlt/rote-song.qmd
@@ -511,6 +513,7 @@ website:
           - text: "---"
           - mlt/mullen.qmd
           - mlt/dmti.qmd
+          - mlt/jri-lsa.qmd
           - mlt/jri-sax.qmd
           - mlt/activities.qmd
           - mlt/rote-song.qmd

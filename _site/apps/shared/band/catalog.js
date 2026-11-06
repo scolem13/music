@@ -149,6 +149,8 @@
       desc:"A two-bar pattern. First bar (shown): beat 1, the and of 2 held, beat 3. Second bar: beat 2 and the and of 3.", hits:[[0,"S"],[1.5,"L"],[3,"S"]] },
     { id:"tango", label:"Tango (habanera)", feel:"straight", group:"Latin", tags:["Tango","Latin"],
       desc:"A held chord on 1, then short ones on the and of 2, on 3 and on 4.", hits:[[0,"L"],[1.5,"S"],[2,"S"],[3,"S"]] },
+    { id:"guajeo", label:"Piano guajeo (broken octaves)", feel:"straight", group:"Latin", tags:["Son montuno","Salsa","Latin"],
+      desc:"The montuno rhythm played the salsa pianist's way: octaves in both hands with the chord's other notes between. The top note rocks between two chord tones: 1, 2, the and of 2, the and of 3, the and of 4; then every off-beat. Unheard: check by ear." },
     { id:"montuno", label:"Son montuno", feel:"straight", group:"Latin", tags:["Son montuno","Salsa","Latin"],
       desc:"A two-bar pattern of short chords. First bar (shown): 1, 2, the and of 2, the and of 3, the and of 4. Second bar: every off-beat. Here it is played as block chords, not the pianist's broken octaves.", hits:[[0,"S"],[1,"S"],[1.5,"S"],[2.5,"S"],[3.5,"S"]] },
     { id:"chacha", label:"Cha-cha", feel:"straight", group:"Latin", tags:["Cha-cha","Latin"],
@@ -302,7 +304,7 @@
     comp: { auto:"swing ballad boogaloo", charleston:"swing ballad", reverse:"swing", garland:"swing", offbeats:"swing", four:"swing boogie jump", stabs:"boogaloo", stride:"stride ragtime", strideTenths:"stride ragtime", boogie:"boogie jump",
             pad:"swing ballad boogaloo bossa tango pop folk rock reggaeton strum dance doowop hymn carol emo prine", oompah:"folk train motown carol stride ragtime", waltz:"waltz folk carol hymn", eighths:"rock", hymn:"hymn carol pop", ballRock:"pop strum carol hymn doowop", ballBroken:"pop strum carol hymn", ballSync:"pop strum carol",  quarters:"pop rock strum motown hymn carol emo", triplets:"doowop",
             strumCamp:"strum rock folk carol", strumFolk:"carol folk strum train", strumEights:"rock strum emo", strumPunk:"emo rock", strumQuarters:"strum rock folk pop carol emo", strum332:"strum rock dance", strum16:"strum rock dance", upbeats:"calypso reggae freylekhs boogie", bossa:"bossa", tango:"tango",
-            montuno:"montuno", chacha:"chacha", arp:"pop ballad folk strum doowop hymn carol", arp2:"pop folk strum carol emo prine", prine:"prine folk strum carol train", travis:"prine folk strum carol train", alberti:"pop folk", tresillo:"dance rock reggaeton", clave32:"rock", barbara:"motown rock", g333322:"rock dance", g33433:"dance reggaeton", g3x8:"dance rock", sowhat:"swing", maiden:"boogaloo bossa", takefive:"swing" },
+            montuno:"montuno", guajeo:"montuno", chacha:"chacha", arp:"pop ballad folk strum doowop hymn carol", arp2:"pop folk strum carol emo prine", prine:"prine folk strum carol train", travis:"prine folk strum carol train", alberti:"pop folk", tresillo:"dance rock reggaeton", clave32:"rock", barbara:"motown rock", g333322:"rock dance", g33433:"dance reggaeton", g3x8:"dance rock", sowhat:"swing", maiden:"boogaloo bossa", takefive:"swing" },
     drums: { auto:"swing ballad boogaloo stride", quarters:"swing ballad stride boogie", ridetime:"swing ballad stride", shuffle:"swing doowop boogie jump", jump:"jump boogie", funk:"boogaloo rock", bossa:"bossa", clave:"montuno", clave32:"montuno", bodiddley:"rock", dembow:"reggaeton dance", chacha:"chacha", tango:"tango", calypso:"calypso",
              onedrop:"reggae", none:"hymn carol pop folk strum prine", brushes:"carol strum folk pop", brushswing:"swing ballad carol folk", brushballad:"ballad swing pop folk carol hymn", brushfolk:"folk carol strum prine train pop", boomchick:"folk train carol freylekhs ragtime", waltz:"waltz folk carol", rock:"rock emo", strum:"strum rock pop", ballad:"pop strum", dance:"dance", motown:"motown", train:"train", twelve8:"doowop", halftime:"pop rock emo",
              hhquarters:"rock pop strum dance boogaloo", hheighths:"rock pop strum dance boogaloo", hhaccents:"rock pop strum dance boogaloo", hhoffbeats:"rock pop strum dance boogaloo", hhopen:"rock pop strum dance boogaloo",
@@ -354,7 +356,7 @@
     // The rock and pop styles are each one band: a bass line written on its drum groove's kick, a comping
     // part, the sounds that go with them and whether chords are pushed. (Ids "rock", "pop" and "folk" are kept
     // from the three generic styles they replace: saved setups and links name them.)
-    { id:"rock", label:"Straight-eighth rock", group:"Folk, rock and pop", genres:"Rock, pop-rock, new wave", feel:"straight", bass:"eighths", rhythm:"strumEights", drums:"rock", voicing:STRUMV, push:true,
+    { id:"rock", label:"Straight-eighth rock", group:"Folk, rock and pop", genres:"Rock, pop-rock, new wave", feel:"straight", bass:"eighths", rhythm:"strumEights", drums:"rock", voicing:STRUMV, push:true, figures:"guitarLick+pianoAnswer+bassApproach",
       sound:{ bass:"electric", cymbal:"hat", piano:"piano", guitar:"clguitar" },
       desc:"Root eighths on the bass, down-up eighths on the chords and a backbeat whose kick changes from bar to bar." },
     { id:"emo", label:"Emo / pop-punk", group:"Folk, rock and pop", genres:"Emo, pop-punk, alternative rock", feel:"straight", bass:"eighths", rhythm:"strumPunk", drums:"rock", voicing:STRUMV, push:true,
@@ -363,7 +365,7 @@
     { id:"strum", label:"Acoustic strum", group:"Folk, rock and pop", genres:"Folk-pop, singer-songwriter, campfire songs", feel:"straight", bass:"dotted", rhythm:"strumCamp", drums:"strum", voicing:STRUMV, push:true,
       sound:{ bass:"electric", cymbal:"hat", piano:"piano", guitar:"aguitar", lead:"guitar" },
       desc:"A strummed steel-string guitar over a light backbeat, with the bass and kick together on 1, the and of 2 and 3." },
-    { id:"pop", label:"Piano ballad", group:"Folk, rock and pop", genres:"Pop and rock ballads", feel:"straight", bass:"dotted", rhythm:"ballRock+ballBroken+ballSync", drums:"ballad", voicing:STRUMV, time:{ feel:"half", parts:"bass drums plain" },      // half time: the backbeat on 3, the bass at half speed, the piano as written
+    { id:"pop", label:"Piano ballad", group:"Folk, rock and pop", genres:"Pop and rock ballads", feel:"straight", bass:"dotted", rhythm:"ballRock+ballBroken+ballSync", drums:"ballad", voicing:STRUMV, figures:"pianoAnswer+bassWalkUp+pianoSus", time:{ feel:"half", parts:"bass drums plain" },      // half time: the backbeat on 3, the bass at half speed, the piano as written
       sound:{ bass:"electric", cymbal:"hat", piano:"piano", guitar:"aguitar", lead:"piano", kit:{ hat:53 } },       // kit = Backing Track kit faders (0-150; 53 = 35% of the travel): the hi-hat well down
       desc:"Left-hand octaves and a first-inversion right hand broken three ways (rocking, half-broken, syncopated), in four-bar spans, over a half-time bass and drums: a quiet kick and a cross-stick on 3." },
     { id:"dance", label:"Dance pop", group:"Folk, rock and pop", genres:"Disco, dance pop, four on the floor", feel:"straight", bass:"octaves", rhythm:"tresillo", drums:"dance", voicing:PLAINV,
@@ -411,7 +413,7 @@
   // family = "piano" | "guitar" (the comping instrument to use; default the style's lead, else piano).
   function styleOpts(id, family){
     var s = byId(styles, id) || styles[0], fam = family || s.sound.lead || "piano", snd = s.sound[fam] || fam;
-    return { opts: { comp: fam, compSound: snd, bassSound: s.sound.bass, ride: s.sound.cymbal, push: !!s.push, styleSwing: s.swing, full: !!s.full, calm: !!s.calm, halfRhythm: s.halfRhythm || null, feel: s.feel, congas: s.congas || "none", bassFeel: s.bass, compRhythm: s.rhythm, groove: s.drums,
+    return { opts: { comp: fam, compSound: snd, bassSound: s.sound.bass, ride: s.sound.cymbal, push: !!s.push, styleSwing: s.swing, full: !!s.full, calm: !!s.calm, figures: s.figures || null, halfRhythm: s.halfRhythm || null, feel: s.feel, congas: s.congas || "none", bassFeel: s.bass, compRhythm: s.rhythm, groove: s.drums,
                      voicing: (s.voicing && s.voicing[fam]) || undefined, timeFeel: s.time ? s.time.feel : "normal", timeFeelParts: s.time ? s.time.parts : undefined },
              instruments: [s.sound.bass === "electric" ? "ebass" : "bass", snd, "kit"].concat(s.congas && s.congas !== "none" ? ["congas"] : []) };
   }
@@ -421,7 +423,7 @@
   // leaves it where it is. null when no style has that name.
   // After the name, single parts may be named too, each after a semicolon: "Swing; voicing drop2; rhythm charleston; bass two;
   // drums funk; congas tumbao; feel straight" (ids from the bass, comp, drums, congas and voicing lists).
-  var SECTION_KEYS = { voicing: "voicing", voicings: "voicing", rhythm: "compRhythm", comp: "compRhythm", bass: "bassFeel", drums: "groove", groove: "groove", congas: "congas", feel: "feel" };
+  var SECTION_KEYS = { voicing: "voicing", voicings: "voicing", rhythm: "compRhythm", comp: "compRhythm", bass: "bassFeel", drums: "groove", groove: "groove", congas: "congas", feel: "feel", figures: "figures", fills: "figures" };
   function sectionOpts(name, base){
     var bits = String(name || "").split(";"), want = bits[0].trim().toLowerCase(), st = null;
     if (!want) return null;

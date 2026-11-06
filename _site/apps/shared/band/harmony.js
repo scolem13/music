@@ -738,6 +738,116 @@
   // section is in half time and it is not, for a style whose own rhythm makes no sense over a slow backbeat (off-beat
   // chords, say). Played as written, with no answering; in 2/4 two bars of the chart make one bar of the pattern.
   // A bar marked "^half time ballad" in the chart asks for the ballad patterns (BALLAD) whatever the style.
+  // ---- Figures: riffs and fills played by the bass, piano or guitar (opts.figures = "id+id") ----
+  // A fill is a short figure in the last beats of a phrase (the 4th bar of four, or the bar before a new section), in the
+  // gap the singer leaves. The players take turns: phrase k of the form gets the k-th of the style's fills (by part), so
+  // two never fill at once. A riff repeats: it plays in every second bar, except where that part has its fill.
+  // A note is [beat, semitones, ref, beats long]: ref "c" counts from this chord's root, "n" from the next bar's; semitones
+  // may be a list (a chord). Octaves: the first note goes nearest the part's centre, each next one nearest the last.
+  // The figures are common practice written from memory and teaching sources (research_notes/riffs-licks-fills.md): unheard.
+  // Nothing here draws from the rng; a style without opts.figures plays exactly as before.
+  var FIGURES = {
+    bassApproach: { part: "bass", kind: "fill", from: 3, notes: [[3, -2, "n", 0.45], [3.5, -1, "n", 0.45]] },
+    bassWalkUp:   { part: "bass", kind: "fill", from: 1, notes: [[1, -5, "n", 0.9], [2, -3, "n", 0.9], [3, -1, "n", 0.9]] },
+    pianoAnswer:  { part: "comp", inst: "piano", kind: "fill", from: 2, notes: [[2, 12, "c", 0.5], [2.5, "5", "c", 0.5], [3, "3", "c", 0.5], [3.5, 0, "c", 0.6]] },
+    pianoSus:     { part: "comp", inst: "piano", kind: "fill", from: 2, notes: [[2, [0, 5, 7, 12], "c", 0.95], [3, [0, "3", 7, 12], "c", 0.95]] },
+    guitarLick:   { part: "comp", inst: "guitar", kind: "fill", from: 2, notes: [[2, 12, "c", 0.5], [2.5, 10, "c", 0.5], [3, 7, "c", 0.5], [3.5, 3, "c", 0.6]] },
+    // Song riffs (kind "song": every bar, `bars` long, the bar's part of it chosen by the form bar's number). ref "m" = an exact
+    // MIDI note, for a riff kept at the record's pitch (the lesson's chart is in the record's key); "c" = from the chord's root.
+    // Short excerpts for teaching. The four below are from memory of the records (source says so): CHECK BY EAR. The generated
+    // block after them is read from notation (Wikipedia's LilyPond, page named in each `source`) by scripts/riffs/lily2fig.mjs.
+    sevenNation:  { part: "bass", kind: "song", source: "from memory (unchecked)", bars: 2, song: "Seven Nation Army", artist: "The White Stripes (2003)",
+                    notes: [[0, 40, "m", 1.4], [1.5, 40, "m", 0.45], [2, 43, "m", 0.7], [2.75, 40, "m", 0.7], [3.5, 38, "m", 0.45], [4, 36, "m", 1.9], [6, 35, "m", 1.9]] },
+    smoke:        { part: "comp", inst: "guitar", kind: "song", source: "from memory (unchecked)", bars: 4, song: "Smoke on the Water", artist: "Deep Purple (1972)",
+                    notes: [[0, [50, 55], "m", 0.9], [1, [53, 58], "m", 0.9], [2, [55, 60], "m", 1.4], [3.5, [50, 55], "m", 0.45],
+                            [4.5, [53, 58], "m", 0.45], [5, [56, 61], "m", 0.45], [5.5, [55, 60], "m", 2.4],
+                            [8, [50, 55], "m", 0.9], [9, [53, 58], "m", 0.9], [10, [55, 60], "m", 1.4], [11.5, [53, 58], "m", 0.45], [12.5, [50, 55], "m", 3.4]] },
+    everyBreath:  { part: "comp", inst: "guitar", kind: "song", source: "from memory (unchecked)", bars: 1, centre: 52, song: "Every Breath You Take", artist: "The Police (1983)",
+                    notes: [[0, 0, "c", 0.5], [0.5, "5", "c", 0.5], [1, 14, "c", 0.5], [1.5, "5", "c", 0.5], [2, 16, "c", 0.5], [2.5, "5", "c", 0.5], [3, 14, "c", 0.5], [3.5, "5", "c", 0.5]] },
+    clocks:       { part: "comp", inst: "piano", kind: "song", source: "from memory (unchecked)", bars: 1, song: "Clocks (the piano figure, after)", artist: "Coldplay (2002)",
+                    notes: [[0, 12, "c", 0.5], [0.5, "5", "c", 0.5], [1, "3", "c", 0.5], [1.5, 12, "c", 0.5], [2, "5", "c", 0.5], [2.5, "3", "c", 0.5], [3, 12, "c", 0.5], [3.5, "5", "c", 0.5]] },
+    // riffs:begin (written by scripts/riffs/lily2fig.mjs from scripts/riffs/riffs-src.json; do not edit by hand)
+    satisfaction: {"part":"comp","kind":"song","bars":2,"song":"(I Can't Get No) Satisfaction","artist":"The Rolling Stones (1965)","source":"Wikipedia (de:(I Can’t Get No) Satisfaction), LilyPond notation","meter":"4/4","chart":"E|E|E|E","inst":"guitar","notes":[[0,47,"m",0.475],[1,47,"m",0.95],[2.5,47,"m",0.475],[3,49,"m",0.475],[3.5,50,"m",1.425],[5.5,50,"m",0.475],[6,50,"m",0.475],[6.5,49,"m",0.475],[7,49,"m",0.475]]},
+    dayTripper: {"part":"comp","kind":"song","bars":2,"song":"Day Tripper","artist":"The Beatles (1965)","source":"Wikipedia (it:Day Tripper), LilyPond notation","meter":"4/4","chart":"E|E|E|E","inst":"guitar","notes":[[0,40,"m",1.425],[1.5,43,"m",0.475],[2,44,"m",0.475],[2.5,47,"m",0.475],[3,52,"m",0.475],[3.5,50,"m",1.425],[5,47,"m",0.475],[5.5,54,"m",0.95],[6.5,47,"m",0.475],[7,50,"m",0.475],[7.5,52,"m",0.475]]},
+    biteDust: {"part":"bass","kind":"song","bars":2,"song":"Another One Bites the Dust","artist":"Queen (1980)","source":"Wikipedia (de:Another One Bites the Dust), LilyPond notation","meter":"4/4","chart":"Em|Em|Em|Em","notes":[[0,28,"m",0.95],[1,28,"m",0.95],[2,28,"m",0.95],[3.75,28,"m",0.238],[4,28,"m",0.475],[4.5,28,"m",0.475],[5,31,"m",0.475],[5.5,28,"m",0.238],[5.75,33,"m",0.238],[7.5,33,"m",0.238],[7.75,31,"m",0.238]]},
+    money: {"part":"bass","kind":"song","bars":1,"song":"Money","artist":"Pink Floyd (1973)","source":"Wikipedia (de:Money (Pink-Floyd-Lied)), LilyPond notation","meter":"7/4","chart":"Bm|Bm|Bm|Bm","notes":[[0,35,"m",0.95],[1,47,"m",0.633],[1.667,42,"m",0.317],[2,35,"m",0.95],[3,30,"m",0.95],[4,33,"m",0.95],[5,35,"m",0.95],[6,38,"m",0.95]]},
+    stairway: {"part":"comp","kind":"song","bars":4,"song":"Stairway to Heaven (intro)","artist":"Led Zeppelin (1971)","source":"Wikipedia (de:Stairway to Heaven), LilyPond notation","meter":"4/4","chart":"Am|Am|Am|Am","inst":"guitar","notes":[[0,57,"m",0.475],[0.5,60,"m",0.475],[1,64,"m",0.475],[1.5,69,"m",0.475],[2,[56,71],"m",0.475],[2.5,64,"m",0.475],[3,60,"m",0.475],[3.5,71,"m",0.475],[4,[55,72],"m",0.475],[4.5,64,"m",0.475],[5,60,"m",0.475],[5.5,72,"m",0.475],[6,[54,66],"m",0.475],[6.5,62,"m",0.475],[7,57,"m",0.475],[7.5,66,"m",0.475],[8,[53,64],"m",0.475],[8.5,60,"m",0.475],[9,57,"m",0.475],[9.5,60,"m",0.95],[10.5,64,"m",0.475],[11,60,"m",0.475],[11.5,57,"m",0.475],[12,[47,55,59],"m",0.475],[12.5,[45,57,60],"m",0.475],[13,[45,52,57,60],"m",2.85]]},
+    johnnyB: {"part":"comp","kind":"song","bars":5,"song":"Johnny B. Goode (intro)","artist":"Chuck Berry (1958)","source":"Wikipedia (de:Johnny B. Goode), LilyPond notation","meter":"4/4","chart":"Bb|Bb|Bb|Bb","inst":"guitar","notes":[[2.5,62,"m",0.475],[3,65,"m",0.475],[3.5,67,"m",0.475],[4,[65,70],"m",0.475],[4.5,[65,70],"m",0.475],[5,[65,70],"m",0.475],[5.5,[65,70],"m",0.475],[6,[65,70],"m",0.475],[6.5,[65,70],"m",0.475],[7,[65,70],"m",0.475],[7.5,[65,70],"m",0.475],[8,[65,70],"m",0.475],[8.5,68,"m",0.475],[9,67,"m",0.475],[9.5,65,"m",0.475],[10,61,"m",0.475],[10.5,62,"m",0.475],[11,58,"m",0.475],[11.5,58,"m",0.475],[12,[53,58],"m",0.475],[12.5,[53,58],"m",0.475],[13,[53,58],"m",0.475],[13.5,[53,58],"m",0.475],[14,[53,58],"m",0.475],[14.5,[53,58],"m",0.475],[15,[53,58],"m",0.475],[15.5,[53,58],"m",0.475],[16,62,"m",0.475],[16.5,[62,65],"m",0.475],[17,[62,67],"m",0.475],[17.5,[62,65],"m",0.475],[18,60,"m",0.475],[18.5,58,"m",0.475],[19,55,"m",0.475]]},
+    standByMe: {"part":"bass","kind":"song","bars":8,"song":"Stand by Me","artist":"Ben E. King (1961)","source":"Wikipedia (de:Stand by Me (Lied)), LilyPond notation","meter":"4/4","chart":"A|A|F#m|F#m|D|E|A|A","notes":[[0,33,"m",0.95],[1.5,33,"m",1.425],[3,28,"m",0.475],[3.5,32,"m",0.475],[4,33,"m",0.95],[5.5,33,"m",0.95],[6.5,28,"m",0.475],[7,33,"m",0.475],[7.5,32,"m",0.475],[8,30,"m",0.95],[9.5,30,"m",1.425],[11,28,"m",0.95],[12,30,"m",0.95],[13.5,30,"m",1.425],[15,30,"m",0.475],[15.5,28,"m",0.475],[16,26,"m",0.95],[17.5,26,"m",1.425],[19,26,"m",0.475],[19.5,30,"m",0.475],[20,28,"m",0.95],[21.5,28,"m",1.425],[23,28,"m",0.475],[23.5,32,"m",0.475],[24,33,"m",0.95],[25.5,33,"m",1.425],[27,28,"m",0.475],[27.5,32,"m",0.475],[28,33,"m",0.95],[29.5,33,"m",1.425]]},
+    blackSabbath: {"part":"comp","kind":"song","bars":4,"song":"Black Sabbath","artist":"Black Sabbath (1970)","source":"Wikipedia (en:Black Sabbath (song)), LilyPond notation","meter":"4/4","chart":"G|G|G|G","inst":"guitar","notes":[[0,[43,50,55],"m",1.9],[2,55,"m",1.9],[4,49,"m",3.8],[8,[43,50,55],"m",1.9],[10,55,"m",1.9],[12,49,"m",3.8]]},
+    layla: {"part":"comp","kind":"song","bars":5,"song":"Layla","artist":"Derek and the Dominos (1970)","source":"Wikipedia (en:Layla), LilyPond notation","meter":"4/4","chart":"Dm|Dm|Dm|Dm","inst":"guitar","notes":[[2.5,57,"m",0.238],[2.75,60,"m",0.238],[3,62,"m",0.238],[3.25,65,"m",0.238],[3.5,62,"m",0.238],[3.75,60,"m",0.238],[4,62,"m",6.175],[10.5,57,"m",0.238],[10.75,60,"m",0.238],[11,62,"m",0.238],[11.25,65,"m",0.238],[11.5,62,"m",0.238],[11.75,60,"m",0.238],[12,62,"m",6.175],[18.5,69,"m",0.238],[18.75,72,"m",0.238],[19,74,"m",0.238],[19.25,77,"m",0.238],[19.5,74,"m",0.238],[19.75,72,"m",0.238]]},
+    missionBass: {"part":"bass","kind":"song","bars":2,"song":"Theme from Mission: Impossible","artist":"Lalo Schifrin (1966)","source":"Wikipedia (en:Theme from Mission: Impossible), LilyPond notation","meter":"5/4","chart":"Gm|Gm|Gm|Gm","notes":[[0,31,"m",1.425],[1.5,31,"m",1.425],[3,34,"m",0.95],[4,36,"m",0.95],[5,31,"m",1.425],[6.5,31,"m",1.425],[8,29,"m",0.95],[9,30,"m",0.95]]},
+    ashes: {"part":"comp","kind":"song","bars":3,"song":"Ashes to Ashes (hook)","artist":"David Bowie (1980)","source":"Wikipedia (en:Ashes to Ashes (David Bowie song)), LilyPond notation","meter":"4/4","chart":"Gm|Gm|Gm|Gm","inst":"piano","notes":[[0,65,"m",0.475],[0.5,70,"m",0.475],[1,72,"m",2.85],[4,72,"m",1.425],[5.5,65,"m",2.375],[8,70,"m",1.425],[9.5,63,"m",2.375]]},
+    shave: {"part":"comp","kind":"song","bars":2,"song":"Shave and a Haircut (the ending tag)","artist":"traditional","source":"Wikipedia (en:Shave and a Haircut), LilyPond notation","meter":"4/4","chart":"C|C","inst":"piano","notes":[[0,72,"m",0.95],[1,67,"m",0.475],[1.5,67,"m",0.475],[2,68,"m",0.95],[3,67,"m",0.95],[5,71,"m",0.95],[6,72,"m",0.95]]},
+    // riffs:end
+    guitarRiff:   { part: "comp", inst: "guitar", kind: "riff", from: 2, centre: 45, notes: [[2, 0, "c", 0.45], [2.5, 3, "c", 0.45], [3, 5, "c", 0.45], [3.5, 7, "c", 0.45]] }
+  };
+  var FIG_CENTRE = { bass: 40, piano: 76, guitar: 59 };
+  function figureList(opts){ return String((opts && opts.figures) || "").split("+").filter(function (x){ return FIGURES[x]; }); }
+  function phraseEndAt(ctx){
+    var f = ctx.form, nx = ctx.nextIndex != null ? ctx.nextIndex : ctx.index + 1;
+    return ((ctx.phrase ? ctx.phrase.bar : ctx.index % 4) % 4 === 3) || !!(f && f[nx] && f[nx].section != null);
+  }
+  // which figure (if any) this part plays in this bar
+  function figureFor(ctx, name, inst){
+    var ids = figureList(ctx.opts); if (!ids.length) return null;
+    if (ctx.stop || ctx.nextStop || ctx.last || ctx.intro || ctx.compound || !ctx.chords || !ctx.chords.length) return null;
+    var mine = function (id){ var F = FIGURES[id]; return F.part === name && (!F.inst || F.inst === inst); };
+    var song = ids.filter(function (id){ return FIGURES[id].kind === "song" && mine(id); })[0];
+    if (song) return song;
+    if (phraseEndAt(ctx)){
+      var main = (ctx.opts.comp === "guitar") ? "guitar" : "piano";      // (a fill for a chord instrument the band has not got is left out of the turns)
+      var fills = ids.filter(function (id){ var F = FIGURES[id]; return F.kind === "fill" && (!F.inst || F.inst === main); }), k = Math.floor(ctx.index / 4);
+      if (fills.length && mine(fills[k % fills.length])) return fills[k % fills.length];
+    }
+    var riff = ids.filter(function (id){ return FIGURES[id].kind === "riff" && mine(id); })[0];
+    return riff && ctx.index % 2 === 1 ? riff : null;
+  }
+  function figureNotes(F, ctx, centre, list0){
+    var ch = chordAt(ctx.chords, F.from || 0), nx = ctx.nextChords && ctx.nextChords[0] && ctx.nextChords[0].chord;
+    if (!ch || ch.nc) return null; if (!nx || nx.nc) nx = ch;
+    function iv(x, c){ return x === "3" ? (c.third != null ? c.third : 4) : x === "5" ? (c.fifth != null ? c.fifth : 7) : x; }
+    var last = null, prev = null, out = [];
+    (list0 || F.notes).forEach(function (n){
+      if (n[2] === "m"){ var ms = [].concat(n[1]); out.push({ pos: n[0], dur: n[3], midis: ms }); return; }
+      if (n[2] === "c" && F.kind === "song"){ ch = chordAt(ctx.chords, n[0]) || ch; if (prev && prev.c !== ch) last = null; }
+      var c = n[2] === "n" ? nx : ch, list = [].concat(n[1]).map(function (x){ return iv(x, c); }), m;
+      if (last == null){ var pc = (((c.root + list[0]) % 12) + 12) % 12; m = pc + 12 * Math.round((centre - pc) / 12); }
+      else if (n[2] === prev.ref) m = last + list[0] - prev.iv;                    // the written interval, in its direction
+      else { var d = (((c.root + list[0]) - (prev.c.root + prev.iv)) % 12 + 12) % 12; m = last + (d > 6 ? d - 12 : d); }
+      prev = { ref: n[2], iv: list[0], c: c }; last = m;
+      out.push({ pos: n[0], dur: n[3], midis: list.map(function (x){ return m + x - list[0]; }) });
+    });
+    return out;
+  }
+  function withFigure(name, ctx, evs){
+    if (!ctx || !ctx.opts || !ctx.opts.figures || !evs) return evs;
+    var inst = name === "comp" ? ((evs.filter(function (e){ return e.inst; })[0] || {}).inst || ctx.opts.comp || "piano") : null;
+    var id = figureFor(ctx, name, inst); if (!id) return evs;
+    var F = FIGURES[id], part = null;
+    if (F.kind === "song"){                                              // this bar's share of the riff
+      var len = F.bars || 1, h = ctx.index % len, B = ctx.beats;
+      if (F.meter && ctx.beats !== +F.meter.split("/")[0] * 4 / +F.meter.split("/")[1]) return evs;      // a riff written in 5/4 plays only in 5/4
+      part = F.notes.filter(function (n){ return n[0] >= h * B - 1e-6 && n[0] < h * B + B - 1e-6; }).map(function (n){ return [n[0] - h * B, n[1], n[2], n[3]]; });      // (a held note rings over the barline, as written)
+      F = Object.assign({}, F, { from: 0 });
+    } else if (F.from >= ctx.beats || F.notes.some(function (n){ return n[0] >= ctx.beats; })) return evs;
+    var notes = figureNotes(F, ctx, F.centre || FIG_CENTRE[name === "bass" ? "bass" : inst], part); if (!notes) return evs;
+    var heat = ctx.intensity == null ? 0.5 : ctx.intensity, out = [];
+    evs.forEach(function (e){
+      if (name === "comp" && e.hand === "L") return out.push(e);       // the piano's left hand rings on under the fill
+      if (e.pos >= F.from - 1e-6) return;
+      if (F.inst === "piano" && e.pos > 1e-6 && !e.figure) return;     // the right hand strikes the chord on 1 and keeps still until it answers (the ballad stays sparse)
+      var c = Object.assign({}, e); if (c.pos + c.dur > F.from) c.dur = Math.round(Math.max(0.1, F.from - c.pos - 0.05) * 1000) / 1000; out.push(c);
+    });
+    notes.forEach(function (n, j){
+      var v = Math.round(Math.min(0.78, 0.5 + 0.14 * heat + (j === 0 ? 0.04 : 0)) * 1000) / 1000;
+      if (name === "bass") out.push({ pos: n.pos, dur: n.dur, midi: n.midis[0], vel: v, figure: id });
+      else out.push({ pos: n.pos, dur: n.dur, midis: n.midis, vel: v, inst: inst, arp: n.midis.length === 1, of: ctx.index + ":" + startOf(ctx.chords, n.pos), figure: id });
+    });
+    return out.sort(function (a, b){ return a.pos - b.pos; });
+  }
+  function startOf(chords, pos){ var s = 0; (chords || []).forEach(function (c){ if (c.pos <= pos + 1e-6) s = c.pos; }); return s; }
+
   function feelPart(part, name){
     var carry = null;
     function swingOf(ctx, tempo){
@@ -902,7 +1012,13 @@
       return { f: f, f0: f0, whoL: whoL, plain: (f !== "double" && f !== "half") || ctx.compound || ctx.stop || !ctx.chords || !ctx.chords.length };
     }
     return {
-      bar: function (ctx){
+      bar: function (ctx){ return withFigure(name, ctx, barOf(ctx)); },
+      // a fill for a bar already given out (the drums; see drums.js): only where the part plays the chart's own bars
+      fillNow: function (ctx, size, room){ return part.fillNow && feelOf(ctx).plain ? part.fillNow(ctx, size, room) : null; },
+      ending: function (ctx){ carry = null; return part.ending ? part.ending(ctx) : []; },
+      reset: function (){ carry = null; if (part.reset) part.reset(); }
+    };
+    function barOf(ctx){
         var fo = feelOf(ctx), f = fo.f, f0 = fo.f0, whoL = fo.whoL;
         if (fo.plain){
           if (name === "comp" && f == null && f0 === "half" && halfRhythm(ctx) && !ctx.compound && !ctx.stop && ctx.chords && ctx.chords.length) return other(ctx);
@@ -912,12 +1028,7 @@
           return part.bar(ctx);
         }
         return f === "double" ? doubled(ctx) : halved(ctx);
-      },
-      // a fill for a bar already given out (the drums; see drums.js): only where the part plays the chart's own bars
-      fillNow: function (ctx, size, room){ return part.fillNow && feelOf(ctx).plain ? part.fillNow(ctx, size, room) : null; },
-      ending: function (ctx){ carry = null; return part.ending ? part.ending(ctx) : []; },
-      reset: function (){ carry = null; if (part.reset) part.reset(); }
-    };
+    }
   }
 
   var BALLAD = "ballRock+ballBroken+ballSync";
@@ -1109,6 +1220,6 @@
     chordAt: chordAt, sameChord: sameChord, noteName: noteName, pcName: pcName, libChord: libChord,
     voicingClass: voicingClass, motion: motion, STYLES: STYLES,
     styleList: styleList, defaultStyle: defaultStyle, openShape: openShape, hasStyle: hasStyle, pinMap: pinMap, asPlayed: asPlayed, roman: roman, meterInfo: meterInfo,
-    candidates: candidates, toward: toward, peek: peek, gripOf: function (midis){ return gripFor(midis); }, withHand: withHand, sixthOf: sixthOf, asSixth: asSixth, colour: colour, feelPart: feelPart
+    candidates: candidates, toward: toward, peek: peek, gripOf: function (midis){ return gripFor(midis); }, withHand: withHand, sixthOf: sixthOf, asSixth: asSixth, colour: colour, feelPart: feelPart, FIGURES: FIGURES, figureFor: figureFor
   };
 })(typeof window !== "undefined" ? window : globalThis);

@@ -74,7 +74,7 @@
     c.score.clear(); c.button.textContent = c.label; c.button.classList.remove("bl-on");
   }
   // the notation played on the band's piano samples (AbcPlay, loaded here on first use), each note lit ("ls-on") as it sounds
-  var ABC_PLAY = "/apps/shared/abc-play.js?v=24", abcPlayP = null;
+  var ABC_PLAY = "/apps/shared/abc-play.js?v=27", abcPlayP = null;
   function abcPlay(){
     if (global.AbcPlay) return Promise.resolve(global.AbcPlay);
     return abcPlayP || (abcPlayP = new Promise(function (ok, no){ var e = document.createElement("script"); e.src = ABC_PLAY; e.onload = function (){ ok(global.AbcPlay); }; e.onerror = function (){ abcPlayP = null; no(); }; document.head.appendChild(e); }));

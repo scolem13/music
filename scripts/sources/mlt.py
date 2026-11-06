@@ -17,7 +17,7 @@ SOURCES = [
          "; Hearing Harmony: four stages of readiness for chord changes (p. 305); harmonic patterns I V7 I, I IV I, I II V7 I, I II7 V7 I (p. 313); "
          "I V7 I, then I IV I, then I IV V7 I and I V7 IV I in three sung parts, then harmonic minor (pp. 318–319); easy and moderately difficult harmonic patterns, the supertonic delayed (p. 320)."
          "; Bass Lines by Ear: macrobeats in usual duple and triple meter (pp. 175–176); same is easier to hear than different (p. 219)."),
-    book('Gordon, Edwin E. *Jump Right In: The Music Curriculum. Reference Handbook for Using Learning Sequence Activities*. 2001 revision, GIA Publications, 2001.', [AU] + RP,
+    book('Gordon, Edwin E. *Jump Right In: The Music Curriculum. Reference Handbook for Using Learning Sequence Activities*. 2001 revision, GIA Publications, 2001.', [AU] + RP + ["mlt/jri-lsa.qmd"],
          "Tonal sequences (p. 33) and range (p. 32); Tonal Unit 6, partial synthesis (pp. 48–49); Tonal Unit 9, generalization-verbal (pp. 52–54); rhythm patterns and sequences chanted with expressive inflection on one pitch, all durations without pitch (\"A Quick Course on Rhythm\" and \"Techniques for Teaching Class Patterns\")."),
     book('Mullen, Andy. *MLT Any Music Teacher Can Du…De: Teacher\'s Guide to "The Literate Musician."* The Improving Musician, 2021.', [AU] + RP + ["mlt/mullen.qmd", "mlt/activities.qmd", "mlt/rote-song.qmd"],
          "Bridging and familiar patterns before unfamiliar ones at generalization (pp. 65–67); the audiation-foundation objectives (p. 74); "

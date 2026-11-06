@@ -8,9 +8,10 @@ description: "Name notes, intervals and key signatures: on screen, from the comp
 
 ```{=html}
 <link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
-<script src="/apps/shared/abcjs-basic.js?v=4"></script>
-<script src="/apps/shared/drills/drills.js?v=19"></script>
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/drills/drills.js?v=20"></script>
 <script src="/apps/shared/drills/motives.js?v=1"></script>
+<script src="/apps/shared/drills/rhythm-spell.js"></script>
 <script src="/apps/shared/drills/mixture.js?v=1"></script>
 <script src="/apps/shared/drills/neapolitan.js?v=1"></script>
 <script src="/apps/shared/drills/figured.js?v=1"></script>
@@ -38,6 +39,8 @@ description: "Name notes, intervals and key signatures: on screen, from the comp
   <a class="btn btn-outline-secondary" href="?ex=nct">Non-chord tones</a>
   <a class="btn btn-outline-secondary" href="?ex=nctrule">Approached and left</a>
   <a class="btn btn-outline-secondary" href="?ex=motive">Motivic alteration</a>
+  <a class="btn btn-outline-secondary" href="?ex=rhyfix">Respell the rhythm</a>
+  <a class="btn btn-outline-secondary" href="?ex=rhyerr">What hides the beat?</a>
   <a class="btn btn-outline-secondary" href="?ex=secdom">Secondary dominants</a>
   <a class="btn btn-outline-secondary" href="?ex=secwrite">Write secondary dominants</a>
   <a class="btn btn-outline-secondary" href="?ex=secsym">Secondary dominants as symbols</a>

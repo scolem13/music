@@ -28270,9 +28270,41 @@ module.exports = version;
     if (typeof abc !== "string" || !/^\s*T:/m.test(abc) || /%%titleleft/.test(abc)) return abc;
     return /^\s*X:/m.test(abc) ? abc.replace(/^(\s*X:[^\n]*\n)/gm, "$1" + DIRS) : DIRS + abc;
   }
+  // ── One size for all notation: --abc-zoom (1 = the sizes each page asks for, so nothing changes until it is moved) ──
+  // Saved in localStorage "abc-zoom" (0.5-1.6), set with ABCJS.setZoom(z); ABCJS.zoomControl() makes a slider for it.
+  // Fixed-width renders (no responsive:"resize") multiply their scale by it, so music drawn after a change is the new size
+  // (pages that redraw on their own events follow at once, others on reload). Responsive renders fill their box, so they
+  // follow the CSS variable instead: give the box max-width:calc(<its width> * var(--abc-zoom,1)) (the MLT pages do).
+  // A render can opt out with params.zoom === false (previews measured in px).
+  var ZKEY = "abc-zoom";
+  function readZoom() { try { var z = parseFloat(localStorage.getItem(ZKEY)); if (z >= .5 && z <= 1.6) return z; } catch (e) {} return 1; }
+  window.ABC_ZOOM = readZoom();
+  document.documentElement.style.setProperty("--abc-zoom", window.ABC_ZOOM);
+  A.getZoom = function () { return window.ABC_ZOOM; };
+  A.setZoom = function (z) {
+    z = Math.min(1.6, Math.max(.5, +z || 1)); window.ABC_ZOOM = z;
+    document.documentElement.style.setProperty("--abc-zoom", z);
+    try { if (z === 1) localStorage.removeItem(ZKEY); else localStorage.setItem(ZKEY, z); } catch (e) {}
+    window.dispatchEvent(new CustomEvent("abczoom", { detail: z }));
+  };
+  A.zoomControl = function () {
+    var l = document.createElement("label"); l.className = "abc-zoom-ctl";
+    l.title = "Make all the music on the site smaller or larger (double-click to reset)";
+    l.innerHTML = 'Music size <input type="range" min="50" max="160" step="5" style="width:7rem"> <output></output>';
+    var r = l.querySelector("input"), o = l.querySelector("output");
+    function show() { r.value = Math.round(window.ABC_ZOOM * 100); o.textContent = r.value + "%"; }
+    r.oninput = function () { A.setZoom(r.value / 100); show(); };
+    r.ondblclick = function () { A.setZoom(1); show(); };
+    window.addEventListener("abczoom", show); show();
+    return l;
+  };
   var render = A.renderAbc;
   A.renderAbc = function (el, abc, params) {
     if (!window.ABC_TITLES_CENTRED && !(params && params.siteTitles === false)) abc = withTitles(abc);
-    return render.apply(this, [el, abc].concat([].slice.call(arguments, 2)));
+    var rest = [].slice.call(arguments, 3);
+    if (window.ABC_ZOOM !== 1 && !(params && (params.responsive === "resize" || params.zoom === false))) {
+      params = Object.assign({}, params, { scale: ((params && params.scale) || 1) * window.ABC_ZOOM });
+    }
+    return render.apply(this, [el, abc, params].concat(rest));
   };
 })();

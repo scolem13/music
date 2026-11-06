@@ -1408,3 +1408,31 @@ history pages.
    Open questions: which Ableton edition the lab has (orchestral packs are Suite-only as far as known; Lite/Intro limit tracks),
    16 channels per port (Sadko needs ~21: two ports or shared channels), ASIO on the lab PCs. modx.js sends to the MODX only,
    so the port choice and per-staff channels are new. In-browser samples stay the default.
+
+* Riffs, licks, montunos, fills: research and the guajeo (2026-11-04)
+- Research note: research_notes/riffs-licks-fills.md (per-style table of what is missing, sources).
+- comp "guajeo": the montuno rhythm in broken octaves (guajeoBar in comp.js), fits montuno. Not the style's default.
+** TODO Listen to the guajeo; decide whether it becomes the Son montuno default
+** TODO Guajeo has no push into the next bar's chord on the and of 4 (salsa pianists anticipate)
+** TODO The RIFFS table (format in the research note), then licks at phrase ends and Latin breaks
+
+* Figures: fills, riffs, song riffs (2026-11-04)
+- harmony.js FIGURES + withFigure (applied in feelPart's bar, so the player and the MIDI export both get it): opts.figures = "id+id".
+  Fills (bassApproach, bassWalkUp, pianoAnswer, pianoSus, guitarLick) in the last beats of a phrase's 4th bar or the bar before a
+  section, ONE player per phrase end in turn (fills for a chord instrument the band has not got drop out of the turns). Riff
+  guitarRiff every 2nd bar. Song riffs (kind "song", every bar, `bars` long): sevenNation (bass), smoke, everyBreath (guitar),
+  clocks (piano): short excerpts for class, from memory of the records.
+- Style defaults: pop = pianoAnswer+bassWalkUp+pianoSus; rock = guitarLick+pianoAnswer+bassApproach. `%%style rock; figures guitarRiff`.
+- Piano fills: the right hand keeps only its beat-1 chord before the answer (the ballad's five-attack rule, t_pop).
+- Lesson lessons/fills-riffs.qmd (MYP4 Unit 2 Rock and the Pop Ballads). Test tests/band/figures/t_figures.js (NEG=1 must fail).
+** TODO Listen to every figure; CHECK THE SONG RIFFS AGAINST THE RECORDS (rhythm and pitches written from memory)
+** TODO No Figures menu on the Backing Track page yet (only the style default, %%style, and lesson buttons)
+** TODO Song riffs at the record's pitch (ref "m") do not transpose with the page's Transpose
+- Riffs from notation (2026-11-04): 12 song riffs read note for note from the LilyPond examples on Wikipedia pages (en / de / it),
+  scripts/riffs/riffs-src.json (snippet as printed + page) -> node scripts/riffs/lily2fig.mjs -> generated block riffs:begin/end in
+  harmony.js FIGURES (each with `source`, `meter`, `chart`). Satisfaction, Day Tripper, Johnny B. Goode intro, Black Sabbath, Layla,
+  Stairway intro (guitar); Another One Bites the Dust, Stand by Me, Mission: Impossible (5/4), Money (7/4) (bass); Ashes to Ashes,
+  Shave and a Haircut (piano). Fixed: Layla's "a' 16" typo (bar adds up only as a'16). Guitar and bass put an octave below written
+  (the snippets have no octave clef): the site's reading. Searched and found NO notation for Smoke on the Water, Seven Nation Army,
+  Every Breath You Take, Clocks (still from memory, marked).
+** TODO Listen to the notation riffs; check the guitar / bass octave against the records

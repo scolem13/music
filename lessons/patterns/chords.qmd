@@ -3104,7 +3104,7 @@ Harder: now some bars have two chords, two beats each. The pattern keeps its rhy
 - **Builds on:** [Long notes](chords.qmd#chords-pad), [Charleston](chords.qmd#chords-charleston).
 - **The same idea elsewhere in the band:** [Bossa nova](bass.qmd#bass-bossa) (bass line), [Bossa nova](drums.qmd#drums-bossa) (drum groove).
 - **Plays with, in bossa nova:** [Bossa nova](bass.qmd#bass-bossa) (bass line), [Bossa nova](drums.qmd#drums-bossa) (drum groove).
-- **Other comping rhythms in the Latin group:** [Tango (habanera)](chords.qmd#chords-tango), [Son montuno](chords.qmd#chords-montuno), [Cha-cha](chords.qmd#chords-chacha).
+- **Other comping rhythms in the Latin group:** [Tango (habanera)](chords.qmd#chords-tango), [Piano guajeo (broken octaves)](chords.qmd#chords-guajeo), [Son montuno](chords.qmd#chords-montuno), [Cha-cha](chords.qmd#chords-chacha).
 
 ## Tango (habanera) {#chords-tango}
 
@@ -3163,7 +3163,66 @@ Harder: now some bars have two chords, two beats each. The pattern keeps its rhy
 - **Builds on:** [Quarter-note chords](chords.qmd#chords-quarters).
 - **The same idea elsewhere in the band:** [Tango (habanera)](bass.qmd#bass-tango) (bass line), [Tango](drums.qmd#drums-tango) (drum groove).
 - **Plays with, in tango:** [Tango (habanera)](bass.qmd#bass-tango) (bass line), [Tango](drums.qmd#drums-tango) (drum groove).
-- **Other comping rhythms in the Latin group:** [Bossa nova](chords.qmd#chords-bossa), [Son montuno](chords.qmd#chords-montuno), [Cha-cha](chords.qmd#chords-chacha).
+- **Other comping rhythms in the Latin group:** [Bossa nova](chords.qmd#chords-bossa), [Piano guajeo (broken octaves)](chords.qmd#chords-guajeo), [Son montuno](chords.qmd#chords-montuno), [Cha-cha](chords.qmd#chords-chacha).
+
+## Piano guajeo (broken octaves) {#chords-guajeo}
+
+*For piano or guitar, built up a step at a time.*
+
+This is a lesson on one comping rhythm the [Backing Track](../../tools/backing-track.qmd) band plays: **Piano guajeo (broken octaves)**. It is built up from a simpler pattern, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd)
+
+### The pattern
+
+The montuno rhythm played the salsa pianist's way: octaves in both hands with the chord's other notes between. The top note rocks between two chord tones: 1, 2, the and of 2, the and of 3, the and of 4; then every off-beat. Unheard: check by ear.
+
+It belongs in *Son montuno*. Here it is in the son montuno style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="100" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Piano guajeo (broken octaves)","opts":{"compRhythm":"guajeo"}}]'></div>
+
+### Step 1: Son montuno
+
+Start with something simpler. A two-bar pattern of short chords. First bar (shown): 1, 2, the and of 2, the and of 3, the and of 4. Second bar: every off-beat. Here it is played as block chords, not the pianist's broken octaves.
+
+This is a pattern of its own: [the lesson on it](chords.qmd#chords-montuno) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="70" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Step:" data-choices='[{"label":"Son montuno","opts":{"compRhythm":"montuno"}}]'></div>
+
+### Step 2: Piano guajeo (broken octaves), slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The montuno rhythm again, now in octaves: thumb and little finger on the top note, the chord between on the off-beats. Let the top note rock between two chord tones and keep every note short.
+
+The band plays it on piano here; the step after next has it on guitar.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="70" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Compare:" data-choices='[{"label":"Piano guajeo (broken octaves)","opts":{"compRhythm":"guajeo"}},{"label":"Son montuno (the step before)","opts":{"compRhythm":"montuno"}}]'></div>
+
+### Step 3: Up to tempo, with the band
+
+The whole band, at 100 beats a minute. Play along, then switch the band's chord player off and take the part yourself.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="100" data-on="bass comp drums congas" data-staves="comp bass" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Piano guajeo (broken octaves)","opts":{"compRhythm":"guajeo"}}]'></div>
+
+### Step 4: On the guitar
+
+The same rhythm on the guitar. On guitar each chord is a strum or a pluck of a chord shape; a short chord is choked by easing the fretting hand off the strings.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="100" data-on="bass comp drums congas" data-staves="comp bass" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Piano guajeo (broken octaves)","opts":{"compRhythm":"guajeo"}}]'></div>
+
+### Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. The pattern keeps its rhythm and changes chord where the bar does: watch the staff for the hit that lands on beat 3.
+
+<div class="ar-demo" data-style="montuno" data-chart="C F|G7 C|C F|G7 C" data-tempo="100" data-on="bass comp drums congas" data-staves="comp bass" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Piano guajeo (broken octaves)","opts":{"compRhythm":"guajeo"}}]'></div>
+
+### How it relates to the other patterns
+
+- **Builds on:** [Son montuno](chords.qmd#chords-montuno).
+- **The same idea elsewhere in the band:** [Tumbao](bass.qmd#bass-tumbao) (bass line), [Tumbao](congas.qmd#congas-tumbao) (conga part), [Tumbao, two drums](congas.qmd#congas-tumbao2) (conga part), [Son montuno](chords.qmd#chords-montuno) (comping rhythm), [Son clave (2-3)](drums.qmd#drums-clave) (drum groove).
+- **Plays with, in son montuno:** [Tumbao](bass.qmd#bass-tumbao) (bass line), [Son clave (2-3)](drums.qmd#drums-clave) (drum groove), [Tumbao, two drums](congas.qmd#congas-tumbao2) (conga part).
+- **Other comping rhythms in the Latin group:** [Bossa nova](chords.qmd#chords-bossa), [Tango (habanera)](chords.qmd#chords-tango), [Son montuno](chords.qmd#chords-montuno), [Cha-cha](chords.qmd#chords-chacha).
 
 ## Son montuno {#chords-montuno}
 
@@ -3228,9 +3287,10 @@ Harder: now some bars have two chords, two beats each. The pattern keeps its rhy
 ### How it relates to the other patterns
 
 - **Builds on:** [Quarter-note chords](chords.qmd#chords-quarters), [Every off-beat](chords.qmd#chords-upbeats).
-- **The same idea elsewhere in the band:** [Tumbao](bass.qmd#bass-tumbao) (bass line), [Tumbao](congas.qmd#congas-tumbao) (conga part), [Tumbao, two drums](congas.qmd#congas-tumbao2) (conga part), [Son clave (2-3)](drums.qmd#drums-clave) (drum groove).
+- **Leads to:** [Piano guajeo (broken octaves)](chords.qmd#chords-guajeo): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Tumbao](bass.qmd#bass-tumbao) (bass line), [Tumbao](congas.qmd#congas-tumbao) (conga part), [Tumbao, two drums](congas.qmd#congas-tumbao2) (conga part), [Piano guajeo (broken octaves)](chords.qmd#chords-guajeo) (comping rhythm), [Son clave (2-3)](drums.qmd#drums-clave) (drum groove).
 - **Plays with, in son montuno:** [Tumbao](bass.qmd#bass-tumbao) (bass line), [Son clave (2-3)](drums.qmd#drums-clave) (drum groove), [Tumbao, two drums](congas.qmd#congas-tumbao2) (conga part).
-- **Other comping rhythms in the Latin group:** [Bossa nova](chords.qmd#chords-bossa), [Tango (habanera)](chords.qmd#chords-tango), [Cha-cha](chords.qmd#chords-chacha).
+- **Other comping rhythms in the Latin group:** [Bossa nova](chords.qmd#chords-bossa), [Tango (habanera)](chords.qmd#chords-tango), [Piano guajeo (broken octaves)](chords.qmd#chords-guajeo), [Cha-cha](chords.qmd#chords-chacha).
 
 ## Cha-cha {#chords-chacha}
 
@@ -3297,7 +3357,7 @@ Harder: now some bars have two chords, two beats each. The pattern keeps its rhy
 - **Builds on:** [Quarter-note chords](chords.qmd#chords-quarters), [Boom-chick / oom-pah-pah](chords.qmd#chords-oompah).
 - **The same idea elsewhere in the band:** [Cha-cha](bass.qmd#bass-chacha) (bass line), [Cha-cha](drums.qmd#drums-chacha) (drum groove), [Tumbao](congas.qmd#congas-tumbao) (conga part).
 - **Plays with, in cha-cha:** [Cha-cha](bass.qmd#bass-chacha) (bass line), [Cha-cha](drums.qmd#drums-chacha) (drum groove), [Tumbao](congas.qmd#congas-tumbao) (conga part).
-- **Other comping rhythms in the Latin group:** [Bossa nova](chords.qmd#chords-bossa), [Tango (habanera)](chords.qmd#chords-tango), [Son montuno](chords.qmd#chords-montuno).
+- **Other comping rhythms in the Latin group:** [Bossa nova](chords.qmd#chords-bossa), [Tango (habanera)](chords.qmd#chords-tango), [Piano guajeo (broken octaves)](chords.qmd#chords-guajeo), [Son montuno](chords.qmd#chords-montuno).
 
 {{< include ../_arrange-kit.qmd >}}
 

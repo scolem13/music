@@ -161,6 +161,9 @@
                 zones: soundfontZones(sf, "church_organ", 36, 84, 3) },
       // melody instruments (family "melody"): a tune played on its own or over the band (AbcPlay opts.sound, the band's melodySound).
       // Ranges are each instrument's written-for range with a little spare; levels are a first guess, not yet listened to.
+      // percussion for rhythm patterns (MLT pages: a rhythm pattern in notation sounds on this, not the piano). Pitched samples; the
+      // pattern is written on one note so it is one tone. Gain is a first guess, not yet set by ear.
+      woodblock:{ family: "perc", label: "Woodblock",     gain: 2.4, release: 0.05, zones: soundfontZones(sf, "woodblock", 48, 96, 3) },
       flute:    { family: "melody", label: "Flute",          gain: 1.6, release: 0.10, zones: soundfontZones(sf, "flute", 58, 98, 3) },
       clarinet: { family: "melody", label: "Clarinet",       gain: 1.6, release: 0.10, zones: soundfontZones(sf, "clarinet", 48, 94, 3) },
       asax:     { family: "melody", label: "Alto sax",       gain: 1.4, release: 0.10, zones: soundfontZones(sf, "alto_sax", 47, 84, 3) },

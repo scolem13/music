@@ -31,6 +31,7 @@
   // what is making sound now, and the Stop buttons of the bars on the page
   var sounds = {}, stops = [];
   function anySound(){ for (var k in sounds) return true; return false; }
+  function isSounding(){ return anySound(); }
   function update(){ stops.forEach(function (f){ f(); }); }
   function sounding(id, fn){ if (fn) sounds[id] = fn; else delete sounds[id]; update(); }
   function stopAll(){ var fs = sounds; sounds = {}; Object.keys(fs).forEach(function (k){ try { fs[k](); } catch (e){} }); update(); }
@@ -88,5 +89,5 @@
     sel.addEventListener("change", function (){ if (o.onChange) o.onChange(sel.value === "auto" ? null : +sel.value / 100); });
     return span;
   }
-  global.PlayBar = { attach: attach, sounding: sounding, stopAll: stopAll, swingSlot: swingSlot, HEIGHT: HEIGHT };
+  global.PlayBar = { attach: attach, sounding: sounding, stopAll: stopAll, isSounding: isSounding, swingSlot: swingSlot, HEIGHT: HEIGHT };
 })(typeof window !== "undefined" ? window : globalThis);

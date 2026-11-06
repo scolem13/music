@@ -7,7 +7,7 @@ var N = BandHarmony.noteName, C = BandCatalog, r2 = function (x){ return Math.ro
 function abc(meter, bars){ var n = +meter.split("/")[0]; return "X:1\nM:" + meter + "\nL:1/" + meter.split("/")[1] + "\nK:G\n" + bars.map(function (b){ var c = b.split(" ");
   return c.length > 1 ? '"' + c[0] + '"z' + n / 2 + ' "' + c[1] + '"z' + n / 2 : '"' + b + '"z' + n; }).join("|") + "|]"; }
 var FORM = ["G", "D", "Em", "C", "G", "D", "C", "C D"];
-function gen(style, extra, bars, n, meter, fam){ var so = C.styleOpts(style, fam); return BandMidi.generate(TuneChart.parse(abc(meter || "4/4", bars || FORM)), { bars: n || 8, tempo: 110, opts: Object.assign(so.opts, { variation: 0 }, extra) }); }
+function gen(style, extra, bars, n, meter, fam){ var so = C.styleOpts(style, fam); return BandMidi.generate(TuneChart.parse(abc(meter || "4/4", bars || FORM)), { bars: n || 8, tempo: 110, opts: Object.assign(so.opts, { variation: 0, figures: null }, extra) }); }   // (figures: their own test, figures/t_figures.js)
 function at(b, part, f){ return b.parts[part].filter(f || function (){ return true; }).map(function (e){ return r2(e.pos); }).join(" "); }
 function piece(b, p){ return at(b, "drums", function (e){ return e.piece === p; }); }
 function bass(b){ return b.parts.bass.map(function (e){ return r2(e.pos) + ":" + N(e.midi); }).join(" "); }
@@ -70,7 +70,7 @@ loose.forEach(function (b){ hand(b, true).forEach(function (e){ e.midis.forEach(
 assert(odd > 2, "neighbour notes heard: " + odd);
 // The right hand is voice-led: first inversion to begin with, then whichever inversion moves least (I to IV: root position)
 (function (){ function rhAt(b){ return b.parts.comp.filter(function (e){ return e.hand !== "L" && e.pos === 0; })[0]; }
-  function inC(bars, n, extra){ return BandMidi.generate(TuneChart.parse(abc("4/4", bars).replace("K:G", "K:C")), { bars: n || bars.length, tempo: 80, opts: Object.assign(C.styleOpts("pop").opts, { variation: 0, compRhythm: "ballSync" }, extra) }); }
+  function inC(bars, n, extra){ return BandMidi.generate(TuneChart.parse(abc("4/4", bars).replace("K:G", "K:C")), { bars: n || bars.length, tempo: 80, opts: Object.assign(C.styleOpts("pop").opts, { variation: 0, compRhythm: "ballSync", figures: null }, extra) }); }
   var led = inC(["C", "F", "C", "G", "Am", "F", "G", "C"]).map(function (b){ return names(rhAt(b)); });
   assert.strictEqual(led[0], "E4 G4 C5", "I in first inversion"); assert.strictEqual(led[1], "F4 A4 C5", "IV in root position"); assert.strictEqual(led[2], "E4 G4 C5");
   var long = inC(["C", "Am", "Dm", "G", "Em", "F", "Bb", "Eb", "Ab", "Db", "F#", "B", "E", "A", "D", "G"], 64), prevV = null;

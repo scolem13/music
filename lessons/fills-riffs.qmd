@@ -1,0 +1,242 @@
+---
+title: "Fills, Riffs and Licks: Answering the Singer"
+subtitle: "Rock and the pop ballad, for piano, bass, guitar, drums and the producer"
+toc: true
+toc-depth: 2
+description: "What a riff, a fill and a lick are; where they go (the gap at the end of a sung phrase); how piano, bass, guitar and drums each play one in rock and pop ballads; and how a producer makes room for them. Every example is on the band."
+instruments: [piano, bass, guitar, drums]
+topics: [rock, pop, arranging]
+has: [band, interactive]
+---
+
+A song is a conversation. The singer says a line and then stops to breathe, and in that gap the band
+answers. The answer is a **fill**: a short figure from the piano, the bass, the guitar or the drums that
+fills the space before the next line. A **riff** is different: a short figure the band repeats again and
+again under the song, so it becomes the song's signature. A **lick** is a player's stock phrase, the kind
+of figure fills and solos are made of.
+
+This page plays each of them on the band. Press ▶ Play, switch players in and out with the buttons beside
+it, and switch the figures on and off with the second row of buttons. The staff underneath shows what the
+band will play. The tempo slider at the bottom of the page slows everything down.
+
+::: {.callout-note}
+## MYP4: Rock and the Pop Ballads
+Our statement of inquiry is *Art allows us to express our feelings and communicate our philosophies and
+ways of life effectively.* A fill is communication inside the song: the band replying to the singer,
+agreeing, pushing or comforting. For Criterion B, the fills you try (and the ones you leave out) are
+practical exploration: record two versions of a phrase end, and say in your journal which one serves the
+words better and why.
+:::
+
+## 1. Riff, fill, lick: three words
+
+- **Riff:** a short phrase repeated exactly throughout a song ("Fill (music)"). Rock is full of guitar
+  riffs that carry a whole verse. *Unverified (from memory, not yet checked against a source):* the riff
+  usually sits on the home chord and is the first thing a listener can hum.
+- **Fill:** "a short musical passage, riff, or rhythmic sound which helps to sustain the listener's
+  attention", played in the breaks between phrases, especially at their ends, and changed each time rather
+  than repeated ("Fill (music)"). Drummers play most of them, but guitar, bass, organ, piano, strings and
+  horns all fill too (same source).
+- **Lick:** *unverified:* a stock phrase in one player's vocabulary (a blues guitarist's turnaround, a
+  gospel pianist's run), used in fills and solos.
+
+The short version: **a riff repeats, a fill answers, a lick is what you answer with.**
+
+## 2. The gap
+
+A pop ballad's lines are usually four bars long, and the singer usually stops in the fourth bar. That
+fourth bar is where the band speaks. Listen to the ballad first with no figures, then with them. With
+figures on, the piano, then the bass, then the piano again take the fourth bar of each phrase, **one at a
+time**.
+
+<div class="ar-demo" data-style="pop" data-chart="C|G|Am|F|C|G|F|C|Am|F|C|G|C|G|F|C" data-tempo="72" data-on="bass comp drums" data-staves="comp bass" data-choice-label="Figures:" data-choices='[{"label":"Fills in turn","opts":{"figures":"pianoAnswer+bassWalkUp+pianoSus"}},{"label":"No fills","opts":{"figures":""}}]'></div>
+
+**What to listen for.** Without fills the band is good wallpaper: steady, polite, a bit flat. With them
+every fourth bar leans forward into the next line. Look at bar 4 on the staff: the right hand plays its
+chord on beat 1, waits, then answers. Waiting is half of a fill.
+
+**Taking turns.** Only one player fills at a time. If the piano, the bass and the drums all fill in the
+same bar, the answers run into each other and nobody is heard: it sounds busy, not exciting. Bands agree on
+whose turn it is, and the band here does the same.
+
+## 3. Piano
+
+Two fills every ballad pianist knows. The **answer**: the chord's notes coming down in eighth notes from
+the top, octave, fifth, third, root, landing ready for the next chord. The **sus**: the chord with its
+third raised to the fourth (a *sus4*) on beat 3, falling back to the third on beat 4, a sigh in the
+harmony.
+
+<div class="ar-demo" data-style="pop" data-chart="C|G|Am|F" data-tempo="72" data-on="comp" data-staves="comp" data-comp="piano" data-choice-label="Bar 4:" data-choices='[{"label":"Answer (down the chord)","opts":{"figures":"pianoAnswer"}},{"label":"Sus4 to 3","opts":{"figures":"pianoSus"}},{"label":"No fill","opts":{"figures":""}}]'></div>
+
+**How to play it.** Left hand: keep the octave on the root ringing (pedal down). Right hand: strike the
+chord on 1, lift on 2, and play the answer with fingers 5 3 2 1 (octave, fifth, third, root), each a little
+softer than the one before. For the sus, move only one finger: the third steps up a half or whole step and
+back.
+
+## 4. Bass
+
+The bass fills by **walking to the next chord**. Two ways: the **walk-up**, three quarter notes climbing
+5, 6, 7 of the next chord's scale into its root; and the **approach**, two eighth notes on beat 4 a whole
+step and a half step below the next root.
+
+<div class="ar-demo" data-style="pop" data-chart="C|G|Am|F|C|G|F|C" data-tempo="72" data-on="bass drums" data-staves="bass" data-choice-label="Bar 4 and 8:" data-choices='[{"label":"Walk-up","opts":{"figures":"bassWalkUp"}},{"label":"Approach","opts":{"figures":"bassApproach"}},{"label":"No fill","opts":{"figures":""}}]'></div>
+
+**What to look for.** The fill always ends on the note just below the next root, so it pulls into the new
+bar. Into C that is B; into Am it is G♯. Practise slowly with a metronome: the fill must not rush, or the
+next bar arrives early.
+
+## 5. Guitar: the rock lick and the riff
+
+The rock guitarist's fill is a **minor-pentatonic lick** from the chord's root: down from the octave, ♭7,
+5, ♭3, then back to the chord. The rock **riff** climbs the same scale, root, ♭3, 4, 5, on beats 3 and 4 of
+every second bar, after the power chord on 1. Switch between them: the riff is always there, the lick
+only at the ends of phrases.
+
+<div class="ar-demo" data-style="rock" data-chart="E|A|E|B|E|A|E|B" data-tempo="112" data-on="bass comp drums" data-staves="comp" data-comp="guitar" data-choice-label="Guitar:" data-choices='[{"label":"Lick at phrase ends","opts":{"figures":"guitarLick+bassApproach"}},{"label":"Riff every 2nd bar","opts":{"figures":"guitarRiff"}},{"label":"Riff and lick","opts":{"figures":"guitarRiff+guitarLick+bassApproach"}},{"label":"Strumming only","opts":{"figures":""}}]'></div>
+
+**How to play it.** In E, every note of the lick is in the open position: E (open top string), D (B string,
+3rd fret), B (open B), G (open G). The riff is low: E (open low string), G (3rd fret), A (open A), B (A
+string, 2nd fret). Mute the strings you are not playing with the side of the picking
+hand. *Unverified:* a bend on the ♭3 (a quarter-tone towards the major third) is the classic blues-rock
+touch; the band here plays it straight.
+
+## 6. Famous riffs, intros and outros
+
+Short excerpts of riffs everyone knows, for study in class. These are **read from notation**: each is the
+music example printed on that song's Wikipedia page (English, German or Italian), converted note for note
+for the band; the page is named in the Works Cited. They are excerpts as Wikipedia gives them, not full
+transcriptions, and the octave the guitar and bass sound in is the site's reading (guitar and bass music is
+written an octave above where it sounds). Many songs **start** with their riff alone (the intro) and
+**end** with it, or with a tag (the outro): switch every player but one off to hear the riff as an intro.
+
+### Guitar
+
+<div class="ar-demo" data-style="rock" data-chart="E|E|E|E" data-tempo="132" data-on="comp drums" data-staves="comp" data-comp="guitar" data-choice-label="Riff:" data-choices='[{"label":"(I Can’t Get No) Satisfaction (The Rolling Stones (1965))","opts":{"figures":"satisfaction"},"chart":"E|E|E|E"},{"label":"Day Tripper (The Beatles (1965))","opts":{"figures":"dayTripper"},"chart":"E|E|E|E"},{"label":"Johnny B. Goode (intro) (Chuck Berry (1958))","opts":{"figures":"johnnyB"},"chart":"Bb|Bb|Bb|Bb|Bb"},{"label":"Black Sabbath (Black Sabbath (1970))","opts":{"figures":"blackSabbath"},"chart":"G|G|G|G"},{"label":"Layla (Derek and the Dominos (1970))","opts":{"figures":"layla"},"chart":"Dm|Dm|Dm|Dm|Dm"},{"label":"Stairway to Heaven (intro) (Led Zeppelin (1971))","opts":{"figures":"stairway"},"chart":"Am|Am|Am|Am"}]'></div>
+
+- *Satisfaction*: three notes, B, C♯, D, and the space between them; the riff is mostly rhythm.
+- *Day Tripper*: the E chord's own notes (E, G♯, B) with the blues ♭3 (G) and ♭7 (D) slipped in.
+- *Johnny B. Goode*: the intro, double stops (two strings at once) hammered in eighths, then a run down.
+- *Black Sabbath*: G, the G an octave up, then C♯: the **tritone**, the interval three whole tones wide,
+  slow and heavy. A feeling made from one interval.
+- *Layla*: a fast sixteenth-note pickup that lands on a long held D, then the same an octave up.
+- *Stairway to Heaven*: the intro, a picked line over a bass that falls by half steps (A, G♯, G, F♯, F).
+
+### Bass
+
+<div class="ar-demo" data-style="rock" data-chart="Em|Em|Em|Em" data-tempo="110" data-on="bass drums" data-staves="bass" data-choice-label="Riff:" data-choices='[{"label":"Another One Bites the Dust (Queen (1980))","opts":{"figures":"biteDust"},"chart":"Em|Em|Em|Em"},{"label":"Stand by Me (Ben E. King (1961))","opts":{"figures":"standByMe"},"chart":"A|A|F#m|F#m|D|E|A|A"}]'></div>
+
+- *Another One Bites the Dust*: three repeated Es, a gap, then the answer; the pickup at the end leads back.
+- *Stand by Me*: one figure moved through the chords (A, F♯m, D, E): the whole song's harmony in the bass.
+
+<div class="ar-demo" data-style="rock" data-chart="Gm|Gm|Gm|Gm" data-meter="5/4" data-tempo="150" data-on="bass drums" data-staves="bass" data-choice-label="Riff:" data-choices='[{"label":"Theme from Mission: Impossible (Lalo Schifrin (1966))","opts":{"figures":"missionBass"},"chart":"Gm|Gm|Gm|Gm"}]'></div>
+
+*Mission: Impossible* is in **5/4**: count 1-2-3, 1-2-3, 1-2, 1-2 (eighth notes 3 + 3 + 2 + 2).
+
+<div class="ar-demo" data-style="rock" data-chart="Bm|Bm|Bm|Bm" data-meter="7/4" data-tempo="120" data-on="bass drums" data-staves="bass" data-choice-label="Riff:" data-choices='[{"label":"Money (Pink Floyd (1973))","opts":{"figures":"money"},"chart":"Bm|Bm|Bm|Bm"}]'></div>
+
+*Money* is in **7/4**: seven beats to a bar, the riff's notes on the beats with one triplet.
+
+### Keys
+
+<div class="ar-demo" data-style="pop" data-chart="Gm|Gm|Gm|Gm|Gm|Gm" data-tempo="120" data-on="comp" data-staves="comp" data-comp="piano" data-choice-label="Riff:" data-choices='[{"label":"Ashes to Ashes (hook) (David Bowie (1980))","opts":{"figures":"ashes"},"chart":"Gm|Gm|Gm|Gm|Gm|Gm"},{"label":"Shave and a Haircut (the ending tag) (traditional)","opts":{"figures":"shave"},"chart":"C|C|C|C"}]'></div>
+
+- *Ashes to Ashes*: a three-bar hook on the synthesizer, here on the piano.
+- *Shave and a Haircut*: the five-note tag and its two-note answer ("two bits"), a ready-made **outro**:
+  a band can end a song with it.
+
+### From memory (not yet checked)
+
+Four more the band plays, written from memory of the records and **not yet checked against notation**:
+*Seven Nation Army* (`sevenNation`), *Smoke on the Water* (`smoke`), *Every Breath You Take*
+(`everyBreath`) and a *Clocks*-style piano figure (`clocks`). Check each against the recording before
+using it.
+
+**Ask yourself (Criterion A):** why does a riff become the thing everyone remembers about a song? Pick two
+from this section: what does each say about the feeling of its song before a word is sung?
+
+## 7. Drums
+
+The drummer's fill tells the band where the phrase ends and how big the next section will be. A small
+fill (a snare note or two) says "next line"; a bigger one down the toms says "here comes the chorus".
+The band's drummer already does this (Fills: none, at sections only, or as usual).
+
+<div class="ar-demo" data-style="rock" data-chart="E|A|E|B|E|A|E|B" data-tempo="112" data-on="bass comp drums" data-staves="drums" data-choice-label="Drum fills:" data-choices='[{"label":"As usual","opts":{"figures":"","fills":"auto"}},{"label":"More","opts":{"figures":"","fills":"busy"}},{"label":"None","opts":{"figures":"","fills":"none"}}]'></div>
+
+**In a ballad** the drummer fills least of all, and often only into the chorus. A fill under the singer's
+line covers the words.
+
+## 8. The producer's view: making room
+
+In a recording studio the question is not "can I fill here?" but "is there room?" Four kinds of room
+*(producer's practice, unverified: from teaching experience, not yet checked against a source)*:
+
+- **Room in time.** Fills go where the voice is not. In a DAW, look at the vocal waveform: the flat gaps
+  between its phrases are where a fill can go. A fill that starts before the singer finishes is cut back
+  or moved.
+- **Room in pitch.** A fill in the same range as the voice fights it. The ballad piano's answer sits above
+  the voice, the bass walk-up below it.
+- **Room in the stereo picture.** A guitar lick panned a little to one side of the centre (where the voice
+  is) can be heard without covering a word.
+- **Room in loudness.** Many producers bring a fill up with automation (a short rise on that track's
+  fader) and keep the rest of the part low.
+
+And the producer decides **who** answers: with three players able to fill, one is chosen for each gap,
+and some gaps are left empty on purpose, so the fills that remain mean something. The band on this page
+does the same: one player per gap, in turn.
+
+## 9. Try it
+
+- **Everyone:** play the ballad in section 2 with figures off and sing (or hum) a four-bar line over it.
+  Then turn the fills on. Does the band answer you? Which answer suits the words?
+- **Pianists:** switch the band's piano off in section 3 and play the answer and the sus yourself, slowly.
+- **Bass players:** switch the bass off in section 4 and play the walk-up into each new chord.
+- **Guitarists:** learn the riff in section 5 first (it repeats), then the lick (it answers).
+- **Drummers:** play section 6 with the band's drums off. Fill only into bar 5.
+- **Producers:** record a two-line vocal over the ballad in your DAW and place one fill in each gap. Try
+  the same fill on two instruments and keep the one that is heard without covering the voice.
+- **For your journal (Criterion B):** one sentence for each fill you tried: "I tried … in bar …; I kept /
+  dropped it because …".
+
+{{< include _arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=2"></script>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Another One Bites the Dust." *Wikipedia (German)*, Wikimedia Foundation. Music example (LilyPond) read 2026-11-04 by scripts/riffs/lily2fig.mjs: the band's biteDust riff.
+
+"Ashes to Ashes (David Bowie song)." *Wikipedia*, Wikimedia Foundation. Music example (LilyPond) read 2026-11-04 by scripts/riffs/lily2fig.mjs: the band's ashes riff.
+
+"Black Sabbath (song)." *Wikipedia*, Wikimedia Foundation. Music example (LilyPond) read 2026-11-04 by scripts/riffs/lily2fig.mjs: the band's blackSabbath riff.
+
+"Day Tripper." *Wikipedia (Italian)*, Wikimedia Foundation. Music example (LilyPond) read 2026-11-04 by scripts/riffs/lily2fig.mjs: the band's dayTripper riff.
+
+"Fill (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Fill_(music)](https://en.wikipedia.org/wiki/Fill_(music)). Read 2026-11-04: fill defined; breaks between phrases, especially their ends; guitar, bass, organ, keyboard, horn fills; a riff repeats exactly.
+
+"(I Can’t Get No) Satisfaction." *Wikipedia (German)*, Wikimedia Foundation. Music example (LilyPond) read 2026-11-04 by scripts/riffs/lily2fig.mjs: the band's satisfaction riff.
+
+"Johnny B. Goode." *Wikipedia (German)*, Wikimedia Foundation. Music example (LilyPond) read 2026-11-04 by scripts/riffs/lily2fig.mjs: the band's johnnyB riff.
+
+"Layla." *Wikipedia*, Wikimedia Foundation. Music example (LilyPond) read 2026-11-04 by scripts/riffs/lily2fig.mjs: the band's layla riff. The page prints "a' 16" in the third riff; read as a'16 (with the space, LilyPond repeats the note and the bar comes to 4 1/4 beats).
+
+"Money (Pink-Floyd-Lied)." *Wikipedia (German)*, Wikimedia Foundation. Music example (LilyPond) read 2026-11-04 by scripts/riffs/lily2fig.mjs: the band's money riff.
+
+"Riff." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Riff](https://en.wikipedia.org/wiki/Riff). Not yet re-read (fetch timed out 2026-11-04).
+
+"Shave and a Haircut." *Wikipedia*, Wikimedia Foundation. Music example (LilyPond) read 2026-11-04 by scripts/riffs/lily2fig.mjs: the band's shave riff.
+
+"Stairway to Heaven." *Wikipedia (German)*, Wikimedia Foundation. Music example (LilyPond) read 2026-11-04 by scripts/riffs/lily2fig.mjs: the band's stairway riff.
+
+"Stand by Me (Lied)." *Wikipedia (German)*, Wikimedia Foundation. Music example (LilyPond) read 2026-11-04 by scripts/riffs/lily2fig.mjs: the band's standByMe riff.
+
+"Theme from Mission: Impossible." *Wikipedia*, Wikimedia Foundation. Music example (LilyPond) read 2026-11-04 by scripts/riffs/lily2fig.mjs: the band's missionBass riff.
+
+**For teachers**
+
+"A Pedagogical Approach to Minor Pentatonic Riffs in Rock Music." *Journal of Music Theory Pedagogy*. Found 2026-11-04 by search; riffs confirm the tonic in late-60s/70s rock and funk; pentatonic pitch material. Article not yet read in full.
+:::
+<!-- /works-cited -->

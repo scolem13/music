@@ -138,7 +138,7 @@ YouTube and paste the link there.</p>
 .tds tbody tr:hover { background: var(--bs-tertiary-bg, #f6f8fb); }
 @media (max-width: 600px) { .td-list { columns: 1; padding-left: .3rem; } }
 </style>
-<script src="/apps/shared/abcjs-basic.js?v=4"></script>
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
 <script src="/apps/shared/abc-core.js?v=3"></script>
 <script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
 <script src="/apps/shared/pitch-spelling.js?v=1"></script>

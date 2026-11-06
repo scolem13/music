@@ -108,6 +108,10 @@
     tango:   { bars: [ [[0, "L"], [1.5, "S"], [2, "S"], [3, "S"]] ] },
     montuno: { bars: [ [[0, "S"], [1, "S"], [1.5, "S"], [2.5, "S"], [3.5, "S"]], [[0.5, "S"], [1.5, "S"], [2.5, "S"], [3.5, "S"]] ] },
     chacha:  { bars: [ [[1, "S"], [2, "S"], [2.5, "S"], [3, "L"]] ] },
+    // The piano guajeo (guajeoBar): the montuno's rhythm in broken octaves. O = the melody note doubled an octave below,
+    // F = that octave with the chord tones between. The melody rocks between two neighbouring chord tones (G4..G5).
+    // Written from teaching sources (Pianote, Wikipedia "Guajeo": octaves, the onbeat / offbeat bars), not from a record: check by ear.
+    guajeo:  { guajeo: true, bars: [ [[0, "O"], [1, "F"], [1.5, "O"], [2.5, "F"], [3.5, "O"]], [[0.5, "F"], [1.5, "O"], [2.5, "F"], [3.5, "O"]] ] },
     // strumming: a third entry gives the stroke. D = down (the whole voicing, low string first), U = up
     // (its top three notes, high string first, lighter). Chords ring into each other. x.25 / x.75 are sixteenths.
     strumCamp:  { strum: true, bars: [ [[0, "L", "D"], [1, "L", "D"], [1.5, "L", "U"], [2.5, "L", "U"], [3, "L", "D"], [3.5, "L", "U"]] ] },
@@ -750,12 +754,43 @@
       return ev;
     }
 
+    // The guajeo: each hit on the chord sounding there. The melody note is the chord tone nearest the last one; on an O hit it
+    // steps to the next chord tone (up in even bars, down in odd), so the line rocks. A pinned chord plays its pinned notes.
+    function guajeoBar(ctx, su, g){
+      var H = global.BandHarmony, ev = [], beats = ctx.beats, pat = g.bars[ctx.index % g.bars.length];
+      var up = ctx.index % 2 === 0, mel = st.gjMel || 72;
+      pat.forEach(function (h){
+        if (h[0] >= beats - 1e-6) return;
+        var chord = H.chordAt(ctx.chords, h[0]); if (!chord || chord.nc) return;
+        var ck = keyAt(ctx.index, ctx.chords, h[0]), pin = pinOf(su, ck), midis;
+        if (pin) midis = pin.slice();
+        else {
+          var pcs = [0, chord.third != null ? chord.third : 4, chord.fifth != null ? chord.fifth : 7].map(function (t){ return ((chord.root + t) % 12 + 12) % 12; });
+          var tones = []; for (var m = 67; m <= 79; m++) if (pcs.indexOf(m % 12) >= 0) tones.push(m);
+          tones.sort(function (a, b){ return Math.abs(a - mel) - Math.abs(b - mel) || a - b; });
+          var t = tones[0];
+          if (h[1] === "O"){ var ord = tones.slice().sort(function (a, b){ return a - b; }), j = ord.indexOf(t) + (up ? 1 : -1);
+            if (j < 0 || j >= ord.length) j = ord.indexOf(t) + (up ? -1 : 1); t = ord[j] != null ? ord[j] : t; }
+          mel = t; midis = [t - 12];
+          if (h[1] === "F") for (var q = t - 11; q < t; q++) if (pcs.indexOf(q % 12) >= 0) midis.push(q);
+          midis.push(t);
+        }
+        var on = h[0] === Math.floor(h[0]);
+        var e = { pos: h[0], dur: 0.3, midis: midis, inst: su.inst, of: ck,
+                  vel: Math.round(clamp(spread(ctx, (h[1] === "O" ? 0.6 : 0.54) + (on ? leanDyn(ctx, h[0], 0.5) : 0), 0.56) + phraseDyn(ctx, h[0]) + (rng() - 0.5) * 0.04, 0.4, 0.74) * 1000) / 1000 };
+        ev.push(e);
+      });
+      st.gjMel = mel; st.started = true; st.pushed = false;
+      return ev;
+    }
+
     // A set pattern (GRID): its hits exactly, each on the chord sounding there; every chord in the bar is heard.
     function gridBar(ctx, su){
       var H = global.BandHarmony, ev = [], tempo = ctx.tempo || 120, beats = ctx.beats, g = GRID[su.grid];
       st.antic = false; st.plan = null; st.queue = [];
       if (g.ballad) return balladBar(ctx, su, g);
       if (g.pick) return pickBar(ctx, su, g);
+      if (g.guajeo) return guajeoBar(ctx, su, g);
       var pat = typeof g.bars === "function" ? g.bars(beats) : g.bars[ctx.index % g.bars.length];
       var hits = pat.filter(function (h){ return h[0] < beats - 1e-6; }).map(function (h){ return { pos: h[0], len: h[1], stroke: h[2], shift: h[3] || 0 }; });
       (ctx.chords || []).forEach(function (c, k){

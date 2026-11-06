@@ -1,0 +1,55 @@
+---
+title: "Jump Right In: Reference Handbook for LSAs"
+description: "Gordon's handbook for Learning Sequence Activities (JRI General Music, 2001 rev.), step by step: what the register books hold, how to read a criterion page, how to teach and evaluate tonal and rhythm patterns, with page numbers."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<script src="/apps/shared/mlt/books/jri-lsa.js?v=1"></script>
+```
+
+{{< include _scripts.qmd >}}
+
+## Front matter: how to jump right in
+
+```{=html}
+<div class="mlt-unit" data-book="jri-lsa" data-unit="start"></div>
+```
+
+## Introduction
+
+```{=html}
+<div class="mlt-unit" data-book="jri-lsa" data-unit="intro"></div>
+```
+
+## Part 1: Organization of the materials
+
+```{=html}
+<div class="mlt-unit" data-book="jri-lsa" data-unit="p1-registers"></div>
+```
+
+## Part 2: Using the materials
+
+```{=html}
+<div class="mlt-unit" data-book="jri-lsa" data-unit="p2-use"></div>
+```
+
+## Part 3: Teaching patterns in LSAs
+
+::: {.mlt-t}
+Entered to p. 34 so far: class, dialogue and individual patterns, and the Specific Instructions for tonal and rhythm units 1–42, are still to come.
+:::
+
+```{=html}
+<div class="mlt-unit" data-book="jri-lsa" data-unit="p3-defs"></div>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Gordon, Edwin E. *Jump Right In: The Music Curriculum. Reference Handbook for Using Learning Sequence Activities*. 2001 revision, GIA Publications, 2001. Tonal sequences (p. 33) and range (p. 32); Tonal Unit 6, partial synthesis (pp. 48–49); Tonal Unit 9, generalization-verbal (pp. 52–54); rhythm patterns and sequences chanted with expressive inflection on one pitch, all durations without pitch ("A Quick Course on Rhythm" and "Techniques for Teaching Class Patterns").
+:::
+<!-- /works-cited -->
+

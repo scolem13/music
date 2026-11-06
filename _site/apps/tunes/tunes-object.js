@@ -1093,9 +1093,9 @@ $ "G7" GF D2 | "C" AG EG | GG GG |
 w: down the street, down the street, a pret-ty girl I
 $ AG Ec | "G7" BB AB | "C" c4
 w: chanced to meet, hi-ho, hi-ho, hi-ho.
-$ "C"[M:6/8] GGG G^FG | A2 G E2 E | "G7" G2 F D2 F |
+$ "C"[M:6/8] GGG GFG | A2 G E2 E | "G7" G2 F D2 F |
 w: Rig a jig jig and a-way we go, a-way we go, a-
-$ "C" A2 G E3 | GGG G^FG | A2 G E2 E | "G7" G2 F D2 c |
+$ "C" A2 G E3 | GGG GFG | A2 G E2 E | "G7" G2 F D2 c |
 w: way we go. Rig a jig jig and a-way we go, hi-
 $ "G7" B2 B (BAB) |"C" c3-c2|]
 w: ho, hi ho_ hi-ho._
@@ -1577,7 +1577,7 @@ w: As I strolled through the bus-y park,_ wait-ing
 $ "Fm" AGF- "C7"FED | "Fm" C3- "C7"C2 z | 
 w: qui-lla-y me-e--na-mo-re. _
 w: for my ship_ soon to go,_
-$ "Fm" ccc- cB=A | "Bbm" BG_A- ABG | 
+$ "Fm" ccc- cB=A | "Bbm" BGA- ABG | 
 w: La to-me_ de la ma-no y-al_ cam-pa-
 w: There she stood_ with her love-ly smile,_ And she
 $ "Fm" AFF- "Db7" FG"C7"=E |"Fm" F3-F z2 :|]
@@ -5540,10 +5540,10 @@ Q:3/8=120
 %%id katangaroo
 K:Emin
 I:linebreak $
-B, | E2 G3 B, | E2 G3 B | A3 G2^F- | ^F3- ^F2B, | ^D2 ^F3 c | B2A G3 | E6- | E3- E2B, | $
-E2 G3 B, | E2 G3 B | A2B, G3 | ^F2B,- B,3 | B2B A3 | G3 ^F2E- | E6- | E6 || $
-c3 A2c | B3 G2B | A3 ^F2A | G3 E3 | ^F3 E3 | ^D3 C2B,- | B,6- | B,6 | $
-c3 A2c | B3 G2B | A3 ^F2A | G3 E3 | ^F2^F1 E2^D- | ^D6 | A2A G2^F- | ^F6- | ^F6- | ^F3- ^F2 |]
+B, | E2 G3 B, | E2 G3 B | A3 G2F- | F3- F2B, | ^D2 F3 c | B2A G3 | E6- | E3- E2B, | $
+E2 G3 B, | E2 G3 B | A2B, G3 | F2B,- B,3 | B2B A3 | G3 F2E- | E6- | E6 || $
+c3 A2c | B3 G2B | A3 F2A | G3 E3 | F3 E3 | ^D3 C2B,- | B,6- | B,6 | $
+c3 A2c | B3 G2B | A3 F2A | G3 E3 | F2F1 E2^D- | ^D6 | A2A G2F- | F6- | F6- | F3- F2 |]
 
 X:206
 T:Kerplunk
@@ -32031,7 +32031,7 @@ L:1/8
 K:F
 "F"{^G}Ac AF- F4 | "Bb7"z ^C DF _A3 G | "F"F8- | "F7"F6 z2 |
 "Bb7"z D FG- G4 | z D FG _A3 G | "F7"F8- | F6 z2 |
-"C7"EG EC- C C3 | "Caug7"z2 _A_A _A3 G | "F"F8- | F4 "C7"z4 |]
+"C7"EG EC- C C3 | "Caug7"z2 _AA A3 G | "F"F8- | F4 "C7"z4 |]
 
 X:11
 T:Long, Long Ago
@@ -32085,11 +32085,11 @@ K:F
 "F"a a^g | a2 c4 d2 | f f2 a- a4 | z2 a2 a3 ^g | a g2 f- f4 |
 "C7"z2 g2 g3 ^f | g f2 e- e4 | "F"z2 a2 a3 ^g | a g2 f- fa a^g |
 a2 c4 d2 | f f2 a- a4 | z2 a2 a3 ^g | a g2 f- f z f2 |
-"C7"a2 g4 _b2 | a4 g4 | "F"f8 | z2 f2 g2 aa |
-"Bb"_b _b3 _b2 _b_b- | _b z _b2 c'2 _b_b | "F"a a3 a2 gf- | f4 z4 |
+"C7"a2 g4 b2 | a4 g4 | "F"f8 | z2 f2 g2 aa |
+"Bb"b b3 b2 bb- | b z b2 c'2 bb | "F"a a3 a2 gf- | f4 z4 |
 "C7"g2 g6 | "Bb/C"f4 "C7"g4 | "F"a8 | "F7"z2 f2 g2 aa |
-"Bb"_b _b3 _b2 _b_b- | _b z _b2 c'2 _b_b | "F"a a3 a2 gf- | f4 z4 |
-"C7"g2 g4 _b2 | a4 g4 | "F"f8- | f4 z |]
+"Bb"b b3 b2 bb- | b z b2 c'2 bb | "F"a a3 a2 gf- | f4 z4 |
+"C7"g2 g4 b2 | a4 g4 | "F"f8- | f4 z |]
 
 X:4
 T:When the Saints Go Marching In

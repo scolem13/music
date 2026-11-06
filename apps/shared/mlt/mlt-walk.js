@@ -30,7 +30,7 @@
 // need abcjs, abc-core, abc-events, abc-play, pattern-set, rhythm-pattern-object, audiation.js.
 (function (global) {
   "use strict";
-  var BOOK_NAMES = { mullen: "Mullen, MLT Any Music Teacher Can Du…De", recorder: "JRI Recorder Teacher's Guide", dmti1: "Azzara and Grunow, DMTI Book 1", dmti2: "DMTI Book 2", dmti3: "DMTI Book 3" };
+  var BOOK_NAMES = { mullen: "Mullen, MLT Any Music Teacher Can Du…De", recorder: "JRI Recorder Teacher's Guide", dmti1: "Azzara and Grunow, DMTI Book 1", dmti2: "DMTI Book 2", dmti3: "DMTI Book 3", "jri-lsa": "Gordon, JRI Reference Handbook for LSAs", "lange-harmony": "Lange, Together in Harmony", "lange-harmony-again": "Lange, Together Again in Harmony" };
   var PHASE = { plan: "Plan", "first-whole": "First Whole", lsa: "Part (LSA)", "second-whole": "Second Whole", bridge: "Bridge" };
   var KIND = { technique: "Technique", game: "Game", movement: "Movement", instruments: "Instruments", singing: "Singing", bridge: "Bridge" };
 
@@ -59,6 +59,8 @@
     host.innerHTML = '<span>View:</span> <label><input type="radio" name="mlt-view" value="teacher"> Teacher (everything)</label> ' +
       '<label><input type="radio" name="mlt-view" value="student"> Student (just the activity)</label>';
     [].forEach.call(host.querySelectorAll("input"), function (r) { r.onchange = function () { setView(r.value); }; });
+    // Music size: the site-wide --abc-zoom (abcjs-basic.js). abcjs "resize" fills its box, so the box's width (CSS below) sets the size here.
+    if (global.ABCJS && ABCJS.zoomControl) { var zc = ABCJS.zoomControl(); zc.style.marginLeft = "auto"; host.appendChild(zc); }
   }
 
   // ---------- activity card ----------
@@ -85,10 +87,11 @@
     if (!off) { off = el("div"); off.style.cssText = "position:absolute;left:-9999px;width:600px"; document.body.appendChild(off); }
     return ABCJS.renderAbc(off, abc)[0];
   }
-  function play(abc, qpm, onEnd) {
+  // sound: a BandSounds name; rhythm patterns pass "woodblock" (a rhythm is struck, not played on the piano)
+  function play(abc, qpm, onEnd, sound) {
     var me = ++running;
     AbcPlay.stop();
-    return AbcPlay.play(visual(abc), { sound: "piano", qpm: qpm, light: false, onEnd: function () { if (me === running && onEnd) onEnd(); } });
+    return AbcPlay.play(visual(abc), { sound: sound || "piano", qpm: qpm, light: false, onEnd: function () { if (me === running && onEnd) onEnd(); } });
   }
   function ready() { return global.Audiation && global.AbcPlay && global.ABCJS; }
 
@@ -140,7 +143,7 @@
   // weighted ways from the MLT books) when the page loads establish.js, else by the site's rhythm sequence
   function rhythmEcho(host, s) {
     var set = Audiation.rhythmSet(s.set), triple = set.meter === "triple", qpm = triple ? 120 : 84, RC = global.RhythmChant;
-    var chant = function (abc, o, end) { if (RC) RC.play(abc, Object.assign({ qpm: qpm, onEnd: end }, o || {})); else play(Audiation.rhythmAbc(abc, Audiation.rhythmPitch(57, 76)), qpm, end); };
+    var chant = function (abc, o, end) { if (RC) RC.play(abc, Object.assign({ qpm: qpm, onEnd: end }, o || {})); else play(Audiation.rhythmAbc(abc, Audiation.rhythmPitch(57, 76)), qpm, end, "woodblock"); };
     host.innerHTML = '<div class="mlt-ctl"><button class="seq">Set the meter</button> <button class="next">▶ Next pattern</button> <button class="again" disabled>Again</button> ' +
       (s.syllables ? '<button class="ans" disabled>Show the syllables</button> ' + (global.VOICE_HIDDEN !== false ? '' : '<button class="hear" disabled>Hear the syllables</button> ') : '') +
       '<label>Order <select class="o"><option value="fam">In order</option><option value="mix">Mixed</option></select></label></div><div class="mlt-msg"></div><div class="mlt-rpaper"></div>';
@@ -199,7 +202,7 @@
     q("prev").onclick = function () { i = (i - 1 + pats.length) % pats.length; show(); };
     q("nextp").onclick = function () { i = (i + 1) % pats.length; show(); };
     q("mix").onchange = function () { order.sort(q("mix").checked ? function () { return Math.random() - 0.5; } : function (a, b) { return a - b; }); i = 0; show(); };
-    q("hear").onclick = function () { var p = pats[order[i]], qpm = /8$/.test(p.m) ? 120 : 80; play(Audiation.rhythmAbc(abcOf(p), pitch), qpm); msg.textContent = Audiation.rhythmSyllables(abcOf(p)); };
+    q("hear").onclick = function () { var p = pats[order[i]], qpm = /8$/.test(p.m) ? 120 : 80; play(Audiation.rhythmAbc(abcOf(p), pitch), qpm, null, "woodblock"); msg.textContent = Audiation.rhythmSyllables(abcOf(p)); };
     function judge(t) { var d = /8$/.test(pats[order[i]].m) || pats[order[i]].m === "3/4" ? "triple" : "duple";
       msg.textContent = (t === d ? "Yes: " : "No: it's ") + d + ", because the microbeats are " + (d === "duple" ? "DU DE." : "DU DA DI."); }
     if (s.ask) { q("dup").onclick = function () { judge("duple"); }; q("tri").onclick = function () { judge("triple"); }; }
@@ -316,7 +319,7 @@
       AbcPlay.play(vo || visual(abc), { abc: abc, style: d.u.style, qpm: qpm(), melody: melody !== false, light: !!vo });
     }
     var label = sk === "tune" ? "\u25b6 With the band" : sk === "backing" ? "\u25b6 Band" : sk === "read" ? "\u25b6 Check" : "\u25b6 Example";
-    btn(label, function () { cur = cur || current(); var many = cur.filter(function (x) { return !x.empty; }).length > 1; var p = cur[many ? part % cur.length : 0]; if (p.play) { playAbc(p.play, null, true); msg.textContent = ""; return; } playAbc(p.abc, p.vo, sk !== "backing"); msg.textContent = many ? "Playing: " + p.label : ""; });
+    btn(label, function () { cur = cur || current(); var many = cur.filter(function (x) { return !x.empty; }).length > 1; var p = cur[many ? part % cur.length : 0]; if (p.play) { if (sk === "rseries") { AbcPlay.stop(); AbcPlay.play(visual(p.play), { sound: "woodblock", qpm: qpm(), light: false }); } else playAbc(p.play, null, true); msg.textContent = ""; return; } playAbc(p.abc, p.vo, sk !== "backing"); msg.textContent = many ? "Playing: " + p.label : ""; });
     if (sk !== "backing") btn("\u25b6 Band only", function () { playAbc(d.abc, null, false); msg.textContent = "The band alone: your turn."; });
     if (sk === "tune") btn("\u25b6 Bass line", function () { var p = DMTISkills.make("bass", d.tune, d.sets, 1).parts[0]; playAbc(p.abc, null, true); });
     if (["roots", "partRhy", "macro", "macro2", "tonalRhy", "embellish", "series", "rseries"].indexOf(sk) >= 0) btn("New example", function () { seed++; draw(); msg.textContent = "A new example."; });
@@ -553,7 +556,7 @@
     draw();
   }
 
-  var CSS = ".mlt-view{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;padding:.5rem .8rem;border:1px solid var(--bs-border-color,#ccc);border-radius:8px;margin:.5rem 0 1rem}" +
+  var CSS = ".mlt-score,.mlt-dscore>div{max-width:calc(40rem * var(--abc-zoom,1))}.abc-zoom-ctl{display:flex;gap:.4rem;align-items:center;font-size:.85em;opacity:.8}.mlt-view{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;padding:.5rem .8rem;border:1px solid var(--bs-border-color,#ccc);border-radius:8px;margin:.5rem 0 1rem}" +
     ".mlt-student .mlt-t{display:none!important}" +
     ".mlt-step{margin:1.2rem 0 2rem}.mlt-step h3{margin-bottom:.3rem}.mlt-n{display:inline-block;min-width:1.6em;height:1.6em;line-height:1.6em;text-align:center;border-radius:50%;background:var(--bs-secondary-bg,#eee);font-size:.8em;margin-right:.3em}" +
     ".mlt-meta{font-size:.85em;margin:.2rem 0 .5rem}.mlt-dim{opacity:.7;font-size:.9em}.mlt-cite{font-size:.85em;opacity:.8;white-space:nowrap}.mlt-cite::before{content:'📖 '}" +

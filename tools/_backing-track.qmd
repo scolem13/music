@@ -745,7 +745,7 @@
 <script src="/apps/shared/band/catalog.js?v=38"></script>
 <script src="/apps/shared/band/drums.js?v=19"></script>
 <script src="/apps/shared/band/congas.js?v=4"></script>
-<script src="/apps/shared/band/sounds.js?v=22"></script>
+<script src="/apps/shared/band/sounds.js?v=23"></script>
 <script src="/apps/shared/band/player.js?v=130"></script>
 <script src="/apps/shared/band/output-panel.js?v=1"></script>
 <script src="/apps/shared/band/midi.js?v=21"></script>
@@ -1752,7 +1752,7 @@
   function loadAbcjs(){
     if (window.ABCJS) return Promise.resolve();
     if (!abcjsLoad) abcjsLoad = new Promise(function(res, rej){ var sc = document.createElement("script");
-      sc.src = "/apps/shared/abcjs-basic.js?v=4"; sc.onload = res; sc.onerror = function(){ abcjsLoad = null; rej(); }; document.head.appendChild(sc); });
+      sc.src = "/apps/shared/abcjs-basic.js?v=5"; sc.onload = res; sc.onerror = function(){ abcjsLoad = null; rej(); }; document.head.appendChild(sc); });
     return abcjsLoad;
   }
   var drawnFirst = null;

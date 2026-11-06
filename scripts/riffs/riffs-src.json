@@ -1,0 +1,122 @@
+[
+ {
+  "id": "satisfaction",
+  "song": "(I Can't Get No) Satisfaction",
+  "artist": "The Rolling Stones (1965)",
+  "part": "comp",
+  "inst": "guitar",
+  "chart": "E|E|E|E",
+  "page": "de:(I Can’t Get No) Satisfaction",
+  "lily": "\\relative c {\n  \\set Staff.midiInstrument = #\"overdriven guitar\"\n  \\key e \\major\n  \\tempo 4 = 150\n  \\transposition c\nb'8 r8 b4 r8 b8 cis8 d8~ | d4 r8 d8 d8 (cis8) cis8 r8 \\bar \":|.\"\n}"
+ },
+ {
+  "id": "dayTripper",
+  "song": "Day Tripper",
+  "artist": "The Beatles (1965)",
+  "part": "comp",
+  "inst": "guitar",
+  "chart": "E|E|E|E",
+  "page": "it:Day Tripper",
+  "lily": "{\\key e \\major\ne4. g8 gis8 [b8] e'8 [d'!8~] d'4 b8 [fis'!8~] fis'8 b8 d'8 [e'8]}"
+ },
+ {
+  "id": "biteDust",
+  "song": "Another One Bites the Dust",
+  "artist": "Queen (1980)",
+  "part": "bass",
+  "chart": "Em|Em|Em|Em",
+  "page": "de:Another One Bites the Dust",
+  "lily": "\\relative c {\\tempo 4 = 110 \\time 4/4 \\partial 4 \\clef bass r8 a16 g e4-. e-. e-. r8 r16 e16 e8 e g e16 a r 4}"
+ },
+ {
+  "id": "money",
+  "song": "Money",
+  "artist": "Pink Floyd (1973)",
+  "part": "bass",
+  "chart": "Bm|Bm|Bm|Bm",
+  "meter": "7/4",
+  "page": "de:Money (Pink-Floyd-Lied)",
+  "lily": "\\relative c {\\key b \\minor \\time 7/4 \\clef bass b-- \\times 2/3 {b'4-- fis8-.} b,4-. fis-- a-- b-. d->}"
+ },
+ {
+  "id": "stairway",
+  "song": "Stairway to Heaven (intro)",
+  "artist": "Led Zeppelin (1971)",
+  "part": "comp",
+  "inst": "guitar",
+  "chart": "Am|Am|Am|Am",
+  "page": "de:Stairway to Heaven",
+  "lily": "{ \\new Staff \\with { \\remove \"Time_signature_engraver\" } a'8 c''8 e''8 a''8 <gis' b''>8 e''8 c''8 b'' <g' c'''>8 e''8 c''8 c''' <fis' fis''>8 d''8 a'8 fis''8 <f' e''>8 c''8 a'8 c''4 (e''8) c''8 a'8 <b g' b'>8 <a a' c''>8 <a e' a' c''>2. }"
+ },
+ {
+  "id": "johnnyB",
+  "song": "Johnny B. Goode (intro)",
+  "artist": "Chuck Berry (1958)",
+  "part": "comp",
+  "inst": "guitar",
+  "chart": "Bb|Bb|Bb|Bb",
+  "page": "de:Johnny B. Goode",
+  "lily": "\\new Staff {\n    \\set Staff.midiInstrument = #\"overdriven guitar\"\n    \\relative b' {\n      \\key bes \\major\n      \\time 4/4\n      \\tempo 4 = 164\n      r2 r8 d8 [f8 g8] | <f bes>8-> <f bes>8 <f bes>8 <f bes>8-> <f bes>8 <f bes>8 <f bes>8-> <f bes>8 | <f bes>8 as8 g8 f8 des8 d8 bes8 bes8 | <f bes>8-> <f bes>8 <f bes>8 <f bes>8-> <f bes>8 <f bes>8 <f bes>8 <f bes>8|\n d'8 <d f>8 <d g>8 <d f>8 c8 bes8 g8 r8 |\n    }\n  }"
+ },
+ {
+  "id": "standByMe",
+  "song": "Stand by Me",
+  "artist": "Ben E. King (1961)",
+  "part": "bass",
+  "octave": -2,
+  "chart": "A|A|F#m|F#m|D|E|A|A",
+  "page": "de:Stand by Me (Lied)",
+  "lily": "\\relative c {\n  \\key a \\major\n  \\tempo 4 = 110\na''4 r8 a8~ a4 e8 gis8 |a4 r8 a8~ a8 e8 a8 gis8 |\nfis4 r8 fis8~ fis4 e4 |fis4 r8 fis8~ fis4 fis8 e8 |\nd4 r8 d8~ d4 d8 fis8 |e4 r8 e8~ e4 e8 gis8 |\na4 r8 a8~ a4 e8 gis8 |a4 r8 a8~ a4\n}"
+ },
+ {
+  "id": "blackSabbath",
+  "song": "Black Sabbath",
+  "artist": "Black Sabbath (1970)",
+  "part": "comp",
+  "inst": "guitar",
+  "chart": "G|G|G|G",
+  "page": "en:Black Sabbath (song)",
+  "lily": "\\relative c' {\n  \\time 4/4\n  \\tempo 4=68\n  \\clef treble\n  \\key bes \\major\n  <g d' g>2 g'2 |\n  \\grace {cis,16 d} cis2.~\\startTrillSpan cis8~ cis\\stopTrillSpan |\n  <g d' g>2 g'2 |\n  cis,2.~\\startTrillSpan cis8~ cis\\stopTrillSpan \\bar \"|.\"\n}"
+ },
+ {
+  "id": "layla",
+  "song": "Layla",
+  "artist": "Derek and the Dominos (1970)",
+  "part": "comp",
+  "inst": "guitar",
+  "chart": "Dm|Dm|Dm|Dm",
+  "page": "en:Layla",
+  "lily": "\\relative a' {\n   \\key f \\major\n   \\time 4/4\nr2 r8 a16 c16 d16 f16 (d16) c16 d1~ d2~ d8\na16 c16 d16 f16 (d16) c16 d1~ d2~ d8\na'16 c16 d16 f16 d16 c16\n}",
+  "fix": "The page prints \"a' 16\" in the third riff; read as a'16 (with the space, LilyPond repeats the note and the bar comes to 4 1/4 beats)."
+ },
+ {
+  "id": "missionBass",
+  "song": "Theme from Mission: Impossible",
+  "artist": "Lalo Schifrin (1966)",
+  "part": "bass",
+  "chart": "Gm|Gm|Gm|Gm",
+  "meter": "5/4",
+  "page": "en:Theme from Mission: Impossible",
+  "lily": "{ \\set Score.tempoHideNote = ##t \\set Staff.midiInstrument = #\"electric bass (pick)\" \\clef bass \\key g \\minor \\time 5/4 \\relative c { \\tempo 4 = 170 g4. g4. bes4 c4 g4. g4. f4 fis4 } }"
+ },
+ {
+  "id": "ashes",
+  "song": "Ashes to Ashes (hook)",
+  "artist": "David Bowie (1980)",
+  "part": "comp",
+  "inst": "piano",
+  "chart": "Gm|Gm|Gm|Gm",
+  "page": "en:Ashes to Ashes (David Bowie song)",
+  "lily": "\\relative\n {\n  \\key g \\minor\n  \\time 4/4\n     f'8 bes8 c2.\n     c4. f,8 ~ f2\n     bes4. es,8 ~ es2\n        \n  }"
+ },
+ {
+  "id": "shave",
+  "song": "Shave and a Haircut (the ending tag)",
+  "artist": "traditional",
+  "part": "comp",
+  "inst": "piano",
+  "chart": "C|C",
+  "page": "en:Shave and a Haircut",
+  "lily": "\\relative g' { % \\key c \\minor \\time 4/4\n\\set Score.tempoHideNote = ##t \\tempo 4=180\nc4 g8 g as4 g | r4 b-> c-> r4 \\bar \"||\" }\n\\addlyrics { Shave and a hair -- cut, two bits. }"
+ }
+]

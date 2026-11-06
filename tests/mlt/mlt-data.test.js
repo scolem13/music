@@ -5,7 +5,7 @@ const R = path.join(__dirname, "../..");
 const ctx = { console }; ctx.globalThis = ctx; vm.createContext(ctx);
 const load = (f) => vm.runInContext(fs.readFileSync(path.join(R, f), "utf8"), ctx, { filename: f });
 ["apps/shared/abc-core.js", "apps/shared/abc-events.js", "apps/patterns/pattern-set.js", "apps/rhythms/rhythm-pattern-object.js",
- "apps/patterns/audiation.js", "apps/shared/mlt/activities.js", "apps/shared/mlt/books/mullen.js", "apps/shared/mlt/books/dmti.js", "apps/shared/mlt/books/jri-sax.js"].forEach(load);
+ "apps/patterns/audiation.js", "apps/shared/mlt/activities.js", "apps/shared/mlt/books/mullen.js", "apps/shared/mlt/books/dmti.js", "apps/shared/mlt/books/jri-sax.js", "apps/shared/mlt/books/jri-lsa.js"].forEach(load);
 vm.runInContext("globalThis.__tunes = (function(){" + fs.readFileSync(path.join(R, "apps/tunes/tunes-object.js"), "utf8") + ";return tunesObject})()", ctx);
 const ids = new Set(); for (const k in ctx.__tunes) for (const m of String(ctx.__tunes[k]).matchAll(/^%%id\s+(\S+)/gm)) ids.add(m[1]);
 const acts = ctx.MLTActivities, books = ctx.MLTBooks;
@@ -15,7 +15,7 @@ const aid = new Set();
 for (const a of acts) {
   if (aid.has(a.id)) fail("duplicate activity " + a.id); aid.add(a.id);
   if (!a.name || !a.how || !a.kind || !(a.refs || []).length) fail("activity incomplete " + a.id);
-  (a.refs || []).forEach((r) => { if (!books[r.book] && !["recorder"].includes(r.book)) fail(a.id + " unknown book " + r.book); if (!r.p) fail(a.id + " ref without page"); });
+  (a.refs || []).forEach((r) => { if (!books[r.book] && !["recorder", "lange-harmony", "lange-harmony-again"].includes(r.book)) fail(a.id + " unknown book " + r.book); if (!r.p) fail(a.id + " ref without page"); });
   (a.tunes || []).forEach((t) => { if (!ids.has(t)) fail(a.id + " tune not in collection: " + t); });
 }
 let steps = 0;

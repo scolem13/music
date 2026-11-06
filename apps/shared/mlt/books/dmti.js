@@ -12,15 +12,42 @@
 // page by 11-15 pages through each book.
 (function (global) {
   "use strict";
+  // The book's CD tracks for a unit, by track number on one disc: the same layout in every Book 1 unit (sing, bass, accompaniment,
+  // melodic patterns, rhythm patterns / phrases, tonal patterns / progressions, improvising phrases, Skills 5-7, soloists).
+  // t = { sing:[..], bass, acc, mel, recho:[..], rseries:[..], techo:[..], series:[..], answer:[..], roots, macro:[..], tonalRhy, embellish, solos:[..], long:[..] }
+  function recsFor(disc, t) {
+    var id = function (n) { return "dmti-" + disc + "-" + (n < 10 ? "0" : "") + n; }, L = function (a, notes) { return [].concat(a).map(function (n, i) { return { id: id(n), note: notes[i] }; }); };
+    var r = {
+      tune: L(t.sing.concat(t.acc), ["Listen, then sing along with the melody.", "Sing it on a neutral syllable.", "The band without the melody: sing or play the melody with it."].slice(0, t.sing.length).concat(["The band without the melody: sing or play the melody with it."])).concat(L(t.mel, ["Melodic patterns from the tune: play each one by ear on the clicks after it."])),
+      bass: L(t.bass, ["The bass line alone: sing it on \u201cdoo\u201d, then play it."]).concat(L(t.acc, ["Sing or play the bass line with the accompaniment."])),
+      recho: L(t.recho, ["Echo each pattern on \u201cbah\u201d.", "The same patterns in rhythm syllables.", "The patterns on an instrument."]),
+      rseries: L(t.rseries, ["Phrases on \u201cbah\u201d: echo, then improvise a different phrase.", "The phrases in rhythm syllables."]),
+      techo: L(t.techo, ["Echo each pattern on \u201cbum\u201d; name its function.", "The same patterns in solf\u00e8ge.", "The patterns on an instrument."]),
+      series: L(t.series, ["Echo each series on \u201cbum\u201d, then sing its roots.", "The series in solf\u00e8ge."]),
+      answer: L(t.answer, ["Hear how the answering phrases go.", "Your turn: improvise the answer in the gaps."]),
+      roots: L(t.roots, ["The book\u2019s example: rhythms on the chord roots with the bass line."]),
+      voices: L(t.acc, ["Sing or play a part with the accompaniment."]),
+      macro: L(t.macro, ["The book\u2019s example.", "A second example."]),
+      tonalRhy: L(t.tonalRhy, ["The book\u2019s example."]),
+      embellish: L(t.embellish, ["The book\u2019s example."]),
+      read: L(t.acc, ["Read the tune with the accompaniment."]),
+      backing: L(t.solos, t.soloNotes || []).concat(L(t.long, ["The long accompaniment: play the melody, then improvise your solo.", "A second long accompaniment."]))
+    };
+    return r;
+  }
   var U = [
     { id: "d1u1", book: 1, n: 1, title: "Long, Long Ago", tune: "dmti-long-long-ago", key: "E♭ major", meter: "duple", style: "folk",
-      rhythm: "dmti1-unit1-rhythm", tonal: "major-I-V", functions: "tonic and dominant", pages: { 1: "1", 2: "2–7", 3: "8–9", 4: "9–13", 5: "13–15", 6: "16" }, ready: true },
+      rhythm: "dmti1-unit1-rhythm", tonal: "major-I-V", functions: "tonic and dominant", pages: { 1: "1", 2: "2–7", 3: "8–9", 4: "9–13", 5: "13–15", 6: "16" }, ready: true,
+      recs: recsFor(1, { sing: [1, 2], bass: 3, acc: 4, mel: 5, recho: [6, 7, 8], rseries: [9, 10], techo: [11, 12, 13], series: [14, 15], answer: [16, 17], roots: 18, macro: [19, 20], tonalRhy: 21, embellish: 22, solos: [23], soloNotes: ["Melody, then a trumpet solo: learn a phrase you like by ear."], long: 24 }) },
     { id: "d1u2", book: 1, n: 2, title: "Mary Ann", tune: "dmti-mary-ann", key: "C major", meter: "duple (Latin style)", style: "calypso",
-      rhythm: "dmti1-unit2-rhythm", tonal: "major-I-V", functions: "tonic and dominant", pages: { 1: "17", 2: "17–23", 3: "24", 4: "25–28", 5: "29–30", 6: "31" }, ready: true },
+      rhythm: "dmti1-unit2-rhythm", tonal: "major-I-V", functions: "tonic and dominant", pages: { 1: "17", 2: "17–23", 3: "24", 4: "25–28", 5: "29–30", 6: "31" }, ready: true,
+      recs: recsFor(1, { sing: [25], bass: 26, acc: 27, mel: 28, recho: [29, 30], rseries: [31, 32], techo: [33, 34], series: [35, 36], answer: [37, 38], roots: 39, macro: [40], tonalRhy: 41, embellish: 42, solos: [43, 44, 45, 46], soloNotes: ["Melody, then a trombone solo: learn a phrase you like by ear.", "Trumpet.", "Tenor sax.", "Tenor sax, again."], long: [47, 48] }) },
     { id: "d1u3", book: 1, n: 3, title: "Joshua", tune: "dmti-joshua", key: "D minor", meter: "duple (swing)", style: "swing",
-      rhythm: "dmti1-unit3-rhythm", tonal: "minor-i-V", functions: "tonic and dominant", pages: { 1: "33", 2: "34–39", 3: "40–41", 4: "42–45", 5: "46–47", 6: "48" }, ready: true },
+      rhythm: "dmti1-unit3-rhythm", tonal: "minor-i-V", functions: "tonic and dominant", pages: { 1: "33", 2: "34–39", 3: "40–41", 4: "42–45", 5: "46–47", 6: "48" }, ready: true,
+      recs: recsFor(1, { sing: [49], bass: 50, acc: 51, mel: 52, recho: [53, 54], rseries: [55, 56], techo: [57, 58], series: [59, 60], answer: [61, 62], roots: 63, macro: [64], tonalRhy: 65, embellish: 66, solos: [], long: [] }) },
     { id: "d1u4", book: 1, n: 4, title: "Simple Gifts", tune: "dmti-simple-gifts", key: "F major", meter: "duple, with divisions", style: "folk",
-      rhythm: "dmti1-unit4-rhythm", tonal: "dmti1-unit4-tonal", functions: "tonic, subdominant and dominant", pages: { 1: "51", 2: "52–57", 3: "58–59", 4: "60–63", 5: "64–65", 6: "66" }, ready: true },
+      rhythm: "dmti1-unit4-rhythm", tonal: "dmti1-unit4-tonal", functions: "tonic, subdominant and dominant", pages: { 1: "51", 2: "52–57", 3: "58–59", 4: "60–63", 5: "64–65", 6: "66" }, ready: true,
+      recs: recsFor(2, { sing: [6], bass: 7, acc: 8, mel: 9, recho: [10, 11], rseries: [12, 13], techo: [14, 15], series: [16, 17], answer: [18, 19], roots: 20, macro: [21], tonalRhy: 22, embellish: 23, solos: [24, 25], soloNotes: ["Melody, then a trumpet solo: learn a phrase you like by ear.", "Trumpet, again."], long: 26 }) },
     { id: "d1u5", book: 1, n: 5, title: "Down by the Riverside", tune: "dmti-down-by-the-riverside", key: "F major", meter: "duple (swing)", style: "swing",
       rhythm: "dmti1-unit5-rhythm", tonal: "dmti1-unit5-tonal", functions: "tonic, subdominant and dominant", pages: { 1: "69", 2: "70–76", 3: "77–78", 4: "79–84", 5: "85–88", 6: "89" }, ready: true,
       recs: {

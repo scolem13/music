@@ -146,6 +146,7 @@ const PLAN = {
     takefive: { ladder: ["pad", "charleston"], style: "swing", meter: "5/4", chart: "Ebm7|Bbm7|Ebm7|Bbm7", tempo: 168, tips: "5/4 grouped 3+2: held chord on 1, short on the and of 2, short chords on 4 and 5. It is the Charleston with two more beats." },
     bossa: { ladder: ["pad", "charleston"], style: "bossa", tips: "Two bars: beat 1, the and of 2 held, beat 3; then beat 2 and the and of 3. On guitar the thumb plays the bass on 1 and 3 while the fingers play this rhythm." },
     tango: { ladder: ["quarters"], style: "tango", tips: "A held chord on 1, then short marked ones on the and of 2, on 3 and on 4. Play it with weight and clear separation." },
+    guajeo: { ladder: ["montuno"], style: "montuno", tips: "The montuno rhythm again, now in octaves: thumb and little finger on the top note, the chord between on the off-beats. Let the top note rock between two chord tones and keep every note short." },
     montuno: { ladder: ["quarters", "upbeats"], style: "montuno", tips: "Two bars of short chords: 1, 2, the and of 2, the and of 3, the and of 4; then every off-beat. Keep it dry and even. The second bar is the off-beat chop you learned in the step before." },
     chacha: { ladder: ["quarters", "oompah"], style: "chacha", tips: "A chord on 2, then cha-cha-cha: 3, the and of 3, 4. Keep the three short and even." }
   },
@@ -206,7 +207,7 @@ const SAME = [
   ["bass:bossa", "comp:bossa", "drums:bossa"], ["bass:tango", "comp:tango", "drums:tango"],
   ["bass:chacha", "comp:chacha", "drums:chacha", "congas:tumbao"], ["bass:maiden", "comp:maiden"], ["bass:sowhat", "comp:sowhat"],
   ["bass:takefive", "comp:takefive"], ["comp:clave32", "drums:clave32", "drums:bodiddley", "drums:clave"],
-  ["bass:tumbao", "congas:tumbao", "congas:tumbao2", "comp:montuno", "drums:clave"], ["bass:twelve8", "comp:triplets", "drums:twelve8", "drums:shuffle"],
+  ["bass:tumbao", "congas:tumbao", "congas:tumbao2", "comp:montuno", "comp:guajeo", "drums:clave"], ["bass:twelve8", "comp:triplets", "drums:twelve8", "drums:shuffle"],
   ["bass:motown", "comp:barbara", "drums:motown"], ["bass:alt", "comp:oompah", "drums:boomchick", "comp:prine", "comp:travis"],
   ["comp:waltz", "drums:waltz"], ["bass:eighths", "comp:eighths", "comp:strumEights", "drums:hheighths"],
   ["bass:roots", "comp:quarters", "comp:strumQuarters", "drums:hhquarters"], ["comp:four", "drums:quarters", "bass:walk", "drums:ridetime"],
