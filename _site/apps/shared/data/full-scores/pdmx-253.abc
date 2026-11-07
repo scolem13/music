@@ -1,0 +1,27 @@
+X:1
+C:John Field
+%%score { ( 1 4 ) | ( 2 3 5 ) }
+L:1/8
+Q:1/4=84
+M:12/8
+K:G
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:4 treble 
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:3 bass 
+%%MIDI program 0
+V:5 bass 
+%%MIDI program 0
+V:1
+"^Adagio"!mp! e6 B3 g3 | ^d3!p! e6 e3 |!mp! c'6 f3 a3 | c3 B6 !>!b3 | g3!>(! f3 B3 ^d3 | [Q:1/4=76] e3!>)!!p! G3/2xF/ E3 B3/2xd/ |[Q:1/4=84] e6 B3 g3 | f3!<(! e3- e2 f g2 ^g!<)! | !mf! a6 d3 c'3 | ^g3!p! a6!mf! a3 | !fermata!d'3 e3 =g3 [Q:1/4=76] b2"_dim." a | g3 gfe [Q:1/4=84] d z z d z ^d | !mp! e3-!<(! e/f/e/^d/e/a/ !invertedturn!g3!<)!!mf!!>(! !fermata!b2[Q:1/4=74] !mp!  a!>)! | g3 [Q:1/4=84] d3/2xd/- d2 x d3/2xd/- | d2 d z z d z!p!!>(! d/_e/!pp!d!>)! z!pp!!>(! d/=e/!pp!d!>)! | z!p!!<(! d/!<)!!p!_e/!>(!d/!>)!!p!=e/ z!pp!!<(! d/!<)!!p!_e/!>(!d/!pp!=e/[Q:1/4=96] !>)! !<(! d/_e/d/^g/b/!<)!!p!a/!>(! c'/b/d'/ [Q:1/4=84]c'/g/!>)!!pp!a/ | !p! d=gf ec'g b2 c'{/b} a2- a/>g/ | g6 =f3 e3 | ^d3 e3 ^f3 e3 | B3 b3/2xb/ b3!pp! b'3/2xb'/ | [Q:1/4=72]"^riten." b'3!p!"_cresc." c3/2zB/ B3 B3 |[Q:1/4=84] !mf! "^a tempo" e6 B3 g3 | !>(! f3!>)!!mp! e6 e3 |!>(! c'3!>)!!p! bag f!<(!e^d =d7/4xc/4!<)! | !mp! c2!p! B-!p! B/4c/4B/4^A/4"_cresc."B/4^c/4^d/4e/4f/4g/4=a/4b/4!mf!!>(! =c'3 b^a=a!>)! | !mp! ^g2 =g"_dim." fgf B3 T^d2 ^c/d/ | e3 B2 B B3 B2!pp! B | B3!<(! =d=cA G3!<)!!p! e!>(!dA | B2!>)! z!pp! B2 B B3 B2 B | Bc/B/^A/B/ g2 f B3 T^d2 ^c/d/ | !fermata!e3!<(! B/=c/B/ [Q:1/4=96]^A/B/^c/ ^d/e/f/g/[Q:1/4=84] !<)!!mf! =a/!>(!g/ f/e/!>)!!mp!d/ [Q:1/4=96]!<(!e/f/g/ | a/b/^c'/^d'/e'/!<)!!mf!b/!>(! =c'/b/ [Q:1/4=84]a/g/f/e/!>)!!p! g3 f2 g | !fermata!e3!pp! b/=c'/b/ [Q:1/4=96]^a/b/^c'/ ^d'/e'/f'/g'/ [Q:1/4=84]=a'/g'/!<(! f'/e'/d'/ [Q:1/4=96]e'/f'/g'/ | a'/b'/^c''/^d''/e''/d''/!<)!!mf! =d''/c''/!>(!=c''/b'/^a'/=a'/ ^g'/=g'/f'/ [Q:1/4=84]e'/^d'/=d'/ ^c'/=c'/b/^a/=a/!>)!!p!^g/ | [Q:1/4=78]"_calando"!>(! =g/f/e/^d/=d/=c/ [Q:1/4=72] B/^A/=A/ [Q:1/4=60]=G/F/E/[Q:1/4=76] !>)!!pp!  B,3 ^D3 | [Q:1/4=60]"^a tempo" E3!p!{FGA} G2!pp!"_dim." F E3 [Q:1/4=50]"^riten." B,2 [A,^D] | [G,E]3 [Q:1/4=40] [^G,=D]2 [A,C]!ppp! [=G,B,]6 |]
+V:2
+!pp! G,B,E G,B,E G,B,E G,B,E | G,B,E G,B,E G,B,E G,B,E | A,CF A,CF A,CF A,CF | A,B,F A,B,F A,B,F A,B,F | E,B,E A,,A,C B,,G,B, F,A,B, | G,B,E G,B,E G,B,E z B, x | !pp! G,B,E G,B,E G,B,E G,B,E | G,B,E!<(! G,B,E _B,^CE B,CE!<)! | !p! A,=CD A,CD A,CD A,CD | D,F,A, D,F,A, D,F,A, D,F,A, | D,G,B, ^C,A,E D,B,D F,=C!>(!D | G,B,E G,CE CDA B,DG!>)! | !pp! C,^G,B, A,CE D,B,D F,CD | B,DG B,DG CDA CDA | B,DG B,DG!pp! CDA CDA | B,DG B,DG CDA CDA | !pp! B,DG C,CE G,B,D F,CD | [K:treble] B,DG B,DG C=FA ^CEG | ^DFA =CEG A,CA ^A,^CG | B,^DF B,DF B,EG!pp! B,EG | B,^DF!<(! A,DF [K:bass] G,B,E F,B,D!<)! | !p! G,B,E G,B,E G,B,E G,B,E | G,CE G,CE G,B,E G,B,E | A,,CE!pp! F,CE A,!<(!CE F,A,E!<)! | !p! A,B,!pp!F!<(! A,B,F!<)!!p!!>(! A,B,F A,B,F!>)! | !pp! E,B,E!>(! A,,A,C B,,G,B, F,A,B, | G,B,E G,B,E A,B,F A,B,!>)!!pp!F | G,B,E C,CD D,B,D A,CD | G,B,D G,B,D A,B,^D A,B,D | G,B,E A,,A,C B,,G,B, F,A,B, | [E,G,]3 z2 z z6 | z6!pp! E,G,B, ^D,A,B, | [E,G,]3 z2 z z6 | z12 | z6 B,,E,G, B,,F,A, | [E,G,]3 z2 z z2 z{F,G,A,} G,2 F, | E,3 [E,,E,]3 [E,,E,]6 |]
+V:3
+E,12 | E,12 | E,12 | [^D,F,]12 | !>!E,3 !>!A,,3 !>!B,,6 | !>!E,6 E,3 G,3/2xF,/ | E,12 | E,6 x6 | x12 | C,6- C,3 C,3 | B,,3 ^C,3 D,6 | E,6 F,3 G,3 | !>!C,6 !>!D,6 | !>!G,6 !>!F,6 | !>!G,6 !>!F,6 | !>!G,6 !>!F,6 | !>!G,3 !>!C,3 !>!D,6 |[K:treble] !>!G,6 !>!A,3 !>!^A,3 | !>!B,3 !>!C3 !>!A,3 !>!^A,3 | !>!B,6 !>!B,6 | !>!B,3 !>!A,3 [K:bass] !>!G,3 !>!F,3 | !>!E,6 !>!D,6 | !>!C,6 !>!B,,6 | x12 | [^D,F,]6 [D,F,]6 | !>!E,3 !>!A,,3 !>!B,,6 | !>!E,6 [^D,F,]6 | !>!E,3 !>!C,3 !>!D,6 | !>!G,6 !>!F,6 | !>!E,3 !>!A,,3 !>!B,,6 | x12 | x6 B,,6 | x12 | x12 | x12 | x12 | x12 |]
+V:4
+x12 | x8 x2 x!<(! f/4e/4^d/4e/4!<)! | x12 | x12 | x12 | x2 (3F/G/A/ x x8 | x12 | x12 | x12 | x8 x2 x b/4a/4^g/4a/4 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x8 x x3 | x3 x8 x | x12 | x8 x2 x f/4e/4^d/4e/4 | x12 | x12 | x12 | x12 | x8 x/ F/- F3 | G2 x2 x8 | x12 | x12 | x12 | x3 x8 x | x12 | x12 | x12 | x12 |]
+V:5
+x12 | x12 | x12 | x12 | x12 | x4 x2 x x x/4!mp! F,/4G,/4A,/4 x x2 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x12 |[K:treble] x12 | x12 | x12 | x6 [K:bass] x6 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x12 | x12 |]

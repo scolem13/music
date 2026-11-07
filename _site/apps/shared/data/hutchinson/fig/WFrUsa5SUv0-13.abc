@@ -1,0 +1,13 @@
+X:1
+T:Robert Wright, George Forrest, Alexander Borodin, Stranger in Paradise (1953)
+%%id WFrUsa5SUv0-13
+%bars ?
+%unsure piano right-hand chords left out (dense voicings not readable with certainty); voice in treble-8 clef, written pitches
+M:4/4
+L:1/8
+K:F
+%%score 1 {2}
+V:1 clef=treble-8 nm="Voice"
+V:2 clef=bass
+[V:1] "Gm7"G2 G2 d4- | "C13sus"d2 c d "C13"B2 "C7(b9,13)"A G | "Fmaj9"A B c6 | "Am7/E"z2 d2 "Dm9"A2 G F |]
+[V:2] G,,4 G,4 | C,4 C,4 | F,4 F,2 E,2 | D,4 D,4 |]

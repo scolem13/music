@@ -1,0 +1,28 @@
+X:1
+C:Antonín Dvořák
+Z:Public Domain
+%%score { ( 1 3 ) | ( 2 4 5 ) }
+L:1/8
+Q:1/4=72
+M:2/4
+K:Gb
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:3 treble 
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:4 bass 
+%%MIDI program 0
+V:5 bass 
+%%MIDI program 0
+V:1
+"^Poco lento e grazioso"!pp! (G/z/4A/4G/z/4A/4 B/z/4d/4!<(!e/z/4d/4) | ({/e} (g/)z/4f/4a/!<)!z/4g/4 f/z/4a/4g/z/4e/4) | !>(!({/B} (d/)z/4d/4e/z/4d/4 g/z/4e/4d/z/4B/4)!>)! |!p! A4 | "_dim." ([B,G]/z/4A/4G/z/4A/4 B/z/4d/4e/z/4d/4) |!pp! (e/z/4f/4a/z/4g/4 f/z/4a/4g/z/4e/4) | (d/z/4d/4g/z/4G/4 ([GA][Fd])) | [B,G]3 z :| (B!<(!.[gb]/)z/4.[fa]/4 ([fa][eg]) | ([eg]!<)!.[df]/)z/4.[ce]/4!f! ([ce][Bd]) |"_dim." ([Bd][Ac]/[Ge]/ dc) | !p! ([GB]/[DA]/ [B,G]2) (.G/.A/) | (B!<(!.[gb]/)z/4.[fa]/4 (P[fa][eg])!<)! | !<(! ([eg].[df]/)z/4[ce]/4!<)!!f! (P[ce][Bd]) | (d/c/d/!>(!e/ B/A/B/({/d}c/))!>)! | [Q:1/4=62]"^ritard." B (!>!__B2 A) | [Q:1/4=72] !pp! "^in tempo"({/B,} (G/)z/4A/4G/z/4A/4 B/z/4d/4!<(!e/z/4d/4) | ({/e} (g/)z/4f/4a/!<)!z/4g/4 f/z/4a/4g/z/4e/4) | !>(!({/B} (d/)z/4d/4e/z/4d/4 g/z/4e/4!>)!d/z/4B/4) |!p! A4 | ({/B,} (G/)z/4A/4G/z/4"_cresc."A/4 B/z/4d/4!<(!e/z/4d/4) | ({/e} (g/)z/4f/4!<)!a/z/4g/4 f/z/4a/4g/z/4e/4) | d/z/4 [Q:1/4=66]"_ritard."(d/4!arpeggio!__b/)z/4(d/4 =c/)z/4(b/4!arpeggio!a/)z/4(e/4 | {/d-} [Gdg]4) ||[K:A][Q:1/4=72] !f! "^[in tempo]" (.F/!<(!.G/.A/.G/ [FA][EG]/[DF]/)!<)! | (EB, C-<[CE]) | (.F/.G/.A/.G/!>(! [FA][EG]/[DF]/) |"_dim." (Ec!>)! A2) | !f! (.F/!<(!.G/.A/.G/ [FA][EG]/[DF]/)!<)! | (E/F/D/B,/) C-<[CE] | (.F/.G/.A/.G/ [FA]!>(![EG]/[DF]/)!>)! |!>(! (F"_dim."d) c2!>)! | !f! (.F/.G/.A/.G/ [FA][EG]/[DF]/) | (E/G/4F/4E/B,/ C/4F/4E3/2) | (F/G/A/G/ !arpeggio![GB]/[FA]/[EG]/[DF]/) | !tenuto![DE]!tenuto![DEB] (c/4B/4A3/2) | !arpeggio!!>![Fcf]/!>![Gcg]/!>![Aca]/!>![Gcg]/ !>![Bfb]/!>![Afa]/!>![GAg]/!>![FAf]/ | !arpeggio!!>![DGe]/[Ff]/[Ee]/[B,B]/ ([CEc]<[Ee]) | !f! !arpeggio!!>![Fcf]/!>![Gg]/!>![Aca]/!>![Gcg]/ !>![Afa][Geg]/[Fcf]/ | [Fdf] [Q:1/4=60]"^rit.""_dim."[efe']/[dfd']/!>(! !fermata![c^ec']2!>)! || [K:Gb][Q:1/4=72] !pp! "^[in tempo]"({/B,} (G/)z/4A/4G/z/4A/4 B/z/4!<(!d/4e/z/4d/4) | ({/e} (g/)z/4f/4a/z/4g/4!<)! f/z/4a/4g/z/4e/4) | !>(!({/B} (d/)z/4d/4e/z/4d/4 g/z/4e/4d/z/4B/4)!>)! |!p! A4 | ({/B,} (G/)z/4A/4G/z/4"_cresc."A/4 B/z/4d/4!<(!e/z/4d/4) | ({/e} (g/)z/4f/4a/!<)!z/4g/4 f/z/4a/4g/z/4e/4) | d/z/4(d/4 [Q:1/4=62]"^ritard."!arpeggio!__b/)z/4(d/4 =c/)z/4(b/4!arpeggio!a/)z/4(e/4 | !>(!{/d-} [Gdg]4)!>)! ||[Q:1/4=72]"^in tempo" (B!<(!.[gb]/)z/4.[fa]/4!<)! ([fa][eg]) | ([eg].[df]/)z/4.[ce]/4!f! ([ce][Bd]) | ([Bd][Ac]/"_dim."[Ge]/ dc) | ([GB]/[DA]/ [B,G]2) (.G/.A/) | !p! (B[gb]/)z/4[fa]/4 ([fa][eg]) | ([eg][df]/[ce]/)"_dim."!>(! ([ce][Bd]) | (d/c/!>)!d/e/ [Q:1/4=66]"^ritardando"!>(! B/A/B/({/d}c/))!>)! | !p! (!tenuto!B"_dim."!tenuto!d)!pp! !arpeggio!!fermata![GBdg]2 |]
+V:2
+"^leggiero" .G,,.[D,B,] .[G,D]"_senza".[B,G] | .[C,,C,].[E,C] .[G,E]"_senza".[CG] | .G,,.[D,B,] .[G,D].[B,G] | z (G, F,2) | .G,, .[D,B,].[G,D].[B,G] | .C,.[E,C] .[G,E].[CG] | (B,2 C2) | G,,/z/4(D,/4D/z/4D,/4 G,) z :| G,,/[D,B,]/[G,D]/ z/ B,,/[G,D]/[B,G]/ z/ | (G,/E/C/G,/) !arpeggio!=G,2 | A,,/E,/A, (D,E,/F,/) | (G,,D,/G,/D,) z | G,,/[D,B,]/[G,D]/ z/ B,,/[G,D]/[B,G]/ z/ | (G,/E/C/G,/) !arpeggio!=G,2 | A,,/E,/C [D,C]2 | A, (G,2 E,/)F,/ | .G,,.[D,B,] .[G,D].[B,G] | .[C,,C,].[E,C] .[G,E].[CG] | .G,,.[D,B,] .[G,D].[B,G] | z (G, F,2) | .G,,.[D,B,] .[G,D].[B,G] | .[C,,C,].[E,C] .[G,E].[CG] | ([B,,B,][E,D]) ([A,,=C][D,_C]) | B,4 ||[K:A] [F,A,]2 [D,F,]2 | [E,G,]2 (E,C,/E,/) | [F,A,]2 [D,F,]2 | (A,G,) !arpeggio!E/C/A,/E,/ | [F,A,]2 [D,F,]2 | [E,G,]2 (E,C,/E,/) | [F,A,]2 [D,F,]2 | !arpeggio!B,2 (A,G,) | [F,A,]F,, [D,F,]D,, | [E,G,]E,, A,,C,/E,/ | [F,A,]F,, [D,F,]D,, | (E,/F,/A,/G,/) (E,C/A,/) | [F,A,]F,, [D,F,]D,, | [B,,G,][E,,D,E,] (E,C,/E,/) | [F,A,]F,,/F,,/ [D,F,]D,,/D,,/ | !arpeggio![G,,B,][B,,G,] !arpeggio!!fermata![C,G,B,^E]2 || [K:Gb] .G,,.[D,B,] .[G,D].[B,G] | .[C,,C,].[E,C] .[G,E].[CG] | .G,,.[D,B,] .[G,D].[B,G] | z (G, F,2) | .G,,.[D,B,] .[G,D].[B,G] | .C,.[E,C] .[G,E].[CG] | [B,,B,][E,D] [A,,=C][D,_C] | z3/4 (D,/4D/z/4D,/4 G,) z || G,,/[D,B,]/[G,D]/ z/ B,,/[G,D]/[B,G]/ z/ | (G,/E/C/G,/) !arpeggio!=G,2 | A,,/E,/A, (D,E,/F,/) | G,,(D,/G,/ D,) z | G,,/[D,B,]/[G,D]/ z/ B,,/[G,D]/[B,G]/ z/ | (G,/E/C/G,/) !arpeggio!=G,2 | A,,/E,/C [D,C]2 | (!tenuto![G,B,]!tenuto![D,C]) !arpeggio!!fermata![G,,D,B,]2 |]
+V:3
+x4 | x4 | x4 | z!>(! (EDC)!>)! | x4 | x4 | G2 x2 | x4 :| x4 | x4 | x2 FG/A/ | x4 | x4 | x4 | B/AG/ F>E | F(D"_dim."!>(!=C_C)!>)! | x4 | x4 | x4 | z!>(! (EDC)!>)! | x4 | x4 | G/z/G/ z/ G/z/F/ z/ | x4 ||[K:A] C2 A,2 | x4 | C2 A,2 | (D2 C2) | C2 A,2 | x4 | C2 A,2 | DF ^E2 | C2 A,2 | x2 C2 | C2 A,2 | x2 [CE]2 | x4 | x4 | x4 | x4 ||[K:Gb] x4 | x4 | x4 | z!>(! (EDC)!>)! | x4 | x4 | GG GF | x4 || x4 | x4 | x2 FG/A/ | x4 | x4 | x4 | B/AG/ F2 | G[FA] x2 |]
+V:4
+x4 | x4 | x4 | D,4 | x4 | x4 | (B,,E,/__E,/) D,2 | x4 :| x4 | C,2 E,,2 | x2 D,2 | G,,3 x | x4 | C,2 E,,2 | x4 | =D,E,A,,_D, | x4 | x4 | x4 | D,4 | x4 | x4 | x4 | (B,D,G,) z ||[K:A] x4 | x2 A,,2 | x4 | (B,,E,) A,,2 | x4 | x2 A,,2 | x4 | G,,2 C,2 | x4 | x2 A,,2 | x4 | E,,2 A,,2 | x4 | x2 A,,2 | x4 | x4 ||[K:Gb] x4 | x4 | x4 | D,4 | x4 | x4 | x4 | !arpeggio![G,,B,]4 || x4 | C,2 E,,2 | x2 D,2 | G,,3 x | x4 | C,2 E,,2 | x4 | x4 |]
+V:5
+x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 :| x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | G,,4 ||[K:A] x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 ||[K:Gb] x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 || x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 |]

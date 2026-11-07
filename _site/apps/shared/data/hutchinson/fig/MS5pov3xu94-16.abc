@@ -1,0 +1,12 @@
+X:1
+T:Frédéric Chopin, Waltz in A-flat major, Op. 34 No. 1
+%%id MS5pov3xu94-16
+%bars ?
+M:3/4
+L:1/8
+K:Ab
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "Ab"[Ec]6 | "Db"[Fd]6 | "Eb"[Ec]2 [DB]2 [Ec]2 | "Ab"[DB]2 [CA]2 z2 |]
+[V:2] !fz!A,,,2 [E,A,C]2 [E,A,C]2 | D,,2 [D,A,]2 [D,A,]2 | E,,2 [E,G,]2 [E,G,]2 | A,,2 [E,A,]2 [E,A,]2 |]

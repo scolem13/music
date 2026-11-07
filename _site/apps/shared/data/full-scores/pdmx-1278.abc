@@ -1,0 +1,22 @@
+X:1
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=96
+M:4/4
+K:F
+V:1 treble nm="Sopraan" snm="Sop."
+%%MIDI program 52
+V:2 treble nm="Alt" snm="A."
+%%MIDI program 52
+V:3 treble-8 nm="Tenor" snm="T."
+%%MIDI program 52
+V:4 bass nm="Bas" snm="Bs."
+%%MIDI program 52
+V:1
+!p!"^Lento" F8- | F4 GF EF | G8- | G2 F2 F2 z2 | (G2 A2 B2 A2 | G6) F2 | (G2 A2 B2 A2 | G6) F2 | z2!<(! F2 F2!<)! E2 | !>!E3!>(! F F4!>)! | z2!<(! F2 F2!<)! _G2 | !>!_G3!>(! F F3!>)! z | !mp! (A4 c2) B2 | (A2 G2) F2 F2 | (G4 E4) | F4 z4 | (A4 c2 B2 | A2 G2) F2 F2 | G6"^un poco ritenuto"!<(! G2!<)! | A6 G2 | G4 z4 |!p!"^A tempo" ^F8- | F4 G=F EF | (G8- | G2 F2) F2 z2 |!pp! ^F8- | F4 G=F EF | (G8- | G2 F2) F2 z2 |!p! (G2 A2 B2 A2 | G6) F2 | (G2 A2 B2 A2 | G6) F2 | z2!<(! F2 F2!<)! E2 | !>!E3!>(! F F4!>)! | z2!<(! F2 F2!<)! _G2 | !>!_G3!>(! F F4!>)! |!pp! z2 F2 F2 E2 | E3 F F4 | z2!<(! F2 F2 G2!<)! | A3!>(! G G2!>)! z2 | "^cresc.    -          -" (F2 G2 A2 B2 | "^-         -         -         -         -         -" c2 d2) c2 B2 | B4 A4 |!>(! !>!B6 A2 | (A4!>)!"^diminuendo    -         -         -         -         -" B4- | B4 A4- |!pp! A8- | !fermata!A8) |]
+V:2
+!p! (C4 D4- | D4) D2 CD | D8- | D4 D2 z2 | (E2 F2 G2 F2 | E2 D2 C2) CD | (E2 F2 G2 F2 | E2 D2 C2) C2 | z2!<(! _D2 D2!<)! C2 | !>!C3!>(! _D (D2 C2)!>)! | z2!<(! _D2 D2!<)! C2 | !>!C3!>(! _D (D2!>)! C) z |!mp! (F4 E2) G2 | (F2 E2) D2 D2 | (D4 C4) | C4 z4 | (F4 E2 G2 | F2 E2) D2 D2 | E6!<(! E2!<)! | F6 E2 | E4 z4 |!p! D8- | D4 D2 CD | D8- | D4 D2 z2 |!pp! D8- | D4 D2 CD | D8- | D4 D2 z2 |!p! (E2 F2 G2 F2 | E2 D2 C2) CD | (E2 F2 G2 F2 | E2 D2 C2) C2 | z2!<(! _D2 D2!<)! C2 | !>!C3!>(! _D (D2!>)! C2) | z2!<(! _D2 D2!<)! C2 | !>!C3!>(! _D (D2!>)! C2) |!pp! z2 =D2 D2 C2 | C3 D (D2 C2) | z2!<(! D2 D2 C2!<)! | C3!>(! ^C C2!>)! z2 |"^cresc.    -          -" (D8 | "^-         -         -         -         -         -" E2 F2) E2 D2 | F4 E4 |!>(! !>!F6 E2 | (E4!>)!"^diminuendo    -         -         -         -         -" F4- | F4 E4 |!pp! F8- | !fermata!F8) |]
+V:3
+!p! (A8 | B4) BA GA | (B8- | B2 A2) A2 z2 | (B2 A2 G2 A2 | B6) A2 | (B2 A2 G2 A2 | B6) A2 | z2!<(! B2 B2!<)! B2 | !>!B3!>(! B (B2 A2)!>)! | z2!<(! B2 B2!<)! B2 | !>!B3!>(! B (B2!>)! A) z | !mp! (d4 c2) c2 | (c2 B2) A2 A2 | (B2 G2 ^FG AB) | A4 z4 | (d4 c4- | c2 B2) A2 B2 | (B2 G2 ^FG)!<(! AB | (B2 =c4)!<)! B2 | B4 A2 z2 |!p! A8- | A4 BA GA | (B8- | B2 A2) A2 z2 | !pp! A8- | A4 BA GA | (B8- | B2 A2) A2 z2 |!p! (B2 A2 G2 A2 | B6) A2 | (B2 A2 G2 A2 | B6) A2 | z2!<(! B2 B2!<)! B2 | !>!B3!>(! B (B2!>)! A2) | z2!<(! B2 B2!<)! B2 | !>!B3!>(! B (B2!>)! A2) | !pp! z2 B2 B2 B2 | B3 B (B2 A2) | z2!<(! B2 B2 B2!<)! | A3!>(! B B2!>)! z2 | "^cresc.    -          -" (B8 | "^-         -         -         -         -         -" A2 G2) A2 B2 | d4 c4 |!>(! !>!d6 c2 | (c4!>)!"^diminuendo    -         -         -         -         -" d4- | d4 c4- |!pp! c8- | !fermata!c8) |]
+V:4
+!p! (F,4 D,4 | B,,4) B,,2 B,,2 | (B,,3 A,, B,,2 C,2 | D,4) D,2 z2 | (C,8- | C,2 D,2 E,2) F,2 | (C,8- | C,2 D,2 E,2) F,2 | z2!<(! F,2 F,2!<)! _G,2 | !>!_G,3!>(! F, F,4!>)! | z2!<(! F,2 F,2!<)! E,2 | !>!E,3!>(! F, F,3!>)! z |!mp! (D,2 F,2 A,2) E,2 | (F,2 C,2) D,2 D,C, | (B,,4 C,4) | F,4 G,F, E,F, | (D,2 F,2 A,2 E,2 | F,2 C,2) D,2 D,2 | ^C,6!<(! C,2 | (^C,3 D,!<)! E,F,) G,E, | ^C,4 z4 |!p! (D,4 C,2 =B,,2 | _B,,4) B,,2 B,,2 | ((B,,3 A,,) B,,2 C,2) | D,4 D,2 z2 |!pp! (D,4 C,2 =B,,2 | _B,,4) B,,2 B,,2 | (B,,3 A,, B,,2 C,2 | D,4) D,2 z2 |!p! (C,8- | C,2 D,2 E,2) F,2 | (C,8- | C,2 D,2 E,2) F,2 | z2!<(! F,2 F,2!<)! _G,2 | !>!_G,3!>(! F, F,4!>)! | z2!<(! F,2 F,2!<)! E,2 | !>!E,3!>(! F, F,4!>)! |!pp! z2 F,2 F,2 G,2 | G,3 F, F,4 | z2!<(! F,2 F,2 E,2!<)! | E,3!>(! E, E,2!>)! z2 |"^cresc.    -          -" F,8- | "^-         -         -         -         -         -" F,4 F,2 F,2 | (F,2 G,2) A,4 | !>(! !>!G,6 A,2 | (A,4!>)!"^diminuendo    -         -         -         -         -" G,4- | G,4 A,4 |!pp! F,8- | !fermata!F,8) |]

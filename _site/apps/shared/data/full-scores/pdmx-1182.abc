@@ -1,0 +1,27 @@
+X:1
+Z:Set by C. Höcker - Nov. 2016 - CC0
+%%score [ 1 2 3 4 5 ]
+L:1/8
+Q:1/4=63
+M:4/4
+K:Gb
+V:1 treble nm="Solo" snm="s"
+%%MIDI program 52
+V:2 treble nm="S" snm="S"
+%%MIDI program 52
+V:3 treble nm="A" snm="A"
+%%MIDI program 52
+V:4 treble-8 nm="T" snm="T"
+%%MIDI program 52
+V:5 bass nm="B" snm="B"
+%%MIDI program 52
+V:1
+!p!"^Larghetto tranquillo" z2 | z8 | z8 | z8 |!pp! e8 | z8 | z8 | z8 | e8 | z8 | A2 A2 z2!<(! A B!<)! |!p! c4 z B A B | A F D F A2 d2 | d6 z2 | z2 z d g4- | g4!<(! c4 | (c2 B2!<)!!mp! e2 d2 | a2 g4)!>(! A2!>)! |!pp! e6 d2 |!ppp! d8- | d2 z2 z4 | z8 | z8 | z8 | !<(! e8!<)! |!mf! z8 | z8 | z8 |!mf!!>(! e8!>)! | z8 |!pp! z2 z .A .c .c z2 | D3!<(! F A2 d2!<)! | !mf! d6 z2 | z2 z d g4- | g4 c4 | (c2 B2 e2 d2 | a2) g4 A2 | e2 d6 |!>(! e6 A2 | d8-!>)! | !ppp!"^più lento" d8 | z8 | z8 | z8 |"^quasi niente"!ppp! !fermata!e8 |]
+V:2
+!pp! B2 | A6 B2 | A6- A (.B | .A .B) c6- | c6 G2 | F6 G2 | F6- F (.G | .F .G) A6- | A4 z2 z (.E | .=D .E) F6- | F4 E4 | _D8- | D8 | D6 D2 | G6 G2 | G6!<(! A2 | (A2 B4)!<)!!mp! A2 | (A2 G2)!>(! G4!>)! |!pp! G4 F4 |!ppp! G8- | G2 z2 z2!p! B2 | A6 B2 | A6- A"_cresc." B | A B c6- | c6 G2 |!mf! F6 G2 | F6 G2 | F G!>(! A6-!>)! |!p! A4 z2 E2 | =D6 E2 |!pp! (E4 _D4- | D8) | D6!<(! D2!<)! |!mf! G6!mf! G2 | G6 A2 | (A2 B4) A2 | (A2 G2) G4- | G2 A2 c2 B2 |!>(! G4 F4 | G8!>)! |!ppp! z4 z2!ppp! B2 | A6 B2 | A4- A2 z (.B | .A .B) c6- | c6 !fermata!z2 |]
+V:3
+!pp! G2 | G6 G2 | G6- G (.G | .G .G) G6- | G6 E2 | E6 E2 | E6- E (.E | .E .E) E6- | E4 z2 z (.C | .C .C) C6- | C4 C4 | C8- | C8 | (C2 B,4) B,2 | D6 D2 | (D2 E4)!<(! G2 | G6!<)!!mp! F2 | (F2 G2)!>(! G4!>)! |!pp! F2 E2 F4 |!ppp! D8- | D2 z2 z2!p! G2 | G6 G2 | G6- G"_cresc." G | G G G6- | G6 E2 |!mf! E6 E2 | E6 E2 | E E!>(! E6-!>)! |!p! E4 z2 C2 | C6 C2 |!pp! C8- | C8 | (C2 B,4)!<(! B,2!<)! |!mf! D6!mf! D2 | (D2 E4) G2 | G6 F2 | (F2 G2) G4- | G2 G2 G2 G2 | !>(! (F2 E2) (E2 D2) | D8!>)! |!ppp! z4 z2!ppp! G2 | G6 G2 | G4- G2 z (.G | .G .G) G6- | G6 !fermata!z2 |]
+V:4
+!pp! d2 | c6 d2 | e6- e (.e | .e .d) c6- | c6 B2 | A6 B2 | A6- A (.B | .c .B) A6- | A4 z2 z (.G | .F .E) =D6- | D4 A4 | A8- | A8 | G6 G2 | B6 B2 | (B2 c4)!<(! c2 | (c2 d2!mp! e2)!<)! A2 | d4!>(! e4!>)! |!pp! c4 c4 |!ppp! B8- | B2 z2 z2!p! d2 | c6 d2 | e6- e"_cresc." e | e d c6- | c6 B2 |!mf! c6 B2 | A6 B2 | c B!>(! A6-!>)! |!p! A4 z2 G2 | F6 G2 |!pp! A8- | A8 | G6!<(! G2!<)! | !mf! B6!mf! B2 | (B2 c4) c2 | (c2 d2 e2) A2 | d4 c4- | c2 c2 e2 d2 |!>(! c4 c4 | (c4 B4)!>)! | !ppp! z4 z2!ppp! d2 | c6 d2 | e4- e2 z (.e | .e .d) c6- | c6 !fermata!z2 |]
+V:5
+!pp! G,2 | E,6 D,2 | C,6- C, (.B,, | .C, .B,,) A,,6- | A,,6 B,,2 | C,6 D,2 | C,6- C, (.B,, | .A,, .G,,) F,,6- | F,,4 z2 z (.G,, | .A,, .A,,) A,,6- | A,,4 G,,4 | F,,8- | F,,8 | _F,,6 _F,2 | E,6 E,2 | A,,6!<(! E,2 | (D,4!mp! C,4)!<)! | B,,4!>(! C,4!>)! |!pp! A,,4 D,4 |!ppp! G,,8- | G,,2 z2 z2!p! G,2 | E,6 G,2 | C6- C"^cresc." B, | C B, A,6- | A,6 B,2 |!mf! A,6 D,2 | C,6 B,,2 | A,, G,,!>(! F,,6-!>)! |!p! F,,4 z2 G,,2 | A,,6 G,,2 |!pp! F,,8- | F,,8 | _F,,6!<(! F,,2!<)! | !mf! _F,6!mf! F,2 | E,4 A,,4 | D,4 C,4 | B,,4 E,4 | D,8- |!>(! D,4 D,4 | _F,8!>)! | !ppp! z4 z2!ppp! _F,2 | E,6 D,2 | C,4- C,2 z (.B,, | .C, .B,,) A,,6- | A,,6 !fermata!z2 |]

@@ -1,0 +1,13 @@
+X:1
+T:Frédéric Chopin, Nocturne in E-flat major, Op. 9, No. 2 (1832)
+%%id bVeOdm-29pU-1
+%bars ?
+%unsure left-hand chord tones on beats 2-4 of both bars read from a small image (not checked against the score)
+M:12/8
+L:1/8
+K:Eb
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] B | (g3 gfg f3) e2 (B | g2) c !turn!=c'2 g _b3 a3 |]
+[V:2] z | .E,,[G,E][B,EG] .E,[A,D][_DEG] .E,,[G,E][B,EG] .D,,[G,E][B,EG] | .C,,[G,=E][B,EG] .C,[G,E][CEGB] F,,[F,_D][B,_DE] F,,[F,C][A,CE] |]

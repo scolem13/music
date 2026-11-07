@@ -1,0 +1,24 @@
+X:1
+C:Erik Satie
+Z:Composé par Erik Satie, 1888 - Réécrit sur Musescore par J.L.
+%%score { ( 1 2 ) | ( 3 4 ) }
+L:1/8
+Q:1/4=66
+M:3/4
+K:C
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 treble 
+%%MIDI program 0
+V:3 bass 
+%%MIDI program 0
+V:4 bass 
+%%MIDI program 0
+V:1
+"^Lent et grave"!p! z6 | z6 | z6 | z6 |!p!!<(! (a6 | g2 f2 e2!<)! | d2!>(! e2 f2 | e2 d2 c2!>)! | e6) |!<(! (g4 g2!<)! |!>(! d6- | d6!>)! | d6) | z2 (c2!<(! f2 | g4 a2 | d2!<)! e2 g2 | !>(! B2 A2 G2 | A6 | D6-!>)! | D6) | (e6 |!<(! f2 g2 f2!<)! |!>(! e2 d2 e2- | e6- | e2 d2 c2 | B2 c2 B2!>)! | A6) | z6 | z6 | z6 | (a6 | g2!<(! f2 e2 | d2 e2 f2 | e2 d2!<)! c2 | e6 | g4 g2 | !>(! c2 B2 A2 | B4 c2 | d6!>)! | e6) | z6 | z6 |!<(! (g4 a2 | d2 e2 f2 | B2 A2 G2!<)! |!>(! A6 | D6-!>)! | D6) | (e6 |!<(! f2 g2 f2 | e2 d2 e2-!<)! | e6- |!>(! e2 d2 c2 | B2 c2 B2!>)! | A6) | z6 | z6 | z6 | [CEAc]6- | [CEAc]6 |]
+V:2
+z2 [CEA]4 | z2 [B,EG]4 | z2 [CEA]4 | z2 [B,EG]4 | z2 [CEA]4 | z2 [CEA]4 | z2 [_B,DG]4 | z2 [CFA]4 | x6 | x6 | z2 [FA]4 | x6 | z2 [FA]4 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | z2 [CEA]4 | z2 [B,EG]4 | z2 [CEA]4 | z2 [B,EG]4 | z2 [CEA]4 | z2 [B,EG]4 | z2 [A,CF]4 | z2 [B,EG]4 | z2 [CEA]4 | z2 [B,EG]4 | z2 [CEA]4 | z2 [CEA]4 | z2 [_B,DG]4 | x6 | x6 | x6 | x6 | x6 | x6 | z2 [CEA]4 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | z2 [CEA]4 | z2 [B,EG]4 | z2 [CEA]4 | z2 [B,EG]4 | z2 [CEA]4 | z2 [B,EG]4 | z2 [A,CF]4 | z2 [B,EG]4 | z2 [CEA]4 | z2 [B,EG]4 | x6 | x6 |]
+V:3
+A,,6 | D,,6 | A,,6 | D,,6 | A,,6 | C,6 | G,,6 | D,,6 | z2 [A,CE]4 | z2 [G,B,E]4 | z2 [D,G,B,]4 | z2 [A,CF]4 | z2 [D,G,B,]4 | z2 [A,CF]4 | z2 [B,EG]4 | z2 [A,CF]4 | z2 [A,CE]4 | z2 [A,CF]4 | z2 [A,CF]4 | z2 [B,EG]4 |!pp! C,,6 | E,,6 | C,,6 | E,,6 | C,,6 | E,,6 | A,,6 |!pp! D,,6 | A,,6 | D,,6 |!p! A,,6 | C,6 | G,,6 | z2 [A,DF]4 | z2 [A,CE]4 | z2 [G,B,E]4 | z2 [A,CF]4 | z2 [G,B,E]4 | z2 [A,CF]4 | D,,6 | z2 [A,CE]4 | z2 [A,CF]4 | z2 [B,EG]4 | z2 [A,CF]4 | z2 [A,CE]4 | z2 [A,CF]4 | z2 [A,CF]4 | z2 [B,EG]4 |!pp! C,,6 | E,,6 | C,,6 | E,,6 | C,,6 | E,,6 | A,,6 |!pp! D,,6 | A,,6 | D,,6 | [A,,,E,,A,,]6- | [A,,,E,,A,,]6 |]
+V:4
+x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | A,,6 | E,,6 | G,,6 | D,,6 | G,,6 | D,,6 | G,,,6 | G,,,6 | G,,,6 | D,,6 | G,,,6 | G,,,6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | D,,6 | A,,6 | E,,6 | E,,6 | E,,6 | D,,6 | x6 | D,,6 | D,,6 | G,,,6 | G,,,6 | G,,,6 | D,,6 | G,,,6 | G,,,6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 |]

@@ -1,0 +1,20 @@
+X:1
+C:Domenico Scarlatti
+Z:Public Domain (PianoXML typeset)
+%%score { 1 | ( 2 3 ) }
+L:1/8
+Q:1/4=46
+M:3/8
+K:F
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:3 bass 
+%%MIDI program 0
+V:1
+!1!d/4e/4f/ (ed) | !5!b (!2!^c!1!d) | e/4f/4g/ (fe) | a (!2!^G!1!A) | !2!^c/4d/4e/ (dTc) | d (!5!AG) | F/G/FTE | D3 :: !1!A/4B/4c/ (BA) | B (!4!^fg) | G/4A/4B/ (AG) | !2!A (!4!ef) | F/4G/4A/ (GF) | !2!e/4f/4g/ (fe) | D/4E/4F/ (ED) | T^g a2 | !2!A/4B/4c/ (BA) | B (!2!^C!1!D) | !2!^c/4d/4e/ (dTc) | B (!2!^CD) | !2!e/4f/4g/ (fe) | a (!2!^CD) | !2!e/4f/4g/ dT^c | !3!d3 :|
+V:2
+[D,A,D]3 | [G,B,D]3 | [G,A,^CE]3 | [F,A,D]3 | [E,G,A,^C]3 | [F,D] (F,,G,,) | A,,2 A,, | D,,3 :: [D,A,D]3 | [G,B,D]3 | [G,C]3 | !1!F, (C,F,,) | [F,A,]3 | B,D^C | !2!B,2 !4!F, | E,A,/G,/F,/E,/ | [F,A,D]3 | [G,B,]3 | [A,^C]3 | B,!1!A,!1!B, | [^C,E,A,]3 | [D,F,A,]E,F, | G,A,A,, | D,3 :|
+V:3
+x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 :: x3 | x2 =F, | E,2 !5!C, | x3 | x3 | G,2 A, | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 :|

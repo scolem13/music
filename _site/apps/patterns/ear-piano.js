@@ -211,6 +211,23 @@
       }
     }
 
+
+    // ---------- the student's report (SiteRecord, record.js loaded on first use): one item a pattern, tool "ear-piano"; each try is
+    // an attempt [notes played, 1 right / 0 wrong, seconds since the pattern was played]; rv = 1 when the pattern had to be shown
+    var SR_SRC = "/apps/shared/report/record.js?v=8", srWait = [];
+    function withRecord(f) {
+      if (global.SiteRecord) return f(global.SiteRecord);
+      srWait.push(f); if (srWait.length > 1) return;
+      var sc = document.createElement("script"); sc.src = SR_SRC; sc.onload = function () { var w = srWait; srWait = []; w.forEach(function (g) { if (global.SiteRecord) g(global.SiteRecord); }); }; document.head.appendChild(sc);
+    }
+    function srTry(ok, heard, shown) {
+      withRecord(function (SR) {
+        if (!S.item) { var sv = $("ep-set"); S.item = SR.add("ear-piano", { ex: "Patterns by Ear", q: { text: (sv ? sv.value + ", pattern " : "Pattern ") + (S.j + 1) + " of " + S.earList.length + ": play what you heard" }, want: S.cur.midi.map(nm).join(" ") }); }
+        if (heard) S.item.at.push([heard.map(nm).join(" ") || "(nothing)", ok ? 1 : 0, Math.round((Date.now() - S.t0) / 1000)]);
+        if (shown) S.item.rv = 1;
+        SR.save();
+      });
+    }
     // ---------- By ear ----------
     function startEar(only) {
       stopAll(); S.phase = "ear"; $("ep-to-ear").hidden = true;
@@ -225,7 +242,7 @@
     }
     function nextEar() {
       if (S.j >= S.earList.length) return finish();
-      S.i = S.earList[S.j]; S.cur = pat(S.i); S.tries = 0; S.replays = 0; S.shown = false;
+      S.i = S.earList[S.j]; S.cur = pat(S.i); S.tries = 0; S.replays = 0; S.shown = false; S.item = null; S.t0 = Date.now();
       $("ep-ear-head").textContent = "Pattern " + (S.j + 1) + " of " + S.earList.length;
       $("ep-ear-solf").textContent = $("ep-solf-ear").checked ? (S.cur.solfege || "") : "";
       S.kbEar.clear(); $("ep-ear-next").hidden = true;
@@ -243,13 +260,14 @@
         return;
       }
       S.tries++;
+      srTry(ok, heard, false);
       if (ok) {
         record(S.tries === 1 ? "first" : "later");
         say("ep-ear-msg", S.tries === 1 ? "✓ First try!" : "✓ Got it on try " + S.tries + ".", "good");
         S.j++; timers.push(setTimeout(nextEar, 1000)); return;
       }
       var max = +$("ep-tries").value || 3;
-      if (S.tries >= max) { record("shown"); show("Here's how it goes. Play it once from the keys, then on to the next."); return; }
+      if (S.tries >= max) { srTry(false, null, true); record("shown"); show("Here's how it goes. Play it once from the keys, then on to the next."); return; }
       say("ep-ear-msg", "Not quite (note " + (at + 1) + "). Try " + (S.tries + 1) + " of " + max + ": listen again.", "bad");
       timers.push(setTimeout(function () { listenAfter(playPat(S.cur)); }, 1000));
     }
@@ -316,6 +334,7 @@
     $("ep-ear-key").onclick = function () { if (S.cur) keyContext().then(function () { listenAfter(playPat(S.cur)); }); };
     $("ep-ear-show").onclick = function () { if (S.phase === "ear" && !S.shown) { record("shown"); show("Here it is. Play it once from the keys."); } };
     $("ep-ear-next").onclick = function () { stopAll(); S.j++; nextEar(); };
+    withRecord(function (SR) { var nb = $("ep-ear-next"); if (nb && nb.parentNode && !nb.parentNode.querySelector(".sr-mybtn")) nb.parentNode.appendChild(SR.button(nb.parentNode)); });
     $("ep-ear-skip").onclick = function () { if (S.phase !== "ear") return; stopAll(); if (!S.shown) record("skipped"); S.j++; nextEar(); };
     $("ep-again").onclick = function () { startEar(S.results.filter(function (x) { return x.result !== "first"; }).map(function (x) { return x.i; })); };
     $("ep-restart").onclick = startLearn;

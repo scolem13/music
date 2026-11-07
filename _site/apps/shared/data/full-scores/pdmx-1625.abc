@@ -1,0 +1,20 @@
+X:1
+C:Johann Sebastian Bach
+Z:Public Domain
+%%score { ( 1 3 ) | 2 }
+L:1/8
+Q:1/4=65
+M:4/4
+K:C
+V:1 treble nm="Harpsichord"
+%%MIDI program 1
+V:3 treble 
+%%MIDI program 1
+V:2 bass 
+%%MIDI program 1
+V:1
+"^65" z/ !1!C/D/E/ F/D/E/C/ !2!G!5!c!3!Bc | d/G/A/B/ c/A/B/G/ !2!d!5!g!3!fg | e/a/g/f/ e/g/f/a/ g/f/e/d/ !2!c/e/d/f/ | e/d/c/B/ !2!A/c/B/d/ c/B/A/G/ !2!^F/A/G/B/ | AD !4!c>d B/A/G/!2!^F/ E/G/F/A/ | !1!G/B/A/c/ !1!B/d/c/e/ d/B/4c/4d/g/ M!1!!3!!2!B!1!A/!2!G/ | !1!G z z2 z/ !1!G/A/B/ c/A/B/G/ | !2!^F z z2 z/ !1!A/B/c/ d/B/c/A/ | B z z2 z/ !4!d/c/B/ A/c/B/d/ | c z z2 z/ !4!e/d/c/ B/d/^c/e/ | d^cde fA!3!=Bc | d!2!^F^G!1!A !3!Bc d2- | d/!1!E/^F/^G/ A/F/G/E/ e/d/c/e/ d/c/B/d/ | !1!c/!4!a/^g/b/ a/!1!e/!4!f/d/ ^G/!5!f/e/d/ M!1!!3!!2!d!1!B/!2!A/ | !1!A/!5!a/g/f/ e/g/f/a/ g4- | g/e/f/g/ a/f/g/e/ f4- | f/g/f/e/ d/f/e/g/ f4- | f/!2!d/e/f/ g/e/f/d/ e4- | e/!2!c/d/e/ f/d/e/c/ !1!d/e/f/g/ a/f/g/e/ | !1!f/g/a/b/ c'/a/b/g/ !5!c'!2!g e!2!d/!1!c/ | !5!c/_B/A/G/ F/A/G/B/ !fermata!A/!fermata!=B/!fermata!c/!fermata!!2!E/ !fermata!D/!fermata!c/!fermata!!2!F/!fermata!!4!B/ | !fermata![EGc]8 |]
+V:2
+z4 z/ !5!C,/D,/E,/ F,/D,/E,/C,/ | G,G,, z2 z/ !4!G,/A,/B,/ C/A,/B,/G,/ | C!4!B,CD E!4!G,A,B, | C!4!E,^F,G, A,!2!B, C2- | C/!4!D,/E,/^F,/ G,/E,/F,/D,/ G,!4!B,,C,D, | E,!2!^F,!1!G,!2!E, !5!B,,>!3!C, !1!D,D,, | z/ !5!G,,/A,,/B,,/ C,/A,,/B,,/G,,/ !2!D,G,!3!^F,G, | A,/D,/E,/^F,/ G,/E,/F,/D,/ !2!A,DCD |[K:treble] G,/G/F/E/ D/F/E/G/ FEF!5!D | E/A/G/F/ E/G/F/A/ GFG!5!E | F/!2!_B/!1!A/G/ F/A/!4!G/B/ !1!A/G/F/E/ D/F/E/G/ | !1!F/E/D/C/ B,/D/C/E/ D/!1!C/B,/A,/ ^G,/B,/A,/C/ | [K:bass] !2!B,E, !1!D>E !2!C/!1!B,/A,/=G,/ ^F,/A,/^G,/B,/ | !4!A,/C/B,/D/ !4!C/E/D/F/ EA,!1!EE, | !1!A,A,, z2 z/ !1!E/D/C/ B,/D/^C/E/ |"_" !2!!1!D4- D/A,/B,/C/ D/B,/C/A,/ | B,4- B,/D/C/B,/ A,/C/B,/D/ |"_" !2!!1!C4- C/G,/A,/_B,/ C/A,/B,/G,/ | A,_B,A,G, F,!1!DCB, | A,!1!FED !1!E/D,/E,/F,/ !1!G,/E,/F,/D,/ | E,C,D,E, F,/D,/E,/F,/ G,!3!G,, | !fermata![C,,C,]8 |]
+V:3
+x8 | x8 | x8 | x8 | x8 |x6(3x/4x/4x/4-x/ x | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x6(3x/4x/4x/4-x/ x | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |]

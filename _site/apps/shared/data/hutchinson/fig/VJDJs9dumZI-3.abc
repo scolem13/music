@@ -1,0 +1,13 @@
+X:1
+T:George Harrison, While My Guitar Gently Weeps (1968)
+%%id VJDJs9dumZI-3
+%bars ?
+%unsure rhythm of the lower voice's quarter notes (spacing uneven in the figure)
+M:4/4
+L:1/8
+K:Gm
+%%score (1 2)
+V:1 clef=treble-8
+V:2 clef=treble-8
+[V:1] "Gm"[dgb]2 z b- b g d2 | "Gm/F"z2 z [gb]- [gb] g d2 | "C7/E"z2 A [gb]- [gb] g A2 | "Eb"z2 B [eg]- [eg] e B2 |]
+[V:2] G2 G2 G2 G2 | F2 [FG]2 [FG]2 [FG]2 | [=EG]2 [EG]2 [EG]2 [EG]2 | _E2 E2 E2 E2 |]

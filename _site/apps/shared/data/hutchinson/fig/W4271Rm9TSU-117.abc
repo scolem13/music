@@ -1,0 +1,14 @@
+X:1
+T:Bach, J.S., Well-Tempered Clavier, Book I, Prelude 1 in C major BWV 846 (1722)
+%%id W4271Rm9TSU-117
+%bars ?
+M:4/4
+L:1/8
+K:C
+%%score {1 | (2 3)}
+V:1 clef=treble
+V:2 clef=bass
+V:3 clef=bass
+[V:1] "C7"z G,/_B,/ E/G,/B,/E/ z G,/B,/ E/G,/B,/E/ | "F/C"z F,/A,/ C/F/C/A,/ C/A,/F,/A,/ F,/D,/F,/D,/ | "G7"z G/B/ d/f/d/B/ d/B/G/B/ D/F/E/D/ | "C"[EGc]8 |]
+[V:2] z/ C,3/2- C,2 z/ C,3/2- C,2 | z/ C,3/2- C,2- C,4 | z/ C,3/2- C,2- C,4 | C,8 |]
+[V:3] C,,4 C,,4 | C,,4- C,,4 | C,,4- C,,4 | C,,8 |]

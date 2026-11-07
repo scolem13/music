@@ -1,0 +1,41 @@
+/* clarinet.css — fingering diagrams (clarinet-chart.js) and the clarinet page widgets (clarinet-page.js, ear-clarinet.js) */
+.clc { width: 100%; height: auto; display: block; }
+.clc .clc-k { fill: var(--cl-open, #fff); stroke: var(--cl-ink, #231f20); stroke-width: 1.6; transition: fill .12s; }
+.clc .clc-k.clc-down { fill: var(--cl-ink, #231f20); }
+.clc .clc-k.clc-trill { fill: #9aa0a6; }
+.clc .clc-deco path { stroke: var(--cl-ink, #231f20); stroke-width: 1.6; fill: none; }
+.clc .clc-k.clc-half { fill: url(#clcHalf); }
+.clc-live .clc-k { cursor: pointer; }
+.clc-live .clc-k:hover { stroke: var(--site-accent, #2780e3); stroke-width: 3.2; }
+.clc-small .clc-k, .clc-small .clc-deco path { stroke-width: 2.6; }
+@media (prefers-color-scheme: dark) { :root { --cl-open: #f1f3f5; } }
+
+.clp-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .4rem 0; }
+.clp-bar select { width: auto; }
+.clp-lab { display: inline-flex; gap: .4rem; align-items: center; margin: 0; font-size: .9rem; }
+.clp-strip { margin: .4rem 0; }
+.clp-row { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin: 3px 0; }
+.clp-rowlab { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--site-ink-2, #6c757d); width: 9.5rem; }
+.clp-nb { min-width: 2.6rem; padding: .15rem .35rem; font-size: .85rem; }
+.clp-card { border: 1px solid var(--site-line, #ced4da); border-radius: .5rem; padding: .8rem 1rem; margin: .5rem 0 1rem; background: var(--site-surface-2, #f8f9fa); }
+.clp-head { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+.clp-staff svg { max-width: 100%; }
+.clp-staff-s { min-height: 60px; }
+.clp-big { font-size: 1.8rem; font-weight: 800; line-height: 1.1; }
+.clp-muted { color: var(--site-ink-2, #6c757d); font-size: .9rem; margin: .3rem 0; }
+.clp-diags { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: .6rem; }
+.clp-fig { margin: 0; text-align: center; }
+.clp-fig figcaption { font-size: .85rem; color: var(--site-ink-2, #6c757d); margin-top: .2rem; }
+.clp-d { width: 96px; }
+.clp-d-big { width: min(170px, 40vw); flex: none; }
+.clp-d-s { width: 64px; margin: .3rem auto; }
+.clp-build { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; }
+.clp-side { flex: 1 1 240px; }
+.clp-ask { font-size: 1.05rem; margin-bottom: .3rem; }
+.clp-out { min-height: 1.6em; font-size: 1.05rem; margin: .4rem 0; }
+.clp-good { color: #2f9e44; font-weight: 700; } .clp-bad { color: #e03131; font-weight: 700; }
+.clp-tgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: .6rem; }
+.clp-tcard { border: 1px solid var(--site-line, #ced4da); border-radius: .4rem; padding: .4rem; text-align: center; }
+.clp-tlab { font-weight: 700; font-size: .9rem; }
+.clp-steps li { margin-bottom: .25rem; }
+.clp-tag { font-size: .7rem; color: var(--site-ink-2, #6c757d); }

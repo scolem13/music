@@ -1,0 +1,39 @@
+X:1
+C:Johannes Brahms (1833-1897)
+Z:Paul Flemming (1609-1640)
+%%score [ 1 2 3 ( 4 5 ) ] ( 6 7 8 )
+L:1/8
+M:4/2
+K:Eb
+V:1 treble nm="S" snm="S."
+%%MIDI program 52
+V:2 treble nm="A" snm="A."
+%%MIDI program 52
+V:3 treble-8 nm="T" snm="T."
+%%MIDI program 52
+V:4 bass nm="B" snm="B"
+%%MIDI program 52
+V:5 bass 
+%%MIDI program 52
+V:6 treble nm="Orgue" snm="Org."
+%%MIDI program 19
+V:7 treble 
+%%MIDI program 19
+V:8 treble 
+%%MIDI program 19
+V:1
+z8 z4!p! F4 |"^A"!<(! F4 E4 [Q:1/2=60] F4 G4!<)! |!>(! A8 G4 z4!>)! | z8 z4 e4 |!>(! (d8 A8)!>)! | G8 z8 | z2!>(! !tenuto!.F2 !tenuto!c2 !tenuto!c2 z4!<(! c4!>)!!<)! |!>(! e8 G8!>)! | F8 z4 B4 | A4!<(! e4 d4 c4!<)! |!>(! B8 A2 z2 G4!>)! | F8!>(! E8!>)! | z16 | z16 | z8 z4!p! G4 | "^B" G4!<(! A4 G4 F4!<)! |!>(! c8 =B2 z2 c4!>)! | e8!<(! e2 z2 f4!<)! | f8 B2 z2!f! A4 | !tenuto!c4 !tenuto!c4 z4 e4 | d8 d8 | e8 z4!p! c4 | (!tenuto!c4 =B4) z4 G4 | (!tenuto!c4 F4) z8 | z8 z4 c4 |"^C" d4 B4 c4 d4 | (e4 f4) d4 c4 | (=B4!<(! c4 ((d8)!<)! |!>(! d8)) c8!>)! | z16 | z16 | z16 | z16 | z8 z4!p! F4 |"^D" F4!<(! E4 F4 G4!<)! |!>(! A8 G4 z4!>)! | z8 z4!<(! e4!<)! | !>(! (d8 A8)!>)! | G8 z8 | z2!f! !tenuto!.F2!>(! !tenuto!c2 !tenuto!c2 z4!<(! c4!>)!!<)! | !>(! e8 G8!>)! | F8 z4 B4 | A4!<(! e4 d4 c4!<)! | B8"^dim." A2 z2 G4 |!>(! F8 E8!>)! ||"^E" z16 | z16 | z16 | z16 | z16 | z4 (G4"^molto cresc." B4!<(! e4-!<)! |!>(! e4!f! g4 f4 e4)!>)! | d8 z4!<(! (d4-!<)! |!>(! d8"^poco a poco dim."!<(! c8-!>)!!<)! |!>(! c8!<(! B8-!>)!!<)! | !>(! B8!<(! A8-)!>)!!<)! |!>(! (A8 G8)!>)! | G12 z4 |!p!!<(! A16!<)! |!>(! G16!>)! |]
+V:2
+z16 | z16 | z4!p!!<(! F4 G4 B4!<)! |!>(! c8 C8!>)! | (D2 E2) F4 z4 D4 | (E2 F2) G4 z8 | z8 z2!>(! !tenuto!.C2 !tenuto!F2 !tenuto!F2!>)! | z4!<(! G4!>(! B6 e2!<)!!>)! | d8 z8 | z4!<(! A4 B4 c4!<)! |!>(! E12 E4!>)! | B,8!>(! B,8!>)! | z16 | z16 | z16 | z4!p!!<(! F4 E4 (D2 A2)!<)! |!>(! (D4 E2) F2 G4 G4!>)! | (G2 E2)!<(! D2 C2 C4 D4!<)! | B,4 z4 z8 | z16 | z4!f! B,4 F4 B4 | A4 z4 z8 | z4!p! G4 (!tenuto!F4 =E4) | z4 F4 (!tenuto!F4 B,4) | z16 | z4 G4 A4 B4 | (G4 F4) (B4 A4) | (A4!<(! G4 ((F8)!<)! |!>(! F4)) G4 G8!>)! | z16 | z16 | z16 | z16 | z16 | z16 | z4!p! F4!<(! G4 B4!<)! |!>(! c8 C8!>)! | (D2 E2) F4 z4 D4 | (E2 F2) G4 z8 | z8 z2!f! !tenuto!.C2!>(! !tenuto!F2 !tenuto!F2!>)! | z4!<(! G4!>(! B6 e2!<)!!>)! | d8 z8 | z4!<(! A4 B4 c4!<)! | E12 E4 |!>(! B,8 B,8!>)! || z16 | z16 |!p! (E16 | _D16) | C8 z8 | "^molto cresc." (B,8 B8 |!<(! A16)!<)! |!>(! F8 z8!>)! | z4"^poco a poco dim." (G4 A4) B4 | !<(! A8!>(! G8-!<)!!>)! | G8!<(! F8-!<)! |!>(! (F8 E8)!>)! | E12 z4 |!p!!<(! E16!<)! | !>(! E16!>)! |]
+V:3
+z16 | z8 z4!p! E4 |!<(! E4 D4 E4 F4!<)! |!>(! G8 F4 z4!>)! | z8 z4 d4 | (c8 G8) | F8 z8 | z2!>(! !tenuto!.E2 !tenuto!B2 !tenuto!B2 z4!<(! B4!>)!!<)! |!>(! d8 F8!>)! | E8 z4!<(! A4!<)! | G4 _d4!>(! c4 B4!>)! | A8 G8 | z16 | z16 | z16 | z8 z4!p! F4 | F4!<(! G4 F4 E4!<)! | !>(! B8 =A4"^cresc." B4!>)! | d8 d2 z2!<(! e4!<)! |!>(! e8 A2 z2!f! G4!>)! | !tenuto!B4 !tenuto!B4 z4 d4 | c8!>(! c8!>)! | d8 z4!p! B4 | (!tenuto!B4 =A4) z4 F4 | (!tenuto!B4 E4) z8 | z8 z4 B4 | c4 A4 B4 c4 |!<(! (d4 e4) c4 =B4!<)! |!>(! (=A4 =B4) c8!>)! | z16 | z16 | z16 | z16 | z16 | z8 z4!p! E4 | E4!<(! D4 E4 F4!<)! | G8 F4 z4 | z8 z4!<(! d4!<)! | !>(! (c8 G8)!>)! | F8 z8 | z2!f! !tenuto!.E2!>(! !tenuto!B2 !tenuto!B2 z4!<(! B4!>)!!<)! | !>(! d8 F8!>)! | E8 z4 A4 |!<(! G4 _d4 c4 B4!<)! |!>(! A8 G8!>)! || z16 | z16 | z16 | z16 | z16 | z8 z4"^molto cresc." (G4- | G4 A4 c4!<(! f4-)!<)! | (f4!f! a4!>(! g4 f4)!>)! | e12 z4 | "^poco a poco dim." (d16 |!<(! c16)!<)! |!>(! (B16!>)! | B12) z4 |!p!!<(! (A8 c8)!<)! | !>(! B16!>)! |]
+V:4
+z16 | z16 | z16 | z4!p!!<(! E,4 F,4 =A,4!<)! |!>(! B,8 B,,8!>)! |!mp! ((C,2 D,2)) E,4 z4 C,4 | ((D,2 E,2)) F,4 z8 | z8 z2!>(! !tenuto!.B,,2 !tenuto!E,2 !tenuto!E,2!>)! | z4!mp!!<(! F,4!>(! A,6!mp! D2!<)!!>)! | C8 z8 | z4!mp!!<(! G,4 A,4 B,4!<)! |!>(! ((D,8 E,8))!>)! | z16 | z16 | z16 | z16 | z4!p!!<(! E,4 D,4 (C,2 G,2)!<)! |!>(! (C,4 D,2 E,2 F,4)"^cresc." F,4!>)! | (F,2 D,2) C,2 B,,2 (B,,4 C,4) | A,,4 z4 z8 | z16 | z4!f! A,,4!>(! E,4 A,4!>)! |!p! G,4 z4 z8 | z4!p! F,4 (!tenuto!E,4 D,4) | z4 E,4 (!tenuto!E,4 !>!A,,4) | z16 | z4 F,4 G,4 A,4 | !<(! F,4 E,4 A,4 G,4!<)! |!>(! (G,4 F,4) E,8!>)! | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z4!p! E,4!<(! F,4 =A,4!<)! |!>(! B,8 B,,8!>)! | (C,2 D,2) E,4 z4 C,4 | (D,2 E,2) F,4 z8 | z8 z2!f! !tenuto!..B,,2!>(! !tenuto!E,2 !tenuto!E,2!>)! | z4!<(! F,4 A,6 D2!<)! |!>(! C8 z8!>)! | z4!<(! G,4 A,4 B,4!<)! |!>(! D,8 E,8!>)! ||!p! (_D,16 | C,16) | B,,8 z8 | z16 | "^molto cresc." (A,,8 A,8 | G,16) | F,8 z8 | z4!<(! (F,4 G,4 A,4!<)! | G,16 | "^poco a poco dim."!>(! F,16!>)! | E,16) |!>(! (D,16!>)! | _D,12) z4 |!p!!<(! (C,8 A,,8)!<)! | !>(! [E,,E,]16!>)! |]
+V:5
+x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x8 x4!ppp! x/4 x/4 x/ x x2 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x8 x4!ppp! x/4 x/4 x/ x x2 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 || x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 |]
+V:6
+(E4 F2) G2 A8- | A4 G4 F4 E4 | E4 D4 E4 F4 | (G8 F4) x4 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | (F2 G2 F2 E2 F2 A2 B2 e2) | (f4 e4 d4 c4- | c8 =B8) | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z8 z2 (G,2 C2 E2 | G2 =B2 c2 e2) d2 c2 B2 c2 | d4 e2 f2 _A8 | G16- | G2 (F2 c2) e2 d2 c2 B2 c2 | (E4 F2) G2 A8- | A4 G4 F4 E4 | E4 D4 E4 F4 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 || z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 | z16 |]
+V:7
+E16- | E12 B,4 | x16 | x8 x4 x4 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | E12 G4 | A16 | G16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | z8 z2 F2 ^G2 =A2 | c6 _B2 F8 | E16- | E2 F2 E2 G2 F2 E2 D2 E2 | E16- | E12 B,4 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 || x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 |]
+V:8
+C16- | C12 x4 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | C16- | C12 B,4 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 || x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 | x16 |]

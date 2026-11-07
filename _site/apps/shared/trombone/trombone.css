@@ -1,0 +1,45 @@
+/* trombone.css — the slide diagram (trombone-chart.js) and the trombone page widgets (trombone-page.js) */
+.tbn-d { width: 100%; height: auto; display: block; touch-action: pan-y; }
+.tbn-guide { stroke: var(--tb-ink, #231f20); stroke-width: .25; stroke-dasharray: 1 1.4; opacity: .35; }
+.tbn-hit { fill: transparent; }
+.tbn-num { font: 600 6px system-ui, sans-serif; fill: var(--tb-ink, #231f20); opacity: .7; pointer-events: none; }
+.tbn-pos.tbn-on .tbn-num { opacity: 1; font-weight: 800; fill: var(--site-accent, #2780e3); }
+.tbn-pos.tbn-on .tbn-guide { opacity: .9; stroke: var(--site-accent, #2780e3); }
+.tbn-live .tbn-pos { cursor: pointer; }
+.tbn-live .tbn-slide { cursor: grab; }
+.tbn-live.tbn-grab .tbn-slide { cursor: grabbing; }
+.tbn-live:focus-visible { outline: 2px solid var(--site-accent, #2780e3); outline-offset: 2px; border-radius: 4px; }
+.tbn-small .tbn-num { font-size: 7px; }
+@media (prefers-color-scheme: dark) { :root { --tb-ink: #f1f3f5; } .tbn-art .s4 { fill: #8a8a8a; } }
+
+.tbp-bar { display: flex; flex-wrap: wrap; gap: .5rem .9rem; align-items: center; margin: .4rem 0; }
+.tbp-bar select { width: auto; max-width: 100%; }
+.tbp-chk { display: inline-flex; gap: .3rem; align-items: center; margin: 0; font-size: .9rem; }
+.tbp-strip { margin: .4rem 0; }
+.tbp-row { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin: 3px 0; }
+.tbp-rowlab { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--site-ink-2, #6c757d); width: 6rem; }
+.tbp-nb { min-width: 2.9rem; padding: .15rem .35rem; font-size: .85rem; }
+.tbp-nb sub { font-size: .65em; bottom: -.1em; }
+.tbp-card { border: 1px solid var(--site-line, #ced4da); border-radius: .5rem; padding: .8rem 1rem; margin: .5rem 0 1rem; background: var(--site-surface-2, #f8f9fa); }
+.tbp-head { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+.tbp-staff svg { max-width: 100%; }
+.tbp-big { font-size: 1.8rem; font-weight: 800; line-height: 1.1; }
+.tbp-muted { color: var(--site-ink-2, #6c757d); font-size: .9rem; margin: .3rem 0; }
+.tbp-diags { display: flex; flex-wrap: wrap; gap: 1rem 1.4rem; margin-top: .6rem; }
+.tbp-fig { margin: 0; flex: 1 1 280px; max-width: 480px; }
+.tbp-fig figcaption { font-size: .85rem; color: var(--site-ink-2, #6c757d); margin-top: .2rem; }
+.tbp-posbig { font-size: 1.5rem; font-weight: 800; }
+.tbp-build { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: flex-start; }
+.tbp-dwrap { flex: 2 1 340px; max-width: 640px; min-width: 0; }
+.tbp-side { flex: 1 1 240px; }
+.tbp-ask { font-size: 1.05rem; margin-bottom: .3rem; }
+.tbp-out { min-height: 1.6em; margin: .4rem 0; }
+.tbp-notes { margin: .3rem 0; padding-left: 1.4rem; }
+.tbp-nname { font-weight: 700; }
+.tbp-good { color: #2f9e44; font-weight: 700; } .tbp-bad { color: #e03131; font-weight: 700; }
+.tbp-table-wrap { overflow-x: auto; }
+.tbp-table { border-collapse: collapse; margin: .3rem 0; }
+.tbp-table th, .tbp-table td { border: 1px solid var(--site-line, #ced4da); padding: .2rem .35rem; text-align: center; font-size: .85rem; }
+.tbp-table td .btn { padding: .1rem .3rem; min-width: 2.6rem; }
+.tbp-glide { display: flex; flex-wrap: wrap; gap: .6rem 1rem; align-items: center; margin: .4rem 0; }
+.tbp-readout { font-weight: 700; min-width: 11rem; }

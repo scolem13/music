@@ -1,0 +1,6958 @@
+[
+ {
+  "id": "_40V2lcxM7k-3",
+  "video": "_40V2lcxM7k",
+  "start": 3,
+  "end": 8,
+  "title": "Blue Monk",
+  "composer": "Thelonious Monk",
+  "work": "hutch-monk-blue-monk",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:blue-monk",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "_40V2lcxM7k-3-fig",
+  "video": "_40V2lcxM7k",
+  "start": 3,
+  "end": 8,
+  "title": "Blue Monk",
+  "composer": "Thelonious Monk",
+  "work": "hutch-monk-blue-monk",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "Thelonious Monk, Blue Monk (1954)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "last bar partial; notes in parentheses kept as plain notes"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-pt-blue-monk",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/_40V2lcxM7k-3.abc"
+ },
+ {
+  "id": "_4IRMYuE1hI-12",
+  "video": "_4IRMYuE1hI",
+  "start": 12,
+  "end": 21,
+  "title": "Symphony No. 5, I",
+  "composer": "Beethoven",
+  "work": "beethoven-symphony-no-5-1074",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "full:pdmx-711",
+   "title": "Beethoven, Symphony No. 5",
+   "path": "apps/shared/data/full-scores/pdmx-711.abc",
+   "also": [
+    "theme:1074"
+   ]
+  },
+  "abc": null
+ },
+ {
+  "id": "_4IRMYuE1hI-12-fig",
+  "video": "_4IRMYuE1hI",
+  "start": 12,
+  "end": 21,
+  "title": "Symphony No. 5, I",
+  "composer": "Beethoven",
+  "work": "beethoven-symphony-no-5-1074",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "Beethoven, Symphony No. 5, Op. 67, I (1808)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "bass-staff inner voice pitches (ledger-line reading) in bars 2-5"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-beeth-5th",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/_4IRMYuE1hI-12.abc"
+ },
+ {
+  "id": "_zO6lWfvM0g-0-fig",
+  "video": "_zO6lWfvM0g",
+  "start": 0,
+  "end": 18,
+  "title": "Smoke on the Water",
+  "composer": "Deep Purple",
+  "work": "hutch-purple-smoke-on-the-water",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Ritchie Blackmore, Ian Gillan, Roger Glover, Jon Lord, and Ian Paice, Smoke on the Water (1973)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "octave of the fourths read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-walking-deep-purple",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/_zO6lWfvM0g-0.abc"
+ },
+ {
+  "id": "_zO6lWfvM0g-0-riff",
+  "video": "_zO6lWfvM0g",
+  "start": 0,
+  "end": 18,
+  "title": "Smoke on the Water",
+  "composer": "Deep Purple",
+  "work": "hutch-purple-smoke-on-the-water",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "riff",
+  "bars": null,
+  "barsWhy": null,
+  "source": null,
+  "abc": "_zO6lWfvM0g-0-riff.abc",
+  "unverified": true,
+  "part": "guitar riff (top line; played in fourths)",
+  "why": "pitches G B♭ C / G B♭ D♭ C / G B♭ C / B♭ G as commonly taught; rhythm approximate. Not checked against a transcription."
+ },
+ {
+  "id": "-4788Tmz9Zo-747-fig",
+  "video": "-4788Tmz9Zo",
+  "start": 747,
+  "end": 764,
+  "title": "Symphony No. 7, Op. 92, I",
+  "composer": "Beethoven",
+  "work": "hutch-beethoven-symphony-no-7-op-92-i",
+  "pages": [
+   "neapolitan.qmd"
+  ],
+  "caption": "Beethoven, Symphony No. 7, Op. 92, I (1812)",
+  "chapter": "Neapolitan",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "left-hand rhythm of bars 1-4 (dotted-eighth figures) and the inner chord tones of bar 5; last bar partial (only its first chord is printed)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/neapolitan-beeth-7",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/-4788Tmz9Zo-747.abc"
+ },
+ {
+  "id": "-bSnI-a0BSc-0-fig",
+  "video": "-bSnI-a0BSc",
+  "start": 0,
+  "end": 21,
+  "title": "Barbara Ann",
+  "composer": "The Beach Boys",
+  "work": "hutch-boys-barbara-ann",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Fred Fassert, Barbara Ann (1961)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "final half-note chords may sit a step higher than the others"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-walking-barbara-ann",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/-bSnI-a0BSc-0.abc"
+ },
+ {
+  "id": "-qgpewMCVjs-61",
+  "video": "-qgpewMCVjs",
+  "start": 61,
+  "end": 66,
+  "title": "I Want You to Want Me",
+  "composer": "Cheap Trick",
+  "work": "hutch-trick-i-want-you-to-want-me",
+  "pages": [
+   "secondary-dominants.qmd",
+   "secondary-dominants.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:188",
+   "path": "apps/shared/data/billboard/188.txt"
+  },
+  "abc": "-qgpewMCVjs-61.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "A",
+  "meter": "4/4",
+  "romans": [
+   "I",
+   "I",
+   "I",
+   "I",
+   "vi",
+   "II7",
+   "bVII",
+   "I I",
+   "vi",
+   "II",
+   "bVII",
+   "bVII",
+   "vi",
+   "vi"
+  ],
+  "form": [
+   "A intro @7s",
+   "C verse @26s",
+   "D chorus @70s",
+   "C verse @89s",
+   "D chorus @119s",
+   "solo @138s",
+   "C verse @166s",
+   "E outro @184s"
+  ]
+ },
+ {
+  "id": "-qgpewMCVjs-61-fig",
+  "video": "-qgpewMCVjs",
+  "start": 61,
+  "end": 66,
+  "title": "I Want You to Want Me",
+  "composer": "Cheap Trick",
+  "work": "hutch-trick-i-want-you-to-want-me",
+  "pages": [
+   "secondary-dominants.qmd",
+   "secondary-dominants.qmd"
+  ],
+  "caption": "Rick Nielson, I Want You to Want Me (1977)",
+  "chapter": "SecondaryDominants",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/sec-dom-cheap-trick-with-RN",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/-qgpewMCVjs-61.abc"
+ },
+ {
+  "id": "04854XqcfCY-46",
+  "video": "04854XqcfCY",
+  "start": 46,
+  "end": 55,
+  "title": "We Are the Champions",
+  "composer": "Queen",
+  "work": "hutch-queen-we-are-the-champions",
+  "pages": [
+   "secondary-diminished.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:588",
+   "path": "apps/shared/data/billboard/588.txt"
+  },
+  "abc": "04854XqcfCY-46.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "F",
+  "meter": "4/4",
+  "romans": [
+   "I iii7",
+   "IV VI7",
+   "ii",
+   "iv III7 III7"
+  ],
+  "form": [
+   "A verse @0s",
+   "B chorus @34s",
+   "C trans @66s",
+   "A verse @78s",
+   "B chorus @110s",
+   "B chorus @143s"
+  ]
+ },
+ {
+  "id": "04854XqcfCY-46-fig",
+  "video": "04854XqcfCY",
+  "start": 46,
+  "end": 55,
+  "title": "We Are the Champions",
+  "composer": "Queen",
+  "work": "hutch-queen-we-are-the-champions",
+  "pages": [
+   "secondary-diminished.qmd"
+  ],
+  "caption": "Freddie Mercury, We Are the Champions (1977)",
+  "chapter": "SecondaryDiminishedChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "the numbers 1-6 under the figure are analysis blanks, not bar numbers; inner chord notes read approximately; a parenthesised low F# in the second half of bar 4 (bass) is left out; the last bar is one quarter as printed"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/PRAC-EXER-sec-dim-analysis-queen",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/04854XqcfCY-46.abc"
+ },
+ {
+  "id": "1hZSulcsImQ-16-fig",
+  "video": "1hZSulcsImQ",
+  "start": 16,
+  "end": 26,
+  "title": "\"My Girl\" AnswerFour bars, complete without a cadence.",
+  "composer": "The Temptations",
+  "work": "hutch-temptations-my-girl-answerfour-bars-complete-without-a-caden",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Smokey Robinson and Ronald White, My Girl(1964)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "sixteenth groupings in bar 2 read approximately"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/phrase-4bar-my-girl",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/1hZSulcsImQ-16.abc"
+ },
+ {
+  "id": "1k8craCGpgs-82-fig",
+  "video": "1k8craCGpgs",
+  "start": 82,
+  "end": 91,
+  "title": "Don't Stop Believin'",
+  "composer": "Journey",
+  "work": "hutch-journey-don-t-stop-believin",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Steve Perry, Jonathan Cain, Neil Schon, Don’t Stop Believin’ (1981)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/phrase-subphrase-dont-stop-believing",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/1k8craCGpgs-82.abc"
+ },
+ {
+  "id": "1Qxrru15jfo-113-fig",
+  "video": "1Qxrru15jfo",
+  "start": 113,
+  "end": 142,
+  "title": "Ave verum corpus",
+  "composer": null,
+  "work": "mozart-ave-verum-corpus-k-618",
+  "pages": [
+   "roman-numerals.qmd"
+  ],
+  "caption": "Mozart, Ave Verum Corpus, K. 618",
+  "chapter": "RomanNumeralsAndCadences",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "many inner pitches (piano reduction, read approximately from the image): the rhythm is reliable, individual chord notes may be a step off"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/cadences-deceptive-cad-ave-verum",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/1Qxrru15jfo-113.abc"
+ },
+ {
+  "id": "1vDxlnJVvW8-180",
+  "video": "1vDxlnJVvW8",
+  "start": 180,
+  "end": 206,
+  "title": "Piano Sonata in C, K. 545, II AnswerEight bars.",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-in-c-k-545-ii-answereight-bars",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:mozart-sonata-16-2",
+   "title": "Mozart, Piano Sonata No. 16, K. 545, movement 2",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-16-2",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "1vDxlnJVvW8-180-fig",
+  "video": "1vDxlnJVvW8",
+  "start": 180,
+  "end": 206,
+  "title": "Piano Sonata in C, K. 545, II AnswerEight bars.",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-in-c-k-545-ii-answereight-bars",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "W.A. Mozart, Piano Sonata in C Major, K. 545, II",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "Alberti pitches in bar 3 beat 3 (A#o7/G); bars 7-8 left hand voicing"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/phrase-8bar-k545ii",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/1vDxlnJVvW8-180.abc"
+ },
+ {
+  "id": "2EwViQxSJJQ-73-fig",
+  "video": "2EwViQxSJJQ",
+  "start": 73,
+  "end": 88,
+  "title": "\"Irreplaceable\" AnswerFive bars. It ends on a minor iv chord, yet sounds complete.",
+  "composer": "Beyoncé",
+  "work": "hutch-beyonce-irreplaceable-answerfive-bars-it-ends-on-a-minor-iv-",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Shaffer Smith, Mikkel Eriksen, Tor Erik Hermansen, Espen Lind, Beyonc&#x00E9; Knowles, Irreplaceable (2006)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "sixteenth/eighth split of the syncopated figures in bars 1-2"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/phrase-5bar-irreplaceable",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/2EwViQxSJJQ-73.abc"
+ },
+ {
+  "id": "2n2YIxXJXac-0",
+  "video": "2n2YIxXJXac",
+  "start": 0,
+  "end": 17,
+  "title": "Winterreise, \"Die Nebensonnen\"",
+  "composer": "Schubert",
+  "work": "hutch-schubert-winterreise-die-nebensonnen",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:lied-schubert-franz-winterreise-d-911-23-die-nebensonnen",
+   "title": "Schubert, “23: Die Nebensonnen”, Franz Schubert, Winterreise, D.911",
+   "path": "apps/shared/data/scores/lieder.json#lied-schubert-franz-winterreise-d-911-23-die-nebensonnen",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "2n2YIxXJXac-0-fig",
+  "video": "2n2YIxXJXac",
+  "start": 0,
+  "end": 17,
+  "title": "Winterreise, \"Die Nebensonnen\"",
+  "composer": "Schubert",
+  "work": "hutch-schubert-winterreise-die-nebensonnen",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Franz Schubert, Winterreise, D.911, Die Nebensonnen (1828)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "piano right hand written as chords (inner held E merged); accidental in bar 3 read as D sharp; bar 4 ends mid-bar at the figure's end"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-chorale-nebensonnen",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/2n2YIxXJXac-0.abc"
+ },
+ {
+  "id": "3T1c7GkzRQQ-5-fig",
+  "video": "3T1c7GkzRQQ",
+  "start": 5,
+  "end": 15,
+  "title": "Roxanne",
+  "composer": "The Police",
+  "work": "hutch-police-roxanne",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Gordon Sumner, Roxanne (1978)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-quarters-roxanne",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/3T1c7GkzRQQ-5.abc"
+ },
+ {
+  "id": "450p7goxZqg-0",
+  "video": "450p7goxZqg",
+  "start": 0,
+  "end": 16,
+  "title": "All of Me",
+  "composer": "John Legend",
+  "work": "hutch-legend-all-of-me",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:all-of-me",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "450p7goxZqg-62",
+  "video": "450p7goxZqg",
+  "start": 62,
+  "end": 80,
+  "title": "All of Me",
+  "composer": "John Legend",
+  "work": "hutch-legend-all-of-me",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:all-of-me",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "4iUwkJuRdiY-12",
+  "video": "4iUwkJuRdiY",
+  "start": 12,
+  "end": 19,
+  "title": "Rigoletto, \"La donna è mobile\"",
+  "composer": "Verdi",
+  "work": "hutch-verdi-rigoletto-la-donna-e-mobile",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "full:pdmx-672",
+   "title": "Verdi, La donna e mobile",
+   "path": "apps/shared/data/full-scores/pdmx-672.abc",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "4iUwkJuRdiY-12-fig",
+  "video": "4iUwkJuRdiY",
+  "start": 12,
+  "end": 19,
+  "title": "Rigoletto, \"La donna è mobile\"",
+  "composer": "Verdi",
+  "work": "hutch-verdi-rigoletto-la-donna-e-mobile",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Giuseppe Verdi, Rigoletto, La donna &#x00E8; mobile",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-T-D-T-la-donna",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/4iUwkJuRdiY-12.abc"
+ },
+ {
+  "id": "4J5FPNitDc8-13-fig",
+  "video": "4J5FPNitDc8",
+  "start": 13,
+  "end": 24,
+  "title": "Blackbird",
+  "composer": "Lennon–McCartney",
+  "work": "hutch-lennon-mccartney-blackbird",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "caption": "Lennon-McCartney, Blackbird (1968)",
+  "chapter": "ModeMixture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "the low piano-treble pedal note read as A (ped. pt.; ledger count unclear)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/mode-mix-blackbird",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/4J5FPNitDc8-13.abc"
+ },
+ {
+  "id": "4Tr0otuiQuU-0",
+  "video": "4Tr0otuiQuU",
+  "start": 0,
+  "end": 23,
+  "title": "Moonlight Sonata, Op. 27 No. 2, I",
+  "composer": "Beethoven",
+  "work": "hutch-beethoven-moonlight-sonata-op-27-no-2-i",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:beethoven-sonata-14-1",
+   "title": "Beethoven, Piano Sonata No. 14 (“Moonlight”), Op. 27 No. 2(Moonlight), movement 1",
+   "path": "apps/shared/data/scores/beethoven-sonatas.json#beethoven-sonata-14-1",
+   "also": [
+    "full:pdmx-159"
+   ]
+  },
+  "abc": null
+ },
+ {
+  "id": "4Tr0otuiQuU-0-fig",
+  "video": "4Tr0otuiQuU",
+  "start": 0,
+  "end": 23,
+  "title": "Moonlight Sonata, Op. 27 No. 2, I",
+  "composer": "Beethoven",
+  "work": "hutch-beethoven-moonlight-sonata-op-27-no-2-i",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Ludwig van Beethoven, Moonlight Sonata, Op. 27, No. 2, I (1802)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "bar 5 shows three triplets only (figure ends there); bass chord pitches of bar 5"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-arpeggios-moonlight",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/4Tr0otuiQuU-0.abc"
+ },
+ {
+  "id": "5-pyc_z7WbY-16-fig",
+  "video": "5-pyc_z7WbY",
+  "start": 16,
+  "end": 28,
+  "title": "Theme from New York, New York",
+  "composer": "Kander and Ebb",
+  "work": "hutch-ebb-theme-from-new-york-new-york",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "John Kander and Fred Ebb, Theme from New York, New York (1977)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand eighth-note dyads read approximately"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-T-P-D-T-new-york",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/5-pyc_z7WbY-16.abc"
+ },
+ {
+  "id": "53geSxS8-Ak-142-fig",
+  "video": "53geSxS8-Ak",
+  "start": 142,
+  "end": 152,
+  "title": "*The Marriage of Figaro*, \"Voi che sapete\"",
+  "composer": "Mozart",
+  "work": "hutch-mozart-the-marriage-of-figaro-voi-che-sapete",
+  "pages": [
+   "roman-numerals.qmd"
+  ],
+  "caption": "Mozart, The Marriage of Figaro, Voi che sapete",
+  "chapter": "RomanNumeralsAndCadences",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "inner notes of the right-hand sixteenth chords (F7 beat) and the bar 4 right-hand voicing"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/cadences-deceptive-cad-voi-che",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/53geSxS8-Ak-142.abc"
+ },
+ {
+  "id": "5kaA3X2qSPU-0",
+  "video": "5kaA3X2qSPU",
+  "start": 0,
+  "end": 20,
+  "title": "Winterreise, \"Gute Nacht\"",
+  "composer": "Schubert",
+  "work": "hutch-schubert-winterreise-gute-nacht",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:lied-schubert-franz-winterreise-d-911-01-gute-nacht",
+   "title": "Schubert, “1: Gute Nacht”, Franz Schubert, Winterreise, D.911",
+   "path": "apps/shared/data/scores/lieder.json#lied-schubert-franz-winterreise-d-911-01-gute-nacht",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "5kaA3X2qSPU-0-fig",
+  "video": "5kaA3X2qSPU",
+  "start": 0,
+  "end": 20,
+  "title": "Winterreise, \"Gute Nacht\"",
+  "composer": "Schubert",
+  "work": "hutch-schubert-winterreise-gute-nacht",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Franz Schubert, Winterreise, D. 911Gute Nacht (1828)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right hand's two voices merged into chords; several inner pitches approximate; bar 7 is cut off at the figure's end"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-8ths-gute-nacht",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/5kaA3X2qSPU-0.abc"
+ },
+ {
+  "id": "5NkzTTkqTB4-0",
+  "video": "5NkzTTkqTB4",
+  "start": 0,
+  "end": 8,
+  "title": "Piano Sonata K. 545, I",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-545-i",
+  "pages": [
+   "accompaniment-textures.qmd",
+   "seventh-chords.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:mozart-sonata-16-1",
+   "title": "Mozart, Piano Sonata No. 16, K. 545, movement 1",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-16-1",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "5NkzTTkqTB4-0-fig",
+  "video": "5NkzTTkqTB4",
+  "start": 0,
+  "end": 8,
+  "title": "Piano Sonata K. 545, I",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-545-i",
+  "pages": [
+   "accompaniment-textures.qmd",
+   "seventh-chords.qmd"
+  ],
+  "caption": "Mozart, Piano Sonata K. 545, I (1788)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-alberti-k545",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/5NkzTTkqTB4-0.abc"
+ },
+ {
+  "id": "5NkzTTkqTB4-34",
+  "video": "5NkzTTkqTB4",
+  "start": 34,
+  "end": 43,
+  "title": "Piano Sonata in C, K. 545, I",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-in-c-k-545-i",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:mozart-sonata-16-1",
+   "title": "Mozart, Piano Sonata No. 16, K. 545, movement 1",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-16-1",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "5NkzTTkqTB4-34-fig",
+  "video": "5NkzTTkqTB4",
+  "start": 34,
+  "end": 43,
+  "title": "Piano Sonata in C, K. 545, I",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-in-c-k-545-i",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "W.A. Mozart, Piano Sonata in C, K. 545, I (1780s)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "no time signature printed (4/4 assumed); bar 4 left-hand G chord third note read D4"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-circle-mozart",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/5NkzTTkqTB4-34.abc"
+ },
+ {
+  "id": "67maTrrSKjg-0-fig",
+  "video": "67maTrrSKjg",
+  "start": 0,
+  "end": 4,
+  "title": "The Nutcracker, \"Trepak\"",
+  "composer": "Tchaikovsky",
+  "work": "hutch-tchaikovsky-the-nutcracker-trepak",
+  "pages": [
+   "secondary-diminished.qmd"
+  ],
+  "caption": "Tchaikovsky, The Nutcracker, Trepak (1892)",
+  "chapter": "SecondaryDiminishedChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "inner notes of the chords read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/sec-dim-trepak",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/67maTrrSKjg-0.abc"
+ },
+ {
+  "id": "6dd6e14ov2c-22-fig",
+  "video": "6dd6e14ov2c",
+  "start": 22,
+  "end": 34,
+  "title": "Inchworm",
+  "composer": "Frank Loesser",
+  "work": "hutch-loesser-inchworm",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "caption": "Frank Loesser, Hans Christian Andersen, Inchworm (1952)",
+  "chapter": "ModeMixture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/mode-mix-inchworm",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/6dd6e14ov2c-22.abc"
+ },
+ {
+  "id": "7PCkvCPvDXk-0-fig",
+  "video": "7PCkvCPvDXk",
+  "start": 0,
+  "end": 16,
+  "title": "All About That Bass",
+  "composer": "Meghan Trainor",
+  "work": "hutch-trainor-all-about-that-bass",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Meghan Trainor and Kevin Kadish, All About That Bass (bass line and chord symbols only) (2014)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-T-P-D-T-trainor",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/7PCkvCPvDXk-0.abc"
+ },
+ {
+  "id": "89dGC8de0CA-12-fig",
+  "video": "89dGC8de0CA",
+  "start": 12,
+  "end": 23,
+  "title": "Dream On",
+  "composer": "Steven Tyler",
+  "work": "hutch-tyler-dream-on",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "Steven Tyler, Dream On (1973)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "last bar: only its first beat is printed"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-dream-on",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/89dGC8de0CA-12.abc"
+ },
+ {
+  "id": "8QZ0WkwZ5Uc-21",
+  "video": "8QZ0WkwZ5Uc",
+  "start": 21,
+  "end": 32,
+  "title": "Chorale 175, \"Jesus, meine Zuversicht\"",
+  "composer": "S. Bach",
+  "work": "hutch-bach-chorale-175-jesus-meine-zuversicht",
+  "pages": [
+   "figured-bass.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:bach-chorale-175",
+   "title": "Bach, Jesus, meine Zuversicht, Chorale 175 (Riemenschneider), BWV 365",
+   "path": "apps/shared/data/scores/chorales.json#bach-chorale-175",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "8QZ0WkwZ5Uc-21-fig",
+  "video": "8QZ0WkwZ5Uc",
+  "start": 21,
+  "end": 32,
+  "title": "Chorale 175, \"Jesus, meine Zuversicht\"",
+  "composer": "S. Bach",
+  "work": "hutch-bach-chorale-175-jesus-meine-zuversicht",
+  "pages": [
+   "figured-bass.qmd"
+  ],
+  "caption": "J.S. Bach, Chorale 175, Jesus, meine Zuversicht",
+  "chapter": "FiguredBass",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "the alto D and the tenor F printed in parentheses are written as ordinary notes; lead-sheet / roman-numeral blanks (exercise) left out"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/PRAC-EXER-figured-bass-bach-chorale-analysis",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/8QZ0WkwZ5Uc-21.abc"
+ },
+ {
+  "id": "8uMb3CnP6L8-32",
+  "video": "8uMb3CnP6L8",
+  "start": 32,
+  "end": 38,
+  "title": "Rigoletto, \"La donna è mobile\"",
+  "composer": "Verdi",
+  "work": "hutch-verdi-rigoletto-la-donna-e-mobile",
+  "pages": [
+   "secondary-dominants.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "full:pdmx-672",
+   "title": "Verdi, La donna e mobile",
+   "path": "apps/shared/data/full-scores/pdmx-672.abc",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "8uMb3CnP6L8-32-fig",
+  "video": "8uMb3CnP6L8",
+  "start": 32,
+  "end": 38,
+  "title": "Rigoletto, \"La donna è mobile\"",
+  "composer": "Verdi",
+  "work": "hutch-verdi-rigoletto-la-donna-e-mobile",
+  "pages": [
+   "secondary-dominants.qmd"
+  ],
+  "caption": "Verdi, Rigoletto, La donna &#x00E8; mobile (1851)",
+  "chapter": "SecondaryDominants",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right hand: only the top (melody) line is written, the chord notes under it in bars 2 and 4 are left out; left hand: only the bass notes, the chords above them (eighths on beats 2-3) are left out and written as rests"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/sec-dom-la-donna",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/8uMb3CnP6L8-32.abc"
+ },
+ {
+  "id": "8v_4O44sfjM-134-fig",
+  "video": "8v_4O44sfjM",
+  "start": 134,
+  "end": 148,
+  "title": "Jar of Hearts",
+  "composer": "Christina Perri",
+  "work": "hutch-perri-jar-of-hearts",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "Christina Perri, Jar of Hearts (2010)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-jar-of-hearts",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/8v_4O44sfjM-134.abc"
+ },
+ {
+  "id": "9_y6nFjoVp4-7-fig",
+  "video": "9_y6nFjoVp4",
+  "start": 7,
+  "end": 16,
+  "title": "Baby Love",
+  "composer": "The Supremes",
+  "work": "hutch-supremes-baby-love",
+  "pages": [
+   "secondary-dominants.qmd"
+  ],
+  "caption": "Lamont Dozier, Brian Holland, and Eddie Holland, Baby Love (1964)",
+  "chapter": "SecondaryDominants",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "third bar vocal rhythm (the triplet and ties as read add up to 7 eighths, not 8); piano chord rhythm read as quarters, voicings approximate"
+  ],
+  "pickup": true,
+  "barsOk": false,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/sec-dom-baby-love",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/9_y6nFjoVp4-7.abc"
+ },
+ {
+  "id": "9ayLUAWmatk-11-fig",
+  "video": "9ayLUAWmatk",
+  "start": 11,
+  "end": 21,
+  "title": "Cantata BWV 147, \"Jesu, Joy of Man's Desiring\"",
+  "composer": "S. Bach",
+  "work": "hutch-bach-cantata-bwv-147-jesu-joy-of-man-s-desiring",
+  "pages": [
+   "secondary-diminished.qmd"
+  ],
+  "caption": "J.S. Bach, Herz und Mund und Tat und Leben BWV 147, X. Jesus bleibet Freude (Jesu, Joy of Man's Desiring) (1723)",
+  "chapter": "SecondaryDiminishedChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "the meter: the figure prints 4/4 but each bar holds three triplet beats, so M:3/4 is used",
+   "right hand: only the triplet line is written, read approximately (the dotted lower voice is left out); left hand: only the lowest voice, the upper left-hand quarters are left out; the last bar is one beat as printed"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/sec-dim-jesu",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/9ayLUAWmatk-11.abc"
+ },
+ {
+  "id": "9JtlCuIqcrM-12",
+  "video": "9JtlCuIqcrM",
+  "start": 12,
+  "end": 25,
+  "title": "Heartbreaker",
+  "composer": "Pat Benatar",
+  "work": "hutch-benatar-heartbreaker",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:1053",
+   "path": "apps/shared/data/billboard/1053.txt"
+  },
+  "abc": "9JtlCuIqcrM-12.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "F",
+  "meter": "4/4",
+  "romans": [
+   "i",
+   "I bIII",
+   "i",
+   "i",
+   "I",
+   "bVII",
+   "bVI",
+   "IV V bVII",
+   "I",
+   "bVII",
+   "bVI",
+   "IV V bVII",
+   "i bVII",
+   "bVI",
+   "IV",
+   "V"
+  ],
+  "form": [
+   "A intro @0s",
+   "B verse @13s",
+   "C chorus @39s",
+   "B verse @57s",
+   "C' chorus @84s",
+   "D bridge @102s",
+   "B' verse @120s",
+   "C'' chorus @134s",
+   "C''' solo @159s",
+   "D outro @195s"
+  ]
+ },
+ {
+  "id": "9JtlCuIqcrM-12-fig",
+  "video": "9JtlCuIqcrM",
+  "start": 12,
+  "end": 25,
+  "title": "Heartbreaker",
+  "composer": "Pat Benatar",
+  "work": "hutch-benatar-heartbreaker",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Geoff Gill and Cliff Wade, Heartbreaker (1979)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-8ths-heartbreaker",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/9JtlCuIqcrM-12.abc"
+ },
+ {
+  "id": "A_MjCqQoLLA-271-fig",
+  "video": "A_MjCqQoLLA",
+  "start": 271,
+  "end": 284,
+  "title": "\"Hey Jude\", the coda",
+  "composer": "The Beatles",
+  "work": "hutch-beatles-hey-jude-the-coda",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Lennon-McCartney, Hey Jude (bass line and chords only) (1968)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-bVII-hey-jude",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/A_MjCqQoLLA-271.abc"
+ },
+ {
+  "id": "A_MjCqQoLLA-55-fig",
+  "video": "A_MjCqQoLLA",
+  "start": 55,
+  "end": 70,
+  "title": "Hey Jude",
+  "composer": "The Beatles",
+  "work": "hutch-beatles-hey-jude",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Lennon-McCartney, Hey Jude",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "piano part left out (syncopated chords not read with certainty); last bar cut off where the excerpt ends"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-T-D-T-hey-jude",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/A_MjCqQoLLA-55.abc"
+ },
+ {
+  "id": "A-Qfd7gpGfU-4-fig",
+  "video": "A-Qfd7gpGfU",
+  "start": 4,
+  "end": 8,
+  "title": "Piano Sonata in C, Hob. XVI:35, III",
+  "composer": "Haydn",
+  "work": "hutch-haydn-piano-sonata-in-c-hob-xvi-35-iii",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "Joseph Haydn, Piano Sonata in C Major, Hob. XVI:35, III (1780)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "left-hand chord pitches; notes in parentheses kept as plain notes"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-esc-haydn",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/A-Qfd7gpGfU-4.abc"
+ },
+ {
+  "id": "a01QQZyl-_I-5-riff",
+  "video": "a01QQZyl-_I",
+  "start": 5,
+  "end": 15,
+  "title": "Under Pressure",
+  "composer": "Queen and David Bowie",
+  "work": "hutch-bowie-under-pressure",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "riff",
+  "bars": null,
+  "barsWhy": null,
+  "source": null,
+  "abc": "a01QQZyl-_I-5-riff.abc",
+  "unverified": true,
+  "part": "bass line",
+  "why": "the repeated D with the low A pickup, from memory; rhythm approximate. Not checked against a transcription."
+ },
+ {
+  "id": "aDFGmiXnLjU-7-fig",
+  "video": "aDFGmiXnLjU",
+  "start": 7,
+  "end": 30,
+  "title": "The Planets, \"Uranus\"",
+  "composer": "Holst",
+  "work": "hutch-holst-the-planets-uranus",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Diminution of the first four notes in Uranus from The Planets, Op. 32, by Gustav Holst (1916)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "tubas bar 5 printed as two duplets of halves (written here as dotted quarters, same timing)",
+   "timpani pitches in the last bar (four notes as a quadruplet) read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-diminution-uranus",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/aDFGmiXnLjU-7.abc"
+ },
+ {
+  "id": "awVi2QXC0ZE-0-fig",
+  "video": "awVi2QXC0ZE",
+  "start": 0,
+  "end": 9,
+  "title": "Forget You",
+  "composer": "CeeLo Green",
+  "work": "hutch-green-forget-you",
+  "pages": [
+   "secondary-dominants.qmd",
+   "secondary-dominants.qmd"
+  ],
+  "caption": "Bruno Mars, CeeLo Green, Philip Lawrence, and Ari Levine, Forget You (2010)",
+  "chapter": "SecondaryDominants",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "bass octave pitches of the walk-ups read approximately; right-hand voicings approximate; the last bar is two beats as printed"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/sec-dom-forget-you-with-RN",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/awVi2QXC0ZE-0.abc"
+ },
+ {
+  "id": "b8G9vRqq3RI-0-fig",
+  "video": "b8G9vRqq3RI",
+  "start": 0,
+  "end": 15,
+  "title": "Adagio for Strings",
+  "composer": "Samuel Barber",
+  "work": "hutch-barber-adagio-for-strings",
+  "pages": [
+   "accompaniment-textures.qmd",
+   "non-chord-tones.qmd",
+   "non-chord-tones.qmd"
+  ],
+  "caption": "Samuel Barber, Adagio for Strings (1936)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "inner-voice pitches of bar 2 chord; bass octave pitches"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-sus-4-3-barber",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/b8G9vRqq3RI-0.abc"
+ },
+ {
+  "id": "BciS5krYL80-0-fig",
+  "video": "BciS5krYL80",
+  "start": 0,
+  "end": 26,
+  "title": "\"Hotel California\", the verse",
+  "composer": "Eagles",
+  "work": "hutch-eagles-hotel-california-the-verse",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Don Felder, Don Henley, Glenn Frey, Hotel California (1977)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-exceptions-hotel-cal",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/BciS5krYL80-0.abc"
+ },
+ {
+  "id": "bT6WmWVYPhI-22",
+  "video": "bT6WmWVYPhI",
+  "start": 22,
+  "end": 48,
+  "title": "Moonlight Sonata, Op. 27, No. 2, I",
+  "composer": "Beethoven",
+  "work": "hutch-beethoven-moonlight-sonata-op-27-no-2-i",
+  "pages": [
+   "neapolitan.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:beethoven-sonata-14-1",
+   "title": "Beethoven, Piano Sonata No. 14 (“Moonlight”), Op. 27 No. 2(Moonlight), movement 1",
+   "path": "apps/shared/data/scores/beethoven-sonatas.json#beethoven-sonata-14-1",
+   "also": [
+    "full:pdmx-159"
+   ]
+  },
+  "abc": null
+ },
+ {
+  "id": "bT6WmWVYPhI-22-fig",
+  "video": "bT6WmWVYPhI",
+  "start": 22,
+  "end": 48,
+  "title": "Moonlight Sonata, Op. 27, No. 2, I",
+  "composer": "Beethoven",
+  "work": "hutch-beethoven-moonlight-sonata-op-27-no-2-i",
+  "pages": [
+   "neapolitan.qmd"
+  ],
+  "caption": "Beethoven, Moonlight Sonata, Op. 27, No. 2, I (1802)",
+  "chapter": "Neapolitan",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "last bar partial (only its first beat is printed)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/neapolitan-moonlight",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/bT6WmWVYPhI-22.abc"
+ },
+ {
+  "id": "bVeOdm-29pU-1",
+  "video": "bVeOdm-29pU",
+  "start": 1,
+  "end": 19,
+  "title": "Nocturne in E♭ major, Op. 9 No. 2",
+  "composer": "Chopin",
+  "work": "chopin-nocturne-in-e-major-op-9-no-2",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "theme:9248"
+  },
+  "abc": null
+ },
+ {
+  "id": "bVeOdm-29pU-1-fig",
+  "video": "bVeOdm-29pU",
+  "start": 1,
+  "end": 19,
+  "title": "Nocturne in E♭ major, Op. 9 No. 2",
+  "composer": "Chopin",
+  "work": "chopin-nocturne-in-e-major-op-9-no-2",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "caption": "Fr&#x00E9;d&#x00E9;ric Chopin, Nocturne in E-flat major, Op. 9, No. 2 (1832)",
+  "chapter": "ModeMixture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "left-hand chord tones on beats 2-4 of both bars read from a small image (not checked against the score)"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/PRAC-EXER-mode-mix-chopin",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/bVeOdm-29pU-1.abc"
+ },
+ {
+  "id": "bZZqSZqJz4Y-11",
+  "video": "bZZqSZqJz4Y",
+  "start": 11,
+  "end": 19,
+  "title": "Piano Sonata K. 310, I",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-310-i",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:mozart-sonata-8-1",
+   "title": "Mozart, Piano Sonata No. 8, K. 310, movement 1",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-8-1",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "bZZqSZqJz4Y-11-fig",
+  "video": "bZZqSZqJz4Y",
+  "start": 11,
+  "end": 19,
+  "title": "Piano Sonata K. 310, I",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-310-i",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "W.A. Mozart, Piano Sonata K. 310, I (1778)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "left-hand chord pitches (close clusters above the bass staff)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-8ths-k310",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/bZZqSZqJz4Y-11.abc"
+ },
+ {
+  "id": "CdqoNKCCt7A-37-fig",
+  "video": "CdqoNKCCt7A",
+  "start": 37,
+  "end": 46,
+  "title": "Don't You (Forget About Me)",
+  "composer": "Simple Minds",
+  "work": "hutch-minds-don-t-you-forget-about-me",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Keith Forsey and Steve Schiff, Don’t You (Forget About Me) (bass line and chords) (1985)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-bVII-dont-you-forget",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/CdqoNKCCt7A-37.abc"
+ },
+ {
+  "id": "CdqoNKCCt7A-6-fig",
+  "video": "CdqoNKCCt7A",
+  "start": 6,
+  "end": 14,
+  "title": "Don't You (Forget About Me)",
+  "composer": "Simple Minds",
+  "work": "hutch-minds-don-t-you-forget-about-me",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Keith Forsey and Steve Schiff, Don’t You (Forget About Me) (1985)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "exact octaves of the power-chord voicings"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-12and-dont-you",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/CdqoNKCCt7A-6.abc"
+ },
+ {
+  "id": "CvBfHwUxHIk-66-fig",
+  "video": "CvBfHwUxHIk",
+  "start": 66,
+  "end": 78,
+  "title": "Umbrella",
+  "composer": "Rihanna",
+  "work": "hutch-rihanna-umbrella",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Christopher Stewart, Terius Nash, Kuk Harrell, Shawn Carter, Umbrella (2007)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-bestseller-umbrella",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/CvBfHwUxHIk-66.abc"
+ },
+ {
+  "id": "Cw16cySo65Y-0-fig",
+  "video": "Cw16cySo65Y",
+  "start": 0,
+  "end": 9,
+  "title": "Friends in Low Places",
+  "composer": null,
+  "work": "hutch-friends-in-low-places",
+  "pages": [
+   "secondary-diminished.qmd"
+  ],
+  "caption": "Dewayne Blackwell and Earl Bud Lee, Friends in Low Places (1990)",
+  "chapter": "SecondaryDiminishedChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/sec-dim-garth-brooks",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/Cw16cySo65Y-0.abc"
+ },
+ {
+  "id": "cWkXmx-0phc-4-fig",
+  "video": "cWkXmx-0phc",
+  "start": 4,
+  "end": 14,
+  "title": "Colour My World",
+  "composer": "Chicago",
+  "work": "hutch-chicago-colour-my-world",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "James Pankow, Colour My World (1970)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-arpeggios-colour",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/cWkXmx-0phc-4.abc"
+ },
+ {
+  "id": "CXnEgbDcITo-31-fig",
+  "video": "CXnEgbDcITo",
+  "start": 31,
+  "end": 37,
+  "title": "I'll Be There for You",
+  "composer": "The Rembrandts",
+  "work": "hutch-rembrandts-i-ll-be-there-for-you",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "David Crane, Marta Kauffman, Michael Skloff, Allee Willis, Phil Solem, Danny Wilde, I'll Be There For You (bass line and chords only) (1995)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "last bar cut off where the excerpt ends"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-I-IV-V-rembrandts",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/CXnEgbDcITo-31.abc"
+ },
+ {
+  "id": "d22CiKMPpaY-10",
+  "video": "d22CiKMPpaY",
+  "start": 10,
+  "end": 24,
+  "title": "As Time Goes By",
+  "composer": "Herman Hupfeld",
+  "work": "hutch-hupfeld-as-time-goes-by",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:as-time-goes-by",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "d22CiKMPpaY-10-fig",
+  "video": "d22CiKMPpaY",
+  "start": 10,
+  "end": 24,
+  "title": "As Time Goes By",
+  "composer": "Herman Hupfeld",
+  "work": "hutch-hupfeld-as-time-goes-by",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Herman Hupfeld, As Time Goes By (1931)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "piano part left out (dense voicings not read with certainty); voice pitches read from ledger lines and contour"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-ii-V-I-as-time-goes-by",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/d22CiKMPpaY-10.abc"
+ },
+ {
+  "id": "d22CiKMPpaY-17",
+  "video": "d22CiKMPpaY",
+  "start": 17,
+  "end": 23,
+  "title": "As Time Goes By",
+  "composer": "Herman Hupfeld",
+  "work": "hutch-hupfeld-as-time-goes-by",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:as-time-goes-by",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "d22CiKMPpaY-17-fig",
+  "video": "d22CiKMPpaY",
+  "start": 17,
+  "end": 23,
+  "title": "As Time Goes By",
+  "composer": "Herman Hupfeld",
+  "work": "hutch-hupfeld-as-time-goes-by",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "Herman Hupfeld, As Time Goes By (1931)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "no time signature printed; 4/4 assumed; last bar partial"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-pt-as-time-goes",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/d22CiKMPpaY-17.abc"
+ },
+ {
+  "id": "Dbb_VGJXaSU-0-fig",
+  "video": "Dbb_VGJXaSU",
+  "start": 0,
+  "end": 11,
+  "title": "Erster Verlust",
+  "composer": "Schumann",
+  "work": "hutch-schumann-erster-verlust",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Robert Schumann, Album for the Young, Op. 68, No. 16, First Loss",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "notes printed in parentheses (bar 1 a and ^d, bar 5 A, bar 6 F, bar 7 E) are kept as plain notes"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/PRAC-EXER-phrase-subphrase-schumann",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/Dbb_VGJXaSU-0.abc"
+ },
+ {
+  "id": "dHrvGOd6G20-76-fig",
+  "video": "dHrvGOd6G20",
+  "start": 76,
+  "end": 86,
+  "title": "Brandenburg Concerto No. 2 in F major, BWV 1047, I",
+  "composer": "Bach",
+  "work": "hutch-bach-brandenburg-concerto-no-2-in-f-major-bwv-1047-i",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "J.S. Bach, Brandenburg Concerto No. 2 in F Major, BWV 1047, I.",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "treble pitches read partly from the chord symbols (ledger-line notes); bar 1 lower-voice high note read A4"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-circle-brandenburg2",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/dHrvGOd6G20-76.abc"
+ },
+ {
+  "id": "dQw4w9WgXcQ-0-fig",
+  "video": "dQw4w9WgXcQ",
+  "start": 0,
+  "end": 10,
+  "title": "Aitken and Waterman, \"Never Gonna Give You Up\"",
+  "composer": "Stock",
+  "work": "hutch-stock-aitken-and-waterman-never-gonna-give-you-up",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Mike Stock, Matt Aitken, and Pete Waterman, Never Gonna Give You Up (1987)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand chord tones read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-iii-vi-ii-V-never-gonna",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/dQw4w9WgXcQ-0.abc"
+ },
+ {
+  "id": "E6lV3nKg-nc-38-fig",
+  "video": "E6lV3nKg-nc",
+  "start": 38,
+  "end": 51,
+  "title": "Rinaldo, \"Lascia ch'io pianga\"",
+  "composer": "Handel",
+  "work": "hutch-handel-rinaldo-lascia-ch-io-pianga",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "George Frideric Handel, Rinaldo, Lascia ch'io pianga (1711)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "notes in parentheses kept as plain notes"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-ant-handel",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/E6lV3nKg-nc-38.abc"
+ },
+ {
+  "id": "E8EvUmq0Zao-0-fig",
+  "video": "E8EvUmq0Zao",
+  "start": 0,
+  "end": 17,
+  "title": "Invention No. 1 in C, BWV 772",
+  "composer": "Bach",
+  "work": "hutch-bach-invention-no-1-in-c-bwv-772",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Bach, Invention No. 1 in C Major, BWV 772 (1723)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-bach-invention1-expo",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/E8EvUmq0Zao-0.abc"
+ },
+ {
+  "id": "E8EvUmq0Zao-18-fig",
+  "video": "E8EvUmq0Zao",
+  "start": 18,
+  "end": 25,
+  "title": "Fragment \"b\" inverted, leading to a cadence in G major",
+  "composer": null,
+  "work": "hutch-fragment-b-inverted-leading-to-a-cadence-in-g-major",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Development of fragment b in Invention 1",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "last bar: only its first beat is printed"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-fragment-inv1-fragb",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/E8EvUmq0Zao-18.abc"
+ },
+ {
+  "id": "E8EvUmq0Zao-9-fig",
+  "video": "E8EvUmq0Zao",
+  "start": 9,
+  "end": 17,
+  "title": "Invention No. 1",
+  "composer": "Bach",
+  "work": "hutch-bach-invention-no-1",
+  "pages": [
+   "melodic-analysis.qmd",
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Development of fragment a in Invention 1",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "first bar is the opening half-bar (motive 1 alone), separated by a double bar"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-augmentation-invention1",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/E8EvUmq0Zao-9.abc"
+ },
+ {
+  "id": "EgT_us6AsDg-57-fig",
+  "video": "EgT_us6AsDg",
+  "start": 57,
+  "end": 74,
+  "title": "Love You Like a Love Song",
+  "composer": null,
+  "work": "hutch-love-you-like-a-love-song",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Antonina Armato, Tim James, Adam Schmalholz, Love You Like A Love Song (2010s) (bass and chords only)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-circle-love-song",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/EgT_us6AsDg-57.abc"
+ },
+ {
+  "id": "EkHTsc9PU2A-69-fig",
+  "video": "EkHTsc9PU2A",
+  "start": 69,
+  "end": 82,
+  "title": "I'm Yours",
+  "composer": "Jason Mraz",
+  "work": "hutch-mraz-i-m-yours",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Jason Mraz, I'm Yours (2007)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "bass approach notes (E, E sharp in bar 1) read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-reggae-jason-mraz",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/EkHTsc9PU2A-69.abc"
+ },
+ {
+  "id": "EO1FZEUbZJE-38-fig",
+  "video": "EO1FZEUbZJE",
+  "start": 38,
+  "end": 62,
+  "title": "Star Trek (2009), \"End Credits\"",
+  "composer": "Michael Giacchino",
+  "work": "hutch-giacchino-star-trek-2009-end-credits",
+  "pages": [
+   "neapolitan.qmd"
+  ],
+  "caption": "Michael Giacchino, Star Trek, End Credits (2009) (chords only)",
+  "chapter": "Neapolitan",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/neapolitan-star-trek",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/EO1FZEUbZJE-38.abc"
+ },
+ {
+  "id": "ep6rzB1Kx3U-42",
+  "video": "ep6rzB1Kx3U",
+  "start": 42,
+  "end": 48,
+  "title": "Sonatina in C, Op. 55 No. 1, I",
+  "composer": "Kuhlau",
+  "work": "hutch-kuhlau-sonatina-in-c-op-55-no-1-i",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "full:pdmx-73",
+   "title": "Kuhlau, Sonatina Op. 55 No. 1",
+   "path": "apps/shared/data/full-scores/pdmx-73.abc",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "ep6rzB1Kx3U-42-fig",
+  "video": "ep6rzB1Kx3U",
+  "start": 42,
+  "end": 48,
+  "title": "Sonatina in C, Op. 55 No. 1, I",
+  "composer": "Kuhlau",
+  "work": "hutch-kuhlau-sonatina-in-c-op-55-no-1-i",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "Friedrich Kuhlau, Sonatina in C Major, Op. 55, No. 1, I (1823)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "left-hand chord tones; last bar partial; notes in parentheses kept as plain notes"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-dn-kuhlau",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/ep6rzB1Kx3U-42.abc"
+ },
+ {
+  "id": "f1zLSpzCh9E-26-fig",
+  "video": "f1zLSpzCh9E",
+  "start": 26,
+  "end": 39,
+  "title": "Beautiful",
+  "composer": "Linda Perry",
+  "work": "hutch-perry-beautiful",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "caption": "Linda Perry, Beautiful (2002)",
+  "chapter": "ModeMixture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "piano right-hand inner notes in bars 3-4; vocal bar 2 first note read as A-flat"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/mode-mix-beautiful",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/f1zLSpzCh9E-26.abc"
+ },
+ {
+  "id": "F6AggxvVFRY-56-fig",
+  "video": "F6AggxvVFRY",
+  "start": 56,
+  "end": 75,
+  "title": "Metamorphosis Two",
+  "composer": "Philip Glass",
+  "work": "hutch-glass-metamorphosis-two",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Philip Glass, Metamorphosis Two (1989)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-i-VII-VI-glass",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/F6AggxvVFRY-56.abc"
+ },
+ {
+  "id": "f6jvsEb-Usk-0-fig",
+  "video": "f6jvsEb-Usk",
+  "start": 0,
+  "end": 17,
+  "title": "Suite in G minor, Passacaglia",
+  "composer": "Handel",
+  "work": "hutch-handel-suite-in-g-minor-passacaglia",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Handel Passacaglia with roots as open note heads",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "no time signature printed; one unmetred chord per bar (roots shown as open note heads in the figure)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-circle-roots-inverted-handel",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/f6jvsEb-Usk-0.abc"
+ },
+ {
+  "id": "F90Cw4l-8NY-71-fig",
+  "video": "F90Cw4l-8NY",
+  "start": 71,
+  "end": 87,
+  "title": "Pompeii",
+  "composer": "Bastille",
+  "work": "hutch-bastille-pompeii",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Dan Smith, Pompeii",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-acceleration-harmonic-rhythm",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/F90Cw4l-8NY-71.abc"
+ },
+ {
+  "id": "Fcomfvmq28Q-18-fig",
+  "video": "Fcomfvmq28Q",
+  "start": 18,
+  "end": 26,
+  "title": "Symphony No. 40, K. 550, II",
+  "composer": "Mozart",
+  "work": "hutch-mozart-symphony-no-40-k-550-ii",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "W.A. Mozart, Symphony No. 40, K. 550, II",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "lower notes of the treble appoggiatura chords; left-hand upper and lower voices merged into one line"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-app-550-ii",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/Fcomfvmq28Q-18.abc"
+ },
+ {
+  "id": "fdz_cabS9BU-24-fig",
+  "video": "fdz_cabS9BU",
+  "start": 24,
+  "end": 37,
+  "title": "Thinking Out Loud",
+  "composer": "Ed Sheeran",
+  "work": "hutch-sheeran-thinking-out-loud",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Ed Sheeran, Thinking Out Loud (2014)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand chord voicings read approximately (heads close together)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-12and-sheeran",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/fdz_cabS9BU-24.abc"
+ },
+ {
+  "id": "FFOzayDpWoI-55-fig",
+  "video": "FFOzayDpWoI",
+  "start": 55,
+  "end": 66,
+  "title": "Criminal",
+  "composer": "Fiona Apple",
+  "work": "hutch-apple-criminal",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "Fiona Apple, Criminal (1996)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "some sixteenth/dotted groupings in the vocal line; right-hand chord in the G half of bar 2 (natural and sharp signs as printed)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-fiona-apple",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/FFOzayDpWoI-55.abc"
+ },
+ {
+  "id": "FHhZPp08s74-22-fig",
+  "video": "FHhZPp08s74",
+  "start": 22,
+  "end": 39,
+  "title": "I Will Survive",
+  "composer": "Perren and Fekaris",
+  "work": "hutch-fekaris-i-will-survive",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Freddie Perren and Dino Fekaris, I Will Survive (chords only) (1970s)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-circle-i-will-survive",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/FHhZPp08s74-22.abc"
+ },
+ {
+  "id": "FrLequ6dUdM-8-fig",
+  "video": "FrLequ6dUdM",
+  "start": 8,
+  "end": 19,
+  "title": "No Scrubs",
+  "composer": "TLC",
+  "work": "hutch-tlc-no-scrubs",
+  "pages": [
+   "accompaniment-textures.qmd",
+   "seventh-chords.qmd"
+  ],
+  "caption": "Kevin Briggs, Kandi Burress, Tameka Cottle, Lisa Lopes, No Scrubs (1999)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "bar 2 first group's right-hand pitches; each beat's bass note is the first of a cross-staff group of sixteenths"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-arpeggios-no-scrubs",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/FrLequ6dUdM-8.abc"
+ },
+ {
+  "id": "frrGAqzuOlA-0-fig",
+  "video": "frrGAqzuOlA",
+  "start": 0,
+  "end": 4,
+  "title": "Minuet in G, WoO 10 No. 2",
+  "composer": "Beethoven",
+  "work": "hutch-beethoven-minuet-in-g-woo-10-no-2",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "Ludwig van Beethoven, Minuet in G, WoO 10, No. 2",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "last bar partial; notes in parentheses kept as plain notes"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-nt-beethoven-minuet",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/frrGAqzuOlA-0.abc"
+ },
+ {
+  "id": "fTwkVsECg9w-13-fig",
+  "video": "fTwkVsECg9w",
+  "start": 13,
+  "end": 25,
+  "title": "French Suite No. 1 in D minor, BWV 812, Sarabande",
+  "composer": "Bach",
+  "work": "hutch-bach-french-suite-no-1-in-d-minor-bwv-812-sarabande",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "Bach, J.S., French Suite No. 1 in D Minor, BWV 812, Sarabande (1722)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "last bar cut off where the excerpt ends (one beat); bar 3 upper notes read G4 Bb4"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-sus-decorated-bach",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/fTwkVsECg9w-13.abc"
+ },
+ {
+  "id": "fTwkVsECg9w-141-fig",
+  "video": "fTwkVsECg9w",
+  "start": 141,
+  "end": 167,
+  "title": "French Suite No. 1 in D minor, BWV 812, Sarabande",
+  "composer": "S. Bach",
+  "work": "hutch-bach-french-suite-no-1-in-d-minor-bwv-812-sarabande",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "caption": "J.S. Bach, French Suite No. 1 in D Minor, BWV 812, Sarabande",
+  "chapter": "ModeMixture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "inner voice of bar 3 (sixteenth beaming simplified to eighths); bass of the last chord read as D-A"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/mode-mix-picardy-third",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/fTwkVsECg9w-141.abc"
+ },
+ {
+  "id": "g3t6YDnGXAc-14-fig",
+  "video": "g3t6YDnGXAc",
+  "start": 14,
+  "end": 33,
+  "title": "Could You Be Loved",
+  "composer": "Bob Marley",
+  "work": "hutch-marley-could-you-be-loved",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Bob Marley, Could You Be Loved (1980)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "clavichord (printed 8va, written pitch here, 8va not marked) written as octaves; its lower notes and the bass pitches read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-reggae-bob-marley",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/g3t6YDnGXAc-14.abc"
+ },
+ {
+  "id": "GaH25Sghoqc-58-fig",
+  "video": "GaH25Sghoqc",
+  "start": 58,
+  "end": 73,
+  "title": "Reelin' in the Years",
+  "composer": "Steely Dan",
+  "work": "hutch-dan-reelin-in-the-years",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Walter Becker and Donald Fagen, Reelin’ in the Years (bass line and chords)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-bVII-reelin-in-the-years",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/GaH25Sghoqc-58.abc"
+ },
+ {
+  "id": "GbXSZBnBOQ4-135-fig",
+  "video": "GbXSZBnBOQ4",
+  "start": 135,
+  "end": 165,
+  "title": "The Star-Spangled Banner",
+  "composer": "Lady Gaga",
+  "work": "hutch-gaga-the-star-spangled-banner",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "caption": "John Stafford Smith and Francis Scott Key, The Star-Spangled Banner (1814) as performed by Lady Gaga at the 2016 Super Bowl",
+  "chapter": "ModeMixture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "voice bar 3: last note drawn open but only a quarter fits; piano chord inner tones and the accented upper notes in bars 4-5 read approximately"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/mode-mix-deceptive-gaga",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/GbXSZBnBOQ4-135.abc"
+ },
+ {
+  "id": "ghjz6D34HPQ-110-fig",
+  "video": "ghjz6D34HPQ",
+  "start": 110,
+  "end": 125,
+  "title": "Prelude",
+  "composer": "Tristan und Isolde",
+  "work": "hutch-isolde-prelude",
+  "pages": [
+   "roman-numerals.qmd"
+  ],
+  "caption": "Wagner, Tristan und Isolde, Prelude to Act I",
+  "chapter": "RomanNumeralsAndCadences",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "bass-staff pitches read approximately; the bass-staff upper line of the second bar (eighth, dotted eighth, sixteenth, rising) is left out"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/cadences-deceptive-cad-tristan",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/ghjz6D34HPQ-110.abc"
+ },
+ {
+  "id": "gIsj8VxQNkw-38-fig",
+  "video": "gIsj8VxQNkw",
+  "start": 38,
+  "end": 49,
+  "title": "\"O-o-h Child\" (Stan Vincent), in A♭ major",
+  "composer": "The Five Stairsteps",
+  "work": "hutch-stairsteps-o-o-h-child-stan-vincent-in-a-major",
+  "pages": [
+   "seventh-chords.qmd"
+  ],
+  "caption": "Stan Vincent, O-o-h Child",
+  "chapter": "SeventhChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "the Bbm7 bars hold two beats (written [M:2/4]); the horns' first Bbm7 chord is printed as a whole note, written here as a half; horn voicings and the boxed bass rhythms approximate; each boxed Db/Eb bar is cut after two beats"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/7th-chords-ooh-child",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/gIsj8VxQNkw-38.abc"
+ },
+ {
+  "id": "Gs069dndIYk-51",
+  "video": "Gs069dndIYk",
+  "start": 51,
+  "end": 59,
+  "title": "Wind & Fire, \"September\"",
+  "composer": "Earth",
+  "work": "hutch-earth-wind-fire-september",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:804",
+   "path": "apps/shared/data/billboard/804.txt"
+  },
+  "abc": "Gs069dndIYk-51.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "D",
+  "meter": "4/4",
+  "romans": [
+   "I7 vii7 vi7",
+   "VII7 iii7",
+   "V",
+   "V",
+   "vi7 II",
+   "vii7 iii7",
+   "vi7 II",
+   "V iii7",
+   "vi7 II",
+   "vii7 iii7",
+   "V7",
+   "V7"
+  ],
+  "form": [
+   "A intro @0s",
+   "A verse @20s",
+   "C chorus @51s",
+   "A verse @67s",
+   "C chorus @98s",
+   "C chorus @113s",
+   "C chorus @129s",
+   "D coda @144s"
+  ]
+ },
+ {
+  "id": "Gs069dndIYk-51-fig",
+  "video": "Gs069dndIYk",
+  "start": 51,
+  "end": 59,
+  "title": "Wind & Fire, \"September\"",
+  "composer": "Earth",
+  "work": "hutch-earth-wind-fire-september",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Maurice White, Al McKay, Allee Willis, September (1978)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand chord voicings read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-iii-vi-ii-V-september",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/Gs069dndIYk-51.abc"
+ },
+ {
+  "id": "HaA3YZ6QdJU-7",
+  "video": "HaA3YZ6QdJU",
+  "start": 7,
+  "end": 16,
+  "title": "Just the Way You Are",
+  "composer": "Billy Joel",
+  "work": "hutch-joel-just-the-way-you-are",
+  "pages": [
+   "secondary-diminished.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:240",
+   "path": "apps/shared/data/billboard/240.txt"
+  },
+  "abc": "HaA3YZ6QdJU-7.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "D",
+  "meter": "4/4",
+  "romans": [
+   "I ii7ø",
+   "I IV I",
+   "I ii7ø",
+   "I IV I",
+   "I",
+   "vi7",
+   "IV7",
+   "vi7 I7",
+   "IV7",
+   "iv7",
+   "I",
+   "v I7"
+  ],
+  "form": [
+   "A intro @0s",
+   "B verse @8s",
+   "A interlude @60s",
+   "B verse @67s",
+   "A interlude @119s",
+   "C bridge @126s",
+   "B verse @153s",
+   "A interlude @178s",
+   "B solo @185s",
+   "B verse @212s",
+   "C' outro @237s",
+   "B outro @247s"
+  ]
+ },
+ {
+  "id": "HaA3YZ6QdJU-7-fig",
+  "video": "HaA3YZ6QdJU",
+  "start": 7,
+  "end": 16,
+  "title": "Just the Way You Are",
+  "composer": "Billy Joel",
+  "work": "hutch-joel-just-the-way-you-are",
+  "pages": [
+   "secondary-diminished.qmd"
+  ],
+  "caption": "Billy Joel, Just the Way You Are (1977)",
+  "chapter": "SecondaryDiminishedChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand chord voicings (four- and five-note chords read as triads/sevenths, approximately)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/sec-dim-billy-joel-just-the-way",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/HaA3YZ6QdJU-7.abc"
+ },
+ {
+  "id": "HawWrnUGH_0-7-fig",
+  "video": "HawWrnUGH_0",
+  "start": 7,
+  "end": 13,
+  "title": "Water Music Suite No. 2 in D, HWV 349, Alla Hornpipe",
+  "composer": "Handel",
+  "work": "hutch-handel-water-music-suite-no-2-in-d-hwv-349-alla-hornpipe",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "George Frideric Handel, Suite No. 2 in D Major, HWV 349: II. Alla Hornpipe (1717)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "inner-voice pitches read from note positions; last bar cut off where the excerpt ends"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-sus-7-6-hornpipe",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/HawWrnUGH_0-7.abc"
+ },
+ {
+  "id": "hLQl3WQQoQ0-73-fig",
+  "video": "hLQl3WQQoQ0",
+  "start": 73,
+  "end": 81,
+  "title": "Someone Like You",
+  "composer": "Adele",
+  "work": "hutch-adele-someone-like-you",
+  "pages": [
+   "accompaniment-textures.qmd",
+   "progressions.qmd"
+  ],
+  "caption": "Adele Adkins and Dan Wilson, Someone Like You (2011)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-bestseller-someone-like-you",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/hLQl3WQQoQ0-73.abc"
+ },
+ {
+  "id": "hSqwR_dsecg-37",
+  "video": "hSqwR_dsecg",
+  "start": 37,
+  "end": 44,
+  "title": "Piano Sonata in C, K. 545, II",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-in-c-k-545-ii",
+  "pages": [
+   "non-chord-tones.qmd",
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:mozart-sonata-16-2",
+   "title": "Mozart, Piano Sonata No. 16, K. 545, movement 2",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-16-2",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "hSqwR_dsecg-37-fig",
+  "video": "hSqwR_dsecg",
+  "start": 37,
+  "end": 44,
+  "title": "Piano Sonata in C, K. 545, II",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-in-c-k-545-ii",
+  "pages": [
+   "non-chord-tones.qmd",
+   "non-chord-tones.qmd"
+  ],
+  "caption": "W.A. Mozart, Piano Sonata in C major, K. 545, II (1788)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-ret-k545ii",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/hSqwR_dsecg-37.abc"
+ },
+ {
+  "id": "hY7CGrR6sPc-39-fig",
+  "video": "hY7CGrR6sPc",
+  "start": 39,
+  "end": 54,
+  "title": "Mass in B minor, Crucifixus",
+  "composer": "S. Bach",
+  "work": "hutch-bach-mass-in-b-minor-crucifixus",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "J.S. Bach, Mass in B minor, BWV 232, Crucifixus (1733)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "choir: some alto pitches (bars 1, 3, 4) and the bass's last half note in bar 4 are hard to tell from the soprano/tenor heads they share stems near",
+   "piano right-hand inner chord tones in bars 1-2 read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-crucifixus",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/hY7CGrR6sPc-39.abc"
+ },
+ {
+  "id": "I1rA68yF4tM-341-fig",
+  "video": "I1rA68yF4tM",
+  "start": 341,
+  "end": 352,
+  "title": "Development of motives 2 and 3 together",
+  "composer": null,
+  "work": "hutch-development-of-motives-2-and-3-together",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Beethoven, Symphony No. 1, I, development of motives 2 and 3",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "no time signature printed; cut time (as the movement) assumed",
+   "inner notes of the bar 1 and bar 5 held chords (read as G-A and D-A-d)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-devt-of-mot3-beethoven",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/I1rA68yF4tM-341.abc"
+ },
+ {
+  "id": "I1rA68yF4tM-356-fig",
+  "video": "I1rA68yF4tM",
+  "start": 356,
+  "end": 367,
+  "title": "Development of motive 4",
+  "composer": null,
+  "work": "hutch-development-of-motive-4",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Beethoven, Symphony No. 1, I, development of motive 4",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "no time signature printed; cut time (as the movement) assumed",
+   "tremolo strokes on the right-hand chords not written; chord tones (dim. 7ths B-D-F-Ab and E-G-Bb-Db) read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-devt-of-mot4-beethoven",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/I1rA68yF4tM-356.abc"
+ },
+ {
+  "id": "I1rA68yF4tM-383-fig",
+  "video": "I1rA68yF4tM",
+  "start": 383,
+  "end": 395,
+  "title": "Development of motive 2",
+  "composer": null,
+  "work": "hutch-development-of-motive-2",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Beethoven, Symphony No. 1, I, development of motive 2",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "no time signature printed; cut time (as the movement) assumed",
+   "last bar: only its first beat is printed"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-devt-of-mot2-beethoven",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/I1rA68yF4tM-383.abc"
+ },
+ {
+  "id": "I1rA68yF4tM-440-fig",
+  "video": "I1rA68yF4tM",
+  "start": 440,
+  "end": 452,
+  "title": "Development of motive 1",
+  "composer": null,
+  "work": "hutch-development-of-motive-1",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Beethoven, Symphony No. 1, I, development of motive 1",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "exact chord tones of the dense treble chords, read partly from the falling-fifth sequence (C7 F | D7 | G E7 | Am F7 | Bb G7 | C A7 | Dm C7 | F D7 | G)",
+   "bars 8-10 are printed under 8va; written here at sounding pitch (an octave up)",
+   "last bar: only its first beat is printed"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-devt-of-mot1-beeth",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/I1rA68yF4tM-440.abc"
+ },
+ {
+  "id": "I1rA68yF4tM-93-fig",
+  "video": "I1rA68yF4tM",
+  "start": 93,
+  "end": 100,
+  "title": "The first theme",
+  "composer": null,
+  "work": "hutch-the-first-theme",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Ludwig van Beethoven, Symphony No. 1, Op. 21, I, Motives in Primary Theme (1800)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "last bar: only its first note is printed"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-beethoven-sym-1-motives",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/I1rA68yF4tM-93.abc"
+ },
+ {
+  "id": "IFPwm0e_K98-16-fig",
+  "video": "IFPwm0e_K98",
+  "start": 16,
+  "end": 36,
+  "title": "Also sprach Zarathustra",
+  "composer": "Richard Strauss",
+  "work": "strauss-also-sprach-zarathustra-op-30",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "caption": "Richard Strauss, Also Sprach Zarathustra, Op.30 (1896)",
+  "chapter": "ModeMixture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "the low bass note's octave (pedal C) and the tremolo between it and the half note (written as two halves)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/mode-mix-also-sprach-1",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/IFPwm0e_K98-16.abc"
+ },
+ {
+  "id": "IFPwm0e_K98-69-fig",
+  "video": "IFPwm0e_K98",
+  "start": 69,
+  "end": 79,
+  "title": "Also sprach Zarathustra",
+  "composer": "Richard Strauss",
+  "work": "strauss-also-sprach-zarathustra-op-30",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "caption": "Richard Strauss, Also Sprach Zarathustra, Op.30 (1896)",
+  "chapter": "ModeMixture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "inner chord tones of the treble chords in bar 2; the eighth-note line crossing into the bass staff in bar 2 is left out",
+   "low bass notes' octave (pedal under a tremolo, written as two whole-bar halves)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/mode-mix-also-sprach-2",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/IFPwm0e_K98-69.abc"
+ },
+ {
+  "id": "iPUmE-tne5U-9-fig",
+  "video": "iPUmE-tne5U",
+  "start": 9,
+  "end": 27,
+  "title": "Walking on Sunshine",
+  "composer": "Katrina and the Waves",
+  "work": "hutch-waves-walking-on-sunshine",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Kimberley Rew, Walking On Sunshine (1985)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-walking-on-sunshine",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/iPUmE-tne5U-9.abc"
+ },
+ {
+  "id": "iqlUlr2yzY8-0",
+  "video": "iqlUlr2yzY8",
+  "start": 0,
+  "end": 15,
+  "title": "Carmen, Habanera",
+  "composer": "Bizet",
+  "work": "hutch-bizet-carmen-habanera",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "full:pdmx-896",
+   "title": "Bizet, Carmen: Habanera",
+   "path": "apps/shared/data/full-scores/pdmx-896.abc",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "iqlUlr2yzY8-0-fig",
+  "video": "iqlUlr2yzY8",
+  "start": 0,
+  "end": 15,
+  "title": "Carmen, Habanera",
+  "composer": "Bizet",
+  "work": "hutch-bizet-carmen-habanera",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Georges Bizet, Carmen, Habanera (L'amour est un oiseau rebelle) (1870)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-habanera",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/iqlUlr2yzY8-0.abc"
+ },
+ {
+  "id": "iXQUu5Dti4g-0-fig",
+  "video": "iXQUu5Dti4g",
+  "start": 0,
+  "end": 9,
+  "title": "Stairway to Heaven",
+  "composer": "Jimmy Page and Robert Plant",
+  "work": "hutch-plant-stairway-to-heaven",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "Jimmy Page and Robert Plant, Stairway to Heaven (1971)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "last bar: only its first chord is printed"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-stairway",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/iXQUu5Dti4g-0.abc"
+ },
+ {
+  "id": "iXQUu5Dti4g-403-fig",
+  "video": "iXQUu5Dti4g",
+  "start": 403,
+  "end": 414,
+  "title": "Stairway to Heaven",
+  "composer": "Led Zeppelin",
+  "work": "hutch-zeppelin-stairway-to-heaven",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Jimmy Page and Robert Plant, Stairway to Heaven (chords and bass line only) (1970)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-i-VII-VI-stairway",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/iXQUu5Dti4g-403.abc"
+ },
+ {
+  "id": "IxuThNgl3YA-15-fig",
+  "video": "IxuThNgl3YA",
+  "start": 15,
+  "end": 30,
+  "title": "Born to Run",
+  "composer": "Bruce Springsteen",
+  "work": "hutch-springsteen-born-to-run",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "Bruce Springsteen, Born to Run (1975)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-app-born-to-run",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/IxuThNgl3YA-15.abc"
+ },
+ {
+  "id": "IYzlVDlE72w-93-fig",
+  "video": "IYzlVDlE72w",
+  "start": 93,
+  "end": 110,
+  "title": "Greatest Love of All",
+  "composer": "Masser and Creed",
+  "work": "hutch-creed-greatest-love-of-all",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Michael Masser and Linda Creed, Greatest Love of All (1977)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "piano right-hand part left out (dense tied voicings not read with certainty)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-iii-vi-ii-V-greatest-love",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/IYzlVDlE72w-93.abc"
+ },
+ {
+  "id": "IZ-cCZklhac-5",
+  "video": "IZ-cCZklhac",
+  "start": 5,
+  "end": 21,
+  "title": "Dichterliebe, Op. 48, 1. \"Im wunderschönen Monat Mai\"",
+  "composer": "Robert Schumann",
+  "work": "hutch-schumann-dichterliebe-op-48-1-im-wunderschonen-monat-mai",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:lied-schumann-robert-dichterliebe-op-48-01-im-wunderschonen-monat-mai",
+   "title": "Schumann, “Im wunderschönen Monat Mai”, Robert Schumann, Dichterliebe, Op.48",
+   "path": "apps/shared/data/scores/lieder.json#lied-schumann-robert-dichterliebe-op-48-01-im-wunderschonen-monat-mai",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "J91ti_MpdHA-5-fig",
+  "video": "J91ti_MpdHA",
+  "start": 5,
+  "end": 16,
+  "title": "Girl on Fire",
+  "composer": null,
+  "work": "hutch-girl-on-fire",
+  "pages": [
+   "triads.qmd"
+  ],
+  "caption": "Alicia Keys, Salaam Remi, Jeff Bhasker, Billy Squier, Girl on Fire (2012)",
+  "chapter": "Triads",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "two images joined (A then B); the guitar chord diagrams are left out"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit1/leadsheet-girl-on-fire-A",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/J91ti_MpdHA-5.abc"
+ },
+ {
+  "id": "jenWdylTtzs-21-fig",
+  "video": "jenWdylTtzs",
+  "start": 21,
+  "end": 29,
+  "title": "I Want to Hold Your Hand",
+  "composer": "The Beatles",
+  "work": "hutch-beatles-i-want-to-hold-your-hand",
+  "pages": [
+   "roman-numerals.qmd"
+  ],
+  "caption": "Lennon-McCartney, I Want to Hold Your Hand",
+  "chapter": "RomanNumeralsAndCadences",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand chord voicings (read from blurred noteheads, spelled to fit the chord symbols); bass octave and last-bar bass pitches"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/cadences-auth-cad-i-want-to-hold",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/jenWdylTtzs-21.abc"
+ },
+ {
+  "id": "jF-5zBjEIDM-89-fig",
+  "video": "jF-5zBjEIDM",
+  "start": 89,
+  "end": 107,
+  "title": "Beer Barrel Polka",
+  "composer": "Frankie Yankovic",
+  "work": "hutch-yankovic-beer-barrel-polka",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Jarom&#x00ED;r Vejvoda, Beer Barrel Polka (1927)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-offbeats-polka-beer-barrel",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/jF-5zBjEIDM-89.abc"
+ },
+ {
+  "id": "Jk7uXaNuWNE-89-fig",
+  "video": "Jk7uXaNuWNE",
+  "start": 89,
+  "end": 104,
+  "title": "\"All My Ex's Live in Texas\" (George Strait)",
+  "composer": null,
+  "work": "hutch-all-my-ex-s-live-in-texas-george-strait",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Sanger D. Shafer and Linda J. Shafer, All My Ex’s Live in Texas (1986)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-T-D-T-george-strait",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/Jk7uXaNuWNE-89.abc"
+ },
+ {
+  "id": "JRXIDEpquCg-0-fig",
+  "video": "JRXIDEpquCg",
+  "start": 0,
+  "end": 6,
+  "title": "The Nutcracker, Miniature Overture",
+  "composer": "Tchaikovsky",
+  "work": "hutch-tchaikovsky-the-nutcracker-miniature-overture",
+  "pages": [
+   "secondary-dominants.qmd"
+  ],
+  "caption": "Tchaikovsky, The Nutcracker, Miniature Overture (1892)",
+  "chapter": "SecondaryDominants",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "the meter: the figure prints 4/4 but each bar holds two beats, so M:2/4 is used; chord inner notes and the bass-staff notes read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/sec-dom-nutcracker-overture",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/JRXIDEpquCg-0.abc"
+ },
+ {
+  "id": "Ju8Hr50Ckwk-0-fig",
+  "video": "Ju8Hr50Ckwk",
+  "start": 0,
+  "end": 23,
+  "title": "If I Ain't Got You",
+  "composer": "Alicia Keys",
+  "work": "hutch-keys-if-i-ain-t-got-you",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Alicia Keys, If I Ain't Got You (2004)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-arpeggios-alicia-keys",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/Ju8Hr50Ckwk-0.abc"
+ },
+ {
+  "id": "jYgW5PhsQOE-0",
+  "video": "jYgW5PhsQOE",
+  "start": 0,
+  "end": 8,
+  "title": "\"Sie liebten sich beide\", Op. 13 No. 2",
+  "composer": "Clara Schumann",
+  "work": "hutch-schumann-sie-liebten-sich-beide-op-13-no-2",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:lied-schumann-clara-6-lieder-op-13-2-sie-liebten-sich-beide",
+   "title": "Schumann, “Sie liebten sich beide”, Clara Schumann, 6 Lieder, Op.13",
+   "path": "apps/shared/data/scores/lieder.json#lied-schumann-clara-6-lieder-op-13-2-sie-liebten-sich-beide",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "jYgW5PhsQOE-0-fig",
+  "video": "jYgW5PhsQOE",
+  "start": 0,
+  "end": 8,
+  "title": "\"Sie liebten sich beide\", Op. 13 No. 2",
+  "composer": "Clara Schumann",
+  "work": "hutch-schumann-sie-liebten-sich-beide-op-13-no-2",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "Clara Schumann, Op. 13, No. 2, Sie liebten sich beide (1844)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "left-hand dotted-quarter dyad in bar 1 (read A3-Bb3)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-ped-pt-cschumann",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/jYgW5PhsQOE-0.abc"
+ },
+ {
+  "id": "KbkWuVUkPmY-105-fig",
+  "video": "KbkWuVUkPmY",
+  "start": 105,
+  "end": 122,
+  "title": "The Star-Spangled Banner",
+  "composer": "Whitney Houston",
+  "work": "hutch-houston-the-star-spangled-banner",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "caption": "John Stafford Smith and Francis Scott Key, The Star-Spangled Banner (1814) as performed by Whitney Houston at the 1991 Super Bowl",
+  "chapter": "ModeMixture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "inner tones of the piano chords"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/mode-mix-deceptive-whitney",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/KbkWuVUkPmY-105.abc"
+ },
+ {
+  "id": "KEt_FkMkaO4-11-fig",
+  "video": "KEt_FkMkaO4",
+  "start": 11,
+  "end": 19,
+  "title": "The Pink Panther Theme",
+  "composer": "Henry Mancini",
+  "work": "hutch-mancini-the-pink-panther-theme",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "Henry Mancini, The Pink Panther Theme (1963)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "the A and D in bar 3 are printed in parentheses (ghost notes)",
+   "last bar: only its first half is printed"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-pink-panther",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/KEt_FkMkaO4-11.abc"
+ },
+ {
+  "id": "kNlVIMrUU6w-0-fig",
+  "video": "kNlVIMrUU6w",
+  "start": 0,
+  "end": 13,
+  "title": "Hard to Say I'm Sorry",
+  "composer": null,
+  "work": "hutch-hard-to-say-i-m-sorry",
+  "pages": [
+   "triads.qmd"
+  ],
+  "caption": "Peter Cetera and David Foster, Hard to Say I'm Sorry",
+  "chapter": "Triads",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "no time signature printed (4/4 assumed); right hand: only the top (melody) line in bars 1-3, the half-note chords under it left out; melody pitches and the bar 2 triplet read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit1/lead-sheet-sus4-hard-to-say-im-sorry-B",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/kNlVIMrUU6w-0.abc"
+ },
+ {
+  "id": "KQ6zr6kCPj8-114-fig",
+  "video": "KQ6zr6kCPj8",
+  "start": 114,
+  "end": 122,
+  "title": "Party Rock Anthem",
+  "composer": "LMFAO",
+  "work": "hutch-lmfao-party-rock-anthem",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Stefan Gordy and Skyler Gordy, Party Rock Anthem (2011)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "pitches read from ledger-line heights (bass clef); low notes read as A-flat"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/phrase-subphrase-party-rock",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/KQ6zr6kCPj8-114.abc"
+ },
+ {
+  "id": "Kw0wLLVEMaA-63-fig",
+  "video": "Kw0wLLVEMaA",
+  "start": 63,
+  "end": 72,
+  "title": "The Nutcracker, \"Waltz of the Flowers\"",
+  "composer": "Tchaikovsky",
+  "work": "hutch-tchaikovsky-the-nutcracker-waltz-of-the-flowers",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "caption": "Tchaikovsky, Nutcracker, Waltz of the Flowers (1892)",
+  "chapter": "ModeMixture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "treble bar 6: lower half-note [A,C] under the passing F written as one chord; inner chord tones read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/mode-mix-waltz-of-the-flowers",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/Kw0wLLVEMaA-63.abc"
+ },
+ {
+  "id": "KWKXNoKgLQU-0-fig",
+  "video": "KWKXNoKgLQU",
+  "start": 0,
+  "end": 9,
+  "title": "The blues scale",
+  "composer": null,
+  "work": "hutch-the-blues-scale",
+  "pages": [
+   "jazz-theory.qmd"
+  ],
+  "caption": "Jack Bruce and Eric Clapton, Sunshine of Your Love",
+  "chapter": "IntroductionToJazzTheory",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit11/jazz-scale-blues-sunshine",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/KWKXNoKgLQU-0.abc"
+ },
+ {
+  "id": "kyI1OImD7ow-13-fig",
+  "video": "kyI1OImD7ow",
+  "start": 13,
+  "end": 20,
+  "title": "Joy to the World",
+  "composer": "Hoyt Axton",
+  "work": "hutch-axton-joy-to-the-world",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "caption": "Hoyt Axton, Joy to the World (1970)",
+  "chapter": "ModeMixture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand chord spellings in bars 1 and 3; the last bar is incomplete in the figure"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/mode-mix-three-dog-night",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/kyI1OImD7ow-13.abc"
+ },
+ {
+  "id": "L6zR7qJ9frA-13-fig",
+  "video": "L6zR7qJ9frA",
+  "start": 13,
+  "end": 21,
+  "title": "Pipeline",
+  "composer": "The Chantays",
+  "work": "hutch-chantays-pipeline",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Brian Carman and Bob Spickard, Pipeline (1962)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "keyboard chord pitches (stacked heads read approximately)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-alberti-pipeline",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/L6zR7qJ9frA-13.abc"
+ },
+ {
+  "id": "lbblMw6k1cU-52-fig",
+  "video": "lbblMw6k1cU",
+  "start": 52,
+  "end": 56,
+  "title": "Piano Sonata Op. 53 (\"Waldstein\"), I",
+  "composer": "Beethoven",
+  "work": "hutch-beethoven-piano-sonata-op-53-waldstein-i",
+  "pages": [
+   "secondary-dominants.qmd"
+  ],
+  "caption": "Beethoven, Piano Sonata Op. 53, I (1804)",
+  "chapter": "SecondaryDominants",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "inner chord notes read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/sec-dom-waldstein-ST",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/lbblMw6k1cU-52.abc"
+ },
+ {
+  "id": "LGvW6jHUHiY-77-fig",
+  "video": "LGvW6jHUHiY",
+  "start": 77,
+  "end": 93,
+  "title": "The Star-Spangled Banner",
+  "composer": "Key and Smith",
+  "work": "hutch-smith-the-star-spangled-banner",
+  "pages": [
+   "figured-bass.qmd",
+   "roman-numerals.qmd"
+  ],
+  "caption": "Francis Scott Key and John Stafford Smith, Star-Spangled Banner",
+  "chapter": "RomanNumeralsAndCadences",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "the E-flats printed in parentheses (optional / passing notes) are written as ordinary notes"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/cadences-auth-cad-star-spangled",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/LGvW6jHUHiY-77.abc"
+ },
+ {
+  "id": "LGvW6jHUHiY-83-fig",
+  "video": "LGvW6jHUHiY",
+  "start": 83,
+  "end": 92,
+  "title": "The Star-Spangled Banner",
+  "composer": null,
+  "work": "jri-the-star-spangled-banner",
+  "pages": [
+   "non-chord-tones.qmd",
+   "non-chord-tones.qmd"
+  ],
+  "caption": "Francis Scott Key and John Smith, Star-Spangled Banner (1814)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "last bar partial; the note in parentheses kept as a plain note"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-esc-star-spangled",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/LGvW6jHUHiY-83.abc"
+ },
+ {
+  "id": "ljj6URbK8Xg-0-fig",
+  "video": "ljj6URbK8Xg",
+  "start": 0,
+  "end": 13,
+  "title": "Recorder Sonata in A minor, HWV 362, I. Larghetto",
+  "composer": "Handel",
+  "work": "hutch-handel-recorder-sonata-in-a-minor-hwv-362-i-larghetto",
+  "pages": [
+   "figured-bass.qmd"
+  ],
+  "caption": "George Frideric Handel, Recorder Sonata in A minor, HWV 362, I. Larghetto, with figured bass realization",
+  "chapter": "FiguredBass",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "pitches read partly by the chords and figures (first notes of recorder bars 2-3, low bass notes); figures 6, 7 6, 6/4+/2 not written"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/figured-bass-handel-flute-sonata-realized",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/ljj6URbK8Xg-0.abc"
+ },
+ {
+  "id": "lOdjXYp13-Y-0",
+  "video": "lOdjXYp13-Y",
+  "start": 0,
+  "end": 8,
+  "title": "Dichterliebe, \"Ich grolle nicht\"",
+  "composer": "Schumann",
+  "work": "hutch-schumann-dichterliebe-ich-grolle-nicht",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:lied-schumann-robert-dichterliebe-op-48-07-ich-grolle-nicht",
+   "title": "Schumann, “7: Ich grolle nicht”, Robert Schumann, Dichterliebe, Op.48",
+   "path": "apps/shared/data/scores/lieder.json#lied-schumann-robert-dichterliebe-op-48-07-ich-grolle-nicht",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "lOdjXYp13-Y-0-fig",
+  "video": "lOdjXYp13-Y",
+  "start": 0,
+  "end": 8,
+  "title": "Dichterliebe, \"Ich grolle nicht\"",
+  "composer": "Schumann",
+  "work": "hutch-schumann-dichterliebe-ich-grolle-nicht",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Robert Schumann, Dichterliebe, Ich grolle nicht (1844)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand chord pitches in bars 2-4 read approximately (bar 4 second chord, the sharp, especially)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-8ths-ich-grolle",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/lOdjXYp13-Y-0.abc"
+ },
+ {
+  "id": "lp-EO5I60KA-68-fig",
+  "video": "lp-EO5I60KA",
+  "start": 68,
+  "end": 80,
+  "title": "Thinking Out Loud",
+  "composer": "Ed Sheeran",
+  "work": "hutch-sheeran-thinking-out-loud",
+  "pages": [
+   "roman-numerals.qmd"
+  ],
+  "caption": "Sheeran and Wadge, Thinking Out Loud",
+  "chapter": "RomanNumeralsAndCadences",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand voicings (read approximately); the last bar is three beats as printed"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/cadences-half-cad-thinking-out-loud",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/lp-EO5I60KA-68.abc"
+ },
+ {
+  "id": "LPn0KFlbqX8-60",
+  "video": "LPn0KFlbqX8",
+  "start": 60,
+  "end": 75,
+  "title": "True Colors",
+  "composer": "Cyndi Lauper",
+  "work": "hutch-lauper-true-colors",
+  "pages": [
+   "roman-numerals.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:803",
+   "path": "apps/shared/data/billboard/803.txt"
+  },
+  "abc": "LPn0KFlbqX8-60.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "C",
+  "meter": "4/4",
+  "romans": [
+   "IV I",
+   "IV I",
+   "V",
+   "vi7 V",
+   "I7 IV",
+   "vi7 V",
+   "I7 IV"
+  ],
+  "form": [
+   "A intro-a @0s",
+   "B intro-b @6s",
+   "C verse @17s",
+   "D chorus @39s",
+   "B trans @64s",
+   "C verse @75s",
+   "D chorus @98s",
+   "B trans @123s",
+   "C verse @134s",
+   "D' chorus @157s",
+   "B' trans @209s",
+   "A' outro @214s"
+  ]
+ },
+ {
+  "id": "LPn0KFlbqX8-60-fig",
+  "video": "LPn0KFlbqX8",
+  "start": 60,
+  "end": 75,
+  "title": "True Colors",
+  "composer": "Cyndi Lauper",
+  "work": "hutch-lauper-true-colors",
+  "pages": [
+   "roman-numerals.qmd"
+  ],
+  "caption": "Kelly and Steinberg, True Colors",
+  "chapter": "RomanNumeralsAndCadences",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand voicings and the right-hand eighth-note pitches in the last two bars (blurred, read approximately); Gsus voicing"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/cadences-deceptive-cad-true-colors",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/LPn0KFlbqX8-60.abc"
+ },
+ {
+  "id": "LYfF9VKMp4w-18",
+  "video": "LYfF9VKMp4w",
+  "start": 18,
+  "end": 23,
+  "title": "It Don't Mean a Thing (If It Ain't Got That Swing)",
+  "composer": "Duke Ellington",
+  "work": "hutch-ellington-it-don-t-mean-a-thing-if-it-ain-t-got-that-swing",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:it-don-t-mean-a-thing",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "LYfF9VKMp4w-18-fig",
+  "video": "LYfF9VKMp4w",
+  "start": 18,
+  "end": 23,
+  "title": "It Don't Mean a Thing (If It Ain't Got That Swing)",
+  "composer": "Duke Ellington",
+  "work": "hutch-ellington-it-don-t-mean-a-thing-if-it-ain-t-got-that-swing",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "Duke Ellington, It Don't Mean A Thing (If It Ain't Got That Swing) (1931)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "piano right hand bar 3: the It+6 chord is printed as a half note (written here as a quarter so the bar adds up)",
+   "last bar: only the first beat is printed"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-dont-mean-a-thing",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/LYfF9VKMp4w-18.abc"
+ },
+ {
+  "id": "mbv-LcdLY-Y-30-fig",
+  "video": "mbv-LcdLY-Y",
+  "start": 30,
+  "end": 44,
+  "title": "Walking on the Moon",
+  "composer": "The Police",
+  "work": "hutch-police-walking-on-the-moon",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Gordon Sumner, Walking on the Moon (1979)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "bass pitches below the staff read approximately"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-reggae-walking-on-the-moon",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/mbv-LcdLY-Y-30.abc"
+ },
+ {
+  "id": "mEHcTciiXQY-0-fig",
+  "video": "mEHcTciiXQY",
+  "start": 0,
+  "end": 16,
+  "title": "\"Why Do Fools Fall in Love\" (Frankie Lymon & the Teenagers)",
+  "composer": null,
+  "work": "jri-why",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Frankie Lymon, Herman Santiago, Jimmy Merchant, Why Do Fools Fall in Love (1955)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-vi-ii-V-I-why-do-fools",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/mEHcTciiXQY-0.abc"
+ },
+ {
+  "id": "ML-RqsAG09o-16-fig",
+  "video": "ML-RqsAG09o",
+  "start": 16,
+  "end": 26,
+  "title": "Raiders of the Lost Ark, \"Raiders March\"",
+  "composer": "John Williams",
+  "work": "hutch-williams-raiders-of-the-lost-ark-raiders-march",
+  "pages": [
+   "neapolitan.qmd"
+  ],
+  "caption": "John Williams, Raiders of the Lost Ark, Raiders March (1981)",
+  "chapter": "Neapolitan",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/neapolitan-indiana-jones",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/ML-RqsAG09o-16.abc"
+ },
+ {
+  "id": "MS5pov3xu94-16-fig",
+  "video": "MS5pov3xu94",
+  "start": 16,
+  "end": 20,
+  "title": "Waltz in A♭ major, Op. 34 No. 1",
+  "composer": "Chopin",
+  "work": "hutch-chopin-waltz-in-a-major-op-34-no-1",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Fr&#x00E9;d&#x00E9;ric Chopin, Waltz in A-flat major, Op. 34 No. 1",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-I-IV-V-I-chopin",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/MS5pov3xu94-16.abc"
+ },
+ {
+  "id": "NrgmdOz227I-17-fig",
+  "video": "NrgmdOz227I",
+  "start": 17,
+  "end": 22,
+  "title": "Yesterday",
+  "composer": "The Beatles",
+  "work": "hutch-beatles-yesterday",
+  "pages": [
+   "secondary-dominants.qmd"
+  ],
+  "caption": "Paul McCartney, Yesterday (1965)",
+  "chapter": "SecondaryDominants",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "piano pitches read approximately (boxed chord read as Em7 with B natural; second-bar dyads as A3-D4)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/sec-dom-yesterday",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/NrgmdOz227I-17.abc"
+ },
+ {
+  "id": "O0PChj-uQPo-0-fig",
+  "video": "O0PChj-uQPo",
+  "start": 0,
+  "end": 10,
+  "title": "Symphony No. 40, K. 550, I",
+  "composer": "Mozart",
+  "work": "hutch-mozart-symphony-no-40-k-550-i",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Mozart, Symphony No. 40 in G Minor, K. 550, 1st movement",
+  "chapter": "MinorScalesAndKeySignatures",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit1/mozart-k-550-i-minor-scales",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/O0PChj-uQPo-0.abc"
+ },
+ {
+  "id": "o1iUR3GG4DQ-0-fig",
+  "video": "o1iUR3GG4DQ",
+  "start": 0,
+  "end": 7,
+  "title": "Piano Sonata Op. 2 No. 3, I",
+  "composer": "Beethoven",
+  "work": "hutch-beethoven-piano-sonata-op-2-no-3-i",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Ludwig van Beethoven, Piano Sonata in C major, Op. 2, No. 3, I.",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "inner dyads of the sixteenth-note figures read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-T-D-T-op2no3",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/o1iUR3GG4DQ-0.abc"
+ },
+ {
+  "id": "oGPys3sKBHw-146-fig",
+  "video": "oGPys3sKBHw",
+  "start": 146,
+  "end": 154,
+  "title": "William Tell Overture",
+  "composer": "Rossini",
+  "work": "rossini-william-tell-overture",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "Gioachino Rossini, William Tell Overture (1829)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "exact pitch of some high ledger-line octaves in bars 5-8 (read from the figure, octave pairs)",
+   "last bar: only its first eighth is printed"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-rossini-tell",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/oGPys3sKBHw-146.abc"
+ },
+ {
+  "id": "oHDsywpCHj4-18",
+  "video": "oHDsywpCHj4",
+  "start": 18,
+  "end": 22,
+  "title": "Mr. P.C.",
+  "composer": "John Coltrane",
+  "work": "hutch-coltrane-mr-p-c",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:mr-p-c",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "oHDsywpCHj4-18-fig",
+  "video": "oHDsywpCHj4",
+  "start": 18,
+  "end": 22,
+  "title": "Mr. P.C.",
+  "composer": "John Coltrane",
+  "work": "hutch-coltrane-mr-p-c",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "John Coltrane, Mr. P.C. (1959)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "piano right-hand chord voicings (dense ledger-line clusters below the treble staff) are approximate",
+   "bass pitches read relative to the Ab of the Ger+6 bar"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-coltrane-mr-pc",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/oHDsywpCHj4-18.abc"
+ },
+ {
+  "id": "OmQQoohTW80-0",
+  "video": "OmQQoohTW80",
+  "start": 0,
+  "end": 7,
+  "title": "Piano Sonata K. 283, I",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-283-i",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:mozart-sonata-5-1",
+   "title": "Mozart, Piano Sonata No. 5, K. 283, movement 1",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-5-1",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "OmQQoohTW80-0-fig",
+  "video": "OmQQoohTW80",
+  "start": 0,
+  "end": 7,
+  "title": "Piano Sonata K. 283, I",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-283-i",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "W.A. Mozart, Piano Sonata, K. 283, I.",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-T-D-T-k283",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/OmQQoohTW80-0.abc"
+ },
+ {
+  "id": "OPapxr8GvGA-18",
+  "video": "OPapxr8GvGA",
+  "start": 18,
+  "end": 26,
+  "title": "All the Things You Are",
+  "composer": "Jerome Kern",
+  "work": "hutch-kern-all-the-things-you-are",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:all-the-things-you-are",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "OPapxr8GvGA-18-fig",
+  "video": "OPapxr8GvGA",
+  "start": 18,
+  "end": 26,
+  "title": "All the Things You Are",
+  "composer": "Jerome Kern",
+  "work": "hutch-kern-all-the-things-you-are",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Jerome Kern, All the Things You Are (1939)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand chord voicings read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-vi-ii-V-I-all-the-things",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/OPapxr8GvGA-18.abc"
+ },
+ {
+  "id": "OpQFFLBMEPI-19-fig",
+  "video": "OpQFFLBMEPI",
+  "start": 19,
+  "end": 30,
+  "title": "Just Give Me a Reason",
+  "composer": "P!nk",
+  "work": "hutch-p-nk-just-give-me-a-reason",
+  "pages": [
+   "roman-numerals.qmd"
+  ],
+  "caption": "Pink, Bhasker, and Ruess, Just Give Me a Reason",
+  "chapter": "RomanNumeralsAndCadences",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand voicings (read approximately); the last bar is two beats as printed; parenthesised notes written as plain notes"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/cadences-plagal-cad-just-give-me",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/OpQFFLBMEPI-19.abc"
+ },
+ {
+  "id": "OvSbZEYlfnM-73-fig",
+  "video": "OvSbZEYlfnM",
+  "start": 73,
+  "end": 81,
+  "title": "Don't Stop",
+  "composer": "Fleetwood Mac",
+  "work": "hutch-mac-don-t-stop",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Christine McVie, Don’t Stop (1977)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/phrase-subphrase-dont-stop-thinking-about",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/OvSbZEYlfnM-73.abc"
+ },
+ {
+  "id": "oyEuk8j8imI-10-fig",
+  "video": "oyEuk8j8imI",
+  "start": 10,
+  "end": 20,
+  "title": "Love Yourself",
+  "composer": "Justin Bieber",
+  "work": "hutch-bieber-love-yourself",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Justin Bieber, Benny Blanco, and Ed Sheeran, Love Yourself (2015)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "the figure shows two bars, then the same rhythm \"equivalent to\" in cut time"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-12and-bieber",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/oyEuk8j8imI-10.abc"
+ },
+ {
+  "id": "PbwJhFGUiFc-43-fig",
+  "video": "PbwJhFGUiFc",
+  "start": 43,
+  "end": 49,
+  "title": "Symphony No. 40, K. 550, III AnswerSix bars, ending with V7–i in G minor.",
+  "composer": "Mozart",
+  "work": "hutch-mozart-symphony-no-40-k-550-iii-answersix-bars-ending-with-v",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "W.A. Mozart, Symphony No. 40, K. 550, III (1788)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "inner voices simplified to chords; held notes in the right hand written as repeated/tied chord tones",
+   "octave of the left-hand line in bars 1-4 (read from the chord symbols)"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/phrase-6bar-k550iii",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/PbwJhFGUiFc-43.abc"
+ },
+ {
+  "id": "pfwIAozfjoI-122-fig",
+  "video": "pfwIAozfjoI",
+  "start": 122,
+  "end": 134,
+  "title": "Piano Sonata Op. 2 No. 1, IV",
+  "composer": "Beethoven",
+  "work": "hutch-beethoven-piano-sonata-op-2-no-1-iv",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Ludwig van Beethoven, Piano Sonata Op. 2, No. 1, IV (1796)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "left-hand chord pitches in bars 6-9 read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-afterbeats-op2-no1-iv",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/pfwIAozfjoI-122.abc"
+ },
+ {
+  "id": "PIh2xe4jnpk-14-fig",
+  "video": "PIh2xe4jnpk",
+  "start": 14,
+  "end": 21,
+  "title": "Rude",
+  "composer": "MAGIC!",
+  "work": "hutch-magic-rude",
+  "pages": [
+   "accompaniment-textures.qmd",
+   "progressions.qmd"
+  ],
+  "caption": "Nasri Atwey, Adam Messinger, Mark Pellizzer, Ben Spivak, Alex Tanas, Rude (bass line and chords only) (2014)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-I-vi-IV-V-rotated-rude",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/PIh2xe4jnpk-14.abc"
+ },
+ {
+  "id": "PiIblkOtm3g-109-fig",
+  "video": "PiIblkOtm3g",
+  "start": 109,
+  "end": 116,
+  "title": "Die Meistersinger, Act II, Scene 6",
+  "composer": "Wagner",
+  "work": "hutch-wagner-die-meistersinger-act-ii-scene-6",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Richard Wagner, Die Meistersinger, Act II, Scene 6 (1860s)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand chord tones read approximately (ledger lines); half-note chords in bars 2-3"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-circle-wagner",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/PiIblkOtm3g-109.abc"
+ },
+ {
+  "id": "pkcJEvMcnEg-0-fig",
+  "video": "pkcJEvMcnEg",
+  "start": 0,
+  "end": 9,
+  "title": "Lithium",
+  "composer": "Kurt Cobain",
+  "work": "hutch-cobain-lithium",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "caption": "Kurt Cobain, Lithium (1992)",
+  "chapter": "ModeMixture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/mode-mix-lithium",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/pkcJEvMcnEg-0.abc"
+ },
+ {
+  "id": "PMFUeLdhhuM-0",
+  "video": "PMFUeLdhhuM",
+  "start": 0,
+  "end": 13,
+  "title": "Dichterliebe, \"Am leuchtenden Sommermorgen\"",
+  "composer": "Schumann",
+  "work": "hutch-schumann-dichterliebe-am-leuchtenden-sommermorgen",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:lied-schumann-robert-dichterliebe-op-48-12-am-leuchtenden-sommermorgen",
+   "title": "Schumann, “Am leuchtenden Sommermorgen”, Robert Schumann, Dichterliebe, Op.48",
+   "path": "apps/shared/data/scores/lieder.json#lied-schumann-robert-dichterliebe-op-48-12-am-leuchtenden-sommermorgen",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "PMFUeLdhhuM-0-fig",
+  "video": "PMFUeLdhhuM",
+  "start": 0,
+  "end": 13,
+  "title": "Dichterliebe, \"Am leuchtenden Sommermorgen\"",
+  "composer": "Schumann",
+  "work": "hutch-schumann-dichterliebe-am-leuchtenden-sommermorgen",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "Robert Schumann, Dichterliebe, Op. 48, Am leuchtenden Sommermorgen (1840)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "the right hand's lowest sixteenths in bars 1-3 are printed on the bass staff (cross-staff); written here in the right hand",
+   "last bar: only its first half is printed"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-am-leuchtenden-EnGer",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/PMFUeLdhhuM-0.abc"
+ },
+ {
+  "id": "PmO3Wlono6w-282",
+  "video": "PmO3Wlono6w",
+  "start": 282,
+  "end": 286,
+  "title": "Piano Sonata K. 333, I. The book's question",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-333-i-the-book-s-question",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-excerpt",
+  "bars": [
+   1,
+   1
+  ],
+  "barsWhy": "page text: \"beat 4 of the first bar\" (the book's Figure 10.6.3). The clip is 282 s into the video, so it may be a later return of the same music (not checked by ear).",
+  "source": {
+   "id": "scores:mozart-sonata-13-1",
+   "title": "Mozart, Piano Sonata No. 13, K. 333, movement 1",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-13-1",
+   "also": []
+  },
+  "abc": "PmO3Wlono6w-282.abc",
+  "pickup": true,
+  "checked": "4 bars in 4 voices"
+ },
+ {
+  "id": "PmO3Wlono6w-282-fig",
+  "video": "PmO3Wlono6w",
+  "start": 282,
+  "end": 286,
+  "title": "Piano Sonata K. 333, I. The book's question",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-333-i-the-book-s-question",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "W.A. Mozart, Piano Sonata K. 333, I (1784)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "last bar partial; notes in parentheses kept as plain notes"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-dn-k333i",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/PmO3Wlono6w-282.abc"
+ },
+ {
+  "id": "pNjpTOB4ksY-19",
+  "video": "pNjpTOB4ksY",
+  "start": 19,
+  "end": 35,
+  "title": "Heart and Soul",
+  "composer": "Carmichael and Loesser",
+  "work": "hutch-loesser-heart-and-soul",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:heart-and-soul",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "PVjiKRfKpPI-47-fig",
+  "video": "PVjiKRfKpPI",
+  "start": 47,
+  "end": 58,
+  "title": "Take Me to Church",
+  "composer": "Hozier",
+  "work": "hutch-hozier-take-me-to-church",
+  "pages": [
+   "roman-numerals.qmd"
+  ],
+  "caption": "Hozer-Byrne, Take Me to Church",
+  "chapter": "RomanNumeralsAndCadences",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "vocal rhythm of the second full bar (as read it adds to 13 sixteenths, not 12); the last bar is two beats as printed"
+  ],
+  "pickup": true,
+  "barsOk": false,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/cadences-plagal-cad-take-me-to-church",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/PVjiKRfKpPI-47.abc"
+ },
+ {
+  "id": "qGDH18R7GfA-121-fig",
+  "video": "qGDH18R7GfA",
+  "start": 121,
+  "end": 140,
+  "title": "The Star-Spangled Banner",
+  "composer": "Beyoncé",
+  "work": "hutch-beyonce-the-star-spangled-banner",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "caption": "John Stafford Smith and Francis Scott Key, The Star-Spangled Banner (1814) as performed by Beyonc&#x00E9; at the 2013 Presidential Inauguration",
+  "chapter": "ModeMixture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "piano chord inner tones; parenthesised right-hand notes kept as plain notes"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/mode-mix-deceptive-beyonce",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/qGDH18R7GfA-121.abc"
+ },
+ {
+  "id": "qHm9MG9xw1o-8-fig",
+  "video": "qHm9MG9xw1o",
+  "start": 8,
+  "end": 24,
+  "title": "Secrets",
+  "composer": "OneRepublic",
+  "work": "hutch-onerepublic-secrets",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Ryan Tedder, Secrets (2009)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-alberti-one-republic",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/qHm9MG9xw1o-8.abc"
+ },
+ {
+  "id": "qi7Yh16dA0w-7-fig",
+  "video": "qi7Yh16dA0w",
+  "start": 7,
+  "end": 16,
+  "title": "Love Song",
+  "composer": null,
+  "work": "hutch-love-song",
+  "pages": [
+   "triads.qmd"
+  ],
+  "caption": "Sara Bareilles, Love Song",
+  "chapter": "Triads",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand voicings read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit1/leadsheet-sus2-love-song",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/qi7Yh16dA0w-7.abc"
+ },
+ {
+  "id": "qQkBeOisNM0-62-fig",
+  "video": "qQkBeOisNM0",
+  "start": 62,
+  "end": 71,
+  "title": "Some Nights",
+  "composer": "fun.",
+  "work": "hutch-fun-some-nights",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Jeff Bhasker, Nate Ruess, Andrew Dost, Jack Antonoff, Some Nights (2011)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "two voices per staff written as chords; figure ends after two eighths of bar 4"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-chorale-some-nights",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/qQkBeOisNM0-62.abc"
+ },
+ {
+  "id": "QYHxGBH6o4M-0",
+  "video": "QYHxGBH6o4M",
+  "start": 0,
+  "end": 16,
+  "title": "Super Freak",
+  "composer": "Rick James",
+  "work": "hutch-james-super-freak",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:812",
+   "path": "apps/shared/data/billboard/812.txt"
+  },
+  "abc": "QYHxGBH6o4M-0.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "A",
+  "meter": "4/4",
+  "romans": [
+   "i i",
+   "bVII i",
+   "i i",
+   "bVII i",
+   "i i",
+   "bVII i",
+   "i i",
+   "bVII i",
+   "i i",
+   "bVII i",
+   "i i",
+   "bVII i"
+  ],
+  "form": [
+   "A intro @1s",
+   "A verse @16s",
+   "B chorus @45s",
+   "C bridge @60s",
+   "A interlude @72s",
+   "A verse @87s",
+   "B chorus @116s",
+   "C bridge @131s",
+   "A interlude @144s",
+   "A verse @166s",
+   "B solo @181s",
+   "fadeout @188s"
+  ]
+ },
+ {
+  "id": "r2G1fKYFgVU-11",
+  "video": "r2G1fKYFgVU",
+  "start": 11,
+  "end": 18,
+  "title": "Take the 'A' Train",
+  "composer": "Duke Ellington",
+  "work": "hutch-ellington-take-the-a-train",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:take-the-a-train",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "rAn-AWXtHv0-90-fig",
+  "video": "rAn-AWXtHv0",
+  "start": 90,
+  "end": 102,
+  "title": "Imagine",
+  "composer": "John Lennon",
+  "work": "hutch-lennon-imagine",
+  "pages": [
+   "secondary-dominants.qmd"
+  ],
+  "caption": "John Lennon, Imagine (1971)",
+  "chapter": "SecondaryDominants",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "chord voicings in the upper staff read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/sec-dom-imagine",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/rAn-AWXtHv0-90.abc"
+ },
+ {
+  "id": "rClUOdS5Zyw-49-fig",
+  "video": "rClUOdS5Zyw",
+  "start": 49,
+  "end": 55,
+  "title": "Want to Want Me",
+  "composer": "Jason Derulo",
+  "work": "hutch-derulo-want-to-want-me",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "Jason Desrouleaux, Ian Kirkpatrick, Samuel Denison Martin, Lindy Robbins, Mitch Allan, Want to Want Me (2015)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "last bar partial (figure stops after two eighths); notes in parentheses kept as plain notes"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-pt-derulo",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/rClUOdS5Zyw-49.abc"
+ },
+ {
+  "id": "rD5wQROo_bs-87-fig",
+  "video": "rD5wQROo_bs",
+  "start": 87,
+  "end": 105,
+  "title": "Batman v Superman, \"The Red Capes Are Coming\"",
+  "composer": "Hans Zimmer and Antonius Tom Holkenborg",
+  "work": "hutch-holkenborg-batman-v-superman-the-red-capes-are-coming",
+  "pages": [
+   "neapolitan.qmd"
+  ],
+  "caption": "Hans Zimmer and Antonius Tom Holkenborg, Batman v Superman: Dawn of Justice, The Red Capes are Coming (2016) (chords only)",
+  "chapter": "Neapolitan",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "bar 3 chord spelling (G#o7/B cluster)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/neapolitan-lex-luthor",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/rD5wQROo_bs-87.abc"
+ },
+ {
+  "id": "rLLYRLqUl68-103-fig",
+  "video": "rLLYRLqUl68",
+  "start": 103,
+  "end": 110,
+  "title": "String Quartet K. 428, IV",
+  "composer": "Mozart",
+  "work": "hutch-mozart-string-quartet-k-428-iv",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Mozart, String Quartet K. 428, IV (1783)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-mozart-k428",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/rLLYRLqUl68-103.abc"
+ },
+ {
+  "id": "rTVjnBo96Ug-57",
+  "video": "rTVjnBo96Ug",
+  "start": 57,
+  "end": 68,
+  "title": "(Sittin' On) The Dock of the Bay",
+  "composer": "Otis Redding",
+  "work": "hutch-redding-sittin-on-the-dock-of-the-bay",
+  "pages": [
+   "secondary-dominants.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:645",
+   "path": "apps/shared/data/billboard/645.txt"
+  },
+  "abc": "rTVjnBo96Ug-57.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "G",
+  "meter": "4/4",
+  "romans": [
+   "I",
+   "III",
+   "IV",
+   "II",
+   "I",
+   "vi",
+   "I",
+   "vi"
+  ],
+  "form": [
+   "A intro @0s",
+   "B verse @9s",
+   "C chorus @28s",
+   "B verse @47s",
+   "C chorus @65s",
+   "D bridge @84s",
+   "B verse @102s",
+   "C chorus @121s",
+   "A' outro @140s",
+   "fadeout @149s"
+  ]
+ },
+ {
+  "id": "rTVjnBo96Ug-57-fig",
+  "video": "rTVjnBo96Ug",
+  "start": 57,
+  "end": 68,
+  "title": "(Sittin' On) The Dock of the Bay",
+  "composer": "Otis Redding",
+  "work": "hutch-redding-sittin-on-the-dock-of-the-bay",
+  "pages": [
+   "secondary-dominants.qmd"
+  ],
+  "caption": "Steve Cropper and Otis Redding, (Sittin’ On) The Dock of the Bay (1967)",
+  "chapter": "SecondaryDominants",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand inner chord notes read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/sec-dom-sitting-on-the-dock",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/rTVjnBo96Ug-57.abc"
+ },
+ {
+  "id": "rYEDA3JcQqw-57-fig",
+  "video": "rYEDA3JcQqw",
+  "start": 57,
+  "end": 69,
+  "title": "Rolling in the Deep",
+  "composer": "Adele",
+  "work": "hutch-adele-rolling-in-the-deep",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Adele Adkins and Paul Epworth, Rolling In The Deep (chords and bass line only) (2010)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-i-VII-VI-rolling-in-the",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/rYEDA3JcQqw-57.abc"
+ },
+ {
+  "id": "s-F19lgB0Ow-101-fig",
+  "video": "s-F19lgB0Ow",
+  "start": 101,
+  "end": 115,
+  "title": "Dido and Aeneas, \"When I am laid in earth\"",
+  "composer": "Purcell",
+  "work": "hutch-purcell-dido-and-aeneas-when-i-am-laid-in-earth",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "Henry Purcell, Dido and Aeneas, Z. 636, When I am laid in earth (Dido's Lament) (1688)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "last bar: only the whole note is printed (bar not complete)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-dido",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/s-F19lgB0Ow-101.abc"
+ },
+ {
+  "id": "s6fPN5aQVDI-0",
+  "video": "s6fPN5aQVDI",
+  "start": 0,
+  "end": 8,
+  "title": "Sir Duke",
+  "composer": "Stevie Wonder",
+  "work": "hutch-wonder-sir-duke",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:sir-duke",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "s6fPN5aQVDI-0-fig",
+  "video": "s6fPN5aQVDI",
+  "start": 0,
+  "end": 8,
+  "title": "Sir Duke",
+  "composer": "Stevie Wonder",
+  "work": "hutch-wonder-sir-duke",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Stevie Wonder, Sir Duke (1976)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-ornamentation-sir-duke",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/s6fPN5aQVDI-0.abc"
+ },
+ {
+  "id": "Sf-tjXevlyQ-21-fig",
+  "video": "Sf-tjXevlyQ",
+  "start": 21,
+  "end": 31,
+  "title": "Gianni Schicchi, \"O mio babbino caro\"",
+  "composer": "Puccini",
+  "work": "puccini-gianni-schicchi-o-mio-babbino-caro",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "Giacomo Puccini, Gianni Schicchi, O mio babbino caro (1918)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "upper notes of the right-hand chords read from ledger lines"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-inc-nt-o-mio",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/Sf-tjXevlyQ-21.abc"
+ },
+ {
+  "id": "SrcOcKYQX3c-19-fig",
+  "video": "SrcOcKYQX3c",
+  "start": 19,
+  "end": 41,
+  "title": "Pathétique Sonata, I",
+  "composer": "Beethoven",
+  "work": "hutch-beethoven-pathetique-sonata-i",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Beethoven, Path&#x00E9;tique Sonata, Op. 13, I, Introduction (1799)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "inner chord tones of the right-hand chords and the low left-hand chord in bar 1 read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-rhythm-change-pathetique1",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/SrcOcKYQX3c-19.abc"
+ },
+ {
+  "id": "SrcOcKYQX3c-385-fig",
+  "video": "SrcOcKYQX3c",
+  "start": 385,
+  "end": 395,
+  "title": "Pathétique Sonata, I",
+  "composer": "Beethoven",
+  "work": "hutch-beethoven-pathetique-sonata-i",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Beethoven, Path&#x00E9;tique Sonata, Op. 13, I, development section",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "no key signature printed (passage in E minor); last bar: only its first beat is printed"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-rhythm-change-pathetique2",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/SrcOcKYQX3c-385.abc"
+ },
+ {
+  "id": "SSeveT_9ZxE-197-fig",
+  "video": "SSeveT_9ZxE",
+  "start": 197,
+  "end": 205,
+  "title": "Pathétique Sonata, I",
+  "composer": "Beethoven",
+  "work": "hutch-beethoven-pathetique-sonata-i",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Ludwig van Beethoven, Path&#x00E9;tique Sonata, Op. 13, I",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "left-hand inner chord tones in bars 5-8 read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-I-vi-ii6-V-pathetique",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/SSeveT_9ZxE-197.abc"
+ },
+ {
+  "id": "StKVS0eI85I-32-fig",
+  "video": "StKVS0eI85I",
+  "start": 32,
+  "end": 39,
+  "title": "\"Call Me\" (Blondie)",
+  "composer": "Harry and Moroder",
+  "work": "hutch-moroder-call-me-blondie",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "Debbie Harry and Giorgio Moroder, Call Me (1980)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-ant-call-me",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/StKVS0eI85I-32.abc"
+ },
+ {
+  "id": "STugQ0X1NoI-14-fig",
+  "video": "STugQ0X1NoI",
+  "start": 14,
+  "end": 22,
+  "title": "I'm Not in Love",
+  "composer": "10cc",
+  "work": "hutch-10cc-i-m-not-in-love",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Eric Stewart and Graham Gouldman, I’m Not In Love (1975)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-intervallic-change-im-not-in-love",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/STugQ0X1NoI-14.abc"
+ },
+ {
+  "id": "sUg1Dpsd6fw-3-fig",
+  "video": "sUg1Dpsd6fw",
+  "start": 3,
+  "end": 7,
+  "title": "Tune-Up",
+  "composer": "Miles Davis",
+  "work": "hutch-davis-tune-up",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Miles Davis, Tune-Up",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-ii-V-I-tune-up",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/sUg1Dpsd6fw-3.abc"
+ },
+ {
+  "id": "Sv6dMFF_yts-48-fig",
+  "video": "Sv6dMFF_yts",
+  "start": 48,
+  "end": 70,
+  "title": "We Are Young",
+  "composer": "fun.",
+  "work": "hutch-fun-we-are-young",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Nate Ruess, Andrew Dost, Jack Antonoff, and Jeff Bhasker, We Are Young (2011)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "guitar / bass staff written as one voice of octaves; chord voicings above the treble staff approximate"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-8ths-we-are-young",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/Sv6dMFF_yts-48.abc"
+ },
+ {
+  "id": "tO4dxvguQDk-15-fig",
+  "video": "tO4dxvguQDk",
+  "start": 15,
+  "end": 22,
+  "title": "Don't Know Why",
+  "composer": "Norah Jones",
+  "work": "hutch-jones-don-t-know-why",
+  "pages": [
+   "secondary-dominants.qmd"
+  ],
+  "caption": "Jesse Harris, Don't Know Why (2002)",
+  "chapter": "SecondaryDominants",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/sec-dom-dont-know-why",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/tO4dxvguQDk-15.abc"
+ },
+ {
+  "id": "TpPuLwtDQrY-43-fig",
+  "video": "TpPuLwtDQrY",
+  "start": 43,
+  "end": 51,
+  "title": "*Eine kleine Nachtmusik*, K. 525, I",
+  "composer": "Mozart",
+  "work": "hutch-mozart-eine-kleine-nachtmusik-k-525-i",
+  "pages": [
+   "roman-numerals.qmd"
+  ],
+  "caption": "Mozart, Eine kleine Nachtmusik, K. 525, I.",
+  "chapter": "RomanNumeralsAndCadences",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "piano reduction: inner notes of the bar 2 right-hand chords left out (only the top D6 written); the stems-down right-hand line in bars 1-2 and its rhythm are read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/cadences-half-cad-eine-kleine",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/TpPuLwtDQrY-43.abc"
+ },
+ {
+  "id": "tVdr_JWmnsA-82-fig",
+  "video": "tVdr_JWmnsA",
+  "start": 82,
+  "end": 98,
+  "title": "Toxic",
+  "composer": "Britney Spears",
+  "work": "hutch-spears-toxic",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Melodic Retrograde in Toxic by Cathy Dennis, Christian Karlsson, Pontus Winnberg, Henrik Jonback (2003)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "the seven bars rest are printed as one multi-bar rest",
+   "exact octave of the high ledger-line notes"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-retrograde-example-toxic",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/tVdr_JWmnsA-82.abc"
+ },
+ {
+  "id": "uBS-F944zYc-0-fig",
+  "video": "uBS-F944zYc",
+  "start": 0,
+  "end": 8,
+  "title": "The Star-Spangled Banner",
+  "composer": null,
+  "work": "jri-the-star-spangled-banner",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Francis Scott Key and John Stafford Smith, The Star-Spangled Banner (1814)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "several inner-voice pitches read approximately from a small image"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/textures-chorale-star-spangled",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/uBS-F944zYc-0.abc"
+ },
+ {
+  "id": "UoWXRlw9vBA-0-fig",
+  "video": "UoWXRlw9vBA",
+  "start": 0,
+  "end": 16,
+  "title": "32 Variations in C minor, WoO 80",
+  "composer": "Beethoven",
+  "work": "hutch-beethoven-32-variations-in-c-minor-woo-80",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "Beethoven, 32 Variations in C minor, WoO 80 (1806)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "the fast runs read as 64ths after double-dotted quarters so each bar fills 3/4",
+   "last bar: only its first beat is printed"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-beeth-woo-80",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/UoWXRlw9vBA-0.abc"
+ },
+ {
+  "id": "uuumirxhmAw-0-fig",
+  "video": "uuumirxhmAw",
+  "start": 0,
+  "end": 19,
+  "title": "She's Got a Way",
+  "composer": "Billy Joel",
+  "work": "hutch-joel-she-s-got-a-way",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Billy Joel, She's Got a Way (1971)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-quarters-billy-joel",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/uuumirxhmAw-0.abc"
+ },
+ {
+  "id": "uZj032MNIx4-0-fig",
+  "video": "uZj032MNIx4",
+  "start": 0,
+  "end": 20,
+  "title": "You Can't Hurry Love",
+  "composer": "The Supremes",
+  "work": "hutch-supremes-you-can-t-hurry-love",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Brian Holland, Lamont Dozier, Eddie Holland, You Can't Hurry Love (1966)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "low octave notes in bar 4 read as E flat 1"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-walking-cant-hurry-love",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/uZj032MNIx4-0.abc"
+ },
+ {
+  "id": "v9V98ECtsfY-15-fig",
+  "video": "v9V98ECtsfY",
+  "start": 15,
+  "end": 25,
+  "title": "\"The Very Thought of You\" (Ella Fitzgerald)",
+  "composer": "Ray Noble",
+  "work": "hutch-noble-the-very-thought-of-you-ella-fitzgerald",
+  "pages": [
+   "melodic-analysis.qmd",
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Ray Noble, The Very Thought of You (1934)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-intervallic-change-the-very-thought",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/v9V98ECtsfY-15.abc"
+ },
+ {
+  "id": "vCadcBR95oU-174-fig",
+  "video": "vCadcBR95oU",
+  "start": 174,
+  "end": 182,
+  "title": "Push It",
+  "composer": "Salt-N-Pepa",
+  "work": "hutch-salt-n-pepa-push-it",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Hurby Azor and Ray Davies, Push It (1987)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/motive-rhythmic-change-push-it",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/vCadcBR95oU-174.abc"
+ },
+ {
+  "id": "VJDJs9dumZI-3-fig",
+  "video": "VJDJs9dumZI",
+  "start": 3,
+  "end": 12,
+  "title": "While My Guitar Gently Weeps",
+  "composer": "George Harrison",
+  "work": "hutch-harrison-while-my-guitar-gently-weeps",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "George Harrison, While My Guitar Gently Weeps (1968)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "rhythm of the lower voice's quarter notes (spacing uneven in the figure)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-while-my-guitar",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/VJDJs9dumZI-3.abc"
+ },
+ {
+  "id": "VKNcvMcGlvI-0",
+  "video": "VKNcvMcGlvI",
+  "start": 0,
+  "end": 8,
+  "title": "\"Liebster Jesu, wir sind hier\", BWV 373",
+  "composer": "Bach",
+  "work": "hutch-bach-liebster-jesu-wir-sind-hier-bwv-373",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:bach-chorale-131",
+   "title": "Bach, Liebster Jesu, wir sind hier, Chorale 131 (Riemenschneider), BWV 373",
+   "path": "apps/shared/data/scores/chorales.json#bach-chorale-131",
+   "also": [
+    "scores:bach-chorale-328"
+   ]
+  },
+  "abc": null
+ },
+ {
+  "id": "VKNcvMcGlvI-0-fig",
+  "video": "VKNcvMcGlvI",
+  "start": 0,
+  "end": 8,
+  "title": "\"Liebster Jesu, wir sind hier\", BWV 373",
+  "composer": "Bach",
+  "work": "hutch-bach-liebster-jesu-wir-sind-hier-bwv-373",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "Bach, J.S., Chorale 238, Liebster Jesu, wir sind hier, BWV 373",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "tenor pitches in bar 2 (read B3 C4 D4)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-sus-2-3-bach",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/VKNcvMcGlvI-0.abc"
+ },
+ {
+  "id": "vL7Op9ZQ3E0-15-fig",
+  "video": "vL7Op9ZQ3E0",
+  "start": 15,
+  "end": 26,
+  "title": "Saturday in the Park",
+  "composer": "Chicago",
+  "work": "hutch-chicago-saturday-in-the-park",
+  "pages": [
+   "secondary-dominants.qmd"
+  ],
+  "caption": "Robert William Lamm, Saturday in the Park (1972)",
+  "chapter": "SecondaryDominants",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "right-hand chord voicings (clusters with a second, read approximately); the last bar is three beats as printed"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/sec-dom-saturday-in-the-park",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/vL7Op9ZQ3E0-15.abc"
+ },
+ {
+  "id": "vNAq7Cv34l4-17-fig",
+  "video": "vNAq7Cv34l4",
+  "start": 17,
+  "end": 26,
+  "title": "\"I'm Every Woman\" AnswerFour bars.",
+  "composer": "Chaka Khan",
+  "work": "hutch-khan-i-m-every-woman-answerfour-bars",
+  "pages": [
+   "melodic-analysis.qmd"
+  ],
+  "caption": "Nickolas Ashford and Valerie Simpson, I’m Every Woman (1978)",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/phrase-4bar-im-every-woman",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/vNAq7Cv34l4-17.abc"
+ },
+ {
+  "id": "vp_h649sZ9A-14-fig",
+  "video": "vp_h649sZ9A",
+  "start": 14,
+  "end": 25,
+  "title": "Piano Sonata K. 331, I",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-331-i",
+  "pages": [
+   "figured-bass.qmd"
+  ],
+  "caption": "Mozart, Piano Sonata K. 331, I",
+  "chapter": "FiguredBass",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/figured-bass-cadential-64-k331-i",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/vp_h649sZ9A-14.abc"
+ },
+ {
+  "id": "vqM4tCZ7RV8-0",
+  "video": "vqM4tCZ7RV8",
+  "start": 0,
+  "end": 14,
+  "title": "Well-Tempered Clavier I, Prelude in C major",
+  "composer": "Bach",
+  "work": "hutch-bach-well-tempered-clavier-i-prelude-in-c-major",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:bach-wtc1-prelude-1",
+   "title": "Bach, Prelude No. 1, The Well-Tempered Clavier, Book I",
+   "path": "apps/shared/data/scores/bach-preludes.json#bach-wtc1-prelude-1",
+   "also": [
+    "full:pdmx-80"
+   ]
+  },
+  "abc": null
+ },
+ {
+  "id": "vqM4tCZ7RV8-0-fig",
+  "video": "vqM4tCZ7RV8",
+  "start": 0,
+  "end": 14,
+  "title": "Well-Tempered Clavier I, Prelude in C major",
+  "composer": "Bach",
+  "work": "hutch-bach-well-tempered-clavier-i-prelude-in-c-major",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "J.S. Bach, Well-Tempered Clavier, Book I, Prelude 1 in C major BWV 846",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-T-P-D-T-WTC-prel-1",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/vqM4tCZ7RV8-0.abc"
+ },
+ {
+  "id": "W4271Rm9TSU-117",
+  "video": "W4271Rm9TSU",
+  "start": 117,
+  "end": 137,
+  "title": "Well-Tempered Clavier I, Prelude in C, BWV 846",
+  "composer": "Bach",
+  "work": "hutch-bach-well-tempered-clavier-i-prelude-in-c-bwv-846",
+  "pages": [
+   "non-chord-tones.qmd",
+   "non-chord-tones.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:bach-wtc1-prelude-1",
+   "title": "Bach, Prelude No. 1, The Well-Tempered Clavier, Book I",
+   "path": "apps/shared/data/scores/bach-preludes.json#bach-wtc1-prelude-1",
+   "also": [
+    "full:pdmx-80"
+   ]
+  },
+  "abc": null
+ },
+ {
+  "id": "W4271Rm9TSU-117-fig",
+  "video": "W4271Rm9TSU",
+  "start": 117,
+  "end": 137,
+  "title": "Well-Tempered Clavier I, Prelude in C, BWV 846",
+  "composer": "Bach",
+  "work": "hutch-bach-well-tempered-clavier-i-prelude-in-c-bwv-846",
+  "pages": [
+   "non-chord-tones.qmd",
+   "non-chord-tones.qmd"
+  ],
+  "caption": "Bach, J.S., Well-Tempered Clavier, Book I, Prelude 1 in C major BWV 846 (1722)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-ped-pt-WTC-prel-1",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/W4271Rm9TSU-117.abc"
+ },
+ {
+  "id": "W4ROfyCjJeE-126-fig",
+  "video": "W4ROfyCjJeE",
+  "start": 126,
+  "end": 133,
+  "title": "One Day I'll Fly Away",
+  "composer": "Joe Sample and Will Jennings",
+  "work": "hutch-jennings-one-day-i-ll-fly-away",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "caption": "Joe Sample and Will Jennings, One Day I'll Fly Away (1980)",
+  "chapter": "ModeMixture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/mode-mix-one-day-ill-fly",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/W4ROfyCjJeE-126.abc"
+ },
+ {
+  "id": "WFrUsa5SUv0-13-fig",
+  "video": "WFrUsa5SUv0",
+  "start": 13,
+  "end": 27,
+  "title": "Stranger in Paradise",
+  "composer": null,
+  "work": "hutch-stranger-in-paradise",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Robert Wright, George Forrest, Alexander Borodin, Stranger in Paradise (1953)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "piano right-hand chords left out (dense voicings not readable with certainty); voice in treble-8 clef, written pitches"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-vi-ii-V-I-stranger-in-paradise",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/WFrUsa5SUv0-13.abc"
+ },
+ {
+  "id": "WNIPqafd4As-214-fig",
+  "video": "WNIPqafd4As",
+  "start": 214,
+  "end": 223,
+  "title": "\"My Heart Will Go On\" (Céline Dion)",
+  "composer": "Horner and Jennings",
+  "work": "hutch-jennings-my-heart-will-go-on-celine-dion",
+  "pages": [
+   "non-chord-tones.qmd"
+  ],
+  "caption": "James Horner and Will Jennings, My Heart Will Go On (1997)",
+  "chapter": "NonChordTones",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "last bar partial; notes in parentheses kept as plain notes"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/NCT-app-celine-dion",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/WNIPqafd4As-214.abc"
+ },
+ {
+  "id": "x6QZn9xiuOE-0-fig",
+  "video": "x6QZn9xiuOE",
+  "start": 0,
+  "end": 16,
+  "title": "Let's Get It On",
+  "composer": "Marvin Gaye",
+  "work": "hutch-gaye-let-s-get-it-on",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Marvin Gaye and Ed Townsend, Let's Get It On (1973)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-12and-marvin-gaye",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/x6QZn9xiuOE-0.abc"
+ },
+ {
+  "id": "X9yTjXM6m50-0-fig",
+  "video": "X9yTjXM6m50",
+  "start": 0,
+  "end": 45,
+  "title": "Serse, \"Ombra mai fù\"",
+  "composer": "Handel",
+  "work": "hutch-handel-serse-ombra-mai-fu",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Handel, Xerxes, Ombra mai fu",
+  "chapter": "MelodicAnalysis",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "only the top line of the right hand and the lowest bass note are written; inner voices (and the left hand's upper voice) left out",
+   "bar 4-5 and bar 14 top notes and bar 2-4 bass pitches read approximately; bracketed (parenthesised) notes written as plain notes"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/PRAC-EXER-phrase-handel-ombra-mai-fu",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/X9yTjXM6m50-0.abc"
+ },
+ {
+  "id": "XFkzRNyygfk-0-fig",
+  "video": "XFkzRNyygfk",
+  "start": 0,
+  "end": 21,
+  "title": "Creep",
+  "composer": "Radiohead",
+  "work": "hutch-radiohead-creep",
+  "pages": [
+   "mode-mixture.qmd"
+  ],
+  "caption": "Thom Yorke, Jonny Greenwood, Colin Greenwood, Ed O'Brien, Philip Selway, Albert Hammond, and Mike Hazlewood, Creep (1992)",
+  "chapter": "ModeMixture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "no time signature printed; whole notes written in 4/4"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/mode-mix-creep",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/XFkzRNyygfk-0.abc"
+ },
+ {
+  "id": "xti0xkrIZjQ-0",
+  "video": "xti0xkrIZjQ",
+  "start": 0,
+  "end": 14,
+  "title": "Winterreise, \"Der Wegweiser\"",
+  "composer": "Schubert",
+  "work": "hutch-schubert-winterreise-der-wegweiser",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:lied-schubert-franz-winterreise-d-911-20-der-wegweiser",
+   "title": "Schubert, “20: Der Wegweiser”, Franz Schubert, Winterreise, D.911",
+   "path": "apps/shared/data/scores/lieder.json#lied-schubert-franz-winterreise-d-911-20-der-wegweiser",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "xti0xkrIZjQ-0-fig",
+  "video": "xti0xkrIZjQ",
+  "start": 0,
+  "end": 14,
+  "title": "Winterreise, \"Der Wegweiser\"",
+  "composer": "Schubert",
+  "work": "hutch-schubert-winterreise-der-wegweiser",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "Schubert, Winterreise, D. 911, Der Wegweiser (1823)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "exact chord tones in the vii°4/2 and Fr+6 bar; bass pickup is printed with an eighth rest below the sixteenths",
+   "bar 4 right hand: three layers (half A, eighth-sixteenth line, half D) written as two voices"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-wegweiser",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/xti0xkrIZjQ-0.abc"
+ },
+ {
+  "id": "y4bZu56EylA-8",
+  "video": "y4bZu56EylA",
+  "start": 8,
+  "end": 19,
+  "title": "Blue Moon",
+  "composer": "Richard Rodgers",
+  "work": "hutch-rodgers-blue-moon",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:blue-moon",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "yjJL9DGU7Gg-69-fig",
+  "video": "yjJL9DGU7Gg",
+  "start": 69,
+  "end": 81,
+  "title": "Interstate Love Song",
+  "composer": "Robert DeLeo and Scott Weiland",
+  "work": "hutch-weiland-interstate-love-song",
+  "pages": [
+   "augmented-sixths.qmd"
+  ],
+  "caption": "Robert DeLeo and Scott Weiland, Interstate Love Song (1994)",
+  "chapter": "AugmentedSixthChords",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "some sixteenth/dotted groupings in the piano parts read approximately",
+   "last bar: the figure stops after three beats"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit4/aug-6-interstate-love-song",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/yjJL9DGU7Gg-69.abc"
+ },
+ {
+  "id": "YOG89TrL4Vk-0",
+  "video": "YOG89TrL4Vk",
+  "start": 0,
+  "end": 23,
+  "title": "Little Brown Jug",
+  "composer": "Glenn Miller",
+  "work": "hutch-miller-little-brown-jug",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:little-brown-jug",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "YQHsXMglC9A-141",
+  "video": "YQHsXMglC9A",
+  "start": 141,
+  "end": 154,
+  "title": "Hello",
+  "composer": "Adele",
+  "work": "hutch-adele-hello",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:hello",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "YQHsXMglC9A-141-fig",
+  "video": "YQHsXMglC9A",
+  "start": 141,
+  "end": 154,
+  "title": "Hello",
+  "composer": "Adele",
+  "work": "hutch-adele-hello",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Adele Adkins and Greg Kursten, Hello (2015)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "Db chord voicing in the right hand (a fourth notehead may be printed)"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-bestseller-hello",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/YQHsXMglC9A-141.abc"
+ },
+ {
+  "id": "z8rQ575DWD8-29-fig",
+  "video": "z8rQ575DWD8",
+  "start": 29,
+  "end": 34,
+  "title": "Desire",
+  "composer": "U2",
+  "work": "hutch-u2-desire",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "U2, Desire (bass line and chords) (1988)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-bVII-U2-desire",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/z8rQ575DWD8-29.abc"
+ },
+ {
+  "id": "zA-upjFaHvw-31-fig",
+  "video": "zA-upjFaHvw",
+  "start": 31,
+  "end": 42,
+  "title": "Love on the Brain",
+  "composer": "Rihanna",
+  "work": "hutch-rihanna-love-on-the-brain",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Fred Ball, Joseph Angel, and Robyn Fenty, Love on the Brain (2016)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "bass octave"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-arpeggios-rihanna",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/zA-upjFaHvw-31.abc"
+ },
+ {
+  "id": "ZEcqHA7dbwM-7",
+  "video": "ZEcqHA7dbwM",
+  "start": 7,
+  "end": 24,
+  "title": "Fly Me to the Moon",
+  "composer": "Bart Howard",
+  "work": "hutch-howard-fly-me-to-the-moon",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "copyright": "in copyright (melody and chords already in the tune collection)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "tune:fly-me-to-the-moon",
+   "path": "apps/tunes/tunes-object.js"
+  },
+  "abc": null
+ },
+ {
+  "id": "ZEcqHA7dbwM-7-fig",
+  "video": "ZEcqHA7dbwM",
+  "start": 7,
+  "end": 24,
+  "title": "Fly Me to the Moon",
+  "composer": "Bart Howard",
+  "work": "hutch-howard-fly-me-to-the-moon",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "Bart Howard, Fly Me to the Moon (chords only) (1950s)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-circle-fly-me",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/ZEcqHA7dbwM-7.abc"
+ },
+ {
+  "id": "ZixdOZh7zo4-638",
+  "video": "ZixdOZh7zo4",
+  "start": 638,
+  "end": 646,
+  "title": "Piano Sonata K. 279, III",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-279-iii",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "public domain (composer's dates; the edition used is PD or CC)",
+  "kind": "score-source",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "scores:mozart-sonata-1-3",
+   "title": "Mozart, Piano Sonata No. 1, K. 279, movement 3",
+   "path": "apps/shared/data/scores/mozart-sonatas.json#mozart-sonata-1-3",
+   "also": []
+  },
+  "abc": null
+ },
+ {
+  "id": "ZixdOZh7zo4-638-fig",
+  "video": "ZixdOZh7zo4",
+  "start": 638,
+  "end": 646,
+  "title": "Piano Sonata K. 279, III",
+  "composer": "Mozart",
+  "work": "hutch-mozart-piano-sonata-k-279-iii",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "W.A. Mozart, Piano Sonata K. 279, III (1775)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "bar 5 left-hand third chord pitches"
+  ],
+  "pickup": true,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-afterbeats-k279-iii",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/ZixdOZh7zo4-638.abc"
+ },
+ {
+  "id": "zXt56MB-3vc-45",
+  "video": "zXt56MB-3vc",
+  "start": 45,
+  "end": 56,
+  "title": "Red Red Wine",
+  "composer": "UB40",
+  "work": "hutch-ub40-red-red-wine",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "copyright": "in copyright",
+  "kind": "chords",
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "billboard:83",
+   "path": "apps/shared/data/billboard/83.txt"
+  },
+  "abc": "zXt56MB-3vc-45.abc",
+  "aligned": false,
+  "alignNote": "Billboard (album) times used as video times; check by ear",
+  "tonic": "Db",
+  "meter": "4/4",
+  "romans": [
+   "I IV",
+   "V IV",
+   "V",
+   "I",
+   "IV",
+   "I"
+  ],
+  "form": [
+   "A chorus @0s",
+   "A chorus @23s",
+   "B' trans @45s",
+   "C verse @50s",
+   "A chorus @72s",
+   "B trans @93s",
+   "C verse @104s",
+   "A chorus @126s",
+   "D bridge @149s",
+   "A chorus @170s",
+   "B' trans @192s",
+   "C verse @197s",
+   "A chorus @219s",
+   "B trans @240s",
+   "C verse @251s",
+   "A chorus @272s",
+   "B' trans @294s",
+   "B outro @299s",
+   "fadeout @305s"
+  ]
+ },
+ {
+  "id": "zXt56MB-3vc-45-fig",
+  "video": "zXt56MB-3vc",
+  "start": 45,
+  "end": 56,
+  "title": "Red Red Wine",
+  "composer": "UB40",
+  "work": "hutch-ub40-red-red-wine",
+  "pages": [
+   "accompaniment-textures.qmd"
+  ],
+  "caption": "Neil Diamond, Red Red Wine (recorded in 1983 by UB40)",
+  "chapter": "AccompanimentalTexture",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit3/texture-reggae-ub40",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/zXt56MB-3vc-45.abc"
+ },
+ {
+  "id": "ZyhrYis509A-15-fig",
+  "video": "ZyhrYis509A",
+  "start": 15,
+  "end": 23,
+  "title": "Barbie Girl",
+  "composer": "Aqua",
+  "work": "hutch-aqua-barbie-girl",
+  "pages": [
+   "progressions.qmd"
+  ],
+  "caption": "S&#x00F8;ren Rasted, Claus Norreen, Ren&#x00E9; Diff, and Lene Nystr&#x00F8;m, Barbie Girl (1997) (chords only)",
+  "chapter": "HarmonicProgression",
+  "copyright": "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+  "kind": "figure",
+  "unverified": true,
+  "unsure": [
+   "upper chord tones read approximately"
+  ],
+  "pickup": false,
+  "barsOk": true,
+  "bars": null,
+  "barsWhy": null,
+  "source": {
+   "id": "mt21c:images/unit2/harmony-vi-ii-V-I-barbie-girl",
+   "url": "https://github.com/rhutchinson20/mt21c"
+  },
+  "abc": "fig/ZyhrYis509A-15.abc"
+ }
+]

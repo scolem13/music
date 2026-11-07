@@ -328,6 +328,18 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
  <span class="dropdown-text">JRI Recorder, on Saxophone</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../mlt/shouldice.html">
+ <span class="dropdown-text">Shouldice: Everyday Musicality</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/bluestine.html">
+ <span class="dropdown-text">Bluestine’s Blog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/rasmussen.html">
+ <span class="dropdown-text">Rasmussen: Audiation in the Wild</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../mlt/activities.html">
  <span class="dropdown-text">Classroom Activities</span></a>
   </li>  
@@ -3184,8 +3196,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     formSrc = BandHarmony.buildForm(parsedC, 0).map(function(b){ return b.src; });
     var p = practice();
     ["bt-start", "bt-cyc-from", "bt-cyc-to"].forEach(function(id){ $(id).max = p.n; });
-    $("bt-start").value = p.start; $("bt-cyc-from").value = p.from; $("bt-cyc-to").value = p.to;
-    $("bt-start").disabled = p.cyc;                               // a cycle starts at its own first bar
+    // a cycle starts at its own first bar: the (disabled) Start field shows that bar, not the one it had before the loop
+    $("bt-start").value = p.cyc ? p.from : p.start; $("bt-cyc-from").value = p.from; $("bt-cyc-to").value = p.to;
+    $("bt-start").disabled = p.cyc;
     player.setStartBar((p.cyc ? p.from : p.start) - 1);
     player.setCycle(p.cyc ? p.from - 1 : null, p.to - 1);
     var sa = parseInt($("bt-step-a").value, 10), sb = parseInt($("bt-step-b").value, 10);

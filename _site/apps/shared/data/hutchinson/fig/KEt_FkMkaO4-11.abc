@@ -1,0 +1,16 @@
+X:1
+T:Henry Mancini, The Pink Panther Theme (1963)
+%%id KEt_FkMkaO4-11
+%bars ?
+%unsure the A and D in bar 3 are printed in parentheses (ghost notes)
+%unsure last bar: only its first half is printed
+M:C
+L:1/8
+K:Em
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] z2 (3:2:2z2 ^D- | "Em".E2 (3:2:2z2 (F .G2) (3:2:2z2 ^D- | (3.E z F (3.G z c (3.B z E (3.G z B |
+"C7"(_B4- (3BAG) (3(EDE) | z4 |]
+[V:2] z2 (3:2:2z2 [^C,^G,] (3[D,A,] z [^D,^A,] | [E,B,]4 B,,4 | E,,4 (3:2:2z2 [_E,_B,] (3[D,A,] z [_D,_A,] |
+[C,G,]4 G,,4 | C,,4 |]

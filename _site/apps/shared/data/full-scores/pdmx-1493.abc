@@ -1,0 +1,23 @@
+X:1
+C:Mihail Ippolitov-Ivanov
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=60
+M:3/2
+K:C
+V:1 treble nm="Soprano"
+%%MIDI program 52
+V:2 treble nm="Alto"
+%%MIDI program 52
+V:3 treble-8 nm="Tenor"
+%%MIDI program 52
+V:4 bass nm="Bass"
+%%MIDI program 52
+V:1
+"^Очень медленно" z2!p! G2!>(! c4 B4 | A2!>)! z2 z4 z4 | z2!mf! A2!>(! e4 d4 | c2!>)! z2 z4 z4 | z2!f! c2 g4 (f2 e2) | d2 z2!f! !>!f4 e2 d2 | c3 c c2!<(! c2 e2 d2!<)! | !>(! c4!>)!!p! B2 A2 c2 B2 | A2 z2 z4 z4 | z4!p! A4 f2 e2 |!>(! e3 d d2!>)! z2 z4 | z4!mf! e2 e2 g2 f2 |!>(! f3 e e2!>)!!f! e2!<(! f2 [eg]2!<)! | !>(! [fa]4 A2!>)!!mf! A2!<(! B2 ^c2!<)! | d2 A2!f! f4 (e2 d2) |!>(! d3 c c4!>)! z2!mf! [ce]2 | !<(! [eg]2 [df][ce]!<)!!>(! [ce]3 [Bd] [Bd]2!>)!!mf! [Bd]2 | [df]2 [ce][Bd] [Bd]2!<(! [Bd][ce] [df]2!<)! [ce][Bd] | z2!mf!!>(! [Bd]c c2!>)! z2!f! c2 c2 | !>(! e3 d c2!>)! z2!f! c2 c2 | e2 d2!>(! d3 c c2!>)! z2 | !f! [df]3 [ce] [Bd]2!<(! [Bd][Bd]!<)! [eg]3 [df] | [ce]2 z2!f! e2 dc!>(! d2 d2!>)! | !f! !>!f4 e2 d2!>(! (d3 c)!>)! | c2 z2 z4 z2!mf! A2 | f2 e2!>(! e2 d2!>)! z4 | !f!!<(! d4 e2 f2!<)! (f3 e) | e4!p!!<(! E4 G2 A2!<)! |!>(! (G4 F4)!>)!!p! E4- | E4 z4 z4 || [M:4/4] [Q:1/4=116]"^Скоро" z4!f! c4 | [Be]4 [Bg]4 |!>(! c8!>)! || z4!f! c4 |!>(! e8!>)! |]
+V:2
+z2!p! E2!>(! A4 G4 | F2!>)! z2 z4 z4 | z2!mf! F2!>(! c4 B4 | A2!>)! z2 z4 z4 | z2!f! A2 e4 (d2 c2) | A2 z2!f! !>!d4 c2 B2 | A3 A A2!<(! A2 A2 A2!<)! | !>(! A4!>)!!p! E2 E2 E2 E2 | E2 z2 z4 z4 | z4!p! F4 d2 c2 |!>(! c3 B B2!>)! z2 z4 | z4!mf! c2 c2 e2 d2 |!>(! d3 c c2!>)!!f! c2!<(! c2 c2!<)! |!>(! c4 F2!>)!!mf! A2!<(! A2 A2!<)! | F2 F2!f! A4 (G2 F2) |!>(! F3 E E4!>)! z2!mf! [EG]2 | !<(! [CE]2 [DF][EG]!<)!!>(! [FA]3 [FA] [FA]2!>)!!mf! [FA]2 | [DF]2 [EG][FA] [FA]2!<(! [FA][EG] [DF]2!<)! [EG][FA] | z2!mf!!>(! [FA][EG] [EG]2!>)! z2!f! G2 G2 | !>(! c3 B A2!>)! z2!f! A2 A2 | c2 B2!>(! B3 A A2!>)! z2 |!f! A3 G G2!<(! GG!<)! B3 A | A2 z2!f! G2 FE!>(! F2 F2!>)! |!f! !>!A4 G2 F2!>(! (F3 E)!>)! | E2 z2 z4 z2!mf! F2 | d2 c2!>(! c2 B2!>)! z4 |!f!!<(! B4 c2 d2!<)! (d3 c) | c4!p!!<(! C4 D2 F2!<)! | !>(! (G4 G,4)!>)!!p! G,4- | G,4 z4 z4 ||[M:4/4] z4!f! A4 | G4 G4 |!>(! G8!>)! || !fermata!z4!f! A4 |!>(! G8!>)! |]
+V:3
+z12 | z2!p! F2!>(! c4 B4 | A2!>)! z2 z4 z4 | z2!mf! A2!>(! e4 d4 | c2!>)!!f! A2 A4 (B2 c2) | d2 z2!f! !>!A4 c2 f2 | e3 e e2!<(! e2 g2 f2!<)! |!>(! e4!>)!!p! d2 c2 e2 d2 | c2 z2!p! [CE]4 [Ac]2 [GB]2 |!>(! [GB]3 [FA] [FA]2!>)! z2 z4 | z4!mf! [GB]2 [GB]2 [eg]2 [df]2 | !>(! [df]3 [ce] [ce]2!>)! z2 z4 | z4 z2!f! c2!<(! c2 [ce]2!<)! | !>(! [cf]4 c2!>)!!mf! A2!<(! A2 A2!<)! | A2 A2!f! G4 (A2 B2) |!>(! B3 G G4!>)! z4 | z12 | z12 | z4 z4!f! e2 e2 |!>(! c3 d e2!>)! z2!f! e2 e2 | c2 d2!>(! d3 e e2!>)! z2 | !f! A3 c d2!<(! BB!<)! B3 d | e2 z2!f! A2 AA!>(! A2 A2!>)! |!f! !>!G4 A2 B2!>(! (B3 G)!>)! | G2!p! [CE]2 [Ac]2 [GB]2!>(! [GB]2 [FA]2!>)! | z4 z2!mf! [GB]2 [eg]2 [df]2 | !>(! [df]2 [df]2!>)!!<(! [ce]2 [Bd]2!<)! ([Bd]3 [ce]) | [ce]4!p!!<(! [ce]4 A2 B2!<)! | !>(! (c4 B4)!>)!!p! c4- | c4 z4 z4 ||[M:4/4] z4!f! [ce]4 | [Be]4 [Bf]4 |!>(! [ce]8!>)! || !fermata!z4!f! c4 |!>(! c8!>)! |]
+V:4
+z12 | z2!p! D,2!>(! A,4 G,4 | F,2!>)! z2 z4 z4 | z2!mf! F,2!>(! C4 B,4 | A,2!>)!!f! A,2 D,4 (D,2 E,2) | F,2 z2!f! !>!D,4 E,2 G,2 | A,3 A, A,2!<(! A,2 [D,A,]2 [D,A,]2!<)! | !>(! [E,A,]4!>)!!p! E,2 E,2 [E,^F,]2 [E,^G,]2 | A,2 z2!p! C,4 A,2 G,2 |!>(! G,3 F, F,2!>)! z2 z4 | z4!mf! G,2 G,2 E2 D2 |!>(! D3 C C2!>)! z2 z4 | z4 z2!f! C2!<(! A,2 G,2!<)! | !>(! F,4 F,2!>)!!mf! A,2!<(! F,2 E,2!<)! | D,2 D,2!f! G,,4 G,,4 |!>(! C,3 C, C,4!>)! z4 | z12 | z12 | z8!f! C2 C2 |!>(! A,3 B, C2!>)! z2!f! C2 C2 | A,2 B,2!>(! B,3 C C2!>)! z2 | !f! D,3 E, G,2!<(! G,G,!<)! E,3 F, | A,2 z2!f! D,2 D,A,,!>(! D,2 D,2!>)! | !f! !>!G,,4 G,,2 G,,2!>(! [C,,C,]4!>)! | [C,,C,]2!p! [C,,C,]2 [C,,C,]8- | [C,,C,]2 [C,,C,]2 [C,,C,]8- | [C,,C,]2!<(! [C,,C,]2 [C,,C,]2 [C,,C,]2!<)!!>(! [C,,C,]4!>)! | [C,,C,]4!p!!<(! A,,4 G,,2 F,,2!<)! |!>(! (E,,4 G,,4)!>)!!p! [C,,C,]4- | [C,,C,]4 z4 z4 || [M:4/4] z4!f! A,4 | E,4 D,4 |!>(! C,8!>)! || !fermata!z4!f! F,4 |!>(! C,8!>)! |]

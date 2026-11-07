@@ -1,0 +1,23 @@
+X:1
+C:Jacobus Handl
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/2=96
+M:4/2
+K:F
+V:1 treble nm="Soprano" snm="S."
+%%MIDI program 52
+V:2 treble nm="Alto" snm="A."
+%%MIDI program 52
+V:3 treble nm="Tenor" snm="T."
+%%MIDI program 52
+V:4 bass nm="Bass" snm="B."
+%%MIDI program 52
+V:1
+z16 | z16 | D8 C8 | D4 F8 E4 | D8 C4 D4 | E8 F8 | E8 z4 D4- | D4 ^C4 D4 F4 | G4 E4 F4 A4 | c6 B2 A6 G2 | F4 E4 D4 C4 | G8 A8 | F12 G4 | A4 B4 c2 A2 d4- | d4 ^c4 d8 | c12 B4 | A4 G4 A4 c4- | c2 c2 A4 c8 | c4 c8 c4 | c4 =B4 A8 | A4 d4 f4 e4- | e4 d8 ^c4 | d16 | z8 G8 | A8 G8 | F8 E8 | D2 E2 F4 C4 c4 | A4 A4 A8 | A4 f4 f4 e4- | e2 d2 d4 d4 ^c4 | d8 z4 f4 | f4 e4- e2 d2 d4 | d4 ^c4 d8 | z4 G8 ^F4 | G4 A4 B4 B4 | A8 z4 G4- | G4 ^F4 G4 A4 | B8 B8 | A16 |]
+V:2
+D8 C8 | D4 F8 E4 | F4 A6 =B2 c2 A2 | =B4 c8 c4 | A2 B2 A8 G4 | A12 D4- | D4 ^C4 D4 F4 | G8 F4 A4 | B4 A6 G2 F4- | F4 E4 F6 G2 | A8 A8 | B8 c8 | A8 c8- | c4 B4 A4 G4 | A8 z4 F4- | F4 G4 A4 B2 d2 | c2 A2 d4 c4 A4 | G4 F4 G8 | A4 A8 A4 | G4 G4 E8 | ^F4 A4 A4 c4 | c4 A4 A4 A4- | A4 A4 B4 d4- | d4 c4 B8 | z8 G8 | A8 G8 | F8 E8 | D4 d6 ^c=B c4 | d4 d8 c4 | A4 B4 A8 | A8 d8- | d4 c4 A4 B4 | A4 A4 A8 | z4 B8 A4 | B4 A4 G4 G4 | ^F8 z4 B4- | B4 A4 B4 A4 | G8 G8 | ^F16 |]
+V:3
+z16 | D8 C8 | D4 F8 E4 | G4 A4 G8 | F6 D2 E2 D2 D4- | D4 ^C4 D8 | A8 F4 D4 | E8 A4 D4- | D4 ^C4 D4 F4 | G8 F8 | D4 E4 F4 A4 | D8 F8 | c12 B4 | A4 G4 F4 E2 D2 | E8 D8 | A12 G4 | E4 D4 E4 F4 | E4 F8 E4 | F4 F8 E4 | E4 D8 ^C4 | D4 F8 A4 | G4 F4 E8 | D4 F4 G6 F2 | E4 A4 D4 E4 | F2 E2 C2 D2 E8 | z8 G8 | A8 G8 | F8 E8 | D8 A8 | F4 G4 E8 | F8 D8 | A8 ^F4 G4 | E4 E4 D8 | z4 D8 D4 | D8 D4 D4 | D16 | D16- | D16- | D16 |]
+V:4
+z8 A,8 | G,4 D,4 F,2 G,2 A,4 | D,6 E,2 F,4 A,4 | G,4 F,4 C,8 | D,4 D4 A,4 B,4 | A,8 D,4 D4 | A,8 B,6 A,2 | G,4 E,4 D,8 | G,4 A,4 D8 | C8 F,4 D,4- | D,4 ^C,4 D,4 F,4 | G,8 F,8 | z8 F,8- | F,4 G,4 A,4 B,4 | A,8 D,8 | F,12 G,4 | A,4 B,4 A,4 F,4 | C4 D4 C8 | F,4 F,8 A,4 | C4 G,4 A,8 | D,4 D8 A,4 | C4 D4 A,8 | D,8 G,8 | A,8 G,8 | F,8 E,8 | D,2 E,2 F,4 C,4 C4 | F4 D4 E4 C4 | D4 D,4 A,8 | D,4 D8 A,4 | D4 G,4 A,4 A,4 | D,8 z4 D4- | D4 A,4 D4 G,4 | A,4 A,4 D,8 | z4 G,8 D,4 | G,4 ^F,4 G,4 G,4 | D,8 z4 G,4- | G,4 D,4 G,4 ^F,4 | G,8 G,8 | D,16 |]

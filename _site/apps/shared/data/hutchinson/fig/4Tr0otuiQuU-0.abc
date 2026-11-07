@@ -1,0 +1,13 @@
+X:1
+T:Ludwig van Beethoven, Moonlight Sonata, Op. 27, No. 2, I (1802)
+%%id 4Tr0otuiQuU-0
+%bars 1-5
+%unsure bar 5 shows three triplets only (figure ends there); bass chord pitches of bar 5
+M:C|
+L:1/8
+K:C#m
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] !pp!(3G,CE (3G,CE (3G,CE (3G,CE | (3G,CE (3G,CE (3G,CE (3G,CE | (3A,CE (3A,CE (3A,=DF (3A,DF | (3G,^B,F (3G,CE (3G,CD (3F,B,D | (3E,G,C (3G,CE (3G,CE |]
+[V:2] [C,,C,]8 | [B,,,B,,]8 | [A,,,A,,]4 [F,,,F,,]4 | [G,,,G,,]4 [G,,,G,,]4 | [C,,G,,C,]8 |]

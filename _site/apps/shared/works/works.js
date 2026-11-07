@@ -1,9 +1,14 @@
 // works.js: the pieces in works-data.js (window.WORKS) and the "Recordings & resources" panel shown with them.
 //   <script src="/apps/shared/works/works-data.js?v=10"></script>
-//   <script src="/apps/shared/works/works.js?v=16"></script>
+//   <script src="/apps/shared/works/works.js?v=18"></script>
 //   Works.mount(host, "tune" | "theme" | "analysed", id)   draws the panel for whatever work holds that item (hides host if none)
 //   kinds: tune, theme, analysed, score (the full-score player: { analysed: id } or { id }, href adds &bar= when x.bar is set),
 //   print (a figure in a print anthology: { book, fig, whole }, books in window.PRINT_BOOKS; shown, not linked)
+//   Concept uses: apps/shared/works/uses/<src>.js each push { src, label, url, items: [{ work, title, composer, concept, note, url, where, date, mlt }] }
+//   onto window.WORK_USES (load them with plain <script> tags before this page's code; a missing file is fine). `work` is a works-data id
+//   or a new id that stands alone (title, composer). Works.usesOf(workId) -> uses (a print-anthology figure in w.in.print counts, with its
+//   book as src and w.in.print[i].concept / .caption as the concept when given), Works.usesAll() -> every item, Works.usesSources() -> [{src,label,url,n}],
+//   Works.usesList(uses) -> <ul> element (source, concept, note, link). The panel gets a folded "Concepts shown" list when the work has uses.
 //   Works.year(w) -> "1801" | "pub. 1802" | ""  (w.composed / w.published, from scripts/print-books/build.py or by hand)
 //   Works.of(kind, id) -> work or null · Works.get(workId) · Works.ids() · Works.href(kind, ref) · Works.source(recording)
 // A recording is yt (video id or URL), r2 (a path in the bucket, read against WORKS_CONFIG.r2Base) or url (audio/video file, or
@@ -27,10 +32,45 @@
   function year(w) { return !w ? "" : w.composed != null ? String(w.composed) : w.published != null ? "pub. " + w.published : ""; }
   function printLabel(x) {
     var b = (global.PRINT_BOOKS || {})[x.book] || {};
-    return (b.short || x.book) + " · fig. " + x.fig + (x.whole ? " (whole movement)" : "");
+    return (b.short || x.book) + " · fig. " + x.fig + (x.whole ? " (whole movement)" : "") + (x.mm ? (x.mm === "all" ? ", all" : ", mm. " + x.mm) : "");
   }
   function of(kind, id) { if (!index) build(); var wid = index[kind + ":" + id]; return wid ? Object.assign({ id: wid }, W[wid]) : null; }
   function get(wid) { return W[wid] ? Object.assign({ id: wid }, W[wid]) : null; }
+
+  // ---- concept uses (uses/*.js) ----
+  function usesAll() {
+    var out = [];
+    (global.WORK_USES || []).forEach(function (s) { (s.items || []).forEach(function (it) { out.push(Object.assign({ src: s.src, label: s.label || s.src, srcUrl: s.url }, it)); }); });
+    return out;
+  }
+  function printUses(w) {
+    return ((w && w.in && w.in.print) || []).filter(function (x) { return x.concept || x.caption; }).map(function (x) {
+      var b = (global.PRINT_BOOKS || {})[x.book] || {};
+      return { src: x.book, label: (b.short || x.book).split(",")[0], work: w.id, concept: x.concept || x.caption, note: x.caption && x.concept ? x.caption : "",
+        where: "figure " + x.fig + (x.whole ? " (whole movement)" : ""), url: "", print: true };
+    });
+  }
+  function usesOf(wid) {
+    var w = W[wid] ? Object.assign({ id: wid }, W[wid]) : null;
+    return usesAll().filter(function (u) { return u.work === wid; }).concat(printUses(w));
+  }
+  function usesSources() {
+    return (global.WORK_USES || []).map(function (s) { return { src: s.src, label: s.label || s.src, url: s.url, n: (s.items || []).length }; });
+  }
+  function usesList(list) {
+    var ul = el("ul", "wk-uselist");
+    list.forEach(function (u) {
+      var li = el("li");
+      li.appendChild(el("span", "wk-type", u.label || u.src));
+      if (u.concept) li.appendChild(el("b", "wk-concept", u.concept));
+      if (u.note) li.appendChild(el("span", "wk-note", u.note));
+      if (u.url) { var a = el("a", null, u.where || "link"); a.href = u.url; if (/^https?:/.test(u.url)) { a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); }
+      else if (u.where) li.appendChild(el("span", "wk-meta", u.where));
+      if (u.date) li.appendChild(el("span", "wk-meta", u.date));
+      ul.appendChild(li);
+    });
+    return ul;
+  }
 
   function secs(v) {
     if (v == null || v === "") return 0;
@@ -178,6 +218,11 @@
       });
       p.appendChild(ul);
     }
+    var us = usesOf(w.id);
+    if (us.length) {
+      var dt = el("details", "wk-uses"), sm = el("summary", null, "Concepts shown (" + us.length + ")");
+      dt.appendChild(sm); dt.appendChild(usesList(us)); p.appendChild(dt);
+    }
     var also = el("div", "wk-also"), any = false;
     also.appendChild(el("span", "wk-type", here ? "Also in" : "In"));
     Object.keys(w.in || {}).forEach(function (kind) {
@@ -232,7 +277,9 @@
     if (w) host.appendChild(panel(w, { kind: kind, id: id }));
     var m = kind === "tune" ? mltPart(id) : null;
     if (m) host.appendChild(m);
-    host.hidden = !w && !m;
+    var j = global.JustinLink ? global.JustinLink.line([kind + ":" + id, w ? "work:" + w.id : ""]) : null;   // "On JustinGuitar" (justin-link.js)
+    if (j) host.appendChild(j);
+    host.hidden = !w && !m && !j;
     return w;
   }
 
@@ -252,10 +299,12 @@
     ".wk-links li{padding:.1rem 0}.wk-links .wk-note,.wk-links .wk-meta{margin-left:.5rem}" +
     ".wk-also{display:flex;flex-wrap:wrap;gap:.2rem .8rem;align-items:baseline;margin:.2rem 0}" +
     ".wk-print{font-size:.85rem;opacity:.8}" +
+    ".wk-uses{margin:.25rem 0;font-size:.85rem}.wk-uses summary{cursor:pointer}.wk-uselist{list-style:none;padding:0 0 0 .6rem;margin:.2rem 0}" +
+    ".wk-uselist li{padding:.12rem 0;display:flex;flex-wrap:wrap;gap:.1rem .5rem;align-items:baseline}.wk-concept{font-weight:600}" +
     ".wk-none{opacity:.65;margin-bottom:.3rem}.wk-dir{font-size:.8rem;display:inline-block;margin-top:.15rem}" +
     "@media (max-width:600px){.wk-player{margin-left:0}}";
   (document.head || document.documentElement).appendChild(css);
 
-  global.Works = { of: of, get: get, ids: function () { return Object.keys(W); }, all: function () { return W; }, source: source, href: href, kindLabel: KIND,
+  global.Works = { usesOf: usesOf, usesAll: usesAll, usesSources: usesSources, usesList: usesList, printUses: printUses, of: of, get: get, ids: function () { return Object.keys(W); }, all: function () { return W; }, source: source, href: href, kindLabel: KIND,
     mount: mount, panel: panel, year: year, printLabel: printLabel, mltPart: mltPart, tsnUrl: tsnUrl, stop: stop, config: CFG, reindex: function () { W = global.WORKS || {}; build(); } };
 })(window);

@@ -1,0 +1,13 @@
+X:1
+T:Tchaikovsky, Nutcracker, Waltz of the Flowers (1892)
+%%id Kw0wLLVEMaA-63
+%bars ?
+%unsure treble bar 6: lower half-note [A,C] under the passing F written as one chord; inner chord tones read approximately
+M:3/4
+L:1/16
+K:D
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] x12 | "C#o7/D"!accent![_B,CEG]8- [_B,CEG]3 [A,CE] | "D"[A,DFA]12- | [A,DFA]12 | "D"x8 [DF]4 | "C#o7/D"[_B,CEG]4 [A,CF]7 E | "D"!f![A,DF]8 [A,D]4 |]
+[V:2] [D,,F,A,]4 [D,F,A,D]4 [D,F,A,DF]4 | D,,4 [D,E,G,]4 [D,E,G,]4 | D,,4 [D,F,]4 [D,F,]4 | D,,4 [D,F,]4 [D,F,]4 | [D,,F,A,]4 [D,F,A,D]4 [D,F,A,]4 | D,,4 [D,_B,]4 [D,B,]4 | .[D,F,A,]2 z2 .D,,2 z2 .[D,F,A,]2 z2 |]

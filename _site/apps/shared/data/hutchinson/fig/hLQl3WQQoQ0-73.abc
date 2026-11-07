@@ -1,0 +1,14 @@
+X:1
+T:Adele Adkins and Dan Wilson, Someone Like You (2011)
+%%id hLQl3WQQoQ0-73
+%bars ?
+M:4/4
+L:1/16
+K:A
+%%score 1 {2 | 3}
+V:1 clef=treble nm="Voice"
+V:2 clef=treble
+V:3 clef=bass
+[V:1] "A"z AAA- AA"E"G(G G4) GG2(G | "F#m"A)F3- F8 "D"F2G2 |]
+[V:2] A,CAC A,CAC G,B,GB, G,B,GB, | A,CAC A,CAC A,DAD A,DAD |]
+[V:3] [A,,,A,,]8 E,,8 | [F,,C,]8 D,,8 |]

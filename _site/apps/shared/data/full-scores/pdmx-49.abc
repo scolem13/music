@@ -1,0 +1,19 @@
+X:1
+C:Johannes Brahms
+Z:Public Domain
+%%score { ( 1 3 ) | 2 }
+L:1/8
+M:3/4
+K:Ab
+V:1 treble nm="Piano"
+%%MIDI program 0
+V:3 treble 
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+!p! ([Ec]3 [CA])([CA][Ec]) | ([Ec]3!<(! [CA])([CA][Ec])!<)! | !>(! ([FAd]2!>)!{ed)} (.[EAc]2 .[DAB]2) | ([EAc]3 A)(A[ce]) | ([Acf]3 [Ac])([Ac]e) | !<(! ([Acf]3!<)!!<(! [Ac])([Ac]e)!<)! |!>(! (gf) (.e2!>)! .=d2) |1 [Gce]3 [EG] ([EG]c) :|2 [Gce]3 [EGc] ([EGc]e) || ([EGB_de]3 [EGB])([EGB][de]) | ([EAce]3 [Ac])([Ac]e) | !<(! ([Ace_ga]3 [Ace])([Ace][ga]) | ([Adfa]3 [Adf])([Adf]a)!<)! | ([AB=dfb]3 [Bdf])([Bdf]!>(!a) | (ag) (.f2!>)! .e2) |!p! ([Ec]3 [CA])([CA][Ec]) | ([Ec]3 [CA])([CA][Ec]) | ([FAd]2{ed)} (.[EAc]2 .[DAB]2) | ([EAc]3 A)(A[ce]) |!<(!!>(! ([Acf]3!<)!!>)! [Ac])([Ac]e) | !<(!!>(! ([Acf]3!<)!!>)!!<(! [Ac])([Ac]!<)!e) |!>(! (ae)!>)! (.d2 .B2) | A2 z!p! [EAc]([EAc]e) | ([EGBde]3 [EGB])([EGB][de]) | ([EAce]3 [Ac])([Ac]e) | ([Ace_ga]3!<(! [Ace])([Ace][ga]) | ([Adfa]3 [Adf])([Adf]a)!<)! | ([AB=dfb]3 [Bdf])([Bdf]a) | (ag) (.f2 .e2) | [ec']2 (3z ([CA][Ec](3[ca][ec'][ca]) | [ec']2 (3z ([CA][Ec](3[ca][ec'][ca]) | ([fad']2{e'd')} (.[eac']2 .[dab]2) | [eac']2 (3z ([CA][Ec]!<(!(3[ca][ec']!<)!([fc']-) | !>(! [fac'f']2)!>)! (3z ([CA][Ec]!<(!(3[ca][ec']([fc']-)!<)! | !>(! [fac'f']2)!>)! (3z ([CA][Ec]!<(!(3[ca][ec'][ac']-)!<)! |!>(! [ac']2!>)! [dg]2 [Bd]2 | [Aca]2 z2 |]
+V:2
+.A,,2"^dolce" !arpeggio!.[E,A,C]2 !arpeggio!.[C,E,A,]2 | .A,,,2 !arpeggio!.[E,A,C]2 !arpeggio!.[C,E,A,]2 | .A,,2 !arpeggio!.[D,F,D]2 .[F,A,]2 | .A,,,2 !arpeggio!.[E,A,C]2 !arpeggio!.[C,E,A,]2 | !<(! F,,2!<)!!>(! !arpeggio![F,A,CF]2!>)! !arpeggio![A,,E,C]2 | !>(! F,,2!>)! !arpeggio![F,A,CF]2 !arpeggio![A,,E,C]2 | E,,2 [E,G,C]2 !arpeggio![G,,F,=B,]2 |1 C,,2 [E,G,C]2 [C,E,]2 :|2 C,,2 [E,G,C]2 [C,E,G,]2 ||"^poco cresc." E,,2 [E,G,_D]2 [E,G,]2 | A,,2 [E,A,C]2 [E,A,]2 | A,,,2 [A,C_G]2 [A,C]2 | D,,2 [A,DF]2 [A,D]2 | [B,,,B,,]2 [A,B,=DF]2 [F,B,D]2 | E,,2 [E,B,_D]2 [E,B,E]2 | A,,2 !arpeggio![E,A,C]2 !arpeggio![C,E,A,]2 | A,,,2 !arpeggio![E,A,C]2 !arpeggio![C,E,A,]2 | A,,2 !arpeggio![D,F,D]2 [F,A,]2 | A,,,2 !arpeggio![E,A,C]2 !arpeggio![C,E,A,]2 | F,,2 !arpeggio![F,A,CF]2 !arpeggio![A,,E,C]2 | F,,2 !arpeggio![F,A,CF]2 !arpeggio![A,,E,C]2 | !5!C,,2 !5!E,,2 [E,G,]2 | A,,2 [E,A,]2 [E,A,C]2 | E,,2 [E,G,D]2"^poco cresc." [E,G,]2 | A,,2 [E,A,C]2 [E,A,]2 | A,,,2 [A,C_G]2 [A,C]2 | D,,2 [A,DF]2 [A,D]2 | [B,,,B,,]2!>(! [A,B,=DF]2 [F,B,D]2 | E,,2 [E,B,_D]2 [E,B,E]2!>)! | "^dolce" .A,,,2 .[E,A,C]2 .[C,E,A,]2 | .A,,,2 .[E,A,C]2 .[C,E,A,]2 | .D,,2 .[D,A,]2 .[F,A,]2 | A,,,2 [E,A,C]2 [C,E,A,]2 | .F,,2 !arpeggio!.[F,A,C]2 !arpeggio!.[A,,E,A,]2 | F,,2 !arpeggio![F,A,C]2 !arpeggio![A,,E,A,]2 | C,,2 E,,2 [E,G,D]2 | A,,,2 [E,A,C]2 |]
+V:3
+x6 | x6 | x6 | x6 | x6 | x6 | [Gc]2 [Gc]2 [F=B]2 |1 x6 :|2 x6 || x6 | x6 | x6 | x6 | x6 | [B_d]2 [Ad]2 [Gd]2 | x6 | x6 | x6 | x6 | x6 | x6 | A2 G2 [DE]2 | [CE]2 x4 | x6 | x6 | x6 | x6 | x6 | [B_d]2 [Ad]2 [Gd]2 | x6 | x6 | x6 | x6 | x6 | x6 | a'e' (.d'2 .b2) | x4 |]

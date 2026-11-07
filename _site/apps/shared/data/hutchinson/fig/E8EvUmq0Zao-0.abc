@@ -1,0 +1,12 @@
+X:1
+T:Bach, Invention No. 1 in C Major, BWV 772 (1723)
+%%id E8EvUmq0Zao-0
+%bars 1-4
+M:C
+L:1/16
+K:C
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] zCDE FDEC G2c2 !mordent!B2c2 | dGAB cABG d2g2 !mordent!f2g2 | eagf egfa gfed cedf | edcB AcBd cBAG ^FAGB |]
+[V:2] z8 zC,D,E, F,D,E,C, | G,2G,,2 z4 zG,A,B, CA,B,G, | C2B,2 C2D2 E2G,2 A,2B,2 | C2E,2 ^F,2G,2 A,2B,2 C4- |]

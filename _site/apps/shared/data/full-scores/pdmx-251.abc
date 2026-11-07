@@ -1,0 +1,23 @@
+X:1
+C:Felix Mendelssohn, Op. 19
+%%score { ( 1 4 ) | ( 2 3 ) }
+L:1/8
+Q:1/4=66
+M:6/8
+K:Bb
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:4 treble 
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:3 bass 
+%%MIDI program 0
+V:1
+"^Andante sostenuto" z6 [Q:1/4=74] |[Q:1/4=80] z6 |!pp!!<(! D3!<)! =F3- |!>(! F3 E3!>)! | !p! D3- D2 z |[Q:1/4=74] z6 [Q:1/4=66] |[Q:1/4=80] z2 z z2 [Bd] | [Ac]2 [GB] [^FA]2 [Ac] | [DB]2 [CA] [B,G]2 D | [CE]2 [CE]!<(! [CE]/[DF]/!<)!!mp![EG][CE] | [Q:1/4=74] !p!  x2 x z2 [Q:1/4=80] [Bd] | [Ac]2 [GB] [^FA]2 [Ac] | [DB]2 [CA] [B,G] GA | !<(! B^cd !>![cf] [Q:1/4=74]=ed!<)! |!>(! [da]2 f!>)!!mp! d2"_dim." A | B/4 z/4 z/ [=E^c][Fd]!p! [Af]!>(![G=e][Fd]!>)! |[Q:1/4=66]!pp! [Fd]3- [Fd] z [Q:1/4=80]!p! d | !>!f2 !>!d !>!c2 !>!=B | c2 !>!G !>!_A2 !>!=B | c2 !>!G !>!_A2 !>!=B | [Q:1/4=74]!>(! !>!c3- c z[Q:1/4=80] !>)!!pp!  !>!c | !>!e2 !>!A !>!e2 !>!A | !>!e3- e2 [Q:1/4=74] !>!d | !>!c2 !>!B !>!A!>!B!>!G | !<(! !tenuto![D^FAd] .d!<)!!p!.d!>(! .d.d!>)!!pp!!tenuto!.d |[Q:1/4=74] !p!  .d.B.e .d2 .g | !pp! .d.B.e .d2 .g |!p! !>!d!>!c!>!B !>!A2 !>!A | !>!d2 !>!A [Q:1/4=68] !>!c2!pp! !>!B | [Q:1/4=74] !p!  !>!d!>!B!>!e !>!d2 !>!g |[Q:1/4=68] !pp!  !>!d!<(!!>!B!>!e !>!d2!<)! !fermata!g- | !mp! g"_dim."!>!g!>!e !>!d!>!e!>!c | !>!B!>!c!>!A GA!p![CD^F] | [Q:1/4=74] [B,DG] z z [Q:1/4=80] z2!mf! [Bd] | [Ac]2 [GB] [^FA]2 [Ec] | [DB]2 [dd'] [dd']2"_dim." [DB] | [CA]2 [B,G] [A,^F]2 [FA] |!pp! [DG]2 [dd'] [dd']2 [DB] | [Q:1/4=74] G2 [dd'] [dd']2 z | z2 z =F3- | F3 E3 | D3- D2 z |[Q:1/4=68] x6 | [Q:1/4=60] x3!pp! !>!D3- |[Q:1/4=48] D z z [Q:1/4=36] !>!D3- | D z z !fermata!z2 z |]
+V:2
+!p! z!<(! [G,B,]D, z [G,B,]D, | z [G,B,]D, z [G,A,C]E,!<)! | !pp! z [G,B,]D, z [A,C]F, | z [B,D]F, z [G,C]E, | z [G,B,]D, z [G,B,]D, | z [A,C]D, z [^F,A,]D, | .G,,[G,B,]D, .G,,[G,B,]D, | .G,,[A,C]D, .G,,[A,C]D, | .G,,[G,B,]D, .G,,G,D, | .G,,G,D, .G,,!p![G,C]D, | !pp! .G,,[G,B,]D, .G,,[G,B,]D, | .G,,[A,C]D, .G,,[A,C]D, | .G,,[G,B,]D, .G,,G,D, | !<(! .G,,[B,D]G, .G,,[B,^C]G,!<)! | !p! .F,,!>(![A,D]F, .F,,[A,D]!>)!!pp!F, | .G,,[B,D]G, .A,,^CA, | .D,[A,D]F, .D,[A,D]F, | .G,,[G,=B,]D, .G,,[G,B,]D, | .C,,G,E, .C,[F,_A,]D, | .C,,G,E, .C,[F,_A,]D, | !>(! .C,,[E,G,]C, .C,,[E,G,]C,!>)! | !pp! .^F,,[E,A,]C, .F,,[E,A,]C, | .^F,,[E,A,]C, .F,,[E,A,]C, | .G,,[D,G,]B,, .E,,[G,B,]E, | D,,2 z z2 z | !pp! [G,,,G,,] z z z2 z | [G,,,G,,] z z z2 z | [B,,,B,,] z z [C,,C,] z z | [D,,D,] z z [G,,G,] z2 | !pp! [G,,,G,,] z z z2 z | [G,,G,] z z z2 z | [C,,C,] z z z GE | DEC D z D, | G,,[G,B,]D, G,,[G,B,]!p!D, | G,,[A,C]D, G,,[A,C]D, | G,,[G,B,]D, G,,[G,B,]"_dim."D, | G,,G,D, G,,[CD]D, | !pp! G,,[G,B,]D, G,,[G,B,]D, |!pp! G,,[G,B,]D, G,,[G,B,]D, | G,,[G,B,]D, z [A,C]F, | z [B,D]F, z [G,C]E, | z [G,B,]D, z [G,B,]D, | z [A,C]D, z [^F,A,]D, | z [G,B,]D, z2 z | z [G,B,]D, z2 z | !>!!fermata!G,,,6 |]
+V:3
+G,,2 z G,,2 z | G,,2 z G,,2 z | [G,,,G,,]2 z [F,,,F,,]2 z | [B,,,B,,]2 z [C,,C,]2 z | D,,2 z D,,2 z | D,,2 z D,,2 z | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x3 !>![F,,,F,,]2 z | !>![B,,,B,,]2 z !>![C,,C,]2 z | !>!D,,2 z !>!D,,2 z | !>!D,,2 z !>!D,,2 z | !>!G,,,2 z z2 z | !>!G,,,2 z z2 z | x6 |]
+V:4
+x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | D6- | D6 | x6 | x6 | x6 | x6 | x6 | z FG z FG | c[CE]G _A!p![DF]=B | c[CE]G _A!p![DF]=B | cEG z EG | eE^F eEF | eE[^FA] z EA | z DG z ^CG | x6 | z .[DG].[Fc] z .[GB].[Bd] | z .[DG].[Fc] z .[GB].[Bd] | z [DG][DG] z [EG][EG] | z!>(! [D^F][DF] z [DA]!>)![DG] | z [DG][^Fc] z [GB][Bd] | z [DG][^Fc] z [G=B][Bdf] | [ce] z z x x2 | z GE x x2 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 |]

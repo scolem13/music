@@ -1,0 +1,14 @@
+X:1
+T:Mozart, Piano Sonata K. 331, I
+%%id vp_h649sZ9A-14
+%bars ?
+M:6/8
+L:1/8
+K:A
+%%score {1 | (2 3)}
+V:1 clef=treble
+V:2 clef=bass
+V:3 clef=bass
+[V:1] (c3/2d/)c e2 e | (B3/2c/)B d2 d | A2 B c2 [FBd] | ([EAc]2 [DEGB]) [CEA]2 z |]
+[V:2] E2 E E2 E | E2 E E2 E | E2 E E2 x | x6 |]
+[V:3] A,3/2B,/A, C2 A, | G,3/2A,/G, B,2 B, | F,2 G, A,2 D, | E,2 E,, A,,2 z |]

@@ -1,0 +1,32 @@
+X:1
+C:Wallace A. Sabin
+Z:Lord Byron
+%%score [ 1 ( 2 3 ) 4 ( 5 6 ) ]
+L:1/8
+Q:1/4=53
+M:4/4
+K:Gb
+V:1 treble-8 nm="Tenor 1" snm="T1"
+%%MIDI program 52
+V:2 treble-8 nm="Tenor 2" snm="T2"
+%%MIDI program 52
+V:3 treble-8 
+%%MIDI program 52
+V:4 bass nm="Bass 1" snm="B1"
+%%MIDI program 52
+V:5 bass nm="Bass 2" snm="B2"
+%%MIDI program 52
+V:6 bass 
+%%MIDI program 52
+V:1
+"^Lento tranquillo"!p! d d e |!<(! e3!<)!!>(! d!>)! d3 c | B3 B B2 A2 | G3 G c3 B | B4- B!<(! d e f!<)! | g3 f f3 e | d4!mf! f2 f g | a2 d2 d2 e2 |!>(! d8!>)! |!p! d4 g g _f __e | !<(! !>!__e3!<)!!>(! d!>)! d2 d2 | d3 d"^dim." e2 e2 | (g4 a3) g |!pp! g4- g z z2 || [K:Db][Q:1/4=71] !mp! "^Poco più mosso" A2 A A (B2 c2) | e2 e e d3 d | e3 e f2 g2 | e3 d d f f f | e3 e d2 d2 |!>(! c3!>)!!p! c d2 =d2 |!<(! e2 e2!<)!!>(! f2 d2!>)! | c6 e2 | a3 a g2 f2 | !<(! e4- e!<)! g f e |!>(! f3 d A2 f2!>)! | e3/2 d/ d4!p! d2 |"^dim." d8- |!>(! d8-!>)! | "^rit." !fermata!d4 ||[K:Gb] z [Q:1/4=53]"^Tempo I"!p! d d e | e3 d d3 c | B3 B B2 A2 | G3 G c3 B | B4- B!<(! d e f!<)! |"^cresc." g3 f f3 e | d3 f f2 g2 | a3 d d2 e2 |!>(! d6!>)!!p! d2 | d3 d g g _f __e |!<(! (__e4!<)!!>(! d2)!>)! d2 |!<(! d3 d e2!<)! e2 | g3/2 g/ g4!pp! g2 | "^rit." a7 g | g4- !fermata!g |]
+V:2
+!p! d d e |!<(! e3!<)!!>(! d!>)! d3 c | B2 G2 F2 F2 | G3 G G2 F2 | G4- G!<(! B B B!<)! | B2 B2 B2 =A2 | B4!mf! d2 d d | d2 A2 B2 =c2 |!>(! d8!>)! |!p! d4 __e e d c | !<(! !>!c3!<)!!>(! c!>)! c2 c2 | B3 B"^dim." B2 c2 | (e4 __e2) d2 |!pp! d4- d z z2 ||[K:Db] z8 | !mp! c2 c c c2 B2 | d2 d2 d2 d2 | c3 d d3 A | =A3 A B2 B2 |!>(! =G3!>)!!p! c c2 c2 | !<(! c2 c2!<)!!>(! d2 =G2!>)! | A6 e2 | e3 e =d2 d2 |!<(! e4!<)! _d4 |!>(! d3 A A2 d2!>)! | c3/2 d/ d4!p! d2 |"^dim." d3/2 _c/ c4 c2 |!>(! _c3/2 B/!>)! B4!pp! B2 | "^rit." B3/2 _c/ !fermata!c2 ||[K:Gb] z!p! B d e | e3 d d3 c | B2 G2 F2 F2 | G3 G G2 F2 | G4- G!<(! B B B!<)! |"^cresc." B2 B2 B2 =A2 | B3 d d2 d2 | d2 A2 B2 =c2 |!>(! d6!>)!!p! d2 | d3 d __e e d c |!<(! c6!<)!!>(! c2!>)! |!<(! B3 B B2!<)! c2 | e3/2 e/ e4!pp! e2 | "^rit." (__e4 d2) d2 | d4- !fermata!d |]
+V:3
+x3 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | c4 c4 | B4- B x3 ||[K:Db] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x4 ||[K:Gb] x4 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | c3/2 c/ c4 c2 | c6 c2 | B4- B |]
+V:4
+!p! B, B, B, |!<(! A,2!<)!!>(! A,2!>)! G,2 G,2 | G,2 D,2 D,2 D,2 | D,2 D,2 E,2 D,2 | D,4- D,!<(! G, G, G,!<)! | G,2 G,2 G,2 F,2 | F,4!mf! D,2 D, E, | F,2 F,2 G,2 G,2 | !>(! (F,4 G,2 A,2)!>)! |!p! __B,4 B, B, A, A, |!<(! !>!A,3!<)!!>(! A,!>)! A,2 A,2 | G,3 G,"^dim." G,2 G,2 | G,4 F,4 |!pp! G,4- G, z z2 ||[K:Db]!mp! A,2 A, A, G,4 | G,2 G, G, F,3 F, | =G,2 G,2 A,2 B,2 | _G,3 F, F,3 F, | F, F, F, F, F,2 F,2 |!>(! =E, E, F,!>)!!p! =G, A,2 A,2 | !<(! A,2 A,2!<)!!>(! =G,2 E,2!>)! | E,6 C2 | _C3 C C2 C2 |!<(! B,4!<)! __B,4 | !>(! A,3 F, F,2 A,2!>)! | G,3/2 F,/ F,4!p! F,2 |"^dim." G,6 G,2 |!>(! =G,6!pp! G,2!>)! | "^rit." =G,3/2 A,/ !fermata!A,2 ||[K:Gb] z!p! G, B, B, | A,2 A,2 G,2 G,2 | G,2 D,2 D,2 D,2 | D,2 D,2 E,2 D,2 | D,4- D,!<(! G, G, G,!<)! |"^cresc." G,2 G,2 G,2 F,2 | F,3 D, D,2 E,2 | F,2 F,2 G,2 G,2 |!>(! (F,4 G,2)!>)!!p! A,2 | __B,2 B,2 B, B, A, A, |!<(! A,6!<)!!>(! A,2!>)! | !<(! G,2 G,2 G,2!<)! G,2 | G,3/2 G,/ G,4!pp! G,2 |"^rit." G,4 F,4 | G,4- !fermata!G, |]
+V:5
+!p! G, G, G, |!<(! F,2!<)!!>(! F,2!>)! E,2 __E,2 | D,2 D,2 C,2 C,2 | B,,2 B,,2 A,,2 D,2 | G,,4- G,,!<(! G, G, F,!<)! | E,2 D,2 =C,2 F,,2 | B,,4!mf! __B,,2 B,, B,, | A,,2 A,,2 A,,2 A,,2 | !>(! (D,4 E,2 F,2)!>)! |!p! G,4 __E, E, _F, F, |!<(! !>!=F,3!<)!!>(! F,!>)! F,2 F,2 | G,3 G,"^dim." E,2 C,2 | (A,,4 A,,2) D,2 |!pp! D,4- D, z z2 ||[K:Db]!mp! F,2 F, F, (F,2 E,2) | =A,,2 A,, A,, B,,3 B,, | B,,3 __B,, A,,2 A,,2 | A,,3 D, D,3 D, | =C,3 C, B,, B,, B,, B,, | !>(! C, C, =D,!>)!!p! =E, F,2 _F,2 |!<(! E,2 E,2!<)!!>(! E,2 E,2!>)! | A,,6 A,2 | F,2 F,2 A,2 A,2 | !<(! G,4- G,!<)! E, F, G, |!>(! A,3 A,, A,,2 A,,2!>)! | A,,3/2 D,/ D,4!p! D,2 |"^dim." E,6 E,2 | !>(! =E,6!pp! E,2!>)! |"^rit." =E,3/2 F,/ !fermata!F,2 ||[K:Gb] z!p! G, G, G, | F,2 F,2 E,2 __E,2 | D,2 D,2 C,2 C,2 | B,,2 B,,2 A,,2 D,2 | G,,4- G,,!<(! G, G, F,!<)! |"^cresc." E,2 D,2 =C,2 F,,2 | B,,3 B,, __B,,2 B,,2 | A,,2 A,,2 A,,2 A,,2 |!>(! (D,4 E,2)!>)!!p! F,2 | =G,2 G,2 __E, E, _F, F, | !<(! =F,6!<)!!>(! F,2!>)! |!<(! G,2 G,2 E,2!<)! C,2 | A,,3/2 A,,/ A,,4!pp! A,,2 |"^rit." A,,4 D,4 | D,4- !fermata!D, |]
+V:6
+x3 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | A,,4 D,,4 | G,,4- G,, x3 ||[K:Db] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x4 ||[K:Gb] x4 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | D,,6 D,,2 | G,,4- G,, |]

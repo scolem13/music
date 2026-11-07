@@ -1,0 +1,16 @@
+X:1
+C:Composer Unknown
+Z:Public Domain (PianoXML typeset)
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=80
+M:3/4
+K:Bb
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+"^Moderato"!f! (!1!G>!p!A B2) c2 | !2!A(A/B/ c4 | !3!B)(B/!1!c/ !2!d)gcg | !3!B(A/B/ G4) :: !f! (!2!B>c d2) f2 | !2!d(!1!c/!3!B/ A/B/c/A/ F2) | (!4!fdB)f (g/f/e/d/ | !>(! !4!ecA)e (f/e/d/c/!>)! | !2!d)(c/d/ e)dc!3!B | (A/B/c/A/ B2) B,2 |!f! !3!d2 e2 G2 | !2!^F(F/G/ A)(DF!1!A |!p! !3!d2) e2 G2 |!<(! !2!^F(F/G/ A)(DF!1!A!<)! | !f! !3!d)(d/e/ !2!d)(d/e/ d)(g | (!3!B)A/B/) !1!G2 !2!G,2 :|
+V:2
+!1!G,2 G,2 G,2 | G,2 (^F,=E,F,D, | G,2) G,,2 C,2 | D,2 G,(G,,B,,C, :: !4!G,>A, B,2) A,2 | B,2 F,2 (F,E, | D,2 G,2 E,2 | C,2 F,2 D,2 | B,,2) G,2 E,2 | (F,E,D,E,D,C, | !3!B,,2) !1!C,2 !2!E,2 | !1!D,2 D,2 C,2 | !3!B,,2 !1!C,2 E,2 | (D,4 C,2 | !3!B,,2) G,,2 B,,2 | D,2 G,,4 :|

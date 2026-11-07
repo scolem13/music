@@ -1,0 +1,15 @@
+X:1
+C:Frédéric Chopin
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=45
+M:4/4
+K:F
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+[Fd]2 z c [GB]2 z A | ^G2 A2 z4 :| a4 g7/2 f/4g/4 | a4 d4 | d'4- d'>c' (3d'c'b | b4 z4 | a4 e4 | f4 g2 d2 | e6- e[=Bd] | [^ce]4 z2 A2 | a4 g3 f/4g/4a/4b/4 | a4 d2 d'2 | (3d'_e'c' (3bag (3^f_ed (3cBA | B6 z2 | _E4 _e3 d | ^c7/2 d/4=e/4 f2 ed | A z B4 A2 | D4 z4 || z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:2
+D,2 z2 G,2 z2 | [B,D]2 [A,^C]2 z4 :| D,A,DA, D,B, E2 | D,A,DA, D,A,DA, | D,^F,DA, D,2 A,2 | G,B,DB, G,2 D,2 | ^C,G,A,G, C,G, A,2 | D,F, A,2 B,,E, G,2 | A,,E,A,E, A,2 E,2 | A,,E,A,E, A,,4 | D,A,DA, D,G, B,2 | D,A,DA, D,4 | D,2 ^F,2 D4 | G,B,DB, G,2 D,2 | G,,_E,G,E, G,,2 E,2 | G,,=E, G,2 ^G,,F,- F,2 | A,,F,- F,2 A,,E, G,2 | D,A,F,E, D,2 C,2 || z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |]

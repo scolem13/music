@@ -1,0 +1,13 @@
+X:1
+T:Development of fragment b in Invention 1
+%%id E8EvUmq0Zao-18
+%bars 4-6
+%unsure last bar: only its first beat is printed
+M:C
+L:1/16
+K:C
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "^frag. a inv."BAG^F "^frag. b inv."EG^FA | "^frag. b inv."GBAc "^frag. b inv."Bdce dB/c/dg !mordent!B2AG | G2 z2 |]
+[V:2] G,2B,,2 "^frag. a aug. & ext."C,2D,2 | E,2^F,2 G,2E,2 B,,3C, D,2G,,,2 | zG,,A,,B,, |]

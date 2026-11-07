@@ -1,0 +1,11 @@
+X:1
+T:Herman Hupfeld, As Time Goes By (1931)
+%%id d22CiKMPpaY-10
+%bars ?
+%unsure piano part left out (dense voicings not read with certainty); voice pitches read from ledger lines and contour
+M:4/4
+L:1/8
+K:Db
+%%score 1
+V:1 clef=bass nm="Voice"
+[V:1] F, | "Ebm"G, F, E, D, "Ab7"E,3 G, | "Ebm7"G, F, E, D, "Ab13"F,3 G, | "Db6"D C B, A, "Ab9(#5)"B,4- | "Db6"B,4 z4 |]

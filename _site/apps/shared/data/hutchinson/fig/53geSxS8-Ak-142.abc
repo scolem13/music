@@ -1,0 +1,17 @@
+X:1
+T:Mozart, The Marriage of Figaro, Voi che sapete
+%%id 53geSxS8-Ak-142
+%bars ?
+%unsure inner notes of the right-hand sixteenth chords (F7 beat) and the bar 4 right-hand voicing
+M:2/4
+L:1/16
+%%score 1 {(2 3) | 4}
+V:1 clef=treble nm="Voice"
+V:2 clef=treble
+V:3 clef=treble
+V:4 clef=bass
+K:Bb
+[V:1] "Bb"(f2d2) f2d2 | "Cm/Eb"(c2e2) (c2e2) | "Bb/F"B4 "F7"F3F | "Gm"D4 z4 |]
+[V:2] !mp!d[B,D][DF][FB] z[B,D][DF][FB] | z[CE][EG][Gc] z[CE][EG][Gc] | z[B,D][DF][FB] z[A,C][CE][EA] | z2 d2 [dg]2[gb]2 |]
+[V:3] x8 | x8 | x8 | B4 x4 |]
+[V:4] B,,2z2 B,,2z2 | [E,,E,]2z2 [E,,E,]2z2 | [F,,F,]2z2 [F,,F,]2z2 | G,,[G,B,][B,D][DG] G,,[G,B,][B,D][DG] |]

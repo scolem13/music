@@ -1,0 +1,14 @@
+X:1
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=110
+M:3/4
+K:C
+V:1 treble nm="Piano"
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+"^Tempo""^E" !1!E2 |"^A" !2!A"^B"!3!B"^C" !4!c2"^C" !1!c2 |"^D" d"^E"e"^F" f4 | "^B" B"^C"c"^D"d"^A"a"^G"g"^F"!3!f |"^E""^F""^E"{ef} !3!e"^D♯"^d"^E" e4 | "^A" !1!A"^B"!2!B"^C" !3!c2"^C" !1!c2 |"^D" d"^E"e"^F" f4 |"^B" B"^C"c"^D"d"^A"a"^G"g"^B"B | "^C" c2 z2"^E" E2 |"^A" A"^B"B"^C" c2"^C" c2 |"^D" d"^E"e"^F" f4 |"^B" B"^C"c"^D"d"^A"a"^G"g"^F"f | "^E"{ef} e"^D♯"^d"^E" e4 |"^C" c"^D"d"^E" !3!e2"^E" !1!e2 |"^F" f"^G"g"^A" a4 | "^G" !1!g2"^F♯" !2!^f"^G"!1!g"^D"d'"^F"=f |"^E" e6 |:"^E" !1!e"^F♯"^f"^G♯"^g"^A"!1!a"^B"b"^C"c' | "^B" b"^A"a"^E"!2!e"^B"!5!b"^A" !4!a2 | "^A""^B""^A"{ab} !3!a"^G♯"!2!^g"^E"!1!e"^F"!2!f"^E" !1!e2 | "^E""^F""^E"{ef} !3!e"^C"!1!c"^A"!2!A"^B"!3!B"^A" !2!A2 | "^E" !1!E"^G♯"!2!^G"^B"!3!B"^E"!1!e"^G♯"!2!^g"^B""^C"!3!b/!4!c'/ | "^B" !3!b"^A"!2!a"^E"!1!e"^B"!4!b"^A" !3!a2 | "^A""^A B"{ab} !3!a"^G♯"!2!^g"^E"!1!e"^E"e'"^E" e'2 |"^A" a6 :|
+V:2
+z2 |"^A" A,2"^C" C2"^E" E2 |"^A" A,2"^D" D2"^F" F2 |"^G" G,2"^B" B,2"^F" F2 | "^G" G,2"^C" C2"^E" E2 |"^A" A,2"^C" C2"^E" E2 |"^A" A,2"^D" D2"^F" F2 |"^G" G,2"^B" B,2"^F" F2 | "^G C" [G,C]2 z4 |"^A" A,2"^C" C2"^E" E2 |"^A" A,2"^D" D2"^F" F2 |"^G" G,2"^B" B,2"^F" F2 | "^G" G,2"^C" C2"^E" E2 |"^A" A,2"^C" C2"^E" E2 |"^A" A,2"^D" D2"^F" F2 |"^G" G,2"^B" B,2"^F" F2 | "^G E" [G,E]6 |:"^E" E,2"^B" B,2"^D" D2 |"^E" E,2"^A" A,2"^C" C2 |"^E" E,2"^B" B,2"^D" D2 | "^E" E,2"^A" A,2"^C" A,2 |"^E" E,2"^B" B,2"^D" D2 |"^E" E,2"^A" A,2"^C" C2 | "^E" E,2"^B" B,2"^D" D2 |"^A" A,2"^C E" [CE]2"^A C E" [A,CE]2 :|

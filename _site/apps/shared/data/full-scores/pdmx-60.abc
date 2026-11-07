@@ -1,0 +1,15 @@
+X:1
+C:J S Bach
+Z:Public Domain (PianoXML typeset)
+%%score { 1 | 2 }
+L:1/8
+M:3/4
+K:F
+V:1 treble nm="Piano"
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+!mf! A2 (fed^c | d2) A2 B2 | (^CEGBAG | F2) (EF D2) | F2 (BA) (dc) | d/4e/4f3/2 (ed cB | AB/c/ F2) E2 | F6 |!p! A2 (fed^c | d2) A2 B2 | (^CEGBAG | F2) (EF D2) | F2 (BA) (dc) | d/4e/4f3/2 (edcB | AB/c/ F2) E2 | F6 |:!f! a2 F(agf | e/f/g c4) |!p! f2 D(fed | ^c/d/e A4) | (A=B^cdef | ge^c_bag | f/e/d e2) ^c2 | d6 |!f! a2 F(agf | e/f/g c4) |!mp! f2 D(fed | ^c/d/e A4) | (A=B^cdef | ge^c!mf!bag |!f! f/e/d e2) ^c2 | d6 |]
+V:2
+(D,4 E,2 | F,4 G,2 | A,4 A,,2 | D,2) A,,2 D,,2 | (D,2 C,2 B,,2 | A,,4) (E,2 | F,2 A,,2) C,2 | F,,2 (F,E,D,^C,) | (D,4 E,2 | F,4 G,2 | A,4 A,,2 | D,2) A,,2 D,,2 | (D,2 C,2 B,,2 | A,,4) (E,2 | F,2 A,,2) C,2 | F,2 C,2 F,,2 |: (F,2 A,2 B,2 | C3) (G,E,C, | D,2 C,2 B,,2 | A,,=B,,^C,D,E,F, | G,2 E,2 ^C,2 | A,,2) (A,2 ^C2 | D2 G,2) A,2 | D,2 (D,,A,,D,E, | F,2 A,2 B,2 | C3) (G,E,C, | D,2 C,2 B,,2 | A,,=B,,^C,D,E,F, | G,2 E,2 ^C,2 | A,,2) (A,2 ^C2 | D2) G,2 A,2 | D,2 A,,2 D,,2 |]

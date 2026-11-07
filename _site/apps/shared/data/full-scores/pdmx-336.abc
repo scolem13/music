@@ -1,0 +1,14 @@
+X:1
+C:Carl Czerny
+%%score { 1 | 2 }
+L:1/8
+M:4/4
+K:F
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+|:!mf! (d>A d>A d>A d>f | e>^c A>c e) z (A/=B/c/d/ | e>A e>A e>A e>g | f>d A>d f) z!f! (d'/^c'/d'/=c'/ | [gb]4 [fa]) z (d'/^c'/d'/=c'/ | [gb]4 [fa]) z b/a/b/a/ | g>e a>f f>d g>f | e z E/^C/E/C/ (A,3/2 z/ z2 ::!ff! A z/ (A/ B) z/ (B/ A) z/ (A/ ^G) z/ (G/ | A) z/ (A/ E) z/ (E/ ^C) z/ (C/ A,) z/ A,/ | D) z/ (D/ A,) z/ (A,/ D) z/ (D/ F) z/ (F/ | E) z/ (E/ ^C) z/ (C/ A,) z!p!!<(! (a/g/f/e/ | d>e f>g a) z (b/a/g/f/ | e>f g>a b) z!f! (e'/!<)!d'/^c'/b/ | a) z (b/a/g/f/ e) z (a/g/f/e/ | d) z (A/F/A/F/ D) z z2 :|
+V:2
+|:!p! .[DF]2 .[DF]2 .[DF]2 .[DF]2 | .[A,^CE]2 .[A,CE]2 .[A,CE] z z2 | .[A,^CE]2 .[A,CE]2 .[A,CE]2 .[A,CE]2 |!p! .[DF]2 .[DF]2 .[DF] z z2 |!mf! (G,>A, B,>C D) z z2 | (G,>A, B,>C D) z z2 |!p! .[^C,E,A,]2 .[C,E,A,]2 .[D,F,A,]2 .[D,F,A,]2 | .[A,,^C,E,]2!f! E,/C,/E,/C,/ A,, z z2 ::!f! (A,2 B,2 A,2 ^G,2 | A,2 E,2 ^C,2 A,,2 | D,2 A,,2 D,2 F,2) | E,2 ^C,2 A,,2!p! z2 | .[F,A,D]2 .[F,A,D]2 .[F,A,D]2 z2 | .[G,B,E]2 .[G,B,E]2 .[G,B,E]2 z2 | .[A,DF] z .[A,DF] z .[A,^CG] z .[A,CG] z | .[DF] z!f! (A,/F,/A,/F,/ D,) z z2 :|

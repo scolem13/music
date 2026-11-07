@@ -23,6 +23,9 @@
 //
 // Sound: BandSounds (bass + piano, sound choices from BandSounds.sounds(family); never drums), one AudioContext registered with AudioTap.
 // Progress: localStorage "harmonyEar.v1" (settings and the last 10 results per path + level). Supabase later.
+// The student's report: each checked question is also one SiteRecord item (tool "harmony-ear", ex "Hearing Harmony", record.js loaded on
+// first use; "My report" button in the bar): the question asked (path, level, kind, the prompt), the answer given, the right answer,
+// seconds. The teacher's In class view shows these as report rows (no replay: the progressions aren't seeded).
 (function (global) {
   "use strict";
 
@@ -186,7 +189,7 @@
 //        in every kind (q.invs: per progression, the member in the bass); a kind with steps has q.slots [{ chord, step, choices, labels }]
   var KINDS = [
     { id: "rn", label: "Name each chord (numerals)" }, { id: "func", label: "Name each function" },
-    { id: "bass", label: "Name each bass note (solfège)" }, { id: "next", label: "What comes next?" },
+    { id: "bass", label: "Name each bass note (solfège)" }, { id: "sing", label: "Sing the bass (microphone)" }, { id: "next", label: "What comes next?" },
     { id: "change", label: "Did the chord change?" }, { id: "same", label: "Same or different?" }, { id: "mode", label: "Which tonality?" },
     { id: "inv", label: "Inversions: the bass, then root or not" },
     { id: "voice", label: "Follow a voice (solfège)" }
@@ -239,7 +242,8 @@
       q.answer = prog.map(fn); q.choices = pool.map(fn).filter(uniqF); q.labels = q.choices.slice();
     } else if (kind === "voice") {   // the page fills the answer once the chords are voiced (it depends on the voicing)
       q.answer = []; q.choices = poolSyls(pool, mode); q.labels = q.choices.slice();
-    } else if (kind === "bass" || kind === "inv") {
+    } else if (kind === "bass" || kind === "inv" || kind === "sing") {
+      if (kind === "sing") { kind = "bass"; q.kind = "bass"; q.sing = true; q.invs = [prog.map(function () { return 0; })]; }   // sung roots; the answer buttons are the fallback
       var inv = q.invs[0];
       var bassSyl = prog.map(function (t, i) { return spelledSyl(t, inv[i], mode); });
       var sylChoices = poolSyls(pool, mode, !rate);
@@ -402,7 +406,31 @@
     return "X:1\nL:1/4\nM:none\n%%staves {1 2}\nK:" + k.doName + "\nV:1 clef=treble\nV:2 clef=bass\n[V:1] " + top.join("") + "|]\n[V:2] " + bot.join("") + "|]\n";
   }
 
-  var api = { parse: parse, toAbc: toAbc, spellKey: spellKey, fn: fn, syllable: syllable, MODES: MODES, PATHS: PATHS, path: path, walk: walk, modeSet: modeSet,
+  // ---------- the sung bass (Q2) ----------
+  // Segmenter: mic frames { midi, hz } -> one onNote(midi) per sung note (the pitch holds 3 frames; a gap of 2 frames lets the same note count again).
+  function Segmenter(onNote) {
+    var cand = null, n = 0, last = null, quiet = 0;
+    return {
+      reset: function () { cand = null; n = 0; last = null; quiet = 0; },
+      frame: function (f) {
+        if (!(f.hz > 0)) { if (++quiet >= 2) last = null; cand = null; n = 0; return; }
+        quiet = 0;
+        if (f.midi === cand) n++; else { cand = f.midi; n = 1; }
+        if (n === 3 && cand !== last) { last = cand; onNote(cand); }
+      }
+    };
+  }
+  // sungFill(answer, sung, rest, mode): the sung notes (MIDI, in any octave) against the expected bass syllables. Note i fills slot i: the
+  // expected syllable when its pitch class (counted from the resting tone) is right, otherwise the syllable that was sung, so check() marks it wrong.
+  function sungFill(answer, sung, rest, mode) {
+    return answer.map(function (a, i) {
+      if (sung[i] == null) return null;
+      var rel = (((sung[i] - rest) % 12) + 12) % 12;
+      return sylToRel(a, mode) === rel ? a : syllable(rel, mode);
+    });
+  }
+
+  var api = { Segmenter: Segmenter, sungFill: sungFill, parse: parse, toAbc: toAbc, spellKey: spellKey, fn: fn, syllable: syllable, MODES: MODES, PATHS: PATHS, path: path, walk: walk, modeSet: modeSet,
               question: question, KINDS: KINDS, sylToRel: sylToRel, spelledSyl: spelledSyl, typeMatch: typeMatch, voice: voice, figured: figured, inversions: inversions, symbol: symbol, pretty: pretty, MODE_POOL: MODE_POOL };
   global.HarmonyEar = api;
   if (typeof module !== "undefined" && module.exports) module.exports = api;
@@ -516,6 +544,25 @@
   function record(ok) {
     var k = histKey(), h = ST.hist[k] || []; h.push(ok ? 1 : 0); if (h.length > 10) h.shift(); ST.hist[k] = h; save(); score();
   }
+  // ---- the student's report (SiteRecord)
+  var SR_SRC = "/apps/shared/report/record.js?v=8", srWait = [];
+  function withRecord(f) {
+    if (global.SiteRecord) return f(global.SiteRecord);
+    if (typeof document === "undefined") return;
+    srWait.push(f); if (srWait.length > 1) return;
+    var sc = document.createElement("script"); sc.src = SR_SRC; sc.onload = function () { var w = srWait; srWait = []; w.forEach(function (g) { if (global.SiteRecord) g(global.SiteRecord); }); }; document.head.appendChild(sc);
+  }
+  function recordItem(ok) {
+    var c = cur, q = c.q, n = slotCount(), lv = level();
+    var given = [], want = [];
+    for (var i = 0; i < n; i++) { given.push(c.filled[i] ? label(c.filled[i], i) : "(blank)"); want.push(label(q.answer[i], i)); }
+    var secs = Math.round((Date.now() - (c.t0 || Date.now())) / 1000);
+    var prompt = ui.prompt ? ui.prompt.textContent : q.kind;
+    withRecord(function (SR) {
+      var it = SR.add("harmony-ear", { ex: "Hearing Harmony", q: { text: (ST.path === "custom" ? "Your chords" : path(ST.path).label + " " + lv.id + " · " + lv.title) + " — " + prompt }, want: want.join(" ") });
+      it.at.push([given.join(" "), ok ? 1 : 0, secs]); SR.save();
+    });
+  }
   function score() {
     var h = ST.hist[histKey()] || [], n = h.reduce(function (a, b) { return a + b; }, 0);
     ui.score.textContent = h.length ? "Last " + h.length + ": " + n + " right" + (h.length >= 10 && n >= 8 ? " · ready for the next level ✓" : "") : "No answers yet at this level.";
@@ -543,21 +590,21 @@
   var ROLE_NAME = { s: "soprano", a: "alto", t: "tenor", b: "bass" };
   function newQuestion() {
     stop();
-    var lv = level();
+    var lv = level(); micOff(); sung = [];
     var q = question(lv, ST.kind, { len: ST.len, inv: ST.inv, invDetail: ST.invDetail }, Math.random);
     var rest = restPc();
     typed = "";
     cur = { q: q, rest: rest, voiced: revoice(q, rest, ST.spacing),
-            est: establishChords(q.mode, rest), filled: [], checked: false };
+            est: establishChords(q.mode, rest), filled: [], checked: false, t0: Date.now() };
     if (q.kind === "voice") setVoiceAnswer();
-    if (ST.given === "first" && (q.kind === "rn" || q.kind === "func" || q.kind === "bass" || q.kind === "voice") && q.answer.length > 1) cur.filled[0] = q.answer[0];
+    if (ST.given === "first" && (q.kind === "rn" || q.kind === "func" || q.kind === "bass" || q.kind === "voice") && q.answer.length > 1 && !q.sing) cur.filled[0] = q.answer[0];
     if (ST.given === "first" && q.kind === "inv" && q.answer.length > 2) { cur.filled[0] = q.answer[0]; cur.filled[1] = q.answer[1]; }
     draw(); playAll(true);
   }
 
   // first = the first hearing of a new question (played slower when "First hearing" is half speed)
   function playAll(first) {
-    if (!cur) return; stop();
+    if (!cur) return; stop(); micQuiet = true;
     var seq = Promise.resolve(), hide = cur.q.kind === "next" && !cur.checked;
     if (cur.est) seq = seq.then(function () { setStatus("Tonality…"); return playChords(cur.est, { beats: 1 }); }).then(pause(600));
     cur.voiced.forEach(function (v, pi) {
@@ -576,7 +623,7 @@
       })(r);
       if (hide) seq = seq.then(function () { setStatus("What comes next?"); });
     });
-    return seq.then(function () { if (!cur.checked && !hide) setStatus(""); });
+    return seq.then(function () { setTimeout(function () { micQuiet = false; }, 300); if (!cur.checked && !hide) setStatus(""); });
   }
   function pause(ms) { return function () { return new Promise(function (r) { timers.push(setTimeout(r, ms)); }); }; }
   // notation: "off" | "after" (once answered) | "on"
@@ -638,10 +685,41 @@
     t.onclick = function () { ST.bassOnly = +ST.bassOnly ? 0 : 1; save(); drawOnes(); };
     ui.ones.firstChild.appendChild(t);
   }
+  // ---- Q2: sing the bass. PitchDetect hears the voice, Segmenter makes notes, sungFill puts them in the slots; the answer buttons stay as the fallback.
+  var micObj = null, micSeg = null, micQuiet = false, sung = [];
+  function micOff() { if (micObj && micObj.running) micObj.stop(); micObj = null; if (ui.singBtn) ui.singBtn.textContent = "🎤 Sing the bass"; }
+  function withPitch(f) {
+    if (global.PitchDetect) return f();
+    var sc = document.createElement("script"); sc.src = "/apps/shared/pitch-detect.js?v=2"; sc.onload = f; sc.onerror = function () { setStatus("The microphone code could not be loaded; use the buttons."); };
+    document.head.appendChild(sc);
+  }
+  function heard(m) {
+    if (micQuiet || !cur || cur.checked || !cur.q.sing) return;
+    sung.push(m); var f = sungFill(cur.q.answer, sung, cur.rest, cur.q.mode);
+    cur.filled = f; draw();
+    if (sung.length >= cur.q.answer.length) { micOff(); }
+  }
+  function drawSing() {
+    if (!cur.q.sing || cur.checked) { micOff(); return; }
+    var row = el("div", "he-onerow");
+    ui.singBtn = el("button", "he-one", micObj && micObj.running ? "■ Stop listening" : "🎤 Sing the bass"); ui.singBtn.type = "button";
+    ui.singBtn.title = "Sing the roots after the chords have played; the notes fill the boxes in order";
+    ui.singBtn.onclick = function () {
+      if (micObj && micObj.running) { micOff(); setStatus("Microphone off."); return; }
+      withPitch(function () {
+        micQuiet = false; sung = []; cur.filled = []; micSeg = Segmenter(heard);
+        micObj = global.PitchDetect.mic({ onFrame: function (f) { micSeg.frame(f); }, onError: function (e) { setStatus((e && e.message) || "Microphone not allowed; use the buttons."); } });
+        micObj.start().then(function () { ui.singBtn.textContent = "■ Stop listening"; setStatus("Listening: sing the bass of each chord."); },
+                            function (e) { micObj = null; setStatus((e && e.message) || "Microphone not allowed; use the buttons."); });
+      });
+    };
+    row.appendChild(ui.singBtn); row.appendChild(el("span", "he-hint", "Any octave. Wrong or missing notes show when you press Check."));
+    ui.choices.appendChild(row);
+  }
   function draw() {
     ui.slots.innerHTML = ""; ui.choices.innerHTML = ""; ui.result.textContent = "";
     var q = cur.q, n = slotCount();
-    ui.prompt.textContent = ({ rn: "Name each chord.", func: "Name each chord's function.", bass: "Name each bass note.", next: "Which chord comes next?",
+    ui.prompt.textContent = ({ rn: "Name each chord.", func: "Name each chord's function.", bass: q.sing ? "Sing the bass note of each chord (or tap the notes if the microphone is off)." : "Name each bass note.", next: "Which chord comes next?",
       change: "Did the chord change?", same: "Two progressions: the same or different?", mode: "Which tonality?",
       voice: "Follow the " + (+ST.voices === 3 ? { s: "top", a: "middle", t: "middle", b: "bass" }[ST.follow] + " voice" : ROLE_NAME[ST.follow]) + ": its note in each chord.",
       inv: "For each chord: the bass note, then " + (ST.invDetail === "member" ? "which chord member it is." : "is it the root?") })[q.kind];
@@ -652,7 +730,7 @@
       if (q.slots) { s.classList.add(q.slots[i].step === "bass" ? "he-step1" : "he-step2"); s.title = "Chord " + (q.slots[i].chord + 1) + (q.slots[i].step === "bass" ? ": bass note" : ": root or not"); }
       if (!cur.checked && i === nextEmpty()) { s.classList.add("he-next"); if (typed) s.textContent = typed + "…"; }
       if (!cur.filled[i]) s.classList.add("he-empty");
-      (function (i) { s.onclick = function () { if (cur.checked) return; if (ST.given === "first" && (q.slots ? i < 2 : i === 0) && n > 1) return; cur.filled[i] = null; draw(); }; })(i);
+      (function (i) { s.onclick = function () { if (cur.checked) return; if (ST.given === "first" && !q.sing && (q.slots ? i < 2 : i === 0) && n > 1) return; cur.filled[i] = null; draw(); }; })(i);
       if (q.slots) {   // the two steps of a chord sit together in a numbered box
         if (q.slots[i].step === "bass") { var pair = el("div", "he-pair"); pair.appendChild(el("span", "he-pairn", String(q.slots[i].chord + 1))); ui.slots.appendChild(pair); }
         ui.slots.lastChild.appendChild(s);
@@ -665,6 +743,7 @@
       b.onclick = function () { choose(c); };
       ui.choices.appendChild(b);
     });
+    drawSing();
     ui.check.disabled = cur.checked;
     drawOnes(); drawNotation();
   }
@@ -723,6 +802,7 @@
     var q = cur.q, n = slotCount(), ok = true;
     for (var i = 0; i < n; i++) if (cur.filled[i] !== q.answer[i]) ok = false;
     cur.checked = true; draw();
+    recordItem(ok);
     [].forEach.call(ui.slots.querySelectorAll(".he-slot"), function (s, i) {
       var good = cur.filled[i] === q.answer[i]; s.classList.add(good ? "he-good" : "he-bad");
       if (!good) s.textContent = (cur.filled[i] ? label(cur.filled[i], i) + " → " : "") + label(q.answer[i], i);
@@ -824,6 +904,7 @@
     var my = el("button", "he-mine", "▶ My answer"); my.type = "button"; my.title = "Hear what you have entered so far"; my.onclick = hearMine;
     [go, again, est, ui.check, st, my, ui.notaBtn].forEach(function (b) { bar.appendChild(b); });
     host.appendChild(bar);
+    withRecord(function (SR) { if (bar.isConnected) bar.appendChild(SR.button(bar)); });
     ui.status = el("div", "he-status"); ui.mode = el("div", "he-hint"); ui.prompt = el("div", "he-prompt");
     ui.slots = el("div", "he-slots"); ui.nota = el("div", "he-nota"); ui.ones = el("div", "he-ones"); ui.choices = el("div", "he-choices"); ui.result = el("div", "he-result"); ui.score = el("div", "he-hint he-score");
     ui.keys = el("div", "he-hint he-keys", "Keyboard: type the answer into the outlined box (V7, ii, bVII, viio, viih7; do so la; tonic, dom…; r or n for root or not), Enter to check, Backspace to undo, Space to hear it again.");

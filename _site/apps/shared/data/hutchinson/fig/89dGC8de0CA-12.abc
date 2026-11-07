@@ -1,0 +1,13 @@
+X:1
+T:Steven Tyler, Dream On (1973)
+%%id 89dGC8de0CA-12
+%bars ?
+%unsure last bar: only its first beat is printed
+M:C
+L:1/8
+K:Fm
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "Fm"[FA]C[FA]C "Cm/Eb"[EG]C[EG]C | "Dø7"[=DA]C[DA]C "Dbmaj7(#11)"[_DG]C[DG]C | "Fm"[FA]C[FA]C [FGB]C[FGB]C | [FAc]2 |]
+[V:2] F,,3F,, E,,3E,, | =D,,3D,, _D,,3D,, | F,,3F,, F,,3F,,/F,,/ | F,,2 |]

@@ -1,0 +1,16 @@
+X:1
+T:Diminution of the first four notes in Uranus from The Planets (Holst)
+%%id aDFGmiXnLjU-7
+%bars ?
+%unsure tubas bar 5 printed as two duplets of halves (written here as dotted quarters, same timing)
+%unsure timpani pitches in the last bar (four notes as a quadruplet) read approximately
+M:6/4
+L:1/4
+K:C
+%%score [1 2 3]
+V:1 clef=bass nm="Trumpets & Trombones"
+V:2 clef=bass nm="Tubas"
+V:3 clef=bass nm="Timpani"
+[V:1] !ff!"^mot. 1"!fermata![G,G]6 | !fermata![_E,_E]6 | !fermata![A,A]6 | !fermata![B,,B,]6- | [B,,B,]6 | z6 | z6 |]
+[V:2] z6 | z6 | z6 | z6 | !ff!z3/2 [G,,G,]3/2 "^mot. 1 (dim.)"[_E,,_E,]3/2 [A,,A,]3/2 | [B,,,B,,]6- | [B,,,B,,]3- [B,,,B,,] z z |]
+[V:3] z6 | z6 | z6 | z6 | z6 | z6 | z3 !ff!"^mot. 1 (dim.)"(4:3:4_E, G,, A,, B,,, |]

@@ -1,0 +1,15 @@
+X:1
+C:Chopin (1810-1849)
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=100
+M:3/4
+K:Eb
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+B2 | g6- | g2 (f2 g2 | f6 | e4) (B2 | g4 (5:4:5c/_d/c/=B/c/ | c'4 g2 | b6 | a4 g2) | f6 | (g4 d2) | e6 | c6 | (B2 d'2) (c'2 | baga)(cd | e6) | z2 z2 (B2 | g6 | f)(g({fg}f)=efg | f2) e4- | e(f({ef}e)def | g)=Bc(_dc)(f | =e)(ag)(_d'c'g | b6) | a4 g2 | Tf6| {=ef}g2 (g2 d2) | (e6 | c6) | [Q:1/4=96] (B2 d'2) (c'2 | .b.a.g.a({/a}c)d) | (e2 B2 g2 | e2 B2 [Q:1/4=86] g2 |[Q:1/4=92] [Ge]6) | [Q:1/4=84] [ge']6 | [G,E]6- | !fermata![G,E]6 |]
+V:2
+z2 | E,2 [G,E]2 [B,G]2 | E,2 [A,D]2 [=B,A]2 | E,2 [G,E]2 [B,G]2 | D,2 [G,E]2 [B,G]2 | C,2 [G,=E]2 [B,G]2 | C,2 [G,=E]2 [CB]2 | F,,2 [F,^C]2 [B,=E]2 | F,,2 [F,C]2 [A,F]2 | B,,2 [F,D]2 [B,A]2 | =B,,2 [G,F]2 [DG]2 | C,2 [G,E]2 [CG]2 | =A,,2 [_G,E]2 [C_G]2 | B,,2 [F,E]2 [B,EA]2 | B,,2 [F,D]2 [B,A]2 | E,,2 [G,E]2 [B,G]2 | E,2 [G,E]2 [B,G]2 | E,2 [G,E]2 [B,G]2 | E,2 [A,D]2 [=B,A]2 | E,2 [G,E]2 [B,G]2 | D,2 [G,E]2 [B,G]2 | C,2 [G,=E]2 [B,G]2 | C,2 [G,=E]2 [CB]2 | F,,2 [F,^C]2 [B,=E]2 | F,,2 [F,C]2 [A,F]2 | B,,2 [F,D]2 [B,A]2 | =B,,2 [G,F]2 [DG]2 | C,2 [G,E]2 [CG]2 | =A,,2 [_G,E]2 [C_G]2 | B,,2 [F,E]2 [B,EA]2 | B,,2 [F,D]2 [B,A]2 | E,,2 (B,2- [B,,B,-]2 | [E,B,]2 B,2- [B,,B,-]2 | [E,B,]6) | [EB]6 | [E,,B,,]6- | !fermata![E,,B,,]6 |]

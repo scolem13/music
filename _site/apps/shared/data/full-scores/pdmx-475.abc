@@ -1,0 +1,16 @@
+X:1
+C:Franz Schubert
+Z:Public Domain (PianoXML typeset) | 12 Waltzes, 17 Ländler, 9 Écossaises, Op. 18, D. 145 (1823)
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=100
+M:2/4
+K:G
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+!f! (b2{c'b} ag) | (g2{ag} fe) | .[Bd]2 .[GB]2 | [Bd]4 | (^cdef | gab=c') | (d'dd'd) | g2 z2 :: (bBbB | gBeB) | (aAaA | fAdA) | (^cdef | gab=c') | (d'dd'd) | g2 z2 :|
+V:2
+!>![G,B,D]4 | !>![G,CE]4 | .[G,B,D]2 .[G,B,]2 | !>![G,B,D]4 | [D,F,A,=C]4 | [D,G,B,]4 | [D,F,A,C]2 [D,F,A,C]2 | [G,B,]2 z2 ::[K:treble] [B,^DFA]2 [B,DFA]2 | [EG]4 | [A,^CEG]2 [A,CEG]2 | [DF]4 |[K:bass] [D,F,A,=C]4 | [D,G,B,]4 | [D,F,A,C]2 [D,F,A,C]2 | [G,B,]2 z2 :|

@@ -1,0 +1,14 @@
+X:1
+T:Beethoven, 32 Variations in C minor, WoO 80 (1806)
+%%id UoWXRlw9vBA-0
+%bars ?
+%unsure the fast runs read as 64ths after double-dotted quarters so each bar fills 3/4
+%unsure last bar: only its first beat is printed
+M:3/4
+L:1/64
+K:Cm
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "Cm"z16 c28 e4 | "G/B".d8 z8 G28 (5:4:5G=A=Bcd | "C7/Bb".=e8 z8 e28 g4 | "F/A".f8 z8 F28 cd=ef | "Ab7".^f8 z8 ^F28 (5:4:5cd_e=ef | "Cm/G"g8 z8 |]
+[V:2] [C,E,G,]48 | [=B,,D,G,]48 | [_B,,C,E,G,]48 | [=A,,C,F,]48 | [_A,,C,E,^F,]48 | [G,,C,E,G,]8 z8 |]

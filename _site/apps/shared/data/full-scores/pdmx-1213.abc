@@ -1,0 +1,24 @@
+X:1
+C:Otto Lindblad
+Z:Herman Sätherbrg
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=120
+M:4/4
+K:D
+V:1 treble-8 nm="Tenor I"
+%%MIDI program 53
+V:2 treble-8 nm="Tenor II"
+%%MIDI program 53
+V:3 bass nm="Baryton"
+%%MIDI program 53
+V:4 bass nm="Bass"
+%%MIDI program 53
+V:1
+!f!"^Tempo di marcia" d2 d2 !>!f3 e | e3/2 d/ c3/2 d/ e2 e2 | f2 f2 !>!g3 f | f3/2 e/ e3/2 e/ e2 z2 | d2 d2 !>!f3 e | e3/2 d/ c3/2 d/ e2 e2 | e2 f2 !>!f3/2 e/ A3/2 B/ | c2 B2 A2 z2 |:!p! A3/2 B/ A3/2 B/ A2 f2 | f2 (e>d) d2 c2 | A3/2 B/ A3/2 B/ A2 g2 | g2 (fe) d2 z2 | A3/2 B/ A3/2 B/ A2 f2 |!<(! e2 (fg) a2!<)! f2 |!ff! e3 e e3 e | f3/2 f/ f3/2 e/ d2 z2 :|
+V:2
+!f! A2 A2 !>!d3 d | c3/2 B/ A3/2 B/ c2 c2 | d2 d2 !>!d3 d | d3/2 d/ d3/2 d/ c2 z2 | A2 A2 !>!d3 d | c3/2 B/ A3/2 B/ c2 c2 | B2 B2 !>!A3/2 A/ A3/2 A/ | A2 ^G2 A2 z2 |:!p! .F .F .F .F F2 A2 | A2 A2 A2 A2 | .G .G .G .G G2 E2 | c2 (dA) A2 z2 | .F .F .F .F F2 A2 |!<(! c2 (de) f2!<)! d2 | !ff! d3 d d3 d | d3/2 d/ c3/2 c/ d2 z2 :|
+V:3
+!f!!f! F,2 F,2 !>!^G,3 G, | A,3/2 A,/ A,3/2 A,/ A,2 A,2 | A,2 A,2 !>!B,3 A, | B,3/2 B,/ B,3/2 B,/ A,2 z2 | F,2 F,2 !>!^G,3 G, | A,3/2 A,/ A,3/2 A,/ A,2 A,2 | ^G,2 G,2 !>!A,3/2 A,/ F,3/2 F,/ | E,2 D,2 C,2 z2 |:!p!!p! .D, .D, .D, .D, D,2 D,2 | D,2 ((G,>F,)) G,2 G,2 | .E, .E, .E, .E, E,2 A,2 | A,2 ((A,G,)) F,2 z2 | .D, .D, .D, .D, D,2 D,2 | !<(!!<(! A,2 A,2 A,2!<)!!<)! A,2 |!ff! B,3 B, B,3 B, | A,3/2 A,/ G,3/2 G,/ F,2 z2 :|
+V:4
+!f!!f! D,2 D,2 !>!B,,3 B,, | A,,3/2 A,,/ A,,3/2 A,,/ A,,2 A,,2 | D,2 D,2 !>!D,3 D, | G,3/2 G,/ ^G,3/2 G,/ A,2 z2 | D,2 D,2 !>!B,,3 B,, | A,,3/2 A,,/ A,,3/2 A,,/ A,,2 A,,2 | E,2 D,2 !>!C,3/2 C,/ D,3/2 D,/ | E,2 E,2 A,,2 z2 |:!p!!p! .D, .A,, .D, .A,, D,2 D,2 | D,2 ((C,>D,)) E,2 E,2 | .E, .A,, .E, .A,, C,2 C,2 | E,2 ((D,C,)) D,2 z2 | .D, .A,, .D, .A,, D,2 D,2 |!<(!!<(! G,2 F,>E, D,2!<)!!<)! D,2 |!ff! G,3 G, ^G,3 G, | A,3/2 A,/ A,,3/2 A,,/ D,2 z2 :|

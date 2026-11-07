@@ -1,0 +1,25 @@
+X:1
+C:Fanny Hensel, get. Mendelssohn-Bartholdy (1805–1847), 1846
+Z:Joseph von Eichendorff (1788–1857)
+Z:gemeinfrei; MuseScore-Notensatz © (wo anwendbar) 2017 mirabilos Ⓕ The MirOS Licence
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=80
+M:4/4
+K:C
+V:1 treble nm="Sopran" snm="S."
+%%MIDI program 52
+V:2 treble nm="Alt" snm="A."
+%%MIDI program 52
+V:3 treble-8 nm="Tenor" snm="T."
+%%MIDI program 52
+V:4 bass nm="Baß" snm="B."
+%%MIDI program 52
+V:1
+"^Andante"!p! c3 B A2 E2 | F2 A2 E4 |!<(! F2 F2 E2 ^D2!<)! | A4 ^G2 z2 |!p! c3 B A2 E2 | F2 ^F2 G4 |"_cresc." G2 c2 B2 c2 |!>(! (e3 d) c2!>)! z2 |!p! c3 B B2 ^A2 | z8 | ^A2 A2 e2 ^d2 | z4 B2 B2 | e2 d2 c2 A2 | F2 D2 A2 A2 | A4 ^G2 z2 | c3 B A2 E2 | F2 A2 E4 | F2 F2 E2 ^D2 | (c4 ^G4) | A4 z4 |!<(! ^c2 c2 c3 B!<)! |!>(! A2 =F2 E4!>)! | F2 E2 F2 E2 | A4 ^G2 z2 | !pp!!<(! c2 c2 c3 B!<)! |!>(! A2 F2 E4!>)! | F2 E2 B2 cA | !fermata!^d4 !fermata!e4 | !f! f3 e =d2 c2 | B2 A2 ^G2 z2 |!>(! f2 e2 d2 c2!>)! | !fermata!c4 !fermata!B4 |!p! c3 B A2 E2 | F2 A2 A2 E2 |!>(! c3 B A2 F2!>)! | (^D4 E2) ^G2 | A4 z4 |]
+V:2
+!p! c3 B A2 C2 | D2 B,2 C4 |!<(! C2 C2 B,2 A,2!<)! | ^D4 E2 z2 |!p! c3 B A2 C2 | C2 C2 D4 | "_cresc." E2 C2 F2 F2 |!>(! F4 E2!>)! z2 | z8 |!p! E3 ^D D2 E2 | z8 | ^F2 F2 G2 F2 | z8 | z4 B,2 C2 | E4 E2 z2 | c3 B A2 C2 | D2 B,2 C4 | z8 | z4 B,4 | C2 z2 z4 |!<(! E2 ^E2 ^F3 F!<)! | !>(! ^F2 =F2 E4!>)! | D2 ^C2 D2 C2 | D4 D2 z2 |!pp!!<(! E2 E2 F3 F!<)! |!>(! F2 F2 E4!>)! | D2 C2 D2 ^D2 | !fermata!A4 !fermata!^G4 | z8 |!f! F3 E D2 C2 |!>(! (B,3 C) D2 E2!>)! | !fermata!D4 !fermata!D4 |!p! c3 B A2 C2 | D2 B,2 C2 C2 | z8 | z4 D4 | C4 z4 |]
+V:3
+!p! c3 B A2 A2 | D2 F2 A4 |!<(! A2 A2 G2 A2!<)! | c4 B2 z2 |!p! c3 B A2 A2 | C2 _E2 D4 | "_cresc." G2 G2 ^G2 A2 |!>(! B4 =G2!>)! z2 | z8 |!p! G3 ^F F2 G2 | z8 | ^d2 d2 e2 d2 | z4 e2 c2 | A2 F2 F2 ^F2 | c4 B2 z2 | c3 B A2 A2 | D2 F2 A4 | z8 | z4 B4 | A2 z2 z4 |!<(! ^c2 c2 d3 d!<)! | !>(! d2 d2 ^c4!>)! | B2 ^c2 B2 c2 | B4 B2 z2 |!pp!!<(! =c2 c2 d3 d!<)! |!>(! d2 d2 c4!>)! | B2 c2 ^G2 A2 | !fermata!c4 !fermata!B4 | z8 |!f! d3 c B2 A2 |!>(! (^G3 A) B2 c2!>)! | !fermata!d4 !fermata!d4 |!p! c3 B A2 A2 | D2 F2 E2 A2 | z8 | z4 B4 | A4 z4 |]
+V:4
+!p! C3 B, A,2 A,,2 | A,,2 A,,2 A,,4 |!<(! A,2 A,2 G,2 F,2!<)! | E,4 E,2 z2 |!p! C3 B, A,2 A,,2 | A,,2 A,,2 B,,4 |"_cresc." C,2 E,2 D,2 C,2 |!>(! G,,4 C,2!>)! z2 | z8 |!p! C,3 C, C,2 C,2 | z8 | B,2 B,2 B,2 B,2 | z8 | z4 D,2 ^D,2 | E,4 E,2 z2 | C3 B, A,2 A,,2 | A,,2 A,,2 A,,4 | z8 | z4 E,4 | A,,2 z2 z4 |!<(! A,2 A,2 A,3 A,!<)! |!>(! A,2 A,2 A,4!>)! | ^G,2 A,2 G,2 A,2 | F,4 E,2 z2 | !pp!!<(! A,2 A,2 A,3 A,!<)! |!>(! A,2 A,2 A,4!>)! | ^G,2 A,2 F,2 F,2 | !fermata!E,4 !fermata!E,4 | z8 | z8 |!f!!>(! (D3 C) B,2 A,2!>)! | !fermata!^G,4 !fermata!G,4 |!p! C3 B, A,2 A,,2 | A,,2 A,,2 A,,2 A,,2 | z8 | z4 E,4 | A,,4 z4 |]

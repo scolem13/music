@@ -1,0 +1,24 @@
+X:1
+C:Scott Joplin
+Z:Public Domain
+%%score { ( 1 4 ) | ( 2 3 ) }
+L:1/8
+Q:1/4=80
+M:2/4
+K:G
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:4 treble 
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:3 bass 
+%%MIDI program 0
+V:1
+"^Tempo di Marcia." d>A d/e/d | GA/B/- B/D/G/B/ | [GBd]2 [^GBd][GBd] | [Acd]2 !>![dfad'] z |: !mf! [GB]/d/B/G/- G/d/B/G/ | F/G/^G/A/- A2 | B/d/B/G/- G/d/B/G/ | F/G/^G/A/- A[CDF] | [B,DG]>D (C/B,/A,/D/) | [B,DG]>D (B,/A,/G,/B,/) | (C/^D/F/A/) (G/F/E) | (=F/^G/B/d/) (c/B/A) | [eg]/[df][ce]/- [ce]/[Bd]/[Ac] | [GB]G/[GBe]/- [GBe]/d/[GB] | [Fc]F/[Fce]/- [Fce]/d/[Fc] | [GB]G/[GBe]/- [GBe]/d/[GB] | [eg]/[df][ce]/- [ce]/[Bd]/[Ac] | [GB]G/[GBe]/- [GBe]/d/[GB] | [Fc]F/[Fd]/- [Fd]/c/F |1 G2 dc :|2 G2- G/[Bb]/[cc']/[^c^c']/ |: !f! [dfd']>[^c^c'] [dfd']/[ee']/[dfd'] | [cfc']>[Bb] [cfc']/[dd']/[cfc'] | [Bgb][^A^a]/[Bgb]/- [Bgb]/(e/f/g/) | [Bd]2- [Bd]/[dd'][ee']/ | [cfc'][Bb]/[cfc']/- [cfc']/(f/g/a/) | [cd]2- [cd]/[cc'][dd']/ | [Bgb][^A^a]/[Bgb]/- [Bgb]/(e/f/g/) | [Bd]2- [Bd]/[Bb]/[cc']/[^c^c']/ | [dfd']>[^c^c'] [dfd']/[ee']/[dfd'] | [cfc']>[Bb] [cfc']/[dd']/[cfc'] | [Bgb][^A^a]/[Bb]/- [Bb]/[=f=f']/[ee']/[dd']/ | [cc']2- [cc'][Gg]/[Aa]/ | [_B_b]>[Aa] [Gg]/[Aa]/[Bb] | [=B=b]>[Aa] [Gg]/[Aa]/[Bb] | [cc']/[Aa]/[Bb]/[cc']/- [cc']/[ee']/[dd'] |1 [GBg]2- [GBg]/[Bb]/[cc']/[^c^c']/ :|2 [GBg]2 !^![GBg][=FB=f] |:[K:C]!p! [Ece]>[^D^d] [Ece]2 | [Geg]>[^F^d^f] [Geg]2 | [cc']/b/a/[ff']/- [ff']/[gg']/[ff'] | [ege']2 [dfd']2 | [Ece]>[^D^d]!<(! [Ee]2!<)! | !<(! [GBg]>[^F^f]!<)! [GBg]2 |!mf! ^f/e/d/c'/- c'/b/a | g2!>(! [GBg][=FB=f]!>)! | !p! [Ece]>[^D^d] [Ece]2 | [Geg]>[^F^d^f] [Geg]2 | [cc']/b/a/[ff']/- [ff']/[gg']/[ff'] | [ege']2!<(! [ege'][dfd']!<)! |!f! [cec']>[Aa] [Gg]/[Ff]/[Ee] | [cec']>[Aa] [Gg]/[Ff]/[Ee] | [ege']/[dfd']/[cec']/[dd']/- [dd']/[ff']/[gg'] |1 [cc']2 !^![GBg][FBf] :|2 [cc']2 !^![cec'] e/c/ |:!f! [^A^c]/[Bd][GB]/- [GB]2 | z/ e/f/g/ [gb]/[fa][df]/ | [^d^f]/[eg][ce]/- [ce]2 | z/ ^d/e/g/ [ec']/[eg][ce]/ | g/f'/^c'/d'/- d'/b/a/g/ | [df]4 | e/d'/b/c'/- c'/a/g/f/ | [ce]3 [ce]/[Ac]/ | [^A^c]/[Bd][GB]/- [GB]2 | z/ e/f/g/ [gb]/[fa][df]/ | [^d^f]/[eg][ce]/- [ce]2 | z/ ^d/e/g/ [ec']/[eg]/[ce] | [^FA^d]2 [Ge]2 | [EG^c]2 [Fd]2 | [^DA]2 G/c/e |1 [^Fce][=FBd] [Ec][Ac] :|2 [^Fce][=FBd] [Ec]2 |]
+V:2
+D>A, D/E/D | G,A,/B,/- B,/D,/G,/B,/ | D/(D,/^D,/E,/) ^E,E, | F,2 !>![D,,D,][D,,D,] |: [G,,G,][D,G,B,] [B,,B,][D,D] | [A,,A,][D,F,C] [F,,F,][D,,D,] | [G,,G,][D,G,B,] [B,,B,][D,D] | [A,,A,][D,F,C] [F,,F,][D,,D,] | [G,,G,]>D, (C,/B,,/A,,/D,/) | [G,,G,]>D, (B,,/A,,/G,,/D,/) | (^D,/F,/A,/C/) (B,/A,/G,) | (^G,/B,/D/=F/) (E/D/C) | C,[E,A,C] D,[F,A,C] | G,,[D,G,B,] D,,[D,G,B,] | A,,[D,F,C] D,,[D,F,C] | G,,[D,G,B,] D,[G,B,] | C,[E,A,C] D,[F,A,C] | G,,[D,G,B,] D,,[D,G,B,] | A,,[D,F,C] D,,[D,A,C] |1 G,,[D,G,B,] [A,,A,][D,,D,] :|2 G,,[D,G,B,][D,G,B,] z |: A,,[D,F,C] D,,[D,F,C] | A,,[D,F,C] D,,[D,F,C] | G,,[D,G,B,] D,,[D,G,B,] | G,,[D,G,B,] D,,[D,G,B,] | A,,[D,F,C] D,,[D,F,C] | A,,[D,F,C] D,,[D,F,C] | G,,[D,G,B,] D,,[D,G,B,] | G,,[D,G,B,][D,G,B,] z | A,,[D,F,C] D,,[D,F,C] | A,,[D,F,C] D,,[D,F,C] | G,,[D,G,B,] ^G,,[E,B,D] | A,,[E,A,C] [E,,E,][E,A,C] | [_E,,_E,][G,_B,^C] [E,,E,][G,B,C] | [D,,D,][G,=B,D] B,,[G,B,D] | A,,[D,F,C] D,,[D,F,C] |1 G,,[D,G,B,][D,G,B,] z :|2 G,,[D,G,B,] !^![G,,G,]2 |:[K:C] C,[E,G,C] G,,[E,G,C] | [C,,C,][G,,G,][C,C][_B,,_B,] | A,,[A,CF] _A,,[_A,CF] | G,,[G,CE] [G,B,F][G,,G,] | C,[E,G,C] ^C,[E,G,^A,] | D,[G,B,] B,,[D,G,B,] | A,,[D,^F,C] D,,[D,F,C] | [G,B,]2 [G,,G,]2 | C,[E,G,C] G,,[E,G,C] | [C,,C,][G,,G,][C,C][_B,,_B,] | A,,[A,CF] _A,,[_A,CF] | [G,,G,][G,CE] [G,,G,][^G,,^G,] | [A,,A,]>[F,,F,] [E,,E,]/[D,,D,]/[C,,C,] | [A,,A,]>[F,,F,] [E,,E,]/[D,,D,]/[C,,C,] | [G,,G,][G,CE] [G,,G,][G,B,F] |1 [CE]2 !^![G,,G,]2 :|2 [CE][G,,G,] !^![C,,C,] z |: G,,[F,G,B,] D,[F,G,B,] | G,,[F,G,B,] D,[F,G,B,] | C,[E,G,C] G,,[E,G,C] | C,[E,G,C] G,,[E,G,C] | D,[F,G,B,] B,,[F,G,B,] | G,,4 | C,[E,G,C] G,,[E,G,C] | C,4 | G,,[F,G,B,] D,[F,G,B,] | G,,[F,G,B,] D,[F,G,B,] | C,[E,G,C] G,,[E,G,C] | C,[E,G,C] E,G, | C2 (B,E) | _B,2 (A,D) | [^F,C]2 [G,C]2 |1 [D,,D,][G,,G,] [C,,C,] z :|2 [D,,D,][G,,G,] [C,,C,]2 |]
+V:3
+x4 | x4 | x4 | x4 |: x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | C,2 D,2 | x4 | x4 | G,,2 D,2 | C,2 D,2 | x4 | x4 |1 x4 :|2 G,,3 x |: x4 | x4 | x4 | x4 | x4 | x4 | x4 | G,,3 x | x4 | x4 | G,,2 ^G,,2 | x4 | x4 | x4 | x4 |1 G,,3 x :|2 x4 |:[K:C] x4 | x4 | [A,,A,]2 [_A,,_A,]2 | [G,,G,]2 x2 | C,2 ^C,2 | D,2 B,,2 | x4 | x4 | x4 | x4 | [A,,A,]2 [_A,,_A,]2 | x4 | x4 | x4 | x4 |1 x4 :|2 x4 |: x4 | x4 | x4 | x4 | x4 | z/ (G,/A,/^A,/ B,/=A,/G,) | x4 | z/ (G,/A,/B,/ C/A,/G,) | x4 | x4 | x4 | x4 | x4 | x4 | x4 |1 x4 :|2 x4 |]
+V:4
+x4 | x4 | x4 | x4 |: x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 |1 x2 F2 :|2 x4 |: x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 |1 x4 :|2 x4 |:[K:C] x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 |1 x4 :|2 x4 |: x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x2 E2 |1 x4 :|2 x4 |]

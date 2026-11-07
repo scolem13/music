@@ -1,0 +1,13 @@
+X:1
+T:Mozart, Ave Verum Corpus, K. 618
+%%id 1Qxrru15jfo-113
+%bars ?
+%unsure many inner pitches (piano reduction, read approximately from the image): the rhythm is reliable, individual chord notes may be a step off
+M:C|
+L:1/4
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+K:D
+[V:1] [DF]3 [FA] | [FA] [CE] [B,D] [GB] | [GB]3 [GB] | [GB] [FA] [CE] [Ad] | [FA]4- | [FA] G [FA] [Ed] | "D/A"[DF]2 "A"[CE]3/2 F/ | "G/B"[DG]2 G2 |]
+[V:2] [B,,A,]2 [B,,F,]2 | [G,B,]3 [G,B,] | [G,B,] [F,A,] [E,G,] [A,C] | [A,D]3 [A,D] | [A,C] [G,B,] [F,A,] [B,D] | [A,D]2 A, [^G,D] | A,3 A, | [G,,B,,]2 z2 |]

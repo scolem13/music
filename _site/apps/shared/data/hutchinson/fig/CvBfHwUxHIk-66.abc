@@ -1,0 +1,14 @@
+X:1
+T:Christopher Stewart, Terius Nash, Kuk Harrell, Shawn Carter, Umbrella (2007)
+%%id CvBfHwUxHIk-66
+%bars ?
+M:4/4
+L:1/16
+%%score 1 {2 | 3}
+V:1 clef=treble nm="Voice"
+V:2 clef=treble
+V:3 clef=bass
+K:Db
+[V:1] "Gb"z4 G2GG G2G2 G2AA | "Db"F4 F2F2 F2F2 F2GF | "Ab"E4 EDE2 EDE2 F2DD | "Bbm"E4 DB,D2 DB,D2 E2DD |]
+[V:2] [B,DG]16 | [A,DF]16 | [A,CE]16 | [F,B,D]16 |]
+[V:3] G,,16 | D,,16 | A,,16 | B,,16 |]

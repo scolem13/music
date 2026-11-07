@@ -1,0 +1,24 @@
+X:1
+C:Joseph Haydn
+Z:Public Domain
+%%score { ( 1 4 ) | ( 2 3 ) }
+L:1/8
+Q:1/4=116
+M:3/4
+K:F
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:4 treble 
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:3 bass 
+%%MIDI program 0
+V:1
+AB | c2 c2 c2 | c3 (faf) | fedc B2 | Bc/B/ c/B/A/B/ A2 | (AG)(BA)(cB) | (^cd=cBAG) | F4 AG | F2 z2 :: (AG) | G4 (BA) | A4 (c=B) | (=Bd)(fd)(Bd) | c3!f! _BAB | c2 c2 c2 |!f! c3 (faf) | fedc B2 | Bc/B/ c/B/A/B/ A2 | (AG)(BA)(cB) | (^cd=cBAG) | F4 AG | F2 z2 :|
+V:2
+z2 | F,2 F,2 F,2 | F,2 F,2 F,2 | G,2 G,2 G,2 | [E,C]4 [F,C]2 | [B,D]6- | [B,D]4 [B,,B,]2 | [C,A,]4 [C,B,]2 | [F,A,]2 F,,2 :: z2 | C,2 C2 z2 | C,2 C2 z2 | C,2 C,2 C,2 | C,2 z2 z2 | F,2 F,2 F,2 | F,2 F,2 F,2 | G,2 G,2 G,2 | [E,C]4 [F,C]2 | [B,D]6- | [B,D]4 [B,,B,]2 | [C,A,]4 [C,B,]2 | [F,A,]2 F,,2 :|
+V:3
+x2 | A,CA,CA,C | A,CA,CA,C | B,CB,CB,C | x6 | x6 | x6 | x6 | x4 :: x2 | x6 | x6 | [D,F,]2 [D,F,]2 [D,F,]2 | E,2 x2 x2 | A,CA,CA,C | A,CA,CA,C | B,CB,CB,C | x6 | x6 | x6 | x6 | x4 :|
+V:4
+x2 | x6 | x6 | x6 | G4 F2 | x6 | x6 | x4 E2 | x4 :: FE | E4 GF | F4 x2 | x6 | x6 | x6 | x6 | x6 | G4 F2 | x6 | x6 | x4 E2 | x4 :|

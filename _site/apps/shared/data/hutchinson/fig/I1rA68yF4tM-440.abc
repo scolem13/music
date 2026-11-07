@@ -1,0 +1,15 @@
+X:1
+T:Beethoven, Symphony No. 1, I, development of motive 1
+%%id I1rA68yF4tM-440
+%bars ?
+%unsure exact chord tones of the dense treble chords, read partly from the falling-fifth sequence (C7 F | D7 | G E7 | Am F7 | Bb G7 | C A7 | Dm C7 | F D7 | G)
+%unsure bars 8-10 are printed under 8va; written here at sounding pitch (an octave up)
+%unsure last bar: only its first beat is printed
+M:C|
+L:1/16
+K:C
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] !p![CG_Be]16 | ([FAcf]16 | [DAc^f]16) | ([GBdg]8 [EBd^g]8 | [Acea]8) [FAc_ea]8 | [_Bdf_b]8 [Gdf=b]8 | [cegc']8 [A^ceg]8 | [dfad']8 !ff![cg_be']8 | [fac'f']8 [dac'^f']8 | [gbd'g']4 |]
+[V:2] z8 z4 !p!(c_BAG) | F,4 z4 z8 | z8 z4 (dcBA) | G,4 z4 z4 (E,D,C,B,,) | A,,4 z4 z4 (F_EDC) | _B,4 z4 z4 (G,F,E,D,) | C,4 z4 z4 (A,G,F,E,) | D,4 z4 z4 !ff!(c_BAG) | F,4 (A,G,F,E,) D,4 (D,C,B,,A,,) | G,,2 G,2 |]

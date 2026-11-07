@@ -1,0 +1,12 @@
+X:1
+T:Ryan Tedder, Secrets (2009)
+%%id qHm9MG9xw1o-8
+%bars ?
+M:4/4
+L:1/16
+K:D
+%%score (1 2)
+V:1 clef=bass
+V:2 clef=bass
+[V:1] "D"D,F,A,F, A,F,D,F, D,F,A,F, A,F,D,F, | "F#m/C#"C,F,A,F, A,F,C,F, C,F,A,F, A,F,C,F, | "Bm"B,,D,B,D, B,D,B,,D, B,,D,B,D, B,D,B,,D, | "G"B,,D,B,D, B,D,B,,D, B,,D,G,D, G,D,B,,D, |]
+[V:2] D,,4 z4 z8 | C,,4 z4 z8 | B,,,4 z4 z8 | G,,,4 z4 z8 |]

@@ -1,0 +1,15 @@
+X:1
+T:Francis Scott Key and John Stafford Smith, Star-Spangled Banner
+%%id LGvW6jHUHiY-77
+%bars ?
+%unsure the E-flats printed in parentheses (optional / passing notes) are written as ordinary notes
+M:3/4
+L:1/8
+K:Bb
+%%score 1 {2 | 3}
+V:1 clef=treble nm="Voice"
+V:2 clef=treble nm="Piano"
+V:3 clef=bass
+[V:1] "F"FF | "Bb/D"(B3 c) "F"d "Bb"e | "Bb/D"f4 "Gm"B "Cø7/Gb"c | "Bb/F"d3 e "F7"c2 | "Bb"B4 |]
+[V:2] FF | [FB]3 [FAc] [FBd][FBe] | [FBf]4 [DGB][EBc] | [FBd]3 [FBe] [EAc]2 | [DFB]4 |]
+[V:3] [F,,F,][E,,E,] | [D,,D,]3 [F,,,F,,] [B,,,B,,][E,,E,] | [D,,D,]4 [G,,G,][_G,,_G,] | [F,,F,]3 [F,,,F,,] [F,,,F,,]2 | [B,,,B,,]4 |]

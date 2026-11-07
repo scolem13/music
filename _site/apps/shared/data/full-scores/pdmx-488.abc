@@ -1,0 +1,10 @@
+X:1
+C:Tom Delaney
+C:1921
+L:1/8
+M:4/4
+K:Eb
+V:1 treble nm="P1"
+%%MIDI program 0
+V:1
+"Eb" G^FGB cBGE | G A2 B3 B,2 | G^FGA B=AB=B |"F7" c F2"Bb7" F F2 B,B, |"Eb" G^FGB cBGE | G A2 B3 cd |"Eb""^Break 1 Bar" e=BcB _BGFE |"Bb7" F G2 E3 B,2&x4"Eb"x4 ||"Eb""^A" G^FGB cBGE | G A2 B3 B,2 | G^FGA B=AB=B |"F7" c"Bb" F2 F3 B,B, |"Eb" G^FGB cBGE | G A2 B3 cd | "Eb" e"^Break 1 Bar"=Bc_c _BGFE |"Bb7" F G2"Eb" E3 z2 ||"Bb7""^B" B B2 B- BF B2 | "Bbdim" B B2 B- BG B2 |"Bb7" d2 _d2"Bbdim" c2 B2 |"Bb7" B4 z2"^G7" =B2 |:"C7""^C" z2 c3 G- G2 | z =B cB cBcB |"F7" c3 F- F4 | c3 F- F2 F2 |"Bb7" BBcF BBcF |"Bb7" B c2 B- BBc"^Break 1 Bar"d | "Eb" e2 cB cB G2 | E"Eb7" G2 B"D7" B=A"Db7"B=B |"C7" c3 G- G4 |"C7" z =B cB cBcB |"F7" c3 F- F4 | c3 F- F2 z2 |"Eb" z G GG G4 |"G7" z G GG G4 |"Cm" GFGF GFGF |"C7" B B2 B- B=AB=B | "F7" c2 c2 c2 c2 |"Bb7" c d2 c- c2 B2 |"Eb""Ab7" e8- |"Eb" e4"D7" z2"Db7""_Solos at \"C\"" =B2 | z8 |]

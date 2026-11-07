@@ -1,0 +1,17 @@
+X:1
+T:Henry Purcell, Dido and Aeneas, Z. 636, When I am laid in earth (1689)
+%%id s-F19lgB0Ow-101
+%bars ?
+%unsure last bar: only the whole note is printed (bar not complete)
+M:3/2
+L:1/4
+K:Gm
+%%score 1 {(2 3) | 4}
+V:1 clef=treble nm="Voice"
+V:2 clef=treble nm="Piano"
+V:3 clef=treble
+V:4 clef=bass
+[V:1] "Gm"G2 A2 B2 | "D7/F#"(B2 A2) "G7/F"=B2 | "C/E"(c3/2 B/ A3/2 G/) "Cm/Eb"(^F3/2 G/) | "D7"^F4 |]
+[V:2] !pp![G,B,D]4 [B,D]2 | [CD]4 D2- | D2 C4 | [CD]4 |]
+[V:3] x6 | x6 | G4 C2 | x4 |]
+[V:4] G,,4 G,2 | [^F,A,]4 [=F,G,]2 | [=E,G,]4 [_E,G,]2 | [D,A,]4 |]

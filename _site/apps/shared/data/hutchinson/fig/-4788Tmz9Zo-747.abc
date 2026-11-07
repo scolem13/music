@@ -1,0 +1,13 @@
+X:1
+T:Beethoven, Symphony No. 7, Op. 92, I (1812)
+%%id -4788Tmz9Zo-747
+%bars ?
+%unsure left-hand rhythm of bars 1-4 (dotted-eighth figures) and the inner chord tones of bar 5; last bar partial (only its first chord is printed)
+M:6/8
+L:1/16
+K:A
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "A"!ff![ac']c[ac']c[ac']c [ac']c[ac']c[ac']c | [ac']c[ac']c[ac']c [ac']c[ac']c[ac']c | "Bm7/D"[fab]B[fab]B[fab]B [fab]B[fab]B[fab]B | [fab]B[fab]B[fab]B [fab]B[fab]B[fab]B | "Bb/D"!pp![_B_b]6 =f6 | "E7"^G6 !crescendo(!e2 fgab!crescendo)! | "A"!ff!c'2 |]
+[V:2] [A,,,A,,]3A,E,2 C,3C,A,,2 | E,,3E,,C,,2 [A,,,A,,]2 z[A,C][A,C]2 | [D,B,]3B,A,2 F,3F,D,2 | A,,3A,,F,,2 D,,2 z[A,B,][A,B,]2 | [D,=F,]_B,[D,F,]B,[D,F,]B, [D,F,]B,[D,F,]B,[D,F,]B, | [E,=B,]D[E,B,]D[E,B,]D [E,B,]DE,DCB, | [A,,A,]2 |]

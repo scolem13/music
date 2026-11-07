@@ -1,9 +1,9 @@
 // brass-page.js — the interactive parts of lessons/brass-fingerings.qmd. Needs BrassChart (brass-chart.js) and ABCJS (abcjs-basic.js, loaded by the page).
 //   BrassPage.sound()           -> Promise { ac, out }   one AudioContext for the page, registered with AudioTap
-//   BrassPage.explorer(el)      pick trumpet or tuba and a note: staff, valves, alternates, Hear
+//   BrassPage.explorer(el)      pick an instrument (trumpet, baritone/euphonium, tuba; bass or treble clef) and a note: staff, valves, alternates, Hear
 //   BrassPage.builder(el)       press valves: every note that combination plays; and a quiz: which valves for this note?
 //   BrassPage.chartTable(el)    the printed chart redrawn: rows = the chart's partials, columns = valve combinations
-// The display controls (instrument, staff on/off, letter names on/off, trumpet concert/written) are shared by every widget on the page.
+// The display controls (instrument, staff on/off, letter names on/off, concert/written for treble-clef and trumpet readings) are shared by every widget on the page.
 (function (global) {
   "use strict";
   var C = global.BrassChart, snd = null;
@@ -23,7 +23,10 @@
     return sound().then(function (s) { var t = s.ac.currentTime + 0.05; written.forEach(function (m, i) { C.tone(s.ac, s.out, m + tr, t + i * step, step * 0.95); }); });
   }
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
-  function shown(m) { return S.inst === "trumpet" && S.concert ? m - 2 : m; }   // the pitch the staff and letters show
+  function inst() { return C.INSTRUMENTS[S.inst]; }
+  function transposing() { return inst().transpose !== 0; }
+  function shown(m) { return transposing() && S.concert ? m + inst().transpose : m; }   // the pitch the staff and letters show
+  function clefNow() { var I = inst(); return transposing() && S.concert ? I.concertClef : I.clef; }
   function label(m) { return C.both(shown(m)); }
   function letter(m) { return label(m).replace(/\d+/g, ""); }
   function abcNote(m, how) {
@@ -38,7 +41,7 @@
     if (!global.ABCJS || !S.staff || !notes.length) return;
     var abc = [];
     notes.forEach(function (m) { m = shown(m); var pc = ((m % 12) + 12) % 12; if ([1, 3, 6, 8, 10].indexOf(pc) >= 0) { abc.push(abcNote(m, "sharp")); abc.push(abcNote(m, "flat")); } else abc.push(abcNote(m)); });
-    ABCJS.renderAbc(box, "X:1\nL:1/1\nK:C clef=" + (S.inst === "tuba" ? "bass" : "treble") + "\n" + abc.join(" ") + "|]", { staffwidth: w || Math.max(90, abc.length * 42 + 30), paddingtop: 0, paddingbottom: 0, paddingleft: 0, paddingright: 0, scale: 0.9, add_classes: false });
+    ABCJS.renderAbc(box, "X:1\nL:1/1\nK:C clef=" + clefNow() + "\n" + abc.join(" ") + "|]", { staffwidth: w || Math.max(90, abc.length * 42 + 30), paddingtop: 0, paddingbottom: 0, paddingleft: 0, paddingright: 0, scale: 0.9, add_classes: false });
   }
   function save() { try { localStorage.setItem("brass-page", JSON.stringify({ staff: S.staff, names: S.names })); } catch (e) {} }
   function rerender() { renders.forEach(function (f) { f(); }); bars.forEach(function (b) { b.sync(); }); }
@@ -47,15 +50,15 @@
   function controls(opts) {
     var bar = el("div", "brp-bar"), sel = el("select", "form-select form-select-sm brp-inst");
     sel.setAttribute("aria-label", "Instrument");
-    Object.keys(C.INSTRUMENTS).forEach(function (k) { var o = el("option", null, k === "trumpet" ? "Trumpet (B♭)" : "Tuba (B♭, concert pitch)"); o.value = k; sel.appendChild(o); });
+    Object.keys(C.INSTRUMENTS).forEach(function (k) { var o = el("option", null, C.INSTRUMENTS[k].option); o.value = k; sel.appendChild(o); });
     function box(txt, key) { var l = el("label", "brp-chk"), c = el("input"); c.type = "checkbox"; l.appendChild(c); l.appendChild(document.createTextNode(" " + txt)); c.onchange = function () { S[key] = c.checked; save(); rerender(); }; return { l: l, c: c }; }
     var st = box("Show staff", "staff"), nm = box("Show letter names", "names");
     var pitch = el("select", "form-select form-select-sm brp-pitch"); pitch.setAttribute("aria-label", "Written or concert pitch");
     [["written", "Written pitch (what the player reads)"], ["concert", "Concert pitch (what you hear)"]].forEach(function (p) { var o = el("option", null, p[1]); o.value = p[0]; pitch.appendChild(o); });
-    sel.onchange = function () { S.inst = sel.value; if (S.inst === "tuba") S.concert = false; rerender(); };
+    sel.onchange = function () { S.inst = sel.value; if (!transposing()) S.concert = false; rerender(); };
     pitch.onchange = function () { S.concert = pitch.value === "concert"; rerender(); };
     bar.appendChild(sel); bar.appendChild(st.l); bar.appendChild(nm.l); bar.appendChild(pitch);
-    bar.sync = function () { sel.value = S.inst; st.c.checked = S.staff; nm.c.checked = S.names; pitch.value = S.concert ? "concert" : "written"; pitch.hidden = S.inst !== "trumpet"; };
+    bar.sync = function () { sel.value = S.inst; st.c.checked = S.staff; nm.c.checked = S.names; pitch.value = S.concert ? "concert" : "written"; pitch.hidden = !transposing(); };
     bars.push(bar); bar.sync(); return bar;
   }
 
@@ -68,8 +71,8 @@
   function explorer(root) {
     root.appendChild(controls());
     var strip = el("div", "brp-strip"), card = el("div", "brp-card"); root.appendChild(strip); root.appendChild(card);
-    var cur = { trumpet: 67, tuba: 41 }, revealed = false;
-    function groups() { return S.inst === "trumpet" ? [["Low", 54, 66], ["Middle", 67, 78], ["High", 79, 84]] : [["Pedal-to-low", 28, 40], ["Middle", 41, 53]]; }
+    var cur = { trumpet: 67, euph: 53, euphtc: 67, tuba: 41, tubaeb: 34, tubatc: 67 }, revealed = false;
+    function groups() { return inst().groups; }
     function draw() {
       var I = C.INSTRUMENTS[S.inst]; strip.innerHTML = "";
       groups().forEach(function (g) {
@@ -89,8 +92,8 @@
       var head = el("div", "brp-head"), st = el("div", "brp-staff"); head.appendChild(st);
       var nm = el("div", "brp-names"), hidden = !S.names && !revealed;
       nm.innerHTML = "<div class='brp-big'>" + (hidden ? "?" : label(m)) + "</div><div class='brp-muted'>" +
-        (S.inst === "trumpet" ? (S.concert ? "concert pitch shown · the player reads <strong>" + (hidden ? "?" : C.both(m)) + "</strong>" : "written · sounds as concert <strong>" + (hidden ? "?" : C.both(C.concert("trumpet", m))) + "</strong>")
-          : "sounding pitch, bass clef (a tuba is not transposed on this chart)") + "</div>";
+        (transposing() ? (S.concert ? "concert pitch shown · the player reads <strong>" + (hidden ? "?" : C.both(m)) + "</strong>" : "written · sounds as concert <strong>" + (hidden ? "?" : C.both(C.concert(S.inst, m))) + "</strong>")
+          : I.note) + "</div>";
       if (hidden) { var rv = el("button", "btn btn-sm btn-outline-secondary", "Show the name"); rv.type = "button"; rv.onclick = function () { revealed = true; show(false); }; nm.appendChild(rv); }
       var hb = el("button", "btn btn-sm btn-outline-primary", "🔊 Hear it"); hb.type = "button"; hb.onclick = function () { play([m], 1.3); };
       nm.appendChild(hb); head.appendChild(nm); card.appendChild(head);
@@ -107,7 +110,7 @@
       card.appendChild(row);
       var others = C.lookup(S.inst, fs[0].valves).filter(function (x) { return x.midi !== m; });
       var p = el("p", "brp-muted");
-      p.innerHTML = "On the chart this note is in the row <strong>" + fs[0].partial + "</strong> (the chart's own partial numbers). The same fingering also plays " +
+      p.innerHTML = (I.rows === "harmonic" ? "This note is harmonic <strong>" + fs[0].partial + "</strong> of the open tube (worked out for this page; the book prints no rows). " : "On the chart this note is in the row <strong>" + fs[0].partial + "</strong> (the chart's own partial numbers). ") + "The same fingering also plays " +
         (others.length ? others.map(function (x) { return "<strong>" + (S.names || revealed ? label(x.midi) : "?") + "</strong>"; }).join(", ") : "no other note on this chart") +
         ": which one comes out depends on how tight your lips are and how fast your air moves." + (fs[0].slide ? " <br>*On the chart, move the 3rd valve slide out for this note." : "");
       card.appendChild(p);
@@ -140,7 +143,7 @@
       var html = "<div class='brp-valbig'>" + fingerText(v) + "</div>";
       if (!ns.length) html += "<div>That combination is not on the chart.</div>";
       else {
-        html += "<div>" + (S.inst === "trumpet" && S.concert ? "Sounding" : S.inst === "trumpet" ? "Written" : "Sounding") + " notes this fingering can play, low to high:</div><ol class='brp-notes'>";
+        html += "<div>" + (transposing() && !S.concert ? "Written" : "Sounding") + " notes this fingering can play, low to high:</div><ol class='brp-notes'>";
         ns.forEach(function (x) { html += "<li><span class='brp-nname'>" + (S.names ? label(x.midi) : "·") + "</span> <span class='brp-muted'>chart row " + x.partial + (x.alt ? ", valve-4 alternate" : "") + (x.slide ? ", *3rd slide" : "") + "</span></li>"; });
         html += "</ol>";
       }
@@ -153,9 +156,9 @@
       if (q) next(); else update();
     }
     function next() {
-      var I = C.INSTRUMENTS[S.inst], pool = Object.keys(C.FINGERINGS[S.inst]).map(Number).filter(function (m) { return m >= (S.inst === "trumpet" ? 55 : I.low) && m <= I.high; });
+      var I = C.INSTRUMENTS[S.inst], pool = Object.keys(C.FINGERINGS[S.inst]).map(Number).filter(function (m) { return m >= (I.quizLow || I.low) && m <= I.high; });
       target = pool[Math.floor(Math.random() * pool.length)]; firstTry = true; dg.set([]); out.textContent = "";
-      ask.innerHTML = "Press the valves for <strong>" + (S.names ? label(target) : "the note on the staff") + "</strong>, then press Check." + (S.inst === "trumpet" && !S.concert ? " (Written pitch.)" : "");
+      ask.innerHTML = "Press the valves for <strong>" + (S.names ? label(target) : "the note on the staff") + "</strong>, then press Check." + (transposing() && !S.concert ? " (Written pitch.)" : "");
       staff(st, [target], 0);
       if (!S.staff && !S.names) ask.innerHTML += " <em>(Staff and names are hidden: press Hear it.)</em>";
     }
@@ -185,13 +188,13 @@
       Object.keys(F).forEach(function (m) { F[m].forEach(function (f) { if (f.alt) return; var k = f.valves.join("") || "0"; if (!combos[k]) { combos[k] = f.valves; order.push(k); } }); });
       order.sort(function (a, b) { var A = combos[a], B = combos[b]; var m = function (v) { return Math.max.apply(null, C.lookup(S.inst, v).map(function (x) { return x.midi; })); }; return m(B) - m(A); });
       var rows = {}; Object.keys(F).forEach(function (m) { F[m].forEach(function (f) { if (!f.alt) (rows[f.partial] = rows[f.partial] || {})[f.valves.join("") || "0"] = +m; }); });
-      var html = "<table class='brp-table'><thead><tr><th>Chart row</th>" + order.map(function (k) { return "<th>" + k + "</th>"; }).join("") + "</tr></thead><tbody>";
+      var html = "<table class='brp-table'><thead><tr><th>" + (I.rows === "harmonic" ? "Harmonic" : "Chart row") + "</th>" + order.map(function (k) { return "<th>" + k + "</th>"; }).join("") + "</tr></thead><tbody>";
       Object.keys(rows).map(Number).sort(function (a, b) { return b - a; }).forEach(function (p) {
         html += "<tr><th>" + p + "</th>" + order.map(function (k) { var m = rows[p][k]; return "<td>" + (m == null ? "" : "<button type='button' class='btn btn-sm btn-outline-secondary brp-tb' data-m='" + m + "'>" + (S.names ? label(m) : "♪") + "</button>") + "</td>"; }).join("") + "</tr>";
       });
       html += "</tbody></table>";
-      if (S.inst === "tuba") html += "<p class='brp-muted'>Valve 4 (not shown above): <strong>4</strong> plays the same notes as 1 + 3, and <strong>2 + 4</strong> the same as 1 + 2 + 3.</p>";
-      html += "<p class='brp-muted'>Columns are valve combinations (0 = no valves); rows are the chart's partial numbers. Click a note to hear it.</p>";
+      if (I.nvalves === 4) html += "<p class='brp-muted'>Valve 4 (not shown above): <strong>4</strong> plays the same notes as 1 + 3, and <strong>2 + 4</strong> the same as 1 + 2 + 3.</p>";
+      html += "<p class='brp-muted'>Columns are valve combinations (0 = no valves); rows are " + (I.rows === "harmonic" ? "harmonics of the open tube (not printed in the book)" : "the chart's partial numbers") + ". Click a note to hear it.</p>";
       host.innerHTML = html;
       host.querySelectorAll(".brp-tb").forEach(function (b) { b.onclick = function () { play([+b.dataset.m], 1.1); }; });
     }

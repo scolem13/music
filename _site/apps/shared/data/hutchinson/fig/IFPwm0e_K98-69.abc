@@ -1,0 +1,14 @@
+X:1
+T:Richard Strauss, Also Sprach Zarathustra, Op.30 (1896)
+%%id IFPwm0e_K98-69
+%bars ?
+%unsure inner chord tones of the treble chords in bar 2; the eighth-note line crossing into the bass staff in bar 2 is left out
+%unsure low bass notes' octave (pedal under a tremolo, written as two whole-bar halves)
+M:4/4
+L:1/16
+K:C
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] !f!"F"[CFA][CAc] [CAc]2- [CAc]8 "Dm7b5/F"[F_Acd]4 | "C/G"[Gceg]2 [Gceg]2 [Gcegc']8 [cegc']2 [ceg][deg] |]
+[V:2] C,,8 F,8 | C,,8 G,8 |]

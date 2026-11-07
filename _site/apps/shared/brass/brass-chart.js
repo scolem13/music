@@ -1,32 +1,38 @@
-// brass-chart.js — valve fingering tables for trumpet and tuba, and the valve diagram. Used by lessons/brass-fingerings.qmd
+// brass-chart.js — valve fingering tables for trumpet, baritone / euphonium and tuba, and the valve diagram. Used by lessons/brass-fingerings.qmd
 // (brass-page.js). Works in the browser (global BrassChart) and in node (tests/brass/brass-chart.test.js).
 //
-// Sources (see scripts/sources/brass.py): two one-page charts from StepWise Flashcards / StepWise Publications:
-//   "Trumpet Fingering Chart" (2022 version, (c) stepwisepublications.com, "Correlates with NinGenius Music StepWise Flashcards")
-//   "Essential Range Tuba Fingering Chart" ("Correlates with StepWise Flashcards", www.fingeringcharts.org)
-// Every fingering below was read off those charts note by note from a 300 dpi render, staff and letter circles checked against each other.
+// Sources (see scripts/sources/brass.py):
+//   1. Two one-page charts from StepWise Flashcards / StepWise Publications: "Trumpet Fingering Chart" (2022 version) and "Essential Range Tuba Fingering Chart".
+//      Every fingering was read off those charts note by note from a 300 dpi render, staff and letter circles checked against each other.
+//   2. The scanned instrument guide (unidentified band method, a teacher's guide; pages numbered 160-253 in the brass chapters, footer "W74"):
+//      B♭ Trumpet / Cornet / Flugelhorn chart (p. 173), Baritone/Euphonium B.C. (p. 233) and T.C. (p. 234), BB♭ Tuba and Sousaphone (p. 251),
+//      E♭ Tuba (p. 252), Tuba T.C. (p. 253). Read from 200 dpi renders; the staff positions were checked against the printed letters and against
+//      the harmonic series (every row steps down 1, 2, 3, 4, 5, 6 semitones for valves 2, 1, 12, 23, 13, 123).
 //
-//   BrassChart.INSTRUMENTS   { trumpet: {label, transpose, clef, low, high, nvalves}, tuba: {...} }  transpose: written -> concert, semitones
-//   BrassChart.FINGERINGS    { trumpet: { writtenMidi: [ {valves:[2], partial:1, slide?:true, alt?:true}, ... ] }, tuba: {...} }
+//   BrassChart.INSTRUMENTS   { trumpet, euph, euphtc, tuba, tubaeb, tubatc: {label, option, transpose, clef, concertClef, low, high, nvalves, rows, groups} }
+//                            transpose: written -> concert, semitones (trumpet -2; euphonium T.C. -14; tuba T.C. -26; the bass-clef ones 0)
+//   BrassChart.FINGERINGS    { inst: { writtenMidi: [ {valves:[2], partial:1, slide?:true, alt?:true}, ... ] } }
 //                            the first fingering of a note is the usual one. valves are numbers 1..4 (0 valves = []).
 //   BrassChart.lookup(inst, valves) -> [ {midi, partial, slide?, alt?} ] every note that combination plays on the chart, low to high
 //   BrassChart.sameSet(a, b), name(m, "sharp"|"flat"), both(m), concert(inst, m), tone(ac, out, midi, when, dur, vel)
 //   BrassChart.diagram(el, {nvalves, onToggle, small, label}) -> {set(valves), get()}   SVG valve buttons (click to press)
 //
+// Checked against the book (2026-11): the trumpet table is note for note the book's chart (F♯3 to C6; the book does not print the 3rd-slide
+// footnote). The tuba table (28..53) is the book's BB♭ chart, and the book's chart has one more row (54..58), added as row 6. The book's chart is
+// headed "BB♭ Tuba and Sousaphone": so the tuba IS a BB♭ tuba, read at concert pitch in bass clef. The E♭ tuba chart is the same table 7 semitones
+// lower (21..46, A0 to B♭2); the book's valve 4 alternates are tied to the notes (E, F, B, C of the BB♭; A, B♭, E, F of the E♭).
+// The T.C. charts are the bass-clef ones written higher (euphonium +14 = a major ninth, tuba +26), checked on the first and last note of each.
+//
 // NOT on the printed charts, so unverified / this page's reading (project rule 4):
-//  - The tuba chart does not say what pitch tuba it is for (B♭, C, E♭ or F), nor that its staff is sounding pitch. The letters and staff
-//    agree with a B♭ tuba (0 valves = B♭1, F2, B♭2, D3, F3, the usual open notes of a BB♭ tuba, as concert pitch in bass clef), so this file
-//    calls it "B♭ tuba (concert pitch)". A CC tuba is fingered the same way but sounds a whole tone higher; E♭ and F tubas
-//    use the same valve patterns for different note names. The chart's own claim is only "Essential Range".
-//  - Partial numbers are the charts' own: both charts number the lowest row they print "1st Partial". Acoustically the trumpet's 1st printed
-//    row (C4, 0 valves) is the 2nd partial (the true 1st partial, the pedal tone, is not printed), and the trumpet's "5th"/"7th" printed rows are the
-//    6th/8th harmonics. The chart skips a row between "5th" and "7th" ("Skipped Partial (Too Flat)"). The tuba's printed rows are likewise
-//    harmonics 2 to 6 (a B♭ tuba's pedal B♭0 and the 1st row's B♭1 are separate). This file keeps the charts' numbers.
+//  - The tuba T.C. chart does not say which tuba it is for. Its notes are the BB♭ chart +26 (F♯3 at 1-2-3 for the BB♭ E1), so it is read as a BB♭ tuba.
+//  - The baritone / euphonium B.C. chart is read as sounding pitch (open = B♭2, F3, B♭3, D4, F4, B♭4: the open notes of a B♭ instrument).
+//    The book's compensating-system tuba note ("Compensating or 4") is only a label on the E♭ tuba picture; compensating fingerings are not given.
+//  - Partial numbers: the StepWise charts number the lowest row they print "1st Partial" (acoustically the trumpet's 1st printed row, C4, is the 2nd
+//    partial; the pedal tone is not printed). This file keeps those numbers for the trumpet and tuba rows. The book prints no rows, so the
+//    euphonium rows carry the harmonic number of the open tube (4, 6, 8, 10, 12, 16), worked out here (INSTRUMENTS.rows = "harmonic").
 //  - Trumpet transposition (written C sounds B♭, concert = written - 2) is standard but not on the chart: cited on the lesson page.
-//  - The chart's footnote "*Move the 3rd valve slide out for low D and C♯" sits over the written D4 (13) and C♯4 (123) of the 2nd row; it is stored as
-//    slide:true on those two. The chart's picture of the slide does not say how far; the page does not say either.
-//  - The tuba's valve-4 fingerings ("4" under 13, "24" under 123) are stored as alternates (alt:true) for F1, C2 (4) and E1, B1 (24): the chart
-//    prints them in grey under the 13 and 123 columns, not tied to a particular row, so they are applied to both notes of the column.
+//    The book's own words: treble-clef baritone is also a B♭ instrument; the size of the transposition (a major ninth) is read off its chart, not stated.
+//  - The StepWise footnote "*Move the 3rd valve slide out for low D and C♯" sits over the written D4 (13) and C♯4 (123); stored as slide:true.
 //  - The sounds are a synthesized buzz, not brass samples.
 (function (global) {
   "use strict";
@@ -42,26 +48,56 @@
     [5, [[79, []], [78, [2]], [77, [1]]]],
     [7, [[84, []], [83, [2]], [82, [1]], [81, [1, 2]], [80, [2, 3]]]]
   ];
+  // row 6 of the tuba: from the book's BB♭ chart (p. 251), which goes one partial higher than the StepWise chart
   var TUBA_ROWS = [
     [1, [[34, []], [33, [2]], [32, [1]], [31, [1, 2]], [30, [2, 3]], [29, [1, 3]], [28, [1, 2, 3]]]],
     [2, [[41, []], [40, [2]], [39, [1]], [38, [1, 2]], [37, [2, 3]], [36, [1, 3]], [35, [1, 2, 3]]]],
     [3, [[46, []], [45, [2]], [44, [1]], [43, [1, 2]], [42, [2, 3]]]],
     [4, [[50, []], [49, [2]], [48, [1]], [47, [1, 2]]]],
-    [5, [[53, []], [52, [2]], [51, [1]]]]
+    [5, [[53, []], [52, [2]], [51, [1]]]],
+    [6, [[58, []], [57, [2]], [56, [1]], [55, [1, 2]], [54, [2, 3]]]]
   ];
   // valve 4 on the tuba chart: grey "4" under 13, grey "24" under 123
   var TUBA_ALT = { 29: [4], 36: [4], 28: [2, 4], 35: [2, 4] };
+  // Baritone / euphonium, B.C. chart of the instrument guide (p. 233): sounding pitch, bass clef. The book prints no rows; the first number
+  // of each row here is the harmonic of the open tube (B♭ tube: harmonic 4 = B♭2, 6 = F3, 8 = B♭3, 10 = D4, 12 = F4, 16 = B♭4), worked out for this page.
+  var EUPH_ROWS = [
+    [4, [[46, []], [45, [2]], [44, [1]], [43, [1, 2]], [42, [2, 3]], [41, [1, 3]], [40, [1, 2, 3]]]],
+    [6, [[53, []], [52, [2]], [51, [1]], [50, [1, 2]], [49, [2, 3]], [48, [1, 3]], [47, [1, 2, 3]]]],
+    [8, [[58, []], [57, [2]], [56, [1]], [55, [1, 2]], [54, [2, 3]]]],
+    [10, [[62, []], [61, [2]], [60, [1]], [59, [1, 2]]]],
+    [12, [[65, []], [64, [2]], [63, [1]]]],
+    [16, [[70, []], [69, [2]], [68, [1]], [67, [1, 2]], [66, [2, 3]]]]
+  ];
+  var EUPH_ALT = { 41: [4], 48: [4], 40: [2, 4], 47: [2, 4] };
 
-  function build(rows, alt) {
-    var f = {};
-    rows.forEach(function (r) { r[1].forEach(function (n) { var o = { valves: n[1].slice(), partial: r[0] }; if (n[2] === "slide") o.slide = true; (f[n[0]] = f[n[0]] || []).push(o); }); });
-    if (alt) Object.keys(alt).forEach(function (m) { f[m].push({ valves: alt[m].slice(), partial: f[m][0].partial, alt: true }); });
+  // shift: semitones added to every note (the treble-clef charts are the bass-clef ones written higher); rows: how many rows to keep
+  function build(rows, alt, shift, nrows) {
+    var f = {}; shift = shift || 0;
+    rows.slice(0, nrows || rows.length).forEach(function (r) { r[1].forEach(function (n) { var o = { valves: n[1].slice(), partial: r[0] }; if (n[2] === "slide") o.slide = true; (f[n[0] + shift] = f[n[0] + shift] || []).push(o); }); });
+    if (alt) Object.keys(alt).forEach(function (m) { if (f[+m + shift]) f[+m + shift].push({ valves: alt[m].slice(), partial: f[+m + shift][0].partial, alt: true }); });
     return f;
   }
-  var FINGERINGS = { trumpet: build(TRUMPET_ROWS), tuba: build(TUBA_ROWS, TUBA_ALT) };
+  var FINGERINGS = {
+    trumpet: build(TRUMPET_ROWS),
+    euph: build(EUPH_ROWS, EUPH_ALT), euphtc: build(EUPH_ROWS, EUPH_ALT, 14),
+    tuba: build(TUBA_ROWS, TUBA_ALT), tubaeb: build(TUBA_ROWS, TUBA_ALT, -7, 5), tubatc: build(TUBA_ROWS, TUBA_ALT, 26)
+  };
+  // option: the drop-down text. concertClef: clef when the staff shows concert pitch. quizLow: lowest note the quiz asks. groups: the explorer's rows of buttons.
+  // rows: "chart" = the printed chart's own row numbers, "harmonic" = harmonic of the open tube (not printed).
   var INSTRUMENTS = {
-    trumpet: { label: "B♭ trumpet", transpose: -2, clef: "treble", low: 54, high: 84, nvalves: 3 },
-    tuba: { label: "B♭ tuba (concert pitch, key assumed)", transpose: 0, clef: "bass", low: 28, high: 53, nvalves: 4 }
+    trumpet: { label: "B♭ trumpet", option: "Trumpet (B♭)", transpose: -2, clef: "treble", concertClef: "treble", low: 54, high: 84, quizLow: 55, nvalves: 3, rows: "chart",
+      groups: [["Low", 54, 66], ["Middle", 67, 78], ["High", 79, 84]] },
+    euph: { label: "Baritone / euphonium, bass clef", option: "Baritone / euphonium (bass clef, B♭)", transpose: 0, clef: "bass", low: 40, high: 70, nvalves: 4, rows: "harmonic",
+      note: "sounding pitch, bass clef (a baritone or euphonium in bass clef is not transposed)", groups: [["Low", 40, 52], ["Middle", 53, 62], ["High", 63, 70]] },
+    euphtc: { label: "Baritone / euphonium, treble clef", option: "Baritone / euphonium (treble clef, B♭)", transpose: -14, clef: "treble", concertClef: "bass", low: 54, high: 84, nvalves: 4, rows: "harmonic",
+      groups: [["Low", 54, 66], ["Middle", 67, 76], ["High", 77, 84]] },
+    tuba: { label: "BB♭ tuba (concert pitch)", option: "BB♭ tuba (bass clef, concert pitch)", transpose: 0, clef: "bass", low: 28, high: 58, nvalves: 4, rows: "chart",
+      note: "sounding pitch, bass clef (a tuba in bass clef is not transposed)", groups: [["Pedal-to-low", 28, 40], ["Middle", 41, 53], ["High", 54, 58]] },
+    tubaeb: { label: "E♭ tuba (concert pitch)", option: "E♭ tuba (bass clef, concert pitch)", transpose: 0, clef: "bass", low: 21, high: 46, nvalves: 4, rows: "chart",
+      note: "sounding pitch, bass clef (a tuba in bass clef is not transposed)", groups: [["Low", 21, 33], ["Middle", 34, 46]] },
+    tubatc: { label: "Tuba, treble clef", option: "Tuba (treble clef, B♭ tuba)", transpose: -26, clef: "treble", concertClef: "bass", low: 54, high: 84, nvalves: 4, rows: "chart",
+      groups: [["Low", 54, 66], ["Middle", 67, 77], ["High", 78, 84]] }
   };
 
   function key(v) { return v.slice().sort().join(""); }

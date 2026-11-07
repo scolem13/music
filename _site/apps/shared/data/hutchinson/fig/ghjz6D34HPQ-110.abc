@@ -1,0 +1,13 @@
+X:1
+T:Wagner, Tristan und Isolde, Prelude to Act I
+%%id ghjz6D34HPQ-110
+%bars ?
+%unsure bass-staff pitches read approximately; the bass-staff upper line of the second bar (eighth, dotted eighth, sixteenth, rising) is left out
+M:6/8
+L:1/8
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+K:Am
+[V:1] "E7"!sf![^E^e] (!f![^F^f]2- [Ff] [=G=g] [^G^g]) | "F"!ff!([Bb]3 !p![Aa]) z z |]
+[V:2] [E,,D,^G,]2 z [E,B,D]3 | [F,A,C]3 [F,A,]3 |]

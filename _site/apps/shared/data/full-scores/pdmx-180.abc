@@ -1,0 +1,20 @@
+X:1
+C:Carl Phillip Emanuel Bach
+Z:Public Domain (PianoXML typeset)
+%%score { 1 | ( 2 3 ) }
+L:1/8
+Q:1/4=125
+M:4/4
+K:Eb
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:3 bass 
+%%MIDI program 0
+V:1
+"^Prestissimo\n"!mf! x/ x/ x C/E/D/C/ =B,/ x/ x G/F/E/D/ | E/ C/E/G/ c/e/d/c/ d/c/=B/=A/ G/F/E/D/ | E/ C/E/G/ c/e/d/c/ =B/ G/B/d/ g/f/e/d/ | e/ c/e/g/ c'/e'/d'/c'/ d'/c'/=b/=a/ g/f/e/d/ | !p! e/ c/G/E/ C/ c'/g/e/ !tenuto!a/ x/ x x/ A/c/e/ | d/ B/F/D/ B,/ b/f/d/ !tenuto!g/ x/ x x/ G/B/d/ | c/=A/ ^G/A/ c/A/ G/A/ e/c/ =G/A/ e/c/ G/A/ | !tenuto!d/c/ ^F/=A/ !tenuto!=a/c/ F/A/ !tenuto!^f/c/ D/A/ !tenuto!c/A/F/D/ | !f! B/ x/ x x4 D/C/B,/=A,/ | B,/ x/ x G/B/=A/G/ A/G/^F/=E/ D/C/B,/=A,/ | B,/ x/ x G/B/=A/G/ ^F/ D/F/A/ d/c/B/A/ | B/ G/B/d/ g/b/=a/g/ a/g/^f/=e/ d/c/B/=A/ | !f! B/G/B/d/ g/d/B/G/ z/ g/d/=B/ G/B/d/g/ |!p! z/ G/g/G/ z/ G/g/G/ z/ G/f/G/ z/ G/f/G/ | !f! e/c/e/g/ c'/g/e/c/ z/ c'/g/=e/ c/e/g/c'/ |!p! z/ c/c'/c/ z/ c/c'/c/ z/ c/b/c/ z/ c/b/c/ | !f! a/ x7 x/2 | x2 F/A/G/F/ G/F/=E/D/ x2 | x2 F/A/G/F/ =E/ C/E/G/ c/B/A/G/ | A/ F/A/c/ f/a/g/f/ g/f/=e/d/ c/B/A/G/ | x/ f/c/A/ x/ c/A/F/ x/ A/F/C/ x/ F/C/A,/ | z4!f! a/f/=e/f/ g/f/e/f/ | z4!p! A/F/=E/F/ G/F/E/F/ | z4!f! d'/f/g/a/ g/f/_e/d/ | e/g/c'/g/ b/a/g/f/ (e2 P!turn!d2) |!p! z/ G/g/G/ z/ G/g/G/ z/ G/f/G/ z/ G/f/G/ | z/ G/=e/G/ z/ G/e/G/!f! z/ _e/c'/e/ z/ e/c'/e/ |!p! z/ F/d/F/ z/ F/d/F/ z/!f! _d/b/d/ z/ d/b/d/ | !p! z/ E/c/E/ z/ E/c/E/ z/!f! c/c'/c/ z/ c/c'/c/ | z/ c/e/g/ c'/g/e/c/ g/e/c/G/ f/d/=B/F/ | E/ x/ x/ x/ C/E/D/C/ =B,/ x/ x/ x/ G/F/E/D/ | E/ C/E/G/ c/e/d/c/ d/c/=B/=A/ G/F/E/D/ | E/ C/E/G/ c/e/d/c/ =B/ G/B/d/ g/f/e/d/ | e/ c/e/g/ c'/e'/d'/=b/ c'/ g/e/d/ c/ G/E/D/ | C z z2 z4 |]
+V:2
+E,/ C,/E,/G,/ x2 x/ G,/=B,/D/ x2 | x8 | x8 | x8 | x4 x/ F,/A,/C/ F/ x/ x | x4 x/ E,/G,/B,/ E/ x/ x | x8 | x8 | z/ G,,/B,,/D,/ G,/B,/=A,/G,/ ^F,/ D,/F,/A,/ x2 | z/ G,/B,/D/ x2 x4 | z/ G,/B,/D/ x2 x4 | x8 | [G,,G,]2 z2 [F,,F,]2 z2 |[K:treble] x8 | [K:bass] [C,C]2 z2 [B,,B,]2 z2 |[K:treble] x8 | [K:bass] z/ F,,/A,,/C,/ F,/A,/G,/F,/ =E,/ C,/E,/G,/ C/B,/A,/G,/ | A,/ F,/A,/C/ x4 C/B,/A,/G,/ | A,/ F,/A,/C/ x2 x/ x/ x x2 | x/ x/ x x2 x4 | x/ x/ x !>!F/ x/ x !>!C/ x/ x !>!A,/ x/ x | !>![_D,,_D,]8 | !>![C,,C,]8 | !>![=B,,,=B,,]8 | [C,,C,]2 F,2 G,2 x2 |[K:treble] x8 | x8 | x8 | [K:bass] x8 | x2 z2 z2 G,,2 | z/ C,/E,/G,/ x2 x/ G,/=B,/D/ x2 | x8 | x8 | x8 | x8 |]
+V:3
+x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | [K:treble] [Ec]2 [Ec]2 [D=B]2 [DB]2 |[K:bass] x8 |[K:treble] [Af]2 [Af]2 [G=e]2 [Ge]2 | [K:bass] x8 | x8 | x8 | x8 | !>!A/ x7 x/2 | x8 | x8 | x8 | x8 | [K:treble] [Ec]2 [Ec]2 [D=B]2 [DB]2 | [C_B]2 [CB]2 [F=A]2 [FA]2 | [B,_A]2 [B,A]2 [EG]2 [EG]2 |[K:bass] [_A,^F]2 [A,F]2 [^F,E]2 [F,E]2 | [G,E]2 x6 | x8 | x8 | x8 | x8 | x8 |]

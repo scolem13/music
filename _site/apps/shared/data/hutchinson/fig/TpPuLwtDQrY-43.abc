@@ -1,0 +1,15 @@
+X:1
+T:Mozart, Eine kleine Nachtmusik, K. 525, I.
+%%id TpPuLwtDQrY-43
+%bars ?
+%unsure piano reduction: inner notes of the bar 2 right-hand chords left out (only the top D6 written); the stems-down right-hand line in bars 1-2 and its rhythm are read approximately
+M:C
+L:1/8
+%%score {(1 2) | 3}
+V:1 clef=treble
+V:2 clef=treble
+V:3 clef=bass
+K:D
+[V:1] "D"[dfad'] [dfad']2 [dfad']2 [dfad']2 [dfad']- | "Em7/G"[dfad'] d'2 d'2 d'2 d' | "A"[A^ce^c'] a [A^cea] a [A^ce^c'] a [A^cea] a | "A"[A^ce^c'] A A A A2 z2 |]
+[V:2] FGAG FGAF | BAGA BAAB | x8 | x8 |]
+[V:3] D,E,F,E, D,E,F,D, | G,A,B,A, G,A,B,^G, | A,A,A,A, A,A,A,A, | [A,,A,][A,,A,][A,,A,][A,,A,] [A,,A,]2 z2 |]

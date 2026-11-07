@@ -1,0 +1,11 @@
+X:1
+T:Lennon-McCartney, Hey Jude
+%%id A_MjCqQoLLA-55
+%bars ?
+%unsure piano part left out (syncopated chords not read with certainty); last bar cut off where the excerpt ends
+M:4/4
+L:1/8
+K:F
+%%score 1
+V:1 clef=bass nm="Voice"
+[V:1] C2 | "F"A,4 z A, C D | "C"G,2 z2 z2 G, A, | "C7sus"B,2 F2- F F E C | "F"D C/B,/ A,4 |]

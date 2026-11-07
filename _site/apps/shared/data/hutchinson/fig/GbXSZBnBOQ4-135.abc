@@ -1,0 +1,19 @@
+X:1
+T:John Stafford Smith and Francis Scott Key, The Star-Spangled Banner (1814) as performed by Lady Gaga at the 2016 Super Bowl
+%%id GbXSZBnBOQ4-135
+%bars ?
+%unsure voice bar 3: last note drawn open but only a quarter fits; piano chord inner tones and the accented upper notes in bars 4-5 read approximately
+M:4/4
+L:1/8
+K:F#
+%%score 1 {(2 4) | (3 5)}
+V:1 clef=treble nm="Voice"
+V:2 clef=treble nm="Piano"
+V:4 clef=treble
+V:3 clef=bass
+V:5 clef=bass
+[V:1] "D#m"F "G#m7b5/D"G | "F#/C#"A6- Ad | "C#7"{A}G4 (A/G/F/D/) C2 | "D"F8- | "E"G6 c2 | "F#"c8 |]
+[V:2] [DFA][=DFGB] | [CFAc]7 [DGB] | [CEG]8 | [=DF=A]8 | [=EG=B]8 | z4 [CFA]4 |]
+[V:4] x2 | x8 | x8 | z2 !accent!f2 !accent!d'2 !accent!f2 | z2 !accent!f2 !accent!e'2 !accent!f2 | x8 |]
+[V:3] [D,,,D,,][=D,,,=D,,] | [C,,,C,,]8 | [C,,,C,,]8 | [=D,,,=D,,]8 | [=E,,,=E,,]8 | z4 [F,,,F,,]4 |]
+[V:5] x2 | x8 | x8 | z2 !accent!F,2 !accent!D2 !accent!F,2 | z2 !accent!F,2 !accent!E2 !accent!F,2 | x8 |]

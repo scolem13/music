@@ -12,6 +12,13 @@
 //   SaxChart.name(m, flat)            "F♯5"; SaxChart.tone(ac, out, midi, when, dur, vel)  a simple synthesized reed tone
 //
 // SOURCE: the chart pages 158-159 of the teacher book in scripts/sources/saxophone.py, read from a scan, key by key.
+//   Checked again 2026-11-06: the scan's pp. 158 and 159 are the E-flat alto / B-flat tenor / E-flat bari charts (written pitch).
+//   The clarinet charts at pp. 136-139 in the same scan (136 B-flat clarinet, 138-139 alto and bass clarinet) are NOT used here. The fingering DATA was not changed in that check: the
+//   KEY-BY-KEY CHECK 2026-11-06 (every cell of p.158 and p.159, at 300-400 dpi): no mismatch found, data unchanged.
+//   Read per cell: the octave key, the left-hand column, the right-pinky low C / E-flat pair, the low-C-sharp and low-B
+//   stacked-oval glyph, the side keys (sBb, sC, sFs, sE, gs), the front F and the alternates. Cells NOT readable at scan
+//   resolution (their key-name is unverified, the data kept as it was): the left pinky-table keys (cs, bL, bbL) in A#3-C#4,
+//   the palm-key fork glyphs (pD, pEb, pF) in D5-F6 and the trill cells marked unsure above (sE, pD/pEb, pF).
 // UNVERIFIED (not printed with names on the chart, so read from how saxophones are usually built):
 //   - which of the three palm-key ovals is D, E♭ and F;  which middle key of the left pinky table is B and which C♯;
 //   - the ellipse under the side F♯ key is drawn but no fingering on the chart uses it (labelled high F♯, on models with it).

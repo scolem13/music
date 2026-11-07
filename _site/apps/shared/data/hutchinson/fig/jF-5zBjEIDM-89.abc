@@ -1,0 +1,12 @@
+X:1
+T:Jaromír Vejvoda, Beer Barrel Polka (1927)
+%%id jF-5zBjEIDM-89
+%bars ?
+M:4/4
+L:1/8
+K:Eb
+%%score {1 | 2}
+V:1 clef=treble nm="Accordion"
+V:2 clef=bass nm="Piano & Ac. Bass"
+[V:1] E .[GBe] z .[GBe] z .[GBe] z .[GBe] | z .[GBe] z .[GBe] z .[GBe] z .[GBe] |]
+[V:2] [E,,E,]2 [D,,D,]2 [C,,C,]2 [B,,,B,,]2 | [E,,E,]2 [D,,D,]2 [C,,C,]2 [B,,,B,,]2 |]

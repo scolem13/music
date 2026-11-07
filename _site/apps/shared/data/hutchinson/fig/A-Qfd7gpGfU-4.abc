@@ -1,0 +1,13 @@
+X:1
+T:Joseph Haydn, Piano Sonata in C Major, Hob. XVI:35, III (1780)
+%%id A-Qfd7gpGfU-4
+%bars ?
+%unsure left-hand chord pitches; notes in parentheses kept as plain notes
+M:3/4
+L:1/16
+K:C
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=treble
+[V:1] "C"!f!e4- e3f "G/F"d3"C/E"e | c4 c'4 c'4 | "F"^ga z2 ef z2 "G7"dB z2 | "C"c4 z4 z4 |]
+[V:2] z4 [CG]4 [FG]4 | [EG]4 z4 [K:clef=bass] [E,C]4 | [F,C]4 z4 [G,F]4 | [EA]4 z4 z4 |]

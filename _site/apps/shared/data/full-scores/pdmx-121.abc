@@ -1,0 +1,20 @@
+X:1
+C:Friedrich Burgmüller
+Z:Public Domain (PianoXML typeset)
+%%score { ( 1 3 ) | 2 }
+L:1/8
+Q:1/4=130
+M:4/4
+K:G
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:3 treble 
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+!p!"_armoioso""^Allegro moderato" z2 (3(!1!G!2!B!4!d (3edB G2) | z2 (3(GBd (3edB G2) | z2 (3(!5!e!3!c!1!G) z2 (3(gec) | z2 (3(dBG) z2 (3(BGD) |!p! z2 (3(DAB (3cBA D2) | z2 (3(DGA (3BAG D2) | z2 (3(D!2!F!3!G (3!4!A!2!F!1!D (3d!4!c!2!A | (3!1!G!2!B!4!e (3!3!dBG g2) z2 ::"_cresc." z2 (3(BGE) z2 (3(eBG) | z2 (3(geB) z2 (3bge | z2!<(! (3eab!<)!!>(! (3c'ba!>)! e2 | z2 (3(ega (3bgf e2) | (3z (ce (3fec) (3z (Be (3feB) | (3z (Ae (3feA) (3z (Be (3feB) | (3z (ce (3fec) (3z (^ce (3gfe) | (3z (B^d (3fdB) b2 z2 | !p! z2 (3(GBd (3edB G2) | z2 (3(GBd (3edB G2) |"_cresc." z2 (3(ecG) z2 (3(gec) | z2 (3(dBG) z2 (3(BGD) |!p! z2 (3(DAB (3cBA D2) | z2 (3(DGA (3BAG D2) | z2 (3(DFG (3AFD (3dcA |1 (3GBe (3dBG g2) z2 :|2 (3(GBe (3dBG (3gdB G2) || z2 (3(Bdg (3agd B2) | "_cresc." z2 (3(egc' (3d'c'g e2) | z2 (3(gc'd' (3_e'd'c' g'2) | z2 (3(d'g'a' (3b'a'g' (3d'e'd' |"_dim. e poco rit." (3bc'b (3gag (3ded (3BcB | G2) z2"^più lento" [^CG]4 |!p! [DG]4!>(! (B2 A2!>)! |!pp! !fermata![B,G]8) |]
+V:2
+(3(G,B,D) z2 z2 (3z (DB, | (3G,B,D) z2 z2 (3z (DB, | (3!5!G,!2!C!1!E) z2 (3(G,CE) z2 | (3(G,B,D) z2 (3(G,,B,,D,) z2 | (3(D,F,C) z2 z2 (3z (CF, | (3D,G,B,) z2 z2 (3z (B,G, | (3D,A,C) z2 z2 ([D,F,C]2 | [G,B,]2) z2 G,,2 z2 :: (3(G,B,D) z2 (3(G,,B,,D,) z2 | [K:treble] (3(B,EG) z2 (3(EGB) z2 | (3EAc z2 z2 (3z cA | (3EGB z2 z2 (3z [K:bass] (^DE | !<(! A,4 B,4!<)! |!>(! C4 B,4)!>)! |!<(! (A,4 _B,4!<)! | B,4 B,,2) z2 | (3(G,B,D) z2 z2 (3z (DB, | (3G,B,D) z2 z2 (3z (DB, | (3G,CE) z2 (3(G,CE) z2 | (3(G,B,D) z2 (3(G,,B,,D,) z2 | (3(D,F,C) z2 z2 (3z (CF, | (3D,G,B,) z2 z2 (3z (B,G, | (3D,A,C) z2 z2 ([D,F,C]2 |1 [G,B,]2) z2 G,,2 z2 :|2 [G,B,]2 z2 z2 (3z (B,G, || (3G,-D-=F-) [G,DF]4 (3z (FD | (3G,-C-E-) [G,CE]4 (3z (EC | (3G,-C-_E-) [G,CE]4 (3z (EC | (3G,-B,-D-) [G,B,D]6- | [G,B,D]6 (D2 | [G,B,]2) z2 [E,_B,]4 | [D,B,]4 ([D,C]4 | !fermata![G,,D,]8) |]
+V:3
+x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 :: x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |1 x8 :|2 x8 || x8 | x8 | x8 | x2 x6 | x8 | x8 | x4 F4 | x8 |]

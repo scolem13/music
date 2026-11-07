@@ -1,0 +1,17 @@
+X:1
+T:Bach, J.S., Chorale 238, Liebster Jesu, wir sind hier, BWV 373
+%%id VKNcvMcGlvI-0
+%bars ?
+%unsure tenor pitches in bar 2 (read B3 C4 D4)
+M:4/4
+L:1/8
+K:G
+%%score {(1 2) | (3 4)}
+V:1 clef=treble
+V:2 clef=treble
+V:3 clef=bass
+V:4 clef=bass
+[V:1] "G"B2 A G "D/F#"A2 "D"d2 | "G"B2 G2 "D"A4 |]
+[V:2] D2 D2 D2 F2 | D2 D E F4 |]
+[V:3] G, A, B,2- B, A, A,2 | B, C D2 D4 |]
+[V:4] G,,2 G,2- G, F, E, D, | G, A, B, G, D,4 |]

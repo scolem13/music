@@ -1,0 +1,23 @@
+X:1
+C:J. A. Josephson
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/8=120
+M:3/8
+K:C
+V:1 treble-8 nm="T1"
+%%MIDI program 52
+V:2 treble-8 nm="T2"
+%%MIDI program 52
+V:3 bass nm="B1"
+%%MIDI program 52
+V:4 bass nm="B2"
+%%MIDI program 52
+V:1
+!p!"^Något fort" e d e | f3/2 e/ d | e B (c/d/) | c3/2 B/ A | g!<(! c d!<)! | e2 z |!p! g c d | e3/2 d/ c | B e d | c3/2 B/ A |"_ten." d A B | c2 z |:!mf! d e f | e3/2 d/ e | !<(! ^f/ f/!<)!!f! g f | e3/2 ^d/ e |!<(! =f e!<)!!>(! ^d | e2!>)! z | f e ^d | e3/2 =d/!<(! c | e ^f ^g!<)! |!f! a3/2 =g/ =f |!>(!"^dim. e rit." e d3/2 B/!>)! | A2 z :|
+V:2
+!p! c B c | d3/2 c/ B | B B E | E3/2 E/ E | A!<(! c c!<)! | c2 z |!p! A c c | c3/2 G/ G | ^G B B | A3/2 ^G/ A |"_ten." A A =G | G2 z |:!mf! B c d | c3/2 B/ c |!<(! ^d/ d/!<)!!f! d d | B3/2 B/ B | !<(! c B!<)!!>(! A | ^G2!>)! z | c c c | B3/2 B/!<(! A | B c d!<)! |!f! (^cd/) e/ d | !>(!"^dim. e rit." =c B3/2 d/!>)! | c2 z :|
+V:3
+!p! A, F, E, | D,3/2 E,/ F, | E, E, E, | E,3/2 D,/ C, | C,!<(! A, _A,!<)! | G,2 z |!p! F, A, A, | G,3/2 F,/ E, | E, E, E, | E,3/2 E,/ E, |"_ten." F, F, F, | E,2 z |:!mf! G, G, G, | G,3/2 G,/ G, | !<(! A,/ A,/!<)!!f! B, A, | G,3/2 ^F,/ G, |!<(! A, G,!<)!!>(! ^F, | E,2!>)! z | A, A, A, | ^G,3/2 G,/!<(! A, | ^G, A, B,!<)! |!f! A,3/2 A,/ A, |!>(!"^dim. e rit." A, A,3/2 ^G,/!>)! | E,2 z :|
+V:4
+!p! A,, A,, A,, | A,,3/2 A,,/ A,, | ^G,, G,, (A,,/B,,/) | A,,3/2 A,,/ A,, | F,,!<(! F, F,!<)! | C,2 z |!p! F,, F, F, | C,3/2 C,/ C, | E, ^G,, G,, | A,,3/2 D,/ C, |"_ten." F,, G,, G,, | C,2 z |: !mf! G,, G,, G,, | C,3/2 G,,/ C, |!<(! B,,/ B,,/!<)!!f! B,, B,, | E,3/2 B,,/ E, | !<(! A,, B,,!<)!!>(! B,, | E,2!>)! z | z3 | z3 |!<(! E, E, E,!<)! |!f! (A,,B,,/) ^C,/ D, | !>(!"^dim. e rit." E, F,3/2 E,/!>)! | A,,2 z :|

@@ -1,0 +1,12 @@
+X:1
+T:Marvin Gaye and Ed Townsend, Let's Get It On (1973)
+%%id x6QZn9xiuOE-0
+%bars ?
+M:C
+L:1/8
+K:Eb
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "Eb"[EGB]3 "Gm7"[FBd]- [FBd]4 | "Ab"[EAc]3 "Bb"[DFB]- [DFB]4 |]
+[V:2] E,,3 G,,,- G,,,4 | A,,,3 B,,,- B,,,4 |]

@@ -1,0 +1,16 @@
+X:1
+T:Robert DeLeo and Scott Weiland, Interstate Love Song (1994)
+%%id yjJL9DGU7Gg-69
+%bars ?
+%unsure some sixteenth/dotted groupings in the piano parts read approximately
+%unsure last bar: the figure stops after three beats
+M:C
+L:1/16
+K:C#m
+%%score 1 {2 | 3}
+V:1 clef=treble-8 nm="Voice"
+V:2 clef=treble-8 nm="Piano"
+V:3 clef=bass-8
+[V:1] "C#m"c2c2 z4 z4 z2cc | "G#/B#"^B2Bc- cf2B- BE3 z2E2 | "C#7/B"c4 B4 =GFEE- E2F^G- | "A#ø7"G2 c6 z4 |]
+[V:2] [CGc]2[CGc]2 z3[CGce] z[CGc][CGc]2 [CGc][CGc][CGc][CGc] | [^B,G]2[B,G]2 z3[G^Bd] z[B,GB][B,GB]2 [GBd][GBd][B,GB]2 | [^EGc]2[EGc]2 z3[EGc] z[EGc][EGc]2 [EGc][EGc][EGc][EGc] | [=EGc]2[EGc]2 z2 z[EGc] z[EGc]2[EGc] |]
+[V:3] C,2C,2 z3C, z C,C,G,, C,C,G,,C, | ^B,,2B,,2 z3B,, z B,,B,,G,, C,C,B,,2 | B,,2B,,2 z3B,, z B,,B,,E,, B,,B,,E,,B,, | ^A,,2A,,2 z2 zA,, zA,,A,,E,, |]

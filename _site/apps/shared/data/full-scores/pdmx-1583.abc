@@ -1,0 +1,24 @@
+X:1
+C:D. Emlyn Evans
+Z:William Shakespeare
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=70
+M:3/4
+K:Eb
+V:1 treble nm="Soprano" snm="S."
+%%MIDI program 52
+V:2 treble nm="Alto" snm="A."
+%%MIDI program 52
+V:3 treble-8 nm="Tenor" snm="T."
+%%MIDI program 52
+V:4 bass nm="Bass" snm="B."
+%%MIDI program 52
+V:1
+"^Andantino"!mp! B2 | B3 A FG | E4- E G |!<(! AG F2 c2!<)! | B4 z2 |!<(! cB =A2 e2!<)! | !>(! (e2 d2)!>)! z2 | z6 | (e2 =A2)!>(! d2- | d3!>)! c B=A | (=A2 G) z!>(! e2-!>)! | e3 d cB | (B2 =A2) z2 | (f2 B2) g2 | g3 f de | (d2 c2) e2- | e3 e!<(! e=A!<)! |!>(! (=A6!>)! | B4)"^dim." (B2- | B2 =A4 | G4) F2 | F4 F2 | F6- | !fermata!F3!mf!"^Più mosso." B =AF | d3 f B=A | (GB e) d (cB | =A)c (fB e2- | ef/e/ dc) (B2- | Bc/B/ =AF) BF | _A6- | !fermata!A"^dolce."!p! G GG GG | (B6 | A) F FF FF | (A6 | G) z z4 | z G G2 G2 | GG GG G2- | G2 ^F4 | !fermata!G2"^più forte." c2 =BG | e4 e2- | e3 e dG | g4 g2 | g>f (ef) (ed) | c2 f2 (fe- | ed/c/) d2 d2 | !fermata!e4!mf! =A2 | B6- | B3 A FG | (E6- | EG A) F BA | G4 z G | !<(! AG F2 c2!<)! |!>(! B6- | B2!>)! z4 |!p! (G6- |!<(! G3 F!<)!!>(! A) G!>)! |"^rall." C4 D2 | E6- | !fermata!E2 z2 |]
+V:2
+!mp! E2 | EE E3 D | E4- E =E |!<(! F=E F2 F2!<)! |!<(! (B,C D=E!<)! F) C |!<(! F4 =A2!<)! | !>(! (=A2 B2)!>)! z2 | (A2 G2) z2 | (G2 ^F2)!>(! B2- | B3!>)! =A G^F | (^F2 G) z!>(! c2-!>)! | c3 B =AB | F4 z2 | (=A2 B2) z2 | (=B2 c2) z2 | G6- | G3 C!<(! FF!<)! |!>(! F6-!>)! | F4 z2 | z2 z2 (F2- | F2 E4 | D4) D2 | C4 E2 | (E2 !fermata!D)!mf! F FF | F3 F FF | (F E3) G2 | (G F2) =A (GC | F3 E) D=E | F6- | F6- | !fermata!F!p! E EE EE | (=E6 | F) F FF FF | (F6 | D) z z4 | z G G2 F2 | ED EF (E2- | E2 D2) C2 | !fermata!D2"^più forte." G2 GF | E4 E2- | E3 C GG | (G2 c2) =B2 | c>G (GA) (GF) | (E2 A2) (Gc) | F2 (BA) (FG) | !fermata!E4!mf! E2 | E3 B, ED | C4 D2 | (E6- | E=E F) _E DF | E4 z _D |!<(! C=E F2 ^F2!<)! |!>(! (G6 | E2)!>)! z2 z2 |!p! (E6 | D4) D2 |"^rall." C4 B,2 | B,6- | !fermata!B,2 z2 |]
+V:3
+!mp! (ed) | c3 _c BA | (G2 B) A G B |!<(! AB c2 d2!<)! | e2 B2 cB |!<(! (=AB c2) f2!<)! | !>(! f4!>)! z2 | (f2 B2) z2 | z6 | z2 z2!>(! e2-!>)! | e3 d cB | (B2 =A) z !>!f2- | f3 e dc | (e2 d2) z2 | (d2 c2) f2 | f3 e cd | (B2 =A2)!<(! c2-!<)! | c3 c!>(! fe | (e2!>)! d2 _d2) | (c4 B2- | B2 =A2) c2 | (c2 B2) (B2- | B3 =A GA) | (=A2 !fermata!B)!mf! B ce | (df B) =A Bd | (B g2) f (ed | c)=A (B3 c/B/ | =Ac) fA B2 | (c=A/B/ cA) Be | (e4 dc | !fermata!d)!p! B BB ee | (_d6 | c) A AA _dd | (c6 | =B) z z4 | z G G2 d2 | c=B cd (dG | c4) c2 | !fermata!=B2"^più forte." c2 dd | c4 c2- | c3 c =Bd | (ce ag) (fg) | e>d c2 =B2 | c4 c2 | B2 f2 A2 | !fermata!G4!mf! E2 | G4 z E | AG F2 B2 | B3 B e_d | c4 B2 | B4 z =E | !<(! (FG A) B ce!<)! |!>(! (e6 | G2)!>)! z2 z2 |!p!!<(! (B3!<)! G!>(! c) B!>)! | A6- | "^rall." A4 A2 | G6- | !fermata!G2 z2 |]
+V:4
+!mp! G,,2 | A,,3 A,, B,,B,, | (E,B,, G,F, E,) C, |!<(! F,G, A,2 A,2!<)! | G,2 z G, =A,G, | !<(! F,4 C2!<)! |!>(! B,4!>)! z2 | (D,2 E,2) z2 | (C,2 D,2) z2 | z2 z2!>(! C2-!>)! | C3 B, =A,G, | (G,2 F,) z !>!D2- | D3 C B,=A, | (C2 B,2) z2 | (G,2 A,2) G,2 | C,6 |!<(! F,6!<)! |!>(! B,,6-!>)! | B,,6- | B,,6- | B,,6- | B,,6- | B,,6- | !fermata!B,,3!mf! D, C,=A,, | B,,3 C, D,B,, | E,4 E,2 | (F,2 D,2) E,2 | (F,4 G,2) | (F,3 E,) D,C, | B,,6- | !fermata!B,,!p! E, E,E, C,C, | (G,6 | A,) _D, D,D, B,,B,, | (F,6 | G,) G,, G,,2 G,,2 | G,,4 G,,2 | G,,4 G,,2 | A,,4 A,,2 | !fermata!G,,2"^più forte." E,2 D,=B,, | (C,E, A,G,) ^F,2- | F,3 ^F, G,=F, | E,4 D,2 | C,>C, C2 G,2 | A,4 =A,2 | B,2 B,,2 B,,2 | !fermata!C,4!mf! _C,2 | B,,4 G,,2 | A,,3 A, B,A, | G,4 z G, | A,G, F,2 B,,2 | (E,3 _D, B,,) C, |!<(! A,,4 =A,,2!<)! |!>(! B,,6!>)! |!p! B,,6- | B,,4 B,,2 | B,,6- |"^rall." B,,4 B,,2 | [E,,E,]6- | !fermata![E,,E,]2 z2 |]

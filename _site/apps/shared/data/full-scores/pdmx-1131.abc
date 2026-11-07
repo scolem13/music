@@ -1,0 +1,33 @@
+X:1
+C:Josef Rheinberger (1839–1901)
+Z:Lk 24,29
+Z:gemeinfrei; MuseScore-Notensatz © (wo anwendbar) 2017 mirabilos Ⓕ The MirOS Licence
+%%score [ 1 2 3 4 5 6 ]
+L:1/8
+Q:1/4=72
+M:4/4
+K:F
+V:1 treble nm="Sopran 1" snm="S1"
+%%MIDI program 52
+V:2 treble nm="Sopran 2\no. Alt 1" snm="S2"
+%%MIDI program 52
+V:3 treble nm="Alt (2)" snm="A."
+%%MIDI program 52
+V:4 treble-8 nm="Tenor 1" snm="T1"
+%%MIDI program 52
+V:5 treble-8 nm="Tenor 2" snm="T2"
+%%MIDI program 52
+V:6 bass nm="Baß" snm="B."
+%%MIDI program 52
+V:1
+!p!"^Andante molto" c6 c2 | c8 | z2!<(! c2 d2 e2 | f4!<)! f4 |!>(! f4 e4!>)! | d6 d2 | c4 c4 | c4 c4 | c4 c4 | d8 | c8 | z2!f! G2 B2 d2 | d4 A4 | B4 d4 |!ff! g8 | f8 |"^dim." _e8 | !fermata!d8 | z2!f! d4 d2 | d2 G2 A2 B2 | c8- | c2 B2 c2 d2 | _e8- | e8- |"^()" e4 d4 | "_dim." c6 c2 | c4 c4 |!p! c6 c2 | c8 | z2!<(! c2 d2 e2 | f4!<)! f4 |!>(! f4 !courtesy!=e4!>)! | z8 | z8 | z8 | z2!f! d4 d2 |!<(! c2 d2 e2 f2 | (f4!<)! e4) | f2!p! f2 e2 d2 | c6 c2 | (B2 A2) G4 | F4 z4 | z4 z2!f! f2 | (f2 e2 d2) e2 | f4!ff! f4 | e4"_dim." d4 | c4 (B2 A2) |!pp! G8 | !fermata!F8 |]
+V:2
+!p! A6 A2 | A8 | z2!<(! c2 c2 c2 | c4!<)! =B4 |!>(! c2 G2 c4-!>)! | c4 !courtesy!_B4 | B4 A4 | G4 A4 | E4 F4 | F8 | F8 | z8 | z2!f! D2 ^F2 A2 | A4 G4 | (G4 _E4) | !courtesy!=F4 B4- | B2"_dim." B2 (c2 B2) | !fermata!A8 | z8 | z2!f! G4 G2 | A2 D2 !courtesy!=E2 ^F2 | (G8- | G2 c4 B2- | B2) A2 B2 c2 | (B8- |"_dim." B6 A2 | G6) (AB) |!p! A6 A2 | A8 | z2!<(! c2 c2 c2 | c4!<)! =B4 |!>(! c4 c4!>)! | z8 | z8 | z8 | z2!f! !courtesy!_B4 A2 | G4 F4 |!<(! G2 G2 c4-!<)! | !>(! c4 B4!>)! | z8 | z2!mf! d2 c2 B2 | A4!f! (B4- | B2 A2) (G2 !courtesy!=F2) | B6 B2 | A4!ff! A4 | c4"_dim." (B2 A2) | G4 F4 |!pp! (F4 E4) | !fermata!F8 |]
+V:3
+!p! F6 F2 | E8 | z2!<(! E2 F2 G2 | F4!<)! G4 |!>(! G4 G4!>)! | z8 | z2!f! G4 F2 | E2 C2 F2 A2 | B4 A4 | B8 | A8 | z8 | z8 | z8 | z2!f! _E2 G2 B2 | B4 F4 |"^dim." G8 | !fermata!^F8 | z8 | z8 | z8 | z2!f! G4 G2 | G2 C2 D2 _E2 | !courtesy!=F8- | F4 F4 | z2"_dim." C2 C2 C2 | G4 C4- | C2!p! A2 G2 F2 | !courtesy!=E8 | z2!<(! E2 F2 G2 | F4!<)! G4 |!>(! G4 G4!>)! | z8 | z8 | z2!f! A4 A2 | A2 D2 E2 F2 | (E4 A4 | G8) | F4 z4 | z2!p! c2 B2 A2 | (G2 F2) E4 | F4 z4 | z2!f! c2 B2 A2 | G6 G2 | F4!ff! F4 | A4"_dim." F4 | E4 C4 |!pp! C8 | !fermata!C8 |]
+V:4
+z8 |!p! c6 c2 |!<(! e6 e2 | d2!<)! d2 d2 d2 |!>(! c4 e4!>)! | z8 | z8 | z8 | z8 | z2!f! B2 d2 f2 | f4 c4 | (_e4 d2 cB) | A4 d4 | d4 d4 | (B4 _e4- | e2) _e2 (d4- | d2"_dim." cB A4) | !fermata!d8 | z8 | z8 | z8 | z8 | z8 | z2!f! f4 f2 | f2 B2 c2 d2 | (!courtesy!=e4"^dim." f4- | f2 ed e4) | f4 z4 |!p! c6 c2 |!<(! e6 e2 | d2!<)! d2 d2 d2 |!>(! c4 e4!>)! | z8 | z8 | z2!f! f4 e2 | d6 d2 | e4 f4 | c8 | F4!p! F4 |!<(! G4 A4!<)! | B6 c2 | F2!f! f2 e2 d2 | c4 c4 | c8 | A4!ff! d4 | c4"_dim." d4 | e4 f4 |!pp! (c6 B2) | !fermata!A8 |]
+V:5
+z8 |!p! A6 A2 |!<(! G6 c2 | A2!<)! A2 =B2 B2 |!>(! G4 c4!>)! | z8 | z8 | z2!f! g4 f2 | e2 c4 (d_e) | d8 | z2!f! F2 A2 c2 | c4 G4 | ^F8 | G6 !courtesy!_B2 | B8- | B4 B4 | "^dim." (G4 A4) | !fermata!A8 | z8 | z8 | z2!f! d4 d2 | d2 G2 A2 B2 | c8- | c8 | B4 (B3 A) | G4"^dim." (!courtesy!=F2 A2) | (B6 AG) | A4 z4 | z2!p! c2 B2 A2 |!<(! G6 c2 | A2!<)! A2 =B2 B2 | !>(! G4 c4!>)! | z8 | z2!f! c4 c2 | c2 F2 G2 A2 |"_⚠" !courtesy!_B4 B4 | (B4 A2) F2 | (c6 B2) | A4 z4 | z4!p! F4 | G6 G2 | d4 z4 | z2!f! C2 F2 A2 | c6 c2 | F4!ff! A4 | A4"_dim." D4 | G4 A4 | !pp! c8 | !fermata!C8 |]
+V:6
+z8 |!p! A,,6 A,,2 |!<(! C,6 C,2 | D,2!<)! D,2 G,2 G,2 |!>(! C,4 C,4!>)! | z2!f! G,4 F,2 | E,2 C,2 F,2 A,2 | B,4 A,4 | G,4 F,4 | B,,8 | F,,8 | z8 | z8 | z2!f! G,,2 B,,2 D,2 | (_E,8 | B,,6) D,2 |"^dim." C,8 | !fermata!D,8 | z8 | z8 | z8 | z8 | z2!f! C4 C2 | C2 F,2 G,2 A,2 | B,4 B,,4 |"^dim." C,6 C,2 | C,8 | F,,4 z4 |!p! A,,6 A,,2 |!<(! C,6 C,2 | D,2!<)! D,2 G,2 G,2 | !>(! C,4 C,4!>)! | z2!f! G,4 G,2 | G,2 C,2 D,2 !courtesy!=E,2 | F,8 | B,,4 B,,4 | C,4 C,4 | C,8 | D,4!p! D,4 |!<(! E,4 F,4!<)! | B,,4 C,4 | D,4!f! (G,2 F,2) | E,4 F,4 | C,6 C,2 | D,4!ff! D,4 | A,,4"_dim." B,,4 | C,4 C,4 |!pp! C,8 | !fermata!F,,8 |]

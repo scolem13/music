@@ -1,0 +1,38 @@
+/* oboe.css — fingering diagrams (oboe-chart.js) and the oboe page widgets (oboe-page.js) */
+.obc { width: 100%; height: auto; display: block; }
+.obc .obc-body { fill: var(--ob-body, #efe6d8); stroke: var(--ob-ink, #231f20); stroke-width: 2.5; }
+.obc .obc-k { fill: var(--ob-open, #fff); stroke: var(--ob-ink, #231f20); stroke-width: 3; transition: fill .12s; }
+.obc .obc-k.obc-down { fill: var(--ob-ink, #231f20); }
+.obc .obc-k.obc-trill { fill: #9aa0a6; }
+.obc .obc-deco line { stroke: var(--ob-ink, #231f20); stroke-width: 3; }
+.obc-live .obc-k { cursor: pointer; }
+.obc-live .obc-k:hover { stroke: var(--site-accent, #2780e3); stroke-width: 6; }
+.obc-small .obc-k, .obc-small .obc-deco line, .obc-small .obc-body { stroke-width: 5; }
+@media (prefers-color-scheme: dark) { :root { --ob-open: #f1f3f5; --ob-body: #5a5246; } }
+
+.obp-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .4rem 0; }
+.obp-strip { margin: .4rem 0; }
+.obp-row { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin: 3px 0; }
+.obp-rowlab { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--site-ink-2, #6c757d); width: 10.5rem; }
+.obp-nb { min-width: 2.6rem; padding: .15rem .35rem; font-size: .85rem; }
+.obp-card { border: 1px solid var(--site-line, #ced4da); border-radius: .5rem; padding: .8rem 1rem; margin: .5rem 0 1rem; background: var(--site-surface-2, #f8f9fa); }
+.obp-head { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+.obp-staff svg { max-width: 100%; }
+.obp-staff-s { min-height: 60px; }
+.obp-big { font-size: 1.8rem; font-weight: 800; line-height: 1.1; }
+.obp-muted { color: var(--site-ink-2, #6c757d); font-size: .9rem; margin: .3rem 0; }
+.obp-diags { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: .6rem; }
+.obp-fig { margin: 0; text-align: center; }
+.obp-fig figcaption { font-size: .85rem; color: var(--site-ink-2, #6c757d); margin-top: .2rem; }
+.obp-d { width: 110px; }
+.obp-d-big { width: min(210px, 45vw); flex: none; }
+.obp-d-s { width: 54px; margin: .3rem auto; }
+.obp-build { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; }
+.obp-side { flex: 1 1 240px; }
+.obp-ask { font-size: 1.05rem; margin-bottom: .3rem; }
+.obp-out { min-height: 1.6em; font-size: 1.05rem; margin: .4rem 0; }
+.obp-good { color: #2f9e44; font-weight: 700; } .obp-bad { color: #e03131; font-weight: 700; }
+.obp-tgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: .6rem; }
+.obp-tcard { border: 1px solid var(--site-line, #ced4da); border-radius: .4rem; padding: .4rem; text-align: center; }
+.obp-tlab { font-weight: 700; font-size: .9rem; }
+.obp-steps li { margin-bottom: .25rem; }

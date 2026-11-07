@@ -1,0 +1,14 @@
+X:1
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=88
+M:2/4
+K:F
+V:1 treble nm="Part_1"
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+!f! f2 ff | (f/e/d/c/ B/A/G/F/) |!p! .E.F.G.A |!>(! (c2 B)!>)! z |!f! g2 gg | (g/f/e/d/ c/B/A/G/) | !p! .F.E.F.G | A2 (c/A/)(c/A/) | F z({/A} .G).F |({/A} .G).F (f/c/)(f/c/) | A z({/c} .B).A | ({/c} .B).A!f! (a/f/)(a/f/) | .d.d ^c/d/e/f/ | .g.g (a/g/f/e/) |!p! (^c/d/c/d/ c/d/e/f/) | a/(g/a/g/ a/g/f/e/) | de/f/ c=B | (c!<(!=B/c/ ^c/d/^d/e/!<)! |!f! f2) ff | f/e/d/c/ B/A/G/F/ | !p! _E(D/F/ E)(D/F/ | _E2) z2 |!f! _e2 ee | _e/d/c/B/ A/G/F/_E/ |!p! D(C/_E/ D)(C/E/ | D2) z2 | d(_e/^c/ d)(e/c/ | d)a^f=c | B(A/c/ B)(A/c/ | B2) z2 | c(=B/d/ c)(B/d/ | c)ge_B | A(G/B/ A)(G/B/ | A4) | BfdA | (G4 | A)e^cG | F4 | z (Fd=B | fd=bf | d'=bf'd') | c'=bab |!f! c' z g/e/g/e/ | c z c'/g/c'/g/ | e z e'/c'/e'/c'/ | =bd'f'b | c' z"_dim." d'/_b/d'/b/ | g z b/g/b/g/ | e z g/"_(rit.)"e/g/e/ | c z!p! c/A/c/A/ | F z({/A} .G).F |({/A} .G).F f/c/f/c/ | A z({/c} .B).A | ({/c} .B).A!f! a/f/a/f/ | .d.d ^c/d/e/f/ | .g.g d'/_b/d'/b/ | a/g/a/g/ ^f/g/a/b/ | d'/c'/d'/c'/ b/a/g/=f/ | ga/b/ .f.e | .f!>(!(afd)!>)! |"_dolce" c4- | cafd | c4- | ca g/f/e/d/ | c/d/c/d/ c/d/c/d/ | c/d/c/d/ c/d/c/d/ |"_cresc." c/d/c/d/ c/a/g/f/ | e/f/e/f/ e/b/a/g/ | f2 z2 | !f! .[gbe']2 z2 | .[af']2 z2 |]
+V:2
+F,/A,/C/A,/ F,/A,/C/A,/ | F,2 z2 | B,/C/A,/C/ G,/C/F,/C/ | E,2 z2 | E,/B,/C/B,/ E,/B,/C/B,/ | E,2 z2 | A,/C/G,/C/ A,/C/E,/C/ | F,2 z2 | A,/C/A,/C/ B,/C/A,/C/ | B,/C/A,/C/ z2 | F,/C/F,/C/ G,/C/F,/C/ | G,/C/F,/C/ z2 | ([F,=B,]4 | [E,C]4) | ([F,=B,]4 | [E,C]4) | z F,G,G,, | C,2 z2 | F,/A,/C/A,/ F,/A,/C/A,/ | F,2 z2 | C,/F,/=B,,/F,/ C,/F,/B,,/F,/ | C,2 z2 | F,/A,/C/A,/ F,/A,/C/A,/ | F,2 z2 | B,,/F,/A,,/F,/ B,,/F,/A,,/F,/ | B,,2 z2 | ^F,4- | F,4 | G,^F,G,F, | G,DB,=F, | E,4- | E,4 | F,E,F,(E, | F,)CA,E, | D,4 | E,_B,G,D, | ^C,4 | D,A,F,=C, | =B,,2 z2 | z4 | z4 | [G,F]2 z2 |[K:treble] [CE]G[CE]G | [CE]G[CE]G | [CE]G[CE]G | [DF]G[DF]G | [CE] z z2 | [CE] z z2 | [CG] z z2 | [EGB] z z2 |[K:bass] (A,/C/A,/C/ B,/C/A,/C/ | B,/C/A,/C/) z2 | (F,/C/F,/C/ G,/C/F,/C/ | G,/C/F,/C/) z2 | ([F,=B,]4 | [E,C]2) z2 | ([_B,E]4 | [A,F]2) z2 | z (B,C).C, | F,2 z2 |[K:treble] z EGB | [FA]2 z2 | z EGB | [FA]2 z2 | z EGB | GEGB | [FA]2 z2 | [CG]2 z2 | [A,F]2 z2 |[K:bass] .[C,C]2 z2 | .[F,,F,]2 z2 |]

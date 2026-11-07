@@ -1,0 +1,19 @@
+X:1
+C:Carl Czerny
+%%score { 1 | ( 2 3 ) }
+L:1/8
+Q:1/4=92
+M:2/4
+K:Bb
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:3 bass 
+%%MIDI program 0
+V:1
+"^Allegretto vivace"!p!"_leggiero" (6:4:6.d/.d/.d/(d/g/b/ (6:4:6a/^f/d/a/f/.d/) | (6:4:6.d/.d/.d/(d/g/b/ (6:4:6a/^f/d/a/f/.d/) | (6:4:6.d'/.d'/.d'/(d'/e'/d'/ (6:4:6.c'/).c'/.c'/(c'/d'/c'/ | (6:4:6.b/)(d'/c'/b/a/g/"_cresc."!<(! (6:4:6^f/a/f/d/c/.A/) | (6:4:6.d/.d/.d/(d/g/b/ (6:4:6c'/a/=f/c'/a/.f/) | (6:4:6.f/.f/.f/(f/b/d'/ (6:4:6=e'/^c'/a/e'/c'/.a/)!<)! | !f! (6:4:6.a'/.a'/.a'/(a'/b'/a'/ (6:4:6.g'/).g'/.g'/(g'/a'/g'/ | (3=f'/g'/a'/ (3a/=b/^c'/ (3d'/c'/d'/ .d) :: !p! (6:4:6.f/.f/.f/(f/f'/.f/) (6:4:6.f/.f/.f/(f/f'/.f/) | (6:4:6.f/.f/.f/(f/f'/.f/) (6:4:6.f/.f/.f/(f/f'/.f/) | (6:4:6.f/.f/.f/(f/f'/.f/) (6:4:6.f/.f/.f/(f/f'/.f/) | (6:4:6.f/.f/.f/(f/f'/.f/) (6:4:6.f/.f/.f/(f/f'/.f/) | (6:4:6.f/.f/.f/(f/f'/.f/) (6:4:6.f/.f/.f/(f/f'/.f/) | (6:4:6.f/.f/.f/(f/f'/.f/) (6:4:6.f/.f/.f/(f/f'/.f/) | (6:4:6.f/.f/.f/(f/f'/.f/) (6:4:6.f/.f/.f/(f/f'/.f/) | (6:4:6.f/.f/.f/(f/f'/.f/) (6:4:6.f/.f/.f/(f/f'/.f/) | "_cresc."!<(! (6:4:6.^f/.f/.f/(f/^f'/.f/) (6:4:6.f/.f/.f/(f/f'/.f/) | (6:4:6.g/.g/.g/(g/g'/.g/) (6:4:6.g/.g/.g/(g/g'/.g/) | (6:4:6.a/.a/.a/(a/a'/.a/) (6:4:6.a/.a/.a/(a/a'/.a/)!<)! | !f! (6:4:6.b/.b/.b/(b/b'/.b/) (6:4:6.b/.b/.b/(b/b'/.b/) | (6:4:6(b'/a'/c''/b'/a'/g'/ (6:4:6b/a/c'/b/a/g/ | (6:4:6B/A/c/B/A/G/ (6:4:6=e/G/A/B/A/G/ | (6:4:6^F/A/d/A/F/.D/)!p! (6:4:6.D/.D/.D/(D/d/.D/) | (6:4:6.D/.D/.D/(D/d/.D/) (6:4:6(D/^C/D/d/^c/.d/) | "_cresc."!<(! (6:4:6.d/.d/.d/(d/g/b/ (6:4:6a/^f/d/a/f/.d/) | (6:4:6.d/.d/.d/(d/g/b/ (6:4:6a/^f/d/a/f/.d/)!<)! | !f! (6:4:6.d'/.d'/.d'/(d'/e'/d'/ (6:4:6.c'/).c'/.c'/(c'/d'/c'/ | (6:4:6.b/)(d'/c'/b/a/g/ (6:4:6^f/a/f/d/c/.A/) | !p! (6:4:6.G/.G/.G/(G/g/G/"_cresc."!<(! (6:4:6.A/).A/.A/(A/a/A/ | (6:4:6.=B/).B/.B/(B/=b/B/ (6:4:6.c/).c/.c/(c/c'/c/!<)! | !f! (6:4:6.^c/).c/.c/(c/^c'/c/ (6:4:6.d/).d/.d/(d/d'/d/ | (6:4:6.=e/).e/.e/(e/=e'/e/ (6:4:6.g/).g/.g/(g/g'/g/ | !ff! (6:4:6.d'/)(b/d'/g'/d'/g'/"_con fuoco" (6:4:6b'/g'/b'/d''/b'/g'/ | (6:4:6d'/b/g/d'/b/g/ (6:4:6d/B/G/d/B/G/ | .D) .[dgb] z .[cd^fa] | .[Bdg] .G, z2 :|
+V:2
+(G,[B,D]D,[^F,C]) | (G,[B,D]D,[^F,C]) | (B,,[D,G,]A,,[D,^F,] | .[G,,D,]) .[B,,D,G,] .[D,A,] z | (G,[B,D]=F,[A,E]) |[K:treble] B,[DF]A,[^CG] |[K:bass] (F,[A,D]G,[B,=E]) | [K:treble] .[A,DF] .[A,=EG] .[DF] z ::[K:bass] (D2 C2 | B,2 A,2 | .[D,B,]).[F,C].[B,D].[CE] | (!>![B,D]2 [A,C]2) | (E2 D2 | C2 =B,2 | .[A,C]).[B,D].[CE].[A,F] | (!>![CE]2 [B,D]2) | CDCD | B,DB,D | CDCD | B,DB,D | ^C,.[=E,G,B,].[E,G,B,].[E,G,B,] | ^C,.[=E,G,B,]C,.[E,G,B,] | [D,^F,A,]2 C2 | B,2 A,2 | .G,,.[G,B,D] .D,,.[D,^F,C] | .G,,.[G,B,D] .D,,.[D,^F,C] | (B,,[D,G,]A,,[D,^F,] | .[G,,D,]) .[B,,D,G,] .[D,A,] z | (6:4:6(B,,/D,/G,/B,,/D,/G,/ (6:4:6C,/E,/G,/C,/E,/G,/ | (6:4:6D,/F,/G,/D,/F,/G,/ (6:4:6E,/G,/C/E,/G,/C/ | (6:4:6E,/G,/_B,/E,/G,/B,/ (6:4:6D,/G,/B,/D,/G,/B,/ | (6:4:6^C,/G,/B,/C,/G,/B,/ (6:4:6C,/=E,/B,/C,/E,/B,/) | [D,G,B,]4 | z [K:treble] (3(d/B/G/ .D) [K:bass] (3(D/B,/G,/ | .D,) z .[D,^F,A,C] z | .[G,B,] .G,, z2 :|
+V:3
+G,2 D,2 | G,2 D,2 | B,,2 A,,2 | x4 | G,2 F,2 |[K:treble] B,2 A,2 |[K:bass] F,2 G,2 | [K:treble] x4 ::[K:bass] B,F,_E,F, | D,F,C,F, | x4 | F,4 | CF,B,F, | A,F,^G,F, | x4 | x4 | A,2 A,2 | G,2 G,2 | ^F,2 F,2 | G,2 G,2 | ^C,4 | ^C,2 C,2 | x2 A,D, | G,D,^F,D, | x4 | x4 | B,,2 A,,2 | x4 | B,,B,,C,C, | D,D,E,E, | E,E,D,D, | ^C,C,C,C, | x4 | x [K:treble] x2 [K:bass] x | x4 | x4 :|

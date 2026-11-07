@@ -1,0 +1,16 @@
+X:1
+C:Robert Schumann
+Z:Public Domain (PianoXML typeset)
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=120
+M:6/8
+K:C
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+!mf!"^Allegro con brio" .E | .A.E.A .c.A.c | (ec).f .e.c.A | (B^G).c .B.G.E | .A.E.c B z .E | .A.E.A .c.A.c | (ec).f .e.c.A | (B^G).c .B.G.E | .A.E^G A z :|!f! z | .[CFA] z z .[CFA] z z | [FA]2 .[FA] .[FA] z z | [EGc]2 .[EGc] .[EGc] z z | .[FAc].AF [EG] z z | .[CFA] z z .[CFA] z z | [FA]2 .[FA] .[FA] z z | [EGc]2 .[EGc] .[EGc] z z | .[CFA] z .[CG] F z ||!mf! .E | .A.E.A .c.A.c | (ec).f .e.c.A | (B^G).c .B.G.E | .AE.c B z E | .A.E.A .c.A.c | (ec).f .e.c.A | (B^G).c .B.G.E | .A.E^G A z |]
+V:2
+z | .[A,C] z z .[A,CE] z z | [A,CE]2 .[A,DF] .[A,CE] z z | [E,^G,B,]2 .[E,A,C] .[E,G,B,] z z | .[A,C] z .[A,C] [E,^G,B,] z z | .[A,C] z z .[A,CE] z z | [A,CE]2 .[A,DF] .[A,CE] z z | [E,^G,B,]2 .[E,A,C] .[E,G,B,] z z | .[A,C] z .[E,B,] [A,C] z :| .C, | .F,.C,F, .A,F,.A, | (CA,).D .C.A,.F, | (G,E,).A, .G,.E,.C, | .F,.C,.A, [C,G,] z .C, | .F,.C,.F, .A,F,.A, | (CA,).D .C.A,.F, | (G,E,).A, .G,.E,.C, | .F,.C,.E, F, z || z | .[A,C] z z .[A,CE] z z | [A,CE]2 .[A,DF] .[A,CE] z z | [E,^G,B,]2 .[E,A,C] .[E,G,B,] z z | .[A,C] z .[A,C] [E,^G,B,] z z | .[A,C] z z .[A,CE] z z | [A,CE]2 .[A,DF] .[A,CE] z z | [E,^G,B,]2 .[E,A,C] .[E,G,B,] z z | .[A,C] z .[E,B,] [A,C] z |]

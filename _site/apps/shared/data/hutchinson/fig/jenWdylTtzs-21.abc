@@ -1,0 +1,15 @@
+X:1
+T:Lennon-McCartney, I Want to Hold Your Hand
+%%id jenWdylTtzs-21
+%bars ?
+%unsure right-hand chord voicings (read from blurred noteheads, spelled to fit the chord symbols); bass octave and last-bar bass pitches
+M:4/4
+L:1/8
+%%score 1 {2 | 3}
+V:1 clef=treble-8 nm="Voice"
+V:2 clef=treble
+V:3 clef=bass
+K:F#
+[V:1] "B"z f e d "C#"c2 e2 | "F#"(f3/2 d/2 c3/2 B/2 "D#m"c/B/A) z2 | "B"z f e d "C#"c2 G2 | "F#"F4 z4 |]
+[V:2] z [F,B,DF] [F,B,DF]2 z2 [G,CE]2 | z [F,A,CF] [F,A,CF]2 z2 [F,A,D]2 | z [F,B,DF] [F,B,DF]2 z2 [G,CE]2 | z [F,A,CF] [F,A,CF]2 z2 [F,A,C]2 |]
+[V:3] B,,,3 B,,, C,,3 C,, | F,,3 F,, D,,3 D,, | B,,,3 B,,, C,,3 C,, | F,,2 C,,B,,, F,,2 C,,B,,, |]

@@ -1,0 +1,13 @@
+X:1
+T:W.A. Mozart, Piano Sonata in C, K. 545, I (1780s)
+%%id 5NkzTTkqTB4-34
+%bars ?
+%unsure no time signature printed (4/4 assumed); bar 4 left-hand G chord third note read D4
+M:4/4
+L:1/8
+K:C
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=treble
+[V:1] "G/B"d'2 z/d'/b/g/ "C"e2 z/e/g/e/ | "F#o/A"c'2 z/c'/a/^f/ "Bm"d2 z/d/f/d/ | "Em/G"b2 z/b/g/e/ "Am"c2 z/c/e/c/ | "D/F#"a2 z/a/f/d/ "G"B2 z/g/d/B/ |]
+[V:2] z/B,/D/G/ B2 z/C/E/G/ c2 | z/A,/C/^F/ A2 z/B,/D/F/ B2 | z/G,/B,/E/ G2 z/A,/C/E/ A2 | z/^F,/A,/D/ ^F2 z/G,/B,/D/ G2 |]

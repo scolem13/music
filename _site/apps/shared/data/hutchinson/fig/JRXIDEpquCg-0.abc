@@ -1,0 +1,13 @@
+X:1
+T:Tchaikovsky, The Nutcracker, Miniature Overture (1892)
+%%id JRXIDEpquCg-0
+%bars ?
+%unsure the meter: the figure prints 4/4 but each bar holds two beats, so M:2/4 is used; chord inner notes and the bass-staff notes read approximately
+M:2/4
+L:1/16
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+K:Bb
+[V:1] !pp!.[FB]2 z2 .[Bd]3 z/[Bd]/ | [GBc]2 .[GBg]2 .[dfb]2 .[EB]2 | !>![Ee]2[Fd]2 .[Gc]2.[GB]2 || !>![GBd]4 [GBc]2 z2 |]
+[V:2] .[B,D]2 z2 .[B,G]3 z/[B,F]/ | [B,=E]2 .[B,_E]2 .[B,D]2 [F,_A,B,]2 | !>![E,G,]2 G,2 .C2.C2 || !>![C=E]4 D2 z2 |]

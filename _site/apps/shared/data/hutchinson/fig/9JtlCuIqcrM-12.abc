@@ -1,0 +1,12 @@
+X:1
+T:Geoff Gill and Cliff Wade, Heartbreaker (1979)
+%%id 9JtlCuIqcrM-12
+%bars ?
+M:C
+L:1/8
+K:Fm
+%%score {1 | 2}
+V:1 clef=bass
+V:2 clef=bass
+[V:1] "F5"[F,C][F,C][F,C][F,C] [F,C][F,C][F,C][F,C] | "Eb5"[E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | "Db5"[D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] | "Bb5"[B,,F,][B,,F,][B,,F,][B,,F,] "C5"[C,G,]2 "Eb5"[E,B,]2 |]
+[V:2] F,,F,,F,,F,, F,,F,,F,,F,, | E,,E,,E,,E,, E,,E,,E,,E,, | D,,D,,D,,D,, D,,D,,D,,D,, | B,,,B,,,B,,,B,,, C,,2 E,,2 |]

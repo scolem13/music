@@ -1,0 +1,24 @@
+X:1
+C:M. Hauptmann
+Z:Goethe
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/8=108
+M:3/8
+K:C
+V:1 treble nm="Soprano"
+%%MIDI program 52
+V:2 treble nm="Alto"
+%%MIDI program 52
+V:3 treble-8 nm="Tenor"
+%%MIDI program 52
+V:4 bass nm="Bass"
+%%MIDI program 52
+V:1
+"^Allegretto"!mf! G | e2 d | c2 B | A3/2 B/ c | !>!G2 z |!p! .G .c .A | G z .G | .G .c .A | G2 z | !mf! G!<(! A B!<)! |!>(! c2!>)!!p! B | .A .c .^F | G z!f! G | e2 d | (cB) _B | A !>!B !>!c | !>!d2 z |!p! .G .c .A | G z .G | .G .c .A | G2 z |!mf! G!<(! A B!<)! |!>(! c2!>)!!p! B | .A .c .^F | G z G | A2 d | (dB)"^cresc." G |"^rallent." (cd) e |!f!!>(! !fermata!f2!>)! z | "^a tempo"!p! .e .c .d | (B>A) G | (Gc) A | G2 z |!f! G c e | (g>f) e | (df) B | c z!p! G | G2 G | "^poco ritenuto" G2 c | (B>A) G | c2 z ||"^a tempo"!mf! e e d | c2 B | A3/2 B/ c | !>!G2 z | !p! .G .c .A | G z .G | .G .c .A | G2 z |!mf! G!<(! A B!<)! |!>(! c2!>)!!p! B | .A .c .^F | G2 z | !f! e e d | (cB) _B | A !>!=B !>!c | !>!d2 z |!p! .G .c .A | G z .G | .G .c .A | G2 z | !mf! G!<(! A B!<)! |!>(! c2!>)!!p! B | .A .c .^F | G z G | A2 d | (d"^cresc."B) G | "^rallentando" (cd) e |!f!!>(! !fermata!f2!>)! z |"^a tempo"!p! .e .c .d | (B>A) G | (Gc) A | G3 | !f! G c e | (g>f) e | (df) B | c z"^dol." G | G2 G |"^rallentando.. . . . . . . . . . . ." (Ge) c | (B>A) G | c2 z |]
+V:2
+!mf! G | G2 F | E2 G | A3/2 G/ F | !>!F3/2 G/ F | E z z |!p! .D .E .F | E z _E | .D .=E .F | E!mf!!<(! E G!<)! |!>(! (G^F)!>)!!p! G | .E .E .D | D z!f! G | (G^F) =F | (EF) G | A !>!G !>!^F | !>!=F3/2"^dim." G/ F | E z z |!p! .D .E .F | E z _E | .D .=E .F |!mf! E!<(! E G!<)! | !>(! (G^F)!>)!!p! G | .E .E .D | D z G | ^F2 F | (=FD)"^cresc." B, | (GB) c | !f!!>(! !fermata!B2!>)! z | z3 |!p! F F F | (EG) A | (D>E) F | E z!f! G | G2 G | (AF) F | E z!p! E | F2 F | E2 G | F2 F | E2 z ||!mf! G G F | E2 G | A3/2 G/ F | !>!F3/2 G/ F | E z z | !p! .D .E .F | E z E | .D .E .F | E!mf! E!<(! G!<)! |!>(! (G^F)!>)!!p! G | .E .E .D | D z!f! !>!G- | G ^F =F | (EF) G | A !>!G !>!^F | !>!=F3/2"^dim." G/ F | E z z |!p! .D .E .F | .E z ._E | .D .=E .F | E!mf! E!<(! G!<)! |!>(! (G^F)!>)!!p! G | .E .E .D | D z G | ^F2 F | (=F"^cresc."D) B, | (GB) c |!f!!>(! !fermata!B2!>)! z | z3 |!p! .F .F .F | (EG) A | (D>E) F | E z!f! G | G2 G | (AF) F | E z E | F2 F | E2 G | F2 F | E2 z |]
+V:3
+!mf! G | G2 B | c2 c | c3/2 B/ A | !>!d3/2 e/ d | c z z |!p! .B .c .d | c z c | .B .c .d | c!mf!!<(! e d!<)! |!>(! c2!>)!!p! d | .e .c .c | B z!f! G | (GA) B | c2 c | c !>!B !>!A | !>!G2 z | z3 |!p! .B .c .d | c z c | .B .c .d |!mf! c!<(! e d!<)! |!>(! c2!>)!!p! d | .e .c .c | B z B | (c>d) c | (Bd)"^cresc." f | (ed) c |!f!!>(! !fermata!d2!>)! z | z z!p! A | (d>c) B | c2 c | (B>c) d | c z!f! c | (e>d) c | (Ad3/2) G/ | G z!p! c | (B>A) G | (Gc) e | (d>c) (B/d/) | G2 z ||!mf! G G B | c2 c | c3/2 B/ A | !>!d3/2 e/ d | c z z |!p! .B .c .d | c z c | .B .c .d | c!mf! e!<(! d!<)! |!>(! c2!>)!!p! d | .e .c .c | B z!f! !>!G- | G A B | c2 c | c !>!B !>!A | !>!G2 z | z3 |!p! .B .c .d | .c z .c | .B .c .d | c!mf! e!<(! d!<)! |!>(! c2!>)!!p! d | .e .c .c | B z B | (c>d) c | (B"^cresc."d) f | (ed) c |!f!!>(! !fermata!d2!>)! z | z z!p! A | (d>c) B | c2 c | (B>c) d | c z!f! c | (e>d) c | (Ad3/2) G/ | G z c | (B>A) G | (Gc) e | (d>c) (B/d/) | G2 z |]
+V:4
+!mf! G, | C,2 C, | C,2 E, | F,3/2 G,/ A, | !>!B,,2 z |!p! .C, .E, .F, | G, z .G, | .C .E, .^F, | G,2 z |!mf! C,!<(! C B,!<)! |!>(! A,2!>)!!p! G, | .C, .A,, .D, | G,, z!f! G, | C,2 C, | (C,D,) E, | F, !>!G, !>!A, | !>!B,,2 z |!p! .C, .E, .F, | G, z .G, | .C .E, .^F, | G,2 z | !mf! C,!<(! C B,!<)! |!>(! A,2!>)!!p! G, | .C, .A,, .D, | G,, z G, | G,2 G, | G,2"^cresc." G, | G,2 G, |!f!!>(! !fermata!G,2!>)! z |!p! .C, .A, .F, | G,2 G, | (CE,) F, | G,2 z |!f! C E, G, | (C,>D,) E, | (F,D,) G, | C,3- | C,3- | C,3- | C,3- | C,2 z ||!mf! C, C, C, | C,2 E, | F,3/2 G,/ A, | !>!B,,2 z |!p! .C, .E, .F, | G, z .G, | .C .E, .^F, | G,2 z |!mf! C,!<(! C B,!<)! | !>(! A,2!>)!!p! G, | .C, .A,, .D, | G,,2 z |!f! C, C, C, | (C,D,) E, | F, !>!G, !>!A, | !>!B,,2 z | !p! .C, .E, .F, | G, z .G, | .C .E, .^F, | G,2 z |!mf! C,!<(! C B,!<)! |!>(! A,2!>)!!p! G, | .C, .A,, .D, | G,, z G, | G,2 G, | G,2 G, | G,2 G, |!f!!>(! !fermata!G,2!>)! z |!p! .C, .A, .F, | G,2 G, | (CE,) F, | G,3 |!f! C E, G, | (C,>D,) E, | (F,D,) G, | C,3- | C,2 C, | C,2 C, | C,2 C, | C,2 z |]

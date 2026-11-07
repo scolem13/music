@@ -1,0 +1,39 @@
+/* flute.css — fingering diagrams (flute-chart.js) and the flute page widgets (flute-page.js, ear-flute.js) */
+.flc { width: 100%; height: auto; display: block; }
+.flc .flc-k { fill: var(--fl-open, #fff); stroke: var(--fl-ink, #231f20); stroke-width: 5; transition: fill .12s; }
+.flc .flc-k.flc-down { fill: var(--fl-ink, #231f20); }
+.flc .flc-k.flc-trill { fill: #9aa0a6; }
+.flc .flc-deco line { stroke: var(--fl-ink, #231f20); stroke-width: 5; }
+.flc-live .flc-k { cursor: pointer; }
+.flc-live .flc-k:hover { stroke: var(--site-accent, #2780e3); stroke-width: 9; }
+.flc-small .flc-k, .flc-small .flc-deco line { stroke-width: 9; }
+@media (prefers-color-scheme: dark) { :root { --fl-open: #f1f3f5; } }
+
+.flp-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .4rem 0; }
+.flp-bar select { width: auto; }
+.flp-lab { display: inline-flex; gap: .4rem; align-items: center; margin: 0; font-size: .9rem; }
+.flp-strip { margin: .4rem 0; }
+.flp-row { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin: 3px 0; }
+.flp-rowlab { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--site-ink-2, #6c757d); width: 9.5rem; }
+.flp-nb { min-width: 2.6rem; padding: .15rem .35rem; font-size: .85rem; }
+.flp-card { border: 1px solid var(--site-line, #ced4da); border-radius: .5rem; padding: .8rem 1rem; margin: .5rem 0 1rem; background: var(--site-surface-2, #f8f9fa); }
+.flp-head { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+.flp-staff svg { max-width: 100%; }
+.flp-staff-s { min-height: 60px; }
+.flp-big { font-size: 1.8rem; font-weight: 800; line-height: 1.1; }
+.flp-muted { color: var(--site-ink-2, #6c757d); font-size: .9rem; margin: .3rem 0; }
+.flp-diags { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: .6rem; }
+.flp-fig { margin: 0; text-align: center; }
+.flp-fig figcaption { font-size: .85rem; color: var(--site-ink-2, #6c757d); margin-top: .2rem; }
+.flp-d { width: 200px; }
+.flp-d-big { width: min(380px, 92vw); flex: none; }
+.flp-d-s { width: 120px; margin: .3rem auto; }
+.flp-build { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; }
+.flp-side { flex: 1 1 240px; }
+.flp-ask { font-size: 1.05rem; margin-bottom: .3rem; }
+.flp-out { min-height: 1.6em; font-size: 1.05rem; margin: .4rem 0; }
+.flp-good { color: #2f9e44; font-weight: 700; } .flp-bad { color: #e03131; font-weight: 700; }
+.flp-tgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: .6rem; }
+.flp-tcard { border: 1px solid var(--site-line, #ced4da); border-radius: .4rem; padding: .4rem; text-align: center; }
+.flp-tlab { font-weight: 700; font-size: .9rem; }
+.flp-steps li { margin-bottom: .25rem; }

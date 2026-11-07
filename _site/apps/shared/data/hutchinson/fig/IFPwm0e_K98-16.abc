@@ -1,0 +1,13 @@
+X:1
+T:Richard Strauss, Also Sprach Zarathustra, Op.30 (1896)
+%%id IFPwm0e_K98-16
+%bars ?
+%unsure the low bass note's octave (pedal C) and the tremolo between it and the half note (written as two halves)
+M:4/4
+L:1/16
+K:C
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] !p!C8 G8 | c8- c7 !f!"C"[Gceg] | "Cm"!p![Gc_eg]16- | !f![Gceg] z z2 z4 z8 |]
+[V:2] C,,8 C8 | C,,8 C8 | C,,8 C8 | (3C2G,2C2 (3G,2C2G,2 (3C2G,2C2 (3G,2C2G,2 |]

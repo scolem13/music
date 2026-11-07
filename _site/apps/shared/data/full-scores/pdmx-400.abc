@@ -1,0 +1,24 @@
+X:1
+C:J. S. Bach
+Z:L. Kopecny
+%%score { ( 1 2 ) | ( 3 4 ) }
+L:1/8
+Q:1/8=116
+M:4/4
+K:C
+V:1 treble nm="Flügel" snm="Flgl."
+%%MIDI program 0
+V:2 treble 
+%%MIDI program 0
+V:3 bass 
+%%MIDI program 0
+V:4 bass 
+%%MIDI program 0
+V:1
+"^Moderato e maestoso.." z8 | z4 z GAB | c3/2d/4c/4 Be A"_cresc."!<(!!>!d- d/e/d/c/ | B/G/A/B/ c/B/c/d/ e/d/e/^f/ gB | cA d/c/B/A/ G>!<)!!f!G F/E/F/G/ | A/G/A/B/ c4"_dimin."!>(! B2 | z!>)!!p! c"_cresc."!<(!de f3/2g/4f/4 ea | d!>!g- g/a/g/f/ e!>!a- a/b/a/g/ | f4 e^f g2- | g2 ^f2 g/=f/!f!e/!<)!d/ c/d/c/B/ | A/c/B/A/ z2 z/ c/B/A/ ^Ge | dc/B/ A/=G/A/B/ c/^F/^G/A/ BA/B/ | cfed-!f! d"_dimin."!>(!c/B/ TB>A | A2!>)! z2 z4 | z4!<(! z GAB | c3/2d/4c/4 Bc de f3/2g/4f/4 | e!<)!!f!adg- g/a/g/f/ ea | d_b ag/f/ g/f/g/e/ f/g/Pg/!>(!f/4g/4 | "_dimin." a/^c/d/g/ Te>d!>)! d z z2 | z4 z2 z G | AB c3/2d/4c/4 BeAd- | d/e/d/c/ B/c/d/e/!f! f/g/a/g/ f/e/d/c/ |"_dimin."!>(! B2 cd G c2 B!>)! |!p! c2 B_B A d2!p! c | de f2- f/a/g/f/ e/f/e/d/ |!p! c4 z/ G/4A/4=B/c/ d/e/f- | !>(! f/4c/4d/4e/4f/g/ a>!>)!b !fermata![egc']4 |]
+V:2
+z!p! C"_sempre legato"DE F3/2G/4F/4 EA | D!>!G- G/A/G/F/ E/F/E/D/ C/D/C/B,/ | A,^F G2- GF/E/ FD | G=FED C z2 G- | G=F/E/ F2- F/F/E D2 | CF z/ G/F/E/ FD G2- | G2 z2 z4 | z8 | z GAB c3/2d/4c/4 Be | Ad- d/e/d/c/ B z2 D | E^F G3/2A/4G/4 FBE!>!A- | A/B/A/^G/ ^F=F ED- D/E/^F/G/ | A/^G/A/B/ G/^F/G/!>!A/ B z z2 | z!p! CDE F3/2"_cresc."G/4F/4 EA | DG- G/A/G/F/ EE^FG- | G^F^GA- A=GA=B | c3/2d/4c/4 Be Ad- d/e/d/c/ | Bg^cd ecde | A z2 E ^FG A3/2B/4A/4 | Gc^FB- B/c/B/A/ G/F/E/D/ | E2 D2- D/A/G/=F/ E/G/F/A/ | G2- G/A/_B c2 dG | G3 F- FE D2 | E A2 G- GFGA | _B3/2c/4B/4 Ad Gc- c/d/c/B/ | A/_B/A/G/ F/G/F/E/ D2- D>G | A2 z/ f/!pp!d z4 |]
+V:3
+z8 | z8 | z8 | z G,A,B, C3/2D/4C/4 B,E | A,!>!D- D/E/D/C/ B,!f!C-C_B, | A,DG,C z/ A,/B,/C/ D2 | G,2 z G, A,B, C3/2D/4C/4 | B,EA,!>!D- D/E/D/=C/ =B,!>!E- | E2 D2 C/B,/C/A,/ E/D/C/B,/ | C/A,/B,/C/ D/C/B,/A,/ G,2 z2 | z8 | z E,^F,^G, A,3/2B,/4A,/4 G,C | ^F,!>!B,- B,/C/B,/A,/ ^G, A,2 G, | A,2 z =G, A,B, C3/2D/4C/4 | B,EA,D- DG, D2 | CA, E2 D z z2 | z A,B,^C D3/2E/4D/4 =CF | B,E- E/F/E/D/ ^C z z2 | z A,=B,^C!p! D3/2E/4D/4 =C^F | B,E- E/^F/E/D/ C4- | C/D/C/B,/ A,/G,/A,/^F,/ G,"^cresc."B,CD | E3/2F/4E/4 DG CF- F/G/F/E/ | D2 ED- DG, G,2- | G,C,D,E, F,3/2G,/4F,/4 E,A, | !<(! D,G,- G,/A,/G,/F,/!<)! E,/!>(!D,/E,/F,/ G,/A,/_B,/G,/!>)! | A,/E,/F,/G,/ A,/=B,/C/A,/ B,4 | C8 |]
+V:4
+x8 | x8 | x8 | x8 | z4 z C,D,E, | F,3/2G,/4F,/4 E,A, D,!>!G,- G,/A,/G,/F,/ | E,/F,/E,/D,/ C,/D,/C,/B,,/ A,,D,A,^F, | G,/A,/_B,/G,/ ^C,D, A,2 E,2 | A,/B,/C/D/ C/B,/A,/G,/ z4 | z4 z!f! G,,A,,B,, | C,3/2D,/4C,/4 B,,E, A,,!>!D,- D,/E,/D,/C,/ | B,, !^!E,2 D, C, =F,2 E,- | E, D,2 E, ^F,E,/D,/ E,2 | x8 | z G,,A,,B,, C,3/2D,/4C,/4 B,,E, | A,,D,- D,/E,/D,/C,/ B,,_B,,A,,G,, | A,,^F,G,E, D,2 E,=F, | G,3/2A,/4G,/4 F,_B, E,!>!A,- A,/B,/A,/G,/ | F,/E,/F,/D,/ G,A, D,4- | D,/E,/D,/C,/ B,,/A,,/G,,/^F,,/ E,,E,^F,G,- | G,A,/G,/ ^F,D, G,4- | G,4 A,2 =B,C | F,/A,/G,/F,/ E,/D,/C,/B,,/ C,/D,/E,/F,/ G,G,, | C,8- | C,8- | C,8- | C,8 |]

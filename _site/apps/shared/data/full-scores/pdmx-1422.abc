@@ -1,0 +1,40 @@
+X:1
+C:Gustav Holst
+Z:James Ryman
+%%score [ 1 2 3 4 ] { ( 5 7 ) | ( 6 8 ) }
+L:1/8
+Q:1/4=100
+M:6/8
+K:D
+V:1 treble nm="Sopran"
+%%MIDI program 52
+V:2 treble nm="Alt"
+%%MIDI program 52
+V:3 treble-8 nm="Tenor"
+%%MIDI program 52
+V:4 bass nm="Bass"
+%%MIDI program 52
+V:5 treble nm="Orgel"
+%%MIDI program 19
+V:7 treble 
+%%MIDI program 19
+V:6 bass 
+%%MIDI program 19
+V:8 bass 
+%%MIDI program 19
+V:1
+"^Un poco vivace" z6 | z3 z2!p!"^solo" E | E2 F (GF) E | F2 D E3 | B2 c d c B | A2 F D2 D | E2 F (GF) E | F2 D E2 A | B2 c d2 c | B2 A B3- | B6 |!f!"^tutti" d3 d3 | d3 d3 | D2 E F2 G | A2 B A2 F | E3- E2 D | E6- | E z z z3 |: z3 z2!p!"^solo" E | E2 F (GF) E | F2 D E2 A | B2 c (dc) B | (A2 F) (D2 D) | E2 F (G F) E | F2 D E2 A |!<(! B2 c d2 c | B2 A B3- | B6!<)! | !f!"^tutti" d3 d3 | d3 d3 | D2 E F2 G | A2 B A2 F | E3- E2 D | E6- | E z z z3 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |!ff!"^tutti" d3 d3 | d3 d3 | D2 E F2 G | A2 B A2 F | E3- E2 D |1 E6- | E z z z3 :|2 E6- || E z z z3 | z6 | !fermata!z6 |]
+V:2
+z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |!f!"^tutti" D3 D3 | D3 D3 | D2 E F2 G | A2 B A2 F | E3- E2 D | E6- | E z z z3 |: z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | !f!"^tutti" F3 G3 | F3 E3 | D2 E F2 G | A2 B A2 F | E3- E2 D | E6- | E z z z3 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |!ff!"^tutti" D3 E3 | F3 G3 | D2 E F2 G | A2 B A2 F | E3- E2 D |1 E6- | E z z z3 :|2 E6- || E z z z3 | z6 | !fermata!z6 |]
+V:3
+z6 | z3 z2"^solo" E | E2 F (GF) E | F2 D E3 | B2 c d c B | A2 F D2 D | E2 F (GF) E | F2 D E2 A | B2 c d2 c | B2 A B3- | B6 |!f!"^tutti" d3 c3 | d3 B3 | F2 E F2 G | A2 B A2 F | E3- E2 D | E6- | E z z z3 |: z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |!f!"^tutti" A3 d3 | A3 G3 | F2 E F2 G | A2 B A2 F | E3- E2 D | E6- | E z z z3 | z3 z2!p!"^solo" E | E2 F (GF) E | F2 D E2 A | (B2 c) d c B | A2 F D2 D | E2 F (G F) E | F2 D E2 A | B2 c d2 c | B2 A!<(! B3- | B6!<)! | !ff!"^tutti" F3 G3 | A3 B3 | D2 E F2 G | A2 B A2 F | E3- E2 D |1 E6- | E z z z3 :|2 E6- || E z z z3 | z6 | !fermata!z6 |]
+V:4
+z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |!f!"^tutti" D3 B,3 | A,3 G,3 | D,2 E, F,2 G, | A,2 B, A,2 F, | E,3- E,2 D, | E,6- | E, z z z3 |: z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |!f!"^tutti" D,3 D,3 | D,3 D,3 | D,2 E, F,2 G, | A,2 B, A,2 F, | E,3- E,2 D, | E,6- | E, z z z3 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |!ff!"^tutti" D,3 D,3 | D,3 D,3 | D,2 E, F,2 G, | A,2 B, A,2 F, | E,3- E,2 D, |1 E,6- | E, z z z3 :|2 E,6- || E, z z z3 | z6 | !fermata!z6 |]
+V:5
+z6 | z6 | B,3 C3 | D3 C3 | B,3 [G,E]3 | [A,F]3 [B,D]3 | B,3 E3 | D3 C3 | B,3 [G,E]3 | !<(! [B,F]3 [EG]3 | [FA]3 [GB]3!<)! |!f!!f!!f!!f! [DFAd]3 [DBd]3 | [DAc]3 [DGB]3 | [DFA]3 [A,FA]3 | [A,EG]3 [A,DF]3 |!>(! [G,B,E]3- [G,B,E]2 [G,B,D] | [G,B,E]6- | [G,B,E]3!>)!!p! [F,B,D]3 |: [G,B,E]6 | [EG]3 [GBe]3 | [FAd]3 [EGc]3 | [DGB]3 [EG]3 | [CFA]3 [DGB]3 | [EG]3 [GBe]3 | [FAd]3 [EGc]3 |!<(! [DGB]3 [G,EG]3 | [B,FB]3 [EGBe]3 | [FAdf]3 [GBeg]3!<)! | !f!!f!!f!!f! [Adfa]3 [Bdgb]3 | [Adfa]3 [GBdg]3 | [FAdf]3 [FAdf]3 | [EGAe]3 [DFAd]3 | [B,EGB]3- [B,EGB]2 [B,DFB] |!>(! [B,EGB]6- | [B,EGB]3!>)! [F,B,D]3 |!p! [G,B,E]6 | [G,B,E]6 | F3 E3 | [F,D]6 | F3 A3 | G6 | [DF]3 [A,E]3 | [F,B,D]6 | [F,B,DF]6 |!<(! [G,B,DG]3 [B,DGB]3!<)! | !ff!!ff!!ff!!ff! [DFAd]3 [EGde]3 | [FAdf]3 [GBdg]3 | [Adfa]3 [Bdb]3 | [cac']3 [dbd']3 | [egbe']3- [egbe']2 [dfbd'] |1 [egbe']6- | [egbe']3 [F,B,D]3 :|2 [egbe']6- || [egbe']6 | [F,D]6 | !fermata![E,G,B,E]6 |]
+V:6
+!p! [E,,B,,]6- | [E,,B,,]6 | [E,,B,,]6- | [E,,B,,]6- | [E,,B,,]6 | [E,,B,,]6 | [E,,B,,]6- | [E,,B,,]6- | [E,,B,,]6 | [E,,B,,]6 | [E,,B,,]6 | D,3 [D,B,]3 | [D,A,C]3 [D,G,B,]3 | [D,F,A,]3 [B,,,B,,]3 | [C,,C,]3 [D,,D,]3 | [E,,E,]3- [E,,E,]2 [G,,D,] | [E,,E,]6- | [E,,E,]3 [B,,,B,,]3 |: [E,,B,,]6 | [E,B,]6- | [E,B,]6 | [E,B,]6- | [E,B,]6 | [E,B,]6- | [E,B,]6- | [E,B,]3 E,3 | [E,F,]3 [E,G,B,]3 | [E,F,A,D]3 [E,G,B,E]3 | [D,F,A,D]3 [D,G,B,D]3 | [D,F,A,D]3 [D,E,G,D]3 | [D,F,A,D]3 [B,,,B,,]3 | [C,,C,]3 [D,,D,]3 | [E,,E,]3- [E,,E,]2 [B,,,B,,] | [E,,E,]6- | [E,,E,]3 [B,,,B,,]3 | [E,,B,,]6 | [E,,B,,]6 | [D,,D,]3 [C,,C,]3 | [B,,,B,,]6 | [D,,D,]3 [F,,F,]3 | [E,,E,]6 | [D,,D,]3 [C,,C,]3 | [B,,,B,,]6 | [A,,,A,,]6 | [G,,,G,,]3 [E,,,E,,]3 | z3 [D,G,D]3 | [D,F,A,D]3 [D,F,A,D]3 | [D,F,A,D]3 [G,,G,]3 | [F,,F,]3 [B,,B,]3 | [E,,E,]3- [E,,E,]2 [B,,,B,,] |1 [E,,E,]6- | [E,,E,]3 [B,,,B,,]3 :|2 [E,,E,]6- || [E,,E,]6 | [B,,,B,,]6 | !fermata![E,,,E,,]6 |]
+V:7
+x6 | x6 | G,6- | G,6- | G,3 x3 | x6 | G,6- | G,6- | G,3 x3 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 |: x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | A,6 | x6 | D6 | B,3 C3 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 |1 x6 | x3 x3 :|2 x6 || x6 | B,3 A,3 | x6 |]
+V:8
+x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | D,,6- | D,,6- | D,,3 x3 | x6 | x6 | x6 | x6 |: x6 | x6 | x6 | x6 | x6 | x6 | x6 | x3 E,,3- | E,,6- | E,,6 | (D,,6 | C,,6 | D,,3) x3 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | [D,,,D,,]6- | [D,,,D,,]6 | D,,3 x3 | x6 | x6 |1 x6 | x6 :|2 x6 || x6 | x6 | x6 |]

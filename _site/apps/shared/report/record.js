@@ -18,22 +18,34 @@
 //                           seed (Drills.replay; items recorded before seeds were kept can't be), chord analysis from its seed,
 //                           the student's answers behind a button; nothing the teacher answers there is recorded.
 //   SiteRecord.code(data) / readCode(text) -> { data, ok }   ("SR1." + base64 JSON + "." + checksum: stops casual edits, not a signature)
-// Planned, not built: clearing the record, and reports over a chosen range of dates (now: today, or everything).
+//   SiteRecord.clear(beforeMs?)  deletes the whole record, or only items from before that time; returns how many went. The panel's
+//                           "Clear" buttons ask first (confirm). A clear stops older copies in other open tabs coming back.
+//   Ranges: data.range is "today", "all" or "span" (data.from / data.to, ms, both ends included: "Last 7 days", "Choose dates").
+//   SiteRecord.pick("today" | "all" | "span", from, to)   SiteRecord.rangeText(data)
+// Planned, not built: the other ear-training tools (Hearing Harmony is in: tool "harmony-ear").
 (function (global) {
   "use strict";
   if (global.SiteRecord) return;
   var KEY = "site-record-v1", MAX = 3000, mem = null, renderers = {};
   function load() { try { return JSON.parse(localStorage.getItem(KEY) || "null") || { items: [] }; } catch (e) { return { items: [] }; } }
   function all() { if (!mem) mem = load(); return mem.items; }
-  function save() {   // merged with what other tabs saved since, by item id
+  function save() {   // merged with what other tabs saved since, by item id (nothing from before the last clear comes back)
     if (!mem) return;
-    var disk = load(), byId = {}; disk.items.forEach(function (x) { byId[x.id] = x; });
+    var disk = load(), byId = {}, cut = Math.max(disk.cleared || 0, mem.cleared || 0);
+    disk.items.forEach(function (x) { byId[x.id] = x; });
     mem.items.forEach(function (x) { byId[x.id] = x; });
-    var items = Object.keys(byId).map(function (k) { return byId[k]; }).sort(function (a, b) { return a.t - b.t; });
+    var items = Object.keys(byId).map(function (k) { return byId[k]; }).filter(function (x) { return x.t >= cut; }).sort(function (a, b) { return a.t - b.t; });
+    if (cut) mem.cleared = cut;
     if (items.length > MAX) items = items.slice(items.length - MAX);
     mem.items = items;
     try { localStorage.setItem(KEY, JSON.stringify(mem)); } catch (e) {}
     side();
+  }
+  function clear(before) {   // everything, or only items older than `before` (ms); returns the number deleted
+    mem = null; var d = load(), keep = before == null ? [] : d.items.filter(function (x) { return x.t >= before; }), n = d.items.length - keep.length;
+    mem = { items: keep, cleared: Math.max(d.cleared || 0, before == null ? Date.now() : before) };
+    try { localStorage.setItem(KEY, JSON.stringify(mem)); } catch (e) {}
+    side(); return n;
   }
   function add(tool, o) {
     var it = Object.assign({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 7), tool: tool, pg: location.pathname, t: Date.now(), at: [], h: 0, rv: 0 }, o || {});
@@ -41,9 +53,9 @@
   }
   function register(tool, r) { renderers[tool] = r; }
   // tools whose items need their own script to be shown (loaded when a report has their items and the page hasn't got it)
-  var TOOL_SRC = { "chord-analysis": "/apps/shared/analysis/chord-analysis.js?v=8" }, loading = {};
+  var TOOL_SRC = { "chord-analysis": "/apps/shared/analysis/chord-analysis.js?v=10" }, loading = {};
   // the drills and their extra exercises, for the In class view (drills.js first: the others add to it)
-  var DRILL_SRC = ["/apps/shared/drills/drills.js?v=20", "/apps/shared/drills/figured.js?v=1", "/apps/shared/drills/mixture.js?v=1", "/apps/shared/drills/neapolitan.js?v=1", "/apps/shared/drills/motives.js?v=1", "/apps/shared/drills/jazz.js?v=1"];
+  var DRILL_SRC = ["/apps/shared/drills/drills.js?v=22", "/apps/shared/drills/figured.js?v=1", "/apps/shared/drills/mixture.js?v=1", "/apps/shared/drills/neapolitan.js?v=1", "/apps/shared/drills/motives.js?v=1", "/apps/shared/drills/jazz.js?v=1"];
   function scriptOnce(src) { return new Promise(function (res) { if (document.querySelector('script[src="' + src + '"]')) return res(); var sc = document.createElement("script"); sc.src = src; sc.onload = sc.onerror = function () { res(); }; document.head.appendChild(sc); }); }
   function drillsReady() {
     if (!document.querySelector('link[href^="/apps/shared/drills/drills.css"]')) { var l = document.createElement("link"); l.rel = "stylesheet"; l.href = "/apps/shared/drills/drills.css?v=4"; document.head.appendChild(l); }
@@ -87,7 +99,22 @@
     });
   }
   function startOfToday() { var d = new Date(); d.setHours(0, 0, 0, 0); return d.getTime(); }
-  function pick(range) { var from = range === "today" ? startOfToday() : 0; return all().filter(function (x) { return x.t >= from; }); }
+  function pick(range, f, to) {
+    var from = range === "today" ? startOfToday() : range === "span" ? f || 0 : 0, end = range === "span" && to != null ? to : Infinity;
+    return all().filter(function (x) { return x.t >= from && x.t <= end; });
+  }
+  function dayStart(v) { var m = /^(\d{4})-(\d\d)-(\d\d)$/.exec(v || ""); return m ? new Date(+m[1], +m[2] - 1, +m[3]).getTime() : null; }
+  function dayEnd(v) { var t = dayStart(v); return t == null ? null : t + 86400000 - 1; }
+  function ymd(t) { var d = new Date(t), z = function (n) { return (n < 10 ? "0" : "") + n; }; return d.getFullYear() + "-" + z(d.getMonth() + 1) + "-" + z(d.getDate()); }
+  function rangeText(data) {
+    if (data.range === "today") return "Today, " + new Date(data.d).toLocaleDateString();
+    if (data.range === "span") {
+      var a = data.from ? new Date(data.from).toLocaleDateString() : null, b = data.to != null && isFinite(data.to) ? new Date(data.to).toLocaleDateString() : null;
+      return a && b ? (a === b ? a : a + " to " + b) : a ? "From " + a : b ? "Up to " + b : "Everything recorded";
+    }
+    return "Everything recorded in this browser";
+  }
+  function nothingText(data) { return data.range === "today" ? "today" : data.range === "span" ? "in those dates" : "yet"; }
 
   function hashStr(t) { var h = 0x811c9dc5; for (var i = 0; i < t.length; i++) { h ^= t.charCodeAt(i); h = Math.imul(h, 16777619); } return (h >>> 0).toString(16); }
   function b64e(t) { return btoa(unescape(encodeURIComponent(t))); }
@@ -137,9 +164,9 @@
     var r = el("div", "sr-rep");
     r.appendChild(el("h3", "", "Report of my work"));
     if (opts.verified != null) r.appendChild(el("p", opts.verified ? "sr-ok" : "sr-no", opts.verified ? "✓ The code checks out: this is the record as the page made it." : "✗ The code doesn't match its contents: the report was changed after it was made."));
-    r.appendChild(el("p", "", "Name: " + (data.n || "(not given)") + " · " + (data.range === "today" ? "Today, " + new Date(data.d).toLocaleDateString() : "Everything recorded in this browser") + " · Made " + new Date(data.d).toLocaleString()));
+    r.appendChild(el("p", "", "Name: " + (data.n || "(not given)") + " · " + rangeText(data) + " · Made " + new Date(data.d).toLocaleString()));
     var gs = groups(data.items);
-    if (!gs.length) r.appendChild(el("p", "", "Nothing recorded " + (data.range === "today" ? "today" : "yet") + ". Answer some questions first."));
+    if (!gs.length) r.appendChild(el("p", "", "Nothing recorded " + nothingText(data) + ". Answer some questions first."));
     var pg = null;
     gs.forEach(function (g) {
       if (g.pg !== pg) { pg = g.pg; r.appendChild(el("h4", "", pageName(pg))); }
@@ -156,7 +183,7 @@
     box.appendChild(r); return r;
   }
   function text(data) {
-    var L = ["Report of my work", "Name: " + (data.n || "(not given)"), (data.range === "today" ? "Today, " + new Date(data.d).toLocaleDateString() : "Everything recorded"), "Made: " + new Date(data.d).toLocaleString(), ""];
+    var L = ["Report of my work", "Name: " + (data.n || "(not given)"), rangeText(data), "Made: " + new Date(data.d).toLocaleString(), ""];
     var pg = null;
     groups(data.items).forEach(function (g) {
       if (g.pg !== pg) { pg = g.pg; L.push("== " + pageName(pg)); }
@@ -179,20 +206,41 @@
     css(); box.innerHTML = ""; box.classList.add("sr-panel");
     var top = el("div", "sr-row"), nameL = el("label", "", "Your name "), nameI = el("input", "form-control form-control-sm"), rangeS = el("select", "form-select form-select-sm");
     nameI.style.maxWidth = "16rem"; nameI.style.display = "inline-block"; nameI.value = nameGet(); nameL.appendChild(nameI);
-    [["today", "Today"], ["all", "Everything"]].forEach(function (o) { var op = el("option", "", o[1]); op.value = o[0]; rangeS.appendChild(op); }); rangeS.style.width = "auto";
+    [["today", "Today"], ["week", "Last 7 days"], ["all", "Everything"], ["span", "Choose dates…"]].forEach(function (o) { var op = el("option", "", o[1]); op.value = o[0]; rangeS.appendChild(op); }); rangeS.style.width = "auto";
     var rl = el("label", "", "Show "); rl.appendChild(rangeS);
-    top.appendChild(nameL); top.appendChild(rl); box.appendChild(top);
+    var dates = el("span", "sr-dates"), fromI = el("input", "form-control form-control-sm"), toI = el("input", "form-control form-control-sm");
+    fromI.type = toI.type = "date"; fromI.setAttribute("aria-label", "From date"); toI.setAttribute("aria-label", "To date"); fromI.style.width = toI.style.width = "auto"; fromI.style.display = toI.style.display = "inline-block";
+    dates.appendChild(document.createTextNode("from ")); dates.appendChild(fromI); dates.appendChild(document.createTextNode(" to ")); dates.appendChild(toI); dates.hidden = true;
+    top.appendChild(nameL); top.appendChild(rl); top.appendChild(dates); box.appendChild(top);
     var row = el("div", "sr-row"), pr = btn("Print or save as PDF"), cp = btn("Copy the report"), msg = el("span", "sr-help"), out = el("div");
     [pr, cp, msg].forEach(function (x) { row.appendChild(x); }); box.appendChild(row); box.appendChild(out);
     box.appendChild(el("p", "sr-help", "This covers every exercise on the site that keeps a record, done in this browser. Nothing is sent anywhere: print it or copy it to hand it in."));
-    function data() { mem = null; return { v: 1, n: nameI.value.trim(), range: rangeS.value, d: Date.now(), items: pick(rangeS.value) }; }
+    function data() {
+      mem = null; var r = rangeS.value, o = { v: 1, n: nameI.value.trim(), range: r === "week" ? "span" : r, d: Date.now() };
+      if (r === "week") { o.from = startOfToday() - 6 * 86400000; o.to = Date.now(); }
+      if (r === "span") { o.from = dayStart(fromI.value) || 0; o.to = dayEnd(toI.value); if (o.to == null) o.to = Date.now(); }
+      o.items = pick(o.range, o.from, o.to); return o;
+    }
     function redraw() { var d = data(); ready(d.items, function () { render(out, d, {}); }); }
     nameI.addEventListener("input", function () { nameSet(nameI.value); redraw(); });
-    rangeS.addEventListener("change", redraw);
+    rangeS.addEventListener("change", function () { dates.hidden = rangeS.value !== "span"; redraw(); });
+    fromI.addEventListener("change", redraw); toI.addEventListener("change", redraw);
+    // clearing: everything, or what is older than a date; both ask first
+    var clr = el("details", "sr-help"), cs = el("summary", "", "Clear the record"), crow = el("div", "sr-row"), allB = btn("Clear everything"), befI = el("input", "form-control form-control-sm"), befB = btn("Clear before this date");
+    befI.type = "date"; befI.setAttribute("aria-label", "Clear before date"); befI.style.width = "auto"; befI.style.display = "inline-block";
+    clr.appendChild(cs); clr.appendChild(el("p", "", "Deleting is for this browser only and cannot be undone. Print or copy the report first if you need it.")); [allB, befI, befB].forEach(function (x) { crow.appendChild(x); }); clr.appendChild(crow);
+    function after(n) { msg.textContent = n + " item" + (n === 1 ? "" : "s") + " deleted."; redraw(); }
+    allB.addEventListener("click", function () { var n = all().length; if (!n) { msg.textContent = "Nothing to clear."; return; } if (global.confirm("Delete all " + n + " recorded item" + (n === 1 ? "" : "s") + " from this browser? This cannot be undone.")) after(clear()); });
+    befB.addEventListener("click", function () {
+      var t = dayStart(befI.value); if (t == null) { msg.textContent = "Choose a date first."; return; }
+      var n = all().filter(function (x) { return x.t < t; }).length; if (!n) { msg.textContent = "Nothing is older than " + new Date(t).toLocaleDateString() + "."; return; }
+      if (global.confirm("Delete the " + n + " recorded item" + (n === 1 ? "" : "s") + " from before " + new Date(t).toLocaleDateString() + "? Items from that day on stay. This cannot be undone.")) after(clear(t));
+    });
+    box.appendChild(clr);
     pr.addEventListener("click", function () { if (out.firstChild) printNode(out.firstChild, code(data())); });
     cp.addEventListener("click", function () { var t = text(data()); if (navigator.clipboard) navigator.clipboard.writeText(t).then(function () { msg.textContent = "Copied, with the report code at the end."; }, function () { msg.textContent = "Couldn't copy."; }); });
     redraw();
-    box._sr = { data: data, redraw: redraw, text: function () { return text(data()); } };
+    box._sr = { data: data, redraw: redraw, clear: clear, text: function () { return text(data()); } };
     return box;
   }
   function button(after) {   // "My report": opens (or closes) the panel right after the element given (or the button's row)
@@ -257,7 +305,7 @@
     pr.addEventListener("click", function () { if (out.firstChild) printNode(out.firstChild); });
   }
 
-  global.SiteRecord = { add: add, save: save, all: all, pick: pick, register: register, code: code, readCode: readCode, render: render, text: text, panel: panel, button: button, mountCheck: mountCheck, openDialog: openDialog, classView: classView, startOfToday: startOfToday };
+  global.SiteRecord = { add: add, save: save, all: all, pick: pick, register: register, code: code, readCode: readCode, render: render, text: text, panel: panel, button: button, mountCheck: mountCheck, openDialog: openDialog, classView: classView, startOfToday: startOfToday, clear: clear, rangeText: rangeText };
   function init() { [].forEach.call(document.querySelectorAll(".sr-check"), mountCheck); side(); }
   if (typeof document !== "undefined" && document.querySelectorAll) { if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init(); }
 })(typeof window !== "undefined" ? window : globalThis);

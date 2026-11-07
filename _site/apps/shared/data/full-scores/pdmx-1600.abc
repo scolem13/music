@@ -1,0 +1,29 @@
+X:1
+C:Ludvig Norman (1831-1885)
+Z:©PA Aglert
+Z:Edition may be freely distributed, duplicated, performed and recorded
+%%score [ 1 ( 2 3 ) 4 5 ]
+L:1/8
+Q:1/4=105
+M:2/4
+K:D
+V:1 treble nm="S"
+%%MIDI program 52
+V:2 treble nm="A"
+%%MIDI program 52
+V:3 treble 
+%%MIDI program 52
+V:4 treble-8 nm="T"
+%%MIDI program 52
+V:5 bass nm="B"
+%%MIDI program 52
+V:1
+"^Allegretto vivace"!p! F>G AG | F>G AG |!<(! FA c!<)!e | d2 cB | A2!<(! c!<)!d | !>!e>!>(!d cB | B2!>)! A2 | z2 z!f! d | d>e fe | d>e fe |!<(! (de) f!<)!g |!>(! B3!>)!!mf! d | !>!f>e dc | !<(! A2 d!<)!f | !>!e2 d2 | z2 z!f! A || [M:6/8] [Q:1/4=158][Q:1/4=158] [Q:1/4=158] "^(Œ.= Œ)"  "^(Œ.= Œ)" "^(Œ.= Œ)"!<(! B>GB dBd | ed!<)!e [Bg]3- | [Bg]2!>(! e!>)! e2!p! f | d2 A A2!f! A |!<(! B>GB dBd | fd!<)!f [Ba]3- | [Ba]2 e e2 f | f6- | f2"^dim." d d2 B | B2 A A2 z | !p!"^pochissimo rit.""^pochissimo rit.""^pochissimo rit.""^pochissimo rit." A3 E3 |!p! A3 E3 || [M:2/4] [Q:1/4=105]"^(Œ = Œ.)"!pp!"^a tempo""^a tempo""^a tempo" F>"^a tempo"G AG | F>G AG | !<(! FA c!<)!e | d2 z c |!<(! A>B c!<)!d | (!>!e>d)!>(! cB!>)! | B2!>(! A2!>)! | z2 z!f! d | d>e fe |"^rit.""^rit.""^rit.""^rit." d>e fe"^rit.""^rit.""^rit.""^rit." | "^rit."!<(! de!<)! f/ !fermata!z/!p! g"^sost." |!>(! B3!>)!!mf! d | "^a tempo""^a tempo""^a tempo""^a tempo" (f>e) dc |!<(! A>A d!<)!f |!>(! e2!>)! d2 | z2 z!f! A || [M:6/8] [Q:1/4=158]"^(Œ.= Œ)"!<(! B>GB dBd | ed!<)!e [Bg]3- | [Bg]2!>(! e e2!>)!!p! f | d2 A A2!f! A |!<(! B>GB dBd | fd!<)!f [Ba]3- | [Ba]2 e e2 f | f6- |"^dim." f2 d d2 B | B2 A A2 z | "^dim." !>!A3"^rit.""^rit.""^rit.""^rit." E3 | !>!A3 E2!f! A |"^sost." [Aa]3- [Aa]2 [Af] | !>(! d3-!>)! d !fermata!z!pp! B"^a tempo" |"^a tempo""^a tempo""^a tempo" A>FF z2 !fermata!z |]
+V:2
+!p! D>D CC | D>D CC |!<(! DF F!<)!F | F2 ED | (C!<(!E) A!<)!A | !>!^G>!>(!G GG | E>F D!>)!E | !<(! (C!<)!!>(!B,)!>)! A,!f!F | G>G FF | G>G FF |!<(! G2 G!<)!G |!>(! G3!>)!!mf! G | !>!G>G F^E | !<(! F2 AG!<)! | !>!G2 GA |!<(! (F!<)!!>(!E)!>)! D!f![DF] ||[M:6/8]!<(! G>EG BGB | dB!<)!d e3- | e2!>(! d d2!>)!!p! c | d2 A A2!f! F |!<(! G>EG BGB | dB!<)!d f3- | f2 d d2 c | c6- | c2"^dim." A A2 G | G2 F F2 F |!pp! F2 G A3 | F2 G A3 ||[M:2/4]!pp! D>D CC | D>D CC | !<(! DF F!<)!F | F2 z E |!<(! C>E A!<)!A | !>!^G2!>(! GG!>)! | (E>!>(!F) D!>)!E | !<(! (C!<)!B,)!>)!!>(! A,!f!F | G>G FF | G>G FF |!<(! G2!<)! F/ !fermata!z/!p! B"^sost." | !>(! [EG]3!>)!!mf! G | G2 F^E |!<(! F>F A!<)!G |!>(! F2!>)! (FG) |!<(! (E!<)!D)!>(! C!>)!!f![DF] || [M:6/8]!<(! G>EG BGB | dB!<)!d e3- | e2!>(! d d2!>)!!p! c | d2 A A2!f! F |!<(! G>EG BGB | dB!<)!d f3- | f2 d d2 c | c6- |"^dim." c2 A A2 G | G2 F F2 F |"^dim." F2 G A3 | F2 G A2!f! A | "^sost." F3- F2 A |!>(! G3-!>)! G !fermata!z!pp! D | D>DD z2 !fermata!z |]
+V:3
+x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 ||[M:6/8] D>DE GEG | BGB d3- | d2 B B2 A | A2 F F2 D | D>DE GEG | BGB d3- | d2 B B2 A | A6- | A2 A A2 G | x6 | x6 | x6 ||[M:2/4] x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 || [M:6/8] D>DE GEG | BGB d3- | d2 B B2 A | A2 F F2 D | D>DE GEG | BGB d3- | d2 B B2 A | A6- | A2 A A2 G | x6 | x6 | x6 | x6 | x6 | x6 |]
+V:4
+!p! A>A EE | A>A EE |!<(! AA A!<)!A | A2 ^GG | A2!<(! A!<)!B | !>!c>!>(!B ed | d2 (F!>)!^G) | !<(! A2!<)!!>)!!>(! A!f!A | d>B AA | d>B AA |!<(! d2 d!<)!d |!<(! (d2!<)!!>(! c)!>)!!mf!B | !>!c>c dB |!<(! (ce) d!<)!d | (!>!c>d) Bc |!<(! d2!<)!!>)!!>(! d!f!=c ||[M:6/8]!<(! B>Bd ede | ge!<)!g [eg]3- | [eg]2!>(! g!>)! g2!p! g | f2 d d2!f! =c |!<(! B>Bd ede | ge!<)!g [eg]3- | [eg]2 g g2 [Ag] | [Ag]6- | [Ag]2"^dim." [Af] [Af]2 [ce] | [ce]2 d d2 A |!pp! A2 B c3 | A2 B c3 || [M:2/4]!pp! A>A EE | A>A EE |!<(! AA AA!<)! | A2 z ^G |!<(! A>A A!<)!B | (!>!c>!>(!B) ed!>)! | d2!>(! F!>)!^G |!<(! A2!<)!!>(! A!>)!!f!A | d>B AA | d>B AA | !<(! d2!<)! d/ !fermata!z/!p! d"^sost." |!>(! (d2 c)!>)!!mf!B | c2 dB |!<(! c>e d!<)!d | c>d Bc | !<(! d2!<)!!>(! d!>)!!f!=c ||[M:6/8]!<(! B>Bd ede | ge!<)!g [eg]3- | [eg]2!>(! g!>)! g2!p! g | f2 d d2!f! =c |!<(! B>Bd ede | ge!<)!g [eg]3- | [eg]2 g g2 [Ag] | [Ag]6- | "^dim." [Ag]2 [Af] [Af]2 [ce] | [ce]2 d d2 A |"^dim." A2 B c3 | A2 B c2!f! A |"^sost." [Ad]6 | !>(! [Bd]3-!>)! [Bd] !fermata!z!pp! G | F>AA z2 !fermata!z |]
+V:5
+!p! D,>D, A,,A,, | D,>D, A,,A,, |!<(! D,D, C,C,!<)! | B,,2 E,E, | (A,!<(!^G,) =G,!<)!F, | !>!E,>!>(!E, E,E, | [A,,E,]2!>)! [A,,E,]2 |!<(! (A,!<)!!>(!E,) C,!>)!!f!=C, | B,,>G,, D,=C, | B,,>G,, D,=C, |!<(! B,,2 E,!<)!E, |!>(! A,3!>)!!mf! E, | !>!A,>^A, B,C, |!<(! F,2 B,!<)!E, | !>!A,2 D,2 |!<(! (D!<)!!>(!A,)!>)! F,!f!D, ||[M:6/8] G,3 z2 z | z2 z z2!f! A, | A,,3- A,,2!p! A, | D2 D, D,2!f! D, | G,3 z2 z | z2 z z2!f! A, | A,,3- A,,2 z | z2 z z2!mf! A, | D,6-"^dim." | D,6 | !pp! D,6 | D,6 ||[M:2/4]!pp! D,>D, A,,A,, | D,>D, A,,A,, |!<(! D,D, C,!<)!C, | B,,2 z E, | !<(! A,>^G, =G,!<)!F, | !>!E,2!>(! E,!>)!E, | [A,,E,]2!>(! [A,,E,]2!>)! | !<(! (A,!<)!!>(!E,) C,!>)!!f!=C, | B,,>G,, D,=C, | B,,>G,, D,=C, | !<(! B,,2!<)! B,/ !fermata!z/!p! E,"^sost." | [A,,E,]3!mf!!>)!!>(! E, | (A,>^A,) B,C, | !<(! F,>F, B,!<)!E, | A,2 D,2 |!<(! (D!<)!!>(!A,) F,!>)!!f!D, ||[M:6/8] G,3 z2 z | z2 z z2!f! A, | A,,3- A,,2!p! A, | D2 D, D,2!f! D, | G,3 z2 z | z2 z z2 A, | A,,3- A,,2 z | z2 z z2 A, | "^dim." D,6- | D,6 |"^dim." D,6 | D,3- D,2!f! A, |"^sost." D,6 | !>(! D,3-!>)! D, !fermata!z!pp! D, | D,>D,D, z2 !fermata!z |]

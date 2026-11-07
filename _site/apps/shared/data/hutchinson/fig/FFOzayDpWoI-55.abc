@@ -1,0 +1,15 @@
+X:1
+T:Fiona Apple, Criminal (1996)
+%%id FFOzayDpWoI-55
+%bars ?
+%unsure some sixteenth/dotted groupings in the vocal line; right-hand chord in the G half of bar 2 (natural and sharp signs as printed)
+M:C
+L:1/16
+K:C
+%%score 1 {2 | 3}
+V:1 clef=treble nm="Voice"
+V:2 clef=treble nm="Piano"
+V:3 clef=bass
+[V:1] "C"z2 C2 C3/2G/2 G2- "Bb"G2 _ED- D D3 || "Ab7"D2C2 C_B,2C- "G"C3B, C2C2 | "F7"(_EC2)(_E C2)(_EC) _E3(_E C2)C(_E | "Ab"C_E3 C4) z2 (_G_E F_EC_B,) |]
+[V:2] [CE]8 [_B,DF]8 || [C_E_G]8 [B,D=G]6 [D^G]2 | [C_EA]16 | [_Ec]16 |]
+[V:3] [C,,C,]2[C,,C,]2- [C,,C,]4 [_B,,,_B,,]2[B,,,B,,]2- [B,,,B,,]4 || [_A,,,_A,,]8 [G,,,G,,]8 | [F,,,F,,]16 | [_A,,,_A,,]16 |]

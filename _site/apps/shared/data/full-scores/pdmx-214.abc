@@ -1,0 +1,20 @@
+X:1
+C:Stephen Heller
+Z:Public Domain (PianoXML typeset)
+%%score { ( 1 3 ) | 2 }
+L:1/8
+Q:1/4=160
+M:2/4
+K:C
+V:1 treble nm="Grand Piano" snm="Pno."
+%%MIDI program 0
+V:3 treble 
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+"^Allegro vivace"!mf! z2 (3(DEF) | z2 .[Ace] z | z2 (3(DEF) | z2 .[Ace] z |!<(! z2 (3(GA_B)!<)! | z2 .[dfa] z | z2 (3(GA_B) | z2 .[dfa] z |!>(! (3(fed) z2!>)! | !^!^G4 | (3(cBA) z2 | !^!^D4 | [Q:1/4=155]!p!"^poco meno mosso\n" .E2 .[Ff]2 |[Q:1/4=140] .[Ee]2 .E2 | !arpeggio![CEA]4- | [CEA]4 |[Q:1/4=160]!mf!"^a tempo" z2 (3(DEF) | z2 .[Ace] z | z2 (3(DEF) | z2 .[Ace] z | !<(! z2 (3(GA_B)!<)! | z2 .[dfa] z | z2 (3(GA_B) | z2 .[dfa] z |!>(! (3(fed) z2!>)! | !^!^G4 | (3(cBA) z2 | !^!^D4 |[Q:1/4=150] !p!"^poco meno mosso\n"  .E2 .[Ff]2 |[Q:1/4=140] .[Ee]2 .E2 | !arpeggio![CEA]4- | [CEA]4 |[Q:1/4=160]!mf!"^a tempo" z2 (3(F,G,A,) |  z2!p! ([^CEG]2 |!<(! [^CEA]2 !breath![CE_B]2)!<)! | (!>!_B2 A2) | z2 (3(CDE) | z2!p! ([^GBd]2 |!<(! [^GBe]2 [GBf]2)!<)! | (!>!f2 e2) | (3agf z2 | (3AFE z2 | z4 | z2!p! .[A,EA]2 | !>![B,FA]4 | [B,E^G]4 | !>![A,CEA]4- | [A,CEA]4 |!mf! z2 (3(F,G,A,) |  z2!p! ([^CEG]2 |!<(! [^CEA]2 [CE_B]2)!<)! | (!>!_B2 A2) |!mf! z2 (3(CDE) | z2!p! ([^GBd]2 |!<(! [^GBe]2 [GBf]2)!<)! | (!>!f2 e2) |!f! (3c'ag z2 | (3cAG z2 | (3CA,G, z2 | z2!mf! [CGc]2 | [DAc]4 | [DGB]4 | [EGce]4- | !breath![EGce]2!p! [A,EA]2 | [B,FA]4 | [B,E^G]4 | [CEAc]4- | !breath![CEAc]2!f! [A,EA]2 | [B,FA]4- | [B,FA]4 | [B,E^G]4- | [B,G]4 | "^risoluto" [A,CA] z (3(D,E,F,) | z2 .[^G,B,E] z | !arpeggio!!>![A,CEA] z (3(D,E,F,) | z2 .[^G,B,E] z | !arpeggio!!>![A,CEA] z (3D,E,F, | z2!<(! (3A,B,C!<)! | z2 (3DEF | z2 (3cde | z2 (3def |!<(! z2 (3abc'!<)! |!p!!<(! (3z bc' (3c'd'e' |  (3e'^g'a' (3a'b'c''!<)! | .c''2 z2 | z4 |!p! .[Ac]2 z2 | z4 | z4 |]
+V:2
+(3(A,B,C) z2 | !^!E4 | (3(A,B,C) z2 | !^!E4 |[K:treble] (3(DEF) z2 | !^!A4 | (3(DEF) z2 | !^!A4 | z2 (3(cBA) | z2 .[B,DF] z | z2 (3(G^FE) |[K:bass] z2 .[^F,A,C] z | .[E,A,C]2 .[D,A,C]2 | .[E,A,C]2 .[E,^G,B,]2 | !arpeggio![A,,E,A,]4- | !breath![A,,E,A,]4 | (3(A,B,C) z2 | !^!E4 | (3(A,B,C) z2 | !^!E4 |[K:treble] (3(DEF) z2 | !^!A4 | (3(DEF) z2 | !^!A4 | z2 (3(cBA) | z2 .[B,DF] z | z2 (3(G^FE) | [K:bass] z2 .[^F,A,C] z | .[E,A,C]2 .[D,A,C]2 | .[E,A,C]2 .[E,^G,B,]2 | !arpeggio![A,,E,A,]4- | !breath![A,,E,A,]4 | (3(^C,D,E,) z2 | (!^!_B,4 | A,2 G,2 | F,4) | (3(^G,A,B,) z2 | !^!F4 | E2 D2 | C4 |[K:treble] z2 (3dcB | z2 [K:bass] (3DCB, | (3A,F,E, (3D,C,B,, | .A,,2 .[C,,C,]2 | !>![D,,D,]4 | [E,,E,]4 | !>![A,,,A,,]4- | [A,,,A,,]4 | (3(^C,D,E,) z2 | !^!_B,4 | A,2 G,2 | F,4 | (3(^G,A,B,) z2 | !^!F4 | E2 D2 | C4 | [K:treble] z2 (3fed | z2 [K:bass] (3FED | z2 (3F,E,D, | .C,2 E,,2 | F,,4 | G,,4 | C,,4- | C,,2 C,2 | D,4 | E,4 | A,,4- | A,,2 [C,,C,]2 | [D,,D,]4- | [D,,D,]4 | [E,,E,]4- | [E,,E,]4 | (3(A,,B,,C,) z2 | !^!E,4 | (3(A,,B,,C,) z2 | !^!E,4 |!p! (3A,,B,,C, z2 | (3E,^F,^G, z2 | (3A,B,C z2 |[K:treble] (3E^F^G z2 | (3ABc z2 | (3e^f^g z2 | (a2 e2 | c2 B2 | .A2) z2 | z4 |[K:bass] .[A,E]2 z2 | z4 | .[A,,,A,,] z z2 |]
+V:3
+x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | [DF]4 | x4 | x4 | x4 | [Ac]4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | [DF]4 | x4 | x4 | x4 | [Ac]4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | E2 D2 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x2 x2 | x4 | x4 | x4 | x4 |]

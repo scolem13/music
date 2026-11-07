@@ -1,0 +1,13 @@
+X:1
+T:Ludwig van Beethoven, Piano Sonata Op. 2, No. 1, IV (1796)
+%%id pfwIAozfjoI-122
+%bars ?
+%unsure left-hand chord pitches in bars 6-9 read approximately
+M:C|
+L:1/8
+K:Ab
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] !p!(E8 | A4 c4) | e6 (e2 | =d2 e2 f2 e2) | (e2 _d2) z2 .d2 | (d2 c2) z2 .c2 | (cBdc edcB) | (!turn!A4 c2 B2) | (B6 c2 | A2) z2 z4 |]
+[V:2] z2 [A,C]2 [A,C]2 [A,C]2 | z2 [A,CE]2 [A,CE]2 [A,CE]2 | z2 [G,B,E]2 [G,B,E]2 [G,B,E]2 | z2 [G,B,E]2 [G,B,E]2 [G,B,E]2 | z2 [F,A,D]2 [F,A,D]2 [F,A,D]2 | z2 [E,A,C]2 [E,A,C]2 [E,A,C]2 | z2 [D,F,B,]2 [D,F,B,]2 [D,F,B,]2 | z2 [E,C]2 [E,D]2 [E,D]2 | z2 [A,D]2 [A,D]2 [A,D]2 | z2 A,2 C2 E2 |]

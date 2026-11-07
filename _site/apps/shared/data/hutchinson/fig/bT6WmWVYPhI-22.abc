@@ -1,0 +1,13 @@
+X:1
+T:Beethoven, Moonlight Sonata, Op. 27, No. 2, I (1802)
+%%id bT6WmWVYPhI-22
+%bars ?
+%unsure last bar partial (only its first beat is printed)
+M:C|
+L:1/8
+K:C#m
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "C#m"(3G,CE (3G,CE (3G,CE (3G,CE | "C#m/B"(3G,CE (3G,CE (3G,CE (3G,CE | "A"(3A,CE (3A,CE "D/F#"(3A,=DF (3A,DF | "G#7"(3G,^B,F "C#m/G#"(3G,CE "G#sus4"(3G,C^D "G#7"(3F,^B,D | "C#m"G,2 |]
+[V:2] [C,,C,]8 | [B,,,B,,]8 | [A,,,A,,]4 [F,,,F,,]4 | [G,,,G,,]4 [G,,,G,,]4 | [C,,G,,C,]2 |]

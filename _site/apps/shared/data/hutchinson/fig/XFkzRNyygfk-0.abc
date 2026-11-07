@@ -1,0 +1,13 @@
+X:1
+T:Thom Yorke, Jonny Greenwood, Colin Greenwood, Ed O'Brien, Philip Selway, Albert Hammond, and Mike Hazlewood, Creep (1992)
+%%id XFkzRNyygfk-0
+%bars ?
+%unsure no time signature printed; whole notes written in 4/4
+M:4/4
+L:1/1
+K:G
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "G"[G,B,D]- | [G,B,D] | "B"[B,^DF]- | [B,DF] | "C"[CEG]- | [CEG] | "Cm"[C_EG]- | [CEG] |]
+[V:2] G,,- | G,, | B,,- | B,, | C,- | C, | C,- | C, |]

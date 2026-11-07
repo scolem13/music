@@ -1,0 +1,23 @@
+X:1
+C:P. I. Tsjaikovski
+%%score [ 1 2 3 4 ]
+L:1/8
+Q:1/4=60
+M:4/4
+K:C
+V:1 treble nm="Soprano"
+%%MIDI program 52
+V:2 treble nm="Alto"
+%%MIDI program 52
+V:3 treble-8 nm="Tenor"
+%%MIDI program 52
+V:4 bass nm="Bass"
+%%MIDI program 52
+V:1
+"^Moderato" z2!p! c2 c2 B2 |!<(! c6 d2!<)! | e4 d4 |!>(! c4- c!>)! !fermata!z!p! A2 | c2 c2 c2 B2 | !<(! c6 d2!<)! | e2 e2 d2 d2 |!>(! c4- c!>)! !fermata!z!p! A2 | c2 c2 c2 B2 |"^cresc." c6 d2 | e2 e2 e2 f2 |!f! (g4 f2 e2) | d4 d4 | c4!f! (cd e2) |[M:3/2] (d3 e d2 cB) c2 d2 | [M:4/4] e4 (cd e2) |[M:3/2] d3 e d2 (cB)!<(! c2 d2!<)! |[M:4/4]!ff! (e3 f) g2 (ga) | g2 (fe) (de) f2 | e6 d2 | c4- c !fermata!z[Q:1/4=50] !p! "^Andante" A2 | !<(! A2 c2!<)!!>(! B2 A2!>)! |!<(! G3 A!<)!!>(! G2 (FE)!>)! | F4 G2 A2 |!>(! B6!p! A2!>)! | A6 !fermata!z2 |!f! f6 d2 | c6 !fermata!z2 |!mf! !>!d3 A A4- | A2- A !fermata!z z4 |!p! G6 G2 | !<(! G8!<)! |!>(! A6 c2!>)! | c8 |!pp!"^riten." G6 E2 | !fermata!E8 |]
+V:2
+z2!p! (cB) A2 (GF) |!<(! E6 G2!<)! | G4 (G2 F2) |!>(! E4- E!>)! !fermata!z z2 | z2!p! (cB) A2 (GF) |!<(! E6 G2!<)! | G2 G2 A2 GF |!>(! E4- E!>)! !fermata!z z2 | z2!p! (cB) A2 (GF) |"^cresc." E6 G2 | G2 G2 G2 F2 |!f! (EFGA B2 c2) | (d2 c2) B4 | E4!f! (EG- G2) |[M:3/2] (G6 E2) E2 G2 |[M:4/4] G4 G4 |[M:3/2] G6 E2!<(! E2 G2!<)! | [M:4/4]!ff! G4 c4 | (cB) c2 A2 A2 | G6 (GF) | E4- E !fermata!z z2 | z4 z2!p! C2 | !<(! D2 E2!<)!!>(! D2 C2!>)! | C4 D2 C2 |!>(! B,6!p! C2!>)! | C6 !fermata!z2 |!f! A6 A2 | A6 !fermata!z2 |!mf! !>!F3 F F4- | F2- F !fermata!z z4 |!p! B,6 E2 |!<(! (D2 E2 F2 G2)!<)! | !>(! F6 E2!>)! | E8 |!pp! C6 C2 | !fermata!C8 |]
+V:3
+z8 | z2!p! c2!<(! c2 B2!<)! | c4 (B2 A2) |!>(! G4- G!>)! !fermata!z z2 | z4 z2!p! (ed) | !<(! c2 c2 c2 B2!<)! | c2 c2 A2 BA |!>(! G4- G!>)! !fermata!z z2 | z4 z2!p! (ed) | "^cresc." c2 c2 c2 B2 | c2 c2 c2 d2 |!f! (e4 f2 g2) | a4 (g2 f2) | e4!f! (AB c2) | [M:3/2] (B3 c B2 AG) A2 B2 |[M:4/4] c4 c4 |[M:3/2] B3 c B2 (AG)!<(! A2 B2!<)! | [M:4/4]!ff! (c3 d) e2 (ef) | (ed) c2 (dc) (dc) | B6 B2 | A4- A !fermata!z z2 | z4 z2!p! A2 | !<(! B2 c2!<)!!>(! B2 (AG)!>)! | (F2 A2 G2) e2 |!>(! f6!p! f2!>)! | f6 !fermata!z2 |!f! c6 (de) | f6 !fermata!z2 |!mf! !>!A3 d d4- | d2- d !fermata!z z4 |!p! G6 G2 |!<(! (G4 F2 E2)!<)! | !>(! F6 G2!>)! | G8 |!pp! E6 G2 | !fermata!G8 |]
+V:4
+z8 | z2!p! (CB,)!<(! A,2 (G,F,)!<)! | E,4 G,4 |!>(! C,4- C,!>)! !fermata!z z2 | z8 | z2!p! (CB,) A,2 (G,F,) | E,2 E,2 F,2 G,2 |!>(! C,4- C,!>)! !fermata!z z2 | z8 | z2!p! (C"^cresc."B,) A,2 (G,F,) | E,2 E,2 E,2 D,2 |!f! (C,4 D,2 E,2) | F,4 G,4 | A,4!f! (A,G, C,2) |[M:3/2] (G,3 E, G,2 A,E,) A,2 G,2 |[M:4/4] C,4 (E,D, C,2) | [M:3/2] G,3 E, G,2 (A,E,)!<(! A,2 G,2!<)! |[M:4/4]!ff! C,4 C2 C2 | C2 (A,G,) (F,E,) D,2 | E,6 G,2 | A,4- A, !fermata!z z2 | z8 | z4 z2!p! A,,2 |!<(! (A,,2 C,2!<)!!>(! B,,2) A,,2!>)! | !>(! (G,,3 A,, G,,2)!p! F,,2!>)! | F,,6 !fermata!z2 |!f! F,4 F,4 | F,6 !fermata!z2 | !mf! !>!D,3 D, D,4- | D,2- D, !fermata!z z2!p! D,2 | (D,2 E,2) D,2 C,2 | !<(! (B,,2 C,2) D,2 E,2!<)! |!>(! D,6 D,2!>)! | C,8 |!pp!!pp! [C,,C,]6 [C,,C,]2 | !fermata![C,,C,]8 |]

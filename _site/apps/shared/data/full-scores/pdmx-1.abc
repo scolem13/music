@@ -1,0 +1,20 @@
+X:1
+C:Frédéric Chopin
+Z:Public Domain
+%%score { 1 | ( 2 3 ) }
+L:1/8
+Q:1/4=50
+M:2/2
+K:G
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:3 bass 
+%%MIDI program 0
+V:1
+!p!"^Largo" (B,>B |"_espressivo" B6 c2 | B6 c2 | B6 c2 | B6 _B2 | A6 =B2 | A6 B2 | A6 B>A | A6)!>(! ^G2- | G2!>)!!<(! (AB!<)!!>(! dcEA!>)! | F6) (A2 | F6)({B} A2 | (=G)F!<(!!>!CB, ^DF(3=dcB)!<)! | (B6 c2 | B6 c2 | B6 c2 | !<(! B>^A AB/4A/4^^G/4"^stretto"A/4 g2!<)!!>(! f>e!>)! |!f! e^dc'd degB | =dc(3eEA F3 A | !p! F6)({B} A2 | F6-!<(! F>E | E6!<)! F2 | E6 F2 | E4) !fermata!z4 |!pp! (E4 ^D4 | !fermata!E8) |]
+V:2
+z2 | ([G,B,E][G,B,E][G,B,E][G,B,E] [G,B,E][G,B,E][G,B,E][G,B,E] | [F,A,E][F,A,E][F,A,E][F,A,E] [F,A,_E][F,A,E][F,A,E][F,A,E] | [=F,A,_E][F,A,E][F,A,E][F,A,E] [F,A,D][F,A,D][F,^G,D][F,G,D] | [E,^G,D][E,G,D][E,G,D][E,G,D] [E,=G,D][E,G,D][E,G,^C][E,G,C] | [E,G,=C][E,G,C][E,G,C][E,G,C] [E,^F,C][E,F,C][E,F,C][E,F,C] | [E,F,C][E,F,C][E,F,C][E,F,C] [^D,F,C][D,F,C][D,F,C][D,F,C] | [=D,F,C][D,F,C][D,F,C][D,F,C] [D,F,C][D,F,C][D,F,C][D,F,C] | [D,=F,C][D,F,C][D,F,C][D,F,C] [D,F,B,][D,F,B,][D,F,B,][D,F,B,] | [C,E,B,][C,E,B,][C,E,A,][C,E,A,] [C,E,A,][C,E,A,][C,E,A,][C,E,A,] | [B,,E,A,][B,,E,A,][B,,^D,A,][B,,D,A,] [C,E,A,][C,E,A,][C,E,A,][C,E,A,] | [B,,^D,A,][B,,D,A,][B,,D,A,][B,,D,A,] [C,E,A,][C,E,A,][C,E,A,][C,E,A,] | [B,,^D,A,]2) z2 z4 | ([G,B,E][G,B,E][G,B,E][G,B,E] [G,B,E][G,B,E][G,B,E][G,B,E] | [F,A,E][F,A,E][F,A,E][F,A,E] [=F,A,_E][F,A,E][F,A,E][F,A,E] | [=F,_A,_E][F,A,E][F,A,D][F,A,D] [=E,^G,D][E,G,D][E,G,D][E,G,D] | [E,=G,D][E,G,D][E,G,^C][E,G,C] [^C,E,^A,][C,E,A,][=C,E,=A,][C,E,A,] | [B,,,B,,])([A,CFA][A,CFA][A,CFA] [G,B,^DF][G,B,E][G,B,E][G,B,E] | [A,CE][A,CE] A,,[E,F,C] [B,,E,B,]"^dim."[B,,E,B,][C,E,A,][C,E,A,] | [B,,E,B,][B,,E,B,][B,,E,B,][B,,E,B,] [C,E,A,][C,E,A,][C,E,A,][C,E,A,] | [B,,E,B,][B,,E,B,][B,,E,B,][B,,E,B,] [B,,^D,B,][B,,D,B,][B,,D,A,][B,,D,A,] | [C,G,][C,G,][C,G,][C,G,] [C,_B,][C,B,]"^smorz."[C,E,A,][C,E,A,] | [B,,E,A,][B,,E,A,][B,,E,^G,][B,,E,G,] [B,,E,=G,][B,,E,G,][B,,E,G,][B,,E,G,] | [_B,,C,G,]4) !fermata!z4 | ([=B,,,=B,,]4 [B,,,F,,B,,]4 | !fermata![E,,,E,,]8) |]
+V:3
+x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | [E,F,=B,]4 [^D,F,B,]4 | [E,G,B,]8 |]

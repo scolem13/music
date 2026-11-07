@@ -1,0 +1,16 @@
+X:1
+C:Johann Friedrich Franz Burgmüller (1806-1874) Opus 100.
+Z:by Mutopia-2013/01/12-230
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=138
+M:2/4
+K:G
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+"^Allegro agitato"!p! z/ (!3!g/f/e/) z/ (!3!e/d/c/) | z/ (!3!B/^A/B/) z/ (B/c/B/) | z/ (g/f/e/) z/ (e/d/c/) | z/ (B/^A/B/) z/ (B/c/B/) | z/ (!1!B/!4!g/f/) z/ (B/g/f/) | z/"_cresc." (!1!B/!4!f/e/) z/ (B/f/e/) | z/!mf! (!2!d/e/d/) z/ (!2!^c/d/c/) | z/ (!1!B/!2!^A/!1!B/ !wedge!!5!b) z |:!mf! z/ (!3!b/a/g/) z/ (!3!g/f/e/) | z/ (!3!d/^c/d/) z/ (d/e/d/) | z/ (b/a/g/) z/ (g/f/e/) | z/ (d/^c/d/) z/ (d/e/d/) | z/ (!1!c/b/a/) z/ (c/b/a/) | z/ (!1!B/a/g/) z/ (B/a/g/) | "_dim." z/ [Q:1/4=132] (B/g/f/) z/ (B/g/f/) | z/ (B/f/e/) z/ (B/f/e/) | !p! z/ (!3!g/f/e/) z/ (!3!e/d/c/) | z/ (B/^A/B/) z/ (B/c/B/) | z/ (g/f/e/) z/ (e/d/c/) | z/ (B/^A/B/) z/ (B/c/B/) |"_cresc." z/ (!1!B/!5!g/f/) z/ (B/g/f/) | z/ (!1!B/!5!f/e/) z/ (B/f/e/) | z/ (!2!B/c/B/) z/ (!2!F/G/F/) |1 z/ (E/^D/E/ !wedge!e) z :|2 z/ [Q:1/4=138] (E/F/E/)!f! z/ (C/D/C/) || z/ (!2!A,/B,/A,/) z/ (!2!B,/C/B,/) | z/ (!2!E/F/E/) z/ (!2!C/D/C/) | z/ (!2!A,/B,/A,/) z/ (B,/C/B,/ | E2) z/"_dim." (!2!B/c/B/ | e) z z/!p! (b/c'/b/ | !wedge!e'2) z2 |]
+V:2
+.[E,G,B,] z .[E,A,C] z | .[E,G,B,] z"_simile." [E,G,B,] z | [E,G,B,] z [E,A,C] z | [E,G,B,] z [E,G,B,] z | [^D,A,B,] z [D,A,B,] z | [E,G,B,] z [E,G,B,] z | [F,B,] z (!>![F,^A,E]2 | [B,D] z !wedge!B,,) z |: [G,B,D] z [G,^A,^C] z | [G,B,D] z [G,B,D] z | [G,B,D] z [G,^A,^C] z | [G,B,D] z [G,B,D] z | [F,CD] z [F,CD] z | [G,B,D] z [G,B,D] z |[K:treble] [B,^DA] z [B,DA] z | [EG] z [EG] z |[K:bass] [E,G,B,] z [E,A,C] z | [E,G,B,] z [E,G,B,] z | [E,G,B,] z [E,A,C] z | [E,G,B,] z [E,G,B,] z | [^D,A,B,] z [D,A,B,] z | [E,G,B,] z [E,G,B,] z | [B,,^D,A,] z [B,,D,A,] z |1 [E,G,] z !wedge!E,, z :|2 [E,G,] z !2!C,2 || A,,2 !3!B,,2 | !1!E,2 !2!C,2 | !4!A,,2 !3!B,,2 | E,2 z2 | !wedge![E,G,B,] z z2 | !wedge!E,, z z2 |]

@@ -1,0 +1,13 @@
+X:1
+T:W.A. Mozart, Piano Sonata in C Major, K. 545, II
+%%id 1vDxlnJVvW8-180
+%bars ?
+%unsure Alberti pitches in bar 3 beat 3 (A#o7/G); bars 7-8 left hand voicing
+M:3/4
+L:1/16
+K:G
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "G"!p!B8 "D7/A"dcBc | "G"d3B G4 z4 | "C/G"g6 agfed^c | "A#o7/G"d3B "G"G4 z4 | "D7/A"c3A F2A2B2c2 | "G"d3B "Em"g4 "G/B"z4 | "C"agfg fe^de "C/E"=dcBc | "G/D"B3 c/B/ A2 "D"d2^c2=c2 |]
+[V:2] G,DB,D G,DB,D A,DCD | G,DB,D G,DB,D G,DB,D | G,ECE G,ECE G,^C^A,C | G,DB,D G,DB,D G,DB,D | A,DCD A,DCD A,DCD | G,DB,D E,B,G,B, B,,G,D,G, | [C,E,]4 G,4 E,4 | [D,G,]4 ^F,4 z4 |]

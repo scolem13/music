@@ -1,0 +1,13 @@
+X:1
+T:Beethoven, Pathétique Sonata, Op. 13, I, Introduction
+%%id SrcOcKYQX3c-19
+%bars 1-2
+%unsure inner chord tones of the right-hand chords and the low left-hand chord in bar 1 read approximately
+M:C
+L:1/32
+K:Cm
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] !fp!C8- "^mot. 1"C3C [=B,F]3[B,F] [=A,CE]8 ([B,D]4 z4) | [=B,DF]8- [B,DF]3"^mot. 1"[B,DF] [B,DG]3[B,DA] [B,DA]8- [CEG]4 z4 |]
+[V:2] [C,,E,,G,,C,E,G,]8- [C,,E,,G,,C,E,G,]3[E,G,] [D,G,]3[C,G,] (^F,8 G,4) z3G,, | !fp!(A,8- A,3)A, G,3F, (E,8 E,4) z3E, |]

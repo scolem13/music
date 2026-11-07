@@ -1,0 +1,19 @@
+X:1
+C:Zoltan Kodaly
+%%score [ 1 2 3 ]
+L:1/8
+Q:1/4=88
+M:4/4
+K:C
+V:1 treble nm="Soprano" snm="S."
+%%MIDI program 52
+V:2 treble nm="Alto" snm="A."
+%%MIDI program 52
+V:3 bass nm="Bass" snm="B."
+%%MIDI program 52
+V:1
+!pp! E3 E A2 B2 | c6 B2 | (B2 A2) B4 | z4 G2 A2 | B4 E4 | G6 F2 | E2 z2 z4 |!<(! E2 E2 A2 B2!<)! | c6 B2 | B4 A4 | z4 B2 c2 | d6 c2 |!>(! B4 A4 | G4!>)! z4 |!p! c6 B2 | A4 c4 | d6 c2 | B4 d4 | !f! e6 d2 | c4 E4 | ((A8 | A2) B4) A2 | ^G4 z4 |!p! c6 B2 | A4 c4 | d6 c2 | B4 d4 |!f! e6 d2 | c4 E4 | ((A8 | A2)!>(! B4) A2 |!pp! !fermata!^G8!>)! :|!p!!>(! E8 |!pp! !fermata!E8!>)! |]
+V:2
+z8 |!pp! A,3 A, D2 E2 | F6 E2 | (E2 D2) E4 | z4 C2 D2 | E4 A,4 | C6 B,2 | A,2 z2 z4 | A,2!<(! A,2 D2 E2!<)! | F6 E2 | E4 D4 | z4 E2 F2 | G6!>(! F2 | E4 D4 | C4!>)! z4 |!p! F6 E2 | D4 F4 | G6 F2 | E4 G4 |!f! A6 G2 | F4 A,4 | ((D8 |!>(! D2) E4) D2!>)! |!p! C2 z2 (C4 | C2) B,2 A,4 | F4 (D4 | D2) C2 B,4 | G4!f! (E4 | E2) D2 C4 | C2 (A4 G2 | F2!>(! E2 D2 C2) | !pp! !fermata!B,8!>)! :|!p!!>(! C8 |!pp! !fermata!B,8!>)! |]
+V:3
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |!pp! D,2!<(! D,2 A,2 B,2!<)! | C6 B,2 | B,4 A,4 | !>(! G,4 D,4 | E,4 B,,4 | C,3!>)! B,, A,,2 z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | !p! F,6 E,2 | D,4 F,4 | G,6 F,2 | E,4 G,4 |!f! A,6 G,2 | F,4 A,,4 |!>(! D,4 D,4 | !pp! !fermata!E,8!>)! :|!p!!>(! A,8 |!pp! !fermata!E,8!>)! |]

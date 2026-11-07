@@ -1,0 +1,147 @@
+X:1
+C:Richard Wagner.
+%%score [  1  2 3 4   5 ( 6 7 ) 8  9 10  ( 11 12 ) 13 ( 14 15 ) 16   17 18 ( 19 20 21 )  22  23 24 25  26 27  28 29  ( 30 31 )  ( 32 33 ) ( 34 35 )   ]
+L:1/8
+Q:1/4=30
+M:4/4
+K:Db
+V:1 treble nm="FLOTEN." snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe I"
+%%MIDI program 68
+V:3 treble nm="3 HOBOEN." snm="3 Hob."
+%%MIDI program 68
+V:4 treble nm="Oboe II"
+%%MIDI program 68
+V:5 treble transpose=-2 nm="B♭ Clarinet I"
+%%MIDI program 71
+V:6 treble transpose=-2 nm="3 CLARINETTEN. (in B)" snm="3 Cl. (in B)"
+%%MIDI program 71
+V:7 treble transpose=-2 
+%%MIDI program 71
+V:8 treble transpose=-2 nm="B♭ Clarinet II"
+%%MIDI program 71
+V:9 treble transpose=-7 nm="ENGLISCHES HORN." snm="Althob."
+%%MIDI program 69
+V:10 bass transpose=-14 nm="BASS CLARINETTEN. (B)" snm="Bsclar. (B)"
+%%MIDI program 71
+V:11 treble transpose=-7 nm="Horn in F I"
+%%MIDI program 60
+V:12 treble transpose=-7 
+%%MIDI program 60
+V:13 treble transpose=-7 nm="\n\n\n4 HORNER. (in F)" snm="\n\n\n4 Hor. (in F)"
+%%MIDI program 60
+V:14 treble transpose=-7 nm="Horn in F II"
+%%MIDI program 60
+V:15 treble transpose=-7 
+%%MIDI program 60
+V:16 treble transpose=-7 nm="Horn in F III"
+%%MIDI program 60
+V:17 bass nm="Bassoon I"
+%%MIDI program 70
+V:18 bass nm="3 FAGOTT." snm="3 Fag."
+%%MIDI program 70
+V:19 bass nm="Bassoon II"
+%%MIDI program 70
+V:20 bass 
+%%MIDI program 70
+V:21 bass 
+%%MIDI program 70
+V:22 bass transpose=-12 nm="CONTRAFAGOTT." snm="Contrafg."
+%%MIDI program 70
+V:23 bass nm="Tenor Trombone"
+%%MIDI program 57
+V:24 bass nm="3 POSAUNE." snm="3 Pos."
+%%MIDI program 57
+V:25 bass nm="Bass Trombone"
+%%MIDI program 57
+V:26 bass nm="BASS TUBA." snm="Bstub."
+%%MIDI program 58
+V:27 bass nm="PAUKEN." snm="Pauk."
+%%MIDI program 47
+V:28 treble nm="\n\n\n\n1.\n\nVIOLINEN.\n\n2." snm="\n\n\nViol."
+%%MIDI program 49
+V:29 treble nm="Violins"
+%%MIDI program 49
+V:30 alto nm="BRATSCHEN." snm="Br."
+%%MIDI program 49
+V:31 alto 
+%%MIDI program 49
+V:32 bass nm="VIOLONCELLE." snm="Vc."
+%%MIDI program 49
+V:33 bass 
+%%MIDI program 49
+V:34 bass transpose=-12 nm="CONTRABASSE." snm="CB."
+%%MIDI program 49
+V:35 bass transpose=-12 
+%%MIDI program 49
+V:1
+"^Sehr langsam." z2 | z8 | z8 | z8 |"^DRITTER AUFZUG." z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |[Q:1/4=25] z8 | z8 | z8 ||[K:Eb] z8 |[Q:1/4=30] z8 |[Q:1/4=35] z8 | z4 [Q:1/4=30] z!mf!"_cresc." !^!d' !^!=e'/ [Q:1/4=27]!^!^f'/!^!g'/!^!=a'/ | !f! (=a'/>_a'/f'/4d'/4=b/4_b/4 =a/) z/ z z4 |[Q:1/4=35] z8 | z8 | z8 | z8 ||[K:Db] z8 | z8 | z8 | z8 | z8 | z8 |"^Mit steigerung." z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:2
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || [K:Eb] z8 | z8 | z8 | z8 | z8 | z8 | z4 z2 (^F>e) | e6!p!!<(! (=F>e)!<)! |!f!!<(! e6-!<)! e z || [K:Db] z2 _c>!wedge!.F d3 !wedge!G | !wedge!.e!f!"_piu"!wedge!.A _c3!<(! (B=A>_g)!<)! | !f!!>(! g6-!>)! g z |!f!!>(! g4-!>)! g z z2 | z8 | z8 | !f!"_(kraftig)" A7/2 !wedge!=D/ !wedge!B E3 |!f! z/ !wedge!.=D/ _c2- c/!wedge!.F/ !wedge!._d G3 | !ff! z/ !wedge!.F/ e2 !wedge!.A"_dim." _c2- c z |"^Nachlassend." z8 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:3
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || [K:Eb] z8 | z8 | z8 | z4 z!mf!"_cresc." !^!d !^!=e/!^!^f/!^!g/!^!=a/ | !f! (=a2- a/>_a/f/4d/4_d/4c/4 =B/) z/ z z2 | z8 | z8 | z8 | z8 || [K:Db] z2 _c>!wedge!.F d3 !wedge!G | !wedge!.e!f!"_piu"!wedge!.A _c3!<(! (B=A>_g)!<)! | !f!!>(! g6-!>)! g z |!f!!>(! g4-!>)! g z z2 | z8 | z8 | !f!"_(kraftig)" A7/2 !wedge!=D/ !wedge!B E3 |!f! z/ !wedge!.=D/ _c2- c/!wedge!.F/ !wedge!._d G3 | !ff! z/ !wedge!.F/ e2 !wedge!.A"_dim." _c2- c z | z8 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:4
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || [K:Eb] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:Db] z8 | z8 | z8 | z8 | z8 | z8 | !f!"_(kraftig)" A7/2 !wedge!=D/ !wedge!B E3 |!f! z/ !wedge!.=D/ _c2- c/!wedge!.F/ !wedge!._d G3 | !ff! z/ !wedge!.F/ e2 !wedge!.A"_dim." _c2- c z | z8 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:5
+[K:Eb] z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:F] z8 | z8 | z8 | z8 | z8 |!f! z3/2 !wedge!.B,<B!wedge!.E/ c3 !wedge!F | !wedge!.d!wedge!.G B3 A (^G>f) | f6!p!!<(! (=G>f)!<)! |!f!!<(! f6-!<)! f z || [K:Eb]!f! z3/2 !wedge!._D<_d!wedge!.G/ e3 !wedge!A | !wedge!.f!f!"_piu"!wedge!.B _d3!<(! (c=B>_a)!<)! |!f!!>(! a6-!>)! a z |!f!!>(! a4-!>)! a z z2 | z8 | z8 |!f!"_(kraftig)" B7/2 !wedge!=E/ !wedge!c F3 | !f! z/ !wedge!.=E/ _d2- d/!wedge!.G/ !wedge!._e A3 | !ff! z/ !wedge!.G/ f2 !wedge!.B"_dim." _d2- d z | z8 | z8 | z8 | z8 |"^(weich)" z2!p! (D2 ^C2 =C2 | E8) | z2!p!"_piu" (_C2 B,2 =A,2) |]
+V:6
+[K:Eb] z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:F] z8 | z8 | z8 | z4 z!mf!"_cresc." !^![Fe] !^!^f/!^!^g/!^!a/!^!=b/ | !f! (=b2- b/>_b/g/4e/4_e/4d/4 ^c/) z/ z z2 |!f! z3/2 !wedge!.B,<B!wedge!.E/ c3 !wedge!F | !wedge!.d!wedge!.G B3 A (^G>f) | f6!p!!<(! (=G>f)!<)! |!f!!<(! f6-!<)! f z || [K:Eb]!f! z3/2 !wedge!._D<_d!wedge!.G/ e3 !wedge!A | !wedge!.f!f!"_piu"!wedge!.B _d3!<(! (c=B>_a)!<)! |!f!!>(! a6-!>)! a z |!f!!>(! a4-!>)! a z z2 | z8 | z8 |!f!"_(kraftig)" B7/2 !wedge!=E/ !wedge!c F3 | !f! z/ !wedge!.=E/ _d2- d/!wedge!.G/ !wedge!._e A3 | !ff! z/ !wedge!.G/ f2 !wedge!.B"_dim." _d2- d z | z8 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:7
+[K:Eb] x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 ||[K:F] x8 | x8 | x8 | x4 x !^!F !^![^F^f]/!^![^G^g]/!^![Aa]/!^![=B=b]/ | [eg]2- [eg] z z4 | x8 | x8 | x8 | x8 ||[K:Eb] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |]
+V:8
+[K:Eb] z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:F] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || [K:Eb]!f! z3/2 !wedge!._D<_d!wedge!.G/ e3 !wedge!A | !wedge!.f!f!"_piu"!wedge!.B _d3!<(! (c=B>_a)!<)! |!f!!>(! a6-!>)! a z |!f!!>(! a4-!>)! a z z2 | z8 | z8 |!f!"_(kraftig)" B7/2 !wedge!=E/ !wedge!c F3 | !f! z/ !wedge!.=E/ _d2- d/!wedge!.G/ !wedge!._e A3 | !ff! z/ !wedge!.G/ f2 !wedge!.B"_dim." _d2- d z | z8 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:9
+[K:Ab] z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:Bb] z8 | z8 | z8 | z4 z!mf!"_cresc." !^!A !^!=B/!^!^c/!^!d/!^!=e/ |!f! =e2- e z z4 | !f! z3/2 !wedge!.E<e!wedge!.A/ f3 !wedge!B | !wedge!.g!wedge!.c e3 d ^c2 |!f!"_piu"!<(! =c8-!<)! | c2 z2 z4 ||[K:Ab]!f! z3/2 !wedge!._G<_g!wedge!.c/ a3 !wedge!d | !wedge!.b!f!"_piu"!wedge!.e!<(! _g3 f =e2!<)! |!f!!>(! _e6!>)!!<(! e2!<)! | !f!!>(! e4-!>)! e z!<(! d2-!<)! |!f!!>(! d4-!>)! d z z2 |!f!!>(! d4-!>)! d z z2 | !f!"_(kraftig)" e7/2 !wedge!=A/ !wedge!f B3 |!f! z/ !wedge!.=A/ _g2- g/!wedge!.c/ !wedge!._a d3 | !ff! z/ !wedge!.c/ b2 !wedge!.e"_dim." _g2- g z | z8 | z8 | z2!p!"^(ausdrucksvoll)" (_B2 =A2 _A2 | =B8) | z8 | z8 | z8 |]
+V:10
+[K:Eb] z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:F] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:Eb] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4!f!"_dim." (_D4- | D3 =E ^F,4- |!p! F,) z z2 z4 | z8 | z8 | z2!p!"^(zart)" (C,2 ^C,2 D,E, | =C,8) | z2!p!"_piu" (=A,,2 B,,2 =B,,C,) |]
+V:11
+[K:C] z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:C] z8 | z8 | z8 | z4 z!mf!"_cresc." [A,A] [B,B]/[^C^c]/[Dd]/[Ee]/ |!f! A4- A z z2 | z8 | !p! z2!<(! (_e3 d ^c2)!<)! |!f! =c8- | c2 z2 z4 ||[K:C] z8 | z2!f!!<(! (_g3 f =e2)!<)! | !f! _e6!<(! e2-!<)! |!f!!>(! e2-!>)! e z z2!<(! _d2-!<)! |!f!!>(! d4-!>)! d z z2 | !f!!>(! _d4-!>)! d z z2 |!f!"_(kraftig)" _e7/2 !wedge!=A/ !wedge!f _B3 | !f! z/ !wedge!.A/_g- g/!wedge!.c/!wedge!._a _d3 z | z/ !wedge!.c/ _B2 !wedge!._E"_dim." _G2- G z | z8 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:12
+[K:C] x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 ||[K:C] x8 | x8 | x8 | x8 | (C6 ^C2) | x8 | x8 | x8 | x8 ||[K:C] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |]
+V:13
+[K:C] z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:C] z8 | z8 |[K:C] z8 | z8 | z8 |!f! =C4"_dim." (_B,4- |!p! B,3 A,!<(! _A,2 G,2)!<)! | !f! =C8 |!p!!<(! (_E6 =E2)!<)! ||[K:C]!f! _E4"_dim." (_D4- |!p! D3!<(! C B,2 _B,2)!<)! | !f!!>(!!<(! _E8!>)!!<)! |!>(! _G6!>)!!<(! =G2!<)! |!f!!>(! _G6-!>)! G z |!f!!>(! _G6-!>)! G z | !f!"_(kraftig)" _E7/2 !wedge!=A,/ !wedge!F _B,3 | !f! z/ !wedge!.A,/_G- G/!wedge!.C/!wedge!._A _D3 z | !ff! z/ !wedge!.C/ _B2 !wedge!._E"_dim." _G2- G z | z8 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:14
+[K:C] z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:C] z8 | z8 | z8 | z4 z!mf!"_cresc." [A,A] [B,B]/[^C^c]/[Dd]/[Ee]/ |!f! (E4 ^F2 G2) | !f! (G3"_dim." ^F =F2 E2) |!p!!<(! _E8-!<)! |!f! _E8- | (E2!p!!<(! G2 A2 _B2)!<)! || [K:C]!f! (_B3 A"_dim." _A2 G2) |!<(! _G8!<)! |!f!!>(! (_G8!>)! | !f! A) z (!^!_B2!<(! !^!c2 !^!_d2)!<)! |!f!!>(! _d4-!>)! d z z2 |!f!!>(! _d4-!>)! d z z2 | !f!"_(kraftig)" _e7/2 !wedge!=A/ !wedge!f _B3 |!f! z/ !wedge!.A/_g- g/!wedge!.c/!wedge!._a _d3 z | z/ !wedge!.c/ _B2 !wedge!._E"_dim." _G4- | G2- G z z4 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:15
+[K:C] x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 ||[K:C] x8 | x8 | x8 | x8 | (A,6 _B,2) | x8 | x8 | x8 | x8 ||[K:C] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |]
+V:16
+[K:C] z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:C] z8 | z8 |[K:C] z8 | z8 | z8 |!f! A,4"_dim." (B,4- |!p! B,3!<(! A, _A,2 G,2)!<)! | !f! (^F,8- | F,!p!A,!<(! C4 _D2)!<)! ||[K:C] C4"_dim." (_D4- |!p! D3!<(! C B,2 _B,2)!<)! | !f!!>(! =A,8!>)! |!f!!>(! _E6!>)!!<(! =E2!<)! |!f!!>(! _E6-!>)! E z |!f!!>(! _E6-!>)! E z | !f!"_(kraftig)" _E7/2 !wedge!=A,/ !wedge!F _B,3 | !f! z/ !wedge!.A,/_G- G/!wedge!.C/!wedge!._A _D3 z | !ff! z/ !wedge!.C/ _B2 !wedge!._E"_dim." (_G4- | G3 =A =B,4- |!p! B,2- B,) z z4 | z8 | z8 | z8 | z8 | z8 |]
+V:17
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || [K:Eb] z8 | z8 | z8 | z8 | z8 |!f! =F,4 (E,4- |!p! E,3!<(! D, _D,2 C,2)!<)! |!f! =B,,8- | B,,!p!D,!<(! F,2 A,2 =A,2!<)! ||[K:Db]!f! _A,4"_dim." (_G,4- |!p! G,3 F,!<(! =E,2 _E,2)!<)! | !f!!>(! =D,8-!>)! |!f! D,F, A,2 _C2!<(! =C2!<)! |!f!!>(! _C6-!>)! C z |!f!!>(! _C6-!>)! C z | [K:tenor]!f! =D4 E4 |!f! F4 G4 |!ff! E4"_dim." (_F7/2 E/) | (=D4 _D4- | D8- | D2) [K:bass]"^(zart)" (D,2 =D,2 E,=E, | =G,8) | z8 | z8 | z8 |]
+V:18
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || [K:Eb] z8 | z8 | z8 | z8 | z8 |!f! D,4 (E,4- |!p! E,3!<(! D, _D,2 C,2)!<)! |!f! =B,,8- | B,,!p!D,!<(! F,2 F,2 _G,2!<)! ||[K:Db]!f! F,4"_dim." (_G,4- |!p! G,3 F,!<(! =E,2 _E,2)!<)! | !f!!>(! =D,8-!>)! |!f! D,F, A,2 A,2!<(! =A,2!<)! |!f!!>(! _A,6-!>)! A, z |!f!!>(! A,6-!>)! A, z | [K:tenor]!f! _C4 (B,2 E,2) |!f! _C2 =D2 (_D2 =C2) |!ff! _C4"_dim." C4- | (C6!p! B,) z | z8 | z8 | [K:bass] z8 | z8 | z8 | z8 |]
+V:19
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || [K:Eb] z8 | z8 | z8 | z4!mf!"_cresc." G,^F, =E,_E,/>D,/ |!f! (=A,4 =B,2 C2) |!f! G,,8 | !p!!<(! (F,,4 _F,,2 E,,2)!<)! |!f! =D,,8- | D,,2!p!!<(! (D,2 C,3 _C,)!<)! ||[K:Db]!f!"_dim." B,,8 | !p! (A,,4!<(! =G,,2 _G,,2)!<)! |!f!!>(! F,,8!>)! |!>(! F,,4!>)!!<(! (E,,3 =D,,)!<)! | !f! (=D,,F,,A,,B,, _C,A,,F,,E,,) | (=D,,F,,A,,B,, _C,=D,F,G,) |[K:tenor]!f! (_G, F,3) E,4 | !f! =D,2 F,2 E,4 |!ff! F,4"_dim." (_F,7/2 =F,/) | (F,4 =E,2-!p! E,) z | z8 | z8 |[K:bass] z8 | z8 | z8 | z8 |]
+V:20
+x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 || [K:Eb] x8 | x8 | x8 | x8 | (F,6 ^F,2) | x8 | x8 | x8 | x8 ||[K:Db] x8 | x8 | x8 | x8 | x8 | x8 | [K:tenor] x8 | x8 | x8 | x8 | x8 | x8 |[K:bass] x8 | x8 | x8 | x8 |]
+V:21
+x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 || [K:Eb] x8 | x8 | x8 | x8 | (D,6 _E,2) | x8 | x8 | x8 | x8 ||[K:Db] x8 | x8 | x8 | x8 | x8 | x8 | [K:tenor] x8 | x8 | x8 | x8 | x8 | x8 |[K:bass] x8 | x8 | x8 | x8 |]
+V:22
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || [K:Eb] z8 | z8 | z8 | z4!mf!"_cresc." B,,^F,, =E,,_E,,/>D,,/ |!f! (=B,,,4 =A,,,3 _A,,,) | !f!"_dim." G,,,4- G,,, z z2 |!p! (F,,4!<(! _F,,2 E,,2)!<)! | (=D,,8- | D,,4!<(! C,,3 _C,,)!<)! || [K:Db]!f!"_dim." B,,,8 |!p! (A,,,4 =G,,,2 _G,,,2) |!f!!>(! F,,,6-!>)! F,,, z | F,,4!<(! (E,,3 =D,,)!<)! |!f!!>(! =D,,6-!>)! D,, z | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:23
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || [K:Eb] z8 | z8 | z8 | z8 | z2!f! !>!=A,2 !>!=B,2 !>!C2 | z8 | z8 | z8 | z8 ||[K:Db] z8 | z8 | [K:tenor] z8 | z2!p!!<(! !^!E2 !^!F2 !^!_G2!<)! |!f!!>(! G4-!>)! G z z2 |!f!!>(! G4-!>)! G z z2 | !f!"^(ben tenuto)" =D4 E4 |!f! F4 G4 |!ff! E4"_dim." (_F7/2 E/) | =D4 _D4- |!p! D z z2 z4 | z8 | z8 | z8 | z8 | z8 |]
+V:24
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || [K:Eb] z8 | z8 | z8 | z8 | z2"^(ehr getragenund ausdrucksvoll)"!f! !>!=A,2 !>!=B,2 !>!C2 | (C3 =B,"_dim." _B,2 =A,2 | _A,8- |!p! A,2) z2 z4 | z2 [K:tenor]"_(ausdrucksvoll)"!mf!!<(! !>!C2 !>!D2 !>!E2!<)! ||[K:Db]!f!!ff! E3 =D"_dim." _D2 =C2 | _C8- |!p! _C2 z2 z4 | z2!<(! !^!E2 !^!F2 !^!_G2!<)! |!f!!>(! _C4-!>)! C z z2 | !f!!>(! _C4-!>)! C z z2 |!f! _C4 (B,2 E,2) |!f! _C2 =D2 (_D2 =C2) |!ff! _C4"_dim." (C4- | C6!p! B,) z | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:25
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || [K:Eb] z8 | z8 | z8 | z8 | z2!f! !>!=A,2 !>!=B,2 !>!C2 | (C3 =B,"_dim." _B,2 =A,2 | _A,8- | !p! A,2) z2 z4 | z8 ||[K:Db] z8 | z8 | z8 | z8 |!f!!>(! A,4-!>)! A, z z2 | !f!!>(! A,4-!>)! A, z z2 |!f! (_G, F,3) E,4 |!f! =D,2 F,2 E,4 |!ff! F,4"_dim." (_F,7/2 =F,/) | (F,4!p! =E,) z z2 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:26
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 || [K:Eb] z8 | z8 |"^Zuruckhaltend und breiter werdend." z8 | z8 |!f!"^a tempo." (=B,,4 =A,,3 _A,,) | !f!"_dim." G,,6- G,, z | z8 | z8 |!p! (D,4!<(! C,3 _C,)!<)! ||[K:Db]!f!"_dim." B,,8 | !p! (A,,4!<(! =G,,2 _G,,2)!<)! |!f! F,,6- F,, z |!f! F,4!<(! (E,3 =D,)!<)! | !f!!>(! =D,6-!>)! D, z |!f!!>(! =D,4-!>)! D, z z2 | z4!f!"^(ten.)" C,4 |!f! A,,4 __B,,4 | !ff! A,,4"_dim." (A,,4- | A,,4!p! =G,,) z z2 | z8 | z8 | z8 | z8 | z8 | z8 |]
+V:27
+[K:C] z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:C] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:Db] z8 | z8 |!f! z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4!p!"^(B)" _B,,2 z B,, | B,,2 z2 z4 | z8 | z8 | z8 | z8 |]
+V:28
+!pp! (B,2 |"_(ausdrucksvoll.)" F6 B2 | =E6) (F2 |!<(! B,3 C E D2 C)!<)! |!p! (C6!<(! =B,2 | !mp! A6)!<)!"_dim." (=G2- |!>(! G2 ^F2- F =E2 =D)!>)! |!p! (=D6!<(! ^C2!<)! | !>(! B6)!mp!"_dim." (=A2-!>)! |!p! A2 _A2-!<(! A"_cresc." =G2 _G)!<)! | !f!!f!!<(! (G6!mp!!mp!"_cresc." _c2)!<)! |!f!!<(! (F6"_cresc." e2)!<)! | z/!p! (=E^F/) z/ (=GB/) z/ (B^c/) z/ (=e/-(3e/^f/=g/) | z/!p! (=E^F/) z/ (=GB/) z/ (B^c/) z/ (=e/-(3e/^f/=g/) | z/!p! (=F=G/) z/ (A=B/) z/ (B=d/) z/ (f/-(3f/=g/a/) | z/!p! (=F=G/) z/ (A=B/) z/ (B=d/) z/ (f/-(3f/=g/a/) | !p! (_G/A/=A/c/- c/e/f/g/)!<(! (=G/A/B/d/- d/=e/"_cresc."=f/=g/)!<)! | !mf!"^(ehr zart)""_dim." (b/a/-(3a/(=g/_g/-) g/f/-(3(f/=e/)f/) (g/f/-(3f/(_f/_e/-) e/(=d/(3_d/)(c/_c/)) | !p!"^Noch langsamer\nwerdend.""_piu"!pp! (_c3 _f B3 =B) || [K:Eb]"^Wieder wie zuvor."!p!!<(! (=E3 ^F- F/GB/- B/^c/^d/=e/)!<)! | "_poco"!mp!"_cresc." (G3 =A- A/B_d/- d/e/f/_g/) | "_piu" =A3 !^!=B !^!c!^!e !^!f/!^!g/!^!_a/!^!_b/- | b/bb/- b/=b(b/4d'/4- d'/)d'(d'/ =e'/)!^!^f'/!^!g'/!^!=a'/ | !ff! (=a'/>_a'/f'/d'/) (=b/>_b/f/4d/4_d/4c/4) (=B/4_B/4=A/4_A/4F/4=E/4D/4_D/4 C/4)(=A/4_A/4G/4^F/4_E/4(3=D/4(_D/4C/4)) | z3/2!f! A,<AD/ B3 !wedge!.E | !wedge!.c!wedge!.F (A3!<(! G^F>e)!<)! |!f! e6!p!!<(! (=F>e)!<)! | !f!"_cresc." e6- e/>!p!(E/ _G/4=A,/4B,/4_C/4) || [K:Db]!f! z3/2 !wedge!._C<_c!wedge!.F/ d3 !wedge!.G | !wedge!.e!wedge!.A (_c3!<(! B=A>_g)!<)! | !f!!>(! g6!>)!!mp!!<(! (A>g)!<)! | !f!!>(! (g4-!>)! g-!<(!(3g/(_c/=d/) (3e/(=A/=c/) (3(E/F/)G/)!<)! | !f!!>(! G6!>)!!p!!<(! (A,>G)!<)! |!f!"_cresc." G6!<(! (_C>A)!<)! | !f!"_(kraftig)" A7/2 !wedge!=D/ !wedge!B =E3 |!f! z/ !wedge!=D/ _c2- c/!wedge!F/ !wedge!_d G3 | !ff! z/ !wedge!F/ e2 !wedge!A"_dim." _c4 |"^Nachlassend." z F _c4 =E2 |!mp! =G8- |!p! G8- | !<(! (=G2!<)!!mp!!>(! B2!>)!!p! =E4-) |!p!"_piu" E8- |!<(! (E2!<)!!mp!!>(! =G2!>)!!p! D4-) | D8 |]
+V:29
+z2 | z4!pp! B,4- | B,8 | (B,8- | B,3 =A,!<(! _A,4) |!mp! (=B,6!<)!"_dim." C2- | !>(! C4 =B,2 ^A,2)!>)! |!p!!<(! (_B,8-!<)! |!>(! B,6!mp!"_dim." =D>^C)!>)! | !p! (=C4!<(!"_cresc." =B,4!<)! |!f!!f!!<(!"_cresc." _C8)!<)! |!f!!<(! (_C6"_cresc." A2)!<)! | z/!p! (DB,/) z/ (=D_E/) z/ (=E=G/) z/ (^CB/) | z/!p! (DB,/) z/ (=D_E/) z/ (=E=G/) z/ (^CB/) | z/!p! (=D=B,/) z/ (E=E/) z/ (FA/) z/ (D=B/) | z/!p! (=D=B,/) z/ (E=E/) z/ (FA/) z/ (D=B/) | !p! (C/E/=E/F/ =G/=Ac/)!<(! (E/D/F/G/ B,/"_cresc."[GB]d/)!<)! | !mf!"_dim." (_c2- c/A/c) (=D_D/=C/ _CA) |!p!"_piu"!pp! (=E4 F2 ^FG) || [K:Eb]!p!!<(! (_D4- D/=D_E/- E/=EG/)!<)! |"_poco"!mp!"_cresc." (=E4- E/F_G/- G/=AA/) | "_piu" ^F4 G_A- A/!^!B/!^!c/(!^!d/ | ^c/)c[c=e]/- [ce]/[d^f]([df]/4[dg]/4- [dg]/)[dg][dg]/- [dg]/!^![d=a]/!^![c=b]/!^![=ca]/ | !ff! [=Fd]2 [Fd]/ z/ z (=B/4_B/4=A/4_A/4F/4=E/4D/4_D/4 C/4)(=A/4_A/4G/4^F/4_E/4(3=D/4(_D/4C/4)) | z3/2!f! A,<AD/ B3 !wedge!.E | !wedge!.c!wedge!.F (A3!<(! G^F>e)!<)! |!f! e6!p!!<(! (=F>e)!<)! | !f!"_cresc." e6- e/>!p!(E/ _G/4=A,/4B,/4_C/4) || [K:Db]!f! z3/2 !wedge!._C<_c!wedge!.F/"^(stark)" d3 !wedge!.G | !wedge!.e!wedge!.A (_c3!<(! B=A>_g)!<)! |!f!!>(! g6!>)!!mp!!<(! (A>g)!<)! | !f!!>(! (g4-!>)! g-!<(!(3g/(_c/=d/) (3e/(=A/=c/) (3(E/F/)G/)!<)! | !f!!>(! G6!>)!!p!!<(! (A,>G)!<)! |!f!"_cresc." G6!<(! (_C>A)!<)! | !f!"_(kraftig)" A7/2 !wedge!=D/ !wedge!B =E3 |!f! z/ !wedge!=D/ _c2- c/!wedge!F/ !wedge!_d G3 | !ff! z/ !wedge!F/ e2 !wedge!A"_dim." _c4 | z F _c4 =E2 |!mp! =G8- |!p! G2 z2 z4 | z8 | z8 | z8 | z8 |]
+V:30
+z2 | z8 | z8 |!pp!!<(! (=E,4 _E,4-!<)! |!p! E,4!<(! F,4 |!mp! A,6!<)!"_dim." =G,2) | !>(! (=E,3 =D, ^C,4)!>)! |!p!!<(! (E,3 ^F, =G,4)!<)! |!>(! (^C6!>)!!mp!"_dim." =A,2) | !p! (=F,3 _E,!<(!"_cresc." =D,4)!<)! |!f!!f!!<(!"_cresc." A,8!<)! |!f!!<(! (A,6"_cresc." _C2)!<)! | z/!p! (B,D/) z/ (B,=G,/) z/ (G,B,/) z/ (=G[^C=E]/) | z/!p! (B,D/) z/ (B,=G,/) z/ (G,B,/) z/ (=G[^C=E]/) | z/!p! (=B,=D/) z/ (B,A,/) z/ (A,B,/) z/ (A[F=d]/) | z/!p! (=B,=D/) z/ (B,A,/) z/ (A,B,/) z/ (A[F=d]/) | !p! (E/C=A,/- A,/C/E)!<(! (D/=E/D/B,/ =G/"_cresc."DE/)!<)! | !mf!"_dim." (E_F/E/ =DA) ([A_c]A- A/F/F) |!p!"_piu"!pp! (=G4 D4) || [K:Eb]!p!!<(! (B,4- B,/B,G,/- G,/G,B,/)!<)! |"_poco"!mp!"_cresc." (_D4- D/DB,/- B,/CC/) | "_piu" E4 !^!E!^!C- C(!^!A | G/)[GB][GB]/- [GB]/[^F=B](F/4B/4- B/)[GB][GB]/- [GB]/!^!=A/!^!G/!^!F/ | !ff! [=F,D]2 F,4 ^F,2 | ^F,4 E,4 | E,3 D, _D,2 C,2 | !f! z =D,F,G, A,F,D,C, |!f! z (D,F,G, A,G,_G,E,) ||[K:Db]!f! [F,A,]4"^(stark)" _G,4 | _G,3 F,!<(! =E,2 _E,2!<)! |!f! (=D,F,A,B, _CA,F,E,) | !f! (=D,F,A,B,) (_CB, (3(=A,_G,)D,) |"_piu" (=D,!f!F,A,B,) (_CA,F,E,) | (=D,F,A,B,) (_CD,F,G,) | !f!"_(kraftig)" (G, F,2) !wedge!_C (E,3/2-(3E,/4F,/4G,/4) !wedge!=G,/!wedge!A,/!wedge!B,/!wedge!C/ | !f! =D,!wedge!=E,/!wedge!F,/ !wedge!A,/!wedge!B,/!wedge!_C/!wedge!=D/ !wedge!E(=C,/4D,/4_E,/4F,/4) !wedge!G,/!wedge!=A,/(3!wedge!=B,/!wedge!=C/!wedge!_D/ | !ff! F,>(_C =D,/E,/_G,/F,/)"_dim." z/ (C/_F,- F,/E,/F,/=F,/) | (_C3 =D =E,4-) | (E,8 |!p! (=G,8) | (D,8) | =E,8-) | E,8 | D,8 |]
+V:31
+x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 || [K:Eb] x8 | x8 | x8 | x8 | x2 D,4 _E,2 | D,4 E,4 | x8 | x8 | x8 ||[K:Db] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |]
+V:32
+z2 | z2!pp! (D,2"_(ausdrucksvoll.)" G,,4- | G,,2 =G,,2 D,4-) | (D,2 =G,,2 _G,,2!<(! F,,2- | F,,2 G,,2"_cresc." =D,4- | D,2!<)!!mp! E,2"_dim." =E,,4) |!>(! (^F,,8-!>)! | !p! F,,2!<(! =G,,2 =E,4- | =E,2 F,2!<)!!mp!"_dim." ^F,,4) |!p!!<(! (=G,,6"_cresc." A,,2)!<)! | !fff!!<(! (=D,,!p!F,,A,,B,, _C,"_cresc."A,,F,,E,,)!<)! | !fff!!<(! (=D,,!p!F,,A,,B,, _C,"_cresc."=D,F,!f!G,)!<)! | !p!!<(! (=G,^F,=E,_E, =D,^C,B,,!mp!=G,,)!<)! |!p!!<(! (=G,^F,=E,_E, =D,^C,B,,!mf!=G,,)!<)! | !p!!<(! (_A,=G,F,=E, _E,=D,=B,,!mf!A,,)!<)! |!p!!<(! (_A,=G,F,=E, _E,=D,=B,,!f!A,,)!<)! | !p! (=A,/_A,/_G,/F,/ _F,/E,/C,/=A,,/)!<(! (B,/=A,/=G,/_G,/ =F,/=E,/"_cresc."D,/B,,/)!<)! | !mf!"_dim." (A,,/_C,/=D,/=F,/ A,/_C/_D/=D/) (F,,/A,,/C,/D,/ F,/A,/C/D/) | z!p!"_piu"!pp! (_D"_(ermattend)" =G,2- G,)(B, =E,2) || [K:Eb] z!p!!<(! (_D,G,,^F,, =E,,_E,,=D,,^C,,)!<)! | z"_poco"!mp!"_cresc." (=E,B,,=A,, G,,_G,,F,,_E,,) | "_piu" z (^F,C,)!^!=B,, !^!=A,,!^!_A,, !^!G,,!^!=F,,/>=E,,/ | "^(ten)" =E,^D,/^C,/ =B,,=A,, G,,^F,, =E,,_E,,/>=D,,/ |!ff! =B,,4 =A,,3 _A,, |!f! G,,8 | F,,4!<(! (_D,2 C,2)!<)! |!f! =B,,=D,F,G, A,F,D,C, | (=B,,D,F,G, A,G,_G,E,) ||[K:Db]!f! B,,8 | A,,4!<(! (=E,2 _E,2)!<)! |!f! (=D,F,A,B,) (_CA,F,E,) |!f! (=D,F,A,B,) (_CB, (3(=A,_G,)D,) | "_piu" (=D,!f!F,A,B,) (_CA,F,E,) | (=D,F,A,B,) (_C,D,F,G,) | !f!"_(kraftig)" (G,F,/)!wedge!=D,/ !wedge!_C,/!wedge!A,,/(3!wedge!=A,,/!wedge!B,,/!wedge!C,/ (C,-C,/4D,/4(3E,/4F,/4G,/4) !wedge!A,,/!wedge!B,,/!wedge!C,/!wedge!_D,/ | !f! =D,!wedge!=E,/!wedge!F,/ !wedge!A,/!wedge!B,/!wedge!C/!wedge!D/ !wedge!E(=C,/4D,/4_E,/4F,/4) !wedge!G,/!wedge!=A,/(3!wedge!=C/!wedge!=D/!wedge!_E/ | !ff! _A,,>(_C, =D,/E,/_G,/F,/)"_dim." z/ (_C/_F,- F,/E,/F,/=F,/-) | F,4 (=G,,3 =A,,) | B,,8- | !p! B,,8- |!<(! (B,,6!<)!!mp!!>(! D,2!>)! |!p!"_piu" =G,,8-) |!<(! (G,,6!<)!!mp!!>(! B,,2!>)! | !p!"_piu" =E,,8) |]
+V:33
+x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 || [K:Eb] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 ||[K:Db] x8 | x8 | x8 | x8 | (=D,F,,A,,B,,) (_C,A,,F,,E,,) | (=D,,F,,A,,B,,) (_C,=D,F,G,) | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |]
+V:34
+z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |!f!!f!!<(! !^!=D,8-!<)! |!>(! D,4- D,!>)! z z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 ||[K:Eb] z8 | z8 | z2"_piu""_cresc." C=B, =A,_A, G,=F,/>=E,/ | "^(ten)" =E,^D,/^C,/ =B,,=A,, G,,^F,E,_E,/>=D,/ |!ff! =B,,4 =A,,3 _A,, |!f! G,,8 | F,4!<(! (_F,2 E,2)!<)! |!f! =D,8 |!f! D,4!p!"_cresc." C,3 _C, ||[K:Db]!f! B,,8 | A,,2 (A,2!<(! =G,2 _G,2)!<)! |!f! F,6- F, z |!f! F,4 E,3!<(! =D,!<)! | "_piu" (=D,!f!F,A,B,) (_CA,F,E,) | (=D,F,A,B,) (_C=DFG) | !f!"_(kraftig)" (GF/)!wedge!=D/ !wedge!_C/!wedge!A,/(3!wedge!=A,/!wedge!B,/!wedge!C/ C4 | !f! A,4 __B,4 |!ff! A,4"_dim." A,,4- | A,,4 (=G,,3 =A,,) |!p! B,,4- B,, z z2 | z8 | z8 | z8 | z8 | z8 |]
+V:35
+x2 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 || [K:Eb] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 ||[K:Db] x8 | (A,,4 =G,,2 _G,,2) | F,,6- F,, x | F,4 x4 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |]

@@ -329,6 +329,18 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
  <span class="dropdown-text">JRI Recorder, on Saxophone</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../mlt/shouldice.html">
+ <span class="dropdown-text">Shouldice: Everyday Musicality</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/bluestine.html">
+ <span class="dropdown-text">Bluestine’s Blog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mlt/rasmussen.html">
+ <span class="dropdown-text">Rasmussen: Audiation in the Wild</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../mlt/activities.html">
  <span class="dropdown-text">Classroom Activities</span></a>
   </li>  
@@ -633,6 +645,30 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../practice/flute-patterns-by-ear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Flute Patterns by Ear</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../practice/clarinet-patterns-by-ear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clarinet Patterns by Ear</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../practice/horn-patterns-by-ear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Horn Patterns by Ear</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../practice/bass-patterns-by-ear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bass Patterns by Ear</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../practice/sax-home.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">My Saxophone Practice</span></a>
   </div>
@@ -767,7 +803,6 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
   <li><a href="#td-tunes" id="toc-td-tunes" class="nav-link" data-scroll-target="#td-tunes">Tune Library</a></li>
   <li><a href="#td-themes" id="toc-td-themes" class="nav-link" data-scroll-target="#td-themes">Classical Themes</a></li>
   <li><a href="#td-mlt" id="toc-td-mlt" class="nav-link" data-scroll-target="#td-mlt">MLT and JRI recordings</a></li>
-  <li><a href="#td-songs" id="toc-td-songs" class="nav-link" data-scroll-target="#td-songs">Words &amp; Chords</a></li>
   <li><a href="#td-billboard" id="toc-td-billboard" class="nav-link" data-scroll-target="#td-billboard">Billboard songs (chords and form)</a></li>
   <li><a href="#td-analysed" id="toc-td-analysed" class="nav-link" data-scroll-target="#td-analysed">Analysed Scores</a></li>
   <li><a href="#works-cited" id="toc-works-cited" class="nav-link" data-scroll-target="#works-cited">Works Cited</a></li>
@@ -909,10 +944,12 @@ document.addEventListener('DOMContentLoaded', async function () {
 <div id="td-status">Loading the collections…</div>
 <section id="td-sheet" class="level2">
 <h2 class="anchored" data-anchor-id="td-sheet">At a glance</h2>
-<p class="td-note">Everything in one table: every tune, classical theme, piece (including those known only from a print anthology), and MLT / JRI recording not linked to a tune. <b>Year</b> is the year of composition (or publication); <b>Print</b> the anthology figure. Type in the
+<p class="td-note">Everything in one table, nothing to expand: every tune, classical theme, piece (including those known only from a print anthology), Words &amp; Chords song, Billboard song, and MLT / JRI recording not linked to a tune. The <b>type buttons</b> switch types on and off.
+<b>Concepts</b> counts the places where a teaching source (Hutchinson's textbook and others) uses the piece to show a concept; pick a concept or source above the table, or click ▸ by a title to see each use with its link. <b>Year</b> is the year of composition (or publication); <b>Print</b> the anthology figure. Type in the
 box under a column to filter it (in Recordings and Bars marked: <code>&gt;0</code>, <code>0</code>, <code>2</code>); click a column name
-to sort. <b>Bars marked</b> counts recordings with a timing map; ⏱ opens one in Timestamp Notes. The lists below are the same
-collections, grouped.</p>
+to sort. <b>Bars marked</b> counts recordings with a timing map; ⏱ opens one in Timestamp Notes. The sections below are the same
+collections, grouped; they start folded (click a heading to open one). They still hold what the table cannot: recordings that play in place, the
+anthology figures by composer, the music finder's results (Functions, Progression, tonal pattern…) and the analysed scores. The Words &amp; Chords list is gone: its songs are rows here (type Song).</p>
 <div id="td-sheet-box"></div>
 </section>
 <section id="td-works" class="level2">
@@ -944,21 +981,6 @@ are in the <a href="../course/glossary.html">glossary</a>.</p>
 <p class="td-note"><span id="td-mlt-n"></span> from the MLT / Jump Right In book CDs, for this class only. Click a name to listen; the
 grey text says which CD and track it comes from (and the book page when the track names one).</p>
 <div id="td-mlt-list"></div>
-</section>
-<section id="td-songs" class="level2">
-<h2 class="anchored" data-anchor-id="td-songs">Words &amp; Chords</h2>
-<p class="td-note">Songs with their words and chords over them, for singing in class and in concerts: <a href="../songs/">Words &amp; Chords</a>.</p>
-<ul id="td-songs-list"></ul>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  var ul = document.getElementById("td-songs-list"), L = (window.SONG_INDEX || []).slice();
-  L.sort(function (a, b) { return a.title.localeCompare(b.title); });
-  ul.innerHTML = L.map(function (g) {
-    var t = g.title.replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; });
-    return '<li><a href="/songs/?id=' + encodeURIComponent(g.id) + '">' + t + '</a>' + (g.key ? ' <span class="td-dim">' + g.key + '</span>' : '') + '</li>';
-  }).join("");
-});
-</script>
 </section>
 <section id="td-billboard" class="level2">
 <h2 class="anchored" data-anchor-id="td-billboard">Billboard songs (chords and form)</h2>
@@ -1003,6 +1025,13 @@ YouTube and paste the link there.</p>
 .tds thead tr.tds-f th { top: 1.9rem; }
 .tds th[data-k] { cursor: pointer; white-space: nowrap; }
 .tds-f input, .tds-f select { width: 100%; min-width: 3rem; font-size: .8rem; padding: .1rem .25rem; }
+.tds-chips { display: flex; flex-wrap: wrap; gap: .35rem; margin: .3rem 0 .5rem; }
+.tds-chip { border: 1px solid var(--bs-border-color, #ced4da); background: none; color: inherit; border-radius: 999px; padding: .15rem .7rem; font-size: .85rem; cursor: pointer; }
+.tds-chip span { opacity: .6; font-size: .75rem; margin-left: .15rem; }
+.tds-chip.on { background: var(--bs-primary, #0d6efd); border-color: var(--bs-primary, #0d6efd); color: #fff; } .tds-chip.on span { opacity: .85; }
+.tds-open { border: 0; background: none; color: inherit; padding: 0 .2rem; cursor: pointer; opacity: .7; }
+.tds-detail td { background: var(--bs-tertiary-bg, #f6f8fb); padding: .3rem .8rem; }
+.tds-con { font-size: .8rem; max-width: 14rem; }
 .tds-c { text-align: center !important; } .tds-dim { opacity: .7; }
 .tds tbody tr:hover { background: var(--bs-tertiary-bg, #f6f8fb); }
 @media (max-width: 600px) { .td-list { columns: 1; padding-left: .3rem; } }
@@ -1010,7 +1039,7 @@ YouTube and paste the link there.</p>
 <script src="../apps/shared/abcjs-basic.js?v=5"></script>
 <script src="../apps/shared/abc-core.js?v=3"></script>
 <script src="../apps/tune-assessment/abc-tune.js?v=3"></script>
-<script src="../apps/shared/pitch-spelling.js?v=1"></script>
+<script src="../apps/shared/pitch-spelling.js?v=2"></script>
 <script src="../apps/shared/tonality.js?v=10"></script>
 <script src="../apps/shared/tune-chart.js?v=31"></script>
 <script src="../apps/rhythms/rhythm-pattern-object.js?v=2"></script>
@@ -1019,10 +1048,15 @@ YouTube and paste the link there.</p>
 <script src="../apps/tunes/tunes-object.js?v=3"></script>
 <script src="../apps/themes/themes-data.js?v=4"></script>
 <script src="../apps/shared/works/works-data.js?v=10"></script>
-<script src="../apps/shared/works/works.js?v=16"></script>
+<script src="../apps/shared/works/works.js?v=18"></script>
 <script src="../apps/shared/mlt/recordings.js?v=3"></script>
+<script src="../apps/shared/works/uses/hutchinson.js?v=1"></script>
+<script src="../apps/shared/works/uses/shouldice.js?v=1"></script>
+<script src="../apps/shared/works/uses/bluestine.js?v=1"></script>
+<script src="../apps/shared/works/uses/justin.js?v=1"></script>
+<script src="../apps/shared/works/uses/rasmussen.js?v=1"></script>
 <script src="../apps/shared/works/tune-directory.js?v=10"></script>
-<script src="../apps/shared/works/td-sheet.js?v=4"></script>
+<script src="../apps/shared/works/td-sheet.js?v=5"></script>
 <script src="../apps/shared/section-fold.js?v=1"></script>
 </section>
 <section id="works-cited" class="level2">

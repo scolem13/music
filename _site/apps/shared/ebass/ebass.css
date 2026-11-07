@@ -1,0 +1,41 @@
+/* ebass.css — electric bass fretboard (ebass-chart.js) and page widgets (ebass-page.js) */
+.ebc-wrap { overflow-x: auto; margin: .4rem 0; }
+.ebc { width: 100%; min-width: 640px; height: auto; display: block; --eb-ink: #231f20; --eb-wood: #efe2cc; --eb-hi: #2780e3; }
+@media (prefers-color-scheme: dark) { .ebc { --eb-ink: #e6e6e6; --eb-wood: #3a3128; } }
+.ebc .ebc-board { fill: var(--eb-wood); }
+.ebc .ebc-fret { stroke: var(--eb-ink); stroke-opacity: .45; stroke-width: 2; }
+.ebc .ebc-nut { stroke: var(--eb-ink); stroke-width: 6; }
+.ebc .ebc-str { stroke: var(--eb-ink); }
+.ebc .ebc-inlay { fill: var(--eb-ink); opacity: .22; }
+.ebc .ebc-sname { fill: var(--eb-ink); font: 700 16px sans-serif; }
+.ebc .ebc-fnum { fill: var(--eb-ink); font: 13px sans-serif; text-anchor: middle; opacity: .7; }
+.ebc .ebc-hit { fill: transparent; }
+.ebc .ebc-cell { cursor: pointer; outline: none; }
+.ebc .ebc-cell:hover .ebc-hit, .ebc .ebc-cell:focus .ebc-hit { fill: var(--eb-hi); fill-opacity: .18; }
+.ebc .ebc-dot { fill: transparent; stroke: none; }
+.ebc .ebc-dot.ebc-faint { fill: var(--eb-wood); stroke: var(--eb-ink); stroke-opacity: .35; stroke-width: 1; }
+.ebc .ebc-dot.ebc-on { fill: var(--eb-hi); stroke: var(--eb-ink); stroke-width: 1.5; }
+.ebc .ebc-dot.ebc-same { fill: #f08c00; }
+.ebc .ebc-dot.ebc-good { fill: #2f9e44; }
+.ebc .ebc-dot.ebc-bad { fill: #e03131; }
+.ebc .ebc-dot.ebc-show { fill: #7048e8; }
+.ebc .ebc-dtext { fill: #fff; font: 700 11px sans-serif; text-anchor: middle; pointer-events: none; }
+.ebc .ebc-dot.ebc-faint + .ebc-dtext { fill: var(--eb-ink); font-weight: 400; }
+.ebc .ebc-dot.ebc-on + .ebc-dtext { fill: #fff; font-weight: 700; }
+.ebp-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .4rem 0; }
+.ebp-bar select { width: auto; }
+.ebp-lab { display: inline-flex; gap: .4rem; align-items: center; margin: 0; font-size: .9rem; }
+.ebp-pcs { display: flex; flex-wrap: wrap; gap: 4px; margin: .4rem 0; }
+.ebp-pc { min-width: 3.2rem; padding: .15rem .35rem; font-size: .85rem; }
+.ebp-pc.ebp-sel { background: var(--site-accent, #2780e3); color: #fff; }
+.ebp-card { border: 1px solid var(--site-line, #ced4da); border-radius: .5rem; padding: .8rem 1rem; margin: .5rem 0 1rem; background: var(--site-surface-2, #f8f9fa); }
+.ebp-head { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+.ebp-big { font-size: 1.8rem; font-weight: 800; line-height: 1.1; }
+.ebp-muted { color: var(--site-ink-2, #6c757d); font-size: .9rem; margin: .3rem 0; }
+.ebp-staff svg { max-width: 100%; }
+.ebp-ask { font-size: 1.1rem; margin: .3rem 0; }
+.ebp-out { min-height: 1.6em; font-size: 1.05rem; margin: .4rem 0; }
+.ebp-good { color: #2f9e44; font-weight: 700; } .ebp-bad { color: #e03131; font-weight: 700; }
+.ebp-steps li { margin-bottom: .25rem; }
+.ebp-open { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: .6rem; }
+.ebp-ocard { border: 1px solid var(--site-line, #ced4da); border-radius: .4rem; padding: .5rem; text-align: center; }

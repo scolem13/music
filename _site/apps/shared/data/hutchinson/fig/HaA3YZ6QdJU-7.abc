@@ -1,0 +1,15 @@
+X:1
+T:Billy Joel, Just the Way You Are (1977)
+%%id HaA3YZ6QdJU-7
+%bars ?
+%unsure right-hand chord voicings (four- and five-note chords read as triads/sevenths, approximately)
+M:4/4
+L:1/8
+%%score 1 {2 | 3}
+V:1 clef=treble-8 nm="Voice"
+V:2 clef=treble
+V:3 clef=bass
+K:D
+[V:1] z4 d f3 || d B3- B4 || z2 z F B2 dB- | B F3- F2 z2 |]
+[V:2] [A,DF]3 [A,DF]- [A,DF]2 [A,DF]2 || [^A,CEG]3 [B,DF]- [B,DF] [B,DF]3 || [B,DF]3 [B,DF]- [B,DF]2 [B,DF]2 | [B,DF]3 [G,=CE] z [G,CE]3 |]
+[V:3] D,4- D, D,3 || B,,6- B,, D, || G,,8 | B,,4 D,4 |]
