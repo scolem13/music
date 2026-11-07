@@ -75,6 +75,8 @@ def hand_match(cw, themes):
 
 blocks, figmaps, report = {}, {}, []
 for book in BOOKS:
+    mp = os.path.join(here, book, "measures.json")                          # measures printed in each caption (cutler/measures.py)
+    measures = json.load(open(mp, encoding="utf-8")) if os.path.exists(mp) else {}
     src = json.load(open(os.path.join(here, book, book + "-index.json"), encoding="utf-8"))
     yp = os.path.join(here, book, "years.json"); years = json.load(open(yp, encoding="utf-8")) if os.path.exists(yp) else {}
     figs = {}
@@ -87,7 +89,8 @@ for book in BOOKS:
             while wid in W and wid not in blocks: wid += "-" + book
         e = blocks.setdefault(wid, {"title": cw["title"], "composer": first_last(cw["composer"]), "in": {}})
         if wid in W: e = blocks[wid] = {"in": e["in"]}                      # merge only: keep the hand entry's title
-        e["in"].setdefault("print", []).extend({"book": book, "fig": f, **({"whole": True} if f in cw["whole"] else {})} for f in cw["refs"])
+        e["in"].setdefault("print", []).extend({"book": book, "fig": f, **({"whole": True} if f in cw["whole"] else {}),
+            **({"mm": measures[f]["mm"]} if measures.get(f, {}).get("mm") else {})} for f in cw["refs"])
         new_t = [t["id"] for t in themes if t["id"] not in theme_owner or theme_owner[t["id"]] == wid]
         have = set((W.get(wid, {}).get("in") or {}).get("theme", []))
         new_t = [x for x in new_t if x not in have]

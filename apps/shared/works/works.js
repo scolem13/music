@@ -32,7 +32,7 @@
   function year(w) { return !w ? "" : w.composed != null ? String(w.composed) : w.published != null ? "pub. " + w.published : ""; }
   function printLabel(x) {
     var b = (global.PRINT_BOOKS || {})[x.book] || {};
-    return (b.short || x.book) + " · fig. " + x.fig + (x.whole ? " (whole movement)" : "");
+    return (b.short || x.book) + " · fig. " + x.fig + (x.whole ? " (whole movement)" : "") + (x.mm ? (x.mm === "all" ? ", all" : ", mm. " + x.mm) : "");
   }
   function of(kind, id) { if (!index) build(); var wid = index[kind + ":" + id]; return wid ? Object.assign({ id: wid }, W[wid]) : null; }
   function get(wid) { return W[wid] ? Object.assign({ id: wid }, W[wid]) : null; }
