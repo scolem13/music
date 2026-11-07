@@ -1,0 +1,13 @@
+X:1
+T:Nate Ruess, Andrew Dost, Jack Antonoff, and Jeff Bhasker, We Are Young (2011)
+%%id Sv6dMFF_yts-48
+%bars ?
+%unsure guitar / bass staff written as one voice of octaves; chord voicings above the treble staff approximate
+M:4/4
+L:1/8
+K:F
+%%score {1 | 2}
+V:1 clef=treble nm="Piano"
+V:2 clef=bass nm="Elec. Gtr. / Elec. Bass"
+[V:1] "F"[ac'f'][ac'f'][ac'f'][ac'f'] [ac'f'][ac'f'][ac'f'][ac'f'] | [ac'f'][ac'f'][ac'f'][ac'f'] [ac'f'][ac'f'] "Am/E"[ac'e'][ac'e'] | "Dm7"[ac'f'][ac'f'][ac'f'][ac'f'] [ac'f'][ac'f'][ac'f'][ac'f'] | [ac'f'][ac'f'][ac'f'][ac'f'] [ac'f'][ac'f'][ac'f'][ac'f'] |]
+[V:2] [F,,F,][F,,F,][F,,F,][F,,F,] [F,,F,][F,,F,][F,,F,][F,,F,] | [F,,F,][F,,F,][F,,F,][F,,F,] [F,,F,][F,,F,][E,,E,][E,,E,] | [D,,D,][D,,D,][D,,D,][D,,D,] [D,,D,][D,,D,][D,,D,][D,,D,] | [D,,D,][D,,D,][D,,D,][D,,D,] [D,,D,][D,,D,][E,,E,][F,,F,] |]

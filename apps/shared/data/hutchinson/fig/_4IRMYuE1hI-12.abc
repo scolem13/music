@@ -1,0 +1,15 @@
+X:1
+T:Beethoven, Symphony No. 5, Op. 67, I (1808)
+%%id _4IRMYuE1hI-12
+%bars ?
+%unsure bass-staff inner voice pitches (ledger-line reading) in bars 2-5
+M:2/4
+L:1/8
+K:Eb
+%%score {1 | (2 3)}
+V:1 clef=treble
+V:2 clef=bass
+V:3 clef=bass
+[V:1] ggf | (e4 | d)ggf | (e4 | d)[Gdg][Gdg][Gdf] | "Cm"[Gce]2 z2 || "Ab7(no 5th)"[C^Fc]2 z2 | "G"[D=B!fermata!g]2 !fermata!z2 |]
+[V:3] x3 | C4 | =B,4 | C4 | x4 | x4 || x4 | x4 |]
+[V:2] z z2 | z EEF | (G4 | G)EEF | [=B,G][=B,,=B,][=B,,=B,][=B,,=B,] | [C,C]2 z2 || [A,,A,]2 z2 | [G,,G,]2 !fermata!z2 |]

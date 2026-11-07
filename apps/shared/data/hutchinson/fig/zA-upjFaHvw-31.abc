@@ -1,0 +1,13 @@
+X:1
+T:Fred Ball, Joseph Angel, and Robyn Fenty, Love on the Brain (2016)
+%%id zA-upjFaHvw-31
+%bars ?
+%unsure bass octave
+M:12/8
+L:1/8
+K:G
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "G"G,B,D GDB, G,B,D GDB, | "Am"A,CE AEC A,CE AEC |]
+[V:2] [G,,,G,,]3- [G,,,G,,]2 [G,,,G,,] [G,,,G,,]6 | [A,,,A,,]3- [A,,,A,,]2 [A,,,A,,] [A,,,A,,]6 |]

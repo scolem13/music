@@ -1,0 +1,13 @@
+X:1
+T:W.A. Mozart, Symphony No. 40, K. 550, II
+%%id Fcomfvmq28Q-18
+%bars ?
+%unsure lower notes of the treble appoggiatura chords; left-hand upper and lower voices merged into one line
+M:6/8
+L:1/8
+K:Eb
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] ([Ee] | "Ab"[=A,=B]2 [Cc]) z2 ([Ee] | "Eb/G"[=A,=A]2 [B,B]) z2 [Ee] |]
+[V:2] z | [A,,,A,,][E,C][E,C] [E,C][E,C][E,C] | [G,,,G,,][E,C][E,C] [E,C][E,C][E,C] |]

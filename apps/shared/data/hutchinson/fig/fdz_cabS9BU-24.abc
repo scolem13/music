@@ -1,0 +1,13 @@
+X:1
+T:Ed Sheeran, Thinking Out Loud (2014)
+%%id fdz_cabS9BU-24
+%bars ?
+%unsure right-hand chord voicings read approximately (heads close together)
+M:C
+L:1/8
+K:D
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "D"[F,A,D]3 "D/F#"[A,D]- [A,D]4 | "G"[G,B,D]3 "G/A"[G,B,D]- [G,B,D]4 |]
+[V:2] D,,3 F,,- F,,4 | G,,,3 A,,,- A,,,4 |]

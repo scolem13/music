@@ -1,0 +1,17 @@
+X:1
+T:Bach, J.S., French Suite No. 1 in D Minor, BWV 812, Sarabande (1722)
+%%id fTwkVsECg9w-13
+%bars ?
+%unsure last bar cut off where the excerpt ends (one beat); bar 3 upper notes read G4 Bb4
+M:3/4
+L:1/8
+K:Dm
+%%score {(1 2) | (3 4)}
+V:1 clef=treble
+V:2 clef=treble
+V:3 clef=bass
+V:4 clef=bass
+[V:1] "D7/C"^F G A4- | "Gm/Bb"A d B A G ^F | "A7"G B |]
+[V:2] D2 D4- | D2 D2 D2 | ^C2 |]
+[V:3] A G ^F4- | ^F2 G2 G2 | E2 |]
+[V:4] =C3 _E D C | B,2 B,2 B,2 | A,2 |]

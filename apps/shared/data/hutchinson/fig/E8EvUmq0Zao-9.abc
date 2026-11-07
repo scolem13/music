@@ -1,0 +1,13 @@
+X:1
+T:Development of fragment a in Invention 1
+%%id E8EvUmq0Zao-9
+%bars ?
+%unsure first bar is the opening half-bar (motive 1 alone), separated by a double bar
+M:C
+L:1/16
+K:C
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "^mot. 1"zCDE FDEC || "^mot. 1 inv."eagf egfa "^mot. 1 inv."gfed cedf | "^mot. 1 inv."edcB AcBd "^mot. 1 inv."cBAG ^FAGB |]
+[V:2] z8 || "^frag. a aug."C2B,2 C2D2 E2G,2 A,2B,2 | C2E,2 ^F,2G,2 A,2B,2 C4- |]

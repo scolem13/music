@@ -1,0 +1,17 @@
+X:1
+T:Bob Marley, Could You Be Loved (1980)
+%%id g3t6YDnGXAc-14
+%bars ?
+%unsure clavichord (printed 8va, written pitch here, 8va not marked) written as octaves; its lower notes and the bass pitches read approximately
+M:4/4
+L:1/16
+K:D
+%%score [1 2 3 4]
+V:1 clef=treble nm="Clavichord"
+V:2 clef=bass nm="Muted Elec. Gtr."
+V:3 clef=treble nm="Elec. Gtr."
+V:4 clef=bass nm="Elec. Bass."
+[V:1] [Bb]3[Aa] z[Gg][Ff]2 z8 | {d}[Ff]3[Ee] z[Dd][B,B]2 z8 |]
+[V:2] D,D,zD, z3D, D,D,E,2 F,2E,2 | B,,B,,zB,, zB,,zB,, B,,B,,C,2 D,2z2 |]
+[V:3] z2[DFA]2 z2[DFA]2 z2[DFA]2 z2[DFA]2 | z2[DFA]2 z2[DFA]2 z2[DFA]2 z2[DFA]2 |]
+[V:4] D,,D,, z2 z3B,,, D,,D,, z2 z3F,,, | B,,,B,,, z2 z2 zB,,, B,,,B,,, z2 z4 |]

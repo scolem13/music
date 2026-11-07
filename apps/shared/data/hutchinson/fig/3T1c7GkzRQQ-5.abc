@@ -1,0 +1,12 @@
+X:1
+T:Gordon Sumner, Roxanne (1978)
+%%id 3T1c7GkzRQQ-5
+%bars ?
+M:4/4
+L:1/8
+K:Gm
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "Gm".[B,DG] z .[B,DG] z .[B,DG] z .[B,DG] z | "Dm/F".[A,DF] z .[A,DF] z .[A,DF] z .[A,DF] z | "Eb".[EGB] z .[EGB] z .[EGB] z .[EGB] z | "Dm".[DFA] z .[DFA] z .[DFA] z .[DFA] z |]
+[V:2] z G,, .G,,2 z4 | z F,, .F,,2 z4 | z E,, .E,,2 z4 | z D,, .D,,2 z4 |]

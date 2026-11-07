@@ -2,7 +2,7 @@
 Writes scripts/pdmx/picks.json. Run: python3 -I scripts/pdmx/extract.py"""
 import csv, json, os, zipfile, xml.etree.ElementTree as ET
 H = os.path.expanduser("~/Downloads/")
-GROUPS = ["PDMX-piano", "PDMX-quartet", "PDMX-ensembles", "PDMX-choir"]
+GROUPS = ["PDMX-piano", "PDMX-quartet", "PDMX-ensembles", "PDMX-choir", "PDMX-extra"]   # extra: picked by hand for the Hutchinson clips (keep it last: indices stay put)
 trim = {}
 with open(H + "PDMX-trim.csv", newline="") as f:
     for r in csv.DictReader(f): trim[r["mxl"].lstrip("./").replace("mxl/", "", 1)] = r

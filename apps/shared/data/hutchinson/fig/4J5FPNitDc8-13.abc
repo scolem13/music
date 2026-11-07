@@ -1,0 +1,15 @@
+X:1
+T:Lennon-McCartney, Blackbird (1968)
+%%id 4J5FPNitDc8-13
+%bars ?
+%unsure the low piano-treble pedal note read as A (ped. pt.; ledger count unclear)
+M:6/4
+L:1/8
+K:A
+%%score 1 {2 | 3}
+V:1 clef=treble-8 nm="Voice"
+V:2 clef=treble nm="Piano"
+V:3 clef=bass
+[V:1] [M:6/4] "E"B2 "D#m7b5"c2 "D"A4 "Dm"z4 | [M:4/4] "A/C#"AAAB "B7"cBAE | "E7sus4"BAcB "A"A4 |]
+[V:2] [M:6/4] [A,G]2 [A,A]2 [A,F]4 [A,=F]4 | [M:4/4] [A,E]4 [A,^D]4 | [A,=D]4 [A,CE]4 |]
+[V:3] [M:6/4] E,2 ^D,2 =D,4 D,4 | [M:4/4] C,4 B,,4 | E,4 A,,4 |]

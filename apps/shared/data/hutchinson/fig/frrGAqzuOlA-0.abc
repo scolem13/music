@@ -1,0 +1,14 @@
+X:1
+T:Ludwig van Beethoven, Minuet in G, WoO 10, No. 2
+%%id frrGAqzuOlA-0
+%bars ?
+%unsure last bar partial; notes in parentheses kept as plain notes
+M:3/4
+L:1/16
+Q:"Allegretto"
+K:G
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] !p!([GB]3[Ac] | [Bd]3[^A^c] [Bd]3[=A=c] [Bd]3[Ac] | [Bd]8) |]
+[V:2] z4 | (G,,4 B,,4 D,4 | G,4) G,,4 |]

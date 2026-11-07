@@ -1,0 +1,12 @@
+X:1
+T:Neil Diamond, Red Red Wine (recorded in 1983 by UB40)
+%%id zXt56MB-3vc-45
+%bars ?
+M:4/4
+L:1/16
+K:Db
+%%score {1 | 2}
+V:1 clef=treble nm="Elec. Gtr."
+V:2 clef=bass nm="Elec. Bass"
+[V:1] "Db"z2[DFA]2 z2[DFA]2 "Gb"z2[DGB]2 z2[DGB]2 | "Ab/Eb"z2[EAc]2 z2[EAc]2 "Gb/Ab"z2[DGB]2 z2[DGB]2 |]
+[V:2] D,,3D, D,,2D,2 G,,,3G,, G,,,2G,,2 | E,,3E, E,,2E,2 A,,,3A,, A,,,2A,,2 |]

@@ -1,0 +1,14 @@
+X:1
+T:J.S. Bach, Herz und Mund und Tat und Leben BWV 147, X. Jesus bleibet Freude (Jesu, Joy of Man's Desiring) (1723)
+%%id 9ayLUAWmatk-11
+%bars ?
+%unsure the meter: the figure prints 4/4 but each bar holds three triplet beats, so M:3/4 is used
+%unsure right hand: only the triplet line is written, read approximately (the dotted lower voice is left out); left hand: only the lowest voice, the upper left-hand quarters are left out; the last bar is one beat as printed
+M:3/4
+L:1/8
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+K:G
+[V:1] (3GAB (3dcc (3edd | (3g^fg (3dBG (3ABc | (3ded (3cBA (3BGF | [DB]2 |]
+[V:2] G,2 E,2 C,2 | B,,2 E,2 D,2 | C,2 ^C,2 D,2 | G,,2 |]

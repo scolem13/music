@@ -1,0 +1,16 @@
+X:1
+T:John Coltrane, Mr. P.C. (1959)
+%%id oHDsywpCHj4-18
+%bars ?
+%unsure piano right-hand chord voicings (dense ledger-line clusters below the treble staff) are approximate
+%unsure bass pitches read relative to the Ab of the Ger+6 bar
+M:C
+L:1/8
+K:Cm
+%%score 1 {2 | 3}
+V:1 clef=treble nm="Sax"
+V:2 clef=treble nm="Piano"
+V:3 clef=bass
+[V:1] "Cm"ECE_G || "Ab7"z F3- F3 _G || "G7"z F2 E F2 E2 | "Cm"C4 "Bb"B,2 "Cm"DC |]
+[V:2] z4 || [_G,A,CE]6 [_G,A,CE]2 || [F,G,=B,D]2 z2 [G,=B,F]2 z2 | [G,CE]4 [F,B,D]3 [G,CE] |]
+[V:3] E,,2 B,,2 || A,,2 E,,2 C,,2 A,,2 || G,,2 D,,2 =B,,,2 D,,2 | C,,2 B,,,2 =A,,,2 _A,,,2 |]

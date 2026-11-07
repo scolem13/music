@@ -1,0 +1,12 @@
+X:1
+T:W.A. Mozart, Piano Sonata, K. 283, I.
+%%id OmQQoohTW80-0
+%bars ?
+M:3/4
+L:1/8
+K:G
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] !p!d3/2B/ | "G"d2 z2 G2 | "D7/A"F2 z2 a3/2f/ | "D7/F#"a2 z2 c2 | "G"B2 z2 |]
+[V:2] z2 | G,B,DB,DB, | A,CDCDC | F,A,DA,DA, | G,B,DB, |]

@@ -1,0 +1,13 @@
+X:1
+T:Francis Scott Key and John Stafford Smith, The Star-Spangled Banner (1814)
+%%id uBS-F944zYc-0
+%bars ?
+%unsure several inner-voice pitches read approximately from a small image
+M:3/4
+L:1/16
+K:C
+%%score [1 2]
+V:1 clef=treble-8
+V:2 clef=bass
+[V:1] (G3E) | C4 [CE]4 [DG]4 | [Ac]8 [Be]3[Bd] | [Ac]4 [Ac]4 [Ad]4 | [GB]8 |]
+[V:2] (G,3E,) | C,4 [C,E,]4 [B,,D,]4 | [C,E,]8 [^G,,E,]3[G,,E,] | [A,,E,]4 [A,,E,]4 [B,,^D,]4 | [G,,E,]8 |]

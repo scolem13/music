@@ -1,0 +1,13 @@
+X:1
+T:W.A. Mozart, Piano Sonata K. 333, I (1784)
+%%id PmO3Wlono6w-282
+%bars ?
+%unsure last bar partial; notes in parentheses kept as plain notes
+M:4/4
+L:1/16
+K:Bb
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "D"^f^cdc dcdc de=cd BcAB || "Eb"GAFG EFDE |]
+[V:2] [D,D]4 z4 z4 [D,^F,]4 || [E,G,]4 z4 |]

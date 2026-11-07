@@ -1,0 +1,15 @@
+X:1
+T:Alicia Keys, Salaam Remi, Jeff Bhasker, Billy Squier, Girl on Fire (2012)
+%%id J91ti_MpdHA-5
+%bars ?
+%unsure two images joined (A then B); the guitar chord diagrams are left out
+M:4/4
+L:1/16
+%%score 1 {2 | 3}
+V:1 clef=treble nm="Voice"
+V:2 clef=treble
+V:3 clef=bass
+K:A
+[V:1] "A"z2 A2 A2AA- AE3 E2C2 | "F#m"F2F2- F2EC z8 | "D"z4 DDDD E2FE- E2 z2 | "E"z4 EEEE E2E2 E2C2 |]
+[V:2] [Ac]4 [ce]4 [Ac]4 [ce]4 | [FA]4 [Ac]4 [FA]4 [Ac]4 | [FAd]4 [DFA]4 [DFA]4 [FAd]4 | [GB]2E2[GB]2E2 [GB]2E2[GB]2E2 |]
+[V:3] A,16 | F,16 | D,16 | E,16 |]

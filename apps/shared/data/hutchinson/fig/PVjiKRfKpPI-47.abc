@@ -1,0 +1,15 @@
+X:1
+T:Hozer-Byrne, Take Me to Church
+%%id PVjiKRfKpPI-47
+%bars ?
+%unsure vocal rhythm of the second full bar (as read it adds to 13 sixteenths, not 12); the last bar is two beats as printed
+M:3/4
+L:1/16
+%%score 1 {2 | 3}
+V:1 clef=treble-8 nm="Voice"
+V:2 clef=treble
+V:3 clef=bass
+K:G
+[V:1] (DEGA | "G"B2AG- G2) z2 "C"(c3/2d/2 (3edc- | "G"c)B z2 "C"z4 (A3/2B/2 c3- | "G"c)(cB) z "Cm"z4 (A_BA2- | "G"A)G z2 z4 |]
+[V:2] z4 | [G,B,]8 [G,CE]4 | [G,B,D]8 [E,G,C]4 | [G,B,D]8 [_E,G,C]4 | [G,B,]8 |]
+[V:3] z4 | [G,,D,]8 C,4 | G,,8 C,,4 | [G,,D,]8 [C,,C,]4 | [G,,D,]8 |]

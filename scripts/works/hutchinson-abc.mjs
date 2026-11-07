@@ -300,6 +300,21 @@ for (const c of clips.values()) {
     copyright: PD.test(c.composer) ? "public domain" : "in copyright (melody and chords already in the tune collection)", kind: "score-source",
     bars: null, barsWhy: null, source: { id: "tune:" + tid, path: "apps/tunes/tunes-object.js" }, abc: null });
 }
+// Figures: the book's own notated example for a clip (mt21c, GPL-3.0), read off its image by a model. Pitches unchecked
+// (`%unsure` lines say where); `barsOk: false` when a bar does not add up. Images and captions: hutchinson-figures.mjs.
+{ const FIG = path.join(OUT, "fig");
+  const figs = JSON.parse(fs.readFileSync(path.join(root, "research_notes/hutchinson-figures.json"), "utf8"));
+  for (const f of fs.existsSync(FIG) ? fs.readdirSync(FIG).filter(f => f.endsWith(".abc")).sort() : []) {
+    const key = f.slice(0, -4), g = figs[key]; if (!g) { failed.push(key + ": figure not in hutchinson-figures.json"); continue; }
+    const abc = fs.readFileSync(path.join(FIG, f), "utf8"), c = clips.get(key) || {};
+    const pv = parseBars(abc), pickup = !pv.error && Object.values(pv.voices).every(v => v.bars[0] && v.bars[0].len < v.bars[0].want - 1e-6);
+    const r = checkBars(abc, { pickup });
+    const unsure = [...abc.matchAll(/^%unsure (.*)$/gm)].map(m => m[1]);
+    index.push({ id: key + "-fig", video: g.video, start: g.start, end: g.end ?? null, title: c.workTitle || g.caption, composer: c.composer || null,
+      work: c.work || null, pages: c.pages || null, caption: g.caption, chapter: g.chapter, copyright: "figure from Hutchinson, Music Theory for the 21st-Century Classroom (GPL-3.0)",
+      kind: "figure", unverified: true, unsure, pickup, barsOk: !r.error && !r.bad.length, bars: null, barsWhy: null,
+      source: { id: "mt21c:" + g.images[0], url: "https://github.com/rhutchinson20/mt21c" }, abc: "fig/" + f });
+  } }
 index.sort((a, b) => a.id.localeCompare(b.id));
 fs.writeFileSync(path.join(OUT, "index.json"), JSON.stringify(index, null, 1) + "\n");
 const by = {}; for (const e of index) by[e.kind] = (by[e.kind] || 0) + 1;

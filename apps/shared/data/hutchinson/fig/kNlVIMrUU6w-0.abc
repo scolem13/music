@@ -1,0 +1,13 @@
+X:1
+T:Peter Cetera and David Foster, Hard to Say I'm Sorry
+%%id kNlVIMrUU6w-0
+%bars ?
+%unsure no time signature printed (4/4 assumed); right hand: only the top (melody) line in bars 1-3, the half-note chords under it left out; melody pitches and the bar 2 triplet read approximately
+M:4/4
+L:1/16
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+K:E
+[V:1] "E"G4- GB,EG "A/C#"A2GF- FEF2- | "B/D#"F4- FB,DF "G#/B#"G2FE- ED (3EDC | "C#m"E4- EA,CE "F#/A#"F2ED- DC3 | "Bsus4"[B,EF]4 [B,EF]4 "B"[B,DF]8 |]
+[V:2] E,8 C,8 | D,4 C,4 ^B,,8 | C,4 =B,,4 ^A,,8 | B,,8- B,,8 |]

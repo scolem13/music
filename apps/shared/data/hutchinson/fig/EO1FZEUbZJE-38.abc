@@ -1,0 +1,12 @@
+X:1
+T:Michael Giacchino, Star Trek, End Credits (2009) (chords only)
+%%id EO1FZEUbZJE-38
+%bars ?
+M:4/4
+L:1/1
+K:Dm
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "Dm"[F,A,D]- | [F,A,D] | "Bb"[F,B,D]- | [F,B,D] | "Eb"[G,B,_E]- | [G,B,E] | "A"[E,A,^C]- | [E,A,C] |]
+[V:2] [D,,D,]- | [D,,D,] | [B,,,B,,]- | [B,,,B,,] | [_E,,_E,]- | [E,,E,] | [A,,,A,,]- | [A,,,A,,] |]

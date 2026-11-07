@@ -1,0 +1,13 @@
+X:1
+T:Fred Fassert, Barbara Ann (1961)
+%%id -bSnI-a0BSc-0
+%bars ?
+%unsure final half-note chords may sit a step higher than the others
+M:4/4
+L:1/8
+K:Gb
+%%score [1 2]
+V:1 clef=treble
+V:2 clef=bass
+[V:1] z8 | z8 | [DG]2 [DG]2 [DG]3 [DG]- | [DG] [DG]2 [DG] [DG]4 |]
+[V:2] G,2 G,2 G,3 G,- | G, G,2 G, G,4 | [G,B,]2 [G,B,]2 [G,B,]3 [G,B,]- | [G,B,] [G,B,]2 [G,B,] [G,B,]4 |]

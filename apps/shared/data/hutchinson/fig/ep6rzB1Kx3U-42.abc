@@ -1,0 +1,13 @@
+X:1
+T:Friedrich Kuhlau, Sonatina in C Major, Op. 55, No. 1, I (1823)
+%%id ep6rzB1Kx3U-42
+%bars ?
+%unsure left-hand chord tones; last bar partial; notes in parentheses kept as plain notes
+M:C
+L:1/8
+K:C
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "C"!p!(c3 G "G"ecBd | "C"c3) (G "G"ecBd | "C"c3) c (c'a^gb | afeg fd^ce | "Dm"d3) |]
+[V:2] C,2 [CE]2 [G,D]4- | [CE]2 [CE]2 [G,D]4- | [CE]2 [CE]2 z4 | z8 | D,2 |]

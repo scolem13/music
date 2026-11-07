@@ -1,0 +1,13 @@
+X:1
+T:Michael Masser and Linda Creed, Greatest Love of All (1977)
+%%id IYzlVDlE72w-93
+%bars ?
+%unsure piano right-hand part left out (dense tied voicings not read with certainty)
+M:4/4
+L:1/8
+K:A
+%%score 1 {2}
+V:1 clef=treble nm="Voice"
+V:2 clef=bass
+[V:1] "C#m7"E2- E F/A,/- "F#m7"A,4 | "Bm"C B,/B,/- B,3/2A/ "E"G F "E/D"E D/E/- | "C#m7"E8 | "Bm"z2 z A "E"G2 "E/D"F G |]
+[V:2] C,4 F,,4 | B,,4 E,2 D,2 | C,4 F,,4 | B,,4 E,2 D,2 |]

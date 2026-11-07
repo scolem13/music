@@ -1,0 +1,13 @@
+X:1
+T:Justin Bieber, Benny Blanco, and Ed Sheeran, Love Yourself (2015)
+%%id oyEuk8j8imI-10
+%bars ?
+%unsure the figure shows two bars, then the same rhythm "equivalent to" in cut time
+M:4/4
+L:1/8
+K:E
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] G3/2G/ z2 F3/2F/ z2 | E3/2E/ z2 z4 || [M:2/2] G3 G z4 | F3 F z4 | E3 E z4 |]
+[V:2] E,2 z2 C,2 z2 | A,,2 z2 z4 || [M:2/2] E,4 z4 | C,4 z4 | A,,4 z4 |]

@@ -1,0 +1,13 @@
+X:1
+T:Jeff Bhasker, Nate Ruess, Andrew Dost, Jack Antonoff, Some Nights (2011)
+%%id qQkBeOisNM0-62
+%bars ?
+%unsure two voices per staff written as chords; figure ends after two eighths of bar 4
+M:4/4
+L:1/16
+K:C
+%%score [1 2]
+V:1 clef=treble
+V:2 clef=bass
+[V:1] [CE]4 [CE]2[CE]2 ([Gc]2[Be]2) [Be]4 | [cf]2[cf]2[cf]2[Be]2 [Gc]4 ([DA][C3G3]) | z2 [cf]2[cf]2[Be]2 [Gc]4 [DA]2[CG]([Dc]- | [Dc]2)[Dc]2 |]
+[V:2] [C,G,]4 [C,G,]2[C,G,]2 ([C,G,]2[C,C]2) [C,C]4 | [G,,C]2[G,,C]2[G,,C]2[G,,C]2 [C,G,]4 ([C,F,][C,E,]3) | z2 [G,,C]2[G,,C]2[G,,C]2 [C,G,]4 [C,F,]2[C,E,]([C,G,]- | [C,G,]2)[G,,B,]2 |]

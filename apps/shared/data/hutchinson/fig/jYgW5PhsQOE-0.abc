@@ -1,0 +1,19 @@
+X:1
+T:Clara Schumann, Op. 13, No. 2, Sie liebten sich beide (1844)
+%%id jYgW5PhsQOE-0
+%bars ?
+%unsure left-hand dotted-quarter dyad in bar 1 (read A3-Bb3)
+M:6/8
+L:1/8
+K:Gm
+%%score 1 {(2 3) | (4 5)}
+V:1 clef=treble nm="Voice"
+V:2 clef=treble
+V:3 clef=treble
+V:4 clef=bass
+V:5 clef=bass
+[V:1] z6 | z6 |]
+[V:2] "Gm"!p!z [B,D] B "D7"B2 A | "F#o7"z [C^F] [Fe] [Fe]2 "Gm"[Gd] |]
+[V:3] x3 ^F3 | x6 |]
+[V:4] G,, D, B, [A,B,]3 | G,, F, A, [F,A,]2 [G,B,] |]
+[V:5] G,,6 | G,,6 |]

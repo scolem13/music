@@ -1,0 +1,17 @@
+X:1
+T:George Frideric Handel, Recorder Sonata in A minor, HWV 362, Larghetto (realized figured bass)
+%%id ljj6URbK8Xg-0
+%bars ?
+%unsure pitches read partly by the chords and figures (first notes of recorder bars 2-3, low bass notes); figures 6, 7 6, 6/4+/2 not written
+M:3/4
+L:1/8
+K:Am
+%%score 1 {2 | (3 4)}
+V:1 clef=treble nm="Recorder"
+V:2 clef=treble nm="Realization"
+V:3 clef=bass nm="Continuo"
+V:4 clef=bass
+[V:1] z2 e3 a | d2 ^f2 b2 | e2 a2 (c'2 | c'2) b2 (3(a^ga) |]
+[V:2] [EAc]2 [CEA]2 (3[EA]Bc | [DAd]2 [D^GB]2 (3[EGB]cd | [EBe]2 [EAc]2 (3[Ac]de | [Fcf]2 [FBd]2 (3[Gd]ef |]
+[V:3] A,3 A, (3(CB,A,) | B,3 B, (3(DCB,) | C3 C (3(EDC) | D3 D (3(FED) |]
+[V:4] x z/C,/ C,3/2z/ x2 | x z/B,,/ B,,3/2z/ x2 | x z/C,/ C,3/2z/ x2 | x z/D,/ D,3/2z/ x2 |]

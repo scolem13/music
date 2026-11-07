@@ -1,0 +1,15 @@
+X:1
+T:Stan Vincent, O-o-h Child
+%%id gIsj8VxQNkw-38
+%bars ?
+%unsure the Bbm7 bars hold two beats (written [M:2/4]); the horns' first Bbm7 chord is printed as a whole note, written here as a half; horn voicings and the boxed bass rhythms approximate; each boxed Db/Eb bar is cut after two beats
+M:4/4
+L:1/16
+%%score 1 {2 | 3}
+V:1 clef=treble-8 nm="Voice"
+V:2 clef=treble nm="Horns"
+V:3 clef=bass nm="Bass"
+K:Ab
+[V:1] "Db"z4 (f2e2) "Ab^7/C"e3A- A3A | [M:2/4]"Bbm7"AAAA- AAAA | "Db/Eb"AAc2 (B2c2) | [M:4/4]"Db"z4 (f2e2) "Ab^7/C"e2AA- AAA2 | [M:2/4]"Bbm7"(cBAA) B4- | "Db/Eb"B4 z4 |]
+[V:2] z4 [DFA]4 [CEG]8 | [M:2/4][DFAc]8- | [DFAc]8 | [M:4/4]z4 [DFA]4 [CEG]8 | [M:2/4][DFAc]8 | z2 [DFA][DFA]2 z [DFA]3/2[DFA]/ |]
+[V:3] D,2D,2- D,3D, C,2C,2- C,3C, | [M:2/4]B,,2B,,2- B,,4 | E,E,2E, z B,, C,2 | [M:4/4]D,2D,2- D,2A,,D, C,3C, F,,2A,,2 | [M:2/4]B,,2B,,2- B,,3B,, | E,2E,2 z2 C,2 |]

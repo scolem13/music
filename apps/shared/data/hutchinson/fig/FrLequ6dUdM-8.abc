@@ -1,0 +1,13 @@
+X:1
+T:Kevin Briggs, Kandi Burress, Tameka Cottle, Lisa Lopes, No Scrubs (1999)
+%%id FrLequ6dUdM-8
+%bars ?
+%unsure bar 2 first group's right-hand pitches; each beat's bass note is the first of a cross-staff group of sixteenths
+M:C
+L:1/16
+K:Abm
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] z CEG- G4 z CEF- F4 | z =A,CE- E4 z CEF- F4 |]
+[V:2] D,4 z4 A,,4 z4 | E,,4 z4 A,,4 z4 |]

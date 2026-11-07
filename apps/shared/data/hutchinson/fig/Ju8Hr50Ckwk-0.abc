@@ -1,0 +1,12 @@
+X:1
+T:Alicia Keys, If I Ain't Got You (2004)
+%%id Ju8Hr50Ckwk-0
+%bars ?
+M:3/4
+L:1/8
+K:G
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "Cmaj7"(3eBG (3eBG (3eBG | (3eBG (3eBG (3eBG | "Bm7"(3dAF (3dAF (3dAF | (3dAF (3dAF (3dAF |]
+[V:2] C6- | C6 | B,6- | B,6 |]

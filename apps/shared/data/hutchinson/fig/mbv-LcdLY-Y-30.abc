@@ -1,0 +1,13 @@
+X:1
+T:Gordon Sumner, Walking on the Moon (1979)
+%%id mbv-LcdLY-Y-30
+%bars ?
+%unsure bass pitches below the staff read approximately
+M:4/4
+L:1/16
+K:Dm
+%%score {1 | 2}
+V:1 clef=treble nm="Elec. Gtr."
+V:2 clef=bass nm="Elec. Bass"
+[V:1] z4 | "Dm"z2.[DFA]2 z2.[DFA]2 z2.[DFA]2 z2.[DFA]2 | "Bb/C"z2.[CFBd]2 z2.[CFBd]2 "C"z2.[EGce]2 z2.[EGce]2 |]
+[V:2] .A,,,2A,,,D,,- | D,,12 .F,,2E,,C,,- | C,,12 .A,,,2A,,,C,,- |]

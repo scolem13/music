@@ -1,0 +1,15 @@
+X:1
+T:Kelly and Steinberg, True Colors
+%%id LPn0KFlbqX8-60
+%bars ?
+%unsure right-hand voicings and the right-hand eighth-note pitches in the last two bars (blurred, read approximately); Gsus voicing
+M:4/4
+L:1/8
+%%score 1 {2 | 3}
+V:1 clef=treble nm="Voice"
+V:2 clef=treble
+V:3 clef=bass
+K:C
+[V:1] "F/C"C3 "C"C- C C z2 | "F/C"C3 "C"(C- C/D/E) z G, | "Gsus"E2- E3/2D/ D2 C C | "Am7"(C3 "G/B"A,-) A,2 z2 | "C"z4 "F"z4 |]
+[V:2] [A,CF]3 [G,CE]- [G,CE]4 | [A,CF]3 [G,CE]- [G,CE]4 | {C}[DGc]8 | cDEc cDEc | cDEC- CDEB, |]
+[V:3] C,3 C,- C,4 | C,3 C,- C,4 | G,,8 | A,,3 A,, B,,3 B,, | C,3 F,,- F,,4 |]

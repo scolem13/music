@@ -1,0 +1,13 @@
+X:1
+T:Mike Stock, Matt Aitken, and Pete Waterman, Never Gonna Give You Up (1987)
+%%id dQw4w9WgXcQ-0
+%bars ?
+%unsure right-hand chord tones read approximately
+M:C
+L:1/8
+K:Db
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] [B,DEG]3 [CEA]- [CEA]4 | [CEFA]3 [DFB]- [DFB]4 | [B,DEG]3 [CEA]- [CEA]4 | [CEFA]3 [DFB]- [DFB]4 |]
+[V:2] E,,3 A,,- A,,4 | F,,3 B,,- B,,4 | E,,3 A,,- A,,4 | F,,3 B,,- B,,4 |]

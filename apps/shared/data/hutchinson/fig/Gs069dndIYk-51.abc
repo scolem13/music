@@ -1,0 +1,15 @@
+X:1
+T:Maurice White, Al McKay, Allee Willis, September (1978)
+%%id Gs069dndIYk-51
+%bars ?
+%unsure right-hand chord voicings read approximately
+M:4/4
+L:1/8
+K:A
+%%score 1 {2 | 3}
+V:1 clef=treble nm="Voice"
+V:2 clef=treble
+V:3 clef=bass
+[V:1] "Bm7"c2 d c "E"z4 | "C#m7"c d c B "F#m7"A2 B2 | "Bm7"c2 d c "E"z4 | "C#m7"c d c B "F#m7"A2 B2 |]
+[V:2] [A,DFA]3 [B,-DFA] [B,EGB]4 | [B,EGB]2 [B,EGB]2 [CEAc]4 | [A,DFA]3 [B,-DFA] [B,EGB]4 | [B,EGB]2 [B,EGB]2 [CEAc]4 |]
+[V:3] B,,2 F, E, z2 B,, ^B,, | C, G,, E,,2 F,,2 G,, A,, | B,,2 F, E, z2 B,, ^B,, | C, G,, E,,2 F,,2 A,,2 |]

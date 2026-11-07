@@ -1,0 +1,13 @@
+X:1
+T:Jimmy Page and Robert Plant, Stairway to Heaven (1971)
+%%id iXQUu5Dti4g-0
+%bars ?
+%unsure last bar: only its first chord is printed
+M:4/4
+L:1/8
+K:Am
+%%score (1 2)
+V:1 clef=treble-8
+V:2 clef=treble-8
+[V:1] "Am"z cea "C+maj7/G#"becb | "Am/G"c'ecc' "D/F#"^fdAf | "Fmaj7"[=FAce]2 |]
+[V:2] A4 ^G4 | =G4 ^F4 | x2 |]

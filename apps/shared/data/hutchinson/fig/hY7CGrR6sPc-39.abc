@@ -1,0 +1,22 @@
+X:1
+T:J.S. Bach, Mass in B minor, BWV 232, Crucifixus (1733)
+%%id hY7CGrR6sPc-39
+%bars ?
+%unsure choir: some alto pitches (bars 1, 3, 4) and the bass's last half note in bar 4 are hard to tell from the soprano/tenor heads they share stems near
+%unsure piano right-hand inner chord tones in bars 1-2 read approximately
+M:3/2
+L:1/4
+K:Em
+%%score [(1 2) (3 4)] {5 | 6}
+V:1 clef=treble nm="S A"
+V:2 clef=treble
+V:3 clef=bass nm="T B"
+V:4 clef=bass
+V:5 clef=treble nm="Continuo"
+V:6 clef=bass
+[V:1] z2 G2 ^A2 | B2 (c B) B2 | ^c ^d e2 e2 | (e2 ^d2) B2- |]
+[V:2] F E E2 z2 | z2 =F2 ^G2 | A4 ^A2 | G3 A G2 |]
+[V:3] z6 | z6 | z6 | (G,2 A,2) B,2 |]
+[V:4] z6 | z6 | z2 E,2 F,2 | (G,2 F,2) F,2 |]
+[V:5] "Em"[Beg]2 [GB]2 "A#o7/E"[^A^ceg]2 | "B/D#"[Bf]2 "Dm7"[=D=FA=c]2 "G#o7/D"[D^GB=f]2 | "A/C#"[Ae]2 "Am/C"[EA]2 "C7(b5)"[^Ae]2 | "Em/B"[GBe]2 "B"[^df]2 "B7"[B^dfa]2 |]
+[V:6] E,,E,,E,E,E,E, | ^D,D,=D,D,D,D, | ^C,C,=C,C,C,C, | B,,B,,B,,B,,B,,B,, |]

@@ -1,0 +1,12 @@
+X:1
+T:Philip Glass, Metamorphosis Two (1989)
+%%id F6AggxvVFRY-56
+%bars ?
+M:4/4
+L:1/8
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+K:Am
+[V:1] "F"[ff']8 | "G"[dd']8 | "Am"[ee']8- | [ee']8 |]
+[V:2] [F,A,]CA,C A,CA,C | [G,B,]DB,D B,DB,D | [A,C]ECE CECE | CECE CECE |]

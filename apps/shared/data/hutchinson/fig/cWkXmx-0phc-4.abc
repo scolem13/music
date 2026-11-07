@@ -1,0 +1,12 @@
+X:1
+T:James Pankow, Colour My World (1970)
+%%id cWkXmx-0phc-4
+%bars ?
+M:12/8
+L:1/8
+K:F
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "Fmaj7"F,A,C ECA, F,A,C ECA, | "Am"E,A,C ECA, E,A,C ECA, |]
+[V:2] F,,,6 F,,,3 C,,3 | A,,,6 A,,,3 C,,3 |]

@@ -1,0 +1,13 @@
+X:1
+T:W.A. Mozart, Piano Sonata K. 279, III (1775)
+%%id ZixdOZh7zo4-638
+%bars ?
+%unsure bar 5 left-hand third chord pitches
+M:2/4
+L:1/16
+K:C
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=treble
+[V:1] !p!G2 | c8 | f8 | egfe afdc | BcdB AG^FG | !f!C8 | F8 |]
+[V:2] z2 | z2 ([EG]2 [DF]2 [CE]2) | z2 ([B,D]2 [A,C]2 [G,B,]2) | C2 c2 F2 ^F2 | G4 G,4 | [K:clef=bass] z2 ([E,G,]2 [D,F,]2 [C,E,]2) | z2 ([B,,D,]2 [A,,C,]2 [G,,B,,]2) |]

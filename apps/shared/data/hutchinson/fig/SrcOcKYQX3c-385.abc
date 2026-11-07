@@ -1,0 +1,13 @@
+X:1
+T:Beethoven, Pathétique Sonata, Op. 13, I, development
+%%id SrcOcKYQX3c-385
+%bars ?
+%unsure no key signature printed (passage in E minor); last bar: only its first beat is printed
+M:C|
+L:1/4
+K:C
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] !f![ee'] z [Ee] z | !p!z "^mot. 1 (rhy. ch.)"[Ee] [^F^f] [Gg] | ([Gg]2 [^F^f]) z | z "^mot. 1 (rhy. ch.) (abbrev.)"[^F^f] [Gg] [Aa] | [Aa] |]
+[V:2] [E,,E,] [G,B,][G,B,][G,B,] | E, [G,B,][G,B,][G,B,] | E, [A,C][A,C][A,C] | _E, [A,C][A,C][A,C] | D,,/D,/ |]

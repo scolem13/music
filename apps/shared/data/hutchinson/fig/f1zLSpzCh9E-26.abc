@@ -1,0 +1,15 @@
+X:1
+T:Linda Perry, Beautiful (2002)
+%%id f1zLSpzCh9E-26
+%bars ?
+%unsure piano right-hand inner notes in bars 3-4; vocal bar 2 first note read as A-flat
+M:4/4
+L:1/16
+K:Eb
+%%score 1 {2 | 3}
+V:1 clef=treble nm="Voice"
+V:2 clef=treble nm="Piano"
+V:3 clef=bass
+[V:1] "Eb"z4 ECE2- E4 (3z2E2F2 | "Eb7/Db"A3G E4 z3E E2F C- | "Cm"C8 z3C E2F _C- | "Fm7b5/Cb"_C8 z8 |]
+[V:2] z4 [EG]2B,2 G2B,2 !accent![EB]2B,2 | [EG]4 G2B,2 G2B,2 !accent![EB]2B,2 | [CE]2G,2 [CE]2G,2 [CE]2G,2 !accent![CE]2G,2 | [_CE]2F,2 A2F,2 A2F,2 !accent![_CA]2F,2 |]
+[V:3] E,16 | _D,16 | C,16 | _C,16 |]

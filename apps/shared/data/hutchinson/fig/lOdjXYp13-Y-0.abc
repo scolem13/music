@@ -1,0 +1,15 @@
+X:1
+T:Robert Schumann, Dichterliebe, Ich grolle nicht (1844)
+%%id lOdjXYp13-Y-0
+%bars ?
+%unsure right-hand chord pitches in bars 2-4 read approximately (bar 4 second chord, the sharp, especially)
+M:C
+L:1/8
+K:C
+%%score 1 {2 | 3}
+V:1 clef=treble nm="Voice"
+V:2 clef=treble
+V:3 clef=bass
+[V:1] z4 z !mf!E D3/2C/ | F4 z F F F | _A6- A G | E4 z4 |]
+[V:2] !mf!!>![CEG][CEG][CEG][CEG] !>![CEG][CEG][CEG][CEG] | !>![A,CEA][A,CEA][A,CEA][A,CEA] !>![CFA][CFA][CFA][CFA] | !>![DF_A][DFA][DFA][DFA] !>![B,DFA][B,DFA][B,DFA][B,DFA] | !>![CEG][CEG][CEG][CEG] !>![^A,CEG][A,CEG][A,CEG][A,CEG] |]
+[V:3] z4 [C,,C,]4 | [A,,,A,,]4 [F,,,F,,]4 | [D,,,D,,]4 [G,,,G,,]4 | [C,,C,]4 [B,,,B,,]4 |]

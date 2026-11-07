@@ -1,0 +1,16 @@
+X:1
+T:Robert Schumann, Dichterliebe, Op. 48, Am leuchtenden Sommermorgen (1840)
+%%id PMFUeLdhhuM-0
+%bars ?
+%unsure the right hand's lowest sixteenths in bars 1-3 are printed on the bass staff (cross-staff); written here in the right hand
+%unsure last bar: only its first half is printed
+M:6/8
+L:1/16
+K:Bb
+%%score 1 {2 | 3}
+V:1 clef=treble nm="Voice"
+V:2 clef=treble nm="Piano"
+V:3 clef=bass
+[V:1] "Gb7"z12 || "Bb/F"z4 z2 "F7"z4 !p!F2 | "Bb"B3 B B2 |]
+[V:2] !p!z (B=E^C B,_G,) z (b=e^c B_G) || z (fdB FD) z (AFE CF,) | z (BFD B,F,) |]
+[V:3] _G,,12 || (F,,6 F,6) | B,,6- |]

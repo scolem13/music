@@ -1,0 +1,13 @@
+X:1
+T:Keith Forsey and Steve Schiff, Don’t You (Forget About Me) (1985)
+%%id CdqoNKCCt7A-6
+%bars ?
+%unsure exact octaves of the power-chord voicings
+M:C
+L:1/8
+K:G
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "D5"[A,D]3 "E5"[B,E]- [B,E]4 | "C5"[G,C]3 "D5"[A,D]- [A,D]4 | "D5"[A,D]3 "E5"[B,E]- [B,E]4- | [B,E]8 |]
+[V:2] [D,,A,,D,]3 [E,,B,,E,]- [E,,B,,E,]4 | [C,,G,,C,]3 [D,,A,,D,]- [D,,A,,D,]4 | [D,,A,,D,]3 [E,,B,,E,]- [E,,B,,E,]4- | [E,,B,,E,]8 |]

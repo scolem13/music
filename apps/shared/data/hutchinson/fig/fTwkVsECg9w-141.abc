@@ -1,0 +1,15 @@
+X:1
+T:J.S. Bach, French Suite No. 1 in D Minor, BWV 812, Sarabande
+%%id fTwkVsECg9w-141
+%bars ?
+%unsure inner voice of bar 3 (sixteenth beaming simplified to eighths); bass of the last chord read as D-A
+M:3/4
+L:1/8
+K:Dm
+%%score {(1 2) | 3}
+V:1 clef=treble
+V:2 clef=treble
+V:3 clef=bass
+[V:1] eafedc | _Bg^c_BAG | FB^GAfe | ^cd !fermata!d4 |]
+[V:2] [FA]2 [DA]2 [DA]2 | [DG]2 [EG]2 E2 | D^C D2 [^CA][E=G] | [EG]D [D^F]4 |]
+[V:3] F,2 F,2 F,2 | F,2 E,D, [^C,A,]2 | [D,A,][E,G,] F,D, A,2 | [D,B,]2 !fermata![D,A,]4 |]

@@ -1,0 +1,13 @@
+X:1
+T:Mozart, Piano Sonata K. 545, I (1788)
+%%id 5NkzTTkqTB4-0
+%bars 1-4
+M:C
+L:1/8
+Q:"Allegro"
+K:C
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=treble
+[V:1] c4 e2 g2 | (B3 c/d/ c2) z2 | a4 g2 c'2 | (g2 Tf e/f/ e2) z2 |]
+[V:2] CGEG CGEG | DGFG CGEG | CAFA CGEG | B,GDG CGEG |]

@@ -12998,5 +12998,69 @@
 "work": "Mozart: Vesperae solennes: Confitebor",
 "composer": "Mozart",
 "why": "Organ replaces orchestra"
+},
+"1625": {
+"i": 1625,
+"orig": "yes",
+"conf": 0.9,
+"work": "Bach: Invention No. 1 in C major, BWV 772",
+"composer": "Bach",
+"why": "picked by hand for a Hutchinson clip; scoring checked from part names"
+},
+"1626": {
+"i": 1626,
+"orig": "yes",
+"conf": 0.9,
+"work": "Smith (words Key): The Star-Spangled Banner",
+"composer": "Smith",
+"why": "picked by hand for a Hutchinson clip; scoring checked from part names"
+},
+"1627": {
+"i": 1627,
+"orig": "no",
+"conf": 0.9,
+"work": "Beethoven: Symphony No. 1 in C major, Op. 21: I. Adagio molto – Allegro con brio",
+"composer": "Beethoven",
+"why": "wind-band arrangement (clarinets for flutes, oboes, horns)"
+},
+"1628": {
+"i": 1628,
+"orig": "yes",
+"conf": 0.9,
+"work": "Beethoven: Piano Sonata No. 8 in C minor, Op. 13 (Pathétique)",
+"composer": "Beethoven",
+"why": "picked by hand for a Hutchinson clip; scoring checked from part names"
+},
+"1629": {
+"i": 1629,
+"orig": "yes",
+"conf": 0.9,
+"work": "Beethoven: Piano Sonata No. 21 in C major, Op. 53 (Waldstein)",
+"composer": "Beethoven",
+"why": "picked by hand for a Hutchinson clip; scoring checked from part names"
+},
+"1630": {
+"i": 1630,
+"orig": "yes",
+"conf": 0.9,
+"work": "Mozart: Symphony No. 40 in G minor, K. 550: II. Andante",
+"composer": "Mozart",
+"why": "picked by hand for a Hutchinson clip; scoring checked from part names"
+},
+"1631": {
+"i": 1631,
+"orig": "yes",
+"conf": 0.9,
+"work": "Mozart: Symphony No. 40 in G minor, K. 550: III. Menuetto: Allegretto",
+"composer": "Mozart",
+"why": "picked by hand for a Hutchinson clip; scoring checked from part names"
+},
+"1632": {
+"i": 1632,
+"orig": "yes",
+"conf": 0.9,
+"work": "Bach: Brandenburg Concerto No. 2 in F major, BWV 1047: I",
+"composer": "Bach",
+"why": "picked by hand for a Hutchinson clip; scoring checked from part names"
 }
 }

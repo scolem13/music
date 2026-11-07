@@ -1,0 +1,15 @@
+X:1
+T:Freddie Mercury, We Are the Champions (1977)
+%%id 04854XqcfCY-46
+%bars ?
+%unsure the numbers 1-6 under the figure are analysis blanks, not bar numbers; inner chord notes read approximately; a parenthesised low F# in the second half of bar 4 (bass) is left out; the last bar is one quarter as printed
+M:6/8
+L:1/8
+%%score 1 {2 | 3}
+V:1 clef=treble nm="Voice"
+V:2 clef=bass
+V:3 clef=bass
+K:F
+[V:1] F3- F G A | c2 A- A2 D/E/ | D3- D z z | z6 | [G,B,D]2 |]
+[V:2] [F,,C,F,]3 .[F,,C,F,] z z | [A,,E,A,]3 .[A,,E,A,] z .[A,,E,A,] | [B,,F,B,]3 z !>!A,,!>!G,, | !>!^F,,2 !>![F,,_E,]- [F,,E,] !>![F,,D,]2 | [G,,D,G,]2 |]
+[V:3] A,,,6 | C,,6 | B,,,3 z !>!A,,,!>!G,,, | !>!^F,,,6 | G,,,2 |]

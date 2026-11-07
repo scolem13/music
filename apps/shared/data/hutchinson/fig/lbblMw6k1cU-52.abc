@@ -1,0 +1,13 @@
+X:1
+T:Beethoven, Piano Sonata Op. 53, I (1804)
+%%id lbblMw6k1cU-52
+%bars ?
+%unsure inner chord notes read approximately
+M:4/4
+L:1/4
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=treble
+K:C
+[V:1] "E"!dolce![B^d^g]2 "B7"[A^d^f] "C#m"[^G^ce] | "G#7"[^F^B^d]2 "A"[E^c]2 |]
+[V:2] [E^G]2 [A,^D^F] [^CE] | [^G,^B,^D^F]2 [A,^C]2 |]

@@ -1,0 +1,13 @@
+X:1
+T:Ludwig van Beethoven, Piano Sonata in C major, Op. 2, No. 3, I.
+%%id o1iUR3GG4DQ-0
+%bars ?
+%unsure inner dyads of the sixteenth-note figures read approximately
+M:C
+L:1/8
+K:C
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "C"!p![CE]4 [B,D]/[CE]/[B,D]/[CE]/ .[DF] .[CE] | "G".[B,D]2 .[B,G]2 z4 | "G7"[DF]4 [^CE]/[DF]/[CE]/[DF]/ .[EG] .[DF] | "C".[=CE]2 .[Ec]2 z4 |]
+[V:2] [C,G,]8 | .[G,,G,]2 .[G,,G,]2 z4 | [G,,B,]8 | .[C,G,]2 .[C,G,]2 z4 |]

@@ -1,0 +1,13 @@
+X:1
+T:Tchaikovsky, The Nutcracker, Trepak (1892)
+%%id 67maTrrSKjg-0
+%bars ?
+%unsure inner notes of the chords read approximately
+M:2/4
+L:1/16
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+K:G
+[V:1] !f!.[Bg]2 !p!(gf) .g2.g2 | .[ce]2.[Bd]2 !sf!([Ac]2[ce]2) | !f![DGd]2 !p!(d^c) .d2.d2 || .[^CB]2.[=CA]2 .[B,G]2[GB][Bd] |]
+[V:2] [G,,D,B,]2 z2 z4 | .[A,C]2.[B,D]2 [CE]2 z2 | [G,,D,B,]2 z2 z4 || .[E,G,]2.[F,A,]2 .[G,B,]2[G,,D,G,]2 |]

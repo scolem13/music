@@ -1,0 +1,22 @@
+X:1
+T:Beethoven, Symphony No. 1, I, development of motive 4
+%%id I1rA68yF4tM-356
+%bars ?
+%unsure no time signature printed; cut time (as the movement) assumed
+%unsure tremolo strokes on the right-hand chords not written; chord tones (dim. 7ths B-D-F-Ab and E-G-Bb-Db) read approximately
+M:C|
+L:1/4
+K:C
+%%score {(1 2) | (3 4)}
+V:1 clef=treble
+V:2 clef=treble
+V:3 clef=bass
+V:4 clef=bass
+[V:1] z4 | .c ._e .g .b | (c'4 | c'3) _b |
+_a z z2 | .f ._a .c' .e' | (f'4 | f'3) _e' |]
+[V:2] !p![=B,DF_A]2 [B,DF_A]2 | [B,DF_A]2 [B,DF_A]2 | [B,DF_A]2 [B,DF_A]2 | [_A,C_E] [A,Cc] [A,Cc] [A,C_B] |
+[=EG_B_d]2 [EG_Bd]2 | [EG_Bd]2 [EG_Bd]2 | [EG_Bd]2 [EG_Bd]2 | [_DF_A] [DFf] [DFf] [DF_e] |]
+[V:3] [C,,C,] [_E,,_E,] .[G,,G,] .[B,,B,] | [C,C] z z2 | .C, ._E, .G, .B, | .C .D ._E .=E |
+[F,,F,] [_A,,_A,] .[C,C] .[E,E] | [F,F] z z2 | .F, ._A, .C .E | .F .G ._A .=A |]
+[V:4] x4 | x4 | z4 | C, _B,, _A,, G,, |
+x4 | x4 | z4 | F, _E, _D, C, |]

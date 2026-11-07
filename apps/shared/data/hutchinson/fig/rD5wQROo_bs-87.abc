@@ -1,0 +1,13 @@
+X:1
+T:Hans Zimmer and Antonius Tom Holkenborg, Batman v Superman: Dawn of Justice, The Red Capes are Coming (2016) (chords only)
+%%id rD5wQROo_bs-87
+%bars ?
+%unsure bar 3 chord spelling (G#o7/B cluster)
+M:4/4
+L:1/1
+K:Am
+%%score {1 | 2}
+V:1 clef=treble
+V:2 clef=bass
+[V:1] "G#o7/D"[^GBdf] | "Am/C"[Ace] | "G#o7/B"[F^GBd] | "Am"[EAc] || "Bb/D"[DF_B] || "Am/C"[CEA] | "E"[B,E^G]- | [B,EG] |]
+[V:2] [D,,D,] | [C,,C,] | [B,,,B,,] | [A,,,A,,] || [D,,D,] || [C,,C,] | [E,,E,]- | [E,,E,] |]

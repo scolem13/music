@@ -1,0 +1,15 @@
+X:1
+T:John Stafford Smith and Francis Scott Key, The Star-Spangled Banner (1814) as performed by Whitney Houston at the 1991 Super Bowl
+%%id KbkWuVUkPmY-105
+%bars ?
+%unsure inner tones of the piano chords
+M:3/4
+L:1/16
+K:Ab
+%%score 1 {2 | 3}
+V:1 clef=treble nm="Voice"
+V:2 clef=treble nm="Piano"
+V:3 clef=bass
+[V:1] "Dm7b5"A2 "Bb7/D"B2 | "Ab/Eb"c6 d2 "Eb7"(cB3) | [M:4/4] "Fb6"A8- "Gbadd9"A8- | "Ab"!fermata!A16 |]
+[V:2] [=DFAc]2 [DFAB]2 | [EAc]6 [EAd]2 [DEGB]4 | [M:4/4] [_C_DA]8 [B,D_GA]8 | !fermata![CEA]16 |]
+[V:3] [=D,,=D,]2 [D,,D,]2 | [E,,E,]6 [E,,E,]2 [E,,E,]4 | [M:4/4] [_F,,_F,]8 [_G,,_G,]8 | !fermata![A,,A,]16 |]
