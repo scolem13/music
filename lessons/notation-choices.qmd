@@ -390,11 +390,11 @@ clear notes, and only with labels that point at what to look at.
       t += dur;
     });
   })();
-  var btn = document.querySelector(".nc-play"), ctx = null, src = null;
+  var btn = document.querySelector(".nc-play"), ctx = null, out = null, src = null;
   btn.addEventListener("click", function () {
     if (src) { src.stop(); src = null; btn.textContent = "▶ Hear the melody"; return; }
-    ctx = ctx || new (window.AudioContext || window.webkitAudioContext)(); var b = ctx.createBuffer(1, len, SR); b.copyToChannel(audio, 0);
-    src = ctx.createBufferSource(); src.buffer = b; src.connect(ctx.destination); src.start(); btn.textContent = "■ Stop";
+    if (!ctx) { ctx = new (window.AudioContext || window.webkitAudioContext)(); out = ctx.createGain(); out.connect(ctx.destination); if (window.AudioTap) AudioTap.register(ctx, out, "Notation choices"); } var b = ctx.createBuffer(1, len, SR); b.copyToChannel(audio, 0);
+    src = ctx.createBufferSource(); src.buffer = b; src.connect(out); src.start(); btn.textContent = "■ Stop";
     src.onended = function () { src = null; btn.textContent = "▶ Hear the melody"; };
   });
 

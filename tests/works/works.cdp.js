@@ -64,6 +64,8 @@ const U = "http://127.0.0.1:8547";
   await box("Functions", "");
   const pr = await box("Progression", "IV V I"), prRev = await box("Progression", "I V IV");
   check("Progression: in order (IV V I differs from I V IV, fewer than Functions)", nums(pr) > 0 && pr !== prRev && nums(pr) < nums(fn), pr + " / " + prRev);
+  const isoN = await ev(`[...document.querySelectorAll('#td-isophonics-list a')].length + ' | ' + document.querySelector('#td-isophonics-list a').getAttribute('href')`);
+  check("directory lists the 179 Isophonics Beatles songs, linked to Timestamp Notes", /^179 \| \/tools\/timestamp-notes\.html\?salami=1\d{5}$/.test(isoN), isoN);
   const bbShown = await ev(`[...document.querySelectorAll('#td-billboard-list .td-row')].filter(r => !r.hidden).length`);
   check("Progression searches the Billboard songs too", bbShown > 0, String(bbShown));
   await box("Progression", "");
@@ -81,9 +83,16 @@ const U = "http://127.0.0.1:8547";
   await b.sleep(800);
   const ts = await ev(`[document.querySelector('.btp-bb-now').textContent.slice(0, 48), [...document.querySelectorAll('textarea')].some(t => /\{comment: Pre-chorus\}/.test(t.value)), (document.body.innerText.match(/85 bars/) || [''])[0]].join(' | ')`);
   check("?salami= opens a Billboard song with its sections, chords and bar map", /^Billboard: My Kinda Lover — Billy Squier \(1982\)\. \| true \| 85 bars$/.test(ts), ts);
+  await b.goto(U + "/tools/timestamp-notes.html");
+  await ev(`localStorage.clear()`);
+  await b.goto(U + "/tools/timestamp-notes.html?salami=100001");
+  await wait(`/I Saw Her/.test((document.querySelector('.btp-bb-now') || {}).textContent || '')`);
+  await b.sleep(800);
+  const isoTs = await ev(`[document.querySelector('.btp-bb-now').textContent.slice(0, 40), [...document.querySelectorAll('textarea')].some(t => /\{comment: Bridge\}/.test(t.value)), (document.body.innerText.match(/114 bars/) || [''])[0]].join(' | ')`);
+  check("?salami=100001 opens an Isophonics Beatles song with its sections and bar map", /^Isophonics \(Beatles\): I Saw Her Standing \| true \| 114 bars$/.test(isoTs), isoTs);
   const bbSearch = await ev(`(() => { document.querySelector('.btp-bb-open').click(); const q = document.querySelector('.btp-bb input'); q.value = 'beatles'; q.dispatchEvent(new Event('input'));
     return new Promise(r => setTimeout(() => r(document.querySelector('.btp-bb-info').textContent), 500)); })()`);
-  check("Billboard… searches the set", /^\d+ songs?$/.test(bbSearch) && bbSearch !== "0 songs", bbSearch);
+  check("Billboard… searches the set", /^\d+ songs?(; the first 60 shown)?$/.test(bbSearch) && bbSearch !== "0 songs", bbSearch);
 
   // Tune Assessment: the same boxes, renamed
   await b.goto(U + "/practice/assessment-tune.html");

@@ -6,7 +6,7 @@
 const http = require("http"), fs = require("fs"), path = require("path");
 const ROOT = path.resolve(__dirname, "../.."), SITE = process.env.SITE || ROOT + "/_site", { launch } = require(ROOT + "/tests/band/lead/cdp.js");
 const type = f => /\.js$/.test(f) ? "text/javascript" : /\.css$/.test(f) ? "text/css" : /\.json$/.test(f) ? "application/json" : "text/html";
-const PORT = 8561, wait = ms => new Promise(r => setTimeout(r, ms));
+const PORT = +process.env.PORT || 8561, wait = ms => new Promise(r => setTimeout(r, ms));
 const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURIComponent(q.url.split(/[?#]/)[0]));
   fs.readFile(f, (e, d) => { if (e) { s.writeHead(404); s.end(); return; } s.writeHead(200, { "content-type": type(f) }); s.end(d); }); }).listen(PORT);
 (async () => {
@@ -18,7 +18,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   await b.goto(`http://127.0.0.1:${PORT}/theory/chord-analysis.html`); await wait(1500);
   const counts = JSON.parse(await ev(`JSON.stringify({ ex: document.querySelectorAll('.chord-analysis[data-example]').length, all: document.querySelectorAll('.chord-analysis').length,
     drawn: [...document.querySelectorAll('.chord-analysis')].filter(h => h.querySelector('.ca-paper svg')).length, tabs: document.querySelectorAll('.ca-tab').length })`));
-  check("guide: every widget drew its score", counts.ex === 7 && counts.all === 15 && counts.drawn === 15, JSON.stringify(counts));
+  check("guide: every widget drew its score", counts.ex === 12 && counts.all === 25 && counts.drawn === 25, JSON.stringify(counts));
   check("guide: the guitar stage draws TAB", counts.tabs >= 2, counts.tabs);
   check("guide: no page errors", errs().length === 0, errs().slice(0, 3).join(" | "));
 
@@ -85,10 +85,18 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
     return good + ' ' + ${H}.getAttribute('data-right') + ' ' + c0.box.className; })()`);
   const [g10a, g10b] = g10.split(" ");
   check("ch10: right types all count; a wrong type is red", g10a.split("/")[0] === g10a.split("/")[1] && +g10b === +g10a.split("/")[1] - 1 && /no/.test(g10), g10);
+  // ch. 16: figures only; every expected answer (Cad64 included) is accepted, a /3rd slash is not
+  await setSel("Level", "ch16"); await wait(300);
+  const g16 = await ev(`(() => { const q = ${H}._ca.question(), cs = ${H}._ca.cards(), A = ${H}._ca;
+    cs.forEach(c => { if (c.inp) c.inp.value = ChordAnalysis.expected(q, c.i); });
+    A.grade(false); const good = ${H}.getAttribute('data-right') + '/' + ${H}.getAttribute('data-total');
+    return good + ' ' + q.figs + ' ' + /figures/.test(${H}.textContent); })()`);
+  const [g16a, g16f, g16t] = g16.split(" ");
+  check("ch16: figures level, expected answers all count", g16f === "true" && g16t === "true" && g16a.split("/")[0] === g16a.split("/")[1] && +g16a.split("/")[1] > 0, g16);
   // every stage and level draws
   for (const st of ["rh", "guitar", "satb", "broken", "melody"]) {
     await setSel("Stage", st); await wait(150);
-    for (const lv of ["ch6a", "ch6b", "ch7a", "ch7b", "ch8a", "ch8b", "ch9", "ch10"]) { await setSel("Level", lv); await wait(120);
+    for (const lv of ["ch6a", "ch6b", "ch7a", "ch7b", "ch8a", "ch8b", "ch9", "ch10", "ch16", "ch17", "ch18", "ch19", "ch20"]) { await setSel("Level", lv); await wait(120);
       const r = await ev(`(() => { const q = ${H}._ca.question(); return !!q && q.texture === (${JSON.stringify(lv)} === 'ch10' ? 'melody' : ${JSON.stringify(st)}) && !!${H}.querySelector('.ca-paper svg') && (${JSON.stringify(st)} !== 'guitar' || ${JSON.stringify(lv)} === 'ch10' || !!${H}.querySelector('.ca-tab')); })()`);
       if (!r) check(`stage ${st}, level ${lv} draws`, false);
     }

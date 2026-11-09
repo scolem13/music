@@ -213,7 +213,7 @@
   function billboard(log, open) {
     var after = log.querySelector('.btp-paste-open'); if (!after) return;
     var btn = el('button', 'btp-bb-open', 'Billboard…'); btn.type = 'button';
-    btn.title = 'Open one of the 739 McGill Billboard songs (1958–1991): its sections, bars and chords, timed';
+    btn.title = 'Open one of the 739 McGill Billboard songs (1958–1991) or 179 Isophonics Beatles songs: its sections, bars and chords, timed';
     after.after(btn);
     var box = el('div', 'btp-bb'); box.hidden = true;
     var q = el('input'); q.type = 'search'; q.placeholder = 'Title or artist (Beatles, My Girl, 1965…)'; q.setAttribute('aria-label', 'Search the Billboard songs');
@@ -250,7 +250,7 @@
         var u = new URL(location.href); u.searchParams.set('salami', id); history.replaceState(null, '', u);
         now.innerHTML = '';
         if (s) {
-          now.append('Billboard: ' + s.title + ' — ' + s.artist + (s.year ? ' (' + s.year + ')' : '') + '. No recording comes with it: ');
+          now.append((s.src === 'iso' ? 'Isophonics (Beatles): ' : 'Billboard: ') + s.title + ' — ' + s.artist + (s.year ? ' (' + s.year + ')' : '') + '. No recording comes with it: ');
           var a = el('a', null, 'find it on YouTube'); a.target = '_blank'; a.rel = 'noopener';
           a.href = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(s.artist + ' ' + s.title);
           now.append(a, ' and paste the link above. The times are the annotators\' recording\'s, so an upload may be a little early or late.');

@@ -142,7 +142,7 @@
       var rec = { bar:i, index:idx, chorus:ctx.chorus, length:form.length, beats:fb.beats, tempo:tempo / (fb.unit || 1), ending:false,
                   meter:fb.meter, compound:!!fb.compound,
                   chords:fb.chords, opts:Object.assign({}, ctx.opts), parts:{} };
-      Object.keys(parts).forEach(function (p){ try { rec.parts[p] = octaves(p, parts[p].bar(ctx) || [], ctx.opts); } catch (e){ rec.parts[p] = []; } });
+      Object.keys(parts).forEach(function (p){ if (p === "drums") ctx.bassBar = rec.parts.bass || null; try { rec.parts[p] = octaves(p, parts[p].bar(ctx) || [], ctx.opts); } catch (e){ rec.parts[p] = []; } });
       if (rec.parts.congas && !rec.parts.congas.length) delete rec.parts.congas;                         // (no congas part unless they play)
       out.push(rec);
     }

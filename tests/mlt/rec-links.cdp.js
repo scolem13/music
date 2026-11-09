@@ -28,6 +28,7 @@ const U = "http://127.0.0.1:8557";
   await ev(`document.querySelector('.eg-check').click()`);
   const cls = await ev(`[0,1,2].map(i => document.querySelectorAll('.eg-bar')[i].className).join('|')`);
   check("check: C right, V7 right, F wrong", /eg-ok/.test(cls.split("|")[0]) && /eg-ok/.test(cls.split("|")[1]) && /eg-no/.test(cls.split("|")[2]), cls);
+  check("the check is in the student's report (ear-grid: 3 bars, not all right)", await wait(`(JSON.parse(localStorage.getItem('site-record-v1')||'{"items":[]}').items||[]).some(x => x.tool === 'ear-grid' && x.at.length === 1 && x.at[0][1] === 0 && /1: C/.test(x.at[0][0]))`, 40));
   check("guesses kept", await ev(`JSON.parse(localStorage.getItem('ear-grid:mullen-chew-chew-chew-c-with-vocals')).guesses[1] === 'V7'`));
   await ev(`document.querySelector('.eg-reveal').click()`);
   check("answers shown in the recording's key", /G7 \(V7\)/.test(await ev(`document.querySelectorAll('.eg-bar')[1].textContent`)), await ev(`document.querySelectorAll('.eg-bar')[1].textContent`));

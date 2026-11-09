@@ -9,8 +9,8 @@ const type = f => f.endsWith(".js") ? "text/javascript" : f.endsWith(".css") ? "
 const fetched = [];
 const srv = http.createServer((q, s) => {
   const u = decodeURIComponent(q.url.split(/[?#]/)[0]); if (/\/data\/scores\//.test(u)) fetched.push(path.basename(u));
-  const f = path.join(SITE, u); fs.readFile(f, (e, d) => { if (e) { s.writeHead(404); s.end(); return; } s.writeHead(200, { "content-type": type(f) }); s.end(d); }); }).listen(8562);
-const U = "http://127.0.0.1:8562/theory/analysed-scores/view.html";
+  const f = path.join(SITE, u); fs.readFile(f, (e, d) => { if (e) { s.writeHead(404); s.end(); return; } s.writeHead(200, { "content-type": type(f) }); s.end(d); }); }).listen(+process.env.PORT || 8562);
+const U = "http://127.0.0.1:" + (process.env.PORT || 8562) + "/theory/analysed-scores/view.html";
 (async () => {
   const b = await launch({});
   let fails = 0; const check = (name, ok, info) => { console.log((ok ? "ok   " : "FAIL ") + name + (info ? "  " + info : "")); if (!ok) fails++; };

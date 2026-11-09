@@ -1,0 +1,133 @@
+---
+title: "Sonata and Rondo Forms: Practice for Chapter 25"
+toc: true
+toc-depth: 2
+description: "Chapter 25 of Hutchinson's Music Theory for the 21st-Century Classroom with pieces from the site's Analysed Scores Library: the plan of sonata form and its key plan, sonatina form, sonata principle, the four structural functions, and five- and seven-part rondos."
+---
+
+This page goes with **Chapter 25, Sonata and Rondo Forms** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/SonataAndRondoForms.html). Read each section
+there first. These are the biggest forms in the book, so this page is a **listening-and-reading guide**: it tells you what to look for, and
+sends you to real pieces in the site's [Analysed Scores Library](analysed-scores/view.qmd), where the score plays with the experts'
+Roman-numeral key labels under it. The key plans below are read from that analysis data. Bar numbers are approximate (the data puts key
+changes at beat positions); open the piece and listen for each change.
+
+## 25.1 The plan of a sonata form
+
+Sonata form (also called first-movement form) is the main plan of Classical and later first movements. It has three large parts and
+the book shows a standard layout:
+
+| Part | What happens | Key (major-key piece) |
+|---|---|---|
+| **Exposition** | **primary theme** (PT) in the tonic, a **transition** that moves away, a **secondary theme** (ST), then often a closing theme | PT in I, ST in **V** |
+| **Development** | themes fragmented and sequenced, passing through several keys | unstable |
+| **Recapitulation** | the same material again, now with the ST **brought into the tonic** | I throughout |
+
+[Read 25.1](https://musictheory.pugetsound.edu/mt21c/SonataAndRondoForms.html)
+
+Many pieces have two secondary themes, or no closing theme, or a development that brings in new material. In a Classical score the exposition
+is repeated, and the development and recapitulation are repeated together: a **two-reprise** form, a descendant of balanced and rounded binary
+([Chapter 24](binary-ternary.qmd)). **Sonatina form** is a sonata form with no development section; the book's example is the "Miniature
+Overture" from Tchaikovsky's *Nutcracker*.
+
+**Try it with a real piece.** Open Mozart's
+[Piano Sonata K. 545, movement 1](analysed-scores/view.qmd?id=mozart-sonata-16-1) (the "Sonata facile"). The analysis labels its keys in
+this order: **C major**, **G major**, then **G minor, D minor, A minor**, **F major**, and finally **C major** again. Match them to the plan:
+
+- C major is the primary theme and transition; **G major** (about bar 13) is the secondary theme, in the dominant;
+- the move to **G minor** (about bar 29) is the start of the development, which passes through D minor and A minor;
+- the **F major** label (about bar 41) is the beginning of the recapitulation, and **C major** (about bar 51) is the point where the
+  secondary theme arrives *in the tonic*.
+
+::: {.callout-tip collapse="true"}
+## What to notice
+
+The recapitulation of K. 545 begins in F major (the subdominant) rather than the tonic, a famous quirk. The "home" feeling arrives only
+when the secondary theme returns in C. That is **sonata principle** (25.2): the piece is not finished until the music that was in the
+"wrong" key at the start is heard in the home key.
+:::
+
+## 25.2 Sonata principle and the monothematic sonata
+
+**Sonata principle** is Charles Rosen's idea that the key of the second theme is a large-scale **dissonance** that the piece must resolve:
+material first stated outside the tonic is restated in the tonic. It is why a recapitulation re-writes the transition so it stays at home.
+In a **monothematic** sonata (Haydn's favourite), the primary theme reappears in the dominant where a new secondary theme would be, so the
+key plan carries the drama by itself.
+[Read 25.2](https://musictheory.pugetsound.edu/mt21c/SonataAndRondoForms.html)
+
+## 25.3 Four structural functions
+
+Peter Temko and Peter Spencer label music by what it *does*, not what it is called. The same bit of a movement can be assigned a function by
+asking four questions:
+
+| Function | Sounds like | Where it is typical |
+|---|---|---|
+| **Expository** | a stable key, clear melodies, well-formed phrases with cadences | primary and secondary themes, binary and ternary pieces |
+| **Transitional** | moving to a new key, more active texture, often ending on a half cadence and a rest | between PT and ST, retransitions |
+| **Developmental** | sequences, fragments of themes, many keys, irregular phrase lengths | the development |
+| **Terminative** | emphatic back-and-forth between tonic and dominant to confirm the key | closing theme, coda |
+
+[Read 25.3](https://musictheory.pugetsound.edu/mt21c/SonataAndRondoForms.html)
+
+**Practise on K. 545 above.** Play it and label stretches: the first four bars (expository, a theme with a cadence); the stretch after it that
+leaves C (transitional: look for the chord that closes it just before the secondary theme); the section in G minor, D minor and A minor
+(developmental); the last bars of the exposition (terminative). The library's Roman numerals show the V and I chords alternating in
+terminative music.
+
+## 25.4 Rondo forms
+
+A **rondo** alternates a **refrain** (A) with **episodes** (B, C). A **five-part** rondo is A B A C A (or A B A B A), a **seven-part** rondo A B A C
+A B A. The refrain is always in the tonic. The first episode is in a closely related key (the dominant in a major piece, the relative
+major, III, in a minor one); the second episode ranges more widely (the tonic minor, the submediant, the subdominant). A **retransition**
+is a passage that leads back to music already heard. Hearing the first episode first away from the tonic and later in it is another sonata
+principle at work.
+[Read 25.4](https://musictheory.pugetsound.edu/mt21c/SonataAndRondoForms.html)
+
+**Hear a five-part rondo.** Beethoven's Piano Sonata Op. 49 No. 2 ends with a
+[Tempo di Menuetto](analysed-scores/view.qmd?id=beethoven-sonata-20-2) (the library's "movement 2"). Its key labels are **G major, D major,
+G major, C major, G major**. In the plan the refrain (A, in G) is followed by an episode in the **dominant** (B, at about bar 20), the refrain, a
+second episode in the **subdominant** (C, at about bar 51), and the refrain again: **A B A C A**. Check it: does the tune that opens the
+piece come back each time the key returns to G?
+
+**Another rondo to read.** Mozart's
+[K. 545, movement 3](analysed-scores/view.qmd?id=mozart-sonata-16-3) is a rondo too; its labels run C major, G major, C major, A minor, C major.
+Try to say which stretches are refrain and which are episodes, and which of the refrain's returns is shortened. (This one is for
+listening; the form is not as clean as the Beethoven.)
+
+## 25.5 Sonata rondo and rondo character
+
+**Sonata rondo** replaces the second episode with a development: **A B A development A B A**. The B section appears first in the dominant
+and then in the tonic, as in sonata form. **Rondo character** means a quick, light, duple-metre movement (simple or compound) with staccato
+touches, and it is the usual character of a Classical finale. The book's detailed rondo walk-through is Beethoven's *Pathétique*, III (a
+seven-part rondo in C minor, with the first episode in E♭ major, the second in the submediant, and the first episode coming back in C major); that movement is not in the
+library yet.
+[Read 25.5](https://musictheory.pugetsound.edu/mt21c/SonataAndRondoForms.html)
+
+## 25.6 Forms in a whole sonata
+
+The book ends with the usual movements of a Classical multimovement work (a first movement in sonata form, a slow movement in a binary,
+ternary or sonata plan, then a minuet and trio and a rondo or sonata-rondo finale). You can see all of these in the library: pick one
+Mozart or Beethoven sonata and open its movements one after another.
+
+- **Sonata K. 545:** [movement 1](analysed-scores/view.qmd?id=mozart-sonata-16-1) (sonata form), [movement 2](analysed-scores/view.qmd?id=mozart-sonata-16-2) (ternary, see Chapter 24), [movement 3](analysed-scores/view.qmd?id=mozart-sonata-16-3) (rondo).
+- **Beethoven Op. 2 No. 1:** [movement 1](analysed-scores/view.qmd?id=beethoven-sonata-1-1) (sonata form in F minor: the labels show A♭ major in the exposition and F minor again at the recapitulation) and [movement 3](analysed-scores/view.qmd?id=beethoven-sonata-1-3) (minuet and trio).
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Where the key plans come from:** the Analysed Scores Library's analysis data (Mozart: DCML annotators; Beethoven: BPS dataset), read in
+  order. Bar numbers on this page are approximate and not checked against a printed score. The recapitulation-in-the-subdominant remark about
+  K. 545 and the Op. 49 No. 2 rondo reading are from the key labels plus general knowledge of the pieces; the book does not analyse these two.
+- **The book's own pieces** (Mozart K. 333 and K. 284, Haydn Hob. XVI:35, Beethoven *Moonlight* III and *Pathétique* III, Mozart's *Eine kleine
+  Nachtmusik* II) are not all in the library. *Moonlight* I is; *Moonlight* III and *Pathétique* III are not.
+- **Not here:** drills. Form recognition in sonata and rondo form depends on listening, and a computer cannot yet generate a sonata
+  exposition to ask about. A Timestamp Notes outline of one movement is the cheapest way to get a class to mark its sections
+  ([Timestamp Notes](../tools/timestamp-notes.qmd)).
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hutchinson, Robert. "Sonata and Rondo Forms." *Music Theory for the 21st-Century Classroom*, ch. 25, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/SonataAndRondoForms.html](https://musictheory.pugetsound.edu/mt21c/SonataAndRondoForms.html).
+:::
+<!-- /works-cited -->

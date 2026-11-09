@@ -507,7 +507,10 @@
       if (ctx.compound || tripletGroove(ctx)) return compoundBar(ctx);
       var gr = grooveOf(ctx); if (gr) return grooveBar(ctx, gr);
       var ev = [], beats = ctx.beats || 4, i, waltz = beats === 3;
-      var two = !!(ctx.opts && ctx.opts.bassFeel === "two");
+      var two = !!(ctx.opts && ctx.opts.bassFeel === "two"), bf = ctx.opts && ctx.opts.bassFeel;
+      // the bass's own bar (ctx.bassBar, when the player hands it over): a walking line that drops into two (a quiet chorus) is followed,
+      // and a bass that walks this bar is too, whatever the setting says. Only for the feels that may do either.
+      if (ctx.bassBar && ctx.bassBar.length && beats === 4 && (!bf || bf === "two" || bf === "walk")) two = !ctx.bassBar.some(function (e){ return e.pos > 0.75 && Math.abs(e.pos - Math.round(e.pos)) < 0.25 && Math.round(e.pos) % 2 === 1; });
       var fill = chooseFill(ctx, beats), timeEnds = fill ? beats - fill.n : beats;
       var landing = afterFill; afterFill = null;
       var straight = !!(ctx.opts && ctx.opts.feel === "straight");

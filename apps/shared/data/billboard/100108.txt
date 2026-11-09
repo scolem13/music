@@ -1,0 +1,16 @@
+# title: Good Morning Good Morning
+# artist: The Beatles
+# metre: 4/4
+# tonic: A
+
+0.0	silence
+3.692	intro, | A . D . | A . D . | A . D . | A A/5 . . |
+11.749	verse a, | A:min . E:min G | G . . . | (2/4) A E:(1) | A . E:min G | G . . . | A . . . | D . . . | (3/4) D E . | (2/4) E . | A . E:min G | (2/4) G . | A . D . | A . . . |
+33.890	verse b, | A . E:min G | G . . . | (2/4) A E:(1) | A . E:min G | G . . . |
+42.806	bridge, | A . D . | A . D . | A . D . | A . D . | A . D . | A . E . |
+54.718	verse a, | A . E:min G | G . . . | (2/4) A E:(1) | A . E:min G | G . . . | A . . . | D . . . | (3/4) D E . | (2/4) E . | A . E:min G | (2/4) G . | A . D . | A . . . |
+76.916	verse b guitar, | A . E:min G | G . . . | (2/4) A A/5 | A . E:min G | G . . . |
+85.821	bridge, | A . D . | A . D . | A . D . | A . D . | A . D . | A . E . |
+97.582	verse, | A . E:min G | G . . . | (2/4) A E:(1) | A . E:min G | G . . . | A . . . | D . . . | (3/4) D E . | (2/4) E . | A . E:min G | (2/4) G . | A . D . | A . . . |
+119.652	outro, | A . D . | A . D . | A . D . | A . D . | A . D . | A . D . | A . D . | A . D . | A . D . | A . D . | A . D . | A . D . | A . D . | A . D . | A . D . | A . D . | A D . A |
+161.332	end

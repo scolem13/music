@@ -1632,7 +1632,8 @@ function refreshNotation(){
 
 /* ================= Playback (yellow flash) ================= */
 let audioCtx = null;
-function ensureAudio(){ if(window.MusicAudio) return MusicAudio.ctx(); if(!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)(); return audioCtx; }
+// Sound is all MusicAudio's (its context is on AudioTap); without it nothing sounds, so the fallback is only a clock.
+function ensureAudio(){ if(window.MusicAudio) return MusicAudio.ctx(); return audioCtx || (audioCtx = { get currentTime(){ return performance.now()/1000; } }); }
 
 async function play(){
   if(state.currentlyPlaying) return;

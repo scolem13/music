@@ -1,0 +1,17 @@
+# title: Drive My Car
+# artist: The Beatles
+# metre: 4/4
+# tonic: D
+
+0.0	silence
+1.405	intro, | N . . . | D . . . |
+5.248	verse, | D . . . | G . . . | D . . . | G . . . | D . . . | G . . . | A:min7(*5,b6) . . . | A:min7(*5,b6) . . . |
+20.805	refrain, | B:min . . . | G:7 . . . | B:min . . . | G:7 . . . | B:min . . . | E:7 . A . | D . G . | A . . . |
+36.409	verse, | D . . . | G . . . | D . . . | G . . . | D . . . | G . . . | A:min7(*5,b6) . . . | A:min7(*5,b6) . . . |
+52.117	refrain, | B:min . . . | G:7 . . . | B:min . . . | G:7 . . . | B:min . . . | E:7 . A . | D . G . | A:7(#9) . . . |
+67.791	verse solo, | D . . . | G . . . | D . . . | G . . . | D . . . | G . . . | A:min(*5) . . . | A:min(*5) . . . |
+83.487	refrain, | B:min . . . | G:7 . . . | B:min . . . | G:7 . . . | B:min . . . | E:7 . A . | D . G . | A . . . | D . . . |
+101.123	verse, | G . . . | D . . . | G . . . | D . . . | G . . . | A:min7(*5,b6) . . . | A:min7(*5,b6) . . . |
+114.834	refrain, | B:min . . . | G:7 . . . | B:min . . . | G:7 . . . | B:min . . . | E:7 . A . | D . G . | A:7(#9) . . . |
+130.554	outro fade-out, | D . G . | A:7(#9) . . . | D . G . | A:7(#9) . . . | D . G . | A:7(#9) . . . | (1/4) D |
+150.282	end

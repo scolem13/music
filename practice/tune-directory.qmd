@@ -82,6 +82,15 @@ YouTube and paste the link there.</p>
 <div id="td-billboard-list"></div>
 ```
 
+## Beatles songs (chords and form, Isophonics) {#td-isophonics}
+
+```{=html}
+<p class="td-note"><span id="td-iso-n"></span> from the Isophonics Beatles annotations (Queen Mary, University of London): every chord, by beat, with sections and keys. The bars come from the annotators' beat files, so a bar may be a
+beat or two out where the beat tracking was; the time signature is read from the beat count, not annotated. A title opens it in
+<a href="../tools/timestamp-notes.html">Timestamp Notes</a>, like a Billboard song.</p>
+<div id="td-isophonics-list"></div>
+```
+
 ## Analysed Scores {#td-analysed}
 
 ```{=html}
@@ -159,6 +168,8 @@ YouTube and paste the link there.</p>
 <!-- works-cited: written by scripts/works-cited.py -->
 ::: {.works-cited}
 Burgoyne, John Ashley, Jonathan Wild, and Ichiro Fujinaga. "An Expert Ground Truth Set for Audio Chord Recognition and Music Analysis." *Proceedings of the 12th International Society for Music Information Retrieval Conference*, Miami, 2011, pp. 633–38. The 890 SALAMI chords files of the McGill Billboard Project (songs from the Billboard Hot 100, 1958–1991): sections, bars and chords, timed; released under CC0. [ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/](https://ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/).
+
+Isophonics. Centre for Digital Music, Queen Mary, University of London, isophonics.net. Beatles chord, key, beat and segment annotations, personal and educational use. [isophonics.net/](http://isophonics.net/).
 
 **For teachers**
 

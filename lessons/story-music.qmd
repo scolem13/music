@@ -1,0 +1,87 @@
+---
+title: "Story Songs 2: Music That Follows the Story"
+toc: true
+toc-depth: 2
+description: "How dynamics, texture, register, a borrowed chord or a deceptive cadence carry the feeling of a story: the same verse arranged three ways, a chord that turns the mood, and a band that drops out to leave a line bare. All on the band."
+instruments: [piano, guitar, bass, drums, voice, other]
+topics: [pop, rock, arranging, harmony]
+has: [band, interactive]
+---
+
+{{< include _arrange-kit.qmd >}}
+
+The words say what happens. The music says **how it feels**, and a listener often believes the music over the words. If a sad line sits on bright,
+busy music, the song sounds like it is lying; if the music slowly changes as the story does, the listener feels the story without being told.
+This lesson shows five tools. Each example is the site's own band: press **▶ Play**, and use the buttons to switch players and versions.
+
+**How to use the page.** The chords are the same four (C, G, Am, F) in most examples, so that you hear only the change being made.
+
+## 1. Start small, finish big: dynamics and texture
+
+A ballad rarely starts at full volume. It starts with the fewest players, often one chord instrument and the voice, and adds as the story gains weight:
+bass in verse 2, drums in the chorus, everyone in the last chorus. Then often it takes everything away for one line.
+
+Hear the same four chords with one player, then two, then the whole band. Press the **Who plays** buttons while it runs.
+
+<div class="ar-demo" data-style="pop" data-chart="C|G|Am|F|C|G|F|C" data-tempo="70" data-comp="piano" data-on="comp" data-staves="comp bass"></div>
+
+**Task.** Plan a four-step build for a three-verse ballad: who plays in verse 1, verse 2, the chorus, the last chorus? Write it as a table and keep it in your [process journal](process-journal.qmd).
+A rule of thumb: **one new thing at each section**, never three.
+
+## 2. Register: higher means more
+
+When a melody or a piano part moves up, it sounds like more energy, more strain, more hope. The same chords an octave higher feel lighter; an octave lower, heavier.
+Hear the piano in the same chords at three octaves (the first button is as written).
+
+<div class="ar-demo" data-style="pop" data-chart="C|G|Am|F" data-tempo="72" data-comp="piano" data-choice-label="Piano:" data-choices='[{"label":"Middle","opts":{"octave":{"comp":0}}},{"label":"An octave up","opts":{"octave":{"comp":1}}},{"label":"An octave down","opts":{"octave":{"comp":-1}}}]'></div>
+
+A common plan: verse low and close to speech, chorus higher. The melody's **climax** (see [Composing 1](compose-melody.qmd)) usually lands on the most important word of the story.
+
+## 3. A chord that turns the mood: the borrowed minor iv
+
+The song is in C major, so the F chord is the major IV. Change it to **F minor** (borrowed from C minor) and the same line suddenly sounds like it has had bad news.
+Songwriters use it at the exact moment the story turns: *the good thing ends*. See [Borrowed Chords](borrowed-chords.qmd) for how it is built.
+
+<div class="ar-demo" data-style="pop" data-chart="C|G|Am|F" data-tempo="72" data-comp="piano" data-choice-label="Last chord:" data-choices='[{"label":"F (major, the story is fine)","chart":"C|G|Am|F|C|G|Am|F"},{"label":"Fm (borrowed, something has gone wrong)","chart":"C|G|Am|F|C|G|Am|Fm"}]'></div>
+
+Listen to the second time round. The only difference is one note in one chord, yet the mood shifts. Where in *your* story would you put it?
+
+## 4. Not the ending you expected: the deceptive cadence
+
+The strongest sense of an ending is **V to I** (G to C): the question is answered. If the music goes to **V then vi** (G to Am) instead, we arrive somewhere
+close but sadder. It is the sound of "and yet". Use it when the story stops one step short of what the listener hoped for. (See [Cadences](cadences.qmd).)
+
+<div class="ar-demo" data-style="pop" data-chart="C|F|G|C" data-tempo="72" data-comp="piano" data-choice-label="Ending:" data-choices='[{"label":"V to I (the answer)","chart":"C|F|G|C|C|F|G|C"},{"label":"V to vi (and yet)","chart":"C|F|G|C|C|F|G|Am"}]'></div>
+
+## 5. Take everything away
+
+The strongest line in many ballads is the one the band **leaves**. If the whole band is playing, the listener hears music; if only the voice is left, the listener hears a person.
+The same idea is in [Fills, Riffs and Licks](fills-riffs.qmd): the band speaks in the gaps, and sometimes the most telling thing the band can do is not speak.
+
+Hear a break: the band plays two bars, then bass and drums stop and only the piano is left.
+
+<div class="ar-demo" data-style="pop" data-chart="C|G|Am|F|C|G|F|C" data-tempo="70" data-comp="piano" data-on="bass comp drums" data-staves="comp bass"></div>
+
+Switch **Bass** and **Drums** off in the second half of the pass. Use the same trick before the last chorus: stop, leave one bar of silence, then start again with everyone.
+
+## 6. Reading the toolbox in a real song
+
+| Tool | What the listener feels | What to listen for |
+|---|---|---|
+| **Fewer players** | intimate, private | a voice and one instrument in verse 1 |
+| **More players** | the stakes rise | a part joins at each new section |
+| **Higher register** | more strain or hope | the chorus melody starts higher than the verse's |
+| **Louder** | more urgency | the drums change from sticks to brushes, or the reverse |
+| **A borrowed chord** | a shadow, a memory | one chord that sounds "off" for a moment |
+| **A deceptive cadence** | a step short, or an unexpected turn | the line that should land on home goes somewhere else |
+| **A key change** | a new level of feeling | the whole song lifts, often before the last chorus |
+| **Silence or a stripped bar** | the line stands alone | the band stops before the most important word |
+
+**Task.** Take the song in [Story Songs 1](story-songs.qmd#story-map-fill-it-in-while-you-listen) and add a fifth column to your map: *which of these tools does the music use here, and what does the story need at that point?*
+
+Next: [Story Songs 3: The Ballad](ballad.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+<!-- /works-cited -->

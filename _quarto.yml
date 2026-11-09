@@ -122,6 +122,14 @@ website:
             - lessons/arrange-chords.qmd
             - lessons/arrange-organ.qmd
             - lessons/patterns/index.qmd
+        - section: "Story Songs (Rock and Pop Ballads)"
+          contents:
+            - lessons/story-songs.qmd
+            - lessons/story-music.qmd
+            - lessons/ballad.qmd
+            - lessons/story-case-studies.qmd
+            - lessons/story-lyric.qmd
+            - lessons/story-voice.qmd
         - section: "Composing"
           contents:
             - lessons/compose-melody.qmd
@@ -318,8 +326,12 @@ website:
               text: "11. Melodic Analysis"
             - href: theory/pop-forms.qmd
               text: "12. Form in Popular Music"
+            - href: theory/phrases-in-combination.qmd
+              text: "13. Phrases in Combination"
             - href: theory/accompaniment-textures.qmd
               text: "14. Accompanimental Textures"
+            - href: theory/creating-contrast.qmd
+              text: "15. Creating Contrast"
             - href: theory/figured-bass.qmd
               text: "16. Figured Bass"
             - href: theory/secondary-dominants.qmd
@@ -334,6 +346,10 @@ website:
               text: "21. Augmented Sixth Chords"
             - href: theory/modulation.qmd
               text: "22. Modulation"
+            - href: theory/binary-ternary.qmd
+              text: "24. Binary and Ternary Forms"
+            - href: theory/sonata-rondo.qmd
+              text: "25. Sonata and Rondo Forms"
             - href: theory/jazz-theory.qmd
               text: "31. Jazz Theory"
         - section: "Analysed Scores"

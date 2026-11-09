@@ -253,7 +253,7 @@
     // ---- loop modes: listen, play along, play alone (silent, a click), listen then play ----
     // A pass you play is a take on the Notation page: it is told when the phrase's first downbeat sounds (nt-pass, in
     // epoch ms, so the two windows share a clock) and records with no count-in of its own.
-    var pass = 0, actx = null, clickT = null;
+    var pass = 0, actx = null, clickOut = null, clickT = null;
     function mode() { return (modeIn && modeIn.value) || 'listen'; }
     function playing(n) { var md = mode(); return md === 'along' || md === 'alone' || (md === 'cycle' && n % 2 === 1); }
     function silent(n) { var md = mode(); return md === 'alone' || (md === 'cycle' && n % 2 === 1); }
@@ -287,10 +287,10 @@
     }
     function tick1(down) {
       try {
-        if (!actx) { actx = new (window.AudioContext || window.webkitAudioContext)(); if (window.AudioTap) AudioTap.register(actx); }
+        if (!actx) { actx = new (window.AudioContext || window.webkitAudioContext)(); clickOut = actx.createGain(); clickOut.connect(actx.destination); if (window.AudioTap) AudioTap.register(actx, clickOut, "Phrase click"); }
         var o = actx.createOscillator(), gn = actx.createGain(), t = actx.currentTime;
         o.frequency.value = down ? 1500 : 1000; gn.gain.setValueAtTime(0.25, t); gn.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
-        o.connect(gn); gn.connect(actx.destination); o.start(t); o.stop(t + 0.06);
+        o.connect(gn); gn.connect(clickOut || actx.destination); o.start(t); o.stop(t + 0.06);
       } catch (e) {}
     }
     if (M() && M().onWrap) M().onWrap(function (l) { if (current() < 0) return; pass++; startPass(); });

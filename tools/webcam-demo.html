@@ -82,7 +82,13 @@
 
   let state = 'idle', target = 0, score = 0, tries = 0, feedback = '', fbColor = '#888', fbUntil = 0;
   let pointer = null, ripples = [], pressed = null, t0 = 0;
-  let check = null, stream = null, rec = null, chunks = [], ac = null, mixDest = null;
+  let check = null, stream = null, rec = null, chunks = [], ac = null, mixDest = null, acOut = null;
+  // the demo's AudioContext, its sound through one output gain (registered with AudioTap when the page has it)
+  function newCtx() {
+    const c = new AudioContext(); acOut = c.createGain(); acOut.connect(c.destination);
+    if (window.AudioTap) AudioTap.register(c, acOut, 'Webcam demo');
+    return c;
+  }
 
   function newTarget() { let n; do n = Math.floor(Math.random()*12); while (n === target); target = n; }
 
@@ -100,7 +106,7 @@
     const o = ac.createOscillator(), g = ac.createGain();
     o.type = 'triangle'; o.frequency.value = 440*2**((midi-69)/12);
     g.gain.setValueAtTime(check && check.output === 'speakers' ? 0.08 : 0.25, ac.currentTime); g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime+0.8);
-    o.connect(g); g.connect(ac.destination); if (mixDest) g.connect(mixDest);
+    o.connect(g); g.connect(acOut || ac.destination); if (mixDest) g.connect(mixDest);
     o.start(); o.stop(ac.currentTime+0.8);
   }
 
@@ -140,7 +146,7 @@
         midiName = ins.length ? 'MIDI: ' + ins.map(i => i.name).join(', ') : 'No MIDI keyboard connected';
         ins.forEach(i => i.onmidimessage = e => {
           const [st, note, vel] = e.data;
-          if ((st & 0xf0) === 0x90 && vel > 0) { if (!ac) ac = new AudioContext(); play(note, 'midi', vel); }
+          if ((st & 0xf0) === 0x90 && vel > 0) { if (!ac) ac = newCtx(); play(note, 'midi', vel); }
         });
       };
       hook(); access.onstatechange = hook;
@@ -222,7 +228,7 @@
     } catch (err) { $('status').textContent = 'Camera not allowed: ' + err.message; return; }
     cam.srcObject = stream; await cam.play();
 
-    ac = new AudioContext(); mixDest = ac.createMediaStreamDestination();
+    ac = newCtx(); mixDest = ac.createMediaStreamDestination();
     if (stream.getAudioTracks().length) ac.createMediaStreamSource(stream).connect(mixDest);  // mic into the mix
 
     const out = new MediaStream([...cv.captureStream(30).getVideoTracks(), ...mixDest.stream.getAudioTracks()]);

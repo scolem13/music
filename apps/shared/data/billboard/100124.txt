@@ -1,0 +1,15 @@
+# title: Glass Onion
+# artist: The Beatles
+# metre: 4/4
+# tonic: A
+
+0.0	silence
+1.440	verse, | A:min . . . | F:7 . . . | A:min . . . | F:7 . . . | A:min . . . | G:min7 . . . |
+13.479	refrain, | C . . . | G:min7 . . . | C . . . | F:7 . . . | D:7 . . . | F:7 . . . | D:7 . . . | F:7 . . . | G . . . |
+31.347	verse, | A:min . . . | F:7 . . . | A:min . . . | F:7 . . . | A:min . . . | G:min7 . . . |
+43.352	refrain, | C . . . | G:min7 . . . | C . . . | F:7 . . . | D:7 . . . | F:7 . . . | D:7 . . . | F:7 . . . | G . . . |
+61.231	bridge, | A:min . . . | A:min . . . | F/3 . . . | F/3 . . . | F#:dim/b3 . . . | F#:dim/b3 . . . | A:min7 . . . | A:min7 . . . | F:7 . . . | G . N . |
+80.840	verse, | A:min . . . | F:7 . . . | A:min . . . | F:7 . . . | A:min . . . | G:min7 . . . |
+92.833	refrain, | C . . . | G:min7 . . . | C . . . | F:7 . . . | D:7 . . . | F:7 . . . | D:7 . . . | (5/4) F:7 . . . G | F:7(b9) . . . |
+111.705	outro, | F:7(b9) . Bb:dim7/5 C:dim7 | C:dim7/2 . . . | C:dim7/2 Bb:dim7/7 D:dim7 A:dim7 | A:dim7 F:7(b9) . . | F:7(b9) B:dim7/b9 Bb:dim7/5 C:dim7 | C:dim7/2 . . . | (3/4) C:dim7/2 B:dim7/b9 Bb:dim7/5 |
+137.979	end

@@ -1,0 +1,80 @@
+---
+title: "Story Songs 6: Singing the Story"
+toc: true
+toc-depth: 2
+description: "Vocal delivery for a story song: speak the lyric first, choose the words to land on, breathe where the sense breaks, change the voice between verse and chorus, and sing over a ballad backing. Record two takes and compare them."
+instruments: [voice, other]
+topics: [pop, voice]
+has: [band, interactive]
+---
+
+{{< include _arrange-kit.qmd >}}
+
+A story song can be well written and still fall flat if it is sung like a list. The singer is the narrator, and every choice of volume, speed and colour tells the listener
+what the narrator feels. This lesson is about those choices. For voice technique itself (breath, mix, safe belting) see [Pop Singing](voice-pop.qmd), and for floating words over the beat, [Jazz Singing: back-phrasing a ballad](voice-jazz.qmd#back-phrasing-a-ballad).
+
+::: {.vx-care}
+**Look after your voice.** Warm up first. Stop if anything hurts or feels tight. Quiet, close singing is not safer than loud singing if you squeeze to make it.
+:::
+
+## 1. Speak it first
+
+Before you sing a word, **say the verse** as if telling it to a friend. Notice where you naturally pause, which words you lean on, where you speed up, and where you slow down. That is the shape of the story.
+The melody should serve that shape, not replace it.
+
+**Task.** Say your verse aloud twice: once flat, once as if it really happened to you. Mark the words that changed.
+
+## 2. Choose the words that land
+
+In every line there is one word that carries the meaning. Singers put the weight there: a little longer, a little louder, or a little quieter and closer. Mark it on your lyric sheet.
+
+Rule of thumb: **one word per line**, two at the most. If everything is stressed, nothing is.
+
+## 3. Breathe where the sense breaks
+
+Take a breath at a comma or a change of thought, not in the middle of a phrase. A breath before an important word is also a way of **warning the listener** that something is coming. And a breath that is *not* taken, a phrase run straight on, can sound like a story getting out of control.
+
+## 4. Verse is close, chorus is open
+
+A common plan, and the one the band uses ([Story Songs 2](story-music.qmd)):
+
+| | Verse | Chorus |
+|---|---|---|
+| **Volume** | quieter | fuller |
+| **Distance from the mic** | closer, more breath | a little back |
+| **Tone** | speech-like, plain | rounder, longer vowels |
+| **Rhythm** | follows the words, may be loose | firmer, closer to the beat |
+| **Feeling** | telling someone | telling everyone |
+
+And the last chorus is often the most different: bigger, or the opposite, so quiet that it has to be listened to.
+
+## 5. Ends of words
+
+In a ballad the **last consonants** (d, t, s) carry meaning. A tidy end to a word makes a line sound sure; a dropped end makes it sound tired or tender. Decide which you want for each line, and be consistent.
+At the mic, see [Recording 2: pops and esses](rec-voice.qmd#pops-and-esses).
+
+## 6. Sing over a ballad
+
+Sing (or speak in rhythm) over this backing. Take the chords from the loop you used in [Story Songs 5](story-lyric.qmd). Switch the instruments off in turn to hear how much room the voice has with fewer players.
+
+<div class="ar-demo" data-style="pop" data-chart="C|G|Am|F|C|G|Am|F" data-tempo="68" data-comp="piano" data-on="comp bass" data-staves="comp"></div>
+
+At 68 beats per minute each bar is a little under 3.5 seconds. Count how many words you can say comfortably in a bar. That is your line length.
+
+## 7. Record two takes and compare
+
+1. Record the verse and chorus on your phone, **once with every word equal**, then **once with your marked words landed, breaths planned, verse close and chorus open**.
+2. Listen on headphones. For each take, write one sentence: *what does the narrator feel?*
+3. Which take tells the story better? Which single change made the difference?
+4. Keep both, named and dated, in your [process journal](process-journal.qmd). Two versions and a reason is evidence of exploring ideas for Criterion B.
+
+## 8. If you are not the singer
+
+You may write the song and give it to another voice. Then say in writing **what you want**: which words, how close, how loud. Or sit with them at the mic. A narrator has to believe the story, so tell them what you meant.
+
+Back to the beginning: [Story Songs 1: Songs That Tell Stories](story-songs.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+<!-- /works-cited -->

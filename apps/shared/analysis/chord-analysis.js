@@ -36,6 +36,17 @@
 // the downbeat, steps down; anticipation = the next chord's note sounding early). Passing, neighbor, escape and anticipation are off the
 // beat here; appoggiatura and suspension on it (the book lets passing tones be accented too; this site's choice). Pedal point, retardation
 // and the double / incomplete neighbor are named in the chapter but not made here. Whether an escape tone is accented the book doesn't say.
+// Level ch16 (figures): Roman numerals with inversions answered in figures only (a /3rd, /5th or /7th slash is not accepted), the passage
+// templates use 6/4 chords in their four uses; a cadential I64 (I64 directly before V) may be answered "Cad64" (also Cad 6/4, cadential 6/4).
+// Whether the book prints the cadential 6/4 as I64 or Cad64 is taken from the plan in theory/chord-analysis.qmd (unverified here).
+// Levels ch17 / ch18 (applied chords, Hutchinson's Secondary Dominants / Secondary Diminished Chords): V, V7 (any inversion) or vii°, vii°7,
+// viiø7 of the chord that follows, written V7/V, viiø65/ii. The checker already read these (parseRN target). The target is a major or
+// minor triad of the key, never a diminished one (the book: vii° and, in minor, ii° can't be tonicized). The book's irregular resolutions
+// (deceptive, to a subtonic) are left out. Half-diminished sevenths are used for major targets and fully diminished for either (the book:
+// "traditionally" half-diminished, but fully diminished can also tonicize a major triad).
+// Levels ch19 / ch20 (Hutchinson's Mode Mixture, Neapolitan): borrowed chords come from the parallel minor (lowered 6 most common, also 3 and 7);
+// the only borrowing in minor is the Picardy third (major I at the end). The Neapolitan is labelled N, most often N6, pre-dominant. Not made:
+// borrowed chords in the other stages' melodies beyond the usual, the deceptive cadence V to ♭VI as a named cadence.
 // After ch. 10 (16 figures, 17-21 chromatic chords): the plan is in
 // theory/chord-analysis.qmd, "What comes next". parseRN already reads V7/V and N6 for them.
 // Test: node tests/analysis/chord-analysis.test.js
@@ -213,6 +224,28 @@
   var FNAMES = { T: "T tonic", TP: "TP tonic prolongation", PD: "PD pre-dominant", D: "D dominant" };
   var NCT10 = T("major", ["I IV V I", "I vi ii V I", "I ii V I", "I IV ii V I", "I vi IV V I", "I iii vi IV V I"])
     .concat(T("minor", ["i iv V i", "i VI iv V i", "i iv i V i", "i III iv V i", "i VI ii° V i"]));
+  // ch. 16 (figures): inversions answered in figures only (6, 64, 65, 43, 42; no /3rd), second-inversion chords in their four uses
+  // (cadential I64 before V, passing, neighbor / pedal, arpeggiated bass) and the cadential 6/4 as "Cad64"
+  var FIGS = T("major", ["I IV I64 V I", "I ii6 I64 V7 I", "I IV6 I64 V I", "I vi ii6 I64 V I", "I ii65 I64 V7 I", "I V I6 IV V I", "I V43 I6 ii65 V7 I", "I IV I64 IV I",
+    "I V64 I6 IV V I", "I V65 I IV64 I V I", "I vi ii65 V I", "I iii6 IV I64 V7 I"])
+    .concat(T("minor", ["i iv i64 V i", "i iv6 i64 V7 i", "i VI iv6 i64 V i", "i V6 i iv6 V i", "i V65 i iv64 i V i", "i iiø65 i64 V7 i", "i VII6 i64 V i", "i iv V6 i"]));
+  // ch. 17 secondary dominants (V and V7 of a chord other than I, any inversion) and ch. 18 secondary diminished chords (vii°, vii°7, viiø7 of
+  // a chord other than I); the target is always the chord the applied chord goes to next in the template
+  var SECDOM = T("major", ["I V/V V I", "I V7/V V I", "I V65/V V I", "I IV V43/V V7 I", "I V/vi vi IV V I", "I V7/vi vi ii V7 I", "I V6/vi vi ii6 V I", "I V7/ii ii V I",
+    "I V42/ii ii6 V I", "I V7/IV IV V I", "I V7/iii iii vi ii V7 I", "I vi V65/V V I", "I V7/vi vi V7/V V I"])
+    .concat(T("minor", ["i V7/III III iv V i", "i V/III III VI iv V i", "i V7/iv iv V i", "i V6/iv iv6 V i", "i V/V V i", "i iv V7/V V i", "i V7/VI VI iv V i",
+      "i V65/III III VI iv V i", "i V7/VII VII III VI iv V i", "i V43/V V i"]));
+  var SECDIM = T("major", ["I vii°6/V V I", "I vii°/V V I", "I viiø65/V V I", "I vii°7/V V I", "I vii°6/vi vi ii V I", "I viiø7/ii ii V I", "I vii°6/ii ii6 V I",
+    "I vii°65/vi vi IV V I", "I vii°7/iii iii vi ii V I", "I vi vii°6/V V I"])
+    .concat(T("minor", ["i vii°7/V V i", "i vii°65/V V i", "i vii°43/V V i", "i vii°6/III III iv V i", "i vii°7/iv iv V i", "i vii°65/VI VI iv V i", "i vii°7/III III VI iv V i",
+      "i iv vii°6/V V i", "i vii°65/VII VII III VI iv V i"]));
+  // ch. 19 mode mixture: major keys borrowing from the parallel minor (iv, ♭VI, ♭VII, ♭III, ii°, iiø7, iv7), and the Picardy I at the end of a
+  // minor piece. ch. 20 the Neapolitan: N6 (♭II6, a major triad on ♭2, usually first inversion) before V in minor, a few in major.
+  var MIXTURE = T("major", ["I iv V I", "I IV iv I", "I iv6 V I", "I ♭VII ♭VI V I", "I ♭VI iv V I", "I V ♭VI I", "I ii°6 V I", "I iiø65 V7 I", "I iv7 V7 I", "I ♭VI ♭VII I",
+    "I IV ♭VII I", "I vi iv V I", "I ♭III IV V I", "I iv ii°6 V I", "I ♭VII IV I", "I V ♭VI ii V I"])
+    .concat(T("minor", ["i iv V I", "i VI iv V I", "i iv6 V I", "i ii°6 V I"]));
+  var NEAP = T("minor", ["i N6 V i", "i iv N6 V i", "i N6 V7 i", "i iv6 N6 V i", "i VI N6 V i", "i N6 i64 V i", "i ii°6 N6 V i", "i N6 V7 i", "i N V i"])
+    .concat(T("major", ["I IV N6 V I", "I N6 V7 I"]));
   var LEVELS = [
     { id: "ch6a", ch: 6, name: "6. Chord symbols, root position", answer: "sym", inv: false, rhythm: "bar", tpl: POP, most: 2 },
     { id: "ch6b", ch: 6, name: "6. Chord symbols with slash chords", answer: "sym", inv: true, rhythm: "half", tpl: SLASH },
@@ -221,7 +254,12 @@
     { id: "ch8a", ch: 8, name: "8. Seventh chords as symbols", answer: "sym", inv: true, rhythm: "half", tpl: SEVENTH },
     { id: "ch8b", ch: 8, name: "8. Seventh chords as Roman numerals", answer: "rn", inv: true, rhythm: "half", tpl: SEVENTH },
     { id: "ch9", ch: 9, name: "9. Harmonic function (T, TP, PD, D) and cadences", answer: "rn", inv: true, rhythm: "half", fn: true, tpl: FUNC },
-    { id: "ch10", ch: 10, name: "10. Non-chord tones by name", answer: "rn", inv: false, rhythm: "bar", nct: true, tpl: NCT10 }
+    { id: "ch10", ch: 10, name: "10. Non-chord tones by name", answer: "rn", inv: false, rhythm: "bar", nct: true, tpl: NCT10 },
+    { id: "ch17", ch: 17, name: "17. Secondary dominants (V/V, V7/vi ...)", answer: "rn", inv: true, rhythm: "half", applied: true, tpl: SECDOM },
+    { id: "ch18", ch: 18, name: "18. Secondary diminished chords (vii°/V, viiø7/ii ...)", answer: "rn", inv: true, rhythm: "half", applied: true, tpl: SECDIM },
+    { id: "ch19", ch: 19, name: "19. Mode mixture (borrowed chords)", answer: "rn", inv: true, rhythm: "half", tpl: MIXTURE },
+    { id: "ch20", ch: 20, name: "20. The Neapolitan chord (N6)", answer: "rn", inv: true, rhythm: "half", tpl: NEAP },
+    { id: "ch16", ch: 16, name: "16. Figures (inversions, the cadential 6/4)", answer: "rn", inv: true, rhythm: "half", figs: true, tpl: FIGS }
   ];
   var LV = {}, LEVEL_NAMES = {}; LEVELS.forEach(function (L) { LV[L.id] = L; LEVEL_NAMES[L.id] = L.name; });
   var STAGES = ["rh", "guitar", "satb", "broken", "melody"];
@@ -468,8 +506,9 @@
     return out;
   }
   function noteTok(n, sig, st) {
-    var k = n.l + "/" + n.o, cur = Object.prototype.hasOwnProperty.call(st, k) ? st[k] : sig[n.l]; st[k] = n.a;
-    var s = (n.a !== cur ? ACC_ABC[n.a] : "") + (n.o >= 5 ? LET[n.l].toLowerCase() : LET[n.l]);
+    var k = n.l + "/" + n.o, cur = Object.prototype.hasOwnProperty.call(st, k) ? st[k] : sig[n.l], any = Object.prototype.hasOwnProperty.call(st, n.l) ? st[n.l] : sig[n.l];
+    st[k] = n.a; st[n.l] = n.a;   // a reader may carry an accidental to the same letter in another octave: sign the note when either state differs
+    var s = (n.a !== cur || n.a !== any ? ACC_ABC[n.a] : "") + (n.o >= 5 ? LET[n.l].toLowerCase() : LET[n.l]);
     for (var a = 5; a < n.o; a++) s += "'"; for (var b = 4; b > n.o; b--) s += ",";
     return s;
   }
@@ -551,12 +590,13 @@
         arr.voices.forEach(function (v) { var at = 0; v.evs.forEach(function (e) { if (e.nct) ncts.push({ ci: e.ci, t: at, note: e.notes[0], kind: e.nct, label: e.label || null, acc: !!e.acc }); at += e.dur; }); });
         var items = chords.map(function (c, i) {
           var tok = c.tok;
-          if (tex === "rh" && c.inv !== build(key, parseRN(tok)).inv) tok = tok.replace(/(64|65|43|42|6|7)$/, "") + (c.notes.length === 4 ? "7" : "");
+          if (tex === "rh" && c.inv !== build(key, parseRN(tok)).inv) { var sl = tok.indexOf("/"), hd = sl >= 0 ? tok.slice(0, sl) : tok; tok = hd.replace(/(64|65|43|42|6|7)$/, "") + (c.notes.length === 4 ? "7" : "") + (sl >= 0 ? tok.slice(sl) : ""); }
           return { chord: c, rn: rnText(tok, c, "fig"), rnSlash: rnText(tok, c, "slash"), sym: symText(c, true), symRoot: symText(c, false), span: spans[i] };
         });
         var cad = null;
         if (L.fn) { var ft = tpl[1].split(" "); items.forEach(function (it, i) { it.fn = fnOf(ft, i); }); cad = cadenceOf(ft); }
-        return { seed: seed, key: key, level: L.id, fn: !!L.fn, nctNamed: !!L.nct, cadence: cad, inv: L.inv, answer: answer, findKey: s.key === "find", texture: tex, abc: abc, items: items, ncts: ncts,
+        if (L.figs) { var gt = tpl[1].split(" "); items.forEach(function (it, i) { var a = fnParse(gt[i]), b = gt[i + 1] ? fnParse(gt[i + 1]) : null; it.cad64 = !!(a && a.deg === 1 && a.c64 && b && b.deg === 5); }); }
+        return { seed: seed, key: key, level: L.id, figs: !!L.figs, fn: !!L.fn, nctNamed: !!L.nct, cadence: cad, inv: L.inv, answer: answer, findKey: s.key === "find", texture: tex, abc: abc, items: items, ncts: ncts,
           qpm: tex === "melody" || tex === "broken" ? 84 : 66, voices: arr.voices, shapes: arr.shapes || null, transpose: arr.transpose || 0, bars: (spans[spans.length - 1].start + spans[spans.length - 1].len) / 8, prog: tpl[1] };
       }
       return null;
@@ -576,10 +616,14 @@
   }
 
   // ---- checking
-  function expected(q, i) { var it = q.items[i]; return q.answer === "sym" ? (q.inv ? it.sym : it.symRoot) : (q.inv ? it.rn : it.rn.replace(/(64|6)$/, "").replace(/(65|43|42)$/, "7")); }
+  function expected(q, i) { var it = q.items[i]; if (q.figs && it.cad64) return "Cad64 (or " + it.rn + ")"; return q.answer === "sym" ? (q.inv ? it.sym : it.symRoot) : (q.inv ? it.rn : it.rn.replace(/(64|6)$/, "").replace(/(65|43|42)$/, "7")); }
   function check(q, i, typed) {
-    var c = q.items[i].chord, t = String(typed || "").trim(); if (!t) return false;
+    var c = q.items[i].chord, t = String(typed || "").trim().replace(/\s*\(or [^)]*\)$/, ""); if (!t) return false;
     if (q.answer === "sym") { var sy = parseSym(t); return sameChord(sy, c, !q.inv); }
+    if (q.figs) {
+      if (/\/(3rd|5th|7th)/i.test(t)) return false;   // figures only on this level
+      if (/^cad(ential)?\.?\s*(6\/?4|64)$/i.test(t)) return !!q.items[i].cad64;
+    }
     var mine = build(q.key, parseRN(t)); return !!mine && mine.cat === c.cat && sameChord(mine, c, !q.inv);
   }
   function checkNct(q, k, typed) { return !!q.ncts[k] && String(typed || "") === q.ncts[k].kind; }
@@ -636,14 +680,26 @@
     if (q.inv) out.push({ h: "Bass", t: "The lowest note is " + nm(c.bass) + ", the " + MEMBER[c.inv] + ": " + INV_NAME[c.inv] + "." });
     if (q.fn) out.push({ h: "Function", t: fnWhy(q, i) + " Answer: " + it.fn + "." });
     if (q.answer === "sym") { out.push({ h: "Answer", t: (q.inv ? it.sym : it.symRoot) + (q.inv && c.inv ? " (the slash and the bass note show the inversion)" : "") }); return out; }
+    if (c.cat === "N") out.push({ h: "Neapolitan", t: nm(r) + " is the lowered 2nd degree of " + key.label + ", and the chord on it is a major triad: the Neapolitan, written N (not ♭II) in the book's analysis, usually in first inversion (N6), with the 3rd in the bass. It leads to V." });
+    else if (c.cat === "" && key.mode === "major" && c.notes.some(function (n) { return n.a < key.sig[n.l]; })) {
+      var lo = c.notes.filter(function (n) { return n.a < key.sig[n.l]; });
+      out.push({ h: "Borrowed chord", t: lo.map(nm).join(", ") + (lo.length > 1 ? " are" : " is") + " lowered, not in " + key.label + " but in the parallel minor (" + nm(key.tonic) + " minor): a borrowed chord (mode mixture). Name the root, quality and inversion as usual; a ♭ before the numeral lowers the root by a half step from the major scale." });
+    }
+    if (c.cat === "applied") {
+      var tg = c.tok.slice(c.tok.indexOf("/") + 1), nx = q.items[i + 1], dom = /^(maj|dom7)$/.test(c.q);
+      out.push({ h: "Applied chord", t: nm(r) + (dom ? " major / dominant seventh" : " diminished") + " does not fit " + key.label + " (it has a chromatic note). Look at where it goes: " + (nx ? "the next chord is " + nm(nx.chord.notes[0]) + (nx.chord.q === "min" ? "m" : "") + ", " + nx.rn + ". " : "") +
+        (dom ? "A major triad or dominant 7th a perfect 5th above the chord it goes to is the dominant of that chord: V" + (c.notes.length === 4 ? "7" : "") + "/" + tg + "." : "A diminished chord a half step below the chord it goes to is its leading-tone chord: vii°" + (c.notes.length === 4 ? (c.q === "hdim7" ? "ø7" : "7") : "") + "/" + tg + ".") });
+    } else {
     var dg = ((r.l - key.tonic.l) % 7 + 7) % 7 + 1, num = ["i", "ii", "iii", "iv", "v", "vi", "vii"][dg - 1], big = /^(maj|aug|dom7|maj7)$/.test(c.q);
     var raised = key.mode === "minor" && c.notes.filter(function (n) { return n.l === (key.tonic.l + 6) % 7 && n.a === key.sig[n.l] + 1; })[0];
     var low = r.a !== key.sig[r.l] && !(raised && sameName(raised, r));
     out.push({ h: "Scale degree", t: nm(r) + " is the " + ORD[dg - 1] + " degree of " + key.label + (low ? ", lowered: ♭" + dg : "") + ". " + (big ? "A major quality takes a capital numeral, " : "A minor or diminished quality takes a small one, ") + (low ? "♭" : "") + (big ? num.toUpperCase() : num) + "." +
       (raised ? " " + nm(raised) + " is the raised 7th (the leading tone), as usual in minor." : "") });
-    if (q.inv) out.push({ h: "Inversion", t: c.notes.length === 4 ? "Seventh chords: 7 (root position), 65, 43, 42 (or /3rd, /5th, /7th)." : "Triads: nothing for root position, 6 for first inversion, 64 for second (or /3rd, /5th)." });
+    }
+    if (q.figs) out.push({ h: "Figures", t: "Write the figure after the numeral: 6 (first inversion), 64 (second), and for sevenths 65, 43, 42 (a figure, not /3rd). " + (it.cad64 ? "This I64 sits on the bass of V's note and goes on to V: the cadential 6/4. It may be written Cad64." : c.inv === 2 ? "A second-inversion chord that is not the cadential 6/4 is a passing, neighbor (pedal) or arpeggiated 6/4: look at how the bass note is approached and left." : "") });
+    else if (q.inv) out.push({ h: "Inversion", t: c.notes.length === 4 ? "Seventh chords: 7 (root position), 65, 43, 42 (or /3rd, /5th, /7th)." : "Triads: nothing for root position, 6 for first inversion, 64 for second (or /3rd, /5th)." });
     if (q.fn) out.push({ h: "Function", t: fnWhy(q, i) + " Answer: " + it.fn + "." });
-    out.push({ h: "Answer", t: expected(q, i) + (q.inv && it.rnSlash !== it.rn ? " (or " + it.rnSlash + ")" : "") });
+    out.push({ h: "Answer", t: expected(q, i) + (q.inv && !q.figs && it.rnSlash !== it.rn ? " (or " + it.rnSlash + ")" : "") });
     return out;
   }
 
@@ -970,7 +1026,7 @@
       var ss = Object.assign({}, s); if (seed != null) ss.seed = seed;
       q = make(ss); cardBox.innerHTML = ""; panel.innerHTML = ""; fb.textContent = ""; fb.className = "ca-fb"; cards = []; stackOk = []; active = -1; msg.textContent = "";
       if (!q) { prompt.textContent = "No passage fits these settings. Choose more keys."; paper.innerHTML = ""; return; }
-      var what = q.answer === "sym" ? "a chord symbol (" + (q.inv ? "C, Am, G7, C/E" : "C, Am, G7") + ")" : "a Roman numeral" + (q.inv ? " with its inversion (I6 or I/3rd, V65 or V7/3rd)" : " (I, ii, V7)");
+      var what = q.answer === "sym" ? "a chord symbol (" + (q.inv ? "C, Am, G7, C/E" : "C, Am, G7") + ")" : "a Roman numeral" + (q.inv ? (q.figs ? " in figures (I6, I64, V65; Cad64 for a cadential 6/4)" : " with its inversion (I6 or I/3rd, V65 or V7/3rd)") : " (I, ii, V7)");
       var job = doStack() && doName() ? "For each numbered chord, stack its notes in root position, then name it with " + what + "."
         : doStack() ? "Stack the notes of each numbered chord in close root position." : "Name each numbered chord with " + what + ".";
       if (q.nctNamed && doName()) job += " The small letters under the melody mark non-chord tones: name each one (passing, neighbor, escape, appoggiatura, suspension, anticipation).";
@@ -1005,7 +1061,7 @@
         cc.appendChild(csel); cc.appendChild(cw); cardBox.appendChild(cc); cards.push({ box: cc, sel: csel, cad: true, want: cw });
       }
       help.textContent = !doName() ? "" : q.answer === "sym" ? "Capital letter = major (A), small letter or m = minor (a, Am), ° or o diminished, + augmented; 7, maj7, m7, ø7 (m7b5), °7" + (q.inv ? "; a slash and the bass for an inversion (C/E)" : "") + ". # and b for ♯ and ♭."
-        : "Capitals for major (V), small for minor (ii), ° or o diminished, ø or h half-diminished, + augmented; 7 or M7 for sevenths" + (q.inv ? "; 6 64 65 43 42, or /3rd /5th /7th, for inversions" : "") + ". b before a numeral for ♭ (bVII).";
+        : "Capitals for major (V), small for minor (ii), ° or o diminished, ø or h half-diminished, + augmented; 7 or M7 for sevenths" + (q.level === "ch20" ? "; N6 for the Neapolitan (♭II6 also counts)" : "") + (q.level === "ch17" || q.level === "ch18" ? "; a slash for an applied chord (V7/V, vii°6/ii: the figure goes before the slash)" : "") + (q.inv ? "; 6 64 65 43 42, or /3rd /5th /7th, for inversions" : "") + ". b before a numeral for ♭ (bVII).";
       host.setAttribute("data-seed", q.seed);
       if (doStack()) openStack(0);
     }

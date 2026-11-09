@@ -1,0 +1,150 @@
+---
+title: "Binary and Ternary Forms: Practice for Chapter 24"
+toc: true
+toc-depth: 2
+description: "Chapter 24 of Hutchinson's Music Theory for the 21st-Century Classroom with examples from the site: sectional and continuous, two-reprise, balanced, rounded and simple binary, ternary and compound ternary, and how to tell rounded binary from ternary."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/soundfont.js?v=1"></script>
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/drills/drills.js?v=22"></script>
+<script>window.AX_NO_VOICE = true; window.AX_CAPTIONS = true;</script>
+<script src="/apps/shared/lessons/abc-ex.js?v=27"></script>
+```
+
+This page goes with **Chapter 24, Binary and Ternary Forms** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/BinaryAndTernaryForm.html). Read each section
+there first. It uses [Chapter 13](phrases-in-combination.qmd) (phrases and cadences): the book writes **phrases in lowercase** (a, b) and
+**sections in capitals** (A, B), and a section is usually one or more phrases.
+
+The examples are a folk tune from the site's tune collection and two movements from the
+[Analysed Scores Library](analysed-scores/view.qmd), where the experts' key labels sit under the music. The library's key plans are
+read from the analysis data; its bar numbers are approximate (a few bars either way), so open the score and listen for the changes
+yourself.
+
+## 24.1 Sectional or continuous, and other descriptors
+
+Every name for a binary or ternary form is built from descriptors in front of the form. The book gives these:
+
+| Word | Means |
+|---|---|
+| **sectional** | the first section (A) ends on the **tonic chord** |
+| **continuous** | the first section does **not** end on the tonic: it ends in a new key, or on a half cadence on V |
+| **two-reprise** | both sections are repeated (the repeat signs are in the score) |
+| **rounded** | the opening music comes back, after a contrasting passage, inside the second section |
+
+So you might say "two-reprise continuous rounded binary". Say the descriptors first, the form last.
+[Read 24.1](https://musictheory.pugetsound.edu/mt21c/BinaryAndTernaryForm.html)
+
+A tune from the collection shows *sectional*: "Yankee Doodle" has two eight-bar sections, and the first ends on E♭, the tonic.
+
+<div class="abc-ex" data-bpm="120"><script type="text/plain">
+X:1
+T:Yankee Doodle (Tune Library): A (bars 1-8) and B (bars 9-16)
+M:2/4
+L:1/8
+Q:1/4=120
+K:Eb
+"Eb" EE FG | EG "Bb" FB, | "Eb" EE FG | E2 "Bb"D2 | "Eb" EE FG |"Ab" AG FE | "Bb" DB, CD | "Eb" E2 E2 ||
+"Ab" C>D CB,| CD E2|"Eb" B,>C B,A, | G,2 B,2 | "Ab" C>D CB,| CD EC|"Eb" B,E "Bb"DF |"Eb"E2 E2|]
+</script></div>
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+A ends on E♭ (bar 8: V to I with the melody on E♭), so the form is **sectional**. B is new music that also ends on the tonic. A does not
+come back, so it is not rounded. It is a **sectional (simple) binary**, A B. Like a lot of folk music it is not a "binary" in the Baroque
+sense of moving to V and back again.
+:::
+
+## 24.2 Three kinds of binary
+
+**Balanced binary.** The first section ends in a new key (so it is continuous), and the second section ends with *essentially the same
+cadence*, now in the home key. The book's examples are Bach's Invention No. 8 and the Courante of his French Suite No. 6, and the form is
+common in Baroque dances.
+
+**Rounded binary.** After a contrasting passage at the start of the second section, the **opening music of the first section returns**, often
+shortened. It is common in Classical music (Haydn, Mozart, Beethoven), above all in a variation theme or the minuet of a minuet and trio.
+
+**Simple binary.** Neither of the above: no matching endings and no return. The second section often *starts* like the first and then
+develops its ideas. It is typical of Baroque and early Classical music.
+[Read 24.2](https://musictheory.pugetsound.edu/mt21c/BinaryAndTernaryForm.html)
+
+**The binary principle** is the key plan behind many Baroque binary pieces: the first section moves away from the tonic (to V in major,
+to III in minor), the second moves back.
+
+**Hear a rounded binary.** The minuet of Beethoven's first piano sonata is a clear one. Open
+[Op. 2 No. 1, movement 3](analysed-scores/view.qmd?id=beethoven-sonata-1-3) (the library's version is in 3/4 and starts with the
+minuet in F minor). The key labels in the analysis run **f minor, A♭ major, B♭ minor, f minor**: the first section leaves for the relative
+major (so it is **continuous**), the second begins in a contrasting key (B♭ minor), and F minor, the opening key, is back
+at about bar 19 (**rounded**). Play the library score from there and find the opening tune coming back.
+
+::: {.callout-tip collapse="true"}
+## Check yourself
+
+The first section ends away from the tonic (A♭ major), the second section opens elsewhere and then returns to the tonic with the opening
+melody. That is a **continuous rounded binary**; the repeats make it two-reprise. This is the reading the key plan supports; only your ears
+can confirm the returning melody.
+:::
+
+## 24.3 Ternary form
+
+Ternary form is **A B A**: statement, digression, restatement. Because the return is a full section, the B section is longer and more
+independent than in rounded binary: in Romantic character pieces (nocturnes, intermezzos, songs without words) each section can run to more
+than eight bars. The book's small example is Mozart's Andante K. 15mm, and its large one the Rachmaninov Prelude in C♯ minor.
+[Read 24.3](https://musictheory.pugetsound.edu/mt21c/BinaryAndTernaryForm.html)
+
+**Hear a ternary.** Mozart's Piano Sonata K. 545 has a slow movement with a clear contrasting middle.
+[Open K. 545, movement 2](analysed-scores/view.qmd?id=mozart-sonata-16-2). The analysis's key labels run **G major, D major, G major,
+G minor, B♭ major, C minor, G minor, G major**. The first stretch stays in G (with a side trip to D), the middle (from about bar 25) is
+in the minor, and G major returns at about bar 37. A in the home key, B in the minor, A back: it is usually heard as a **sectional ternary**
+(A closes in G). Listen for how different the B section's mood is.
+
+A "compound ternary" is a ternary form in which one of the sections is itself binary or ternary. The book's examples are the minuet and
+trio and the da capo aria. The whole of Beethoven's Op. 2 No. 1, III (above) is one: the minuet (rounded binary) is followed by a **trio** in
+F major (the labels change to **F major, C major, F major** at about bar 30) and then the minuet again, from the start.
+
+## 24.4 Rounded binary or ternary?
+
+Pieces with five or six phrases can be either. The book offers three tests; weigh them, as they may not agree.
+
+| Test | Points to rounded binary | Points to ternary |
+|---|---|---|
+| **Proportion** | the contrasting section is too short to stand alone (half as long as the opening, for example) | the middle section is as long as the others |
+| **Nature** | built from the first section's motives; harmony mostly a dominant pedal or V alternating with I | a new, contrasting melody |
+| **Era** | Baroque or Classical | Romantic |
+
+[Read 24.4](https://musictheory.pugetsound.edu/mt21c/BinaryAndTernaryForm.html)
+
+**Try it on the library.** Take Mozart's K. 545 slow movement and Beethoven's minuet above. For each: how long is the contrasting section
+compared with the opening? Is its melody new, or a rearrangement of the opening? Which way do the three tests point? You will find they
+point differently for the two, which is why the book calls this a judgment call.
+
+## 24.5 Written-out repeats
+
+Some pieces write the repeats out in full. Count them in your diagram (A A B B, not A B) even when the score doesn't show repeat signs.
+[Read 24.5](https://musictheory.pugetsound.edu/mt21c/BinaryAndTernaryForm.html)
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Sources of the examples:** the tune is from the site's beginning-band set; the two movements are from the Analysed Scores Library
+  (Mozart: DCML annotators' RomanText; Beethoven: BPS dataset). The key plans are read from the library's data; the bar numbers
+  are approximate because the data places key changes at beat positions, not bar lines.
+- **Readings of the forms** (continuous rounded binary for the Beethoven minuet, sectional ternary for the K. 545 slow movement) are
+  this page's, from the key plans and general knowledge of the pieces; the book analyses other pieces. Checked against the library's key labels,
+  not against a printed score.
+- **Not here:** the book's own examples (Bach's invention and French Suite courante, Brahms's Wiegenlied, Haydn Symphony No. 94 II,
+  Mozart K. 15mm, Rachmaninov's prelude, Beethoven's Bagatelle Op. 119/9, Handel's Gavotte) are not in the library. A balanced binary
+  and a simple binary from the site's own collection are still missing; the Bach suites in the Classical Themes are single themes, not
+  complete movements.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hutchinson, Robert. "Binary and Ternary Forms." *Music Theory for the 21st-Century Classroom*, ch. 24, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/BinaryAndTernaryForm.html](https://musictheory.pugetsound.edu/mt21c/BinaryAndTernaryForm.html).
+:::
+<!-- /works-cited -->

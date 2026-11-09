@@ -184,6 +184,60 @@ it into an assignment. Nothing is sent anywhere.
 A copied report ends with a **report code**. Your teacher pastes it on the [My Report](../my-report.qmd) page to see the same report
 with every answer, and to check that it wasn't changed.
 
+## Figures and the cadential 6/4 (chapter 16)
+
+Up to here you could write an inversion either way (I6 or I/3rd). This level asks for **figures only**: 6 for first inversion, 64 for
+second, and 65, 43, 42 for sevenths. A slash such as V7/3rd is not accepted. The passages use the second-inversion chord in its four
+jobs: the **cadential 6/4** (I64 right before V, which is really a decoration of V), a **passing** 6/4 (V64 between I and I6), a
+**neighbor** 6/4 (IV64 between two tonics) and the 6/4 over a bass that arpeggiates. When an I64 comes directly before V you may answer
+**Cad64** instead of I64 (both are accepted). The Steps list tells you which kind of 6/4 you have.
+
+<div class="chord-analysis" data-example data-settings="level=ch16&texture=satb&key=C major&prog=I ii6 I64 V7 I&seed=5"></div>
+
+<div class="chord-analysis" data-settings="level=ch16"></div>
+
+Hutchinson calls it the "cadential six-four" and writes it as I with the figure 6/4; "Cad64" is the usual label in Roman-numeral analysis datasets, and is accepted here as the same chord (the book itself does not print it).
+
+## Secondary dominants and secondary diminished chords (chapters 17 and 18)
+
+A chord with a note outside the key is often borrowed from another key for a moment: it **tonicizes** (treats as a tonic) the chord
+it goes to. Look at the next chord. If the odd chord is a major triad or a dominant seventh whose root is a perfect fifth above the
+next chord's root, it is a **secondary dominant**: V/V ("five of five"), V7/vi, V65/ii. If it is a diminished triad or a diminished
+seventh a half step below the next chord's root, it is a **secondary diminished** (leading-tone) chord: vii°6/V, vii°7/iv. A
+half-diminished seventh (viiø7/ii) is the usual one before a major chord, and the fully diminished seventh before a minor chord. The
+figure goes before the slash, as in V65/V. Only major and minor triads can be tonicized, never a diminished one (so no V/vii°).
+
+<div class="chord-analysis" data-example data-settings="level=ch17&texture=satb&key=C major&prog=I V65/V V I&seed=3"></div>
+
+<div class="chord-analysis" data-settings="level=ch17"></div>
+
+<div class="chord-analysis" data-example data-settings="level=ch18&texture=satb&key=a minor&prog=i vii°65/V V i&seed=3"></div>
+
+<div class="chord-analysis" data-settings="level=ch18"></div>
+
+The passages leave out the book's irregular resolutions (a secondary dominant that goes deceptively, or to a subtonic chord).
+
+## Mode mixture (chapter 19)
+
+In a major key a chord may be **borrowed** from the parallel minor: the same tonic, but with the lowered 3rd, 6th or 7th of the minor
+scale. The lowered 6th is the most common. The usual borrowed chords are iv, ♭VI, ♭VII and ♭III, and the diminished or half-diminished
+ii (ii°, iiø7). You name a borrowed chord by its root, quality and inversion, like any other: a ♭ before the numeral lowers the root a
+half step from the major scale (in C major ♭VI is A♭–C–E♭, not a chord that starts on A♭ by itself). In a minor key the one chord
+borrowed from major is the **Picardy third**: a major I at the end. Steps points out the lowered note.
+
+<div class="chord-analysis" data-example data-settings="level=ch19&texture=satb&key=C major&prog=I IV iv I&seed=3"></div>
+
+<div class="chord-analysis" data-settings="level=ch19"></div>
+
+## The Neapolitan chord (chapter 20)
+
+The **Neapolitan** is a major triad built on the lowered 2nd degree (D♭–F–A♭ in C), pre-dominant in function, and most often in first
+inversion, so it is usually written N6 (the book's label is N, not ♭II; both are accepted here). It almost always goes to V.
+
+<div class="chord-analysis" data-example data-settings="level=ch20&texture=satb&key=c minor&prog=i iv N6 V i&seed=3"></div>
+
+<div class="chord-analysis" data-settings="level=ch20"></div>
+
 ## What comes next
 
 These steps are planned but not built yet. The checker already reads applied chords (V7/V) and the Neapolitan (N6), so most of the
@@ -193,19 +247,21 @@ work is new progressions and new **Steps** text.
   label, and the minor VII (which the book says only goes to III).
 - **Chapter 10, non-chord tones by name: built** (level 10 above). Still to add: the pedal point, the retardation, double and incomplete
   neighbors, accented passing tones, and non-chord tones in the other stages.
-- **Chapter 16, figures.** Answers in figures only (I6, V65), and the cadential 6/4 (I64 before V, Cad64 accepted).
-- **Chapters 17–18, applied chords.** A note outside the key: look at the next chord. A major chord or dominant 7th a 5th above it is
-  V(7)/x; a diminished chord a half step below it is vii°(7)/x.
-- **Chapter 19, mixture.** ♭3, ♭6 or ♭7 in a major key: a chord borrowed from the parallel minor (iv, ♭VI, ♭VII, ii°, iiø7).
-- **Chapters 20–21, the Neapolitan and augmented sixths.** ♭2 in a major triad: N6. ♭6 in the bass with ♯4 above it: an augmented sixth,
-  which doesn't stack in thirds at all, so Step 4 changes to "find the augmented 6th".
+- **Chapter 16, figures: built** (level 16 above). Still to add: figured-bass symbols over a bass line, and the 6/4 chords' other
+  names (a 6/4 that is neither passing, neighbor, arpeggio nor cadential).
+- **Chapters 17–18, applied chords: built** (levels 17 and 18 above). Still to add: the irregular resolutions, chains of secondary
+  chords, and applied chords in the other stages' melodies.
+- **Chapter 19, mixture: built** (level 19 above). Still to add: borrowed chords in the melody stage, and the deceptive V to ♭VI as a named cadence.
+- **Chapter 20, the Neapolitan: built** (level 20 above).
+- **Chapter 21, augmented sixths.** ♭6 in the bass with ♯4 above it: an augmented sixth, which doesn't stack in thirds at all, so Step 4
+  changes to "find the augmented 6th" and the checkers need a second kind of answer (It+6, Fr+43, Ger+65). Not built.
 
 ::: {.callout-note collapse="true"}
 ## For teachers
 
 - **Links:** each exercise's **Copy a link to this passage** gives a link to this page with that level, stage and passage (`seed=`).
   Everyone who opens it gets the same passage. Add `&lock=1` to hide the settings.
-- **Settings in a link:** `level` (ch6a ch6b ch7a ch7b ch8a ch8b ch9 ch10), `texture` (rh guitar satb broken melody mixed), `task` (both stack name),
+- **Settings in a link:** `level` (ch6a ch6b ch7a ch7b ch8a ch8b ch9 ch10 ch16 ch17 ch18 ch19 ch20), `texture` (rh guitar satb broken melody mixed), `task` (both stack name),
   `entry` (tap staff rotate type), `answer` (auto sym rn), `tenor` (bass treble), `mode`, `most` (0–5), `key` (show find), `rhythm` (auto bar half).
 - **What counts as right:** a name is right when it means the same spelled notes over the same bass: I6 = I/3rd, V65 = V7/3rd, a = Am.
   Spelling counts (A♭ is not G♯). Root-position levels don't ask for the bass, so a slash or a figure there isn't needed.
@@ -223,9 +279,15 @@ work is new progressions and new **Steps** text.
 ::: {.works-cited}
 "Alberti Bass." *Wikipedia*, [en.wikipedia.org/wiki/Alberti_bass](https://en.wikipedia.org/wiki/Alberti_bass). A broken chord played lowest, highest, middle, highest.
 
+Hutchinson, Robert. "Mode Mixture" and "The Neapolitan Chord." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/ModeMixture.html](https://musictheory.pugetsound.edu/mt21c/ModeMixture.html). Chapters 19-20: borrowed chords from the parallel minor (lowered 6 most common, also 3 and 7), the Picardy third, the Neapolitan as N / N6 with pre-dominant function. Read from the book source (github rhutchinson20/mt21c) on 2026-11-09.
+
 Hutchinson, Robert. *Music Theory for the 21st-Century Classroom*. University of Puget Sound, [musictheory.pugetsound.edu/mt21c/MusicTheory.html](https://musictheory.pugetsound.edu/mt21c/MusicTheory.html). Chapters 6-8: triad and seventh-chord qualities, lead-sheet and slash symbols, Roman numerals and their inversion figures, in major and minor.
 
 Hutchinson, Robert. "Non-Chord Tones." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/NonChordTones.html](https://musictheory.pugetsound.edu/mt21c/NonChordTones.html). Chapter 10: passing and neighbor tones, and the other kinds named in the plan.
+
+Hutchinson, Robert. "Secondary Dominants" and "Secondary Diminished Chords." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/SecondaryDominants.html](https://musictheory.pugetsound.edu/mt21c/SecondaryDominants.html). Chapters 17-18: tonicization; V and V7 of a chord other than I; vii°, vii°7 and viiø7 of a chord other than I; diminished chords can't be tonicized. Read from the book source (github rhutchinson20/mt21c) on 2026-11-09.
+
+Hutchinson, Robert. "The Cadential 6/4 Chord." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/TheCadentialSixFourChord.html](https://musictheory.pugetsound.edu/mt21c/TheCadentialSixFourChord.html). Chapter 16: the cadential six-four is the I64 that goes to V and has dominant function. The book writes it as I64; the label Cad64 is not in it.
 
 "Transposing Instrument." *Wikipedia*, [en.wikipedia.org/wiki/Transposing_instrument](https://en.wikipedia.org/wiki/Transposing_instrument). The guitar sounds an octave lower than written.
 :::

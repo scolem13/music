@@ -1,0 +1,153 @@
+---
+title: "Story Songs 1: Songs That Tell Stories"
+toc: true
+toc-depth: 2
+description: "Who is telling the story, what happens, and what each section of a song is for: narrator and point of view, character and setting, show don't tell, the turn, and a story map you fill in while you listen."
+instruments: [voice, guitar, piano, other]
+topics: [pop, rock, composing]
+has: [interactive]
+---
+
+A novel has hundreds of pages to tell a story. A song has about three minutes, and most of that is a chorus that
+repeats. So a song cannot tell a story the way a book does. It picks **one moment**, **one voice** and a few
+**details that say more than they state**, and lets the music do the rest of the work. This lesson is about
+the words and the shape of the story. [Story Songs 2](story-music.qmd) is about what the music does under them.
+
+::: {.callout-note}
+## MYP4: Rock and the Pop Ballads
+*Art allows us to express our feelings and communicate our philosophies and ways of life effectively.* A story song
+is the clearest case: the listener has to feel what happened without being told how to feel. Criterion A: investigate
+how one ballad tells its story. Criterion B: your own intention, written before you start, for the story you want to tell
+and the feeling you want the listener to leave with.
+:::
+
+## 1. Who is telling it?
+
+Every story song has a **narrator**, and the choice of narrator decides what we can know.
+
+| Point of view | Sounds like | What it does |
+|---|---|---|
+| **First person** (*I*, *me*) | "I waited at the door." | Close and confessional. We only know what the singer knows, and the singer may be wrong, or lying to themselves. |
+| **Second person** (*you*) | "You pack the last box." | Talks to someone, or tells the listener what they are doing. Feels like a letter, an accusation, or a memory. |
+| **Third person** (*she*, *he*, *they*) | "He sold the car in May." | A step back. The singer is a reporter or a friend telling someone else's story. Easier to build a whole life in a few lines. |
+| **A character who is not the singer** | A king, a soldier, a child | The singer plays a part. We can hear more than the character understands. |
+
+**Try it.** Take this one fact: *someone is leaving town tonight.* Write it three times, once in the first
+person, once in the second, once in the third, one line each. Which one makes you care most? Which one leaves the most unsaid?
+
+## 2. Character, setting, and the turn
+
+A story needs three things, even a three-minute one:
+
+- **A character** who wants something. It can be small (to be forgiven, to leave, to be seen).
+- **A setting**: a place and a time that the listener can see. One or two details are enough.
+- **A turn**: the moment something changes. A story without a turn is a description.
+
+Where the turn lands is a choice. In many ballads it comes in the **bridge**, which is why the bridge is the part of the song
+that sounds different: new chord, new register, often quieter. The last chorus then has the same words as the first and means
+something else, because the listener now knows what happened.
+
+## 3. Show, don't tell
+
+Telling names the feeling. Showing gives the listener a detail and lets them feel it for themselves. Below, the
+left side is **told** and the right side **shown**. These are the site's own example lines, not from any song.
+
+| Told | Shown |
+|---|---|
+| I was lonely after you left. | Two cups on the shelf, and I only use one. |
+| We had a lot of good times. | The photo-booth strip is still stuck to the fridge door. |
+| He was a hard worker. | He left the house in the dark and came home in the dark. |
+| I was scared to tell her. | I rehearsed it in the car, then drove past her street. |
+
+Notice what the shown lines have in common: an **object**, an **action**, a **time**, a **place**. None of them has a
+feeling word. Yet you know the feeling.
+
+**Try it.** Take a feeling word (*proud, embarrassed, jealous, relieved*). Write one line that shows it with
+an object and an action, and no feeling word. Swap with a partner. Can they name the feeling?
+
+## 4. What each section is for
+
+Pop form (see [Pop Forms](/theory/pop-forms.qmd)) is also a way of **pacing a story**.
+
+| Section | Job in the story |
+|---|---|
+| **Verse 1** | Set the scene. Who, where, when. A concrete image. |
+| **Pre-chorus** | Lean forward: the pressure builds and the question is asked. |
+| **Chorus** | Say the feeling, or the idea, plainly. The same words each time. This is the part people remember. |
+| **Verse 2** | Complicate it. Something happens, or we learn something that changes how we see verse 1. |
+| **Bridge** | The turn. A new view, a new voice, or the moment it all comes to a head. |
+| **Last chorus** | Same words, new meaning. Often one line is changed, or the band drops out so the line is heard by itself. |
+| **Outro** | Leave a final image, or leave the question open. |
+
+A common mistake is to tell the whole story in verse 1, and then have nothing left to say. Keep something back for verse 2 and the bridge.
+
+## 5. Three shapes a story song can take
+
+1. **One moment.** The whole song is a single scene seen from inside. Verse 2 is the same night, a bit later. Little plot, a lot of feeling.
+2. **A journey through time.** Verse 1 is the past, verse 2 the present, the bridge or last verse the future (or the reverse).
+3. **A letter or a conversation.** The song is spoken to someone. The story is what we work out from what is said, and what is not.
+
+Most ballads you know are one of these. Decide which one before you write; it decides what each verse is for.
+
+## 6. Story map: fill it in while you listen
+
+Pick a ballad (the site's [Words & Chords](/songs/index.qmd) has some, or use your own) and listen to it
+once for the story and once for the music. Fill in one row per section. Your answers are saved in this browser.
+
+<div id="sm-widget" class="sm-widget">
+<div class="sm-tools"><label>Song: <input type="text" id="sm-title" placeholder="Title and artist"></label>
+<label>Narrator: <select id="sm-pov"><option value="">?</option><option>First person</option><option>Second person</option><option>Third person</option><option>A character</option></select></label>
+<button class="btn btn-sm btn-outline-secondary" id="sm-add" type="button">+ Add a section</button>
+<button class="btn btn-sm btn-outline-secondary" id="sm-clear" type="button">Clear</button></div>
+<div class="sm-scroll"><table class="sm-table"><thead><tr><th>Section</th><th>What happens or what we learn</th><th>One detail that shows it</th><th>What the music does</th></tr></thead><tbody id="sm-body"></tbody></table></div>
+<p class="sm-sum"><label>The turn is in: <input type="text" id="sm-turn" placeholder="Which section? What changes?"></label></p>
+</div>
+
+```{=html}
+<style>
+.sm-widget{margin:1rem 0 1.6rem;padding:.8rem 1rem;border:1px solid var(--site-border);border-radius:8px;background:var(--site-surface)}
+.sm-tools{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;margin-bottom:.6rem}
+.sm-tools input[type=text]{min-width:14rem}
+.sm-scroll{overflow-x:auto}
+.sm-table{width:100%;border-collapse:collapse;font-size:.88rem}
+.sm-table th{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--site-ink-2);text-align:left;padding:.3rem}
+.sm-table td{padding:.2rem;vertical-align:top;border-top:1px solid var(--site-border)}
+.sm-table textarea,.sm-table input{width:100%;min-width:9rem;box-sizing:border-box;font:inherit}
+.sm-table textarea{min-height:3.2rem;resize:vertical}
+.sm-sum{margin:.6rem 0 0}.sm-sum input{min-width:18rem;width:60%}
+</style>
+<script>
+(function () {
+  var KEY = 'story-map-v1', ROWS = ['Verse 1', 'Chorus', 'Verse 2', 'Chorus', 'Bridge', 'Last chorus'];
+  var st = { title: '', pov: '', turn: '', rows: ROWS.map(function (n) { return { s: n, a: '', b: '', c: '' }; }) };
+  try { var raw = localStorage.getItem(KEY); if (raw) st = JSON.parse(raw); } catch (e) {}
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} }
+  var body = document.getElementById('sm-body');
+  function cell(r, k, tag) { var td = document.createElement('td'), f = document.createElement(tag); if (tag === 'input') f.type = 'text';
+    f.value = r[k]; f.addEventListener('input', function () { r[k] = f.value; save(); }); td.appendChild(f); return td; }
+  function draw() { body.innerHTML = ''; st.rows.forEach(function (r) { var tr = document.createElement('tr');
+    tr.appendChild(cell(r, 's', 'input')); tr.appendChild(cell(r, 'a', 'textarea')); tr.appendChild(cell(r, 'b', 'textarea')); tr.appendChild(cell(r, 'c', 'textarea')); body.appendChild(tr); }); }
+  var t = document.getElementById('sm-title'), p = document.getElementById('sm-pov'), u = document.getElementById('sm-turn');
+  t.value = st.title || ''; p.value = st.pov || ''; u.value = st.turn || '';
+  t.addEventListener('input', function () { st.title = t.value; save(); });
+  p.addEventListener('change', function () { st.pov = p.value; save(); });
+  u.addEventListener('input', function () { st.turn = u.value; save(); });
+  document.getElementById('sm-add').addEventListener('click', function () { st.rows.push({ s: '', a: '', b: '', c: '' }); save(); draw(); });
+  document.getElementById('sm-clear').addEventListener('click', function () { if (!confirm('Clear the whole map?')) return;
+    st = { title: '', pov: '', turn: '', rows: ROWS.map(function (n) { return { s: n, a: '', b: '', c: '' }; }) }; save(); t.value = ''; p.value = ''; u.value = ''; draw(); });
+  draw();
+})();
+</script>
+```
+
+## 7. Try it
+
+- **Everyone:** write the same fact (*someone is leaving town tonight*) in three points of view (section 1). Choose one and say why.
+- **Listeners:** fill in the story map for a ballad you chose. Where is the turn? What changes in the last chorus?
+- **Writers:** go on to [Story Songs 5: Writing a Narrative Lyric](story-lyric.qmd).
+- Next: [Story Songs 2: Music That Follows the Story](story-music.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+<!-- /works-cited -->

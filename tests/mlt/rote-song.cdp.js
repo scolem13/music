@@ -45,6 +45,7 @@ const U = "http://127.0.0.1:8553";
   await ev(`document.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', code: 'Space', bubbles: true }))`);
   const res = await ev(`document.querySelector('.rs-msg').textContent`);
   check("a tap on the last note is right on it", /Right on it|Close/.test(res), res);
+  check("the tap is in the student's report (rote-song, one attempt)", await wait(`(JSON.parse(localStorage.getItem('site-record-v1')||'{"items":[]}').items||[]).some(x => x.tool === 'rote-song' && x.at.length === 1)`, 40), await ev(`localStorage.getItem('site-record-v1')`));
   // the unit pages: the by-ear button
   await b.goto(U + "/mlt/mullen.html?view=student"); await ev(sf);
   check("units have by-ear buttons", await wait(`document.querySelectorAll('.mlt-rote').length > 5`));

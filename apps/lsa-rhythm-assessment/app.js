@@ -126,6 +126,14 @@ document.getElementById("countin").addEventListener("change", () => { if (window
 
 // ---------- audio setup + live level / onset preview ----------
 let audioCtx, analyser, micStream, buf, running = false;
+// one output bus for everything this page sounds, so the navbar Mixer / Tuner can listen to it (AudioTap)
+let outBus = null;
+function makeCtx(){
+  const c = new (window.AudioContext || window.webkitAudioContext)();
+  outBus = c.createGain(); outBus.connect(c.destination);
+  if (window.AudioTap) AudioTap.register(c, outBus, "LSA rhythm assessment");
+  return c;
+}
 const levelbar = document.getElementById("levelbar");
 const threshEl = document.getElementById("thresh");
 
@@ -139,7 +147,7 @@ const REFRACTORY_MS = 110; // min gap between detected attacks
 
 async function enableMic(){
   try {
-    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    audioCtx = audioCtx || makeCtx();
     await audioCtx.resume();
     // Pre-flight (speakers/headphones, latency, level); cancelling keeps the plain raw-mic setup.
     let micConstraints = { echoCancellation: false, noiseSuppression: false, autoGainControl: false };
@@ -452,7 +460,7 @@ function finalizeSession(){
 // ---------- playback helpers ----------
 const midiToFreqHz = m => 440 * Math.pow(2, (m - 69) / 12);
 async function ensureAudio(){
-  audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+  audioCtx = audioCtx || makeCtx();
   await audioCtx.resume();
 }
 let activeOscs = [];
@@ -468,7 +476,7 @@ function stopAllTones(){
 function chantThis(startCtx, spl, gain){
   if (!window.RhythmChant || !RhythmChant.enabled()) return false;
   try {
-    activeChants.push(RhythmChant.play(currentAbc, { ctx: audioCtx, when: startCtx, secPerQuarter: spl / target.lQuarters,
+    activeChants.push(RhythmChant.play(currentAbc, { ctx: audioCtx, dest: outBus, when: startCtx, secPerQuarter: spl / target.lQuarters,
       triple: isTriple, macroQuarters: macroLUnits * target.lQuarters, gain: gain, jitterMs: 0 }));   // onsets exactly on the grid
     return true;
   } catch(e){ console.warn("RhythmChant:", e); return false; }
@@ -476,7 +484,7 @@ function chantThis(startCtx, spl, gain){
 function click(midi, start, dur, gain){
   const osc = audioCtx.createOscillator(), g = audioCtx.createGain();
   osc.type = "square"; osc.frequency.value = midiToFreqHz(midi);
-  g.gain.value = 0.0001; osc.connect(g); g.connect(audioCtx.destination);
+  g.gain.value = 0.0001; osc.connect(g); g.connect(outBus);
   g.gain.exponentialRampToValueAtTime(gain, start + 0.005);
   g.gain.exponentialRampToValueAtTime(0.0001, start + dur);
   osc.start(start); osc.stop(start + dur + 0.02);
@@ -506,7 +514,7 @@ function woodblock(ctxTime, dur, gain, freqHz){
   filt.type = "bandpass"; filt.frequency.value = freqHz; filt.Q.value = 6;
   const g = audioCtx.createGain();
   g.gain.value = gain;
-  src.connect(filt); filt.connect(g); g.connect(audioCtx.destination);
+  src.connect(filt); filt.connect(g); g.connect(outBus);
   src.start(ctxTime); src.stop(ctxTime + dur + 0.01);
   activeOscs.push(src);
   src.onended = () => { activeOscs = activeOscs.filter(o => o !== src); };

@@ -1,0 +1,266 @@
+---
+title: "Phrases in Combination: Practice for Chapter 13"
+toc: true
+toc-depth: 2
+description: "Chapter 13 of Hutchinson's Music Theory for the 21st-Century Classroom with real tunes: perfect and imperfect authentic cadences, the sentence, periods (parallel and contrasting), repeated phrases and periods, and where to hear the rest."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/soundfont.js?v=1"></script>
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/drills/drills.js?v=22"></script>
+<script>window.AX_NO_VOICE = true; window.AX_CAPTIONS = true;</script>
+<script src="/apps/shared/lessons/abc-ex.js?v=27"></script>
+```
+
+This page goes with **Chapter 13, Phrases in Combination** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/PhrasesInCombination.html). Read each section
+there first. [Chapter 11](melodic-analysis.qmd) showed what a phrase is; this chapter asks how two or more phrases fit together, and
+the answer is nearly always **in the cadences**. The examples are tunes from the site's own
+[Tune Library](../practice/tunes.qmd), played by the band with the chords written in. Press **▶** on each one, then look at the
+chord and the melody note at the end of every four-bar phrase.
+
+**How to read a phrase's ending:** find the last chord of the phrase and the melody note on it. Two chords before it help (V or V7 into I).
+The cadence labels below were read from the chord symbols in the collection, so check them by ear too. The answer to "is this really a
+cadence?" depends on the arrangement.
+
+## 13.1 Perfect and imperfect authentic cadences
+
+Chapter 7 gave you the authentic cadence (V or V7 to I). Chapter 13 splits it in two. A **perfect authentic cadence (PAC)** needs all
+three of these: both chords in root position, the tonic chord last, and **scale degree 1 in the top voice** of that last chord. Break any
+one of them (a chord inverted, or the melody ending on 3 or 5 instead) and it is an **imperfect authentic cadence (IAC)**.
+[Read 13.1](https://musictheory.pugetsound.edu/mt21c/PhrasesInCombination.html)
+
+In a tune with chord symbols the melody note is easy to see. Both phrases of this line end V7 to I in the key of G:
+
+<div class="abc-ex" data-bpm="84"><script type="text/plain">
+X:1
+T:Little Brown Jug (Tune Library): bar 4 ends on 3 (B), bar 8 ends on 1 (G)
+M:2/4
+L:1/8
+Q:1/4=84
+K:G
+D | "G"B,D DD | "C"CE EE/E/ | "D7"F/F/F EF | "G"GA B2 |
+"G"B,D DD | "C"CE EE | "D7"F/F/F EF | "G"GG G2 |]
+</script></div>
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+Bar 4: D7 to G, melody on B (scale degree 3), so an **IAC**. Bar 8: D7 to G, melody on G (scale degree 1), so a **PAC**. The chords are
+the same; only the top note differs, and the second ending sounds more finished.
+:::
+
+## 13.2 The sentence
+
+A **sentence** is a phrase with a particular shape. It starts with an idea (a motive or a two-bar subphrase), then the idea comes again,
+repeated or **sequenced** (moved up or down), perhaps with its intervals bent to fit the new chord. What follows is different: related or
+new material that moves faster and drives to the cadence. A sentence is one phrase, so it ends in a cadence. It can be the first or the
+second phrase of a period.
+[Read 13.2](https://musictheory.pugetsound.edu/mt21c/PhrasesInCombination.html)
+
+Here is one made for this page (not a famous tune), eight bars. Bars 1-2 are the idea, bars 3-4 the idea again on the dominant chord with
+its notes changed to fit, bars 5-8 the continuation: a two-note fragment, then a scalewise run, then V7 to I.
+
+<div class="abc-ex" data-bpm="88"><script type="text/plain">
+X:1
+T:A sentence (made for this page)
+M:4/4
+L:1/4
+Q:1/4=88
+K:C
+"C" C E G E | C2 z2 | "G7" D F G F | D2 z2 | "F" F A F A | "Dm" G F E D | "G7" B,2 D2 | "C" C4 |]
+</script></div>
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+Idea: bar 1 (an arpeggio up and back, then a rest-filled hold in bar 2). Repetition: bar 3, the same shape on G7, with bar 4 holding again.
+Continuation: bar 5 breaks the idea into a two-note fragment, bar 6 runs down a scale, bars 7-8 close **V7 to I with the melody on 1**: a
+PAC. The four bars of continuation are faster than the four bars of presentation; that "speeding up" is what you listen for.
+:::
+
+**Where to hear real ones.** The book analyses sentences in Mozart's Piano Sonata K. 331, I, Beethoven's Piano Sonata Op. 2 No. 1, I, and
+the second theme of Mozart's K. 333, I. Two of those are in the site's Analysed Scores Library, where you can follow the score with the
+analysis under it:
+[Beethoven, Op. 2 No. 1, movement 1](analysed-scores/view.qmd?id=beethoven-sonata-1-1) (the opening eight bars) and
+[Mozart, K. 333, movement 1](analysed-scores/view.qmd?id=mozart-sonata-13-1). The
+[Classical Themes](../tools/classical-themes.qmd) page has more themes to try the test on: does the second idea repeat the first, and does
+the music speed up before the cadence?
+
+## 13.3 The period
+
+A **period** is two or more phrases where the **last cadence is more conclusive than the first**. The book gives two usual pairs:
+a **half cadence (HC)** then an authentic cadence (IAC or PAC); or an **IAC** then a **PAC**. The first phrase (the less conclusive
+ending) is the **antecedent**, the question; the second is the **consequent**, the answer.
+[Read 13.3](https://musictheory.pugetsound.edu/mt21c/PhrasesInCombination.html)
+
+**HC then PAC.** Both phrases of "Skip to My Lou" begin the same way. The first ends on F7, the V chord; the second ends on B♭.
+
+<div class="abc-ex" data-bpm="72"><script type="text/plain">
+X:1
+T:Skip to My Lou (Tune Library): antecedent ends HC, consequent ends PAC
+M:2/4
+L:1/4
+Q:1/4=72
+K:Bb
+"Bb" DB, | D/2D/4D/4 F | "F7" CA, | C/2C/4C/4 E |
+"Bb" DB, | D/2D/4D/4 F | "F7" C/2E/4E/4 D/2C/2 | "Bb" B, B, |]
+</script></div>
+
+**IAC then PAC.** "London Bridge" shows the other pair. Bar 4 is V7 to I, but the melody is on F (scale degree 5); bar 8 puts the tonic
+in the melody.
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:London Bridge (Tune Library): antecedent ends IAC, consequent ends PAC
+M:2/4
+L:1/8
+Q:1/4=100
+K:Bb
+"Bb" F>G FE | DE F2 | "F7" CD E2 | "Bb" DE F2 |
+"Bb" F>G FE | DE F2 | "F7" C2 F2 | "Bb" D B,3 |]
+</script></div>
+
+::: {.callout-tip collapse="true"}
+## Answers and what to notice
+
+"Skip to My Lou": HC (bar 4, melody on the E♭, the seventh of F7), then PAC (bar 8, B♭ in the melody). "London Bridge": IAC (bar 4, F
+in the melody), then PAC (bar 8, B♭ low in the melody). Both are **parallel periods**: the two phrases begin the same (13.4). Sing the first
+phrase and stop; it should feel as if someone has asked a question.
+:::
+
+## 13.4 Parallel and contrasting periods
+
+If both phrases **begin with the same melody**, the period is **parallel**. If they begin differently, it is **contrasting**. A phrase that
+looks like an earlier one but ends with a different cadence gets a **prime**: a, then a′. ("Skip to My Lou" and "London Bridge" are
+a a′.) The prime marks a different ending, not an ornamented melody.
+[Read 13.4](https://musictheory.pugetsound.edu/mt21c/PhrasesInCombination.html)
+
+The chorus of "O Susanna" is contrasting: its first four bars (starting on A♭, the IV chord) are new, and they end on B♭7, the dominant.
+The next four-bar phrase brings back the tune of the verse and settles on E♭.
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:O Susanna, chorus (Tune Library): b ends HC, a ends PAC
+M:2/4
+L:1/8
+Q:1/4=100
+K:Eb
+"Ab"A2 A2 | c c2 c | "Eb"BB GE | "Bb7"F3 E/F/ |
+"Eb"GB B3/2c/ | BG E3/2F/ | GG "Bb7"FF | "Eb"E4 |]
+</script></div>
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+Phrase 1 (bars 1-4) ends on B♭7 with the melody on F: **HC**. Phrase 2 (bars 5-8) ends B♭7 to E♭ with the melody on E♭: **PAC**. The
+phrases begin differently, so this is a **contrasting period**, labelled b a with HC and PAC. (The a here is the same tune as the verse's
+phrases. The letters are about the melody, so they follow the tune, not the order.)
+:::
+
+## 13.5 Repeated phrases and repeated periods
+
+Two things to watch when you see a phrase twice.
+
+- **Repeated phrase:** the same phrase twice with the same cadence. Two phrases with the same ending are not a period, because the second
+  is not more conclusive. "Long, Long Ago" is a case: both four-bar lines end V7 to I with 1 on top (the second only dresses the last bar
+  differently).
+- **Repeated period:** four phrases, but the cadence after the *second* phrase is already a PAC. That is two periods in a row, not a double period.
+
+<div class="abc-ex" data-bpm="92"><script type="text/plain">
+X:1
+T:Long, Long Ago (Tune Library): both phrases end PAC
+M:4/4
+L:1/8
+Q:1/4=92
+K:Eb
+"Eb"E2 EF G2 GA | B2 cB G4 | "Bb7"B2 AG F4 | A2 GF "Eb"E4 |
+"Eb"E2 EF G2 GA | B2 cB G4 | "Bb7"B2 AG F2 G3/2F/ | "Eb"E8 |]
+</script></div>
+
+"Little Brown Jug" (13.1) has four phrases whose endings are IAC, PAC, IAC, PAC. The PAC halfway through ends the first period, so the whole
+tune is a **repeated period**. The verse of "O Susanna" is the same: HC, PAC, HC, PAC.
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Go Tell Aunt Rhody (Tune Library): two phrases, both end on 1 over I
+M:2/4
+L:1/8
+Q:1/4=92
+K:Bb
+"Bb"D2 DC | B,2 B,2 | "F7" C2 CE | "Bb" DC B,2 |
+"Bb" F2 FE | D2 DD | "F7" CB, CD | "Bb" B,4 |]
+</script></div>
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+Both endings are V7 to I with scale degree 1 in the melody (bar 4 on the low B♭ after a step down; bar 8 the same): two PACs. The
+second phrase is not more conclusive, so this is **not a period**. It does have a different tune in the second phrase (F-F-E-D...), so
+it is not a repeated phrase either. The book does not name every combination, and this is a good example of how a pair of phrases can
+fall outside its labels.
+:::
+
+## 13.6 Asymmetrical and double periods
+
+An **asymmetrical period** has three or five phrases, so there are unequal numbers of antecedents and consequents (one question, two
+answers). A **double period** has four or more phrases in two groups: an **antecedent group** (phrases 1-2) whose last cadence is the
+inconclusive one, and a **consequent group** (phrases 3-4) that ends with a more conclusive cadence. The usual melodic scheme is a b a b′. If
+the cadence in the *middle* is already a PAC, you have a repeated period instead (13.5).
+[Read 13.6](https://musictheory.pugetsound.edu/mt21c/PhrasesInCombination.html)
+
+These need longer pieces than a folk song, so they are best met in the library:
+
+- **Double period:** Mozart, Piano Sonata K. 333, I, second theme, which the book analyses as a parallel double period with a PAC at the end
+  ([K. 333, movement 1](analysed-scores/view.qmd?id=mozart-sonata-13-1)).
+- **Contrasting period in a slow movement:** Beethoven, *Pathétique* Sonata, II ([Op. 13, movement 2](analysed-scores/view.qmd?id=beethoven-sonata-8-2)),
+  the book's example of a contrasting period.
+
+Open the library's score, find the theme, and use the Roman numerals under the staff to label each phrase ending.
+
+## 13.7 Phrase groups, phrase chains and elision
+
+If a series of phrases ends on a **half cadence**, it is not a period. When the phrases begin alike it is a **phrase group**; when they
+start differently, a **phrase chain**. (The book takes these terms from Douglass Green.) An **elision** is the overlap where the last bar
+of one phrase is also the first bar of the next, so the bar count is one fewer than the phrases add up to.
+[Read 13.7](https://musictheory.pugetsound.edu/mt21c/PhrasesInCombination.html)
+
+No tune in the site's folk collection is a clean example of either yet; both come mostly from Classical piano music, where the book uses
+Couperin and a Beethoven rondo. To practise elision, count the bars of each phrase in a tune you know and see whether the numbers add up to the
+total.
+
+## 13.8 Putting it together
+
+For each excerpt, in this order (the book's own routine):
+
+1. Label the chords at the end of each phrase with Roman numerals and name the cadence (PAC, IAC, HC, PC, DC).
+2. Look at the melody: is a phrase a sentence?
+3. Write a diagram: letters for the melody (a, a′, b), the cadence under each.
+4. Name the form: sentence, parallel or contrasting period, asymmetrical period, parallel double period, repeated phrase, or repeated period.
+
+**Try it** on the tunes in the Tune Library: "Yankee Doodle" (its verse and refrain), "Oh! Susanna" as a whole, "Simple Gifts", "America". The
+book's own practice excerpts (Mozart's "Ein Mädchen oder Weibchen", K. 333 I, and Dédé's *Chicago*) are under copyright or need the book's
+scores, so they are not reproduced here; the answers are in the
+[book's exercise section](https://musictheory.pugetsound.edu/mt21c/PhrasesInCombinationPracticeExercises.html).
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Sources of the examples:** the six folk tunes are from the site's tune collection (the recorder teacher's-guide set and the beginning-band set).
+  Only the sentence is original to this page; it was checked for bar length by script and is meant as a clear model, not a quotation.
+- **The cadence labels** were read from the chord symbols in the collection, not from a score or a recording. A teacher may hear some of them
+  differently (for example, whether the first phrase of "Go Tell Aunt Rhody" is a PAC or a weaker close because the melody lands on the low B♭).
+- **Not covered here:** examples of asymmetrical periods, phrase groups, phrase chains and elisions from the site's own collection; these are
+  only found in longer classical pieces, which the library has but whose phrase structure has not been marked. The book's analyses of
+  Beethoven Op. 2 No. 1, Mozart K. 331 and K. 333 are named, but no bar numbers are given here, because the library's bar numbers have not been
+  matched to the book's figures.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hutchinson, Robert. "Phrases in Combination." *Music Theory for the 21st-Century Classroom*, ch. 13, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/PhrasesInCombination.html](https://musictheory.pugetsound.edu/mt21c/PhrasesInCombination.html).
+:::
+<!-- /works-cited -->

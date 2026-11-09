@@ -211,8 +211,9 @@ Bass skip notes, displaced or dropped comp hits, so a fixed rhythm becomes "Char
 Probability rises with ctx.intensity and ctx.phrase. Strict must stay exact.
 ** TODO Step 4: parts react to each other
 Generate comp first and hand its hits to the drums so a push on the and of 4 can be caught.
-** TODO Drums should follow what the bass actually plays
+** DONE Drums should follow what the bass actually plays
 In a Loose first chorus the bass is in two but the drums still feather all four beats.
+   (2026-11-09) The drummer gets the bass's own bar as =ctx.bassBar= (player.js =callParts=, midi.js =generate=). In 4/4 with the feel unset, "walk" or "two", no bass note on beat 2 or 4 means two (feathered kick on 1 and 3, cross-stick on 4); a bass that walks the bar makes the drums feather all four even if set to two. Set bass lines keep the old rule. Test =node tests/band/faults/drums-follow-bass.test.js= (NEG=1 fails).
 
 * Bass patterns to add (none exist yet)
 Roots in eighths, root-fifth, bossa, tresillo, shuffle, pedal, octaves. Suggested first: eighths, bossa, shuffle.
@@ -221,11 +222,13 @@ Each needs an entry in bass.js and catalog.js.
 * Known defects and rough edges
 ** DONE Chord Sheet auto-detects the wrong key for ii-V-I-VI (G for Dm7 G7 Cmaj7 A7); the key travels in the hand-off
    (2026-11-06) Now C: the page asks =PitchSpelling.keyFromChords= (major profile minus 2 per tone outside the scale); pitch-spelling.js is loaded before the page script. Test =node tests/band/faults/key-and-roman.test.js=. =PitchSpelling.detectKey= gives A minor for Am Dm E7 Am (first/last chord the minor tonic, or its V7); =tonicPc= stays the relative major for do, the label says "A min" and Roman numerals use the minor key.
-** TODO Pinned keyboard voicings omit greyed notes (Standard greys the 5th, so Dm7 arrives as D-F-C)
+** DONE Pinned keyboard voicings omit greyed notes (Standard greys the 5th, so Dm7 arrives as D-F-C)
+   (2026-11-09) A 5th greyed only by default is optional: the card still sounds without it, the band gets it (=t.autoExcl= in the Chord Sheet; =shown()= takes the band's notes). A note clicked off by hand stays out of both. Test =node tests/band/faults/remember.cdp.js= (server on 8500).
 ** DONE jsDelivr refuses one guitar sample (F4); add a per-file fallback host in sounds.js (2026-10-18, see the end)
 ** TODO Notation: comping sits low on the treble staff (use a grand staff); stabs have no staccato
 ** DONE Drum notation: a triplet fill has never been looked at rendered; open/closed hat look alike; feathered kick is written full size (2026-10-12, see the end)
-** TODO Count-in and the final ending hit are not notated or exported
+** DONE Count-in and the final ending hit are not notated or exported
+   (2026-11-09) The player hands each count-in bar's clicks to a new =onCountIn(rec)= (not =onBarEvents=: other pages read that as form bars); the Backing Track page keeps them as =.lead= of the performance's bar 0, and finds the ending record already in its log (=ending: true=, never used). =framed(bars)= adds the count-in (when the bars start at bar 0) and the ending bar (when they end at the last bar played) to the MIDI export ("as played" only) and to the notation of played bars (not the bars written ahead, nor "only the section"). Left out: the pickup melody sounded in the last count-in bar; the between-repeats click. Test =node tests/band/faults/count-in-ending.cdp.js= (server on 8500; NEG=1 fails).
 ** TODO Meters other than 4/4, 3/4, 6/8, 9/8, 12/8 are untested in comp figures, notation and MIDI
 ** TODO "Both" Roman mode is crowded at phone width in two-chord bars with a flat root
 ** DONE "Start at bar" still shows its old number while a cycle is on
@@ -275,7 +278,8 @@ more forms and feels (minor blues, rhythm changes, bossa, jazz waltz); audio exp
 ** TODO The fits table is one person's judgement and unheard; several locked menus have one entry (montuno rhythm, calypso bass)
 ** TODO Two-bar patterns (bossa, clave, montuno) follow form-bar parity: an odd-length form or a loop of odd length flips the clave
 ** TODO Grooves ignore Variation / intensity; cymbal choice is not set by the style (clave and cha-cha want the bell)
-** TODO Unlock and Style are not remembered between visits
+** DONE Unlock and Style are not remembered between visits
+   (2026-11-09) Kept in localStorage =btStyle= ({ style, unlock }) when changed by hand (the menu, Unlock, or Feel switching the style); a tune's or section's own %%style is not saved. =?style== and a Chord Sheet hand-off still win. Same test.
 
 * Round: strums, open chords, unmarked extensions (2026-10-07)
 - comp GRID strum patterns (strumCamp, strumFolk, strumEights, strumQuarters, strum332, strum16): third entry of a hit = D / U. Down = whole

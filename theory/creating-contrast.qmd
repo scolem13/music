@@ -1,0 +1,141 @@
+---
+title: "Creating Contrast Between Sections: Practice for Chapter 15"
+toc: true
+toc-depth: 2
+description: "Chapter 15 of Hutchinson's Music Theory for the 21st-Century Classroom: the eight elements of music a composer or arranger changes to make one section sound different from another, with a verse and chorus from the Tune Library, a rondo to map, and a worksheet."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/soundfont.js?v=1"></script>
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/drills/drills.js?v=22"></script>
+<script>window.AX_NO_VOICE = true; window.AX_CAPTIONS = true;</script>
+<script src="/apps/shared/lessons/abc-ex.js?v=27"></script>
+```
+
+This page goes with **Chapter 15, Creating Contrast Between Sections** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/CreatingContrast.html). Read it there first. The
+chapter is short: a form is only audible if its sections **sound different**, and a composer or arranger makes them different by changing
+one or more **elements of music**. The book walks through the second movement of Mozart's *Eine kleine Nachtmusik* (a five-part
+rondo) and a modern pop song with a reggae section. Here the same method is applied to tunes and pieces already on the site.
+
+## 15.1 The eight elements
+
+The book lists eight things to compare between two sections:
+
+| Element | Ask yourself |
+|---|---|
+| **Melody** | Is it a new tune, or the old one varied? Smooth or jumpy? (Don't call an ostinato a melody.) |
+| **Harmony** | The key and the mode (major or minor); which chords the section starts and ends on |
+| **Rhythm** | What is the most common note value in the section? |
+| **Timbre** | Which instruments or tone colours? |
+| **Texture** | How many voices (vertical), and how active is each (horizontal)? See [Chapter 14](accompaniment-textures.qmd) |
+| **Articulation** | Short and clipped (staccato) or long and connected (legato)? |
+| **Dynamics** | Loud or soft? |
+| **Register** | High, middle or low? |
+
+[Read 15.1](https://musictheory.pugetsound.edu/mt21c/CreatingContrast.html)
+
+A good question for any pair of sections is not "what is different?" but "**which one or two elements carry the contrast?**" Usually
+most elements stay the same.
+
+## 15.2 A verse and a chorus: O Susanna
+
+Here are two eight-bar parts of one song from the Tune Library, the verse and the chorus. The notes are the same instrument at the same
+tempo, so only melody, harmony, rhythm and articulation can differ (timbre, dynamics and texture would be an arranger's choice).
+
+<div class="ax-pair">
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:O Susanna, verse (Tune Library)
+M:2/4
+L:1/8
+Q:1/4=100
+K:Eb
+E/F/ | "Eb"GB B3/2c/ | BG E3/2F/ | GG FE | "Bb7"F3 E/F/ |
+"Eb"GB B3/2c/ | BG E3/2F/ | GG "Bb7"FF | "Eb"E3 |]
+</script></div>
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:2
+T:O Susanna, chorus (Tune Library)
+M:2/4
+L:1/8
+Q:1/4=100
+K:Eb
+"Ab"A2 A2 | c c2 c | "Eb"BB GE | "Bb7"F3 E/F/ |
+"Eb"GB B3/2c/ | BG E3/2F/ | GG "Bb7"FF | "Eb"E4 |]
+</script></div>
+</div>
+
+::: {.callout-tip collapse="true"}
+## One reading
+
+- **Harmony:** the key stays E♭ major, but the chorus *opens* on the IV chord (A♭) instead of the tonic, which is the biggest change
+  in the first bar.
+- **Rhythm and melody:** the verse is full of a quick dotted figure (a dotted eighth and a sixteenth, "B3/2c/") and moves by step and skip;
+  the chorus begins with long, repeated notes (A-A, C-C-C) and only returns to the verse's dotted tune in its second half.
+- **Not changed:** key, tempo, register (roughly), instrument. Nothing here can tell you about timbre, dynamics or texture; that would be
+  for a recording to show.
+:::
+
+## 15.3 A rondo's contrast map: Eine kleine Nachtmusik, II
+
+The book's classic example is the *Romance* of Mozart's *Eine kleine Nachtmusik* (K. 525, second movement), ABACA. The book points to the
+elements that change: in B, rhythm (some sixteenth-note runs), texture (all four parts move together) and articulation (staccato
+starts); in C, the harmony (it opens in C minor) as well as rhythm, texture and articulation. Play the movement (the
+[Classical Themes](../tools/classical-themes.qmd) page has the opening theme, searched under "Nachtmusik"; the book's own
+YouTube recording is linked from [its chapter](https://musictheory.pugetsound.edu/mt21c/CreatingContrast.html)) and fill in this grid:
+
+| | A (refrain) | B | A | C | A |
+|---|---|---|---|---|---|
+| Harmony (key, mode) | C major | | | | |
+| Rhythm (commonest value) | | | | | |
+| Texture | | | | | |
+| Articulation | | | | | |
+| Dynamics | | | | | |
+| Register | | | | | |
+
+Which cell is *different from A* in B? In C? Mozart also writes short **transitional** bars to ease from one section into the next
+(see [Chapter 25](sonata-rondo.qmd) for the idea of transitions).
+
+For a rondo you can read as well as hear, see
+[Beethoven's Op. 49 No. 2, Tempo di Menuetto](analysed-scores/view.qmd?id=beethoven-sonata-20-2) in the Analysed Scores Library: its
+refrain is in G, with episodes in D and C.
+
+## 15.4 Contrast in a pop song
+
+In the book's pop example, the verse is stripped down (voice and two guitars), then drums and bass come in for verse 2, the pre-chorus goes
+legato and the snare drops out, the chorus goes higher in register, and the post-chorus switches to a different rhythm. The **chord
+progression barely changes**, so the form is shown almost entirely by texture, articulation, register and rhythm. That is a good thing to
+know when you arrange: you can mark a form without changing the chords.
+
+You can hear this on the site. On the [Form in Popular Music](pop-forms.qmd) page the band plays a verse–chorus form as bare chords, so there
+is little to tell the sections apart; in the [Backing Track](../tools/backing-track.qmd), try the same chart in a quiet style for the verse
+and a fuller one for the chorus, and notice what the band does (the Mixer lets you drop the drums or the piano for a section). The
+[Arranger](../tools/arranger.qmd) page has intro, main, fill and break sections built on exactly this idea.
+
+## 15.5 Try it
+
+Pick one song you know and write its sections on a timeline (Timestamp Notes keeps it:
+[Timestamp Notes](../tools/timestamp-notes.qmd)). For each pair of neighbouring sections, name the **one or two elements that carry the
+contrast**. Which sections stay the same in the elements you can't hear in a lead sheet? Then write a short section you could add to it in
+which only *one* element changes.
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **The grid** is the book's method. Which elements change in B and C is summarised from the chapter (checked against its text on
+  2026-11-09); the grid is left blank so students listen for the rest.
+- **O Susanna:** the two parts are the site's Tune Library version (the recorder teacher's guide). The reading is this page's own, from the notation; it says
+  nothing about performance.
+- **Not here:** the book's pop example (a copyrighted recording) and the "contrast" quiz the book lacks. A small listening drill is
+  possible from the Arranger's styles but has not been built.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hutchinson, Robert. "Creating Contrast Between Sections." *Music Theory for the 21st-Century Classroom*, ch. 15, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/CreatingContrast.html](https://musictheory.pugetsound.edu/mt21c/CreatingContrast.html).
+:::
+<!-- /works-cited -->

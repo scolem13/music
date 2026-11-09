@@ -945,7 +945,7 @@
       var b = m.barAt(t); if (b < 0) return;
       var len = m.lenOf(b), k = Math.floor((t - m.bars[b]) / len * m.beats[b]), id = b * 64 + k;
       if (id === last || !(len > 0)) return; last = id;
-      try { if (!actx) { actx = new (window.AudioContext || window.webkitAudioContext)(); if (window.AudioTap) AudioTap.register(actx); } click(actx.currentTime + 0.005, k === 0); } catch (e) {}
+      try { clickCtx(); click(actx.currentTime + 0.005, k === 0); } catch (e) {}
     }, 10);
   }
   setInterval(function () {
@@ -2558,10 +2558,19 @@
     });
   }
 
-  var actx = null;
+  var actx = null, clickOut = null;
+  // the click's own AudioContext, its output a master gain that the Mixer / Tuner can listen to (AudioTap)
+  function clickCtx() {
+    if (!actx) {
+      actx = new (window.AudioContext || window.webkitAudioContext)();
+      clickOut = actx.createGain(); clickOut.connect(actx.destination);
+      if (window.AudioTap) AudioTap.register(actx, clickOut, "Notation click");
+    }
+    return actx;
+  }
   function click(at, accent) {
     var o = actx.createOscillator(), gn = actx.createGain();
-    o.frequency.value = accent ? 1500 : 1000; o.connect(gn); gn.connect(actx.destination);
+    o.frequency.value = accent ? 1500 : 1000; o.connect(gn); gn.connect(clickOut || actx.destination);
     gn.gain.setValueAtTime(0.0001, at); gn.gain.exponentialRampToValueAtTime(0.4, at + 0.002); gn.gain.exponentialRampToValueAtTime(0.0001, at + 0.05);
     o.start(at); o.stop(at + 0.06);
   }
@@ -2570,7 +2579,7 @@
     if (cur >= 0 && voice > 0 && $("nt-t-what").value !== "melody") { $("nt-t-status").textContent = "Chords go with the first voice. Pick voice " + doc.voices[0].name + ", or record Notes."; return; }
     connectMidi(); sel = null;
     var cfg = takeCfg();
-    actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+    clickCtx();
     if (actx.resume) actx.resume();
     var lead = 0.15, countBeats = cfg.countBars * cfg.count;
     var t0Audio = actx.currentTime + lead, downAudio = t0Audio + countBeats * cfg.beatSec;
@@ -2699,7 +2708,7 @@
     connectMidi(); sel = null; if (synth) play();
     var q = qGeo(), g = q.g, mi = q.mi, bpm = takeBpm(), beatSec = 60 / bpm, count = g.bpb, countBeats = count * (+Q.count || 1);
     if (inPhrase() && phrase.leadIn) countBeats = Math.max(countBeats, count * Math.ceil(phrase.leadIn / count + 0.25));   // room for the pickup
-    actx = actx || new (window.AudioContext || window.webkitAudioContext)(); if (actx.resume) actx.resume();
+    clickCtx(); if (actx.resume) actx.resume();
     var t0 = actx.currentTime + 0.12, downPerf = performance.now() + (t0 + countBeats * beatSec - actx.currentTime) * 1000;
     rec = { quick: true, redo: redo, mi: mi, g: g, beatSec: beatSec, count: count, countBeats: countBeats, downPerf: downPerf, t0: t0, next: 0,
       events: [], held: {}, lastOff: null, heard: [],

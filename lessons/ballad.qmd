@@ -1,0 +1,89 @@
+---
+title: "Story Songs 3: The Ballad"
+toc: true
+toc-depth: 2
+description: "What a ballad is, from the old story-song to the pop and rock ballad: slow tempo, half-time drums, 4/4 and 12/8, verse-chorus and AABA form, the four-chord loops underneath, and a short timeline. Each feel on the band."
+instruments: [piano, guitar, bass, drums, voice, other]
+topics: [pop, rock, history]
+has: [band, interactive]
+---
+
+{{< include _arrange-kit.qmd >}}
+
+The word **ballad** has meant two related things. Long ago it was a **story told in verse and sung**, the same tune for every verse (strophic form, see
+[Structure](elements-structure.qmd)), often about love, death or a famous event. In rock and pop it came to mean a **slow, emotional song**,
+usually about love or loss, with a singer out front and a band that keeps out of the way. The two meanings overlap: the best pop ballads still tell a story.
+
+*Unverified (from memory, check before quoting):* the older sense is the folk ballad; the pop ballad as a chart type grew up in the 1950s–60s and the "power ballad"
+(a slow song that builds to a loud, big-voiced chorus) is a 1970s–80s rock form.
+
+## 1. What makes it sound like a ballad
+
+| Ingredient | Usual choice | Why |
+|---|---|---|
+| **Tempo** | about 60–80 beats per minute | room for each word and each feeling |
+| **Meter** | 4/4 (often felt in half-time), or 6/8 or 12/8 | half-time = a slow, heavy pulse; 12/8 = a slow, rolling one |
+| **Drums** | half-time backbeat: snare on 3, not on 2 and 4 | the song seems to breathe more slowly with the same tempo |
+| **Chords** | long chords, sometimes broken (arpeggiated) | space for the voice |
+| **Melody** | stepwise, with a few leaps to the key words | easy to sing and remember |
+| **Dynamics** | quiet verses, a big chorus or last chorus | pacing the story ([Story Songs 2](story-music.qmd)) |
+| **Lyric** | one voice, one moment, plain words | see [Story Songs 1](story-songs.qmd) |
+
+## 2. Half-time: the same tempo, a slower feel
+
+In ordinary rock the snare is on beats 2 and 4. In **half-time** it is on beat 3 only, so every beat of the drums feels twice as long, while the chords and the voice keep their speed.
+Hear both at the same tempo.
+
+<div class="ar-demo" data-style="rock" data-chart="C|G|Am|F" data-tempo="76" data-comp="guitar" data-on="bass comp drums" data-staves="comp bass drums"></div>
+
+<div class="ar-demo" data-style="pop" data-chart="C|G|Am|F" data-tempo="76" data-comp="piano" data-on="bass comp drums" data-staves="comp bass drums"></div>
+
+The first is the rock beat, the second the site's piano-ballad style with its half-time groove. The [DAW beat lesson](daw-beat.qmd) shows the half-time pattern on a grid.
+
+## 3. Same chords, three ballad feels
+
+The four-chord loops under so many ballads (C, G, Am, F and its rotations, see [Four-Chord Loops](four-chord-loops.qmd)) can be dressed three ways.
+
+**Piano ballad:** long chords with a rocking left hand.
+
+<div class="ar-demo" data-style="pop" data-chart="C|G|Am|F|C|G|F|C" data-tempo="72" data-comp="piano"></div>
+
+**Acoustic strum:** a guitar strum, a gentle backbeat. Folk-rock and singer-songwriter.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F|C|G|F|C" data-tempo="84" data-comp="guitar"></div>
+
+**Organ and rock:** long organ chords and a heavier kick; the power-ballad end of the family.
+
+<div class="ar-demo" data-style="pop" data-chart="C|G|Am|F|C|G|F|C" data-tempo="68" data-comp="hammond"></div>
+
+For the rolling 12/8 soul ballad see [Metre](elements-metre.qmd); for brushes (jazz and country ballads) see [Brushes](drum-brushes.qmd).
+
+## 4. Forms a ballad uses
+
+- **Strophic (A A A):** same tune, new words each verse. The oldest ballad form, and still the clearest for a story: the tune is a frame, the words are the picture.
+- **Verse–chorus:** the most common pop-ballad form. Verse tells, chorus says. See [Pop Forms 12.1](/theory/pop-forms.qmd).
+- **AABA (32 bars):** two verses, a bridge, a return. Standards and many slow songs from the Great American Songbook; the bridge is the turn.
+- **With a final lift:** any of the above, then a key change or a stripped-back last chorus. (Story Songs 2, sections 3 and 5.)
+
+## 5. A very short timeline
+
+*Unverified, from memory; each line is a place to start looking, not a fact to quote.*
+
+| Era | Where to look |
+|---|---|
+| Old | Folk ballads (British and American traditional songs that tell a story) |
+| 1950s | Early rock and roll, doo-wop and country ballads |
+| 1960s | Beatles ballads, Motown and soul, folk-rock singer-songwriters |
+| 1970s | Piano-and-voice singer-songwriters; the first power ballads |
+| 1980s | Synths and gated drums; the stadium power ballad |
+| 1990s–2000s | R&B ballads; acoustic alternative; piano-driven pop |
+| Today | Sparse, close-mic'd vocals over minimal piano or guitar; half-time trap drums under a sung ballad |
+
+**Task.** Pick one row. Find two songs (the [Tune Directory](/practice/tune-directory.qmd) is a place to start) and write down for each: tempo, meter, who plays, one thing the drummer does. Add the songs to your listening list for [Story Songs 4](story-case-studies.qmd).
+
+Next: [Story Songs 4: Case Studies](story-case-studies.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+<!-- /works-cited -->

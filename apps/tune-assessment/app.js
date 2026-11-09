@@ -64,7 +64,7 @@ function loadTune(){
 let tunePicker=null;   // set up in init when a #tunePicker element is present
 // ---------- preview transport: abcjs SynthController (Play/Loop/Restart/Progress/
 // scrub/Warp) with a note-highlighting cursor + soundfont + auto chord accompaniment ----------
-const SF_URL="https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/";
+// (2026-11-09: now AbcPlay, the band's samples, through the small transport Tp below; abcjs's synth is only AbcPlay's own fallback)
 const chordsOn=()=>{ const e=document.getElementById("chords"); return e?e.checked:false; };
 const playTuneOn=()=>{ const el=document.getElementById("play-tune"); return el?el.checked:true; };
 let previewPlaying=false;
@@ -72,7 +72,7 @@ let previewPlaying=false;
 // ev.left/top come from that SVG's coordinate space, so we use positionCursorByTime()
 // (which looks up pre-computed notationTimings) instead of the direct ev coordinates.
 let usingArrVisual=false;
-let currentPlayVisual=null; // visualObj currently loaded into synthControl
+let currentPlayVisual=null; // visualObj currently loaded into the transport (Tp)
 let lastPlayMs=0;           // last known playback position (ms); used by reloadAudio to seek back
 let notationTimings=[];     // [{milliseconds,left,top,height,elements,startCharArray}] from visualObj.setTiming()
 let measureTimings=[];      // [milliseconds] — downbeat of each measure in notation time (no intro offset)
@@ -87,7 +87,7 @@ const cursorControl={
     // loop-back is INCLUSIVE of the end note: loopOutMs is its onset, so we wait until
     // we're strictly PAST it (the next event) before seeking, letting it sound fully.
     if(cycleOn()&&loopInMs!=null&&loopOutMs!=null&&ev.milliseconds!=null&&ev.milliseconds>loopOutMs){
-      const d=durMs(); if(d){ try{ synthControl.seek(loopInMs/d); synthControl.setProgress(loopInMs/d,d); }catch(e){} return; } }
+      Tp.start(loopInMs); return; }
     if(tuneChartObj) tuneChartObj.onPlaybackEvent(ev);   // time-based chart highlight (loop-safe)
     if(usingArrVisual){ if(ev.milliseconds!=null) positionCursorByTime(ev.milliseconds); return; }
     document.querySelectorAll("#notation svg .highlight").forEach(e=>e.classList.remove("highlight"));
@@ -100,18 +100,15 @@ const cursorControl={
     document.querySelectorAll("#accompNotation svg .highlight").forEach(e=>e.classList.remove("highlight"));
     const c2=document.querySelector("#accompNotation svg .abcjs-cursor"); if(c2){ ["x1","x2","y1","y2"].forEach(a=>c2.setAttribute(a,0)); }
     if(cycleOn()&&!(loopInMs!=null&&loopOutMs!=null)){
-      const d=durMs(); if(d&&currentPlayVisual){
+      if(currentPlayVisual){
         // intro-only (no gap): skip intro on repeat. gap present (with or without intro): replay from 0.
         const seekMs=(introBarCount>0&&taGapBars()===0)?introMs:0;
-        const frac=Math.max(0,Math.min(0.999,seekMs/d));
-        setTimeout(()=>{ try{ synthControl.seek(frac); synthControl.setProgress(frac,d); }catch(e){}
-          try{ synthControl.play(); previewPlaying=true; updatePlayLabel(); }catch(e2){} },50); } } }
+        setTimeout(()=>{ previewPlaying=true; updatePlayLabel(); Tp.start(seekMs); },50); } } }
 };
 // click a notehead → seek playback to that note (build the buffer first if needed)
 // ---- DAW-style cycle (loop a region between two clicked noteheads) ----
 let loopInMs=null, loopOutMs=null;
-const durMs=()=>(synthControl&&synthControl.midiBuffer&&synthControl.midiBuffer.duration)?synthControl.midiBuffer.duration*1000:0;
-function applyCycle(){ if(synthControl) synthControl.isLooping=false; } // cycling handled in onFinished
+function applyCycle(){ } // cycling handled in onFinished / onEvent
 function markLoopRegion(){
   document.querySelectorAll("#notation svg .loop-region").forEach(e=>e.classList.remove("loop-region"));
   if(loopInMs==null||loopOutMs==null) return;
@@ -142,36 +139,78 @@ function updateCycleHint(){
   }
 }
 function onNoteClick(abcElem){
-  if(!synthControl) return;
-  const apply=()=>{
-    let ms=abcElem.currentTrackMilliseconds; if(Array.isArray(ms)) ms=ms[0];
-    // In arranger mode currentTrackMilliseconds is not set on notation notes; use startChar lookup
-    if(ms==null&&notationTimings.length){
-      for(const t of notationTimings){
-        if((t.startCharArray||[]).indexOf(abcElem.startChar)>=0){ ms=t.milliseconds+introMs; break; }
-      }
+  if(!Tp.ready()) return;
+  let ms=abcElem.currentTrackMilliseconds; if(Array.isArray(ms)) ms=ms[0];
+  // In arranger mode currentTrackMilliseconds is not set on notation notes; use startChar lookup
+  if(ms==null&&notationTimings.length){
+    for(const t of notationTimings){
+      if((t.startCharArray||[]).indexOf(abcElem.startChar)>=0){ ms=t.milliseconds+introMs; break; }
     }
-    const d=durMs(); if(ms==null||!d) return;
-    if(cycleOn()){
-      if(loopInMs==null||loopOutMs!=null){ loopInMs=ms; loopOutMs=null; try{synthControl.seek(ms/d);synthControl.setProgress(ms/d,d);}catch(e){} }
-      else { loopOutMs=ms; if(loopOutMs<loopInMs){const tmp=loopInMs;loopInMs=loopOutMs;loopOutMs=tmp;} }
-      applyCycle(); markLoopRegion(); updateCycleHint();
-    } else {
-      const frac=Math.max(0,Math.min(0.999,ms/d));
-      try{ synthControl.seek(frac); synthControl.setProgress(frac,d); }catch(e){}
-    }
+  }
+  if(ms==null) ms=Tp.msOfChar(abcElem.startChar);
+  if(ms==null) return;
+  if(cycleOn()){
+    if(loopInMs==null||loopOutMs!=null){ loopInMs=ms; loopOutMs=null; Tp.seek(ms); }
+    else { loopOutMs=ms; if(loopOutMs<loopInMs){const tmp=loopInMs;loopInMs=loopOutMs;loopOutMs=tmp;} }
+    applyCycle(); markLoopRegion(); updateCycleHint();
+  } else Tp.seek(ms);
+}
+// ---- the preview transport: AbcPlay (the band's samples, apps/shared/abc-play.js) with opts.tracks, so every voice abcjs makes
+// (the melody, its auto chords and bass, or the Arranger's accompaniment and drum channel) sounds on the band's instruments.
+// AbcPlay only plays from the start or from fromMs, so seek = restart there; the cursor, the chart's playing bar, Cycle (loop
+// between two noteheads or the whole tune) and pause / resume are kept here, driven by the audio clock AbcPlay reports (onStart).
+const Tp=(function(){
+  let visual=null, optsFn=null, h=null, tok=0, pos=0, raf=0, on=false, endMs=0, evs=[];
+  const qOf=(v,o)=>{ if(o.qpm) return o.qpm; const t=v.metaText&&v.metaText.tempo; return t&&t.bpm?t.bpm*(t.duration&&t.duration[0]?t.duration[0]*4:1):null; };
+  function timing(){ if(!visual) return []; const q=qOf(visual,optsFn()); try{ visual.setUpAudio({}); }catch(e){} return q?visual.setTiming(q/(visual.getBeatLength()*4)):visual.setTiming(); }
+  function setPlaying(v){ on=v; previewPlaying=v; updatePlayLabel(); }
+  function drop(){ tok++; cancelAnimationFrame(raf); if(h){ try{ h.stop(); }catch(e){} h=null; } }
+  function start(fromMs){
+    if(!visual) return;
+    drop(); const my=tok; pos=Math.max(0,fromMs||0); setPlaying(true);
+    const o=Object.assign({},optsFn(),{tracks:true,light:false,fromMs:pos,
+      onStart(info){ if(my!==tok||!info) return; begin(info,pos,my); },
+      onEnd(){ if(my!==tok) return; finish(my); }});
+    h=AbcPlay.play(visual,o);
+  }
+  let last={ac:null,t0:0,from:0,end:0};
+  function begin(info,from,my){
+    last={ac:info.ac,t0:info.t0,from:from,end:info.endMs};
+    evs=(info.events||[]).map(e=>Object.assign({},e,{milliseconds:e.milliseconds+from}));
+    cursorControl.onStart();
+    let i=-1;
+    (function tick(){
+      if(my!==tok) return;
+      const rel=Math.max(0,(info.ac.currentTime-info.t0)*1000), now=from+rel;
+      pos=now;
+      while(i+1<evs.length&&evs[i+1].milliseconds<=now){ i++; cursorControl.onEvent(evs[i]); if(my!==tok) return; }
+      raf=requestAnimationFrame(tick);
+    })();
+  }
+  function finish(my){
+    cancelAnimationFrame(raf); h=null;
+    const natural=last.ac&&(last.ac.currentTime-last.t0)*1000>=last.end-50;   // ran out, not stopped from outside
+    if(natural){ pos=0; setPlaying(false); cursorControl.onFinished(); }
+    else { setPlaying(false); }                                               // Stop in the bottom strip = a pause here
+  }
+  return {
+    ready:()=>!!visual,
+    load(v,fn){ drop(); visual=v; optsFn=fn; pos=0; evs=[]; setPlaying(false); },
+    options(fn){ optsFn=fn; },
+    visual:()=>visual,
+    start, seek(ms){ pos=Math.max(0,ms); lastPlayMs=pos; if(on) start(pos); },
+    play(){ if(visual) start(pos); },
+    pause(){ if(!on) return; const p=pos; drop(); pos=p; setPlaying(false); },
+    toggle(){ if(on) this.pause(); else this.play(); },
+    playing:()=>on,
+    restart(){ start(0); },
+    msOfChar(sc){ const t=timing(); for(const e of t){ if(e.type==="event"&&(e.startCharArray||[]).indexOf(sc)>=0) return e.milliseconds; } return null; },
+    pos:()=>pos,
   };
-  if(synthControl.isLoaded&&synthControl.midiBuffer) apply();
-  else if(synthControl.go) synthControl.go().then(apply).catch(()=>{});
-}
-let synthControl=null;
-function setupSynth(){
-  if(!ALLOW_PLAYBACK)return;                                  // preview playback disabled (e.g. sight-reading)
-  if(synthControl||!(window.ABCJS&&ABCJS.synth&&ABCJS.synth.supportsAudio()))return;
-  if(!document.getElementById("tune-audio"))return;          // no transport widget on this page
-  synthControl=new ABCJS.synth.SynthController();
-  synthControl.load("#tune-audio",cursorControl,{displayLoop:true,displayRestart:true,displayPlay:false,displayProgress:false,displayWarp:true});
-}
+})();
+function setupSynth(){ return ALLOW_PLAYBACK&&!!window.AbcPlay; }       // preview playback off (sight-reading) or AbcPlay missing: Tp stays unloaded
+// Which of abcjs's tracks are the drawn melody (their notes carry startChar; chord, bass and drum tracks' do not).
+function melodyTracks(v){ const set=new Set(); try{ (v.setUpAudio({}).tracks||[]).forEach((tr,ti)=>{ if(tr.some(e=>e.cmd==="note"&&e.startChar!=null)) set.add(ti); }); }catch(e){} return set; }
 // map the 6 synth voices → General MIDI programs so the soundfont preview uses the
 // same instrument the menu selects (melody=program, accompaniment=chordprog, bass).
 const GM={piano:0,epiano:4,nylon:24,bass:32,vibraphone:11,marimba:12};
@@ -192,9 +231,14 @@ const taVol=part=>{ const el=document.getElementById("ta-vol-"+part); return el?
 const taDrumPattern=()=>(document.getElementById("taDrumPattern")||{}).value||"none";
 const taDrumFill=()=>(document.getElementById("taDrumFill")||{}).value||"none";
 const taHandPattern=()=>(document.getElementById("taHandPattern")||{}).value||"none";
-// Build setTune opts from current UI state. arrAbc=null means direct tune path (no arranger).
-const synthOpts=arrAbc=>({soundFontUrl:SF_URL,
-  midiTranspose:arrAbc?0:-instAdjust(),chordsOff:arrAbc?false:!chordsOn(),voicesOff:arrAbc?false:!playTuneOn()});
+// AbcPlay options for the loaded visual. arr = the Arranger's ABC (its own parts and volumes, as written); otherwise the tune itself:
+// abcjs's chords and bass on the band samples, Chords / Play melody tick boxes drop those tracks, concert pitch by -instAdjust.
+function playOptsFor(visual,arr){
+  if(arr) return ()=>({});
+  const mel=melodyTracks(visual);
+  return ()=>({ qpm:Math.round((parseInt(tempoEl.value,10)||target.tempoQ||100)*(target.tempoNote||1)), transpose:-instAdjust(),
+    shape:notes=>notes.filter(n=>mel.has(n.track)?playTuneOn():chordsOn()) });
+}
 // Extract just the melody line from a tune ABC string for layering into the arranger band.
 // Strips chords/decorations/grace/repeats/endings; normalizes note lengths to L:1/8.
 // Returns null if the result doesn't parse cleanly (some tunes use syntax we can't translate).
@@ -354,8 +398,7 @@ function renderTune(userAction){
   }
   const visualObj=ABCJS.renderAbc("notation",displayAbc||previewAbc(),{responsive:"resize",add_classes:true,clickListener:onNoteClick})[0];
   renderAccompNotation();
-  setupSynth();
-  if(synthControl){
+  if(setupSynth()){
     const arrAbc=window.Arranger&&tuneChartObj&&accompStyle()!=="off"?arrangerAbc(true):null;
     usingArrVisual=!!arrAbc;
     // Pre-compute notation timing for cursor positioning — avoids needing currentTrackMilliseconds
@@ -385,8 +428,7 @@ function renderTune(userAction){
     if(arrAbc) playVisual=ABCJS.renderAbc("taHiddenNotation",arrAbc,{add_classes:true})[0];
     if(playVisual){
       currentPlayVisual=playVisual;
-      synthControl.setTune(playVisual,!!userAction,synthOpts(arrAbc)).catch(()=>{});
-      try{ synthControl.isLoaded=false; }catch(e){}
+      Tp.load(playVisual,playOptsFor(playVisual,!!arrAbc));
       loopInMs=loopOutMs=null; markLoopRegion(); applyCycle(); updateCycleHint();
     }
   }
@@ -439,7 +481,7 @@ let acheck=null,bleedFloor=-Infinity;   // AudioCheck result (null: no check / c
 let audioCtx,analyser,micStream,buf,running=false,collecting=false,frames=[],smF=null,perfT0=0;
 const sensitivity=()=>parseFloat(document.getElementById("sens").value);
 // share the synth's AudioContext so scheduled playback + mic analysis use one clock
-async function ensureAudio(){ audioCtx=audioCtx||(window.MusicAudio?MusicAudio.ctx():new (window.AudioContext||window.webkitAudioContext)()); await audioCtx.resume(); }
+async function ensureAudio(){ if(!audioCtx){ audioCtx=window.MusicAudio?MusicAudio.ctx():new (window.AudioContext||window.webkitAudioContext)(); if(!window.MusicAudio&&window.AudioTap){ try{ AudioTap.register(audioCtx,audioCtx.destination,"Tune assessment"); }catch(e){} } } await audioCtx.resume(); }
 const melodyVoice=()=>(document.getElementById("melVoice")||{}).value||"piano";   // synth voices from the menu
 const accompVoice=()=>(document.getElementById("accVoice")||{}).value||"epiano";  // (bass line always uses "bass")
 // Instrument = DISPLAY-only (re-spells the part + clef; sound/grading stay concert).
@@ -563,7 +605,7 @@ function setStatus(t,c){ const e=document.getElementById("flowStatus"); e.textCo
 // ---------- metronome + playback ----------
 let activeOscs=[], playing=false, recTimer=null;
 function stopAllTones(){ for(const o of activeOscs){try{o.stop();}catch(e){}} activeOscs=[]; if(window.MusicAudio)MusicAudio.stopAll(); }
-function stopPlayback(){ clearBeatTimers(); stopAllTones(); playing=false; if(synthControl){try{synthControl.pause();}catch(e){}} previewPlaying=false; if(typeof updatePlayLabel==="function")updatePlayLabel(); }
+function stopPlayback(){ clearBeatTimers(); stopAllTones(); playing=false; Tp.pause(); previewPlaying=false; if(typeof updatePlayLabel==="function")updatePlayLabel(); }
 function abortRecording(){
   collecting=false; if(recTimer){ clearTimeout(recTimer); recTimer=null; }
   clearBeatTimers(); stopAllTones();
@@ -620,8 +662,8 @@ function scheduleChords(perfStart){
 // only the setTune opts (chordsOff / voicesOff) are updated — no notation re-render.
 let reloadAudioTimer=null;
 function reloadAudio(){
-  if(!synthControl||!currentPlayVisual) return;
-  // Blank cursor and highlights so the old position doesn't linger during buffer rebuild.
+  if(!Tp.ready()||!currentPlayVisual) return;
+  // Blank cursor and highlights so the old position doesn't linger while the sound is rebuilt.
   ["#notation","#accompNotation"].forEach(sel=>{
     const svg=document.querySelector(sel+" svg"); if(!svg) return;
     svg.querySelectorAll(".highlight").forEach(e=>e.classList.remove("highlight"));
@@ -633,21 +675,9 @@ function reloadAudio(){
   const pv=arrAbc?ABCJS.renderAbc("taHiddenNotation",arrAbc,{add_classes:true})[0]:currentPlayVisual;
   if(!pv) return;
   currentPlayVisual=pv;
-  if(wasPlaying){
-    // Force go() so the new buffer (with updated volumes) is ready, then seek to the saved
-    // position before starting playback to avoid a stutter from position 0.
-    synthControl.setTune(pv,true,synthOpts(arrAbc)).then(()=>{
-      const d=durMs();
-      if(seekMs>0&&d>0){
-        const frac=Math.max(0,Math.min(0.999,seekMs/d));
-        try{ synthControl.seek(frac); synthControl.setProgress(frac,d); }catch(e){}
-      }
-      try{ synthControl.play(); previewPlaying=true; updatePlayLabel(); }catch(e){}
-    }).catch(()=>{});
-  }else{
-    synthControl.setTune(pv,false,synthOpts(arrAbc)).catch(()=>{});
-    try{ synthControl.isLoaded=false; }catch(e){}
-  }
+  Tp.load(pv,playOptsFor(pv,!!arrAbc));
+  if(wasPlaying){ Tp.seek(seekMs); Tp.start(seekMs); }   // the new sound from where it was
+  else Tp.seek(seekMs);
 }
 function scheduleReloadAudio(){
   clearTimeout(reloadAudioTimer);
@@ -657,15 +687,13 @@ function scheduleReloadAudio(){
 (function(){
   const el=document.getElementById("tuneChart"); if(!el) return;
   el.addEventListener("click",function(ev){
-    if(!synthControl) return;
-    const d=durMs(); if(!d||!measureTimings.length) return;
+    if(!Tp.ready()||!measureTimings.length) return;
     const cell=ev.target.closest("[data-bar]"); if(!cell) return;
     const b=parseInt(cell.getAttribute("data-bar"),10); if(isNaN(b)) return;
     const po=tuneChartObj?tuneChartObj.playOrder:[];
     const k=po.indexOf(b); if(k<0) return;
     const targetAudio=Math.max(0, measureTimings[k]+introMs);
-    const frac=Math.max(0,Math.min(0.999,targetAudio/d));
-    try{ synthControl.seek(frac); synthControl.setProgress(frac,d); lastPlayMs=targetAudio; }catch(e){}
+    Tp.seek(targetAudio);
     if(tuneChartObj) tuneChartObj.setPlayMeasure(k+introBarCount);
     positionCursorByTime(targetAudio);
   });
@@ -673,8 +701,7 @@ function scheduleReloadAudio(){
 // Step one measure back (dir=-1) or forward (dir=1) while paused.
 // measureTimings are in notation time (no intro); add introMs for audio time.
 function stepMeasure(dir){
-  if(previewPlaying||!synthControl) return;
-  const d=durMs(); if(!d||!measureTimings.length) return;
+  if(previewPlaying||!Tp.ready()||!measureTimings.length) return;
   const notePos=Math.max(0, lastPlayMs-introMs);
   let targetAudio;
   if(dir>0){
@@ -687,12 +714,13 @@ function stepMeasure(dir){
     const backNote=(notePos-cur<100)?(prev??-introMs):cur;
     targetAudio=Math.max(0, backNote+introMs);
   }
-  const frac=Math.max(0,Math.min(0.999,targetAudio/d));
-  try{ synthControl.seek(frac); synthControl.setProgress(frac,d); lastPlayMs=targetAudio; }catch(e){}
+  Tp.seek(targetAudio);
 }
-// "Hear tune" now drives the abcjs transport (play/pause toggle). Loop/restart/
-// progress/scrub/warp + the cursor live in the #tune-audio widget.
-function hearTune(){ if(collecting||!synthControl)return; try{ synthControl.play(); previewPlaying=!previewPlaying; updatePlayLabel(); }catch(e){} }
+// "Hear tune" drives the transport Tp (play/pause toggle); Restart is the button in #tune-audio.
+function hearTune(){ if(collecting||!Tp.ready())return; Tp.toggle(); }
+(function(){ const w=document.getElementById("tune-audio"); if(!w||!ALLOW_PLAYBACK) return;
+  w.innerHTML='<button type="button" id="tuneRestart" title="Back to the start">⏮ Restart</button>';
+  document.getElementById("tuneRestart").addEventListener("click",()=>{ if(Tp.ready()) Tp.seek(0); }); })();
 const playBtn=document.getElementById("play"); if(playBtn) playBtn.addEventListener("click",hearTune);
 (function(){ const b=document.getElementById("reloadAudio"); if(b) b.addEventListener("click",()=>reloadAudio()); })();
 document.getElementById("mic").addEventListener("click",enableMic);

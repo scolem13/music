@@ -11,7 +11,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
   const hook = () => ev(`(function(){ var g = BandMidi.generate; BandMidi.generate = function(p, o){ window.__opts = o.opts; return g.apply(this, arguments); }; HTMLAnchorElement.prototype.click = function(){}; })()`);
   const opts = async () => { await ev(`document.getElementById("bt-mid-go").click()`); return JSON.parse(await ev(`JSON.stringify(window.__opts)`)); };
   try {
-    await ev(`0`).catch(() => {}); await b.goto(B + "/tools/backing-track-classic.html"); await b.sleep(1000); await ev(`localStorage.removeItem("btSections")`); await hook();
+    await ev(`0`).catch(() => {}); await b.goto(B + "/tools/backing-track-classic.html"); await b.sleep(1000); await ev(`localStorage.removeItem("btSections"); localStorage.removeItem("btStyle")`); await b.goto(B + "/tools/backing-track-classic.html"); await b.sleep(1000); await hook();   // (Style and Unlock are remembered between visits)
     const lay = JSON.parse(await ev(`JSON.stringify({ inPlay: ["bt-style","bt-feel","bt-countin","bt-choruses","bt-cyc-on","bt-cyc-from","bt-cyc-to","bt-loop-note"].map(function(id){ var e = document.getElementById(id); return !!e && e.closest(".bt-panel") === document.querySelector("#bt-root > .bt-panel") && !e.closest("details"); }),
       groups: Array.from(document.querySelectorAll("#bt-sec-band h3")).map(function(h){ return h.textContent; }), inBand: ["bt-unlock","bt-groove","bt-variation","bt-stops","bt-bass","bt-bass-sound","bt-comp","bt-rhythm","bt-voicing","bt-vmove","bt-ext","bt-rhythm-extra","bt-voicing-extra"].every(function(id){ return !!document.getElementById(id).closest("#bt-sec-band"); }),
       practice: Array.from(document.querySelectorAll("#bt-practice input")).map(function(i){ return i.id; }).join(" "), pre: document.querySelectorAll("#bt-root pre, #bt-root code.sourceCode").length,
@@ -38,6 +38,8 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     await set("bt-style", "bossa"); assert.deepStrictEqual([await v("bt-bass"), await v("bt-rhythm"), await v("bt-groove"), await v("bt-feel"), await v("bt-voicing")], ["bossa", "bossa", "bossa", "straight", "rootless"]);
     let o = await opts(); assert.deepStrictEqual([o.bassFeel, o.compRhythm, o.groove, o.feel], ["bossa", "bossa", "bossa", "straight"]);
     await set("bt-style", "montuno"); assert.deepStrictEqual([await v("bt-bass"), await v("bt-rhythm"), await v("bt-groove"), await v("bt-voicing")], ["tumbao", "montuno", "clave", "standard"]);
+    assert.strictEqual(await ev(`document.getElementById("bt-rhythm-more").hidden`), false, "montuno has two rhythms (guajeo, montuno): more to tick");
+    await set("bt-style", "chacha");
     assert.strictEqual(await ev(`document.getElementById("bt-rhythm-more").hidden`), true, "nothing more to tick in a one-rhythm style");
     await set("bt-comp", "guitar"); assert.strictEqual(await v("bt-voicing"), "triad3"); await set("bt-comp", "piano");
     // locked, the other feel means the plain style of that feel
@@ -46,7 +48,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     // unlocked: everything is listed, what fits first; the goofy combination reaches the band
     await set("bt-style", "swing");
     await ev(`(function(){ var c = document.getElementById("bt-unlock"); c.checked = true; c.dispatchEvent(new Event("change", { bubbles:true })); })()`);
-    assert.strictEqual(await groups("bt-rhythm"), "Fits Swing:9 | Jazz:4 | From tunes:1 | Folk, rock and pop:26 | Hymns and carols:1 | Caribbean:1 | Latin:4"); assert.strictEqual((await list("bt-bass")).split(" ").length, 31); assert.strictEqual((await list("bt-groove")).split(" ").length, 40);
+    assert.strictEqual(await groups("bt-rhythm"), "Fits Swing:9 | Jazz:4 | From tunes:1 | Folk, rock and pop:26 | Hymns and carols:1 | Caribbean:1 | Latin:5"); assert.strictEqual((await list("bt-bass")).split(" ").length, 31); assert.strictEqual((await list("bt-groove")).split(" ").length, 40);
     assert.deepStrictEqual([await v("bt-bass"), await v("bt-rhythm"), await v("bt-feel")], ["walk", "auto", "swing"], "unlocking changes nothing by itself");
     assert.strictEqual(await ev(`Array.from(document.querySelectorAll("#bt-rhythm-extra .bt-morehead")).map(function(h){ return h.textContent; }).join(" | ")`), "Fits Swing | Outside Swing");
     await set("bt-rhythm", "montuno"); await set("bt-voicing", "standard"); await set("bt-groove", "clave");
@@ -98,6 +100,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     const before = await opts(), abcBefore = await v("bt-abc");
     await ev(`document.getElementById("bt-setup-name").value = "WM in Bb"; document.getElementById("bt-setup-save").click()`);
     assert(/Saved/.test(await txt("bt-setup-note"))); assert.strictEqual(await ev(`document.getElementById("bt-changes").selectedOptions[0].textContent`), "WM in Bb");
+    await ev(`localStorage.removeItem("btStyle")`);   // (Style is remembered between visits: this reload checks a fresh page)
     await b.goto(B + "/tools/backing-track-classic.html"); await b.sleep(900); await hook();
     assert.strictEqual(await v("bt-style"), "swing"); assert.strictEqual(await ev(`document.querySelector('#bt-changes optgroup[label="Saved on this device"] option').textContent`), "WM in Bb");
     await set("bt-changes", "setup:u:0");

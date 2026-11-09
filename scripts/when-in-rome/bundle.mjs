@@ -9,7 +9,7 @@
 // A piece the converter cannot read is left out and listed at the end, with the reason.
 import fs from "fs";
 import path from "path";
-import { parseKern, parseMusicXml, separateTies, buildPiece, PKEY } from "./build.mjs";
+import { parseKern, parseMusicXml, separateTies, buildPiece, PKEY, parseRomanText, toAbc, chordPcsFor, W } from "./build.mjs";
 import { execFileSync } from "child_process";
 import { createRequire } from "module";
 const { barCheck } = createRequire(import.meta.url)("./bar-check.cjs");
@@ -60,6 +60,61 @@ function fit(k, chords) {
   return n ? ok / n : 0;
 }
 export { fit };
+// ---- Endings and repeats numbered differently in the analysis and the score. The analysis gives a first and second ending the
+// same number with a letter (m90a, m90b), or numbers the bars of a repeated section once; the score's bars are numbered one after
+// the other, endings included, so from the endings on every bar number is out by one (or more), which a single shift cannot fix.
+// realign() reads the analysis's bars as a list (in the file's order, a and b separate), tries each bar at the score's bar number
+// shifted by -3..+3 (a "b" ending one bar after its "a"), counts the chords that sound in that score bar (the same two-pitch-class test
+// as fit()) and picks the shifts by dynamic programming, charging a little for each change of shift. The analysis is then written
+// out again with the score's bar numbers. Returns the new text, or null when it changes nothing or two bars land on one number.
+const SHIFTS = [-3, -2, -1, 0, 1, 2, 3], SWITCH = +(process.env.SWITCH || 8);
+function realign(k, rtext) {
+  const lines = rtext.split("\n"), items = [];   // items: the main bar lines (not var / "=" lines): { line, n, letter }
+  lines.forEach((l, i) => { const m = /^m(\d+)([ab])?(?=\s|$)/.exec(l); if (m) items.push({ line: i, n: +m[1], letter: m[2] || "" }); });
+  if (items.length < 4) return null;
+  const uni = lines.map((l, i) => { const it = items.findIndex(x => x.line === i); return it >= 0 ? l.replace(/^m\d+[ab]?/, "m" + (10000 + it)) : (/^m/.test(l) ? "" : l); }).join("\n");
+  const rt = parseRomanText(uni), [num, den] = k.meter.split("/").map(Number), barTicks = W * num / den, beatTicks = num % 3 === 0 && den >= 8 ? W * 3 / den : W / den;
+  const pre = toAbc(k, {}), startOf = new Map(); pre.spans.forEach(sp => { if (!startOf.has(sp.measure)) startOf.set(sp.measure, sp); });
+  const evs = [].concat(...[...k.voices.values()]).filter(e => !e.rest && e.notes);
+  const sounding = (A, B) => { const here = new Set(); evs.forEach(e => { if (e.t < B - 1e-6 && e.t + e.d > A + 1e-6) e.notes.forEach(x => here.add(((NAT[x.l] + x.a) % 12 + 12) % 12)); }); return here; };
+  const byItem = items.map(() => []); rt.events.forEach(e => { const pcs = chordPcsFor(e.raw, e.key); if (pcs) byItem[e.m - 10000].push({ beat: e.beat, pcs }); });
+  const bad = items.map((it, i) => SHIFTS.map(d => {   // chords with no fit in this bar if the item sits at bar n + d (+1 for a "b")
+    const M = it.n + d + (it.letter === "b" ? 1 : 0), sp = startOf.get(M); if (M < 0 || (it.n === 0 && d !== 0)) return byItem[i].length + 1;
+    if (!sp) return byItem[i].length + 1;
+    const E = byItem[i]; let b = 0;
+    E.forEach((c, j) => { const A = M === 0 ? sp.e - barTicks + (c.beat - 1) * beatTicks : sp.s + (c.beat - 1) * beatTicks, nx = E[j + 1], B = nx ? (M === 0 ? sp.e - barTicks : sp.s) + (nx.beat - 1) * beatTicks : sp.e;
+      const here = sounding(A, Math.max(B, A + 1)); if (c.pcs.filter(p => here.has(p)).length < Math.min(2, c.pcs.length)) b++; });
+    return b;
+  }));
+  // Viterbi over the shifts
+  const S = SHIFTS.length, cost = [], from = [];
+  items.forEach((it, i) => { cost[i] = []; from[i] = [];
+    for (let s = 0; s < S; s++) { if (i === 0) { cost[i][s] = bad[i][s] + (SHIFTS[s] === 0 ? 0 : SWITCH); from[i][s] = -1; continue; }
+      let best = Infinity, arg = 0; for (let q = 0; q < S; q++) { const c = cost[i - 1][q] + (q === s ? 0 : SWITCH); if (c < best) { best = c; arg = q; } }
+      cost[i][s] = best + bad[i][s]; from[i][s] = arg; } });
+  let s = cost[items.length - 1].indexOf(Math.min(...cost[items.length - 1])); const pick = [];
+  for (let i = items.length - 1; i >= 0; i--) { pick[i] = SHIFTS[s]; s = from[i][s]; }
+  if (process.env.REALIGNLOG) console.log("picks", items.map((it, i) => it.n + it.letter + ":" + pick[i]).filter((x, i) => i === 0 || pick[i] !== pick[i - 1]).join(" "));
+  if (pick.filter((d, i) => i && d !== pick[i - 1]).length > 6) return null;   // a mapping that hops about is fitting noise, not a repeat structure
+  if (pick.some((d, i) => i && Math.abs(d - pick[i - 1]) > 2)) return null;   // a repeat or an ending is one or two bars, not a jump of three
+  if (pick.every(d => d === 0)) { if (process.env.REALIGNLOG) console.log("  no shift"); return null; }
+  const target = items.map((it, i) => it.n + pick[i] + (it.letter === "b" ? 1 : 0));
+  if (target.some(x => x < 0)) return null;
+  // two analysis bars landing on one score bar (the shift drops): keep the one whose chords fit better (the later on a tie), drop the other
+  const keep = items.map(() => true), at = new Map();
+  target.forEach((t, i) => { const j = at.get(t); if (j == null) { at.set(t, i); return; }
+    const bi = bad[i][SHIFTS.indexOf(pick[i])], bj = bad[j][SHIFTS.indexOf(pick[j])]; if (bi <= bj) { keep[j] = false; at.set(t, i); } else keep[i] = false; });
+  const shiftAt = n => { let d = 0; items.forEach((it, i) => { if (it.n <= n && !it.letter.includes("b")) d = pick[i]; }); return d; };   // a number in a var / "=" line follows the bar before it
+  return lines.map((l, i) => {
+    const it = items.findIndex(x => x.line === i);
+    if (it >= 0 && !keep[it]) return "";
+    if (it >= 0) return l.replace(/^m\d+[ab]?/, "m" + target[it]);
+    if (/^m\d/.test(l)) return l.replace(/^m(\d+)(-(\d+))?(var\d+)?(?=\s|=)/, (x, a, r, b, va) => "m" + (+a + shiftAt(+a)) + (r ? "-" + (+b + shiftAt(+b)) : "") + (va || ""))
+      .replace(/=\s*m(\d+)(-(\d+))?/, (x, a, r, b) => "= m" + (+a + shiftAt(+a)) + (r ? "-" + (+b + shiftAt(+b)) : ""));
+    return l;
+  }).join("\n");
+}
+
 const SETS = [
   { set: "chorales", name: "Bach chorales", list() {
       const base = WIR + "/Early_Choral/Bach,_Johann_Sebastian/Chorales";
@@ -132,6 +187,11 @@ for (const S of SETS) {
           .replace(/=\s*m(\d+)(-(\d+))?/g, (x, a, r, b) => "= m" + (+a + d) + (r ? "-" + (+b + d) : ""));
         if (/^m-1\b/m.test(rt2)) continue;
         const v2 = make(rt2); if (v2 && fit(v2.k, v2.chords) >= FIT) { v = v2; rtext = rt2; break; }
+      }
+      // endings / repeats numbered differently: shifts that change along the piece (realign), kept only when the piece then fits
+      if (!v || fit(v.k, v.chords) < FIT || v.misses.length > v.chords.length * 0.2) {
+        let rt3 = null; try { rt3 = realign(k, rtext); } catch (e) { console.log("REALIGN ERR", it.id, e.message); } const v3 = rt3 && make(rt3); if (process.env.REALIGNLOG) console.log(it.id, "realigned fit", v3 ? fit(v3.k, v3.chords).toFixed(3) : "-", v3 && v3.misses.length + " misses");
+        if (v3 && v3.chords.length && fit(v3.k, v3.chords) >= FIT && v3.misses.length <= v3.chords.length * 0.2) { v = v3; rtext = rt3; process.env.REALIGNLOG && console.log("REALIGNED", it.id); }
       }
       if (!v) v = buildPiece({ id: it.id, score: k, rtext, analyses: [[af, ""]], names: it.names, prefer, bpm }).versions[0];   // throws the converter's reason
       const unread = v.chords.filter(c => !c[1]).length;

@@ -1,0 +1,20 @@
+# title: Savoy Truffle
+# artist: The Beatles
+# metre: 4/4
+# tonic: G
+
+0.0	silence
+0.418	intro, | (2/4) N . | E:7 . . . | (3/4) E:7 . . | E:7 . . . |
+6.757	verse, | E . . . | E . . . | E . . . | F# . . . | F# . . . | A . . . | A . . . | G . . . | G . . . | B . . . | B . . . |
+28.653	refrain, | E:min . C/3 . | C#:dim/b3 . C/3 . | C:maj7 . . . | G . . N |
+36.595	intro, | E:7 . . . | E:7 . . . | (3/4) E:7 . . |
+42.017	verse, | E . . . | E . . . | E . . . | F# . . . | F# . . . | A . . . | A . . . | G . . . | G . . . | B . . . | B . . . |
+63.959	refrain, | E:min . C/3 . | C#:dim/b3 . C/3 . | C:maj7 . . . | G . . N |
+71.912	bridge, | E:min . . . | A . . . | A:sus4(2) . A . | G . B . | E:min . . . | A . . . | A:sus4(2) . A . | G . B . |
+87.458	verse instrumental, | E . . . | E . . . | E . . . | E . . . | F# . . . | F# . . . | A . . . | A . . . | G . . . | G . . . | B . . . | B . . . | E:min . C/3 . |
+113.023	refrain, | C#:dim/b3 . C/3 . | C:maj7 . . . | G . N . |
+118.991	bridge, | E:min . . . | A . . . | A:sus4(2) . A . | G . B . | E:min . . . | A . . . | E:sus4(2) . E . | G . B . |
+134.594	verse, | E . . . | E . . . | E . . . | E . . . | F# . . . | F# . . . | A . . . | A . . . | G . . . | G . . . | B . . . | B . . . | E:min . C/3 . |
+160.485	refrain, | C#:dim/b3 . C/3 . | C:maj7 . . . | G . N . |
+166.406	outro, | E:min . C/3 . | C#:dim/b3 . C/3 . | C:maj7 . . . | (2/4) G . |
+174.916	end

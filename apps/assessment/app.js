@@ -256,6 +256,14 @@ function detectPitch(buf, sampleRate){
 
 // ---------- audio setup + live tuner ----------
 let audioCtx, analyser, micStream, buf, running = false;
+// fallback context when MusicAudio is absent: one output bus, registered with AudioTap
+let outBus = null;
+function makeCtx(){
+  const c = new (window.AudioContext || window.webkitAudioContext)();
+  outBus = c.createGain(); outBus.connect(c.destination);
+  if (window.AudioTap) AudioTap.register(c, outBus, "Assessment");
+  return c;
+}
 const freqEl = document.getElementById("freq");
 const liveNoteEl = document.getElementById("livenote");
 const needle = document.getElementById("needle");
@@ -268,7 +276,7 @@ let smoothedFreq = null;
 
 async function enableMic(){
   try {
-    audioCtx = audioCtx || (window.MusicAudio ? MusicAudio.ctx() : new (window.AudioContext || window.webkitAudioContext)());
+    audioCtx = audioCtx || (window.MusicAudio ? MusicAudio.ctx() : makeCtx());
     await audioCtx.resume();
     let micConstraints = { echoCancellation: false, noiseSuppression: false, autoGainControl: false };
     if (window.AudioCheck){
@@ -693,7 +701,7 @@ document.getElementById("record").addEventListener("click", recordAttempt);
 
 // ---------- audio playback helpers ----------
 async function ensureAudio(){
-  audioCtx = audioCtx || (window.MusicAudio ? MusicAudio.ctx() : new (window.AudioContext || window.webkitAudioContext)());
+  audioCtx = audioCtx || (window.MusicAudio ? MusicAudio.ctx() : makeCtx());
   await audioCtx.resume();
 }
 let activeOscs = [];   // scheduled oscillators, so STOP can silence them at once
@@ -706,7 +714,7 @@ function playTone(midi, start, dur, gain, type){
   if (window.MusicAudio && audioCtx === MusicAudio.ctx()){ MusicAudio.noteAt(midi, start, dur, gain || 0.2, "piano"); return; }   // the backing track's piano
   const osc = audioCtx.createOscillator(), g = audioCtx.createGain();
   osc.type = type || "sine"; osc.frequency.value = midiToFreq(midi);
-  g.gain.value = 0.0001; osc.connect(g); g.connect(audioCtx.destination);
+  g.gain.value = 0.0001; osc.connect(g); g.connect(outBus || audioCtx.destination);
   g.gain.exponentialRampToValueAtTime(gain || 0.2, start + 0.02);
   g.gain.exponentialRampToValueAtTime(0.0001, start + dur);
   osc.start(start); osc.stop(start + dur + 0.05);

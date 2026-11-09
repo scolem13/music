@@ -23,11 +23,17 @@ function ok(c, ...a) { total++; if (!c) fail(...a); }
 const LET = "CDEFGAB", NAT = [0, 2, 4, 5, 7, 9, 11], pc = m => ((m % 12) + 12) % 12;
 const C = {
   major: { I: "C E G", ii: "D F A", iii: "E G B", IV: "F A C", V: "G B D", vi: "A C E", "vii°": "B D F", "♭VII": "B♭ D F", "I+": "C E G♯", iv: "F A♭ C",
+    "V/V": "D F♯ A", "V7/V": "D F♯ A C", "V/vi": "E G♯ B", "V7/vi": "E G♯ B D", "V/ii": "A C♯ E", "V7/ii": "A C♯ E G", "V/IV": "C E G", "V7/IV": "C E G B♭", "V/iii": "B D♯ F♯", "V7/iii": "B D♯ F♯ A",
+    "vii°/V": "F♯ A C", "vii°7/V": "F♯ A C E♭", "viiø7/V": "F♯ A C E", "vii°/vi": "G♯ B D", "vii°7/vi": "G♯ B D F", "viiø7/vi": "G♯ B D F♯", "vii°/ii": "C♯ E G", "vii°7/ii": "C♯ E G B♭", "viiø7/ii": "C♯ E G B", "vii°7/iii": "D♯ F♯ A C",
+    "♭VI": "A♭ C E♭", "♭III": "E♭ G B♭", "ii°": "D F A♭", "iiø7": "D F A♭ C", iv7: "F A♭ C E♭", N: "D♭ F A♭",
     IM7: "C E G B", ii7: "D F A C", iii7: "E G B D", IVM7: "F A C E", V7: "G B D F", vi7: "A C E G", "viiø7": "B D F A" },
-  minor: { i: "C E♭ G", "ii°": "D F A♭", III: "E♭ G B♭", iv: "F A♭ C", v: "G B♭ D", V: "G B D", VI: "A♭ C E♭", VII: "B♭ D F", "vii°": "B D F",
+  minor: { I: "C E G", N: "D♭ F A♭", i: "C E♭ G", "ii°": "D F A♭", III: "E♭ G B♭", iv: "F A♭ C", v: "G B♭ D", V: "G B D", VI: "A♭ C E♭", VII: "B♭ D F", "vii°": "B D F",
+    "V/III": "B♭ D F", "V7/III": "B♭ D F A♭", "V/iv": "C E G", "V7/iv": "C E G B♭", "V/V": "D F♯ A", "V7/V": "D F♯ A C", "V/VI": "E♭ G B♭", "V7/VI": "E♭ G B♭ D♭", "V/VII": "F A C", "V7/VII": "F A C E♭",
+    "vii°/V": "F♯ A C", "vii°7/V": "F♯ A C E♭", "viiø7/V": "F♯ A C E", "vii°/III": "D F A♭", "vii°7/III": "D F A♭ C♭", "vii°/iv": "E G B♭", "vii°7/iv": "E G B♭ D♭", "vii°7/VI": "G B♭ D♭ F♭", "vii°7/VII": "A C E♭ G♭",
     iv7: "F A♭ C E♭", V7: "G B D F", "iiø7": "D F A♭ C", VIM7: "A♭ C E♭ G", "vii°7": "B D F A♭" }
 };
 if (process.env.NEG) C.major.ii7 = "D F A C♯";
+if (process.env.NEG) { C.major["♭VI"] = "A C E"; C.minor.N = "D F A"; C.major["V7/V"] = "D F♯ A C♯"; C.minor["vii°7/V"] = "F♯ A C E"; }
 const parse = t => ({ l: LET.indexOf(t[0]), a: { "": 0, "♯": 1, "♭": -1 }[t.slice(1)] });
 const nm = n => LET[n.l] + { "-2": "𝄫", "-1": "♭", "0": "", "1": "♯", "2": "𝄪" }[n.a];
 function inKey(key, mode, base) {
@@ -35,8 +41,10 @@ function inKey(key, mode, base) {
   return C[mode][base].split(" ").map(parse).map(n => { const l = (n.l + t.l) % 7, s = pc(NAT[n.l] + n.a + NAT[t.l] + t.a), a = ((s - NAT[l] + 18) % 12) - 6; return { l, a }; });
 }
 function split(tok) {   // "V65" -> ["V7", 1]; "IVM7" -> ["IVM7", 0]; "I6" -> ["I", 1]
+  const sl = tok.indexOf("/"), tail = sl >= 0 ? tok.slice(sl) : ""; if (sl >= 0) tok = tok.slice(0, sl);
   const m = /^(.*?)(64|65|43|42|6)?$/.exec(tok); let base = m[1], f = m[2] || "";
   if (f === "65" || f === "43" || f === "42") base += "7";
+  base += tail;
   return [base, { "": 0, "6": 1, "64": 2, "65": 1, "43": 2, "42": 3 }[f]];
 }
 
@@ -67,10 +75,10 @@ CA.LEVELS.forEach(L => CA.STAGES.concat(["satb-treble"]).forEach(stage => {
       ok(hp === cp, tag, "chord", i + 1, "sounds", hp, "wants", cp);
       ok(pc(Math.min(...heard)) === pc(NAT[c.bass.l] + c.bass.a), tag, "chord", i + 1, "lowest note is not the bass");
       // names
-      ok(CA.check(q, i, CA.expected(q, i)), tag, "expected refused", CA.expected(q, i));
-      if (q.answer === "rn" && q.inv) ok(CA.check(q, i, it.rnSlash), tag, "slash form refused", it.rnSlash);
+      ok(CA.check(q, i, CA.expected(q, i).replace(/ \(or .*$/, "")), tag, "expected refused", CA.expected(q, i));
+      if (q.answer === "rn" && q.inv && !q.figs) ok(CA.check(q, i, it.rnSlash), tag, "slash form refused", it.rnSlash);
       if (q.inv && q.answer === "sym") { const wrong = CA.nm(c.notes[0]) + (CA.expected(q, i).replace(/^[A-G][♯♭]?/, "").replace(/\/.*$/, "")) + (c.inv ? "" : "/" + CA.nm(c.notes[1])); ok(!CA.check(q, i, wrong), tag, "wrong bass accepted", wrong); }
-      if (q.answer === "rn") { const flip = it.rn.replace(/^([♭♯]?)([ivIV]+)/, (m0, a, r) => a + (r === r.toUpperCase() ? r.toLowerCase() : r.toUpperCase())); if (!/[°ø+]/.test(it.rn)) ok(!CA.check(q, i, flip), tag, "wrong case accepted", flip); }
+      if (q.answer === "rn") { const flip = it.rn.replace(/^([♭♯]?)([ivIV]+)/, (m0, a, r) => a + (r === r.toUpperCase() ? r.toLowerCase() : r.toUpperCase())); if (!/[°ø+]/.test(it.rn) && c.cat !== "N") ok(!CA.check(q, i, flip), tag, "wrong case accepted", flip); }
       // stacks
       ok(CA.checkStack(q, i, c.notes).ok, tag, "root-position stack refused");
       ok(!CA.checkStack(q, i, c.notes.slice(1).concat([c.notes[0]])).ok, tag, "rotated stack accepted");
@@ -152,6 +160,75 @@ ok(cp.items.map(x => x.fn).join() === "T,D,T,TP,T" && cp.cadence === "plagal", "
     q.ncts.forEach((x, j) => { ok(CA.checkNct(q, j, x.kind), tag, "right kind refused"); CA.NCT_KINDS.filter(kd => kd !== x.kind).forEach(kd => ok(!CA.checkNct(q, j, kd), tag, "wrong kind accepted", kd)); });
   }
   CA.NCT_KINDS.forEach(kd => ok((seen[kd] || 0) >= 10, "ch10: kind made often enough", kd, seen[kd] || 0));
+}
+
+// ch. 16 figures: the answer is the template's figure (not a slash), "Cad64" is right only for an I64 directly before V
+for (let k = 0; k < 150; k++) {
+  const q = CA.make(CA.parseSettings("level=ch16&texture=" + CA.STAGES[k % 5] + "&mode=both&most=3&seed=" + (k * 7919 + 3))), tag = "ch16/" + k;
+  if (!q) { ok(false, tag, "no passage"); continue; }
+  const toks = q.prog.split(" ");
+  ok(q.figs === true && q.inv && q.items.length === toks.length, tag, "figs level");
+  toks.forEach((tk, i) => {
+    const it = q.items[i], rh = q.texture === "rh";
+    const isCad = /^[Ii]64$/.test(tk) && /^V/.test(toks[i + 1] || "") && !(process.env.NEG && i === 0);
+    ok(it.cad64 === isCad, tag, "cad64 flag", i, tk, it.cad64);
+    if (rh) return;
+    ok(CA.check(q, i, tk) && it.rn === tk, tag, "figure answer", tk, it.rn);
+    ok(!/(64|65|43|42|6)$/.test(tk) || !CA.check(q, i, tk.replace(/(64|65|43|42|6)$/, "") + "/3rd"), tag, "slash refused", tk);
+    ok(CA.check(q, i, "Cad64") === isCad && CA.check(q, i, "cad 6/4") === isCad, tag, "Cad64", tk, isCad);
+  });
+}
+{ const q = CA.make(CA.parseSettings("level=ch16&key=C major&prog=I IV I64 V I&texture=broken"));
+  ok(q.items.map(x => x.cad64).join() === "false,false,true,false,false" && CA.check(q, 2, "I64") && CA.check(q, 2, "Cad64") && !CA.check(q, 2, "I/5th") && !CA.check(q, 0, "Cad64") && !CA.check(q, 2, "I6"), "ch16 worked example");
+  const w = CA.make(CA.parseSettings("level=ch16&key=C major&prog=I V64 I6 ii65 V7 I&texture=broken"));
+  ok(CA.check(w, 1, "V64") && !CA.check(w, 1, "Cad64") && CA.check(w, 3, "ii65") && !CA.check(w, 3, "ii7/5th") && CA.check(w, 2, "I6"), "ch16 figures"); }
+
+// ch. 17 / 18: the applied chord's root is a perfect 5th above (V) or a half step below (vii) the root of the chord that follows it, by
+// semitones; its name is the slash form; the plain numeral is refused
+for (const lv of ["ch17", "ch18"]) for (let k = 0; k < 120; k++) {
+  const q = CA.make(CA.parseSettings("level=" + lv + "&texture=" + CA.STAGES[k % 5] + "&mode=both&most=4&seed=" + (k * 6007 + 11))), tag = lv + "/" + k;
+  if (!q) { ok(false, tag, "no passage"); continue; }
+  const toks = q.prog.split(" "), rt = c => pc(NAT[c.notes[0].l] + c.notes[0].a);
+  toks.forEach((tk, i) => {
+    if (!tk.includes("/")) return;
+    const c = q.items[i].chord, nx = q.items[i + 1].chord, d = pc(rt(c) - rt(nx));
+    const want = lv === "ch17" ? 7 : 1;   // V: 5th above = 7 semitones above the target; vii: a half step below = 11 up
+    ok(d === (lv === "ch17" ? 7 : 11) && c.cat === "applied", tag, "root relation", tk, d, want);
+    ok(lv === "ch17" ? /^(maj|dom7)$/.test(c.q) : /^(dim|dim7|hdim7)$/.test(c.q), tag, "quality", tk, c.q);
+    if (q.texture !== "rh") ok(CA.check(q, i, tk) && !CA.check(q, i, tk.split("/")[0]) && CA.check(q, i, tk.replace(/ø/, "h")), tag, "applied answer", tk);
+    const st = CA.steps(q, i); ok(st.some(x => x.h === "Applied chord") && !st.some(x => x.h === "Scale degree"), tag, "applied step", tk);
+  });
+}
+{ const q = CA.make(CA.parseSettings("level=ch17&key=C major&prog=I V65/V V I&texture=broken"));
+  ok(CA.check(q, 1, "V65/V") && CA.check(q, 1, "V6/5/V") && !CA.check(q, 1, "V65") && !CA.check(q, 1, "V65/IV") && !CA.check(q, 1, "II65"), "ch17 worked example"); }
+{ const q = CA.make(CA.parseSettings("level=ch18&key=a minor&prog=i viiø65/V V i&texture=broken")), c = q.items[1].chord;
+  ok(c.notes.map(nm).join(" ") === "D♯ F♯ A C♯" && nm(c.bass) === "F♯" && CA.check(q, 1, "viiø65/V") && !CA.check(q, 1, "vii°65/V"), "ch18 worked example", c.notes.map(nm).join(" ")); }
+
+// ch. 19 / 20: every borrowed chord has a note lowered from the major scale (by letter and semitone, checked here), the Picardy I is
+// the only major tonic chord in a minor key; the Neapolitan is a major triad on the lowered 2nd with the 3rd in the bass (N6)
+for (let k = 0; k < 150; k++) {
+  const q = CA.make(CA.parseSettings("level=ch19&texture=" + CA.STAGES[k % 5] + "&mode=both&most=4&seed=" + (k * 5003 + 1))), tag = "ch19/" + k;
+  if (!q) { ok(false, tag, "no passage"); continue; }
+  const MAJS = [0, 2, 4, 5, 7, 9, 11];
+  q.prog.split(" ").forEach((tk, i) => {
+    const c = q.items[i].chord, sc = (c.notes[0].l - q.key.tonic.l + 7) % 7;
+    const lowered = c.notes.some(n => { const d = (n.l - q.key.tonic.l + 7) % 7, semi = pc(NAT[n.l] + n.a - NAT[q.key.tonic.l] - q.key.tonic.a); return q.key.mode === "major" && semi < MAJS[d]; });
+    if (q.key.mode === "major") ok(/^(iv|♭|ii[°ø])/.test(tk) === lowered, tag, "borrowed", tk, lowered);
+    if (q.key.mode === "minor" && tk === "I") ok(c.q === "maj" && sc === 0 && i === q.items.length - 1, tag, "Picardy", tk);
+    if (q.texture !== "rh") ok(CA.check(q, i, tk) && CA.check(q, i, tk.replace("♭", "b")), tag, "answer", tk);
+    if (lowered) ok(CA.steps(q, i).some(x => x.h === "Borrowed chord"), tag, "borrowed step", tk);
+  });
+}
+for (let k = 0; k < 150; k++) {
+  const q = CA.make(CA.parseSettings("level=ch20&texture=" + CA.STAGES[k % 5] + "&mode=both&most=4&seed=" + (k * 3989 + 2))), tag = "ch20/" + k;
+  if (!q) { ok(false, tag, "no passage"); continue; }
+  q.prog.split(" ").forEach((tk, i) => {
+    if (!/^N/.test(tk)) return;
+    const c = q.items[i].chord, t = q.key.tonic, d2 = pc(NAT[c.notes[0].l] + c.notes[0].a - NAT[t.l] - t.a);
+    ok(d2 === 1 && (c.notes[0].l - t.l + 7) % 7 === 1 && c.q === "maj" && c.cat === "N", tag, "Neapolitan is a major triad on the lowered 2nd", tk);
+    if (q.texture !== "rh") ok(CA.check(q, i, tk) && CA.check(q, i, tk.replace("N", "♭II")) && CA.check(q, i, tk.replace("N", "bII")) && !CA.check(q, i, tk.replace("N", "II")), tag, "N answer", tk);
+    ok(CA.steps(q, i).some(x => x.h === "Neapolitan"), tag, "N step");
+  });
 }
 
 // typed forms the page promises

@@ -5,7 +5,7 @@
 // from it is opened, then cached by the browser. Both written by scripts/when-in-rome/bundle.mjs. Bump V after rebuilding them.
 (function () {
   "use strict";
-  var V = "4", BASE = "/apps/shared/data/scores/", PAGE = location.pathname;
+  var V = "5", BASE = "/apps/shared/data/scores/", PAGE = location.pathname;
   var $ = function (id) { return document.getElementById(id); };
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function get(f) { return fetch(BASE + f + ".json?v=" + V).then(function (r) { if (!r.ok) throw new Error(f + ": " + r.status); return r.json(); }); }

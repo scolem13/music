@@ -1,0 +1,16 @@
+# title: Good Night
+# artist: The Beatles
+# metre: 4/4
+# tonic: G
+
+0.0	silence
+4.004	intro, | G:maj7 . C/5 . | C/5 G:maj7 C/5 . | G:maj7 . C/5 . | G . B:min7 . | A:min7 . D:sus4 D |
+22.314	verse, | G . B:min7 . | B:min7 A:min7 . C/5 | B:min . A:min . | A:min C/5 D/3 . | G . B:min7 . | A:min7 . . . | B:min . A:min . | C . D . | G:maj7 . C:maj(#4)/5 . |
+55.670	bridge, | G:maj7 . C:maj(#4)/5 . | G . C/5 . | G . C/5 . |
+66.386	verse, | G . B:min7 . | A:min7 . C/5 . | B:min . A:min . | C/5 . D/3 . | G . B:min7 . | B:min7 A:min7 . . | B:min . A:min . | C/5 . D/3 . | G:maj7 . C:maj(#4)/5 . |
+98.998	bridge, | C:maj(#4)/5 G:maj7 C:maj(#4)/5 . | G . C/5 . | G . C/5 . |
+109.926	special bridge instrumental, | G . A:min . | A . D:min . | G . C/5 . | D/3 . C D | G . . B:min7 |
+127.640	verse, | B:min7 A:min7 C/5 . | B:min . A:min . | C/5 . D/3 . | G . B:min7 . | A:min7 . . . | B:min . A:min . | C/5 . D/3 . | G:maj7 . C:maj(#4)/5 . |
+156.478	bridge, | G:maj7 . C:maj(#4)/5 . | G:maj7 . C/5 . | G:maj7 . C/5 . | G . B:min7 . |
+171.247	outro, | A:min7 . C/5 . | G . B:min7 . | A:min7 . D:sus4 D | (1/4) D |
+191.687	end

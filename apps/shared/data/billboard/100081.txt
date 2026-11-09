@@ -1,0 +1,18 @@
+# title: Wait
+# artist: The Beatles
+# metre: 4/4
+# tonic: F#
+
+0.0	silence
+1.161	verse, | F#:min . B/5 . | B:min/5 . F#:min . | C# . F#:min . | F#:min7 . B/5 . | B:min/5 . F#:min . | C# . F#:min . |
+12.492	refrain, | A . D:maj7 . | A . D:maj7 . | A . D:maj7 . | A . C#:7 . | F#:min . . . |
+21.804	verse, | F#:min7 . B/5 . | B:min/5 . F#:min . | C#:7 . F#:min . | F#:min7 . B/5 . | B:min/5 . F#:min . | C#:7 . F#:min . |
+33.112	refrain, | A . D:maj7 . | A . D:maj7 . | A . D:maj7 . | A . C#:7 . | F#:min . . . |
+42.284	bridge, | B:maj(*3) . . . | E . . . | A . . . | F#:min . . . | B:maj(*3) . . . | E . . . | A . . . | C#:sus4 C# . . |
+57.214	verse, | F#:min7 . B/5 . | B:min/5 . F#:min . | C# . F#:min . | F#:min . B/5 . | B:min/5 . F#:min . | C# . F#:min . |
+68.499	refrain, | A . D:maj7 . | A . D:maj7 . | A . D:maj7 . | A . C#:7 . | F#:min . . . |
+77.833	bridge, | B:maj(*3) . . . | E . . . | A . . . | F#:min . . . | B:maj(*3) . . . | E . . . | A . . . | C#:sus4 C# . . |
+93.019	verse, | F#:min . B/5 . | B:min/5 . F#:min . | C#:7 . F#:min . | F#:min . B/5 . | B:min/5 . F#:min . | C# . F#:min . |
+104.385	refrain, | A . D:maj7 . | A . D:maj7 . | A . D:maj7 . | A . C#:7 . | F#:min . . . |
+113.720	verse with outro, | F#:min . B/5 . | B:min/5 . F#:min . | C# . F#:min . | F#:min . B/5 . | B:min/5 . F#:min . | C#:7 . . F#:min | (3/4) F#:min . . |
+136.986	end

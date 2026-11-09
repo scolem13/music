@@ -1,0 +1,19 @@
+# title: Ob-La-Di, Ob-La-Da
+# artist: The Beatles
+# metre: 4/4
+# tonic: B
+
+0.0	silence
+0.116	intro, | F . . A:dim/b5 | Bb . . . | Bb . . . | Bb . . . | Bb . . . |
+10.728	verse, | Bb . . . | F . . . | F . . . | Bb . . . | Bb . . . | Eb . . . | Bb . F . | Bb . . . |
+27.771	refrain, | Bb . . . | F . G:min . | Bb . F . | Bb . . . | Bb . . . | F . G:min . | Bb . F . | Bb . . . |
+44.687	verse, | Bb . . . | F . . . | F . . . | Bb . . . | Bb . . . | Eb . . . | Bb . F . | Bb . . . |
+61.498	refrain, | Bb . . . | F . G:min . | Bb . F . | Bb . . . | Bb . . . | F . G:min . | Bb . F . | Bb . . . |
+78.402	bridge, | Eb . . . | Eb . . . | Bb . Bb:sus4(9) . | Bb . Bb:sus2(b7) . | Eb . . . | Eb . . . | Bb/5 . . . | F . . . |
+95.283	verse, | Bb . . . | F . . . | F . . . | Bb . . . | Bb . . . | Eb . . . | Bb . F . | Bb . . . | Bb . . . |
+114.323	refrain, | F . G:min . | Bb . F . | Bb . . . | Bb . . . | F . G:min . | Bb . F . | Bb . . . |
+129.196	bridge, | Eb . . . | Eb . . . | Bb . Bb:sus4(9) . | Bb . Bb:sus2(b7) . | Eb . . . | Eb . . . | Bb/5 . . . | F . . . |
+146.112	verse, | Bb . . . | F . . . | F . . . | Bb . . . | Bb . . . | Eb . . . | Bb . F . | Bb . . . |
+163.155	refrain, | Bb . . . | F . G:min . | Bb . F . | Bb . . . | Bb . . . | F . G:min . | Bb . F . | G:min . . . | G:min . . . |
+182.311	outro, | F F/6 Bb . |
+188.839	end

@@ -1715,6 +1715,28 @@ How grading works:
   (robust to onset/offset glitches), converts to cents relative to the target,
   pass if |cents| ≤ tolerance.
 
+** [2026-11-09] Tune Assessment preview moved off ABCJS.synth onto AbcPlay
+- ~apps/tune-assessment/app.js~ (page ~practice/assessment-tune.qmd~ via ~_tune-embed.qmd~, which now loads ~apps/shared/abc-play.js~):
+  the abcjs ~SynthController~ and its soundfont (MusyngKite on a CDN) are gone. A small transport ~Tp~ calls
+  ~AbcPlay.play(visual, {tracks:true, fromMs})~, so every voice abcjs makes sounds on the band's samples, each on its Mixer strip
+  (AudioTap, group "Score playback"):
+  - Arranger on: the hidden Arranger ABC as before (its parts, drum channel on the band's kit, intro / gap / repeats / volumes
+    are all in the ABC), ~tracks~ is how the Accompaniment Styles page plays the same ABC.
+  - Arranger off: the tune itself with abcjs's auto chords and bass (as before); 🎹 Chords / 🎵 Play melody drop those tracks
+    through ~opts.shape~ (melody track = the one whose notes carry ~startChar~); concert pitch by ~opts.transpose = -instAdjust~.
+  - Kept by ~Tp~: Play / Pause (resumes where it paused), seek = restart at ~fromMs~ (notehead click, chord-chart bar click, step bar,
+    ↺ Audio keeps the position), Cycle (region between two noteheads, or the whole tune; a restart at the loop start, so a
+    ~0.15 s gap), cursor and chord-chart bar lit from the events AbcPlay hands to ~onStart~ on the audio clock, Space / Enter keys.
+  - Gone: abcjs's own bar (progress slider, Warp %): the tempo slider sets the tempo; a Restart button replaces the widget.
+    Stop in the bottom strip pauses (position kept).
+  - NOT done: the band styles of ~opts.abc / opts.style~ (BandPlayer) are not used here: they give no ms timeline for seeking,
+    looping and the Arranger's intro / gap, so the page's own Arranger (~arranger.js~) is still what makes the accompaniment, only
+    its sound is the band's. The recording flow (count-in clicks, ~scheduleChords~, targets) still uses ~MusicAudio~ / oscillators,
+    not ABCJS.synth; ~ensureAudio~'s fallback AudioContext now registers with AudioTap.
+  - Unlistened: nobody has heard it on real speakers (headless only). Balance of the Arranger parts against the band samples
+    (they were tuned for the GM soundfont) is the thing to check by ear.
+  - Test ~tests/tune-assessment/tune-assessment-play.cdp.js~ (render the page to a scratch folder, ~SITE=<dir>~; ~NEG=1~ fails).
+
 * TODO / Next
 - [X] Extend tonal demo from 1 pitch → short passage (3 pitches) with
   silence-gap segmentation. (~demos/tonal-passage-3.html~)

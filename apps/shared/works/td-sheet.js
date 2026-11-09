@@ -5,7 +5,7 @@
 // the box under its name: words match anywhere; in a number column ">0", "0", "2"); quick boxes for "has recordings", "bars
 // marked", "notation", "chords"; a click on a column name sorts by it (again: the other way). Shows 200 rows at a time.
 // Reads what the page already loads: tunesObject, CLASSICAL_THEMES, WORKS (Works), MLTRecordings; the Billboard songs (apps/shared/data/billboard/index.json)
-// are fetched and added as type "Billboard" rows; PDMX scores in their original scoring (apps/shared/data/pdmx/index.json) as type "Score". Type chips above the table switch types on and off (all on to start: nothing to expand).
+// are fetched and added as type "Billboard" rows (the Isophonics Beatles songs in the same index, src "iso", as type "Isophonics"); PDMX scores in their original scoring (apps/shared/data/pdmx/index.json) as type "Score". Type chips above the table switch types on and off (all on to start: nothing to expand).
 // Concepts (works.js "Concept uses": apps/shared/works/uses/*.js, plus print-anthology figures that carry a concept / caption): a Concepts column
 // (count, then the first names; filter by words in it), two lists above the table (concept, source) and a ▸ in the Title cell that opens the
 // row's uses (source, concept, note, link). A uses `work` id that is not in works-data.js becomes its own row (type Piece, "uses only").
@@ -23,7 +23,7 @@
   try {
     if (!localStorage.getItem("td-folded-v1")) {
       const key = "section-fold:" + location.pathname; let st = {}; try { st = JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) {}
-      ["td-works", "td-print", "td-tunes", "td-themes", "td-mlt", "td-billboard", "td-analysed"].forEach((id) => { st[id] = 1; });
+      ["td-works", "td-print", "td-tunes", "td-themes", "td-mlt", "td-billboard", "td-isophonics", "td-analysed"].forEach((id) => { st[id] = 1; });
       localStorage.setItem(key, JSON.stringify(st)); localStorage.setItem("td-folded-v1", "1");
     }
   } catch (e) {}
@@ -77,7 +77,7 @@
 
   // Billboard songs (McGill): added when the index arrives
   const bbReady = fetch("/apps/shared/data/billboard/index.json").then((r) => r.json()).then((all) => {
-    all.forEach((g) => { rows.push({ title: g.title, type: "Billboard", where: g.artist || "", by: "McGill Billboard" + (g.metre ? " · " + g.metre : ""), key: g.tonic || "", meter: g.metre || "",
+    all.forEach((g) => { const iso = g.src === "iso"; rows.push({ title: g.title, type: iso ? "Isophonics" : "Billboard", where: iso ? g.artist + " · " + g.album : g.artist || "", by: (iso ? "Isophonics" : "McGill Billboard") + (g.metre ? " · " + g.metre : ""), key: g.tonic || "", meter: g.metre || "",
       year: g.year || "", notation: 0, recs: 0, timed: 0, chords: 1, href: "/tools/timestamp-notes.html?salami=" + g.id, tsn: "/tools/timestamp-notes.html?salami=" + g.id, id: g.id,
       uses: [], nconc: 0, concepts: "", cset: new Set(), sset: new Set() }); });
   }).catch(() => {});
@@ -112,7 +112,7 @@
 
   // ---- table ----
   const COLS = [
-    { k: "title", label: "Title" }, { k: "type", label: "Type", chips: ["Tune", "Theme", "Piece", "Score", "Song", "Billboard", "Recording"] }, { k: "where", label: "Set / composer" },
+    { k: "title", label: "Title" }, { k: "type", label: "Type", chips: ["Tune", "Theme", "Piece", "Score", "Song", "Billboard", "Isophonics", "Recording"] }, { k: "where", label: "Set / composer" },
     { k: "by", label: "Composer / movement / kind" }, { k: "key", label: "Key", w: "4rem" }, { k: "meter", label: "Meter", w: "5rem" },
     { k: "year", label: "Year", num: 1, w: "4.5rem", ph: "<1800" }, { k: "print", label: "Print", w: "6rem" },
     { k: "notation", label: "Notation", yn: 1 }, { k: "recs", label: "Recordings", num: 1 }, { k: "timed", label: "Bars marked", num: 1 }, { k: "chords", label: "Chords", yn: 1 },

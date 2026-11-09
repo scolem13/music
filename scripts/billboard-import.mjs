@@ -41,6 +41,8 @@ function romansOf(text, tonic) {
   return { romans, romanSeq: seq };
 }
 
+// album number in the corpus's folder names -> release year (UK original albums; 10 = The Beatles "White Album" 1968): from the albums' own dates
+const ISO_YEARS = { 1: 1963, 2: 1963, 3: 1964, 4: 1964, 5: 1965, 6: 1965, 7: 1966, 8: 1967, 9: 1967, 10: 1968, 11: 1969, 12: 1970 };
 const index = [], seen = new Set();
 let dropped = 0;
 for (const id of fs.readdirSync(SRC + "/McGill-Billboard").filter((d) => /^\d+$/.test(d)).sort((a, b) => a - b)) {
@@ -60,5 +62,25 @@ for (const id of fs.readdirSync(SRC + "/McGill-Billboard").filter((d) => /^\d+$/
     peak: +m.peak_rank || null, metre: h("metre"), tonic: h("tonic"), secs, form, romans: rn.romans, romanSeq: rn.romanSeq });
   fs.writeFileSync(path.join(OUT, +id + ".txt"), text);
 }
+// Isophonics (Beatles), after the Billboard songs: ids 100001 up in the same folder and index, src "iso" (scripts/isophonics-convert.mjs)
+const ISO = (process.env.CORPORA || process.env.HOME + "/Projects/corpora") + "/isophonics";
+const { convertSong } = await import("./isophonics-convert.mjs");
+const isoDirs = Object.fromEntries(["chordlab", "beat", "keylab", "seglab"].map((d) => [d, ISO + "/" + d + "/The Beatles"]));
+let isoN = 0; const isoSkipped = [];
+for (const album of fs.readdirSync(isoDirs.chordlab).filter((a) => fs.statSync(path.join(isoDirs.chordlab, a)).isDirectory()).sort()) {
+  const am = /^(\d+)(CD\d)?_-_(.*)$/.exec(album); const albumName = am ? am[3].replace(/_/g, " ") : album;
+  for (const file of fs.readdirSync(path.join(isoDirs.chordlab, album)).filter((f) => /\.lab$/.test(f)).sort()) {
+    const tm = /^(?:CD\d_-_)?(\d+)_-_(.*)\.lab$/.exec(file); const title = (tm ? tm[2] : file).replace(/_/g, " ");
+    const r = convertSong(isoDirs, album, file, title);
+    if (r.skip) { isoSkipped.push(albumName + " / " + title + ": " + r.skip); continue; }
+    const id = 100001 + isoN++;
+    const rn = romansOf(r.text, r.tonic.replace(/:minor$/, ""));
+    index.push({ id, src: "iso", title, artist: "The Beatles", album: albumName + (am && am[2] ? " (" + am[2] + ")" : ""), year: ISO_YEARS[am ? +am[1] : 0] || null,
+      peak: null, metre: r.metre, tonic: r.tonic.replace(/:minor$/, ""), minor: r.minor, secs: r.secs, form: r.form, romans: rn.romans, romanSeq: rn.romanSeq });
+    fs.writeFileSync(path.join(OUT, id + ".txt"), r.text);
+  }
+}
 fs.writeFileSync(path.join(OUT, "index.json"), JSON.stringify(index));
+if (isoSkipped.length) console.log("Isophonics left out:\n  " + isoSkipped.join("\n  "));
+console.log(isoN + " Isophonics Beatles songs added");
 console.log(index.length + " songs -> " + path.relative(ROOT, OUT) + " (" + dropped + " second annotations of the same song left out)");
