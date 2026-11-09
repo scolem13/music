@@ -12,6 +12,7 @@
 //   - %%score brackets / braces nested in another one dropped (abcjs reads one level)
 //   - a voice's own K: in the header (percussion K:none) moved into that voice's music (abcjs gave it to every later voice)
 //   - rests of lengths abcjs cannot write (x8/3, x13/2) split into ones it can (thirds in a (3:2:n tuplet)
+//   - !fz! written as text "_fz"; rests and bowings inside grace notes dropped
 //   - U: macros dropped (stemless s), decorations and chords inside grace notes (a chord keeps its top note), fingerings
 //     with more than one number, |]: written |] |:
 //   - grace notes before a bar line moved after it (abcjs gave them a rest of their own)
@@ -57,7 +58,7 @@ function fmt(n, d) { const g = gcd(n, d); n /= g; d /= g; return d === 1 ? (n ==
 function pow2(d) { return (d & (d - 1)) === 0; }
 function representable(n, d) { const g = gcd(n, d); n /= g; d /= g; return pow2(d) && (pow2(n) || (n % 3 === 0 && pow2(n / 3)) || (n % 7 === 0 && pow2(n / 7))); }
 export function splitRests(t, dropped = {}) {
-  return t.replace(/(^|[\s|\]])([xz])(\d+)?(?:\/(\d+))?(?=[\s|\[]|$)/g, (m, pre, r, a, b) => {
+  return t.replace(/(^|[\s|\]!(}])([xz])(\d+)?(?:\/(\d+))?(?=[\s|\[)!]|$)/g, (m, pre, r, a, b) => {
     const n = +(a || 1), d = +(b || 1); if (representable(n, d)) return m;
     const g = gcd(n, d), N = n / g, D = d / g;
     if (pow2(D)) { const ps = binaryParts(N, D); if (!ps) return m; dropped.rests = (dropped.rests || 0) + 1; return pre + ps.map(([u, v]) => r + fmt(u, v)).join(" "); }
@@ -155,9 +156,15 @@ export function tidy(abc) {
     // dashed slurs (!-(! … !-)!) and tremolo strokes (!/-!, !//-!, !///-!): abcjs cannot read them; slur dropped, notes kept
     t = t.replace(/!-[()]!|!\/{1,4}-?!/g, () => (dropped.marks++, ""));
     // xml2abc's U:s=!stemless! macro: abcjs has no U: macros, so the s before a note goes (the note keeps its stem)
-    t = t.replace(/(^|[\s|\]\)}!(.~TH])s(?=[\^=_]*[A-Ga-g\[xz])/g, (m, a) => (dropped.marks++, a));
+    t = t.replace(/(^|[\s|\]\)}{!(.~TH\d\/'])s(?=[\^=_]*[A-Ga-g\[xz])/g, (m, a) => (dropped.marks++, a));   // also after a length (c/8sd) and inside {…}
+    // invisible notes (x) written with an accidental or a tie (^x3-): abcjs reads x as a rest, so both go
+    t = t.replace(/[\^=_]+(x[\d\/]*)-?|(x[\d\/]*)-/g, (m, a, b) => (dropped.marks++, a || b));
     // grace notes: abcjs takes no decorations and no chords inside {…}; a chord keeps its top note
     t = t.replace(/\{(\/?)([^}]*)\}/g, (m, sl, g) => "{" + sl + g.replace(/![^!]*!/g, () => (dropped.marks++, "")).replace(/\[([^\]]*)\]/g, (c, n) => (dropped.marks++, (n.match(/[\^=_]*[A-Ga-g][,']*/g) || [""]).pop())) + "}");
+    // rests and bowing letters (v, u) inside a grace group: abcjs reads neither; a group left empty goes
+    t = t.replace(/\{(\/?)([^}]*)\}/g, (m, sl, g) => { const h = g.replace(/[xz][\d\/]*|[uv.]/g, () => (dropped.marks++, "")); return /[A-Ga-g]/.test(h) ? "{" + sl + h + "}" : ""; });
+    // !fz! (forzando): not in abcjs's list, written as text below the note
+    t = t.replace(/!fz!/g, () => (dropped.marks++, '"_fz"'));
     // fingerings with more than one number (!4 2!, !45!): abcjs reads only !1!..!5!
     t = t.replace(/!\d[^!A-Za-z]*!/g, m => /^![1-5]!$/.test(m) ? m : (dropped.marks++, ""));   // separators can be any space character
     t = t.replace(/\|\]:/g, "|] |:");
