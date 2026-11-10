@@ -1,0 +1,118 @@
+---
+title: "Introduction to Counterpoint: Practice for Chapter 30"
+toc: true
+toc-depth: 2
+description: "Chapter 30 of Hutchinson's Music Theory for the 21st-Century Classroom: first and second species counterpoint in two voices over a cantus firmus, with checked examples and exercises, and a map of the rest of the chapter (third to fifth species, invention expositions, fugue analysis)."
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/soundfont.js?v=1"></script>
+<script src="/apps/shared/abc-play.js?v=27"></script>
+<script src="/apps/shared/analysis/voice-leading.js"></script>
+<script src="/apps/shared/analysis/voice-leading-ui.js"></script>
+```
+
+This page goes with **Chapter 30, Introduction to Counterpoint** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/IntroductionToCounterpoint.html). Read each section there first. It builds on [Voice Leading Triads](voice-leading-triads.qmd) (the types of motion and the rules of melody in 26.1 and 26.4).
+
+**How the page works.** Each example is drawn on a grand staff, plays when you press **Play**, and is **marked by the same checker** that marks your exercises: a green *Right*
+passes it, a red *Wrong* shows what the checker says. In the exercises the given notes are greyed; type the others (`E4`, `F#4`, `Bb3`; **Up** and **Down** move a step in the key,
+**Shift** a half step) and press **Check**.
+
+Every counterpoint is written in **two voices** against a given **cantus firmus** (c.f.), a plain melody in whole notes. Here the cantus firmus is in the lower voice (counterpoint above) or in the upper voice (counterpoint below); the page says which.
+
+## 30.1 Species counterpoint
+
+Fux's *Gradus ad Parnassum* (1725) teaches writing by **species**: one, two, three or four notes against each whole note of the cantus firmus, in the style of Palestrina. Counterpoint is the sounding together of
+melodic lines (a **contrapuntal** texture), in contrast to melody and accompaniment (**homophonic**). The book's rules are a simplified version of Fux's; the page's checker marks first and second species. Third, fourth and fifth species are described below but not checked.
+
+## 30.2 First species: note against note
+
+Write one whole note for each note of the cantus firmus. The rules (simplified from Fux, as in the book):
+
+- **Begin and end on a unison or octave.** Approach the final octave by **contrary motion**: one voice 7 to 8 (a half step up, with a raised leading tone in G mixolydian, D dorian and A aeolian), the other 2 to 1.
+- **Every interval is a consonance**: unison, 3rd, 5th, 6th, octave and their compounds. 2nds, 4ths, 7ths and the tritone are dissonant and not allowed in first species.
+- **Imperfect consonances** (3rds, 6ths) may be approached any way; **perfect consonances** (unison, 5th, octave) only by **contrary motion**, to avoid direct fifths and octaves.
+- Not more than **three 3rds** (or **6ths**) in a row.
+- When the cantus firmus is in the upper part, the counterpoint below uses unison, 3rd, 5th or 6th.
+- Only these **leaps**: 3rds, 4ths, 5ths, ascending minor 6ths, octaves; after a leap larger than a 4th, change direction. Do not outline a tritone with two turning points. Avoid repeated notes (they hold up the flow).
+
+<div class="vl-spex" data-species="1" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 D3 G3 F3 A3 G3 F3 E3 D3" data-cp='["D4","A3","C4","D4","B3","A3","C4","E4","D4","C#4","D4"]' data-expect="ok">The cantus firmus in the bass, a counterpoint above it: octave to start, 3rds and 6ths, the octave on the fourth note approached in contrary motion, 7 to 8 against 2 to 1 at the end.</div>
+
+<div class="vl-spex" data-species="1" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 D3 G3 F3 A3 G3 F3 E3 D3" data-cp='["A3","A3","C4","D4","B3","A3","C4","E4","D4","C#4","D4"]' data-expect="Begin">It begins on a fifth (A above D).</div>
+
+<div class="vl-spex" data-species="1" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 D3 G3 F3 A3 G3 F3 E3 D3" data-cp='["D4","A3","C4","D4","B3","B3","C4","E4","D4","C#4","D4"]' data-expect="dissonance">Bar 6: B above F is a tritone, a dissonance.</div>
+
+<div class="vl-spex" data-species="1" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 D3 G3 F3 A3 G3 F3 E3 D3" data-cp='["D4","A3","C4","A3","B3","A3","C4","E4","D4","C#4","D4"]' data-expect="contrary">Bar 4: the fifth A over D is reached in similar motion (both voices fall): a direct fifth.</div>
+
+<div class="vl-spex" data-species="1" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 D3 G3 F3 A3 G3 F3 E3 D3" data-cp='["D4","A3","C4","D4","B3","G#4","C4","E4","D4","C#4","D4"]' data-expect="not allowed">Bar 6: the leap of a major sixth (B up to G#) is not in the list of leaps.</div>
+
+<div class="vl-spex" data-species="1" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 D3 G3 F3 A3 G3 F3 E3 D3" data-cp='["D4","A3","C4","D4","B3","A3","C4","B3","D4","C#4","D4"]' data-expect="More than three">Bars 5 to 8 are four 3rds in a row.</div>
+
+<div class="vl-spex" data-species="1" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 D3 G3 F3 A3 G3 F3 E3 D3" data-cp='["D4","A3","C4","D4","B3","A3","C4","E4","D4","F4","D4"]' data-expect="contrary">The ending: F falls to D while the cantus firmus falls E to D: similar motion into the octave.</div>
+
+
+### Exercises: first species
+
+**One. Cantus firmus below (D dorian).** Write the counterpoint above it. Begin on the octave: `D4`. In the last bars: C#4 then D4.
+
+<div class="vl-species" data-species="1" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 D3 G3 F3 A3 G3 F3 E3 D3" data-hint="Write one note above each note. Perfect intervals only by contrary motion; no more than three 3rds or 6ths in a row."></div>
+
+**Two. Cantus firmus above (D dorian).** The counterpoint is below: begin on the octave, `D4`. A 3rd, 5th or 6th below the cantus firmus is consonant.
+
+<div class="vl-species" data-species="1" data-cfpos="upper" data-mode="D dorian" data-cf="D5 E5 F5 E5 D5 C5 D5 E5 D5" data-hint="Write a note below each cantus firmus note. End with C#4 rising to D4 against E5 falling to D5."></div>
+
+
+## 30.3 Second species: two against one
+
+Write **two half notes** against each whole note of the cantus firmus. (In 3/2, three half notes against a dotted whole.) The rules are the same on the downbeats, with these changes:
+
+- **Begin** with a half note at the octave or unison on beat 1, or on beat 3 after a half rest.
+- **End** with a whole note on the octave or unison. The bar before: with the cantus firmus below, a **5th then a 6th** above it (6 7 against the cantus firmus's 2); with it above, a **5th then a 3rd** below it. (Phrygian, cantus firmus above: a 6th then a 3rd.)
+- The first half note of a bar is always a consonance. The second is a consonance, **or a dissonance only as a passing tone** (reached and left by step in the same direction).
+- Across the barline, imperfect consonances are free, perfect ones only by contrary motion. **Do not repeat a note across a barline.** Avoid octaves on consecutive downbeats, and fifths on consecutive downbeats, unless a leap of a 4th follows the first.
+
+<div class="vl-spex" data-species="2" data-cfpos="lower" data-mode="D dorian" data-cf="D3 G3 E3 D3" data-cp='[[null,"D4"],["B3","G3"],["B3","C#4"],["D4"]]' data-expect="ok">A four-bar example: half rest then D (octave), a bar of 3rd and unison, the 5th to 6th before the end, the final octave.</div>
+
+<div class="vl-spex" data-species="2" data-cfpos="lower" data-mode="D dorian" data-cf="D3 G3 E3 D3" data-cp='[[null,"D4"],["B3","A3"],["B3","C#4"],["D4"]]' data-expect="passing">Bar 2: the A over G is a dissonant second half note that is left by a leap, not a passing tone.</div>
+
+<div class="vl-spex" data-species="2" data-cfpos="lower" data-mode="D dorian" data-cf="D3 G3 E3 D3" data-cp='[[null,"D4"],["B3","B3"],["B3","C#4"],["D4"]]' data-expect="repeat">Bar 2 ends on B and bar 3 begins on B: a repeated note across the barline.</div>
+
+<div class="vl-spex" data-species="2" data-cfpos="lower" data-mode="D dorian" data-cf="D3 G3 E3 D3" data-cp='[[null,"D4"],["B3","G3"],["G3","B3"],["D4"]]' data-expect="bar before the end">The bar before the end is a 3rd and a 5th, not the 5th and 6th the ending needs.</div>
+
+
+### Exercise: second species
+
+**Cantus firmus below** (D dorian). Begin with a half rest and a half note `D4` (leave the first box of bar 1 empty). Bar 5 is the bar before the end: a fifth and a sixth above E3. The last bar is one box.
+
+<div class="vl-species" data-species="2" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 G3 F3 E3 D3" data-hint="Two boxes a bar; the last bar one. Second notes that are dissonant must be passing tones."></div>
+
+
+## 30.4 Third, fourth and fifth species
+
+- **Third species**: four quarter notes to a whole note; each downbeat a consonance; passing tones allowed (never on the downbeat) and the **cambiata**; the penultimate bar uses set formulas.
+- **Fourth species**: **suspensions** and syncopations. The half note on beat 3 is tied over the barline; if it is a dissonance (4th or 7th) it is a suspension and must resolve down by step (4-3 and 7-6 are allowed in the upper part, 9-8 and 2-1 are not); the penultimate bar has a 7-6 suspension. In the book the cantus firmus is in the lower voice.
+- **Fifth species** (florid counterpoint) is a free mix of all the others.
+
+*These are not checked by this page's checker.*
+
+## 30.5 Invention expositions and fugue analysis
+
+The chapter ends with applying species to harmony: writing the four-bar **exposition** of a two-part invention on the model of Bach's C major and E minor inventions (the theme in bar 1, an octave lower in the bass in bar 2, a fifth higher in bar 3, an octave lower in bar 4, ending on a tenth: tonic in the bass, 3 above), with counterpoint that outlines the harmony of each bar
+(I, then V, then back to I); and **analysing a fugue**: subject, answer (real or tonal), countersubject, episode, bridge and exposition, with motivic fragmentation. Open the Bach
+fugue and invention scores in the [Analysed Scores Library](analysed-scores/view.qmd) to hear and see them. *Not checked here.*
+
+::: {.callout-note collapse="true"}
+## What the checker does and does not check
+- First species: beginning, ending (contrary, 7 to 8 and 2 to 1), consonance, perfect intervals only by contrary motion, runs of 3rds and 6ths (this site reads it as three of the same kind), allowed leaps, direction change after leaps larger than a 4th, outlined tritones, repeated notes (a warning).
+- Second species: the beginning on beat 1 or 3, the whole-note ending, the penultimate-bar formulas, consonant downbeats, dissonant second notes only as passing tones, no repeated note across the barline, no octaves or fifths on consecutive downbeats unless a 4th leap follows.
+- **Not checked:** consecutive leaps outlining a triad in species, the range of the counterpoint, and everything in 30.4 and 30.5.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hutchinson, Robert. "Introduction to Counterpoint." *Music Theory for the 21st-Century Classroom*, ch. 30, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/IntroductionToCounterpoint.html](https://musictheory.pugetsound.edu/mt21c/IntroductionToCounterpoint.html).
+:::
+<!-- /works-cited -->

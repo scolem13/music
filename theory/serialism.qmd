@@ -1,0 +1,89 @@
+---
+title: "Serialism: Practice for Chapter 34"
+toc: true
+toc-depth: 2
+description: "Chapter 34 of Hutchinson's Music Theory for the 21st-Century Classroom: twelve-tone rows, the four row forms P, I, R and RI, and an interactive twelve-by-twelve matrix that plays any form."
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/audio.js?v=10"></script>
+<script src="/apps/shared/post-tonal/forte-data.js"></script>
+<script src="/apps/shared/post-tonal/pcset.js"></script>
+<script src="/apps/shared/post-tonal/pt-widgets.js"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+This page goes with **Chapter 34, Serialism** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/Serialism.html). Read each section there first.
+It uses the pitch-class integers of [Chapter 33](set-theory.qmd): C = 0, T = 10, E = 11.
+
+## 34.1 The twelve-tone row
+
+In twelve-tone technique (Schoenberg, Webern and Berg, the book says) a piece is built from one ordering of all twelve pitch classes, the **row**.
+Every pitch class appears once, and the order stays fixed; the row may be turned into other forms and moved to other pitch levels. Immediate
+repeats, trills and tremolos are allowed to bend the "no repeated note" rule. The book's example is Schoenberg's Suite for Piano, Op. 25
+([find the score on IMSLP](https://imslp.org/wiki/Special:Search?search=Schoenberg+Suite+Op.25), [listen](https://www.youtube.com/results?search_query=Schoenberg+Suite+for+Piano+Op.25)).
+The row it uses is the page's first preset below (written from memory, unchecked against the score).
+
+## 34.2 Four forms and their numbers
+
+| Form | What it is | Numbered by |
+|---|---|---|
+| **P** (prime) | the row itself | its first note |
+| **I** (inversion) | every interval turned upside down | its first note |
+| **R** (retrograde) | P backwards | its last note |
+| **RI** (retrograde inversion) | I backwards | its last note |
+
+So P<sub>4</sub> starts on E, and R<sub>4</sub> is P<sub>4</sub> reversed, which ends on E. Each form can start on any of the twelve notes, giving 48 forms in all.
+
+## 34.3 The matrix
+
+A **twelve-tone matrix** lays all 48 forms in a 12&times;12 grid. The top row is P; the left column is I; the diagonal from top left is all one note.
+Each row is a P form (read right to left it is R); each column is an I form (read bottom to top it is RI).
+Build one below, then click a label around the edge to hear and see that form. The staff shows the form as quarter notes.
+
+::: {.pt data-pt="matrix"}
+:::
+
+Things to look for: the hexachord set classes (a row's two halves are complements, and some rows have the same class in both halves);
+the interval list (which interval never appears?). Try the "all-interval" preset against the chromatic scale.
+
+## 34.4 Naming a form
+
+Compare the first few intervals. If the opening is up a minor third and down a major second, only one form of the row begins that way.
+P and I are named by the first note, so find the form, then read its first note; for R and RI read the last note. The matrix tool's
+"Which form is this series?" box does the lookup for you.
+
+## Practice
+
+Take the row E F G D&flat; G&flat; E&flat; A&flat; D B C A B&flat; = 4 5 7 1 6 3 8 2 11 0 9 10.
+
+1. Write I<sub>9</sub>.
+2. Write R<sub>5</sub>.
+3. Is 11 2 10 6 3 4 0 9 5 1 7 8 a form of this row?
+
+::: {.callout-tip collapse="true"}
+## Answers
+
+1. I<sub>9</sub> = 9 8 6 0 7 10 5 11 2 1 4 3.
+2. R<sub>5</sub> = P<sub>5</sub> backwards = 11 10 1 0 3 9 4 7 2 8 6 5 (it ends on 5).
+3. No: it is not one of the 48 forms (the tool says so).
+:::
+
+## Non-twelve-tone serialism
+
+The chapter ends by noting that the idea of fixed series can be applied to other things than pitch, such as rhythm or dynamics, or to series of fewer
+than twelve elements. Composers often named for this (Boulez, Babbitt, Messiaen) are from memory and unverified here.
+
+## For teachers
+
+- Maths and test: `apps/shared/post-tonal/pcset.js`, `node tests/post-tonal/pcset.test.js` (all 48 forms named back; matrix rows and columns checked).
+- The Op. 25 row and the Berg Violin Concerto row in the preset list were typed from memory; check them against a score before relying on them.
+- Written for the site, not copied from the book.
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hutchinson, Robert. "Serialism." *Music Theory for the 21st-Century Classroom*, ch. 34, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/Serialism.html](https://musictheory.pugetsound.edu/mt21c/Serialism.html).
+:::
+<!-- /works-cited -->

@@ -238,6 +238,19 @@ inversion, so it is usually written N6 (the book's label is N, not ♭II; both a
 
 <div class="chord-analysis" data-settings="level=ch20"></div>
 
+## Augmented sixth chords (chapter 21)
+
+An **augmented sixth chord** is a pre-dominant chord that closes in on 5 from both sides: ♭6 in the bass steps down to 5 and ♯4 steps up
+to it. Every one has ♭6, 1 and ♯4; the type is told by what else it has. **Italian (It+6):** nothing more. **French (Fr+43):** also 2.
+**German (Ger+65):** also ♭3. Stack the notes in thirds as usual and you find something new: a **diminished third** (♯4 up to ♭6, as
+F♯ to A♭ in C), which none of the earlier chords had. That is the sign of an augmented sixth. The step "find the augmented 6th" takes
+the bass (♭6) and the ♯4 an augmented sixth above it. The German usually goes through I64 to V, since going straight to V would make
+parallel fifths (the usual textbook rule; not checked against Hutchinson's page). The enharmonic German (♯2 written for ♭3) and lead-sheet symbols for these chords aren't in the exercise.
+
+<div class="chord-analysis" data-example data-settings="level=ch21&texture=satb&key=c minor&prog=i iv Ger%2B65 i64 V i&seed=3"></div>
+
+<div class="chord-analysis" data-settings="level=ch21"></div>
+
 ## What comes next
 
 These steps are planned but not built yet. The checker already reads applied chords (V7/V) and the Neapolitan (N6), so most of the
@@ -253,15 +266,14 @@ work is new progressions and new **Steps** text.
   chords, and applied chords in the other stages' melodies.
 - **Chapter 19, mixture: built** (level 19 above). Still to add: borrowed chords in the melody stage, and the deceptive V to ♭VI as a named cadence.
 - **Chapter 20, the Neapolitan: built** (level 20 above).
-- **Chapter 21, augmented sixths.** ♭6 in the bass with ♯4 above it: an augmented sixth, which doesn't stack in thirds at all, so Step 4
-  changes to "find the augmented 6th" and the checkers need a second kind of answer (It+6, Fr+43, Ger+65). Not built.
-
+- **Chapter 21, augmented sixths: built** (level 21 above). Still to add: the enharmonic German, lead-sheet symbols, and augmented
+  sixths in the melody stage's non-chord-tone work.
 ::: {.callout-note collapse="true"}
 ## For teachers
 
 - **Links:** each exercise's **Copy a link to this passage** gives a link to this page with that level, stage and passage (`seed=`).
   Everyone who opens it gets the same passage. Add `&lock=1` to hide the settings.
-- **Settings in a link:** `level` (ch6a ch6b ch7a ch7b ch8a ch8b ch9 ch10 ch16 ch17 ch18 ch19 ch20), `texture` (rh guitar satb broken melody mixed), `task` (both stack name),
+- **Settings in a link:** `level` (ch6a ch6b ch7a ch7b ch8a ch8b ch9 ch10 ch16 ch17 ch18 ch19 ch20 ch21), `texture` (rh guitar satb broken melody mixed), `task` (both stack name),
   `entry` (tap staff rotate type), `answer` (auto sym rn), `tenor` (bass treble), `mode`, `most` (0–5), `key` (show find), `rhythm` (auto bar half).
 - **What counts as right:** a name is right when it means the same spelled notes over the same bass: I6 = I/3rd, V65 = V7/3rd, a = Am.
   Spelling counts (A♭ is not G♯). Root-position levels don't ask for the bass, so a slash or a figure there isn't needed.
@@ -278,6 +290,8 @@ work is new progressions and new **Steps** text.
 <!-- works-cited: written by scripts/works-cited.py -->
 ::: {.works-cited}
 "Alberti Bass." *Wikipedia*, [en.wikipedia.org/wiki/Alberti_bass](https://en.wikipedia.org/wiki/Alberti_bass). A broken chord played lowest, highest, middle, highest.
+
+Hutchinson, Robert. "Augmented Sixth Chords." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/AugmentedSixthChords.html](https://musictheory.pugetsound.edu/mt21c/AugmentedSixthChords.html). Chapter 21: Italian, French and German augmented sixths (b6, 1, #4; plus 2 or b3), the diminished third when stacked in thirds, pre-dominant function. Read from the book source (github rhutchinson20/mt21c) on 2026-11-09. The advice that the German goes via I64 to avoid parallel fifths is the common rule, not read from that page (unverified).
 
 Hutchinson, Robert. "Mode Mixture" and "The Neapolitan Chord." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/ModeMixture.html](https://musictheory.pugetsound.edu/mt21c/ModeMixture.html). Chapters 19-20: borrowed chords from the parallel minor (lowered 6 most common, also 3 and 7), the Picardy third, the Neapolitan as N / N6 with pre-dominant function. Read from the book source (github rhutchinson20/mt21c) on 2026-11-09.
 

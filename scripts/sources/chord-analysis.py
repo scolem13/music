@@ -12,6 +12,8 @@ SOURCES = [
         note="Chapter 16: the cadential six-four is the I64 that goes to V and has dominant function. The book writes it as I64; the label Cad64 is not in it."),
     web('Hutchinson, Robert. "Mode Mixture" and "The Neapolitan Chord." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, URL.', "https://musictheory.pugetsound.edu/mt21c/ModeMixture.html", [CA],
         note="Chapters 19-20: borrowed chords from the parallel minor (lowered 6 most common, also 3 and 7), the Picardy third, the Neapolitan as N / N6 with pre-dominant function. Read from the book source (github rhutchinson20/mt21c) on 2026-11-09."),
+    web('Hutchinson, Robert. "Augmented Sixth Chords." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, URL.', "https://musictheory.pugetsound.edu/mt21c/AugmentedSixthChords.html", [CA],
+        note="Chapter 21: Italian, French and German augmented sixths (b6, 1, #4; plus 2 or b3), the diminished third when stacked in thirds, pre-dominant function. Read from the book source (github rhutchinson20/mt21c) on 2026-11-09. The advice that the German goes via I64 to avoid parallel fifths is the common rule, not read from that page (unverified)."),
     web('"Transposing Instrument." *Wikipedia*, URL.', "https://en.wikipedia.org/wiki/Transposing_instrument", [CA],
         note="The guitar sounds an octave lower than written."),
     web('"Alberti Bass." *Wikipedia*, URL.', "https://en.wikipedia.org/wiki/Alberti_bass", [CA],

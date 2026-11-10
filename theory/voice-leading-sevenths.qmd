@@ -1,0 +1,99 @@
+---
+title: "Voice Leading Seventh Chords: Practice for Chapter 27"
+toc: true
+toc-depth: 2
+description: "Chapter 27 of Hutchinson's Music Theory for the 21st-Century Classroom: resolving the seventh, V7 to I strict and free, circles of fifths, with checked examples and exercises marked by a voice-leading checker."
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/soundfont.js?v=1"></script>
+<script src="/apps/shared/abc-play.js?v=27"></script>
+<script src="/apps/shared/analysis/voice-leading.js"></script>
+<script src="/apps/shared/analysis/voice-leading-ui.js"></script>
+```
+
+This page goes with **Chapter 27, Voice Leading Seventh Chords** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/VoiceLeadingSeventhChords.html). Read each section there first. It builds on [Chapter 8, Seventh Chords](seventh-chords.qmd) and [Voice Leading Triads](voice-leading-triads.qmd) (chapter 26),
+whose rules (parallels, ranges, spacing, leading tone) all still apply.
+
+**How the page works.** Each example is drawn on a grand staff, plays when you press **Play**, and is **marked by the same checker** that marks your exercises: a green *Right*
+passes it, a red *Wrong* shows what the checker says. In the exercises the given notes are greyed; type the others (`E4`, `F#4`, `Bb3`; **Up** and **Down** move a step in the key,
+**Shift** a half step) and press **Check**.
+
+
+## 27.1 The one general rule
+
+**Resolve the 7th of any seventh chord down by step.** Everything else moves smoothly to the nearest chord tone in a voicing with the right doubling.
+(The book's one exception is the V<sup>7</sup> to I<sup>6</sup>... progression that ends the theme of Mozart's Piano Sonata K. 331, where the seventh rises and unequal fifths appear; it is not allowed in the exercises.)
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["V7","B4 F4 D4 G3"],["I","C5 E4 C4 C3"]]'>V7 to I: the leading tone rises, the seventh (F) falls to E, the fifth falls to C: a complete V7 to an incomplete I (tripled root, one third).</div>
+
+<div class="vl-ex" data-key="C" data-expect="seventh" data-rows='[["V7","B4 F4 D4 G3"],["I","C5 F4 C4 C3"]]'>The seventh of V7 (F, in the alto) stays on F instead of falling to E.</div>
+
+
+## 27.2 V<sup>7</sup> to I: strict and free resolution
+
+Resolving V<sup>7</sup> to I four-part there are two ways. **Strict:** a complete V<sup>7</sup> to an **incomplete** I: the leading tone rises, the 7th and the 5th fall, giving a tripled root
+and one third. Or an incomplete V<sup>7</sup> (no fifth, root doubled) to a **complete** I. **Free:** if the leading tone is **not in the soprano**, it may fall a third to scale degree 5, so the
+chord I is complete.
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["V7","D5 B4 F4 G3"],["I","C5 G4 E4 C3"]]'>Free resolution: the leading tone is in the alto, so it falls a third (B to G) and the tonic is complete.</div>
+
+<div class="vl-ex" data-key="C" data-expect="leaptone" data-rows='[["V7","B4 F4 D4 G3"],["I","G4 E4 C4 C3"]]'>The leading tone is in the soprano, so it must rise: B falling to G is not allowed.</div>
+
+
+## 27.3 Successive root position sevenths
+
+In a circle of fifths with root position sevenths in four parts, **alternate complete and incomplete** chords (an incomplete seventh chord leaves out the fifth and doubles the root).
+Each seventh falls by step into the third of the next chord.
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["ii7","A4 F4 C4 D3"],["V7","G4 F4 B3 G3"],["I","G4 E4 C4 C3"]]'>ii7 complete, V7 incomplete (root doubled, no fifth), I: the sevenths fall (C to B, F to E).</div>
+
+<div class="vl-ex" data-key="C" data-expect="voicing7" data-rows='[["V65","G4 D4 D4 B2"]]'>An inverted seventh chord is written complete: this V6/5 has no seventh (F).</div>
+
+
+**Inverted sevenths** in a circle of fifths are always complete: each seventh falls by step and the other voices move smoothly. You will see two voices on common tones and two falling by step.
+
+## 27.4 The vii&deg;7 and viiø7 chords and the leading tone in two places
+
+The vii&deg;7 and viiø7 chords are made entirely of tendency tones (7, 2, 4, 6). If all resolve correctly you can get parallel fifths. The book's rule: when the **7th of the chord is
+above the third of the chord**, let the third (scale degree 2) rise a step; if the 7th is below the third, resolve everything normally. (The checker does not mark this special case.)
+When V<sup>7</sup> goes to vi, or V<sup>7</sup>/x to V, watch for the fifth above the root: move the upper voices up to the nearest chord tones, or use an incomplete chord.
+
+## 27.5 When to use sevenths
+
+Add a seventh to dominant-function chords (V, vii&deg;) and predominant ones (ii, and less often IV) to build tension toward the tonic. Others (iii7, vi7, I7) are seldom met.
+
+## 27.6 Exercises
+
+**One. V7 to I.** The soprano's leading tone rises; write a strict resolution.
+
+<div class="vl-exercise" data-key="C" data-hint="Complete V7, bass G3: soprano B4 is the leading tone. Fall with the seventh and fifth." data-rows='[{"rn":"V7","S":"B4","B":"G3"},{"rn":"I","B":"C3"}]'></div>
+
+**Two. V7 to I in G major.** Here the leading tone is F&#9839; (`F#`).
+
+<div class="vl-exercise" data-key="G" data-hint="V7 in G: D F# A C. The seventh is C; it resolves down to B." data-rows='[{"rn":"V7","S":"F#4","B":"D3"},{"rn":"I","B":"G2"}]'></div>
+
+**Three. V7 to i in A minor.**
+
+<div class="vl-exercise" data-key="a" data-hint="V7 in A minor: E G# B D. The leading tone is G#." data-rows='[{"rn":"V7","S":"G#4","B":"E3"},{"rn":"i","B":"A2"}]'></div>
+
+**Four. ii7 V7 I, circle of fifths.** Complete ii7, then V7, then I.
+
+<div class="vl-exercise" data-key="C" data-hint="Each seventh falls by step. The checker warns if the chords do not alternate complete and incomplete." data-rows='[{"rn":"ii7","S":"A4","B":"D3"},{"rn":"V7","S":"G4","B":"G3"},{"rn":"I","S":"G4","B":"C3"}]'></div>
+
+
+::: {.callout-note collapse="true"}
+## What the checker does and does not check
+- Everything from chapter 26, plus: the chordal seventh resolves down by step (an error when it does not), a seventh chord has its root, third and seventh (root position: complete, or no fifth with the root doubled; inverted: complete), and
+  successive root position sevenths alternate complete and incomplete (a warning). A leading tone in an inner voice may fall a third to 5 over V or V7 going to I (chapter 27's free resolution).
+- **Not checked:** the vii&deg;7 special resolution, strict versus free as asked for in the book's exercises, the K. 331 exception, V7 to vi's fifth above the root.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hutchinson, Robert. "Voice Leading Seventh Chords." *Music Theory for the 21st-Century Classroom*, ch. 27, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/VoiceLeadingSeventhChords.html](https://musictheory.pugetsound.edu/mt21c/VoiceLeadingSeventhChords.html).
+:::
+<!-- /works-cited -->

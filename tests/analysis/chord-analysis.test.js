@@ -25,22 +25,24 @@ const C = {
   major: { I: "C E G", ii: "D F A", iii: "E G B", IV: "F A C", V: "G B D", vi: "A C E", "vii°": "B D F", "♭VII": "B♭ D F", "I+": "C E G♯", iv: "F A♭ C",
     "V/V": "D F♯ A", "V7/V": "D F♯ A C", "V/vi": "E G♯ B", "V7/vi": "E G♯ B D", "V/ii": "A C♯ E", "V7/ii": "A C♯ E G", "V/IV": "C E G", "V7/IV": "C E G B♭", "V/iii": "B D♯ F♯", "V7/iii": "B D♯ F♯ A",
     "vii°/V": "F♯ A C", "vii°7/V": "F♯ A C E♭", "viiø7/V": "F♯ A C E", "vii°/vi": "G♯ B D", "vii°7/vi": "G♯ B D F", "viiø7/vi": "G♯ B D F♯", "vii°/ii": "C♯ E G", "vii°7/ii": "C♯ E G B♭", "viiø7/ii": "C♯ E G B", "vii°7/iii": "D♯ F♯ A C",
+    "It+6": "F♯ A♭ C", "Fr+43": "D F♯ A♭ C", "Ger+65": "F♯ A♭ C E♭",
     "♭VI": "A♭ C E♭", "♭III": "E♭ G B♭", "ii°": "D F A♭", "iiø7": "D F A♭ C", iv7: "F A♭ C E♭", N: "D♭ F A♭",
     IM7: "C E G B", ii7: "D F A C", iii7: "E G B D", IVM7: "F A C E", V7: "G B D F", vi7: "A C E G", "viiø7": "B D F A" },
-  minor: { I: "C E G", N: "D♭ F A♭", i: "C E♭ G", "ii°": "D F A♭", III: "E♭ G B♭", iv: "F A♭ C", v: "G B♭ D", V: "G B D", VI: "A♭ C E♭", VII: "B♭ D F", "vii°": "B D F",
+  minor: { "It+6": "F♯ A♭ C", "Fr+43": "D F♯ A♭ C", "Ger+65": "F♯ A♭ C E♭", I: "C E G", N: "D♭ F A♭", i: "C E♭ G", "ii°": "D F A♭", III: "E♭ G B♭", iv: "F A♭ C", v: "G B♭ D", V: "G B D", VI: "A♭ C E♭", VII: "B♭ D F", "vii°": "B D F",
     "V/III": "B♭ D F", "V7/III": "B♭ D F A♭", "V/iv": "C E G", "V7/iv": "C E G B♭", "V/V": "D F♯ A", "V7/V": "D F♯ A C", "V/VI": "E♭ G B♭", "V7/VI": "E♭ G B♭ D♭", "V/VII": "F A C", "V7/VII": "F A C E♭",
     "vii°/V": "F♯ A C", "vii°7/V": "F♯ A C E♭", "viiø7/V": "F♯ A C E", "vii°/III": "D F A♭", "vii°7/III": "D F A♭ C♭", "vii°/iv": "E G B♭", "vii°7/iv": "E G B♭ D♭", "vii°7/VI": "G B♭ D♭ F♭", "vii°7/VII": "A C E♭ G♭",
     iv7: "F A♭ C E♭", V7: "G B D F", "iiø7": "D F A♭ C", VIM7: "A♭ C E♭ G", "vii°7": "B D F A♭" }
 };
 if (process.env.NEG) C.major.ii7 = "D F A C♯";
-if (process.env.NEG) { C.major["♭VI"] = "A C E"; C.minor.N = "D F A"; C.major["V7/V"] = "D F♯ A C♯"; C.minor["vii°7/V"] = "F♯ A C E"; }
+if (process.env.NEG) { C.major["♭VI"] = "A C E"; C.minor.N = "D F A"; C.minor["Ger+65"] = "F♯ A♭ C E"; C.major["V7/V"] = "D F♯ A C♯"; C.minor["vii°7/V"] = "F♯ A C E"; }
 const parse = t => ({ l: LET.indexOf(t[0]), a: { "": 0, "♯": 1, "♭": -1 }[t.slice(1)] });
 const nm = n => LET[n.l] + { "-2": "𝄫", "-1": "♭", "0": "", "1": "♯", "2": "𝄪" }[n.a];
 function inKey(key, mode, base) {
   const t = key.tonic;
   return C[mode][base].split(" ").map(parse).map(n => { const l = (n.l + t.l) % 7, s = pc(NAT[n.l] + n.a + NAT[t.l] + t.a), a = ((s - NAT[l] + 18) % 12) - 6; return { l, a }; });
 }
-function split(tok) {   // "V65" -> ["V7", 1]; "IVM7" -> ["IVM7", 0]; "I6" -> ["I", 1]
+function split(tok) {
+  if (/^(It|Fr|Ger)\+/.test(tok)) return [tok, { "It+6": 1, "Fr+43": 2, "Ger+65": 1 }[tok]];   // the table lists the stack in thirds; the bass is b6   // "V65" -> ["V7", 1]; "IVM7" -> ["IVM7", 0]; "I6" -> ["I", 1]
   const sl = tok.indexOf("/"), tail = sl >= 0 ? tok.slice(sl) : ""; if (sl >= 0) tok = tok.slice(0, sl);
   const m = /^(.*?)(64|65|43|42|6)?$/.exec(tok); let base = m[1], f = m[2] || "";
   if (f === "65" || f === "43" || f === "42") base += "7";
@@ -78,7 +80,7 @@ CA.LEVELS.forEach(L => CA.STAGES.concat(["satb-treble"]).forEach(stage => {
       ok(CA.check(q, i, CA.expected(q, i).replace(/ \(or .*$/, "")), tag, "expected refused", CA.expected(q, i));
       if (q.answer === "rn" && q.inv && !q.figs) ok(CA.check(q, i, it.rnSlash), tag, "slash form refused", it.rnSlash);
       if (q.inv && q.answer === "sym") { const wrong = CA.nm(c.notes[0]) + (CA.expected(q, i).replace(/^[A-G][♯♭]?/, "").replace(/\/.*$/, "")) + (c.inv ? "" : "/" + CA.nm(c.notes[1])); ok(!CA.check(q, i, wrong), tag, "wrong bass accepted", wrong); }
-      if (q.answer === "rn") { const flip = it.rn.replace(/^([♭♯]?)([ivIV]+)/, (m0, a, r) => a + (r === r.toUpperCase() ? r.toLowerCase() : r.toUpperCase())); if (!/[°ø+]/.test(it.rn) && c.cat !== "N") ok(!CA.check(q, i, flip), tag, "wrong case accepted", flip); }
+      if (q.answer === "rn") { const flip = it.rn.replace(/^([♭♯]?)([ivIV]+)/, (m0, a, r) => a + (r === r.toUpperCase() ? r.toLowerCase() : r.toUpperCase())); if (!/[°ø+]/.test(it.rn) && c.cat !== "N" && c.cat !== "aug6") ok(!CA.check(q, i, flip), tag, "wrong case accepted", flip); }
       // stacks
       ok(CA.checkStack(q, i, c.notes).ok, tag, "root-position stack refused");
       ok(!CA.checkStack(q, i, c.notes.slice(1).concat([c.notes[0]])).ok, tag, "rotated stack accepted");
@@ -230,6 +232,30 @@ for (let k = 0; k < 150; k++) {
     ok(CA.steps(q, i).some(x => x.h === "Neapolitan"), tag, "N step");
   });
 }
+
+// ch. 21 augmented sixths: b6 (8 semitones above the tonic, the 6th letter) lowest, #4 (6 semitones, 4th letter) and 1 present, the extra
+// note tells the type (none It+6, 2 Fr+43, b3 Ger+65); the stack has a diminished third; typed forms and wrong types
+for (let k = 0; k < 200; k++) {
+  const q = CA.make(CA.parseSettings("level=ch21&texture=" + CA.STAGES[k % 5] + "&mode=both&most=4&seed=" + (k * 4409 + 5))), tag = "ch21/" + k;
+  if (!q) { ok(false, tag, "no passage"); continue; }
+  const t = q.key.tonic, rel = n => pc(NAT[n.l] + n.a - NAT[t.l] - t.a), dl = n => (n.l - t.l + 7) % 7;
+  q.prog.split(" ").forEach((tk, i) => {
+    if (!/^(It|Fr|Ger)/.test(tk)) return;
+    const c = q.items[i].chord, rs = c.notes.map(rel).sort((a, b) => a - b).join();
+    ok(rel(c.bass) === 8 && dl(c.bass) === 5, tag, "bass is b6", tk);
+    ok(c.notes.some(n => rel(n) === 6 && dl(n) === 3) && c.notes.some(n => rel(n) === 0), tag, "#4 and 1", tk);
+    ok(rs === { "It+6": "0,6,8", "Fr+43": "0,2,6,8", "Ger+65": "0,3,6,8" }[tk], tag, "type by the extra note", tk, rs);
+    const iv = (x, y) => (NAT[y.l] + y.a - NAT[x.l] - x.a + 12) % 12, dimAt = tk === "Fr+43" ? 1 : 0;
+    ok(iv(c.notes[dimAt], c.notes[dimAt + 1]) === 2 && (c.notes[dimAt + 1].l - c.notes[dimAt].l + 7) % 7 === 2, tag, "diminished third in the stack", tk);
+    if (q.texture !== "rh") ok(CA.check(q, i, tk) && CA.check(q, i, tk.replace("+", "")) && CA.check(q, i, tk.toLowerCase()), tag, "typed", tk);
+    ["It+6", "Fr+43", "Ger+65"].filter(x => x !== tk).forEach(x => ok(!CA.check(q, i, x), tag, "wrong type accepted", x, "for", tk));
+    ok(!CA.check(q, i, "V7") && !CA.check(q, i, "bVI"), tag, "plain names refused", tk);
+    const st = CA.steps(q, i); ok(st.some(x => x.h === "Find the augmented 6th") && st.some(x => x.h === "Which type"), tag, "aug6 steps", tk);
+    ok(CA.checkStack(q, i, c.notes).ok && !CA.checkStack(q, i, c.notes.slice().reverse()).ok, tag, "stack");
+  });
+}
+{ const g = CA.make(CA.parseSettings("level=ch21&key=c minor&prog=i Ger%2B65 i64 V i&texture=broken"));
+  ok(CA.check(g, 1, "Ger+6/5") && !CA.check(g, 1, "Ger+43"), "ch21 figures"); }
 
 // typed forms the page promises
 const q7 = CA.make(CA.parseSettings("level=ch8b&texture=broken&key=C major&prog=I V65 I ii42 V7 I"));

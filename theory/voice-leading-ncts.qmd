@@ -1,0 +1,82 @@
+---
+title: "Voice Leading with Non-Chord Tones: Practice for Chapter 28"
+toc: true
+toc-depth: 2
+description: "Chapter 28 of Hutchinson's Music Theory for the 21st-Century Classroom: adding passing tones, neighbors, suspensions and anticipations to four-part writing without making parallels, with checked examples and exercises."
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/soundfont.js?v=1"></script>
+<script src="/apps/shared/abc-play.js?v=27"></script>
+<script src="/apps/shared/analysis/voice-leading.js"></script>
+<script src="/apps/shared/analysis/voice-leading-ui.js"></script>
+```
+
+This page goes with **Chapter 28, Voice Leading with Non-Chord Tones** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/VoiceLeadingNCTs.html). Read each section there first. It builds on [Chapter 10, Non-Chord Tones](non-chord-tones.qmd) (the nine types) and [Voice Leading Triads](voice-leading-triads.qmd).
+
+**How the page works.** Each example is drawn on a grand staff, plays when you press **Play**, and is **marked by the same checker** that marks your exercises: a green *Right*
+passes it, a red *Wrong* shows what the checker says. In the exercises the given notes are greyed; type the others (`E4`, `F#4`, `Bb3`; **Up** and **Down** move a step in the key,
+**Shift** a half step) and press **Check**.
+
+In this page a chord row with a Roman numeral starts a chord; a row with a dot (·) is a point *inside* the chord where a voice may move to a non-chord tone. The checker
+names each non-chord tone it recognises (passing, neighbor, appoggiatura, escape tone, anticipation, suspension, retardation) and marks a non-chord note it cannot name as an error.
+
+## 28.1 Do not make parallels with the embellishment
+
+Add non-chord tones to a voice leading that is already correct, and check that they do not **create parallel fifths or octaves**. First find the fifths and octaves between voices
+in your original voice leading. **Do not move a non-chord tone by step into a note that makes a fifth or octave with another voice.** Also avoid non-chord tones in two voices
+at the same time, unless they move in parallel thirds or sixths.
+
+<div class="vl-ex" data-key="C" data-expect="nctpar" data-rows='[["I","G4 E4 C4 C3"],["","A4 E4 C4 D3"],["I","G4 E4 C4 C3"]]'>A neighbor tone in the soprano (A) and a passing tone in the bass (D) together make parallel fifths with each other (G-C to A-D).</div>
+
+
+## 28.2 Ways to embellish a voice
+
+Look at what the voice does between two chords, then choose:
+
+| The voice... | You can add |
+|---|---|
+| repeats a note | an upper or lower **neighbor tone** |
+| steps down | a **suspension** (delay the arrival), an **escape tone**, a **double neighbor**, a chromatic **passing tone**, an **anticipation** |
+| steps up | a chromatic passing tone, an anticipation, an **appoggiatura** (leap a step past the note and put it on the beat), a double neighbor, a **retardation** (rare) |
+| leaps a 3rd | fill the third with a **passing tone**, or an appoggiatura |
+| leaps a 4th or more | leave it alone (for now) |
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["I","C5 G4 E4 C3"],["","C5 F4 E4 C3"],["","C5 E4 E4 C3"]]'>A passing tone: the alto steps G, F, E through the tonic chord.</div>
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["I","C5 G4 E4 C3"],["","C5 A4 E4 C3"],["","C5 G4 E4 C3"]]'>An upper neighbor tone: the alto repeats G, with A between.</div>
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["I","C5 G4 E4 C3"],["V","C5 G4 D4 G3"],["","B4 G4 D4 G3"]]'>A 4-3 suspension: the soprano holds C over the new chord V (a fourth above G) and falls to B.</div>
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["V","D5 G4 B3 G3"],["","C5 G4 B3 G3"],["I","C5 E4 C4 C3"]]'>An anticipation: the soprano reaches C early, before the tonic chord arrives.</div>
+
+<div class="vl-ex" data-key="C" data-expect="chordtone" data-rows='[["I","C5 G4 E4 C3"],["","C5 B4 E4 C3"],["V","D5 D4 G3 G3"]]'>The alto's B4 is a non-chord tone reached by a leap and left by a leap: it is not any of the types.</div>
+
+
+## 28.3 Exercises
+
+**One. A neighbor tone.** The alto holds E4 over I with a neighbor tone between: write the middle note (a step above or below E4 in C major).
+
+<div class="vl-exercise" data-key="C" data-hint="Between the two E4s write D4 or F4 in the alto." data-rows='[{"rn":"I","S":"G4","A":"E4","T":"C4","B":"C3"},{"S":"G4","A":"","T":"C4","B":"C3"},{"rn":"I","S":"G4","A":"E4","T":"C4","B":"C3"}]'></div>
+
+**Two. A passing tone.** The soprano falls G to E over I: fill the third.
+
+<div class="vl-exercise" data-key="C" data-hint="Write F4 for the passing tone. Then try making it a neighbor by changing the end." data-rows='[{"rn":"I","S":"G4","A":"E4","T":"C4","B":"C3"},{"S":"","A":"E4","T":"C4","B":"C3"},{"rn":"I","S":"E4","A":"E4","T":"C4","B":"C3"}]'></div>
+
+
+::: {.callout-note collapse="true"}
+## What the checker does and does not check
+- Every note not in the chord must be one of the seven types the checker knows, judged from the notes before and after it in that voice; parallels are checked between *every* pair of
+  slices (so an embellishment cannot hide them); non-chord tones in two voices at once give a warning unless in parallel 3rds or 6ths.
+- **Not recognised:** pedal point and double neighbor (a double neighbor shows as an error: write the notes as two embellishing rows' worth of passing / neighbor tones instead). Whether the embellishment is "accented" is
+  decided by the chord row it falls on (a row with a Roman numeral is on the beat). Both are limits of this site's checker.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hutchinson, Robert. "Voice Leading With Non-Chord Tones." *Music Theory for the 21st-Century Classroom*, ch. 28, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/VoiceLeadingNCTs.html](https://musictheory.pugetsound.edu/mt21c/VoiceLeadingNCTs.html).
+:::
+<!-- /works-cited -->

@@ -1,0 +1,78 @@
+---
+title: "Impressionism and Extended Tonality: Practice for Chapter 32"
+toc: true
+toc-depth: 2
+description: "Chapter 32 of Hutchinson's Music Theory for the 21st-Century Classroom with players: hear modes, whole-tone, pentatonic and octatonic collections, parallel chords (planing), quartal and quintal chords and polychords."
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/audio.js?v=10"></script>
+<script src="/apps/shared/post-tonal/forte-data.js"></script>
+<script src="/apps/shared/post-tonal/pcset.js"></script>
+<script src="/apps/shared/post-tonal/pt-widgets.js"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+This page goes with **Chapter 32, Impressionism and Extended Tonality** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/ImpressionismAndExtendedTonality.html). Read each section there first.
+Pieces are named and described, not reproduced; find them on [IMSLP](https://imslp.org/) or by the listening links.
+
+## 32.1 Modes and other collections
+
+The chapter names three habits of Debussy and Ravel: writing in church modes, adding upper extensions (ninths, elevenths, thirteenths) to chords, and parallelism.
+Its examples include the start of Debussy's String Quartet (Phrygian), the Danse profane (Lydian) and the first movement of Ravel's Piano Trio (Dorian).
+Hear the collections from any starting note. The whole-tone, pentatonic and octatonic scales are not in the chapter; their use by these composers is
+from memory and **unverified** here (Debussy's piano prelude *Voiles* is the usual whole-tone example, [listen](https://www.youtube.com/results?search_query=Debussy+Voiles)).
+
+::: {.pt data-pt="collections" data-coll="lydian"}
+:::
+
+The "Different transpositions" row shows why the whole-tone scale (2) and octatonic scale (3) feel tonic-less: starting on another note often gives the same notes.
+The "Wash" button plays random notes of the collection with no tune.
+
+## 32.2 Pandiatonicism
+
+Using only the notes of one major scale without making them behave like chords in a key. The book names Stravinsky's *Petrushka* (Fourth Tableau) and Copland's *Appalachian Spring*.
+Try the Wash button on a major scale: any notes together sound consonant-ish, and nothing wants to resolve.
+
+## 32.3 Planing, quartal, quintal and secundal chords
+
+**Planing** moves a chord in parallel. Ravel's *Pavane pour une infante défunte* (parallel dominant ninths) and Debussy's *Prelude to the Afternoon of a Faun* (parallel sevenths) are the chapter's examples.
+**Quartal** chords stack fourths, **quintal** fifths, **secundal** seconds. The book's examples: Schoenberg's Chamber Symphony No. 1, Op. 9 and TV themes (quartal), Bartók's Piano Concerto No. 2, II (quintal).
+Choose a shape and hear it slide. In real planing every chord is the same set class; in diatonic planing (white notes) the sizes of the intervals change.
+
+::: {.pt data-pt="planing"}
+:::
+
+## 32.4 Polychords
+
+Two chords sounding at once, written one above the other. The Rite of Spring chord is an E&flat; dominant seventh over an F&flat; major triad (Stravinsky, "Dance of the Adolescents"; the button below spells F&flat; as E).
+
+::: {.pt data-pt="polychord"}
+:::
+
+## Practice
+
+1. Which collection has the notes C D E F&sharp; G&sharp; A&sharp;?
+2. A planed major triad rises by step. What is the Forte name of each chord?
+3. What is the set class of a quartal tetrachord (C F B&flat; E&flat;)?
+
+::: {.callout-tip collapse="true"}
+## Answers
+
+1. The whole-tone scale on C (set class 6-35).
+2. 3-11 for each, since real planing keeps the shape exactly.
+3. 4-23, (0257).
+:::
+
+## For teachers
+
+- Generated ABC for every collection, root and planing shape is bar-checked by `tests/post-tonal/pcset.test.js`.
+- The Rite of Spring spelling is the book's; the whole-tone/octatonic remarks are unverified. Written for the site, not copied from the book.
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hutchinson, Robert. "Impressionism and Extended Tonality." *Music Theory for the 21st-Century Classroom*, ch. 32, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/ImpressionismAndExtendedTonality.html](https://musictheory.pugetsound.edu/mt21c/ImpressionismAndExtendedTonality.html). Composers and pieces named on the page (Debussy, Ravel, Stravinsky, Copland, Schoenberg, Bartok) are the chapter's. The whole-tone, octatonic and pentatonic material is NOT in the chapter: those facts are marked unverified on the page.
+:::
+<!-- /works-cited -->

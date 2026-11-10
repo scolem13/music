@@ -1,0 +1,172 @@
+---
+title: "Voice Leading Triads: Practice for Chapter 26"
+toc: true
+toc-depth: 2
+description: "Chapter 26 of Hutchinson's Music Theory for the 21st-Century Classroom: SATB part writing with triads, parallels, ranges, spacing, doubling in each inversion and the six-four chords, with checked examples and exercises marked by a voice-leading checker."
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/soundfont.js?v=1"></script>
+<script src="/apps/shared/abc-play.js?v=27"></script>
+<script src="/apps/shared/analysis/voice-leading.js"></script>
+<script src="/apps/shared/analysis/voice-leading-ui.js"></script>
+```
+
+This page goes with **Chapter 26, Voice Leading Triads** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/VoiceLeadingTriads.html). Read each section there first; the book is the reference for the rules. It builds on [Chapter 6, Triads](triads.qmd),
+[Chapter 7, Roman Numerals](roman-numerals.qmd) and [Chapter 16, Figured Bass](figured-bass.qmd).
+
+**How the page works.** Each example is drawn on a grand staff (soprano and alto on the treble staff, tenor and bass below), plays when
+you press **Play**, and is **marked by a checker**: the same program that marks your exercises. A green *Right* is an example the checker
+passes, a red *Wrong* one shows what the checker says about it. In the exercises the bass (and sometimes the soprano) is given;
+type the other notes (`E4`, `F#4`, `Bb3`; **Up** and **Down** move a step in the key) and press **Check**.
+
+## 26.1 What voice leading is
+
+**Voice leading** (part writing) is the set of rules for how each voice moves from one chord to the next. Four things matter: each
+part should be **independent**, each chord should be **voiced** well, the parts should move **economically**, and each part should be
+**singable**. **SATB** (chorale style) puts soprano, alto, tenor and bass on two staves; **piano style** puts the upper three voices
+in the treble staff and the bass alone in the bass staff. The model is Bach's chorales.
+
+Two voices move in one of four ways: **contrary** (opposite directions), **oblique** (one holds, the other moves), **similar**
+(same direction) and **parallel** (same direction by the same interval, a kind of similar motion).
+
+## 26.2 Objectionable parallels
+
+Do not write **parallel fifths** or **parallel octaves** (or their compound forms, twelfths and unisons) between any two voices: they make two
+voices sound like one. Parallel 3rds, 4ths and 6ths are fine; parallel 2nds and 7ths are rarely used.
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["I","C5 G4 E4 C3"],["IV","C5 A4 F4 F3"]]'>Fifths and octaves do not move in parallel here: the soprano and alto hold the common tone C and the bass leaps.</div>
+
+<div class="vl-ex" data-key="C" data-expect="parallels" data-rows='[["I","E4 C4 G3 C3"],["ii","F4 D4 A3 D3"]]'>Parallel fifths: the tenor and bass both rise a step and keep a perfect fifth (G to C, then A to D).</div>
+
+<div class="vl-ex" data-key="C" data-expect="parallels" data-rows='[["I","C5 G4 E4 C3"],["ii","D5 A4 F4 D3"]]'>Parallel octaves: the soprano and bass both rise a step, octave to octave.</div>
+
+
+## 26.3 Voice ranges
+
+Keep each voice in the range of the book's figure: soprano D4 to F#5, alto G3 to C#5, tenor E&#9837;3 to F#4, bass E2 to C4. (These are narrower than
+real voices on purpose; the figure was read off the staff and the checker uses it as written.)
+
+<div class="vl-ex" data-key="C" data-expect="range" data-rows='[["I","G5 E4 C4 C3"]]'>The soprano's G5 is above the range.</div>
+
+
+## 26.4 Rules of melody
+
+Every voice is a melody. The book's rules, from Bach's practice: **tendency tones** resolve (7 up to 8, and, less strictly, 4 down to 3; 6
+and 2 fall); **avoid augmented intervals**; a **leap larger than a 4th**, or a diminished leap, **changes direction** afterwards; and
+**consecutive leaps outline a triad**. The checker flags the first two always (the leap rule as an error in the upper voices and a warning in
+the bass) and warns about two leaps in the same direction that do not outline a triad.
+
+## 26.5 Spacing, crossing and overlap
+
+Keep **soprano and alto**, and **alto and tenor**, within an octave of each other. More is a **spacing error**; the tenor and bass may be
+farther apart. Two more faults belong with independence of parts (the names are this site's): **voice crossing**, a voice below the voice
+under it, and **overlap**, a voice moving past where its neighbour has just been.
+
+<div class="vl-ex" data-key="C" data-expect="spacing" data-rows='[["I","C5 G4 E3 C3"]]'>The alto (G4) and tenor (E3) are more than an octave apart.</div>
+
+<div class="vl-ex" data-key="C" data-expect="crossing" data-rows='[["I","E4 G4 C4 C3"]]'>The alto is above the soprano.</div>
+
+<div class="vl-ex" data-key="C" data-expect="overlap" data-rows='[["I","G4 E4 C4 C3"],["IV","A4 B3 C4 F3"]]'>The alto leaps to B3, below the tenor's C4 of a moment ago (and across it).</div>
+
+
+## 26.6 Root position triads in four parts
+
+A triad has three notes and there are four voices, so one is doubled. **In root position, double the root** (that is, the bass). Then
+look at how the bass moves:
+
+| Bass moves by | Upper three voices |
+|---|---|
+| a 3rd or 6th | keep **both common tones**, move the third voice by step |
+| a 4th or 5th | keep **one common tone** and move the other two by step, *or* move **all three the same way** to the nearest chord tones |
+| a 2nd | move all three upper voices in **contrary** motion to the bass |
+| the same note repeated | keep the upper voices or rearrange them, keeping root, third and fifth |
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["I","G4 E4 C4 C3"],["vi","A4 E4 C4 A2"]]'>Bass down a 3rd (I to vi): two common tones (E, C), the soprano moves up a step.</div>
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["I","G4 E4 C4 C3"],["IV","A4 F4 C4 F3"],["V","G4 D4 B3 G3"],["I","G4 E4 C4 C3"]]'>I IV V I: a 4th up (one common tone), a 2nd up (the upper voices fall, contrary to the bass), a 5th down (one common tone).</div>
+
+
+**The deceptive progression.** When V goes to vi (VI in minor) the bass rises a 2nd, so the upper voices would fall, but the leading tone must rise.
+The book's answer: move the **third of V up by step** and the other two voices down, so **the third of vi is doubled**. In major, do the same only
+if 7 is in the soprano.
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["V","G4 D4 B3 G3"],["vi","E4 C4 C4 A3"]]'>V to vi: the leading tone (tenor) rises to C, the others fall; the third of vi is doubled.</div>
+
+<div class="vl-ex" data-key="C" data-expect="leaptone" data-rows='[["V","B4 D4 G3 G3"],["I","G4 E4 C4 C3"]]'>The leading tone in the soprano (B4) must rise to C; it leaps down to G.</div>
+
+<div class="vl-ex" data-key="C" data-expect="leaptone" data-rows='[["V","B4 D4 B3 G3"]]'>The leading tone (the third of V) is doubled: never do that.</div>
+
+<div class="vl-ex" data-key="C" data-expect="doubling" data-rows='[["I","G4 E4 G3 C3"]]'>A root position triad doubles the root; here the fifth is doubled and the root only sounds in the bass.</div>
+
+
+## 26.7 First inversion triads
+
+Now the bass is the third, so look at the **doubling** instead of the bass distance. **Do not double the bass** of a first inversion triad: double the
+root or the fifth, whichever moves most smoothly. Exceptions: a **diminished** triad in first inversion (such as vii&deg;6) doubles the **third** (the bass),
+and in a run of first inversion chords the third is doubled in every other chord. Never double the third of V (it is the leading tone).
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["I6","C5 G4 C4 E3"],["V","D5 G4 B3 G3"]]'>I6 doubles the root (C), not the bass; the soprano rises a step, the tenor falls to the leading tone.</div>
+
+<div class="vl-ex" data-key="C" data-expect="doubling" data-rows='[["I6","E4 C4 G3 E3"]]'>The bass E (the third) is doubled in a major first inversion triad.</div>
+
+<div class="vl-ex" data-key="C" data-expect="doubling" data-rows='[["viio6","F5 B4 F4 D3"]]'>A diminished first inversion triad doubles its third (the bass, D); here the fifth F is doubled.</div>
+
+<div class="vl-ex" data-key="C" data-expect="chordtone" data-rows='[["I6","G4 E4 C4 C3"]]'>The figure 6 means the third is in the bass; the bass has the root.</div>
+
+
+## 26.8 Second inversion triads and the six-four chord
+
+**Double the bass** (the fifth of the chord) in a second inversion triad. There are three places a six-four chord is used:
+
+- **Cadential**: I<sup>6</sup><sub>4</sub> to V, the 6 and 4 above the bass falling to 5 and 3 (the sixth resolves to the fifth, the fourth to the third).
+- **Pedal** (or neighbor): I IV<sup>6</sup><sub>4</sub> I, or V I<sup>6</sup><sub>4</sub> V: the bass holds while the upper voices move.
+- **Passing**: I V<sup>6</sup><sub>4</sub> I<sup>6</sup>, or IV I<sup>6</sup><sub>4</sub> IV<sup>6</sup>: the bass walks through by step.
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["I64","G4 E4 C4 G3"],["V","G4 D4 B3 G3"]]'>Cadential six-four: the bass G is doubled; E falls to D and C falls to B.</div>
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["I","G4 E4 C4 C3"],["IV64","A4 F4 C4 C3"],["I","G4 E4 C4 C3"]]'>Pedal six-four: the bass holds C while the upper voices move to IV and back.</div>
+
+<div class="vl-ex" data-key="C" data-expect="doubling" data-rows='[["I64","C5 E4 C4 G2"]]'>In a six-four chord the bass (the fifth) is doubled; here only the bass has G.</div>
+
+
+**Special situation: roots a second apart.** When two chords have roots a 2nd apart (IV to V, ii to I6), avoid parallel fifths by voicing each chord with the fifth
+below the root in the upper voices.
+
+## 26.9 Exercises
+
+**One. Bass given: I IV V I.** Add soprano, alto and tenor: double the root in each chord, keep common tones where the bass moves by a 4th or 5th,
+move contrary where it moves by a 2nd.
+
+<div class="vl-exercise" data-key="C" data-hint="Add S, A and T above the given bass. Root position: double the root." data-rows='[{"rn":"I","B":"C3"},{"rn":"IV","B":"F3"},{"rn":"V","B":"G3"},{"rn":"I","B":"C3"}]'></div>
+
+**Two. Soprano and bass given, with a vi.** The bass rises and falls by 3rds and 2nds.
+
+<div class="vl-exercise" data-key="C" data-hint="Both outer voices are given: find alto and tenor so that each chord has its root doubled, and the leading tone is not doubled." data-rows='[{"rn":"I","S":"C5","B":"C3"},{"rn":"vi","S":"C5","B":"A2"},{"rn":"IV","S":"A4","B":"F3"},{"rn":"V","S":"B4","B":"G3"},{"rn":"I","S":"C5","B":"C3"}]'></div>
+
+**Three. A first inversion chord.** In I6 double the root or the fifth; the soprano resolves the leading tone in the last bar.
+
+<div class="vl-exercise" data-key="C" data-hint="I6 does not double its bass. The leading tone in the soprano rises to C5." data-rows='[{"rn":"I","S":"G4","B":"C3"},{"rn":"I6","S":"G4","B":"E3"},{"rn":"IV","S":"A4","B":"F3"},{"rn":"V","S":"B4","B":"G3"},{"rn":"I","S":"C5","B":"C3"}]'></div>
+
+**Four. Minor.** In A minor the leading tone is G&#9839;; write it as `G#`.
+
+<div class="vl-exercise" data-key="a" data-hint="Minor: the V chord has G#; do not double it." data-rows='[{"rn":"i","S":"E4","B":"A2"},{"rn":"iv","S":"F4","B":"D3"},{"rn":"V","S":"E4","B":"E3"},{"rn":"i","S":"E4","B":"A2"}]'></div>
+
+
+::: {.callout-note collapse="true"}
+## What the checker does and does not check
+- It marks ranges, spacing, crossing, overlap, parallel fifths and octaves, the leading tone (doubled, or not resolved), the doubling for each chord position, complete chords and
+  the melodic rules above. Rule by rule, with the chapter each comes from, they are listed in the header of `apps/shared/analysis/voice-leading.js`.
+- **Site's readings:** the exact notes of the ranges (read off the book's figure), the names *crossing* and *overlap*, direct fifths and octaves in the outer voices (a warning: the book states
+  that rule only for species counterpoint), and "no fifth only with the root tripled".
+- **Not checked:** consecutive thirds and sixths, the "roots a second apart" voicing, the Mozart K. 331 exception, and whether the Roman numerals suit a melody. A clean result means no rule above is broken; it does not mean the music is good.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hutchinson, Robert. "Voice Leading Triads." *Music Theory for the 21st-Century Classroom*, ch. 26, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/VoiceLeadingTriads.html](https://musictheory.pugetsound.edu/mt21c/VoiceLeadingTriads.html).
+:::
+<!-- /works-cited -->

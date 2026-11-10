@@ -1,0 +1,88 @@
+---
+title: "Voice Leading Chromatic Harmonies: Practice for Chapter 29"
+toc: true
+toc-depth: 2
+description: "Chapter 29 of Hutchinson's Music Theory for the 21st-Century Classroom: voice leading secondary dominants, borrowed chords, the Neapolitan and augmented sixth chords, with checked examples and exercises."
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/soundfont.js?v=1"></script>
+<script src="/apps/shared/abc-play.js?v=27"></script>
+<script src="/apps/shared/analysis/voice-leading.js"></script>
+<script src="/apps/shared/analysis/voice-leading-ui.js"></script>
+```
+
+This page goes with **Chapter 29, Voice Leading Chromatic Harmonies** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/VoiceLeadingChromaticHarmonies.html). Read each section there first. It builds on [Chapter 17, Secondary Dominants](secondary-dominants.qmd), [18, Secondary Diminished Chords](secondary-diminished.qmd),
+[19, Mode Mixture](mode-mixture.qmd), [20, The Neapolitan Chord](neapolitan.qmd) and [Voice Leading Seventh Chords](voice-leading-sevenths.qmd).
+
+**How the page works.** Each example is drawn on a grand staff, plays when you press **Play**, and is **marked by the same checker** that marks your exercises: a green *Right*
+passes it, a red *Wrong* shows what the checker says. In the exercises the given notes are greyed; type the others (`E4`, `F#4`, `Bb3`; **Up** and **Down** move a step in the key,
+**Shift** a half step) and press **Check**.
+
+
+## 29.1 Secondary chords
+
+Voice lead a secondary chord as you would a seventh chord: **resolve the 7th down by step**, and alternate complete and incomplete voicings in a row of root position sevenths. The chord's
+third (the temporary leading tone, a raised note) rises by a half step to the root of the chord it points to, and so **cancels** the chromatic note. The leading-tone rules apply to the temporary leading tone too.
+One exception from the book: when V<sup>7</sup>/V or vii&deg;/V goes to V and the melody needs the seventh above the third, write parallel (unequal) fifths rather than double the leading tone.
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["V7/V","A4 F#4 C4 D3"],["V","G4 G4 B3 G3"]]'>V7/V to V: F# (the leading tone of V) rises to G, the seventh C falls to B.</div>
+
+<div class="vl-ex" data-key="C" data-expect="leaptone" data-rows='[["V7/V","A4 F#4 C4 D3"],["V","G4 D4 B3 G3"]]'>The raised F# (the leading tone of V) in the alto falls to D instead of rising to G.</div>
+
+
+## 29.2 Borrowed chords
+
+Borrowed (mode mixture) chords are voiced like their diatonic versions: iv like IV, for instance. Whenever scale degree 6 is a member of a borrowed chord, **resolve it down by step**.
+The same goes for the cadential vii&deg;7 (borrowed): rise the third of the chord up by step and move the other voices in contrary motion, as in the deceptive cadence in minor.
+There are no special rules for other borrowed chords: move smoothly and avoid objectionable parallels.
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["iv","F4 C4 Ab3 F3"],["V","D4 B3 G3 G3"]]'>iv in C major (borrowed): its A&#9837; (6&#9837;) falls to G.</div>
+
+<div class="vl-ex" data-key="C" data-expect="borrowed6" data-rows='[["iv","F4 C4 Ab3 F3"],["I","E4 C4 C4 C3"]]'>The A&#9837; leaps up to C instead of falling.</div>
+
+
+## 29.3 The Neapolitan chord
+
+Two rules for N<sup>6</sup> in four parts: **double the bass** (the third of the chord) and **resolve 2&#9837;** (the root of N, a half step above 1) **down** to the nearest note of the next chord.
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["N6","Ab4 F4 Db4 F3"],["V","G4 D4 B3 G3"]]'>N6 doubles its bass F; the D&#9837; falls to B (the nearest note of V).</div>
+
+<div class="vl-ex" data-key="C" data-expect="neapolitan" data-rows='[["N6","Db5 Ab4 Db4 F3"]]'>N6 should double its bass F, not the root D&#9837;.</div>
+
+
+## 29.4 Augmented sixth chords
+
+The salient accidental in every augmented sixth chord is &#9839;4, which almost always resolves **up to 5**, including when the chord goes to the cadential I<sup>6</sup><sub>4</sub>. In the
+enharmonic German chord, 2 and 4 rise to members of a major chord. The exception: when an augmented sixth chord goes to V<sup>7</sup>, &#9839;4 goes to 4&#9838;, which is the seventh of V<sup>7</sup>. Otherwise move all voices smoothly, avoid parallels and double properly.
+*The checker does not read augmented sixth chord symbols: they are left for you and your teacher.*
+
+## 29.5 Exercises
+
+**One. V7/V to V to I.** The soprano holds C (the seventh of V7/V) and then falls to B.
+
+<div class="vl-exercise" data-key="C" data-hint="V7/V is D F# A C. F# rises to G, the seventh C falls to B." data-rows='[{"rn":"I","S":"C5","B":"C3"},{"rn":"V7/V","S":"C5","B":"D3"},{"rn":"V","S":"B4","B":"G3"},{"rn":"I","S":"C5","B":"C3"}]'></div>
+
+**Two. A borrowed iv.**
+
+<div class="vl-exercise" data-key="C" data-hint="iv is F Ab C: write Ab with the flat (`Ab3`); it falls to G in V." data-rows='[{"rn":"I","S":"G4","B":"C3"},{"rn":"iv","S":"F4","B":"F3"},{"rn":"V","S":"D4","B":"G3"},{"rn":"I","S":"E4","B":"C3"}]'></div>
+
+**Three. N6 to V to I.**
+
+<div class="vl-exercise" data-key="C" data-hint="N6 is Db F Ab: write the flats (`Db4`, `Ab3`). Double the bass F; the Db falls to the nearest note of V." data-rows='[{"rn":"I","S":"G4","B":"C3"},{"rn":"N6","S":"F4","B":"F3"},{"rn":"V","S":"D4","B":"G3"},{"rn":"I","S":"E4","B":"C3"}]'></div>
+
+
+::: {.callout-note collapse="true"}
+## What the checker does and does not check
+- Secondary chords: the seventh and the (temporary) leading tone are checked as in chapter 27. Borrowed chords: scale degree 6 resolves down; the Neapolitan doubles its bass and its root falls. Everything from chapters 26 to 28 applies.
+- **Not checked:** the V7/V to V unequal-fifths exception (the checker flags the doubled leading tone as written, and warns about unequal fifths), augmented sixth chords, and borrowed chords other than iv / bVI.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hutchinson, Robert. "Voice Leading Chromatic Harmonies." *Music Theory for the 21st-Century Classroom*, ch. 29, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/VoiceLeadingChromaticHarmonies.html](https://musictheory.pugetsound.edu/mt21c/VoiceLeadingChromaticHarmonies.html).
+:::
+<!-- /works-cited -->

@@ -47,6 +47,11 @@
 // Levels ch19 / ch20 (Hutchinson's Mode Mixture, Neapolitan): borrowed chords come from the parallel minor (lowered 6 most common, also 3 and 7);
 // the only borrowing in minor is the Picardy third (major I at the end). The Neapolitan is labelled N, most often N6, pre-dominant. Not made:
 // borrowed chords in the other stages' melodies beyond the usual, the deceptive cadence V to ♭VI as a named cadence.
+// Level ch21 (augmented sixths, Hutchinson's Augmented Sixth Chords): b6 is in the bass, #4 sounds above it, 1 is there, and the type is told by the
+// extra note: none = Italian (It+6), 2 = French (Fr+43), b3 = German (Ger+65). In the checker a chord with cat "aug6" (parseRN: It / Fr / Ger, figure
+// optional) has its notes as the stack in letter-thirds (the bottom interval is a diminished third) and the bass b6; so one stack checker serves.
+// Its own Step 4 ("Find the augmented 6th"). Not made: the enharmonic German (#2 for b3, which goes only to a major I64), lead-sheet symbols (the book reads them as a dominant 7th on b6 with a
+// misspelled 7th). Fr and Ger are made in both modes.
 // After ch. 10 (16 figures, 17-21 chromatic chords): the plan is in
 // theory/chord-analysis.qmd, "What comes next". parseRN already reads V7/V and N6 for them.
 // Test: node tests/analysis/chord-analysis.test.js
@@ -119,6 +124,8 @@
       .replace(/\/3rd/g, "§1").replace(/\/5th/g, "§2").replace(/\/7th/g, "§3").replace(/Ø/g, "ø").replace(/#/g, "♯");
     var nn = /^N(6|64)?$/.exec(t);
     if (nn) return { deg: 2, acc: -1, upper: true, q: "maj", inv: nn[1] === "6" ? 1 : nn[1] === "64" ? 2 : 0, target: null, isN: true };
+    var ag = /^(It|Fr|Ger)\+?(6|43|65)?$/i.exec(t);   // augmented sixths: It+6, Fr+43, Ger+65 (the figure may be left off, not changed)
+    if (ag) { var ak = ag[1].toLowerCase(); if (ag[2] && ag[2] !== { it: "6", fr: "43", ger: "65" }[ak]) return null; return { aug: ak }; }
     var parts = t.split("/"); if (parts.length > 2) return null;
     var m = /^(♭|♯|b)?(VII|VI|IV|V|III|II|I|vii|vi|iv|v|iii|ii|i)(°|o|ø|h|\+)?(M7|maj7|Δ7|Δ|M|7)?(64|65|43|42|6|2|7|§1|§2|§3)?$/.exec(parts[0]);
     if (!m) return null;
@@ -142,6 +149,11 @@
   // a spec in a key -> { notes (root first), bass, q, inv, cat } ; cat "" (diatonic or borrowed), "applied", "N"
   function build(key, sp) {
     if (!sp) return null;
+    if (sp.aug) {   // not a stack of thirds in the usual sense: the stack has a diminished third (#4 up to b6); the bass is b6
+      var T0 = key.tonic, s4 = up(T0, 3, 6), b6 = up(T0, 5, 8), d1 = { l: T0.l, a: T0.a }, d2 = up(T0, 1, 2), b3 = up(T0, 2, 3);
+      var an = { it: [[s4, b6, d1], 1, "It+6", "it6"], ger: [[s4, b6, d1, b3], 1, "Ger+65", "ger65"], fr: [[d2, s4, b6, d1], 2, "Fr+43", "fr43"] }[sp.aug];
+      return { notes: an[0], bass: an[0][an[1]], q: an[3], inv: an[1], cat: "aug6", label: an[2] };
+    }
     var k = key;
     if (sp.target) {
       var tg = build(key, sp.target); if (!tg || (tg.q !== "maj" && tg.q !== "min")) return null;
@@ -178,12 +190,13 @@
     return sev ? ["7", "65", "43", "42"][c.inv] : ["", "6", "64"][c.inv];
   }
   function rnText(tok, c, style) {
+    if (c.cat === "aug6") return c.label;
     if (c.cat === "N") return "N" + (c.inv === 1 ? "6" : c.inv === 2 ? "64" : "");
     var m = /^(♭|♯)?(VII|VI|IV|V|III|II|I|vii|vi|iv|v|iii|ii|i)(°|ø|\+)?/.exec(tok), head = (m[1] || "") + m[2] + (m[3] || "");
     var f = figOf(c, style); if (c.q === "maj7") f = "M" + f;
     return head + f + (tok.indexOf("/") >= 0 ? tok.slice(tok.indexOf("/")) : "");
   }
-  function symText(c, withBass) { return nm(c.notes[0]) + QSYM[c.q] + (withBass && c.inv ? "/" + nm(c.bass) : ""); }
+  function symText(c, withBass) { if (c.cat === "aug6") return c.label; return nm(c.notes[0]) + QSYM[c.q] + (withBass && c.inv ? "/" + nm(c.bass) : ""); }
 
   // ---- levels (Hutchinson ch. 6-8). Templates: [mode, numerals with the book's figures]
   function T(mode, list) { return list.map(function (p) { return [mode, p]; }); }
@@ -246,6 +259,10 @@
     .concat(T("minor", ["i iv V I", "i VI iv V I", "i iv6 V I", "i ii°6 V I"]));
   var NEAP = T("minor", ["i N6 V i", "i iv N6 V i", "i N6 V7 i", "i iv6 N6 V i", "i VI N6 V i", "i N6 i64 V i", "i ii°6 N6 V i", "i N6 V7 i", "i N V i"])
     .concat(T("major", ["I IV N6 V I", "I N6 V7 I"]));
+  // ch. 21 augmented sixths: It+6 (b6 1 #4), Fr+43 (b6 1 2 #4), Ger+65 (b6 1 b3 #4), b6 in the bass, to V (Ger+65 also through the cadential I64)
+  var AUG6 = T("minor", ["i It+6 V i", "i iv It+6 V i", "i Fr+43 V i", "i Ger+65 V i", "i Ger+65 i64 V i", "i VI Ger+65 V7 i", "i iv Fr+43 V i", "i It+6 V7 i", "i Ger+65 V i",
+    "i VII Ger+65 i64 V i", "i iv Ger+65 V7 i"])
+    .concat(T("major", ["I It+6 V I", "I IV Fr+43 V I", "I Ger+65 I64 V I", "I vi It+6 V I", "I Fr+43 V I"]));
   var LEVELS = [
     { id: "ch6a", ch: 6, name: "6. Chord symbols, root position", answer: "sym", inv: false, rhythm: "bar", tpl: POP, most: 2 },
     { id: "ch6b", ch: 6, name: "6. Chord symbols with slash chords", answer: "sym", inv: true, rhythm: "half", tpl: SLASH },
@@ -259,6 +276,7 @@
     { id: "ch18", ch: 18, name: "18. Secondary diminished chords (vii°/V, viiø7/ii ...)", answer: "rn", inv: true, rhythm: "half", applied: true, tpl: SECDIM },
     { id: "ch19", ch: 19, name: "19. Mode mixture (borrowed chords)", answer: "rn", inv: true, rhythm: "half", tpl: MIXTURE },
     { id: "ch20", ch: 20, name: "20. The Neapolitan chord (N6)", answer: "rn", inv: true, rhythm: "half", tpl: NEAP },
+    { id: "ch21", ch: 21, name: "21. Augmented sixth chords (It+6, Fr+43, Ger+65)", answer: "rn", inv: true, rhythm: "half", aug6: true, tpl: AUG6 },
     { id: "ch16", ch: 16, name: "16. Figures (inversions, the cadential 6/4)", answer: "rn", inv: true, rhythm: "half", figs: true, tpl: FIGS }
   ];
   var LV = {}, LEVEL_NAMES = {}; LEVELS.forEach(function (L) { LV[L.id] = L; LEVEL_NAMES[L.id] = L.name; });
@@ -310,6 +328,7 @@
       var ul = !rh && c.notes.length > 3 ? c.notes.filter(function (n) { return !sameName(n, c.bass); }) : c.notes.slice(), cands = [];
       for (var r = 0; r < ul.length; r++) {
         var rot = ul.slice(r).concat(ul.slice(0, r));
+        if (rh && c.cat === "aug6" && !sameName(rot[0], c.bass)) continue;   // b6 must be the lowest note
         for (var d = 28; d <= 35; d++) {
           if (d % 7 !== rot[0].l) continue;
           var v = closeFrom(rot, d), ms = v.map(midi), top = ms[ms.length - 1];
@@ -564,7 +583,7 @@
     var seed = s.seed != null ? s.seed >>> 0 : Math.floor(Math.random() * 4294967296);
     rng = seeded(seed);
     try {
-      var L = LV[s.level] || LEVELS[0], answer = s.answer === "auto" ? L.answer : s.answer, rhythm = s.rhythm === "auto" ? L.rhythm : s.rhythm;
+      var L = LV[s.level] || LEVELS[0], answer = L.aug6 ? "rn" : s.answer === "auto" ? L.answer : s.answer, rhythm = s.rhythm === "auto" ? L.rhythm : s.rhythm;
       for (var tries = 0; tries < 200; tries++) {
         var tpl, key;
         if (s.prog) { key = keyNamed(s.keyName || "C"); tpl = [key.mode, s.prog]; }
@@ -667,9 +686,24 @@
     melody: "Take the left hand's notes, then the melody's." };
   function semis(a, b) { return ((pcOf(b) - pcOf(a)) % 12 + 12) % 12; }
   function where(it) { var b = Math.floor(it.span.start / 8) + 1; return "bar " + b + (it.span.len === 8 ? "" : it.span.start % 8 ? ", second half" : ", first half"); }
+  // augmented sixths: steps 1-3 as for any chord, then a different Step 4 (the stack has a diminished third; find the augmented 6th)
+  function aug6Steps(q, i, ns, lets, nc) {
+    var it = q.items[i], c = it.chord, key = q.key, out = [], b6 = c.bass, d1 = key.tonic, s4 = c.notes.filter(function (n) { return semis(d1, n) === 6; })[0];
+    out.push({ h: "Collect the notes", t: "Chord " + (i + 1) + " (" + where(it) + "): " + ns.map(nm).join(" ") + ". " + READ[q.texture] });
+    if (nc.length) out.push({ h: "Leave out the non-chord tones", t: nc.map(function (x) { return nm(x.note) + " is a " + nctName(x.kind); }).join("; ") + "." });
+    var chordLets = lets.filter(function (n) { return !nc.some(function (x) { return sameName(x.note, n); }); });
+    out.push({ h: "One of each", t: "Cross out repeats: " + chordLets.map(nm).join(", ") + "." });
+    out.push({ h: "Rearrange into thirds", t: "Stack the letters a third apart: " + c.notes.map(nm).join("–") + ". The bottom interval is a diminished 3rd (" + nm(c.notes[0]) + " up to " + nm(c.notes[1]) + " for the Italian and German; " + nm(c.notes[1]) + " up to " + nm(c.notes[2]) + " for the French, from its 4th degree). None of the chords before had a diminished 3rd: this is an augmented sixth chord." });
+    out.push({ h: "Find the augmented 6th", t: "The bass is " + nm(b6) + " (♭6 of " + key.label + "), and the note ♯4, " + nm(s4) + ", is an augmented 6th above it. Both want to step to 5 (" + nm(up(key.tonic, 4, 7)) + "): ♭6 down, ♯4 up." });
+    var has2 = c.notes.some(function (n) { return semis(d1, n) === 2; }), has3 = c.notes.some(function (n) { return semis(d1, n) === 3; });
+    out.push({ h: "Which type", t: "All three have ♭6, 1 and ♯4 (" + nm(b6) + ", " + nm(d1) + ", " + nm(s4) + "). " + (has2 ? "This one adds 2 (" + nm(up(d1, 1, 2)) + "): French, Fr+43." : has3 ? "This one adds ♭3 (" + nm(up(d1, 2, 3)) + "): German, Ger+65." : "It adds nothing: Italian, It+6.") });
+    out.push({ h: "Answer", t: it.rn + (c.label === "Ger+65" ? " (the German usually goes on to I64, then V, to avoid parallel fifths)" : "") });
+    return out;
+  }
   function steps(q, i) {
     var it = q.items[i], c = it.chord, key = q.key, out = [], ns = sounding(q, i, true), lets = letters(q, i);
     var nc = q.ncts.filter(function (x) { return x.ci === i; });
+    if (c.cat === "aug6") return aug6Steps(q, i, ns, lets, nc);
     out.push({ h: "Collect the notes", t: "Chord " + (i + 1) + " (" + where(it) + "): " + ns.map(nm).join(" ") + ". " + READ[q.texture] });
     if (nc.length) out.push({ h: "Leave out the non-chord tones", t: nc.map(function (x) { return nm(x.note) + (x.label ? " (marked " + x.label + ")" : "") + " is a " + nctName(x.kind) + ": " + NCT_WHY[x.kind]; }).join("; ") + "." });
     var chordLets = lets.filter(function (n) { return !nc.some(function (x) { return sameName(x.note, n); }); });
@@ -1026,7 +1060,7 @@
       var ss = Object.assign({}, s); if (seed != null) ss.seed = seed;
       q = make(ss); cardBox.innerHTML = ""; panel.innerHTML = ""; fb.textContent = ""; fb.className = "ca-fb"; cards = []; stackOk = []; active = -1; msg.textContent = "";
       if (!q) { prompt.textContent = "No passage fits these settings. Choose more keys."; paper.innerHTML = ""; return; }
-      var what = q.answer === "sym" ? "a chord symbol (" + (q.inv ? "C, Am, G7, C/E" : "C, Am, G7") + ")" : "a Roman numeral" + (q.inv ? (q.figs ? " in figures (I6, I64, V65; Cad64 for a cadential 6/4)" : " with its inversion (I6 or I/3rd, V65 or V7/3rd)") : " (I, ii, V7)");
+      var what = q.level === "ch21" ? "an augmented sixth chord: It+6, Fr+43 or Ger+65" : q.answer === "sym" ? "a chord symbol (" + (q.inv ? "C, Am, G7, C/E" : "C, Am, G7") + ")" : "a Roman numeral" + (q.inv ? (q.figs ? " in figures (I6, I64, V65; Cad64 for a cadential 6/4)" : " with its inversion (I6 or I/3rd, V65 or V7/3rd)") : " (I, ii, V7)");
       var job = doStack() && doName() ? "For each numbered chord, stack its notes in root position, then name it with " + what + "."
         : doStack() ? "Stack the notes of each numbered chord in close root position." : "Name each numbered chord with " + what + ".";
       if (q.nctNamed && doName()) job += " The small letters under the melody mark non-chord tones: name each one (passing, neighbor, escape, appoggiatura, suspension, anticipation).";

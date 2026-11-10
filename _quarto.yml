@@ -350,8 +350,26 @@ website:
               text: "24. Binary and Ternary Forms"
             - href: theory/sonata-rondo.qmd
               text: "25. Sonata and Rondo Forms"
+            - href: theory/voice-leading-triads.qmd
+              text: "26. Voice Leading Triads"
+            - href: theory/voice-leading-sevenths.qmd
+              text: "27. Voice Leading Seventh Chords"
+            - href: theory/voice-leading-ncts.qmd
+              text: "28. Voice Leading with Non-Chord Tones"
+            - href: theory/voice-leading-chromatic.qmd
+              text: "29. Voice Leading Chromatic Harmonies"
+            - href: theory/counterpoint.qmd
+              text: "30. Introduction to Counterpoint"
             - href: theory/jazz-theory.qmd
               text: "31. Jazz Theory"
+            - href: theory/impressionism.qmd
+              text: "32. Impressionism and Extended Tonality"
+            - href: theory/set-theory.qmd
+              text: "33. Set Theory"
+            - href: theory/serialism.qmd
+              text: "34. Serialism"
+            - href: theory/minimalism.qmd
+              text: "35. Minimalism"
         - section: "Analysed Scores"
           href: theory/analysed-scores/index.qmd
           contents:

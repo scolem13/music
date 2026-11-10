@@ -18,7 +18,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   await b.goto(`http://127.0.0.1:${PORT}/theory/chord-analysis.html`); await wait(1500);
   const counts = JSON.parse(await ev(`JSON.stringify({ ex: document.querySelectorAll('.chord-analysis[data-example]').length, all: document.querySelectorAll('.chord-analysis').length,
     drawn: [...document.querySelectorAll('.chord-analysis')].filter(h => h.querySelector('.ca-paper svg')).length, tabs: document.querySelectorAll('.ca-tab').length })`));
-  check("guide: every widget drew its score", counts.ex === 12 && counts.all === 25 && counts.drawn === 25, JSON.stringify(counts));
+  check("guide: every widget drew its score", counts.ex === 13 && counts.all === 27 && counts.drawn === 27, JSON.stringify(counts));
   check("guide: the guitar stage draws TAB", counts.tabs >= 2, counts.tabs);
   check("guide: no page errors", errs().length === 0, errs().slice(0, 3).join(" | "));
 
@@ -96,7 +96,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   // every stage and level draws
   for (const st of ["rh", "guitar", "satb", "broken", "melody"]) {
     await setSel("Stage", st); await wait(150);
-    for (const lv of ["ch6a", "ch6b", "ch7a", "ch7b", "ch8a", "ch8b", "ch9", "ch10", "ch16", "ch17", "ch18", "ch19", "ch20"]) { await setSel("Level", lv); await wait(120);
+    for (const lv of ["ch6a", "ch6b", "ch7a", "ch7b", "ch8a", "ch8b", "ch9", "ch10", "ch16", "ch17", "ch18", "ch19", "ch20", "ch21"]) { await setSel("Level", lv); await wait(120);
       const r = await ev(`(() => { const q = ${H}._ca.question(); return !!q && q.texture === (${JSON.stringify(lv)} === 'ch10' ? 'melody' : ${JSON.stringify(st)}) && !!${H}.querySelector('.ca-paper svg') && (${JSON.stringify(st)} !== 'guitar' || ${JSON.stringify(lv)} === 'ch10' || !!${H}.querySelector('.ca-tab')); })()`);
       if (!r) check(`stage ${st}, level ${lv} draws`, false);
     }

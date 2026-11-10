@@ -1,0 +1,121 @@
+---
+title: "Set Theory: Practice for Chapter 33"
+toc: true
+toc-depth: 2
+description: "Chapter 33 of Hutchinson's Music Theory for the 21st-Century Classroom as a calculator: click pitch classes on a clock face and read the normal form, prime form, Forte name and interval vector, then practise finding them yourself."
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/audio.js?v=10"></script>
+<script src="/apps/shared/post-tonal/forte-data.js"></script>
+<script src="/apps/shared/post-tonal/pcset.js"></script>
+<script src="/apps/shared/post-tonal/pt-widgets.js"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+This page goes with **Chapter 33, Set Theory** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/SetTheory.html). Read each section there first.
+Set theory describes music that does not use chords and keys in the old way (the book's example is Webern's Op. 5 No. 3), so the tools
+here work on bare pitch classes. Every answer on this page is computed by the same code the calculator uses, and a test checks that code
+against all 208 set classes of three to nine notes in the book's tables.
+
+## 33.1 Pitch-class integers
+
+A **pitch class** is a note with its octave forgotten, and with enharmonic spellings merged: C&sharp; and D&flat; are one pitch class.
+Number them from C = 0 up to B = 11. Ten and eleven are written **T** and **E** so that a set stays one character per note.
+Intervals are counted the same way: the distance from 2 to 9 is 7 semitones. Because 12 is the same as 0, arithmetic is "modulo 12".
+
+The clock face below puts C at the top. Click points to build a set, or type pitch classes ("0 4 7").
+
+## 33.2 The calculator
+
+::: {.pt data-pt="setcalc" data-set="0 4 7"}
+:::
+
+Start with the presets. Notice that a major and a minor triad get the **same** prime form and Forte name, 3-11: set theory counts them as one *set class*.
+
+## 33.3 Normal form
+
+The **normal form** of a set is the way of writing its notes in ascending order that is the most compact. Rules, in this site's words:
+
+1. List the pitch classes once each, in ascending order.
+2. Rotate the list so that each note takes a turn at the start, wrapping the low notes up an octave.
+3. Choose the rotation whose first and last notes are closest together.
+4. If two rotations tie, choose the one that is more tightly packed at the start (compare the first note to the next-to-last, then to the one before that, and so on). Last tie-break: the lower first note.
+
+Try: B&flat;, C, D&flat;, E&flat; is [T 0 1 3] (not [0 1 3 T]), because T up to 3 spans 5 semitones and no other starting point does better.
+
+## 33.4 Prime form
+
+The **prime form** moves the normal form so it starts on 0, and also does the same to the *inversion* of the set; the more tightly packed
+of the two wins. It is the name of the whole set class: every transposition and inversion of a set shares it. It is written in
+parentheses, such as (037). The book uses Rahn's rule for ties; Forte's own rule differs for six classes (5-20, 6-Z29, 6-31, 7-Z18, 7-20, 8-26),
+and the page's tables follow the book.
+
+## 33.5 Interval vector
+
+The **interval vector** counts the interval classes (1 to 6) between every pair of notes in the set, written as six digits. Interval class
+means an interval and its inversion are the same (a perfect fifth counts as a perfect fourth, class 5). The tritone, class 6, is counted once.
+The vector of (037) is &lang;001110&rang;: one minor third (class 3), one major third (4), one perfect fourth/fifth (5), and no seconds.
+A set of the same size and the same vector but a different prime form is **Z-related** (the Forte names have a Z: 4-Z15 and 4-Z29).
+
+## 33.6 Forte names, and all the set classes
+
+A **Forte name** is two numbers: the number of notes and the position of the class in Forte's list, such as 3-11 or 6-35.
+Open any class from the list below and it loads into the calculator.
+
+::: {.pt data-pt="setbrowser"}
+:::
+
+## 33.7 Transposition and inversion
+
+T<sub>n</sub> adds n to every pitch class. T<sub>n</sub>I first inverts (turns each note x into 12 &minus; x) and then adds n. The
+calculator's lower controls apply both to whatever is on the clock. To find n between two sets of the same class that are inversions of
+each other, add their notes in opposite order: the book's [2,4,5] and [2,3,5] are related by T<sub>7</sub>I (2+5, 4+3, 5+2 all give 7).
+
+## Practice
+
+Find the prime form and Forte name by hand, then check yourself in the calculator or the quiz.
+
+1. [2, 4, 5]
+2. G, B, D
+3. B&flat;, C, D&flat;, E&flat;
+4. [0, 1, 5, 6]
+5. A, C, E, F
+6. [3, 4, 7, 8]
+
+::: {.callout-tip collapse="true"}
+## Answers
+
+1. normal form [2 4 5]; prime form (013), 3-2, vector &lang;111000&rang;.
+2. 7, 11, 2: normal form [7 E 2]; prime form (037), 3-11.
+3. 10, 0, 1, 3: normal form [T 0 1 3]; prime form (0235), 4-10.
+4. normal form [0 1 5 6]; prime form (0156), 4-8, vector &lang;200121&rang;.
+5. 9, 0, 4, 5: normal form [4 5 9 0]; prime form (0158), 4-20.
+6. normal form [3 4 7 8]; prime form (0145), 4-7.
+:::
+
+::: {.pt data-pt="setquiz"}
+:::
+
+## For teachers
+
+- The maths is in `apps/shared/post-tonal/pcset.js`; the test `node tests/post-tonal/pcset.test.js` checks every prime form, vector and
+  Forte name against the book's tables and by enumerating all subsets (`NEG=1` must fail). It found three misprinted vectors in the book's
+  tables (5-13, 6-2, 6-Z43); the page uses the counted ones.
+- The text is written for the site, not copied from the book. Forte and Rahn are cited as the sources of the numbering and the prime-form rule; neither was re-read.
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Hutchinson, Robert. "Set Theory." *Music Theory for the 21st-Century Classroom*, ch. 33, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/SetTheory.html](https://musictheory.pugetsound.edu/mt21c/SetTheory.html). Prime forms and Forte numbers of the 208 classes of 3-9 notes read from its tables; three vectors in them are misprints (see apps/shared/post-tonal/forte-data.js).
+
+**For teachers**
+
+Forte, Allen. *The Structure of Atonal Music*. Yale UP, 1973. Not re-read; the source of the Forte numbers the book prints.
+
+Rahn, John. *Basic Atonal Theory*. Longman, 1980. Not re-read; the prime-form rule used here (compare from the right) is Rahn's, as the book says.
+:::
+<!-- /works-cited -->

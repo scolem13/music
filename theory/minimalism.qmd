@@ -1,0 +1,75 @@
+---
+title: "Minimalism: Practice for Chapter 35"
+toc: true
+toc-depth: 2
+description: "Chapter 35 of Hutchinson's Music Theory for the 21st-Century Classroom: additive process, phase shifting and ostinato layers, with players to hear a pattern grow, two copies drift apart, and layers of different lengths pile up."
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/audio.js?v=10"></script>
+<script src="/apps/shared/post-tonal/forte-data.js"></script>
+<script src="/apps/shared/post-tonal/pcset.js"></script>
+<script src="/apps/shared/post-tonal/pt-widgets.js"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+This page goes with **Chapter 35, Minimalism** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/Minimalism.html). Read each section there first.
+All patterns here are made up for the page; none is copied from a piece.
+
+## 35.1 Additive process
+
+Philip Glass's early pieces such as *Two Pages* and *Music in Fifths* (both 1969, the book says) change a repeating pattern by adding or taking away
+a note at a time. The book also names the pulsing chords of *Einstein on the Beach* (Act 1, Scene 1, "Train"), where each chord is stretched by adding
+subdivisions. ([Two Pages on YouTube](https://www.youtube.com/results?search_query=Glass+Two+Pages), [Music in Fifths](https://www.youtube.com/results?search_query=Glass+Music+in+Fifths).)
+Below, a pattern can grow, shrink, or lose notes from the front. Watch the rows: each is one step of the process.
+
+::: {.pt data-pt="additive"}
+:::
+
+## 35.2 Phase shifting
+
+Steve Reich found that two tape loops of the same sound, running at almost the same speed, slide out of step and slowly back in
+(*It's Gonna Rain*, 1965; *Come Out*, 1966). He then had live players do it: *Piano Phase* and *Violin Phase* (1967) and *Clapping Music* (1972).
+([Piano Phase](https://www.youtube.com/results?search_query=Reich+Piano+Phase), [Clapping Music](https://www.youtube.com/results?search_query=Reich+Clapping+Music).)
+In the stepped way one player holds steady while the other moves one note ahead, repeats, moves again, until the two are back together.
+The player offers a steady drift too (the second voice a hair faster), which is how the loops behaved.
+
+::: {.pt data-pt="phasing"}
+:::
+
+The table under the rings is the *rotation* the book draws: line 2 starts on the second note, line 3 on the third, until the pattern comes round again.
+A pattern of n notes passes through n offsets and returns to unison.
+
+## 35.3 Ostinato layers
+
+Repeating cells of different lengths, played together, never settle into one pattern for a long time. Switch layers on one at a time.
+
+::: {.pt data-pt="layers"}
+:::
+
+## Practice
+
+1. A pattern has 5 notes. How many different offsets can the second voice have in stepped phasing, counting unison?
+2. If it plays each offset for 8 cycles, how many cycles until the voices are back in unison?
+3. With cells of 3, 4, 5 and 7 notes, after how many notes do all four line up again?
+
+::: {.callout-tip collapse="true"}
+## Answers
+
+1. 5 (0 to 4 notes ahead).
+2. 5 &times; 8 = 40 cycles.
+3. The least common multiple, 3&times;4&times;5&times;7 = 420 notes (4 = 2&times;2, but the others have no common factor with it).
+:::
+
+## For teachers
+
+- Process maths (offsets, laps, additive steps) is in `pcset.js` and tested in `tests/post-tonal/pcset.test.js`.
+- The book repository holds a phasing MP3; not imported. Dates are the book's. Written for the site, not copied from the book.
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hutchinson, Robert. "Minimalism." *Music Theory for the 21st-Century Classroom*, ch. 35, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/Minimalism.html](https://musictheory.pugetsound.edu/mt21c/Minimalism.html).
+:::
+<!-- /works-cited -->

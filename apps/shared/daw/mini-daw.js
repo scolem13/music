@@ -11,10 +11,10 @@
 // audio clips; the recordings live in IndexedDB, the project only names them (see "recorded audio" below).
 //     data-bars    the song's length in bars (default the preset's)
 //
-// The model (one project): { tempo, bars, loop:{on,from,to} (bars), click, tracks:[track] }
+// The model (one project): { tempo, bars, ts:[n,d] (default [4,4]), tsMap:[{bar,ts}] (meter changes), loop:{on,from,to} (bars), click, tracks:[track] }
 //   track = { name, inst (a BandSounds instrument), vol (dB), pan (-1..1), mute, solo, clips:[clip] }
 //   clip  = { start (beats from the top), len (beats), notes:[{ t (beats into the clip), d (beats), m (midi or kit piece), v (0..1) }] }
-// Time is in beats (quarter notes), 4/4 only, sixteen steps a bar.
+// Time is in beats (quarter notes); a bar is n*4/d beats (see "time signatures"); the grid is sixteenths. data-ts="6/8" starts a project in that meter.
 //
 // Keys (when the DAW has focus): Space play/stop, Enter back to the start, L loop on/off, C click, R record,
 // Delete delete the selection, Ctrl/Cmd+D duplicate the clip, Ctrl/Cmd+Z / Shift+Z undo / redo, Q quantize the clip.
@@ -68,6 +68,72 @@
   function btn(text, title, cls) { var b = el('button', 'btn btn-sm btn-outline-secondary ' + (cls || ''), text); b.type = 'button'; if (title) { b.title = title; b.setAttribute('aria-label', title); } return b; }
   function clone(x) { return JSON.parse(JSON.stringify(x)); }
   function store(k, v) { try { if (v === undefined) return JSON.parse(localStorage.getItem(k) || 'null'); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, JSON.stringify(v)); } catch (e) { return null; } }
+
+  // ---------------- time signatures ----------------
+  // A project has ts [n, d] (default 4/4) and tsMap [{ bar (0-based), ts }]: the meter changes from that bar on. Time stays in quarter
+  // notes, so a bar is n * 4 / d beats (6/8 = 3, 7/8 = 3.5). Tempo is quarter notes a minute in every meter. Bars are found by walking
+  // the bars from the top (at most 64, so it is cheap). A bar's clicks fall on its groups: quarters in x/4, dotted quarters in 6/8, 9/8,
+  // 12/8, and 2+2+3 in 7/8, 3+2 in 5/8.
+  var TS_LIST = [[2, 4], [3, 4], [4, 4], [5, 4], [3, 8], [5, 8], [6, 8], [7, 8], [9, 8], [12, 8]];
+  var Meter = {
+    list: TS_LIST,
+    ok: function (ts) { return Array.isArray(ts) && ts[0] >= 1 && ts[0] <= 32 && [2, 4, 8, 16].indexOf(ts[1]) >= 0 && ts[0] % 1 === 0; },
+    str: function (ts) { return ts[0] + '/' + ts[1]; },
+    parse: function (s) { var m = /^(\d+)\s*\/\s*(\d+)$/.exec(String(s || '').trim()); var ts = m ? [+m[1], +m[2]] : null; return ts && Meter.ok(ts) ? ts : null; },
+    beats: function (ts) { return ts[0] * 4 / ts[1]; },
+    // the groups of a bar, in quarter notes: [1,1,1] in 3/4, [1.5,1.5] in 6/8, [1,1,1.5] in 7/8
+    groups: function (ts) {
+      var n = ts[0], d = ts[1], u = 4 / d, g = [];
+      if (d <= 4) for (var i = 0; i < n; i++) g.push(1 * u);
+      else if (n <= 3) g.push(n * u);
+      else if (n % 3 === 0 && n >= 6) for (var j = 0; j < n / 3; j++) g.push(3 * u);
+      else if (n === 4) g.push(2 * u, 2 * u);
+      else if (n === 7) g.push(2 * u, 2 * u, 3 * u);
+      else { var k = n % 3 === 1 ? 2 : n % 3 === 2 ? 1 : 0, th = (n - 2 * k) / 3; for (var a = 0; a < th; a++) g.push(3 * u); for (var b = 0; b < k; b++) g.push(2 * u); }
+      return g;
+    },
+    tsOfBar: function (p, bar) { var t = Meter.ok(p.ts) ? p.ts : [4, 4]; (p.tsMap || []).forEach(function (c) { if (c.bar <= bar && Meter.ok(c.ts)) t = c.ts; }); return t; },
+    barLen: function (p, bar) { return Meter.beats(Meter.tsOfBar(p, bar)); },
+    barStart: function (p, bar) { var s = 0; for (var i = 0; i < bar; i++) s += Meter.barLen(p, i); return s; },
+    // the bar holding a beat: { bar, start, len, into, ts }
+    barAt: function (p, beat) {
+      var s = 0, i = 0, l; if (!(beat > 0)) return { bar: 0, start: 0, len: Meter.barLen(p, 0), into: Math.min(0, beat || 0), ts: Meter.tsOfBar(p, 0) };
+      for (; i < 5000; i++) { l = Meter.barLen(p, i); if (beat < s + l - 1e-9) break; s += l; }
+      return { bar: i, start: s, len: l, into: beat - s, ts: Meter.tsOfBar(p, i) };
+    },
+    total: function (p) { return Meter.barStart(p, p.bars); },
+    floor: function (p, beat) { return Meter.barAt(p, beat).start; },                       // the bar line at or before a beat
+    ceil: function (p, beat) { var a = Meter.barAt(p, beat - 1e-9); return beat - a.start < 1e-9 ? a.start : a.start + a.len; },     // the bar line at or after a beat
+    nearest: function (p, beat) { var a = Meter.barAt(p, beat); return beat - a.start < a.len / 2 ? a.start : a.start + a.len; },
+    // n bars (may be fractional) from the bar at `start`, in beats; and the other way
+    lenOfBars: function (p, start, n) { var b = Meter.barAt(p, start).bar, w = Math.floor(n + 1e-9), s0 = Meter.barStart(p, b);
+      return Meter.barStart(p, b + w) - s0 + (n - w) * Meter.barLen(p, b + w); },
+    barsOfLen: function (p, start, len) { var b = Meter.barAt(p, start).bar, k = 0, sum = 0, l;
+      while (k < 5000 && sum + (l = Meter.barLen(p, b + k)) <= len + 1e-9) { sum += l; k++; }
+      return Math.round((k + (len - sum) / Meter.barLen(p, b + k)) * 100) / 100; },
+    // 2 = a bar line, 1 = the start of a group (a beat), 0 = neither
+    level: function (p, beat) { var a = Meter.barAt(p, beat + 1e-9); if (Math.abs(beat - a.start) < 1e-6) return 2; var s = 0, hit = 0;
+      Meter.groups(a.ts).forEach(function (g) { if (Math.abs(a.start + s - beat) < 1e-6) hit = 1; s += g; }); return hit; },
+    // the clicks in [b0, b1): [{ b, accent }]
+    clicks: function (p, b0, b1) {
+      var out = [], a = Meter.barAt(p, b0), bar = a.bar, s = a.start;
+      while (s < b1 - 1e-9) { var t = s; Meter.groups(Meter.tsOfBar(p, bar)).forEach(function (g, i) { if (t >= b0 - 1e-9 && t < b1 - 1e-9) out.push({ b: t, accent: i === 0 }); t += g; });
+        s += Meter.barLen(p, bar); bar++; }
+      return out;
+    },
+    // where a beat is: { bar (1-based), beat (1-based group), sub (1-based sixteenth in the group) }
+    where: function (p, b) { var a = Meter.barAt(p, b), s = 0, gi = 0, gs = Meter.groups(a.ts), x = Math.max(0, a.into);
+      for (var i = 0; i < gs.length; i++) { if (x < s + gs[i] - 1e-9) { gi = i; break; } s += gs[i]; gi = i; }
+      return { bar: a.bar + 1, beat: gi + 1, sub: Math.floor((x - s) * 4 + 1e-9) + 1 }; },
+    // set the meter from a bar on (bar 0 = the project's own); a change equal to the meter before it is dropped
+    set: function (p, bar, ts) {
+      if (bar <= 0) { p.ts = ts.slice(); return; }
+      p.tsMap = (p.tsMap || []).filter(function (c) { return c.bar !== bar; }); p.tsMap.push({ bar: bar, ts: ts.slice() }); p.tsMap.sort(function (a, b) { return a.bar - b.bar; });
+      p.tsMap = p.tsMap.filter(function (c, i) { var before = i ? p.tsMap[i - 1].ts : p.ts; return before.join('/') !== c.ts.join('/'); });
+    },
+    // old projects have no meter: 4/4
+    norm: function (p) { if (!Meter.ok(p.ts)) p.ts = [4, 4]; p.tsMap = Array.isArray(p.tsMap) ? p.tsMap.filter(function (c) { return c && c.bar > 0 && Meter.ok(c.ts); }) : []; return p; }
+  };
 
   // ---------------- presets ----------------
   function steps(s, piece, v) { var out = []; s.split('').forEach(function (c, i) { if (c !== '.' && c !== ' ') out.push({ t: i / 4, d: 0.25, m: piece, v: c === 'X' ? 1 : c === 'g' ? 0.35 : v || 0.75 }); }); return out; }
@@ -137,10 +203,15 @@
     var out = [], last = 0; evs.forEach(function (e) { out = out.concat(vlq(e.tick - last), e.bytes); last = e.tick; });
     out = out.concat([0, 0xff, 0x2f, 0]); return [0x4d, 0x54, 0x72, 0x6b].concat(u32(out.length), out);
   }
+  // the time signature meta events (0x58): the project's, and each change at its bar line; 24 MIDI clocks a quarter click, 36 a dotted quarter
+  function tsEvents(p) {
+    var list = [{ bar: 0, ts: Meter.ok(p.ts) ? p.ts : [4, 4] }].concat((p.tsMap || []).filter(function (c) { return c.bar > 0 && c.bar < p.bars && Meter.ok(c.ts); }));
+    return list.map(function (c) { var g = Meter.groups(c.ts)[0], cc = Math.round(g * 24); return { tick: Math.round(Meter.barStart(p, c.bar) * 480), o: 0, bytes: [0xff, 0x58, 4, c.ts[0], Math.log2(c.ts[1]), cc, 8] }; });
+  }
   function toMidi(p) {
     var ppq = 480, GM = (global.BandMidi && global.BandMidi.GM) || {}, chunks = [];
     var us = Math.round(60000000 / p.tempo);
-    chunks.push(trackChunk([{ tick: 0, o: 0, bytes: [0xff, 0x51, 3, (us >> 16) & 255, (us >> 8) & 255, us & 255] }, { tick: 0, o: 0, bytes: [0xff, 0x58, 4, 4, 2, 24, 8] }]));
+    chunks.push(trackChunk([{ tick: 0, o: 0, bytes: [0xff, 0x51, 3, (us >> 16) & 255, (us >> 8) & 255, us & 255] }].concat(tsEvents(p))));
     var ch = 0;
     p.tracks.forEach(function (tr) {
       if (isAudio(tr)) return;
@@ -160,7 +231,7 @@
   // fromMidi(bytes) -> { project, notes: [what was left out or changed] }. Any Standard MIDI File (format 0 or 1): one DAW track per
   // file track and channel, one clip each from the top. Channel 10 becomes the drum kit (GM notes back to kit pieces; a track of only
   // conga notes becomes the congas), other channels the nearest of this DAW's instruments by GM program. Times stay in quarter notes,
-  // so 6/8 and other meters come in as 4/4 bars; only the first tempo is kept.
+  // a file's time signatures (meta 0x58) become the project's meter and meter changes (one that falls mid-bar moves to the next bar line); only the first tempo is kept.
   var GM_KIT = { 35: 'kick', 36: 'kick', 37: 'rim', 38: 'snare', 39: 'snare', 40: 'snare', 42: 'hatClosed', 44: 'hatClosed', 46: 'hatOpen',
     49: 'crash', 52: 'crash', 55: 'crash', 57: 'crash', 51: 'ride', 53: 'ride', 59: 'ride', 41: 'tomLo', 43: 'tomLo', 45: 'tomMid', 47: 'tomMid', 48: 'tomHi', 50: 'tomHi' };
   var GM_CONGA = { 62: 'congaMute', 63: 'congaOpen', 64: 'tumbaOpen' };
@@ -177,7 +248,7 @@
     var hl = u(4), fmt = u(2), ntr = u(2), div = u(2); pos = 8 + hl;
     if (div & 0x8000) throw new Error('SMPTE-timed MIDI files are not supported');
     if (fmt === 2) notes.push('a format 2 file: its patterns are laid end to end');
-    var tempos = [], lanes = {}, order = [], endTick = 0, offset = 0;
+    var tempos = [], sigs = [], lanes = {}, order = [], endTick = 0, offset = 0;
     for (var t = 0; t < ntr && pos + 8 <= b.length; t++) {
       var id = str4(), len = u(4), end = Math.min(b.length, pos + len);
       if (id !== 'MTrk') { pos = end; continue; }
@@ -186,6 +257,7 @@
         tick += vl(); var st = b[pos];
         if (st === 0xff) { pos++; var ty = b[pos++], ml = vl(), d = b.subarray(pos, pos + ml); pos += ml;
           if (ty === 0x51 && ml === 3) tempos.push({ tick: tick, us: d[0] * 65536 + d[1] * 256 + d[2] });
+          else if (ty === 0x58 && ml >= 2 && d[1] <= 4) sigs.push({ tick: tick, ts: [d[0], 1 << d[1]] });
           else if ((ty === 0x03 || ty === 0x04) && !tname) tname = String.fromCharCode.apply(null, d).replace(/[^\x20-\x7e]/g, '').trim();
           else if (ty === 0x2f) break; continue; }
         if (st === 0xf0 || st === 0xf7) { pos++; pos += vl(); continue; }
@@ -210,8 +282,18 @@
     var tempo = tempos.length ? Math.round(60000000 / tempos[0].us) : 120;
     if (tempos.some(function (x) { return Math.abs(Math.round(60000000 / x.us) - tempo) > 0; })) notes.push('the tempo changes in the file; the DAW keeps ' + tempo + ' BPM');
     if (tempo < 40 || tempo > 220) { notes.push('tempo ' + tempo + ' BPM set to ' + clamp(tempo, 40, 220)); tempo = clamp(tempo, 40, 220); }
-    var beats = Math.max(4, Math.ceil(endTick / div / 4) * 4), bars = beats / 4;
-    if (bars > 64) { notes.push('cut to the first 64 bars (it has ' + bars + ')'); bars = 64; beats = 256; }
+    var mp = { ts: [4, 4], tsMap: [], bars: 64 };
+    sigs.sort(function (a, c) { return a.tick - c.tick; }); var curBar = 0, curBeat = 0, curTs = [4, 4], moved = 0, bad = 0;
+    sigs.forEach(function (s) { if (!Meter.ok(s.ts)) { bad++; return; }
+      if (s.tick <= 0) { mp.ts = s.ts; curTs = s.ts; return; }
+      var x = (s.tick / div - curBeat) / Meter.beats(curTs), k = Math.ceil(x - 0.01); if (Math.abs(x - Math.round(x)) > 0.01) moved++;
+      var bar = curBar + k; if (s.ts.join() === curTs.join()) return; if (bar <= curBar && mp.tsMap.length) { mp.tsMap.pop(); }
+      if (bar <= 0) { mp.ts = s.ts; } else mp.tsMap.push({ bar: bar, ts: s.ts });
+      curBeat += k * Meter.beats(curTs); curBar = bar; curTs = s.ts; });
+    Meter.norm(mp); if (moved) notes.push(moved + ' time signature change' + (moved > 1 ? 's' : '') + ' in the middle of a bar moved to the next bar line'); if (bad) notes.push('a time signature this DAW cannot show was ignored');
+    var endBeat = endTick / div, bars = Math.max(1, endBeat > 0 ? Meter.barAt(mp, endBeat - 1e-6).bar + 1 : 1);
+    if (bars > 64) { notes.push('cut to the first 64 bars (it has ' + bars + ')'); bars = 64; }
+    mp.bars = bars; var beats = Meter.total(mp);
     var tracks = [], dropped = 0, used = {};
     order.forEach(function (kk) {
       var ln = lanes[kk]; if (!ln.notes.length) return;
@@ -230,7 +312,7 @@
     if (dropped) notes.push(dropped + ' drum hit' + (dropped > 1 ? 's' : '') + ' with no kit piece here left out');
     if (!tracks.length) throw new Error('no notes in the file');
     if (tracks.length > 12) { notes.push('only the first 12 of its ' + tracks.length + ' tracks'); tracks = tracks.slice(0, 12); }
-    return { project: { tempo: tempo, bars: bars, loop: { on: false, from: 0, to: Math.min(4, bars) }, click: false, tracks: tracks }, notes: notes };
+    return { project: { tempo: tempo, bars: bars, ts: mp.ts, tsMap: mp.tsMap, loop: { on: false, from: 0, to: Math.min(4, bars) }, click: false, tracks: tracks }, notes: notes };
   }
   function b64(bytes) { var s = ''; for (var i = 0; i < bytes.length; i++) s += String.fromCharCode(bytes[i]); return btoa(s); }
   function unb64(s) { var t = atob(s), a = new Uint8Array(t.length); for (var i = 0; i < t.length; i++) a[i] = t.charCodeAt(i); return a; }
@@ -246,29 +328,33 @@
   function download(blob, name) { var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000); }
 
   // ---------------- the band's parts as clips ----------------
-  function chartAbc(chart) {
+  function chartAbc(chart, ts) {
+    ts = Meter.ok(ts) ? ts : [4, 4]; var four = ts.join('/') === '4/4', sx = ts[0] * 16 / ts[1];     // 4/4 as before; other meters in sixteenths
     var bars = chart.split('|').map(function (b) { return b.trim(); }).filter(Boolean).map(function (b) {
-      var c = b.split(/\s+/); if (c.length > 1) { var h = 4 / c.length; return c.map(function (x) { return '"' + x + '"z' + h; }).join(' '); } return '"' + c[0] + '"z4'; });
+      var c = b.split(/\s+/);
+      if (four) { if (c.length > 1) { var h = 4 / c.length; return c.map(function (x) { return '"' + x + '"z' + h; }).join(' '); } return '"' + c[0] + '"z4'; }
+      var each = Math.max(1, Math.floor(sx / c.length)); return c.map(function (x, i) { return '"' + x + '"z' + (i === c.length - 1 ? sx - each * (c.length - 1) : each); }).join(' '); });
     var rows = []; for (var i = 0; i < bars.length; i += 4) rows.push(bars.slice(i, i + 4).join(' | '));
-    return { abc: 'X:1\nT:Chart\nM:4/4\nL:1/4\nK:C\n' + rows.join(' |\n') + ' |]', bars: bars.length };
+    return { abc: 'X:1\nT:Chart\nM:' + ts.join('/') + '\nL:' + (four ? '1/4' : '1/16') + '\nK:C\n' + rows.join(' |\n') + ' |]', bars: bars.length };
   }
-  function bandParts(chart, styleId, tempo, times) {
+  function bandParts(chart, styleId, tempo, times, ts) {
     var G = global; if (!G.TuneChart || !G.BandMidi || !G.BandCatalog) throw new Error('The band is not loaded on this page.');
-    var ch = chartAbc(chart); if (!ch.bars) throw new Error('Type some chords first, bars split by |');
+    var ch = chartAbc(chart, ts); if (!ch.bars) throw new Error('Type some chords first, bars split by |');
     var so = G.BandCatalog.styleOpts(styleId), opts = so.opts;
     var recs = G.BandMidi.generate(G.TuneChart.parse(ch.abc), { bars: ch.bars * (times || 1), tempo: tempo, opts: opts });
     var out = { bass: [], comp: [], drums: [], congas: [] };
+    var off = 0;       // a bar is its beats long: dotted quarters when compound; the band counts 5/8 and 7/8 as 5 or 7 beats, so each is squeezed to an eighth (pos is in beats)
     recs.forEach(function (r, i) {
-      var sw = G.BandMidi.swingOf(r), off = i * 4, scale = 4 / (r.beats || 4);
+      var sw = G.BandMidi.swingOf(r), scale = r.compound ? 1.5 : r.meter && r.meter.d === 8 ? 0.5 : 1, bar0 = off; off += (r.beats || 4) * scale;
       Object.keys(out).forEach(function (p) { (r.parts[p] || []).forEach(function (e) {
-        if (!e || !(e.pos >= 0)) return; var t = off + (e.straight ? e.pos : G.BandMidi.warp(e.pos, sw)) * scale;
+        if (!e || !(e.pos >= 0)) return; var t = bar0 + (e.straight ? e.pos : G.BandMidi.warp(e.pos, sw)) * scale;
         t = Math.round(t * 48) / 48; var v = clamp(e.vel == null ? 0.7 : e.vel, 0.05, 1), d = Math.max(0.1, (e.dur || 0.5) * scale);
         if (p === 'drums' || p === 'congas') { if (e.piece) out[p].push({ t: t, d: 0.25, m: e.piece, v: v }); }
         else if (p === 'bass') { if (e.midi != null) out.bass.push({ t: t, d: d, m: e.midi, v: v }); }
         else (e.midis || []).forEach(function (m) { out.comp.push({ t: t, d: d, m: m, v: v }); }); }); });
     });
-    var len = ch.bars * (times || 1) * 4;
-    return { len: len, bass: out.bass, comp: out.comp, drums: out.drums, congas: out.congas,
+    var len = off;
+    return { len: len, bars: ch.bars * (times || 1), bass: out.bass, comp: out.comp, drums: out.drums, congas: out.congas,
       bassInst: opts.bassSound === 'electric' ? 'ebass' : 'bass', compInst: compInst(opts.compSound) };
   }
 
@@ -284,7 +370,7 @@
     var d = node.dataset, self = this;
     this.node = node; this.key = 'mdaw:' + (d.id || 'default'); this.presetName = d.preset || 'empty';
     var show = (d.show || 'transport tracks editor mixer band files record').split(/\s+/); this.show = {}; show.forEach(function (s) { self.show[s] = true; });
-    this.p = store(this.key) || this.fresh();
+    this.p = Meter.norm(store(this.key) || this.fresh());
     this.sel = { track: 0, clip: this.p.tracks[0] && this.p.tracks[0].clips.length ? 0 : -1, notes: [] };
     this.undo = []; this.redo = []; this.grid = 0.25; this.playing = false; this.recording = false; this.pos = 0; this.keysOn = false; this.octave = 0;
     this.strips = []; this.build(); this.renderAll(); this.loadTakes();
@@ -294,7 +380,7 @@
     this.p.tracks.forEach(function (t) { t.clips.forEach(function (c) { if (c.take && !TAKES[c.take] && want.indexOf(c.take) < 0) want.push(c.take); }); });
     want.forEach(function (id) { getTake(id).then(function (r) { if (r && !TAKES[id]) { makeTake(id, r.data, r.rate); self.renderTracks(); self.renderEditor(); } }); });
   };
-  Daw.prototype.fresh = function () { var p = PRESETS[this.presetName] ? PRESETS[this.presetName]() : PRESETS.empty(); if (this.node.dataset.bars) p.bars = +this.node.dataset.bars; return p; };
+  Daw.prototype.fresh = function () { var p = PRESETS[this.presetName] ? PRESETS[this.presetName]() : PRESETS.empty(); if (this.node.dataset.bars) p.bars = +this.node.dataset.bars; var ts = Meter.parse(this.node.dataset.ts); if (ts) p.ts = ts; return Meter.norm(p); };
   Daw.prototype.save = function () { store(this.key, this.p); };
   Daw.prototype.change = function (fn, keepRender) {   // every edit goes through here: undo history, save, redraw
     this.undo.push(JSON.stringify(this.p)); if (this.undo.length > 100) this.undo.shift(); this.redo = [];
@@ -313,7 +399,7 @@
     var r; try { r = fromMidi(bytes); } catch (e) { return this.say('Could not open ' + (name || 'the MIDI file') + ': ' + e.message), false; }
     var self = this; this.stop();
     this.change(function () { self.p = r.project; self.sel = { track: 0, clip: 0, notes: [] }; self.pos = 0; });
-    this.say('Opened ' + (name || 'the MIDI file') + ': ' + r.project.tracks.length + ' tracks, ' + r.project.bars + ' bars, ' + r.project.tempo + ' BPM' + (r.notes.length ? ' (' + r.notes.join('; ') + ')' : '') + '. Undo puts your song back.');
+    this.say('Opened ' + (name || 'the MIDI file') + ': ' + r.project.tracks.length + ' tracks, ' + r.project.bars + ' bars of ' + Meter.str(r.project.ts) + (r.project.tsMap.length ? ' (meter changes: ' + r.project.tsMap.map(function (c) { return 'bar ' + (c.bar + 1) + ' ' + Meter.str(c.ts); }).join(', ') + ')' : '') + ', ' + r.project.tempo + ' BPM' + (r.notes.length ? ' (' + r.notes.join('; ') + ')' : '') + '. Undo puts your song back.');
     return true;
   };
   Daw.prototype.say = function (t) { this.statusEl.textContent = t; };
@@ -351,13 +437,21 @@
     var addSel = el('select'); addSel.setAttribute('aria-label', 'Instrument for a new track'); INSTS.forEach(function (i) { var o = el('option', null, i.label); o.value = i.id; addSel.appendChild(o); });
     var bAdd = btn('+ Track', 'Add a track with this instrument'); bAdd.onclick = function () { var inst = instOf(addSel.value);
       self.change(function () { self.p.tracks.push(track(inst.label, inst.id)); self.sel = { track: self.p.tracks.length - 1, clip: -1, notes: [] }; }); };
-    var bNew = btn('+ Clip', 'New empty one-bar clip on the selected track, at the playhead'); bNew.onclick = function () { self.newClip(self.sel.track, Math.floor(self.pos / 4) * 4); };
+    var bNew = btn('+ Clip', 'New empty one-bar clip on the selected track, at the playhead'); bNew.onclick = function () { self.newClip(self.sel.track, Meter.floor(self.p, self.pos)); };
     var bDup = btn('Duplicate', 'Duplicate the clip after itself (Ctrl/Cmd+D)'); bDup.onclick = function () { self.duplicate(); };
     var bSplit = btn('Split', 'Split the clip at the playhead'); bSplit.onclick = function () { self.split(); };
     var bDel = btn('Delete', 'Delete the selected clip (Delete)'); bDel.onclick = function () { self.deleteSel(); };
     var bLen = el('label', 'mdaw-lbl', 'Song '); this.barsIn = el('input'); this.barsIn.type = 'number'; this.barsIn.min = 1; this.barsIn.max = 64; this.barsIn.setAttribute('aria-label', 'Song length in bars'); bLen.appendChild(this.barsIn); bLen.appendChild(document.createTextNode(' bars'));
     this.barsIn.onchange = function () { var v = clamp(+self.barsIn.value || 8, 1, 64); self.change(function () { self.p.bars = v; }); };
-    [addSel, bAdd, bNew, bDup, bSplit, bDel, bLen].forEach(function (x) { tools.appendChild(x); });
+    // time signature: the song's, or a change from a bar on
+    var tsl = el('label', 'mdaw-lbl', 'Time '); this.tsSel = el('select'); this.tsSel.setAttribute('aria-label', 'Time signature'); tsl.appendChild(this.tsSel);
+    this.tsBar = el('input'); this.tsBar.type = 'number'; this.tsBar.min = 1; this.tsBar.max = 64; this.tsBar.value = 1; this.tsBar.setAttribute('aria-label', 'From bar'); this.tsBar.title = 'The meter applies from this bar on (1 = the whole song)';
+    var tsfrom = el('label', 'mdaw-lbl', 'from bar '); tsfrom.appendChild(this.tsBar); this.tsList = el('span', 'mdaw-tslist');
+    this.tsBar.onchange = function () { self.renderTransport(); };
+    this.tsSel.onchange = function () { var ts = Meter.parse(self.tsSel.value), bar = clamp(Math.round(+self.tsBar.value || 1), 1, self.p.bars) - 1; if (!ts) return;
+      self.change(function () { Meter.set(self.p, bar, ts); }); if (self.playing) self.reanchor(); self.say('Time signature ' + Meter.str(ts) + (bar ? ' from bar ' + (bar + 1) : '') + '. Clips keep their place in beats; the bar lines moved.'); };
+    this.tsList.onclick = function (e) { var b = e.target.closest && e.target.closest('button'); if (b) self.change(function () { self.p.tsMap = self.p.tsMap.filter(function (c) { return c.bar !== +b.dataset.bar; }); }); };
+    [addSel, bAdd, bNew, bDup, bSplit, bDel, bLen, tsl, tsfrom, this.tsList].forEach(function (x) { tools.appendChild(x); });
     var grid = this.gridEl = el('div', 'mdaw-grid'); arr.appendChild(grid);
     arr.appendChild(el('p', 'mdaw-hint', 'Click a clip to select it, drag it to move it, drag its right edge to make it longer. Double-click an empty lane for a new clip. Drag along the ruler to set the loop; click it to move the playhead.'));
 
@@ -376,7 +470,7 @@
     this.velIn.oninput = function () { self.velOut.textContent = self.velIn.value; var c = self.clip(); if (c && self.sel.notes.length) { var v = +self.velIn.value / 127; self.sel.notes.forEach(function (i) { if (c.notes[i]) c.notes[i].v = v; }); self.save(); self.renderEditor(); } };
     this.velIn.onchange = function () { self.undo.push(JSON.stringify(self.p)); };
     var cl = el('label', 'mdaw-lbl', 'Clip '); this.clipLen = el('input'); this.clipLen.type = 'number'; this.clipLen.min = 1; this.clipLen.max = 32; this.clipLen.setAttribute('aria-label', 'Clip length in bars'); cl.appendChild(this.clipLen); cl.appendChild(document.createTextNode(' bars'));
-    this.clipLen.onchange = function () { var c = self.clip(); if (!c) return; var v = clamp(+self.clipLen.value || 1, 1, 32); self.change(function () { c.len = v * 4; }); };
+    this.clipLen.onchange = function () { var c = self.clip(); if (!c) return; var v = clamp(+self.clipLen.value || 1, 1, 32); self.change(function () { c.len = Meter.lenOfBars(self.p, c.start, v); }); };
     [gl, bQ, bQ50, bDn, bUp, bOd, bO, vl, cl].forEach(function (x) { et.appendChild(x); });
     this.midiTools = [gl, bQ, bQ50, vl];
     this.transposeBtns = [bUp, bDn, bO, bOd];
@@ -413,7 +507,7 @@
       var file = el('input'); file.type = 'file'; file.accept = '.json'; file.hidden = true; fl.appendChild(file);
       bOpen.onclick = function () { file.click(); };
       file.onchange = function () { var f = file.files[0]; if (!f) return; f.text().then(function (t) { var j = JSON.parse(t); if (!j || j.kind !== 'mini-daw') throw new Error('not a Mini DAW project');
-        self.change(function () { self.p = j.project; self.fixSel(); }); self.loadTakes(); self.say('Opened ' + f.name); }).catch(function (e) { self.say('Could not open: ' + e.message); }); file.value = ''; };
+        self.change(function () { self.p = Meter.norm(j.project); self.fixSel(); }); self.loadTakes(); self.say('Opened ' + f.name); }).catch(function (e) { self.say('Could not open: ' + e.message); }); file.value = ''; };
       var mfile = el('input'); mfile.type = 'file'; mfile.accept = '.mid,.midi,audio/midi'; mfile.hidden = true; fl.appendChild(mfile);
       bImp.onclick = function () { mfile.click(); };
       mfile.onchange = function () { var f = mfile.files[0]; if (!f) return; f.arrayBuffer().then(function (ab) { self.openMidi(new Uint8Array(ab), f.name); }).catch(function (e) { self.say('Could not open: ' + e.message); }); mfile.value = ''; };
@@ -428,6 +522,10 @@
   Daw.prototype.renderAll = function () { this.renderTransport(); this.renderTracks(); this.renderEditor(); this.renderMixer(); this.applyMix(); };
   Daw.prototype.renderTransport = function () {
     var p = this.p; this.tempoIn.value = p.tempo; this.barsIn.value = p.bars;
+    var cur = Meter.str(Meter.tsOfBar(p, clamp(Math.round(+this.tsBar.value || 1), 1, p.bars) - 1)), opts = TS_LIST.map(Meter.str); [p.ts].concat(p.tsMap.map(function (c) { return c.ts; })).forEach(function (t) { if (opts.indexOf(Meter.str(t)) < 0) opts.push(Meter.str(t)); });
+    this.tsSel.innerHTML = ''; opts.forEach(function (o) { var e = el('option', null, o); e.value = o; this.tsSel.appendChild(e); }, this); this.tsSel.value = cur;
+    this.tsList.innerHTML = ''; p.tsMap.forEach(function (c) { var b = btn('bar ' + (c.bar + 1) + ': ' + Meter.str(c.ts) + ' ×', 'Take this meter change away', 'mdaw-ms'); b.dataset.bar = c.bar; this.tsList.appendChild(b); }, this);
+    this.tsBar.max = p.bars;
     this.bLoop.classList.toggle('mdaw-on', !!p.loop.on); this.bLoop.setAttribute('aria-pressed', String(!!p.loop.on));
     this.bClick.classList.toggle('mdaw-on', !!p.click); this.bClick.setAttribute('aria-pressed', String(!!p.click));
     this.bKeys.classList.toggle('mdaw-on', this.keysOn); this.bKeys.setAttribute('aria-pressed', String(this.keysOn));
@@ -438,17 +536,19 @@
   };
   Daw.prototype.beatW = function () { return 26; };   // pixels a beat in the arrangement
   Daw.prototype.renderTracks = function () {
-    var self = this, p = this.p, g = this.gridEl, W = this.beatW(), total = p.bars * 4; g.innerHTML = '';
+    var self = this, p = this.p, g = this.gridEl, W = this.beatW(), total = Meter.total(p); g.innerHTML = '';
     g.style.setProperty('--mdaw-w', (total * W) + 'px');
     // ruler
     var head = el('div', 'mdaw-row mdaw-rulerrow'); head.appendChild(el('div', 'mdaw-th mdaw-corner', 'Tracks'));
     var ruler = el('div', 'mdaw-lane mdaw-ruler'); ruler.style.width = (total * W) + 'px';
-    for (var b = 0; b < p.bars; b++) { var m = el('span', 'mdaw-bar', String(b + 1)); m.style.left = (b * 4 * W) + 'px'; ruler.appendChild(m); }
-    var lp = el('div', 'mdaw-loop' + (p.loop.on ? ' mdaw-loopon' : '')); lp.style.left = (p.loop.from * 4 * W) + 'px'; lp.style.width = ((p.loop.to - p.loop.from) * 4 * W) + 'px'; lp.title = 'Loop: bars ' + (p.loop.from + 1) + '–' + p.loop.to; ruler.appendChild(lp);
+    var bx = [], bs = 0; for (var b = 0; b < p.bars; b++) { var t0 = Meter.tsOfBar(p, b), shown = b === 0 || Meter.str(t0) !== Meter.str(Meter.tsOfBar(p, b - 1));
+      var m = el('span', 'mdaw-bar', String(b + 1) + (shown ? ' ' + Meter.str(t0) : '')); m.style.left = (bs * W) + 'px'; ruler.appendChild(m); bx.push(bs); bs += Meter.beats(t0); }
+    bx.push(bs); function bxOf(i) { return bx[clamp(i, 0, bx.length - 1)]; }
+    var lp = el('div', 'mdaw-loop' + (p.loop.on ? ' mdaw-loopon' : '')); lp.style.left = (bxOf(p.loop.from) * W) + 'px'; lp.style.width = ((bxOf(p.loop.to) - bxOf(p.loop.from)) * W) + 'px'; lp.title = 'Loop: bars ' + (p.loop.from + 1) + '–' + p.loop.to; ruler.appendChild(lp);
     head.appendChild(ruler); g.appendChild(head);
     ruler.addEventListener('pointerdown', function (e) {
-      var r = ruler.getBoundingClientRect(), x0 = e.clientX - r.left, b0 = Math.floor(x0 / (4 * W)), moved = false;
-      function mv(ev) { var b1 = Math.floor((ev.clientX - r.left) / (4 * W)); if (b1 !== b0 || moved) { moved = true; var a = clamp(Math.min(b0, b1), 0, p.bars - 1), z = clamp(Math.max(b0, b1) + 1, 1, p.bars); p.loop = { on: true, from: a, to: z }; lp.className = 'mdaw-loop mdaw-loopon'; lp.style.left = (a * 4 * W) + 'px'; lp.style.width = ((z - a) * 4 * W) + 'px'; } }
+      var r = ruler.getBoundingClientRect(), x0 = e.clientX - r.left, b0 = Meter.barAt(p, x0 / W).bar, moved = false;
+      function mv(ev) { var b1 = Meter.barAt(p, (ev.clientX - r.left) / W).bar; if (b1 !== b0 || moved) { moved = true; var a = clamp(Math.min(b0, b1), 0, p.bars - 1), z = clamp(Math.max(b0, b1) + 1, 1, p.bars); p.loop = { on: true, from: a, to: z }; lp.className = 'mdaw-loop mdaw-loopon'; lp.style.left = (bxOf(a) * W) + 'px'; lp.style.width = ((bxOf(z) - bxOf(a)) * W) + 'px'; } }
       function up() { document.removeEventListener('pointermove', mv); document.removeEventListener('pointerup', up);
         if (moved) { self.change(function () {}); self.say('Loop: bars ' + (p.loop.from + 1) + ' to ' + p.loop.to + '.'); } else self.locate(clamp(Math.round(x0 / W), 0, total)); }
       document.addEventListener('pointermove', mv); document.addEventListener('pointerup', up);
@@ -466,7 +566,7 @@
       var line = el('div', 'mdaw-thline'); line.appendChild(mb); line.appendChild(sb); line.appendChild(isel); line.appendChild(xb);
       th.appendChild(name); th.appendChild(line); row.appendChild(th);
       var lane = el('div', 'mdaw-lane'); lane.style.width = (total * W) + 'px'; lane.dataset.track = ti;
-      lane.addEventListener('dblclick', function (e) { if (e.target !== lane) return; var r = lane.getBoundingClientRect(); self.newClip(ti, Math.floor((e.clientX - r.left) / (4 * W)) * 4); });
+      lane.addEventListener('dblclick', function (e) { if (e.target !== lane) return; var r = lane.getBoundingClientRect(); self.newClip(ti, Meter.floor(self.p, (e.clientX - r.left) / W)); });
       lane.addEventListener('pointerdown', function (e) { if (e.target === lane) { self.sel = { track: ti, clip: -1, notes: [] }; self.markRows(); self.renderEditor(); self.renderTracks(); } });
       tr.clips.forEach(function (c, ci) { lane.appendChild(self.clipEl(tr, ti, c, ci, col)); });
       row.appendChild(lane); g.appendChild(row);
@@ -478,7 +578,7 @@
   Daw.prototype.clipEl = function (tr, ti, c, ci, col) {
     var self = this, W = this.beatW(), e = el('div', 'mdaw-clip' + (ti === this.sel.track && ci === this.sel.clip ? ' mdaw-selclip' : ''));
     e.style.left = (c.start * W) + 'px'; e.style.width = Math.max(6, c.len * W - 2) + 'px'; e.style.background = col; e.tabIndex = -1;
-    e.title = tr.name + ': bar ' + (c.start / 4 + 1) + ', ' + (c.len / 4) + ' bar' + (c.len === 4 ? '' : 's') + ', ' + c.notes.length + ' notes';
+    var nb = Meter.barsOfLen(this.p, c.start, c.len); e.title = tr.name + ': bar ' + (Meter.barAt(this.p, c.start).bar + 1) + ', ' + nb + ' bar' + (nb === 1 ? '' : 's') + ', ' + c.notes.length + ' notes';
     // the notes drawn small inside the clip
     var mini = el('canvas', 'mdaw-mini'); mini.width = Math.max(6, c.len * W - 2); mini.height = 34; e.appendChild(mini);
     var cx = mini.getContext('2d'); cx.fillStyle = 'rgba(255,255,255,.85)';
@@ -490,11 +590,11 @@
     var grip = el('div', 'mdaw-grip'); grip.title = 'Drag to change the clip\'s length'; e.appendChild(grip);
     e.addEventListener('pointerdown', function (ev) {
       ev.stopPropagation(); self.sel = { track: ti, clip: ci, notes: [] }; self.node.focus({ preventScroll: true });
-      var resize = ev.target === grip, x0 = ev.clientX, start0 = c.start, len0 = c.len, lanes = self.gridEl.querySelectorAll('.mdaw-lane[data-track]'), moved = false, toTrack = ti, snap = ev.altKey ? 1 : 4;
+      var resize = ev.target === grip, x0 = ev.clientX, start0 = c.start, len0 = c.len, lanes = self.gridEl.querySelectorAll('.mdaw-lane[data-track]'), moved = false, toTrack = ti, P = self.p, alt = ev.altKey, end0 = start0 + len0;
       var before = JSON.stringify(self.p);
-      function mv(m) { var db = Math.round((m.clientX - x0) / W / snap) * snap; if (db) moved = true;
+      function mv(m) { var dx = (m.clientX - x0) / W, db = alt ? Math.round(dx) : Meter.nearest(P, (resize ? end0 : start0) + dx) - Meter.nearest(P, resize ? end0 : start0); if (db) moved = true;
         if (resize) { c.len = Math.max(1, len0 + db); e.style.width = Math.max(6, c.len * W - 2) + 'px'; }
-        else { c.start = clamp(start0 + db, 0, self.p.bars * 4 - 1); e.style.left = (c.start * W) + 'px';
+        else { c.start = clamp(start0 + db, 0, Meter.total(P) - 1); e.style.left = (c.start * W) + 'px';
           for (var i = 0; i < lanes.length; i++) { var r = lanes[i].getBoundingClientRect(); if (m.clientY >= r.top && m.clientY < r.bottom) toTrack = +lanes[i].dataset.track; } } }
       function up() { document.removeEventListener('pointermove', mv); document.removeEventListener('pointerup', up);
         if (moved || toTrack !== ti) { self.undo.push(before); self.redo = [];
@@ -513,11 +613,11 @@
     this.renderTransport();
     this.transposeBtns.forEach(function (b) { b.hidden = !tr || isDrum(tr) || isAudio(tr); });
     this.midiTools.forEach(function (b) { b.hidden = !!(tr && isAudio(tr)); });
-    if (tr && c && isAudio(tr)) { this.clipLen.value = Math.round(c.len / 4 * 100) / 100; return this.audioEditor(tr, c); }
+    if (tr && c && isAudio(tr)) { this.clipLen.value = Meter.barsOfLen(this.p, c.start, c.len); return this.audioEditor(tr, c); }
     if (!tr || !c) { this.edTitle.textContent = 'Editor'; this.clipLen.value = ''; roll.appendChild(el('p', 'mdaw-hint', tr ? 'Select a clip on ' + tr.name + ', or double-click its lane for a new one.' : 'Select a clip.')); this.edHint.textContent = ''; return; }
-    this.clipLen.value = Math.round(c.len / 4 * 100) / 100;
+    this.clipLen.value = Meter.barsOfLen(this.p, c.start, c.len);
     var drum = isDrum(tr), G = this.grid, cols = Math.round(c.len / G), cw = G >= 1 ? 40 : G >= 0.5 ? 26 : 20, rh = drum ? 20 : 13;
-    this.edTitle.textContent = (drum ? 'Step sequencer' : 'Piano roll') + ': ' + tr.name + ', bar ' + (c.start / 4 + 1);
+    this.edTitle.textContent = (drum ? 'Step sequencer' : 'Piano roll') + ': ' + tr.name + ', bar ' + (Meter.barAt(this.p, c.start).bar + 1) + ' (' + Meter.str(Meter.barAt(this.p, c.start).ts) + ')';
     this.edHint.textContent = drum ? 'Click a square to put a hit there or take it away. Shift+click makes it an accent, Alt+click a ghost note. Brightness is velocity.'
       : 'Click an empty spot to write a note one grid step long; drag a note to move it, drag its right end to make it longer; Shift+click selects several; Delete removes; double-click a note to delete it. The bars under the notes are velocities: drag them.';
     var rows = drum ? rowsOf(tr).map(function (r) { return { key: r[0], label: r[1] }; }) : (function () {
@@ -537,7 +637,7 @@
     function draw() {
       x.clearRect(0, 0, Wd, H + VH);
       rows.forEach(function (r, i) { if (r.black) { x.fillStyle = 'rgba(128,128,128,.12)'; x.fillRect(0, i * rh, Wd, rh); } });
-      for (var k = 0; k <= cols; k++) { var bt = k * G, bar = Math.abs(bt / 4 - Math.round(bt / 4)) < 1e-6, beat = Math.abs(bt - Math.round(bt)) < 1e-6;
+      for (var k = 0; k <= cols; k++) { var lv = Meter.level(self.p, c.start + k * G), bar = lv === 2, beat = lv === 1;
         x.fillStyle = bar ? ink : line; x.globalAlpha = bar ? 0.6 : beat ? 0.7 : 0.35; x.fillRect(Math.round(k * cw), 0, 1, H + VH); }
       x.globalAlpha = 0.25; x.fillStyle = line; rows.forEach(function (r, i) { x.fillRect(0, i * rh, Wd, 1); }); x.globalAlpha = 1;
       c.notes.forEach(function (n, i) { var ri = rowOf(n); if (ri < 0 || n.t >= c.len) return; var sel = self.sel.notes.indexOf(i) >= 0;
@@ -650,17 +750,17 @@
 
   // the transport: a clock in beats, scheduled a little ahead
   Daw.prototype.secPerBeat = function () { return 60 / this.p.tempo; };
-  Daw.prototype.loopRange = function () { var l = this.p.loop; return l.on && l.to > l.from ? [l.from * 4, l.to * 4] : null; };
+  Daw.prototype.loopRange = function () { var l = this.p.loop; return l.on && l.to > l.from ? [Meter.barStart(this.p, l.from), Meter.barStart(this.p, l.to)] : null; };
   Daw.prototype.toggle = function () { if (this.playing) this.stop(); else this.play(); };
   Daw.prototype.play = function (countIn) {
     var self = this; this.ensureAudio();
     return this.load().then(function () {
       if (self.playing) return; var ctx = AC, lr = self.loopRange();
       if (lr && (self.pos < lr[0] || self.pos >= lr[1])) self.pos = lr[0];
-      if (!lr && self.pos >= self.p.bars * 4) self.pos = 0;
+      if (!lr && self.pos >= Meter.total(self.p)) self.pos = 0;
       var t0 = ctx.currentTime + 0.12;
-      self.countBeats = countIn ? 4 : 0;
-      for (var k = 0; k < self.countBeats; k++) click(ctx, t0 + k * self.secPerBeat(), k === 0, self.master);
+      var cb0 = Meter.barAt(self.p, self.pos); self.countBeats = countIn ? cb0.len : 0;     // the count-in is a bar of the meter, clicking its groups
+      if (countIn) Meter.clicks({ ts: cb0.ts, tsMap: [], bars: 1 }, 0, cb0.len).forEach(function (k) { click(ctx, t0 + k.b * self.secPerBeat(), k.accent, self.master); });
       t0 += self.countBeats * self.secPerBeat();
       self.anchors = [{ t: t0, b: self.pos }]; self.cursor = self.pos; self.jumped = true; self.srcs = []; self.playing = true; self.renderTransport();
       self.timer = setInterval(function () { self.schedule(); }, 25); self.schedule(); self.frame();
@@ -672,12 +772,12 @@
   Daw.prototype.schedule = function () {
     var ctx = AC, horizon = ctx.currentTime + 0.15, step = 0.25, self = this, anySolo = false;
     while (this.playing && this.timeOf(this.cursor) < horizon) {
-      var b0 = this.cursor, b1 = b0 + step, lr = this.loopRange(), end = lr ? lr[1] : this.p.bars * 4, jumped = this.jumped; this.jumped = false;
+      var b0 = this.cursor, b1 = b0 + step, lr = this.loopRange(), end = lr ? lr[1] : Meter.total(this.p), jumped = this.jumped; this.jumped = false;
       if (b0 >= end - 1e-9) {
         if (lr && !this.recording) { var tEnd = this.timeOf(end); this.anchors.push({ t: tEnd, b: lr[0] }); this.cursor = lr[0]; this.jumped = true; if (this.anchors.length > 50) this.anchors.splice(0, 25); continue; }
         if (!lr || this.recording) { var te = this.timeOf(end); this.stopAt = te; break; }
       }
-      if (this.p.click || this.recording) for (var cb = Math.ceil(b0 - 1e-9); cb < b1 - 1e-9; cb++) click(ctx, this.timeOf(cb), cb % 4 === 0, this.master);
+      if (this.p.click || this.recording) Meter.clicks(this.p, b0, b1).forEach(function (k) { click(ctx, self.timeOf(k.b), k.accent, self.master); });
       this.p.tracks.forEach(function (tr, i) { var dest = self.strips[i].input;
         tr.clips.forEach(function (c) { if (c.start >= b1 || c.start + c.len <= b0) return;
           if (isAudio(tr)) { var endB = lr ? Math.min(lr[1], c.start + c.len) : c.start + c.len;
@@ -697,8 +797,7 @@
   };
   Daw.prototype.setPos = function (b, live) {
     this.pos = b; var W = this.beatW(); if (this.head) this.head.style.left = (196 + b * W) + 'px';
-    var bar = Math.floor(b / 4), beat = Math.floor(b % 4), six = Math.floor((b % 1) * 4);
-    this.posEl.textContent = (bar + 1) + '.' + (beat + 1) + '.' + (six + 1);
+    var w = Meter.where(this.p, b); this.posEl.textContent = w.bar + '.' + w.beat + '.' + w.sub;
   };
   Daw.prototype.stop = function (atEnd) {
     if (!this.playing) { return; }
@@ -727,7 +826,7 @@
     if (this.recording) return this.stop(); var tr = this.track(); if (!tr) return this.say('Add a track to record into.');
     if (this.playing) this.stop();
     if (isAudio(tr)) return this.recordAudio();
-    this.take = []; this.held = {}; this.recording = true; this.keysOn = true; this.recStart = Math.floor(this.pos / 4) * 4; this.setPos(this.recStart);
+    this.take = []; this.held = {}; this.recording = true; this.keysOn = true; this.recStart = Meter.floor(this.p, this.pos); this.setPos(this.recStart);
     this.say('Count-in… then play on the keys (or a MIDI keyboard). Space stops.'); this.node.focus(); this.play(true); this.midi();
   };
   Daw.prototype.noteOn = function (m, v) {
@@ -747,7 +846,7 @@
     var self = this, tr = this.track(), notes = (this.take || []).filter(function (n) { return n.b >= self.recStart - 0.25; });
     Object.keys(this.held || {}).forEach(function (m) { self.noteOff(+m); });
     if (!notes.length) { this.say('Nothing was played, so nothing was recorded.'); return; }
-    var last = Math.max.apply(null, notes.map(function (n) { return n.b + n.d; })), len = Math.max(4, Math.ceil((last - this.recStart) / 4) * 4);
+    var last = Math.max.apply(null, notes.map(function (n) { return n.b + n.d; })), len = Math.max(Meter.barLen(this.p, Meter.barAt(this.p, this.recStart).bar), Meter.ceil(this.p, last) - this.recStart);
     this.change(function () { tr.clips.push({ start: self.recStart, len: len, notes: notes.map(function (n) { return { t: Math.max(0, n.b - self.recStart), d: n.d, m: n.m, v: n.v }; }) });
       self.sel.clip = tr.clips.length - 1; self.sel.notes = []; });
     this.say('Recorded ' + notes.length + ' notes into a new clip. Try Quantize.');
@@ -772,12 +871,12 @@
   };
   Daw.prototype.audioEditor = function (tr, c) {
     var self = this, roll = this.roll, W = 40, H = 120;
-    this.edTitle.textContent = 'Audio clip: ' + tr.name + ', bar ' + (c.start / 4 + 1);
+    this.edTitle.textContent = 'Audio clip: ' + tr.name + ', bar ' + (Meter.barAt(this.p, c.start).bar + 1);
     var box = el('div', 'mdaw-rollwrap mdaw-audioed'), cv = el('canvas', 'mdaw-cv'), dpr = global.devicePixelRatio || 1, w = c.len * W;
     cv.width = w * dpr; cv.height = H * dpr; cv.style.width = w + 'px'; cv.style.height = H + 'px'; box.appendChild(cv); roll.appendChild(box);
     var x = cv.getContext('2d'); x.scale(dpr, dpr);
     var css = getComputedStyle(this.node), ink = css.getPropertyValue('--site-ink').trim() || '#222';
-    function draw() { x.clearRect(0, 0, w, H); x.globalAlpha = 0.35; x.fillStyle = ink; for (var b = 0; b <= c.len; b++) x.fillRect(b * W, 0, 1, b % 4 ? H / 6 : H); x.fillRect(0, H / 2, w, 1);
+    function draw() { x.clearRect(0, 0, w, H); x.globalAlpha = 0.35; x.fillStyle = ink; for (var b = 0; b <= c.len; b++) x.fillRect(b * W, 0, 1, Meter.level(self.p, c.start + b) === 2 ? H : H / 6); x.fillRect(0, H / 2, w, 1);
       x.globalAlpha = 1; x.fillStyle = COLORS[self.sel.track % COLORS.length]; self.wave(x, c, W, H); }
     draw();
     var row = el('div', 'mdaw-tools'), gl = el('label', 'mdaw-lbl', 'Clip gain '), gi = el('input'), go = el('output', 'mdaw-num', dbTxt(c.gain || 0));
@@ -826,7 +925,7 @@
   Daw.prototype.recordAudio = function () {
     var self = this; this.say('Opening the microphone…');
     this.getMic().then(function () {
-      self.audioTake = []; self.recording = true; self.recStart = Math.floor(self.pos / 4) * 4; self.setPos(self.recStart);
+      self.audioTake = []; self.recording = true; self.recStart = Meter.floor(self.p, self.pos); self.setPos(self.recStart);
       self.say('Count-in… recording. The click is on while you record. Space stops.'); self.node.focus(); self.play(true);
     }).catch(function (e) { self.recording = false; self.audioTake = null; self.say('No microphone: ' + (e && e.message)); self.renderTransport(); });
   };
@@ -835,7 +934,7 @@
     if (!blocks.length || !tr) { this.say('Nothing was recorded.'); return; }
     var n = 0; blocks.forEach(function (b) { n += b.d.length; }); var data = new Float32Array(n), k = 0; blocks.forEach(function (b) { data.set(b.d, k); k += b.d.length; });
     var rate = AC.sampleRate, spb = this.secPerBeat(), lat = this.latencyMs(), bStart = this.beatAt(blocks[0].t), bEnd = this.beatAt(blocks[blocks.length - 1].t);
-    var len = Math.max(4, Math.ceil((bEnd - this.recStart) / 4) * 4), from = ((this.recStart - bStart) * spb + lat / 1000) * rate;   // (levels from the first bar, not the count-in)
+    var len = Math.max(Meter.barLen(this.p, Meter.barAt(this.p, this.recStart).bar), Meter.ceil(this.p, bEnd) - this.recStart), from = ((this.recStart - bStart) * spb + lat / 1000) * rate;   // (levels from the first bar, not the count-in)
     var id = 'take-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6), lv = levels(data, from);
     makeTake(id, data, rate); putTake(id, data, rate);
     this.change(function () {
@@ -854,9 +953,10 @@
 
   // ---------------- edits ----------------
   Daw.prototype.newClip = function (ti, start) { var tr = this.p.tracks[ti], self = this; if (!tr) return;
-    this.change(function () { tr.clips.push({ start: clamp(start, 0, self.p.bars * 4 - 4), len: 4, notes: [] }); self.sel = { track: ti, clip: tr.clips.length - 1, notes: [] }; }); };
+    var bl = Meter.barLen(this.p, Meter.barAt(this.p, start).bar);
+    this.change(function () { tr.clips.push({ start: clamp(start, 0, Math.max(0, Meter.total(self.p) - bl)), len: bl, notes: [] }); self.sel = { track: ti, clip: tr.clips.length - 1, notes: [] }; }); };
   Daw.prototype.duplicate = function () { var c = this.clip(), tr = this.track(), self = this; if (!c) return this.say('Select a clip first.');
-    this.change(function () { var n = clone(c); n.start = c.start + c.len; tr.clips.push(n); self.sel.clip = tr.clips.length - 1; if (n.start + n.len > self.p.bars * 4) self.p.bars = Math.min(64, Math.ceil((n.start + n.len) / 4)); }); };
+    this.change(function () { var n = clone(c); n.start = c.start + c.len; tr.clips.push(n); self.sel.clip = tr.clips.length - 1; if (n.start + n.len > Meter.total(self.p) + 1e-9) self.p.bars = Math.min(64, Meter.barAt(self.p, n.start + n.len - 1e-9).bar + 1); }); };
   Daw.prototype.split = function () { var c = this.clip(), tr = this.track(), at = Math.round(this.pos / this.grid) * this.grid, self = this;
     if (!c || at <= c.start || at >= c.start + c.len) return this.say('Put the playhead inside the selected clip, then Split.');
     this.change(function () { var cut = at - c.start, b = Object.assign(clone(c), { start: at, len: c.len - cut, off: (c.off || 0) - cut, notes: c.notes.filter(function (n) { return n.t >= cut; }).map(function (n) { return Object.assign({}, n, { t: n.t - cut }); }) });
@@ -871,19 +971,19 @@
   Daw.prototype.transpose = function (s) { var c = this.clip(), self = this; if (!c || isDrum(this.track())) return;
     this.change(function () { c.notes.forEach(function (n, i) { if (!self.sel.notes.length || self.sel.notes.indexOf(i) >= 0) n.m = clamp(n.m + s, 21, 108); }); }); };
   Daw.prototype.bandWrite = function () {
-    var self = this, r; try { r = bandParts(this.chartIn.value, this.styleSel.value, this.p.tempo, clamp(+this.timesIn.value || 1, 1, 8)); } catch (e) { return this.say(e.message); }
-    var at = Math.floor(this.pos / 4) * 4, label = this.styleSel.options[this.styleSel.selectedIndex].text;
+    var self = this, r; try { r = bandParts(this.chartIn.value, this.styleSel.value, this.p.tempo, clamp(+this.timesIn.value || 1, 1, 8), Meter.tsOfBar(this.p, Meter.barAt(this.p, this.pos).bar)); } catch (e) { return this.say(e.message); }
+    var at = Meter.floor(this.p, this.pos), label = this.styleSel.options[this.styleSel.selectedIndex].text;
     this.change(function () {
       function put(name, inst, notes) { if (!notes.length) return; var tr = null;
         self.p.tracks.forEach(function (t) { if (!tr && t.name === name) tr = t; }); if (!tr) { tr = track(name, inst); self.p.tracks.push(tr); } else tr.inst = inst;
         tr.clips = tr.clips.filter(function (c) { return c.start + c.len <= at || c.start >= at + r.len; }); tr.clips.push({ start: at, len: r.len, notes: notes }); }
       put('Drums', 'kit', r.drums); put('Congas', 'congas', r.congas); put('Bass', r.bassInst, r.bass); put('Chords', r.compInst, r.comp);
-      self.p.bars = Math.max(self.p.bars, Math.min(64, (at + r.len) / 4)); self.sel = { track: 0, clip: 0, notes: [] };
+      self.p.bars = Math.max(self.p.bars, Math.min(64, Meter.barAt(self.p, at + r.len - 1e-9).bar + 1)); self.sel = { track: 0, clip: 0, notes: [] };
     });
-    this.say('The band wrote ' + (r.len / 4) + ' bars of ' + label + ' from bar ' + (at / 4 + 1) + '. Every note is now yours to edit.'); this.load();
+    this.say('The band wrote ' + r.bars + ' bars of ' + label + ' from bar ' + (Meter.barAt(this.p, at).bar + 1) + (r.len !== Meter.lenOfBars(this.p, at, r.bars) ? ' (in ' + Meter.str(Meter.tsOfBar(this.p, Meter.barAt(this.p, at).bar)) + '; the song changes meter inside them, so check the bar lines)' : '') + '. Every note is now yours to edit.'); this.load();
   };
   Daw.prototype.bounce = function () {
-    var self = this, p = this.p, secs = p.bars * 4 * this.secPerBeat() + 2.5, rate = 44100;
+    var self = this, p = this.p, secs = Meter.total(p) * this.secPerBeat() + 2.5, rate = 44100;
     var OC = global.OfflineAudioContext || global.webkitOfflineAudioContext; if (!OC) return this.say('This browser cannot bounce.');
     var oc = new OC(2, Math.ceil(secs * rate), rate), b2 = global.BandSounds.create(oc), master = oc.createGain(); master.connect(oc.destination);
     var want = {}; p.tracks.forEach(function (t) { if (!isAudio(t)) want[t.inst] = 1; }); var anySolo = p.tracks.some(function (t) { return t.solo; });
@@ -891,8 +991,8 @@
     master.gain.value = dbToGain((p.master || { vol: 0 }).vol);
     b2.load(Object.keys(want)).then(function () {
       p.tracks.forEach(function (tr) { var s = makeStrip(oc, master); s.fader.gain.value = !tr.mute && (!anySolo || tr.solo) ? dbToGain(tr.vol) : 0; if (s.pan.pan) s.pan.pan.value = tr.pan;
-        if (isAudio(tr)) { tr.clips.forEach(function (c) { self.startAudio(oc, c, Math.max(0, c.start), 0.05 + c.start * self.secPerBeat(), s.input, p.bars * 4); }); return; }
-        tr.clips.forEach(function (c) { c.notes.forEach(function (n) { if (n.t >= c.len || c.start + n.t >= p.bars * 4) return;
+        if (isAudio(tr)) { tr.clips.forEach(function (c) { self.startAudio(oc, c, Math.max(0, c.start), 0.05 + c.start * self.secPerBeat(), s.input, Meter.total(p)); }); return; }
+        tr.clips.forEach(function (c) { c.notes.forEach(function (n) { if (n.t >= c.len || c.start + n.t >= Meter.total(p)) return;
           playNote(b2, tr, n, 0.05 + (c.start + n.t) * self.secPerBeat(), Math.min(n.d, c.len - n.t) * self.secPerBeat(), s.input); }); }); });
       return oc.startRendering();
     }).then(function (buf) { var pk = 0; for (var k = 0; k < buf.numberOfChannels; k++) { var d = buf.getChannelData(k); for (var i = 0; i < d.length; i++) pk = Math.max(pk, Math.abs(d[i])); }
@@ -941,7 +1041,7 @@
     init: function () { Array.prototype.forEach.call(document.querySelectorAll('.mdaw'), function (n) { if (!n.dataset.ready) { n.dataset.ready = '1'; try { all.push(new Daw(n)); } catch (e) { n.textContent = 'The DAW could not start: ' + e.message; if (global.console) console.error(e); } } }); takeHandoff(); return all; },
     // another page (the Backing Track) hands this page a MIDI file: MiniDaw.handOff(bytes, name, url) keeps it and opens url
     handOff: function (bytes, name, url) { store(HANDOFF, { at: Date.now(), name: name || 'the band.mid', midi: b64(bytes) }); if (url) global.open(url, '_blank'); },
-    all: all, PRESETS: PRESETS, toMidi: toMidi, fromMidi: fromMidi, bandParts: bandParts, INSTS: INSTS
+    all: all, Meter: Meter, PRESETS: PRESETS, toMidi: toMidi, fromMidi: fromMidi, bandParts: bandParts, INSTS: INSTS
   };
   // only one DAW plays at a time
   document.addEventListener('pointerdown', function (e) { all.forEach(function (d) { if (d.playing && !d.node.contains(e.target) && e.target.closest && e.target.closest('.mdaw')) d.stop(); }); }, true);
