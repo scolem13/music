@@ -48,6 +48,15 @@ website:
             - lessons/blues-tonality-microtonal.qmd
             - lessons/blues-tonality-harmony.qmd
             - lessons/blues-tonality-beyond.qmd
+        - section: "Everyday Tonality"
+          contents:
+            - lessons/tagg-sound.qmd
+            - lessons/tagg-modes.qmd
+            - lessons/tagg-melody.qmd
+            - lessons/tagg-harmony.qmd
+            - lessons/tagg-shuttles.qmd
+            - lessons/tagg-loops.qmd
+            - lessons/tagg-glossary.qmd
         - section: "Pop and Rock"
           contents:
             - lessons/first-rock-song.qmd
@@ -152,6 +161,8 @@ website:
             - lessons/notation-choices.qmd
             - lessons/ornaments-by-period.qmd
             - lessons/tuning-systems.qmd
+            - lessons/ragas.qmd
+            - lessons/uneven-frets.qmd
             - lessons/strobe-tuner.qmd
             - lessons/inharmonicity.qmd
         - section: "Elements of Music"

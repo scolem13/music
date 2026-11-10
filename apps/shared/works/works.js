@@ -3,7 +3,8 @@
 //   <script src="/apps/shared/works/works.js?v=18"></script>
 //   Works.mount(host, "tune" | "theme" | "analysed", id)   draws the panel for whatever work holds that item (hides host if none)
 //   kinds: tune, theme, analysed, score (the full-score player: { analysed: id } or { id }, href adds &bar= when x.bar is set),
-//   print (a figure in a print anthology: { book, fig, whole }, books in window.PRINT_BOOKS; shown, not linked)
+//   print (a figure in a print anthology: { book, fig, whole }, books in window.PRINT_BOOKS; shown, not linked; a book with
+//         ref: "page" (Tagg) gives a page in fig, whole = a music example of the piece there, chords = its chords in a table)
 //   Concept uses: apps/shared/works/uses/<src>.js each push { src, label, url, items: [{ work, title, composer, concept, note, url, where, date, mlt }] }
 //   onto window.WORK_USES (load them with plain <script> tags before this page's code; a missing file is fine). `work` is a works-data id
 //   or a new id that stands alone (title, composer). Works.usesOf(workId) -> uses (a print-anthology figure in w.in.print counts, with its
@@ -32,6 +33,7 @@
   function year(w) { return !w ? "" : w.composed != null ? String(w.composed) : w.published != null ? "pub. " + w.published : ""; }
   function printLabel(x) {
     var b = (global.PRINT_BOOKS || {})[x.book] || {};
+    if (b.ref === "page") return (b.short || x.book) + " · p. " + x.fig + (x.whole ? " (music example)" : "") + (x.chords ? " · " + x.chords : "");
     return (b.short || x.book) + " · fig. " + x.fig + (x.whole ? " (whole movement)" : "") + (x.mm ? (x.mm === "all" ? ", all" : ", mm. " + x.mm) : "");
   }
   function of(kind, id) { if (!index) build(); var wid = index[kind + ":" + id]; return wid ? Object.assign({ id: wid }, W[wid]) : null; }
@@ -47,7 +49,7 @@
     return ((w && w.in && w.in.print) || []).filter(function (x) { return x.concept || x.caption; }).map(function (x) {
       var b = (global.PRINT_BOOKS || {})[x.book] || {};
       return { src: x.book, label: (b.short || x.book).split(",")[0], work: w.id, concept: x.concept || x.caption, note: x.caption && x.concept ? x.caption : "",
-        where: "figure " + x.fig + (x.whole ? " (whole movement)" : ""), url: "", print: true };
+        where: b.ref === "page" ? "p. " + x.fig + (x.whole ? " (music example)" : "") : "figure " + x.fig + (x.whole ? " (whole movement)" : ""), url: "", print: true };
     });
   }
   function usesOf(wid) {

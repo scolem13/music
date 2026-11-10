@@ -553,12 +553,14 @@
     var w = Base(host, "The harmonic series"); w.playLabel = "▶ Play"; w.playBtn.remove();
     var root = ROOTS[0], staff = el("div", "sk-staff"), info = el("p", "sk-info", "Click a note to hear that harmonic.");
     w.pick("root", "Fundamental", ROOTS.map(function (r) { return [r[0], r[1] + (Math.floor(r[2] / 12) - 1)]; }), "C", null, function (v) { root = ROOTS.filter(function (r) { return r[0] === v; })[0]; draw(); });
+    w.pick("click", "A click plays", [["harm", "The harmonic"], ["both", "Harmonic and piano note together (beats)"]], "harm");
     w.body.appendChild(staff); w.body.appendChild(info);
     var row = el("div", "sk-presets");
     button(row, "▶ Up the series", function () { play("up"); });
     button(row, "▶ Same notes, equal-tempered", function () { play("et"); });
     button(row, "▶ Harmonic, then tempered", function () { play("ab"); });
     button(row, "▶ Build the tone, one harmonic at a time", function () { play("build"); });
+    button(row, "▶ Both together, one harmonic at a time", function () { play("both"); });
     button(row, "■", function () { w.stop(); });
     w.body.insertBefore(row, staff);
     w.view = viewer(w.body, { noScope: false, ms: 40, overlay: function (g, X, W, H, C) {
@@ -576,7 +578,8 @@
     function f(n, et) { return et ? mtof(root[2] + semis(n)) : mtof(root[2]) * n; }
     function one(n) {
       w.start(); var c = ac(), t = c.currentTime + .02;
-      tone(c, w.out, f(n), t, 1.2, .35);
+      if (w.P.click === "both") { tone(c, w.out, f(n), t, 2.5, .22); tone(c, w.out, f(n, true), t, 2.5, .22); }
+      else tone(c, w.out, f(n), t, 1.2, .35);
       var ct = Math.round(cents(n));
       info.textContent = "Harmonic " + n + ": " + fmtHz(f(n)) + ", " + n + " × the fundamental. Nearest note " + noteName(root[2] + semis(n)) + (ct ? ", " + Math.abs(ct) + " cents " + (ct > 0 ? "sharp" : "flat") + " of the piano's " + fmtHz(f(n, true)) : ", the same as the piano") + ".";
     }
@@ -585,6 +588,11 @@
     function play(how) {
       w.stop(); w.start(); var c = ac(), t = c.currentTime + .05;
       if (how === "build") { for (var n = 1; n <= 16; n++) tone(c, w.out, f(n), t + (n - 1) * .45, 16 * .45 - (n - 1) * .45 + 2.5, .3 / n); info.textContent = "Each harmonic enters at strength 1/n. With all sixteen it is close to a sawtooth wave."; timer = setTimeout(function () { w.stop(); }, 10500); return; }
+      if (how === "both") {
+        for (var j = 1; j <= 16; j++) { tone(c, w.out, f(j), t + (j - 1) * 2.2, 2, .2); tone(c, w.out, f(j, true), t + (j - 1) * 2.2, 2, .2); }
+        info.textContent = "Each harmonic and the piano's note at the same moment. Where they differ by a few Hz you hear a slow wobble, the beating; at 7, 11, 13 and 14 it is a clash.";
+        timer = setTimeout(function () { w.stop(); }, 16 * 2.2 * 1000 + 500); return;
+      }
       for (var k = 1; k <= 16; k++) {
         if (how === "ab") { tone(c, w.out, f(k), t + (k - 1) * 1.1, .5, .3); tone(c, w.out, f(k, true), t + (k - 1) * 1.1 + .52, .5, .3); }
         else tone(c, w.out, f(k, how === "et"), t + (k - 1) * .42, .4, .3);
@@ -2377,7 +2385,8 @@
     w.pick("sys", "Target tuning", [["12et", "12-ET (the piano)"], ["ji", "Just intonation, over a tonic"], ["31et", "31-ET"], ["cents", "Cents above the note"]], "12et", null, retarget);
     w.pick("tonic", "Tonic", NOTE_OPTS, "C", null, retarget);
     w.num("cents", { label: "Cents above the note", min: -100, max: 700, step: 1, value: 350, fmt: function (v) { return Math.round(v) + " ¢"; }, on: retarget, title: "350 is the neutral third above the note" });
-    w.num("bands", { label: "Bands (partials)", min: 1, max: 10, step: 1, value: +host.getAttribute("data-bands") || 6, fmt: function (v) { return String(Math.round(v)); }, on: function () { cv.style.height = Math.max(120, 38 * w.P.bands + 22) + "px"; if (bank) { bank.n = Math.round(w.P.bands); bank.setRef(fref); } w.redraw(); } });
+    w.num("bands", { label: "Bands (partials)", min: 1, max: 10, step: 1, value: +host.getAttribute("data-bands") || 6, fmt: function (v) { return String(Math.round(v)); }, on: function () { sizeCv(); if (bank) { bank.n = Math.round(w.P.bands); bank.setRef(fref); } w.redraw(); } });
+    w.pick("view", "Display", SV.MODES.map(function (m) { return [m[0], m[1]]; }), host.getAttribute("data-view") || "strobe", null, function () { sizeCv(); if (w.redraw) w.redraw(); });
     var dbox = group(w, "Or listen to a made-up string, or to the page's own sound, instead of the microphone");
     w.pick("demo", "Source", [["off", "Microphone"], ["on", "Made-up string or instrument"], ["tap", "This page's sound"]], "off", dbox, function () { showHint(); if (w.running) { w.stop(); w.start(); } });
     w.num("detune", { label: "String is off by", min: -50, max: 50, step: 0.5, value: 0, fmt: function (v) { return (v > 0 ? "+" : "") + v.toFixed(1) + " ¢"; }, on: function () { if (demo) demo.set(); } }, dbox);
@@ -2389,15 +2398,18 @@
     var info = el("p", "sk-info"); w.body.appendChild(info);
     var read = el("div", "sk-tune-read"), rNote = el("span", "sk-tune-note", "—"), rCents = el("span", "sk-tune-cents", ""), rHz = el("span", "sk-tune-hz", "");
     read.appendChild(rNote); read.appendChild(rCents); read.appendChild(rHz); w.body.appendChild(read);
-    var cv = el("canvas", "sk-plot"); cv.style.height = Math.max(120, 38 * w.P.bands + 22) + "px"; w.body.appendChild(cv);
+    var cv = el("canvas", "sk-plot"); w.body.appendChild(cv);
+    function sizeCv() { cv.style.height = (SV.HEIGHTS[w.P.view] || Math.max(120, 38 * w.P.bands + 22)) + "px"; }
+    sizeCv();
     cv.setAttribute("aria-label", "Strobe bands, one row for every partial. A row that stands still is exactly in tune; stripes moving right mean sharp, left flat.");
     var how = el("p", "sk-info", "Press Start and play or sing one steady note. Each row is one partial (row k listens at k times the target pitch). A row whose stripes stand still is exactly on pitch; stripes drifting right are sharp, left are flat, and the faster they go the further off. Rows fade where that partial is weak. The first moment of each note is ignored.");
     w.body.appendChild(how);
     w.setSource = function (s) { w.testSource = s; };   // a test can feed an AudioNode (or a function (ctx) -> node) in place of the microphone
     var fmtC = SV.fmtC;
+    var track = SV.tracker();
     var redraw = anim(w, cv, function (C) {
       var q = fit(cv);
-      SV.draw(q.g, q.w, q.h, { bands: bank ? bank.read() : [], N: Math.round(w.P.bands), fref: fref, running: w.running, idle: "Press Start (or pick the made-up string) to see the bands move" }, C);
+      SV.draw(q.g, q.w, q.h, track({ mode: w.P.view, bands: bank ? bank.read() : [], N: Math.round(w.P.bands), fref: fref, a4: w.P.a4, hz: last && last.hz > 0 ? last.hz : 0, running: w.running, idle: "Press Start (or pick the made-up string) to see the bands move" }), C);
     });
     w.redraw = redraw;
     function onFrame(r) {
@@ -2869,6 +2881,7 @@
     });
     requestAnimationFrame(frame);
   }
+  SK.kinds = KINDS; SK.kit = { Base: Base, tone: tone, el: el, button: button, mtof: mtof, fmtHz: fmtHz, viewer: viewer, ROOTS: ROOTS };   // tuning-kit.js adds kinds through these
   SK.widgets = widgets; SK.ac = ac; SK.cents = cents; SK.seriesAbc = seriesAbc; SK.noteOn = noteOn; SK.noteOff = noteOff;
   global.SynthKit = SK;
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();

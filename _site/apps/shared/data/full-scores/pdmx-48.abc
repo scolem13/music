@@ -1,0 +1,15 @@
+X:1
+C:Public Domain (PianoXML typeset)
+%%score { 1 | 2 }
+L:1/8
+Q:1/4=126
+M:2/4
+K:C
+V:1 treble nm="Piano"
+%%MIDI program 0
+V:2 bass 
+%%MIDI program 0
+V:1
+!p!"^Allegro cherzando" z4 | z4 |:"_leggiero" (A/B/c/B/ .A) z | (A/B/c/d/ .e) z | "_cresc." (d/e/f/g/ .a) z |!f! (a/b/)c'/d'/ .e' z |!mf! z .e(ef | .d) z !>!d2- | d(gde |1 c) z"_fz" e2 ||2 (c2 .c') z ::!mf! (e3 B | c3) (A | e3 B | c3) (A |!f! !5!a3 e | !3!f3) (e | !>(! d!3!cBA | !2!^G2 !5!e2)!>)! |!p!"^a tempo" (A/B/c/B/ .A) z | (A/B/c/d/ .e) z | !<(! (d/e/f/g/ .a) z | (a/b/c'/d'/ .e')!<)!!f! z | z .B(Bc | .A) z !>!e2- | e.B(Bc |1 A4) :|2 (A/B/c/B/ .A) z || (d/e/f/g/ .a) z | (a/b/c'/b/ .a) z | (d'/e'/f'/g'/ .a') z | !f!"^risoluto" (E/D/C/B,/ .A,) z |"_fz" !fermata![ca]4 |]
+V:2
+.[A,CE]2 .[A,CE]2 | .[A,CE]2 .[A,CE]2 |: .[A,CE]2 .[A,CE]2 | .[A,CE]2 .[A,CE]2 | .[A,DF]2 .[A,DF]2 | .[A,CE]2 .[A,CE]2 | .[G,CE]2 .[G,CE]2 | .[G,B,F]2 .[G,B,F]2 | .[G,B,F]2 .[G,B,F]2 |1 .[CE] z E2 ||2 [CE]3 z :: (^G,/A,/B,/A,/ .G,) z | (A,/B,/C/D/ .E) z | (^G,/A,/B,/A,/ .G,) z | (A,/B,/C/D/ .E) z | (^C/D/)E/D/ .C z |[K:treble] (D/E/F/G/ .A) (G | "^rit." FED!2!^D | EDCB,) |[K:bass] .[A,CE]2 .[A,CE]2 | .[A,CE]2 .[A,CE]2 | .[A,DF]2 .[A,DF]2 | .[A,CE]2 .[A,CE]2 | .[A,DE]2 .[A,DE]2 | .[A,CE]2 .[A,CE]2 | .[A,DE]2 .[A,DE]2 |1 .[A,CE]2 .[A,CE]2 :|2 .[A,CE]2 .[A,CE]2 || .[A,DF]2 .[A,DF]2 | .[A,CE]2 .[A,CE]2 | .[A,DF]2 .[A,DF]2 | (E,/D,/C,/B,,/ .A,,) z | !fermata![A,E]4 |]

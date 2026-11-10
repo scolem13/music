@@ -1,0 +1,152 @@
+---
+title: "Everyday Tonality 4: Three Kinds of Harmony"
+toc: true
+toc-depth: 2
+description: "Chapters 8-10: 'classical' harmony and the circle of fifths, non-classical tertial harmony in rock and pop, and quartal harmony. Play the book's progression tables."
+instruments: [guitar, bass, piano, voice, other]
+topics: [theory, harmony]
+has: [band, interactive]
+---
+
+These pages walk through Philip Tagg's book *Everyday Tonality II: Towards a Tonal Theory of What Most People Hear* (2014) in plain words. Tagg's point: most of the music people hear every day (pop, rock, film, games, folk) does not follow the rules of classical harmony, and needs its own words. Page numbers point to the book. The summaries were drafted with AI help from the book's text; check a page before quoting it. New words: [glossary](tagg-glossary.qmd).
+
+## Chapter 8: 'Classical' harmony (pp. 245–271)
+
+Harmony means notes sounding together to make chords and chord sequences. Most harmony lessons teach one kind: the chord habits of European classical music from about 1700 to 1900. Tagg calls this "classical harmony". His point is not that it is bad. It is that it is only one style among many, and it is the style that music words (dominant, leading note, perfect cadence) were invented for.
+
+Classical harmony is built on chords made by stacking thirds. It works in the major scale (the ionian mode), which has a special feature: its seventh note pulls up to the home note, and its fourth note pulls down to the third. These pulls give the music a strong feeling of going somewhere. The chords usually travel "anticlockwise" round the circle of fifths and land on a V–I "perfect" cadence, which sounds like an ending.
+
+Why it matters: a lot of the music you hear still uses these habits, such as hymns, national anthems, musicals and jazz standards. Film and pop writers also use them as a sign of "serious" or "classy" music. But Tagg warns that if you try to explain every song with these rules, you will go wrong. Later chapters show music that works differently.
+
+
+### Key ideas
+- "Classical harmony" is Tagg's name for the chord habits of 1700s–1800s European music, which spread across the world (p. 249).
+- Chords here are built by stacking thirds. Tagg calls this "tertial" harmony (pp. 250–251).
+- The ionian (major) mode has two leading notes, which pull in two directions and give the music a strong sense of direction (p. 253).
+- The circle of fifths ("key clock") shows how keys and chords relate. Classical chord changes mostly move flatwards (anticlockwise) and end V–I (pp. 255–257, 271).
+- Only V–I is called "perfect". Half, plagal and interrupted cadences have names that suggest they are lesser, and Tagg thinks that is a cultural habit, not a fact (pp. 258–261).
+- Classical harmony turns up in pop, jazz and film, and can be used to suggest "high art" or deep feeling (pp. 267–268).
+
+
+### Example pieces
+- Um Um Um Um Um Um, as sung by Wayne Fontana and the Mindbenders: it ends on the relative minor (vi) and sounds finished, not "interrupted" (pp. 260–261).
+- Mendelssohn, *Oh! For the Wings of a Dove*, and Molloy, *Love's Old Sweet Song*: Victorian songs that show the classical habits clearly (pp. 267–268).
+- Procol Harum, *A Whiter Shade of Pale*, set beside Bach's Air from the Orchestral Suite in D (p. 269).
+- Table 19 lists circle-of-fifths songs, such as *Sweet Georgia Brown* and *Autumn Leaves* (p. 263).
+
+**Try this:** Play or listen to *Love's Old Sweet Song* or any hymn. Listen for the chord just before the last one. Does it sound like "now we must finish"? That is the V–I pull. Then listen to *Um Um Um Um Um Um* and ask whether its ending feels unfinished, as Tagg's textbook labels would suggest.
+
+### The book's tables
+
+Press ▶ to hear a recording's chords played by the band (piano, bass and drums), one chord a bar. It is the chord pattern only, not the recording.
+
+```{=html}
+<figure class="tg-table"><figcaption>Table 19.  <span>(Tagg p. 263)</span></figcaption><div class="tg-wrap"><table><thead><tr><th>Song</th><th>Type</th><th>Anti‐clockwise (falling) chord progression</th></tr></thead><tbody><tr><td><i>Sweet Georgia Brown</i><br>(Pinkard 1925)</td><td>real</td><td>(B7) E7 | E7 | A7 |A7 | D7 | D7 | G<br>(III)-VI-II-V-I in G</td></tr><tr><td><i>The Charleston</i><br>(Mack, 1923)</td><td>real</td><td>[B♭] | D7 | G7 | G7 | C7 | F7 | B♭ G7 | C7 F7<br>III-VI-II-V-I in B$</td></tr><tr><td><i>Has Anybody Seen My</i><br><i>Gal</i>(Henderson, 1925)</td><td>real</td><td>F | A7 | D7 | D7 | G7 | C7 | F D7 | G7 C7<br>III-VI-II-V-I in F</td></tr><tr><td><i>All The Things You Are</i><br>(Kern, 1939)</td><td>virtual</td><td>• Fm7 B♭m7 | E♭7 A♭^ | D♭^<br>• vi-ii-V-I-IV in A$ Cm7 Fm7 | B♭7 E♭^ | A♭^<br>• vi-ii-V-I-IV in E$</td></tr><tr><td><i>Blue Moon</i><br>(Rodgers, 1934)</td><td>virtual</td><td>{ E♭ Cm7 | Fm7 B♭7} E♭ |<br>(I)-vi-ii-V-I in E$</td></tr><tr><td><i>Jeepers Creepers</i><br>(Warren, 1938)</td><td>both</td><td>(a) Gm9 C9 F^9 (b) Dm7 Gm7 C9 F6 | Gm9 C9 |<br>(c) Am7L5 D9 Gm7 C9 F6<br>(a) ii V I (b) vi ii V I | ii V | (c) iii VI ii V I,<br>all in F</td></tr><tr><td><i>Moonlight Serenade</i><br>(Miller, 1939)</td><td>both</td><td>Bm7L5 EY9 | Am7 DY9 | Gm7 CY9 || F<br>+iv-VII-iii-VI-ii-V-I in F</td></tr><tr><td><i>Autumn Leaves</i><br>(Kosma, 1946)</td><td>virtual</td><td>Gm7 C7 | F^7 B♭^7 | E7L5 A7 | Dm<br>iv-VII-III-VI-ii-V-i in D min.</td></tr><tr><td><i>Windmills of Your</i><br><i>Mind</i>(Legrand 1968)</td><td>virtual</td><td>E7 Am D7 G^7 C^7 F♯m7♭5 B7 Em<br>I-iv-VII-III-VI-ii-V-I in E min.</td></tr><tr><td><i>Bluesette</i><br>(Thielemans, 1962)</td><td>virtual</td><td>[B♭] | Am7 D7 | Gm7 C7 | F7 B♭7 | E♭<br>ii-iii-vi-ii-V-I-IV in B$</td></tr><tr><td><i>Yesterday</i><br>(Beatles, 1965a)</td><td>both</td><td>[F] | Em7 A7 | Dm | B♭(Gm7) C7 | F<br>vii-III-VI-IV(ii)-V-I in F</td></tr></tbody></table></div><details class="tg-hear"><summary>Hear the progressions (9)</summary><ul><li><button class="tg-play" data-chords="(B7) E7 | E7 | A7 |A7 | D7 | D7 | G" aria-label="Play Sweet Georgia Brown">▶</button> <b>Pinkard</b> <i>Sweet Georgia Brown</i> · (B7) E7 | E7 | A7 |A7 | D7 | D7 | G</li><li><button class="tg-play" data-chords="[B♭] | D7 | G7 | G7 | C7 | F7 | B♭ G7 | C7 F7" aria-label="Play The Charleston">▶</button> <b>Mack</b> <i>The Charleston</i> · [B♭] | D7 | G7 | G7 | C7 | F7 | B♭ G7 | C7 F7</li><li><button class="tg-play" data-chords="• Fm7 B♭m7 | E♭7 A♭^ | D♭^" aria-label="Play All The Things You Are">▶</button> <b>Kern</b> <i>All The Things You Are</i> · • Fm7 B♭m7 | E♭7 A♭^ | D♭^</li><li><button class="tg-play" data-chords="{ E♭ Cm7 | Fm7 B♭7} E♭ |" aria-label="Play Blue Moon">▶</button> <b>Rodgers</b> <i>Blue Moon</i> · { E♭ Cm7 | Fm7 B♭7} E♭ |</li><li><button class="tg-play" data-chords="(a) Gm9 C9 F^9 (b) Dm7 Gm7 C9 F6 | Gm9 C9 |" aria-label="Play Jeepers Creepers">▶</button> <b>Warren</b> <i>Jeepers Creepers</i> · (a) Gm9 C9 F^9 (b) Dm7 Gm7 C9 F6 | Gm9 C9 |</li><li><button class="tg-play" data-chords="Bm7L5 EY9 | Am7 DY9 | Gm7 CY9 || F" aria-label="Play Moonlight Serenade">▶</button> <b>Miller</b> <i>Moonlight Serenade</i> · Bm7L5 EY9 | Am7 DY9 | Gm7 CY9 || F</li><li><button class="tg-play" data-chords="Gm7 C7 | F^7 B♭^7 | E7L5 A7 | Dm" aria-label="Play Autumn Leaves">▶</button> <b>Kosma</b> <i>Autumn Leaves</i> · Gm7 C7 | F^7 B♭^7 | E7L5 A7 | Dm</li><li><button class="tg-play" data-chords="[B♭] | Am7 D7 | Gm7 C7 | F7 B♭7 | E♭" aria-label="Play Bluesette">▶</button> <b>Thielemans</b> <i>Bluesette</i> · [B♭] | Am7 D7 | Gm7 C7 | F7 B♭7 | E♭</li><li><button class="tg-play" data-chords="[F] | Em7 A7 | Dm | B♭(Gm7) C7 | F" aria-label="Play Yesterday">▶</button> <b>Beatles</b> <i>Yesterday</i> · [F] | Em7 A7 | Dm | B♭(Gm7) C7 | F</li></ul></details></figure>
+```
+
+```{=html}
+<figure class="tg-table"><figcaption>Table 20.  <span>(Tagg p. 265)</span></figcaption><div class="tg-wrap"><table><thead><tr><th>Artist:<i>Song</i>(detail)</th><th>Progression</th></tr></thead><tbody><tr><td>Kinks:<i>Dead End Street</i>(1966; verse)</td><td>C G Dm Am — III VII iv i in A minor</td></tr><tr><td>Rolling Stones:<i>Brown Sugar</i>(1971;<br>plagal extension, ex. 182)</td><td>(D♭)-A♭ E♭-B♭ F-C (ex. 182182)<br>(♭II-)♭VI ♭III-♭VII IV-I in C</td></tr><tr><td>Rolling Stones:<i>Jumping Jack Flash</i><br>(1969a; at ‘It’s alright’.)</td><td>D A E B — ♭III ♭VII IV I in B</td></tr><tr><td>Jimi Hendrix:<i>Hey Joe</i>(1967a)</td><td>C G D A E — ♭VI ♭III ♭VII IV I in E</td></tr><tr><td>Irene Cara:<i>Flashdance</i>(1983; verse<br>start)</td><td>B♭ F Cm Gm — ♭III ♭VII iv i in G<br>minor</td></tr></tbody></table></div><details class="tg-hear"><summary>Hear the progressions (5)</summary><ul><li><button class="tg-play" data-chords="C G Dm Am" aria-label="Play Dead End Street">▶</button> <b>Kinks</b> <i>Dead End Street</i> · C G Dm Am</li><li><button class="tg-play" data-chords="(D♭)-A♭ E♭-B♭ F-C (ex. 182182) (♭II-)♭VI ♭III-♭VII IV-I in C" aria-label="Play Brown Sugar">▶</button> <b>Rolling Stones</b> <i>Brown Sugar</i> · (D♭)-A♭ E♭-B♭ F-C (ex. 182182) (♭II-)♭VI ♭III-♭VII IV-I in C</li><li><button class="tg-play" data-chords="D A E B" aria-label="Play Jumping Jack Flash">▶</button> <b>Rolling Stones</b> <i>Jumping Jack Flash</i> · D A E B</li><li><button class="tg-play" data-chords="C G D A E" aria-label="Play Hey Joe">▶</button> <b>Jimi Hendrix</b> <i>Hey Joe</i> · C G D A E</li><li><button class="tg-play" data-chords="B♭ F Cm Gm" aria-label="Play Flashdance">▶</button> <b>Irene Cara</b> <i>Flashdance</i> · B♭ F Cm Gm</li></ul></details></figure>
+```
+
+## Chapter 9: Non-classical tertial harmony (pp. 273–292)
+
+This chapter is about songs that still use ordinary three-note chords (stacked thirds) but do not follow the classical rules. There are no strong pulls to the next chord, no modulations (changes of key) and no "story" told by the chords. Instead there is usually a short loop of three or four chords that repeats. Tagg says such a loop is "the tonal aspect of groove" (p. 275): it gives the music a steady tonal motor.
+
+Tagg also argues that the ionian (major) mode is just one mode among others, not a "normal" one. Each mode has its own pattern of major chords. In dorian, major chords sit on the flat third and the fourth. In mixolydian they sit on the fourth and flat seventh. In aeolian they sit on the flat sixth and flat seventh. If you know where a mode's major chords are, you can tell the mode from the chords.
+
+He also explains power chords. They are just a root and a fifth played through distortion, but the distortion makes extra high notes, including a major third. So the chord sounds rich and stable without any third being played.
+
+Why it matters: this is the harmony of rock, blues, folk and a lot of pop.
+
+
+### Key ideas
+- Ionian chord loops (such as the La Bamba loop I–IV–V) are not classical, because they use parallel fifths and octaves, do not modulate and just keep a groove going (p. 275).
+- Each church mode has its own set of major chords, which can identify the mode (pp. 276, 285–286).
+- Minor-mode songs often use a major tonic chord all the way through, a "permanent Picardy third". A Picardy third is a major third in a minor chord, usually only at the end of a piece (pp. 276–278).
+- A power chord is a two-note chord (root plus fifth) with distortion. The distortion adds overtones, including a major third, so it sounds stable (pp. 280–282).
+- Power chords let rock jump to far-away chords (such as flat II or the tritone) and still sound firm (p. 282).
+- Phrygian chord moves such as Am–G–F–E are often mistaken for aeolian ones (p. 288). Aeolian harmony often suggests something ominous or fateful (p. 291).
+
+
+### Example pieces
+- Green Onions (Booker T) and Smoke on the Water (Deep Purple): dorian riffs (p. 278).
+- Nirvana, *Lithium* and *Smells Like Teen Spirit*: power chords that move far from the tonic (pp. 282–283).
+- Hit the Road Jack (aeolian) compared with a malagueña such as the one played by Sabicas (phrygian) (p. 288).
+- Scarborough Fair (Simon & Garfunkel), as a dorian example (p. 287).
+
+**Try this:** On a piano, hold the bass note D with your left hand and play the white-note chords C, F and G over it, one at a time. Then do the same with a bass note of C, then A. Notice how the same three chords sound different in each case (this is the method Tagg describes on p. 276).
+
+### The book's tables
+
+Press ▶ to hear a recording's chords played by the band (piano, bass and drums), one chord a bar. It is the chord pattern only, not the recording.
+
+```{=html}
+<figure class="tg-table"><figcaption>Table 23.  <span>(Tagg p. 287)</span></figcaption><div class="tg-wrap"><table><thead><tr><th><i>mode</i></th><th><i>positions</i> <i>relative</i></th><th><i>notes</i> <i>on white</i></th><th><i>as tonic</i> <i>with E</i></th><th><i>examples</i></th></tr></thead><tbody><tr><td>ionian</td><td>I IV V</td><td>C F G</td><td>E A B</td><td>• <i>La bamba</i>(Valens, 1958) [C-F-G in C];<br>• <i>Twist and Shout</i>[D-G-A in D]<br>• <i>Guantanamera</i>[F-B♭-C in F] (Sandpipers, 1966);<br>• <i>Pata Pata</i>[F-B♭-F-C] (Makeba, 1967).</td></tr><tr><td>dorian<br>(type 1)<br>dorian<br>(type 2)</td><td>[I] ♭III<br>IV ♭VII<br>i ♭III<br>IV ♭VII</td><td>[D] F<br>G C<br>Dm F<br>G C</td><td>[E] G<br>A D<br>Em G A<br>D</td><td>• <i>Green Onions</i>(Booker T, 1962) [F-A♭-B♭]<br>• <i>The Girl Sang The Blues</i> (Everly Brothers, 1963) [E-G-A]<br>• <i>Smoke on the Water</i>(Deep Purple, 1972) [E-G-A in E]; ex. 190‐191;<br>• <i>Greensleeves</i>(Eng. trad; first line);<br>• <i>Poor Murdered Woman</i>(ex. 184);<br>• <i>Scarborough Fair</i>(Simon &amp; Garfunkel, 1968) [Em-D-Em-G-A-Em] (ex. 5, p. 100)</td></tr><tr><td>lydian</td><td>I II V</td><td>F G C</td><td>E F♯<br>B</td><td>• <i>Eden</i>(Hooverphonic) [C-D-Em-G]<br>• <i>Terminal Frost</i>(Pink Floyd) [D-Ezlu]</td></tr><tr><td>phryg‐<br>ian</td><td>[I] ♭II<br>♭III<br>♭VII</td><td>[E] F C<br>G</td><td>[E] F<br>C G</td><td>• <i>Che Guevara</i>(Puebla, 1965) [ex. 198];<br>• <i>Malagueña</i>(Sabicas) [Am-G-F-E] [ex. 197]<br>• <i>_Τρεις η ωρα νυχτα (Alexiou</i>,_1976) [ex.199]</td></tr><tr><td>mixo‐<br>lydian</td><td>I IV<br>♭VII</td><td>G C F</td><td>E A D</td><td>• <i>Sweet Home Alabama</i>(ex.284, p. 430);<br>• <i>Hey Jude</i>[G-F-C-G];<br>• <i>The Magnificent Seven</i>(ex.203b,p.291) See also pp.421‐432.</td></tr><tr><td>aeolian</td><td>[I] ♭III<br>♭VI<br>♭VII</td><td>[A] C F<br>G</td><td>[E] G<br>C D</td><td>• <i>All Along the Watchtower</i>[Am-G-F-G]<br>• <i>Flashdance</i>[G-F-E♭-F in G].<br>• Cadences in<i>Lady Madonna</i>[F-G-A]; <i>PS I Love You</i>[B♭-C-D];<i>SOS</i>[D♭-E♭-F] <i>Brown Sugar</i>[A♭-B♭-C] (ex. 182, p. 265).</td></tr></tbody></table></div><details class="tg-hear"><summary>Hear the progressions (5)</summary><ul><li><button class="tg-play" data-chords="C F G" aria-label="Play La bamba">▶</button> <b>Valens</b> <i>La bamba</i> · C F G (in C)</li><li><button class="tg-play" data-chords="F A♭ B♭" aria-label="Play Green Onions">▶</button> <b>Booker T</b> <i>Green Onions</i> · F A♭ B♭</li><li><button class="tg-play" data-chords="E G A" aria-label="Play The Girl Sang The Blues">▶</button> <b>Everly Brothers</b> <i>The Girl Sang The Blues</i> · E G A</li><li><button class="tg-play" data-chords="E G A" aria-label="Play Smoke on the Water">▶</button> <b>Deep Purple</b> <i>Smoke on the Water</i> · E G A (in E)</li><li><button class="tg-play" data-chords="Em D Em G A Em" aria-label="Play Scarborough Fair">▶</button> <b>Simon &amp; Garfunkel</b> <i>Scarborough Fair</i> · Em D Em G A Em</li></ul></details></figure>
+```
+
+## Chapter 10: Quartal harmony (pp. 293–351)
+
+Quartal harmony builds chords by stacking fourths (or their upside-down twin, fifths) instead of thirds. A typical chord is something like D–G–C. Tagg's key idea is that these chords work differently from stacked-thirds chords. A stack of fourths has no clear "root", and turning it upside down gives a different-sounding chord with a different "centre". There are no leading notes, so words such as dominant, major/minor, "sus4" and "omit 3" do not fit. A "sus4" chord means a fourth that wants to fall to a third. In quartal music nothing is held back or missing.
+
+Instead, Tagg describes a "tonical neighbourhood": the three notes of a quartal chord sit next to each other on the circle of fifths. The music can drift within that area without feeling it has changed key. To feel a real change, you shift by about a minor third.
+
+You hear this sound in jazz (Miles Davis, McCoy Tyner), in film music (Copland), in TV themes and corporate jingles, in prog and folk rock, and in drone-based folk. In media it often suggests an up-to-date, bright, hopeful feeling, though older European music used bare fifths to suggest something old and rustic.
+
+
+### Key ideas
+- Quartal harmony is stacked fourths or fifths. Tagg suggests short labels such as C5, C4 and C2 instead of "sus" or "add" names (pp. 293–295).
+- A quartal triad has no fixed root. Its notes are all one step apart on the key clock, so they form a "tonical neighbourhood" (pp. 296–300).
+- To make a clear "key change" in quartal music, move about three steps (a minor third) away (pp. 301, 350).
+- Quartal chords contain the notes of pentatonic scales, so they suit pentatonic melodies (pp. 298–299, 350).
+- The "eleven chord" is a half-quartal sound used in gospel and soul, replacing a dominant (pp. 306–308).
+- In film, TV and advertising, quartal chords came to mean positive modernity (pp. 311–315, 350).
+- Drones and open guitar tunings often produce quartal chords in folk and folk rock. "Counterpoise" is the other note-area the tune keeps swinging to, away from the drone (pp. 336–346).
+
+
+### Example pieces
+- Miles Davis, *So What* (*Kind of Blue*, 1959): two answering quartal chords, with a shift to E-flat for the middle section (pp. 323–324).
+- The Kojak theme (1973) and the Intel Inside jingle (1993) (pp. 311–312).
+- Joni Mitchell, *This Flight Tonight* (1971), in an open tuning (pp. 331–332).
+- King Crimson, *Frame by Frame* (1981) (pp. 329–330). Martha and the Vandellas, *Dancing in the Street* uses an eleven chord (p. 308).
+
+**Try this:** On a piano, play D–G–C together (white keys, a fourth apart). Then play G–C–D, then C–D–G. Listen to whether the "home" note seems to change each time. Then listen to the start of *So What* and the Intel jingle and describe what mood the sound gives.
+
+## Words from these chapters
+
+**chord loop**: A short chord pattern of three or four chords that repeats. It gives groove and a steady tonal motor, not a long story. (Tagg p. 275)
+
+**circle of fifths (key clock)**: A diagram of the twelve keys as a clock, with each step a fifth apart. Moving clockwise adds sharps and moving anticlockwise adds flats. (Tagg pp. 255–256)
+
+**classical harmony**: Tagg's name for the chord habits of European art music from about 1700 to 1900, built on stacked thirds, the major scale and V–I endings. It spread worldwide but is only one style among many. (Tagg p. 249)
+
+**counterpoise**: The "tonal elsewhere": a second pole that a tune moves to and back from, apart from its tonic. It is often found in drone-based folk music. (Tagg p. 336)
+
+**leading note**: A note that pulls to the note a semitone away. In the major scale the seventh pulls up to the home note and the fourth pulls down to the third. (Tagg p. 253)
+
+**perfect cadence**: A V–I chord ending, the strongest "finished" sound in classical harmony. Tagg says the other cadence names (half, plagal, interrupted) reflect classical habits. (Tagg pp. 252, 258–261)
+
+**Picardy third**: A major third in a tonic chord of a minor piece. Normally used only at the end, but many non-classical styles use it throughout. (Tagg pp. 276–277)
+
+**plagal cadence**: A IV–I ending, like the "Amen" at the end of a hymn. (Tagg p. 259)
+
+**power chord**: A two-note chord (root and fifth) played on a distorted electric guitar. Distortion adds overtones, including a major third, so it sounds full and stable. (Tagg p. 280)
+
+**quartal**: Describes chords built by stacking fourths (or fifths, the upside-down version). Their sound and logic differ from stacked-thirds chords. (Tagg pp. 250, 295)
+
+**tertial**: Describes chords made by stacking thirds. Tagg uses it so that "triad", which only means a three-note chord, is not confused with chords built from thirds. (Tagg pp. 250–251)
+
+**tonical neighbourhood**: The area of nearby notes on the key clock that a quartal chord covers. Music can shift within it without feeling like a key change. (Tagg pp. 297, 299)
+
+**triad**: Any chord with three differently named notes, whether built from thirds or not. (Tagg p. 251)
+
+**voice leading**: How each note in one chord moves to a note in the next. Classical harmony has rules about this, for example that sevenths fall and leading notes rise. (Tagg pp. 252, 271)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Tagg, Philip. *Everyday Tonality II: Towards a Tonal Theory of What Most People Hear*. The Mass Media Music Scholars' Press, 2014. E-book version 2.5.2. The pieces in its index, with pages, are in the Tune Directory.
+:::
+<!-- /works-cited -->
+
+{{< include _tagg-kit.qmd >}}

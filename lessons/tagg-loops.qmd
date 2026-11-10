@@ -1,0 +1,144 @@
+---
+title: "Everyday Tonality 6: Loops, Bimodality and Yes We Can"
+toc: true
+toc-depth: 2
+description: "Chapters 13-15: chord loops (the vamp, I-vi-IV-V, La Bamba and mixolydian loops), progressions that work both ways, and the four chords of Yes We Can."
+instruments: [guitar, bass, piano, voice, other]
+topics: [theory, harmony]
+has: [band, interactive]
+---
+
+These pages walk through Philip Tagg's book *Everyday Tonality II: Towards a Tonal Theory of What Most People Hear* (2014) in plain words. Tagg's point: most of the music people hear every day (pop, rock, film, games, folk) does not follow the rules of classical harmony, and needs its own words. Page numbers point to the book. The summaries were drafted with AI help from the book's text; check a page before quoting it. New words: [glossary](tagg-glossary.qmd).
+
+## Chapter 13: Chord loops 1 (pp. 401–420)
+
+A chord loop is a short pattern of three or four chords that goes round and round, like a runner on a track. A shuttle goes back and forth; a loop goes in a circle (p. 402). Tagg chooses the word "loop" because musicians already know loops from recording software and old audio tape (p. 401). He separates loops from "turnarounds", short chord patterns at the end of a section that push the music back to the start (p. 402).
+
+The chapter's main example is the "vamp": a four-chord pattern such as I–vi–ii–V (in C that is C, Am, Dm, G). It comes from jazz standards and old musicals, and each chord is a step "flatward" from the one before. In the late 1950s and early 1960s, American teen pop used a close cousin, I–vi–IV–V (C, Am, F, G), so much that Tagg calls it the sound of "milksap" music (pp. 407–408). Tagg then shows that 1950s rock'n'roll took a different path, built on the 12-bar blues and its V–IV–I ending, which is not the classical V–I move (pp. 412–414). He ends with the Beatles, who mixed many harmonic styles (pp. 417–418). Why it matters: the chords in a pop song tell you which tradition it comes from.
+
+
+### Key ideas
+- A loop is a cycle of usually three or four chords, repeated at least once (p. 419).
+- A loop usually lasts about 3 to 8 seconds. With a pause in the middle it can last up to about 18 seconds. Longer cycles, such as a 12-bar blues, are "cycles", not loops (p. 411).
+- A turnaround and a loop can use the same chords. The difference is the job: a turnaround signals "the section is ending, go back to the start" (p. 411).
+- The vamp, I–vi–ii–V, goes three steps "flatward" round the circle of fifths. The version I–vi–IV–V is nearly the same because ii and IV share almost the same notes (pp. 407, 411).
+- 1950s rock'n'roll used the 12-bar blues and a V–IV–I ending, with no classical V–I cadence. Tagg says "dominant" and "subdominant" do not fit this music well (pp. 412–414).
+- Loop chords can be called outgoing, medial (middle) or incoming, depending on where they sit in the loop (p. 414).
+- The Beatles' music mixed vamps, blues, folk and other harmony styles (pp. 417–418).
+
+
+### Example pieces
+- *Blue Moon* (Rodgers, 1934), with I–vi–ii–V used as loops and turnarounds (p. 405)
+- Ketty Lester, *Love Letters* (1962), a vamp too slow to feel like a short loop (pp. 409–410)
+- Eddie Cochran, *C'mon Everybody* (1958), a loop of I, IV and V with no classical dominant move (pp. 413–414)
+- Bobby Darin, *Dream Lover* and Ben E. King, *Stand By Me*, from the I–vi–IV–V list (p. 409)
+
+
+### Try this
+Play C, Am, F, G on a keyboard or guitar, one chord per bar, and repeat. Then sing a "doo-wop" tune on top. Next play C, Am, Dm, G and notice how little changes.
+
+### The book's tables
+
+Press ▶ to hear a recording's chords played by the band (piano, bass and drums), one chord a bar. It is the chord pattern only, not the recording.
+
+```{=html}
+<figure class="tg-table"><figcaption>Table 34.  <span>(Tagg p. 409)</span></figcaption><div class="tg-wrap"><table><tbody><tr><td>1957 Tab Hunter: <i>Young Love</i> Ricky Nelson:<i>Teenager’s Romance</i> The Rays: <i>Silhouettes</i> Paul Anka: <i>Diana</i></td><td>1961 <i>Let’s Twist Again</i> Chubby Checker: Dion: <i>Runaround Sue</i> Ben E King: <i>Stand By Me</i> Barry Mann: <i>Who Put The Bomp</i> The Marcels: <i>Blue Moon</i> Ricky Nelson: <i>Travelling Man</i> Elvis Presley: <i>His Latest Flame</i> Rosie &amp; Originals: <i>Angel Baby</i> Bobby Rydell: <i>Good Time Baby</i></td></tr><tr><td>1958<br>Chordettes:<br><i>Lollipop</i><br>Danny &amp; the Juniors:<br><i>At The Hop</i><br>Everly Brothers:<br><i>Dream</i><br>Monotones:<br><i>The Book Of Love</i><br>Ricky Nelson:<br><i>Poor Little Fool</i></td><td></td></tr><tr><td></td><td>1961<br>Neil Sedaka:<i>Happy Birthday Sweet 16</i><br>Bobby Vee:<i>Take Good Care Of My Baby</i><br>Del Shannon:<br><i>Runaway</i><br>Linda Scott:<i>Don’t Bet Money, Honey</i></td></tr><tr><td>1959<br>Paul Anka:<i>Put Your Head On My Shoulder</i><br>Bobby Darin:<br><i>Dream Lover</i><br>Dion &amp; Belmonts:<br><i>A Teenager In Love</i><br>Drifters:<i>There Goes My Baby</i><br>Connie Francis:<i>Lipstick On Your Collar</i><br>Ritchie Valens:<br><i>Donna</i><br>Jackie Wilson:<br><i>Lonely Teardrops</i></td><td></td></tr><tr><td></td><td>1962<br>Gene Chandler:<br><i>The Duke Of Earl</i><br>Sam Cooke:<br><i>Having A Party</i><br>Four Seasons:<br><i>Sherry Baby</i><br>Shirelles:<br><i>Baby It’s You</i></td></tr><tr><td>1960<br>Bobby Rydell:<br><i>Little Bitty Girl</i><br>Mark Dinning:<br><i>Teen Angel</i><br>Percy Faith:<br><i>A Summer Place</i><br>Jimmy Jones:<br><i>Handy Man</i><br>Sam Cooke:<br><i>What A Wonderful</i><br><i>World This Could Be</i><br>Bobby Vee:<br><i>Devil Or Angel</i><br>Johnny Tillotson:<br><i>Poetry In Motion</i></td><td></td></tr><tr><td></td><td>1963<br>Cascades:<br><i>Rhythm of the Rain</i><br>Elvis Presley:<i>The Devil In Disguise</i><br>Paul &amp; Paula:<br><i>Hey Paula!</i><br>Del Shannon:<i>Little Town Flirt</i><br>Little Peggy March:<i>I Will Follow Him</i><br>Ronettes:<br><i>Be My Baby</i><br>Doris Troy:<br><i>Just One Look</i></td></tr></tbody></table></div></figure>
+```
+
+## Chapter 14: Chord loops & bimodality (pp. 421–450)
+
+The same three chords can feel different depending on which one you hear as "home". D–C–G can be ionian (a normal major scale) if G is home, or mixolydian (a major scale with a lowered 7th) if D is home (p. 426). So how do we know which? Tagg's best clue is the anacrusis, the lead-in or pickup that rushes towards one chord. The chord that gets the clearest lead-in is probably home (p. 429). La Bamba and Sweet Home Alabama use the same chords but sound different for this reason (p. 430). Ionian loops head "flatward" round the circle of fifths; mixolydian loops head "sharpward" (clockwise) (pp. 431–432).
+
+The chapter also introduces "bimodal" music: tunes that can be heard in two modes, with two possible home chords. The Argentine scholar Carlos Vega said there are no major tunes and minor tunes, just bimodal ones (p. 436). Reversing a progression can swap one mode for another (p. 441). Last, Tagg looks at loops built on the third chord (mediant), such as the "rock dorian" loop in Green Onions (p. 442). This matters because it explains why so much rock sounds "not quite major or minor".
+
+
+### Key ideas
+- The four main ionian loops are I–IV–V–V (the La Bamba loop), I–V–IV–V, I–IV–V–IV and I–V–IV–IV (p. 448).
+- The same chords can be ionian or mixolydian. The lead-in (anacrusis) is the best clue to which chord is home (pp. 426–430, 448).
+- Mixolydian loops move sharpward in rising fifths, for example bVII–IV–I (pp. 431, 449).
+- Aeolian loops also move sharpward, but two steps at a time (p. 433).
+- Bimodal means a tune or cadence that sits between two modes, so one chord can be home or not (pp. 436, 449–450).
+- Reversing the order of a progression can turn it into another mode, a trick called bimodal reversibility (pp. 440–441, 449).
+- A "double shuttle" is a loop made of two shuttles, for example Otis Redding's G–B–C–A (p. 445).
+
+
+### Example pieces
+- *La Bamba* (Ritchie Valens, 1958) and *Sweet Home Alabama* (Lynyrd Skynyrd, 1974) (pp. 422, 427–430)
+- *Hey Jude* (Beatles, 1968), mixolydian loop at the end (p. 431)
+- Carlos Puebla, *¡Hasta siempre!* (aeolian to phrygian) (pp. 437–439)
+- Booker T. and the MGs, *Green Onions* (1962), a rock dorian loop (p. 442)
+
+
+### Try this
+Play D, C, G, G as a loop. First stress the G chord (start the pattern on G with a strong lead-in). Then stress D instead (put the lead-in just before D). Does the same loop change mood?
+
+### The book's tables
+
+Press ▶ to hear a recording's chords played by the band (piano, bass and drums), one chord a bar. It is the chord pattern only, not the recording.
+
+```{=html}
+<figure class="tg-table"><figcaption>Table 35.  <span>(Tagg p. 422)</span></figcaption><div class="tg-wrap"><table><thead><tr><th>Type</th><th>Tune (Artist, Year: chords; [detail])</th></tr></thead><tbody><tr><td>I-IV-V<br><i>La Bamba</i><br>loops<br>I-V-IV-V</td><td>• (a) ionian loops with V-I turnaround<br>• <i>La bamba</i>(Richie Valens, 1958: C F G G)<br>• <i>Do You Love Me</i>(Brian Poole &amp; the Tremoloes, 1963b: D G A A)<br>• <i>Guantanamera</i>(Trini Lopez, 1963: E A B B)<br>• <i>Twist and Shout</i>(Isley Brothers, 1962: F B♭ C C)<br>• <i>Lucy In The Sky With Diamonds</i>(Beatles, 1967b: A D E E)<br>• <i>I Don’t Want To Know</i>(Fleetwood Mac 1977: B F♯ E F♯; hook)<br>• <i>I Walk The Hill</i>(Big Country, 1986: D A G A)<br>• <i>From Under The Covers</i>(Beautiful South, 1989: F C B♭ C; verses)</td></tr><tr><td>I-IV-V-IV<br><i>Wild Thing</i><br>loops<br>I-V-IV</td><td>• (b) ionian loops with plagal turnaround (IV-I)<br>• <i>C’mon Everybody</i>(Eddy Cochran 1958: E A B A)<br>• <i>Sweets For My Sweet</i>(Searchers 1964: D G A G)<br>• <i>Wild Thing</i>(Troggs 1966: A D E D)<br>• <i>Hang On Sloopy</i>(McCoys 1965: G C D C)<br>• <i>Name of the Game</i>(Abba 1977: A D E D; hook line/chorus)<br>• <i>Congratulations</i>(Traveling Wilburys 1988: C F G F)<br>• <i>Knocking On Heaven’s Door</i>(Bob Dylan 1973: G D C C [Am × 2])<br>• <i>Already Gone</i>(Eagles 1974: G D C C)<br>• <i>Helpless</i>(Neil Young 1977: D A G G)</td></tr></tbody></table></div><details class="tg-hear"><summary>Hear the progressions (17)</summary><ul><li><button class="tg-play" data-chords="C F G G" aria-label="Play La bamba">▶</button> <b>Richie Valens</b> <i>La bamba</i> · C F G G</li><li><button class="tg-play" data-chords="D G A A" aria-label="Play Do You Love Me">▶</button> <b>Brian Poole &amp; the Tremoloes</b> <i>Do You Love Me</i> · D G A A</li><li><button class="tg-play" data-chords="E A B B" aria-label="Play Guantanamera">▶</button> <b>Trini Lopez</b> <i>Guantanamera</i> · E A B B</li><li><button class="tg-play" data-chords="F B♭ C C" aria-label="Play Twist and Shout">▶</button> <b>Isley Brothers</b> <i>Twist and Shout</i> · F B♭ C C</li><li><button class="tg-play" data-chords="A D E E" aria-label="Play Lucy In The Sky With Diamonds">▶</button> <b>Beatles</b> <i>Lucy In The Sky With Diamonds</i> · A D E E</li><li><button class="tg-play" data-chords="B F♯ E F♯" aria-label="Play I Don’t Want To Know">▶</button> <b>Fleetwood Mac</b> <i>I Don’t Want To Know</i> · B F♯ E F♯</li><li><button class="tg-play" data-chords="D A G A" aria-label="Play I Walk The Hill">▶</button> <b>Big Country</b> <i>I Walk The Hill</i> · D A G A</li><li><button class="tg-play" data-chords="F C B♭ C" aria-label="Play From Under The Covers">▶</button> <b>Beautiful South</b> <i>From Under The Covers</i> · F C B♭ C</li><li><button class="tg-play" data-chords="E A B A" aria-label="Play C’mon Everybody">▶</button> <b>Eddy Cochran</b> <i>C’mon Everybody</i> · E A B A</li><li><button class="tg-play" data-chords="D G A G" aria-label="Play Sweets For My Sweet">▶</button> <b>Searchers</b> <i>Sweets For My Sweet</i> · D G A G</li><li><button class="tg-play" data-chords="A D E D" aria-label="Play Wild Thing">▶</button> <b>Troggs</b> <i>Wild Thing</i> · A D E D</li><li><button class="tg-play" data-chords="G C D C" aria-label="Play Hang On Sloopy">▶</button> <b>McCoys</b> <i>Hang On Sloopy</i> · G C D C</li><li><button class="tg-play" data-chords="A D E D" aria-label="Play Name of the Game">▶</button> <b>Abba</b> <i>Name of the Game</i> · A D E D</li><li><button class="tg-play" data-chords="C F G F" aria-label="Play Congratulations">▶</button> <b>Traveling Wilburys</b> <i>Congratulations</i> · C F G F</li><li><button class="tg-play" data-chords="Am × 2" aria-label="Play Knocking On Heaven’s Door">▶</button> <b>Bob Dylan</b> <i>Knocking On Heaven’s Door</i> · Am × 2</li><li><button class="tg-play" data-chords="G D C C" aria-label="Play Already Gone">▶</button> <b>Eagles</b> <i>Already Gone</i> · G D C C</li><li><button class="tg-play" data-chords="D A G G" aria-label="Play Helpless">▶</button> <b>Neil Young</b> <i>Helpless</i> · D A G G</li></ul></details></figure>
+```
+
+```{=html}
+<figure class="tg-table"><figcaption>Table 36.  <span>(Tagg p. 431)</span></figcaption><div class="tg-wrap"><table><thead><tr><th>Type</th><th>Key</th><th>Song (Artist, Year)</th></tr></thead><tbody><tr><td>♭VII-<br>-IV-I</td><td>E<br>E<br>A<br>C</td><td>• <i>With A Little Help From My Friends</i>(Beatles, 1967b: hook)<br>• <i>Polythene Pam</i>(Beatles, 1969a: start of verses)<br>• <i>20th Century Man</i>(Kinks, 1971)<br>• <i>Gimme All Your Lovin’</i>(Z.Z. Top, 1983: hook)</td></tr><tr><td>I-♭VII-<br>-IV-I</td><td>G<br>G</td><td>• <i>Hey Jude</i>(Beatles, 1968b; end)<br>• <i>Fortunate Son</i>(Creedence Clearwater Revival, 1970)</td></tr><tr><td>I-♭VII-<br>-IV-IV</td><td>B<br>F#<br>A<br>D<br>C</td><td>• <i>The Midnight Rambler</i>(Rolling Stones, 1969)<br>• <i>Where Do We Go From Here Now?</i>(The Band, 1971)<br>• <i>20th Century Man</i>(Kinks, 1971)<br>• <i>Sweet Home Alabama</i>(Lynyrd Skynyrd, 1974)<br>• <i>Sharp Dressed Man</i>(Z.Z. Top, 1983: verse starts)</td></tr><tr><td>I-I-<br>-♭VII-IV</td><td>B<br>E<br>A</td><td>• <i>Soul Finger</i>(Bar Kays, 1967)<br>• <i>Traveler In Time</i>(Uriah Heep, 1972)<br>• <i>You Ain’t Seen Nothing Yet</i>(Bachman Turner, 1974)</td></tr></tbody></table></div></figure>
+```
+
+```{=html}
+<figure class="tg-table"><figcaption>Table 37. Bimodal reversibility of progressions (examples only) <span>(Tagg p. 441 (copied by hand from the page))</span></figcaption><div class="tg-wrap"><table><tbody><tr><td><i>lydian</i> F G C = I II V [I]</td><td>↔</td><td><i>ionian</i> C G F F = I V IV [I]</td></tr><tr><td><i>ionian</i> C F G = I IV V [I]</td><td>↔</td><td><i>mixolydian</i> G F C = I ♭VII IV [I]</td></tr><tr><td><i>mixolydian</i> G C F Dm = I IV ♭VII v [I]</td><td>↔</td><td><i>dorian</i> Dm F C G = i ♭III ♭VII IV [I]</td></tr><tr><td><i>dorian</i> Dm F G Am = i ♭III IV v [I]</td><td>↔</td><td><i>aeolian</i> Am G F Dm = i ♭VII ♭VI v [I]</td></tr><tr><td><i>aeolian</i> Am Dm E = i iv V [I]*<br><i>aeolian</i> E F G Am = V ♭VI ♭VII i*</td><td>↔</td><td><i>phrygian</i> E Dm Am = I ♭vii iv [I]*<br><i>phrygian</i> Am G F E = iv ♭III ♭II I*</td></tr><tr><td><i>ionian</i> Am G C = vi V I</td><td>↔</td><td><i>aeolian</i> C G Am = ♭III ♭VII i</td></tr></tbody></table></div><p class="tg-note">* Phrygian i is normally altered to Hijaz I, so aeolian v is altered here to V.</p></figure>
+```
+
+```{=html}
+<figure class="tg-table"><figcaption>Table 38.  <span>(Tagg p. 442)</span></figcaption><div class="tg-wrap"><table><thead><tr><th>Type</th><th>Tune (Artist, Year: chords [detail])</th></tr></thead><tbody><tr><td>Type (a) I-♭III- -IV- rock‐ dorian loop</td><td>• Tune (Artist, Year: chords [detail])<br>• AC/DC:<i>Shoot To Thrill</i>(1980: A C D …)<br>• Alice Cooper:<i>Under My Wheels</i>(1971: A C D …)<br>• Booker T and the MGs:<i>Green Onions</i>(1962: F A♭ B♭)<br>• J. J. Cale:<i>After Midnight</i>(1971: E G A E)<br>• Canned Heat:<i>On The Road Again</i>(1968: E×6 G A)<br>• Everly Brothers:<i>The Girl Sang The Blues</i>(1963: E G A E/A C D A)<br>• Led Zeppelin:<i>Bron‐yr‐Aur Stomp</i>(1970: G B♭ C)<br>• Led Zeppelin:<i>Candy Store Rock</i>(1976: E A G short riff)<br>• Mission:<i>Sacrilege</i>(1986: D×6 F G)<br>• Slade:<i>Shape Of Things To Come</i>(1970: A C D F)<br>• Talking Heads:<i>Take Me To The River</i>(1978: E E G A)<br>• Tina Turner:<i>Steamy Windows</i>(1989: E×6 A G)<br>• Johnny Winter:<i>Rock and Roll Hoochie Coo</i>(1972: E A G)<br>• Stevie Wonder:<i>Higher Ground</i>(1973; E G A)<br>• Z. Z. Top:<i>La Grange</i>(1973: E E G A)</td></tr><tr><td>(b)<br>I-III?</td><td>• Pink Floyd:<i>Nobody Home</i>(1979: C C E F C)<br>• Radiohead: Creep (1992: G B C Cm)<br>• Otis Redding:<i>Sitting On The Dock Of The Bay</i>(1967; G B C A)<br>• Will.i.am:<i>Yes We Can</i>(2008: G B Em C) (see Chapter 15)</td></tr><tr><td>Type<br>(c)<br>I-iii-IV?<br>ionian<br>mediantal<br>narrative</td><td>• Tune (Artist, Year: chords [detail])<br>• Abba:<i>Knowing Me, Knowing You</i>(1975c; A C♯m D E: interludes)<br>• The Band:<i>The Weight</i>(1968; A C♯m D A)<br>• Beach Boys:<i>I Can Hear Music</i>(1969: D F♯m G A; verse starts)<br>• David Bowie:<i>Rock And Roll Suicide</i>(1979; C Em F G Am)<br>• David Bowie:<i>Ziggy Stardust</i>(1979; G Bm C C)<br>• Dexy’s Midnight Runners:<i>Come On, Eileen</i>(1989; C Em F C G)<br>• Eric Clapton:<i>Easy Now</i>(1970b: D♭ Fm G♭ A♭)<br>• Housemartins:<i>Happy Hour</i>(1986: B♭ Dm E♭ F; hook)<br>• Manfred Mann:<i>Just Like A Woman</i>(Dylan) (1966b: G Bm C D)<br>• Marmalade:<i>Make It Soon</i>(1969: G B C D: chorus)<br>• Small Faces:<i>Itchycoo Park</i>(1967: A C♯m G D)</td></tr><tr><td>(d)<br>i-♭III-IV?<br>‘folk’<br>dorian</td><td>• Dead or Alive:<i>You Spin Me Round</i>(1993: F♯m A B)<br>• Smiths:<i>What Difference Does It Make</i>(1984; Bm D E D: intro.)<br>• Wishbone Ash:<i>The King Will Come</i>(1972; Dm F G: instrumentals)<br>• Yardbirds:<i>For Your Love</i>(1965: Em G A Am)</td></tr></tbody></table></div><details class="tg-hear"><summary>Hear the progressions (32)</summary><ul><li><button class="tg-play" data-chords="A C D …" aria-label="Play Shoot To Thrill">▶</button> <b>AC/DC</b> <i>Shoot To Thrill</i> · A C D …</li><li><button class="tg-play" data-chords="A C D …" aria-label="Play Under My Wheels">▶</button> <b>Alice Cooper</b> <i>Under My Wheels</i> · A C D …</li><li><button class="tg-play" data-chords="F A♭ B♭" aria-label="Play Green Onions">▶</button> <b>Booker T and the MGs</b> <i>Green Onions</i> · F A♭ B♭</li><li><button class="tg-play" data-chords="E G A E" aria-label="Play After Midnight">▶</button> <b>J. J. Cale</b> <i>After Midnight</i> · E G A E</li><li><button class="tg-play" data-chords="E×6 G A" aria-label="Play On The Road Again">▶</button> <b>Canned Heat</b> <i>On The Road Again</i> · E×6 G A</li><li><button class="tg-play" data-chords="E G A E/A C D A" aria-label="Play The Girl Sang The Blues">▶</button> <b>Everly Brothers</b> <i>The Girl Sang The Blues</i> · E G A E/A C D A</li><li><button class="tg-play" data-chords="G B♭ C" aria-label="Play Bron‐yr‐Aur Stomp">▶</button> <b>Led Zeppelin</b> <i>Bron‐yr‐Aur Stomp</i> · G B♭ C</li><li><button class="tg-play" data-chords="E A G short riff" aria-label="Play Candy Store Rock">▶</button> <b>Led Zeppelin</b> <i>Candy Store Rock</i> · E A G short riff</li><li><button class="tg-play" data-chords="D×6 F G" aria-label="Play Sacrilege">▶</button> <b>Mission</b> <i>Sacrilege</i> · D×6 F G</li><li><button class="tg-play" data-chords="A C D F" aria-label="Play Shape Of Things To Come">▶</button> <b>Slade</b> <i>Shape Of Things To Come</i> · A C D F</li><li><button class="tg-play" data-chords="E E G A" aria-label="Play Take Me To The River">▶</button> <b>Talking Heads</b> <i>Take Me To The River</i> · E E G A</li><li><button class="tg-play" data-chords="E×6 A G" aria-label="Play Steamy Windows">▶</button> <b>Tina Turner</b> <i>Steamy Windows</i> · E×6 A G</li><li><button class="tg-play" data-chords="E A G" aria-label="Play Rock and Roll Hoochie Coo">▶</button> <b>Johnny Winter</b> <i>Rock and Roll Hoochie Coo</i> · E A G</li><li><button class="tg-play" data-chords="E G A" aria-label="Play Higher Ground">▶</button> <b>Stevie Wonder</b> <i>Higher Ground</i> · E G A</li><li><button class="tg-play" data-chords="E E G A" aria-label="Play La Grange">▶</button> <b>Z. Z. Top</b> <i>La Grange</i> · E E G A</li><li><button class="tg-play" data-chords="C C E F C" aria-label="Play Nobody Home">▶</button> <b>Pink Floyd</b> <i>Nobody Home</i> · C C E F C</li><li><button class="tg-play" data-chords="G B C A" aria-label="Play Sitting On The Dock Of The Bay">▶</button> <b>Otis Redding</b> <i>Sitting On The Dock Of The Bay</i> · G B C A</li><li><button class="tg-play" data-chords="G B Em C" aria-label="Play Yes We Can">▶</button> <b>Will.i.am</b> <i>Yes We Can</i> · G B Em C</li><li><button class="tg-play" data-chords="A C♯m D E" aria-label="Play Knowing Me, Knowing You">▶</button> <b>Abba</b> <i>Knowing Me, Knowing You</i> · A C♯m D E</li><li><button class="tg-play" data-chords="A C♯m D A" aria-label="Play The Weight">▶</button> <b>The Band</b> <i>The Weight</i> · A C♯m D A</li><li><button class="tg-play" data-chords="D F♯m G A" aria-label="Play I Can Hear Music">▶</button> <b>Beach Boys</b> <i>I Can Hear Music</i> · D F♯m G A</li><li><button class="tg-play" data-chords="C Em F G Am" aria-label="Play Rock And Roll Suicide">▶</button> <b>David Bowie</b> <i>Rock And Roll Suicide</i> · C Em F G Am</li><li><button class="tg-play" data-chords="G Bm C C" aria-label="Play Ziggy Stardust">▶</button> <b>David Bowie</b> <i>Ziggy Stardust</i> · G Bm C C</li><li><button class="tg-play" data-chords="C Em F C G" aria-label="Play Come On, Eileen">▶</button> <b>Dexy’s Midnight Runners</b> <i>Come On, Eileen</i> · C Em F C G</li><li><button class="tg-play" data-chords="D♭ Fm G♭ A♭" aria-label="Play Easy Now">▶</button> <b>Eric Clapton</b> <i>Easy Now</i> · D♭ Fm G♭ A♭</li><li><button class="tg-play" data-chords="B♭ Dm E♭ F" aria-label="Play Happy Hour">▶</button> <b>Housemartins</b> <i>Happy Hour</i> · B♭ Dm E♭ F</li><li><button class="tg-play" data-chords="G B C D" aria-label="Play Make It Soon">▶</button> <b>Marmalade</b> <i>Make It Soon</i> · G B C D</li><li><button class="tg-play" data-chords="A C♯m G D" aria-label="Play Itchycoo Park">▶</button> <b>Small Faces</b> <i>Itchycoo Park</i> · A C♯m G D</li><li><button class="tg-play" data-chords="F♯m A B" aria-label="Play You Spin Me Round">▶</button> <b>Dead or Alive</b> <i>You Spin Me Round</i> · F♯m A B</li><li><button class="tg-play" data-chords="Bm D E D" aria-label="Play What Difference Does It Make">▶</button> <b>Smiths</b> <i>What Difference Does It Make</i> · Bm D E D</li><li><button class="tg-play" data-chords="Dm F G" aria-label="Play The King Will Come">▶</button> <b>Wishbone Ash</b> <i>The King Will Come</i> · Dm F G</li><li><button class="tg-play" data-chords="Em G A Am" aria-label="Play For Your Love">▶</button> <b>Yardbirds</b> <i>For Your Love</i> · Em G A Am</li></ul></details></figure>
+```
+
+## Chapter 15: The Yes We Can chords (pp. 451–478)
+
+This chapter applies everything so far to one real case: the 2008 Obama campaign video *Yes We Can*. Its music is a four-chord loop, G–B–Em–C (I–III–vi–IV), one chord per bar at 100 beats a minute (p. 452). Tagg asks what the chords mean and where they come from. His tool is IOCM, "interobjective comparison material", meaning other music that sounds like the piece you are studying (glossary).
+
+He looks at many songs and rejects most of them. Some matched the chords but had a different speed, sound or what came next. He keeps a few: *A World Without Love*, *Creep* (Radiohead), *Let It Be*, *No Woman No Cry*, *All Together Now* and *Grita* (pp. 477–478). Tagg argues that several things combine. The easy first-position guitar chords sound folk-like and open to everyone, like songs by Woody Guthrie and Bob Dylan (pp. 456–458). The jump from I to III suggests "going somewhere else" (p. 469). The I–x–vi–IV pattern in other songs goes with words about moving from hardship to hope (Table 40, p. 474). The lesson: one chord sequence tells you little on its own. Meaning comes from the chords, speed, instruments and words together (p. 478).
+
+
+### Key ideas
+- The loop is G–B–Em–C. Each chord gets one bar, and every chord is played with a simple strum on an acoustic guitar (pp. 452, 477).
+- Other songs may share the chords but still not sound like it, because of tempo, instruments or continuation (pp. 460–466).
+- The first chord, an open G on acoustic guitar, is the same sound that starts several Dylan and Guthrie songs (pp. 456–457).
+- The move from I to III has a "going somewhere else" feeling (p. 469).
+- The closing move from C to G (IV to I) is plagal, a gospel-like "Amen" move (pp. 455–456).
+- Songs with the I–x–vi–IV pattern often put trouble and hope side by side in the lyrics (pp. 473–474).
+- Harmony is only one part of meaning: tempo, instruments, voice and words count too (p. 478).
+
+
+### Example pieces
+- *Sitting On The Dock Of The Bay* (Otis Redding, 1968), same I–III start but works like a double shuttle (pp. 462–463)
+- *Creep* (Radiohead, 1992), I–III–IV–iv loop (pp. 467–468)
+- *Let It Be* (Beatles, 1970) and *No Woman No Cry* (Bob Marley, 1974), I–V–vi–IV (p. 472)
+- *Grita* (Jarabe de Palo, 1996), the Spanish-language song closest to the original (p. 459)
+
+
+### Try this
+Play G, B, Em, C on guitar or keyboard, one chord per bar, slowly. Then play G, D, Em, C. Write two words for how each feels, then listen to *Let It Be* and compare.
+
+## Words from these chapters
+
+**anacrusis**: A short lead-in or pickup that pushes the music into the next chord. It helps show which chord is home. (Tagg pp. 429, 448)
+
+**bimodal**: Music that can be heard in two modes, so that two chords can each sound like the tonic. (Tagg pp. 436, 449–450)
+
+**IOCM (interobjective comparison material)**: Other music that sounds like or is built like the piece you are studying. It helps you work out what the piece means. (Tagg p. 452)
+
+**milksap**: Tagg's word for the bland teen pop of about 1957 to 1963, built on the I–vi–IV–V vamp. (Tagg pp. 407, 411)
+
+**turnaround**: A short chord sequence at the end of a section that leads back to the start. Some turnarounds can also be used as loops. (Tagg pp. 402, 411)
+
+**vamp**: A chord sequence of the type I–vi–ii–V (or I–vi–IV–V), with the roots falling by fifths. It comes from jazz standards and musicals. (Tagg pp. 404, 419)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Tagg, Philip. *Everyday Tonality II: Towards a Tonal Theory of What Most People Hear*. The Mass Media Music Scholars' Press, 2014. E-book version 2.5.2. The pieces in its index, with pages, are in the Tune Directory.
+:::
+<!-- /works-cited -->
+
+{{< include _tagg-kit.qmd >}}

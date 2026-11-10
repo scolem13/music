@@ -69,7 +69,7 @@
         const w = W[id], li = el("li", "td-row"); if (printOnly(w)) { li.id = id; li.classList.add("td-work"); }
         li.appendChild(el("span", null, w.title));
         const yr = Works.year(w); if (yr) li.appendChild(el("span", "td-sub", yr));
-        (w.in.print || []).forEach((x) => { const b = el("span", "td-badge", ((PB[x.book] || {}).short || x.book).split(",")[0] + " " + x.fig + (x.whole ? " ★" : ""));
+        (w.in.print || []).forEach((x) => { const b = el("span", "td-badge", ((PB[x.book] || {}).short || x.book).split(",")[0] + ((PB[x.book] || {}).ref === "page" ? " p. " : " ") + x.fig + (x.whole ? " ★" : ""));
           b.title = Works.printLabel(x); li.appendChild(b); });
         (w.in.theme || []).forEach((t) => { const a = el("a", "td-sub", "theme " + String(t).replace(/^0+/, "")); a.href = Works.href("theme", t); li.appendChild(a); });
         if (!printOnly(w)) { const a = el("a", "td-sub", "recordings & resources ↑"); a.href = "#" + encodeURIComponent(id); li.appendChild(a); }

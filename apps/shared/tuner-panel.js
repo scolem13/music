@@ -11,7 +11,7 @@
 // Settings are kept in localStorage "tunerPanel.v1".
 (function (global) {
   var PD = global.PitchDetect, SV = global.StrobeView, TAP = global.AudioTap, KEY = "tunerPanel.v1";
-  var S = { note: "A", oct: "4", a4: 440, sys: "12et", tonic: "C", cents: 350, source: "mic", bands: 6 };
+  var S = { note: "A", oct: "4", a4: 440, sys: "12et", tonic: "C", cents: 350, source: "mic", bands: 6, view: "bar" };
   try { var sv = JSON.parse(localStorage.getItem(KEY) || "null"); if (sv) Object.keys(sv).forEach(function (k) { if (k in S) S[k] = sv[k]; }); } catch (e) {}
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
@@ -26,19 +26,22 @@
       '<div class="pw-row"><select id="pw-t-note" aria-label="Note"></select><select id="pw-t-oct" aria-label="Octave"></select><input type="number" id="pw-t-a4" min="415" max="466" step="1" aria-label="A4 in Hz"><span class="pw-note" style="margin:0">Hz A4</span></div>' +
       '<span class="pw-lab">Tuning system</span>' +
       '<div class="pw-row"><select id="pw-t-sys" aria-label="Tuning system"></select><select id="pw-t-tonic" aria-label="Tonic for just intonation"></select><input type="number" id="pw-t-cents" min="-100" max="700" step="1" aria-label="Cents above the note"></div>' +
+      '<span class="pw-lab">Display</span>' +
+      '<div class="pw-row"><select id="pw-t-view" aria-label="How the tuner is drawn" style="flex:1;min-width:0;max-width:100%"></select></div>' +
       '<span class="pw-lab">Listen to</span>' +
       '<div class="pw-row"><select id="pw-t-src" aria-label="Audio source" style="flex:1;min-width:0;max-width:100%"></select></div>' +
       '<div class="pw-row" style="margin-top:.35rem"><select id="pw-t-which" aria-label="Which one" style="flex:1;min-width:0;max-width:100%" hidden></select></div>' +
       '<p class="pw-note" id="pw-t-why"></p>' +
       '<p class="pw-note" id="pw-t-info" role="status"></p>' +
       '<div class="pw-row" style="align-items:baseline"><b id="pw-t-name" style="font-size:1.5rem;min-width:3.5ch">—</b><span id="pw-t-cents-read" class="pw-note" style="margin:0"></span><span id="pw-t-hz" class="pw-note" style="margin:0"></span></div>' +
-      '<canvas id="pw-t-cv" style="width:100%;height:200px;display:block;margin-top:.4rem" role="img" aria-label="Strobe bands, one row for every partial. A row that stands still is exactly in tune; stripes moving right mean sharp, left flat."></canvas>' +
-      '<div class="pw-row" style="margin-top:.4rem"><label class="pw-note" style="margin:0" for="pw-t-bands">Bands</label><select id="pw-t-bands" aria-label="Number of bands"></select></div>' +
-      '<p class="pw-note">Each row listens for one partial of the note (row k at k times the target). A row that stands still is on pitch; stripes drifting right are sharp, left are flat. Rows fade where that partial is weak.</p>';
+      '<canvas id="pw-t-cv" style="width:100%;height:52px;display:block;margin-top:.4rem" role="img"></canvas>' +
+      '<div class="pw-row" id="pw-t-bandsrow" style="margin-top:.4rem"><label class="pw-note" style="margin:0" for="pw-t-bands">Bands</label><select id="pw-t-bands" aria-label="Number of bands"></select></div>' +
+      '<p class="pw-note" id="pw-t-how"></p>';
     function $(id) { return root.querySelector("#pw-t-" + id); }
     opts($("note"), SV.NOTES, S.note); opts($("oct"), [1, 2, 3, 4, 5, 6].map(function (o) { return [String(o), "Octave " + o]; }), String(S.oct));
     opts($("sys"), [["12et", "12-ET (the piano)"], ["ji", "Just, over a tonic"], ["31et", "31-ET"], ["cents", "Cents above the note"]], S.sys);
     opts($("tonic"), SV.NOTES, S.tonic); opts($("bands"), [1, 2, 3, 4, 5, 6, 7, 8].map(function (n) { return [String(n), String(n)]; }), String(S.bands));
+    opts($("view"), SV.MODES.map(function (m) { return [m[0], m[1]]; }), S.view);
     $("a4").value = S.a4; $("cents").value = S.cents; $("cents").title = "350 is the neutral third above the note";
 
     // ---- the sources ----
@@ -77,6 +80,15 @@
       if (bad.length) why.textContent += "  Greyed out: " + bad.join("  ");
     }
 
+    // ---- the display ----
+    var STROBE_HOW = "Each row listens for one partial of the note (row k at k times the target). A row that stands still is on pitch; stripes drifting right are sharp, left are flat. Rows fade where that partial is weak.";
+    function lookup() {
+      var v = $("view").value || S.view, m = SV.MODES.filter(function (x) { return x[0] === v; })[0] || SV.MODES[0], cv = $("cv");
+      S.view = m[0]; cv.style.height = (SV.HEIGHTS[m[0]] || 200) + "px"; $("bandsrow").hidden = m[0] !== "strobe";
+      cv.setAttribute("aria-label", m[1] + ". " + m[2]); $("how").textContent = m[0] === "strobe" ? STROBE_HOW : m[2] + " The cents are measured from the target above.";
+    }
+    $("view").addEventListener("change", function () { S.view = $("view").value; save(); lookup(); if (view) view.redraw(); });
+
     // ---- the target ----
     function retarget() {
       S.note = $("note").value; S.oct = $("oct").value; S.a4 = Math.max(415, Math.min(466, +$("a4").value || 440)); S.sys = $("sys").value; S.tonic = $("tonic").value;
@@ -85,6 +97,7 @@
       fref = d.fref; $("info").textContent = error || d.text;
       $("tonic").hidden = S.sys !== "ji"; $("cents").hidden = S.sys !== "cents";
       if (bank) { bank.n = S.bands; bank.setRef(fref); }
+      lookup();
       if (mic && mic.setA4) mic.setA4(S.a4);
       if (view) view.redraw();
     }
@@ -141,7 +154,7 @@
     function stop() { if (!running && !mic) return; running = false; release(); $("name").textContent = "—"; $("cents-read").textContent = ""; $("hz").textContent = ""; ui(); retarget(); }
     $("go").addEventListener("click", function () { running ? stop() : go(); });
 
-    view = SV.mount($("cv"), function () { return { bands: bank ? bank.read() : [], N: S.bands, fref: fref, running: running, idle: "Press Start to see the bands move" }; });
+    view = SV.mount($("cv"), function () { return { mode: S.view, bands: bank ? bank.read() : [], N: S.bands, fref: fref, a4: S.a4, hz: last && last.hz > 0 ? last.hz : 0, running: running, idle: "Press Start to tune" }; });
     if (TAP) TAP.onChange(function () { if (!running) sources(); else which(); });
     sources(); retarget();
     inst = {

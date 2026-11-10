@@ -31,7 +31,7 @@
   // ---- rows ----
   const rows = [];
   const PB = window.PRINT_BOOKS || {};
-  const printOf = (w) => ((w && w.in && w.in.print) || []).map((x) => ((PB[x.book] || {}).short || x.book).split(",")[0] + " " + x.fig).join(", ");
+  const printOf = (w) => ((w && w.in && w.in.print) || []).map((x) => ((PB[x.book] || {}).short || x.book).split(",")[0] + ((PB[x.book] || {}).ref === "page" ? " p. " : " ") + x.fig).join(", ");
   const yearOf = (o) => (o && (o.composed || o.published)) || "";
   function worksRecs(kind, id) {
     const w = Wk && Wk.of(kind, id); if (!w) return [];

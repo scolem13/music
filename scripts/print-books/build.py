@@ -21,7 +21,10 @@ from printlib import fold, keys_of, same_piece, movements
 ROOT = os.path.abspath(os.path.join(here, "../.."))
 WD = os.path.join(ROOT, "apps/shared/works/works-data.js")
 BOOKS = {"cutler": {"title": "Anthology of Music for Analysis", "author": "Timothy Cutler", "short": "Cutler, Anthology",
-                    "figure": "chapter–figure number, as in the book"}}
+                    "figure": "chapter–figure number, as in the book"},
+         "tagg": {"title": "Everyday Tonality II", "author": "Philip Tagg", "short": "Tagg, Everyday Tonality", "ref": "page",
+                  "figure": "page of the book (★ = a music example of the piece on that page)"}}
+PAGE_BOOKS = {"tagg"}        # referenced by page, not figure: <book>/<book>-index.json is {works: [{title, artist, year, refs}]}
 # themes whose MTD titles put them in the wrong movement (BWV 1001: Fugue, Siciliana and Presto are all "1st Movement")
 NOT_SAME = {("27-2", "0267"), ("27-2", "0268"), ("27-2", "0269")}
 
@@ -74,7 +77,29 @@ def hand_match(cw, themes):
     return None
 
 blocks, figmaps, report = {}, {}, []
+title_owner = {}
+for wid, w in W.items(): title_owner.setdefault(fold(w.get("title") or ""), wid)
+
+def page_book(book):
+    """A book referenced by page (Tagg): one entry per piece, merged into a hand-written work with the same title."""
+    src = json.load(open(os.path.join(here, book, book + "-index.json"), encoding="utf-8"))
+    for tw in src["works"]:
+        if not tw["refs"]: continue
+        wid = title_owner.get(fold(tw["title"]))
+        if not wid:
+            wid = slug(((tw["artist"] or "").split(" ")[-1] + " " if tw["artist"] else "") + tw["title"]) or slug(tw["title"])
+            base = wid
+            while wid in W or (wid in blocks and blocks[wid].get("title") != tw["title"]): wid = base + "-" + book
+        e = blocks.setdefault(wid, {"title": tw["title"], "composer": tw["artist"] or "", "in": {}})
+        if wid in W: e = blocks[wid] = {"in": e.get("in", {})}
+        e["in"].setdefault("print", []).extend({"book": book, "fig": r["fig"], **({"whole": True} if r.get("ex") else {}),
+            **({"concept": r["concept"]} if r.get("concept") else {}), **({"chords": r["chords"]} if r.get("chords") else {})} for r in tw["refs"])
+        if tw.get("year") and not ("composed" in W.get(wid, {}) or "published" in W.get(wid, {}) or "published" in e):
+            e["published"] = tw["year"]; e["yearFrom"] = book + (":checked" if tw.get("checked") else "")
+        report.append((tw["refs"][0]["fig"], wid in W, wid, [], tw.get("year")))
+
 for book in BOOKS:
+    if book in PAGE_BOOKS: page_book(book); continue
     mp = os.path.join(here, book, "measures.json")                          # measures printed in each caption (cutler/measures.py)
     measures = json.load(open(mp, encoding="utf-8")) if os.path.exists(mp) else {}
     src = json.load(open(os.path.join(here, book, book + "-index.json"), encoding="utf-8"))

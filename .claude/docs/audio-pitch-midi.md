@@ -5,7 +5,7 @@
   synth-kit kinds (documented at the top of `synth-kit.js`); `LessonDiagrams.bendboard` is in `diagrams.js`. A page with its own fixed
   bottom bar sets `window.SK_NO_BAR = true` before `_synth-kit.qmd` (guitar-bends does). Tests: `node tests/lessons/tuner.test.js`
   (no browser), `node tests/lessons/tuner.cdp.js` (after rendering `lessons/tuning-systems`, `lessons/guitar-bends`, `practice/assessment-tune`).
-  The strobe drawing and target text are `apps/shared/strobe-view.js` (shared by the `tuner` widget and the navbar panel). The **navbar Strobe tuner**
+  The strobe drawing and target text are `apps/shared/strobe-view.js` (shared by the `tuner` widget and the navbar panel). It has six displays (`StrobeView.MODES`: cents bar = the navbar default, one strobe strip, pitch trace, flat/in-tune/sharp lamps, pitch-class wheel, full strobe = the lesson widget's default; `st.mode`, picked by the "Display" menu, kept in `tunerPanel.v1`); all but the full strobe read the fundamental's cents (`fundCents`, smoothed by `tracker()`). Test `node tests/lessons/strobe-view.test.js` (`NEG=1` must fail). The **navbar Strobe tuner**
   (`apps/shared/tuner-panel.js`, loaded on first open by `practice-widgets.js`) listens to the microphone, to **this page's sound**, to a page
   video/audio, or to another tab (`getDisplayMedia`, Chrome). Sound sources hand their master to `window.AudioTap.register(ctx, node, label)`
   (`apps/shared/audio-tap.js`, in the head of every page; drone, synth-kit, `audio.js`, the band do); the tuner analyses inside the source's own AudioContext, so

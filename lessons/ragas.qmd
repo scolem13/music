@@ -1,0 +1,115 @@
+---
+title: "Ragas: Why a Raga Is Not a Scale"
+toc: true
+toc-depth: 2
+description: "A scale is a set of notes. A raga is a set of notes plus an ascent and a descent that differ, two notes that matter most, characteristic phrases, ornaments, a drone to be heard against, and an hour of the day. Hear six ragas against the same notes played as a plain scale, in just intonation and on the piano at once."
+instruments: [voice, guitar, piano, violin, sax, other]
+topics: [sound, harmony]
+has: [interactive, notation]
+---
+
+A music student is usually taught that a piece "is in" a scale: C major, A minor, the blues scale. A scale is a list of
+notes in order. Hindustani (North Indian) classical music has the word **raga**, and it is often translated "scale", but
+that is not what it is. Two ragas can have exactly the same seven notes and be as different as a lullaby and a march. This
+lesson shows what a raga carries that a scale does not, and lets you hear the difference.
+
+**How to use the page.** Each widget has buttons that play. The bar at the bottom of the window sets the volume (start low).
+Press *Ascent, then descent* to hear the raga; then press *As a plain scale* to hear the same notes with everything
+that makes it a raga taken away.
+
+*Unverified.* The raga descriptions below (notes, ascent and descent, vadi and samvadi, times of day) and the
+Sanskrit and Hindi terms are written from general knowledge and have not been checked against a source such as Bhatkhande's
+treatises or a teacher. The tuning is a modern reading of the traditional 22 notes (*shruti*) in simple ratios. Performers'
+intonation depends on the raga, the singer and the tradition. Treat it as a model, and check it with a teacher who plays it.
+
+## A scale is a list; a raga is a way of moving
+
+Here is what a scale gives you: a set of pitches, an order, and the same order up and down. A raga gives all that, and more:
+
+| | Scale | Raga |
+|---|---|---|
+| Notes | A set | A set, **but not all used equally** |
+| Order | The same up and down | The **ascent (*aroha*)** and **descent (*avaroha*)** can differ: notes skipped going up, or two versions of a note |
+| Which notes matter | None in particular (the tonic, perhaps) | The **vadi** (the "king": the most important note) and **samvadi** (the "minister": the second, usually a fourth or fifth from it) |
+| Phrases | None | **Characteristic phrases** (*pakad*) that identify it, and rules about where to start and rest |
+| Ornament | Optional | Part of the note: a slide (***meend***), a slow oscillation (***andolan***), a grace note (***kan***); together, ***gamaka*** |
+| Accompaniment | Chords, perhaps | A **drone**, usually Sa and Pa, against which every note is heard |
+| Time and mood | None | A time of day and a mood (*rasa*) |
+| Tuning | Fixed by the instrument (the piano's) | Heard against the drone, in simple ratios; a note can have a slightly different pitch in a different raga |
+
+The student writing a scale on paper has no place to write most of these. A raga is passed on by singing it.
+
+## Hearing the notes of a raga
+
+The grid at the top of each widget shows the twelve possible notes: **S r R g G M M♯ P d D n N**. Capital letters are
+*shuddha* (natural), lowercase *komal* (flat), and M♯ is *tivra* Ma (sharp). A filled box is used going up and down; a box
+with ▲ only going up, ▼ only coming down; a ring marks the vadi, a dashed ring the samvadi.
+
+The first note is **Sa**, which is wherever the performer says it is, as the tonic is on any instrument. Press *Drone* to
+hear Sa and Pa sustained underneath; the notes of the raga are heard against it. Choose another Sa with the second menu.
+
+First, **Yaman**. Its notes are the major scale with a raised fourth (a Lydian scale, to a Western ear). But it begins its
+ascent from the low Ni and does not rest on Sa, and the notes it dwells on are Ga and Ni:
+
+<div class="sk" data-w="raga" data-title="Raga Yaman" data-set="raga=yaman"></div>
+
+**Bhairav**: komal re and komal dha, with both given a slow, wide oscillation. The notes on the piano are a "double harmonic"
+scale; the raga is not that scale. Press *A slide and a wobble* to hear the vadi and samvadi stepped, then joined by a slide, then
+swinging:
+
+<div class="sk" data-w="raga" data-title="Raga Bhairav" data-set="raga=bhairav"></div>
+
+**Khamaj** is the clearest case where ascent and descent differ: leaving out Re going up, adding it coming down; and
+using shuddha Ni going up but komal ni coming down:
+
+<div class="sk" data-w="raga" data-title="Raga Khamaj" data-set="raga=khamaj"></div>
+
+## The same notes, different ragas
+
+Ragas with five notes show the point most cleanly. **Bhupali** and **Malkauns** each have five notes and each has the
+same notes up and down. They are not the same raga as any other five-note scale you know (Bhupali is the major pentatonic, C D E G A; Malkauns, C E♭ F A♭ B♭, is a different mode of a major pentatonic, the one that starts on its third degree), and they sound different from each
+other because the music dwells on different notes (the vadi) and approaches them differently:
+
+<div class="sk" data-w="raga" data-title="Raga Bhupali" data-set="raga=bhupali"></div>
+
+<div class="sk" data-w="raga" data-title="Raga Malkauns" data-set="raga=malkauns"></div>
+
+And **Todi**, with its komal re, ga and dha and tivra Ma, is one of the most "bent" ragas in the repertoire:
+
+<div class="sk" data-w="raga" data-title="Raga Todi" data-set="raga=todi"></div>
+
+## Raga and thaat
+
+In the twentieth century V. N. Bhatkhande sorted ragas into ten parent scales, ***thaats***, each a seven-note scale
+(Bilawal, Kalyan, Khamaj, Bhairav, Poorvi, Marwa, Kafi, Asavari, Bhairavi and Todi). Yaman belongs to Kalyan, Bhairav
+to Bhairav, Khamaj to Khamaj, Todi to Todi. A thaat is a scale, a filing system for ragas, and not a raga: many ragas
+share one thaat, and some ragas (Bhupali and Malkauns, with five notes) fit into a thaat only by convention.
+In Carnatic (South Indian) music the parent scales are the 72 ***melakartas***. *Unverified* (from memory).
+
+## The tuning: pure ratios against a drone
+
+The widgets tune the twelve swaras in simple ratios from Sa: re 16:15, Re 9:8, ga 6:5, Ga 5:4, Ma 4:3, M♯ 45:32,
+Pa 3:2, dha 8:5, Dha 5:3, ni 16:9, Ni 15/8. On the piano the thirds, sixths and sevenths are 14 to 16 cents away
+from these. Press *Raga in just tuning and on the piano, together*: the slow beating on Ga, Ni and the komal notes is that difference, and
+it is a good reason that a fixed-pitch instrument is a poor way to play a raga.
+
+The tradition has 22 pitches to the octave (*shrutis*), which does not mean twenty-two equal steps: the number
+is how many distinguishable positions the notes have, and which ones a raga uses depends on it. The exact ratios, and even whether a given
+shruti is 9:8 or 10:9, are argued in the literature. The page uses one common reading. See also the lessons on
+[tuning systems](tuning-systems.qmd).
+
+## Things to try
+
+1. Play Yaman's *As a plain scale* button. What is missing from it compared to the raga?
+2. In Khamaj, find the two Nis in the grid. Which is used going up, which coming down?
+3. Change Sa to F♯. The notes change; what stays the same?
+4. Press *Both together* in Bhairav. Which notes beat fastest? Which note does not beat at all?
+5. Bhupali's vadi is Ga and Malkauns' is Ma. Hold each of those notes in turn and play the other four around it: how does the music's centre of gravity change, although both have five notes?
+
+## Next
+
+[Tuning systems](tuning-systems.qmd) covers equal temperament and just intonation; [unevenly spaced frets](uneven-frets.qmd)
+shows how a guitar neck can be built for a tuning other than the piano's.
+
+{{< include _synth-kit.qmd >}}
+<script src="/apps/shared/lessons/tuning-kit.js"></script>

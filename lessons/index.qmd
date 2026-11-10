@@ -23,6 +23,13 @@ listing:
     - blues-tonality-microtonal.qmd
     - blues-tonality-harmony.qmd
     - blues-tonality-beyond.qmd
+    - tagg-sound.qmd
+    - tagg-modes.qmd
+    - tagg-melody.qmd
+    - tagg-harmony.qmd
+    - tagg-shuttles.qmd
+    - tagg-loops.qmd
+    - tagg-glossary.qmd
     - hihat-grooves.qmd
     - congas-basics.qmd
     - watermelon-congas.qmd
@@ -137,6 +144,8 @@ listing:
     - annotate-check.qmd
     - annotate-dp.qmd
     - tuning-systems.qmd
+    - ragas.qmd
+    - uneven-frets.qmd
     - strobe-tuner.qmd
     - inharmonicity.qmd
     - sound-harmonics.qmd

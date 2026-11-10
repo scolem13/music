@@ -200,7 +200,7 @@ Equal temperament is one answer to the comma problem, and not the only one used.
 
 ## Beyond twelve notes
 
-Not all music divides the octave into twelve.
+Not all music divides the octave into twelve. (Indian ragas, which are not scales at all, have [a lesson of their own](ragas.qmd).)
 
 - **Arabic maqam.** Many maqamat use the "neutral" second and third, about halfway between a
   minor and a major one (roughly 150 and 350 cents), notated with a half-flat sign. This is often
@@ -217,6 +217,120 @@ Not all music divides the octave into twelve.
   together. Paired instruments are often tuned slightly apart on purpose to give a shimmering
   beat, the *ombak* ("wave"), the same beating you heard above, used as a colour rather than
   avoided.
+
+## 24 notes: the quarter-tone scale
+
+The easiest step beyond twelve is **24-tone equal temperament** (24-TET): every half step is split in
+two, so each step is **50 cents**. Every second note is a piano key; the notes in between are exactly
+halfway. They are written with a **half-sharp** (¼♯, a sharp with one stroke) or **half-flat** (¼♭, a flat
+turned backwards). Below is the whole "chromatic" scale, with each note's distance from the piano key it is
+read against. Click any note, or press *Both together* to hear every note with the piano's key at the same
+moment: the quarter tones sit between two keys, so they clash with both, while the notes the two
+share are steady.
+
+<div class="sk" data-w="scale" data-title="24-TET: the quarter-tone scale" data-set="tun=et24"></div>
+
+## Chinese pentatonic tunings against the piano
+
+Traditional Chinese theory builds its notes from a chain of **pure fifths** (3:2), the *sanfen sunyi* ("subtract
+or add a third") method: take a string length, shorten it by a third (giving the fifth above), or lengthen it by
+a third (the fourth below), and repeat. Fold the results into one octave and five of them are the pentatonic
+scale **gong, shang, jue, zhi, yu** (宮 商 角 徵 羽); two more give the seven-note scale; eleven fifths give the
+twelve *lü* (律). This is the same chain as Pythagorean tuning in the lesson on commas, so the notes
+are the Pythagorean ones. The number above each note is how far it sits from the piano key it is read against. The piano's fifth is about 2 cents narrower than 3:2, so every step further round the chain is about 2 cents further from the piano: zhi +2, shang +4, yu +6, jue +8.
+The piano's third and sixth do not come from the pure fifths at all; they are the equal-tempered ones.
+Compare the second tuning, a pentatonic in **pure ratios** (5:4 and 5:3 for the third and sixth), which is how the
+harmonic series would tune it.
+
+Press **Both together** and listen: gong is the same on both so it is steady; shang, zhi and yu are a few cents
+from the piano and wobble slowly; jue (81:64) is nearly 8 cents wide of the piano's E and wobbles faster. Choose
+*Start on* to hear the other four modes of the scale (shang mode starts on shang, and so on). The twelve lü (last
+choice) show the cost of a chain of pure fifths: they never close.
+
+<div class="sk" data-w="scale" data-title="Chinese pentatonic, sanfen sunyi, against the piano" data-set="tun=sanfen5"></div>
+
+<div class="sk" data-w="scale" data-title="Pentatonic in pure ratios, against the piano" data-set="tun=pure5"></div>
+
+<div class="sk" data-w="scale" data-title="The twelve lü, against the piano" data-set="tun=lu12"></div>
+
+*Unverified:* the Chinese note names, which tuning belongs to which period, and the lü names are written from memory and
+have not been checked against a source. The ratios and cents are arithmetic and can be trusted. A real
+instrument (a *guqin*, a *zheng*, a flute) is tuned by ear and by mode, and its players bend and slide notes, so
+these are the theory, not a recording of any one tradition.
+
+## 19, 31 and 53 notes, maqam and gamelan
+
+The same widget writes other divisions of the octave. The figure above each note is its distance from the piano key
+it is read against, so in 19, 31 and 53 notes (spelled to the nearest quarter tone) some figures are large; the point is
+how different the notes are from the piano's, and which of them are near-pure.
+
+- **19-TET** (63.2-cent steps): a minor third almost exactly 6:5, but a narrow fifth.
+- **31-TET** (38.7-cent steps): near-pure major thirds and a good fifth, and the harmonic seventh is close.
+- **53-TET** (22.6-cent steps): fifths and thirds within a cent or two of pure.
+
+<div class="sk" data-w="scale" data-title="19 notes to the octave" data-set="tun=et19"></div>
+
+<div class="sk" data-w="scale" data-title="31 notes to the octave" data-set="tun=et31"></div>
+
+<div class="sk" data-w="scale" data-title="53 notes to the octave" data-set="tun=et53"></div>
+
+**Arabic maqam.** A maqam is more than a scale (it has characteristic phrases and a way of moving, like the raga in the
+[lesson on ragas](ragas.qmd)), but it does use intervals the piano lacks: the "neutral" second and third, about
+halfway between a minor and a major one. They are often written with a half-flat sign and approximated as quarter tones.
+Here are two maqamat in that 24-TET approximation, and *hijaz*, with its augmented second.
+Real performers set the neutral intervals by ear and by region, so these are approximations. *Unverified* (written from memory).
+
+<div class="sk" data-w="scale" data-title="Maqam Rast (24-TET approximation)" data-set="tun=rast"></div>
+
+<div class="sk" data-w="scale" data-title="Maqam Bayati (24-TET approximation)" data-set="tun=bayati"></div>
+
+<div class="sk" data-w="scale" data-title="Maqam Hijaz" data-set="tun=hijaz"></div>
+
+**Gamelan.** Slendro divides the octave into five near-equal steps; pelog has seven unequal ones. Every ensemble is
+tuned to itself. The slendro here is the idealised equal version and the pelog is an illustration, not a measured
+gamelan (*unverified*). Press *Both together* to hear what a tuning that is not the piano's does against it.
+
+<div class="sk" data-w="scale" data-title="Gamelan slendro" data-set="tun=slendro"></div>
+
+<div class="sk" data-w="scale" data-title="Gamelan pelog (an illustration)" data-set="tun=pelog"></div>
+
+## Playing other tunings: grids, strips and fretboards
+
+A piano keyboard is a poor fit for 24 notes (a quarter-tone keyboard has to be wide, or doubled). The
+alternatives are **isomorphic** layouts, where the same interval is the same shape wherever it is played.
+Pick a layout, then change *notes per octave* to see how each tuning lays out on the same surface. Pressing a pad
+sounds it and writes it on the staff below (quarter-tone accidentals, with cents where the pitch is between written ones).
+
+- **LinnStrument-style pads**: a rectangular grid, rows a fourth apart, so a chord has one shape in every key.
+- **Janko**: rows that are whole-tone scales, each a semitone above the last; a hand can play wide chords. The
+  *quarter-tone* version offsets each row by a quarter tone.
+- **Wicki–Hayden** and **harmonic table**: hexagonal layouts built on the fifth and the major third.
+- **Chromatic strip**: one row per octave.
+- **Your own**: choose how many steps one cell and one row move. In 19 or 31 notes per octave, try the harmonic table.
+
+*Unverified:* the layouts' origins and the LinnStrument default row interval are from memory.
+
+<div class="sk" data-w="pitchgrid" data-title="Pitch entry: isomorphic pads" data-set="layout=linn,edo=24"></div>
+
+<div class="sk" data-w="pitchgrid" data-title="Pitch entry: Janko, in quarter tones" data-set="layout=jankoq,edo=24"></div>
+
+On a guitar the frets are the layout. A **microtonal fretboard** has a fret for each step: here, 24 to the octave,
+twice as many as usual, with the extra (dashed) frets between the usual ones. Switch to 19 or 31 to see them close in.
+
+<div class="sk" data-w="microfret" data-title="A fretboard with 24 frets to the octave" data-set="edo=24"></div>
+
+Fretboards are not always evenly spaced either: see the lesson on [unevenly spaced frets](uneven-frets.qmd).
+
+**Keyboards with split keys.** A keyboard can also be cut into pieces, each its own pitch. Instruments with *split*
+(enharmonic) keys are real: Renaissance and Baroque harpsichords and organs had black keys cut across so that D♯ and
+E♭, or G♯ and A♭, were different notes, and larger instruments (Vicentino's 1555 *archicembalo*, with 36 keys to the octave,
+and Fokker's 31-note organ) went much further. Some also split white keys (an organ of the late 1400s had two E keys).
+The model below has three layouts. The first is an ordinary keyboard; the second is the historical split sharps; the third,
+white keys cut in two and black keys in three (7 × 2 + 5 × 3 = 29 pieces, which happens to fit 29 equal steps exactly), is **a
+model built for this page**, not a documented instrument. *Unverified:* which half of a split key played which note.
+(Source for the history: [Wikipedia, "Enharmonic keyboard"](https://en.wikipedia.org/wiki/Enharmonic_keyboard), read 2026-11-10; the lesson has not been checked against the primary sources it cites.)
+
+<div class="sk" data-w="splitkeys" data-title="A keyboard with split keys" data-set="kb=split29"></div>
 
 ## Seeing it: a strobe tuner, pure intervals, and why pianos are stretched
 
@@ -328,3 +442,4 @@ Sethares, William A. *Tuning, Timbre, Spectrum, Scale*. 2nd ed., Springer, 2005.
 <!-- /works-cited -->
 
 {{< include _synth-kit.qmd >}}
+<script src="/apps/shared/lessons/tuning-kit.js"></script>

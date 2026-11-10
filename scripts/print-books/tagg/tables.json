@@ -1,0 +1,4534 @@
+[
+ {
+  "table": 19,
+  "page": 263,
+  "caption": "",
+  "header": [
+   "Song",
+   "Type",
+   "Anti‐clockwise (falling) chord progression"
+  ],
+  "rows": [
+   [
+    [
+     "_Sweet Georgia Brown_",
+     "(Pinkard 1925)"
+    ],
+    [
+     "real"
+    ],
+    [
+     "(B7) E7 | E7 | A7 |A7 | D7 | D7 | G",
+     "(III)-VI-II-V-I in G"
+    ]
+   ],
+   [
+    [
+     "_The Charleston_",
+     "(Mack, 1923)"
+    ],
+    [
+     "real"
+    ],
+    [
+     "[B♭] | D7 | G7 | G7 | C7 | F7 | B♭ G7 | C7 F7",
+     "III-VI-II-V-I in B$"
+    ]
+   ],
+   [
+    [
+     "_Has Anybody Seen My_",
+     "_Gal_(Henderson, 1925)"
+    ],
+    [
+     "real"
+    ],
+    [
+     "F | A7 | D7 | D7 | G7 | C7 | F D7 | G7 C7",
+     "III-VI-II-V-I in F"
+    ]
+   ],
+   [
+    [
+     "_All The Things You Are_",
+     "(Kern, 1939)"
+    ],
+    [
+     "virtual"
+    ],
+    [
+     "Fm7 B♭m7 | E♭7 A♭^ | D♭^ • vi-ii-V-I-IV in A$",
+     "Cm7 Fm7 | B♭7 E♭^ | A♭^ • vi-ii-V-I-IV in E$"
+    ]
+   ],
+   [
+    [
+     "_Blue Moon_",
+     "(Rodgers, 1934)"
+    ],
+    [
+     "virtual"
+    ],
+    [
+     "{ E♭ Cm7 | Fm7 B♭7} E♭ |",
+     "(I)-vi-ii-V-I in E$"
+    ]
+   ],
+   [
+    [
+     "_Jeepers Creepers_",
+     "(Warren, 1938)"
+    ],
+    [
+     "both"
+    ],
+    [
+     "(a) Gm9 C9 F^9 (b) Dm7 Gm7 C9 F6 | Gm9 C9 |",
+     "(c) Am7L5 D9 Gm7 C9 F6",
+     "(a) ii V I (b) vi ii V I | ii V | (c) iii VI ii V I,",
+     "all in F"
+    ]
+   ],
+   [
+    [
+     "_Moonlight Serenade_",
+     "(Miller, 1939)"
+    ],
+    [
+     "both"
+    ],
+    [
+     "Bm7L5 EY9 | Am7 DY9 | Gm7 CY9 || F",
+     "+iv-VII-iii-VI-ii-V-I in F"
+    ]
+   ],
+   [
+    [
+     "_Autumn Leaves_",
+     "(Kosma, 1946)"
+    ],
+    [
+     "virtual"
+    ],
+    [
+     "Gm7 C7 | F^7 B♭^7 | E7L5 A7 | Dm",
+     "iv-VII-III-VI-ii-V-i in D min."
+    ]
+   ],
+   [
+    [
+     "_Windmills of Your_",
+     "_Mind_(Legrand 1968)"
+    ],
+    [
+     "virtual"
+    ],
+    [
+     "E7 Am D7 G^7 C^7 F♯m7♭5 B7 Em",
+     "I-iv-VII-III-VI-ii-V-I in E min."
+    ]
+   ],
+   [
+    [
+     "_Bluesette_",
+     "(Thielemans, 1962)"
+    ],
+    [
+     "virtual"
+    ],
+    [
+     "[B♭] | Am7 D7 | Gm7 C7 | F7 B♭7 | E♭",
+     "ii-iii-vi-ii-V-I-IV in B$"
+    ]
+   ],
+   [
+    [
+     "_Yesterday_",
+     "(Beatles, 1965a)"
+    ],
+    [
+     "both"
+    ],
+    [
+     "[F] | Em7 A7 | Dm | B♭(Gm7) C7 | F",
+     "vii-III-VI-IV(ii)-V-I in F"
+    ]
+   ]
+  ],
+  "display": [
+   [
+    [
+     "_Sweet Georgia Brown_",
+     "(Pinkard 1925)"
+    ],
+    [
+     "real"
+    ],
+    [
+     "(B7) E7 | E7 | A7 |A7 | D7 | D7 | G",
+     "(III)-VI-II-V-I in G"
+    ]
+   ],
+   [
+    [
+     "_The Charleston_",
+     "(Mack, 1923)"
+    ],
+    [
+     "real"
+    ],
+    [
+     "[B♭] | D7 | G7 | G7 | C7 | F7 | B♭ G7 | C7 F7",
+     "III-VI-II-V-I in B$"
+    ]
+   ],
+   [
+    [
+     "_Has Anybody Seen My_",
+     "_Gal_(Henderson, 1925)"
+    ],
+    [
+     "real"
+    ],
+    [
+     "F | A7 | D7 | D7 | G7 | C7 | F D7 | G7 C7",
+     "III-VI-II-V-I in F"
+    ]
+   ],
+   [
+    [
+     "_All The Things You Are_",
+     "(Kern, 1939)"
+    ],
+    [
+     "virtual"
+    ],
+    [
+     "• Fm7 B♭m7 | E♭7 A♭^ | D♭^",
+     "• vi-ii-V-I-IV in A$ Cm7 Fm7 | B♭7 E♭^ | A♭^",
+     "• vi-ii-V-I-IV in E$"
+    ]
+   ],
+   [
+    [
+     "_Blue Moon_",
+     "(Rodgers, 1934)"
+    ],
+    [
+     "virtual"
+    ],
+    [
+     "{ E♭ Cm7 | Fm7 B♭7} E♭ |",
+     "(I)-vi-ii-V-I in E$"
+    ]
+   ],
+   [
+    [
+     "_Jeepers Creepers_",
+     "(Warren, 1938)"
+    ],
+    [
+     "both"
+    ],
+    [
+     "(a) Gm9 C9 F^9 (b) Dm7 Gm7 C9 F6 | Gm9 C9 |",
+     "(c) Am7L5 D9 Gm7 C9 F6",
+     "(a) ii V I (b) vi ii V I | ii V | (c) iii VI ii V I,",
+     "all in F"
+    ]
+   ],
+   [
+    [
+     "_Moonlight Serenade_",
+     "(Miller, 1939)"
+    ],
+    [
+     "both"
+    ],
+    [
+     "Bm7L5 EY9 | Am7 DY9 | Gm7 CY9 || F",
+     "+iv-VII-iii-VI-ii-V-I in F"
+    ]
+   ],
+   [
+    [
+     "_Autumn Leaves_",
+     "(Kosma, 1946)"
+    ],
+    [
+     "virtual"
+    ],
+    [
+     "Gm7 C7 | F^7 B♭^7 | E7L5 A7 | Dm",
+     "iv-VII-III-VI-ii-V-i in D min."
+    ]
+   ],
+   [
+    [
+     "_Windmills of Your_",
+     "_Mind_(Legrand 1968)"
+    ],
+    [
+     "virtual"
+    ],
+    [
+     "E7 Am D7 G^7 C^7 F♯m7♭5 B7 Em",
+     "I-iv-VII-III-VI-ii-V-I in E min."
+    ]
+   ],
+   [
+    [
+     "_Bluesette_",
+     "(Thielemans, 1962)"
+    ],
+    [
+     "virtual"
+    ],
+    [
+     "[B♭] | Am7 D7 | Gm7 C7 | F7 B♭7 | E♭",
+     "ii-iii-vi-ii-V-I-IV in B$"
+    ]
+   ],
+   [
+    [
+     "_Yesterday_",
+     "(Beatles, 1965a)"
+    ],
+    [
+     "both"
+    ],
+    [
+     "[F] | Em7 A7 | Dm | B♭(Gm7) C7 | F",
+     "vii-III-VI-IV(ii)-V-I in F"
+    ]
+   ]
+  ],
+  "songs": [
+   {
+    "title": "Sweet Georgia Brown",
+    "artist": "Pinkard",
+    "year": "1925",
+    "chords": "(B7) E7 | E7 | A7 |A7 | D7 | D7 | G",
+    "roman": "(III)-VI-II-V-I in G",
+    "detail": "real"
+   },
+   {
+    "title": "The Charleston",
+    "artist": "Mack",
+    "year": "1923",
+    "chords": "[B♭] | D7 | G7 | G7 | C7 | F7 | B♭ G7 | C7 F7",
+    "roman": "III-VI-II-V-I in B$",
+    "detail": "real"
+   },
+   {
+    "title": "All The Things You Are",
+    "artist": "Kern",
+    "year": "1939",
+    "chords": "• Fm7 B♭m7 | E♭7 A♭^ | D♭^",
+    "roman": "• vi-ii-V-I-IV in A$ Cm7 Fm7 | B♭7 E♭^ | A♭^",
+    "detail": "virtual"
+   },
+   {
+    "title": "Blue Moon",
+    "artist": "Rodgers",
+    "year": "1934",
+    "chords": "{ E♭ Cm7 | Fm7 B♭7} E♭ |",
+    "roman": "(I)-vi-ii-V-I in E$",
+    "detail": "virtual"
+   },
+   {
+    "title": "Jeepers Creepers",
+    "artist": "Warren",
+    "year": "1938",
+    "chords": "(a) Gm9 C9 F^9 (b) Dm7 Gm7 C9 F6 | Gm9 C9 |",
+    "roman": "(c) Am7L5 D9 Gm7 C9 F6",
+    "detail": "both"
+   },
+   {
+    "title": "Moonlight Serenade",
+    "artist": "Miller",
+    "year": "1939",
+    "chords": "Bm7L5 EY9 | Am7 DY9 | Gm7 CY9 || F",
+    "roman": "+iv-VII-iii-VI-ii-V-I in F",
+    "detail": "both"
+   },
+   {
+    "title": "Autumn Leaves",
+    "artist": "Kosma",
+    "year": "1946",
+    "chords": "Gm7 C7 | F^7 B♭^7 | E7L5 A7 | Dm",
+    "roman": "iv-VII-III-VI-ii-V-i in D min.",
+    "detail": "virtual"
+   },
+   {
+    "title": "Bluesette",
+    "artist": "Thielemans",
+    "year": "1962",
+    "chords": "[B♭] | Am7 D7 | Gm7 C7 | F7 B♭7 | E♭",
+    "roman": "ii-iii-vi-ii-V-I-IV in B$",
+    "detail": "virtual"
+   },
+   {
+    "title": "Yesterday",
+    "artist": "Beatles",
+    "year": "1965",
+    "chords": "[F] | Em7 A7 | Dm | B♭(Gm7) C7 | F",
+    "roman": "vii-III-VI-IV(ii)-V-I in F",
+    "detail": "both"
+   }
+  ]
+ },
+ {
+  "table": 20,
+  "page": 265,
+  "caption": "",
+  "header": [
+   "Artist:_Song_(detail)",
+   "Progression"
+  ],
+  "rows": [
+   [
+    [
+     "Kinks:_Dead End Street_(1966; verse)"
+    ],
+    [
+     "C G Dm Am — III VII iv i in A minor"
+    ]
+   ],
+   [
+    [
+     "Rolling Stones:_Brown Sugar_(1971;",
+     "plagal extension, ex. 182)"
+    ],
+    [
+     "(D♭)-A♭ E♭-B♭ F-C (ex. 182182)",
+     "(♭II-)♭VI ♭III-♭VII IV-I in C"
+    ]
+   ],
+   [
+    [
+     "Rolling Stones:_Jumping Jack Flash_",
+     "(1969a; at ‘It’s alright’.)"
+    ],
+    [
+     "D A E B — ♭III ♭VII IV I in B"
+    ]
+   ],
+   [
+    [
+     "Jimi Hendrix:_Hey Joe_(1967a)"
+    ],
+    [
+     "C G D A E — ♭VI ♭III ♭VII IV I in E"
+    ]
+   ],
+   [
+    [
+     "Irene Cara:_Flashdance_(1983; verse",
+     "start)"
+    ],
+    [
+     "B♭ F Cm Gm — ♭III ♭VII iv i in G",
+     "minor"
+    ]
+   ]
+  ],
+  "display": [
+   [
+    [
+     "Kinks:_Dead End Street_(1966; verse)"
+    ],
+    [
+     "C G Dm Am — III VII iv i in A minor"
+    ]
+   ],
+   [
+    [
+     "Rolling Stones:_Brown Sugar_(1971;",
+     "plagal extension, ex. 182)"
+    ],
+    [
+     "(D♭)-A♭ E♭-B♭ F-C (ex. 182182)",
+     "(♭II-)♭VI ♭III-♭VII IV-I in C"
+    ]
+   ],
+   [
+    [
+     "Rolling Stones:_Jumping Jack Flash_",
+     "(1969a; at ‘It’s alright’.)"
+    ],
+    [
+     "D A E B — ♭III ♭VII IV I in B"
+    ]
+   ],
+   [
+    [
+     "Jimi Hendrix:_Hey Joe_(1967a)"
+    ],
+    [
+     "C G D A E — ♭VI ♭III ♭VII IV I in E"
+    ]
+   ],
+   [
+    [
+     "Irene Cara:_Flashdance_(1983; verse",
+     "start)"
+    ],
+    [
+     "B♭ F Cm Gm — ♭III ♭VII iv i in G",
+     "minor"
+    ]
+   ]
+  ],
+  "songs": [
+   {
+    "artist": "Kinks",
+    "title": "Dead End Street",
+    "year": "1966",
+    "detail": "verse",
+    "chords": "C G Dm Am",
+    "roman": "III VII iv i in A minor"
+   },
+   {
+    "artist": "Rolling Stones",
+    "title": "Brown Sugar",
+    "year": "1971",
+    "chords": "(D♭)-A♭ E♭-B♭ F-C (ex. 182182) (♭II-)♭VI ♭III-♭VII IV-I in C"
+   },
+   {
+    "artist": "Rolling Stones",
+    "title": "Jumping Jack Flash",
+    "chords": "D A E B",
+    "roman": "♭III ♭VII IV I in B"
+   },
+   {
+    "artist": "Jimi Hendrix",
+    "title": "Hey Joe",
+    "year": "1967a",
+    "chords": "C G D A E",
+    "roman": "♭VI ♭III ♭VII IV I in E"
+   },
+   {
+    "artist": "Irene Cara",
+    "title": "Flashdance",
+    "year": "1983",
+    "detail": "verse",
+    "chords": "B♭ F Cm Gm",
+    "roman": "♭III ♭VII iv i in G minor"
+   }
+  ]
+ },
+ {
+  "table": 23,
+  "page": 287,
+  "caption": "",
+  "header": [
+   "_mode_",
+   "_positions_ _relative_",
+   "_notes_ _on white_",
+   "_as tonic_ _with E_",
+   "_examples_"
+  ],
+  "rows": [
+   [
+    [
+     "ionian"
+    ],
+    [
+     "I IV V"
+    ],
+    [
+     "C F G"
+    ],
+    [
+     "E A B"
+    ],
+    [
+     "_• La bamba_(Valens, 1958) [C-F-G in C];",
+     "_• Twist and Shout_[D-G-A in D]",
+     "•_Guantanamera_[F-B♭-C in F]",
+     "(Sandpipers, 1966);",
+     "_• Pata Pata_[F-B♭-F-C] (Makeba, 1967)."
+    ]
+   ],
+   [
+    [
+     "dorian",
+     "(type 1)",
+     "dorian",
+     "(type 2)"
+    ],
+    [
+     "[I] ♭III",
+     "IV ♭VII",
+     "i ♭III",
+     "IV ♭VII"
+    ],
+    [
+     "[D] F",
+     "G C",
+     "Dm F",
+     "G C"
+    ],
+    [
+     "[E] G",
+     "A D",
+     "Em G A",
+     "D"
+    ],
+    [
+     "_• Green Onions_(Booker T, 1962) [F-A♭-B♭]",
+     "•_The Girl Sang The Blues_",
+     "(Everly Brothers, 1963) [E-G-A]",
+     "•_Smoke on the Water_(Deep Purple, 1972)",
+     "[E-G-A in E]; ex. 190‐191;",
+     "•_Greensleeves_(Eng. trad; first line);",
+     "•_Poor Murdered Woman_(ex. 184);",
+     "•_Scarborough Fair_(Simon & Garfunkel,",
+     "1968) [Em-D-Em-G-A-Em] (ex. 5, p. 100)"
+    ]
+   ],
+   [
+    [
+     "lydian"
+    ],
+    [
+     "I II V"
+    ],
+    [
+     "F G C"
+    ],
+    [
+     "E F♯",
+     "B"
+    ],
+    [
+     "•_Eden_(Hooverphonic) [C-D-Em-G]",
+     "•_Terminal Frost_(Pink Floyd) [D-Ezlu]"
+    ]
+   ],
+   [
+    [
+     "phryg‐",
+     "ian"
+    ],
+    [
+     "[I] ♭II",
+     "♭III",
+     "♭VII"
+    ],
+    [
+     "[E] F C",
+     "G"
+    ],
+    [
+     "[E] F",
+     "C G"
+    ],
+    [
+     "•_Che Guevara_(Puebla, 1965) [ex. 198];",
+     "•_Malagueña_(Sabicas) [Am-G-F-E] [ex. 197]",
+     "_•_Τρεις η ωρα νυχτα (Alexiou_,_1976) [ex.199]"
+    ]
+   ],
+   [
+    [
+     "mixo‐",
+     "lydian"
+    ],
+    [
+     "I IV",
+     "♭VII"
+    ],
+    [
+     "G C F"
+    ],
+    [
+     "E A D"
+    ],
+    [
+     "_• Sweet Home Alabama_(ex.284, p. 430);",
+     "_• Hey Jude_[G-F-C-G];",
+     "_• The Magnificent Seven_(ex.203b,p.291)",
+     "See also pp.421‐432."
+    ]
+   ],
+   [
+    [
+     "aeolian"
+    ],
+    [
+     "[I] ♭III",
+     "♭VI",
+     "♭VII"
+    ],
+    [
+     "[A] C F",
+     "G"
+    ],
+    [
+     "[E] G",
+     "C D"
+    ],
+    [
+     "_• All Along the Watchtower_[Am-G-F-G]",
+     "•_Flashdance_[G-F-E♭-F in G].",
+     "• Cadences in_Lady Madonna_[F-G-A];",
+     "_PS I Love You_[B♭-C-D];_SOS_[D♭-E♭-F]",
+     "_Brown Sugar_[A♭-B♭-C] (ex. 182, p. 265)."
+    ]
+   ]
+  ],
+  "display": [
+   [
+    [
+     "ionian"
+    ],
+    [
+     "I IV V"
+    ],
+    [
+     "C F G"
+    ],
+    [
+     "E A B"
+    ],
+    [
+     "• _La bamba_(Valens, 1958) [C-F-G in C];",
+     "• _Twist and Shout_[D-G-A in D]",
+     "• _Guantanamera_[F-B♭-C in F] (Sandpipers, 1966);",
+     "• _Pata Pata_[F-B♭-F-C] (Makeba, 1967)."
+    ]
+   ],
+   [
+    [
+     "dorian",
+     "(type 1)",
+     "dorian",
+     "(type 2)"
+    ],
+    [
+     "[I] ♭III",
+     "IV ♭VII",
+     "i ♭III",
+     "IV ♭VII"
+    ],
+    [
+     "[D] F",
+     "G C",
+     "Dm F",
+     "G C"
+    ],
+    [
+     "[E] G",
+     "A D",
+     "Em G A",
+     "D"
+    ],
+    [
+     "• _Green Onions_(Booker T, 1962) [F-A♭-B♭]",
+     "• _The Girl Sang The Blues_ (Everly Brothers, 1963) [E-G-A]",
+     "• _Smoke on the Water_(Deep Purple, 1972) [E-G-A in E]; ex. 190‐191;",
+     "• _Greensleeves_(Eng. trad; first line);",
+     "• _Poor Murdered Woman_(ex. 184);",
+     "• _Scarborough Fair_(Simon & Garfunkel, 1968) [Em-D-Em-G-A-Em] (ex. 5, p. 100)"
+    ]
+   ],
+   [
+    [
+     "lydian"
+    ],
+    [
+     "I II V"
+    ],
+    [
+     "F G C"
+    ],
+    [
+     "E F♯",
+     "B"
+    ],
+    [
+     "• _Eden_(Hooverphonic) [C-D-Em-G]",
+     "• _Terminal Frost_(Pink Floyd) [D-Ezlu]"
+    ]
+   ],
+   [
+    [
+     "phryg‐",
+     "ian"
+    ],
+    [
+     "[I] ♭II",
+     "♭III",
+     "♭VII"
+    ],
+    [
+     "[E] F C",
+     "G"
+    ],
+    [
+     "[E] F",
+     "C G"
+    ],
+    [
+     "• _Che Guevara_(Puebla, 1965) [ex. 198];",
+     "• _Malagueña_(Sabicas) [Am-G-F-E] [ex. 197]",
+     "• __Τρεις η ωρα νυχτα (Alexiou_,_1976) [ex.199]"
+    ]
+   ],
+   [
+    [
+     "mixo‐",
+     "lydian"
+    ],
+    [
+     "I IV",
+     "♭VII"
+    ],
+    [
+     "G C F"
+    ],
+    [
+     "E A D"
+    ],
+    [
+     "• _Sweet Home Alabama_(ex.284, p. 430);",
+     "• _Hey Jude_[G-F-C-G];",
+     "• _The Magnificent Seven_(ex.203b,p.291) See also pp.421‐432."
+    ]
+   ],
+   [
+    [
+     "aeolian"
+    ],
+    [
+     "[I] ♭III",
+     "♭VI",
+     "♭VII"
+    ],
+    [
+     "[A] C F",
+     "G"
+    ],
+    [
+     "[E] G",
+     "C D"
+    ],
+    [
+     "• _All Along the Watchtower_[Am-G-F-G]",
+     "• _Flashdance_[G-F-E♭-F in G].",
+     "• Cadences in_Lady Madonna_[F-G-A]; _PS I Love You_[B♭-C-D];_SOS_[D♭-E♭-F] _Brown Sugar_[A♭-B♭-C] (ex. 182, p. 265)."
+    ]
+   ]
+  ],
+  "songs": [
+   {
+    "title": "La bamba",
+    "artist": "Valens",
+    "year": "1958",
+    "detail": "[C-F-G in C]",
+    "type": "ionian",
+    "chords": "C F G",
+    "key": "C"
+   },
+   {
+    "title": "Green Onions",
+    "artist": "Booker T",
+    "year": "1962",
+    "detail": "[F-A♭-B♭]",
+    "type": "dorian (type 1) dorian (type 2)",
+    "chords": "F A♭ B♭"
+   },
+   {
+    "title": "The Girl Sang The Blues",
+    "artist": "Everly Brothers",
+    "year": "1963",
+    "detail": "[E-G-A]",
+    "type": "dorian (type 1) dorian (type 2)",
+    "chords": "E G A"
+   },
+   {
+    "title": "Smoke on the Water",
+    "artist": "Deep Purple",
+    "year": "1972",
+    "detail": "[E-G-A in E]; ex. 190‐191",
+    "type": "dorian (type 1) dorian (type 2)",
+    "chords": "E G A",
+    "key": "E"
+   },
+   {
+    "title": "Scarborough Fair",
+    "artist": "Simon & Garfunkel",
+    "year": "1968",
+    "detail": "[Em-D-Em-G-A-Em] (ex. 5, p. 100",
+    "type": "dorian (type 1) dorian (type 2)",
+    "chords": "Em D Em G A Em"
+   },
+   {
+    "title": "Che Guevara",
+    "artist": "Puebla",
+    "year": "1965",
+    "detail": "[ex. 198]",
+    "type": "phryg‐ ian"
+   }
+  ]
+ },
+ {
+  "table": 27,
+  "page": 374,
+  "caption": "",
+  "header": [
+   "Type",
+   "Chords",
+   "Key",
+   "Tune"
+  ],
+  "rows": [
+   [
+    [
+     "I-♭II"
+    ],
+    [
+     "C⇄D♭",
+     "A⇄B♭",
+     "C⇄D♭"
+    ],
+    [
+     "C",
+     "A",
+     "C"
+    ],
+    [
+     "Nacio Herb Brown:_Temptation_(1933)",
+     "Jefferson Airplane:_White Rabbit_(start) (1967)",
+     "Madness:_Night Boat To Cairo_(1979)"
+    ]
+   ],
+   [
+    [
+     "I-ii"
+    ],
+    [
+     "C^7⇄Dm7",
+     "D⇄Em",
+     "D⇄Em",
+     "C⇄Dm"
+    ],
+    [
+     "C",
+     "D",
+     "D",
+     "C"
+    ],
+    [
+     "Tom Jones:_It’s Not Unusual_(intro) (1965)",
+     "Tymes:_Miss Grace_(1974)",
+     "Carl Douglas:_Kung Fu Fighting_(1974)",
+     "Wham:_Wake Me Up_(chorus) (1984)"
+    ]
+   ],
+   [
+    [
+     "ii-I"
+    ],
+    [
+     "Dm7⇄C^7",
+     "Gm7⇄F^7"
+    ],
+    [
+     "C",
+     "F"
+    ],
+    [
+     "Guess Who:_These Eyes_(1969)",
+     "Lily Allan:_Smile_(2006)"
+    ]
+   ]
+  ],
+  "display": [
+   [
+    [
+     "I-♭II"
+    ],
+    [
+     "C⇄D♭",
+     "A⇄B♭",
+     "C⇄D♭"
+    ],
+    [
+     "C",
+     "A",
+     "C"
+    ],
+    [
+     "Nacio Herb Brown:_Temptation_(1933)",
+     "Jefferson Airplane:_White Rabbit_(start) (1967)",
+     "Madness:_Night Boat To Cairo_(1979)"
+    ]
+   ],
+   [
+    [
+     "I-ii"
+    ],
+    [
+     "C^7⇄Dm7",
+     "D⇄Em",
+     "D⇄Em",
+     "C⇄Dm"
+    ],
+    [
+     "C",
+     "D",
+     "D",
+     "C"
+    ],
+    [
+     "Tom Jones:_It’s Not Unusual_(intro) (1965)",
+     "Tymes:_Miss Grace_(1974)",
+     "Carl Douglas:_Kung Fu Fighting_(1974)",
+     "Wham:_Wake Me Up_(chorus) (1984)"
+    ]
+   ],
+   [
+    [
+     "ii-I"
+    ],
+    [
+     "Dm7⇄C^7",
+     "Gm7⇄F^7"
+    ],
+    [
+     "C",
+     "F"
+    ],
+    [
+     "Guess Who:_These Eyes_(1969)",
+     "Lily Allan:_Smile_(2006)"
+    ]
+   ]
+  ],
+  "songs": [
+   {
+    "artist": "Nacio Herb Brown",
+    "title": "Temptation",
+    "year": "1933",
+    "chords": "C⇄D♭",
+    "key": "C",
+    "type": "I-♭II"
+   },
+   {
+    "artist": "Jefferson Airplane",
+    "title": "White Rabbit",
+    "detail": "start",
+    "chords": "A⇄B♭",
+    "key": "A",
+    "type": "I-♭II",
+    "year": "1967"
+   },
+   {
+    "artist": "Madness",
+    "title": "Night Boat To Cairo",
+    "year": "1979",
+    "chords": "C⇄D♭",
+    "key": "C",
+    "type": "I-♭II"
+   },
+   {
+    "artist": "Tom Jones",
+    "title": "It’s Not Unusual",
+    "detail": "intro",
+    "chords": "C^7⇄Dm7",
+    "key": "C",
+    "type": "I-ii",
+    "year": "1965"
+   },
+   {
+    "artist": "Tymes",
+    "title": "Miss Grace",
+    "year": "1974",
+    "chords": "D⇄Em",
+    "key": "D",
+    "type": "I-ii"
+   },
+   {
+    "artist": "Carl Douglas",
+    "title": "Kung Fu Fighting",
+    "year": "1974",
+    "chords": "D⇄Em",
+    "key": "D",
+    "type": "I-ii"
+   },
+   {
+    "artist": "Wham",
+    "title": "Wake Me Up",
+    "detail": "chorus",
+    "chords": "C⇄Dm",
+    "key": "C",
+    "type": "I-ii",
+    "year": "1984"
+   },
+   {
+    "artist": "Guess Who",
+    "title": "These Eyes",
+    "year": "1969",
+    "chords": "Dm7⇄C^7",
+    "key": "C",
+    "type": "ii-I"
+   },
+   {
+    "artist": "Lily Allan",
+    "title": "Smile",
+    "year": "2006",
+    "chords": "Gm7⇄F^7",
+    "key": "F",
+    "type": "ii-I"
+   }
+  ]
+ },
+ {
+  "table": 28,
+  "page": 376,
+  "caption": "",
+  "header": [
+   "Type",
+   "Chords",
+   "Key",
+   "Recording (Year)"
+  ],
+  "rows": [
+   [
+    [
+     "Simple plagal shuttles"
+    ],
+    "",
+    "",
+    ""
+   ],
+   [
+    [
+     "I-IV"
+    ],
+    [
+     "G⇄C",
+     "D⇄G",
+     "A⇄D",
+     "A⇄D",
+     "E⇄A",
+     "C⇄F",
+     "C⇄F7",
+     "C^⇄F6",
+     "D⇄G",
+     "C⇄F",
+     "B♭⇄E♭",
+     "D⇄G",
+     "A⇄D",
+     "E♭⇄A♭^"
+    ],
+    [
+     "G",
+     "D",
+     "A",
+     "A",
+     "E",
+     "C",
+     "C",
+     "C",
+     "D",
+     "C",
+     "B♭",
+     "D",
+     "A",
+     "E♭"
+    ],
+    [
+     "Beatles:_Love Me Do_(1962c)",
+     "Dave Clark Five:_Glad All Over_(1963)",
+     "Floyd Cramer:_On The Rebound_(1964)",
+     "Spencer Davis:_Keep On Running_(intro) (1965)",
+     "Rolling Stones:_Satisfaction_(1965)",
+     "Manfred Mann:_Pretty Flamingo_(1966a)",
+     "Aretha Franklin:_Respect_(1967)",
+     "Dionne Warwick:_The Way To San José_(1968)",
+     "Archies:_Sugar Sugar_(1969)",
+     "John Lennon:_Imagine_(intro, verse start) (1971)",
+     "Aretha Franklin:_Think_(1974)",
+     "Bob Marley:_Lively Up Yourself_(1975)",
+     "Paul McCartney:_Mull Of Kintyre_(1977)",
+     "Arrested Development:_Mr Wendal_(1992)"
+    ]
+   ],
+   [
+    [
+     "I-iv"
+    ],
+    [
+     "C⇄Fm"
+    ],
+    [
+     "C"
+    ],
+    [
+     "R. Kelly:_I Believe I Can Fly_(1996)"
+    ]
+   ],
+   [
+    [
+     "i-iv"
+    ],
+    [
+     "Cm⇄Fm",
+     "Bm⇄Em7",
+     "Cm⇄Fm"
+    ],
+    [
+     "Cm",
+     "Bm",
+     "Cm"
+    ],
+    [
+     "Anita Ward:_Ring My Bell_(1979)",
+     "Valentine Brothers:_Money’s Too Tight_(1982)",
+     "Xtra Bass:_Step To The Rhythm_(1989)"
+    ]
+   ],
+   [
+    [
+     "IV-I"
+    ],
+    [
+     "A♭6⇄E♭",
+     "G⇄D",
+     "F⇄C",
+     "G♭⇄D♭"
+    ],
+    [
+     "E♭",
+     "G",
+     "C",
+     "D♭"
+    ],
+    [
+     "George McCrae:_Rock Me Baby_(1974)",
+     "Clash:_Should I Stay Or Should I Go_(1982)",
+     "Oasis:_Don’t Look Back In Anger_(intro) (1995)",
+     "Michelle McManus:_All This Time_(2004)"
+    ]
+   ],
+   [
+    [
+     "Dorian plagal shuttles from minor to major at the fourth*"
+    ],
+    "",
+    "",
+    ""
+   ],
+   [
+    [
+     "i-IV"
+    ],
+    [
+     "Am⇄D",
+     "Am⇄D",
+     "Fm7⇄B♭",
+     "Am7⇄D",
+     "Gm7⇄C",
+     "F♯m⇄B"
+    ],
+    [
+     "Am",
+     "Am",
+     "Fm",
+     "Am",
+     "Gm",
+     "F♯m"
+    ],
+    [
+     "Shadows:_Apache_(1960)",
+     "Swinging Blue Jeans:_You’re No Good_(1964)",
+     "Classics IV:_Spooky_(1968)",
+     "Santana:_Oye como va_(1970)",
+     "Labelle:_Lady Marmalade_(1975)",
+     "Dead or Alive:_You Spin Me Around_(1985)"
+    ]
+   ],
+   [
+    [
+     "ii-V"
+    ],
+    [
+     "Am7⇄D",
+     "B♭m7⇄E♭"
+    ],
+    [
+     "G",
+     "A♭"
+    ],
+    [
+     "Chiffons:_You’re So Fine_(1963)",
+     "Edwin Hawkins Singers:_Oh Happy Day_(1969)"
+    ]
+   ],
+   [
+    [
+     "ii-V ?",
+     "?",
+     "?",
+     "?",
+     "?"
+    ],
+    [
+     "F♯m⇄B",
+     "G♯m⇄C♯",
+     "Gm⇄C",
+     "Am7⇄D",
+     "F♯m⇄B"
+    ],
+    [
+     "E?",
+     "F♯?",
+     "?",
+     "F",
+     "A"
+    ],
+    [
+     "George Harrison:_My Sweet Lord_(1970)",
+     "_[later in same song]_",
+     "Pink Floyd:_The Great Gig In The Sky_(1973)",
+     "Dionne Warwick:_Walk On By_(1964)",
+     "Abba:_The Name Of The Game_(A section) (1977)"
+    ]
+   ]
+  ],
+  "pages": [
+   376,
+   377
+  ],
+  "display": [
+   [
+    [
+     "Simple plagal shuttles"
+    ],
+    "",
+    "",
+    ""
+   ],
+   [
+    [
+     "I-IV"
+    ],
+    [
+     "G⇄C",
+     "D⇄G",
+     "A⇄D",
+     "A⇄D",
+     "E⇄A",
+     "C⇄F",
+     "C⇄F7",
+     "C^⇄F6",
+     "D⇄G",
+     "C⇄F",
+     "B♭⇄E♭",
+     "D⇄G",
+     "A⇄D",
+     "E♭⇄A♭^"
+    ],
+    [
+     "G",
+     "D",
+     "A",
+     "A",
+     "E",
+     "C",
+     "C",
+     "C",
+     "D",
+     "C",
+     "B♭",
+     "D",
+     "A",
+     "E♭"
+    ],
+    [
+     "Beatles:_Love Me Do_(1962c)",
+     "Dave Clark Five:_Glad All Over_(1963)",
+     "Floyd Cramer:_On The Rebound_(1964)",
+     "Spencer Davis:_Keep On Running_(intro) (1965)",
+     "Rolling Stones:_Satisfaction_(1965)",
+     "Manfred Mann:_Pretty Flamingo_(1966a)",
+     "Aretha Franklin:_Respect_(1967)",
+     "Dionne Warwick:_The Way To San José_(1968)",
+     "Archies:_Sugar Sugar_(1969)",
+     "John Lennon:_Imagine_(intro, verse start) (1971)",
+     "Aretha Franklin:_Think_(1974)",
+     "Bob Marley:_Lively Up Yourself_(1975)",
+     "Paul McCartney:_Mull Of Kintyre_(1977)",
+     "Arrested Development:_Mr Wendal_(1992)"
+    ]
+   ],
+   [
+    [
+     "I-iv"
+    ],
+    [
+     "C⇄Fm"
+    ],
+    [
+     "C"
+    ],
+    [
+     "R. Kelly:_I Believe I Can Fly_(1996)"
+    ]
+   ],
+   [
+    [
+     "i-iv"
+    ],
+    [
+     "Cm⇄Fm",
+     "Bm⇄Em7",
+     "Cm⇄Fm"
+    ],
+    [
+     "Cm",
+     "Bm",
+     "Cm"
+    ],
+    [
+     "Anita Ward:_Ring My Bell_(1979)",
+     "Valentine Brothers:_Money’s Too Tight_(1982)",
+     "Xtra Bass:_Step To The Rhythm_(1989)"
+    ]
+   ],
+   [
+    [
+     "IV-I"
+    ],
+    [
+     "A♭6⇄E♭",
+     "G⇄D",
+     "F⇄C",
+     "G♭⇄D♭"
+    ],
+    [
+     "E♭",
+     "G",
+     "C",
+     "D♭"
+    ],
+    [
+     "George McCrae:_Rock Me Baby_(1974)",
+     "Clash:_Should I Stay Or Should I Go_(1982)",
+     "Oasis:_Don’t Look Back In Anger_(intro) (1995)",
+     "Michelle McManus:_All This Time_(2004)"
+    ]
+   ],
+   [
+    [
+     "Dorian plagal shuttles from minor to major at the fourth*"
+    ],
+    "",
+    "",
+    ""
+   ],
+   [
+    [
+     "i-IV"
+    ],
+    [
+     "Am⇄D",
+     "Am⇄D",
+     "Fm7⇄B♭",
+     "Am7⇄D",
+     "Gm7⇄C",
+     "F♯m⇄B"
+    ],
+    [
+     "Am",
+     "Am",
+     "Fm",
+     "Am",
+     "Gm",
+     "F♯m"
+    ],
+    [
+     "Shadows:_Apache_(1960)",
+     "Swinging Blue Jeans:_You’re No Good_(1964)",
+     "Classics IV:_Spooky_(1968)",
+     "Santana:_Oye como va_(1970)",
+     "Labelle:_Lady Marmalade_(1975)",
+     "Dead or Alive:_You Spin Me Around_(1985)"
+    ]
+   ],
+   [
+    [
+     "ii-V"
+    ],
+    [
+     "Am7⇄D",
+     "B♭m7⇄E♭"
+    ],
+    [
+     "G",
+     "A♭"
+    ],
+    [
+     "Chiffons:_You’re So Fine_(1963)",
+     "Edwin Hawkins Singers:_Oh Happy Day_(1969)"
+    ]
+   ],
+   [
+    [
+     "ii-V ?",
+     "?",
+     "?",
+     "?",
+     "?"
+    ],
+    [
+     "F♯m⇄B",
+     "G♯m⇄C♯",
+     "Gm⇄C",
+     "Am7⇄D",
+     "F♯m⇄B"
+    ],
+    [
+     "E?",
+     "F♯?",
+     "?",
+     "F",
+     "A"
+    ],
+    [
+     "George Harrison:_My Sweet Lord_(1970)",
+     "_[later in same song]_",
+     "Pink Floyd:_The Great Gig In The Sky_(1973)",
+     "Dionne Warwick:_Walk On By_(1964)",
+     "Abba:_The Name Of The Game_(A section) (1977)"
+    ]
+   ]
+  ],
+  "songs": [
+   {
+    "artist": "Beatles",
+    "title": "Love Me Do",
+    "year": "1962c",
+    "chords": "G⇄C",
+    "key": "G",
+    "type": "I-IV"
+   },
+   {
+    "artist": "Dave Clark Five",
+    "title": "Glad All Over",
+    "year": "1963",
+    "chords": "D⇄G",
+    "key": "D",
+    "type": "I-IV"
+   },
+   {
+    "artist": "Floyd Cramer",
+    "title": "On The Rebound",
+    "year": "1964",
+    "chords": "A⇄D",
+    "key": "A",
+    "type": "I-IV"
+   },
+   {
+    "artist": "Spencer Davis",
+    "title": "Keep On Running",
+    "detail": "intro",
+    "chords": "A⇄D",
+    "key": "A",
+    "type": "I-IV",
+    "year": "1965"
+   },
+   {
+    "artist": "Rolling Stones",
+    "title": "Satisfaction",
+    "year": "1965",
+    "chords": "E⇄A",
+    "key": "E",
+    "type": "I-IV"
+   },
+   {
+    "artist": "Manfred Mann",
+    "title": "Pretty Flamingo",
+    "year": "1966a",
+    "chords": "C⇄F",
+    "key": "C",
+    "type": "I-IV"
+   },
+   {
+    "artist": "Aretha Franklin",
+    "title": "Respect",
+    "year": "1967",
+    "chords": "C⇄F7",
+    "key": "C",
+    "type": "I-IV"
+   },
+   {
+    "artist": "Dionne Warwick",
+    "title": "The Way To San José",
+    "year": "1968",
+    "chords": "C^⇄F6",
+    "key": "C",
+    "type": "I-IV"
+   },
+   {
+    "artist": "Archies",
+    "title": "Sugar Sugar",
+    "year": "1969",
+    "chords": "D⇄G",
+    "key": "D",
+    "type": "I-IV"
+   },
+   {
+    "artist": "John Lennon",
+    "title": "Imagine",
+    "detail": "intro, verse start",
+    "chords": "C⇄F",
+    "key": "C",
+    "type": "I-IV",
+    "year": "1971"
+   },
+   {
+    "artist": "Aretha Franklin",
+    "title": "Think",
+    "year": "1974",
+    "chords": "B♭⇄E♭",
+    "key": "B♭",
+    "type": "I-IV"
+   },
+   {
+    "artist": "Bob Marley",
+    "title": "Lively Up Yourself",
+    "year": "1975",
+    "chords": "D⇄G",
+    "key": "D",
+    "type": "I-IV"
+   },
+   {
+    "artist": "Paul McCartney",
+    "title": "Mull Of Kintyre",
+    "year": "1977",
+    "chords": "A⇄D",
+    "key": "A",
+    "type": "I-IV"
+   },
+   {
+    "artist": "Arrested Development",
+    "title": "Mr Wendal",
+    "year": "1992",
+    "chords": "E♭⇄A♭^",
+    "key": "E♭",
+    "type": "I-IV"
+   },
+   {
+    "artist": "R. Kelly",
+    "title": "I Believe I Can Fly",
+    "year": "1996",
+    "chords": "C⇄Fm",
+    "key": "C",
+    "type": "I-iv"
+   },
+   {
+    "artist": "Anita Ward",
+    "title": "Ring My Bell",
+    "year": "1979",
+    "chords": "Cm⇄Fm",
+    "key": "Cm",
+    "type": "i-iv"
+   },
+   {
+    "artist": "Valentine Brothers",
+    "title": "Money’s Too Tight",
+    "year": "1982",
+    "chords": "Bm⇄Em7",
+    "key": "Bm",
+    "type": "i-iv"
+   },
+   {
+    "artist": "Xtra Bass",
+    "title": "Step To The Rhythm",
+    "year": "1989",
+    "chords": "Cm⇄Fm",
+    "key": "Cm",
+    "type": "i-iv"
+   },
+   {
+    "artist": "George McCrae",
+    "title": "Rock Me Baby",
+    "year": "1974",
+    "chords": "A♭6⇄E♭",
+    "key": "E♭",
+    "type": "IV-I"
+   },
+   {
+    "artist": "Clash",
+    "title": "Should I Stay Or Should I Go",
+    "year": "1982",
+    "chords": "G⇄D",
+    "key": "G",
+    "type": "IV-I"
+   },
+   {
+    "artist": "Oasis",
+    "title": "Don’t Look Back In Anger",
+    "detail": "intro",
+    "chords": "F⇄C",
+    "key": "C",
+    "type": "IV-I",
+    "year": "1995"
+   },
+   {
+    "artist": "Michelle McManus",
+    "title": "All This Time",
+    "year": "2004",
+    "chords": "G♭⇄D♭",
+    "key": "D♭",
+    "type": "IV-I"
+   },
+   {
+    "artist": "Shadows",
+    "title": "Apache",
+    "year": "1960",
+    "chords": "Am⇄D",
+    "key": "Am",
+    "type": "i-IV"
+   },
+   {
+    "artist": "Swinging Blue Jeans",
+    "title": "You’re No Good",
+    "year": "1964",
+    "chords": "Am⇄D",
+    "key": "Am",
+    "type": "i-IV"
+   },
+   {
+    "artist": "Classics IV",
+    "title": "Spooky",
+    "year": "1968",
+    "chords": "Fm7⇄B♭",
+    "key": "Fm",
+    "type": "i-IV"
+   },
+   {
+    "artist": "Santana",
+    "title": "Oye como va",
+    "year": "1970",
+    "chords": "Am7⇄D",
+    "key": "Am",
+    "type": "i-IV"
+   },
+   {
+    "artist": "Labelle",
+    "title": "Lady Marmalade",
+    "year": "1975",
+    "chords": "Gm7⇄C",
+    "key": "Gm",
+    "type": "i-IV"
+   },
+   {
+    "artist": "Dead or Alive",
+    "title": "You Spin Me Around",
+    "year": "1985",
+    "chords": "F♯m⇄B",
+    "key": "F♯m",
+    "type": "i-IV"
+   },
+   {
+    "artist": "Chiffons",
+    "title": "You’re So Fine",
+    "year": "1963",
+    "chords": "Am7⇄D",
+    "key": "G",
+    "type": "ii-V"
+   },
+   {
+    "artist": "Edwin Hawkins Singers",
+    "title": "Oh Happy Day",
+    "year": "1969",
+    "chords": "B♭m7⇄E♭",
+    "key": "A♭",
+    "type": "ii-V"
+   },
+   {
+    "artist": "George Harrison",
+    "title": "My Sweet Lord",
+    "year": "1970",
+    "chords": "F♯m⇄B",
+    "key": "E?",
+    "type": "ii-V ? ? ? ? ?"
+   },
+   {
+    "artist": "Pink Floyd",
+    "title": "The Great Gig In The Sky",
+    "year": "1973",
+    "chords": "Gm⇄C",
+    "key": "?",
+    "type": "ii-V ? ? ? ? ?"
+   },
+   {
+    "artist": "Dionne Warwick",
+    "title": "Walk On By",
+    "year": "1964",
+    "chords": "Am7⇄D",
+    "key": "F",
+    "type": "ii-V ? ? ? ? ?"
+   },
+   {
+    "artist": "Abba",
+    "title": "The Name Of The Game",
+    "detail": "A section",
+    "chords": "F♯m⇄B",
+    "key": "A",
+    "type": "ii-V ? ? ? ? ?",
+    "year": "1977"
+   }
+  ]
+ },
+ {
+  "table": 29,
+  "page": 383,
+  "caption": "",
+  "header": [
+   "Type",
+   "Chords",
+   "Key",
+   "Publication/Release (Year)"
+  ],
+  "rows": [
+   [
+    [
+     "I-V"
+    ],
+    [
+     "A⇄E",
+     "G⇄D",
+     "F⇄C",
+     "G⇄D",
+     "D⇄A",
+     "C⇄G",
+     "E⇄B11",
+     "C⇄G"
+    ],
+    [
+     "A",
+     "G",
+     "F",
+     "G",
+     "D",
+     "C",
+     "E",
+     "C"
+    ],
+    [
+     "Beethoven: Symphony #7, 4th movement,",
+     "(bars 24‐36) (1812) (ex. 270b)",
+     "Honeycombs:_Have I The Right_(intro) (1964)",
+     "Kinks:_Tired Of Waiting_(middle) (1965)",
+     "Kinks:_Tired Of Waiting_(middle) (1965)",
+     "Byrds:_Mr. Tambourine Man_(intro) (1965)",
+     "Sandie Shaw:_Puppet On A String_(1967)",
+     "Fifth Dimension:_Stoned Soul Picnic_(1968)",
+     "Rod Stewart:_The First Cut Is Deepest_(intro) (1977)"
+    ]
+   ],
+   [
+    [
+     "i-V"
+    ],
+    [
+     "Gm⇄D",
+     "Em⇄B",
+     "Fm⇄C"
+    ],
+    [
+     "Gm",
+     "Em",
+     "Fm"
+    ],
+    [
+     "Mozart: Symphony nº 40, 1st movement",
+     "(last 8 bars) (1788a)",
+     "Rolling Stones:_Paint It Black_(1966)",
+     "All Saints:_Bootie Call_(1998)"
+    ]
+   ],
+   [
+    [
+     "i-v",
+     "(see also",
+     "I-♭VII-I)"
+    ],
+    [
+     "Am⇄Em",
+     "Dm[7]⇄",
+     "Am[7]"
+    ],
+    [
+     "Am",
+     "Dm"
+    ],
+    [
+     "Kraftwerk:_The Model_(1982)",
+     "Kylie Minogue:_Canʹt Get You Out Of My Head_",
+     "(2001)",
+     "[cont’d…]"
+    ]
+   ],
+   [
+    [
+     "V-I"
+    ],
+    [
+     "C⇄F",
+     "A♭⇄D♭",
+     "E⇄A",
+     "D⇄G",
+     "A⇄D",
+     "A5⇄D5"
+    ],
+    [
+     "F",
+     "D♭",
+     "A",
+     "G",
+     "D",
+     "D"
+    ],
+    [
+     "Roy Orbison:_It’s Over_(intro) (1963)",
+     "Unit Four Plus Two:_Concrete And Clay_(1965)",
+     "Jefferson Airplane:_White Rabbit_(B part) (1967)",
+     "Cowsills:_Indian Lake_(end of intro) (1968)",
+     "Police:_Every Little Thing She Does_(1981)",
+     "Tori Amos:_Professional Widow_(1996)"
+    ]
+   ]
+  ],
+  "pages": [
+   383,
+   384
+  ],
+  "display": [
+   [
+    [
+     "I-V"
+    ],
+    [
+     "A⇄E",
+     "G⇄D",
+     "F⇄C",
+     "G⇄D",
+     "D⇄A",
+     "C⇄G",
+     "E⇄B11",
+     "C⇄G"
+    ],
+    [
+     "A",
+     "G",
+     "F",
+     "G",
+     "D",
+     "C",
+     "E",
+     "C"
+    ],
+    [
+     "Beethoven: Symphony #7, 4th movement,",
+     "(bars 24‐36) (1812) (ex. 270b)",
+     "Honeycombs:_Have I The Right_(intro) (1964)",
+     "Kinks:_Tired Of Waiting_(middle) (1965)",
+     "Kinks:_Tired Of Waiting_(middle) (1965)",
+     "Byrds:_Mr. Tambourine Man_(intro) (1965)",
+     "Sandie Shaw:_Puppet On A String_(1967)",
+     "Fifth Dimension:_Stoned Soul Picnic_(1968)",
+     "Rod Stewart:_The First Cut Is Deepest_(intro) (1977)"
+    ]
+   ],
+   [
+    [
+     "i-V"
+    ],
+    [
+     "Gm⇄D",
+     "Em⇄B",
+     "Fm⇄C"
+    ],
+    [
+     "Gm",
+     "Em",
+     "Fm"
+    ],
+    [
+     "Mozart: Symphony nº 40, 1st movement",
+     "(last 8 bars) (1788a)",
+     "Rolling Stones:_Paint It Black_(1966)",
+     "All Saints:_Bootie Call_(1998)"
+    ]
+   ],
+   [
+    [
+     "i-v",
+     "(see also",
+     "I-♭VII-I)"
+    ],
+    [
+     "Am⇄Em",
+     "Dm[7]⇄",
+     "Am[7]"
+    ],
+    [
+     "Am",
+     "Dm"
+    ],
+    [
+     "Kraftwerk:_The Model_(1982)",
+     "Kylie Minogue:_Canʹt Get You Out Of My Head_",
+     "(2001)",
+     "[cont’d…]"
+    ]
+   ],
+   [
+    [
+     "V-I"
+    ],
+    [
+     "C⇄F",
+     "A♭⇄D♭",
+     "E⇄A",
+     "D⇄G",
+     "A⇄D",
+     "A5⇄D5"
+    ],
+    [
+     "F",
+     "D♭",
+     "A",
+     "G",
+     "D",
+     "D"
+    ],
+    [
+     "Roy Orbison:_It’s Over_(intro) (1963)",
+     "Unit Four Plus Two:_Concrete And Clay_(1965)",
+     "Jefferson Airplane:_White Rabbit_(B part) (1967)",
+     "Cowsills:_Indian Lake_(end of intro) (1968)",
+     "Police:_Every Little Thing She Does_(1981)",
+     "Tori Amos:_Professional Widow_(1996)"
+    ]
+   ]
+  ],
+  "songs": [
+   {
+    "artist": "Honeycombs",
+    "title": "Have I The Right",
+    "detail": "intro",
+    "chords": "A⇄E",
+    "type": "I-V",
+    "year": "1964"
+   },
+   {
+    "artist": "Kinks",
+    "title": "Tired Of Waiting",
+    "detail": "middle",
+    "chords": "A⇄E",
+    "type": "I-V",
+    "year": "1965"
+   },
+   {
+    "artist": "Byrds",
+    "title": "Mr. Tambourine Man",
+    "detail": "intro",
+    "chords": "A⇄E",
+    "type": "I-V",
+    "year": "1965"
+   },
+   {
+    "artist": "Sandie Shaw",
+    "title": "Puppet On A String",
+    "year": "1967",
+    "chords": "A⇄E",
+    "type": "I-V"
+   },
+   {
+    "artist": "Fifth Dimension",
+    "title": "Stoned Soul Picnic",
+    "year": "1968",
+    "chords": "A⇄E",
+    "type": "I-V"
+   },
+   {
+    "artist": "Rod Stewart",
+    "title": "The First Cut Is Deepest",
+    "detail": "intro",
+    "chords": "A⇄E",
+    "type": "I-V",
+    "year": "1977"
+   },
+   {
+    "artist": "Rolling Stones",
+    "title": "Paint It Black",
+    "year": "1966",
+    "chords": "Gm⇄D",
+    "type": "i-V"
+   },
+   {
+    "artist": "All Saints",
+    "title": "Bootie Call",
+    "year": "1998",
+    "chords": "Gm⇄D",
+    "type": "i-V"
+   },
+   {
+    "artist": "Kraftwerk",
+    "title": "The Model",
+    "year": "1982",
+    "chords": "Am⇄Em",
+    "type": "i-v (see also I-♭VII-I)"
+   },
+   {
+    "artist": "Kylie Minogue",
+    "title": "Canʹt Get You Out Of My Head",
+    "chords": "Am⇄Em",
+    "type": "i-v (see also I-♭VII-I)"
+   },
+   {
+    "artist": "Roy Orbison",
+    "title": "It’s Over",
+    "detail": "intro",
+    "chords": "C⇄F",
+    "key": "F",
+    "type": "V-I",
+    "year": "1963"
+   },
+   {
+    "artist": "Unit Four Plus Two",
+    "title": "Concrete And Clay",
+    "year": "1965",
+    "chords": "A♭⇄D♭",
+    "key": "D♭",
+    "type": "V-I"
+   },
+   {
+    "artist": "Jefferson Airplane",
+    "title": "White Rabbit",
+    "detail": "B part",
+    "chords": "E⇄A",
+    "key": "A",
+    "type": "V-I",
+    "year": "1967"
+   },
+   {
+    "artist": "Cowsills",
+    "title": "Indian Lake",
+    "detail": "end of intro",
+    "chords": "D⇄G",
+    "key": "G",
+    "type": "V-I",
+    "year": "1968"
+   },
+   {
+    "artist": "Police",
+    "title": "Every Little Thing She Does",
+    "year": "1981",
+    "chords": "A⇄D",
+    "key": "D",
+    "type": "V-I"
+   },
+   {
+    "artist": "Tori Amos",
+    "title": "Professional Widow",
+    "year": "1996",
+    "chords": "A5⇄D5",
+    "key": "D",
+    "type": "V-I"
+   }
+  ]
+ },
+ {
+  "table": 30,
+  "page": 385,
+  "caption": "",
+  "header": [
+   "Type",
+   "Chords",
+   "Key",
+   "Recording (Year)"
+  ],
+  "rows": [
+   [
+    [
+     "I-vi"
+    ],
+    [
+     "F⇄Dm",
+     "C⇄Am",
+     "B♭⇄Gm",
+     "G⇄Em",
+     "F⇄Dm",
+     "A⇄F♯m",
+     "A♭⇄Fm",
+     "A♭⇄Fm",
+     "D⇄Bm",
+     "A♭⇄Fm",
+     "E⇄C♯m",
+     "E♭⇄Cm",
+     "C⇄Am",
+     "B♭⇄Gm",
+     "C⇄Am",
+     "E⇄C♯m",
+     "D♭⇄B♭m",
+     "A⇄F♯m",
+     "E♭⇄Cm",
+     "G♭⇄E♭m"
+    ],
+    [
+     "F",
+     "C",
+     "B♭",
+     "G",
+     "F",
+     "A",
+     "A♭",
+     "E♭",
+     "D",
+     "G♭",
+     "E",
+     "E♭",
+     "C",
+     "B♭",
+     "C",
+     "E",
+     "D♭",
+     "A",
+     "E♭",
+     "G♭"
+    ],
+    [
+     "Isley Brothers:_Shout_(1959)",
+     "Bobby Darin:_Dream Lover_(intro) (1959)",
+     "Jimmy Jones:_Handy Man_(intro) (1960)",
+     "Sam Cooke:_The Chain Gang_(intro) (1960)",
+     "Steve Lawrence:_Pretty Blue Eyes_(1960)",
+     "Johnny Preston:_Cradle Of Love_(1960)",
+     "Helen Shapiro:_Walking Back To Happiness_(1961)",
+     "Ernie K‐Doe:_Mother‐In‐Law_(1961)",
+     "Ricky Nelson:_Travelling Man_(intro) (1961)",
+     "Dick & Dee Dee:_The Mountain’s High_(1961)",
+     "Neil Sedaka:_Calendar Girl_(intro) (1961)",
+     "Little Eva:_The Loco‐Motion_(1962)",
+     "Marvelettes:_Playboy_(intro) (1962)",
+     "Shirelles:_Baby It’s You_(intro) (1962)",
+     "Little Peggy March:_I Will Follow Him_(1963)",
+     "Lulu:_Shout_(1964) (orig. Isley Brothers, 1959)",
+     "Searchers:_Don’t Throw Your Love Away_(1964)",
+     "Roy Orbison:_Pretty Woman_(verse start) (1964)",
+     "Georgie Fame:_Yeh‐Yeh_(1964)",
+     "Angelo Badalmenti:_Twin Peaks_(1990)"
+    ]
+   ],
+   [
+    [
+     "I-VI"
+    ],
+    [
+     "A⇄F"
+    ],
+    [
+     "A"
+    ],
+    [
+     "David Bowie:_Suffragette City_(1972)"
+    ]
+   ],
+   [
+    [
+     "Aeolian shuttles"
+    ],
+    "",
+    "",
+    ""
+   ],
+   [
+    [
+     "i-♭VI"
+    ],
+    [
+     "B♭m⇄G♭",
+     "Am⇄F",
+     "Am⇄F",
+     "Dm⇄B♭",
+     "Am⇄F",
+     "Gm⇄E♭",
+     "Am⇄F"
+    ],
+    [
+     "B♭m",
+     "Am",
+     "Am",
+     "Dm",
+     "Am",
+     "[B♭]",
+     "Am"
+    ],
+    [
+     "Chopin:_Marche funèbre_(1839)",
+     "Bob Dylan:_All Along The Watchtower_(1968)",
+     "Jimi Hendrix:_All Along The Watchtower_(1968)",
+     "Ten cc:_The Wall Street Shuffle_(1974)",
+     "Elvis Costello:_Watching The Detectives_(1977)",
+     "Irene Cara:_Flashdance_(1983)",
+     "Neil Young:_Change Your Mind_(1994)"
+    ]
+   ],
+   [
+    [
+     "?"
+    ],
+    [
+     "E♭⇄Gm"
+    ],
+    [
+     "Gm?"
+    ],
+    [
+     "Police:_Don’t Stand So Close To Me_(1980)"
+    ]
+   ],
+   [
+    [
+     "i-vi"
+    ],
+    [
+     "A♭m7⇄Fm7"
+    ],
+    [
+     "A♭m"
+    ],
+    [
+     "Doors:_Light My Fire_(1967)"
+    ]
+   ]
+  ],
+  "display": [
+   [
+    [
+     "I-vi"
+    ],
+    [
+     "F⇄Dm",
+     "C⇄Am",
+     "B♭⇄Gm",
+     "G⇄Em",
+     "F⇄Dm",
+     "A⇄F♯m",
+     "A♭⇄Fm",
+     "A♭⇄Fm",
+     "D⇄Bm",
+     "A♭⇄Fm",
+     "E⇄C♯m",
+     "E♭⇄Cm",
+     "C⇄Am",
+     "B♭⇄Gm",
+     "C⇄Am",
+     "E⇄C♯m",
+     "D♭⇄B♭m",
+     "A⇄F♯m",
+     "E♭⇄Cm",
+     "G♭⇄E♭m"
+    ],
+    [
+     "F",
+     "C",
+     "B♭",
+     "G",
+     "F",
+     "A",
+     "A♭",
+     "E♭",
+     "D",
+     "G♭",
+     "E",
+     "E♭",
+     "C",
+     "B♭",
+     "C",
+     "E",
+     "D♭",
+     "A",
+     "E♭",
+     "G♭"
+    ],
+    [
+     "Isley Brothers:_Shout_(1959)",
+     "Bobby Darin:_Dream Lover_(intro) (1959)",
+     "Jimmy Jones:_Handy Man_(intro) (1960)",
+     "Sam Cooke:_The Chain Gang_(intro) (1960)",
+     "Steve Lawrence:_Pretty Blue Eyes_(1960)",
+     "Johnny Preston:_Cradle Of Love_(1960)",
+     "Helen Shapiro:_Walking Back To Happiness_(1961)",
+     "Ernie K‐Doe:_Mother‐In‐Law_(1961)",
+     "Ricky Nelson:_Travelling Man_(intro) (1961)",
+     "Dick & Dee Dee:_The Mountain’s High_(1961)",
+     "Neil Sedaka:_Calendar Girl_(intro) (1961)",
+     "Little Eva:_The Loco‐Motion_(1962)",
+     "Marvelettes:_Playboy_(intro) (1962)",
+     "Shirelles:_Baby It’s You_(intro) (1962)",
+     "Little Peggy March:_I Will Follow Him_(1963)",
+     "Lulu:_Shout_(1964) (orig. Isley Brothers, 1959)",
+     "Searchers:_Don’t Throw Your Love Away_(1964)",
+     "Roy Orbison:_Pretty Woman_(verse start) (1964)",
+     "Georgie Fame:_Yeh‐Yeh_(1964)",
+     "Angelo Badalmenti:_Twin Peaks_(1990)"
+    ]
+   ],
+   [
+    [
+     "I-VI"
+    ],
+    [
+     "A⇄F"
+    ],
+    [
+     "A"
+    ],
+    [
+     "David Bowie:_Suffragette City_(1972)"
+    ]
+   ],
+   [
+    [
+     "Aeolian shuttles"
+    ],
+    "",
+    "",
+    ""
+   ],
+   [
+    [
+     "i-♭VI"
+    ],
+    [
+     "B♭m⇄G♭",
+     "Am⇄F",
+     "Am⇄F",
+     "Dm⇄B♭",
+     "Am⇄F",
+     "Gm⇄E♭",
+     "Am⇄F"
+    ],
+    [
+     "B♭m",
+     "Am",
+     "Am",
+     "Dm",
+     "Am",
+     "[B♭]",
+     "Am"
+    ],
+    [
+     "Chopin:_Marche funèbre_(1839)",
+     "Bob Dylan:_All Along The Watchtower_(1968)",
+     "Jimi Hendrix:_All Along The Watchtower_(1968)",
+     "Ten cc:_The Wall Street Shuffle_(1974)",
+     "Elvis Costello:_Watching The Detectives_(1977)",
+     "Irene Cara:_Flashdance_(1983)",
+     "Neil Young:_Change Your Mind_(1994)"
+    ]
+   ],
+   [
+    [
+     "?"
+    ],
+    [
+     "E♭⇄Gm"
+    ],
+    [
+     "Gm?"
+    ],
+    [
+     "Police:_Don’t Stand So Close To Me_(1980)"
+    ]
+   ],
+   [
+    [
+     "i-vi"
+    ],
+    [
+     "A♭m7⇄Fm7"
+    ],
+    [
+     "A♭m"
+    ],
+    [
+     "Doors:_Light My Fire_(1967)"
+    ]
+   ]
+  ],
+  "songs": [
+   {
+    "artist": "Isley Brothers",
+    "title": "Shout",
+    "year": "1959",
+    "chords": "F⇄Dm",
+    "key": "F",
+    "type": "I-vi"
+   },
+   {
+    "artist": "Bobby Darin",
+    "title": "Dream Lover",
+    "detail": "intro",
+    "chords": "C⇄Am",
+    "key": "C",
+    "type": "I-vi",
+    "year": "1959"
+   },
+   {
+    "artist": "Jimmy Jones",
+    "title": "Handy Man",
+    "detail": "intro",
+    "chords": "B♭⇄Gm",
+    "key": "B♭",
+    "type": "I-vi",
+    "year": "1960"
+   },
+   {
+    "artist": "Sam Cooke",
+    "title": "The Chain Gang",
+    "detail": "intro",
+    "chords": "G⇄Em",
+    "key": "G",
+    "type": "I-vi",
+    "year": "1960"
+   },
+   {
+    "artist": "Steve Lawrence",
+    "title": "Pretty Blue Eyes",
+    "year": "1960",
+    "chords": "F⇄Dm",
+    "key": "F",
+    "type": "I-vi"
+   },
+   {
+    "artist": "Johnny Preston",
+    "title": "Cradle Of Love",
+    "year": "1960",
+    "chords": "A⇄F♯m",
+    "key": "A",
+    "type": "I-vi"
+   },
+   {
+    "artist": "Helen Shapiro",
+    "title": "Walking Back To Happiness",
+    "year": "1961",
+    "chords": "A♭⇄Fm",
+    "key": "A♭",
+    "type": "I-vi"
+   },
+   {
+    "artist": "Ernie K‐Doe",
+    "title": "Mother‐In‐Law",
+    "year": "1961",
+    "chords": "A♭⇄Fm",
+    "key": "E♭",
+    "type": "I-vi"
+   },
+   {
+    "artist": "Ricky Nelson",
+    "title": "Travelling Man",
+    "detail": "intro",
+    "chords": "D⇄Bm",
+    "key": "D",
+    "type": "I-vi",
+    "year": "1961"
+   },
+   {
+    "artist": "Dick & Dee Dee",
+    "title": "The Mountain’s High",
+    "year": "1961",
+    "chords": "A♭⇄Fm",
+    "key": "G♭",
+    "type": "I-vi"
+   },
+   {
+    "artist": "Neil Sedaka",
+    "title": "Calendar Girl",
+    "detail": "intro",
+    "chords": "E⇄C♯m",
+    "key": "E",
+    "type": "I-vi",
+    "year": "1961"
+   },
+   {
+    "artist": "Little Eva",
+    "title": "The Loco‐Motion",
+    "year": "1962",
+    "chords": "E♭⇄Cm",
+    "key": "E♭",
+    "type": "I-vi"
+   },
+   {
+    "artist": "Marvelettes",
+    "title": "Playboy",
+    "detail": "intro",
+    "chords": "C⇄Am",
+    "key": "C",
+    "type": "I-vi",
+    "year": "1962"
+   },
+   {
+    "artist": "Shirelles",
+    "title": "Baby It’s You",
+    "detail": "intro",
+    "chords": "B♭⇄Gm",
+    "key": "B♭",
+    "type": "I-vi",
+    "year": "1962"
+   },
+   {
+    "artist": "Little Peggy March",
+    "title": "I Will Follow Him",
+    "year": "1963",
+    "chords": "C⇄Am",
+    "key": "C",
+    "type": "I-vi"
+   },
+   {
+    "artist": "Lulu",
+    "title": "Shout",
+    "year": "1964",
+    "detail": "orig. Isley Brothers, 1959",
+    "chords": "E⇄C♯m",
+    "key": "E",
+    "type": "I-vi"
+   },
+   {
+    "artist": "Searchers",
+    "title": "Don’t Throw Your Love Away",
+    "year": "1964",
+    "chords": "D♭⇄B♭m",
+    "key": "D♭",
+    "type": "I-vi"
+   },
+   {
+    "artist": "Roy Orbison",
+    "title": "Pretty Woman",
+    "detail": "verse start",
+    "chords": "A⇄F♯m",
+    "key": "A",
+    "type": "I-vi",
+    "year": "1964"
+   },
+   {
+    "artist": "Georgie Fame",
+    "title": "Yeh‐Yeh",
+    "year": "1964",
+    "chords": "E♭⇄Cm",
+    "key": "E♭",
+    "type": "I-vi"
+   },
+   {
+    "artist": "Angelo Badalmenti",
+    "title": "Twin Peaks",
+    "year": "1990",
+    "chords": "G♭⇄E♭m",
+    "key": "G♭",
+    "type": "I-vi"
+   },
+   {
+    "artist": "David Bowie",
+    "title": "Suffragette City",
+    "year": "1972",
+    "chords": "A⇄F",
+    "key": "A",
+    "type": "I-VI"
+   },
+   {
+    "artist": "Chopin",
+    "title": "Marche funèbre",
+    "year": "1839",
+    "chords": "B♭m⇄G♭",
+    "key": "B♭m",
+    "type": "i-♭VI"
+   },
+   {
+    "artist": "Bob Dylan",
+    "title": "All Along The Watchtower",
+    "year": "1968",
+    "chords": "Am⇄F",
+    "key": "Am",
+    "type": "i-♭VI"
+   },
+   {
+    "artist": "Jimi Hendrix",
+    "title": "All Along The Watchtower",
+    "year": "1968",
+    "chords": "Am⇄F",
+    "key": "Am",
+    "type": "i-♭VI"
+   },
+   {
+    "artist": "Ten cc",
+    "title": "The Wall Street Shuffle",
+    "year": "1974",
+    "chords": "Dm⇄B♭",
+    "key": "Dm",
+    "type": "i-♭VI"
+   },
+   {
+    "artist": "Elvis Costello",
+    "title": "Watching The Detectives",
+    "year": "1977",
+    "chords": "Am⇄F",
+    "key": "Am",
+    "type": "i-♭VI"
+   },
+   {
+    "artist": "Irene Cara",
+    "title": "Flashdance",
+    "year": "1983",
+    "chords": "Gm⇄E♭",
+    "key": "[B♭]",
+    "type": "i-♭VI"
+   },
+   {
+    "artist": "Neil Young",
+    "title": "Change Your Mind",
+    "year": "1994",
+    "chords": "Am⇄F",
+    "key": "Am",
+    "type": "i-♭VI"
+   },
+   {
+    "artist": "Police",
+    "title": "Don’t Stand So Close To Me",
+    "year": "1980",
+    "chords": "E♭⇄Gm",
+    "key": "Gm?",
+    "type": "?"
+   },
+   {
+    "artist": "Doors",
+    "title": "Light My Fire",
+    "year": "1967",
+    "chords": "A♭m7⇄Fm7",
+    "key": "A♭m",
+    "type": "i-vi"
+   }
+  ]
+ },
+ {
+  "table": 31,
+  "page": 389,
+  "caption": "",
+  "header": [
+   "Type",
+   "Chords",
+   "Key",
+   "Recording (Year)"
+  ],
+  "rows": [
+   [
+    [
+     "I-♭VII"
+    ],
+    [
+     "F⇄E♭",
+     "G⇄F",
+     "C⇄D",
+     "G⇄F",
+     "A⇄G",
+     "D⇄C",
+     "C♯⇄B",
+     "D⇄C"
+    ],
+    [
+     "F",
+     "G",
+     "D",
+     "G",
+     "A",
+     "D",
+     "C♯",
+     "D"
+    ],
+    [
+     "The Champs:_Tequila_(1958)",
+     "Shadows:_Wonderful Land_(intro) (1962)",
+     "Cliff Richard:_Bachelor Boy_(intro) (1962)",
+     "Kinks:_Tired Of Waiting_(1965)",
+     "Youngbloods:_Get Together_(1969)",
+     "Brook Benton:_Rainy Night In Georgia_(intro) (1969)",
+     "Dexy’s Midnight Runners:_Geno_(1980)",
+     "Madness:_House Of Fun_(1982)"
+    ]
+   ],
+   [
+    [
+     "i-♭VII"
+    ],
+    [
+     "Cm⇄B♭",
+     "Am⇄G"
+    ],
+    [
+     "Cm",
+     "Am"
+    ],
+    [
+     "Albion Country Band:_Van Diemen’s Land_(1971)",
+     "Bothy Band:_Farewell To Erin_(1976)"
+    ]
+   ],
+   [
+    [
+     "♭VII-I"
+    ],
+    [
+     "B♭/c⇄C",
+     "D♭⇄E♭"
+    ],
+    [
+     "C"
+    ],
+    [
+     "Righteous Brothers:_You’ve Lost That_",
+     "_Loving Feeling_(1964)",
+     "Van Halen:_Running With The Devil_(1978)"
+    ]
+   ],
+   [
+    [
+     "IV-V",
+     "?"
+    ],
+    [
+     "A♭⇄B♭",
+     "F⇄G"
+    ],
+    [
+     "E♭",
+     "Am?"
+    ],
+    [
+     "Elvis Presley:_Return To Sender_(1962)",
+     "Human League:_Don’t You Want Me Baby_(1981)"
+    ]
+   ]
+  ],
+  "display": [
+   [
+    [
+     "I-♭VII"
+    ],
+    [
+     "F⇄E♭",
+     "G⇄F",
+     "C⇄D",
+     "G⇄F",
+     "A⇄G",
+     "D⇄C",
+     "C♯⇄B",
+     "D⇄C"
+    ],
+    [
+     "F",
+     "G",
+     "D",
+     "G",
+     "A",
+     "D",
+     "C♯",
+     "D"
+    ],
+    [
+     "The Champs:_Tequila_(1958)",
+     "Shadows:_Wonderful Land_(intro) (1962)",
+     "Cliff Richard:_Bachelor Boy_(intro) (1962)",
+     "Kinks:_Tired Of Waiting_(1965)",
+     "Youngbloods:_Get Together_(1969)",
+     "Brook Benton:_Rainy Night In Georgia_(intro) (1969)",
+     "Dexy’s Midnight Runners:_Geno_(1980)",
+     "Madness:_House Of Fun_(1982)"
+    ]
+   ],
+   [
+    [
+     "i-♭VII"
+    ],
+    [
+     "Cm⇄B♭",
+     "Am⇄G"
+    ],
+    [
+     "Cm",
+     "Am"
+    ],
+    [
+     "Albion Country Band:_Van Diemen’s Land_(1971)",
+     "Bothy Band:_Farewell To Erin_(1976)"
+    ]
+   ],
+   [
+    [
+     "♭VII-I"
+    ],
+    [
+     "B♭/c⇄C",
+     "D♭⇄E♭"
+    ],
+    [
+     "C"
+    ],
+    [
+     "Righteous Brothers:_You’ve Lost That_",
+     "_Loving Feeling_(1964)",
+     "Van Halen:_Running With The Devil_(1978)"
+    ]
+   ],
+   [
+    [
+     "IV-V",
+     "?"
+    ],
+    [
+     "A♭⇄B♭",
+     "F⇄G"
+    ],
+    [
+     "E♭",
+     "Am?"
+    ],
+    [
+     "Elvis Presley:_Return To Sender_(1962)",
+     "Human League:_Don’t You Want Me Baby_(1981)"
+    ]
+   ]
+  ],
+  "songs": [
+   {
+    "artist": "The Champs",
+    "title": "Tequila",
+    "year": "1958",
+    "chords": "F⇄E♭",
+    "key": "F",
+    "type": "I-♭VII"
+   },
+   {
+    "artist": "Shadows",
+    "title": "Wonderful Land",
+    "detail": "intro",
+    "chords": "G⇄F",
+    "key": "G",
+    "type": "I-♭VII",
+    "year": "1962"
+   },
+   {
+    "artist": "Cliff Richard",
+    "title": "Bachelor Boy",
+    "detail": "intro",
+    "chords": "C⇄D",
+    "key": "D",
+    "type": "I-♭VII",
+    "year": "1962"
+   },
+   {
+    "artist": "Kinks",
+    "title": "Tired Of Waiting",
+    "year": "1965",
+    "chords": "G⇄F",
+    "key": "G",
+    "type": "I-♭VII"
+   },
+   {
+    "artist": "Youngbloods",
+    "title": "Get Together",
+    "year": "1969",
+    "chords": "A⇄G",
+    "key": "A",
+    "type": "I-♭VII"
+   },
+   {
+    "artist": "Brook Benton",
+    "title": "Rainy Night In Georgia",
+    "detail": "intro",
+    "chords": "D⇄C",
+    "key": "D",
+    "type": "I-♭VII",
+    "year": "1969"
+   },
+   {
+    "artist": "Dexy’s Midnight Runners",
+    "title": "Geno",
+    "year": "1980",
+    "chords": "C♯⇄B",
+    "key": "C♯",
+    "type": "I-♭VII"
+   },
+   {
+    "artist": "Madness",
+    "title": "House Of Fun",
+    "year": "1982",
+    "chords": "D⇄C",
+    "key": "D",
+    "type": "I-♭VII"
+   },
+   {
+    "artist": "Albion Country Band",
+    "title": "Van Diemen’s Land",
+    "year": "1971",
+    "chords": "Cm⇄B♭",
+    "key": "Cm",
+    "type": "i-♭VII"
+   },
+   {
+    "artist": "Bothy Band",
+    "title": "Farewell To Erin",
+    "year": "1976",
+    "chords": "Am⇄G",
+    "key": "Am",
+    "type": "i-♭VII"
+   },
+   {
+    "artist": "Righteous Brothers",
+    "title": "You’ve Lost That",
+    "chords": "B♭/c⇄C",
+    "key": "C",
+    "type": "♭VII-I"
+   },
+   {
+    "artist": "Van Halen",
+    "title": "Running With The Devil",
+    "year": "1978",
+    "chords": "B♭/c⇄C",
+    "key": "C",
+    "type": "♭VII-I"
+   },
+   {
+    "artist": "Elvis Presley",
+    "title": "Return To Sender",
+    "year": "1962",
+    "chords": "A♭⇄B♭",
+    "key": "E♭",
+    "type": "IV-V ?"
+   },
+   {
+    "artist": "Human League",
+    "title": "Don’t You Want Me Baby",
+    "year": "1981",
+    "chords": "F⇄G",
+    "key": "Am?",
+    "type": "IV-V ?"
+   }
+  ]
+ },
+ {
+  "table": 34,
+  "page": 409,
+  "caption": "",
+  "header": [],
+  "rows": [
+   [
+    [
+     "1957 Tab Hunter: _Young Love_ Ricky Nelson:_Teenager’s Romance_ The Rays: _Silhouettes_ Paul Anka: _Diana_"
+    ],
+    [
+     "1961 _Let’s Twist Again_ Chubby Checker: Dion: _Runaround Sue_ Ben E King: _Stand By Me_ Barry Mann: _Who Put The Bomp_ The Marcels: _Blue Moon_ Ricky Nelson: _Travelling Man_ Elvis Presley: _His Latest Flame_ Rosie & Originals: _Angel Baby_ Bobby Rydell: _Good Time Baby_"
+    ]
+   ],
+   [
+    [
+     "1958",
+     "Chordettes:",
+     "_Lollipop_",
+     "Danny & the Juniors:",
+     "_At The Hop_",
+     "Everly Brothers:",
+     "_Dream_",
+     "Monotones:",
+     "_The Book Of Love_",
+     "Ricky Nelson:",
+     "_Poor Little Fool_"
+    ],
+    ""
+   ],
+   [
+    "",
+    [
+     "1961",
+     "Neil Sedaka:_Happy Birthday Sweet 16_",
+     "Bobby Vee:_Take Good Care Of My Baby_",
+     "Del Shannon:",
+     "_Runaway_",
+     "Linda Scott:_Don’t Bet Money, Honey_"
+    ]
+   ],
+   [
+    [
+     "1959",
+     "Paul Anka:_Put Your Head On My Shoulder_",
+     "Bobby Darin:",
+     "_Dream Lover_",
+     "Dion & Belmonts:",
+     "_A Teenager In Love_",
+     "Drifters:_There Goes My Baby_",
+     "Connie Francis:_Lipstick On Your Collar_",
+     "Ritchie Valens:",
+     "_Donna_",
+     "Jackie Wilson:",
+     "_Lonely Teardrops_"
+    ],
+    ""
+   ],
+   [
+    "",
+    [
+     "1962",
+     "Gene Chandler:",
+     "_The Duke Of Earl_",
+     "Sam Cooke:",
+     "_Having A Party_",
+     "Four Seasons:",
+     "_Sherry Baby_",
+     "Shirelles:",
+     "_Baby It’s You_"
+    ]
+   ],
+   [
+    [
+     "1960",
+     "Bobby Rydell:",
+     "_Little Bitty Girl_",
+     "Mark Dinning:",
+     "_Teen Angel_",
+     "Percy Faith:",
+     "_A Summer Place_",
+     "Jimmy Jones:",
+     "_Handy Man_",
+     "Sam Cooke:",
+     "_What A Wonderful_",
+     "_World This Could Be_",
+     "Bobby Vee:",
+     "_Devil Or Angel_",
+     "Johnny Tillotson:",
+     "_Poetry In Motion_"
+    ],
+    ""
+   ],
+   [
+    "",
+    [
+     "1963",
+     "Cascades:",
+     "_Rhythm of the Rain_",
+     "Elvis Presley:_The Devil In Disguise_",
+     "Paul & Paula:",
+     "_Hey Paula!_",
+     "Del Shannon:_Little Town Flirt_",
+     "Little Peggy March:_I Will Follow Him_",
+     "Ronettes:",
+     "_Be My Baby_",
+     "Doris Troy:",
+     "_Just One Look_"
+    ]
+   ]
+  ],
+  "display": [
+   [
+    [
+     "1957 Tab Hunter: _Young Love_ Ricky Nelson:_Teenager’s Romance_ The Rays: _Silhouettes_ Paul Anka: _Diana_"
+    ],
+    [
+     "1961 _Let’s Twist Again_ Chubby Checker: Dion: _Runaround Sue_ Ben E King: _Stand By Me_ Barry Mann: _Who Put The Bomp_ The Marcels: _Blue Moon_ Ricky Nelson: _Travelling Man_ Elvis Presley: _His Latest Flame_ Rosie & Originals: _Angel Baby_ Bobby Rydell: _Good Time Baby_"
+    ]
+   ],
+   [
+    [
+     "1958",
+     "Chordettes:",
+     "_Lollipop_",
+     "Danny & the Juniors:",
+     "_At The Hop_",
+     "Everly Brothers:",
+     "_Dream_",
+     "Monotones:",
+     "_The Book Of Love_",
+     "Ricky Nelson:",
+     "_Poor Little Fool_"
+    ],
+    ""
+   ],
+   [
+    "",
+    [
+     "1961",
+     "Neil Sedaka:_Happy Birthday Sweet 16_",
+     "Bobby Vee:_Take Good Care Of My Baby_",
+     "Del Shannon:",
+     "_Runaway_",
+     "Linda Scott:_Don’t Bet Money, Honey_"
+    ]
+   ],
+   [
+    [
+     "1959",
+     "Paul Anka:_Put Your Head On My Shoulder_",
+     "Bobby Darin:",
+     "_Dream Lover_",
+     "Dion & Belmonts:",
+     "_A Teenager In Love_",
+     "Drifters:_There Goes My Baby_",
+     "Connie Francis:_Lipstick On Your Collar_",
+     "Ritchie Valens:",
+     "_Donna_",
+     "Jackie Wilson:",
+     "_Lonely Teardrops_"
+    ],
+    ""
+   ],
+   [
+    "",
+    [
+     "1962",
+     "Gene Chandler:",
+     "_The Duke Of Earl_",
+     "Sam Cooke:",
+     "_Having A Party_",
+     "Four Seasons:",
+     "_Sherry Baby_",
+     "Shirelles:",
+     "_Baby It’s You_"
+    ]
+   ],
+   [
+    [
+     "1960",
+     "Bobby Rydell:",
+     "_Little Bitty Girl_",
+     "Mark Dinning:",
+     "_Teen Angel_",
+     "Percy Faith:",
+     "_A Summer Place_",
+     "Jimmy Jones:",
+     "_Handy Man_",
+     "Sam Cooke:",
+     "_What A Wonderful_",
+     "_World This Could Be_",
+     "Bobby Vee:",
+     "_Devil Or Angel_",
+     "Johnny Tillotson:",
+     "_Poetry In Motion_"
+    ],
+    ""
+   ],
+   [
+    "",
+    [
+     "1963",
+     "Cascades:",
+     "_Rhythm of the Rain_",
+     "Elvis Presley:_The Devil In Disguise_",
+     "Paul & Paula:",
+     "_Hey Paula!_",
+     "Del Shannon:_Little Town Flirt_",
+     "Little Peggy March:_I Will Follow Him_",
+     "Ronettes:",
+     "_Be My Baby_",
+     "Doris Troy:",
+     "_Just One Look_"
+    ]
+   ]
+  ],
+  "songs": [
+   {
+    "artist": "Tab Hunter",
+    "title": "Young Love",
+    "year": "1957",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Ricky Nelson",
+    "title": "Teenager’s Romance",
+    "year": "1957",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "The Rays",
+    "title": "Silhouettes",
+    "year": "1957",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Paul Anka",
+    "title": "Diana",
+    "year": "1957",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Chubby Checker: Dion",
+    "title": "Runaround Sue",
+    "year": "1957",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Ben E King",
+    "title": "Stand By Me",
+    "year": "1957",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Barry Mann",
+    "title": "Who Put The Bomp",
+    "year": "1957",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "The Marcels",
+    "title": "Blue Moon",
+    "year": "1957",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Ricky Nelson",
+    "title": "Travelling Man",
+    "year": "1957",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Elvis Presley",
+    "title": "His Latest Flame",
+    "year": "1957",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Rosie & Originals",
+    "title": "Angel Baby",
+    "year": "1957",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Bobby Rydell",
+    "title": "Good Time Baby",
+    "year": "1957",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Chordettes",
+    "title": "Lollipop",
+    "year": "1958",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Danny & the Juniors",
+    "title": "At The Hop",
+    "year": "1958",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Everly Brothers",
+    "title": "Dream",
+    "year": "1958",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Monotones",
+    "title": "The Book Of Love",
+    "year": "1958",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Ricky Nelson",
+    "title": "Poor Little Fool",
+    "year": "1958",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Neil Sedaka",
+    "title": "Happy Birthday Sweet 16",
+    "year": "1961",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Bobby Vee",
+    "title": "Take Good Care Of My Baby",
+    "year": "1961",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Del Shannon",
+    "title": "Runaway",
+    "year": "1961",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Linda Scott",
+    "title": "Don’t Bet Money, Honey",
+    "year": "1961",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Paul Anka",
+    "title": "Put Your Head On My Shoulder",
+    "year": "1959",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Bobby Darin",
+    "title": "Dream Lover",
+    "year": "1959",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Dion & Belmonts",
+    "title": "A Teenager In Love",
+    "year": "1959",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Drifters",
+    "title": "There Goes My Baby",
+    "year": "1959",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Connie Francis",
+    "title": "Lipstick On Your Collar",
+    "year": "1959",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Ritchie Valens",
+    "title": "Donna",
+    "year": "1959",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Jackie Wilson",
+    "title": "Lonely Teardrops",
+    "year": "1959",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Gene Chandler",
+    "title": "The Duke Of Earl",
+    "year": "1962",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Sam Cooke",
+    "title": "Having A Party",
+    "year": "1962",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Four Seasons",
+    "title": "Sherry Baby",
+    "year": "1962",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Shirelles",
+    "title": "Baby It’s You",
+    "year": "1962",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Bobby Rydell",
+    "title": "Little Bitty Girl",
+    "year": "1960",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Mark Dinning",
+    "title": "Teen Angel",
+    "year": "1960",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Percy Faith",
+    "title": "A Summer Place",
+    "year": "1960",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Jimmy Jones",
+    "title": "Handy Man",
+    "year": "1960",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Sam Cooke",
+    "title": "What A Wonderful",
+    "year": "1960",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "",
+    "title": "World This Could Be",
+    "year": "1960",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Bobby Vee",
+    "title": "Devil Or Angel",
+    "year": "1960",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Johnny Tillotson",
+    "title": "Poetry In Motion",
+    "year": "1960",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Cascades",
+    "title": "Rhythm of the Rain",
+    "year": "1963",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Elvis Presley",
+    "title": "The Devil In Disguise",
+    "year": "1963",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Paul & Paula",
+    "title": "Hey Paula!",
+    "year": "1963",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Del Shannon",
+    "title": "Little Town Flirt",
+    "year": "1963",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Little Peggy March",
+    "title": "I Will Follow Him",
+    "year": "1963",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Ronettes",
+    "title": "Be My Baby",
+    "year": "1963",
+    "type": "I-vi-IV-V"
+   },
+   {
+    "artist": "Doris Troy",
+    "title": "Just One Look",
+    "year": "1963",
+    "type": "I-vi-IV-V"
+   }
+  ]
+ },
+ {
+  "table": 35,
+  "page": 422,
+  "caption": "",
+  "header": [
+   "Type",
+   "Tune (Artist, Year: chords; [detail])"
+  ],
+  "rows": [
+   [
+    [
+     "I-IV-V",
+     "_La Bamba_",
+     "loops",
+     "I-V-IV-V"
+    ],
+    [
+     "(a) ionian loops with V-I turnaround",
+     "_• La bamba_(Richie Valens, 1958: C F G G)",
+     "•_Do You Love Me_(Brian Poole & the Tremoloes, 1963b: D G A A)",
+     "_• Guantanamera_(Trini Lopez, 1963: E A B B)",
+     "•_Twist and Shout_(Isley Brothers, 1962: F B♭ C C)",
+     "•_Lucy In The Sky With Diamonds_(Beatles, 1967b: A D E E)",
+     "•_I Don’t Want To Know_(Fleetwood Mac 1977: B F♯ E F♯; hook)",
+     "•_I Walk The Hill_(Big Country, 1986: D A G A)",
+     "•_From Under The Covers_(Beautiful South, 1989: F C B♭ C; verses)"
+    ]
+   ],
+   [
+    [
+     "I-IV-V-IV",
+     "_Wild Thing_",
+     "loops",
+     "I-V-IV"
+    ],
+    [
+     "(b) ionian loops with plagal turnaround (IV-I)",
+     "_• C’mon Everybody_(Eddy Cochran 1958: E A B A)",
+     "_• Sweets For My Sweet_(Searchers 1964: D G A G)",
+     "_• Wild Thing_(Troggs 1966: A D E D)",
+     "_• Hang On Sloopy_(McCoys 1965: G C D C)",
+     "_• Name of the Game_(Abba 1977: A D E D; hook line/chorus)",
+     "_• Congratulations_(Traveling Wilburys 1988: C F G F)",
+     "_• Knocking On Heaven’s Door_(Bob Dylan 1973: G D C C [Am × 2])",
+     "_• Already Gone_(Eagles 1974: G D C C)",
+     "•_Helpless_(Neil Young 1977: D A G G)"
+    ]
+   ]
+  ],
+  "display": [
+   [
+    [
+     "I-IV-V",
+     "_La Bamba_",
+     "loops",
+     "I-V-IV-V"
+    ],
+    [
+     "• (a) ionian loops with V-I turnaround",
+     "• _La bamba_(Richie Valens, 1958: C F G G)",
+     "• _Do You Love Me_(Brian Poole & the Tremoloes, 1963b: D G A A)",
+     "• _Guantanamera_(Trini Lopez, 1963: E A B B)",
+     "• _Twist and Shout_(Isley Brothers, 1962: F B♭ C C)",
+     "• _Lucy In The Sky With Diamonds_(Beatles, 1967b: A D E E)",
+     "• _I Don’t Want To Know_(Fleetwood Mac 1977: B F♯ E F♯; hook)",
+     "• _I Walk The Hill_(Big Country, 1986: D A G A)",
+     "• _From Under The Covers_(Beautiful South, 1989: F C B♭ C; verses)"
+    ]
+   ],
+   [
+    [
+     "I-IV-V-IV",
+     "_Wild Thing_",
+     "loops",
+     "I-V-IV"
+    ],
+    [
+     "• (b) ionian loops with plagal turnaround (IV-I)",
+     "• _C’mon Everybody_(Eddy Cochran 1958: E A B A)",
+     "• _Sweets For My Sweet_(Searchers 1964: D G A G)",
+     "• _Wild Thing_(Troggs 1966: A D E D)",
+     "• _Hang On Sloopy_(McCoys 1965: G C D C)",
+     "• _Name of the Game_(Abba 1977: A D E D; hook line/chorus)",
+     "• _Congratulations_(Traveling Wilburys 1988: C F G F)",
+     "• _Knocking On Heaven’s Door_(Bob Dylan 1973: G D C C [Am × 2])",
+     "• _Already Gone_(Eagles 1974: G D C C)",
+     "• _Helpless_(Neil Young 1977: D A G G)"
+    ]
+   ]
+  ],
+  "songs": [
+   {
+    "title": "La bamba",
+    "artist": "Richie Valens",
+    "year": "1958",
+    "chords": "C F G G",
+    "type": "I-IV-V La Bamba loops I-V-IV-V"
+   },
+   {
+    "title": "Do You Love Me",
+    "artist": "Brian Poole & the Tremoloes",
+    "year": "1963b",
+    "chords": "D G A A",
+    "type": "I-IV-V La Bamba loops I-V-IV-V"
+   },
+   {
+    "title": "Guantanamera",
+    "artist": "Trini Lopez",
+    "year": "1963",
+    "chords": "E A B B",
+    "type": "I-IV-V La Bamba loops I-V-IV-V"
+   },
+   {
+    "title": "Twist and Shout",
+    "artist": "Isley Brothers",
+    "year": "1962",
+    "chords": "F B♭ C C",
+    "type": "I-IV-V La Bamba loops I-V-IV-V"
+   },
+   {
+    "title": "Lucy In The Sky With Diamonds",
+    "artist": "Beatles",
+    "year": "1967b",
+    "chords": "A D E E",
+    "type": "I-IV-V La Bamba loops I-V-IV-V"
+   },
+   {
+    "title": "I Don’t Want To Know",
+    "artist": "Fleetwood Mac",
+    "year": "1977",
+    "chords": "B F♯ E F♯",
+    "detail": "hook",
+    "type": "I-IV-V La Bamba loops I-V-IV-V"
+   },
+   {
+    "title": "I Walk The Hill",
+    "artist": "Big Country",
+    "year": "1986",
+    "chords": "D A G A",
+    "type": "I-IV-V La Bamba loops I-V-IV-V"
+   },
+   {
+    "title": "From Under The Covers",
+    "artist": "Beautiful South",
+    "year": "1989",
+    "chords": "F C B♭ C",
+    "detail": "verses",
+    "type": "I-IV-V La Bamba loops I-V-IV-V"
+   },
+   {
+    "title": "C’mon Everybody",
+    "artist": "Eddy Cochran",
+    "year": "1958",
+    "chords": "E A B A",
+    "type": "I-IV-V-IV Wild Thing loops I-V-IV"
+   },
+   {
+    "title": "Sweets For My Sweet",
+    "artist": "Searchers",
+    "year": "1964",
+    "chords": "D G A G",
+    "type": "I-IV-V-IV Wild Thing loops I-V-IV"
+   },
+   {
+    "title": "Wild Thing",
+    "artist": "Troggs",
+    "year": "1966",
+    "chords": "A D E D",
+    "type": "I-IV-V-IV Wild Thing loops I-V-IV"
+   },
+   {
+    "title": "Hang On Sloopy",
+    "artist": "McCoys",
+    "year": "1965",
+    "chords": "G C D C",
+    "type": "I-IV-V-IV Wild Thing loops I-V-IV"
+   },
+   {
+    "title": "Name of the Game",
+    "artist": "Abba",
+    "year": "1977",
+    "chords": "A D E D",
+    "detail": "hook line/chorus",
+    "type": "I-IV-V-IV Wild Thing loops I-V-IV"
+   },
+   {
+    "title": "Congratulations",
+    "artist": "Traveling Wilburys",
+    "year": "1988",
+    "chords": "C F G F",
+    "type": "I-IV-V-IV Wild Thing loops I-V-IV"
+   },
+   {
+    "title": "Knocking On Heaven’s Door",
+    "artist": "Bob Dylan",
+    "year": "1973",
+    "detail": "G D C C [Am × 2]",
+    "type": "I-IV-V-IV Wild Thing loops I-V-IV",
+    "chords": "Am × 2"
+   },
+   {
+    "title": "Already Gone",
+    "artist": "Eagles",
+    "year": "1974",
+    "chords": "G D C C",
+    "type": "I-IV-V-IV Wild Thing loops I-V-IV"
+   },
+   {
+    "title": "Helpless",
+    "artist": "Neil Young",
+    "year": "1977",
+    "chords": "D A G G",
+    "type": "I-IV-V-IV Wild Thing loops I-V-IV"
+   }
+  ]
+ },
+ {
+  "table": 36,
+  "page": 431,
+  "caption": "",
+  "header": [
+   "Type",
+   "Key",
+   "Song (Artist, Year)"
+  ],
+  "rows": [
+   [
+    [
+     "♭VII-",
+     "-IV-I"
+    ],
+    [
+     "E",
+     "E",
+     "A",
+     "C"
+    ],
+    [
+     "•_With A Little Help From My Friends_(Beatles, 1967b: hook)",
+     "•_Polythene Pam_(Beatles, 1969a: start of verses)",
+     "•_20th Century Man_(Kinks, 1971)",
+     "•_Gimme All Your Lovin’_(Z.Z. Top, 1983: hook)"
+    ]
+   ],
+   [
+    [
+     "I-♭VII-",
+     "-IV-I"
+    ],
+    [
+     "G",
+     "G"
+    ],
+    [
+     "•_Hey Jude_(Beatles, 1968b; end)",
+     "•_Fortunate Son_(Creedence Clearwater Revival, 1970)"
+    ]
+   ],
+   [
+    [
+     "I-♭VII-",
+     "-IV-IV"
+    ],
+    [
+     "B",
+     "F#",
+     "A",
+     "D",
+     "C"
+    ],
+    [
+     "•_The Midnight Rambler_(Rolling Stones, 1969)",
+     "_• Where Do We Go From Here Now?_(The Band, 1971)",
+     "•_20th Century Man_(Kinks, 1971)",
+     "•_Sweet Home Alabama_(Lynyrd Skynyrd, 1974)",
+     "•_Sharp Dressed Man_(Z.Z. Top, 1983: verse starts)"
+    ]
+   ],
+   [
+    [
+     "I-I-",
+     "-♭VII-IV"
+    ],
+    [
+     "B",
+     "E",
+     "A"
+    ],
+    [
+     "•_Soul Finger_(Bar Kays, 1967)",
+     "•_Traveler In Time_(Uriah Heep, 1972)",
+     "•_You Ain’t Seen Nothing Yet_(Bachman Turner, 1974)"
+    ]
+   ]
+  ],
+  "display": [
+   [
+    [
+     "♭VII-",
+     "-IV-I"
+    ],
+    [
+     "E",
+     "E",
+     "A",
+     "C"
+    ],
+    [
+     "• _With A Little Help From My Friends_(Beatles, 1967b: hook)",
+     "• _Polythene Pam_(Beatles, 1969a: start of verses)",
+     "• _20th Century Man_(Kinks, 1971)",
+     "• _Gimme All Your Lovin’_(Z.Z. Top, 1983: hook)"
+    ]
+   ],
+   [
+    [
+     "I-♭VII-",
+     "-IV-I"
+    ],
+    [
+     "G",
+     "G"
+    ],
+    [
+     "• _Hey Jude_(Beatles, 1968b; end)",
+     "• _Fortunate Son_(Creedence Clearwater Revival, 1970)"
+    ]
+   ],
+   [
+    [
+     "I-♭VII-",
+     "-IV-IV"
+    ],
+    [
+     "B",
+     "F#",
+     "A",
+     "D",
+     "C"
+    ],
+    [
+     "• _The Midnight Rambler_(Rolling Stones, 1969)",
+     "• _Where Do We Go From Here Now?_(The Band, 1971)",
+     "• _20th Century Man_(Kinks, 1971)",
+     "• _Sweet Home Alabama_(Lynyrd Skynyrd, 1974)",
+     "• _Sharp Dressed Man_(Z.Z. Top, 1983: verse starts)"
+    ]
+   ],
+   [
+    [
+     "I-I-",
+     "-♭VII-IV"
+    ],
+    [
+     "B",
+     "E",
+     "A"
+    ],
+    [
+     "• _Soul Finger_(Bar Kays, 1967)",
+     "• _Traveler In Time_(Uriah Heep, 1972)",
+     "• _You Ain’t Seen Nothing Yet_(Bachman Turner, 1974)"
+    ]
+   ]
+  ],
+  "songs": [
+   {
+    "title": "With A Little Help From My Friends",
+    "artist": "Beatles",
+    "year": "1967b",
+    "detail": "hook",
+    "key": "E",
+    "type": "♭VII- -IV-I"
+   },
+   {
+    "title": "Polythene Pam",
+    "artist": "Beatles",
+    "year": "1969a",
+    "detail": "start of verses",
+    "key": "E",
+    "type": "♭VII- -IV-I"
+   },
+   {
+    "title": "20th Century Man",
+    "artist": "Kinks",
+    "year": "1971",
+    "key": "A",
+    "type": "♭VII- -IV-I"
+   },
+   {
+    "title": "Gimme All Your Lovin’",
+    "artist": "Z.Z. Top",
+    "year": "1983",
+    "detail": "hook",
+    "key": "C",
+    "type": "♭VII- -IV-I"
+   },
+   {
+    "title": "Hey Jude",
+    "artist": "Beatles",
+    "year": "1968b",
+    "detail": "end",
+    "key": "G",
+    "type": "I-♭VII- -IV-I"
+   },
+   {
+    "title": "Fortunate Son",
+    "artist": "Creedence Clearwater Revival",
+    "year": "1970",
+    "key": "G",
+    "type": "I-♭VII- -IV-I"
+   },
+   {
+    "title": "The Midnight Rambler",
+    "artist": "Rolling Stones",
+    "year": "1969",
+    "key": "B",
+    "type": "I-♭VII- -IV-IV"
+   },
+   {
+    "title": "Where Do We Go From Here Now?",
+    "artist": "The Band",
+    "year": "1971",
+    "key": "F#",
+    "type": "I-♭VII- -IV-IV"
+   },
+   {
+    "title": "Sweet Home Alabama",
+    "artist": "Lynyrd Skynyrd",
+    "year": "1974",
+    "key": "D",
+    "type": "I-♭VII- -IV-IV"
+   },
+   {
+    "title": "Sharp Dressed Man",
+    "artist": "Z.Z. Top",
+    "year": "1983",
+    "detail": "verse starts",
+    "key": "C",
+    "type": "I-♭VII- -IV-IV"
+   },
+   {
+    "title": "Soul Finger",
+    "artist": "Bar Kays",
+    "year": "1967",
+    "key": "B",
+    "type": "I-I- -♭VII-IV"
+   },
+   {
+    "title": "Traveler In Time",
+    "artist": "Uriah Heep",
+    "year": "1972",
+    "key": "E",
+    "type": "I-I- -♭VII-IV"
+   },
+   {
+    "title": "You Ain’t Seen Nothing Yet",
+    "artist": "Bachman Turner",
+    "year": "1974",
+    "key": "A",
+    "type": "I-I- -♭VII-IV"
+   }
+  ]
+ },
+ {
+  "table": 37,
+  "page": 441,
+  "caption": "Bimodal reversibility of progressions (examples only)",
+  "hand": true,
+  "header": [
+   "",
+   "",
+   ""
+  ],
+  "rows": [
+   [
+    [
+     "_lydian_ F G C = I II V [I]"
+    ],
+    [
+     "↔"
+    ],
+    [
+     "_ionian_ C G F F = I V IV [I]"
+    ]
+   ],
+   [
+    [
+     "_ionian_ C F G = I IV V [I]"
+    ],
+    [
+     "↔"
+    ],
+    [
+     "_mixolydian_ G F C = I ♭VII IV [I]"
+    ]
+   ],
+   [
+    [
+     "_mixolydian_ G C F Dm = I IV ♭VII v [I]"
+    ],
+    [
+     "↔"
+    ],
+    [
+     "_dorian_ Dm F C G = i ♭III ♭VII IV [I]"
+    ]
+   ],
+   [
+    [
+     "_dorian_ Dm F G Am = i ♭III IV v [I]"
+    ],
+    [
+     "↔"
+    ],
+    [
+     "_aeolian_ Am G F Dm = i ♭VII ♭VI v [I]"
+    ]
+   ],
+   [
+    [
+     "_aeolian_ Am Dm E = i iv V [I]*",
+     "_aeolian_ E F G Am = V ♭VI ♭VII i*"
+    ],
+    [
+     "↔"
+    ],
+    [
+     "_phrygian_ E Dm Am = I ♭vii iv [I]*",
+     "_phrygian_ Am G F E = iv ♭III ♭II I*"
+    ]
+   ],
+   [
+    [
+     "_ionian_ Am G C = vi V I"
+    ],
+    [
+     "↔"
+    ],
+    [
+     "_aeolian_ C G Am = ♭III ♭VII i"
+    ]
+   ]
+  ],
+  "note": "* Phrygian i is normally altered to Hijaz I, so aeolian v is altered here to V.",
+  "display": [
+   [
+    [
+     "_lydian_ F G C = I II V [I]"
+    ],
+    [
+     "↔"
+    ],
+    [
+     "_ionian_ C G F F = I V IV [I]"
+    ]
+   ],
+   [
+    [
+     "_ionian_ C F G = I IV V [I]"
+    ],
+    [
+     "↔"
+    ],
+    [
+     "_mixolydian_ G F C = I ♭VII IV [I]"
+    ]
+   ],
+   [
+    [
+     "_mixolydian_ G C F Dm = I IV ♭VII v [I]"
+    ],
+    [
+     "↔"
+    ],
+    [
+     "_dorian_ Dm F C G = i ♭III ♭VII IV [I]"
+    ]
+   ],
+   [
+    [
+     "_dorian_ Dm F G Am = i ♭III IV v [I]"
+    ],
+    [
+     "↔"
+    ],
+    [
+     "_aeolian_ Am G F Dm = i ♭VII ♭VI v [I]"
+    ]
+   ],
+   [
+    [
+     "_aeolian_ Am Dm E = i iv V [I]*",
+     "_aeolian_ E F G Am = V ♭VI ♭VII i*"
+    ],
+    [
+     "↔"
+    ],
+    [
+     "_phrygian_ E Dm Am = I ♭vii iv [I]*",
+     "_phrygian_ Am G F E = iv ♭III ♭II I*"
+    ]
+   ],
+   [
+    [
+     "_ionian_ Am G C = vi V I"
+    ],
+    [
+     "↔"
+    ],
+    [
+     "_aeolian_ C G Am = ♭III ♭VII i"
+    ]
+   ]
+  ],
+  "songs": []
+ },
+ {
+  "table": 38,
+  "page": 442,
+  "caption": "",
+  "header": [
+   "Type",
+   "Tune (Artist, Year: chords [detail])"
+  ],
+  "rows": [
+   [
+    [
+     "Type (a) I-♭III- -IV- rock‐ dorian loop"
+    ],
+    [
+     "Tune (Artist, Year: chords [detail]) •AC/DC:_Shoot To Thrill_(1980: A C D …) •Alice Cooper:_Under My Wheels_(1971: A C D …) •Booker T and the MGs:_Green Onions_(1962: F A♭ B♭) •J. J. Cale:_After Midnight_(1971: E G A E) •Canned Heat:_On The Road Again_(1968: E×6 G A) •Everly Brothers:_The Girl Sang The Blues_(1963: E G A E/A C D A) •Led Zeppelin:_Bron‐yr‐Aur Stomp_(1970: G B♭ C) •Led Zeppelin:_Candy Store Rock_(1976: E A G short riff) •Mission:_Sacrilege_(1986: D×6 F G) •Slade:_Shape Of Things To Come_(1970: A C D F) •Talking Heads:_Take Me To The River_(1978: E E G A) •Tina Turner:_Steamy Windows_(1989: E×6 A G) •Johnny Winter:_Rock and Roll Hoochie Coo_(1972: E A G) •Stevie Wonder:_Higher Ground_(1973; E G A) •Z. Z. Top:_La Grange_(1973: E E G A)"
+    ]
+   ],
+   [
+    [
+     "(b)",
+     "I-III?"
+    ],
+    [
+     "•Pink Floyd:_Nobody Home_(1979: C C E F C)",
+     "•Radiohead: Creep (1992: G B C Cm)",
+     "•Otis Redding:_Sitting On The Dock Of The Bay_(1967; G B C A)",
+     "•Will.i.am:_Yes We Can_(2008: G B Em C) (see Chapter 15)"
+    ]
+   ],
+   [
+    [
+     "Type",
+     "(c)",
+     "I-iii-IV?",
+     "ionian",
+     "mediantal",
+     "narrative"
+    ],
+    [
+     "Tune (Artist, Year: chords [detail])",
+     "•Abba:_Knowing Me, Knowing You_(1975c; A C♯m D E: interludes)",
+     "•The Band:_The Weight_(1968; A C♯m D A)",
+     "•Beach Boys:_I Can Hear Music_(1969: D F♯m G A; verse starts)",
+     "•David Bowie:_Rock And Roll Suicide_(1979; C Em F G Am)",
+     "•David Bowie:_Ziggy Stardust_(1979; G Bm C C)",
+     "•Dexy’s Midnight Runners:_Come On, Eileen_(1989; C Em F C G)",
+     "•Eric Clapton:_Easy Now_(1970b: D♭ Fm G♭ A♭)",
+     "•Housemartins:_Happy Hour_(1986: B♭ Dm E♭ F; hook)",
+     "•Manfred Mann:_Just Like A Woman_(Dylan) (1966b: G Bm C D)",
+     "•Marmalade:_Make It Soon_(1969: G B C D: chorus)",
+     "•Small Faces:_Itchycoo Park_(1967: A C♯m G D)"
+    ]
+   ],
+   [
+    [
+     "(d)",
+     "i-♭III-IV?",
+     "‘folk’",
+     "dorian"
+    ],
+    [
+     "•Dead or Alive:_You Spin Me Round_(1993: F♯m A B)",
+     "•Smiths:_What Difference Does It Make_(1984; Bm D E D: intro.)",
+     "•Wishbone Ash:_The King Will Come_(1972; Dm F G: instrumentals)",
+     "•Yardbirds:_For Your Love_(1965: Em G A Am)"
+    ]
+   ]
+  ],
+  "pages": [
+   442,
+   443
+  ],
+  "display": [
+   [
+    [
+     "Type (a) I-♭III- -IV- rock‐ dorian loop"
+    ],
+    [
+     "• Tune (Artist, Year: chords [detail])",
+     "• AC/DC:_Shoot To Thrill_(1980: A C D …)",
+     "• Alice Cooper:_Under My Wheels_(1971: A C D …)",
+     "• Booker T and the MGs:_Green Onions_(1962: F A♭ B♭)",
+     "• J. J. Cale:_After Midnight_(1971: E G A E)",
+     "• Canned Heat:_On The Road Again_(1968: E×6 G A)",
+     "• Everly Brothers:_The Girl Sang The Blues_(1963: E G A E/A C D A)",
+     "• Led Zeppelin:_Bron‐yr‐Aur Stomp_(1970: G B♭ C)",
+     "• Led Zeppelin:_Candy Store Rock_(1976: E A G short riff)",
+     "• Mission:_Sacrilege_(1986: D×6 F G)",
+     "• Slade:_Shape Of Things To Come_(1970: A C D F)",
+     "• Talking Heads:_Take Me To The River_(1978: E E G A)",
+     "• Tina Turner:_Steamy Windows_(1989: E×6 A G)",
+     "• Johnny Winter:_Rock and Roll Hoochie Coo_(1972: E A G)",
+     "• Stevie Wonder:_Higher Ground_(1973; E G A)",
+     "• Z. Z. Top:_La Grange_(1973: E E G A)"
+    ]
+   ],
+   [
+    [
+     "(b)",
+     "I-III?"
+    ],
+    [
+     "• Pink Floyd:_Nobody Home_(1979: C C E F C)",
+     "• Radiohead: Creep (1992: G B C Cm)",
+     "• Otis Redding:_Sitting On The Dock Of The Bay_(1967; G B C A)",
+     "• Will.i.am:_Yes We Can_(2008: G B Em C) (see Chapter 15)"
+    ]
+   ],
+   [
+    [
+     "Type",
+     "(c)",
+     "I-iii-IV?",
+     "ionian",
+     "mediantal",
+     "narrative"
+    ],
+    [
+     "• Tune (Artist, Year: chords [detail])",
+     "• Abba:_Knowing Me, Knowing You_(1975c; A C♯m D E: interludes)",
+     "• The Band:_The Weight_(1968; A C♯m D A)",
+     "• Beach Boys:_I Can Hear Music_(1969: D F♯m G A; verse starts)",
+     "• David Bowie:_Rock And Roll Suicide_(1979; C Em F G Am)",
+     "• David Bowie:_Ziggy Stardust_(1979; G Bm C C)",
+     "• Dexy’s Midnight Runners:_Come On, Eileen_(1989; C Em F C G)",
+     "• Eric Clapton:_Easy Now_(1970b: D♭ Fm G♭ A♭)",
+     "• Housemartins:_Happy Hour_(1986: B♭ Dm E♭ F; hook)",
+     "• Manfred Mann:_Just Like A Woman_(Dylan) (1966b: G Bm C D)",
+     "• Marmalade:_Make It Soon_(1969: G B C D: chorus)",
+     "• Small Faces:_Itchycoo Park_(1967: A C♯m G D)"
+    ]
+   ],
+   [
+    [
+     "(d)",
+     "i-♭III-IV?",
+     "‘folk’",
+     "dorian"
+    ],
+    [
+     "• Dead or Alive:_You Spin Me Round_(1993: F♯m A B)",
+     "• Smiths:_What Difference Does It Make_(1984; Bm D E D: intro.)",
+     "• Wishbone Ash:_The King Will Come_(1972; Dm F G: instrumentals)",
+     "• Yardbirds:_For Your Love_(1965: Em G A Am)"
+    ]
+   ]
+  ],
+  "songs": [
+   {
+    "artist": "AC/DC",
+    "title": "Shoot To Thrill",
+    "year": "1980",
+    "chords": "A C D …",
+    "type": "(a) I-♭III- -IV- rock‐ dorian loop"
+   },
+   {
+    "artist": "Alice Cooper",
+    "title": "Under My Wheels",
+    "year": "1971",
+    "chords": "A C D …",
+    "type": "(a) I-♭III- -IV- rock‐ dorian loop"
+   },
+   {
+    "artist": "Booker T and the MGs",
+    "title": "Green Onions",
+    "year": "1962",
+    "chords": "F A♭ B♭",
+    "type": "(a) I-♭III- -IV- rock‐ dorian loop"
+   },
+   {
+    "artist": "J. J. Cale",
+    "title": "After Midnight",
+    "year": "1971",
+    "chords": "E G A E",
+    "type": "(a) I-♭III- -IV- rock‐ dorian loop"
+   },
+   {
+    "artist": "Canned Heat",
+    "title": "On The Road Again",
+    "year": "1968",
+    "chords": "E×6 G A",
+    "type": "(a) I-♭III- -IV- rock‐ dorian loop"
+   },
+   {
+    "artist": "Everly Brothers",
+    "title": "The Girl Sang The Blues",
+    "year": "1963",
+    "chords": "E G A E/A C D A",
+    "type": "(a) I-♭III- -IV- rock‐ dorian loop"
+   },
+   {
+    "artist": "Led Zeppelin",
+    "title": "Bron‐yr‐Aur Stomp",
+    "year": "1970",
+    "chords": "G B♭ C",
+    "type": "(a) I-♭III- -IV- rock‐ dorian loop"
+   },
+   {
+    "artist": "Led Zeppelin",
+    "title": "Candy Store Rock",
+    "year": "1976",
+    "chords": "E A G short riff",
+    "type": "(a) I-♭III- -IV- rock‐ dorian loop"
+   },
+   {
+    "artist": "Mission",
+    "title": "Sacrilege",
+    "year": "1986",
+    "chords": "D×6 F G",
+    "type": "(a) I-♭III- -IV- rock‐ dorian loop"
+   },
+   {
+    "artist": "Slade",
+    "title": "Shape Of Things To Come",
+    "year": "1970",
+    "chords": "A C D F",
+    "type": "(a) I-♭III- -IV- rock‐ dorian loop"
+   },
+   {
+    "artist": "Talking Heads",
+    "title": "Take Me To The River",
+    "year": "1978",
+    "chords": "E E G A",
+    "type": "(a) I-♭III- -IV- rock‐ dorian loop"
+   },
+   {
+    "artist": "Tina Turner",
+    "title": "Steamy Windows",
+    "year": "1989",
+    "chords": "E×6 A G",
+    "type": "(a) I-♭III- -IV- rock‐ dorian loop"
+   },
+   {
+    "artist": "Johnny Winter",
+    "title": "Rock and Roll Hoochie Coo",
+    "year": "1972",
+    "chords": "E A G",
+    "type": "(a) I-♭III- -IV- rock‐ dorian loop"
+   },
+   {
+    "artist": "Stevie Wonder",
+    "title": "Higher Ground",
+    "year": "1973",
+    "chords": "E G A",
+    "type": "(a) I-♭III- -IV- rock‐ dorian loop"
+   },
+   {
+    "artist": "Z. Z. Top",
+    "title": "La Grange",
+    "year": "1973",
+    "chords": "E E G A",
+    "type": "(a) I-♭III- -IV- rock‐ dorian loop"
+   },
+   {
+    "artist": "Pink Floyd",
+    "title": "Nobody Home",
+    "year": "1979",
+    "chords": "C C E F C",
+    "type": "(b) I-III?"
+   },
+   {
+    "artist": "Otis Redding",
+    "title": "Sitting On The Dock Of The Bay",
+    "year": "1967",
+    "chords": "G B C A",
+    "type": "(b) I-III?"
+   },
+   {
+    "artist": "Will.i.am",
+    "title": "Yes We Can",
+    "year": "2008",
+    "chords": "G B Em C",
+    "detail": "(see Chapter 15)",
+    "type": "(b) I-III?"
+   },
+   {
+    "artist": "Abba",
+    "title": "Knowing Me, Knowing You",
+    "year": "1975c",
+    "chords": "A C♯m D E",
+    "detail": "interludes",
+    "type": "(c) I-iii-IV? ionian mediantal narrative"
+   },
+   {
+    "artist": "The Band",
+    "title": "The Weight",
+    "year": "1968",
+    "chords": "A C♯m D A",
+    "type": "(c) I-iii-IV? ionian mediantal narrative"
+   },
+   {
+    "artist": "Beach Boys",
+    "title": "I Can Hear Music",
+    "year": "1969",
+    "chords": "D F♯m G A",
+    "detail": "verse starts",
+    "type": "(c) I-iii-IV? ionian mediantal narrative"
+   },
+   {
+    "artist": "David Bowie",
+    "title": "Rock And Roll Suicide",
+    "year": "1979",
+    "chords": "C Em F G Am",
+    "type": "(c) I-iii-IV? ionian mediantal narrative"
+   },
+   {
+    "artist": "David Bowie",
+    "title": "Ziggy Stardust",
+    "year": "1979",
+    "chords": "G Bm C C",
+    "type": "(c) I-iii-IV? ionian mediantal narrative"
+   },
+   {
+    "artist": "Dexy’s Midnight Runners",
+    "title": "Come On, Eileen",
+    "year": "1989",
+    "chords": "C Em F C G",
+    "type": "(c) I-iii-IV? ionian mediantal narrative"
+   },
+   {
+    "artist": "Eric Clapton",
+    "title": "Easy Now",
+    "year": "1970b",
+    "chords": "D♭ Fm G♭ A♭",
+    "type": "(c) I-iii-IV? ionian mediantal narrative"
+   },
+   {
+    "artist": "Housemartins",
+    "title": "Happy Hour",
+    "year": "1986",
+    "chords": "B♭ Dm E♭ F",
+    "detail": "hook",
+    "type": "(c) I-iii-IV? ionian mediantal narrative"
+   },
+   {
+    "artist": "Manfred Mann",
+    "title": "Just Like A Woman",
+    "detail": "Dylan) (1966b: G Bm C D",
+    "type": "(c) I-iii-IV? ionian mediantal narrative"
+   },
+   {
+    "artist": "Marmalade",
+    "title": "Make It Soon",
+    "year": "1969",
+    "chords": "G B C D",
+    "detail": "chorus",
+    "type": "(c) I-iii-IV? ionian mediantal narrative"
+   },
+   {
+    "artist": "Small Faces",
+    "title": "Itchycoo Park",
+    "year": "1967",
+    "chords": "A C♯m G D",
+    "type": "(c) I-iii-IV? ionian mediantal narrative"
+   },
+   {
+    "artist": "Dead or Alive",
+    "title": "You Spin Me Round",
+    "year": "1993",
+    "chords": "F♯m A B",
+    "type": "(d) i-♭III-IV? ‘folk’ dorian"
+   },
+   {
+    "artist": "Smiths",
+    "title": "What Difference Does It Make",
+    "year": "1984",
+    "chords": "Bm D E D",
+    "detail": "intro",
+    "type": "(d) i-♭III-IV? ‘folk’ dorian"
+   },
+   {
+    "artist": "Wishbone Ash",
+    "title": "The King Will Come",
+    "year": "1972",
+    "chords": "Dm F G",
+    "detail": "instrumentals",
+    "type": "(d) i-♭III-IV? ‘folk’ dorian"
+   },
+   {
+    "artist": "Yardbirds",
+    "title": "For Your Love",
+    "year": "1965",
+    "chords": "Em G A Am",
+    "type": "(d) i-♭III-IV? ‘folk’ dorian"
+   }
+  ]
+ }
+]

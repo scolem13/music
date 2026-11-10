@@ -1,0 +1,81 @@
+---
+title: "Unevenly Spaced Frets: Why Some Guitars Are Not Equal"
+toc: true
+toc-depth: 2
+description: "A fretboard model where every fret can be moved, with the rule of 18, just intonation, meantone and well-tempered placements, how far each fret sits from equal in cents and millimetres, and why builders make frets that are not equally spaced: tuning systems, string stretch, fanned frets and movable frets."
+instruments: [guitar, bass, other]
+topics: [sound, instruments]
+has: [interactive, svg]
+---
+
+On a guitar each fret is a bar that shortens the string. On a normal guitar the frets are spaced so that every one raises the pitch by
+the same ratio, one equal-tempered semitone (a frequency ratio of the twelfth root of two, 1.0595), and the spacing is not even:
+each fret is about 5.6% closer to the last than the one before. So a fret board is never "evenly spaced"; the question is
+whether the spacing follows the equal-tempered rule or something else. Builders have departed from it for centuries, and still do.
+
+**How to use the page.** Choose a fret placement. Dashed lines are where the equal-tempered frets would be; the solid lines are the
+placement you chose. The figure below each fret is how many cents it is from equal, and how many millimetres it has moved on a 25.5 inch
+(648 mm) scale. **Drag the dots** to move a fret, press between frets to play, and use *Both together* to hear every
+fret against its equal-tempered neighbour: the beating gets faster the farther a fret has moved.
+
+<div class="sk" data-w="unevenfret" data-title="A fretboard with movable frets"></div>
+
+## Why frets are not equal
+
+**1. A different tuning system.** Equal frets give equal temperament. Before it, lutes and vihuelas wore frets of
+tied-on gut, which a player could slide along the neck. Placing them to give pure thirds (as *meantone* does) makes the
+chords of a few keys beautiful and the others poor, and a player re-tied the frets for the music
+(*unverified*, from general knowledge of lute practice). Choose *Quarter-comma meantone* above and look at fret 4: the major third (386.3
+cents) sits 13.7 cents below the equal one, a shift of about 4 mm on a 25.5 inch neck. Choose *Just intonation* and look at fret 4 and fret 7. The cost: the frets are
+right for chords on the open-string note only. A string's frets that are pure from E are wrong from A.
+
+**2. The rule of 18.** The ratio 2^(1/12) can be approximated: make each fret 1/18 of the string still
+vibrating. The ratio is 18/17 = 1.0588, close to 1.0595. This is an old workshop rule, and its error (about 13 cents flat by the
+octave) is why builders move to a better method for the later frets. Choose *Rule of 18* to see it (*unverified*: a traditional rule
+described in luthiery handbooks, which we have not cited).
+
+**3. Intonation compensation.** Pressing a string to a fret stretches it slightly and raises the pitch, more on the high frets and when
+the strings sit high above the fretboard. Builders make up for this by setting the bridge saddle a little farther
+from the nut than twice the 12th-fret distance, and angling the saddle so the bass strings are longer than the treble ones. The frets stay
+at the equal-tempered positions and the **saddle** moves. Some designs go further and shift the nut or the frets themselves
+(commercial schemes of this kind exist) so that the open-string chords are more in tune.
+
+**4. True temperament frets.** Even with compensation, the frets of a single guitar cannot be right for every string, because the stretch varies
+from string to string and the guitar is tuned in fourths with the major third between G and B. Some makers curve each fret
+(a "true temperament" neck) so that every string has its own spacing. The frets are not straight bars: they wave across the fingerboard.
+*Unverified* (not described on this page in numbers).
+
+**5. Fanned frets.** On a **multiscale** or "fanned fret" guitar each string has a different scale length, long for the bass string and short for the treble.
+The frets are therefore angled, each at the same fraction of its own string's length, and one of them
+(usually near the middle of the neck) is perpendicular. Spacing along each string is still equal-tempered, and the point is a tighter low string and a
+more comfortable reach, not a tuning change.
+
+**6. Instruments with movable frets.** The Turkish *bağlama* (*saz*), the Persian *setar* and many lutes have tied-on or movable frets, set by the
+player to the mode that is being played, which includes intervals such as neutral seconds and thirds that a fixed 12-fret
+neck cannot play. The frets are moved to suit the tuning and a different set is used for a different mode.
+*Unverified* (not checked for these instruments).
+
+**7. More frets.** A guitar can have a fret for every quarter tone (24 to the octave, as on the
+[microtonal fretboard](tuning-systems.qmd)), or 19 or 31 to the octave, so the frets are closer together but evenly follow another equal division.
+
+## Reading the numbers
+
+- **Cents from equal.** A cent is 1/100 of an equal semitone. About 5 cents is audible when two notes sound together as a slow beat; 14 cents (a pure
+  major third on a 12-equal fret) is noticeable on a sustained chord.
+- **Millimetres.** On a 648 mm scale, 1 mm is about 3 cents near the nut and about 3.5 cents at the fourth fret, so a 14-cent move at the fourth fret is
+  about 4 mm: easily seen, and an amount a player could slide a tied-on gut fret.
+
+## Things to try
+
+1. Choose *Just intonation*, open string E2, then *Both together*. Which frets beat fastest, and which do not beat at all?
+2. In *Equal*, drag fret 7 toward the nut by about 2 cents (a millimetre or less). Does the fifth sound better or worse against the open string?
+3. Choose *Rule of 18* and listen to frets 10 to 12. What happens to the octave?
+4. Pick the high E string and then the low E string, in *Just intonation*. Does the placement change? Why not?
+5. Why can an equal-tempered fret be right for every key, but a just-tuned fret only for one?
+
+## Next
+
+[Tuning systems](tuning-systems.qmd) explains the ratios; the same page has the quarter-tone fretboard and the split-key keyboard.
+
+{{< include _synth-kit.qmd >}}
+<script src="/apps/shared/lessons/tuning-kit.js"></script>

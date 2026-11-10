@@ -31,6 +31,11 @@ const URL = p => `http://127.0.0.1:8517/${p}.html`;
   check("nothing of the tuner is loaded before the button is pressed", await ev(`typeof TunerPanel === 'undefined' && typeof StrobeView === 'undefined'`) && await ev(`typeof AudioTap`) === "object");
   await open();
   check("panel: opens, loads on demand, shows Start", await ev(`!document.getElementById('pw-tuner').hidden && !!document.getElementById('pw-t-go') && document.getElementById('pw-t-go').textContent`) === "Start");
+  const vw = () => ev(`(() => ({ v: document.getElementById('pw-t-view').value, h: document.getElementById('pw-t-cv').style.height, bandsHidden: document.getElementById('pw-t-bandsrow').hidden, n: document.getElementById('pw-t-view').options.length }))()`);
+  let v0 = await vw(); check("display: six choices, defaults to the cents bar (52px, band count hidden)", v0.v === "bar" && v0.h === "52px" && v0.bandsHidden && v0.n === 6, JSON.stringify(v0));
+  await set("view", "strobe"); v0 = await vw(); check("display: full strobe is 200px with the band count", v0.h === "200px" && !v0.bandsHidden, JSON.stringify(v0));
+  for (const m of ["strip", "trace", "light", "wheel"]) { await set("view", m); v0 = await vw(); check("display: " + m + " switches without errors", v0.v === m && !v0.bandsHidden === false, JSON.stringify(v0)); }
+  await set("view", "bar");
   check("mic: not asked for on opening the panel", await ev("__streams.length") === 0);
   let st = await S();
   check("sources: microphone and tab offered; this page's sound and media greyed with a reason", st.disabled.includes("tap") && st.disabled.includes("media") && !st.disabled.includes("mic") && /Nothing on this page has made a sound/.test(st.why) && /There is no video or audio/.test(st.why), JSON.stringify(st.disabled));
