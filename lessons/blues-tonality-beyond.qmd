@@ -1,0 +1,82 @@
+---
+title: "Blues Tonality 6: Mixture, Harmonica, Form and Style"
+toc: true
+toc-depth: 2
+description: "Is blues 'modal mixture'? The Green Onions riff mapped to the modes its chords come from; cross harp on the diatonic harmonica; why the 12-bar form is neither needed nor enough; blues tonality in funk, soul and pop."
+instruments: [guitar, piano, other]
+topics: [blues, harmony, style]
+has: [band, interactive]
+---
+
+## Modal mixture, or a system of its own?
+
+Some textbooks explain blues as **modal mixture**: chords borrowed from major, minor and the
+modes into one key. Hein's test case is Booker T. & the M.G.'s *Green Onions* (1962). Its riff
+uses three chords per bar, and each chord comes from a different mode of the key.
+
+In the grid, each coloured dot names a mode of the key note that holds every note of that chord.
+Press play and watch the colours change from bar to bar.
+
+<div class="bz" data-w="onions" data-title="The Green Onions riff: where each chord comes from"></div>
+
+Hein's chords for the three riff positions are Fm7 – A♭ – B♭, B♭7 – D♭ – E♭ and C7 – E♭ – F
+(in F). The bars here are laid out as a standard 12-bar, and the riff's rhythm is simplified.
+Check both against the recording.
+
+The I-position chords all fit F Dorian. D♭ needs F natural minor. C7 and F major need F major.
+Hein argues that "mixture" assumes major and minor are separate worlds that get mixed. In a
+blues they were never separate. Of John Lee Hooker's *I'm Bad Like Jesse James* he says there
+is no way to tell which mode is the native one, so the song is simply "in E blues".
+
+## Cross harp: playing an instrument against its design
+
+A diatonic harmonica is built for the major key of its name. Blowing gives the key chord, and
+drawing (breathing in) gives a dominant 9th chord on the 5th. Hein describes how Black players
+reversed this, starting around 1870-1920. In **cross harp** (2nd position) the draw chord
+becomes the home chord, the blow chord becomes IV, and bending the draw notes down gives the
+blue notes. Van der Merwe calls it perhaps the most striking example in all music of
+technique contradicting an instrument's design.
+
+<div class="bz" data-w="harp" data-title="Ten-hole harmonica (Richter layout)"></div>
+
+The hole layout and bends shown are the standard Richter tuning, written from memory and
+**not yet checked** against a source. Overblows are left out.
+
+## The 12-bar form: neither needed nor enough
+
+The 12-bar is a **scheme**, not a definition. Hein's examples of 12-bar forms that are not
+blues are Flatt and Scruggs's *Shuckin' the Corn* (bluegrass) and the 1966 *Batman* theme.
+His examples of blues without the 12-bar are *Work Song* (Nat Adderley) and *Moanin'* (Bobby
+Timmons). For the form itself, see [Changing the Changes in a 12-Bar
+Blues](blues-changes.qmd), and train your ear on it with [Blues Changes by
+Ear](../practice/blues-ear.qmd).
+
+## Blues tonality in other styles
+
+The later part of Hein's essay looks at how much blues tonality a style uses. Funk uses a lot
+(*Jungle Boogie*: one chord, blues pitch). Disco uses much less. Aretha Franklin's *Bridge Over
+Troubled Water* brings blues tonality into a song that is diatonic in Simon and Garfunkel's
+original. Hein closes with a case for teaching blues tonality in the core theory course, and
+for keeping it in school arrangements, which often strip it out and add V–I cadences.
+
+These examples come from a summary of the second half of the essay, not a word-for-word
+reading, so they are **unverified** here until the essay is re-read.
+
+**Try it:** take a song you know in major. Set the backing to **One chord: I7** and play its
+melody with majorish 3rds and high 7ths. What has to change for it to sound like blues?
+
+## Where to go next
+
+- [Blues Improvisation](blues-improv.qmd) and the instrument lessons in *Blues and Jazz*
+- [Hearing Harmony](../practice/harmony-ear.qmd): progressions by ear, including the blues path
+- [Tuning Systems](tuning-systems.qmd): pitches between the keys, on pads and frets
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hein, Ethan. "Blues Tonality." *The Ethan Hein Blog*, 21 Sept. 2014, updated 10 Jan. 2026, [www.ethanhein.com/wp/2014/blues-tonality/](https://www.ethanhein.com/wp/2014/blues-tonality/). The series' main source; its own reference list has the books and articles named on these pages.
+:::
+<!-- /works-cited -->
+
+{{< include _blues-tonality-kit.qmd >}}

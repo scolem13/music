@@ -1,0 +1,88 @@
+---
+title: "Blues Tonality 3: Blue Notes Are Areas, Not Points"
+toc: true
+toc-depth: 2
+description: "The blue 3rd, 5th and 7th as pitch areas between the piano keys: what early writers heard, what Titon and Cutting measured, and how players 'worry' the notes. Drag through each area and hear the bends."
+instruments: [guitar, sax, violin, voice, other]
+topics: [blues, sound, scales]
+has: [band, interactive]
+---
+
+A piano note is a point: one fixed pitch. A blue note is more like an **area**, a range of
+pitch the player moves around in. Kubik calls these "flexible pitch areas" and Titon "pitch
+complexes". Charalampidis says some blues players call the moving around "pitch shading" or
+"worrying the notes".
+
+**How to use the page.** Start the **Drone** or **Power chord vamp** (bar at the bottom).
+Press and drag along each strip to play any pitch in the range. The readout gives the distance
+from the nearest piano key in **cents** (100 cents = one semitone). The buttons play the ways
+of reaching each area.
+
+## What early listeners wrote
+
+Hein quotes two early collections of African American music:
+
+- *Slave Songs of the United States* (1867) says the singers made sounds that "cannot be
+  precisely represented by the gamut", and it describes their slides.
+- Thomas Fenner, *Hampton and Its Students* (1874), describes tones that musical notation has no
+  signs for, sung "as nearly as possible by the flat seventh", and rarely discordant.
+
+## The 3rd
+
+Peter van der Merwe says most blues 3rds are **neutral** in practice, between minor and major.
+He lists the degrees that get flattened by a quarter tone or a semitone, most often first:
+the **3rd, 7th, 5th, 6th**.
+
+<div class="bz" data-w="zone" data-deg="3" data-title="The 3rd's area"></div>
+
+Charalampidis's main point is that a blues player hears this whole area as **one note** (one
+*toneme*). The ♭3 and the 3 are not two different notes. They are two shades of the same 3rd.
+
+## The 4th, ♯4 and 5th
+
+Court Cutting analysed 15 early blues recordings by computer. He found three clusters of blue
+pitch: the neutral 3rd, a cluster **between 4 and ♯4**, and one **around ♭7**. Charalampidis
+plays the 4th a little sharp, bends up to just below ♯4, and plays the 5th a little flat,
+almost always reached by a bend from the 4th.
+
+<div class="bz" data-w="zone" data-deg="45" data-title="The 4th to the 5th"></div>
+
+## The 7th
+
+Charalampidis describes two 7ths. One is a little **above** the piano's ♭7, sometimes as high as
+the neutral 7th. The other is a little **below** it, reached by bending up from the 5th or the
+6th, and usually followed by the 6th.
+
+<div class="bz" data-w="zone" data-deg="7" data-title="The 7th's area"></div>
+
+## Important notes and passing notes
+
+Not every note is shaded. Van der Merwe calls the blues mode a "modal frame": a framework of
+melodically sensitive notes with less important notes between them. On a fixed-pitch
+instrument, the passing notes are often plain piano pitches. Hein puts it another way: the
+scale is a set of **islands** in a continuous sea of pitch.
+
+To play quarter tones on a grid, try the pitch pads in [Tuning Systems](tuning-systems.qmd)
+(section *24 notes*). Bending technique on the guitar is in [Guitar Bends](guitar-bends.qmd).
+
+## Check your ears
+
+<div class="bz" data-w="quiz" data-kind="third" data-title="Minorish, neutral or majorish?"></div>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Charalampidis, Panos. "Microtonal Blues Scales p.1 [Introduction]." *YouTube*, [www.youtube.com/watch?v=NVWX10c0bNc](https://www.youtube.com/watch?v=NVWX10c0bNc). Read from the video's English subtitles.
+
+Charalampidis, Panos. "Microtonal Blues Scales p.2 [Majorish 4-7 scale]." *YouTube*, [www.youtube.com/watch?v=73ejjQ37WLc](https://www.youtube.com/watch?v=73ejjQ37WLc). Read from the video's English subtitles.
+
+**For teachers**
+
+Hein, Ethan. "Blues Tonality." *The Ethan Hein Blog*, 21 Sept. 2014, updated 10 Jan. 2026, [www.ethanhein.com/wp/2014/blues-tonality/](https://www.ethanhein.com/wp/2014/blues-tonality/). The series' main source; its own reference list has the books and articles named on these pages.
+:::
+<!-- /works-cited -->
+
+{{< include _blues-tonality-kit.qmd >}}

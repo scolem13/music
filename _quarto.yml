@@ -40,6 +40,14 @@ website:
             - lessons/blues-drums.qmd
             - lessons/reading-swing.qmd
             - lessons/watermelon-man-blues.qmd
+        - section: "Blues Tonality"
+          contents:
+            - lessons/blues-tonality-intro.qmd
+            - lessons/blues-tonality-scales.qmd
+            - lessons/blues-tonality-blue-notes.qmd
+            - lessons/blues-tonality-microtonal.qmd
+            - lessons/blues-tonality-harmony.qmd
+            - lessons/blues-tonality-beyond.qmd
         - section: "Pop and Rock"
           contents:
             - lessons/first-rock-song.qmd

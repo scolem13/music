@@ -1,0 +1,62 @@
+---
+title: "Blues Tonality 2: The Scales Called Blues"
+toc: true
+toc-depth: 2
+description: "Aebersold's blues scale, the major blues scale, and the other scales books call 'the blues scale': Dorian, Mixolydian, two tetrachords, Titon's downhome scale. Hear each and compare."
+instruments: [guitar, bass, piano, sax, violin, voice, other]
+topics: [blues, scales]
+has: [band, interactive]
+---
+
+Ask five books for "the blues scale" and you get five different answers. Hein collects them and
+suggests a simple rule: use **the blues scale** only for Jamey Aebersold's six-note scale, and
+give the others their ordinary names.
+
+**How to use the page.** Choose a scale in the menu, then press **▶ On the piano keys**. Click
+any dot to hear that note. Start a backing first (bar at the bottom) to hear the scale against
+a chord. The Key menu changes every name on the page.
+
+## The blues scale (Aebersold)
+
+1 ♭3 4 ♯4 5 ♭7. Hein dates it in print to Jamey Aebersold's *How to Play Jazz and Improvise*
+(1967). It is now in most jazz method books. Jaffe calls it a teaching convenience rather than
+a real scale.
+
+<div class="bz" data-w="scale" data-set="hein" data-start="aebersold" data-title="Scales called “blues”"></div>
+
+Go through the menu with the backing set to **One chord: I7**:
+
+- **Major blues scale.** 1 2 ♭3 3 5 6. The same six notes as the blues scale, started on its
+  second note. A blues scale from A, played from C, is C major blues.
+- **Minor pentatonic.** The blues scale without the ♯4. Tom Sutcliffe calls it a "blues
+  pentatonic" when it is played over a dominant 7th.
+- **Dorian.** Benward and Saker's textbook calls this the blues scale: the major scale with ♭3
+  and ♭7. Hein objects that it lists blues among "esoteric" scales.
+- **Mixolydian** and **Dorian and Mixolydian together.** These are John Fahey's two blues modes,
+  from his study of Charley Patton. The combined one is also Gerhard Kubik's nearest twelve-note
+  version of blues pitch. Kubik traces it to the overtones of degrees 1 and 4.
+- **Two tetrachords.** Winthrop Sargeant, quoted by Gunther Schuller, uses the same four-note
+  shape twice, once around the key note and once around the 5th.
+- **Auxiliary diminished blues.** George Russell's name for the half-whole diminished scale.
+- **Titon's downhome blues scale.** From recordings made in 1926-30. The 3rd, 5th and 7th are
+  *complexes* (several pitches, small dots), and the scale spans a tenth, not an octave.
+
+## The three notes that move
+
+Look across the menu at what changes. The key note, 4 and 5 hardly move. Every scale disagrees
+about the **3rd** (♭3, 3, or both), the **7th**, and the area around the **♯4 / 5**. These are
+the places where blue notes live. The next lesson shows that they are not single pitches at all.
+
+## Check your ears
+
+<div class="bz" data-w="quiz" data-kind="scale" data-title="Which scale is it?"></div>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hein, Ethan. "Blues Tonality." *The Ethan Hein Blog*, 21 Sept. 2014, updated 10 Jan. 2026, [www.ethanhein.com/wp/2014/blues-tonality/](https://www.ethanhein.com/wp/2014/blues-tonality/). The series' main source; its own reference list has the books and articles named on these pages.
+:::
+<!-- /works-cited -->
+
+{{< include _blues-tonality-kit.qmd >}}

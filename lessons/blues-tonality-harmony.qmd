@@ -1,0 +1,94 @@
+---
+title: "Blues Tonality 5: Blues Harmony and the Dominant 7th at Home"
+toc: true
+toc-depth: 2
+description: "Chords built on the blues scale, I°7 and the turnaround, ♭VI7, the 'Hendrix chord' as a home chord, and why the 'avoid note' is not avoided in the blues."
+instruments: [guitar, bass, piano, other]
+topics: [blues, harmony]
+has: [band, interactive]
+---
+
+**How to use the page.** Each button plays a chord or a short progression on the piano over the
+bass, in the key chosen in the bar at the bottom. The line under the buttons spells the last
+chord played.
+
+## Chords on the blues scale
+
+Tom Sutcliffe builds a chord on each note of the blues scale: I7♯9, ♭IIImaj7, IV7, ♯IV°7, V7♯9,
+♭VII7. All their notes (or nearly all) come from the scale.
+
+<div class="bz" data-w="chords" data-set="bluesscale" data-title="Chords on the blues scale"></div>
+
+## Diminished chords
+
+A **I°7** (a diminished 7th on the key note) is common in blues. Hein's example is Robert
+Johnson's *Kind Hearted Woman Blues*, which goes back and forth between I7 and I°7. I°7 has
+three of the four notes of IV7, and all its notes are in the blues or major blues scale. The
+turnaround I7 – ii7 – ♯ii°7 – I7 (or the reverse) is another common use.
+
+<div class="bz" data-w="chords" data-set="dim" data-title="I°7 and the turnaround"></div>
+
+## ♭VI7, the minor blues subdominant
+
+♭VI7 (A♭7 in C): its root is not in the blues scale, but its other notes are. Jaffe calls it the
+minor blues subdominant. It works in major or minor tunes. Hein's example is John Coltrane's
+*Equinox*.
+
+<div class="bz" data-w="chords" data-set="bvi" data-title="♭VI7"></div>
+
+## The Hendrix chord: home, not dominant
+
+A dominant 7♯9 chord holds a major 3rd and, an octave up, a minor 3rd (written as a ♯9).
+Charalampidis gives it two jobs. One is a **V7♯9** that resolves to I. The other is a
+**home chord** whose two 3rds express the blue 3rd's area, which he would spell I7♭10. He gives a
+John Lee Hooker recording as an example of the same sound split between instruments: a guitar
+on E7 and a piano on Em7 an octave above. (The recording is named in his video. It is not
+checked here.)
+
+<div class="bz" data-w="chords" data-set="hendrix" data-title="One chord, two jobs"></div>
+
+## "Avoid notes" that are not avoided
+
+In jazz teaching, the 4th of a dominant chord is an **avoid note**: F over C7 clashes with the
+E. Hein's example is Albert Collins's *Don't Lose Your Cool*, in F. Collins keeps playing F,
+the key note, even over C7, and it sounds right. Levine calls the blues scale a "universal
+harmonic solvent". Hein rejects the idea that blues melody and harmony are "divorced"
+(Temperley): there *are* rules, just different ones.
+
+Set every bar to **Key note only** and play. The band plays a 12-bar in your key while the lead
+holds the key note through every chord, the V7 included.
+
+<div class="bz" data-w="chorus" data-form="major" data-plan="root,root,root,root,root,root,root,root,root,root,root,root" data-title="The key note over every chord"></div>
+
+## Is this "dissonance"?
+
+Hein collects the ways theorists describe blues notes from outside:
+
+- McClary: blues values sounds that classically trained ears hear as "out of tune".
+- Everett: blues tritones and half steps are "intrinsically dissonant".
+- Wagner: blue notes are "alienated" until they are "domesticated".
+- Tymoczko: blues as a source of jazz "playing out".
+
+Hein's answer is that no blues player thinks they are playing wrong notes. A dominant 7th home
+chord is consonant inside blues tonality. **Discuss:** what changes when you call a sound
+"dissonant" rather than "from another system"?
+
+## Check your ears
+
+<div class="bz" data-w="quiz" data-kind="chord" data-title="Which chord is it?"></div>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Charalampidis, Panos. "Microtonal Blues Scales p.9 [E7#9 - E7b10 & the Neutral scale]." *YouTube*, [www.youtube.com/watch?v=R3GRexoD6a0](https://www.youtube.com/watch?v=R3GRexoD6a0). Read from the video's English subtitles.
+
+**For teachers**
+
+Hein, Ethan. "Blues Tonality." *The Ethan Hein Blog*, 21 Sept. 2014, updated 10 Jan. 2026, [www.ethanhein.com/wp/2014/blues-tonality/](https://www.ethanhein.com/wp/2014/blues-tonality/). The series' main source; its own reference list has the books and articles named on these pages.
+:::
+<!-- /works-cited -->
+
+{{< include _blues-tonality-kit.qmd >}}

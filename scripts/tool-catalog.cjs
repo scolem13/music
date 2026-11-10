@@ -20,7 +20,7 @@ for (const [f, ks] of Object.entries(FAM)) ks.split(" ").forEach(k => (famOf[k] 
 
 // kit classes -> [tool name, family]
 const CLS = {
-  "bl-step": ["Band step player", "Band"], "ar-demo": ["Arranging band demo", "Band"], "ar-organ": ["Organ (tonebars)", "Band"],
+  "bl-step": ["Band step player", "Band"], "bz": ["Blue notes, scales and chords (pitch strips, cents scales, 12-bar chorus, harmonica)", "Band"], "ar-demo": ["Arranging band demo", "Band"], "ar-organ": ["Organ (tonebars)", "Band"],
   "bl-drumkit": ["Drum kit", "Drums"], "bl-drumkey": ["Drum key", "Drums"], "bl-hatkey": ["Hi-hat key", "Drums"],
   "bl-congakey": ["Conga key", "Drums"], "bl-scale": ["Scale player", "Notation and ear"], "bl-notes": ["Note player", "Notation and ear"],
   "sh-shapes": ["Chord shape cards", "Chords"], "sc-shapes": ["Library-checked shapes", "Chords"], "sh-toggles": ["Voicing toggles", "Chords"],

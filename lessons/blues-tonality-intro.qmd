@@ -1,0 +1,91 @@
+---
+title: "Blues Tonality 1: A System of Its Own"
+toc: true
+toc-depth: 2
+description: "Why blues is not just major or minor with a few wrong notes. Hear a dominant 7th chord as home, and the 3rd that is neither major nor minor."
+instruments: [guitar, bass, piano, sax, violin, voice, other]
+topics: [blues, harmony, sound]
+has: [band, interactive]
+---
+
+Most theory books say that Western music runs on two systems, **major** and **minor**, with the
+church **modes** at the side. Blues gets treated as major or minor with some "blue" notes added.
+Ethan Hein argues that this is wrong. Blues has its own scales and chords, and its own rules for
+how melody and chords fit together. Listeners who grew up with it hear it as consonant, not as
+a set of clashes. He thinks it should be taught next to major and minor, not after them.
+
+This series follows two sources. One is Hein's essay "Blues tonality". The other is Panos
+Charalampidis's video series *Microtonal Blues Scales*, which teaches the blue notes one
+degree at a time on the guitar. This first lesson sets out the main ideas. The others go
+through them one at a time:
+
+1. **A system of its own** (this page)
+2. [The scales called "blues"](blues-tonality-scales.qmd)
+3. [Blue notes: areas, not points](blues-tonality-blue-notes.qmd)
+4. [Majorish, minorish and neutral](blues-tonality-microtonal.qmd)
+5. [Blues harmony: the dominant 7th at home](blues-tonality-harmony.qmd)
+6. [Mixture, harmonica, form and style](blues-tonality-beyond.qmd)
+
+**How to use the page.** The bar at the bottom of the window sets the **Key**, the **Lead**
+sound, a **Backing** and the **Tempo**. Press **▶ Backing** to start the band. Anything you play
+on the page then sounds over it. Click a heading to fold its section away, or jump with *On
+this page* on the right.
+
+## Three systems, not two
+
+Hein follows the jazz teacher Andy Jaffe, who splits Western harmony into three systems:
+**diatonic** (major and minor), **modal**, and **blues**. Hein also points out that many
+self-taught rock and pop musicians learn blues first. Hein himself learned the pentatonic and
+blues scales on guitar before the major scale.
+
+Hein's definition is about pitch only. **Blues tonality** is a family of pitch collections that
+includes blue notes. **Blues harmony** is chords whose roots come from those collections. Rhythm,
+sound and the 12-bar form are left for other lessons (see [Changing the Changes](blues-changes.qmd)).
+
+## A dominant 7th that does not need to go anywhere
+
+In classical harmony, a dominant 7th chord (like G7 in C) is unstable. It "wants" to resolve to
+the key chord. In blues, the key chord itself is a dominant 7th, and songs start and end on it.
+Some never leave it. Hein's example is Willie Dixon's *Spoonful*, which is riffs over one chord.
+
+Choose **One chord: I7** in the Backing menu and press **▶ Backing**. Listen for a minute. Does it
+sound as if it has to move on? Then try **Drone** and **One chord: Im7**.
+
+<div class="bz" data-w="chords" data-set="ending" data-title="Two endings: a blues one and a hymn one"></div>
+
+Both endings sound finished. They are finished in two different systems.
+
+## The 3rd that is neither
+
+The clearest sign of blues tonality is the 3rd of the scale. A piano has a minor 3rd (♭3) and a
+major 3rd (3). Blues singers and guitarists often sing or play the space between them. The
+**neutral 3rd** sits halfway, about 350 cents above the key note (a semitone is 100 cents).
+
+Start a **Drone** or **Power chord vamp**. Then press and drag along the strip, from the ♭3 key
+up to the 3 key and back.
+
+<div class="bz" data-w="zone" data-deg="3" data-title="The 3rd: drag between the piano's two 3rds"></div>
+
+The coloured areas are a sketch made for this site from how Charalampidis describes them. They
+are not measurements. [Lesson 3](blues-tonality-blue-notes.qmd) explains what has actually been
+measured.
+
+## Check your ears
+
+<div class="bz" data-w="quiz" data-kind="chord" data-title="Which chord is it?"></div>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Charalampidis, Panos. "Microtonal Blues Scales p.1 [Introduction]." *YouTube*, [www.youtube.com/watch?v=NVWX10c0bNc](https://www.youtube.com/watch?v=NVWX10c0bNc). Read from the video's English subtitles.
+
+**For teachers**
+
+Hein, Ethan. "Blues Tonality." *The Ethan Hein Blog*, 21 Sept. 2014, updated 10 Jan. 2026, [www.ethanhein.com/wp/2014/blues-tonality/](https://www.ethanhein.com/wp/2014/blues-tonality/). The series' main source; its own reference list has the books and articles named on these pages.
+:::
+<!-- /works-cited -->
+
+{{< include _blues-tonality-kit.qmd >}}
