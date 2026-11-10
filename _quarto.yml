@@ -57,6 +57,10 @@ website:
             - lessons/tagg-shuttles.qmd
             - lessons/tagg-loops.qmd
             - lessons/tagg-glossary.qmd
+        - section: "Grooves vs Songs"
+          contents:
+            - lessons/grooves-songs.qmd
+            - lessons/grooves-learning.qmd
         - section: "Pop and Rock"
           contents:
             - lessons/first-rock-song.qmd

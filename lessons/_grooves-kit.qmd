@@ -1,0 +1,20 @@
+```{=html}
+<style>
+.gq{margin:1rem 0 1.6rem;padding:.8rem .9rem;border:1px solid var(--site-border);border-radius:8px;background:var(--site-surface)}
+.gq-title{font-weight:600;margin-bottom:.4rem}
+.gq-card{font-size:1.1rem;margin:.3rem 0 .6rem}.gq-who{color:var(--site-ink-2)}
+.gq-btns{display:flex;flex-wrap:wrap;gap:.4rem}
+.gq-btns .gq-right{background:#2b9c90;color:#fff;border-color:#2b9c90}.gq-btns .gq-wrong{background:#d6336c;color:#fff;border-color:#d6336c}
+.gq-fb{margin:.6rem 0;min-height:1.4rem}.gq-fb.ok{color:#1d7a70}.gq-fb.no{color:#a61e4d}
+.gq-foot{display:flex;gap:.8rem;align-items:center}.gq-score{font-family:var(--font-mono);font-size:.85rem}
+.gv-row{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:.35rem 0}
+.tg-play{font:inherit;font-size:.8rem;width:1.9rem;padding:.05rem 0;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);cursor:pointer}
+.tg-play.on{background:var(--site-accent);color:#fff}
+.gv-quote{border-left:3px solid var(--site-accent);padding:.3rem .9rem;margin:.8rem 0;background:var(--site-surface)}
+</style>
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/lessons/tagg-tables.js"></script>
+<script src="/apps/shared/report/record.js"></script>
+<script src="/apps/shared/lessons/grooves.js"></script>
+```

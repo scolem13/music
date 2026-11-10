@@ -1,0 +1,84 @@
+---
+title: "Grooves vs Songs 2: Hearing and Learning Grooves"
+toc: true
+toc-depth: 2
+description: "Why grooves have static, blues-based harmony, why notation is the best way to learn a piece and the worst way to learn a groove, and Hein's case that music education neglects grooves. With his podcast's listening list."
+instruments: [guitar, bass, piano, drums, voice, other]
+topics: [form, harmony, listening, blues]
+has: [band]
+---
+
+[Lesson 1](grooves-songs.qmd) set out Ethan Hein's three kinds of music: pieces, songs and grooves. This lesson
+is about what changes when the music is a groove: the harmony, the way you learn it, and how school treats it.
+
+## Harmony in a groove
+
+Hein says grooves have static harmony that is often based on the blues, and short, circular melodies (if there is
+a melody at all). You rarely hear classical "common-practice" harmony in a groove; you often hear **blues tonality**.
+
+- A chord that does not need to go anywhere: one dominant 7th, held. [▶]{.tg-play data-chords="A7 A7"}
+- Two chords swapping places, a shuttle: [▶]{.tg-play data-chords="E7 A7"}
+
+The [Blues Tonality](blues-tonality-intro.qmd) lessons follow Hein's essay on this kind of harmony, and
+[Everyday Tonality 5](tagg-shuttles.qmd) has Philip Tagg's tables of two-chord shuttles from real records.
+
+## Can you write it down?
+
+::: {.gv-quote}
+"You can notate pieces, you can sort of notate songs, and you can't really notate grooves."
+— Ethan Hein, *Pieces vs Songs vs Grooves* (2021)
+:::
+
+So notation is usually the best way to learn a piece, and usually the worst way to learn a groove. A groove is
+learned by listening and playing along until it feels right.
+
+**Try this.** Pick one groove from the list below. Listen three times without playing. Then play along with just
+one part (the bass line, or a hand clap on the backbeat) until you can keep it going for a whole minute.
+
+## Grooves in music class
+
+Hein argues that each kind of music needs its own ways of teaching, analysing and performing it. Traditional music
+education treats everything as a piece: that sometimes works for songs and "hardly ever" works for grooves.
+
+He also makes a stronger claim. Grooves are most common in the music of the African diaspora, so, in his words,
+music education's "systematic neglect of them" is "symptomatic of the field's atavistic whiteness."
+
+**Discuss.** Think about the music lessons you have had. Which of the three kinds did they mostly use? What would a
+lesson built around a groove look like?
+
+## Listening list
+
+Hein's podcast episode *Songs vs Grooves* (2026) plays these tracks, among others. The page lists them without
+saying how each one is used, so try sorting them yourself: piece, song, groove, or in between?
+
+- The Beatles, *Yesterday* (1965) and *Hey Jude* (1968)
+- James Brown, *The Payback* (1973), *Get Up (I Feel Like Being a) Sex Machine* and *Funky Drummer* (1970)
+- Parliament, *Flashlight* (1978)
+- Michael Jackson, *Don't Stop 'Til You Get Enough* (1979)
+- Dizzy Gillespie, *Manteca* (1957): Hein's note says it is mostly a one-chord groove, with a B section of jazz chords
+- Run-DMC, *Sucker MCs* (1983)
+- Herbie Hancock, *Chameleon* (1973)
+- Stevie Wonder, *Living for the City* (1973)
+- Sabrina Carpenter, *Espresso* (2024)
+- Steve Reich, *Music for Pieces of Wood* (1973)
+- Chopin, Nocturne Op. 9 No. 1 (1832), and Hein's own remix of it over the Incredible Bongo Band's *Apache* (2021)
+
+Every track here is in the [Tune Directory](../practice/tune-directory.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Hein, Ethan. "Pieces vs Songs vs Grooves." *Ethan Teaches You Music*, Substack, 6 June 2021, [ethanhein.substack.com/p/pieces-vs-songs-vs-grooves](https://ethanhein.substack.com/p/pieces-vs-songs-vs-grooves). Definitions, examples by category and the claims about notation and music education.
+
+Hein, Ethan. "Songs vs Grooves." *Ethan Teaches You Music Podcast*, Substack, 3 June 2026, [ethanhein.substack.com/p/songs-vs-grooves-59a](https://ethanhein.substack.com/p/songs-vs-grooves-59a). Track list only; the audio was not heard.
+
+**For teachers**
+
+Danielsen, Anne. *Presence and Pleasure: The Funk Grooves of James Brown and Parliament*. Wesleyan UP, 2006. Cited as Hein cites it (the song / groove distinction); not read here.
+:::
+<!-- /works-cited -->
+
+{{< include _grooves-kit.qmd >}}

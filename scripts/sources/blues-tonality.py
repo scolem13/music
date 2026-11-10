@@ -10,7 +10,7 @@ def panos(part, title, vid, pages):
                note="Read from the video's English subtitles.")
 SOURCES = [
     web('Hein, Ethan. "Blues Tonality." *The Ethan Hein Blog*, 21 Sept. 2014, updated 10 Jan. 2026, URL.',
-        "https://www.ethanhein.com/wp/2014/blues-tonality/", BT, who="teacher",
+        "https://www.ethanhein.com/wp/2014/blues-tonality/", BT + ["practice/tune-directory.qmd"], who="teacher",
         note="The series' main source; its own reference list has the books and articles named on these pages."),
     wiki("Green Onions", "Green_Onions", ["lessons/blues-tonality-beyond.qmd"], note="A twelve-bar blues; checked 2026-11-10."),
     wiki("Richter-tuned harmonica", "Richter-tuned_harmonica", ["lessons/blues-tonality-beyond.qmd"], who="student",

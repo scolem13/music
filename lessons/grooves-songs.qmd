@@ -1,0 +1,89 @@
+---
+title: "Grooves vs Songs 1: Pieces, Songs and Grooves"
+toc: true
+toc-depth: 2
+description: "Ethan Hein's three kinds of music: pieces (linear), grooves (circular) and songs (a line made of circles). Hear the difference, then sort his examples."
+instruments: [guitar, bass, piano, drums, voice, other]
+topics: [form, harmony, listening]
+has: [band, interactive]
+---
+
+Some music tells a story from start to finish. Some music goes round and round and never needs to end.
+Ethan Hein, a music educator, builds on the musicologist Anne Danielsen's split between **songs** and
+**grooves**, and adds a third kind, **pieces**. He says nearly all the music in our culture falls into these
+three overlapping groups.
+
+## Three kinds of music
+
+::: {.gv-quote}
+A **piece** is "linear, a series of non-repeating events that occur in a specific order."
+A **groove** is "circular, a short cell that repeats an indefinite number of times, without any larger-scale structure."
+A **song** is "in between: a linear arrangement of circular elements."
+— Ethan Hein, *Pieces vs Songs vs Grooves* (2021)
+:::
+
+- **Pieces**: most European classical compositions, more so the closer you get to today. Little or no
+  repetition on the large scale. Examples he gives: Bach fugues, Chopin nocturnes, Beethoven sonatas.
+- **Songs**: most pop, rock and country. Each section or phrase is usually a groove, and the sections are put
+  in order with a beginning, middle and end. Examples: Prince's *Kiss*, *Greensleeves*, the Beatles' *Eleanor Rigby*.
+- **Grooves**: most funk, rap and dance tracks. There may be sections, but they are built the same way; only the
+  melody on top and the instruments change. Examples: Santana's *Oye Como Va*, Booker T. & the MGs' *Green Onions*,
+  Missy Elliott's *Get Ur Freak On*, Aretha Franklin's *Chain of Fools*.
+
+## A line, not three boxes
+
+Hein treats the three as points on a line, not as separate bins. At one end is a loop that never changes, like a
+drum machine playing the same kick drum pattern forever. At the other end is music with no repetition at all
+(he names serialist composition). All Western music lies somewhere between.
+
+**Discuss:** where would you put your favourite track on that line? Does it have sections that come back? Do the
+chords ever leave the opening pattern?
+
+## Hear the difference
+
+These are chord patterns played by the site's band, not the recordings.
+
+- A **groove** on one chord. Hein describes Willie Dixon's *Spoonful* as riffs over "a single static dominant chord":
+  [▶]{.tg-play data-chords="E7 E7"} one chord, round and round.
+- A **groove** on a short loop: the *Green Onions* chords as Philip Tagg gives them (F, A♭, B♭):
+  <button class="tg-play" data-chords="F Ab Bb F">▶</button>
+- A **song** made of loops (made up for this page): a verse loop, then a chorus loop, then the verse again:
+  <button class="tg-play" data-chords="C Am F G C Am F G F G C C F G C C C Am F G C Am F G">▶</button>
+
+In the groove, nothing is "on the way" anywhere. In the song, the chorus arrives and the verse returns: the order
+of the sections matters.
+
+## Sort Hein's examples
+
+Every example below comes from Hein's post. Some are on the line between two kinds: he calls those out, and so does
+the quiz.
+
+<div class="gq" data-title="Piece, song or groove?"></div>
+
+## In between
+
+Hein's edge cases show why it is a line, not boxes:
+
+- Eddie Kendricks, *Keep On Truckin'*: "a collection of excellent grooves organized into a nominal song structure."
+- Bach's Chaconne and Passacaglia: pieces that "rest on groove foundations" (a repeating bass or chord pattern).
+- *My Favorite Things*: a song from *The Sound of Music* that John Coltrane turned into a groove.
+- Miles Davis, *In a Silent Way*: "a set of killer grooves edited together into a large-scale piece."
+- Jazz solos over a tune: do they add up to a groove or a piece? "Opinions differ."
+
+Every example on these pages is in the [Tune Directory](../practice/tune-directory.qmd), with Hein's notes in its Concepts column.
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Hein, Ethan. "Pieces vs Songs vs Grooves." *Ethan Teaches You Music*, Substack, 6 June 2021, [ethanhein.substack.com/p/pieces-vs-songs-vs-grooves](https://ethanhein.substack.com/p/pieces-vs-songs-vs-grooves). Definitions, examples by category and the claims about notation and music education.
+
+**For teachers**
+
+Danielsen, Anne. *Presence and Pleasure: The Funk Grooves of James Brown and Parliament*. Wesleyan UP, 2006. Cited as Hein cites it (the song / groove distinction); not read here.
+:::
+<!-- /works-cited -->
+
+{{< include _grooves-kit.qmd >}}
