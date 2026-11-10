@@ -12,18 +12,21 @@ has: [band, interactive]
 
 Some textbooks explain blues as **modal mixture**: chords borrowed from major, minor and the
 modes into one key. Hein's test case is Booker T. & the M.G.'s *Green Onions* (1962). Its riff
-uses three chords per bar, and each chord comes from a different mode of the key.
+uses three chords per bar, and the chords come from different modes of the key.
 
 In the grid, each coloured dot names a mode of the key note that holds every note of that chord.
 Press play and watch the colours change from bar to bar.
 
 <div class="bz" data-w="onions" data-title="The Green Onions riff: where each chord comes from"></div>
 
-Hein's chords for the three riff positions are Fm7 – A♭ – B♭, B♭7 – D♭ – E♭ and C7 – E♭ – F
-(in F). The bars here are laid out as a standard 12-bar, and the riff's rhythm is simplified.
-Check both against the recording.
+Hein gives the riff's chords in F: Fm7 – A♭ – B♭ in the first four bars, B♭7 – D♭ – E♭ when
+the figure moves up a fourth at bar 5, and C7 – E♭ – F when it moves up a fifth at bar 9. The
+tune is a twelve-bar blues (Wikipedia). Two things on this page are the site's guesses, not
+the record: the riff's rhythm, which is simplified, and the bars Hein doesn't name (6-8 and
+10-12), which are laid out as in a standard 12-bar.
 
-The I-position chords all fit F Dorian. D♭ needs F natural minor. C7 and F major need F major.
+As Hein says, the first four bars all fit F Dorian. D♭ needs F natural minor, and E♭ fits
+both. C7 and F major need F major.
 Hein argues that "mixture" assumes major and minor are separate worlds that get mixed. In a
 blues they were never separate. Of John Lee Hooker's *I'm Bad Like Jesse James* he says there
 is no way to tell which mode is the native one, so the song is simply "in E blues".
@@ -39,8 +42,10 @@ technique contradicting an instrument's design.
 
 <div class="bz" data-w="harp" data-title="Ten-hole harmonica (Richter layout)"></div>
 
-The hole layout and bends shown are the standard Richter tuning, written from memory and
-**not yet checked** against a source. Overblows are left out.
+The layout is the standard Richter tuning, and the bends are the usual ones: draw holes 1-6
+bend (hole 3 furthest, B down to G♯ on a C harp) and blow holes 8-10 bend. Both are checked
+against Wikipedia's *Richter-tuned harmonica* and *Harmonica techniques*. Hole 5 draw can only
+be bent slightly, so it is shown without a bend, and overblows are left out.
 
 ## The 12-bar form: neither needed nor enough
 
@@ -53,14 +58,15 @@ Ear](../practice/blues-ear.qmd).
 
 ## Blues tonality in other styles
 
-The later part of Hein's essay looks at how much blues tonality a style uses. Funk uses a lot
-(*Jungle Boogie*: one chord, blues pitch). Disco uses much less. Aretha Franklin's *Bridge Over
-Troubled Water* brings blues tonality into a song that is diatonic in Simon and Garfunkel's
-original. Hein closes with a case for teaching blues tonality in the core theory course, and
-for keeping it in school arrangements, which often strip it out and add V–I cadences.
-
-These examples come from a summary of the second half of the essay, not a word-for-word
-reading, so they are **unverified** here until the essay is re-read.
+The later part of Hein's essay looks at how much blues tonality a style uses. For him it separates funk
+from disco, which share their rhythms. Funk mainly uses blues tonality, and disco mainly
+diatonic or jazz harmony. Compare Kool and the Gang's *Jungle Boogie* (no chord changes, its
+melodies all blues tonality) with the Bee Gees' *Love You Inside Out*. Aretha Franklin's *Bridge
+Over Troubled Water* replaces the diatonic melody of Simon and Garfunkel's original with blues
+tonality throughout. In Daft Punk's *Harder Better Faster Stronger*, the vocal melody switches
+from diatonic minor to blues at 2:30. Hein closes with a case for teaching blues tonality in
+the core theory course. He shows choral and marching band arrangements of Aretha Franklin's
+*Chain of Fools* that strip its blues tonality out and add V–I cadences.
 
 **Try it:** take a song you know in major. Set the backing to **One chord: I7** and play its
 melody with majorish 3rds and high 7ths. What has to change for it to sound like blues?
@@ -75,6 +81,16 @@ melody with majorish 3rds and high 7ths. What has to change for it to sound like
 
 <!-- works-cited: written by scripts/works-cited.py -->
 ::: {.works-cited}
+"Green Onions." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Green_Onions](https://en.wikipedia.org/wiki/Green_Onions). A twelve-bar blues; checked 2026-11-10.
+
+**For students**
+
+"Harmonica techniques." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Harmonica_techniques](https://en.wikipedia.org/wiki/Harmonica_techniques). Bending chart: draw 1-6, blow 7-10, 3 draw B to G sharp; checked 2026-11-10.
+
+"Richter-tuned harmonica." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Richter-tuned_harmonica](https://en.wikipedia.org/wiki/Richter-tuned_harmonica). Layout, keys below / above middle C, positions; checked 2026-11-10.
+
+**For teachers**
+
 Hein, Ethan. "Blues Tonality." *The Ethan Hein Blog*, 21 Sept. 2014, updated 10 Jan. 2026, [www.ethanhein.com/wp/2014/blues-tonality/](https://www.ethanhein.com/wp/2014/blues-tonality/). The series' main source; its own reference list has the books and articles named on these pages.
 :::
 <!-- /works-cited -->
