@@ -1,0 +1,145 @@
+---
+title: "Enharmonic Modulation: Practice for Chapter 23"
+toc: true
+toc-depth: 2
+description: "Chapter 23 of Hutchinson's Music Theory for the 21st-Century Classroom: the harmonic pun. A dominant seventh and a German sixth that sound the same, a fully diminished seventh with four keys, the enharmonic German sixth; each spelling drawn and played, and a quiz on which key a respelled chord leads to."
+---
+
+```{=html}
+<script src="/apps/shared/soundfont.js?v=1"></script>
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/abc-play.js?v=27"></script>
+<script src="/apps/shared/enharmonic-modulation.js?v=1"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+.em-stage { margin: .4rem 0 .8rem; border-left: 3px solid rgba(128,128,128,.3); padding-left: .8rem; }
+.em-paper { max-width: calc(34rem * var(--abc-zoom, 1)); }
+.em-row, .em-choices { display: flex; flex-wrap: wrap; gap: .35rem; margin: .4rem 0; align-items: center; }
+.em-cap { font-size: .92rem; margin: .3rem 0; }
+.em-lab { margin: .6rem 0 .1rem; font-weight: 600; font-size: .92rem; }
+.em-choices .btn.active { background: #0d6efd; color: #fff; border-color: #0d6efd; }
+.em-good { color: #146c43; } .em-warn { color: #b02a37; }
+@media (prefers-color-scheme: dark) { .em-good { color: #75b798; } .em-warn { color: #ea868f; } }
+.em-paper .abc-on { fill: #0d6efd; }
+</style>
+```
+
+This page goes with **Chapter 23, Enharmonic Modulation** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/EnharmonicModulation.html). Read the chapter
+there first; the examples on this page are the site's own and all of them play. Each section folds from its ▾.
+
+An **enharmonic modulation** is a modulation whose pivot chord is a **pun**. The chord is written one way, but it sounds exactly like
+a chord that would be spelled differently in another key, and the music goes on as if it had been spelled that way. The spelling on the
+page is right in only one of the two keys; you have to imagine the other. Like *son* and *sun*, the sound is the same and the meaning
+changes. (The chapter's own example is the line "this sun of York", heard as "this son of York".) The ordinary pivot chords of
+[Chapter 22](modulation.qmd) are spelled the same in both keys; this is the case where they are not.
+
+Two sounds do almost all the work: the dominant seventh with the [German sixth](augmented-sixths.qmd), and the fully diminished
+seventh. There is a third, rarer one at the end.
+
+## A dominant seventh is a German sixth {#v7-ger}
+
+Take the dominant seventh chord A♭ C E♭ G♭ (V⁷ of D♭ major). Spell its top note F♯ instead of G♭ and you have A♭ C E♭ F♯: a **German
+augmented sixth chord** (Ger⁺⁶₅) in C. Nothing sounds different; only the top note changes its letter. A V⁷ wants its root to fall a fifth
+(A♭ to D♭); the German sixth wants its bass to fall a half step to the dominant (A♭ to G). So the same chord can lead to two keys,
+**a half step apart**: here D♭ major and C (minor or major).
+
+That gives a modulation either way. Written as a German sixth in C minor and then heard as V⁷, it goes up a half step to D♭ major.
+Written as a V⁷ in D♭ and heard as a German sixth, it goes down a half step to C. Pick a key, a direction, and listen. In each example
+the chord comes twice in a row: once as spelled in the first key, once respelled, then the new key's tonic.
+
+<div class="em-ger"></div>
+
+The book says the **top note** is the one usually respelled; less commonly the bottom three notes are respelled and the top note kept as
+a common tone. The players here respell the top note.
+
+Secondary dominants are reinterpreted this way too (V⁷/x as a German sixth, and the other way round). Because V⁷ on R belongs to the
+key a fourth above R and a German sixth with ♭6 on R to the key a major third above R, the German's key is always the lower one. The
+chapter's examples with a dominant seventh and a German sixth as the pivot are Tchaikovsky, *The Nutcracker*, "Waltz of the Flowers";
+Beethoven, Symphony No. 5, II; and "On My Own" from *Les Misérables*.
+
+## The fully diminished seventh has four keys {#dim7}
+
+A fully diminished seventh is made of three minor thirds stacked, so it is symmetrical: there are only **three different** fully
+diminished sevenths in all, and each one can be spelled four ways, each way with a different note as the leading tone. Each spelling
+is vii°7 of a different minor key, and the four keys are a minor third apart. B D F A♭ is vii°7 of C minor; the same sound as D F A♭ C♭
+is vii°7 of E♭ minor; E♯ G♯ B D of F♯ minor; G♯ B D F of A minor. The ear can't tell which one the composer has in mind until the
+chord resolves, so a diminished seventh is the most flexible pivot there is.
+
+**Resolving up.** Each spelling's leading tone rises a half step to its key's tonic and the chord settles on the minor tonic triad:
+
+<div class="em-dim" data-set="0"></div>
+
+**Resolving down.** The book also resolves the chord the other way: take one note and let it **fall a half step**; that note becomes the
+**root of a dominant seventh** and the chord's other three notes are that dominant seventh's third, fifth and seventh. Four notes, four
+dominant sevenths, four tonics (E♭, G♭, A and C for this chord). The buttons in the second row of the player above show each of them.
+
+The other two diminished sevenths are this chord moved up a half step and up a whole step; the same two rows of buttons:
+
+<div class="em-dim" data-set="1"></div>
+
+<div class="em-dim" data-set="2"></div>
+
+*Double sharps.* In the third set one of the minor keys is G♯ minor, whose leading tone is F𝄪 (a double sharp), written out rather than
+avoided. A composer would more likely hear it as the A♭ minor spelling or a dominant seventh.
+
+## The enharmonic German sixth {#en-ger}
+
+The German sixth has a third way of being spelled. Its ♭3 (E♭ in C) can be written as ♯2 (D♯). The chord then reads A♭ C D♯ F♯: the
+interval from the bass to the D♯ is a **doubly augmented fourth**, and some books call it the "chord of the doubly augmented fourth".
+The spelling matters because of where the note goes: the D♯ rises a half step to the third of the next chord, E, so the chord goes to
+a **major I⁶₄**; the plain German resolves to V or to the cadential I⁶₄. In the player the first bar is the German as usual, the second
+is the same sound respelled, the third the I⁶₄.
+
+<div class="em-engerman"></div>
+
+## Which key does it lead to? {#quiz}
+
+A chord is shown; work out the respelling and pick the key. For a diminished seventh, tick all four minor keys it can be vii°7 of
+(the one it is written in counts). For a German sixth or a dominant seventh, pick the key the respelled chord leads to.
+
+<div class="em-quiz"></div>
+
+## Where it happens in real scores {#real}
+
+The chapter's examples with a diminished seventh as the pivot include Beethoven, Piano Sonata Op. 13 (*Pathétique*), I, where a
+vii°⁴₂ in G minor is reheard in E minor; Beethoven, Symphony No. 5, II, from C major to A major; and Schubert, *Schwanengesang*,
+"Der Atlas", where a diminished seventh in G minor is reheard in B minor and never settles in G.
+
+One of them is in the Analysed Scores Library, and the notes can be read off its score. The library's key data for the
+*Pathétique*'s first movement change from g to e in the development, in **bar 137** (the viewer's own numbering). In the first half of that bar the bass is E♭ with
+F♯, A and C above: vii°⁴₂ in G minor (the chord is in third inversion, E♭ the seventh, in the bass). In the second half the bass is C
+with F♯, A and **D♯** above: the same four pitch classes, with the E♭ now written D♯, vii°⁴₂ in E minor. The next bar's chord begins on
+D♯, the leading tone of E, and goes on in E minor.
+[Open bar 137](analysed-scores/view.html?id=beethoven-sonata-8-1&bar=137) in the library: it is lit and scrolled to, and ▶ plays the movement.
+The other two aren't in the library (the Beethoven symphony is for orchestra; Der Atlas is there as a song, but its chord labels don't
+mark the pivot). The analysis data has no label for an enharmonic pivot, so no other piece is claimed here without its notes
+having been read.
+
+The chapter doesn't include common-tone modulation (it is in [Chapter 22](modulation.qmd#commontone)).
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Spelling rules.** Every chord on this page is spelled by letter steps and semitones from its key, so each note has its one right
+  spelling (E♯ and G♭ appear where they should, and a few double sharps). The leading tone of a minor key is the tonic lowered by a letter
+  and a half step. A V⁷ on R belongs to the key a perfect fourth above R; the German sixth with ♭6 on R to the key a major third above R;
+  the two keys are a half step apart.
+- **The voicings** are one bass note and three upper voices moving as little as possible (a doubling chosen by the same rule). They are
+  not checked for every part-writing rule: the seventh of a V⁷ does not always fall, and parallel fifths may occur. The examples
+  are for hearing the pun, not models of voice leading ([Chapter 29](voice-leading-chromatic.qmd) has the rules).
+- **Tests.** `node tests/enharmonic/enharmonic.test.js` checks every spelling against semitone and letter arithmetic, and the drawn ABC
+  (bar lengths, the sounding notes of each bar, the bass). `NEG=1` makes it fail.
+- **Not here:** a chord-analysis level for chapter 23 (naming the pivot in both keys) needs two keys in one passage, which the
+  chord-analysis engine, with one key per passage, doesn't have; and the book's Day One / Day Two exercises (notate and resolve a chord
+  and its respellings) are only partly covered by the players and the quiz.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hutchinson, Robert. "Augmented Sixth Chords." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/AugmentedSixthChords.html](https://musictheory.pugetsound.edu/mt21c/AugmentedSixthChords.html). Chapter 21: Italian, French and German augmented sixths (b6, 1, #4; plus 2 or b3), the diminished third when stacked in thirds, pre-dominant function. Read from the book source (github rhutchinson20/mt21c) on 2026-11-09. The advice that the German goes via I64 to avoid parallel fifths is the common rule, not read from that page (unverified).
+
+Hutchinson, Robert. "Enharmonic Modulation." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/EnharmonicModulation.html](https://musictheory.pugetsound.edu/mt21c/EnharmonicModulation.html). Chapter 23: the pivot chord spelled correctly in only one key; the dominant seventh and German sixth (top note respelled, or the bottom three); the fully diminished seventh with four keys, resolved up as vii°7 and down to a dominant seventh; the enharmonic German sixth (♯2, doubly augmented fourth). The examples named: Tchaikovsky, Nutcracker, Waltz of the Flowers; Beethoven, Symphony No. 5, II; Beethoven, Pathétique, I; Schubert, Der Atlas; Les Misérables, On My Own. The book's own figures are not reproduced.
+:::
+<!-- /works-cited -->

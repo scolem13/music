@@ -9,9 +9,10 @@
 //  <div class="vl-exercise" data-key="C" data-hint="..." data-rows='[{"rn":"I","B":"C3"}, ...]'>
 //      an exercise: every voice a row gives is locked, the others are typed (C4, F#4, Bb3; Up / Down arrows move a step in the key,
 //      Shift + arrows a half step). The staff redraws as notes go in; Check runs the checker. data-voices="SATB" (default).
-//  <div class="vl-species" data-species="1|2" data-cfpos="lower|upper" data-cf="D3 F3 ..." data-mode="D dorian">
-//      species counterpoint: the cantus firmus given, the counterpoint typed bar by bar (second species: two boxes a bar, empty
-//      first box = half rest; last bar one box); Check runs VoiceLeading.species.
+//  <div class="vl-species" data-species="1|2|3|4|5" data-cfpos="lower|upper" data-cf="D3 F3 ..." data-mode="D dorian">
+//      species counterpoint: the cantus firmus given, the counterpoint typed bar by bar (second and fourth species: two boxes a bar, empty
+//      first box = half rest; third: four; fifth: one box a bar of "D4:2 E4:1 F4:1" = note:quarters, "r:2" a rest; last bar one box);
+//      Check runs VoiceLeading.species.  <div class="vl-spex" data-species data-cfpos data-cf data-cp='[...]' data-expect> = a worked one.
 (function (g) {
   "use strict";
   var VL = g.VoiceLeading, LET = "CDEFGAB", NAT = [0, 2, 4, 5, 7, 9, 11];
@@ -40,7 +41,7 @@
         state[key] = n.a;
         s = a + (n.oct >= 5 ? L.toLowerCase() + "'".repeat(n.oct - 5) : L + ",".repeat(4 - n.oct));
       }
-      out += s + (d === 1 ? "" : d) + " "; pos += d;
+      out += s + (d === 1 ? "" : d) + (e.tie ? "-" : "") + " "; pos += d;
     });
     return out + "|]";
   }
@@ -185,9 +186,20 @@
   }
 
   // ---- species exercise
-  function spAbc(cf, cp, pos, sp) {
+  // raw counterpoint (as the page data or the typed boxes give it) -> bars of events [{ n: parsed | null, d, tie }]
+  function barsOf(sp, raw) {
+    var safe = function (x) { try { return x ? VL.parseNote(x) : null; } catch (e) { return null; } };
+    if (sp >= 3) {
+      return raw.map(function (b) {
+        var arr = Array.isArray(b) ? b : (typeof b === "string" && /\s/.test(b.trim()) ? b.trim().split(/\s+/) : [b]);
+        return arr.map(function (t) { var d = 4 / arr.length, nm = t; if (typeof t === "string" && t.indexOf(":") >= 0) { var q = t.split(":"); nm = q[0]; d = +q[1] || d; } return { n: nm === "r" ? null : safe(nm), d: d }; });
+      }).map(function (bar, i, all) { var l = bar[bar.length - 1], nx = all[i + 1]; if (l.n && nx && nx[0].n && nx[0].n.midi === l.n.midi) l.tie = true; return bar; });
+    }
+    return raw.map(function (b) { var arr = Array.isArray(b) ? b : [b]; return arr.map(function (x) { return { n: safe(x), d: sp === 2 && arr.length === 2 ? 2 : 4 }; }); });
+  }
+  function spAbc(cf, bars, pos) {
     var cfE = cf.map(function (n) { return { n: n, d: 4 }; }), cpE = [];
-    cp.forEach(function (b) { if (sp === 2 && b.length === 2) b.forEach(function (n) { cpE.push({ n: n, d: 2 }); }); else cpE.push({ n: b[0], d: 4 }); });
+    bars.forEach(function (b) { b.forEach(function (e) { cpE.push(e); }); });
     var upv = pos === "lower" ? cpE : cfE, lov = pos === "lower" ? cfE : cpE;
     return "X:1\nM:4/4\nL:1/4\nQ:1/4=60\n%%score {1 2}\nV:1 clef=treble\nV:2 clef=bass\nK:C\n[V:1] " + voiceAbc(upv, {}, 4) + "\n[V:2] " + voiceAbc(lov, {}, 4) + "\n";
   }
@@ -200,30 +212,39 @@
     h.appendChild(el("th", "", "Bar")); r1.appendChild(el("th", "", "Cantus firmus")); r2.appendChild(el("th", "", "Your counterpoint"));
     cfS.forEach(function (n, i) {
       h.appendChild(el("th", "", String(i + 1))); r1.appendChild(el("td", "", n));
-      var td = el("td"), two = sp === 2 && i < N - 1; inputs[i] = [];
-      for (var k = 0; k < (two ? 2 : 1); k++) {
-        var inp = el("input", "vl-in"); inp.type = "text"; inp.size = 4; inp.maxLength = 4; inp.placeholder = two && k === 0 && i === 0 ? "rest" : "?"; inp.addEventListener("input", redraw); inputs[i].push(inp); td.appendChild(inp);
+      var td = el("td"), last = i === N - 1, count = sp === 3 ? (last ? 1 : 4) : sp === 4 ? (last ? 1 : 2) : sp === 2 ? (last ? 1 : 2) : 1; inputs[i] = [];
+      for (var k = 0; k < count; k++) {
+        var inp = el("input", "vl-in"); inp.type = "text"; inp.size = sp === 5 ? 16 : 4; inp.maxLength = sp === 5 ? 40 : 4; inp.placeholder = (sp === 2 || sp === 4) && count === 2 && k === 0 && i === 0 ? "rest" : sp === 5 ? "D4:2 E4:1 F4:1" : "?";
+        if (sp === 5) inp.style.width = "9rem";
+        inp.addEventListener("input", redraw); inputs[i].push(inp); td.appendChild(inp);
       }
       r2.appendChild(td);
     });
     tbl.appendChild(h); tbl.appendChild(r1); tbl.appendChild(r2); div.appendChild(tbl); div.appendChild(paper);
     var bar = el("div", "vl-bar"), chk = el("button", "vl-btn", "Check"); chk.type = "button"; bar.appendChild(chk); bar.appendChild(playBtn(function () { return vo; })); div.appendChild(bar); div.appendChild(out);
+    var fix = function (raw) { return raw.trim().replace(/(^|\s)([a-g])/g, function (m, a, c) { return a + c.toUpperCase(); }).replace(/(^|\s)([A-G])B(\d)/g, "$1$2b$3"); };
     function read() {
-      var bad = null, cp = inputs.map(function (bx, i) {
-        return bx.map(function (inp, k) {
-          var raw = inp.value.trim().replace(/^([a-g])/, function (c) { return c.toUpperCase(); }).replace(/^([A-G])B(\d)/, "$1b$2"); inp.classList.remove("vl-badin");
-          if (!raw) return null; try { return VL.parseNote(raw); } catch (e) { bad = raw; inp.classList.add("vl-badin"); return null; }
-        });
-      });
-      return { cp: cp, bad: bad, raw: inputs.map(function (bx) { return bx.map(function (i) { return i.value.trim(); }); }) };
+      var bad = null, raw = inputs.map(function (bx) { return bx.map(function (inp) {
+        var v = fix(inp.value); inp.classList.remove("vl-badin");
+        v.split(/\s+/).forEach(function (tok) { var nm = tok.split(":")[0]; if (nm && nm !== "r") { try { VL.parseNote(nm); } catch (e) { bad = tok; inp.classList.add("vl-badin"); } } });
+        return v; }); });
+      return { raw: raw, bad: bad };
     }
-    function redraw() { var r = read(); vo = draw(paper, spAbc(cf, r.cp, pos, sp)); out.innerHTML = ""; }
+    function cpData(raw) {
+      return raw.map(function (bx, i) {
+        if (sp === 1) return bx[0];
+        if (sp === 2) return bx.length === 2 ? [bx[0] || null, bx[1]] : bx[0];
+        if (sp === 5) return bx[0];
+        return bx.map(function (v) { return v || null; });
+      });
+    }
+    function redraw() { var r = read(); vo = draw(paper, spAbc(cf, barsOf(sp, sp >= 3 ? cpData(r.raw).map(function (b) { return Array.isArray(b) ? b.map(function (x) { return x || "r"; }) : b; }) : cpData(r.raw)), pos)); out.innerHTML = ""; }
     chk.onclick = function () {
       var r = read(); out.innerHTML = "";
-      if (r.bad) { out.appendChild(el("p", "vl-err", "“" + r.bad + "” is not a note (F#4, Bb3).")); return; }
-      var missing = r.raw.some(function (bx, i) { return bx.some(function (v, k) { return !v && !(sp === 2 && i === 0 && k === 0); }); });
-      if (missing) { out.appendChild(el("p", "vl-err", "Fill every box first" + (sp === 2 ? " (leave the first box of bar 1 empty for a half rest)" : "") + ".")); return; }
-      var res = VL.species({ species: sp, cf: cfS, cp: r.raw.map(function (bx, i) { return sp === 2 ? (bx.length === 2 ? [bx[0] || null, bx[1]] : bx[0]) : bx[0]; }), cfPos: pos, mode: mode });
+      if (r.bad) { out.appendChild(el("p", "vl-err", "\u201c" + r.bad + "\u201d is not a note (F#4, Bb3" + (sp === 5 ? "; write a length after a colon: F4:2 for a half note, F4:1 for a quarter, r:2 for a half rest" : "") + ").")); return; }
+      var missing = r.raw.some(function (bx, i) { return bx.some(function (v, k) { return !v && !((sp === 2 || sp === 4) && i === 0 && k === 0); }); });
+      if (missing) { out.appendChild(el("p", "vl-err", "Fill every box first" + (sp === 2 || sp === 4 ? " (leave the first box of bar 1 empty for a half rest)" : "") + ".")); return; }
+      var res = VL.species({ species: sp, cf: cfS, cp: cpData(r.raw), cfPos: pos, mode: mode });
       verdict(out, res); div.setAttribute("data-ok", res.ok ? "1" : "0");
       if (res.ok) out.insertBefore(el("p", "vl-ok", res.errors.length ? "No errors, only warnings." : "Clean."), out.firstChild);
     };
@@ -240,7 +261,7 @@
     var head = el("div", "vl-cap"), tag = el("span", "vl-tag " + (expect === "ok" ? "vl-good" : "vl-bad"), expect === "ok" ? "Right " : "Wrong "); head.innerHTML = cap; head.insertBefore(tag, head.firstChild);
     var paper = el("div", "vl-paper"), out = el("div", "vl-out"), bar = el("div", "vl-bar"), vo;
     div.appendChild(head); div.appendChild(paper); div.appendChild(bar); div.appendChild(out);
-    vo = draw(paper, spAbc(cf.map(VL.parseNote), cp.map(function (b) { return (Array.isArray(b) ? b : [b]).map(VL.parseNote); }), pos, sp));
+    vo = draw(paper, spAbc(cf.map(VL.parseNote), barsOf(sp, cp), pos));
     bar.appendChild(playBtn(function () { return vo; })); verdict(out, res);
     if (!match) out.appendChild(el("p", "vl-err", "(Page error: this example was meant to show “" + expect + "”.)"));
   }
@@ -259,7 +280,7 @@
     [].forEach.call((root || document).querySelectorAll(".vl-species:not(.vl-species-on)"), mountSpecies);
     [].forEach.call((root || document).querySelectorAll(".vl-spex"), mountSpex);
   }
-  g.VoiceLeadingUI = { mountAll: mountAll, scoreAbc: scoreAbc, spAbc: spAbc, slicesFrom: slicesFrom, parsedSlices: parsedSlices, keyAcc: keyAcc };
+  g.VoiceLeadingUI = { barsOf: barsOf, mountAll: mountAll, scoreAbc: scoreAbc, spAbc: spAbc, slicesFrom: slicesFrom, parsedSlices: parsedSlices, keyAcc: keyAcc };
   if (typeof document !== "undefined") { if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", function () { mountAll(); }); else mountAll(); }
   if (typeof module !== "undefined" && module.exports) module.exports = g.VoiceLeadingUI;
 })(typeof window !== "undefined" ? window : globalThis);

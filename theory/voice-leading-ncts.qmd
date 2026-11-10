@@ -52,6 +52,12 @@ Look at what the voice does between two chords, then choose:
 
 <div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["V","D5 G4 B3 G3"],["","C5 G4 B3 G3"],["I","C5 E4 C4 C3"]]'>An anticipation: the soprano reaches C early, before the tonic chord arrives.</div>
 
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["I","E4 C4 G3 C3"],["V","D4 B3 G3 C3"],["I","E4 C4 G3 C3"]]'>A pedal point: the bass holds C through the V chord, where it is a non-chord tone.</div>
+
+<div class="vl-ex" data-key="C" data-expect="ok" data-rows='[["I","C5 G4 E4 C3"],["","C5 A4 E4 C3"],["","C5 F4 E4 C3"],["","C5 G4 E4 C3"]]'>A double neighbor: the alto leaves G for the upper neighbor A, jumps to the lower neighbor F, and returns to G.</div>
+
+<div class="vl-ex" data-key="C" data-expect="chordtone" data-rows='[["I","C5 G4 E4 C3"],["","C5 B4 E4 C3"],["","C5 F4 E4 C3"],["","C5 G4 E4 C3"]]'>B4 leaps up from G, then leaps down to F: not a double neighbor (which moves by step to the first neighbor).</div>
+
 <div class="vl-ex" data-key="C" data-expect="chordtone" data-rows='[["I","C5 G4 E4 C3"],["","C5 B4 E4 C3"],["V","D5 D4 G3 G3"]]'>The alto's B4 is a non-chord tone reached by a leap and left by a leap: it is not any of the types.</div>
 
 
@@ -66,12 +72,15 @@ Look at what the voice does between two chords, then choose:
 <div class="vl-exercise" data-key="C" data-hint="Write F4 for the passing tone. Then try making it a neighbor by changing the end." data-rows='[{"rn":"I","S":"G4","A":"E4","T":"C4","B":"C3"},{"S":"","A":"E4","T":"C4","B":"C3"},{"rn":"I","S":"E4","A":"E4","T":"C4","B":"C3"}]'></div>
 
 
+**Three. A double neighbor.** The alto leaves G, goes to a neighbor on one side, jumps to the neighbor on the other side, and comes back.
+
+<div class="vl-exercise" data-key="C" data-hint="Write the two middle notes of the alto: A4 then F4, or F4 then A4." data-rows='[{"rn":"I","S":"C5","A":"G4","T":"E4","B":"C3"},{"S":"C5","A":"","T":"E4","B":"C3"},{"S":"C5","A":"","T":"E4","B":"C3"},{"S":"C5","A":"G4","T":"E4","B":"C3"}]'></div>
+
 ::: {.callout-note collapse="true"}
 ## What the checker does and does not check
-- Every note not in the chord must be one of the seven types the checker knows, judged from the notes before and after it in that voice; parallels are checked between *every* pair of
+- Every note not in the chord must be one of the nine types the checker knows (passing, neighbor, double neighbor, appoggiatura, escape tone, anticipation, suspension, retardation, pedal point), judged from the notes before and after it in that voice; parallels are checked between *every* pair of
   slices (so an embellishment cannot hide them); non-chord tones in two voices at once give a warning unless in parallel 3rds or 6ths.
-- **Not recognised:** pedal point and double neighbor (a double neighbor shows as an error: write the notes as two embellishing rows' worth of passing / neighbor tones instead). Whether the embellishment is "accented" is
-  decided by the chord row it falls on (a row with a Roman numeral is on the beat). Both are limits of this site's checker.
+- A **pedal point** is a held note that is a non-chord tone in a later chord; a **double neighbor** is two embellishing rows in a row (a step one way, a third back across, a step home). **Not recognised:** longer neighbor groups. Whether an embellishment is "accented" is decided by the chord row it falls on (a row with a Roman numeral is on the beat): a limit of this site's checker.
 - The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
 :::
 

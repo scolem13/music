@@ -94,13 +94,72 @@ piece come back each time the key returns to G?
 Try to say which stretches are refrain and which are episodes, and which of the refrain's returns is shortened. (This one is for
 listening; the form is not as clean as the Beethoven.)
 
+**A five-part rondo you can read bar by bar: Beethoven, *Für Elise*.** The full-score player has it
+([open the score](analysed-scores/full-scores.qmd?id=pdmx-254); a community score, bar numbers count the pickup as bar 1). The notes give this plan:
+
+| Bars | Section | What the notes show |
+|---|---|---|
+| 1-24 | **A** (refrain) | the famous tune in A minor, a period (see [13.9](phrases-in-combination.qmd)), then a second idea in bars 11-14 (chords C, G, A minor, E) that leads back to the tune |
+| 25-40 | **B** (episode) | the melody has B♭ in it from bar 26, so it leaves A minor for F major, and it ends with a few bars on the opening notes leading back |
+| 41-62 | **A** | the refrain again, built from music already heard: bars 41-48 are bars 17-24 and bars 49-60 are bars 11-22 |
+| 63-84 | **C** (episode) | slow chords instead of the running figure (bars 63-79), then an ascending run through bars 80-84 into the refrain |
+| 85-106 | **A** | the refrain once more, note for note the same as bars 41-61 |
+
+That is **A B A C A**, the book's five-part plan. The key names for B and C are read from the accidentals and are **unverified**; check them with the
+score and your ears. Notice what a rondo can do with a *retransition*: bars 37-40 and 80-84 are both short passages that lead back to the refrain.
+
+**A refrain with an unusual shape: Beethoven, Sonatina in F, Anh. 5 No. 2, Rondo.** ([open the score](analysed-scores/full-scores.qmd?id=pdmx-429)).
+The refrain is the first eighteen bars (see [13.9](phrases-in-combination.qmd) on why it is a phrase chain), and the movement returns to its opening
+figure in bars 19-20 and again from bar 51. I did not map the whole movement, so it stays an item to read.
+
+**The book's seven-part rondo: Beethoven, *Pathétique* Sonata, III.** This movement is not in the score player (see the note below), so there is no
+score to open. Its plan here was read from the notes of the public-domain Mutopia edition (typeset in LilyPond, played out as MIDI, and
+compared bar against bar by a script, `scripts/mutopia/midi-structure.py`). It has 210 bars in 2/2 with a short upbeat before bar 1. The key names come from
+a pitch-class count over each stretch, so treat them as a guide to listen with (**unverified**):
+
+| Bars | Section | What the notes show |
+|---|---|---|
+| 1-16 | **A** (refrain) | C minor, a melody over a rolling accompaniment |
+| 17-24 | transition | leaves C minor, then G minor |
+| 25-56 | **B** (first episode) | around E♭ major (with B♭ and A♭ on the way): the relative major, as the book says. The tune of bars 37-42 comes back in bars 147-152, note for note but 3 semitones lower, which is E♭ going down to C |
+| 57-60 | retransition | G (the dominant), leading back to the refrain |
+| 61-72 | **A** | the refrain again: bars 62-64 are bars 1-3, and bars 67-78 are bars 6-17 |
+| 73-106 | **C** (second episode) | moves to A♭ major from about bar 81 (the submediant, the book's second-episode key), with E♭ and F minor on the way |
+| 107-120 | retransition | about fourteen bars centred on G, the dominant |
+| 121-136 | **A** (short) | the refrain's opening (bars 121-123) and then, within the next bars, only part of it |
+| 137-158 | **B** | the first episode's tune, now in **C major** (the tonic, and the sonata-principle move) |
+| 159-170 | retransition | short sequences on the last motives of the episode, then the refrain |
+| 171-182 | **A** | the last refrain (bars 171-173 and 176-177 match bar 1-3 and 6-7) |
+| 183-210 | coda | C minor with a few C major bars, ending in C minor |
+
+That is **A B A C A B A** with a coda: the book's seven-part rondo. Note how it follows **sonata principle**: B first stands in E♭, away from the tonic, and then
+in the tonic, as the second theme does in a sonata.
+
+**Sonata form to read from the notes: Beethoven, *Moonlight* Sonata, III (Presto agitato).** Also read from a Mutopia edition (CC BY-SA 2.5); the same method,
+201 bars in the MIDI (a bar more than the printed count, probably from the repeat's alternative endings; treat bar numbers as a guide). It is in C♯ minor.
+
+| Bars | Part | What the notes show |
+|---|---|---|
+| 1-18 | exposition: primary theme | the arpeggio theme in C♯ minor; the opening bar comes back at bar 15 |
+| about 19-64 | exposition: transition, secondary group, closing | the key region moves to the dominant side (G♯ / D♯ by pitch count). Bars 19-30 are the first material in the new key |
+| 65-102 | development | a long section moving through several keys; no return of the primary theme until bar 103 |
+| 103-114 | recapitulation: primary theme | bars 103-106 are bars 1-4 note for note |
+| 115-164 | recapitulation: secondary group | bars 115-126 are bars 19-30 again, **a fifth lower**: the music that stood in the dominant region now stands in the tonic |
+| about 165-201 | coda | back to the primary theme and the tonic |
+
+The fifth-lower recurrence (bars 19-30 and 115-126, checked by comparing the notes) is the sonata principle in one line of data. The exact bar where the exposition's
+second theme begins is not marked here, because the pitch count can't tell a transition from a new theme; use the score and your ears.
+
+**Why these two are not in the score player.** The player needs MusicXML, and the PDMX conversions of these sonatas failed. The Mutopia editions came as
+LilyPond only. A direct MusicXML conversion dropped notes, so it was not used (details in `research_notes/pdmx-conversion.org`). Sources: Mutopia Project,
+*Pathétique* III (public domain) and *Moonlight* III (Creative Commons Attribution-ShareAlike 2.5), both after the Berners 1908 edition edited by Winterberger.
+
 ## 25.5 Sonata rondo and rondo character
 
 **Sonata rondo** replaces the second episode with a development: **A B A development A B A**. The B section appears first in the dominant
 and then in the tonic, as in sonata form. **Rondo character** means a quick, light, duple-metre movement (simple or compound) with staccato
 touches, and it is the usual character of a Classical finale. The book's detailed rondo walk-through is Beethoven's *Pathétique*, III (a
-seven-part rondo in C minor, with the first episode in E♭ major, the second in the submediant, and the first episode coming back in C major); that movement is not in the
-library yet.
+seven-part rondo in C minor, with the first episode in E♭ major, the second in the submediant, and the first episode coming back in C major); its plan is in 25.4 above.
 [Read 25.5](https://musictheory.pugetsound.edu/mt21c/SonataAndRondoForms.html)
 
 ## 25.6 Forms in a whole sonata
@@ -119,7 +178,7 @@ Mozart or Beethoven sonata and open its movements one after another.
   order. Bar numbers on this page are approximate and not checked against a printed score. The recapitulation-in-the-subdominant remark about
   K. 545 and the Op. 49 No. 2 rondo reading are from the key labels plus general knowledge of the pieces; the book does not analyse these two.
 - **The book's own pieces** (Mozart K. 333 and K. 284, Haydn Hob. XVI:35, Beethoven *Moonlight* III and *Pathétique* III, Mozart's *Eine kleine
-  Nachtmusik* II) are not all in the library. *Moonlight* I is; *Moonlight* III and *Pathétique* III are not.
+  Nachtmusik* II) are not all in the library. *Moonlight* I is; *Moonlight* III and *Pathétique* III are read from Mutopia MIDI exports instead (25.4).
 - **Not here:** drills. Form recognition in sonata and rondo form depends on listening, and a computer cannot yet generate a sonata
   exposition to ask about. A Timestamp Notes outline of one movement is the cheapest way to get a class to mark its sections
   ([Timestamp Notes](../tools/timestamp-notes.qmd)).
@@ -128,6 +187,14 @@ Mozart or Beethoven sonata and open its movements one after another.
 
 <!-- works-cited: written by scripts/works-cited.py -->
 ::: {.works-cited}
+**For students**
+
 Hutchinson, Robert. "Sonata and Rondo Forms." *Music Theory for the 21st-Century Classroom*, ch. 25, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/SonataAndRondoForms.html](https://musictheory.pugetsound.edu/mt21c/SonataAndRondoForms.html).
+
+**For teachers**
+
+Mutopia Project. "Beethoven, Sonata No. 14 \"Moonlight\", Op. 27 No. 2, 3rd movement (Presto agitato)," typeset by Chris Sawer and Stewart Holmes after the Berners edition (1908). Creative Commons Attribution-ShareAlike 2.5. [www.mutopiaproject.org/ftp/BeethovenLv/O27/moonlight/](https://www.mutopiaproject.org/ftp/BeethovenLv/O27/moonlight/). Plan read from the .ly file's MIDI export (lilypond reported 'Going back in MIDI time'); the URL is the mirror's path, not fetched.
+
+Mutopia Project. "Beethoven, Sonata No. 8 \"Pathétique\", Op. 13, 3rd movement (Rondo)," typeset by Chris Sawer after the Berners edition (1908), ed. A. Winterberger. Public Domain. [www.mutopiaproject.org/ftp/BeethovenLv/O13/pathetique-3/](https://www.mutopiaproject.org/ftp/BeethovenLv/O13/pathetique-3/). Plan read from the .ly file's MIDI export with scripts/mutopia/midi-structure.py (local mirror ~/Projects/corpora/mutopia); the URL is the mirror's path, not fetched.
 :::
 <!-- /works-cited -->

@@ -12,3 +12,9 @@ SOURCES = [
     web(MT + '"Binary and Ternary Forms." *Music Theory for the 21st-Century Classroom*, ch. 24, U of Puget Sound. URL.', "https://musictheory.pugetsound.edu/mt21c/BinaryAndTernaryForm.html", [BT], who="student"),
     web(MT + '"Sonata and Rondo Forms." *Music Theory for the 21st-Century Classroom*, ch. 25, U of Puget Sound. URL.', "https://musictheory.pugetsound.edu/mt21c/SonataAndRondoForms.html", [SR], who="student"),
 ]
+SOURCES += [
+    web('Mutopia Project. "Beethoven, Sonata No. 8 \\"Pathétique\\", Op. 13, 3rd movement (Rondo)," typeset by Chris Sawer after the Berners edition (1908), ed. A. Winterberger. Public Domain. URL.', "https://www.mutopiaproject.org/ftp/BeethovenLv/O13/pathetique-3/", [SR], who="teacher",
+        note="Plan read from the .ly file's MIDI export with scripts/mutopia/midi-structure.py (local mirror ~/Projects/corpora/mutopia); the URL is the mirror's path, not fetched."),
+    web('Mutopia Project. "Beethoven, Sonata No. 14 \\"Moonlight\\", Op. 27 No. 2, 3rd movement (Presto agitato)," typeset by Chris Sawer and Stewart Holmes after the Berners edition (1908). Creative Commons Attribution-ShareAlike 2.5. URL.', "https://www.mutopiaproject.org/ftp/BeethovenLv/O27/moonlight/", [SR], who="teacher",
+        note="Plan read from the .ly file's MIDI export (lilypond reported 'Going back in MIDI time'); the URL is the mirror's path, not fetched."),
+]

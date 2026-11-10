@@ -44,6 +44,23 @@ const U = "http://127.0.0.1:" + (process.env.PORT || 8562) + "/theory/analysed-s
 
   await b.goto(U + "?id=beethoven-sonata-14-1");
   check("a sonata movement draws", await wait(`!!document.querySelector('#sv-score .as-score svg')`, 160));
+  // &bar=N: those bars lit (as-hi) and in view. Pathetique I bar 137 (the enharmonic page's example): the lit notes are measure 136 (0-based),
+  // and the lit span holds both the G minor vii°42 label and the "e: vii°42" label (the key change g -> e comes in the middle of that bar)
+  await b.goto(U + "?id=beethoven-sonata-8-1&bar=137");
+  check("&bar=: bars lit", await wait(`document.querySelectorAll('#sv-score .as-hi').length > 0 && [...document.querySelectorAll('#sv-score text')].some(t => /e:\\s*vii/.test(t.textContent))`, 160));
+  const bb = JSON.parse(await ev(`(() => { const P = document.querySelector('#sv-score .as-score'), hi = [...P.querySelectorAll('.abcjs-note.as-hi, .abcjs-rest.as-hi')], rs = hi.map(n => n.getBoundingClientRect());
+    const x0 = Math.min(...rs.map(r => r.left)), x1 = Math.max(...rs.map(r => r.right)), y0 = Math.min(...rs.map(r => r.top)), y1 = Math.max(...rs.map(r => r.bottom));
+    const within = r => r.left >= x0 - 2 && r.right <= x1 + 2 && r.top >= y0 - 120 && r.bottom <= y1 + 120;
+    const texts = [...P.querySelectorAll('text')], inE = texts.filter(t => /e:\\s*vii/.test(t.textContent) && within(t.getBoundingClientRect())).length, inG = texts.filter(t => /^vii°42$/.test(t.textContent) && within(t.getBoundingClientRect())).length;
+    const mm = [...new Set(hi.map(n => (/abcjs-mm(\\d+)/.exec(n.getAttribute('class')) || [])[1]))];
+    return JSON.stringify({ n: hi.length, mm, inE, inG, visible: rs[0].top >= 0 && rs[0].bottom <= innerHeight }); })()`));
+  check("&bar=137 lights exactly measure 136 (0-based), holding the G minor vii°42 and the e: vii°42 labels", bb.n > 0 && bb.mm.length === 1 && bb.mm[0] === "136" && bb.inE >= 1 && bb.inG >= 1, JSON.stringify(bb));
+  check("&bar=: scrolled into view", bb.visible, JSON.stringify(bb));
+  await b.goto(U + "?id=beethoven-sonata-8-1&bar=137-138");
+  check("&bar=137-138 lights two bars", await wait(`new Set([...document.querySelectorAll('#sv-score .abcjs-note.as-hi')].map(n => /abcjs-mm(\\d+)/.exec(n.getAttribute('class'))[1])).size === 2`, 160));
+  await b.goto(U + "?id=beethoven-sonata-8-1");
+  await b.sleep(2500);
+  check("no &bar=: nothing lit", await ev(`document.querySelectorAll('#sv-score .as-hi').length === 0`));
   await b.goto(U + "?id=nothing-here");
   check("unknown id says so, list still there", await wait(`/No piece called/.test(document.getElementById('sv-title').textContent) && document.querySelectorAll('#sv-rows tr').length === ${total}`));
 

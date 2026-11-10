@@ -99,6 +99,12 @@ function solveSpecies(spec) {
   return dfs(0) ? cp.slice() : null;
 }
 
+// known clean solutions for the third to fifth species exercises (a search over four notes a bar is too slow); the checker must accept each
+const SOL = {
+  "3|D3 A3 G3 F3 E3 D3": [["D4", "E4", "F4", "A4"], ["C5", "B4", "A4", "C5"], ["B4", "A4", "G4", "B4"], ["A4", "C5", "A4", "C5"], ["G4", "A4", "B4", "C#5"], ["D5"]],
+  "4|D3 F3 E3 G3 E3 D3": [[null, "D4"], ["D4", "A3"], ["A3", "G3"], ["G3", "D4"], ["D4", "C#4"], ["D4"]],
+  "5|D3 E3 F3 G3 E3 D3": [["r:2", "D4:2"], ["D4:2", "C4:2"], ["C4:2", "D4:2"], ["D4:2", "E4:1", "D4:1"], ["D4:2", "C#4:2"], ["D4"]]
+};
 PAGES.forEach(p => {
   const src = fs.readFileSync(R + "theory/" + p + ".qmd", "utf8");
   ok(/^## /m.test(src), p + ": has ## headings");
@@ -119,7 +125,7 @@ PAGES.forEach(p => {
     n++; const spec = { species: +attr(tag, "data-species"), cf: attr(tag, "data-cf").split(" "), cp: JSON.parse(attr(tag, "data-cp")), cfPos: attr(tag, "data-cfpos"), mode: attr(tag, "data-mode") }, expect = attr(tag, "data-expect");
     const res = VL.species(spec), errs = res.errors.filter(x => x.sev === "error");
     ok(expect === "ok" ? errs.length === 0 : errs.some(x => x.msg.indexOf(expect) >= 0), p + " species example " + n + " (" + expect + "): " + res.text());
-    const abc = UI.spAbc(spec.cf.map(VL.parseNote), spec.cp.map(b => (Array.isArray(b) ? b : [b]).map(VL.parseNote)), spec.cfPos, spec.species);
+    const abc = UI.spAbc(spec.cf.map(VL.parseNote), UI.barsOf(spec.species, spec.cp), spec.cfPos);
     const L1 = readVoice(abc.split("\n").filter(l => l.indexOf("[V:1]") === 0)[0].replace("[V:1]", ""), {}), L2 = readVoice(abc.split("\n").filter(l => l.indexOf("[V:2]") === 0)[0].replace("[V:2]", ""), {});
     ok(L1.q === L2.q && L1.q === 4 * spec.cf.length, p + " species example " + n + ": voice lengths " + L1.q + " / " + L2.q);
   });
@@ -129,7 +135,10 @@ PAGES.forEach(p => {
     if (sol && process.env.SHOW) console.log(p, n, sol.map(r => [r.S, r.A, r.T, r.B].join(" ")).join(" | "));
   });
   (src.match(/<div class="vl-species"[^>]*>/g) || []).forEach(tag => {
-    n++; const spec = { species: +attr(tag, "data-species"), cf: attr(tag, "data-cf").split(" "), cfPos: attr(tag, "data-cfpos"), mode: attr(tag, "data-mode") }, sol = solveSpecies(spec);
+    n++; const spec = { species: +attr(tag, "data-species"), cf: attr(tag, "data-cf").split(" "), cfPos: attr(tag, "data-cfpos"), mode: attr(tag, "data-mode") };
+    let sol = null;
+    if (spec.species >= 3) { const cp = SOL[spec.species + "|" + spec.cf.join(" ")]; sol = cp && VL.species(Object.assign({ cp }, spec)).errors.every(e => e.sev !== "error") ? cp : null; }
+    else sol = solveSpecies(spec);
     ok(!!sol, p + " species exercise " + n + " has no clean solution");
     if (sol && process.env.SHOW) console.log(p, n, JSON.stringify(sol));
   });

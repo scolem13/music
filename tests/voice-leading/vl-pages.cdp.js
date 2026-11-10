@@ -36,5 +36,11 @@ const srv = http.createServer((q, s) => { let f = path.join(SITE, decodeURICompo
   check("species exercise 1: the example answer is accepted", /Clean|No errors/.test(t), t.slice(0, 160));
   t = await fill(".vl-species", 0, "A3 A3 C4 D4 B3 A3 C4 E4 D4 C#4 D4".split(" "));
   check("species exercise 1: a wrong answer is refused", /Begin/.test(t), t.slice(0, 160));
+  t = await fill(".vl-species", 3, "D4 E4 F4 A4 C5 B4 A4 C5 B4 A4 G4 B4 A4 C5 A4 C5 G4 A4 B4 C#5 D5".split(" "));
+  check("third species exercise: a correct answer is accepted", /Clean|No errors/.test(t), t.slice(0, 160));
+  t = await fill(".vl-species", 4, ["", "D4", "D4", "A3", "A3", "G3", "G3", "D4", "D4", "C#4", "D4"]);
+  check("fourth species exercise: a correct answer is accepted", /Clean|No errors/.test(t), t.slice(0, 160));
+  t = await fill(".vl-species", 5, ["r:2 D4:2", "D4:2 C4:2", "C4:2 D4:2", "D4:2 E4:1 D4:1", "D4:2 C#4:2", "D4"]);
+  check("fifth species exercise: a correct answer is accepted", /Clean|No errors/.test(t), t.slice(0, 160));
   await b.close && b.close(); srv.close(); console.log(fails ? "FAILED " + fails : "all ok"); process.exit(fails ? 1 : 0);
 })();

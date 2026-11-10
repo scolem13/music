@@ -25,7 +25,7 @@ Every counterpoint is written in **two voices** against a given **cantus firmus*
 ## 30.1 Species counterpoint
 
 Fux's *Gradus ad Parnassum* (1725) teaches writing by **species**: one, two, three or four notes against each whole note of the cantus firmus, in the style of Palestrina. Counterpoint is the sounding together of
-melodic lines (a **contrapuntal** texture), in contrast to melody and accompaniment (**homophonic**). The book's rules are a simplified version of Fux's; the page's checker marks first and second species. Third, fourth and fifth species are described below but not checked.
+melodic lines (a **contrapuntal** texture), in contrast to melody and accompaniment (**homophonic**). The book's rules are a simplified version of Fux's; the page's checker marks all five species. The invention and fugue sections at the end are described, not checked.
 
 ## 30.2 First species: note against note
 
@@ -89,15 +89,75 @@ Write **two half notes** against each whole note of the cantus firmus. (In 3/2, 
 <div class="vl-species" data-species="2" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 G3 F3 E3 D3" data-hint="Two boxes a bar; the last bar one. Second notes that are dissonant must be passing tones."></div>
 
 
-## 30.4 Third, fourth and fifth species
+## 30.4 Third species: four against one
 
-- **Third species**: four quarter notes to a whole note; each downbeat a consonance; passing tones allowed (never on the downbeat) and the **cambiata**; the penultimate bar uses set formulas.
-- **Fourth species**: **suspensions** and syncopations. The half note on beat 3 is tied over the barline; if it is a dissonance (4th or 7th) it is a suspension and must resolve down by step (4-3 and 7-6 are allowed in the upper part, 9-8 and 2-1 are not); the penultimate bar has a 7-6 suspension. In the book the cantus firmus is in the lower voice.
-- **Fifth species** (florid counterpoint) is a free mix of all the others.
+Write **four quarter notes** to each whole note of the cantus firmus (the last bar one whole note). Begin on an octave or unison. The rules of first species still hold on the **downbeats**, plus:
 
-*These are not checked by this page's checker.*
+- **Each downbeat is a consonance.** The other three quarters may be consonant, or dissonant only as a **passing tone** (never on beat 1) or the **cambiata**: approached by a step down from beat 1 to beat 2, left by a leap down a third, then a step up.
+- Across the barline, imperfect consonances are free; a perfect one on the downbeat only by contrary motion (no direct fifths or octaves). **Do not repeat a note across a barline.**
+- **The ending:** a whole note on an octave or unison. The bar before it, in scale degrees: with the cantus firmus below, **4 5 6 7** or the cambiata **2 1 6 7**; with the cantus firmus above, **7 5 6 7**. The note before the end rises a half step.
 
-## 30.5 Invention expositions and fugue analysis
+<div class="vl-spex" data-species="3" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 D3" data-cp='[["D4","F4","A4","F4"],["A4","G4","F4","A4"],["G4","A4","B4","C#5"],["D5"]]' data-expect="ok">The cantus firmus in the bass (D F E D): the downbeats are consonant, G passes between A and F, and the bar before the end is 4 5 6 7 (G A B C#) over E.</div>
+
+<div class="vl-spex" data-species="3" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 D3" data-cp='[["D4","F4","A4","F4"],["G4","A4","F4","A4"],["G4","A4","B4","C#5"],["D5"]]' data-expect="downbeat">Bar 2 starts on G over F: a dissonant downbeat.</div>
+
+<div class="vl-spex" data-species="3" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 D3" data-cp='[["D4","E4","A4","F4"],["A4","G4","F4","A4"],["G4","A4","B4","C#5"],["D5"]]' data-expect="passing tone">Bar 1: the E over D is dissonant and is left by a leap, so it is not a passing tone.</div>
+
+<div class="vl-spex" data-species="3" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 D3" data-cp='[["D4","F4","A4","F4"],["A4","G4","F4","A4"],["G4","B4","A4","C#5"],["D5"]]' data-expect="bar before the end">The bar before the end is 4 6 5 7, not 4 5 6 7.</div>
+
+<div class="vl-spex" data-species="3" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 D3" data-cp='[["D4","F4","A4","F4"],["F4","G4","A4","A4"],["G4","A4","B4","C#5"],["D5"]]' data-expect="repeat">Bar 1 ends on F and bar 2 starts on F: a repeated note across the barline.</div>
+
+
+### Exercise: third species
+
+**Cantus firmus below** (D dorian). Begin on `D4`, end `D5` (one note); in the bar before the end write `G4 A4 B4 C#5`. Four boxes a bar.
+
+<div class="vl-species" data-species="3" data-cfpos="lower" data-mode="D dorian" data-cf="D3 A3 G3 F3 E3 D3" data-hint="Four quarter notes a bar, the last bar one box. Downbeats consonant; no repeated note across a barline."></div>
+
+## 30.5 Fourth species: suspensions
+
+Here the counterpoint is **syncopated**: the book writes fourth species only with the cantus firmus in the lower voice.
+
+- **Start** with a half rest, then a half note an octave above the cantus firmus. **End** with a whole note an octave above it.
+- The half note on **beat 3** of every bar except the penultimate is **tied** across the barline to the first half note of the next bar. Beat 3 is always a consonance.
+- If the tied note, on the next downbeat, is a **dissonance** (a 4th or a 7th above the cantus firmus) it is a **suspension** and must **resolve down by step**. Allowed in the upper part: **4-3 and 7-6**; 9-8 and 2-1 are not allowed. If the tied note is a consonance it is a **syncopation** and may go anywhere.
+- The **penultimate bar** has a **7-6 suspension** (over the cantus firmus's 2, a 7th resolving to the 6th, then up to the final octave).
+
+<div class="vl-spex" data-species="4" data-cfpos="lower" data-mode="D dorian" data-cf="D3 G3 F3 E3 D3" data-cp='[[null,"D4"],["D4","E4"],["E4","D4"],["D4","C#4"],["D4"]]' data-expect="ok">Half rest, D an octave above, then ties: D over G (a syncopation), E over F (a 7th, a suspension resolving to D), and D over E (the 7-6 that closes).</div>
+
+<div class="vl-spex" data-species="4" data-cfpos="lower" data-mode="D dorian" data-cf="D3 G3 F3 E3 D3" data-cp='[[null,"D4"],["D4","E4"],["E4","F4"],["F4","C#4"],["D4"]]' data-expect="resolves down by step">Bar 3: the suspended E (a 7th over F) rises to F instead of falling to D.</div>
+
+<div class="vl-spex" data-species="4" data-cfpos="lower" data-mode="D dorian" data-cf="D3 G3 F3 E3 D3" data-cp='[[null,"D4"],["D4","E4"],["G4","D4"],["D4","C#4"],["D4"]]' data-expect="Tie">Bar 3 does not begin with the E tied over from bar 2.</div>
+
+<div class="vl-spex" data-species="4" data-cfpos="lower" data-mode="D dorian" data-cf="D3 G3 F3 E3 D3" data-cp='[[null,"D4"],["D4","E4"],["E4","D4"],["D4","D4"],["D4"]]' data-expect="7-6">The bar before the end has no 7-6 suspension.</div>
+
+
+### Exercise: fourth species
+
+**Cantus firmus below** (D dorian). Leave the first box of bar 1 empty (the half rest) and write `D4` in the second. The second box of one bar and the first of the next are the same note, tied.
+
+<div class="vl-species" data-species="4" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 G3 E3 D3" data-hint="Tie beat 3 to the next downbeat. A suspended 4th or 7th resolves down by step; the bar before the end is a 7th (D4) then a 6th (C#4)."></div>
+
+## 30.6 Fifth species: florid counterpoint
+
+Fifth species is a **free mixture** of the first four: half notes, quarter notes and ties in one line over the cantus firmus. Hutchinson points to the opening of Lassus's *Expectatio Justorum* as an example. The checker uses what the species above establish:
+the first and last rules; consonant downbeats, or a tied suspension resolving down by step; dissonance only on a **quarter note**, as a passing tone, a **neighbor tone** or a cambiata; perfect consonances on non-tied downbeats only by contrary motion; the allowed leaps.
+(The neighbor tone as a dissonance and the quarter-note limit are this site's reading of "a free mixture", not rules the book states.) Type each bar as notes with lengths, `D4:2 E4:1 D4:1` (`:2` half, `:1` quarter, `r:2` a half rest); a note with no length is the bar divided evenly.
+
+<div class="vl-spex" data-species="5" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 D3" data-cp='[["r:2","D4:2"],["A4:2","G4:1","F4:1"],["G4:2","B4:1","C#5:1"],["D5"]]' data-expect="ok">Half rest and D, then a half note A with a passing G to F, then G B C# up to the final D.</div>
+
+<div class="vl-spex" data-species="5" data-cfpos="lower" data-mode="D dorian" data-cf="D3 G3 F3 E3 D3" data-cp='[["r:2","D4:2"],["D4:2","E4:2"],["E4:2","D4:1","D4:1"],["D4:2","C#4:2"],["D4"]]' data-expect="ok">A tied E (a 7th over F) is suspended, resolves to D, and the D is tied into the closing 7-6.</div>
+
+<div class="vl-spex" data-species="5" data-cfpos="lower" data-mode="D dorian" data-cf="D3 F3 E3 D3" data-cp='[["r:2","D4:2"],["A4:2","G4:2"],["G4:2","B4:1","C#5:1"],["D5"]]' data-expect="only on a quarter note">Bar 2: a half-note G over F is a dissonance that lasts too long.</div>
+
+
+### Exercise: fifth species
+
+**Cantus firmus below** (D dorian). Try quarter notes and a tie: bar 1 `r:2 D4:2`; bar 6 one note.
+
+<div class="vl-species" data-species="5" data-cfpos="lower" data-mode="D dorian" data-cf="D3 E3 F3 G3 E3 D3" data-hint="One box a bar: notes with lengths, like D4:2 E4:1 D4:1. Use the ideas of all four species."></div>
+
+## 30.7 Invention expositions and fugue analysis
 
 The chapter ends with applying species to harmony: writing the four-bar **exposition** of a two-part invention on the model of Bach's C major and E minor inventions (the theme in bar 1, an octave lower in the bass in bar 2, a fifth higher in bar 3, an octave lower in bar 4, ending on a tenth: tonic in the bass, 3 above), with counterpoint that outlines the harmony of each bar
 (I, then V, then back to I); and **analysing a fugue**: subject, answer (real or tonal), countersubject, episode, bridge and exposition, with motivic fragmentation. Open the Bach
@@ -107,7 +167,10 @@ fugue and invention scores in the [Analysed Scores Library](analysed-scores/view
 ## What the checker does and does not check
 - First species: beginning, ending (contrary, 7 to 8 and 2 to 1), consonance, perfect intervals only by contrary motion, runs of 3rds and 6ths (this site reads it as three of the same kind), allowed leaps, direction change after leaps larger than a 4th, outlined tritones, repeated notes (a warning).
 - Second species: the beginning on beat 1 or 3, the whole-note ending, the penultimate-bar formulas, consonant downbeats, dissonant second notes only as passing tones, no repeated note across the barline, no octaves or fifths on consecutive downbeats unless a 4th leap follows.
-- **Not checked:** consecutive leaps outlining a triad in species, the range of the counterpoint, and everything in 30.4 and 30.5.
+- Third species: consonant downbeats, passing tones and the cambiata, the 4 5 6 7 / 2 1 6 7 / 7 5 6 7 ending formulas, no repeated note across a barline. Fourth: the tie on every beat 3 but the penultimate, suspensions 4-3 and 7-6 resolving down by step (9-8 and 2-1 refused), the 7-6 before the end.
+  Fifth: the common rules plus the quarter-note limit on dissonance (this site's reading of "a free mixture").
+- All species: the counterpoint stays above (or below) the cantus firmus, and the note before the end rises a half step (the book gives this as 7 to 8; the checker requires it in every species, so a Phrygian cantus firmus is allowed a whole step).
+- **Not checked:** consecutive leaps outlining a triad in species, the range of the counterpoint, fourth species with the cantus firmus above (the book does not write it), and the invention and fugue sections.
 - The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
 :::
 

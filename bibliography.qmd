@@ -800,7 +800,7 @@ Hutchinson, Robert. "AABA Form." *Music Theory for the 21st-Century Classroom*, 
 [Used in: [Section Labels: Naming the Parts of a Song](lessons/section-labels.qmd), [Lesson: Turnarounds and Rhythm Changes](lessons/turnarounds.qmd) (for students)]{.wc-used}
 
 Hutchinson, Robert. "Augmented Sixth Chords." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/AugmentedSixthChords.html](https://musictheory.pugetsound.edu/mt21c/AugmentedSixthChords.html). Chapter 21: Italian, French and German augmented sixths (b6, 1, #4; plus 2 or b3), the diminished third when stacked in thirds, pre-dominant function. Read from the book source (github rhutchinson20/mt21c) on 2026-11-09. The advice that the German goes via I64 to avoid parallel fifths is the common rule, not read from that page (unverified). 
-[Used in: [Chord Analysis, Step by Step](theory/chord-analysis.qmd)]{.wc-used}
+[Used in: [Chord Analysis, Step by Step](theory/chord-analysis.qmd), [Enharmonic Modulation: Practice for Chapter 23](theory/enharmonic-modulation.qmd)]{.wc-used}
 
 Hutchinson, Robert. "Basic Concepts." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/BasicConcepts.html](https://musictheory.pugetsound.edu/mt21c/BasicConcepts.html). Chapter 1: pitch, notation and clefs, octave registers, accidentals, enharmonic notes. 
 [Used in: [Pitch Notation from Do: Letter Names, Clefs and Accidentals](theory/pitch-basics.qmd)]{.wc-used}
@@ -819,6 +819,9 @@ Hutchinson, Robert. "Creating Contrast Between Sections." *Music Theory for the 
 
 Hutchinson, Robert. "Diatonic Chords in Minor." *Music Theory for the 21st-Century Classroom*, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/DiatonicChordsInMinor.html](https://musictheory.pugetsound.edu/mt21c/DiatonicChordsInMinor.html). 
 [Used in: [Lesson: Changes in a Minor Key](lessons/minor-changes.qmd) (for students)]{.wc-used}
+
+Hutchinson, Robert. "Enharmonic Modulation." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/EnharmonicModulation.html](https://musictheory.pugetsound.edu/mt21c/EnharmonicModulation.html). Chapter 23: the pivot chord spelled correctly in only one key; the dominant seventh and German sixth (top note respelled, or the bottom three); the fully diminished seventh with four keys, resolved up as vii°7 and down to a dominant seventh; the enharmonic German sixth (♯2, doubly augmented fourth). The examples named: Tchaikovsky, Nutcracker, Waltz of the Flowers; Beethoven, Symphony No. 5, II; Beethoven, Pathétique, I; Schubert, Der Atlas; Les Misérables, On My Own. The book's own figures are not reproduced. 
+[Used in: [Enharmonic Modulation: Practice for Chapter 23](theory/enharmonic-modulation.qmd)]{.wc-used}
 
 Hutchinson, Robert. "Figured Bass Inversion Symbols." *Music Theory for the 21st-Century Classroom*, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/FiguredBassInversionSymbols.html](https://musictheory.pugetsound.edu/mt21c/FiguredBassInversionSymbols.html). 
 [Used in: [Inversions: Root Position, First and Second Inversion](lessons/inversions.qmd) (for students)]{.wc-used}
@@ -1193,6 +1196,12 @@ Mullen, Andy. *The Literate Musician: How to Hear, Speak, Think, Read & Write th
 
 Mutch, Caleb. "Blainville's New Mode, or How the Plagal Cadence Came to Be 'Plagal'." *Eighteenth-Century Music*, vol. 12, no. 1, 2015, pp. 69-90. [www.cambridge.org/core/journals/eighteenth-century-music/article/blainvilles-new-mode-or-how-the-plagal-cadence-came-to-be-plagal/0344135AED4A9B21D04DB4C28BDEE679](https://www.cambridge.org/core/journals/eighteenth-century-music/article/blainvilles-new-mode-or-how-the-plagal-cadence-came-to-be-plagal/0344135AED4A9B21D04DB4C28BDEE679). Abstract read. 
 [Used in: [Lesson: Cadences, and the One That Is Not](lessons/cadences.qmd) (for teachers)]{.wc-used}
+
+Mutopia Project. "Beethoven, Sonata No. 14 \"Moonlight\", Op. 27 No. 2, 3rd movement (Presto agitato)," typeset by Chris Sawer and Stewart Holmes after the Berners edition (1908). Creative Commons Attribution-ShareAlike 2.5. [www.mutopiaproject.org/ftp/BeethovenLv/O27/moonlight/](https://www.mutopiaproject.org/ftp/BeethovenLv/O27/moonlight/). Plan read from the .ly file's MIDI export (lilypond reported 'Going back in MIDI time'); the URL is the mirror's path, not fetched. 
+[Used in: [Sonata and Rondo Forms: Practice for Chapter 25](theory/sonata-rondo.qmd) (for teachers)]{.wc-used}
+
+Mutopia Project. "Beethoven, Sonata No. 8 \"Pathétique\", Op. 13, 3rd movement (Rondo)," typeset by Chris Sawer after the Berners edition (1908), ed. A. Winterberger. Public Domain. [www.mutopiaproject.org/ftp/BeethovenLv/O13/pathetique-3/](https://www.mutopiaproject.org/ftp/BeethovenLv/O13/pathetique-3/). Plan read from the .ly file's MIDI export with scripts/mutopia/midi-structure.py (local mirror ~/Projects/corpora/mutopia); the URL is the mirror's path, not fetched. 
+[Used in: [Sonata and Rondo Forms: Practice for Chapter 25](theory/sonata-rondo.qmd) (for teachers)]{.wc-used}
 
 National Association of Teachers of Singing. "Science-Informed Voice Pedagogy Resources." *NATS*, [www.nats.org/Science-Informed_Voice_Pedagogy_Resources.html](https://www.nats.org/Science-Informed_Voice_Pedagogy_Resources.html). Syllabi, labs on registers, resonance, vowels and vibrato; belting articles; terminology document. 
 [Used in: [Classical Singing: Breath, Pure Vowels and Legato](lessons/voice-classical.qmd), [Jazz Singing: Swing, Scat and the Changes](lessons/voice-jazz.qmd), [Pop Singing: Speech, Mix, Runs and the Mic](lessons/voice-pop.qmd) (for teachers)]{.wc-used}

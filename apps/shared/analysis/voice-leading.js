@@ -35,7 +35,10 @@
 //                except diminished (double the third) and consecutive first inversions alternate; second inversion: double the bass
 //     complete   each chord has its third; its fifth too unless the root is doubled / tripled in an incomplete chord (site)
 //   ch. 27 Voice Leading Seventh Chords
-//     seventh    the chordal 7th resolves down by step (also over secondary sevenths, ch. 29)
+//     seventh    the chordal 7th resolves down by step (also over secondary sevenths, ch. 29). The one exception, the book's own:
+//                I - V4/3 - I6, where the 7th rises (Mozart K. 331 I), accepted only there; its unequal fifths give the "unequal5" warning
+//     viiSpecial vii dim7 / half-dim 7: if the 7th is voiced above the third, the third (scale degree 2) rises a step, else it falls; the
+//                fifth (4) falls; the tonic after vii dim7 may double its third
 //     voicing7   root-position sevenths: all four members, or the fifth left out and the root doubled; successive root-position
 //                sevenths alternate complete / incomplete (warning)
 //     chordtone  a note not in the chord must be a recognised non-chord tone (ch. 28) -- passing, neighbor, appoggiatura,
@@ -43,14 +46,17 @@
 //   ch. 28 Voice Leading with Non-Chord Tones
 //     nctpar     parallels made by an embellishing slice (same check as parallels, run between every pair of slices)
 //     nctsame    non-chord tones in two voices at once, except in parallel 3rds / 6ths (warning)
-//     (the nine types are named by nctType(); pedal point and double neighbor are not recognised, so a double neighbor is
-//      reported as an unrecognised note: site's limit)
+//     (the types are named by nctType(); a pedal point is a note held (same in, same out) that is not in the chord; a double neighbor is
+//      two embellishing slices: a step one way, a third back across, a step home to the first note)
 //   ch. 29 Voice Leading Chromatic Harmonies
 //     the seventh / leading-tone rules above apply to secondary chords (the leading tone is the target's); the Neapolitan
 //     (N6) must double the bass and 2 resolves down (rule "neapolitan"); borrowed chords: scale degree 6 resolves down
-//     ("borrowed6"). Augmented-sixth chords are not parsed (listed in the chapter, not checked: site's limit).
-//   Not checked: the "do not use two-voice texture..." details, unequal-fifths exceptions beyond d5-P5, vii dim7's special
-//   resolution (2 may rise when the 7th is above it), consecutive 3rds / 6ths in SATB.
+//     ("borrowed6"). Augmented sixth chords (It+6, Fr+43, Ger+65, enGer+65, stacked on b6 in the bass, read from the symbol): rule "aug6":
+//     the raised 4 rises to 5 (falls to 4 over V7), the flat 6 falls to 5 (the book states the 4 only; the b6 is this site's reading from the
+//     interval's name), neither is doubled, all notes present (the Italian doubles the tonic), the enharmonic German's raised 2 rises to 3;
+//     the German straight to V makes parallel fifths, which the ordinary parallels rule reports.
+//   Not checked: unequal-fifths exceptions beyond d5-P5 and the K. 331 case, strict versus free resolution as an exercise asks,
+//   consecutive 3rds / 6ths in SATB (the book limits them only in species), whether a Roman numeral suits a melody.
 //
 //   ch. 30 Introduction to Counterpoint (species)
 //     first species   begin / end on unison or octave; approach the end by contrary motion, 7 -> 8 in one voice and 2 -> 1 in
@@ -64,7 +70,18 @@
 //                     whole note; penultimate bar 5th - 6th (cf lower) or 5th - 3rd (cf upper), Phrygian 6th - 3rd (cf upper);
 //                     the second half note a consonance or a passing tone; no repeated note across a barline; no octaves (5ths)
 //                     on consecutive downbeats unless a leap of a 4th follows
-//   Third to fifth species and the invention are not checked (site's limit).
+//   Third to fifth species (the same call, species: 3 | 4 | 5; cp bars: third ["A4","G4","F4","A4"], fourth [null | "D4", "E4"], fifth
+//   "A4:2 G4:1 F4:1", ":n" = quarter notes, "r:2" a rest; the last bar one whole note):
+//     third     downbeats consonant; other quarters consonant or a passing tone or the cambiata (step down, leap down a 3rd, step up);
+//               ending bar 4 5 6 7 / 2 1 6 7 (cf lower) or 7 5 6 7 (cf upper); the note before the end rises a half step; no note repeated
+//               across a barline; direct 5ths / 8ves on downbeats refused
+//     fourth    cf lower only: half rest then an octave above; beat 3 tied to the next downbeat (all bars but the penultimate); beat 3 a
+//               consonance; a dissonant tied note (4th or 7th) is a suspension resolving down by step, 9-8 and 2-1 refused; the penultimate
+//               bar a 7-6 suspension; syncopations (a consonant tied note) free
+//     fifth     the common rules and the tied suspension; dissonance only on a quarter note as a passing tone, neighbor tone (the neighbor
+//               and the quarter-note limit are the site's reading of "a free mixture") or cambiata
+//     all       the counterpoint stays above (cf lower) / below (cf upper) the cantus firmus; the same leaps and direction changes as first
+//   The invention exposition and fugue analysis are not checked (site's limit).
 (function (g) {
   "use strict";
   var LET = "CDEFGAB", NAT = [0, 2, 4, 5, 7, 9, 11];
@@ -72,7 +89,7 @@
   var RANGE_NAMES = { S: "D4-F#5", A: "G3-C#5", T: "Eb3-F#4", B: "E2-C4" };
   var VNAME = { S: "soprano", A: "alto", T: "tenor", B: "bass" };
   var CH = { range: 26, spacing: 26, crossing: 26, overlap: 26, parallels: 26, unequal5: 27, direct: 26, leaptone: 26, melody: 26, doubling: 26, complete: 26,
-    seventh: 27, voicing7: 27, chordtone: 28, nctpar: 28, nctsame: 28, neapolitan: 29, borrowed6: 29, rn: 26, species: 30 };
+    seventh: 27, voicing7: 27, chordtone: 28, nctpar: 28, nctsame: 28, neapolitan: 29, borrowed6: 29, viiSpecial: 27, aug6: 29, rn: 26, species: 30 };
 
   function pc(n) { return ((n % 12) + 12) % 12; }
 
@@ -99,6 +116,12 @@
   function parseRN(rn, key) {
     var tok = String(rn).replace(/°/g, "o").replace(/ø/g, "ø"), tail = null, sl = tok.indexOf("/");
     if (sl >= 0) { tail = tok.slice(sl + 1); tok = tok.slice(0, sl); }
+    var am = /^(It|Fr|Ger|enGer)\+(6|43|65)$/.exec(tok);
+    if (am) {   // augmented sixth chords (ch. 21 / 29): stacked on b6 (the bass), 1, [2 | b3 (written #2 in the enharmonic German)], #4
+      var T = key.tonic, ap = am[1] === "It" ? [8, 0, 6] : am[1] === "Fr" ? [8, 0, 2, 6] : [8, 0, 3, 6];
+      return { rn: rn, root: pc(T + 8), pcs: ap.map(function (x) { return pc(T + x); }), bassFn: 0, dom: false, lt: null, seventh: false, tonic: T, dim: false, upper: true, kind: "aug6",
+        neapolitan: false, deg: 5, secondary: false, fig: "", isTonic: false, borrowed6: null, deceptive: false, aug6: am[1], vii7: false, half: false };
+    }
     if (tok === "N6" || tok === "N") tok = "bII" + (tok === "N6" ? "6" : "");
     var m = /^([b#]?)(VII|VI|IV|V|III|II|I|vii|vi|iv|v|iii|ii|i)([oø+]?)(M?7)?(64|65|43|42|6|2)?$/.exec(tok);
     if (!m) throw new Error("Bad Roman numeral: " + rn);
@@ -128,7 +151,7 @@
     return { rn: rn, root: root, pcs: pcs, bassFn: bassFn, dom: dom, lt: dom ? pc(tonic + 11) : null, seventh: seventh != null, tonic: tonic, dim: q === "o", upper: upper,
       kind: seventh != null ? "7th" : "tri", neapolitan: acc === -1 && deg === 1 && upper && !tail, deg: deg, secondary: !!tail, fig: fig,
       isTonic: !tail && deg === 0 && !acc && !seventh, borrowed6: (!tail && !minor && acc === -1 && deg === 5) ? pc(tonic + 8) : (!tail && !minor && (deg === 3 && !upper)) ? pc(tonic + 8) : null,
-      deceptive: !tail && deg === 5 && !acc };
+      deceptive: !tail && deg === 5 && !acc, vii7: seventh != null && !upper && deg === 6 && (q === "o" || q === "ø"), half: q === "ø" };
   }
   function fnOf(ch, p) { var i = ch.pcs.indexOf(pc(p)); return i; }
 
@@ -160,6 +183,7 @@
     if (inLeap && outS && ((up && !qup) || (!up && qup))) return "appoggiatura";   // leap in, step out the other way (resolves toward where it came from)
     if (inLeap && outS && accented) return "appoggiatura";
     if (inS && outLeap && ((up && !qup) || (!up && qup))) return "escape tone";
+    if (inSame && outSame) return "pedal point";
     return null;
   }
 
@@ -223,6 +247,16 @@
     var prevSeven = null, prevFirstInv = null;
     sl.forEach(function (s, i) {
       var ch = chords[i]; if (!ch || !s.rn) return;
+      if (ch.aug6) {
+        if (!on(opts, "aug6")) return;
+        var cnt6 = {}, anyN = false; voices.forEach(function (v) { var n = s.n[v]; if (!n) return; var f = fnOf(ch, n.midi); if (f < 0) anyN = true; else cnt6[f] = (cnt6[f] || 0) + 1; });
+        var b6 = cnt6[0] || 0, a4 = cnt6[ch.pcs.length - 1] || 0;
+        if (b6 > 1) res.add("aug6", "error", i, s.t, W(i), "Do not double the flat six (the bass) of " + ch.rn + ": it resolves down to 5, and a double would resolve in parallel octaves.");
+        if (a4 > 1) res.add("aug6", "error", i, s.t, W(i), "Do not double the raised four of " + ch.rn + ": it resolves up to 5.");
+        var bnn = s.n[voices[voices.length - 1]]; if (bnn && pc(bnn.midi) !== ch.pcs[0]) res.add("aug6", "error", i, s.t, W(i), ch.rn + " has the flat six in the bass.", voices[voices.length - 1]);
+        if (!anyN && voices.length === 4) for (var f6 = 0; f6 < ch.pcs.length; f6++) if (!cnt6[f6]) res.add("aug6", "error", i, s.t, W(i), "The " + ch.rn + " chord is missing one of its notes (" + ch.pcs.length + " different notes; the Italian sixth doubles the tonic).");
+        return;
+      }
       var pcsHere = {}; var anyNct = false; var have = {};
       voices.forEach(function (v) { var n = s.n[v]; if (!n) return; if (!isTone[i][v]) { anyNct = true; return; } pcsHere[v] = n; have[fnOf(ch, n.midi)] = (have[fnOf(ch, n.midi)] || 0) + 1; });
       var all4 = voices.length === 4 && voices.every(function (v) { return s.n[v]; });
@@ -240,7 +274,7 @@
         if (nT === 3) {
           var prevCh = i > 0 ? chords[i - 1] : null, prevS = prevCh ? sl.slice(0, i).filter(function (x) { return x.rn; }).pop() : null;
           if (ch.bassFn === 0) {
-            var decept = prevCh && prevCh.dom && ch.deceptive && !prevCh.seventh ? true : (prevCh && prevCh.dom && ch.deceptive);
+            var decept = (prevCh && prevCh.dom && ch.deceptive) || (prevCh && prevCh.vii7 && ch.isTonic);   // the deceptive V-vi, and vii dim7's special resolution: the third is doubled
             if (r3 < 2 && !(decept && t3 >= 2) && on(opts, "doubling")) res.add("doubling", "error", i, s.t, W(i), "Root position " + ch.rn + ": double the root (the bass) in an upper voice." + (decept ? " (In the deceptive V-vi the third may be doubled.)" : ""));
             if (!f5 && r3 < 3 && on(opts, "complete")) res.add("complete", "warn", i, s.t, W(i), "The " + ch.rn + " chord has no fifth; that is only done with the root tripled.");
             if (f5 === 0 && r3 === 3 && t3 === 1) { /* incomplete I: fine */ }
@@ -287,14 +321,39 @@
         // use the pitch the voice has when the next chord arrives (a suspension there still resolves later: look one on)
         var tgt = after, jj = j;
         if (!isTone[j][v]) { for (var k2 = j + 1; k2 < sl.length; k2++) { if (sl[k2].n[v] && sl[k2].n[v].midi !== after.midi) { tgt = sl[k2].n[v]; jj = k2; break; } if (sl[k2].rn) break; } }
-        var d = tgt.midi - n.midi, lbl = res.where(sl[j].t);
+        var d = tgt.midi - n.midi, lbl = res.where(sl[j].t), pi = -1;
+        for (var q0 = i - 1; q0 >= 0; q0--) if (sl[q0].rn) { pi = q0; break; }
+        var pvc = pi >= 0 ? chords[pi] : null;
+        // vii dim7 / half-dim 7 (ch. 27): the third (scale degree 2) rises when the 7th is voiced above it, falls otherwise; the fifth (4) falls
+        if (ch.vii7 && !same && on(opts, "viiSpecial")) {
+          var sevP = null, thP = null; voices.forEach(function (w) { var x = s.n[w]; if (!x) return; if (pc(x.midi) === ch.pcs[3] && !sevP) sevP = x; if (pc(x.midi) === ch.pcs[1] && !thP) thP = x; });
+          var sevAbove = sevP && thP && sevP.midi > thP.midi;
+          if (pc(n.midi) === ch.pcs[1] && thP) {
+            if (sevAbove && !(d === 1 || d === 2)) res.add("viiSpecial", "error", j, sl[j].t, lbl, "The 7th of " + ch.rn + " is above its third, so the third (scale degree 2, " + VNAME[v] + ") should rise a step (the special resolution).", v);
+            if (!sevAbove && !(d === -1 || d === -2)) res.add("viiSpecial", "error", j, sl[j].t, lbl, "The 7th of " + ch.rn + " is below its third, so everything resolves normally: the third (scale degree 2, " + VNAME[v] + ") falls a step.", v);
+          }
+          if (pc(n.midi) === ch.pcs[2] && !(d === -1 || d === -2)) res.add("viiSpecial", "error", j, sl[j].t, lbl, "The fifth of " + ch.rn + " (scale degree 4, " + VNAME[v] + ") should fall a step.", v);
+        }
+        // augmented sixth chords (ch. 29): #4 rises to 5 (to 4 over V7), b6 falls to 5, the enharmonic German's #2 rises to 3
+        if (ch.aug6 && nx && on(opts, "aug6")) {
+          var T6 = ch.tonic, toV = nx.deg === 4 && nx.upper && !nx.secondary && !nx.aug6, toC64 = nx.isTonic && nx.fig === "64";
+          if (toV || toC64) {
+            if (pc(n.midi) === pc(T6 + 6)) {
+              var want4 = nx.seventh ? (d === -1) : (d === 1 && pc(tgt.midi) === pc(T6 + 7));
+              if (!want4) res.add("aug6", "error", j, sl[j].t, lbl, "The raised four (" + nameOf(n) + ", " + VNAME[v] + ") of " + ch.rn + " should " + (nx.seventh ? "fall to 4, the seventh of " + nx.rn : "rise a half step to 5") + ".", v);
+            }
+            if (pc(n.midi) === pc(T6 + 8) && !(d === -1 && pc(tgt.midi) === pc(T6 + 7))) res.add("aug6", "error", j, sl[j].t, lbl, "The flat six (" + nameOf(n) + ", " + VNAME[v] + ") of " + ch.rn + " should fall a half step to 5 (it and the raised four move outward to 5).", v);
+            if (ch.aug6 === "enGer" && toC64 && pc(n.midi) === pc(T6 + 3) && !(d === 1)) res.add("aug6", "error", j, sl[j].t, lbl, "In the enharmonic German chord the raised 2 (" + nameOf(n) + ", " + VNAME[v] + ") rises to 3.", v);
+          }
+        }
         if (ch.lt != null && pc(n.midi) === ch.lt && !same && on(opts, "leaptone")) {
           var nextDom = nx && nx.dom && nx.lt === ch.lt, toTonic = pc(tgt.midi) === ch.tonic && d === 1;
           var third = (v === "A" || v === "T") && /^V/.test(ch.rn) && !ch.secondary && nx && nx.isTonic && pc(tgt.midi) === pc(ch.tonic + 7) && d < 0 && Math.abs(d) <= 4;
           if (!toTonic && !nextDom && !third) res.add("leaptone", "error", j, sl[j].t, lbl, "The leading tone (" + nameOf(n) + ", " + VNAME[v] + ") should rise a half step to the tonic" + (v === "A" || v === "T" ? " (or, in an inner voice over V to I, fall a third to scale degree 5)" : "") + ".", v);
         }
         if (ch.seventh && pc(n.midi) === ch.pcs[3] && !same && on(opts, "seventh")) {
-          if (!(d === -1 || d === -2)) res.add("seventh", "error", j, sl[j].t, lbl, "The seventh of " + ch.rn + " (" + nameOf(n) + ", " + VNAME[v] + ") should resolve down by step.", v);
+          var k331 = ch.deg === 4 && ch.fig === "43" && !ch.secondary && pvc && pvc.isTonic && nx && nx.isTonic && nx.fig === "6" && (d === 1 || d === 2) && pc(n.midi) === ch.pcs[3];   // I - V4/3 - I6, the close of Mozart K. 331 I (the book's one exception)
+          if (!(d === -1 || d === -2) && !k331) res.add("seventh", "error", j, sl[j].t, lbl, "The seventh of " + ch.rn + " (" + nameOf(n) + ", " + VNAME[v] + ") should resolve down by step.", v);
         }
         if (ch.borrowed6 != null && pc(n.midi) === ch.borrowed6 && !same && on(opts, "borrowed6")) {
           if (!(d === -1 || d === -2)) res.add("borrowed6", "error", j, sl[j].t, lbl, "In a borrowed chord, scale degree 6 (" + nameOf(n) + ", " + VNAME[v] + ") resolves down by step.", v);
@@ -330,6 +389,15 @@
         }
       }
     });
+    // double neighbors: a chord tone, a step to one side, a leap of a third to the other side, a step back to the first note
+    var dn = {};
+    voices.forEach(function (v) {
+      for (var i = 1; i + 2 < sl.length; i++) {
+        var p = sl[i - 1].n[v], n1 = sl[i].n[v], n2 = sl[i + 1].n[v], q = sl[i + 2].n[v];
+        if (!p || !n1 || !n2 || !q || isTone[i][v] || isTone[i + 1][v] || p.midi !== q.midi) continue;
+        if (stepSize(p, n1) === 1 && stepSize(n2, q) === 1 && Math.abs(n1.dia - n2.dia) === 2 && (n1.midi - p.midi) * (n2.midi - p.midi) < 0) { dn[v + i] = dn[v + (i + 1)] = true; }
+      }
+    });
     // chord tones and non-chord tones
     sl.forEach(function (s, i) {
       var ch = chords[i], nctHere = [];
@@ -339,8 +407,8 @@
         var p = i > 0 ? sl[i - 1].n[v] : null, q = i + 1 < sl.length ? sl[i + 1].n[v] : null, nxc = i + 1 < sl.length ? chords[i + 1] : null;
         var accented = !!s.rn || (s.t % 1 === 0 && false);
         var inNext = q && nxc ? fnOf(nxc, n.midi) >= 0 && i + 1 < sl.length && !!sl[i + 1].rn : false;
-        var type = nctType(p, n, q, !!s.rn || (s.t % bpb === 0), inNext);
-        if (!type && on(opts, "chordtone")) res.add("chordtone", "error", i, s.t, W(i), "The " + VNAME[v] + " note " + nameOf(n) + " is not in " + ch.rn + " and is not a passing tone, neighbor, appoggiatura, escape tone, anticipation or suspension (approached by " +
+        var type = dn[v + i] ? "double neighbor" : nctType(p, n, q, !!s.rn || (s.t % bpb === 0), inNext);
+        if (!type && on(opts, "chordtone")) res.add("chordtone", "error", i, s.t, W(i), "The " + VNAME[v] + " note " + nameOf(n) + " is not in " + ch.rn + " and is not a passing tone, neighbor, double neighbor, appoggiatura, escape tone, anticipation, suspension, retardation or pedal point (approached by " +
           (p ? (p.midi === n.midi ? "the same note" : stepSize(p, n) === 1 ? "step" : "leap") : "nothing") + ", left by " + (q ? (q.midi === n.midi ? "the same note" : stepSize(n, q) === 1 ? "step" : "leap") : "nothing") + ").", v);
         if (type) { res.ncts.push({ voice: v, slice: i, type: type }); nctHere.push(v); }
       });
@@ -369,6 +437,7 @@
   }
   function species(spec, opts) {
     opts = opts || {};
+    if ((spec.species || 1) >= 3) return species345(spec, opts);
     var sp = spec.species || 1, lowerCF = spec.cfPos !== "upper", res = Result(sp === 1 ? 1 : 1);
     res.where = function (t) { return "bar " + (t + 1); };
     var cf = spec.cf.map(parseNote), N = cf.length;
@@ -471,7 +540,105 @@
     return res;
   }
 
-  var API = { check: check, species: species, parseRN: parseRN, parseNote: parseNote, parseKey: parseKey, nctType: nctType, RANGES: RANGES, RANGE_NAMES: RANGE_NAMES, CH: CH,
+
+  // ---- species 3-5 (ch. 30). cp bars: third = ["A4","G4","F4","G4"] (last bar "D4"), fourth = [null|"A4", "G4"] (a rest or the tied note first),
+  // fifth = "A4:2 G4:1 F4:1" or ["A4:2","G4:1",...] (:d = quarter notes, default 4 / the number of notes in the bar; "r:2" a rest)
+  function eventsOf(sp, cp) {
+    var bars = cp.map(function (b) {
+      var arr = Array.isArray(b) ? b : (typeof b === "string" && /\s/.test(b.trim()) ? b.trim().split(/\s+/) : [b]);
+      var ev = arr.map(function (t) {
+        var d = 4 / arr.length, name = t;
+        if (typeof t === "string" && t.indexOf(":") >= 0) { var q = t.split(":"); name = q[0]; d = +q[1]; }
+        return { n: (name == null || name === "" || name === "r") ? null : parseNote(name), d: d };
+      });
+      return ev;
+    });
+    bars.forEach(function (b, i) { var l = b[b.length - 1], nx = bars[i + 1]; if (l.n && nx && nx[0].n && nx[0].n.midi === l.n.midi) l.tie = true; });
+    return bars;
+  }
+  function species345(spec, opts) {
+    opts = opts || {};
+    var sp = spec.species, lowerCF = spec.cfPos !== "upper", res = Result(1), phry = /phryg/i.test(spec.mode || "");
+    res.where = function (t) { return "bar " + (t + 1); };
+    var cf = spec.cf.map(parseNote), N = cf.length, bars = eventsOf(sp, spec.cp), flat = [];
+    if (bars.length !== N) { res.add("species", "error", 0, 0, "", "The counterpoint has " + bars.length + " bars but the cantus firmus has " + N + "."); return res; }
+    bars.forEach(function (b, i) { var st = 0; b.forEach(function (e) { e.bar = i; e.start = st; st += e.d; flat.push(e); }); if (st !== 4) res.add("species", "error", i, i, "bar " + (i + 1), "Bar " + (i + 1) + " adds up to " + st + " beats, not 4."); });
+    var tonic = cf[N - 1];
+    var semi = function (e) { return lowerCF ? e.n.midi - cf[e.bar].midi : cf[e.bar].midi - e.n.midi; };
+    var gen = function (e) { return ((((lowerCF ? e.n.dia - cf[e.bar].dia : cf[e.bar].dia - e.n.dia)) % 7) + 7) % 7 + 1; };
+    var tag = function (e) { return "bar " + (e.bar + 1) + (e.start ? ", beat " + (e.start + 1) : ""); };
+    var bad = function (e, msg) { res.add("species", "error", e.bar, e.bar, tag(e), msg); };
+    var prevS = function (k) { return k > 0 && flat[k - 1].n ? flat[k - 1] : null; }, nextS = function (k) { return k + 1 < flat.length && flat[k + 1].n ? flat[k + 1] : null; };
+    var NM = { 1: "minor 2nd", 2: "2nd", 5: "4th", 6: "tritone", 10: "7th", 11: "7th" };
+    if (sp === 4 && !lowerCF) res.add("species", "error", 0, 0, "bar 1", "In this chapter fourth species is written with the cantus firmus in the lower voice.");
+    // beginning and ending
+    var f0 = flat[0];
+    if (sp === 4) { if (f0.n || f0.d !== 2) bad(f0, "Start with a half rest, then a half note an octave above the cantus firmus."); else if (flat[1] && flat[1].n && semi(flat[1]) !== 12) bad(flat[1], "The first half note is an octave above the cantus firmus."); }
+    else { var fsn = flat.filter(function (e) { return e.n; })[0]; if (fsn && pc(semi(fsn)) !== 0) bad(fsn, "Begin with an octave or a unison against the cantus firmus."); if (!f0.n && sp === 3) bad(f0, "Begin on beat 1."); }
+    var lastB = bars[N - 1], le = lastB[0];
+    if (lastB.length !== 1 || le.d !== 4 || !le.n) res.add("species", "error", N - 1, N - 1, "bar " + N, "End on a whole note.");
+    else if (pc(semi(le)) !== 0) bad(le, "End on an octave or a unison.");
+    if (le && le.n && N >= 2) {
+      var k0 = flat.indexOf(le), pe = null; for (var z = k0 - 1; z >= 0; z--) if (flat[z].n) { pe = flat[z]; break; }
+      if (pe) { var rs = le.n.midi - pe.n.midi; if (!(rs === 1 || (phry && rs === 2))) bad(pe, "The note before the final must rise a half step to it (the raised leading tone; 7 to 8)."); }
+      var pb = bars[N - 2], deg = function (e) { return ((((e.n.dia - tonic.dia) % 7) + 7) % 7) + 1; };
+      if (sp === 3) {
+        if (pb.length !== 4 || pb.some(function (e) { return !e.n; })) res.add("species", "error", N - 2, N - 2, "bar " + (N - 1), "The bar before the end has four quarter notes.");
+        else { var ds = pb.map(deg).join(" "), okf = lowerCF ? (ds === "4 5 6 7" || ds === "2 1 6 7") : ds === "7 5 6 7"; if (!okf) res.add("species", "error", N - 2, N - 2, "bar " + (N - 1), "The bar before the end should go " + (lowerCF ? "4 5 6 7 or the cambiata 2 1 6 7" : "7 5 6 7") + " in scale degrees; this is " + ds + "."); }
+      }
+      if (sp === 4) {
+        if (pb.length !== 2 || !pb[0].n || !pb[1].n) res.add("species", "error", N - 2, N - 2, "bar " + (N - 1), "The bar before the end is two half notes: a 7-6 suspension.");
+        else if (!(gen(pb[0]) === 7 && gen(pb[1]) === 6)) res.add("species", "error", N - 2, N - 2, "bar " + (N - 1), "The bar before the end should have a 7-6 suspension (a 7th over the cantus firmus, then a 6th); here " + gen(pb[0]) + " then " + gen(pb[1]) + ".");
+      }
+    }
+    if (sp === 4) for (var bi = 0; bi + 2 < N; bi++) { var lb = bars[bi][bars[bi].length - 1], fb = bars[bi + 1][0]; if (!lb.n || !fb.n || lb.n.midi !== fb.n.midi) res.add("species", "error", bi + 1, bi + 1, "bar " + (bi + 2), "Tie the half note on beat 3 of bar " + (bi + 1) + " to the first half note of bar " + (bi + 2) + "."); }
+    // each event
+    flat.forEach(function (e, k) {
+      if (!e.n) return;
+      if ((lowerCF && e.n.midi < cf[e.bar].midi) || (!lowerCF && e.n.midi > cf[e.bar].midi)) bad(e, "The counterpoint should stay " + (lowerCF ? "above" : "below") + " the cantus firmus.");
+      var cons = !!CONS[pc(semi(e))], p = prevS(k), q = nextS(k), tied = e.start === 0 && p && p.bar === e.bar - 1 && p.n.midi === e.n.midi;
+      if (cons) return;
+      var what = "A " + (NM[pc(semi(e))] || "dissonant interval") + " against the cantus firmus";
+      if (e.start === 0 && sp === 3) return bad(e, what + " on the downbeat: each downbeat must be a consonance.");
+      if (sp === 4 && e.start === 2) return bad(e, what + " on beat 3: the half note on beat 3 is always a consonance.");
+      if (e.start === 0) {   // downbeat dissonance: only a tied suspension (4-3, 7-6), resolving down by step
+        if (!tied) return bad(e, what + " on the downbeat is allowed only as a suspension tied over the barline.");
+        var g = gen(e); if (g === 2) return bad(e, "A 9-8 or 2-1 suspension is not allowed here; use 4-3 or 7-6.");
+        if (!(q && q.n.dia === e.n.dia - 1 && q.n.midi < e.n.midi)) return bad(e, "A suspension resolves down by step.");
+        return;
+      }
+      if (sp === 4) return;
+      // weak-beat dissonance: passing tone, (fifth species) neighbor tone, or cambiata
+      var passing = p && q && stepSize(p.n, e.n) === 1 && stepSize(e.n, q.n) === 1 && ((e.n.midi > p.n.midi) === (q.n.midi > e.n.midi));
+      var neighbor = sp === 5 && p && q && stepSize(p.n, e.n) === 1 && q.n.midi === p.n.midi;
+      var r = k + 2 < flat.length && flat[k + 2].n ? flat[k + 2] : null;
+      var cambiata = p && q && r && e.n.dia === p.n.dia - 1 && e.n.midi < p.n.midi && q.n.dia === e.n.dia - 2 && q.n.midi < e.n.midi && r.n.dia === q.n.dia + 1 && r.n.midi > q.n.midi;
+      if (e.d > 1 && sp === 5 && !passing) return bad(e, what + " is allowed only on a quarter note, as a passing tone, neighbor tone or cambiata (or a tied suspension on the downbeat).");
+      if (!(passing || neighbor || cambiata)) bad(e, what + " must be a passing tone" + (sp === 5 ? ", a neighbor tone" : "") + " or the cambiata (reached and left in the ways the book allows).");
+    });
+    // motion into downbeats, repeated notes, leaps
+    flat.forEach(function (e, k) {
+      if (!e.n) return; var p = prevS(k);
+      if (!p) return;
+      var tied = e.start === 0 && p.bar === e.bar - 1 && p.n.midi === e.n.midi;
+      if (sp === 3 && tied) bad(e, "Do not repeat a note across the barline.");
+      if (e.start === 0 && !tied && e.bar > 0) {
+        var m = pc(semi(e)), dpv = e.n.midi - p.n.midi, dcf = cf[e.bar].midi - cf[p.bar].midi;
+        if ((m === 0 || m === 7) && !(dpv * dcf < 0)) bad(e, "A " + (m === 0 ? "unison/octave" : "fifth") + " on the downbeat must be approached by contrary motion (a direct " + (m === 0 ? "octave" : "fifth") + " otherwise).");
+        if (sp === 3 && dpv === 0) bad(e, "Do not repeat a note across the barline.");
+      }
+      if (!tied && p.n.midi !== e.n.midi && !leapOK(p.n, e.n)) bad(e, "The leap " + nameOf(p.n) + " to " + nameOf(e.n) + " is not allowed: only 3rds, 4ths, 5ths, ascending minor 6ths and 8ves (and steps, never an augmented 2nd).");
+      var nx = nextS(k);
+      if (nx && p.n.midi !== e.n.midi && Math.abs(e.n.midi - p.n.midi) > 5 && Math.abs(e.n.dia - p.n.dia) > 1 && nx.n.midi !== e.n.midi && Math.sign(nx.n.midi - e.n.midi) === Math.sign(e.n.midi - p.n.midi)) bad(nx, "After a leap larger than a 4th, change direction.");
+    });
+    var line = flat.filter(function (e) { return e.n; }).map(function (e) { return e.n; }).filter(function (n, i, a) { return i === 0 || n.midi !== a[i - 1].midi; });
+    var pts = [line[0]]; for (var u = 1; u < line.length - 1; u++) if ((line[u].midi - line[u - 1].midi) * (line[u + 1].midi - line[u].midi) < 0) pts.push(line[u]); pts.push(line[line.length - 1]);
+    for (var w = 1; w < pts.length; w++) if (pts[w - 1] && pts[w] && Math.abs(pts[w].midi - pts[w - 1].midi) === 6) res.add("species", "error", 0, 0, "melody", "The line outlines a tritone between two turning points (" + nameOf(pts[w - 1]) + " and " + nameOf(pts[w]) + ").");
+    res.errors.sort(function (a, b) { return a.t - b.t; });
+    return res;
+  }
+
+  var API = { check: check, species: species, eventsOf: eventsOf, parseRN: parseRN, parseNote: parseNote, parseKey: parseKey, nctType: nctType, RANGES: RANGES, RANGE_NAMES: RANGE_NAMES, CH: CH,
     RULES: Object.keys(CH) };
   g.VoiceLeading = API;
   if (typeof module !== "undefined" && module.exports) module.exports = API;

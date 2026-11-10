@@ -55,9 +55,19 @@ Two rules for N<sup>6</sup> in four parts: **double the bass** (the third of the
 
 ## 29.4 Augmented sixth chords
 
-The salient accidental in every augmented sixth chord is &#9839;4, which almost always resolves **up to 5**, including when the chord goes to the cadential I<sup>6</sup><sub>4</sub>. In the
-enharmonic German chord, 2 and 4 rise to members of a major chord. The exception: when an augmented sixth chord goes to V<sup>7</sup>, &#9839;4 goes to 4&#9838;, which is the seventh of V<sup>7</sup>. Otherwise move all voices smoothly, avoid parallels and double properly.
-*The checker does not read augmented sixth chord symbols: they are left for you and your teacher.*
+The salient accidental in every augmented sixth chord is &#9839;4, which almost always resolves **up to 5**, including when the chord goes to the cadential I<sup>6</sup><sub>4</sub>. The
+flat six (the bass) falls **to 5**, so the two notes of the augmented sixth move outward to an octave on 5 (the book describes the &#9839;4; the flat six falling is this site's addition, from the interval's name).
+In the **enharmonic German** chord (the German spelled with a raised 2 in place of the flat 3), 2 and &#9839;4 rise to members of a major I<sup>6</sup><sub>4</sub>. The exception: when an augmented sixth chord goes to V<sup>7</sup>, &#9839;4 goes to 4&#9838;, which is the seventh of V<sup>7</sup>.
+Otherwise move all voices smoothly, avoid parallels, double properly, and never double the flat six or the raised four. The German going straight to V makes **parallel fifths** (A&#9837; to G in the bass, E&#9837; to D above it); the cure is to go through the cadential six-four.
+Write them as `Ger+65`, `Fr+43`, `It+6` (`enGer+65` for the enharmonic German); the checker takes them in any key.
+
+<div class="vl-ex" data-key="c" data-expect="ok" data-rows='[["Ger+65","C5 F#4 Eb4 Ab2"],["i64","C5 G4 Eb4 G2"],["V","B4 G4 D4 G2"],["i","C5 G4 Eb4 C3"]]'>Ger+6/5 in C minor to i6/4, V and i: F# rises to G, A&#9837; falls to G, the others stay.</div>
+
+<div class="vl-ex" data-key="c" data-expect="parallels" data-rows='[["Ger+65","C5 F#4 Eb4 Ab2"],["V","B4 G4 D4 G2"]]'>Straight to V: the E&#9837; and A&#9837; both fall a step, in parallel fifths (E&#9837;-A&#9837; to D-G).</div>
+
+<div class="vl-ex" data-key="c" data-expect="aug6" data-rows='[["Ger+65","C5 F#4 Eb4 Ab2"],["i64","C5 Eb4 Eb4 G2"]]'>The raised four (F#, alto) falls to E&#9837; instead of rising to G.</div>
+
+<div class="vl-ex" data-key="c" data-expect="aug6" data-rows='[["Ger+65","C5 F#4 Ab3 Ab2"]]'>The flat six (A&#9837;) is doubled: tenor and bass.</div>
 
 ## 29.5 Exercises
 
@@ -74,10 +84,15 @@ enharmonic German chord, 2 and 4 rise to members of a major chord. The exception
 <div class="vl-exercise" data-key="C" data-hint="N6 is Db F Ab: write the flats (`Db4`, `Ab3`). Double the bass F; the Db falls to the nearest note of V." data-rows='[{"rn":"I","S":"G4","B":"C3"},{"rn":"N6","S":"F4","B":"F3"},{"rn":"V","S":"D4","B":"G3"},{"rn":"I","S":"E4","B":"C3"}]'></div>
 
 
+**Four. Ger+6/5 in C minor.** Go through the cadential six-four: the raised four rises, the flat six falls.
+
+<div class="vl-exercise" data-key="c" data-hint="Ger+6/5 is Ab C Eb F#. Do not double the Ab or the F#. F# rises to G, Ab falls to G." data-rows='[{"rn":"i","S":"G4","B":"C3"},{"rn":"Ger+65","S":"C5","B":"Ab2"},{"rn":"i64","S":"C5","B":"G2"},{"rn":"V","S":"B4","B":"G2"},{"rn":"i","S":"C5","B":"C3"}]'></div>
+
 ::: {.callout-note collapse="true"}
 ## What the checker does and does not check
 - Secondary chords: the seventh and the (temporary) leading tone are checked as in chapter 27. Borrowed chords: scale degree 6 resolves down; the Neapolitan doubles its bass and its root falls. Everything from chapters 26 to 28 applies.
-- **Not checked:** the V7/V to V unequal-fifths exception (the checker flags the doubled leading tone as written, and warns about unequal fifths), augmented sixth chords, and borrowed chords other than iv / bVI.
+- Augmented sixth chords: the raised four rises to 5 (falls to 4 over V7), the flat six falls to 5, neither is doubled, every note is there, the enharmonic German's raised 2 rises to 3; parallel fifths into V are caught by the ordinary check. The checker reads the chord from the symbol you give.
+- **Not checked:** the V7/V to V unequal-fifths exception (the checker flags the doubled leading tone as written, and warns about unequal fifths), whether the symbol suits the notes, and borrowed chords other than iv / bVI.
 - The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
 :::
 

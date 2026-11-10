@@ -925,3 +925,17 @@ few notes = passed with a few stray tie notes left (at most max(2, 1% of bars) b
 - Mozart: Symphony No. 40 in G minor, K. 550: II. Andante (orchestra, 0 bars) [[/theory/analysed-scores/full-scores.html?id=pdmx-1630]]
 - Mozart: Symphony No. 40 in G minor, K. 550: III. Menuetto: Allegretto (orchestra, 0 bars) [[/theory/analysed-scores/full-scores.html?id=pdmx-1631]]
 - Bach: Brandenburg Concerto No. 2 in F major, BWV 1047: I (orchestra, 0 bars) [[/theory/analysed-scores/full-scores.html?id=pdmx-1632]]
+
+* Mutopia route for Pathetique III and Moonlight III (2026-11-10)
+The PDMX source files (=~/Downloads/PDMX-<group>/*.mxl=) are not on this machine, so the whole sonatas could not be split and converted here.
+Tried instead the Mutopia LilyPond files in =~/Projects/corpora/mutopia/ftp/BeethovenLv=:
+- Pathetique III: =O13/pathetique-3/pathetique-3.ly=, header =copyright = "Public Domain"=, source Berners 1908 (ed. Winterberger), typeset by Chris Sawer (Mutopia-2013/01/08-296).
+- Moonlight III: =O27/moonlight/moonlight-lys/moonlight3-a4.ly=, header =copyright = "Creative Commons Attribution-ShareAlike 2.5"=, typeset by Chris Sawer and Stewart Holmes (2007).
+- No MusicXML or MIDI file ships in the mirror (only .ly). python-ly 0.9.10 (=ly musicxml=, venv in the scratchpad) writes MusicXML, but it drops notes
+  (a bar of =bes2 ~ \times 2/3 {...}= came out with 4 of 6 notes) and splits voices badly: convert.mjs + score-check on Pathetique III found
+  85 overfull bars, 129 wrong lengths, 211 note differences, 5 abcjs errors. Not added to the full-score player.
+- lilypond 2.26.0 (=~/.local/bin/lilypond=) compiles both and writes MIDI (Moonlight III with "Going back in MIDI time", so its MIDI is less sure). The MIDI is exact for
+  notes and bars, so =scripts/mutopia/midi-structure.py= reads the bar plan from it (210 bars for Pathetique III, 201 for Moonlight III). That feeds the
+  rondo / sonata-form tables on theory/sonata-rondo.qmd, not a playable score.
+- Next steps if wanted: a MIDI-to-ABC converter that keeps the two staves (loses beaming, voices, ornaments), or hand-fixing python-ly's output; or run the PDMX
+  split on the machine that holds the .mxl files.

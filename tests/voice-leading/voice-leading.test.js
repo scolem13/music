@@ -49,6 +49,23 @@ bad("secondary leading tone in the alto does not rise", "C", [["V7/V", "A4 F#4 C
 bad("N6 not doubling the bass", "C", [["N6", "Db5 Ab4 Db4 F3"]], "neapolitan");
 good("N6 doubling the bass, then V", "C", [["N6", "Ab4 F4 Db4 F3"], ["V", "G4 D4 B3 G3"]]);
 
+// ---- ch. 27 K. 331 exception and the vii dim7 special resolution
+good("K. 331: the seventh of V4/3 rises into I6", "C", [["I", "G4 E4 C4 C3"], ["V43", "G4 F4 B3 D3"], ["I6", "G4 G4 C4 E3"]]);
+bad("a rising seventh elsewhere is an error", "C", [["I", "G4 E4 C4 C3"], ["V43", "G4 F4 B3 D3"], ["I", "G4 G4 C4 C3"]], "seventh");
+good("viio7: the 7th above the 3rd, so the third rises", "a", [["viio7", "F5 B4 D4 G#3"], ["i", "E5 C5 C4 A3"]]);
+bad("viio7: 7th above the 3rd but the third falls", "a", [["viio7", "F5 B4 D4 G#3"], ["i", "E5 A4 C4 A3"]], "viiSpecial");
+good("viio7: the 7th below the 3rd, all resolve normally", "a", [["viio7", "B4 F4 D4 G#3"], ["i", "A4 E4 C4 A3"]]);
+bad("viio7: the 7th below the 3rd but the third rises", "a", [["viio7", "B4 F4 D4 G#3"], ["i", "C5 E4 C4 A3"]], "viiSpecial");
+// ---- ch. 28 pedal point and double neighbor
+good("a pedal point in the bass", "C", [["I", "E4 C4 G3 C3"], ["V", "D4 B3 G3 C3"], ["I", "E4 C4 G3 C3"]]);
+good("a double neighbor in the alto", "C", [["I", "C5 G4 E4 C3"], ["", "C5 A4 E4 C3"], ["", "C5 F4 E4 C3"], ["", "C5 G4 E4 C3"]]);
+bad("a note leaped to and left by a leap is still no type", "C", [["I", "C5 G4 E4 C3"], ["", "C5 B4 E4 C3"], ["", "C5 F4 E4 C3"], ["", "C5 G4 E4 C3"]], "chordtone");
+// ---- ch. 29 augmented sixth chords
+good("Ger+65 to i64, V, i", "c", [["Ger+65", "C5 F#4 Eb4 Ab2"], ["i64", "C5 G4 Eb4 G2"], ["V", "B4 G4 D4 G2"], ["i", "C5 G4 Eb4 C3"]]);
+bad("Ger+65 straight to V: parallel fifths", "c", [["Ger+65", "C5 F#4 Eb4 Ab2"], ["V", "B4 G4 D4 G2"]], "parallels");
+bad("the raised four does not rise", "c", [["Ger+65", "C5 F#4 Eb4 Ab2"], ["i64", "C5 Eb4 Eb4 G2"]], "aug6");
+bad("the flat six is doubled", "c", [["Ger+65", "C5 F#4 Ab3 Ab2"]], "aug6");
+
 // ---- species (ch. 30)
 const cf1 = "D3 F3 E3 D3 G3 F3 A3 G3 F3 E3 D3".split(" "), cp1 = NEG ? "D4 A3 C4 D4 B3 A3 C4 E4 D4 D4 D4".split(" ") : "D4 A3 C4 D4 B3 A3 C4 E4 D4 C#4 D4".split(" ");
 const sp = (a, b, extra) => VL.species(Object.assign({ species: 1, cf: a, cp: b, cfPos: "lower", mode: "D dorian" }, extra || {}));
@@ -66,6 +83,28 @@ const bad2 = (name, cp, text) => { const r = VL.species({ species: 2, cf: cf2, c
 bad2("dissonant second note not passing", [[null, "D4"], ["B3", "A3"], ["B3", "C#4"], ["D4"]], "passing");
 bad2("repeated note across the barline", [[null, "D4"], ["B3", "B3"], ["B3", "C#4"], ["D4"]], "repeat");
 bad2("penultimate bar wrong", [[null, "D4"], ["B3", "G3"], ["G3", "B3"], ["D4"]], "bar before the end");
+
+// ---- species 3, 4, 5
+const S3 = (cp, extra) => VL.species(Object.assign({ species: 3, cf: "D3 F3 E3 D3".split(" "), cp, cfPos: "lower", mode: "D dorian" }, extra || {}));
+const g3 = [["D4", "F4", "A4", "F4"], ["A4", "G4", "F4", "A4"], ["G4", "A4", "B4", "C#5"], ["D5"]];
+let r3 = S3(g3); ok(errs(r3).length === 0, "third species example should pass: " + r3.text());
+const b3 = (name, cp, text) => { const r = S3(cp); ok(r.errors.some(e => e.sev === "error" && e.msg.indexOf(text) >= 0), name + " should report '" + text + "': " + r.text()); };
+b3("dissonant downbeat", [g3[0], ["G4", "A4", "F4", "A4"], g3[2], g3[3]], "downbeat");
+b3("dissonance that is not a passing tone", [["D4", "E4", "A4", "F4"], g3[1], g3[2], g3[3]], "passing tone");
+b3("bar before the end", [g3[0], g3[1], ["G4", "B4", "A4", "C#5"], g3[3]], "bar before the end");
+b3("repeated note across the barline", [["D4", "F4", "A4", "F4"], ["F4", "G4", "A4", "A4"], g3[2], g3[3]], "repeat");
+const cf4 = "D3 G3 F3 E3 D3".split(" "), g4 = [[null, "D4"], ["D4", "E4"], ["E4", "D4"], ["D4", "C#4"], ["D4"]];
+const S4 = cp => VL.species({ species: 4, cf: cf4, cp, cfPos: "lower", mode: "D dorian" });
+let r4 = S4(g4); ok(errs(r4).length === 0, "fourth species example should pass: " + r4.text());
+const b4 = (name, cp, text) => { const r = S4(cp); ok(r.errors.some(e => e.sev === "error" && e.msg.indexOf(text) >= 0), name + " should report '" + text + "': " + r.text()); };
+b4("suspension resolving up", [g4[0], g4[1], ["E4", "F4"], ["F4", "C#4"], g4[4]], "resolves down by step");
+b4("no tie", [g4[0], g4[1], ["G4", "D4"], g4[3], g4[4]], "Tie");
+b4("no 7-6 at the end", [g4[0], g4[1], g4[2], ["D4", "D4"], g4[4]], "7-6");
+b4("does not start with a rest", [["D4", "D4"], g4[1], g4[2], g4[3], g4[4]], "half rest");
+const S5 = (cf, cp) => VL.species({ species: 5, cf: cf.split(" "), cp, cfPos: "lower", mode: "D dorian" });
+let r5 = S5("D3 F3 E3 D3", [["r:2", "D4:2"], ["A4:2", "G4:1", "F4:1"], ["G4:2", "B4:1", "C#5:1"], ["D5"]]); ok(errs(r5).length === 0, "fifth species example should pass: " + r5.text());
+r5 = S5("D3 G3 F3 E3 D3", [["r:2", "D4:2"], ["D4:2", "E4:2"], ["E4:2", "D4:1", "D4:1"], ["D4:2", "C#4:2"], ["D5".replace("D5", "D4")]]); ok(errs(r5).length === 0, "fifth species example with a suspension should pass: " + r5.text());
+r5 = S5("D3 F3 E3 D3", [["r:2", "D4:2"], ["A4:2", "G4:2"], ["G4:2", "B4:1", "C#5:1"], ["D5"]]); ok(r5.errors.some(e => /only on a quarter note/.test(e.msg)), "fifth species: a dissonant half note should be refused: " + r5.text());
 
 // ---- the weaker checks must not silently drop: every rule id has a chapter
 VL.RULES.forEach(r => ok(typeof VL.CH[r] === "number", "rule " + r + " has a chapter"));

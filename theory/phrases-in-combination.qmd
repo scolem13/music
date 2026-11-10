@@ -227,7 +227,7 @@ start differently, a **phrase chain**. (The book takes these terms from Douglass
 of one phrase is also the first bar of the next, so the bar count is one fewer than the phrases add up to.
 [Read 13.7](https://musictheory.pugetsound.edu/mt21c/PhrasesInCombination.html)
 
-No tune in the site's folk collection is a clean example of either yet; both come mostly from Classical piano music, where the book uses
+No tune in the site's folk collection is a clean example of either; examples from keyboard pieces are in 13.9 below. The book uses
 Couperin and a Beethoven rondo. To practise elision, count the bars of each phrase in a tune you know and see whether the numbers add up to the
 total.
 
@@ -245,6 +245,30 @@ book's own practice excerpts (Mozart's "Ein Mädchen oder Weibchen", K. 333 I, a
 scores, so they are not reproduced here; the answers are in the
 [book's exercise section](https://musictheory.pugetsound.edu/mt21c/PhrasesInCombinationPracticeExercises.html).
 
+## 13.9 Keyboard pieces in the full-score library
+
+Some of the book's own examples (and pieces like them) are in the site's [full-score player](analysed-scores/full-scores.qmd). The readings
+below come from the notes (bar numbers count a pickup as bar 1), checked against the bass line for the chords; they are **unverified** by a
+printed edition or a recording, and the scores are community engravings.
+
+- **A parallel period: Beethoven, *Für Elise*** ([open the score](analysed-scores/full-scores.qmd?id=pdmx-254)). The first phrase ends in
+  bar 4 on the E major chord (V of A minor) with B in the melody: a **half cadence**. Bar 5 is an A minor bar, and the second phrase repeats
+  the opening (bars 6-7 are bars 2-3 note for note) and ends in bar 9 on A over an A minor chord, after E in the bass in bar 8: a **perfect
+  authentic cadence**. The phrases begin the same, so it is a **parallel period**, a a′ with HC and PAC. The second phrase is a bar longer
+  than the first, because of the tonic bar 5. The book analyses this same piece as its period example.
+- **A phrase chain (my reading): Anh. 115 Minuet in G minor** ([open the score](analysed-scores/full-scores.qmd?id=pdmx-5)). Bars 1-4 end
+  on D in the bass with a D major chord (V of G minor), and bars 5-8 end the same way (A in the melody over D, after F♯ in the bass): two phrases
+  with different openings, both ending on **half cadences**. By the book's definition that is a **phrase chain**, because the group ends on
+  an HC and the phrases begin differently. It is two phrases, the smallest chain there can be.
+- **A phrase chain from the book: Beethoven, Sonatina in F, Anh. 5 No. 2, Rondo** ([open the score](analysed-scores/full-scores.qmd?id=pdmx-429)).
+  The book names this rondo's refrain as its phrase-chain example. In the score, the refrain (bars 1-18) has phrase endings around bars 4, 8 and 12
+  and then a longer last phrase that ends in bar 18 on a C chord (V of F). The openings differ: three repeated F notes in bar 1,
+  the same figure a step higher in bar 5, new tunes in bars 9 and 13. Check the cadence on bar 18 by ear.
+
+Still missing from the collection: an **asymmetrical period** (three or five phrases) and an **elision** that I could confirm from the notes.
+I looked at the Bach notebook minuets, polonaises, the musette and the gavotte, and each is in two- or four-phrase groups or too thickly
+decorated to call without hearing. A bar-numbered reading of a classical piano score would settle it.
+
 ::: {.callout-note collapse="true"}
 ## For teachers
 
@@ -252,10 +276,11 @@ scores, so they are not reproduced here; the answers are in the
   Only the sentence is original to this page; it was checked for bar length by script and is meant as a clear model, not a quotation.
 - **The cadence labels** were read from the chord symbols in the collection, not from a score or a recording. A teacher may hear some of them
   differently (for example, whether the first phrase of "Go Tell Aunt Rhody" is a PAC or a weaker close because the melody lands on the low B♭).
-- **Not covered here:** examples of asymmetrical periods, phrase groups, phrase chains and elisions from the site's own collection; these are
-  only found in longer classical pieces, which the library has but whose phrase structure has not been marked. The book's analyses of
-  Beethoven Op. 2 No. 1, Mozart K. 331 and K. 333 are named, but no bar numbers are given here, because the library's bar numbers have not been
-  matched to the book's figures.
+- **Keyboard pieces (13.9):** the cadences were read from the melody and bass notes of the PDMX-derived scores (`apps/shared/data/full-scores/pdmx-<n>.abc`).
+  Für Elise is the book's own example; the Anh. 115 minuet is this page's reading and may be argued. The Sonatina refrain is the book's named
+  phrase chain, and the bar numbers are from the score.
+- **Not covered here:** an asymmetrical period and an elision (none confirmed from the notes), phrase groups (none found), and the book's
+  analyses of Beethoven Op. 2 No. 1, Mozart K. 331 and K. 333 with bar numbers (the library's bar numbers have not been matched to the book's figures).
 - The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
 :::
 

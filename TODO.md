@@ -45,10 +45,11 @@ Search the file for `TODO` / `DECIDE`; about 90 open items. The groups:
   3-1, 24-1, 26-1 now fit but fail the 2% wrong-length-bar limit (cadenzas): decide whether to loosen it (waiting).
 
 ## Lessons and tools
-- **Chord Analysis** (`theory/chord-analysis.qmd`, "What comes next"): chapters 9, 10, 16-20 built (2026-11-09). Left: chapter 21
-  (augmented sixths: needs a non-tertian answer type), and each chapter's leftovers listed on the page.
-- **Hutchinson chapters** (`research_notes/hutchinson-gaps.md`): 13, 15, 24, 25 filled 2026-11-09 (form readings to spot-check).
-  Waiting: 23 enharmonic modulation, 26-30 voice leading / counterpoint (needs a checker), 32-35 (no scores).
+- **Chord Analysis**: chapters 9-21 built (2026-11-09). Left: each chapter's leftovers on the page; no ch23 level (one key
+  per passage).
+- **Hutchinson** (`research_notes/hutchinson-gaps.md`): every chapter has a page (2026-11-10). Left: asymmetrical period, phrase
+  group, elision (no example found); Pathétique III / Moonlight III playable (PDMX .mxl not on this machine; Mutopia via
+  python-ly drops notes); invention / fugue analysis; voice ranges read off the book's figure by eye (check once).
 - **Words & Chords**: not moved from `~/Projects/carols` yet: the Big Timestamp Player, the iReal charts, `carols.abc`.
 - **Student reports**: done (clearing, date ranges, every ear tool records). Left: ear tools cannot be replayed In class.
 - **Works**: set `WORKS_CONFIG.r2Base` (R2 bucket address, not set yet).

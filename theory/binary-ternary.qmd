@@ -127,6 +127,33 @@ point differently for the two, which is why the book calls this a judgment call.
 Some pieces write the repeats out in full. Count them in your diagram (A A B B, not A B) even when the score doesn't show repeat signs.
 [Read 24.5](https://musictheory.pugetsound.edu/mt21c/BinaryAndTernaryForm.html)
 
+## 24.6 Real keyboard pieces to read
+
+The site's full-score player has a set of short keyboard pieces from the Anna Magdalena Bach notebook and the early Mozart minuets. Their
+notes were read bar by bar for this page, so the claims below can be checked by opening each score and following the bar numbers (a
+pickup counts as bar 1). The scores are community engravings (see [the full scores page](analysed-scores/full-scores.qmd)), not a
+printed edition, and the form names are this page's reading: **unverified** by an edition or a recording.
+
+| Piece | Form (this page's reading) | What to look for |
+|---|---|---|
+| [Bach, Invention No. 8 in F, BWV 779](analysed-scores/full-scores.qmd?id=pdmx-84) | **balanced binary**, continuous | A (bars 1-11) ends on a C chord, the dominant; B (12-34) ends in F. Bars 30-33 are bars 8-11 again, note for note a fifth lower, and bar 34 is the last chord |
+| [Mozart, Minuet in F, K. 5](analysed-scores/full-scores.qmd?id=pdmx-465) | **balanced binary**, continuous, two-reprise | A (1-10) ends in C; the music of bars 5-9 comes back a fifth lower, in F, in bars 15-19 |
+| [Bach (Anh. 131), Gavotte in F](analysed-scores/full-scores.qmd?id=pdmx-490) | **simple binary**, continuous, two-reprise | A (1-8) ends on a C chord; B (9-17) is new and ends in F with different notes. Nothing returns |
+| [Bach (Anh. 132), Minuet in D minor](analysed-scores/full-scores.qmd?id=pdmx-60) | **simple binary**, continuous, with **written-out repeats** | A (bars 1-8) closes in F major and is written twice (bars 9-16); B (17-24) is written twice (25-32) and ends in D minor. Put AABB in your diagram |
+| [Haydn, Minuet, Hob. IX:8](analysed-scores/full-scores.qmd?id=pdmx-238) | **rounded binary**, sectional, two-reprise | A (1-9) ends on F, the tonic. B starts on a C pedal (bars 10-14), then bars 15-22 are bars 2-9 note for note |
+| [Bach (Anh. 126), Musette in D](analysed-scores/full-scores.qmd?id=pdmx-23) | **rounded binary or ternary?** (see below) | A (1-8) is repeated; B (9-20) sits on a dominant pedal; A (21-28) comes back note for note |
+
+**What was checked in the notes.** The matching of the repeats (the Invention's bars 30-33 against 8-11 (a fifth lower), the K. 5 minuet's bars 15-19 against 5-9 (a fifth lower), the Haydn minuet's bars 15-22
+against 2-9, the Musette's bars 21-28 against 1-8) was checked by comparing the notes; the key and chord names (C chord, F major, dominant
+pedal) were read from the bass notes and the key signature.
+
+**The Musette, weighed with the three tests.** Proportion: B is 12 bars against A's 8, which points to ternary. Nature: mixed, since B is a new melody (ternary) but sits on a dominant pedal (E in the bass for bars 13-17), which the book reads as a sign of
+rounded binary. Era: Baroque, which leans rounded binary. So the tests disagree. A teacher
+could argue the other way, which is the point of the book's remark.
+
+**Try it.** Open the Haydn minuet and the K. 5 minuet one after the other. Both have two repeated halves, and both A sections end away from
+or on the tonic in different ways, but only one has the opening tune coming back in the second half. Which, and where?
+
 ::: {.callout-note collapse="true"}
 ## For teachers
 
@@ -136,10 +163,12 @@ Some pieces write the repeats out in full. Count them in your diagram (A A B B, 
 - **Readings of the forms** (continuous rounded binary for the Beethoven minuet, sectional ternary for the K. 545 slow movement) are
   this page's, from the key plans and general knowledge of the pieces; the book analyses other pieces. Checked against the library's key labels,
   not against a printed score.
-- **Not here:** the book's own examples (Bach's invention and French Suite courante, Brahms's Wiegenlied, Haydn Symphony No. 94 II,
-  Mozart K. 15mm, Rachmaninov's prelude, Beethoven's Bagatelle Op. 119/9, Handel's Gavotte) are not in the library. A balanced binary
-  and a simple binary from the site's own collection are still missing; the Bach suites in the Classical Themes are single themes, not
-  complete movements.
+- **The full-score pieces (24.6):** read from the notes in `apps/shared/data/full-scores/pdmx-<n>.abc` (made from PDMX community
+  scores, converted and bar-checked by the PDMX pipeline). The form names are this page's reading, not checked against an edition. The
+  Anh. numbers are from the scores' titles; I did not check them against the BWV Anhang catalogue.
+- **Not here:** the book's own examples are mostly not in the collections (Brahms's Wiegenlied, Haydn Symphony No. 94 II, Mozart K. 15mm,
+  Rachmaninov's prelude, Beethoven's Bagatelle Op. 119/9, Handel's Gavotte, the English Suite No. 3 gavotte: the PDMX conversion of that
+  suite failed). The Courante of French Suite No. 6 is not there either.
 - The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
 :::
 
