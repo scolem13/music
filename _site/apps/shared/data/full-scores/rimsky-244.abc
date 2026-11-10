@@ -1,0 +1,82 @@
+X:1
+%%score [ 1 | 2 | 3 | 4 ] [  5 | 6  | 7 |  8 | 9  | 10 ] 11 12 [  13 | ( 14 15 )  | ( 16 17 ) | 18 | 19 ]
+L:1/8
+Q:1/4=69
+M:4/4
+K:Ab
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:4 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:5 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:6 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:7 treble transpose=-2 nm="Trumpet in Bb" snm="Bb Tpt."
+%%MIDI program 56
+V:8 bass nm="Trombone 1" snm="Tbn. 1"
+%%MIDI program 57
+V:9 bass nm="Trombone 2" snm="Tbn. 2"
+%%MIDI program 57
+V:10 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:11 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:12 treble nm="Koupava." snm="Koup."
+%%MIDI program 54
+V:13 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:14 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:15 treble 
+%%MIDI program 48
+V:16 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:17 alto 
+%%MIDI program 48
+V:18 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:19 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Andante, molto sostenuto."!p!"^140""^a 2"!<(! =e2- (3:2:2ee/(3(e/f/!<)!g/) =d/ z/ z z2 | z8 | z8 | z4 z c' z2 |]
+V:2
+!f! z4 (([=B=d]4!>(!!>)! |!p!!f! [B=e]/)) z/ z z2 (([=B=d]4!>(!!>)! |!p! [B=e]/)) z/ z z2 z4 | z4 z [=eg] z2 |]
+V:3
+[K:Bb]!f! z4 (([B=e]4!>(!!>)! |!p!!f! [Ae]/)) z/ z z2 (([B=e]4!>(!!>)! |!p! [Ae]/)) x7 x/2 | z4 z [^fa] z2 |]
+V:4
+z8 | z8 | z8 | z4 z [C,,C,] z2 |]
+V:5
+[K:Eb]!f! z4 (c4!>(!!>)! |!p!!f! d/) z/ z z2 (c4!>(!!>)! |!p! d/) z/ z z2 z4 | z4 z [Bd] z2 |]
+V:6
+[K:Eb] z8 | z8 |!p! z4 ^F4-"_cresc. molto" |!f! (F4 G)D z2 |]
+V:7
+[K:Bb] z8 | z8 | z8 | z4 z [Dd] z2 |]
+V:8
+z8 | z8 |[K:tenor]!p! z4 [A,=D]4-"_cresc. molto" |!f! (([A,D]4 [G,C])) z z2 |]
+V:9
+z8 | z8 |!p! z4 F,4-"_cresc. molto" |!f! (F,4 =E,)C, z2 |]
+V:10
+z8 | z8 | z8 | z4 z C,, z2 |]
+V:11
+!mf! z4 (3z/ z/ C,/!>(!(3C,/C,/C,/ (3C,/C,/C,/(3C,/C,/!>)!C,/ | !mf! z4 (3z/ z/ C,/!>(!(3C,/C,/C,/ (3C,/C,/C,/(3C,/C,/!>)!C,/ | z8 | z4 z C, z2 |]
+V:12
+z8 | z =e2 (f/g/) =d d/ d/ d/ d/ d | z/ =e/ !>!e- e/ e/ (3(e/f/) g/ =d/ d/ z z2 | z8 |]
+V:13
+!p!!<(! =e2- (3:2:2ee/(3(e/f/!<)!g/) =d/ z/ z z2 |!p! (=e4!<(!!<)! =d/) z/ z z2 | !mf! (=e4 (3:2:2=d)=d'/(3(d'/=e'/f'/)"_cresc." (3(=b/c'/d'/) (3(f/g/a/) | (3(=d/=e/f/)(3(=B/c/d/) (3(F/G/A/)(3(=D/=E/F/) E[Gec'] z2 |]
+V:14
+!p!!<(! (ud4!<)! =d/) z/ z z2 |!p! (d4!<(!!<)! =d/) z/ z z2 |!p! (d4 =d/) z/ z z2 | !mf! (3(=d/"_cresc."=e/f/)(3(=B/c/d/) (3(F/G/A/)(3(=D/=E/F/) E[G,Ecg] z2 |]
+V:15
+(B4 =B/) z/ z z2 | (B4 c/) z/ z z2 | (B4 =B/) z/ z z2 | x8 |]
+V:16
+!p!!<(! (uB4!<)! A/) z/ z z2 |!p! (B4!<(!!<)! A/) z/ z z2 |!p! (([GB]4 A/)) z/ z z2 | !mf! z2 (3(F/!<(!G/A/)(3(=D/=E/!<)!F/) E[C,G,Ec] z2 |]
+V:17
+(G4 F/) z/ z z2 | (G4 F/) z/ z z2 | x8 | x8 |]
+V:18
+z8 | z8 | z8 | z4 z C, z2 |]
+V:19
+z8 | z8 | z8 | z4 z C, z2 |]

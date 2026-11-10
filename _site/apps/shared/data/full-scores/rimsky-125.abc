@@ -1,0 +1,43 @@
+X:1
+Z:©
+%%score [ 1 | 2 | 3 | 4 ] [ 5 | 6 |  7 | 8  | 9 ]
+L:1/8
+Q:1/4=52
+M:2/4
+K:B
+V:1 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:2 treble transpose=-3 nm="Bass Clarinet\nin A" snm="B. Cl. A"
+%%MIDI program 71
+V:3 bass nm="Bassoon II" snm="Bsn."
+%%MIDI program 70
+V:4 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:5 treble nm="Violin II" snm="Vln."
+%%MIDI program 48
+V:6 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:7 bass nm="Cello 1" snm="Vc. 1"
+%%MIDI program 48
+V:8 bass nm="Cello 2" snm="Vc. 2"
+%%MIDI program 48
+V:9 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+[K:D]"^Larghetto all breve."!pp! [DF]4- | [DF]4- | (([DF]7/2 [B,G]/)) | [G,E]4- | (([G,E]7/2 [A,G]/)) | z2 |]
+V:2
+[K:D]!pp! F4- | F4- | (F7/2 D/) | E4- | E4 | z2 |]
+V:3
+!pp! G,,4- | G,,4- | G,,4 | =A,,4- | A,,4 | z2 |]
+V:4
+!pp! G,,4- | G,,4- | G,,4 | =A,,4- | A,,4 | z2 |]
+V:5
+!pp!"^Con sord." (6:4:6D/E/D/E/D/E/ (6:4:6D/E/D/E/D/E/ | (6:4:6D/E/D/E/D/E/ (6:4:6D/E/D/G/F/G/ | (6:4:6D/E/D/E/D/E/ (6:4:6D/E/D/E/D/E/ | (6:4:6C/D/C/D/C/D/ (6:4:6C/D/C/F/E/F/ | (6:4:6C/D/C/D/C/D/ (6:4:6C/D/C/D/C/E/ | z2 |]
+V:6
+!pp!"^Con sord." (6:4:6B,/A,/B,/A,/B,/A,/ (6:4:6B,/A,/B,/A,/B,/A,/ | (6:4:6B,/A,/B,/A,/B,/A,/ (6:4:6B,/A,/B,/D/B,/D/ | (6:4:6B,/A,/B,/A,/B,/A,/ (6:4:6B,/A,/B,/A,/B,/G,/ | (6:4:6E,/F,/E,/F,/E,/F,/ (6:4:6E,/F,/E,/=A,/C/A,/ | (6:4:6E,/F,/E,/F,/E,/F,/ (6:4:6E,/F,/E,/F,/E,/F,/ | z2 |]
+V:7
+!pp!"^Con sord." (6:4:6D,/^^C,/D,/C,/D,/C,/ (6:4:6D,/C,/D,/C,/D,/C,/ | (6:4:6D,/^^C,/D,/C,/D,/C,/ (6:4:6D,/C,/D,/B,,/D,/B,,/ | (6:4:6D,/^^C,/D,/C,/D,/C,/ (6:4:6D,/C,/D,/C,/D,/B,,/ | (6:4:6C,/^B,,/C,/B,,/C,/B,,/ (6:4:6C,/B,,/C,/B,,/C,/B,,/ | (6:4:6C,/^B,,/C,/B,,/C,/B,,/ (6:4:6C,/B,,/C,/B,,/C,/=A,,/ | z2 |]
+V:8
+!pp!"^Senza sord." G,,4- | G,,4- | G,,4 | =A,,4- | A,,4 | z2 |]
+V:9
+!pp!"^Senza sord." G,,4- | G,,4- | G,,4 | =A,,4- | A,,4 | z2 |]

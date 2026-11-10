@@ -1,0 +1,86 @@
+X:1
+%%score [ 1 | 2 | 3 | ( 4 5 ) ] 6 7 [ 8 ( 9 10 ) 11 12 ] 13 14 [  15 | 16  | ( 17 18 ) | 19 | 20 ]
+L:1/8
+Q:1/4=100
+M:3/4
+K:A
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:4 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:5 bass 
+%%MIDI program 70
+V:6 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:7 treble nm="Niejata." snm="Sop."
+%%MIDI program 54
+V:8 treble nm="Soprano" snm="S"
+%%MIDI program 52
+V:9 treble nm="Alto" snm="A"
+%%MIDI program 52
+V:10 treble 
+%%MIDI program 52
+V:11 treble-8 nm="Tenor" snm="T"
+%%MIDI program 52
+V:12 bass nm="Bass" snm="B"
+%%MIDI program 52
+V:13 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:14 treble nm="Pianino" snm="Pno."
+%%MIDI program 0
+V:15 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:16 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:17 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:18 alto 
+%%MIDI program 48
+V:19 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:20 bass transpose=-12 nm="Contrabass" snm="D.B."
+%%MIDI program 48
+V:1
+z6 | z6 | z6 |!p! ([Bb][ee'] [dd']2 [cc'][Aa] | [Bb]4) z2 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z2 |]
+V:2
+z6 | z6 | z6 |!p! ([Bb][ee'] [dd']2 [cc'][Aa] | [Bb]4) z2 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z2 |]
+V:3
+[K:C]"^ten. assai""_dolce" [Cc]2 [Cc]2 [Cc]2 | [Ff]4 [Ee]2 | ([Dd][Gg] [Ff]2 [Ee][Cc] | [Dd]4) z2 | ([Dd][Gg] [Ff]2 [Ee][Cc] | [Dd]2 [Cc][A,A] [G,G]2) | ([Cc]2 [B,B][G,G] [A,A]2) | [Dd]4 [G,G][G,G] |!f! ([Cc]2 [B,B][Dd] [A,A]2) | [G,G]4 [G,G][G,G] | ([Cc]2 [B,B][Dd] [A,A]2) | [G,G]6 | z2 |]
+V:4
+z6 | z6 | z6 |!pp! [DF]6- | [DF] z z2 z2 | z6 | z6 | z2 z2 z2 |!p! (A,2 B,2 C2 | E4) z2 | (A,2 B,2 C2 | E6) | z2 |]
+V:5
+x6 | x6 | x6 | x6 | x6 | x6 | x6 | z2 z2 .D,2 | .C,2 .B,,2 .A,,2 | .G,,2 .E,,2 .D,2 | .C,2 .B,,2 .A,,2 | .G,,2 .E,,2 .D,,2 | x2 |]
+V:6
+[K:E] [B,B]2 (3[B,B][B,B][B,B] [B,B]2 | [B,B]2 (3[B,B][B,B][B,B] [B,B]2 | [B,B]2 (3[B,B][B,B][B,B] [B,B]2 | [B,B]2 (3[B,B][B,B][B,B] [B,B]2 | [B,B]2 (3[B,B][B,B][B,B] [B,B]2 | [B,B]2 (3[B,B][B,B][B,B] [B,B]2 | [B,B]2 (3[B,B][B,B][B,B] [B,B]2 | [B,B]2 [B,B]4- | [B,B]6- | [B,B]2 [B,B]4- | [B,B]6- | [B,B]2 [B,B]4 | z2 |]
+V:7
+z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | (BcGF) E2 | z6 | (Bc) (GF) E2 | z2 |]
+V:8
+!p! A2 A2 A2 | d4 c2 | (Be) d2 (cA) | B4 z2 | (Be) d2 (cA) | (B2 AF) E2 | A2 (GE) F2 | B4 E E | (A2 GB) F2 | E4 E E | (A2 GB) F2 | E4 z2 | z2 |]
+V:9
+!pp! E6 | F4 F2 | A6 | F4 z2 | (F2 A4) | (D2 E2) D2 | E6- |!p! E2 z2 E E | (A2 GB) F2 | E4 E E | (A2 GB) F2 | E4 z2 | z2 |]
+V:10
+C6 | B,4 C2 | (F4 E2) | D4 z2 | (D2 F2 E2) | (B,2 C2) D2 | (C6 | B,2) z2 x2 | x6 | x6 | x6 | x6 | x2 |]
+V:11
+!p! A2 A2 A2 | d4 c2 | (Be) d2 (cA) | B4 z2 | (Be) d2 (cA) | (B2 AF) E2 | A2 (GE) F2 | B4 E E | (A2 GB) F2 | E4 E E | (A2 GB) F2 | E4 z2 | z2 |]
+V:12
+!pp! A,,6- | A,,6 | A,,6 | A,,6 | A,,6- | A,,6- | A,,2 C,2 A,,2 |!p! G,,2 z2 E, E, | (A,2 G,B,) F,2 | E,4 E, E, | (A,2 G,B,) F,2 | E,4 z2 | z2 |]
+V:13
+z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |!mf! z/ e/g/b/ c'/b/e'/b/ c'/b/e'/b/ | z6 | z/ e/g/b/ c'/b/e'/b/!>(! c'/b/e'/!>)!b/ | z2 |]
+V:14
+z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |!mf! z2 z/ E/G/B/ e z | z6 | z2 z/ E/G/B/ e z | z2 |]
+V:15
+z6 |!p! z2 z2 (a'c'') | (d''2 b'2 c''2 | d''4) z2 | z2 (b'2 c''2) | (d''2 c''e' bg) | (af (!open!e4) | !open!e''2-) (e''f''c''b') | (a'2 b'2 c''2) | !open!e''2- (e''f''c''b') | (a'2 b'2 c''2) | !open!e''6 | z2 |]
+V:16
+z6 |!p! z2 z2 (ac') | (d'2 b2 c'2 | d'4) z2 | z2 (b2 c'2) | (d'2 c'e' bg) | (af !open!e4) | !open!e'2- (e'f'c'b) | (a2 b2 c'2) | !open!e'2- (e'f'c'b) | (a2 b2 c'2) | !open!e'6 | z2 |]
+V:17
+!p!"^div." (E6 | F6) | (A6 | F4) z2 | (F2 A4) | (F2 E4) | E6- | E z z2 .E.E | (A2 GB F2) | E4 .E.E | (A2 GB F2) | E6 | z2 |]
+V:18
+(C6 | (B,4) C2) | (F4 (E2) | D4) x2 | (D2 F2 E2) | (B,2 C2 D2) | (C6 | B,) z z2 z2 | x6 | x6 | x6 | x6 | x2 |]
+V:19
+A,,6- | A,,6- | A,,6- | A,,6- | A,,6- | A,,6- | A,, z C, z A,, z | G,, z E,, z E,E, | (A,2 G,B, F,2) | E,4 .E,.E, | (A,2 G,B, F,2) | E, z"^pizz." E,2 D,2 | z2 |]
+V:20
+"^pizz." A,,2 z2 z2 | z6 |"^pizz." A,,2 z2 z2 | z6 |"^pizz." A,,2 z2 z2 | z6 | "^arco" A,, z C, z A,, z | G,, z E,, z"^pizz." D2 | C2 B,2 A,2 | G,2 E,2 D2 | C2 B,2 A,2 | G,2 E,2 D,2 | z2 |]

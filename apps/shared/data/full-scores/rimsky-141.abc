@@ -1,0 +1,55 @@
+X:1
+Z:©
+%%score [ ( 1 2 ) | ( 3 4 ) ] [ ( 5 6 ) | ( 7 8 ) ] [ ( 9 10 ) | 11 | 12 ]
+L:1/8
+Q:1/4=112
+M:2/4
+K:F
+V:1 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:2 treble transpose=-2 
+%%MIDI program 71
+V:3 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 bass 
+%%MIDI program 70
+V:5 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:6 treble transpose=-7 
+%%MIDI program 60
+V:7 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:8 treble transpose=-7 
+%%MIDI program 60
+V:9 treble nm="Sopr.\nAlti." snm="S. A."
+%%MIDI program 53
+V:10 treble 
+%%MIDI program 53
+V:11 treble-8 nm="Tenori." snm="Ten."
+%%MIDI program 53
+V:12 bass nm="Bassi." snm="Bas."
+%%MIDI program 53
+V:1
+[K:G]"^Allegretto."!mf!"^50" B2 B2 | (AB/c/ BA) | (GF) G2 | A4 | B2 B2 | (AB/c/ BA) | (GE) F2 | (E"_dim."G)({/G} (F)E) | z2 |]
+V:2
+[K:G] G2 G2 | F4 | E2 E2 | F4 | D2 D2 | E4 | E2 ^D2 | E4 | x2 |]
+V:3
+!mf! C2 C2 | ^C4 | A,2 A,2 | (C3 B,) | A,2 F,2 | (D,3 E,) | F,2 G,2 | (F,"_dim."A,)({/A,} (G,)F,) | z2 |]
+V:4
+F,2 F,2 | F,4 | F,2 F,2 | F,4 | F,2 A,,2 | B,,4 | A,,2 A,,2 | D,2- D, z | x2 |]
+V:5
+[K:C]!mf! e2 e2 | (de/f/ ed) | (cB) c2 | d4 | e2 e2 | (de/f/ ed) | (cA) B2 | A2 z2 | z2 |]
+V:6
+[K:C] G2 G2 | ^G4 | E2 E2 | (G3 F) | E2 C2 | (A,3 B,) | C2 D2 | C2 z2 | x2 |]
+V:7
+[K:C]!mf! [Cc]2 [Cc]2 | [CB]4 | [CA]2 [CA]2 | [CB]4 | [CG]2 [E,G]2 | [F,A]4 | [E,A]2 [E,^G]2 | A2"_dim." z2 | z2 |]
+V:8
+[K:C] x4 | x4 | x4 | x4 | x4 | x4 | x4 | A,4 | x2 |]
+V:9
+A2 A2 | (GA/B/) (AG) | (FE) F2 | G4 | A2 A2 | (GA/B/) A G | (FD E2) | D2 z2 | z2 |]
+V:10
+F2 F2 | E2 E2 | D2 D2 | E4 | F2 C2 | D2 D D | (D2 ^C2) | D2 z2 | x2 |]
+V:11
+c2 c2 | ^c2 c2 | d2 A2 | (c3 B) | A2 F2 | D2 D E | (F2 G2) | F2 z2 | z2 |]
+V:12
+F,2 F,2 | F,2 F,2 | F,2 F,2 | F,4 | F,2 A,,2 | B,,2 B,, B,, | A,,4 | B,,2 z2 | z2 |]

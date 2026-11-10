@@ -1,0 +1,62 @@
+X:1
+%%score [ ( 1 2 ) | ( 3 4 ) | ( 5 6 ) ] 7 [  8 | 9  | 10 | 11 | ( 12 13 ) | 14 ]
+L:1/8
+Q:1/4=72
+M:none
+K:D
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble 
+%%MIDI program 73
+V:3 treble transpose=-3 nm="Clarinet in A" snm="Cl."
+%%MIDI program 71
+V:4 treble transpose=-3 
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 bass 
+%%MIDI program 70
+V:7 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:8 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:9 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:10 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:11 bass nm="Cello I" snm="Vc. I"
+%%MIDI program 48
+V:12 bass nm="Cello II" snm="Vc. II"
+%%MIDI program 48
+V:13 bass 
+%%MIDI program 48
+V:14 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+z |[Q:1/8=144]"^B" z3 | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z3 |!p! (g3 | e)ef | d3 | e3 | (g3 | e)ef | (d2 B) | e!<(!ef!<)! | [eg]3- | [eg]3- | [eg]3- | !fermata![eg]2- (([eg] | [df])) || z |]
+V:2
+x | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | z ee | x3 | x3 | x3 | x3 | x || x |]
+V:3
+[K:F] z |!pp! d3- | (d2 ^c | d3-) | d (^c2 | d3) | d3- | (d2 ^c | d3-) | d (^c2 | (d3) | e) z z | !p! (d3 | e) e2 | d3 | (e2 _e) | d3 | =ede | d3 | e!<(!e_e!<)! | (d3 | (=e3) | (_e3) | !fermata!^c2-) (c | d) || z |]
+V:4
+[K:F] x | (A3 | (B3) | A3-) | A (B2 | A3) | (A3 | (B3) | A3-) | A (B2 | (A3) | c) x2 | (B3 | c) e2 | A3 | c3 | B3 | cd^c | (A2 =B) | ccc | B z z | x3 | x3 | x3 | x || x |]
+V:5
+z |!pp! (D3 | (E3) | D3-) | D (E2 | D3) | (D3 | (E3) | D3-) | D (E2 | (D3) | E) z z | !p! (([E,B,]3 | [A,C]2)) [F,C] | [B,D]3 | (C2 =C) | [E,B,]3 | [A,^C][G,B,][F,C] | (([B,D]2 [E,B,])) | [A,C]!<(!C[A,=C]!<)! | (([E,B,]3 | (([A,,C]3)) | (([=C,=C]3)) | !fermata![F,,^A,]2-)) (([F,,A,] | [B,,B,])) || z |]
+V:6
+x | B,,3- | B,,3- | B,,3- | B,,3- | B,,3 | B,,3- | B,,3- | B,,3- | B,,3- | (B,,3 | A,,) x2 | x3 | x3 | x3 | A,3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x || x |]
+V:7
+[K:A] z | C3- | C3- | C3- | C3- | C3 | C3- | C3- | C3- | C3- | C2 z | z3 |!p! B3- | B z z | z3 | B3 | B3- | B z z | z3 | B!<(!BB!<)! | [Bd]3- | [Bd]3- | [Bd]3- | !fermata![Bd]2- (([Bd] | [Ac])) || z |]
+V:8
+z | z({/g}!p! .f/).e/!>!f |{/f} .e/.d/!>!e({/e}.d/).c/ | .d!>!B({/e}.d/).c/ | (dc/e/)({/e}(d/)c/) | B3- | B({/g}.f/).e/!>!f |{/f} .e/.d/!>!e({/e}.d/).c/ | .d!>!B({/e}.d/).c/ | (dc/e/)({/e}(d/)c/) | B2 c/(d/ | e)!<(! !tenuto!e!tenuto!f!<)! | (gf/a/g/!f!f/) | e!tenuto!e!tenuto!f | (dc/d/B/d/) | e(e/f/)(e/f/) | (gf/a/g/f/) | e!tenuto!e!tenuto!f | (dc/d/B/d/) |"^rit." e!<(!!>!v[Ace]!>!v[A=cf]!<)! | [EBg-]2!f! (3g/ [Q:1/4=77]"_accel."f/e/ | (3ua/g/f/ (3vg/f/e/ (3ua/g/f/ |"^rit." (3vg/f/e/(ue/f/)(3va/g/f/ | (3ug/f/e/!fermata!ve({/e} (.ud/)z/4.c/4) | d || z |]
+V:9
+z | z"^pizz."!p! [DF][FB] | z [EG][G^A] | z [DF][FB] | z [EG][G^A] | z [DF][FB] | z [DF][FB] | z [EG][G^A] | z [DF][FB] | z [EG][G^A] | z [DF][FB] | [Ac] z z |!mf! [EBg]2 z | [Ace][Ace][Fcf] | [B,Fd]2 z | [A,Ace]2 [A,A=ce] | [EBg]2 z | [A^ce][Be][^Acf] | [Fd] z [D^GB] | [CEAe]"^arco"!<(! !>!v[Ace]!>!v[A=cf]!<)! | [EBg] z z | [A^ce] z z | [G=ce] z z | [G^Ae] !fermata!z z | [B,Fd] || z |]
+V:10
+z | z/!p! .F,/.F/.F,/.F/.F,/ | z/ .F,/.E/.F,/.E/.F,/ | z/ .F,/.D/.F,/.D/.F,/ | z/ .F,/.E/.F,/.E/.F,/ | z/ F,/D/F,/D/F,/ | z/ F,/D/F,/D/F,/ | z/ F,/E/F,/E/F,/ | z/ F,/D/F,/D/F,/ | z/ F,/E/F,/E/F,/ | z/ F,/D/F,/B,/F,/ | z/ A,/C/A,/C/A,/ | z/ B,/E/B,/E/B,/ | z/ A,/C/A,/C/F,/ | z/ F,/B,/F,/B,/F,/ | z/ A,/C/A,/=C/A,/ | z/ B,/E/B,/E/B,/ | z/ A,/B,/G,/C/F,/ | z/ F,/B,/F,/D/B,/ | z/ (C/E/C/E/=C/) | [B,E] z z | [CE] z z | [=CE] z z | [^A,E] !fermata!z z | [B,D] || z |]
+V:11
+z |!p!"^pizz." B,,2 z |"^pizz." B,,2 z | B,,2 z | B,,2 z | B,,2 z | B,,2 z | B,,2 z | B,,2 z | B,,2 z | B,,2 z | z"^arco"!<(! !tenuto!E!tenuto!F!<)! |!mf! (GF/A/G/!f!F/) | E!tenuto!E!tenuto!F | (DC/D/B,/D/) | E(E/F/)(E/F/) | (GF/A/G/F/) | E!tenuto!E!tenuto!F | (DC/D/B,/D/) | E [K:tenor]!<(!"_arco" !tenuto!E!tenuto!F!<)! | G2- [Q:1/4=77]"_accel." (3G/F/E/ | (3uA/G/F/(3vG/F/E/(3uA/G/F/ |"^rit." (3G/"^rit."F/E/(E/F/)(3A/G/F/ | (3uG/F/E/!fermata!E({/E} (.uD/)z/4.C/4) | D || z |]
+V:12
+z |!p!"^pizz." B,,2 z |"^pizz." B,,2 z | B,,2 z | B,,2 z | B,,2 z | B,,2 z | B,,2 z | B,,2 z | B,,2 z | B,,2 z | x3 | x3!f! | x3 | x3 | x3 | x3 | x3 | x3 | x [K:tenor] x2 | x2 [Q:1/4=77] x | x3 | x3 | x3 | x || z |]
+V:13
+x | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 |"^pizz." A,,2 z |!mf! E,2 z | A,2 F, | B,2 z | A,2 A, | E,2 z | A,G,F, | B,,2 E, | A,, [K:tenor]!<(!"_arco" A,A,!<)! | E, z"_accel." z | A, z z |"^rit." =C"^rit." z z | F, !fermata!z z | B, || x |]
+V:14
+z |"^pizz."!p! B,,2 z |"^pizz." B,,2 z | B,,2 z | B,,2 z | B,,2 z | B,,2 z | B,,2 z | B,,2 z | B,,2 z | B,,2 z | A,,2 z |!mf! E,2 z | A,2 F, | B,2 z | A,2 A, | E,2 z | A,G,F, | B,,2 E, | A,, z z |"^arco" E, z z | A, z z | =C z z | F, !fermata!z z | B, || z |]

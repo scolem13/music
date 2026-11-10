@@ -1,0 +1,78 @@
+X:1
+%%score [ 1 | 2 |  3 | 4  | 5 | 6 ] 7 8 9 10 11 [  12 | 13  | ( 14 15 ) ] 16 [ 17 | 18 ]
+L:1/8
+Q:1/4=80
+M:3/4
+K:A
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble transpose=-3 nm="Clarinet in A 1" snm="A Cl. 1"
+%%MIDI program 71
+V:4 treble transpose=-3 nm="Clarinet in A 2" snm="A Cl. 2"
+%%MIDI program 71
+V:5 treble transpose=-3 nm="Bass Clarinet\n(A)" snm="B. Cl. (A)"
+%%MIDI program 71
+V:6 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:7 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:8 treble nm="La Reine de Chemâkha." snm="R."
+%%MIDI program 54
+V:9 treble transpose=12 nm="Celesta" snm="Cel."
+%%MIDI program 8
+V:10 bass nm="Harp" snm="Hp."
+%%MIDI program 46
+V:11 treble nm="Violin Solo" snm="Vln. S."
+%%MIDI program 40
+V:12 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:13 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:14 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:15 alto 
+%%MIDI program 48
+V:16 bass nm="Cello Solo" snm="Vlc. S."
+%%MIDI program 42
+V:17 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:18 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+!pp!"_dolce" c'2- (c'(3=c'/b/_b/ a/^c'/g/=g/) | (f(3=f/e/^d/ d^fc^B | c) z z2 z2 | z6 | z6 | z6 | z6 |]
+V:2
+z6 | z6 |!pp! a2- (a(3_b/=b/=c'/ ^c'/a/^b/c'/) | (d'(3^d'/e'/=f'/ ^f'=d'=g'^g' | a'2-) a' z z2 | z6 | z6 |]
+V:3
+[K:C] z6 | z6 |!pp! (e(3_e/d/_d/ c=eB_B) | (A2- A(3_A/G/_G/ F/=A/E/^D/) | (E6 | F2 E2 F2 | E) x4 x |]
+V:4
+[K:C] z6 | z6 | z6 | z6 | (G6 | _A2 G2 A2 | G) x4 x |]
+V:5
+[K:C]!pp! (C(3_D/=D/_E/ =EC^DE) | F2- (F(3^F/G/_A/ =A/=F/_B/=B/) | c2- c z z2 | z6 | z6 | z6 | z6 |]
+V:6
+z6 | z6 | z6 | z6 | z6 | z6 |!pp! [A,C]2 x4 |]
+V:7
+[K:E] z6 | z6 | z6 | z6 | z6 | z6 |!pp! B2 x4 |]
+V:8
+z6 | f (3(=f/e/_e/) (^d^f) (c^B) | c2- c z z2 | (d(3^d/e/^e/) (f=d) (=g^g) | a6- | (a6 | A) x4 x |]
+V:9
+z2 z2 z/ c'/g/=g/ | f z z fc^B | c z z [K:bass octave=0] CG,=G, | F, z z2 z/ F,/C,/^B,,/ | C,2 z2 z2 | z6 | z6 |]
+V:10
+z2 z A,,^B,,C, | D,2 z2 z/ D,/=G,/^G,/ | A,2 z2 [K:treble] z/ a/^b/c'/ | d' z z !open!d!open!=g!open!^g | !open!a2 z2 z2 | z6 | z6 |]
+V:11
+"_dolce" c''2- (c''(3=c''/b'/_b'/ a'/^c''/g'/=g'/) | (f'(3=f'/e'/^d'/ d'^f'c'^b | c') z z2 z2 | z6 | z6 | z6 | z6 |]
+V:12
+C z z2 z2 | z6"^Con sord.""^div. a 3" |!ppp!"^trem." !open![ac'e']6 | [ad'f']4 [ad'f'][ad'=f'] | [ac'e'] z z2 z2 | z6 | z6 |]
+V:13
+!ppp!"_Div.""^trem." [Ace]6 | [Adf]4 [Af][A=f] | [Ace]6 | [Adf]4 [Af][A=f] | [Ace] z z2 z2 | z6 | z6 |]
+V:14
+[E,A,] z z2 z2 | z6 |!ppp! [A,CE]6 | [DF]4 [DF][D=F] | E6 | =F2 E2 F2 | E2 x4 |]
+V:15
+x6 | x6 | x6 | A,6 | C6 | D2 C2 D2 | C2 x4 |]
+V:16
+!p! (A,,(3_B,,/=B,,/=C,/ ^C,A,,^B,,C,) | D,2- (D,(3^D,/E,/=F,/ ^F,/=D,/=G,/^G,/) | A,2- A, z z2 | [K:treble] z6 |!p! c4- c-(c/4d/4c/4=c/4) | =c-(c/4B/4c/4^c/4) c-(c/4d/4c/4=c/4) c-(c/4B/4c/4^c/4) | c2 x4 |]
+V:17
+[A,,C,] z z2 z2 | z6 | z6 | z6 |!pp! A,6- | A,6 | A,2 x4 |]
+V:18
+!pp! !open!A,6- | !open!A,6- | !open!A,6- | !open!A,6- | !open!A,6- | !open!A,6- | A, x4 x |]

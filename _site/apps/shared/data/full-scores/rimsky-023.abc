@@ -1,0 +1,70 @@
+X:1
+%%score [  1 | ( 2 3 )  | ( 4 5 ) ] { 6 | 7 } [  8 | 9  |  10 | 11  |  ( 12 13 ) | ( 14 15 )  | 16 ]
+L:1/8
+Q:1/4=50
+M:3/4
+K:Ab
+V:1 treble transpose=-2 nm="Clarinet in Bb 1" snm="Bb Cl. 1"
+%%MIDI program 71
+V:2 treble transpose=-2 nm="Clarinet in Bb 2" snm="Bb Cl. 2"
+%%MIDI program 71
+V:3 treble transpose=-2 
+%%MIDI program 71
+V:4 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:5 bass 
+%%MIDI program 70
+V:6 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:7 bass 
+%%MIDI program 46
+V:8 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:9 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:10 alto nm="Pizzicato Viola 1" snm="Vla 1"
+%%MIDI program 45
+V:11 alto nm="Pizzicato Viola 2" snm="Vla 2"
+%%MIDI program 45
+V:12 bass nm="Cello 1" snm="Vc. 1"
+%%MIDI program 48
+V:13 bass 
+%%MIDI program 48
+V:14 bass nm="Cello 2" snm="Vc. 2"
+%%MIDI program 48
+V:15 bass 
+%%MIDI program 48
+V:16 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+[K:Bb]"^Lento.""^227"!f! z2"^Solo" z !>!f- f-(3(f/d/B/ | (3A/B/d/(3F/B/d/) (e/B/(3G/B/e/ d/B/(3A/B/d/) | (3(F/A/c/e) (3(A/c/e/g) (fe) | d-(3(d/B/G/ (3^F/G/B/(3=E/G/B/ d/c/)(3(f/d/c/) |]
+V:2
+[K:Bb]!pp! ([F,D]2 [G,E][A,F] [B,F]2) | (F2 G2 F2) | E6 | (D2 C2-) (CD/E/) |]
+V:3
+[K:Bb] x6 | B,6 | (F,4 ^F,2) | (G,2 =E,2 F,2) |]
+V:4
+!pp! (A,3 D C2) | (C2 D2 C2) | G,6 | A,4- (A,G,) |]
+V:5
+A,,6- | A,,6 | A,,6- | A,,6 |]
+V:6
+ E,/4A,/4C/4E/4A/4c/4A/4E/4 z/4 F/4A/4d/4 z/4 G/4d/4e/4 A,/4C/4E/4A/4c/4e/4c/4A/4 |  A,/4C/4E/4A/4c/4e/4c/4A/4 A,/4D/4F/4A/4d/4f/4d/4A/4 A,/4C/4E/4A/4c/4e/4c/4A/4 |  E,/4G,/4D/4E/4G/4d/4G/4E/4 E,/4G,/4D/4E/4G/4d/4G/4E/4 =E,/4G,/4D/4=E/4G/4d/4G/4E/4 |  F,/4A,/4C/4F/4A/4c/4A/4F/4 =D,/4A,/4B,/4=D/4A/4B/4A/4D/4 z/4 E/4A/4B/4z/4E/4G/4B/4 |]
+V:7
+x2 [F,A,D][G,DE] x2 | x6 | x6 | x4 [E,A,B,][E,G,B,] |]
+V:8
+"_dolce""_espress.""_cantabile" (e/a/b/c'/) (d'c'/b/) e'2- | e'/e'/e'/a'/ f'(e'/d'/) e'2- | e'/b/b/c'/ d'2({e'd')} (c'b) | (a/g/f/c'/) (b/c'/g/f/) e2 |]
+V:9
+"_dolce""_espress.""_cantabile" (E/A/B/c/) (dc/B/) e2- | e/e/e/a/ f(e/d/) e2- | e/B/B/c/ d2({ed)} (cB) | (A/G/F/c/) (B/c/G/F/) E2 |]
+V:10
+!p! z"^pizz." [Ec] [Fd][Ge] z [Ae] | z [Ae] z [Af] z [Ae] | z [Ed] z [Ed] z [=Ed] | z [Fc] z [=DB] z [EB] |]
+V:11
+!p! z"^pizz." A Ad z c | z c z d z c | z G z G z G | z A z A z G |]
+V:12
+!pp! (C2 DE- E2) | (E2 F2 E2) | D6 | (C2 B,2-) (B,C/D/) |]
+V:13
+(E,2 F,G, A,2) | A,6 | (E,4 =E,2) | (F,2 =D,2 E,2) |]
+V:14
+!pp! (A,3 D C2) | (C2 D2 C2) | G,6 | (A,4 (A,)G,) |]
+V:15
+A,,6- | A,,6 | A,,6- | A,,6 |]
+V:16
+!pp! A,,6- | A,,6 | A,,6- | A,,6 |]

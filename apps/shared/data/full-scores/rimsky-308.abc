@@ -1,0 +1,82 @@
+X:1
+%%score 1 [ 2 | 3 | ( 4 5 ) | ( 6 7 ) ] [  8 | ( 9 10 )  ] [ 11 | 12 | 13 | 14 ] [ 15 | 16 | 17 | 18 | 19 ]
+L:1/8
+Q:1/4=112
+M:3/4
+K:Bb
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-9 nm="Clarinet picc.\n(Eb)" snm="Picc. cl."
+%%MIDI program 71
+V:4 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:5 treble transpose=-2 
+%%MIDI program 71
+V:6 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:7 bass 
+%%MIDI program 70
+V:8 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:9 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:10 treble transpose=-7 
+%%MIDI program 60
+V:11 treble nm="Soprani" snm="S."
+%%MIDI program 52
+V:12 treble nm="Alti" snm="A."
+%%MIDI program 52
+V:13 treble-8 nm="Tenori" snm="T."
+%%MIDI program 52
+V:14 bass nm="Bassi" snm="B."
+%%MIDI program 52
+V:15 treble nm="Violin I" snm="Vln."
+%%MIDI program 48
+V:16 treble nm="Violin II" snm="Vln."
+%%MIDI program 48
+V:17 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:18 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:19 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+!p! !>!Tf6- | Tf6 | z2 |]
+V:2
+!mf! BB (BA/B/ cB/A/) | GG (GA/B/ cF) | z2 |]
+V:3
+[K:G]!p! !>!Td'6- | Td'6 | z2 |]
+V:4
+[K:C]!p! g({/^F} G)({/F}G)({/F}G)^GG | A({/^G} A)({/G}A)({/G}A)({/^F}=G)({/F} G) | z2 |]
+V:5
+[K:C] z EEEEE | F FFFFF | x2 |]
+V:6
+!p!!p! F, B,B,B,B,B, | B, B,B,B,A,A, | z2 |]
+V:7
+F,,6- | F,,6 | x2 |]
+V:8
+[K:F] [Ac] z z2 z2 |!p! [Bd] z z2 [Bc] z | z2 |]
+V:9
+[K:F]!p! F z z2 z2 |!p! F z z2 E z | z2 |]
+V:10
+[K:F] C6- | C6 | x2 |]
+V:11
+!f! B B (BA/B/) c B/A/ | G G (GA/B/) c F | z2 |]
+V:12
+z .F .F .F .^F .F | .G .G .G .G .F .F | z2 |]
+V:13
+z .[Bd] .[Bd] .[Bd] .[Bd] .[Bd] | .[Be] .[Be] .[Be] .[Be] .[Ae] .[Ae] | z2 |]
+V:14
+F,6 | F,6 | z2 |]
+V:15
+"^pizz."!p! f'2 F2 ^F2 | z2 G2 F2 | z2 |]
+V:16
+"^pizz."!p! f2 [B,D]2 [B,D]2 | z2 [B,E]2 [A,E]2 | z2 |]
+V:17
+!p! F, .F/.D/ .F/.D/.F/.D/ .^F/.D/.F/.D/ | G/E/G/E/ G/E/G/E/ F/E/F/E/ | z2 |]
+V:18
+!p! F, .F,/.B,/ F,/B,/F,/B,/ F,/B,/F,/B,/ | F,/B,/F,/B,/ F,/B,/F,/B,/ F,/A,/F,/A,/ | z2 |]
+V:19
+!p! F,6- | F,6 | z2 |]

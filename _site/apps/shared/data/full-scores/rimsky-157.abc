@@ -1,0 +1,74 @@
+X:1
+Z:©
+%%score [ ( 1 2 ) | ( 3 4 ) | ( 5 6 ) | ( 7 8 ) ] [ 9 | 10 ] 11 [  12 | 13  | 14 | 15 | 16 ]
+L:1/8
+Q:1/2=84
+M:2/2
+K:F
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble 
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble 
+%%MIDI program 68
+V:5 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:6 treble transpose=-2 
+%%MIDI program 71
+V:7 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:8 bass 
+%%MIDI program 70
+V:9 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:10 treble transpose=-2 nm="Trumpet in Bb" snm="Bb Tpt."
+%%MIDI program 56
+V:11 perc nm="Cassa" snm="Cas."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap F 36
+I:percmap F F 36 normal
+V:12 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:13 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:14 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:15 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:16 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Allegro." z2 | z8 |!mf! z4 z2 (_d'2 |!mf! _e'4 f'4 |!f!"^30" _g') x7 | z2 |]
+V:2
+x2 | x8 | z8 | _d'8- | d' x7 | x2 |]
+V:3
+(_d2 |!p! _e4"_cresc." f4 | _g4 _f4) | (_e4 f4 |!f! _g) x7 | z2 |]
+V:4
+z2 | _d8- | d8- | d8- | d x7 | x2 |]
+V:5
+[K:G] z2 |!p! _e8- | e8- | e8- |!f! e x7 | z2 |]
+V:6
+[K:G] x2 | (_C4"_cresc." _B,4 | _A,4 _B,4) | (_C4 _B,4 | _A,) x7 | x2 |]
+V:7
+_D2 |!p! (_E4"_cresc." F4 | _G4 _F4) | (_E4 F4 |!f! _G) x7 | z2 |]
+V:8
+z2 | (_G,,4 _A,,4 | __B,,4 _A,,4) | (_G,,4 _A,,4 | __B,,) x7 | x2 |]
+V:9
+[K:C]!p!"_I. III.\nII. IV." [_A,_A]2- | [A,A]2 [_A,_A]4"^cresc." [A,A]2- | [A,A]2 [_A,_A]4 [A,A]2- | [A,A]2 [_A,_A]4 [A,A]2 |!f! [_A_d]4 x4 | z2 |]
+V:10
+[K:G] z2 | z8 |!p! z4 z2 [_E_e]2- | [Ee]2"_cresc." [_E_e]4 [Ee]2- |!f! [Ee] x7 | z2 |]
+V:11
+[K:none] !pp! FF | F8 | F8 | F8"^cresc." | F2 x6 | z2 |]
+V:12
+!p! _d z | _e2"_cresc." e/_d/e/=e/ f2 d2 | _g2 g/_d/g/f/ _f2 d2 | _e2 e/_d/e/=e/ f2 d2 |!ff! [_d_d']8 | z2 |]
+V:13
+!p! _D z | _E2"_cresc." E/_D/E/=E/ F2 D2 | _G2 G/_D/G/F/ _F2 D2 | _E2 E/_D/E/=E/ F2 D z |!ff! [_d_d']8 | z2 |]
+V:14
+!p! _C2 |"_cresc." (__B,4 _A,4) | (_G,4 _A,4) | (__B,4 _A,4) |!ff! _G, x7 | z2 |]
+V:15
+F,,2 |"_cresc." (_G,,4 _A,,4) | (__B,,4 _A,,4) | (_G,,4 _A,,4) |!ff! [A,,A,] x7 | z2 |]
+V:16
+F,,2 |"_cresc." (_G,,4 _A,,4) | (__B,,4 _A,,4) | (_G,,4 _A,,4) |!ff! A,, x7 | z2 |]

@@ -1,0 +1,43 @@
+X:1
+Z:©
+%%score [ 1 | 2 | ( 3 4 ) | ( 5 6 ) ] [  7 | 8  | 9 ]
+L:1/8
+Q:1/4=72
+M:4/4
+K:C
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:4 treble transpose=-2 
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 bass 
+%%MIDI program 70
+V:7 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:8 treble transpose=-7 nm="Horn in F 3" snm="Hn. 3"
+%%MIDI program 60
+V:9 treble transpose=-3 nm="Trumpet in A" snm="A Tpt."
+%%MIDI program 56
+V:1
+"^Andante."!f! [Bd]8- | [Bd]8- | [Bd]8- |!>(! [Bd]8!>)! | z2 |]
+V:2
+!f! [Bd]8- | [Bd]8- | [Bd]8- |"_dim." [Bd]7 z | z2 |]
+V:3
+[K:D]!f! ^A8- | A8- | A8- | A8 | z2 |]
+V:4
+[K:D] (^G8 | (=G8) | ^F8-) | F8 | x2 |]
+V:5
+!f! ^G8- | G8- |"_dim." G8- |!>(! G7!>)! z | z2 |]
+V:6
+(^F8 | (=F8) | E8-) | E7 z | x2 |]
+V:7
+[K:G]!mf! (^c8 | (=c8) |"_dim." B8-) |!>(! B7!>)! z | z2 |]
+V:8
+[K:G]!mf! ^d8- | d8- |"_dim." d8- |!>(! d7!>)! z | z2 |]
+V:9
+[K:Eb]!mf! [df]8- | [df]8- |"_dim." [df]8- |!>(! [df]7!>)! z | z2 |]

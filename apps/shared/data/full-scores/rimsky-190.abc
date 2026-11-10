@@ -1,0 +1,38 @@
+X:1
+%%score [ 1 | 2 | ( 3 4 ) ] 5 [ 6 | 7 | 8 ]
+L:1/8
+Q:1/2=108
+M:2/2
+K:A
+V:1 treble transpose=-3 nm="Clarinet in A\nSolo" snm="A Cl."
+%%MIDI program 71
+V:2 bass transpose=-3 nm="Bass Clarinet\n(A)" snm="B. Cl."
+%%MIDI program 71
+V:3 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 bass 
+%%MIDI program 70
+V:5 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:6 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:7 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:8 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+[K:C]"^(Allegro.)""^5""_dolce" (c4 c4 | g6) (e2 | f2 e2 g4 | d4 B4) | (c4 c4 | g6) (e2 | f2 e2 g4 | d4 e4) |[M:4/4] z2 |]
+V:2
+[K:C] z8 | z8 | z8 | z8 |!pp! C,8- | C,6 (B,,2 | A,,4 G,,4 | F,,4 E,,4) |[M:4/4] z2 |]
+V:3
+!ppp! C8- | (C8 | A,4 G,4 | F,4 =F,4-) | (F,8 | E,8) | (A,8 | B,4 C4) |[M:4/4] z2 |]
+V:4
+(A,8 | (G,8) | F,4 E,4 | D,8-) | D,8- | (D,4 C,4) | (D,4 E,4 | F,4 G,4) |[M:4/4] x2 |]
+V:5
+[K:E]!ppp! B8- | (B8 | A4 G4 | F8) | E8- | E8 | (A4 G4 | c4 ^B4) |[M:4/4] z2 |]
+V:6
+!pp! (3([CE][CE][A,C](3[CE][A,C][CE] (3[A,C][CE][A,C](3[A,C][CE][A,C]) | (3([G,C][CE][G,C](3[G,C][CE][G,C] (3[G,C][CE][G,C](3[G,C][CE][G,C]) | (3([F,A,][A,D][F,A,](3[F,A,][A,D][F,A,] (3[E,G,][G,C][E,G,](3[E,G,][G,C][E,G,]) | (3([D,F,][F,B,][D,F,](3[D,F,][F,B,][D,F,] (3[D,=F,][F,B,][D,F,](3[D,F,][F,B,][D,F,]) | (3([D,=F,][F,B,][D,F,](3[D,F,][F,B,][D,F,] (3[D,F,][F,B,][D,F,](3[D,F,][F,B,][D,F,]) | (3([D,E,][E,A,][D,E,](3[D,E,][E,A,][D,E,] (3[C,E,][E,A,][C,E,](3[C,E,][E,A,][C,E,]) | (3([D,A,][A,D][D,A,](3[D,A,][A,D][D,A,] (3[E,A,][A,C][E,A,](3[E,A,][A,C][E,A,]) | (3([F,B,][B,F][F,B,](3[F,B,][B,F][F,B,] (3[G,C][C^E][G,C](3[G,C][CE][G,C]) |[M:4/4] z2 |]
+V:7
+!pp! A,,8- | A,,8- | A,,8- | A,,8- | A,,8- | (A,,6 G,,2) | (F,,4 E,,4 | D,,4 C,,4) |[M:4/4] z2 |]
+V:8
+!p!"_pizz." A,,2 z2 z4 | z8 | z8 | z8 | A,,2 z2 z4 | z8 | z8 | z8 |[M:4/4] z2 |]

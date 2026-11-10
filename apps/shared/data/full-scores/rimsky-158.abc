@@ -1,0 +1,67 @@
+X:1
+Z:©
+%%score [ 1 | 2 | 3 | 4 ] [  ( 5 6 ) | 7  | ( 8 9 ) ] 10 11 { 12 | 13 } [ 14 | 15 ]
+L:1/8
+Q:1/2=40
+M:3/2
+K:Bb
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:4 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:5 treble transpose=-7 nm="Horn I. II." snm="Hn. 1 2"
+%%MIDI program 60
+V:6 treble transpose=-7 
+%%MIDI program 60
+V:7 treble transpose=-7 nm="Horn III. IV." snm="Hn. 3 4"
+%%MIDI program 60
+V:8 treble transpose=-2 nm="Trumpet in Bb" snm="Bb Tpt."
+%%MIDI program 56
+V:9 treble transpose=-2 
+%%MIDI program 56
+V:10 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:11 treble nm="Vlassévna" snm="Vlas."
+%%MIDI program 54
+V:12 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:13 bass 
+%%MIDI program 46
+V:14 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:15 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Adagio.""^33"!p! z4 [E_G]8 | z4 [E_G]8 |!mp! z4"^lunga" !fermata![bd']8 | z2 |]
+V:2
+z12 | z12 |!mp! z4"^dim. e mor." !fermata!f8 | z2 |]
+V:3
+[K:C] z12 | z12 |!pp!"_poco cresc."!mp! ([c-d]4"^dim. e mor." !fermata![ce]8) | z2 |]
+V:4
+z12 | z12 |!pp!"_poco cresc."!mp! (([E,_G]4"^dim. e mor." [B,,F]8)) | z2 |]
+V:5
+[K:F]!pp! f12 | f4- f8 |!pp!"^II.""_poco cresc."!mp! F4-"^dim. e mor." F8 | z2 |]
+V:6
+[K:F] F12 | F4- F8 | x12 | x2 |]
+V:7
+[K:F] z12 | z12 |!pp!"_poco cresc."!mp! ([_DB]4"^dim. e mor." [CA]8) | z2 |]
+V:8
+[K:C]!ppp! z12 | d4- d8 | z12 | z2 |]
+V:9
+[K:C] x12 | D4- D8 | x12 | x2 |]
+V:10
+!pp! z4 TE,8!>(!!>)! | z4 TE,8 | z12 | z2 |]
+V:11
+z2 B,/ B,/ B,/ B,/ (3E E E E/ E/ E/ E/ E/ E/ z z E | (3_G G G (3:2:2G2 G (3G E E z2 z4 | !<(! B B/ B/ B!<)! B F2 F z"^lunga" !fermata!z4 | z2 |]
+V:12
+!p! B4 z4 z4 | [Bc]4 z4 z4 | !mf!!f! [E_GBc]2 z2 z F/4B/4d/4f/4zB/4d/4f/4b/4 z f/4b/4d'/4f'/4 !fermata!z2 | z2 |]
+V:13
+!p! B,4 z4 z4 | [B,C]4 z4 z4 | !pp! [E,_G,B,C]2 z2 B,,/4F,/4B,/4D/4"^dim."zF,/4B,/4D/4F/4 z [K:treble] D/4F/4B/4d/4 z b' !fermata!z | [K:bass] z2 |]
+V:14
+!pp! z4 (E,/_D,/E,/D,/C,/D,/C,/D,/ E,/D,/E,/D,/ C,) z | z4 (E,/_D,/E,/D,/C,/D,/C,/D,/ E,/D,/E,/D,/ C,) z |!mf! z4"^pizz." B,,2 z2"^lunga" !fermata!z4 | z2 |]
+V:15
+!pp! z4 (E,/_D,/E,/D,/C,/D,/C,/D,/ E,/D,/E,/D,/ C,) z | z4 (E,/_D,/E,/D,/C,/D,/C,/D,/ E,/D,/E,/D,/ C,) z |!mf! z4"^pizz." B,,2 z2"^lunga" !fermata!z4 | z2 |]

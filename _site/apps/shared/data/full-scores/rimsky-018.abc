@@ -1,0 +1,54 @@
+X:1
+%%score [ 1 | 2 | ( 3 4 ) ] [ ( 5 6 ) | 7 ] [ 8 | 9 ] 10 [ 11 | 12 ]
+L:1/8
+Q:1/4=120
+M:3/4
+K:D
+V:1 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:2 treble transpose=-3 nm="Clarinet in A" snm="Bb Cl."
+%%MIDI program 71
+V:3 tenor nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 tenor 
+%%MIDI program 70
+V:5 treble nm="Choir 1" snm="C 1"
+%%MIDI program 52
+V:6 treble 
+%%MIDI program 52
+V:7 treble nm="Choir 2" snm="C 2"
+%%MIDI program 52
+V:8 treble nm="Violin" snm="Vln."
+%%MIDI program 48
+V:9 alto nm="Pizzicato Viola" snm="Vla"
+%%MIDI program 45
+V:10 bass nm="Cello Solo" snm="Vlc."
+%%MIDI program 42
+V:11 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:12 bass transpose=-12 nm="Pizzicato Double Bass" snm="Cb."
+%%MIDI program 45
+V:1
+[K:A] z2 |[Q:1/4=108]"^Allegretto quasi andantino."!p!"^L" A6- | A6 | A6- | A6 | A6- | A6 | (A6 | G6) | (A6 | G3-) G2 A | z2 |]
+V:2
+[K:F] z2 |!p! z/ (A,/C/F/A/c/ f/c/A/F/C/A,/) | z/ (A,/C/F/A/c/ f/c/A/F/C/A,/) | z/ (^G,/=B,/F/^G/=B/ f/B/G/F/B,/G,/) | z/ (A,/C/F/A/c/ f/c/A/F/C/A,/) | z/ (^G,/=B,/F/^G/=B/ f/B/G/F/B,/G,/) | z/ (A,/C/F/A/c/ f/c/A/F/C/A,/) | z/ (B,/D/F/B/d/ f/_d/B/F/_D/B,/) | z/ (B,/C/E/B/c/ e/c/B/E/C/B,/) | z/ (B,/D/F/B/d/ f/_d/B/F/_D/B,/) | z/ (B,/C/E/B/c/ e/c/B/E/C/A,/) | z2 |]
+V:3
+z2 |!pp! [A,F]6- | [A,F]6 | (([^G,^E]6 | [A,F]6)) | (([^G,^E]6 | [A,F]6)) | G6- | G6 | G6- | G3- G2 F | z2 |]
+V:4
+x2 | x6 | x6 | x6 | x6 | x6 | x6 | (B,3 (_B,3) | A,6) | (B,3 _B,3 | A,3-) A,2 A, | x2 |]
+V:5
+z2 | z6 |!p! z2 z z2 A | B>c dc Bc | A3 A z A | B>c dc Bd | f3- f z z | (B3 [_Be]3) | e3 A z z | (B3 [_Be]3) | e2 A z2 z | z2 |]
+V:6
+x2 | x6 | x6 | x6 | x6 | x6 | x6 | G3- (G2 D) | [CA]3 G z z | G3- (G2 D) | [CA]2 G z2 z | x2 |]
+V:7
+z2 | z6 | z6 | z6 | z6 | z6 |!p! z2 z z FA | BA GF EG | A3 E EG | BA GF EG | A3- A z z | z2 |]
+V:8
+z2 | z6 |!p! z2 z z2 A | (B>c.d) (cBc) | A3- A z A | (B>c.d) (cBd) | (f3 d) (FA) | (BA G)(F EG) | (A3 E) (EG) | (BA G)(F EG) | A3- A z A | z2 |]
+V:9
+z2 |!mf! z A,F dFA, | z A,F dFA, | z ^G,^E dEG, | z A,F dFA, | z ^G,^E dEG, | z A,F dFA, | z B,G dG_B, | z A,G cGA, | z B,G dG_B, | z A,G cGA, | z2 |]
+V:10
+z2 | z6 | z2 z z2 [K:treble] A | (B>cd) (cBc) | A3- A z A | (B>cd) (cBc) | (f3 d) (FA) | (BA G)(F EG) | (A3 E) (EG) | (BA G)(F EG) | A3- A z A | z2 |]
+V:11
+z2 |!p! D,,6- | D,,6 | D,,6- | D,,6 | D,,6- | (D,,3 F,,3) | (E,,3 E,3) | A,,6 | (E,,3 E,3) | A,,3- (A,,2 D,,) | z2 |]
+V:12
+z2 |!p! D,2 z z2 z | D,2 z z2 z | D,2 z z2 z | D,2 z z2 z | D,2 z z2 z | D,2 z F,2 z | E,2 z E2 z | A,2 z z2 z | E,2 z E2 z | A,2 z z2 z | z2 |]

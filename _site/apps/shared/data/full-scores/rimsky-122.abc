@@ -1,0 +1,47 @@
+X:1
+Z:©
+%%score [ 1 | 2 | 3 | 4 | 5 ] 6 7 [ ( 8 9 ) | 10 ]
+L:1/8
+Q:1/4=84
+M:3/4
+K:G
+V:1 treble nm="Flute I.\nsolo." snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:4 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:5 treble transpose=-14 nm="Bass Clarinet" snm="B. Cl."
+%%MIDI program 71
+V:6 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:7 treble-8 nm="L'Indou." snm="L'I."
+%%MIDI program 54
+V:8 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:9 alto 
+%%MIDI program 48
+V:10 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:1
+"^Andantino.""^196" z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | "^197" z6 | z6 |"_dolce" e2- (e/d/c/B/ A/B/c/d/) | e4- e z | z6 | z6 | _e2- (e/d/c/B/ A/B/c/d/) | "_dim." (_e4 d) z | z2 |]
+V:2
+!pp! z2 d4 | z2 d4 | z2 d4 | z2 d4 | z2 d4 | z2 d4 | z2 d4 | z2 d4 | z2 d4 | z2 d4 | z2 d4 | z2 d4 | z2 d4 | z2 d4 | z2 d4 | z2 d4 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z2 |]
+V:3
+[K:D]!pp! z2 f4 | z2 =f4 | z2 f4 | z2 f4 | z2 f4 | z2 =f4 | z2 ^f4 | z2 f4 | z2 f4 | z2 =f4 | z2 ^f4 | z2 f4 | z2 f4 | z2 =f4 | z2 ^f4 | z2 f4 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z2 |]
+V:4
+[K:Bb]!pp! ([F,-D]6 | ([F,-_D]6) | [F,D]6-) | [F,D]6 | ([F,-D]6 | ([F,-_D]6) | [F,=D]6-) | [F,D]6 | ([F,-D]6 | ([F,-_D]6) | [F,=D]6-) | [F,D]6 | ([F,-D]6 | ([F,-_D]6) | [F,=D]6-) | [F,D]6 | [F,E]6- | [F,E]6- | [F,E]6- | [F,E]6 | [F,E]6- | [F,E]6- | [F,E]6- | [F,E]6 | z2 |]
+V:5
+[K:A]!pp! A,6- | A,6- | A,6- | A,6 | A,6- | A,6- | A,6- | A,6 | A,6- | A,6- | A,6- | A,6 | A,6- | A,6- | A,6- | A,6 | A,6- | A,6- | A,6- | A,6 | A,6- | A,6- | A,6- | A,6 | z2 |]
+V:6
+[K:D]!pp! z2 A4 | z2 A4 | z2 A4 | z2 A4 | z2 A4 | z2 A4 | z2 A4 | z2 A4 | z2 !>!A4 | z2 !>!B4 | z2 !>!d4 | z2 !>!A4 | z2 !>!A4 | z2 !>!B4 | z2 !>!d4 | z2 !>!A4 | c6- | c6- | c6- | c4- c z | c6- | c6- | c6- | c4- c z | z2 |]
+V:7
+d4- (d/^c/) (=c/B/) | d4- (d/c/) (B/_B/) | d4- (d^c/=c/) | B2- B z z2 | B4- (B/A/) (_A/G/) | _B4- (B/A/) (_A/G/) | =B4- (BA/_A/) | G2- G z z2 | d4- (d/^c/) (=c/B/) | d4- (d/c/) (B/_B/) | d4- (d^c/=c/) | B2- B z z2 | B4- (B/A/) (_A/G/) | _B4- (B/A/) (_A/G/) | =B4- (BA/_A/) | G2- G z z2 | F2- (F/^G/) (A/B/) (c/d/) (e/d/) | e2- (e/d/c/B/ A/B/c/d/) |!>(! e2-!>)! e z z2 | z6 | F2- (F/=G/) (A/B/) (c/d/) (_e/d/) | _e2- (e/d/c/B/ A/B/c/d/) | _e2- e z z2 | z6 | z2 |]
+V:8
+z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6"_Div." |!pp! (c6 | (e6) | c6-) | c4- c z | (c6 | (_e6) | c6-) | c4- c z | z2 |]
+V:9
+x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | (E6 | (c6) | E6-) | E4- E z | (_E6 | (c6) | _E6-) | (E4 D) z | x2 |]
+V:10
+(G,,D,B,D,B,D,) | (G,,D,_B,D,B,D,) | (G,,D,B,D,B,D,) | (G,,D,B,D,B,D,) | (G,,D,B,D,B,D,) | (G,,D,_B,D,B,D,) | (G,,D,=B,D,B,D,) | (G,,D,B,D,B,D,) | (G,,D,B,D,B,D,) | (G,,D,_B,D,B,D,) | (G,,D,=B,D,B,D,) | (G,,D,B,D,B,D,) | (G,,D,B,D,B,D,) | (G,,D,_B,D,B,D,) | (G,,D,=B,D,B,D,) | (G,,D,B,D,B,D,) | (G,,D,CD,CD,) | (G,,D,CD,CD,) | (G,,D,CD,CD,) | (G,,D,CD,CD,) | (G,,D,CD,CD,) | (G,,D,CD,CD,) | (G,,D,CD,CD,) | (G,,D,CD,CD,) | z2 |]

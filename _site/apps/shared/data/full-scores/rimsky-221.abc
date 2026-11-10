@@ -1,0 +1,94 @@
+X:1
+%%score [ 1 | 2 | 3 | 4 | 5 | 6 ] [ 7 | 8 ] [ 9 |  10 | 11  | 12 ] 13 [ ( 14 15 ) | 16 | 17 ] [  18 | 19  | 20 | 21 | 22 ]
+L:1/8
+Q:1/4=92
+M:3/4
+K:C
+V:1 treble nm="Flute 1" snm="Fl. 1"
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:4 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:7 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:8 bass transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:9 treble transpose=-7 nm="Trumpet in F" snm="F Tpt."
+%%MIDI program 56
+V:10 alto nm="Trombone 1" snm="Tbn. 1"
+%%MIDI program 57
+V:11 bass nm="Trombone 2" snm="Tbn. 2"
+%%MIDI program 57
+V:12 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:13 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:14 treble nm="Soprani\n& Alti" snm="S. A."
+%%MIDI program 52
+V:15 treble 
+%%MIDI program 52
+V:16 treble-8 nm="Tenori" snm="T."
+%%MIDI program 52
+V:17 bass nm="Bassi" snm="B."
+%%MIDI program 52
+V:18 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:19 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:20 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:21 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:22 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Moderato.)"!ff!"^147" (a4 c') z | (g4 e) z | (af'e'd' a2) | z2 (a2 c'2) | (g4 e) z | (feda e2) | z2 |]
+V:2
+!ff! ([Aa]4 [cc']) z | ([Gg]4 [Ee]) z | ([Aa][ff'][ee'][dd'] [Aa]2) | z2 ([Aa]2 [cc']2) | ([Gg]4 [Ee]) z |"^a 2" (feda e2) | z2 |]
+V:3
+[K:G]!ff! (E4 G) z | (D4 B,) z | (EcBA E2) | z2 (E2 G2) | (D4 B,) z | (cBAe B2) | z2 |]
+V:4
+[K:D]!ff! (B4 d) z | (A4 F) z | (Bgfe B2) | z2 (B2 d2) | (A4 F) z | (G,F,E,B, F,2) | z2 |]
+V:5
+!ff!"^a 2" (A,4 C) z | (G,4 E,) z | (A,FED A,2) | z2 (A,2 C2) | (G,4 E,) z | (F,E,D,A, E,2) | z2 |]
+V:6
+!ff! A,, z z2 z2 | E,, z z2 z2 | z6 | A,, z z2 z2 | E,, z z2 z2 | z6 | z2 |]
+V:7
+[K:G]!ff! !wedge![EG]!wedge![FA]!wedge![GB]!wedge![Ac]!wedge![Bd]!wedge![ce] | [Bd][ce][df][eg][fa][gb] | z [EG] z [FA] z [GB] | [gb][fa][eg][df][ce][Bd] | [Bd][Ac][GB][FA][EG][DF] | z6 | z2 |]
+V:8
+[K:G]!ff! !wedge![E,,G,,]!wedge![F,,A,,]!wedge![G,,B,,]!wedge![A,,C,]!wedge![B,,D,]!wedge![C,E,] | [K:treble octave=0] [B,D][CE][DF][EG][FA][GB] |[K:bass octave=0] z [E,,G,,] z [F,,A,,] z [G,,B,,] | [K:treble octave=0] [GB][FA][EG][DF][CE][B,D] |[K:bass octave=0] [B,,D,][A,,C,][G,,B,,][F,,A,,][E,,G,,][D,,F,,] | z6 | z2 |]
+V:9
+[K:G]!ff! !wedge!G!wedge!A!wedge!B!wedge!c!wedge!d!wedge!e | defgab | z G z A z B | bagfed | dcBAGF | AB ce/f/ g2 | z2 |]
+V:10
+!ff! !wedge![C,A,]!wedge![D,B,]!wedge![E,C]!wedge![F,D]!wedge![G,E]!wedge![A,F] | [G,E][A,F][B,G][CA][DB][Ec] | z [C,A,] z [D,B,] z [E,C] | [Ec][DB][CA][B,G][A,F][G,E] | [G,E][F,D][E,C][D,B,][C,A,]G, | [D,F,][E,G,] [F,A,][A,C]/[B,D]/ [CE]2 | z2 |]
+V:11
+!ff! !wedge!A,,!wedge!B,,!wedge!C,!wedge!D,!wedge!E,!wedge!F, | E,F,G,A,B,C | z A,, z B,, z C, | CB,A,G,F,E, | E,D,C,B,,A,,G,, | F,,G,, A,,C,/D,/ E,2 | z2 |]
+V:12
+!ff! A,,, z z2 z2 | E,, z z2 z2 | z6 | A,, z z2 z2 | E,, z z2 z2 | D,,E,, F,,A,,/B,,/ C,2 | z2 |]
+V:13
+!f! A,, z z2 z2 | E, z z2 z2 | z6 | A,, z z2 z2 | E, z z2 z2 | z6 | z2 |]
+V:14
+!ff! A4 c z | G4 E z | A f e d A A | z2 A z c2 | G4 E z | F E D A E E | z2 |]
+V:15
+A4 c z | G4 E z | z4 z2 | z2 A z c2 | G4 E z | F E D A E E | x2 |]
+V:16
+!ff! A4 c z | G4 E z | A f e d A A | z2 A z c2 | G4 E z | F E D A E E | z2 |]
+V:17
+!ff! A,4 C z | G,4 E, z | z6 | z2 A, z C2 | G,4 E, z | F, E, D, A, E, E, | z2 |]
+V:18
+!ff!"_espress." ([Aa]4 c') z | (g4 [Ee]) z | ([Aa]f'e'd' [Aa]2) | z2 ([Aa]2 c'2) | (g4 [Ee]) z | (fe[Dd][Aa] [Ee]2) | z2 |]
+V:19
+!ff!"_espress." (A4 c) z | (G4 E) z | (Afed A2) | z2 (A2 c2) | (G4 E) z | (FEDA E2) | z2 |]
+V:20
+!ff!"_espress." (A4 c) z | (G4 E) z | (A,FED A,2) | z2 (A2 c2) | (G4 E) z | (F,E,D,A, E,2) | z2 |]
+V:21
+!ff!"_espress." (A,4 C) z | (G,4 E,) z | (A,FED A,2) | z2 (A,2 C2) | (G,4 E,) z | (F,E,D,A, E,2) | z2 |]
+V:22
+!ff! !>![A,,A,] z z2 z2 | !>![E,,E,] z z2 z2 | z6 | !>![A,,A,] z z2 z2 | !>![E,,E,] z z2 z2 | z6 | z2 |]

@@ -1,0 +1,34 @@
+X:1
+%%score 1 2 [  3 | 4  | 5 | 6 | 7 ]
+L:1/8
+Q:1/4=88
+M:3/4
+K:F#
+V:1 bass nm="Bassoon I\nSolo" snm="Bsn."
+%%MIDI program 70
+V:2 treble nm="Véra" snm="Véra"
+%%MIDI program 54
+V:3 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:4 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:5 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:6 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:7 bass transpose=-12 nm="Pizzicato Double Bass" snm="Cb."
+%%MIDI program 45
+V:1
+"^Andantino.""^36""_dolce" (CB,A,B,A,G,) | (CB,A,B,A,G,) | (DC^B,C=B,A,) | (DC^B,C=B,A,) | (=ED^^CD^CB,) | (A,G,F,E,G,B,) | A,2 |]
+V:2
+z2 c2 z2 | c B A B A G | z6 | z2 ^B c =B A | z2 z d =e3/2 d/ | c B A G G z/ G/ | E A |]
+V:3
+!pp! z"^ten. assai" [Ec]2 [Ec]2 [Ec] | z [Ec]2 [Ec]2 [Ec] | z [Fc]2 [Fc]2 [Fc] | z [Fc]2 [Fc]2 [Fc] | z [^^Fd]2 [Fd] z [Gd] | z [Dd]2 [Dd]2 [Dd] | [^^CA]2 |]
+V:4
+!pp! z"^ten. assai" B2 B2 B | z B2 B2 B | z A2 A2 A | z A2 A2 A | z c2 c z B | z G2 G2 E | E2 |]
+V:5
+z6 | z6 | z6 | z6 |!p! (=ED^^CD^CB,) | (A,G,F,E,G,B, | A,2) |]
+V:6
+!pp! C,6- | C,6 | C,6- | C,6 | (A,,4 G,,2) | (B,,4 G,,2) | A,,2 |]
+V:7
+!pp!"^pizz." C2 z2 z2 | C2 z2 z2 | C2 z2 z2 | C2 z2 z2 | A,2 z2 G,2 | B,2 z2 G,2 | A,2 |]

@@ -13,8 +13,9 @@ SOURCES = [
     web(MT + '"Sonata and Rondo Forms." *Music Theory for the 21st-Century Classroom*, ch. 25, U of Puget Sound. URL.', "https://musictheory.pugetsound.edu/mt21c/SonataAndRondoForms.html", [SR], who="student"),
 ]
 SOURCES += [
-    web('Mutopia Project. "Beethoven, Sonata No. 8 \\"Pathétique\\", Op. 13, 3rd movement (Rondo)," typeset by Chris Sawer after the Berners edition (1908), ed. A. Winterberger. Public Domain. URL.', "https://www.mutopiaproject.org/ftp/BeethovenLv/O13/pathetique-3/", [SR], who="teacher",
-        note="Plan read from the .ly file's MIDI export with scripts/mutopia/midi-structure.py (local mirror ~/Projects/corpora/mutopia); the URL is the mirror's path, not fetched."),
-    web('Mutopia Project. "Beethoven, Sonata No. 14 \\"Moonlight\\", Op. 27 No. 2, 3rd movement (Presto agitato)," typeset by Chris Sawer and Stewart Holmes after the Berners edition (1908). Creative Commons Attribution-ShareAlike 2.5. URL.', "https://www.mutopiaproject.org/ftp/BeethovenLv/O27/moonlight/", [SR], who="teacher",
-        note="Plan read from the .ly file's MIDI export (lilypond reported 'Going back in MIDI time'); the URL is the mirror's path, not fetched."),
+    web('Sapp, Craig Stuart, encoder. *Beethoven Piano Sonatas in the Humdrum File Format* (after the Durand 1915 edition, ed. Paul Dukas). GitHub. URL.',
+        "https://github.com/craigsapp/beethoven-piano-sonatas", [SR], who="teacher",
+        note="Pathetique III and Moonlight III in the score player (apps/shared/data/full-scores/beethoven-op13-3.abc, beethoven-op27-2-3.abc), read by scripts/kern/kern2xml.py. "
+             "Licence: the repository has no LICENSE file and GitHub reports none (checked 2026-11-10; the Mozart and chorale repositories by the same encoder say CC BY-NC-SA 4.0): "
+             "used here on a password-protected teaching site on the strength of the open publication; ask Sapp if the site is ever opened. The 1915 edition itself is public domain."),
 ]

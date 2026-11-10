@@ -1,0 +1,54 @@
+X:1
+%%score [ 1 | 2 ] [ 3 | 4 | 5 ] 6 [ 7 | 8 ] [ 9 | 10 | 11 | 12 ]
+L:1/8
+Q:1/4=92
+M:3/4
+K:Bb
+V:1 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:2 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:3 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:4 treble transpose=-2 nm="Trumpet in Bb" snm="Bb Tpt."
+%%MIDI program 56
+V:5 bass nm="Trombone" snm="Tbn."
+%%MIDI program 57
+V:6 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:7 treble-8 nm="Tenori" snm="Ten."
+%%MIDI program 52
+V:8 bass nm="Bassi" snm="Bas."
+%%MIDI program 52
+V:9 treble nm="Violin" snm="Vln."
+%%MIDI program 48
+V:10 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:11 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:12 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Moderato.)""^142" .B,.A,.G,.F,.E,.D, | D,E,F,G,A,B, | z C,B,,D,E,F, | G,B,A,G,F,E, | D,E,F,G,A,B, | A,B,CD E2 | z6 | z6 | z2 |]
+V:2
+.B,.A,.G,.F,.E,.D, | D,E,F,G,A,B, | z C,B,,D,E,F, | G,B,A,G,F,E, | D,E,F,G,A,B, | A,B,CD E2 | z6 | z6 | z2 |]
+V:3
+[K:F] z6 | z6 | z6 | z6 | z6 | z6 | z6 | [A,A]4- [A,A] z | z2 |]
+V:4
+[K:C] z6 | z6 | z6 | z6 | z6 | z6 | [Ee]2- [Ee] z z2 | z6 | z2 |]
+V:5
+!mf! (G,4 B,) z | (F,4 D,) z | G,E(DB,) C2 | (G,4 B,) z | (F,4 D,) z | E,3 D,C,G, | D,2- D, z z2 | z6 | z2 |]
+V:6
+z6 | z6 | z6 | z6 | z6 | z6 |!p! TD,6- | TD,6"_cresc." | z2 |]
+V:7
+!f! G4 B z | F4 D z | G e d B c c | G2- G z B2 | F4 D z | z6 | z6 | z6 | z2 |]
+V:8
+!f! G,4 B, z | F,4 D, z | z6 | G,2- G, z B,2 | F,4 D, z | E,3 D, C, G, | D,2 D, z z2 | z6 | z2 |]
+V:9
+z6 | z6 | z6 | z6 | z6 | z6 |!f! !>![Dd]2- (3[Dd].A.B (3.F.A.E | D z z2 z2 | z2 |]
+V:10
+!f! .B,.A,.G,.F,.E,.D, | .D,.E,.F,.G,.A,.B, | z2 z .D,.E,.F, | .G,.B,.A,.G,.F,.E, | .D,.E,.F,.G,.A,.B, | .A,.B,.C.D .E z | !>!D2- (3D.A,.B, (3.F,.A,.E, | (3[D,D].A,.B, (3.F,.A,.E, !>!D,2 | z2 |]
+V:11
+!f! .B,.A,.G,.F,.E,.D, | .D,.E,.F,.G,.A,.B, | z C,B,,.D,.E,.F, | .G,.B,.A,.G,.F,.E, | .D,.E,.F,.G,.A,.B, | .A,.B,.C.D .E z | !>![D,D-]2 (3[D,D].A,.B, (3.F,.A,.E, | (3[D,D].A,.B, (3.F,.A,.E, !>!D,2 | z2 |]
+V:12
+!f! .B,.A,.G,.F,.E,.D, | .D,.E,.F,.G,.A,.B, | z C,B,,.D,.E,.F, | .G,.B,.A,.G,.F,.E, | .D,.E,.F,.G,.A,.B, | .A,.B,.C.D .E z | z6 |!f! (3D.A,.B, (3.F,.A,.E, !>!D,2 | z2 |]

@@ -1,0 +1,44 @@
+X:1
+Z:©
+%%score 1 [  2 | 3  |  4 | 5  |  6 | 7  ] 8
+L:1/8
+Q:1/4=138
+M:3/4
+K:F
+V:1 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:2 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:3 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:4 treble transpose=-2 nm="Trumpet in Bb 1" snm="Bb Tpt. 1"
+%%MIDI program 56
+V:5 treble transpose=-7 nm="Trumpet\n(c-alta F)" snm="F Tpt."
+%%MIDI program 56
+V:6 alto nm="Trombone 1" snm="Tbn. 1"
+%%MIDI program 57
+V:7 bass nm="Trombone 2" snm="Tbn. 2"
+%%MIDI program 57
+V:8 perc nm="Piatti" snm="Piat."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap =g 87
+I:percmap =g g 87 normal
+%%MIDI drummap g 87
+I:percmap g g 87 normal
+V:1
+[K:G]"^Allegro."!ff!"^199" [^df]"_marcato" z"^a 2" .b.g .c'._a | .b.g .b.g .e.b | ^af =a=f _b_g | a=f af da | ^ge =g_e cg | ^fd =f_d _Bf | z2 |]
+V:2
+[K:C] [^GB]"^secco" z [Ace] z [A_df] z | [Ace] z [Ace] z [Ace] z | [B^d] z [G_B=d] z [G_c_e] z | [G_Bd] z [GBd] z [GBd] z | [A^c] z [F_A=c] z [FAc] z | [GB] z [_E_G_B] z [EGB] z | z2 |]
+V:3
+[K:C] E z z2 z2 | E z F z ^F z | G z z2 z2 | z2 _E z =E z | F z z2 D z | _E z z2 C z | z2 |]
+V:4
+[K:G]!ff!"^a 2" B"_marcato" z .b.g .c'._a | .b.g .b.g .e.b | ^af =a=f _b_g | a=f af da | ^ge =g_e cg | ^fd =f_d _Bf | z2 |]
+V:5
+[K:C] z2"^secco" e z f z | e z e z e z | ^d z =d z _e z | d z d z d z | ^c z =c z c z | B z _B z B z | z2 |]
+V:6
+z2"_secco" [DF] z [D_G] z | [DF] z [DF] z [DF] z | E z [C_E] z [C_F] z | [C_E] z [CE] z [CE] z | D z [B,_D] z [B,D] z | C z [_A,_C] z [A,C] z | z2 |]
+V:7
+z6 | A, z B, z =B, z | C z z2 z2 | z2 _A, z =A, z | B, z z2 G, z | _A, z z2 F, z | z2 |]
+V:8
+[K:none] g2 g2 g2 | =g2 g2 g2 | g2 z2 z2 | z2 g2 g2 | g2 z2 g2 | =g2 z2 g2 | z2 |]

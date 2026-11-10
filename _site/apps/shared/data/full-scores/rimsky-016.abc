@@ -1,0 +1,46 @@
+X:1
+%%score [ 1 | 2 ] [ 3 | 4 ] [  5 | 6  | 7 | 8 | 9 | 10 ]
+L:1/8
+Q:1/4=88
+M:3/4
+K:Db
+V:1 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:2 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:3 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:4 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:5 treble nm="Pizzicato Violin 1" snm="Vln. 1"
+%%MIDI program 45
+V:6 treble nm="Pizzicato Violin 2" snm="Vln. 2"
+%%MIDI program 45
+V:7 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:8 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:9 bass transpose=-12 nm="Pizzicato Double Bass" snm="Cb."
+%%MIDI program 45
+V:10 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Andantino."!pp! .f.d .e.f .g.a | .f.d .e.f .g.a | .g.b .a.g .f.e | .a.f .g.a .b.c' |]
+V:2
+[K:Eb]!pp! .[Be].[Be] .[Be].[Be] .[Be].[Be] | .[Be].[Be] .[Be].[Be] .[Be].[Be] | .[ce].[ce] .[Ge].[Ae] .[Be].[ce] | .[Be].[Be] .[Be].[Be] .[Be].[Be] |]
+V:3
+[K:Ab]!pp! [Ec]6- | [Ec]4 z2 | (([Fd]6 | [Ec]4)) z2 |]
+V:4
+[K:Ab]!pp! A6- | A4 z2 | A6- | A4 z2 |]
+V:5
+!ppp! z2 [A,Fd]2 z2 | z2 [A,Fd]2 z2 | z2 [B,Gd]2 z2 | z2 [A,Fd]2 z2 |]
+V:6
+!ppp! z2 [A,Fd]2 z2 | z2 [A,Fd]2 z2 | z2 [B,Gd]2 z2 | z2 [A,Fd]2 z2 |]
+V:7
+!p!"_dolce" ((F,2 A,2) !tenuto!A,2 | A,4 G,F,) | (B,4 A,G,) | A,4 (A,G,) |]
+V:8
+!p!"_dolce" ((F,2 A,2) !tenuto!A,2 | A,4 G,F,) | (B,4 A,G,) | A,4 (A,G,) |]
+V:9
+!pp! D,2 z2 z2 | D,2 z2 z2 | D,2 z2 z2 | D,2 z2 z2 |]
+V:10
+!pp! D,6- | D,6- | D,6- | D,6 |]

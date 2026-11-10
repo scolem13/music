@@ -1,0 +1,54 @@
+X:1
+%%score [ 1 | 2 | 3 ] [ 4 | 5 ] [ 6 | 7 | 8 | 9 | 10 | 11 | 12 ]
+L:1/8
+Q:1/4=88
+M:3/4
+K:D
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:4 treble transpose=-7 nm="Cor. I. II." snm="Hn. 1 & 2"
+%%MIDI program 60
+V:5 treble transpose=-7 nm="Cor. III." snm="Hn. 3"
+%%MIDI program 60
+V:6 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:7 treble nm="Violin II\nPizz." snm="Vln. II.\npizz."
+%%MIDI program 45
+V:8 treble nm="Violin II\nArco" snm="Vln. II\narco"
+%%MIDI program 48
+V:9 alto nm="Pizzicato Viola" snm="Vla"
+%%MIDI program 45
+V:10 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:11 bass transpose=-12 nm="Double Bass" snm="D.B.\narco"
+%%MIDI program 48
+V:12 bass transpose=-12 nm="Pizzicato Double Bass" snm="D.B.\npizz."
+%%MIDI program 45
+V:1
+"^Andantino."!pp! (d6 | (=c6) | (c6) | d4) z2 | z6 | z6 | z6 | z6 |]
+V:2
+"_dolce" (!tenuto!f2 !tenuto!a2 !tenuto!a2 | a4 gf) | (b4 ag | a4) z2 | z6 | z6 | z6 | z6 |]
+V:3
+[K:E]!pp! (([_F_c]6 | (([_G_A]6)) | (([_GA]6)) |!mp! [_A_c]4))"^a 2" (_C"^dolce"A, | _A,=A, !tenuto!_C2 !tenuto!C2 | _C4 A,_A,) | (_D4 _CA, | _C4) z2 |]
+V:4
+[K:A] [Ec] z z2 z2 | z6 | z6 | z6 |!pp! z2 [Ec]2 z2 | z2 [CB]2 z2 | z2 [DB]2 z2 | z2 [Ec]2 z2 |]
+V:5
+[K:A] A z z2 z2 | z6 | z6 | z6 |!pp! z2 A2 z2 | z2 =G2 z2 | z2 G2 z2 | z2 A2 z2 |]
+V:6
+z6 | z6 | z6 | z6 |!pp!"^Con sord." .f.agfed | afgab=c' | gbagfe | fagfed |]
+V:7
+"^Con sord."!pp! z2"^pizz." [Dd]2 z2 | z2 [E=c]2 z2 | z2 [Ec]2 z2 | z2 [Dd]2 z2 | z6 | z6 | z6 | z6 |]
+V:8
+z6 | z6 | z6 | z6 |!pp! .[Ad].[Ad].[Ad].[Ad].[FA].[FA] | [F=ce][Fce][Fce][Fce][Fce][Fce] | [Gce][Gce][Gce][Gce][Gce][Gce] | [FAd][FAd][FAd][FAd][FA][FA] |]
+V:9
+"^Con sord."!pp! z2"^pizz." [A,A]2 z2 | z2 [A,F]2 z2 | z2 [A,G]2 z2 | z2 [A,F]2 z2 | z6 | z6 | z6 | z6 |]
+V:10
+!pp!"^Con sord." (F,D,E,F,G,A,) | (A,F,G,A,B,=C) | (G,E,F,G,A,B,) | (A,F,G,A,B,C) | D z z2 z2 | z6 | z6 | z6 |]
+V:11
+!pp!"^arco" D,6- | D,6- | D,6- | D,6- | D,6- | D,6- | D,6- | D,6 |]
+V:12
+!pp!"^pizz." D,2 z2 z2 | z6 | D,2 z2 z2 | D,2 z2 z2 | D,2 z2 z2 | D,2 z2 z2 | D,2 z2 z2 | D,2 z2 z2 |]

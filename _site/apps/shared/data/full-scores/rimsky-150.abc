@@ -1,0 +1,82 @@
+X:1
+Z:©
+%%score [ 1 | 2 | ( 3 4 ) | 5 | 6 | 7 ] [ 8 | 9 ] 10 11 12 { 13 | 14 } [  15 | 16  | 17 | 18 ]
+L:1/8
+Q:1/4=100
+M:4/4
+K:D
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble 
+%%MIDI program 68
+V:5 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:6 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:7 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:8 treble transpose=-7 nm="Horn I. II. III." snm="Hn. 1 2 3"
+%%MIDI program 60
+V:9 bass transpose=-7 nm="Horn IV." snm="Hn. 4"
+%%MIDI program 60
+V:10 perc nm="Triangle" snm="Trgl."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap =f 96
+I:percmap =f f 96 normal
+V:11 treble nm="Chimes" snm="Chm."
+%%MIDI program 14
+V:12 treble transpose=12 nm="Celesta" snm="Cel."
+%%MIDI program 8
+V:13 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:14 treble 
+%%MIDI program 46
+V:15 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:16 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:17 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:18 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+!p!"_stacc." .a.f.d.e .A.d.f.e | .a.f.d.e .A.d.f.e | .a.f.b.a .d'.a.f.d | .a.f.b.a .d'.f.a.d' | z2 |]
+V:2
+!p!"_stacc." .a.f.d.e .A.d.f.e | .a.f.d.e .A.d.f.e | .a.f.b.a .d'.a.f.d | .a.f.b.a .d'.f.a.d' | z2 |]
+V:3
+!p! afde Adfe | afde Adfe | afba d'afd | afba d'fad' | z2 |]
+V:4
+A15/2 A/4A/4 | A15/2 A/4A/4 | A4 A4 |{AA} A8 | x2 |]
+V:5
+[K:A]!p! c15/2 c/4c/4 | c15/2 c/4c/4 | c4 c4 |{cc} c8 | z2 |]
+V:6
+[K:E]!p! [G,B,E]15/2 [G,B,E]/4[G,B,E]/4 | [G,B,E]15/2 [G,B,E]/4[G,B,E]/4 | [G,B,E]4 [G,B,E]4 | {EE} [G,B,E]8 | z2 |]
+V:7
+!p! [F,A,]15/2 [F,A,]/4[F,A,]/4 | [F,A,]15/2 [F,A,]/4[F,A,]/4 | [F,A,]4 [F,A,]4 | {A,A,} [F,A,]8 | z2 |]
+V:8
+[K:A]"_Con sord." [Ace]15/2 [Ace]/4[Ace]/4 | [Ace]15/2 [Ace]/4[Ace]/4 | [Ace]4 [Ace]4 | {ee} [Ace]8 | z2 |]
+V:9
+[K:A]!p!"_Senza sord." (A,2 G,2 F,2 E,2) | (A,2 G,2 F,2 E,2) | (A,2 G,2) F,4 | (A,2 G,2) (F,2 E,2) | z2 |]
+V:10
+[K:none] =f2 z2 z4 | =f2 z2 z4 | z8 | z8 | z2 |]
+V:11
+z8 | z8 | A2 B2 d2 z2 | A2 B2 d2 z2 | z2 |]
+V:12
+[Aa][Ff][Dd][Ee] [A,A][Dd][Ff][Ee] | [Aa][Ff][Dd][Ee] [A,A][Dd][Ff][Ee] | [Aa][Ff][Bb][Aa] [dd'][Aa][Ff][Dd] | [Aa][Ff][Bb][Aa] [dd'][Ff][Aa][dd'] | z2 |]
+V:13
+ a'f'd'e' ad'f'e' | a'f'd'e' ad'f'e' | a'f'b'a' d''a'f'd' | a'f'b'a' d''f'a'd'' | z2 |]
+V:14
+afde Adfe | afde Adfe | afba d'afd | afba d'fad' | z2 |]
+V:15
+!p!"^pizz." a2 z2 z4 | a2 z2 z4 | a2 b2 d'2 z2 | a2 b2 d'2 z2 | z2 |]
+V:16
+!p!"^pizz." a2 z2 z4 | a2 z2 z4 | a2 b2 d'2 z2 | a2 b2 d'2 z2 | z2 |]
+V:17
+!p!"^pizz." D,2 C,2 B,,2 A,,2 | D,2 C,2 B,,2 A,,2 | D,2 C,2 B,,2 z2 | D,2 C,2 B,,2 A,,2 | z2 |]
+V:18
+!p!"^pizz." D2 z2 z4 | D2 z2 z4 | z4 B,2 z2 | D2 C2 B,2 A,2 | z2 |]

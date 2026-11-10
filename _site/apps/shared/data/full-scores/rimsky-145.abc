@@ -1,0 +1,95 @@
+X:1
+Z:©
+%%score [ ( 1 2 ) | ( 3 4 ) | ( 5 6 ) | 7 | ( 8 9 ) ] [ 10 |  11 | 12  | 13 ] 14 [ ( 15 16 ) | ( 17 18 ) ] { 19 | 20 } [ 21 | 22 ]
+L:1/8
+Q:1/4=66
+M:6/8
+K:C
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble 
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble 
+%%MIDI program 68
+V:5 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:6 treble transpose=-3 
+%%MIDI program 71
+V:7 treble transpose=-14 nm="Bass Clarinet" snm="B. Cl."
+%%MIDI program 71
+V:8 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:9 bass 
+%%MIDI program 70
+V:10 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:11 treble transpose=-3 nm="Trumpet in A" snm="A Tpt."
+%%MIDI program 56
+V:12 treble transpose=-7 nm="Trumpet\n(c-alta F)" snm="F Tpt."
+%%MIDI program 56
+V:13 alto nm="Trombone" snm="Tbn."
+%%MIDI program 57
+V:14 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:15 treble nm="Soprani" snm="Sopr."
+%%MIDI program 52
+V:16 treble 
+%%MIDI program 52
+V:17 treble nm="Alti" snm="Alt."
+%%MIDI program 52
+V:18 treble 
+%%MIDI program 52
+V:19 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:20 bass 
+%%MIDI program 46
+V:21 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:22 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Andantino.""^242" z6 | z6 |!p! ^c6- | c6- | (c3 ^B=B^B |"_dim." ^c6) | z2 |]
+V:2
+x6 | x6 | A6- | A6- | (A3 (^G3) | A6) | x2 |]
+V:3
+z6 | z6 | z6 | z6 |!pp! (^c3 ^B=B^B | ^c) z z z3 | z2 |]
+V:4
+x6 | x6 | x6 | x6 | (A3 (^G3) | A) z z z3 | x2 |]
+V:5
+[K:Eb] z6 | z6 |!p! =A6- | A6- | (A3 (=B3) |"_dim." =A6) | z2 |]
+V:6
+[K:Eb] x6 | x6 | ^F6- | F6- | (F3 (G)^G=G | ^F6) | x2 |]
+V:7
+[K:D]!p! F,6- | F,6- | F,6- | F,6- | F, z z z3 | z6 | z2 |]
+V:8
+[G,_B,] z z z3 | z6 | z6 | z6 |[K:alto]!pp! (^F3 (^G3) | ^F) z z z3 | z2 |]
+V:9
+x6 | x6 | x6 | x6 |[K:alto] (^D3 (E)^E=E | ^D) z z z3 | x2 |]
+V:10
+[K:G] z6 | z6"_II. IV.""^I. III." |!p! !>![^A,^A]6- |"_dim." [A,A]6 | z6 | z6 | z2 |]
+V:11
+[K:Eb] z6 | z6 |!p! !>![c=e]6- |"_dim." [ce]6 | z6 | z6 | z2 |]
+V:12
+[K:G] z6 | z6 |!p! !>!^c6- |"_dim." c6 | z6 | z6 | z2 |]
+V:13
+z6 | z6 |!p! !>![^F,A,^C]6- |"_dim." [F,A,C]6 | z6 | z6 | z2 |]
+V:14
+!pp! T_E,6- | TE,6- | TE,6- | TE,6- | TE,6- | E, z z z3 | z2 |]
+V:15
+"_(derrière la cène)" z6 | z6 |"^(Sadko frappe\nles cordes)" z6 | z6"^(Au loin, comme un\necho, voix de femmes)" | (^c3 ^B=B^B | ^c6)!>(!!>)! | z2 |]
+V:16
+x6 | x6 | x6 | x6 | (A3 (^G3) | A6) | x2 |]
+V:17
+z6 | z6 | z6 | z6 | (^F3 (^G3) | ^F6)!>(!!>)! | z2 |]
+V:18
+x6 | x6 | x6 | x6 | (^D3 (E)^E=E | ^D6) | x2 |]
+V:19
+z6 | z6 |!ff! [^D^FA^c]6- | [DFAc]6 | z6 | z6 | z2 |]
+V:20
+z6 | z6 | [^D,^F,A,^C]6- | [D,F,A,C]6 | z6 | z6 | z2 |]
+V:21
+_E, z z z3 | z6 |!p! ^D,,6- | D,,6- |!pp! D,,6- | D,,6 | z2 |]
+V:22
+_E, z z z3 | z6 | z6 | z6 | z6 |!pp!"^pizz." ^D,2 z z3 | z2 |]

@@ -1,0 +1,70 @@
+X:1
+%%score [ 1 | 2 | 3 | 4 | 5 ] [ 6 7 ] [ ( 8 9 ) | 10 ] [  11 | 12  | 13 | 14 | 15 | 16 ]
+L:1/8
+Q:3/8=112
+M:9/8
+K:D
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:4 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 treble nm="La R." snm="La R."
+%%MIDI program 54
+V:7 treble-8 nm="Sadko." snm="Sad."
+%%MIDI program 54
+V:8 treble nm="Soprani" snm="S."
+%%MIDI program 52
+V:9 treble 
+%%MIDI program 52
+V:10 treble nm="Alti" snm="A."
+%%MIDI program 52
+V:11 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:12 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:13 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:14 bass nm="Cello I" snm="Vc."
+%%MIDI program 48
+V:15 bass nm="Cello II" snm="Vc."
+%%MIDI program 48
+V:16 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Allegro non troppo.)" z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z3 z3"^Solo""_dolce" (d'3 | c'2 b c'2 d' e'3) | z3 z3 (d'3 | c'2 b c'2 d' e'3) | z2 |]
+V:2
+z8 z | z8 z | z8 z | z8 z | (A2 B =c2 B A2 e | d2 e B2 A B3) | (B2 c d2 c B2 f | e2 f c2 B c3) | z8 z | z8 z | z8 z | z8 z | z2 |]
+V:3
+[K:A] z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z8 z |"_dolce" (B2 c d2 c B2 f | e6-) e3 | (B2 c d2 c B2 f | (e6) B) z z | z2 |]
+V:4
+[K:F] z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z3 z3"^Solo""_dolce" (f3 | e2 d e2 f g3) | z3 z3 (f3 | e2 d e2 f g3) | z2 |]
+V:5
+!p! (A,6 ^G,3) | (G,6 F,3) | (A,3 ^A,2 B, C2 D) | (E3 A,2 ^G, A,2) z | z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z2 |]
+V:6
+z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z3 (d3 c2) B | c2 d e3- e z z | z3 d3 c2 B | c2 d e3- e z z | z2 |]
+V:7
+z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z3 z3 d3 | c2 B c2 d e2 z | z3 z3 d3 | c2 B c2 d e2 z | z2 |]
+V:8
+"^dolce" A2 f e2 d c2 B | (A2 B) (F2 E) (F2 !breath!G) | A2 f e2 d c2 B | (A2 B) (F2 E) [EA]2 z | A2 B =c2 B A2 e | (d2 e) (B2 A) B3 | B2 c d2 c B2 f | (e2 f) (c2 B) c2 z | z z [EG] [eg]6- | [eg]6- [eg] z z | z z [EG] [eg]6- | [eg]6-"^dim." [eg] z z | z2 |]
+V:9
+A2 A A2 A c2 B | x8 x | A2 A ^A2 B c2 B | x8 x | A6 G3 | F3 F3 G2 z | B6 A3 | ^G3 G3 A2 z | x8 x | x8 x | x8 x | x8 x | x2 |]
+V:10
+"_dolce" F2 F F2 F [D=F]2 [DF] | [CE]3 C3 D2 z | F2 F F2 F [DF]2 [DF] | [CE]3 D3 C2 z | z3 z3 =C2 C | D3 [=CD]3 [B,D]2 z | z3 z3 D2 D | E3 [DE]3 [CE]2 z | E2 F G2 F E2 B | A3- A2 A E2 z | E2 F G2 F E2 B | A3- A2 A E2 z | z2 |]
+V:11
+!p! (A2 f e2 d c2 B) | (A2 B F2 E F2 G) | (A2 f e2 d c2 B) | (A2 B F2 E A3) | (A2 B =c2 B A2 e) | (d2 e B2 A B3) | (B2 c d2 c B2 f) | (e2 f c2 B c3) | z3"_dolce" (d3 c2 B) | c2 d!>(! e3-!>)! e z z | z3 (d3 c2 B) | (c2 d e3-) e z z | z2 |]
+V:12
+!p! (FDF) (FDF) (=FDF) | (ECE) (CA,C) (DA,D) | (FDF) (FDF) (FDF) | (ECE) (DB,D) (CEC) | (E=CE) (ECE CEC) | (=CDC DCD B,DB,) | (FDF) (FDF DFD) | (DED EDE CEC) | (DB,D B,DB, DB,D) | (CA,C A,CA, CA,C) | (DB,D B,DB, DB,D) | (CA,C A,CA, ECE) | z2 |]
+V:13
+!p! (A,6 ^G,3) | (G,6 F,3) | (A,3 ^A,2 B, C2 D) | (E3 A,2 ^G, A,2) z | z3 A3- (A2 G) | (F6 G3) | z3 B3- (B2 A) | (^G6 A3) | (B,G,B, G,B,G, B,G,B,) | (A,G,A, G,A,G, A,G,A,) | (B,G,B, G,B,G, B,G,B,) | (A,G,A, G,A,G, CG,C) | z2 |]
+V:14
+!p! A,,6- A,,3- | A,,6- A,,3- | A,,6- A,,3- | A,,6- A,,3 | A,,6- A,,3 | (D,6 G,,3) | B,,6- B,,3 | (E,6 A,,3) |"_dolce" (G,,2 A,, B,,2 A,, G,,2 D, | C,6-) C,3 | (G,,2 A,, B,,2 A,, G,,2 D, | (C,6) G,,3) | z2 |]
+V:15
+z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | z8 z | (E,6 E,3) | A,,6- A,,3 | (E,6 E,3) | A,,6- A,,3 | z2 |]
+V:16
+!p! A,,6- A,,3- | A,,6- A,,3- | A,,6- A,,3- | A,,6- A,,3 | A,,6- A,,3 | (D,6 G,,3) | B,,6- B,,3 | (E,6 A,,3) | (E,6 E,3) | A,,6- A,,3 | (E,6 E,3) | A,,6- A,,3 | z2 |]

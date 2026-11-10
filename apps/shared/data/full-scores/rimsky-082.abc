@@ -1,0 +1,54 @@
+X:1
+%%score [ 1 | 2 | 3 | 4 | 5 | 6 ] [ 7 | 8 ] 9 [  10 | 11  | 12 ]
+L:1/8
+Q:1/4=72
+M:4/4
+K:C
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:4 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:7 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:8 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:9 treble-8 nm="Sadko." snm="Sad."
+%%MIDI program 54
+V:10 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:11 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:12 treble nm="Viola" snm="Vla."
+%%MIDI program 48
+V:1
+"^Andante.""^77"!f! (3[b^d'^f']({/^g'} [bd'f'])({/g'}[bd'f'])({/g'}"_dim." (3[bd'f'])({/g'}[bd'f'])({/g'}[bd'f'])({/g'} (3[bd'f'])({/g'}[bd'f'])({/g'}[bd'f'])({/g'} (3[bd'f'])({/g'}[bd'f'])({/g'}[bd'f']) | !p!!mf!({/^g'} (3[b^d'^f'])({/^g} [B^d^f])({/g}[Bdf])({/g}"_dim." (3[Bdf])({/g}[Bdf])({/g}[Bdf])({/g} (3[Bdf])({/g}[Bdf])({/g}[Bdf])({/g} (3[Bdf])({/g}[Bdf])({/g}[Bdf]) | ({/^g} (3[B^d^f])({/g}[Bdf])({/g}[Bdf])({/g} (3[Bdf])({/g}[Bdf])({/g}[Bdf])({/g} (3[A=df])({/g}[Adf])({/g}[Adf])({/g} (3[Adf])({/g}[Adf])({/g}[Adf]) | ({/^g} (3[B^d^f])({/g}[Bdf])({/g}[Bdf])({/g} (3[Bdf])({/g}[Bdf])({/g}[Bdf])({/g} (3[A=df])({/g}[Adf])({/g}[Adf])({/g} (3[Adf])({/g}[Adf])({/g}[Adf]) | ({/^g} (3[B^d^f])({/g}[Bdf])({/g}[Bdf])({/g} (3[Bdf])({/g}[Bdf])({/g}[Bdf])({/g} (3[A=df])({/g}[Adf])({/g}[Adf])({/g} (3[Adf])({/g}[Adf])({/g}[Adf]) | ({/^g}!<(! (3[^A^c^f])[Acf][Acf] (3[Acf][Acf]!<)![Acf] (3[Acf]!>(![Acf][Acf] (3[Acf][Acf]!>)![Acf] | z2 |]
+V:2
+!f! [^d^f]8-"_dim." | [df] z z2 z4 | z8 | z8 | z8 | z8 | z2 |]
+V:3
+[K:G]!f! f8-"_dim." | f z z2 z4 | (^c2 F>^G A2 B>c) | (^c2 F>^G A2 B>c) | (^c2 ^d>c e2 d>e) | ^c6- c z | z2 |]
+V:4
+[K:Eb]!f! (3[d^fa] [dfa][dfa]"_dim." (3[dfa][dfa][dfa] (3[dfa][dfa][dfa] (3[dfa][dfa][dfa] | !p! [d^fa] z z2 z4 | z8 | z8 | z8 | z8 | z2 |]
+V:5
+!mf! B,,8-"_dim." |!pp! B,, z z2 z4 | z8 | z8 | z8 | z8 | z2 |]
+V:6
+!mf! B,,8-"_dim." |!pp! B,, z z2 z4 | z8 | z8 | z8 | z8 | z2 |]
+V:7
+[K:G]!mf! [^C^c]8-"_dim." |!pp! [Cc] z z2 z4 | z8 | z8 | z8 | z8 | z2 |]
+V:8
+[K:G]!mf! [F^A]8-"_dim." |!pp! [FA] z z2 z4 | z8 | z8 | z8 | z8 | z2 |]
+V:9
+"^Sur le lac nagent en bande des cygnes blancs et des canards gris." z4 z2 B3/2 ^c/ | ^d2 d3/2 e/ ^f7/2 d/ | ^d z z2 z4 | z8 | z8 | z8 | z2 |]
+V:10
+"^div. a 3"!f! (3^f'({/^g'} [b^d'f'])({/g'}[bd'f'])({/g'}"_dim." (3[bd'f'])({/g'}[bd'f'])({/g'}[bd'f'])({/g'} (3[bd'f'])({/g'}[bd'f'])({/g'}[bd'f'])({/g'} (3[bd'f'])({/g'}[bd'f'])({/g'}[bd'f']) | !p!({/^g'} [b^d'^f']) z z2 z4 | z8 | z8 | z8 | z8 | z2 |]
+V:11
+"^div. a 3"!f! (3^d'({/^g} [B^d^f])({/g}[Bdf])({/g}"_dim." (3[Bdf])({/g}[Bdf])({/g}[Bdf])({/g} (3[Bdf])({/g}[Bdf])({/g}[Bdf])({/g} (3[Bdf])({/g}[Bdf])({/g}[Bdf]) | !p!({/^g} [B^d^f]) z z2 z4 | z8 | z8 | z8 | z8 | z2 |]
+V:12
+b z z2 z4 |[K:alto] z8 |"_dolce" (^F2 B,>^C D2 E>F) | (^F2 B,>^C D2 E>F) | (^F2 ^G>F A2 G>A) | ^F6- F z | z2 |]

@@ -1,0 +1,35 @@
+X:1
+Z:©
+%%score [ 1 | 2 | 3 ] [ 4 | 5 ] 6 7
+L:1/8
+Q:1/4=92
+M:3/4
+K:C
+V:1 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:2 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:3 bass nm="Bassoon II." snm="Bsn."
+%%MIDI program 70
+V:4 treble transpose=-7 nm="Horn I. II." snm="Hn. 1 2"
+%%MIDI program 60
+V:5 treble transpose=-7 nm="Horn III." snm="Hn. 3"
+%%MIDI program 60
+V:6 treble-8 nm="Kouterma." snm="K."
+%%MIDI program 54
+V:7 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:1
+!mf! [c_e]2 [c_f]2 [ce]2 | [_e_g]2 [_dg]2 [ce]2 | [c_e]2 [c_f]2 [ce]2 | [_e_g]2 [_dg]2 [ce]2 | z2 |]
+V:2
+[K:G]!mf! _e2 e2 e2 | f2 _f2 _e2 | _e2 e2 e2 | f2 _f2 _e2 | z2 |]
+V:3
+!mf! z _G, z _F, z G, | _E,2 _F,_G, _A,2 | z _G, z _F, z G, | _E,2 _F,_G, _A,2 | z2 |]
+V:4
+[K:G]!mf! !plus![_E_B]2 !plus![E_c]2 !plus![EB]2 | !plus![F_d]2 !plus![_Fd]2 !plus![_E_B]2 | !plus![_E_B]2 !plus![E_c]2 !plus![EB]2 | !plus![F_d]2 !plus![_Fd]2 !plus![_E_B]2 | z2 |]
+V:5
+[K:G]!mf! !plus!G2 !plus!G2 !plus!G2 | !plus!_B2 !plus!_A2 !plus!G2 | !plus!G2 !plus!G2 !plus!G2 | !plus!_B2 !plus!_A2 !plus!G2 | z2 |]
+V:6
+_e e _f f e e | _g2 g2 _e2 | _e e _f f e e | _g2 g2 _e2 | z2 |]
+V:7
+!mf! z"_pizz." _G, z _F, z G, | _E,2 _F,_G, _A,2 | z _G, z _F, z G, | _E,2 _F,_G, _A,2 | z2 |]

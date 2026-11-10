@@ -1,0 +1,83 @@
+X:1
+Z:©
+%%score [ ( 1 2 3 ) | ( 4 5 ) | 6 | ( 7 8 9 ) | 10 ] [ ( 11 12 ) | ( 13 14 ) ] 15 { 16 | 17 } { 18 | 19 }
+L:1/8
+Q:1/2=56
+M:2/2
+K:Db
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble 
+%%MIDI program 73
+V:3 treble 
+%%MIDI program 73
+V:4 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:5 treble 
+%%MIDI program 68
+V:6 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:7 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:8 treble transpose=-2 
+%%MIDI program 71
+V:9 treble transpose=-2 
+%%MIDI program 71
+V:10 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:11 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:12 treble transpose=-7 
+%%MIDI program 60
+V:13 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:14 treble transpose=-7 
+%%MIDI program 60
+V:15 treble-8 nm="Sadko." snm="S."
+%%MIDI program 54
+V:16 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:17 bass 
+%%MIDI program 46
+V:18 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:19 bass 
+%%MIDI program 0
+V:1
+"^Andante maestoso."!mf!"^338" d8 | d8 | e8 | (f6 e2 | d4) x4 | z2 |]
+V:2
+A8 | B8 | (B4 c4) | (d6 c2 | B4) x4 | x2 |]
+V:3
+F8 | F8 | G4 A4 | A8 | F4 x4 | x2 |]
+V:4
+!mf! d8 | d8 | e8 | (f6 e2 | d4) x4 | z2 |]
+V:5
+A8 | B8 | (B4 c4) | (d6 c2 | B4) x4 | x2 |]
+V:6
+[K:Ab]!mf! c8 | c8 | (d4 e4) | (e8 | c4) x4 | z2 |]
+V:7
+[K:Eb]!mf! E8 | E8 | F8 | (G6 F2 | E4) x4 | z2 |]
+V:8
+[K:Eb] B,8 | C8 | (C4 D4) | (E6 D2 | C4) x4 | x2 |]
+V:9
+[K:Eb] G,8 | G,8 | A,4 B,4 | B,8 | G,4 x4 | x2 |]
+V:10
+!mf!"^a 2" D,8 | B,,8 | (E,4 A,,4) | (D,6 A,,2) | B,,4 x4 | z2 |]
+V:11
+[K:Ab]!mf! A8 | A8 | B8 | (c6 B2 | A4) x4 | z2 |]
+V:12
+[K:Ab] E8 | F8 | (F4 G4) | (A6 G2 | F4) x4 | x2 |]
+V:13
+[K:Ab]!mf! C8 | C8 | (D4 E4) | (E8 | C4) x4 | z2 |]
+V:14
+[K:Ab] A,8 | F,8 | (B,4 E,4) | (A,6 E,2) | F,4 x4 | x2 |]
+V:15
+z4 d2 d2 | d4 c2 d2 | e4 e2 e2 | (f3 g f2) e2 | d4 x4 | z2 |]
+V:16
+!f! !arpeggio![FAd]8 | !arpeggio![DFBd]8 | !arpeggio![GBe]4 [EAce]4 | [FAdf]6 [EAce]2 | !arpeggio![DFBd]8 | z2 |]
+V:17
+[D,F,A,D]8 | [B,,F,B,]8 | [E,G,B,E]4 [A,,E,A,C]4 | [D,F,A,D]6 [A,,E,A,C]2 | [B,,F,B,]8 | z2 |]
+V:18
+!f! !arpeggio![FAd]8 | !arpeggio![DFBd]8 | !arpeggio![GBe]4 [EAce]4 | [FAdf]6 [EAce]2 | !arpeggio![DFBd]8 | z2 |]
+V:19
+[D,F,A,D]8 | [B,,F,B,]8 | [E,G,B,E]4 [A,,E,A,C]4 | [D,F,A,D]6 [A,,E,A,C]2 | [B,,F,B,]8 | z2 |]

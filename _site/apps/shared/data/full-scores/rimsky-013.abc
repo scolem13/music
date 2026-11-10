@@ -1,0 +1,42 @@
+X:1
+%%score [ 1 | 2 ] [  3 | 4  | ( 5 6 ) | 7 | 8 | 9 ]
+L:1/8
+Q:1/4=88
+M:3/4
+K:Db
+V:1 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:2 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:3 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:4 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:5 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:6 alto 
+%%MIDI program 48
+V:7 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:8 bass transpose=-12 nm="Pizzicato Double Bass" snm="Cb."
+%%MIDI program 45
+V:9 bass transpose=-12 nm="Double Bass 2" snm="D.B. 2"
+%%MIDI program 48
+V:1
+[K:Ab]"^Andantino."!ppp! [Ec]6- | [Ec]4 z2 | (([Fd]6 | [Ec]4)) z2 | z6 |]
+V:2
+[K:Ab]!ppp! A6- | A4 z2 | A6- | A4 z2 | z6 |]
+V:3
+!pp!"_Con sord." ((f2 a2) !tenuto!a2 | a4 gf) | (b4 ag) | a4 (ag) | z6 |]
+V:4
+!pp!"_Con sord." ((f2 a2) !tenuto!a2 | a4 gf) | (b4 ag) | a4 (ag) | z6 |]
+V:5
+!pp!"^Con sord." d6- | d4 A2 | d6- | d4 d2 | z6 |]
+V:6
+(A2 F4-) | (F4 ED) | (G4 DE | F4) (FE) | x6 |]
+V:7
+!pp!"^Con sord." (F,D,E,F,G,A,) | (F,D,E,F,G,A,) | (G,B,A,G,F,E, | A,)(F,G,A,B,C | D) x4 x |]
+V:8
+!pp!"^pizz." D,2 z2 z2 | z6 | z6 | D,2 z2 z2 | z6 |]
+V:9
+!pp!"^arco" D,6- | D,6- | D,6- | D,6- | z6 |]

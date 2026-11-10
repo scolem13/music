@@ -1,0 +1,106 @@
+X:1
+%%score [ 1 | 2 | 3 | 4 | 5 | 6 | 7 ] [  ( 8 9 ) | ( 10 11 )  | ( 12 13 ) | 14 ] [ 15 | 16 | 17 | 18 | 19 | 20 ] [  21 | 22  | 23 | 24 | 25 ]
+L:1/8
+Q:1/8=96
+M:6/8
+K:Ab
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:4 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:5 treble transpose=-14 nm="Bass Clarinet" snm="B. Cl."
+%%MIDI program 71
+V:6 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:7 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:8 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:9 treble transpose=-7 
+%%MIDI program 60
+V:10 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:11 treble transpose=-7 
+%%MIDI program 60
+V:12 bass nm="Trombone" snm="Tbn."
+%%MIDI program 57
+V:13 bass 
+%%MIDI program 57
+V:14 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:15 treble nm="Soprani I" snm="S1"
+%%MIDI program 52
+V:16 treble nm="Soprani II" snm="S2"
+%%MIDI program 52
+V:17 treble nm="Alti" snm="A"
+%%MIDI program 52
+V:18 treble-8 nm="Tenori" snm="T"
+%%MIDI program 52
+V:19 bass nm="Bassi I" snm="B1"
+%%MIDI program 52
+V:20 bass nm="Bassi II" snm="B2"
+%%MIDI program 52
+V:21 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:22 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:23 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:24 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:25 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Andantino.)"!f! b-(b/=a/b/_c'/ d'2 c'/b/) | a-(a/g/a/b/ !tenuto!_c'2 .c') | a-(a/g/a/b/ _c'2 b/a/) | g-(g/^f/g/a/ b3) | z2 |]
+V:2
+!f! (a/_f/)(g/e/)(a/f/) (g/e/)(a/f/)(g/e/) | (_g/__e/)(f/d/)(g/e/) (f/d/)(g/e/)(f/d/) | (_g/__e/)(f/d/)(g/e/) (f/d/)(g/e/)(f/d/) | (_f/B/)(f/B/)(f/_c/) (=d/A/)(d/A/)(d/A/) | z2 |]
+V:3
+[K:Eb]!f! f-(f/=e/f/_g/ a2 g/f/) | e-(e/d/e/f/ !tenuto!_g2 .g) | e-(e/d/e/f/ _g2 f/e/) | d-(d/^c/d/e/ f3) | z2 |]
+V:4
+[K:Bb]!f! (b/_g/)(a/f/)(b/g/) (a/f/)(b/g/)(a/f/) | (_a/_f/)(g/e/)(a/f/) (g/e/)(a/f/)(g/e/) | (_a/_f/)(g/e/)(a/f/) (g/e/)(a/f/)(g/e/) | (_g/c/)(g/c/)(g/_d/) (=e/B/)(e/B/)(e/B/) | z2 |]
+V:5
+[K:Bb]!f! c-(c/=B/c/_d/ e2 d/c/) | B-(B/A/B/c/ !tenuto!_d2 .d) | B-(B/A/B/c/ _d2 c/B/) | A-(A/^G/A/B/ c3) | z2 |]
+V:6
+!f! (A/_F/)(G/E/)(A/F/) (G/E/)(A/F/)(G/E/) | (_G/__E/)(F/D/)(G/E/) (F/D/)(G/E/)(F/D/) | (_G/__E/)(F/D/)(G/E/) (F/D/)(G/E/)(F/D/) | (_F/B,/)(F/B,/)(F/_C/) (=D/A,/)(D/A,/)(D/A,/) | z2 |]
+V:7
+!f! E,6 | A,,6 | D,6 | (D,2 _C,) B,,3 | z2 |]
+V:8
+[K:Eb]!f! f2 f-f f2 | e2 e-e e2 | e2 e-e e2 | d2- (d/e/) f3 | z2 |]
+V:9
+[K:Eb] (_cB)(cB)(cB) | (=A^G)(AG)(AG) | (=A^G)(AG)(AG) | (=B3 =A3) | x2 |]
+V:10
+[K:Eb]!f! (ed)(ed)(ed) | (^cB)(cB)(cB) | (^cB)(cB)(cB) | (=B3 c3) | z2 |]
+V:11
+[K:Eb] A2 A-A A2 | _G2 G-G G2 | _G2 G-G G2 | F2- (F/E/) E3 | x2 |]
+V:12
+!p! ([_F,A,]3 [E,G,]3) | ([__E,_G,]3 [D,F,]3) | ([__E,_G,]3 [D,F,]3) | ([_F,G,]2 [F,A,]) [=D,A,]3 | z2 |]
+V:13
+D,6 | _C,4 x2 | _C,4 x2 | B,,2 A,, B,,3 | x2 |]
+V:14
+!p! E,,6 | A,,6 | D,,6 | (D,,2 _C,,) B,,,3 | z2 |]
+V:15
+!f! (a/_f/g/e/a/f/ g/e/a/f/g/!breath!e/) | (_g/__e/f/d/g/e/ f/d/g/e/f/!breath!d/) | (_g/__e/f/d/g/e/ f/d/g/e/f/!breath!d/) | _f f f =d3 | z2 |]
+V:16
+!f! d3- d2 !breath!d | _c3- c2 !breath!c | (_c6 | !breath!B2) (B/A/) A2 z | z2 |]
+V:17
+!f! (A/_F/G/E/A/F/ G/E/A/F/G/!breath!E/) | (_G/__E/F/D/G/E/ F/D/G/E/F/!breath!D/) | (_G/__E/F/D/G/E/ F/D/G/E/F/!breath!D/) | _F2 F =F2 z | z2 |]
+V:18
+!f! B-(B/=A/) (B/_c/) d2 (c/!breath!B/) | A-(A/G/) (A/B/) !breath!_c3 | A-(A/G/) (A/B/) !breath!_c2 (B/A/) | G-G/^F/ (G/A/) B2 z | z2 |]
+V:19
+!f! B,-(B,/=A,/) (B,/_C/) D2 (C/!breath!B,/) | A,-(A,/G,/) (A,/B,/) !breath!_C3 | A,-(A,/G,/) (A,/B,/) !breath!_C2 (B,/A,/) | G,-G,/^F,/ (G,/A,/) B,2 z | z2 |]
+V:20
+!f! z3 (E,3 | A,,3) A,,2 z | z3 D,2 D, | D,2 _C, B,,2 z | z2 |]
+V:21
+!f!"_espress." b-(b/=a/b/_c'/) (d'2 c'/b/) | a-(a/g/a/b/) (!tenuto!_c'2 .c') | a-(a/g/a/b/) (_c'2 b/a/) | g-(g/^f/g/a/) b3 | z2 |]
+V:22
+!f!"_espress." B-(B/=A/B/_c/) (d2 c/B/) | A-(A/G/A/B/) (!tenuto!_c2 .c) | A-(A/G/A/B/) (_c2 B/A/) | G-(G/^F/G/A/) B3 | z2 |]
+V:23
+!f! (A/_F/)(G/E/)(A/F/) (G/E/)(A/F/)(G/E/) | (_G/__E/)(F/D/)(G/E/) (F/D/)(G/E/)(F/D/) | (_G/__E/)(F/D/)(G/E/) (F/D/)(G/E/)(F/D/) | (_F/B,/)(F/B,/)(F/_C/) (=D/A,/D/=F/A) | z2 |]
+V:24
+!f!"_espress." B,-(B,/=A,/B,/_C/) (D2 C/B,/) | A,-(A,/G,/A,/B,/) (!tenuto!_C2 .C) | A,-(A,/G,/A,/B,/) (_C2 B,/A,/) | G,-(G,/^F,/G,/A,/) B,3 | z2 |]
+V:25
+!f! E,6 | A,,6 | D,6 | (D,2 _C,) B,,3 | z2 |]

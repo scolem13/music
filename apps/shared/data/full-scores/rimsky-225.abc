@@ -1,0 +1,38 @@
+X:1
+%%score [ ( 1 2 ) | ( 3 4 ) ] 5 6 7 8
+L:1/8
+Q:1/8=72
+M:3/8
+K:B
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble 
+%%MIDI program 73
+V:3 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:4 treble transpose=-2 
+%%MIDI program 71
+V:5 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:6 treble-8 nm="Le Tsar." snm="Ts."
+%%MIDI program 54
+V:7 alto nm="Viola" snm="Vla."
+%%MIDI program 41
+V:8 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:1
+"^Adagio non troppo, lento e cantabile.""^212" z3 |!pp! (b3/2=a/4=g/4=d') | (d'3/2c'/4b/4e') | (d'/f'/4d'/4c'b) | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z2 |]
+V:2
+x3 | b3 | b3 | (bgf) | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x2 |]
+V:3
+[K:Db]!pp! (^C3/2=B,/4=A,/4=E-) | E z z | z3 | (AGF) | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z3 | z2 |]
+V:4
+[K:Db] ^C3- | C z z | x3 | z (A,D,) | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x3 | x2 |]
+V:5
+[K:F#] z3 | z3 | z3 |!pp! c3!>(!!>)! | z3 | z3 | z3 | z3 |!ppp! c3- | c3- | c3- | c3 | z2 |]
+V:6
+z3 | z3 | z3 | z z z/ F/ |"^dolce" d3/2 c/4B/4 e | d/ (f/4 d/4) c B/ F/ | (d3/2c/4B/4) e | d/ f/4 d/4 c B | (F7/4c/4) B | F3/2 G/4A/4 B | (F7/4c/4) (B/G/) | (F3/2G/4A/4) B | z2 |]
+V:7
+!p! z/ (=D,/=G,/B,/=D/E/) |[K:treble] (=F/=G/B/=d/e/^e/) | (f/b/a/=a/g/=g/) | (f/F/G/A/B) | [K:alto]!p! z/ (F,/B,/F,/G,/B,/) | (F,/G,/A,/E,/D,/F,/) | z/ (F,/B,/F,/G,/B,/) | (F,/G,/A,/E,/D,/F,/) | (E/F,/A,/F,/G,/F,/) | (A,/F,/E/F,/G,/F,/) | (E/F,/A,/F,/G,/F,/) | (A,/F,/E/F,/D/F,/) | z2 |]
+V:8
+!pp!"^pizz." =G,, z z | z3 | F,, z z | z3 | B,, z z | B,, z z | B,, z z | B,, z z | B,, z z | B,, z z | B,, z z | B,, z z | z2 |]

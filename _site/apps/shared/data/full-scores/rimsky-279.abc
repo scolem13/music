@@ -1,0 +1,46 @@
+X:1
+%%score [ 1 | 2 | 3 ] 4 5 [  6 | 7  | 8 | 9 | 10 ]
+L:1/8
+Q:1/4=108
+M:2/4
+K:E
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:3 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:5 treble nm="Sniégourotchka." snm="Sniég."
+%%MIDI program 54
+V:6 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:7 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:8 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:9 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:10 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Allegretto capriccioso.)" z4 | z .f/.a/ (b/c'/).d'/.f'/ | (g'e'/).c'/ .ba/.g/ | .f.f/.a/ (b/c'/).d'/.f'/ | (g'e'/)"^string.".c'/ .b!<(!.a/.g/ | (fe/).c/ B2!<)! | !p! z!<(! (Bb^a)!<)! |!f!!>(! Ta4-!>)! |[Q:1/4=140] !p! "^Vivo.""_cresc.""^48" Ta4- | !f! (Ta2{ga} !>!B) z | !fermata!z4 |!f! (E/e/).d/.c/ (B/c/)G/.F/ | E z !>!e z |]
+V:2
+[K:G] z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 |!p!!<(! .[Fd].[Ge] .[Af].[Ge] | !f! .[Fd].[Ge]!<)! .[Af] z | !fermata!z4 |!f!"^a 2" (G/g/).f/.e/ (d/e/).B/.A/ | G z !>!d z |]
+V:3
+z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | !fermata!z4 | !f!"^a 2" (E,/E/).D/.C/ (B,/C/).G,/.F,/ | E, z !>![E,,E,] z |]
+V:4
+[K:B]!pp! F4- | F4- | F4- | F4- | F z z2 | z4 | z4 | z4 | e4- | e2- e z | !fermata!z4 | z4 | z2 !>![B,FBd] z |]
+V:5
+z (E/F/) (G/B/) (c/e/) | f (e/c/) B (A/F/) | E (E/F/) (G/B/) (c/e/) | f (e/c/) B (A/F/) | E z z2 | z4 | z4 | z2 z (e/g/) | f (e/c/) B (e/g/) | f (e/c/) B B |!f! (!fermata!b4 | e) z z2 | z4 |]
+V:6
+!pp! B/ z/ z"^pizz." B z | c z B z | B z B z | c z B z | B z"^arco"!<(! .^E z | .F.F!<)! .G z | z4 | z4 |!p!"^pizz." B!<(!c dc | Bc!<)! d z | z2"^arco" D z |!f! (E/e/).d/.c/ (B/c/).G/.F/ | E z [EBe] z |]
+V:7
+!pp! G/ z/ z"_pizz." G z | A z A z | G z G z | A z A z | G z"^arco"!<(! .=D z | .C.C!<)! .E z | z4 | z4 |!p!"^pizz." A!<(!A AA | AA!<)! A z | z2"^arco" B, z |!f! (E/e/).d/.c/ (B/c/).G/.F/ | E z [B,GBe] z |]
+V:8
+!pp! E/ z/ z"^pizz." E z | E z D z | E z E z | E z D z | E z"_arco"!<(! .B, z | .C.C!<)! .B, z | z4 | z4 |!p!"^pizz." D!<(!E FE | DE!<)! F z | z2"_arco" A, z |!f! (E,/E/).D/.C/ (B,/C/).G,/.F,/ | E, z [E,B,G] z |]
+V:9
+!pp! B,/ z/ z"^pizz." B, z | B, z B, z | B, z B, z | B, z B, z | B, z"_arco"!<(! .G, z | .A,.A,!<)! .B, z | z4 | z4 | z4 | z4 | z2"_arco" B,, z |!f! (E,/E/).D/.C/ (B,/C/).G,/.F,/ | E, z E, z |]
+V:10
+z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | z2"_arco" B,, z | z4 | z2 E, z |]

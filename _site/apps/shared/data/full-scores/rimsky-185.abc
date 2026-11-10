@@ -1,0 +1,107 @@
+X:1
+%%score [ 1 | 2 | 3 | 4 | 5 | 6 ] [  7 | ( 8 9 )  | 10 |  ( 11 12 ) | 13  | 14 ] [ 15 |  16 | 17 | 18  ] [ 19 | 20 | 21 | 22 ]
+L:1/8
+Q:1/4=96
+M:2/4
+K:G
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="2 Flutes" snm="Fl."
+%%MIDI program 73
+V:3 treble nm="2 Oboes" snm="Ob."
+%%MIDI program 68
+V:4 treble transpose=-2 nm="3 Clarinets\nin Bb" snm="Bb Cl."
+%%MIDI program 71
+V:5 bass nm="2 Bassoons" snm="Bsn."
+%%MIDI program 70
+V:6 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:7 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:8 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:9 treble transpose=-7 
+%%MIDI program 60
+V:10 treble transpose=-2 nm="2 Trumpets\nin Bb" snm="Bb Tpt."
+%%MIDI program 56
+V:11 alto nm="Trombone 1 & 2" snm="Tbn. 1 & 2"
+%%MIDI program 57
+V:12 alto 
+%%MIDI program 57
+V:13 bass nm="Trombone 3" snm="Tbn. 3"
+%%MIDI program 57
+V:14 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:15 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:16 perc nm="Triangle" snm="Tgl."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap =f 96
+I:percmap =f f 96 normal
+%%MIDI drummap f 96
+I:percmap f f 96 normal
+V:17 perc nm="Piatti" snm="Piat."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap g 87
+I:percmap g g 87 normal
+V:18 perc nm="Cassa" snm="Cas."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap =F 36
+I:percmap =F F 36 normal
+%%MIDI drummap F 36
+I:percmap F F 36 normal
+V:19 treble nm="Violin 1 & 2" snm="Vln.1 & 2"
+%%MIDI program 48
+V:20 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:21 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:22 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Allegretto alla marcia."!ff!"^28" g/a/b/c'/ d'/b/e' | d'>c' bd' | c'b a>d' | c'/b/a/f/ g z | z2 |]
+V:2
+!ff! g/a/b/c'/ d'/b/e' | d'>c' bd' | c'b a>d' | c'/b/a/f/ g z | z2 |]
+V:3
+!ff! g/a/b/c'/ d'/b/e' | d'>c' bd' | c'b a>d' | c'/b/a/f/ g z | z2 |]
+V:4
+[K:A]!ff! A=F/A/ ED/F/ | CD/B,/ C z | B,C DE/C/ | B,E [A,CA] z | z2 |]
+V:5
+!ff! G,E,/G,/ D,C,/E,/ | B,,C,/A,,/ B,, z | A,,B,, C,D,/B,,/ | A,,D, G,, z | z2 |]
+V:6
+!ff! G,,E,/G,/ D,C,/E,/ | B,,C,/A,,/ B,, z | A,,B,, C,D,/B,,/ | A,,D, G,, z | z2 |]
+V:7
+[K:D]!mf!"^a 2" d4 | d2- d z | B4 | BA A z | z2 |]
+V:8
+[K:D]!f! (F3 G) | [DA]2- [DA] z | (E3 F) | [B,G][CG] [DF] z | z2 |]
+V:9
+[K:D] D4 | x4 | B,4 | x4 | x2 |]
+V:10
+[K:A]!f! A/B/c/d/ e/c/f | e>d ce | dc B>e | d[Bd] [Ac] z | z2 |]
+V:11
+!f! (B,3 C) | [G,D]2- [G,D] z | (A,3 B,) | [E,C][F,C] [G,B,] z | z2 |]
+V:12
+G,4 | x4 | E,4 | x4 | x2 |]
+V:13
+!f! .G,.E, .D,.C, | .B,,.A,, .B,, z | .A,,.B,, .C,.B,, | .A,,.D, .G,, z | z2 |]
+V:14
+!f! .G,,.E,, .D,,.C,, | .B,,,.A,,, .B,,, z | .A,,,.B,,, .C,,.B,,, | .A,,,.D,, .G,,, z | z2 |]
+V:15
+!f! G,,G,, G,,G,, | G,,G,, G,,2 | z4 | z D, G,,2 | z2 |]
+V:16
+[K:none] !f! =f2 z2 | =f2 f2 | =f2 z2 | =f2 f2 | z2 |]
+V:17
+[K:none] !ff! g2 z2 | g2 g2 | g2 z2 | g2 g2 | z2 |]
+V:18
+[K:none] =F2 z2 | =F2 F2 | =F2 z2 | =F2 F2 | z2 |]
+V:19
+!ff!"^Unis." [G,G]"^marcato"E/G/ DC/E/ | B,C/A,/ B, z | A,B, CD/B,/ | A,D [B,G] z | z2 |]
+V:20
+!ff! [G,G]"^marcato"E,/G,/ D,C/E/ | B,C/A,/ B, z | A,B, CD/B,/ | A,D G, z | z2 |]
+V:21
+!ff! [G,,G,]"^marcato"E,/G,/ D,C,/E,/ | B,,C,/A,,/ B,, z | A,,B,, C,D,/B,,/ | A,,D, G,, z | z2 |]
+V:22
+!ff! G,,"^marcato"E,/G,/ D,C,/E,/ | B,,C,/A,,/ B,, z | A,,B,, C,D,/B,,/ | A,,D, G,, z | z2 |]

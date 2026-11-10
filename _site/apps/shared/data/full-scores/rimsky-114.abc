@@ -1,0 +1,39 @@
+X:1
+Z:©
+%%score [ 1 | 2 | 3 | 4 | 5 ] 6 7 8
+L:1/8
+Q:1/4=120
+M:3/4
+K:Bb
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 treble transpose=-2 nm="Trumpet in Bb" snm="Bb Tpt."
+%%MIDI program 56
+V:7 treble-8 nm="Kouterma." snm="Kout."
+%%MIDI program 54
+V:8 treble nm="Violin\nI. e II." snm="Vln. 1 & 2"
+%%MIDI program 48
+V:1
+"^Allegro." z2 | z6 | z6 |!f! z2({defg} a) z z2 | z6 | z6 |!f! z2({fgab} c') z z2 | z2 |]
+V:2
+!f! .[fa].[eg] | [fa]2 .[fa].[eg] [fa]2 | .[fa].[eg] .[fa].[eg] .[fa].[eg] | [fa]2 z2 [ac'][_gb] | [ac']2 [ac'][_gb] [ac']2 | [ac'][_gb] [ac'][gb] [ac'][gb] | [ac']2 z2 z2 | z2 |]
+V:3
+!f! .[dd'].[dd'] | [dd']2 .[dd'].[dd'] [dd']2 | .[dd'].[dd'] .[dd'].[dd'] .[dd'].[dd'] | [dd']2 z2 [ff'][ff'] | [ff']2 [ff'][ff'] [ff']2 | [ff'][ff'] [ff'][ff'] [ff'][ff'] | [ff']2 z2 z2 | z2 |]
+V:4
+[K:C]!f! .[GB].[FA] | [GB]2 .[GB].[FA] [GB]2 | .[GB].[FA] .[GB].[FA] .[GB].[FA] | [GB]2 z2 [Bd][_Ac] | [Bd]2 [Bd][_Ac] [Bd]2 | [Bd][_Ac] [Bd][Ac] [Bd][Ac] | [Bd]2 z2 z2 | z2 |]
+V:5
+!f!"^a 2" .D.B, | D2 .D.B, D2 | .D.B, .D.B, .D.B, | D2 z2 F_D | F2 F_D F2 | F_D FD FD | F2 z2 z2 | z2 |]
+V:6
+[K:C] z2 | z6 | z6 | z2 [Bb] z z2 | z6 | z6 | z2 [dd'] z z2 | z2 |]
+V:7
+!f! d G | d d d G d z | d G d2 d d | D2 z2 f B | f2 f B f2 | f B f2 f f | F2 z2 z2 | z2 |]
+V:8
+z2 | z6 | z6 |!f! z2({defg} a) z z2 | z6 | z6 |!f! z2({fgab} c') z z2 | z2 |]

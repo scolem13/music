@@ -1,0 +1,14 @@
+X:1
+%%score 1 2
+L:1/8
+Q:1/4=70
+M:4/4
+K:Eb
+V:1 treble transpose=-14 nm="Bass Clarinet" snm="B. Cl."
+%%MIDI program 71
+V:2 bass nm="Misguir." snm="Bs."
+%%MIDI program 54
+V:1
+[K:F]"^Maestoso""^246" z8 |!p! z2 E,4 !>!_D2- | D2 C2 (!>!_G3 F) | (E8 | F)_e (_dc/B/) (A3 B/c/ | _d4) (!>!_D3 C) |!>(! !trill(!T=B,4-!>)! B,!trill)! z z2 | !p! z2 z/ (C/E/G/ (3:2:4c)(c/_d/c-) (3:2:4c(c/d/c) |]
+V:2
+D3 _C B, E D (C/B,/) | A,3/2 A,/ A, G, F, F, z2 | _D3 _C B, E D (C/B,/) | _C3/2 C/ C B, A, B, A, (_G,/_F,/) | E,4- E, z z2 | z2 A,3/2 _G,/ F, B, A, (G,/F,/) | _G,3/2 G,/ G, F, E, F, E, (_D,/_C,/) | B,,4- B,, z z2 |]

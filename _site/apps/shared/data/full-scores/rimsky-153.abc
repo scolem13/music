@@ -1,0 +1,131 @@
+X:1
+Z:©
+%%score [ 1 | ( 2 3 ) | ( 4 5 ) |  6 | ( 7 8 )  | ( 9 10 ) ] [  ( 11 12 ) | ( 13 14 )  |  15 | 16  |  17 | 18  | 19 ] 20 21 [ 22 | 23 ] [  ( 24 25 ) | ( 26 27 )  | ( 28 29 ) | 30 | 31 ]
+L:1/8
+Q:1/4=60
+M:6/8
+K:A
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble 
+%%MIDI program 73
+V:4 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:5 treble 
+%%MIDI program 68
+V:6 treble transpose=2 nm="Clarinet\npicc. (D)" snm="Cl. picc."
+%%MIDI program 71
+V:7 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:8 treble transpose=-3 
+%%MIDI program 71
+V:9 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:10 bass 
+%%MIDI program 70
+V:11 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:12 treble transpose=-7 
+%%MIDI program 60
+V:13 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:14 treble transpose=-7 
+%%MIDI program 60
+V:15 treble transpose=-3 nm="Trumpet\nI. II. (A)" snm="A Tpt. 1 2"
+%%MIDI program 56
+V:16 treble transpose=-7 nm="Trumpet III\n(c-alta F)" snm="F Tpt. 3"
+%%MIDI program 56
+V:17 bass nm="Trombone 1" snm="Tbn. 1"
+%%MIDI program 57
+V:18 bass nm="Trombone 2" snm="Tbn. 2"
+%%MIDI program 57
+V:19 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:20 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:21 treble transpose=24 nm="Bells" snm="Bls."
+%%MIDI program 9
+V:22 treble nm="Violin Solo 1" snm="Vln. S. 1"
+%%MIDI program 40
+V:23 treble nm="Violin Solo 2" snm="Vln. S. 2"
+%%MIDI program 40
+V:24 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:25 treble 
+%%MIDI program 48
+V:26 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:27 treble 
+%%MIDI program 48
+V:28 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:29 alto 
+%%MIDI program 48
+V:30 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:31 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Andante, tenuto assai." z6 | z6 | z6 | z6 | z6 | z6 | z6 ||[K:C]!p!"_cresc.""^accel." (e6 | (g6) | (a6) | b6) ||[M:3/4] [Q:1/4=72]"^Più mosso."!f! c'6- |"_dim." c'6- | c' z z2 z2 |"^213" z6 | z6 | z6 |[M:6/8] z2 |]
+V:2
+!p! (e'3 a3 | =c'/d'/e'=g' e'3) | (e'3 a3 | =c'/d'/e'=g' e'3) | (e'3 a2) (a/b/ | =c'/d'/ e'2-) e'3 |!p! (a2 a/b/ =c'/d'/e'd') ||[K:C]!p!"_cresc." (([a^c']6 | (([bd']6)) | (([c'f']6)) | [f'g']6)) ||[M:3/4]!f! [e'g']6- |"_dim." [e'g']6- | [e'g'] z z2 z2 | z6 | z6 | z6 | [M:6/8] z2 |]
+V:3
+a6 | (=c'2 b a3) | a6 | (=c'2 b a3-) | ag=g- (gf=f) | (eb_b) (ag=g- | gf=f) (eb_b) ||[K:C] x6 | x6 | x6 | x6 ||[M:3/4] x6 | x6 | x6 | x6 | x6 | x6 |[M:6/8] x2 |]
+V:4
+!p! a6 | (=c'2 b a3) | a6 | (=c'2 b a3-) | a3- a2- (a/b/ | =c'b_b) a3- |!p! (a2 a/b/ =c'b_b) || [K:C]!p!"_cresc." (([^ca]6 | (([db]6)) | (([fc']6)) | [fb]6)) ||[M:3/4]!f! [ec']6- | "_dim." [ec']6- | [ec'] z z2 z2 | z6 | z6 | z6 |[M:6/8] z2 |]
+V:5
+c3 (d3 | e2) d c3- | c3 (d3 | e2) d c3- | (c3 (d2) =f) | (=ged (c3) | (d2) =f) (=ged) ||[K:C] x6 | x6 | x6 | x6 ||[M:3/4] x6 | x6 | x6 | x6 | x6 | x6 |[M:6/8] x2 |]
+V:6
+[K:G]"_dolce assai" (d'3 g3 | _b/c'/d'=f' d'3) | (d'3 g3 | _b/c'/d'=f' d'3) | (d'3 g2) (g/a/ | _b/c'/d'=f' (d'3) | (g2) g/a/ _b/c'/d'=f' ||[K:Bb] d') z z z3 | z6 | z6 | z6 ||[M:3/4]!f! b6- | "_dim." b6- | b z z2 z2 | z6 | z6 | z6 |[M:6/8] z2 |]
+V:7
+[K:C]!p! g3 a3 | (_b3 g3-) | (g3 a3) | (_b3 g3-) | (g3 c2) (c/d/ | _e/f/ g2-) g3 | !p! (c2 c/d/ _e/f/ g2) ||[K:Eb]!p!"_cresc." (([cg]6 | (([db]6)) | (([ec']6)) | [db]6)) || [M:3/4]!f! [eb]6- |"_dim." [eb]6- | [eb] z z2 z2 | z6 | z6 | z6 |[M:6/8] z2 |]
+V:8
+[K:C] c3 f3 | (_e2 _B c3-) | c6 | (_e2 d c3-) | cB_B- (BA_A) | (Gd_d) (cB_B- | BA_A) (Gd_d) || [K:Eb] x6 | x6 | x6 | x6 ||[M:3/4] x6 | x6 | x6 | x6 | x6 | x6 |[M:6/8] x2 |]
+V:9
+z6 | z6 |!p! (E3 (F3) | (=G3) (E3) | C3) (D2 =F) | (=GED) (C3 | (D2) =F =GED) || [K:C]!p!"_cresc." (([A,,A,]6 | (([G,,G,]6)) | (([F,,F,]6)) | [D,,D,]6)) ||[M:3/4]!f! [C,,C,]6- | "_dim." [C,,C,]6- | [C,,C,] z z2 z2 | z6 | z6 | z6 |[M:6/8] z2 |]
+V:10
+x6 | x6 | (A,3 (D3) | (=C2) =G, A,3-) | (A,3 D3) | (=C =G,2) (A,3 | D3) (=C =G,2) ||[K:C] x6 | x6 | x6 | x6 ||[M:3/4] x6 | x6 | x6 | x6 | x6 | x6 |[M:6/8] x2 |]
+V:11
+[K:E] z6 | z6 | z6 | z6 | z6 |!pp! z2 z (ed=d- |!pp! dc=c B3) ||[K:G]!p!"_cresc." (([EB]6 | (([Fd]6)) | (([Ge]6)) | [cd]6)) ||[M:3/4]!f! [Bd]6- |"_dim." [Bd]6- | [Bd]6- | [Bd]6- | !pp! [Bd] z z2 z2 | z6 |[M:6/8] z2 |]
+V:12
+[K:E] x6 | x6 | x6 | x6 | x6 | z6 | z2 z (=GF=F) ||[K:G] x6 | x6 | x6 | x6 ||[M:3/4] x6 | x6 | x6 | x6 | x6 | x6 |[M:6/8] x2 |]
+V:13
+[K:E] z6 | z6 | z6 | z6 | z6 | z6 |!pp! (A2 =c =dBA) ||[K:G]!p!"_cresc." (([E^G]6 | (([DA]6)) | [Cc]6)) | [A,F]6 ||[M:3/4]!f! [G,G]6- |"_dim." [G,G]6- | [G,G]6- | [G,G]6- |!pp! [G,G] z z2 z2 | z6 |[M:6/8] z2 |]
+V:14
+[K:E] x6 | x6 | x6 | x6 | x6 | x6 | (A3 (=G) =D2) ||[K:G] x6 | x6 | x6 | x6 ||[M:3/4] x6 | x6 | x6 | x6 | x6 | x6 |[M:6/8] x2 |]
+V:15
+[K:C] z6 | z6 | z6 | z6 | z6 | z6 | z6 || [K:Eb]"^(Un soleil rouge e montre à travers les brouillards glacés)" z6 | z6 | z6 | [B,d]6 || [M:3/4]!f! [Be]6- |"_dim." [Be]6- | [Be]6- | [Be]6- |!pp! [Be] z z2 z2 | z6 |[M:6/8] z2 |]
+V:16
+[K:E] z6 | z6 | z6 | z6 | z6 | z6 | z6 ||[K:G] z6 | z6 | z6 | z6 ||[M:3/4]!f! B6- |"_dim." B6- | B6- | B6- |!pp! B z z2 z2 | z6 |[M:6/8] z2 |]
+V:17
+z6 | z6 | z6 | z6 | z6 | z6 | z6 ||[K:C] z6 | z6 | z6 |[K:alto] z6 ||[M:3/4]!f! [G,C]6- | "_dim." [G,C]6- | [G,C]6- | [G,C]6- | [G,C]6- | [G,C] x4 x |[M:6/8] z2 |]
+V:18
+z6 | z6 | z6 | z6 | z6 | z6 | z6 ||[K:C] z6 | z6 | z6 | z6 ||[M:3/4]!f! E,6- |"_dim." E,6- | E,6- | E,6- | E,6- | E, x4 x |[M:6/8] z2 |]
+V:19
+z6 | z6 | z6 | z6 | z6 | z6 | z6 ||[K:C] z6 | z6 | z6 | z6 ||[M:3/4]!f! C,,6- |"_dim." C,,6- | C,,6- | C,,6- | C,,6- | C,, x4 x |[M:6/8] z2 |]
+V:20
+z6 | z6 | z6 | z6 | z6 | z6 | z6 ||[K:C] z6 | z6 | z6 | z6 || [M:3/4]!f!"_(Paraît le village tout illuminé de soleil)" C,/C,/4C,/4C,/C,/4C,/4 C,/C,/4C,/4C,/C,/4C,/4 C,/C,/4C,/4C,/C,/4C,/4 | C,/C,/4C,/4"_dim."C,/C,/4C,/4 C,/C,/4C,/4C,/C,/4C,/4 C,/C,/4C,/4C,/C,/4C,/4 | C,/C,/4C,/4C,/C,/4C,/4 C,/C,/4C,/4C,/C,/4C,/4 C,/C,/4C,/4C,/C,/4C,/4 | C,/C,/4C,/4C,/C,/4C,/4 C,/C,/4C,/4C,/C,/4C,/4 C,/C,/4C,/4C,/C,/4C,/4 | C, z z2 z2 | z6 | [M:6/8] z2 |]
+V:21
+"_(Lumière rosée)" z6 | z6 | z6 | z6 | z6 | z6 | z6 ||[K:C] z6 | z6 | z6 | z6 ||[M:3/4] z6 | z6 | "^(dans les coulisses)" z6 | z6 |!p! c6 | z6 |[M:6/8] z2 |]
+V:22
+!p! e'3 a3 | =c'/d'/e'=g' e'3 | e'3 a3 | =c'/d'/e'=g' e'3 | e'3 a2 (a/b/) | =c'/d'/e'=g' e'3 | a2 a/b/ =c'/d'/e'=g' ||[K:C]!p!"_cresc." e'6 | g'6 | a'6 | b'6 || [M:3/4]!f! c''/ z/ c'/(g/4e/4) c'/(g/4e/4)c'/(g/4e/4) c'/(g/4e/4)c'/(g/4e/4) | c'/g/4e/4"_dim."c'/g/4e/4 g/e/4c/4g/e/4c/4 e/c/4G/4e/c/4G/4 | z6 | z6 | z6 | z6 |[M:6/8] z2 |]
+V:23
+!p! e'3 a3 | =c'/d'/e'=g' e'3 | e'3 a3 | =c'/d'/e'=g' e'3 | e'3 a2 (a/b/) | =c'/d'/e'=g' e'3 | a2 a/b/ =c'/d'/e'=g' ||[K:C]!p!"_cresc." e'6 | g'6 | a'6 | b'6 || [M:3/4]!f! c''/ z/ c'/(g/4e/4) c'/(g/4e/4)c'/(g/4e/4) c'/(g/4e/4)c'/(g/4e/4) | c'/g/4e/4"_dim."c'/g/4e/4 g/e/4c/4g/e/4c/4 e/c/4G/4e/c/4G/4 | z6 | z6 | z6 | z6 |[M:6/8] z2 |]
+V:24
+!p!"^Div." a3 a3 | =c'2 b a3 | a3 a3 | =c'2 b a3 | ag=g gf=f | eb_b ag=g | =gf=f eb_b || [K:C]!p!"_cresc.""^Div." [^ca]6 | [db]6 | [fc']6 | [fg]6 || [M:3/4]!f! [ec']/"^Unis."(g/4e/4)c'/(g/4e/4) c'/(g/4e/4)c'/(g/4e/4) c'/(g/4e/4)c'/(g/4e/4) | c'/g/4e/4"_dim."c'/g/4e/4 g/e/4c/4g/e/4c/4 e/c/4G/4e/c/4G/4 | "^Unis." c/G/4E/4c/G/4E/4 c/G/4E/4c/G/4E/4 c/G/4E/4c/G/4E/4 | c/G/4E/4c/G/4E/4 G/E/4C/4G/E/4C/4 E/C/4G,/4E/C/4G,/4 |!pp! C z z2 z2 | z6 |[M:6/8] z2 |]
+V:25
+c3 d3 | e2 d c3 | c3 d3 | e2 d c3 | c3 d2 =f | =ged c3 | d2 =f =ged || [K:C] x6 | x6 | x6 | x6 ||[M:3/4] x6 | x6 | x6 | x6 | x6 | x6 |[M:6/8] x2 |]
+V:26
+!p!"^Div." e3 f3 | =g3 e3 | e3 f3 | =g3 e3 | e3 A2 A/B/ | =c/d/ e2 e3 | A2 A/B/ =c/d/ e2 || [K:C]!p!"_cresc." [Ae] E/(^C/4A,/4)E/(C/4A,/4) E/(C/4A,/4)E/(C/4A,/4)E/(C/4A,/4) | G/D/4B,/4G/D/4B,/4G/D/4B,/4 G/D/4B,/4G/D/4B,/4G/D/4B,/4 | A/F/4C/4A/F/4C/4A/F/4C/4 A/F/4C/4A/F/4C/4A/F/4C/4 | B/G/4F/4B/G/4F/4B/G/4F/4 B/G/4F/4B/G/4F/4B/G/4F/4 || [M:3/4]!f! c/(G/4E/4)c/(G/4E/4) c/(G/4E/4)c/(G/4E/4) c/(G/4E/4)c/(G/4E/4) | c z z2 z2 | z6 | z6 | z6 | z6 |[M:6/8] z2 |]
+V:27
+A3 d3 | =c2 =G A3 | A6 | =c2 B A3 | AG=G GF=F | EB_B AG=G | =GF=F EB_B ||[K:C] x6 | x6 | x6 | x6 ||[M:3/4] x6 | x6 | x6 | x6 | x6 | x6 |[M:6/8] x2 |]
+V:28
+z6 | z6"_Div." |!p! E3 F3 | =G3 E3 | C3 D2 =F | =GED C3 | D2 =F =GED || [K:C]!p!"_cresc." E/^C/4A,/4E/(C/4A,/4)E/(C/4A,/4) E/(C/4A,/4)E/(C/4A,/4)E/(C/4A,/4) | G/D/4B,/4G/D/4B,/4G/D/4B,/4 G/D/4B,/4G/D/4B,/4G/D/4B,/4 | A/F/4C/4A/F/4C/4A/F/4C/4 A/F/4C/4A/F/4C/4A/F/4C/4 | B/G/4F/4B/G/4F/4B/G/4F/4 B/G/4F/4B/G/4F/4B/G/4F/4 || [M:3/4]!f! c/(G/4E/4)c/(G/4E/4) c/(G/4E/4)c/(G/4E/4) c/(G/4E/4)c/(G/4E/4) | c/G/4E/4"_dim."c/G/4E/4 G/E/4C/4G/E/4C/4 E/C/4G,/4E/C/4G,/4 | C/G,/4E,/4C/G,/4E,/4 C/G,/4E,/4C/G,/4E,/4 C/G,/4E,/4C/G,/4E,/4 | C z z2 z2 | !pp! C/G,/4E,/4C/G,/4E,/4 C/G,/4E,/4C/G,/4E,/4 C/G,/4E,/4C/G,/4E,/4 | C/ x4 x3/2 |[M:6/8] z2 |]
+V:29
+x6 | x6 | A,3 D3 | =C2 =G, A,3 | A,3 D3 | =C =G,2 A,3 | D3 =C =G,2 ||[K:C] x6 | x6 | x6 | x6 ||[M:3/4] x6 | x6 | x6 | x6 | x6 | x6 |[M:6/8] x2 |]
+V:30
+z6 | z6 | z6 | z6 | z6 | z6 | z6 ||[K:C]!p!"_cresc." A,6 | G,6 | F,6 | D,6 || [M:3/4]!f! [C,,C,]6- |"_dim." [C,,C,]6 | C/G,/4E,/4C/G,/4E,/4 C/G,/4E,/4C/G,/4E,/4 C/G,/4E,/4C/G,/4E,/4 | C/G,/4E,/4C/G,/4E,/4 G,/E,/4C,/4G,/E,/4C,/4 E,/C,/4G,,/4E,/C,/4G,,/4 |!pp! C, z z2 z2 | z6 | [M:6/8] z2 |]
+V:31
+z6 | z6 | z6 | z6 | z6 | z6 | z6 ||[K:C]!p!"_cresc." A,6 | G,6 | F,6 | D,6 ||[M:3/4]!f! C,6- | "_dim." C,6 | C,6- | C,6 |!pp! C,6- | C,4 x2 |[M:6/8] z2 |]

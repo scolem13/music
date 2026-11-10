@@ -1,0 +1,30 @@
+X:1
+%%score 1 2 [ 3 | 4 ] 5 6
+L:1/8
+Q:1/4=44
+M:2/4
+K:Db
+V:1 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:2 treble nm="Marfa." snm="M."
+%%MIDI program 54
+V:3 treble nm="Violin II" snm="Vln. 2"
+%%MIDI program 48
+V:4 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:5 bass nm="Cello Solo" snm="Vlc. S."
+%%MIDI program 42
+V:6 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:1
+"^(Adagio.)""^108" z4 |"^Solo""_dolcissimo" (B2 g2-) | (gf ga | f2{gf} ed) | (cB) z2 | (AG) z2 | (BA G2) | c2 F2- | F(B c=d | f2 ed-) | (dc{dc} Bc) | (B=A) c2 | B4- | B2 (e2 | f2!>(! a2-) | !>)! a z x2 | z2 |]
+V:2
+"^dolcissimo" B2 f2 | e2 d c | (BA) (ef) | d2{ed} c B | (AG) d2 | c2 B A | G F B B | F2- F z | (B=d) (ef) | a2 g f | (fe) (de) | f2 c e | (e=d) (ab) | g2 (ag) | (fa) e2 | d2- d z | z2 |]
+V:3
+!pp! z"^Con sord." A2 A | z G2 G | z G2 G | z F2 F | z D2 D | z G2 G | z D2 G | z F2 F | z A z A | z A z G | z E z c | z F z F | z A z A | z G z G | z F z C | z4 | z2 |]
+V:4
+!pp! z"_Con sord." F2 B, | z B,2 B, | z A,2 A, | z D2 D | z G,2 G, | z G,2 G, | z G,2 D | z C2 C | z F z B, | z B, z B, | z C z E | z E z E | z =D z F | z E z D | z C z A, | z4 | z2 |]
+V:5
+z"_dolce""^(enza sord.)" (B,C=D) | (E3 D) | (D3 C | D) (A,=A,B,) | z (G,A,B,) | z (=A,B,C) | (DC B,2) | (=A,4 | B,) z B,2- | (B,=D EF) | (G2 B,2) | (C2 F2) | (GF) (E=D) | (E B2 __B) | A2 G2 | F z x2 | z2 |]
+V:6
+!pp!"^Con sord." B,,2 z2 | E,2 z2 | A,,2 z2 | D,2 z2 | B,,2 z2 | E,2 z2 | E,4- | E,4 | =D, z B,, z | E, z G, z | A, z G, z | F, z =A, z | B, z B,, z | (E,3 G,) | (A,2 A,,2) | D,2 x2 | z2 |]

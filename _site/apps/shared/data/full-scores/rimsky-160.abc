@@ -1,0 +1,31 @@
+X:1
+Z:©
+%%score 1 2 3 [  4 | 5  | 6 ]
+L:1/8
+Q:1/4=112
+M:6/8
+K:Bb
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble transpose=-2 nm="Trumpet in Bb" snm="Bb Tpt."
+%%MIDI program 56
+V:3 treble-8 nm="Les devins" snm="Dev."
+%%MIDI program 53
+V:4 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:5 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:6 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:1
+"^Allegro non troppo."!p! [E_G]6- | [EG]6- | (([EG]6 | [=EG]6)) | [EA]6- | [EA]6- | ([EA-]6 | [=EA]6) | z2 |]
+V:2
+[K:C]!pp! [Dd]6- | [Dd]6- | [Dd]6- | [Dd]6 | [Dd]6- | [Dd]6- | (([Dd]6 | [^D^d]6)) | z2 |]
+V:3
+"^(mystérieusement)" c3 c c c | c c c2 c c | c4 c c | =B c G G z G | A2 A2 (3A A A | A2 A A z A | A4 A2 | ^G A =E E x2 | z2 |]
+V:4
+!pp!"^Div." [Cc]6 | [Cc]6 | [Cc]6 | [Cc]6 | [Cc]6 | [Cc]6 | [Cc]6 | [^C^c]6 | z2 |]
+V:5
+!pp!"_Div." [E_G]6 | [E_G]6 | [E_G]6 | [=EG]6 | [EA]6 | [EA]6 | [EA]6 | [=EA]6 | z2 |]
+V:6
+!pp! B,,B,, (B,,A,,/B,,/) (C,B,,/A,,/) | B,,B,, (B,,A,,/B,,/) (C,B,,/A,,/) | (B,,A,,/B,,/) (C,B,,/A,,/) B,,B,, | A,,A,, (A,,^G,,/A,,/) (=B,,A,,/G,,/) | G,,G,, (G,,^F,,/G,,/) (A,,G,,/F,,/) | G,,G,, (G,,^F,,/G,,/) (A,,G,,/F,,/) | (G,,^F,,/G,,/) (A,,G,,/F,,/) G,,G,, | ^F,,F,, F,, x3 | z2 |]

@@ -1,0 +1,74 @@
+X:1
+%%score [ 1 | ( 2 3 ) | 4 ] ( 5 6 ) 7 8 [ 9 | 10 | 11 | 12 ] [  13 | 14  | 15 | 16 | 17 ]
+L:1/8
+Q:3/8=52
+M:12/8
+K:Ab
+V:1 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:2 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:3 treble transpose=-2 
+%%MIDI program 71
+V:4 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:5 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:6 treble transpose=-7 
+%%MIDI program 60
+V:7 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:8 treble nm="Koupava." snm="Koup."
+%%MIDI program 54
+V:9 treble nm="Soprani" snm="S."
+%%MIDI program 53
+V:10 treble nm="Alti" snm="A."
+%%MIDI program 53
+V:11 treble-8 nm="Tenori" snm="T."
+%%MIDI program 53
+V:12 bass nm="Bassi" snm="B."
+%%MIDI program 53
+V:13 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:14 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:15 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:16 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:17 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Lento.)""^143" z12 | z12 | z z"_dolce" F- (F=AB) F2 F- (FA/c/B) | (F3 f3) (d3 =B3 | c2)"_poco cresc." c- (c=e/g/f) c2 c- (c/=d/e/g/f) | c6 (_g6 |"^poco accel." f2) z z3 z6 | z12 | z2 |]
+V:2
+[K:Bb] z12 | z12 | z12 |!pp! z6 z3 (B3 | A) z z"_poco cresc." d3 z3 d3 | z6 f3- (f2 d) | !mf!"_cresc." [B_d]12 | [B_d]12 | z2 |]
+V:3
+[K:Bb] x12 | x12 | x12 | z6 z3 (G3 | ^F) z z (c2 B) z3 (c2 B) | z6 B6 | x12 | x12 | x2 |]
+V:4
+z12 |!pp! z6 !>!E6- |!pp! E z z (E2 D) z3 (E2 D) | !pp! z ([B,D][A,C] [G,B,][=A,C][B,D]) z3 ([F,_A,]3 | [=E,G,]) z z z3 z6 | z!<(! [A,F][G,E] [F,=D][G,=E]!<)![A,F] z6 | !mf! ([D,,D,]/"_cresc."[E,,E,]/).[F,,F,].[F,,F,] ([E,,E,]/[D,,D,]/).[E,,E,].[D,,D,] ([A,,A,]/[_G,,_G,]/)([F,,F,]/[E,,E,]/)[F,,F,] ([E,,E,]/[F,,F,]/)[E,,E,][D,,D,] | ([D,,D,]/[E,,E,]/).[F,,F,].[F,,F,] ([E,,E,]/[D,,D,]/).[E,,E,].[D,,D,] ([A,,A,]/[_G,,_G,]/)([F,,F,]/[E,,E,]/)[F,,F,] ([E,,E,]/[F,,F,]/)[E,,E,][D,,D,] | z2 |]
+V:5
+[K:Eb]!pp! G,12- | G,12- |!pp! G, x8 x3 | x12 |"_poco cresc." G12- |!p! G6 B3- (B2 G) | !mf!"_cresc." [E_G]12 | [E_G]12 | z2 |]
+V:6
+[K:Eb] x12 | x12 | c12- | c6 z6 | x12 | z6 E6 | x12 | x12 | x2 |]
+V:7
+!pp! C,12 | C,12 | C,12 | C,12 | C,12 | C,12 | F,2 z z3 z6 | z12 | z2 |]
+V:8
+!p! z z =E (F>G) (A/B/) (cf) c d2 d | !breath!c2 f (e2 f/_g/ f2 c) e2 z | z z F (F=A) B F2 F (FA/c/) B | (F3 f3) (d3 =B3) | c2 c c=e/g/ f c2 c c/=d/e/g/ f | c6 _g6 | f2 z z2 z z2 z z z d | d2 d f2 f a3- af d | z2 |]
+V:9
+z12 | z12 | z12 | z12 | c c c B/A/B F A/B/ c/d/ c B/A/B F | A/B/ c c c B A e/d/ c c cB A | "^cresc." A3 A2 A A3 A2 A | A3 A2 A A3 A3 | z2 |]
+V:10
+z12 | z12 | F F F E/D/E B, D/E/ F/_G/ F E/D/E B, | D/E/ F F F E D A/_G/ F F FE D | C C C/D/ =E/F/ G A F F C/D/ E/F/ G A | (F2 E) =D=E F _E3 E3 |"_cresc." F3 F2 F D3 F2 F | F3 F2 F D3 F3 | z2 |]
+V:11
+c c c B/A/B F (A/B/) (c/d/) c B/A/B !breath!F | (A/B/) c c c B A (e/d/) c c cB A | =A A F/G/ A/B/ c d B B F/G/ A/B/ c d | B2 A G=A B =B3 _A2 F | E c/B/ A/ F/ G/F/E/C/ c z c/B/ A/ F/ G/F/E/C/ c | A2 G FGA A3 c3 |"_cresc." _c3 c2 c c3 c2 c | _c3 c2 c c3 c3 | z2 |]
+V:12
+z12 | z12 | z12 | z12 | z12 | z12 | "^cresc." D,/E,/ F, F, E,/D,/E, D, A,/_G,/ F,/E,/ F, E,/F,/E, D, | D,/E,/ F, F, E,/D,/E, D, A,/_G,/ F,/E,/ F, E,/F,/E, D, | z2 |]
+V:13
+!pp! .=E.E.E .F.F.F .A.A.A .B.B.B | .A.A.A .A.A.A .=A.A.A ._A.A.A | =AAA FAB FFF FAB | FFF FFF DDD =B,B,_B, | CCC C=EF"_poco cresc." CCC CEF | FFE =D=EF _GGG GGG | !mf!"_cresc." FFF FFF AAA AAA | FFF FFF AAA AAA | z2 |]
+V:14
+!pp! .C.C.C .D.D.D .F.F.F .F.F.F | .F.F.F ._G.G.G .F.F.F .G.G.G | FFF FFF DDD FFF | DDC B,CD =B,B,B, A,A,A, | G,G,G, CCC"_poco cresc." A,A,A, CCC | CCC CCC EEE EEC | !mf!"_cresc." _CCC CCC CCC CCC | _CCC CCC CCC CCC | z2 |]
+V:15
+!pp! .G,.G,.G, .B,.B,.B, .C.C.C .D.D.D | .C.C.C .E.E.E .E.E.E .E.E.E | EEE EED B,B,B, EED | B,B,A, G,=A,B, F,F,F, F,F,F, | =E,E,E, B,B,A,"_poco cresc." F,F,F, B,B,A, | A,A,G, F,G,A, A,A,A, A,A,A, |!mf!"_cresc." A,A,A, A,A,A, A,A,A, A,A,A, | A,A,A, A,A,A, A,A,A, A,A,A, | z2 |]
+V:16
+!pp! C,12- | C,12- | C,12- | C,12- | C,12-"_poco cresc." | C,6- C,3- (C,2 A,,) | !mf!"_cresc." (D,/E,/).F,.F, (E,/D,/)E,D, (A,/_G,/)(F,/E,/)F, (E,/F,/)E,D, | (D,/E,/).F,.F, (E,/D,/)E,D, (A,/_G,/)(F,/E,/)F, (E,/F,/)E,D, | z2 |]
+V:17
+!pp! C,12- | C,12- | C,12- | C,12- | C,12-"_poco cresc." | C,6- C,3- (C,2 A,,) | !mf!"_cresc." (D,/E,/).F,.F, (E,/D,/)E,D, (A,/_G,/)(F,/E,/)F, (E,/F,/)E,D, | (D,/E,/).F,.F, (E,/D,/)E,D, (A,/_G,/)(F,/E,/)F, (E,/F,/)E,D, | z2 |]

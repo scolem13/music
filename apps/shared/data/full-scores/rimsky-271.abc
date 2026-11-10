@@ -1,0 +1,58 @@
+X:1
+%%score [ 1 | 2 | 3 ] 4 [  5 | 6 | 7 | 8  |  9 | 10 | 11 | 12  | 13 ]
+L:1/8
+Q:1/4=100
+M:4/4
+K:C
+V:1 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:2 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:3 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:5 alto nm="Viola 1" snm="Vla. 1"
+%%MIDI program 48
+V:6 alto nm="Viola 2" snm="Vla. 2"
+%%MIDI program 48
+V:7 alto nm="Viola 3" snm="Vla. 3"
+%%MIDI program 48
+V:8 alto nm="Viola 4" snm="Vla. 4"
+%%MIDI program 48
+V:9 bass nm="Cello 1" snm="Vc. 1"
+%%MIDI program 48
+V:10 bass nm="Cello 2" snm="Vc. 2"
+%%MIDI program 48
+V:11 bass nm="Cello 3" snm="Vc. 3"
+%%MIDI program 48
+V:12 bass nm="Cello 4" snm="Vc. 4"
+%%MIDI program 48
+V:13 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Moderato.)""^125" z8 | z8 | z8 | z8 |!p! (!>!c8-"_dim." | [ce]4-) [ce] z z2 | z2 |]
+V:2
+[K:Eb] z8 | z8 |!p! (!>!E8-"_dim." | [EG]4-) [EG] z z2 |!p! ((!>![=Ac]8"_dim." | [G=B]4-)) [GB] z z2 | z2 |]
+V:3
+z8 | z8 |!p! ((!>![^F,A,]8"_dim." | [E,^G,]4-)) [E,G,] z z2 |!p! (!>!^D8"_dim." | "_mor." E) z z2 z4 | z2 |]
+V:4
+[K:G] z8 | z8 |!p! (!>!!plus!^A,8"_dim." |"_mor." B,) z z2 z4 | z8 | z8 | z2 |]
+V:5
+!ppp! (3(C2 _A,2 C,2- (3C,2 A,2 C2-) | (3(C2 _A,2 C,2- (3C,2 A,2 C2) | z8 | z8 | (3(C2 _A,2 C,2- (3C,2 A,2 C2-) | (3(C2 _A,2 C,2- (3C,2 A,2 C2) | z2 |]
+V:6
+!ppp! (3(C,2 E,2 C2- (3C2 E,2 C,2-) | (3(C,2 E,2 C2- (3C2 E,2 C,2) | z8 | z8 | (3(C,2 E,2 C2- (3C2 E,2 C,2-) | (3(C,2 E,2 C2- (3C2 E,2 C,2) | z2 |]
+V:7
+!ppp! (3(E,2 C2 _A,2- (3A,2 C2 E,2-) | (3(E,2 C2 _A,2- (3A,2 C2 E,2) | z8 | z8 | (3(E,2 C2 _A,2- (3A,2 C2 E,2-) | (3(E,2 C2 _A,2- (3A,2 C2 E,2) | z2 |]
+V:8
+!ppp! (3(_A,2 C,2 E,2- (3E,2 C,2 A,2-) | (3(A,2 C,2 E,2- (3E,2 C,2 _A,2) | z8 | z8 | (3(_A,2 C,2 E,2- (3E,2 C,2 A,2-) | (3(A,2 C,2 E,2- (3E,2 C,2 _A,2) | z2 |]
+V:9
+!ppp! (3(C,2 _A,,2 C,,2- (3C,,2 A,,2 C,2-) | (3(C,2 _A,,2 C,,2- (3C,,2 A,,2 C,2-) | (3(C,2 _A,,2 C,,2- (3C,,2 A,,2 C,2-) | (3(C,2 _A,,2 C,,2- (3C,,2 A,,2 C,2-) | C, z z2 z4 | z8 | z2 |]
+V:10
+!ppp! (3(C,,2 E,,2 C,2- (3C,2 E,,2 C,,2-) | (3(C,,2 E,,2 C,2- (3C,2 E,,2 C,,2-) | (3(C,,2 E,,2 C,2- (3C,2 E,,2 C,,2-) | (3(C,,2 E,,2 C,2- (3C,2 E,,2 C,,2-) | C,, z z2 z4 | z8 | z2 |]
+V:11
+!ppp! (3(E,,2 C,2 _A,,2- (3A,,2 C,2 E,,2-) | (3(E,,2 C,2 _A,,2- (3A,,2 C,2 E,,2-) | (3(E,,2 C,2 _A,,2- (3A,,2 C,2 E,,2-) | (3(E,,2 C,2 _A,,2- (3A,,2 C,2 E,,2-) | E,, z z2 z4 | z8 | z2 |]
+V:12
+!ppp! (3(_A,,2 C,,2 E,,2- (3E,,2 C,,2 A,,2-) | (3(A,,2 C,,2 E,,2- (3E,,2 C,,2 _A,,2-) | (3(A,,2 C,,2 E,,2- (3E,,2 C,,2 _A,,2-) | (3(A,,2 C,,2 E,,2- (3E,,2 C,,2 _A,,2-) | A,, z z2 z4 | z8 | z2 |]
+V:13
+!pp! [C,,C,]8- | [C,,C,]8- | [C,,C,]8- | [C,,C,]8- | [C,,C,]8- | [C,,C,]8 | z2 |]

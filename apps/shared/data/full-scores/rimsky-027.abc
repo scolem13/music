@@ -1,0 +1,54 @@
+X:1
+%%score [ 1 |  ( 2 3 ) | 4  ] [ ( 5 6 ) 7 ] [ ( 8 9 ) | 10 | 11 | 12 ]
+L:1/8
+Q:1/4=132
+M:2/4
+K:B
+V:1 treble transpose=-7 nm="Cor.\nIII. IV." snm="Hn."
+%%MIDI program 60
+V:2 alto nm="Trombone\n1 & 2" snm="Tbn. 1"
+%%MIDI program 57
+V:3 alto 
+%%MIDI program 57
+V:4 bass nm="Trombone\n3" snm="Tbn. 2"
+%%MIDI program 57
+V:5 treble-8 nm="Tenor" snm="T"
+%%MIDI program 52
+V:6 treble-8 
+%%MIDI program 52
+V:7 bass nm="Bass" snm="B"
+%%MIDI program 52
+V:8 treble nm="Violin" snm="Vln."
+%%MIDI program 48
+V:9 treble 
+%%MIDI program 48
+V:10 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:11 bass nm="Pizzicato Cello" snm="Vc."
+%%MIDI program 45
+V:12 bass transpose=-12 nm="Pizzicato Double Bass" snm="Cb."
+%%MIDI program 45
+V:1
+[K:F#]"^Allegro alla marcia."!f!"^a 2" _A2 A2 | _A2 A2 | _B2 _A2 | _A2 A2 | _A,4 | _B,2 _A,2 | _D4 | _E2 _D2 |]
+V:2
+!f!"^ten. assai" (DE) F2 | F2 (ED) | G2 F2 | E2 D2 | C2 (B,A,) | B,2 (A,G,) | (F,4 | F3 E) |]
+V:3
+B,2 B,2 | B,2 B,2 | B,2 B,2 | A,2 B,2 | F,4 | F,2 ^E,2 | (F,4 | G,2 A,2) |]
+V:4
+!f!"^ten. assai" B,,2 D,2 | D,2 B,,2 | E,2 D,2 | C,2 B,,2 | A,,2 (G,,F,,) | G,,2 C,2 | F,,4 | (C,2 F,,2) |]
+V:5
+!f! (de) f2 | f2 (ed) | g2 f2 | e2 d2 | c2 (BA) | B2 (AG) | (F4 | f3 e) |]
+V:6
+B2 B2 | B2 B2 | B2 B2 | A2 B2 | F3 F | F2 ^E2 | (F4 | G2 A2) |]
+V:7
+!f! B,,2 D,2 | D,2 B,,2 | E,2 D,2 | C,2 B,,2 | A,,2 (G,,F,,) | G,,2 C,2 | F,,4 | (C,2 F,,2) |]
+V:8
+d/ z/ z z2 | !f!"^unis." !wedge!B/!wedge!c/!wedge!d/!wedge!e/ !wedge!f/!wedge!f/!wedge!f/!wedge!f/ | !wedge!e/!wedge!f/!wedge!g/!wedge!a/ !wedge!b/!wedge!b/!wedge!b/!wedge!b/ | f^e/f/ g/f/=e/d/ | ed/e/ f/e/d/c/ | B/G/A/B/ c/c/c/c/ | f^e/f/ g/f/=e/d/ | ed/e/ f/e/d/c/ |]
+V:9
+F/ z/ z z2 | x4 | x4 | x4 | x4 | x4 | x4 | x4 |]
+V:10
+B,/ z/ z z2 |!f! !wedge!B,/!wedge!C/!wedge!D/!wedge!E/ !wedge!F/!wedge!F/!wedge!F/!wedge!F/ | !wedge!E/!wedge!F/!wedge!G/!wedge!A/ !wedge!B/!wedge!B/!wedge!B/!wedge!B/ | F^E/F/ G/F/=E/D/ | ED/E/ F/E/D/C/ | B,/G,/A,/B,/ C/C/C/C/ | F^E/F/ G/F/=E/D/ | ED/E/ F/E/D/C/ |]
+V:11
+!f!"^pizz." B,,2 x2 | z4 | z4 | z4 | z4 | z4 | F,,2 z2 | z4 |]
+V:12
+!f!"^pizz." B,,2 x2 | z4 | z4 | z4 | z4 | z4 | F,,2 z2 | z4 |]

@@ -1,0 +1,27 @@
+X:1
+Z:©
+%%score [ 1 | 2 | 3 | 4 ] 5
+L:1/8
+Q:1/2=48
+M:4/4
+K:G
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:4 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:5 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:1
+"^Largo."!pp! !fermata![GB]8 | !fermata![df]8 | !fermata![eg]8 | !fermata!f8 | !p!{/e'} [c'e']8- |!>(! !fermata![c'e']8!>)! | z2 |]
+V:2
+!fermata!z8 | !fermata!z8 | !fermata!z8 |!pp! !fermata![^cf]8 |!p!{/e} [ce]8- | !>(! !fermata![ce]8!>)! | z2 |]
+V:3
+[K:Bb]!pp!"_II.""_I." !fermata![Gg]8 | !fermata![Fc]8 | !fermata![Ee]8 | !fermata![A,^c]8 | !p!{/=c'}"_II.""^I." [cc']8- |!>(! !fermata![cc']8!>)! | z2 |]
+V:4
+!fermata!z8 | !fermata!z8 |!pp! !fermata!G8 |!pp! !fermata![^CF]8 |!p!{/A,}"^a 2" A,8- | !>(! !fermata!A,8!>)! | z2 |]
+V:5
+[K:D] !fermata!z8 | !fermata!z8 | !fermata!z8 | !fermata!z8 |!p!{/B} B8- |!>(! !fermata!B8!>)! | z2 |]

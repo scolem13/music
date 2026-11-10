@@ -1,0 +1,92 @@
+X:1
+%%score [ ( 1 2 ) | 3 | 4 | ( 5 6 ) | 7 | ( 8 9 ) ] 10 11 12 { 13 | 14 } [  15 | 16  | 17 | 18 | 19 ]
+L:1/8
+Q:1/4=76
+M:4/4
+K:A
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble 
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:5 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:6 treble transpose=-3 
+%%MIDI program 71
+V:7 treble transpose=-3 nm="Bass Clarinet\n(A)" snm="B. Cl. (A)"
+%%MIDI program 71
+V:8 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:9 bass 
+%%MIDI program 70
+V:10 perc nm="Tamburo" snm="Tmbr."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap =c 60
+I:percmap =c c 60 normal
+%%MIDI drummap c 60
+I:percmap c c 60 normal
+V:11 perc stafflines=1 nm="Tambourine" snm="Tamb."
+%%MIDI channel 10
+%%MIDI program 48
+%%MIDI drummap =E 54
+I:percmap =E B 54 normal
+%%MIDI drummap E 54
+I:percmap E B 54 normal
+V:12 treble nm="La Reine de\nChemakha." snm="La R."
+%%MIDI program 54
+V:13 bass nm="Harp" snm="Hp."
+%%MIDI program 46
+V:14 bass 
+%%MIDI program 46
+V:15 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:16 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:17 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:18 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:19 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Andantino.)""^135" z8 | z8 | z8 | z8 | z8 | z8 | z8 |!pp! z .c.c.A .A.c.c.A | Affd df=fd | !pp! cc'c'a ac'c'a | z2 |]
+V:2
+x8 | x8 | x8 | x8 | x8 | x8 | x8 | z8 | z8 | z AAc cAAc | x2 |]
+V:3
+z8 | z8 | z8 | z8 | z8 | z8 |!pp! z .A.A.^A .A.B.B.^B | c ^dde e^eef | f aa^a abb^b | c'"_dolcissimo" ^d'd'e' e'=f'f'e' | z2 |]
+V:4
+[K:E]!pp! z .B.B.=c .c.B.B.^A | z .B.B.c .c.B.B.^A | z ^AAB B z z2 | z ^BBc c z z2 | z ^^FFG z dde | z ^AAB B BB^B | c z z2 z4 | z8 | z ee^e eff^^f | g ^aab b=c'c'b | z2 |]
+V:5
+[K:C] z8 | z8 | z8 | z8 | z8 | z8 | z8 |!pp! z .c.c.e .e.c.c.e | f ffa aff_a | !pp! f c'c'e' e'c'c'e' | z2 |]
+V:6
+[K:C] x8 | x8 | x8 | x8 | x8 | x8 | x8 | z8 | z8 | z eec ceec | x2 |]
+V:7
+[K:C]!pp! z .G,.G,.E .E.G,.G,.E | z .G,.G,.E .E.G,.G,.E | z A,A,E E z z2 | z B,B,E E z z2 | z F,F,C C DDF | z CCC CCCE | CFFA AFFA | E z z2 z4 | z AAF FA_AF | E z z2 z4 | z2 |]
+V:8
+!pp! z .C.C.^D, .D,.C.C.=F, | z .C.C.^D, .D,.C.C.F, | z CCE, E, z z2 | z CCF, F, z z2 | z A,A,C, C, DDA, | z ^B,B,C CCCA, | DFFD DFFD | E z z2 z4 | z DDF FDD=F | E z z2 z4 | z2 |]
+V:9
+A,,8- | A,,8- | A,,8- | A,,8- | A,,8- | A,,8- | A,,8- | A,,8- | A,,8- | A,,8 | x2 |]
+V:10
+[K:none] !pp! z T=cc z z Tcc z | z T=cc z z Tcc z | z T=cc z z4 | z T=cc z z Tcc z | z T=cc z z Tcc z | z T=cc z z Tcc z | z T=cc z z Tcc z | z T=cc z z Tcc z | z T=cc z z Tcc z | z T=cc z z Tcc z | z2 |]
+V:11
+[K:none] !pp! =E z z E E z z E | =E z z E E z z E | E z z E E z z2 | E z z E E z z2 | =E z z E E z z E | =E z z E E z z E | =E z z E E z z E | =E z z E E z z E | =E z z E E z z E | E z z E E z z2 | z2 |]
+V:12
+z8 | z4 z"^dolce" e e f | f3 e (ed) (dc) | c2 c z z c e d | d3 c (cB) (BA) | A2- A z z A G A | F2 A2 d2 d2 | c2 c z z A G A | F2 A2 d2 (de) | c2- c z z4 | z2 |]
+V:13
+!pp! z E,E,C CE,E,C | z E,E,C CE,E,C | z F,F,C C z z2 | z G,G,C C z z2 | z D,D,A, A,B,B,D | z A,A,A, A, A,A,C | A, [K:treble] DDF FDDF | CAAc cAAc | d ddf fdd=f | e aac' c'aac' | z2 |]
+V:14
+A,,,2 z2 A,,2 z2 | A,,,2 z2 A,,2 z2 | A,,,2 z2 A,,2 z2 | A,,,2 z2 A,,2 z2 | A,,,2 z2 A,,2 z2 | A,,,2 z2 A,,2 z2 | A,,,2 z2 A,,2 z2 | A,,,2 z2 A,,2 z2 | A,, FFD DF=FD | C [K:treble] ccA AccA | [K:bass] z2 |]
+V:15
+!pp! z"^pizz." EE=F FEE^D | z EEF FEE^D | z ^DDE E z z2 | z ^EEF F z z2 | z ^B,B,C z GGA | z ^DDE E EE^E | F AA^A ABB^B | c ^dde e^eef | f aa^a abb^b | c' ^d'd'e' e'=f'f'e' | z2 |]
+V:16
+z8 | z8 | z8 |!pp! z4 z2 (A,2 | A4 A,) z z2 | z8 | z8 | z8 | "^Div." z"^pizz." [Df][Df][Fd] [Fd][Df][D=f][=Fd] | [Ec] [Ac'][Ac'][ca] [ca][Ac'][Ac'][ca] | z2 |]
+V:17
+[E,A,]"^pizz." CC^D, D,CC=F, | z CC^D, D,CCF, | z CCE, E, z z2 | z CCF, F, z z2 | z A,A,C, z DDA, | z ^B,B,C C CCA, | D FFD DFFD | E ccA AccA | A AA^A ABB^B | c ^dde e=ffe | z2 |]
+V:18
+[A,,C,] z z2 z4 | z8 | z4 z"_dolcissimo" (!tenuto!A,!tenuto!A,!tenuto!B,) | (B,3 A,) (A,G,) (G,F,) | F,4 z (^E,G,F,) | (F,=F,) (F,E,) E,2 z2 | z4 z (A,G,A,) | (E,2 A,2 C2) z2 | z4 z (A,G,A,) | (E,2 A,2 C2) z2 | z2 |]
+V:19
+"_pizz." A,,2 z2 A,2 z2 | A,,2 z2 A,2 z2 | A,,2 z2 A,2 z2 | A,,2 z2 A,2 z2 | A,,2 z2 A,2 z2 | A,,2 z2 A,2 z2 | A,,2 z2 A,2 z2 | A,,2 z2 A,2 z2 | A,2 z2 !open!A2 z2 | A,2 z2 !open!A2 z2 | z2 |]

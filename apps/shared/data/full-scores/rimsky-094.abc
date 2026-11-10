@@ -1,0 +1,52 @@
+X:1
+Z:©
+%%score [  1 | 2  | 3 ] [ 4 | 5 ] 6 [ 7 | 8 | 9 | 10 ]
+L:1/8
+Q:1/4=120
+M:2/4
+K:C
+V:1 treble transpose=-2 nm="Clarinet in Bb 1" snm="Bb Cl. 1"
+%%MIDI program 71
+V:2 treble transpose=-2 nm="Clarinet in Bb 2" snm="Bb Cl. 2"
+%%MIDI program 71
+V:3 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 treble transpose=-2 nm="Trumpet in Bb 1" snm="Bb Tpt. 1"
+%%MIDI program 56
+V:5 treble transpose=-2 nm="Trumpet in Bb 2" snm="Bb Tpt. 2"
+%%MIDI program 56
+V:6 perc stafflines=1 nm="Tambourine" snm="Tamb."
+%%MIDI channel 10
+%%MIDI program 48
+%%MIDI drummap =E 54
+I:percmap =E B 54 normal
+%%MIDI drummap E 54
+I:percmap E B 54 normal
+V:7 treble nm="Violin I e II\nunis." snm="Vln."
+%%MIDI program 48
+V:8 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:9 bass nm="Pizzicato Cello" snm="Vc."
+%%MIDI program 45
+V:10 bass transpose=-12 nm="Pizzicato Double Bass" snm="Cb."
+%%MIDI program 45
+V:1
+[K:D]!p! g3 e | (=fe d=c) | (de =fa) | g2 (ea) | g3 e | (=fe d=c) | (BA GB) | =c2- c z | z2 |]
+V:2
+[K:D]!p! z2 (C2 | D2 E2 | =F2 D2 | (E2) =C2) | (E2 C2 | D2 E2) | (=F4 | E4) | z2 |]
+V:3
+!p!"^a 2" _B,,F, B,,F, | _B,,F, B,,F, | _B,,F, B,,F, | _B,,F, B,,F, | _B,,F, B,,F, | _B,,F, B,,F, | _B,,F, B,,F, | _B,,F, B,,F, | z2 |]
+V:4
+[K:D]!p! g3 e | (=fe d=c) | (de =fa) | (g2 e) z | g3 e | (=fe d=c) | (BA GB) | =c2- c z | z2 |]
+V:5
+[K:D]!p! G4- | G4- | G4- | G4- | G4- | G4- | G4- | G z z2 | z2 |]
+V:6
+[K:none] !p! E2 E2 | EE EE | =EE EE | =E2 E2 | =E2 E2 | =EE EE | =EE EE | E2 z2 | z2 |]
+V:7
+!p! f3 d | (_ed c_B) | (cd _eg) | f2 (dg) | f3 d | (_ed c_B) | (AG FA) | _B2- B z | z2 |]
+V:8
+!p! C2 B,2 | C2 D2 | _E2 C2 | D2 _B,2 | D2 B,2 | C2 D2 | _E4 | D4 | z2 |]
+V:9
+!p! _B,,F, B,,F, | _B,,F, B,,F, | _B,,F, B,,F, | _B,,F, B,,F, | _B,,F, B,,F, | _B,,F, B,,F, | _B,,F, B,,F, | _B,,F, B,,F, | z2 |]
+V:10
+!p! _B,, z B,, z | _B,, z B,, z | _B,, z B,, z | _B,, z B,, z | _B,, z B,, z | _B,, z B,, z | _B,, z B,, z | _B,, z B,, z | z2 |]

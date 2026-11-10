@@ -1,0 +1,51 @@
+X:1
+Z:©
+%%score [ 1 | 2 | 3 ] [  4 | 5  | 6 ] [  7 | 8  | 9 | 10 | 11 ]
+L:1/8
+Q:1/4=120
+M:2/4
+K:C
+V:1 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:2 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:3 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:5 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:6 treble transpose=-2 nm="Trumpet in Bb" snm="Bb Tpt."
+%%MIDI program 56
+V:7 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:8 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:9 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:10 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:11 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Allegro."!ff!"^82" !>![FA]4 | !>![FA]4 | [FA]4- | [FA]4 |!mf! [Dd]4- | [Dd]4 | z2 |]
+V:2
+[K:D]!ff! !>![GB]4 | !>![GB]4 | [GB]4- | [GB]4 |!mf! [GB]4- | [GB]4 | z2 |]
+V:3
+!ff! !>![F,A,]4 | !>![F,A,]4 | [F,A,]4- | [F,A,]4 |!mf! [F,A,]4- | [F,A,]4 | z2 |]
+V:4
+[K:G]!f! !>![CE]4 | !>![CE]4 | [CE]4- | [CE]4 | z4 | z4 | z2 |]
+V:5
+[K:G]!f!"^a 2" !>!A,4 | !>!A,4 | A,4- | A,4 |!p!"^IV." A,4- | A,4 | z2 |]
+V:6
+[K:D]!f! !>![Ee]4 | !>![Ee]4 | [Ee]4- | [Ee]4 | z4 | z4 | z2 |]
+V:7
+d z z2 |!ff! !>!D4 | D/E/F/E/ G/F/E/D/ | .F.D !>!D2 |!mf! D/E/F/E/ G/F/E/D/ | F(E/F/) D2 | z2 |]
+V:8
+!ff! !>!D4 | !>!D4 | D/E/F/E/ G/F/E/D/ | .F.D !>!D2 | z4 | z4 | z2 |]
+V:9
+!ff! !>!D,4 | !>!D,4 | D,/E,/F,/E,/ G,/F,/E,/D,/ | .F,.D, !>!D,2 | z4 | z4 | z2 |]
+V:10
+!ff! !>!D,4 | !>!D,4 | D,/E,/F,/E,/ G,/F,/E,/D,/ | .F,.D, !>!D,2 |!mf! D,/E,/F,/E,/ G,/F,/E,/D,/ | F,(E,/F,/) D,2 | z2 |]
+V:11
+!ff! !>!D,4 | !>!D,4 | D,/E,/F,/E,/ G,/F,/E,/D,/ | .F,.D, !>!D,2 |!mf! D,/E,/F,/E,/ G,/F,/E,/D,/ | F,(E,/F,/) D,2 | z2 |]

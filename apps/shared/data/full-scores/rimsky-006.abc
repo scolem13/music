@@ -1,0 +1,62 @@
+X:1
+%%score [ 1 | ( 2 3 ) | ( 4 5 ) ] 6 { 7 | 8 } [  9 | 10  | 11 | 12 | 13 | 14 ]
+L:1/8
+Q:1/4=138
+M:2/4
+K:Db
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:3 treble transpose=-2 
+%%MIDI program 71
+V:4 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:5 bass 
+%%MIDI program 70
+V:6 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:7 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:8 bass 
+%%MIDI program 46
+V:9 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:10 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:11 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:12 bass nm="Pizzicato Cello" snm="Vc."
+%%MIDI program 45
+V:13 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:14 bass transpose=-12 nm="Pizzicato Double Bass" snm="Cb."
+%%MIDI program 45
+V:1
+"^Allegretto." z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 |!p! A !>!A3- | A !>!A3- | A !>!A3- | A !>!A3- | A !>!A3- | A !>!A3- | A !>!A3- | A !>!A2 z |]
+V:2
+[K:Eb]!p! [B,B] !>![B,B]2 [B,B]- | [B,B] !>![B,B]2 [B,B]- | [B,B] !>![B,B]2 [B,B]- | [B,B] !>![B,B]2 [B,B]- | [B,B] !>![B,B]2 [B,B]- | [B,B] !>![B,B]2 [B,B]- | [B,B] !>![B,B]2 [B,B]- | [B,B] !>![B,B]2 [B,B] |!pp! (f4 | e2 =e2 | f4 | e2 =e2) | (f4 | e4) | (f4 | e4) |]
+V:3
+[K:Eb] x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | (c2 d2 | B2 _d2 | c2 =d2 | B2 _d2) | (c2 _c2 | B2 _d2) | (c2 _c2 | B2 e2) |]
+V:4
+z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 |!pp! (G4 | F2) (A2 | (G4) | F2) (A2 | =G2 _G2 | F2) (A2 | =G2 _G2 | F2 A2) |]
+V:5
+x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | A, !>!A,3- | A, !>!A,3- | A, !>!A,3- | A, !>!A,3- | A, !>!A,3- | A, !>!A,3- | A, !>!A,3- | A, !>!A,2 z |]
+V:6
+[K:Ab] z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 |!pp! [_A,_E]4- | [A,E]4- | [A,E]4- | [A,E]4 | [_A,_E]4- | [A,E]4- | [A,E]4- | [A,E]4 |]
+V:7
+!p! z [A,A]2 [A,A] | z [A,A]2 [A,A] | z [A,A]2 [A,A] | z [A,A]2 [A,A] | z [A,A]2 [A,A] | z [A,A]2 [A,A] | z [A,A]2 [A,A] | z [A,A]2 [A,A] |!mf! z [A,A]2 [A,A] | z [A,A]2 [A,A] | z [A,A]2 [A,A] | z [A,A]2 [A,A] | z [A,A]2 [A,A] | z [A,A]2 [A,A] | z [A,A]2 [A,A] | z [A,A]2 [A,A] |]
+V:8
+!p! [D,,A,,D,]4 | [D,,A,,D,]4 | [D,,A,,D,]4 | [D,,A,,D,]4 | [D,,A,,D,]4 | [D,,A,,D,]4 | [D,,A,,D,]4 | [D,,A,,D,]4 |!mf! [D,,A,,D,]2 A,,2 | [D,,A,,D,]2 A,,2 | [D,,A,,D,]2 A,,2 | [D,,A,,D,]2 A,,2 | [D,,A,,D,]2 A,,2 | [D,,A,,D,]2 A,,2 | [D,,A,,D,]2 A,,2 | [D,,A,,D,]2 A,,2 |]
+V:9
+z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 |!pp!"^Con sord." (e>dc).e | (fe) (gf) | (e>dc).e | (fe) (gf) | (e({de}d)c).e | (fe) (gf) | (e({de}d)c).e | (fe) (gf) |]
+V:10
+z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 |!pp!"^Con sord." (E>DC).E | (FE) (GF) | (E>DC).E | (FE) (GF) | (E({DE}D)C).E | (FE) (GF) | (E({DE}D)C).E | (FE) (GF) |]
+V:11
+!p!"^arco" E>"^arco"DC.E | FE GF | E>DC.E | FE GF | E{DE}DC.E | FE GF | E{DE}DC.E | FE GF | "^pizz." D,2 A,2 | D2 A2 | D,2 A,2 | D2 A2 | D,2 A,2 | D2 A2 | D,2 A,2 | D2 A2 |]
+V:12
+!pp! [D,A,]2 z2 | [D,A,]2 z2 | [D,A,]2 z2 | [D,A,]2 z2 | [D,A,]2 z2 | [D,A,]2 z2 | [D,A,]2 z2 | [D,A,]2 z2 |!pp! D,,2 A,,2 | D,2 A,2 | D,,2 A,,2 | D,2 A,2 | D,,2 A,,2 | D,2 A,2 | D,,2 A,,2 | D,2 A,2 |]
+V:13
+!p!"^arco" [D,,A,,]4- | [D,,A,,]4- | [D,,A,,]4- | [D,,A,,]4- | [D,,A,,]4- | [D,,A,,]4- | [D,,A,,]4- | [D,,A,,]4 |!p! [D,,A,,]4- | [D,,A,,]4- | [D,,A,,]4- | [D,,A,,]4- | [D,,A,,]4- | [D,,A,,]4- | [D,,A,,]4- | [D,,A,,]4 |]
+V:14
+!pp! D,2 z2 | D,2 z2 | D,2 z2 | D,2 z2 | D,2 z2 | D,2 z2 | D,2 z2 | D,2 z2 |!pp! [D,A,]2 z2 | [D,A,]2 z2 | [D,A,]2 z2 | [D,A,]2 z2 | [D,A,]2 z2 | [D,A,]2 z2 | [D,A,]2 z2 | [D,A,]2 z2 |]

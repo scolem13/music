@@ -76,7 +76,7 @@ develops its ideas. It is typical of Baroque and early Classical music.
 to III in minor), the second moves back.
 
 **Hear a rounded binary.** The minuet of Beethoven's first piano sonata is a clear one. Open
-[Op. 2 No. 1, movement 3](analysed-scores/view.qmd?id=beethoven-sonata-1-3) (the library's version is in 3/4 and starts with the
+[Op. 2 No. 1, movement 3](analysed-scores/view.html?id=beethoven-sonata-1-3) (the library's version is in 3/4 and starts with the
 minuet in F minor). The key labels in the analysis run **f minor, A♭ major, B♭ minor, f minor**: the first section leaves for the relative
 major (so it is **continuous**), the second begins in a contrasting key (B♭ minor), and F minor, the opening key, is back
 at about bar 19 (**rounded**). Play the library score from there and find the opening tune coming back.
@@ -97,7 +97,7 @@ than eight bars. The book's small example is Mozart's Andante K. 15mm, and its l
 [Read 24.3](https://musictheory.pugetsound.edu/mt21c/BinaryAndTernaryForm.html)
 
 **Hear a ternary.** Mozart's Piano Sonata K. 545 has a slow movement with a clear contrasting middle.
-[Open K. 545, movement 2](analysed-scores/view.qmd?id=mozart-sonata-16-2). The analysis's key labels run **G major, D major, G major,
+[Open K. 545, movement 2](analysed-scores/view.html?id=mozart-sonata-16-2). The analysis's key labels run **G major, D major, G major,
 G minor, B♭ major, C minor, G minor, G major**. The first stretch stays in G (with a side trip to D), the middle (from about bar 25) is
 in the minor, and G major returns at about bar 37. A in the home key, B in the minor, A back: it is usually heard as a **sectional ternary**
 (A closes in G). Listen for how different the B section's mood is.
@@ -136,12 +136,12 @@ printed edition, and the form names are this page's reading: **unverified** by a
 
 | Piece | Form (this page's reading) | What to look for |
 |---|---|---|
-| [Bach, Invention No. 8 in F, BWV 779](analysed-scores/full-scores.qmd?id=pdmx-84) | **balanced binary**, continuous | A (bars 1-11) ends on a C chord, the dominant; B (12-34) ends in F. Bars 30-33 are bars 8-11 again, note for note a fifth lower, and bar 34 is the last chord |
-| [Mozart, Minuet in F, K. 5](analysed-scores/full-scores.qmd?id=pdmx-465) | **balanced binary**, continuous, two-reprise | A (1-10) ends in C; the music of bars 5-9 comes back a fifth lower, in F, in bars 15-19 |
-| [Bach (Anh. 131), Gavotte in F](analysed-scores/full-scores.qmd?id=pdmx-490) | **simple binary**, continuous, two-reprise | A (1-8) ends on a C chord; B (9-17) is new and ends in F with different notes. Nothing returns |
-| [Bach (Anh. 132), Minuet in D minor](analysed-scores/full-scores.qmd?id=pdmx-60) | **simple binary**, continuous, with **written-out repeats** | A (bars 1-8) closes in F major and is written twice (bars 9-16); B (17-24) is written twice (25-32) and ends in D minor. Put AABB in your diagram |
-| [Haydn, Minuet, Hob. IX:8](analysed-scores/full-scores.qmd?id=pdmx-238) | **rounded binary**, sectional, two-reprise | A (1-9) ends on F, the tonic. B starts on a C pedal (bars 10-14), then bars 15-22 are bars 2-9 note for note |
-| [Bach (Anh. 126), Musette in D](analysed-scores/full-scores.qmd?id=pdmx-23) | **rounded binary or ternary?** (see below) | A (1-8) is repeated; B (9-20) sits on a dominant pedal; A (21-28) comes back note for note |
+| [Bach, Invention No. 8 in F, BWV 779](analysed-scores/full-scores.html?id=pdmx-84) | **balanced binary**, continuous | A (bars 1-11) ends on a C chord, the dominant; B (12-34) ends in F. Bars 30-33 are bars 8-11 again, note for note a fifth lower, and bar 34 is the last chord |
+| [Mozart, Minuet in F, K. 5](analysed-scores/full-scores.html?id=pdmx-465) | **balanced binary**, continuous, two-reprise | A (1-10) ends in C; the music of bars 5-9 comes back a fifth lower, in F, in bars 15-19 |
+| [Bach (Anh. 131), Gavotte in F](analysed-scores/full-scores.html?id=pdmx-490) | **simple binary**, continuous, two-reprise | A (1-8) ends on a C chord; B (9-17) is new and ends in F with different notes. Nothing returns |
+| [Bach (Anh. 132), Minuet in D minor](analysed-scores/full-scores.html?id=pdmx-60) | **simple binary**, continuous, with **written-out repeats** | A (bars 1-8) closes in F major and is written twice (bars 9-16); B (17-24) is written twice (25-32) and ends in D minor. Put AABB in your diagram |
+| [Haydn, Minuet, Hob. IX:8](analysed-scores/full-scores.html?id=pdmx-238) | **rounded binary**, sectional, two-reprise | A (1-9) ends on F, the tonic. B starts on a C pedal (bars 10-14), then bars 15-22 are bars 2-9 note for note |
+| [Bach (Anh. 126), Musette in D](analysed-scores/full-scores.html?id=pdmx-23) | **rounded binary or ternary?** (see below) | A (1-8) is repeated; B (9-20) sits on a dominant pedal; A (21-28) comes back note for note |
 
 **What was checked in the notes.** The matching of the repeats (the Invention's bars 30-33 against 8-11 (a fifth lower), the K. 5 minuet's bars 15-19 against 5-9 (a fifth lower), the Haydn minuet's bars 15-22
 against 2-9, the Musette's bars 21-28 against 1-8) was checked by comparing the notes; the key and chord names (C chord, F major, dominant

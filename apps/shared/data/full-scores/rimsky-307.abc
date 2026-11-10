@@ -1,0 +1,74 @@
+X:1
+%%score [ 1 | 2 | 3 ] [  ( 4 5 ) | ( 6 7 )  | 8 | 9 | 10 ] 11 [ 12 | 13 ] [ 14 | 15 | 16 | 17 ]
+L:1/8
+Q:1/4=112
+M:3/4
+K:Bb
+V:1 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:2 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:3 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:5 treble transpose=-7 
+%%MIDI program 60
+V:6 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:7 treble transpose=-7 
+%%MIDI program 60
+V:8 treble transpose=-2 nm="Trumpet in Bb" snm="Bb Tpt."
+%%MIDI program 56
+V:9 bass nm="Trombone" snm="Tbn."
+%%MIDI program 57
+V:10 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:11 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:12 treble nm="Soprani\nAlti" snm="S. A."
+%%MIDI program 52
+V:13 bass nm="Tenori\nBassi" snm="T. B."
+%%MIDI program 52
+V:14 treble nm="Violin" snm="Vln."
+%%MIDI program 48
+V:15 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:16 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:17 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Allegro non troppo.)" BB (BA/B/ cB/A/) | GG (GA/B/ cF) | z2 |]
+V:2
+[K:C] [Ec] z z2 [Ed] z | [FA] z z2 [FG] z | z2 |]
+V:3
+[B,,F,] z z2 [B,,^F,] z | [B,,G,] z z2 [B,,A,] z | z2 |]
+V:4
+[K:F]!p! (f4 g2) | (d4 c2) | z2 |]
+V:5
+[K:F] (A6 | B6) | x2 |]
+V:6
+[K:F]!p! (C4 ^C2) | (D4 E2) | z2 |]
+V:7
+[K:F] F,6- | F,6 | x2 |]
+V:8
+[K:C]!p! !>![Cc] z z2 z2 | z6 | z2 |]
+V:9
+!p! !>![B,,F,D] z z2 z2 | z6 | z2 |]
+V:10
+!p! !>!B,,, z z2 z2 | z6 | z2 |]
+V:11
+!p! !>!B,, x4 x | z6 | z2 |]
+V:12
+[DB]4 [Dc]2 | [EG]2 [EG]2 [EF]2 | z2 |]
+V:13
+[B,,F,]4 [B,,^F,]2 | [B,,G,]2 [B,,G,]2 [B,,A,]2 | z2 |]
+V:14
+!mf! BB (BA/B/) (cB/A/) | GG (GA/B/) (cF) | z2 |]
+V:15
+!mf! !wedge!D!wedge!D/!wedge!B,/ !wedge!D/!wedge!B,/!wedge!D/!wedge!B,/ !wedge!D2 | E/B,/E/B,/ E/B,/E/B,/ !wedge!E2 | z2 |]
+V:16
+!mf! !wedge!B,,!wedge!B,,/!wedge!F,/ !wedge!B,,/!wedge!F,/!wedge!B,,/!wedge!F,/ B,,/^F,/B,,/F,/ | B,,/G,/B,,/G,/ B,,/G,/B,,/G,/ B,,/A,/B,,/A,/ | z2 |]
+V:17
+!mf! B,, z z2 z2 | B,, z z2 z2 | z2 |]

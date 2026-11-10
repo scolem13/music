@@ -1,0 +1,50 @@
+X:1
+%%score [ 1 | 2 | ( 3 4 ) | 5 ] 6 [  7 | 8  | 9 | 10 | 11 ]
+L:1/8
+Q:1/4=112
+M:4/4
+K:C
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:4 treble transpose=-3 
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 treble nm="Le Printemps." snm="Le Pr."
+%%MIDI program 54
+V:7 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:8 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:9 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:10 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:11 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Allegro moderato.)""^16" z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2({/e'} f') z | z8 | z4 z2({/^f'} g') z | z2 |]
+V:2
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2({/e} f) z | z8 | z4 z2({/^f} g) z | z2 |]
+V:3
+[K:Eb]!pp! (=B4 _B4) | =A8 | (=A4 _A4) | G8- | G z z2 z4 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z4 z2({/g} a) z | z8 | z4 z2({/=a} b) z | z2 |]
+V:4
+[K:Eb] G8- | (G4 F4) | F8- | (F4!<(! E4-)!<)! | E z z2 z4 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x2 |]
+V:5
+!pp! (B,8 | (^F,4) ^G,4) | (A,8 | (E,4) ^F,4 | G,) z z2 z4 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z2 |]
+V:6
+z ^G G A B2 z B | B3/2 ^F/ F F F F z2 | z2 ^F2 A3/2 A/ A3/2 A/ | A3/2 E/ E E E2 z E | c3/2 G/ G A B2 z B | d3/2 B/ A ^G z E E/ E/ E/ ^F/ | ^G3/2 G/ G A B B z B | B3/2 B/ B c d3/2 d/ d e |!mf! c c z2 z2 c2 | f6 f2 | d3/2 _B/ B2 z2 z3/2 B/ | A3/2 A/ A A z _B B B | A3/2 A/ A A A2 _B z | B2 B3/2 B/ c3/2 c/ c3/2 c/ | B3/2 B/ B3/2 B/ B2 c z | z2 |]
+V:7
+z8 | z8 | z8 | z8 | z4 z2 G z |!pp!"^colla parte" ^G8 | ^G8 | ^G4 G z z2 | !f! z2 !>!c z !>!f z z2 | z8 | z4 f2 z2 |!p!!<(! (A4!<)! _B4)!>(!!>)! | (A4 A>)_B B z | !<(! (B4!<)!!>(! c4)!>)! | B4- B>c c z | z2 |]
+V:8
+z8 | z8 | z8 | z8 | z4 z2 D z |!pp! D8 | D8 | D4 D z z2 |!f! z2 !>!A z !>!c z z2 | z8 | z4 _B2 z2 |!p!!<(! F8!<)!!>(!!>)! | F8 |!<(! G8!<)!!>(!!>)! | G8 | z2 |]
+V:9
+z8 | z8 | z8 | z8 | z4 z2 B, z |!pp! B,8 | B,8 | B,4 B, z z2 | !f! z2 !>![CE] z !>![CFA] z z2 | z8 | z4 [_B,F]2 z2 |!p!!<(! F,8!<)!!>(!!>)! | F,8 | !<(! G,8!<)!!>(!!>)! | G,8 | z2 |]
+V:10
+!pp! z4"^pizz." B,,2 z2 | z4 _B,,2 z2 | z4 A,,2 z2 | z4 _A,,2 z2 | G,,2 z2 z2"^arco" F, z | !pp! E,8 | E,8 | E,4 E, z z2 |!f! z2 !>!E, z !>!_E, z z2 | z8 | z4 D,2 z2 | !p! z3/2 C,/ (!>!^C,4 D,) z | z3/2 C,/ (!>!^C,2 D,2-) D, z | z3/2 D,/ (!>!^D,4 E,) z | z3/2 D,/ !>!^D,2- (D,2 E,) z | z2 |]
+V:11
+!pp! z4"^pizz." B,,2 z2 | z4 _B,,2 z2 | z4 A,,2 z2 | z4 _A,,2 z2 | G,,2 z2 z2"^arco" F, z | !pp! E,8 | E,8 | E,4 E, z z2 |!f! z2 !>!E, z !>!_E, z z2 | z8 | z4 D,2 z2 | !p! z3/2 C,/ (!>!^C,4 D,) z | z3/2 C,/ (!>!^C,2 D,2-) D, z | z3/2 D,/ (!>!^D,4 E,) z | z3/2 D,/ !>!^D,2- (D,2 E,) z | z2 |]

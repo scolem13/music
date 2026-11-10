@@ -1,0 +1,91 @@
+X:1
+Z:©
+%%score [ 1 | 2 | ( 3 4 ) |  5 | ( 6 7 )  | 8 ] [  ( 9 10 ) | ( 11 12 )  | 13 |  ( 14 15 ) | 16  ] [  17 | ( 18 19 )  | 20 | 21 ]
+L:1/8
+Q:1/4=120
+M:4/4
+K:C
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble 
+%%MIDI program 68
+V:5 treble transpose=-3 nm="Clarinet in A 1" snm="A Cl. 1"
+%%MIDI program 71
+V:6 treble transpose=-3 nm="Clarinet in A 2 3" snm="A Cl. 2 3"
+%%MIDI program 71
+V:7 treble transpose=-3 
+%%MIDI program 71
+V:8 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:9 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:10 treble transpose=-7 
+%%MIDI program 60
+V:11 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:12 treble transpose=-7 
+%%MIDI program 60
+V:13 treble transpose=-2 nm="Trumpet in Bb" snm="Bb Tpt."
+%%MIDI program 56
+V:14 alto nm="Trombone 1 2" snm="Tbn. 1"
+%%MIDI program 57
+V:15 alto 
+%%MIDI program 57
+V:16 bass nm="Trombone 3" snm="Tbn. 2"
+%%MIDI program 57
+V:17 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:18 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:19 treble 
+%%MIDI program 48
+V:20 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:21 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:1
+!p!"^22" (a/_b/=b/!<(!c'/ ^c'/d'/_e'/!<)!=e'/ =f'/!>(!e'/_e'/d'/ c'/!>)!=c'/b/_b/) | (a/_b/=b/!<(!c'/ ^c'/d'/_e'/!<)!=e'/ =f'/!>(!e'/_e'/d'/ c'/!>)!=c'/b/_b/) | (3(a_b=b c'2- (3c'^c'd' _e'2-) | (^d'/e'/f'/^f'/!<(! g'/^g'/a'/!<)!_b'/ =b'/!>(!_b'/a'/g'/ =g'/!>)!f'/=f'/e'/) | z2 |]
+V:2
+!p! (A/_B/=B/!<(!c/ ^c/d/_e/!<)!=e/ =f/!>(!e/_e/d/ c/!>)!=c/B/_B/) | (A/_B/=B/!<(!c/ ^c/d/_e/!<)!=e/ =f/!>(!e/_e/d/ c/!>)!=c/B/_B/) | (3(A_B=B c2- (3c^cd _e2-) | (^d/e/f/^f/!<(! g/^g/a/!<)!_b/ =b/!>(!_b/a/g/ =g/!>)!f/=f/e/) | z2 |]
+V:3
+!p! ([^FA]4!<(!!<)! [=F_A]4)!>(!!>)! | ([^FA]4!<(!!<)! [=F_A]4)!>(!!>)! | A8 | (A4!<(!!<)! B4) | z2 |]
+V:4
+x8 | x8 | ^F8 | ^F8 | x2 |]
+V:5
+[K:Eb]!p! (c/_d/=d/!<(!e/ =e/f/^f/!<)!g/ _a/!>(!g/f/=f/ e/!>)!_e/d/_d/) | (c/_d/=d/!<(!e/ =e/f/^f/!<)!g/ _a/!>(!g/f/=f/ e/!>)!_e/d/_d/) | (3(c_d=d e2- (3e=ef ^f2-) | (f/g/a/=a/!<(! b/=b/c'/!<)!_d'/ =d'/!>(!_d'/c'/b/ _b/!>)!a/_a/g/) | z2 |]
+V:6
+[K:Eb]!p! ([=A,C]4!<(!!<)! [^G,=B,]4)!>(!!>)! | ([=A,C]4!<(!!<)! [^G,=B,]4)!>(!!>)! | C8 | (C4!<(!!<)! D4)!>(!!>)! | z2 |]
+V:7
+[K:Eb] x8 | x8 | =A,8 | =A,8 | x2 |]
+V:8
+!p! (_E4!<(!!<)! F4)!>(!!>)! | (_E4!<(!!<)! F4)!>(!!>)! | [C,_E]8 | ([C,_E]4!<(!!<)! [B,,D]4)!>(!!>)! | z2 |]
+V:9
+[K:G]!p!"_Con sord." ([^ce]4!<(!!<)! [=c_e]4)!>(!!>)! | ([^ce]4!<(!!<)! [=c_e]4)!>(!!>)! | e8 | (e4!<(!!<)! f4)!>(!!>)! | z2 |]
+V:10
+[K:G] x8 | x8 | ^c8 | ^c8 | x2 |]
+V:11
+[K:G]!p!"_Senza sord.""_IV." (_B4!<(!!<)! c4)!>(!!>)! | (_B4!<(!!<)! c4)!>(!!>)! | [G,_B]8 | ([G,_B]4!<(!!<)! [F,A]4)!>(!!>)! | z2 |]
+V:12
+[K:G] G,8 | G,8 | x8 | x8 | x2 |]
+V:13
+[K:D]"^Con sord."!p! z2 [Dd]4-!<(!!<)!!>(! [Dd]!>)! z | "^Con sord." z2 [Dd]4-!<(!!<)!!>(! [Dd]!>)! z | z8 | z2!<(! [^G^g]4-!<)!!>(!!>)! [Gg] z | z2 |]
+V:14
+!p!"_Con sord." ([^F,A,]4!<(!!<)! [=F,_A,]4)!>(!!>)! | ([^F,A,]4!<(!!<)! [=F,_A,]4)!>(!!>)! | A,8 | (A,4!<(!!<)! B,4)!>(!!>)! | z2 |]
+V:15
+x8 | x8 | ^F,8 | ^F,8 | x2 |]
+V:16
+!p!"^Con sord." C,8!<(!!<)!!>(!!>)! | C,8!<(!!<)!!>(!!>)! | C,8 | (C,4!<(!!<)! B,,4)!>(!!>)! | z2 |]
+V:17
+!f! a"^pizz." ccc' c'c C2 | z ccc' c'c C2 |"^arco" (3(A_B=B c2- (3c^cd _e2) | z"^pizz." ^ff^f' f'f ^F2 | z2 |]
+V:18
+!pp!"_Div." A4!<(!!<)! _A4!>(!!>)! | A4!<(!!<)! _A4!>(!!>)! | A8 | [^FA]4!<(!!<)! [FB]4!>(!!>)! | z2 |]
+V:19
+[_E_G]4 F4 | [_E_G]4 F4 | [_E_G]8 | _E4 D4 | x2 |]
+V:20
+!pp! [^F,A,]4!<(!!<)! [=F,_A,]4!>(!!>)! | [^F,A,]4!<(!!<)! [=F,_A,]4!>(!!>)! | [^F,A,]8 | [^F,A,]4!<(!!<)! [F,B,]4!>(!!>)! | z2 |]
+V:21
+C,8!<(!!<)!!>(!!>)! | C,8!<(!!<)!!>(!!>)! | C,8 | C,4!<(!!<)! B,,4!>(!!>)! | z2 |]

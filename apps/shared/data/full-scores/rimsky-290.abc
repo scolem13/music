@@ -1,0 +1,82 @@
+X:1
+%%score [ ( 1 2 ) | 3 | 4 | ( 5 6 ) | ( 7 8 ) ] [ ( 9 10 ) | ( 11 12 ) ] [ 13 14 ] [  15 | 16  | 17 | 18 | 19 ]
+L:1/8
+Q:3/8=56
+M:6/8
+K:Db
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble 
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:5 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:6 treble transpose=-2 
+%%MIDI program 71
+V:7 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:8 bass 
+%%MIDI program 70
+V:9 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:10 treble transpose=-7 
+%%MIDI program 60
+V:11 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:12 treble transpose=-7 
+%%MIDI program 60
+V:13 treble nm="La Princesse\ndes Mers." snm="La Pr."
+%%MIDI program 54
+V:14 treble-8 nm="Sadko." snm="S."
+%%MIDI program 54
+V:15 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:16 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:17 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:18 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:19 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Larghetto.)" z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |"_dolcissimo" (a3 =g2!<(!!<)! f) | (=g>ab)!>(! b3!>)! | (a3!<(! =g2!<)! f) | (=g>ab)!>(! b3!>)! | z2 |]
+V:2
+x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | (c3 =B2 c | d6) | (c3 =B2 c | d6) | x2 |]
+V:3
+z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |"_dolcissimo" (a3 =g2!<(!!<)! f) | (=g>ab)!>(! b(fe)!>)! | (a3!<(! =g2!<)! f) | (=g>ab)!>(! b(fe)!>)! | z2 |]
+V:4
+[K:Ab]"_dolce (colla voce)" (a3 g2 a | f3 g3) |({/b} (a)ga fgb | a3- a2 g) | (f3 g2 f | a3 g3) | (f3 g2 a | b3-) (b2 a) |"_dolcissimo" (g3 ^f2!<(!!<)! g) | a6!>(!!>)! | (g3 ^f2!<(!!<)! g) | a6!>(!!>)! | z2 |]
+V:5
+[K:Eb]!pp! [GB]6- | [GB]6- | [GB]6- | [GB]6 | [_GB]6- | [GB]6- | (([GB]6 | [Fc]6)) | !pp!"_dolcissimo" (B3 =A2!<(!!<)! G) | (=A>Bc)!>(! c3!>)! | (B3!<(! =A2!<)! G) | (=A>Bc)!>(! c3!>)! | z2 |]
+V:6
+[K:Eb] x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | F,6- | F,6 | F,6- | F,6 | x2 |]
+V:7
+z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |!pp! (A,3 =G,2!<(!!<)! A, | (=G,3)!>(! (B,)A,G,)!>)! | (A,3 =G,2!<(!!<)! A, | (=G,3)!>(! (B,)A,G,)!>)! | z2 |]
+V:8
+x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | A,,2 z E,,2 z | B,,2 z E,,2 z | A,,2 z E,,2 z | B,,2 z E,,2 z | x2 |]
+V:9
+[K:Ab] z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |!ppp! (e3 =d2!<(!!<)! c) | (=d>ef)!>(! f(ed)!>)! | (e3 =d2!<(!!<)! c) | (=d>ef)!>(! f(ed)!>)! | z2 |]
+V:10
+[K:Ab] x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | B6- | B3- (BcB) | B6- | B3- (BcB) | x2 |]
+V:11
+[K:Ab] z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |!ppp! (G3 ^F2!<(!!<)! G | A6)!>(!!>)! | (G3 ^F2!<(!!<)! G | A6)!>(!!>)! | z2 |]
+V:12
+[K:Ab] x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | B,6- | B,6 | B,6- | B,6 | x2 |]
+V:13
+d3 c2 d | B3 c2 c | d c d B c e | d3- d z z | B3 c2 B | d3 c2 c | B3 c2 d | e3- e z z | (A3 =G2) F | (=G>A) B B2 z | A3 =G2 F | =G3/2 A/ B B F E | z2 |]
+V:14
+z6 | z6 | z6 | z6 |"^dolce" d3 c2 d | B3 c2 c | d c d c B A | =G3- G z z | c3 =B2 c | d3- d z z | c3 =B2 c | d3- d A =G | z2 |]
+V:15
+z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |"_dolcissimo" a3!<(! (=g2!<)! f) | (=g>ab)!>(! b2 z!>)! | z2 |]
+V:16
+z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |"_dolcissimo" c3!<(! (=B2!<)! c) | d3-!>(! d2 z!>)! | z2 |]
+V:17
+!pp! (A/F/A/F/A/F/ A/F/A/F/A/F/) | (A/F/A/F/A/F/ A/F/A/F/A/F/) | (A/F/A/F/A/F/ A/F/A/F/A/F/) | (A/F/A/F/A/F/ A/F/A/F/A/F/) | (A/_F/A/F/A/F/ A/F/A/F/A/F/) | (A/_F/A/F/A/F/ A/F/A/F/A/F/) | (A/_F/A/F/A/F/ A/F/A/F/A/F/) | (B/E/B/E/B/E/"^Div." B/E/B/E/[Bd]/E/ | !pp! [Ac]/) (E,/[A,C]/E,/[A,C]/E,/)!<(! ([=G,=B,]/E,/[G,B,]/E,/[A,C]/!<)!E,/) | ([=G,D]/E,/[G,D]/E,/[G,D]/E,/)!>(! ([B,D]/E,/[B,D]/E,/[B,D]/E,/)!>)! | ([A,C]/E,/[A,C]/E,/[A,C]/E,/)!<(! ([=G,=B,]/E,/[G,B,]/E,/[A,C]/!<)!E,/) | ([=G,D]/E,/[G,D]/E,/[G,D]/E,/)!>(! ([B,D]/E,/[B,D]/E,/[B,D]/!>)!E,/) | z2 |]
+V:18
+z6 | z6 | z6 | z6 |"_dolce (colla voce)" (D3 C2 D) | (B,3 C3) |({/E} (D)CD B,CE) | =G,3- G, z z | [K:tenor]"_dolcissimo" (A3!<(! =G2 F)!<)! | (=G>AB)!>(! B3!>)! | A3!<(! (=G2 F)!<)! | (=G>AB)!>(! B2 z!>)! | z2 |]
+V:19
+z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |!pp! A,2 z E,2 z | !>!B,2 z E,2 z | A,2 z E,2 z | B,2 z E,2 z | z2 |]

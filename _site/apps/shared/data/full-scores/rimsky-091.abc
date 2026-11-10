@@ -1,0 +1,91 @@
+X:1
+Z:©
+%%score [ 1 | 2 | 3 | 4 | 5 ] [  6 | 7  | 8 |  9 | 10  | 11 ] 12 [ 13 14 15 16 ] [  17 | 18  | 19 | 20 | 21 ]
+L:1/8
+Q:1/4=100
+M:3/4
+K:Eb
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:7 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:8 treble transpose=-2 nm="Trumpet in Bb" snm="Bb Tpt."
+%%MIDI program 56
+V:9 alto nm="Trombone 1" snm="Tbn. 1"
+%%MIDI program 57
+V:10 bass nm="Trombone 2" snm="Tbn. 2"
+%%MIDI program 57
+V:11 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:12 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:13 treble nm="Soprano" snm="S"
+%%MIDI program 52
+V:14 treble nm="Alto" snm="A"
+%%MIDI program 52
+V:15 treble-8 nm="Tenor" snm="T"
+%%MIDI program 52
+V:16 bass nm="Bass" snm="B"
+%%MIDI program 52
+V:17 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:18 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:19 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:20 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:21 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Andante"!ff!"^92" g z"^accel." g z g z | g z c' z d' z | g z g z g z | g z c' z d' z | z2 |]
+V:2
+!ff! [cg] z [fg] z [eg] z | [dg] z c' z [=bd'] z | [cg] z [fg] z [eg] z | [dg] z c' z [=bd'] z | z2 |]
+V:3
+!ff! [cg] z [fg] z [eg] z | [dg] z [fc'] z [g=b] z | [cg] z [fg] z [eg] z | [dg] z [fc'] z [g=b] z | z2 |]
+V:4
+[K:F]!ff!"^a 2" d z ^c z d z | e z d z ^c z | d z ^c z d z | e z d z ^c z | z2 |]
+V:5
+!ff! [E,E][G,G]/[E,E]/ [D,D][F,F]/[D,D]/ [C,C][E,E]/[C,C]/ | [B,,B,][D,D]/[B,,B,]/ [A,,A,][C,C]/[A,,A,]/ [G,,G,]2 | [E,E]/[E,E]/[G,G]/[E,E]/ [D,D]/[D,D]/[F,F]/[D,D]/ [C,C]/[C,C]/[E,E]/[C,C]/ | [B,,B,]/[B,,B,]/[D,D]/[B,,B,]/ [A,,A,]/[A,,A,]/[C,C]/[A,,A,]/ [G,,G,]2 | z2 |]
+V:6
+[K:Bb]!ff! [Dd]2 [Dd]2 [Dd]2 | [Dd]2 [G,G]2 [Dd]2 | [Dd]2 [Dd]2 [Dd]2 | [Dd]2 [G,G]2 [Dd]2 | z2 |]
+V:7
+[K:Bb]!ff! [DG]2 [^Fc]2 [GB]2 | [DA]2 [Gc]2 [^FA]2 | [DG]2 [^Fc]2 [GB]2 | [DA]2 [Gc]2 [^FA]2 | z2 |]
+V:8
+[K:F]!f! [A,A]2 [A,A]2 [A,A]2 | [A,A]2 [Dd]2 [A,A]2 | [A,A]2 [A,A]2 [A,A]2 | [A,A]2 [Dd]2 [A,A]2 | z2 |]
+V:9
+!f! [G,C]2 [=B,F]2 [CE]2 | [G,D]2 [CF]2 [=B,D]2 | [G,C]2 [=B,F]2 [CE]2 | [G,D]2 [CF]2 [=B,D]2 | z2 |]
+V:10
+!f! E,2 D,2 C,2 | B,,2 A,,2 G,,2 | E,2 D,2 C,2 | B,,2 A,,2 G,,2 | z2 |]
+V:11
+!f! E,,2 D,,2 C,,2 | B,,,2 A,,,2 G,,,2 | E,,2 D,,2 C,,2 | B,,,2 A,,,2 G,,,2 | z2 |]
+V:12
+!f! C,2 z2 C,2 | G,,2 C,2 G,,2 | C,2 z2 C,2 | G,,2 C,2 G,,2 | z2 |]
+V:13
+G G G G G G | (G2 c) c d2 | G G G G G G | (G2 c) c d2 | z2 |]
+V:14
+G G G G G G | (G2 c) c [G=Bd]2 | G G G G G G | (G2 c) c [G=Bd]2 | z2 |]
+V:15
+[cg] [cg] [=Bf] [Bf] [ce] [ce] | ([Gd]2 [cf]) [cf] [=Bd]2 | [cg] [cg] [=Bf] [Bf] [ce] [ce] | ([Gd]2 [cf]) [cf] [=Bd]2 | z2 |]
+V:16
+E, E, D, D, C, [C,C] | ([B,,B,]2 [A,,A,]) [A,,A,] [G,,G,]2 | E, E, D, D, C, [C,C] | ([B,,B,]2 [A,,A,]) [A,,A,] [G,,G,]2 | z2 |]
+V:17
+!ff! [G,Gg] z [G,Gg] z [G,Gg] z | [G,Gg] z [cc'] z [dd'] z | [G,Gg] z [G,Gg] z [G,Gg] z | [G,Gg] z [cc'] z [dd'] z | z2 |]
+V:18
+!ff! [Gc] z [F=B] z [Ec] z | [Dd] z [CFc] z [DG=B] z | [Gc] z [F=B] z [Ec] z | [Dd] z [CFc] z [DG=B] z | z2 |]
+V:19
+!ff! EG/E/ DF/D/ CE/C/ | B,D/B,/ A,C/A,/ G,2 | E/E/G/E/ D/D/F/D/ C/C/E/C/ | B,/B,/D/B,/ A,/A,/C/A,/ G,2 | z2 |]
+V:20
+!ff! E,G,/E,/ D,F,/D,/ C,E,/C,/ | B,,D,/B,,/ A,,C,/A,,/ G,,2 | E,/E,/G,/E,/ D,/D,/F,/D,/ C,/C,/E,/C,/ | B,,/B,,/D,/B,,/ A,,/A,,/C,/A,,/ G,,2 | z2 |]
+V:21
+!ff! E,G,/E,/ D,F,/D,/ C,E,/C,/ | B,,D,/B,,/ A,,C,/A,,/ G,,2 | E,/E,/G,/E,/ D,/D,/F,/D,/ C,/C,/E,/C,/ | B,,/B,,/D,/B,,/ A,,/A,,/C,/A,,/ G,,2 | z2 |]

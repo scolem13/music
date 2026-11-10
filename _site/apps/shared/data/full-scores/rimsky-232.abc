@@ -1,0 +1,46 @@
+X:1
+%%score [ 1 | 2 | 3 | 4 | 5 ] [ 6 | 7 ] [  8 | 9  | 10 ]
+L:1/8
+Q:1/4=132
+M:3/4
+K:F
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:4 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:5 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:6 alto nm="Trombone 1" snm="Tbn. 1"
+%%MIDI program 57
+V:7 bass nm="Trombone 2" snm="Tbn. 2"
+%%MIDI program 57
+V:8 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:9 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:10 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:1
+"^(Allegro assai.)"!p! f6- | f6 | e6- | (e6 | _e6-) | e6 | z2 |]
+V:2
+!p!"^a 2" f6- | f6 | e6- | (e6 | _e6-) | e6 | z2 |]
+V:3
+[K:Ab]!p!"^a 2" A6- | A6 | G6- | (G6 | _G6-) | G6 | z2 |]
+V:4
+!p! [F,,_C,]6- | [F,,C,]6 | [^F,,=C,]6- | [F,,C,]6 | [G,,_D,]6- | [G,,D,]6 | z2 |]
+V:5
+!p! _A,,6- | A,,6 | A,,6- | A,,6 | B,,6- | B,,6 | z2 |]
+V:6
+!pp!"^Con sord." [F,_C]6- | [F,C]6 | [^F,=C]6- | [F,C]6 | [G,_D]6- | [G,D]6 | z2 |]
+V:7
+!pp!"_Con sord." _A,,6- | A,,6 | A,,6- | A,,6 | B,,6- | B,,6 | z2 |]
+V:8
+!p! f'6 | f'6 | e'6 | e'6 | _e'6 | _e'6 | z2 |]
+V:9
+!p! f6 | f6 | e6 | e6 | _e6 | _e6 | z2 |]
+V:10
+!p! F6 | F6 | E6 | E6 | _E6 | _E6 | z2 |]

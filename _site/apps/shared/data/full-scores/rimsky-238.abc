@@ -1,0 +1,62 @@
+X:1
+%%score [ 1 | ( 2 3 ) | ( 4 5 ) | ( 6 7 ) | 8 ] 9 [  10 | 11  | 12 | 13 | 14 ]
+L:1/8
+Q:1/4=72
+M:4/4
+K:C
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble 
+%%MIDI program 73
+V:4 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:5 treble 
+%%MIDI program 68
+V:6 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:7 treble transpose=-2 
+%%MIDI program 71
+V:8 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:9 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:10 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:11 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:12 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:13 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:14 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Andante.)" z8 |!p! z4 (6:4:6(d/_e/=e/f/^f/g/ (6:4:6^g/a/_b/=b/c'/^c'/ | d') x7 |]
+V:2
+"^a 2"!p! D z D2- (6:4:6(D/_E/=E/F/^F/G/ (6:4:6^G/A/_B/=B/c/^c/ | (6:4:6d/_e/=e/f/^f/g/ (6:4:6^g/a/_b/=b/c'/^c'/ (6:4:6(d'/)_e'/=e'/f'/^f'/g'/ (6:4:6^g'/a'/) z/ z/ z/ z/ | x8 |]
+V:3
+x8 | z4 (6:4:4d'/ z/ z z (6:4:6(^g/a/_b/=b/c'/^c'/ | d') x7 |]
+V:4
+!p! z2 D2- (6:4:6(D/_E/=E/F/^F/G/ (6:4:6^G/A/_B/=B/c/^c/ | (6:4:6d/_e/=e/f/^f/g/ (6:4:6^g/a/) z/ z/ z/ z/ (6:4:6(d/_e/=e/=f/^f/=g/ (6:4:6^g/a/_b/=b/c'/^c'/ | d') x7 |]
+V:5
+z2 D2- (6:4:6(D/_E/=E/F/^F/G/ (6:4:6^G/A/) z/ z/ z/ z/ | z2 (6:4:6(^G/A/_B/=B/c/^c/ (6:4:6d/_e/=e/f/^f/g/ (6:4:6^g/a/_b/=b/c'/^c'/ | d') x7 |]
+V:6
+[K:D]!p! z2"^a 2" E,2- (6:4:6E,/=F,/^F,/G,/^G,/A,/ (6:4:6^A,/B,/=C/^C/D/^D/ | (6:4:6E/=F/^F/G/^G/A/ (6:4:6^A/B/=c/^c/d/^d/ (6:4:6((e/=f/^f/g/^g/a/ (6:4:6^a/b/)=c'/^c'/d'/^d'/ | e') x7 |]
+V:7
+[K:D] x8 | z4 (6:4:4e/ z/ z z z2 | x8 |]
+V:8
+!p! [A,C]8- | [A,C]8- | [A,C] x7 |]
+V:9
+[K:G]!p! [A,A] z [A,A]2- [A,A] z z2 | z8 | z8 |]
+V:10
+!p! D z({_ED^C} D6-) | D8- | D x7 |]
+V:11
+"^Div."!p! [A,C]8- | [A,C]8- | [A,C] x7 |]
+V:12
+!p! D z({_E,D,^C,} D,6-) | D,8- | D, x7 |]
+V:13
+!p! ^F,,8- | F,,8- | F,, x7 |]
+V:14
+!p! ^F,,8- | F,,8- | F,, x7 |]

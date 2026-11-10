@@ -1,0 +1,46 @@
+X:1
+%%score [ 1 | 2 | 3 | 4 ] 5 6 [ 7 | 8 | 9 | 10 ]
+L:1/8
+Q:1/4=75
+M:3/8
+K:D
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:4 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:5 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:6 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:7 treble nm="Violin" snm="Vln."
+%%MIDI program 48
+V:8 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:9 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:10 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Andantino, poco animato.)""^C"!f! [df] .[bf']/.[be']/!>![bf'] | .[be']/.[bd']/!>![be'].[bd']/.[bc']/ | .[bd']!>![fb].[fd']/.[fc']/ | !>![fd'].[fc']/.[fe']/.[fd']/.[fc']/ |!p!!<(! ([^gb-]3!<)! | [fb]) x2 |]
+V:2
+!f! z .[Bf]/.[Be]/!>![Bf] | .[Be]/.[Bd]/!>![Be].[Bd]/.[Bc]/ | .[Bd]!>!B.[Bd]/.[Bc]/ | !>![Bd].[Bc]/.[Be]/.[Bd]/.[Bc]/ |!p!!<(! B3-!<)! | B x2 |]
+V:3
+[K:F]!f! d .[da]/.[dg]/!>![da] | .[dg]/.[df]/!>![dg].[df]/.[de]/ | .[df]!>!d.[df]/.[de]/ | !>![df].[de]/.[dg]/.[df]/.[de]/ |!p!!<(! d3-!<)! | d x2 |]
+V:4
+!f! [B,,B,] .[B,,D]/.[B,,D]/!>![B,,D] | .[E,B,]/.[E,B,]/!>![E,B,].[E,B,]/.[E,B,]/ | .[B,,D]!>![B,,D].[B,,D]/.[B,,D]/ | !>![B,,D].[B,,D]/.[B,,D]/.[B,,D]/.[B,,D]/ | !p!!<(! ([E,B,-]3!<)! | [B,,D]) x2 |]
+V:5
+[K:A]!f! [Ac] .[Fc]/.[Fc]/!>![Fc] | .[B^d]/.[Bd]/!>![Bd].[Bd]/.[Bd]/ | .[Fc]!>![Fc].[Fc]/.[Fc]/ | !>![Fc].[Fc]/.[Fc]/.[Fc]/.[Fc]/ |!p!!<(! ([B^d-]3!<)! | [Fc]) x2 |]
+V:6
+!mf!{B,,B,,} B,,2 z |{B,,B,,} B,,2 z |{B,,B,,} B,,2 z |{B,,B,,} B,,2 z |!p! B,,3!<(! | !<)! B,, x2 |]
+V:7
+[B,Fd] z z |!f!"^pizz." [B,^GBe] z z | [B,Fd] z z | [B,Fd] z z | [B,^GB] z z | [B,Fdf] z z |]
+V:8
+[B,D] z z |!f!"^pizz." [B,E] z z | [DFB] z z | [DFB] z z | [B,E] z z | [DFB] x2 |]
+V:9
+[B,D] z z |!f!"_pizz." [E,B,] z z | [B,,F,D] z z | [B,,F,D] z z | [E,B,] z z | [B,,F,D] z z |]
+V:10
+B, z z |!f!"^pizz." E, z z | B,, z z | B,, z z | E, z z | B,, x2 |]

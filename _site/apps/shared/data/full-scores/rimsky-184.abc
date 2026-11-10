@@ -1,0 +1,64 @@
+X:1
+%%score [ 1 | 2 | ( 3 4 ) | 5 | 6 ] [  7 | 8  |  9 | 10  ] 11 12
+L:1/8
+Q:1/4=96
+M:2/4
+K:G
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble 
+%%MIDI program 68
+V:5 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:6 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:7 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:8 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:9 alto nm="Trombone 1 & 2" snm="Tbn. 1 & 2"
+%%MIDI program 57
+V:10 bass nm="Trombone 2" snm="Tbn. 2"
+%%MIDI program 57
+V:11 perc stafflines=1 nm="Tambourine" snm="Tamb."
+%%MIDI channel 10
+%%MIDI program 48
+%%MIDI drummap =E 54
+I:percmap =E B 54 normal
+%%MIDI drummap E 54
+I:percmap E B 54 normal
+V:12 perc nm="Piatti" snm="Piat."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap =g 87
+I:percmap =g g 87 normal
+%%MIDI drummap g 87
+I:percmap g g 87 normal
+V:1
+"^Allegretto alla marcia.""^26" z4 | z4 | z4 | z4 |!f! g/a/b/c'/ d'/b/e' | d'>c' bd' | c'b a>d' | c'/b/a/f/ g2 | z2 |]
+V:2
+!mf!"^a 2" g/a/b/c'/ d'/b/e' | d'>c' bd' | c'b a>d' | c'/b/a/f/ g2 |!f! g/a/b/c'/ d'/b/e' | d'>c' bd' | c'b a>d' | c'/b/a/f/ g2 | z2 |]
+V:3
+!mf! d z .g.g | g2 g2 | [eg][eg] [eg]2 | [eg][_ef] [dg]2 |!f!"^a 2" g2 gg | g2 g2 | ee e2 | e[Ae] [Be]2 | z2 |]
+V:4
+B z z2 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x2 |]
+V:5
+[K:A]!mf!"^a 2" A/B/c/d/ e/c/f | e>d ce | dc B>e | d/c/B/G/ A2 |!f! A/B/c/d/ e/c/f | e>d ce | dc B>e | d/c/B/G/ A2 | z2 |]
+V:6
+!mf! [G,D]2 [G,D][E,E] | [G,D]2 [B,D]2 |"^a 2" A,B, C2 | A,C B,2 |!f! E,2 B,,A,, | B,,2 E,2 | [A,,C][B,,B,] [C,A,]2 | [A,,E][C,E] [E,E]2 | z2 |]
+V:7
+[K:D]!mf! [Fd]2 [Fd][Fd] | [Fd]2 d2 | [Bd][Bd] [Bd]2 | [Bd][_Bc] [Ad]2 |!f! [Bd]2 dd | d2 [Bd]2 | [Be][Bd] [Be]2 | BB B2 | z2 |]
+V:8
+[K:D] z4 | z4 | z4 | z4 |!f! [Bd]2 [DA][GB] | [DA]2 [Bd]2 | [Be][Bd] [Be]2 | [EG][B,E] [DF]2 | z2 |]
+V:9
+z4 | z4 | z4 | z4 |!f! [G,B,]2 [G,D][G,C] | [G,D]2 [G,B,]2 | [A,C][G,B,] A,2 | [A,C][E,A,] [G,B,]2 | z2 |]
+V:10
+z4 | z4 | z4 | z4 |!f! E,2 B,,A,, | B,,2 E,2 | A,,B,, C,2 | A,,C, E,2 | z2 |]
+V:11
+[K:none] E z z2 |!p!{=EEE} E2 z2 |{EEE} E2 E2 |{=EEE} EE{EEE} E2 |!mf!{EEE} E2{EEE} EE |{=EEE} E2{EEE} E2 | {EEE} EE E2 |{=EEE} EE{EEE} E2 | z2 |]
+V:12
+[K:none] z4 | z4 | z4 | z4 |!fff! g2 z2 | =g2 z2 | g2 g2 | g2 g2 | z2 |]

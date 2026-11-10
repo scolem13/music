@@ -1,0 +1,74 @@
+X:1
+%%score [ 1 | 2 | 3 | 4 | 5 | 6 | 7 ] [ 8 | 9 ] [ 10 | 11 | 12 | 13 ] [  14 | 15  | 16 | 17 | ]
+L:1/8
+Q:1/4=76
+M:3/4
+K:Eb
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-7 nm="Oboe c-a." snm="Ob. c-a."
+%%MIDI program 69
+V:4 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:5 treble transpose=-14 nm="Bass Clarinet" snm="B. Cl."
+%%MIDI program 71
+V:6 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:7 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:8 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:9 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:10 treble nm="Soprani" snm="S."
+%%MIDI program 52
+V:11 treble nm="Alti" snm="A."
+%%MIDI program 52
+V:12 treble-8 nm="Tenori" snm="T."
+%%MIDI program 52
+V:13 bass nm="Bassi" snm="B."
+%%MIDI program 52
+V:14 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:15 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:16 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:17 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:1
+"^(Andante sostenuto.)"!f!"^77""^a 2" !>!f2 fgbg | !>!f2 fgbg | !>!f2 fgbg | f x4 x | z2 |]
+V:2
+!f! !>![df]2 [df][dg][dg][dg] | !>![df]2 [df][dg][dg][dg] | !>![df]2 [df][dg][dg][dg] | [df] x4 x | z2 |]
+V:3
+[K:Bb]!f! !>!f2 ffff | !>!=e2 efff | !>!=e2 efff | =e x4 x | z2 |]
+V:4
+[K:F]!f! !>![Gg]2 [Gg][Aa][cc'][Aa] | !>![Gg]2 [Gg][Aa][cc'][Aa] | !>![Gg]2 [Gg][Aa][cc'][Aa] | [Gg] x4 x | z2 |]
+V:5
+[K:F]!f! !>!E3 CA,C | !>!E3 CA,C | !>!E3 CA,C | E x4 x | z2 |]
+V:6
+!f! !>![D,D]3 [B,,B,][G,,G,][B,,B,] | !>![D,D]3 [B,,B,][G,,G,][B,,B,] | !>![D,D]3 [B,,B,][G,,G,][B,,B,] | [D,D] x4 x | z2 |]
+V:7
+!f! !>!D,3 B,,G,,B,, | !>!D,3 B,,G,,B,, | !>!D,3 B,,G,,B,, | D, x4 x | z2 |]
+V:8
+[K:Bb]!f! !>![FAc]2 [FAc][FAd] [FAd][FAd] | !>![=EAc]2 [EAc][FAd][FAd][FAd] | !>![=EAc]2 [EAc][FAd][FAd][FAd] | [=EAc] x4 x | z2 |]
+V:9
+[K:Bb]!f! !>!A3 FDF | !>!A3 FDF | !>!A3 FDF | A x4 x | z2 |]
+V:10
+!ff! z2 z [Bd] [Bd] [Bd] | [=Ad]2 !breath![Ad] [Bd] [Bd] [Bd] | [=Ad]2 [Ad] [Bd] [Bd] [Bd] | [=Ad]2 x4 | z2 |]
+V:11
+!ff! z2 z G B G | F2 !breath!F G B G | F2 F G B G | F2 x4 | z2 |]
+V:12
+!ff! z2 z d d d | d2 !breath!d d d d | d2 d d d d | d2 x4 | z2 |]
+V:13
+!ff! z2 z B, G, B, | D2 !breath!D B, G, B, | D2 D B, G, B, | D2 x4 | z2 |]
+V:14
+!f! [FBf] z z2 z2 | z6 | z6 | [D=Af] x4 x | z2 |]
+V:15
+!f! [B,FB] z z2 z2 | z6 | z6 | [=A,Fd] x4 x | z2 |]
+V:16
+!f! [B,F] z z B,G,B, | !>!D2 z B,G,B, | !>!D2 z B,G,B, | D x4 x | z2 |]
+V:17
+!f! D, z z B,,G,,B,, | !>!D,2 z B,,G,,B,, | !>!D,2 z B,,G,,B,, |!p! !fermata!D,6 | z2 |]

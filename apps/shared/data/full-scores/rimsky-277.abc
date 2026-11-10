@@ -1,0 +1,38 @@
+X:1
+%%score 1 2 3 [  4 | 5  | 6 | 7 | 8 ]
+L:1/8
+Q:1/4=50
+M:2/4
+K:Ab
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:3 treble nm="Sniégourotchka." snm="Sniég."
+%%MIDI program 54
+V:4 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:5 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:6 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:7 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:8 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Adagio.""^45" z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4"^poco rit." | z4 | [Q:1/4=70]"^Poco più animato." z"_dolce" (.e/.f/) (g/b/).c'/.e'/ | (f'e'/).c'/ .b(.a/.f/) | .e(.e/.f/) (g/b/).c'/.e'/ | (f'e'/).c'/ .b.a/.f/ | .e x3 |]
+V:2
+[K:Eb] z4 | z4 | z4 | z4 |!pp! E4- | E4 | (F4 | E4) | B4- | B4- | B2 F2 | B,2- B, z | z4 | z4 | z4 | z4 |]
+V:3
+e3 (c/A/) | (dc) (fe) | (dc) (Bc) | (F2 E) z | e2 c A | d c f e | d c B c | F4 | B3 (G/E/) | (FG) (Ac) | (B{/c}B/A/G/B/) F | E2- E z | (c2 =d2) | e2 B B | c2 =d2 | e2 x2 |]
+V:4
+!pp! z (CEA) | (Ac de) | z (AB)c | (dF EB) | z (CEA) | (Ac de) | z (FBc) | z (FAc) | z (EBe) | (FG Ac) | (ec B2) |!pp! B4 | c2 =d2 | e2 B2 | c2 =d2 | e x3 |]
+V:5
+!pp! z (A,CE) | (F A2 c) | z (F2 G) | (B D3) | z (A,CE) | (F A2 c) | z (F2 =E) | z (CFA) | z (B,EB) | (E3 A) | (BA GA) |!pp! G4 | A4 | B2 G2 | A4 | B x3 |]
+V:6
+!pp! z (E,A,C) | (DE FA) | z (CD)E | (FA, G,2) | z (E,A,C) | (DE FA) | z (DFG) | z (A,CF) | z (E,B,E) | (C3 E) | (E3 =D) |!pp! E4 | E2 F2 | G2 E2 | E2 F2 | G x3 |]
+V:7
+!pp! A,,4- | A,,4 | A,,4- | A,,4 | (A,,2 G,,2) | (F,,E,, D,,C,,) | z (B,,D,C,) | F,,4 | G,,4 | (A,,G,, F,,2) | (G,,A,,) (B,,2 | E,,) z z2 | z4 |"^pizz." E2 x2 | z4 | z4 |]
+V:8
+!pp!"_pizz." A,,2 z2 | z4 | A,,2 z2 | z4 | A,,2 z2 | z4 | B,,2 z C, | F,2 z2 | G,2 z2 | A,2 F,2 | G,A, B,2 | E,2 z2 | z4 | z4 | z4 | z4 |]

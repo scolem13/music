@@ -1,0 +1,54 @@
+X:1
+Z:©
+%%score [ 1 | 2 ] [ 3 | 4 ] 5 6 7 [ 8 | 9 | 10 | 11 ]
+L:1/8
+Q:1/4=88
+M:3/4
+K:D
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:4 treble transpose=-7 nm="Horn in F\n2, 3, 4" snm="Hn. 2"
+%%MIDI program 60
+V:5 perc nm="Piatti" snm="Perc."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap g 92
+I:percmap g g 92 normal
+V:6 treble nm="Harp 1" snm="Hp. 1"
+%%MIDI program 46
+V:7 treble nm="Harp 2" snm="Hp. 2"
+%%MIDI program 46
+V:8 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:9 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:10 bass transpose=-12 nm="Pizzicato Double Bass" snm="Cb."
+%%MIDI program 45
+V:11 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Andantino." z6 |!p! (!>!=c'(3b/_b/a/ ^g/c'/=g/f/ a2) | z6 | z6 | z2 |]
+V:2
+z6 | z6 |!p! (!>!g'(3f'/=f'/e'/ _e'/g'/d'/c'/ =e'2) | (_e'2- e'(3d'/c'/=c'/ g/e'/_b/a/) | z2 |]
+V:3
+[K:A] (c2 !tenuto!e2 !tenuto!e2) | (e4 dc) | (=f4 ed) | e4- e z | z2 |]
+V:4
+[K:A]!pp! [E=G_B]6 | [C=G_B]4 [EGB]2 | [DGB]6 | [C=G_B]6 | z2 |]
+V:5
+[K:none] z6 |!pp! Tg6- | Tg6- | Tg4- g z | z2 |]
+V:6
+z6 |!p! !~(!F,2 !~)!a2 z2 | z6 | !~(!F,2 !~)!a2 z2 | z2 |]
+V:7
+z6 | z6 |!p! !~(!G,2 !~)!_b2 z2 | z6 | z2 |]
+V:8
+!p! (F2 !tenuto!A2 !tenuto!A2) | (A4 GF) | (_B4 AG) | A4- A z | z2 |]
+V:9
+!p! (A,,=C,_B,,A,,G,,F,,) | (=C,A,,_B,,C,D,_E,) | (G,,E,,F,,G,,A,,_B,,) | (=C,A,,_B,,C,D,_E,) | z2 |]
+V:10
+D,2 z2 z2 | z6 | z6 | z6 | z2 |]
+V:11
+!p! D,6- | D,6- | D,6- | D,6 | z2 |]

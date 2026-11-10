@@ -1197,12 +1197,6 @@ Mullen, Andy. *The Literate Musician: How to Hear, Speak, Think, Read & Write th
 Mutch, Caleb. "Blainville's New Mode, or How the Plagal Cadence Came to Be 'Plagal'." *Eighteenth-Century Music*, vol. 12, no. 1, 2015, pp. 69-90. [www.cambridge.org/core/journals/eighteenth-century-music/article/blainvilles-new-mode-or-how-the-plagal-cadence-came-to-be-plagal/0344135AED4A9B21D04DB4C28BDEE679](https://www.cambridge.org/core/journals/eighteenth-century-music/article/blainvilles-new-mode-or-how-the-plagal-cadence-came-to-be-plagal/0344135AED4A9B21D04DB4C28BDEE679). Abstract read. 
 [Used in: [Lesson: Cadences, and the One That Is Not](lessons/cadences.qmd) (for teachers)]{.wc-used}
 
-Mutopia Project. "Beethoven, Sonata No. 14 \"Moonlight\", Op. 27 No. 2, 3rd movement (Presto agitato)," typeset by Chris Sawer and Stewart Holmes after the Berners edition (1908). Creative Commons Attribution-ShareAlike 2.5. [www.mutopiaproject.org/ftp/BeethovenLv/O27/moonlight/](https://www.mutopiaproject.org/ftp/BeethovenLv/O27/moonlight/). Plan read from the .ly file's MIDI export (lilypond reported 'Going back in MIDI time'); the URL is the mirror's path, not fetched. 
-[Used in: [Sonata and Rondo Forms: Practice for Chapter 25](theory/sonata-rondo.qmd) (for teachers)]{.wc-used}
-
-Mutopia Project. "Beethoven, Sonata No. 8 \"Pathétique\", Op. 13, 3rd movement (Rondo)," typeset by Chris Sawer after the Berners edition (1908), ed. A. Winterberger. Public Domain. [www.mutopiaproject.org/ftp/BeethovenLv/O13/pathetique-3/](https://www.mutopiaproject.org/ftp/BeethovenLv/O13/pathetique-3/). Plan read from the .ly file's MIDI export with scripts/mutopia/midi-structure.py (local mirror ~/Projects/corpora/mutopia); the URL is the mirror's path, not fetched. 
-[Used in: [Sonata and Rondo Forms: Practice for Chapter 25](theory/sonata-rondo.qmd) (for teachers)]{.wc-used}
-
 National Association of Teachers of Singing. "Science-Informed Voice Pedagogy Resources." *NATS*, [www.nats.org/Science-Informed_Voice_Pedagogy_Resources.html](https://www.nats.org/Science-Informed_Voice_Pedagogy_Resources.html). Syllabi, labs on registers, resonance, vowels and vibrato; belting articles; terminology document. 
 [Used in: [Classical Singing: Breath, Pure Vowels and Legato](lessons/voice-classical.qmd), [Jazz Singing: Swing, Scat and the Changes](lessons/voice-jazz.qmd), [Pop Singing: Speech, Mix, Runs and the Mic](lessons/voice-pop.qmd) (for teachers)]{.wc-used}
 
@@ -1532,6 +1526,9 @@ Riley, John. *The Art of Bop Drumming*. Manhattan Music, 1994.
 Rimsky-Korsakov, Nikolay. *Practical Manual of Harmony*. A. Büttner, 1886. IMSLP. [imslp.org/wiki/Practical_Manual_of_Harmony_(Rimsky-Korsakov,_Nikolay)](https://imslp.org/wiki/Practical_Manual_of_Harmony_(Rimsky-Korsakov,_Nikolay)). The book whose modulation examples are on the Rimsky-Korsakov page; IMSLP has scans of later editions. 
 [Used in: [Analysed Scores](theory/analysed-scores/index.qmd), [Rimsky-Korsakov: Practical Manual of Harmony](theory/analysed-scores/rimsky-korsakov-harmony.qmd) (for students)]{.wc-used}
 
+Rimsky-Korsakov, Nikolay. *Principles of Orchestration, with Musical Examples Drawn from His Own Works*. Edited by Maximilian Steinberg, translated by Edward Agate, Édition Russe de Musique, 1922. *Project Gutenberg*, ebook no. 33900, [www.gutenberg.org/ebooks/33900](https://www.gutenberg.org/ebooks/33900). Public domain in the USA. Read: Chapter II (melody in strings, woodwind, brass and combined groups) and Chapter III (number of parts, distribution, string / woodwind / brass harmony). Retold in the page's own words; at most short phrases quoted. Which numbered examples illustrate which passage is taken from the book's own links (scripts/rimsky/index.py). Imprint read from the book's title page. 
+[Used in: [Composing 4: Instruments, Ranges and Transposing](lessons/compose-instruments.qmd), [Composing 5: Arranging for Orchestra](lessons/compose-orchestra.qmd), [Full Scores](theory/analysed-scores/full-scores.qmd) (for students)]{.wc-used}
+
 Roads, Curtis. *Microsound*. MIT Press, 2001. 
 [Used in: [Sound 10: Granular Synthesis](lessons/sound-granular.qmd) (for teachers)]{.wc-used}
 
@@ -1583,7 +1580,7 @@ Sapp, Craig Stuart, encoder. *370 Four-part Chorales by J. S. Bach in the Humdru
 [Used in: [Bach: "O Haupt voll Blut und Wunden"](theory/analysed-scores/bach-o-haupt.qmd), [Modulation Finder](theory/analysed-scores/modulation-finder.qmd), [Analysed Scores Library](theory/analysed-scores/view.qmd) (for students)]{.wc-used}
 
 Sapp, Craig Stuart, encoder. *Beethoven Piano Sonatas in the Humdrum File Format* (after the Durand 1915 edition, ed. Paul Dukas). GitHub. [github.com/craigsapp/beethoven-piano-sonatas](https://github.com/craigsapp/beethoven-piano-sonatas). The sonata's notes, converted to ABC for this page. 
-[Used in: [Beethoven: "Moonlight" Sonata, I](theory/analysed-scores/beethoven-moonlight-1.qmd), [Analysed Scores Library](theory/analysed-scores/view.qmd) (for students)]{.wc-used}
+[Used in: [Beethoven: "Moonlight" Sonata, I](theory/analysed-scores/beethoven-moonlight-1.qmd), [Analysed Scores Library](theory/analysed-scores/view.qmd), [Sonata and Rondo Forms: Practice for Chapter 25](theory/sonata-rondo.qmd) (for students)]{.wc-used}
 
 Sapp, Craig Stuart, encoder. *Mozart Piano Sonatas in the Humdrum File Format* (after the Alte Mozart-Ausgabe, vol. 20, 1878). GitHub. [github.com/craigsapp/mozart-piano-sonatas](https://github.com/craigsapp/mozart-piano-sonatas). The Mozart sonatas' notes (CC BY-NC-SA 4.0), converted to ABC for the library. 
 [Used in: [Analysed Scores Library](theory/analysed-scores/view.qmd) (for students)]{.wc-used}

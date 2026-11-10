@@ -1,0 +1,66 @@
+X:1
+%%score [ 1 | 2 |  3 | 4  | ( 5 6 ) ] 7 8 [ 9 | 10 ] [  11 | 12  | 13 | 14 | 15 ]
+L:1/8
+Q:3/8=72
+M:6/8
+K:F
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-2 nm="Clarinet in Bb 1" snm="Bb Cl. 1"
+%%MIDI program 71
+V:4 treble transpose=-2 nm="Clarinet in Bb 2" snm="Bb Cl. 2"
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 bass 
+%%MIDI program 70
+V:7 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:8 treble nm="La Reine\ndes Mers" snm="La R."
+%%MIDI program 54
+V:9 treble nm="Soprani" snm="S."
+%%MIDI program 53
+V:10 treble nm="Alti" snm="A."
+%%MIDI program 53
+V:11 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:12 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:13 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:14 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:15 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Allegretto.)""^83"!pp! z3 [Bd]3 | z3 [A^c]3 | z3 [Bd]3 | z3 [A^c]3 | !mf!"_cresc." (3(E/G/B/d)(3(_E/G/=B/ _e)(3(D/G/_B/=e) | (3(_E/G/=B/_e)(3(D/G/_B/ =e)(3(_D/A/A/f) | z6 | z6 | z2 |]
+V:2
+z6 | z6 | z6 | z6 |!pp!"_cresc." ([Bd]2 [=B_e]- [Be] [_B=e]2 | [=B_e]2 [_B=e]- [Be] [Af]2) | z6 | z6 | z2 |]
+V:3
+[K:G]!pp! z3 [FA]3 | z3 [GB]3 | z3 [FA]3 | z3 [GB]3 | !mf!"_cresc." (3(F/A/c/e)(3(=F/A/^c/ =f)(3(E/A/=c/^f) | (3(=F/A/^c/=f)(3(E/A/=c/ ^f)(3(_E/B/B/g) | !p! (3(B/d/=f/^g)(3(B/d/f/ g>ba) | (3(A/c/_e/f)(3(A/c/e/ f>ag) | z2 |]
+V:4
+[K:G] z6 | z6 | z6 | z6 | z6 | z6 |!p! B3- (B>^GA) | A3- (A>FG) | z2 |]
+V:5
+z6 | z6 | z6 | z6 |[K:alto]!pp!"_cresc." G6- | G3- G A2 |!p! (_E3 D3) | (_D3 C3) | z2 |]
+V:6
+x6 | x6 | x6 | x6 |[K:alto] (E2 _E-E D2 | _E2 D-D _D2) | (C3 =B,3) | (B,3 A,3) | x2 |]
+V:7
+[K:C]!pp! z3 [B,DFA]3 | z3 [CE^G]3 | z3 [B,DFA]3 | z3 [CE^G]3 | z6 | z6 | z6 | z6 | z2 |]
+V:8
+(3(E/G/B/d>^c d>c!breath!d) | (F-F/A/^c/f/ a2 !breath!f) | (3(E/G/B/d>^c d>c!breath!d) | (F-F/A/^c/f/ a2 !breath!f) |"^cresc." (d2 _e- e =e2 | ^d2 e-e f) z | ^f3- (f>a!breath!g) | e3- (e>gf) | z2 |]
+V:9
+z3 [GB]2 [GB] | A2 A A2 z | [GB]3- [GB]2 [GB] | A2 A A2 z | z6 | z6 | (A3 D2) G | G3 C2 F | z2 |]
+V:10
+z3 [EG]2 [EG] | F2 F F2 z | [EG]3- [EG]2 [EG] | F2 F F2 z | z6 | z6 | (([C_E]3 [=B,D]2)) [B,D] | [B,_D]3 [A,C]2 [A,C] | z2 |]
+V:11
+!pp! z3"^pizz." [Bd]2 z | z3 [A^c]2 z | z3 [Bd]2 z | z3 [A^c]2 z | !pp!"^arco""_cresc." (d3/2^c/4d/4_e- e/d/4e/4 =e2) |!f! (_e3/2d/4e/4=e- e/^d/4e/4 f2) | z3"_dolce" (^f>ag) | z3 (e>gf) | z2 |]
+V:12
+!pp! z3"_pizz." [EG]2 z | z3 [FA]2 z | z3 [EG]2 z | z3 [FA]2 z | !pp!"_cresc.""^arco" (B2 =B- B _B2) |!f! (=B2 _B-B A2) |!p! z A2 z (DG) | z G2 z (CF) | z2 |]
+V:13
+!pp! z"^pizz." E,G, [G,B,]2 z | z F,A, A,2 z | z E,G, [G,B,]2 z | z F,A, A,2 z | !pp!"^arco""_cresc." G6 |!f! G3- (G A2) |!p! z _E2 z (DG) | z _D2 z (CF) | z2 |]
+V:14
+!pp! z"^pizz." E,A, [E,D]2 z | z F,A, [F,^C]2 z | z E,A, [E,D]2 z | z F,A, [F,^C]2 z | !pp!"^arco""_cresc." (E3/2F/4E/4_E- E/_F/4E/4 D2) |!f! (_E3/2_F/4E/4D- D/=E/4D/4 _D2) | !p! (C3 =B,3) | (B,3 A,3) | z2 |]
+V:15
+!pp!"_pizz." C,2 z z3 | F,2 z z3 | C,2 z z3 | F,2 z z3 | z6 | z6 | z6 | z6 | z2 |]

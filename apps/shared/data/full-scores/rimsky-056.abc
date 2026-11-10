@@ -1,0 +1,30 @@
+X:1
+%%score [ 1 | 2 ] [  3 | 4  | 5 | 6 ]
+L:1/8
+Q:1/4=108
+M:3/4
+K:F
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble nm="Pizzicato Violin 1" snm="Vln. 1"
+%%MIDI program 45
+V:4 treble nm="Pizzicato Violin 2" snm="Vln. 2"
+%%MIDI program 45
+V:5 bass nm="Pizzicato Cello" snm="Vc."
+%%MIDI program 45
+V:6 bass transpose=-12 nm="Pizzicato Double Bass" snm="Cb."
+%%MIDI program 45
+V:1
+"^O" !>!c'.c'/.d'/.e'/.^f'/ .g'/.f'/.a'/.g'/.g'/.f'/ | .^f'/.e'/.e'/.d'/.d'/.c'/ (c'/=b/).b/.b/.b/.b/ |]
+V:2
+!>!c.c/.d/.e/.^f/ .g/.f/.a/.g/.g/.f/ | .^f/.e/.e/.d/.d/.c/ (c/=B/).B/.B/.B/.B/ |]
+V:3
+"^Quasi Chitarra, non div." z !arpeggio![EGc] !arpeggio![EGc]!arpeggio![EGc] !arpeggio![EGc]!arpeggio![EGc] | z [EGc] [EGc][^D^F=B] [DFB][DFB] |]
+V:4
+z !arpeggio![EGc] !arpeggio![EGc]!arpeggio![EGc] !arpeggio![EGc]!arpeggio![EGc] | z [EGc] [EGc][^D^F=B] [DFB][DFB] |]
+V:5
+z !arpeggio![A,,E,C] !arpeggio![A,,E,C]!arpeggio![A,,E,C] !arpeggio![A,,E,C]!arpeggio![A,,E,C] | z [A,,E,A,] [A,,E,A,][A,,^F,=B,] [A,,F,B,][A,,F,B,] |]
+V:6
+A, z A,, z A, z | A,, z A, z A,, z |]

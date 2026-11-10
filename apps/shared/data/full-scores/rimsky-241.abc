@@ -1,0 +1,50 @@
+X:1
+%%score [ 1 | 2 | 3 | 4 | 5 ] [ 6 | 7 ] 8 [  9 | 10  | 11 ]
+L:1/8
+Q:1/4=112
+M:4/4
+K:G
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:4 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:7 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:8 treble nm="Lioubacha." snm="Liou."
+%%MIDI program 54
+V:9 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:10 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:11 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:1
+"^(Allegro moderato.)" z8 |!pp! [^ae']6- [ae'] z | z8 |!pp! [^gd']6- [gd'] z |]
+V:2
+!mf! B6- B z | z8 |!mf! A6- A z | z8 |]
+V:3
+[K:D]!mf! d6- d z | z8 |!mf! c6- c z | z8 |]
+V:4
+[K:A] z8 |!pp! [^Bf]6- [Bf] z | z8 |!pp! [^Ae]6- [Ae] z |]
+V:5
+z8 |!pp! [^C,E]6- [C,E] z | z8 |!pp! [B,,D]6- [B,,D] z |]
+V:6
+[K:D]!mf! !plus!B6- B z |!pp! !open!=F6- F z |!mf! !plus!A6- A z |!pp! !open!_E6- E z |]
+V:7
+[K:D] z8 |!pp! [Cc]6- [Cc] z | z8 |!pp! [B,B]6- [B,B] z |]
+V:8
+z8 |!f! z4 !>!e2- e z | z4 d d A z | z2 z ^G d2 z2 |]
+V:9
+!p!"^trem." !>!B7 z | z8 |!pp! !>!A7 z | z8 |]
+V:10
+!p!"^trem." !>!G7 z | z8 |!pp! !>!F7 z | z8 |]
+V:11
+!p!"^trem." !>!E7 z | z8 |!pp! !>!D7 z | z8 |]

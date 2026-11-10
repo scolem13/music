@@ -1,0 +1,86 @@
+X:1
+%%score [ 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 ] [  9 | 10  |  11 | 12  | 13 | 14 ] 15 [  16 | 17  | 18 | 19 | 20 ]
+L:1/8
+Q:1/4=120
+M:2/4
+K:C
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:5 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:6 treble transpose=-14 nm="Bass Clarinet" snm="B. Cl."
+%%MIDI program 71
+V:7 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:8 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:9 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:10 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:11 treble transpose=-2 nm="Trumpet in Bb \nI. II." snm="Bb Tpt.\n1 & 2"
+%%MIDI program 56
+V:12 treble transpose=-7 nm="Trumpet\nc-alta (F)" snm="Bb Tpt. 3"
+%%MIDI program 56
+V:13 alto nm="3 Trombones" snm="Tbn."
+%%MIDI program 57
+V:14 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:15 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:16 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:17 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:18 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:19 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:20 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^65" z4 | z4 | z4 | z4 | z4 | z4 |({F/G/_A/B/c/d/e/f/}!<(!!<)! g) z z2 | z4 |]
+V:2
+z4 | z4 | !f! (3([_ac']/[f_d']/[ac']/(3[fd']/[ac']/[fd']/ (3[ac']/[fd']/[ac']/(3[fd']/[ac']/[fd']/ | (3[_ac']/[f_d']/[ac']/(3[fd']/[ac']/[fd']/ (3[ac']/[fd']/[ac']/(3[fd']/[ac']/[fd']/) | !ff!"^a 2" (5:4:5!wedge!c'/!wedge!_d'/!wedge!c'/!wedge!d'/!wedge!c'/ (5:4:5!wedge!f'/!wedge!_g'/!wedge!f'/!wedge!g'/!wedge!f'/ | (5:4:5!wedge!e'/!wedge!f'/!wedge!e'/!wedge!f'/!wedge!e'/ (5:4:5!wedge!d'/!wedge!e'/!wedge!d'/!wedge!e'/!wedge!d'/ | g' z z2 |({G/F/E/D/} C) z !fermata!z2 |]
+V:3
+[Ac] z z2 | z4 | !f! (3([_ac']/[f_d']/[ac']/(3[fd']/[ac']/[fd']/ (3[ac']/[fd']/[ac']/(3[fd']/[ac']/[fd']/ | (3[_ac']/[f_d']/[ac']/(3[fd']/[ac']/[fd']/ (3[ac']/[fd']/[ac']/(3[fd']/[ac']/[fd']/) | !ff!"^a 2" (5:4:5!wedge!_a/!wedge!f/!wedge!a/!wedge!f/!wedge!a/ (5:4:5!wedge!c'/!wedge!a/!wedge!c'/!wedge!a/!wedge!c'/ | (5:4:5!wedge!_b/!wedge!g/!wedge!b/!wedge!g/!wedge!b/ (5:4:5!wedge!=b/!wedge!f/!wedge!b/!wedge!f/!wedge!b/ | [ec'] z z2 |({G/F/E/D/} C) z !fermata!z2 |]
+V:4
+[K:G] c z z2 | z4 |!f! (3(g/_a/g/(3a/g/a/ (3g/a/g/(3a/g/a/ | (3g/_a/g/(3a/g/a/ (3g/a/g/(3a/g/a/) | !ff!"^a 2" (5:4:5!wedge!g/!wedge!_a/!wedge!g/!wedge!a/!wedge!g/ (5:4:5!wedge!c'/!wedge!_d'/!wedge!c'/!wedge!d'/!wedge!c'/ | (5:4:5!wedge!b/!wedge!c'/!wedge!b/!wedge!c'/!wedge!b/ (5:4:5!wedge!a/!wedge!b/!wedge!a/!wedge!b/!wedge!a/ | d' z z2 |({d/c/B/A/} G) z !fermata!z2 |]
+V:5
+[K:D] [Bd] z z2 | z4 | !f! (3([_Bd]/[G_e]/[Bd]/(3[Ge]/[Bd]/[Ge]/ (3[Bd]/[Ge]/[Bd]/(3[Ge]/[Bd]/[Ge]/ | (3[_Bd]/[G_e]/[Bd]/(3[Ge]/[Bd]/[Ge]/ (3[Bd]/[Ge]/[Bd]/(3[Ge]/[Bd]/[Ge]/) | !ff!"^a 2" (5:4:5!wedge![_Bd]/!wedge![G_e]/!wedge![Bd]/!wedge![Ge]/!wedge![Bd]/ (5:4:5!wedge![dg]/!wedge![Ba]/!wedge![dg]/!wedge![Ba]/!wedge![dg]/ | (5:4:5!wedge![=cf]/!wedge![Ag]/!wedge![cf]/!wedge![Ag]/!wedge![cf]/ (5:4:5!wedge![^ce]/!wedge![Gf]/!wedge![ce]/!wedge![Gf]/!wedge![ce]/ | [da] z z2 |({A/G/F/E/}"^a 2" D) z !fermata!z2 |]
+V:6
+[K:D] G z z2 | z4 |!f! (3(_B/G/B/(3G/B/G/ (3B/G/B/(3G/B/G/ | (3_B/G/B/(3G/B/G/ (3B/G/B/(3G/B/G/) | !ff!"^a 2" (5:4:5!wedge!_B/!wedge!G/!wedge!B/!wedge!G/!wedge!B/ (5:4:5!wedge!d/!wedge!B/!wedge!d/!wedge!B/!wedge!d/ | (5:4:5!wedge!=c/!wedge!A/!wedge!c/!wedge!A/!wedge!c/ (5:4:5!wedge!^c/!wedge!G/!wedge!c/!wedge!G/!wedge!c/ | F z z2 |({A/G/F/E/} D) z !fermata!z2 |]
+V:7
+C,4- | C,4- | C,4- | C,4 |!ff! C,4- | C,4- | C, z z2 |({G,/F,/E,/D,/} !fermata!C,4) |]
+V:8
+C,4- | C,4- | C,4- | C,4 |!ff! C,4- | C,4- | C, z z2 | !fermata!C,4 |]
+V:9
+[K:G] z4 | z4 | z4 | z4 |!ff!"^a 2" !>!g2- (3g._e.g | (3.f.d.f (3._e.c.e | .d.G !>!g2- | g z !fermata!z2 |]
+V:10
+[K:G] z4 | z4 | z4 | z4 |!ff!"^a 2" !>!g2- (3g._e.g | (3.f.d.f (3._e.c.e | .d.G !>!g2- | g z !fermata!z2 |]
+V:11
+[K:D]!f! [Bd]3/2[Bd]/4[Bd]/4 [Bd]/[Bc]/B/[Bc]/ | [Bd]3/2[Bd]/4[Bd]/4 [Bd]/[Bc]/[Bd]/[Be]/ | [_Bd]/[Bc]/B/[Bc]/ [Bd]/[Bc]/[Bd]/[B_e]/ | [_Bd]/[Bc]/B/[Bc]/ [Bd]/[Bc]/[Bd]/[B_e]/ | !ff! [_Bd] z [dg] z | [cf] z [ce] z |!f! [da] z z2 |"^a 2" !fermata!D4 |]
+V:12
+[K:G]!f! c3/2c/4c/4 c/d/e/d/ | c3/2c/4c/4 c/d/c/A/ | c/d/_e/d/ c/d/c/_A/ | c/d/_e/d/ c/d/c/_A/ | !ff! c z _e z | d z c z |!f! B z z2 | !fermata!G4 |]
+V:13
+!f! [F,A,C]4- | [F,A,C]4 | [F,_A,C]4- | [F,A,C]4 |!ff! [F,_A,C]2 [A,CF]2 | [G,_B,E]2 [F,=B,D]2 | [E,CG] z z2 |[K:bass]"^a 2""^I. II.""_III." !fermata![C,,C,]4 |]
+V:14
+!f! C,,4- | C,,4- | C,,4- | C,,4 |!ff! C,,4- | C,,4- | C,, z z2 | !fermata!C,,4 |]
+V:15
+!f! C,3/2C,/4C,/4 C,/C,/C,/C,/ | C,3/2C,/4C,/4 C,/C,/C,/C,/ | C,/C,/C,/C,/ C,/C,/C,/C,/ | C,/C,/C,/C,/ C,/C,/C,/C,/ |!ff! TC,4- | TC,4- | C, z z2 | !fermata!TC,2 z2 |]
+V:16
+"^pizz." [A,Fc] z z2 | z4"_Div." | !f!"^arco" (3([_ac']/[f_d']/[ac']/(3[fd']/[ac']/[fd']/ (3[ac']/[fd']/[ac']/(3[fd']/[ac']/[fd']/) | (3([_ac']/[f_d']/[ac']/(3[fd']/[ac']/[fd']/ (3[ac']/[fd']/[ac']/(3[fd']/[ac']/[fd']/) | !ff! (5:4:5!wedge![_ac']/!wedge![f_d']/!wedge![ac']/!wedge![fd']/!wedge![ac']/ (5:4:5!wedge![c'f']/!wedge![ag']/!wedge![c'f']/!wedge![ag']/!wedge![c'f']/ | (5:4:5!wedge![_be']/!wedge![gf']/!wedge![be']/!wedge![gf']/!wedge![be']/ (5:4:5!wedge![=bd']/!wedge![fe']/!wedge![bd']/!wedge![fe']/!wedge![bd']/ | [c'g'] z z2 |({G/F/E/D/} !fermata!C4) |]
+V:17
+"^pizz." [A,Fc] z z2 | z4 |!f!"^arco" (3(c/_d/c/(3d/c/d/ (3c/d/c/(3d/c/d/) | (3(c/_d/c/(3d/c/d/ (3c/d/c/(3d/c/d/) | !ff! (5:4:5!wedge!c/!wedge!_d/!wedge!c/!wedge!d/!wedge!c/ (5:4:5!wedge!f/!wedge!_g/!wedge!f/!wedge!g/!wedge!f/ | (5:4:5!wedge!e/!wedge!f/!wedge!e/!wedge!f/!wedge!e/ (5:4:5!wedge!d/!wedge!e/!wedge!d/!wedge!e/!wedge!d/ | [Ecg] z z2 |({G/F/E/D/} !fermata!C4) |]
+V:18
+"^pizz." [F,CFA] x3 | z4 |!f!"^arco" (3(_A/F/A/(3F/A/F/ (3A/F/A/(3F/A/F/) | (3(_A/F/A/(3F/A/F/ (3A/F/A/(3F/A/F/) | !ff! (5:4:5!wedge!_A/!wedge!F/!wedge!A/!wedge!F/!wedge!A/ (5:4:5!wedge!c/!wedge!A/!wedge!c/!wedge!A/!wedge!c/ | (5:4:5!wedge!_B/!wedge!G/!wedge!B/!wedge!G/!wedge!B/ (5:4:5!wedge!=B/!wedge!F/!wedge!B/!wedge!F/!wedge!B/ | [E,CG] z z2 |({G,/F,/E,/D,/} !fermata!C,4) |]
+V:19
+!f! [C,,C,]4- | [C,,C,]4- | [C,,C,]4- | [C,,C,]4 |!ff! [C,,C,]4- | [C,,C,]4- | [C,,C,] z z2 | ({G,,/F,,/E,,/D,,/} !fermata![C,,C,]4) |]
+V:20
+!f! C,4- | C,4- | C,4- | C,4 |!ff! C,4- | C,4- | C, z z2 |({G,/F,/E,/D,/} !fermata!C,4) |]

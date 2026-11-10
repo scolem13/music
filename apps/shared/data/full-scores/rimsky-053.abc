@@ -1,0 +1,66 @@
+X:1
+%%score [  1 | 2  | 3 | 4 |  5 | 6  | 7 ] [ 8 9  10 11  12 ] [ 13 | 14 | 15 ]
+L:1/8
+Q:1/4=72
+M:3/4
+K:Bb
+V:1 treble nm="Fl. I.II. a 2" snm="Fl. 1"
+%%MIDI program 73
+V:2 treble nm="Fl. III." snm="Fl. 2"
+%%MIDI program 73
+V:3 treble nm="2 Oboe\na 2" snm="Ob."
+%%MIDI program 68
+V:4 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:5 treble transpose=-2 nm="Cl. I. III.\na 2" snm="Bb Cl. 1"
+%%MIDI program 71
+V:6 treble transpose=-2 nm="Cl. II." snm="Bb Cl. 2"
+%%MIDI program 71
+V:7 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:8 treble nm="Le Peuple.Soprano" snm="S"
+%%MIDI program 52
+V:9 treble nm="Le Peuple.Alto" snm="A"
+%%MIDI program 52
+V:10 treble-8 nm="Tenor 1" snm="T 1"
+%%MIDI program 52
+V:11 treble-8 nm="Tenor 2" snm="T 2"
+%%MIDI program 52
+V:12 bass nm="Le Peuple.Bass" snm="B"
+%%MIDI program 52
+V:13 treble nm="Violin\nI. e II." snm="Vln."
+%%MIDI program 48
+V:14 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:15 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:1
+"^Moderato assai."!p! b4- (b/f/g/d/ | f/c/B/f/ d/g/f/g/ b/f/g/d/) | (b/g/c'/b/ e'/b/c'/g/ b/f/g/d/) | (f/c/B/f/ d/g/f/g/ b/g/c'/b/) | (e'/b/c'/g/ b/f/g/d/ b/g/c'/b/) |]
+V:2
+!p! B6- | B6- | B6- | B6- | B4- B z |]
+V:3
+!p! B6- | B6- | B6- | B6- | B4- B z |]
+V:4
+[K:F]!p! A2- A z z2 | (c4 A2) | (B4 A2) | (c4 B2) | (B2 A4) |]
+V:5
+[K:C]!p! c'4- (c'/g/a/e/ | g/d/c/g/ e/a/g/a/ c'/g/a/e/) | (c'/a/d'/c'/ f'/c'/d'/a/ c'/g/a/e/) | (g/d/c/g/ e/a/g/a/ c'/a/d'/c'/) | (f'/c'/d'/a/ c'/g/a/e/ c'/a/d'/c'/) |]
+V:6
+[K:C] c2- c z z2 |!mf! C6 | (A,4 C2) | (C4 D2) | (A,2 C4) |]
+V:7
+[B,,F,]2- [B,,F,] z z2 | (([D,F,]4 [G,,G,]2)) | (([C,E,]4 [G,,G,]2)) | (([D,F,]4 [C,G,]2)) | (([C,E,]2 [G,,G,]4)) |]
+V:8
+B6- | B6- | B6- | B6- | B4- B z |]
+V:9
+!mf! z2 z2 (B,C) | (FEDC) B,2 | (ED) C2 B, D | (FE DC/B,/) E D | C2 B,4 |]
+V:10
+!mf! z2 z2 (Bc) | (fedc) B2 | (ed) c2 B d | (fe dc/B/) e d | c2 B4 |]
+V:11
+z6 |!p! B6 | G4 B2 | (B4 G2) | G2 B4 |]
+V:12
+z6 |!p! (([D,F,]4 [G,,D,]2)) | [C,E,]4 [G,,D,]2 | (([D,F,]4 [C,E,]2)) | [C,E,]2 [G,,D,]4 |]
+V:13
+!p!({FGA}!>(! TB6-)!>)! |!p! TB6- | TB6- | TB6- | TB4- B z |]
+V:14
+!mf! z2 z2 (B,C) | (FEDC B,2) | (ED) C2 (B,D) | (FE DC/B,/) (ED) | (C2 B,4) |]
+V:15
+!mf! z2 z2 (B,C) | (FEDC B,2) | (ED) C2 (B,D) | (FE DC/B,/) (ED) | (C2 B,4) |]

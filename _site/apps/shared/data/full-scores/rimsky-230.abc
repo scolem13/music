@@ -1,0 +1,58 @@
+X:1
+%%score [ 1 | 2 | 3 | 4 | ( 5 6 ) ] { 7 | 8 } 9 [  10 | 11  | 12 | 13 ]
+L:1/8
+Q:1/2=138
+M:2/2
+K:D
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble nm="Clarinet in C" snm="C Cl."
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 bass 
+%%MIDI program 70
+V:7 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:8 treble 
+%%MIDI program 46
+V:9 treble nm="2 Violins\nsoli" snm="2 Vlns."
+%%MIDI program 40
+V:10 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:11 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:12 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:13 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:1
+"^Sostenuto e tranquillo."!mf! z4 (3d2 d2 d2 | (3e2 e2 e2 (3e2 e2 d2 | (3e2 e2 e2 (3e2 e2 e2 | (3e2 e2 f2 (3g2 g2 g2 | (3f2 f2 f2 (3f2 f2 f2 | (3f2 f2 f2 (3f2 f2 f2 | (3g2 g2 g2 (3f2 f2 f2 | (3e2 e2 e2 (3d2 d2 e2 | [M:3/2] (3f2 f2 f2 (3f2 f2 f2 (3f2 f2 f2 | [M:2/2] (3e2 e2 e2 (3d2 d2 d2 | (3c2 c2 c2 (3d2 d2 d2 | e4 |]
+V:2
+!mf! z4 (3[fb]2 [fb]2 [fb]2 | (3[gb]2 [gb]2 [gb]2 (3[gb]2 [gb]2 [gb]2 | (3[gb]2 [gb]2 [gb]2 (3[gb]2 [gb]2 [gb]2 | (3[gb]2 [gb]2 [gb]2 (3[gb]2 [gb]2 [ga]2 | (3[fa]2 [fa]2 [fa]2 (3[fa]2 [fa]2 [fa]2 | (3[fb]2 [fb]2 [fb]2 (3[bd']2 [bd']2 [bd']2 | (3[bd']2 [bd']2 [bd']2 (3[ad']2 [ad']2 [ad']2 | (3[gb]2 [gb]2 [gb]2 (3[fb]2 [fb]2 [ac']2 | [M:3/2] (3[ad']2 [ad']2 [ad']2 (3[ad']2 [ad']2 [ad']2 (3[ad']2 [ad']2 [ad']2 | [M:2/2] (3[ac']2 [ac']2 [ac']2 (3[fb]2 [fb]2 [fb]2 | (3[f^a]2 [fa]2 [fa]2 (3[fb]2 [fb]2 [fb]2 | [ac']4 |]
+V:3
+!pp! z4 d4 | e6 d2 | e4 e2 e2 | (e2 f2 g4) | f8 | f4 f2 f2 | g4 f4 | e4 (d2 e2) | [M:3/2] f6 f2 f2 f2 |[M:2/2] e4 d4 | c4 d2 d2 | e4 |]
+V:4
+!pp! z4 (3[FB]2 [FB]2 [FB]2 | (3[GB]2 [GB]2 [GB]2 (3[GB]2 [GB]2 [FB]2 | (3[GB]2 [GB]2 [GB]2 (3[GB]2 [GB]2 [GB]2 | (3[GB]2 [GB]2 [GB]2 (3[GB]2 [GB]2 [GA]2 | (3[FA]2 [FA]2 [FA]2 (3[FA]2 [FA]2 [FA]2 | (3[FB]2 [FB]2 [FB]2 (3[Bd]2 [Bd]2 [Bd]2 | (3[Bd]2 [Bd]2 [Bd]2 (3[Ad]2 [Ad]2 [Ad]2 | (3[GB]2 [GB]2 [GB]2 (3[FB]2 [FB]2 [Ac]2 | [M:3/2] (3[Ad]2 [Ad]2 [Ad]2 (3[Ad]2 [Ad]2 [Ad]2 (3[Ad]2 [Ad]2 [Ad]2 | [M:2/2] (3[Ac]2 [Ac]2 [Ac]2 (3[FB]2 [FB]2 [FB]2 | (3[F^A]2 [FA]2 [FA]2 (3[FB]2 [FB]2 [FB]2 | [Ac]4 |]
+V:5
+z8 |!pp! B,6 B,2 | (B,4 E4) | (E2 D4 C2) | D8 | D4 D4 | D4 D4 | B,4 D2 C2 |[M:3/2] D8 D4 | [M:2/2] E4 D4 | C4 D2 D2 | E4 |]
+V:6
+x8 | E,6 B,2 | E,8 | E,6 A,2 | D,8 | B,4 (B,2 A,2) | G,4 D,4 | E,4 B,2 A,2 |[M:3/2] D,8 F,4 | [M:2/2] A,4 B,4 | F,4 B,2 B,2 | A,4 |]
+V:7
+!p! z4 (3[dfbd']2 z2 [dfbd']2 | (3z2 [egbe']2 z2 (3[egbe']2 z2 [dfbd']2 | (3z2 [egbe']2 z2 (3[egbe']2 z2 [egbe']2 | (3z2 [egbe']2 z2 (3[egbe']2 z2 [egae']2 | (3z2 [dfad']2 z2 (3[dfad']2 z2 [dfad']2 | (3z2 [fbd'f']2 z2 (3[fbd'f']2 z2 [fbd'f']2 | (3z2 [bd'g']2 g2 (3z2 [ad'f']2 f2 | (3z2 [egc']2 z2 (3z2 [dfbd']2 [eac'e']2 | [M:3/2] (3z2 [fad'f']2 z2 (3[fad'f']2 z2 [fad'f']2 (3z2 [fad'f']2 z2 | [M:2/2] (3z2 [ac'e']2 e2 (3z2 [fbd']2 d2 | (3z2 [f^ac']2 c2 (3z2 [fbd']2 d2 | !arpeggio![eac'e']2 x2 |]
+V:8
+z4 (3z2 [B,DFB]2 z2 | (3[EGB]2 z2 [EGB]2 (3z2 [B,DFB]2 z2 | (3[EGB]2 z2 [EGB]2 (3z2 [EGB]2 z2 | (3[EGB]2 z2 [DGB]2 (3z2 [CGA]2 z2 | (3[DFA]2 z2 [DFA]2 (3z2 [DFA]2 z2 | (3[B,DFB]2 z2 [B,DFB]2 (3z2 [B,DFB]2 z2 | (3[B,DFB]2 z2 z2 (3[DFA]2 z2 z2 | (3[EGB]2 z2 [EGB]2 (3[B,DFB]2 z2 [A,CEA]2 | [M:3/2] (3[DFA]2 z2 [DFA]2 (3z2 [DFA]2 z2 (3[DFA]2 z2 [DFA]2 | [M:2/2] (3[A,CEA]2 z2 z2 (3[B,DFB]2 z2 z2 | (3[F,^A,CF]2 z2 z2 (3[B,DFB]2 z2 z2 | !arpeggio![A,CEA]2 x2 |]
+V:9
+"^[Transcriber's Note: Finale 2011 with Garritan Personal Orchestra cannot reproduce the sound of string harmonics.]"!mf! z4"_cantabile""^sons harm." d4 | e6 d2 | e4 (!tenuto!e2 !tenuto!e2) | (e2 f2 g4) | f8 | f4 (!tenuto!f2 !tenuto!f2) | g4 f4 | e4 (!tenuto!d2 !tenuto!e2) |[M:3/2] f6 f2 f2 f2 |[M:2/2] e4 d4 | c4 (!tenuto!d2 !tenuto!d2) | e4 |]
+V:10
+!p! z4"_cantabile" d'4 | e'6 d'2 | e'4 (!tenuto!e'2 !tenuto!e'2) | (e'2 f'2 g'4) | f'8 | f'4 (!tenuto!f'2 !tenuto!f'2) | g'4 f'4 | e'4 (!tenuto!d'2 !tenuto!e'2) |[M:3/2] f'6 f'2 f'2 f'2 | [M:2/2] e'4 d'4 | c'4 (!tenuto!d'2 !tenuto!d'2) | e'4 |]
+V:11
+!p! E z z2"_cantabile" d4 | e6 d2 | e4 (!tenuto!e2 !tenuto!e2) | (e2 f2 g4) | f8 | f4 (!tenuto!f2 !tenuto!f2) | g4 f4 | e4 (!tenuto!d2 !tenuto!e2) |[M:3/2] f6 f2 f2 f2 | [M:2/2] e4 d4 | c4 (!tenuto!d2 !tenuto!d2) | e4 |]
+V:12
+!p! E2 C2 B,2 A,2 | G,2 F,2 E,2 F,2 | G,2 F,2 G,2 B,2 | E2 D2 D2 C2 | D2 E2 D2 C2 | D2 C2 B,2 B,2 | B,2 C2 D2 A,2 | G,2 B,2 D2 C2 | [M:3/2] D2 D,2 F,2 G,2 A,2 B,2 |[M:2/2] C2 A,2 D2 B,2 | ^A,2 F,2 B,2 D2 | C2 x2 |]
+V:13
+!p! z4"^pizz." B,,2 z2 | E,2 z2 z2 B,,2 | E,2 z2 z4 | E,2 z2 z2 A,,2 | B,,2 z2 z4 | B,,2 z2 z4 | G,2 z2 D,2 z2 | E,2 z2 B,2 A,2 |[M:3/2] D,2 z2 z4 F,2 z2 |[M:2/2] A,2 z2 B,2 z2 | F,2 z2 B,2 z2 | A,2 x2 |]

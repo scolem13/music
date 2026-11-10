@@ -1,0 +1,70 @@
+X:1
+%%score [ 1 | 2 | 3 | 4 ] [ 5 |  6 | 7  | 8 ] 9 { 10 | 11 } [  12 | 13  | 14 | 15 | 16 ]
+L:1/8
+Q:1/4=52
+M:2/4
+K:D
+V:1 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:2 treble transpose=-3 nm="Bass Clarinet\n(A)" snm="B. Cl."
+%%MIDI program 71
+V:3 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:5 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:6 alto nm="Trombone 1" snm="Tbn. 1"
+%%MIDI program 57
+V:7 bass nm="Trombone 2" snm="Tbn. 2"
+%%MIDI program 57
+V:8 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:9 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:10 bass nm="Harp" snm="Hp."
+%%MIDI program 46
+V:11 bass 
+%%MIDI program 46
+V:12 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:13 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:14 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:15 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:16 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+[K:F]"^(Larghetto alla breve.)"!f!"^5" [FA]4- | [FA]4- |"_dim." [FA]4- |!p! [FA]4- | "_mor." [FA] z z2 | z2 |]
+V:2
+[K:F]!f! D4- | D4- |"_dim." D4- |!p! D4- |"_mor." D x3 | z2 |]
+V:3
+!f! [D,F,]4- | [D,F,]4- |"_dim." [D,F,]4- |!p! [D,F,]4- |"_mor." [D,F,] z z2 | z2 |]
+V:4
+!f! B,,4- | B,,4- |"_dim." B,,4- |!p! B,,4- |"_mor." B,, x3 | z2 |]
+V:5
+[K:A]!mf!"_dim." [Ac]4- | [Ac]4- | [Ac] z z2 | z4 | z4 | z2 |]
+V:6
+!mf!"_dim." [D,F,]4- | [D,F,]4- | [D,F,] z z2 | z4 | z4 | z2 |]
+V:7
+!mf!"_dim." B,,4- | B,,4- | B,, z z2 | z4 | z4 | z2 |]
+V:8
+!mf!"_dim." B,,,4- | B,,,4- | B,,, z z2 | z4 | z4 | z2 |]
+V:9
+!mf!"_dim." TB,,4- | TB,,4- |"_dim." TB,,4- |!p! TB,,4- |"_mor." B,, x3 | z2 |]
+V:10
+!f! z4 |[K:treble] z4 |[K:bass] z4 |[K:treble] z4 | f z z2 | z2 |]
+V:11
+B,,,/4D,,/4F,,/4B,,/4D,/4"^dim."F,/4B,/4D/4 D,,/4F,,/4B,,/4D,/4F,/4B,/4D/4F/4 |  F,,/4B,,/4D,/4F,/4B,/4D/4F/4B/4 B,,/4D,/4F,/4B,/4D/4F/4B/4d/4 |  B,,,/4D,,/4F,,/4B,,/4D,/4F,/4B,/4D/4 D,,/4F,,/4B,,/4D,/4F,/4B,/4D/4F/4 |  F,,/4B,,/4D,/4F,/4B,/4D/4F/4B/4 B,,/4D,/4F,/4B,/4D/4F/4B/4d/4 |  z4 | z2 |]
+V:12
+!f! (6:4:6F/G/F/G/F/G/ (6:4:6F/"_dim."G/F/G/F/G/ | (6:4:6F/G/F/G/F/G/ (6:4:6F/G/F/G/F/G/ | !p! F/ z/ z z2 | z4 |!pp!"^Con sord." (6:4:6F/G/F/G/F/G/ (6:4:6F/G/F/G/F/G/ | z2 |]
+V:13
+!f! (6:4:6D/C/D/C/D/C/ (6:4:6D/"_dim."C/D/C/D/C/ | (6:4:6D/C/D/C/D/C/ (6:4:6D/C/D/C/D/C/ | !p! D/ z/ z z2 | z4 |!pp!"^Con sord." (6:4:6D/C/D/C/D/C/ (6:4:6D/C/D/C/D/C/ | z2 |]
+V:14
+!f! (6:4:6F,/^E,/F,/E,/F,/E,/ (6:4:6F,/"_dim."E,/F,/E,/F,/E,/ | (6:4:6F,/^E,/F,/E,/F,/E,/ (6:4:6F,/E,/F,/E,/F,/E,/ |!p! F,/ z/ z z2 | z4 | !pp!"^Con sord." (6:4:6F,/^E,/F,/E,/F,/E,/ (6:4:6F,/E,/F,/E,/F,/E,/ | z2 |]
+V:15
+!f! B,,4-"_dim." | B,,4- |!p! B,, z z2 | z4 | B,,4 | z2 |]
+V:16
+!f! B,,4-"_dim." | B,,4- |!p! B,, z z2 | z4 | z4 | z2 |]

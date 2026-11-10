@@ -1,0 +1,58 @@
+X:1
+%%score [ 1 | ( 2 3 ) | ( 4 5 ) ] { 6 | 7 } 8 [  9 | ( 10 11 )  | 12 | 13 ]
+L:1/8
+Q:1/4=84
+M:4/4
+K:F
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Clarinet in C" snm="C Cl."
+%%MIDI program 71
+V:3 treble 
+%%MIDI program 71
+V:4 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:5 bass 
+%%MIDI program 70
+V:6 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:7 bass 
+%%MIDI program 46
+V:8 treble nm="Violin Solo" snm="Vln. S."
+%%MIDI program 40
+V:9 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:10 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:11 treble 
+%%MIDI program 48
+V:12 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:13 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:1
+"^(Lento mistico.)"!pp! z4 d'/a/_g/a/ d'/a/d'/a/ | d'/a/f/a/ d'/a/d'/a/ c'/_a/f/a/ c'/a/c'/a/ | =b/g/f/g/ d'/g/d'/g/ c'/g/e/g/ c'/a/c'/a/ | d'/a/f/a/ d'/a/d'/a/ c'/_a/f/a/ c'/a/c'/a/ | =b/g/f/g/ d'/g/d'/g/ c'/g/e/g/ c'/a/c'/a/ | d'/a/f/a/!<(! d'/a/d'/a/ c'/_a/f/a/ c'/f'/f'/!<)!_a'/ | g' z z2 z4 | z8 | z8 | z8 | z8 |]
+V:2
+z8 |"_dolce" (d3 c) (defe) | (d2 c=B c2) c2 | (d3 c) (defe) | (d2 c=B c2) c2 | (d3 c defe) | !pp! [=Bd]8- | [Bd]8 | e8- |"_dim." e8- | e z z2 !fermata!z4 |]
+V:3
+x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | (c4 (B4) | ^c8-) | c x7 |]
+V:4
+z8 | z8 | z8 | z8 | z8 | z8 |!pp! G8- | G8 | (G8 |"_dim." A8-) | A z z2 z4 |]
+V:5
+x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | (C4 (B,4) | A,8-) | A, x7 |]
+V:6
+!p! z4 d'/a/_g/a/ d'/a/d'/a/ | d'/a/f/a/ d'/a/d'/a/ c'/_a/f/a/ c'/a/c'/a/ | =b/g/f/g/ d'/g/d'/g/ c'/g/e/g/ c'/a/c'/a/ | d'/a/f/a/ d'/a/d'/a/ c'/_a/f/a/ c'/a/c'/a/ | =b/g/f/g/ d'/g/d'/g/ c'/g/e/g/ c'/a/c'/a/ | d'/a/f/a/!<(! d'/a/d'/a/ c'/_a/f/a/ c'/f'/f'/!<)!_a'/ | g' z z2 z4 | z8 | !p! z4 !open!G!open!B!open!d!open!e | !open!a!open!g!open!e!open!^c z4 | z8 |]
+V:7
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | !open!G,!open!A,!open!C!open!E z4 | z4 [K:treble] A!open!G!open!E!open!^C | !open!A,2 z2 z4 |]
+V:8
+z8 | z8 | z8 | z8 | z8 | z8 | (g'/e'/)(e'/d'/) (d'/=b/)(b/g/) (g/b/)(b/d'/) (d'/e'/)(e'/g'/) | (g'/e'/)(e'/d'/) (d'/=b/)(b/g/) (g'/e'/)(e'/d'/) (d'/b/)(b/g/) | (g'/e'/)(e'/c'/) (c'/a/)(a/g/) (g/e/)(e/d/) (d/B/)(B/G/) | (A/^c/)(c/e/) (e/g/)(g/a/) (a/^c'/)(c'/e'/) (e'/g'/)(g'/a'/) |!>(! a'4-!>)! a' z z2 |]
+V:9
+!ppp! [d'^f'a']8"^div. a 3" | [d'f'a']4 [c'f'_a']4 | [=bf'g']2 [d'f'g']2 [c'e'g']2 [c'e'a']2 | [d'f'a']4 [c'f'_a']4 | [=bf'g']2 [d'f'g']2 [c'e'g']2 [c'e'a']2 | [d'f'a']4!<(! [c'f'_a']4!<)! | [=bd'] z z2 z4 | z8 | z8 | z8 | z8 |]
+V:10
+z8 | z8 | z8 | z8 | z8 |!pp!"^Div." (a4!<(! (_a4)!<)! | g) z z2 z4 | z8 | z8 | z8 | z8 |]
+V:11
+x8 | x8 | x8 | x8 | x8 | (f8 | d) x7 | x8 | x8 | x8 | x8 |]
+V:12
+z8 | z8 | z8 | z8 | z8 |!pp!"^Div." (([Ad]4!<(! (([_Ac]4))!<)! | [G=B])) z z2 z4 | z8 | z8 | z8 | z8 |]
+V:13
+z8 | z8 |!pp! z4 z2"^pizz." A,2 | D2 z2 z4 | G,2 z2 C2 A,2 |!pp!"^arco" (D4!<(! (F4)!<)! | G) z z2 z4 | z8 | z8 | z8 | z8 |]

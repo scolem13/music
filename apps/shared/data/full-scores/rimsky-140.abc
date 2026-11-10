@@ -1,0 +1,55 @@
+X:1
+Z:©
+%%score [ ( 1 2 ) | 3 | 4 | 5 ] ( 6 7 ) [  8 | 9  | 10 | 11 | 12 ]
+L:1/8
+Q:1/4=52
+M:2/4
+K:B
+V:1 treble transpose=-3 nm="Clarinet\nI. II. (A)" snm="A Cl."
+%%MIDI program 71
+V:2 treble transpose=-3 
+%%MIDI program 71
+V:3 treble transpose=-3 nm="Bass Clarinet\nin A" snm="B. Cl. in A"
+%%MIDI program 71
+V:4 bass nm="Bassoon II" snm="Bsn."
+%%MIDI program 70
+V:5 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:6 bass nm="Trombone" snm="Tbn."
+%%MIDI program 57
+V:7 bass 
+%%MIDI program 57
+V:8 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:9 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:10 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:11 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:12 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+[K:D]"^Larghetto alla breve."!pp!"^248" (6:4:6([GB]/[A=c]/[GB]/[Ac]/[GB]/[Ac]/ (6:4:6[GB]/[Ac]/[GB]/[Ac]/[GB]/[Ac]/ | (6:4:6[GB]/[A=c]/[GB]/[Ac]/[GB]/[Ac]/ (6:4:6[GB]/[Ac]/[G-B]/[Ge]/[Bd]/[Ge]/) | (6:4:6([GB]/[A=c]/[GB]/[Ac]/[GB]/[Ac]/ (6:4:6[GB]/[Ac]/[GB]/[Ac]/[GB]/[Ec]/ | (6:4:6[=FA]/[GB]/[FA]/[GB]/[FA]/[GB]/ (6:4:6[FA]/[GB]/[F-A]/[Fd]/[A=c]/[Fd]/) | (6:4:6(A/B/A/B/A/B/ (6:4:6A/B/A/B/A/=c/) | z2 |]
+V:2
+[K:D] x4 | x4 | x4 | x4 | (6:4:6(=F/G/F/G/F/G/ (6:4:5F/G/F/G/F) | x2 |]
+V:3
+[K:D]!pp! (6:4:6(e/^d/e/d/e/d/ (6:4:6e/d/e/d/e/d/ | (6:4:6e/^d/e/d/e/d/ (6:4:6e/d/e/-e/g/e/) | (6:4:6(e/^d/e/d/e/d/ (6:4:6e/d/e/d/e/g/ | (6:4:6=c/d/c/d/c/d/ (6:4:6c/d/c/d/c/A/) | (6:4:6(=c/d/c/d/c/d/ (6:4:6c/d/c/d/c/A/) | z2 |]
+V:4
+!pp! G,,4- | G,,4- | (G,,7/2 E,,/) | F,,4- | F,,4 | z2 |]
+V:5
+!pp! G,,4- | G,,4- | (G,,7/2 E,,/) | F,,4- | F,,4 | z2 |]
+V:6
+!ppp! G,4- | G,4- | (G,7/2 =A,/) | F,4- | (F,7/2 =A,/) | z2 |]
+V:7
+[C,E,]4- | [C,E,]4- | [C,E,]4 | [=A,,=D,]4- | [A,,D,]4 | x2 |]
+V:8
+!pp!"^Con sord." (6:4:6G/=A/G/A/G/A/ (6:4:6G/A/G/A/G/A/ | (6:4:6G/=A/G/A/G/A/ (6:4:6G/A/G/c/B/c/ | (6:4:6G/=A/G/A/G/A/ (6:4:6G/A/G/A/G/A/ | (6:4:6F/G/F/G/F/G/ (6:4:6F/G/F/B/=A/B/ | (6:4:6F/G/F/G/F/G/ (6:4:6F/G/F/G/F/=A/ | z2 |]
+V:9
+!pp!"^Con sord." (6:4:6E/F/E/F/E/F/ (6:4:6E/F/E/F/E/F/ | (6:4:6E/F/E/F/E/F/ (6:4:6E/F/E/E/G/E/ | (6:4:6E/F/E/F/E/F/ (6:4:6E/F/E/F/E/C/ | (6:4:6=D/E/D/E/D/E/ (6:4:6D/E/D/D/F/D/ | (6:4:6=D/E/D/E/D/E/ (6:4:6D/E/D/E/D/D/ | z2 |]
+V:10
+!pp!"^Con sord." (6:4:6C/^B,/C/B,/C/B,/ (6:4:6C/B,/C/B,/C/B,/ | (6:4:6C/^B,/C/B,/C/B,/ (6:4:6C/B,/C/C/E/C/ | (6:4:6C/^B,/C/B,/C/B,/ (6:4:6C/B,/C/B,/C/E/ | (6:4:6=A,/B,/A,/B,/A,/B,/ (6:4:6A,/B,/A,/B,/A,/F,/ | (6:4:6=A,/B,/A,/B,/A,/B,/ (6:4:6A,/B,/A,/B,/A,/F,/ | z2 |]
+V:11
+!pp!"^Senza sord." G,,4- | G,,4- | (G,,7/2 E,,/) | F,,4- | F,,4 | z2 |]
+V:12
+!pp!"^Senza sord." G,,4- | G,,4- | (G,,7/2 E,,/) | F,,4- | F,,4 | z2 |]

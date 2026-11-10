@@ -1,0 +1,67 @@
+X:1
+%%score [ ( 1 2 ) | 3 | ( 4 5 ) | 6 | 7 | 8 ] [ 9 | 10 ] [ 11 | 12 ] ( 13 14 )
+L:1/8
+Q:1/4=100
+M:4/4
+K:Ab
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble 
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:5 treble transpose=-2 
+%%MIDI program 71
+V:6 treble transpose=-14 nm="Bass Clarinet" snm="B. Cl."
+%%MIDI program 71
+V:7 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:8 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:9 alto nm="Trombone 1" snm="Tbn. 1"
+%%MIDI program 57
+V:10 bass nm="Trombone 2" snm="Tbn. 2"
+%%MIDI program 57
+V:11 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:12 perc nm="Piatti" snm="Piat."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap =g 87
+I:percmap =g g 87 normal
+%%MIDI drummap g 87
+I:percmap g g 87 normal
+V:13 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:14 bass transpose=-12 
+%%MIDI program 48
+V:1
+"^(Moderato.)""^116" .c2 .G2 c2- c z | c2 .G.G c2- c z | (f3/2e/4d/4) (c3/2d/4e/4) f2- f z | !p! .f.f (Tc2 f>)(=e f/g/a/=b/) | ([ac']>[g=b][fa]).[gb] ([ac']>[gb][fa]).[gb] | ([ac']>[g=b][fa]).[gb] [ac']>([fa] [g_b]/[ac']/[bd']/[c'=e']/) | z2 |]
+V:2
+z8 | z8 | z8 | z4 z2 (f/=e/f/g/) | x8 | x8 | x2 |]
+V:3
+!p! .[FA]2 .[=EG]2 [FA]2- [FA] z | [FA]2 .[=EG].[EG] [FA]2- [FA] z | [Ad]2 [=Ac]2 [_Ad]2- [Ad] z | .[Ad].[Ad] [=Ac]2 [_Ad]2- [Ad] z | z8 | z8 | z2 |]
+V:4
+[K:Bb]!p! .d2 .A2 d2- d z | .d2 .A.A d2- d z |!p! (g3/2f/4e/4) (d3/2e/4f/4) g2- g z | .g.g (Td2 g) z z2 | ([Bd]>[A^c][GB]).[Ac] ([Bd]>[Ac][GB]).[Ac] | ([Bd]>[A^c][GB]).[Ac] [Bd]>([GB] [A=c]/[Bd]/[ce]/[d^f]/) | z2 |]
+V:5
+[K:Bb] z8 | z8 | G2 G2 G2- G z | .G.G G2 G2- G z | x8 | x8 | x2 |]
+V:6
+[K:Bb]!p! .d2 .d2 d2- d z | d2 .d.d d2- d z | e2 d2 e2- e z | .e.e d2 e2- e z | z8 | z8 | z2 |]
+V:7
+!p! .[F,A,]2 .[=E,G,]2 [F,A,]2- [F,A,] z | [F,A,]2 .[=E,G,].[E,G,] [F,A,]2- [F,A,] z | [F,A,]2 [F,=A,]2 [F,_A,]2- [F,A,] z | .[F,A,].[F,A,] [F,=A,]2 [F,_A,]2- [F,A,] z | ([F,A,]>[G,=B,][A,C]).[G,B,] ([F,A,]>[G,B,][A,C]).[G,B,] | ([F,A,]>[G,=B,][A,C]).[G,B,] [F,A,] z z2 | z2 |]
+V:8
+!p! A,zA,, z A,,zA, z | A,zA,, z A,,zA, z | A,zA,, z A,,zA, z | A,zA,, z A,,zA, z | A,zA,, z A,,zA, z | A,zA,, z A,,zA, z | z2 |]
+V:9
+z8 | z8 | z8 | z8 |!pp! [A,C] z z2 [A,C] z z2 | [A,C]z[A,C] z [A,C]2 z2 | z2 |]
+V:10
+z8 | z8 | z8 | z8 |!pp! F, z z2 F, z z2 | F,zF, z F,2 z2 | z2 |]
+V:11
+!pp! C,2 C,2 C,2 z2 | C,2 C,C, C,2 z2 | F,2 F,2 F,2 z2 | F,F, F,2 F,2 z2 | z8 | z8 | z2 |]
+V:12
+[K:none] !p! g2 g2 g2 z2 | =g2 g2 g2 z2 | =g2 g2 g2 z2 | =g2 g2 g2 z2 | g2 z2 g2 z2 | g2 z2 g2 z2 | z2 |]
+V:13
+!pp!"^pizz.""^Div." A,"_pizz."zzA, A,zzA, | A,zzA, A,zzA, | A,zzA, A,zzA, | A,zzA, A,zzA, | A,zzA, A,zzA, | A,zzA, A,zzA, | z2 |]
+V:14
+z A,,A,, z z A,,A,, z | z A,,A,, z z A,,A,, z | z A,,A,, z z A,,A,, z | z A,,A,, z z A,,A,, z | z A,,A,, z z A,,A,, z | z A,,A,, z z A,,A,, z | x2 |]

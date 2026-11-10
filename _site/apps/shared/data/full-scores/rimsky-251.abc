@@ -1,0 +1,45 @@
+X:1
+%%score [ 1 | ( 2 3 ) | 4 ] 5 { 6 | 7 } 8 9
+L:1/8
+Q:3/4=66
+M:6/8
+K:A
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble 
+%%MIDI program 73
+V:4 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:5 perc nm="Triangle" snm="Tgl."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap =f 96
+I:percmap =f f 96 normal
+V:6 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:7 treble 
+%%MIDI program 46
+V:8 treble nm="Violin Solo" snm="Vln."
+%%MIDI program 40
+V:9 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:1
+"^S" z6 | z6 | z6 | z6 | z6 | z2"^dolcissimo" .g.a.b.c' | .d' z z2 z2 | z2 .a.b.c'.d' | .e' x4 x | z2 |]
+V:2
+!p! z2 .a.b.g.a | (Tf2 d) z z2 | z2 .g.a.f.g | (Te2 c) z .a.b | Tc'2 .b.c'.d'.c' | (Tb2 g) z !>!d'2- | d'.c'.b.c'.d'.b | (Tc'2 a) z .a.b | c' x4 x | z2 |]
+V:3
+x6 | x6 | x6 | x6 | Te2 .d .e.f.e | (Td2 B) z z2 | .f.e.d .e.f.d | (Te2 c) z z2 | e x4 x | x2 |]
+V:4
+z6 |!pp! z2 z2({/G} !>!A2) | z6 | z2 z2({/G} !>!A2) | z6 | !>!Te6 | z6 | !>!Te6 | z6 | z2 |]
+V:5
+[K:none] z6 |!ppp! z2 z2 =f2 | z6 | z2 z2 =f2 | z6 | z2 z2 =f2 | z6 | z2 z2 =f2 | z6 | z2 |]
+V:6
+z6 | z2 a z a' z | z6 | z2 a z a' z | z2 e z e' z | z2 g'a'b'c'' | d'' z e z e' z | z2 a'b'c''d'' | e'' x4 x | z2 |]
+V:7
+A,EA EAE | AEA E A2 | A,EA EAE | AEA E A2 | A,EA EAE | A,Ed EdE | A,EB EBE | A,Ec EcE | z6 | z2 |]
+V:8
+z6 |!mf! .a.b.g.a !>!f2 | z6 | .g.a.f.g !>!e2 | z6 | GABc d2 | z6 | ABcd e2 | z6 | z2 |]
+V:9
+!f!"^pizz." A,2 z2 z2 | z6 |!p! A,2 z2 z2 | z6 | A,2 z2 z2 | A,2 z2 z2 | A,2 z2 z2 | A,2 z2 z2 | A,2 x4 | z2 |]

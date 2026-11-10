@@ -55,7 +55,11 @@ Search the file for `TODO` / `DECIDE`; about 90 open items. The groups:
 - **Works**: set `WORKS_CONFIG.r2Base` (R2 bucket address, not set yet).
 - **Sound**: Tune Assessment on AbcPlay since 2026-11-09 (its own Arranger kept; balance unheard; render `practice/` to ship it).
 - **Notation size slider**: only in the MLT view bar so far.
-- **MODX**: Orchestra page is set up "for later" (16 Parts, full scores).
+- **MODX**: Orchestra page is set up "for later" (16 Parts, full scores). Its test fails on PDMX part abbreviations (`HRN`, ...):
+  `modx-orchestra.js` names patterns need the abbreviations (found 2026-11-10; `pno` added).
+- **Full scores**: Rimsky-Korsakov examples (262; 52 failures in `research_notes/rimsky-conversion.org`), Pathétique III and
+  Moonlight III from Sapp's kern (`scripts/kern/`; the repo has no licence: ask Sapp if the site is ever opened). Waldstein I
+  has tie / tuplet faults. The list page needs grouping. IMSLP plan: `research_notes/imslp-assessment.md` (download by hand).
 - **`node scripts/check-pages.mjs`**: 15 warnings left on 2026-11-09, all on purpose (rhythm / pattern pages, one-note previews,
   `lessons/index.qmd`, version numbers).
 - **Print anthologies**: more books via `scripts/print-books/ADDING-A-BOOK.md` when a scan arrives.

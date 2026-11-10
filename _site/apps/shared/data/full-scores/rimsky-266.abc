@@ -1,0 +1,74 @@
+X:1
+%%score [ 1 | 2 | ( 3 4 ) | 5 |  6 | 7  | 8 | 9 ] [   10 | 11  |  12 | 13   |  14 | 15  | 16 | 17 ]
+L:1/8
+Q:1/4=84
+M:4/4
+K:A
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble 
+%%MIDI program 68
+V:5 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:6 treble transpose=-2 nm="Clarinet in Bb 1" snm="Bb Cl. 1"
+%%MIDI program 71
+V:7 treble transpose=-2 nm="Clarinet in Bb 2" snm="Bb Cl. 2"
+%%MIDI program 71
+V:8 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:9 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:10 treble nm="Violin I:Violin 1" snm="Viol. I:Vln. 1"
+%%MIDI program 48
+V:11 treble nm="Violin I:Violin 2" snm="Viol. I:Vln. 2"
+%%MIDI program 48
+V:12 treble nm="Violin II:Violin 3" snm="Viol. II:Vln. 3"
+%%MIDI program 48
+V:13 treble nm="Violin II:Violin 4" snm="Viol. II:Vln. 4"
+%%MIDI program 48
+V:14 alto nm="Viola 1" snm="Vla. 1"
+%%MIDI program 48
+V:15 alto nm="Viola 2" snm="Vla. 2"
+%%MIDI program 48
+V:16 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:17 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Moderato assai.)"!pp!"^128" c'8- | c'8 | z2 |]
+V:2
+!pp! [e'a']6- ([e'a']/[d'f']/[c'e']/[d'f']/) | [ae']6- ([ae']/[bd']/[ae']/[d'f']/) | z2 |]
+V:3
+!pp! c'8- | c'8 | z2 |]
+V:4
+a6- (a/f/e/f/) | e6- (e/d/e/f/) | x2 |]
+V:5
+[K:E]!pp! b6- (b/a/g/a/) | e6- (e/f/e/a/) | z2 |]
+V:6
+[K:B]!pp! d8- | d8 | z2 |]
+V:7
+[K:B]!pp! [FB]6- ([FB]/[EG]/[DF]/[EG]/) | [B,F]6- ([B,F]/[CE]/[B,F]/[EG]/) | z2 |]
+V:8
+!pp! [A,,E,]8- | [A,,E,]8 | z2 |]
+V:9
+!pp! A,,8- | A,,8 | z2 |]
+V:10
+!pp! c''8- | c''8 | z2 |]
+V:11
+!pp! ([e'a']/4[d'b']/4[e'a']/4[d'b']/4[e'a']/4[d'b']/4[e'a']/4[d'b']/4 [e'a']/4[d'b']/4[e'a']/4[d'b']/4[e'a']/4[d'b']/4[e'a']/4[d'b']/4 [e'a']/4[d'b']/4[e'a']/4[d'b']/4[e'a']/4[d'b']/4[e'a']/4[d'b']/4 [e'a']/4[d'b']/4[e'a']/4[d'b']/4[e'a']/4[d'f']/4[c'e']/4[d'f']/4) | ([ae']/4[bd']/4[ae']/4[bd']/4[ae']/4[bd']/4[ae']/4[bd']/4 [ae']/4[bd']/4[ae']/4[bd']/4[ae']/4[bd']/4[ae']/4[bd']/4 [ae']/4[bd']/4[ae']/4[bd']/4[ae']/4[bd']/4[ae']/4[bd']/4 [ae']/4[bd']/4[ae']/4[bd']/4[ae']/4[bd']/4[ae']/4[d'f']/4) | z2 |]
+V:12
+!pp! c'8- | c'8 | z2 |]
+V:13
+!pp! ([ea]/4[db]/4[ea]/4[db]/4[ea]/4[db]/4[ea]/4[db]/4 [ea]/4[db]/4[ea]/4[db]/4[ea]/4[db]/4[ea]/4[db]/4 [ea]/4[db]/4[ea]/4[db]/4[ea]/4[db]/4[ea]/4[db]/4 [ea]/4[db]/4[ea]/4[db]/4[ea]/4[df]/4[ce]/4[df]/4) | ([Ae]/4[Bd]/4[Ae]/4[Bd]/4[Ae]/4[Bd]/4[Ae]/4[Bd]/4 [Ae]/4[Bd]/4[Ae]/4[Bd]/4[Ae]/4[Bd]/4[Ae]/4[Bd]/4 [Ae]/4[Bd]/4[Ae]/4[Bd]/4[Ae]/4[Bd]/4[Ae]/4[Bd]/4 [Ae]/4[Bd]/4[Ae]/4[Bd]/4[Ae]/4[Bd]/4[Ae]/4[df]/4) | z2 |]
+V:14
+!pp! c8- | c8 | z2 |]
+V:15
+!pp! ([EA]/4[DB]/4[EA]/4[DB]/4[EA]/4[DB]/4[EA]/4[DB]/4 [EA]/4[DB]/4[EA]/4[DB]/4[EA]/4[DB]/4[EA]/4[DB]/4 [EA]/4[DB]/4[EA]/4[DB]/4[EA]/4[DB]/4[EA]/4[DB]/4 [EA]/4[DB]/4[EA]/4[DB]/4[EA]/4[DF]/4[CE]/4[DF]/4) | ([A,E]/4[B,D]/4[A,E]/4[B,D]/4[A,E]/4[B,D]/4[A,E]/4[B,D]/4 [A,E]/4[B,D]/4[A,E]/4[B,D]/4[A,E]/4[B,D]/4[A,E]/4[B,D]/4 [A,E]/4[B,D]/4[A,E]/4[B,D]/4[A,E]/4[B,D]/4[A,E]/4[B,D]/4 [A,E]/4[B,D]/4[A,E]/4[B,D]/4[A,E]/4[B,D]/4[A,E]/4[DF]/4) | z2 |]
+V:16
+(3A,,2 E,2 C2- (3C2 E,2 A,,2- | (3A,,2 E,2 C2- (3C2 E,2 A,,2- | z2 |]
+V:17
+!pp! A,,8- | A,,8 | z2 |]

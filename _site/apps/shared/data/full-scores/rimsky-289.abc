@@ -1,0 +1,38 @@
+X:1
+%%score [ 1 | ( 2 3 ) ] 4 [ 5 6 ] [ 7 | 8 ]
+L:1/8
+Q:3/8=56
+M:6/8
+K:Db
+V:1 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:2 treble transpose=-2 nm="Clarinet in Bb 1" snm="Bb Cl. 1"
+%%MIDI program 71
+V:3 treble transpose=-2 
+%%MIDI program 71
+V:4 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:5 treble nm="La Princesse\ndes Mers" snm="La Pr."
+%%MIDI program 54
+V:6 treble-8 nm="Sadko." snm="S."
+%%MIDI program 54
+V:7 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:8 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:1
+[K:Ab]"^Larghetto.""^99" z6 | z6 | z6 | z6 | z6 | z6 |"_dolce (colla voce)" (a3 g2 a | f3 g3) | ({/b} (a)ga fga | b3-) b2 z | z2 |]
+V:2
+[K:Eb]!p! [GB]6- | [GB]6!>(!!>)! |!pp! [GB]6- | [GB]6- | [GB]6- | [GB]6 | [_GB]6- | [GB]6- | B6- | B3- (B2 A) | z2 |]
+V:3
+[K:Eb] x6 | x6 | x6 | x6 | x6 | x6 | x6 | x6 | (_G6 | F6) | x2 |]
+V:4
+[K:Ab] z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |!pp! e6 | z2 |]
+V:5
+z6 | z6 | z6 | z6 | z6 | z6 |"^dolce" d2 G c2 d | B3 c2 c | d/ d/ c d B c d | e3- e z z | z2 |]
+V:6
+z6 | z6 |"^dolce" d3 c2 d | B3 c2 c | d c d B c e | d3- d z z | B3 c2 B | d3 c2 c | B3 d2 d | c3- c z z | z2 |]
+V:7
+!p! (A/F/A/F/A/F/ A/F/A/F/A/F/) | (A/F/A/F/A/F/!>(! A/F/A/F/A/F/)!>)! | !pp! (A/F/A/F/A/F/ A/F/A/F/A/F/) | (A/F/A/F/A/F/ A/F/A/F/A/F/) | (A/F/A/F/A/F/ A/F/A/F/A/F/) | (A/F/A/F/A/F/ A/F/A/F/A/F/) | (A/_F/A/F/A/F/ A/F/A/F/A/F/) | (A/_F/A/F/A/F/ A/F/A/F/A/F/) | (A/_F/A/F/A/F/ A/F/A/F/A/F/) | (A/E/A/E/A/E/ A/E/A/E/[GA]/E/) | z2 |]
+V:8
+D z z z3 | z6 |"_dolce (colla voce)" D3 C2 D | B,3 C3 |({/E} (D)CD B,CE) | D3- (D2 C) | (B,3 C2 B, | D3 C3) | (B,3 D3 | C6) | z2 |]

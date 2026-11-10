@@ -1,0 +1,87 @@
+X:1
+Z:©
+%%score [ 1 | 2 | 3 | 4 | 5 | 6 | 7 ] [  8 | 9  |  10 | 11  | 12 | 13 ] [ 14 15 ] [  16 | 17  | 18 | 19 | 20 ]
+L:1/8
+Q:3/8=66
+M:6/8
+K:C
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:4 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:5 treble transpose=-14 nm="Bass Clarinet" snm="B. Cl."
+%%MIDI program 71
+V:6 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:7 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:8 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:9 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:10 treble transpose=-3 nm="Trumpet in A" snm="A Tpt."
+%%MIDI program 56
+V:11 treble transpose=-7 nm="Trumpet\nc-alta (F)" snm="F Tpt."
+%%MIDI program 56
+V:12 bass nm="Trombone" snm="Tbn."
+%%MIDI program 57
+V:13 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:14 treble-8 nm="Sadko." snm="S."
+%%MIDI program 54
+V:15 treble nm="Voix de la Reine\ndes Mers." snm="R."
+%%MIDI program 54
+V:16 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:17 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:18 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:19 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:20 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Andantino."!ff!"^244" [_be'g']6- | [be'g']6 | z2 |]
+V:2
+!ff! [Gg]6- | [Gg]6 | z2 |]
+V:3
+[K:G]!ff! ^G6- | G6 | z2 |]
+V:4
+[K:Eb]!ff! [_dg]6- | [dg]6 | z2 |]
+V:5
+[K:D]!ff! A,6- | A,6 | z2 |]
+V:6
+!ff! [_B,,,E,,]6- | [B,,,E,,]6 | z2 |]
+V:7
+!ff! G,,6- | G,,6 | z2 |]
+V:8
+[K:G]!ff! [Dd]6- | [Dd]6 | z2 |]
+V:9
+[K:G]!ff! [FB]6- | [FB]6 | z2 |]
+V:10
+[K:Eb]!ff! !plus![=E=e]6- | [Ee]6 | z2 |]
+V:11
+[K:G]!ff! ^G,6- | G,6 | z2 |]
+V:12
+!ff! [G,,_B,,E,]6- | [G,,B,,E,]6 | z2 |]
+V:13
+!ff! G,,6- | G,,6 | z2 |]
+V:14
+"^L'eau s'agite, Sadko descend dans l'abîme marin." g6- | g3- g z z | z2 |]
+V:15
+g6- | g3- g z z | z2 |]
+V:16
+!ff! (g'/^f'/e'/^d'/) (g/^f/e/^d/) (G/^F/E/^D/) | (g'/^f'/e'/^d'/) (g/^f/e/^d/) (G/^F/E/^D/) | z2 |]
+V:17
+!ff! (g/^f/e/^d/) (G/^F/E/^D/) (G/F/E/D/) | (g/^f/e/^d/) (G/^F/E/^D/) (G/F/E/D/) | z2 |]
+V:18
+!ff! z2 (G/^F/E/^D/) (G,/^F,/E,/^D,/) | z2 (G/^F/E/^D/) (G,/^F,/E,/^D,/) | z2 |]
+V:19
+!ff! z3 z (G,/^F,/E,/^D,/) | z3 z (G,/^F,/E,/^D,/) | z2 |]
+V:20
+!ff! G,,6- | G,,6 | z2 |]

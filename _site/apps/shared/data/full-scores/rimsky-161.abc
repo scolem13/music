@@ -1,0 +1,47 @@
+X:1
+Z:©
+%%score [ 1 | 2 | 3 ] 4 [ 5 | 6 ] 7 8
+L:1/8
+Q:1/4=126
+M:2/4
+K:Bb
+V:1 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:2 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:3 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 treble transpose=-2 nm="Trumpet in Bb" snm="Bb Tpt."
+%%MIDI program 56
+V:5 perc nm="Triangle" snm="Tgl."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap f 96
+I:percmap f f 96 normal
+V:6 perc nm="Piatti" snm="Piat."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap =g 92
+I:percmap =g g 92 normal
+%%MIDI drummap g 92
+I:percmap g g 92 normal
+V:7 treble nm="Choir" snm="C"
+%%MIDI program 52
+V:8 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:1
+"^Allegro.""^a 2"!f! z !wedge!=B!wedge!c!wedge!^c | !wedge!d!wedge!f!wedge!=e!wedge!_e | !wedge!d!wedge!=B!wedge!c!wedge!^c | !wedge!d!wedge!f!wedge!=e!wedge!_e | d x | z2 |]
+V:2
+[K:C]!f! z !wedge![G^c]!wedge![^Fd]!wedge![=F^d] | !wedge![Ee]!wedge![^Cg]!wedge![D^f]!wedge![^D=f] | !wedge![Ee]!wedge![G^c]!wedge![^Fd]!wedge![=F^d] | !wedge![Ee]!wedge![^Cg]!wedge![D^f]!wedge![^D=f] | [Ee] x | z2 |]
+V:3
+"^a 2"!f! z !wedge!F!wedge!=E!wedge!_E | !wedge!D!wedge!=B,!wedge!C!wedge!^C | !wedge!D!wedge!F!wedge!=E!wedge!_E | !wedge!D!wedge!=B,!wedge!C!wedge!^C | D x | z2 |]
+V:4
+[K:C]!mf! [Ee] (.[^GB]/.[GB]/) (.[GB]/.[GB]/)(.[GB]/.[GB]/) | (.[^GB]/.[GB]/)(.[GB]/.[GB]/) (.[GB]/.[GB]/)(.[GB]/.[GB]/) | (.[^GB]/.[GB]/)(.[GB]/.[GB]/) (.[GB]/.[GB]/)(.[GB]/.[GB]/) | (.[^GB]/.[GB]/)(.[GB]/.[GB]/) (.[GB]/.[GB]/)(.[GB]/.[GB]/) | [^GB] x | z2 |]
+V:5
+[K:none] f/f/f/f/ f/f/f/f/ | f/f/f/f/ f/f/f/f/ | f/f/f/f/ f/f/f/f/ | f/f/f/f/ f/f/f/f/ | f x | z2 |]
+V:6
+[K:none] !p! z =ggg | =gggg | =gggg | =gggg | g x | z2 |]
+V:7
+"^La cuisinière et la pâtissière éclatent de rire" z [^FA] [FA] [FA] | [^FA] [FA] [FA] [FA] | [^FA] [FA] [FA] [FA] | [^FA] [FA] [FA] [FA] | [^FA] x | z2 |]
+V:8
+!f!"^pizz." F,2 z2 | z4 | z4 | z4 | D2 | z2 |]

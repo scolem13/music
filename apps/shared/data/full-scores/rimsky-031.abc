@@ -1,0 +1,66 @@
+X:1
+%%score [ ( 1 2 ) | 3 | 4 | ( 5 6 ) ] [ ( 7 8 ) | 9 ] 10 [  11 | 12  | 13 | 14 | 15 ]
+L:1/8
+Q:1/4=100
+M:4/4
+K:Db
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble 
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 bass 
+%%MIDI program 70
+V:7 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:8 treble transpose=-7 
+%%MIDI program 60
+V:9 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:10 treble nm="Fevronia" snm="Fevr."
+%%MIDI program 54
+V:11 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:12 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:13 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:14 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:15 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^223"!pp! z4 b4- | b4 (g2 (=e2) | f) z z2 b4- | b4 (g4 | f) z z2 z4 | z8 | z8 | z8 | z2 |]
+V:2
+z4 (=g4 | g4) d4- | d z z2 (=g4 | g4) (d2 (c2) | d) z z2 z4 | x8 | x8 | x8 | x2 |]
+V:3
+!pp! z4 !>!e4- | e z z2 z4 | z4 !>!e4- | e z z2 x4 |!p! z!<(! ([Fd][Ae]!<)![df] [Ae] [Fd]2 [df] | [ca]) z z2 z4 | z8 | z8 | z2 |]
+V:4
+[K:E]!pp! z4 ([^Ac-]4 | [=Ac]4) z4 | z4 ([^Ac-]4 | [=Ac]4) z4 | z8!<(!!<)!!>(!!>)! | !p! z (([Bd]"_cresc. poco"[ce][df] [ce] d2 [cf])) | z8 | z8 | z2 |]
+V:5
+!pp! z4 (D4 | C4) (G2 =G2 | A) z z2 (D4 | C4) (D=DE=E |!p! (F)DC_C- CB,__B,A, | (G,8)"^cresc. poco" | F,) z z2 z4 |!mf! z"_espress." (A,=G,A, =A,F,FE) | z2 |]
+V:6
+x8 | x8 | x8 | x8 | (A,,8 | (G,,8) | F,,) x7 | x8 | x2 |]
+V:7
+[K:Ab] z8 | z8 | z8 | z8 | z8 |!p! B8- | B z z2 z4 | z8 | z2 |]
+V:8
+[K:Ab] x8 | x8 | x8 | x8 | x8 | (E4"_cresc. poco" (F4) | =E) z z2 z4 | x8 | x2 |]
+V:9
+[K:Ab]"^Cor. IV." E,8- | E,8- | E,8- | E,8- | E, z z2 z4 | (G4 (F4) | G) z z2 z4 | z8 | z2 |]
+V:10
+z F G A B2 c d | e2 f e (B2 cB) | F2 G A B2 c d | e2 f e (B2 cB) | A2 z2 z4 | z4 z2 c e | (fe) d e (Bc) d c | f4 e z B c | z2 |]
+V:11
+!pp! (f2 ga b2 c'd') | (e'2 f'e') (b2 c'b) | (f2 ga b2 c'd') | (e'2 f'e') (b2 c'b | f)!<(! (de!<)!f!>(! e d2!>)! f | a) (c"_cresc. poco"de d c2 e) |!mf!"_espress." (fede) (Bcdc) | (f4 e) z z2 | z2 |]
+V:12
+!pp! (d2 ef =g2 ab) | z8 | (d2 ef =g2 ab) | z8 | z!<(! (FA!<)!d A!>(! F2 d!>)! | c) (A"_cresc. poco"Bc B c2 B) |!mf! (=A4 B2 G2) | F4- F z z2 | z2 |]
+V:13
+!pp!"_Div." ([DF]2 [EG][FA] [=GB]2 [Ac][Bd]) |"_Unis." (e2 fe) (B2 cB) | "_Div." ([DF]2 [EG][FA] [=GB]2 [Ac][Bd]) |"_Unis." (e2 fe) (B2 cB | F) z z2 z4 | (G,8"^cresc. poco" |!mf! (F,4) G,2 A,2) | (D,4 C,) z z2 | z2 |]
+V:14
+!pp! z4 (D4 | C4) (G2 =G2 | A4) (D4 | C4) (D=DE=E | F)!<(! (DC!<)!_C- C!>(!B,__B,!>)!A,) | (A,4 E) z z2 |!mf! (E8 | F) (A,=G,A, =A,F,FE) | z2 |]
+V:15
+!p! A,8- | A,8 | A,8- | A,8 | (A,8 | (G,8)"^cresc. poco" |!mf! (F,4) G,2 A,2) | (D4 C) z z2 | z2 |]

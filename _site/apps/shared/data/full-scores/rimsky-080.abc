@@ -1,0 +1,74 @@
+X:1
+%%score [ 1 |  2 | 3  | 4 ] 5 6 { 7 | 8 } { 9 | 10 } [  11 | ( 12 13 14 )  | 15 | 16 | 17 ]
+L:1/8
+Q:1/4=92
+M:2/4
+K:F
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble transpose=-2 nm="Clarinet in Bb 1" snm="Bb Cl. 1"
+%%MIDI program 71
+V:3 treble transpose=-2 nm="Clarinet in Bb 2" snm="Bb Cl. 2"
+%%MIDI program 71
+V:4 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:5 treble transpose=24 nm="Glockenspiel" snm="Glk."
+%%MIDI program 9
+V:6 treble nm="Alti" snm="A"
+%%MIDI program 52
+V:7 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:8 treble 
+%%MIDI program 0
+V:9 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:10 treble 
+%%MIDI program 46
+V:11 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:12 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:13 treble 
+%%MIDI program 48
+V:14 treble 
+%%MIDI program 48
+V:15 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:16 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:17 bass transpose=-12 nm="Pizzicato Double Bass" snm="Cb."
+%%MIDI program 45
+V:1
+"^Andantino animato."!pp!"^Bb" e'(d'/a/ f)(a/d'/ | g')(f'/d'/ a)(a/d'/ | f')(d'/=b/ g)(b/d'/ | f')(d'/b/ g)(b/^c'/) |]
+V:2
+[K:G]!pp! (G/B/e) (e/B/G) | (B/e/g) (g/e/B) | (A/^c/g) (g/c/A) | (A/c/g) (g/c/A) |]
+V:3
+[K:G]!p! (G,>F,G,).A, | .B,.D(CB,) | (A,>G,A,).F, | .E,.G,(A,F,) |]
+V:4
+!pp! D,,4- | D,,4- | D,,4- | D,,4 |]
+V:5
+!pp! Aa aA | Aa aA | Aa aA | Aa aA |]
+V:6
+!p! F3/2 E/ F G | A c (BA) | G3/2 F/ G E | D F G E |]
+V:7
+!p! (e'd'/a/) (fa/d'/) | (g'f'/d'/) (aa/d'/) | (f'd'/=b/) (gb/d'/) | (f'd'/b/) (gb/^c'/) |]
+V:8
+(F/A/d) (d/A/F) | (A/d/f) (f/d/A) | (G/=B/f) (f/B/G) | (G/B/f) (f/B/G) |]
+V:9
+!p! aa' a'a | aa' a'a | aa' a'a | aa' a'a |]
+V:10
+Aa aA | Aa aA | Aa aA | Aa aA |]
+V:11
+!pp!"^Div." !open![aa']4- | [aa']4 | !open![aa']4- | [aa']4 |]
+V:12
+!pp!"^div. a 2" (A4 | d3 c) | ([G-=B]4 | [GB]4) |]
+V:13
+[FA]4- | [FA]4 | [DF]4- | (([DF]2 [^CE]2)) |]
+V:14
+D4- | D4 | x4 | x4 |]
+V:15
+!p! (F,>E,)(.F,.G,) | (.A,.C)(B,A,) | (G,>F,)(.G,.E,) | (.D,.F,)(G,E,) |]
+V:16
+!p! D,,4- | D,,4 | D,,4- | D,,4 |]
+V:17
+!p! D,2 z2 | D,2 z2 | D,2 z2 | D,2 z2 |]

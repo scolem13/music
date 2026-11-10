@@ -1,0 +1,75 @@
+X:1
+Z:©
+%%score [ 1 | 2 | 3 |  4 | 5  | ( 6 7 ) ] [ 8 | 9 ] { 10 | 11 } [  12 | 13  | 14 |  15 | 16  | 17 ]
+L:1/8
+Q:1/4=52
+M:4/4
+K:Gb
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:4 treble transpose=-3 nm="Clarinet in A 1" snm="Bb Cl. 1"
+%%MIDI program 71
+V:5 treble transpose=-3 nm="Clarinet in A 2" snm="Bb Cl. 2"
+%%MIDI program 71
+V:6 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:7 bass 
+%%MIDI program 70
+V:8 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:9 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:10 treble nm="Harp:MusicXML Part I" snm="Hp."
+%%MIDI program 46
+V:11 bass nm="Harp:MusicXML Part II" snm="Hp."
+%%MIDI program 46
+V:12 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:13 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:14 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:15 bass nm="Cello 1" snm="Vc. 1"
+%%MIDI program 48
+V:16 bass nm="Cello 2" snm="Vc. 2"
+%%MIDI program 48
+V:17 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Lento.""^125" z2 |!p! [ce]3 z [EG]3 z |!mf! [CE]3 z [EG]3 ([eg] | [a_f'] [ge']2) ([ge'] [=df][eg]) z ([ce] | [_fd'] [ec']2) ([ec'] [B=d][ce]) z ([ce] | [ge'][fd']) z ([ec'] [db][ca]) z ([Bg] | [=G=e][Af]) z ([_G_e] [=E=c][Fd]) z2 |]
+V:2
+z"_dolce" (e | a g2) (e d c2) (A |!mf! F G2) (B dc) z (G | _f e2) (e FG) z (E | d c2) (c =DE) z (E | ed) z (c BA) z (g | =ef) z (_e =cd) z2 |]
+V:3
+[K:Db] z2 | z8 |!mf! z4 z2 z (B | e d2) (d =AB) z (G | _c B2) (B FG) z (G | dc) z (B AG) z (f | =de) z (_d =Bc) z2 |]
+V:4
+[K:A] z"_dolce" (f | b a2) (f e d2) (B | G A2) (c ed) z2 |!mf! z2 z (D BAcd) | z2 z (B, =GF ^AB) | z (^DEF ^^FG) z2 | z (EGA ^AB) z2 |]
+V:5
+[K:A] z2 |!pp! z (A,DF A) z z2 | z (A,DF A) z z2 |!p! z/ (F/A/d/ f/A/d/f/) z/ (A,/D/F/ A/D/F/A/) | z/ (D/F/B/ d/F/B/d/) z/ (F,/B,/D/ F/B,/D/F/) | z/ (G,/B,/D/ G/B,/D/G/) z/ (B,/D/G/ B/) z/ z | z/ (G,/B,/D/ G/B,/D/G/) z/ (D/G/B/ d/) z/ z |]
+V:6
+z2 |!pp! C,8- | C,8 |!mf! z (G,DC AG) z2 | z (E,B,A, _FE) z2 | z (=CDE =EF) z2 | z (DFG =GA) z2 |]
+V:7
+x2 | x8 | x8 | C,8 | A,,8 | D,6- D, z | D,6- D, z |]
+V:8
+[K:Db] z2 |!pp! z2 G4 B2 | z2 B4 G2 | z4 D4 | z4 E4 | z2 G2 z2 c z | z2 c2 z2 G z |]
+V:9
+[K:Db] z2 |!pp! [B,D]6 [DG]2 | z2 [DG]4 [B,D]2 | z2 [B,D]4 [DB]2 | z2 [B,G]4 [GB]2 | z2 [CE]2 z2 [EG] z | z2 [EG]2 z2 [CE] z |]
+V:10
+[K:F#] z2 |[K:bass]!p! z/ B,,/D,/F,/ B,/D,/F,/B,/ D/F,/B,/D/ F z | z/ B,,/D,/F,/ B,/D,/F,/B,/ D/F,/B,/D/ F z | [K:treble]!mf! z/ D/F/B/ d/F/B/d/ z/ F,/B,/D/ F/B,/D/F/ | z/ B,/D/G/ B/D/G/B/ z/ [K:bass] D,/G,/B,/ D/G,/B,/D/ | z/ E,/G,/B,/ E/G,/B,/E/ [K:treble] z/ G,/B,/E/ G/ z/ z | [K:bass] z/ E,/G,/B,/ E/G,/B,/E/ [K:treble] z/ B,/E/G/ B/ z/ z |]
+V:11
+[K:F#] z2 | [B,,,B,,]2 z2 z4 | [B,,,B,,]2 z2 z4 | [B,,,B,,]2 z2 z4 | [G,,,G,,]2 z2 z4 | [C,,C,]2 z2 z4 | [C,,C,]2 z2 z4 |]
+V:12
+z"_dolce" (e | a g2) (e d c2) (A |!mf! F G2) (B dc) z"^Div.""_espress." ([eg] | [a_f'] [ge']2) ([ge'] [=df][eg]) z ([ce] | [_fd'] [ec']2) ([ec'] [B=d][ce]) z ([ce] | [ge'][fd']) z ([ec'] [db][ca]) z"^Unis." (g | =ef) z (_e =cd) z2 |]
+V:13
+z"_dolce" (e | a g2) (e d c2) (A |!mf! F G2) (B dc) z"^Div.""_espress." ([EG] | [A_f] [Ge]2) ([Ge] [=DF][EG]) z ([CE] | [_Fd] [Ec]2) ([Ec] [B,=D][CE]) z ([CE] | [Ge][Fd]) z ([Ec] [DB][CA]) z"^Unis." (B | =GA) z (_G =EF) z2 |]
+V:14
+z2 |!p! z"^pizz." G,CE G z z2 | z G,CE G z z2 | !mf! z/"^arco" E/G/c/ e/G/c/e/ z/ G,/C/E/ G/C/E/G/ | z/ (C/E/A/ c/E/A/c/) z/ (E,/A,/C/ E/A,/C/E/) | z/ (F,/A,/C/ F/A,/C/F/) z/ (A,/C/F/ A/) z/ z | z/ (F,/A,/C/ F/A,/C/F/) z/ (C/F/A/ c/) z/ z |]
+V:15
+z2 |!p! z/"_tranquillo" (C,/E,/G,/ C/E,/G,/C/ E/G,/C/E/ G) z | z/ (C,/E,/G,/ C/E,/G,/C/ E/G,/C/E/ G) z |!mf! z"_espress." (G,DC) [K:treble] (AGBc) | [K:bass] z (E,B,A,) [K:treble] (_FE=GA) |[K:bass] z (=CDE =EF) z2 | z (DFG =GA) z2 |]
+V:16
+z2 |!p! C,8- | C,8 |!p! C,8 | A,,8 | D,6- D, z | D,6- D, z |]
+V:17
+z2 |!p!"^pizz." C,2 z2 z4 | C,2 z2 z4 |!p!"^arco" C,8 | A,,8 | D,6- D, z | D,6- D, z |]

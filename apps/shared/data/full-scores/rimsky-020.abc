@@ -1,0 +1,58 @@
+X:1
+%%score [ 1 | 2 | 3 ] [  4 | 5  | 6 | 7 ] 8 [  9 | 10  | 11 | 12 | 13 ]
+L:1/8
+Q:1/4=112
+M:3/4
+K:Ab
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:4 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:5 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:6 bass nm="Trombone" snm="Tbn."
+%%MIDI program 57
+V:7 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:8 bass nm="Le Roi des Mers." snm="C"
+%%MIDI program 53
+V:9 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:10 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:11 treble nm="Viola" snm="Vla."
+%%MIDI program 48
+V:12 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:13 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^260" z6 |!f! z2 (c'/4=b/4c'/4b/4c'/4b/4c'/4b/4 c'/4b/4c'/4b/4c'/) z/ |]
+V:2
+z6 |!f! z2 a3- a/ z/ |]
+V:3
+[K:Bb] z6 |!f! z2 (^f/4g/4f/4g/4f/4g/4f/4g/4 f/4g/4f/4g/4f/) z/ |]
+V:4
+[K:Eb]!f! [eg]4 (3[d^f][_d=f][=d^f] | (3[eg]3/2[eg]/[eg] !>![eg]4 |]
+V:5
+[K:Eb]!f! [B,B]4 (3[Cc][_D_d][Cc] | (3[B,B]3/2[B,B]/[B,B] !>![B,B]4 |]
+V:6
+!f! [C,A,C]4 (3[D,G,=B,][__E,_G,_B,][D,=G,=B,] | (3[C,A,C]3/2[C,A,C]/[C,A,C] !>![C,A,C]4 |]
+V:7
+!mf! A,,,6- | A,,,6 |]
+V:8
+C4 (3(=B,^A,)B, | C3/2 C,/ C,2- C, z |]
+V:9
+z6 |!f! z2({gab)}!<(!!<)! (c'/4=b/4c'/4b/4c'/4b/4c'/4b/4 c'/4b/4c'/4b/4c'/) z/ |]
+V:10
+z6 |!f! z2 c'3- c'/ z/ |]
+V:11
+z6 |!f! z2 (=e/4f/4e/4f/4e/4f/4e/4f/4 e/4f/4e/4f/4e/) z/ |]
+V:12
+!f!({E,,_F,,G,,)} A,,/E,,/F,,/A,,/ E,,/F,,/A,,/=D,,/ E,,2 | A,,/E,,/_F,,/A,,/ E,,/F,,/A,,/E,,/ F,,/A,,/E,,/F,,/ |]
+V:13
+!f! A,/E,/_F,/A,/ E,/F,/A,/=D,/ E,2 | A,/E,/_F,/A,/ E,/F,/A,/E,/ F,/A,/E,/F,/ |]

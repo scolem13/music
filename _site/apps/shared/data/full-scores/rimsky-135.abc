@@ -1,0 +1,35 @@
+X:1
+Z:©
+%%score 1 [ 2 |  ( 3 4 ) | 5  ] ( 6 7 )
+L:1/8
+Q:1/2=50
+M:4/4
+K:C
+V:1 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:2 bass transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:3 alto nm="Trombone 1" snm="Tbn. 1"
+%%MIDI program 57
+V:4 alto 
+%%MIDI program 57
+V:5 bass nm="Trombone 2" snm="Tbn. 2"
+%%MIDI program 57
+V:6 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:7 bass transpose=-12 
+%%MIDI program 48
+V:1
+"^Moderato."!pp! _A, z _A,, z A,, z A, z | _A, z _A,, z A,, z A, z | _A, z _A,, z A,, z A, z | _A, z _A,, z A,, z A, z | z2 |]
+V:2
+[K:G]!mf!"^III. IV." [_E,,_E,]8-"^dim." | [E,,E,]4- [E,,E,] z z2 |!mf! [_E,,_E,]8-"^dim." | [E,,E,]4- [E,,E,] z z2 | z2 |]
+V:3
+!p! (_G,8"^dim." | F,4-) F, z z2 |!p! (_G,8"^dim." | _F,4-) F, z z2 | z2 |]
+V:4
+(D,8 | F,) z z2 z4 | (D,8 | _D,4-) D, z z2 | x2 |]
+V:5
+!p! (_B,,8"^dim." | C,4-) C, z z2 |!p! (_B,,8"^dim." | _D,) z z2 z4 | z2 |]
+V:6
+!pp!"^pizz." _A,"_pizz."zzA, A,zzA, | _A,zzA, A,zzA, | _A,zzA, A,zzA, | _A,zzA, A,zzA, | z2 |]
+V:7
+z _A,,A,, z z A,,A,, z | z _A,,A,, z z A,,A,, z | z _A,,A,, z z A,,A,, z | z _A,,A,, z z A,,A,, z | x2 |]

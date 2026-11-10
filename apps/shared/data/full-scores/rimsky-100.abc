@@ -1,0 +1,83 @@
+X:1
+Z:©
+%%score [  1 | 2  | 3 |  4 | 5  | 6 ] [  7 | 8  | 9 |  10 | 11  | 12 ] { 13 | 14 } [ 15 | 16 |  17 | 18  | 19 ]
+L:1/8
+Q:1/4=72
+M:4/4
+K:E
+V:1 treble nm="Flute I." snm="Fl. 1"
+%%MIDI program 73
+V:2 treble nm="Flute II. III." snm="Fl. 2"
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble transpose=2 nm="Clarinet\npiccolo in D" snm="Cl. picc."
+%%MIDI program 71
+V:5 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:6 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:7 treble transpose=-7 nm="Horn I. II. III." snm="Hn. 1-3"
+%%MIDI program 60
+V:8 treble transpose=-7 nm="Horn IV." snm="Hn. 4"
+%%MIDI program 60
+V:9 treble transpose=-3 nm="Trumpet in A" snm="A Tpt."
+%%MIDI program 56
+V:10 alto nm="Trombone 1" snm="Tbn. 1"
+%%MIDI program 57
+V:11 bass nm="Trombone 2" snm="Tbn. 2"
+%%MIDI program 57
+V:12 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:13 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:14 bass 
+%%MIDI program 46
+V:15 treble nm="Violin II.\n1. 2. 3. P." snm="Vln. 2"
+%%MIDI program 48
+V:16 alto nm="Viola\n1. 2. 3. P." snm="Vla."
+%%MIDI program 48
+V:17 bass nm="3 V-c.\nsoli" snm="Vc. 1"
+%%MIDI program 48
+V:18 bass nm="Cello 2" snm="Vc. 2"
+%%MIDI program 48
+V:19 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Andante."!p!"^161" e'8- | e'8- | e'8- | e'8- | e'8- | e'8- | e' z z2 z4 | z2 |]
+V:2
+!p! [gb]8- | [gb]8- | [gb]8- | [gb]8- | [gb]8- | [gb]8- | [gb] z z2 z4 | z2 |]
+V:3
+!p! [Bg]8- | [Bg]8- | [Bg] z z2 z4 | z8 | z8 | z8 | z8 | z2 |]
+V:4
+[K:D]!p! d'8- | d'8- | d'8- | d'8- | d'8- | d'8- | d' z z2 z4 | z2 |]
+V:5
+[K:G]!p! [Bd]8- | [Bd]8- | [Bd]8- | [Bd]8- | [Bd]8- | [Bd]8- | [Bd] z z2 z4 | z2 |]
+V:6
+!p! [B,G]8- | [B,G]8- | [B,G] x7 | z8 | z8 | z8 | z8 | z2 |]
+V:7
+[K:B]!p! [DFB]8- | [DFB]8- | [DFB]8- | [DFB]8- | [DFB]8- | [DFB]8- | [DFB] z z2 z4 | z2 |]
+V:8
+[K:B]!p! B,8- | B,8- | B,8- | B,8- | B,8- | B,8- | B, z z2 z4 | z2 |]
+V:9
+[K:G]!p! [Gg]8- | [Gg]8- | [Gg] x7 | z8 | z8 | z8 | z8 | z2 |]
+V:10
+!p! [B,E]8- | [B,E]8- | [B,E] z z2 z4 | z8 | z8 | z8 | z8 | z2 |]
+V:11
+!p! [E,,G,]8- | [E,,G,]8- | [E,,G,] z z2 z4 | z8 | z8 | z8 | z8 | z2 |]
+V:12
+!p! E,,8- | E,,8- | E,, x7 | z8 | z8 | z8 | z8 | z2 |]
+V:13
+z8 |"^(L'espace celeste)" z8 | E,B,Ge EBge' |  EBge' ebg'e'' | e''g'be e'gBE |  e'gBE eGB,E, | E,/B,/G/e/ E/B/g/e'/ E/B/g/e'/ e/b/g'/e''/ | z2 |]
+V:14
+z8 | z8 |!f! z4 [K:treble] z4 | z8 | z8 | z4 [K:bass] z4 | z2 [K:treble] z6 |[K:bass] z2 |]
+V:15
+z8 | z8 |!p! [gbe']8- | [gbe']8- | [gbe']8- | [gbe']8- | [gbe']8 | z2 |]
+V:16
+z8 | z8 |!p! [GBe]8- | [GBe]8- | [GBe]8- | [GBe]8- | [GBe]8 | z2 |]
+V:17
+z8 | z8 |!p! [G,B,E]8- | [G,B,E]8- | [G,B,E]8- | [G,B,E]8- | [G,B,E]8 | z2 |]
+V:18
+z8 | z8 |!p! E,8- | E,8- | E,8- | E,8- | E,8 | z2 |]
+V:19
+!p! E,,8- | E,,8-"_Div." |!p! [E,,E,]8- | [E,,E,]8- | [E,,E,]8- | [E,,E,]8- | [E,,E,]8 | z2 |]

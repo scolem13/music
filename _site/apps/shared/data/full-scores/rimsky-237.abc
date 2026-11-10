@@ -1,0 +1,82 @@
+X:1
+%%score [  1 | 2  | 3 ] [  4 | 5  |  6 | 7  | 8 ] ( 9 10 ) [   ( 11 12 ) | 13  |  ( 14 15 ) | 16   | 17 | 18 | 19 ]
+L:1/8
+Q:1/4=168
+M:3/4
+K:Eb
+V:1 treble nm="Flute 1" snm="Fl. 1"
+%%MIDI program 73
+V:2 treble nm="Flute 2" snm="Fl. 2"
+%%MIDI program 73
+V:3 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:5 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:6 alto nm="Trombone 1" snm="Tbn. 1"
+%%MIDI program 57
+V:7 bass nm="Trombone 2" snm="Tbn. 2"
+%%MIDI program 57
+V:8 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:9 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:10 treble 
+%%MIDI program 46
+V:11 treble nm="Violin I:Violin 1" snm="Vln. I:Vln. 1"
+%%MIDI program 48
+V:12 treble 
+%%MIDI program 48
+V:13 treble nm="Violin I:Violin 2" snm="Vln. I:Vln. 2"
+%%MIDI program 48
+V:14 treble nm="Violin II:Violin 3" snm="Vln. II:Vln. 3"
+%%MIDI program 48
+V:15 treble 
+%%MIDI program 48
+V:16 treble nm="Violin II:Violin 4" snm="Vln. II:Vln. 4"
+%%MIDI program 48
+V:17 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:18 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:19 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+!p! (a'2 f'2 d'2 | a2 f2 d2 | A) z z2 z2 | z6 |"^181" z6 | z2 |]
+V:2
+z6 |!p! (a2 f2 d2 | A) z z2 z2 | z6 | z6 | z2 |]
+V:3
+B z z2 z2 | z6 |!p! (A2 F2 D2 | A,2 F,2 D,) z | z6 | z2 |]
+V:4
+[K:Bb] z6 | z6 | z6 | z6 |!p! [Bd]6 | z2 |]
+V:5
+[K:Bb] z6 | z6 | z6 | z6 |!p! [B,F]6 | z2 |]
+V:6
+z6 | z6 | z6 | z6 |!p! [E,G,]6 | z2 |]
+V:7
+z6 | z6 | z6 | z6 |!p! B,,6 | z2 |]
+V:8
+z6 | z6 | z6 | z6 |!p! E,,6 | z2 |]
+V:9
+[Bdfa] z z2 z2 | z6 | z6 | z6 | z6 | z2 |]
+V:10
+[B,DFA] z z2 z2 | x6 | x6 | x6 | x6 | x2 |]
+V:11
+!mf! (a'f'/d'/ f'd'/a/ d'a/f/) | (af/d/ fd/A/ dA/F/) | (AF/D/ FD/A,/) D z | z6 | z6 | z2 |]
+V:12
+f'2- (f'd'/a/ d'a/f/) | x6 | x6 | x6 | x6 | x2 |]
+V:13
+!mf! d'4- (d'a/f/) | (af/d/ fd/A/ dA/F/) | (AF/D/ FD/A,/) D z | z6 | z6 | z2 |]
+V:14
+!mf! a6- | (af/d/ fd/A/ dA/F/) | (AF/D/ FD/A,/) D z | z6 | z6 | z2 |]
+V:15
+f6- | f2- (fd/A/ dA/F/) | x6 | x6 | x6 | x2 |]
+V:16
+!mf! d6- | d4- (dA/F/) | (AF/D/ FD/A,/) D z | z6 | z6 | z2 |]
+V:17
+B z z2 z2 | z6 |!mf! (AF/D/ FD/A,/ DA,/F,/) | (A,F,/D,/ F,) z z2 | z6 | z2 |]
+V:18
+z6 | z6 |!mf! z2 z2 (DA,/F,/) | (A,F,/D,/ F,D,/A,,/ D,A,,/F,,/) | !p! .E,(B,,/G,,/) .E,(B,,/G,,/) .E,(B,,/G,,/) | z2 |]
+V:19
+B z z2 z2 | z6 | z6 | z6 |!p! E,6 | z2 |]

@@ -1,0 +1,87 @@
+X:1
+Z:©
+%%score [  1 | 2  | 3 | 4 | 5 | 6 | 7 | 8 ] [  9 | 10  |  11 | 12  | 13 | 14 ] 15 [  16 | 17  | 18 | 19 | 20 ]
+L:1/8
+Q:1/4=216
+M:4/4
+K:Eb
+V:1 treble nm="Flute" snm="Fl. 1"
+%%MIDI program 73
+V:2 treble transpose=-5 nm="Flute c-a (G)" snm="Fl. 2"
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble transpose=-7 nm="English Horn\n(Oboe c-a)" snm="E. Hn."
+%%MIDI program 69
+V:5 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:6 treble transpose=-14 nm="Bass Clarinet" snm="B. Cl."
+%%MIDI program 71
+V:7 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:8 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:9 treble transpose=-7 nm="Horn I. II. III." snm="Hn. 1"
+%%MIDI program 60
+V:10 bass transpose=-7 nm="Horn IV." snm="Hn. 2"
+%%MIDI program 60
+V:11 treble transpose=-2 nm="Trumpet in Bb\nI. II." snm="Bb Tpt. 1"
+%%MIDI program 56
+V:12 treble transpose=-7 nm="Trumpet c-a (F)" snm="Bb Tpt. 2"
+%%MIDI program 56
+V:13 bass nm="Trombone" snm="Tbn."
+%%MIDI program 57
+V:14 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:15 bass nm="Le Tsar Ivan." snm="Bs."
+%%MIDI program 54
+V:16 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:17 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:18 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:19 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:20 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Moderato alla breve."!f!"^dim." [E^F]8- | [EF]8- |!p! [EF]8- | ([E-F]8 | [EG]8-) | (([EG]6 [GB]2 |!pp! [^Fc]8-)) | [Fc]8 | z2 |]
+V:2
+[K:Ab]!f!"^dim." F8- | F8- |!p! F8- | (F8 | E8-) | (E6 A2 |!pp! G8-) | G8 | z2 |]
+V:3
+!f!"^dim." ^F8- | F4 z4 | z8 | z8 | z8 | z8 | z8 | z8 | z2 |]
+V:4
+[K:Bb]!f!"^dim." ^c8- | c4 z4 | z8 | z8 | z8 | z8 | z8 | z8 | z2 |]
+V:5
+[K:F] z8 | z8 | z8 | z8 |!mf!"^a 2" C2 C2 =B,2 C2 | A,2 C2 D2 C2 | E2 z2 z4 | z8 | z2 |]
+V:6
+[K:F]!f!"^tenuto e pesante" C8 | C4 C4 | C4 D4 | C4 =B,4 | A,4 =B,4 | (C8 | =B,8-) | B,8 | z2 |]
+V:7
+z8 | z8 | z8 | z8 |!mf!"_a 2" B,,2 B,,2 =A,,2 B,,2 | G,,2 B,,2 C,2 B,,2 | D,2 z2 z4 | z8 | z2 |]
+V:8
+!f!"^tenuto e pesante" B,,8 | B,,4 B,,4 | B,,4 C,4 | B,,4 =A,,4 | G,,4 =A,,4 | (B,,8 | =A,,8-) | A,,8 | z2 |]
+V:9
+[K:Bb]"^dim." [GB^c]8-!>(! |!>)! [GBc]4 z4 | z8 | z8 | z8 | z8 | z8 | z8 | z2 |]
+V:10
+[K:Bb]!f!"^tenuto e pesante" F,8 | F,4 F,4 | F,4 G,4 | F,4 =E,4 | D,4 =E,4 | (F,8 | !p! =E,) z z2 z4 | z8 | z2 |]
+V:11
+[K:F] z8 | z8 | z8 | z8 | z8 | z8 |!pp! [^Gd]8- | [Gd]8 | z2 |]
+V:12
+[K:Bb] z8 | z8 | z8 | z8 | z8 | z8 |!pp! A8- | A8 | z2 |]
+V:13
+z8 | z8 | z8 | z8 | z8 | z8 |!pp! [D,^F,C]8- | [D,F,C]8 | z2 |]
+V:14
+!mf!"^tenuto e pesante" B,,,8 | B,,,4 B,,,4 | B,,,4 C,,4 | B,,,4 =A,,,4 | G,,,4 =A,,,4 | (B,,,8 | !p! =A,,,) z z2 z4 | z8 | z2 |]
+V:15
+z8 | z8 | z8 | z8 | z2 z"^allarg. poco" B, =A,2 z B, | G,2 z B, C2 z B, | D8 | =A,2 z2 z4 | z2 |]
+V:16
+"_dim. poco a poco" ^F8 | ^F8 | ^F8 | ^F8 |!p! G8 | "_dim." G6"_smorz." B2 | c z z2 z4 | z8 | z2 |]
+V:17
+"_dim. poco a poco" [CE]8 | [CE]8 | [CE]8 | [CE]8 |!p! [B,E]8 | "_dim." [B,E]6"_smorz." [EG]2 | [D^F] z z2 z4 | z8 | z2 |]
+V:18
+z8 | z8 | z8 | z8 |!p!"^pizz." B,2 B,2 =A,2 B,2 | G,2 B,2 C2 B,2 | D2 z2 z4 | z8 | z2 |]
+V:19
+z8 | z8 | z8 | z8 |!p!"^pizz." B,,2 B,,2 =A,,2 B,,2 | G,,2 B,,2 C,2 B,,2 | D,2 z2 z4 | z8 | z2 |]
+V:20
+!f!({^F,,G,,=A,,}"^pesante""^dim. poco a poco" B,,8) | B,,4 B,,4 | B,,4 C,4 | B,,4 =A,,4 | G,,4 =A,,4 | B,,8 | =A,,8- | A,,8 | z2 |]

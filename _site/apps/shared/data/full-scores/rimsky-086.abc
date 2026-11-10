@@ -1,0 +1,86 @@
+X:1
+Z:©
+%%score [ 1 | 2 | 3 | 4 | 5 | ( 6 7 ) | 8 ] [  9 | 10  |  11 | 12  | 13 ] [ 14 | 15 ] [ 16 | 17 | 18 | 19 ]
+L:1/8
+Q:3/4=44
+M:6/4
+K:Eb
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:4 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:5 treble transpose=-14 nm="Bass Clarinet" snm="B. Cl."
+%%MIDI program 71
+V:6 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:7 bass 
+%%MIDI program 70
+V:8 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:9 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:10 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:11 alto nm="Trombone 1 & 2" snm="Tbn. 1"
+%%MIDI program 57
+V:12 bass nm="Trombone 3" snm="Tbn. 2"
+%%MIDI program 57
+V:13 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:14 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:15 perc nm="Cassa" snm="Perc."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap F 36
+I:percmap F F 36 normal
+V:16 treble nm="Violin" snm="Vln."
+%%MIDI program 48
+V:17 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:18 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:19 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Largo."!f!"^3" [ge'g']12- | [ge'g']12- | [ge'g']12- | [ge'g']12-!>(!!>)! | [ge'g'] x8 x3 | z2 |]
+V:2
+!f! [eg]12- | [eg]12- | [eg]12- | [eg]12-!>(!!>)! | [eg] x8 x3 | z2 |]
+V:3
+[K:Bb]!f! d12- | d12- | d12- | d12-!>(!!>)! | d x8 x3 | z2 |]
+V:4
+[K:F]!f! [Af]12- | [Af]12- | [Af]12- | [Af]12-!>(!!>)! | [Af] x8 x3 | z2 |]
+V:5
+[K:F]!f! (F2 D2 C2) (F2 D2 C2) | (F2 D2 C2) (F2 D2 C2) | F6 D6 | C6!>(! (_D6!>)! | C) x8 x3 | z2 |]
+V:6
+!f! [G,E]12- | [G,E]12- | [G,E]12- | E12- | E x8 x3 | z2 |]
+V:7
+x12 | x12 | x12 | (G,6!>(! (A,6)!>)! | G,) x8 x3 | x2 |]
+V:8
+!f! (E,2 C,2 B,,2) (E,2 C,2 B,,2) | (E,2 C,2 B,,2) (E,2 C,2 B,,2) | E,6 C,6 | B,,6!>(! (_C,6!>)! | B,,) x8 x3 | z2 |]
+V:9
+[K:Bb]!f! [Bd]12 | [Bd]12 | [Bd]6 [Bd]6 | [Bd]6!>(! [Bd]6-!>)! |!p! [Bd]12 | z2 |]
+V:10
+[K:Bb]!f!"^a 2" D12 | D12 | D6 D6 | D6!>(! E6!>)! |!p! [B,D]12 | z2 |]
+V:11
+!f! [G,E]12 | [G,E]12 | [G,E]6 [G,E]6 | [G,E]6!>(! ([A,E-]6!>)! |!p! [G,E]) x8 x3 | z2 |]
+V:12
+!f! E,12 | E,12 | E,6 C,6 | B,,6!>(! (_C,6!>)! |!p! B,,) x8 x3 | z2 |]
+V:13
+!f! E,,12 | E,,12 | E,,6 C,,6 | B,,,6!>(! (_C,,6!>)! |!p! B,,,) x8 x3 | z2 |]
+V:14
+!f! TE,12 | TE,12 | TE,6 TE,6 | TE,6!>(! TE,6!>)! |!p! TB,,12 | z2 |]
+V:15
+[K:none] !f! F2 z2 z2 z6 | F2 z2 z2 z6 | F2 z2 z2 F2 z2 z2 | F2 z2 z2 F2 z2 z2 | z12 | z2 |]
+V:16
+!f! v[G,G]6- [G,G](DEGDE) | v[G,G]6- [G,G](DEGDE) | (GDEGDE) (GDEGDE) | (GDEGDE)!>(! (GDEGDE)!>)! | G x8 x3 | z2 |]
+V:17
+!f! v[G,G]6- [G,G](DEGDE) | v[G,G]6- [G,G](DEGDE) | (GDEGDE) (GDEGDE) | (GDEGDE)!>(! (GDEGDE)!>)! | G x8 x3 | z2 |]
+V:18
+!f! (E,2 C,2 B,,2) (E,2 C,2 B,,2) | (E,2 C,2 B,,2) (E,2 C,2 B,,2) | E,6 C,6 | B,,6!>(! _C,6!>)! | B,,12 | z2 |]
+V:19
+!f! (E,2 C,2 B,,2) (E,2 C,2 B,,2) | (E,2 C,2 B,,2) (E,2 C,2 B,,2) | E,6 C,6 | B,,6!>(! _C,6!>)! | B,,12 | z2 |]

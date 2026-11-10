@@ -1,0 +1,82 @@
+X:1
+%%score [ 1 | ( 2 3 ) | ( 4 5 ) | ( 6 7 ) | ( 8 9 ) ] [ ( 10 11 ) | 12 ] 13 [  14 | 15  | 16 | 17 | 18 ] 19
+L:1/8
+Q:1/4=60
+M:2/4
+K:C
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble 
+%%MIDI program 73
+V:4 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:5 treble 
+%%MIDI program 68
+V:6 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:7 treble transpose=-3 
+%%MIDI program 71
+V:8 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:9 bass 
+%%MIDI program 70
+V:10 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:11 treble transpose=-7 
+%%MIDI program 60
+V:12 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:13 treble nm="Marfa." snm="Mar."
+%%MIDI program 54
+V:14 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:15 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:16 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:17 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:18 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:19 bass nm="Cello Solo" snm="Vlc. S."
+%%MIDI program 42
+V:1
+"^Molto andante.""^102" z4 | z4 | z4 | z4 | z4 | z4 | z4 |!p! z (f"_dolce"_g=g) | !<(! (_a2 _b=b!<)! |!mf! c'2-) c' !fermata!z |]
+V:2
+z4 | z4 | z4 | z4 |!pp! z (a"_cresc. poco"_b=b) | (_c'2 d'^d' | e'2-) e' z | z (f_g=g) | !<(! (_a2 _b=b!<)! |!mf! c'2-) c' !fermata!z |]
+V:3
+x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | z2 _b2- | b2 a z |]
+V:4
+z4 |!pp! z (^cd^d) | (e2 ^f^^f | ^g2-) g z | z"_cresc. poco" (A_B=B) | (c2 d^d | e4) | (f4 | _e4) |!mf! e2- e !fermata!z |]
+V:5
+x4 | x4 | x4 | x4 | x4 | z2 d2- | (d2 ^c2) | (_d4 | (c2) _B2-) | (B2 A) z |]
+V:6
+[K:Eb] z4 |!pp! (=E4 | D4-) | D4 |"_cresc. poco" (C2 (A2) | B4-) | B4 | (^G4 | ^F4-) | !mf! F2- F !fermata!z |]
+V:7
+[K:Eb] x4 | (C4 | (=B,2) =A,2-) | (A,2 ^G,2) | (A,2 (C2) | (G2) F2-) | (F2 =E2) | (=E4 | (^D2) ^C2-) | (C2 ^B,) z |]
+V:8
+z4 |!pp! (E,4 | B,4-) | B,4 |"_cresc. poco" (C4 | G,4-) | G,4 | (_A,4 |!mf! _E4-) | E2- E z |]
+V:9
+x4 | (E,4 | (D,4) | ^C,4) | (C,4 | (_B,,4) | (A,,4) | (_A,,4) | (_G,,4) | F,,2-) F,, z |]
+V:10
+[K:G] z4 | z4 |"^Con sord."!pp! z4 | z4 |"_cresc. poco" z4 | z4 | z4 | z (c_d=d) | (_e2 =f^f | !mf! g2-) g !fermata!z |]
+V:11
+[K:G] x4 | x4 | z2 ^c2- | (c2 =c2) | (c4 | (B2) A2-) | (A2 ^G2) | (_A4 | (G2) =F2-) | (F2 E) z |]
+V:12
+[K:G] z4 |"^Con sord."!pp! z ^GA^A | (B2 ^cd | ^d4) |"_cresc. poco" (e4 | d4-) | d4 | (([_Ec]4 | (([_D_B]4)) |!mf! [C_B]2-)) [CB] !fermata!z |]
+V:13
+z2 !fermata!z E | ^C3/2 C/ D ^D | E E ^F ^^F | ^G2 G z | z A"^cresc." _B =B | c3/2 c/ d ^d | e2 z e | f2 _A z | z4 | z4 |]
+V:14
+z4 |"^Con sord."!pp! z (^cd^d) | (e2 ^f^^f) | ^g2- g z | z"_cresc. poco" (a_b=b) | (c'2 d'^d') | e'2- e' z | z (f'_g'=g') | (_a'2 _b'=b' |!mf! c''2-) c'' !fermata!z |]
+V:15
+z4 | z4 | z4 | z4 |"^Con sord."!pp! z (A"_cresc. poco"_B=B) | (_c2 d^d) | e2- e z | z (f_g=g) | (_a2 _b=b) |!mf! c'2- c' !fermata!z |]
+V:16
+z4"^Div." |!pp!"^Con sord." [A,^C]4 | [^G,B,]2 [^F,B,]2 | [^F,B,]2 [^E,B,]2 | [F,A,]2"_cresc. poco" [A,F]2 | [EG]2 [DG]2 | [DG]2 [^CG]2 | [_DF]2 [F_d]2 | [c_e]2 [_Be]2 | !mf! [_B_e]2 [Ae] !fermata!z |]
+V:17
+z4 |"^Con sord." E,4 |"^Div." [D,B,]4 | [^C,B,]4 |"_cresc. poco" [C,C]4 | [_B,,G,]4 | [A,,G,]4 | [_A,,_A,]2 A,2 | [_G,_E]4 | !mf! [F,_E]2 [F,E] !fermata!z |]
+V:18
+z4 | z4 | z4 | z4 | z4 | z4 | z4 |!p! _A,4"_cresc." | _G,4 | !mf! F,2 F, !fermata!z |]
+V:19
+z4 | z4 | z4 | z4 | z4 | z4 | z4 |[K:treble]!p! z"_cresc.""^Con sord." (F_G=G) | (_A2 _B=B) | !mf! c2- c !fermata!z |]

@@ -1,0 +1,66 @@
+X:1
+%%score [ 1 | 2 | ( 3 4 ) | ( 5 6 ) ] [ 7 | 8 ] 9 { 10 | 11 } [ 12 | 13 | 14 | 15 ]
+L:1/8
+Q:3/4=56
+M:6/4
+K:E
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:4 treble transpose=-3 
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 bass 
+%%MIDI program 70
+V:7 treble transpose=-7 nm="Horn 1 2 3" snm="Hn. 1 2 3"
+%%MIDI program 60
+V:8 bass transpose=-7 nm="Horn 4" snm="Hn. 4"
+%%MIDI program 60
+V:9 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:10 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:11 bass 
+%%MIDI program 46
+V:12 treble nm="Violin 1 & 2\nunis." snm="Vln."
+%%MIDI program 48
+V:13 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:14 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:15 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Allegro non troppo.)"!mf! [be']12- |!>(! [be']6-!>)! [be']2 z2 z2 | z12 | z12 | z12 | z12 | z2 |]
+V:2
+!mf! [eb]12- |!>(! [eb]6-!>)! [eb]2 z2 z2 | z12 | z12 | z12 | z12 | z2 |]
+V:3
+[K:G]!mf! [db]12- |!>(! [db]6-!>)! [db]2 z2 z2 |!p! G6- (G4 D2) | =F6- F2 E2 ^D2 | (E12 | A2) z2 z2 z6 | z2 |]
+V:4
+[K:G] x12 | x12 | B,12- | (B,12 | _B,12) | A,12 | x2 |]
+V:5
+!mf! [E,B,]12- |!>(! [E,B,]6-!>)! [E,B,]2 z2 z2 |!p! (B,,12 | (^A,,12) | B,,12) | B,,12 | z2 |]
+V:6
+x12 | x12 | E,,12- | E,,12- | E,,12 | D,,12 | x2 |]
+V:7
+[K:B] [FBd]12- |!>(! [FBd]6-!>)! [FBd]2 z2 z2 | z12 | z12 | z12 | z12 | z2 |]
+V:8
+[K:B]!mf! B,,12- |!>(! B,,6-!>)! B,,2 z2 z2 | z12 | z12 | z12 | z12 | z2 |]
+V:9
+!mf! E,12 |!>(! E,6!>)! E,2 z2 z2 | z12 | z12 | z12 | z12 | z2 |]
+V:10
+!f! !~(!!~)![GBe]2 z2 z2 z6 | z12 | z12 | z12 | z12 | z12 | z2 |]
+V:11
+!~(!!~)![E,G,B,E]2 z2 z2 z6 | z12 | z12 | z12 | z12 | z12 | z2 |]
+V:12
+z12 | z12 |!p! E6- (E4 B,2) | =D6- (D2 .C2 .^B,2) | (!trill(!TC6- C4!trill)! ^B,C | .F2) .B,2 z2 z6 | z2 |]
+V:13
+!mf! z6 (G,2 E2 B2) |!>(! (B2 E2 G,2)!>)! G,2 z2 z2 | z12 | z12 | z12 | !p! (F,2 B,2 F2) (F2 B,2 F,2) | z2 |]
+V:14
+!mf! (E,,2 B,,2 G,2) (G,2 B,,2 E,,2) |!>(! (E,,2 B,,2 G,2) (G,2 B,,2!>)! E,,2) | !p! (E,,2 B,,2 G,2) (G,2 B,,2 E,,2) | (E,,2 ^A,,2 G,2) (G,2 A,,2 E,,2) | (E,,2 B,,2 =G,2) (G,2 B,,2 E,,2) | (D,,2 B,,2 F,2) (F,2 B,,2 D,,2) | z2 |]
+V:15
+!mf! E,,12- |!>(! E,,12-!>)! |!p! E,,12- | E,,12 | E,12 | D,12 | z2 |]

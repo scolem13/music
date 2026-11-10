@@ -1,0 +1,23 @@
+X:1
+Z:©
+%%score [ 1 | 2 | 3 ] 4
+L:1/8
+Q:1/4=56
+M:2/4
+K:C
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble transpose=-3 nm="Clarinet III.\nin A" snm="A Cl."
+%%MIDI program 71
+V:3 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 treble nm="Violin" snm="Vln."
+%%MIDI program 48
+V:1
+"^Adagio."!p! z .b !>!B2 |({cB^A} .B).B !wedge!b' z | z .b !>!B2 |({cB^A} .B).B !wedge!b' z | z2 |]
+V:2
+[K:Eb]!p! (F4 | _G4) | (F4 | _G4) | z2 |]
+V:3
+!p! ([^F,B,-]4 | [G,B,]4) | ([^F,B,-]4 | [G,B,]4) | z2 |]
+V:4
+!p! z"^Patzuk mange des petits pâtés." .b !>!B2 |({cB^A} .B).B [Bb'] z | z .b !>!B2 | ({cB^A} .B).B !open!b' z | z2 |]

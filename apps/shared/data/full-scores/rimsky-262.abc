@@ -1,0 +1,110 @@
+X:1
+%%score [ 1 | 2 | 3 | 4 | 5 ] [  6 | 7  | 8 |  9 | 10  | 11 ] [ 12 | 13 ] 14 [ 15 | 16 ] [  17 | 18  | 19 | 20 | 21 ]
+L:1/8
+Q:1/4=160
+M:4/4
+K:D
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:7 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:8 treble transpose=-3 nm="Trumpet in A" snm="A Tpt."
+%%MIDI program 56
+V:9 alto nm="Trombone 1" snm="Tbn. 1"
+%%MIDI program 57
+V:10 bass nm="Trombone 2" snm="Tbn. 2"
+%%MIDI program 57
+V:11 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:12 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:13 perc nm="Triangle" snm="Tgl."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap =f 96
+I:percmap =f f 96 normal
+%%MIDI drummap f 96
+I:percmap f f 96 normal
+V:14 perc stafflines=1 nm="Tambourine" snm="Tamb."
+%%MIDI channel 10
+%%MIDI program 48
+%%MIDI drummap =E 54
+I:percmap =E B 54 normal
+%%MIDI drummap E 54
+I:percmap E B 54 normal
+V:15 perc nm="Piatti" snm="Piat."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap =g 92
+I:percmap =g g 92 normal
+%%MIDI drummap g 92
+I:percmap g g 92 normal
+V:16 perc nm="Cassa" snm="Cas."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap =F 36
+I:percmap =F F 36 normal
+%%MIDI drummap F 36
+I:percmap F F 36 normal
+V:17 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:18 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:19 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:20 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:21 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Allegro risoluto.)"!ff!"^52" d' z z2 z4 | z8 | d2 e2 =f2 g2 | _a2 _b2 =b2 c'2 | d'2 z2 d'2 z2 | !fermata!D8 | z2 |]
+V:2
+!ff! [df]2 e2 =f2 g2 | _a2 _b2 =b2 [^ac']2 | [ad']2 e'2 =f'2 [e'g']2 | [_e'_a']2 [e'_b']2 [f'=b']2 [f'^a']2 | [f'a']2 z2 d'2 z2 | !fermata!d8 | z2 |]
+V:3
+!ff! [df] z e2 =f2 g2 | _a2 _b2 =b2 [^ac']2 | [ad']2 a2 [a=c']2 c'2 | =c'2 _b2 =b2 ^c'2 | d'2 z2 [dd']2 z2 | !fermata!d8 | z2 |]
+V:4
+[K:F]!ff! [fa] z z2 z2 b2 | _c'2 [_g_d']2 [a=d']2 a2 | a2 g2 _a2 b2 | _c'2 _g2 a2 ^c'2 | c'2 z2 f2 z2 | !fermata!F8 | z2 |]
+V:5
+!ff! [D,,D,] z"^a 2" C2 =C2 _B,2 | _A,2 G,2 F,2 E,2 | D,2 C,2 =C,2 _B,,2 | _A,,2 G,,2 F,,2 [F,C]2 | [F,D]2 z2 D,2 z2 | !fermata!D,,8 | z2 |]
+V:6
+[K:A]!ff! [Ac]2"^a 2" B2 =c2 d2 | _e2 =f2 ^f2 c2 | c2 B2 =c2 d2 | _e2 =f2 ^f2 =f2 | e2 z2 [A,A]2 z2 | !fermata![A,A]8 | z2 |]
+V:7
+[K:A]!ff! [Ac]2 [GB]2 [=Ge]2 [^GB]2 | [=G_B]2 [=FB]2 [^F^A]2 C2 | C2 E2 [E=G]2 [DG]2 | [_E=G]2 [D=F]2 [C^F]2 [C^G]2 | [CA]2 z2 [A,A]2 z2 | !fermata![A,A]8 | z2 |]
+V:8
+[K:F]!ff! [fa]2 [cg]2 [c_a]2 [_eg]2 | [_e_g]2 [_dg]2 [=d^f]2 [^c=e]2 | [cf]2 [cg]2 [_e_a]2 [eg]2 | [_e_g]2 [_dg]2 [=d^f]2 [=ea]2 | [fa]2 z2 [Ff]2 z2 | !fermata![Ff]8 | z2 |]
+V:9
+!ff! D2 [CE]2 [=C=F]2 [CE]2 | [=C_E]2 [_B,E]2 [=B,^D]2 [^A,C]2 | [A,D]2 [A,E]2 [=C=F]2 [CE]2 | [=C_E]2 [_B,E]2 [=B,^D]2 [^A,F]2 | [A,F]2 z2 D2 z2 | !fermata!D,8 | z2 |]
+V:10
+!ff! D, z z2 =C2 _B,2 | _A,2 G,2 F,2 E,2 | D,2 A,2 A,2 G,2 | _A,2 G,2 F,2 E,2 | D,2 z2 D2 z2 | !fermata!D,8 | z2 |]
+V:11
+!ff! D,, z z2 z4 | z4 F,2 E,2 | D,2 C,2 =C,2 _B,,2 | _A,,2 G,,2 F,,2 E,,2 | D,,2 z2 D,2 z2 | !fermata!D,,8 | z2 |]
+V:12
+!f! D,2 z2 z4 | z8 | z8 | z8 | D,2 z2 D,2 z2 | !fermata!TD,8 | z2 |]
+V:13
+[K:none] !f! =f2 z2 z4 | z8 | =f2 f2 f2 f2 | =f2 f2 f2 f2 | =f2 z2 f2 z2 | =f2 z2 !fermata!z4 | z2 |]
+V:14
+[K:none] !f! E2 z2 z4 | z8 | E2 E2 E2 E2 | =E2 E2 E2 E2 | E2 z2 E2 z2 | =E2 z2 !fermata!z4 | z2 |]
+V:15
+[K:none] !f! g2 z2 z4 | z8 | g2 g2 g2 g2 | =g2 g2 g2 g2 | g2 z2 g2 z2 | =g2 z2 !fermata!z4 | z2 |]
+V:16
+[K:none] !f! =F2 z2 z4 | z8 | =F2 F2 F2 F2 | =F2 F2 F2 F2 | =F2 z2 F2 z2 | =F2 z2 !fermata!z4 | z2 |]
+V:17
+ d'' z z2 z4 | z8 |!ff! d'2 e'2 =f'2 g'2 |  _a'2 _b'2 =b'2 c''2 | d''2 z2 [Ddd']2 z2 | !fermata!D8 | z2 |]
+V:18
+d' z z2 z4 | z8 |!ff! [Fd]2 [EAe]2 [A=c=f]2 [Ecg]2 | [_E=c_a]2 [G_e_b]2 [F^d=b]2 [^Afc']2 | [Afd']2 z2 [Ddd']2 z2 | !fermata!D8 | z2 |]
+V:19
+[DF] z z2 z4 | z8 |!ff! D2 E2 =F2 G2 | _A2 _B2 =B2 c2 | d2 z2 [Dd]2 z2 | !fermata!D,8 | z2 |]
+V:20
+D,, z z2 z4 | z8 |!ff! D,2 C,2 =C,2 _B,,2 | [_A,,_A,]2 G,2 F,2 E,2 | D,2 z2 [D,D]2 z2 | !fermata!D,8 | z2 |]
+V:21
+D, z z2 z4 | z8 |!ff! D2 C2 =C2 _B,2 | _A,2 G,2 F,2 E,2 | D,2 z2 D2 z2 | !fermata!D,8 | z2 |]

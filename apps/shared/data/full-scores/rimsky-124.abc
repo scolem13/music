@@ -1,0 +1,71 @@
+X:1
+Z:©
+%%score [ ( 1 2 ) | 3 | 4 | 5 | ( 6 7 ) ] [ 8 9 ] { 10 | 11 } [  12 | 13  | 14 | 15 | 16 ]
+L:1/8
+Q:3/8=66
+M:6/8
+K:B
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble 
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:5 treble transpose=-3 nm="Bass Clarinet\nin A" snm="B. Cl. A"
+%%MIDI program 71
+V:6 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:7 bass 
+%%MIDI program 70
+V:8 treble nm="Févronia." snm="Fév."
+%%MIDI program 54
+V:9 treble-8 nm="le Pr. Vsévolod." snm="Pr."
+%%MIDI program 54
+V:10 treble nm="Harp:MusicXML Part I" snm="Hp."
+%%MIDI program 46
+V:11 bass nm="Harp:MusicXML Part II" snm="Hp."
+%%MIDI program 46
+V:12 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:13 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:14 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:15 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:16 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Poco larghetto."!p!"^52" (B3 (A3) | (d3) ^B3) | (c2 d e3-) |!>(! e6!>)! | z2 |]
+V:2
+(G6 | (A3) G3) | (G3 c3-) | c6 | x2 |]
+V:3
+!p!"_espress." (B3 c3) | d3 (2:3:2ed | (2:3:2cB (2:3:2AG |!>(! (c3!>)! F2) z | z2 |]
+V:4
+[K:F#]!p! (d6 | ^^c3 ^c3) | (2:3:2(BA) (2:3:2(GF) |!>(! (F3!>)! E2) z | z2 |]
+V:5
+[K:D]!p! G6 | (F3 B3) | E6 |!>(! A6!>)! | z2 |]
+V:6
+!p! (B,3 (A,3) | (D3) ^B,3) | (C2 D E3-) |!>(! E6!>)! | z2 |]
+V:7
+(G,6 | (A,3) G,3) | (G,3 C3-) | C6 | x2 |]
+V:8
+z3 g2 g | ^^f3 ^f3 | (2:3:2(ed) (2:3:2c B | B2 A A2 z | z2 |]
+V:9
+B3 c3 | (d3 (2:3:2e) d | (2:3:2(cB) (2:3:2A G | c2 F F2 z | z2 |]
+V:10
+[K:Cb] [FAc]2 z [ABd]2 z | [=GBe]2 z [_GA=c]2 z | [FAd]2 z z3 | [DFd]2 z z3 | z2 |]
+V:11
+[K:Cb] [F,A,C]2 z [F,A,B,D]2 z | [E,=G,B,]2 z [A,,_G,=C]2 z | [D,F,A,D]2 z z3 | [G,,D,F,]2 z z3 | z2 |]
+V:12
+!p!"_espress." (B3 c3) | d3 (2:3:2(ed) | (2:3:2(cB) (2:3:2(AG) | (c3 F3) | z2 |]
+V:13
+!p! (GBG AGA) | (AdA ^BGB) | (cGd ece-) | (ece- ece) | z2 |]
+V:14
+!p! (G,B,G, A,G,A,) | (A,DA, ^B,G,B,) | (CG,D ECE-) | (ECE- ECE) | z2 |]
+V:15
+!p!"_espress." (G,3 G3) | (^^F3 ^F3) | (2:3:2(ED) (2:3:2(CB,) | (B,3 A,3) | z2 |]
+V:16
+!p!"^pizz." E,2 z z3 | D,2 z G,2 z | C,2 z z3 | F,2 z z3 | z2 |]

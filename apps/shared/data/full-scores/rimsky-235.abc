@@ -1,0 +1,41 @@
+X:1
+%%score [ 1 | 2 | 3 ] 4 5 6 7 8
+L:1/8
+Q:1/4=76
+M:4/4
+K:F
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:4 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:5 treble nm="Chimes" snm="Chm."
+%%MIDI program 14
+V:6 perc nm="Cassa" snm="Cas."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap F 36
+I:percmap F F 36 normal
+V:7 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:8 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Moderato."!pp! .d'.^g.b.e .^c'.=g.=b.^e | .d'.^f.a.d .a.d.f.A | ._a.d.e.B .g._d.f.=B | ._a.c._e._A .e.A.c._E | z2 |]
+V:2
+!pp! (([^Gd]4 (([=G^c]4)) | [^Fd]4-)) [Fd] z z2 |!ppp! (([D_A]4 (([_DG]4)) | [C_A]4-)) [CA] z z2 | z2 |]
+V:3
+[K:C] z8 |!pp! e4- e z z2 | z8 |!ppp! _B4- B z z2 | z2 |]
+V:4
+z8 | z8 |!pp! B,,4 _E,,4 | _A,,,6-!>(!!>)! A,,, z | z2 |]
+V:5
+!pp! d'2 z2 ^c'2 z2 | d'2 z2 a2 z2 | _a2 z2 g2 z2 | _a2 z2 _e2 z2 | z2 |]
+V:6
+[K:none] !pp! F8 | F8 | F8 | F8 | z2 |]
+V:7
+!pp!"_La vision disparaît: à a place on voit un tronc d'arbre sur lequel deux vers luisants brillent comme une paire d'yeux." d''^g'b'e' ^c''=g'=b'^e' | d''^f'a'd' a'd'f'a | _a'd'e'b g'_d'f'=b | _a'c'_e'_a e'ac'_e | z2 |]
+V:8
+!pp! E,,4 A,,4 |!>(! D,6-!>)! D, z | z8 | z8 | z2 |]

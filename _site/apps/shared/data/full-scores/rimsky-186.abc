@@ -1,0 +1,42 @@
+X:1
+%%score [ 1 | 2 | ( 3 4 ) ] 5 [ 6 | 7 | 8 | 9 ]
+L:1/8
+Q:1/4=96
+M:2/4
+K:G
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble transpose=-2 nm="2 Clarinets in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:3 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 bass 
+%%MIDI program 70
+V:5 treble transpose=-7 nm="Horn I. II." snm="Hn."
+%%MIDI program 60
+V:6 treble nm="Violin I e II" snm="Vln."
+%%MIDI program 48
+V:7 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:8 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:9 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Allegretto alla marcia.)"!p!"^34" g/a/b/c'/ d'/b/e' | d'>c' bd' | c'b a>d' | c'/b/a/f/ g z |]
+V:2
+[K:A]!p! A/B/c/d/ e/c/f | e>d ce | dc B>e | d[Bd] [Ac] z |]
+V:3
+!p! (B,3 C) | D2- D z | (A,3 B,) | CC B, z |]
+V:4
+G,,E,/G,/ D,C,/E,/ | B,,C,/A,,/ B,, z | A,,B,, C,D,/B,,/ | A,,D, G,, z |]
+V:5
+[K:D]!p! [Dd]4 | [Dd]2 [Dd] z | [B,B]4 | [B,B][CA] [DA] z |]
+V:6
+!p!"^Unis.""^pizz." GE/G/ DC/E/ | B,C/A,/ B, z | A,B, CD/B,/ | A,D G, z |]
+V:7
+!p!"^pizz." [G,G]E/G/ DC/E/ | B,C/A,/ B, z | A,B, CD/B,/ | A,D G, z |]
+V:8
+!p!"^pizz." [G,,G,]E, D,C, | B,,A,, B,, z | A,,B,, C,B,, | A,,D, G,, z |]
+V:9
+!p!"_pizz." G,E, D,C, | B,,A,, B,, z | A,,B,, C,B,, | A,,D, G,, z |]

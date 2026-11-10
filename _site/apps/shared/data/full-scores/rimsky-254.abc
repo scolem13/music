@@ -1,0 +1,62 @@
+X:1
+%%score [ 1 | 2 |  3 | 4  | 5 ] [ 6 | 7 | 8 ] { 9 | 10 } [  11 | 12  | 13 | 14 ]
+L:1/8
+Q:1/4=96
+M:2/4
+K:Eb
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-2 nm="Clarinet in Bb 1" snm="Bb Cl. 1"
+%%MIDI program 71
+V:4 treble transpose=-2 nm="Clarinet in Bb 2" snm="Bb Cl. 2"
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:7 treble nm="Trumpet in C" snm="C Tpt."
+%%MIDI program 56
+V:8 alto nm="Trombone" snm="Tbn."
+%%MIDI program 57
+V:9 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:10 treble 
+%%MIDI program 46
+V:11 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:12 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:13 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:14 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:1
+"^(Moderato.)""^a 2"!f! z2 (6:4:6(f/g/f/g/f/g/ | f) z (6:4:6(f/g/f/g/f/g/ | f) z (6:4:6(f/g/f/g/f/g/) | (6:4:6(f/g/f/g/f/g/) (6:4:6(f/g/f/g/f/g/) | !ff! (6:4:6(f/g/f/g/f/g/ (6:4:6f/g/f/g/f/g/ | (6:4:6f/g/f/g/f/g/ (6:4:6f/g/f/g/f/g/ | f) |]
+V:2
+!f! z2 [Bd]2- | [Bd] z [Bd]2- | [Bd] z [Bd]2 | [Bd]2 [Bd]2 |!ff! (3[Bd][Bd][Bd] (3[Bd][Bd][Bd] | (3[Bd][Bd][Bd] (3[Bd][Bd][Bd] | [Bd] |]
+V:3
+[K:F]"^a 2"!f! z2 (6:4:6(e/c/e/c/e/c/ | e) z (6:4:6(e/c/e/c/e/c/ | e) z (6:4:6(e/c/e/c/e/c/) | (6:4:6(e/c/e/c/e/c/) (6:4:6(e/c/e/c/e/c/) |!ff! (6:4:6(e/c/e/c/e/c/ (6:4:6e/c/e/c/e/c/ | (6:4:6e/c/e/c/e/c/ (6:4:6e/c/e/c/e/c/ | e) |]
+V:4
+[K:F]"^a 2"!f! z2 (6:4:6(c/e/c/e/c/e/ | c) z (6:4:6(c/e/c/e/c/e/ | c) z (6:4:6(c/e/c/e/c/e/) | (6:4:6(c/e/c/e/c/e/) (6:4:6(c/e/c/e/c/e/) |!ff! (6:4:6(c/e/c/e/c/e/ (6:4:6c/e/c/e/c/e/ | (6:4:6c/e/c/e/c/e/ (6:4:6c/e/c/e/c/e/ | c) |]
+V:5
+!f! z2 [B,D]2- | [B,D] z [B,D]2- | [B,D] z [B,D]2 | [B,D]2 [B,D]2 | !ff! (3[B,D][B,D][B,D] (3[B,D][B,D][B,D] | (3[B,D][B,D][B,D] (3[B,D][B,D][B,D] | [B,D] |]
+V:6
+[K:Bb] z4 | z4 | z4 | z4 |!f! [FA]4- | [FA]4- | [FA] |]
+V:7
+F4- | F4- | F4- | F4 |!f!"_a 2" F4- | F4- | F |]
+V:8
+[B,D]4- | [B,D]4- | [B,D]4- | [B,D]4 |!f! [B,D]4- | [B,D]4- | [B,D] |]
+V:9
+z4 | z4 | z4 | z4 |!ff! [Bdf]4- | [Bdf]4- | [Bdf] |]
+V:10
+z4 | z4 | z4 | z4 | [B,DF]4- | [B,DF]4- | [B,DF] |]
+V:11
+!f! z (B/4c/4d/4e/4 f) z | z (B/4c/4d/4e/4 f) z | z (B/4c/4d/4e/4 f)(B/4c/4d/4e/4 | f)(B/4c/4d/4e/4 f)!<(!(B/4c/4d/4e/4!<)! |!ff! f/).g/.f/.g/ .f/.g/.f/.g/ | .f/.g/.f/.g/ .f/.g/.f/.g/ | f |]
+V:12
+!f! z (d/4c/4B/4c/4 d) z | z (d/4c/4B/4c/4 d) z | z (d/4c/4B/4c/4 d)(d/4c/4B/4c/4 | d)(d/4c/4B/4c/4 d)!<(!(d/4c/4B/4c/4!<)! |!ff! d/).B/.d/.B/ .d/.B/.d/.B/ | .d/.B/.d/.B/ .d/.B/.d/.B/ | d |]
+V:13
+!f! z (D/4E/4F/4E/4 D) z | z (D/4E/4F/4E/4 D) z | z (D/4E/4F/4E/4 D)(D/4E/4F/4E/4 | D)(D/4E/4F/4E/4 D)!<(!(D/4E/4F/4E/4!<)! |!ff! F/).D/.F/.D/ .F/.D/.F/.D/ | .F/.D/.F/.D/ .F/.D/.F/.D/ | F |]
+V:14
+!f! z (F/4E/4D/4C/4 B,) z | z (F/4E/4D/4C/4 B,) z | z (F/4E/4D/4C/4 B,)(F/4E/4D/4C/4 | B,)(F/4E/4D/4C/4 B,)!<(!(F/4E/4D/4C/4!<)! |!ff! B,/).D/.B,/.D/ .B,/.D/.B,/.D/ | .B,/.D/.B,/.D/ .B,/.D/.B,/.D/ | B, |]

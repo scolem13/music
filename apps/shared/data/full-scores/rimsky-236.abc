@@ -1,0 +1,58 @@
+X:1
+%%score [ 1 | 2 | 3 ] 4 5 6 { 7 | 8 } 9 [ 10 | 11 | 12 | 13 ]
+L:1/8
+Q:3/8=52
+M:9/8
+K:E
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:4 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:5 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:6 treble nm="Sniégourotchka." snm="Sniég."
+%%MIDI program 54
+V:7 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:8 treble 
+%%MIDI program 46
+V:9 treble nm="Violin I Solo" snm="Vln. S."
+%%MIDI program 40
+V:10 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:11 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:12 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:13 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Larghetto.)"!pp! (.[gb].[gb].[gb] .[gb].[gb].[gb] .[gb].[gb].[gb]) | (.[fa].[fa].[fa]!<(! .[fa].[fa].[fa] .[fa].[fa]!<)!.[fa]) | !>(! (.[fa].[fa].[fa] .[fa].[fa].[fa] .[fa].[fa]!>)!.[fa]) | (.[eg].[eg].[eg] .[eg]"_smorz.".[eg].[eg] .[eg].[eg].[eg]) | z2 |]
+V:2
+z8 z | z8 z |!pp! !>![FA]6- [FA]3 |!ppp! z3 [EG]6 | z2 |]
+V:3
+[K:F#] z8 z | z8 z |!pp! z (E,A, EGB!>(! GE!>)!A,) | z (F,A, DFA d2) z | z2 |]
+V:4
+[K:B] z8 z | z8 z |!pp! !>![ce]6- [ce]3 |!ppp! z3 [Bd]6 | z2 |]
+V:5
+z8 z | z8 z |!pp! G,,3 z3 z3 | z8 z | z2 |]
+V:6
+!p! e3 B3- B2 c | e2 =d d3 z2 c | c3- c2 c ^B2 B | (d3 c) z z z3 | z2 |]
+V:7
+z8 z | z8 z |!p! !arpeggio![dfa]6 z3 |!pp! z3 [eg]6 | z2 |]
+V:8
+z8 z | z8 z | !arpeggio![DFA]6 z3 | z3 [EG]6 | z2 |]
+V:9
+!pp! (e'3 b3- b2 c') | (e'3!<(! !>!=d'3- d'2!<)! c') |!>(! (c'4 ^b3)!>)! x2 | (d'3 c'6) | z2 |]
+V:10
+[EG]2 z z3 z3 | z9"^Div.""^arco" |!p!"^trem." !>![FA]6 [FA] z z | z3 [EG]3 [EG] z z | z2 |]
+V:11
+z8 z | z8 z |!pp! z (D,!<(!G, DF!<)!A!>(! FD!>)!G,) | z (E,G, CEG c2) z | z2 |]
+V:12
+z8 z | z8 z |!p!"^pizz." G,,2 z z3 z3 |!pp! G,,2 z z3 z3 | z2 |]
+V:13
+!p! E,,6- E,,3 | F,,6- F,,3 | !>!G,,6-"_dim." G,,3- | G,,6- G,,3 | z2 |]

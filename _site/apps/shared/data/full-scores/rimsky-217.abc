@@ -1,0 +1,101 @@
+X:1
+%%score [ 1 | ( 2 3 ) | ( 4 5 ) | 6 ] [ ( 7 8 ) | 9 ] [ 10 | 11 | 12 ] { 13 | 14 } [  ( 15 16 ) | ( 17 18 )  | 19 | 20 | 21 ]
+L:1/8
+Q:1/2=138
+M:2/2
+K:G
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:3 treble 
+%%MIDI program 68
+V:4 treble nm="Clarinet in C" snm="C Cl."
+%%MIDI program 71
+V:5 treble 
+%%MIDI program 71
+V:6 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:7 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:8 treble transpose=-7 
+%%MIDI program 60
+V:9 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:10 perc nm="Triangle" snm="Tgl."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap =f 96
+I:percmap =f f 96 normal
+%%MIDI drummap f 96
+I:percmap f f 96 normal
+V:11 perc nm="Piatti" snm="Piat."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap g 87
+I:percmap g g 87 normal
+V:12 perc nm="Tam-tam" snm="Tam."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap B 80
+I:percmap B B 80 normal
+V:13 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:14 bass 
+%%MIDI program 46
+V:15 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:16 treble 
+%%MIDI program 48
+V:17 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:18 treble 
+%%MIDI program 48
+V:19 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:20 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:21 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+!pp!"^K" [ce]8 | [ce]8 | [ce]4 [ce]4 | [ce]4 z4 | !>![ce]4 z4 | !>![ce]4 z4 | [ce]2 z2 [ce]2 z2 | [ce]2 z2 [ce]2 z2 | !>![ce]8- | [ce]8 | !>![ce]8- | [ce]8 | !>![ce]8- | [ce]8 |"^a 2" e8- | e8- | e8- | e8 | e8- | e8- |"_cresc." e8- | ^d8 | z2 | z2 |]
+V:2
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |!pp! c8- | c8- | c8- | c8 | c8- | c8- |"_cresc." c8- | (c4 B4) | z2 | z2 |]
+V:3
+x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | A8- | A8- | A8- | A8 | A8- | A8- | A8- | A8 | x2 | x2 |]
+V:4
+!pp! A8 | A8 | A4 A4 | A4 z4 | !>!A4 z4 | !>!A4 z4 | A2 z2 A2 z2 | A2 z2 A2 z2 | !>!A8- | A8 | !>!A8- | A8 | !>!A8- | A8 |!pp! ([Ac]2 [EB]2 [CA]2 [EB]2) | ([Ac]2 [EB]2 [CA]2 [EB]2) | ([Ac]2 [EB]2 [CA]2 [EB]2) | ([Ac]2 [EB]2 [CA]2 [EB]2) | ([Ac]2 [EB]2 [CA]2 [EB]2) | ([Ac]2 [EB]2 [CA]2 [EB]2) |"_cresc." ([Ac]2 [EB]2 [CA]2 [EB]2) | ([Ac]2 [FB]2 [^DA]2 [FB]2) | z2 | z2 |]
+V:5
+x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | z8 | F,8 | z8 | F,8 | z8 | F,8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x2 | x2 |]
+V:6
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | !pp! [B,,F,]8- | [B,,F,]8- |"_cresc." [B,,F,]8- | [B,,F,]8 | z2 | z2 |]
+V:7
+[K:D] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |!p! d6 z2 | z8 | d6 z2 | z8 | d6 z2 | z8 | z8 | z8 | z8 | z8 |!pp! B8-!<(! | B8-!<)! |"_cresc." (B8 | ^A8) | z2 | z2 |]
+V:8
+[K:D] x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | G8- | G8- | G8- | (G4 F4) | x2 | x2 |]
+V:9
+[K:D] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |!pp! F,8 | F,8 | F,8 | F,8 | E8-!<(! | E8-!<)! |"_cresc." E8- | E8 | z2 | z2 |]
+V:10
+[K:none] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |!p! =f4 f4 | z8 | =f4 f4 | z8 | =f4 f4 | z8 | =f2 f2 f2 f2 | =f2 f2 f2 f2 | =f2 f2 f2 f2 | =f2 f2 f2 f2 | =f2 f2 f2 f2 | =f2 f2 f2 f2 | =f2 f2 f2 f2 | =f2 f2 f2 f2 | z2 | z2 |]
+V:11
+[K:none] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |!p!"^colla bacchetta da Timpano" g8 | z8 | g8 | z8 | g8 | g8 | g8 | g8 | g8 | z4 g4 | z4 g4 | z4 g4 | z4 g4 | z2 | z2 |]
+V:12
+[K:none] z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |"^(quasi Campana)" B8 | B8 | B8 | B8 | B8 | B8 | B8 | B8 | z2 | z2 |]
+V:13
+!p!"_(non arpeggiato)" [Ace]4 z4 | [Ace]4 z4 | [Ace]4 [Ace]4 | [Ace]4 z4 | [Ace]4 z4 | [Ace]4 z4 | [Ace]4 [Ace]4 | [Ace]4 [Ace]4 | [Ace]4 z4 | [Ace]4 x4 | [Ace]4 z4 | [Ace]4 x4 | [Ace]4 z4 | [Ace]4 x4 |!pp! [EAce]4 z4 | [EAce]4 z4 | [EAce]4 z4 | [EAce]4 z4 | [EAce]4 z4 | [EAce]4 z4 | "_cresc." [EAce]4 z4 | [^DAc^d]4 [DAcd]4 | z2 | z2 |]
+V:14
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | G4 z4 | F,4 z4 | G4 z4 | F,4 z4 | G4 z4 | F,4 z4 | [B,,F,C]4 z4 | [B,,F,C]4 z4 | [B,,F,C]4 z4 | [B,,F,C]4 z4 | [B,,F,C]4 z4 | [B,,F,C]4 z4 | [B,,F,C]4 z4 | [B,,F,C]4 [B,,F,B,]4 | z2 | z2 |]
+V:15
+!pp!"_pizz.""^(non div.)" [Ace]4 z4 | [Ace]4 z4 | [Ace]4 [Ace]4 | [Ace]4 [ce]2 [Be]2 | [ce]4 [ce]2 [Be]2 | [ce]4 [ce]2 [Be]2 | [ce]2 [Be]2 [ce]2 [Be]2 | [ce]2 [Be]2 [ce]2 [Be]2 | !p!"_sempre" [ce]2 [Be]2 [Ae]2 [Be]2 | [ce]2 [Be]2 [ce]2 [Be]2 | [ce]2 [Be]2 [Ae]2 [Be]2 | [ce]2 [Be]2 [ce]2 [Be]2 | [ce]2 [Be]2 [Ae]2 [Be]2 | [ce]2 [Be]2 [ce]2 [Be]2 | [ce]2 [Be]2 [Ae]2 [Be]2 | [ce]2 [Be]2 [Ae]2 [Be]2 | [ce]2 [Be]2 [Ae]2 [Be]2 | [ce]2 [Be]2 [Ae]2 [Be]2 | [ce]2 [Be]2 [Ae]2 [Be]2 | [ce]2 [Be]2 [Ae]2 [Be]2 | "_cresc." [ce]2 [Be]2 [Ae]2 [Be]2 |"^Div." ^d2 z2 d2 z2 | z2 | z2 |]
+V:16
+x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | c2 B2 A2 B2 | x2 | x2 |]
+V:17
+z8 | z8 | z8 | z8"^(non div.)" |!pp!"_pizz." [Ace]4 z4 | [Ace]4 z4 | [Ace]4 [Ace]4 | [Ace]4 [Ace]4 | [Ace]4 z4 | [Ace]4 [Ace]4 | [Ace]4 z4 | [Ace]4 [Ace]4 | [Ace]4 z4 | [Ace]4 [Ace]4 |"^Div." !arpeggio![B,EAe]2 z2 z4 | !arpeggio![B,EAe]2 z2 z4 | !arpeggio![B,EAe]2 z2 z4 | !arpeggio![B,EAe]2 z2 z4 | z4 !arpeggio![B,EAe]2 z2 | z4 !arpeggio![B,EAe]2 z2 | z4"_cresc." !arpeggio![B,EAe]2 z2 | z4 [F^d]2 z2 | z2 | z2 |]
+V:18
+x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | [A,Ace]2 z2 z4 | [A,Ace]2 z2 z4 | [A,Ace]2 z2 z4 | [A,Ace]2 z2 z4 | z4 [A,Ace]2 z2 | z4 [A,Ace]2 z2 | z4 [A,Ace]2 z2 | z4 [B,^DA]2 x2 | x2 | x2 |]
+V:19
+"^pizz." A4 z4 | A4 z4 | A4 A4 | A4 A2 E2 | A4 A2 E2 | A4 A2 E2 | A2 E2 A2 E2 | A2 E2 A2 E2 | !p!"_sempre" A2 E2 C2 E2 | A2 E2 A2 E2 | A2 E2 C2 E2 | A2 E2 A2 E2 | A2 E2 C2 E2 | A2 E2 A2 E2 | A2 E2 C2 E2 | A2 E2 C2 E2 | A2 E2 C2 E2 | A2 E2 C2 E2 | A2 E2 C2 E2 | A2 E2 C2 E2 | "_cresc." A2 E2 C2 E2 | A2 F2 ^D2 F2 | z2 | z2 |]
+V:20
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |!f!"^pizz." G4 G2 G2 |!p! F,4 F,4 |!f! G4 G2 G2 | !p! F,4 F,4 |!f! G4 G2 G2 |!p! F,4 F,4 |!mp!"^(non div.)" [B,,F,C]4 z4 | [B,,F,C]4 z4 | [B,,F,C]4 z4 | [B,,F,C]4 z4 | [B,,F,C]4 z4 | [B,,F,C]4 z4 |"_cresc." [B,,F,C]4 z4 | [B,,F,]4 z4 | z2 | z2 |]
+V:21
+z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |!mp!"^pizz." B,,4 z4 | B,,4 z4 | B,,4 z4 | B,,4 z4 | B,,4 z4 | B,,4 z4 |"_cresc." B,,4 z4 | B,,4 z4 | z2 | z2 |]

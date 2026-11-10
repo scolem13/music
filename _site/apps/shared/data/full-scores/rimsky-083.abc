@@ -1,0 +1,74 @@
+X:1
+%%score [  1 | 2  | 3 | 4 | 5 | 6 | 7 ] [ 8 | 9 ] 10 [  11 | 12 | 13 | 14  | 15 | 16 | 17 ]
+L:1/8
+Q:1/4=72
+M:4/4
+K:C
+V:1 treble nm="Flute 1" snm="Fl. 1"
+%%MIDI program 73
+V:2 treble nm="Flute 2" snm="Fl. 2"
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:5 treble transpose=-3 nm="Clarinet in A" snm="Bb Cl."
+%%MIDI program 71
+V:6 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:7 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:8 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:9 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:10 treble nm="Alto" snm="A"
+%%MIDI program 52
+V:11 treble nm="Violin I.\n1, 3, 5 P." snm="Vln. 1"
+%%MIDI program 48
+V:12 treble nm="Violin I.\n2, 4, 6 P." snm="Vln. 2"
+%%MIDI program 48
+V:13 treble nm="Violin II.\n1, 3, 5 P." snm="Vln. 3"
+%%MIDI program 48
+V:14 treble nm="Violin II.\n2, 4, 6 P." snm="Vln. 4"
+%%MIDI program 48
+V:15 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:16 bass nm="Pizzicato Cello" snm="Vc."
+%%MIDI program 45
+V:17 bass transpose=-12 nm="Pizzicato Double Bass" snm="Cb."
+%%MIDI program 45
+V:1
+"^Andante.""^123"!f! (3:2:5z ([^d'^f']/[b^g']/)([d'f']/[bg']/)"_dim." (3:2:6([d'f']/[bg']/)([d'f']/[bg']/)([d'f']/[bg']/) (3:2:6([d'f']/[bg']/)([d'f']/[bg']/)([d'f']/[bg']/) (3:2:6([d'f']/[bg']/)([d'f']/[bg']/)([d'f']/[bg']/) | !p! (3:2:5[^d'^f'] ([^d^f]/[B^g]/)([df]/[Bg]/) (3:2:6([df]/[Bg]/)([df]/[Bg]/)([df]/[Bg]/) (3:2:6([df]/[Bg]/)([df]/[Bg]/)([df]/[Bg]/) (3:2:6([df]/[Bg]/)([df]/[Bg]/)([df]/[Bg]/) | (3:2:6([^d^f]/[B^g]/)([df]/[Bg]/)([df]/[Bg]/) (3:2:6([df]/[Bg]/)([df]/[Bg]/)([df]/[Bg]/) (3:2:6([=df]/[Ag]/)([df]/[Ag]/)([df]/[Ag]/) (3:2:6([df]/[Ag]/)([df]/[Ag]/)([df]/[Ag]/) | (3:2:6([^d^f]/[B^g]/)([df]/[Bg]/)([df]/[Bg]/) (3:2:6([df]/[Bg]/)([df]/[Bg]/)([df]/[Bg]/) (3:2:6([=df]/[Ag]/)([df]/[Ag]/)([df]/[Ag]/) (3:2:6([df]/[Ag]/)([df]/[Ag]/)([df]/[Ag]/) | (3:2:6([^d^f]/[B^g]/)([df]/[Bg]/)([df]/[Bg]/) (3:2:6([df]/[Bg]/)([df]/[Bg]/)([df]/[Bg]/) (3:2:6([=df]/[Ag]/)([df]/[Ag]/)([df]/[Ag]/) (3:2:6([df]/[Ag]/)([df]/[Ag]/)([df]/[Ag]/) | (3:2:6([^f^a]/[^cb]/)([fa]/[cb]/)([fa]/[cb]/) (3:2:6([fa]/[cb]/)([fa]/[cb]/)([fa]/[cb]/) (3:2:6([fa]/[cb]/)([fa]/[cb]/)([fa]/[cb]/) (3:2:6([fa]/[cb]/)([fa]/[cb]/)([fa]/[cb]/) |]
+V:2
+!f! (3:2:5z (b/^d'/)(b/d'/)"_dim." (3:2:6(b/d'/)(b/d'/)(b/d'/) (3:2:6(b/d'/)(b/d'/)(b/d'/) (3:2:6(b/d'/)(b/d'/)(b/d'/) | !p! (3:2:5b (B/^d/)(B/d/) (3:2:6(B/d/)(B/d/)(B/d/) (3:2:6(B/d/)(B/d/)(B/d/) (3:2:6(B/d/)(B/d/)(B/d/) | (3:2:6(B/^d/)(B/d/)(B/d/) (3:2:6(B/d/)(B/d/)(B/d/) (3:2:6(A/=d/)(A/d/)(A/d/) (3:2:6(A/d/)(A/d/)(A/d/) | (3:2:6(B/^d/)(B/d/)(B/d/) (3:2:6(B/d/)(B/d/)(B/d/) (3:2:6(A/=d/)(A/d/)(A/d/) (3:2:6(A/d/)(A/d/)(A/d/) | (3:2:6(B/^d/)(B/d/)(B/d/) (3:2:6(B/d/)(B/d/)(B/d/) (3:2:6(A/=d/)(A/d/)(A/d/) (3:2:6(A/d/)(A/d/)(A/d/) | (3:2:6(^c/^f/)(c/f/)(c/f/) (3:2:6(c/f/)(c/f/)(c/f/) (3:2:6(c/f/)(c/f/)(c/f/) (3:2:6(c/f/)(c/f/)(c/f/) |]
+V:3
+!f! [^d^f]8-"^dim." |!pp! [df] z z2 z4 | z8 | z8 | z8 | z8 |]
+V:4
+[K:G]!f! f8-"^dim." |!pp! f z z2 z4 | (^c2 F>^G A2 B>c) | (^c2 F>^G A2 B>c) | (^c2 ^d>c e2 d>e) | ^c6- c z |]
+V:5
+[K:Eb]!f! (3z [d^fa][dfa]"_dim." (3[dfa][dfa][dfa] (3[dfa][dfa][dfa] (3[dfa][dfa][dfa] | !pp! [d^fa] z z2 z4 | z8 | z8 | z8 | z8 |]
+V:6
+!f! B,,8-"^dim." |!pp! B,, x7 | z8 | z8 | z8 | z8 |]
+V:7
+!f! B,,8-"^dim." |!pp! B,, x7 | z8 | z8 | z8 | z8 |]
+V:8
+[K:G]!f! [^C^c]8-"^dim." |!pp! [Cc] x7 | z8 | z8 | z8 | z8 |]
+V:9
+[K:G]!f! [F^A]8-"^dim." |!pp! [FA] x7 | z8 | z8 | z8 | z8 |]
+V:10
+z8 | z8 |"^(cygnes blancs, dans les coulisses)" (^F2 B,3/2) ^C/ D2 E3/2 F/ | ^F2 B,3/2 ^C/ D2 E3/2 F/ | ^F2 ^G3/2 F/ A2 G3/2 A/ | ^F6- F z |]
+V:11
+"^Div."!f! (3:2:5^d([^d'^f']/[b^g']/)([d'f']/[bg']/)"_dim." (3:2:6([d'f']/[bg']/)([d'f']/[bg']/)([d'f']/[bg']/) (3:2:6([d'f']/[bg']/)([d'f']/[bg']/)([d'f']/[bg']/) (3:2:6([d'f']/[bg']/)([d'f']/[bg']/)([d'f']/[bg']/) | !p! [^d'^f'] z z2 z4 | z8 | z8 | z8 | z8 |]
+V:12
+"^Div."!f! (3:2:5B([b^f']/[d'^g']/)([bf']/[d'g']/)"_dim." (3:2:6([bf']/[d'g']/)([bf']/[d'g']/)([bf']/[d'g']/) (3:2:6([bf']/[d'g']/)([bf']/[d'g']/)([bf']/[d'g']/) (3:2:6([bf']/[d'g']/)([bf']/[d'g']/)([bf']/[d'g']/) | !p! [b^f'] z z2 z4 | z8 | z8 | z8 | z8 |]
+V:13
+"^Div."!f! (3:2:5^F([^d^f]/[B^g]/)([df]/[Bg]/)"_dim." (3:2:6([df]/[Bg]/)([df]/[Bg]/)([df]/[Bg]/) (3:2:6([df]/[Bg]/)([df]/[Bg]/)([df]/[Bg]/) (3:2:6([df]/[Bg]/)([df]/[Bg]/)([df]/[Bg]/) | !p! [^d^f] z z2 z4 | z8 | z8 | z8 | z8 |]
+V:14
+"^Div."!f! (3:2:5B,([B^f]/[^d^g]/)([Bf]/[dg]/)"_dim." (3:2:6([Bf]/[dg]/)([Bf]/[dg]/)([Bf]/[dg]/) (3:2:6([Bf]/[dg]/)([Bf]/[dg]/)([Bf]/[dg]/) (3:2:6([Bf]/[dg]/)([Bf]/[dg]/)([Bf]/[dg]/) | !p! [B^f] z z2 z4 | z8 | z8 | z8 | z8 |]
+V:15
+"_pizz." [B,^D^F]2 z2 z4 | z8 |"^arco""_dolce" (^F2 B,>^C D2 E>F) | (^F2 B,>^C D2 E>F) | (^F2 ^G>F A2 G>A) | ^F6- F z |]
+V:16
+[B,,^F,]2 z2 z4 | z8 | z8 | z8 | z8 | z8 |]
+V:17
+B,,2 z2 z4 | z8 | z8 | z8 | z8 | z8 |]

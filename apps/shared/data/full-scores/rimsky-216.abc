@@ -1,0 +1,42 @@
+X:1
+%%score [ 1 | 2 | 3 ] 4 [  5 | 6  | 7 | 8 | 9 ]
+L:1/8
+Q:1/4=126
+M:2/4
+K:D
+V:1 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:2 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:3 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 treble nm="Sniégourotchka." snm="Sniég."
+%%MIDI program 54
+V:5 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:6 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:7 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:8 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:9 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^(Animato.)"!p! (!tenuto!f2 !tenuto!g2) | (!tenuto!d2 !tenuto!e2) | (!tenuto!f2 !tenuto!g2) | (!tenuto!d2 !tenuto!e2) | (!tenuto!c2 !tenuto!d2) | (!tenuto!A2 !tenuto!B2) | (!tenuto!c2 !tenuto!d2) | (!tenuto!A2 !tenuto!B2) | z2 |]
+V:2
+[K:F]!p! (!tenuto![cf]2 !tenuto![cf]2) | (!tenuto![B_d]2 !tenuto![Gc]2) | (!tenuto![cf]2 !tenuto![Bf]2) | (!tenuto![B_d]2 !tenuto![Gc]2) | (!tenuto![Gc]2 !tenuto![Fc]2) | (!tenuto![F_A]2 !tenuto![DG]2) | (!tenuto![Gc]2 !tenuto![Fc]2) | (!tenuto![F_A]2 !tenuto![DG]) z | z2 |]
+V:3
+!p! (D=C) (_B,A,) | .G,.D (CA,) | (D=C) (_B,A,) | .G,.D (CA,) | (A,G,) (=F,E,) | .D,.A, (^G,E,) | (A,G,) (=F,E,) | .D,.A, (^G,E,) | z2 |]
+V:4
+z2 z d | d2 e2 | A2 z d | d3/2 d/ e e | A A z d | A3/2 A/ B B | c A d3/2 d/ | A2 B z | z2 |]
+V:5
+!p!"^pizz." f2 g2 | d2 e2 | f2 g2 | d2 e2 | c2 d2 | A2 B2 | c2 d2 | A2 B2 | z2 |]
+V:6
+!p!"^pizz." d2 d2 | _B2 A2 | d2 d2 | _B2 A2 | A2 A2 | =F2 E2 | A2 A2 | =F2 E2 | z2 |]
+V:7
+!p!"^pizz." A2 G2 | G2 E2 | A2 G2 | G2 E2 | E2 D2 | D2 B,2 | E2 D2 | D2 B,2 | z2 |]
+V:8
+!p!"^pizz." D=C _B,A, | G,D CA, | D=C _B,A, | G,D CA, | A,G, =F,E, | D,A, ^G,E, | A,G, =F,E, | D,A, ^G,E, | z2 |]
+V:9
+!p!"^pizz." D=C _B,A, | G,D CA, | D=C _B,A, | G,D CA, | A,G, =F,E, | D,A, ^G,E, | A,G, =F,E, | D,A, ^G,E, | z2 |]

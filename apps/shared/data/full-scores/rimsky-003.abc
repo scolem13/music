@@ -1,0 +1,82 @@
+X:1
+%%score [ ( 1 2 ) | ( 3 4 ) | ( 5 6 ) | ( 7 8 ) ] [ ( 9 10 ) | ( 11 12 ) ] [  13 | ( 14 15 )  | ( 16 17 ) | 18 | 19 ]
+L:1/8
+Q:1/8=88
+M:none
+K:F
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble 
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble 
+%%MIDI program 68
+V:5 treble transpose=-3 nm="Clarinet in A" snm="Cl. (A)"
+%%MIDI program 71
+V:6 treble transpose=-3 
+%%MIDI program 71
+V:7 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:8 bass 
+%%MIDI program 70
+V:9 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:10 treble transpose=-7 
+%%MIDI program 60
+V:11 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:12 treble transpose=-7 
+%%MIDI program 60
+V:13 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:14 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:15 treble 
+%%MIDI program 48
+V:16 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:17 alto 
+%%MIDI program 48
+V:18 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:19 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+!f!"^F" f (fg) | a3 | a2 a | a (b3/2c'/4b/4) | a3- | a2 z | z3 | z2 |]
+V:2
+A (AB) | c3 | (f2 e | _e) (d_d) | c3- | c2 x | x3 | x2 |]
+V:3
+!f! f (fg) | a3 | a2 a | a (b3/2c'/4b/4) | a3- | a2 z | z3 | z2 |]
+V:4
+A (AB) | c3 | (f2 e | _e) (d_d) | c3- | c2 x | x3 | x2 |]
+V:5
+[K:Ab] e z z | z3 | z3 |"^a 2" z!f! (fg | a3-) | a2 z | z3 | z2 |]
+V:6
+[K:Ab] C x2 | x3 | x3 | x3 | x3 | x3 | x3 | x2 |]
+V:7
+!f! C z z | [C,,C,]3- | [C,,C,]3- | [C,,C,]3- | [C,,C,]3- | [C,,C,]3- | [C,,C,]3 | z2 |]
+V:8
+C,3 | x3 | x3 | x3 | x3 | x3 | x3 | x2 |]
+V:9
+[K:C]!f! c (cd) | e3 | e2 e | e f2 | e3- | e3- | e x2 | z2 |]
+V:10
+[K:C] E (EF) | G3 | G G2- | G (A_A) | G3- | G3- | G x2 | x2 |]
+V:11
+[K:C] z!f! c2- | c3- | c!f! (cB | _B) (A=B) | c3- | c3- | c x2 | z2 |]
+V:12
+[K:C] x3 | x3 | z (C2 | ^C) D2 | E3- | E3- | E x2 | x2 |]
+V:13
+z!f! (f'"_cantabile assai"g') | a'3 | a'2 a' | a' (b'3/2c''/4b'/4) | a'3- | a'2 z | z3 | z2 |]
+V:14
+"^div.""^arco""_pizz." .A,!f! (fg) | (a/f/a/f/a/f/) | (a/f/a/f/a/=e/) | (a b2) | a3- | a3- | a x2 | z2 |]
+V:15
+x (c/A/d/B/) | c3 | c3 | (_e/c/d/B/_d/B/) | (c/A/c/A/c/A/ | c/A/c/A/c/A/ | c/A/) x2 | x2 |]
+V:16
+z3 | z3 |"^non div." z!f! [FA][EA] | [_EA] B2 | [FA]3- | [FA]2 z | z3 | z2 |]
+V:17
+x3 | x3 | x3 | x (D=E) | x3 | x3 | x3 | x2 |]
+V:18
+!f! C,3 | [C,,C,]3- | [C,,C,]3- | [C,,C,]3- | [C,,C,]3- | [C,,C,]3- | [C,,C,]3 | z2 |]
+V:19
+!f! C,3 | C,3- | C,3- | C,3- | C,3- | C,3- | C,3 | z2 |]

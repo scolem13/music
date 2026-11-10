@@ -1,0 +1,42 @@
+X:1
+%%score [ 1 | 2 | ( 3 4 ) ] 5 [ 6 | 7 | 8 | 9 ]
+L:1/8
+Q:1/4=72
+M:2/4
+K:F
+V:1 treble nm="Oboe\nSolo" snm="Ob."
+%%MIDI program 68
+V:2 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:3 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 bass 
+%%MIDI program 70
+V:5 bass nm="Le roi\nDodon." snm="Bs."
+%%MIDI program 54
+V:6 alto nm="Pizzicato Viola" snm="Vla"
+%%MIDI program 45
+V:7 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:8 bass nm="Pizzicato Cello" snm="Vc."
+%%MIDI program 45
+V:9 bass transpose=-12 nm="Pizzicato Double Bass" snm="Cb."
+%%MIDI program 45
+V:1
+"^Andantino."!p!"_dolce" .a.a (gf) | .a.a .d.d | .a.a (g/f/).a | .a.a !tenuto!d2 | .c'.c' (ba) | (c'd') (ag) | f/g/.f (ed) | (.g.g) !tenuto!c2 |]
+V:2
+[K:G]!pp! z2 [EB]3/2 z/ | z2 [EB]3/2 z/ | z2 [EB]3/2 z/ | z2 [EB]3/2 z/ |!p! .[Bg].[Bg] [dg]2 | [cf][cf] [cf]2 | [Bd]/[Bd]/[Bd] ([Ac][GB]) | (.[Gc].[Gc]) !tenuto![Fc]2 |]
+V:3
+!p! .[D,A,]/.[D,A,]/.[D,A,]/.[D,A,]/ .[D,A,]/.[D,A,]/.[D,A,]/.[D,A,]/ | .[D,A,]/.[D,A,]/.[D,A,]/.[D,A,]/ .[D,A,]/.[D,A,]/.[D,A,]/.[D,A,]/ | .[D,A,]/.[D,A,]/.[D,A,]/.[D,A,]/ .[D,A,]/.[D,A,]/.[D,A,]/.[D,A,]/ | .[D,A,]/.[D,A,]/.[D,A,]/.[D,A,]/ .[D,A,]/.[D,A,]/.[D,A,]/.[D,A,]/ | z .C,/.C,/ (CC,) | z .C,/.C,/ (CC,) | z .C,/.C,/ (CC,) | z .C,/.C,/ (CC,) |]
+V:4
+x4 | x4 | x4 | x4 | F,,3 z | F,,3 z | F,,3 z | F,,3 z |]
+V:5
+z4 | z4 | z4 | z4 | z4 |"^Il s'étire au soleil." G,2 C2 | A, (B,/A,/) G, F, | G,2 G, z |]
+V:6
+!p! z2"^pizz." [DA]2 | z2 [DA]2 | z2 [DA]2 | z2 [DA]2 | z4 | z4 | z4 | z4 |]
+V:7
+z4 | z4 | z4 | z4 |"^arco"!p! z2"^div." [A,F]3/2 z/ | z2 [B,E]3/2 z/ | z2 [A,F]3/2 z/ | z2 [B,E]3/2 z/ |]
+V:8
+!p! z2"^pizz." [D,A,]2 | z2 [D,A,]2 | z2 [D,A,]2 | z2 [D,A,]2 | z C, CC, | z C, CC, | z C, CC, | z C, CC, |]
+V:9
+!p! D,2 z2 | D,2 z2 | D,2 z2 | D,2 z2 | F,2 z2 | F,2 z2 | F,2 z2 | F,2 z2 |]

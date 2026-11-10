@@ -1,0 +1,51 @@
+X:1
+Z:©
+%%score [ 1 | 2 | 3 ] 4 [ 5 6 ] { 7 | 8 } [ 9 | 10 | 11 ]
+L:1/8
+Q:1/4=100
+M:3/4
+K:G
+V:1 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:2 treble transpose=-3 nm="Clarinet in A" snm="Bb Cl."
+%%MIDI program 71
+V:3 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:4 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:5 treble nm="Soprano" snm="S"
+%%MIDI program 52
+V:6 treble nm="Alto" snm="A"
+%%MIDI program 52
+V:7 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:8 bass 
+%%MIDI program 46
+V:9 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:10 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:11 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+!p!"^187" ([GB]3({/d} [Ac])[GB][FA] | [GB]>[Ac] [Bd]2) !>![ce]2 | ([Bd]3 [^A^c][=A=c][GB]) | ({/B} ([FA]>)[^E^G] [FA][=GB][Ac][DA]) | ([GB]3({/d} [Ac])[GB][FA]) | ([GB]>[Ac] [Bd]2) !>![^ce]2 | ([df]3 [eg][df][^ce]) |({/e} ([Bd]>)[^A^c] [Bd])[=ce][Bd][=Ac] |]
+V:2
+[K:Bb]!p! ([Bd]3({/f} [ce])[Bd][Ac] | [Bd]>[ce] [df]2) !>![eg]2 | ([df]3 [^c=e][=c_e][Bd]) | ({/d} ([Ac]>)[^G=B] [Ac][_Bd][ce][Fc]) | ([Bd]3({/f} [ce])[Bd][Ac]) | ([Bd]>[ce] [df]2) !>![=eg]2 | ([fa]3 [gb][fa][=eg]) |({/g} ([df]>)[^c=e] [df])[_eg][df][=ce] |]
+V:3
+!p! z2 [G,B,] z [F,C] z | z2 [G,B,] z [F,C] z | z2 [G,B,] z [G,B,] z | z2 [F,C] z [F,C] z | z2 [G,B,] z [F,C] z | z2 [G,B,] z [B,^C] z | z2 [B,D] z [^A,E] z | z2 [B,D] z [F,C] z |]
+V:4
+[K:D]!p! z (3[A,A]/[A,A]/[A,A]/ [A,A](3[A,A]/[A,A]/[A,A]/ [A,A]2 | z (3[A,A]/[A,A]/[A,A]/ [A,A](3[A,A]/[A,A]/[A,A]/ [A,A]2 | z (3[A,A]/[A,A]/[A,A]/ [A,A](3[A,A]/[A,A]/[A,A]/ [A,A]2 | z (3[A,A]/[A,A]/[A,A]/ [A,A](3[A,A]/[A,A]/[A,A]/ [A,A]2 | z (3[A,A]/[A,A]/[A,A]/ [A,A](3[A,A]/[A,A]/[A,A]/ [A,A]2 | z (3[A,A]/[A,A]/[A,A]/ A(3F/F/F/ F2 | z (3[Cc]/[Cc]/[Cc]/ [Cc](3[Cc]/[Cc]/[Cc]/ [Cc]2- | [Cc](3[Cc]/[Cc]/[Cc]/ [Cc](3[A,A]/[A,A]/[A,A]/ [A,A]2 |]
+V:5
+"_dolce" B3 c B A | B3/2 c/ d2 !>!e2 | d3 ^c =c B | (A>^G A) B (cA) | B3 c B A | B3/2 c/ d2 !>!e2 | f3 g f e | (d>^c d) e (d=c) |]
+V:6
+"_dolce" G3 A G F | G3/2 A/ B2 !>!c2 | B3 ^A =A G | (F>^E F) G (AD) | G3 A G F | G3/2 A/ B2 !>!^c2 | d3 e d ^c | (B>^A B) c (B=A) |]
+V:7
+!mp! z2 [DGB]2 [DFc]2 | z2 [DGB]2 [DFc]2 | z2 [DGB]2 [DGB]2 | z2 [DFc]2 [DFc]2 | z2 [DGB]2 [DFc]2 | z2 [DGB]2 [EB^c]2 | z2 [FBd]2"_(la -natural)" [F^Ae]2 | z2 [FBd]2 [DFc]2 |]
+V:8
+G,,2 [D,G,B,]2 [D,F,C]2 | G,,2 [D,G,B,]2 [D,F,C]2 | G,,2 [D,G,B,]2 [D,G,B,]2 | G,,2 [D,F,C]2 [D,F,C]2 | G,,2 [D,G,B,]2 [D,F,C]2 | G,,2 [D,G,B,]2 [E,B,^C]2 | F,,2 [F,B,D]2 [F,^A,E]2 | B,,2 [F,B,D]2 [D,F,C]2 |]
+V:9
+!p! z3/2 .D,/ .B,>.D,.C>.D, | z3/2 .D,/ .B,>.D,.C>.D, | z3/2 .D,/ .B,>.D,.B,>.D, | z3/2 .D,/ .C>.D,.C>.D, | z3/2 .D,/ .B,>.D,.C>.D, | z3/2 D,/ D>D,^C>E, | z3/2 F,/ D>F,E>F, | z3/2 F,/ D>D,C>D, |]
+V:10
+!p! z3/2 .D,/ .G,>.D,.F,>.D, | z3/2 .D,/ .G,>.D,.F,>.D, | z3/2 .D,/ .G,>.D,.G,>.D, | z3/2 .D,/ .F,>.D,.F,>.D, | z3/2 .D,/ .G,>.D,.F,>.D, | z3/2 D,/ B,>D,B,>E, | z3/2 F,/ B,>F,^A,>F, | z3/2 F,/ B,>D,F,>D, |]
+V:11
+!p! G, z z2 z2 | G, z z2 z2 | G, z z2 z2 | G, z z2 z2 | G, z z2 z2 | G, z z2 z2 | F, z z2 z2 | B, z z2 D, z |]

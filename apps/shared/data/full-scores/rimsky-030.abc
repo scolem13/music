@@ -1,0 +1,98 @@
+X:1
+%%score [ ( 1 2 ) | 3 | 4 | ( 5 6 ) | 7 ] [ ( 8 9 ) | 10 | 11 | 12 ] 13 { 14 | 15 } [  ( 16 17 ) | 18  |  19 | 20  | 21 | 22 | 23 ]
+L:1/8
+Q:1/4=100
+M:6/8
+K:G
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble 
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:5 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:6 treble transpose=-2 
+%%MIDI program 71
+V:7 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:8 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:9 treble transpose=-7 
+%%MIDI program 60
+V:10 treble transpose=-2 nm="Trumpet in Bb" snm="Bb Tpt."
+%%MIDI program 56
+V:11 alto nm="Trombone" snm="Tbn."
+%%MIDI program 57
+V:12 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:13 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:14 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:15 bass 
+%%MIDI program 46
+V:16 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:17 treble 
+%%MIDI program 48
+V:18 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:19 alto nm="Viola 1" snm="Vla. 1"
+%%MIDI program 48
+V:20 alto nm="Viola 2" snm="Vla. 2"
+%%MIDI program 48
+V:21 alto nm="Pizzicato Viola" snm="Vla"
+%%MIDI program 45
+V:22 treble nm="Cello" snm="Vc."
+%%MIDI program 48
+V:23 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+!p! (ga) |!p! (b>^ab-) b(d'c') | (b>^ab-) b z z | z6 | z6 | z6 |!f! [^GB]3- (([GB]2 [=G^A])) | "_dim." (([FB]3 ([=F_A]3)) | G6) |!p! (([^CE]3 (([=C_E]3)) |!>(! [B,D]3-))!>)! [B,D] z z |]
+V:2
+z z | g6- | g z z z3 | x6 | x6 | x6 | x6 | x6 | E3 D3 | x6 | x6 |]
+V:3
+z2 |!p! d6- |!mf! d z z (=f3 |"_dim." (e3) (^d3) | (e3) (d3) |!<(! (^c3) (=c3)!<)! | !f! B3-) B z z | z6 | z6 | z6 | z6 |]
+V:4
+[K:D] z2 |!p! A6- |!mf! A z z (a3 |"_dim." (^g3) (=g3) | f3-) (f3 | (^e3) (=e3) |!f! ^d3-) d z z | z6 | z6 | z6 | z6 |]
+V:5
+[K:A]!p! (AB) | (c>^Bc-) c(ed) | (c>^Bc-) c z z | z6 | z6 | z6 |!f! [A,C]3- (([A,C]2 [A,^B,])) | "_dim." (([G,C]3 ((([=G,_B,]3)) | A,6))) | z6 | z6 |]
+V:6
+[K:A] z z | A6- | A z z z3 | x6 | x6 | x6 | x6 | x6 | (F,3 E,3) | x6 | x6 |]
+V:7
+z2 |!pp! [D,,D,]6- |!mf! [D,,D,] z z (([D=F]3 |"_dim." (([^CE]3)) (([=C^D]3)) | (([B,E]3)) (([B,D]3)) |!<(! (([^A,^C]3)) (([=A,=C]3))!<)! |!f! [^G,B,]3-)) [G,B,] z z | z6 | z6 | !p! (([^C,E,]3 (([=C,_E,]3)) |!>(! [B,,D,]3-))!>)! [B,,D,] z z |]
+V:8
+[K:D] z2 |"^I. III."!p! z .D.F .A.d"_II. IV." z |!p! z .D.F .A.c z | x6 | x6 | x6 | "^I. III."!mf! z ^DF B z z | x6 | z6 | z6 |!pp! z .D.F .A.d z |]
+V:9
+[K:D] x2 | x6 | A,6- | A,6- | A,6- | A,6- | A,6- | A, z z z3 | x6 | x6 | x6 |]
+V:10
+[K:A] z2 |!pp!"^a 2" E6-"^morendo" | E z z z3 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |]
+V:11
+z2 |!pp! [G,B,]6-"^morendo" | [G,B,] z z z3 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |]
+V:12
+z2 |!pp! [D,,D,]6-"^morendo" | [D,,D,] x4 x | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |]
+V:13
+z2 | D,(3D,/D,/D,/(3D,/D,/D,/ D,D,D, | D,(3D,/D,/D,/(3D,/D,/D,/ D,D,D, | z D,D, D,D, z | z D,D, D,D, z | z D,D, D,D, z | z D,D, D,D, z | z D,D, D,D, z | z D,D, D,D, z | z D,D, D,D, z | G,,2 z z2 z |]
+V:14
+z2 |!p! !arpeggio![Bdgb]3 z3 | [DGB]2 z z3 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |]
+V:15
+z2 | [D,G,B,D]3 z3 | [D,G,B,]2 z z3 | z6 | z6 | z6 | z6 | z6 | z6 | z6 | z6 |]
+V:16
+!p! (ga) |"_cantabile" (b>^a!>!b-) b(d'c') | (b>^a!>!b-) b(=a^g) | (a>ba-)"_dim." a(gf) | (g>ag-) g (f^e) |!<(! (f/^e/f/a/!>!g-) g(!tenuto!f!tenuto!g)!<)! |!mf! !>!e3- e"^sul D" (d^c) | "_dim." (d>e!open!d-) d(cB) | (c-c/d/c/d/) (B-B/c/B/c/) | (A>BA) (GFA) |!>(! G3-!>)! G z z |]
+V:17
+x2 | x6 | x6 | x6 | x6 | x6 | [B,^GB] x4 x | x6 | x6 | x6 | x6 |]
+V:18
+!p! (GA) |"_cantabile" (B>^A!>!B-) B(dc) | (B>^A!>!B-) B(=A^G) | (A>BA-)"_dim." A(GF) | (G>AG-) G (F^E) |!<(! (F/^E/F/A/!>!G-) G(!tenuto!F!tenuto!G)!<)! | !f!!>(!!mf! !>!E3- E!>)!"^sul D" (d^c) |"_dim." (d>e!open!d-) d(cB) | (c-c/d/c/d/) (B-B/c/B/c/) | (A>BA) (GFA) |!>(! [B,D]3-!>)! [B,D] z z |]
+V:19
+z2 | z6 | z6 | z"^arco" (3.E/.E/.E/"_dim."E z (3.^D/.D/.D/D | z (3.E/.E/.E/E z (3.D/.D/.D/D | z!<(! (3.^C/.C/.C/C z (3.=C/.C/.C/!<)!C | z6 | z"_dim.""^arco" (3.B,/.B,/.B,/B, z (3._A,/.A,/.A,/A, | z (3.G,/.G,/.G,/G, z (3.G,/.G,/.G,/G, | z (3.E,/.E,/.E,/E, z (3._E,/.E,/.E,/E, | z6 |]
+V:20
+z2 | z6 | z6 | z"^arco" (3.^C/.C/.C/"_dim."C z (3.=C/.C/.C/C | z (3.B,/.B,/.B,/B, z (3.B,/.B,/.B,/B, | z!<(! (3.^A,/.A,/.A,/A, z (3.=A,/.A,/.A,/!<)!A, | z6 | z"_dim.""^arco" (3.F,/.F,/.F,/F, z (3.=F,/.F,/.F,/F, | z (3.E,/.E,/.E,/E, z (3.D,/.D,/.D,/D, | z (3.^C,/.C,/.C,/C, z (3.=C,/.C,/.C,/C, | z6 |]
+V:21
+z2 |!mf! z"^pizz." G,B, DG z | z G,B, D=F z | z6 | z6 | z6 |!f! z"^pizz." ^G,B, E z [=G,^A,] | z6 | z6 | z6 |!mf! z"^pizz." G,B, DG z |]
+V:22
+!p! (GA) |"_cantabile" (B>^A!>!B-) B(dc) | (B>^A!>!B-) B(=A^G) | (A>BA-)"_dim." A(GF) | (G>AG-) G (F^E) |!<(! (F/^E/F/A/!>!G-) G(!tenuto!F!tenuto!G)!<)! | !f!!>(!!mf! !>!E3- E [K:bass]!>)!"^sul D" (D^C) |"_dim." (D>E!open!D-) D(CB,) | (C-C/D/C/D/) (B,-B,/C/B,/C/) | (A,>B,A,) (G,F,A,) | [G,,G,]2 D, B,2 z |]
+V:23
+z2 |!pp! D,6- | D,6- | D,6-"^dim." | D,6- | D,6- | D,6- | D,6- | D,6- | (D,6 | G,3-) G, z z |]

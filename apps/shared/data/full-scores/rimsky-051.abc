@@ -1,0 +1,46 @@
+X:1
+%%score [  1 | 2 | 3 | 4  | 5 |  6 | 7  ] [ 8 | 9 | 10 ]
+L:1/8
+Q:1/4=100
+M:4/4
+K:Bb
+V:1 treble nm="Flute 1" snm="Fl. 1"
+%%MIDI program 73
+V:2 treble nm="Flute 2" snm="Fl. 2"
+%%MIDI program 73
+V:3 treble nm="Flute 3" snm="Fl. 3"
+%%MIDI program 73
+V:4 treble nm="Flute 4" snm="Fl. 4"
+%%MIDI program 73
+V:5 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:6 bass nm="Bassoon 1\nSolo" snm="Bsn. 1"
+%%MIDI program 70
+V:7 bass nm="Bassoon\n2 & 3" snm="Bsn. 2 & 3"
+%%MIDI program 70
+V:8 treble nm="Violin\nII. div." snm="Vln."
+%%MIDI program 48
+V:9 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:10 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:1
+"^Meno mosso." z8 | z8 | z8 | z8 | z8 | z8 | z8 | !mf! z2 z (A/4c/4e/4g/4 (3^f/=f/=e/(3_e/d/^c/ (3=c/=B/_B/(3A/^G/=G/) |]
+V:2
+z8 | z8 | z8 | z8 | z8 | z8 | !mf! z2 (A/4c/4e/4g/4(3^f/=f/=e/ (3_e/d/^c/(3=c/=B/_B/ (3A/^G/=G/(3^F/=F/=E/ | (3E/=E/F/(3^F/G/^G/) (A/4c/4e/4g/4(3^f/=f/=e/ (3_e/d/^c/(3=c/=B/_B/ (3A/G/=G/(3F/=F/E/) |]
+V:3
+z8 | z8 | z8 | z8 | z8 | !mf! z (A/4c/4e/4g/4 (3^f/=f/=e/(3_e/d/^c/ (3=c/=B/_B/(3A/^G/=G/ (3^F/=F/=E/(3_E/=E/F/ | (3^F/G/^G/)(A/4c/4e/4g/4 (3^f/=f/=e/(3_e/d/^c/ (3=c/=B/_B/(3A/G/=G/ (3F/=F/=E/(3_E/=E/F/ | (3^F/) z/ z/ (A/4c/4e/4g/4 (3^f/=f/=e/(3_e/d/^c/ (3=c/=B/_B/(3A/^G/=G/ (3F/=F/=E/(3_E/=E/F/) |]
+V:4
+z8 | z8 | z8 | z8 | !mf! (A/4c/4e/4g/4(3^f/=f/=e/ (3_e/d/^c/(3=c/=B/_B/ (3A/^G/=G/(3^F/=F/=E/ (3_E/=E/F/(3^F/G/^G/) | (A/4c/4e/4g/4(3^f/=f/=e/ (3_e/d/^c/(3=c/=B/_B/ (3A/^G/=G/(3^F/=F/=E/ (3_E/=E/F/ ^F/) z/ | (A/4c/4e/4g/4(3^f/=f/=e/ (3_e/d/^c/(3=c/=B/_B/ (3A/^G/=G/(3^F/=F/=E/ (3_E/=E/F/(3^F/G/^G/) | (A/4c/4e/4g/4(3^f/=f/=e/ (3_e/d/^c/(3=c/=B/_B/ (3A/^G/=G/(3^F/=F/=E/ (3_E/=E/F/ ^F/) z/ |]
+V:5
+[K:C] z8 | z8 | z8 | z8 | z8 | z8 | z8 |!pp! .[B,D].[DF] .[B,D].[DF] .[B,D].[DF] .[B,D].[DF] |]
+V:6
+(C/E/G) .^F.G .=F(PEDC) | (C/E/G) .^F.G .=F(PEDC) | !>!G z !>!^F z !>!.=F(E/D/ E/D/C) | !>!G z !>!^F z !>!.=F(E/D/ E/D/C) | !wedge!G z !wedge!^F z !wedge!=F(E/D/ E/D/C) | !wedge!G z !wedge!^F z !wedge!=F(E/D/ E/D/C) | !wedge!G z !wedge!^F z !wedge!=F(E/D/ E/D/C) | !wedge!G z !wedge!^F z !wedge!=F(E/D/ E/D/C) |]
+V:7
+z8 | z8 | z8 | z8 | z8 | z8 | !pp! .[A,,C,].[C,E,] .[A,,C,].[C,E,] .[A,,C,].[C,E,] .[A,,C,].[C,E,] | .[A,,C,].[C,E,] .[A,,C,].[C,E,] .[A,,C,].[C,E,] .[A,,C,].[C,E,] |]
+V:8
+!p!"^Au chant de Kachtcheï, la tempête gronde, la neige fait rage, les arbres et les rocs sont couverts de givre.""_col legno" [A,C][CE] [A,C][CE] [A,C][CE] [A,C][CE] | [A,C][CE] [A,C][CE] [A,C][CE] [A,C][CE] | [A,C][CE] [A,C][CE] [A,C][CE] [A,C][CE] | [A,C][CE] [A,C][CE] [A,C][CE] [A,C][CE] | [A,C][CE] [A,C][CE] [A,C][CE] [A,C][CE] | [A,C][CE] [A,C][CE] [A,C][CE] [A,C][CE] | [A,C][CE] [A,C][CE] [A,C][CE] [A,C][CE] | [A,C][CE] [A,C][CE] [A,C][CE] [A,C][CE] |]
+V:9
+z8 | z8 |({CDEF}!<(!!<)!!>(! .G)!>)! z .^F z z4 |({CDEF}!<(!!<)!!>(! .G)!>)! z .^F z z4 | G z ^F z =F z z2 | G z ^F z =F z z2 | !wedge!G z !wedge!^F z !wedge!=F(E/D/ E/D/C) | !wedge!G z !wedge!^F z !wedge!=F(E/D/ E/D/C) |]
+V:10
+!p!"_col legno""^Div." [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] | [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] | [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] | [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] | [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] | [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] | [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] | [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] [A,,C,][C,E,] |]

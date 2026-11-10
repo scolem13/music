@@ -1107,7 +1107,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 </ul>
 <script>
 (function () {
-  var BASE = "/apps/shared/data/full-scores/", V = "1";
+  var BASE = "/apps/shared/data/full-scores/", V = "3";
   var id = new URLSearchParams(location.search).get("id");
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   // an Analysed Scores Library piece (?analysed=<id>): its ABC turned into the full-score form (bare V: lines, each voice's music on one
@@ -1143,6 +1143,13 @@ document.addEventListener('DOMContentLoaded', async function () {
       });
     }).catch(function (e) { document.getElementById("fsp-head").textContent = "The analysed score did not load: " + e.message; });
   }
+  // rows with a "cite" (Rimsky-Korsakov's examples) get a short note built here instead of a file each
+  function citeNotes(s) {
+    if (!s.cite) return "";
+    var c = s.cite, where = [c.chapter, c.section, c.subsection].filter(Boolean).join(" \u203a ");
+    return "<p>" + (where ? "Cited in Vol. I of the book under <em>" + esc(where) + "</em>" + (c.volIpage ? " (Vol. I p. " + c.volIpage + ")" : "") + ". " : "") +
+      (c.page ? "Printed score page " + c.page + " of the opera or symphonic work. " : "") + "</p><p class=\"fsp-sub\">" + esc(s.source) + (s.repaired ? ". A short bar in the Finale file was padded with an invisible rest so the staves line up." : "") + "</p>";
+  }
   fetch(BASE + "index.json?v=" + V).then(function (r) { return r.json(); }).then(function (list) {
     document.getElementById("fsp-list").innerHTML = "<ul>" + list.map(function (s) {
       return '<li><a href="?id=' + encodeURIComponent(s.id) + '">' + esc(s.composer + ": " + s.title + ", " + s.movement) + '</a><br><span class="fsp-sub">' + esc(s.orchestra) + "</span></li>";
@@ -1150,11 +1157,19 @@ document.addEventListener('DOMContentLoaded', async function () {
     var s = list.filter(function (x) { return x.id === id; })[0];
     if (!s || an) return;
     document.getElementById("fsp-head").innerHTML = "<h2>" + esc(s.composer + ": " + s.title) + "</h2><p>" + esc(s.movement + " · " + s.orchestra) + "</p>";
-    return Promise.all([fetch(BASE + s.abc + "?v=" + V).then(function (r) { return r.text(); }), s.notes ? fetch(BASE + s.notes + "?v=" + V).then(function (r) { return r.text(); }) : ""])
+    return Promise.all([fetch(BASE + s.abc + "?v=" + V).then(function (r) { return r.text(); }), s.notes ? fetch(BASE + s.notes + "?v=" + V).then(function (r) { return r.text(); }) : citeNotes(s)])
       .then(function (a) { mounted(FullScore.mount("#fsp", { abc: a[0], id: s.id, notes: a[1] })); });
   }).catch(function (e) { document.getElementById("fsp-list").textContent = "The score list did not load: " + e.message; });
 })();
 </script>
+</section>
+<section id="works-cited" class="level2">
+<h2 class="anchored" data-anchor-id="works-cited">Works Cited</h2>
+<!-- works-cited: written by scripts/works-cited.py -->
+<div class="works-cited">
+<p>Rimsky-Korsakov, Nikolay. <em>Principles of Orchestration, with Musical Examples Drawn from His Own Works</em>. Edited by Maximilian Steinberg, translated by Edward Agate, Édition Russe de Musique, 1922. <em>Project Gutenberg</em>, ebook no. 33900, <a href="https://www.gutenberg.org/ebooks/33900">www.gutenberg.org/ebooks/33900</a>. Public domain in the USA. Read: Chapter II (melody in strings, woodwind, brass and combined groups) and Chapter III (number of parts, distribution, string / woodwind / brass harmony). Retold in the page’s own words; at most short phrases quoted. Which numbered examples illustrate which passage is taken from the book’s own links (scripts/rimsky/index.py). Imprint read from the book’s title page.</p>
+</div>
+<!-- /works-cited -->
 
 
 </section>

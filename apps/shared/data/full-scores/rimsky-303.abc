@@ -1,0 +1,78 @@
+X:1
+%%score [ ( 1 2 ) | ( 3 4 ) | ( 5 6 ) | ( 7 8 ) ] [ ( 9 10 ) | 11 ] 12 [  13 | ( 14 15 )  | 16 | 17 | 18 ]
+L:1/8
+Q:1/4=88
+M:2/4
+K:Eb
+V:1 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:2 treble 
+%%MIDI program 73
+V:3 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:4 treble 
+%%MIDI program 68
+V:5 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:6 treble transpose=-2 
+%%MIDI program 71
+V:7 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:8 bass 
+%%MIDI program 70
+V:9 treble transpose=-7 nm="Horn in F" snm="Hn."
+%%MIDI program 60
+V:10 treble transpose=-7 
+%%MIDI program 60
+V:11 treble transpose=-2 nm="Trumpet in Bb" snm="Bb Tpt."
+%%MIDI program 56
+V:12 treble-8 nm="Sadko." snm="S."
+%%MIDI program 54
+V:13 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:14 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:15 treble 
+%%MIDI program 48
+V:16 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:17 bass nm="Cello" snm="Vc."
+%%MIDI program 48
+V:18 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Andante non troppo." z4 | z4 | z4 |!p! z2 z (g | a/b/a/b/ c'b/c'/ | g2-) g z | z4 | z4 | z4 | (g/c'/b/c'/ d'{e'd'}c' | g2-) g z | z4 | z4 | z4 |!p! (fe fg | b4-) | b z z2 | z4 | z4 | !p! (e'/d'/c'/e'/ f'/a'/g' | e') x3 |]
+V:2
+x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | (g2 c'b/a/ | g) x3 |]
+V:3
+"_dolce" (Gg f/e/d/c/ | dc{dc} G)G | (A/B/A/B/ cB/c/ | G2-) G z | z4 | z4 | !p!"_espress." (G/g/a/g/ f/e/d/c/ | dc{dc} G-)G | (G/c/B/c/ d{ed}c) | z4 | z4 | z4 | z4 | z4 | !p! (fe fg | b4-) | b z z2 | z4 | z4 |!p! (e3 d | e) x3 |]
+V:4
+x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | (e>c AB | E) x3 |]
+V:5
+[K:F] z4 | z4 | z4 |!p!!p! z2 (Ac | d2 fe | f) z z2 | x4 | z4 | z4 | (a2 ef | a) z z2 | "_dolce" (cc' b/a/g/f/ | gf{gf} c)c- | (c/d/c/f/ e/c/d/f/ | g) z z2 | z4 | (c/"_espress."c'/d'/c'/ b/a/g/f/ | gf{gf} c)c | (f/e/d/f/ g/b/a | f) z z2 | z4 |]
+V:6
+[K:F] x4 | x4 | x4 | (A4 | (G2) BA/B/) | (AG FE/D/ | A,) z z2 | x4 | x4 | A4- | A z z2 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 |]
+V:7
+z4 | z4 | z4 |!p! (GF ED) | (C3 B,) | ([E,E][D,D] [C,C][B,,B,]/[A,,A,]/ | [G,,G,]) z z2 | z4 | z4 | (GE B,C | G) z z2 | z4 | z4 | z4 |!p! (B,/C/B,/E/ D/B,/C/E/ | F) z z2 | x4 | z4 | z4 | z4 | z4 |]
+V:8
+x4 | x4 | x4 | (ED CB, | A,>G, F,B,) | x4 | x4 | x4 | x4 | G,4- | G, z z2 | x4 | x4 | x4 | (B,G, F,E, | D,C, B,,A, | G,) z z2 | x4 | x4 | x4 | x4 |]
+V:9
+[K:Bb] z4 | z4 | z4 | z4 | z4 |!p! [Dd]4- | [Dd]2- [Dd] z | z4 | z4 | z4 |!p! (d4"_dim." | !pp! f) z z2 | x4 | x4 | x4 | z4 | z4 | z4 | z4 |!p! [B,B]4- | [B,B] x3 |]
+V:10
+[K:Bb] x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | (D4 | F4-) | F4- | F4- | F z z2 | x4 | x4 | x4 | x4 | x4 | x4 |]
+V:11
+[K:F] z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 |!pp! [Cc]4- | [Cc]4- | [Cc] x3 | z4 | z4 | z4 | z4 |]
+V:12
+G g (f/e/) (d/c/) | (dc) G G | A (A/B/) c (B/c/) | G2- G z | z4 | z4 | (G/g/) (a/g/) (f/e/) (d/c/) | (dc) G G | (G/c/) (B/c/) d c | G2- G z | z4 | B B c c | (fe) B B | B3/2 e/ (d/B/) (c/e/) | f2- f z | z4 | BB cc | (fe) BB | e(c/e/) (f/a/)g | e2- e z | z4 |]
+V:13
+!p! (Gg f/e/d/c/ | dc{dc} G)G | (A/B/A/B/ cB/c/ | G2-) G z | z4 | z4 | !p!"_espress." (G/g/a/g/ f/e/d/c/ | dc{dc} G)G | (G/c/B/c/ d{ed}c) | G2- G z | z4 | !p! (Bb a/g/f/e/ | fe{fe} B)B- | (B/c/B/e/ d/B/c/e/ | f) z z2 | z4 | (B/"_espress."b/c'/b/ a/g/f/e/ | fe{fe} B)B | (e/d/c/e/ f/a/g | e) z z2 | z4 |]
+V:14
+!p! G4- | G4- | (G2 FG) | (GF ED | C) z z2 | z4 |!p! G,2- G,/(E/F/E/ | DE/F/ G2) | (G2 DE) | G2- G z | (GF!<(! G/F/G/!<)!A/) | !>!B4- | B3 A- | AG FG | B2- B z | z4 | (B2 c2-) | (c_c B2) | (Gc cB/A/ | G) z z2 | z4 |]
+V:15
+x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | x4 | D x3 | x4 | x4 | x4 | x4 | x4 | x4 |]
+V:16
+!p! G,4- | (G,A, B,/G,/C/D/) | (E3 D) | (ED CB, | A,) z z2 |!p! (GF ED/C/) | (G,3 A, | B,C D2) | G,2 (!>!^F,/G,/F,/G,/) | G,2- G, z | (G,F,!<(! G,/F,/G,/!<)!A,/) | !>!B,4 | (B,>C D/B,/C/D/ | E) z z2 | (B,/C/B,/E/ D/B,/C/E/) | (FE{FE} B,A,) | (G,2 F,G,) | (A,3 G,) | (C2 A,B, | E,) z z2 | z4 |]
+V:17
+!p! G,4- | G,4 | (F,>G, A,/F,/B, | E,) z z2 | z4 |!p! (ED CB,/A,/) | G,4- | (G,3 F,) | (E,2 B,,C,) | G,2- G, z | z4 | (!>!B,2 C2 | D/B,/C/E/ F2) | (E2 FE | B,)(G, F,E, | D,C, B,,) z | E4- | (E2 DE) | (E3 D | E) z z2 | z4 |]
+V:18
+z4 | z4 | z4 | z4 | z4 |!p! (ED CB,/A,/ | G,) z z2 | z4 | z4 | z4 | !p! (G,F,!<(! G,/F,/G,/!<)!A,/) | !>!B, z z2 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 | z4 |]

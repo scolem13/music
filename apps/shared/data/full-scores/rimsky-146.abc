@@ -1,0 +1,95 @@
+X:1
+Z:©
+%%score [ 1 | ( 2 3 ) | ( 4 5 ) | 6 | ( 7 8 ) | 9 | ( 10 11 ) | 12 ] [ 13 | ( 14 15 ) ] { 16 | 17 } [  18 | 19  | 20 | 21 | 22 ]
+L:1/8
+Q:1/4=52
+M:2/4
+K:D
+V:1 treble transpose=12 nm="Piccolo" snm="Picc."
+%%MIDI program 72
+V:2 treble nm="Flute" snm="Fl."
+%%MIDI program 73
+V:3 treble 
+%%MIDI program 73
+V:4 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:5 treble 
+%%MIDI program 68
+V:6 treble transpose=-7 nm="English Horn" snm="E. Hn."
+%%MIDI program 69
+V:7 treble transpose=-3 nm="Clarinet in A" snm="A Cl."
+%%MIDI program 71
+V:8 treble transpose=-3 
+%%MIDI program 71
+V:9 treble transpose=-3 nm="Bass Clarinet\nin A" snm="B. Cl."
+%%MIDI program 71
+V:10 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:11 bass 
+%%MIDI program 70
+V:12 bass transpose=-12 nm="Contrabassoon" snm="C. Bn."
+%%MIDI program 70
+V:13 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:14 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:15 treble transpose=-7 
+%%MIDI program 60
+V:16 treble nm="Harp" snm="Hp."
+%%MIDI program 46
+V:17 bass 
+%%MIDI program 46
+V:18 treble nm="Violin 1" snm="Vln. 1"
+%%MIDI program 48
+V:19 treble nm="Violin 2" snm="Vln. 2"
+%%MIDI program 48
+V:20 alto nm="Viola" snm="Vla."
+%%MIDI program 48
+V:21 treble nm="Cello" snm="Vc."
+%%MIDI program 48
+V:22 bass transpose=-12 nm="Double Bass" snm="D.B."
+%%MIDI program 48
+V:1
+"^Larghetto alla breve."!f!"^10" (f2 e2 | Bd c2) | (dB ce) | (da ga/g/) | z2 |]
+V:2
+!f! (d'2 c'2 | b2 a2) | (b2 a2) | (d'3 c') | z2 |]
+V:3
+(a2 g2 | f4) | (f2 e2) | (a2 ba) | x2 |]
+V:4
+!f! (f2 e2 | Bd c2) | (dB ce) | (da ga/g/) | z2 |]
+V:5
+d2 c2 | B2 A2 | (B2 A2) | (d3 c) | x2 |]
+V:6
+[K:A]!f! (e2 d2 | c4-) | (c2 B2 | e2 fe) | z2 |]
+V:7
+[K:F]!f! ([CF]2 ([EG]2) | ([A,D]2) ([CE]2) | ([DF]2) (([EG]2) | (F2)) BG) | z2 |]
+V:8
+[K:F] x4 | x4 | x4 | (F3 E) | x2 |]
+V:9
+[K:F]!f! (5:4:5c/c/c/d/c/ (5:4:5B/A/(G/c/)B/ | (5:4:5A/G/F/E/D/ (5:4:5C/D/(E/C/)A,/ | (5:4:5D/^C/(D/E/)F/ (5:4:5G/F/(E/D/)E/ | (5:4:5F/G/A/B/c/ d/ z/ z | z2 |]
+V:10
+!f! (F,2 (G,2) | (D,2) F,2-) | (F,2 (A,2) | (A,2) G,2) | z2 |]
+V:11
+A,,4- | A,,4- | (A,,2 G,,2) | F,,2 (E,,A,,) | x2 |]
+V:12
+!f! A,,4- | A,,4- | (A,,2 G,,2) | F,,2 (E,,A,,) | z2 |]
+V:13
+[K:A]!f!"_ten. assai" [Ae]2 [Bd]2 | [Fc]2 [Gc]2 | [Ac]2 B2 | [Ae]2 [df][Be] | z2 |]
+V:14
+[K:A]!f!"_ten. assai" [CE]2 [DG]2 | [A,C]2 [CE]2 | [CF]2 [EG]2 | A2 (AG) | z2 |]
+V:15
+[K:A] x4 | x4 | x4 | E2 D2 | x2 |]
+V:16
+!f! [Adfa]2 [Gceg]2 | [FBdf]2 [FAcf]2 | [FBdf]2 [Ace]2 | [Ada]2 [GBdg][EAce] | z2 |]
+V:17
+[F,A,D]2 [G,CE]2 | [D,F,B,]2 [F,A,C]2 | [F,B,D]2 [A,CE]2 | [A,D]2 [G,B,D][G,A,C] | z2 |]
+V:18
+!f!"_cantabile assai" (f'2 e'2) | (bd' c'2) | (d'b) (c'e') | (d'a') (g'a'/g'/) | z2 |]
+V:19
+!f! (5:4:5A/A/A/B/A/ (5:4:5G/F/(E/A/)G/ | (5:4:5F/E/D/C/B,/ (5:4:5A,/B,/(C/A,/) z/ | (5:4:5B,/^A,/(B,/C/)D/ (5:4:5E/D/(C/B,/)C/ | (5:4:5D/E/F/G/A/ (5:4:5B/d/e/f/g/ | z2 |]
+V:20
+!f! (5:4:5A/A/A/B/A/ (5:4:5G/F/(E/A/)G/ | (5:4:5F/E/D/C/B,/ (5:4:5A,/B,/(C/A,/)F,/ | (5:4:5B,/^A,/(B,/C/)D/ (5:4:5E/D/(C/B,/)C/ | (5:4:5D/E/F/G/A/ (5:4:5B/d/e/f/g/ | z2 |]
+V:21
+!f! (5:4:5A/A/A/B/A/ (5:4:5G/F/(E/A/)G/ | (5:4:5F/E/D/C/B,/ [K:bass] (5:4:5A,/B,/(C/A,/)F,/ | (5:4:5B,/^A,/(B,/C/)D/ (5:4:5E/D/(C/B,/)C/ |[K:treble] (5:4:5D/E/F/G/A/ B/ z/ z | z2 |]
+V:22
+!f! [A,,A,]4- | [A,,A,]4- | [A,,A,]2 [G,,G,]2 | [F,,F,]2 ([E,,E,][A,,A,]) | z2 |]

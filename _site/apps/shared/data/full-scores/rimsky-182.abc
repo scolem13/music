@@ -1,0 +1,82 @@
+X:1
+%%score [ ( 1 2 ) | ( 3 4 ) | 5 ] [  ( 6 7 ) | ( 8 9 )  | ( 10 11 ) |  12 | 13  | 14 ] [ 15 | 16 | 17 ]
+L:1/8
+Q:1/4=88
+M:2/4
+K:C
+V:1 treble nm="Oboe" snm="Ob."
+%%MIDI program 68
+V:2 treble 
+%%MIDI program 68
+V:3 treble transpose=-2 nm="Clarinet in Bb" snm="Bb Cl."
+%%MIDI program 71
+V:4 treble transpose=-2 
+%%MIDI program 71
+V:5 bass nm="Bassoon" snm="Bsn."
+%%MIDI program 70
+V:6 treble transpose=-7 nm="Horn in F 1" snm="Hn. 1"
+%%MIDI program 60
+V:7 treble transpose=-7 
+%%MIDI program 60
+V:8 treble transpose=-7 nm="Horn in F 2" snm="Hn. 2"
+%%MIDI program 60
+V:9 treble transpose=-7 
+%%MIDI program 60
+V:10 treble transpose=-2 nm="Trumpet in Bb" snm="Bb Tpt."
+%%MIDI program 56
+V:11 treble transpose=-2 
+%%MIDI program 56
+V:12 alto nm="Trombone 1 & 2" snm="Tbn. 1 & 2"
+%%MIDI program 57
+V:13 bass nm="Trombone 3" snm="Tbn. 3"
+%%MIDI program 57
+V:14 bass nm="Tuba" snm="Tuba"
+%%MIDI program 58
+V:15 bass nm="Timpani" snm="Timp."
+%%MIDI program 47
+V:16 perc stafflines=1 nm="Tambourine" snm="Tamb."
+%%MIDI channel 10
+%%MIDI program 48
+%%MIDI drummap =E 54
+I:percmap =E B 54 normal
+%%MIDI drummap E 54
+I:percmap E B 54 normal
+V:17 perc nm="Piatti." snm="Piat."
+%%MIDI channel 10
+%%MIDI program 0
+%%MIDI drummap g 87
+I:percmap g g 87 normal
+V:1
+"^Moderato alla marcia.""^14" z4 | z4 | z4 | z4 |!f! .c/.d/.e/.f/ .g/.e/.a |"^a 2" g>f eg | fe d>g | f/e/d/B/ c2 | z2 |]
+V:2
+x4 | x4 | x4 | x4 | .c/.d/.e/.f/ .g/.e/.f | x4 | x4 | x4 | x2 |]
+V:3
+[K:D] z4 | z4 | z4 | z4 |!f! .D/.E/.F/.G/ .A/.F/.B |"^a 2" A>G FA | GF E>A | G/F/E/C/ D2 | z2 |]
+V:4
+[K:D] x4 | x4 | x4 | x4 | .D/.E/.F/.G/ .A/.F/.G | x4 | x4 | x4 | x2 |]
+V:5
+z4 | z4 | z4 | z4 |!f! A,,2 .[E,,E,].[D,,D,] | [E,,E,]2 [A,,A,][E,,E,] | [D,,D,][E,,E,] [F,,F,]2 | [D,,D,]F,, A,,2 | z2 |]
+V:6
+[K:G]!f! .[B,G]/.[DA]/.[GB]/.[Ac]/ .[Bd]/.[GB]/.[Be] | d>c Bd | cB A>d | c/B/A/F/ G2 | .G/.A/.B/.c/ .d/.B/.[ce] |"^a 2" d>c Bd | cB A2 | cA B2 | z2 |]
+V:7
+[K:G] x4 | B>A G2 | x4 | x4 | x4 | x4 | x4 | x4 | x2 |]
+V:8
+[K:G]!f! .[B,G]/.[DA]/.[GB]/.[Ac]/ .[Bd]/.[GB]/.[Be] | d>c Bd | z4 | z4 | G2 [DG][EG] | [DG]2 [EG][DG] | [EA][EG] [EA]2 | EE E2 | z2 |]
+V:9
+[K:G] x4 | B>A G2 | x4 | x4 | x4 | x4 | x4 | x4 | x2 |]
+V:10
+[K:D] z4 | z4 | z4 | z4 |!f! d/e/f/g/ a/f/b | a>g fa | gf e>a | g/f/e/c/ d2 | z2 |]
+V:11
+[K:D] x4 | x4 | x4 | x4 | d2 dd | d2 dd | BB B2 | BB B2 | x2 |]
+V:12
+!f! [E,G,] z [G,C][A,C] | [G,C]2 [G,C]2 | [A,C][A,C] [A,C]2 | [A,C][G,B,] [G,C]2 | [E,A,]2 [G,C][A,C] | [G,C]2 [A,C][G,C] | [A,D][A,C] [A,D]2 | [F,A,][D,B,] [E,C]2 | z2 |]
+V:13
+!f! C, z C,A,, | C,2 E,2 | D,E, F,2 | D,F, E,2 | A,,2 E,D, | E,2 A,E, | D,E, F,2 | D,F,, A,,2 | z2 |]
+V:14
+!f! C,, z C,,A,,, | C,,2 E,,2 | D,,E,, F,,2 | D,,F,, E,,2 | A,,2 E,,D,, | E,,2 A,,E,, | D,,E,, F,,2 | D,,F,, A,,2 | z2 |]
+V:15
+!mf! C,2 C,C, | C,2 C,2 | C,C, C,2 | C,G,, C,2 | C,2 C,C, | C,2 C,C, | z4 | z2 C,2 | z2 |]
+V:16
+[K:none] !mf!{EEE} E2 z2 |{EEE} E2 E2 |{=EEE} E2{EEE} E2 |{EEE} EE E2 |{EEE} E2{EEE} EE |{=EEE} E2{EEE} E2 | {=EEE} EE E2 |{=EEE} EE E2 | z2 |]
+V:17
+[K:none] z4 | z4 | z4 | z4 |!ff! g2 z2 | g2 z2 | g2 g2 | g2 g2 | z2 |]
