@@ -3,7 +3,7 @@
 # pages, library catalogue records or bookseller listings found by web search. Books were not read in full.
 VP, VJ, VC, VF = "lessons/voice-pop.qmd", "lessons/voice-jazz.qmd", "lessons/voice-classical.qmd", "lessons/vowel-formants.qmd"
 VOICE = [VP, VJ, VC]
-DAW = ["lessons/daw-%s.qmd" % s for s in ("timeline", "beat", "pianoroll", "record", "mixer", "arrange", "export", "real")]
+DAW = ["lessons/daw-%s.qmd" % s for s in ("timeline", "beat", "pianoroll", "record", "mixer", "arrange", "session", "notation", "export", "real")]
 DJ = ["lessons/dj-%s.qmd" % s for s in ("gear", "beatmatch", "eq", "phrasing", "harmonic", "scratch", "set")]
 SAMP = ["lessons/sampling-%s.qmd" % s for s in ("what", "chop", "pitch", "flip", "beat", "law")]
 SOURCES = [
@@ -69,6 +69,16 @@ SOURCES = [
         "https://www.speech.kth.se/~hansen/files/thesis/KjetilFalkenbergHansen_2010_phdthesis.pdf", ["lessons/dj-scratch.qmd"], who="teacher",
         note="Abstract and front matter read."),
     # --- DAW / DJ / sampling: student ---
+    wiki("Musical Instrument Digital Interface", "MIDI", ["lessons/daw-notation.qmd"], who="student", note="Note numbers 0-127, velocity 1-127, tempo as microseconds per quarter note, the file's time and key signature events: from memory of the standard, checked against this page only in outline."),
+    wiki("Musical Notation", "Musical_notation", ["lessons/daw-notation.qmd"], who="student"),
+    wiki("MusicXML", "MusicXML", ["lessons/daw-notation.qmd"], who="student", note="Kept spelling, voices and layout that MIDI drops."),
+    book('Gould, Elaine. *Behind Bars: The Definitive Guide to Music Notation*. Faber Music, 2011.', ["lessons/daw-notation.qmd"], who="teacher", note="For notation conventions (dynamics, articulation, what is left to the performer); no page claims made."),
+    web('"Session View." *Ableton Reference Manual Version 12*, Ableton, URL.', "https://www.ableton.com/en/manual/session-view/", ["lessons/daw-session.qmd"],
+        note="Checked 10 Nov 2026 from a search summary: clip launch buttons, scenes as rows, recording a Session into the Arrangement, Back to Arrangement. The page itself was not read in full."),
+    web('"Logic Pro for Mac Live Loops Overview." *Logic Pro User Guide for Mac*, Apple, URL.', "https://support.apple.com/guide/logicpro/live-loops-overview-lgcpf46ffc88/mac", ["lessons/daw-session.qmd"],
+        note="Checked 10 Nov 2026 from a search summary: cells, scenes as columns, one cell per track plays. Not read in full."),
+    web('"Record a Live Loops Performance." *Logic Pro User Guide for Mac*, Apple, URL.', "https://support.apple.com/guide/logicpro/record-a-live-loops-performance-lgcp1bc339cf/mac", ["lessons/daw-session.qmd"],
+        note="Checked 10 Nov 2026 from a search summary: Enable Performance Recording; cells played are recorded as regions in the Tracks area."),
     web('"Learning Music." *Ableton*, URL.', "https://learningmusic.ableton.com/", ["lessons/daw-beat.qmd", "lessons/daw-pianoroll.qmd", "lessons/daw-arrange.qmd"], who="student",
         note="Free in-browser lessons: beats, chords, basslines, song structure."),
     wiki("Digital Audio Workstation", "Digital_audio_workstation", DAW, who="student"),

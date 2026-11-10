@@ -1,0 +1,143 @@
+---
+title: "DAW 4b: Loops, Scenes and the Session View"
+toc: true
+toc-depth: 2
+description: "Turn one looping idea into scenes you can launch, then play them into an arrangement: chord roots, a key change and \"The Lion Sleeps Tonight\"."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: [band, interactive]
+---
+
+A DAW can show your music two ways. The **Arrangement** is a timeline: bar 1 on the left, the end of the song on the right, every clip
+in its place. The **Session** is a grid: each column is a track, each row is a **scene**, and each box is a **clip** that *loops*
+until you launch something else. Ableton Live calls these Session View and Arrangement View; Logic Pro's version of the grid is **Live Loops**.
+
+Producers move between the two all the time. Start with a loop that sounds good, copy it into the grid, make a few variations,
+perform them in any order, and record that performance as the arrangement. This lesson walks that path once, with a song whose
+harmony is simple enough to see: **"The Lion Sleeps Tonight"**.
+
+## The chord roots come first
+
+The song's chords, in the version people usually learn, are **I – IV – I – V**. In the key of F that is **F, B♭, F, C**: one chord a bar.
+(That is the progression as commonly taught; I have not checked it against the recording, so listen and decide. The tempo, the parts and
+the scenes below are this site's own, not a transcription.)
+
+The **root** of a chord is the note it is named for, and the bass player plays it. That makes the bass the easiest place to *see* the
+harmony: in a four-bar loop, the lowest note of each bar spells the chords. Everything else (the organ's triads, the electric piano's
+chant figure) is built on those four notes. Keep that in mind: when the roots change, everyone else has to follow.
+
+## 1. Find the loop (Arrangement)
+
+Here is one four-bar loop in the Arrangement: drums, bass, organ pad, and an empty Chant track. The ruler's bracket is already round bars 1–4.
+
+1. Press **▶ Play**. The loop repeats because **⟲ Loop** is on.
+2. Click the Bass clip and read the piano roll's lowest notes: **F, B♭, F, C**, one a bar. Those are the roots.
+3. Mute the bass (**M**) and listen: the organ still plays the chords, but the floor has gone.
+
+<div class="mdaw" data-id="daw-session-1" data-preset="lionloop" data-show="session transport tracks editor mixer"></div>
+
+## 2. Copy the loop into the Session
+
+Press **Loop → scene**. Everything inside the loop bracket (bars 1–4) is copied into a new **scene**: a looping clip for each track that played.
+Then press **Session** to change views. (The Arrangement is untouched; this made copies.)
+
+The scene's row shows its **Roots**, read from the bass: F, B♭, F, C, each with its place in the key (I, IV, I, V).
+
+This is the step that generalizes. In Ableton you drag clips or whole scenes between the views; in Logic you drag a region into a Live
+Loops cell or a cell into the Tracks area. The idea is the same: **a loop is a region plus the promise that it repeats**.
+
+## 3. Launch scenes
+
+This grid already has four scenes made from the same roots. Try them in order, then any way you like.
+
+<div class="mdaw" data-id="daw-session-2" data-preset="lion" data-show="session transport tracks editor mixer"></div>
+
+1. Press the **▶ beside Intro**. Nothing happens until the next **bar line**, then the whole row starts: this wait is **launch quantization**.
+   It is why clips launched at different moments still land together. Set **Launch** to *on the next beat* and try it: it still works, but
+   things can arrive off the bar.
+2. Launch **Groove**, then **Chant**. Each track now plays its clip from the new scene. A track plays one clip at a time, so launching a
+   clip *replaces* what that track was playing.
+3. Launch just the **Bass** clip in Intro while Chant plays: the whole-note bass takes over and everything else carries on. Scenes are
+   whole pictures; single clips are how you mix and match.
+4. Launch **Break**: two bars of just the V chord with no drums. In this DAW an **empty slot stops its track** when its scene launches,
+   so Drums and Chant go quiet. (Check what your own DAW does with empty slots; it differs between programs.)
+5. **■ Stop all** stops everything at the next bar line; press it again to stop at once.
+
+### Change the roots, change the song
+
+Click a **root** in the Groove row (say the second F, bar 3). It goes to **B♭**, then **C**, then back to **F**: I, IV, V. The bass
+note in that bar moves, and so do the organ's chord and the chant, because they sit on the same root. Make bar 3 a V and the progression
+is I – IV – V – V. Does it still sound like the same song? Which change makes it sound most different? Which sounds finished?
+
+The roots only cycle through I, IV and V. That is on purpose: those three chords are all **major** in a major key, so moving a major triad
+up or down by the same interval gives the right chord. A ii or a vi is minor and would need its notes changed, not just moved.
+
+### Change the key
+
+Use **Key** to move the song to suit a singer: pick **G** and every pitched note moves up two semitones. The roots update (G, C, G, D), the
+numbers underneath (I, IV, I, V) stay the same, and the drums don't change at all. The *numbers* describe the music; the *letters* describe where
+you put it.
+
+## 4. Record the performance into the Arrangement
+
+1. Press **● Record to Arrangement**. It waits for the next bar line, then starts logging.
+2. Launch scenes and clips in an order you like, say Intro, Groove, Chant, Groove, Chant, Break, Chant.
+3. Press the record button again (or **Stop all**). It ends at the next bar line.
+4. The view switches to the **Arrangement**: your performance is there as ordinary clips, each loop written out as many times as it played and
+   cut at the bar lines. Press **▶ Play** to hear it as a song, edit the clips, or **Undo** to go back.
+
+That is the whole path: *loop → scene → variations → performance → arrangement.* Only the performance part is improvised; everything else is
+decisions about which notes repeat and who plays when.
+
+## Things to try
+
+- Make a new scene by copying **Chant** (**⎘**) and changing its roots to something other than I – IV – I – V. Record a performance in which
+  the new scene is the "bridge".
+- Double-click an empty slot (say Chant in Intro) to make a clip, then write a part in the piano roll that fits the roots.
+- Change the **Tempo**, play a scene, and listen to whether the groove still feels right.
+- In the first DAW above, press **Loop → scene** twice with different loop brackets (drag along the ruler) to turn bars 1–2 and 3–4
+  into separate scenes.
+
+## In other DAWs
+
+<div class="daw-map">
+
+| | Ableton Live | Logic Pro |
+|---|---|---|
+| The grid is | **Session View** | **Live Loops** |
+| A box in the grid | Clip, with a launch (▶) button | Cell |
+| A scene is | A row (its launch button is in the Main track column) | A column |
+| Play the grid | Launch clips or scenes; one clip per track plays | Play cells or scenes; one cell per track plays |
+| Grid → timeline | Record the Session into the Arrangement (the Arrangement Record button) | Enable Performance Recording, then Record; or drag cells and scenes to the Tracks area |
+| Back to the grid | **Back to Arrangement** returns tracks to the timeline after a clip is launched | Playback comes from the grid *or* the Tracks area on each track |
+
+</div>
+
+BandLab has loops and regions but, as far as I checked, no clip launcher; I have not verified that. The small DAW here is a model of the
+idea, not a copy of either program.
+
+## Next
+
+- [DAW 5: The Mixer](daw-mixer.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Logic Pro for Mac Live Loops Overview." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/live-loops-overview-lgcpf46ffc88/mac](https://support.apple.com/guide/logicpro/live-loops-overview-lgcpf46ffc88/mac). Checked 10 Nov 2026 from a search summary: cells, scenes as columns, one cell per track plays. Not read in full.
+
+"Record a Live Loops Performance." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/record-a-live-loops-performance-lgcp1bc339cf/mac](https://support.apple.com/guide/logicpro/record-a-live-loops-performance-lgcp1bc339cf/mac). Checked 10 Nov 2026 from a search summary: Enable Performance Recording; cells played are recorded as regions in the Tracks area.
+
+"Session View." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/manual/session-view/](https://www.ableton.com/en/manual/session-view/). Checked 10 Nov 2026 from a search summary: clip launch buttons, scenes as rows, recording a Session into the Arrangement, Back to Arrangement. The page itself was not read in full.
+
+**For students**
+
+"Digital Audio Workstation." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Digital_audio_workstation](https://en.wikipedia.org/wiki/Digital_audio_workstation).
+
+**For teachers**
+
+Bell, Adam Patrick. *Dawn of the DAW: The Studio as Musical Instrument*. Oxford UP, 2018. [academic.oup.com/book/2477](https://academic.oup.com/book/2477).
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}

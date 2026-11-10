@@ -1001,6 +1001,6 @@
   }
   function clickAt(at, accent){ var a = audio(); a.bank.play("kit", { piece: "sticks", vel: accent ? 0.85 : 0.55 }, at, chordOut); }
 
-  global.BandPlayer = { KIT_GROUPS: KIT_GROUPS, hit: hit, chord: chord, release: release, clickLoad: clickLoad, clickAt: clickAt, output: output, create: create, renderOffline: renderOffline, swingFor: swingFor, swingAt: swingAt, warp: warp, intensityFor: intensityFor,
+  global.BandPlayer = { FEEL: { LAY: LAY, JITTER: JITTER, STRUM: STRUM, VEL_JITTER: VEL_JITTER }, KIT_GROUPS: KIT_GROUPS, hit: hit, chord: chord, release: release, clickLoad: clickLoad, clickAt: clickAt, output: output, create: create, renderOffline: renderOffline, swingFor: swingFor, swingAt: swingAt, warp: warp, intensityFor: intensityFor,
     Session: Session };                                      // (for tests: the bars a session generates, without sound)
 })(typeof window !== "undefined" ? window : globalThis);

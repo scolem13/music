@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../lessons/daw-record.html" rel="next">
-<link href="../lessons/daw-arrange.html" rel="prev">
+<link href="../lessons/daw-session.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -1758,8 +1758,20 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../lessons/daw-notation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DAW 3b: What the Computer Needs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../lessons/daw-arrange.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">DAW 4: Arranging a Song</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/daw-session.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DAW 4b: Loops, Scenes and the Session View</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -2187,10 +2199,163 @@ document.addEventListener('DOMContentLoaded', async function () {
 <li>Solo the bass to hear what it’s doing, then un-solo. Mute the guitar: is the song better without it?</li>
 <li>Double-click any fader or pan to put it back to 0 / centre.</li>
 </ol>
-<div class="mdaw" data-id="daw-mixer" data-preset="badmix" data-show="transport tracks mixer">
+<div class="mdaw" data-id="daw-mixer" data-preset="badmix" data-show="transport tracks mixer automation">
 
 </div>
+<section id="volume-automation-preview" class="level3">
+<h3 class="anchored" data-anchor-id="volume-automation-preview">Volume automation (preview)</h3>
+<p>A fader that moves by itself is <strong>volume automation</strong>. In this DAW, click a track, then <strong>Volume lane</strong> (or press <strong>V</strong>): a lane opens under the tracks. Click it to add a point and drag the point up or down; double-click a point to remove it. Or use the keyboard: put the playhead where you want a change, press <strong>A</strong> (a point appears at the level the track already has), then <strong>↑ ↓</strong> change it a decibel and <strong>← →</strong> slide it a beat (Shift: 6 dB or a bar; Alt: finer), <strong>[ ]</strong> pick the previous or next point, <strong>Delete</strong> removes it, <strong>Esc</strong> leaves. Once a track has points they <em>are</em> its level and its fader locks, marked <strong>(A)</strong>; delete the points to use the fader again. Keys work the vim way too: <strong>h j k l</strong> are the arrows, and a <strong>number first</strong> repeats the next key, so <strong>3k</strong> raises the point 3 dB and <strong>12j</strong> lowers it 12. Try bringing the keys down under the guitar for the first bars.</p>
+</section>
+<section id="velocity-or-volume-automation" class="level3">
+<h3 class="anchored" data-anchor-id="velocity-or-volume-automation">Velocity or volume automation?</h3>
+<p>Both make a sound louder or quieter, at different places in the chain, so they <strong>multiply</strong> (add, in decibels).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Velocity</th>
+<th>Volume automation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Belongs to</td>
+<td>One <strong>note</strong></td>
+<td>A whole <strong>track</strong></td>
+</tr>
+<tr class="even">
+<td>Set when</td>
+<td>The note starts (it cannot change afterwards)</td>
+<td>Continuously, any time the track sounds</td>
+</tr>
+<tr class="odd">
+<td>Changes the tone?</td>
+<td>Often yes: a soft piano note is also darker (this DAW’s piano and electric pianos filter softer notes darker)</td>
+<td>No: it only turns the whole sound up or down</td>
+</tr>
+<tr class="even">
+<td>Can fade a held note?</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>In the MIDI file</td>
+<td>The note-on velocity, 1–127</td>
+<td>A separate stream of controller 7 (volume) events</td>
+</tr>
+<tr class="even">
+<td>Good for</td>
+<td>Accents, phrasing, ghost notes, a crescendo you play note by note</td>
+<td>Sections (verse quieter than chorus), fades, ducking, rides</td>
+</tr>
+</tbody>
+</table>
+<p>How much does velocity do here? This DAW’s instruments follow roughly level = velocity^1.6. That is, velocity 127 is the full level (0 dB), 96 is about −4 dB, 64 about −10 dB, 32 about −19 dB. (Other programs and instruments use other curves; I have not checked theirs.) So a move of one velocity step is small and a halving is large.</p>
+<p>Two habits keep them from fighting:</p>
+<ol type="1">
+<li><strong>Shape the part with velocity first, then balance the track with the fader or automation.</strong> If you turn a track down with automation and then raise every velocity to make it audible again, you have thrown away its dynamics.</li>
+<li><strong>Use automation for anything that happens <em>while</em> a note rings</strong>: a pad that swells, a held organ chord that fades. Velocity cannot do that.</li>
+</ol>
+<p>A keyboard-driven way to set velocity is proposed below (“A keyboard flow for velocity”); it is not built yet.</p>
+<p>The points are written into the exported MIDI file as controller 7 (volume), and read back from it. Whether your DAW turns those events into automation, and on which lane, depends on the program: open the file and look. I have not verified what Live and Logic do with them.</p>
+</section>
+<section id="a-keyboard-flow-for-velocity-note-mode-in-progress" class="level3">
+<h3 class="anchored" data-anchor-id="a-keyboard-flow-for-velocity-note-mode-in-progress">A keyboard flow for velocity (note mode, in progress)</h3>
+<p><strong>Part of this is built.</strong> Click a clip in the DAW above and press <strong>Enter</strong>: that is <strong>note mode</strong> (<strong>Esc</strong> leaves). Built so far: the motions, the text objects, the operators <strong>&gt;</strong> <strong>&lt;</strong> <strong>gU</strong> <strong>gu</strong>, <strong>r1</strong>–<strong>r8</strong>, counts, <strong>.</strong> (repeat) and <strong>u</strong> (undo). Still to come, and marked below: velocity patterns in registers (<strong>y</strong>/<strong>p</strong>), <strong>gq</strong>, <strong>Ctrl-a</strong>/<strong>Ctrl-x</strong>, Visual mode, macros and the <strong>:</strong> command line. The plan is in <code>apps/shared/daw/TODO.md</code>. The idea is to borrow vim’s <em>grammar</em>: <strong>[count] operator motion</strong>, with the cursor on a note.</p>
+<p><strong>Motions</strong> move the note cursor (they also work after an operator):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Moves to</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>h</strong> <strong>l</strong></td>
+<td>previous / next note in time</td>
+</tr>
+<tr class="even">
+<td><strong>j</strong> <strong>k</strong></td>
+<td>the note below / above in the same chord</td>
+</tr>
+<tr class="odd">
+<td><strong>w</strong> <strong>b</strong> <strong>e</strong></td>
+<td>next / previous / last note of the chord (“word”)</td>
+</tr>
+<tr class="even">
+<td><strong>(</strong> <strong>)</strong></td>
+<td>previous / next beat</td>
+</tr>
+<tr class="odd">
+<td><strong>{</strong> <strong>}</strong></td>
+<td>previous / next bar</td>
+</tr>
+<tr class="even">
+<td><strong>0</strong> <strong>$</strong></td>
+<td>first / last note of the clip</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Text objects</strong> (after an operator, or in Visual): <strong>iw</strong> the note, <strong>ic</strong> its chord, <strong>ih</strong> its beat, <strong>ib</strong> its bar, <strong>ip</strong> the whole clip, <strong>iv</strong> the top line (the highest note of each chord: the melody). A count extends them: <strong>2ib</strong> is two bars.</p>
+<p><strong>Operators</strong> (each takes a motion or a text object; doubling the key means “this chord”, as <strong>dd</strong> means “this line”):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>&gt;</strong> / <strong>&lt;</strong></td>
+<td>louder / quieter by a step (counts multiply it)</td>
+<td><strong>3&gt;ib</strong>: the bar, three steps louder</td>
+</tr>
+<tr class="even">
+<td><strong>gU</strong> / <strong>gu</strong></td>
+<td>accent / ghost (vim’s upper-case / lower-case)</td>
+<td><strong>gUic</strong>: accent this chord</td>
+</tr>
+<tr class="odd">
+<td><strong>gq</strong> (to come)</td>
+<td>tidy: straighten the velocities into a ramp from the first to the last note</td>
+<td><strong>gq2ib</strong> after setting the ends: a crescendo over two bars</td>
+</tr>
+<tr class="even">
+<td><strong>y</strong> / <strong>p</strong> (to come)</td>
+<td>yank / put a <strong>velocity pattern</strong></td>
+<td><strong>“ayib</strong> saves a bar’s accent pattern in register <em>a</em>; <strong>3”ap</strong> lays it down three times</td>
+</tr>
+<tr class="odd">
+<td><strong>r</strong> + 1–8</td>
+<td>set to a dynamic: 1 ppp, 2 pp, 3 p, 4 mp, 5 mf, 6 f, 7 ff, 8 fff</td>
+<td><strong>r5</strong> on a chord; <strong>v</strong> then <strong>r4</strong> on a selection</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Visual mode</strong> (to come): <strong>v</strong> selects notes (<strong>h l</strong> extend), <strong>V</strong> whole chords, <strong>Ctrl-v</strong> a block of time × pitch (on the drum grid: the hi-hat row across four bars). Every operator works on the selection. <strong>Ctrl-a</strong> / <strong>Ctrl-x</strong> add / take 1 from the velocity, as in vim (the count multiplies); in Visual, <strong>g Ctrl-a</strong> adds 1, 2, 3 … down the selection, which is a ready-made crescendo.</p>
+<p><strong>Repeat and record</strong>: <strong>.</strong> repeats the last change and <strong>u</strong> undoes (built); <strong>qa</strong> … <strong>q</strong> records a key sequence into register <em>a</em> and <strong><span class="citation" data-cites="a">@a</span></strong> replays it (so “accent beat 1 of every bar” is one recording and <strong>8@a</strong>).</p>
+<p><strong>Command line</strong> (to come): <strong>:</strong> takes vim-style ranges: <strong>:%vel mf</strong> (everything), <strong>:‘&lt;,’&gt;vel 40-100</strong> (a ramp over the selection), <strong>:vel 64</strong> (this chord).</p>
+<p>A worked example: you have played a pad with flat velocities. <strong>{</strong> to the first bar, <strong>gUic</strong> accents beat 1; <strong>y</strong> the bar as a pattern (<strong>“ayib</strong>), then <strong>}</strong> and <strong>3”ap</strong> to give the next three bars the same shape; <strong>Vjj</strong> … then <strong>g Ctrl-a</strong> to swell the last four. Nothing there needs the mouse.</p>
+<p>These keys live in the editor’s own mode, because in the Arrangement <strong>q</strong> is Quantize, <strong>r</strong> is Record, <strong>v</strong> is the volume lane and <strong>p</strong> places a Session clip. <strong>Enter</strong> with a clip selected opens note mode, so “back to the start” is now <strong>Home</strong>.</p>
 <p>The rest of mixing (EQ, compression, reverb on sends, references) is in <a href="../lessons/rec-mixing.html">Recording 7: Mixing</a>; level and headroom before the mix in <a href="../lessons/rec-gain-staging.html">Recording 1: Gain Staging</a>.</p>
+</section>
 </section>
 <section id="in-other-daws" class="level2">
 <h2 class="anchored" data-anchor-id="in-other-daws">In other DAWs</h2>
@@ -2343,6 +2508,38 @@ document.addEventListener('DOMContentLoaded', async function () {
 .mdaw-audioed{max-height:none}
 .mdaw-band{margin-top:.6rem;padding-top:.3rem;border-top:1px dashed var(--site-border)}
 .mdaw-files{margin-top:.7rem;padding-top:.5rem;border-top:1px dashed var(--site-border)}
+/* session view: apps/shared/daw/session.js */
+.mdaw-views{display:flex;gap:.3rem;margin:.2rem 0 .5rem}
+.mdaw-sgrid{display:grid;gap:3px;overflow-x:auto;padding-bottom:.2rem}
+.mdaw-sc{box-sizing:border-box;padding:.2rem .35rem;border-radius:5px;background:color-mix(in srgb,var(--site-ink) 5%,var(--site-surface));min-width:0}
+.mdaw-scorner{font-family:var(--font-mono);font-size:.7rem;color:var(--site-ink-2);display:flex;align-items:center}
+.mdaw-shead{border-top:4px solid var(--site-ink-2);display:flex;align-items:center;justify-content:space-between;gap:.2rem}
+.mdaw-sname{font-size:.8rem;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mdaw-scene{display:flex;flex-direction:column;gap:.25rem}
+.mdaw-scene.mdaw-splay{box-shadow:inset 0 0 0 2px var(--site-accent)}
+.mdaw-scene .mdaw-name{flex:1;min-width:0;border:1px solid transparent;border-radius:3px;padding:0 .2rem}
+.mdaw-scene .mdaw-name:focus{border-color:var(--site-border)}
+.mdaw .btn.mdaw-scgo{font-size:.8rem;padding:0 .35rem}
+.mdaw-roots{display:flex;flex-wrap:wrap;gap:.2rem;align-items:center}
+.mdaw-rlbl{font-family:var(--font-mono);font-size:.62rem;text-transform:uppercase;color:var(--site-ink-2);margin-right:.1rem}
+.mdaw-root{display:inline-flex;flex-direction:column;align-items:center;min-width:2rem;padding:.05rem .3rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink);cursor:pointer;line-height:1.1}
+.mdaw-root:hover{border-color:var(--site-accent)}
+.mdaw-rest{cursor:default;color:var(--site-ink-2)}
+.mdaw-rname{font-weight:700;font-size:.85rem}.mdaw-rdeg{font-family:var(--font-mono);font-size:.62rem;color:var(--site-ink-2)}
+.mdaw-cell{position:relative;min-height:3.4rem;border-radius:5px;border:1px dashed var(--site-border);display:flex;flex-direction:column;gap:.1rem;padding:.2rem .3rem .3rem 1.9rem;overflow:hidden;cursor:pointer;background:transparent}
+.mdaw-cell.mdaw-has{border:1px solid rgba(0,0,0,.25);background:var(--cc);color:#fff}
+.mdaw-cell.mdaw-na{opacity:.4;cursor:default}
+.mdaw-cell.mdaw-csel{box-shadow:0 0 0 2px var(--site-ink)}
+.mdaw-cell.mdaw-cwait{animation:mdawblink .5s steps(2) infinite}
+@keyframes mdawblink{50%{filter:brightness(1.45)}}
+.mdaw-cell.mdaw-cplay{box-shadow:inset 0 0 0 2px #fff,0 0 0 2px var(--site-accent)}
+.mdaw .btn.mdaw-launch{position:absolute;left:.25rem;top:.25rem;width:1.35rem;height:1.35rem;padding:0;line-height:1;border-radius:50%;font-size:.7rem;background:rgba(255,255,255,.9);color:#222}
+.mdaw-empty .mdaw-launch{background:transparent;color:var(--site-ink-2)}
+.mdaw-cell.mdaw-cplay .mdaw-launch{background:var(--site-accent-dk);color:#fff}
+.mdaw-cname{font-size:.72rem;font-family:var(--font-mono)}
+.mdaw-sthumb{width:100%;max-width:110px;height:22px}
+.mdaw-prog{position:absolute;left:0;bottom:0;height:3px;width:0;background:#fff}
+.mdaw-snone{padding:.4rem}
 /* "in other DAWs" tables */
 .daw-map{font-size:.88rem;overflow-x:auto;max-width:100%}
 .daw-map th:first-child{white-space:nowrap}
@@ -2364,7 +2561,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../apps/shared/band/sounds.js?v=23"></script>
 <script src="../apps/shared/band/player.js?v=130"></script>
 <script src="../apps/shared/band/midi.js?v=21"></script>
-<script src="../apps/shared/daw/mini-daw.js?v=4"></script>
+<script src="../apps/shared/daw/mini-daw.js?v=5"></script>
+<script src="../apps/shared/daw/session.js?v=1"></script>
 <script>MiniDaw.init();</script>
 
 
@@ -2875,8 +3073,8 @@ document.addEventListener('DOMContentLoaded', async function () {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../lessons/daw-arrange.html" class="pagination-link" aria-label="DAW 4: Arranging a Song">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">DAW 4: Arranging a Song</span>
+      <a href="../lessons/daw-session.html" class="pagination-link" aria-label="DAW 4b: Loops, Scenes and the Session View">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">DAW 4b: Loops, Scenes and the Session View</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

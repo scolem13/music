@@ -68,7 +68,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
     const m = MiniDaw.toMidi(D.p), sigs = []; for (let i = 0; i < m.length - 6; i++) if (m[i] === 255 && m[i + 1] === 88) sigs.push(m[i + 3] + '/' + (1 << m[i + 4]));
     return [JSON.stringify(D.p.tsMap), bars[2].textContent, bars[3].style.left, D.tsList.textContent.trim(), sigs.join(',')].join(' | '); })()`);
   check("3/4 from bar 3: the ruler, a remove button, MIDI has both", ts2 === '[{"bar":2,"ts":[3,4]}] | 3 3/4 | 234px | bar 3: 3/4 × | 6/8,3/4', ts2);
-  const ts4 = await ev(`(() => { const D = MiniDaw.all[0], j = JSON.parse(localStorage.getItem(D.key)); return JSON.stringify(j.ts) + j.tsMap.length; })()`);
+  const ts4 = await ev(`(() => { const D = MiniDaw.all[0], j = JSON.parse(localStorage.getItem(D.storeKey)); return JSON.stringify(j.ts) + j.tsMap.length; })()`);
   check("saved with the project", ts4 === '[6,8]1', ts4);
   await b.goto(U("daw-arrange")); await b.sleep(300);
   check("reload keeps 6/8", await ev(`JSON.stringify(MiniDaw.all[0].p.ts)`) === '[6,8]');

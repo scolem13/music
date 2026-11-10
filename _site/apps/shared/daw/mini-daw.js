@@ -16,7 +16,16 @@
 //   clip  = { start (beats from the top), len (beats), notes:[{ t (beats into the clip), d (beats), m (midi or kit piece), v (0..1) }] }
 // Time is in beats (quarter notes); a bar is n*4/d beats (see "time signatures"); the grid is sixteenths. data-ts="6/8" starts a project in that meter.
 //
-// Keys (when the DAW has focus): Space play/stop, Enter back to the start, L loop on/off, C click, R record,
+// Session view (session.js, data-show="session"): p.scenes [{name}] + track.slots [clip|null] (a slot clip = { start:0, len, notes }) that loop
+// when launched; see session.js. sel.slot >= 0 means the editor is on that slot's clip.
+// Note mode (vim-style velocity editing; Enter on a selected clip, Esc leaves): see "note mode" below and apps/shared/daw/TODO.md.
+// Volume automation (data-show "automation"): track.auto = { vol: [{ t (beats from the top), v (dB) }] sorted by t }. The points ARE the track's level
+// (they replace the fader, as in Live and Logic; before the first point and after the last the level holds), linear in dB between points. A track
+// with points shows "(A)" in the mixer and its fader is locked. Exported as MIDI CC 7 (GM2 curve dB = 40 log10(cc/127), so 0 dB = 127, 127 is the
+// ceiling: levels above 0 dB export as 127) and read back from CC 7 (one constant value = the fader). See "volume automation" below.
+// h j k l are the arrow keys and a number before a key repeats it ("3k"): see "placing clips from the keyboard" below.
+// Placing clips from the keyboard: see "placing clips from the keyboard" below (arrow keys, [ ], N, P, - =).
+// Keys (when the DAW has focus): Space play/stop, Home (or Enter with no clip selected) back to the start, O loop on/off (L is → now), C click, R record,
 // Delete delete the selection, Ctrl/Cmd+D duplicate the clip, Ctrl/Cmd+Z / Shift+Z undo / redo, Q quantize the clip.
 // While recording or with "Keys" on, A W S E D F T G Y H U J K O L play notes (Z / X octave), on a drum track A S D F G H J K the kit.
 (function (global) {
@@ -132,8 +141,39 @@
       p.tsMap = p.tsMap.filter(function (c, i) { var before = i ? p.tsMap[i - 1].ts : p.ts; return before.join('/') !== c.ts.join('/'); });
     },
     // old projects have no meter: 4/4
-    norm: function (p) { if (!Meter.ok(p.ts)) p.ts = [4, 4]; p.tsMap = Array.isArray(p.tsMap) ? p.tsMap.filter(function (c) { return c && c.bar > 0 && Meter.ok(c.ts); }) : []; return p; }
+    norm: function (p) { if (!Meter.ok(p.ts)) p.ts = [4, 4]; if (!Array.isArray(p.scenes)) p.scenes = []; p.tsMap = Array.isArray(p.tsMap) ? p.tsMap.filter(function (c) { return c && c.bar > 0 && Meter.ok(c.ts); }) : []; return p; }
   };
+
+  // ---------------- volume automation ----------------
+  var AUTO_MIN = -60, AUTO_MAX = 6;
+  function autoPts(tr) { return tr && tr.auto && tr.auto.vol && tr.auto.vol.length ? tr.auto.vol : null; }
+  // the level (dB) a point list gives at a beat: held before the first point and after the last, a straight line in dB between
+  function autoAt(pts, beat) {
+    if (!pts || !pts.length) return null; if (beat <= pts[0].t) return pts[0].v; var last = pts[pts.length - 1]; if (beat >= last.t) return last.v;
+    for (var i = 1; i < pts.length; i++) if (beat < pts[i].t) { var a = pts[i - 1], b = pts[i]; return b.t === a.t ? b.v : a.v + (b.v - a.v) * (beat - a.t) / (b.t - a.t); }
+    return last.v;
+  }
+  function dbToCc(db) { return db <= AUTO_MIN ? 0 : Math.min(127, Math.max(0, Math.round(127 * Math.pow(10, db / 40)))); }
+  function ccToDb(v) { return v <= 0 ? AUTO_MIN : 40 * Math.log10(v / 127); }
+  // CC 7 events [{ tick, v }] for a point list: the first level at tick 0, then a change at most every sixteenth along each line, and the last point
+  function autoToCc(pts, ppq) {
+    var out = [], last = -1; function put(t, v) { if (v !== last) { out.push({ tick: Math.round(t * ppq), v: v }); last = v; } }
+    put(0, dbToCc(pts[0].v));
+    for (var i = 1; i < pts.length; i++) { var a = pts[i - 1], b = pts[i];
+      for (var t = a.t; t < b.t - 1e-9; t += 0.25) put(t, dbToCc(autoAt(pts, t)));
+      put(b.t, dbToCc(b.v)); }
+    return out;
+  }
+  // CC 7 events read from a file onto a track: one constant value sets the fader, anything else becomes points (straight runs thinned to 0.5 dB)
+  function ccToTrack(tr, cc, div) {
+    var pts = []; cc.sort(function (a, b) { return a.tick - b.tick; });
+    cc.forEach(function (e) { var t = e.tick / div, v = Math.round(ccToDb(e.v) * 100) / 100; if (pts.length && pts[pts.length - 1].t === t) pts[pts.length - 1].v = v; else pts.push({ t: t, v: v }); });
+    if (!pts.length) return 0;
+    if (pts.every(function (q) { return q.v === pts[0].v; })) { tr.vol = clamp(Math.round(pts[0].v * 2) / 2, AUTO_MIN, AUTO_MAX); return 0; }
+    var keep = [pts[0]]; for (var i = 1; i < pts.length - 1; i++) { var a = keep[keep.length - 1], b = pts[i + 1];
+      var line = b.t === a.t ? b.v : a.v + (b.v - a.v) * (pts[i].t - a.t) / (b.t - a.t); if (Math.abs(pts[i].v - line) > 0.5) keep.push(pts[i]); }
+    keep.push(pts[pts.length - 1]); tr.auto = { vol: keep.map(function (q) { return { t: Math.round(q.t * 480) / 480, v: clamp(q.v, AUTO_MIN, AUTO_MAX) }; }) }; return keep.length;
+  }
 
   // ---------------- presets ----------------
   function steps(s, piece, v) { var out = []; s.split('').forEach(function (c, i) { if (c !== '.' && c !== ' ') out.push({ t: i / 4, d: 0.25, m: piece, v: c === 'X' ? 1 : c === 'g' ? 0.35 : v || 0.75 }); }); return out; }
@@ -167,6 +207,34 @@
     record: function () { return { tempo: 92, bars: 8, loop: { on: false, from: 0, to: 4 }, click: true, tracks: [track('Voice', 'audio'),
       track('Drums', 'kit', [beatClip(0, 4), beatClip(16, 4)], { vol: -4 }), track('Bass', 'ebass', [rootClip(0, [36, 33, 29, 31]), rootClip(16, [36, 33, 29, 31])], { vol: -4 }),
       track('Keys', 'piano', [chordClip(0, [C, AM, F, G]), chordClip(16, [C, AM, F, G])], { vol: -6 })] }; },
+    // "The Lion Sleeps Tonight": the I-IV-I-V roots in F (the progression as commonly taught; check by ear against the record: unverified).
+    // The scenes are ours, not a transcription: same roots, different players. See lessons/daw-session.qmd.
+    lion: function () {
+      var roots = [41, 46, 41, 48], tri = [[53, 57, 60], [53, 58, 62], [53, 57, 60], [55, 60, 64]];     // F  Bb(/F)  F  C(/G): the top three notes move least
+      function bassWhole(rs) { var n = []; rs.forEach(function (r, i) { n.push({ t: i * 4, d: 4, m: r, v: 0.8 }); }); return { start: 0, len: rs.length * 4, notes: n }; }
+      function chant(cs) { var n = []; cs.forEach(function (c, i) { [0, 1, 2, 1, 0, 1, 2, 1].forEach(function (k, j) { n.push({ t: i * 4 + j * 0.5, d: 0.5, m: c[k] + 12, v: j % 4 === 0 ? 0.7 : 0.5 }); }); }); return { start: 0, len: cs.length * 4, notes: n }; }
+      function drums(bars) { var c = beatClip(0, bars); return c; }
+      var V = [48], Vt = [[55, 60, 64]];
+      return { tempo: 112, bars: 16, key: 5, quant: 'bar', view: 'session', loop: { on: true, from: 0, to: 4 }, click: false,
+        scenes: [{ name: 'Intro' }, { name: 'Groove' }, { name: 'Chant' }, { name: 'Break' }],
+        tracks: [
+          track('Drums', 'kit', [], { slots: [null, drums(4), drums(4), null] }),
+          track('Bass', 'ebass', [], { slots: [bassWhole(roots), rootClip(0, roots), rootClip(0, roots), bassWhole(V.concat(V))] }),
+          track('Pad', 'hammond', [], { slots: [chordClip(0, tri), chordClip(0, tri), chordClip(0, tri), chordClip(0, Vt.concat(Vt))] }),
+          track('Chant', 'rhodes', [], { slots: [null, null, chant(tri), null] })] };
+    },
+    // the same song as one 4-bar loop in the Arrangement (no scenes yet): the start of daw-session.qmd
+    lionloop: function () {
+      var roots = [41, 46, 41, 48], tri = [[53, 57, 60], [53, 58, 62], [53, 57, 60], [55, 60, 64]];
+      return { tempo: 112, bars: 8, key: 5, quant: 'bar', view: 'arr', loop: { on: true, from: 0, to: 4 }, click: false, scenes: [], tracks: [
+        track('Drums', 'kit', [beatClip(0, 4)]), track('Bass', 'ebass', [rootClip(0, roots)]), track('Pad', 'hammond', [chordClip(0, tri)]), track('Chant', 'rhodes')] };
+    },
+    // the opening of the "Ode to Joy" theme (Beethoven, Symphony No. 9, finale; public domain), every note exactly on the grid at one velocity: the start of daw-notation.qmd
+    ode: function () {
+      var seq = [[64, 1], [64, 1], [65, 1], [67, 1], [67, 1], [65, 1], [64, 1], [62, 1], [60, 1], [60, 1], [62, 1], [64, 1], [64, 1.5], [62, 0.5], [62, 2]], t = 0, notes = [];
+      seq.forEach(function (x) { notes.push({ t: t, d: x[1], m: x[0], v: 0.6 }); t += x[1]; });
+      return { tempo: 100, bars: 4, loop: { on: false, from: 0, to: 4 }, click: false, scenes: [], tracks: [track('Melody', 'piano', [{ start: 0, len: 16, notes: notes }])] };
+    },
     band: function () { return { tempo: 100, bars: 16, loop: { on: false, from: 0, to: 4 }, click: false, tracks: [] }; }
   };
 
@@ -179,9 +247,9 @@
   }
   // a track's strip: input -> pan -> fader -> meter -> master
   function makeStrip(ctx, dest) {
-    var input = ctx.createGain(), pan = ctx.createStereoPanner ? ctx.createStereoPanner() : ctx.createGain(), fader = ctx.createGain(), meter = ctx.createAnalyser();
-    meter.fftSize = 1024; input.connect(pan); pan.connect(fader); fader.connect(meter); meter.connect(dest);
-    return { input: input, pan: pan, fader: fader, meter: meter };
+    var input = ctx.createGain(), auto = ctx.createGain(), pan = ctx.createStereoPanner ? ctx.createStereoPanner() : ctx.createGain(), fader = ctx.createGain(), meter = ctx.createAnalyser();
+    meter.fftSize = 1024; input.connect(auto); auto.connect(pan); pan.connect(fader); fader.connect(meter); meter.connect(dest);     // (auto: the volume automation's level; 1 when the track has none)
+    return { input: input, auto: auto, pan: pan, fader: fader, meter: meter };
   }
   function levelOf(an, buf) { an.getFloatTimeDomainData(buf); var p = 0; for (var i = 0; i < buf.length; i++) { var a = Math.abs(buf[i]); if (a > p) p = a; } return p; }
   function click(ctx, when, accent, dest) {
@@ -218,6 +286,7 @@
       var drum = isDrum(tr), c = drum ? 9 : (ch === 9 ? ++ch : ch), evs = []; if (!drum) ch++;
       var name = strBytes(tr.name); evs.push({ tick: 0, o: 0, bytes: [0xff, 0x03].concat(vlq(name.length), name) });
       if (!drum) evs.push({ tick: 0, o: 0, bytes: [0xc0 | c, GM_PROGRAM[tr.inst] || 0] });
+      if (autoPts(tr)) autoToCc(autoPts(tr), ppq).forEach(function (e) { evs.push({ tick: e.tick, o: 0, bytes: [0xb0 | c, 7, e.v] }); });
       tr.clips.forEach(function (cl) { cl.notes.forEach(function (n) {
         if (n.t >= cl.len) return; var key = drum ? GM[n.m] : n.m; if (key == null) return;
         var on = Math.round((cl.start + n.t) * ppq), off = on + Math.max(1, Math.round((drum ? 0.125 : Math.min(n.d, cl.len - n.t)) * ppq));
@@ -248,7 +317,7 @@
     var hl = u(4), fmt = u(2), ntr = u(2), div = u(2); pos = 8 + hl;
     if (div & 0x8000) throw new Error('SMPTE-timed MIDI files are not supported');
     if (fmt === 2) notes.push('a format 2 file: its patterns are laid end to end');
-    var tempos = [], sigs = [], lanes = {}, order = [], endTick = 0, offset = 0;
+    var tempos = [], sigs = [], lanes = {}, order = [], endTick = 0, offset = 0, cc7 = {}, autoTracks = 0;
     for (var t = 0; t < ntr && pos + 8 <= b.length; t++) {
       var id = str4(), len = u(4), end = Math.min(b.length, pos + len);
       if (id !== 'MTrk') { pos = end; continue; }
@@ -264,6 +333,7 @@
         if (st & 0x80) { run = st; pos++; } else if (!run) { pos++; continue; }
         var hi = run & 0xf0, ch = run & 15, d1 = b[pos++], d2 = hi === 0xc0 || hi === 0xd0 ? 0 : b[pos++];
         if (hi === 0xc0) { prog[ch] = d1; continue; }
+        if (hi === 0xb0) { if (d1 === 7) { var ck = t + ':' + ch; (cc7[ck] = cc7[ck] || []).push({ tick: tick, v: d2 }); } continue; }
         if (hi !== 0x90 && hi !== 0x80) continue;
         var key = t + ':' + ch, ln = lanes[key];
         if (!ln) { ln = lanes[key] = { ch: ch, name: tname, prog: null, notes: [] }; order.push(key); }
@@ -307,8 +377,9 @@
       });
       if (!out.length) return;
       var name = ln.name || instOf(inst).label; if (used[name]) name += ' ' + (++used[name]); else used[name] = 1;
-      tracks.push(track(name, inst, [{ start: 0, len: beats, notes: out }]));
+      var nt = track(name, inst, [{ start: 0, len: beats, notes: out }]); if (cc7[kk]) autoTracks += ccToTrack(nt, cc7[kk], div) ? 1 : 0; tracks.push(nt);
     });
+    if (autoTracks) notes.push('volume automation (CC 7) read on ' + autoTracks + ' track' + (autoTracks > 1 ? 's' : ''));
     if (dropped) notes.push(dropped + ' drum hit' + (dropped > 1 ? 's' : '') + ' with no kit piece here left out');
     if (!tracks.length) throw new Error('no notes in the file');
     if (tracks.length > 12) { notes.push('only the first 12 of its ' + tracks.length + ' tracks'); tracks = tracks.slice(0, 12); }
@@ -337,7 +408,32 @@
     var rows = []; for (var i = 0; i < bars.length; i += 4) rows.push(bars.slice(i, i + 4).join(' | '));
     return { abc: 'X:1\nT:Chart\nM:' + ts.join('/') + '\nL:' + (four ? '1/4' : '1/16') + '\nK:C\n' + rows.join(' |\n') + ' |]', bars: bars.length };
   }
-  function bandParts(chart, styleId, tempo, times, ts) {
+  // ---------------- feel: the band's human touches ----------------
+  // The Backing Track's player (player.js, Session.fire) plays each note a little early or late and a little louder or softer than the pattern says: each
+  // part sits at its own LAY (bass a touch ahead, comping behind), plus random JITTER (a triangle of two random numbers), the notes of a chord are rolled
+  // low to high over up to STRUM seconds (a guitar strum over up to 28 ms, up-strokes high to low), and velocity wanders by VEL_JITTER. The patterns themselves are exactly on the
+  // grid. applyFeel writes the same touches into a clip's notes (amt 1 = as the live band, 2 = twice as loose, 0 = none). The numbers come from BandPlayer.FEEL when
+  // the band is loaded. Tempo is NOT touched: the band keeps one steady tempo, and so does this DAW.
+  var FEEL_DEFAULT = { LAY: { bass: -0.006, comp: 0.008, comp2: 0.010, drums: 0, congas: 0.002 }, JITTER: { bass: 0.003, comp: 0.004, comp2: 0.004, drums: 0.002, congas: 0.003 }, STRUM: 0.010, VEL_JITTER: 0.06 };
+  function mulberry(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  function partOfInst(inst) { return inst === 'kit' ? 'drums' : inst === 'congas' ? 'congas' : /bass/.test(inst) ? 'bass' : 'comp'; }
+  // notes: [{ t, d, m, v, s? }] (s = 'down' | 'up' marks a strummed chord); changes them in place and returns them
+  function applyFeel(notes, part, tempo, amt, rng, len) {
+    if (!(amt > 0) || !notes.length) return notes;
+    var F = (global.BandPlayer && global.BandPlayer.FEEL) || FEEL_DEFAULT, bps = tempo / 60, spb = 60 / tempo, lay = F.LAY[part] || 0, jit = F.JITTER[part] || 0, groups = [], by = {};
+    notes.forEach(function (n) {
+      if (part !== 'comp') { groups.push([n]); return; }
+      var k = n.t.toFixed(4); if (by[k]) by[k].push(n); else groups.push(by[k] = [n]); });
+    groups.forEach(function (g) {
+      var off = (lay + (rng() + rng() - 1) * jit) * amt, strum = g[0].s, f = 1 + (rng() * 2 - 1) * F.VEL_JITTER * amt;
+      if (g.length > 1) { g.sort(function (a, b) { return a.m - b.m; }); if (strum === 'up') g.reverse(); }
+      var spread = (strum ? Math.min(0.028, 0.12 * spb) * (strum === 'up' ? 0.6 : 1) : rng() * F.STRUM) * amt;
+      g.forEach(function (n, i) {
+        var o = off + (g.length > 1 ? spread * i / (g.length - 1) : 0), t = n.t + o * bps;
+        n.t = Math.round(clamp(t, 0, len != null ? Math.max(0, len - 0.002) : t) * 10000) / 10000; n.v = clamp(n.v * f, 0.05, 1); delete n.s; }); });
+    return notes;
+  }
+  function bandParts(chart, styleId, tempo, times, ts, feel) {
     var G = global; if (!G.TuneChart || !G.BandMidi || !G.BandCatalog) throw new Error('The band is not loaded on this page.');
     var ch = chartAbc(chart, ts); if (!ch.bars) throw new Error('Type some chords first, bars split by |');
     var so = G.BandCatalog.styleOpts(styleId), opts = so.opts;
@@ -351,9 +447,10 @@
         t = Math.round(t * 48) / 48; var v = clamp(e.vel == null ? 0.7 : e.vel, 0.05, 1), d = Math.max(0.1, (e.dur || 0.5) * scale);
         if (p === 'drums' || p === 'congas') { if (e.piece) out[p].push({ t: t, d: 0.25, m: e.piece, v: v }); }
         else if (p === 'bass') { if (e.midi != null) out.bass.push({ t: t, d: d, m: e.midi, v: v }); }
-        else (e.midis || []).forEach(function (m) { out.comp.push({ t: t, d: d, m: m, v: v }); }); }); });
+        else (e.midis || []).forEach(function (m) { out.comp.push({ t: t, d: d, m: m, v: v, s: e.strum }); }); }); });
     });
-    var len = off;
+    var len = off, rng = mulberry(feel && feel.seed != null ? feel.seed : (Math.random() * 4294967296) | 0);
+    ['bass', 'comp', 'drums', 'congas'].forEach(function (p) { if (feel && feel.amt > 0) applyFeel(out[p], p, tempo, feel.amt, rng, len); else out[p].forEach(function (n) { delete n.s; }); });
     return { len: len, bars: ch.bars * (times || 1), bass: out.bass, comp: out.comp, drums: out.drums, congas: out.congas,
       bassInst: opts.bassSound === 'electric' ? 'ebass' : 'bass', compInst: compInst(opts.compSound) };
   }
@@ -368,9 +465,9 @@
   // ---------------- one DAW ----------------
   function Daw(node) {
     var d = node.dataset, self = this;
-    this.node = node; this.key = 'mdaw:' + (d.id || 'default'); this.presetName = d.preset || 'empty';
+    this.node = node; this.storeKey = 'mdaw:' + (d.id || 'default'); this.presetName = d.preset || 'empty';
     var show = (d.show || 'transport tracks editor mixer band files record').split(/\s+/); this.show = {}; show.forEach(function (s) { self.show[s] = true; });
-    this.p = Meter.norm(store(this.key) || this.fresh());
+    this.p = Meter.norm(store(this.storeKey) || this.fresh());
     this.sel = { track: 0, clip: this.p.tracks[0] && this.p.tracks[0].clips.length ? 0 : -1, notes: [] };
     this.undo = []; this.redo = []; this.grid = 0.25; this.playing = false; this.recording = false; this.pos = 0; this.keysOn = false; this.octave = 0;
     this.strips = []; this.build(); this.renderAll(); this.loadTakes();
@@ -381,7 +478,7 @@
     want.forEach(function (id) { getTake(id).then(function (r) { if (r && !TAKES[id]) { makeTake(id, r.data, r.rate); self.renderTracks(); self.renderEditor(); } }); });
   };
   Daw.prototype.fresh = function () { var p = PRESETS[this.presetName] ? PRESETS[this.presetName]() : PRESETS.empty(); if (this.node.dataset.bars) p.bars = +this.node.dataset.bars; var ts = Meter.parse(this.node.dataset.ts); if (ts) p.ts = ts; return Meter.norm(p); };
-  Daw.prototype.save = function () { store(this.key, this.p); };
+  Daw.prototype.save = function () { store(this.storeKey, this.p); };
   Daw.prototype.change = function (fn, keepRender) {   // every edit goes through here: undo history, save, redraw
     this.undo.push(JSON.stringify(this.p)); if (this.undo.length > 100) this.undo.shift(); this.redo = [];
     fn(); this.save(); if (!keepRender) this.renderAll();
@@ -392,6 +489,7 @@
   };
   Daw.prototype.fixSel = function () {
     var s = this.sel; s.track = clamp(s.track, 0, Math.max(0, this.p.tracks.length - 1)); var tr = this.p.tracks[s.track];
+    if (s.slot >= 0 && !(tr && (tr.slots || [])[s.slot])) s.slot = -1;
     if (!tr || s.clip >= tr.clips.length) s.clip = tr && tr.clips.length ? tr.clips.length - 1 : -1; s.notes = [];
   };
   // a MIDI file in place of the song (undoable)
@@ -404,14 +502,14 @@
   };
   Daw.prototype.say = function (t) { this.statusEl.textContent = t; };
   Daw.prototype.track = function () { return this.p.tracks[this.sel.track]; };
-  Daw.prototype.clip = function () { var tr = this.track(); return tr && this.sel.clip >= 0 ? tr.clips[this.sel.clip] : null; };
+  Daw.prototype.clip = function () { var tr = this.track(); if (tr && this.sel.slot >= 0) return (tr.slots || [])[this.sel.slot] || null; return tr && this.sel.clip >= 0 ? tr.clips[this.sel.clip] : null; };
 
   Daw.prototype.build = function () {
     var self = this, n = this.node, d = n.dataset; n.innerHTML = ''; n.tabIndex = 0; n.setAttribute('role', 'application'); n.setAttribute('aria-label', 'A small DAW');
     // transport
     var tb = this.tb = el('div', 'mdaw-transport'); n.appendChild(tb);
-    this.bHome = btn('⏮', 'Back to the start (Enter)'); this.bPlay = btn('▶ Play', 'Play / stop (Space)', 'mdaw-play'); this.bRec = btn('● Rec', 'Record into the selected track (R)', 'mdaw-rec');
-    this.bLoop = btn('⟲ Loop', 'Loop (cycle) the bracket on the ruler (L)'); this.bClick = btn('♩ Click', 'Metronome (C)');
+    this.bHome = btn('⏮', 'Back to the start (Home)'); this.bPlay = btn('▶ Play', 'Play / stop (Space)', 'mdaw-play'); this.bRec = btn('● Rec', 'Record into the selected track (R)', 'mdaw-rec');
+    this.bLoop = btn('⟲ Loop', 'Loop (cycle) the bracket on the ruler (O)'); this.bClick = btn('♩ Click', 'Metronome (C)');
     this.posEl = el('span', 'mdaw-pos', '1.1.1'); this.posEl.title = 'Bar . beat . sixteenth';
     var tl = el('label', 'mdaw-lbl', 'Tempo '); this.tempoIn = el('input'); this.tempoIn.type = 'number'; this.tempoIn.min = 40; this.tempoIn.max = 220; this.tempoIn.setAttribute('aria-label', 'Tempo in BPM'); tl.appendChild(this.tempoIn); tl.appendChild(document.createTextNode(' BPM'));
     this.bUndo = btn('↶', 'Undo (Ctrl/Cmd+Z)'); this.bRedo = btn('↷', 'Redo (Ctrl/Cmd+Shift+Z)');
@@ -429,8 +527,9 @@
     this.bKeys.onclick = function () { self.keysOn = !self.keysOn; self.renderTransport(); self.node.focus(); };
     this.bMon.onclick = function () { self.monitor(!self.monOn); };
     this.bUndo.onclick = function () { self.doUndo(true); }; this.bRedo.onclick = function () { self.doUndo(false); };
-    this.tempoIn.onchange = function () { var v = clamp(+self.tempoIn.value || 100, 40, 220); self.change(function () { self.p.tempo = v; }); if (self.playing) self.reanchor(); };
+    this.tempoIn.onchange = function () { var v = clamp(+self.tempoIn.value || 100, 40, 220); self.change(function () { self.p.tempo = v; }); if (self.playing || self.sessOn) self.reanchor(); };
 
+    if (this.show.session && global.MiniDaw && global.MiniDaw.Session) global.MiniDaw.Session.build(this);
     // arrangement
     var arr = this.arr = el('div', 'mdaw-arr'); n.appendChild(arr); if (!this.show.tracks) arr.hidden = true;
     var tools = el('div', 'mdaw-tools'); arr.appendChild(tools);
@@ -452,8 +551,9 @@
       self.change(function () { Meter.set(self.p, bar, ts); }); if (self.playing) self.reanchor(); self.say('Time signature ' + Meter.str(ts) + (bar ? ' from bar ' + (bar + 1) : '') + '. Clips keep their place in beats; the bar lines moved.'); };
     this.tsList.onclick = function (e) { var b = e.target.closest && e.target.closest('button'); if (b) self.change(function () { self.p.tsMap = self.p.tsMap.filter(function (c) { return c.bar !== +b.dataset.bar; }); }); };
     [addSel, bAdd, bNew, bDup, bSplit, bDel, bLen, tsl, tsfrom, this.tsList].forEach(function (x) { tools.appendChild(x); });
+    if (this.show.automation) { this.bAuto = btn('Volume lane', 'Show the selected track\'s volume automation lane (V)'); this.bAuto.onclick = function () { self.toggleAuto(); }; tools.appendChild(this.bAuto); }
     var grid = this.gridEl = el('div', 'mdaw-grid'); arr.appendChild(grid);
-    arr.appendChild(el('p', 'mdaw-hint', 'Click a clip to select it, drag it to move it, drag its right edge to make it longer. Double-click an empty lane for a new clip. Drag along the ruler to set the loop; click it to move the playhead.'));
+    arr.appendChild(el('p', 'mdaw-hint', 'Click a clip to select it, drag it to move it, drag its right edge to make it longer. Double-click an empty lane for a new clip. Drag along the ruler to set the loop; click it to move the playhead. From the keyboard (click the DAW first): ← → (or h l) playhead, ↑ ↓ (k j) track, [ ] clip, N new clip, P place the Session clip, Shift+arrows move the clip, - = resize it; Alt for beats instead of bars; a number first repeats the key (3l: three bars).'));
 
     // editor
     var ed = this.ed = el('div', 'mdaw-editor'); n.appendChild(ed); if (!this.show.editor) ed.hidden = true;
@@ -492,8 +592,12 @@
         var o = el('option', null, s.label); o.value = s.id; g.appendChild(o); });
       this.styleSel.value = d.style || 'rock'; sl.appendChild(this.styleSel);
       var tml = el('label', 'mdaw-lbl', 'Times '); this.timesIn = el('input'); this.timesIn.type = 'number'; this.timesIn.min = 1; this.timesIn.max = 8; this.timesIn.value = 2; this.timesIn.setAttribute('aria-label', 'Times through the chords'); tml.appendChild(this.timesIn);
+      var fl2 = el('label', 'mdaw-lbl', 'Feel '); this.feelSel = el('select'); this.feelSel.setAttribute('aria-label', 'Feel: how loosely the band plays');
+      [['0', 'Tight (on the grid)'], ['1', 'Band feel'], ['2', 'Looser']].forEach(function (o) { var e2 = el('option', null, o[1]); e2.value = o[0]; self.feelSel.appendChild(e2); });
+      this.feelSel.value = d.feel === 'band' ? '1' : d.feel === 'loose' ? '2' : '0'; this.feelSel.title = 'Band feel: each part a touch ahead or behind the beat, a little random, chords rolled, velocity wandering: as the Backing Track plays. Tempo stays steady.'; fl2.appendChild(this.feelSel);
       var bGo = btn('Write the parts', 'Make drum, bass and chord clips at the playhead', 'btn-primary'); bGo.onclick = function () { self.bandWrite(); };
-      [chl, sl, tml, bGo].forEach(function (x) { row.appendChild(x); });
+      var bHum = btn('Humanize clip', 'Give the selected clip the band\'s feel (the Feel setting; Band feel if it is Tight). Once per clip: Quantize takes it out again.'); bHum.onclick = function () { self.humanize(); };
+      [chl, sl, tml, fl2, bGo, bHum].forEach(function (x) { row.appendChild(x); });
     }
     // files
     if (this.show.files) {
@@ -519,7 +623,7 @@
   };
 
   // ---------------- drawing ----------------
-  Daw.prototype.renderAll = function () { this.renderTransport(); this.renderTracks(); this.renderEditor(); this.renderMixer(); this.applyMix(); };
+  Daw.prototype.renderAll = function () { this.renderTransport(); this.renderTracks(); this.renderEditor(); this.renderMixer(); this.applyMix(); if (this.renderSession) this.renderSession(); };
   Daw.prototype.renderTransport = function () {
     var p = this.p; this.tempoIn.value = p.tempo; this.barsIn.value = p.bars;
     var cur = Meter.str(Meter.tsOfBar(p, clamp(Math.round(+this.tsBar.value || 1), 1, p.bars) - 1)), opts = TS_LIST.map(Meter.str); [p.ts].concat(p.tsMap.map(function (c) { return c.ts; })).forEach(function (t) { if (opts.indexOf(Meter.str(t)) < 0) opts.push(Meter.str(t)); });
@@ -533,6 +637,7 @@
     this.bRec.classList.toggle('mdaw-recon', this.recording);
     var tr = this.track(), au = !!(tr && isAudio(tr)); this.bMon.hidden = !au; this.bKeys.hidden = au || !this.show.transport;
     this.bMon.classList.toggle('mdaw-on', !!this.monOn); this.bMon.setAttribute('aria-pressed', String(!!this.monOn)); this.inMeter.hidden = !this.mic;
+    if (this.sessTransport) this.sessTransport();
   };
   Daw.prototype.beatW = function () { return 26; };   // pixels a beat in the arrangement
   Daw.prototype.renderTracks = function () {
@@ -567,11 +672,12 @@
       th.appendChild(name); th.appendChild(line); row.appendChild(th);
       var lane = el('div', 'mdaw-lane'); lane.style.width = (total * W) + 'px'; lane.dataset.track = ti;
       lane.addEventListener('dblclick', function (e) { if (e.target !== lane) return; var r = lane.getBoundingClientRect(); self.newClip(ti, Meter.floor(self.p, (e.clientX - r.left) / W)); });
-      lane.addEventListener('pointerdown', function (e) { if (e.target === lane) { self.sel = { track: ti, clip: -1, notes: [] }; self.markRows(); self.renderEditor(); self.renderTracks(); } });
+      lane.addEventListener('pointerdown', function (e) { if (e.target === lane) { self.sel = { track: ti, clip: -1, slot: -1, notes: [] }; self.markRows(); self.renderEditor(); self.renderTracks(); } });
       tr.clips.forEach(function (c, ci) { lane.appendChild(self.clipEl(tr, ti, c, ci, col)); });
       row.appendChild(lane); g.appendChild(row);
     });
     if (!p.tracks.length) g.appendChild(el('p', 'mdaw-hint', 'No tracks yet: add one above' + (this.show.band ? ', or let the band write some below.' : '.')));
+    if (this.autoOn && this.show.automation && p.tracks.length) g.appendChild(this.autoRow());
     this.head = el('div', 'mdaw-head'); this.head.style.left = (196 + this.pos * W) + 'px'; g.appendChild(this.head);
   };
   Daw.prototype.markRows = function () { var s = this.sel.track; Array.prototype.forEach.call(this.gridEl.querySelectorAll('.mdaw-row:not(.mdaw-rulerrow)'), function (r, i) { r.classList.toggle('mdaw-selrow', i === s); }); };
@@ -589,7 +695,7 @@
       else { y = hi === lo ? 15 : 30 - (n.m - lo) / (hi - lo) * 28; cx.fillRect(n.t * W, y, Math.max(2, n.d * W - 1), 2); } });
     var grip = el('div', 'mdaw-grip'); grip.title = 'Drag to change the clip\'s length'; e.appendChild(grip);
     e.addEventListener('pointerdown', function (ev) {
-      ev.stopPropagation(); self.sel = { track: ti, clip: ci, notes: [] }; self.node.focus({ preventScroll: true });
+      ev.stopPropagation(); self.sel = { track: ti, clip: ci, slot: -1, notes: [] }; self.node.focus({ preventScroll: true });
       var resize = ev.target === grip, x0 = ev.clientX, start0 = c.start, len0 = c.len, lanes = self.gridEl.querySelectorAll('.mdaw-lane[data-track]'), moved = false, toTrack = ti, P = self.p, alt = ev.altKey, end0 = start0 + len0;
       var before = JSON.stringify(self.p);
       function mv(m) { var dx = (m.clientX - x0) / W, db = alt ? Math.round(dx) : Meter.nearest(P, (resize ? end0 : start0) + dx) - Meter.nearest(P, resize ? end0 : start0); if (db) moved = true;
@@ -617,9 +723,10 @@
     if (!tr || !c) { this.edTitle.textContent = 'Editor'; this.clipLen.value = ''; roll.appendChild(el('p', 'mdaw-hint', tr ? 'Select a clip on ' + tr.name + ', or double-click its lane for a new one.' : 'Select a clip.')); this.edHint.textContent = ''; return; }
     this.clipLen.value = Meter.barsOfLen(this.p, c.start, c.len);
     var drum = isDrum(tr), G = this.grid, cols = Math.round(c.len / G), cw = G >= 1 ? 40 : G >= 0.5 ? 26 : 20, rh = drum ? 20 : 13;
-    this.edTitle.textContent = (drum ? 'Step sequencer' : 'Piano roll') + ': ' + tr.name + ', bar ' + (Meter.barAt(this.p, c.start).bar + 1) + ' (' + Meter.str(Meter.barAt(this.p, c.start).ts) + ')';
+    this.edTitle.textContent = (drum ? 'Step sequencer' : 'Piano roll') + ': ' + tr.name + (this.sel.slot >= 0 ? ', scene ' + (this.sel.slot + 1) + ' (' + ((this.p.scenes[this.sel.slot] || {}).name || '') + '), loops' : ', bar ' + (Meter.barAt(this.p, c.start).bar + 1) + ' (' + Meter.str(Meter.barAt(this.p, c.start).ts) + ')');
     this.edHint.textContent = drum ? 'Click a square to put a hit there or take it away. Shift+click makes it an accent, Alt+click a ghost note. Brightness is velocity.'
       : 'Click an empty spot to write a note one grid step long; drag a note to move it, drag its right end to make it longer; Shift+click selects several; Delete removes; double-click a note to delete it. The bars under the notes are velocities: drag them.';
+    if (this.vim && this.vim.on) this.vimDecor();
     var rows = drum ? rowsOf(tr).map(function (r) { return { key: r[0], label: r[1] }; }) : (function () {
       var ms = c.notes.map(function (n) { return n.m; }), base = /bass/.test(tr.inst) ? [28, 60] : [48, 84];
       var lo = Math.min.apply(null, ms.concat([base[0]])), hi = Math.max.apply(null, ms.concat([base[1]])), out = [];
@@ -647,7 +754,7 @@
         x.globalAlpha = 1; });
       if (!drum) { x.fillStyle = line; x.fillRect(0, H, Wd, 1); }
     }
-    draw(); this.redrawRoll = draw;
+    draw(); this.redrawRoll = draw; this.rollGeom = { wrap: wrap, bpx: bpx, rh: rh, rowOf: rowOf };
     cv.addEventListener('contextmenu', function (e) { e.preventDefault(); });
     cv.addEventListener('pointerdown', function (e) {
       var r = cv.getBoundingClientRect(), px = e.clientX - r.left, py = e.clientY - r.top, before = JSON.stringify(self.p), changed = false;
@@ -695,7 +802,7 @@
     var row = el('div', 'mdaw-strips'); mx.appendChild(row);
     function strip(name, obj, ti, color) {
       var s = el('div', 'mdaw-strip'); if (color) s.style.borderTopColor = color;
-      s.appendChild(el('div', 'mdaw-sname', name));
+      s.appendChild(el('div', 'mdaw-sname', name + (ti >= 0 && autoPts(obj) ? ' (A)' : '')));
       if (ti >= 0) { var pl = el('label', 'mdaw-pan'); pl.appendChild(el('span', null, 'Pan'));
         var pan = el('input'); pan.type = 'range'; pan.min = -100; pan.max = 100; pan.value = Math.round(obj.pan * 100); pan.setAttribute('aria-label', 'Pan ' + name);
         var po = el('output', 'mdaw-num', panTxt(obj.pan)); pan.oninput = function () { obj.pan = +pan.value / 100; po.textContent = panTxt(obj.pan); self.applyMix(); };
@@ -703,6 +810,7 @@
         pl.appendChild(pan); pl.appendChild(po); s.appendChild(pl); }
       var mid = el('div', 'mdaw-fadwrap'), fad = el('input', 'mdaw-fader'); fad.type = 'range'; fad.min = -60; fad.max = 6; fad.step = 0.5; fad.value = obj.vol; fad.setAttribute('aria-label', 'Volume ' + name);
       var meter = el('div', 'mdaw-meter'), fill = el('div', 'mdaw-mfill'), peak = el('div', 'mdaw-mpeak'); meter.appendChild(fill); meter.appendChild(peak); mid.appendChild(fad); mid.appendChild(meter); s.appendChild(mid);
+      if (ti >= 0 && autoPts(obj)) { fad.disabled = true; fad.title = 'This track\'s level is volume automation: edit the points, or delete them to use the fader.'; }
       var fo = el('output', 'mdaw-num', dbTxt(obj.vol)); s.appendChild(fo);
       fad.oninput = function () { obj.vol = +fad.value; fo.textContent = dbTxt(obj.vol); self.applyMix(); };
       fad.onchange = function () { self.undo.push(JSON.stringify(self.p)); self.save(); }; fad.ondblclick = function () { fad.value = 0; fad.oninput(); fad.onchange(); };
@@ -733,7 +841,10 @@
   Daw.prototype.applyMix = function () {
     if (!this.master) return; var anySolo = this.p.tracks.some(function (t) { return t.solo; }), self = this, now = AC.currentTime;
     this.p.tracks.forEach(function (tr, i) { var s = self.strips[i]; if (!s) return; var on = !tr.mute && (!anySolo || tr.solo);
-      s.fader.gain.setTargetAtTime(on ? dbToGain(tr.vol) : 0, now, 0.01); if (s.pan.pan) s.pan.pan.setTargetAtTime(tr.pan, now, 0.01); });
+      var pts = autoPts(tr);       // automation replaces the fader: the fader stays at 1 and the automation node carries the level (the level at the playhead when stopped)
+      s.fader.gain.setTargetAtTime(on ? (pts ? 1 : dbToGain(tr.vol)) : 0, now, 0.01);
+      if (!self.playing) s.auto.gain.setTargetAtTime(pts ? dbToGain(autoAt(pts, self.pos)) : 1, now, 0.01);
+      if (s.pan.pan) s.pan.pan.setTargetAtTime(tr.pan, now, 0.01); });
     this.master.gain.setTargetAtTime(dbToGain((this.p.master || { vol: 0 }).vol), now, 0.01);
   };
   Daw.prototype.load = function () {
@@ -753,7 +864,7 @@
   Daw.prototype.loopRange = function () { var l = this.p.loop; return l.on && l.to > l.from ? [Meter.barStart(this.p, l.from), Meter.barStart(this.p, l.to)] : null; };
   Daw.prototype.toggle = function () { if (this.playing) this.stop(); else this.play(); };
   Daw.prototype.play = function (countIn) {
-    var self = this; this.ensureAudio();
+    var self = this; if (this.sessStop) this.sessStop(); this.ensureAudio();
     return this.load().then(function () {
       if (self.playing) return; var ctx = AC, lr = self.loopRange();
       if (lr && (self.pos < lr[0] || self.pos >= lr[1])) self.pos = lr[0];
@@ -767,7 +878,7 @@
     }).catch(function (e) { self.say('Could not load the sounds: ' + (e && e.message)); });
   };
   Daw.prototype.timeOf = function (b) { var a = this.anchors[this.anchors.length - 1]; return a.t + (b - a.b) * this.secPerBeat(); };
-  Daw.prototype.reanchor = function () { if (!this.playing || this.recording) return; this.stop(); this.play(); };   // a new tempo: start again from here
+  Daw.prototype.reanchor = function () { if (this.sessOn && this.sessRebase) this.sessRebase(); if (!this.playing || this.recording) return; this.stop(); this.play(); };   // a new tempo: start again from here
   Daw.prototype.beatAt = function (t) { var a = this.anchors[0]; for (var i = this.anchors.length - 1; i >= 0; i--) if (this.anchors[i].t <= t) { a = this.anchors[i]; break; } return a.b + (t - a.t) / this.secPerBeat(); };
   Daw.prototype.schedule = function () {
     var ctx = AC, horizon = ctx.currentTime + 0.15, step = 0.25, self = this, anySolo = false;
@@ -778,7 +889,8 @@
         if (!lr || this.recording) { var te = this.timeOf(end); this.stopAt = te; break; }
       }
       if (this.p.click || this.recording) Meter.clicks(this.p, b0, b1).forEach(function (k) { click(ctx, self.timeOf(k.b), k.accent, self.master); });
-      this.p.tracks.forEach(function (tr, i) { var dest = self.strips[i].input;
+      this.p.tracks.forEach(function (tr, i) { var dest = self.strips[i].input, ap = autoPts(tr);
+        if (ap) { var ag = self.strips[i].auto.gain; if (jumped) ag.setValueAtTime(dbToGain(autoAt(ap, b0)), self.timeOf(b0)); ag.linearRampToValueAtTime(dbToGain(autoAt(ap, b1)), self.timeOf(b1)); }
         tr.clips.forEach(function (c) { if (c.start >= b1 || c.start + c.len <= b0) return;
           if (isAudio(tr)) { var endB = lr ? Math.min(lr[1], c.start + c.len) : c.start + c.len;
             if (c.start >= b0 - 1e-9) self.startAudio(ctx, c, c.start, self.timeOf(c.start), dest, endB, true);
@@ -801,12 +913,13 @@
   };
   Daw.prototype.stop = function (atEnd) {
     if (!this.playing) { return; }
+    this.strips.forEach(function (s) { try { s.auto.gain.cancelScheduledValues(0); } catch (e) {} });
     clearInterval(this.timer); this.playing = false; this.stopAt = null; bank.stopAll();
     (this.srcs || []).forEach(function (x) { try { x.stop(); } catch (e) {} }); this.srcs = [];
     var wasRec = this.recording; this.recording = false;
     if (wasRec) this.finishTake();
     this.setPos(atEnd ? (this.loopRange() ? this.loopRange()[0] : 0) : Math.floor(this.pos * 4) / 4);
-    this.renderTransport();
+    this.applyMix(); this.renderTransport();
   };
   Daw.prototype.locate = function (b) { var was = this.playing; if (was) this.stop(); this.setPos(b); if (was) this.play(); };
   Daw.prototype.meterLoop = function () {
@@ -955,32 +1068,41 @@
   Daw.prototype.newClip = function (ti, start) { var tr = this.p.tracks[ti], self = this; if (!tr) return;
     var bl = Meter.barLen(this.p, Meter.barAt(this.p, start).bar);
     this.change(function () { tr.clips.push({ start: clamp(start, 0, Math.max(0, Meter.total(self.p) - bl)), len: bl, notes: [] }); self.sel = { track: ti, clip: tr.clips.length - 1, notes: [] }; }); };
-  Daw.prototype.duplicate = function () { var c = this.clip(), tr = this.track(), self = this; if (!c) return this.say('Select a clip first.');
+  Daw.prototype.duplicate = function () { var c = this.clip(), tr = this.track(), self = this; if (!c) return this.say('Select a clip first.'); if (this.sel.slot >= 0) return this.say('A session clip loops by itself; to copy a whole scene use the scene\'s copy button.');
     this.change(function () { var n = clone(c); n.start = c.start + c.len; tr.clips.push(n); self.sel.clip = tr.clips.length - 1; if (n.start + n.len > Meter.total(self.p) + 1e-9) self.p.bars = Math.min(64, Meter.barAt(self.p, n.start + n.len - 1e-9).bar + 1); }); };
   Daw.prototype.split = function () { var c = this.clip(), tr = this.track(), at = Math.round(this.pos / this.grid) * this.grid, self = this;
+    if (this.sel.slot >= 0) return this.say('A session clip is not split; it loops.');
     if (!c || at <= c.start || at >= c.start + c.len) return this.say('Put the playhead inside the selected clip, then Split.');
     this.change(function () { var cut = at - c.start, b = Object.assign(clone(c), { start: at, len: c.len - cut, off: (c.off || 0) - cut, notes: c.notes.filter(function (n) { return n.t >= cut; }).map(function (n) { return Object.assign({}, n, { t: n.t - cut }); }) });
       c.notes = c.notes.filter(function (n) { return n.t < cut; }); c.len = cut; tr.clips.push(b); }); };
-  Daw.prototype.deleteSel = function () { var c = this.clip(), tr = this.track(), self = this; if (!c) return;
+  Daw.prototype.deleteSel = function () { var c = this.clip(), tr = this.track(), self = this; if (this.autoDelete()) return; if (!c) return;
     if (this.sel.notes.length) { this.change(function () { c.notes = c.notes.filter(function (n, i) { return self.sel.notes.indexOf(i) < 0; }); self.sel.notes = []; }); return; }
+    if (this.sel.slot >= 0) { this.change(function () { tr.slots[self.sel.slot] = null; self.sel.slot = -1; }); return; }
     this.change(function () { tr.clips.splice(self.sel.clip, 1); self.sel.clip = -1; }); };
   Daw.prototype.quantize = function (strength) { var c = this.clip(), G = this.grid, self = this; if (!c) return this.say('Select a clip first.');
-    this.change(function () { c.notes.forEach(function (n, i) { if (self.sel.notes.length && self.sel.notes.indexOf(i) < 0) return; var q = Math.round(n.t / G) * G; n.t = Math.max(0, n.t + (q - n.t) * strength);
+    this.change(function () { if (strength === 1 && !self.sel.notes.length) delete c.felt; c.notes.forEach(function (n, i) { if (self.sel.notes.length && self.sel.notes.indexOf(i) < 0) return; var q = Math.round(n.t / G) * G; n.t = Math.max(0, n.t + (q - n.t) * strength);
       if (strength === 1 && !isDrum(self.track())) n.d = Math.max(G, Math.round(n.d / G) * G); }); });
     this.say('Quantized to the ' + this.gridSel.options[this.gridSel.selectedIndex].text + ' grid' + (strength < 1 ? ', half way' : '') + '.'); };
   Daw.prototype.transpose = function (s) { var c = this.clip(), self = this; if (!c || isDrum(this.track())) return;
     this.change(function () { c.notes.forEach(function (n, i) { if (!self.sel.notes.length || self.sel.notes.indexOf(i) >= 0) n.m = clamp(n.m + s, 21, 108); }); }); };
+  Daw.prototype.humanize = function (seed) {
+    var c = this.clip(), tr = this.track(), self = this; if (!c || !tr || isAudio(tr)) return this.say('Select a note or drum clip first.');
+    if (c.felt) return this.say('This clip already has a feel (' + (c.felt === 1 ? 'band' : 'looser') + '). Undo it, or Quantize to take it out, before humanizing again.');
+    var amt = +(this.feelSel && this.feelSel.value) || 1, part = partOfInst(tr.inst), rng = mulberry(seed != null ? seed : (Math.random() * 4294967296) | 0);
+    this.change(function () { applyFeel(c.notes, part, self.p.tempo, amt, rng, c.len); c.felt = amt; });
+    this.say('Gave the ' + tr.name + ' clip ' + (amt === 1 ? 'the band\'s' : 'a looser') + ' feel: ' + (part === 'drums' ? 'a hair of looseness' : part === 'bass' ? 'a touch ahead of the beat' : part === 'congas' ? 'a hair of looseness' : 'a touch behind the beat, chords rolled') + ', velocities wandering a little. The tempo is still steady.');
+  };
   Daw.prototype.bandWrite = function () {
-    var self = this, r; try { r = bandParts(this.chartIn.value, this.styleSel.value, this.p.tempo, clamp(+this.timesIn.value || 1, 1, 8), Meter.tsOfBar(this.p, Meter.barAt(this.p, this.pos).bar)); } catch (e) { return this.say(e.message); }
+    var self = this, r; try { r = bandParts(this.chartIn.value, this.styleSel.value, this.p.tempo, clamp(+this.timesIn.value || 1, 1, 8), Meter.tsOfBar(this.p, Meter.barAt(this.p, this.pos).bar), { amt: +this.feelSel.value || 0 }); } catch (e) { return this.say(e.message); }
     var at = Meter.floor(this.p, this.pos), label = this.styleSel.options[this.styleSel.selectedIndex].text;
     this.change(function () {
       function put(name, inst, notes) { if (!notes.length) return; var tr = null;
         self.p.tracks.forEach(function (t) { if (!tr && t.name === name) tr = t; }); if (!tr) { tr = track(name, inst); self.p.tracks.push(tr); } else tr.inst = inst;
-        tr.clips = tr.clips.filter(function (c) { return c.start + c.len <= at || c.start >= at + r.len; }); tr.clips.push({ start: at, len: r.len, notes: notes }); }
+        tr.clips = tr.clips.filter(function (c) { return c.start + c.len <= at || c.start >= at + r.len; }); var cl = { start: at, len: r.len, notes: notes }; if (+self.feelSel.value > 0) cl.felt = +self.feelSel.value; tr.clips.push(cl); }
       put('Drums', 'kit', r.drums); put('Congas', 'congas', r.congas); put('Bass', r.bassInst, r.bass); put('Chords', r.compInst, r.comp);
       self.p.bars = Math.max(self.p.bars, Math.min(64, Meter.barAt(self.p, at + r.len - 1e-9).bar + 1)); self.sel = { track: 0, clip: 0, notes: [] };
     });
-    this.say('The band wrote ' + r.bars + ' bars of ' + label + ' from bar ' + (Meter.barAt(this.p, at).bar + 1) + (r.len !== Meter.lenOfBars(this.p, at, r.bars) ? ' (in ' + Meter.str(Meter.tsOfBar(this.p, Meter.barAt(this.p, at).bar)) + '; the song changes meter inside them, so check the bar lines)' : '') + '. Every note is now yours to edit.'); this.load();
+    this.say('The band wrote ' + r.bars + ' bars of ' + label + ' from bar ' + (Meter.barAt(this.p, at).bar + 1) + (r.len !== Meter.lenOfBars(this.p, at, r.bars) ? ' (in ' + Meter.str(Meter.tsOfBar(this.p, Meter.barAt(this.p, at).bar)) + '; the song changes meter inside them, so check the bar lines)' : '') + (+this.feelSel.value > 0 ? ' with ' + this.feelSel.options[this.feelSel.selectedIndex].text.toLowerCase() + ' (tempo steady)' : '') + '. Every note is now yours to edit.'); this.load();
   };
   Daw.prototype.bounce = function () {
     var self = this, p = this.p, secs = Meter.total(p) * this.secPerBeat() + 2.5, rate = 44100;
@@ -990,7 +1112,8 @@
     this.say('Bouncing…');
     master.gain.value = dbToGain((p.master || { vol: 0 }).vol);
     b2.load(Object.keys(want)).then(function () {
-      p.tracks.forEach(function (tr) { var s = makeStrip(oc, master); s.fader.gain.value = !tr.mute && (!anySolo || tr.solo) ? dbToGain(tr.vol) : 0; if (s.pan.pan) s.pan.pan.value = tr.pan;
+      p.tracks.forEach(function (tr) { var s = makeStrip(oc, master); var ap = autoPts(tr); s.fader.gain.value = !tr.mute && (!anySolo || tr.solo) ? (ap ? 1 : dbToGain(tr.vol)) : 0; if (s.pan.pan) s.pan.pan.value = tr.pan;
+        if (ap) { s.auto.gain.setValueAtTime(dbToGain(autoAt(ap, 0)), 0); for (var ab = 0.0625; ab <= Meter.total(p) + 0.0625; ab += 0.0625) s.auto.gain.linearRampToValueAtTime(dbToGain(autoAt(ap, ab)), 0.05 + ab * self.secPerBeat()); }
         if (isAudio(tr)) { tr.clips.forEach(function (c) { self.startAudio(oc, c, Math.max(0, c.start), 0.05 + c.start * self.secPerBeat(), s.input, Meter.total(p)); }); return; }
         tr.clips.forEach(function (c) { c.notes.forEach(function (n) { if (n.t >= c.len || c.start + n.t >= Meter.total(p)) return;
           playNote(b2, tr, n, 0.05 + (c.start + n.t) * self.secPerBeat(), Math.min(n.d, c.len - n.t) * self.secPerBeat(), s.input); }); }); });
@@ -1014,17 +1137,285 @@
     }
     if (this.keysOn && !mod && tr && e.repeat && (PIANO_KEYS.indexOf(k.toLowerCase()) >= 0 || DRUM_KEYS[k.toLowerCase()])) { e.preventDefault(); return; }
     if (!down) return;
-    if (k === ' ') { e.preventDefault(); this.toggle(); }
-    else if (k === 'Enter') { e.preventDefault(); this.locate(0); }
+    if (this.vim && this.vim.on && this.edKey(e)) { e.preventDefault(); return; }
+    // vim-style counts: digits build a number that the next key uses ("3k": three steps up, 3 dB on an automation point); any other key uses it up
+    if (!mod && !e.altKey && !this.keysOn && /^[0-9]$/.test(k) && (k !== '0' || this.count)) { e.preventDefault(); this.count = Math.min(999, (this.count || 0) * 10 + +k); this.say('× ' + this.count + ' …'); return; }
+    this.n = Math.max(1, this.count || 0); this.count = 0;
+    if (k === ' ' && this.sessOn) { e.preventDefault(); this.sessStopAll(); }
+    else if (k === ' ') { e.preventDefault(); this.toggle(); }
+    else if (k === 'Enter' && !this.keysOn && !this.recording && this.vimOn()) { e.preventDefault(); }
+    else if (k === 'Enter' || k === 'Home') { e.preventDefault(); this.locate(0); }
     else if (mod && (k === 'z' || k === 'Z')) { e.preventDefault(); this.doUndo(!e.shiftKey); }
     else if (mod && (k === 'd' || k === 'D')) { e.preventDefault(); this.duplicate(); }
     else if (mod) return;
     else if (k === 'Delete' || k === 'Backspace') { e.preventDefault(); this.deleteSel(); }
     else if (this.keysOn) return;
-    else if (k === 'l' || k === 'L') { this.bLoop.click(); }
+    else if (this.arrKey(e)) { e.preventDefault(); }
+    else if (k === 'o' || k === 'O') { this.bLoop.click(); }
     else if (k === 'c' || k === 'C') { this.bClick.click(); }
     else if ((k === 'r' || k === 'R') && this.show.record) { this.record(); }
     else if (k === 'q' || k === 'Q') { this.quantize(1); }
+  };
+
+  // ---------------- placing clips from the keyboard (Arrangement) ----------------
+  // ← → playhead a bar (Alt: a beat); ↑ ↓ the track (and the clip under the playhead); [ ] the previous / next clip on the track;
+  // N a new empty clip at the playhead; P puts the selected Session clip at the playhead and moves the playhead to its end (P P P lays it three times);
+  // Shift+← → moves the selected clip a bar (Alt: a beat); Shift+↑ ↓ moves it to the track above / below (same kind); - and = shorten / lengthen it by a bar (Alt: a beat).
+  // h j k l are ← ↓ ↑ → (Shift: H J K L = Shift+arrows; Alt works too: the physical key is read, not the character it makes on a Mac)
+  var VIM = { h: 'ArrowLeft', j: 'ArrowDown', k: 'ArrowUp', l: 'ArrowRight' }, VIM_CODE = { KeyH: 'ArrowLeft', KeyJ: 'ArrowDown', KeyK: 'ArrowUp', KeyL: 'ArrowRight' };
+  function navKey(e) { if (e.ctrlKey || e.metaKey) return e.key; if (e.code && VIM_CODE[e.code]) return VIM_CODE[e.code]; return e.key && e.key.length === 1 && !e.code && VIM[e.key.toLowerCase()] || e.key; }
+  function barStep(p, beat, dir) {      // the bar line after (dir 1) or before (dir -1) a beat
+    var a = Meter.barAt(p, beat + 1e-9);
+    if (dir > 0) return a.start + a.len;
+    return beat - a.start > 1e-6 ? a.start : Meter.barStart(p, Math.max(0, a.bar - 1));
+  }
+  Daw.prototype.revealHead = function () { var g = this.gridEl, x = 196 + this.pos * this.beatW(); if (!g) return;
+    if (x < g.scrollLeft + 230 || x > g.scrollLeft + g.clientWidth - 30) g.scrollLeft = Math.max(0, x - 260); };
+  Daw.prototype.clipAtPos = function (ti, beat) { var tr = this.p.tracks[ti], at = -1; if (tr) tr.clips.forEach(function (c, i) { if (c.start <= beat + 1e-9 && beat < c.start + c.len - 1e-9) at = i; }); return at; };
+  Daw.prototype.pick = function (ti, ci) { this.sel = { track: ti, clip: ci, slot: -1, notes: [] }; this.renderTracks(); this.renderEditor(); this.revealHead(); };
+  // ---------------- note mode: vim-style velocity editing ----------------
+  // Enter on a selected clip puts a cursor on its notes (in time order, a chord's notes low to high); Esc leaves.
+  //   [count] operator motion      counts BEFORE the operator say how much (3> = three steps), counts AFTER say how far (>2w = two chords)
+  //   motions   h l previous / next note   j k down / up within the chord   w b e next / previous / last note of the chord ("word")
+  //             ( ) previous / next beat (a quarter note)   { } previous / next bar   0 $ first / last note of the clip
+  //   objects   iw the note  ic its chord  ih its beat  ib its bar  ip the whole clip  iv the top line (the highest note of each chord)
+  //   operators > < louder / quieter by STEP   gU accent (+ACCENT)   gu ghost (set to GHOST); doubled (>> gUU guu) = this chord (N chords after it)
+  //   r1-r8     set the chord to a dynamic (ppp pp p mp mf f ff fff);  . repeat the last change;  u / Ctrl-r undo / redo;  Esc
+  // Like vim, an operator with h or b covers the notes BEFORE the cursor, with l / w / ) / } the cursor and the ones up to the next stop.
+  var STEP = 8 / 127, ACCENT = 20 / 127, GHOST = 0.35, DYN = [16, 32, 48, 64, 80, 96, 112, 127], DYN_NAME = ['ppp', 'pp', 'p', 'mp', 'mf', 'f', 'ff', 'fff'];
+  var MOTIONS = 'hjklwbe(){}0$';
+  Daw.prototype.vimKeyId = function () { var s = this.sel; return s.track + ':' + s.clip + ':' + s.slot; };
+  Daw.prototype.vimOn = function () {
+    var c = this.clip(), tr = this.track(); if (!c || !tr || isAudio(tr) || !this.show.editor || this.inSessionEdit === false) return false;
+    this.vim = { on: true, c1: 0, c2: 0, op: null, g: false, i: false, r: false, last: null, cur: -1, id: this.vimKeyId() };
+    var m = this.vimModel(); if (!m.L.length) { this.vim.on = false; this.say('This clip has no notes yet: write some first (click the roll, or record).'); return false; }
+    this.vim.cur = m.L[0]; this.sel.notes = [m.L[0]]; this.sel.pt = -1; this.renderEditor();
+    this.say('Note mode: h l notes, j k within a chord, w b e chords, ( ) beats, { } bars; > < louder / quieter, gU accent, gu ghost, r1–8 dynamic, . repeat, u undo, Esc leaves.'); return true;
+  };
+  Daw.prototype.vimOff = function (msg) { if (!this.vim) return; this.vim.on = false; this.sel.notes = []; this.renderEditor(); this.say(msg || 'Left note mode.'); };
+  Daw.prototype.vimDecor = function () { this.edTitle.textContent += ' · note mode'; this.edHint.textContent = 'NOTE MODE. h l notes · j k in a chord · w b e chords · ( ) beats · { } bars · 0 $ ends · > < louder / quieter · gU accent · gu ghost · r1–r8 dynamic (r5 = mf) · counts: 3> = 3 steps, >2w = 2 chords · objects ic ib ih ip iv iw (>ib) · . repeat · u undo · Esc leaves.'; };
+  // the clip's sounding notes as a sorted list L of note indices, with where each chord / beat / bar starts and ends (as positions in L)
+  Daw.prototype.vimModel = function () {
+    var c = this.clip(), tr = this.track(), p = this.p, drum = isDrum(tr), rows = drum ? rowsOf(tr).map(function (r) { return r[0]; }) : null;
+    function rank(n) { return drum ? rows.length - rows.indexOf(n.m) : n.m; }
+    var L = []; c.notes.forEach(function (n, i) { if (n.t < c.len) L.push(i); });
+    L.sort(function (a, b) { return (c.notes[a].t - c.notes[b].t) || (rank(c.notes[a]) - rank(c.notes[b])); });
+    function spans(keyOf) { var out = [], last = null; L.forEach(function (i, pos) { var k = keyOf(c.notes[i]); if (last === null || Math.abs(k - last) > 1e-6) { out.push({ from: pos, to: pos }); last = k; } else out[out.length - 1].to = pos; }); return out; }
+    var chords = spans(function (n) { return n.t; }), beats = spans(function (n) { return Math.floor(n.t + 1e-6); }), bars = spans(function (n) { return Meter.barAt(p, c.start + n.t).bar; });
+    function at(list, pos) { for (var k = 0; k < list.length; k++) if (pos >= list[k].from && pos <= list[k].to) return k; return 0; }
+    return { c: c, L: L, chords: chords, beats: beats, bars: bars, at: at, pos: function (noteIdx) { return L.indexOf(noteIdx); } };
+  };
+  // the positions a motion or text object covers, for an operator (cursor at cp, motion count N); null if there is nothing there
+  function vimRange(m, cp, key, N, object) {
+    var n = m.L.length, out = [], g, i;
+    function run(a, b) { for (var q = Math.max(0, a); q <= Math.min(n - 1, b); q++) out.push(q); }
+    function unit(list) { var k = m.at(list, cp), last = Math.min(list.length - 1, k + N - 1); return [list[k].from, list[last].to]; }
+    function forward(list) { var k = m.at(list, cp), to = k + N < list.length ? list[k + N].from - 1 : n - 1; return [cp, to]; }
+    function back(list) { var k = m.at(list, cp), t = cp > list[k].from ? k - (N - 1) : k - N; t = Math.max(0, t); return [list[t].from, cp - 1]; }
+    var r;
+    if (object) {
+      if (key === 'w') r = [cp, cp + N - 1]; else if (key === 'c') r = unit(m.chords); else if (key === 'h') r = unit(m.beats); else if (key === 'b') r = unit(m.bars); else if (key === 'p') r = [0, n - 1];
+      else if (key === 'v') { m.chords.forEach(function (g2) { out.push(g2.to); }); return out; } else return null;
+      run(r[0], r[1]); return out;
+    }
+    if (key === 'l') r = [cp, cp + N - 1]; else if (key === 'h') r = [cp - N, cp - 1];
+    else if (key === 'k') { g = m.chords[m.at(m.chords, cp)]; r = [cp, Math.min(g.to, cp + N)]; } else if (key === 'j') { g = m.chords[m.at(m.chords, cp)]; r = [Math.max(g.from, cp - N), cp]; }
+    else if (key === 'w') r = forward(m.chords); else if (key === 'b') r = back(m.chords); else if (key === 'e') r = [cp, m.chords[Math.min(m.chords.length - 1, m.at(m.chords, cp) + N - 1)].to];
+    else if (key === ')') r = forward(m.beats); else if (key === '(') r = back(m.beats); else if (key === '}') r = forward(m.bars); else if (key === '{') r = back(m.bars);
+    else if (key === '0') r = [0, cp - 1]; else if (key === '$') r = [cp, n - 1]; else if (key === 'dd') r = unit(m.chords); else return null;
+    run(r[0], r[1]); return out;
+  }
+  // where the cursor goes for a motion
+  function vimMove(m, cp, key, N) {
+    var n = m.L.length, g = m.chords[m.at(m.chords, cp)];
+    function next(list) { return list[Math.min(list.length - 1, m.at(list, cp) + N)].from; }
+    function prev(list) { var k = m.at(list, cp); return list[Math.max(0, cp > list[k].from ? k - (N - 1) : k - N)].from; }
+    switch (key) {
+      case 'l': return Math.min(n - 1, cp + N); case 'h': return Math.max(0, cp - N);
+      case 'k': return Math.min(g.to, cp + N); case 'j': return Math.max(g.from, cp - N);
+      case 'w': return next(m.chords); case 'b': return prev(m.chords);
+      case 'e': return m.chords[Math.min(m.chords.length - 1, m.at(m.chords, cp) + N - 1)].to;
+      case ')': return next(m.beats); case '(': return prev(m.beats); case '}': return next(m.bars); case '{': return prev(m.bars);
+      case '0': return 0; case '$': return n - 1;
+    }
+    return cp;
+  }
+  Daw.prototype.vimReveal = function () {
+    var g = this.rollGeom, c = this.clip(), v = this.vim; if (!g || !c || v.cur < 0) return; var n = c.notes[v.cur]; if (!n) return;
+    var x = n.t * g.bpx, ri = g.rowOf(n), w = g.wrap;
+    if (x < w.scrollLeft + 90 || x > w.scrollLeft + w.clientWidth - 40) w.scrollLeft = Math.max(0, x - 120);
+    if (ri >= 0) { var y = ri * g.rh; if (y < w.scrollTop + 10 || y > w.scrollTop + w.clientHeight - 40) w.scrollTop = Math.max(0, y - w.clientHeight / 2); }
+  };
+  // do an operator over a range (the actual edit): { op: '>' | '<' | 'gU' | 'gu' | 'r', amt, lvl, key, N, object }
+  Daw.prototype.vimApply = function (spec) {
+    var self = this, m = this.vimModel(), c = m.c, v = this.vim, cp = m.pos(v.cur); if (cp < 0) cp = 0;
+    var pos = spec.op === 'r' ? vimRange(m, cp, 'dd', spec.N, false) : vimRange(m, cp, spec.key, spec.N, spec.object);
+    if (!pos || !pos.length) { this.say('Nothing there for that motion.'); return false; }
+    var idx = pos.map(function (q) { return m.L[q]; }), amt = spec.amt || 1;
+    this.change(function () { idx.forEach(function (i) { var nt = c.notes[i], v0 = nt.v;
+      if (spec.op === '>') nt.v = v0 + STEP * amt; else if (spec.op === '<') nt.v = v0 - STEP * amt; else if (spec.op === 'gU') nt.v = v0 + ACCENT * amt; else if (spec.op === 'gu') nt.v = GHOST; else if (spec.op === 'r') nt.v = DYN[spec.lvl - 1] / 127;
+      nt.v = clamp(Math.round(nt.v * 127) / 127, 1 / 127, 1); });
+      self.sel.notes = idx.slice(); });
+    var vs = idx.map(function (i) { return Math.round(c.notes[i].v * 127); }), lo = Math.min.apply(null, vs), hi = Math.max.apply(null, vs);
+    var what = { '>': 'louder by ' + amt + (amt > 1 ? ' steps' : ' step'), '<': 'quieter by ' + amt + (amt > 1 ? ' steps' : ' step'), gU: 'accented', gu: 'ghosted', r: 'set to ' + (DYN_NAME[spec.lvl - 1] || '') }[spec.op];
+    this.say(idx.length + ' note' + (idx.length > 1 ? 's' : '') + ' ' + what + ': velocity now ' + (lo === hi ? lo : lo + '–' + hi) + '.'); this.vimReveal(); return true;
+  };
+  // one key in note mode; true = handled (swallowed)
+  Daw.prototype.edKey = function (e) {
+    var v = this.vim, k = e.key, c = this.clip(), self = this, mod = e.ctrlKey || e.metaKey;
+    if (!c || v.id !== this.vimKeyId()) { v.on = false; return false; }
+    if (mod) { if ((k === 'r' || k === 'R') && !e.metaKey) { this.doUndo(false); this.vimSync(); return true; } return false; }
+    if (e.altKey) return false;
+    function reset() { v.c1 = v.c2 = 0; v.op = null; v.g = v.i = v.r = false; }
+    var m = this.vimModel(), cp = Math.max(0, m.pos(v.cur));
+    if (k === 'Escape') { if (v.op || v.g || v.i || v.r || v.c1 || v.c2) { reset(); this.say('Cancelled.'); } else this.vimOff(); return true; }
+    if (k === ' ' || k === 'Delete' || k === 'Backspace' || k === 'Enter' || k === 'Tab' || k.length > 1) return false;       // the transport and clip keys still work
+    if (v.r) { var lvl = /^[1-8]$/.test(k) ? +k : 0, N = v.c1 || 1; reset(); if (!lvl) { this.say('r needs 1–8: ppp pp p mp mf f ff fff.'); return true; }
+      var sp = { op: 'r', lvl: lvl, N: N }; if (this.vimApply(sp)) v.last = sp; return true; }
+    if (v.i) { var obj = 'wchbpv'.indexOf(k) >= 0, A = v.c1 || 1, N2 = v.c2 || 1, op = v.op; reset(); if (!obj) { this.say('After i: w note, c chord, h beat, b bar, p clip, v top line.'); return true; }
+      var sp2 = { op: op, amt: A, key: k, N: N2, object: true }; if (this.vimApply(sp2)) v.last = sp2; return true; }
+    if (v.g) { v.g = false; if (!v.op && (k === 'U' || k === 'u')) { v.op = 'g' + k; this.say('g' + k + ' …'); return true; } reset(); this.say('Cancelled.'); return true; }
+    if (/^[1-9]$/.test(k) || (k === '0' && (v.op ? v.c2 : v.c1))) { var key = v.op ? 'c2' : 'c1'; v[key] = Math.min(999, v[key] * 10 + +k); this.say((v.c1 || '') + (v.op ? ' ' + v.op + ' ' : '') + (v.c2 || '') + ' …'); return true; }
+    if (v.op && ((v.op === '>' && k === '>') || (v.op === '<' && k === '<') || (v.op === 'gU' && k === 'U') || (v.op === 'gu' && k === 'u'))) {       // doubled: this chord (and N-1 more)
+      var spd = { op: v.op, amt: v.c1 || 1, key: 'dd', N: v.c2 || 1 }; reset(); if (this.vimApply(spd)) v.last = spd; return true; }
+    if (!v.op && (k === '>' || k === '<')) { v.op = k; this.say((v.c1 || '') + k + ' …'); return true; }
+    if (!v.op && k === 'g') { v.g = true; this.say('g …'); return true; }
+    if (v.op && k === 'i') { v.i = true; return true; }
+    if (MOTIONS.indexOf(k) >= 0 && k.length === 1) {
+      if (v.op) { var spm = { op: v.op, amt: v.c1 || 1, key: k, N: v.c2 || 1 }; reset(); if (this.vimApply(spm)) v.last = spm; return true; }
+      var N3 = v.c1 || 1; reset(); var to = vimMove(m, cp, k, N3); v.cur = m.L[to]; this.sel.notes = [v.cur]; this.vimShow(m, to); return true; }
+    if (k === 'r' && !v.op) { v.r = true; this.say((v.c1 || '') + 'r …  (1 ppp · 2 pp · 3 p · 4 mp · 5 mf · 6 f · 7 ff · 8 fff)'); return true; }
+    if (k === '.' && !v.op) { reset(); if (!v.last) this.say('Nothing to repeat.'); else this.vimApply(v.last); return true; }
+    if (k === 'u' && !v.op) { reset(); this.doUndo(true); this.vimSync(); return true; }
+    reset(); this.say('Not a note-mode key: ' + k + '. Esc leaves.'); return true;
+  };
+  Daw.prototype.vimSync = function () {       // after undo / redo the notes are the same objects' copies: keep the cursor on a real note
+    var c = this.clip(); if (!c || !c.notes.length) { this.vim.on = false; return; } if (this.vim.cur >= c.notes.length || this.vim.cur < 0) this.vim.cur = 0;
+    this.sel.notes = [this.vim.cur]; if (this.redrawRoll) this.redrawRoll(); this.vimReveal();
+  };
+  Daw.prototype.vimShow = function (m, pos) {
+    var c = m.c, n = c.notes[this.vim.cur], ci = m.at(m.chords, pos), g = m.chords[ci], w = Meter.where(this.p, c.start + n.t), tr = this.track();
+    this.say('Note ' + (pos + 1) + ' of ' + m.L.length + ': ' + (isDrum(tr) ? n.m : noteName(n.m)) + ', bar ' + w.bar + ' beat ' + w.beat + (w.sub > 1 ? '.' + w.sub : '') + ', velocity ' + Math.round(n.v * 127) + ' (chord ' + (ci + 1) + ', ' + (g.to - g.from + 1) + ' note' + (g.to > g.from ? 's' : '') + ').');
+    if (this.redrawRoll) this.redrawRoll(); this.vimReveal();
+  };
+
+  // ---------------- volume automation: the lane, its keys ----------------
+  // V shows the selected track's lane. A puts a point at the playhead (at the level it already has, so nothing changes yet) and selects it; then
+  // ↑ ↓ change it 1 dB (Shift 6, Alt 0.1), ← → move it a beat (Shift a bar, Alt a sixteenth), [ ] pick the previous / next point, Delete removes it,
+  // Esc goes back to clips. Mouse: click the lane to add a point, drag to move it, double-click to remove it.
+  var AUTO_H = 96;
+  function byT(a, b) { return a.t - b.t; }
+  function autoY(v) { return 6 + (AUTO_MAX - clamp(v, -48, AUTO_MAX)) / (AUTO_MAX + 48) * (AUTO_H - 12); }
+  function autoV(y) { return y > AUTO_H - 5 ? AUTO_MIN : Math.round(clamp(AUTO_MAX - (y - 6) / (AUTO_H - 12) * (AUTO_MAX + 48), -48, AUTO_MAX) * 10) / 10; }
+  function dbStr1(v) { return v <= AUTO_MIN ? '−∞ dB' : (v < 0 ? '−' : v > 0 ? '+' : '') + Math.abs(v).toFixed(1) + ' dB'; }
+  Daw.prototype.toggleAuto = function () { this.autoOn = !this.autoOn; this.sel.pt = -1; if (this.bAuto) { this.bAuto.classList.toggle('mdaw-on', this.autoOn); this.bAuto.setAttribute('aria-pressed', String(this.autoOn)); }
+    this.renderTracks(); this.say(this.autoOn ? 'Volume lane for ' + (this.track() ? this.track().name : '—') + ': A adds a point at the playhead, then ↑ ↓ ← → edit it, Esc leaves.' : 'Volume lane hidden.'); };
+  Daw.prototype.autoPoint = function () { var tr = this.track(), arr = tr && tr.auto && tr.auto.vol; return arr && this.sel.pt >= 0 ? arr[this.sel.pt] || null : null; };
+  Daw.prototype.autoSay = function () { var q = this.autoPoint(), tr = this.track(); if (!q) return; var w = Meter.where(this.p, q.t);
+    this.say('Point ' + (this.sel.pt + 1) + ' of ' + tr.auto.vol.length + ' on ' + tr.name + ': bar ' + w.bar + ' beat ' + w.beat + (w.sub > 1 ? '.' + w.sub : '') + ', ' + dbStr1(q.v) + '.'); };
+  Daw.prototype.autoDelete = function () {
+    var q = this.autoOn && this.autoPoint(), tr = this.track(), self = this; if (!q) return false;
+    this.change(function () { tr.auto.vol.splice(self.sel.pt, 1); if (!tr.auto.vol.length) delete tr.auto; self.sel.pt = -1; }); this.say('Point removed.'); return true;
+  };
+  Daw.prototype.autoKey = function (e) {
+    if (e.key === 'v' || e.key === 'V') { this.toggleAuto(); return true; }
+    if (!this.autoOn) return false; var k = navKey(e), p = this.p, tr = this.track(), self = this, q = this.autoPoint(), N = this.n || 1; if (!tr) return false;
+    if (k === 'a' || k === 'A') {
+      var beat = clamp(Math.round(this.pos / 0.25) * 0.25, 0, Meter.total(p)), arr = tr.auto && tr.auto.vol, hit = -1;
+      if (arr) arr.forEach(function (x, i) { if (Math.abs(x.t - beat) < 1e-6) hit = i; });
+      if (hit < 0) { var v = arr && arr.length ? autoAt(arr, beat) : tr.vol, np = { t: beat, v: Math.round(v * 10) / 10 };
+        this.change(function () { if (!tr.auto) tr.auto = { vol: [] }; tr.auto.vol.push(np); tr.auto.vol.sort(byT); self.sel.pt = tr.auto.vol.indexOf(np); }); }
+      else { this.sel.pt = hit; this.renderTracks(); }
+      this.autoSay(); return true; }
+    if (k === 'Escape' && this.sel.pt >= 0) { this.sel.pt = -1; this.renderTracks(); this.say('Back to clips.'); return true; }
+    if (!q) return false;
+    if (k === '[' || k === ']') { var n = tr.auto.vol.length; this.sel.pt = clamp(this.sel.pt + (k === '[' ? -N : N), 0, n - 1); this.setPos(tr.auto.vol[this.sel.pt].t); this.renderTracks(); this.revealHead(); this.autoSay(); return true; }
+    if (k === 'ArrowUp' || k === 'ArrowDown') { var dv = (e.shiftKey ? 6 : e.altKey ? 0.1 : 1) * N * (k === 'ArrowUp' ? 1 : -1);
+      this.change(function () { q.v = Math.round(clamp(q.v + dv, AUTO_MIN, AUTO_MAX) * 10) / 10; }); this.autoSay(); return true; }
+    if (k === 'ArrowLeft' || k === 'ArrowRight') { var dt = (e.shiftKey ? Meter.barLen(p, Meter.barAt(p, q.t).bar) : e.altKey ? 0.25 : 1) * N * (k === 'ArrowLeft' ? -1 : 1);
+      this.change(function () { q.t = clamp(Math.round((q.t + dt) * 48) / 48, 0, Meter.total(p)); tr.auto.vol.sort(byT); self.sel.pt = tr.auto.vol.indexOf(q); }); this.setPos(q.t); this.revealHead(); this.autoSay(); return true; }
+    return false;
+  };
+  Daw.prototype.autoRow = function () {
+    var self = this, p = this.p, W = this.beatW(), tr = this.track(), total = Meter.total(p), H = AUTO_H, row = el('div', 'mdaw-row mdaw-autorow'), th = el('div', 'mdaw-th');
+    th.style.borderLeftColor = COLORS[this.sel.track % COLORS.length]; th.appendChild(el('span', 'mdaw-name', 'Volume: ' + tr.name));
+    th.appendChild(el('span', 'mdaw-hint', tr.auto && tr.auto.vol.length ? tr.auto.vol.length + ' point' + (tr.auto.vol.length > 1 ? 's' : '') + ': the fader is off' : 'No points: the fader sets the level'));
+    row.appendChild(th);
+    var lane = el('div', 'mdaw-lane'), cv = el('canvas', 'mdaw-cv'), dpr = global.devicePixelRatio || 1; lane.style.width = (total * W) + 'px'; lane.style.cursor = 'crosshair';
+    cv.width = total * W * dpr; cv.height = H * dpr; cv.style.width = (total * W) + 'px'; cv.style.height = H + 'px'; lane.appendChild(cv); row.appendChild(lane);
+    var x = cv.getContext('2d'); x.scale(dpr, dpr);
+    var css = getComputedStyle(this.node), ink = css.getPropertyValue('--site-ink').trim() || '#222', line = css.getPropertyValue('--site-border').trim() || '#ccc', acc = css.getPropertyValue('--site-accent-dk').trim() || '#a33', col = COLORS[this.sel.track % COLORS.length];
+    function draw() {
+      var pts = tr.auto && tr.auto.vol || []; x.clearRect(0, 0, total * W, H);
+      for (var b = 0; b <= total + 1e-9; b += 1) { var lv = Meter.level(p, b); x.globalAlpha = lv === 2 ? 0.5 : 0.15; x.fillStyle = lv === 2 ? ink : line; x.fillRect(Math.round(b * W), 0, 1, H); }
+      x.globalAlpha = 0.5; x.fillStyle = ink; x.font = '10px sans-serif';
+      [0, -12, -24, -36].forEach(function (db) { x.fillRect(0, autoY(db), total * W, 1); x.fillText(db + ' dB', 3, autoY(db) - 2); });
+      x.globalAlpha = 1;
+      if (!pts.length) { x.setLineDash([4, 4]); x.strokeStyle = col; x.beginPath(); x.moveTo(0, autoY(tr.vol)); x.lineTo(total * W, autoY(tr.vol)); x.stroke(); x.setLineDash([]); return; }
+      x.strokeStyle = col; x.lineWidth = 2; x.beginPath(); x.moveTo(0, autoY(pts[0].v)); pts.forEach(function (q) { x.lineTo(q.t * W, autoY(q.v)); }); x.lineTo(total * W, autoY(pts[pts.length - 1].v)); x.stroke(); x.lineWidth = 1;
+      pts.forEach(function (q, i) { var on = i === self.sel.pt; x.fillStyle = on ? acc : col; x.beginPath(); x.arc(q.t * W, autoY(q.v), on ? 6 : 4, 0, 7); x.fill(); x.strokeStyle = on ? ink : 'rgba(0,0,0,.4)'; x.stroke(); });
+    }
+    draw();
+    function hitAt(px, py) { var h = -1; (tr.auto && tr.auto.vol || []).forEach(function (q, i) { if (Math.abs(q.t * W - px) < 8 && Math.abs(autoY(q.v) - py) < 8) h = i; }); return h; }
+    function snap(px) { return clamp(Math.round(px / W / 0.25) * 0.25, 0, total); }
+    cv.addEventListener('dblclick', function (e) { var r = cv.getBoundingClientRect(), h = hitAt(e.clientX - r.left, e.clientY - r.top); if (h < 0) return; self.sel.pt = h; self.autoDelete(); });
+    cv.addEventListener('pointerdown', function (e) {
+      e.preventDefault(); self.node.focus({ preventScroll: true });
+      var r = cv.getBoundingClientRect(), h = hitAt(e.clientX - r.left, e.clientY - r.top), before = JSON.stringify(self.p), moved = h < 0;
+      if (!tr.auto) tr.auto = { vol: [] }; var arr = tr.auto.vol, q;
+      if (h < 0) { q = { t: snap(e.clientX - r.left), v: autoV(e.clientY - r.top) }; arr.push(q); arr.sort(byT); } else q = arr[h];
+      self.sel.pt = arr.indexOf(q); draw();
+      function mv(ev) { moved = true; q.t = snap(ev.clientX - r.left); q.v = autoV(ev.clientY - r.top); arr.sort(byT); self.sel.pt = arr.indexOf(q); draw(); }
+      function up() { document.removeEventListener('pointermove', mv); document.removeEventListener('pointerup', up);
+        if (moved) { self.undo.push(before); self.redo = []; self.save(); } self.renderTracks(); self.renderMixer(); self.applyMix(); self.autoSay(); }
+      document.addEventListener('pointermove', mv); document.addEventListener('pointerup', up);
+    });
+    return row;
+  };
+
+  Daw.prototype.arrKey = function (e) {
+    var k = navKey(e), p = this.p, tr = this.track(), c = this.clip(), self = this, t = e.target, N = this.n || 1;
+    if (this.inSession && this.inSession()) return false;
+    if (this.show.automation && this.autoKey(e)) return true;
+    if (t && /^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName) && k.indexOf('Arrow') === 0) return false;
+    var dir = k === 'ArrowLeft' || k === 'ArrowUp' || k === '-' ? -1 : 1, unit = function (from) { var x = from; for (var i = 0; i < N; i++) x = e.altKey ? x + dir : barStep(p, x, dir); return x; };
+    var inArr = this.sel.slot >= 0 ? null : c;
+    if (k === 'ArrowLeft' || k === 'ArrowRight') {
+      if (e.shiftKey) { if (!inArr) { this.say('Select a clip first: ↑ ↓ pick the track, [ ] the clip.'); return true; }
+        this.change(function () { inArr.start = clamp(unit(inArr.start), 0, Math.max(0, Meter.total(p) - 1)); });
+        this.say(tr.name + ' clip moved to bar ' + (Meter.barAt(p, inArr.start).bar + 1) + ', beat ' + (Meter.where(p, inArr.start).beat) + '.'); return true; }
+      this.locate(clamp(unit(this.pos), 0, Meter.total(p))); this.revealHead(); var w = Meter.where(p, this.pos); this.say('Playhead: bar ' + w.bar + ', beat ' + w.beat + '.'); return true; }
+    if (k === 'ArrowUp' || k === 'ArrowDown') {
+      if (e.shiftKey) { if (!inArr) { this.say('Select a clip first: ↑ ↓ pick the track, [ ] the clip.'); return true; }
+        var to = this.sel.track + dir * N, dest = p.tracks[to]; if (!dest) { this.say('No track there.'); return true; } if (kind(dest) !== kind(tr)) { this.say('A clip can only move to a track of its kind: drums, notes or audio.'); return true; }
+        this.change(function () { tr.clips.splice(self.sel.clip, 1); dest.clips.push(inArr); self.sel = { track: to, clip: dest.clips.length - 1, slot: -1, notes: [] }; }); this.say('Clip moved to ' + dest.name + '.'); return true; }
+      var ti = clamp(this.sel.track + dir * N, 0, p.tracks.length - 1); if (!p.tracks.length) return true;
+      this.pick(ti, this.clipAtPos(ti, this.pos)); this.say(p.tracks[ti].name + (this.sel.clip >= 0 ? ': the clip under the playhead.' : ': no clip under the playhead (N makes one).')); return true; }
+    if ((k === '[' || k === ']') && tr) {
+      var order = tr.clips.map(function (cl, i) { return i; }).sort(function (a, b) { return tr.clips[a].start - tr.clips[b].start; });
+      if (!order.length) { this.say(tr.name + ' has no clips.'); return true; }
+      var d2 = k === '[' ? -1 : 1, at = order.indexOf(this.sel.clip), ni;
+      if (at < 0) { ni = order.filter(function (i) { return d2 > 0 ? tr.clips[i].start >= self.pos - 1e-9 : tr.clips[i].start < self.pos - 1e-9; }); ni = d2 > 0 ? ni[0] : ni[ni.length - 1]; if (ni == null) ni = d2 > 0 ? order[0] : order[order.length - 1]; }
+      else ni = order[clamp(at + d2 * N, 0, order.length - 1)];
+      this.sel = { track: this.sel.track, clip: ni, slot: -1, notes: [] }; this.setPos(tr.clips[ni].start); this.renderTracks(); this.renderEditor(); this.revealHead();
+      this.say(tr.name + ': clip ' + (order.indexOf(ni) + 1) + ' of ' + order.length + ', bar ' + (Meter.barAt(p, tr.clips[ni].start).bar + 1) + '.'); return true; }
+    if (k === 'n' || k === 'N') { if (!tr) return true; if (isAudio(tr)) { this.say('Audio clips come from recording (R).'); return true; }
+      this.newClip(this.sel.track, Meter.floor(p, this.pos)); this.say('New empty clip on ' + tr.name + ' at bar ' + (Meter.barAt(p, Meter.floor(p, this.pos)).bar + 1) + '.'); return true; }
+    if (k === 'p' || k === 'P') {
+      if (this.sel.slot >= 0) this.lastSlot = { track: this.sel.track, slot: this.sel.slot };       // (kept, so P P P lays it again and again)
+      var ls = this.lastSlot, ptr = ls && p.tracks[ls.track], sc = ptr && (ptr.slots || [])[ls.slot];
+      if (!sc) { this.say('P places a Session clip: pick one in the Session view, come back here, press P.'); return true; }
+      var at0 = Meter.floor(p, this.pos), endAt = at0 + sc.len * N;
+      this.change(function () { for (var i = 0; i < N; i++) { var cl = clone(sc); cl.start = at0 + i * sc.len; ptr.clips.push(cl); }
+        self.sel = { track: ls.track, clip: ptr.clips.length - 1, slot: -1, notes: [] };
+        if (endAt > Meter.total(p) + 1e-9) p.bars = Math.min(64, Meter.barAt(p, endAt - 1e-6).bar + 1); });
+      this.setPos(Math.min(endAt, Meter.total(p))); this.revealHead();
+      this.say('Placed the Session clip ' + (N > 1 ? N + ' times ' : '') + 'on ' + ptr.name + ' from bar ' + (Meter.barAt(p, at0).bar + 1) + '; the playhead is at the end (P again lays it next).'); return true; }
+    if ((k === '-' || k === '=' || k === '+') && inArr) {
+      var end = unit(inArr.start + inArr.len), min = e.altKey ? 1 : Meter.barLen(p, Meter.barAt(p, inArr.start).bar);
+      this.change(function () { inArr.len = Math.max(Math.min(min, 1), Math.min(end - inArr.start, Meter.total(p) - inArr.start)); });
+      this.say(tr.name + ' clip is ' + Meter.barsOfLen(p, inArr.start, inArr.len) + ' bars.'); return true; }
+    return false;
   };
 
   var all = [];
@@ -1041,7 +1432,7 @@
     init: function () { Array.prototype.forEach.call(document.querySelectorAll('.mdaw'), function (n) { if (!n.dataset.ready) { n.dataset.ready = '1'; try { all.push(new Daw(n)); } catch (e) { n.textContent = 'The DAW could not start: ' + e.message; if (global.console) console.error(e); } } }); takeHandoff(); return all; },
     // another page (the Backing Track) hands this page a MIDI file: MiniDaw.handOff(bytes, name, url) keeps it and opens url
     handOff: function (bytes, name, url) { store(HANDOFF, { at: Date.now(), name: name || 'the band.mid', midi: b64(bytes) }); if (url) global.open(url, '_blank'); },
-    all: all, Meter: Meter, PRESETS: PRESETS, toMidi: toMidi, fromMidi: fromMidi, bandParts: bandParts, INSTS: INSTS
+    all: all, applyFeel: applyFeel, mulberry: mulberry, partOfInst: partOfInst, autoAt: autoAt, autoToCc: autoToCc, dbToCc: dbToCc, ccToDb: ccToDb, core: { Daw: Daw, Meter: Meter, el: el, btn: btn, clamp: clamp, isDrum: isDrum, isAudio: isAudio, playNote: playNote, click: click, COLORS: COLORS, NOTE: NOTE, instOf: instOf, clone: clone, rowsOf: rowsOf, ac: function () { return AC; }, bank: function () { return bank; } }, Meter: Meter, PRESETS: PRESETS, toMidi: toMidi, fromMidi: fromMidi, bandParts: bandParts, INSTS: INSTS
   };
   // only one DAW plays at a time
   document.addEventListener('pointerdown', function (e) { all.forEach(function (d) { if (d.playing && !d.node.contains(e.target) && e.target.closest && e.target.closest('.mdaw')) d.stop(); }); }, true);

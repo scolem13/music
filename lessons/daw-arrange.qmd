@@ -19,6 +19,11 @@ Instead of writing every part, let the band write a start. Under the tracks, typ
 Logic's **Drummer** and **Session Players**, BandLab's **SongStarter** and Ableton's MIDI generators do the same job. The parts are now
 ordinary MIDI clips: open them in the editor and change any note.
 
+**Feel.** The band's patterns sit *exactly* on the grid. When the Backing Track plays them it adds the small human touches a real band has: the bass a few
+milliseconds ahead of the beat and the chords a few behind it, a little random looseness, chords rolled from the bottom note up (a guitar strum a bit slower), and velocities that wander a little.
+The **Feel** menu writes those touches into the clips: **Tight** (on the grid, the default), **Band feel** (as the Backing Track plays) or **Looser** (twice as much). **Humanize clip** does the same to a clip you
+already have, once; **Quantize** takes it out again. The tempo stays perfectly steady in all of them, as it does in the live band: a human band would also push and pull the tempo, and neither this DAW nor the band does that.
+
 ## Build a song
 
 1. Press **Write the parts** with *C | Am | F | G*, Rock, 2 times. That's 8 bars: call it the **verse**.
@@ -31,6 +36,27 @@ ordinary MIDI clips: open them in the editor and change any note.
 7. Try a different **Style** for the chorus only: the band rewrites the clips under it, the verse stays.
 
 <div class="mdaw" data-id="daw-arrange" data-preset="band" data-bars="24" data-show="transport tracks editor band"></div>
+
+## Place clips from the keyboard
+
+Click the DAW once so it has focus, then you can lay a song out without the mouse. These are this small DAW's own keys; they are not
+claimed to match any other program.
+
+| Keys | What happens |
+|---|---|
+| **←** **→** (or **h** **l**) | Playhead back / forward a bar (**Alt**: a beat) |
+| **↑** **↓** (or **k** **j**) | Select the track above / below, and the clip under the playhead |
+| **[** **]** | Select the previous / next clip on the track (the playhead jumps to it) |
+| **N** | New empty clip on the track at the playhead |
+| **P** | Put the Session clip you last selected (see [DAW 4b](daw-session.qmd)) on its track at the playhead; the playhead moves to its end, so **P P P** lays it three times |
+| **Shift+←** **Shift+→** (or **H** **L**) | Move the selected clip a bar (**Alt**: a beat) |
+| **Shift+↑** **Shift+↓** (or **K** **J**) | Move it to the track above / below (same kind of track) |
+| **-** **=** | Make it a bar shorter / longer (**Alt**: a beat) |
+| A **number** first (**3l**, **2j**, **3p**) | Repeat the next key that many times: three bars on, two tracks down, the Session clip laid three times |
+| **O** | Loop on / off (it was **L**; **l** is now →) |
+| **Ctrl/Cmd+D**, **Delete**, **Ctrl/Cmd+Z** | Duplicate, delete, undo |
+
+Try it: ↓ to the Bass track, **N**, **→** four times, **N**, then **Shift+→** to slide it a bar.
 
 ## Common shapes
 
@@ -58,6 +84,7 @@ Arranging for a band in more depth: [Arranging 1: Who Plays What](arrange-band.q
 
 ## Next
 
+- [DAW 4b: Loops, Scenes and the Session View](daw-session.qmd)
 - [DAW 5: The Mixer](daw-mixer.qmd)
 
 ## Works Cited

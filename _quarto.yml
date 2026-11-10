@@ -229,7 +229,9 @@ website:
             - lessons/daw-timeline.qmd
             - lessons/daw-beat.qmd
             - lessons/daw-pianoroll.qmd
+            - lessons/daw-notation.qmd
             - lessons/daw-arrange.qmd
+            - lessons/daw-session.qmd
             - lessons/daw-mixer.qmd
             - lessons/daw-record.qmd
             - lessons/daw-export.qmd

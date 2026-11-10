@@ -1,0 +1,183 @@
+---
+title: "DAW 3b: What the Computer Needs"
+toc: true
+toc-depth: 2
+description: "What a DAW stores and what written notation shows, and the difference between what a computer must be told and what performers are trusted to decide for themselves."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, reading]
+has: [notation, interactive]
+---
+
+A page of notation and a MIDI clip can hold the same tune, and they are written for two different readers.
+
+- A **performer** reads the notation. They know the style, the instrument, the room and the people they are playing with. So the notation can be short:
+  it says *what* to play and leaves a great deal of *how* to them.
+- A **computer** reads the clip. It knows nothing. Every note must say exactly when it starts, how long it lasts, how hard it is struck, and on what sound.
+  Anything you do not say, it plays in the most literal way possible, or not at all.
+
+This lesson is about the gap between the two. Everything the DAW has to be *given* is the part a human performer would have *decided*.
+
+## 1. The same four bars, twice
+
+Here is the opening of the "Ode to Joy" theme (Beethoven, Symphony No. 9, finale), the way a performer would read it. The dynamics, the slur, the dots and the tempo word are the
+kind of markings a score would have; I added them for this lesson.
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Ode to Joy (opening), as a performer reads it
+M:4/4
+L:1/4
+Q:"Allegro" 1/4=100
+K:C
+!p!(E E F G | G F E D | !crescendo(!.C .C .D .E | !crescendo)!E3/2 D/2 !fermata!D2) |]
+</script></div>
+
+Below is the same melody as the DAW holds it. Press **▶ Play**. This is what "play exactly what is written, and nothing else" sounds like:
+every note on the grid, every note the same length as its value, every note at the same velocity.
+
+<div class="mdaw" data-id="daw-notation-1" data-preset="ode" data-show="transport tracks editor"></div>
+
+Open the clip (click it) and look at the piano roll. The notation had about a dozen marks. The clip has **fifteen notes, and four numbers for each**:
+
+| What the DAW stores for each note | Example (the first note) |
+|---|---|
+| **When** it starts, in ticks (this DAW's files use 480 to a quarter note) | 0 |
+| **Which key**: a whole number, 0–127 (60 is the middle C key) | 64 (the E above) |
+| **How long** it lasts, in ticks | 480 |
+| **How hard** it was struck: velocity 1–127 | 76 |
+
+Nothing else (and the notes sit exactly on the grid: the band's own clips can be given a small human looseness with the **Feel** setting in [DAW 4](daw-arrange.qmd)): no slur, no *p*, no tempo word, no fermata. Those are all things a performer *does*, and the computer has to be told them as numbers.
+
+## 2. Telling the computer what the notation implied
+
+Turn the markings into data. Use **note mode** (see [DAW 5](daw-mixer.qmd#a-keyboard-flow-for-velocity-proposal) for the whole idea): click the clip, press **Enter**, then type these. A number first repeats the next key.
+
+| You type | What it means in the notation | What it does to the data |
+|---|---|---|
+| **8r3** | *p* for the first two bars | sets the first 8 notes to velocity 48 |
+| **8l** | (move on to bar 3) | the cursor goes 8 notes on |
+| **2r4**, **2l**, **2r5**, **2l** | the crescendo through bar 3 | velocities 64, 64, 80, 80: a staircase standing in for a smooth swell |
+| **3r6** | the crescendo arrives at *f* in bar 4 | velocity 96 |
+| **Esc** | | leaves note mode |
+
+Play it. It is already more musical than the flat version, and notice what you had to decide that the notation never said: **how loud *p* is** (48 of 127? 40? 60?) and **how steep the crescendo is**. Two performers, two answers, both right.
+A dynamic mark is a *relative* instruction: *p* is quieter than *mf* and means different things on a flute, a drum and a choir. A velocity is an *absolute* number, so a DAW makes you choose one.
+
+Now the dots in bar 3 (staccato) and the slur and fermata:
+
+1. **Staccato** says "short", not how short. Drag the right end of each bar-3 note to about half its length. The computer's version of "short" is a note length in ticks.
+2. **The slur** means "connected". There is no slur object in MIDI. Legato is made by letting each note run to (or slightly past) the next one; "detached" is made by leaving gaps. Your clip is already
+   fully legato, because every note lasts exactly until the next one starts.
+3. **The fermata** says "hold this longer, as long as feels right". Drag the last note out to about twice its length. A performer would have decided how long on the night, in the room.
+4. **The tempo word *Allegro*** became the number in the Tempo box (100). Italian is a vague instruction; BPM is not.
+
+What you *cannot* do here is slow down into the last bar. This DAW has **one tempo for the whole song**. A real DAW has a **tempo track** (a curve of tempo against time) for a *ritardando* or a fermata that stops the clock. Nobody
+notated that: the conductor did it, and the orchestra followed.
+
+## 3. Who decides? A map
+
+| In written notation | In the DAW | Who decides |
+|---|---|---|
+| Pitch names, with spelling (C♯ ≠ D♭) | One key number (61 serves both) | Notation keeps the spelling; **MIDI loses it**. Notation software must guess it back (§4). |
+| Note values (quarter, eighth) | Start and length in ticks | The computer needs exact numbers; the printed value is a *target*. A performer plays it with small, musical errors; a DAW plays it dead on unless you move it (see [DAW 3](daw-pianoroll.qmd): quantize). |
+| Swing: "♪♪ = swung", or nothing at all | Moved note start times | In jazz the notation is often straight eighths and the performer swings them. The DAW has to be given the *swung* times. |
+| Dynamics *pp–ff*, hairpins | A velocity for every note; volume automation ([DAW 5](daw-mixer.qmd)) | Notation: about eight levels, relative. DAW: 127 levels, absolute. |
+| Articulation: staccato, accent, tenuto, slur | Note lengths and velocities | The performer picks the exact length and attack for the style. The DAW needs the numbers. |
+| Tempo word (Allegro), metronome mark | A BPM, and a tempo track | Words are advice; numbers are commands. |
+| Fermata, *rit.*, *rubato*, breath marks | A tempo track, or moved notes | Entirely a performer's decision in the moment. Hardest thing to give a computer. |
+| Chord symbols (Cmaj7, Dm7) | Individual notes of a voicing and a rhythm | The performer decides the voicing, rhythm and register. **This is exactly what the band's session players in [DAW 4](daw-arrange.qmd) do for you.** |
+| Repeat signs, *D.S. al coda* | A straight line of bars; repeats are written out | A DAW's timeline has no jump instruction, so repeats are copied out. A performer follows the map. |
+| Ornaments: trill, turn, grace note | Every sounding note, individually | The performer decides how fast and from which note. The DAW needs each note. |
+| Intonation: a leading tone sharp, a G♯ different from an A♭ | Usually nothing: a fixed key number | Singers, strings and winds adjust pitch to context without thinking. MIDI keyboards are in equal temperament, unless a tuning is added. |
+| Stem direction, beaming, page turns, layout | Nothing | Purely for the reader. A computer needs none of it. |
+| Instrument name, "pizz.", "con sordino" | A sound (a patch), or a switch between sounds | The DAW has to be told which sound to load; a violinist just changes technique. |
+| (not in the score) | Mixer levels, pan, effects, automation | Belong to the recording, not the composition. |
+
+Two patterns to take away:
+
+1. **Notation tends to be about *what*; the DAW needs the *how* too.** Almost every row above moves a decision from the performer to you.
+2. **Some information only exists on one side.** Spelling, stems, beams, repeats and expression words are lost when notation becomes MIDI. Fine timing, exact velocity, tempo curves and the sound itself are lost when a
+   performance goes the other way into notation.
+
+## 4. The other direction: guessing the notation
+
+Export a clip and open it in notation software and the software has to **recover** what the DAW threw away. It is a guessing game:
+
+- **Spelling.** The key number 61 is C♯ in a sharp key and D♭ in a flat one. The software uses the key signature (MIDI files *can* carry one, but not all do) and the surrounding notes.
+- **Rhythm.** A played note starts 17 ticks late. Is it a sixteenth-note triplet? A dotted eighth? Or just a human? The software *quantizes* (rounds) to a grid, and a wrong grid makes ugly notation.
+- **Voices.** Two notes overlapping in time: one voice or two? Which stem goes up?
+- **Everything printed.** Beaming, slurs, dynamics and tempo words would all have to be invented.
+
+Try it in your head with this clip: the fifteen notes are on the grid, and the key is clear, so a program would get it nearly right. Now imagine the same clip played live by a person, with no quantizing.
+Which of the four guesses above gets hard first?
+
+## 5. Check yourself
+
+For each item, decide: must the **computer** be told exactly, or does a **performer** infer it? (Many are both.) Open the answer to check.
+
+<details><summary>1. How loud "mezzo forte" is</summary>
+Performer infers it from the instrument, the room and the music around it. The DAW needs a number (a velocity, or a level), and the number differs from one instrument to the next.
+</details>
+
+<details><summary>2. That the phrase should breathe at the end of the second bar</summary>
+Performer. A computer has to be given the small gap or the slight slowing as note lengths or tempo moves.
+</details>
+
+<details><summary>3. Whether to play a G♯ or an A♭ in a given chord</summary>
+Notation settles the spelling, and a performer's ear settles the exact pitch. MIDI has one key number for both, so the computer is not told either.
+</details>
+
+<details><summary>4. That two eighth notes in a jazz tune are "swung"</summary>
+Performer, by style convention; often not written at all. The DAW has to be given the late second eighth as a changed note start.
+</details>
+
+<details><summary>5. That a measure has four beats</summary>
+Both need to know it. The notation states it as a time signature; the DAW stores it (this DAW and MIDI files record it) but plays notes by absolute ticks, so the time signature only decides where the bar lines and the click fall.
+</details>
+
+<details><summary>6. How a pianist voices a "Cmaj7" chord in the left hand</summary>
+Performer. A chord symbol is a prompt; the DAW needs individual notes. A session player (the band in DAW 4) does the choosing.
+</details>
+
+<details><summary>7. That a sound should be a flute and not a piano</summary>
+Both. The notation names the instrument; the DAW needs a sound loaded onto that track.
+</details>
+
+<details><summary>8. The direction a note's stem points</summary>
+Neither, for playing. It is purely for the reader of the page. A computer ignores it; notation software has to decide it.
+</details>
+
+## In other DAWs
+
+Logic Pro has a **Score Editor** that draws the same regions as notation, and a **Tempo** track for a tempo that changes. I have not checked how Live or BandLab handle either, nor read Logic's manual
+pages for them, so treat this as a pointer to where to look. If you open Logic's Score Editor, notice which of §4's guesses it makes and which settings (quantize, spelling) it gives you to correct it.
+
+## Next
+
+- [DAW 4: Arranging a Song](daw-arrange.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Digital Audio Workstation." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Digital_audio_workstation](https://en.wikipedia.org/wiki/Digital_audio_workstation).
+
+"Musical Instrument Digital Interface." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/MIDI](https://en.wikipedia.org/wiki/MIDI). Note numbers 0-127, velocity 1-127, tempo as microseconds per quarter note, the file's time and key signature events: from memory of the standard, checked against this page only in outline.
+
+"Musical Notation." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Musical_notation](https://en.wikipedia.org/wiki/Musical_notation).
+
+"MusicXML." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/MusicXML](https://en.wikipedia.org/wiki/MusicXML). Kept spelling, voices and layout that MIDI drops.
+
+**For teachers**
+
+Bell, Adam Patrick. *Dawn of the DAW: The Studio as Musical Instrument*. Oxford UP, 2018. [academic.oup.com/book/2477](https://academic.oup.com/book/2477).
+
+Gould, Elaine. *Behind Bars: The Definitive Guide to Music Notation*. Faber Music, 2011. Grace notes, trills and other ornaments in modern notation.
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}
+<script>window.AX_NO_VOICE = true;</script>
+<script src="/apps/shared/lessons/abc-ex.js?v=27"></script>

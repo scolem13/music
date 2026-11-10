@@ -34,7 +34,86 @@ in the middle.
 5. Solo the bass to hear what it's doing, then un-solo. Mute the guitar: is the song better without it?
 6. Double-click any fader or pan to put it back to 0 / centre.
 
-<div class="mdaw" data-id="daw-mixer" data-preset="badmix" data-show="transport tracks mixer"></div>
+<div class="mdaw" data-id="daw-mixer" data-preset="badmix" data-show="transport tracks mixer automation"></div>
+
+### Volume automation (preview)
+
+A fader that moves by itself is **volume automation**. In this DAW, click a track, then **Volume lane** (or press **V**): a lane opens under the
+tracks. Click it to add a point and drag the point up or down; double-click a point to remove it. Or use the keyboard: put the playhead where you
+want a change, press **A** (a point appears at the level the track already has), then **↑ ↓** change it a decibel and **← →** slide it a beat
+(Shift: 6 dB or a bar; Alt: finer), **[ ]** pick the previous or next point, **Delete** removes it, **Esc** leaves. Once a track has points they *are* its level and its fader
+locks, marked **(A)**; delete the points to use the fader again. Keys work the vim way too: **h j k l** are the arrows, and a **number first** repeats the next key, so **3k** raises the point 3 dB and **12j** lowers it 12.
+Try bringing the keys down under the guitar for the first bars.
+
+### Velocity or volume automation?
+
+Both make a sound louder or quieter, at different places in the chain, so they **multiply** (add, in decibels).
+
+| | Velocity | Volume automation |
+|---|---|---|
+| Belongs to | One **note** | A whole **track** |
+| Set when | The note starts (it cannot change afterwards) | Continuously, any time the track sounds |
+| Changes the tone? | Often yes: a soft piano note is also darker (this DAW's piano and electric pianos filter softer notes darker) | No: it only turns the whole sound up or down |
+| Can fade a held note? | No | Yes |
+| In the MIDI file | The note-on velocity, 1–127 | A separate stream of controller 7 (volume) events |
+| Good for | Accents, phrasing, ghost notes, a crescendo you play note by note | Sections (verse quieter than chorus), fades, ducking, rides |
+
+How much does velocity do here? This DAW's instruments follow roughly level = velocity^1.6. That is, velocity 127 is the full level (0 dB), 96 is about
+−4 dB, 64 about −10 dB, 32 about −19 dB. (Other programs and instruments use other curves; I have not checked theirs.) So a move of
+one velocity step is small and a halving is large.
+
+Two habits keep them from fighting:
+
+1. **Shape the part with velocity first, then balance the track with the fader or automation.** If you turn a track down with automation and then raise every velocity
+   to make it audible again, you have thrown away its dynamics.
+2. **Use automation for anything that happens *while* a note rings**: a pad that swells, a held organ chord that fades. Velocity cannot do that.
+
+A keyboard-driven way to set velocity is proposed below ("A keyboard flow for velocity"); it is not built yet.
+
+The points are written into the exported MIDI file as controller 7 (volume), and read back from it. Whether your DAW turns those events into
+automation, and on which lane, depends on the program: open the file and look. I have not verified what Live and Logic do with them.
+
+### A keyboard flow for velocity (note mode, in progress)
+
+**Part of this is built.** Click a clip in the DAW above and press **Enter**: that is **note mode** (**Esc** leaves). Built so far: the motions, the text objects, the operators **>** **<** **gU** **gu**, **r1**–**r8**, counts, **.** (repeat) and **u** (undo).
+Still to come, and marked below: velocity patterns in registers (**y**/**p**), **gq**, **Ctrl-a**/**Ctrl-x**, Visual mode, macros and the **:** command line. The plan is in `apps/shared/daw/TODO.md`.
+The idea is to borrow vim's *grammar*: **[count] operator motion**, with the cursor on a note.
+
+**Motions** move the note cursor (they also work after an operator):
+
+| Key | Moves to |
+|---|---|
+| **h** **l** | previous / next note in time |
+| **j** **k** | the note below / above in the same chord |
+| **w** **b** **e** | next / previous / last note of the chord ("word") |
+| **(** **)** | previous / next beat |
+| **{** **}** | previous / next bar |
+| **0** **$** | first / last note of the clip |
+
+**Text objects** (after an operator, or in Visual): **iw** the note, **ic** its chord, **ih** its beat, **ib** its bar, **ip** the whole clip, **iv** the top line (the highest note of each chord: the melody).
+A count extends them: **2ib** is two bars.
+
+**Operators** (each takes a motion or a text object; doubling the key means "this chord", as **dd** means "this line"):
+
+| Operator | Does | Example |
+|---|---|---|
+| **>** / **<** | louder / quieter by a step (counts multiply it) | **3>ib**: the bar, three steps louder |
+| **gU** / **gu** | accent / ghost (vim's upper-case / lower-case) | **gUic**: accent this chord |
+| **gq** (to come) | tidy: straighten the velocities into a ramp from the first to the last note | **gq2ib** after setting the ends: a crescendo over two bars |
+| **y** / **p** (to come) | yank / put a **velocity pattern** | **"ayib** saves a bar's accent pattern in register *a*; **3"ap** lays it down three times |
+| **r** + 1–8 | set to a dynamic: 1 ppp, 2 pp, 3 p, 4 mp, 5 mf, 6 f, 7 ff, 8 fff | **r5** on a chord; **v** then **r4** on a selection |
+
+**Visual mode** (to come): **v** selects notes (**h l** extend), **V** whole chords, **Ctrl-v** a block of time × pitch (on the drum grid: the hi-hat row across four bars). Every operator works on the selection.
+**Ctrl-a** / **Ctrl-x** add / take 1 from the velocity, as in vim (the count multiplies); in Visual, **g Ctrl-a** adds 1, 2, 3 … down the selection, which is a ready-made crescendo.
+
+**Repeat and record**: **.** repeats the last change and **u** undoes (built); **qa** … **q** records a key sequence into register *a* and **@a** replays it (so "accent beat 1 of every bar" is one recording and **8@a**).
+
+**Command line** (to come): **:** takes vim-style ranges: **:%vel mf** (everything), **:'<,'>vel 40-100** (a ramp over the selection), **:vel 64** (this chord).
+
+A worked example: you have played a pad with flat velocities. **{** to the first bar, **gUic** accents beat 1; **y** the bar as a pattern (**"ayib**), then **}** and **3"ap** to give the next three bars the same shape;
+**Vjj** … then **g Ctrl-a** to swell the last four. Nothing there needs the mouse.
+
+These keys live in the editor's own mode, because in the Arrangement **q** is Quantize, **r** is Record, **v** is the volume lane and **p** places a Session clip. **Enter** with a clip selected opens note mode, so "back to the start" is now **Home**.
 
 The rest of mixing (EQ, compression, reverb on sends, references) is in [Recording 7: Mixing](rec-mixing.qmd); level and headroom before
 the mix in [Recording 1: Gain Staging](rec-gain-staging.qmd).
