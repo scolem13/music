@@ -2204,7 +2204,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       : own.length ? "Sections in a style of their own: " + own.map(function(x){ return (x[0] || "from a bar") + " (" + x[1] + ")"; }).join(", ") + ". The menus above set the rest." : "";
     if (!booted) return;                                   // (taken once the page is set up: see the end of the script)
     if (bpm !== abcQ){ abcQ = bpm; if (bpm){ $("bt-tempo-n").value = bpm; var t = tempo(); $("bt-tempo-n").value = t; $("bt-tempo").value = t; if (player) player.setTempo(t); } }
-    if (sid !== abcStyle){ abcStyle = sid; if (sid && $("bt-style").value !== sid){ $("bt-style").value = sid; $("bt-style").dispatchEvent(new Event("change", { bubbles: true })); } }
+    if (sid !== abcStyle){ abcStyle = sid; if (sid && $("bt-style").value !== sid){ $("bt-style").value = sid; styleFromTune = true; try { $("bt-style").dispatchEvent(new Event("change", { bubbles: true })); } finally { styleFromTune = false; } } }
   }
   // draw the chart: concert pitch or written for the chosen instrument, letters and/or Roman numerals.
   // The numerals follow the chart's own key, so they read the same in every transposition.
@@ -2866,6 +2866,14 @@ document.addEventListener('DOMContentLoaded', async function () {
   });
   function kitMix(){ var m = {}; KIT.forEach(function(k){ var v = (parseInt($("bt-kit-" + k.id).value, 10) || 0) / 100; k.pieces.forEach(function(p){ m[p] = v; }); }); return m; }
   $("bt-key").value = "F";
+  // Style and Unlock kept between visits (localStorage.btStyle = { style, unlock }); ?style= and a hand-off still win, as they run later
+  var STYLE_KEY = "btStyle", styleFromTune = false;
+  // (a section's or the tune's own %%style is not your choice, so neither is saved)
+  function styleStore(){ if (secApplying || styleFromTune) return; try { localStorage.setItem(STYLE_KEY, JSON.stringify({ style: $("bt-style").value, unlock: unlocked() })); } catch (e) {} }
+  (function(){ var s = null; try { s = JSON.parse(localStorage.getItem(STYLE_KEY) || "null"); } catch (e) {}
+    if (!s) return;
+    if (STYLES.some(function(x){ return x.id === s.style; })) $("bt-style").value = s.style;
+    $("bt-unlock").checked = !!s.unlock; })();
   rebuild(true);
 
   function tempo(){ var v = parseInt($("bt-tempo-n").value, 10); return Math.min(300, Math.max(40, isNaN(v) ? 120 : v)); }
@@ -2883,7 +2891,17 @@ document.addEventListener('DOMContentLoaded', async function () {
   // While the Notation panel is open the band writes a pass of the form ahead (player.setAhead), so the log also
   // holds bars that have not sounded yet. nowBar = the bar number being heard; played() stops there.
   var nowBar = -1, drawT = null;
+  var countPend = [];                    // the count-in's click bars (player onCountIn), handed to the performance's bar 0 as .lead
+  function countBar(rec){ if (rec.bar === -rec.of) countPend = []; countPend.push(rec); }
+  // The bars with what comes before and after them: the count-in when they start at bar 0, the final hit when they end at the last bar played.
+  function framed(bars){
+    if (!bars || !bars.length) return bars; var f = bars[0], l = bars[bars.length - 1], out = bars;
+    if (f.bar === 0 && f.lead && f.lead.length) out = f.lead.concat(out);
+    var e = barLog.filter(function(r){ return r.ending && r.bar === l.bar + 1; })[0]; if (e) out = out.concat(e);
+    return out;
+  }
   function logBar(rec){
+    if (countPend.length && !rec.ending){ if (rec.bar === 0) rec.lead = countPend; countPend = []; }
     if (rec.bar === 0 && !rec.ending){ barLog = []; nowBar = -1; }      // a new performance starts a new log
     barLog.push(rec); if (barLog.length > LOG_MAX) barLog.splice(0, barLog.length - LOG_MAX);
     if ($("bt-notation").open && (drawnChorus == null || rec.chorus === drawnChorus)) drawSoon();      // (a bar of the chorus on show, or nothing on show yet)
@@ -2963,9 +2981,10 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (fresh) bars = freshBars((parsedC.playOrder || parsedC.bars).length);
     if (only){ var sb = sectionBars(bars); if (sb.length) bars = sb; else only = false; } else drawnSection = null;
     loadAbcjs().then(function(){
-      ABCJS.renderAbc("bt-score", BandNotation.toAbc(bars, notationOpts()),
+      var shown = only || ahead ? bars : framed(bars);                      // (the count-in and the final hit only with the bars played)
+      ABCJS.renderAbc("bt-score", BandNotation.toAbc(shown, notationOpts()),
         { responsive: "resize", add_classes: true, paddingtop: 6, paddingbottom: 6 });
-      window.__btNotation = { bars: bars.map(function(r){ return r.index; }), section: drawnSection, opts: notationOpts() };       // for tests
+      window.__btNotation = { bars: bars.map(function(r){ return r.index; }), drawn: shown.map(function(r){ return r.countIn ? "count" : r.ending ? "end" : r.index; }), section: drawnSection, opts: notationOpts() };       // for tests
       $("bt-nt-refresh").textContent = fresh ? "Write out another chorus" : "Show the latest bars";
       drawnFirst = ahead ? ahead[0].bar : null; whichSync(fresh);
       if (only && secs[drawnSection]) $("bt-nt-which").textContent = (secs[drawnSection].name || "Section " + (drawnSection + 1)) + (fresh ? ": an example of what the band would play" : state === "idle" ? ", as last played" : bars[0].bar > nowBar ? ", coming up" : ", playing now");
@@ -2981,6 +3000,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (bars) what = "as played";
     else { bars = freshBars(mode === "last" ? n : (parsedC.playOrder || parsedC.bars).length); what = "freshly generated, since " + (b.length ? "no full chorus has been played yet" : "nothing has been played yet"); }
     if (parts.indexOf("comp") >= 0 && bars.some(function(x){ return x.parts && x.parts.comp2 && x.parts.comp2.length; })) parts.splice(parts.indexOf("comp") + 1, 0, "comp2");   // the second chord instrument goes with the first
+    if (what === "as played") bars = framed(bars);                       // with the count-in and the final hit
     var bytes = BandMidi.build(bars, { parts: parts });
     var name = (parsedC.title || "backing-track").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") + "-" + keyField() + "-" + Math.round(bars[0].tempo) + "bpm.mid";
     window.__btLastMidi = bytes;                                         // for tests
@@ -3153,7 +3173,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     hold: $("bt-hold").value === "hold" && chartSections().length > 0,
     sectionLead: /[?&]remote=1/.test(location.search) ? 1 : 0,
     onSection: function(sc){ $("bt-secname").textContent = sc.name ? sc.name : "Section " + (sc.index + 1); if (!sc.early) enterSection(sc.index); remoteSay({ type: "bt-section", index: sc.index, name: sc.name, early: sc.early }); },
-    onBarEvents: function(rec){ logBar(rec); },
+    onBarEvents: function(rec){ logBar(rec); }, onCountIn: countBar,
     onRewind: function(bar){ unlogFrom(bar); }
   });
 
@@ -3367,12 +3387,12 @@ document.addEventListener('DOMContentLoaded', async function () {
   $("bt-feel").addEventListener("change", function(){
     // locked, the feel belongs to the style: the other feel means the plain style of that feel
     var f = $("bt-feel").value;
-    if (!unlocked() && styleDef().feel !== f) setStyle(f === "swing" ? "swing" : "boogaloo");
+    if (!unlocked() && styleDef().feel !== f){ setStyle(f === "swing" ? "swing" : "boogaloo"); styleStore(); }
     player.setOpts(bandOpts());
   });
   $("bt-rhythm").addEventListener("change", function(){ rhythmNote(); figsSync(); player.setOpts(bandOpts()); });
-  $("bt-style").addEventListener("change", function(){ rebuild(true); player.setOpts(bandOpts()); });
-  $("bt-unlock").addEventListener("change", function(){ rebuild(false); player.setOpts(bandOpts()); });
+  $("bt-style").addEventListener("change", function(){ rebuild(true); styleStore(); player.setOpts(bandOpts()); });
+  $("bt-unlock").addEventListener("change", function(){ rebuild(false); styleStore(); player.setOpts(bandOpts()); });
   $("bt-variation").addEventListener("change", function(){ player.setOpts(bandOpts()); });
   $("bt-ride").addEventListener("change", function(){ player.setOpts(bandOpts()); });
   $("bt-ride-sound").addEventListener("change", function(){ player.setOpts(bandOpts()); });

@@ -1,0 +1,11 @@
+# title: Golden Slumbers
+# artist: The Beatles
+# metre: 4/4
+# tonic: A
+
+0.0	silence
+0.383	intro, | A:min7 . . . |
+3.425	verse, | A:min7 . . . | A:min7 . . . | D:min . . . | D:min . . . | G:7 . . . | G:7 . . . | (2/4) C . | E . A:min . | D:min9 . . . | G:7 . . . | C . . . |
+34.586	refrain, | C . . . | F:maj7 . . . | C . . . | C . . . | F:maj7 . . . | (2/4) C . | E/5 . A:min . | D:min9 . . . | G:7 . . . | C . . . |
+62.311	verse, | A:min7 . . . | A:min7 . . . | D:min . . . | D:min . . . | G:7 . . . | G:7 . . . | (2/4) C . | E . A:min . | D:min9 . . . | G:7 . . . | (1/4) C |
+91.585	end

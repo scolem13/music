@@ -1297,9 +1297,13 @@ function initAudio() {
   const nd = noiseBuffer.getChannelData(0);
   for (let i = 0; i < nd.length; i++) nd[i] = Math.random() * 2 - 1;
 
+  // one output (dry + reverb), registered so the navbar Mixer / Tuner can listen to it
+  const drumOut = audioCtx.createGain();
+  drumOut.connect(audioCtx.destination);
+  if (window.AudioTap) AudioTap.register(audioCtx, drumOut, 'Drum set');
   masterDry = audioCtx.createGain();
   masterDry.gain.value = 1.0;
-  masterDry.connect(audioCtx.destination);
+  masterDry.connect(drumOut);
 
   const conv = audioCtx.createConvolver();
   const sr = audioCtx.sampleRate;
@@ -1314,7 +1318,7 @@ function initAudio() {
   wetGain.gain.value = 0.85;
   reverbSend = audioCtx.createGain();
   reverbSend.gain.value = 0.0;
-  reverbSend.connect(conv); conv.connect(wetGain); wetGain.connect(audioCtx.destination);
+  reverbSend.connect(conv); conv.connect(wetGain); wetGain.connect(drumOut);
 
   // Ride signal chain: rideIn → HPF → LPF → dry + reverb
   rideIn  = audioCtx.createGain();

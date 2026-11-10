@@ -2676,16 +2676,17 @@ function buildDiagramCard(inst, tuning, t){
     const nm=e.target.closest('.note-marker');
     if(nm){
       const pc=Number(nm.getAttribute('data-pc')), s=t.excluded[inst.id];
-      if(s){ s.has(pc)?s.delete(pc):s.add(pc); redraw(); }
+      if(s){ s.has(pc)?s.delete(pc):s.add(pc); if(t.autoExcl&&t.autoExcl[inst.id])t.autoExcl[inst.id].delete(pc); redraw(); }   // clicked = your choice, the band follows it
     }
   });
   const svgWrap=document.createElement('div');svgWrap.className='diagram-svg-wrap';
   card.appendChild(svgWrap);
 
   // What the card sounds (kept for "Play with the band") and its notation, when switched on.
-  function shown(midis,items,guitar){
+  // band = what "Play with the band" sends, when it differs from what the card sounds (a 5th greyed only by default)
+  function shown(midis,items,guitar,band){
     card._midis=midis;
-    t.shown[inst.id]=midis.slice().sort((a,b)=>a-b);
+    t.shown[inst.id]=(band||midis).slice().sort((a,b)=>a-b);
     card._notes={items,guitar};
     if(card._notate&&card.isConnected)card._notate();
   }
@@ -2722,6 +2723,7 @@ function buildDiagramCard(inst, tuning, t){
         if(fifth!==undefined) excl.add(mod12(t.rootPc+fifth));
       }
       t.excluded[inst.id]=excl;
+      (t.autoExcl=t.autoExcl||{})[inst.id]=new Set(excl);   // greyed by default: optional, so the band still plays it
     }
     addNotation();
 
@@ -2735,7 +2737,9 @@ function buildDiagramCard(inst, tuning, t){
         rootPc:t.rootPc,useFlats,title:displayName,excluded:excl,
         fingerings:showFingerings?computeKeyboardFingerings(tones,kbHandMode,t.rootPc):null
       }));
-      shown(midis.filter(m=>!excl.has(mod12(m))),tones.filter(x=>!excl.has(mod12(x.midi))).map(x=>({midi:x.midi,name:x.name})),false);
+      const auto=(t.autoExcl&&t.autoExcl[inst.id])||new Set();
+      shown(midis.filter(m=>!excl.has(mod12(m))),tones.filter(x=>!excl.has(mod12(x.midi))).map(x=>({midi:x.midi,name:x.name})),false,
+            midis.filter(m=>!excl.has(mod12(m))||auto.has(mod12(m))));
     }
     redraw=drawKbd;
     drawKbd();

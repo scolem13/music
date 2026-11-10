@@ -1,0 +1,16 @@
+# title: Ask Me Why
+# artist: The Beatles
+# metre: 4/4
+# tonic: E
+
+0.0	silence
+0.488	intro, | E . . . | E . E:maj7 F#:min7 |
+3.936	verse initial, | G#:min7 . . . | F#:min7 . . B:7 | E . . . | E . N F#:min7 | G#:min7 . . . | F#:min7 . . B:7 | E . . . | G# . . . | C#:min . . . | C#:min . . . | A . . . | F#:9 . . . | B . E:maj7 F#:min7 |
+26.935	verse variant 1, | G#:min7 . . . | F#:min7 . . B:7 | E . . . | E . E:maj7 F#:min7 | G#:min7 . . . | F#:min7 . . . | E . . . | G# . . . | C#:min . . . | C#:min . . . | A . . . | E . . . | E:aug . . . |
+50.027	bridge, | A . . . | B . . . | E . . . | E:aug . . . | A . . . | B . . . | E . . . | E B E:maj7 F#:min7 |
+64.192	verse variant 2, | G#:min7 . . . | A . . . | G#:min7 . . . | A:maj7 . . . | E . . . | E . E:maj7 F#:min7 |
+74.954	verse initial, | G#:min7 . . . | F#:min7 . . B:7 | E . . . | E . E:maj7 F#:min7 | G#:min7 . . . | F#:min7 . . B:7 | E . . . | G# . . . | C#:min . . . | C#:min . . . | A:min . . . | F#:9 . . . | B . E:maj7 F#:min7 |
+98.406	verse variant 2, | G#:min7 . . . | A . . . | G#:min7 . . . | A . . . | E . . . | E:aug . . . |
+109.157	bridge, | A . . . | B . . . | E . . . | E:aug . . . | A . . . | B . . . | E . . . | E B E:maj7 F#:min7 |
+123.286	verse variant 2 with ending, | G#:min7 . . . | A . . . | G#:min7 . . . | A:maj7 . . . | E . . . | A:maj7/5 . . . | E . . . | A:maj7/5 . . . | (2/4) B:maj6 . |
+147.775	end

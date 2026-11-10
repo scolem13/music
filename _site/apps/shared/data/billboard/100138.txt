@@ -1,0 +1,16 @@
+# title: Julia
+# artist: The Beatles
+# metre: 2/4
+# tonic: D
+
+0.0	silence
+0.499	verse, | D . | B:min7 . | F#:min . | F#:min . | D . | B:min7 . | F#:min . | A . |
+14.721	refrain, | D . | B:min7 . | A:min7 . | A:min9 . | B . | B . | G:9 . | G:min7 . | D . | B:min7 . | F#:min . | A . |
+36.072	refrain, | D . | B:min7 . | A:min7 . | A:min9 . | B . | B . | G:9 . | G:min7 . | D . | B:min7 . | F#:min . | A . | D . | D . |
+61.103	bridge, | C#:min . | C#:min . | D . | D . | B:min7 . | B:min7 . | F#:min7 . | F#:min6 . | D/3 . | F#:min . |
+78.832	refrain, | D . | B:min7 . | A:min7 . | A:min9 . | B . | B . | G:7 . | G:min7 . | D . | B:min7 . | F#:min . | A . | D . | D . |
+103.863	verse, | D . | B:min7 . | F#:min . | F#:min . | D . | B:min7 . | F#:min . | A . |
+118.120	refrain, | D . | B:min7 . | A:min7 . | A:min9 . | B . | B . | G:7 . | G:min7 . | D . | B:min7 . | F#:min . | A . |
+139.610	refrain, | D . | B:min7 . | A:min7 . | A:min9 . | B . | B . | G:9 . | G:min7 . | D . | B:min7 . | F#:min . | D . |
+160.996	outro, | F#:min . | D . | F#:min . | A . | (1/4) D:maj7 |
+174.080	end

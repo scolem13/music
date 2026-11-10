@@ -1,0 +1,14 @@
+# title: Something
+# artist: The Beatles
+# metre: 4/4
+# tonic: C
+
+0.0	silence
+0.325	intro, | (1/4) N | F . Eb G/5 |
+5.132	verse, | C . . . | E:min/5 . . . | C:7 . . . | F . . C/3 | D . . . | G G:sus4(2)/2 G/3 . | A:min . Ab:aug . | C/5 . D:7 . | F . Eb G/5 |
+38.197	verse, | C . . . | E:min/5 . . . | C:7 . . . | F . . C/3 | D . . . | G G:sus4(2)/2 G/3 . | A:min . Ab:aug . | C/5 . D:7 . | F . Eb G/5 |
+71.007	bridge, | A . . . | A . C#:min/5 . | F#:min . A/5 . | D . G . | A A/7 A/b7 A/b6 | A . C#:min/5 . | F#:min . A/5 . | D . G . | C C/7 C/6 C/3 |
+101.878	verse instrumental, | C . . . | E:min/5 . . . | C:7 . . . | F . . C/3 | D . . . | G G:sus4(2)/2 G/3 . | A:min . Ab:aug . | C/5 . D:7 . | F . Eb G/5 |
+133.991	verse, | C . . . | E:min/5 . . . | C:7 . . . | F . . C/3 | D . . . | G G:sus4(2) G/3 . | A:min . Ab:aug . | C/5 . D:7 . | F . Eb G/5 |
+166.452	outro, | A . . . | F . Eb G/5 | (1/4) C |
+183.014	end

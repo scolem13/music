@@ -1,0 +1,12 @@
+# title: I Will
+# artist: The Beatles
+# metre: 4/4
+# tonic: F
+
+0.0	silence
+1.103	verse, | F . D:min . | G:min7 . C . | F . D:min . | A:min . F:7 . | Bb . C . | D:min . F . | Bb . C . | F . D:min . | G:min7 . C:maj(4) . |
+22.187	verse, | F . D:min . | G:min7 . C . | F . D:min . | A:min . F:7 . | Bb . C . | D:min . F . | Bb . C . | F . F:7 . |
+40.809	bridge, | Bb . A:min . | D:min . . . | G:min . C . | F . F:7 . | Bb . A:min . | D:min . . . | G . . . | C . . . |
+59.373	verse, | F . D:min . | G:min7 . C . | F . D:min . | A:min . F:7 . | Bb . C . | D:min Bb:min/b3 F/5 . | Bb . C . | D:min Bb:min/b3 F/5 . | Bb . C . | D:min Bb:min/b3 F/5 B:min7 | G:min . C . | Db . . . |
+87.214	outro, | Db . . . | F . . . | F . . . | Bb . A:min . | D:min . . . | G:min . C . | (1/4) F |
+106.031	end

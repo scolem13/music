@@ -1,0 +1,17 @@
+# title: Getting Better
+# artist: The Beatles
+# metre: 4/4
+# tonic: C
+
+0.0	silence
+0.476	intro, | F:maj(9)/5 . . . | F:maj(9)/5 . . . | C . . . | F:maj(9)/5 . . . |
+8.789	verse, | G . . . | G . . C/5 | G . . . | G . . C/5 | G . . C/5 | G . . C/5 | G . . . | G . . C/5 |
+24.880	refrain, | C . . . | D:min7(4)/5 . . . | E:min7 . . . | F:maj(9)/6 . . . | C . . . | D:min7(4)/5 . . . | E:min7 . . . | F:maj(9) . . . |
+40.844	verse, | G . . . | G . . C/5 | G . . C/5 | G . . C/5 | G . . C/5 | G . . C/5 | G . . C/5 | G . . C/5 | G . . C/5 | G . . C/5 |
+60.476	refrain, | C . . . | D:min7(4)/b7 . . . | E:min7 . . . | F:maj(9)/6 . . . | C . . . | D:min7(4)/b7 . . . | E:min7 . . . | F:maj(9) . . . |
+76.185	bridge, | F C/3 F C/3 | F C/3 F C/4 | C . . . | D:min7(4)/b7 . . . | E:min7/b3 . . . | F:maj(9) . . . | C . . . | D:min7(4)/b7 . . . | E:min7/b3 . . . | F:maj(9) . . . |
+95.806	verse, | G . . . | G . . . | G . . . | G . . . | G . . . | G . . . | G . . . | G . . . | G . . . | G . . . | G . . . |
+117.354	refrain, | C . . . | D:min7(4)/b7 . . . | E:min7/b3 . . . | F:maj(9) . . . | C . . . | D:min7(4)/b7 . . . | E:min7/b3 . . . | F:maj(9) . . . |
+133.015	bridge, | F C/3 F C/3 | F C/5 F/3 G/3 | C . . . | D:min7(4)/b7 . . . | E:min7/b3 . . . | F:maj(9) . . . | C . . . | D:min7(4)/b7 . . . | E:min7/b3 . . . | F:maj(9) . . . | F C/3 F C/3 | F C/3 F G/3 |
+156.514	outro, | C . . G:(1) | G:(1) . . . | G:(1) . . . | G:(1) . . . | G:(1) . . . | (1/4) G:(1) |
+167.889	end

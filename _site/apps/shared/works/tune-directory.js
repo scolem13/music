@@ -5,7 +5,7 @@
 // Assessment's own finder (TuneLibrary.renderPicker over the tunes and themes: tonality, meter, key, starts on, tonal pattern,
 // Functions, Progression, rhythm cells). Billboard songs answer Functions and Progression from their chords (romans in the index);
 // a filter they have nothing to answer with (a tonal pattern, a meter…) leaves them out, as it does the analysed scores.
-// Sections are the page's ## headings (#td-works, #td-tunes, #td-themes, #td-mlt, #td-billboard, #td-analysed), so section-fold.js and the TOC work.
+// Sections are the page's ## headings (#td-works, #td-tunes, #td-themes, #td-mlt, #td-billboard, #td-isophonics, #td-analysed), so section-fold.js and the TOC work.
 (function () {
   "use strict";
   const $ = (s) => document.querySelector(s);
@@ -145,25 +145,36 @@
     return (c) => Object.keys(c).every((k) => BB_OK[k] || c[k] == null || c[k] === "" || (Array.isArray(c[k]) && !c[k].length)) &&
       TuneLibrary.romanMatch(c, s.romans, s.romanSeq);
   }
-  const bbox = $("#td-billboard-list");
-  if (bbox) fetch("/apps/shared/data/billboard/index.json").then((r) => r.json()).then((all) => {
-    const dec = {};
-    all.forEach((s) => { const d = s.year ? Math.floor(s.year / 10) * 10 + "s" : "Undated"; (dec[d] = dec[d] || []).push(s); });
-    Object.keys(dec).sort().forEach((d) => {
-      const g = group(bbox, d, dec[d].length);
-      dec[d].sort((a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: "base" })).forEach((s) => {
-        const li = el("li", "td-row"), a = el("a", null, s.title); a.href = "/tools/timestamp-notes.html?salami=" + s.id;
-        li.appendChild(a);
-        const sub = [s.artist, s.year, s.tonic && "in " + s.tonic, s.metre].filter(Boolean).join(" · ");
-        li.appendChild(el("span", "td-sub", sub));
-        if (s.romans && s.romans.length) { li.title = s.romans.join("  "); }
-        rows.push({ el: li, text: fold(s.title + " " + sub + " billboard"), group: g.d, music: bbMusic(s) });
-        g.ul.appendChild(li);
+  const bbox = $("#td-billboard-list"), isox = $("#td-isophonics-list");
+  function songRow(s, ul, g, tag) {
+    const li = el("li", "td-row"), a = el("a", null, s.title); a.href = "/tools/timestamp-notes.html?salami=" + s.id;
+    li.appendChild(a);
+    const sub = [s.artist, s.year, s.tonic && "in " + s.tonic + (s.minor ? " minor" : ""), s.metre].filter(Boolean).join(" · ");
+    li.appendChild(el("span", "td-sub", sub));
+    if (s.romans && s.romans.length) { li.title = s.romans.join("  "); }
+    rows.push({ el: li, text: fold(s.title + " " + sub + " " + tag + (s.album ? " " + s.album : "")), group: g.d, music: bbMusic(s) });
+    ul.appendChild(li);
+  }
+  const bySort = (a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: "base" });
+  if (bbox || isox) fetch("/apps/shared/data/billboard/index.json").then((r) => r.json()).then((all) => {
+    const bb = all.filter((s) => s.src !== "iso"), iso = all.filter((s) => s.src === "iso");
+    if (bbox) {
+      const dec = {};
+      bb.forEach((s) => { const d = s.year ? Math.floor(s.year / 10) * 10 + "s" : "Undated"; (dec[d] = dec[d] || []).push(s); });
+      Object.keys(dec).sort().forEach((d) => {
+        const g = group(bbox, d, dec[d].length);
+        dec[d].sort(bySort).forEach((s) => songRow(s, g.ul, g, "billboard"));
       });
-    });
-    $("#td-bb-n").textContent = all.length + " songs";
+      $("#td-bb-n").textContent = bb.length + " songs";
+    }
+    if (isox) {
+      const alb = {}, order = [];
+      iso.forEach((s) => { if (!alb[s.album]) { alb[s.album] = []; order.push(s.album); } alb[s.album].push(s); });
+      order.forEach((n) => { const g = group(isox, n + " (" + alb[n][0].year + ")", alb[n].length); alb[n].forEach((s) => songRow(s, g.ul, g, "isophonics beatles")); });
+      $("#td-iso-n").textContent = iso.length + " songs";
+    }
     filter();
-  }).catch(() => { bbox.textContent = "The Billboard list could not be loaded."; });
+  }).catch(() => { [bbox, isox].forEach((x) => { if (x) x.textContent = "The song list could not be loaded."; }); });
 
   // ---- both filters ----
   const q = $("#td-q"), stat = $("#td-stat");

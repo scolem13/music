@@ -1,0 +1,16 @@
+# title: In My Life
+# artist: The Beatles
+# metre: 4/4
+# tonic: A
+
+0.0	silence
+0.453	intro, | A . . . | E . . . | A . . . | E . . . |
+9.694	verse, | A . E . | F#:min . A:7 . | D . D:min . | A . . . | A . E . | F#:min . A:7 . | D . D:min . | A . . . |
+28.317	bridge, | F#:min . . . | D . . . | G . . . | A . . . | F#:min . . . | B . . . | D:min . . . | A . . . |
+46.765	half-intro, | A . . . | E . . . |
+51.467	verse, | A . E . | F#:min . A:7 . | D . D:min . | A . . . | A . E . | F#:min . A:7 . | D . D:min . | A . . . |
+70.252	bridge, | F#:min . . . | D . . . | G . . . | A . . . | F#:min . . . | B . . . | D:min . . . | A . . . |
+88.723	verse instrumental, | A . E . | F#:min . A:7 . | D . D:min . | A . . . | A . E . | F#:min . A:7 . | D . D:min . | A . . . |
+107.299	bridge, | F#:min . . . | D . . . | G . . . | A . . . | F#:min . . . | B . . . | D:min . . . | A . . . |
+125.690	outro, | A . . . | E . . . | D:min . . . | D:min . . . | A . . . | E . . . | (1/4) A |
+147.984	end

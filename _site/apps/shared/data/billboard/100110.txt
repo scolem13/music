@@ -1,0 +1,16 @@
+# title: A Day In The Life
+# artist: The Beatles
+# metre: 4/4
+# tonic: G
+
+0.0	silence
+0.221	intro, | G . . B:min | E:min7 . . . | C . . . | C . . . |
+12.887	verse, | G . B:min/5 . | E:min7 . E:min7/b7 . | C . E:min/5 . | A:min . . . | G . B:min . | E:min7 . E:min7/b7 . | C . F . | E:min . E:min7/b7 . | C . F . | E:min . C . |
+44.025	verse, | G . B:min/5 . | E:min7/b7 . . . | C . E:min/5 . | A:min . . . | G . B:min . | E:min7 . . E:min7/b7 | C . F . | E:min . E:min7/b7 . | C . . . |
+71.773	verse, | G . B:min/5 . | E:min7 . E:min7/b7 . | C . E:min/5 . | A:min . . A:min/5 | G . B:min . | E:min7 . E:min7/b7 . | C . F . | E:min . E:min7/b7 . | C . . . | C . F#:(1,4,b7) . |
+102.446	bridge, | E:min/b3 . A:min(2) . | E:min(*3)/5 . C#:maj7(*b5) . | E:min(*5)/b7 . E:min(*5) . | E:min(*5) . N . | N . . . | N . . . | N . . . | N . . . | N . . . | N . . . | N . . . | E . . . |
+138.670	vocal, | E . . . | E . . . | (2/4) E . | D . . . | E . B . | E . B . | (2/4) B . | E . . . | (2/4) E . | D . . . | E . B . | E . B . |
+169.204	instrumental, | C . . . | G . . . | D . . . | A . . . | E . . . | C . . . | G . . . | D . . . | A . . . | E:(1) . C:(1) . |
+198.438	verse, | G . B:min/5 . | E:min7 . E:min7/b7 . | C . E:min/5 . | A:min . . F#:hdim7 | G . B:min . | E:min7 . E:min7/b7 . | C . F . | E:min . E:min7/b7 . | C . . . | C . F#:(1,4,b5) . |
+227.834	bridge, | E:min/b3 . A:min(2) . | E:min(*b3)/5 . C:maj7(*5) . | E:min7(*5)/b7 . E:(1,2,5,b6) . | E:(1,2,5,b6) . . . | E:(1,2,5,b6) . . N | N . . . | N . . . | N . . . | N . . . | (3/4) N . . | N . . . | (2/4) N E:(1) |
+333.793	end

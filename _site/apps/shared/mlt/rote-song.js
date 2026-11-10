@@ -77,10 +77,17 @@
     return ABCJS.renderAbc(off, abc)[0];
   }
 
+  // ---- the student's report (SiteRecord, record.js loaded on first use)
+  var SR_SRC = "/apps/shared/report/record.js?v=8", srWait = [];
+  function withRecord(f) {
+    if (global.SiteRecord) return f(global.SiteRecord);
+    srWait.push(f); if (srWait.length > 1) return;
+    var sc = document.createElement("script"); sc.src = SR_SRC; sc.onload = function () { var w = srWait; srWait = []; w.forEach(function (g) { if (global.SiteRecord) g(global.SiteRecord); }); }; document.head.appendChild(sc);
+  }
   function mount(host, abc, opts) {
     opts = opts || {};
     abc = String(abc).split("\n").filter(function (l) { return !/^w:/.test(l); }).join("\n");   // the words are sung, not needed for the sound
-    var I = info(abc), title = opts.title || I.title || "the song", cur = 0, gen = 0, play = null, raf = 0, tapState = null, auTimer = null;
+    var srT0 = 0, I = info(abc), title = opts.title || I.title || "the song", cur = 0, gen = 0, play = null, raf = 0, tapState = null, auTimer = null;
     var v = visual(abc), timing = [], notes = [];
     function retime(q) {
       try { v.setUpAudio({}); } catch (e) {}
@@ -213,7 +220,7 @@
           var cands = notes.filter(function (e) { return e.milliseconds >= end * 0.75 && e.milliseconds < end - 1; });
           if (!cands.length) cands = notes.slice(-2, -1);
           var c = cands[Math.floor(Math.random() * cands.length)], cut = c ? c.milliseconds : end;
-          lastCut = cut; hearB.disabled = true; tapB.disabled = false; again.textContent = "▶ Try again";
+          srT0 = Date.now(); lastCut = cut; hearB.disabled = true; tapB.disabled = false; again.textContent = "▶ Try again";
           tapState = { cut: cut, end: end, armed: false, s: null };
           if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
           host.classList.add("rs-armed");
@@ -233,6 +240,9 @@
         }
         function result(err) {
           var t = tapState; clearTimeout(auTimer); tapState = { cut: t ? t.cut : lastCut }; tapB.disabled = true; hearB.disabled = false; host.classList.remove("rs-armed");
+          var beat0 = msWhole() * I.macro;
+          withRecord(function (SR) { var it = SR.add("rote-song", { ex: "Rote Song by Ear", q: { text: title + " — audiate the ending: press Space on its last note" }, want: "on the last note" });
+            it.at.push([err == null ? "(no press)" : (Math.abs(err) / 1000).toFixed(2) + " s " + (err < 0 ? "early" : "late"), err != null && Math.abs(err) < beat0 * 0.6 ? 1 : 0, Math.round((Date.now() - (srT0 || Date.now())) / 1000)]); SR.save(); });
           if (err == null) { msg.textContent = "No tap. The song has ended; try again and press Space on its last note."; return; }
           var beat = msWhole() * I.macro, b = err / beat, a = Math.abs(err);
           msg.innerHTML = (a < beat * 0.25 ? "🎯 Right on it" : a < beat * 0.6 ? "Close" : a < beat * 1.5 ? "About a beat " + (err < 0 ? "early" : "late") : "Off by " + Math.abs(b).toFixed(1) + " beats (" + (err < 0 ? "early" : "late") + ")") +

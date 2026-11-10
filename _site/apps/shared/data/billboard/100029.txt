@@ -1,0 +1,16 @@
+# title: A Hard Day's Night
+# artist: The Beatles
+# metre: 4/4
+# tonic: G
+
+0.0	silence
+1.068	intro, | G:sus4(b7) . . . | (3/4) G:sus4(b7) . . |
+4.203	verse, | G . C . | G . . . | F . . . | G . . . | G . C . | G . . . | F . . . | G . . . | C . . . | D . . . | G . C . | G . . . |
+24.671	verse, | G . C . | G . . . | F . . . | G . . . | G . C . | G . . . | F . . . | G . . . | C . . . | D . . . | G . C . | G . . . | B:min . . . |
+47.090	bridge, | E:min . . . | B:min . . . | B:min . . . | G . . . | E:min . . . | C . . . | D:7 . . . | G . C . |
+60.929	verse, | G . . . | F . . . | G . . . | G . C . | G . . . | F . . . | G . . . | C . . . | D . . . | G . C . | G . G/5 . |
+80.062	verse solo, | G . C . | G . . . | F . . . | G . . . | G . C . | G . . . | F . . . | G . . . | C . . . | D . . . | G . C . | G . . . | B:min . . . |
+102.679	bridge, | E:min . . . | B:min . . . | B:min . . . | G . . . | E:min . . . | C . . . | D:7 . . . | G . C . |
+116.518	verse, | G . . . | F . . . | G . . . | G . C . | G . . . | F . . . | G . . . | C . . . | D . . . | G . C . | G . G:sus4/5 . |
+135.721	outro, | G . C . | G . C . | G . C . | F:maj9(*7) . . . | F:maj9(*7) . . . | F:maj9(*7) . . . | F:maj9(*7) . . . | (1/4) F:maj9(*7) |
+152.555	end

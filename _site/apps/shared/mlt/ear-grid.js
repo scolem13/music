@@ -127,6 +127,13 @@
   }
 
   // ---------- the page ----------
+  // ---- the student's report (SiteRecord, record.js loaded on first use)
+  var SR_SRC = "/apps/shared/report/record.js?v=8", srWait = [];
+  function withRecord(f) {
+    if (global.SiteRecord) return f(global.SiteRecord);
+    srWait.push(f); if (srWait.length > 1) return;
+    var sc = document.createElement("script"); sc.src = SR_SRC; sc.onload = function () { var w = srWait; srWait = []; w.forEach(function (g) { if (global.SiteRecord) g(global.SiteRecord); }); }; document.head.appendChild(sc);
+  }
   function mount(host) {
     var R = global.MLTRecordings; if (!R) { host.textContent = "recordings.js is missing on this page."; return; }
     var q = new URLSearchParams(location.search), rec = R.byId(q.get("rec") || ""), tuneQ = q.get("tune");
@@ -166,7 +173,7 @@
       var msg = el("p", "eg-msg"); main.appendChild(msg);
       var tuneBox = el("details", "eg-tune"); main.appendChild(tuneBox);
 
-      var map = null, tune = null, tuneAbc = null, loop = null, anchor = null, checked = false, reveal = false;
+      var t0 = Date.now(), map = null, tune = null, tuneAbc = null, loop = null, anchor = null, checked = false, reveal = false;
 
       // bar start times: the timing map's, else the steady grid
       function bars() {
@@ -251,6 +258,11 @@
         checked = true; drawGrid();
         var n = 0, ok = 0, half = 0;
         [].forEach.call(gridBox.querySelectorAll(".eg-bar"), function (c) { if (c.querySelector(".eg-g").value.trim()) { n++; if (c.classList.contains("eg-ok")) ok++; else if (c.classList.contains("eg-half")) half++; } });
+        if (n) { var given = [], want = [];
+          [].forEach.call(gridBox.querySelectorAll(".eg-bar"), function (c) { var gi = c.querySelector(".eg-g").value.trim(); if (!gi) return; var an = answerFor(+c.dataset.i);
+            given.push((+c.dataset.i + 1) + ": " + gi); want.push((+c.dataset.i + 1) + ": " + (an && an.length ? an.join(" ") : "?")); });
+          withRecord(function (SR) { var it = SR.add("ear-grid", { ex: "Chord Grid by Ear", q: { text: r.title + " — write the chord in each bar (" + n + " bar" + (n === 1 ? "" : "s") + " tried)" }, want: want.join("  ") });
+            it.at.push([given.join("  "), ok === n ? 1 : 0, Math.round((Date.now() - t0) / 1000)]); if (reveal) it.rv = 1; SR.save(); }); }
         msg.textContent = n ? ok + " of " + n + " bars right" + (half ? ", " + half + " with the right root but not the right chord (orange)" : "") + "." : "Type a chord in some bars first.";
       }
 

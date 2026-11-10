@@ -1,11 +1,12 @@
 // score-view.js — the one page for every bundled analysed score (theory/analysed-scores/view.qmd).
+//   view.html?id=<id>&bar=N[-M]   (a piece, with those bars lit and scrolled to)
 //   view.html            the list of pieces: search, collection filter, key / meter / bars / analyst columns, sortable
 //   view.html?id=<id>    that piece's score with its Roman numerals, drawn and played by analysed-scores.js (AnalysedScores.add)
 // Data: apps/shared/data/scores/index.json (every piece, small) and one file per collection (<set>.json), fetched only when a piece
 // from it is opened, then cached by the browser. Both written by scripts/when-in-rome/bundle.mjs. Bump V after rebuilding them.
 (function () {
   "use strict";
-  var V = "4", BASE = "/apps/shared/data/scores/", PAGE = location.pathname;
+  var V = "5", BASE = "/apps/shared/data/scores/", PAGE = location.pathname;
   var $ = function (id) { return document.getElementById(id); };
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function get(f) { return fetch(BASE + f + ".json?v=" + V).then(function (r) { if (!r.ok) throw new Error(f + ": " + r.status); return r.json(); }); }
@@ -70,6 +71,14 @@
       host.setAttribute("data-keys", JSON.stringify(d.keys)); host.setAttribute("data-chords", JSON.stringify(d.chords));
       src.type = "text/plain"; src.textContent = d.abc; host.appendChild(src); $("sv-score").appendChild(host);
       window.AnalysedScores.add(host);
+      // &bar=137 or &bar=137-139: light those bars (as numbered on the score: the first full bar is 1) and scroll to them
+      var qb = /^(\d+)(?:-(\d+))?$/.exec(new URLSearchParams(location.search).get("bar") || "");
+      if (qb) (function lit(tries) {
+        var S = window.AnalysedScores.scores().filter(function (x) { return x.host === host; })[0];
+        if (!S || !S.msBar || !S.paper || !S.paper.querySelector(".abcjs-note")) { if (tries < 60) setTimeout(function () { lit(tries + 1); }, 150); return; }
+        window.AnalysedScores.hiBars(S, +qb[1], +(qb[2] || qb[1]));
+        var g = S.paper.querySelector(".as-hi"); if (g) g.scrollIntoView({ block: "center" });
+      })(0);
       var extra = $("sv-extra");
       if (d.misses.length) extra.appendChild(el("p", null, "Not shown on the score (no note starts there): " +
         d.misses.map(function (m) { return "bar " + m[0] + " beat " + m[1] + ": " + m[2]; }).join("; ") + "."));

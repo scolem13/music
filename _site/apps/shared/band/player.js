@@ -31,6 +31,7 @@
 //     onLoadProgress(done, total),
 //     onBar(info),                 // as the bar starts SOUNDING: { bar, index, chorus, src, beats, countIn }
 //                                  //   (count-in bars: countIn true, index/src -1; the final hit adds ending:true)
+//     onCountIn(rec),              // each count-in bar's clicks as a bar record { bar: -n, of, countIn:true, parts:{ drums } } (not onBarEvents: that is the form's bars)
 //     onBeat(info),                // { beat, bar, countIn }
 //     onEnd(),
 //     humanize: 1,                 // 0 = dead on the grid (tests); onEvent(e) taps every scheduled note
@@ -457,6 +458,7 @@
     if (tacet.indexOf("drums") >= 0) tacet.push("congas");                            // the congas wait with the drums
     PARTS.forEach(function (p){ var part = self.parts[p]; if (!part || typeof part[method] !== "function" || tacet.indexOf(p) >= 0) return;
       // the drummer listens: how busy and how loud the bass and the chords are in this bar, half and half with the conductor's intensity
+      if (p === "drums" && method === "bar") bctx.bassBar = rec.parts.bass || null;           // (the drummer hears which beats the bass plays)
       if (p === "drums" && method === "bar"){ var n = 0, vs = 0; ["bass", "comp"].forEach(function (q){ (rec.parts[q] || []).forEach(function (e){ if (e.hand === "L") return; n++; vs += e.vel || 0.6; }); });
         if (n){ var dens = clamp(n / (2 * (bctx.beats || 4)) * 1.3, 0, 1), loud = clamp((vs / n - 0.5) / 0.3, 0, 1); bctx.energy = clamp(0.5 * (bctx.intensity == null ? 0.5 : bctx.intensity) + 0.25 * dens + 0.25 * loud, 0, 1); } }
       var wr = method === "bar" && bctx.written && bctx.written[p];
@@ -486,7 +488,7 @@
       evs.push({ pos: b, piece: "sticks", vel: b === 0 ? 0.8 : 0.66 });
       if (cmp && !sparse){ evs.push({ pos: b + 1 / 3, piece: "sticks", vel: 0.3, straight: true }); evs.push({ pos: b + 2 / 3, piece: "sticks", vel: 0.3, straight: true }); }   // the three eighths of each beat
     }
-    this.collect("drums", evs, L0, beats, cmp, fb.unit || 1);
+    this.collect("drums", evs, L0, beats, cmp, fb.unit || 1); this.clicks = evs;
     return beats;
   };
   // Bar `ik` of a run of bars that leads into the form: the intro, or the bars between two passes (between = true).
@@ -515,6 +517,8 @@
           if (Math.abs(n.pos * 2 - Math.round(n.pos * 2)) > 1e-3) e.straight = true; return e; }), L0, beats, form[0].compound, form[0].unit || 1);
       }
       this.timeline.push({ L: L0, beats: beats, info: { bar: -this.countInLeft, index: -1, chorus: 0, src: -1, beats: beats, countIn: true } });
+      if (this.countTap) this.countTap({ bar: -this.countInLeft, of: this.countIn, index: -1, chorus: 0, length: form.length, beats: beats, tempo: this.tempo / (form[0].unit || 1), meter: form[0].meter, compound: !!form[0].compound,   // onCountIn: the clicks as a bar record (notation / MIDI export)
+        countIn: true, chords: [], opts: Object.assign({}, first1(c.opts)), parts: { drums: this.clicks } });
       this.countInLeft--; this.nextL += beats; return;
     }
     if (this.introAt < this.intro.length){                   // the intro: once, between the count-in and the top
@@ -787,7 +791,7 @@
       if (!buildForm(c.parsed, c.transpose).length){ setState("idle"); throw new Error("BandPlayer: no bars to play"); }
       bus = makeBus(a.ctx, c.volumes);
       session = new Session(a.ctx, a.bank, bus, c, newSeed(cfg.seed), cfg.onEvent);
-      session.barTap = cfg.onBarEvents || null;
+      session.barTap = cfg.onBarEvents || null; session.countTap = cfg.onCountIn || null;
       baseTempo = c.tempo;
       session.onTempo = function (bpm){ if (cfg.onTempo) cfg.onTempo(bpm); };
       session.start(a.ctx.currentTime + START_DELAY);

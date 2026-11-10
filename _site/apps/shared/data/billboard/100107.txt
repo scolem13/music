@@ -1,0 +1,16 @@
+# title: Lovely Rita
+# artist: The Beatles
+# metre: 4/4
+# tonic: E
+
+0.0	silence
+0.302	intro, | B . . . | A . . . | E . . . | B . . . | B . . . | A . . . | E . . . | B . . . |
+22.221	verse, | E . D A | E . B . | C#:min . F# . | B . . . |
+33.274	bridge, | E . A . | D . G . | E . B . | E . A . | D . G . | E . B . | E C#:min F#:min B |
+52.547	verse, | E . D A | E . B . | C#:min . F# . | B . A/9 . | E/5 . B . | A/9 . . . | B . . . |
+71.773	verse piano, | E . D A | E . B . | C#:min . F# . | B . . . |
+82.756	bridge, | E . A . | D . G . | E . B . | E . A . | D . G . | E . B . | E C#:min F#:min B |
+101.901	verse, | E . D A | E . B . | C#:min . F# . |
+110.132	outro a, | B . . . | A . . . | E . . . | B . . . | B . . . | A . . . | E . . . | B . . . |
+131.820	outro b, | A:(1,2,4) . . . | A:(1,2,4) . . . | A:(1,2,4) . . . | A:(1,2,4) . . . | A:(1,2,4) . . . | A:(1,2,4) . . . | A:(1,2,4) . . . | A:(1,2,4) . . . | A:min7(*b3) . . . | A:min7(*b3) . . . | (3/4) D:min7(*b3) . A:(1) |
+162.116	end
