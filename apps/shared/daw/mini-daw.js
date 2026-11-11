@@ -1423,6 +1423,7 @@
     else if (k === 'Enter' && !this.keysOn && !this.recording && this.vimOn()) { e.preventDefault(); }
     else if (k === 'Enter' || k === 'Home') { e.preventDefault(); this.locate(0); }
     else if (mod && (k === 'z' || k === 'Z')) { e.preventDefault(); this.doUndo(!e.shiftKey); }
+    else if (e.ctrlKey && !e.metaKey && (k === 'r' || k === 'R')) { e.preventDefault(); this.doUndo(false); }      // vim: Ctrl-r redo
     else if (mod && (k === 'd' || k === 'D')) { e.preventDefault(); this.duplicate(); }
     else if (mod && this.useClip && (k === 'c' || k === 'C' || k === 'x' || k === 'X')) { e.preventDefault(); this.copySel(k === 'x' || k === 'X'); }
     else if (mod && this.useClip && (k === 'v' || k === 'V')) { e.preventDefault(); this.paste(); }
@@ -1431,6 +1432,7 @@
     else if (mod) return;
     else if (k === 'Delete' || k === 'Backspace') { e.preventDefault(); this.deleteSel(); }
     else if (this.keysOn) return;
+    else if (k === 'u' && !e.altKey) { e.preventDefault(); this.doUndo(true); }      // vim: u undo
     else if ((k === 'g' || k === 'G') && !e.altKey) { e.preventDefault(); this.editPos(); }
     else if (this.navOn && (k === 'S' || k === 'M') && !e.altKey) { e.preventDefault(); this.msKey(k); }
     else if (k === 'J' && !e.altKey && !(this.inSession && this.inSession())) { e.preventDefault(); this.join(this.n); }

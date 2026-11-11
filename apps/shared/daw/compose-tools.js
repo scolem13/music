@@ -205,6 +205,51 @@
     d.say("Applied: " + notes.length + " notes (Undo brings the old ones back)."); abcFromClip(d);
   }
 
+  // --- Open a tune from the collection (apps/tunes/tunes-object.js, loaded on first use): its melody as a clip on a new track at the playhead's bar,
+  // its chord symbols and bars put into the Fill row below (Fill then writes the band). Repeats are not unrolled; a pickup bar counts as bar 1.
+  var TUNES = null;
+  function loadTunes() {
+    if (TUNES) return Promise.resolve(TUNES);
+    return new Promise(function (ok, no) { var sc = document.createElement("script"); sc.src = "/apps/tunes/tunes-object.js"; sc.onload = function () { ok(); }; sc.onerror = function () { no(new Error("could not load the tune collection")); }; document.head.appendChild(sc); })
+      .then(function () { var src = typeof tunesObject !== "undefined" ? tunesObject : global.tunesObject, out = [];      // eslint-disable-line no-undef
+        Object.keys(src || {}).forEach(function (set) { String(src[set]).split(/\n(?=X:)/).forEach(function (abc) { var t = /^T:\s*(.+)$/m.exec(abc); if (t && /^K:/m.test(abc)) out.push({ title: t[1].trim(), set: set, abc: abc.trim() }); }); });
+        TUNES = out; return out; });
+  }
+  C.tuneInfo = function (abc) {
+    var m = /^M:\s*(\S+)/m.exec(abc), ts = [4, 4]; if (m) { if (m[1] === "C|") ts = [2, 2]; else { var f = /^(\d+)\/(\d+)$/.exec(m[1]); if (f) ts = [+f[1], +f[2]]; } }
+    var q = /^Q:\s*(?:(\d+)\/(\d+)\s*=\s*)?(\d+)/m.exec(abc), qpm = q ? Math.round(+q[3] * (q[1] ? 4 * q[1] / q[2] : 1)) : 0;
+    return { ts: ts, qpm: qpm };
+  };
+  C.chartOf = function (chords, bars) {      // chord symbols -> "C | C G7 | ..." one entry a bar (an empty bar repeats the last chord)
+    var per = []; for (var i = 0; i < bars; i++) per.push([]);
+    chords.forEach(function (c) { if (c.bar >= 0 && c.bar < bars && /^[A-G]/.test(c.name)) per[c.bar].push(c.name); });
+    var last = null; return per.map(function (x) { if (x.length) last = x[x.length - 1]; return x.length ? x.join(" ") : last || "C"; }).join(" | ");
+  };
+  C.openTune = function (d, tune) {
+    var A = global.AbcClip, r; try { r = A.abcToNotes(tune.abc); } catch (e) { return d.say("Could not read that tune: " + e.message); }
+    if (!r.notes.length) return d.say("That tune has no notes to open.");
+    var p = d.p, info = C.tuneInfo(tune.abc), bar = Meter.barAt(p, d.pos + 1e-9).bar, at = Meter.barStart(p, bar), empty = !p.tracks.some(function (t) { return t.clips.length; }), F = d.fillUi;
+    var here = Meter.tsOfBar(p, bar); if (here.join("/") !== info.ts.join("/") && !empty) return d.say(tune.title + " is in " + info.ts.join("/") + " but bar " + (bar + 1) + " is " + here.join("/") + ": set the Time from that bar first.");
+    var bars = Math.max(1, r.bars), len = bars * Meter.beats(info.ts);
+    d.change(function () {
+      if (here.join("/") !== info.ts.join("/")) Meter.set(p, bar, info.ts); if (empty && info.qpm >= 30 && info.qpm <= 300) p.tempo = info.qpm;
+      var tr = M.mkTrack(tune.title.slice(0, 24), "piano"); tr.clips.push({ start: at, len: len, notes: r.notes.map(function (n) { return { t: n.t, d: n.d, m: n.m, v: 0.75 }; }) });
+      p.tracks.push(tr); p.bars = Math.max(p.bars, Math.min(64, bar + bars)); d.sel = { track: p.tracks.length - 1, clip: 0, slot: -1, notes: [] };
+    });
+    if (F) { F.from.value = bar + 1; F.to.value = bar + bars; F.edited = true; if (r.chords.length) F.chart.value = C.chartOf(r.chords, bars); }
+    d.say("Opened " + tune.title + ": " + bars + " bars of melody" + (r.chords.length ? "; its chords are in Fill from chords below: choose a source and press Fill." : " (it has no chord symbols).") + (/:\||\|:/.test(tune.abc) ? " Repeats are written once." : ""));
+  };
+  function tunePicker(d, body) {
+    var row = el("div", "mdaw-tools"), lb = el("label", "mdaw-lbl mdaw-wide", "Tune "), inp = el("input"), dl = el("datalist"), bOpen = btn("Open the tune", "Its melody on a new track at the playhead's bar, its chords into the Chords box", "btn-primary");
+    inp.type = "text"; inp.placeholder = "Search the tune collection…"; inp.setAttribute("aria-label", "Tune title"); dl.id = d.id + "-tunes"; inp.setAttribute("list", dl.id);
+    lb.appendChild(inp); row.appendChild(lb); row.appendChild(dl); row.appendChild(bOpen); body.appendChild(row);
+    inp.addEventListener("focus", function () { loadTunes().then(function (ts) { if (dl.children.length) return; ts.forEach(function (t) { var o = el("option"); o.value = t.title; o.label = t.set; dl.appendChild(o); }); }).catch(function (e) { d.say(e.message); }); });
+    function go() { loadTunes().then(function (ts) { var q = inp.value.trim().toLowerCase(); if (!q) return d.say("Type a tune's title first.");
+      var t = ts.filter(function (x) { return x.title.toLowerCase() === q; })[0] || ts.filter(function (x) { return x.title.toLowerCase().indexOf(q) >= 0; })[0]; if (!t) return d.say("No tune called " + inp.value + ".");
+      C.openTune(d, t); }).catch(function (e) { d.say(e.message); }); }
+    bOpen.onclick = go; inp.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); go(); } });
+  }
+
   // --- Fill from chords ---
   function fillPanel(d) {
     var det = d.fillBox = el("details", "mdaw-tp mdaw-fill"); det.appendChild(el("summary", null, "Fill from chords (a band style, an arp type or an arranger section onto a clip)")); d.cmp.appendChild(det);
@@ -216,6 +261,7 @@
     bLoop.onclick = function () { F.edited = true; F.from.value = d.p.loop.from + 1; F.to.value = d.p.loop.to; }; bClip.onclick = function () { var c = d.clip(); if (!c) return d.say("Select a clip first."); F.edited = true;
       var s = d.sel.slot >= 0 ? 0 : c.start; F.from.value = Meter.barAt(d.p, s).bar + 1; F.to.value = Meter.barAt(d.p, s + c.len - 1e-6).bar + 1; };
     [bLoop, bClip].forEach(function (x) { r1.appendChild(x); });
+    tunePicker(d, body);
     var r2 = el("div", "mdaw-tools"); body.appendChild(r2);
     var cl = el("label", "mdaw-lbl mdaw-wide", "Chords "); F.chart = el("input"); F.chart.type = "text"; F.chart.value = "Dm7 G7 | Cmaj7 | Am7 D7 | Gmaj7"; F.chart.setAttribute("aria-label", "Chords, bars split by |"); cl.appendChild(F.chart); r2.appendChild(cl);
     var bRead = btn("Chords from the selected clip", "Read the chord symbols in the notation panel, else the chords the clip's notes spell, one a bar"); r2.appendChild(bRead);

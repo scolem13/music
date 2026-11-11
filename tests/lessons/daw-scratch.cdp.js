@@ -172,6 +172,12 @@ const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.spl
     D.sel = { track: 0, clip: 0, slot: -1, notes: [] }; const s0 = c().start; D.setPos(0); key2('l', { code: 'KeyL' }); out.push(D.pos, c().start === s0);   // plain l: the playhead, even with a clip selected
     return out.join(' | '); })()`);
   check("nav keys: l / Alt+→ a beat, L a bar, h back, sixteenth step, undo; arrows move the playhead a step (Shift a bar); Esc deselects then l moves the playhead; with a note selected l moves the note not the clip, Alt+↑ transposes (Shift an octave), 3l repeats", nv === "true | beat | 1 | 2 | 4 | 3 | 3.25 | 0 | 1 | 4 | 3 | -1 | 4 | 0 | 1 | 0 | 1 | 13 | 4 | 1 | true", nv);
+  const tu = await ev(`(async () => { ${KEY} const out = []; D.change(() => { D.p.tracks = []; D.p.ts = [4, 4]; D.p.tsMap = []; D.p.tempo = 100; D.pos = 0; D.sel = { track: 0, clip: -1, slot: -1, notes: [] }; });
+    const row = [...D.fillBox.querySelectorAll('input[type=text]')].find(i => /tune/i.test(i.getAttribute('aria-label'))); row.value = 'Lightly Row';
+    const u0 = D.undo.length; [...D.fillBox.querySelectorAll('button')].find(b => /Open the tune/.test(b.textContent)).click(); for (let i = 0; i < 50 && !D.p.tracks.length; i++) await new Promise(r => setTimeout(r, 100));
+    const tr = D.p.tracks[0], c = tr && tr.clips[0]; out.push(D.p.ts.join('/'), D.p.tempo, c && c.len, c && c.notes[0].m, D.undo.length === u0 + 1, D.fillUi.chart.value.split('|')[0].trim(), D.fillUi.to.value);
+    D.doUndo(true); out.push(D.p.tracks.length); return out.join(' | '); })()`);
+  check("open a tune: Lightly Row -> 2/4, Q 120, a 16-bar melody clip (first note F4 = 65), one undo step, its chords (Bb ...) and bars 1-16 in Fill from chords; undo removes it", tu === "2/4 | 120 | 32 | 65 | true | Bb | 16 | 0", tu);
   const ms = await ev(`(() => { ${KEY} ${BASE} const out = [], key2 = (kk, o) => D.node.dispatchEvent(new KeyboardEvent('keydown', Object.assign({ key: kk, bubbles: true, cancelable: true }, o || {}))), T = D.p.tracks;
     D.sel = { track: 0, clip: -1, slot: -1, notes: [] }; const n0 = T[0].clips.length;
     key2('S', { shiftKey: true }); out.push(T[0].solo); D.msTap = null; key2('M', { shiftKey: true }); out.push(T[0].mute, T[0].clips.length === n0);
@@ -221,7 +227,7 @@ const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.spl
   await ev(`localStorage.removeItem('mdaw:daw-scratch:panels'); localStorage.removeItem('mdaw:daw-scratch:panelopen'); 0`);
   await b.goto(U); await ev(SFX); await b.sleep(500);
   const pa = await ev(`(() => { const D = MiniDaw.all[0], ps = [...D.node.querySelectorAll('details.mdaw-panel')], out = [];
-    out.push(ps.length >= 9, ps.every(p => p.id && p.querySelector(':scope > summary .pc-grip') && p.querySelector(':scope > summary .pc-across')), ['projects', 'sound', 'abc', 'fill', 'band', 'files'].every(x => D.node.querySelector('.mdaw-colB #daw-scratch-pn-' + x)), getComputedStyle(D.node.querySelector('.mdaw-colB')).display !== 'none');
+    out.push(ps.length >= 9, ps.filter(p => !p.classList.contains('mdaw-fixed')).every(p => p.id && p.querySelector(':scope > summary .pc-grip') && p.querySelector(':scope > summary .pc-across')), ['projects', 'sound', 'abc', 'fill', 'band', 'files'].every(x => D.node.querySelector('.mdaw-colB #daw-scratch-pn-' + x)), getComputedStyle(D.node.querySelector('.mdaw-colB')).display !== 'none');
     out.push(![...document.querySelectorAll('h2')].some(h => /Scratch pad/.test(h.textContent)), [...document.querySelectorAll('#TOC a, .sidebar a, nav a')].some(a => /How to use it/.test(a.textContent)) ? 'toc' : 'notoc');
     const ed = D.node.querySelector('#daw-scratch-pn-editor'); ed.open = false; ed.dispatchEvent(new Event('toggle'));
     D.node.querySelector('#daw-scratch-pn-mixer .pc-across').click();
@@ -239,8 +245,20 @@ const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.spl
     D.node.querySelector('#daw-scratch-pn-band .pc-across').click(); out.push(D.node.querySelector('.mdaw-colA').contains(D.node.querySelector('#daw-scratch-pn-band')), D.node.querySelector('#daw-scratch-pn-band').getBoundingClientRect().width > 100);
     if (document.fullscreenElement) await document.exitFullscreen(); return out.join(' | '); })()`);
   check("panels: in full screen (when the browser allows it) the columns stay inside the DAW and ⇄ still moves a panel", /^(fs|nofs) \| true \| true \| true$/.test(fsr), fsr);
+  const pj = await ev(`(async () => { const D = MiniDaw.all[0], out = [], top = D.node.querySelector('.mdaw-top');
+    out.push(['transport', 'arr'].every(x => top.contains(D.node.querySelector('#daw-scratch-pn-' + x))), !D.node.querySelector('#daw-scratch-pn-arr .pc-across'));
+    out.push(Math.abs(D.node.querySelector('#daw-scratch-pn-arr').getBoundingClientRect().width - D.node.querySelector('.mdaw-cols').getBoundingClientRect().width) < 2);
+    const nav = document.querySelector('#TOC .mdaw-parts, #quarto-margin-sidebar .mdaw-parts'); out.push(!!nav, nav ? nav.querySelectorAll('a').length >= 9 : 0);
+    const mx = D.node.querySelector('#daw-scratch-pn-mixer'), li = [...nav.querySelectorAll('li')].find(l => /Mixer/.test(l.textContent));
+    li.querySelector('.mdaw-eye').click(); out.push(getComputedStyle(mx).display === 'none', JSON.parse(localStorage.getItem('mdaw:daw-scratch:panelhide')).mixer === 1);
+    mx.open = false; li.querySelector('a').click(); out.push(getComputedStyle(mx).display !== 'none', mx.open);
+    // u undoes, Ctrl-r redoes
+    D.change(() => { D.p.tempo = 133; }); const k = (kk, o) => D.node.dispatchEvent(new KeyboardEvent('keydown', Object.assign({ key: kk, bubbles: true, cancelable: true }, o || {})));
+    k('u'); out.push(D.p.tempo !== 133); k('r', { ctrlKey: true }); out.push(D.p.tempo === 133);
+    return out.join(' | '); })()`);
+  check("transport + arrangement on top at full width (not movable); the parts list in the page sidebar jumps (opens) and its eye hides / shows (kept); u undo, Ctrl-r redo", pj === "true | true | true | true | true | true | true | true | true | true | true", pj);
   const rs = await ev(`(() => { const D = MiniDaw.all[0]; window.__reloaded = false; return JSON.stringify([!!localStorage.getItem('mdaw:daw-scratch:panels'), [...D.node.querySelectorAll('.mdaw-panelbar button')].map(x => x.textContent).join()]); })()`);
-  check("panels: Fold all / Unfold all / Reset layout buttons", /Fold all,Unfold all,Reset layout/.test(rs), rs);
+  check("panels: Fold all / Unfold all / Reset layout buttons", /Fold all,Unfold all,Show all,Reset layout/.test(rs), rs);
   await ev(`[...MiniDaw.all[0].node.querySelectorAll('.mdaw-panelbar button')].find(x => x.textContent === 'Fold all').click(); 0`);
   const fa = await ev(`[...MiniDaw.all[0].node.querySelectorAll('details.mdaw-panel')].every(p => !p.open)`);
   await ev(`[...MiniDaw.all[0].node.querySelectorAll('.mdaw-panelbar button')].find(x => x.textContent === 'Unfold all').click(); 0`);
