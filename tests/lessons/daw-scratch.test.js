@@ -4,7 +4,7 @@ const fs = require('fs'), vm = require('vm'), path = require('path');
 const root = path.join(__dirname, '../..');
 const win = { document: { readyState: 'loading', addEventListener() {}, querySelectorAll() { return []; } }, localStorage: null, SK_NO_BAR: true, addEventListener() {}, requestAnimationFrame() {} };
 win.window = win; vm.createContext(win);
-for (const f of ['apps/shared/band/midi.js', 'apps/shared/lessons/synth-kit.js', 'apps/shared/daw/mini-daw.js', 'apps/shared/daw/track-sound.js']) vm.runInContext(fs.readFileSync(path.join(root, f), 'utf8'), win, { filename: f });
+for (const f of ['apps/shared/band/midi.js', 'apps/shared/lessons/synth-kit.js', 'apps/shared/daw/mini-daw.js', 'apps/shared/daw/track-sound.js', 'apps/shared/abc-core.js', 'apps/shared/abc-events.js', 'apps/shared/daw/abc-clip.js', 'apps/shared/band/harmony.js', 'apps/shared/band/phrase.js', 'apps/shared/band/style-engine.js', 'apps/shared/band/arranger-styles.js', 'apps/shared/motif-arp.js', 'apps/shared/daw/compose-tools.js', 'apps/shared/daw/nav-tools.js']) vm.runInContext(fs.readFileSync(path.join(root, f), 'utf8'), win, { filename: f });
 const D = win.MiniDaw, P = D.Projects, C = D.Clipboard, NEG = process.env.NEG === '1';
 let fails = 0; const ok = (c, m) => { if (!c) { fails++; console.log('FAIL ' + m); } else console.log('ok   ' + m); };
 const mem = {}; const kv = { get: k => k in mem ? JSON.parse(mem[k]) : null, set: (k, v) => { mem[k] = JSON.stringify(v); }, del: k => { delete mem[k]; } };
@@ -88,4 +88,80 @@ ok(sp.cut === 16000, 'cutoff stays clamped');
 const mp = D.core.Meter.norm(D.PRESETS.empty()); mp.tracks = ['syn-sub', 'syn-fm', 'syn-wt', 'syn-chip'].map(k => ({ name: k, inst: k, clips: [{ start: 0, len: 4, notes: [{ t: 0, d: 1, m: 60, v: .8 }] }] }));
 const mb = Array.from(D.toMidi(mp)), progs = []; for (let i = 0; i < mb.length - 1; i++) if ((mb[i] & 0xf0) === 0xc0 && mb[i - 1] === 0 && mb[i + 1] <= 127 && mb[i + 2] === 0) progs.push(mb[i + 1]);
 ok(D.INSTS.filter(i => i.synth).length === 4 && progs.join() === '81,5,88,80', 'MIDI export writes GM programs 81, 5, 88, 80 for the synths (' + progs + ')');
+
+// 11. Edit as notation: clip -> ABC -> notes is the quantised clip, bars the right length (rule 1)
+const AC = win.AbcClip, CP = D.Compose, Mt = D.core.Meter;
+let seed = 7; const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+let rtBad = 0, rtN = 0, barBad = 0, maxVoices = 0;
+const sig = ns => ns.map(n => [Math.round(n.t * 1e4) / 1e4, Math.round(n.d * 1e4) / 1e4, n.m].join(':')).sort().join(' ');
+[[[4, 4], 'C'], [[3, 4], 'Bb'], [[6, 8], 'auto'], [[7, 8], 'F#'], [[5, 8], 'Eb'], [[2, 4], 'auto'], [[12, 8], 'D']].forEach(([ts, key]) => {
+  for (let trial = 0; trial < 12; trial++) {
+    const bb = ts[0] * 4 / ts[1], bars = 1 + Math.floor(rnd() * 3), len = bars * bb - (trial % 3 === 0 ? bb * 0.4 : 0), notes = [], k = 2 + Math.floor(rnd() * 14);
+    for (let i = 0; i < k; i++) { const t = Math.floor(rnd() * len * 4) / 4, d = (1 + Math.floor(rnd() * 14)) / 4; notes.push({ t, d, m: 36 + Math.floor(rnd() * 50), v: 0.3 + rnd() * 0.6 });
+      if (rnd() < 0.3) notes.push({ t, d, m: notes[notes.length - 1].m + 4, v: 0.5 }); }
+    const clip = { start: 0, len, notes }, o = { ts, key }, r = AC.clipToAbc(clip, o), q = AC.quantise(clip, o), back = AC.abcToNotes(r.abc), ck = AC.checkBars(r.abc);
+    const want = q.notes.map(n => ({ t: n.s * q.g, d: (n.e - n.s) * q.g, m: n.m }));
+    if (NEG && trial === 0 && key === 'C') back.notes[0].m += 1;
+    rtN++; if (sig(want) !== sig(back.notes)) { rtBad++; if (rtBad < 3) console.log('  mismatch', ts, key, '\n' + r.abc, '\nwant', sig(want), '\ngot ', sig(back.notes)); }
+    if (ck.bad.length) { barBad++; if (barBad < 3) console.log('  bad bars', JSON.stringify(ck.bad), '\n' + r.abc); }
+    maxVoices = Math.max(maxVoices, r.voices);
+  } });
+ok(rtBad === 0, 'round trip clip -> ABC -> notes equals the quantised clip in 7 meters / keys (' + rtN + ' random clips, ' + rtBad + ' differ)');
+ok(barBad === 0 && maxVoices > 1, 'every bar of every voice has the meter\'s length by script (' + barBad + ' bad); overlapping notes used up to ' + maxVoices + ' voices');
+const off = AC.clipToAbc({ start: 0, len: 4, notes: [{ t: 0.1, d: 1, m: 60, v: 1 }, { t: 1, d: 1, m: 64, v: 1 }] }, { ts: [4, 4] });
+ok(off.offGrid === 1 && /^C4 /m.test(off.abc.split('\n').pop() === '' ? off.abc.split('\n').slice(-2)[0] : ''), 'a note off the 1/16 grid is counted and snapped (' + off.offGrid + ')');
+const chordTie = AC.clipToAbc({ start: 0, len: 8, notes: [60, 64, 67].map(m => ({ t: 2, d: 4, m, v: 1 })) }, { ts: [4, 4] });
+ok(/\[CEG\]8-\[CEG\]4|\[CEG\]8-\[CEG\]/.test(chordTie.abc.replace(/\n/g, ' ')) || /\[CEG\]\d+-/.test(chordTie.abc), 'a chord across the bar line is a tied [CEG] (' + chordTie.abc.split('\n').slice(-2)[0] + ')');
+ok(AC.abcToNotes(chordTie.abc).notes.length === 3 && AC.abcToNotes(chordTie.abc).notes[0].d === 4, 'and reads back as three notes of four beats');
+const wrong = AC.checkBars('X:1\nM:4/4\nL:1/16\nK:C\nC16 | C12 | C16 |]\n'); ok(wrong.bad.length === 1 && wrong.bad[0].bar === 2, 'a short middle bar is reported (bar ' + (wrong.bad[0] && wrong.bad[0].bar) + ')');
+ok(AC.checkBars('X:1\nM:4/4\nL:1/16\nK:C\nC16 | C12 |]\n').bad.length === 0, 'a short last bar is allowed');
+const mg = AC.merge([{ t: 0, d: 1, m: 60, v: 0.9 }, { t: 1, d: 1, m: 62, v: 0.3 }], [{ t: 0, d: 1, m: 60 }, { t: 2, d: 1, m: 64 }, { t: 1, d: 1, m: 63 }], 0.25);
+ok(mg[0].v === 0.9 && mg[1].v === 0.6 && mg[2].v === 0.6, 'velocity kept where pitch and start match, else the mean of the clip (' + mg.map(n => n.v) + ')');
+const SPABC = 'X:1\nM:4/4\nL:1/16\nK:C\nC4 [CE]4 z8 |\n', nsp = AC.noteSpans(SPABC);
+ok(nsp.length === 2 && SPABC.slice(nsp[1].start, nsp[1].end) === '[CE]' && nsp[1].t === 1 && nsp[1].notes.length === 2, 'staff clicks map to notes (span "' + (nsp[1] && SPABC.slice(nsp[1].start, nsp[1].end)) + '")');
+// 12. Fill from chords: plan, arp, arranger
+const pp = Mt.norm(D.PRESETS.empty()), ch = CP.parseChart('Dm7 G7 | Cmaj7 |');
+ok(ch.length === 2 && ch[0].length === 2, 'chart: bars split by |, chords split by spaces');
+const pl = CP.plan(pp, 0, 4, ch);
+ok(pl.len === 16 && pl.spans.length === 6 && pl.spans[1].t0 === 2 && pl.spans[2].bar === 1 && pl.chartText === 'Dm7 G7 | Cmaj7 | Dm7 G7 | Cmaj7', 'plan: 4 bars, the chart cycles, two chords share a bar (' + pl.chartText + ')');
+const co = CP.chordOf('Dm7'); ok(co.root === 2 && co.type === 'm7' && CP.chordOf('G7').type === '7' && CP.chordOf('Cmaj7').type === 'M7' && CP.chordOf('Bm7b5').type === 'm7b5' && CP.chordOf('N.C.') === null, 'chord symbols as arranger chords');
+const pcs = (ns, a, b) => [...new Set(ns.filter(n => n.t >= a && n.t < b).map(n => n.m % 12))].sort((x, y) => x - y).join();
+const ar = CP.fillNotes({ kind: 'arp', type: 0, unit: 100, oct: 0 }, CP.plan(pp, 0, 2, CP.parseChart('Dm7 | G7')));
+ok(ar.kind === 'notes' && ar.notes.length === 32 && ar.notes.every(n => n.t >= 0 && n.t + n.d <= 8 + 1e-9) && pcs(ar.notes, 0, 4) === '0,2,5,9' && pcs(ar.notes, 4, 8) === '2,5,7,11', 'arp: 16ths on each chord\'s own notes, restarted at the chord (' + ar.notes.length + ' notes, ' + pcs(ar.notes, 0, 4) + ' / ' + pcs(ar.notes, 4, 8) + ')');
+const dr = CP.fillNotes({ kind: 'arp', type: 10, unit: 100, oct: 0 }, CP.plan(pp, 0, 2, CP.parseChart('C')));
+ok(dr.kind === 'drum' && dr.inst === 'kit' && dr.notes.some(n => n.m === 'kick'), 'a drum arp gives kit pieces');
+const ab = CP.fillNotes({ kind: 'arranger', style: 'pop8', section: 'Main A', channel: 'Bass' }, CP.plan(pp, 0, 4, CP.parseChart('Dm7 | G7 | Cmaj7 | Am7')));
+const bpc = b => ab.notes.filter(n => n.t >= b * 4 && n.t < b * 4 + 0.01).map(n => n.m % 12)[0];
+ok(ab.kind === 'notes' && /bass/.test(ab.inst) && bpc(0) === 2 && bpc(1) === 7 && bpc(2) === 0 && bpc(3) === 9, 'arranger: the bass line follows the chords (roots ' + [0, 1, 2, 3].map(bpc) + ')');
+const ad = CP.fillNotes({ kind: 'arranger', style: 'pop8', section: 'Main A', channel: 'Rhythm1' }, CP.plan(pp, 0, 4, CP.parseChart('C')));
+ok(ad.kind === 'drum' && ad.notes.length > 8 && ad.notes.every(n => typeof n.m === 'string'), 'arranger drum channel gives pieces');
+const cn = CP.chordsFromNotes([{ t: 0, d: 4, m: 50 }, { t: 0, d: 4, m: 53 }, { t: 0, d: 4, m: 57 }, { t: 0, d: 4, m: 60 }, { t: 4, d: 4, m: 43 }, { t: 4, d: 4, m: 47 }, { t: 4, d: 4, m: 50 }, { t: 8, d: 1, m: 40 }], 4, 3);
+ok(cn.join() === 'Dm7,G,G', 'chords read from notes: Dm7, G, and a bar with too few notes repeats (' + cn.join() + ')');
+try { CP.plan(pp, 3, 3, ch); ok(false, 'an empty range is refused'); } catch (e) { ok(/after/.test(e.message), 'an empty range is refused'); }
+
+// 13. keyboard step, loop in beats (nav-tools.js)
+const Nv = D.Nav, np = Mt.norm(D.PRESETS.empty());
+ok(Nv.move(np, 'beat', 0, 1, 1) === 1 && Nv.move(np, 'beat', 2.3, 1, 1) === 3 && Nv.move(np, 'beat', 2.3, -1, 1) === 2 && Nv.move(np, 'beat', 2, -1, 3) === 0, 'beat step: lands on beats, from between beats too, never below 0');
+ok(Nv.move(np, 'sixteenth', 1, 1, 3) === 1.75 && Nv.move(np, 'beat', 1, 1, 1, true) === 4 && Nv.move(np, 'bar', 5, -1, 1) === 4 && Nv.move(np, 'bar', 4, -1, 1) === 0, 'sixteenth step, Shift = a bar, bar step goes to bar lines');
+const np2 = Mt.norm(D.PRESETS.empty()); np2.ts = [3, 4]; ok(Nv.move(np2, 'bar', 0, 1, 2) === 6, 'a bar in 3/4 is three beats');
+ok(Nv.snap(np, 'beat', 2.4) === 2 && Nv.snap(np, 'beat', 2.6) === 3 && Nv.snap(np, 'sixteenth', 2.4) === 2.5 && Nv.snap(np, 'bar', 6.1) === 8 && Nv.snap(np, 'bar', 5.1) === 4, 'snap to the step');
+const nc = { len: 4, notes: [{ t: 0, d: 1, m: 60, v: 1 }, { t: 1.5, d: 1, m: 62, v: 1 }, { t: 3, d: 1, m: 64, v: 1 }] };
+let used = Nv.moveNotes(nc, [0, 1], 1); ok(used === 1 && nc.notes[0].t === 1 && nc.notes[1].t === 2.5 && nc.notes[2].t === 3, 'selected notes move by the step, others stay');
+used = Nv.moveNotes(nc, [0, 1], 5); ok(nc.notes[1].t === 3.99 && nc.notes[0].t === 2.49, 'notes stop at the clip end, keeping their spacing (' + nc.notes.map(n => n.t) + ')');
+used = Nv.moveNotes(nc, [0, 1], -9); ok(nc.notes[0].t === 0 && Math.abs(nc.notes[1].t - 1.5) < 1e-9, 'and at the clip start');
+const lo = Nv.loopOf(np, 5, 9.5, true); ok(lo.fb === 5 && lo.tb === 9.5 && lo.from === 1 && lo.to === 3 && lo.on, 'a loop in beats keeps the bars around it (bars ' + (lo.from + 1) + '-' + lo.to + ')');
+const lp = { p: Object.assign({}, np, { loop: lo }), loopSpan: D.core.Daw.prototype.loopSpan }; const sp1 = D.core.Daw.prototype.loopSpan.call(lp), lr = D.core.Daw.prototype.loopRange.call(lp);
+ok(sp1.join() === '5,9.5' && lr.join() === '5,9.5', 'loopSpan / loopRange use the beats');
+lp.p.loop = { on: true, from: 1, to: 3 }; ok(D.core.Daw.prototype.loopRange.call(lp).join() === '4,12', 'an old bar-only loop still reads as whole bars');
+lp.p.loop.on = false; ok(D.core.Daw.prototype.loopRange.call(lp) === null, 'a loop that is off gives no range');
+
+// 14. the position readout: bar.beat.sixteenth in, beats out, honouring meter changes
+const pm = Mt.norm(D.PRESETS.empty()); pm.bars = 8;
+const pp0 = t => Mt.parsePos(pm, t);
+ok(pp0('1').pos === 0 && pp0('3').pos === 8 && pp0('3.2').pos === 9 && pp0('3.2.3').pos === 9.5 && pp0('6.1.4').pos === 20.75 && pp0(' 2 : 4 : 4 ').pos === 7.75, 'position text: "6", "6.3", "6.1.4" (also : and spaces) in 4/4');
+ok(['', 'x', '0', '9', '2.5', '2.1.5', '1.1.1.1', '-1'].every(t => typeof pp0(t).error === 'string') && /8 bars/.test(pp0('9').error) && /4 beats/.test(pp0('2.5').error), 'bad positions say why (' + pp0('2.5').error + ')');
+Mt.set(pm, 2, [3, 4]); ok(pp0('3.1.1').pos === 8 && pp0('3.3.4').pos === 10.75 && /3 beats/.test(pp0('3.4').error) && pp0('4').pos === 11, 'a 3/4 bar from bar 3 on: bar 4 starts at beat 11, beat 4 is refused');
+Mt.set(pm, 4, [6, 8]); ok(pp0('5.2').pos === Mt.barStart(pm, 4) + 1.5 && pp0('5.2.6').pos === Mt.barStart(pm, 4) + 1.5 + 1.25 && /6 sixteenths/.test(pp0('5.1.7').error) && /2 beats/.test(pp0('5.3').error), 'in 6/8 a beat is a dotted quarter (6 sixteenths), two beats a bar');
+ok([0, 1.5, 9, 14.25, 21.5, 24.75].every(b => { const w = Mt.where(pm, b); return Math.abs(pp0(w.bar + '.' + w.beat + '.' + w.sub).pos - Math.floor(b * 4 + 1e-9) / 4) < 1e-9; }), 'parsePos reads back what the readout shows (Meter.where), in every meter');
+if (NEG) ok(pp0('3').pos === 9, 'NEG: a wrong expectation must fail');
 console.log(fails ? fails + ' failed' : 'all passed'); process.exit(fails ? 1 : 0);

@@ -75,7 +75,8 @@
     d.bLoopScene = btn('Loop → scene', 'Copy the notes inside the Arrangement\'s loop bracket into a new scene'); d.bLoopScene.onclick = function () { d.loopToScene(); };
     d.sessPos = el('span', 'mdaw-pos', '—'); d.sessPos.title = 'The bar the session clock is at';
     [d.bStopAll, d.bSRec, ql, kl, d.bAddScene, d.sessPos].forEach(function (x) { tools.appendChild(x); });
-    d.viewEl.appendChild(d.bLoopScene); d.node.insertBefore(d.viewEl, s);
+    d.bClipScene = btn('Clip → Session', 'Copy the selected Arrangement clip into the first free scene for its track (a new scene if there is none)'); d.bClipScene.onclick = function () { d.clipToSession(); };
+    d.viewEl.appendChild(d.bLoopScene); d.viewEl.appendChild(d.bClipScene); d.node.insertBefore(d.viewEl, s);
     d.sessGridEl = el('div', 'mdaw-sgrid'); s.appendChild(d.sessGridEl);
     d.sessHint = el('p', 'mdaw-hint', 'The ▶ on a clip launches it: it waits for the next bar line, then loops until you launch another clip on that track or press its ■. A scene\'s ▶ launches its whole row. Click a clip to edit it below; double-click an empty slot to make a clip. Click a root (F, B♭ …) to change that bar\'s chord.'); s.appendChild(d.sessHint);
     d.sessPlay = {}; d.sessQ = {}; d.sessRec = null;
@@ -95,7 +96,7 @@
     this.sessEl.hidden = !inS; this.arr.hidden = inS || !this.show.tracks;
     this.bSess.classList.toggle('mdaw-on', inS); this.bArr.classList.toggle('mdaw-on', !inS);
     this.bSess.setAttribute('aria-pressed', String(inS)); this.bArr.setAttribute('aria-pressed', String(!inS));
-    this.sessTransport(); if (!inS) return;
+    this.sessTransport(); this.bLoopScene.hidden = this.bClipScene.hidden = inS; if (!inS) return;
     this.quantSel.value = p.quant || 'bar'; this.keySel.value = p.key || 0; this.bAddScene.disabled = p.scenes.length >= MAX_SCENES;
     var g = this.sessGridEl; g.innerHTML = ''; this.cellEls = []; this.sceneEls = []; this.stopEls = [];
     g.style.gridTemplateColumns = '17rem repeat(' + Math.max(1, p.tracks.length) + ', minmax(7.2rem, 1fr))';
@@ -130,13 +131,14 @@
         if (c) { var nb = Math.max(1, Math.round(c.len / bl)); cell.appendChild(el('span', 'mdaw-cname', nb + (nb === 1 ? ' bar' : ' bars'))); cell.appendChild(thumb(tr, c, 110, 22)); }
         var prog = el('div', 'mdaw-prog'); cell.appendChild(prog);
         if (X.isAudio(tr)) { lb.hidden = true; cell.title = 'Audio tracks have no session clips here.'; }
-        cell.addEventListener('pointerdown', function () { if (X.isAudio(tr) || !c) return; d.sel = { track: ti, clip: -1, slot: si, notes: [] }; d.node.focus({ preventScroll: true }); d.renderEditor(); d.markCells(); });
+        cell.addEventListener('pointerdown', function () { if (X.isAudio(tr)) return; d.sessCur2 = { ti: ti, si: si }; d.node.focus({ preventScroll: true });
+          if (!c) { d.markCells(); return; } d.sel = { track: ti, clip: -1, slot: si, notes: [] }; d.renderEditor(); d.markCells(); });
         cell.addEventListener('dblclick', function () { if (!c && !X.isAudio(tr)) d.newSlot(ti, si); });
         d.cellEls.push({ ti: ti, si: si, el: cell, prog: prog, btn: lb, filled: !!c }); g.appendChild(cell); });
     });
     this.markCells(); this.sessPaint();
   };
-  D.markCells = function () { var s = this.sel; (this.cellEls || []).forEach(function (o) { o.el.classList.toggle('mdaw-csel', s.slot === o.si && s.track === o.ti && o.filled); }); };
+  D.markCells = function () { var s = this.sel, k = this.sessCur2; (this.cellEls || []).forEach(function (o) { o.el.classList.toggle('mdaw-csel', s.slot === o.si && s.track === o.ti && o.filled); o.el.classList.toggle('mdaw-ccur', !!k && k.ti === o.ti && k.si === o.si && !o.filled); }); };
 
   // the playing / waiting state, drawn every frame while the session runs
   D.sessPaint = function () {
@@ -253,16 +255,49 @@
 
   // ---------------- Arrangement -> Session ----------------
   D.loopToScene = function () {
-    var p = this.p, l = p.loop, a = Meter.barStart(p, l.from), z = Meter.barStart(p, l.to), d = this;
+    var p = this.p, l = p.loop, sp = this.loopSpan(), a = sp[0], z = sp[1], d = this;
     if (!(z > a)) return this.say('Drag along the Arrangement\'s ruler to set the loop bracket first.');
     if (p.scenes.length >= MAX_SCENES) return this.say('Eight scenes is the most here.');
     var made = 0, slots = p.tracks.map(function (tr) {
-      if (X.isAudio(tr)) return null; var notes = [];
-      tr.clips.forEach(function (c) { c.notes.forEach(function (n) { if (n.t >= c.len) return; var t = c.start + n.t; if (t >= a - 1e-9 && t < z - 1e-9) notes.push({ t: t - a, d: Math.min(n.d, z - t), m: n.m, v: n.v }); }); });
-      if (notes.length) made++; return notes.length ? { start: 0, len: z - a, notes: notes } : null; });
+      if (X.isAudio(tr)) return null; var notes = [], last = a;
+      tr.clips.forEach(function (c) { c.notes.forEach(function (n) { if (n.t >= c.len) return; var t = c.start + n.t; if (t >= a - 1e-9 && t < z - 1e-9) { notes.push({ t: t - a, d: Math.min(n.d, z - t), m: n.m, v: n.v }); last = Math.max(last, Math.min(c.start + c.len, z)); } }); });
+      if (notes.length) made++;
+      // the slot is as long as the clips it came from (to a bar line), not the whole bracket: a two-bar clip in a four-bar bracket is a two-bar loop, not two bars of notes and two of silence
+      var len = Math.min(z - a, Math.max(barLen(p), Math.ceil((last - a) / barLen(p) - 1e-6) * barLen(p)));
+      return notes.length ? { start: 0, len: len, notes: notes } : null; });
     if (!made) return this.say('There are no notes inside the loop bracket (bars ' + (l.from + 1) + '–' + l.to + ').');
     this.change(function () { var si = p.scenes.length; p.scenes.push({ name: 'Scene ' + (si + 1) }); p.tracks.forEach(function (tr, i) { putSlot(tr, si, slots[i]); }); });
     this.say('Bars ' + (l.from + 1) + '–' + l.to + ' are now Scene ' + p.scenes.length + ': one looping clip for each track that played. Open the Session view to launch it.');
+  };
+
+  // ---------------- into the Session from elsewhere ----------------
+  // items [{ tr, notes, len, felt }] go into the first scene where none of those tracks has a slot yet (else a new scene); no change() here, the caller wraps it.
+  // Returns the scene index, or null when eight scenes are full. The clips are copies, cut at their length.
+  D.sessPutIn = function (items, name) {
+    var p = this.p, si = -1;
+    for (var k = 0; k < p.scenes.length && si < 0; k++) if (items.every(function (it) { return !slotAt(it.tr, k); })) si = k;
+    if (si < 0) { if (p.scenes.length >= MAX_SCENES) return null; si = p.scenes.length; p.scenes.push({ name: name || 'Scene ' + (si + 1) }); }
+    else if (name && /^Scene \d+$/.test(p.scenes[si].name || '') && !p.tracks.some(function (tr) { return slotAt(tr, si); })) p.scenes[si].name = name;
+    items.forEach(function (it) { var c = { start: 0, len: it.len, notes: it.notes.filter(function (n) { return n.t < it.len - 1e-9; }).map(function (n) { return Object.assign({}, n); }) }; if (it.felt) c.felt = it.felt; putSlot(it.tr, si, c); });
+    p.tracks.forEach(function (tr) { if (tr.slots) while (tr.slots.length < p.scenes.length) tr.slots.push(null); });
+    return si;
+  };
+  // the selected Arrangement clip, copied into the Session
+  D.clipToSession = function () {
+    var d = this, tr = this.track(), c = this.sel.slot >= 0 ? null : this.clip(), si = null;
+    if (!tr || !c) return this.say('Select an Arrangement clip first.'); if (X.isAudio(tr)) return this.say('Audio tracks have no session clips here.');
+    this.change(function () { si = d.sessPutIn([{ tr: tr, notes: c.notes, len: c.len, felt: c.felt }], tr.name + ' clip'); }, true);
+    if (si == null) { this.undo.pop(); return this.say('Eight scenes is the most: delete one first.'); }
+    this.renderSession(); this.say(tr.name + ' clip copied to scene ' + (si + 1) + ' of the Session view (Session button, then ▶ on it).');
+  };
+  // Ctrl/Cmd+V in the Session view: a copied Arrangement (or Session) clip into the slot last clicked
+  D.pasteToSlot = function (cl) {
+    var d = this, k = this.sessCur2, tr = this.p.tracks[k.ti]; if (!tr) return;
+    if (!!cl.audio || !!cl.drum !== X.isDrum(tr)) return this.say('A clip can only go on a track of its kind: ' + (cl.drum ? 'that one is drums.' : 'that one is pitched notes.'));
+    var src = cl.clip || cl, notes = (src.notes || []), len = src.len || cl.len;
+    if (!(len > 0)) return this.say('Nothing to paste.');
+    this.change(function () { putSlot(tr, k.si, { start: 0, len: len, notes: notes.map(function (n) { return Object.assign({}, n); }) }); d.sel = { track: k.ti, clip: -1, slot: k.si, notes: [] }; });
+    this.say('Pasted into scene ' + (k.si + 1) + ' on ' + tr.name + '.');
   };
 
   // ---------------- scenes, roots and key ----------------

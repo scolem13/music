@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tunes – Music Practice</title>
+<title>Tunes</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,92 +29,17 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../practice/patterns.html" rel="next">
-<link href="../songs/index.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-17888a1159294d3eb470f19f6f52f5a5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9d7f26cb4b5836e1be3a3abd64495181.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [],
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
-<!-- Injected into <head> of every page by _quarto.yml -->
-<!-- Display + mono fonts used throughout the site and in the chord chart -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="../config.js"></script>
-<script>
-  // THE SWITCH for the "bah" / solfege singing voice (rhythm-chant.js, solfege-sing.js and their buttons): true = hidden everywhere, false = as before.
-  window.VOICE_HIDDEN = true;
-  // MLT book recordings (apps/shared/mlt/recordings.js): the R2 bucket's public address, served by worker/index.js to logged-in browsers. Empty = players hidden.
-  // On the site itself the same files come from /media/ (same origin, so the login cookie always goes with them; worker/index.js).
-  window.MLT_REC_BASE = /(^|\.)seancoleman\.org$/.test(location.hostname) ? location.origin + "/media" : "https://media.seancoleman.org";
-  // Works recordings with an r2 path (apps/shared/works/works-data.js) come from the same bucket, under works/.
-  window.WORKS_CONFIG = Object.assign({ r2Base: window.MLT_REC_BASE }, window.WORKS_CONFIG || {});
-</script>
-<script>
-  // One shared Supabase client for the whole site. The auth widget and the
-  // tracker both reuse window.sb so there's a single session.
-  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
-</script>
-<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
-     tool scripts run; injects a step banner when a session is active. -->
-<script src="../apps/shared/session-nav.js?v=1"></script>
-<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
-<script src="../apps/shared/audio-tap.js?v=1"></script>
-<!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
-<script src="../apps/shared/help-eye.js?v=2"></script>
-<script src="../apps/shared/works-cited-fold.js?v=1"></script>
-<!-- MIDI learn: a pedal or key presses any button on the page (navbar "MIDI buttons"). -->
-<script src="../apps/shared/midi-learn.js?v=1" defer=""></script>
-<script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
-<style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
-<!-- Click the number shown beside any slider to type a value. -->
-<script src="../apps/shared/num-edit.js?v=1"></script>
-<!-- Figures like I⁶₄ / Cad⁶₄ in page text drawn stacked (6 over 4); SVG scores are left to their own code -->
-<script src="../apps/shared/fig-stack.js?v=1"></script>
-<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text (crisp staff lines are opt-in: html.abc-crisp). -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap">
-<style>
-svg[aria-label^="Sheet Music"] text,svg[aria-label^="Sheet Music"] tspan{font-family:"Source Serif 4",Georgia,serif!important;font-weight:400!important}
-svg[aria-label^="Sheet Music"] .abcjs-title,svg[aria-label^="Sheet Music"] .abcjs-title tspan{font-weight:500!important}
-/* Crisp staff lines: off (abcjs default drawing); some monitors drop or thicken lines with it. Add class "abc-crisp" to <html> to turn it back on. */
-html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-bar,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
-</style>
+<script src="tunes_files/libs/clipboard/clipboard.min.js"></script>
+<script src="tunes_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="tunes_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="tunes_files/libs/quarto-html/popper.min.js"></script>
+<script src="tunes_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="tunes_files/libs/quarto-html/anchor.min.js"></script>
+<link href="tunes_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="tunes_files/libs/quarto-html/quarto-syntax-highlighting-17888a1159294d3eb470f19f6f52f5a5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="tunes_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="tunes_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="tunes_files/libs/bootstrap/bootstrap-917079515d91bccb85b543faf8aa8bb6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <!-- App pages (Tools/Practice): small edge margin so full-bleed apps don't
      grind against the window. -->
 <style>
@@ -134,659 +59,13 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light">
+<body class="fullcontent quarto-light">
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Music Practice</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lessons" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Lessons</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-lessons">    
-        <li>
-    <a class="dropdown-item" href="../lessons/index.html">
- <span class="dropdown-text">Lessons</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../theory/index.html">
- <span class="dropdown-text">Theory</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../course/glossary.html"> 
-<span class="menu-text">Glossary</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../practice/tune-directory.html"> 
-<span class="menu-text">Tunes</span></a>
-  </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Practice</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
-        <li>
-    <a class="dropdown-item" href="../practice/session.html">
- <span class="dropdown-text">Session</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="../practice/rhythm-sequences.html">
- <span class="dropdown-text">Rhythm Sequences</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/tonal-sequences.html">
- <span class="dropdown-text">Tonal Sequences</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/songs.html">
- <span class="dropdown-text">Song Builder</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../songs/index.html">
- <span class="dropdown-text">Words &amp; Chords</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/tunes.html">
- <span class="dropdown-text">Tunes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/patterns.html">
- <span class="dropdown-text">Tonal Patterns</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/patterns-by-ear.html">
- <span class="dropdown-text">Patterns by Ear</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/sax-patterns-by-ear.html">
- <span class="dropdown-text">Sax Patterns by Ear</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/sax-home.html">
- <span class="dropdown-text">My Saxophone Practice</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/rhythms.html">
- <span class="dropdown-text">Rhythm Patterns</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
- <span class="dropdown-text">Reading Benchmarks</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/dictation.html">
- <span class="dropdown-text">Dictation</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="../practice/audiation.html">
- <span class="dropdown-text">Hear, Compare, Translate</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/harmony-ear.html">
- <span class="dropdown-text">Hearing Harmony</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/ear-grid.html">
- <span class="dropdown-text">Chord Grid by Ear</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/bass-ear.html">
- <span class="dropdown-text">Bass Lines by Ear</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/prog-ear.html">
- <span class="dropdown-text">Odd Progression Out</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/blues-ear.html">
- <span class="dropdown-text">Blues Changes by Ear</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/lsa-practice.html">
- <span class="dropdown-text">LSA Practice</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
- <span class="dropdown-text">LSA Practice (Notated)</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/lsa-rhythm-assessment.html">
- <span class="dropdown-text">LSA Rhythm Assessment</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="../practice/assessment-tune.html">
- <span class="dropdown-text">Tune Assessment</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/assessment.html">
- <span class="dropdown-text">Tonal Accuracy</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
- <span class="dropdown-text">Rhythmic Accuracy</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Tools</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
-        <li>
-    <a class="dropdown-item" href="../tools/index.html">
- <span class="dropdown-text">All tools</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Play with a band</li>
-        <li>
-    <a class="dropdown-item" href="../tools/backing-track.html">
- <span class="dropdown-text">Backing Track</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../styles/index.html">
- <span class="dropdown-text">Style Notes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/accomp-styles.html">
- <span class="dropdown-text">Accompaniment Styles</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/drumset.html">
- <span class="dropdown-text">Drumset</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/sequencers.html">
- <span class="dropdown-text">Sequencers &amp; Arpeggiators</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/daw.html">
- <span class="dropdown-text">DAW</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/arranger.html">
- <span class="dropdown-text">Style Arranger</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/polyrhythm.html">
- <span class="dropdown-text">Polyrhythm</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Chords and harmony</li>
-        <li>
-    <a class="dropdown-item" href="../tools/chord-library.html">
- <span class="dropdown-text">Chord Library</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/chord-sheet.html">
- <span class="dropdown-text">Chord Sheet</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/chord-entry.html">
- <span class="dropdown-text">Chord Entry</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/chords-solfege.html">
- <span class="dropdown-text">Chords and Solfège</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
- <span class="dropdown-text">Circle of Fifths</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Scales and reading</li>
-        <li>
-    <a class="dropdown-item" href="../tools/scales.html">
- <span class="dropdown-text">Scales</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/scale-patterns.html">
- <span class="dropdown-text">Scale Patterns</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/part-reader.html">
- <span class="dropdown-text">Part Reader</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/classical-themes.html">
- <span class="dropdown-text">Classical Themes</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Write music down</li>
-        <li>
-    <a class="dropdown-item" href="../tools/notation.html">
- <span class="dropdown-text">Notation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/notation-rules.html">
- <span class="dropdown-text">Notation Rules</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Learn from a recording</li>
-        <li>
-    <a class="dropdown-item" href="../tools/timestamp-notes.html">
- <span class="dropdown-text">Timestamp Notes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/mark-bars.html">
- <span class="dropdown-text">Mark Bars</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/tap-along.html">
- <span class="dropdown-text">Tap Along</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/tap-latency.html">
- <span class="dropdown-text">Tap Latency</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/chunk-practice.html">
- <span class="dropdown-text">Chunk Practice</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Voice</li>
-        <li>
-    <a class="dropdown-item" href="../tools/vocal-warmup.html">
- <span class="dropdown-text">Vocal Warm-up</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/ipa-chart.html">
- <span class="dropdown-text">IPA Chart for Singers</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Guitar and bass</li>
-        <li>
-    <a class="dropdown-item" href="../tools/guitar-tuning.html">
- <span class="dropdown-text">Tune Your Guitar by Ear</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/guitar-setup-check.html">
- <span class="dropdown-text">Guitar and Bass Setup Check</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/guitar-in.html">
- <span class="dropdown-text">Guitar Input Check</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mis-gear" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">MIS Gear</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-mis-gear">    
-        <li>
-    <a class="dropdown-item" href="../gear/index.html">
- <span class="dropdown-text">MIS Gear</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="../gear/x32-drums-dca.html">
- <span class="dropdown-text">X32: Drums on One Fader</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../gear/using-a-mic.html">
- <span class="dropdown-text">Using a Mic: A Guide for Speakers</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../gear/modx.html">
- <span class="dropdown-text">Yamaha MODX</span></a>
-  </li>  
-    </ul>
-  </li>
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practice/rhythm-sequences.html">Practise</a></li><li class="breadcrumb-item"><a href="../practice/tunes.html">Tunes</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/session.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Session</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Practise</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/rhythm-sequences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rhythm Sequences</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/tonal-sequences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tonal Sequences</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/songs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Song Builder</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../songs/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Words &amp; Chords</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/tunes.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Tunes</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/patterns.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tonal Patterns</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/patterns-by-ear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Patterns by Ear</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/sax-patterns-by-ear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sax Patterns by Ear</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/flute-patterns-by-ear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Flute Patterns by Ear</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/clarinet-patterns-by-ear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clarinet Patterns by Ear</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/horn-patterns-by-ear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Horn Patterns by Ear</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/bass-patterns-by-ear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bass Patterns by Ear</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/sax-home.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">My Saxophone Practice</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/rhythms.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rhythm Patterns</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/reading-benchmarks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reading Benchmarks</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/dictation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dictation</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">LSA practice</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/audiation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hear, Compare, Translate</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/harmony-ear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hearing Harmony</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/ear-grid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Chord Grid by Ear</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/bass-ear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bass Lines by Ear</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/prog-ear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Odd Progression Out</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/blues-ear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Blues Changes by Ear</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/lsa-practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LSA Practice</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/lsa-practice-notated.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LSA Practice (Notated)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/lsa-rhythm-assessment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LSA Rhythm Assessment</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Assessments</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/assessment-tune.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tune Assessment</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/assessment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tonal Accuracy</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice/assessment-rhythm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rhythmic Accuracy</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
-<!-- main -->
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
 <main class="content" id="quarto-document-content">
-<!-- Auth: injects sign-in controls into the navbar right side via JS.
-     No visible strip — auth lives in a navbar dropdown instead. -->
-<script>
-function _authEsc(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
 
-async function authSignIn() {
-  const email = (document.getElementById('auth-email') || {}).value || '';
-  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
-  const { error } = await window.sb.auth.signInWithPassword({ email, password: pass });
-  if (error) alert(error.message); else location.reload();
-}
-async function authSignUp() {
-  const email = (document.getElementById('auth-email') || {}).value || '';
-  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
-  const { error } = await window.sb.auth.signUp({ email, password: pass });
-  alert(error ? error.message : 'Account created — now sign in.');
-}
-async function authGoogle() {
-  await window.sb.auth.signInWithOAuth({
-    provider: 'google',
-    options: { redirectTo: window.location.origin + window.location.pathname }
-  });
-}
-async function authSignOut() {
-  await window.sb.auth.signOut();
-  location.reload();
-}
-
-document.addEventListener('DOMContentLoaded', async function () {
-  let session = null;
-  try {
-    const { data } = await window.sb.auth.getSession();
-    session = data.session;
-  } catch (e) {}
-
-  // Find the navbar collapse container and append a right-side auth nav list
-  const collapse = document.getElementById('navbarCollapse')
-    || document.querySelector('.navbar-collapse');
-  if (!collapse) return;
-
-  const ul = document.createElement('ul');
-  ul.className = 'navbar-nav ms-auto';
-  ul.id = 'navbar-auth';
-
-  if (session) {
-    const u = session.user;
-    const name = (u.user_metadata && u.user_metadata.full_name)
-      ? u.user_metadata.full_name.split(' ')[0]
-      : u.email.split('@')[0];
-    ul.innerHTML =
-      '<li class="nav-item dropdown">' +
-        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
-        '   data-bs-toggle="dropdown" aria-expanded="false">' +
-          _authEsc(name) +
-        '</a>' +
-        '<ul class="dropdown-menu dropdown-menu-end">' +
-          '<li><span class="dropdown-item-text auth-email-label">' +
-            _authEsc(u.email) +
-          '</span></li>' +
-          '<li><hr class="dropdown-divider"></li>' +
-          '<li><button class="dropdown-item" onclick="authSignOut()">Sign out</button></li>' +
-        '</ul>' +
-      '</li>';
-  } else {
-    ul.innerHTML =
-      '<li class="nav-item dropdown" id="auth-signin-item" hidden>' +
-        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
-        '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
-          'Sign in' +
-        '</a>' +
-        '<ul class="dropdown-menu dropdown-menu-end auth-signin-menu">' +
-          '<li>' +
-            '<input id="auth-email" type="email" class="form-control form-control-sm mb-2"' +
-            '       placeholder="Email"' +
-            '       onkeydown="if(event.key===\'Enter\')document.getElementById(\'auth-pass\').focus()">' +
-            '<input id="auth-pass" type="password" class="form-control form-control-sm mb-2"' +
-            '       placeholder="Password"' +
-            '       onkeydown="if(event.key===\'Enter\')authSignIn()">' +
-            '<button class="btn btn-primary btn-sm w-100 mb-2" onclick="authSignIn()">Sign in</button>' +
-            '<button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="authSignUp()">Create account</button>' +
-            '<hr class="my-1">' +
-            '<button class="btn btn-outline-secondary btn-sm w-100" onclick="authGoogle()">Sign in with Google</button>' +
-          '</li>' +
-        '</ul>' +
-      '</li>';
-  }
-
-  collapse.appendChild(ul);
-});
-</script>
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practice/rhythm-sequences.html">Practise</a></li><li class="breadcrumb-item"><a href="../practice/tunes.html">Tunes</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Tunes</h1>
 </div>
@@ -806,8 +85,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 
 <style>#title-block-header { display: none; }</style>
-<link rel="icon" href="../apps/tunes/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../apps/shared/abcjs-audio.css">
+<link rel="icon" href="/apps/tunes/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/apps/shared/abcjs-audio.css">
     
     <style>
         /* two columns when wide (notation left, the panels right; PanelColumns moves panels between them), one when narrow */
@@ -925,6 +204,13 @@ document.addEventListener('DOMContentLoaded', async function () {
             document.getElementById("tp-stop").addEventListener("click", stopTune);
             document.getElementById("tp-bpm").addEventListener("change", restartIfPlaying);
             document.getElementById("tp-from").addEventListener("change", restartIfPlaying);
+            const bar = document.getElementById("tn-bar");
+            if (window.PlayBar && PlayBar.swingSlot) bar.insertBefore(PlayBar.swingSlot({ id: "tp-swing", onChange: restartIfPlaying }), document.getElementById("tp-style").parentNode);
+            if (window.AbcPlay && AbcPlay.load) AbcPlay.load().then(() => {
+                const sel = document.getElementById("tp-style");
+                BandCatalog.styles.forEach((s) => { const o = document.createElement("option"); o.value = s.id; o.textContent = s.label; sel.appendChild(o); });
+                sel.addEventListener("change", restartIfPlaying);
+            }).catch(() => {});
             if (window.PlayBar) PlayBar.attach(document.getElementById("tn-bar"), { stop: document.getElementById("tp-stop"), live: () => !!playing });
         }
         function restartIfPlaying() { if (playing) { stopTune(); playTune(); } }
@@ -941,7 +227,10 @@ document.addEventListener('DOMContentLoaded', async function () {
             const band = accomp !== "none" && AbcPlay.hasChords(cur.text);
             if (!melody && !band) return;
             const sound = document.getElementById("mel-instrument").value || "piano";
+            const swSel = document.getElementById("tp-swing"), swPct = swSel && swSel.value !== "auto" ? +swSel.value : null;
+            const abcSwing = /swing|shuffle/i.test((cur.text.match(/"[\^_<>@][^"]*"|^[TNPR]:.*$/mg) || []).join(" "));   // "Swing" in an annotation or the header
             const opts = {
+                swing: swPct != null ? swPct : (abcSwing ? 67 : undefined),
                 sound: sound,
                 qpm: Math.max(20, Math.min(300, +document.getElementById("tp-bpm").value || baseQpm(cur.v))),
                 transpose: cur.transpose,
@@ -955,7 +244,10 @@ document.addEventListener('DOMContentLoaded', async function () {
             };
             if (band) {
                 opts.abc = cur.text;
+                const st = document.getElementById("tp-style").value;
+                opts.style = st !== "auto" ? st : (abcSwing ? "swing" : "pop");
                 opts.bandOpts = { melodySound: sound };
+                if (swPct != null) opts.bandOpts.swingSet = swPct / 100;
                 if (accomp === "nodrums") opts.drums = false;
                 if (!melody) opts.melody = false;
             }
@@ -1176,140 +468,38 @@ document.addEventListener('DOMContentLoaded', async function () {
             <option value="Alto Sax">Alto Sax</option><option value="Trumpet">Trumpet</option><option value="Trombone">Trombone</option>
             <option value="Tuba">Tuba</option><option value="Percussion">Percussion</option>
         </select></span>
+        <span data-pri="4" data-pri-live="5"><label for="tp-style">Band</label><select id="tp-style" title="The backing band's style: Auto picks Swing when the tune says swing, else a piano ballad"><option value="auto">Auto</option></select></span>
         <span data-pri="7" data-pri-live="8"><label for="mel-instrument">Sound</label><select id="mel-instrument" title="Playback instrument"></select></span>
     </div>
-    <script src="../apps/shared/soundfont.js?v=1"></script>
-    <script src="../apps/shared/playbar.js?v=4"></script>
-    <script src="../apps/shared/panel-columns.js"></script>
-    <script src="../apps/shared/band/sounds.js?v=23"></script>
-    <script src="../apps/shared/abc-play.js?v=27"></script>
-    <script src="../apps/shared/abcjs-basic.js?v=5"></script>
-    <script src="../apps/tunes/tunes-object.js?v=3"></script>
-    <script src="../apps/tunes/tune-quality.js"></script>
-    <script src="../apps/shared/works/works-data.js?v=10"></script>
-    <script src="../apps/shared/mlt/recordings.js?v=3"></script>
-    <script src="../apps/shared/works/works.js?v=18"></script>
-<script src="../apps/shared/works/justin-link.js?v=1"></script>
-    <script src="../apps/shared/rec-sync.js?v=1"></script>
-    <script src="../apps/shared/vim-textarea.js?v=1"></script>
-    <script src="../apps/shared/abc-editor.js?v=1"></script>
-    <script src="../apps/shared/cursor-synth.js?v=1"></script>
-    <script src="../apps/shared/tonality.js?v=10"></script>
-    <script src="../apps/shared/audio.js?v=10"></script>
-    <script src="../apps/shared/establish-button.js?v=1"></script>
+    <script src="/apps/shared/soundfont.js?v=1"></script>
+    <script src="/apps/shared/playbar.js?v=4"></script>
+    <script src="/apps/shared/panel-columns.js"></script>
+    <script src="/apps/shared/band/sounds.js?v=23"></script>
+    <script src="/apps/shared/abc-play.js?v=27"></script>
+    <script src="/apps/shared/abcjs-basic.js?v=5"></script>
+    <script src="/apps/tunes/tunes-object.js?v=3"></script>
+    <script src="/apps/tunes/tune-quality.js"></script>
+    <script src="/apps/shared/works/works-data.js?v=10"></script>
+    <script src="/apps/shared/mlt/recordings.js?v=3"></script>
+    <script src="/apps/shared/works/works.js?v=18"></script>
+<script src="/apps/shared/works/justin-link.js?v=1"></script>
+    <script src="/apps/shared/rec-sync.js?v=1"></script>
+    <script src="/apps/shared/vim-textarea.js?v=1"></script>
+    <script src="/apps/shared/abc-editor.js?v=1"></script>
+    <script src="/apps/shared/cursor-synth.js?v=1"></script>
+    <script src="/apps/shared/tonality.js?v=10"></script>
+    <script src="/apps/shared/audio.js?v=10"></script>
+    <script src="/apps/shared/establish-button.js?v=1"></script>
     <script>
         if (window.PanelColumns) PanelColumns.init({ columns: [document.querySelector("#tunes-root .tn-main"), document.querySelector("#tunes-root .tn-side")],
             panels: "details.tn-panel", key: "tnColumns", reset: document.querySelector("#tunes-root .tn-reset-cols") });
         load();
     </script>
 </div>
-<script src="../apps/shared/space-play.js?v=2"></script>
+<script src="/apps/shared/space-play.js?v=2"></script>
 
-
-
-</main> <!-- /main -->
-<!-- Injected before </body> on every page. Loads the tracker. -->
-<script src="../track.js"></script>
-<!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
-     (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
-<script src="../apps/shared/page-clock.js?v=1"></script>
-<script src="../apps/shared/degree-names.js?v=1"></script>
-<script src="../apps/shared/degree-caret.js?v=2"></script>
-<script src="../apps/shared/circle-of-fifths.js?v=2"></script>
-<script src="../apps/shared/practice-widgets.js?v=12"></script>
-<!-- Both sidebars fold away, each from its own button in the navbar, and each choice is remembered:
-     the left (site menu) from a button at the navbar's left, the right ("On this page" and page tools) from one at its right.
-     A sidebar with nothing in it is not shown at all and gets no button: the left when the page is in no sidebar section,
-     the right when it has no section list and no tool has put anything there (scripts that add to it later, the score
-     page's spacing slider or the My report box, bring it back: it is watched). The page body takes the freed room; the
-     grids for each case are in custom.css ("Sidebars"). Below 992px Quarto already tucks both away itself, so the buttons hide. -->
-<script>
-(function () {
-  "use strict";
-  var SIDES = {
-    left: { key: "site-nav", cls: "sidebar-hidden", empty: "no-left-sidebar", id: "quarto-sidebar", icon: "bi-layout-sidebar", name: "menu" },
-    right: { key: "site-margin", cls: "margin-hidden", empty: "no-right-sidebar", id: "quarto-margin-sidebar", icon: "bi-layout-sidebar-reverse", name: "side panel" }
-  };
-  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
-
-  // empty: no links in the site menu; in the right sidebar, nothing but an empty "On this page" list
-  function isEmpty(side, el) {
-    if (!el) return true;
-    if (side === "left") return !el.querySelector("a.sidebar-link, .sidebar-item a[href]");
-    if (el.querySelector("#TOC a, nav[role=doc-toc] a")) return false;
-    return ![].some.call(el.children, function (c) {
-      if (c.matches("nav[role=doc-toc], #TOC, .quarto-margin-spacer")) return false;
-      return !!(c.textContent.trim() || c.querySelector("input, button, select, canvas, svg, img"));   // content, not visibility (a hidden sidebar's children are hidden too)
-    });
-  }
-
-  function boot() {
-    var bar = document.querySelector("#quarto-header .navbar-container");
-    Object.keys(SIDES).forEach(function (side) {
-      var S = SIDES[side], el = document.getElementById(S.id), button = null;
-      function set(hidden) {
-        document.body.classList.toggle(S.cls, hidden);
-        if (!button) return;
-        var label = (hidden ? "Show the " : "Hide the ") + S.name;
-        button.title = label; button.setAttribute("aria-label", label); button.setAttribute("aria-expanded", String(!hidden));
-      }
-      function refresh() {
-        var empty = isEmpty(side, el);
-        document.body.classList.toggle(S.empty, empty);
-        if (button) button.hidden = empty;
-      }
-      if (el && bar) {
-        button = document.createElement("button"); button.type = "button"; button.className = "sidebar-toggle sidebar-toggle-" + side;
-        var icon = document.createElement("i"); icon.className = "bi " + S.icon; button.appendChild(icon);
-        // the left button first in the navbar; the right one at the navbar's right end, after the last menu (the collapsible part)
-        if (side === "left") bar.insertBefore(button, bar.firstChild);
-        else (document.querySelector("#quarto-header .navbar-collapse") || bar).appendChild(button);
-        button.addEventListener("click", function () {
-          var hidden = !document.body.classList.contains(S.cls);
-          set(hidden); store(S.key, hidden ? "hidden" : "shown"); button.blur();
-          window.dispatchEvent(new Event("resize"));   // anything laid out against the old width re-measures
-        });
-      }
-      set(store(S.key) === "hidden");
-      refresh();
-      if (el) new MutationObserver(function () { var was = document.body.classList.contains(S.empty); refresh(); if (was !== document.body.classList.contains(S.empty)) window.dispatchEvent(new Event("resize")); })
-        .observe(el, { childList: true, subtree: true });
-    });
-  }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
-})();
-</script>
-<!-- Marks the navbar tab whose link is this page with .nav-current, so only
-     that tab is coloured. Quarto's own .active also lights a tab for pages
-     beneath it, which is quietened in the stylesheet. -->
-<script>
-(function () {
-  "use strict";
-  function norm(path) { return path.replace(/\/index\.html$/, '/').replace(/\.html$/, ''); }
-  function boot() {
-    var here = norm(location.pathname);
-    // A dropdown tab's own link is "#" (it would match every page): it is current when its menu holds this page.
-    function isHere(a) {
-      var h = a.getAttribute('href');
-      if (!h || h.charAt(0) === '#') return false;
-      return norm(new URL(h, location.href).pathname) === here;
-    }
-    document.querySelectorAll('#quarto-header .navbar-nav .nav-link[href]').forEach(function (a) {
-      var menu = a.classList.contains('dropdown-toggle') && a.parentNode.querySelector('.dropdown-menu');
-      var current = menu ? Array.prototype.some.call(menu.querySelectorAll('a.dropdown-item[href]'), isHere) : isHere(a);
-      if (current) {
-        a.classList.add('nav-current');
-        a.setAttribute('aria-current', 'page');
-      } else {
-        a.classList.remove('nav-current');
-        a.removeAttribute('aria-current');
-      }
-    });
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
-  else boot();
-})();
-</script>
+</main>
+<!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -1710,18 +900,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../songs/index.html" class="pagination-link" aria-label="Words &amp; Chords">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Words &amp; Chords</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../practice/patterns.html" class="pagination-link" aria-label="Tonal Patterns">
-        <span class="nav-page-text">Tonal Patterns</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

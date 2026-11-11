@@ -108,5 +108,135 @@ const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.spl
     D.p.tracks.forEach((t, j) => { t.mute = j !== 1; }); D.setPos(0); D.p.loop.on = false; await D.play(); await new Promise(r => setTimeout(r, 1200)); let lv = 0; for (let k = 0; k < 10; k++) { lv = Math.max(lv, (() => { const a = D.strips[1].meter, b = new Float32Array(1024); a.getFloatTimeDomainData(b); return Math.max(...b.map(Math.abs)); })()); await new Promise(r => setTimeout(r, 60)); } D.stop(); out.push(lv > 0.001);
     return out.join(' | '); })()`);
   check("synth: the four kinds are in the Add menu, the patch panel and presets appear, each kind bounces non-silent audio and one plays live through its strip", /^true \| true \| true \| true \| true \| [\d./]+ \| true$/.test(sy), sy);
+
+  // ---- compose tools (step 1-3) and nav (step 4) ----
+  const BASE = `D.change(() => { D.p.tracks = [{ name: 'Keys', inst: 'piano', vol: 0, pan: 0, mute: false, solo: false, clips: [{ start: 0, len: 8, notes: [{ t: 0, d: 2, m: 60, v: .5 }, { t: 0, d: 2, m: 64, v: .5 }, { t: 0, d: 2, m: 67, v: .5 }, { t: 2, d: 1, m: 72, v: .9 }, { t: 3, d: 1, m: 71, v: .6 }, { t: 4, d: 4, m: 65, v: .7 }] }] }, { name: 'Bass', inst: 'ebass', vol: 0, pan: 0, mute: false, solo: false, clips: [] }]; D.p.bars = 16; D.p.loop = { on: false, from: 0, to: 4 }; D.p.tempo = 100; D.sel = { track: 0, clip: 0, slot: -1, notes: [] }; D.pos = 0; }); window.confirm = () => true;`;
+  const bm = await ev(`(() => { ${KEY} ${BASE} const out = [];
+    out.push(!!D.compSel && !!D.rhythmSel && !!D.voicingSel, D.rhythmSel.options[0].text, D.rhythmSel.querySelectorAll('optgroup').length > 3);
+    D.styleSel.value = 'swing'; D.styleSel.dispatchEvent(new Event('change')); D.chartIn.value = 'Dm7 G7 | Cmaj7 | Am7 D7'; D.timesIn.value = 1; D.feelSel.value = '0';
+    const chords = () => { const t = D.p.tracks.find(x => x.name === 'Chords'); return t.clips[0].notes.map(n => n.m + '@' + n.t.toFixed(2)).join(','); };
+    D.setPos(0); D.rhythmSel.value = 'charleston'; D.bandWrite(); const a = chords();
+    D.setPos(0); D.rhythmSel.value = 'four'; D.bandWrite(); const b2 = chords(); out.push(a !== b2, a.length > 20);
+    D.rhythmSel.value = ''; D.compSel.value = 'guitar'; D.compSel.dispatchEvent(new Event('change')); out.push([...D.voicingSel.options].some(o => o.value === 'drop2'), D.voicingSel.options[0].text);
+    D.voicingSel.value = 'drop2'; D.setPos(0); D.bandWrite(); out.push(/guitar/.test(D.p.tracks.find(x => x.name === 'Chords').inst));
+    D.compSel.value = ''; D.compSel.dispatchEvent(new Event('change')); out.push(D.voicingSel.value === '');
+    const r1 = MiniDaw.bandParts('Dm7 | G7', 'swing', 100, 1, [4, 4], { amt: 0 }, { voicing: 'rootless' }), r2 = MiniDaw.bandParts('Dm7 | G7', 'swing', 100, 1, [4, 4], { amt: 0 }, { voicing: 'shell' });
+    out.push(r1.comp.map(n => n.m).join() !== r2.comp.map(n => n.m).join());
+    return out.join(' | '); })()`);
+  check("band row: Comping / Rhythm / Voicing menus (Style default first, rhythms grouped); Charleston vs four writes different chords; guitar + Drop 2 makes a guitar track; voicing override changes the notes", /^true \| Style default \| true \| true \| true \| true \| Style default \| true \| true \| true$/.test(bm), bm);
+  const ab = await ev(`(async () => { ${KEY} ${BASE} const out = []; D.abcBox.open = true; D.abcBox.dispatchEvent(new Event('toggle')); await new Promise(r => setTimeout(r, 400));
+    const txt = D.abcText.value; out.push(/\\[CEG\\]/.test(txt), !!D.abcStaff.querySelector('svg'), D.abcStaff.querySelectorAll('.abcjs-note').length >= 4, /Check/.test(D.abcInfo.textContent));
+    const u0 = D.undo.length, c = D.p.tracks[0].clips[0];
+    D.abcText.value = txt.replace('[CEG]8', '[CEG]4 z4'); D.abcText.dispatchEvent(new Event('input')); await new Promise(r => setTimeout(r, 400));
+    [...D.abcBox.querySelectorAll('button')].find(b => b.textContent === 'Apply').click();
+    out.push(D.undo.length === u0 + 1, c.notes.filter(n => n.m === 60).length === 1 && c.notes.find(n => n.m === 60).d === 2 === false, c.notes.find(n => n.m === 72).v === 0.9, c.notes.find(n => n.m === 60).v === 0.5);
+    D.doUndo(true); out.push(D.p.tracks[0].clips[0].notes.find(n => n.m === 60).d === 2, D.p.tracks[0].clips[0].notes.length === 6);
+    let asked = 0; window.confirm = () => { asked++; return true; }; D.p.tracks[0].clips[0].notes.push({ t: 0.1, d: 1, m: 50, v: .4 }); D.renderAll(); await new Promise(r => setTimeout(r, 300));
+    [...D.abcBox.querySelectorAll('button')].find(b => b.textContent === 'Apply').click(); out.push(asked === 1, D.p.tracks[0].clips[0].notes.every(n => Math.abs(n.t * 4 - Math.round(n.t * 4)) < 1e-9));
+    D.doUndo(true); D.abcText.value = D.abcText.value.replace('z', 'z'); D.abcBad = null;
+    D.abcText.value = 'X:1\\nM:4/4\\nL:1/16\\nK:C\\nC12 | c16 |]\\n'; D.abcText.dispatchEvent(new Event('input')); await new Promise(r => setTimeout(r, 400)); out.push(/beats, not/.test(D.abcInfo.textContent));
+    // click a note on the staff selects it in the roll
+    D.abcKey.value = 'C'; D.abcKey.dispatchEvent(new Event('change')); await new Promise(r => setTimeout(r, 400)); D.sel.notes = [];
+    const heads = [...D.abcStaff.querySelectorAll('.abcjs-note')]; const h = heads[1]; const bb = h.getBoundingClientRect(), svg = D.abcStaff.querySelector('svg'); for (const t of ['mousedown', 'mouseup']) svg.dispatchEvent(new MouseEvent(t, { bubbles: true, cancelable: true, clientX: bb.left + bb.width / 2, clientY: bb.top + bb.height / 2, button: 0 }));
+    out.push(D.sel.notes.length >= 1 && D.p.tracks[0].clips[0].notes[D.sel.notes[0]] !== undefined);
+    return out.join(' | '); })()`);
+  check("edit as notation: ABC with a [CEG] chord and a drawn staff; edit + Apply = one undo step keeping velocities, Undo restores; off-grid warns (confirm asked once) and snaps; a short bar is reported; clicking a note selects it in the roll", /^true \| true \| true \| false( \| true){10}$/.test(ab), ab);
+  const fl = await ev(`(async () => { ${KEY} ${BASE} const out = []; D.fillBox.open = true; D.fillBox.dispatchEvent(new Event('toggle')); const F = D.fillUi;
+    const go = () => [...D.fillBox.querySelectorAll('button')].find(b => b.textContent === 'Fill').click(), tn = () => D.p.tracks.length;
+    F.from.value = 1; F.to.value = 4; F.edited = true; F.chart.value = 'Dm7 G7 | Cmaj7'; F.src.value = 'arp'; F.src.dispatchEvent(new Event('change')); F.aType.value = 0; F.target.value = 'new';
+    let u0 = D.undo.length, t0 = tn(); go(); out.push(tn() === t0 + 1, D.undo.length === u0 + 1, D.track().clips.length === 1 && D.track().clips[0].len === 16 && D.track().clips[0].notes.length > 40);
+    D.doUndo(true); out.push(tn() === t0);
+    F.src.value = 'arranger'; F.src.dispatchEvent(new Event('change')); F.rStyle.value = 'pop8'; F.rStyle.dispatchEvent(new Event('change')); F.rSec.value = 'Main A'; F.rSec.dispatchEvent(new Event('change')); F.rCh.value = 'Bass'; D.fillTargets(); F.target.value = '1'; u0 = D.undo.length; go();
+    out.push(D.undo.length === u0 + 1, D.p.tracks[1].clips.length === 1 && D.p.tracks[1].clips[0].notes.length > 8, D.p.tracks[1].clips[0].notes[0].m % 12 === 2);
+    F.src.value = 'band'; F.src.dispatchEvent(new Event('change')); F.bStyle.value = 'swing'; F.bPart.value = 'drums'; F.target.value = '1'; go(); out.push(/drum part/.test(D.statusEl.textContent));
+    F.bPart.value = 'bass'; F.target.value = '1'; u0 = D.undo.length; go(); out.push(D.undo.length === u0 + 1, D.p.tracks[1].clips.length === 1 && D.p.tracks[1].clips[0].len === 16);
+    F.bPart.value = 'drums'; F.target.value = 'new'; go(); out.push(D.track().inst === 'kit', D.track().clips[0].notes.some(n => typeof n.m === 'string'));
+    // chords from the clip
+    D.sel = { track: 0, clip: 0, slot: -1, notes: [] }; [...D.fillBox.querySelectorAll('button')].find(b => /Chords from/.test(b.textContent)).click(); out.push(/C/.test(F.chart.value), F.chart.value);
+    return out.join(' | '); })()`);
+  check("fill from chords: arp -> a new track, one clip of 4 bars, ONE undo step, Undo removes it; arranger Bass onto Bass (root D); band drums onto a note track is refused, band bass replaces, drums to a new kit track; chords read from the clip", /^(true \| ){13}Cmaj7 \| Cmaj7$/.test(fl), fl);
+  const nv = await ev(`(() => { ${KEY} ${BASE} const out = [], k = (key, o) => key2(key, o), key2 = (kk, o) => D.node.dispatchEvent(new KeyboardEvent('keydown', Object.assign({ key: kk, code: o && o.code, bubbles: true, cancelable: true }, o || {})));
+    const c = () => D.p.tracks[0].clips[0];
+    out.push(!!D.stepSel, D.stepMode);
+    key2('l', { code: 'KeyL' }); out.push(c().start);                                  // l moves the selected clip a beat
+    key2('ArrowRight', { altKey: true, code: 'ArrowRight' }); out.push(c().start);       // Alt+→ too
+    key2('L', { code: 'KeyL', shiftKey: true }); out.push(c().start);                     // L: a bar (to the next bar line)
+    key2('h', { code: 'KeyH' }); out.push(c().start);
+    D.stepSel.value = 'sixteenth'; D.stepSel.dispatchEvent(new Event('change')); key2('l', { code: 'KeyL' }); out.push(c().start); D.stepSel.value = 'beat'; D.stepSel.dispatchEvent(new Event('change'));
+    D.doUndo(true); D.doUndo(true); D.doUndo(true); D.doUndo(true); D.doUndo(true); out.push(c().start);
+    D.setPos(0); key2('ArrowRight'); out.push(D.pos); key2('ArrowRight', { shiftKey: true }); out.push(D.pos); key2('ArrowLeft'); out.push(D.pos);
+    key2('Escape'); out.push(D.sel.clip); key2('l', { code: 'KeyL' }); out.push(D.pos, c().start);
+    D.sel = { track: 0, clip: 0, slot: -1, notes: [3] }; const t3 = c().notes[3].t, m3 = c().notes[3].m; key2('l', { code: 'KeyL' }); out.push(c().notes[3].t - t3, c().start);
+    key2('ArrowUp', { altKey: true, code: 'ArrowUp' }); out.push(c().notes[3].m - m3); key2('ArrowUp', { altKey: true, shiftKey: true, code: 'ArrowUp' }); out.push(c().notes[3].m - m3);
+    D.sel.notes = [3]; key2('3', {}); key2('l', { code: 'KeyL' }); out.push(c().notes[3].t - t3);
+    return out.join(' | '); })()`);
+  check("nav keys: l / Alt+→ a beat, L a bar, h back, sixteenth step, undo; arrows move the playhead a step (Shift a bar); Esc deselects then l moves the playhead; with a note selected l moves the note not the clip, Alt+↑ transposes (Shift an octave), 3l repeats", nv === "true | beat | 1 | 2 | 4 | 3 | 3.25 | 0 | 1 | 4 | 3 | -1 | 4 | 0 | 1 | 0 | 1 | 13 | 4", nv);
+  const lk = await ev(`(() => { ${KEY} ${BASE} const out = [], key2 = (kk, o) => D.node.dispatchEvent(new KeyboardEvent('keydown', Object.assign({ key: kk, bubbles: true, cancelable: true }, o || {})));
+    D.setPos(5); key2(','); const l = () => D.p.loop; out.push(l().fb, l().on); D.setPos(9); key2('.'); out.push(l().tb, JSON.stringify(D.loopRange()));
+    D.setPos(2); key2('.'); out.push(l().tb, l().fb);
+    key2('\\\\'); out.push(l().on, D.loopRange() === null); key2('\\\\'); out.push(l().on);
+    D.p.tracks[0].clips[0].start = 8; D.p.tracks[0].clips[0].len = 4; key2('O', { shiftKey: true }); out.push(JSON.stringify(D.loopRange())); D.doUndo(true); out.push(D.p.loop.fb === 2 || D.p.loop.fb === 0 || D.p.loop.fb === undefined);
+    return out.join(' | '); })()`);
+  check("loop keys: , sets the start and . the end at the playhead (turns the loop on), an end before the start pulls the start back, \\\\ toggles, Shift+O loops the selected clip, undo", /^5 \| true \| 9 \| \[5,9\] \| 2 \| 0 \| false \| true \| true \| \[8,12\] \| true$/.test(lk), lk);
+  const rl = await ev(`(() => { ${KEY} ${BASE} const out = []; D.p.loop = { on: false, from: 0, to: 4 }; D.renderAll();
+    const ruler = () => D.gridEl.querySelector('.mdaw-ruler'), W = () => D.beatW(), px = beat => ruler().getBoundingClientRect().left + beat * W(), loop = () => D.p.loop;
+    const drag = (from, to, part) => { const tgt = part === 'm' ? ruler().querySelector('.mdaw-loopr') : part ? ruler().querySelector('.mdaw-loop-' + part) : ruler(); tgt.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, clientX: px(from), clientY: 6, button: 0 }));
+      document.dispatchEvent(new PointerEvent('pointermove', { bubbles: true, clientX: (px(from) + px(to)) / 2 })); document.dispatchEvent(new PointerEvent('pointermove', { bubbles: true, clientX: px(to) })); document.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, clientX: px(to) })); };
+    out.push(ruler().querySelectorAll('.mdaw-loop-h').length === 2, ruler().querySelector('.mdaw-loop-h').getBoundingClientRect().width >= 14);
+    const u0 = D.undo.length; drag(4.2, 9.6); out.push(loop().fb, loop().tb, loop().on, D.undo.length === u0 + 1);
+    drag(10, 12, 'r'); out.push(loop().fb, loop().tb);
+    drag(3.9, 1, 'l'); out.push(loop().fb, loop().tb);
+    drag(6, 9, 'm'); out.push(loop().fb, loop().tb);
+    D.setPos(0); drag(7, 7); out.push(D.pos, loop().fb);                              // a click only moves the playhead
+    ruler().dispatchEvent(new MouseEvent('dblclick', { bubbles: true, clientX: px(5.5) })); out.push(loop().fb, loop().tb);   // double-click bar 2
+    D.stepSel.value = 'bar'; D.stepSel.dispatchEvent(new Event('change')); drag(5, 10.4); out.push(loop().fb, loop().tb);
+    D.stepSel.value = 'beat'; D.stepSel.dispatchEvent(new Event('change')); const w0 = D.beatW(); document.querySelectorAll('.mdaw-zoom')[0].querySelectorAll('button')[1].click(); out.push(D.beatW() > w0);
+    drag(4.2, 9.6); out.push(loop().fb, loop().tb, JSON.stringify(D.loopRange()));
+    D.doUndo(true); D.doUndo(true); out.push(loop().fb);
+    return out.join(' | '); })()`);
+  check("loop ruler: two 14px handles, drag across draws a loop snapped to beats (one undo step), the right / left handle resizes, the middle moves (+3 beats), a click only places the playhead, double-click loops a bar, bar step snaps to bars, still right when zoomed", /^true \| true \| 4 \| 10 \| true \| true \| 4 \| 12 \| 1 \| 12 \| 4 \| 15 \| 7 \| 4 \| 4 \| 8 \| 4 \| 12 \| true \| 4 \| 10 \| \[4,10\]/.test(rl) , rl);
+
+  // ---- panels and the position readout (step 5) ----
+  await ev(`localStorage.removeItem('mdaw:daw-scratch:panels'); localStorage.removeItem('mdaw:daw-scratch:panelopen'); 0`);
+  await b.goto(U); await ev(SFX); await b.sleep(500);
+  const pa = await ev(`(() => { const D = MiniDaw.all[0], ps = [...D.node.querySelectorAll('details.mdaw-panel')], out = [];
+    out.push(ps.length >= 9, ps.every(p => p.id && p.querySelector(':scope > summary .pc-grip') && p.querySelector(':scope > summary .pc-across')), D.node.querySelector('.mdaw-colA').children.length === ps.length, getComputedStyle(D.node.querySelector('.mdaw-colB')).display === 'none');
+    out.push(![...document.querySelectorAll('h2')].some(h => /Scratch pad/.test(h.textContent)), [...document.querySelectorAll('#TOC a, .sidebar a, nav a')].some(a => /How to use it/.test(a.textContent)) ? 'toc' : 'notoc');
+    const ed = D.node.querySelector('#daw-scratch-pn-editor'); ed.open = false; ed.dispatchEvent(new Event('toggle'));
+    D.node.querySelector('#daw-scratch-pn-mixer .pc-across').click();
+    out.push(JSON.parse(localStorage.getItem('mdaw:daw-scratch:panelopen')).editor === false, JSON.stringify(JSON.parse(localStorage.getItem('mdaw:daw-scratch:panels'))[1]), getComputedStyle(D.node.querySelector('.mdaw-colB')).display !== 'none');
+    return out.join(' | '); })()`);
+  check("panels: 9+ folding panels each with a grip and ⇄, the sidebar column hidden until used, no 'Scratch pad' heading; folding Editor and sending Mixer across are saved", /^true \| true \| true \| true \| true \| toc \| true \| \["daw-scratch-pn-mixer"\] \| true$/.test(pa), pa);
+  await b.goto(U); await ev(SFX); await b.sleep(500);
+  const pb = await ev(`(() => { const D = MiniDaw.all[0], out = [];
+    out.push(!D.node.querySelector('#daw-scratch-pn-editor').open, D.node.querySelector('.mdaw-colB').contains(D.node.querySelector('#daw-scratch-pn-mixer')), D.node.querySelector('#daw-scratch-pn-mixer').open);
+    out.push(D.node.querySelectorAll('#daw-scratch-pn-mixer *').length > 5);
+    return out.join(' | '); })()`);
+  check("panels: after a reload Editor is still folded and Mixer still in the sidebar column", pb === "true | true | true | true", pb);
+  const fsr = await ev(`(async () => { const D = MiniDaw.all[0], out = []; try { await D.node.requestFullscreen(); await new Promise(r => setTimeout(r, 300)); } catch (e) {}
+    out.push(document.fullscreenElement === D.node ? 'fs' : 'nofs', D.node.contains(D.node.querySelector('.mdaw-cols')));
+    D.node.querySelector('#daw-scratch-pn-band .pc-across').click(); out.push(D.node.querySelector('.mdaw-colB').contains(D.node.querySelector('#daw-scratch-pn-band')), D.node.querySelector('#daw-scratch-pn-band').getBoundingClientRect().width > 100);
+    if (document.fullscreenElement) await document.exitFullscreen(); return out.join(' | '); })()`);
+  check("panels: in full screen (when the browser allows it) the columns stay inside the DAW and ⇄ still moves a panel", /^(fs|nofs) \| true \| true \| true$/.test(fsr), fsr);
+  const rs = await ev(`(() => { const D = MiniDaw.all[0]; window.__reloaded = false; return JSON.stringify([!!localStorage.getItem('mdaw:daw-scratch:panels'), [...D.node.querySelectorAll('.mdaw-panelbar button')].map(x => x.textContent).join()]); })()`);
+  check("panels: Fold all / Unfold all / Reset layout buttons", /Fold all,Unfold all,Reset layout/.test(rs), rs);
+  await ev(`[...MiniDaw.all[0].node.querySelectorAll('.mdaw-panelbar button')].find(x => x.textContent === 'Fold all').click(); 0`);
+  const fa = await ev(`[...MiniDaw.all[0].node.querySelectorAll('details.mdaw-panel')].every(p => !p.open)`);
+  await ev(`[...MiniDaw.all[0].node.querySelectorAll('.mdaw-panelbar button')].find(x => x.textContent === 'Unfold all').click(); 0`);
+  const ua = await ev(`[...MiniDaw.all[0].node.querySelectorAll('details.mdaw-panel')].every(p => p.open)`);
+  await b.sleep(300); await ev(`[...MiniDaw.all[0].node.querySelectorAll('.mdaw-panelbar button')].find(x => x.textContent === 'Reset layout').click(); 0`); await b.sleep(1200); await ev(SFX); await b.sleep(400);
+  const rr = await ev(`(() => { const D = MiniDaw.all[0]; return [String(localStorage.getItem('mdaw:daw-scratch:panels')), Object.values(JSON.parse(localStorage.getItem('mdaw:daw-scratch:panelopen') || '{}')).every(v => v === true), D.node.querySelector('.mdaw-colA').contains(D.node.querySelector('#daw-scratch-pn-mixer')), D.node.querySelector('#daw-scratch-pn-editor').open].join(' | '); })()`);
+  check("panels: Fold all folds, Unfold all opens, Reset layout forgets the layout and the folds and puts every panel back", fa === true && ua === true && /^null \| true \| true \| true$/.test(rr), fa + ' ' + ua + ' ' + rr);
+  const ps = await ev(`(() => { ${KEY} ${BASE} const out = [], P = D.posEl, typed = (t, k) => { P.click(); const i = D.posIn; i.value = t; i.dispatchEvent(new KeyboardEvent('keydown', { key: k || 'Enter', bubbles: true, cancelable: true })); return i; };
+    P.click(); out.push(!!D.posIn, P.hidden, document.activeElement === D.posIn); D.posIn.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true })); out.push(D.posIn === null, P.hidden, D.pos);
+    typed('3.2.1'); out.push(D.pos, D.posIn === null, P.textContent);
+    typed('2.3'); out.push(D.pos); typed('6'); out.push(D.pos);
+    const bad = typed('99.1.1'); out.push(D.pos, D.posIn === bad, bad.classList.contains('mdaw-shake'), /bars/.test(D.statusEl.textContent)); bad.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+    const bad2 = typed('abc'); out.push(D.posIn === bad2); bad2.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+    D.p.tsMap = [{ bar: 1, ts: [3, 4] }]; D.renderAll(); typed('3.1.1'); out.push(D.pos); const b4 = typed('2.4'); out.push(D.pos, D.posIn === b4, /3 beats/.test(D.statusEl.textContent)); b4.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+    D.p.tsMap = [{ bar: 1, ts: [6, 8] }]; D.renderAll(); typed('2.2.2'); out.push(D.pos, P.textContent);
+    D.setPos(0); D.node.focus(); D.node.dispatchEvent(new KeyboardEvent('keydown', { key: 'g', bubbles: true, cancelable: true })); out.push(!!D.posIn); D.posIn.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+    return out.join(' | '); })()`);
+  check("position readout: click opens a box, Esc cancels; 3.2.1 -> beat 9 (readout 3.2.1), 2.3 -> 6, 6 -> 20; a bad entry stays, shakes and says why; follows a 3/4 and a 6/8 bar; G opens it", ps === "true | true | true | true | false | 0 | 9 | true | 3.2.1 | 6 | 20 | 20 | true | true | true | true | 7 | 7 | true | true | 5.5 | 2.2.2 | true".replace("5.5", "5.75") || false, ps);
   await b.close(); srv.close(); console.log(fails ? fails + " failed" : "all passed"); process.exit(fails ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(1); });

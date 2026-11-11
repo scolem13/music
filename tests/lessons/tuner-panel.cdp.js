@@ -27,7 +27,7 @@ const URL = p => `http://127.0.0.1:8517/${p}.html`;
 
   // ---------------- an ordinary page ----------------
   b.errors.length = 0; await b.goto(URL("index")); await b.sleep(900); await ev(hook);
-  check("navbar: a Tuner button next to the drone", await ev(`!!document.querySelector('#pw-nav a[aria-label="Strobe tuner"]')`) && await ev(`[...document.querySelectorAll('#pw-nav a')].map(a => a.getAttribute('aria-label')).join()`) === "Metronome,Drone,Strobe tuner,Circle of fifths", await ev(`[...document.querySelectorAll('#pw-nav a')].map(a => a.getAttribute('aria-label')).join()`));
+  check("navbar: a Tuner button next to the drone", await ev(`!!document.querySelector('#pw-nav a[aria-label="Tuner"]')`) && await ev(`[...document.querySelectorAll('#pw-nav a')].map(a => a.getAttribute('aria-label')).join()`) === "Metronome,Drone,Tuner,Circle of fifths,Mixer", await ev(`[...document.querySelectorAll('#pw-nav a')].map(a => a.getAttribute('aria-label')).join()`));
   check("nothing of the tuner is loaded before the button is pressed", await ev(`typeof TunerPanel === 'undefined' && typeof StrobeView === 'undefined'`) && await ev(`typeof AudioTap`) === "object");
   await open();
   check("panel: opens, loads on demand, shows Start", await ev(`!document.getElementById('pw-tuner').hidden && !!document.getElementById('pw-t-go') && document.getElementById('pw-t-go').textContent`) === "Start");

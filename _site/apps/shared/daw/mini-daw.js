@@ -32,6 +32,16 @@
 // on the page and mirrored in localStorage "mdaw:clipboard"). data-zoom = − / + / Fit for the arrangement's bar width and for the piano roll's
 // width and row height, Ctrl/Cmd + and − (the roll when the focus is in it; Shift also does the rows), kept in "mdaw:<id>:zoom". Logic in
 // Projects / Clipboard (exported on MiniDaw; test tests/lessons/daw-scratch.test.js).
+// Keyboard + loop (nav-tools.js, data-nav, scratch pad only): a Step menu (1/16 · beat · bar) that sizes keyboard moves and snaps the mouse; arrows move the playhead by a step (Shift: a bar);
+// Alt+← → and h / l move the selected notes (roll) or clip by a step (Alt+Shift, H / L: a bar), the playhead when nothing is selected; Alt+↑ ↓ transpose selected notes;
+// , sets the loop start and . the loop end at the playhead, \ toggles the loop, Shift+O loops the selected clip, Esc deselects. The loop becomes exact beats (loop.fb / loop.tb; loopSpan()),
+// and the ruler: drag across it to draw the loop, drag an edge to resize, the middle to move, double-click a bar to loop it. Lessons keep the old bar-only ruler and Shift+arrows.
+// Panels (panels.js, data-panels, scratch pad only): every part (projects, transport, session, arrangement, editor, track sound, notation, fill, mixer, band, files) is a
+// folding panel in one of two columns (PanelColumns: grip to drag, ⇄ to the other column, so the second column is a sidebar); layout in "mdaw:<id>:panels", folds in "mdaw:<id>:panelopen", Reset layout.
+// The position readout (all DAWs): click it or press G, type bar.beat.sixteenth ("6.1.4", "6.3", "6"), Enter jumps (Meter.parsePos), Esc cancels.
+// Compose tools (compose-tools.js + abc-clip.js, scratch pad only): data-comp-menu = comping rhythm / voicing / piano-or-guitar menus in the band row (override the style's
+// own; bandParts' last argument); data-abc-edit = "Edit as notation" panel for a note clip (clip -> ABC text + staff, edit, Apply = one undo step; velocities kept where pitch and
+// 16th-grid start match); data-fill = "Fill from chords" panel (bars + chords + a source: band style, workstation arp type or Style Arranger section -> one clip on a track).
 // Track sound (track-sound.js, loaded after this file; each part opt-in, scratch pad only): data-organ = an organ panel on hammond tracks (per-track tonebars, Leslie, swell, key click, Leslie / swell
 // automation in track.auto.leslie / .swell; track.organ), data-fx = 3 insert effects a track (track.fx) + reverb / delay sends (track.sends, project.returns), data-fx needs synth-kit.js on the page
 // (SK_NO_BAR), data-synth = synth instruments (syn-sub, syn-fm, syn-wt, syn-chip; track.synth). Hooks here: makeStrip(buses), applyMix, schedule, bounce, MIDI export, noteOff, stop. See track-sound.js's header.
@@ -148,6 +158,15 @@
     where: function (p, b) { var a = Meter.barAt(p, b), s = 0, gi = 0, gs = Meter.groups(a.ts), x = Math.max(0, a.into);
       for (var i = 0; i < gs.length; i++) { if (x < s + gs[i] - 1e-9) { gi = i; break; } s += gs[i]; gi = i; }
       return { bar: a.bar + 1, beat: gi + 1, sub: Math.floor((x - s) * 4 + 1e-9) + 1 }; },
+    // a typed position "bar.beat.sixteenth" (1-based; "6", "6.3", "6.1.4"; . or : between) -> { pos (beats) } or { error }. A beat is a group of the bar's meter (a dotted quarter in 6/8), as the position readout counts.
+    parsePos: function (p, text) {
+      var m = /^\s*(\d+)(?:\s*[.:]\s*(\d+))?(?:\s*[.:]\s*(\d+))?\s*$/.exec(String(text)); if (!m) return { error: 'Type a position as bar.beat.sixteenth: 6.1.4, 6.3 or just 6.' };
+      var bar = +m[1], beat = m[2] ? +m[2] : 1, sub = m[3] ? +m[3] : 1;
+      if (bar < 1 || bar > p.bars) return { error: 'The song has ' + p.bars + ' bar' + (p.bars > 1 ? 's' : '') + ': bar ' + bar + ' is not there.' };
+      var ts = Meter.tsOfBar(p, bar - 1), gs = Meter.groups(ts); if (beat < 1 || beat > gs.length) return { error: 'Bar ' + bar + ' is in ' + Meter.str(ts) + ': it has ' + gs.length + ' beat' + (gs.length > 1 ? 's' : '') + ', not ' + beat + '.' };
+      var subs = Math.max(1, Math.round(gs[beat - 1] * 4)); if (sub < 1 || sub > subs) return { error: 'Beat ' + beat + ' of bar ' + bar + ' has ' + subs + ' sixteenth' + (subs > 1 ? 's' : '') + ', not ' + sub + '.' };
+      var at = Meter.barStart(p, bar - 1); for (var i = 0; i < beat - 1; i++) at += gs[i]; return { pos: at + (sub - 1) / 4 };
+    },
     // set the meter from a bar on (bar 0 = the project's own); a change equal to the meter before it is dropped
     set: function (p, bar, ts) {
       if (bar <= 0) { p.ts = ts.slice(); return; }
@@ -452,10 +471,12 @@
         n.t = Math.round(clamp(t, 0, len != null ? Math.max(0, len - 0.002) : t) * 10000) / 10000; n.v = clamp(n.v * f, 0.05, 1); delete n.s; }); });
     return notes;
   }
-  function bandParts(chart, styleId, tempo, times, ts, feel) {
+  // over (optional, data-comp-menu): { rhythm: a BandCatalog.comp id, voicing: a BandHarmony.styleList id, comp: 'piano' | 'guitar' } overriding the style's own
+  function bandParts(chart, styleId, tempo, times, ts, feel, over) {
     var G = global; if (!G.TuneChart || !G.BandMidi || !G.BandCatalog) throw new Error('The band is not loaded on this page.');
     var ch = chartAbc(chart, ts); if (!ch.bars) throw new Error('Type some chords first, bars split by |');
-    var so = G.BandCatalog.styleOpts(styleId), opts = so.opts;
+    over = over || {}; var so = G.BandCatalog.styleOpts(styleId, over.comp === 'piano' || over.comp === 'guitar' ? over.comp : undefined), opts = Object.assign({}, so.opts);
+    if (over.rhythm) opts.compRhythm = over.rhythm; if (over.voicing) opts.voicing = over.voicing;
     var recs = G.BandMidi.generate(G.TuneChart.parse(ch.abc), { bars: ch.bars * (times || 1), tempo: tempo, opts: opts });
     var out = { bass: [], comp: [], drums: [], congas: [] };
     var off = 0;       // a bar is its beats long: dotted quarters when compound; the band counts 5/8 and 7/8 as 5 or 7 beats, so each is squeezed to an eighth (pos is in beats)
@@ -543,7 +564,7 @@
     var d = node.dataset, self = this;
     this.node = node; this.id = d.id || 'default'; this.storeKey = 'mdaw:' + this.id; this.presetName = d.preset || 'empty';
     this.projects = d.projects != null; this.useClip = d.clipboard != null; this.useZoom = d.zoom != null;
-    this.useOrgan = d.organ != null; this.useFx = d.fx != null; this.useSynth = d.synth != null;     // opt-in track sound (track-sound.js)
+    this.navOn = d.nav != null; this.useOrgan = d.organ != null; this.useFx = d.fx != null; this.useSynth = d.synth != null;     // opt-in track sound (track-sound.js)
     if (this.projects) { var po = Projects.open(Projects.kvLocal, this.id, Date.now()); this.pIndex = po.index; this.storeKey = po.cur; }
     this.zoom = { arr: 1, rx: 1, ry: 1 }; if (this.useZoom) { var zs = store('mdaw:' + this.id + ':zoom'); if (zs) { this.zoom.arr = clamp(+zs.arr || 1, ZOOM_MIN, ZOOM_MAX); this.zoom.rx = clamp(+zs.rx || 1, 0.3, 3); this.zoom.ry = clamp(+zs.ry || 1, 0.5, 3); } }
     var show = (d.show || 'transport tracks editor mixer band files record').split(/\s+/); this.show = {}; show.forEach(function (s) { self.show[s] = true; });
@@ -623,7 +644,7 @@
     var tb = this.tb = el('div', 'mdaw-transport'); n.appendChild(tb);
     this.bHome = btn('⏮', 'Back to the start (Home)'); this.bPlay = btn('▶ Play', 'Play / stop (Space)', 'mdaw-play'); this.bRec = btn('● Rec', 'Record into the selected track (R)', 'mdaw-rec');
     this.bLoop = btn('⟲ Loop', 'Loop (cycle) the bracket on the ruler (O)'); this.bClick = btn('♩ Click', 'Metronome (C)');
-    this.posEl = el('span', 'mdaw-pos', '1.1.1'); this.posEl.title = 'Bar . beat . sixteenth';
+    this.posEl = el('span', 'mdaw-pos', '1.1.1'); this.posEl.title = 'Bar . beat . sixteenth. Click (or press G) to type a position: 6.1.4, 6.3 or 6, then Enter'; this.posEl.style.cursor = 'text'; this.posEl.tabIndex = 0; this.posEl.setAttribute('role', 'button'); this.posEl.onclick = function () { self.editPos(); }; this.posEl.onkeydown = function (e) { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); self.editPos(); } };
     var tl = el('label', 'mdaw-lbl', 'Tempo '); this.tempoIn = el('input'); this.tempoIn.type = 'number'; this.tempoIn.min = 40; this.tempoIn.max = 220; this.tempoIn.setAttribute('aria-label', 'Tempo in BPM'); tl.appendChild(this.tempoIn); tl.appendChild(document.createTextNode(' BPM'));
     this.bUndo = btn('↶', 'Undo (Ctrl/Cmd+Z)'); this.bRedo = btn('↷', 'Redo (Ctrl/Cmd+Shift+Z)');
     this.bMon = btn('🎧 Monitor', 'Hear the microphone through the track as you record (use headphones!)');
@@ -631,7 +652,7 @@
     this.bKeys = btn('⌨ Keys', 'Play the selected track from the computer keyboard (A W S E D …)');
     [this.bHome, this.bPlay].forEach(function (b) { tb.appendChild(b); }); if (this.show.record) tb.appendChild(this.bRec);
     [this.bLoop, this.bClick, this.posEl, tl, this.bKeys, this.bMon, this.inMeter, this.bUndo, this.bRedo].forEach(function (b) { tb.appendChild(b); });
-    this.statusEl = el('span', 'mdaw-status'); this.statusEl.setAttribute('aria-live', 'polite'); tb.appendChild(this.statusEl);
+    this.statusEl = el('span', 'mdaw-status'); this.statusEl.setAttribute('aria-live', 'polite'); if (this.navOn) { n.classList.add('mdaw-nav'); if (global.MiniDaw.Nav) global.MiniDaw.Nav.build(this, tb); } tb.appendChild(this.statusEl);
     if (!this.show.transport) { [this.bLoop, this.bClick, tl, this.bKeys, this.bUndo, this.bRedo].forEach(function (b) { b.hidden = true; }); }
     this.bHome.onclick = function () { self.locate(0); }; this.bPlay.onclick = function () { self.toggle(); };
     this.bRec.onclick = function () { self.record(); };
@@ -651,7 +672,8 @@
       self.change(function () { self.p.tracks.push(track(inst.label, inst.id)); self.sel = { track: self.p.tracks.length - 1, clip: -1, notes: [] }; }); };
     var bNew = btn('+ Clip', 'New empty one-bar clip on the selected track, at the playhead'); bNew.onclick = function () { self.newClip(self.sel.track, Meter.floor(self.p, self.pos)); };
     var bDup = btn('Duplicate', 'Duplicate the clip after itself (Ctrl/Cmd+D)'); bDup.onclick = function () { self.duplicate(); };
-    var bSplit = btn('Split', 'Split the clip at the playhead'); bSplit.onclick = function () { self.split(); };
+    var bSplit = btn('Split', 'Split the clip at the playhead (S)'); bSplit.onclick = function () { self.split(); };
+    var bJoin = btn('Join', 'Join the selected clip with the next one on the track (J; 3J joins three more)'); bJoin.onclick = function () { self.join(1); self.node.focus(); };
     var bDel = btn('Delete', 'Delete the selected clip (Delete)'); bDel.onclick = function () { self.deleteSel(); };
     var bLen = el('label', 'mdaw-lbl', 'Song '); this.barsIn = el('input'); this.barsIn.type = 'number'; this.barsIn.min = 1; this.barsIn.max = 64; this.barsIn.setAttribute('aria-label', 'Song length in bars'); bLen.appendChild(this.barsIn); bLen.appendChild(document.createTextNode(' bars'));
     this.barsIn.onchange = function () { var v = clamp(+self.barsIn.value || 8, 1, 64); self.change(function () { self.p.bars = v; }); };
@@ -666,7 +688,7 @@
     [addSel, bAdd, bNew].forEach(function (x) { tools.appendChild(x); });
     if (this.useClip) { var bCopy = btn('Copy', 'Copy the selected clip, or the selected notes (Ctrl/Cmd+C)'), bPaste = btn('Paste', 'Paste at the playhead: a clip onto the selected track, notes into the open clip (Ctrl/Cmd+V)');
       bCopy.onclick = function () { self.copySel(false); self.node.focus(); }; bPaste.onclick = function () { self.paste(); self.node.focus(); }; tools.appendChild(bCopy); tools.appendChild(bPaste); }
-    [bDup, bSplit, bDel, bLen, tsl, tsfrom, this.tsList].forEach(function (x) { tools.appendChild(x); });
+    [bDup, bSplit, bJoin, bDel, bLen, tsl, tsfrom, this.tsList].forEach(function (x) { tools.appendChild(x); });
     if (this.useZoom) { this.zoomBar(tools, 'Zoom the arrangement (Ctrl/Cmd + and −)', 'arr'); }
     if (this.show.automation) { this.bAuto = btn('Volume lane', 'Show the selected track\'s volume automation lane (V)'); this.bAuto.onclick = function () { self.toggleAuto(); }; tools.appendChild(this.bAuto); }
     var grid = this.gridEl = el('div', 'mdaw-grid'); arr.appendChild(grid);
@@ -698,6 +720,7 @@
 
     // the selected track's sound: organ / effects / synth (track-sound.js; only with data-organ, data-fx or data-synth)
     if ((this.useOrgan || this.useFx || this.useSynth) && global.MiniDaw.TrackSound) global.MiniDaw.TrackSound.build(this);
+    if ((d.abcEdit != null || d.fill != null) && global.MiniDaw.Compose) global.MiniDaw.Compose.build(this, d.abcEdit != null, d.fill != null);     // compose-tools.js
 
     // mixer
     var mx = this.mx = el('div', 'mdaw-mixer'); n.appendChild(mx); if (!this.show.mixer) mx.hidden = true;
@@ -719,7 +742,14 @@
       this.feelSel.value = d.feel === 'band' ? '1' : d.feel === 'loose' ? '2' : '0'; this.feelSel.title = 'Band feel: each part a touch ahead or behind the beat, a little random, chords rolled, velocity wandering: as the Backing Track plays. Tempo stays steady.'; fl2.appendChild(this.feelSel);
       var bGo = btn('Write the parts', 'Make drum, bass and chord clips at the playhead', 'btn-primary'); bGo.onclick = function () { self.bandWrite(); };
       var bHum = btn('Humanize clip', 'Give the selected clip the band\'s feel (the Feel setting; Band feel if it is Tight). Once per clip: Quantize takes it out again.'); bHum.onclick = function () { self.humanize(); };
-      [chl, sl, tml, fl2, bGo, bHum].forEach(function (x) { row.appendChild(x); });
+      var pl2 = el('label', 'mdaw-lbl', 'Parts '); this.partSel = el('select'); this.partSel.setAttribute('aria-label', 'Which parts to write');
+      [['all', 'All parts'], ['drums', 'Drums only'], ['congas', 'Congas only'], ['bass', 'Bass only'], ['chords', 'Chords only']].forEach(function (o) { var e2 = el('option', null, o[1]); e2.value = o[0]; self.partSel.appendChild(e2); }); pl2.appendChild(this.partSel);
+      var parts = [chl, sl, tml, fl2, pl2];
+      if (this.show.session) { var to2 = el('label', 'mdaw-lbl', 'Write to '); this.toSel = el('select'); this.toSel.setAttribute('aria-label', 'Where the parts go');
+        [['arr', 'Arrangement (at the playhead)'], ['session', 'Session (first free scene)']].forEach(function (o) { var e2 = el('option', null, o[1]); e2.value = o[0]; self.toSel.appendChild(e2); });
+        this.toSel.title = 'Session: each part becomes a looping clip in the first scene where that track is free (a new scene if none is), so pressing Write again gives another take to audition: three bass lines in three scenes, launched one at a time.'; to2.appendChild(this.toSel); parts.push(to2); }
+      parts.push(bGo, bHum); parts.forEach(function (x) { row.appendChild(x); });
+      if (d.compMenu != null) this.compMenus(row);
     }
     // files
     if (this.show.files) {
@@ -744,6 +774,7 @@
     n.addEventListener('pointerdown', function (e) { self.zoneEd = !!(e.target.closest && e.target.closest('.mdaw-editor')); }, true);
     n.addEventListener('keydown', function (e) { self.key(e, true); });
     n.addEventListener('keyup', function (e) { self.key(e, false); });
+    if (d.panels != null && global.MiniDaw.Panels) global.MiniDaw.Panels.build(this);      // panels.js: collapsible, movable parts (data-panels)
   };
 
   // ---------------- drawing ----------------
@@ -796,7 +827,8 @@
     bx.push(bs); function bxOf(i) { return bx[clamp(i, 0, bx.length - 1)]; }
     var lp = el('div', 'mdaw-loop' + (p.loop.on ? ' mdaw-loopon' : '')); lp.style.left = (bxOf(p.loop.from) * W) + 'px'; lp.style.width = ((bxOf(p.loop.to) - bxOf(p.loop.from)) * W) + 'px'; lp.title = 'Loop: bars ' + (p.loop.from + 1) + '–' + p.loop.to; ruler.appendChild(lp);
     head.appendChild(ruler); g.appendChild(head);
-    ruler.addEventListener('pointerdown', function (e) {
+    if (this.navOn && global.MiniDaw.Nav) global.MiniDaw.Nav.ruler(this, ruler, lp, W, total);
+    else ruler.addEventListener('pointerdown', function (e) {
       var r = ruler.getBoundingClientRect(), x0 = e.clientX - r.left, b0 = Meter.barAt(p, x0 / W).bar, moved = false;
       function mv(ev) { var b1 = Meter.barAt(p, (ev.clientX - r.left) / W).bar; if (b1 !== b0 || moved) { moved = true; var a = clamp(Math.min(b0, b1), 0, p.bars - 1), z = clamp(Math.max(b0, b1) + 1, 1, p.bars); p.loop = { on: true, from: a, to: z }; lp.className = 'mdaw-loop mdaw-loopon'; lp.style.left = (bxOf(a) * W) + 'px'; lp.style.width = ((bxOf(z) - bxOf(a)) * W) + 'px'; } }
       function up() { document.removeEventListener('pointermove', mv); document.removeEventListener('pointerup', up);
@@ -839,6 +871,12 @@
       if (drum) { var k = rows.map(function (r) { return r[0]; }).indexOf(n.m); y = 2 + (k < 0 ? rows.length - 1 : k) * (30 / rows.length); cx.fillRect(n.t * W, y, 2, 3); }
       else { y = hi === lo ? 15 : 30 - (n.m - lo) / (hi - lo) * 28; cx.fillRect(n.t * W, y, Math.max(2, n.d * W - 1), 2); } });
     var grip = el('div', 'mdaw-grip'); grip.title = 'Drag to change the clip\'s length'; e.appendChild(grip);
+    var lc = el('div', 'mdaw-loopc'); lc.title = 'Loop: click to repeat the clip once more; drag right to repeat it as far as you drag (the last repeat is cut short)'; if (!isAudio(tr)) e.appendChild(lc);
+    lc.addEventListener('pointerdown', function (ev) { ev.stopPropagation(); ev.preventDefault(); self.sel = { track: ti, clip: ci, slot: -1, notes: [] }; self.node.focus({ preventScroll: true });
+      var x0 = ev.clientX, end0 = c.start + c.len, reach = end0 + c.len, P = self.p, ghost = el('div', 'mdaw-loopg'); ghost.style.left = (end0 * W) + 'px'; ghost.style.width = (c.len * W) + 'px'; e.parentNode.appendChild(ghost);
+      function mv(m) { var dx = (m.clientX - x0) / W; reach = Math.abs(m.clientX - x0) < 4 ? end0 + c.len : Math.max(end0 + 1, Meter.nearest(P, end0 + Math.max(0, dx))); reach = Math.min(reach, Meter.total(P)); ghost.style.width = Math.max(0, (reach - end0) * W) + 'px'; }
+      function up() { document.removeEventListener('pointermove', mv); document.removeEventListener('pointerup', up); ghost.remove(); self.loopClip(ti, ci, reach); }
+      document.addEventListener('pointermove', mv); document.addEventListener('pointerup', up); });
     e.addEventListener('pointerdown', function (ev) {
       ev.stopPropagation(); self.sel = { track: ti, clip: ci, slot: -1, notes: [] }; self.node.focus({ preventScroll: true });
       var resize = ev.target === grip, x0 = ev.clientX, start0 = c.start, len0 = c.len, lanes = self.gridEl.querySelectorAll('.mdaw-lane[data-track]'), moved = false, toTrack = ti, P = self.p, alt = ev.altKey, end0 = start0 + len0;
@@ -954,6 +992,7 @@
         var po = el('output', 'mdaw-num', panTxt(obj.pan)); pan.oninput = function () { obj.pan = +pan.value / 100; po.textContent = panTxt(obj.pan); self.applyMix(); };
         pan.onchange = function () { self.undo.push(JSON.stringify(self.p)); self.save(); }; pan.ondblclick = function () { pan.value = 0; pan.oninput(); pan.onchange(); };
         pl.appendChild(pan); pl.appendChild(po); s.appendChild(pl); }
+      else { var gp = el('div', 'mdaw-pan mdaw-ghost'); gp.appendChild(el('span', null, 'Pan')); var gi = el('input'); gi.type = 'range'; gp.appendChild(gi); gp.appendChild(el('output', 'mdaw-num', 'C')); s.appendChild(gp); }   // the master has no pan: an unseen one keeps its fader level with the others
       var mid = el('div', 'mdaw-fadwrap'), fad = el('input', 'mdaw-fader'); fad.type = 'range'; fad.min = -60; fad.max = 6; fad.step = 0.5; fad.value = obj.vol; fad.setAttribute('aria-label', 'Volume ' + name);
       var meter = el('div', 'mdaw-meter'), fill = el('div', 'mdaw-mfill'), peak = el('div', 'mdaw-mpeak'); meter.appendChild(fill); meter.appendChild(peak); mid.appendChild(fad); mid.appendChild(meter); s.appendChild(mid);
       if (ti >= 0 && autoPts(obj)) { fad.disabled = true; fad.title = 'This track\'s level is volume automation: edit the points, or delete them to use the fader.'; }
@@ -963,6 +1002,7 @@
       if (ti >= 0) { var ms = el('div', 'mdaw-thline'), mb = btn('M', 'Mute ' + name, 'mdaw-ms' + (obj.mute ? ' mdaw-mute' : '')), sb = btn('S', 'Solo ' + name, 'mdaw-ms' + (obj.solo ? ' mdaw-solo' : ''));
         mb.onclick = function () { self.change(function () { obj.mute = !obj.mute; }); }; sb.onclick = function () { self.change(function () { obj.solo = !obj.solo; }); };
         ms.appendChild(mb); ms.appendChild(sb); s.appendChild(ms); }
+      else { var gm = el('div', 'mdaw-thline mdaw-ghost'); gm.appendChild(btn('M', '', 'mdaw-ms')); gm.appendChild(btn('S', '', 'mdaw-ms')); s.appendChild(gm); }
       var clipLed = el('div', 'mdaw-clipled', 'CLIP'); clipLed.title = 'Lit when the level reached 0 dBFS. Click to reset.'; clipLed.onclick = function () { clipLed.classList.remove('mdaw-over'); }; s.appendChild(clipLed);
       self.meterEls.push({ ti: ti, fill: fill, peak: peak, led: clipLed, hold: 0 });
       row.appendChild(s);
@@ -1009,7 +1049,9 @@
 
   // the transport: a clock in beats, scheduled a little ahead
   Daw.prototype.secPerBeat = function () { return 60 / this.p.tempo; };
-  Daw.prototype.loopRange = function () { var l = this.p.loop; return l.on && l.to > l.from ? [Meter.barStart(this.p, l.from), Meter.barStart(this.p, l.to)] : null; };
+  // the loop bracket in beats [from, to]: whole bars (loop.from / loop.to), or exact beats when the nav tools set loop.fb / loop.tb (data-nav)
+  Daw.prototype.loopSpan = function () { var l = this.p.loop; return l.fb != null && l.tb != null && l.tb > l.fb ? [l.fb, l.tb] : [Meter.barStart(this.p, l.from), Meter.barStart(this.p, l.to)]; };
+  Daw.prototype.loopRange = function () { var l = this.p.loop, s = this.loopSpan(); return l.on && s[1] > s[0] ? s : null; };
   Daw.prototype.toggle = function () { if (this.playing) this.stop(); else this.play(); };
   Daw.prototype.play = function (countIn) {
     var self = this; if (this.sessStop) this.sessStop(); this.ensureAudio();
@@ -1069,6 +1111,19 @@
     if (wasRec) this.finishTake();
     this.setPos(atEnd ? (this.loopRange() ? this.loopRange()[0] : 0) : Math.floor(this.pos * 4) / 4);
     this.applyMix(); this.renderTransport();
+  };
+  // the position readout as a text box: bar.beat.sixteenth, Enter jumps, Esc cancels, a bad entry shakes and says why
+  Daw.prototype.editPos = function () {
+    var self = this, span = this.posEl; if (this.posIn) { this.posIn.focus(); return; }
+    var inp = this.posIn = el('input', 'mdaw-posin'); inp.type = 'text'; inp.value = span.textContent; inp.setAttribute('aria-label', 'Go to position, bar.beat.sixteenth'); inp.size = 8;
+    span.hidden = true; span.parentNode.insertBefore(inp, span.nextSibling); inp.focus(); inp.select(); var done = false;
+    function close() { if (done) return; done = true; self.posIn = null; inp.remove(); span.hidden = false; }
+    inp.addEventListener('keydown', function (e) { e.stopPropagation();
+      if (e.key === 'Escape') { e.preventDefault(); close(); self.node.focus(); }
+      else if (e.key === 'Enter') { e.preventDefault(); var r = Meter.parsePos(self.p, inp.value);
+        if (r.error) { self.say(r.error); inp.classList.remove('mdaw-shake'); void inp.offsetWidth; inp.classList.add('mdaw-shake'); return; }
+        close(); self.locate(r.pos); if (self.revealHead) self.revealHead(); self.say('Playhead: bar ' + Meter.where(self.p, r.pos).bar + '.'); self.node.focus(); } });
+    inp.addEventListener('blur', function () { close(); });
   };
   Daw.prototype.locate = function (b) { var was = this.playing; if (was) this.stop(); this.setPos(b); if (was) this.play(); };
   Daw.prototype.meterLoop = function () {
@@ -1228,6 +1283,7 @@
   };
   Daw.prototype.paste = function () {
     var d = Clipboard.get(), tr = this.track(), c = this.clip(), self = this, p = this.p; if (!d) return this.say('Nothing copied yet.');
+    if (d.kind !== 'notes' && this.pasteToSlot && this.inSession && this.inSession() && this.sessCur2) return this.pasteToSlot(d);
     if (!tr) return this.say('Add or select a track first.');
     if (d.kind === 'notes') {
       if (!c || isAudio(tr)) return this.say('Open a clip to paste notes into.');
@@ -1247,6 +1303,27 @@
     if (!c || at <= c.start || at >= c.start + c.len) return this.say('Put the playhead inside the selected clip, then Split.');
     this.change(function () { var cut = at - c.start, b = Object.assign(clone(c), { start: at, len: c.len - cut, off: (c.off || 0) - cut, notes: c.notes.filter(function (n) { return n.t >= cut; }).map(function (n) { return Object.assign({}, n, { t: n.t - cut }); }) });
       c.notes = c.notes.filter(function (n) { return n.t < cut; }); c.len = cut; tr.clips.push(b); }); };
+  // Join (J, as in the Notation tool): the selected clip and the one after it on the track become one clip, from the first's start to the later end;
+  // a gap between them stays empty inside the joined clip. A count (3J) joins that many following clips. Audio clips are not joined.
+  Daw.prototype.join = function (count) {
+    var tr = this.track(), c = this.clip(), self = this, n = Math.max(1, count || 1); if (this.sel.slot >= 0) return this.say('A session clip loops by itself; there is nothing to join it to.');
+    if (!tr || !c) return this.say('Select a clip first: ↑ ↓ pick the track, [ ] the clip.'); if (isAudio(tr)) return this.say('Audio clips are not joined here.');
+    var next = tr.clips.filter(function (x) { return x !== c && x.start >= c.start + 1e-9; }).sort(function (a, b) { return a.start - b.start; }).slice(0, n);
+    if (!next.length) return this.say('There is no clip after this one on ' + tr.name + '.');
+    this.change(function () { var end = c.start + c.len; next.forEach(function (b) { var off = b.start - c.start; end = Math.max(end, b.start + b.len);
+        b.notes.forEach(function (x) { c.notes.push(Object.assign({}, x, { t: x.t + off })); }); tr.clips.splice(tr.clips.indexOf(b), 1); });
+      c.len = end - c.start; c.notes.sort(function (a, b) { return a.t - b.t || a.m - b.m; }); self.sel = { track: self.sel.track, clip: tr.clips.indexOf(c), slot: -1, notes: [] }; });
+    this.say('Joined ' + (next.length + 1) + ' clips on ' + tr.name + ' into one of ' + Meter.barsOfLen(this.p, c.start, c.len) + ' bars (Split / S cuts it again at the playhead).');
+  };
+  // repeat a clip to `reach` (a beat): whole copies, the last one cut short; clips that start in the filled span are replaced; the song grows if needed
+  Daw.prototype.loopClip = function (ti, ci, reach) {
+    var tr = this.p.tracks[ti], c = tr && tr.clips[ci], self = this, p = this.p; if (!c || isAudio(tr) || !(c.len > 0)) return;
+    var end0 = c.start + c.len; if (reach <= end0 + 1e-9) reach = end0 + c.len; reach = Math.min(reach, Meter.barStart(p, 64));
+    this.change(function () { tr.clips = tr.clips.filter(function (x) { return x === c || x.start < end0 - 1e-9 || x.start >= reach - 1e-9; });
+      for (var s0 = end0, k = 0; s0 < reach - 1e-9 && k < 64; s0 += c.len, k++) { var len = Math.min(c.len, reach - s0), n = clone(c); n.start = s0; n.len = len; n.notes = c.notes.filter(function (x) { return x.t < len - 1e-9; }); tr.clips.push(n); }
+      if (reach > Meter.total(p) + 1e-9) p.bars = Math.min(64, Meter.barAt(p, reach - 1e-6).bar + 1); self.sel = { track: ti, clip: tr.clips.indexOf(c), slot: -1, notes: [] }; });
+    this.say(tr.name + ' clip repeated up to bar ' + (Meter.barAt(p, reach - 1e-6).bar + 1) + '.');
+  };
   Daw.prototype.deleteSel = function () { var c = this.clip(), tr = this.track(), self = this; if (this.autoDelete()) return; if (!c) return;
     if (this.sel.notes.length) { this.change(function () { c.notes = c.notes.filter(function (n, i) { return self.sel.notes.indexOf(i) < 0; }); self.sel.notes = []; }); return; }
     if (this.sel.slot >= 0) { this.change(function () { tr.slots[self.sel.slot] = null; self.sel.slot = -1; }); return; }
@@ -1264,16 +1341,37 @@
     this.change(function () { applyFeel(c.notes, part, self.p.tempo, amt, rng, c.len); c.felt = amt; });
     this.say('Gave the ' + tr.name + ' clip ' + (amt === 1 ? 'the band\'s' : 'a looser') + ' feel: ' + (part === 'drums' ? 'a hair of looseness' : part === 'bass' ? 'a touch ahead of the beat' : part === 'congas' ? 'a hair of looseness' : 'a touch behind the beat, chords rolled') + ', velocities wandering a little. The tempo is still steady.');
   };
+  // data-comp-menu: comping rhythm / voicing / piano-or-guitar menus in the band row; "Style default" leaves the style's own choice
+  Daw.prototype.compMenus = function (row) {
+    var self = this, C = global.BandCatalog, H = global.BandHarmony;
+    function sel(label, aria) { var l = el('label', 'mdaw-lbl', label + ' '), s = el('select'); s.setAttribute('aria-label', aria); l.appendChild(s); row.appendChild(l); return s; }
+    function opt(s, v, t, parent) { var o = el('option', null, t); o.value = v; (parent || s).appendChild(o); }
+    this.compSel = sel('Comping', 'Comping instrument'); opt(this.compSel, '', 'Style default'); opt(this.compSel, 'piano', 'Piano / keys'); opt(this.compSel, 'guitar', 'Guitar');
+    this.rhythmSel = sel('Rhythm', 'Comping rhythm'); opt(this.rhythmSel, '', 'Style default'); var gs = {};
+    ((C && C.comp) || []).forEach(function (c) { var g = gs[c.group]; if (!g) { g = gs[c.group] = el('optgroup'); g.label = c.group; self.rhythmSel.appendChild(g); } opt(self.rhythmSel, c.id, c.label || c.id, g); });
+    this.voicingSel = sel('Voicing', 'Chord voicing');
+    this.fillVoicings = function () {
+      var st = ((C && C.styles) || []).filter(function (x) { return x.id === self.styleSel.value; })[0], fam = self.compSel.value || (st && st.sound && st.sound.lead) || 'piano', keep = self.voicingSel.value;
+      self.voicingSel.innerHTML = ''; opt(self.voicingSel, '', 'Style default'); ((H && H.styleList && H.styleList(fam)) || []).forEach(function (v) { opt(self.voicingSel, v.id, v.label); });
+      self.voicingSel.value = keep; if (self.voicingSel.value !== keep) self.voicingSel.value = ''; };
+    this.styleSel.addEventListener('change', this.fillVoicings); this.compSel.addEventListener('change', function () { self.voicingSel.value = ''; self.fillVoicings(); });
+    this.rhythmSel.title = 'Overrides the style\'s comping rhythm (Charleston, Garland, four on the floor, bossa …); auto = the band varies it';
+    this.fillVoicings();
+  };
+  Daw.prototype.bandOver = function () { return this.compSel ? { comp: this.compSel.value, rhythm: this.rhythmSel.value, voicing: this.voicingSel.value } : null; };
   Daw.prototype.bandWrite = function () {
-    var self = this, r; try { r = bandParts(this.chartIn.value, this.styleSel.value, this.p.tempo, clamp(+this.timesIn.value || 1, 1, 8), Meter.tsOfBar(this.p, Meter.barAt(this.p, this.pos).bar), { amt: +this.feelSel.value || 0 }); } catch (e) { return this.say(e.message); }
-    var at = Meter.floor(this.p, this.pos), label = this.styleSel.options[this.styleSel.selectedIndex].text;
+    var self = this, r; try { r = bandParts(this.chartIn.value, this.styleSel.value, this.p.tempo, clamp(+this.timesIn.value || 1, 1, 8), Meter.tsOfBar(this.p, Meter.barAt(this.p, this.pos).bar), { amt: +this.feelSel.value || 0 }, this.bandOver()); } catch (e) { return this.say(e.message); }
+    var at = Meter.floor(this.p, this.pos), label = this.styleSel.options[this.styleSel.selectedIndex].text, only = this.partSel ? this.partSel.value : 'all', toSess = !!(this.toSel && this.toSel.value === 'session' && this.sessPutIn), feel = +this.feelSel.value, where = null;
+    var list = [['drums', 'Drums', 'kit', r.drums], ['congas', 'Congas', 'congas', r.congas], ['bass', 'Bass', r.bassInst, r.bass], ['chords', 'Chords', r.compInst, r.comp]].filter(function (x) { return x[3].length && (only === 'all' || only === x[0]); });
+    if (!list.length) return this.say('The band wrote no ' + (only === 'all' ? '' : only + ' ') + 'notes for that chart and style.');
     this.change(function () {
-      function put(name, inst, notes) { if (!notes.length) return; var tr = null;
-        self.p.tracks.forEach(function (t) { if (!tr && t.name === name) tr = t; }); if (!tr) { tr = track(name, inst); self.p.tracks.push(tr); } else tr.inst = inst;
-        tr.clips = tr.clips.filter(function (c) { return c.start + c.len <= at || c.start >= at + r.len; }); var cl = { start: at, len: r.len, notes: notes }; if (+self.feelSel.value > 0) cl.felt = +self.feelSel.value; tr.clips.push(cl); }
-      put('Drums', 'kit', r.drums); put('Congas', 'congas', r.congas); put('Bass', r.bassInst, r.bass); put('Chords', r.compInst, r.comp);
+      function trackFor(name, inst) { var tr = null; self.p.tracks.forEach(function (t) { if (!tr && t.name === name) tr = t; }); if (!tr) { tr = track(name, inst); self.p.tracks.push(tr); } else tr.inst = inst; return tr; }
+      if (toSess) { where = self.sessPutIn(list.map(function (x) { return { tr: trackFor(x[1], x[2]), notes: x[3], len: r.len, felt: feel > 0 ? feel : 0 }; }), label + (list.length === 1 ? ' ' + list[0][1].toLowerCase() : '')); return; }
+      list.forEach(function (x) { var tr = trackFor(x[1], x[2]);
+        tr.clips = tr.clips.filter(function (c) { return c.start + c.len <= at || c.start >= at + r.len; }); var cl = { start: at, len: r.len, notes: x[3] }; if (feel > 0) cl.felt = feel; tr.clips.push(cl); });
       self.p.bars = Math.max(self.p.bars, Math.min(64, Meter.barAt(self.p, at + r.len - 1e-9).bar + 1)); self.sel = { track: 0, clip: 0, notes: [] };
     });
+    if (toSess) return this.say(where == null ? 'Eight scenes is the most: delete one first.' : 'The band wrote ' + r.bars + ' bars of ' + label + ' (' + list.map(function (x) { return x[1].toLowerCase(); }).join(', ') + ') into scene ' + (where + 1) + ' of the Session view. Write again for another take in the next free scene; ▶ on a clip launches it.');
     this.say('The band wrote ' + r.bars + ' bars of ' + label + ' from bar ' + (Meter.barAt(this.p, at).bar + 1) + (r.len !== Meter.lenOfBars(this.p, at, r.bars) ? ' (in ' + Meter.str(Meter.tsOfBar(this.p, Meter.barAt(this.p, at).bar)) + '; the song changes meter inside them, so check the bar lines)' : '') + (+this.feelSel.value > 0 ? ' with ' + this.feelSel.options[this.feelSel.selectedIndex].text.toLowerCase() + ' (tempo steady)' : '') + '. Every note is now yours to edit.'); this.load();
   };
   Daw.prototype.bounce = function () {
@@ -1329,6 +1427,9 @@
     else if (mod) return;
     else if (k === 'Delete' || k === 'Backspace') { e.preventDefault(); this.deleteSel(); }
     else if (this.keysOn) return;
+    else if ((k === 'g' || k === 'G') && !e.altKey) { e.preventDefault(); this.editPos(); }
+    else if (k === 'J' && !e.altKey && !(this.inSession && this.inSession())) { e.preventDefault(); this.join(this.n); }
+    else if ((k === 's' || k === 'S') && !e.altKey && !(this.inSession && this.inSession())) { e.preventDefault(); this.split(); }
     else if (this.arrKey(e)) { e.preventDefault(); }
     else if (k === 'o' || k === 'O') { this.bLoop.click(); }
     else if (k === 'c' || k === 'C') { this.bClick.click(); }
@@ -1556,6 +1657,7 @@
     var k = navKey(e), p = this.p, tr = this.track(), c = this.clip(), self = this, t = e.target, N = this.n || 1;
     if (this.inSession && this.inSession()) return false;
     if (this.show.automation && this.autoKey(e)) return true;
+    if (this.navOn && global.MiniDaw.Nav && global.MiniDaw.Nav.key(this, e, N)) return true;
     if (t && /^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName) && k.indexOf('Arrow') === 0) return false;
     var dir = k === 'ArrowLeft' || k === 'ArrowUp' || k === '-' ? -1 : 1, unit = function (from) { var x = from; for (var i = 0; i < N; i++) x = e.altKey ? x + dir : barStep(p, x, dir); return x; };
     var inArr = this.sel.slot >= 0 ? null : c;
@@ -1611,7 +1713,7 @@
     init: function () { Array.prototype.forEach.call(document.querySelectorAll('.mdaw'), function (n) { if (!n.dataset.ready) { n.dataset.ready = '1'; try { all.push(new Daw(n)); } catch (e) { n.textContent = 'The DAW could not start: ' + e.message; if (global.console) console.error(e); } } }); takeHandoff(); return all; },
     // another page (the Backing Track) hands this page a MIDI file: MiniDaw.handOff(bytes, name, url) keeps it and opens url
     handOff: function (bytes, name, url) { store(HANDOFF, { at: Date.now(), name: name || 'the band.mid', midi: b64(bytes) }); if (url) global.open(url, '_blank'); },
-    all: all, Projects: Projects, Clipboard: Clipboard, zoomBy: zoomBy, applyFeel: applyFeel, mulberry: mulberry, partOfInst: partOfInst, autoAt: autoAt, autoToCc: autoToCc, dbToCc: dbToCc, ccToDb: ccToDb, core: { Daw: Daw, Meter: Meter, el: el, btn: btn, clamp: clamp, isDrum: isDrum, isAudio: isAudio, playNote: playNote, click: click, COLORS: COLORS, NOTE: NOTE, instOf: instOf, clone: clone, rowsOf: rowsOf, ac: function () { return AC; }, bank: function () { return bank; } }, Meter: Meter, PRESETS: PRESETS, toMidi: toMidi, fromMidi: fromMidi, bandParts: bandParts, INSTS: INSTS
+    all: all, Projects: Projects, Clipboard: Clipboard, zoomBy: zoomBy, applyFeel: applyFeel, mulberry: mulberry, partOfInst: partOfInst, autoAt: autoAt, autoToCc: autoToCc, dbToCc: dbToCc, ccToDb: ccToDb, core: { Daw: Daw, Meter: Meter, el: el, btn: btn, clamp: clamp, isDrum: isDrum, isAudio: isAudio, playNote: playNote, click: click, COLORS: COLORS, NOTE: NOTE, instOf: instOf, clone: clone, rowsOf: rowsOf, ac: function () { return AC; }, bank: function () { return bank; } }, Meter: Meter, PRESETS: PRESETS, toMidi: toMidi, fromMidi: fromMidi, bandParts: bandParts, compInst: compInst, mkTrack: track, INSTS: INSTS
   };
   // only one DAW plays at a time
   document.addEventListener('pointerdown', function (e) { all.forEach(function (d) { if (d.playing && !d.node.contains(e.target) && e.target.closest && e.target.closest('.mdaw')) d.stop(); }); }, true);

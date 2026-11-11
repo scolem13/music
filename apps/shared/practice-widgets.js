@@ -785,7 +785,7 @@
     var style = el("style"); style.textContent = css; document.head.appendChild(style);
     var collapse = document.getElementById("navbarCollapse") || document.querySelector(".navbar-collapse");
     var ul = el("ul", "navbar-nav ms-auto"); ul.id = "pw-nav";
-    [["metro", "Metronome"], ["drone", "Drone"], ["tuner", "Strobe tuner"], ["circle", "Circle of fifths"], ["mixer", "Mixer"]].forEach(function (b) {
+    [["metro", "Metronome"], ["drone", "Drone"], ["tuner", "Tuner"], ["circle", "Circle of fifths"], ["mixer", "Mixer"]].forEach(function (b) {
       var li = el("li", "nav-item"), a = el("a", "nav-link", '<span class="pw-icon"></span><span class="pw-label">' + b[1] + "</span>");
       a.href = "#"; a.setAttribute("role", "button"); a.setAttribute("aria-label", b[1]); a.title = b[1];
       a.addEventListener("click", function (e) { e.preventDefault(); openPanel(b[0]); if (b[0] === "circle") openCircle(); if (b[0] === "tuner") openTuner(); if (b[0] === "mixer") openMixer(); });
