@@ -1400,6 +1400,10 @@
   // ---------------- keys ----------------
   Daw.prototype.key = function (e, down) {
     var t = e.target, typing = t && (t.tagName === 'INPUT' && t.type !== 'range' && t.type !== 'button' || t.tagName === 'SELECT' || t.tagName === 'TEXTAREA');
+    var textish = t && (t.tagName === 'TEXTAREA' || t.tagName === 'INPUT' && /^(text|number|search|)$/.test(t.type || ''));
+    if (this.navOn && e.key === ' ' && !textish && !e.ctrlKey && !e.metaKey && !e.altKey) {      // Space is play / pause wherever the focus is (buttons, menus, sliders too)
+      e.preventDefault(); if (down && !e.repeat) { if (this.sessOn) this.sessStopAll(); else this.toggle(); } return; }
+    if (this.navOn && down && e.key === 'Tab' && !e.ctrlKey && !e.metaKey && !e.altKey && global.MiniDaw.Compose && global.MiniDaw.Compose.tab && global.MiniDaw.Compose.tab(this, e)) { e.preventDefault(); return; }
     if (typing) return; var k = e.key, mod = e.ctrlKey || e.metaKey, tr = this.track();
     if (this.keysOn && !mod && tr && !e.repeat) {
       var low = k.toLowerCase();
@@ -1428,6 +1432,7 @@
     else if (k === 'Delete' || k === 'Backspace') { e.preventDefault(); this.deleteSel(); }
     else if (this.keysOn) return;
     else if ((k === 'g' || k === 'G') && !e.altKey) { e.preventDefault(); this.editPos(); }
+    else if (this.navOn && (k === 'S' || k === 'M') && !e.altKey) { e.preventDefault(); this.msKey(k); }
     else if (k === 'J' && !e.altKey && !(this.inSession && this.inSession())) { e.preventDefault(); this.join(this.n); }
     else if ((k === 's' || k === 'S') && !e.altKey && !(this.inSession && this.inSession())) { e.preventDefault(); this.split(); }
     else if (this.arrKey(e)) { e.preventDefault(); }
@@ -1653,6 +1658,14 @@
     return row;
   };
 
+  // S solos, M mutes the selected track (data-nav); SSS / MMM (three presses within 0.6 s) turn every solo / mute off
+  Daw.prototype.msKey = function (k) {
+    var now = Date.now(), solo = k === 'S', f = solo ? 'solo' : 'mute', tr = this.track(), m = this.msTap;
+    m = this.msTap = m && m.k === k && now - m.at < 600 ? { k: k, n: m.n + 1, at: now } : { k: k, n: 1, at: now };
+    if (m.n >= 3) { this.msTap = null; this.change(function () { this.p.tracks.forEach(function (t) { t[f] = false; }); }.bind(this)); return this.say(solo ? 'Every solo off.' : 'Every mute off.'); }
+    if (!tr) return this.say('Select a track first.');
+    this.change(function () { tr[f] = !tr[f]; }); this.say(tr.name + (solo ? (tr.solo ? ' soloed.' : ' not soloed.') : (tr.mute ? ' muted.' : ' unmuted.')) + (m.n === 1 ? ' (' + k + k + k + ' turns every ' + f + ' off.)' : ''));
+  };
   Daw.prototype.arrKey = function (e) {
     var k = navKey(e), p = this.p, tr = this.track(), c = this.clip(), self = this, t = e.target, N = this.n || 1;
     if (this.inSession && this.inSession()) return false;

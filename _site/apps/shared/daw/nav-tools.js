@@ -49,6 +49,9 @@
     STEPS.forEach(function (o) { var e = el("option", null, o[1]); e.value = o[0]; s.appendChild(e); }); s.value = d.stepMode; l.appendChild(s);
     s.onchange = function () { d.stepMode = s.value; try { localStorage.setItem("mdaw:" + d.id + ":step", JSON.stringify(s.value)); } catch (e) {} d.say("Step: " + s.options[s.selectedIndex].text + "."); };
     d.stepSel = s;
+    if (!global.__mdawDocKeys) { global.__mdawDocKeys = d;
+      document.addEventListener("keydown", function (e) { var t = e.target; if (t === document.body || t === document.documentElement) d.key(e, true); });
+      document.addEventListener("keyup", function (e) { var t = e.target; if (t === document.body || t === document.documentElement) d.key(e, false); }); }
     var bc = el("button"); bc.type = "button"; bc.className = "btn btn-sm btn-outline-secondary"; bc.textContent = "⟲ Loop clip"; bc.title = "Loop the selected clip (Shift+O)"; bc.onclick = function () { Nav.loopClip(d); };
     tb.appendChild(l); tb.appendChild(bc);
   };
@@ -66,7 +69,7 @@
     var code = e.code || "", k = e.key, left = k === "ArrowLeft", right = k === "ArrowRight", vimL = code === "KeyH" || (!code && (k === "h" || k === "H")), vimR = code === "KeyL" || (!code && (k === "l" || k === "L")),
       dir = left || vimL ? -1 : 1, vim = vimL || vimR, big = e.shiftKey, c = d.clip(), inArr = d.sel.slot >= 0 ? null : c, tr = d.track(), notes = c && d.sel.notes.length ? d.sel.notes.slice() : null;
     if (left || right || vim) {
-      var moveSel = (e.altKey && (left || right)) || (vim && !e.altKey) || (vim && e.altKey);
+      var moveSel = e.altKey;      // Alt (Option) + arrows or h / l move the selected notes / clip; plain keys always move the playhead
       if (moveSel && notes) {
         var delta = Nav.stepBeats(p, mode, c.start + d.sel.notes.reduce(function (m0, i) { return Math.min(m0, c.notes[i] ? c.notes[i].t : m0); }, 1e9), big) * N * dir, used;
         d.change(function () { used = Nav.moveNotes(c, notes, delta); }); d.sel.notes = notes; d.renderEditor0();
@@ -94,7 +97,7 @@
     }
     if (k === "\\") { d.bLoop.click(); d.say("Loop " + (d.p.loop.on ? "on" : "off") + "."); return true; }
     if (k === "O" && e.shiftKey) { Nav.loopClip(d); return true; }
-    if (k === "Escape" && (d.sel.notes.length || d.sel.clip >= 0)) { d.sel = { track: d.sel.track, clip: -1, slot: -1, notes: [] }; d.renderTracks(); d.renderEditor(); d.say("Nothing selected: h / l move the playhead."); return true; }
+    if (k === "Escape" && (d.sel.notes.length || d.sel.clip >= 0)) { d.sel = { track: d.sel.track, clip: -1, slot: -1, notes: [] }; d.renderTracks(); d.renderEditor(); d.say("Nothing selected."); return true; }
     return false;
   };
 

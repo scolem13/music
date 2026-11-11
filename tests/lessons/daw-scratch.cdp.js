@@ -158,19 +158,40 @@ const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.spl
   const nv = await ev(`(() => { ${KEY} ${BASE} const out = [], k = (key, o) => key2(key, o), key2 = (kk, o) => D.node.dispatchEvent(new KeyboardEvent('keydown', Object.assign({ key: kk, code: o && o.code, bubbles: true, cancelable: true }, o || {})));
     const c = () => D.p.tracks[0].clips[0];
     out.push(!!D.stepSel, D.stepMode);
-    key2('l', { code: 'KeyL' }); out.push(c().start);                                  // l moves the selected clip a beat
+    key2('l', { code: 'KeyL', altKey: true }); out.push(c().start);                       // Alt+l moves the selected clip a beat
     key2('ArrowRight', { altKey: true, code: 'ArrowRight' }); out.push(c().start);       // Alt+→ too
-    key2('L', { code: 'KeyL', shiftKey: true }); out.push(c().start);                     // L: a bar (to the next bar line)
-    key2('h', { code: 'KeyH' }); out.push(c().start);
-    D.stepSel.value = 'sixteenth'; D.stepSel.dispatchEvent(new Event('change')); key2('l', { code: 'KeyL' }); out.push(c().start); D.stepSel.value = 'beat'; D.stepSel.dispatchEvent(new Event('change'));
+    key2('L', { code: 'KeyL', shiftKey: true, altKey: true }); out.push(c().start);       // Alt+L: a bar (to the next bar line)
+    key2('h', { code: 'KeyH', altKey: true }); out.push(c().start);
+    D.stepSel.value = 'sixteenth'; D.stepSel.dispatchEvent(new Event('change')); key2('l', { code: 'KeyL', altKey: true }); out.push(c().start); D.stepSel.value = 'beat'; D.stepSel.dispatchEvent(new Event('change'));
     D.doUndo(true); D.doUndo(true); D.doUndo(true); D.doUndo(true); D.doUndo(true); out.push(c().start);
     D.setPos(0); key2('ArrowRight'); out.push(D.pos); key2('ArrowRight', { shiftKey: true }); out.push(D.pos); key2('ArrowLeft'); out.push(D.pos);
     key2('Escape'); out.push(D.sel.clip); key2('l', { code: 'KeyL' }); out.push(D.pos, c().start);
-    D.sel = { track: 0, clip: 0, slot: -1, notes: [3] }; const t3 = c().notes[3].t, m3 = c().notes[3].m; key2('l', { code: 'KeyL' }); out.push(c().notes[3].t - t3, c().start);
+    D.sel = { track: 0, clip: 0, slot: -1, notes: [3] }; const t3 = c().notes[3].t, m3 = c().notes[3].m; key2('l', { code: 'KeyL', altKey: true }); out.push(c().notes[3].t - t3, c().start);
     key2('ArrowUp', { altKey: true, code: 'ArrowUp' }); out.push(c().notes[3].m - m3); key2('ArrowUp', { altKey: true, shiftKey: true, code: 'ArrowUp' }); out.push(c().notes[3].m - m3);
-    D.sel.notes = [3]; key2('3', {}); key2('l', { code: 'KeyL' }); out.push(c().notes[3].t - t3);
+    D.sel.notes = [3]; key2('3', {}); key2('l', { code: 'KeyL', altKey: true }); out.push(c().notes[3].t - t3);
+    D.sel = { track: 0, clip: 0, slot: -1, notes: [] }; const s0 = c().start; D.setPos(0); key2('l', { code: 'KeyL' }); out.push(D.pos, c().start === s0);   // plain l: the playhead, even with a clip selected
     return out.join(' | '); })()`);
-  check("nav keys: l / Alt+→ a beat, L a bar, h back, sixteenth step, undo; arrows move the playhead a step (Shift a bar); Esc deselects then l moves the playhead; with a note selected l moves the note not the clip, Alt+↑ transposes (Shift an octave), 3l repeats", nv === "true | beat | 1 | 2 | 4 | 3 | 3.25 | 0 | 1 | 4 | 3 | -1 | 4 | 0 | 1 | 0 | 1 | 13 | 4", nv);
+  check("nav keys: l / Alt+→ a beat, L a bar, h back, sixteenth step, undo; arrows move the playhead a step (Shift a bar); Esc deselects then l moves the playhead; with a note selected l moves the note not the clip, Alt+↑ transposes (Shift an octave), 3l repeats", nv === "true | beat | 1 | 2 | 4 | 3 | 3.25 | 0 | 1 | 4 | 3 | -1 | 4 | 0 | 1 | 0 | 1 | 13 | 4 | 1 | true", nv);
+  const ms = await ev(`(() => { ${KEY} ${BASE} const out = [], key2 = (kk, o) => D.node.dispatchEvent(new KeyboardEvent('keydown', Object.assign({ key: kk, bubbles: true, cancelable: true }, o || {}))), T = D.p.tracks;
+    D.sel = { track: 0, clip: -1, slot: -1, notes: [] }; const n0 = T[0].clips.length;
+    key2('S', { shiftKey: true }); out.push(T[0].solo); D.msTap = null; key2('M', { shiftKey: true }); out.push(T[0].mute, T[0].clips.length === n0);
+    D.sel.track = 1; D.msTap = null; key2('M', { shiftKey: true }); out.push(T[1].mute); D.msTap = null;
+    key2('M', { shiftKey: true }); key2('M', { shiftKey: true }); key2('M', { shiftKey: true }); out.push(T.some(t => t.mute));
+    key2('S', { shiftKey: true }); key2('S', { shiftKey: true }); key2('S', { shiftKey: true }); out.push(T.some(t => t.solo));
+    // Space plays / pauses with the focus on a button or a menu
+    const bt = D.node.querySelector('button'), sl = D.node.querySelector('select'); let n = 0; const tg = D.toggle; D.toggle = function () { n++; };
+    bt.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', bubbles: true, cancelable: true })); sl.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', bubbles: true, cancelable: true }));
+    document.body.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', bubbles: true, cancelable: true })); D.toggle = tg; out.push(n);
+    return out.join(' | '); })()`);
+  check("S solos and M mutes the selected track (not split), SSS / MMM turn them all off; Space is play / pause from a button, a menu and the page", ms === "true | true | true | true | false | false | 3", ms);
+  const tb = await ev(`(() => { ${KEY} ${BASE} const out = [], tab = (t, sh) => t.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', shiftKey: !!sh, bubbles: true, cancelable: true }));
+    D.sel = { track: 0, clip: -1, slot: -1, notes: [] }; D.setPos(0.5); D.renderAll();
+    tab(D.gridEl); out.push(document.activeElement === D.ed, D.sel.clip === 0);
+    D.sel.notes = [2]; const n2 = D.clip().notes[2]; tab(D.ed); out.push(document.activeElement === D.abcText, D.abcBox.open, D.abcText.selectionEnd > D.abcText.selectionStart);
+    tab(D.abcText); out.push(D.abcStaff.contains(document.activeElement) || document.activeElement === D.abcStaff, D.abcStaff.querySelectorAll('.mdaw-abc-cur').length > 0, D.sel.notes.some(i => D.clip().notes[i] === n2));
+    tab(D.abcStaff); out.push(document.activeElement === D.ed); tab(D.ed, true); out.push(document.activeElement === D.abcStaff);
+    return out.join(' | '); })()`);
+  check("Tab: arrangement -> the active track's clip in the roll -> the ABC text on the selected note -> that note lit on the staff (and selected) -> the roll; Shift+Tab back", tb === "true | true | true | true | true | true | true | true | true | true", tb);
   const lk = await ev(`(() => { ${KEY} ${BASE} const out = [], key2 = (kk, o) => D.node.dispatchEvent(new KeyboardEvent('keydown', Object.assign({ key: kk, bubbles: true, cancelable: true }, o || {})));
     D.setPos(5); key2(','); const l = () => D.p.loop; out.push(l().fb, l().on); D.setPos(9); key2('.'); out.push(l().tb, JSON.stringify(D.loopRange()));
     D.setPos(2); key2('.'); out.push(l().tb, l().fb);
@@ -200,13 +221,13 @@ const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.spl
   await ev(`localStorage.removeItem('mdaw:daw-scratch:panels'); localStorage.removeItem('mdaw:daw-scratch:panelopen'); 0`);
   await b.goto(U); await ev(SFX); await b.sleep(500);
   const pa = await ev(`(() => { const D = MiniDaw.all[0], ps = [...D.node.querySelectorAll('details.mdaw-panel')], out = [];
-    out.push(ps.length >= 9, ps.every(p => p.id && p.querySelector(':scope > summary .pc-grip') && p.querySelector(':scope > summary .pc-across')), D.node.querySelector('.mdaw-colA').children.length === ps.length, getComputedStyle(D.node.querySelector('.mdaw-colB')).display === 'none');
+    out.push(ps.length >= 9, ps.every(p => p.id && p.querySelector(':scope > summary .pc-grip') && p.querySelector(':scope > summary .pc-across')), ['projects', 'sound', 'abc', 'fill', 'band', 'files'].every(x => D.node.querySelector('.mdaw-colB #daw-scratch-pn-' + x)), getComputedStyle(D.node.querySelector('.mdaw-colB')).display !== 'none');
     out.push(![...document.querySelectorAll('h2')].some(h => /Scratch pad/.test(h.textContent)), [...document.querySelectorAll('#TOC a, .sidebar a, nav a')].some(a => /How to use it/.test(a.textContent)) ? 'toc' : 'notoc');
     const ed = D.node.querySelector('#daw-scratch-pn-editor'); ed.open = false; ed.dispatchEvent(new Event('toggle'));
     D.node.querySelector('#daw-scratch-pn-mixer .pc-across').click();
     out.push(JSON.parse(localStorage.getItem('mdaw:daw-scratch:panelopen')).editor === false, JSON.stringify(JSON.parse(localStorage.getItem('mdaw:daw-scratch:panels'))[1]), getComputedStyle(D.node.querySelector('.mdaw-colB')).display !== 'none');
     return out.join(' | '); })()`);
-  check("panels: 9+ folding panels each with a grip and ⇄, the sidebar column hidden until used, no 'Scratch pad' heading; folding Editor and sending Mixer across are saved", /^true \| true \| true \| true \| true \| toc \| true \| \["daw-scratch-pn-mixer"\] \| true$/.test(pa), pa);
+  check("panels: 9+ folding panels each with a grip and ⇄, the side tools in the right-hand column from the start, no 'Scratch pad' heading; folding Editor and sending Mixer across are saved", /^true \| true \| true \| true \| true \| toc \| true \| \[.*"daw-scratch-pn-mixer".*\] \| true$/.test(pa), pa);
   await b.goto(U); await ev(SFX); await b.sleep(500);
   const pb = await ev(`(() => { const D = MiniDaw.all[0], out = [];
     out.push(!D.node.querySelector('#daw-scratch-pn-editor').open, D.node.querySelector('.mdaw-colB').contains(D.node.querySelector('#daw-scratch-pn-mixer')), D.node.querySelector('#daw-scratch-pn-mixer').open);
@@ -215,7 +236,7 @@ const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.spl
   check("panels: after a reload Editor is still folded and Mixer still in the sidebar column", pb === "true | true | true | true", pb);
   const fsr = await ev(`(async () => { const D = MiniDaw.all[0], out = []; try { await D.node.requestFullscreen(); await new Promise(r => setTimeout(r, 300)); } catch (e) {}
     out.push(document.fullscreenElement === D.node ? 'fs' : 'nofs', D.node.contains(D.node.querySelector('.mdaw-cols')));
-    D.node.querySelector('#daw-scratch-pn-band .pc-across').click(); out.push(D.node.querySelector('.mdaw-colB').contains(D.node.querySelector('#daw-scratch-pn-band')), D.node.querySelector('#daw-scratch-pn-band').getBoundingClientRect().width > 100);
+    D.node.querySelector('#daw-scratch-pn-band .pc-across').click(); out.push(D.node.querySelector('.mdaw-colA').contains(D.node.querySelector('#daw-scratch-pn-band')), D.node.querySelector('#daw-scratch-pn-band').getBoundingClientRect().width > 100);
     if (document.fullscreenElement) await document.exitFullscreen(); return out.join(' | '); })()`);
   check("panels: in full screen (when the browser allows it) the columns stay inside the DAW and ⇄ still moves a panel", /^(fs|nofs) \| true \| true \| true$/.test(fsr), fsr);
   const rs = await ev(`(() => { const D = MiniDaw.all[0]; window.__reloaded = false; return JSON.stringify([!!localStorage.getItem('mdaw:daw-scratch:panels'), [...D.node.querySelectorAll('.mdaw-panelbar button')].map(x => x.textContent).join()]); })()`);

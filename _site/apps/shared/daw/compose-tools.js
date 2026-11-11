@@ -145,7 +145,7 @@
     var A = global.AbcClip, text = d.abcText.value, msgs = [];
     try { var ck = A.checkBars(text); ck.bad.forEach(function (b) { msgs.push("bar " + b.bar + (b.voice !== "V1" ? " (voice " + b.voice + ")" : "") + " has " + b.got + " beats, not " + b.want); }); } catch (e) { msgs.push("cannot read: " + e.message); }
     d.abcBad = msgs; d.abcStaff.innerHTML = "";
-    if (global.ABCJS && ABCJS.renderAbc) { try { ABCJS.renderAbc(d.abcStaff, text, { responsive: "resize", siteTitles: false, add_classes: true, paddingleft: 0, paddingright: 0, clickListener: function (el0) { abcClick(d, el0); } }); } catch (e) { msgs.push("cannot draw: " + e.message); } }
+    if (global.ABCJS && ABCJS.renderAbc) { try { d.abcTune = ABCJS.renderAbc(d.abcStaff, text, { responsive: "resize", siteTitles: false, add_classes: true, paddingleft: 0, paddingright: 0, clickListener: function (el0) { abcClick(d, el0); } })[0]; } catch (e) { msgs.push("cannot draw: " + e.message); } }
     var base = d.abcGen ? d.abcGen.bars + " bar" + (d.abcGen.bars > 1 ? "s" : "") + " of " + d.abcGen.ts.join("/") + ", " + d.abcGen.voices + " voice" + (d.abcGen.voices > 1 ? "s" : "") : "";
     d.abcInfo.textContent = msgs.length ? "Check: " + msgs.join("; ") : base + (d.abcGen && d.abcGen.offGrid ? "; " + d.abcGen.offGrid + " notes are off the grid (Apply will snap them)" : "");
   }
@@ -158,6 +158,40 @@
     if (!idx.length) { d.say("That note is not in the clip yet: Apply first."); return; }
     d.sel.notes = idx; d.renderEditor0(); d.say("Selected " + idx.length + " note" + (idx.length > 1 ? "s" : "") + " in the roll (beat " + (Math.round(hit.t * 100) / 100 + 1) + " of the clip).");
   }
+  // ---- Tab: the arrangement -> the piano roll -> the ABC text (cursor on the selected note) -> the note on the staff -> the roll (Shift+Tab goes back)
+  function openPanel(x) { for (var p = x; p; p = p.parentElement) if (p.tagName === "DETAILS") p.open = true; }
+  function spanAt(d, pos) { var sp; try { sp = global.AbcClip.noteSpans(d.abcText.value); } catch (e) { return null; } var hit = null;
+    sp.forEach(function (s) { if (!hit && s.end > pos) hit = s; }); return hit || sp[sp.length - 1] || null; }
+  function goRoll(d) {
+    if (!d.clip() || d.sel.clip < 0 && d.sel.slot < 0) { var ci = d.clipAtPos(d.sel.track, d.pos); if (ci < 0) { var tr0 = d.track(); ci = tr0 && tr0.clips.length ? 0 : -1; } if (ci < 0) { d.say("This track has no clip to open: + Clip makes one."); return true; } d.pick(d.sel.track, ci); }
+    openPanel(d.ed); d.ed.tabIndex = -1; d.ed.focus({ preventScroll: true }); d.ed.scrollIntoView({ block: "nearest" }); d.zoneEd = true;
+    d.say("Piano roll: " + ((d.track() && d.track().name) || "") + ". Tab goes to the ABC text."); return true;
+  }
+  function goAbc(d) {
+    if (!noteClip(d)) { d.say("Only note clips have notation (not drums or audio)."); return true; }
+    openPanel(d.abcBox); if (!d.abcText.value) abcFromClip(d);
+    var c = d.clip(), g = +d.abcGrid.value, n = d.sel.notes.length ? c.notes[d.sel.notes[0]] : null, sp = []; try { sp = global.AbcClip.noteSpans(d.abcText.value); } catch (e) {}
+    var hit = n && sp.filter(function (s) { return Math.round(s.t / g) === Math.round(n.t / g) && s.notes.indexOf(n.m) >= 0; })[0];
+    d.abcText.focus({ preventScroll: true }); d.abcText.scrollIntoView({ block: "nearest" }); if (hit) d.abcText.setSelectionRange(hit.start, hit.end);
+    d.say("ABC text" + (hit ? ", on the selected note" : "") + ". Tab goes to the note on the staff."); return true;
+  }
+  function goStaff(d) {
+    var s = spanAt(d, d.abcText.selectionStart || 0); if (!s) { d.say("No notes on the staff."); return true; }
+    Array.prototype.forEach.call(d.abcStaff.querySelectorAll(".mdaw-abc-cur"), function (x) { x.classList.remove("mdaw-abc-cur"); });
+    var e = d.abcTune && d.abcTune.getElementFromChar && d.abcTune.getElementFromChar(s.start);
+    if (e && e.abselem && e.abselem.elemset) e.abselem.elemset.forEach(function (x) { if (x && x.classList) x.classList.add("mdaw-abc-cur"); });
+    d.abcStaff.tabIndex = -1; d.abcStaff.focus({ preventScroll: true }); d.abcCur = s.start; abcClick(d, { startChar: s.start }); return true;
+  }
+  C.tab = function (d, e) {
+    var t = e.target, zone = d.abcText && t === d.abcText ? "abc" : d.abcStaff && d.abcStaff.contains(t) ? "staff" : d.ed.contains(t) ? "roll" :
+      t === d.node || t === document.body || t === document.documentElement || (d.gridEl && d.gridEl.contains(t)) ? "arr" : null;
+    if (!zone) return false; var back = e.shiftKey, abc = !!d.abcBox;
+    if (zone === "arr") return goRoll(d);
+    if (zone === "roll") return !abc ? false : back ? (goAbc(d), goStaff(d)) : goAbc(d);
+    if (zone === "abc") return back ? goRoll(d) : goStaff(d);
+    return back ? goAbc(d) : goRoll(d);
+  };
+
   function abcApply(d) {
     var A = global.AbcClip, c = noteClip(d); if (!c) return d.say("Select a note clip first.");
     var r; try { r = A.abcToNotes(d.abcText.value); } catch (e) { return d.say("Could not read the ABC: " + e.message); }

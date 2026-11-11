@@ -14,6 +14,7 @@
   var PARTS = [['.mdaw-projects', 'Projects', 'projects'], ['.mdaw-transport', 'Transport', 'transport'], ['.mdaw-session', 'Session view', 'session'], ['.mdaw-arr', 'Arrangement', 'arr'],
     ['.mdaw-editor', 'Editor: piano roll / step grid', 'editor'], ['.mdaw-trackpanel', 'Track sound: organ, effects, sends, synth', 'sound'], ['.mdaw-abc', 'Edit as notation', 'abc'],
     ['.mdaw-fill', 'Fill from chords', 'fill'], ['.mdaw-mixer', 'Mixer', 'mixer'], ['.mdaw-band', 'Session players: the band writes the parts', 'band'], ['.mdaw-files', 'Files, export, record', 'files']];
+  var SIDE = { projects: 1, sound: 1, abc: 1, fill: 1, band: 1, files: 1 };      // in the right-hand column until moved
   function load(k) { try { return JSON.parse(localStorage.getItem(k) || 'null') || {}; } catch (e) { return {}; } }
   function keep(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   P.build = function (d) {
@@ -26,13 +27,13 @@
       pn.id = d.id + '-pn-' + x[2]; pn.dataset.panel = x[2]; if (saved[x[2]] != null) pn.open = !!saved[x[2]];
       if (part.tagName !== 'DETAILS') pn.addEventListener('toggle', function () { var o = load(openKey); o[x[2]] = pn.open; keep(openKey, o); });
       else pn.addEventListener('toggle', function () { var o = load(openKey); o[x[2]] = pn.open; keep(openKey, o); });
-      a.appendChild(pn); panels.push(pn);
+      (SIDE[x[2]] ? b : a).appendChild(pn); panels.push(pn);
     });
     var bar = el('div', 'mdaw-panelbar'); bar.appendChild(el('span', 'mdaw-lbl', 'Panels'));
     var bFold = btn('Fold all', 'Fold every panel'), bUnfold = btn('Unfold all', 'Open every panel'), bReset = btn('Reset layout', 'Put every panel back where it started, all open');
     bFold.onclick = function () { panels.forEach(function (p) { p.open = false; }); }; bUnfold.onclick = function () { panels.forEach(function (p) { p.open = true; }); };
     bReset.onclick = function () { try { localStorage.removeItem(openKey); } catch (e) {} };      // (PanelColumns forgets the layout and reloads)
-    [bFold, bUnfold, bReset].forEach(function (x) { bar.appendChild(x); }); bar.appendChild(el('span', 'mdaw-hint', 'Drag a panel\'s ⠿ to move it, ⇄ sends it to the sidebar column and back; click its name to fold it.'));
+    [bFold, bUnfold, bReset].forEach(function (x) { bar.appendChild(x); }); bar.appendChild(el('span', 'mdaw-hint', 'Drag a panel\'s ⠿ to move it, ⇄ moves it between the main column and the right-hand column; click its name to fold it.'));
     n.appendChild(bar); n.appendChild(wrap); d.panelsEl = wrap;
     if (global.PanelColumns) global.PanelColumns.init({ columns: [a, b], panels: 'details.mdaw-panel', key: layoutKey, reset: bReset });
   };
