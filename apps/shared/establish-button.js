@@ -11,6 +11,10 @@
       "padding:.45rem .7rem;border-radius:8px;border:1px solid #3a3f48;background:#262a31;color:#e8eaed;" +
       "cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.4)";
     b.onclick = function(){ global.Tonality.establish(); };
+    // lift it above a bottom PlayBar, so it does not cover Play
+    const st = document.createElement("style");
+    st.textContent = "body:has(.playbar) #establish-tonality-btn{bottom:calc(3.4rem + 12px) !important}";
+    document.head.appendChild(st);
     document.body.appendChild(b);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", make);

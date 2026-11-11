@@ -45,6 +45,12 @@
 //       "stop", "swell" = 0..1 (the pedal), "click" = 0..1 (key click, from the next note). bank.control(name, control, value, when, glide) is the same at a time on the
 //       bank's clock, which is how the player works the pedal and the switch while the band plays.
 //
+//   bank.setDest(destNode, { bars, leslie, swell, click } | null)   the SAME controls for ONE destination only (a DAW track whose notes go to
+//       destNode): a tonewheel organ played into that node uses these tonebars (a string or 9 levels), Leslie speed, swell (0..1) and key click, not
+//       the global ones, so two organ tracks can differ. Applies at once to what is sounding there. Not set = the global setTonebars / setControl as always
+//       (the Backing Track never sets one). bank.control(name, control, value, when, glide, destNode) works the same controls at a time for that
+//       destination only; bank.prepare(name, destNode) builds that destination's chain before its first note. Not heard by ear (2026-11-11).
+//
 // The MODX: an instrument routed to it (modx.js, the MODX page) is sent out as MIDI instead of sounding here.
 //
 // An instrument may be SYNTHESIZED instead of sampled (def.synth "tonewheel", ORGAN.md beside this file): no zones, nothing
@@ -419,6 +425,9 @@
 
   function create(ctx){
     var defsP = null, defs = null, ready = {}, loading = {}, rr = {}, live = new Set(), ringing = {};
+    var destSet = typeof WeakMap === "function" ? new WeakMap() : null;      // destination node -> { bars, leslie, swell, click } (setDest)
+    function destOpt(dest, key){ var o = destSet && dest && destSet.get(dest); return o && o[key] != null ? o[key] : undefined; }
+    function barsFor(inst, dest){ var b = destOpt(dest, "bars"); return b ? barsOf(b) : getTonebars(inst); }
 
     // An instrument's channel strip: its amp chain, then the mixer's five EQ bands. Built the first time the
     // instrument plays into `dest` with an amp or an EQ to go through (otherwise its notes go straight to `dest`,
@@ -439,14 +448,21 @@
         else if (k === "level") n.gain.setTargetAtTime(s.level, t, 0.015);
         else { n.frequency.setTargetAtTime(s[k], t, 0.015); if (s.q != null) n.Q.setTargetAtTime(s.q, t, 0.015); if (s.gain != null) n.gain.setTargetAtTime(s.gain, t, 0.015); } });
     }
+    function setDest(dest, o){
+      if (!destSet || !dest) return;
+      if (o == null){ destSet.delete(dest); return; }
+      var cur = destSet.get(dest) || {}, next = Object.assign({}, cur, o); destSet.set(dest, next);
+      if (o.bars != null && String(o.bars) !== String(cur.bars)) voices.forEach(function (v){ if (v.dest === dest) v.bars(); });
+      ["leslie", "swell"].forEach(function (k){ if (o[k] != null && o[k] !== cur[k]) control2(null, k, o[k], ctx.currentTime, 0.05, dest); });
+    }
     eqLive.push(function (name, what, control, value){ if (ctx.state === "closed") return false;
       if (what === "bars"){ voices.forEach(function (v){ if (v.inst === name) v.bars(); }); return true; }
       if (what === "ctl"){ control2(name, control, value, ctx.currentTime, 0.05); return true; }
       strips.forEach(function (s){ if (s.inst === name){ tuneEQ(s); tuneAmp(s); } }); return true; });
     // a control of an instrument's chain, at a time: the swell pedal's position, the rotary speaker's speed
-    function control2(inst, name, value, when, glide){
-      if (global.BandModx) global.BandModx.control(inst, name, value, when, ctx);
-      strips.forEach(function (s){ if (s.inst === inst) s.amp.forEach(function (n){ if (n.ctl) n.ctl(name, value, Math.max(when || 0, ctx.currentTime), glide || 0); }); });
+    function control2(inst, name, value, when, glide, dest){
+      if (global.BandModx && !dest) global.BandModx.control(inst, name, value, when, ctx);
+      strips.forEach(function (s){ if (dest ? s.dest === dest && (inst == null || s.inst === inst) : s.inst === inst) s.amp.forEach(function (n){ if (n.ctl) n.ctl(name, value, Math.max(when || 0, ctx.currentTime), glide || 0); }); });
     }
     // The scanner vibrato: a delay swept up and back by a triangle wave (the scanner runs along a delay line and returns);
     // mixed with the straight signal it is the chorus.
@@ -461,8 +477,8 @@
     }
     // The swell pedal: never silent at its quietest, and it keeps the bass up as it closes (the organ's own loudness
     // compensation). It sits before the tube stage, so opening it also drives the amp harder.
-    function swellStage(s, inst){
-      var g = ctx.createGain(), sh = ctx.createBiquadFilter(), spec = s, pos = getControl(inst, "swell"); sh.type = "lowshelf"; sh.frequency.value = 160; g.connect(sh);
+    function swellStage(s, inst, dest){
+      var g = ctx.createGain(), sh = ctx.createBiquadFilter(), spec = s, pos = destOpt(dest, "swell"); if (typeof pos !== "number") pos = getControl(inst, "swell"); sh.type = "lowshelf"; sh.frequency.value = 160; g.connect(sh);
       if (typeof pos !== "number") pos = 0.7;
       function put(t, glide){ var tc = Math.max(0.012, (glide || 0) / 3); g.gain.setTargetAtTime(Math.pow(10, spec.swell * (1 - pos) / 20), t, tc); sh.gain.setTargetAtTime(7 * (1 - pos), t, tc); }
       var h = { _in: g, _out: sh, set: function (x, t){ spec = x; put(t, 0.05); }, ctl: function (name, v, t, glide){ if (name !== "swell") return; pos = clamp(+v || 0, 0, 1); put(t, glide); } };
@@ -471,8 +487,8 @@
     // The rotary speaker: the sound is split at the crossover into a horn and a drum that turn at their own speeds. Each is
     // heard by two microphones on opposite sides: as the rotor turns towards one, that side gets louder and its pitch
     // rises a little. Slow and fast are the two speeds; the horn changes speed in about a second, the heavy drum in several.
-    function leslieStage(s, inst){
-      var inp = ctx.createGain(), out = ctx.createChannelMerger(2), lo = ctx.createBiquadFilter(), hi = ctx.createBiquadFilter(), spec = s, speed = getControl(inst, "leslie") || "slow";
+    function leslieStage(s, inst, dest){
+      var inp = ctx.createGain(), out = ctx.createChannelMerger(2), lo = ctx.createBiquadFilter(), hi = ctx.createBiquadFilter(), spec = s, speed = destOpt(dest, "leslie") || getControl(inst, "leslie") || "slow";
       // (the two halves of the crossover add up flat: Q 0.5 each, which these filters want in dB, and the upper half turned over)
       var flip = ctx.createGain(); flip.gain.value = -1;
       lo.type = "lowpass"; hi.type = "highpass"; lo.Q.value = hi.Q.value = -6.02; inp.connect(lo); inp.connect(flip); flip.connect(hi);
@@ -504,16 +520,16 @@
       var n = Math.max(2, Math.max.apply(null, hs.concat([1])) + 1), re = new Float32Array(n), im = new Float32Array(n); hs.forEach(function (h){ im[h] = amps[h]; });
       return (waves[key] = ctx.createPeriodicWave(re, im, { disableNormalization: true }));
     }
-    function tonewheel(inst, def, spec, t, out){
+    function tonewheel(inst, def, spec, t, out, dest){
       var f = 440 * Math.pow(2, (spec.midi - 69) / 12), g = ctx.createGain(), level = (def.gain || 1) * (spec.gain == null ? 1 : Math.max(0, spec.gain));
-      var oA = ctx.createOscillator(), oB = ctx.createOscillator(), oC = ctx.createOscillator(), gC = ctx.createGain(), v = { inst: inst, src: oA, g: g, t: t };
-      function bars(){ var p = tonewheelParts(spec.midi, getTonebars(inst)); oA.setPeriodicWave(waveOf(p.A)); oB.setPeriodicWave(waveOf(p.B));
+      var oA = ctx.createOscillator(), oB = ctx.createOscillator(), oC = ctx.createOscillator(), gC = ctx.createGain(), v = { inst: inst, src: oA, g: g, t: t, dest: dest };
+      function bars(){ var p = tonewheelParts(spec.midi, barsFor(inst, dest)); oA.setPeriodicWave(waveOf(p.A)); oB.setPeriodicWave(waveOf(p.B));
         oC.frequency.value = f * TW_THIRD * Math.pow(2, p.C.shift); gC.gain.setTargetAtTime(p.C.amp, Math.max(t, ctx.currentTime), 0.01); }
       oA.frequency.value = f / 2; oB.frequency.value = f * TW_FIFTH; gC.gain.value = 0; v.bars = bars; bars();
       oA.connect(g); oB.connect(g); oC.connect(gC); gC.connect(g); g.connect(out);
       g.gain.value = 0; g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(level, t + 0.003);
       // key click: the nine contacts of a key do not close together. A few milliseconds of noise as the note starts.
-      var click = getControl(inst, "click"); if (typeof click !== "number") click = def.click == null ? 0.5 : def.click;
+      var click = destOpt(dest, "click"); if (typeof click !== "number") click = getControl(inst, "click"); if (typeof click !== "number") click = def.click == null ? 0.5 : def.click;
       if (click > 0){
         if (!noise){ noise = ctx.createBuffer(1, Math.round(ctx.sampleRate * 0.03), ctx.sampleRate); var nd = noise.getChannelData(0), seed = 12345; for (var i = 0; i < nd.length; i++){ seed = (Math.imul(seed, 1103515245) + 12345) | 0; nd[i] = (seed >>> 8) / 8388608 - 1; } }
         var ns = ctx.createBufferSource(), nf = ctx.createBiquadFilter(), ng = ctx.createGain(); ns.buffer = noise; nf.type = "bandpass"; nf.frequency.value = 2600; nf.Q.value = 0.8;
@@ -536,8 +552,8 @@
         var n;
         if (s.drive != null){ n = ctx.createWaveShaper(); n.curve = driveCurve(s.drive, s.bias); n._sig = s.drive + "/" + (s.bias || 0); n.oversample = s.oversample || "4x"; }
         else if (s.scanner != null) n = scannerStage(s);
-        else if (s.swell != null) n = swellStage(s, inst);
-        else if (s.leslie != null) n = leslieStage(s, inst);
+        else if (s.swell != null) n = swellStage(s, inst, dest);
+        else if (s.leslie != null) n = leslieStage(s, inst, dest);
         else if (s.trem != null){                              // a slow oscillator moves the gain between 1 and 1 - depth
           n = ctx.createGain(); n.gain.value = 1 - (s.depth || 0) / 2;
           n._lfo = ctx.createOscillator(); n._lfo.frequency.value = s.trem; n._amt = ctx.createGain(); n._amt.gain.value = (s.depth || 0) / 2;
@@ -548,7 +564,7 @@
           n.type = f[0]; n.frequency.value = f[1]; if (s.q != null) n.Q.value = s.q; else if (f[0] === "highpass" || f[0] === "lowpass") n.Q.value = 0.707; if (s.gain != null) n.gain.value = s.gain; }
         node.connect(n._in || n); node = n._out || n; stages.push(n);
       });
-      var strip = { inst: inst, amp: stages, eq: EQ_DEFAULT.map(function (d){ var n = ctx.createBiquadFilter(); n.type = d.type; n.frequency.value = d.f; n.Q.value = d.q; n.gain.value = 0; node.connect(n); node = n; return n; }) };
+      var strip = { inst: inst, dest: dest, amp: stages, eq: EQ_DEFAULT.map(function (d){ var n = ctx.createBiquadFilter(); n.type = d.type; n.frequency.value = d.f; n.Q.value = d.q; n.gain.value = 0; node.connect(n); node = n; return n; }) };
       strips.push(strip); tuneEQ(strip);
       node.connect(dest);
       return (m[inst] = input);
@@ -600,7 +616,7 @@
       if (def && global.BandModx && global.BandModx.routed(inst, ctx)) return global.BandModx.play(inst, spec, when, ctx);   // played on the MODX (modx.js)
       if (!def || !ready[inst]){ if (defs && def) load([inst]).catch(function (){}); return null; }   // lazy-load, skip this hit
       var vel = clamp(spec.vel == null ? 0.7 : spec.vel, 0, 1); if (!(vel > 0)) return null;
-      if (def.synth === "tonewheel") return spec.midi == null ? null : tonewheel(inst, def, spec, Math.max(when || 0, ctx.currentTime), ampFor(inst, def, dest || ctx.destination));
+      if (def.synth === "tonewheel") return spec.midi == null ? null : tonewheel(inst, def, spec, Math.max(when || 0, ctx.currentTime), ampFor(inst, def, dest || ctx.destination), dest || ctx.destination);
       var group = pickZones(def.zones.filter(function (z){ return z.buffer; }), spec); if (!group.length) return null;
       var key = inst + ":" + (spec.piece != null ? spec.piece : group[0].midi), z = group[(rr[key] = (rr[key] || 0) + 1) % group.length];
       var pc = (spec.piece != null && def.pieces && def.pieces[spec.piece]) || {};
@@ -648,7 +664,8 @@
       ringing = {};
     }
 
-    return { load: load, play: play, control: control2, stopAll: stopAll, choke: function (group, when, damp){ choke(group, Math.max(when || 0, ctx.currentTime), damp); }, has: function (n){ return !!ready[n]; }, context: ctx };
+    function prepare(inst, dest){ var def = defs && defs[inst]; if (def && ready[inst] && def.synth) ampFor(inst, def, dest || ctx.destination); }      // make the amp chain for a destination now (so a control set before its first note has somewhere to go)
+    return { load: load, play: play, control: control2, setDest: setDest, prepare: prepare, stopAll: stopAll, choke: function (group, when, damp){ choke(group, Math.max(when || 0, ctx.currentTime), damp); }, has: function (n){ return !!ready[n]; }, context: ctx };
   }
 
   global.BandSounds = {

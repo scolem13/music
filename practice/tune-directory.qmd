@@ -3,6 +3,8 @@ title: "Tune Directory"
 description: "Every tune, classical theme and analysed score on the site in one list, with the recordings, articles and other resources attached to each piece."
 toc: true
 toc-depth: 2
+page-layout: full
+page-navigation: false
 ---
 
 ```{=html}
@@ -25,12 +27,13 @@ toc-depth: 2
 ## At a glance {#td-sheet}
 
 ```{=html}
-<p class="td-note">Everything in one table, nothing to expand: every tune, classical theme, piece (including those known only from a print anthology), Words &amp; Chords song, Billboard song, and MLT / JRI recording not linked to a tune. The <b>type buttons</b> switch types on and off.
-<b>Concepts</b> counts the places where a teaching source (Hutchinson's textbook and others) uses the piece to show a concept; pick a concept or source above the table, or click ▸ by a title to see each use with its link. <b>Year</b> is the year of composition (or publication); <b>Print</b> the anthology figure. Type in the
+<p class="td-note">Everything in one table: every tune, classical theme, piece (including those known only from a print anthology), Words &amp; Chords song, Billboard song, score, and MLT / JRI recording not linked to a tune. The <b>type buttons</b> switch types on and off.
+<b>Clicking:</b> a title opens the piece where it lives on this site (Tune Library, Classical Themes, Words &amp; Chords, the full-score player, Timestamp Notes, the Recordings Catalogue), in this tab; a title with no page of its own opens its details here. ▸ opens a row's details (every recording, playable, the places it is used, where it came from); ⏱ opens its first recording in Timestamp Notes. Links off the site open in a new tab and are marked ↗.
+<b>Group movements</b> puts the movements, themes and scores of one big piece (same composer and catalogue number, e.g. K. 550) under one row; ▸ opens it. <b>Columns</b> chooses which columns show (remembered).
+<b>Concepts</b> counts the places where a teaching source (Hutchinson's textbook and others) uses the piece to show a concept; pick a concept (grouped by source) or a source above the table. <b>Year</b> is the year of composition (or publication); <b>Print</b> the anthology figure. Type in the
 box under a column to filter it (in Recordings and Bars marked: <code>&gt;0</code>, <code>0</code>, <code>2</code>); click a column name
-to sort. <b>Bars marked</b> counts recordings with a timing map; ⏱ opens one in Timestamp Notes. The sections below are the same
-collections, grouped; they start folded (click a heading to open one). They still hold what the table cannot: recordings that play in place, the
-anthology figures by composer, the music finder's results (Functions, Progression, tonal pattern…) and the analysed scores. The Words &amp; Chords list is gone: its songs are rows here (type Song).</p>
+to sort. <b>Bars marked</b> counts recordings with a timing map. The sections below are the same
+collections, grouped; they start folded (click a heading to open one). They still hold what the table cannot: the anthology figures by composer, the music finder's results (Functions, Progression, tonal pattern…) and the analysed scores.</p>
 <div id="td-sheet-box"></div>
 ```
 
@@ -120,6 +123,8 @@ beat or two out where the beat tracking was; the time signature is read from the
 .td-music > summary { cursor: pointer; font-weight: 600; }
 .td-music #td-picker > .tl-search:first-child, .td-music .tl-sort { display: none; }
 .tds-quick { display: flex; flex-wrap: wrap; gap: .3rem 1rem; align-items: center; font-size: .9rem; margin: .3rem 0 .5rem; }
+.tds-quick label { min-width: 0; max-width: 100%; }
+.tds-quick select { max-width: min(22rem, 100%); }
 .tds-n { font-size: .85rem; opacity: .75; }
 .tds-wrap { max-height: 75vh; overflow: auto; border: 1px solid var(--bs-border-color, #dee2e6); border-radius: 6px; }
 .tds { width: 100%; border-collapse: collapse; font-size: .85rem; }
@@ -136,6 +141,12 @@ beat or two out where the beat tracking was; the time signature is read from the
 .tds-detail td { background: var(--bs-tertiary-bg, #f6f8fb); padding: .3rem .8rem; }
 .tds-con { font-size: .8rem; max-width: 14rem; }
 .tds-c { text-align: center !important; } .tds-dim { opacity: .7; }
+.tds-child td:first-child { padding-left: 1.6rem; } .tds-child { background: var(--bs-tertiary-bg, #f6f8fb); }
+.tds-parent td { border-top: 1px solid var(--bs-border-color, #dee2e6); }
+.tds-kids { border: 0; background: none; color: inherit; padding: 0 .2rem; cursor: pointer; }
+.tds-cols { display: inline-block; position: relative; } .tds-cols > summary { cursor: pointer; }
+.tds-cols > div { position: absolute; z-index: 3; background: var(--bs-body-bg, #fff); border: 1px solid var(--bs-border-color, #dee2e6); border-radius: 6px;
+  padding: .4rem .6rem; display: grid; grid-template-columns: repeat(2, max-content); gap: .1rem 1rem; max-width: 90vw; }
 .tds tbody tr:hover { background: var(--bs-tertiary-bg, #f6f8fb); }
 @media (max-width: 600px) { .td-list { columns: 1; padding-left: .3rem; } }
 </style>

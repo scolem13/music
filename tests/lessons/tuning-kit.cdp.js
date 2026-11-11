@@ -60,16 +60,26 @@ const RMS = `(w => { const a = w.view && w.view.an; if (!a) return 0; const d = 
     const r = await T(tun); check("scale " + tun + ": " + n + " notes drawn", r && r.n === n && r.drawn === n, JSON.stringify(r));
   }
   const sk = await b.eval(`SynthKit.widgets.findIndex(w => w.kind === 'splitkeys')`);
-  for (const [kb, n] of [["ordinary", 25], ["split14", 29], ["split29", 59]]) {
+  for (const [kb, n] of [["ordinary", 25], ["split14", 29], ["split31", 63], ["split31h", 63]]) {
     const r = await b.eval(`(() => { const w = SynthKit.widgets[${sk}]; w.c.kb.set('${kb}'); return w.pieces().length; })()`);
     check("splitkeys " + kb + ": " + n + " pieces (two octaves and a C)", r === n, r);
   }
-  await b.eval(`SynthKit.widgets[${sk}].c.kb.set('split29')`);
-  const steps = await b.eval(`(() => { const c = SynthKit.widgets[${sk}].pieces().map(p => +p.getAttribute('data-c')).sort((a, b) => a - b); return c.slice(1).map((v, i) => +(v - c[i]).toFixed(2)).filter((d, i) => Math.abs(d - 1200 / 29) > .01).length + ' off-step of ' + (c.length - 1); })()`);
-  check("splitkeys split29: every piece one 29-step apart", /^0 off/.test(steps), steps);
+  await b.eval(`SynthKit.widgets[${sk}].c.kb.set('split31')`);
+  const steps = await b.eval(`(() => { const c = SynthKit.widgets[${sk}].pieces().map(p => +p.getAttribute('data-c')).sort((a, b) => a - b); return c.slice(1).map((v, i) => +(v - c[i]).toFixed(2)).filter((d, i) => Math.abs(d - 1200 / 31) > .01).length + ' off-step of ' + (c.length - 1); })()`);
+  check("splitkeys split31: every piece one 31-step apart", /^0 off/.test(steps), steps);
   await b.eval(`SynthKit.widgets[${sk}].press(5)`);
   let l3 = 0; for (let k = 0; k < 6; k++) { await b.sleep(100); l3 = Math.max(l3, await b.eval(`${RMS}(SynthKit.widgets[${sk}])`)); }
   check("splitkeys: press sounds", l3 > .001, l3.toFixed(4)); await b.eval(`SynthKit.widgets[${sk}].release(); SynthKit.widgets[${sk}].stop()`);
+  // ---- a tune in another tuning ----
+  const ts = await b.eval(`SynthKit.widgets.findIndex(w => w.kind === 'tunesong')`);
+  let tl = 0; for (let k = 0; k < 40 && !tl; k++) { await b.sleep(250); tl = await b.eval(`SynthKit.widgets[${ts}].loaded()`); }
+  check("tunesong: collection loaded", tl > 500, tl);
+  check("tunesong: Amazing Grace first", (await b.eval(`SynthKit.widgets[${ts}].title2()`)) === "Amazing Grace");
+  const tu = await b.eval(`(() => { const w = SynthKit.widgets[${ts}]; w.c.tun.set('et31'); const a = w.tuned(); w.c.tun.set('et12'); const p = w.tuned(); return { n: a.length, d: a.map((v, i) => Math.round(v - p[i])) }; })()`);
+  check("tunesong 31-TET: G major scale notes within 14 cents of the piano", tu.n > 20 && tu.d.every(x => Math.abs(x) <= 14), JSON.stringify(tu.d.slice(0, 12)));
+  await b.eval(`(() => { const w = SynthKit.widgets[${ts}]; w.c.tun.set('et31'); w.host.querySelectorAll('.sk-presets button')[Array.from(w.host.querySelectorAll('.sk-presets button')).findIndex(x => /In this tuning/.test(x.textContent))].click(); })()`);
+  let lt = 0; for (let k = 0; k < 8; k++) { await b.sleep(150); lt = Math.max(lt, await b.eval(`${RMS}(SynthKit.widgets[${ts}])`)); }
+  check("tunesong: plays", lt > .001, lt.toFixed(4)); await b.eval(`SynthKit.widgets[${ts}].stop()`);
   // ---- the two new lessons ----
   const errs2 = [];
   await b.goto("http://127.0.0.1:8516/lessons/ragas.html"); await b.sleep(1200);

@@ -18,8 +18,10 @@
 //              together, a slide (meend) and a wobble (andolan). Raga facts from memory: unverified (the lessons/ragas page says so).
 //   unevenfret a 12-fret neck whose frets can be dragged; placements equal / rule of 18 / just / meantone / Pythagorean / Werckmeister III;
 //              cents and mm (25.5 in scale) from equal under each fret; both together fret by fret.
-//   splitkeys  a keyboard of split keys: ordinary, historical split sharps (14, quarter-comma meantone), and a MODEL (white in 2, black in 3,
-//              29 equal steps) that is NOT documented as a real instrument.
+//   tunesong   a tune from the site's collection (loaded on demand, searchable) with every note moved into a tuning (12 / 19 / 22 / 31 / 53-TET,
+//              just, Pythagorean, meantone, neutral): play it tuned, on the piano, one then the other, or both at once.
+//   splitkeys  a keyboard of split keys: ordinary, historical split sharps (14, quarter-comma meantone), and a MODEL (white in 3, black in 2,
+//              31 equal steps; cut across, or wide keys cut lengthwise "hot-dog") that is NOT documented as a real instrument.
 // Test: node tests/lessons/tuning-kit.cdp.js [shots dir] (after rendering lessons/tuning-systems, ragas and uneven-frets; copy this file into _site/apps/shared/lessons/ if it changed since).
 (function (global) {
   var SK = global.SynthKit;
@@ -562,8 +564,8 @@
   // ======================================================================================
   // splitkeys: a keyboard whose keys are cut into pieces, each its own pitch.
   //   ordinary: 12 keys.   split14: the historical split sharps (D♯/E♭ and G♯/A♭ in two), quarter-comma meantone.
-  //   split29: a MODEL in which each white key is cut in two and each black key in three, 7 x 2 + 5 x 3 = 29 pieces, 29 equal steps
-  //   (whole tone 5 steps, semitone 2); this exact layout is not documented as a real instrument: the lesson says so.
+  //   split31 / split31h: a MODEL in which each white key is cut in three and each black key in two, 7 x 3 + 5 x 2 = 31 pieces, 31 equal steps
+  //   (whole tone 5 steps, diatonic semitone 3, chromatic 2); split31h is wide keys cut lengthwise. Not documented as a real instrument: the lesson says so.
   var KB = {
     ordinary: { label: "An ordinary keyboard (12 equal keys)",
       white: [[0], [200], [400], [500], [700], [900], [1100]], black: [[100], [300], [600], [800], [1000]],
@@ -571,20 +573,22 @@
     split14: { label: "Historical split sharps: 14 pieces, quarter-comma meantone",
       white: [[0], [193.16], [386.31], [503.42], [696.58], [889.74], [1082.89]], black: [[76.05], [269.21, 310.26], [579.47], [772.63, 813.69], [1006.84]],
       wn: [["C"], ["D"], ["E"], ["F"], ["G"], ["A"], ["B"]], bn: [["C♯"], ["D♯", "E♭"], ["F♯"], ["G♯", "A♭"], ["B♭"]] },
-    split29: { label: "Model: white keys in 2, black keys in 3, 29 equal steps",
-      white: [[0, 1], [5, 6], [10, 11], [12, 13], [17, 18], [22, 23], [27, 28]].map(function (a) { return a.map(function (s) { return s * 1200 / 29; }); }),
-      black: [[2, 3, 4], [7, 8, 9], [14, 15, 16], [19, 20, 21], [24, 25, 26]].map(function (a) { return a.map(function (s) { return s * 1200 / 29; }); }),
-      wn: [[0, 1], [5, 6], [10, 11], [12, 13], [17, 18], [22, 23], [27, 28]].map(function (a) { return a.map(String); }),
-      bn: [[2, 3, 4], [7, 8, 9], [14, 15, 16], [19, 20, 21], [24, 25, 26]].map(function (a) { return a.map(String); }) }
+    split31: { label: "Model: white keys in 3, black keys in 2, 31 equal steps (keys cut across)", steps: 31,
+      white: [[0, 1, 2], [5, 6, 7], [10, 11, 12], [13, 14, 15], [18, 19, 20], [23, 24, 25], [28, 29, 30]], black: [[3, 4], [8, 9], [16, 17], [21, 22], [26, 27]] },
+    split31h: { label: "Model: the same 31 pieces on wide keys cut lengthwise (hot-dog splits)", steps: 31, hot: true,
+      white: [[0, 1, 2], [5, 6, 7], [10, 11, 12], [13, 14, 15], [18, 19, 20], [23, 24, 25], [28, 29, 30]], black: [[3, 4], [8, 9], [16, 17], [21, 22], [26, 27]] }
   };
+  Object.keys(KB).forEach(function (k) { var d = KB[k]; if (!d.steps) return;
+    var cents = function (a) { return a.map(function (s) { return s * 1200 / d.steps; }); }, names = function (a) { return a.map(String); };
+    d.wn = d.white.map(names); d.bn = d.black.map(names); d.white = d.white.map(cents); d.black = d.black.map(cents); });
   var BLACK_AFTER = [0, 1, 3, 4, 5];   // a black key sits to the right of white keys C D F G A
   function Splitkeys(host) {
     var w = Base(host, "A keyboard with split keys"), box = svg("svg", { "class": "tk-keys", role: "group", "aria-label": "Piano keyboard in which keys may be split into several pitches." });
     w.playLabel = "▶ Play"; w.playBtn.remove();
-    w.pick("kb", "Keyboard", Object.keys(KB).map(function (k) { return [k, KB[k].label]; }), "split29", null, function () { build(); });
+    w.pick("kb", "Keyboard", Object.keys(KB).map(function (k) { return [k, KB[k].label]; }), "split31", null, function () { build(); });
     w.pick("oct", "Lowest C", [["3", "C3"], ["4", "C4"]], "3", null, function () { build(); });
     var info = el("p", "sk-info"), note = el("p", "tk-note"), key = el("div", "tk-key");
-    key.innerHTML = '<span><i style="background:var(--site-surface)"></i>within 12 cents of a piano key</span><span><i style="background:color-mix(in srgb,var(--site-accent) 22%,var(--site-surface))"></i>between piano keys</span><span>pitch rises toward the back of a split key</span>';
+    key.innerHTML = '<span><i style="background:var(--site-surface)"></i>within 12 cents of a piano key</span><span><i style="background:color-mix(in srgb,var(--site-accent) 22%,var(--site-surface))"></i>between piano keys</span><span>pitch rises toward the back of a cross-cut key, left to right in a lengthwise one</span>';
     var row = el("div", "sk-presets");
     button(row, "▶ Walk up every piece", function () { play("mine"); });
     button(row, "▶ The nearest piano keys", function () { play("piano"); });
@@ -595,23 +599,25 @@
     w.view = viewer(w.body, { ms: 40 });
     var entry = entryLine(w, w.body, 24), down = {}, pieces = [];
     var NOTES = { ordinary: "A normal piano: every key is one pitch.", split14: "Real instruments of the 16th and 17th centuries had keys like this: the black keys for D♯/E♭ and G♯/A♭ cut across, the front half sounding one note and the back half the other, so that both a D♯ for an E-major chord and an E♭ for a C-minor chord could be pure in meantone. (Which half is which, the lesson has not checked.)",
-      split29: "A model, not a documented instrument: cut each of the 7 white keys in two and each of the 5 black keys in three and you have 29 pieces, exactly the 29 steps of 29-tone equal temperament (whole tone = 5 steps, semitone = 2, fifth = 17 steps = 703.4 cents). Real keyboards with 29 to 31 keys to an octave were built (Fokker's organ has 31); none is checked here to match this layout." };
+      split31: "A model, not a documented instrument: cut each of the 7 white keys in three and each of the 5 black keys in two and you have 31 pieces, exactly the 31 steps of 31-tone equal temperament (whole tone = 5 steps, diatonic semitone = 3, chromatic semitone = 2, fifth = 18 steps = 696.8 cents). Fokker's 31-note organ was a real instrument; none is checked here to match this layout.",
+      split31h: "The same 31 pieces, but the keys are wide and each is cut lengthwise like a hot dog, so the pieces sit side by side and pitch rises left to right through the key. Also a model for this page, not a documented instrument." };
     w.onStart = function () { return function () { Object.keys(down).forEach(release); }; };
     function build() {
-      var K2 = KB[w.P.kb], ww = 44, wh = 160, bw = 26, bh = 98, oct0 = (+w.P.oct - 4) * 1200, nOct = 2, W2 = 7 * nOct * ww + ww; box.innerHTML = ""; pieces = [];
+      var K2 = KB[w.P.kb], hot = !!K2.hot, ww = hot ? 70 : 44, wh = 160, bw = hot ? 42 : 26, bh = 98, oct0 = (+w.P.oct - 4) * 1200, nOct = 2, W2 = 7 * nOct * ww + ww; box.innerHTML = ""; pieces = [];
       box.setAttribute("viewBox", "0 0 " + W2 + " " + (wh + 6));
       function add(shape, cents, name, label) {
         var near = Math.round(cents / 100) * 100, cls = "tk-p" + (Math.abs(cents - near) < 12 ? " n" : " q"); shape.setAttribute("class", cls);
         shape.setAttribute("data-c", (cents + oct0).toFixed(3)); shape.setAttribute("data-n", name); pieces.push(shape);
       }
       function piecesOf(x, y, wd, ht, centsList, names, oc, isBlack) {
-        var n = centsList.length, split = isBlack ? ht / n : (n === 1 ? ht : ht * .38);
+        var n = centsList.length, fr = n === 3 ? [.3, .3, .4] : [.4, .6], acc = 0;
         centsList.forEach(function (c, j) {
-          var y0, h0;
-          if (isBlack) { h0 = ht / n; y0 = y + ht - (j + 1) * h0; }
-          else if (n === 1) { y0 = y; h0 = ht; } else { h0 = j === 0 ? ht * .4 : ht * .6; y0 = j === 0 ? y + ht - h0 : y; }
-          var r = svg("rect", { x: x + .5, y: y0, width: wd - 1, height: h0, rx: 3 }, box); add(r, c + oc * 1200, names[j]); if (isBlack) r.classList.add("blk");
-          var t = svg("text", { x: x + wd / 2, y: y0 + h0 / 2 + 3, "class": isBlack ? "tk-bl" : "" }, box); t.textContent = names[j];
+          var y0, h0, x0 = x, w0 = wd;
+          if (n > 1 && hot) { w0 = wd / n; x0 = x + j * w0; y0 = y; h0 = ht; }
+          else if (isBlack) { h0 = ht / n; y0 = y + ht - (j + 1) * h0; }
+          else if (n === 1) { y0 = y; h0 = ht; } else { h0 = ht * fr[j]; acc += h0; y0 = y + ht - acc; }
+          var r = svg("rect", { x: x0 + .5, y: y0, width: w0 - 1, height: h0, rx: 3 }, box); add(r, c + oc * 1200, names[j]); if (isBlack) r.classList.add("blk");
+          var t = svg("text", { x: x0 + w0 / 2, y: y0 + h0 / 2 + 3, "class": isBlack ? "tk-bl" : "" }, box); t.textContent = names[j];
         });
       }
       var o, i;
@@ -622,7 +628,7 @@
         else piecesOf(x, 3, ww, wh, K2.white[i], K2.wn[i], o, false);
       }
       for (o = 0; o < nOct; o++) BLACK_AFTER.forEach(function (wi, bi) { piecesOf((o * 7 + wi + 1) * ww - bw / 2, 3, bw, bh, K2.black[bi], K2.bn[bi], o, true); });
-      info.textContent = "Press a piece to sound it. " + (w.P.kb === "split29" ? "Pieces are numbered by step (0–28, then 0 again an octave up)." : "");
+      info.textContent = "Press a piece to sound it. " + (/^split31/.test(w.P.kb) ? "Pieces are numbered by step (0–30, then 0 again an octave up)." : "");
       note.textContent = NOTES[w.P.kb];
     }
     function press(id, z) {
@@ -652,6 +658,115 @@
     return w;
   }
 
-  SK.kinds.scale = Scale; SK.kinds.raga = Raga; SK.kinds.unevenfret = Unevenfret; SK.kinds.splitkeys = Splitkeys; SK.kinds.pitchgrid = Pitchgrid; SK.kinds.microfret = Microfret;
+
+  // ======================================================================================
+  // tunesong: a tune from the site's collection, every note moved into another tuning.
+  //   The tonic is the key letter of the tune's K: line. Each note's distance from the tonic in piano semitones (s) is mapped to the tuning:
+  //   an equal division of the octave takes the nearest step to the piano's pitch (round(s * N / 12)); the 12-note tables (just, Pythagorean,
+  //   quarter-comma meantone) give each semitone its cents; "neutral" moves thirds and sevenths to 350 / 1050 as a demonstration (not a claim
+  //   about any maqam). Octaves are exactly 1200 cents (no stretch).
+  var JUST = [0, 111.73, 203.91, 315.64, 386.31, 498.04, 590.22, 701.96, 813.69, 884.36, 1017.6, 1088.27];
+  var PYTH = [0, 90.22, 203.91, 294.13, 407.82, 498.04, 611.73, 701.96, 792.18, 905.87, 996.09, 1109.78];
+  var MEAN = [0, 76.05, 193.16, 310.26, 386.31, 503.42, 579.47, 696.58, 772.63, 889.74, 1006.84, 1082.89];
+  function edoMap(n) { return function (r) { return Math.round(r * n / 12) * 1200 / n; }; }
+  var TS = {
+    et12: { label: "12-TET: the piano (the reference)", f: edoMap(12) },
+    et19: { label: "19-TET", f: edoMap(19) }, et22: { label: "22-TET", f: edoMap(22) }, et31: { label: "31-TET", f: edoMap(31) }, et53: { label: "53-TET", f: edoMap(53) },
+    just: { label: "Just intonation (5-limit)", f: function (r) { return JUST[r]; } },
+    pyth: { label: "Pythagorean (pure fifths)", f: function (r) { return PYTH[r]; } },
+    mean: { label: "Quarter-comma meantone", f: function (r) { return MEAN[r]; } },
+    neutral: { label: "Neutral thirds and sevenths (350 and 1050 cents)", f: function (r) { return r === 3 || r === 4 ? 350 : r === 10 || r === 11 ? 1050 : r * 100; } }
+  };
+  var DEGN = ["1", "♭2", "2", "♭3", "3", "4", "♯4", "5", "♭6", "6", "♭7", "7"];
+  var PCS = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+  var FEATURED = ["amazing-grace", "twinkle", "greensleeves", "joy"];
+  var tuneCache = null, tuneLoading = null;
+  function loadScript(src) { return new Promise(function (ok, no) { var s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = function () { no(new Error("could not load " + src)); }; document.head.appendChild(s); }); }
+  function loadTunes() {
+    if (tuneCache) return Promise.resolve(tuneCache);
+    if (tuneLoading) return tuneLoading;
+    var chain = Promise.resolve();
+    if (!global.AbcCore) chain = chain.then(function () { return loadScript("/apps/shared/abc-core.js"); });
+    if (!global.AbcTune) chain = chain.then(function () { return loadScript("/apps/tune-assessment/abc-tune.js"); });
+    if (typeof tunesObject === "undefined") chain = chain.then(function () { return loadScript("/apps/tunes/tunes-object.js"); });
+    return (tuneLoading = chain.then(function () {
+      var list = [], seen = {};
+      Object.keys(tunesObject).forEach(function (k) {
+        String(tunesObject[k]).split(/\n(?=X:)/).forEach(function (abc) {
+          var t = /^T:\s*(.+)$/m.exec(abc), id = /^%%id\s+(\S+)/m.exec(abc); if (!t || !/^K:/m.test(abc)) return;
+          var key = id ? id[1] : t[1]; if (seen[key]) return; seen[key] = 1; list.push({ id: id ? id[1] : "", title: t[1].trim(), abc: abc });
+        });
+      });
+      list.sort(function (a, b) { return a.title.localeCompare(b.title); });
+      return (tuneCache = list);
+    }));
+  }
+  // the notes of an ABC tune as {midi, t0, d} in seconds-free L units, plus the tonic and the speed
+  function tuneNotes(abc) {
+    var m = global.AbcTune.melodyNotes(abc), k = /^K:\s*([A-G])([#b]?)/m.exec(abc), pc = k ? ((PCS[k[1]] + (k[2] === "#" ? 1 : k[2] === "b" ? -1 : 0)) + 12) % 12 : 0;
+    return { notes: m.notes, total: m.total, lq: m.lq, qpm: (m.tempoQ || 100) * (m.tempoNote || 1), tonic: 60 + pc, key: k ? k[1] + k[2] : "C" };
+  }
+  function Tunesong(host) {
+    var w = Base(host, "A familiar tune in another tuning"), tunes = [], cur = null, info = el("p", "sk-info"), note = el("p", "tk-note"), table = el("div", "tk-ragagrid"), timer = null;
+    w.playLabel = "▶ Play"; w.playBtn.remove();
+    w.pick("tun", "Tuning", Object.keys(TS).map(function (k) { return [k, TS[k].label]; }), "et31", null, function () { rebuild(); });
+    w.pick("spd", "Speed", [["0.7", "Slow"], ["1", "As written"], ["1.3", "Quick"]], "1");
+    var pickBox = el("div", "sk-presets"), find = el("input"), sel = el("select");
+    find.type = "search"; find.placeholder = "Search the tune collection…"; find.className = "form-control form-control-sm"; find.style.maxWidth = "16rem";
+    sel.className = "form-select form-select-sm"; sel.style.maxWidth = "22rem"; sel.setAttribute("aria-label", "Tune");
+    pickBox.appendChild(el("span", "sk-cl", "Tune")); pickBox.appendChild(find); pickBox.appendChild(sel);
+    var row = el("div", "sk-presets");
+    button(row, "▶ In this tuning", function () { play("tuned"); });
+    button(row, "▶ On the piano", function () { play("piano"); });
+    button(row, "▶ This tuning, then the piano", function () { play("then"); });
+    button(row, "▶ Both at once", function () { play("both"); });
+    button(row, "■", function () { w.stop(); });
+    w.body.insertBefore(row, w.ctls.nextSibling); w.body.insertBefore(pickBox, w.ctls);
+    var abcBox = el("div", "tk-staff"); w.body.appendChild(abcBox); w.body.appendChild(table); w.body.appendChild(info); w.body.appendChild(note);
+    w.view = viewer(w.body, { ms: 40 });
+    info.textContent = "Loading the tune collection…";
+    function fill() {
+      var q = find.value.trim().toLowerCase(), shown = tunes.filter(function (t) { return !q || t.title.toLowerCase().indexOf(q) >= 0; }), f = [];
+      if (!q) { FEATURED.forEach(function (id) { var t = tunes.filter(function (x) { return x.id === id; })[0]; if (t) f.push(t); }); shown = f.concat(shown.filter(function (t) { return f.indexOf(t) < 0; })); }
+      sel.innerHTML = ""; shown.slice(0, 200).forEach(function (t) { var o = el("option", null, t.title); o.value = t.id || t.title; sel.appendChild(o); });
+      if (shown.length > 200) { var o = el("option", null, "… " + (shown.length - 200) + " more: type to narrow"); o.disabled = true; sel.appendChild(o); }
+      if (shown.length && (!cur || shown.indexOf(cur.tune) < 0)) { sel.selectedIndex = 0; choose(shown[0]); } else if (cur) sel.value = cur.tune.id || cur.tune.title;
+    }
+    function choose(t) { var m; try { m = tuneNotes(t.abc); } catch (e) { info.textContent = "That tune could not be read."; return; } cur = { tune: t, m: m }; rebuild(); }
+    function tunedC(midi) { var s = midi - cur.m.tonic, r = ((s % 12) + 12) % 12, o = Math.floor(s / 12); return (cur.m.tonic - 60) * 100 + o * 1200 + TS[w.P.tun].f(r); }
+    function rebuild() {
+      w.stop(); if (!cur) return; var used = {}, m = cur.m;
+      m.notes.forEach(function (n) { used[n.midi - m.tonic] = 1; });
+      table.innerHTML = ""; table.appendChild(el("span", "sk-cl", "Notes used (key of " + m.key + "), cents from the piano:"));
+      Object.keys(used).map(Number).sort(function (a, b) { return a - b; }).forEach(function (s) {
+        var r = ((s % 12) + 12) % 12, off = TS[w.P.tun].f(r) - r * 100, b = el("span", "tk-sw" + (Math.abs(off) < .5 ? "" : " up"), DEGN[r] + (Math.abs(off) < .5 ? "" : " " + signed(off)));
+        b.title = "Scale degree " + DEGN[r] + ": " + (Math.abs(off) < .5 ? "the same as the piano" : off.toFixed(1) + " cents from the piano key"); table.appendChild(b);
+      });
+      var shown = m.notes.map(function (n) { return Math.abs(tunedC(n.midi) - (n.midi - 60) * 100); });
+      var max = shown.reduce(function (a, b) { return Math.max(a, b); }, 0);
+      note.textContent = TS[w.P.tun].label + ": the farthest any note of this tune moves from its piano pitch is " + Math.round(max) + " cents. Each note takes the nearest note of the tuning to the piano's pitch (or the table's value, for just, Pythagorean and meantone); the tonic is the key letter of the tune, and octaves are exactly 1200 cents.";
+      info.textContent = cur.tune.title + ": " + m.notes.length + " notes. Play it in the tuning, on the piano, or both.";
+      if (global.ABCJS) { try { ABCJS.renderAbc(abcBox, cur.tune.abc.replace(/^w:.*$/gm, "").replace(/"[^"]*"/g, ""), { responsive: "resize", paddingleft: 0, paddingright: 0, staffwidth: 740 }); } catch (e) {} }
+    }
+    find.addEventListener("input", fill);
+    sel.addEventListener("change", function () { var t = tunes.filter(function (x) { return (x.id || x.title) === sel.value; })[0]; if (t) choose(t); });
+    w.onStart = function () { return function () { clearTimeout(timer); }; };
+    function play(how) {
+      if (!cur) return; w.stop(); w.start(); var c = SK.ac(), m = cur.m, u = 60 / (m.qpm * (+w.P.spd)) * m.lq, t0 = c.currentTime + .08, span = m.total * u + .8;
+      function run(at, tuned) { m.notes.forEach(function (n) {
+        var f = tuned ? cf(tunedC(n.midi)) : cf((n.midi - 60) * 100), d = Math.max(.12, n.dur * u * .95);
+        rich(c, w.out, f, at + n.onset * u, d, how === "both" ? .15 : .26); }); }
+      if (how === "tuned") run(t0, true); else if (how === "piano") run(t0, false);
+      else if (how === "then") { run(t0, true); run(t0 + span + .6, false); span = 2 * span + .6; } else { run(t0, true); run(t0, false); }
+      timer = setTimeout(function () { w.stop(); }, (span + .5) * 1000);
+    }
+    loadTunes().then(function (l) { tunes = l; fill(); }).catch(function (e) { info.textContent = "The tune collection could not be loaded (" + e.message + ")."; });
+    w.tuned = function () { return cur ? cur.m.notes.map(function (n) { return tunedC(n.midi); }) : []; };
+    w.setTune = function (id) { var t = tunes.filter(function (x) { return x.id === id; })[0]; if (t) { choose(t); return true; } return false; };
+    w.loaded = function () { return tunes.length; }; w.title2 = function () { return cur && cur.tune.title; };
+    return w;
+  }
+
+  SK.kinds.scale = Scale; SK.kinds.raga = Raga; SK.kinds.unevenfret = Unevenfret; SK.kinds.splitkeys = Splitkeys; SK.kinds.tunesong = Tunesong; SK.kinds.pitchgrid = Pitchgrid; SK.kinds.microfret = Microfret;
   global.TuningKit = { TUN: TUN, TUN_ORDER: TUN_ORDER, degrees: degrees, spell: spell, abcOf: abcOf, LAYOUTS: LAYOUTS, cf: cf };
 })(window);

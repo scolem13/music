@@ -1,0 +1,48 @@
+---
+title: "DAW"
+description: "A small DAW as a scratch pad: tracks of drums, bass, keys and guitar on the band's sounds, a piano roll and step grid, recording from the computer keys, MIDI or the microphone, a mixer, Session view and MIDI / WAV export. Kept in your browser."
+toc: true
+page-layout: full
+---
+
+```{=html}
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+.mdaw:fullscreen{margin:0;border-radius:0;overflow:auto;padding:1rem 1.2rem}
+.mdaw:fullscreen .mdaw-rollwrap{max-height:45vh}
+.daw-fsbar{display:flex;gap:.5rem;align-items:center;margin:.3rem 0 -.6rem}
+</style>
+```
+
+## Scratch pad
+
+<div class="daw-fsbar"><button type="button" class="btn btn-sm btn-outline-secondary" id="daw-fs" title="Fill the whole screen with the DAW (Esc leaves)">⛶ Full screen</button>
+<span class="mdaw-hint">Your work is kept in this browser. Save project downloads a copy; Reset clears it.</span></div>
+
+<div class="mdaw" data-id="daw-scratch" data-preset="empty" data-bars="16" data-projects data-clipboard data-zoom data-organ data-fx data-synth data-show="session transport tracks editor mixer automation band files record"></div>
+
+```{=html}
+<script>
+document.getElementById('daw-fs').onclick = function () {
+  var d = document.querySelector('.mdaw[data-id="daw-scratch"]');
+  if (document.fullscreenElement) document.exitFullscreen(); else if (d.requestFullscreen) d.requestFullscreen().then(function () { d.focus(); });
+};
+</script>
+```
+
+## How to use it
+
+- **Tracks.** Pick an instrument and press **+ Track**; **×** in a track's header deletes it. **+ Clip** makes a one-bar clip at the playhead; drag a clip to move it, its right edge to lengthen it.
+- **Notes.** Click a clip to open it below: a step grid for drums, a piano roll for the rest. **Keys** (or **R** to record) plays notes from the computer keyboard (A W S E D … ; Z / X change octave) or a MIDI keyboard.
+- **Band.** "Session players" writes drum, bass and keys parts for chords you type, as clips you can then edit.
+- **Keeping it.** **Save project** downloads a .json, **Open project** loads one; **Export MIDI** for another DAW, **Bounce to WAV** for an audio file.
+- **Projects.** The Project row at the top keeps several named projects: rename, switch, New, Duplicate, Delete. **Copy / Paste** (Ctrl/Cmd+C, X, V) put a clip at the playhead on the selected track, or selected notes into the open clip. **Zoom** − / + / Fit (Ctrl/Cmd + and −) for the arrangement and the roll.
+- **Track sound.** Under the editor, the selected track's panel: an **organ** track has nine tonebars, Leslie, swell and key click (and **Leslie → … / Swell here** put automation points at the playhead); every track has three **insert effects** (EQ, compressor, distortion, amp, chorus, phaser, delay, reverb, tremolo, rotary, filter) and sends to a shared reverb and delay; the **Synth:** instruments (subtractive, FM, wavetable, chip pulse) have the patches from the Sound design lessons. Unchecked by ear.
+- Each part is taught step by step in the DAW lessons, starting with [DAW 1](/lessons/daw-timeline.qmd).
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<script src="/apps/shared/lessons/synth-kit.js?v=1"></script>
+```
+
+{{< include ../lessons/_daw-kit.qmd >}}

@@ -35,6 +35,35 @@ const U = "http://127.0.0.1:8547";
     return new Promise(r => setTimeout(() => { const tr = [...document.querySelectorAll('#td-sheet-box tbody tr')].map(t => t.textContent.replace(/\\s+/g, ' ')); f.value = ''; f.dispatchEvent(new Event('input'));
       r([ths.includes('year') && ths.includes('print'), tr.length, tr.some(t => /1801/.test(t))].join(' | ')); }, 400)); })()`);
   check("sheet: Year and Print columns; filtering Print finds the Moonlight themes with their year", /^true \| [1-9]\d* \| true$/.test(sh), sh);
+  // sheet: the link rule, grouping, hideable columns, concepts list, no "notation and a recording" box
+  await ev(`TdSheet.ready`); await b.sleep(300);
+  const lr = await ev(`(() => { const a = [...document.querySelectorAll('#td-sheet-box tbody a[href]')].filter(a => !a.classList.contains('tds-det') && !a.classList.contains('tds-kids-t'));
+    const ext = a.filter(x => /^https?:/.test(x.getAttribute('href')) && !x.href.startsWith(location.origin)), int = a.filter(x => !ext.includes(x));
+    return [a.length > 50, ext.every(x => x.target === '_blank' && /↗/.test(x.textContent)), int.every(x => !x.target), !document.querySelector('[data-q="both"]')].join(' | '); })()`);
+  check("sheet: on-site links same tab, off-site new tab ↗; no 'notation and a recording' box", (lr === "true | true | true | true") !== NEG, lr);
+  const grp = await ev(`(() => { const g = TdSheet.groups().find(g => g.gkey === 'mozart|k550'); if (!g) return 'none';
+    const q = document.querySelector('#td-q'); const f = document.querySelector('[data-f="title"]'); f.value = 'K 550'; f.dispatchEvent(new Event('input'));
+    return new Promise(r => setTimeout(() => { const p = document.querySelector('#td-sheet-box tr.tds-parent[data-g="mozart|k550"]'); if (!p) { r('no parent row'); return; }
+      const before = document.querySelectorAll('#td-sheet-box tr.tds-child[data-g="mozart|k550"]').length; p.querySelector('.tds-kids').click();
+      const kids = [...document.querySelectorAll('#td-sheet-box tr.tds-child[data-g="mozart|k550"]')];
+      const types = [...new Set(kids.map(k => k.children[1].textContent))].sort().join('/');
+      f.value = ''; f.dispatchEvent(new Event('input'));
+      r([g.title, before, kids.length >= 10, types].join(' | ')); }, 400)); })()`);
+  check("sheet: Mozart 40's themes, pieces and scores under one Work row, folded until ▸", /^Symphony No\. 40.*K 550 \| 0 \| true \| Piece\/Score\/Theme$/.test(grp) !== NEG, grp);
+  const det = await ev(`(() => { document.querySelector('.tds-chip[data-t="Piece"]').click(); const r = document.querySelector('#td-sheet-box a.tds-det'); if (!r) return 'no piece title';
+    r.click(); const d = r.closest('tr').nextElementSibling; const ok = !!(d && d.classList.contains('tds-detail') && d.querySelector('.wk-panel, ul, p'));
+    r.click(); document.querySelector('.tds-chip[data-t=""]').click(); return String(ok); })()`);
+  check("sheet: a Piece title (no page of its own) opens its details in the sheet", det === "true", det);
+  const cols = await ev(`(() => { const x = document.querySelector('[data-col="composer"]'); x.checked = false; x.dispatchEvent(new Event('change'));
+    const th = [...document.querySelectorAll('#td-sheet-box thead th')][2]; const hid = getComputedStyle(th).display === 'none';
+    return [hid, localStorage.getItem('td-sheet-cols')].join(' | '); })()`);
+  check("sheet: a column hides and the choice is stored", /^true \| .*"composer"/.test(cols) !== NEG, cols);
+  await b.goto(U + "/practice/tune-directory.html"); await wait(`window.TdSheet && document.querySelectorAll('#td-sheet-box tbody tr').length > 50`);
+  const cols2 = await ev(`(() => { const th = [...document.querySelectorAll('#td-sheet-box thead th')][2]; const r = getComputedStyle(th).display;
+    const x = document.querySelector('[data-col="composer"]'); x.checked = true; x.dispatchEvent(new Event('change')); return [r, getComputedStyle(th).display].join(' | '); })()`);
+  check("sheet: hidden column remembered after a reload, and shows again", cols2 === "none | table-cell", cols2);
+  const co = await ev(`(() => { const o = [...document.querySelectorAll('[data-cf="concept"] option')].slice(1); return [o.length > 20, o.every(x => !/;/.test(x.textContent) && x.textContent.replace(/ \\(\\d+\\)$/, '').length <= 48), document.querySelectorAll('[data-cf="concept"] optgroup').length > 1, document.documentElement.scrollWidth <= innerWidth].join(' | '); })()`);
+  check("sheet: concepts split at ';', short labels, grouped by source; no page overflow", co === "true | true | true | true", co);
   const search = await ev(`(() => { const q = document.querySelector('#td-q'); q.value = 'autumn leaves'; q.dispatchEvent(new Event('input')); return new Promise(r => setTimeout(() => r(
     document.querySelector('#td-stat').textContent + ' | ' + [...document.querySelectorAll('.td-group')].filter(d => !d.hidden).map(d => d.querySelector('.td-gname').textContent + ':' + d.querySelector('.td-count').textContent).join(',')), 300)); })()`);
   check("search narrows and opens the groups", /^\d+ match/.test(search) && /Standards:3 of/.test(search), search);

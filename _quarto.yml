@@ -428,7 +428,6 @@ website:
             - practice/songs.qmd
             - songs/index.qmd
             - practice/tunes.qmd
-            - practice/tune-directory.qmd
             - practice/patterns.qmd
             - practice/patterns-by-ear.qmd
             - practice/sax-patterns-by-ear.qmd
@@ -468,6 +467,7 @@ website:
             - tools/accomp-styles.qmd
             - tools/drumset.qmd
             - tools/sequencers.qmd
+            - tools/daw.qmd
             - tools/arranger.qmd
             - tools/polyrhythm.qmd
         - section: "Chords and harmony"
@@ -548,17 +548,16 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - text: Course
+      - text: Lessons
         menu:
-          - course/index.qmd
-          - text: "---"
-          - course/pathway.qmd
-          - course/enrichment.qmd
-          - course/glossary.qmd
-      - href: lessons/index.qmd
-        text: Lessons
-      - href: theory/index.qmd
-        text: Theory
+          - text: "Lessons"
+            href: lessons/index.qmd
+          - text: "Theory"
+            href: theory/index.qmd
+      - href: course/glossary.qmd
+        text: Glossary
+      - href: practice/tune-directory.qmd
+        text: Tunes
       - text: Practice
         menu:
           - practice/session.qmd
@@ -568,7 +567,6 @@ website:
           - practice/songs.qmd
           - songs/index.qmd
           - practice/tunes.qmd
-          - practice/tune-directory.qmd
           - practice/patterns.qmd
           - practice/patterns-by-ear.qmd
           - practice/sax-patterns-by-ear.qmd
@@ -590,21 +588,6 @@ website:
           - practice/assessment-tune.qmd
           - practice/assessment.qmd
           - practice/assessment-rhythm.qmd
-      - text: MLT
-        menu:
-          - mlt/index.qmd
-          - text: "---"
-          - mlt/mullen.qmd
-          - mlt/dmti.qmd
-          - mlt/jri-lsa.qmd
-          - mlt/jri-sax.qmd
-          - mlt/shouldice.qmd
-          - mlt/bluestine.qmd
-          - mlt/rasmussen.qmd
-          - mlt/activities.qmd
-          - mlt/rote-song.qmd
-          - mlt/lesson-builder.qmd
-          - mlt/recordings.qmd
       - text: Tools
         menu:
           - text: "All tools"
@@ -616,6 +599,7 @@ website:
           - tools/accomp-styles.qmd
           - tools/drumset.qmd
           - tools/sequencers.qmd
+          - tools/daw.qmd
           - tools/arranger.qmd
           - tools/polyrhythm.qmd
           - text: "---"
@@ -658,15 +642,6 @@ website:
           - gear/x32-drums-dca.qmd
           - gear/using-a-mic.qmd
           - gear/modx.qmd
-      - text: Teacher
-        menu:
-          - teacher/session-builder.qmd
-          - teacher/report.qmd
-          - text: "---"
-          - teacher/lsa-directory.qmd
-          - teacher/lsa-instructions.qmd
-          - teacher/lsa-chart.qmd
-          - teacher/lsa-analysis.qmd
 
 format:
   html:

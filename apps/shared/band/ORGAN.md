@@ -120,3 +120,6 @@ It plays the same voicings as the piano, which sit around and below middle C bec
 asked for it by ear. That an organist comping beside a bass keeps the chords from about middle C up is general knowledge,
 UNVERIFIED against a source. The church organ (hymns, sung along with) is not moved.
 
+## Per-destination organ settings (2026-11-11)
+
+The tonebars, Leslie speed, swell and key click are global per instrument name (`setTonebars`, `setControl`) as the Backing Track uses them. The DAW scratch pad (`apps/shared/daw/track-sound.js`) gives each organ TRACK its own through `bank.setDest(destNode, { bars, leslie, swell, click })`: a note played into that node reads the destination's settings first, so two organ tracks can differ; `bank.control(name, control, value, when, glide, destNode)` and `bank.prepare(name, destNode)` work on one destination. The Backing Track never calls setDest, so it behaves as before. The DAW's tonebar presets (Full 888888888, Foundation 008000000, Flutey 005300000, Bright 008060406, Mellow 006400000) are this site's, not registrations from a source, and nothing was listened to.

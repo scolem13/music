@@ -245,8 +245,20 @@ def block(page):
 
 START, END = "<!-- works-cited", "<!-- /works-cited -->"
 pages = sorted({p for s in SOURCES for p in s["pages"]})
+# pages whose sources are the data they show (the tune collection), not their text: no Works Cited block there (any old one is
+# taken out); bibliography.qmd still lists them under "Used in"
+NO_BLOCK = {"practice/tunes.qmd", "practice/assessment-tune.qmd"}
 for page in pages:
-    f = ROOT / page; t = f.read_text(); b = block(page)
+    f = ROOT / page; t = f.read_text()
+    if page in NO_BLOCK:
+        if START in t:
+            a, z = t.index(START), t.index(END) + len(END)
+            h = t.rfind("## Works Cited", 0, a)
+            if h >= 0 and not t[h:a].strip("# Works Cited\n").strip(): a = h
+            t = t[:a].rstrip() + "\n" + t[z:].lstrip("\n")
+            f.write_text(t)
+        continue
+    b = block(page)
     if START in t:
         t = t[:t.index(START)] + b + t[t.index(END) + len(END):]
     else:

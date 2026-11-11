@@ -38,7 +38,9 @@
 //               follows; a gauge in cents and a trace in time show the target (bend, bend and release, pre-bend, vibrato);
 //               the microphone draws your own pitch over it; a MIDI wheel can drive the bend. data-set keys: ex (4to5 b7to1 5tob7
 //               curl b5to5 4tob5), shape (bend bendrelease prebend vibrato), vol.
-// Optional attributes: data-title, data-source (an effect's starting source), data-set="key=value,key=value"
+// HEADLESS: SynthKit.fx(kind, ctx, params) and SynthKit.voice(kind, ctx, params, out) build the effects and synth voices below on any AudioContext (the DAW's
+// inserts and synth tracks, offline bounces); the widgets use the same builders. Tables: SynthKit.FX / SynthKit.SYN (see the "effects engine" comment).
+// Optional attributes: data-title,// Optional attributes: data-title, data-source (an effect's starting source), data-set="key=value,key=value"
 // (starting control values), data-preset (a preset's name).
 // One widget sounds at a time. A bar fixed at the foot of the page has the volume, the computer keyboard
 // (a w s e d f t g y h u j k: one octave from C; z and x move the octave), an on-screen keyboard, MIDI and the
@@ -100,19 +102,21 @@
       setWidth: function (x, t) { w = x; dl.delayTime.setTargetAtTime(w / saw.frequency.value, t || c.currentTime, 0.01); },
       setFreq: function (x, t) { saw.frequency.setValueAtTime(x, t || c.currentTime); dl.delayTime.setValueAtTime(w / x, t || c.currentTime); } };
   }
-  var bufs = {};
-  function noiseBuf(kind) {
-    var c = ac(); if (bufs[kind]) return bufs[kind];
+  var bufs = typeof WeakMap === "function" ? new WeakMap() : null;       // context -> { kind: buffer } (a buffer is made for each context, never shared by accident)
+  function noiseBufFor(c, kind) {
+    var cache = bufs && bufs.get(c); if (!cache) { cache = {}; if (bufs) bufs.set(c, cache); } if (cache[kind]) return cache[kind]; var rnd = FXV.prng(kind === "pink" ? 2 : kind === "brown" ? 3 : 1);
     var n = c.sampleRate * 3, b = c.createBuffer(1, n, c.sampleRate), d = b.getChannelData(0), b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0, last = 0;
     for (var i = 0; i < n; i++) {
-      var w = Math.random() * 2 - 1;
+      var w = rnd() * 2 - 1;
       if (kind === "pink") { b0 = .99886 * b0 + w * .0555179; b1 = .99332 * b1 + w * .0750759; b2 = .969 * b2 + w * .153852; b3 = .8665 * b3 + w * .3104856; b4 = .55 * b4 + w * .5329522; b5 = -.7616 * b5 - w * .016898; d[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + w * .5362) * .1; b6 = w * .115926; }
       else if (kind === "brown") { last = (last + .02 * w) / 1.02; d[i] = last * 3.2; }
       else d[i] = w * .4;
     }
-    return (bufs[kind] = b);
+    return (cache[kind] = b);
   }
-  function noiseSrc(kind) { var s = ac().createBufferSource(); s.buffer = noiseBuf(kind || "white"); s.loop = true; s.loopStart = Math.random(); return s; }
+  function noiseBuf(kind) { return noiseBufFor(ac(), kind); }
+  function noiseSrcFor(c, kind, rnd) { var s = c.createBufferSource(); s.buffer = noiseBufFor(c, kind || "white"); s.loop = true; s.loopStart = (rnd || Math.random)(); return s; }
+  function noiseSrc(kind) { return noiseSrcFor(ac(), kind); }
 
   // ---------- one-shot sounds the sources are made of ----------
   function kick(c, out, t, v) { var o = c.createOscillator(), g = c.createGain(); o.frequency.setValueAtTime(150, t); o.frequency.exponentialRampToValueAtTime(45, t + .12); g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(.001, t + .42); o.connect(g); g.connect(out); o.start(t); o.stop(t + .45); }
@@ -987,15 +991,295 @@
     return w;
   }
 
+  // ======================================================================================
+  // The effects engine, headless: SynthKit.fx(kind, c, params, opts) builds one effect's sound graph on ANY AudioContext (a live one, or an
+  // OfflineAudioContext for a bounce) and returns { input, output, set(params), stop(), P, n, t0 }. The lesson widgets below are built on the same
+  // builders (nothing in a builder touches ac(), the DOM or Math.random: the room's impulse response uses a seeded generator), so a DAW track
+  // and a lesson widget with the same settings make the same sound. Settings are plain JSON { key: number | string }, listed with their limits
+  // in SynthKit.FX[kind].params ([{ key, label, min, max, step | log, value, fmt }] or [{ key, label, pick: [[value, label]], value }]).
+  // set(partialParams) changes only what differs; a few keys (chorus voices, phaser stages and rate, delay ping-pong, tremolo target) rebuild the
+  // inner graph behind the same input / output. Kinds: eq compressor distortion amp chorus phaser delay reverb tremolo rotary filter. NOT here:
+  // the microphone and pitch effects (autotune, harmonizer, vocoder, tuner, octaver), which need a live input or a pitch tracker, and the
+  // lesson-only ones (glitch, gate, sidechain, transient, stereo, shimmer, chain). Unchecked by ear in the DAW (2026-11-11).
+  // ======================================================================================
+  function dn(key, label, min, max, o, value, fmt) { var d = { key: key, label: label, min: min, max: max, value: value, fmt: fmt }; if (o === "log") d.log = true; else d.step = o; return d; }
+  function dp(key, label, opts, value) { return { key: key, label: label, pick: opts, value: value }; }
+  var FXV = {
+    prng: function (seed) { var a = seed >>> 0; return function () { a = (a + 0x6D2B79F5) >>> 0; var t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+  };
+  var xTimes = function (v) { return "×" + v.toFixed(1); };
+  var FX = {
+    filter: { label: "Filter", params: [
+      dp("type", "Type", [["lowpass", "Low-pass"], ["highpass", "High-pass"], ["bandpass", "Band-pass"], ["notch", "Notch"], ["peaking", "Peak (bell)"], ["lowshelf", "Low shelf"], ["highshelf", "High shelf"]], "lowpass"),
+      dn("cutoff", "Cutoff", 30, 18000, "log", 1000, fmtHz), dn("q", "Resonance (Q)", .3, 30, "log", .7, fmtN(1)),
+      dn("gain", "Boost/cut (peak, shelf)", -24, 24, .5, 12, fmtDb), dp("slope", "Slope", [["1", "12 dB per octave"], ["2", "24 dB per octave"]], "1")] },
+    distortion: { label: "Distortion", params: [
+      dp("shape", "Curve", [["soft", "Soft clip (overdrive)"], ["hard", "Hard clip (distortion)"], ["fuzz", "Fuzz (lopsided, gated)"], ["asym", "Uneven (tube-like)"], ["fold", "Wavefolder"], ["crush", "Bit crusher"]], "soft"),
+      dn("drive", "Drive", 1, 60, "log", 4, xTimes), dn("low", "Low cut (before)", 20, 1200, "log", 20, fmtHz), dn("tone", "Tone (low-pass after)", 500, 16000, "log", 8000, fmtHz),
+      dn("level", "Output level", 0, 1.5, .01, .6, fmtPct)] },
+    compressor: { label: "Compressor", params: [
+      dn("thr", "Threshold", -60, 0, .5, -24, fmtDb), dn("ratio", "Ratio", 1, 20, .1, 4, function (v) { return v.toFixed(1) + " : 1"; }), dn("knee", "Knee", 0, 30, .5, 6, fmtDb),
+      dn("att", "Attack", .001, .5, "log", .01, fmtS), dn("rel", "Release", .02, 1, "log", .2, fmtS), dn("makeup", "Make-up gain", 0, 24, .5, 6, fmtDb)] },
+    chorus: { label: "Chorus / flanger", params: [
+      dn("voices", "Voices", 1, 3, 1, 2, fmtN(0)), dn("base", "Delay", .5, 40, .1, 18, fmtMs), dn("depth", "Depth (delay swing)", 0, 10, .1, 4, function (v) { return "± " + v.toFixed(1) + " ms"; }),
+      dn("rate", "Rate", .05, 8, "log", .8, fmtHz), dn("fb", "Feedback", 0, .9, .01, 0, fmtPct)] },
+    phaser: { label: "Phaser", params: [
+      dn("stages", "Stages", 2, 12, 2, 4, fmtN(0)), dn("base", "Centre", 100, 4000, "log", 700, fmtHz), dn("depth", "Sweep", 0, 3, .05, 1.5, function (v) { return "± " + v.toFixed(2) + " oct"; }),
+      dn("rate", "Rate", .02, 6, "log", .3, fmtHz), dn("q", "Width (Q)", .2, 4, .05, .7, fmtN(2)), dn("fb", "Feedback", 0, .85, .01, .3, fmtPct)] },
+    delay: { label: "Delay", params: [
+      dn("time", "Delay time", 20, 1500, "log", 360, function (v) { return Math.round(v) + " ms"; }), dn("fb", "Feedback (repeats)", 0, 1.1, .01, .35, fmtPct),
+      dn("tone", "Tone of the repeats", 600, 16000, "log", 6000, fmtHz), dn("wow", "Wow and flutter (tape)", 0, 1, .01, 0, fmtPct), dp("pp", "Ping-pong (left, right)", [["0", "No"], ["1", "Yes"]], "0")] },
+    eq: { label: "Equaliser", params: [
+      dn("hpF", "High-pass (low cut)", 20, 1000, "log", 20, fmtHz), dn("lsF", "Low shelf frequency", 40, 500, "log", 120, fmtHz), dn("lsG", "Low shelf gain", -15, 15, .5, 0, fmtDb),
+      dn("p1F", "Bell 1 frequency", 60, 8000, "log", 400, fmtHz), dn("p1G", "Bell 1 gain", -15, 15, .5, 0, fmtDb), dn("p1Q", "Bell 1 width (Q)", .3, 12, "log", 1, fmtN(1)),
+      dn("p2F", "Bell 2 frequency", 200, 12000, "log", 2500, fmtHz), dn("p2G", "Bell 2 gain", -15, 15, .5, 0, fmtDb), dn("p2Q", "Bell 2 width (Q)", .3, 12, "log", 1, fmtN(1)),
+      dn("hsF", "High shelf frequency", 2000, 16000, "log", 8000, fmtHz), dn("hsG", "High shelf gain", -15, 15, .5, 0, fmtDb), dn("lpF", "Low-pass (high cut)", 1000, 20000, "log", 20000, fmtHz)] },
+    reverb: { label: "Reverb", params: [
+      dp("type", "Kind", [["room", "Room (noise)"], ["spring", "Spring"]], "room"), dn("decay", "Decay time (RT60)", .1, 10, "log", 2, fmtS), dn("pre", "Pre-delay", 0, 200, 1, 20, fmtMs),
+      dn("damp", "Damping (highs fade)", 800, 16000, "log", 6000, fmtHz), dn("early", "Early reflections", 0, 1, .01, .4, fmtPct), dn("size", "Room size", .1, 1, .01, .7, fmtPct),
+      dp("reverse", "Play the echo backwards", [["0", "No"], ["1", "Yes"]], "0")] },
+    tremolo: { label: "Tremolo / auto-pan", params: [
+      dp("what", "The LFO moves", [["amp", "Volume (tremolo)"], ["pan", "Left ↔ right (auto-pan)"]], "amp"), dp("shape", "Shape", [["sine", "Sine"], ["triangle", "Triangle"], ["square", "Square"]], "triangle"),
+      dn("rate", "Rate", .1, 15, "log", 6, fmtHz), dn("depth", "Depth", 0, 1, .01, .6, fmtPct)] },
+    rotary: { label: "Rotary speaker", params: [
+      dp("speed", "Speed", [["slow", "Slow (chorale)"], ["fast", "Fast (tremolo)"], ["stop", "Stopped"]], "slow"), dn("hornAcc", "Horn speeds up in", .2, 3, .1, .8, fmtS),
+      dn("drumAcc", "Drum speeds up in", 1, 10, .1, 5, fmtS), dn("xover", "Crossover", 300, 2000, "log", 800, fmtHz), dn("drive", "Amp drive", 1, 8, .1, 1.5, xTimes)] },
+    amp: { label: "Amp and cabinet", params: [
+      dp("type", "Amp", [["guitar", "Guitar amp"], ["bass", "Bass amp"]], "guitar"), dp("design", "Volume knobs", [["master", "Gain + Master"], ["vintage", "Vintage: one Volume, no master"]], "master"),
+      dp("cab", "Cabinet", null, "1x12o"), dn("gain", "Gain", 0, 10, .1, 3, knob), dn("bass", "Bass", 0, 10, .1, 5, knob), dn("mid", "Middle", 0, 10, .1, 5, knob),
+      dn("midf", "Mid frequency", 200, 3000, "log", 700, function (v) { return fmtHz(v < 1000 ? Math.round(v / 10) * 10 : Math.round(v / 50) * 50); }), dn("treble", "Treble", 0, 10, .1, 5, knob),
+      dn("master", "Master", 0, 10, .1, 3, knob), dn("presence", "Presence", 0, 10, .1, 5, knob), dn("resonance", "Resonance", 0, 10, .1, 5, knob)] }
+  };
+  function fxDesc(kind, key) { var ps = FX[kind].params; for (var i = 0; i < ps.length; i++) if (ps[i].key === key) return ps[i]; return null; }
+  // the amp's cabinet menu comes from CABS, which is defined further down
+  function fxInit() { var d = fxDesc("amp", "cab"); if (d && !d.pick) d.pick = Object.keys(CABS).map(function (k) { return [k, CABS[k][0]]; }); }
+  // the defaults of a kind as plain JSON, and a settings object made valid (unknown keys dropped, numbers clamped, picks checked)
+  function fxDefaults(kind) { fxInit(); var o = {}; FX[kind].params.forEach(function (d) { o[d.key] = d.value; }); return o; }
+  function fxClean(kind, p) {
+    fxInit(); var o = fxDefaults(kind); p = p || {};
+    FX[kind].params.forEach(function (d) { if (p[d.key] == null) return; var v = p[d.key];
+      if (d.pick) { v = String(v); if (d.pick.some(function (x) { return x[0] === v; })) o[d.key] = v; }
+      else { v = +v; if (isFinite(v)) o[d.key] = Math.max(d.min, Math.min(d.max, v)); } });
+    return o;
+  }
+  // a control in a lesson widget from the same table (so the widget and a DAW slot agree on labels, limits and defaults)
+  function fxNum(w, kind, key, box) { var d = fxDesc(kind, key), o = {}; for (var k in d) o[k] = d[k]; return w.num(key, o, box); }
+  function fxPick(w, kind, key, box, extra) { fxInit(); var d = fxDesc(kind, key); return w.pick(key, d.label, d.pick, d.value, box, extra); }
+
+  function distFn(P) { var d = P.drive, s = P.shape;
+    return function (x) {
+      if (s === "soft") return Math.tanh(d * x);
+      if (s === "hard") return Math.max(-.6, Math.min(.6, d * x)) / .6;
+      // a fuzz's transistors clip one side much sooner than the other, and quiet signals fall into a dead zone (the sputter)
+      if (s === "fuzz") { var u = d * x, gte = .02 * d; u = Math.abs(u) < gte ? 0 : u - (u > 0 ? gte : -gte); return u > 0 ? Math.min(1, u) : Math.max(-.45, u * .7); }
+      if (s === "asym") return Math.tanh(d * x + .5) - Math.tanh(.5);
+      if (s === "fold") return Math.sin(d * x * Math.PI / 2);
+      var lv = Math.max(1, Math.round(64 / d)); return Math.round(x * lv) / lv; };
+  }
+  function distCurve(P) { var fn = distFn(P), n = 2049, a = new Float32Array(n); for (var i = 0; i < n; i++) a[i] = fn(i / (n - 1) * 2 - 1); return a; }
+  var EQB = [["hp", "highpass"], ["ls", "lowshelf"], ["p1", "peaking"], ["p2", "peaking"], ["hs", "highshelf"], ["lp", "lowpass"]];
+  function eqSet(f, k, P) { if (k === "hp") { f.frequency.value = P.hpF; f.Q.value = .7071; } else if (k === "lp") { f.frequency.value = P.lpF; f.Q.value = .7071; } else { f.frequency.value = P[k + "F"]; f.gain.value = P[k + "G"]; if (P[k + "Q"]) f.Q.value = P[k + "Q"]; } }
+  // the room's impulse response (seeded, so a bounce of the same settings is the same every time)
+  function reverbIR(c, P, seed) {
+    var rnd = FXV.prng(seed || 1), sr = c.sampleRate, len = Math.ceil(sr * Math.min(10, P.decay * 1.2 + .05)), b = c.createBuffer(2, len, sr), k = 6.91 / P.decay;
+    // a spring: the wave runs to the end of the coil and back again and again (Room size sets the trip time). The coil
+    // carries low frequencies faster than high ones, so each trip arrives as a falling chirp: the "drip" and the "boing".
+    if (P.type === "spring") for (var sc = 0; sc < 2; sc++) {
+      var ds = b.getChannelData(sc), trip = .025 + .06 * P.size * (sc ? 1.07 : 1), cl = Math.floor(sr * trip), fl = 0, fa = Math.exp(-2 * Math.PI * P.damp / sr);
+      for (var r = 0; r * cl < len; r++) {
+        var ph = 0, at0 = r * cl, spread = Math.min(cl * 2.5, (r + 1) * .012 * sr);   // each trip smears the chirp out a bit more
+        for (var q0 = 0; q0 < spread && at0 + q0 < len; q0++) { var x0 = q0 / spread, f = 4200 * Math.pow(1 - x0, 2) + 180; ph += 2 * Math.PI * f / sr;
+          ds[at0 + q0] += Math.sin(ph) * Math.sin(Math.PI * x0) * (r % 2 ? -.8 : 1); }
+      }
+      for (var i2 = 0; i2 < len; i2++) { fl = fl * fa + (ds[i2] + (rnd() * 2 - 1) * .08) * (1 - fa); ds[i2] = fl * Math.exp(-k * i2 / sr); }
+      if (P.reverse === "1") Array.prototype.reverse.call(ds);
+    }
+    else for (var ch = 0; ch < 2; ch++) {
+      var d = b.getChannelData(ch), lp = 0;
+      // noise that dies away, through a low-pass that closes as it goes: the highs fade first, as in a real room
+      for (var i = 0; i < len; i++) { var t = i / sr, fc = P.damp + (18000 - P.damp) * Math.exp(-4 * t / P.decay), a = Math.exp(-2 * Math.PI * fc / sr);
+        lp = lp * a + (rnd() * 2 - 1) * (1 - a); d[i] = lp * Math.exp(-k * t) * Math.min(1, t / (.002 + .03 * P.size)); }
+      if (P.early > 0) for (var j = 0; j < 8; j++) { var at = Math.floor(sr * (.004 + rnd() * .07 * P.size)); if (at < len) d[at] += (rnd() < .5 ? -1 : 1) * P.early * (1 - j / 10) * .8; }
+      if (P.reverse === "1") Array.prototype.reverse.call(d);
+    }
+    // normalise so long and short rooms are about as loud
+    var sum = 0; for (var c2 = 0; c2 < 2; c2++) { var dd = b.getChannelData(c2); for (var q = 0; q < len; q++) sum += dd[q] * dd[q]; }
+    var g = 1 / Math.sqrt(sum / 2 + 1e-9) * 2.4; for (var c3 = 0; c3 < 2; c3++) { var d3 = b.getChannelData(c3); for (var q2 = 0; q2 < len; q2++) d3[q2] *= g; }
+    return b;
+  }
+  function satCurve(c) { var sh = c.createWaveShaper(), n = 1025, a = new Float32Array(n); for (var i = 0; i < n; i++) a[i] = Math.tanh((i / (n - 1) * 2 - 1) * 1.5) / Math.tanh(1.5); sh.curve = a; return sh; }
+  function ch(P, prev, k) { return P[k] !== prev[k]; }
+
+  // each builder: make(c, P, o) -> { input, output, n (the parts, for the widgets' drawings), t0?, update(P, prev), stop? }
+  var FXB = {
+    filter: function (c, P) {
+      var f = [c.createBiquadFilter(), c.createBiquadFilter()], inp = c.createGain(), out = c.createGain(), cur = P;
+      f.forEach(function (x) { x.type = P.type; x.frequency.value = P.cutoff; x.Q.value = P.q; x.gain.value = P.gain; });
+      inp.connect(f[0]);
+      function route() { try { f[0].disconnect(); f[1].disconnect(); } catch (e) {} if (cur.slope === "2") { f[0].connect(f[1]); f[1].connect(out); f[1].Q.value = .7071; } else f[0].connect(out); }
+      route();
+      return { input: inp, output: out, n: { f: f, route: route }, update: function (P, prev) { cur = P; var t = c.currentTime;
+        if (ch(P, prev, "type")) f.forEach(function (x) { x.type = P.type; });
+        if (ch(P, prev, "cutoff")) f.forEach(function (x) { x.frequency.setTargetAtTime(P.cutoff, t, .01); });
+        if (ch(P, prev, "q")) f[0].Q.setTargetAtTime(P.q, t, .01);
+        if (ch(P, prev, "gain")) f.forEach(function (x) { x.gain.setTargetAtTime(P.gain, t, .01); });
+        if (ch(P, prev, "slope")) route(); } };
+    },
+    distortion: function (c, P) {
+      var sh = c.createWaveShaper(), hp = c.createBiquadFilter(), lp = c.createBiquadFilter(), lv = c.createGain(), inp = c.createGain(); sh.curve = distCurve(P); sh.oversample = "4x"; lp.frequency.value = P.tone; lv.gain.value = P.level;
+      hp.type = "highpass"; hp.frequency.value = P.low; hp.Q.value = .5; inp.connect(hp); hp.connect(sh); sh.connect(lp); lp.connect(lv);
+      return { input: inp, output: lv, n: { sh: sh, hp: hp, lp: lp, lv: lv }, update: function (P, prev) { var t = c.currentTime;
+        if (ch(P, prev, "shape") || ch(P, prev, "drive")) sh.curve = distCurve(P);
+        if (ch(P, prev, "tone")) lp.frequency.setTargetAtTime(P.tone, t, .01); if (ch(P, prev, "low")) hp.frequency.setTargetAtTime(P.low, t, .01); if (ch(P, prev, "level")) lv.gain.setTargetAtTime(P.level, t, .01); } };
+    },
+    compressor: function (c, P, o) {
+      var inp = c.createGain(), comp = c.createDynamicsCompressor(), mk = c.createGain(), n = { comp: comp, mk: mk };
+      comp.threshold.value = P.thr; comp.ratio.value = P.ratio; comp.knee.value = P.knee; comp.attack.value = P.att; comp.release.value = P.rel; mk.gain.value = Math.pow(10, P.makeup / 20);
+      inp.connect(comp); comp.connect(mk);
+      if (o.viz) { n.ai = c.createAnalyser(); n.ao = c.createAnalyser(); n.ai.fftSize = n.ao.fftSize = 1024; inp.connect(n.ai); mk.connect(n.ao); }     // (the widget's meters)
+      return { input: inp, output: mk, n: n, update: function (P, prev) { var t = c.currentTime;
+        [["thr", comp.threshold], ["ratio", comp.ratio], ["knee", comp.knee], ["att", comp.attack], ["rel", comp.release]].forEach(function (x) { if (ch(P, prev, x[0])) x[1].setValueAtTime(P[x[0]], t); });
+        if (ch(P, prev, "makeup")) mk.gain.setTargetAtTime(Math.pow(10, P.makeup / 20), t, .01); } };
+    },
+    chorus: function (c, P) {
+      var t0 = c.currentTime, inp = c.createGain(), out = c.createGain(), lfos = [c.createOscillator(), c.createOscillator()], vs = [];
+      lfos[0].frequency.value = P.rate; lfos[1].frequency.value = P.rate * 1.13; lfos.forEach(function (o) { o.start(t0); });
+      for (var i = 0; i < P.voices; i++) {
+        var d = c.createDelay(.1), g = c.createGain(), fb = c.createGain(), pan = c.createStereoPanner(), sw = Math.min(P.depth, P.base - .2) / 1000;
+        d.delayTime.value = P.base / 1000; g.gain.value = (i === 1 ? -1 : 1) * sw; (i === 2 ? lfos[1] : lfos[0]).connect(g); g.connect(d.delayTime);
+        fb.gain.value = P.fb; d.connect(fb); fb.connect(d); pan.pan.value = P.voices === 1 ? 0 : [-.7, .7, 0][i];
+        inp.connect(d); d.connect(pan); pan.connect(out); vs.push({ d: d, g: g, fb: fb, i: i });
+      }
+      out.gain.value = 1 / Math.sqrt(P.voices);
+      return { input: inp, output: out, t0: t0, n: { lfos: lfos, vs: vs }, stop: function () { lfos.forEach(function (o) { try { o.stop(); } catch (e) {} }); }, update: function (P, prev) { var t = c.currentTime;
+        if (ch(P, prev, "rate")) { lfos[0].frequency.setTargetAtTime(P.rate, t, .02); lfos[1].frequency.setTargetAtTime(P.rate * 1.13, t, .02); }
+        vs.forEach(function (x) { var sw = Math.min(P.depth, P.base - .2) / 1000;
+          if (ch(P, prev, "base")) x.d.delayTime.setTargetAtTime(P.base / 1000, t, .02);
+          if (ch(P, prev, "base") || ch(P, prev, "depth")) x.g.gain.setTargetAtTime((x.i === 1 ? -1 : 1) * sw, t, .02);
+          if (ch(P, prev, "fb")) x.fb.gain.setTargetAtTime(P.fb, t, .02); }); } };
+    },
+    phaser: function (c, P) {
+      var t0 = c.currentTime, inp = c.createGain(), sum = c.createGain(), out = c.createGain(), fb = c.createGain(), loopD = c.createDelay(.01);
+      var lfo = c.createOscillator(), lg = c.createGain(); lfo.frequency.value = P.rate; lg.gain.value = P.depth * 1200; lfo.connect(lg); lfo.start(t0);
+      inp.connect(sum); var prev = sum, aps = [];
+      for (var i = 0; i < P.stages; i++) { var ap = c.createBiquadFilter(); ap.type = "allpass"; ap.frequency.value = P.base; ap.Q.value = P.q; lg.connect(ap.detune); prev.connect(ap); prev = ap; aps.push(ap); }
+      prev.connect(out); prev.connect(fb); fb.gain.value = P.fb; loopD.delayTime.value = 0; fb.connect(loopD); loopD.connect(sum);
+      return { input: inp, output: out, t0: t0, n: { aps: aps, lfo: lfo, lg: lg, fb: fb }, stop: function () { try { lfo.stop(); } catch (e) {} }, update: function (P, prev) { var t = c.currentTime;
+        if (ch(P, prev, "base")) aps.forEach(function (a) { a.frequency.setTargetAtTime(P.base, t, .01); });
+        if (ch(P, prev, "q")) aps.forEach(function (a) { a.Q.setTargetAtTime(P.q, t, .01); });
+        if (ch(P, prev, "depth")) lg.gain.setTargetAtTime(P.depth * 1200, t, .01);
+        if (ch(P, prev, "fb")) fb.gain.setTargetAtTime(P.fb, t, .01); } };
+    },
+    delay: function (c, P) {
+      var inp = c.createGain(), out = c.createGain(), lfo = c.createOscillator(), flut = c.createOscillator(), lg = c.createGain(), fg = c.createGain(), lines = [];
+      lfo.frequency.value = .6; flut.frequency.value = 7; lfo.connect(lg); flut.connect(fg); lfo.start(); flut.start();
+      for (var i = 0; i < (P.pp === "1" ? 2 : 1); i++) {
+        var d = c.createDelay(2), lp = c.createBiquadFilter(), fb = c.createGain(), pan = c.createStereoPanner();
+        d.delayTime.value = P.time / 1000; lp.frequency.value = P.tone; fb.gain.value = P.fb; pan.pan.value = P.pp === "1" ? (i ? .8 : -.8) : 0;
+        lg.connect(d.delayTime); fg.connect(d.delayTime); d.connect(lp); lp.connect(pan); pan.connect(out); var s1 = satCurve(c); lp.connect(s1); s1.connect(fb);
+        lines.push({ d: d, lp: lp, fb: fb });
+      }
+      inp.connect(lines[0].d);
+      if (lines.length === 2) { lines[0].fb.connect(lines[1].d); lines[1].fb.connect(lines[0].d); } else lines[0].fb.connect(lines[0].d);
+      function wow(P, t) { lg.gain.setTargetAtTime(P.wow * .004, t, .05); fg.gain.setTargetAtTime(P.wow * .0004, t, .05); }
+      wow(P, c.currentTime);
+      return { input: inp, output: out, n: { lines: lines, lg: lg, fg: fg }, stop: function () { try { lfo.stop(); flut.stop(); } catch (e) {} }, update: function (P, prev) { var t = c.currentTime;
+        if (ch(P, prev, "wow")) wow(P, t);
+        lines.forEach(function (x) {
+          if (ch(P, prev, "time")) x.d.delayTime.setTargetAtTime(P.time / 1000, t, .08);   // a slow glide: the pitch bends as the tape speeds up
+          if (ch(P, prev, "fb")) x.fb.gain.setTargetAtTime(P.fb, t, .02);
+          if (ch(P, prev, "tone")) x.lp.frequency.setTargetAtTime(P.tone, t, .02); }); } };
+    },
+    eq: function (c, P, o) {
+      var inp = c.createGain(), prev = inp, fs = {};
+      if (o.hidden) { var h = c.createBiquadFilter(); h.type = "peaking"; h.frequency.value = o.hidden.f; h.Q.value = o.hidden.q; h.gain.value = o.hidden.g; inp.connect(h); prev = h; }     // (the lesson's hidden problem)
+      EQB.forEach(function (b) { var f = c.createBiquadFilter(); f.type = b[1]; eqSet(f, b[0], P); prev.connect(f); prev = f; fs[b[0]] = f; });
+      return { input: inp, output: prev, n: fs, update: function (P, prev) { var t = c.currentTime;
+        Object.keys(P).forEach(function (k) { if (!ch(P, prev, k) || !/^(hp|lp|ls|hs|p1|p2)[FGQ]$/.test(k)) return; var f = fs[k.slice(0, 2)], x = k.slice(2), v = P[k];
+          if (x === "F") f.frequency.setTargetAtTime(v, t, .01); else if (x === "G") f.gain.setTargetAtTime(v, t, .01); else if (x === "Q") f.Q.setTargetAtTime(v, t, .01); }); } };
+    },
+    reverb: function (c, P) {
+      var inp = c.createGain(), pd = c.createDelay(1), conv = c.createConvolver(), ir = reverbIR(c, P); conv.buffer = ir; pd.delayTime.value = P.pre / 1000; inp.connect(pd); pd.connect(conv);
+      var n = { conv: conv, pd: pd, ir: ir };
+      return { input: inp, output: conv, n: n, update: function (P, prev) {
+        if (["type", "decay", "damp", "early", "size", "reverse"].some(function (k) { return ch(P, prev, k); })) { n.ir = reverbIR(c, P); conv.buffer = n.ir; }
+        if (ch(P, prev, "pre")) pd.delayTime.value = P.pre / 1000; } };
+    },
+    tremolo: function (c, P) {
+      var inp = c.createGain(), amp = c.createGain(), pan = c.createStereoPanner(), lfo = c.createOscillator(), lg = c.createGain();
+      lfo.type = P.shape; lfo.frequency.value = P.rate; lfo.connect(lg); lfo.start(); inp.connect(amp); amp.connect(pan);
+      function set(P) { var t = c.currentTime, dd = P.depth; if (P.what === "amp") { amp.gain.setTargetAtTime(1 - dd / 2, t, .01); lg.gain.setTargetAtTime(dd / 2, t, .01); } else lg.gain.setTargetAtTime(dd, t, .01); }
+      lg.connect(P.what === "amp" ? amp.gain : pan.pan); set(P);
+      return { input: inp, output: pan, n: { lfo: lfo, set: function () { set(P); } }, stop: function () { try { lfo.stop(); } catch (e) {} }, update: function (P, prev) {
+        if (ch(P, prev, "shape")) lfo.type = P.shape; if (ch(P, prev, "rate")) lfo.frequency.setTargetAtTime(P.rate, c.currentTime, .01); if (ch(P, prev, "depth")) set(P); } };
+    },
+    rotary: function (c, P) {
+      var inp = c.createGain(), pre = shaper(c, function (x) { return Math.tanh(x * P.drive) / Math.tanh(P.drive); }), out = c.createGain(), n = { pre: pre, xs: [] };
+      inp.connect(pre);
+      [["h", "highpass", .00035, .5, .9], ["d", "lowpass", .0001, .35, .8]].forEach(function (r) {
+        var x = c.createBiquadFilter(); x.type = r[1]; x.frequency.value = P.xover; n.xs.push(x); pre.connect(x);
+        var spin = c.createOscillator(); spin.frequency.value = ROT[P.speed][r[0] === "h" ? 0 : 1]; spin.start(); n[r[0]] = spin.frequency; n[r[0] + "o"] = spin;
+        var dl = c.createDelay(.01), dg = c.createGain(), amp = c.createGain(), ag = c.createGain(), pan = c.createStereoPanner(), pg = c.createGain();
+        dl.delayTime.value = .002; dg.gain.value = r[2]; spin.connect(dg); dg.connect(dl.delayTime);
+        amp.gain.value = 1 - r[3] / 2; ag.gain.value = r[3] / 2; spin.connect(ag); ag.connect(amp.gain);   // loudest facing you
+        pg.gain.value = r[4]; spin.connect(pg); pg.connect(pan.pan);
+        x.connect(dl); dl.connect(amp); amp.connect(pan); pan.connect(out);
+      });
+      return { input: inp, output: out, n: n, stop: function () { try { n.ho.stop(); n.do.stop(); } catch (e) {} }, update: function (P, prev) { var t = c.currentTime;
+        if (ch(P, prev, "speed")) { n.h.setTargetAtTime(ROT[P.speed][0], t, P.hornAcc / 3); n.d.setTargetAtTime(ROT[P.speed][1], t, P.drumAcc / 3); }
+        if (ch(P, prev, "xover")) n.xs.forEach(function (x) { x.frequency.setTargetAtTime(P.xover, t, .01); });
+        if (ch(P, prev, "drive")) pre.curve = shaper(c, function (x) { return Math.tanh(x * P.drive) / Math.tanh(P.drive); }).curve; } };
+    },
+    amp: function (c, P) {
+      var inp = c.createGain(), tight = c.createBiquadFilter(), gain = c.createGain(), pre = c.createWaveShaper(), preOut = c.createGain(),
+          bass = c.createBiquadFilter(), mid = c.createBiquadFilter(), tre = c.createBiquadFilter(), master = c.createGain(), power = c.createWaveShaper(),
+          pres = c.createBiquadFilter(), reso = c.createBiquadFilter(), out = c.createGain(), cab = [0, 1, 2, 3, 4, 5].map(function () { return c.createBiquadFilter(); });
+      tight.type = "highpass"; tight.frequency.value = 90;
+      pre.curve = curve(function (x) { return (Math.tanh(1.2 * x + .25) - Math.tanh(.25)) / 1.1; }); pre.oversample = "4x";   // uneven, like a valve
+      preOut.gain.value = .7;
+      bass.type = "lowshelf"; mid.type = "peaking"; mid.Q.value = .7; tre.type = "highshelf";
+      power.curve = curve(function (x) { return Math.tanh(x * 1.3) / Math.tanh(1.3); }); power.oversample = "4x";
+      pres.type = "peaking"; pres.frequency.value = 3800; pres.Q.value = .6; reso.type = "peaking"; reso.frequency.value = 90; reso.Q.value = 1;
+      out.gain.value = .9;
+      [inp, tight, gain, pre, preOut, bass, mid, tre, master, power, pres, reso].concat(cab, [out]).reduce(function (a, b) { a.connect(b); return b; });
+      var n = { tight: tight, gain: gain, bass: bass, mid: mid, tre: tre, master: master, pres: pres, reso: reso, cab: cab };
+      function setCab(P, t) { var spec = CABS[P.cab][1];
+        cab.forEach(function (f, i) { var x = spec[i] || ["peaking", 1000, 1, 0]; f.type = x[0]; f.frequency.setValueAtTime(x[1], t); f.Q.setValueAtTime(x[2], t); f.gain.setValueAtTime(x[3] || 0, t); }); }
+      function all(P, withCab) {
+        var t = c.currentTime, ba = P.type === "bass", vint = P.design === "vintage", db = function (v) { return (v - 5) * 2.4; };       // a tone knob: 0 -> -12 dB, 10 -> +12 dB
+        tight.frequency.setTargetAtTime(ba ? 30 : 90, t, .02);
+        bass.frequency.setTargetAtTime(ba ? 60 : 110, t, .02); tre.frequency.setTargetAtTime(ba ? 4000 : 2500, t, .02); mid.frequency.setTargetAtTime(P.midf, t, .02);
+        gain.gain.setTargetAtTime(Math.pow(10, (P.gain * 4.2 - 8) / 20) * (ba ? .35 : 1), t, .02);       // 0 -> x0.4, 10 -> x50; a bass amp has more headroom
+        bass.gain.setTargetAtTime(db(P.bass), t, .02); mid.gain.setTargetAtTime(db(P.mid), t, .02); tre.gain.setTargetAtTime(db(P.treble), t, .02);
+        master.gain.setTargetAtTime(1.6 * Math.pow((vint ? P.gain : P.master) / 10, 2.2), t, .02);       // 10 -> drives the power valves
+        pres.gain.setTargetAtTime(db(P.presence) * .8, t, .02); reso.gain.setTargetAtTime(db(P.resonance), t, .02);
+        if (withCab) setCab(P, t);
+      }
+      setCab(P, c.currentTime); all(P, false);
+      return { input: inp, output: out, n: n, update: function (P, prev) { all(P, ch(P, prev, "cab")); } };
+    }
+  };
+  var FX_REBUILD = { chorus: ["voices"], phaser: ["stages", "rate"], delay: ["pp"], tremolo: ["what"] };
+  var FX_KINDS = Object.keys(FXB);
+  SK.fx = function (kind, c, params, opts) {
+    if (!FXB[kind]) throw new Error("SynthKit.fx: unknown effect " + kind);
+    opts = opts || {}; var P = fxClean(kind, params), inp = c.createGain(), out = c.createGain(), inner = null, h = { kind: kind, input: inp, output: out, P: P, n: null, t0: null }, dead = false;
+    function build() { inner = FXB[kind](c, P, opts); inp.connect(inner.input); inner.output.connect(out); h.n = inner.n; h.t0 = inner.t0 == null ? null : inner.t0; if (opts.onRebuild) opts.onRebuild(inner.n, inner); }
+    function tear() { try { inp.disconnect(inner.input); } catch (e) {} try { inner.output.disconnect(out); } catch (e) {} if (inner.stop) inner.stop(); }
+    build();
+    h.set = function (p) {
+      if (dead) return; var prev = Object.assign({}, P), q = fxClean(kind, Object.assign({}, P, p)); Object.assign(P, q);
+      if ((FX_REBUILD[kind] || []).some(function (k) { return P[k] !== prev[k]; })) { tear(); build(); } else inner.update(P, prev); };
+    h.stop = function () { if (dead) return; dead = true; tear(); try { inp.disconnect(); } catch (e) {} };
+    return h;
+  };
+  SK.FX = FX; SK.fxDefaults = fxDefaults; SK.fxClean = fxClean; SK.FX_KINDS = function () { return FX_KINDS.slice(); };
+
   // ---------- filter ----------
   function Filter(host) {
     var w = Fx(host, "Filter", "noise", 1), resp = new Float32Array(200), mag = new Float32Array(200), ph = new Float32Array(200);
     for (var i = 0; i < 200; i++) resp[i] = 20 * Math.pow(1000, i / 199);
-    w.pick("type", "Type", [["lowpass", "Low-pass"], ["highpass", "High-pass"], ["bandpass", "Band-pass"], ["notch", "Notch"], ["peaking", "Peak (bell)"], ["lowshelf", "Low shelf"], ["highshelf", "High shelf"]], "lowpass");
-    w.num("cutoff", { label: "Cutoff", min: 30, max: 18000, log: true, value: 1000, fmt: fmtHz });
-    w.num("q", { label: "Resonance (Q)", min: .3, max: 30, log: true, value: .7, fmt: fmtN(1) });
-    w.num("gain", { label: "Boost/cut (peak, shelf)", min: -24, max: 24, step: .5, value: 12, fmt: fmtDb });
-    w.pick("slope", "Slope", [["1", "12 dB per octave"], ["2", "24 dB per octave"]], "1");
+    fxPick(w, "filter", "type"); fxNum(w, "filter", "cutoff"); fxNum(w, "filter", "q"); fxNum(w, "filter", "gain"); fxPick(w, "filter", "slope");
     var sweepB = button(w.tools, "Sweep", function () { w.sweeping = !w.sweeping; sweepB.classList.toggle("sk-on", w.sweeping); if (w.sweeping && !w.running) w.start(); });
     sweepB.title = "Move the cutoff up and down slowly";
     var probe = null;
@@ -1010,22 +1294,11 @@
     } });
     w.redraw = function () { w.view.dirty = true; };
     w.build = function (c) {
-      var f = [c.createBiquadFilter(), c.createBiquadFilter()], inp = c.createGain(), out = c.createGain();
-      f.forEach(function (x) { x.type = w.P.type; x.frequency.value = w.P.cutoff; x.Q.value = w.P.q; x.gain.value = w.P.gain; });
-      inp.connect(f[0]); route();
-      function route() { try { f[0].disconnect(); f[1].disconnect(); } catch (e) {} if (w.P.slope === "2") { f[0].connect(f[1]); f[1].connect(out); f[1].Q.value = .7071; } else f[0].connect(out); }
-      var t0 = c.currentTime, id = setInterval(function () { if (!w.sweeping) return; var t = c.currentTime - t0, v = 80 * Math.pow(100, .5 - .5 * Math.cos(t * .9)); f.forEach(function (x) { x.frequency.setTargetAtTime(v, c.currentTime, .03); }); w.c.cutoff.input.value = 1000 * Math.log(v / 30) / Math.log(600); }, 30);
-      w.n = { f: f, route: route };
-      return { input: inp, output: out, stop: function () { clearInterval(id); } };
+      var fx = w.fx = SK.fx("filter", c, w.P, { onRebuild: function (n) { w.n = n; } }); w.n = fx.n;
+      var t0 = c.currentTime, id = setInterval(function () { if (!w.sweeping) return; var t = c.currentTime - t0, v = 80 * Math.pow(100, .5 - .5 * Math.cos(t * .9)); w.n.f.forEach(function (x) { x.frequency.setTargetAtTime(v, c.currentTime, .03); }); w.c.cutoff.input.value = 1000 * Math.log(v / 30) / Math.log(600); }, 30);
+      return { input: fx.input, output: fx.output, stop: function () { clearInterval(id); fx.stop(); } };
     };
-    w.apply = function (k, v) {
-      if (!w.n) return; var t = ac().currentTime, f = w.n.f;
-      if (k === "type") f.forEach(function (x) { x.type = v; });
-      if (k === "cutoff") f.forEach(function (x) { x.frequency.setTargetAtTime(v, t, .01); });
-      if (k === "q") f[0].Q.setTargetAtTime(v, t, .01);
-      if (k === "gain") f.forEach(function (x) { x.gain.setTargetAtTime(v, t, .01); });
-      if (k === "slope") w.n.route();
-    };
+    w.apply = function (k, v) { if (w.fx) w.fx.set(w.P); };
     return w;
   }
 
@@ -1124,6 +1397,10 @@
     w.num(pre + "r", { label: "Release", min: .01, max: 5, log: true, value: r, fmt: fmtS }, gg);
     return gg;
   }
+  function envCtlsT(w, box, pre, label, kind) {      // the same four sliders from the synth table
+    var g = el("div", "sk-group"); g.appendChild(el("div", "sk-gl", label)); box.appendChild(g); var gg = el("div", "sk-ctls"); g.appendChild(gg);
+    ["a", "d", "s", "r"].forEach(function (x) { synNum(w, kind, pre + x, gg); }); return gg;
+  }
   function group(w, label) { var g = el("div", "sk-group"); g.appendChild(el("div", "sk-gl", label)); var gg = el("div", "sk-ctls"); g.appendChild(gg); w.ctls.appendChild(g); return gg; }
   function envPlot(w, keys) {
     var cv = el("canvas", "sk-plot sk-short"); cv.setAttribute("aria-label", "Envelope shapes"); w.body.appendChild(cv);
@@ -1140,64 +1417,146 @@
     });
   }
 
-  // ---------- subtractive ----------
+  // ======================================================================================
+  // Synth voices, headless: SynthKit.voice(kind, c, params, out, opts) -> make(midi, vel 0..1, when) -> { off(when), release, ...parts } on ANY
+  // AudioContext (kinds: subtractive, fm, wavetable, chip). make.set(params) changes the settings (read when the next note starts; the
+  // subtractive LFO rate / depths move at once), make.dispose() lets the shared LFO go. Settings are plain JSON listed, with limits and the
+  // lessons' presets, in SynthKit.SYN[kind] = { label, params: [...as SynthKit.FX], presets: [{ name, set }] }. The lesson widgets use this
+  // same code. The wavetable's scan LFO needs a timer to swap shapes (the widget does it: opts.wave); the DAW's version holds one position.
+  // The chip voice is the DAW's own (one pulse wave with a duty cycle and an envelope), not the chip widget's tune player. Unchecked by ear.
+  // ======================================================================================
   var WAVES = [["sawtooth", "Sawtooth"], ["square", "Square"], ["pulse", "Pulse"], ["triangle", "Triangle"], ["sine", "Sine"]];
-  function Subtractive(host) {
-    var w = Instrument(host, "Subtractive synth", function (c, m, vel, t) {
-      var P = w.P, f = mtof(m), out = c.createGain(); out.gain.value = 0; out.connect(w.bus);
-      var o1 = mkOsc(c, P.w1, f, P.pw), o2 = mkOsc(c, P.w2, f * Math.pow(2, +P.oct2), P.pw); o2.detune.value = P.det;
-      var g1 = c.createGain(), g2 = c.createGain(); g1.gain.value = (1 - P.mix) * .5; g2.gain.value = P.mix * .5; o1.out.connect(g1); o2.out.connect(g2);
-      var f1 = c.createBiquadFilter(), f2 = c.createBiquadFilter(); [f1, f2].forEach(function (x) { x.type = P.ftype; x.frequency.value = P.cut; }); f1.Q.value = P.res; f2.Q.value = .7071;
-      g1.connect(f1); g2.connect(f1); f1.connect(f2); f2.connect(out);
-      var nz = null; if (P.noise > 0) { nz = noiseSrc("white"); var ng = c.createGain(); ng.gain.value = P.noise * .6; nz.connect(ng); ng.connect(f1); nz.start(t); }
-      var amt = P.fenv * 1200; adsrOn(f1.detune, t, P.fa, P.fd, P.fs, amt, 0); adsrOn(f2.detune, t, P.fa, P.fd, P.fs, amt, 0);
-      adsrOn(out.gain, t, P.aa, P.ad, P.as, .5 * vel, 0);
-      [o1.detune, o2.detune].forEach(function (p) { w.lp.connect(p); }); [f1.detune, f2.detune].forEach(function (p) { w.lc.connect(p); });
-      o1.start(t); o2.start(t);
-      return { f: [f1, f2], release: function (t2) {
-        var end = adsrOff(out.gain, t2, P.ar, 0); adsrOff(f1.detune, t2, P.ar, 0); adsrOff(f2.detune, t2, P.ar, 0);
-        o1.stop(end); o2.stop(end); if (nz) nz.stop(end);
-        o1.onended(function () { try { w.lp.disconnect(o1.detune); w.lp.disconnect(o2.detune); w.lc.disconnect(f1.detune); w.lc.disconnect(f2.detune); } catch (e) {} out.disconnect(); });
-      } };
-    }, DEMOS);
-    demoPick(w, DEMOS, "chords");
-    w.presets([
+  function envD(pre, a, d, s, r) { return [dn(pre + "a", "Attack", .001, 3, "log", a, fmtS), dn(pre + "d", "Decay", .01, 4, "log", d, fmtS), dn(pre + "s", "Sustain", 0, 1, .01, s, fmtPct), dn(pre + "r", "Release", .01, 5, "log", r, fmtS)]; }
+  var WT_NAMES = ["Sine", "Triangle", "Sawtooth", "Square", "Pulse 15%", "Vowel ‘ah’", "Hollow", "Glass"];
+  var SYN = {
+    subtractive: { label: "Subtractive synth", params: [
+      dp("w1", "Osc 1", WAVES, "sawtooth"), dp("w2", "Osc 2", WAVES, "sawtooth"), dp("oct2", "Osc 2 octave", [["-1", "−1"], ["0", "0"], ["1", "+1"]], "0"),
+      dn("det", "Osc 2 detune", -50, 50, 1, 7, fmtCt), dn("mix", "Mix 1 ↔ 2", 0, 1, .01, .5, fmtPct), dn("pw", "Pulse width", .05, .95, .01, .5, fmtPct), dn("noise", "Noise", 0, 1, .01, 0, fmtPct),
+      dp("ftype", "Type", [["lowpass", "Low-pass"], ["highpass", "High-pass"], ["bandpass", "Band-pass"]], "lowpass"), dn("cut", "Cutoff", 40, 16000, "log", 800, fmtHz), dn("res", "Resonance", .5, 25, "log", 3, fmtN(1)),
+      dn("fenv", "Envelope amount", -4, 6, .1, 2, function (v) { return (v > 0 ? "+" : "") + v.toFixed(1) + " oct"; })].concat(envD("f", .01, .4, .3, .3), envD("a", .01, .3, .8, .3), [
+      dn("lfoRate", "Rate", .05, 20, "log", 5, fmtHz), dn("lfoPitch", "→ Pitch", 0, 100, 1, 0, fmtCt), dn("lfoCut", "→ Cutoff", 0, 2400, 10, 0, fmtCt)]),
+      presets: [
       { name: "Bass", set: { w1: "sawtooth", w2: "square", oct2: "-1", det: 0, mix: .4, noise: 0, ftype: "lowpass", cut: 180, res: 6, fenv: 3, fa: .002, fd: .18, fs: 0, fr: .1, aa: .002, ad: .3, as: .8, ar: .08, lfoRate: 5, lfoPitch: 0, lfoCut: 0, demo: "bass" } },
       { name: "Brass", set: { w1: "sawtooth", w2: "sawtooth", oct2: "0", det: 8, mix: .5, noise: 0, ftype: "lowpass", cut: 500, res: 1, fenv: 2.5, fa: .08, fd: .4, fs: .5, fr: .2, aa: .04, ad: .2, as: .85, ar: .2, lfoRate: 5, lfoPitch: 8, lfoCut: 0, demo: "lead" } },
       { name: "Pad", set: { w1: "sawtooth", w2: "sawtooth", oct2: "0", det: 14, mix: .5, noise: .05, ftype: "lowpass", cut: 900, res: 2, fenv: 1, fa: 1.5, fd: 2, fs: .6, fr: 1.5, aa: 1.2, ad: 1, as: .9, ar: 1.8, lfoRate: .3, lfoPitch: 0, lfoCut: 400, demo: "chords" } },
       { name: "Pluck", set: { w1: "pulse", w2: "sawtooth", oct2: "1", det: 5, mix: .3, pw: .25, noise: 0, ftype: "lowpass", cut: 300, res: 4, fenv: 4, fa: .002, fd: .25, fs: 0, fr: .2, aa: .002, ad: .5, as: 0, ar: .3, lfoRate: 5, lfoPitch: 0, lfoCut: 0, demo: "pluck" } },
       { name: "Lead", set: { w1: "square", w2: "sawtooth", oct2: "0", det: 6, mix: .5, noise: 0, ftype: "lowpass", cut: 1400, res: 5, fenv: 1, fa: .01, fd: .3, fs: .7, fr: .2, aa: .01, ad: .1, as: .9, ar: .2, lfoRate: 5.5, lfoPitch: 18, lfoCut: 0, demo: "lead" } },
       { name: "Strings", set: { w1: "sawtooth", w2: "sawtooth", oct2: "0", det: 10, mix: .5, noise: 0, ftype: "lowpass", cut: 2200, res: .7, fenv: 0, fa: .1, fd: .5, fs: 1, fr: .5, aa: .35, ad: .3, as: .9, ar: .7, lfoRate: 5, lfoPitch: 6, lfoCut: 0, demo: "chords" } },
-      { name: "Wind (noise)", set: { w1: "sine", w2: "sine", oct2: "0", det: 0, mix: 0, noise: 1, ftype: "bandpass", cut: 800, res: 12, fenv: 0, fa: .3, fd: .5, fs: 1, fr: .5, aa: .4, ad: .3, as: 1, ar: 1, lfoRate: .2, lfoPitch: 0, lfoCut: 900, demo: "lead" } }
-    ]);
+      { name: "Wind (noise)", set: { w1: "sine", w2: "sine", oct2: "0", det: 0, mix: 0, noise: 1, ftype: "bandpass", cut: 800, res: 12, fenv: 0, fa: .3, fd: .5, fs: 1, fr: .5, aa: .4, ad: .3, as: 1, ar: 1, lfoRate: .2, lfoPitch: 0, lfoCut: 900, demo: "lead" } }] },
+    fm: { label: "FM synth", params: [
+      dn("ratio", "Ratio (mod ÷ carrier)", .5, 12, .01, 3.5, fmtN(2)), dn("fine", "Modulator fine tune", -100, 100, 1, 0, fmtCt), dn("index", "Index (depth)", 0, 20, .1, 5, fmtN(1)), dn("ifloor", "Index never falls below", 0, 1, .01, 0, fmtPct)
+      ].concat(envD("i", .001, 2.5, 0, 2), envD("a", .001, 4, 0, 2)), presets: [
+      { name: "Bell", set: { ratio: 3.5, fine: 0, index: 5, ifloor: 0, ia: .001, id: 2.5, is: 0, aa: .001, ad: 4, as: 0, ar: 2, demo: "bells" } },
+      { name: "Electric piano", set: { ratio: 1, fine: 0, index: 2.2, ifloor: 0, ia: .001, id: .7, is: .1, aa: .001, ad: 1.8, as: .2, ar: .5, demo: "chords" } },
+      { name: "Bass", set: { ratio: 1, fine: 0, index: 3.5, ifloor: 0, ia: .001, id: .25, is: .15, aa: .001, ad: .5, as: .7, ar: .1, demo: "bass" } },
+      { name: "Brass", set: { ratio: 1, fine: 0, index: 4, ifloor: .2, ia: .08, id: .3, is: .6, aa: .05, ad: .3, as: .9, ar: .2, demo: "lead" } },
+      { name: "Clarinet-ish", set: { ratio: 2, fine: 0, index: 1.5, ifloor: 0, ia: .05, id: .2, is: .8, aa: .05, ad: .2, as: .9, ar: .15, demo: "lead" } },
+      { name: "Metal", set: { ratio: 1.414, fine: 0, index: 8, ifloor: .1, ia: .001, id: 1.5, is: .2, aa: .001, ad: 2, as: .3, ar: 1, demo: "bells" } },
+      { name: "Steady (to study)", set: { ratio: 1, fine: 0, index: 2, ifloor: 1, ia: .001, id: .1, is: 1, aa: .01, ad: .1, as: 1, ar: .2, demo: "lead" } }] },
+    wavetable: { label: "Wavetable synth", params: [
+      dn("pos", "Position in the table", 0, WT_NAMES.length - 1, .01, 2, function (v) { var i = Math.round(v); return WT_NAMES[i] + (Math.abs(v - i) > .05 ? " ~" : ""); }),
+      dn("scanRate", "Scan LFO rate", .02, 8, "log", .25, fmtHz), dn("scanDepth", "Scan LFO depth", 0, 1, .01, 0, fmtPct)].concat(envD("a", .02, .4, .8, .6)),
+      presets: [
+      { name: "Sine", set: { pos: 0, scanDepth: 0 } }, { name: "Saw", set: { pos: 2, scanDepth: 0 } }, { name: "Vowel", set: { pos: 5, scanDepth: 0 } },
+      { name: "Glass", set: { pos: 7, scanDepth: 0, aa: .02, ar: 1.2 } }, { name: "Scanning pad", set: { pos: 3, scanDepth: .5, scanRate: .25, aa: .8, ar: 1.5 } }] },
+    chip: { label: "Chip pulse", params: [
+      dp("duty", "Duty cycle", [["0.125", "12.5%"], ["0.25", "25%"], ["0.5", "50%"]], "0.25"), dn("vib", "Vibrato depth", 0, 100, 1, 0, fmtCt), dn("vibRate", "Vibrato rate", 1, 12, "log", 6, fmtHz)].concat(envD("a", .002, .15, .6, .08)),
+      presets: [{ name: "Lead (25%)", set: { duty: "0.25", vib: 0, aa: .002, ad: .15, as: .6, ar: .08 } }, { name: "Hollow (50%)", set: { duty: "0.5", vib: 0, aa: .002, ad: .1, as: .7, ar: .06 } },
+        { name: "Thin (12.5%)", set: { duty: "0.125", vib: 8, aa: .002, ad: .1, as: .5, ar: .08 } }, { name: "Blip", set: { duty: "0.25", vib: 0, aa: .001, ad: .06, as: 0, ar: .04 } }] }
+  };
+  function synDesc(kind, key) { var ps = SYN[kind].params; for (var i = 0; i < ps.length; i++) if (ps[i].key === key) return ps[i]; return null; }
+  function synNum(w, kind, key, box) { var d = synDesc(kind, key), o = {}; for (var k in d) o[k] = d[k]; return w.num(key, o, box); }
+  function synPick(w, kind, key, box, extra) { var d = synDesc(kind, key); return w.pick(key, d.label, d.pick, d.value, box, extra); }
+  function synDefaults(kind) { var o = {}; SYN[kind].params.forEach(function (d) { o[d.key] = d.value; }); return o; }
+  function synClean(kind, p) {
+    var o = synDefaults(kind); p = p || {};
+    SYN[kind].params.forEach(function (d) { if (p[d.key] == null) return; var v = p[d.key];
+      if (d.pick) { v = String(v); if (d.pick.some(function (x) { return x[0] === v; })) o[d.key] = v; } else { v = +v; if (isFinite(v)) o[d.key] = Math.max(d.min, Math.min(d.max, v)); } });
+    return o;
+  }
+  // wavetable shapes: harmonic amplitudes 1..WT_H, and a blend of two neighbours
+  function wtShapes() { return wtFrames(); }
+  function wtBlend(frames, pos) { var i = Math.min(frames.length - 2, Math.max(0, Math.floor(pos))), fr = Math.max(0, Math.min(1, pos - i)), a = frames[i][1], b = frames[i + 1][1], r = new Float32Array(WT_H + 1); for (var n = 1; n <= WT_H; n++) r[n] = a[n] * (1 - fr) + b[n] * fr; return r; }
+  var VB = {
+    subtractive: function (c, st) {
+      var lfo = c.createOscillator(), lp = c.createGain(), lc = c.createGain(), P0 = st.P; lfo.frequency.value = P0.lfoRate; lp.gain.value = P0.lfoPitch; lc.gain.value = P0.lfoCut; lfo.connect(lp); lfo.connect(lc); lfo.start();
+      return { lfo: lfo, update: function (P, prev) { var t = c.currentTime; if (P.lfoRate !== prev.lfoRate) lfo.frequency.setTargetAtTime(P.lfoRate, t, .01); if (P.lfoPitch !== prev.lfoPitch) lp.gain.setTargetAtTime(P.lfoPitch, t, .01); if (P.lfoCut !== prev.lfoCut) lc.gain.setTargetAtTime(P.lfoCut, t, .01); },
+        dispose: function () { try { lfo.stop(c.currentTime + 6); } catch (e) {} },
+        make: function (m, vel, t) {
+          var P = st.P, f = mtof(m), out = c.createGain(); out.gain.value = 0; out.connect(st.out);
+          var o1 = mkOsc(c, P.w1, f, P.pw), o2 = mkOsc(c, P.w2, f * Math.pow(2, +P.oct2), P.pw); o2.detune.value = P.det;
+          var g1 = c.createGain(), g2 = c.createGain(); g1.gain.value = (1 - P.mix) * .5; g2.gain.value = P.mix * .5; o1.out.connect(g1); o2.out.connect(g2);
+          var f1 = c.createBiquadFilter(), f2 = c.createBiquadFilter(); [f1, f2].forEach(function (x) { x.type = P.ftype; x.frequency.value = P.cut; }); f1.Q.value = P.res; f2.Q.value = .7071;
+          g1.connect(f1); g2.connect(f1); f1.connect(f2); f2.connect(out);
+          var nz = null; if (P.noise > 0) { nz = noiseSrcFor(c, "white"); var ng = c.createGain(); ng.gain.value = P.noise * .6; nz.connect(ng); ng.connect(f1); nz.start(t); }
+          var amt = P.fenv * 1200; adsrOn(f1.detune, t, P.fa, P.fd, P.fs, amt, 0); adsrOn(f2.detune, t, P.fa, P.fd, P.fs, amt, 0);
+          adsrOn(out.gain, t, P.aa, P.ad, P.as, .5 * vel, 0);
+          [o1.detune, o2.detune].forEach(function (p) { lp.connect(p); }); [f1.detune, f2.detune].forEach(function (p) { lc.connect(p); });
+          o1.start(t); o2.start(t);
+          var v = { f: [f1, f2], release: function (t2) {
+            var end = adsrOff(out.gain, t2, P.ar, 0); adsrOff(f1.detune, t2, P.ar, 0); adsrOff(f2.detune, t2, P.ar, 0);
+            o1.stop(end); o2.stop(end); if (nz) nz.stop(end);
+            o1.onended(function () { try { lp.disconnect(o1.detune); lp.disconnect(o2.detune); lc.disconnect(f1.detune); lc.disconnect(f2.detune); } catch (e) {} out.disconnect(); });
+          } }; v.off = v.release; return v; } };
+    },
+    fm: function (c, st) {
+      return { update: function () {}, dispose: function () {}, make: function (m, vel, t) {
+        var P = st.P, f = mtof(m), fm = f * P.ratio; if (st.opts.onNote) st.opts.onNote(f);
+        var car = c.createOscillator(), mod = c.createOscillator(), mg = c.createGain(), out = c.createGain();
+        car.frequency.value = f; mod.frequency.value = fm; mod.detune.value = P.fine; out.gain.value = 0;
+        mod.connect(mg); mg.connect(car.frequency); car.connect(out); out.connect(st.out);
+        adsrOn(mg.gain, t, P.ia, P.id, P.is, P.index * fm, P.index * fm * P.ifloor);
+        adsrOn(out.gain, t, P.aa, P.ad, P.as, .4 * vel, 0);
+        car.start(t); mod.start(t);
+        var v = { car: car, mod: mod, mg: mg, f: f, release: function (t2) { var end = adsrOff(out.gain, t2, P.ar, 0); car.stop(end); mod.stop(end); } }; v.off = v.release; return v; } };
+    },
+    wavetable: function (c, st) {
+      var frames = wtShapes(), cache = {};
+      function wave(P) { var key = P.pos.toFixed(3); if (!cache[key]) { if (Object.keys(cache).length > 40) cache = {}; cache[key] = c.createPeriodicWave(new Float32Array(WT_H + 1), wtBlend(frames, P.pos)); } return cache[key]; }
+      return { update: function () {}, dispose: function () {}, make: function (m, vel, t) {
+        var P = st.P, o = c.createOscillator(), g = c.createGain(); o.frequency.value = mtof(m); o.setPeriodicWave(st.opts.wave ? st.opts.wave(c, P) : wave(P)); g.gain.value = 0; o.connect(g); g.connect(st.out);
+        adsrOn(g.gain, t, P.aa, P.ad, P.as, .3 * vel, 0); o.start(t);
+        var v = { o: o, release: function (t2) { o.stop(adsrOff(g.gain, t2, P.ar, 0)); } }; v.off = v.release; return v; } };
+    },
+    chip: function (c, st) {
+      return { update: function () {}, dispose: function () {}, make: function (m, vel, t) {
+        var P = st.P, g = c.createGain(), o = mkOsc(c, "pulse", mtof(m), +P.duty); g.gain.value = 0; o.out.connect(g); g.connect(st.out);
+        var lf = null; if (P.vib > 0) { lf = c.createOscillator(); var lg = c.createGain(); lf.frequency.value = P.vibRate; lg.gain.value = P.vib; lf.connect(lg); lg.connect(o.detune); lf.start(t); }
+        adsrOn(g.gain, t, P.aa, P.ad, P.as, .3 * vel, 0); o.start(t);
+        var v = { release: function (t2) { var end = adsrOff(g.gain, t2, P.ar, 0); o.stop(end); if (lf) lf.stop(end); } }; v.off = v.release; return v; } };
+    }
+  };
+  SK.voice = function (kind, c, params, out, opts) {
+    if (!VB[kind]) throw new Error("SynthKit.voice: unknown synth " + kind);
+    var st = { P: synClean(kind, params), out: out, opts: opts || {} }, inst = VB[kind](c, st);
+    var make = function (m, vel, t) { return inst.make(m, vel == null ? .8 : vel, t == null ? c.currentTime : t); };
+    make.set = function (p) { var prev = Object.assign({}, st.P); st.P = synClean(kind, Object.assign({}, st.P, p)); inst.update(st.P, prev); };
+    make.dispose = function () { inst.dispose(); }; make.P = function () { return st.P; };
+    return make;
+  };
+  SK.SYN = SYN; SK.synDefaults = synDefaults; SK.synClean = synClean; SK.SYN_KINDS = function () { return Object.keys(VB); };
+
+  // ---------- subtractive ----------
+  function Subtractive(host) {
+    var w = Instrument(host, "Subtractive synth", function (c, m, vel, t) { return w.fac(m, vel, t); }, DEMOS);
+    demoPick(w, DEMOS, "chords");
+    w.presets(SYN.subtractive.presets);
     var go = group(w, "Oscillators");
-    w.pick("w1", "Osc 1", WAVES, "sawtooth", go); w.pick("w2", "Osc 2", WAVES, "sawtooth", go);
-    w.pick("oct2", "Osc 2 octave", [["-1", "−1"], ["0", "0"], ["1", "+1"]], "0", go);
-    w.num("det", { label: "Osc 2 detune", min: -50, max: 50, step: 1, value: 7, fmt: fmtCt }, go);
-    w.num("mix", { label: "Mix 1 ↔ 2", min: 0, max: 1, step: .01, value: .5, fmt: fmtPct }, go);
-    w.num("pw", { label: "Pulse width", min: .05, max: .95, step: .01, value: .5, fmt: fmtPct }, go);
-    w.num("noise", { label: "Noise", min: 0, max: 1, step: .01, value: 0, fmt: fmtPct }, go);
+    synPick(w, "subtractive", "w1", go); synPick(w, "subtractive", "w2", go); synPick(w, "subtractive", "oct2", go);
+    ["det", "mix", "pw", "noise"].forEach(function (k) { synNum(w, "subtractive", k, go); });
     var gf = group(w, "Filter");
-    w.pick("ftype", "Type", [["lowpass", "Low-pass"], ["highpass", "High-pass"], ["bandpass", "Band-pass"]], "lowpass", gf);
-    w.num("cut", { label: "Cutoff", min: 40, max: 16000, log: true, value: 800, fmt: fmtHz }, gf);
-    w.num("res", { label: "Resonance", min: .5, max: 25, log: true, value: 3, fmt: fmtN(1) }, gf);
-    w.num("fenv", { label: "Envelope amount", min: -4, max: 6, step: .1, value: 2, fmt: function (v) { return (v > 0 ? "+" : "") + v.toFixed(1) + " oct"; } }, gf);
-    envCtls(w, w.ctls, "f", "Filter envelope", .01, .4, .3, .3);
-    envCtls(w, w.ctls, "a", "Amp envelope", .01, .3, .8, .3);
+    synPick(w, "subtractive", "ftype", gf); ["cut", "res", "fenv"].forEach(function (k) { synNum(w, "subtractive", k, gf); });
+    envCtlsT(w, w.ctls, "f", "Filter envelope", "subtractive");
+    envCtlsT(w, w.ctls, "a", "Amp envelope", "subtractive");
     var gl = group(w, "LFO");
-    w.num("lfoRate", { label: "Rate", min: .05, max: 20, log: true, value: 5, fmt: fmtHz }, gl);
-    w.num("lfoPitch", { label: "→ Pitch", min: 0, max: 100, step: 1, value: 0, fmt: fmtCt }, gl);
-    w.num("lfoCut", { label: "→ Cutoff", min: 0, max: 2400, step: 10, value: 0, fmt: fmtCt }, gl);
+    ["lfoRate", "lfoPitch", "lfoCut"].forEach(function (k) { synNum(w, "subtractive", k, gl); });
     w.redraw = envPlot(w, [["f", "filter envelope"], ["a", "amp envelope"]]);
     w.view = viewer(w.body, { ms: 25 });
-    w.setup = function (c) { var o = c.createOscillator(); o.frequency.value = w.P.lfoRate; w.lp = c.createGain(); w.lc = c.createGain(); w.lp.gain.value = w.P.lfoPitch; w.lc.gain.value = w.P.lfoCut; o.connect(w.lp); o.connect(w.lc); o.start(); w.lfo = o; };
-    w.teardown = function () { var o = w.lfo; setTimeout(function () { o.stop(); }, 6000); };
+    w.setup = function (c) { w.fac = SK.voice("subtractive", c, w.P, w.bus); };
+    w.teardown = function () { if (w.fac) w.fac.dispose(); };
     w.apply = function (k, v) {
-      var t = ac().currentTime;
+      var t = ac().currentTime; if (w.fac) w.fac.set(w.P);
       if (k === "cut" || k === "res") w.voices(function (x) { if (k === "cut") x.f.forEach(function (f) { f.frequency.setTargetAtTime(v, t, .01); }); else x.f[0].Q.setTargetAtTime(v, t, .01); });
-      if (k === "lfoRate") w.lfo.frequency.setTargetAtTime(v, t, .01);
-      if (k === "lfoPitch") w.lp.gain.setTargetAtTime(v, t, .01);
-      if (k === "lfoCut") w.lc.gain.setTargetAtTime(v, t, .01);
     };
     return w;
   }
@@ -1205,41 +1564,22 @@
   // ---------- FM ----------
   function Fm(host) {
     var lastF = 220;
-    var w = Instrument(host, "FM synth", function (c, m, vel, t) {
-      var P = w.P, f = mtof(m), fm = f * P.ratio; lastF = f; w.view.dirty = true;
-      var car = c.createOscillator(), mod = c.createOscillator(), mg = c.createGain(), out = c.createGain();
-      car.frequency.value = f; mod.frequency.value = fm; mod.detune.value = P.fine; out.gain.value = 0;
-      mod.connect(mg); mg.connect(car.frequency); car.connect(out); out.connect(w.bus);
-      adsrOn(mg.gain, t, P.ia, P.id, P.is, P.index * fm, P.index * fm * P.ifloor);
-      adsrOn(out.gain, t, P.aa, P.ad, P.as, .4 * vel, 0);
-      car.start(t); mod.start(t);
-      return { car: car, mod: mod, mg: mg, f: f, release: function (t2) { var end = adsrOff(out.gain, t2, P.ar, 0); car.stop(end); mod.stop(end); } };
-    }, DEMOS);
+    var w = Instrument(host, "FM synth", function (c, m, vel, t) { return w.fac(m, vel, t); }, DEMOS);
     demoPick(w, DEMOS, "bells");
-    w.presets([
-      { name: "Bell", set: { ratio: 3.5, fine: 0, index: 5, ifloor: 0, ia: .001, id: 2.5, is: 0, aa: .001, ad: 4, as: 0, ar: 2, demo: "bells" } },
-      { name: "Electric piano", set: { ratio: 1, fine: 0, index: 2.2, ifloor: 0, ia: .001, id: .7, is: .1, aa: .001, ad: 1.8, as: .2, ar: .5, demo: "chords" } },
-      { name: "Bass", set: { ratio: 1, fine: 0, index: 3.5, ifloor: 0, ia: .001, id: .25, is: .15, aa: .001, ad: .5, as: .7, ar: .1, demo: "bass" } },
-      { name: "Brass", set: { ratio: 1, fine: 0, index: 4, ifloor: .2, ia: .08, id: .3, is: .6, aa: .05, ad: .3, as: .9, ar: .2, demo: "lead" } },
-      { name: "Clarinet-ish", set: { ratio: 2, fine: 0, index: 1.5, ifloor: 0, ia: .05, id: .2, is: .8, aa: .05, ad: .2, as: .9, ar: .15, demo: "lead" } },
-      { name: "Metal", set: { ratio: 1.414, fine: 0, index: 8, ifloor: .1, ia: .001, id: 1.5, is: .2, aa: .001, ad: 2, as: .3, ar: 1, demo: "bells" } },
-      { name: "Steady (to study)", set: { ratio: 1, fine: 0, index: 2, ifloor: 1, ia: .001, id: .1, is: 1, aa: .01, ad: .1, as: 1, ar: .2, demo: "lead" } }
-    ]);
+    w.presets(SYN.fm.presets);
     var go = group(w, "Modulator");
-    w.num("ratio", { label: "Ratio (mod ÷ carrier)", min: .5, max: 12, step: .01, value: 3.5, fmt: fmtN(2) }, go);
-    w.num("fine", { label: "Modulator fine tune", min: -100, max: 100, step: 1, value: 0, fmt: fmtCt }, go);
-    w.num("index", { label: "Index (depth)", min: 0, max: 20, step: .1, value: 5, fmt: fmtN(1) }, go);
-    w.num("ifloor", { label: "Index never falls below", min: 0, max: 1, step: .01, value: 0, fmt: fmtPct }, go);
-    envCtls(w, w.ctls, "i", "Index envelope (brightness)", .001, 2.5, 0, 2);
-    envCtls(w, w.ctls, "a", "Amp envelope", .001, 4, 0, 2);
+    ["ratio", "fine", "index", "ifloor"].forEach(function (k) { synNum(w, "fm", k, go); });
+    envCtlsT(w, w.ctls, "i", "Index envelope (brightness)", "fm");
+    envCtlsT(w, w.ctls, "a", "Amp envelope", "fm");
     w.redraw = envPlot(w, [["i", "index envelope"], ["a", "amp envelope"]]);
     w.view = viewer(w.body, { ms: 25, overlay: function (g, X, W, H, C) {
       var fm = lastF * w.P.ratio * Math.pow(2, w.P.fine / 1200); g.strokeStyle = C.hot; g.globalAlpha = .5; g.setLineDash([2, 3]);
       for (var k = -8; k <= 8; k++) { var f = Math.abs(lastF + k * fm); if (f < 20 || f > 20000) continue; var x = X(f); g.beginPath(); g.moveTo(x, k ? 24 : 14); g.lineTo(x, H); g.stroke(); }
       g.setLineDash([]); g.globalAlpha = 1; g.fillStyle = C.hot; g.fillText("dashed: carrier ± k × modulator", W - 170, 11);
     } });
+    w.setup = function (c) { w.fac = SK.voice("fm", c, w.P, w.bus, { onNote: function (f) { lastF = f; w.view.dirty = true; } }); };
     w.apply = function (k, v) {
-      var t = ac().currentTime;
+      var t = ac().currentTime; if (w.fac) w.fac.set(w.P);
       if (k === "ratio" || k === "fine") w.voices(function (x) { x.mod.frequency.setTargetAtTime(x.f * w.P.ratio, t, .01); x.mod.detune.setTargetAtTime(w.P.fine, t, .01); });
       if ((k === "index" || k === "ratio") && w.P.is > .99) w.voices(function (x) { x.mg.gain.setTargetAtTime(w.P.index * x.f * w.P.ratio, t, .01); });
       w.view.dirty = true;
@@ -1263,19 +1603,13 @@
   }
   function Wavetable(host) {
     var frames = wtFrames(), last = -1;
-    function at(pos) { var i = Math.min(frames.length - 2, Math.floor(pos)), fr = pos - i, a = frames[i][1], b = frames[i + 1][1], r = new Float32Array(WT_H + 1); for (var n = 1; n <= WT_H; n++) r[n] = a[n] * (1 - fr) + b[n] * fr; return r; }
+    function at(pos) { return wtBlend(frames, pos); }
     function pos() { var P = w.P, p = P.pos; if (w.running && w.t0 != null) p += P.scanDepth * (frames.length - 1) * .5 * Math.sin(2 * Math.PI * P.scanRate * (ac().currentTime - w.t0)); return Math.max(0, Math.min(frames.length - 1, p)); }
     function pw(c, p) { var im = at(p), re = new Float32Array(WT_H + 1); return c.createPeriodicWave(re, im); }
-    var w = Instrument(host, "Wavetable synth", function (c, m, vel, t) {
-      var P = w.P, o = c.createOscillator(), g = c.createGain(); o.frequency.value = mtof(m); o.setPeriodicWave(w.wave || pw(c, pos())); g.gain.value = 0; o.connect(g); g.connect(w.bus);
-      adsrOn(g.gain, t, P.aa, P.ad, P.as, .3 * vel, 0); o.start(t);
-      return { o: o, release: function (t2) { o.stop(adsrOff(g.gain, t2, P.ar, 0)); } };
-    }, DEMOS);
+    var w = Instrument(host, "Wavetable synth", function (c, m, vel, t) { return w.fac(m, vel, t); }, DEMOS);
     demoPick(w, DEMOS, "chords");
-    w.num("pos", { label: "Position in the table", min: 0, max: frames.length - 1, step: .01, value: 2, fmt: function (v) { var i = Math.round(v); return frames[i][0] + (Math.abs(v - i) > .05 ? " ~" : ""); } });
-    w.num("scanRate", { label: "Scan LFO rate", min: .02, max: 8, log: true, value: .25, fmt: fmtHz });
-    w.num("scanDepth", { label: "Scan LFO depth", min: 0, max: 1, step: .01, value: 0, fmt: fmtPct });
-    envCtls(w, w.ctls, "a", "Amp envelope", .02, .4, .8, .6);
+    ["pos", "scanRate", "scanDepth"].forEach(function (k) { synNum(w, "wavetable", k); });
+    envCtlsT(w, w.ctls, "a", "Amp envelope", "wavetable");
     var cv = el("canvas", "sk-plot sk-tall"); cv.setAttribute("aria-label", "The wavetable: every shape in a row, the current position marked, and the shape now playing drawn large"); w.body.appendChild(cv);
     function path(a, P) { var pts = [], pk = 0; for (var i = 0; i < P; i++) { var x = 0; for (var n = 1; n <= WT_H; n++) if (a[n]) x += a[n] * Math.sin(2 * Math.PI * n * i / P); pts.push(x); pk = Math.max(pk, Math.abs(x)); } return pts.map(function (v) { return pk ? v / pk : 0; }); }
     function line(g, pts, x0, y0, ww, hh) { g.beginPath(); pts.forEach(function (v, i) { var x = x0 + i / (pts.length - 1) * ww, y = y0 + hh / 2 - v * hh * .42; i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.stroke(); }
@@ -1295,8 +1629,9 @@
       g.fillStyle = C.ink2; g.fillText("now playing (one cycle)", 6, H - 4);
     });
     w.view = viewer(w.body, { ms: 25 });
-    w.setup = function (c) { w.t0 = c.currentTime; last = -1; w.wave = pw(c, pos()); w.timer = setInterval(function () { var p = pos(); if (Math.abs(p - last) > .01) { last = p; w.wave = pw(c, p); w.voices(function (v) { v.o.setPeriodicWave(w.wave); }); } }, 30); };
+    w.setup = function (c) { w.fac = SK.voice("wavetable", c, w.P, w.bus, { wave: function () { return w.wave; } }); w.t0 = c.currentTime; last = -1; w.wave = pw(c, pos()); w.timer = setInterval(function () { var p = pos(); if (Math.abs(p - last) > .01) { last = p; w.wave = pw(c, p); w.voices(function (v) { v.o.setPeriodicWave(w.wave); }); } }, 30); };
     w.teardown = function () { clearInterval(w.timer); w.t0 = null; };
+    w.apply = function () { if (w.fac) w.fac.set(w.P); };
     return w;
   }
 
@@ -1310,20 +1645,8 @@
       { name: "Distortion", set: { shape: "hard", drive: 25, low: 150, tone: 3500, level: .5 } },
       { name: "Fuzz", set: { shape: "fuzz", drive: 60, low: 20, tone: 2500, level: .45 } }
     ]);
-    w.pick("shape", "Curve", [["soft", "Soft clip (overdrive)"], ["hard", "Hard clip (distortion)"], ["fuzz", "Fuzz (lopsided, gated)"], ["asym", "Uneven (tube-like)"], ["fold", "Wavefolder"], ["crush", "Bit crusher"]], "soft");
-    w.num("drive", { label: "Drive", min: 1, max: 60, log: true, value: 4, fmt: function (v) { return "×" + v.toFixed(1); } });
-    w.num("low", { label: "Low cut (before)", min: 20, max: 1200, log: true, value: 20, fmt: fmtHz });
-    w.num("tone", { label: "Tone (low-pass after)", min: 500, max: 16000, log: true, value: 8000, fmt: fmtHz });
-    w.num("level", { label: "Output level", min: 0, max: 1.5, step: .01, value: .6, fmt: fmtPct });
-    function fn(x) { var d = w.P.drive, s = w.P.shape;
-      if (s === "soft") return Math.tanh(d * x);
-      if (s === "hard") return Math.max(-.6, Math.min(.6, d * x)) / .6;
-      // a fuzz's transistors clip one side much sooner than the other, and quiet signals fall into a dead zone (the sputter)
-      if (s === "fuzz") { var u = d * x, gte = .02 * d; u = Math.abs(u) < gte ? 0 : u - (u > 0 ? gte : -gte); return u > 0 ? Math.min(1, u) : Math.max(-.45, u * .7); }
-      if (s === "asym") return Math.tanh(d * x + .5) - Math.tanh(.5);
-      if (s === "fold") return Math.sin(d * x * Math.PI / 2);
-      var lv = Math.max(1, Math.round(64 / d)); return Math.round(x * lv) / lv; }
-    function curve() { var n = 2049, a = new Float32Array(n); for (var i = 0; i < n; i++) a[i] = fn(i / (n - 1) * 2 - 1); return a; }
+    fxPick(w, "distortion", "shape"); ["drive", "low", "tone", "level"].forEach(function (k) { fxNum(w, "distortion", k); });
+    function fn(x) { return distFn(w.P)(x); }
     var cv = el("canvas", "sk-plot sk-square"); cv.setAttribute("aria-label", "The distortion curve: input level across, output level up"); w.body.appendChild(cv);
     var dirty = anim(w, cv, function (C) {
       var s = fit(cv), g = s.g, W = s.w, H = s.h, S = Math.min(W, H) - 20, ox = 10, oy = 10;
@@ -1334,25 +1657,15 @@
     });
     w.redraw = function () { dirty(); };
     w.view = viewer(w.body, { ms: 15 });
-    w.build = function (c) {
-      var sh = c.createWaveShaper(), hp = c.createBiquadFilter(), lp = c.createBiquadFilter(), lv = c.createGain(), inp = c.createGain(); sh.curve = curve(); sh.oversample = "4x"; lp.frequency.value = w.P.tone; lv.gain.value = w.P.level;
-      hp.type = "highpass"; hp.frequency.value = w.P.low; hp.Q.value = .5;
-      inp.connect(hp); hp.connect(sh); sh.connect(lp); lp.connect(lv); w.n = { sh: sh, hp: hp, lp: lp, lv: lv };
-      return { input: inp, output: lv };
-    };
-    w.apply = function (k, v) { if (!w.n) return; var t = ac().currentTime; if (k === "shape" || k === "drive") w.n.sh.curve = curve(); if (k === "tone") w.n.lp.frequency.setTargetAtTime(v, t, .01); if (k === "low") w.n.hp.frequency.setTargetAtTime(v, t, .01); if (k === "level") w.n.lv.gain.setTargetAtTime(v, t, .01); };
+    w.build = function (c) { var fx = w.fx = SK.fx("distortion", c, w.P); w.n = fx.n; return fx; };
+    w.apply = function (k, v) { if (w.fx) w.fx.set(w.P); };
     return w;
   }
 
   // ---------- compressor ----------
   function Compressor(host) {
     var w = Fx(host, "Compressor", "uneven", 1);
-    w.num("thr", { label: "Threshold", min: -60, max: 0, step: .5, value: -24, fmt: fmtDb });
-    w.num("ratio", { label: "Ratio", min: 1, max: 20, step: .1, value: 4, fmt: function (v) { return v.toFixed(1) + " : 1"; } });
-    w.num("knee", { label: "Knee", min: 0, max: 30, step: .5, value: 6, fmt: fmtDb });
-    w.num("att", { label: "Attack", min: .001, max: .5, log: true, value: .01, fmt: fmtS });
-    w.num("rel", { label: "Release", min: .02, max: 1, log: true, value: .2, fmt: fmtS });
-    w.num("makeup", { label: "Make-up gain", min: 0, max: 24, step: .5, value: 6, fmt: fmtDb });
+    ["thr", "ratio", "knee", "att", "rel", "makeup"].forEach(function (k) { fxNum(w, "compressor", k); });
     var cv = el("canvas", "sk-plot sk-square"); cv.setAttribute("aria-label", "Input level across, output level up; the bar is gain reduction"); w.body.appendChild(cv);
     var td = new Float32Array(1024), lvIn = -90, lvOut = -90, gr = 0;
     function db(an) { an.getFloatTimeDomainData(td); var s = 0; for (var i = 0; i < td.length; i++) s += td[i] * td[i]; return 10 * Math.log10(s / td.length + 1e-12) + 3; }
@@ -1370,16 +1683,8 @@
     });
     w.redraw = function () { dirty(); };
     w.view = viewer(w.body, { ms: 40 });
-    w.build = function (c) {
-      var inp = c.createGain(), comp = c.createDynamicsCompressor(), mk = c.createGain(), ai = c.createAnalyser(), ao = c.createAnalyser(); ai.fftSize = ao.fftSize = 1024;
-      comp.threshold.value = w.P.thr; comp.ratio.value = w.P.ratio; comp.knee.value = w.P.knee; comp.attack.value = w.P.att; comp.release.value = w.P.rel; mk.gain.value = Math.pow(10, w.P.makeup / 20);
-      inp.connect(comp); inp.connect(ai); comp.connect(mk); mk.connect(ao); w.n = { comp: comp, mk: mk, ai: ai, ao: ao };
-      return { input: inp, output: mk };
-    };
-    w.apply = function (k, v) {
-      if (!w.n) return; var cp = w.n.comp, t = ac().currentTime, p = { thr: cp.threshold, ratio: cp.ratio, knee: cp.knee, att: cp.attack, rel: cp.release }[k];
-      if (p) p.setValueAtTime(v, t); else if (k === "makeup") w.n.mk.gain.setTargetAtTime(Math.pow(10, v / 20), t, .01);
-    };
+    w.build = function (c) { var fx = w.fx = SK.fx("compressor", c, w.P, { viz: true }); w.n = fx.n; return fx; };
+    w.apply = function (k, v) { if (w.fx) w.fx.set(w.P); };
     return w;
   }
 
@@ -1393,11 +1698,7 @@
       { name: "Vibrato", set: { voices: 1, base: 5, depth: 3, rate: 5.5, fb: 0, mix: 1 } },
       { name: "Doubler", set: { voices: 1, base: 35, depth: 1, rate: .15, fb: 0, mix: .45 } }
     ]);
-    w.num("voices", { label: "Voices", min: 1, max: 3, step: 1, value: 2, fmt: fmtN(0) });
-    w.num("base", { label: "Delay", min: .5, max: 40, step: .1, value: 18, fmt: fmtMs });
-    w.num("depth", { label: "Depth (delay swing)", min: 0, max: 10, step: .1, value: 4, fmt: function (v) { return "± " + v.toFixed(1) + " ms"; } });
-    w.num("rate", { label: "Rate", min: .05, max: 8, log: true, value: .8, fmt: fmtHz });
-    w.num("fb", { label: "Feedback", min: 0, max: .9, step: .01, value: 0, fmt: fmtPct });
+    ["voices", "base", "depth", "rate", "fb"].forEach(function (k) { fxNum(w, "chorus", k); });
     var cv = el("canvas", "sk-plot sk-short"); cv.setAttribute("aria-label", "Each voice's delay time over four seconds"); w.body.appendChild(cv);
     function dms(i, t) { var P = w.P, d = Math.min(P.depth, P.base - .2), r = i === 2 ? P.rate * 1.13 : P.rate; return P.base + (i === 1 ? -1 : 1) * d * Math.sin(2 * Math.PI * r * t); }
     var dirty = anim(w, cv, function (C) {
@@ -1407,41 +1708,15 @@
     });
     w.redraw = function () { dirty(); };
     w.view = viewer(w.body, { ms: 20 });
-    w.build = function (c) {
-      w.t0 = c.currentTime; var inp = c.createGain(), out = c.createGain(), stops = [], lfos = [c.createOscillator(), c.createOscillator()];
-      lfos[0].frequency.value = w.P.rate; lfos[1].frequency.value = w.P.rate * 1.13; lfos.forEach(function (o) { o.start(w.t0); stops.push(o); });
-      var vs = [];
-      for (var i = 0; i < w.P.voices; i++) {
-        var d = c.createDelay(.1), g = c.createGain(), fb = c.createGain(), pan = c.createStereoPanner(), sw = Math.min(w.P.depth, w.P.base - .2) / 1000;
-        d.delayTime.value = w.P.base / 1000; g.gain.value = (i === 1 ? -1 : 1) * sw; (i === 2 ? lfos[1] : lfos[0]).connect(g); g.connect(d.delayTime);
-        fb.gain.value = w.P.fb; d.connect(fb); fb.connect(d); pan.pan.value = w.P.voices === 1 ? 0 : [-.7, .7, 0][i];
-        inp.connect(d); d.connect(pan); pan.connect(out); vs.push({ d: d, g: g, fb: fb, i: i });
-      }
-      w.n = { lfos: lfos, vs: vs };
-      out.gain.value = 1 / Math.sqrt(w.P.voices);
-      return { input: inp, output: out, stop: function () { stops.forEach(function (o) { o.stop(); }); } };
-    };
-    w.apply = function (k, v) {
-      if (!w.n) return; var t = ac().currentTime;
-      if (k === "voices") { w.stop(); w.start(); return; }
-      if (k === "rate") { w.n.lfos[0].frequency.setTargetAtTime(v, t, .02); w.n.lfos[1].frequency.setTargetAtTime(v * 1.13, t, .02); }
-      w.n.vs.forEach(function (x) { var sw = Math.min(w.P.depth, w.P.base - .2) / 1000;
-        if (k === "base") x.d.delayTime.setTargetAtTime(v / 1000, t, .02);
-        if (k === "base" || k === "depth") x.g.gain.setTargetAtTime((x.i === 1 ? -1 : 1) * sw, t, .02);
-        if (k === "fb") x.fb.gain.setTargetAtTime(v, t, .02); });
-    };
+    w.build = function (c) { var fx = w.fx = SK.fx("chorus", c, w.P, { onRebuild: function (n, inner) { w.n = n; w.t0 = inner.t0; } }); w.n = fx.n; w.t0 = fx.t0; return fx; };
+    w.apply = function (k, v) { if (w.fx) w.fx.set(w.P); };
     return w;
   }
 
   // ---------- phaser ----------
   function Phaser(host) {
     var w = Fx(host, "Phaser", "chords", .5);
-    w.num("stages", { label: "Stages", min: 2, max: 12, step: 2, value: 4, fmt: fmtN(0) });
-    w.num("base", { label: "Centre", min: 100, max: 4000, log: true, value: 700, fmt: fmtHz });
-    w.num("depth", { label: "Sweep", min: 0, max: 3, step: .05, value: 1.5, fmt: function (v) { return "± " + v.toFixed(2) + " oct"; } });
-    w.num("rate", { label: "Rate", min: .02, max: 6, log: true, value: .3, fmt: fmtHz });
-    w.num("q", { label: "Width (Q)", min: .2, max: 4, step: .05, value: .7, fmt: fmtN(2) });
-    w.num("fb", { label: "Feedback", min: 0, max: .85, step: .01, value: .3, fmt: fmtPct });
+    ["stages", "base", "depth", "rate", "q", "fb"].forEach(function (k) { fxNum(w, "phaser", k); });
     function centre() { return w.P.base * Math.pow(2, w.P.depth * Math.sin(2 * Math.PI * w.P.rate * (w.running && w.t0 != null ? ac().currentTime - w.t0 : 0))); }
     w.view = viewer(w.body, { ms: 20, overlay: function (g, X, W, H, C) {
       var f0 = centre(), Q = w.P.q, st = w.P.stages, m = w.bypass ? 0 : w.P.mix; g.strokeStyle = C.hot; g.lineWidth = 2; g.beginPath();
@@ -1451,24 +1726,8 @@
     } });
     w.redraw = function () { w.view.dirty = true; };
     anim(w, w.view.box, function () { w.view.dirty = true; });
-    w.build = function (c) {
-      w.t0 = c.currentTime; var inp = c.createGain(), sum = c.createGain(), out = c.createGain(), fb = c.createGain(), loopD = c.createDelay(.01);
-      var lfo = c.createOscillator(), lg = c.createGain(); lfo.frequency.value = w.P.rate; lg.gain.value = w.P.depth * 1200; lfo.connect(lg); lfo.start(w.t0);
-      inp.connect(sum); var prev = sum, aps = [];
-      for (var i = 0; i < w.P.stages; i++) { var ap = c.createBiquadFilter(); ap.type = "allpass"; ap.frequency.value = w.P.base; ap.Q.value = w.P.q; lg.connect(ap.detune); prev.connect(ap); prev = ap; aps.push(ap); }
-      prev.connect(out); prev.connect(fb); fb.gain.value = w.P.fb; loopD.delayTime.value = 0; fb.connect(loopD); loopD.connect(sum);
-      w.n = { aps: aps, lfo: lfo, lg: lg, fb: fb };
-      return { input: inp, output: out, stop: function () { lfo.stop(); } };
-    };
-    w.apply = function (k, v) {
-      if (!w.n) return; var t = ac().currentTime;
-      if (k === "stages") { w.stop(); w.start(); return; }
-      if (k === "base") w.n.aps.forEach(function (a) { a.frequency.setTargetAtTime(v, t, .01); });
-      if (k === "q") w.n.aps.forEach(function (a) { a.Q.setTargetAtTime(v, t, .01); });
-      if (k === "depth") w.n.lg.gain.setTargetAtTime(v * 1200, t, .01);
-      if (k === "rate") { w.stop(); w.start(); }
-      if (k === "fb") w.n.fb.gain.setTargetAtTime(v, t, .01);
-    };
+    w.build = function (c) { var fx = w.fx = SK.fx("phaser", c, w.P, { onRebuild: function (n, inner) { w.n = n; w.t0 = inner.t0; } }); w.n = fx.n; w.t0 = fx.t0; return fx; };
+    w.apply = function (k, v) { if (w.fx) w.fx.set(w.P); };
     return w;
   }
 
@@ -1487,11 +1746,7 @@
       { name: "Dub", set: { time: BEAT * 1000, fb: .8, tone: 1400, wow: .3, pp: "1", mix: .5 } },
       { name: "Runaway", set: { time: 280, fb: 1.05, tone: 2200, wow: .5, pp: "0", mix: .5 } }
     ]);
-    w.num("time", { label: "Delay time", min: 20, max: 1500, log: true, value: 360, fmt: function (v) { return Math.round(v) + " ms"; } });
-    w.num("fb", { label: "Feedback (repeats)", min: 0, max: 1.1, step: .01, value: .35, fmt: fmtPct });
-    w.num("tone", { label: "Tone of the repeats", min: 600, max: 16000, log: true, value: 6000, fmt: fmtHz });
-    w.num("wow", { label: "Wow and flutter (tape)", min: 0, max: 1, step: .01, value: 0, fmt: fmtPct });
-    w.pick("pp", "Ping-pong (left, right)", [["0", "No"], ["1", "Yes"]], "0");
+    ["time", "fb", "tone", "wow"].forEach(function (k) { fxNum(w, "delay", k); }); fxPick(w, "delay", "pp");
     var cv = el("canvas", "sk-plot sk-short"); cv.setAttribute("aria-label", "When each echo arrives and how loud it is"); w.body.appendChild(cv);
     var dirty = anim(w, cv, function (C) {
       var s = fit(cv), g = s.g, W = s.w, H = s.h, T = 3, P = w.P, X = function (sec) { return 6 + sec / T * (W - 12); };
@@ -1504,32 +1759,8 @@
     });
     w.redraw = function () { dirty(); };
     w.view = viewer(w.body, { ms: 40 });
-    function sat(c) { var sh = c.createWaveShaper(), n = 1025, a = new Float32Array(n); for (var i = 0; i < n; i++) a[i] = Math.tanh((i / (n - 1) * 2 - 1) * 1.5) / Math.tanh(1.5); sh.curve = a; return sh; }
-    w.build = function (c) {
-      var P = w.P, inp = c.createGain(), out = c.createGain(), lfo = c.createOscillator(), flut = c.createOscillator(), lg = c.createGain(), fg = c.createGain(), lines = [];
-      lfo.frequency.value = .6; flut.frequency.value = 7; lfo.connect(lg); flut.connect(fg); lfo.start(); flut.start();
-      for (var i = 0; i < (P.pp === "1" ? 2 : 1); i++) {
-        var d = c.createDelay(2), lp = c.createBiquadFilter(), fb = c.createGain(), pan = c.createStereoPanner();
-        d.delayTime.value = P.time / 1000; lp.frequency.value = P.tone; fb.gain.value = P.fb; pan.pan.value = P.pp === "1" ? (i ? .8 : -.8) : 0;
-        lg.connect(d.delayTime); fg.connect(d.delayTime); d.connect(lp); lp.connect(pan); pan.connect(out); var s1 = sat(c); lp.connect(s1); s1.connect(fb);
-        lines.push({ d: d, lp: lp, fb: fb });
-      }
-      inp.connect(lines[0].d);
-      if (lines.length === 2) { lines[0].fb.connect(lines[1].d); lines[1].fb.connect(lines[0].d); } else lines[0].fb.connect(lines[0].d);
-      w.n = { lines: lines, lg: lg, fg: fg }; wow(c.currentTime);
-      return { input: inp, output: out, stop: function () { lfo.stop(); flut.stop(); } };
-    };
-    function wow(t) { w.n.lg.gain.setTargetAtTime(w.P.wow * .004, t, .05); w.n.fg.gain.setTargetAtTime(w.P.wow * .0004, t, .05); }
-    w.apply = function (k, v) {
-      if (!w.n) return; var t = ac().currentTime;
-      if (k === "pp") { w.stop(); w.start(); return; }
-      if (k === "wow") wow(t);
-      w.n.lines.forEach(function (x) {
-        if (k === "time") x.d.delayTime.setTargetAtTime(v / 1000, t, .08);   // a slow glide: the pitch bends as the tape speeds up
-        if (k === "fb") x.fb.gain.setTargetAtTime(v, t, .02);
-        if (k === "tone") x.lp.frequency.setTargetAtTime(v, t, .02);
-      });
-    };
+    w.build = function (c) { var fx = w.fx = SK.fx("delay", c, w.P, { onRebuild: function (n) { w.n = n; } }); w.n = fx.n; return fx; };
+    w.apply = function (k, v) { if (w.fx) w.fx.set(w.P); };
     return w;
   }
 
@@ -1702,7 +1933,6 @@
   }
 
   // ---------- EQ ----------
-  var EQB = [["hp", "highpass"], ["ls", "lowshelf"], ["p1", "peaking"], ["p2", "peaking"], ["hs", "highshelf"], ["lp", "lowpass"]];
   function Eq(host) {
     var w = Fx(host, "Equaliser", "chords", 1), N = 240, fr = new Float32Array(N), mag = new Float32Array(N), ph = new Float32Array(N), probes = null, hidden = null, shown = false;
     for (var i = 0; i < N; i++) fr[i] = 20 * Math.pow(1000, i / (N - 1));
@@ -1716,24 +1946,24 @@
       { name: "Search (narrow boost)", set: { p2F: 1000, p2G: 12, p2Q: 8 } }
     ]);
     var gc = group(w, "Low end");
-    w.num("hpF", { label: "High-pass (low cut)", min: 20, max: 1000, log: true, value: 20, fmt: fmtHz }, gc);
-    w.num("lsF", { label: "Low shelf frequency", min: 40, max: 500, log: true, value: 120, fmt: fmtHz }, gc);
-    w.num("lsG", { label: "Low shelf gain", min: -15, max: 15, step: .5, value: 0, fmt: fmtDb }, gc);
+    fxNum(w, "eq", "hpF", gc);
+    fxNum(w, "eq", "lsF", gc);
+    fxNum(w, "eq", "lsG", gc);
     var gm = group(w, "Middle: two bells");
-    w.num("p1F", { label: "Bell 1 frequency", min: 60, max: 8000, log: true, value: 400, fmt: fmtHz }, gm);
-    w.num("p1G", { label: "Bell 1 gain", min: -15, max: 15, step: .5, value: 0, fmt: fmtDb }, gm);
-    w.num("p1Q", { label: "Bell 1 width (Q)", min: .3, max: 12, log: true, value: 1, fmt: fmtN(1) }, gm);
-    w.num("p2F", { label: "Bell 2 frequency", min: 200, max: 12000, log: true, value: 2500, fmt: fmtHz }, gm);
-    w.num("p2G", { label: "Bell 2 gain", min: -15, max: 15, step: .5, value: 0, fmt: fmtDb }, gm);
-    w.num("p2Q", { label: "Bell 2 width (Q)", min: .3, max: 12, log: true, value: 1, fmt: fmtN(1) }, gm);
+    fxNum(w, "eq", "p1F", gm);
+    fxNum(w, "eq", "p1G", gm);
+    fxNum(w, "eq", "p1Q", gm);
+    fxNum(w, "eq", "p2F", gm);
+    fxNum(w, "eq", "p2G", gm);
+    fxNum(w, "eq", "p2Q", gm);
     var gh = group(w, "Top end");
-    w.num("hsF", { label: "High shelf frequency", min: 2000, max: 16000, log: true, value: 8000, fmt: fmtHz }, gh);
-    w.num("hsG", { label: "High shelf gain", min: -15, max: 15, step: .5, value: 0, fmt: fmtDb }, gh);
-    w.num("lpF", { label: "Low-pass (high cut)", min: 1000, max: 20000, log: true, value: 20000, fmt: fmtHz }, gh);
+    fxNum(w, "eq", "hsF", gh);
+    fxNum(w, "eq", "hsG", gh);
+    fxNum(w, "eq", "lpF", gh);
     w.pick("problem", "Hidden problem", [["none", "None"], ["ring", "A ringing frequency"], ["boom", "Boomy"], ["harsh", "Harsh"]], "none", null, function (v) { shown = false; hidden = v === "none" ? null : { type: "peaking", f: v === "ring" ? 300 * Math.pow(12, Math.random()) : v === "boom" ? 160 + Math.random() * 80 : 2500 + Math.random() * 1500, q: v === "ring" ? 10 : 1.4, g: v === "ring" ? 16 : 9 }; if (w.running) { w.stop(); w.start(); } });
     var rev = button(w.tools, "Reveal", function () { shown = true; w.status.textContent = hidden ? "The problem was at " + fmtHz(hidden.f) + "." : "No problem is hidden."; w.view.dirty = true; });
     w.tools.insertBefore(rev, w.status);
-    function setF(f, k) { var P = w.P; if (k === "hp") { f.frequency.value = P.hpF; f.Q.value = .7071; } else if (k === "lp") { f.frequency.value = P.lpF; f.Q.value = .7071; } else { f.frequency.value = P[k + "F"]; f.gain.value = P[k + "G"]; if (P[k + "Q"]) f.Q.value = P[k + "Q"]; } }
+    function setF(f, k) { eqSet(f, k, w.P); }
     w.view = viewer(w.body, { ms: 20, overlay: function (g, X, W, H, C) {
       var c = ac(); if (!probes) probes = EQB.map(function (b) { var f = c.createBiquadFilter(); f.type = b[1]; return f; });
       var tot = new Float32Array(N); probes.forEach(function (f, j) { setF(f, EQB[j][0]); f.getFrequencyResponse(fr, mag, ph); for (var i = 0; i < N; i++) tot[i] += 20 * Math.log10(mag[i] + 1e-9); });
@@ -1744,14 +1974,8 @@
       g.fillStyle = C.hot; g.fillText("EQ curve (±24 dB, 0 in the middle)", W - 190, 11);
     } });
     w.redraw = function () { w.view.dirty = true; };
-    w.build = function (c) {
-      var inp = c.createGain(), prev = inp, fs = {};
-      if (hidden) { var h = c.createBiquadFilter(); h.type = "peaking"; h.frequency.value = hidden.f; h.Q.value = hidden.q; h.gain.value = hidden.g; inp.connect(h); prev = h; }
-      EQB.forEach(function (b) { var f = c.createBiquadFilter(); f.type = b[1]; setF(f, b[0]); prev.connect(f); prev = f; fs[b[0]] = f; });
-      w.n = fs; return { input: inp, output: prev };
-    };
-    w.apply = function (k, v) { if (!w.n || !/^(hp|lp|ls|hs|p1|p2)/.test(k)) return; var b = k.slice(0, 2), f = w.n[b], t = ac().currentTime, x = k.slice(2);
-      if (x === "F") f.frequency.setTargetAtTime(v, t, .01); else if (x === "G") f.gain.setTargetAtTime(v, t, .01); else if (x === "Q") f.Q.setTargetAtTime(v, t, .01); };
+    w.build = function (c) { var fx = w.fx = SK.fx("eq", c, w.P, { hidden: hidden }); w.n = fx.n; return fx; };
+    w.apply = function (k, v) { if (w.fx && /^(hp|lp|ls|hs|p1|p2)/.test(k)) w.fx.set(w.P); };
     return w;
   }
   // a strip of values over the last few seconds, pushed once per audio block
@@ -1896,19 +2120,10 @@
       { name: "Auto-pan", set: { what: "pan", shape: "sine", rate: .4, depth: 1 } },
       { name: "Fast pan", set: { what: "pan", shape: "triangle", rate: 5, depth: .9 } }
     ]);
-    w.pick("what", "The LFO moves", [["amp", "Volume (tremolo)"], ["pan", "Left ↔ right (auto-pan)"]], "amp", null, function () { if (w.running) { w.stop(); w.start(); } });
-    w.pick("shape", "Shape", [["sine", "Sine"], ["triangle", "Triangle"], ["square", "Square"]], "triangle");
-    w.num("rate", { label: "Rate", min: .1, max: 15, log: true, value: 6, fmt: fmtHz });
-    w.num("depth", { label: "Depth", min: 0, max: 1, step: .01, value: .6, fmt: fmtPct });
+    fxPick(w, "tremolo", "what"); fxPick(w, "tremolo", "shape"); fxNum(w, "tremolo", "rate"); fxNum(w, "tremolo", "depth");
     w.view = viewer(w.body, { ms: 400 });
-    w.build = function (c) {
-      var inp = c.createGain(), amp = c.createGain(), pan = c.createStereoPanner(), lfo = c.createOscillator(), lg = c.createGain();
-      lfo.type = w.P.shape; lfo.frequency.value = w.P.rate; lfo.connect(lg); lfo.start(); inp.connect(amp); amp.connect(pan);
-      function set() { var t = ac().currentTime, dd = w.P.depth; if (w.P.what === "amp") { amp.gain.setTargetAtTime(1 - dd / 2, t, .01); lg.gain.setTargetAtTime(dd / 2, t, .01); } else lg.gain.setTargetAtTime(dd, t, .01); }
-      lg.connect(w.P.what === "amp" ? amp.gain : pan.pan); w.n = { lfo: lfo, set: set }; set();
-      return { input: inp, output: pan, stop: function () { lfo.stop(); } };
-    };
-    w.apply = function (k, v) { if (!w.n) return; if (k === "shape") w.n.lfo.type = v; if (k === "rate") w.n.lfo.frequency.setTargetAtTime(v, ac().currentTime, .01); if (k === "depth") w.n.set(); };
+    w.build = function (c) { var fx = w.fx = SK.fx("tremolo", c, w.P, { onRebuild: function (n) { w.n = n; } }); w.n = fx.n; return fx; };
+    w.apply = function (k, v) { if (w.fx) w.fx.set(w.P); };
     return w;
   }
 
@@ -1918,12 +2133,9 @@
   var ROT = { slow: [.8, .7], fast: [6.7, 5.9], stop: [0, 0] };
   function Rotary(host) {
     var w = Fx(host, "Rotary speaker", "organ", 1), ang = [0, 0], lastT = 0;
-    w.pick("speed", "Speed", [["slow", "Slow (chorale)"], ["fast", "Fast (tremolo)"], ["stop", "Stopped"]], "slow");
+    fxPick(w, "rotary", "speed");
     var fast = button(w.tools, "Slow ⇄ Fast", function () { if (!w.running) w.start(); w.c.speed.set(w.P.speed === "fast" ? "slow" : "fast"); }); w.tools.insertBefore(fast, w.status);
-    w.num("hornAcc", { label: "Horn speeds up in", min: .2, max: 3, step: .1, value: .8, fmt: fmtS });
-    w.num("drumAcc", { label: "Drum speeds up in", min: 1, max: 10, step: .1, value: 5, fmt: fmtS });
-    w.num("xover", { label: "Crossover", min: 300, max: 2000, log: true, value: 800, fmt: fmtHz });
-    w.num("drive", { label: "Amp drive", min: 1, max: 8, step: .1, value: 1.5, fmt: function (v) { return "×" + v.toFixed(1); } });
+    ["hornAcc", "drumAcc", "xover", "drive"].forEach(function (k) { fxNum(w, "rotary", k); });
     var cv = el("canvas", "sk-plot sk-short"); cv.setAttribute("aria-label", "The horn and the drum seen from above, spinning"); w.body.appendChild(cv);
     anim(w, cv, function (C) {
       var s = fit(cv), g = s.g, W = s.w, H = s.h, now = ac().currentTime, dt = Math.min(.1, now - lastT); lastT = now;
@@ -1936,26 +2148,8 @@
       g.fillText("you ↓", W / 2 - 12, H - 2);
     });
     w.view = viewer(w.body, { ms: 30 });
-    w.build = function (c) {
-      var inp = c.createGain(), pre = shaper(c, function (x) { return Math.tanh(x * w.P.drive) / Math.tanh(w.P.drive); }), out = c.createGain();
-      inp.connect(pre); w.n = { pre: pre, xs: [] };
-      [["h", "highpass", .00035, .5, .9], ["d", "lowpass", .0001, .35, .8]].forEach(function (r) {
-        var x = c.createBiquadFilter(); x.type = r[1]; x.frequency.value = w.P.xover; w.n.xs.push(x); pre.connect(x);
-        var spin = c.createOscillator(); spin.frequency.value = ROT[w.P.speed][r[0] === "h" ? 0 : 1]; spin.start(); w.n[r[0]] = spin.frequency; w.n[r[0] + "o"] = spin;
-        var dl = c.createDelay(.01), dg = c.createGain(), amp = c.createGain(), ag = c.createGain(), pan = c.createStereoPanner(), pg = c.createGain();
-        dl.delayTime.value = .002; dg.gain.value = r[2]; spin.connect(dg); dg.connect(dl.delayTime);
-        amp.gain.value = 1 - r[3] / 2; ag.gain.value = r[3] / 2; spin.connect(ag); ag.connect(amp.gain);   // loudest facing you
-        pg.gain.value = r[4]; spin.connect(pg); pg.connect(pan.pan);
-        x.connect(dl); dl.connect(amp); amp.connect(pan); pan.connect(out);
-      });
-      return { input: inp, output: out, stop: function () { w.n.ho.stop(); w.n.do.stop(); } };
-    };
-    w.apply = function (k, v) {
-      if (!w.n) return; var t = ac().currentTime;
-      if (k === "speed") { w.n.h.setTargetAtTime(ROT[v][0], t, w.P.hornAcc / 3); w.n.d.setTargetAtTime(ROT[v][1], t, w.P.drumAcc / 3); }
-      if (k === "xover") w.n.xs.forEach(function (x) { x.frequency.setTargetAtTime(v, t, .01); });
-      if (k === "drive") w.n.pre.curve = shaper(ac(), function (x) { return Math.tanh(x * v) / Math.tanh(v); }).curve;
-    };
+    w.build = function (c) { var fx = w.fx = SK.fx("rotary", c, w.P); w.n = fx.n; return fx; };
+    w.apply = function (k, v) { if (w.fx) w.fx.set(w.P); };
     return w;
   }
   // ---------- octaver ----------
@@ -2204,42 +2398,8 @@
       { name: "Reverse", set: { decay: 1.5, pre: 0, damp: 8000, early: 0, size: .5, reverse: "1", type: "room" } },
       { name: "Spring", set: { decay: 2.5, pre: 0, damp: 4500, early: 0, size: .35, reverse: "0", type: "spring" } }
     ]);
-    w.pick("type", "Kind", [["room", "Room (noise)"], ["spring", "Spring"]], "room");
-    w.num("decay", { label: "Decay time (RT60)", min: .1, max: 10, log: true, value: 2, fmt: fmtS });
-    w.num("pre", { label: "Pre-delay", min: 0, max: 200, step: 1, value: 20, fmt: fmtMs });
-    w.num("damp", { label: "Damping (highs fade)", min: 800, max: 16000, log: true, value: 6000, fmt: fmtHz });
-    w.num("early", { label: "Early reflections", min: 0, max: 1, step: .01, value: .4, fmt: fmtPct });
-    w.num("size", { label: "Room size", min: .1, max: 1, step: .01, value: .7, fmt: fmtPct });
-    w.pick("reverse", "Play the echo backwards", [["0", "No"], ["1", "Yes"]], "0");
+    fxPick(w, "reverb", "type"); ["decay", "pre", "damp", "early", "size"].forEach(function (k) { fxNum(w, "reverb", k); }); fxPick(w, "reverb", "reverse");
     var ir = null, cv = el("canvas", "sk-plot sk-short"); cv.setAttribute("aria-label", "The impulse response: what one clap sounds like in this room"); w.body.appendChild(cv);
-    function makeIR() {
-      var c = ac(), sr = c.sampleRate, P = w.P, len = Math.ceil(sr * Math.min(10, P.decay * 1.2 + .05)), b = c.createBuffer(2, len, sr);
-      var k = 6.91 / P.decay;
-      // a spring: the wave runs to the end of the coil and back again and again (Room size sets the trip time). The coil
-      // carries low frequencies faster than high ones, so each trip arrives as a falling chirp: the "drip" and the "boing".
-      if (P.type === "spring") for (var sc = 0; sc < 2; sc++) {
-        var ds = b.getChannelData(sc), trip = .025 + .06 * P.size * (sc ? 1.07 : 1), cl = Math.floor(sr * trip), fl = 0, fa = Math.exp(-2 * Math.PI * P.damp / sr);
-        for (var r = 0; r * cl < len; r++) {
-          var ph = 0, at0 = r * cl, spread = Math.min(cl * 2.5, (r + 1) * .012 * sr);   // each trip smears the chirp out a bit more
-          for (var q0 = 0; q0 < spread && at0 + q0 < len; q0++) { var x0 = q0 / spread, f = 4200 * Math.pow(1 - x0, 2) + 180; ph += 2 * Math.PI * f / sr;
-            ds[at0 + q0] += Math.sin(ph) * Math.sin(Math.PI * x0) * (r % 2 ? -.8 : 1); }
-        }
-        for (var i2 = 0; i2 < len; i2++) { fl = fl * fa + (ds[i2] + (Math.random() * 2 - 1) * .08) * (1 - fa); ds[i2] = fl * Math.exp(-k * i2 / sr); }
-        if (P.reverse === "1") Array.prototype.reverse.call(ds);
-      }
-      else for (var ch = 0; ch < 2; ch++) {
-        var d = b.getChannelData(ch), lp = 0;
-        // noise that dies away, through a low-pass that closes as it goes: the highs fade first, as in a real room
-        for (var i = 0; i < len; i++) { var t = i / sr, fc = P.damp + (18000 - P.damp) * Math.exp(-4 * t / P.decay), a = Math.exp(-2 * Math.PI * fc / sr);
-          lp = lp * a + (Math.random() * 2 - 1) * (1 - a); d[i] = lp * Math.exp(-k * t) * Math.min(1, t / (.002 + .03 * P.size)); }
-        if (P.early > 0) for (var j = 0; j < 8; j++) { var at = Math.floor(sr * (.004 + Math.random() * .07 * P.size)); if (at < len) d[at] += (Math.random() < .5 ? -1 : 1) * P.early * (1 - j / 10) * .8; }
-        if (P.reverse === "1") Array.prototype.reverse.call(d);
-      }
-      // normalise so long and short rooms are about as loud
-      var sum = 0; for (var c2 = 0; c2 < 2; c2++) { var dd = b.getChannelData(c2); for (var q = 0; q < len; q++) sum += dd[q] * dd[q]; }
-      var g = 1 / Math.sqrt(sum / 2 + 1e-9) * 2.4; for (var c3 = 0; c3 < 2; c3++) { var d3 = b.getChannelData(c3); for (var q2 = 0; q2 < len; q2++) d3[q2] *= g; }
-      return b;
-    }
     var dirty = anim(w, cv, function (C) {
       var s = fit(cv), g = s.g, W = s.w, H = s.h; if (!ir) { g.fillStyle = C.ink2; g.font = "11px system-ui, sans-serif"; g.fillText("Press ▶ to make the room; its echo pattern shows here.", 6, H / 2); return; }
       var d = ir.getChannelData(0), n = d.length, pre = w.P.pre / 1000 * ir.sampleRate, tot = n + pre, pk = 0; for (var i = 0; i < n; i++) pk = Math.max(pk, Math.abs(d[i]));
@@ -2247,9 +2407,9 @@
       g.fillStyle = C.ink2; g.font = "10px system-ui, sans-serif"; g.fillText("impulse response: " + (tot / ir.sampleRate).toFixed(2) + " s", 4, 11);
     });
     var timer = null;
-    w.redraw = function () { clearTimeout(timer); timer = setTimeout(function () { if (w.n) { ir = makeIR(); w.n.conv.buffer = ir; w.n.pd.delayTime.value = w.P.pre / 1000; } dirty(); }, 120); };
+    w.redraw = function () { clearTimeout(timer); timer = setTimeout(function () { if (w.fx && w.n) { w.fx.set(w.P); ir = w.n.ir; } dirty(); }, 120); };
     w.view = viewer(w.body, { ms: 20 });
-    w.build = function (c) { var inp = c.createGain(), pd = c.createDelay(1), conv = c.createConvolver(); ir = makeIR(); conv.buffer = ir; pd.delayTime.value = w.P.pre / 1000; inp.connect(pd); pd.connect(conv); w.n = { conv: conv, pd: pd }; dirty(); return { input: inp, output: conv }; };
+    w.build = function (c) { var fx = w.fx = SK.fx("reverb", c, w.P); w.n = fx.n; ir = w.n.ir; dirty(); return fx; };
     return w;
   }
 
@@ -2677,15 +2837,12 @@
       { name: "Bass, growl", set: { type: "bass", source: "bass", cab: "8x10", design: "master", gain: 6.5, bass: 6, mid: 6.5, midf: 800, treble: 5, master: 4, presence: 5, resonance: 5 } },
       { name: "Bass through a guitar amp", set: { type: "guitar", source: "bass", cab: "1x12o", design: "master", gain: 3, bass: 5, mid: 5, midf: 700, treble: 5, master: 5, presence: 5, resonance: 5 } }
     ]);
-    w.pick("type", "Amp", [["guitar", "Guitar amp"], ["bass", "Bass amp"]], "guitar", null, function () { label(); });
-    w.pick("design", "Volume knobs", [["master", "Gain + Master"], ["vintage", "Vintage: one Volume, no master"]], "master", null, function () { label(); });
-    w.pick("cab", "Cabinet", Object.keys(CABS).map(function (k) { return [k, CABS[k][0]]; }), "1x12o", null, function () { label(); if (w.n) setCab(); });
-    var K = { min: 0, max: 10, step: .1, fmt: knob };
-    function k(key, lab, v, title) { var o = {}; for (var x in K) o[x] = K[x]; o.label = lab; o.value = v; o.title = title; return w.num(key, o); }
+    fxPick(w, "amp", "type", null, function () { label(); }); fxPick(w, "amp", "design", null, function () { label(); }); fxPick(w, "amp", "cab", null, function () { label(); });
+    function k(key, lab, v, title) { var d = fxDesc("amp", key), o = {}; for (var x in d) o[x] = d[x]; o.title = title; return w.num(key, o); }
     k("gain", "Gain", 3, "How hard the preamp is pushed: the sound (clean, crunch, distortion)");
     k("bass", "Bass", 5, "Tone stack, before the power amp: around 100 Hz (60 Hz on the bass amp)");
     k("mid", "Middle", 5, "Tone stack: boost or cut at the Mid frequency. Scooped mids sound big alone and vanish in a band");
-    w.num("midf", { label: "Mid frequency", min: 200, max: 3000, log: true, value: 700, fmt: function (v) { return fmtHz(v < 1000 ? Math.round(v / 10) * 10 : Math.round(v / 50) * 50); }, title: "Where the Middle knob works: low (200-400 Hz) is body and boom, 700 Hz-1 kHz honk and growl, 1.5-3 kHz bite and attack" });
+    k("midf", "Mid frequency", 700, "Where the Middle knob works: low (200-400 Hz) is body and boom, 700 Hz-1 kHz honk and growl, 1.5-3 kHz bite and attack");
     k("treble", "Treble", 5, "Tone stack: from about 2.5 kHz up (4 kHz on the bass amp). In the preamp, so it changes what gets distorted");
     k("master", "Master", 3, "How loud: between the preamp and the power amp");
     k("presence", "Presence", 5, "In the power amp, after the distortion: about 2-6 kHz, the cut and edge");
@@ -2694,8 +2851,6 @@
     w.view = viewer(w.body, { ms: 30 });
     function vintage() { return w.P.design === "vintage"; }
     function bassAmp() { return w.P.type === "bass"; }
-    function preGain() { return Math.pow(10, (w.P.gain * 4.2 - 8) / 20) * (bassAmp() ? .35 : 1); }   // 0 -> x0.4, 10 -> x50; a bass amp has more headroom
-    function masterLin() { var m = vintage() ? w.P.gain : w.P.master; return 1.6 * Math.pow(m / 10, 2.2); }   // 10 -> drives the power valves
     function db(v) { return (v - 5) * 2.4; }                                                 // a tone knob: 0 -> -12 dB, 10 -> +12 dB
     function label() {
       w.c.master.el.style.opacity = vintage() ? .4 : 1; w.c.master.input.disabled = vintage();
@@ -2711,37 +2866,8 @@
       if (w.running) w.apply("all");
     }
     w.redraw = function () { label(); w.view.dirty = true; };
-    function setCab() {
-      var spec = CABS[w.P.cab][1], t = ac().currentTime;
-      w.n.cab.forEach(function (f, i) { var x = spec[i] || ["peaking", 1000, 1, 0];
-        f.type = x[0]; f.frequency.setValueAtTime(x[1], t); f.Q.setValueAtTime(x[2], t); f.gain.setValueAtTime(x[3] || 0, t); });
-    }
-    w.build = function (c) {
-      var inp = c.createGain(), tight = c.createBiquadFilter(), gain = c.createGain(), pre = c.createWaveShaper(), preOut = c.createGain(),
-          bass = c.createBiquadFilter(), mid = c.createBiquadFilter(), tre = c.createBiquadFilter(), master = c.createGain(), power = c.createWaveShaper(),
-          pres = c.createBiquadFilter(), reso = c.createBiquadFilter(), out = c.createGain(), cab = [0, 1, 2, 3, 4, 5].map(function () { return c.createBiquadFilter(); });
-      tight.type = "highpass"; tight.frequency.value = 90;
-      pre.curve = curve(function (x) { return (Math.tanh(1.2 * x + .25) - Math.tanh(.25)) / 1.1; }); pre.oversample = "4x";   // uneven, like a valve
-      preOut.gain.value = .7;
-      bass.type = "lowshelf"; mid.type = "peaking"; mid.Q.value = .7; tre.type = "highshelf";
-      power.curve = curve(function (x) { return Math.tanh(x * 1.3) / Math.tanh(1.3); }); power.oversample = "4x";
-      pres.type = "peaking"; pres.frequency.value = 3800; pres.Q.value = .6; reso.type = "peaking"; reso.frequency.value = 90; reso.Q.value = 1;
-      out.gain.value = .9;
-      [inp, tight, gain, pre, preOut, bass, mid, tre, master, power, pres, reso].concat(cab, [out]).reduce(function (a, b) { a.connect(b); return b; });
-      w.n = { tight: tight, gain: gain, bass: bass, mid: mid, tre: tre, master: master, pres: pres, reso: reso, cab: cab };
-      setCab(); w.apply("all");
-      return { input: inp, output: out };
-    };
-    w.apply = function (key) {
-      if (!w.n) return; var t = ac().currentTime, n = w.n, ba = bassAmp();
-      n.tight.frequency.setTargetAtTime(ba ? 30 : 90, t, .02);
-      n.bass.frequency.setTargetAtTime(ba ? 60 : 110, t, .02); n.tre.frequency.setTargetAtTime(ba ? 4000 : 2500, t, .02); n.mid.frequency.setTargetAtTime(w.P.midf, t, .02);
-      n.gain.gain.setTargetAtTime(preGain(), t, .02);
-      n.bass.gain.setTargetAtTime(db(w.P.bass), t, .02); n.mid.gain.setTargetAtTime(db(w.P.mid), t, .02); n.tre.gain.setTargetAtTime(db(w.P.treble), t, .02);
-      n.master.gain.setTargetAtTime(masterLin(), t, .02);
-      n.pres.gain.setTargetAtTime(db(w.P.presence) * .8, t, .02); n.reso.gain.setTargetAtTime(db(w.P.resonance), t, .02);
-      if (key === "cab") setCab();
-    };
+    w.build = function (c) { var fx = w.fx = SK.fx("amp", c, w.P); w.n = fx.n; return fx; };
+    w.apply = function (key) { if (w.fx) w.fx.set(w.P); };
     w.c.source.input.addEventListener("change", function () { label(); });
     label();
     return w;
