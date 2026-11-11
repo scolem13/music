@@ -214,6 +214,12 @@
 </style>
 
 <div id="nt-root">
+  <div class="nt-panel nt-dict" id="nt-daw" hidden style="padding:.8rem 1.1rem;margin-bottom:1rem">
+    <strong>From the DAW</strong> <span id="nt-daw-what">A clip from the DAW.</span>
+    <div class="nt-row">
+      <button type="button" class="nt-btn is-main" id="nt-daw-send" title="Put this piece's notes back into the DAW clip (one Undo step there)">Send back to the DAW</button>
+    </div>
+  </div>
   <div class="nt-panel nt-dict" id="nt-dict" hidden style="padding:.8rem 1.1rem;margin-bottom:1rem">
     <strong>Dictation</strong> <span id="nt-dict-what">Waiting for the Dictation page...</span>
     <div class="nt-row">
@@ -3475,12 +3481,15 @@
       if (f && !confirm("Read in “" + (m.title || "Untitled") + "” from " + (m.host || "Timestamp Notes") + "? It replaces the piece here.")) return;
       change(function () { doc = m.type === "nt-doc" ? D.upgrade(JSON.parse(JSON.stringify(m.doc))) : m.type === "nt-abc" ? D.upgrade(D.fromAbc(m.abc)) : D.fromChordPro(m.chordpro, doc.meter); if (m.title) doc.title = m.title; if (!doc.tempo && +m.tempo > 0) doc.tempo = Math.round(+m.tempo); Q.bpmOwn = null; qSave(); cur = 0; voice = 0; sel = null; shownCur = -1; });
       status("Read in from " + (m.host || "Timestamp Notes") + ": add the melody chunk by chunk.");
+      if (m.host === "DAW" && m.back) { $("nt-daw").hidden = false; $("nt-daw-what").textContent = "“" + (m.title || "Clip") + "”: edit it here, then send it back to its clip."; }
       try { window.focus(); } catch (err) {}
     });
     // back to the recording: Timestamp Notes loops the next phrase (or this one again)
     ["nt-back", "nt-back-again"].forEach(function (id) {
       $(id).onclick = function () { try { window.opener.postMessage({ type: "nt-back", again: id === "nt-back-again", skip: id === "nt-back" ? spillPhrases : 0 }, location.origin); window.opener.focus(); } catch (err) {} this.blur(); };
     });
+    // the DAW (tools/daw.qmd, compose-tools.js) sent nt-abc { host: "DAW", back: true }: its clip comes back as nt-return { abc }
+    $("nt-daw-send").onclick = function () { try { window.opener.postMessage({ type: "nt-return", abc: D.toAbc(doc).abc }, location.origin); window.opener.focus(); status("Sent back to the DAW."); } catch (err) { status("The DAW window is gone."); } this.blur(); };
     try { window.opener.postMessage({ type: "nt-ready" }, location.origin); } catch (e) {}
   }
 

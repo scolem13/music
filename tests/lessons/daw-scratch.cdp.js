@@ -178,6 +178,14 @@ const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.spl
     const tr = D.p.tracks[0], c = tr && tr.clips[0]; out.push(D.p.ts.join('/'), D.p.tempo, c && c.len, c && c.notes[0].m, D.undo.length === u0 + 1, D.fillUi.chart.value.split('|')[0].trim(), D.fillUi.to.value);
     D.doUndo(true); out.push(D.p.tracks.length); return out.join(' | '); })()`);
   check("open a tune: Lightly Row -> 2/4, Q 120, a 16-bar melody clip (first note F4 = 65), one undo step, its chords (Bb ...) and bars 1-16 in Fill from chords; undo removes it", tu === "2/4 | 120 | 32 | 65 | true | Bb | 16 | 0", tu);
+  const nr = await ev(`(async () => { ${KEY} ${BASE} const out = [], C = MiniDaw.Compose, c = D.p.tracks[0].clips[0], before = JSON.stringify(c.notes.map(n => [n.t, n.d, n.m]));
+    D.sel = { track: 0, clip: 0, slot: -1, notes: [] }; window.confirm = () => true; C.toNotation(D); const w = C.ntWin(); out.push(!!w);
+    for (let i = 0; i < 100 && !(w.document && w.document.getElementById('nt-daw') && !w.document.getElementById('nt-daw').hidden); i++) await new Promise(r => setTimeout(r, 100));
+    out.push(!w.document.getElementById('nt-daw').hidden);
+    const u0 = D.undo.length; w.document.getElementById('nt-daw-send').click(); for (let i = 0; i < 30 && D.undo.length === u0; i++) await new Promise(r => setTimeout(r, 100));
+    const after = JSON.stringify(D.p.tracks[0].clips[0].notes.slice().sort((a, b) => a.t - b.t || a.m - b.m).map(n => [n.t, n.d, n.m]));
+    out.push(D.undo.length === u0 + 1, after === before ? 'same' : after); w.close(); return out.join(' | '); })()`);
+  check("Notation round trip: Notation page ↗ opens the clip there (the From the DAW bar shows), Send back to the DAW applies it to the same clip, one undo step, notes unchanged", nr === "true | true | true | same", nr);
   const ms = await ev(`(() => { ${KEY} ${BASE} const out = [], key2 = (kk, o) => D.node.dispatchEvent(new KeyboardEvent('keydown', Object.assign({ key: kk, bubbles: true, cancelable: true }, o || {}))), T = D.p.tracks;
     D.sel = { track: 0, clip: -1, slot: -1, notes: [] }; const n0 = T[0].clips.length;
     key2('S', { shiftKey: true }); out.push(T[0].solo); D.msTap = null; key2('M', { shiftKey: true }); out.push(T[0].mute, T[0].clips.length === n0);

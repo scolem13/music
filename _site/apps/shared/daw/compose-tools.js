@@ -120,8 +120,9 @@
     var row = el("div", "mdaw-tools"); body.appendChild(row);
     d.abcKey = field(row, "Key", select([["C", "C (project)"], ["auto", "Best fit"]].concat(global.AbcClip.KEYS.filter(function (k) { return k !== "C"; }).map(function (k) { return [k, k + " major"]; })), "Key signature"));
     d.abcGrid = field(row, "Grid", select([["0.25", "1/16"], ["0.5", "1/8"]], "Quantise to"));
-    var bApply = btn("Apply", "Turn the text back into notes (one undo step)", "btn-primary"), bRev = btn("Revert", "Write the text again from the clip");
-    d.abcInfo = el("span", "mdaw-status"); [bApply, bRev, d.abcInfo].forEach(function (x) { row.appendChild(x); });
+    var bApply = btn("Apply", "Turn the text back into notes (one undo step)", "btn-primary"), bRev = btn("Revert", "Write the text again from the clip"), bNt = btn("Notation page ↗", "Open this clip on the Notation page in its own window; its Send back to the DAW button puts the notes back in this clip");
+    bNt.onclick = function () { C.toNotation(d); };
+    d.abcInfo = el("span", "mdaw-status"); [bApply, bRev, bNt, d.abcInfo].forEach(function (x) { row.appendChild(x); });
     d.abcText = el("textarea"); d.abcText.rows = 8; d.abcText.spellcheck = false; d.abcText.style.cssText = "width:100%;font-family:var(--font-mono);font-size:.8rem"; d.abcText.setAttribute("aria-label", "ABC text of the clip"); body.appendChild(d.abcText);
     d.abcStaff = el("div", "mdaw-abc-staff"); d.abcStaff.style.cssText = "overflow-x:auto;background:#fff;border-radius:4px;margin-top:.3rem"; body.appendChild(d.abcStaff);
     var tm = null; d.abcText.addEventListener("input", function () { clearTimeout(tm); tm = setTimeout(function () { abcDraw(d); }, 250); });
@@ -192,6 +193,31 @@
     return back ? goAbc(d) : goRoll(d);
   };
 
+  // ---- round trip with the Notation page (tools/notation.html?remote=1): nt-ready -> nt-abc { host: "DAW", back: true }; its Send back -> nt-return { abc }
+  // -> the ABC goes into this panel and is applied to the same clip (one undo step; the usual off-grid / bar-length questions)
+  var ntWin = null, ntWait = null;
+  C.toNotation = function (d) {
+    var c = noteClip(d); if (!c) return d.say("Select a note clip (not drums or audio) first.");
+    var r = global.AbcClip.clipToAbc(c, abcOpts(d, c)), tr = d.track(), msg = { type: "nt-abc", host: "DAW", back: true, abc: r.abc, title: (tr && tr.name) || "Clip", tempo: d.p.tempo };
+    d.ntClip = c; d.ntName = msg.title;
+    if (!global.__mdawNt) { global.__mdawNt = true; global.addEventListener("message", function (e) {
+      if (e.origin !== location.origin || !e.data || !ntWin || e.source !== ntWin) return; var m = e.data, dd = global.__mdawNtDaw;
+      if (m.type === "nt-ready" && ntWait) { ntWin.postMessage(ntWait, location.origin); ntWait = null; }
+      else if (m.type === "nt-return" && typeof m.abc === "string" && dd) C.fromNotation(dd, m.abc);
+    }); }
+    global.__mdawNtDaw = d;
+    if (ntWin && !ntWin.closed) { ntWin.postMessage(msg, location.origin); ntWin.focus(); }
+    else { ntWait = msg; ntWin = global.open("/tools/notation.html?remote=1", "mdaw-notation"); if (!ntWin) return d.say("The browser blocked the new window: allow pop-ups for this site."); }
+    d.say("Opened " + msg.title + " on the Notation page. Its Send back to the DAW button puts the notes back in this clip.");
+  };
+  C.ntWin = function () { return ntWin; };
+  C.fromNotation = function (d, abc) {
+    var c = d.ntClip, ti = -1, ci = -1; d.p.tracks.forEach(function (t, i) { var j = t.clips.indexOf(c); if (j >= 0) { ti = i; ci = j; } });
+    if (ti < 0) return d.say("The clip sent to the Notation page is gone (deleted, or changed by Undo): select a clip and paste the ABC into Edit as notation.");
+    d.sel = { track: ti, clip: ci, slot: -1, notes: [] }; d.renderTracks(); d.renderEditor();
+    openPanel(d.abcBox); d.abcText.value = abc; abcDraw(d); abcApply(d);
+    try { global.focus(); } catch (e) {}
+  };
   function abcApply(d) {
     var A = global.AbcClip, c = noteClip(d); if (!c) return d.say("Select a note clip first.");
     var r; try { r = A.abcToNotes(d.abcText.value); } catch (e) { return d.say("Could not read the ABC: " + e.message); }
