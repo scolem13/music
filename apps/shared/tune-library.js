@@ -10,7 +10,8 @@
 //   TuneLibrary.facets()                // {tags, tonality, meter, key, chords, lyrics} → {value: count}
 //   TuneLibrary.filter({ text, tags, tonality, meter, key, hasChords, hasLyrics, needsMelody })
 //   TuneLibrary.renderPicker(el, { facets, onSelect, onResults })   // onResults(list): the page draws the results
-//   (tunes tagged needs-repair are left out unless crit.tags includes "needs-repair")
+//   (tunes tagged needs-repair are left out unless crit.tags includes "needs-repair"; tunes in window.TUNE_QUALITY get the tag "suspect" and are left out
+//   unless crit.tags includes "suspect" or crit.showSuspect is true)
 // Depends on TuneChart (parsing) + ABCJS (splitting collections into tunes).
 
 (function (global) {
@@ -170,6 +171,7 @@
         var id = directive(abc, "id"); if (!id){ id = slugify(title); var n = 2; while (usedIds[id]) id = slugify(title) + "-" + (n++); }
         usedIds[id] = 1;
         var tags = [coll];
+        if (global.TUNE_QUALITY && global.TUNE_QUALITY[id]) tags.push("suspect");     // predicted bad ABC (scripts/tune-quality.mjs)
         var manual = directive(abc, "tags");
         if (manual) manual.split(",").forEach(function (x){ x = x.trim(); if (x && tags.indexOf(x) < 0) tags.push(x); });
         // distinct chords + roman numerals (with applied-chord analysis), deduped in
@@ -276,6 +278,8 @@
       }
       // tunes tagged needs-repair (flagged by scripts/clean-tunes.mjs) stay hidden unless asked for by tag
       if (r.tags.indexOf("needs-repair") >= 0 && !(crit.tags && crit.tags.indexOf("needs-repair") >= 0)) return false;
+      // tunes the quality script predicts are bad (tag "suspect", apps/tunes/tune-quality.js) likewise
+      if (r.tags.indexOf("suspect") >= 0 && !(crit.tags && (crit.tags.indexOf("suspect") >= 0 || crit.tags.indexOf("needs-repair") >= 0)) && !crit.showSuspect) return false;
       if (!anyTag(crit.tags, r.tags)) return false;
       if (!anyOf(crit.tonality, r.tonality)) return false;
       if (crit.meter && crit.meter.length){

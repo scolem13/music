@@ -150,6 +150,27 @@ const U = "http://127.0.0.1:8547";
   const yt = await ev(`(() => { const b = document.querySelector('.ct-card .wk-play'); if (!b) return 'no recording'; b.click(); const f = document.querySelector('.ct-card .wk-yt'); return (f ? f.src : 'no iframe') + ' | ' + b.textContent; })()`);
   check("▶ opens the YouTube player", /youtube-nocookie\.com\/embed\/[\w-]{11}.*\| ■$/.test(yt), yt);
 
+  // the top search box drives the sheet; recordings named for a tune sit under one parent row
+  await b.goto(U + "/practice/tune-directory.html"); await wait(`window.TdSheet && document.querySelectorAll('#td-sheet-box tbody tr').length > 50`);
+  await ev(`TdSheet.ready`); await b.sleep(300);
+  await ev(`(() => { const q = document.getElementById('td-q'); q.value = 'Bach'; q.dispatchEvent(new Event('input', { bubbles: true })); })()`); await b.sleep(700);
+  const sq = await ev(`JSON.stringify([document.querySelectorAll('#td-sheet-box tbody tr').length, document.getElementById('td-stat').textContent, document.querySelector('.tds-n').textContent])`);
+  const [sqRows, sqStat, sqN] = JSON.parse(sq), sqNum = +sqN.split(" of ")[0].replace(/,/g, "");
+  check("top search filters the sheet", (sqRows > 0 && sqRows < 500 && sqNum < 5000 && sqStat === sqNum.toLocaleString() + " matches") !== NEG, sq);
+  await ev(`document.getElementById('td-q').value = ''`);
+  const rv = await ev(`(() => { const g = TdSheet.groups().filter(g => /^Riverside/.test(g.title) && g.kids.some(k => k.type === 'Recording')); return JSON.stringify(g.map(g => [g.title, g.kids.length])); })()`);
+  check("recordings named for a tune are grouped under it", (/\["Riverside",\d+\]/.test(rv)) !== NEG, rv);
+
+  // suspect tunes (scripts/tune-quality.mjs) are left out until the box is ticked
+  await b.goto(U + "/practice/tune-directory.html"); await wait(`window.TdSheet && document.querySelectorAll('#td-sheet-box tbody tr').length > 50`);
+  await ev(`TdSheet.ready`); await b.sleep(300);
+  const sus = await ev(`(() => { const n0 = TdSheet.filtered().length; const q = window.TUNE_QUALITY || {}; const ids = Object.keys(q);
+    const lib = (TuneLibrary.build(tunesObject), [TuneLibrary.filter({}).some(r => q[r.id]), TuneLibrary.filter({ showSuspect: true }).some(r => q[r.id])]);
+    document.querySelector('.tds-sus').click(); const n1 = TdSheet.filtered().length; document.querySelector('.tds-sus').click();
+    return JSON.stringify([ids.length, n1 - n0, lib]); })()`);
+  const [susN, susDiff, susLib] = JSON.parse(sus);
+  check("suspect tunes are hidden by default in the sheet and the Tune Library, and the box brings them back", (susN > 100 && susDiff >= susN * 0.9 && susLib[0] === false && susLib[1] === true) !== NEG, sus);
+
   // Analysed score
   await b.goto(U + "/theory/analysed-scores/beethoven-moonlight-1.html?piece=beethoven-moonlight-1");
   await wait(`!!document.querySelector('.as-works .wk-panel')`);

@@ -924,7 +924,7 @@
   function loadScript(src){ return new Promise(function(res, rej){ var sc = document.createElement("script"); sc.src = src; sc.onload = res; sc.onerror = function(){ rej(); }; document.head.appendChild(sc); }); }
   function tunePicker(){
     var box = $("bt-tunepick"), open = box.hidden; box.hidden = !open; $("bt-tune-load").setAttribute("aria-expanded", String(open)); if (!open) return;
-    if (!tuneLibReady) tuneLibReady = loadAbcjs().then(function(){ return window.tunesObject ? 0 : loadScript("/apps/tunes/tunes-object.js"); }).then(function(){
+    if (!tuneLibReady) tuneLibReady = loadAbcjs().then(function(){ return window.tunesObject ? 0 : loadScript("/apps/tunes/tunes-object.js"); }).then(function(){ return window.TUNE_QUALITY ? 0 : loadScript("/apps/tunes/tune-quality.js"); }).then(function(){
       TuneLibrary.build(window.tunesObject || tunesObject); $("bt-tunepick-body").innerHTML = "";
       TuneLibrary.renderPicker($("bt-tunepick-body"), { onSelect: tuneLoad, facets: ["tags", "tonality", "meter", "key", "chords"] }); });
     tuneLibReady.catch(function(){ tuneLibReady = null; $("bt-tunepick-body").textContent = "The tune collection could not be loaded."; });

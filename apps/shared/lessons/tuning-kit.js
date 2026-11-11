@@ -63,6 +63,33 @@
     return { text: out, toks: toks };
   }
   function signed(v) { var r = Math.round(v); return (r > 0 ? "+" : r < 0 ? "−" : "") + Math.abs(r); }
+  // ---------- idiomatic names for 19 and 31 equal steps ----------
+  // Letters sit where the fifth (n log2 1.5, rounded) puts them; a sharp is whole tone minus diatonic semitone steps (31: 2, 19: 1).
+  // 31 also has the quarter-tone signs (U+1D132 half sharp, U+1D133 half flat: one step). The nearest letter wins; a tie takes the lower letter (a sharp).
+  var QS = "\uD834\uDD32", QF = "\uD834\uDD33";
+  var ACC = { 31: { "0": "", "1": QS, "2": "♯", "-1": QF, "-2": "♭" }, 19: { "0": "", "1": "♯", "-1": "♭" } };
+  function stepName(n, step) {
+    if (!ACC[n]) return null;
+    var f = Math.round(n * Math.log2(1.5)), wt = 2 * f - n, sm = 3 * n - 5 * f, s = ((step % n) + n) % n,
+        pos = [0, wt, 2 * wt, 2 * wt + sm, 3 * wt + sm, 4 * wt + sm, 5 * wt + sm, n], L = ["C", "D", "E", "F", "G", "A", "B", "C"], best = 0, i;
+    for (i = 1; i < 8; i++) if (Math.abs(s - pos[i]) < Math.abs(s - pos[best])) best = i;
+    var acc = ACC[n][String(s - pos[best])]; return L[best] + (acc == null ? "?" : acc);
+  }
+  // ---------- cents against the nearest just ratio above a root ----------
+  var J5 = [[1, 1], [16, 15], [10, 9], [9, 8], [6, 5], [5, 4], [4, 3], [45, 32], [64, 45], [3, 2], [8, 5], [5, 3], [16, 9], [9, 5], [15, 8], [2, 1]];
+  var J7 = J5.concat([[8, 7], [7, 6], [7, 5], [10, 7], [12, 7], [7, 4]]);
+  // c = cents above the root; returns { r: ratio text, dev: cents above that ratio }
+  function justNear(c, mode) {
+    var set = mode === "just7" ? J7 : J5, r = ((c % 1200) + 1200) % 1200, best = null;
+    set.forEach(function (q) { var qc = ratioC(q[0], q[1]), d = r - qc; if (!best || Math.abs(d) < Math.abs(best.dev)) best = { r: q[0] + ":" + q[1], dev: d, c: qc }; });
+    return best;
+  }
+  // the end of an info sentence: how far a pitch is from the piano key, or from the nearest just ratio above the root
+  function against(mode, cents, rootC, rootName, s) {
+    if (mode !== "just5" && mode !== "just7") return Math.abs(s.off) < .5 ? "." : ", " + signed(s.off) + " cents from the piano key " + s.keyName + ".";
+    var j = justNear(cents - rootC, mode), d = Math.round(j.dev * 10) / 10;
+    return (Math.abs(d) < .05 ? ", exactly " + j.r : ", " + (d > 0 ? "+" : "−") + Math.abs(d).toFixed(1) + " cents from the nearest just ratio, " + j.r + ", above the root " + rootName) + ".";
+  }
   function draw(host, abc, onClick) {
     if (!global.ABCJS) { host.textContent = "(notation library missing)"; return; }
     ABCJS.renderAbc(host, abc.text, { responsive: "resize", add_classes: true, paddingleft: 0, paddingright: 0, staffwidth: 740, clickListener: function (e) {
@@ -250,9 +277,12 @@
     w.pick("layout", "Layout", Object.keys(LAYOUTS).map(function (k) { return [k, LAYOUTS[k].label]; }), "linn", null, function (v) { setLayout(v); });
     w.pick("edo", "Notes per octave", EDOS, "24", null, function () { setLayout(w.P.layout); });
     w.pick("oct", "Lowest pad", [["2", "C2"], ["3", "C3"], ["4", "C4"]], "3", null, function () { build(); });
+    w.pick("lab", "Pad labels", [["num", "Step numbers (19 and 31)"], ["name", "Note names, with quarter-tone signs (19 and 31)"]], "num", null, function () { build(); });
+    w.pick("cmp", "Cents compared with", [["piano", "the nearest piano key"], ["just5", "the nearest just ratio above the root (5-limit)"], ["just7", "the nearest just ratio above the root (7-limit)"]], "piano", null, function () {});
+    w.num("root", { label: "Root (step of the octave)", min: 0, max: 30, step: 1, value: 0, fmt: function (v) { var n = edo(), s = Math.round(v) % n; return (n === 12 || n === 24 ? spell(s * 1200 / n, true).name : stepName(n, s) || String(s)) + " (step " + s + ")"; }, on: function () { build(); } });
     var cx = w.num("x", { label: "Steps per cell, right", min: 1, max: 40, step: 1, value: 1, fmt: function (v) { return Math.round(v) + (+w.P.edo === 24 ? " (" + (v / 2) + " st)" : ""); }, on: function () { build(); } });
     var cy = w.num("y", { label: "Steps per row, up", min: 0, max: 60, step: 1, value: 10, fmt: function (v) { return Math.round(v); }, on: function () { build(); } });
-    var key = el("div", "tk-key"); key.innerHTML = '<span><i style="background:var(--site-surface)"></i>natural note</span><span><i style="background:color-mix(in srgb,var(--site-ink) 16%,var(--site-surface))"></i>sharp / flat</span><span><i style="background:color-mix(in srgb,var(--site-accent) 22%,var(--site-surface))"></i>between piano keys</span><span>ringed = C</span>';
+    var key = el("div", "tk-key"); key.innerHTML = '<span><i style="background:var(--site-surface)"></i>natural note</span><span><i style="background:color-mix(in srgb,var(--site-ink) 16%,var(--site-surface))"></i>sharp / flat</span><span><i style="background:color-mix(in srgb,var(--site-accent) 22%,var(--site-surface))"></i>between piano keys</span><span>ringed = the root</span>';
     var info = el("p", "sk-info", "");
     w.body.appendChild(svgEl); w.body.appendChild(key); w.body.appendChild(info);
     var entry = entryLine(w, w.body, 24), cells = [], down = {};
@@ -265,8 +295,9 @@
     function nameOf(step) {
       var n = edo(), within = ((step % n) + n) % n, oct = Math.floor(step / n);
       if (n === 12 || n === 24) { var s = spell(within * 1200 / n, true); return s.name; }
-      return String(within);
+      return w.P.lab === "name" && stepName(n, within) ? stepName(n, within) : String(within);
     }
+    function rootStep() { return Math.round(+w.P.root || 0) % edo(); }
     function build() {
       svgEl.innerHTML = ""; cells = []; Object.keys(down).forEach(release);
       var L = LAYOUTS[w.P.layout], n = edo(), dx = +w.P.x, dy = +w.P.y, cw = 46, ch = L.shape === "hex" ? cw * 1.1547 : 40, pitch = L.shape === "hex" ? ch * .75 : ch;
@@ -277,23 +308,24 @@
       for (var y = 0; y < rows; y++) for (var x = 0; x < cols; x++) {
         var step = base + dx * x + dy * y, px = (x + y * shift) * cw + cw / 2, py = H - 3 - ch / 2 - y * pitch, within = ((step % n) + n) % n, cents = within * 1200 / n;
         var onPiano = Math.abs(cents / 100 - Math.round(cents / 100)) < .02, white = onPiano && [0, 2, 4, 5, 7, 9, 11].indexOf(Math.round(cents / 100)) >= 0;
-        var cls = "tk-c " + (onPiano ? (white ? "w" : "b") : "q") + (within === 0 ? " o" : "");
+        var cls = "tk-c " + (onPiano ? (white ? "w" : "b") : "q") + (within === rootStep() ? " o" : "");
         var shape;
         if (L.shape === "hex") { var r = cw / 2, pts = [0, 1, 2, 3, 4, 5].map(function (k) { var a = Math.PI / 180 * (60 * k - 30); return (px + r * Math.cos(a)).toFixed(1) + "," + (py + r * 1.1547 * Math.sin(a)).toFixed(1); }).join(" "); shape = svg("polygon", { points: pts, "class": cls }, svgEl); }
         else shape = svg("rect", { x: px - cw / 2 + 1, y: py - ch / 2 + 1, width: cw - 2, height: ch - 2, rx: 5, "class": cls }, svgEl);
         shape.setAttribute("data-step", step);
-        var lab = svg("text", { x: px, y: py + 4 }, svgEl); lab.textContent = (n === 12 || n === 24) ? nameOf(step) : String(within);
+        var lab = svg("text", { x: px, y: py + 4 }, svgEl); lab.textContent = nameOf(step);
         cells.push(shape);
       }
       info.textContent = "One cell right = " + dx + " step" + (dx === 1 ? "" : "s") + " (" + (dx * 1200 / n).toFixed(0) + " cents), one row up = " + dy + " step" + (dy === 1 ? "" : "s") + " (" + (dy * 1200 / n).toFixed(0) + " cents)."
-        + (n !== 12 && n !== 24 ? " The number on a pad is its step within the octave (0–" + (n - 1) + ")." : "");
+        + (n !== 12 && n !== 24 ? (w.P.lab === "name" && stepName(n, 0) ? " The name on a pad is its step spelled with " + (n === 31 ? "sharps, flats and quarter-tone signs (" + QS + " a quarter sharp, " + QF + " a quarter flat: one step)" : "sharps and flats") + "." : " The number on a pad is its step within the octave (0–" + (n - 1) + ").") : "");
     }
     function fOf(step) { return cf((step - 0) * 1200 / edo()); }   // step counts from C4 (base already includes the octave offset)
     function press(id, cellEl) {
       if (!cellEl || !cellEl.getAttribute) return; var st = cellEl.getAttribute("data-step"); if (st == null) return;
       w.start(); var c = SK.ac(), f = fOf(+st); down[id] = { el: cellEl, stop: voice(c, w.out, f) }; cellEl.classList.add("on"); entry.add(f);
-      var s = spell(1200 * Math.log2(f / C4), true);
-      info.textContent = (edo() === 12 || edo() === 24 ? s.name + ": " : "step " + st + ": ") + fmtHz(f) + (Math.abs(s.off) < .5 ? "." : ", " + signed(s.off) + " cents from the piano key " + noteLetter(s) + ".");
+      var c = 1200 * Math.log2(f / C4), s = spell(c, true), n = edo(), within = ((+st % n) + n) % n, nm = nameOf(+st); s.keyName = noteLetter(s);
+      var rs = rootStep();
+      info.textContent = (n === 12 || n === 24 || (w.P.lab === "name" && stepName(n, 0)) ? nm + ": " : "step " + within + ": ") + fmtHz(f) + against(w.P.cmp, c, rs * 1200 / n, (n === 12 || n === 24 ? spell(rs * 1200 / n, true).name : stepName(n, rs) || "step " + rs), s);
     }
     function noteLetter(s) { var b = Math.round(s.baseC / 100) % 12; return ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"][((b % 12) + 12) % 12]; }
     function release(id) { var d = down[id]; if (!d) return; d.stop(); d.el.classList.remove("on"); delete down[id]; }
@@ -320,6 +352,7 @@
     w.pick("edo", "Frets per octave", EDOS, "24", null, function () { build(); });
     w.pick("inst", "Strings", Object.keys(STRINGS).map(function (k) { return [k, STRINGS[k].label]; }), "guitar", null, function () { build(); });
     w.pick("lab", "Labels", [["name", "Note names"], ["cents", "Cents above the open string"], ["none", "None"]], "name", null, function () { build(); });
+    w.pick("cmp", "Cents compared with", [["piano", "the nearest piano key"], ["just5", "the nearest just ratio above the open string (5-limit)"], ["just7", "the nearest just ratio above the open string (7-limit)"]], "piano", null, function () {});
     var info = el("p", "sk-info", ""), key = el("div", "tk-key");
     key.innerHTML = '<span><svg width="22" height="8"><line x1="0" y1="4" x2="22" y2="4" stroke="currentColor" stroke-width="2"/></svg> a fret the piano has</span><span><svg width="22" height="8"><line x1="0" y1="4" x2="22" y2="4" stroke="currentColor" stroke-dasharray="3 3"/></svg> an extra fret</span>';
     w.body.appendChild(box); w.body.appendChild(key); w.body.appendChild(info);
@@ -357,7 +390,7 @@
       if (!z || !z.getAttribute || z.getAttribute("data-c") == null) return; var cents = +z.getAttribute("data-c"), f = cf(cents);
       w.start(); down[id] = { el: z, stop: voice(SK.ac(), w.out, f) }; z.classList.add("on"); entry.add(f);
       var s = spell(cents, true), fr = +z.getAttribute("data-f");
-      info.textContent = (fr ? "Fret " + fr : "Open string") + ": " + (+w.P.edo === 12 || +w.P.edo === 24 ? s.name + ", " : "") + fmtHz(f) + (Math.abs(s.off) < .5 ? "." : ", " + signed(s.off) + " cents from the nearest piano key at or below the written note.");
+      info.textContent = (fr ? "Fret " + fr : "Open string") + ": " + (+w.P.edo === 12 || +w.P.edo === 24 ? s.name + ", " : "") + fmtHz(f) + (/^just/.test(w.P.cmp) ? (function () { var o = ((+z.getAttribute("data-c") - (STRINGS[w.P.inst].midi[+z.getAttribute("data-s")] - 60) * 100)); return against(w.P.cmp, o, 0, "(the open string)", s); })() : Math.abs(s.off) < .5 ? "." : ", " + signed(s.off) + " cents from the nearest piano key at or below the written note.");
     }
     function release(id) { var d = down[id]; if (!d) return; d.stop(); d.el.classList.remove("on"); delete down[id]; }
     box.addEventListener("pointerdown", function (e) { e.preventDefault(); try { box.setPointerCapture(e.pointerId); } catch (x) {} press(e.pointerId, e.target); });
@@ -587,6 +620,9 @@
     w.playLabel = "▶ Play"; w.playBtn.remove();
     w.pick("kb", "Keyboard", Object.keys(KB).map(function (k) { return [k, KB[k].label]; }), "split31", null, function () { build(); });
     w.pick("oct", "Lowest C", [["3", "C3"], ["4", "C4"]], "3", null, function () { build(); });
+    w.pick("lab", "Piece labels", [["num", "Step numbers (31-piece models)"], ["name", "Note names, with quarter-tone signs (31-piece models)"]], "num", null, function () { build(); });
+    w.pick("cmp", "Cents compared with", [["piano", "the nearest piano key"], ["just5", "the nearest just ratio above the root (5-limit)"], ["just7", "the nearest just ratio above the root (7-limit)"]], "piano", null, function () {});
+    w.pick("root", "Root (for just intonation)", ["C", "D", "E", "F", "G", "A", "B"].map(function (l, i) { return [String(i), l]; }), "0", null, function () {});
     var info = el("p", "sk-info"), note = el("p", "tk-note"), key = el("div", "tk-key");
     key.innerHTML = '<span><i style="background:var(--site-surface)"></i>within 12 cents of a piano key</span><span><i style="background:color-mix(in srgb,var(--site-accent) 22%,var(--site-surface))"></i>between piano keys</span><span>pitch rises toward the back of a cross-cut key, left to right in a lengthwise one</span>';
     var row = el("div", "sk-presets");
@@ -607,17 +643,17 @@
       box.setAttribute("viewBox", "0 0 " + W2 + " " + (wh + 6));
       function add(shape, cents, name, label) {
         var near = Math.round(cents / 100) * 100, cls = "tk-p" + (Math.abs(cents - near) < 12 ? " n" : " q"); shape.setAttribute("class", cls);
-        shape.setAttribute("data-c", (cents + oct0).toFixed(3)); shape.setAttribute("data-n", name); pieces.push(shape);
+        shape.setAttribute("data-c", (cents + oct0).toFixed(3)); shape.setAttribute("data-n", name); shape.setAttribute("data-s", label == null ? "" : label); pieces.push(shape);
       }
       function piecesOf(x, y, wd, ht, centsList, names, oc, isBlack) {
-        var n = centsList.length, fr = n === 3 ? [.3, .3, .4] : [.4, .6], acc = 0;
+        var n = centsList.length, shownames = names.map(function (nm) { return w.P.lab === "name" && K2.steps ? stepName(K2.steps, +nm) : nm; }), fr = n === 3 ? [.3, .3, .4] : [.4, .6], acc = 0;
         centsList.forEach(function (c, j) {
           var y0, h0, x0 = x, w0 = wd;
           if (n > 1 && hot) { w0 = wd / n; x0 = x + j * w0; y0 = y; h0 = ht; }
           else if (isBlack) { h0 = ht / n; y0 = y + ht - (j + 1) * h0; }
           else if (n === 1) { y0 = y; h0 = ht; } else { h0 = ht * fr[j]; acc += h0; y0 = y + ht - acc; }
-          var r = svg("rect", { x: x0 + .5, y: y0, width: w0 - 1, height: h0, rx: 3 }, box); add(r, c + oc * 1200, names[j]); if (isBlack) r.classList.add("blk");
-          var t = svg("text", { x: x0 + w0 / 2, y: y0 + h0 / 2 + 3, "class": isBlack ? "tk-bl" : "" }, box); t.textContent = names[j];
+          var r = svg("rect", { x: x0 + .5, y: y0, width: w0 - 1, height: h0, rx: 3 }, box); add(r, c + oc * 1200, names[j], shownames[j]); if (isBlack) r.classList.add("blk");
+          var t = svg("text", { x: x0 + w0 / 2, y: y0 + h0 / 2 + 3, "class": isBlack ? "tk-bl" : "" }, box); t.textContent = shownames[j];
         });
       }
       var o, i;
@@ -628,14 +664,16 @@
         else piecesOf(x, 3, ww, wh, K2.white[i], K2.wn[i], o, false);
       }
       for (o = 0; o < nOct; o++) BLACK_AFTER.forEach(function (wi, bi) { piecesOf((o * 7 + wi + 1) * ww - bw / 2, 3, bw, bh, K2.black[bi], K2.bn[bi], o, true); });
-      info.textContent = "Press a piece to sound it. " + (/^split31/.test(w.P.kb) ? "Pieces are numbered by step (0–30, then 0 again an octave up)." : "");
+      info.textContent = "Press a piece to sound it. " + (/^split31/.test(w.P.kb) ? (w.P.lab === "name" ? "Pieces are named for their step: " + QS + " is a quarter sharp, " + QF + " a quarter flat (one step each), ♯ and ♭ two steps." : "Pieces are numbered by step (0–30, then 0 again an octave up).") : "");
       note.textContent = NOTES[w.P.kb];
     }
     function press(id, z) {
       if (!z || !z.getAttribute || z.getAttribute("data-c") == null) return; var c = +z.getAttribute("data-c"), f = cf(c), s = spell(c, true), near = cf(Math.round(c / 100) * 100);
       w.start(); down[id] = { el: z, stop: voice(SK.ac(), w.out, f) }; z.classList.add("on"); entry.add(f);
       var off = c - Math.round(c / 100) * 100;
-      info.textContent = "Piece " + z.getAttribute("data-n") + ": " + fmtHz(f) + (Math.abs(off) < .5 ? ", a piano key." : ", " + signed(off) + " cents from the nearest piano key (" + fmtHz(near) + ").");
+      var K3 = KB[w.P.kb], rl = "CDEFGAB"[+w.P.root], pn = w.P.lab === "name" && z.getAttribute("data-s") ? z.getAttribute("data-s") : z.getAttribute("data-n");
+      info.textContent = "Piece " + pn + ": " + fmtHz(f) + (/^just/.test(w.P.cmp) ? against(w.P.cmp, c, K3.white[+w.P.root][0], rl, s)
+        : Math.abs(off) < .5 ? ", a piano key." : ", " + signed(off) + " cents from the nearest piano key (" + fmtHz(near) + ").");
     }
     function release(id) { var d = down[id]; if (!d) return; d.stop(); d.el.classList.remove("on"); delete down[id]; }
     box.addEventListener("pointerdown", function (e) { e.preventDefault(); try { box.setPointerCapture(e.pointerId); } catch (x) {} press(e.pointerId, e.target); });
@@ -693,7 +731,7 @@
       var list = [], seen = {};
       Object.keys(tunesObject).forEach(function (k) {
         String(tunesObject[k]).split(/\n(?=X:)/).forEach(function (abc) {
-          var t = /^T:\s*(.+)$/m.exec(abc), id = /^%%id\s+(\S+)/m.exec(abc); if (!t || !/^K:/m.test(abc)) return;
+          var t = /^T:\s*(.+)$/m.exec(abc), id = /^%%id\s+(\S+)/m.exec(abc); if (!t || !/^K:/m.test(abc) || !/"[A-G][#b♯♭]?[^"]*"/.test(abc)) return;   // only tunes with chord symbols
           var key = id ? id[1] : t[1]; if (seen[key]) return; seen[key] = 1; list.push({ id: id ? id[1] : "", title: t[1].trim(), abc: abc });
         });
       });
@@ -704,13 +742,14 @@
   // the notes of an ABC tune as {midi, t0, d} in seconds-free L units, plus the tonic and the speed
   function tuneNotes(abc) {
     var m = global.AbcTune.melodyNotes(abc), k = /^K:\s*([A-G])([#b]?)/m.exec(abc), pc = k ? ((PCS[k[1]] + (k[2] === "#" ? 1 : k[2] === "b" ? -1 : 0)) + 12) % 12 : 0;
-    return { notes: m.notes, total: m.total, lq: m.lq, qpm: (m.tempoQ || 100) * (m.tempoNote || 1), tonic: 60 + pc, key: k ? k[1] + k[2] : "C" };
+    return { notes: m.notes, chords: m.chords || [], total: m.total, lq: m.lq, qpm: (m.tempoQ || 100) * (m.tempoNote || 1), tonic: 60 + pc, key: k ? k[1] + k[2] : "C" };
   }
   function Tunesong(host) {
     var w = Base(host, "A familiar tune in another tuning"), tunes = [], cur = null, info = el("p", "sk-info"), note = el("p", "tk-note"), table = el("div", "tk-ragagrid"), timer = null;
     w.playLabel = "▶ Play"; w.playBtn.remove();
     w.pick("tun", "Tuning", Object.keys(TS).map(function (k) { return [k, TS[k].label]; }), "et31", null, function () { rebuild(); });
     w.pick("spd", "Speed", [["0.7", "Slow"], ["1", "As written"], ["1.3", "Quick"]], "1");
+    w.pick("chd", "Chords", [["on", "Play the chords too"], ["off", "Melody only"]], "on");
     var pickBox = el("div", "sk-presets"), find = el("input"), sel = el("select");
     find.type = "search"; find.placeholder = "Search the tune collection…"; find.className = "form-control form-control-sm"; find.style.maxWidth = "16rem";
     sel.className = "form-select form-select-sm"; sel.style.maxWidth = "22rem"; sel.setAttribute("aria-label", "Tune");
@@ -745,8 +784,9 @@
       var shown = m.notes.map(function (n) { return Math.abs(tunedC(n.midi) - (n.midi - 60) * 100); });
       var max = shown.reduce(function (a, b) { return Math.max(a, b); }, 0);
       note.textContent = TS[w.P.tun].label + ": the farthest any note of this tune moves from its piano pitch is " + Math.round(max) + " cents. Each note takes the nearest note of the tuning to the piano's pitch (or the table's value, for just, Pythagorean and meantone); the tonic is the key letter of the tune, and octaves are exactly 1200 cents.";
-      info.textContent = cur.tune.title + ": " + m.notes.length + " notes. Play it in the tuning, on the piano, or both.";
-      if (global.ABCJS) { try { ABCJS.renderAbc(abcBox, cur.tune.abc.replace(/^w:.*$/gm, "").replace(/"[^"]*"/g, ""), { responsive: "resize", paddingleft: 0, paddingright: 0, staffwidth: 740 }); } catch (e) {} }
+      info.textContent = cur.tune.title + ": " + m.notes.length + " notes, " + m.chords.length + " chord" + (m.chords.length === 1 ? "" : "s") + ". Play it in the tuning, on the piano, or both.";
+      if (m.chords.length) note.textContent += " Chords are moved the same way, note by note: a major chord's third lands where the tuning puts the major third (" + Math.round(TS[w.P.tun].f(4)) + " cents above the root's tonic in this tuning, against 400 on the piano), so the chords are the best place to hear what the tuning changes.";
+      if (global.ABCJS) { try { ABCJS.renderAbc(abcBox, cur.tune.abc.replace(/^w:.*$/gm, "").replace(/"[^A-G"][^"]*"/g, ""), { responsive: "resize", paddingleft: 0, paddingright: 0, staffwidth: 740 }); } catch (e) {} }
     }
     find.addEventListener("input", fill);
     sel.addEventListener("change", function () { var t = tunes.filter(function (x) { return (x.id || x.title) === sel.value; })[0]; if (t) choose(t); });
@@ -756,6 +796,10 @@
       function run(at, tuned) { m.notes.forEach(function (n) {
         var f = tuned ? cf(tunedC(n.midi)) : cf((n.midi - 60) * 100), d = Math.max(.12, n.dur * u * .95);
         rich(c, w.out, f, at + n.onset * u, d, how === "both" ? .15 : .26); }); }
+      function runChords(at, tuned) { if (w.P.chd === "off") return; m.chords.forEach(function (ch, i) {
+        var end = i + 1 < m.chords.length ? m.chords[i + 1].onset : m.total, d = Math.max(.3, (end - ch.onset) * u * .97);
+        ch.midis.forEach(function (md) { rich(c, w.out, tuned ? cf(tunedC(md)) : cf((md - 60) * 100), at + ch.onset * u, d, how === "both" ? .09 : .14); }); }); }
+      var run0 = run; run = function (at, tuned) { run0(at, tuned); runChords(at, tuned); };
       if (how === "tuned") run(t0, true); else if (how === "piano") run(t0, false);
       else if (how === "then") { run(t0, true); run(t0 + span + .6, false); span = 2 * span + .6; } else { run(t0, true); run(t0, false); }
       timer = setTimeout(function () { w.stop(); }, (span + .5) * 1000);

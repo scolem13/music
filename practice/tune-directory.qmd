@@ -160,6 +160,7 @@ beat or two out where the beat tracking was; the time signature is read from the
 <script src="/apps/shared/rhythm-cells.js?v=1"></script>
 <script src="/apps/shared/tune-library.js?v=20"></script>
 <script src="/apps/tunes/tunes-object.js?v=3"></script>
+<script src="/apps/tunes/tune-quality.js"></script>
 <script src="/apps/themes/themes-data.js?v=4"></script>
 <script src="/apps/shared/works/works-data.js?v=10"></script>
 <script src="/apps/shared/works/works.js?v=18"></script>

@@ -22,6 +22,8 @@
 // column (count, then the first names; filter by words in it) and two lists above the table: concept (grouped by source, those used only
 // once in a last group; a label joined with ";" in the data counts as its separate concepts; names cut at 48 characters, the full name on
 // hover) and source. A uses `work` id that is not in works-data.js becomes its own row (type Piece, "uses only").
+// SUSPECT TUNES: a tune in window.TUNE_QUALITY (apps/tunes/tune-quality.js, from scripts/tune-quality.mjs) or tagged needs-repair is left out
+// until "show suspect tunes" is ticked; shown with ⚠ and the reasons on hover.
 // The old per-type lists below the table start folded (the sheet has the same pieces); first visit only, then the reader's choice is kept.
 (function () {
   "use strict";
@@ -71,7 +73,7 @@
   const PB = window.PRINT_BOOKS || {};
   const printOf = (w) => ((w && w.in && w.in.print) || []).map((x) => ((PB[x.book] || {}).short || x.book).split(",")[0] + ((PB[x.book] || {}).ref === "page" ? " p. " : " ") + x.fig).join(", ");
   const yearOf = (o) => (o && (o.composed || o.published)) || "";
-  const blank = () => ({ composer: "", part: "", set: "", kind: "", key: "", meter: "", year: "", print: "", notation: 0, recs: 0, timed: 0, chords: 0, tsn: null, cat: "" });
+  const blank = () => ({ suspect: "", composer: "", part: "", set: "", kind: "", key: "", meter: "", year: "", print: "", notation: 0, recs: 0, timed: 0, chords: 0, tsn: null, cat: "" });
   const add = (r) => { rows.push(Object.assign(blank(), r)); };
   function worksRecs(kind, id) {
     const w = Wk && Wk.of(kind, id); if (!w) return [];
@@ -86,6 +88,7 @@
     add({ wid: (Wk && Wk.of("tune", id) || {}).id, title, type: "Tune", set, composer,
       key: ((/^K:\s*(\S+)/m.exec(t) || [])[1] || ""), meter: ((/^M:\s*(\S+)/m.exec(t) || [])[1] || ""), notation: 1,
       recs: recs.length, timed: recs.filter((r) => r.timed).length, chords: /"\^?[A-G][#b]?[^"]*"/.test(body) ? 1 : 0,
+      suspect: (window.TUNE_QUALITY || {})[id] ? (window.TUNE_QUALITY[id].r || []).join("; ") : /^%%tags.*\bneeds-repair\b/m.test(t) ? "needs repair" : "",
       href: "/practice/tunes.html?tune=" + encodeURIComponent(id), tsn: (recs.find((r) => r.timed) || recs[0] || {}).tsn || null, id, cat: catKey(title) });
   }));
   (window.CLASSICAL_THEMES || []).forEach((t) => {
@@ -115,7 +118,8 @@
     const col = R.collections.find((c) => c.id === r.col) || {};
     add({ title: r.title, type: "Recording", set: (col.title || r.col).replace(/^Jump Right In: /, "JRI "), kind: r.kind ? R.KINDS[r.kind] || r.kind : "",
       key: r.key || "", meter: [r.tonality, r.meter].filter(Boolean).join(" "), recs: 1, timed: r.timing ? 1 : 0,
-      href: "/mlt/recordings.html?find=" + encodeURIComponent(r.id), tsn: "/tools/timestamp-notes.html?rec=" + encodeURIComponent(r.id), id: r.id });
+      href: "/mlt/recordings.html?find=" + encodeURIComponent(r.id), tsn: "/tools/timestamp-notes.html?rec=" + encodeURIComponent(r.id), id: r.id,
+      qt: ((/^["\u201c]([^"\u201d]{2,60})["\u201d]/.exec(r.title) || [])[1] || "").trim(), col: r.col });
   });
   const noUses = () => ({ uses: [], nconc: 0, concepts: "", cset: new Set(), sset: new Set() });
 
@@ -171,6 +175,12 @@
       by[k].forEach((r) => { const h = home[k.split("|")[0] + "|" + short(r.title)]; if (h && h.size === 1) by[[...h][0]].push(r); else keep.push(r); });
       if (keep.length) by[k] = keep; else delete by[k];
     });
+    // MLT recordings named for a tune ('"Riverside" Improvisation Skill 5 - Example'): one parent per quoted title and CD, joined by the
+    // tune or piece of that title when the sheet has one
+    const inBy = new Set(); Object.keys(by).forEach((k) => by[k].forEach((r) => inBy.add(r)));
+    const byTitle = {}; rows.forEach((r) => { if ((r.type === "Tune" || r.type === "Piece") && !inBy.has(r)) (byTitle[fold(r.title).replace(/[^a-z0-9]+/g, " ").trim()] = byTitle[fold(r.title).replace(/[^a-z0-9]+/g, " ").trim()] || []).push(r); });
+    const rq = {}; rows.forEach((r) => { if (r.type !== "Recording" || !r.qt) return; const t = fold(r.qt).replace(/[^a-z0-9]+/g, " ").trim(); (rq[t + "|" + r.col] = rq[t + "|" + r.col] || []).push(r); r.stem = r.qt; });
+    Object.keys(rq).forEach((k) => { const t = k.split("|")[0]; by["rq|" + k] = rq[k].concat(byTitle[t] || []); (byTitle[t] || []).forEach((r) => { r.stem = r.stem || r.title; }); delete byTitle[t]; });
     groups = Object.keys(by).filter((k) => by[k].length > 1).map((k) => {
       const kids = by[k];
       // its title: the rows' titles cut after the catalogue number, the commonest (then shortest) one; a theme stem as it is
@@ -225,6 +235,7 @@
     <label><input type="checkbox" data-q="notation"> has notation</label>
     <label><input type="checkbox" data-q="chords"> has chords</label> <label><input type="checkbox" data-q="print"> in a print anthology</label>
     <label title="Rows of one piece (movements, themes, scores) under one row"><input type="checkbox" class="tds-group"${grouped ? " checked" : ""}> group movements</label>
+    <label title="Tunes whose ABC is predicted to be bad (wrong key, bars that do not add up, import junk, chords that do not fit the melody): scripts/tune-quality.mjs"><input type="checkbox" class="tds-sus"> show suspect tunes <span class="tds-susn"></span></label>
     <details class="tds-cols"><summary>Columns</summary><div>${colBoxes}</div></details>
     <button type="button" class="tds-reset">Clear filters</button> <span class="tds-n"></span></div>
     <style class="tds-colhide"></style>
@@ -266,7 +277,11 @@
     const f = {}; host.querySelectorAll("[data-f]").forEach((x) => { if (x.value.trim()) f[x.dataset.f] = x.value.trim(); });
     const cf = {}; host.querySelectorAll("[data-cf]").forEach((x) => { cf[x.dataset.cf] = x.value; });
     const q = {}; host.querySelectorAll("[data-q]").forEach((x) => { q[x.dataset.q] = x.checked; });
+    const showSus = host.querySelector(".tds-sus").checked;
+    const sq = fold((document.getElementById("td-q") || {}).value || "").split(/\s+/).filter(Boolean);
     const list = rows.filter((r) => {
+      if (r.suspect && !showSus) return false;
+      if (sq.length) { const hay = fold([r.title, r.composer, r.part, r.set, r.kind, r.concepts, r.print].join(" ")); if (!sq.every((w) => hay.indexOf(w) >= 0)) return false; }
       if (q.recs && !r.recs) return false; if (q.timed && !r.timed) return false; if (q.notation && !r.notation) return false;
       if (q.chords && !r.chords) return false; if (q.print && !r.print) return false;
       if (typeOn.size && !typeOn.has(r.type)) return false;
@@ -312,6 +327,7 @@
     const t = r.href ? link(r.href, r.title) : hasDetail(r) ? `<a href="#" class="tds-det">${esc(r.title)}</a>` : esc(r.title);
     return btn + t;
   }
+  const sq0 = () => ((document.getElementById("td-q") || {}).value || "").trim();
   function draw(keep) {
     if (!keep) shown = 300;
     const leaves = filtered(), all = display(leaves);
@@ -319,13 +335,14 @@
     for (const e of all) { if (!e.child) { if (top >= shown) break; top++; } if (!e.child || openKids.has(e.child.gkey)) vis.push(e); }
     curList = vis;
     tbody.innerHTML = vis.map((e, i) => { const r = e.r; return `<tr data-i="${i}"${e.child ? ` class="tds-child" data-g="${esc(e.child.gkey)}"` : r.isGroup ? ` class="tds-parent" data-g="${esc(r.gkey)}"` : ""}>
-      <td>${titleCell(r, e.n)}</td><td>${r.type}</td><td>${esc(r.composer)}</td><td class="tds-dim">${esc(r.part)}</td><td class="tds-dim">${esc(r.set)}</td>
+      <td>${titleCell(r, e.n)}${r.suspect ? ` <span class="tds-sus-tag" title="${esc("Predicted bad ABC: " + r.suspect)}">⚠</span>` : ""}</td><td>${r.type}</td><td>${esc(r.composer)}</td><td class="tds-dim">${esc(r.part)}</td><td class="tds-dim">${esc(r.set)}</td>
       <td class="tds-dim"${r.tip ? ` title="${esc(r.tip)}"` : ""}>${esc(r.kind)}</td>
       <td>${esc(r.key)}</td><td>${esc(r.meter)}</td><td class="tds-c">${esc(r.year || "")}</td><td class="tds-dim">${esc(r.print || "")}</td><td class="tds-c">${r.notation ? "✓" : ""}</td><td class="tds-c">${r.recs || ""}</td>
       <td class="tds-c">${r.timed ? "✓" + (r.timed > 1 ? " " + r.timed : "") : r.recs ? "–" : ""}</td><td class="tds-c">${r.chords ? "✓" : ""}</td>
       <td class="tds-con" title="${esc(r.concepts)}">${r.nconc ? `<b>${r.nconc}</b> ` + esc(r.concepts.split("; ").slice(0, 2).join("; ")) + (r.nconc > 2 ? "…" : "") : ""}</td>
       <td>${r.tsn ? `<a href="${esc(r.tsn)}" title="Open ${r.recs > 1 ? "the first of " + r.recs + " recordings" : "it"} in Timestamp Notes${r.recs > 1 ? " (▸ lists them all)" : ""}">⏱</a>` : ""}</td></tr>`; }).join("");
     more.hidden = top >= all.filter((e) => !e.child).length;
+    const st = document.getElementById("td-stat"); if (st && sq0()) st.textContent = leaves.length.toLocaleString() + " match" + (leaves.length === 1 ? "" : "es");
     host.querySelector(".tds-n").textContent = leaves.length.toLocaleString() + " of " + rows.length.toLocaleString() + " rows";
     host.querySelectorAll("th[data-k] .tds-arrow").forEach((s) => { s.textContent = s.parentNode.dataset.k === sortK ? (sortDir > 0 ? "▲" : "▼") : ""; });
   }
@@ -349,6 +366,8 @@
     if (e.target.closest(".tds-kids, .tds-kids-t")) { e.preventDefault(); const g = tr.dataset.g; if (openKids.has(g)) openKids.delete(g); else openKids.add(g); draw(true); return; }
     if (e.target.closest(".tds-open, .tds-det")) { e.preventDefault(); toggleDetail(tr); }
   });
+  const nSus = rows.filter((r) => r.suspect).length; host.querySelector(".tds-susn").textContent = nSus ? "(" + nSus.toLocaleString() + " hidden)" : "";
+  host.querySelector(".tds-sus").addEventListener("change", () => draw());
   host.querySelector(".tds-group").addEventListener("change", (e) => { grouped = e.target.checked; store.set("td-sheet-group", grouped ? "1" : "0"); draw(); });
   host.querySelectorAll("th[data-k]").forEach((th) => th.addEventListener("click", () => {
     if (sortK === th.dataset.k) sortDir = -sortDir; else { sortK = th.dataset.k; const c = COLS.find((c) => (c.sortk || c.k) === sortK); sortDir = c.num || c.sortk ? -1 : 1; }
@@ -356,7 +375,8 @@
   }));
   let tmr = 0;
   host.querySelectorAll("[data-f],[data-q],[data-cf]").forEach((x) => x.addEventListener(x.tagName === "INPUT" && x.type !== "checkbox" ? "input" : "change", () => { clearTimeout(tmr); tmr = setTimeout(draw, 150); }));
-  host.querySelector(".tds-reset").addEventListener("click", () => { host.querySelectorAll("[data-f]").forEach((x) => { x.value = ""; }); host.querySelectorAll("[data-q]").forEach((x) => { x.checked = false; }); host.querySelectorAll("[data-cf]").forEach((x) => { x.value = ""; }); typeOn.clear(); chips(); draw(); });
+  const topq = document.getElementById("td-q"); if (topq) { topq.addEventListener("input", () => { clearTimeout(tmr); tmr = setTimeout(draw, 150); }); topq.addEventListener("keydown", (e) => { if (e.key === "Escape") setTimeout(draw, 0); }); }
+  host.querySelector(".tds-reset").addEventListener("click", () => { host.querySelectorAll("[data-f]").forEach((x) => { x.value = ""; }); if (topq) topq.value = ""; host.querySelectorAll("[data-q]").forEach((x) => { x.checked = false; }); host.querySelectorAll("[data-cf]").forEach((x) => { x.value = ""; }); typeOn.clear(); chips(); draw(); });
   more.addEventListener("click", () => { shown += 300; draw(true); });
   kindOpts(); chips(); draw();
   ready.then(() => { regroup(); kindOpts(); chips(); draw(true); });

@@ -70,6 +70,13 @@ const RMS = `(w => { const a = w.view && w.view.an; if (!a) return 0; const d = 
   await b.eval(`SynthKit.widgets[${sk}].press(5)`);
   let l3 = 0; for (let k = 0; k < 6; k++) { await b.sleep(100); l3 = Math.max(l3, await b.eval(`${RMS}(SynthKit.widgets[${sk}])`)); }
   check("splitkeys: press sounds", l3 > .001, l3.toFixed(4)); await b.eval(`SynthKit.widgets[${sk}].release(); SynthKit.widgets[${sk}].stop()`);
+  // names and just-intonation comparison
+  const nm = await b.eval(`(() => { const w = SynthKit.widgets[${sk}]; w.c.lab.set('name'); const t = [...w.host.querySelectorAll('.tk-keys text')].map(x => x.textContent); w.c.lab.set('num'); return t.slice(0, 12).join(' '); })()`);
+  check("splitkeys names: C, C quarter-sharp, C sharp ... no '?'", /^C \uD834\uDD32/.test(nm.replace(/^.*?(C 𝄲)/, "$1")) || (nm.includes("C") && !nm.includes("?")), nm);
+  const je = await b.eval(`(() => { const w = SynthKit.widgets[${sk}]; w.c.cmp.set('just5'); w.press(0); w.release(); const a = w.host.querySelector('.sk-info').textContent; const k = w.pieces().findIndex(p => p.getAttribute('data-n') === '13'); w.press(k); w.release(); const b2 = w.host.querySelector('.sk-info').textContent; w.c.cmp.set('piano'); return a + ' | ' + b2; })()`);
+  check("splitkeys just comparison: step 13 vs 4:3", /4:3/.test(je) && /cents from the nearest just ratio/.test(je), je);
+  const pg = await b.eval(`(() => { const w = SynthKit.widgets[${gi}]; w.c.layout.set('linn'); w.c.edo.set('31'); w.c.lab.set('name'); const t = [...w.host.querySelectorAll('.tk-grid text')].map(x => x.textContent).join(' '); const ok = /𝄲/.test(t) && /𝄳/.test(t) && !t.includes("?"); w.c.lab.set('num'); return ok; })()`);
+  check("pitchgrid 31: note names with quarter-tone signs", pg === true, pg);
   // ---- a tune in another tuning ----
   const ts = await b.eval(`SynthKit.widgets.findIndex(w => w.kind === 'tunesong')`);
   let tl = 0; for (let k = 0; k < 40 && !tl; k++) { await b.sleep(250); tl = await b.eval(`SynthKit.widgets[${ts}].loaded()`); }

@@ -86,11 +86,11 @@
   Object.keys(T).forEach((set) => {
     const tunes = String(T[set]).split(/\n(?=X:)/).filter((t) => /^\s*X:/.test(t)).map((t) => ({
       id: (/^%%id\s+(\S+)/m.exec(t) || [])[1], title: ((/^T:\s*(.*)$/m.exec(t) || [])[1] || "(untitled)").trim(),
-      by: ((/^C:\s*(.*)$/m.exec(t) || [])[1] || "").trim(), repair: /^%%tags.*\bneeds-repair\b/m.test(t) })).filter((t) => t.id);
+      by: ((/^C:\s*(.*)$/m.exec(t) || [])[1] || "").trim(), repair: /^%%tags.*\bneeds-repair\b/m.test(t) || !!(window.TUNE_QUALITY && window.TUNE_QUALITY[(/^%%id\s+(\S+)/m.exec(t) || [])[1]]) })).filter((t) => t.id);
     nTunes += tunes.length;
     const g = group(tbox, set, tunes.length);
     tunes.sort((a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: "base" }))
-      .forEach((t) => g.ul.appendChild(row("tune", t.id, t.title, [t.by, t.repair ? "needs repair" : ""].filter(Boolean).join(" · "), g.d, (c, s) => s.has(t.id))));
+      .forEach((t) => g.ul.appendChild(row("tune", t.id, t.title, [t.by, t.repair ? "suspect ABC" : ""].filter(Boolean).join(" · "), g.d, (c, s) => s.has(t.id))));
   });
   $("#td-tunes-n").textContent = nTunes.toLocaleString() + " tunes in " + Object.keys(T).length + " sets";
 

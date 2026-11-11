@@ -1057,7 +1057,9 @@ document.addEventListener('DOMContentLoaded', async function () {
                 ["Collection", document.getElementById("collection-selector").value], ["Tags", tags || ""],
                 ["In print", w && w.in && w.in.print && Works.printLabel ? w.in.print.map(Works.printLabel).join("; ") : ""]].filter((r) => r[1]);
             const notes = all("N").concat(all("D"));
-            box.innerHTML = `<dl>${rows.map((r) => `<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join("")}</dl>` +
+            const q = id && window.TUNE_QUALITY && TUNE_QUALITY[id];
+            box.innerHTML = (q ? `<p class="tn-note"><b>⚠ This ABC is probably wrong</b> (predicted by scripts/tune-quality.mjs): ${esc(q.r.join("; "))}. The "Edit the ABC" panel can fix it.</p>` : "") +
+                `<dl>${rows.map((r) => `<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join("")}</dl>` +
                 (notes.length ? notes.map((n) => `<p>${esc(n)}</p>`).join("") : `<p class="tn-note">No notes with this tune.</p>`) +
                 `<p class="tn-note">${id ? `<a href="/practice/tune-directory.html#${encodeURIComponent(w ? w.id : id)}">In the Tune Directory</a> · ` : ""}<span class="tn-midi"></span></p>`;
             try { box.querySelector(".tn-midi").innerHTML = ABCJS.synth.getMidiFile(t); } catch (e) {}   // the MIDI file download (no sound)
@@ -1183,6 +1185,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     <script src="../apps/shared/abc-play.js?v=27"></script>
     <script src="../apps/shared/abcjs-basic.js?v=5"></script>
     <script src="../apps/tunes/tunes-object.js?v=3"></script>
+    <script src="../apps/tunes/tune-quality.js"></script>
     <script src="../apps/shared/works/works-data.js?v=10"></script>
     <script src="../apps/shared/mlt/recordings.js?v=3"></script>
     <script src="../apps/shared/works/works.js?v=18"></script>
