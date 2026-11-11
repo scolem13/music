@@ -41,6 +41,10 @@
       desc:"A repeated straight-eighths figure: root on 1, root pushed on the and of 2, then a fifth and flat seventh on beat 4 leading back to the root. The kind of line under Watermelon Man. In 6/8 and 12/8 it becomes a shuffle: each beat played long-short, climbing root, 3rd, 5th, 6th." },
     { id:"boogie", label:"Boogie-woogie", feel:"swing", tags:["Boogie-woogie","Blues","Piano"],
       desc:"Eight swung eighth notes a bar walking up the chord and back down: root, 3rd, 5th, 6th, flat 7th, 6th, 5th, 3rd, the same every bar. It is the boogie-woogie pianist's left hand, played on the bass. A chord that arrives on beat 3 starts the walk again from its root." },
+    { id:"shufflebox", label:"Shuffle box", feel:"swing", tags:["Blues","Shuffle","Chicago blues"],
+      desc:"Swung eighths, each note played twice: root, root, 5th, 5th, 6th, 6th, 5th, 5th, the same every bar. The Chicago shuffle bass line, often doubled by the guitar. A chord that arrives on beat 3 starts again from its root." },
+    { id:"funk16", label:"Sixteenth-note funk", feel:"straight", tags:["Funk","Soul"],
+      desc:"Straight sixteenths: the root on 1 and a ghosted root on the last sixteenth of beat 1, the octave on the and of 2, the root on 3, the flat 7th on the last sixteenth of 3, the 5th on 4 and the next chord's root pushed on the and of 4." },
     { id:"boogieOct", label:"Boogie-woogie octaves", feel:"swing", tags:["Boogie-woogie","Blues","Piano"],
       desc:"Rolling octaves: the root and the root an octave higher in swung eighths, low on every beat and high on every and, the same every bar. A chord that arrives on beat 3 starts again from its low root." },
     { id:"yancey", label:"Yancey figure", feel:"swing", tags:["Boogie-woogie","Blues","Piano"],
@@ -181,6 +185,10 @@
       desc:"One ringing downstroke on every beat. The first strum to learn, and the usual one for a slow song.", hits:[[0,"L"],[1,"L"],[2,"L"],[3,"L"]] },
     { id:"strum332", label:"Strum: 3-3-2 accents", feel:"straight", group:"Folk, rock and pop", tags:["Pop","Rock"],
       desc:"The D, D-U, U-D-U strum with the weight moved to beat 1, the and of 2 and beat 4, the 3+3+2 grouping under a great many pop songs.", hits:[[0,"L"],[1,"L"],[1.5,"L"],[2.5,"L"],[3,"L"],[3.5,"L"]] },
+    { id:"funkChank", label:"Funk chank (choked 2 and 4)", feel:"straight", group:"Blues and funk", tags:["Funk","Soul"],
+      desc:"The strumming hand moves down-up on every sixteenth all bar. On 2 and 4 the chord is pressed and choked short; every other stroke is a dead scratch with the fretting hand resting on the strings. The first funk rhythm to learn." },
+    { id:"funkScratch", label:"Funk scratch (syncopated sixteenths)", feel:"straight", group:"Blues and funk", tags:["Funk","Soul","Cory Wong"],
+      desc:"Sixteenths down-up all bar, mostly dead scratches, with short choked chords on syncopated sixteenths: bar one on 1, the last sixteenth of 1, the and of 2, the last sixteenth of 3 and the and of 4; bar two on the and of 1, the and of 2, 3, the second sixteenth of 4 and the last sixteenth of 4. In the style of Cory Wong and Nile Rodgers." },
     { id:"strum16", label:"Strum: sixteenths", feel:"straight", group:"Folk, rock and pop", tags:["Pop","Rock","Funk"],
       desc:"The D, D-U, U-D-U strum at double speed, twice in the bar. For slow and medium tempos.", hits:null },
     { id:"prine", label:"Fingerpicking: thumb, pinch-and", feel:"any", group:"Folk, rock and pop", tags:["Folk","Country"],
@@ -205,6 +213,8 @@
       desc:"Swung eighths all the way through on the cymbal, kick on 1 and 3 and a full snare on 2 and 4. The Chicago blues beat." },
     { id:"jump", label:"Jump blues", feel:"swing", group:"Jazz", tags:["Jump blues","Rhythm and blues","Boogie-woogie"],
       desc:"The blues shuffle pushed harder: swung eighths on the cymbal, the kick feathered on all four beats, and a loud backbeat on the snare on 2 and 4. In 3/4 the snare on 2 and 3." },
+    { id:"funk16", label:"Sixteenth-note funk", feel:"straight", group:"Blues and funk", tags:["Funk","Soul","R&B"],
+      desc:"Closed hi-hat on every sixteenth, the kick on 1, the last sixteenth of 1 and the and of 3, a hard snare on 2 and 4 with quiet ghost notes on the last sixteenth of 2 and the second sixteenth of 4. In 3/4 the snare on 3." },
     { id:"funk", label:"Funk", feel:"straight", group:"Jazz", tags:["Funk","Boogaloo","Soul jazz"],
       desc:"Snare on 2 and 4 with a syncopated kick: beat 1, the and of 2 and the and of 3. Eighths on the cymbal." },
     { id:"bossa", label:"Bossa nova", feel:"straight", group:"Latin", tags:["Bossa nova"],
@@ -298,25 +308,25 @@
   // which styles each entry belongs in
   var FITS = {
     congas: { tumbao:"montuno chacha boogaloo", tumbao2:"montuno chacha boogaloo", opens:"montuno chacha boogaloo", slapopen:"montuno chacha boogaloo", heeltoe:"montuno chacha boogaloo" },
-    bass: { walk:"swing ballad", arp:"swing ballad boogaloo boogie", two:"swing ballad stride", boogie:"boogie jump", boogieOct:"boogie jump", yancey:"boogie", riff:"boogaloo", riffwalk:"boogaloo", roots:"rock pop folk reggae strum hymn carol emo", alt:"folk calypso reggae train strum carol waltz prine stride ragtime", polka:"freylekhs folk", held:"hymn carol pop", halves:"carol hymn pop strum", eighths:"rock emo", dotted:"strum pop rock emo", octaves:"dance", motown:"motown", twelve8:"doowop",
+    bass: { walk:"swing ballad", arp:"swing ballad boogaloo boogie", two:"swing ballad stride", boogie:"boogie jump", shufflebox:"chicago jump boogie", funk16:"funk16 boogaloo", boogieOct:"boogie jump", yancey:"boogie", riff:"boogaloo", riffwalk:"boogaloo", roots:"rock pop folk reggae strum hymn carol emo", alt:"folk calypso reggae train strum carol waltz prine stride ragtime", polka:"freylekhs folk", held:"hymn carol pop", halves:"carol hymn pop strum easyballad strumballad", eighths:"rock emo", dotted:"strum pop rock emo", octaves:"dance", motown:"motown", twelve8:"doowop slowblues rock68",
             bossa:"bossa", tango:"tango", tumbao:"montuno chacha", chacha:"chacha", tresillo:"dance rock reggaeton",
             sowhat:"swing", killerjoe:"swing boogaloo", songfather:"bossa", footprints:"swing", allblues:"swing", chameleon:"boogaloo rock", maiden:"boogaloo bossa", takefive:"swing" },
-    comp: { auto:"swing ballad boogaloo", charleston:"swing ballad", reverse:"swing", garland:"swing", offbeats:"swing", four:"swing boogie jump", stabs:"boogaloo", stride:"stride ragtime", strideTenths:"stride ragtime", boogie:"boogie jump",
-            pad:"swing ballad boogaloo bossa tango pop folk rock reggaeton strum dance doowop hymn carol emo prine", oompah:"folk train motown carol stride ragtime", waltz:"waltz folk carol hymn", eighths:"rock", hymn:"hymn carol pop", ballRock:"pop strum carol hymn doowop", ballBroken:"pop strum carol hymn", ballSync:"pop strum carol",  quarters:"pop rock strum motown hymn carol emo", triplets:"doowop",
-            strumCamp:"strum rock folk carol", strumFolk:"carol folk strum train", strumEights:"rock strum emo", strumPunk:"emo rock", strumQuarters:"strum rock folk pop carol emo", strum332:"strum rock dance", strum16:"strum rock dance", upbeats:"calypso reggae freylekhs boogie", bossa:"bossa", tango:"tango",
-            montuno:"montuno", guajeo:"montuno", chacha:"chacha", arp:"pop ballad folk strum doowop hymn carol", arp2:"pop folk strum carol emo prine", prine:"prine folk strum carol train", travis:"prine folk strum carol train", alberti:"pop folk", tresillo:"dance rock reggaeton", clave32:"rock", barbara:"motown rock", g333322:"rock dance", g33433:"dance reggaeton", g3x8:"dance rock", sowhat:"swing", maiden:"boogaloo bossa", takefive:"swing" },
-    drums: { auto:"swing ballad boogaloo stride", quarters:"swing ballad stride boogie", ridetime:"swing ballad stride", shuffle:"swing doowop boogie jump", jump:"jump boogie", funk:"boogaloo rock", bossa:"bossa", clave:"montuno", clave32:"montuno", bodiddley:"rock", dembow:"reggaeton dance", chacha:"chacha", tango:"tango", calypso:"calypso",
-             onedrop:"reggae", none:"hymn carol pop folk strum prine", brushes:"carol strum folk pop", brushswing:"swing ballad carol folk", brushballad:"ballad swing pop folk carol hymn", brushfolk:"folk carol strum prine train pop", boomchick:"folk train carol freylekhs ragtime", waltz:"waltz folk carol", rock:"rock emo", strum:"strum rock pop", ballad:"pop strum", dance:"dance", motown:"motown", train:"train", twelve8:"doowop", halftime:"pop rock emo",
+    comp: { auto:"swing ballad boogaloo", charleston:"swing ballad", reverse:"swing", garland:"swing", offbeats:"swing", four:"swing boogie jump chicago", stabs:"boogaloo", stride:"stride ragtime", strideTenths:"stride ragtime", boogie:"boogie jump",
+            pad:"easyballad slowblues swing ballad boogaloo bossa tango pop folk rock reggaeton strum dance doowop hymn carol emo prine", oompah:"folk train motown carol stride ragtime", waltz:"waltz folk carol hymn", eighths:"rock", hymn:"hymn carol pop", ballRock:"pop strum carol hymn doowop", ballBroken:"pop strum carol hymn", ballSync:"pop strum carol",  quarters:"pop rock strum motown hymn carol emo", triplets:"doowop slowblues",
+            strumCamp:"strum rock folk carol", strumFolk:"carol folk strum train", strumEights:"rock strum emo", strumPunk:"emo rock", strumQuarters:"strum rock folk pop carol emo strumballad", strum332:"strum rock dance", strum16:"strum rock dance funk16", funkChank:"funk16 boogaloo motown", funkScratch:"funk16 boogaloo motown dance", upbeats:"calypso reggae freylekhs boogie", bossa:"bossa", tango:"tango",
+            montuno:"montuno", guajeo:"montuno", chacha:"chacha", arp:"rock68 pop ballad folk strum doowop hymn carol", arp2:"pop folk strum carol emo prine", prine:"prine folk strum carol train", travis:"prine folk strum carol train", alberti:"pop folk", tresillo:"dance rock reggaeton", clave32:"rock", barbara:"motown rock", g333322:"rock dance", g33433:"dance reggaeton", g3x8:"dance rock", sowhat:"swing", maiden:"boogaloo bossa", takefive:"swing" },
+    drums: { auto:"swing ballad boogaloo stride", quarters:"swing ballad stride boogie", ridetime:"swing ballad stride", shuffle:"swing doowop boogie jump chicago", jump:"jump boogie", funk:"boogaloo rock funk16", funk16:"funk16 boogaloo", bossa:"bossa", clave:"montuno", clave32:"montuno", bodiddley:"rock", dembow:"reggaeton dance", chacha:"chacha", tango:"tango", calypso:"calypso",
+             onedrop:"reggae", none:"hymn carol pop folk strum prine", brushes:"carol strum folk pop", brushswing:"swing ballad carol folk", brushballad:"ballad swing pop folk carol hymn", brushfolk:"folk carol strum prine train pop", boomchick:"folk train carol freylekhs ragtime", waltz:"waltz folk carol", rock:"rock emo", strum:"strum rock pop", ballad:"pop strum easyballad strumballad", dance:"dance", motown:"motown", train:"train", twelve8:"doowop slowblues rock68", halftime:"pop rock emo",
              hhquarters:"rock pop strum dance boogaloo", hheighths:"rock pop strum dance boogaloo", hhaccents:"rock pop strum dance boogaloo", hhoffbeats:"rock pop strum dance boogaloo", hhopen:"rock pop strum dance boogaloo",
-             hhdance:"rock pop strum dance boogaloo", hhsix:"rock pop strum dance boogaloo", hhsix2:"rock pop strum dance boogaloo", hhfoot4:"rock pop strum dance boogaloo", hhswing:"swing stride boogie" }
+             hhdance:"rock pop strum dance boogaloo", hhsix:"rock pop strum dance boogaloo funk16", hhsix2:"rock pop strum dance boogaloo", hhfoot4:"rock pop strum dance boogaloo", hhswing:"swing stride boogie" }
   };
-  var JAZZ = "swing ballad boogaloo", POP = "folk freylekhs rock emo pop strum dance motown doowop train prine hymn carol waltz", PLAIN = POP + " calypso reggae reggaeton tango montuno chacha stride boogie ragtime jump";
+  var JAZZ = "swing ballad boogaloo", POP = "easyballad strumballad rock68 folk freylekhs rock emo pop strum dance motown doowop train prine hymn carol waltz", PLAIN = POP + " chicago slowblues funk16 calypso reggae reggaeton tango montuno chacha stride boogie ragtime jump";
   var VOICE = {
     piano: { standard:[PLAIN, "Folk, rock, pop, Latin"], shell:[JAZZ + " bossa", "Jazz, bossa nova"], guide:[JAZZ, "Jazz"], rootless:[JAZZ + " bossa", "Jazz, bossa nova"], sowhat:[JAZZ + " bossa", "Modal jazz"],
              drop2:["swing ballad bossa tango montuno chacha", "Jazz, Latin"], drop3:["swing ballad bossa", "Jazz, bossa nova"], bh:["swing ballad", "Bebop"], auto:[JAZZ, "Jazz"] },
     guitar: { drop2:["swing ballad bossa tango montuno chacha", "Jazz, Latin"], drop3:["swing ballad bossa", "Jazz, bossa nova"], triad3:[PLAIN, "Folk, rock, pop, Latin"],
               shell3:[JAZZ + " bossa", "Jazz, bossa nova"], triadvl:[PLAIN, "Folk, rock, pop, Latin"], uppervl:[JAZZ + " bossa", "Jazz, bossa nova"], guide2:[JAZZ, "Jazz"],
-              top3:[JAZZ + " bossa calypso reggae", "Jazz, funk, reggae"], mid3:[JAZZ + " bossa rock motown dance", "Jazz, funk, rock"], open:[POP + " calypso reggae", "Folk, rock, pop"], bh:["swing ballad", "Bebop"], auto:[JAZZ, "Jazz"] }
+              top3:[JAZZ + " bossa calypso reggae funk16", "Jazz, funk, reggae"], mid3:[JAZZ + " bossa rock motown dance funk16", "Jazz, funk, rock"], open:[POP + " calypso reggae", "Folk, rock, pop"], bh:["swing ballad", "Bebop"], auto:[JAZZ, "Jazz"] }
   };
   [["bass", bass], ["comp", comp], ["drums", drums]].forEach(function (p){ p[1].forEach(function (e){ e.fits = (FITS[p[0]][e.id] || "").split(" ").filter(Boolean); }); });
   var voicings = {};
@@ -339,6 +349,15 @@
       desc:"Straight eighths and a march: the piano's left hand on bass and chord (1 and 3, 2 and 4), root and fifth in the bass, a two-beat boom-chick on the drums." },
     { id:"jump", label:"Jump blues", group:"Jazz", genres:"Jump blues, rhythm and blues, early rock and roll", feel:"swing", bass:"boogie", rhythm:"boogie", drums:"jump", voicing:PLAINV, full:true,
       desc:"The boogie-woogie bass and right hand over a harder shuffle: the kick on every beat and a loud backbeat." },
+    { id:"chicago", label:"Chicago shuffle", group:"Blues and funk", genres:"Chicago blues, electric blues, shuffles", feel:"swing", bass:"shufflebox", rhythm:"four", drums:"shuffle", voicing:PLAINV,
+      sound:{ bass:"electric", cymbal:"ride", piano:"piano", guitar:"clguitar", lead:"guitar" },
+      desc:"The shuffle box on the bass (root, 5th, 6th, 5th, each twice), chords on every beat and the blues shuffle on the drums: swung eighths on the cymbal, kick on 1 and 3, backbeat on 2 and 4." },
+    { id:"slowblues", label:"12/8 slow blues", group:"Blues and funk", genres:"Slow blues, minor blues, blues ballads", feel:"swing", bass:"twelve8", rhythm:"triplets", drums:"twelve8", voicing:PLAINV,
+      sound:{ bass:"electric", cymbal:"ride", piano:"piano", guitar:"clguitar", lead:"guitar" },
+      desc:"A slow blues in 12/8: triplet chords, the bass on 1 and 3 each set up by the eighth before, and a heavy backbeat. Works on a 12/8 chart and, as triplets, on one in 4/4." },
+    { id:"funk16", label:"Sixteenth-note funk", group:"Blues and funk", genres:"Funk, soul, funky blues", feel:"straight", bass:"funk16", rhythm:"funkScratch", drums:"funk16", voicing:{ piano:"standard", guitar:"top3" },
+      sound:{ bass:"electric", cymbal:"hat", piano:"epiano", guitar:"clguitar", lead:"guitar" },
+      desc:"A syncopated sixteenth-note bass line, sixteenth-note funk guitar on the top three strings (dead scratches with short choked chords on the off sixteenths), and a hi-hat sixteenth groove with ghost notes on the snare." },
     { id:"bossa", label:"Bossa nova", ext:true, group:"Latin", genres:"Bossa nova, slow samba", feel:"straight", bass:"bossa", rhythm:"bossa", drums:"bossa", voicing:JAZZV,
       desc:"Root-and-fifth bass with pickups, a two-bar comping pattern and the bossa clave on the cross-stick." },
     { id:"montuno", label:"Son montuno", group:"Latin", genres:"Son, salsa, mambo", feel:"straight", bass:"tumbao", rhythm:"montuno", drums:"clave", congas:"tumbao2", voicing:PLAINV,
@@ -368,6 +387,16 @@
     { id:"pop", label:"Piano ballad", group:"Folk, rock and pop", genres:"Pop and rock ballads", feel:"straight", bass:"dotted", rhythm:"ballRock+ballBroken+ballSync", drums:"ballad", voicing:STRUMV, figures:"pianoAnswer+bassWalkUp+pianoSus", time:{ feel:"half", parts:"bass drums plain" },      // half time: the backbeat on 3, the bass at half speed, the piano as written
       sound:{ bass:"electric", cymbal:"hat", piano:"piano", guitar:"aguitar", lead:"piano", kit:{ hat:53 } },       // kit = Backing Track kit faders (0-150; 53 = 35% of the travel): the hi-hat well down
       desc:"Left-hand octaves and a first-inversion right hand broken three ways (rocking, half-broken, syncopated), in four-bar spans, over a half-time bass and drums: a quiet kick and a cross-stick on 3." },
+    // Beginner ballads: few notes, each chord held, so a new player can find the chord changes (2026-11-10)
+    { id:"easyballad", label:"Easy piano ballad", group:"Folk, rock and pop", genres:"Pop and rock ballads for beginners", feel:"straight", bass:"halves", rhythm:"pad", drums:"ballad", voicing:PLAINV, calm:true,
+      sound:{ bass:"electric", cymbal:"hat", piano:"piano", guitar:"aguitar", lead:"piano", kit:{ hat:53 } },
+      desc:"For beginners: each chord struck once and held, the bass on 1 and 3, a quiet kick and a cross-stick on 2 and 4. Nothing moves but the chord changes." },
+    { id:"strumballad", label:"Slow strum ballad", group:"Folk, rock and pop", genres:"Campfire and acoustic ballads for beginners", feel:"straight", bass:"halves", rhythm:"strumQuarters", drums:"ballad", voicing:STRUMV,
+      sound:{ bass:"electric", cymbal:"hat", piano:"piano", guitar:"aguitar", lead:"guitar", kit:{ hat:53 } },
+      desc:"For beginners: one downstroke on every beat on an acoustic guitar, the bass on 1 and 3, a quiet ballad beat. The first strum to learn." },
+    { id:"rock68", label:"6/8 rock ballad", group:"Folk, rock and pop", genres:"Rock and power ballads in 6/8 or 12/8", feel:"swing", bass:"twelve8", rhythm:"arp", drums:"twelve8", voicing:STRUMV,
+      sound:{ bass:"electric", cymbal:"hat", piano:"piano", guitar:"clguitar", lead:"guitar" },
+      desc:"A clean electric guitar picking the chord one note at a time over a slow 12/8 backbeat, the bass on 1 and 3 each set up by the eighth before. On a 4/4 chart it plays as triplets." },
     { id:"dance", label:"Dance pop", group:"Folk, rock and pop", genres:"Disco, dance pop, four on the floor", feel:"straight", bass:"octaves", rhythm:"tresillo", drums:"dance", voicing:PLAINV,
       sound:{ bass:"electric", cymbal:"hat", piano:"epiano", guitar:"clguitar" },
       desc:"Kick on every beat, the open hi-hat and the bass octave on every off-beat, chords on a 3+3+2." },

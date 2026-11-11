@@ -79,6 +79,9 @@
   // Set patterns. bars: one list of [beat, L | S] per bar of the pattern, or a function of the bar's
   // beat count. arp: "wave" walks up and down the voicing, "pair" alternates its lowest and highest note.
   function everyEighth(beats){ var h = []; for (var b = 0; b < beats; b += 0.5) h.push([b, "S"]); return h; }
+  // sixteen strokes, down-up; chords (choked) where hits says, dead scratches everywhere else
+  function wong(hits){ var h = []; for (var i = 0; i < 16; i++){ var p = i / 4, up = i % 2 === 1, hit = hits.indexOf(p) >= 0;
+    h.push([p, "L", hit ? (up ? "c" : "C") : (up ? "x" : "X")]); } return h; }
   var GRID = {
     oompah:  { bars: function (beats){ var h = []; for (var b = 1; b < beats; b++) if (beats % 2 || b % 2) h.push([b, "S"]); return h; } },
     eighths: { bars: everyEighth, quiet: true },
@@ -122,6 +125,12 @@
     strumQuarters: { strum: true, bars: function (beats){ var h = []; for (var b = 0; b < beats; b++) h.push([b, "L", "D"]); return h; } },
     strum332:   { strum: true, accent: [0, 1.5, 3], bars: [ [[0, "L", "D"], [1, "L", "D"], [1.5, "L", "U"], [2.5, "L", "U"], [3, "L", "D"], [3.5, "L", "U"]] ] },
     strum16:    { strum: true, bars: [ [0, 2].reduce(function (h, o){ return h.concat([[o, "L", "D"], [o + 0.5, "L", "D"], [o + 0.75, "L", "U"], [o + 1.25, "L", "U"], [o + 1.5, "L", "D"], [o + 1.75, "L", "U"]]); }, []) ] },
+    // Funk guitar (lessons/funk-guitar.qmd): the hand moves down-up on every sixteenth all bar, down on the beat and its "and", up on the
+    // "e" and the "a". X / x = a dead scratch, down / up: the fretting hand lies on the strings without pressing, so only a click
+    // sounds. C / c = a chord choked short, down / up: pressed for the hit, let go at once. (After Cory Wong's and Nile Rodgers'
+    // sixteenth-note playing as taught in guitar lessons; the hits are this site's, not taken from a record.)
+    funkChank:  { strum: true, bars: [ wong([1, 3]) ] },                                      // the chank: one choked chord on 2 and on 4, scratches between
+    funkScratch:{ strum: true, bars: [ wong([0, 0.75, 1.5, 2.75, 3.5]), wong([0.5, 1.5, 2, 3.25, 3.75]) ] },   // two bars of syncopated hits
     // So What: nothing under the bass call, then the two answering chords. A fourth entry moves the whole
     // voicing by that many semitones (the first chord is the home voicing a whole step up). exact: no hit is
     // added for a chord the pattern passes over. (Placement written from memory of the record: check by ear.)
@@ -884,6 +893,15 @@
             if (!firstP) e.arp = true;
             out(firstP ? grip(e) : e); if (firstP) left(e, h, chord, ck, v, changeAt); return;
           }
+        }
+        if (g.strum && /^[XxCc]$/.test(h.stroke)){                     // funk: dead scratches and choked chords
+          var fu = h.stroke === "x" || h.stroke === "c", dead = h.stroke === "X" || h.stroke === "x";
+          e = { pos: h.pos, dur: dead ? 0.1 : 0.2, midis: fu || dead ? v.slice(-Math.min(3, v.length)) : v.slice(), strum: fu ? "up" : "down", inst: su.inst, of: ck,
+                vel: Math.round(clamp(dead ? 0.30 + (Math.round(h.pos * 4) % 4 === 0 ? 0.04 : 0) + (rng() - 0.5) * 0.04
+                                           : spread(ctx, fu ? 0.62 : 0.68, 0.57) + phraseDyn(ctx, h.pos) + (rng() - 0.5) * 0.04, 0.22, 0.78) * 1000) / 1000 };
+          if (dead){ e.mute = true; e.arp = true; out(e); return; }
+          if (fu) e.arp = true;
+          out(fu ? e : grip(e)); if (!fu) left(e, h, chord, ck, v, changeAt); return;
         }
         if (g.strum){
           var up = h.stroke === "U", acc = g.accent ? g.accent.indexOf(h.pos) >= 0 : !up && on && Math.floor(h.pos) % 2 === 1;      // lean on 2 and 4 unless the pattern says otherwise

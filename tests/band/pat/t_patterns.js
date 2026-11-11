@@ -38,17 +38,25 @@ for (const id of Object.keys(M)) for (const compRhythm of GRID) for (const bassF
 
 // 4/4, one chord a bar: the rhythms as described
 const ONE = "F7|F7|Bb7|Bb7|F7|F7|C7|C7".split("|");
+const SIX = Array.from({ length: 16 }, (_, i) => i / 4).join(" ");
 const want = { oompah: ["1 3"], waltz: ["1 3"], eighths: ["0 0.5 1 1.5 2 2.5 3 3.5"], upbeats: ["0.5 1.5 2.5 3.5"], bossa: ["0 1.5 3", "1 2.5"], tango: ["0 1.5 2 3"],
                montuno: ["0 1 1.5 2.5 3.5", "0.5 1.5 2.5 3.5"],
                guajeo: ["0 1 1.5 2.5 3.5", "0.5 1.5 2.5 3.5"], chacha: ["1 2 2.5 3"], arp: ["0 0.5 1 1.5 2 2.5 3 3.5"], arp2: ["0 0.5 1 1.5 2 2.5 3 3.5"],
                strumCamp: ["0 1 1.5 2.5 3 3.5"], strumFolk: ["0 1 1.5 2 3 3.5"], strumEights: ["0 0.5 1 1.5 2 2.5 3 3.5"], strumPunk: ["0 0.5 1 1.5 2 2.5 3 3.5"], strumQuarters: ["0 1 2 3"], strum332: ["0 1 1.5 2.5 3 3.5"],
                strum16: ["0 0.5 0.75 1.25 1.5 1.75 2 2.5 2.75 3.25 3.5 3.75"], sowhat: ["", "2 3.5"], maiden: ["0 1.5 3", "1.5 3"], takefive: ["0 1.5 3"], tresillo: ["0 1.5 3"], clave32: ["0 1.5 3", "1 2"], barbara: ["0 1 2 3.5", "0.5 1.5 2"], g333322: ["0 1.5 3", "0.5 2 3"], g33433: ["0 1.5 3", "1 2.5"],
                g3x8: ["0 0.75 1.5 2.25 3 3.75", "0.5 1.25 2 2.5 3 3.5"], alberti: ["0 0.5 1 1.5 2 2.5 3 3.5"],
+               funkChank: [SIX], funkScratch: [SIX],   /* (every sixteenth: scratches and chords; the chords alone are checked below) */
                ballRock: ["0 2", "0 2 3.5"], ballBroken: ["2", "0"], ballSync: ["0 1.5 3", "0 1.5"], prine: ["0 1 1 1.5 2 3 3 3.5"], travis: ["0 0 1 1.5 2 2.5 3 3.5"], hymn: ["0"], quarters: ["0 1 2 3"], stride: ["1 3"], strideTenths: ["1 3"], boogie: ["0 0.5 1.5", "0.5 1 2.5"], triplets: [[0, 1, 2, 3].map(b => [b, b + 1 / 3, b + 2 / 3].join(" ")).join(" ")] };
 // (the piano's left-hand root under a strum or an lh pattern is a separate one-note event, marked arp like an arpeggio note)
 const rh = (id, evs) => BandComp.GRID[id].arp || BandComp.GRID[id].pick ? evs : BandComp.GRID[id].ballad ? evs.filter(e => e.midis.length > 1 && e.hand !== "L")   /* (the ballad: the right hand's chords and pairs) */
   : evs.filter(e => !(e.arp && e.midis.length === 1) && e.hand !== "L");   /* (and the stride left hand's octaves) */
 for (const id of GRID) gen("4/4", { compRhythm: id }, 5, ONE, 16).forEach(r => assert.strictEqual(pos(rh(id, r.parts.comp)), want[id][r.index % want[id].length], id + " bar " + r.index));
+// funk: the choked chords land where the descriptions say, everything else a short muted scratch
+const FUNK = { funkChank: ["1 3"], funkScratch: ["0 0.75 1.5 2.75 3.5", "0.5 1.5 2 3.25 3.75"] };
+for (const id in FUNK) gen("4/4", { compRhythm: id, comp: "guitar" }, 5, ONE, 16).forEach(r => {
+  const evs = r.parts.comp.filter(e => !(e.arp && e.midis.length === 1));
+  assert.strictEqual(pos(evs.filter(e => !e.mute)), FUNK[id][r.index % FUNK[id].length], id + " chords bar " + r.index);
+  assert(evs.filter(e => e.mute).every(e => e.dur <= 0.1 && e.vel < 0.4), id + ": scratches short and quiet"); });
 // the left hand: one root below the chord each time a chord arrives, on the piano only, and never in the hand-off
 { const q = gen("4/4", { compRhythm: "quarters" }, 5, ONE, 8), lh = r => r.parts.comp.filter(e => e.arp);
   q.forEach(r => { assert.strictEqual(lh(r).length, 1); const l = lh(r)[0], top = r.parts.comp.find(e => !e.arp);

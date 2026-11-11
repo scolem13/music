@@ -197,6 +197,11 @@
     takefive:   { bars: [ [[0, 1.4, "R"], [1.5, 1.4, "5"], [3, 0.9, "R"], [4, 0.9, "R"]] ] },                    // Take Five: 3 + 2
     // Boogie-woogie: the pianist's left hand walking up the chord in swung eighths and back down, root 3 5 6 b7 6 5 3, every bar
     // (Pinetop Smith, Albert Ammons, Meade Lux Lewis). arp: a chord that arrives mid-bar starts on its root.
+    // Chicago shuffle: the "box" in swung eighths, each note played twice: root root 5 5 6 6 5 5 (Jimmy Reed, Muddy Waters' bands)
+    shufflebox: { rise: true, top: 12, arp: true, bars: [ [[0, 0.45, "R"], [0.5, 0.45, "R"], [1, 0.45, "5"], [1.5, 0.45, "5"], [2, 0.45, "6"], [2.5, 0.45, "6"], [3, 0.45, "5"], [3.5, 0.45, "5"]] ] },
+    // sixteenth-note funk: root on 1, a ghosted root on the last sixteenth of 1, the octave pop on the and of 2, root on 3,
+    // the flat 7th on the "a" of 3, the fifth on 4 and the next root pushed on the and of 4 (straight sixteenths)
+    funk16:     { rise: true, top: 12, bars: [ [[0, 0.6, "R"], [0.75, 0.2, "R"], [1.5, 0.3, "8"], [2, 0.6, "R"], [2.75, 0.2, "7"], [3, 0.4, "5"], [3.5, 0.45, "N"]] ] },
     boogie:     { rise: true, top: 12, arp: true, bars: [ [[0, 0.45, "R"], [0.5, 0.45, "3"], [1, 0.45, "5"], [1.5, 0.45, "6"], [2, 0.45, "7"], [2.5, 0.45, "6"], [3, 0.45, "5"], [3.5, 0.45, "3"]] ] },
     // Rolling octaves: the root and the root an octave up, one pair to the beat in swung eighths (R 8 R 8 ...), the same in three.
     // arp: a chord that arrives mid-bar starts on its root, then the pairs go on from there.

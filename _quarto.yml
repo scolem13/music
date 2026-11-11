@@ -35,6 +35,7 @@ website:
             - lessons/blues-changes.qmd
             - lessons/blues-bass.qmd
             - lessons/blues-guitar.qmd
+            - lessons/funk-guitar.qmd
             - lessons/blues-piano.qmd
             - lessons/stride-boogie.qmd
             - lessons/blues-drums.qmd
@@ -56,6 +57,7 @@ website:
             - lessons/tagg-harmony.qmd
             - lessons/tagg-shuttles.qmd
             - lessons/tagg-loops.qmd
+            - lessons/loop-shapes.qmd
             - lessons/tagg-glossary.qmd
         - section: "Grooves vs Songs"
           contents:

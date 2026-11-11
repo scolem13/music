@@ -1,0 +1,104 @@
+---
+title: "Funk Guitar: Sixteenths and Muting"
+toc: true
+toc-depth: 2
+description: "Funk rhythm guitar in the style of Cory Wong: a strumming hand that never stops, dead scratches, choked chords, and small chord shapes on the top strings. Play along with the band's funk guitarist, or take the part yourself."
+instruments: [guitar]
+topics: [funk, rhythm]
+has: [band, interactive]
+---
+
+Funk rhythm guitar is closer to drumming than to strumming. The guitarist's hand moves
+down and up on every sixteenth note, all the time. Most of those strokes make only a
+click. A few of them are short, sharp chords. Which strokes sound and which are muted
+is the rhythm.
+
+Cory Wong is a well-known player of this style today. He is best known for his
+clean, bright sixteenth-note rhythm guitar with the band Vulfpeck and in his own bands.
+Before him there were Nile Rodgers (Chic) and Jimmy Nolen (James Brown's band). *(These
+names and facts are from memory and not yet checked against a source.)*
+
+The examples on this page are played by the site's band. Its funk guitarist uses the
+two techniques this lesson teaches: **dead scratches** and **choked chords**.
+
+## 1. The hand never stops
+
+Count four sixteenths on every beat: **1 e & a, 2 e & a, 3 e & a, 4 e & a**. The strumming
+hand goes **down** on each number and each "&", and **up** on each "e" and each "a". It
+keeps going whether a stroke sounds or not. Without that steady motion, the syncopated
+chords later on will not land in the right place.
+
+Start with every stroke sounding. This is the band's plain sixteenth-note strum, with the
+chords ringing:
+
+<div class="ar-demo" data-style="funk16" data-chart="E9|E9|A9|E9" data-tempo="92" data-comp="guitar" data-choice-label="Guitar:" data-choices='[{"label":"Strummed, ringing","opts":{"compRhythm":"strum16"}}]'></div>
+
+Keep the movement small and from the wrist. Start at half tempo.
+
+## 2. Muting: what the left hand does
+
+Muting is what turns a strum into funk. There are two kinds, and the fretting hand
+(the left hand for most players) does both.
+
+**The dead scratch.** Lay the fretting fingers across the strings without pressing them
+down to the frets. When you strum, the strings cannot ring, and you hear a dry *chk*.
+Lay the fingers flat and loose. If any string rings, you are pressing too hard or not
+covering it.
+
+**The choked chord.** Press the chord shape down for one stroke, then release the
+pressure straight away. Keep the fingers on the strings. The chord sounds for a moment
+and then stops. That short, sharp sound is sometimes called a *chank*.
+
+So the left hand is always moving between *pressed* and *resting*. The right hand just
+keeps strumming sixteenths. Your right palm can also rest lightly on the strings near the
+bridge to quiet the low strings. That is called palm muting, but most funk muting is
+done by the fretting hand.
+
+In this example the band's guitarist chokes a chord on 2 and on 4, and scratches on every
+other stroke:
+
+<div class="ar-demo" data-style="funk16" data-chart="E9|E9|A9|E9" data-tempo="92" data-comp="guitar" data-choice-label="Guitar:" data-choices='[{"label":"Chank on 2 and 4","opts":{"compRhythm":"funkChank"}},{"label":"Strummed, ringing","opts":{"compRhythm":"strum16"}}]'></div>
+
+Switch between the two buttons. The hand moves the same way in both. The only difference
+is what the fretting hand does.
+
+## 3. Small shapes on the top strings
+
+Funk players seldom strum all six strings. A three- or four-note shape on the top strings
+cuts through the band and leaves the low notes to the bass. A dominant ninth chord (E9, A9)
+is the classic funk sound. The band's guitarist plays its funk on the top three strings.
+
+Your shape has to be easy to press and release very quickly, so pick a small one you can
+hold without effort.
+
+## 4. Syncopated hits
+
+Now play chords only on a few sixteenths, and scratch on all the rest. The band's
+two-bar pattern is:
+
+- **Bar 1:** chords on **1**, the **a** of 1, the **&** of 2, the **a** of 3 and the **&** of 4.
+- **Bar 2:** chords on the **&** of 1, the **&** of 2, **3**, the **e** of 4 and the **a** of 4.
+
+The chords on an "e" or an "a" are **up**strokes. That only works if the hand has kept
+moving. Say the sixteenths aloud ("1 e & a ...") and say the hit syllables louder.
+
+<div class="ar-demo" data-style="funk16" data-chart="E9|E9|A9|E9" data-tempo="88" data-comp="guitar" data-choice-label="Guitar:" data-choices='[{"label":"Syncopated hits","opts":{"compRhythm":"funkScratch"}},{"label":"Chank on 2 and 4","opts":{"compRhythm":"funkChank"}},{"label":"Strummed, ringing","opts":{"compRhythm":"strum16"}}]'></div>
+
+Use the guitar button under the example to leave the guitar out and play the part
+yourself with the bass and drums. The drums play sixteenths on the hi-hat, so you can
+lock your hand to them.
+
+## 5. Your own pattern
+
+Once the two patterns above feel easy, make up your own. Keep the hand moving and choose
+two to five sixteenths in the bar for chords. A good rule is to put at least one chord on
+the beat, so the band can hear where "1" is, and the rest off it.
+
+The **Sixteenth-note funk** style on the Backing Track page plays this guitar part with
+its bass line and drums, on any chord chart. Its **Comping** menu also has the chank on
+2 and 4.
+
+<!-- works-cited: written by scripts/works-cited.py -->
+<!-- /works-cited -->
+
+{{< include _arrange-kit.qmd >}}

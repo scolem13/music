@@ -268,6 +268,10 @@
     hhswing:    { bars: [ [[0, "hatOpen", 0.54], [1, "hatClosed", 0.62], [1.5, "hatClosed", 0.42], [2, "hatOpen", 0.54], [3, "hatClosed", 0.62], [3.5, "hatClosed", 0.42], [1, "hatFoot", 0.50], [3, "hatFoot", 0.50]] ],
                   three: [[0, "hatOpen", 0.54], [1, "hatClosed", 0.62], [1.5, "hatClosed", 0.42], [2, "hatClosed", 0.56], [1, "hatFoot", 0.48], [2, "hatFoot", 0.48]], fills: false, hat: true },
     halftime:{ bars: [ cymEighths(0.54, 0.40).concat([[0, "kick", 0.60], [1.5, "kick", 0.46], [2, "snare", 0.68]]) ], fills: "light" },
+    // sixteenth-note funk: closed hi-hat sixteenths, kick on 1, the "a" of 1 and the and of 3, snare on 2 and 4 with soft ghost notes on the
+    // "a" of 2 and the "e" of 4 (sixteenths:true: written and played as straight sixteenths)
+    funk16:  { bars: [ sixteenths(16, []).concat([[0, "kick", 0.64], [0.75, "kick", 0.48], [2.5, "kick", 0.56], [1, "snare", 0.70], [3, "snare", 0.70], [1.75, "snare", 0.22], [3.25, "snare", 0.22]]) ],
+               three: sixteenths(12, []).concat([[0, "kick", 0.64], [0.75, "kick", 0.48], [2, "snare", 0.70], [1.75, "snare", 0.22]]), fills: "light", sixteenths: true },
     funk:    { bars: [ cymEighths(0.54, 0.44).concat([[0, "kick", 0.62], [1.5, "kick", 0.50], [2.5, "kick", 0.52], [1, "snare", 0.66], [3, "snare", 0.66]]) ], fills: true }
   };
 

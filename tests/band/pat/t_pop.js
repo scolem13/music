@@ -14,7 +14,7 @@ function bass(b){ return b.parts.bass.map(function (e){ return r2(e.pos) + ":" +
 
 // each style names real things and brings its sounds
 var POP = C.styles.filter(function (s){ return s.group === "Folk, rock and pop"; });
-assert.deepStrictEqual(POP.map(function (s){ return s.id; }), ["rock", "emo", "strum", "pop", "dance", "motown", "doowop", "train", "folk", "freylekhs", "prine"]);
+assert.deepStrictEqual(POP.map(function (s){ return s.id; }), ["rock", "emo", "strum", "pop", "easyballad", "strumballad", "rock68", "dance", "motown", "doowop", "train", "folk", "freylekhs", "prine"]);
 assert.deepStrictEqual(C.styleOpts("rock").instruments, ["ebass", "piano", "kit"]); assert.deepStrictEqual(C.styleOpts("rock", "guitar").instruments, ["ebass", "clguitar", "kit"]);
 assert.deepStrictEqual(C.styleOpts("strum").instruments, ["ebass", "aguitar", "kit"]); assert.strictEqual(C.styleOpts("strum").opts.comp, "guitar");
 assert.deepStrictEqual(C.styleOpts("swing").instruments, ["bass", "piano", "kit"]); assert.strictEqual(C.styleOpts("swing").opts.ride, "ride"); assert.strictEqual(C.styleOpts("rock").opts.ride, "hat");

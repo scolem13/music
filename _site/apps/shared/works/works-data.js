@@ -1849,6 +1849,22 @@ window.WORKS = {
   "cage-the-perilous-night": {"title":"The Perilous Night","composer":"John Cage","in":{},"published":1944}
 });
 // hein:end
+// 12tone:begin (written by scripts/works/twelvetone/loop-songs.py: songs in 12tone's chord-loop survey video)
+(function (W, add) {
+  Object.keys(add).forEach(function (id) {
+    var a = add[id], w = W[id];
+    if (!w) { W[id] = a; return; }
+    w.links = (w.links || []).concat(a.links);
+  });
+})(window.WORKS, {
+  "chapman-fast-car": {"title":"Fast Car","composer":"Tracy Chapman","in":{},"links":[{"type":"video","title":"12tone, I Listened To 500 Songs To Prove A Point","url":"https://www.youtube.com/watch?v=F7be6Aicdo0","note":"The melody sings B over F♯ and A over E: 'married to the loop', not divorced from the chords."}]},
+  "ray-goodman-brown-special-lady": {"title":"Special Lady","composer":"Ray, Goodman & Brown","in":{},"links":[{"type":"video","title":"12tone, I Listened To 500 Songs To Prove A Point","url":"https://www.youtube.com/watch?v=F7be6Aicdo0","note":"Strong motion by fifths: a II–V–I in the loop."}]},
+  "william-scream-and-shout": {"title":"Scream & Shout","composer":"will.i.am and Britney Spears","in":{},"links":[{"type":"video","title":"12tone, I Listened To 500 Songs To Prove A Point","url":"https://www.youtube.com/watch?v=F7be6Aicdo0","note":"Strong motion: keeps falling in fourths until it returns home."}]},
+  "wonder-sir-duke": {"title":"Sir Duke","composer":"Stevie Wonder","in":{},"links":[{"type":"video","title":"12tone, I Listened To 500 Songs To Prove A Point","url":"https://www.youtube.com/watch?v=F7be6Aicdo0","note":"Weak motion: a tritone leap, striking but with no direction."}]},
+  "grande-thank-u-next": {"title":"Thank U, Next","composer":"Ariana Grande","in":{},"links":[{"type":"video","title":"12tone, I Listened To 500 Songs To Prove A Point","url":"https://www.youtube.com/watch?v=F7be6Aicdo0","note":"Weak motion: G♭ to A, a break rather than a resolution."}]},
+  "coolio-gangstas-paradise": {"title":"Gangsta's Paradise","composer":"Coolio","in":{},"links":[{"type":"video","title":"12tone, I Listened To 500 Songs To Prove A Point","url":"https://www.youtube.com/watch?v=F7be6Aicdo0","note":"All four chord functions; anchored at the end, a destination in position 4."}]}
+});
+// 12tone:end
 // print-books:begin (written by scripts/print-books/build.py: pieces in the print anthologies, and years for the entries above;
 // do not edit here: an entry with the same id above is merged with it, so recordings and links for these pieces go there)
 window.PRINT_BOOKS = {"cutler": {"title": "Anthology of Music for Analysis", "author": "Timothy Cutler", "short": "Cutler, Anthology", "figure": "chapter–figure number, as in the book"}, "tagg": {"title": "Everyday Tonality II", "author": "Philip Tagg", "short": "Tagg, Everyday Tonality", "ref": "page", "figure": "page of the book (★ = a music example of the piece on that page)"}};

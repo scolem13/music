@@ -1,0 +1,131 @@
+---
+title: "Chord Loops: Tagg and 12tone"
+toc: true
+toc-depth: 2
+description: "Two ways to think about four-chord loops: Philip Tagg's outgoing, medial and incoming chords (Everyday Tonality, ch. 13) and 12tone's loop shapes (strong and weak motion, signposts and destinations), with his survey of 500 hit songs."
+instruments: [guitar, bass, piano, voice, other]
+topics: [theory, harmony]
+has: [band, interactive]
+---
+
+[Everyday Tonality 6](tagg-loops.qmd) follows Philip Tagg's chapters on chord loops. The YouTube channel
+12tone has its own theory of loops, tested in the video *I Listened To 500 Songs To Prove A Point*. This page
+puts the two side by side. Press ▶ to hear a loop on the band, one chord a bar.
+
+## What a loop is
+
+**Tagg:** a loop is a cycle of usually three or four chords, repeated, lasting about 3 to 8 seconds; longer
+cycles such as the twelve-bar blues are not loops (pp. 411, 419). A turnaround can use the same chords; the
+difference is its job, sending the section back to the start.
+
+**12tone:** a progression takes you through a series of places; a loop *is* the place. You hear the whole loop
+as one thing that turns round, so you see it from different sides. That is why, in *Fast Car*, Tracy Chapman can
+sing B over an F♯ chord and A over E without it sounding like a clash: the melody fits the loop, not each chord.
+
+**Both** count a loop in four slots. 12tone splits a loop into four roughly equal stretches of time: a
+three-chord loop has one chord twice as long (two "chords" that sound the same), and a five-chord loop squeezes
+two chords into one slot. Tagg notes the same thing: in a three-chord loop the medial and incoming chord are
+usually the same chord, as in *La Bamba*'s I–IV–V–V (p. 415).
+
+## Naming the chords in a loop
+
+**Tagg** replaces "dominant" and "subdominant", which he finds misleading outside classical harmony, with names
+for a chord's *place* in the loop (pp. 414–415):
+
+- **outgoing** chord: the first change away from I;
+- **medial** chord: the middle;
+- **incoming** chord: the last before I comes round again (and the **turnaround** chord when it leads back).
+
+In the vamp I–vi–ii–V, vi is outgoing, ii medial, V incoming and turnaround. I is "both starting point and
+destination of the loop".
+
+**12tone** names a chord by *how it moves*, not by its place or by any key. First the motion between two chords:
+
+- **strong**: by a fifth (up or down) or by a step (whole or half, up or down);
+- **weak**: anything else, usually a third; staying on the same chord counts as weak too.
+
+Then each chord by its way in and way out:
+
+| In | Out | Function | What it does |
+|---|---|---|---|
+| weak | weak | **island** | a little side trip |
+| strong | strong | **connector** | pushes on to the next chord |
+| weak | strong | **signpost** | starts a chain of resolutions |
+| strong | weak | **destination** | ends the chain: a sort of stop |
+
+The **loop shape** is the mix of strong and weak motion (contour) and where the destinations fall (anchoring).
+
+## The same loops, both ways
+
+Tagg's loops from chapters 13–14, worked out in 12tone's terms (in C; the analysis is this site's, applying
+12tone's rules):
+
+| Loop | Tagg | Motions | 12tone functions | Shape |
+|---|---|---|---|---|
+| [▶]{.tg-play data-chords="C Am Dm G"} I–vi–ii–V | the vamp | weak, strong, strong, strong | destination, signpost, connector, connector | **cascade**, anchored on 1 |
+| [▶]{.tg-play data-chords="C Am F G"} I–vi–IV–V | the 1950s–60s teen-pop loop | weak, weak, strong, strong | destination, island, signpost, connector | **disc**, anchored on 1 |
+| [▶]{.tg-play data-chords="C F G G"} I–IV–V–V | the *La Bamba* loop | strong, strong, weak, strong | connector, connector, destination, signpost | **cascade**, anchored on 3 |
+| [▶]{.tg-play data-chords="C G Am F"} I–V–vi–IV | (an ionian loop) | strong, strong, weak, strong | connector, connector, destination, signpost | **cascade**, anchored on 3 |
+
+"Motions" are the changes 1→2, 2→3, 3→4 and 4→back to 1. A **cascade** has a signpost, a destination and two
+connectors; a **disc** (Destination, Island, Signpost, Connector) swaps one connector for an island. 12tone calls
+the disc "a more classic shape, popular in the doo-wop era", which is the same music Tagg finds the I–vi–IV–V loop
+in. Tagg's "the tonic is the destination" agrees with 12tone here too: in the vamp, I is the destination chord.
+
+## Where they differ
+
+- **Home chord.** Tagg's names need a home chord (I). Much of his chapter 14 is about finding it: the same
+  chords can be ionian or mixolydian, and the lead-in (anacrusis) is the best clue. 12tone's functions do not use a
+  key at all, so a loop gets the same shape whichever chord you call home.
+- **History or shape.** Tagg asks where a loop comes from (jazz vamps, teen pop, rock'n'roll's twelve-bar and
+  V–IV–I) and groups loops by mode. 12tone asks what a loop does: how much it pushes forward, and where it rests.
+- **Evidence.** Tagg's tables list recordings that use each loop. 12tone counted: 500 songs, ten picked at random
+  each year from the Billboard year-end top 100, 1976–2025.
+
+## 12tone's survey
+
+What he predicted, and what he found (his own counts, as he gives them in the video):
+
+- 234 of the 500 songs had a loop somewhere; about a quarter were one loop all the way through, more in the
+  last 25 years.
+- **Balanced** loops (at least one connector and one destination) 71%, **extreme** loops (all connectors, or
+  signposts and destinations taking turns) 22%, **subdued** loops (more than one island) 7%. About two thirds of
+  the balanced loops were cascades.
+- Destinations by position: 1 = 100, 3 = 64, 4 = 48, 2 = 32, as he predicted (position 1 most, 2 least). Many of
+  the position-2 loops came from EDM-flavoured songs of the early 2010s.
+- Two chords in one slot: 38 cases; 35 moved strongly inside the slot, 33 were signposts or connectors.
+
+His caveats: one listener, 500 songs, and only chart hits, so the charts' biases come with it.
+
+## Songs he plays
+
+These are in the [Tune Directory](../practice/tune-directory.qmd) with a link to the video (the transcript has
+no times, so the link goes to the start):
+
+- *Fast Car* (Tracy Chapman): melody and loop.
+- *Special Lady* (Ray, Goodman & Brown): strong motion by fifths, a II–V–I.
+- *Scream & Shout* (will.i.am and Britney Spears): falling in fourths back home.
+- *Sir Duke* (Stevie Wonder): weak motion, a tritone leap.
+- *Thank U, Next* (Ariana Grande): weak motion, G♭ to A.
+- *Gangsta's Paradise* (Coolio): every function; a destination in position 4.
+
+## Try this
+
+Take a loop from [Tagg's tables](tagg-loops.qmd), write down the four motions as strong or weak, and name each
+chord. Is it a cascade, a disc, or something else? Where is its destination?
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+12tone. "I Listened To 500 Songs To Prove A Point." *YouTube*, [www.youtube.com/watch?v=F7be6Aicdo0](https://www.youtube.com/watch?v=F7be6Aicdo0). Loop shape (contour, anchoring), chord functions, loop types and the survey numbers; read from the transcript.
+
+**For teachers**
+
+Tagg, Philip. *Everyday Tonality II: Towards a Tonal Theory of What Most People Hear*. The Mass Media Music Scholars' Press, 2014. E-book version 2.5.2. The pieces in its index, with pages, are in the Tune Directory.
+:::
+<!-- /works-cited -->
+
+{{< include _tagg-kit.qmd >}}
