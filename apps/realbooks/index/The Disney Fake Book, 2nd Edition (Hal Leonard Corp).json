@@ -1,0 +1,1902 @@
+{
+ "file": "The Disney Fake Book, 2nd Edition (Hal Leonard Corp).pdf",
+ "method": "mixed",
+ "offset": 0,
+ "notes": "Scanned (no text layer, no outline). Printed alphabetical-title index on pdf pp3-5 and by-production index pp6-9, but OCR of its page numbers was unreliable, so entries come from OCR of each page's printed title/'from Walt Disney's FILM' block (200 dpi, 227 pages); title block also found mid-page. Printed page numbers equal pdfPage (offset 0; front matter pp1-9 unnumbered). Checked by reading printed page number next to title on pp 10,12,14,15,16,18,19,20 (+ viewed p18 image). conf high only for pp<=20 which were visually verified; the rest are OCR (med). Composer credits are OCR and sometimes truncated at the scan edge (e.g. 'WASHINGT', 'CHURCI'); several composers missing. film = production printed on page. Possible tunes missed where the title block OCR failed.",
+ "entries": [
+  {
+   "title": "The Age of Not Believing",
+   "pdfPage": 10,
+   "page": 10,
+   "composer": "Music by RICHARD M. SHERMAN",
+   "film": "Bedknobs and Broomsticks",
+   "conf": "high"
+  },
+  {
+   "title": "Alice in Wonderland",
+   "pdfPage": 11,
+   "page": 11,
+   "composer": "Words by BOB HILLIARD; Music by SAMMY FAIN",
+   "film": "Alice in Wonderland",
+   "conf": "high"
+  },
+  {
+   "title": "Absent-Minded Professor’s March",
+   "pdfPage": 12,
+   "page": 12,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Absent-Minded Professor",
+   "conf": "high"
+  },
+  {
+   "title": "Annette",
+   "pdfPage": 12,
+   "page": 12,
+   "film": "The Mickey Mouse Club",
+   "conf": "high"
+  },
+  {
+   "title": "Arabian Nights",
+   "pdfPage": 13,
+   "page": 13,
+   "composer": "Lyrics by HOWARD ASHMAN; Music by ALAN MENKEN",
+   "film": "Aladdin",
+   "conf": "high"
+  },
+  {
+   "title": "The Aristocats",
+   "pdfPage": 14,
+   "page": 14,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Aristocats",
+   "conf": "high"
+  },
+  {
+   "title": "The Bare Necessities",
+   "pdfPage": 15,
+   "page": 15,
+   "film": "The Jungle Book",
+   "conf": "high"
+  },
+  {
+   "title": "Be Our Guest",
+   "pdfPage": 16,
+   "page": 16,
+   "composer": "Lyrics by HOWARD ASHMA; Music by ALAN MENKE",
+   "film": "Beauty and the Beast",
+   "conf": "high"
+  },
+  {
+   "title": "Baby Mine",
+   "pdfPage": 18,
+   "page": 18,
+   "composer": "Words by NED WASHINGT; Music by FRANK CHURCHI",
+   "film": "Dumbo",
+   "conf": "high"
+  },
+  {
+   "title": "The Ballad of Davy Crockett",
+   "pdfPage": 19,
+   "page": 19,
+   "composer": "Words by TOM BLACKBURN; Music by GEORGE BRUNS",
+   "film": "Davy Crockett",
+   "conf": "high"
+  },
+  {
+   "title": "Bella Notte",
+   "pdfPage": 19,
+   "page": 19,
+   "composer": "Words and Music by PEGGY LEE",
+   "film": "Lady and the Tramp",
+   "conf": "high"
+  },
+  {
+   "title": "Belle",
+   "pdfPage": 20,
+   "page": 20,
+   "composer": "Lyrics by HOWARD ASHMAN; Music by ALAN MENKEN",
+   "film": "Beauty and the Beast",
+   "conf": "high"
+  },
+  {
+   "title": "Beauty and the Beast",
+   "pdfPage": 21,
+   "page": 21,
+   "composer": "Lyrics by HOWARD ASHMAN; Music by ALAN MENKEN",
+   "film": "Beauty and the Beast",
+   "conf": "med"
+  },
+  {
+   "title": "Best of Friends",
+   "pdfPage": 22,
+   "page": 22,
+   "composer": "Words by STAN FIDEL; Music by RICHARD JOHNSTON",
+   "film": "The Fox and the Hound",
+   "conf": "med"
+  },
+  {
+   "title": "Bibbidi-Bobbidi-Boo",
+   "pdfPage": 23,
+   "page": 23,
+   "composer": "Words by JERRY LIVINGSTON; Music by MACK DAVID and AL HOFFMAN",
+   "film": "Cinderella",
+   "conf": "med"
+  },
+  {
+   "title": "Blue Oak Tree",
+   "pdfPage": 23,
+   "page": 23,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Sword in the Stone",
+   "conf": "med"
+  },
+  {
+   "title": "The Beautiful Briny Sea",
+   "pdfPage": 24,
+   "page": 24,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "Bedknobs and Broomsticks",
+   "conf": "med"
+  },
+  {
+   "title": "Biddle-Dee-Dee",
+   "pdfPage": 24,
+   "page": 24,
+   "composer": "Words and Music by DIANE LAMPERT",
+   "film": "Toby Tyler",
+   "conf": "med"
+  },
+  {
+   "title": "Bluddle Uddle Um Dum",
+   "pdfPage": 25,
+   "page": 25,
+   "composer": "Music by FRANK CHURCHILL",
+   "film": "Snow White and the Seven Dwarfs",
+   "conf": "med"
+  },
+  {
+   "title": "Can You Feel the Love Tonight",
+   "pdfPage": 26,
+   "page": 26,
+   "composer": "Music by ELTON JOHN; Lyrics by TIM RICE",
+   "film": "The Lion King",
+   "conf": "med"
+  },
+  {
+   "title": "Blue Shadows on the Trail",
+   "pdfPage": 27,
+   "page": 27,
+   "composer": "Words by JOHNNY LANGE; Music by ELIOT DANIEL",
+   "film": "Melody Time",
+   "conf": "med"
+  },
+  {
+   "title": "Brazzle Dazzle Day",
+   "pdfPage": 28,
+   "page": 28,
+   "composer": "Words and Music by AL KASHA",
+   "film": "Pete’s Dragon",
+   "conf": "med"
+  },
+  {
+   "title": "Casey Junior",
+   "pdfPage": 28,
+   "page": 28,
+   "composer": "Words by NED WASHINGT; Music by FRANK CHURCI",
+   "film": "Dumbo",
+   "conf": "med"
+  },
+  {
+   "title": "Candle on the Water",
+   "pdfPage": 29,
+   "page": 29,
+   "composer": "Words and Music by AL KASHA",
+   "film": "Pete’s Dragon",
+   "conf": "med"
+  },
+  {
+   "title": "Carrying the Banner",
+   "pdfPage": 30,
+   "page": 30,
+   "composer": "Lyrics by JACK FELDMAN; Music by ALAN MENKEN",
+   "film": "Newsies",
+   "conf": "med"
+  },
+  {
+   "title": "Castle in Spain",
+   "pdfPage": 34,
+   "page": 34,
+   "composer": "Words by MEL LEVEN; Music by GEORGE BRUNS",
+   "film": "Babes in Toyland",
+   "conf": "med"
+  },
+  {
+   "title": "Chim Chim Cher-Ee",
+   "pdfPage": 35,
+   "page": 35,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "Mary Poppins",
+   "conf": "med"
+  },
+  {
+   "title": "Chip ’n Dale’s Rescue Rangers Theme Song",
+   "pdfPage": 36,
+   "page": 36,
+   "film": "The Disney Afternoon",
+   "conf": "med"
+  },
+  {
+   "title": "Circle of Life",
+   "pdfPage": 36,
+   "page": 36,
+   "composer": "Music by ELTON JOHI; Lyrics by TIM RIC",
+   "film": "The Lion King",
+   "conf": "med"
+  },
+  {
+   "title": "Colors of the Wind",
+   "pdfPage": 38,
+   "page": 38,
+   "composer": "Music by ALAN MENKEN; Lyrics by STEPHEN SCHWARTZ",
+   "film": "Pocahontas",
+   "conf": "med"
+  },
+  {
+   "title": "Cinderella",
+   "pdfPage": 40,
+   "page": 40,
+   "composer": "Words and Music by MACK DAVIL",
+   "film": "Cinderella",
+   "conf": "med"
+  },
+  {
+   "title": "Cruella De Vil",
+   "pdfPage": 40,
+   "page": 40,
+   "film": "101 Dalmatians",
+   "conf": "med"
+  },
+  {
+   "title": "Colonel Hathi’s March",
+   "pdfPage": 41,
+   "page": 41,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Jungle Book",
+   "conf": "med"
+  },
+  {
+   "title": "A Cowboy Needs a Horse",
+   "pdfPage": 42,
+   "page": 42,
+   "composer": "Words and Music by PAUL MASON HOWARD",
+   "film": "The Mickey Mouse Club",
+   "conf": "med"
+  },
+  {
+   "title": "Dalmatian Plantation",
+   "pdfPage": 42,
+   "page": 42,
+   "film": "101 Dalmatians",
+   "conf": "med"
+  },
+  {
+   "title": "The Daisy Anthem",
+   "pdfPage": 43,
+   "page": 43,
+   "composer": "Words and Music by RICHARD M",
+   "film": "The Shaggy D.a",
+   "conf": "med"
+  },
+  {
+   "title": "Don’t Jump to Conclusions",
+   "pdfPage": 44,
+   "page": 44,
+   "composer": "Words by TOM ADAIR; Music by NORMAN",
+   "film": "The Mickey Mouse Club",
+   "conf": "med"
+  },
+  {
+   "title": "Ducktales Theme",
+   "pdfPage": 45,
+   "page": 45,
+   "film": "The Disney Afternoon",
+   "conf": "med"
+  },
+  {
+   "title": "A Dream Is a Wish Your Heart Makes",
+   "pdfPage": 46,
+   "page": 46,
+   "composer": "Words and Music by MACK DAVID,",
+   "film": "Cinderella",
+   "conf": "med"
+  },
+  {
+   "title": "The Dwarfs’ Yodel Song (Silly Song)",
+   "pdfPage": 46,
+   "page": 46,
+   "composer": "Words by LARRY MOREY; Music by FRANK CHURCHILL",
+   "film": "Snow White and the Seven Dwarfs",
+   "conf": "med"
+  },
+  {
+   "title": "The Elegant Captain Hook",
+   "pdfPage": 47,
+   "page": 47,
+   "composer": "Words by SAMMY CAHN; Music by SAMMY FAIN",
+   "film": "Peter Pan",
+   "conf": "med"
+  },
+  {
+   "title": "Ev’rybody Wants to Be a Cat",
+   "pdfPage": 48,
+   "page": 48,
+   "composer": "Words by FLOYD HUDDLESTON; Music by AL RINKER",
+   "film": "The Aristocats",
+   "conf": "med"
+  },
+  {
+   "title": "Fathoms Below",
+   "pdfPage": 49,
+   "page": 49,
+   "composer": "Lyrics by HOWARD ASHMAN; Music by ALAN MENKEN",
+   "film": "The Little Mermaid",
+   "conf": "med"
+  },
+  {
+   "title": "Enjoy It!",
+   "pdfPage": 50,
+   "page": 50,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "In Search of the Castaways",
+   "conf": "med"
+  },
+  {
+   "title": "Ev’rybody Has a Laughing Place",
+   "pdfPage": 50,
+   "page": 50,
+   "composer": "Words by RAY GILBERT; Music by ALLIE WRUBEL",
+   "film": "Song of the South",
+   "conf": "med"
+  },
+  {
+   "title": "For Now for Always",
+   "pdfPage": 51,
+   "page": 51,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Parent Trap",
+   "conf": "med"
+  },
+  {
+   "title": "The Flubber Song",
+   "pdfPage": 52,
+   "page": 52,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Absent-Minded Professor",
+   "conf": "med"
+  },
+  {
+   "title": "Feed the Birds",
+   "pdfPage": 52,
+   "page": 52,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "Mary Poppins",
+   "conf": "med"
+  },
+  {
+   "title": "Follow Me, Boys!",
+   "pdfPage": 53,
+   "page": 53,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "Follow Me, Boys!",
+   "conf": "med"
+  },
+  {
+   "title": "Friend Like Me",
+   "pdfPage": 54,
+   "page": 54,
+   "composer": "Lyrics by HOWARD ASHMAN; Music by ALAN MENKEN",
+   "film": "Aladdin",
+   "conf": "med"
+  },
+  {
+   "title": "Following the Leader",
+   "pdfPage": 56,
+   "page": 56,
+   "composer": "Words by TED SEARS and WINSTON HIBLER; Music by OLIVER WALLACE",
+   "film": "Peter Pan",
+   "conf": "med"
+  },
+  {
+   "title": "Fortuosity",
+   "pdfPage": 56,
+   "page": 56,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Happiest Millionaire",
+   "conf": "med"
+  },
+  {
+   "title": "Give a Little Whistle",
+   "pdfPage": 57,
+   "page": 57,
+   "composer": "Words by NED WASHINGTON; Music by LEIGH HARLINE",
+   "film": "Pinocchio",
+   "conf": "med"
+  },
+  {
+   "title": "Fun and Fancy Free",
+   "pdfPage": 58,
+   "page": 58,
+   "composer": "Words and Music by BENNI BENJAMIN",
+   "film": "Fun and Fancy Free",
+   "conf": "med"
+  },
+  {
+   "title": "Fun with Music",
+   "pdfPage": 59,
+   "page": 59,
+   "composer": "Words by JIMMIE DODD; Music by JERRY LIVINGSTON,",
+   "film": "The Mickey Mouse Club",
+   "conf": "med"
+  },
+  {
+   "title": "Goodbye So Soon",
+   "pdfPage": 59,
+   "page": 59,
+   "composer": "Words by ELLEN FITZHUGH and LARRY GROSSMAN; Music by HENRY MANCINI",
+   "film": "The Adventures of the Great Mouse Detective",
+   "conf": "med"
+  },
+  {
+   "title": "Gaston",
+   "pdfPage": 60,
+   "page": 60,
+   "composer": "Lyrics by HOWARD ASHMAN; Music by ALAN MENKEN",
+   "film": "Beauty and the Beast",
+   "conf": "med"
+  },
+  {
+   "title": "Go the Distance",
+   "pdfPage": 62,
+   "page": 62,
+   "composer": "Music by ALAN MENKEN; Lyrics by DAVID ZIPPEL",
+   "film": "Hercules",
+   "conf": "med"
+  },
+  {
+   "title": "God Help the Outcasts",
+   "pdfPage": 64,
+   "page": 64,
+   "composer": "Music by ALAN MENKEN; Lyrics by STEPHEN SCHWARTZ",
+   "film": "The Hunchback of Notre Dame",
+   "conf": "med"
+  },
+  {
+   "title": "Herbie",
+   "pdfPage": 65,
+   "page": 65,
+   "composer": "Words by DON BROOK; Music by GEORGE BRUNS",
+   "film": "The Love Bug",
+   "conf": "med"
+  },
+  {
+   "title": "Hakuna Matata",
+   "pdfPage": 66,
+   "page": 66,
+   "composer": "Music by ELTON JOHN; Lyrics by TIM RICE",
+   "film": "The Lion King",
+   "conf": "med"
+  },
+  {
+   "title": "The Happiest Home in These Hills",
+   "pdfPage": 68,
+   "page": 68,
+   "composer": "Words and Music by AL KASHA",
+   "film": "Pete’s Dragon",
+   "conf": "med"
+  },
+  {
+   "title": "Happy, Happy Birthday to You",
+   "pdfPage": 70,
+   "page": 70,
+   "composer": "Words and Music by MICHAEL SILVERSHER",
+   "film": "Splashdance Album",
+   "conf": "med"
+  },
+  {
+   "title": "He’s a Tramp",
+   "pdfPage": 71,
+   "page": 71,
+   "composer": "Words and Music by PEGGY LEE",
+   "film": "Lady and the Tramp",
+   "conf": "med"
+  },
+  {
+   "title": "He Lives in You",
+   "pdfPage": 72,
+   "page": 72,
+   "composer": "Music by MARK MANCINA,",
+   "film": "The Lion King Ii: Simba’s Pride",
+   "conf": "med"
+  },
+  {
+   "title": "Heigh-Ho",
+   "pdfPage": 73,
+   "page": 73,
+   "film": "Snow White And The Seven Dwarfs",
+   "conf": "med"
+  },
+  {
+   "title": "Heffalumps and Woozles",
+   "pdfPage": 74,
+   "page": 74,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Many Adventures of Winnie the Pooh",
+   "conf": "med"
+  },
+  {
+   "title": "Love Will Find a Way",
+   "pdfPage": 75,
+   "page": 75,
+   "composer": "Lyrics by JACK FELDMAN; Music by TOM SNOW",
+   "film": "The Lion King Ii: Simba’s Pride",
+   "conf": "med"
+  },
+  {
+   "title": "Higitus Figitus",
+   "pdfPage": 76,
+   "page": 76,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Sword in the Stone",
+   "conf": "med"
+  },
+  {
+   "title": "Honest John",
+   "pdfPage": 77,
+   "page": 77,
+   "composer": "Words by NED WASHINGTON; Music by LEIGH HARLINE",
+   "film": "Pinocchio",
+   "conf": "med"
+  },
+  {
+   "title": "Home",
+   "pdfPage": 78,
+   "page": 78,
+   "composer": "Music by ALAN MENKEN; Lyrics by TIM RICE",
+   "film": "Beauty and the Beast: the Broadway Musical",
+   "conf": "med"
+  },
+  {
+   "title": "I'm Late",
+   "pdfPage": 79,
+   "page": 79,
+   "composer": "Words by BOB HILLIARD; Music by SAMMY FAIN",
+   "film": "Alice in Wonderland",
+   "conf": "med"
+  },
+  {
+   "title": "Honor to Us All",
+   "pdfPage": 80,
+   "page": 80,
+   "composer": "Music by MATTHEW WILDER; Lyrics by DAVID ZIPPEL",
+   "film": "Mulan",
+   "conf": "med"
+  },
+  {
+   "title": "How D’ye Do and Shake Hands",
+   "pdfPage": 82,
+   "page": 82,
+   "composer": "Words by CY COBEN; Music by OLIVER WALLACE",
+   "film": "Alice in Wonderland",
+   "conf": "med"
+  },
+  {
+   "title": "How Do You Do?",
+   "pdfPage": 83,
+   "page": 83,
+   "film": "Song of the South",
+   "conf": "med"
+  },
+  {
+   "title": "How Will I Know My Love?",
+   "pdfPage": 84,
+   "page": 84,
+   "composer": "Words by TOM ADAIR; Music by FRANCES JEFFORDS",
+   "film": "The Mickey Mouse Club",
+   "conf": "med"
+  },
+  {
+   "title": "I Bring You a Song",
+   "pdfPage": 84,
+   "page": 84,
+   "composer": "Words by LARRY MOREY; Music by FRANK CHURCHILL",
+   "film": "Bambi",
+   "conf": "med"
+  },
+  {
+   "title": "I'm No Fool",
+   "pdfPage": 85,
+   "page": 85,
+   "film": "The Mickey Mouse Club",
+   "conf": "med"
+  },
+  {
+   "title": "I Just Can't Wait to Be King",
+   "pdfPage": 86,
+   "page": 86,
+   "composer": "Music by ELTON JOHN; Lyrics by TIM RICE",
+   "film": "The Lion King",
+   "conf": "med"
+  },
+  {
+   "title": "I Wonder",
+   "pdfPage": 87,
+   "page": 87,
+   "composer": "Words by WINSTON HIBLER and TED SEARS; Music by GEORGE BRUNS",
+   "film": "Sleeping Beauty",
+   "conf": "med"
+  },
+  {
+   "title": "I Wan'na Be Like You (The Monkey Song)",
+   "pdfPage": 88,
+   "page": 88,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Jungle Book",
+   "conf": "med"
+  },
+  {
+   "title": "I’m Wishing",
+   "pdfPage": 89,
+   "page": 89,
+   "composer": "Words by LARRY MOREY; Music by FRANK CHURCHILL",
+   "film": "Snow White and the Seven Dwarfs",
+   "conf": "med"
+  },
+  {
+   "title": "I've Got No Strings",
+   "pdfPage": 89,
+   "page": 89,
+   "composer": "Words by NED WASHINGTON; Music by LEIGH HARLINE",
+   "film": "Pinocchio",
+   "conf": "med"
+  },
+  {
+   "title": "I'll Make a Man Out of You",
+   "pdfPage": 90,
+   "page": 90,
+   "composer": "Music by MATTHEW WILDER; Lyrics by DAVID ZIPPEL",
+   "film": "Mulan",
+   "conf": "med"
+  },
+  {
+   "title": "Hi-Diddle-Dee-Dee",
+   "pdfPage": 91,
+   "page": 91,
+   "composer": "Words by NED WASHINGTON; Music by LEIGH HARLINE",
+   "film": "Pinocchio",
+   "conf": "med"
+  },
+  {
+   "title": "I Will Go Sailing No More",
+   "pdfPage": 92,
+   "page": 92,
+   "film": "Toy Story",
+   "conf": "med"
+  },
+  {
+   "title": "Let Me Be Good to You",
+   "pdfPage": 93,
+   "page": 93,
+   "film": "The Adventures of the Great Mouse Detective",
+   "conf": "med"
+  },
+  {
+   "title": "I Won't Say (I'm in Love)",
+   "pdfPage": 94,
+   "page": 94,
+   "composer": "Music by ALAN MENKEN; Lyrics by DAVID ZIPPEL",
+   "film": "Hercules",
+   "conf": "med"
+  },
+  {
+   "title": "Little April Shower",
+   "pdfPage": 95,
+   "page": 95,
+   "composer": "Words by LARRY MOREY; Music by FRANK CHURCHILL",
+   "film": "Bambi",
+   "conf": "med"
+  },
+  {
+   "title": "If I Never Knew You (Love Theme from Pocahontas)",
+   "pdfPage": 96,
+   "page": 96,
+   "composer": "Lyrics by STEPHEN SCHWARTZ",
+   "film": "Pocahontas",
+   "conf": "med"
+  },
+  {
+   "title": "If I Can't Love Her",
+   "pdfPage": 98,
+   "page": 98,
+   "composer": "Music by ALAN MENKEN; Lyrics by TIM RICE",
+   "film": "Beauty and the Beast: the Broadway Musical",
+   "conf": "med"
+  },
+  {
+   "title": "It’s a Small World",
+   "pdfPage": 99,
+   "page": 99,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "It’s a Small World",
+   "conf": "med"
+  },
+  {
+   "title": "It’s Not Easy",
+   "pdfPage": 100,
+   "page": 100,
+   "composer": "Words and Music by AL KASHA",
+   "film": "Pete’s Dragon",
+   "conf": "med"
+  },
+  {
+   "title": "In Harmony",
+   "pdfPage": 101,
+   "page": 101,
+   "composer": "Words and Music by MICHAEL SILVERSHER",
+   "film": "The Little Mermaid T.v. Series",
+   "conf": "med"
+  },
+  {
+   "title": "Jiminy Cricket",
+   "pdfPage": 102,
+   "page": 102,
+   "composer": "Words by NED WASHINGTON; Music by LEIGH HARLINE",
+   "film": "Pinocchio",
+   "conf": "med"
+  },
+  {
+   "title": "Kiss the Girl",
+   "pdfPage": 103,
+   "page": 103,
+   "composer": "Lyrics by HOWARD ASHMAN; Music by ALAN MENKEN",
+   "film": "The Little Mermaid",
+   "conf": "med"
+  },
+  {
+   "title": "Johnny Tremain",
+   "pdfPage": 104,
+   "page": 104,
+   "composer": "Words by TOM BLACKBURN; Music by GEORGE BRUNS",
+   "film": "Johnny Tremain",
+   "conf": "med"
+  },
+  {
+   "title": "Jolly Holiday",
+   "pdfPage": 104,
+   "page": 104,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "Mary Poppins",
+   "conf": "med"
+  },
+  {
+   "title": "Lavender Blue (Dilly Dilly)",
+   "pdfPage": 105,
+   "page": 105,
+   "composer": "Words by LARRY MOREY; Music by ELIOT DANIEL",
+   "film": "So Dear to My Heart",
+   "conf": "med"
+  },
+  {
+   "title": "King of New York",
+   "pdfPage": 106,
+   "page": 106,
+   "composer": "Lyrics by JACK FELDMAN; Music by ALAN MENKEN",
+   "film": "Newsies",
+   "conf": "med"
+  },
+  {
+   "title": "Let’s Go Fly a Kite",
+   "pdfPage": 107,
+   "page": 107,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "Mary Poppins",
+   "conf": "med"
+  },
+  {
+   "title": "Les Poissons",
+   "pdfPage": 108,
+   "page": 108,
+   "composer": "Lyrics by HOWARD ASHMAN; Music by ALAN MENKEN",
+   "film": "The Little Mermaid",
+   "conf": "med"
+  },
+  {
+   "title": "La La Lu",
+   "pdfPage": 109,
+   "page": 109,
+   "composer": "Words and Music by SONNY BURKE",
+   "film": "Lady and the Tramp",
+   "conf": "med"
+  },
+  {
+   "title": "Let’s Put It Over with Grover",
+   "pdfPage": 110,
+   "page": 110,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The One and Only, Genuine, Original Family Band",
+   "conf": "med"
+  },
+  {
+   "title": "Let’s Get Together",
+   "pdfPage": 111,
+   "page": 111,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Parent Trap",
+   "conf": "med"
+  },
+  {
+   "title": "Liberty Tree",
+   "pdfPage": 112,
+   "page": 112,
+   "composer": "Words by TOM BLACKBURN; Music by GEORGE BRUNS",
+   "film": "Johnny Tremain",
+   "conf": "med"
+  },
+  {
+   "title": "Little Black Rain Cloud",
+   "pdfPage": 112,
+   "page": 112,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Many Adventures of Winnie the Pooh",
+   "conf": "med"
+  },
+  {
+   "title": "Love",
+   "pdfPage": 113,
+   "page": 113,
+   "composer": "Words by FLOYD HUDDLESTON; Music by GEORGE BRUNS",
+   "film": "Robin Hood",
+   "conf": "med"
+  },
+  {
+   "title": "Live Like a King",
+   "pdfPage": 114,
+   "page": 114,
+   "composer": "Music by NICHOLAS PIKE",
+   "film": "The Prince and the Pauper",
+   "conf": "med"
+  },
+  {
+   "title": "The Lord 1s Good to Me",
+   "pdfPage": 114,
+   "page": 114,
+   "composer": "Words and Music by KIM GANNON",
+   "film": "Melody Time",
+   "conf": "med"
+  },
+  {
+   "title": "Love Is a Song",
+   "pdfPage": 115,
+   "page": 115,
+   "composer": "Words by LARRY MOREY; Music by FRANK CHURCHILL",
+   "film": "Bambi",
+   "conf": "med"
+  },
+  {
+   "title": "Me",
+   "pdfPage": 116,
+   "page": 116,
+   "composer": "Music by ALAN MENKEN; Lyrics by TIM RICE",
+   "film": "Beauty and the Beast: the Broadway Musical",
+   "conf": "med"
+  },
+  {
+   "title": "Meetin’ at the Malt Shop",
+   "pdfPage": 117,
+   "page": 117,
+   "composer": "Words and Music by TOM ADAIR",
+   "film": "The Mickey Mouse Club",
+   "conf": "med"
+  },
+  {
+   "title": "May the Best Man Win",
+   "pdfPage": 118,
+   "page": 118,
+   "composer": "Words and Music by AL KASHA",
+   "film": "Hot Lead and Cold Feet",
+   "conf": "med"
+  },
+  {
+   "title": "My Name Is James",
+   "pdfPage": 119,
+   "page": 119,
+   "film": "James and the Giant Peach",
+   "conf": "med"
+  },
+  {
+   "title": "The Monkey’s Uncle",
+   "pdfPage": 120,
+   "page": 120,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Monkey’s Uncle",
+   "conf": "med"
+  },
+  {
+   "title": "Minnie’s Yoo Hoo",
+   "pdfPage": 121,
+   "page": 121,
+   "composer": "Words by WALT DISNEY and CARL STALLING; Music by CARL STALLING",
+   "film": "Mickey’s Follies",
+   "conf": "med"
+  },
+  {
+   "title": "The Morning Report",
+   "pdfPage": 122,
+   "page": 122,
+   "composer": "Music by ELTON JOHN; Lyrics by TIM RICE",
+   "film": "The Lion King: the Broadway Musical",
+   "conf": "med"
+  },
+  {
+   "title": "No Matter What",
+   "pdfPage": 124,
+   "page": 124,
+   "composer": "Music by ALAN MENKEN; Lyrics by TIM RICE",
+   "film": "Beauty and the Beast: the Broadway Musical",
+   "conf": "med"
+  },
+  {
+   "title": "My Own Home",
+   "pdfPage": 125,
+   "page": 125,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Jungle Book",
+   "conf": "med"
+  },
+  {
+   "title": "A Most Befuddling Thing",
+   "pdfPage": 126,
+   "page": 126,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Sword in the Stone",
+   "conf": "med"
+  },
+  {
+   "title": "Old Yeller",
+   "pdfPage": 127,
+   "page": 127,
+   "composer": "Words by GIL GEORGE; Music by OLIVER WALLACE",
+   "film": "Old Yeller",
+   "conf": "med"
+  },
+  {
+   "title": "Never Smile at a Crocodile",
+   "pdfPage": 128,
+   "page": 128,
+   "composer": "Words by JACK LAWRENCE; Music by FRANK CHURCHILL",
+   "film": "Peter Pan",
+   "conf": "med"
+  },
+  {
+   "title": "Oh, What a Merry Christmas Day",
+   "pdfPage": 128,
+   "page": 128,
+   "composer": "Words and Music by IRWIN KOSTAL",
+   "film": "Mickey’s Christmas Carol",
+   "conf": "med"
+  },
+  {
+   "title": "On the Front Porch",
+   "pdfPage": 129,
+   "page": 129,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "Summer Magic",
+   "conf": "med"
+  },
+  {
+   "title": "Once Upon a Time in New York City",
+   "pdfPage": 130,
+   "page": 130,
+   "composer": "Words by HOWARD ASHMAN; Music by BARRY MANN",
+   "film": "Oliver & Company",
+   "conf": "med"
+  },
+  {
+   "title": "Oo-De-Lally",
+   "pdfPage": 131,
+   "page": 131,
+   "film": "Robin Hood",
+   "conf": "med"
+  },
+  {
+   "title": "One Jump Ahead",
+   "pdfPage": 132,
+   "page": 132,
+   "composer": "Music by ALAN MENKEN; Lyrics by TIM RICE",
+   "film": "Aladdin",
+   "conf": "med"
+  },
+  {
+   "title": "Once Upon a Dream",
+   "pdfPage": 134,
+   "page": 134,
+   "composer": "Words and Music by SAMMY FAIN",
+   "film": "Sleeping Beauty",
+   "conf": "med"
+  },
+  {
+   "title": "The One and Only, Genuine, Original Family Band",
+   "pdfPage": 134,
+   "page": 134,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The One and Only, Genuine, Original Family Band",
+   "conf": "med"
+  },
+  {
+   "title": "The Parent Trap",
+   "pdfPage": 135,
+   "page": 135,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Parent Trap",
+   "conf": "med"
+  },
+  {
+   "title": "One of Us",
+   "pdfPage": 136,
+   "page": 136,
+   "composer": "Lyrics by JACK FELDMAN; Music by TOM SNOW",
+   "film": "The Lion King Ii: Simba’s Pride",
+   "conf": "med"
+  },
+  {
+   "title": "Little Wooden Head",
+   "pdfPage": 137,
+   "page": 137,
+   "composer": "Words by NED WASHINGTON; Music by LEIGH HARLINE",
+   "film": "Pinocchio",
+   "conf": "med"
+  },
+  {
+   "title": "Part of Your World",
+   "pdfPage": 138,
+   "page": 138,
+   "composer": "Lyrics by HOWARD ASHMAN; Music by ALAN MENKEN",
+   "film": "The Little Mermaid",
+   "conf": "med"
+  },
+  {
+   "title": "A Pirate’s Life",
+   "pdfPage": 139,
+   "page": 139,
+   "composer": "Words by ED PENNER; Music by OLIVER WALLACE",
+   "film": "Peter Pan",
+   "conf": "med"
+  },
+  {
+   "title": "Perfect Isn’t Easy",
+   "pdfPage": 140,
+   "page": 140,
+   "composer": "Words by JACK FELDMAN and BRUCE SUSSMAN; Music by BARRY MANILOW",
+   "film": "Oliver & Company",
+   "conf": "med"
+  },
+  {
+   "title": "Pollyanna’s Song",
+   "pdfPage": 141,
+   "page": 141,
+   "composer": "Words by DAVID SWIFT; Music by PAUL SMITH",
+   "film": "Pollyanna",
+   "conf": "med"
+  },
+  {
+   "title": "Poor Unfortunate Souls",
+   "pdfPage": 142,
+   "page": 142,
+   "composer": "Lyrics by HOWARD ASHMAN; Music by ALAN MENKEN",
+   "film": "The Little Mermaid",
+   "conf": "med"
+  },
+  {
+   "title": "The Pretty Irish Girl",
+   "pdfPage": 143,
+   "page": 143,
+   "composer": "Words by LAWRENCE WATKIN; Music by OLIVER WALLACE",
+   "film": "Darby O’gill and the Little People",
+   "conf": "med"
+  },
+  {
+   "title": "Prince Ali",
+   "pdfPage": 144,
+   "page": 144,
+   "composer": "Lyrics by HOWARD ASHMAN; Music by ALAN MENKEN",
+   "film": "Aladdin",
+   "conf": "med"
+  },
+  {
+   "title": "Pink Elephants on Parade",
+   "pdfPage": 146,
+   "page": 146,
+   "composer": "Words by NED WASHINGTON; Music by OLIVER WALLACE",
+   "film": "Dumbo",
+   "conf": "med"
+  },
+  {
+   "title": "Pussycat Polka",
+   "pdfPage": 146,
+   "page": 146,
+   "film": "The Mickey Mouse Club",
+   "conf": "med"
+  },
+  {
+   "title": "Mickey Mouse March",
+   "pdfPage": 148,
+   "page": 148,
+   "film": "The Mickey Mouse Club",
+   "conf": "med"
+  },
+  {
+   "title": "The Rain Rain Rain Came Down Down Down",
+   "pdfPage": 148,
+   "page": 148,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Many Adventures of Winnie the Pooh",
+   "conf": "med"
+  },
+  {
+   "title": "Reflection",
+   "pdfPage": 149,
+   "page": 149,
+   "composer": "Music by MATTHEW WILDER; Lyrics by DAVID ZIPPEL",
+   "film": "Mulan",
+   "conf": "med"
+  },
+  {
+   "title": "Rainbow Maker",
+   "pdfPage": 150,
+   "page": 150,
+   "film": "Polly",
+   "conf": "med"
+  },
+  {
+   "title": "The Reluctant Dragon",
+   "pdfPage": 150,
+   "page": 150,
+   "composer": "Words by ED PENNER; Music by CHARLES WOLCOTT",
+   "film": "The Reluctant Dragon",
+   "conf": "med"
+  },
+  {
+   "title": "Remember When",
+   "pdfPage": 151,
+   "page": 151,
+   "composer": "Words by BOB JACKMAN; Music by FRANKLYN MARKS.",
+   "film": "101 Dalmatians",
+   "conf": "med"
+  },
+  {
+   "title": "Roses and Rainbows",
+   "pdfPage": 152,
+   "page": 152,
+   "composer": "Words by CAROLE BAYER SAGER; Music by MARVIN HAMLISCH",
+   "film": "The Devil and Max Devlin",
+   "conf": "med"
+  },
+  {
+   "title": "Rumbly in My Tumbly",
+   "pdfPage": 152,
+   "page": 152,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Many Adventures of Winnie the Pooh",
+   "conf": "med"
+  },
+  {
+   "title": "Saludos Amigos",
+   "pdfPage": 153,
+   "page": 153,
+   "composer": "Words by NED WASHINGTON; Music by CHARLES WOLCOT",
+   "film": "Saludos Amigos",
+   "conf": "med"
+  },
+  {
+   "title": "R-E-S-C-U-E Rescue Aid Society",
+   "pdfPage": 154,
+   "page": 154,
+   "composer": "Words by AYN ROBBINS; Music by CAROL CONNORS",
+   "film": "The Rescuers",
+   "conf": "med"
+  },
+  {
+   "title": "Riddle De Diddle De Day",
+   "pdfPage": 154,
+   "page": 154,
+   "composer": "Words and Music by EDWARD POLA",
+   "film": "The Story of Robin Hood and His Merrie Men",
+   "conf": "med"
+  },
+  {
+   "title": "Seize the Day",
+   "pdfPage": 155,
+   "page": 155,
+   "composer": "Lyrics by JACK FELDMAN; Music by ALAN MENKEN",
+   "film": "Newsies",
+   "conf": "med"
+  },
+  {
+   "title": "Santa Fe",
+   "pdfPage": 156,
+   "page": 156,
+   "composer": "Lyrics by JACK FELDMAN; Music by ALAN MENKEN",
+   "film": "Newsies",
+   "conf": "med"
+  },
+  {
+   "title": "Shaggy Dog",
+   "pdfPage": 158,
+   "page": 158,
+   "composer": "Words by PAUL SMITH; Music by GIL GEORGE",
+   "film": "The Shaggy Dog",
+   "conf": "med"
+  },
+  {
+   "title": "The Second Star to the Right",
+   "pdfPage": 159,
+   "page": 159,
+   "composer": "Words by SAMMY CAHN; Music by SAMMY FAIN",
+   "film": "Peter Pan",
+   "conf": "med"
+  },
+  {
+   "title": "The Siamese Cat Song",
+   "pdfPage": 159,
+   "page": 159,
+   "composer": "Words and Music by PEGGY LEE",
+   "film": "Lady and the Tramp",
+   "conf": "med"
+  },
+  {
+   "title": "Shadowland",
+   "pdfPage": 160,
+   "page": 160,
+   "composer": "Music by HANS ZIMMER and LEBO M; Lyrics by MARK MANCINA and LEBO M",
+   "film": "The Lion King: the Broadway Musical",
+   "conf": "med"
+  },
+  {
+   "title": "The Merry Mouseketeers",
+   "pdfPage": 161,
+   "page": 161,
+   "film": "The Mickey Mouse Club",
+   "conf": "med"
+  },
+  {
+   "title": "Scales and Arpeggios",
+   "pdfPage": 162,
+   "page": 162,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Aristocats",
+   "conf": "med"
+  },
+  {
+   "title": "Sing a Smiling Song",
+   "pdfPage": 162,
+   "page": 162,
+   "composer": "Words by TOM ADAIR; Music by GEORGE BRUNS",
+   "film": "Sleeping Beauty",
+   "conf": "med"
+  },
+  {
+   "title": "Simple Simon",
+   "pdfPage": 163,
+   "page": 163,
+   "composer": "Words by TOM ADAIR; Music by JIMMIE DODD",
+   "film": "The Mickey Mouse Club",
+   "conf": "med"
+  },
+  {
+   "title": "Small One",
+   "pdfPage": 164,
+   "page": 164,
+   "film": "The Small One",
+   "conf": "med"
+  },
+  {
+   "title": "So Dear to My Heart",
+   "pdfPage": 165,
+   "page": 165,
+   "composer": "Words by IRVING TAYLOR; Music by TICKER FREEMAN",
+   "film": "So Dear to My Heart",
+   "conf": "med"
+  },
+  {
+   "title": "Someday",
+   "pdfPage": 166,
+   "page": 166,
+   "composer": "Music by ALAN MENKEN; Lyrics by STEPHEN SCHWARTZ",
+   "film": "The Hunchback of Notre Dame",
+   "conf": "med"
+  },
+  {
+   "title": "Someday My Prince Will Come",
+   "pdfPage": 167,
+   "page": 167,
+   "composer": "Words by LARRY MOREY; Music by FRANK CHURCHILL",
+   "film": "Snow White and the Seven Dwarfs",
+   "conf": "med"
+  },
+  {
+   "title": "A Spoonful of Sugar",
+   "pdfPage": 167,
+   "page": 167,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "Mary Poppins",
+   "conf": "med"
+  },
+  {
+   "title": "Someone’s Waiting for You",
+   "pdfPage": 168,
+   "page": 168,
+   "composer": "Words by CAROL CONNORS and AYN ROBBINS; Music by SAMMY FAIN",
+   "film": "The Rescuers",
+   "conf": "med"
+  },
+  {
+   "title": "Something More",
+   "pdfPage": 168,
+   "page": 168,
+   "composer": "Words and Music by THOM R. SHARP",
+   "film": "Polly",
+   "conf": "med"
+  },
+  {
+   "title": "Sooner or Later",
+   "pdfPage": 169,
+   "page": 169,
+   "composer": "Words and Music by RAY GILBERT",
+   "film": "Song of the South",
+   "conf": "med"
+  },
+  {
+   "title": "Something There",
+   "pdfPage": 170,
+   "page": 170,
+   "composer": "Lyrics by HOWARD ASHMAN; Music by ALAN MENKEN",
+   "film": "Beauty and the Beast",
+   "conf": "med"
+  },
+  {
+   "title": "So This Is Love",
+   "pdfPage": 170,
+   "page": 170,
+   "composer": "Words and Music by MACK DAVIO,",
+   "film": "Cinderella",
+   "conf": "med"
+  },
+  {
+   "title": "A Step in the Right Direction",
+   "pdfPage": 171,
+   "page": 171,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "Bedknobs and Broomsticks",
+   "conf": "med"
+  },
+  {
+   "title": "Son of Man",
+   "pdfPage": 172,
+   "page": 172,
+   "film": "Tarzan",
+   "conf": "med"
+  },
+  {
+   "title": "Whistle While You Work",
+   "pdfPage": 173,
+   "page": 173,
+   "composer": "Words by LARRY MOREY; Music by FRANK CHURCHILL",
+   "film": "Snow White and the Seven Dwarfs",
+   "conf": "med"
+  },
+  {
+   "title": "A Star Is Born",
+   "pdfPage": 174,
+   "page": 174,
+   "composer": "Music by ALAN MENKEN; Lyrics by DAVID ZIPPEL",
+   "film": "Hercules",
+   "conf": "med"
+  },
+  {
+   "title": "Step in Time",
+   "pdfPage": 176,
+   "page": 176,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "Mary Poppins",
+   "conf": "med"
+  },
+  {
+   "title": "Stop, Look and Listen",
+   "pdfPage": 176,
+   "page": 176,
+   "composer": "Words by GIL GEORGE; Music by GEORGE BRUNS",
+   "film": "The Mickey Mouse Club",
+   "conf": "med"
+  },
+  {
+   "title": "Sub-Sti-Tutiary Locomotion",
+   "pdfPage": 177,
+   "page": 177,
+   "composer": "Words and Music by RICHARD M.",
+   "film": "Bedknobs and Broomsticks",
+   "conf": "med"
+  },
+  {
+   "title": "Strange Things",
+   "pdfPage": 178,
+   "page": 178,
+   "film": "Toy Story",
+   "conf": "med"
+  },
+  {
+   "title": "Stay Awake",
+   "pdfPage": 180,
+   "page": 180,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "Mary Poppins",
+   "conf": "med"
+  },
+  {
+   "title": "Strangers Like Me",
+   "pdfPage": 180,
+   "page": 180,
+   "film": "Tarzan",
+   "conf": "med"
+  },
+  {
+   "title": "Streets of Gold",
+   "pdfPage": 182,
+   "page": 182,
+   "composer": "Words by DEAN PITCHFORD; Music by TOM SNOW",
+   "film": "Oliver & Company",
+   "conf": "med"
+  },
+  {
+   "title": "Supercalifragilisticexpialidocious",
+   "pdfPage": 183,
+   "page": 183,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "Mary Poppins",
+   "conf": "med"
+  },
+  {
+   "title": "Summer Magic",
+   "pdfPage": 184,
+   "page": 184,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "Summer Magic",
+   "conf": "med"
+  },
+  {
+   "title": "The Swisskapolka",
+   "pdfPage": 184,
+   "page": 184,
+   "composer": "Words by BOB JACKMAN; Music by NORMAN",
+   "film": "Swiss Family Robinson",
+   "conf": "med"
+  },
+  {
+   "title": "Talent Roundup",
+   "pdfPage": 185,
+   "page": 185,
+   "composer": "Words by GIL GEORGE; Music by GEORGE BRUNS",
+   "film": "The Mickey Mouse Club",
+   "conf": "med"
+  },
+  {
+   "title": "Sweet Surrender",
+   "pdfPage": 186,
+   "page": 186,
+   "film": "The Bears and",
+   "conf": "med"
+  },
+  {
+   "title": "Ten Feet off the Ground",
+   "pdfPage": 187,
+   "page": 187,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The One and Only, Genuine, Original Family Band",
+   "conf": "med"
+  },
+  {
+   "title": "That Darn Cat!",
+   "pdfPage": 187,
+   "page": 187,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "That Darn Cat!",
+   "conf": "med"
+  },
+  {
+   "title": "Tale Spin Theme",
+   "pdfPage": 188,
+   "page": 188,
+   "composer": "Words and Music by MICHAEL SILVERSHER",
+   "film": "The Disney Afternoon",
+   "conf": "med"
+  },
+  {
+   "title": "There Are Those",
+   "pdfPage": 189,
+   "page": 189,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Happiest Millionaire",
+   "conf": "med"
+  },
+  {
+   "title": "That’s What Makes the World Go ’round",
+   "pdfPage": 190,
+   "page": 190,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Sword in the Stone",
+   "conf": "med"
+  },
+  {
+   "title": "These Are the Best Times",
+   "pdfPage": 190,
+   "page": 190,
+   "film": "Superdad",
+   "conf": "med"
+  },
+  {
+   "title": "The Tiki Tiki Tiki Room",
+   "pdfPage": 191,
+   "page": 191,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "Land’s Enchanted Tiki Room and Walt Disney World's Tropical Serenade",
+   "conf": "med"
+  },
+  {
+   "title": "Three Cheers for Anything",
+   "pdfPage": 192,
+   "page": 192,
+   "composer": "Words by NED WASHINGTON; Music by LEIGH HARLINE",
+   "film": "Pinocchio",
+   "conf": "med"
+  },
+  {
+   "title": "That’s What Friends Are for",
+   "pdfPage": 193,
+   "page": 193,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Jungle Book",
+   "conf": "med"
+  },
+  {
+   "title": "The Time of Your Life",
+   "pdfPage": 194,
+   "page": 194,
+   "film": "A Bug’s Life",
+   "conf": "med"
+  },
+  {
+   "title": "Strengthen the Dwelling",
+   "pdfPage": 195,
+   "page": 195,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Happiest Millionaire",
+   "conf": "med"
+  },
+  {
+   "title": "Trust in Me",
+   "pdfPage": 196,
+   "page": 196,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Jungle Book",
+   "conf": "med"
+  },
+  {
+   "title": "Turn on the Old Music Box",
+   "pdfPage": 196,
+   "page": 196,
+   "composer": "Words by NED WASHINGTON; Music by LEIGH HARLINE",
+   "film": "Pinocchio",
+   "conf": "med"
+  },
+  {
+   "title": "Today Is Tuesday",
+   "pdfPage": 197,
+   "page": 197,
+   "film": "The Mickey Mouse Club",
+   "conf": "med"
+  },
+  {
+   "title": "Toyland March",
+   "pdfPage": 198,
+   "page": 198,
+   "composer": "Words by MEL LEVEN; Music by GEORGE BRUNS",
+   "film": "Babes in Toyland",
+   "conf": "med"
+  },
+  {
+   "title": "'twas Brillig",
+   "pdfPage": 198,
+   "page": 198,
+   "film": "Alice in Wonderland",
+   "conf": "med"
+  },
+  {
+   "title": "The Ugly-Bug Ball",
+   "pdfPage": 199,
+   "page": 199,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "Summer Magic",
+   "conf": "med"
+  },
+  {
+   "title": "Trashin’ the Camp",
+   "pdfPage": 200,
+   "page": 200,
+   "film": "Tarzan",
+   "conf": "med"
+  },
+  {
+   "title": "When a Man Has a Daughter",
+   "pdfPage": 201,
+   "page": 201,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Happiest Millionaire",
+   "conf": "med"
+  },
+  {
+   "title": "True to Your Heart",
+   "pdfPage": 202,
+   "page": 202,
+   "composer": "Music by MATTHEW WILDER; Lyrics by DAVID ZIPPEL",
+   "film": "Mulan",
+   "conf": "med"
+  },
+  {
+   "title": "Two Worlds",
+   "pdfPage": 204,
+   "page": 204,
+   "film": "Tarzan",
+   "conf": "med"
+  },
+  {
+   "title": "When She Loved Me",
+   "pdfPage": 205,
+   "page": 205,
+   "film": "Toy Story 2 - a Pixar Film",
+   "conf": "med"
+  },
+  {
+   "title": "Under the Sea",
+   "pdfPage": 206,
+   "page": 206,
+   "composer": "Lyrics by HOWARD ASHMAN; Music by ALAN MENKEN",
+   "film": "The Little Mermaid",
+   "conf": "med"
+  },
+  {
+   "title": "The Unbirthday Song",
+   "pdfPage": 208,
+   "page": 208,
+   "composer": "Words and Music by MACK DAVID,",
+   "film": "Alice in Wonderland",
+   "conf": "med"
+  },
+  {
+   "title": "The Virginia Company",
+   "pdfPage": 208,
+   "page": 208,
+   "composer": "Music by ALAN MENKEN; Lyrics by STEPHEN SCHWARTZ",
+   "film": "Pocahontas",
+   "conf": "med"
+  },
+  {
+   "title": "Up, Down and Touch the Ground",
+   "pdfPage": 209,
+   "page": 209,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Many Adventures of Winnie the Pooh",
+   "conf": "med"
+  },
+  {
+   "title": "West O’ the Wide Missouri",
+   "pdfPage": 210,
+   "page": 210,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The One and Only, Genuine, Original Family Band",
+   "conf": "med"
+  },
+  {
+   "title": "A Whale of a Tale",
+   "pdfPage": 211,
+   "page": 211,
+   "composer": "Words and Music by NORMAN GIMBEL",
+   "film": "20,000 Leagues Under the Sea",
+   "conf": "med"
+  },
+  {
+   "title": "Westward Ho, the Wagons!",
+   "pdfPage": 212,
+   "page": 212,
+   "composer": "Words by TOM BLACKBURN; Music by GEORGE BRUNS",
+   "film": "Westward Ho, the Wagons!",
+   "conf": "med"
+  },
+  {
+   "title": "When You Wish Upon a Star",
+   "pdfPage": 212,
+   "page": 212,
+   "composer": "Words by NED WASHINGTON; Music by LEIGH HARLINE",
+   "film": "Pinocchio",
+   "conf": "med"
+  },
+  {
+   "title": "When I See an Elephant Fly",
+   "pdfPage": 213,
+   "page": 213,
+   "composer": "Words by NED WASHINGTON; Music by OLIVER WALLACE",
+   "film": "Dumbo",
+   "conf": "med"
+  },
+  {
+   "title": "Who’s Afraid of the Big Bad Wolf?",
+   "pdfPage": 214,
+   "page": 214,
+   "composer": "Words and Music by FRANK CHURCHILL",
+   "film": "Three Little Pigs",
+   "conf": "med"
+  },
+  {
+   "title": "Woody’s Roundup",
+   "pdfPage": 215,
+   "page": 215,
+   "film": "Toy Story 2 - a Pixar Film",
+   "conf": "med"
+  },
+  {
+   "title": "A Whole New World",
+   "pdfPage": 216,
+   "page": 216,
+   "composer": "Music by ALAN MENKEN; Lyrics by TIM RICE",
+   "film": "Aladdin",
+   "conf": "med"
+  },
+  {
+   "title": "Why Should I Worry?",
+   "pdfPage": 218,
+   "page": 218,
+   "composer": "Words and Music by DAN HARTMAN",
+   "film": "Oliver & Company",
+   "conf": "med"
+  },
+  {
+   "title": "Winnie the Pooh",
+   "pdfPage": 219,
+   "page": 219,
+   "composer": "Words and Music by RICHARD M",
+   "film": "The Many Adventures of Winnie the Pooh",
+   "conf": "med"
+  },
+  {
+   "title": "The World Will Know",
+   "pdfPage": 220,
+   "page": 220,
+   "composer": "Lyrics by JACK FELOMAN; Music by ALAN MENKEN",
+   "film": "Newsies",
+   "conf": "med"
+  },
+  {
+   "title": "With a Smile and a Song",
+   "pdfPage": 222,
+   "page": 222,
+   "composer": "Words by LARRY MOREY; Music by FRANK CHURCHILL",
+   "film": "Snow White and the Seven Dwarfs",
+   "conf": "med"
+  },
+  {
+   "title": "The Wonderful Thing About Tiggers",
+   "pdfPage": 223,
+   "page": 223,
+   "composer": "Words and Music by RICHARD M. SHERMAN",
+   "film": "The Many Adventures of Winnie the Pooh",
+   "conf": "med"
+  },
+  {
+   "title": "You (Are a Human Animal)",
+   "pdfPage": 223,
+   "page": 223,
+   "film": "The Mickey Mouse Club",
+   "conf": "med"
+  },
+  {
+   "title": "The Work Song",
+   "pdfPage": 224,
+   "page": 224,
+   "composer": "Words and Music by MACK DAVID",
+   "film": "Cinderella",
+   "conf": "med"
+  },
+  {
+   "title": "The World's Greatest Criminal Mind",
+   "pdfPage": 224,
+   "page": 224,
+   "composer": "Words by ELLEN FITZHUGH and LARRY GROSSMAN; Music by HENRY MANCIN",
+   "film": "The Adventures of the Great Mouse Detective",
+   "conf": "med"
+  },
+  {
+   "title": "Wringle Wrangle (A Pretty Woman’s Love)",
+   "pdfPage": 226,
+   "page": 226,
+   "film": "Westward Ho, the Wagons!",
+   "conf": "med"
+  },
+  {
+   "title": "Yo Ho (A Pirate’s Life for Me)",
+   "pdfPage": 226,
+   "page": 226,
+   "composer": "Words by XAVIER ATENCIO; Music by GEORGE BRUNS",
+   "film": "Land and Walt Disney Worid’s Pirates of the Caribbean",
+   "conf": "med"
+  },
+  {
+   "title": "You Can Fly! You Can Fly! You Can Fly!",
+   "pdfPage": 227,
+   "page": 227,
+   "composer": "Words by SAMMY CAHN; Music by SAMMY FAIN",
+   "film": "Peter Pan",
+   "conf": "med"
+  },
+  {
+   "title": "You'll Be in My Heart (Pop Version)",
+   "pdfPage": 228,
+   "page": 228,
+   "film": "Tarzan",
+   "conf": "med"
+  },
+  {
+   "title": "Your Heart Will Lead You Home",
+   "pdfPage": 230,
+   "page": 230,
+   "composer": "Words and Music by RICHARD M. SHERMAN,",
+   "film": "The Tigger Movie",
+   "conf": "med"
+  },
+  {
+   "title": "Your Mother and Mine",
+   "pdfPage": 232,
+   "page": 232,
+   "composer": "Words by SAMMY CAHN; Music by SAMMY FAIN",
+   "film": "Peter Pan",
+   "conf": "med"
+  },
+  {
+   "title": "Zip-A-Dee-Doo-Dah",
+   "pdfPage": 232,
+   "page": 232,
+   "composer": "Words by RAY GILBERT; Music by ALLIE WRUBEL",
+   "film": "Song of the South",
+   "conf": "med"
+  },
+  {
+   "title": "Theme from \"Zorro\"",
+   "pdfPage": 233,
+   "page": 233,
+   "composer": "Words by NORMAN FOSTER; Music by GEORGE BRUNS",
+   "film": "Zorro",
+   "conf": "med"
+  },
+  {
+   "title": "Zero to Hero",
+   "pdfPage": 234,
+   "page": 234,
+   "composer": "Music by ALAN MENKEN; Lyrics by DAVID ZIPPEL",
+   "film": "Hercules",
+   "conf": "med"
+  },
+  {
+   "title": "You’ve Got a Friend in Me",
+   "pdfPage": 236,
+   "page": 236,
+   "film": "Toy Story",
+   "conf": "med"
+  }
+ ]
+}

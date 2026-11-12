@@ -1,0 +1,631 @@
+{
+ "file": "The Real pop Book.pdf",
+ "method": "ocr-page-titles",
+ "offset": null,
+ "notes": "No outline, no text layer, and no table of contents or index in the PDF (page 1 is music). Pages are screenshots with no printed page numbers (page=null, offset=null; pdfPage is the only reference). Titles are in a stylised display font so plain OCR was poor: read by eye from header-strip contact sheets of every page (all 192 pages viewed), so each title is confirmed on its pdfPage. Layout is alphabetical by title, one tune per 1-3 pages (starts on odd or even pages). The line printed under each title is the songwriter credit, not a performer, so artist is omitted. Mid-page second tunes not looked for (none seen). Possible spelling slips in long songwriter lists.",
+ "entries": [
+  {
+   "title": "A Horse With No Name",
+   "pdfPage": 1,
+   "page": null,
+   "composer": "Dewey Bunnell",
+   "conf": "high"
+  },
+  {
+   "title": "A Thousand Miles",
+   "pdfPage": 3,
+   "page": null,
+   "composer": "Vanessa Carlton",
+   "conf": "high"
+  },
+  {
+   "title": "All Of Me",
+   "pdfPage": 7,
+   "page": null,
+   "composer": "John Stephens/Toby Gad",
+   "conf": "high"
+  },
+  {
+   "title": "Bad Romance",
+   "pdfPage": 9,
+   "page": null,
+   "composer": "Stefani Germanotta/Nadir Khayat",
+   "conf": "high"
+  },
+  {
+   "title": "Bette Davis Eyes",
+   "pdfPage": 11,
+   "page": null,
+   "composer": "Donna Weiss/Jackie DeShannon",
+   "conf": "high"
+  },
+  {
+   "title": "Billie Jean",
+   "pdfPage": 13,
+   "page": null,
+   "composer": "Michael Jackson",
+   "conf": "high"
+  },
+  {
+   "title": "Bohemian Rhapsody",
+   "pdfPage": 15,
+   "page": null,
+   "composer": "Freddie Mercury",
+   "conf": "high"
+  },
+  {
+   "title": "Call Me Maybe",
+   "pdfPage": 19,
+   "page": null,
+   "composer": "Carly Rae Jepsen/Joshua Ramsay/Tavish Crowe",
+   "conf": "high"
+  },
+  {
+   "title": "Can You Feel The Love Tonight",
+   "pdfPage": 21,
+   "page": null,
+   "composer": "Elton John/Tim Rice",
+   "conf": "high"
+  },
+  {
+   "title": "Can't Help Falling In Love",
+   "pdfPage": 23,
+   "page": null,
+   "composer": "George David Weiss/Hugo Peretti/Luigi Creatore",
+   "conf": "high"
+  },
+  {
+   "title": "Careless Whisper",
+   "pdfPage": 24,
+   "page": null,
+   "composer": "George Michael/Andrew Ridgeley",
+   "conf": "high"
+  },
+  {
+   "title": "Caribbean Queen (No More Love On The Run)",
+   "pdfPage": 26,
+   "page": null,
+   "composer": "Keith Vincent Alexander/Billy Ocean",
+   "conf": "high"
+  },
+  {
+   "title": "Celebration",
+   "pdfPage": 28,
+   "page": null,
+   "composer": "Ronald Bell/Claydes Smith/George Brown/James Taylor/Robert Mickens/Earl Toon/Dennis Thomas/Robert Bell/Eumir Deodato",
+   "conf": "high"
+  },
+  {
+   "title": "Clocks",
+   "pdfPage": 30,
+   "page": null,
+   "composer": "Guy Berryman/Jon Buckland/Will Champion/Chris Martin",
+   "conf": "high"
+  },
+  {
+   "title": "Copacabana (At The Copa)",
+   "pdfPage": 32,
+   "page": null,
+   "composer": "Barry Manilow/Bruce Sussman/Jack Feldman",
+   "conf": "high"
+  },
+  {
+   "title": "Every Breath You Take",
+   "pdfPage": 34,
+   "page": null,
+   "composer": "Sting",
+   "conf": "high"
+  },
+  {
+   "title": "(Everything I Do) I Do It For You",
+   "pdfPage": 36,
+   "page": null,
+   "composer": "Bryan Adams/R.J. Lange/Michael Kamen",
+   "conf": "high"
+  },
+  {
+   "title": "Eye Of The Tiger",
+   "pdfPage": 38,
+   "page": null,
+   "composer": "Frank Sullivan/Jim Peterik",
+   "conf": "high"
+  },
+  {
+   "title": "Flashdance...What A Feeling",
+   "pdfPage": 40,
+   "page": null,
+   "composer": "Keith Forsey/Irene Cara/Giorgio Moroder",
+   "conf": "high"
+  },
+  {
+   "title": "Glory Of Love",
+   "pdfPage": 42,
+   "page": null,
+   "composer": "David Foster/Peter Cetera/Diane Nini",
+   "conf": "high"
+  },
+  {
+   "title": "Hallelujah",
+   "pdfPage": 44,
+   "page": null,
+   "composer": "Leonard Cohen",
+   "conf": "high"
+  },
+  {
+   "title": "Happy",
+   "pdfPage": 46,
+   "page": null,
+   "composer": "Pharrell Williams",
+   "conf": "high"
+  },
+  {
+   "title": "Heaven Is A Place On Earth",
+   "pdfPage": 48,
+   "page": null,
+   "composer": "Ellen Shipley/Rick Nowels",
+   "conf": "high"
+  },
+  {
+   "title": "Hey Jude",
+   "pdfPage": 50,
+   "page": null,
+   "composer": "John Lennon and Paul McCartney",
+   "conf": "high"
+  },
+  {
+   "title": "Hey, Soul Sister",
+   "pdfPage": 52,
+   "page": null,
+   "composer": "Pat Monahan/Espen Lind/Amund Bjorklund",
+   "conf": "high"
+  },
+  {
+   "title": "Hot Stuff",
+   "pdfPage": 54,
+   "page": null,
+   "composer": "Pete Bellotte/Harold Faltermeier/Keith Forsey",
+   "conf": "high"
+  },
+  {
+   "title": "Hotel California",
+   "pdfPage": 56,
+   "page": null,
+   "composer": "Don Henley/Glenn Frey/Don Felder",
+   "conf": "high"
+  },
+  {
+   "title": "How Am I Supposed To Live Without You",
+   "pdfPage": 58,
+   "page": null,
+   "composer": "Michael Bolton/Doug James",
+   "conf": "high"
+  },
+  {
+   "title": "How Deep Is Your Love",
+   "pdfPage": 60,
+   "page": null,
+   "composer": "Barry Gibb, Robin Gibb and Maurice Gibb",
+   "conf": "high"
+  },
+  {
+   "title": "I Gotta Feeling",
+   "pdfPage": 62,
+   "page": null,
+   "composer": "Will Adams/Allan Pineda/Jaime Gomez/Stacy Ferguson/David Guetta/Frederic Riesterer",
+   "conf": "high"
+  },
+  {
+   "title": "I Still Haven't Found What I'm Looking For",
+   "pdfPage": 65,
+   "page": null,
+   "composer": "U2",
+   "conf": "high"
+  },
+  {
+   "title": "I Want It That Way",
+   "pdfPage": 67,
+   "page": null,
+   "composer": "Martin Sandberg/Andreas Carlsson",
+   "conf": "high"
+  },
+  {
+   "title": "I Want To Hold Your Hand",
+   "pdfPage": 70,
+   "page": null,
+   "composer": "John Lennon/Paul McCartney",
+   "conf": "high"
+  },
+  {
+   "title": "I Will Always Love You",
+   "pdfPage": 72,
+   "page": null,
+   "composer": "Dolly Parton",
+   "conf": "high"
+  },
+  {
+   "title": "I'm Yours",
+   "pdfPage": 74,
+   "page": null,
+   "composer": "Jason Mraz",
+   "conf": "high"
+  },
+  {
+   "title": "Imagine",
+   "pdfPage": 76,
+   "page": null,
+   "composer": "John Lennon",
+   "conf": "high"
+  },
+  {
+   "title": "Iris",
+   "pdfPage": 78,
+   "page": null,
+   "composer": "John Rzeznik",
+   "conf": "high"
+  },
+  {
+   "title": "Isn't She Lovely",
+   "pdfPage": 80,
+   "page": null,
+   "composer": "Stevie Wonder",
+   "conf": "high"
+  },
+  {
+   "title": "Jump",
+   "pdfPage": 81,
+   "page": null,
+   "composer": "Edward Van Halen/Alex Van Halen/David Lee Roth",
+   "conf": "high"
+  },
+  {
+   "title": "Just The Way You Are",
+   "pdfPage": 83,
+   "page": null,
+   "composer": "Billy Joel",
+   "conf": "high"
+  },
+  {
+   "title": "Karma Chameleon",
+   "pdfPage": 85,
+   "page": null,
+   "composer": "George O'Dowd/Jonathan Moss/Michael Craig/Roy Hay/Phil Pickett",
+   "conf": "high"
+  },
+  {
+   "title": "Killing Me Softly With His Song",
+   "pdfPage": 87,
+   "page": null,
+   "composer": "Norman Gimbel/Charles Fox",
+   "conf": "high"
+  },
+  {
+   "title": "Let It Go",
+   "pdfPage": 89,
+   "page": null,
+   "composer": "Kristen Anderson-Lopez/Robert Lopez",
+   "conf": "high"
+  },
+  {
+   "title": "Like A Virgin",
+   "pdfPage": 92,
+   "page": null,
+   "composer": "Billy Steinberg/Tom Kelly",
+   "conf": "high"
+  },
+  {
+   "title": "Listen To The Music",
+   "pdfPage": 94,
+   "page": null,
+   "composer": "Tom Johnston",
+   "conf": "high"
+  },
+  {
+   "title": "Listen To Your Heart",
+   "pdfPage": 96,
+   "page": null,
+   "composer": "Per Gessle/Mats Persson",
+   "conf": "high"
+  },
+  {
+   "title": "Livin' La Vida Loca",
+   "pdfPage": 98,
+   "page": null,
+   "composer": "Desmond Child/Robi Rosa",
+   "conf": "high"
+  },
+  {
+   "title": "Livin' On A Prayer",
+   "pdfPage": 100,
+   "page": null,
+   "composer": "Jon Bon Jovi/Desmond Child/Richie Sambora",
+   "conf": "high"
+  },
+  {
+   "title": "Losing My Religion",
+   "pdfPage": 102,
+   "page": null,
+   "composer": "William Berry/Peter Buck/Michael Mills/Michael Stipe",
+   "conf": "high"
+  },
+  {
+   "title": "Love Shack",
+   "pdfPage": 104,
+   "page": null,
+   "composer": "Catherine E. Pierson/Frederick W. Schneider/Keith J. Strickland/Cynthia L. Wilson",
+   "conf": "high"
+  },
+  {
+   "title": "Mack The Knife",
+   "pdfPage": 107,
+   "page": null,
+   "composer": "Kurt Weill/Marc Blitzstein/Bert Brecht",
+   "conf": "high"
+  },
+  {
+   "title": "Maneater",
+   "pdfPage": 109,
+   "page": null,
+   "composer": "Sara Allen/Daryl Hall/John Oates",
+   "conf": "high"
+  },
+  {
+   "title": "Material Girl",
+   "pdfPage": 111,
+   "page": null,
+   "composer": "Peter Brown/Robert Rans",
+   "conf": "high"
+  },
+  {
+   "title": "My Heart Will Go On (Love Theme From 'Titanic')",
+   "pdfPage": 113,
+   "page": null,
+   "composer": "James Horner/Will Jennings",
+   "conf": "high"
+  },
+  {
+   "title": "Need You Tonight",
+   "pdfPage": 115,
+   "page": null,
+   "composer": "Michael Hutchence/Andrew Farriss",
+   "conf": "high"
+  },
+  {
+   "title": "Night Fever",
+   "pdfPage": 117,
+   "page": null,
+   "composer": "Barry Gibb/Robin Gibb/Maurice Gibb",
+   "conf": "high"
+  },
+  {
+   "title": "Open Arms",
+   "pdfPage": 119,
+   "page": null,
+   "composer": "Steve Perry/Jonathan Cain",
+   "conf": "high"
+  },
+  {
+   "title": "Owner Of A Lonely Heart",
+   "pdfPage": 121,
+   "page": null,
+   "composer": "Trevor Rabin/Jon Anderson/Chris Squire/Trevor Horn",
+   "conf": "high"
+  },
+  {
+   "title": "Physical",
+   "pdfPage": 124,
+   "page": null,
+   "composer": "Stephen A. Kipner/Terry Shaddick",
+   "conf": "high"
+  },
+  {
+   "title": "Piano Man",
+   "pdfPage": 126,
+   "page": null,
+   "composer": "Billy Joel",
+   "conf": "high"
+  },
+  {
+   "title": "Escape (The Piña Colada Song)",
+   "pdfPage": 129,
+   "page": null,
+   "composer": "Rupert Holmes",
+   "conf": "high"
+  },
+  {
+   "title": "Pour Some Sugar On Me",
+   "pdfPage": 131,
+   "page": null,
+   "composer": "Joe Elliott/Phil Collen/Richard Savage/Richard Allen/Steve Clark/R.J. Lange",
+   "conf": "high"
+  },
+  {
+   "title": "Right Here Waiting",
+   "pdfPage": 134,
+   "page": null,
+   "composer": "Richard Marx",
+   "conf": "high"
+  },
+  {
+   "title": "Roar",
+   "pdfPage": 136,
+   "page": null,
+   "composer": "Katy Perry/Lukasz Gottwald/Max Martin/Bonnie McKee/Henry Walter",
+   "conf": "high"
+  },
+  {
+   "title": "Rolling In The Deep",
+   "pdfPage": 138,
+   "page": null,
+   "composer": "Adele Adkins/Paul Epworth",
+   "conf": "high"
+  },
+  {
+   "title": "Saturday In The Park",
+   "pdfPage": 141,
+   "page": null,
+   "composer": "Robert Lamm",
+   "conf": "high"
+  },
+  {
+   "title": "Say You, Say Me",
+   "pdfPage": 143,
+   "page": null,
+   "composer": "Lionel Richie",
+   "conf": "high"
+  },
+  {
+   "title": "Since U Been Gone",
+   "pdfPage": 145,
+   "page": null,
+   "composer": "Max Martin/Lukasz Gottwald",
+   "conf": "high"
+  },
+  {
+   "title": "Sledgehammer",
+   "pdfPage": 147,
+   "page": null,
+   "composer": "Peter Gabriel",
+   "conf": "high"
+  },
+  {
+   "title": "Smooth",
+   "pdfPage": 150,
+   "page": null,
+   "composer": "Rob Thomas/Itaal Shur",
+   "conf": "high"
+  },
+  {
+   "title": "Start Me Up",
+   "pdfPage": 152,
+   "page": null,
+   "composer": "Mick Jagger/Keith Richards",
+   "conf": "high"
+  },
+  {
+   "title": "Stay With Me",
+   "pdfPage": 154,
+   "page": null,
+   "composer": "Sam Smith/James Napier/William Edward Phillips/Tom Petty/Jeff Lynne",
+   "conf": "high"
+  },
+  {
+   "title": "Stay",
+   "pdfPage": 156,
+   "page": null,
+   "composer": "Mikky Ekko/Justin Parker",
+   "conf": "high"
+  },
+  {
+   "title": "Stayin' Alive",
+   "pdfPage": 158,
+   "page": null,
+   "composer": "Barry Gibb/Robin Gibb/Maurice Gibb",
+   "conf": "high"
+  },
+  {
+   "title": "Summer Nights",
+   "pdfPage": 160,
+   "page": null,
+   "composer": "Warren Casey/Jim Jacobs",
+   "conf": "high"
+  },
+  {
+   "title": "Summer Of '69",
+   "pdfPage": 163,
+   "page": null,
+   "composer": "Bryan Adams/Jim Vallance",
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Child O' Mine",
+   "pdfPage": 165,
+   "page": null,
+   "composer": "W. Axl Rose/Slash/Izzy Stradlin'/Duff McKagan/Steven Adler",
+   "conf": "high"
+  },
+  {
+   "title": "Tears In Heaven",
+   "pdfPage": 168,
+   "page": null,
+   "composer": "Eric Clapton/Will Jennings",
+   "conf": "high"
+  },
+  {
+   "title": "This Love",
+   "pdfPage": 170,
+   "page": null,
+   "composer": "Adam Levine/Jesse Carmichael",
+   "conf": "high"
+  },
+  {
+   "title": "Time After Time",
+   "pdfPage": 172,
+   "page": null,
+   "composer": "Cyndi Lauper/Rob Hyman",
+   "conf": "high"
+  },
+  {
+   "title": "Total Eclipse Of The Heart",
+   "pdfPage": 174,
+   "page": null,
+   "composer": "Jim Steinman",
+   "conf": "high"
+  },
+  {
+   "title": "Un-Break My Heart",
+   "pdfPage": 176,
+   "page": null,
+   "composer": "Diane Warren",
+   "conf": "high"
+  },
+  {
+   "title": "Unchained Melody",
+   "pdfPage": 178,
+   "page": null,
+   "composer": "Hy Zaret/Alex North",
+   "conf": "high"
+  },
+  {
+   "title": "Uptown Girl",
+   "pdfPage": 179,
+   "page": null,
+   "composer": "Billy Joel",
+   "conf": "high"
+  },
+  {
+   "title": "Viva La Vida",
+   "pdfPage": 181,
+   "page": null,
+   "composer": "Guy Berryman/Jon Buckland/Will Champion/Chris Martin",
+   "conf": "high"
+  },
+  {
+   "title": "We Are The World",
+   "pdfPage": 184,
+   "page": null,
+   "composer": "Lionel Richie/Michael Jackson",
+   "conf": "high"
+  },
+  {
+   "title": "When A Man Loves A Woman",
+   "pdfPage": 186,
+   "page": null,
+   "composer": "Calvin Lewis/Andrew Wright",
+   "conf": "high"
+  },
+  {
+   "title": "Wouldn't It Be Nice",
+   "pdfPage": 188,
+   "page": null,
+   "composer": "Brian Wilson/Tony Asher/Mike Love",
+   "conf": "high"
+  },
+  {
+   "title": "You'll Be In My Heart",
+   "pdfPage": 190,
+   "page": null,
+   "composer": "Phil Collins",
+   "conf": "high"
+  }
+ ]
+}

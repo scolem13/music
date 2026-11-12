@@ -6,7 +6,7 @@
   D.indexed.map(i => i.b).sort((a, b) => D.books[a].title.localeCompare(D.books[b].title)).forEach(b => $("book").add(new Option(D.books[b].title, b)));
   Object.entries(D.sfVols).forEach(([n, t]) => $("vol").add(new Option(n + ". " + t, n)));
   const norm = s => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
-  D.tunes.forEach(t => { t._s = norm([t.t, (t.aka || []).join(" "), t.c, (t.ar || []).join(" ")].join(" ")); t._n = new Set(t.at.map(a => a[0])).size; });
+  D.tunes.forEach(t => { t._s = norm([t.t, (t.aka || []).join(" "), t.c, (t.ar || []).join(" "), (t.fm || []).join(" ")].join(" ")); t._n = new Set(t.at.map(a => a[0])).size; });
   const qs = new URLSearchParams(location.search); ["q", "book", "vol", "min", "pdf"].forEach(k => { if (qs.has(k)) $(k).value = qs.get(k); });
   let page = +qs.get("page") || 0;
   function rows() {
@@ -22,7 +22,7 @@
     r.slice(page * PER, page * PER + PER).forEach(t => {
       const tr = tb.insertRow(), a = tr.insertCell(), wh = tr.insertCell(), s = tr.insertCell(), n = tr.insertCell();
       a.textContent = t.t;
-      if (t.aka || t.c || t.ar) { const d = document.createElement("div"); d.className = "aka"; d.textContent = [t.ar && "recorded by " + t.ar.join(", "), t.c, t.aka && "also " + t.aka.join("; ")].filter(Boolean).join(" · "); a.appendChild(d); }
+      if (t.aka || t.c || t.ar || t.fm) { const d = document.createElement("div"); d.className = "aka"; d.textContent = [t.ar && "recorded by " + t.ar.join(", "), t.fm && "from " + t.fm.join(", "), t.c, t.aka && "also " + t.aka.join("; ")].filter(Boolean).join(" · "); a.appendChild(d); }
       wh.className = "where";
       t.at.forEach(([bi, pp, pg, conf]) => { const sp = document.createElement("span"), bk = D.books[bi]; if (bk.hand) sp.className = "hand";
         sp.textContent = bk.title.replace(/^The /, "") + ", " + (pg != null ? pg : "pdf " + pp); sp.title = bk.file + " · PDF page " + pp + (conf ? " · " + conf + " confidence" : ""); wh.appendChild(sp); });

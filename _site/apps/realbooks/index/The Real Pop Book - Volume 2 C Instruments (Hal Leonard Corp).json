@@ -1,0 +1,1577 @@
+{
+ "file": "The Real Pop Book - Volume 2 C Instruments (Hal Leonard Corp).pdf",
+ "method": "text-index",
+ "offset": -1,
+ "notes": "Index (pdf pp3-6) has a text layer: alphabetical, page + title + performer. Index gives performer, not composer; composer taken from the credit line printed under each tune title (text layer, lowercase on page, re-cased; may be truncated or missing for some, ~190 of 198 present). Some tunes listed out of page order in index (e.g. All Night Long p13, Beast of Burden p21, Every Morning p75, Blurred Lines p39). Pages checked by render: see report. Checked 22 of 22 sampled pages by text layer (title found on pdfPage); offset -1 constant. Composer credit may be truncated for some. 330 dpi scan with OCR text layer, engraved.",
+ "entries": [
+  {
+   "title": "Africa",
+   "pdfPage": 7,
+   "page": 8,
+   "composer": "David Paich/Jeff Porcaro",
+   "artist": "Toto",
+   "conf": "high"
+  },
+  {
+   "title": "Ain’t No Sunshine",
+   "pdfPage": 9,
+   "page": 10,
+   "artist": "Bill Withers",
+   "conf": "med",
+   "composer": "Bill Withers"
+  },
+  {
+   "title": "Ain’t That a Shame",
+   "pdfPage": 11,
+   "page": 12,
+   "artist": "Fats Domino",
+   "conf": "med",
+   "composer": "By Antoine Domino/Dave Bartholomew"
+  },
+  {
+   "title": "All About That Bass",
+   "pdfPage": 15,
+   "page": 16,
+   "composer": "Kevin Kadish/Meghan Trainor",
+   "artist": "Meghan Trainor",
+   "conf": "med"
+  },
+  {
+   "title": "All Night Long (All Night)",
+   "pdfPage": 12,
+   "page": 13,
+   "composer": "Lionel Richie",
+   "artist": "Lionel Richie",
+   "conf": "med"
+  },
+  {
+   "title": "American Tune",
+   "pdfPage": 17,
+   "page": 18,
+   "composer": "Paul Simon",
+   "artist": "Paul Simon",
+   "conf": "med"
+  },
+  {
+   "title": "Angel",
+   "pdfPage": 23,
+   "page": 24,
+   "composer": "Sarah M Lachlan",
+   "artist": "Sarah McLachlan",
+   "conf": "med"
+  },
+  {
+   "title": "Angel Eyes",
+   "pdfPage": 25,
+   "page": 26,
+   "composer": "John Hiatt/Fred Koller",
+   "artist": "The Jeff Healey Band",
+   "conf": "med"
+  },
+  {
+   "title": "Angels from Montgomery",
+   "pdfPage": 27,
+   "page": 28,
+   "composer": "John Prine",
+   "artist": "John Prine",
+   "conf": "med"
+  },
+  {
+   "title": "Back on the Chain Gang",
+   "pdfPage": 29,
+   "page": 30,
+   "composer": "Chrissie Hynde",
+   "artist": "The Pretenders",
+   "conf": "high"
+  },
+  {
+   "title": "Barely Breathing",
+   "pdfPage": 31,
+   "page": 32,
+   "composer": "Duncan Sheik",
+   "artist": "Duncan Sheik",
+   "conf": "med"
+  },
+  {
+   "title": "Beast of Burden",
+   "pdfPage": 20,
+   "page": 21,
+   "composer": "Mick Jagger/Keith Richards",
+   "artist": "The Rolling Stones",
+   "conf": "med"
+  },
+  {
+   "title": "Beat It",
+   "pdfPage": 33,
+   "page": 34,
+   "composer": "Michael Jackson",
+   "artist": "Michael Jackson",
+   "conf": "med"
+  },
+  {
+   "title": "Beautiful Day",
+   "pdfPage": 35,
+   "page": 36,
+   "artist": "U2",
+   "conf": "med"
+  },
+  {
+   "title": "Because of You",
+   "pdfPage": 41,
+   "page": 42,
+   "composer": "Kelly Clarkson/David Hodges/Ben Moody",
+   "artist": "Kelly Clarkson",
+   "conf": "med"
+  },
+  {
+   "title": "Bennie and the Jets",
+   "pdfPage": 43,
+   "page": 44,
+   "composer": "Elton John/Bernie Taupin",
+   "artist": "Elton John",
+   "conf": "med"
+  },
+  {
+   "title": "Blackbird",
+   "pdfPage": 45,
+   "page": 46,
+   "composer": "John Lennon/Paul M Cartney",
+   "artist": "The Beatles",
+   "conf": "med"
+  },
+  {
+   "title": "Blurred Lines",
+   "pdfPage": 38,
+   "page": 39,
+   "composer": "Pharrell Williams/Robin Thicke/Clifford Harris G",
+   "artist": "Robin Thicke",
+   "conf": "med"
+  },
+  {
+   "title": "Both Sides Now",
+   "pdfPage": 47,
+   "page": 48,
+   "composer": "Joni Mitchell",
+   "artist": "Joni Mitchell",
+   "conf": "high"
+  },
+  {
+   "title": "Boulevard of Broken Dreams",
+   "pdfPage": 49,
+   "page": 50,
+   "composer": "Billie Joe/Green Day",
+   "artist": "Green Day",
+   "conf": "med"
+  },
+  {
+   "title": "The Boys of Summer",
+   "pdfPage": 51,
+   "page": 52,
+   "composer": "Mike Campbell/Don Henley",
+   "artist": "Don Henley",
+   "conf": "med"
+  },
+  {
+   "title": "Brass in Pocket",
+   "pdfPage": 53,
+   "page": 54,
+   "composer": "Chrissie Hynde/James Honeyman-Scott",
+   "artist": "The Pretenders",
+   "conf": "med"
+  },
+  {
+   "title": "Brave",
+   "pdfPage": 55,
+   "page": 56,
+   "composer": "Sara Bareilles/Jack Antonoff",
+   "artist": "Sara Bareilles",
+   "conf": "med"
+  },
+  {
+   "title": "Breathe",
+   "pdfPage": 57,
+   "page": 58,
+   "composer": "Holly Lamar/Stephanie Bentley",
+   "artist": "Faith Hill",
+   "conf": "med"
+  },
+  {
+   "title": "California Dreamin",
+   "pdfPage": 59,
+   "page": 60,
+   "composer": "John Phillips/Michelle Phillips",
+   "artist": "The Mamas & The Papas",
+   "conf": "med"
+  },
+  {
+   "title": "Candle in the Wind",
+   "pdfPage": 61,
+   "page": 62,
+   "composer": "Elton John, Bernie Taupin",
+   "artist": "Elton John",
+   "conf": "med"
+  },
+  {
+   "title": "Cars",
+   "pdfPage": 63,
+   "page": 64,
+   "composer": "Gary Numan",
+   "artist": "Gary Numan",
+   "conf": "med"
+  },
+  {
+   "title": "Centerfold",
+   "pdfPage": 65,
+   "page": 66,
+   "composer": "Seth Justman",
+   "artist": "The J. Geils Band",
+   "conf": "high"
+  },
+  {
+   "title": "Change the World",
+   "pdfPage": 67,
+   "page": 68,
+   "composer": "Wayne Kirkpatrick/Gordon Kennedy/Tommy Sims",
+   "artist": "Eric Clapton",
+   "conf": "med"
+  },
+  {
+   "title": "Chasing Cars",
+   "pdfPage": 69,
+   "page": 70,
+   "composer": "Gary Lightbody/Tom Simpson/Paul Wilson/Jonathan Quinn/Nathan Connolly A",
+   "artist": "Snow Patrol",
+   "conf": "med"
+  },
+  {
+   "title": "Complicated",
+   "pdfPage": 71,
+   "page": 72,
+   "composer": "Avril Ramona Lavigne/David Scott Alspach/Lauren Christy/Graham Edwards",
+   "artist": "Avril Lavigne",
+   "conf": "med"
+  },
+  {
+   "title": "Crazy in Love",
+   "pdfPage": 77,
+   "page": 78,
+   "artist": "Beyoncé",
+   "conf": "med"
+  },
+  {
+   "title": "Crazy Little Thing Called Love",
+   "pdfPage": 79,
+   "page": 80,
+   "composer": "Freddie Mercury Play",
+   "artist": "Queen",
+   "conf": "med"
+  },
+  {
+   "title": "Crimson and Clover",
+   "pdfPage": 81,
+   "page": 82,
+   "composer": "Tommy James/Peter Lucia",
+   "artist": "Tommy James and the Shondells",
+   "conf": "med"
+  },
+  {
+   "title": "Dancing Queen",
+   "pdfPage": 83,
+   "page": 84,
+   "composer": "Benny",
+   "artist": "ABBA",
+   "conf": "med"
+  },
+  {
+   "title": "Daydream",
+   "pdfPage": 85,
+   "page": 86,
+   "composer": "John Sebastian",
+   "artist": "The Lovin’ Spoonful",
+   "conf": "med"
+  },
+  {
+   "title": "Despacito",
+   "pdfPage": 87,
+   "page": 88,
+   "composer": "Luis Fonsi/Erika Ender, Justin Bieber, Jason Boyd, Marty James Garton/Ramon Ayala Bm",
+   "artist": "Luis Fonsi",
+   "conf": "high"
+  },
+  {
+   "title": "Don’t Dream It’s Over",
+   "pdfPage": 91,
+   "page": 92,
+   "composer": "Neil Finn",
+   "artist": "Crowded House",
+   "conf": "med"
+  },
+  {
+   "title": "Don’t Stop Believin’",
+   "pdfPage": 93,
+   "page": 94,
+   "composer": "Steve Perry/Neal Schon/Jonathan Cain",
+   "artist": "Journey",
+   "conf": "med"
+  },
+  {
+   "title": "Don’t You (Forget About Me)",
+   "pdfPage": 95,
+   "page": 96,
+   "composer": "Keith Forsey/Steve Schiff",
+   "artist": "Simple Minds",
+   "conf": "med"
+  },
+  {
+   "title": "Dream On",
+   "pdfPage": 97,
+   "page": 98,
+   "composer": "Steve Tyler",
+   "artist": "Aerosmith",
+   "conf": "med"
+  },
+  {
+   "title": "Drift Away",
+   "pdfPage": 99,
+   "page": 100,
+   "composer": "Mentor Williams",
+   "artist": "Dobie Gray",
+   "conf": "med"
+  },
+  {
+   "title": "Dust in the Wind",
+   "pdfPage": 101,
+   "page": 102,
+   "composer": "Kerry Livgren",
+   "artist": "Kansas",
+   "conf": "med"
+  },
+  {
+   "title": "Easy",
+   "pdfPage": 103,
+   "page": 104,
+   "artist": "Commodores",
+   "conf": "med"
+  },
+  {
+   "title": "Easy Lover",
+   "pdfPage": 105,
+   "page": 106,
+   "composer": "Phil Collins/Philip Bailey/Nathan East",
+   "artist": "Philip Bailey & Phil Collins",
+   "conf": "med"
+  },
+  {
+   "title": "Ebony and Ivory",
+   "pdfPage": 107,
+   "page": 108,
+   "composer": "Paul M Cartney",
+   "artist": "Paul McCartney & Stevie Wonder",
+   "conf": "high"
+  },
+  {
+   "title": "End of the Road",
+   "pdfPage": 109,
+   "page": 110,
+   "artist": "Boyz II Men",
+   "conf": "med"
+  },
+  {
+   "title": "Endless Love",
+   "pdfPage": 111,
+   "page": 112,
+   "artist": "Lionel Richie & Diana Ross",
+   "conf": "med"
+  },
+  {
+   "title": "Enjoy the Silence",
+   "pdfPage": 113,
+   "page": 114,
+   "composer": "Martin Gore",
+   "artist": "Depeche Mode",
+   "conf": "med"
+  },
+  {
+   "title": "Eternal Flame",
+   "pdfPage": 115,
+   "page": 116,
+   "composer": "Billy Steinberg/Tom Kelly/Susanna Hoffs",
+   "artist": "The Bangles",
+   "conf": "med"
+  },
+  {
+   "title": "Every Morning",
+   "pdfPage": 74,
+   "page": 75,
+   "composer": "Mark M Grath/Stan Frazier/Rodney Sheppard/Matthew Murphy Karges/Craig Bullock/Joseph",
+   "artist": "Sugar Ray",
+   "conf": "med"
+  },
+  {
+   "title": "Everybody Wants to Rule the World",
+   "pdfPage": 117,
+   "page": 118,
+   "artist": "Tears for Fears",
+   "conf": "med"
+  },
+  {
+   "title": "Faith",
+   "pdfPage": 119,
+   "page": 120,
+   "composer": "George Michael",
+   "artist": "George Michael",
+   "conf": "med"
+  },
+  {
+   "title": "Faithfully",
+   "pdfPage": 121,
+   "page": 122,
+   "composer": "Jonathan Cain",
+   "artist": "Journey",
+   "conf": "med"
+  },
+  {
+   "title": "Fallin’",
+   "pdfPage": 123,
+   "page": 124,
+   "artist": "Alicia Keys",
+   "conf": "high"
+  },
+  {
+   "title": "Fame",
+   "pdfPage": 125,
+   "page": 126,
+   "composer": "John Lennon/David Bowie/Carlos Alomar",
+   "artist": "David Bowie",
+   "conf": "med"
+  },
+  {
+   "title": "Fantasy",
+   "pdfPage": 127,
+   "page": 128,
+   "composer": "Mariah Carey/Tina Weymouth/Chris Frantz/Dave Hall/Adrian Belew/Stephen Stanley Em",
+   "artist": "Mariah Carey",
+   "conf": "med"
+  },
+  {
+   "title": "Fields of Gold",
+   "pdfPage": 129,
+   "page": 130,
+   "composer": "Sting",
+   "artist": "Sting",
+   "conf": "med"
+  },
+  {
+   "title": "Fire and Rain",
+   "pdfPage": 131,
+   "page": 132,
+   "composer": "James Taylor",
+   "artist": "James Taylor",
+   "conf": "med"
+  },
+  {
+   "title": "The First Cut Is the Deepest",
+   "pdfPage": 133,
+   "page": 134,
+   "composer": "Cat Stevens",
+   "artist": "Sheryl Crow",
+   "conf": "med"
+  },
+  {
+   "title": "Fly Like an Eagle",
+   "pdfPage": 135,
+   "page": 136,
+   "composer": "Steve Miller",
+   "artist": "Steve Miller Band",
+   "conf": "med"
+  },
+  {
+   "title": "Free Fallin’",
+   "pdfPage": 137,
+   "page": 138,
+   "composer": "Tom Petty/Jeff Lynne",
+   "artist": "Tom Petty",
+   "conf": "med"
+  },
+  {
+   "title": "Genie in a Bottle",
+   "pdfPage": 139,
+   "page": 140,
+   "composer": "Steve Kipner/David Frank/Pamela Sheyne",
+   "artist": "Christina Aguilera",
+   "conf": "med"
+  },
+  {
+   "title": "Get Lucky",
+   "pdfPage": 145,
+   "page": 146,
+   "composer": "Thomas Bangalter/Guy Manuel Homem Christo/Nile Rodgers/Pharrell Williams Bm D F",
+   "artist": "Daft Punk",
+   "conf": "high"
+  },
+  {
+   "title": "Girls Just Want to Have Fun",
+   "pdfPage": 147,
+   "page": 148,
+   "composer": "Robert Hazard",
+   "artist": "Cyndi Lauper",
+   "conf": "med"
+  },
+  {
+   "title": "Happy Together",
+   "pdfPage": 149,
+   "page": 150,
+   "composer": "Garry Bonner/Alan Gordon",
+   "artist": "The Turtles",
+   "conf": "med"
+  },
+  {
+   "title": "Hard to Say I’m Sorry",
+   "pdfPage": 151,
+   "page": 152,
+   "composer": "Peter Cetera/David Foster",
+   "artist": "Chicago",
+   "conf": "med"
+  },
+  {
+   "title": "Have I Told You Lately",
+   "pdfPage": 153,
+   "page": 154,
+   "composer": "Van Morrison",
+   "artist": "Van Morrison",
+   "conf": "med"
+  },
+  {
+   "title": "Heart of Glass",
+   "pdfPage": 155,
+   "page": 156,
+   "composer": "Deborah Harry/Chris Stein",
+   "artist": "Blondie",
+   "conf": "med"
+  },
+  {
+   "title": "Hello",
+   "pdfPage": 142,
+   "page": 143,
+   "composer": "Adele Adkins/Greg Kurstin",
+   "artist": "Adele",
+   "conf": "med"
+  },
+  {
+   "title": "Hero",
+   "pdfPage": 157,
+   "page": 158,
+   "composer": "Mariah Carey/Walter Afanasieff",
+   "artist": "Mariah Carey",
+   "conf": "med"
+  },
+  {
+   "title": "Hey There Delilah",
+   "pdfPage": 159,
+   "page": 160,
+   "composer": "Tom Huggenson",
+   "artist": "Plain White T’s",
+   "conf": "med"
+  },
+  {
+   "title": "Hit the Road Jack",
+   "pdfPage": 165,
+   "page": 166,
+   "composer": "Percy Mayfield",
+   "artist": "Ray Charles",
+   "conf": "high"
+  },
+  {
+   "title": "Hold My Hand",
+   "pdfPage": 162,
+   "page": 163,
+   "composer": "Darius Rucker/Dean Felber/Mark Bryan/Jim Sonefeld",
+   "artist": "Hootie & The Blowfish",
+   "conf": "med"
+  },
+  {
+   "title": "Holding Back the Years",
+   "pdfPage": 167,
+   "page": 168,
+   "composer": "Mick Hucknall/Neil Moss",
+   "artist": "Simply Red",
+   "conf": "med"
+  },
+  {
+   "title": "How Sweet It Is (To Be Loved by You)",
+   "pdfPage": 169,
+   "page": 170,
+   "composer": "Edward Holland/Lamont Dozier/Brian Holland",
+   "artist": "James Taylor",
+   "conf": "med"
+  },
+  {
+   "title": "How to Save a Life",
+   "pdfPage": 171,
+   "page": 172,
+   "composer": "Joseph King/Isaac Slade",
+   "artist": "The Fray",
+   "conf": "med"
+  },
+  {
+   "title": "Hungry Like the Wolf",
+   "pdfPage": 173,
+   "page": 174,
+   "composer": "John Taylor/Andy Taylor/Nick Rhodes/Roger Taylor/Simon Lebon",
+   "artist": "Duran Duran",
+   "conf": "med"
+  },
+  {
+   "title": "I Don’t Want to Wait",
+   "pdfPage": 175,
+   "page": 176,
+   "composer": "Paula Cole",
+   "artist": "Paula Cole",
+   "conf": "med"
+  },
+  {
+   "title": "I Feel the Earth Move",
+   "pdfPage": 181,
+   "page": 182,
+   "composer": "Carole King",
+   "artist": "Carole King",
+   "conf": "med"
+  },
+  {
+   "title": "I Finally Found Someone",
+   "pdfPage": 178,
+   "page": 179,
+   "composer": "Barbara Streisand/Marvin Hamlisch/R.j. Lange/Bryan Adams",
+   "artist": "Barbra Streisand and Bryan Adams",
+   "conf": "med"
+  },
+  {
+   "title": "I Honestly Love You",
+   "pdfPage": 183,
+   "page": 184,
+   "composer": "Jeff Barry/Peter Allen",
+   "artist": "Olivia Newton-John",
+   "conf": "high"
+  },
+  {
+   "title": "I Just Called to Say I Love You",
+   "pdfPage": 185,
+   "page": 186,
+   "composer": "Stevie Wonder",
+   "artist": "Stevie Wonder",
+   "conf": "med"
+  },
+  {
+   "title": "I Need to Know",
+   "pdfPage": 187,
+   "page": 188,
+   "composer": "Cory Rooney/Marc Anthony",
+   "artist": "Marc Anthony",
+   "conf": "med"
+  },
+  {
+   "title": "I Wanna Dance with Somebody",
+   "pdfPage": 189,
+   "page": 190,
+   "composer": "George Merrill/Shannon Rubicam",
+   "artist": "Whitney Houston",
+   "conf": "med"
+  },
+  {
+   "title": "I Want to Know What Love Is",
+   "pdfPage": 191,
+   "page": 192,
+   "composer": "Mick Jones",
+   "artist": "Foreigner",
+   "conf": "med"
+  },
+  {
+   "title": "I Will Survive",
+   "pdfPage": 193,
+   "page": 194,
+   "composer": "Dino Fekaris/Frederick J. Perren a D",
+   "artist": "Gloria Gaynor",
+   "conf": "med"
+  },
+  {
+   "title": "I’ll Drown in My Tears",
+   "pdfPage": 195,
+   "page": 196,
+   "composer": "Henry Glover",
+   "artist": "Ray Charles",
+   "conf": "med"
+  },
+  {
+   "title": "I’m a Believer",
+   "pdfPage": 197,
+   "page": 198,
+   "composer": "Neil Diamond",
+   "artist": "The Monkees/Smash Mouth",
+   "conf": "med"
+  },
+  {
+   "title": "I’m Not in Love",
+   "pdfPage": 199,
+   "page": 200,
+   "composer": "Graham Gouldman/Eric Stewart",
+   "artist": "10cc",
+   "conf": "med"
+  },
+  {
+   "title": "If I Ain’t Got You",
+   "pdfPage": 201,
+   "page": 202,
+   "composer": "Alicia Keys",
+   "artist": "Alicia Keys",
+   "conf": "high"
+  },
+  {
+   "title": "If I Were a Boy",
+   "pdfPage": 207,
+   "page": 208,
+   "composer": "Toby Gad/Brittany Carlson",
+   "artist": "Beyoncé",
+   "conf": "med"
+  },
+  {
+   "title": "If It Makes You Happy",
+   "pdfPage": 209,
+   "page": 210,
+   "composer": "Jeff Trott/Sheryl Crow",
+   "artist": "Sheryl Crow",
+   "conf": "med"
+  },
+  {
+   "title": "If You Had My Love",
+   "pdfPage": 211,
+   "page": 212,
+   "composer": "Rodney Jerkins/Lashawn Daniels/Cory Rooney/Fred Jerkins/Jennifer Lopez",
+   "artist": "Jennifer Lopez",
+   "conf": "med"
+  },
+  {
+   "title": "If You Leave Me Now",
+   "pdfPage": 213,
+   "page": 214,
+   "composer": "Peter Cetera",
+   "artist": "Chicago",
+   "conf": "med"
+  },
+  {
+   "title": "It’s Gonna Be Me",
+   "pdfPage": 215,
+   "page": 216,
+   "artist": "*N Sync",
+   "conf": "med"
+  },
+  {
+   "title": "It’s Still Rock and Roll to Me",
+   "pdfPage": 204,
+   "page": 205,
+   "composer": "Billy Joel",
+   "artist": "Billy Joel",
+   "conf": "med"
+  },
+  {
+   "title": "Jack and Diane",
+   "pdfPage": 217,
+   "page": 218,
+   "composer": "John Mellencamp",
+   "artist": "John Mellencamp",
+   "conf": "med"
+  },
+  {
+   "title": "Just Give Me a Reason",
+   "pdfPage": 219,
+   "page": 220,
+   "composer": "Alecia Moore/Jeff Bhasker/Nate Ruess",
+   "artist": "Pink featuring Nate Ruess",
+   "conf": "med"
+  },
+  {
+   "title": "Just My Imagination (Running Away with Me)",
+   "pdfPage": 225,
+   "page": 226,
+   "composer": "Norman Whitfield/Barrett Strong",
+   "artist": "The Temptations",
+   "conf": "high"
+  },
+  {
+   "title": "Kiss from a Rose",
+   "pdfPage": 222,
+   "page": 223,
+   "composer": "Henry Olusegun Adeola Samuel",
+   "artist": "Seal",
+   "conf": "med"
+  },
+  {
+   "title": "Knockin’ on Heaven’s Door",
+   "pdfPage": 227,
+   "page": 228,
+   "composer": "Bob Dylan",
+   "artist": "Eric Clapton/Bob Dylan",
+   "conf": "med"
+  },
+  {
+   "title": "Kokomo",
+   "pdfPage": 229,
+   "page": 230,
+   "composer": "John Phillips/Terry Melcher/Mike Love/Scott McKenzie",
+   "artist": "The Beach Boys",
+   "conf": "med"
+  },
+  {
+   "title": "Lady in Red",
+   "pdfPage": 231,
+   "page": 232,
+   "composer": "Chris D Burgh",
+   "artist": "Chris DeBurgh",
+   "conf": "med"
+  },
+  {
+   "title": "Lady Marmalade",
+   "pdfPage": 233,
+   "page": 234,
+   "composer": "Kenny Nolan/Robert Crew",
+   "artist": "Christina Aguilera, Lil’ Kim, Mya & Pink",
+   "conf": "med"
+  },
+  {
+   "title": "Last Kiss",
+   "pdfPage": 235,
+   "page": 236,
+   "composer": "Wayne Cochran M",
+   "artist": "Pearl Jam",
+   "conf": "med"
+  },
+  {
+   "title": "Le Freak",
+   "pdfPage": 237,
+   "page": 238,
+   "composer": "Nile Rodgers/Bernard Edwards",
+   "artist": "Chic",
+   "conf": "med"
+  },
+  {
+   "title": "Lean on Me",
+   "pdfPage": 239,
+   "page": 240,
+   "composer": "Bill Withers",
+   "artist": "Bill Withers",
+   "conf": "med"
+  },
+  {
+   "title": "Let’s Dance",
+   "pdfPage": 241,
+   "page": 242,
+   "composer": "David Bowie",
+   "artist": "David Bowie",
+   "conf": "high"
+  },
+  {
+   "title": "Let’s Get It On",
+   "pdfPage": 243,
+   "page": 244,
+   "artist": "Marvin Gaye",
+   "conf": "med"
+  },
+  {
+   "title": "Like a Prayer",
+   "pdfPage": 245,
+   "page": 246,
+   "composer": "Patrick Leonard/Madonna Ciccone",
+   "artist": "Madonna",
+   "conf": "med"
+  },
+  {
+   "title": "Locked Out of Heaven",
+   "pdfPage": 247,
+   "page": 248,
+   "composer": "Bruno Mars/Ari Levine/Philip Lawrence",
+   "artist": "Bruno Mars",
+   "conf": "med"
+  },
+  {
+   "title": "The Look of Love",
+   "pdfPage": 249,
+   "page": 250,
+   "composer": "Hal David/Burt Bacharach",
+   "artist": "Dusty Springfield",
+   "conf": "med"
+  },
+  {
+   "title": "Love Me Like You Do",
+   "pdfPage": 251,
+   "page": 252,
+   "composer": "Max Martin/Savan Kotecha/Ilya/Ali Payami/Tove Lo",
+   "artist": "Ellie Goulding",
+   "conf": "med"
+  },
+  {
+   "title": "Lowdown",
+   "pdfPage": 257,
+   "page": 258,
+   "composer": "Boz Scaggs/David Paich",
+   "artist": "Boz Scaggs",
+   "conf": "med"
+  },
+  {
+   "title": "Mad World",
+   "pdfPage": 259,
+   "page": 260,
+   "composer": "Roland Orzabal",
+   "artist": "Tears for Fears",
+   "conf": "med"
+  },
+  {
+   "title": "Maggie May",
+   "pdfPage": 261,
+   "page": 262,
+   "composer": "Rod Stewart/Martin Quittenton",
+   "artist": "Rod Stewart",
+   "conf": "med"
+  },
+  {
+   "title": "Man in the Mirror",
+   "pdfPage": 263,
+   "page": 264,
+   "composer": "Glen Ballard/Siedah Garrett",
+   "artist": "Michael Jackson",
+   "conf": "high"
+  },
+  {
+   "title": "Mandy",
+   "pdfPage": 265,
+   "page": 266,
+   "composer": "Scott English/Richard Kerr",
+   "artist": "Barry Manilow",
+   "conf": "med"
+  },
+  {
+   "title": "Midnight Rider",
+   "pdfPage": 267,
+   "page": 268,
+   "composer": "Gregg Allman/Robert Kim Payne",
+   "artist": "The Allman Brothers Band",
+   "conf": "med"
+  },
+  {
+   "title": "Million Reasons",
+   "pdfPage": 269,
+   "page": 270,
+   "composer": "Stephani Germanotta",
+   "artist": "Lady Gaga",
+   "conf": "med"
+  },
+  {
+   "title": "Missing You",
+   "pdfPage": 271,
+   "page": 272,
+   "composer": "John Waite/Charles Sanford/Mark Leonard",
+   "artist": "John Waite",
+   "conf": "med"
+  },
+  {
+   "title": "Mr. Jones",
+   "pdfPage": 273,
+   "page": 274,
+   "composer": "Adam Duritz/David Bryson/Charles Gillingham/Matthew Malley/Steve Bowman/Daniel Vickrey/Ben Mize",
+   "artist": "Counting Crows",
+   "conf": "med"
+  },
+  {
+   "title": "More Than Words",
+   "pdfPage": 254,
+   "page": 255,
+   "composer": "Nuno Bettencourt/Gary Cherone",
+   "artist": "Extreme",
+   "conf": "med"
+  },
+  {
+   "title": "Moves Like Jagger",
+   "pdfPage": 277,
+   "page": 278,
+   "composer": "Adam Levine/Benjamin Levin/Ammar Malik/Shellback",
+   "artist": "Maroon 5",
+   "conf": "med"
+  },
+  {
+   "title": "New Sensation",
+   "pdfPage": 279,
+   "page": 280,
+   "composer": "Andrew Farriss/Michael Hutchence",
+   "artist": "INXS",
+   "conf": "med"
+  },
+  {
+   "title": "No Rain",
+   "pdfPage": 281,
+   "page": 282,
+   "artist": "Blind Melon",
+   "conf": "high",
+   "composer": "Blind Melon"
+  },
+  {
+   "title": "One",
+   "pdfPage": 283,
+   "page": 284,
+   "composer": "Bono/The",
+   "artist": "U2",
+   "conf": "med"
+  },
+  {
+   "title": "One Headlight",
+   "pdfPage": 285,
+   "page": 286,
+   "composer": "Jakob Dylan",
+   "artist": "The Wallflowers",
+   "conf": "med"
+  },
+  {
+   "title": "100 Years",
+   "pdfPage": 287,
+   "page": 288,
+   "composer": "John Ondrasik",
+   "artist": "Five for Fighting",
+   "conf": "med"
+  },
+  {
+   "title": "The One I Love",
+   "pdfPage": 293,
+   "page": 294,
+   "composer": "William Berry/Peter Buck/Michael Mills/Michael Stipe",
+   "artist": "R.E.M.",
+   "conf": "med"
+  },
+  {
+   "title": "One Thing Leads to Another",
+   "pdfPage": 295,
+   "page": 296,
+   "composer": "Cy Curnin/Jamie West-Oram/Adam Woods/Rupert Greenall/Alfred Agius",
+   "artist": "The Fixx",
+   "conf": "med"
+  },
+  {
+   "title": "Our Lips Are Sealed",
+   "pdfPage": 297,
+   "page": 298,
+   "composer": "Jane Wiedlin/Terry Hall",
+   "artist": "The Go-Go’s",
+   "conf": "med"
+  },
+  {
+   "title": "Oye Como Va",
+   "pdfPage": 299,
+   "page": 300,
+   "composer": "Tito Puente",
+   "artist": "Santana",
+   "conf": "med"
+  },
+  {
+   "title": "Peaceful Easy Feeling",
+   "pdfPage": 290,
+   "page": 291,
+   "composer": "Jack Tempchin",
+   "artist": "Eagles",
+   "conf": "med"
+  },
+  {
+   "title": "Poker Face",
+   "pdfPage": 301,
+   "page": 302,
+   "composer": "Stefani Germanotta/R O",
+   "artist": "Lady Gaga",
+   "conf": "high"
+  },
+  {
+   "title": "Proud Mary",
+   "pdfPage": 303,
+   "page": 304,
+   "composer": "John Fogerty",
+   "artist": "Creedence Clearwater Revival",
+   "conf": "med"
+  },
+  {
+   "title": "Pure Imagination",
+   "pdfPage": 305,
+   "page": 306,
+   "composer": "Leslie Bricusse/Anthony Newley",
+   "artist": "Gene Wilder",
+   "conf": "med"
+  },
+  {
+   "title": "Put Your Records On",
+   "pdfPage": 307,
+   "page": 308,
+   "composer": "John Beck/Steven Chrisanthou/Corinne Bailey Rae",
+   "artist": "Corinne Bailey Rae",
+   "conf": "med"
+  },
+  {
+   "title": "Rainy Days and Mondays",
+   "pdfPage": 309,
+   "page": 310,
+   "composer": "Paul Williams/Roger Nichols",
+   "artist": "The Carpenters",
+   "conf": "med"
+  },
+  {
+   "title": "Red, Red Wine",
+   "pdfPage": 311,
+   "page": 312,
+   "composer": "Neil Diamond D G a /E G /A D G",
+   "artist": "UB40",
+   "conf": "med"
+  },
+  {
+   "title": "Rehab",
+   "pdfPage": 313,
+   "page": 314,
+   "composer": "Amy Winehouse",
+   "artist": "Amy Winehouse",
+   "conf": "med"
+  },
+  {
+   "title": "Right Here, Right Now",
+   "pdfPage": 315,
+   "page": 316,
+   "composer": "Michael Edwards",
+   "artist": "Jesus Jones",
+   "conf": "med"
+  },
+  {
+   "title": "Rise Up",
+   "pdfPage": 317,
+   "page": 318,
+   "composer": "Cassandra Batie/Jennifer Decilveo M",
+   "artist": "Andra Day",
+   "conf": "med"
+  },
+  {
+   "title": "Rock the Casbah",
+   "pdfPage": 319,
+   "page": 320,
+   "composer": "Joe Strummer/Mick Jones/Topper Headon",
+   "artist": "The Clash",
+   "conf": "high"
+  },
+  {
+   "title": "Rosanna",
+   "pdfPage": 321,
+   "page": 322,
+   "composer": "David Paich",
+   "artist": "Toto",
+   "conf": "med"
+  },
+  {
+   "title": "The Rose",
+   "pdfPage": 323,
+   "page": 324,
+   "composer": "Amanda M Broom",
+   "artist": "Bette Midler",
+   "conf": "med"
+  },
+  {
+   "title": "Royals",
+   "pdfPage": 325,
+   "page": 326,
+   "composer": "Ella Yelich-O'connor/Joel Little",
+   "artist": "Lorde",
+   "conf": "med"
+  },
+  {
+   "title": "Runaway Train",
+   "pdfPage": 327,
+   "page": 328,
+   "artist": "Soul Aslyum",
+   "conf": "med"
+  },
+  {
+   "title": "Sailing",
+   "pdfPage": 329,
+   "page": 330,
+   "composer": "Christopher Cross",
+   "artist": "Christopher Cross",
+   "conf": "med"
+  },
+  {
+   "title": "Saving All My Love for You",
+   "pdfPage": 331,
+   "page": 332,
+   "composer": "Gerry Goffin/Michael Masser",
+   "artist": "Whitney Houston",
+   "conf": "med"
+  },
+  {
+   "title": "Say Something",
+   "pdfPage": 334,
+   "page": 335,
+   "composer": "Ian Axel/Chad Vaccarino/Mike Campbell",
+   "artist": "A Great Big World",
+   "conf": "med"
+  },
+  {
+   "title": "Sea of Love",
+   "pdfPage": 337,
+   "page": 338,
+   "composer": "George Khoury/Philip Baptiste G B C",
+   "artist": "Phil Phillips/The Honeydrippers",
+   "conf": "med"
+  },
+  {
+   "title": "Shake It Off",
+   "pdfPage": 339,
+   "page": 340,
+   "composer": "Taylor Swift/Max Martin/Shellback",
+   "artist": "Taylor Swift",
+   "conf": "high"
+  },
+  {
+   "title": "Shape of You",
+   "pdfPage": 342,
+   "page": 343,
+   "composer": "Ed Sheeran/Kevin Briggs/Kandi Burruss/Tameka Cottle/Steve Mac/Johnny McDaid C F a B C F a B",
+   "artist": "Ed Sheeran",
+   "conf": "med"
+  },
+  {
+   "title": "She Drives Me Crazy",
+   "pdfPage": 345,
+   "page": 346,
+   "composer": "David Steele/Roland Gift",
+   "artist": "Fine Young Cannibals",
+   "conf": "med"
+  },
+  {
+   "title": "She Works Hard for the Money",
+   "pdfPage": 347,
+   "page": 348,
+   "composer": "Donna Summer/Michael Omartian",
+   "artist": "Donna Summer",
+   "conf": "med"
+  },
+  {
+   "title": "So Far Away",
+   "pdfPage": 349,
+   "page": 350,
+   "composer": "Carole King",
+   "artist": "Carole King/Rod Stewart",
+   "conf": "med"
+  },
+  {
+   "title": "Songbird",
+   "pdfPage": 351,
+   "page": 352,
+   "composer": "Christine M Vie",
+   "artist": "Fleetwood Mac",
+   "conf": "med"
+  },
+  {
+   "title": "Stand by Me",
+   "pdfPage": 353,
+   "page": 354,
+   "composer": "Jerry Leiber/Mike Stoller/Ben E. King",
+   "artist": "Ben E. King",
+   "conf": "med"
+  },
+  {
+   "title": "Stay",
+   "pdfPage": 355,
+   "page": 356,
+   "composer": "Lisa Loeb",
+   "artist": "Lisa Loeb & Nine Stories",
+   "conf": "med"
+  },
+  {
+   "title": "Story of My Life",
+   "pdfPage": 358,
+   "page": 359,
+   "composer": "Jamie Scott/John Henry Ryan/Julian Bunetta/Harry Styles/Liam Payne/Louis Tomlinson/Niall Horan/Zain Malik",
+   "artist": "One Direction",
+   "conf": "med"
+  },
+  {
+   "title": "Sunny",
+   "pdfPage": 361,
+   "page": 362,
+   "composer": "Bobby Hebb",
+   "artist": "Bobby Hebb",
+   "conf": "high"
+  },
+  {
+   "title": "Surrender",
+   "pdfPage": 363,
+   "page": 364,
+   "composer": "Rick Nielsen",
+   "artist": "Cheap Trick",
+   "conf": "med"
+  },
+  {
+   "title": "Sweet Caroline",
+   "pdfPage": 369,
+   "page": 370,
+   "composer": "Neil Diamond",
+   "artist": "Neil Diamond",
+   "conf": "med"
+  },
+  {
+   "title": "Sweet Dreams (Are Made of This)",
+   "pdfPage": 371,
+   "page": 372,
+   "composer": "Annie Lennox/David Stewart",
+   "artist": "Eurythmics",
+   "conf": "med"
+  },
+  {
+   "title": "Take My Breath Away (Love Theme)",
+   "pdfPage": 373,
+   "page": 374,
+   "composer": "Giorgio Moroder/Tom Whitlock",
+   "artist": "Berlin",
+   "conf": "med"
+  },
+  {
+   "title": "Take on Me",
+   "pdfPage": 375,
+   "page": 376,
+   "composer": "Pal Waaktaar/Magne Furuholmne/Morton Harket",
+   "artist": "a-ha",
+   "conf": "med"
+  },
+  {
+   "title": "Tangled Up in Blue",
+   "pdfPage": 377,
+   "page": 378,
+   "composer": "Bob Dylan",
+   "artist": "Bob Dylan",
+   "conf": "med"
+  },
+  {
+   "title": "Thinking Out Loud",
+   "pdfPage": 366,
+   "page": 367,
+   "composer": "Ed Sheeran/Amy Wadge",
+   "artist": "Ed Sheeran",
+   "conf": "med"
+  },
+  {
+   "title": "A Thousand Years",
+   "pdfPage": 379,
+   "page": 380,
+   "composer": "David Hodges/Christina Perri",
+   "artist": "Christina Perri",
+   "conf": "med"
+  },
+  {
+   "title": "Torn",
+   "pdfPage": 382,
+   "page": 383,
+   "composer": "Phil Thornalley/Scott Cutler/Anne Previn",
+   "artist": "Natalie Imbruglia",
+   "conf": "high"
+  },
+  {
+   "title": "True Colors",
+   "pdfPage": 385,
+   "page": 386,
+   "composer": "Billy Steinberg/Tom Kelly",
+   "artist": "Cyndi Lauper/Phil Collins",
+   "conf": "med"
+  },
+  {
+   "title": "Up Where We Belong",
+   "pdfPage": 391,
+   "page": 392,
+   "composer": "Will Jennings/Buffy Sainte-Marie/Jack Nitzsche",
+   "artist": "Joe Cocker & Jennifer Warnes",
+   "conf": "med"
+  },
+  {
+   "title": "Uptown Funk",
+   "pdfPage": 388,
+   "page": 389,
+   "composer": "Mark Ronson/Bruno Mars/Philip Lawrence/Jeff Bhasker/Devon Gallaspy/Nicholaus Williams/Lonnie Simmons/Ronnie Wilson/Charles Wilson/Rudolph Taylor/Robert Wilson",
+   "artist": "Mark Ronson featuring Bruno Mars",
+   "conf": "med"
+  },
+  {
+   "title": "Walk on By",
+   "pdfPage": 393,
+   "page": 394,
+   "artist": "Dionne Warwick",
+   "conf": "med"
+  },
+  {
+   "title": "Walking in Memphis",
+   "pdfPage": 395,
+   "page": 396,
+   "composer": "Marc Cohn",
+   "artist": "Lonestar",
+   "conf": "med"
+  },
+  {
+   "title": "We Are Young",
+   "pdfPage": 399,
+   "page": 400,
+   "composer": "Jeff Bhasker/Andrew Dost/Jack Antonoff/Nate Ruess",
+   "artist": "fun. featuring Janelle Monae",
+   "conf": "med"
+  },
+  {
+   "title": "What a Fool Believes",
+   "pdfPage": 405,
+   "page": 406,
+   "composer": "Michael McDonald/Kenny Loggins",
+   "artist": "The Doobie Brothers",
+   "conf": "med"
+  },
+  {
+   "title": "What Makes You Beautiful",
+   "pdfPage": 402,
+   "page": 403,
+   "composer": "Savan Kotecha/Rami Yacoub/Carl Falk",
+   "artist": "One Direction",
+   "conf": "med"
+  },
+  {
+   "title": "What the World Needs Now Is Love",
+   "pdfPage": 407,
+   "page": 408,
+   "composer": "Hal David/Burt Bacharach",
+   "artist": "Jackie DeShannon/Dionne Warwick",
+   "conf": "high"
+  },
+  {
+   "title": "What You Won’t Do for Love",
+   "pdfPage": 409,
+   "page": 410,
+   "artist": "Bobby Caldwell",
+   "conf": "med"
+  },
+  {
+   "title": "What’s Going On",
+   "pdfPage": 411,
+   "page": 412,
+   "composer": "Renaldo Benson/Alfred Cleveland/Marvin Gaye",
+   "artist": "Marvin Gaye",
+   "conf": "med"
+  },
+  {
+   "title": "What’s Love Got to Do with It",
+   "pdfPage": 413,
+   "page": 414,
+   "artist": "Tina Turner",
+   "conf": "med"
+  },
+  {
+   "title": "What’s Up",
+   "pdfPage": 415,
+   "page": 416,
+   "composer": "Linda Perry",
+   "artist": "4 Non Blondes",
+   "conf": "med"
+  },
+  {
+   "title": "With a Little Help from My Friends",
+   "pdfPage": 417,
+   "page": 418,
+   "composer": "John Lennon/Paul M Cartney E B F",
+   "artist": "The Beatles/Joe Cocker",
+   "conf": "med"
+  },
+  {
+   "title": "With or Without You",
+   "pdfPage": 419,
+   "page": 420,
+   "artist": "U2",
+   "conf": "med"
+  },
+  {
+   "title": "Wonderful Tonight",
+   "pdfPage": 421,
+   "page": 422,
+   "composer": "Eric Clapton",
+   "artist": "Eric Clapton",
+   "conf": "med"
+  },
+  {
+   "title": "Wonderwall",
+   "pdfPage": 423,
+   "page": 424,
+   "composer": "Noel Gallagher",
+   "artist": "Oasis",
+   "conf": "med"
+  },
+  {
+   "title": "You Are So Beautiful",
+   "pdfPage": 441,
+   "page": 442,
+   "composer": "Billy Preston/Bruce Fisher",
+   "artist": "Joe Cocker",
+   "conf": "high"
+  },
+  {
+   "title": "You Can Call Me Al",
+   "pdfPage": 425,
+   "page": 426,
+   "composer": "Paul Simon",
+   "artist": "Paul Simon",
+   "conf": "med"
+  },
+  {
+   "title": "You Can’t Hurry Love",
+   "pdfPage": 427,
+   "page": 428,
+   "artist": "The Supremes/Phil Collins",
+   "conf": "med"
+  },
+  {
+   "title": "You Give Love a Bad Name",
+   "pdfPage": 429,
+   "page": 430,
+   "composer": "Jon Bon Jovi/Desmond Child/Richie Sambora",
+   "artist": "Bon Jovi",
+   "conf": "med"
+  },
+  {
+   "title": "You Oughta Know",
+   "pdfPage": 431,
+   "page": 432,
+   "composer": "Alanis Morissette/Glen Ballard",
+   "artist": "Alanis Morissette",
+   "conf": "med"
+  },
+  {
+   "title": "You Should Be Dancing",
+   "pdfPage": 433,
+   "page": 434,
+   "composer": "Barry Gibb/Robin Gibb/Maurice Gibb",
+   "artist": "The Bee Gees",
+   "conf": "med"
+  },
+  {
+   "title": "You’re the Inspiration",
+   "pdfPage": 435,
+   "page": 436,
+   "composer": "Peter Cetera/David Foster",
+   "artist": "Chicago",
+   "conf": "med"
+  },
+  {
+   "title": "You’re the One That I Want",
+   "pdfPage": 437,
+   "page": 438,
+   "composer": "John Farrar",
+   "artist": "Olivia Newton-John and John Travolta",
+   "conf": "med"
+  },
+  {
+   "title": "You’ve Lost That Lovin’ Feelin’",
+   "pdfPage": 439,
+   "page": 440,
+   "composer": "Barry Mann/Cynthia Weil/Phil Spector C D /D",
+   "artist": "The Righteous Brothers",
+   "conf": "med"
+  }
+ ]
+}

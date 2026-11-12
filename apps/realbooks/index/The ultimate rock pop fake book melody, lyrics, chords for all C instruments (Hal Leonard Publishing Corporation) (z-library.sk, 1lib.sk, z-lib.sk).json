@@ -1,0 +1,3435 @@
+{
+ "file": "The ultimate rock pop fake book melody, lyrics, chords for all C instruments (Hal Leonard Publishing Corporation) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+ "method": "mixed",
+ "offset": 2,
+ "notes": "Contents on pdf pp.4-9 (text layer + 300dpi OCR of number columns, then fixed by eye against page images). Page numbers: 507 of 539 entries confirmed by finding the title on pdf page = printed+2 in the OCR text layer; 21 more confirmed by tesseract of the full page; American Pie corrected to p.24 after finding it on pdf 26. No artist credits are printed in this book (no 'Recorded by' lines; top-fifth OCR of all pages found none), so artist is omitted. Composer filled only where the page text layer gave a clean credit; many tunes start mid-page so composer is blank for many. Tune pages checked by rendering: see report. Contents-page index lists some songs at the same page (two tunes on one page). Composer kept only for tunes alone on their page with a clean credit; some may be partial (co-writers dropped by OCR).",
+ "entries": [
+  {
+   "title": "Afternoon Delight",
+   "pdfPage": 10,
+   "page": 8,
+   "conf": "high"
+  },
+  {
+   "title": "Against The Wind",
+   "pdfPage": 11,
+   "page": 9,
+   "composer": "Words and Music by BOB SEGER",
+   "conf": "high"
+  },
+  {
+   "title": "Ain’t No Woman (Like The One I’ve Got)",
+   "pdfPage": 12,
+   "page": 10,
+   "composer": "Words and Music by DENNIS LAMBERT",
+   "conf": "high"
+  },
+  {
+   "title": "All Alone Am I",
+   "pdfPage": 13,
+   "page": 11,
+   "conf": "high"
+  },
+  {
+   "title": "All I Wanna Do",
+   "pdfPage": 14,
+   "page": 12,
+   "composer": "Words and Music by KEVIN GILBERT",
+   "conf": "high"
+  },
+  {
+   "title": "All My Loving",
+   "pdfPage": 13,
+   "page": 11,
+   "conf": "high"
+  },
+  {
+   "title": "All Night Long (All Night)",
+   "pdfPage": 16,
+   "page": 14,
+   "conf": "high"
+  },
+  {
+   "title": "All The Young Dudes",
+   "pdfPage": 22,
+   "page": 20,
+   "conf": "high"
+  },
+  {
+   "title": "All Through The Night",
+   "pdfPage": 23,
+   "page": 21,
+   "conf": "high"
+  },
+  {
+   "title": "Amanda",
+   "pdfPage": 18,
+   "page": 16,
+   "conf": "high"
+  },
+  {
+   "title": "America",
+   "pdfPage": 20,
+   "page": 18,
+   "composer": "Words and Music by NEIL DIAMOND",
+   "conf": "high"
+  },
+  {
+   "title": "American Pie",
+   "pdfPage": 26,
+   "page": 24,
+   "conf": "high"
+  },
+  {
+   "title": "American Woman",
+   "pdfPage": 24,
+   "page": 22,
+   "composer": "Written by BURTON CUMMINGS, RANDY BACHMAN, GARY PETERSON and JIM KALE",
+   "conf": "high"
+  },
+  {
+   "title": "Angel Baby",
+   "pdfPage": 26,
+   "page": 24,
+   "conf": "high"
+  },
+  {
+   "title": "Annie’s Song",
+   "pdfPage": 28,
+   "page": 26,
+   "conf": "high"
+  },
+  {
+   "title": "Anticipation",
+   "pdfPage": 29,
+   "page": 27,
+   "conf": "high"
+  },
+  {
+   "title": "At My Front Door",
+   "pdfPage": 30,
+   "page": 28,
+   "conf": "high"
+  },
+  {
+   "title": "Axel F",
+   "pdfPage": 31,
+   "page": 29,
+   "composer": "By HAROLD FALTERMEYER",
+   "conf": "high"
+  },
+  {
+   "title": "Baby Come Back",
+   "pdfPage": 32,
+   "page": 30,
+   "conf": "high"
+  },
+  {
+   "title": "Baby Don’t Get Hooked On Me",
+   "pdfPage": 34,
+   "page": 32,
+   "conf": "high"
+  },
+  {
+   "title": "Baby, I’m-A Want You",
+   "pdfPage": 35,
+   "page": 33,
+   "conf": "high"
+  },
+  {
+   "title": "Baby, It’s You",
+   "pdfPage": 36,
+   "page": 34,
+   "conf": "high"
+  },
+  {
+   "title": "Baby One More Time",
+   "pdfPage": 42,
+   "page": 40,
+   "conf": "high"
+  },
+  {
+   "title": "Bad Blood",
+   "pdfPage": 43,
+   "page": 41,
+   "conf": "high"
+  },
+  {
+   "title": "Bad Day",
+   "pdfPage": 38,
+   "page": 36,
+   "conf": "high"
+  },
+  {
+   "title": "Bad Medicine",
+   "pdfPage": 40,
+   "page": 38,
+   "composer": "Words and Music by JON BON JOVI",
+   "conf": "high"
+  },
+  {
+   "title": "Baker Street",
+   "pdfPage": 50,
+   "page": 48,
+   "conf": "high"
+  },
+  {
+   "title": "Band On The Run",
+   "pdfPage": 36,
+   "page": 34,
+   "conf": "high"
+  },
+  {
+   "title": "Batdance",
+   "pdfPage": 44,
+   "page": 42,
+   "conf": "high"
+  },
+  {
+   "title": "Be My Baby",
+   "pdfPage": 37,
+   "page": 35,
+   "conf": "high"
+  },
+  {
+   "title": "Beach Baby",
+   "pdfPage": 51,
+   "page": 49,
+   "composer": "Words and Music by JOHN CARTER",
+   "conf": "high"
+  },
+  {
+   "title": "Beast Of Burden",
+   "pdfPage": 46,
+   "page": 44,
+   "conf": "high"
+  },
+  {
+   "title": "Beautiful",
+   "pdfPage": 48,
+   "page": 46,
+   "conf": "high"
+  },
+  {
+   "title": "(It’s A) Beautiful Morning",
+   "pdfPage": 49,
+   "page": 47,
+   "conf": "high"
+  },
+  {
+   "title": "Because Of You",
+   "pdfPage": 54,
+   "page": 52,
+   "conf": "high"
+  },
+  {
+   "title": "Believe What You Say",
+   "pdfPage": 52,
+   "page": 50,
+   "composer": "Words and Music by DORSEY BURNETTE",
+   "conf": "high"
+  },
+  {
+   "title": "Bennie And The Jets",
+   "pdfPage": 53,
+   "page": 51,
+   "composer": "Words and Music by ELTON JOHN and BERNIE TAUPIN",
+   "conf": "high"
+  },
+  {
+   "title": "Best Thing That Ever Happened To Me",
+   "pdfPage": 59,
+   "page": 57,
+   "conf": "high"
+  },
+  {
+   "title": "Big Girls Don’t Cry",
+   "pdfPage": 57,
+   "page": 55,
+   "conf": "high"
+  },
+  {
+   "title": "The Big Hurt",
+   "pdfPage": 58,
+   "page": 56,
+   "conf": "high"
+  },
+  {
+   "title": "Bird Dog",
+   "pdfPage": 47,
+   "page": 45,
+   "conf": "high"
+  },
+  {
+   "title": "The Birds And The Bees",
+   "pdfPage": 55,
+   "page": 53,
+   "conf": "high"
+  },
+  {
+   "title": "Bitch",
+   "pdfPage": 78,
+   "page": 76,
+   "conf": "high"
+  },
+  {
+   "title": "Bits And Pieces",
+   "pdfPage": 60,
+   "page": 58,
+   "composer": "Words and Music by DAVE CLARK and MIKE SMITH",
+   "conf": "high"
+  },
+  {
+   "title": "Black Denim Trousers And Motorcycle Boots",
+   "pdfPage": 56,
+   "page": 54,
+   "conf": "high"
+  },
+  {
+   "title": "Black Hole Sun",
+   "pdfPage": 61,
+   "page": 59,
+   "conf": "high"
+  },
+  {
+   "title": "Blue On Blue",
+   "pdfPage": 63,
+   "page": 61,
+   "conf": "high"
+  },
+  {
+   "title": "Blue Velvet",
+   "pdfPage": 62,
+   "page": 60,
+   "conf": "high"
+  },
+  {
+   "title": "Bobby’s Girl",
+   "pdfPage": 63,
+   "page": 61,
+   "conf": "high"
+  },
+  {
+   "title": "Bohemian Rhapsody",
+   "pdfPage": 66,
+   "page": 64,
+   "conf": "high"
+  },
+  {
+   "title": "Bony Moronie",
+   "pdfPage": 64,
+   "page": 62,
+   "conf": "high"
+  },
+  {
+   "title": "Boogie Fever",
+   "pdfPage": 68,
+   "page": 66,
+   "conf": "high"
+  },
+  {
+   "title": "Boogie Oogie Oogie",
+   "pdfPage": 65,
+   "page": 63,
+   "composer": "Words and Music by JANICE MARIE JOHNSON",
+   "conf": "high"
+  },
+  {
+   "title": "Born To Be Wild",
+   "pdfPage": 71,
+   "page": 69,
+   "conf": "high"
+  },
+  {
+   "title": "Born Too Late",
+   "pdfPage": 70,
+   "page": 68,
+   "composer": "Lyric by FRED TOBIAS",
+   "conf": "high"
+  },
+  {
+   "title": "A Boy Named Sue",
+   "pdfPage": 74,
+   "page": 72,
+   "composer": "Words and Music by SHEL SILVERSTEIN",
+   "conf": "high"
+  },
+  {
+   "title": "Bread And Butter",
+   "pdfPage": 69,
+   "page": 67,
+   "conf": "high"
+  },
+  {
+   "title": "Breakaway",
+   "pdfPage": 72,
+   "page": 70,
+   "conf": "high"
+  },
+  {
+   "title": "Bristol Stomp",
+   "pdfPage": 75,
+   "page": 73,
+   "conf": "high"
+  },
+  {
+   "title": "Brother Louie",
+   "pdfPage": 76,
+   "page": 74,
+   "composer": "Words and Music by ERROL BROWN",
+   "conf": "high"
+  },
+  {
+   "title": "Brown Eyed Girl",
+   "pdfPage": 77,
+   "page": 75,
+   "conf": "high"
+  },
+  {
+   "title": "Burning Love",
+   "pdfPage": 80,
+   "page": 78,
+   "conf": "high"
+  },
+  {
+   "title": "Busted",
+   "pdfPage": 75,
+   "page": 73,
+   "conf": "high"
+  },
+  {
+   "title": "Butterfly",
+   "pdfPage": 80,
+   "page": 78,
+   "conf": "high"
+  },
+  {
+   "title": "C’est La Vie",
+   "pdfPage": 81,
+   "page": 79,
+   "conf": "high"
+  },
+  {
+   "title": "Call Me",
+   "pdfPage": 83,
+   "page": 81,
+   "conf": "high"
+  },
+  {
+   "title": "Can’t Smile Without You",
+   "pdfPage": 84,
+   "page": 82,
+   "composer": "Words and Music by CHRIS ARNOLD",
+   "conf": "high"
+  },
+  {
+   "title": "Candle In The Wind",
+   "pdfPage": 82,
+   "page": 80,
+   "composer": "Words and Music by ELTON JOHN",
+   "conf": "high"
+  },
+  {
+   "title": "The Candy Man",
+   "pdfPage": 79,
+   "page": 77,
+   "conf": "high"
+  },
+  {
+   "title": "Car Wash",
+   "pdfPage": 85,
+   "page": 83,
+   "conf": "high"
+  },
+  {
+   "title": "Carrie",
+   "pdfPage": 86,
+   "page": 84,
+   "conf": "high"
+  },
+  {
+   "title": "Cars",
+   "pdfPage": 87,
+   "page": 85,
+   "conf": "high"
+  },
+  {
+   "title": "Catch A Falling Star",
+   "pdfPage": 87,
+   "page": 85,
+   "conf": "high"
+  },
+  {
+   "title": "Chains",
+   "pdfPage": 90,
+   "page": 88,
+   "conf": "high"
+  },
+  {
+   "title": "Chances Are",
+   "pdfPage": 91,
+   "page": 89,
+   "composer": "Words by AL STILLMAN",
+   "conf": "high"
+  },
+  {
+   "title": "Cinco Robles (Five Oaks)",
+   "pdfPage": 90,
+   "page": 88,
+   "conf": "high"
+  },
+  {
+   "title": "Clocks",
+   "pdfPage": 88,
+   "page": 86,
+   "composer": "Words and Music by GUY BERRYMAN, JON BUCKLAND",
+   "conf": "high"
+  },
+  {
+   "title": "The Closer You Get",
+   "pdfPage": 95,
+   "page": 93,
+   "composer": "Words and Music by JAMES PENNINGTON",
+   "conf": "high"
+  },
+  {
+   "title": "Cold As Ice",
+   "pdfPage": 94,
+   "page": 92,
+   "composer": "Words and Music by MICK JONES and LOU GRAMM",
+   "conf": "high"
+  },
+  {
+   "title": "Cold-Hearted",
+   "pdfPage": 92,
+   "page": 90,
+   "conf": "high"
+  },
+  {
+   "title": "Come And Get It",
+   "pdfPage": 93,
+   "page": 91,
+   "conf": "high"
+  },
+  {
+   "title": "Come As You Are",
+   "pdfPage": 101,
+   "page": 99,
+   "conf": "high"
+  },
+  {
+   "title": "Come Back When You Grow Up",
+   "pdfPage": 100,
+   "page": 98,
+   "composer": "Words and Music by MARTHA SHARP",
+   "conf": "high"
+  },
+  {
+   "title": "Come On Eileen",
+   "pdfPage": 98,
+   "page": 96,
+   "composer": "Words and Music by KEVIN ROWLAND JAMES PATTERSON and KEVIN ADAMS",
+   "conf": "high"
+  },
+  {
+   "title": "Come Together",
+   "pdfPage": 99,
+   "page": 97,
+   "conf": "high"
+  },
+  {
+   "title": "Complicated",
+   "pdfPage": 96,
+   "page": 94,
+   "composer": "Words and Music by AVRIL LAVIGNE, LAUREN CHRISTY",
+   "conf": "high"
+  },
+  {
+   "title": "Corrine Corrina",
+   "pdfPage": 106,
+   "page": 104,
+   "composer": "Words and Music by J.M. WILLIAMS",
+   "conf": "high"
+  },
+  {
+   "title": "Cover Girl",
+   "pdfPage": 102,
+   "page": 100,
+   "conf": "high"
+  },
+  {
+   "title": "Coward Of The County",
+   "pdfPage": 104,
+   "page": 102,
+   "composer": "Words and Music by ROGER BOWLING and BILLY EDD WHEELER",
+   "conf": "high"
+  },
+  {
+   "title": "Cracklin’ Rosie",
+   "pdfPage": 103,
+   "page": 101,
+   "conf": "high"
+  },
+  {
+   "title": "Cradle Of Love",
+   "pdfPage": 107,
+   "page": 105,
+   "conf": "high"
+  },
+  {
+   "title": "Creeque Alley",
+   "pdfPage": 110,
+   "page": 108,
+   "composer": "Words and Music by JOHN PHILLIPS",
+   "conf": "high"
+  },
+  {
+   "title": "Cry Like A Baby",
+   "pdfPage": 108,
+   "page": 106,
+   "composer": "Words and Music by DAN PENN and SPOONER OLDHAM",
+   "conf": "high"
+  },
+  {
+   "title": "Cuts Like A Knife",
+   "pdfPage": 109,
+   "page": 107,
+   "composer": "Words and Music by BRYAN ADAMS",
+   "conf": "high"
+  },
+  {
+   "title": "Cycles",
+   "pdfPage": 112,
+   "page": 110,
+   "conf": "high"
+  },
+  {
+   "title": "Dance With Me",
+   "pdfPage": 114,
+   "page": 112,
+   "composer": "Words and Music by PETER BROWN and ROBERT RANS",
+   "conf": "high"
+  },
+  {
+   "title": "Dancing With Myself",
+   "pdfPage": 116,
+   "page": 114,
+   "composer": "Words and Music by BILLY IDOL",
+   "conf": "high"
+  },
+  {
+   "title": "Daniel",
+   "pdfPage": 113,
+   "page": 111,
+   "composer": "Words and Music by ELTON JOHN",
+   "conf": "high"
+  },
+  {
+   "title": "Darling, Be Home Soon",
+   "pdfPage": 118,
+   "page": 116,
+   "conf": "high"
+  },
+  {
+   "title": "Daydream Believer",
+   "pdfPage": 111,
+   "page": 109,
+   "conf": "high"
+  },
+  {
+   "title": "De Do Do Do, De Da Da Da",
+   "pdfPage": 120,
+   "page": 118,
+   "composer": "Words and Music by STING",
+   "conf": "high"
+  },
+  {
+   "title": "Deja Vu",
+   "pdfPage": 122,
+   "page": 120,
+   "conf": "high"
+  },
+  {
+   "title": "Detroit City",
+   "pdfPage": 123,
+   "page": 121,
+   "conf": "high"
+  },
+  {
+   "title": "Diana",
+   "pdfPage": 122,
+   "page": 120,
+   "conf": "high"
+  },
+  {
+   "title": "Do You Know What I Mean",
+   "pdfPage": 124,
+   "page": 122,
+   "conf": "high"
+  },
+  {
+   "title": "Do You Know Where You’re Going To?",
+   "pdfPage": 125,
+   "page": 123,
+   "conf": "high"
+  },
+  {
+   "title": "Do You Really Want To Hurt Me",
+   "pdfPage": 126,
+   "page": 124,
+   "composer": "Words and Music by GEORGE O’DOWD",
+   "conf": "high"
+  },
+  {
+   "title": "Do You Wanna Make Love",
+   "pdfPage": 127,
+   "page": 125,
+   "conf": "high"
+  },
+  {
+   "title": "Doctor! Doctor!",
+   "pdfPage": 128,
+   "page": 126,
+   "composer": "Words and Music by TOM BAILEY ALANNAH CURRIE and JOE LEEWAY",
+   "conf": "high"
+  },
+  {
+   "title": "Don’t",
+   "pdfPage": 129,
+   "page": 127,
+   "conf": "high"
+  },
+  {
+   "title": "Don’t Give Up On Us",
+   "pdfPage": 135,
+   "page": 133,
+   "conf": "high"
+  },
+  {
+   "title": "Don’t Know Why",
+   "pdfPage": 138,
+   "page": 136,
+   "conf": "high"
+  },
+  {
+   "title": "Don’t Let The Sun Catch You Crying",
+   "pdfPage": 131,
+   "page": 129,
+   "conf": "high"
+  },
+  {
+   "title": "Don’t Lose My Number",
+   "pdfPage": 132,
+   "page": 130,
+   "conf": "high"
+  },
+  {
+   "title": "Don’t Stop",
+   "pdfPage": 137,
+   "page": 135,
+   "conf": "high"
+  },
+  {
+   "title": "Don’t Talk To Strangers",
+   "pdfPage": 136,
+   "page": 134,
+   "conf": "high"
+  },
+  {
+   "title": "Don’t Worry, Be Happy",
+   "pdfPage": 130,
+   "page": 128,
+   "conf": "high"
+  },
+  {
+   "title": "Don’t You Want Me",
+   "pdfPage": 134,
+   "page": 132,
+   "conf": "high"
+  },
+  {
+   "title": "Downtown",
+   "pdfPage": 139,
+   "page": 137,
+   "conf": "high"
+  },
+  {
+   "title": "Dreamer",
+   "pdfPage": 140,
+   "page": 138,
+   "conf": "high"
+  },
+  {
+   "title": "Drift Away",
+   "pdfPage": 140,
+   "page": 138,
+   "conf": "high"
+  },
+  {
+   "title": "Early In The Morning",
+   "pdfPage": 142,
+   "page": 140,
+   "composer": "Words and Music by MIKE LEANDER",
+   "conf": "high"
+  },
+  {
+   "title": "Easy",
+   "pdfPage": 152,
+   "page": 150,
+   "composer": "Words and Music by LIONEL RICHIE",
+   "conf": "high"
+  },
+  {
+   "title": "Ebony And Ivory",
+   "pdfPage": 143,
+   "page": 141,
+   "conf": "high"
+  },
+  {
+   "title": "Eddie My Love",
+   "pdfPage": 144,
+   "page": 142,
+   "composer": "Words and Music by AARON COLLINS",
+   "conf": "high"
+  },
+  {
+   "title": "867-5309/Jenny",
+   "pdfPage": 146,
+   "page": 144,
+   "conf": "high"
+  },
+  {
+   "title": "Eli’s Comin’",
+   "pdfPage": 150,
+   "page": 148,
+   "composer": "Words and Music by LAURA NYRO",
+   "conf": "high"
+  },
+  {
+   "title": "Endlessly",
+   "pdfPage": 147,
+   "page": 145,
+   "conf": "high"
+  },
+  {
+   "title": "Eres Tu/Touch The Wind",
+   "pdfPage": 145,
+   "page": 143,
+   "conf": "high"
+  },
+  {
+   "title": "Eve Of Destruction",
+   "pdfPage": 148,
+   "page": 146,
+   "composer": "Words and Music by P.F. SLOAN and STEVE BARRI",
+   "conf": "high"
+  },
+  {
+   "title": "Every Rose Has Its Thorn",
+   "pdfPage": 151,
+   "page": 149,
+   "composer": "Words and Music by BOBBY DALL, BRETT MICHAELS, BRUCE JOHANNESSON and RIKKI ROCKETT",
+   "conf": "high"
+  },
+  {
+   "title": "Everybody Loves Somebody",
+   "pdfPage": 149,
+   "page": 147,
+   "conf": "high"
+  },
+  {
+   "title": "Eye Of The Tiger",
+   "pdfPage": 153,
+   "page": 151,
+   "conf": "high"
+  },
+  {
+   "title": "Feel Like Makin’ Love",
+   "pdfPage": 157,
+   "page": 155,
+   "conf": "high"
+  },
+  {
+   "title": "Feels Like The First Time",
+   "pdfPage": 154,
+   "page": 152,
+   "composer": "Words and Music by MICK JONES",
+   "conf": "high"
+  },
+  {
+   "title": "Fernando",
+   "pdfPage": 156,
+   "page": 154,
+   "composer": "Words and Music by BENNY ANDERSSON",
+   "conf": "high"
+  },
+  {
+   "title": "Fields Of Gold",
+   "pdfPage": 155,
+   "page": 153,
+   "conf": "high"
+  },
+  {
+   "title": "Fight For Your Right (To Party)",
+   "pdfPage": 158,
+   "page": 156,
+   "conf": "high"
+  },
+  {
+   "title": "The First Time Ever I Saw Your Face",
+   "pdfPage": 159,
+   "page": 157,
+   "conf": "high"
+  },
+  {
+   "title": "The Fool On The Hill",
+   "pdfPage": 164,
+   "page": 162,
+   "conf": "high"
+  },
+  {
+   "title": "(Now And Then There’s) A Fool Such As I",
+   "pdfPage": 161,
+   "page": 159,
+   "conf": "high"
+  },
+  {
+   "title": "Foolish Beat",
+   "pdfPage": 168,
+   "page": 166,
+   "composer": "Words and Music by DEBORAH GIBSON",
+   "conf": "high"
+  },
+  {
+   "title": "Foolish Heart",
+   "pdfPage": 160,
+   "page": 158,
+   "conf": "high"
+  },
+  {
+   "title": "Foolish Little Girl",
+   "pdfPage": 164,
+   "page": 162,
+   "conf": "high"
+  },
+  {
+   "title": "For Your Love",
+   "pdfPage": 163,
+   "page": 161,
+   "conf": "high"
+  },
+  {
+   "title": "Forever Young",
+   "pdfPage": 162,
+   "page": 160,
+   "conf": "high"
+  },
+  {
+   "title": "Free Fallin’",
+   "pdfPage": 166,
+   "page": 164,
+   "conf": "high"
+  },
+  {
+   "title": "Free Ride",
+   "pdfPage": 165,
+   "page": 163,
+   "conf": "high"
+  },
+  {
+   "title": "Galveston",
+   "pdfPage": 166,
+   "page": 164,
+   "conf": "high"
+  },
+  {
+   "title": "Garden Party",
+   "pdfPage": 170,
+   "page": 168,
+   "conf": "high"
+  },
+  {
+   "title": "Gentle On My Mind",
+   "pdfPage": 167,
+   "page": 165,
+   "conf": "high"
+  },
+  {
+   "title": "Get Ready",
+   "pdfPage": 172,
+   "page": 170,
+   "conf": "high"
+  },
+  {
+   "title": "Gimme Some Lovin’",
+   "pdfPage": 172,
+   "page": 170,
+   "conf": "high"
+  },
+  {
+   "title": "Give Me Just A Little More Time",
+   "pdfPage": 170,
+   "page": 168,
+   "conf": "high"
+  },
+  {
+   "title": "The Godfather (Love Theme)",
+   "pdfPage": 171,
+   "page": 169,
+   "conf": "high"
+  },
+  {
+   "title": "Good Thing",
+   "pdfPage": 180,
+   "page": 178,
+   "conf": "high"
+  },
+  {
+   "title": "Got To Be There",
+   "pdfPage": 173,
+   "page": 171,
+   "conf": "high"
+  },
+  {
+   "title": "Got To Get You Into My Life",
+   "pdfPage": 169,
+   "page": 167,
+   "composer": "Words and Music by JOHN LENNON",
+   "conf": "high"
+  },
+  {
+   "title": "Greenback Dollar",
+   "pdfPage": 177,
+   "page": 175,
+   "conf": "high"
+  },
+  {
+   "title": "Greenfields",
+   "pdfPage": 178,
+   "page": 176,
+   "conf": "high"
+  },
+  {
+   "title": "Guilty",
+   "pdfPage": 176,
+   "page": 174,
+   "conf": "high"
+  },
+  {
+   "title": "Guitar Boogie Shuffle",
+   "pdfPage": 174,
+   "page": 172,
+   "conf": "high"
+  },
+  {
+   "title": "Gypsy",
+   "pdfPage": 174,
+   "page": 172,
+   "conf": "high"
+  },
+  {
+   "title": "Happy Birthday Sweet Sixteen",
+   "pdfPage": 178,
+   "page": 176,
+   "conf": "high"
+  },
+  {
+   "title": "Hard Headed Woman",
+   "pdfPage": 179,
+   "page": 177,
+   "conf": "high"
+  },
+  {
+   "title": "Harlem Shuffle",
+   "pdfPage": 182,
+   "page": 180,
+   "conf": "high"
+  },
+  {
+   "title": "Have I Told You Lately That I Love You",
+   "pdfPage": 182,
+   "page": 180,
+   "conf": "high"
+  },
+  {
+   "title": "Haven’t Got Time For The Pain",
+   "pdfPage": 181,
+   "page": 179,
+   "composer": "Words and Music by CARLY SIMON",
+   "conf": "high"
+  },
+  {
+   "title": "He’ll Have To Go",
+   "pdfPage": 183,
+   "page": 181,
+   "conf": "high"
+  },
+  {
+   "title": "Head Over Heels",
+   "pdfPage": 184,
+   "page": 182,
+   "composer": "Words and Music by ROLAND ORZABAL and CURT SMITH",
+   "conf": "high"
+  },
+  {
+   "title": "Heart Of Glass",
+   "pdfPage": 186,
+   "page": 184,
+   "composer": "Words and Music by DEBORAH HARRY and CHRIS STEIN",
+   "conf": "high"
+  },
+  {
+   "title": "Heartache Tonight",
+   "pdfPage": 192,
+   "page": 190,
+   "composer": "Words and Music by JOHN DAVID SOUTHER",
+   "conf": "high"
+  },
+  {
+   "title": "Heartbreaker",
+   "pdfPage": 185,
+   "page": 183,
+   "composer": "Words and Music by CLIFF WADE",
+   "conf": "high"
+  },
+  {
+   "title": "Heaven Help Us All",
+   "pdfPage": 188,
+   "page": 186,
+   "composer": "Words and Music by RONALD MILLER",
+   "conf": "high"
+  },
+  {
+   "title": "Help!",
+   "pdfPage": 189,
+   "page": 187,
+   "conf": "high"
+  },
+  {
+   "title": "Help Me Make It Through The Night",
+   "pdfPage": 190,
+   "page": 188,
+   "conf": "high"
+  },
+  {
+   "title": "Here You Come Again",
+   "pdfPage": 194,
+   "page": 192,
+   "conf": "high"
+  },
+  {
+   "title": "Hey There Lonely Girl (Hey There Lonely Boy)",
+   "pdfPage": 190,
+   "page": 188,
+   "conf": "high"
+  },
+  {
+   "title": "(Hey, Won’t You Play) Another Somebody Done Somebody Wrong Song",
+   "pdfPage": 191,
+   "page": 189,
+   "conf": "high"
+  },
+  {
+   "title": "High Hopes",
+   "pdfPage": 195,
+   "page": 193,
+   "conf": "high"
+  },
+  {
+   "title": "Higher Ground",
+   "pdfPage": 196,
+   "page": 194,
+   "conf": "high"
+  },
+  {
+   "title": "Hill Street Blues Theme",
+   "pdfPage": 193,
+   "page": 191,
+   "conf": "high"
+  },
+  {
+   "title": "Hold On Loosely",
+   "pdfPage": 196,
+   "page": 194,
+   "conf": "high"
+  },
+  {
+   "title": "Holding Back The Years",
+   "pdfPage": 198,
+   "page": 196,
+   "conf": "high"
+  },
+  {
+   "title": "Honky Cat",
+   "pdfPage": 200,
+   "page": 198,
+   "composer": "Words and Music by ELTON JOHN",
+   "conf": "high"
+  },
+  {
+   "title": "Hot Rod Lincoln",
+   "pdfPage": 197,
+   "page": 195,
+   "conf": "high"
+  },
+  {
+   "title": "How Can I Fall?",
+   "pdfPage": 202,
+   "page": 200,
+   "composer": "Words and Music by DAVID GLASPER, MARCUS LILLINGTON, IAN SPICE and MICHAEL DELAHUNTY",
+   "conf": "high"
+  },
+  {
+   "title": "How Do You Talk To An Angel",
+   "pdfPage": 199,
+   "page": 197,
+   "composer": "Words and Music by STEVE VRELE",
+   "conf": "high"
+  },
+  {
+   "title": "How Sweet It Is (To Be Loved By You)",
+   "pdfPage": 203,
+   "page": 201,
+   "composer": "Words and Music by EDWARD HOLLAND",
+   "conf": "high"
+  },
+  {
+   "title": "Hurdy Gurdy Man",
+   "pdfPage": 204,
+   "page": 202,
+   "conf": "high"
+  },
+  {
+   "title": "Hurt So Bad",
+   "pdfPage": 205,
+   "page": 203,
+   "composer": "Words and Music by TEDDY RANDAZZO",
+   "conf": "high"
+  },
+  {
+   "title": "I Can See For Miles",
+   "pdfPage": 206,
+   "page": 204,
+   "conf": "high"
+  },
+  {
+   "title": "I Can’t Get Next To You",
+   "pdfPage": 207,
+   "page": 205,
+   "composer": "Words and Music by BARRETT STRONG",
+   "conf": "high"
+  },
+  {
+   "title": "I Can’t Stand It",
+   "pdfPage": 208,
+   "page": 206,
+   "conf": "high"
+  },
+  {
+   "title": "I Didn’t Mean To Turn You On",
+   "pdfPage": 209,
+   "page": 207,
+   "conf": "high"
+  },
+  {
+   "title": "I Don’t Know How To Love Him",
+   "pdfPage": 212,
+   "page": 210,
+   "conf": "high"
+  },
+  {
+   "title": "I Don’t Want To Wait",
+   "pdfPage": 210,
+   "page": 208,
+   "conf": "high"
+  },
+  {
+   "title": "I Feel The Earth Move",
+   "pdfPage": 218,
+   "page": 216,
+   "composer": "Words and Music by CAROLE KING",
+   "conf": "high"
+  },
+  {
+   "title": "I Guess That’s Why They Call It The Blues",
+   "pdfPage": 219,
+   "page": 217,
+   "composer": "Words and Music by ELTON JOHN",
+   "conf": "high"
+  },
+  {
+   "title": "(Til) I Kissed You",
+   "pdfPage": 214,
+   "page": 212,
+   "conf": "high"
+  },
+  {
+   "title": "I Like Dreamin’",
+   "pdfPage": 212,
+   "page": 210,
+   "conf": "high"
+  },
+  {
+   "title": "I Love A Rainy Night",
+   "pdfPage": 213,
+   "page": 211,
+   "conf": "high"
+  },
+  {
+   "title": "I Say A Little Prayer",
+   "pdfPage": 214,
+   "page": 212,
+   "conf": "high"
+  },
+  {
+   "title": "I Shot The Sheriff",
+   "pdfPage": 215,
+   "page": 213,
+   "conf": "high"
+  },
+  {
+   "title": "I Touch Myself",
+   "pdfPage": 216,
+   "page": 214,
+   "composer": "Words and Music by BILLY STEINBERG",
+   "conf": "high"
+  },
+  {
+   "title": "I Want It That Way",
+   "pdfPage": 220,
+   "page": 218,
+   "composer": "Words and Music by MARTIN SANDBERG and ANDREAS CARLSSON",
+   "conf": "high"
+  },
+  {
+   "title": "I Want To Hold Your Hand",
+   "pdfPage": 217,
+   "page": 215,
+   "conf": "high"
+  },
+  {
+   "title": "I Will Always Love You",
+   "pdfPage": 222,
+   "page": 220,
+   "composer": "Words and Music by DOLLY PARTON",
+   "conf": "high"
+  },
+  {
+   "title": "I Will Follow Him (I Will Follow You)",
+   "pdfPage": 224,
+   "page": 222,
+   "conf": "high"
+  },
+  {
+   "title": "I Wish You Love",
+   "pdfPage": 221,
+   "page": 219,
+   "conf": "high"
+  },
+  {
+   "title": "I’ll Be Home",
+   "pdfPage": 228,
+   "page": 226,
+   "conf": "high"
+  },
+  {
+   "title": "I’ll Be There For You",
+   "pdfPage": 226,
+   "page": 224,
+   "composer": "Words and Music by JON BON JOVI",
+   "conf": "high"
+  },
+  {
+   "title": "I’ll Wait",
+   "pdfPage": 229,
+   "page": 227,
+   "conf": "high"
+  },
+  {
+   "title": "I’m A Believer",
+   "pdfPage": 232,
+   "page": 230,
+   "composer": "Words and Music by NEIL DIAMOND",
+   "conf": "high"
+  },
+  {
+   "title": "I’m In You",
+   "pdfPage": 231,
+   "page": 229,
+   "conf": "high"
+  },
+  {
+   "title": "I’m Leaving It Up To You",
+   "pdfPage": 228,
+   "page": 226,
+   "conf": "high"
+  },
+  {
+   "title": "I’m Not In Love",
+   "pdfPage": 233,
+   "page": 231,
+   "composer": "Words and Music by ERIC STEWART and GRAHAM GOULDMAN",
+   "conf": "high"
+  },
+  {
+   "title": "I’m So Excited",
+   "pdfPage": 230,
+   "page": 228,
+   "composer": "Words and Music by TREVOR LAWRENCE, JUNE POINTER, RUTH POINTER and ANITA POINTER",
+   "conf": "high"
+  },
+  {
+   "title": "I’m Sorry",
+   "pdfPage": 239,
+   "page": 237,
+   "conf": "high"
+  },
+  {
+   "title": "I’ve Gotta Get A Message To You",
+   "pdfPage": 239,
+   "page": 237,
+   "conf": "high"
+  },
+  {
+   "title": "I’ve Told Ev’ry Little Star",
+   "pdfPage": 234,
+   "page": 232,
+   "conf": "high"
+  },
+  {
+   "title": "Ice Ice Baby",
+   "pdfPage": 234,
+   "page": 232,
+   "conf": "high"
+  },
+  {
+   "title": "If You Go Away",
+   "pdfPage": 237,
+   "page": 235,
+   "conf": "high"
+  },
+  {
+   "title": "If You Leave",
+   "pdfPage": 236,
+   "page": 234,
+   "composer": "Words and Music by PAUL HUMPHREYS",
+   "conf": "high"
+  },
+  {
+   "title": "In My House",
+   "pdfPage": 240,
+   "page": 238,
+   "conf": "high"
+  },
+  {
+   "title": "In My Room",
+   "pdfPage": 242,
+   "page": 240,
+   "conf": "high"
+  },
+  {
+   "title": "In Your Room",
+   "pdfPage": 238,
+   "page": 236,
+   "composer": "Words and Music by SUSANNA HOFFS",
+   "conf": "high"
+  },
+  {
+   "title": "Indian Reservation",
+   "pdfPage": 246,
+   "page": 244,
+   "conf": "high"
+  },
+  {
+   "title": "Instant Karma",
+   "pdfPage": 242,
+   "page": 240,
+   "conf": "high"
+  },
+  {
+   "title": "The Israelites",
+   "pdfPage": 241,
+   "page": 239,
+   "conf": "high"
+  },
+  {
+   "title": "It Don’t Matter To Me",
+   "pdfPage": 245,
+   "page": 243,
+   "conf": "high"
+  },
+  {
+   "title": "It Was Almost Like A Song",
+   "pdfPage": 243,
+   "page": 241,
+   "conf": "high"
+  },
+  {
+   "title": "It’s Almost Tomorrow",
+   "pdfPage": 241,
+   "page": 239,
+   "conf": "high"
+  },
+  {
+   "title": "It’s My Turn",
+   "pdfPage": 244,
+   "page": 242,
+   "conf": "high"
+  },
+  {
+   "title": "It’s Not Unusual",
+   "pdfPage": 246,
+   "page": 244,
+   "conf": "high"
+  },
+  {
+   "title": "It’s Raining Men",
+   "pdfPage": 248,
+   "page": 246,
+   "conf": "high"
+  },
+  {
+   "title": "It’s The Same Old Song",
+   "pdfPage": 250,
+   "page": 248,
+   "composer": "Words and Music by EDWARD HOLLAND",
+   "conf": "high"
+  },
+  {
+   "title": "It’s Too Late",
+   "pdfPage": 247,
+   "page": 245,
+   "conf": "high"
+  },
+  {
+   "title": "Jazzman",
+   "pdfPage": 251,
+   "page": 249,
+   "composer": "Words and Music by DAVID PALMER and CAROLE KING",
+   "conf": "high"
+  },
+  {
+   "title": "Jeremy",
+   "pdfPage": 252,
+   "page": 250,
+   "composer": "Music by JEFF AMENT",
+   "conf": "high"
+  },
+  {
+   "title": "Jet",
+   "pdfPage": 254,
+   "page": 252,
+   "conf": "high"
+  },
+  {
+   "title": "Jimmy Mack",
+   "pdfPage": 255,
+   "page": 253,
+   "conf": "high"
+  },
+  {
+   "title": "Judy In Disguise (With Glasses)",
+   "pdfPage": 256,
+   "page": 254,
+   "conf": "high"
+  },
+  {
+   "title": "Jump (For My Love)",
+   "pdfPage": 258,
+   "page": 256,
+   "composer": "Words and Music by MARTI SHARRON",
+   "conf": "high"
+  },
+  {
+   "title": "Jump, Jive An’ Wail",
+   "pdfPage": 259,
+   "page": 257,
+   "conf": "high"
+  },
+  {
+   "title": "Just Dropped In (To See What Condition My Condition Was In)",
+   "pdfPage": 260,
+   "page": 258,
+   "conf": "high"
+  },
+  {
+   "title": "Just Once",
+   "pdfPage": 256,
+   "page": 254,
+   "conf": "high"
+  },
+  {
+   "title": "Just The Two Of Us",
+   "pdfPage": 254,
+   "page": 252,
+   "conf": "high"
+  },
+  {
+   "title": "Just To See Her",
+   "pdfPage": 262,
+   "page": 260,
+   "composer": "Words and Music by JIMMY GEORGE",
+   "conf": "high"
+  },
+  {
+   "title": "Keep A-Knockin’",
+   "pdfPage": 263,
+   "page": 261,
+   "conf": "high"
+  },
+  {
+   "title": "Keep On Loving You",
+   "pdfPage": 264,
+   "page": 262,
+   "composer": "Words and Music by KEVIN CRONIN",
+   "conf": "high"
+  },
+  {
+   "title": "Kiss And Say Goodbye",
+   "pdfPage": 267,
+   "page": 265,
+   "conf": "high"
+  },
+  {
+   "title": "Kisses Sweeter Than Wine",
+   "pdfPage": 261,
+   "page": 259,
+   "conf": "high"
+  },
+  {
+   "title": "Kung Fu Fighting",
+   "pdfPage": 265,
+   "page": 263,
+   "composer": "Words and Music by CARL DOUGLAS",
+   "conf": "high"
+  },
+  {
+   "title": "Lady Marmalade",
+   "pdfPage": 268,
+   "page": 266,
+   "conf": "high"
+  },
+  {
+   "title": "Land Of Confusion",
+   "pdfPage": 266,
+   "page": 264,
+   "conf": "high"
+  },
+  {
+   "title": "Le Freak",
+   "pdfPage": 269,
+   "page": 267,
+   "composer": "Words and Music by NILE RODGERS",
+   "conf": "high"
+  },
+  {
+   "title": "Leader Of The Band",
+   "pdfPage": 270,
+   "page": 268,
+   "conf": "high"
+  },
+  {
+   "title": "Leather And Lace",
+   "pdfPage": 272,
+   "page": 270,
+   "conf": "high"
+  },
+  {
+   "title": "Legs",
+   "pdfPage": 282,
+   "page": 280,
+   "composer": "Words and Music by BILLY F GIBBONS",
+   "conf": "high"
+  },
+  {
+   "title": "Let ’Em In",
+   "pdfPage": 271,
+   "page": 269,
+   "conf": "high"
+  },
+  {
+   "title": "Let It Be",
+   "pdfPage": 274,
+   "page": 272,
+   "composer": "Words and Music by JOHN LENNON",
+   "conf": "high"
+  },
+  {
+   "title": "Let It Be Me (Je T’appartiens)",
+   "pdfPage": 273,
+   "page": 271,
+   "conf": "high"
+  },
+  {
+   "title": "Let The Good Times Roll",
+   "pdfPage": 275,
+   "page": 273,
+   "conf": "high"
+  },
+  {
+   "title": "Let Your Love Flow",
+   "pdfPage": 278,
+   "page": 276,
+   "conf": "high"
+  },
+  {
+   "title": "Let’s Go Crazy",
+   "pdfPage": 276,
+   "page": 274,
+   "conf": "high"
+  },
+  {
+   "title": "Let’s Hear It For The Boy",
+   "pdfPage": 283,
+   "page": 281,
+   "composer": "Words by DEAN PITCHFORD",
+   "conf": "high"
+  },
+  {
+   "title": "Let’s Twist Again",
+   "pdfPage": 279,
+   "page": 277,
+   "conf": "high"
+  },
+  {
+   "title": "Like A Prayer",
+   "pdfPage": 286,
+   "page": 284,
+   "composer": "Words and Music by PATRICK LEONARD",
+   "conf": "high"
+  },
+  {
+   "title": "Like A Rock",
+   "pdfPage": 280,
+   "page": 278,
+   "composer": "Words and Music by BOB SEGER",
+   "conf": "high"
+  },
+  {
+   "title": "Little Bit O’ Soul",
+   "pdfPage": 290,
+   "page": 288,
+   "composer": "Words and Music by JOHN SHAKESPEARE",
+   "conf": "high"
+  },
+  {
+   "title": "Little Darlin’",
+   "pdfPage": 281,
+   "page": 279,
+   "conf": "high"
+  },
+  {
+   "title": "Little Lies",
+   "pdfPage": 284,
+   "page": 282,
+   "conf": "high"
+  },
+  {
+   "title": "Little Willy",
+   "pdfPage": 285,
+   "page": 283,
+   "composer": "Words and Music by MICHAEL CHAPMAN",
+   "conf": "high"
+  },
+  {
+   "title": "Live To Tell",
+   "pdfPage": 288,
+   "page": 286,
+   "composer": "Words and Music by MADONNA CICCONE",
+   "conf": "high"
+  },
+  {
+   "title": "Lonely Days",
+   "pdfPage": 289,
+   "page": 287,
+   "conf": "high"
+  },
+  {
+   "title": "Lonely Ol’ Night",
+   "pdfPage": 292,
+   "page": 290,
+   "composer": "Words and Music by JOHN MELLENCAMP",
+   "conf": "high"
+  },
+  {
+   "title": "Lonely Teardrops",
+   "pdfPage": 291,
+   "page": 289,
+   "conf": "high"
+  },
+  {
+   "title": "Lonesome Town",
+   "pdfPage": 293,
+   "page": 291,
+   "conf": "high"
+  },
+  {
+   "title": "Longfellow Serenade",
+   "pdfPage": 294,
+   "page": 292,
+   "composer": "Words and Music by NEIL DIAMOND",
+   "conf": "high"
+  },
+  {
+   "title": "Look In My Eyes Pretty Woman",
+   "pdfPage": 295,
+   "page": 293,
+   "composer": "Words and Music by DENNIS LAMBERT",
+   "conf": "high"
+  },
+  {
+   "title": "Lookin’ For Love",
+   "pdfPage": 296,
+   "page": 294,
+   "composer": "Words and Music by WANDA MALLETTE",
+   "conf": "high"
+  },
+  {
+   "title": "Lost In Love",
+   "pdfPage": 297,
+   "page": 295,
+   "conf": "high"
+  },
+  {
+   "title": "Love Grows (Where My Rosemary Goes)",
+   "pdfPage": 300,
+   "page": 298,
+   "composer": "Words and Music by TONY MACAULAY",
+   "conf": "high"
+  },
+  {
+   "title": "Love Is A Battlefield",
+   "pdfPage": 298,
+   "page": 296,
+   "composer": "Words and Music by MIKE CHAPMAN",
+   "conf": "high"
+  },
+  {
+   "title": "Love Is All Around",
+   "pdfPage": 301,
+   "page": 299,
+   "conf": "high"
+  },
+  {
+   "title": "Love Is Thicker Than Water",
+   "pdfPage": 299,
+   "page": 297,
+   "conf": "high"
+  },
+  {
+   "title": "Love Me Do",
+   "pdfPage": 302,
+   "page": 300,
+   "conf": "high"
+  },
+  {
+   "title": "Love On The Rocks",
+   "pdfPage": 303,
+   "page": 301,
+   "composer": "Words and Music by NEIL DIAMOND and GILBERT BECAUD",
+   "conf": "high"
+  },
+  {
+   "title": "Love Rollercoaster",
+   "pdfPage": 302,
+   "page": 300,
+   "conf": "high"
+  },
+  {
+   "title": "Love You Inside Out",
+   "pdfPage": 304,
+   "page": 302,
+   "composer": "Words and Music by BARRY GIBB",
+   "conf": "high"
+  },
+  {
+   "title": "Love’s Grown Deep",
+   "pdfPage": 306,
+   "page": 304,
+   "composer": "Words and Music by KENNY NOLAN",
+   "conf": "high"
+  },
+  {
+   "title": "Loving You",
+   "pdfPage": 305,
+   "page": 303,
+   "conf": "high"
+  },
+  {
+   "title": "Low Rider",
+   "pdfPage": 307,
+   "page": 305,
+   "conf": "high"
+  },
+  {
+   "title": "MacArthur Park",
+   "pdfPage": 308,
+   "page": 306,
+   "composer": "Words and Music by JIMMY WEBB",
+   "conf": "high"
+  },
+  {
+   "title": "Magic Carpet Ride",
+   "pdfPage": 307,
+   "page": 305,
+   "conf": "high"
+  },
+  {
+   "title": "Make Me Lose Control",
+   "pdfPage": 310,
+   "page": 308,
+   "composer": "Words and Music by ERIC CARMEN",
+   "conf": "high"
+  },
+  {
+   "title": "Making Love Out Of Nothing At All",
+   "pdfPage": 312,
+   "page": 310,
+   "composer": "Words and Music by JIM STEINMAN",
+   "conf": "high"
+  },
+  {
+   "title": "Mambo No. 5 (A Little Bit Of...)",
+   "pdfPage": 314,
+   "page": 312,
+   "conf": "high"
+  },
+  {
+   "title": "A Man Without Love (Quando M’Innamoro)",
+   "pdfPage": 318,
+   "page": 316,
+   "conf": "high"
+  },
+  {
+   "title": "Mary In The Morning",
+   "pdfPage": 315,
+   "page": 313,
+   "conf": "high"
+  },
+  {
+   "title": "Maybe Baby",
+   "pdfPage": 311,
+   "page": 309,
+   "conf": "high"
+  },
+  {
+   "title": "Maybe I’m Amazed",
+   "pdfPage": 316,
+   "page": 314,
+   "conf": "high"
+  },
+  {
+   "title": "Mercy, Mercy Me (The Ecology)",
+   "pdfPage": 320,
+   "page": 318,
+   "composer": "Words and Music by MARVIN GAYE",
+   "conf": "high"
+  },
+  {
+   "title": "Miami Vice",
+   "pdfPage": 319,
+   "page": 317,
+   "composer": "By JAN HAMMER",
+   "conf": "high"
+  },
+  {
+   "title": "Midnight Confessions",
+   "pdfPage": 321,
+   "page": 319,
+   "conf": "high"
+  },
+  {
+   "title": "Mississippi Queen",
+   "pdfPage": 322,
+   "page": 320,
+   "composer": "Words and Music by LESLIE WEST, FELIX PAPPALARDI, CORKY LAING and DAVID REA SS",
+   "conf": "high"
+  },
+  {
+   "title": "Mr. Big Stuff",
+   "pdfPage": 323,
+   "page": 321,
+   "composer": "Words and Music by RALPH WILLIAMS",
+   "conf": "high"
+  },
+  {
+   "title": "Misunderstanding",
+   "pdfPage": 324,
+   "page": 322,
+   "conf": "high"
+  },
+  {
+   "title": "Mmm Mmm Mmm Mmm",
+   "pdfPage": 324,
+   "page": 322,
+   "conf": "high"
+  },
+  {
+   "title": "Monday, Monday",
+   "pdfPage": 317,
+   "page": 315,
+   "conf": "high"
+  },
+  {
+   "title": "Money",
+   "pdfPage": 325,
+   "page": 323,
+   "conf": "high"
+  },
+  {
+   "title": "Moonlight Feels Right",
+   "pdfPage": 332,
+   "page": 330,
+   "conf": "high"
+  },
+  {
+   "title": "More Today Than Yesterday",
+   "pdfPage": 334,
+   "page": 332,
+   "composer": "Words and Music by PAT UPTON",
+   "conf": "high"
+  },
+  {
+   "title": "Mr. Jones",
+   "pdfPage": 326,
+   "page": 324,
+   "conf": "high"
+  },
+  {
+   "title": "My Empty Arms",
+   "pdfPage": 331,
+   "page": 329,
+   "conf": "high"
+  },
+  {
+   "title": "My Love (Lionel Richie)",
+   "pdfPage": 330,
+   "page": 328,
+   "composer": "Words and Music by LIONEL RICHIE",
+   "conf": "high"
+  },
+  {
+   "title": "My Love (Paul McCartney)",
+   "pdfPage": 332,
+   "page": 330,
+   "conf": "high"
+  },
+  {
+   "title": "My Maria",
+   "pdfPage": 328,
+   "page": 326,
+   "conf": "high"
+  },
+  {
+   "title": "My Prayer",
+   "pdfPage": 328,
+   "page": 326,
+   "conf": "high"
+  },
+  {
+   "title": "My Way",
+   "pdfPage": 329,
+   "page": 327,
+   "conf": "high"
+  },
+  {
+   "title": "Neither One Of Us (Wants To Be The First To Say Goodbye)",
+   "pdfPage": 335,
+   "page": 333,
+   "conf": "high"
+  },
+  {
+   "title": "Never Gonna Let You Go",
+   "pdfPage": 336,
+   "page": 334,
+   "composer": "Words and Music by BARRY MANN",
+   "conf": "high"
+  },
+  {
+   "title": "Night",
+   "pdfPage": 333,
+   "page": 331,
+   "conf": "high"
+  },
+  {
+   "title": "The Night Chicago Died",
+   "pdfPage": 340,
+   "page": 338,
+   "composer": "Music by MITCH MURRAY",
+   "conf": "high"
+  },
+  {
+   "title": "The Night Owls",
+   "pdfPage": 339,
+   "page": 337,
+   "conf": "high"
+  },
+  {
+   "title": "No Matter What",
+   "pdfPage": 341,
+   "page": 339,
+   "conf": "high"
+  },
+  {
+   "title": "No No Song",
+   "pdfPage": 342,
+   "page": 340,
+   "conf": "high"
+  },
+  {
+   "title": "No, Not Much!",
+   "pdfPage": 342,
+   "page": 340,
+   "conf": "high"
+  },
+  {
+   "title": "No Rain",
+   "pdfPage": 346,
+   "page": 344,
+   "composer": "Words and Music by BLIND MELON",
+   "conf": "high"
+  },
+  {
+   "title": "Norman",
+   "pdfPage": 343,
+   "page": 341,
+   "conf": "high"
+  },
+  {
+   "title": "Nowhere Man",
+   "pdfPage": 345,
+   "page": 343,
+   "conf": "high"
+  },
+  {
+   "title": "#9 Dream",
+   "pdfPage": 344,
+   "page": 342,
+   "composer": "Words and Music by JOHN LENNON",
+   "conf": "high"
+  },
+  {
+   "title": "Oh Boy!",
+   "pdfPage": 347,
+   "page": 345,
+   "conf": "high"
+  },
+  {
+   "title": "Oh, Oh I’m Falling In Love Again",
+   "pdfPage": 349,
+   "page": 347,
+   "conf": "high"
+  },
+  {
+   "title": "On And On",
+   "pdfPage": 356,
+   "page": 354,
+   "conf": "high"
+  },
+  {
+   "title": "Once Bitten Twice Shy",
+   "pdfPage": 348,
+   "page": 346,
+   "conf": "high"
+  },
+  {
+   "title": "100 Years",
+   "pdfPage": 350,
+   "page": 348,
+   "conf": "high"
+  },
+  {
+   "title": "One Night",
+   "pdfPage": 352,
+   "page": 350,
+   "conf": "high"
+  },
+  {
+   "title": "Only Love Can Break A Heart",
+   "pdfPage": 347,
+   "page": 345,
+   "conf": "high"
+  },
+  {
+   "title": "Only Yesterday",
+   "pdfPage": 354,
+   "page": 352,
+   "composer": "Words and Music by RICHARD CARPENTER",
+   "conf": "high"
+  },
+  {
+   "title": "Ooby-Dooby",
+   "pdfPage": 352,
+   "page": 350,
+   "conf": "high"
+  },
+  {
+   "title": "The Other Woman",
+   "pdfPage": 357,
+   "page": 355,
+   "composer": "Words and Music by JESSIE MAE ROBINSON",
+   "conf": "high"
+  },
+  {
+   "title": "Our Day Will Come",
+   "pdfPage": 353,
+   "page": 351,
+   "conf": "high"
+  },
+  {
+   "title": "Our House",
+   "pdfPage": 358,
+   "page": 356,
+   "conf": "high"
+  },
+  {
+   "title": "Out Of The Blue",
+   "pdfPage": 360,
+   "page": 358,
+   "composer": "Words and Music by DEBORAH GIBSON",
+   "conf": "high"
+  },
+  {
+   "title": "Panama",
+   "pdfPage": 362,
+   "page": 360,
+   "composer": "Words and Music by DAVID LEE ROTH, EDWARD VAN HALEN, ALEX VAN HALEN and MICHAEL ANTHONY",
+   "conf": "high"
+  },
+  {
+   "title": "Paperback Writer",
+   "pdfPage": 363,
+   "page": 361,
+   "conf": "high"
+  },
+  {
+   "title": "Paradise City",
+   "pdfPage": 364,
+   "page": 362,
+   "conf": "high"
+  },
+  {
+   "title": "Patches",
+   "pdfPage": 361,
+   "page": 359,
+   "composer": "Words and Music by GENERAL JOHNSON",
+   "conf": "high"
+  },
+  {
+   "title": "Peg",
+   "pdfPage": 367,
+   "page": 365,
+   "conf": "high"
+  },
+  {
+   "title": "Perfect World",
+   "pdfPage": 372,
+   "page": 370,
+   "composer": "Words and Music by ALEX CALL",
+   "conf": "high"
+  },
+  {
+   "title": "Pick Up The Pieces",
+   "pdfPage": 366,
+   "page": 364,
+   "conf": "high"
+  },
+  {
+   "title": "Pieces Of April",
+   "pdfPage": 370,
+   "page": 368,
+   "conf": "high"
+  },
+  {
+   "title": "Pleasant Valley Sunday",
+   "pdfPage": 368,
+   "page": 366,
+   "composer": "Words and Music by GERRY GOFFIN and CAROLE KING",
+   "conf": "high"
+  },
+  {
+   "title": "Please Love Me Forever",
+   "pdfPage": 370,
+   "page": 368,
+   "conf": "high"
+  },
+  {
+   "title": "Please Please Me",
+   "pdfPage": 371,
+   "page": 369,
+   "conf": "high"
+  },
+  {
+   "title": "Poetry Man",
+   "pdfPage": 373,
+   "page": 371,
+   "conf": "high"
+  },
+  {
+   "title": "Poor Little Fool",
+   "pdfPage": 373,
+   "page": 371,
+   "conf": "high"
+  },
+  {
+   "title": "Pretty Little Angel Eyes",
+   "pdfPage": 378,
+   "page": 376,
+   "composer": "Words and Music by TOMMY BOYCE and CURTIS LEE",
+   "conf": "high"
+  },
+  {
+   "title": "Proud Mary",
+   "pdfPage": 374,
+   "page": 372,
+   "composer": "Words and Music by JOHN FOGERTY",
+   "conf": "high"
+  },
+  {
+   "title": "Puppy Love",
+   "pdfPage": 375,
+   "page": 373,
+   "conf": "high"
+  },
+  {
+   "title": "Purple Rain",
+   "pdfPage": 376,
+   "page": 374,
+   "conf": "high"
+  },
+  {
+   "title": "Que Sera, Sera (Whatever Will Be, Will Be)",
+   "pdfPage": 379,
+   "page": 377,
+   "conf": "high"
+  },
+  {
+   "title": "Quiet Village",
+   "pdfPage": 379,
+   "page": 377,
+   "conf": "high"
+  },
+  {
+   "title": "Ramblin’ Gamblin’ Man",
+   "pdfPage": 386,
+   "page": 384,
+   "conf": "high"
+  },
+  {
+   "title": "Ramblin’ Rose",
+   "pdfPage": 386,
+   "page": 384,
+   "conf": "high"
+  },
+  {
+   "title": "Rapper’s Delight",
+   "pdfPage": 387,
+   "page": 385,
+   "composer": "By NILE RODGERS",
+   "conf": "high"
+  },
+  {
+   "title": "Reach Out And Touch (Somebody’s Hand)",
+   "pdfPage": 380,
+   "page": 378,
+   "conf": "high"
+  },
+  {
+   "title": "Reach Out, I’ll Be There",
+   "pdfPage": 381,
+   "page": 379,
+   "conf": "high"
+  },
+  {
+   "title": "Ready To Take A Chance Again",
+   "pdfPage": 380,
+   "page": 378,
+   "conf": "high"
+  },
+  {
+   "title": "Real Love",
+   "pdfPage": 382,
+   "page": 380,
+   "conf": "high"
+  },
+  {
+   "title": "Reeling In The Years",
+   "pdfPage": 385,
+   "page": 383,
+   "conf": "high"
+  },
+  {
+   "title": "Refugee",
+   "pdfPage": 389,
+   "page": 387,
+   "conf": "high"
+  },
+  {
+   "title": "Remember (Walking In The Sand)",
+   "pdfPage": 384,
+   "page": 382,
+   "composer": "Words and Music by GEORGE MORTON",
+   "conf": "high"
+  },
+  {
+   "title": "Reunited",
+   "pdfPage": 390,
+   "page": 388,
+   "conf": "high"
+  },
+  {
+   "title": "Rhythm Of The Night",
+   "pdfPage": 388,
+   "page": 386,
+   "composer": "Words and Music by DIANE WARREN",
+   "conf": "high"
+  },
+  {
+   "title": "Ride Like The Wind",
+   "pdfPage": 391,
+   "page": 389,
+   "composer": "Words and Music by CHRISTOPHER CROSS",
+   "conf": "high"
+  },
+  {
+   "title": "Right Back Where We Started From",
+   "pdfPage": 394,
+   "page": 392,
+   "conf": "high"
+  },
+  {
+   "title": "Rock And Roll Is Here To Stay",
+   "pdfPage": 392,
+   "page": 390,
+   "composer": "Words and Music by DAVID WHITE",
+   "conf": "high"
+  },
+  {
+   "title": "Rock Island Line",
+   "pdfPage": 394,
+   "page": 392,
+   "conf": "high"
+  },
+  {
+   "title": "Rock’n Me",
+   "pdfPage": 397,
+   "page": 395,
+   "composer": "Words and Music by STEVE MILLER",
+   "conf": "high"
+  },
+  {
+   "title": "Rock On",
+   "pdfPage": 395,
+   "page": 393,
+   "conf": "high"
+  },
+  {
+   "title": "Rocket Man (I Think It’s Gonna Be A Long Long Time)",
+   "pdfPage": 396,
+   "page": 394,
+   "composer": "Words and Music by ELTON JOHN",
+   "conf": "high"
+  },
+  {
+   "title": "Roll With It",
+   "pdfPage": 398,
+   "page": 396,
+   "composer": "Words and Music by WILL JENNINGS",
+   "conf": "high"
+  },
+  {
+   "title": "Rosanna",
+   "pdfPage": 393,
+   "page": 391,
+   "conf": "high"
+  },
+  {
+   "title": "Roxanne",
+   "pdfPage": 399,
+   "page": 397,
+   "composer": "Words and Music by STING",
+   "conf": "high"
+  },
+  {
+   "title": "Ruby Baby",
+   "pdfPage": 400,
+   "page": 398,
+   "composer": "Words and Music by JERRY LEIBER and MIKE STOLLER",
+   "conf": "high"
+  },
+  {
+   "title": "Run Around",
+   "pdfPage": 402,
+   "page": 400,
+   "conf": "high"
+  },
+  {
+   "title": "Run To You",
+   "pdfPage": 401,
+   "page": 399,
+   "composer": "Words and Music by BRYAN ADAMS and JIM VALLANCE",
+   "conf": "high"
+  },
+  {
+   "title": "Running Scared",
+   "pdfPage": 404,
+   "page": 402,
+   "composer": "Words and Music by ROY ORBISON and JOE MELSON",
+   "conf": "high"
+  },
+  {
+   "title": "Sad Movies (Make Me Cry)",
+   "pdfPage": 405,
+   "page": 403,
+   "conf": "high"
+  },
+  {
+   "title": "Saturday Night’s Alright (For Fighting)",
+   "pdfPage": 406,
+   "page": 404,
+   "composer": "Words and Music by ELTON JOHN and BERNIE TAUPIN",
+   "conf": "high"
+  },
+  {
+   "title": "The Search Is Over",
+   "pdfPage": 408,
+   "page": 406,
+   "composer": "Words and Music by JAMES M. PETERIK",
+   "conf": "high"
+  },
+  {
+   "title": "See You In September",
+   "pdfPage": 407,
+   "page": 405,
+   "composer": "Words by SID WAYNE",
+   "conf": "high"
+  },
+  {
+   "title": "Send One Your Love",
+   "pdfPage": 410,
+   "page": 408,
+   "conf": "high"
+  },
+  {
+   "title": "Sentimental Lady",
+   "pdfPage": 411,
+   "page": 409,
+   "conf": "high"
+  },
+  {
+   "title": "Sexual Healing",
+   "pdfPage": 412,
+   "page": 410,
+   "composer": "Words and Music by MARVIN GAYE, ODELL BROWN and DAVID RITZ",
+   "conf": "high"
+  },
+  {
+   "title": "Shake You Down",
+   "pdfPage": 414,
+   "page": 412,
+   "conf": "high"
+  },
+  {
+   "title": "Shake Your Groove Thing",
+   "pdfPage": 416,
+   "page": 414,
+   "composer": "Words and Music by DINO FEKARIS",
+   "conf": "high"
+  },
+  {
+   "title": "Shambala",
+   "pdfPage": 422,
+   "page": 420,
+   "composer": "Words and Music by DANIEL MOORE",
+   "conf": "high"
+  },
+  {
+   "title": "Share Your Love With Me",
+   "pdfPage": 409,
+   "page": 407,
+   "conf": "high"
+  },
+  {
+   "title": "She Blinded Me With Science",
+   "pdfPage": 418,
+   "page": 416,
+   "composer": "Words and Music by THOMAS DOLBY ROBERTSON and JONATHAN KERR",
+   "conf": "high"
+  },
+  {
+   "title": "She Loves You",
+   "pdfPage": 429,
+   "page": 427,
+   "conf": "high"
+  },
+  {
+   "title": "She’s Not You",
+   "pdfPage": 415,
+   "page": 413,
+   "conf": "high"
+  },
+  {
+   "title": "(She’s) Sexy & 17",
+   "pdfPage": 420,
+   "page": 418,
+   "conf": "high"
+  },
+  {
+   "title": "Shotgun",
+   "pdfPage": 425,
+   "page": 423,
+   "conf": "high"
+  },
+  {
+   "title": "Should I Stay Or Should I Go",
+   "pdfPage": 423,
+   "page": 421,
+   "composer": "Words and Music by MICK JONES",
+   "conf": "high"
+  },
+  {
+   "title": "The Show Must Go On",
+   "pdfPage": 424,
+   "page": 422,
+   "composer": "Words and Music by LEO SAYER",
+   "conf": "high"
+  },
+  {
+   "title": "A Sign Of The Times",
+   "pdfPage": 426,
+   "page": 424,
+   "conf": "high"
+  },
+  {
+   "title": "Sign Your Name",
+   "pdfPage": 427,
+   "page": 425,
+   "conf": "high"
+  },
+  {
+   "title": "Silhouette",
+   "pdfPage": 428,
+   "page": 426,
+   "composer": "By KENNY G",
+   "conf": "high"
+  },
+  {
+   "title": "Sing",
+   "pdfPage": 417,
+   "page": 415,
+   "conf": "high"
+  },
+  {
+   "title": "(Seven Little Girls) Sitting In The Back Seat",
+   "pdfPage": 421,
+   "page": 419,
+   "conf": "high"
+  },
+  {
+   "title": "Sky High",
+   "pdfPage": 430,
+   "page": 428,
+   "conf": "high"
+  },
+  {
+   "title": "Sloop John B",
+   "pdfPage": 430,
+   "page": 428,
+   "conf": "high"
+  },
+  {
+   "title": "Smiling Faces Sometimes",
+   "pdfPage": 432,
+   "page": 430,
+   "composer": "Words and Music by NORMAN WHITFIELD",
+   "conf": "high"
+  },
+  {
+   "title": "Smoke Gets In Your Eyes",
+   "pdfPage": 431,
+   "page": 429,
+   "conf": "high"
+  },
+  {
+   "title": "Smokin’ In The Boys Room",
+   "pdfPage": 433,
+   "page": 431,
+   "composer": "Words and Music by MICHAEL KODA",
+   "conf": "high"
+  },
+  {
+   "title": "Snowbird",
+   "pdfPage": 434,
+   "page": 432,
+   "conf": "high"
+  },
+  {
+   "title": "So Into You",
+   "pdfPage": 435,
+   "page": 433,
+   "composer": "Words and Music by BUDDY BUIE",
+   "conf": "high"
+  },
+  {
+   "title": "Some Day (You’ll Want Me To Want You)",
+   "pdfPage": 434,
+   "page": 432,
+   "conf": "high"
+  },
+  {
+   "title": "Somewhere Out There",
+   "pdfPage": 436,
+   "page": 434,
+   "composer": "Music by BARRY MANN and JAMES HORNER",
+   "conf": "high"
+  },
+  {
+   "title": "Son-Of-A-Preacher Man",
+   "pdfPage": 437,
+   "page": 435,
+   "composer": "Words and Music by JOHN HURLEY",
+   "conf": "high"
+  },
+  {
+   "title": "Song Sung Blue",
+   "pdfPage": 439,
+   "page": 437,
+   "conf": "high"
+  },
+  {
+   "title": "Sorry Seems To Be The Hardest Word",
+   "pdfPage": 441,
+   "page": 439,
+   "composer": "Words and Music by ELTON JOHN",
+   "conf": "high"
+  },
+  {
+   "title": "Soul Limbo",
+   "pdfPage": 446,
+   "page": 444,
+   "composer": "Words and Music by BOOKER T. JONES, DUCK DUNN, STEVE CROPPER and AL JACKSON. JR",
+   "conf": "high"
+  },
+  {
+   "title": "Southern Cross",
+   "pdfPage": 438,
+   "page": 436,
+   "composer": "Words and Music by STEPHEN STILLS, RICHARD CURTIS and MICHAEL CURTIS",
+   "conf": "high"
+  },
+  {
+   "title": "Southern Nights",
+   "pdfPage": 440,
+   "page": 438,
+   "composer": "Words and Music by ALLEN TOUSSAINT",
+   "conf": "high"
+  },
+  {
+   "title": "Spanish Eyes",
+   "pdfPage": 442,
+   "page": 440,
+   "conf": "high"
+  },
+  {
+   "title": "Spanish Flea",
+   "pdfPage": 442,
+   "page": 440,
+   "conf": "high"
+  },
+  {
+   "title": "Speak Softly, Love (Love Theme)",
+   "pdfPage": 443,
+   "page": 441,
+   "conf": "high"
+  },
+  {
+   "title": "Spiders And Snakes",
+   "pdfPage": 445,
+   "page": 443,
+   "composer": "Words and Music by JIM STAFFORD",
+   "conf": "high"
+  },
+  {
+   "title": "Steppin’ Out",
+   "pdfPage": 452,
+   "page": 450,
+   "conf": "high"
+  },
+  {
+   "title": "Still",
+   "pdfPage": 447,
+   "page": 445,
+   "composer": "Words and Music by LIONEL RICHIE",
+   "conf": "high"
+  },
+  {
+   "title": "Stuck In The Middle With You",
+   "pdfPage": 444,
+   "page": 442,
+   "composer": "Words and Music by GERRY RAFFERTY and JOE EGAN",
+   "conf": "high"
+  },
+  {
+   "title": "Stupid Cupid",
+   "pdfPage": 448,
+   "page": 446,
+   "composer": "Words and Music by HOWARD GREENFIELD",
+   "conf": "high"
+  },
+  {
+   "title": "Suffragette City",
+   "pdfPage": 449,
+   "page": 447,
+   "conf": "high"
+  },
+  {
+   "title": "Sukiyaki",
+   "pdfPage": 450,
+   "page": 448,
+   "composer": "Words and Music by HACHIDAI NAKAMURA",
+   "conf": "high"
+  },
+  {
+   "title": "Summertime, Summertime",
+   "pdfPage": 451,
+   "page": 449,
+   "conf": "high"
+  },
+  {
+   "title": "Sunny",
+   "pdfPage": 453,
+   "page": 451,
+   "conf": "high"
+  },
+  {
+   "title": "Surrender",
+   "pdfPage": 454,
+   "page": 452,
+   "conf": "high"
+  },
+  {
+   "title": "Sway (Quien Sera)",
+   "pdfPage": 456,
+   "page": 454,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet City Woman",
+   "pdfPage": 458,
+   "page": 456,
+   "composer": "Words and Music by RICHARD DODSON",
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Home Alabama",
+   "pdfPage": 460,
+   "page": 458,
+   "composer": "Words and Music by RONNIE VAN ZANT, ED KING and GARY ROSSINGTON",
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Nothin’s",
+   "pdfPage": 461,
+   "page": 459,
+   "composer": "Words and Music by RONNIE SELF",
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Thing (Sweet Thang)",
+   "pdfPage": 456,
+   "page": 454,
+   "conf": "high"
+  },
+  {
+   "title": "Take A Chance On Me",
+   "pdfPage": 462,
+   "page": 460,
+   "composer": "Words and Music by BENNY ANDERSSON",
+   "conf": "high"
+  },
+  {
+   "title": "Take A Letter, Maria",
+   "pdfPage": 463,
+   "page": 461,
+   "conf": "high"
+  },
+  {
+   "title": "Take Me Home, Country Roads",
+   "pdfPage": 466,
+   "page": 464,
+   "composer": "Words and Music by JOHN DENVER, ERT BILL DANOFF and TAFFY NIV",
+   "conf": "high"
+  },
+  {
+   "title": "Take On Me",
+   "pdfPage": 468,
+   "page": 466,
+   "conf": "high"
+  },
+  {
+   "title": "Talk Dirty To Me",
+   "pdfPage": 464,
+   "page": 462,
+   "composer": "Words and Music by BOBBY DALL",
+   "conf": "high"
+  },
+  {
+   "title": "Talkin’ In Your Sleep (Crystal Gale)",
+   "pdfPage": 470,
+   "page": 468,
+   "composer": "Words and Music by ROGER COOK and BOBBY WOODS",
+   "conf": "high"
+  },
+  {
+   "title": "Talking In Your Sleep (The Romantics)",
+   "pdfPage": 471,
+   "page": 469,
+   "composer": "Words and Music by JIMMY MARINOS, WALLY PALMAR, MIKE SKILL, COZ CANLER and PETER SOLLEY",
+   "conf": "high"
+  },
+  {
+   "title": "The Tears Of A Clown",
+   "pdfPage": 472,
+   "page": 470,
+   "conf": "high"
+  },
+  {
+   "title": "Tennessee Waltz",
+   "pdfPage": 469,
+   "page": 467,
+   "conf": "high"
+  },
+  {
+   "title": "That’s Amoré (That’s Love)",
+   "pdfPage": 467,
+   "page": 465,
+   "composer": "Words by JACK BROOKS",
+   "conf": "high"
+  },
+  {
+   "title": "That’s The Way Of The World",
+   "pdfPage": 473,
+   "page": 471,
+   "composer": "Words and Music by MAURICE WHITE, CHARLES STEPNEY and VERDINE WHITE",
+   "conf": "high"
+  },
+  {
+   "title": "There’s A Moon Out Tonight",
+   "pdfPage": 478,
+   "page": 476,
+   "conf": "high"
+  },
+  {
+   "title": "This Land Is Your Land",
+   "pdfPage": 474,
+   "page": 472,
+   "conf": "high"
+  },
+  {
+   "title": "Those Were The Days",
+   "pdfPage": 474,
+   "page": 472,
+   "conf": "high"
+  },
+  {
+   "title": "Thou Shalt Not Steal",
+   "pdfPage": 475,
+   "page": 473,
+   "conf": "high"
+  },
+  {
+   "title": "Through The Years",
+   "pdfPage": 476,
+   "page": 474,
+   "composer": "Words and Music by STEVE DORFF",
+   "conf": "high"
+  },
+  {
+   "title": "Throwing It All Away",
+   "pdfPage": 482,
+   "page": 480,
+   "conf": "high"
+  },
+  {
+   "title": "Ticket To Ride",
+   "pdfPage": 479,
+   "page": 477,
+   "composer": "Words and Music by JOHN LENNON",
+   "conf": "high"
+  },
+  {
+   "title": "Tijuana Taxi",
+   "pdfPage": 77,
+   "page": 75,
+   "conf": "high"
+  },
+  {
+   "title": "Time (Clock Of The Heart)",
+   "pdfPage": 488,
+   "page": 486,
+   "conf": "high"
+  },
+  {
+   "title": "Time After Time",
+   "pdfPage": 484,
+   "page": 482,
+   "conf": "high"
+  },
+  {
+   "title": "Time Is Tight",
+   "pdfPage": 480,
+   "page": 478,
+   "composer": "Words and Music by BOOKER T. JONES, DUCK DUNN",
+   "conf": "high"
+  },
+  {
+   "title": "Timothy",
+   "pdfPage": 481,
+   "page": 479,
+   "conf": "high"
+  },
+  {
+   "title": "To Know Him Is To Love Him",
+   "pdfPage": 493,
+   "page": 491,
+   "conf": "high"
+  },
+  {
+   "title": "Too Much",
+   "pdfPage": 485,
+   "page": 483,
+   "conf": "high"
+  },
+  {
+   "title": "Total Eclipse Of The Heart",
+   "pdfPage": 486,
+   "page": 484,
+   "composer": "Words and Music by JIM STEINMAN",
+   "conf": "high"
+  },
+  {
+   "title": "Town Without Pity",
+   "pdfPage": 489,
+   "page": 487,
+   "conf": "high"
+  },
+  {
+   "title": "The Tracks Of My Tears",
+   "pdfPage": 492,
+   "page": 490,
+   "conf": "high"
+  },
+  {
+   "title": "True Blue",
+   "pdfPage": 490,
+   "page": 488,
+   "composer": "Words and Music by STEPHEN BRAY and MADONNA CICCONE",
+   "conf": "high"
+  },
+  {
+   "title": "Truly",
+   "pdfPage": 497,
+   "page": 495,
+   "conf": "high"
+  },
+  {
+   "title": "Tubthumping",
+   "pdfPage": 496,
+   "page": 494,
+   "conf": "high"
+  },
+  {
+   "title": "Tuff Enuff",
+   "pdfPage": 494,
+   "page": 492,
+   "composer": "Words and Music by KIM WILSON",
+   "conf": "high"
+  },
+  {
+   "title": "Turn Your Love Around",
+   "pdfPage": 498,
+   "page": 496,
+   "conf": "high"
+  },
+  {
+   "title": "Two Divided By Love",
+   "pdfPage": 495,
+   "page": 493,
+   "composer": "Words and Music by DENNIS LAMBERT",
+   "conf": "high"
+  },
+  {
+   "title": "Unchained Melody",
+   "pdfPage": 499,
+   "page": 497,
+   "conf": "high"
+  },
+  {
+   "title": "Uncle Albert/Admiral Halsey",
+   "pdfPage": 500,
+   "page": 498,
+   "conf": "high"
+  },
+  {
+   "title": "United We Stand",
+   "pdfPage": 501,
+   "page": 499,
+   "conf": "high"
+  },
+  {
+   "title": "Video killed The Radio Star",
+   "pdfPage": 502,
+   "page": 500,
+   "composer": "Words and Music by BRUCE WOOLLEY, TREVOR HORN and GEOFF DOWNES",
+   "conf": "high"
+  },
+  {
+   "title": "Walkin’ After Midnight",
+   "pdfPage": 503,
+   "page": 501,
+   "conf": "high"
+  },
+  {
+   "title": "Walking In Memphis",
+   "pdfPage": 504,
+   "page": 502,
+   "conf": "high"
+  },
+  {
+   "title": "The Warrior",
+   "pdfPage": 506,
+   "page": 504,
+   "conf": "high"
+  },
+  {
+   "title": "Wasted On The Way",
+   "pdfPage": 507,
+   "page": 505,
+   "conf": "high"
+  },
+  {
+   "title": "Waterloo",
+   "pdfPage": 508,
+   "page": 506,
+   "composer": "Words and Music by BENNY ANDERSSON",
+   "conf": "high"
+  },
+  {
+   "title": "’Way Down Yonder In New Orleans",
+   "pdfPage": 509,
+   "page": 507,
+   "conf": "high"
+  },
+  {
+   "title": "The Way You Do The Things You Do",
+   "pdfPage": 509,
+   "page": 507,
+   "conf": "high"
+  },
+  {
+   "title": "The Way You Move",
+   "pdfPage": 516,
+   "page": 514,
+   "conf": "high"
+  },
+  {
+   "title": "We Are The World",
+   "pdfPage": 514,
+   "page": 512,
+   "composer": "Words and Music by LIONEL RICHIE and MICHAEL JACKSON",
+   "conf": "high"
+  },
+  {
+   "title": "We Belong",
+   "pdfPage": 510,
+   "page": 508,
+   "composer": "Words and Music by DAVID ERIC LOWDEN and DANIEL NAVARRC",
+   "conf": "high"
+  },
+  {
+   "title": "We’re In This Love Together",
+   "pdfPage": 515,
+   "page": 513,
+   "composer": "Words and Music by KEITH STEGALL and ROGER MURRAH",
+   "conf": "high"
+  },
+  {
+   "title": "We’re Ready",
+   "pdfPage": 512,
+   "page": 510,
+   "conf": "high"
+  },
+  {
+   "title": "We’ve Got Tonight",
+   "pdfPage": 520,
+   "page": 518,
+   "composer": "Words and Music by BOB SEGER",
+   "conf": "high"
+  },
+  {
+   "title": "Wear My Ring Around Your Neck",
+   "pdfPage": 518,
+   "page": 516,
+   "composer": "Words and Music by BERT CARROLL and RUSSELL MOODY",
+   "conf": "high"
+  },
+  {
+   "title": "What About Love?",
+   "pdfPage": 519,
+   "page": 517,
+   "composer": "Words and Music by BRIAN ALLEN",
+   "conf": "high"
+  },
+  {
+   "title": "What Have I Done To Deserve This?",
+   "pdfPage": 528,
+   "page": 526,
+   "conf": "high"
+  },
+  {
+   "title": "What In The World’s Come Over You",
+   "pdfPage": 522,
+   "page": 520,
+   "conf": "high"
+  },
+  {
+   "title": "Whatever Gets You Through The Night",
+   "pdfPage": 511,
+   "page": 509,
+   "conf": "high"
+  },
+  {
+   "title": "When Doves Cry",
+   "pdfPage": 523,
+   "page": 521,
+   "conf": "high"
+  },
+  {
+   "title": "When I Need You",
+   "pdfPage": 524,
+   "page": 522,
+   "composer": "Words and Music by CAROLE BAYER SAGER and ALBERT HAMMOND",
+   "conf": "high"
+  },
+  {
+   "title": "When The Children Cry",
+   "pdfPage": 525,
+   "page": 523,
+   "conf": "high"
+  },
+  {
+   "title": "Where Have All The Flowers Gone?",
+   "pdfPage": 517,
+   "page": 515,
+   "conf": "high"
+  },
+  {
+   "title": "Where Or When",
+   "pdfPage": 521,
+   "page": 519,
+   "conf": "high"
+  },
+  {
+   "title": "Whip It",
+   "pdfPage": 526,
+   "page": 524,
+   "composer": "Words and Music by MARK MOTHERSBAUGH and GERALD CASALE",
+   "conf": "high"
+  },
+  {
+   "title": "Who Can It Be Now?",
+   "pdfPage": 527,
+   "page": 525,
+   "conf": "high"
+  },
+  {
+   "title": "Who Put The Bomp (In The Bomp Ba Bomp Ba Bomp)",
+   "pdfPage": 532,
+   "page": 530,
+   "conf": "high"
+  },
+  {
+   "title": "Why",
+   "pdfPage": 529,
+   "page": 527,
+   "conf": "high"
+  },
+  {
+   "title": "Will You Love Me Tomorrow (Will You Still Love Me Tomorrow)",
+   "pdfPage": 531,
+   "page": 529,
+   "conf": "high"
+  },
+  {
+   "title": "Wishing You Were Here",
+   "pdfPage": 530,
+   "page": 528,
+   "composer": "Words and Music by PETER CETERA",
+   "conf": "high"
+  },
+  {
+   "title": "With A Little Help From My Friends",
+   "pdfPage": 533,
+   "page": 531,
+   "composer": "Words and Music by JOHN LENNON",
+   "conf": "high"
+  },
+  {
+   "title": "With You I’m Born Again",
+   "pdfPage": 534,
+   "page": 532,
+   "conf": "high"
+  },
+  {
+   "title": "Wives And Lovers (Hey, Little Girl)",
+   "pdfPage": 536,
+   "page": 534,
+   "conf": "high"
+  },
+  {
+   "title": "Woman, Woman",
+   "pdfPage": 537,
+   "page": 535,
+   "conf": "high"
+  },
+  {
+   "title": "The Wonder Of You",
+   "pdfPage": 537,
+   "page": 535,
+   "conf": "high"
+  },
+  {
+   "title": "A Wonderful Time Up There (Everybody’s Gonna Have A Wonderful Time Up There)",
+   "pdfPage": 542,
+   "page": 540,
+   "composer": "Words and Music by LEE ROY ABERNATHY",
+   "conf": "high"
+  },
+  {
+   "title": "Wonderwall",
+   "pdfPage": 538,
+   "page": 536,
+   "composer": "Words and Music by NOEL GALLAGHER",
+   "conf": "high"
+  },
+  {
+   "title": "Wooden Heart",
+   "pdfPage": 539,
+   "page": 537,
+   "conf": "high"
+  },
+  {
+   "title": "Words Of Love",
+   "pdfPage": 540,
+   "page": 538,
+   "conf": "high"
+  },
+  {
+   "title": "Wrap It Up",
+   "pdfPage": 541,
+   "page": 539,
+   "composer": "Words and Music by ISACC HAYES",
+   "conf": "high"
+  },
+  {
+   "title": "Yellow Submarine",
+   "pdfPage": 543,
+   "page": 541,
+   "composer": "Words and Music by JOHN LENNON",
+   "conf": "high"
+  },
+  {
+   "title": "Yester-Me, Yester-You, Yesterday",
+   "pdfPage": 551,
+   "page": 549,
+   "conf": "high"
+  },
+  {
+   "title": "Y.M.C.A.",
+   "pdfPage": 544,
+   "page": 542,
+   "composer": "Words and Music by JACQUES MORALI, HENRI BELOLO and VICTOR WILLIS",
+   "conf": "high"
+  },
+  {
+   "title": "You Are",
+   "pdfPage": 546,
+   "page": 544,
+   "composer": "Words and Music by LIONEL RICHIE and BRENDA HARVEY-RICHIE",
+   "conf": "high"
+  },
+  {
+   "title": "You Belong To Me",
+   "pdfPage": 545,
+   "page": 543,
+   "composer": "Words and Music by CARLY SIMON",
+   "conf": "high"
+  },
+  {
+   "title": "You Can’t Sit Down",
+   "pdfPage": 557,
+   "page": 555,
+   "conf": "high"
+  },
+  {
+   "title": "You Didn’t Have To Be So Nice",
+   "pdfPage": 548,
+   "page": 546,
+   "conf": "high"
+  },
+  {
+   "title": "You Gotta Be",
+   "pdfPage": 550,
+   "page": 548,
+   "composer": "Words and Music by DES’REE",
+   "conf": "high"
+  },
+  {
+   "title": "You Haven’t Done Nothin’",
+   "pdfPage": 552,
+   "page": 550,
+   "composer": "Words and Music by STEVIE WONDER",
+   "conf": "high"
+  },
+  {
+   "title": "You Raise Me Up",
+   "pdfPage": 553,
+   "page": 551,
+   "conf": "high"
+  },
+  {
+   "title": "You’re Beautiful",
+   "pdfPage": 554,
+   "page": 552,
+   "composer": "Words and Music by JAMES BLUNT",
+   "conf": "high"
+  },
+  {
+   "title": "You’re In My Heart",
+   "pdfPage": 548,
+   "page": 546,
+   "conf": "high"
+  },
+  {
+   "title": "You’re My Everything",
+   "pdfPage": 555,
+   "page": 553,
+   "composer": "Words and Music by NORMAN WHITFIELD",
+   "conf": "high"
+  },
+  {
+   "title": "You’re Only Lonely",
+   "pdfPage": 558,
+   "page": 556,
+   "composer": "Words and Music by JOHN DAVID SOUTHER",
+   "conf": "high"
+  },
+  {
+   "title": "Young Turks",
+   "pdfPage": 556,
+   "page": 554,
+   "composer": "Words and Music by ROD STEWART, KEVIN SAVIGAR, C. CARMINE APPICE and DUANE HITCHINGS",
+   "conf": "high"
+  }
+ ]
+}

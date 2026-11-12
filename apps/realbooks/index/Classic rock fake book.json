@@ -1,0 +1,1806 @@
+{
+ "file": "Classic rock fake book.pdf",
+ "method": "outline",
+ "offset": null,
+ "notes": "Outline bookmarks (one per tune, pages 14-357) plus Cocaine (p60, shares page with Come Together, not in outline/TOC; found by scan). Book has no printed page numbers, so 'page' omitted, offset null. Every outline pdfPage verified by OCR of page top (title present, 256/256); pages 14 and 60 also viewed. No artist/Recorded-by credit is printed in this book, so artist omitted. Composer OCRed from page top (150dpi), title-cased, may have minor OCR errors. Other unlisted short tunes sharing a page may exist.",
+ "entries": [
+  {
+   "title": "The Air That I Breathe",
+   "pdfPage": 14,
+   "page": 1,
+   "conf": "high",
+   "composer": "Words and Music by Albert Hammond and Michael Hazelwood"
+  },
+  {
+   "title": "Allentown",
+   "pdfPage": 15,
+   "page": 2,
+   "conf": "high",
+   "composer": "Words and Music by Billy Joel"
+  },
+  {
+   "title": "Amanda",
+   "pdfPage": 16,
+   "page": 3,
+   "conf": "high",
+   "composer": "Words and Music by Tom Scholz"
+  },
+  {
+   "title": "American Woman",
+   "pdfPage": 18,
+   "page": 5,
+   "conf": "high",
+   "composer": "Written by Burton Cummings, Randy Bachman, Gary Peterson and Jim Kale"
+  },
+  {
+   "title": "And When I Die",
+   "pdfPage": 21,
+   "page": 8,
+   "conf": "high",
+   "composer": "Words and Music by Laura Nyro"
+  },
+  {
+   "title": "Angie",
+   "pdfPage": 23,
+   "page": 10,
+   "conf": "high",
+   "composer": "Words and Music by Mick Jagger and Keith Richards"
+  },
+  {
+   "title": "Another One Bites The Dust",
+   "pdfPage": 25,
+   "page": 12,
+   "conf": "high",
+   "composer": "Words and Music by John Deacon"
+  },
+  {
+   "title": "All Right Now",
+   "pdfPage": 26,
+   "page": 13,
+   "conf": "high",
+   "composer": "Words and Music by Paul Rodgers and Andy Fraser"
+  },
+  {
+   "title": "Atlantis",
+   "pdfPage": 27,
+   "page": 14,
+   "conf": "high",
+   "composer": "Words and Music by Donovan Leitch"
+  },
+  {
+   "title": "Baby, I Love Your Way",
+   "pdfPage": 28,
+   "page": 15,
+   "conf": "high",
+   "composer": "Words and Music by Peter Frampton"
+  },
+  {
+   "title": "Back In The U.s.s.r.",
+   "pdfPage": 29,
+   "page": 16,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "Back In The Saddle",
+   "pdfPage": 30,
+   "page": 17,
+   "conf": "high",
+   "composer": "Words and Music by Steven Tyler and Joe Perry"
+  },
+  {
+   "title": "Bad, Bad Leroy Brown",
+   "pdfPage": 32,
+   "page": 19,
+   "conf": "high",
+   "composer": "Words and Music by Jim Croce"
+  },
+  {
+   "title": "Beast Of Burden",
+   "pdfPage": 33,
+   "page": 20,
+   "conf": "high",
+   "composer": "Words and Music by Mick Jagger and Keith Richards"
+  },
+  {
+   "title": "Bad Medicine",
+   "pdfPage": 35,
+   "page": 22,
+   "conf": "high",
+   "composer": "Words and Music by Desmond Child, Richie Sambora and Jon Bon Jovi"
+  },
+  {
+   "title": "Ballroom Blitz",
+   "pdfPage": 37,
+   "page": 24,
+   "conf": "high",
+   "composer": "Words and Music by Mike Chapman and Nicky Chinn"
+  },
+  {
+   "title": "Barracuda",
+   "pdfPage": 39,
+   "page": 26,
+   "conf": "high",
+   "composer": "Words and Music by Roger Fisher, Nancy Wilson, Ann Wilson and Michael Derosier"
+  },
+  {
+   "title": "Bell Bottom Blues",
+   "pdfPage": 41,
+   "page": 28,
+   "conf": "high",
+   "composer": "Words and Music by Eric Clapton"
+  },
+  {
+   "title": "Best Of My Love",
+   "pdfPage": 42,
+   "page": 29,
+   "conf": "high",
+   "composer": "Words and Music by John David Souther, Don Henley and Glenn Frey"
+  },
+  {
+   "title": "Birthday",
+   "pdfPage": 43,
+   "page": 30,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "The Bitch Is Back",
+   "pdfPage": 44,
+   "page": 31,
+   "conf": "high",
+   "composer": "Words and Music by Elton John and Bernie Taupin"
+  },
+  {
+   "title": "Blue Collar Man",
+   "pdfPage": 45,
+   "page": 32,
+   "conf": "high",
+   "composer": "Words and Music by Tommy Shaw"
+  },
+  {
+   "title": "Blue Sky",
+   "pdfPage": 47,
+   "page": 34,
+   "conf": "high",
+   "composer": "Words and Music by Dickey Betts"
+  },
+  {
+   "title": "Brain Damage",
+   "pdfPage": 48,
+   "page": 35,
+   "conf": "high",
+   "composer": "Words and Music by Roger Waters"
+  },
+  {
+   "title": "Breakdown",
+   "pdfPage": 49,
+   "page": 36,
+   "conf": "high",
+   "composer": "Words and Music by Tom Petty"
+  },
+  {
+   "title": "Burning For You",
+   "pdfPage": 50,
+   "page": 37,
+   "conf": "high",
+   "composer": "Words and Music by Donald Roeser"
+  },
+  {
+   "title": "Bus Stop",
+   "pdfPage": 52,
+   "page": 39,
+   "conf": "high",
+   "composer": "Words and Music by Graham Gouldman"
+  },
+  {
+   "title": "California Girls",
+   "pdfPage": 53,
+   "page": 40,
+   "conf": "high",
+   "composer": "Words and Music by Brian Wilson and Mike Love"
+  },
+  {
+   "title": "Call Me The Breeze",
+   "pdfPage": 54,
+   "page": 41,
+   "conf": "high",
+   "composer": "Words and Music by John Cale"
+  },
+  {
+   "title": "Can’t You See",
+   "pdfPage": 56,
+   "page": 43,
+   "conf": "high",
+   "composer": "Words and Music by Toy Caldwell"
+  },
+  {
+   "title": "Caught Up In You",
+   "pdfPage": 57,
+   "page": 44,
+   "conf": "high",
+   "composer": "Words and Music by Frank Sullivan,"
+  },
+  {
+   "title": "Carry On Wayward Son",
+   "pdfPage": 59,
+   "page": 46,
+   "conf": "high",
+   "composer": "Words and Music by Kerry Livgren"
+  },
+  {
+   "title": "Come Together",
+   "pdfPage": 60,
+   "page": 47,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "Cocaine",
+   "pdfPage": 60,
+   "composer": "Words and Music by J.J. Cale",
+   "conf": "high"
+  },
+  {
+   "title": "Centerfold",
+   "pdfPage": 61,
+   "page": 48,
+   "conf": "high",
+   "composer": "Written by Seth Justman"
+  },
+  {
+   "title": "Come Sail Away",
+   "pdfPage": 62,
+   "page": 49,
+   "conf": "high",
+   "composer": "Words and Music by Dennis de Young Sores Wun Coe Ons Srvgun Soa"
+  },
+  {
+   "title": "Comin’ Home",
+   "pdfPage": 63,
+   "page": 50,
+   "conf": "high",
+   "composer": "Words and Music by Eric Clapton and Bonnie Bramlett"
+  },
+  {
+   "title": "Cuts Like A Knife",
+   "pdfPage": 64,
+   "page": 51,
+   "conf": "high",
+   "composer": "Words and Music by Bryan Adams and Jim Vallance"
+  },
+  {
+   "title": "Dark Horse",
+   "pdfPage": 66,
+   "page": 53,
+   "conf": "high",
+   "composer": "By George Harrison"
+  },
+  {
+   "title": "Don’t Do Me Like That",
+   "pdfPage": 67,
+   "page": 54,
+   "conf": "high",
+   "composer": "Words and Music by Tom Petty"
+  },
+  {
+   "title": "Don’t Bring Me Down",
+   "pdfPage": 68,
+   "page": 55,
+   "conf": "high",
+   "composer": "Words and Music by Jeff Lynne"
+  },
+  {
+   "title": "Don’t Fear The Reaper",
+   "pdfPage": 70,
+   "page": 57,
+   "conf": "high",
+   "composer": "Words and Music by Donald Roeser"
+  },
+  {
+   "title": "Don’t Let The Sun Go Down On Me",
+   "pdfPage": 72,
+   "page": 59,
+   "conf": "high",
+   "composer": "Words and Music by Elton John and Bernie Taupin"
+  },
+  {
+   "title": "Don’t Stop",
+   "pdfPage": 74,
+   "page": 61,
+   "conf": "high",
+   "composer": "Words and Music by Christine McVie"
+  },
+  {
+   "title": "Don’t Stand So Close To Me",
+   "pdfPage": 75,
+   "page": 62,
+   "conf": "high",
+   "composer": "Written and Composed by Sting"
+  },
+  {
+   "title": "Doo Doo Doo Doo Doo",
+   "pdfPage": 76,
+   "page": 63,
+   "conf": "high",
+   "composer": "Words and Music by Mick Jagger and Keith Richards"
+  },
+  {
+   "title": "Draw The Line",
+   "pdfPage": 77,
+   "page": 64,
+   "conf": "high",
+   "composer": "Words and Music by Steven Tyler and Joe Perry"
+  },
+  {
+   "title": "Dream On",
+   "pdfPage": 79,
+   "page": 66,
+   "conf": "high",
+   "composer": "Words and Music by Steven Tyler"
+  },
+  {
+   "title": "Eight Miles High",
+   "pdfPage": 81,
+   "page": 68,
+   "conf": "high",
+   "composer": "Words and Music by Roger McGuinn, David Crosby and Gene Clark"
+  },
+  {
+   "title": "Dreamer",
+   "pdfPage": 82,
+   "page": 69,
+   "conf": "high",
+   "composer": "Words and Music by Rick Davies and Roger Hodgson"
+  },
+  {
+   "title": "Dreams",
+   "pdfPage": 84,
+   "page": 71,
+   "conf": "high",
+   "composer": "Words and Music by Stevie Nicks"
+  },
+  {
+   "title": "Dust In The Wind",
+   "pdfPage": 86,
+   "page": 73,
+   "conf": "high",
+   "composer": "Words and Music by Kerry Livgren"
+  },
+  {
+   "title": "Emotional Rescue",
+   "pdfPage": 87,
+   "page": 74,
+   "conf": "high",
+   "composer": "Words and Music by Mick Jagger and Keith Richards"
+  },
+  {
+   "title": "Every Breath You Take",
+   "pdfPage": 88,
+   "page": 75,
+   "conf": "high",
+   "composer": "Written and Composed by Sting"
+  },
+  {
+   "title": "Every Little Thing She Does Is Magic",
+   "pdfPage": 89,
+   "page": 76,
+   "conf": "high",
+   "composer": "Written and Composed by Sting"
+  },
+  {
+   "title": "Eye In The Sky",
+   "pdfPage": 91,
+   "page": 78,
+   "conf": "high",
+   "composer": "Words and Music by Alan Parsons and Eric Woolfson"
+  },
+  {
+   "title": "Evil Woman",
+   "pdfPage": 92,
+   "page": 79,
+   "conf": "high",
+   "composer": "Words and Music by Jeff Lynne"
+  },
+  {
+   "title": "Fame",
+   "pdfPage": 94,
+   "page": 81,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon, David Bowie and Carlos Alomar"
+  },
+  {
+   "title": "Fields Of Gold",
+   "pdfPage": 95,
+   "page": 82,
+   "conf": "high",
+   "composer": "Written and Composed by G.m. Sumner"
+  },
+  {
+   "title": "Fire And Ice",
+   "pdfPage": 96,
+   "page": 83,
+   "conf": "high",
+   "composer": "Words and Music by Tom Kelly, Scott Sheets and Pat Benatar"
+  },
+  {
+   "title": "For Your Love",
+   "pdfPage": 98,
+   "page": 85,
+   "conf": "high",
+   "composer": "Words and Music by Graham Gouldman"
+  },
+  {
+   "title": "Fooling Yourself",
+   "pdfPage": 99,
+   "page": 86,
+   "conf": "high",
+   "composer": "Words and Music by Tommy Shaw"
+  },
+  {
+   "title": "Forever Young",
+   "pdfPage": 101,
+   "page": 88,
+   "conf": "high",
+   "composer": "Words and Music by Rod Stewart, Jim Cregan, Kevin Savigar, and Bob Dylan"
+  },
+  {
+   "title": "Freeze Frame",
+   "pdfPage": 102,
+   "page": 89,
+   "conf": "high",
+   "composer": "Words and Music by Seth Justman and Peter Wolf"
+  },
+  {
+   "title": "Fortress Around Your Heart",
+   "pdfPage": 103,
+   "page": 90,
+   "conf": "high",
+   "composer": "Written and Composed by G.m. Sumner"
+  },
+  {
+   "title": "Free Ride",
+   "pdfPage": 105,
+   "page": 92,
+   "conf": "high",
+   "composer": "Words and Music by Dan Hartman"
+  },
+  {
+   "title": "Get Back",
+   "pdfPage": 106,
+   "page": 93,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney Sss Ss Oe"
+  },
+  {
+   "title": "Give Me Love",
+   "pdfPage": 107,
+   "page": 94,
+   "conf": "high",
+   "composer": "By George Harrison"
+  },
+  {
+   "title": "Give A Little Bit",
+   "pdfPage": 109,
+   "page": 96,
+   "conf": "high",
+   "composer": "Words and Music by Rick Davies and Roger Hodgson"
+  },
+  {
+   "title": "Gloria",
+   "pdfPage": 110,
+   "page": 97,
+   "conf": "high",
+   "composer": "Words and Music by van Morrison"
+  },
+  {
+   "title": "Godzilla",
+   "pdfPage": 111,
+   "page": 98,
+   "conf": "high",
+   "composer": "Words and Music by Donald Roeser"
+  },
+  {
+   "title": "Go Now",
+   "pdfPage": 112,
+   "page": 99,
+   "conf": "high",
+   "composer": "Words and Music by Milton Bennett and Larry Banks"
+  },
+  {
+   "title": "Got My Mind Set On You",
+   "pdfPage": 113,
+   "page": 100,
+   "conf": "high",
+   "composer": "Words and Music by Rudy Clark"
+  },
+  {
+   "title": "Got To Get You Into My Life",
+   "pdfPage": 115,
+   "page": 102,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "Green-Eyed Lady",
+   "pdfPage": 116,
+   "page": 103,
+   "conf": "high",
+   "composer": "Words and Music by Jerry Corbetta, J.c. Phillips and David Riordan"
+  },
+  {
+   "title": "A Hard Day’s Night",
+   "pdfPage": 117,
+   "page": 104,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "Heart And Soul",
+   "pdfPage": 118,
+   "page": 105,
+   "conf": "high",
+   "composer": "Words and Music by Mike Chapman and Nicky Chinn"
+  },
+  {
+   "title": "Heartache Tonight",
+   "pdfPage": 119,
+   "page": 106,
+   "conf": "high",
+   "composer": "Words and Music by John David Souther, Don Henley, Glenn Frey and Bob Seger"
+  },
+  {
+   "title": "Hair Of The Dog",
+   "pdfPage": 121,
+   "page": 108,
+   "conf": "high",
+   "composer": "Words and Music by Dan McCafferty, Darrell Sweet,"
+  },
+  {
+   "title": "Heat Of The Moment",
+   "pdfPage": 122,
+   "page": 109,
+   "conf": "high",
+   "composer": "Words and Music by Geoffrey Downes and John Wetton"
+  },
+  {
+   "title": "Heaven",
+   "pdfPage": 123,
+   "page": 110,
+   "conf": "high",
+   "composer": "Words and Music by Bryan Adams and Jim Vallance"
+  },
+  {
+   "title": "Hello, Goodbye",
+   "pdfPage": 124,
+   "page": 111,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "Hello, It’s Me",
+   "pdfPage": 125,
+   "page": 112,
+   "conf": "high",
+   "composer": "Words and Music by Todd Rundgren"
+  },
+  {
+   "title": "Hello Old Friend",
+   "pdfPage": 126,
+   "page": 113,
+   "conf": "high",
+   "composer": "Words and Music by Eric Clapton"
+  },
+  {
+   "title": "Hey Joe",
+   "pdfPage": 127,
+   "page": 114,
+   "conf": "high",
+   "composer": "Words and Music by Billy Roberts"
+  },
+  {
+   "title": "Help!",
+   "pdfPage": 129,
+   "page": 116,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "Helter Skelter",
+   "pdfPage": 130,
+   "page": 117,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "Hit Me With Your Best Shot",
+   "pdfPage": 132,
+   "page": 119,
+   "conf": "high",
+   "composer": "Words and Music by Eddie Schwartz"
+  },
+  {
+   "title": "Honesty",
+   "pdfPage": 133,
+   "page": 120,
+   "conf": "high",
+   "composer": "Words and Music by Billy Joel"
+  },
+  {
+   "title": "Hot Legs",
+   "pdfPage": 134,
+   "page": 121,
+   "conf": "high",
+   "composer": "Words and Music by Rod Stewart"
+  },
+  {
+   "title": "Hurdy Gurdy Man",
+   "pdfPage": 135,
+   "page": 122,
+   "conf": "high",
+   "composer": "Words and Music by Donovan Leitch"
+  },
+  {
+   "title": "Hush",
+   "pdfPage": 136,
+   "page": 123,
+   "conf": "high",
+   "composer": "Words and Music by Joe South"
+  },
+  {
+   "title": "Hurts So Good",
+   "pdfPage": 138,
+   "page": 125,
+   "conf": "high",
+   "composer": "Words and Music by John Mellencamp and George Green"
+  },
+  {
+   "title": "I Can See For Miles",
+   "pdfPage": 139,
+   "page": 126,
+   "conf": "high",
+   "composer": "Words and Music by Peter Townshend"
+  },
+  {
+   "title": "I Can’t Stand It",
+   "pdfPage": 140,
+   "page": 127,
+   "conf": "high",
+   "composer": "Words and Music by Eric Clapton"
+  },
+  {
+   "title": "I Fought The Law",
+   "pdfPage": 141,
+   "page": 128,
+   "conf": "high",
+   "composer": "Words and Music by Sonny Curtis"
+  },
+  {
+   "title": "I Love Rock ’N Roll",
+   "pdfPage": 142,
+   "page": 129,
+   "conf": "high",
+   "composer": "Words and Music by Alan Merrill and Jake Hooker"
+  },
+  {
+   "title": "I Want You To Want Me",
+   "pdfPage": 143,
+   "page": 130,
+   "conf": "high",
+   "composer": "Words and Music by Rick Nielsen"
+  },
+  {
+   "title": "If You Leave Me Now",
+   "pdfPage": 145,
+   "page": 132,
+   "conf": "high",
+   "composer": "Words and Music by Peter Cetera"
+  },
+  {
+   "title": "I Shot The Sheriff",
+   "pdfPage": 147,
+   "page": 134,
+   "conf": "high",
+   "composer": "Words and Music by Bob Marley Ss Eee"
+  },
+  {
+   "title": "If You Love Somebody Set Them Free",
+   "pdfPage": 149,
+   "page": 136,
+   "conf": "high",
+   "composer": "Written and Composed by G.m. Sumner"
+  },
+  {
+   "title": "Imagine",
+   "pdfPage": 151,
+   "page": 138,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon"
+  },
+  {
+   "title": "In My Life",
+   "pdfPage": 152,
+   "page": 139,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "Instant Karma",
+   "pdfPage": 153,
+   "page": 140,
+   "conf": "high",
+   "composer": "Words and Music by"
+  },
+  {
+   "title": "Invisible Touch",
+   "pdfPage": 155,
+   "page": 142,
+   "conf": "high",
+   "composer": "Words and Music by Tony Banks, Phil Collins and Mike Rutherford"
+  },
+  {
+   "title": "Iron Man",
+   "pdfPage": 156,
+   "page": 143,
+   "conf": "high",
+   "composer": "Words and Music by Frank Iommi, John Osbourne, William Ward and Terence Butler"
+  },
+  {
+   "title": "Island Girl",
+   "pdfPage": 157,
+   "page": 144,
+   "conf": "high",
+   "composer": "Words and Music by Elton John and Bernie Taupin"
+  },
+  {
+   "title": "It’s Only Love",
+   "pdfPage": 158,
+   "page": 145,
+   "conf": "high",
+   "composer": "Words and Music by Bryan Adams and Jim Vallance"
+  },
+  {
+   "title": "It’s Only Rock ’N’ Roll",
+   "pdfPage": 159,
+   "page": 146,
+   "conf": "high",
+   "composer": "Words and Music by Mick Jagger and Keith Richards"
+  },
+  {
+   "title": "It’s Still Rock And Roll To Me",
+   "pdfPage": 160,
+   "page": 147,
+   "conf": "high",
+   "composer": "Words and Music by Billy Joel"
+  },
+  {
+   "title": "Jack And Diane",
+   "pdfPage": 161,
+   "page": 148,
+   "conf": "high",
+   "composer": "Words and Music by John Mellencamp"
+  },
+  {
+   "title": "Jesus Is Just Alright",
+   "pdfPage": 163,
+   "page": 150,
+   "conf": "high",
+   "composer": "Words and Music by Arthur Reynolds"
+  },
+  {
+   "title": "Joy To The World",
+   "pdfPage": 165,
+   "page": 152,
+   "conf": "high",
+   "composer": "Words and Music by Hoyt Axton"
+  },
+  {
+   "title": "Killer Queen",
+   "pdfPage": 166,
+   "page": 153,
+   "conf": "high",
+   "composer": "Words and Music by Freddie Mercury"
+  },
+  {
+   "title": "Lady Madonna",
+   "pdfPage": 168,
+   "page": 155,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "Kiss You All Over",
+   "pdfPage": 169,
+   "page": 156,
+   "conf": "high",
+   "composer": "Words and Music by Nicky Chinn and Mike Chapman"
+  },
+  {
+   "title": "Last Child",
+   "pdfPage": 170,
+   "page": 157,
+   "conf": "high",
+   "composer": "Words and Music by Steven Tyler and Brad Whitford"
+  },
+  {
+   "title": "Land Of Confusion",
+   "pdfPage": 171,
+   "page": 158,
+   "conf": "high",
+   "composer": "Words and Music by Tony Banks, Phil Collins and Mike Rutherford"
+  },
+  {
+   "title": "Lay Down Sally",
+   "pdfPage": 173,
+   "page": 160,
+   "conf": "high",
+   "composer": "Words and Music by Eric Clapton, Marcy Levy and George Terry"
+  },
+  {
+   "title": "Leather And Lace",
+   "pdfPage": 174,
+   "page": 161,
+   "conf": "high",
+   "composer": "Words and Music by Stevie Nicks"
+  },
+  {
+   "title": "Layla",
+   "pdfPage": 176,
+   "page": 163,
+   "conf": "high",
+   "composer": "Words and Music by Eric Clapton and Jim Gordon"
+  },
+  {
+   "title": "Lido Shuffle",
+   "pdfPage": 177,
+   "page": 164,
+   "conf": "high",
+   "composer": "Words and Music by Boz Scaggs and David Paich"
+  },
+  {
+   "title": "Let It Rain",
+   "pdfPage": 178,
+   "page": 165,
+   "conf": "high",
+   "composer": "Words and Music by Eric Clapton and Bonnie Bramlett"
+  },
+  {
+   "title": "Let It Ride",
+   "pdfPage": 179,
+   "page": 166,
+   "conf": "high",
+   "composer": "Words and Music by Randy Bachman and Charles Turner"
+  },
+  {
+   "title": "Little Bit O’ Soul",
+   "pdfPage": 181,
+   "page": 168,
+   "conf": "high",
+   "composer": "Words and Music by John Shakespeare and Kenneth Lewis"
+  },
+  {
+   "title": "Livin’ On A Prayer",
+   "pdfPage": 182,
+   "page": 169,
+   "conf": "high",
+   "composer": "Words and Music by Desmond Child, Jon Bon Jovi and Richie Sambora"
+  },
+  {
+   "title": "Long Cool Woman (In A Black Dress)",
+   "pdfPage": 183,
+   "page": 170,
+   "conf": "high",
+   "composer": "Words and Music by Allan Clarke, Roger Cook and Roger Greenaway"
+  },
+  {
+   "title": "The Logical Song",
+   "pdfPage": 185,
+   "page": 172,
+   "conf": "high",
+   "composer": "Words and Music by Rick Davies and Roger Hodgson"
+  },
+  {
+   "title": "Love Is A Battlefield",
+   "pdfPage": 186,
+   "page": 173,
+   "conf": "high",
+   "composer": "Words and Music by Mike Chapman and Holly Knight"
+  },
+  {
+   "title": "Lucy In The Sky With Diamonds",
+   "pdfPage": 188,
+   "page": 175,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "The Magic Bus",
+   "pdfPage": 189,
+   "page": 176,
+   "conf": "high",
+   "composer": "Words and Music by Peter Townshend Spree Ete Rarer Feet Es At Een Eg"
+  },
+  {
+   "title": "Maybe I’m Amazed",
+   "pdfPage": 191,
+   "page": 178,
+   "conf": "high",
+   "composer": "Words and Music by Paul McCartney"
+  },
+  {
+   "title": "Me And Bobby Mcgee",
+   "pdfPage": 193,
+   "page": 180,
+   "conf": "high",
+   "composer": "Words and Music by Kris Kristofferson and Fred Foster"
+  },
+  {
+   "title": "Maggie May",
+   "pdfPage": 195,
+   "page": 182,
+   "conf": "high",
+   "composer": "Words and Music by Rod Stewart and Martin Quittenton"
+  },
+  {
+   "title": "Melissa",
+   "pdfPage": 197,
+   "page": 184,
+   "conf": "high",
+   "composer": "Words and Music by Gregg Allman and Steve Alaimo"
+  },
+  {
+   "title": "Message In A Bottle",
+   "pdfPage": 198,
+   "page": 185,
+   "conf": "high",
+   "composer": "Written and Composed by Sting"
+  },
+  {
+   "title": "Money",
+   "pdfPage": 200,
+   "page": 187,
+   "conf": "high",
+   "composer": "Words and Music by Roger Waters"
+  },
+  {
+   "title": "Mellow Yellow",
+   "pdfPage": 201,
+   "page": 188,
+   "conf": "high",
+   "composer": "Words and Music by Donovan Leitch"
+  },
+  {
+   "title": "Mississippi Queen",
+   "pdfPage": 202,
+   "page": 189,
+   "conf": "high",
+   "composer": "Words and Music by Leslie West, Felix Pappalardi, Corky Laing and David Rea"
+  },
+  {
+   "title": "Miss You",
+   "pdfPage": 203,
+   "page": 190,
+   "conf": "high",
+   "composer": "Words and Music by Mick Jagger and Keith Richards"
+  },
+  {
+   "title": "Mr. Spaceman",
+   "pdfPage": 205,
+   "page": 192,
+   "conf": "high",
+   "composer": "Written by Roger McGuinn Seles Eon 08 Sane Fart Nd Nn Stay A Dm)"
+  },
+  {
+   "title": "Mony, Mony",
+   "pdfPage": 207,
+   "page": 194,
+   "conf": "high",
+   "composer": "Words and Music by Bobby Bloom, Tommy James, Ritchie Cordell and Bo Gentry"
+  },
+  {
+   "title": "Mother",
+   "pdfPage": 208,
+   "page": 195,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon"
+  },
+  {
+   "title": "Movin’ Out",
+   "pdfPage": 209,
+   "page": 196,
+   "conf": "high",
+   "composer": "Words and Music by Billy Joel"
+  },
+  {
+   "title": "My Generation",
+   "pdfPage": 211,
+   "page": 198,
+   "conf": "high",
+   "composer": "Words and Music by Peter Townshend"
+  },
+  {
+   "title": "My Life",
+   "pdfPage": 212,
+   "page": 199,
+   "conf": "high",
+   "composer": "Words and Music by Billy Joel"
+  },
+  {
+   "title": "New Kid In Town",
+   "pdfPage": 213,
+   "page": 200,
+   "conf": "high",
+   "composer": "Words and Music by John David Souther, Don Henley and Glenn Frey"
+  },
+  {
+   "title": "Nights In White Satin",
+   "pdfPage": 215,
+   "page": 202,
+   "conf": "high",
+   "composer": "Words and Music by Justin Hayward Spell Peete Eres 70 Faroe Et A Lond. Ens"
+  },
+  {
+   "title": "Over My Head",
+   "pdfPage": 216,
+   "page": 203,
+   "conf": "high",
+   "composer": "Words and Music by Christine McVie"
+  },
+  {
+   "title": "Only The Good Die Young",
+   "pdfPage": 217,
+   "page": 204,
+   "conf": "high",
+   "composer": "Words and Music by Billy Joel"
+  },
+  {
+   "title": "Owner Of A Lonely Heart",
+   "pdfPage": 219,
+   "page": 206,
+   "conf": "high",
+   "composer": "Words and Music by Trevor Horn, Jon Anderson, Trevor Rabin and Chris Squire"
+  },
+  {
+   "title": "Oye Como Va",
+   "pdfPage": 221,
+   "page": 208,
+   "conf": "high",
+   "composer": "Words and Music by Tito Puente"
+  },
+  {
+   "title": "Penny Lane",
+   "pdfPage": 222,
+   "page": 209,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "Paperback Writer",
+   "pdfPage": 224,
+   "page": 211,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "Paranoid",
+   "pdfPage": 225,
+   "page": 212,
+   "conf": "high",
+   "composer": "Words and Music by Anthony Iommi, John Osbourne, William Ward and Terence Butler"
+  },
+  {
+   "title": "Philadelphia Freedom",
+   "pdfPage": 226,
+   "page": 213,
+   "conf": "high",
+   "composer": "Words and Music by Elton John and Bernie Taupin"
+  },
+  {
+   "title": "Power To The People",
+   "pdfPage": 228,
+   "page": 215,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon"
+  },
+  {
+   "title": "Piano Man",
+   "pdfPage": 229,
+   "page": 216,
+   "conf": "high",
+   "composer": "Words and Music by Billy Joel"
+  },
+  {
+   "title": "Piece Of My Heart",
+   "pdfPage": 231,
+   "page": 218,
+   "conf": "high",
+   "composer": "Words and Music by Bert Berns and Jerry Ragovoy"
+  },
+  {
+   "title": "Pink Houses",
+   "pdfPage": 232,
+   "page": 219,
+   "conf": "high",
+   "composer": "Words and Music by John Mellencamp"
+  },
+  {
+   "title": "Point Of Know Return",
+   "pdfPage": 233,
+   "page": 220,
+   "conf": "high",
+   "composer": "Words and Music by Steve Walsh, Phil Ehart and Robert Steinhardt"
+  },
+  {
+   "title": "The Pusher",
+   "pdfPage": 235,
+   "page": 222,
+   "conf": "high",
+   "composer": "Words and Music by Hoyt Axton"
+  },
+  {
+   "title": "Radar Love",
+   "pdfPage": 237,
+   "page": 224,
+   "conf": "high",
+   "composer": "Words and Music by George Kooymans and Barry Hay"
+  },
+  {
+   "title": "R.o.c.k. In The U.s.a.",
+   "pdfPage": 239,
+   "page": 226,
+   "conf": "high",
+   "composer": "Words and Music by John Mellencamp"
+  },
+  {
+   "title": "Ramblin’ Man",
+   "pdfPage": 240,
+   "page": 227,
+   "conf": "high",
+   "composer": "Words and Music by Dickey Betts"
+  },
+  {
+   "title": "Reason To Believe",
+   "pdfPage": 241,
+   "page": 228,
+   "conf": "high",
+   "composer": "Words and Music by Tim Hardin"
+  },
+  {
+   "title": "Refugee",
+   "pdfPage": 242,
+   "page": 229,
+   "conf": "high",
+   "composer": "Words and Music by Tom Petty and Mike Campbell"
+  },
+  {
+   "title": "Rebel, Rebel",
+   "pdfPage": 243,
+   "page": 230,
+   "conf": "high",
+   "composer": "Words and Music by David Bowie"
+  },
+  {
+   "title": "Revolution",
+   "pdfPage": 245,
+   "page": 232,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "Renegade",
+   "pdfPage": 246,
+   "page": 233,
+   "conf": "high",
+   "composer": "Words and Music by Tommy Shaw"
+  },
+  {
+   "title": "Ridin’ The Storm Out",
+   "pdfPage": 248,
+   "page": 235,
+   "conf": "high",
+   "composer": "Words and Music by Gary Richrath"
+  },
+  {
+   "title": "Rhiannon",
+   "pdfPage": 249,
+   "page": 236,
+   "conf": "high",
+   "composer": "Words and Music by Stevie Nicks"
+  },
+  {
+   "title": "Rock & Roll - Part II",
+   "pdfPage": 250,
+   "page": 237,
+   "conf": "high",
+   "composer": "Words and Music by Mike Leander and Gary Glitter"
+  },
+  {
+   "title": "Rock And Roll All Nite",
+   "pdfPage": 251,
+   "page": 238,
+   "conf": "high",
+   "composer": "Words and Music by Paul Stanley and Gene Simmons"
+  },
+  {
+   "title": "Rockin’ Into The Night",
+   "pdfPage": 252,
+   "page": 239,
+   "conf": "high",
+   "composer": "Words and Music by Frank Sullivan, Jim Peterik and Robert Gary Smith"
+  },
+  {
+   "title": "Rock And Roll Hoochie Koo",
+   "pdfPage": 254,
+   "page": 241,
+   "conf": "high",
+   "composer": "Words and Music by Rick Derringer"
+  },
+  {
+   "title": "Roll On Down The Highway",
+   "pdfPage": 255,
+   "page": 242,
+   "conf": "high",
+   "composer": "Words and Music by Randy Bachman and Charles Turner"
+  },
+  {
+   "title": "Roxanne",
+   "pdfPage": 256,
+   "page": 243,
+   "conf": "high",
+   "composer": "Written and Composed by Sting"
+  },
+  {
+   "title": "Run To You",
+   "pdfPage": 257,
+   "page": 244,
+   "conf": "high",
+   "composer": "Words and Music by Bryan Adams and Jim Vallance"
+  },
+  {
+   "title": "Say You Love Me",
+   "pdfPage": 258,
+   "page": 245,
+   "conf": "high",
+   "composer": "Words and Music by Christine McVie"
+  },
+  {
+   "title": "Shakedown",
+   "pdfPage": 259,
+   "page": 246,
+   "conf": "high",
+   "composer": "Words and Music by Keith Forsey, Harold Faltermeyer and Bob Seger"
+  },
+  {
+   "title": "Shattered",
+   "pdfPage": 261,
+   "page": 248,
+   "conf": "high",
+   "composer": "Words and Music by Mick Jagger and Keith Richards"
+  },
+  {
+   "title": "She Came In Through The Bathroom Window",
+   "pdfPage": 263,
+   "page": 250,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "She’s Always A Woman",
+   "pdfPage": 264,
+   "page": 251,
+   "conf": "high",
+   "composer": "Words and Music by Billy Joel"
+  },
+  {
+   "title": "She’s Got A Way",
+   "pdfPage": 266,
+   "page": 253,
+   "conf": "high",
+   "composer": "Words and Music by Billy Joel"
+  },
+  {
+   "title": "Show Me The Way",
+   "pdfPage": 267,
+   "page": 254,
+   "conf": "high",
+   "composer": "Words and Music by Peter Frampton"
+  },
+  {
+   "title": "She’s So Cold",
+   "pdfPage": 268,
+   "page": 255,
+   "conf": "high",
+   "composer": "Words and Music by Mick Jagger and Keith Richards"
+  },
+  {
+   "title": "So You Want To Be A Rock And Roll Star",
+   "pdfPage": 270,
+   "page": 257,
+   "conf": "high",
+   "composer": "Words and Music by Roger McGuinn and Chris Hillman"
+  },
+  {
+   "title": "Sign Of The Gypsy Queen",
+   "pdfPage": 271,
+   "page": 258,
+   "conf": "high",
+   "composer": "Words and Music by Lorence Hud"
+  },
+  {
+   "title": "So Into You",
+   "pdfPage": 272,
+   "page": 259,
+   "conf": "high",
+   "composer": "Words and Music by Buddy Buie, Dean Daughtry and Robert Nix"
+  },
+  {
+   "title": "Smoke On The Water",
+   "pdfPage": 273,
+   "page": 260,
+   "conf": "high",
+   "composer": "Words and Music by Ritchie Blackmore, Ian Gillan, Roger Glover, Jon Lord and Ian Paice"
+  },
+  {
+   "title": "(She’s) Some Kind Of Wonderful",
+   "pdfPage": 274,
+   "page": 261,
+   "conf": "high",
+   "composer": "Words and Music by John Ellison"
+  },
+  {
+   "title": "Somebody To Love",
+   "pdfPage": 276,
+   "page": 263,
+   "conf": "high",
+   "composer": "Words and Music by Freddie Mercury"
+  },
+  {
+   "title": "Somebody To Love",
+   "pdfPage": 278,
+   "page": 265,
+   "conf": "high",
+   "composer": "Words and Music by Darby Slick"
+  },
+  {
+   "title": "Sorry Seems To Be The Hardest Word",
+   "pdfPage": 279,
+   "page": 266,
+   "conf": "high",
+   "composer": "Words and Music by Elton John and Bernie Taupin"
+  },
+  {
+   "title": "Someone Saved My Life Tonight",
+   "pdfPage": 280,
+   "page": 267,
+   "conf": "high",
+   "composer": "Words and Music by Elton John and Bernie Taupin"
+  },
+  {
+   "title": "Something",
+   "pdfPage": 282,
+   "page": 269,
+   "conf": "high",
+   "composer": "Words and Music by George Harrison"
+  },
+  {
+   "title": "Space Oddity",
+   "pdfPage": 283,
+   "page": 270,
+   "conf": "high",
+   "composer": "Words and Music by David Bowie"
+  },
+  {
+   "title": "Spinning Wheel",
+   "pdfPage": 285,
+   "page": 272,
+   "conf": "high",
+   "composer": "Words and Music by David Clayton Thomas"
+  },
+  {
+   "title": "Stand Back",
+   "pdfPage": 286,
+   "page": 273,
+   "conf": "high",
+   "composer": "Words and Music by Stevie Nicks"
+  },
+  {
+   "title": "Start Me Up",
+   "pdfPage": 287,
+   "page": 274,
+   "conf": "high",
+   "composer": "Words and Music by Mick Jagger and Keith Richards"
+  },
+  {
+   "title": "Statesboro Blues",
+   "pdfPage": 288,
+   "page": 275,
+   "conf": "high",
+   "composer": "Words and Music by Willy McTell"
+  },
+  {
+   "title": "Straight From The Heart",
+   "pdfPage": 290,
+   "page": 277,
+   "conf": "high",
+   "composer": "Words and Music by Dickey Betts and Johnny Cobb"
+  },
+  {
+   "title": "Strawberry Fields Forever",
+   "pdfPage": 292,
+   "page": 279,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "Suite: Judy Blue Eyes",
+   "pdfPage": 293,
+   "page": 280,
+   "conf": "high",
+   "composer": "Words and Music by Stephen Stills"
+  },
+  {
+   "title": "Summer In The City",
+   "pdfPage": 295,
+   "page": 282,
+   "conf": "high",
+   "composer": "Words and Music by John Sebastian, Steve Boone and Mark Sebastian"
+  },
+  {
+   "title": "Summer Of ’69",
+   "pdfPage": 296,
+   "page": 283,
+   "conf": "high",
+   "composer": "Words and Music by Bryan Adams and Jim Vallance"
+  },
+  {
+   "title": "Sunshine Of Your Love",
+   "pdfPage": 297,
+   "page": 284,
+   "conf": "high",
+   "composer": "Words and Music by Jack Bruce, Pete Brown and Eric Clapton"
+  },
+  {
+   "title": "Sunshine Superman",
+   "pdfPage": 298,
+   "page": 285,
+   "conf": "high",
+   "composer": "Words and Music by Donovan Leitch"
+  },
+  {
+   "title": "Surrender",
+   "pdfPage": 299,
+   "page": 286,
+   "conf": "high",
+   "composer": "Words and Music by Rick Nielsen"
+  },
+  {
+   "title": "Susie-Q",
+   "pdfPage": 301,
+   "page": 288,
+   "conf": "high",
+   "composer": "Words and Music by Dale Hawkins, Stan Lewis and Eleanor Broadwater"
+  },
+  {
+   "title": "Sweet Dreams (Are Made Of This)",
+   "pdfPage": 302,
+   "page": 289,
+   "conf": "high",
+   "composer": "Words and Music by David A. Stewart and Annie Lennox"
+  },
+  {
+   "title": "Sussudio",
+   "pdfPage": 304,
+   "page": 291,
+   "conf": "high",
+   "composer": "Words and Music by Phil Collins"
+  },
+  {
+   "title": "Sweet Emotion",
+   "pdfPage": 305,
+   "page": 292,
+   "conf": "high",
+   "composer": "Words and Music by Steven Tyler and Tom Hamilton"
+  },
+  {
+   "title": "Sweet Talkin’ Woman",
+   "pdfPage": 306,
+   "page": 293,
+   "conf": "high",
+   "composer": "Words and Music by Jeff Lynne"
+  },
+  {
+   "title": "Take The Long Way Home",
+   "pdfPage": 307,
+   "page": 294,
+   "conf": "high",
+   "composer": "Words and Music by Rick Davies and Roger Hodgson"
+  },
+  {
+   "title": "Takin’ Care Of Business",
+   "pdfPage": 308,
+   "page": 295,
+   "conf": "high",
+   "composer": "Words and Music by Randy Bachman"
+  },
+  {
+   "title": "These Eyes",
+   "pdfPage": 309,
+   "page": 296,
+   "conf": "high",
+   "composer": "Written by Burton Cummings and Randy Bachman"
+  },
+  {
+   "title": "Tonight’s The Night",
+   "pdfPage": 310,
+   "page": 297,
+   "conf": "high",
+   "composer": "Words and Music by Rod Stewart"
+  },
+  {
+   "title": "Tears In Heaven",
+   "pdfPage": 311,
+   "page": 298,
+   "conf": "high",
+   "composer": "Words and Music by Eric Clapton and Will Jennings"
+  },
+  {
+   "title": "Thirty Days In The Hole",
+   "pdfPage": 312,
+   "page": 299,
+   "conf": "high",
+   "composer": "Words and Music by Steve Marriott"
+  },
+  {
+   "title": "Time For Me To Fly",
+   "pdfPage": 313,
+   "page": 300,
+   "conf": "high",
+   "composer": "Words and Music by Kevin Cronin"
+  },
+  {
+   "title": "Time In A Bottle",
+   "pdfPage": 314,
+   "page": 301,
+   "conf": "high",
+   "composer": "Words and Music by Jim Croce"
+  },
+  {
+   "title": "Tuesday Afternoon",
+   "pdfPage": 315,
+   "page": 302,
+   "conf": "high",
+   "composer": "Words and Music by Justin Hayward"
+  },
+  {
+   "title": "Turn Me Loose",
+   "pdfPage": 316,
+   "page": 303,
+   "conf": "high",
+   "composer": "Words and Music by Paul Dean and Duke Reno"
+  },
+  {
+   "title": "Tumbling Dice",
+   "pdfPage": 317,
+   "page": 304,
+   "conf": "high",
+   "composer": "Words and Music by Mick Jagger and Keith Richards"
+  },
+  {
+   "title": "Two Out Of Three Ain’t Bad",
+   "pdfPage": 319,
+   "page": 306,
+   "conf": "high",
+   "composer": "Words and Music by Jim Steinman"
+  },
+  {
+   "title": "Twist And Shout",
+   "pdfPage": 321,
+   "page": 308,
+   "conf": "high",
+   "composer": "Words and Music by Bert Russell and Phil Medley"
+  },
+  {
+   "title": "Victim Of Love",
+   "pdfPage": 322,
+   "page": 309,
+   "conf": "high",
+   "composer": "Words and Music by John David Souther, Don Henley, Glenn Frey and Don Felder"
+  },
+  {
+   "title": "Walk This Way",
+   "pdfPage": 323,
+   "page": 310,
+   "conf": "high",
+   "composer": "Words and Music by Steven Tyler and Joe Perry"
+  },
+  {
+   "title": "We Will Rock You",
+   "pdfPage": 325,
+   "page": 312,
+   "conf": "high",
+   "composer": "Words and Music by Brian May"
+  },
+  {
+   "title": "Waiting On A Friend",
+   "pdfPage": 326,
+   "page": 313,
+   "conf": "high",
+   "composer": "Words and Music by Mick Jagger and Keith Richards"
+  },
+  {
+   "title": "We Are The Champions",
+   "pdfPage": 327,
+   "page": 314,
+   "conf": "high",
+   "composer": "Words and Music by Freddie Mercury"
+  },
+  {
+   "title": "We Can Work It Out",
+   "pdfPage": 328,
+   "page": 315,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "We Gotta Get Out Of This Place",
+   "pdfPage": 329,
+   "page": 316,
+   "conf": "high",
+   "composer": "Words and Music by Barry Mann and Cynthia Weil"
+  },
+  {
+   "title": "Whatever Gets You Through The Night",
+   "pdfPage": 330,
+   "page": 317,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon"
+  },
+  {
+   "title": "Wheel In The Sky",
+   "pdfPage": 331,
+   "page": 318,
+   "conf": "high",
+   "composer": "Words and Music by Robert Fleischman, Neal Schon and Diane Valory"
+  },
+  {
+   "title": "While My Guitar Gently Weeps",
+   "pdfPage": 332,
+   "page": 319,
+   "conf": "high",
+   "composer": "Words and Music by George Harrison"
+  },
+  {
+   "title": "White Room",
+   "pdfPage": 334,
+   "page": 321,
+   "conf": "high",
+   "composer": "Words and Music by Jack Bruce and Pete Brown Sss eS Ee"
+  },
+  {
+   "title": "White Rabbit",
+   "pdfPage": 335,
+   "page": 322,
+   "conf": "high",
+   "composer": "Words and Music by Grace Slick"
+  },
+  {
+   "title": "A Whiter Shade Of Pale",
+   "pdfPage": 336,
+   "page": 323,
+   "conf": "high",
+   "composer": "Words and Music by Keith Reid and Gary Brooker"
+  },
+  {
+   "title": "Wild Thing",
+   "pdfPage": 337,
+   "page": 324,
+   "conf": "high",
+   "composer": "Words and Music by Chip Taylor"
+  },
+  {
+   "title": "Willie And The Hand Jive",
+   "pdfPage": 338,
+   "page": 325,
+   "conf": "high",
+   "composer": "Words and Music by Johnny Otis"
+  },
+  {
+   "title": "Windy",
+   "pdfPage": 339,
+   "page": 326,
+   "conf": "high",
+   "composer": "Words and Music by Ruthann Friedman"
+  },
+  {
+   "title": "Wonderful Tonight",
+   "pdfPage": 340,
+   "page": 327,
+   "conf": "high",
+   "composer": "Words and Music by Eric Clapton"
+  },
+  {
+   "title": "Wouldn’t It Be Nice",
+   "pdfPage": 341,
+   "page": 328,
+   "conf": "high",
+   "composer": "Words and Music by Brian Wilson, Tony Asher and Mike Love"
+  },
+  {
+   "title": "You Make Lovin’ Fun",
+   "pdfPage": 342,
+   "page": 329,
+   "conf": "high",
+   "composer": "Words and Music by Christine McVie"
+  },
+  {
+   "title": "You May Be Right",
+   "pdfPage": 343,
+   "page": 330,
+   "conf": "high",
+   "composer": "Words and Music by Billy Joel"
+  },
+  {
+   "title": "You Ain’t Seen Nothin’ Yet",
+   "pdfPage": 345,
+   "page": 332,
+   "conf": "high",
+   "composer": "Words and Music by Randy Bachman"
+  },
+  {
+   "title": "You Wear It Well",
+   "pdfPage": 346,
+   "page": 333,
+   "conf": "high",
+   "composer": "Words and Music by Rod Stewart and Martin Quittenton"
+  },
+  {
+   "title": "You Give Love A Bad Name",
+   "pdfPage": 348,
+   "page": 335,
+   "conf": "high",
+   "composer": "Words and Music by Desmond Child, Jon Bon Jovi and Richie Sambora"
+  },
+  {
+   "title": "You’re In My Heart",
+   "pdfPage": 349,
+   "page": 336,
+   "conf": "high",
+   "composer": "Words and Music by Rod Stewart"
+  },
+  {
+   "title": "You’re My Best Friend",
+   "pdfPage": 351,
+   "page": 338,
+   "conf": "high",
+   "composer": "Words and Music by John Deacon"
+  },
+  {
+   "title": "You’ve Got To Hide Your Love Away",
+   "pdfPage": 352,
+   "page": 339,
+   "conf": "high",
+   "composer": "Words and Music by John Lennon and Paul McCartney"
+  },
+  {
+   "title": "You’ve Made Me So Very Happy",
+   "pdfPage": 353,
+   "page": 340,
+   "conf": "high",
+   "composer": "Words and Music by Berry Gordy, Frank E. Wilson, Brenda Holloway and Patrice Holloway"
+  },
+  {
+   "title": "Young Americans",
+   "pdfPage": 355,
+   "page": 342,
+   "conf": "high",
+   "composer": "Words and Music by David Bowie"
+  },
+  {
+   "title": "Young Turks",
+   "pdfPage": 357,
+   "page": 344,
+   "conf": "high",
+   "composer": "Words and Music by Rod Stewart, Kevin Savigar, Carmine Appice and Duane Hitchings"
+  }
+ ]
+}

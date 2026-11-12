@@ -34,6 +34,7 @@ if (fs.existsSync(idxDir)) for (const f of fs.readdirSync(idxDir).filter(f => f.
     const x = tune(e.title);
     x.at.push([b, e.pdfPage, e.page == null ? null : e.page, e.conf || "", e.composer || ""]);
     if (!x.c && e.composer) x.c = e.composer;
+    if (e.film && !(x.fm = x.fm || []).includes(e.film)) x.fm.push(e.film);
     if (e.artist && !(x.ar = x.ar || []).includes(e.artist)) x.ar.push(e.artist);   // performer(s) the books credit
   });
 }

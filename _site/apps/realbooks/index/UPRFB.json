@@ -1,0 +1,2843 @@
+{
+ "file": "UPRFB.pdf",
+ "method": "ocr-index",
+ "offset": null,
+ "notes": "The Ultimate Pop/Rock Fake Book (Hal Leonard, compiled by Joel Whitburn, (c)1986, ISBN 0-88188-572-X; this is the first-edition/'Ultimate Pop/Rock' printing, 330+ pages). Index = 'Alphabetical Listing' on pdf pages 4-13 (one 3-column table per page: printed page | title | artist | Billboard year/peak), OCR at 300 dpi (tesseract psm 6 tsv, split by column x-position), then fixed by eye against page images. Artists come from that index (the tune pages themselves print only title and writers, no performer credit); where a song lists several recording artists only the first is kept. Composers not recorded. Offset is 0 (printed = pdf page) up to pdf 291; from printed 292-320 the scan is out of order: odd printed pages 293-319 sit at pdf (p+291)/2 (pdf 292-305) and even printed pages 320 down to 292 sit reversed at pdf 466-p/2 (pdf 306-320); pdf 321-335 are identity again. 'page' is the printed number from the index, 'pdfPage' is the real PDF page. Tail mapping verified by title OCR on many pages. conf high = title found on the pdfPage by OCR; med = tune is not first on page or OCR title unreadable (second tunes on shared pages), page taken from index. Checked: ~210 entries by OCR, plus eyeballed 3 pages (28, 302, 336).",
+ "entries": [
+  {
+   "title": "Abraham, Martin And John",
+   "pdfPage": 24,
+   "page": 24,
+   "artist": "Dion",
+   "conf": "high"
+  },
+  {
+   "title": "All I Have To Do Is Dream",
+   "pdfPage": 24,
+   "page": 24,
+   "artist": "Everly Brothers",
+   "conf": "med"
+  },
+  {
+   "title": "All I Need Is A Miracle",
+   "pdfPage": 28,
+   "page": 28,
+   "artist": "Mike & The Mechanics",
+   "conf": "med"
+  },
+  {
+   "title": "All Snook Up",
+   "pdfPage": 25,
+   "page": 25,
+   "artist": "Elvis Presley",
+   "conf": "med"
+  },
+  {
+   "title": "All Through The Night",
+   "pdfPage": 26,
+   "page": 26,
+   "artist": "Cyndi Lauper",
+   "conf": "high"
+  },
+  {
+   "title": "Alone At Last",
+   "pdfPage": 30,
+   "page": 30,
+   "artist": "Jackie Wilson",
+   "conf": "high"
+  },
+  {
+   "title": "Along Came Jones",
+   "pdfPage": 32,
+   "page": 32,
+   "artist": "Coasters",
+   "conf": "med"
+  },
+  {
+   "title": "Another Somebody Done Somebody Wrong Song",
+   "pdfPage": 30,
+   "page": 30,
+   "artist": "B.J. Thomas",
+   "conf": "med"
+  },
+  {
+   "title": "Apache",
+   "pdfPage": 27,
+   "page": 27,
+   "artist": "Jorgen Ingmann",
+   "conf": "med"
+  },
+  {
+   "title": "Are You Lonesome Tonight?",
+   "pdfPage": 29,
+   "page": 29,
+   "artist": "Elvis Presley",
+   "conf": "high"
+  },
+  {
+   "title": "As Tears Go By",
+   "pdfPage": 32,
+   "page": 32,
+   "artist": "Rolling Stones",
+   "conf": "high"
+  },
+  {
+   "title": "At My Front Door",
+   "pdfPage": 31,
+   "page": 31,
+   "artist": "Pat Boone",
+   "conf": "med"
+  },
+  {
+   "title": "At The Hop",
+   "pdfPage": 29,
+   "page": 29,
+   "artist": "Danny & The Juniors",
+   "conf": "med"
+  },
+  {
+   "title": "Back In The U.S.A.",
+   "pdfPage": 34,
+   "page": 34,
+   "artist": "Linda Ronstadt",
+   "conf": "high"
+  },
+  {
+   "title": "Bad Blood",
+   "pdfPage": 35,
+   "page": 35,
+   "artist": "Neil Sedaka",
+   "conf": "high"
+  },
+  {
+   "title": "Bad Girls",
+   "pdfPage": 46,
+   "page": 46,
+   "artist": "Donna Summer",
+   "conf": "high"
+  },
+  {
+   "title": "Baker Street",
+   "pdfPage": 36,
+   "page": 36,
+   "artist": "Gerry Rafferty",
+   "conf": "high"
+  },
+  {
+   "title": "The Banana Boat Song",
+   "pdfPage": 37,
+   "page": 37,
+   "artist": "Tarriers",
+   "conf": "high"
+  },
+  {
+   "title": "Band Of Gold",
+   "pdfPage": 33,
+   "page": 33,
+   "artist": "Don Cherry",
+   "conf": "med"
+  },
+  {
+   "title": "Bang A Gong (Get It On)",
+   "pdfPage": 38,
+   "page": 38,
+   "artist": "Power Station",
+   "conf": "high"
+  },
+  {
+   "title": "The Battle Of New Orleans",
+   "pdfPage": 34,
+   "page": 34,
+   "artist": "Johnny Horton",
+   "conf": "med"
+  },
+  {
+   "title": "Because They're Young",
+   "pdfPage": 40,
+   "page": 40,
+   "artist": "Duane Eddy",
+   "conf": "high"
+  },
+  {
+   "title": "Bennie And The Jets",
+   "pdfPage": 44,
+   "page": 44,
+   "artist": "Elton John",
+   "conf": "high"
+  },
+  {
+   "title": "A Big Hunk O’ Love",
+   "pdfPage": 37,
+   "page": 37,
+   "artist": "Elvis Presley",
+   "conf": "med"
+  },
+  {
+   "title": "Billy, Don’t Be A Hero",
+   "pdfPage": 38,
+   "page": 38,
+   "artist": "Bo Donaldson & The Heywoods",
+   "conf": "med"
+  },
+  {
+   "title": "Bird Dog",
+   "pdfPage": 40,
+   "page": 40,
+   "artist": "Everly Brothers",
+   "conf": "med"
+  },
+  {
+   "title": "Blue Jean",
+   "pdfPage": 41,
+   "page": 41,
+   "artist": "David Bowie",
+   "conf": "high"
+  },
+  {
+   "title": "Blue Suede Shoes",
+   "pdfPage": 42,
+   "page": 42,
+   "artist": "Carl Perkins",
+   "conf": "high"
+  },
+  {
+   "title": "Blueberry Hill",
+   "pdfPage": 43,
+   "page": 43,
+   "artist": "Fats Domino",
+   "conf": "med"
+  },
+  {
+   "title": "Book Of Love",
+   "pdfPage": 50,
+   "page": 50,
+   "artist": "Monotones",
+   "conf": "high"
+  },
+  {
+   "title": "The Boys Are Back In Town",
+   "pdfPage": 48,
+   "page": 48,
+   "artist": "Thin Lizzy",
+   "conf": "high"
+  },
+  {
+   "title": "Brandy (You're A Fine Girl)",
+   "pdfPage": 45,
+   "page": 45,
+   "artist": "Looking Glass",
+   "conf": "med"
+  },
+  {
+   "title": "Bread And Butter",
+   "pdfPage": 49,
+   "page": 49,
+   "artist": "Newbeats",
+   "conf": "med"
+  },
+  {
+   "title": "Bristol Stomp",
+   "pdfPage": 42,
+   "page": 42,
+   "artist": "Dovells",
+   "conf": "med"
+  },
+  {
+   "title": "Build Me Up Buttercup",
+   "pdfPage": 50,
+   "page": 50,
+   "artist": "Foundations",
+   "conf": "med"
+  },
+  {
+   "title": "Butterfly",
+   "pdfPage": 44,
+   "page": 44,
+   "artist": "Charlie Gracie",
+   "conf": "med"
+  },
+  {
+   "title": "Bye Bye, Love",
+   "pdfPage": 52,
+   "page": 52,
+   "artist": "Everly Brothers",
+   "conf": "high"
+  },
+  {
+   "title": "C.C. Rider",
+   "pdfPage": 47,
+   "page": 47,
+   "artist": "Animals",
+   "conf": "med"
+  },
+  {
+   "title": "California Dreamin’",
+   "pdfPage": 52,
+   "page": 52,
+   "artist": "Mamas & The Papas",
+   "conf": "med"
+  },
+  {
+   "title": "Can’t Buy Me Love",
+   "pdfPage": 53,
+   "page": 53,
+   "artist": "Beatles",
+   "conf": "med"
+  },
+  {
+   "title": "Can't Help Falling In Love",
+   "pdfPage": 54,
+   "page": 54,
+   "artist": "Elvis Presley",
+   "conf": "med"
+  },
+  {
+   "title": "Car Wash",
+   "pdfPage": 54,
+   "page": 54,
+   "artist": "Rose Royce",
+   "conf": "high"
+  },
+  {
+   "title": "Cara Mia",
+   "pdfPage": 55,
+   "page": 55,
+   "artist": "Jay & The Americans",
+   "conf": "high"
+  },
+  {
+   "title": "Careless Whisper",
+   "pdfPage": 56,
+   "page": 56,
+   "artist": "Wham!",
+   "conf": "high"
+  },
+  {
+   "title": "Cathy's Clown",
+   "pdfPage": 58,
+   "page": 58,
+   "artist": "Everly Brothers",
+   "conf": "high"
+  },
+  {
+   "title": "Celebrate",
+   "pdfPage": 58,
+   "page": 58,
+   "artist": "Three Dog Night",
+   "conf": "med"
+  },
+  {
+   "title": "Chantilly Lace",
+   "pdfPage": 55,
+   "page": 55,
+   "artist": "Big Bopper",
+   "conf": "med"
+  },
+  {
+   "title": "Chapel Of Love",
+   "pdfPage": 59,
+   "page": 59,
+   "artist": "Dixie Cups",
+   "conf": "med"
+  },
+  {
+   "title": "Charlie Brown",
+   "pdfPage": 60,
+   "page": 60,
+   "artist": "Coasters",
+   "conf": "high"
+  },
+  {
+   "title": "Cherry, Cherry",
+   "pdfPage": 62,
+   "page": 62,
+   "artist": "Neil Diamond",
+   "conf": "high"
+  },
+  {
+   "title": "Come Go With Me",
+   "pdfPage": 66,
+   "page": 66,
+   "artist": "Dell Vikings",
+   "conf": "high"
+  },
+  {
+   "title": "Cool Jerk",
+   "pdfPage": 60,
+   "page": 60,
+   "artist": "Capitols",
+   "conf": "med"
+  },
+  {
+   "title": "Cotton Fields",
+   "pdfPage": 61,
+   "page": 61,
+   "artist": "Highwaymen",
+   "conf": "med"
+  },
+  {
+   "title": "Cracklin’ Rosie",
+   "pdfPage": 57,
+   "page": 57,
+   "artist": "Neil Diamond",
+   "conf": "high"
+  },
+  {
+   "title": "Cradle Of Love",
+   "pdfPage": 63,
+   "page": 63,
+   "artist": "Johnny Preston",
+   "conf": "high"
+  },
+  {
+   "title": "Crocodile Rock",
+   "pdfPage": 64,
+   "page": 64,
+   "artist": "Elton John",
+   "conf": "high"
+  },
+  {
+   "title": "Dancing Queen",
+   "pdfPage": 68,
+   "page": 68,
+   "artist": "Abba",
+   "conf": "med"
+  },
+  {
+   "title": "Daniel",
+   "pdfPage": 68,
+   "page": 68,
+   "artist": "Elton John",
+   "conf": "high"
+  },
+  {
+   "title": "Dark Moon",
+   "pdfPage": 66,
+   "page": 66,
+   "artist": "Gale Storm",
+   "conf": "med"
+  },
+  {
+   "title": "Day Tripper",
+   "pdfPage": 72,
+   "page": 72,
+   "artist": "Beatles",
+   "conf": "high"
+  },
+  {
+   "title": "Daydream",
+   "pdfPage": 70,
+   "page": 70,
+   "artist": "Lovin’ Spoonful",
+   "conf": "high"
+  },
+  {
+   "title": "Dear One",
+   "pdfPage": 74,
+   "page": 74,
+   "artist": "Larry Finnegan",
+   "conf": "high"
+  },
+  {
+   "title": "Dedicated To The One I Love",
+   "pdfPage": 64,
+   "page": 64,
+   "artist": "Mamas & The Papas",
+   "conf": "med"
+  },
+  {
+   "title": "Detroit City",
+   "pdfPage": 76,
+   "page": 76,
+   "artist": "Bobby Bare",
+   "conf": "high"
+  },
+  {
+   "title": "Devil Or Angel",
+   "pdfPage": 76,
+   "page": 76,
+   "artist": "Bobby Vee",
+   "conf": "med"
+  },
+  {
+   "title": "Diana",
+   "pdfPage": 71,
+   "page": 71,
+   "artist": "Paul Anka",
+   "conf": "med"
+  },
+  {
+   "title": "Did You Ever Have To Make Up Your Mind?",
+   "pdfPage": 78,
+   "page": 78,
+   "artist": "Lovin’ Spoonful",
+   "conf": "high"
+  },
+  {
+   "title": "Do You Want To Dance",
+   "pdfPage": 72,
+   "page": 72,
+   "artist": "Bobby Freeman",
+   "conf": "med"
+  },
+  {
+   "title": "Doctor! Doctor!",
+   "pdfPage": 74,
+   "page": 74,
+   "artist": "Thompson Twins",
+   "conf": "med"
+  },
+  {
+   "title": "Don’t Be Cruel",
+   "pdfPage": 79,
+   "page": 79,
+   "artist": "Elvis Presley",
+   "conf": "med"
+  },
+  {
+   "title": "Don’t Go Breaking My Heart",
+   "pdfPage": 67,
+   "page": 67,
+   "artist": "Elton John & Kiki Dee",
+   "conf": "med"
+  },
+  {
+   "title": "Don’t You (Forget About Me)",
+   "pdfPage": 80,
+   "page": 80,
+   "artist": "Simple Minds",
+   "conf": "high"
+  },
+  {
+   "title": "Donna, Donna, The Prima Donna",
+   "pdfPage": 81,
+   "page": 81,
+   "artist": "Dion",
+   "conf": "high"
+  },
+  {
+   "title": "Downtown",
+   "pdfPage": 82,
+   "page": 82,
+   "artist": "Petula Clark",
+   "conf": "high"
+  },
+  {
+   "title": "Duke Of Earl",
+   "pdfPage": 69,
+   "page": 69,
+   "artist": "Gene Chandler",
+   "conf": "med"
+  },
+  {
+   "title": "Earth Angel",
+   "pdfPage": 77,
+   "page": 77,
+   "artist": "Crew-Cuts",
+   "conf": "med"
+  },
+  {
+   "title": "867-5309/Jenny",
+   "pdfPage": 86,
+   "page": 86,
+   "artist": "Tommy Tutone",
+   "conf": "med"
+  },
+  {
+   "title": "El Paso",
+   "pdfPage": 84,
+   "page": 84,
+   "artist": "Marty Robbins",
+   "conf": "high"
+  },
+  {
+   "title": "Eleanor Rigby",
+   "pdfPage": 86,
+   "page": 86,
+   "artist": "Beatles",
+   "conf": "high"
+  },
+  {
+   "title": "Electric Avenue",
+   "pdfPage": 83,
+   "page": 83,
+   "artist": "Eddy Grant",
+   "conf": "high"
+  },
+  {
+   "title": "Elvira",
+   "pdfPage": 84,
+   "page": 84,
+   "artist": "Oak Ridge Boys",
+   "conf": "med"
+  },
+  {
+   "title": "The End Of The World",
+   "pdfPage": 85,
+   "page": 85,
+   "artist": "Skeeter Davis",
+   "conf": "med"
+  },
+  {
+   "title": "Endless Love",
+   "pdfPage": 88,
+   "page": 88,
+   "artist": "Diana Ross & Lionel Richie",
+   "conf": "high"
+  },
+  {
+   "title": "Every Breath You Take",
+   "pdfPage": 90,
+   "page": 90,
+   "artist": "Police",
+   "conf": "high"
+  },
+  {
+   "title": "Everything She Wants",
+   "pdfPage": 92,
+   "page": 92,
+   "artist": "Wham!",
+   "conf": "high"
+  },
+  {
+   "title": "Everytime You Go Away",
+   "pdfPage": 94,
+   "page": 94,
+   "artist": "Paul Young",
+   "conf": "high"
+  },
+  {
+   "title": "The First Time Ever I Saw Your Face",
+   "pdfPage": 89,
+   "page": 89,
+   "artist": "Roberta Flack",
+   "conf": "med"
+  },
+  {
+   "title": "Flashdance... . What A Feeling",
+   "pdfPage": 96,
+   "page": 96,
+   "artist": "lrene Cara",
+   "conf": "med"
+  },
+  {
+   "title": "Flowers On The Wall",
+   "pdfPage": 91,
+   "page": 91,
+   "artist": "Statler Brothers",
+   "conf": "med"
+  },
+  {
+   "title": "For Your Precious Love",
+   "pdfPage": 93,
+   "page": 93,
+   "artist": "Jerry Butler & The Impressions",
+   "conf": "med"
+  },
+  {
+   "title": "Free Bird",
+   "pdfPage": 97,
+   "page": 97,
+   "artist": "Lynyrd Skynyrd",
+   "conf": "med"
+  },
+  {
+   "title": "From A Jack To A King",
+   "pdfPage": 98,
+   "page": 98,
+   "artist": "Ned Miller",
+   "conf": "high"
+  },
+  {
+   "title": "Game Of Love",
+   "pdfPage": 95,
+   "page": 95,
+   "artist": "Wayne Fontana & The Mindbenders",
+   "conf": "high"
+  },
+  {
+   "title": "Garden Party",
+   "pdfPage": 99,
+   "page": 99,
+   "artist": "Rick Nelson",
+   "conf": "med"
+  },
+  {
+   "title": "Georgy Girl",
+   "pdfPage": 100,
+   "page": 100,
+   "artist": "Seekers",
+   "conf": "high"
+  },
+  {
+   "title": "Gloria",
+   "pdfPage": 103,
+   "page": 103,
+   "artist": "Shadows Of Knight",
+   "conf": "high"
+  },
+  {
+   "title": "Gloria",
+   "pdfPage": 102,
+   "page": 102,
+   "artist": "Laura Branigan",
+   "conf": "high"
+  },
+  {
+   "title": "Goin’ Out Of My Head",
+   "pdfPage": 104,
+   "page": 104,
+   "artist": "Little Anthony & The Imperials",
+   "conf": "high"
+  },
+  {
+   "title": "Good Lovin’",
+   "pdfPage": 104,
+   "page": 104,
+   "artist": "Young Rascals",
+   "conf": "med"
+  },
+  {
+   "title": "Good Luck Charm",
+   "pdfPage": 106,
+   "page": 106,
+   "artist": "Elvis Presley",
+   "conf": "high"
+  },
+  {
+   "title": "Goodbye Yellow Brick Road",
+   "pdfPage": 100,
+   "page": 100,
+   "artist": "Elton John",
+   "conf": "med"
+  },
+  {
+   "title": "Grazing In The Grass",
+   "pdfPage": 106,
+   "page": 106,
+   "artist": "Hugh Masekela",
+   "conf": "med"
+  },
+  {
+   "title": "Grease",
+   "pdfPage": 108,
+   "page": 108,
+   "artist": "Frankie Valli",
+   "conf": "high"
+  },
+  {
+   "title": "Great Balls Of Fire",
+   "pdfPage": 98,
+   "page": 98,
+   "artist": "Jerry Lee Lewis",
+   "conf": "med"
+  },
+  {
+   "title": "The Green Door",
+   "pdfPage": 101,
+   "page": 101,
+   "artist": "Jim Lowe",
+   "conf": "med"
+  },
+  {
+   "title": "Green Green Grass Of Home",
+   "pdfPage": 105,
+   "page": 105,
+   "artist": "Tom Jones",
+   "conf": "med"
+  },
+  {
+   "title": "Groovin’",
+   "pdfPage": 108,
+   "page": 108,
+   "artist": "Young Rascals",
+   "conf": "med"
+  },
+  {
+   "title": "Guitar Boogie Shuffle",
+   "pdfPage": 110,
+   "page": 110,
+   "artist": "Virtues",
+   "conf": "high"
+  },
+  {
+   "title": "Hang On Sloopy",
+   "pdfPage": 110,
+   "page": 110,
+   "artist": "McCoys",
+   "conf": "med"
+  },
+  {
+   "title": "Hanky Panky",
+   "pdfPage": 111,
+   "page": 111,
+   "artist": "Tommy James & The Shondells",
+   "conf": "med"
+  },
+  {
+   "title": "Happy, Happy Birthday Baby",
+   "pdfPage": 114,
+   "page": 114,
+   "artist": "Tune Weavers",
+   "conf": "high"
+  },
+  {
+   "title": "Happy Together",
+   "pdfPage": 112,
+   "page": 112,
+   "artist": "Turtles",
+   "conf": "high"
+  },
+  {
+   "title": "A Hard Day's Night",
+   "pdfPage": 109,
+   "page": 109,
+   "artist": "Beatles",
+   "conf": "med"
+  },
+  {
+   "title": "Hard Headed Woman",
+   "pdfPage": 112,
+   "page": 112,
+   "artist": "Elvis Presley",
+   "conf": "med"
+  },
+  {
+   "title": "Harper Valley P.T.A.",
+   "pdfPage": 107,
+   "page": 107,
+   "artist": "Jeannie C. Riley",
+   "conf": "med"
+  },
+  {
+   "title": "He’s A Rebel",
+   "pdfPage": 113,
+   "page": 113,
+   "artist": "Crystals",
+   "conf": "med"
+  },
+  {
+   "title": "Heartaches By The Number",
+   "pdfPage": 114,
+   "page": 114,
+   "artist": "Guy Mitchell",
+   "conf": "med"
+  },
+  {
+   "title": "Heartbreak Hotel",
+   "pdfPage": 116,
+   "page": 116,
+   "artist": "Elvis Presley",
+   "conf": "high"
+  },
+  {
+   "title": "Hello Mary Lou",
+   "pdfPage": 116,
+   "page": 116,
+   "artist": "Ricky Nelson",
+   "conf": "med"
+  },
+  {
+   "title": "Here Comes Summer",
+   "pdfPage": 120,
+   "page": 120,
+   "artist": "Jerry Keller",
+   "conf": "high"
+  },
+  {
+   "title": "Hey Jude",
+   "pdfPage": 115,
+   "page": 115,
+   "artist": "Beatles",
+   "conf": "med"
+  },
+  {
+   "title": "Hi-Heel Sneakers",
+   "pdfPage": 118,
+   "page": 118,
+   "artist": "Tommy Tucker",
+   "conf": "high"
+  },
+  {
+   "title": "His Latest Flame",
+   "pdfPage": 120,
+   "page": 120,
+   "artist": "Elvis Presley",
+   "conf": "med"
+  },
+  {
+   "title": "Hold Me Now",
+   "pdfPage": 117,
+   "page": 117,
+   "artist": "Thompson Twins",
+   "conf": "high"
+  },
+  {
+   "title": "Honky Cat",
+   "pdfPage": 118,
+   "page": 118,
+   "artist": "Elton John",
+   "conf": "med"
+  },
+  {
+   "title": "The Horse",
+   "pdfPage": 123,
+   "page": 123,
+   "artist": "Cliff Nobles & Co.",
+   "conf": "high"
+  },
+  {
+   "title": "Hot Stuff",
+   "pdfPage": 122,
+   "page": 122,
+   "artist": "Donna Summer",
+   "conf": "high"
+  },
+  {
+   "title": "Hound Dog",
+   "pdfPage": 123,
+   "page": 123,
+   "artist": "Elvis Presley",
+   "conf": "med"
+  },
+  {
+   "title": "How Can You Mend A Broken Heart",
+   "pdfPage": 121,
+   "page": 121,
+   "artist": "Bee Gees",
+   "conf": "med"
+  },
+  {
+   "title": "How Deep Is Your Love",
+   "pdfPage": 124,
+   "page": 124,
+   "artist": "Bee Gees",
+   "conf": "high"
+  },
+  {
+   "title": "How Do You Do It?",
+   "pdfPage": 124,
+   "page": 124,
+   "artist": "Gerry & The Pacemakers",
+   "conf": "med"
+  },
+  {
+   "title": "A Hundred Pounds Of Clay",
+   "pdfPage": 126,
+   "page": 126,
+   "artist": "Gene McDaniels",
+   "conf": "high"
+  },
+  {
+   "title": "Hungry Like The Wolf",
+   "pdfPage": 126,
+   "page": 126,
+   "artist": "Duran Duran",
+   "conf": "med"
+  },
+  {
+   "title": "Hushabye",
+   "pdfPage": 125,
+   "page": 125,
+   "artist": "Mystics",
+   "conf": "med"
+  },
+  {
+   "title": "I Almost Lost My Mind",
+   "pdfPage": 127,
+   "page": 127,
+   "artist": "Pat Boone",
+   "conf": "med"
+  },
+  {
+   "title": "I Can See For Miles",
+   "pdfPage": 128,
+   "page": 128,
+   "artist": "Who",
+   "conf": "high"
+  },
+  {
+   "title": "I Can’t Go For That (No Can Do)",
+   "pdfPage": 130,
+   "page": 130,
+   "artist": "Hall & Oates",
+   "conf": "high"
+  },
+  {
+   "title": "I Fought The Law",
+   "pdfPage": 130,
+   "page": 130,
+   "artist": "Bobby Fuller Four",
+   "conf": "med"
+  },
+  {
+   "title": "I Got A Woman",
+   "pdfPage": 129,
+   "page": 129,
+   "artist": "Jimmy McGriff",
+   "conf": "med"
+  },
+  {
+   "title": "I Just Want To Be Your Everything",
+   "pdfPage": 128,
+   "page": 128,
+   "artist": "Andy Gibb",
+   "conf": "med"
+  },
+  {
+   "title": "I Keep Forgettin’",
+   "pdfPage": 132,
+   "page": 132,
+   "artist": "Michael McDonald",
+   "conf": "high"
+  },
+  {
+   "title": "I Like It Like That",
+   "pdfPage": 131,
+   "page": 131,
+   "artist": "Chris Kenner",
+   "conf": "med"
+  },
+  {
+   "title": "I Need Your Love Tonight",
+   "pdfPage": 133,
+   "page": 133,
+   "artist": "Elvis Presley",
+   "conf": "high"
+  },
+  {
+   "title": "I Only Want To Be With You",
+   "pdfPage": 136,
+   "page": 136,
+   "artist": "Bay City Rollers",
+   "conf": "med"
+  },
+  {
+   "title": "I Saw Her Standing There",
+   "pdfPage": 134,
+   "page": 134,
+   "artist": "Beatles",
+   "conf": "high"
+  },
+  {
+   "title": "I Understand (Just How You Feel)",
+   "pdfPage": 133,
+   "page": 133,
+   "artist": "G - Clefs",
+   "conf": "med"
+  },
+  {
+   "title": "I Want To Hold Your Hand",
+   "pdfPage": 134,
+   "page": 134,
+   "artist": "Beatles",
+   "conf": "med"
+  },
+  {
+   "title": "I Want You, I Need You, I Love You",
+   "pdfPage": 136,
+   "page": 136,
+   "artist": "Elvis Presley",
+   "conf": "med"
+  },
+  {
+   "title": "I'm A Man",
+   "pdfPage": 135,
+   "page": 135,
+   "artist": "Yardbirds",
+   "conf": "med"
+  },
+  {
+   "title": "I'm Gonna Sit Right Down And Write Myself A Letter",
+   "pdfPage": 137,
+   "page": 137,
+   "artist": "Billy Williams",
+   "conf": "med"
+  },
+  {
+   "title": "I’m Just A Singer (In A Rock And Roll Band)",
+   "pdfPage": 138,
+   "page": 138,
+   "artist": "Moody Blues",
+   "conf": "high"
+  },
+  {
+   "title": "I'm Sorry",
+   "pdfPage": 139,
+   "page": 139,
+   "artist": "Brenda Lee",
+   "conf": "med"
+  },
+  {
+   "title": "I'm Your Man",
+   "pdfPage": 140,
+   "page": 140,
+   "artist": "Wham!",
+   "conf": "high"
+  },
+  {
+   "title": "I've Got To Get A Message To You",
+   "pdfPage": 139,
+   "page": 139,
+   "artist": "Bee Gees",
+   "conf": "med"
+  },
+  {
+   "title": "I've Told Ev'ry Little Star",
+   "pdfPage": 142,
+   "page": 142,
+   "artist": "Linda Scott",
+   "conf": "high"
+  },
+  {
+   "title": "If I Can’t Have You",
+   "pdfPage": 144,
+   "page": 144,
+   "artist": "Yvonne Elliman",
+   "conf": "med"
+  },
+  {
+   "title": "If I Had A Hammer",
+   "pdfPage": 144,
+   "page": 144,
+   "artist": "Trini Lopez",
+   "conf": "med"
+  },
+  {
+   "title": "If I Were A Carpenter",
+   "pdfPage": 150,
+   "page": 150,
+   "artist": "Bobby Darin",
+   "conf": "med"
+  },
+  {
+   "title": "If You Love Somebody Set Them Free",
+   "pdfPage": 146,
+   "page": 146,
+   "artist": "Sting",
+   "conf": "high"
+  },
+  {
+   "title": "If You Wanna Be Happy",
+   "pdfPage": 145,
+   "page": 145,
+   "artist": "Jimmy Soul",
+   "conf": "med"
+  },
+  {
+   "title": "Island Girl",
+   "pdfPage": 143,
+   "page": 143,
+   "artist": "Elton John",
+   "conf": "med"
+  },
+  {
+   "title": "Islands In The Stream",
+   "pdfPage": 148,
+   "page": 148,
+   "artist": "Kenny Rogers & Dolly Parton",
+   "conf": "med"
+  },
+  {
+   "title": "It’s All In The Game",
+   "pdfPage": 151,
+   "page": 151,
+   "artist": "Tommy Edwards",
+   "conf": "med"
+  },
+  {
+   "title": "It’s In His Kiss (The Shoop Shoop Song)",
+   "pdfPage": 142,
+   "page": 142,
+   "artist": "Betty Everett",
+   "conf": "med"
+  },
+  {
+   "title": "It’s Just A Matter Of Time",
+   "pdfPage": 152,
+   "page": 152,
+   "artist": "Brook Benton",
+   "conf": "high"
+  },
+  {
+   "title": "It’s My Party",
+   "pdfPage": 141,
+   "page": 141,
+   "artist": "Lesley Gore",
+   "conf": "med"
+  },
+  {
+   "title": "It’s Now Or Never",
+   "pdfPage": 148,
+   "page": 148,
+   "artist": "Elvis Presley",
+   "conf": "high"
+  },
+  {
+   "title": "Itsy Bitsy Teenie Weenie Yellow Polkadot Bikini",
+   "pdfPage": 147,
+   "page": 147,
+   "artist": "Bryan Hyland",
+   "conf": "med"
+  },
+  {
+   "title": "Jenny Take A Ride",
+   "pdfPage": 152,
+   "page": 152,
+   "artist": "Mitch Ryder & The Detroit Wheels",
+   "conf": "med"
+  },
+  {
+   "title": "Jive Talkin’",
+   "pdfPage": 153,
+   "page": 153,
+   "artist": "Bee Gees",
+   "conf": "med"
+  },
+  {
+   "title": "Johnny B. Goode",
+   "pdfPage": 154,
+   "page": 154,
+   "artist": "Chuck Berry",
+   "conf": "high"
+  },
+  {
+   "title": "Joy To The World",
+   "pdfPage": 150,
+   "page": 150,
+   "artist": "Three Dog Night",
+   "conf": "med"
+  },
+  {
+   "title": "Kansas City",
+   "pdfPage": 155,
+   "page": 155,
+   "artist": "Wilbert Harrison",
+   "conf": "high"
+  },
+  {
+   "title": "Keep On Dancing",
+   "pdfPage": 154,
+   "page": 154,
+   "artist": "Gentrys",
+   "conf": "med"
+  },
+  {
+   "title": "King Of Pain",
+   "pdfPage": 158,
+   "page": 158,
+   "artist": "Police",
+   "conf": "high"
+  },
+  {
+   "title": "King Of The Road",
+   "pdfPage": 156,
+   "page": 156,
+   "artist": "Roger Miller",
+   "conf": "med"
+  },
+  {
+   "title": "Kisses Sweeter That Wine",
+   "pdfPage": 155,
+   "page": 155,
+   "artist": "Jimmie Rodgers",
+   "conf": "med"
+  },
+  {
+   "title": "Knock Three Times",
+   "pdfPage": 156,
+   "page": 156,
+   "artist": "Dawn",
+   "conf": "high"
+  },
+  {
+   "title": "Land Of A Thousand Dances",
+   "pdfPage": 160,
+   "page": 160,
+   "artist": "Wilson Pickett",
+   "conf": "high"
+  },
+  {
+   "title": "Last Date",
+   "pdfPage": 160,
+   "page": 160,
+   "artist": "Floyd Cramer",
+   "conf": "med"
+  },
+  {
+   "title": "Last Kiss",
+   "pdfPage": 162,
+   "page": 162,
+   "artist": "J. Frank Wilson & The Cavaliers",
+   "conf": "high"
+  },
+  {
+   "title": "Laughter In The Rain",
+   "pdfPage": 164,
+   "page": 164,
+   "artist": "Neil Sedaka",
+   "conf": "high"
+  },
+  {
+   "title": "Lay Down (Candles In The Rain)",
+   "pdfPage": 164,
+   "page": 164,
+   "artist": "Melanie",
+   "conf": "med"
+  },
+  {
+   "title": "Lay Down Sally",
+   "pdfPage": 165,
+   "page": 165,
+   "artist": "Eric Clapton",
+   "conf": "med"
+  },
+  {
+   "title": "Layla",
+   "pdfPage": 166,
+   "page": 166,
+   "artist": "Derek & The Dominos",
+   "conf": "med"
+  },
+  {
+   "title": "Let Me In",
+   "pdfPage": 167,
+   "page": 167,
+   "artist": "Sensations",
+   "conf": "high"
+  },
+  {
+   "title": "Let The Good Times Roll",
+   "pdfPage": 168,
+   "page": 168,
+   "artist": "Shirley & Lee",
+   "conf": "high"
+  },
+  {
+   "title": "Let The Little Girl Dance",
+   "pdfPage": 166,
+   "page": 166,
+   "artist": "Billy Bland",
+   "conf": "med"
+  },
+  {
+   "title": "Let’s Think About Living",
+   "pdfPage": 157,
+   "page": 157,
+   "artist": "Bob Luman",
+   "conf": "med"
+  },
+  {
+   "title": "Let's Twist Again",
+   "pdfPage": 170,
+   "page": 170,
+   "artist": "Chubby Checker",
+   "conf": "high"
+  },
+  {
+   "title": "Lil’ Red Riding Hood",
+   "pdfPage": 163,
+   "page": 163,
+   "artist": "Sam The Sham & The Pharaohs",
+   "conf": "med"
+  },
+  {
+   "title": "The Lion Sleeps Tonight",
+   "pdfPage": 171,
+   "page": 171,
+   "artist": "Tokens",
+   "conf": "med"
+  },
+  {
+   "title": "Little Bitty Pretty One",
+   "pdfPage": 172,
+   "page": 172,
+   "artist": "Thurston Harris",
+   "conf": "high"
+  },
+  {
+   "title": "Little Children",
+   "pdfPage": 174,
+   "page": 174,
+   "artist": "Billy J. Kramer",
+   "conf": "high"
+  },
+  {
+   "title": "Little Jeannie",
+   "pdfPage": 176,
+   "page": 176,
+   "artist": "Elton John",
+   "conf": "high"
+  },
+  {
+   "title": "Lola",
+   "pdfPage": 174,
+   "page": 174,
+   "artist": "Kinks",
+   "conf": "med"
+  },
+  {
+   "title": "Lollipop",
+   "pdfPage": 169,
+   "page": 169,
+   "artist": "Chordettes",
+   "conf": "med"
+  },
+  {
+   "title": "Lonely Boy",
+   "pdfPage": 161,
+   "page": 161,
+   "artist": "Paul Anka",
+   "conf": "med"
+  },
+  {
+   "title": "Lonesome Loser",
+   "pdfPage": 172,
+   "page": 172,
+   "artist": "Little River Band",
+   "conf": "med"
+  },
+  {
+   "title": "Long Cool Woman (In A Black Dress)",
+   "pdfPage": 178,
+   "page": 178,
+   "artist": "Hollies",
+   "conf": "med"
+  },
+  {
+   "title": "Long Tall Sally",
+   "pdfPage": 173,
+   "page": 173,
+   "artist": "Little Richard",
+   "conf": "med"
+  },
+  {
+   "title": "Love (Can Make You Happy)",
+   "pdfPage": 180,
+   "page": 180,
+   "artist": "Mercy",
+   "conf": "med"
+  },
+  {
+   "title": "Love Grows (Where My Rosemary Goes)",
+   "pdfPage": 170,
+   "page": 170,
+   "artist": "Edison Lighthouse",
+   "conf": "med"
+  },
+  {
+   "title": "Love Is All Around",
+   "pdfPage": 168,
+   "page": 168,
+   "artist": "The Troggs",
+   "conf": "med"
+  },
+  {
+   "title": "Love Me Tender",
+   "pdfPage": 181,
+   "page": 181,
+   "artist": "Elvis Presley",
+   "conf": "med"
+  },
+  {
+   "title": "Love So Right",
+   "pdfPage": 182,
+   "page": 182,
+   "artist": "Bee Gees",
+   "conf": "high"
+  },
+  {
+   "title": "Love Will Keep Us Together",
+   "pdfPage": 179,
+   "page": 179,
+   "artist": "Captain & Tennille",
+   "conf": "med"
+  },
+  {
+   "title": "A Lover’s Question",
+   "pdfPage": 177,
+   "page": 177,
+   "artist": "Clyde McPhatter",
+   "conf": "med"
+  },
+  {
+   "title": "Lovers Who Wander",
+   "pdfPage": 180,
+   "page": 180,
+   "artist": "Dion",
+   "conf": "med"
+  },
+  {
+   "title": "Maggie May",
+   "pdfPage": 184,
+   "page": 184,
+   "artist": "Rod Stewart",
+   "conf": "high"
+  },
+  {
+   "title": "Magic Carpet Ride",
+   "pdfPage": 186,
+   "page": 186,
+   "artist": "Steppenwolf",
+   "conf": "med"
+  },
+  {
+   "title": "Mamma Told Me (Not To Come)",
+   "pdfPage": 185,
+   "page": 185,
+   "artist": "Three Dog Night",
+   "conf": "med"
+  },
+  {
+   "title": "Mandy",
+   "pdfPage": 183,
+   "page": 183,
+   "artist": "Barry Manilow",
+   "conf": "med"
+  },
+  {
+   "title": "Maneater",
+   "pdfPage": 188,
+   "page": 188,
+   "artist": "Hall & Oates",
+   "conf": "high"
+  },
+  {
+   "title": "Maniac",
+   "pdfPage": 190,
+   "page": 190,
+   "artist": "Michael Sembello",
+   "conf": "high"
+  },
+  {
+   "title": "Massachusetts",
+   "pdfPage": 192,
+   "page": 192,
+   "artist": "Bee Gees",
+   "conf": "high"
+  },
+  {
+   "title": "Memphis, Tennessee",
+   "pdfPage": 184,
+   "page": 184,
+   "artist": "Johnny Rivers",
+   "conf": "med"
+  },
+  {
+   "title": "Method Of Modern Love",
+   "pdfPage": 192,
+   "page": 192,
+   "artist": "Hall & Oates",
+   "conf": "med"
+  },
+  {
+   "title": "Miami Vice",
+   "pdfPage": 186,
+   "page": 186,
+   "artist": "Jan Hammer",
+   "conf": "med"
+  },
+  {
+   "title": "Missing You",
+   "pdfPage": 194,
+   "page": 194,
+   "artist": "John Waite",
+   "conf": "high"
+  },
+  {
+   "title": "Mister Lee",
+   "pdfPage": 187,
+   "page": 187,
+   "artist": "Bobbettes",
+   "conf": "med"
+  },
+  {
+   "title": "Moments To Remember",
+   "pdfPage": 198,
+   "page": 198,
+   "artist": "Four Lads",
+   "conf": "high"
+  },
+  {
+   "title": "Monday, Monday",
+   "pdfPage": 193,
+   "page": 193,
+   "artist": "Mamas & The Papas",
+   "conf": "med"
+  },
+  {
+   "title": "Money",
+   "pdfPage": 200,
+   "page": 200,
+   "artist": "Pink Floyd",
+   "conf": "med"
+  },
+  {
+   "title": "Morning Train (9 to 5)",
+   "pdfPage": 196,
+   "page": 196,
+   "artist": "Sheena Easton",
+   "conf": "high"
+  },
+  {
+   "title": "Mountain Of Love",
+   "pdfPage": 197,
+   "page": 197,
+   "artist": "Johnny Rivers",
+   "conf": "med"
+  },
+  {
+   "title": "Mrs. Brown You've Got A Lovely Daughter",
+   "pdfPage": 202,
+   "page": 202,
+   "artist": "Herman's Hermits",
+   "conf": "high"
+  },
+  {
+   "title": "My Love",
+   "pdfPage": 189,
+   "page": 189,
+   "artist": "Petula Clark",
+   "conf": "med"
+  },
+  {
+   "title": "My Prayer",
+   "pdfPage": 198,
+   "page": 198,
+   "artist": "Platters",
+   "conf": "med"
+  },
+  {
+   "title": "Na Na Hey Hey Kiss Him Goodbye",
+   "pdfPage": 203,
+   "page": 203,
+   "artist": "Steam",
+   "conf": "med"
+  },
+  {
+   "title": "Neutron Dance",
+   "pdfPage": 204,
+   "page": 204,
+   "artist": "Pointer Sisters",
+   "conf": "med"
+  },
+  {
+   "title": "New Moon On Monday",
+   "pdfPage": 199,
+   "page": 199,
+   "artist": "Duran Duran",
+   "conf": "med"
+  },
+  {
+   "title": "New Orleans",
+   "pdfPage": 206,
+   "page": 206,
+   "artist": "Gary “U.S.”’ Bonds",
+   "conf": "high"
+  },
+  {
+   "title": "Night",
+   "pdfPage": 206,
+   "page": 206,
+   "artist": "Jackie Wilson",
+   "conf": "med"
+  },
+  {
+   "title": "The Night Chicago Died",
+   "pdfPage": 191,
+   "page": 191,
+   "artist": "Paper Lace",
+   "conf": "med"
+  },
+  {
+   "title": "Night Fever",
+   "pdfPage": 201,
+   "page": 201,
+   "artist": "Bee Gees",
+   "conf": "med"
+  },
+  {
+   "title": "Nights In White Satin",
+   "pdfPage": 212,
+   "page": 212,
+   "artist": "Moody Blues",
+   "conf": "high"
+  },
+  {
+   "title": "Nightshift",
+   "pdfPage": 202,
+   "page": 202,
+   "artist": "Commodores",
+   "conf": "med"
+  },
+  {
+   "title": "Nikita",
+   "pdfPage": 207,
+   "page": 207,
+   "artist": "Elton John",
+   "conf": "high"
+  },
+  {
+   "title": "No More Tears (Enough Is Enough)",
+   "pdfPage": 208,
+   "page": 208,
+   "artist": "Barbra Streisand",
+   "conf": "high"
+  },
+  {
+   "title": "Nothin’ At All",
+   "pdfPage": 210,
+   "page": 210,
+   "artist": "Heart",
+   "conf": "med"
+  },
+  {
+   "title": "Oh Julie",
+   "pdfPage": 213,
+   "page": 213,
+   "artist": "Crescendos",
+   "conf": "high"
+  },
+  {
+   "title": "Oh, Lonesome Me",
+   "pdfPage": 216,
+   "page": 216,
+   "artist": "Don Gibson",
+   "conf": "high"
+  },
+  {
+   "title": "Oh, Pretty Woman",
+   "pdfPage": 213,
+   "page": 213,
+   "artist": "Roy Orbison",
+   "conf": "med"
+  },
+  {
+   "title": "Oh Sheila",
+   "pdfPage": 214,
+   "page": 214,
+   "artist": "Ready For The World",
+   "conf": "high"
+  },
+  {
+   "title": "On A Carousel",
+   "pdfPage": 216,
+   "page": 216,
+   "artist": "Hollies",
+   "conf": "med"
+  },
+  {
+   "title": "One Night In Bangkok",
+   "pdfPage": 218,
+   "page": 218,
+   "artist": "Murray Head",
+   "conf": "high"
+  },
+  {
+   "title": "One, Two, Three",
+   "pdfPage": 215,
+   "page": 215,
+   "artist": "Len Barry",
+   "conf": "high"
+  },
+  {
+   "title": "Only Love Can Break A Heart",
+   "pdfPage": 212,
+   "page": 212,
+   "artist": "Gene Pitney",
+   "conf": "med"
+  },
+  {
+   "title": "Only The Lonely",
+   "pdfPage": 220,
+   "page": 220,
+   "artist": "Roy Orbison",
+   "conf": "high"
+  },
+  {
+   "title": "Only You (And You Alone)",
+   "pdfPage": 222,
+   "page": 222,
+   "artist": "Platters",
+   "conf": "high"
+  },
+  {
+   "title": "Our Day Will Come",
+   "pdfPage": 220,
+   "page": 220,
+   "artist": "Ruby & The Romantics",
+   "conf": "med"
+  },
+  {
+   "title": "Over And Over",
+   "pdfPage": 217,
+   "page": 217,
+   "artist": "Dave Clark Five",
+   "conf": "med"
+  },
+  {
+   "title": "Over The Mountain, Across The Sea",
+   "pdfPage": 222,
+   "page": 222,
+   "artist": "Johnnie & Joe",
+   "conf": "med"
+  },
+  {
+   "title": "People Got To Be Free",
+   "pdfPage": 221,
+   "page": 221,
+   "artist": "Rascals",
+   "conf": "high"
+  },
+  {
+   "title": "Philadelphia Freedom",
+   "pdfPage": 224,
+   "page": 224,
+   "artist": "Elton John",
+   "conf": "high"
+  },
+  {
+   "title": "Pictures Of Matchstick Men",
+   "pdfPage": 225,
+   "page": 225,
+   "artist": "Status Quo",
+   "conf": "high"
+  },
+  {
+   "title": "Pipeline",
+   "pdfPage": 226,
+   "page": 226,
+   "artist": "Chantays",
+   "conf": "high"
+  },
+  {
+   "title": "Please, Please Me",
+   "pdfPage": 227,
+   "page": 227,
+   "artist": "Beatles",
+   "conf": "med"
+  },
+  {
+   "title": "Poetry In Motion",
+   "pdfPage": 228,
+   "page": 228,
+   "artist": "Johnny Tillotson",
+   "conf": "high"
+  },
+  {
+   "title": "Poison Ivy",
+   "pdfPage": 229,
+   "page": 229,
+   "artist": "Coasters",
+   "conf": "med"
+  },
+  {
+   "title": "Pony Time",
+   "pdfPage": 226,
+   "page": 226,
+   "artist": "Chubby Checker",
+   "conf": "med"
+  },
+  {
+   "title": "Poor Side Of Town",
+   "pdfPage": 228,
+   "page": 228,
+   "artist": "Johnny Rivers",
+   "conf": "med"
+  },
+  {
+   "title": "Private Eyes",
+   "pdfPage": 232,
+   "page": 232,
+   "artist": "Hall & Oates",
+   "conf": "high"
+  },
+  {
+   "title": "Problems",
+   "pdfPage": 230,
+   "page": 230,
+   "artist": "Everly Brothers",
+   "conf": "med"
+  },
+  {
+   "title": "Puppy Love",
+   "pdfPage": 230,
+   "page": 230,
+   "artist": "Paul Anka",
+   "conf": "high"
+  },
+  {
+   "title": "Put Your Head On My Shoulder",
+   "pdfPage": 223,
+   "page": 223,
+   "artist": "Paul Anka",
+   "conf": "med"
+  },
+  {
+   "title": "A Quarter To Three",
+   "pdfPage": 233,
+   "page": 233,
+   "artist": "Gary “U.S.” Bonds",
+   "conf": "high"
+  },
+  {
+   "title": "Raindrops",
+   "pdfPage": 231,
+   "page": 231,
+   "artist": "Dee Clark",
+   "conf": "med"
+  },
+  {
+   "title": "Raunchy",
+   "pdfPage": 234,
+   "page": 234,
+   "artist": "Bill Justis",
+   "conf": "med"
+  },
+  {
+   "title": "Rebel-’Rouser",
+   "pdfPage": 234,
+   "page": 234,
+   "artist": "Duane Eddy",
+   "conf": "high"
+  },
+  {
+   "title": "The Reflex",
+   "pdfPage": 236,
+   "page": 236,
+   "artist": "Duran Duran",
+   "conf": "high"
+  },
+  {
+   "title": "Return To Sender",
+   "pdfPage": 235,
+   "page": 235,
+   "artist": "Elvis Presley",
+   "conf": "med"
+  },
+  {
+   "title": "Rip It Up",
+   "pdfPage": 238,
+   "page": 238,
+   "artist": "Little Richard",
+   "conf": "high"
+  },
+  {
+   "title": "Rock And Roll Is Here To Stay",
+   "pdfPage": 244,
+   "page": 244,
+   "artist": "Danny & The Juniors",
+   "conf": "high"
+  },
+  {
+   "title": "Rock Around The Clock",
+   "pdfPage": 240,
+   "page": 240,
+   "artist": "Bill Haley & His Comets",
+   "conf": "high"
+  },
+  {
+   "title": "Rock Island Line",
+   "pdfPage": 242,
+   "page": 242,
+   "artist": "Lonnie Donegan",
+   "conf": "high"
+  },
+  {
+   "title": "Rocket Man",
+   "pdfPage": 239,
+   "page": 239,
+   "artist": "Elton John",
+   "conf": "high"
+  },
+  {
+   "title": "Rockin’ Robin",
+   "pdfPage": 237,
+   "page": 237,
+   "artist": "Bobby Day",
+   "conf": "med"
+  },
+  {
+   "title": "Rubber Ball",
+   "pdfPage": 240,
+   "page": 240,
+   "artist": "Bobby Vee",
+   "conf": "med"
+  },
+  {
+   "title": "Ruby Baby",
+   "pdfPage": 242,
+   "page": 242,
+   "artist": "Dion",
+   "conf": "med"
+  },
+  {
+   "title": "Ruby, Don’t Take Your Love To Town",
+   "pdfPage": 243,
+   "page": 243,
+   "artist": "Kenny Rogers",
+   "conf": "med"
+  },
+  {
+   "title": "Runaway",
+   "pdfPage": 245,
+   "page": 245,
+   "artist": "Del Shannon",
+   "conf": "high"
+  },
+  {
+   "title": "Running Bear",
+   "pdfPage": 238,
+   "page": 238,
+   "artist": "Johnny Preston",
+   "conf": "med"
+  },
+  {
+   "title": "Sad Songs (Say So Much)",
+   "pdfPage": 246,
+   "page": 246,
+   "artist": "Elton John",
+   "conf": "high"
+  },
+  {
+   "title": "San Francisco (Be Sure To Wear Some Flowers In Your Hair)",
+   "pdfPage": 248,
+   "page": 248,
+   "artist": "Scott McKenzie",
+   "conf": "high"
+  },
+  {
+   "title": "Sara",
+   "pdfPage": 249,
+   "page": 249,
+   "artist": "Starship",
+   "conf": "med"
+  },
+  {
+   "title": "Save The Last Dance For Me",
+   "pdfPage": 252,
+   "page": 252,
+   "artist": "Drifters",
+   "conf": "high"
+  },
+  {
+   "title": "Say Say Say",
+   "pdfPage": 250,
+   "page": 250,
+   "artist": "Paul McCartney & Michael Jackson",
+   "conf": "high"
+  },
+  {
+   "title": "School Is Out",
+   "pdfPage": 253,
+   "page": 253,
+   "artist": "Cary “U.S.” Bonds",
+   "conf": "high"
+  },
+  {
+   "title": "Sea Of Love",
+   "pdfPage": 254,
+   "page": 254,
+   "artist": "Phil Phillips",
+   "conf": "high"
+  },
+  {
+   "title": "Searchin’",
+   "pdfPage": 254,
+   "page": 254,
+   "artist": "Coasters",
+   "conf": "med"
+  },
+  {
+   "title": "Seasons In The Sun",
+   "pdfPage": 256,
+   "page": 256,
+   "artist": "Terry Jacks",
+   "conf": "med"
+  },
+  {
+   "title": "Secret Agent Man",
+   "pdfPage": 258,
+   "page": 258,
+   "artist": "Johnny Rivers",
+   "conf": "high"
+  },
+  {
+   "title": "See You Later, Alligator",
+   "pdfPage": 256,
+   "page": 256,
+   "artist": "Bill Haley & His Comets",
+   "conf": "high"
+  },
+  {
+   "title": "Shadow Dancing",
+   "pdfPage": 260,
+   "page": 260,
+   "artist": "Andy Gibb",
+   "conf": "high"
+  },
+  {
+   "title": "Shambala",
+   "pdfPage": 251,
+   "page": 251,
+   "artist": "Three Dog Night",
+   "conf": "high"
+  },
+  {
+   "title": "Shame On The Moon",
+   "pdfPage": 261,
+   "page": 261,
+   "artist": "Bob Seger",
+   "conf": "med"
+  },
+  {
+   "title": "She Bop",
+   "pdfPage": 259,
+   "page": 259,
+   "artist": "Cyndi Lauper",
+   "conf": "high"
+  },
+  {
+   "title": "She Loves You",
+   "pdfPage": 255,
+   "page": 255,
+   "artist": "Beatles",
+   "conf": "med"
+  },
+  {
+   "title": "She'd Rather Be With Me",
+   "pdfPage": 260,
+   "page": 260,
+   "artist": "Turtles",
+   "conf": "med"
+  },
+  {
+   "title": "She’s A Lady",
+   "pdfPage": 262,
+   "page": 262,
+   "artist": "Tom Jones",
+   "conf": "high"
+  },
+  {
+   "title": "Silhouettes",
+   "pdfPage": 262,
+   "page": 262,
+   "artist": "Rays",
+   "conf": "med"
+  },
+  {
+   "title": "Since I Met You Baby",
+   "pdfPage": 257,
+   "page": 257,
+   "artist": "Ivory Joe Hunter",
+   "conf": "med"
+  },
+  {
+   "title": "Sincerely",
+   "pdfPage": 264,
+   "page": 264,
+   "artist": "McGuire Sisters",
+   "conf": "high"
+  },
+  {
+   "title": "Singing The Blues",
+   "pdfPage": 265,
+   "page": 265,
+   "artist": "Guy Mitchell",
+   "conf": "high"
+  },
+  {
+   "title": "Sister Christian",
+   "pdfPage": 266,
+   "page": 266,
+   "artist": "Night Ranger",
+   "conf": "high"
+  },
+  {
+   "title": "Sixteen Candles",
+   "pdfPage": 266,
+   "page": 266,
+   "artist": "Crests",
+   "conf": "med"
+  },
+  {
+   "title": "Sixteen Reasons",
+   "pdfPage": 268,
+   "page": 268,
+   "artist": "Connie Stevens",
+   "conf": "high"
+  },
+  {
+   "title": "Sixteen Tons",
+   "pdfPage": 253,
+   "page": 253,
+   "artist": "“Tennessee” Ernie Ford",
+   "conf": "med"
+  },
+  {
+   "title": "Skinny Legs And All",
+   "pdfPage": 263,
+   "page": 263,
+   "artist": "Joe Tex",
+   "conf": "med"
+  },
+  {
+   "title": "Sleepwalk",
+   "pdfPage": 264,
+   "page": 264,
+   "artist": "Santo & Johnny",
+   "conf": "med"
+  },
+  {
+   "title": "Sloop John B.",
+   "pdfPage": 267,
+   "page": 267,
+   "artist": "Beach Boys",
+   "conf": "med"
+  },
+  {
+   "title": "Smile A Little Smile For Me",
+   "pdfPage": 270,
+   "page": 270,
+   "artist": "Flying Machine",
+   "conf": "high"
+  },
+  {
+   "title": "Smoke From A Distant Fire",
+   "pdfPage": 268,
+   "page": 268,
+   "artist": "Sanford Townsend Band",
+   "conf": "med"
+  },
+  {
+   "title": "So Sad (To Watch Good Love Go Bad)",
+   "pdfPage": 272,
+   "page": 272,
+   "artist": "Everly Brothers",
+   "conf": "high"
+  },
+  {
+   "title": "(She’s) Some Kind Of Wonderful",
+   "pdfPage": 247,
+   "page": 247,
+   "artist": "Grand Funk Railroad",
+   "conf": "med"
+  },
+  {
+   "title": "Song Sung Blue",
+   "pdfPage": 274,
+   "page": 274,
+   "artist": "Neil Diamond",
+   "conf": "high"
+  },
+  {
+   "title": "South Street",
+   "pdfPage": 276,
+   "page": 276,
+   "artist": "Orlons",
+   "conf": "high"
+  },
+  {
+   "title": "Spanish Harlem",
+   "pdfPage": 273,
+   "page": 273,
+   "artist": "Aretha Franklin",
+   "conf": "med"
+  },
+  {
+   "title": "Spirit In The Sky",
+   "pdfPage": 276,
+   "page": 276,
+   "artist": "Norman Greenbaum",
+   "conf": "med"
+  },
+  {
+   "title": "Stand By Me",
+   "pdfPage": 265,
+   "page": 265,
+   "artist": "Ben E. King",
+   "conf": "med"
+  },
+  {
+   "title": "Stay",
+   "pdfPage": 282,
+   "page": 282,
+   "artist": "Maurice Williams & The Zodiacs",
+   "conf": "med"
+  },
+  {
+   "title": "Stayin’ Alive",
+   "pdfPage": 270,
+   "page": 270,
+   "artist": "Bee Gees",
+   "conf": "med"
+  },
+  {
+   "title": "Stray Cat Strut",
+   "pdfPage": 272,
+   "page": 272,
+   "artist": "Stray Cats",
+   "conf": "med"
+  },
+  {
+   "title": "The Stroll",
+   "pdfPage": 275,
+   "page": 275,
+   "artist": "Diamonds",
+   "conf": "med"
+  },
+  {
+   "title": "Stuck In The Middle With You",
+   "pdfPage": 278,
+   "page": 278,
+   "artist": "Stealers Wheel",
+   "conf": "high"
+  },
+  {
+   "title": "Sugar Shack",
+   "pdfPage": 284,
+   "page": 284,
+   "artist": "Jimmy Gilmer & The Fireballs",
+   "conf": "high"
+  },
+  {
+   "title": "Summer In The City",
+   "pdfPage": 271,
+   "page": 271,
+   "artist": "Lovin’ Spoonful",
+   "conf": "med"
+  },
+  {
+   "title": "Summertime Blues",
+   "pdfPage": 284,
+   "page": 284,
+   "artist": "Eddie Cochran",
+   "conf": "med"
+  },
+  {
+   "title": "The Sunshine Of Your Love",
+   "pdfPage": 281,
+   "page": 281,
+   "artist": "Cream",
+   "conf": "med"
+  },
+  {
+   "title": "Superstar (From “Jesus Christ Superstar”)",
+   "pdfPage": 280,
+   "page": 280,
+   "artist": "Murray Head With The Trinidad Singers",
+   "conf": "high"
+  },
+  {
+   "title": "Surfin’ U.S.A.",
+   "pdfPage": 283,
+   "page": 283,
+   "artist": "Beach Boys",
+   "conf": "med"
+  },
+  {
+   "title": "Suspicion",
+   "pdfPage": 277,
+   "page": 277,
+   "artist": "Terry Stafford",
+   "conf": "med"
+  },
+  {
+   "title": "Susie-Q",
+   "pdfPage": 245,
+   "page": 245,
+   "artist": "Creedence Clearwater Revival",
+   "conf": "med"
+  },
+  {
+   "title": "Sweet Caroline",
+   "pdfPage": 279,
+   "page": 279,
+   "artist": "Neil Diamond",
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Home Alabama",
+   "pdfPage": 282,
+   "page": 282,
+   "artist": "Lynyrd Skynyrd",
+   "conf": "med"
+  },
+  {
+   "title": "Sweet Little Sixteen",
+   "pdfPage": 274,
+   "page": 274,
+   "artist": "Chuck Berry",
+   "conf": "med"
+  },
+  {
+   "title": "Take A Chance On Me",
+   "pdfPage": 286,
+   "page": 286,
+   "artist": "Abba",
+   "conf": "high"
+  },
+  {
+   "title": "Take A Letter, Maria",
+   "pdfPage": 286,
+   "page": 286,
+   "artist": "R.B. Greaves",
+   "conf": "med"
+  },
+  {
+   "title": "Tears On My Pillow",
+   "pdfPage": 288,
+   "page": 288,
+   "artist": "Little Anthony & The Imperials",
+   "conf": "high"
+  },
+  {
+   "title": "Teddy Bear",
+   "pdfPage": 291,
+   "page": 291,
+   "artist": "Elvis Presley",
+   "conf": "high"
+  },
+  {
+   "title": "Teen Angel",
+   "pdfPage": 290,
+   "page": 290,
+   "artist": "Mark Dinning",
+   "conf": "high"
+  },
+  {
+   "title": "A Teenager In Love",
+   "pdfPage": 287,
+   "page": 287,
+   "artist": "Dion & The Belmonts",
+   "conf": "high"
+  },
+  {
+   "title": "Tell It Like It Is",
+   "pdfPage": 288,
+   "page": 288,
+   "artist": "Aaron Neville",
+   "conf": "high"
+  },
+  {
+   "title": "Tell Laura I Love Her",
+   "pdfPage": 320,
+   "page": 292,
+   "artist": "Ray Peterson",
+   "conf": "med"
+  },
+  {
+   "title": "Then You Can Tell Me Goodbye",
+   "pdfPage": 290,
+   "page": 290,
+   "artist": "Casinos",
+   "conf": "high"
+  },
+  {
+   "title": "There Goes My Baby",
+   "pdfPage": 320,
+   "page": 292,
+   "artist": "Drifters",
+   "conf": "high"
+  },
+  {
+   "title": "There'll Be Sad Songs (To Make You Cry)",
+   "pdfPage": 319,
+   "page": 294,
+   "artist": "Billy Ocean",
+   "conf": "high"
+  },
+  {
+   "title": "There’s A Moon Out Tonight",
+   "pdfPage": 293,
+   "page": 295,
+   "artist": "Capris",
+   "conf": "high"
+  },
+  {
+   "title": "These Boots Are Made For Walkin’",
+   "pdfPage": 289,
+   "page": 289,
+   "artist": "Nancy Sinatra",
+   "conf": "high"
+  },
+  {
+   "title": "These Dreams",
+   "pdfPage": 318,
+   "page": 296,
+   "artist": "Heart",
+   "conf": "high"
+  },
+  {
+   "title": "Things",
+   "pdfPage": 294,
+   "page": 297,
+   "artist": "Bobby Darin",
+   "conf": "high"
+  },
+  {
+   "title": "This Diamond Ring",
+   "pdfPage": 317,
+   "page": 298,
+   "artist": "Gary Lewis & The Playboys",
+   "conf": "high"
+  },
+  {
+   "title": "Those Were The Days",
+   "pdfPage": 317,
+   "page": 298,
+   "artist": "Mary Hopkin",
+   "conf": "high"
+  },
+  {
+   "title": "Time After Time",
+   "pdfPage": 316,
+   "page": 300,
+   "artist": "Cyndi Lauper",
+   "conf": "high"
+  },
+  {
+   "title": "Tired Of Toein’ The Line",
+   "pdfPage": 296,
+   "page": 301,
+   "artist": "Rocky Burnette",
+   "conf": "high"
+  },
+  {
+   "title": "To Know Him Is To Love Him",
+   "pdfPage": 315,
+   "page": 302,
+   "artist": "Teddy Bears",
+   "conf": "high"
+  },
+  {
+   "title": "Tobacco Road",
+   "pdfPage": 315,
+   "page": 302,
+   "artist": "Nashville Teens",
+   "conf": "high"
+  },
+  {
+   "title": "Tom Dooley",
+   "pdfPage": 292,
+   "page": 293,
+   "artist": "Kingston Trio",
+   "conf": "high"
+  },
+  {
+   "title": "Tossin’ And Turnin’",
+   "pdfPage": 295,
+   "page": 299,
+   "artist": "Bobby Lewis",
+   "conf": "high"
+  },
+  {
+   "title": "Total Eclipse Of The Heart",
+   "pdfPage": 314,
+   "page": 304,
+   "artist": "Bonnie Tyler",
+   "conf": "high"
+  },
+  {
+   "title": "Tragedy",
+   "pdfPage": 313,
+   "page": 306,
+   "artist": "Bee Gees",
+   "conf": "high"
+  },
+  {
+   "title": "Turn Me Loose",
+   "pdfPage": 297,
+   "page": 303,
+   "artist": "Fabian",
+   "conf": "high"
+  },
+  {
+   "title": "Turn! Turn! Turn!",
+   "pdfPage": 312,
+   "page": 308,
+   "artist": "Byrds",
+   "conf": "high"
+  },
+  {
+   "title": "Tutti Frutti",
+   "pdfPage": 285,
+   "page": 285,
+   "artist": "Pat Boone",
+   "conf": "high"
+  },
+  {
+   "title": "The Twist",
+   "pdfPage": 291,
+   "page": 291,
+   "artist": "Chubby Checker",
+   "conf": "high"
+  },
+  {
+   "title": "Two Faces Have I",
+   "pdfPage": 313,
+   "page": 306,
+   "artist": "Lou Christie",
+   "conf": "high"
+  },
+  {
+   "title": "Under The Boardwalk",
+   "pdfPage": 312,
+   "page": 308,
+   "artist": "Drifters",
+   "conf": "high"
+  },
+  {
+   "title": "Union Of The Snake",
+   "pdfPage": 311,
+   "page": 310,
+   "artist": "Duran Duran",
+   "conf": "high"
+  },
+  {
+   "title": "Up, Up And Away",
+   "pdfPage": 300,
+   "page": 309,
+   "artist": "5th Dimension",
+   "conf": "high"
+  },
+  {
+   "title": "Valotte",
+   "pdfPage": 310,
+   "page": 312,
+   "artist": "Julian Lennon",
+   "conf": "high"
+  },
+  {
+   "title": "Wah-Watusi",
+   "pdfPage": 309,
+   "page": 314,
+   "artist": "Orlons",
+   "conf": "high"
+  },
+  {
+   "title": "Wake Me Up Before You Go-Go",
+   "pdfPage": 311,
+   "page": 310,
+   "artist": "Wham!",
+   "conf": "high"
+  },
+  {
+   "title": "Wake Up, Little Susie",
+   "pdfPage": 303,
+   "page": 315,
+   "artist": "Everly Brothers",
+   "conf": "high"
+  },
+  {
+   "title": "Walk Away Renee",
+   "pdfPage": 308,
+   "page": 316,
+   "artist": "Left Banke",
+   "conf": "high"
+  },
+  {
+   "title": "Waterloo",
+   "pdfPage": 322,
+   "page": 322,
+   "artist": "Abba",
+   "conf": "high"
+  },
+  {
+   "title": "‘Way Down Yonder In New Orleans",
+   "pdfPage": 306,
+   "page": 320,
+   "artist": "Freddy Cannon",
+   "conf": "high"
+  },
+  {
+   "title": "Wayward Wind",
+   "pdfPage": 301,
+   "page": 311,
+   "artist": "Gogi Grant",
+   "conf": "high"
+  },
+  {
+   "title": "We Built This City",
+   "pdfPage": 307,
+   "page": 318,
+   "artist": "Starship",
+   "conf": "high"
+  },
+  {
+   "title": "What You Need",
+   "pdfPage": 304,
+   "page": 317,
+   "artist": "INXS",
+   "conf": "high"
+  },
+  {
+   "title": "What'd I Say",
+   "pdfPage": 306,
+   "page": 320,
+   "artist": "Ray Charles",
+   "conf": "med"
+  },
+  {
+   "title": "What's Love Got To Do With It",
+   "pdfPage": 302,
+   "page": 313,
+   "artist": "Tina Turner",
+   "conf": "high"
+  },
+  {
+   "title": "Which Way You Goin’ Billy?",
+   "pdfPage": 309,
+   "page": 314,
+   "artist": "Poppy Family",
+   "conf": "high"
+  },
+  {
+   "title": "White Room",
+   "pdfPage": 330,
+   "page": 330,
+   "artist": "Cream",
+   "conf": "high"
+  },
+  {
+   "title": "A Whiter Shade Of Pale",
+   "pdfPage": 330,
+   "page": 330,
+   "artist": "Procol Harum",
+   "conf": "high"
+  },
+  {
+   "title": "Who's Johnny (“Short Circuit” Theme)",
+   "pdfPage": 324,
+   "page": 324,
+   "artist": "El Debarge",
+   "conf": "high"
+  },
+  {
+   "title": "Whole Lotta Shakin’ Goin’ On",
+   "pdfPage": 326,
+   "page": 326,
+   "artist": "Jerry Lee Lewis",
+   "conf": "high"
+  },
+  {
+   "title": "The Wild Boys",
+   "pdfPage": 305,
+   "page": 319,
+   "artist": "Duran Duran",
+   "conf": "high"
+  },
+  {
+   "title": "Woman In Love",
+   "pdfPage": 321,
+   "page": 321,
+   "artist": "Barbra Streisand",
+   "conf": "high"
+  },
+  {
+   "title": "Wonderful! Wonderful!",
+   "pdfPage": 325,
+   "page": 325,
+   "artist": "Tymes",
+   "conf": "high"
+  },
+  {
+   "title": "Wooly Bully",
+   "pdfPage": 308,
+   "page": 316,
+   "artist": "Sam The Sham & The Pharaohs",
+   "conf": "high"
+  },
+  {
+   "title": "Yakety Yak",
+   "pdfPage": 326,
+   "page": 326,
+   "artist": "Coasters",
+   "conf": "high"
+  },
+  {
+   "title": "Yes I’m Ready",
+   "pdfPage": 328,
+   "page": 328,
+   "artist": "Terri DeSario with K.C.",
+   "conf": "high"
+  },
+  {
+   "title": "Yesterday",
+   "pdfPage": 327,
+   "page": 327,
+   "artist": "Beatles",
+   "conf": "high"
+  },
+  {
+   "title": "You Baby",
+   "pdfPage": 328,
+   "page": 328,
+   "artist": "Turtles",
+   "conf": "high"
+  },
+  {
+   "title": "You Can't Sit Down",
+   "pdfPage": 322,
+   "page": 322,
+   "artist": "Dovells",
+   "conf": "high"
+  },
+  {
+   "title": "You Don’t Bring Me Flowers",
+   "pdfPage": 323,
+   "page": 323,
+   "artist": "Neil Diamond & Barbra Streisand",
+   "conf": "high"
+  },
+  {
+   "title": "You Don’t Own Me",
+   "pdfPage": 329,
+   "page": 329,
+   "artist": "Lesley Gore",
+   "conf": "high"
+  },
+  {
+   "title": "You Give Good Love",
+   "pdfPage": 332,
+   "page": 332,
+   "artist": "Whitney Houston",
+   "conf": "high"
+  },
+  {
+   "title": "You Should Be Dancing",
+   "pdfPage": 332,
+   "page": 332,
+   "artist": "Bee Gees",
+   "conf": "high"
+  },
+  {
+   "title": "(You're The) Devil In Disguise",
+   "pdfPage": 333,
+   "page": 333,
+   "artist": "Elvis Presley",
+   "conf": "high"
+  },
+  {
+   "title": "You're The One That I Want",
+   "pdfPage": 327,
+   "page": 327,
+   "artist": "Oliva Newton-John & John Travolta",
+   "conf": "med"
+  },
+  {
+   "title": "Young Blood",
+   "pdfPage": 331,
+   "page": 331,
+   "artist": "Coasters",
+   "conf": "high"
+  },
+  {
+   "title": "Your Song",
+   "pdfPage": 334,
+   "page": 334,
+   "artist": "Elton John",
+   "conf": "high"
+  }
+ ]
+}

@@ -32,6 +32,6 @@ toc: false
 <table><thead><tr><th>Tune</th><th>In my books (book, page)</th><th class="hide-sm">Songfinder</th><th class="n">Books</th></tr></thead><tbody id="rows"></tbody></table>
 <p class="aka">Handwritten books are in <i>italics</i>. Hover over a printing for the PDF page and how sure the page number is (high: checked on the page; med: from the book's index, not checked; low: guessed).</p>
 </div>
-<script src="/apps/realbooks/catalogue-data.js?v=2"></script>
-<script src="/apps/realbooks/catalogue.js?v=2"></script>
+<script src="/apps/realbooks/catalogue-data.js?v=3"></script>
+<script src="/apps/realbooks/catalogue.js?v=3"></script>
 ```

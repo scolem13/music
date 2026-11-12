@@ -1,0 +1,908 @@
+{
+ "file": "The Real Christmas Book C Edition (Hal Leonard).pdf",
+ "method": "outline",
+ "offset": 0,
+ "notes": "One bookmark per tune (outline entries 6-155; first 5 are Cover/Preface/3 TOC pages, excluded). Printed TOC (pdf pp3-5) agrees with the bookmarks; printed page = pdfPage (offset 0). Checked by eye on header crops at pdf pp7,20,40,62,88,112,150,196,216 (9): all match. Handwritten Real-Book style, 300 dpi 1-bit JBIG2 scans, so OCR of titles fails. Composer credits are printed under each title but were not extracted. The two Away In A Manger entries are labelled Spillman/Murray as in the printed TOC. Several tunes share a page pair; each entry is the first page only.",
+ "entries": [
+  {
+   "title": "A Caroling We Go",
+   "pdfPage": 6,
+   "page": 6,
+   "conf": "high"
+  },
+  {
+   "title": "Almost Day",
+   "pdfPage": 7,
+   "page": 7,
+   "conf": "high"
+  },
+  {
+   "title": "All I Want For Christmas Is You",
+   "pdfPage": 8,
+   "page": 8,
+   "conf": "high"
+  },
+  {
+   "title": "Angels From The Realms Of Glory",
+   "pdfPage": 10,
+   "page": 10,
+   "conf": "high"
+  },
+  {
+   "title": "Angels We Have Heard On High",
+   "pdfPage": 11,
+   "page": 11,
+   "conf": "high"
+  },
+  {
+   "title": "As Long As There's Christmas",
+   "pdfPage": 12,
+   "page": 12,
+   "conf": "high"
+  },
+  {
+   "title": "Auld Lang Syne",
+   "pdfPage": 14,
+   "page": 14,
+   "conf": "high"
+  },
+  {
+   "title": "Away In A Manger (Spillman)",
+   "pdfPage": 15,
+   "page": 15,
+   "conf": "high"
+  },
+  {
+   "title": "Away In A Manger (Murray)",
+   "pdfPage": 16,
+   "page": 16,
+   "conf": "high"
+  },
+  {
+   "title": "Blue Christmas",
+   "pdfPage": 17,
+   "page": 17,
+   "conf": "high"
+  },
+  {
+   "title": "Baby, It's Cold Outside",
+   "pdfPage": 18,
+   "page": 18,
+   "conf": "high"
+  },
+  {
+   "title": "Because It's Christmas (For All The Children)",
+   "pdfPage": 20,
+   "page": 20,
+   "conf": "high"
+  },
+  {
+   "title": "The Boar's Head Carol",
+   "pdfPage": 22,
+   "page": 22,
+   "conf": "high"
+  },
+  {
+   "title": "Bring A Torch, Jeannette, Isabella",
+   "pdfPage": 23,
+   "page": 23,
+   "conf": "high"
+  },
+  {
+   "title": "Brazilian Sleigh Bells",
+   "pdfPage": 24,
+   "page": 24,
+   "conf": "high"
+  },
+  {
+   "title": "Burgundian Carol",
+   "pdfPage": 26,
+   "page": 26,
+   "conf": "high"
+  },
+  {
+   "title": "Carol Of The Bells",
+   "pdfPage": 27,
+   "page": 27,
+   "conf": "high"
+  },
+  {
+   "title": "Caroling, Caroling",
+   "pdfPage": 28,
+   "page": 28,
+   "conf": "high"
+  },
+  {
+   "title": "The Chipmunk Song",
+   "pdfPage": 29,
+   "page": 29,
+   "conf": "high"
+  },
+  {
+   "title": "Christ Was Born On Christmas Day",
+   "pdfPage": 30,
+   "page": 30,
+   "conf": "high"
+  },
+  {
+   "title": "Christmas Is",
+   "pdfPage": 31,
+   "page": 31,
+   "conf": "high"
+  },
+  {
+   "title": "C-H-R-I-S-T-M-A-S",
+   "pdfPage": 32,
+   "page": 32,
+   "conf": "high"
+  },
+  {
+   "title": "Christmas Is A-Comin' (May God Bless You)",
+   "pdfPage": 34,
+   "page": 34,
+   "conf": "high"
+  },
+  {
+   "title": "Christmas Is The Time To Say I Love You",
+   "pdfPage": 36,
+   "page": 36,
+   "conf": "high"
+  },
+  {
+   "title": "The Christmas Song (Chestnuts Roasting On An Open Fire)",
+   "pdfPage": 38,
+   "page": 38,
+   "conf": "high"
+  },
+  {
+   "title": "Christmas Time Is Here",
+   "pdfPage": 39,
+   "page": 39,
+   "conf": "high"
+  },
+  {
+   "title": "The Christmas Waltz",
+   "pdfPage": 40,
+   "page": 40,
+   "conf": "high"
+  },
+  {
+   "title": "Coventry Carol",
+   "pdfPage": 41,
+   "page": 41,
+   "conf": "high"
+  },
+  {
+   "title": "Cold December Nights",
+   "pdfPage": 42,
+   "page": 42,
+   "conf": "high"
+  },
+  {
+   "title": "Dance Of The Sugar Plum Fairy",
+   "pdfPage": 44,
+   "page": 44,
+   "conf": "high"
+  },
+  {
+   "title": "Deck The Hall",
+   "pdfPage": 45,
+   "page": 45,
+   "conf": "high"
+  },
+  {
+   "title": "Ding Dong! Merrily On High!",
+   "pdfPage": 46,
+   "page": 46,
+   "conf": "high"
+  },
+  {
+   "title": "Do You Hear What I Hear",
+   "pdfPage": 47,
+   "page": 47,
+   "conf": "high"
+  },
+  {
+   "title": "Do They Know It's Christmas?",
+   "pdfPage": 48,
+   "page": 48,
+   "conf": "high"
+  },
+  {
+   "title": "Feliz Navidad",
+   "pdfPage": 50,
+   "page": 50,
+   "conf": "high"
+  },
+  {
+   "title": "The First Noel",
+   "pdfPage": 51,
+   "page": 51,
+   "conf": "high"
+  },
+  {
+   "title": "The Friendly Beasts",
+   "pdfPage": 52,
+   "page": 52,
+   "conf": "high"
+  },
+  {
+   "title": "From Heaven Above To Earth I Come",
+   "pdfPage": 53,
+   "page": 53,
+   "conf": "high"
+  },
+  {
+   "title": "Frosty The Snow Man",
+   "pdfPage": 54,
+   "page": 54,
+   "conf": "high"
+  },
+  {
+   "title": "Fum, Fum, Fum",
+   "pdfPage": 56,
+   "page": 56,
+   "conf": "high"
+  },
+  {
+   "title": "Go, Tell It On The Mountain",
+   "pdfPage": 57,
+   "page": 57,
+   "conf": "high"
+  },
+  {
+   "title": "Gesù Bambino (The Infant Jesus)",
+   "pdfPage": 58,
+   "page": 58,
+   "conf": "high"
+  },
+  {
+   "title": "The Gift",
+   "pdfPage": 60,
+   "page": 60,
+   "conf": "high"
+  },
+  {
+   "title": "God Rest Ye Merry, Gentlemen",
+   "pdfPage": 62,
+   "page": 62,
+   "conf": "high"
+  },
+  {
+   "title": "Good Christian Men, Rejoice",
+   "pdfPage": 63,
+   "page": 63,
+   "conf": "high"
+  },
+  {
+   "title": "Good King Wenceslas",
+   "pdfPage": 64,
+   "page": 64,
+   "conf": "high"
+  },
+  {
+   "title": "Greenwillow Christmas",
+   "pdfPage": 65,
+   "page": 65,
+   "conf": "high"
+  },
+  {
+   "title": "Grandma Got Run Over By A Reindeer",
+   "pdfPage": 66,
+   "page": 66,
+   "conf": "high"
+  },
+  {
+   "title": "Grandma's Killer Fruitcake",
+   "pdfPage": 68,
+   "page": 68,
+   "conf": "high"
+  },
+  {
+   "title": "The Greatest Gift Of All",
+   "pdfPage": 70,
+   "page": 70,
+   "conf": "high"
+  },
+  {
+   "title": "Grown-Up Christmas List",
+   "pdfPage": 72,
+   "page": 72,
+   "conf": "high"
+  },
+  {
+   "title": "Hallelujah Chorus",
+   "pdfPage": 74,
+   "page": 74,
+   "conf": "high"
+  },
+  {
+   "title": "Happy Christmas, Little Friend",
+   "pdfPage": 76,
+   "page": 76,
+   "conf": "high"
+  },
+  {
+   "title": "Happy Holiday",
+   "pdfPage": 77,
+   "page": 77,
+   "conf": "high"
+  },
+  {
+   "title": "Happy Hanukkah, My Friend (The Hanukkah Song)",
+   "pdfPage": 78,
+   "page": 78,
+   "conf": "high"
+  },
+  {
+   "title": "Happy Xmas (War Is Over)",
+   "pdfPage": 80,
+   "page": 80,
+   "conf": "high"
+  },
+  {
+   "title": "Hard Candy Christmas",
+   "pdfPage": 82,
+   "page": 82,
+   "conf": "high"
+  },
+  {
+   "title": "Hark! The Herald Angels Sing",
+   "pdfPage": 84,
+   "page": 84,
+   "conf": "high"
+  },
+  {
+   "title": "He",
+   "pdfPage": 85,
+   "page": 85,
+   "conf": "high"
+  },
+  {
+   "title": "Here Comes Santa Claus (Right Down Santa Claus Lane)",
+   "pdfPage": 86,
+   "page": 86,
+   "conf": "high"
+  },
+  {
+   "title": "Here We Come A-Wassailing",
+   "pdfPage": 87,
+   "page": 87,
+   "conf": "high"
+  },
+  {
+   "title": "The Holly And The Ivy",
+   "pdfPage": 88,
+   "page": 88,
+   "conf": "high"
+  },
+  {
+   "title": "A Holly Jolly Christmas",
+   "pdfPage": 89,
+   "page": 89,
+   "conf": "high"
+  },
+  {
+   "title": "(There's No Place Like) Home For The Holidays",
+   "pdfPage": 90,
+   "page": 90,
+   "conf": "high"
+  },
+  {
+   "title": "I Heard The Bells On Christmas Day",
+   "pdfPage": 92,
+   "page": 92,
+   "conf": "high"
+  },
+  {
+   "title": "I Saw Mommy Kissing Santa Claus",
+   "pdfPage": 93,
+   "page": 93,
+   "conf": "high"
+  },
+  {
+   "title": "I Wonder As I Wander",
+   "pdfPage": 94,
+   "page": 94,
+   "conf": "high"
+  },
+  {
+   "title": "I've Got My Love To Keep Me Warm",
+   "pdfPage": 95,
+   "page": 95,
+   "conf": "high"
+  },
+  {
+   "title": "I'll Be Home For Christmas",
+   "pdfPage": 96,
+   "page": 96,
+   "conf": "high"
+  },
+  {
+   "title": "It Came Upon The Midnight Clear",
+   "pdfPage": 98,
+   "page": 98,
+   "conf": "high"
+  },
+  {
+   "title": "It's A Big Wide Wonderful World",
+   "pdfPage": 99,
+   "page": 99,
+   "conf": "high"
+  },
+  {
+   "title": "It Must Have Been The Mistletoe (Our First Christmas)",
+   "pdfPage": 100,
+   "page": 100,
+   "conf": "high"
+  },
+  {
+   "title": "It's Beginning To Look Like Christmas",
+   "pdfPage": 102,
+   "page": 102,
+   "conf": "high"
+  },
+  {
+   "title": "It's Christmas In New York",
+   "pdfPage": 104,
+   "page": 104,
+   "conf": "high"
+  },
+  {
+   "title": "It's Christmas Time All Over The World",
+   "pdfPage": 106,
+   "page": 106,
+   "conf": "high"
+  },
+  {
+   "title": "It's Just Another New Year's Eve",
+   "pdfPage": 108,
+   "page": 108,
+   "conf": "high"
+  },
+  {
+   "title": "Jesu, Joy Of Man's Desiring",
+   "pdfPage": 110,
+   "page": 110,
+   "conf": "high"
+  },
+  {
+   "title": "Jingle-Bell Rock",
+   "pdfPage": 112,
+   "page": 112,
+   "conf": "high"
+  },
+  {
+   "title": "Jingle Bells",
+   "pdfPage": 114,
+   "page": 114,
+   "conf": "high"
+  },
+  {
+   "title": "Jingle, Jingle, Jingle",
+   "pdfPage": 115,
+   "page": 115,
+   "conf": "high"
+  },
+  {
+   "title": "Joy To The World",
+   "pdfPage": 116,
+   "page": 116,
+   "conf": "high"
+  },
+  {
+   "title": "June In January",
+   "pdfPage": 117,
+   "page": 117,
+   "conf": "high"
+  },
+  {
+   "title": "Last Christmas",
+   "pdfPage": 118,
+   "page": 118,
+   "conf": "high"
+  },
+  {
+   "title": "The Last Month Of The Year (What Month Was Jesus Born In?)",
+   "pdfPage": 120,
+   "page": 120,
+   "conf": "high"
+  },
+  {
+   "title": "Let It Snow! Let It Snow! Let It Snow!",
+   "pdfPage": 122,
+   "page": 122,
+   "conf": "high"
+  },
+  {
+   "title": "Let's Have An Old Fashioned Christmas",
+   "pdfPage": 123,
+   "page": 123,
+   "conf": "high"
+  },
+  {
+   "title": "Little Saint Nick",
+   "pdfPage": 124,
+   "page": 124,
+   "conf": "high"
+  },
+  {
+   "title": "Lost In The Stars",
+   "pdfPage": 126,
+   "page": 126,
+   "conf": "high"
+  },
+  {
+   "title": "March Of The Toys",
+   "pdfPage": 128,
+   "page": 128,
+   "conf": "high"
+  },
+  {
+   "title": "A Marshmallow World",
+   "pdfPage": 130,
+   "page": 130,
+   "conf": "high"
+  },
+  {
+   "title": "Mele Kalikimaka",
+   "pdfPage": 131,
+   "page": 131,
+   "conf": "high"
+  },
+  {
+   "title": "Merry Christmas, Baby",
+   "pdfPage": 132,
+   "page": 132,
+   "conf": "high"
+  },
+  {
+   "title": "Merry Christmas, Darling",
+   "pdfPage": 134,
+   "page": 134,
+   "conf": "high"
+  },
+  {
+   "title": "The Merry Christmas Polka",
+   "pdfPage": 136,
+   "page": 136,
+   "conf": "high"
+  },
+  {
+   "title": "Mistletoe And Holly",
+   "pdfPage": 137,
+   "page": 137,
+   "conf": "high"
+  },
+  {
+   "title": "Merry, Merry Christmas, Baby",
+   "pdfPage": 138,
+   "page": 138,
+   "conf": "high"
+  },
+  {
+   "title": "A Merry, Merry Christmas To You",
+   "pdfPage": 140,
+   "page": 140,
+   "conf": "high"
+  },
+  {
+   "title": "Mister Santa",
+   "pdfPage": 142,
+   "page": 142,
+   "conf": "high"
+  },
+  {
+   "title": "The Most Wonderful Day Of The Year",
+   "pdfPage": 144,
+   "page": 144,
+   "conf": "high"
+  },
+  {
+   "title": "The Most Wonderful Time Of The Year",
+   "pdfPage": 146,
+   "page": 146,
+   "conf": "high"
+  },
+  {
+   "title": "My Favorite Things",
+   "pdfPage": 148,
+   "page": 148,
+   "conf": "high"
+  },
+  {
+   "title": "Noel! Noel!",
+   "pdfPage": 149,
+   "page": 149,
+   "conf": "high"
+  },
+  {
+   "title": "My Only Wish This Year",
+   "pdfPage": 150,
+   "page": 150,
+   "conf": "high"
+  },
+  {
+   "title": "The Night Before Christmas Song",
+   "pdfPage": 152,
+   "page": 152,
+   "conf": "high"
+  },
+  {
+   "title": "Nuttin' For Christmas",
+   "pdfPage": 154,
+   "page": 154,
+   "conf": "high"
+  },
+  {
+   "title": "O Christmas Tree",
+   "pdfPage": 156,
+   "page": 156,
+   "conf": "high"
+  },
+  {
+   "title": "O Come, All Ye Faithful (Adeste Fideles)",
+   "pdfPage": 157,
+   "page": 157,
+   "conf": "high"
+  },
+  {
+   "title": "O Come, O Come Immanuel (O Come, O Come Emmanuel)",
+   "pdfPage": 158,
+   "page": 158,
+   "conf": "high"
+  },
+  {
+   "title": "O Little Town Of Bethlehem",
+   "pdfPage": 159,
+   "page": 159,
+   "conf": "high"
+  },
+  {
+   "title": "O Holy Night",
+   "pdfPage": 160,
+   "page": 160,
+   "conf": "high"
+  },
+  {
+   "title": "Old Toy Trains",
+   "pdfPage": 162,
+   "page": 162,
+   "conf": "high"
+  },
+  {
+   "title": "Parade Of The Wooden Soldiers",
+   "pdfPage": 164,
+   "page": 164,
+   "conf": "high"
+  },
+  {
+   "title": "Pretty Paper",
+   "pdfPage": 166,
+   "page": 166,
+   "conf": "high"
+  },
+  {
+   "title": "Rockin' Around The Christmas Tree",
+   "pdfPage": 168,
+   "page": 168,
+   "conf": "high"
+  },
+  {
+   "title": "Rudolph The Red-Nosed Reindeer",
+   "pdfPage": 169,
+   "page": 169,
+   "conf": "high"
+  },
+  {
+   "title": "Santa Baby",
+   "pdfPage": 170,
+   "page": 170,
+   "conf": "high"
+  },
+  {
+   "title": "Santa, Bring My Baby Back (To Me)",
+   "pdfPage": 172,
+   "page": 172,
+   "conf": "high"
+  },
+  {
+   "title": "Shake Me I Rattle (Squeeze Me I Cry)",
+   "pdfPage": 173,
+   "page": 173,
+   "conf": "high"
+  },
+  {
+   "title": "Santa Claus Is Comin' To Town",
+   "pdfPage": 174,
+   "page": 174,
+   "conf": "high"
+  },
+  {
+   "title": "Silent Night",
+   "pdfPage": 176,
+   "page": 176,
+   "conf": "high"
+  },
+  {
+   "title": "Silver And Gold",
+   "pdfPage": 177,
+   "page": 177,
+   "conf": "high"
+  },
+  {
+   "title": "Silver Bells",
+   "pdfPage": 178,
+   "page": 178,
+   "conf": "high"
+  },
+  {
+   "title": "Sing We Now Of Christmas",
+   "pdfPage": 179,
+   "page": 179,
+   "conf": "high"
+  },
+  {
+   "title": "Snowfall",
+   "pdfPage": 180,
+   "page": 180,
+   "conf": "high"
+  },
+  {
+   "title": "Somewhere In My Memory",
+   "pdfPage": 181,
+   "page": 181,
+   "conf": "high"
+  },
+  {
+   "title": "Someday At Christmas",
+   "pdfPage": 182,
+   "page": 182,
+   "conf": "high"
+  },
+  {
+   "title": "The Star Carol",
+   "pdfPage": 184,
+   "page": 184,
+   "conf": "high"
+  },
+  {
+   "title": "Still, Still, Still",
+   "pdfPage": 185,
+   "page": 185,
+   "conf": "high"
+  },
+  {
+   "title": "Suzy Snowflake",
+   "pdfPage": 186,
+   "page": 186,
+   "conf": "high"
+  },
+  {
+   "title": "That Christmas Feeling",
+   "pdfPage": 187,
+   "page": 187,
+   "conf": "high"
+  },
+  {
+   "title": "Tennessee Christmas",
+   "pdfPage": 188,
+   "page": 188,
+   "conf": "high"
+  },
+  {
+   "title": "This Christmas",
+   "pdfPage": 190,
+   "page": 190,
+   "conf": "high"
+  },
+  {
+   "title": "This One's For The Children",
+   "pdfPage": 192,
+   "page": 192,
+   "conf": "high"
+  },
+  {
+   "title": "Toyland",
+   "pdfPage": 194,
+   "page": 194,
+   "conf": "high"
+  },
+  {
+   "title": "Up On The Housetop",
+   "pdfPage": 195,
+   "page": 195,
+   "conf": "high"
+  },
+  {
+   "title": "'Twas The Night Before Christmas",
+   "pdfPage": 196,
+   "page": 196,
+   "conf": "high"
+  },
+  {
+   "title": "The Twelve Days Of Christmas",
+   "pdfPage": 198,
+   "page": 198,
+   "conf": "high"
+  },
+  {
+   "title": "We Need A Little Christmas",
+   "pdfPage": 200,
+   "page": 200,
+   "conf": "high"
+  },
+  {
+   "title": "We Three Kings Of Orient Are",
+   "pdfPage": 202,
+   "page": 202,
+   "conf": "high"
+  },
+  {
+   "title": "We Wish You A Merry Christmas",
+   "pdfPage": 203,
+   "page": 203,
+   "conf": "high"
+  },
+  {
+   "title": "What A Merry Christmas This Could Be",
+   "pdfPage": 204,
+   "page": 204,
+   "conf": "high"
+  },
+  {
+   "title": "What Are You Doing New Year's Eve?",
+   "pdfPage": 206,
+   "page": 206,
+   "conf": "high"
+  },
+  {
+   "title": "What Child Is This?",
+   "pdfPage": 207,
+   "page": 207,
+   "conf": "high"
+  },
+  {
+   "title": "When Santa Claus Gets Your Letter",
+   "pdfPage": 208,
+   "page": 208,
+   "conf": "high"
+  },
+  {
+   "title": "While Shepherds Watched Their Flocks",
+   "pdfPage": 209,
+   "page": 209,
+   "conf": "high"
+  },
+  {
+   "title": "The White World Of Winter",
+   "pdfPage": 210,
+   "page": 210,
+   "conf": "high"
+  },
+  {
+   "title": "The Wonderful World Of Christmas",
+   "pdfPage": 211,
+   "page": 211,
+   "conf": "high"
+  },
+  {
+   "title": "Wonderful Christmastime",
+   "pdfPage": 212,
+   "page": 212,
+   "conf": "high"
+  },
+  {
+   "title": "You Make It Feel Like Christmas",
+   "pdfPage": 214,
+   "page": 214,
+   "conf": "high"
+  },
+  {
+   "title": "You're All I Want For Christmas",
+   "pdfPage": 216,
+   "page": 216,
+   "conf": "high"
+  }
+ ]
+}
