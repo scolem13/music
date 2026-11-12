@@ -1,0 +1,1008 @@
+{
+ "file": "Django_Fake_Book.pdf",
+ "method": "ocr-page-titles",
+ "offset": null,
+ "notes": "Printed index (pdf pp2-3, 200 titles, alphabetical) has NO page numbers and the text layer of tune pages is glyph-garbled (Inkpen2 font). Pages were assigned by OCR of the title strip of every page (3 OCR passes) and a monotone alignment of the alphabetical index to pages, then hand-fixing ambiguities by viewing title strips. pdfPage = first page of the tune (pdf 4 = tune 1; no printed page numbers, so page omitted). Several tunes have 2 variant pages (guitar/violin parts: Honeysuckle Rose 73-74, Night And Day 152-153, Swing 39 204-205, Them There Eyes 221-222) and some have \"pg. 2\" continuation pages; first page used. \"Topsy-part 2\" at pdf 228 is a second page/part of Topsy (227). 147 entries conf high (title read by OCR at the assigned page); 53 med (OCR poor, page forced by order between neighbours with single-page window). Checked visually: ~25 pages in ambiguous spots plus OCR cross-check of all high entries. Titles case-normalised from index sentence case to title case.",
+ "entries": [
+  {
+   "title": "After You’ve Gone",
+   "pdfPage": 4,
+   "conf": "high"
+  },
+  {
+   "title": "Ain’t Misbehavin’",
+   "pdfPage": 5,
+   "conf": "high"
+  },
+  {
+   "title": "Alemberts",
+   "pdfPage": 6,
+   "conf": "med"
+  },
+  {
+   "title": "Alors?...voila!",
+   "pdfPage": 7,
+   "conf": "med"
+  },
+  {
+   "title": "Anniversary Song",
+   "pdfPage": 8,
+   "conf": "high"
+  },
+  {
+   "title": "Anouman",
+   "pdfPage": 9,
+   "conf": "high"
+  },
+  {
+   "title": "Appel Indirect",
+   "pdfPage": 10,
+   "conf": "high"
+  },
+  {
+   "title": "Are You in the Mood",
+   "pdfPage": 11,
+   "conf": "med"
+  },
+  {
+   "title": "Artillerie Lourde",
+   "pdfPage": 12,
+   "conf": "high"
+  },
+  {
+   "title": "Avalon",
+   "pdfPage": 13,
+   "conf": "high"
+  },
+  {
+   "title": "Babik",
+   "pdfPage": 14,
+   "conf": "high"
+  },
+  {
+   "title": "Bei Dir War Immer So Schön",
+   "pdfPage": 15,
+   "conf": "med"
+  },
+  {
+   "title": "Bei Mir Bist du Schön",
+   "pdfPage": 16,
+   "conf": "high"
+  },
+  {
+   "title": "Belleville",
+   "pdfPage": 17,
+   "conf": "high"
+  },
+  {
+   "title": "Belleville Rendez-Vous",
+   "pdfPage": 18,
+   "conf": "high"
+  },
+  {
+   "title": "Black and White",
+   "pdfPage": 19,
+   "conf": "high"
+  },
+  {
+   "title": "Blue Drag",
+   "pdfPage": 20,
+   "conf": "high"
+  },
+  {
+   "title": "Blues en Mineur",
+   "pdfPage": 21,
+   "conf": "high"
+  },
+  {
+   "title": "Blues for Ike",
+   "pdfPage": 22,
+   "conf": "high"
+  },
+  {
+   "title": "Blue Skies",
+   "pdfPage": 23,
+   "conf": "high"
+  },
+  {
+   "title": "Body and Soul",
+   "pdfPage": 24,
+   "conf": "high"
+  },
+  {
+   "title": "Bossa Dorado",
+   "pdfPage": 25,
+   "conf": "med"
+  },
+  {
+   "title": "Boum!",
+   "pdfPage": 26,
+   "conf": "high"
+  },
+  {
+   "title": "Brazil",
+   "pdfPage": 27,
+   "conf": "high"
+  },
+  {
+   "title": "Brise Napolitaine",
+   "pdfPage": 28,
+   "conf": "high"
+  },
+  {
+   "title": "Cantina Band",
+   "pdfPage": 30,
+   "conf": "high"
+  },
+  {
+   "title": "Caravan",
+   "pdfPage": 31,
+   "conf": "high"
+  },
+  {
+   "title": "Cavalerie",
+   "pdfPage": 32,
+   "conf": "high"
+  },
+  {
+   "title": "C’est Si Bon",
+   "pdfPage": 33,
+   "conf": "high"
+  },
+  {
+   "title": "Charleston",
+   "pdfPage": 34,
+   "conf": "med"
+  },
+  {
+   "title": "Chez Jacquet",
+   "pdfPage": 35,
+   "conf": "high"
+  },
+  {
+   "title": "Chicago",
+   "pdfPage": 37,
+   "conf": "high"
+  },
+  {
+   "title": "China Boy",
+   "pdfPage": 38,
+   "conf": "high"
+  },
+  {
+   "title": "Chinatown, My Chinatown",
+   "pdfPage": 39,
+   "conf": "med"
+  },
+  {
+   "title": "Clair de Lune",
+   "pdfPage": 40,
+   "conf": "high"
+  },
+  {
+   "title": "Confessin’",
+   "pdfPage": 41,
+   "conf": "high"
+  },
+  {
+   "title": "Continental",
+   "pdfPage": 42,
+   "conf": "med"
+  },
+  {
+   "title": "Coquette",
+   "pdfPage": 43,
+   "conf": "high"
+  },
+  {
+   "title": "Crazy Rhythm",
+   "pdfPage": 44,
+   "conf": "med"
+  },
+  {
+   "title": "Crépuscule",
+   "pdfPage": 45,
+   "conf": "high"
+  },
+  {
+   "title": "Danse Norvégienne",
+   "pdfPage": 46,
+   "conf": "high"
+  },
+  {
+   "title": "Danse Nuptiale",
+   "pdfPage": 47,
+   "conf": "high"
+  },
+  {
+   "title": "Daphné",
+   "pdfPage": 48,
+   "conf": "high"
+  },
+  {
+   "title": "Dark Eyes",
+   "pdfPage": 49,
+   "conf": "med"
+  },
+  {
+   "title": "Destinée",
+   "pdfPage": 50,
+   "conf": "high"
+  },
+  {
+   "title": "Desvairada",
+   "pdfPage": 51,
+   "conf": "high"
+  },
+  {
+   "title": "Dicty Glide",
+   "pdfPage": 53,
+   "conf": "high"
+  },
+  {
+   "title": "Diminishing",
+   "pdfPage": 55,
+   "conf": "high"
+  },
+  {
+   "title": "Dinah",
+   "pdfPage": 56,
+   "conf": "high"
+  },
+  {
+   "title": "Dinette",
+   "pdfPage": 57,
+   "conf": "high"
+  },
+  {
+   "title": "Ding-dong! the Witch Is Dead",
+   "pdfPage": 58,
+   "conf": "high"
+  },
+  {
+   "title": "Djangology",
+   "pdfPage": 59,
+   "conf": "med"
+  },
+  {
+   "title": "Django’s Tiger",
+   "pdfPage": 60,
+   "conf": "high"
+  },
+  {
+   "title": "Douce Ambiance",
+   "pdfPage": 61,
+   "conf": "high"
+  },
+  {
+   "title": "Eel’s Nephew",
+   "pdfPage": 62,
+   "conf": "high"
+  },
+  {
+   "title": "Embraceable You",
+   "pdfPage": 63,
+   "conf": "high"
+  },
+  {
+   "title": "Exactly Like You",
+   "pdfPage": 64,
+   "conf": "high"
+  },
+  {
+   "title": "Festival 48",
+   "pdfPage": 65,
+   "conf": "high"
+  },
+  {
+   "title": "Fleur D’Ennui",
+   "pdfPage": 66,
+   "conf": "med"
+  },
+  {
+   "title": "For Sephora",
+   "pdfPage": 67,
+   "conf": "med"
+  },
+  {
+   "title": "Frolic",
+   "pdfPage": 68,
+   "conf": "high"
+  },
+  {
+   "title": "Good Old Days",
+   "pdfPage": 69,
+   "conf": "high"
+  },
+  {
+   "title": "Gypsy Dreams",
+   "pdfPage": 70,
+   "conf": "high"
+  },
+  {
+   "title": "Gypsy Fire",
+   "pdfPage": 71,
+   "conf": "med"
+  },
+  {
+   "title": "H.C.Q. Strut",
+   "pdfPage": 72,
+   "conf": "med"
+  },
+  {
+   "title": "Honeysuckle Rose",
+   "pdfPage": 73,
+   "conf": "high"
+  },
+  {
+   "title": "Hungaria",
+   "pdfPage": 75,
+   "conf": "med"
+  },
+  {
+   "title": "I Can’t Believe That You’re in Love with Me",
+   "pdfPage": 76,
+   "conf": "high"
+  },
+  {
+   "title": "I Can’t Give You Anything but Love",
+   "pdfPage": 77,
+   "conf": "high"
+  },
+  {
+   "title": "If I Had You",
+   "pdfPage": 78,
+   "conf": "med"
+  },
+  {
+   "title": "If I Only Had a Brain",
+   "pdfPage": 79,
+   "conf": "high"
+  },
+  {
+   "title": "I’ll Never Be the Same",
+   "pdfPage": 80,
+   "conf": "med"
+  },
+  {
+   "title": "I’ll See You in My Dreams",
+   "pdfPage": 81,
+   "conf": "high"
+  },
+  {
+   "title": "I’m Forever Blowing Bubbles",
+   "pdfPage": 86,
+   "conf": "high"
+  },
+  {
+   "title": "Indifférence",
+   "pdfPage": 87,
+   "conf": "high"
+  },
+  {
+   "title": "Insensiblement",
+   "pdfPage": 89,
+   "conf": "high"
+  },
+  {
+   "title": "I Saw Stars",
+   "pdfPage": 90,
+   "conf": "med"
+  },
+  {
+   "title": "I Surrender, Dear",
+   "pdfPage": 91,
+   "conf": "med"
+  },
+  {
+   "title": "It Don’t Mean a Thing If It Ain’t Got Swing",
+   "pdfPage": 92,
+   "conf": "med"
+  },
+  {
+   "title": "It Had to Be You",
+   "pdfPage": 93,
+   "conf": "high"
+  },
+  {
+   "title": "It’s Only a Paper Moon",
+   "pdfPage": 94,
+   "conf": "high"
+  },
+  {
+   "title": "I’ve Found a New Baby",
+   "pdfPage": 95,
+   "conf": "high"
+  },
+  {
+   "title": "I’ve Got My Love to Keep Me Warm",
+   "pdfPage": 96,
+   "conf": "high"
+  },
+  {
+   "title": "I Wanna Be Loved by You",
+   "pdfPage": 97,
+   "conf": "high"
+  },
+  {
+   "title": "I Wonder Where My Baby Is Tonight",
+   "pdfPage": 99,
+   "conf": "med"
+  },
+  {
+   "title": "I Won’t Dance",
+   "pdfPage": 101,
+   "conf": "high"
+  },
+  {
+   "title": "Japanese Sandman",
+   "pdfPage": 103,
+   "conf": "high"
+  },
+  {
+   "title": "J’attendrai",
+   "pdfPage": 104,
+   "conf": "med"
+  },
+  {
+   "title": "Jeepers Creepers",
+   "pdfPage": 105,
+   "conf": "med"
+  },
+  {
+   "title": "Jitterbug Waltz",
+   "pdfPage": 106,
+   "conf": "high"
+  },
+  {
+   "title": "Joseph, Joseph",
+   "pdfPage": 107,
+   "conf": "med"
+  },
+  {
+   "title": "Just One for Babik",
+   "pdfPage": 108,
+   "conf": "med"
+  },
+  {
+   "title": "Just One of Those Things",
+   "pdfPage": 109,
+   "conf": "high"
+  },
+  {
+   "title": "Keepin’ Out of Mischief Now",
+   "pdfPage": 111,
+   "conf": "high"
+  },
+  {
+   "title": "La Camarde",
+   "pdfPage": 112,
+   "conf": "high"
+  },
+  {
+   "title": "Lady, Be Good",
+   "pdfPage": 114,
+   "conf": "med"
+  },
+  {
+   "title": "La Folle",
+   "pdfPage": 115,
+   "conf": "high"
+  },
+  {
+   "title": "La Foule",
+   "pdfPage": 117,
+   "conf": "high"
+  },
+  {
+   "title": "La Javanaise",
+   "pdfPage": 119,
+   "conf": "high"
+  },
+  {
+   "title": "La Mer",
+   "pdfPage": 120,
+   "conf": "med"
+  },
+  {
+   "title": "La Vie en Rose",
+   "pdfPage": 121,
+   "conf": "med"
+  },
+  {
+   "title": "Les Feuilles Mortes",
+   "pdfPage": 122,
+   "conf": "high"
+  },
+  {
+   "title": "Limehouse Blues",
+   "pdfPage": 124,
+   "conf": "high"
+  },
+  {
+   "title": "Little White Lies",
+   "pdfPage": 125,
+   "conf": "med"
+  },
+  {
+   "title": "Love Me Tender",
+   "pdfPage": 126,
+   "conf": "high"
+  },
+  {
+   "title": "Lover Man",
+   "pdfPage": 127,
+   "conf": "high"
+  },
+  {
+   "title": "Lulu Swing",
+   "pdfPage": 128,
+   "conf": "high"
+  },
+  {
+   "title": "Manah Manah",
+   "pdfPage": 129,
+   "conf": "med"
+  },
+  {
+   "title": "Man I Love",
+   "pdfPage": 130,
+   "conf": "high"
+  },
+  {
+   "title": "Manoir de Mes Rêves",
+   "pdfPage": 131,
+   "conf": "high"
+  },
+  {
+   "title": "Ma Première Guitare",
+   "pdfPage": 132,
+   "conf": "high"
+  },
+  {
+   "title": "Marie",
+   "pdfPage": 133,
+   "conf": "med"
+  },
+  {
+   "title": "Mélodie Au Crépuscule",
+   "pdfPage": 134,
+   "conf": "high"
+  },
+  {
+   "title": "Ménilmontant",
+   "pdfPage": 135,
+   "conf": "high"
+  },
+  {
+   "title": "Micro",
+   "pdfPage": 136,
+   "conf": "med"
+  },
+  {
+   "title": "Midnight in Moscow",
+   "pdfPage": 137,
+   "conf": "high"
+  },
+  {
+   "title": "Milko",
+   "pdfPage": 138,
+   "conf": "med"
+  },
+  {
+   "title": "Mimosa",
+   "pdfPage": 139,
+   "conf": "high"
+  },
+  {
+   "title": "Minor Swing",
+   "pdfPage": 140,
+   "conf": "med"
+  },
+  {
+   "title": "Mister Sandman",
+   "pdfPage": 141,
+   "conf": "high"
+  },
+  {
+   "title": "Mon Dieu",
+   "pdfPage": 142,
+   "conf": "high"
+  },
+  {
+   "title": "Montagne Ste-Geneviève",
+   "pdfPage": 143,
+   "conf": "high"
+  },
+  {
+   "title": "The Muppet Show Theme",
+   "pdfPage": 145,
+   "conf": "high"
+  },
+  {
+   "title": "My Blue Heaven",
+   "pdfPage": 147,
+   "conf": "high"
+  },
+  {
+   "title": "My Melancholy Baby",
+   "pdfPage": 148,
+   "conf": "med"
+  },
+  {
+   "title": "Mystérieuse",
+   "pdfPage": 149,
+   "conf": "high"
+  },
+  {
+   "title": "Ne Me Quitte Pas",
+   "pdfPage": 151,
+   "conf": "high"
+  },
+  {
+   "title": "Night and Day",
+   "pdfPage": 152,
+   "conf": "high"
+  },
+  {
+   "title": "Noto Swing",
+   "pdfPage": 154,
+   "conf": "med"
+  },
+  {
+   "title": "Nuages",
+   "pdfPage": 155,
+   "conf": "high"
+  },
+  {
+   "title": "Nuits de Ste-Germain des Prés",
+   "pdfPage": 156,
+   "conf": "high"
+  },
+  {
+   "title": "Oriental Shuffle",
+   "pdfPage": 157,
+   "conf": "high"
+  },
+  {
+   "title": "Où Es-Tu, Mon Amour?",
+   "pdfPage": 158,
+   "conf": "med"
+  },
+  {
+   "title": "Out of Nowhere",
+   "pdfPage": 159,
+   "conf": "high"
+  },
+  {
+   "title": "Padam...padam",
+   "pdfPage": 160,
+   "conf": "med"
+  },
+  {
+   "title": "Panique",
+   "pdfPage": 162,
+   "conf": "med"
+  },
+  {
+   "title": "Passion",
+   "pdfPage": 164,
+   "conf": "high"
+  },
+  {
+   "title": "Pèche a la Mouche",
+   "pdfPage": 166,
+   "conf": "med"
+  },
+  {
+   "title": "Penguin",
+   "pdfPage": 167,
+   "conf": "high"
+  },
+  {
+   "title": "Pennies From Heaven",
+   "pdfPage": 169,
+   "conf": "med"
+  },
+  {
+   "title": "Petite Fleur",
+   "pdfPage": 170,
+   "conf": "high"
+  },
+  {
+   "title": "Place de Brouckère",
+   "pdfPage": 172,
+   "conf": "med"
+  },
+  {
+   "title": "Powerhouse",
+   "pdfPage": 173,
+   "conf": "high"
+  },
+  {
+   "title": "Quand Refleuriront les Lilas Blancs?",
+   "pdfPage": 175,
+   "conf": "high"
+  },
+  {
+   "title": "Que Reste-T-Il de Nos Amours?",
+   "pdfPage": 176,
+   "conf": "high"
+  },
+  {
+   "title": "Rose Room",
+   "pdfPage": 178,
+   "conf": "med"
+  },
+  {
+   "title": "Rosetta",
+   "pdfPage": 179,
+   "conf": "high"
+  },
+  {
+   "title": "Russian Lullaby",
+   "pdfPage": 180,
+   "conf": "high"
+  },
+  {
+   "title": "R Vingt-Six",
+   "pdfPage": 181,
+   "conf": "high"
+  },
+  {
+   "title": "September Song",
+   "pdfPage": 182,
+   "conf": "high"
+  },
+  {
+   "title": "Seul Ce Soir",
+   "pdfPage": 183,
+   "conf": "high"
+  },
+  {
+   "title": "Sheik of Araby",
+   "pdfPage": 184,
+   "conf": "med"
+  },
+  {
+   "title": "Shine",
+   "pdfPage": 185,
+   "conf": "med"
+  },
+  {
+   "title": "Sing, Sing, Sing",
+   "pdfPage": 186,
+   "conf": "high"
+  },
+  {
+   "title": "Si Tu Savais",
+   "pdfPage": 188,
+   "conf": "high"
+  },
+  {
+   "title": "Smile",
+   "pdfPage": 189,
+   "conf": "high"
+  },
+  {
+   "title": "Somebody Loves Me",
+   "pdfPage": 190,
+   "conf": "high"
+  },
+  {
+   "title": "Someone’s Rocking My Dreamboat",
+   "pdfPage": 191,
+   "conf": "high"
+  },
+  {
+   "title": "Somewhere Over the Rainbow",
+   "pdfPage": 192,
+   "conf": "high"
+  },
+  {
+   "title": "Songe D’Automne",
+   "pdfPage": 193,
+   "conf": "high"
+  },
+  {
+   "title": "Sous le Ciel de Paris",
+   "pdfPage": 194,
+   "conf": "high"
+  },
+  {
+   "title": "Spivy",
+   "pdfPage": 196,
+   "conf": "med"
+  },
+  {
+   "title": "Stompin’ at Decca",
+   "pdfPage": 198,
+   "conf": "high"
+  },
+  {
+   "title": "Stranger in Paradise",
+   "pdfPage": 199,
+   "conf": "high"
+  },
+  {
+   "title": "Stumbling",
+   "pdfPage": 200,
+   "conf": "high"
+  },
+  {
+   "title": "Svetlana",
+   "pdfPage": 201,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Georgia Brown",
+   "pdfPage": 202,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Sue",
+   "pdfPage": 203,
+   "conf": "high"
+  },
+  {
+   "title": "Swing 39",
+   "pdfPage": 204,
+   "conf": "high"
+  },
+  {
+   "title": "Swing 42",
+   "pdfPage": 206,
+   "conf": "high"
+  },
+  {
+   "title": "Swing 48",
+   "pdfPage": 207,
+   "conf": "high"
+  },
+  {
+   "title": "Swing de Paris",
+   "pdfPage": 208,
+   "conf": "high"
+  },
+  {
+   "title": "Swing Gitan",
+   "pdfPage": 209,
+   "conf": "high"
+  },
+  {
+   "title": "Swing Guitars",
+   "pdfPage": 210,
+   "conf": "high"
+  },
+  {
+   "title": "Swing Rhumba",
+   "pdfPage": 211,
+   "conf": "high"
+  },
+  {
+   "title": "Swingtime in Springtime",
+   "pdfPage": 213,
+   "conf": "high"
+  },
+  {
+   "title": "Swing Valse",
+   "pdfPage": 214,
+   "conf": "med"
+  },
+  {
+   "title": "Syracuse",
+   "pdfPage": 216,
+   "conf": "high"
+  },
+  {
+   "title": "Tchavolo Swing",
+   "pdfPage": 217,
+   "conf": "high"
+  },
+  {
+   "title": "Tea for Two",
+   "pdfPage": 219,
+   "conf": "med"
+  },
+  {
+   "title": "Tears",
+   "pdfPage": 220,
+   "conf": "med"
+  },
+  {
+   "title": "Them There Eyes",
+   "pdfPage": 221,
+   "conf": "high"
+  },
+  {
+   "title": "Third Man Theme",
+   "pdfPage": 223,
+   "conf": "high"
+  },
+  {
+   "title": "Three Little Words",
+   "pdfPage": 224,
+   "conf": "high"
+  },
+  {
+   "title": "Tico Tico",
+   "pdfPage": 225,
+   "conf": "high"
+  },
+  {
+   "title": "Topsy",
+   "pdfPage": 227,
+   "conf": "med"
+  },
+  {
+   "title": "Troublant Boléro",
+   "pdfPage": 229,
+   "conf": "high"
+  },
+  {
+   "title": "Twilight in Turkey",
+   "pdfPage": 230,
+   "conf": "high"
+  },
+  {
+   "title": "Two Cigarettes in the Dark",
+   "pdfPage": 231,
+   "conf": "high"
+  },
+  {
+   "title": "Two Guitars",
+   "pdfPage": 232,
+   "conf": "high"
+  },
+  {
+   "title": "Ultrafox",
+   "pdfPage": 233,
+   "conf": "med"
+  },
+  {
+   "title": "Undecided",
+   "pdfPage": 234,
+   "conf": "high"
+  },
+  {
+   "title": "Une Historie Simple",
+   "pdfPage": 235,
+   "conf": "high"
+  },
+  {
+   "title": "Un Homme et une Femme",
+   "pdfPage": 236,
+   "conf": "high"
+  },
+  {
+   "title": "Vendredi 13",
+   "pdfPage": 237,
+   "conf": "high"
+  },
+  {
+   "title": "Viper’s Dream",
+   "pdfPage": 238,
+   "conf": "med"
+  },
+  {
+   "title": "Vous et Moi",
+   "pdfPage": 239,
+   "conf": "high"
+  },
+  {
+   "title": "Vous Qui Passez Sans Me Voir",
+   "pdfPage": 240,
+   "conf": "high"
+  },
+  {
+   "title": "When Day Is Done",
+   "pdfPage": 241,
+   "conf": "high"
+  },
+  {
+   "title": "Whispering",
+   "pdfPage": 242,
+   "conf": "high"
+  }
+ ]
+}

@@ -1,0 +1,862 @@
+{
+ "file": "Cuban_Fake_Book.pdf",
+ "method": "ocr-index",
+ "offset": 6,
+ "notes": "'General Index' on pdf pp5-6 (typeset, numbered 1-121 with composer and page) OCR'd (tesseract, 2 columns) and corrected by eye against the page image; accents restored where the book prints them. pdfPage = printed page + 6 (bookmark letter starts A..Y and 'More' all agree). Checked 16 pages by rendering page tops (2,18,22,40,60,66,85,100,124,138,148,156,168,172,182,187): the title printed at top of each page matched. Index quirks: number 72 used twice (Nuestra Canción p116, Nuestras Vidas p118); 'La Bayamesa' appears twice (two different settings); entries 118-121 are 'Last minute additions'; 'Que Siembra Su Maíz, El' and 'Guitarra, La' filed by main word as in the book. Composer for Martí (E. V. Villillo) read from OCR, unverified.",
+ "entries": [
+  {
+   "title": "Alardoso",
+   "pdfPage": 8,
+   "page": 2,
+   "composer": "Enrique Jorrín",
+   "conf": "high"
+  },
+  {
+   "title": "Alivio",
+   "pdfPage": 10,
+   "page": 4,
+   "composer": "Julio Cobo",
+   "conf": "med"
+  },
+  {
+   "title": "Alma Con Alma",
+   "pdfPage": 12,
+   "page": 6,
+   "composer": "Juan Márquez",
+   "conf": "med"
+  },
+  {
+   "title": "Almendra",
+   "pdfPage": 14,
+   "page": 8,
+   "composer": "Abelardo Valdés",
+   "conf": "med"
+  },
+  {
+   "title": "Andalucía",
+   "pdfPage": 17,
+   "page": 11,
+   "composer": "Ernesto Lecuona",
+   "conf": "med"
+  },
+  {
+   "title": "Aquella Tarde",
+   "pdfPage": 20,
+   "page": 14,
+   "composer": "Ernesto Lecuona",
+   "conf": "med"
+  },
+  {
+   "title": "Arroyo Que Murmura, El",
+   "pdfPage": 22,
+   "page": 16,
+   "composer": "Jorge Ankermann",
+   "conf": "med"
+  },
+  {
+   "title": "Bayamesa, La (Moreno)",
+   "pdfPage": 23,
+   "page": 17,
+   "composer": "Francisco Moreno",
+   "conf": "med"
+  },
+  {
+   "title": "Bayamesa, La (Garay)",
+   "pdfPage": 24,
+   "page": 18,
+   "composer": "Sindo Garay",
+   "conf": "high"
+  },
+  {
+   "title": "Bodeguero, El",
+   "pdfPage": 26,
+   "page": 20,
+   "composer": "Richard Egües",
+   "conf": "med"
+  },
+  {
+   "title": "Brussels In The Rain",
+   "pdfPage": 28,
+   "page": 22,
+   "composer": "Paquito D'Rivera",
+   "conf": "high"
+  },
+  {
+   "title": "Calculadora",
+   "pdfPage": 29,
+   "page": 23,
+   "composer": "Rosendo Rosell",
+   "conf": "med"
+  },
+  {
+   "title": "Cañafístula, La",
+   "pdfPage": 30,
+   "page": 24,
+   "composer": "Oriente López",
+   "conf": "med"
+  },
+  {
+   "title": "Canción Para Un Festival",
+   "pdfPage": 32,
+   "page": 26,
+   "composer": "C. Portillo de la Luz",
+   "conf": "med"
+  },
+  {
+   "title": "Caridad",
+   "pdfPage": 34,
+   "page": 28,
+   "composer": "Oriente López",
+   "conf": "med"
+  },
+  {
+   "title": "Cemento, Ladrillo Y Arena",
+   "pdfPage": 36,
+   "page": 30,
+   "composer": "José A. Méndez",
+   "conf": "med"
+  },
+  {
+   "title": "Chucho",
+   "pdfPage": 37,
+   "page": 31,
+   "composer": "Paquito D'Rivera",
+   "conf": "med"
+  },
+  {
+   "title": "Como Arrullo De Palmas",
+   "pdfPage": 38,
+   "page": 32,
+   "composer": "Ernesto Lecuona",
+   "conf": "med"
+  },
+  {
+   "title": "Como Fué",
+   "pdfPage": 40,
+   "page": 34,
+   "composer": "Ernesto Duarte",
+   "conf": "med"
+  },
+  {
+   "title": "Como Un Milagro",
+   "pdfPage": 42,
+   "page": 36,
+   "composer": "Juan Márquez",
+   "conf": "med"
+  },
+  {
+   "title": "Comparsa, La",
+   "pdfPage": 44,
+   "page": 38,
+   "composer": "Ernesto Lecuona",
+   "conf": "med"
+  },
+  {
+   "title": "Compay Gallo",
+   "pdfPage": 46,
+   "page": 40,
+   "composer": "Ñico Saquito",
+   "conf": "high"
+  },
+  {
+   "title": "Contigo En La Distancia",
+   "pdfPage": 48,
+   "page": 42,
+   "composer": "C. Portillo de la Luz",
+   "conf": "med"
+  },
+  {
+   "title": "Con Tres Palabras",
+   "pdfPage": 50,
+   "page": 44,
+   "composer": "Osvaldo Farrés",
+   "conf": "med"
+  },
+  {
+   "title": "Convergencia",
+   "pdfPage": 51,
+   "page": 45,
+   "composer": "Marcelino Guerra",
+   "conf": "med"
+  },
+  {
+   "title": "Corazón",
+   "pdfPage": 52,
+   "page": 46,
+   "composer": "E. S. de Fuentes",
+   "conf": "med"
+  },
+  {
+   "title": "Coro De Los Esclavos",
+   "pdfPage": 54,
+   "page": 48,
+   "composer": "Gonzalo Roig",
+   "conf": "med"
+  },
+  {
+   "title": "Danzas Afrocubanas",
+   "pdfPage": 57,
+   "page": 51,
+   "composer": "Ernesto Lecuona",
+   "conf": "med"
+  },
+  {
+   "title": "Deja Que Siga Solo",
+   "pdfPage": 60,
+   "page": 54,
+   "composer": "Martha Valdés",
+   "conf": "med"
+  },
+  {
+   "title": "Dos Gardenias",
+   "pdfPage": 61,
+   "page": 55,
+   "composer": "Isolina Carrillo",
+   "conf": "med"
+  },
+  {
+   "title": "Drume Negrita",
+   "pdfPage": 62,
+   "page": 56,
+   "composer": "Eliseo Grenet",
+   "conf": "med"
+  },
+  {
+   "title": "Duele",
+   "pdfPage": 63,
+   "page": 57,
+   "composer": "Piloto y Vera",
+   "conf": "med"
+  },
+  {
+   "title": "En Nosotros",
+   "pdfPage": 64,
+   "page": 58,
+   "composer": "Tania Castellanos",
+   "conf": "med"
+  },
+  {
+   "title": "Engañadora, La",
+   "pdfPage": 65,
+   "page": 59,
+   "composer": "Enrique Jorrín",
+   "conf": "med"
+  },
+  {
+   "title": "Ese Sentimiento Que Se Llama Amor",
+   "pdfPage": 66,
+   "page": 60,
+   "composer": "José A. Méndez",
+   "conf": "high"
+  },
+  {
+   "title": "Fiesta, La",
+   "pdfPage": 68,
+   "page": 62,
+   "composer": "Juan Márquez",
+   "conf": "med"
+  },
+  {
+   "title": "Fifty-Fifty",
+   "pdfPage": 70,
+   "page": 64,
+   "composer": "Juan Márquez",
+   "conf": "med"
+  },
+  {
+   "title": "Flor De Yumurí",
+   "pdfPage": 71,
+   "page": 65,
+   "composer": "Jorge Ankermann",
+   "conf": "med"
+  },
+  {
+   "title": "Frutas Del Caney",
+   "pdfPage": 72,
+   "page": 66,
+   "composer": "Félix Caignet",
+   "conf": "high"
+  },
+  {
+   "title": "Gloria Eres Tú, La",
+   "pdfPage": 74,
+   "page": 68,
+   "composer": "José A. Méndez",
+   "conf": "med"
+  },
+  {
+   "title": "Greta",
+   "pdfPage": 76,
+   "page": 70,
+   "composer": "Oriente López",
+   "conf": "med"
+  },
+  {
+   "title": "Guararey De Pastora, El",
+   "pdfPage": 78,
+   "page": 72,
+   "composer": "Juan Formell",
+   "conf": "med"
+  },
+  {
+   "title": "Guarina",
+   "pdfPage": 79,
+   "page": 73,
+   "composer": "Sindo Garay",
+   "conf": "med"
+  },
+  {
+   "title": "Inolvidable",
+   "pdfPage": 80,
+   "page": 74,
+   "composer": "Julio Gutiérrez",
+   "conf": "med"
+  },
+  {
+   "title": "Jamaiquino, El",
+   "pdfPage": 81,
+   "page": 75,
+   "composer": "Niño Rivera",
+   "conf": "med"
+  },
+  {
+   "title": "Lágrimas Negras",
+   "pdfPage": 82,
+   "page": 76,
+   "composer": "Miguel Matamoros",
+   "conf": "med"
+  },
+  {
+   "title": "Lamento Esclavo",
+   "pdfPage": 84,
+   "page": 78,
+   "composer": "Eliseo Grenet",
+   "conf": "med"
+  },
+  {
+   "title": "Las Perlas De Tu Boca",
+   "pdfPage": 85,
+   "page": 79,
+   "composer": "Eliseo Grenet",
+   "conf": "med"
+  },
+  {
+   "title": "Libre De Pecado",
+   "pdfPage": 86,
+   "page": 80,
+   "composer": "Adolfo Guzmán",
+   "conf": "med"
+  },
+  {
+   "title": "Longina",
+   "pdfPage": 88,
+   "page": 82,
+   "composer": "Manuel Corona",
+   "conf": "med"
+  },
+  {
+   "title": "Mambo Influenciado",
+   "pdfPage": 90,
+   "page": 84,
+   "composer": "Chucho Valdés",
+   "conf": "med"
+  },
+  {
+   "title": "Mambo Inn",
+   "pdfPage": 91,
+   "page": 85,
+   "composer": "Mario Bauzá",
+   "conf": "high"
+  },
+  {
+   "title": "María La O",
+   "pdfPage": 92,
+   "page": 86,
+   "composer": "Ernesto Lecuona",
+   "conf": "med"
+  },
+  {
+   "title": "Marta",
+   "pdfPage": 94,
+   "page": 88,
+   "composer": "Moisés Simons",
+   "conf": "med"
+  },
+  {
+   "title": "María Cristina",
+   "pdfPage": 96,
+   "page": 90,
+   "composer": "Ñico Saquito",
+   "conf": "med"
+  },
+  {
+   "title": "Martí",
+   "pdfPage": 97,
+   "page": 91,
+   "composer": "E. V. Villillo",
+   "conf": "med"
+  },
+  {
+   "title": "Me Faltabas Tú",
+   "pdfPage": 98,
+   "page": 92,
+   "composer": "José A. Méndez",
+   "conf": "med"
+  },
+  {
+   "title": "Me Recordarás",
+   "pdfPage": 100,
+   "page": 94,
+   "composer": "Frank Domínguez",
+   "conf": "med"
+  },
+  {
+   "title": "Mi Ayer",
+   "pdfPage": 101,
+   "page": 95,
+   "composer": "Ñico Rojas",
+   "conf": "med"
+  },
+  {
+   "title": "Mi Habana Cuando Te Vuelva A Ver",
+   "pdfPage": 102,
+   "page": 96,
+   "composer": "René Touzet",
+   "conf": "med"
+  },
+  {
+   "title": "Mujer Ardiente",
+   "pdfPage": 104,
+   "page": 98,
+   "composer": "David Oquendo",
+   "conf": "med"
+  },
+  {
+   "title": "Mora, La",
+   "pdfPage": 105,
+   "page": 99,
+   "composer": "Eliseo Grenet",
+   "conf": "med"
+  },
+  {
+   "title": "Mujer De Antonio, La",
+   "pdfPage": 106,
+   "page": 100,
+   "composer": "Miguel Matamoros",
+   "conf": "high"
+  },
+  {
+   "title": "No Hagas Caso",
+   "pdfPage": 108,
+   "page": 102,
+   "composer": "Martha Valdés",
+   "conf": "med"
+  },
+  {
+   "title": "No Puedo Ser Feliz",
+   "pdfPage": 110,
+   "page": 104,
+   "composer": "Adolfo Guzmán",
+   "conf": "med"
+  },
+  {
+   "title": "No Te Importe Saber",
+   "pdfPage": 112,
+   "page": 106,
+   "composer": "René Touzet",
+   "conf": "med"
+  },
+  {
+   "title": "Noche Cubana",
+   "pdfPage": 114,
+   "page": 108,
+   "composer": "C. Portillo de la Luz",
+   "conf": "med"
+  },
+  {
+   "title": "Noche De Anoche, La",
+   "pdfPage": 115,
+   "page": 109,
+   "composer": "René Touzet",
+   "conf": "med"
+  },
+  {
+   "title": "Nosotros",
+   "pdfPage": 116,
+   "page": 110,
+   "composer": "Pedro Junco",
+   "conf": "med"
+  },
+  {
+   "title": "Nostalgia Habanera",
+   "pdfPage": 118,
+   "page": 112,
+   "composer": "Bobby Collazo",
+   "conf": "med"
+  },
+  {
+   "title": "Novia Mía",
+   "pdfPage": 120,
+   "page": 114,
+   "composer": "José A. Méndez",
+   "conf": "med"
+  },
+  {
+   "title": "Nuestra Canción",
+   "pdfPage": 122,
+   "page": 116,
+   "composer": "C. Portillo de la Luz",
+   "conf": "med"
+  },
+  {
+   "title": "Nuestras Vidas",
+   "pdfPage": 124,
+   "page": 118,
+   "composer": "Orlando de la Rosa",
+   "conf": "med"
+  },
+  {
+   "title": "Ogguere",
+   "pdfPage": 126,
+   "page": 120,
+   "composer": "Gilberto Valdés",
+   "conf": "med"
+  },
+  {
+   "title": "¡Oh Vida!",
+   "pdfPage": 128,
+   "page": 122,
+   "composer": "Yáñez y Gómez",
+   "conf": "med"
+  },
+  {
+   "title": "Olvido",
+   "pdfPage": 129,
+   "page": 123,
+   "composer": "Miguel Matamoros",
+   "conf": "med"
+  },
+  {
+   "title": "Página En Blanco",
+   "pdfPage": 130,
+   "page": 124,
+   "composer": "Frank Domínguez",
+   "conf": "high"
+  },
+  {
+   "title": "Pare Cochero",
+   "pdfPage": 131,
+   "page": 125,
+   "composer": "Marcelino Guerra",
+   "conf": "med"
+  },
+  {
+   "title": "Pedacito De Cielo",
+   "pdfPage": 132,
+   "page": 126,
+   "composer": "Frank Domínguez",
+   "conf": "med"
+  },
+  {
+   "title": "Perla Marina",
+   "pdfPage": 133,
+   "page": 127,
+   "composer": "Sindo Garay",
+   "conf": "med"
+  },
+  {
+   "title": "Profecía",
+   "pdfPage": 134,
+   "page": 128,
+   "composer": "Adolfo Guzmán",
+   "conf": "med"
+  },
+  {
+   "title": "Que Siembra Su Maíz, El",
+   "pdfPage": 135,
+   "page": 129,
+   "composer": "Miguel Matamoros",
+   "conf": "med"
+  },
+  {
+   "title": "Quiéreme Mucho",
+   "pdfPage": 136,
+   "page": 130,
+   "composer": "Gonzalo Roig",
+   "conf": "med"
+  },
+  {
+   "title": "Quiéreme Y Verás",
+   "pdfPage": 138,
+   "page": 132,
+   "composer": "José A. Méndez",
+   "conf": "med"
+  },
+  {
+   "title": "Quiero Hablar Contigo",
+   "pdfPage": 140,
+   "page": 134,
+   "composer": "Carlos Puebla",
+   "conf": "med"
+  },
+  {
+   "title": "Realidad Y Fantasía",
+   "pdfPage": 141,
+   "page": 135,
+   "composer": "C. Portillo de la Luz",
+   "conf": "med"
+  },
+  {
+   "title": "Refúgiate En Mí",
+   "pdfPage": 142,
+   "page": 136,
+   "composer": "Frank Domínguez",
+   "conf": "med"
+  },
+  {
+   "title": "Samba For Carmen",
+   "pdfPage": 144,
+   "page": 138,
+   "composer": "Paquito D'Rivera",
+   "conf": "high"
+  },
+  {
+   "title": "Santa Isabel De Las Lajas",
+   "pdfPage": 146,
+   "page": 140,
+   "composer": "Benny Moré",
+   "conf": "med"
+  },
+  {
+   "title": "Se Fue",
+   "pdfPage": 147,
+   "page": 141,
+   "composer": "Ernesto Lecuona",
+   "conf": "med"
+  },
+  {
+   "title": "Si Me Comprendieras",
+   "pdfPage": 148,
+   "page": 142,
+   "composer": "José A. Méndez",
+   "conf": "med"
+  },
+  {
+   "title": "Si Te Contara",
+   "pdfPage": 149,
+   "page": 143,
+   "composer": "Félix Reina",
+   "conf": "med"
+  },
+  {
+   "title": "Siboney",
+   "pdfPage": 150,
+   "page": 144,
+   "composer": "Ernesto Lecuona",
+   "conf": "med"
+  },
+  {
+   "title": "Siempre Está En Mi Corazón",
+   "pdfPage": 152,
+   "page": 146,
+   "composer": "Ernesto Lecuona",
+   "conf": "med"
+  },
+  {
+   "title": "Sitiera, La",
+   "pdfPage": 153,
+   "page": 147,
+   "composer": "A. Brito & R. López",
+   "conf": "med"
+  },
+  {
+   "title": "Sitiero, El",
+   "pdfPage": 154,
+   "page": 148,
+   "composer": "Eliseo Grenet",
+   "conf": "high"
+  },
+  {
+   "title": "Son De La Loma",
+   "pdfPage": 156,
+   "page": 150,
+   "composer": "Miguel Matamoros",
+   "conf": "med"
+  },
+  {
+   "title": "Song For Maura",
+   "pdfPage": 158,
+   "page": 152,
+   "composer": "Paquito D'Rivera",
+   "conf": "med"
+  },
+  {
+   "title": "Song To My Son",
+   "pdfPage": 159,
+   "page": 153,
+   "composer": "Paquito D'Rivera",
+   "conf": "med"
+  },
+  {
+   "title": "Songoro Cosongo",
+   "pdfPage": 160,
+   "page": 154,
+   "composer": "Eliseo Grenet",
+   "conf": "med"
+  },
+  {
+   "title": "Suavecito",
+   "pdfPage": 161,
+   "page": 155,
+   "composer": "Ignacio Piñeiro",
+   "conf": "med"
+  },
+  {
+   "title": "Tabú",
+   "pdfPage": 162,
+   "page": 156,
+   "composer": "Margarita Lecuona",
+   "conf": "high"
+  },
+  {
+   "title": "Tarde, La",
+   "pdfPage": 164,
+   "page": 158,
+   "composer": "Sindo Garay",
+   "conf": "med"
+  },
+  {
+   "title": "Te Odio",
+   "pdfPage": 166,
+   "page": 160,
+   "composer": "Félix B. Caignet",
+   "conf": "med"
+  },
+  {
+   "title": "Tres Lindas Cubanas",
+   "pdfPage": 168,
+   "page": 162,
+   "composer": "Guillermo Castillo",
+   "conf": "med"
+  },
+  {
+   "title": "Trigueñita",
+   "pdfPage": 170,
+   "page": 164,
+   "composer": "Julio Brito",
+   "conf": "med"
+  },
+  {
+   "title": "Tristezas",
+   "pdfPage": 172,
+   "page": 166,
+   "composer": "\"Pepe\" Sánchez",
+   "conf": "med"
+  },
+  {
+   "title": "Tú Me Acostumbraste",
+   "pdfPage": 173,
+   "page": 167,
+   "composer": "Frank Domínguez",
+   "conf": "med"
+  },
+  {
+   "title": "Tú, Mi Delirio",
+   "pdfPage": 174,
+   "page": 168,
+   "composer": "C. Portillo de la Luz",
+   "conf": "high"
+  },
+  {
+   "title": "Tú",
+   "pdfPage": 176,
+   "page": 170,
+   "composer": "E. Sánchez de Fuentes",
+   "conf": "med"
+  },
+  {
+   "title": "Tú, Mi Desengaño",
+   "pdfPage": 178,
+   "page": 172,
+   "composer": "Pablo Milanés",
+   "conf": "high"
+  },
+  {
+   "title": "Última Noche, La",
+   "pdfPage": 180,
+   "page": 174,
+   "composer": "Bobby Collazo",
+   "conf": "med"
+  },
+  {
+   "title": "Una Rosa De Francia",
+   "pdfPage": 181,
+   "page": 175,
+   "composer": "Rodrigo Prats",
+   "conf": "med"
+  },
+  {
+   "title": "Y Con Tus Palabras",
+   "pdfPage": 182,
+   "page": 176,
+   "composer": "Martha Valdés",
+   "conf": "med"
+  },
+  {
+   "title": "Y Decídete",
+   "pdfPage": 184,
+   "page": 178,
+   "composer": "José A. Méndez",
+   "conf": "med"
+  },
+  {
+   "title": "Y Hoy Como Ayer",
+   "pdfPage": 186,
+   "page": 180,
+   "composer": "Pedro Vega",
+   "conf": "med"
+  },
+  {
+   "title": "¿Y Tú Qué Has Hecho?",
+   "pdfPage": 187,
+   "page": 181,
+   "composer": "Eusebio Delfín",
+   "conf": "med"
+  },
+  {
+   "title": "Yo No Quiero Piedras En Mi Camino",
+   "pdfPage": 188,
+   "page": 182,
+   "composer": "Enrique Bonne",
+   "conf": "high"
+  },
+  {
+   "title": "Guitarra, La",
+   "pdfPage": 190,
+   "page": 184,
+   "composer": "Amaury Pérez",
+   "conf": "med"
+  },
+  {
+   "title": "Amor Espérame",
+   "pdfPage": 191,
+   "page": 185,
+   "composer": "Meme Solís",
+   "conf": "med"
+  },
+  {
+   "title": "Sin Un Reproche",
+   "pdfPage": 192,
+   "page": 186,
+   "composer": "Meme Solís",
+   "conf": "med"
+  },
+  {
+   "title": "To Brenda With Love",
+   "pdfPage": 193,
+   "page": 187,
+   "composer": "Paquito D'Rivera",
+   "conf": "high"
+  }
+ ]
+}

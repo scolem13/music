@@ -1,0 +1,498 @@
+{
+ "file": "Bill_Evans_Fake_Book.pdf",
+ "method": "ocr-page-titles",
+ "offset": 3,
+ "notes": "No index in the book. Titles OCRed from the top of every page (tesseract) and all continuation pages then viewed as contact sheets to find tunes starting mid-page: only T.T.T. (Twelve Tone Tune) starts at the bottom of p84 (printed 81). Lyric versions sit beside instrumental ones and are separate entries with the same title, marked '(lyric version)'; some tunes also carry a parenthetical subtitle. Pages 60-62 are the Quiet Now piano arrangement. Checked visually/OCR: pages 7,10,31,63,84,85 plus every start page by OCR of its header (title read on the page image). Printed page = pdfPage - 3 (printed 2 = pdf 5); 'page' for p84 is 81. Last pages 105-106 discography/back cover.",
+ "entries": [
+  {
+   "title": "B Minor Waltz (For Ellaine)",
+   "pdfPage": 5,
+   "page": 2,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Bill's Belle",
+   "pdfPage": 6,
+   "page": 3,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Bill's Hit Tune",
+   "pdfPage": 7,
+   "page": 4,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Blue In Green",
+   "pdfPage": 9,
+   "page": 6,
+   "conf": "high",
+   "composer": "Miles Davis"
+  },
+  {
+   "title": "C Minor Blues Chase",
+   "pdfPage": 10,
+   "page": 7,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Carnival",
+   "pdfPage": 11,
+   "page": 8,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Catch The Wind",
+   "pdfPage": 13,
+   "page": 10,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Chromatic Tune",
+   "pdfPage": 14,
+   "page": 11,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Children's Play Song",
+   "pdfPage": 15,
+   "page": 12,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Comrade Conrad",
+   "pdfPage": 17,
+   "page": 14,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Displacement",
+   "pdfPage": 18,
+   "page": 15,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Epilogue",
+   "pdfPage": 19,
+   "page": 16,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Five (lyric version)",
+   "pdfPage": 20,
+   "page": 17,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Five",
+   "pdfPage": 21,
+   "page": 18,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "In April (lyric version)",
+   "pdfPage": 23,
+   "page": 20,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "For Nenette",
+   "pdfPage": 25,
+   "page": 22,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Fudgesicle Built For Four",
+   "pdfPage": 26,
+   "page": 23,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Fun Ride",
+   "pdfPage": 29,
+   "page": 26,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Funkallero",
+   "pdfPage": 31,
+   "page": 28,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Funny Man",
+   "pdfPage": 32,
+   "page": 29,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "G Waltz",
+   "pdfPage": 33,
+   "page": 30,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Interplay",
+   "pdfPage": 35,
+   "page": 32,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "It's Love - It's Christmas",
+   "pdfPage": 36,
+   "page": 33,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Knit For Mary F.",
+   "pdfPage": 37,
+   "page": 34,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Laurie (The Dream) (lyric version)",
+   "pdfPage": 39,
+   "page": 36,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Laurie (The Dream)",
+   "pdfPage": 41,
+   "page": 38,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Letter To Evan",
+   "pdfPage": 42,
+   "page": 39,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Loose Bloose",
+   "pdfPage": 43,
+   "page": 40,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Maxine",
+   "pdfPage": 45,
+   "page": 42,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "My Bells (lyric version)",
+   "pdfPage": 47,
+   "page": 44,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "My Bells",
+   "pdfPage": 48,
+   "page": 45,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "N.Y.C.'s No Lark",
+   "pdfPage": 49,
+   "page": 46,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "One For Helen",
+   "pdfPage": 50,
+   "page": 47,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Only Child (lyric version)",
+   "pdfPage": 51,
+   "page": 48,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Only Child",
+   "pdfPage": 52,
+   "page": 49,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "The Opener",
+   "pdfPage": 53,
+   "page": 50,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Orbit (Unless It's You)",
+   "pdfPage": 54,
+   "page": 51,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Peace Piece",
+   "pdfPage": 55,
+   "page": 52,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Peri's Scope",
+   "pdfPage": 56,
+   "page": 53,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Prologue",
+   "pdfPage": 57,
+   "page": 54,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Quiet Now",
+   "pdfPage": 59,
+   "page": 56,
+   "conf": "high",
+   "composer": "Denny Zeitlin"
+  },
+  {
+   "title": "Re: Person I Knew",
+   "pdfPage": 63,
+   "page": 60,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Remembering The Rain",
+   "pdfPage": 64,
+   "page": 61,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Show-Type Tune (Tune For A Lyric)",
+   "pdfPage": 65,
+   "page": 62,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "A Simple Matter Of Conviction",
+   "pdfPage": 67,
+   "page": 64,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Song For Helen",
+   "pdfPage": 68,
+   "page": 65,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Since We Met",
+   "pdfPage": 69,
+   "page": 66,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Story Line",
+   "pdfPage": 71,
+   "page": 68,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Theme (What You Gave)",
+   "pdfPage": 73,
+   "page": 70,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "There Came You",
+   "pdfPage": 74,
+   "page": 71,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "These Things Called Changes",
+   "pdfPage": 75,
+   "page": 72,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "34 Skidoo",
+   "pdfPage": 76,
+   "page": 73,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Tiffany",
+   "pdfPage": 77,
+   "page": 74,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Time Remembered (lyric version)",
+   "pdfPage": 79,
+   "page": 76,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Time Remembered",
+   "pdfPage": 80,
+   "page": 77,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Turn Out The Stars (lyric version)",
+   "pdfPage": 81,
+   "page": 78,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Turn Out The Stars",
+   "pdfPage": 83,
+   "page": 80,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "T.T.T. (Twelve Tone Tune)",
+   "pdfPage": 84,
+   "page": 81,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "T.T.T.T. (Twelve Tone Tune Two)",
+   "pdfPage": 85,
+   "page": 82,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "The Two Lonely People (lyric version)",
+   "pdfPage": 87,
+   "page": 84,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "The Two Lonely People",
+   "pdfPage": 89,
+   "page": 86,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Very Early (lyric version)",
+   "pdfPage": 91,
+   "page": 88,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Very Early",
+   "pdfPage": 92,
+   "page": 89,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Walkin' Up",
+   "pdfPage": 93,
+   "page": 90,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Waltz For Debby (lyric version)",
+   "pdfPage": 94,
+   "page": 91,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Waltz For Debby",
+   "pdfPage": 97,
+   "page": 94,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Waltz In Eb",
+   "pdfPage": 99,
+   "page": 96,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "We Will Meet Again",
+   "pdfPage": 100,
+   "page": 97,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Yet Ne'er Broken",
+   "pdfPage": 101,
+   "page": 98,
+   "conf": "high",
+   "composer": "Bill Evans"
+  },
+  {
+   "title": "Your Story",
+   "pdfPage": 103,
+   "page": 100,
+   "conf": "high",
+   "composer": "Bill Evans"
+  }
+ ]
+}

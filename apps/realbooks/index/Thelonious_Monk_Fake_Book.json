@@ -1,0 +1,498 @@
+{
+ "file": "Thelonious_Monk_Fake_Book.pdf",
+ "method": "mixed",
+ "offset": -1,
+ "notes": "Contents list on pdf p2 (title + printed page) cross-checked with OCR (tesseract, 200 dpi) of the top of every page; pdfPage taken from the page heads. Printed page = pdfPage + 1 (offset -1). Contents page OCR was noisy, but all 70 titles also read from page headers (Evidence, Humph, Introspection, Nutty, Played Twice, San Francisco Holiday, Skippy, Teo, Think Of One confirmed on the page image; printed numbers there matched pdf+1). Checked 20+ pages by header OCR plus 9 by image view. Two-page tunes (Crepuscule, Gallop's Gallop, Little Rootie Tootie, Work) listed at first page. The book says 'over 70' compositions; count here is 70.",
+ "entries": [
+  {
+   "title": "Ask Me Now",
+   "pdfPage": 5,
+   "page": 6,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Ba-lue Bolivar Ba-lues-are",
+   "pdfPage": 6,
+   "page": 7,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Bemsha Swing",
+   "pdfPage": 7,
+   "page": 8,
+   "composer": "Thelonious Monk, Denzil Best",
+   "conf": "high"
+  },
+  {
+   "title": "Blue Hawk",
+   "pdfPage": 8,
+   "page": 9,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Blue Monk",
+   "pdfPage": 9,
+   "page": 10,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Blue Sphere",
+   "pdfPage": 10,
+   "page": 11,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Blues Five Spot",
+   "pdfPage": 11,
+   "page": 12,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Boo Boo's Birthday",
+   "pdfPage": 12,
+   "page": 13,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Brake's Sake",
+   "pdfPage": 13,
+   "page": 14,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Bright Mississippi",
+   "pdfPage": 14,
+   "page": 15,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Brilliant Corners",
+   "pdfPage": 15,
+   "page": 16,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Bye-Ya",
+   "pdfPage": 16,
+   "page": 17,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Children's Song",
+   "pdfPage": 17,
+   "page": 18,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Coming On The Hudson",
+   "pdfPage": 18,
+   "page": 19,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Crepuscule With Nellie",
+   "pdfPage": 19,
+   "page": 20,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Criss Cross",
+   "pdfPage": 21,
+   "page": 22,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Epistrophy",
+   "pdfPage": 22,
+   "page": 23,
+   "composer": "Thelonious Monk, Kenny Clarke",
+   "conf": "high"
+  },
+  {
+   "title": "Eronel",
+   "pdfPage": 23,
+   "page": 24,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Evidence",
+   "pdfPage": 24,
+   "page": 25,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "52nd Street Theme",
+   "pdfPage": 25,
+   "page": 26,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Four In One",
+   "pdfPage": 26,
+   "page": 27,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Friday The 13th",
+   "pdfPage": 27,
+   "page": 28,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Functional",
+   "pdfPage": 28,
+   "page": 29,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Gallop's Gallop",
+   "pdfPage": 29,
+   "page": 30,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Green Chimneys",
+   "pdfPage": 31,
+   "page": 32,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Hackensack",
+   "pdfPage": 32,
+   "page": 33,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Hornin' In",
+   "pdfPage": 33,
+   "page": 34,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Humph",
+   "pdfPage": 34,
+   "page": 35,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "I Mean You",
+   "pdfPage": 35,
+   "page": 36,
+   "composer": "Thelonious Monk, Coleman Hawkins",
+   "conf": "high"
+  },
+  {
+   "title": "In Walked Bud",
+   "pdfPage": 36,
+   "page": 37,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Introspection",
+   "pdfPage": 37,
+   "page": 38,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Jackie-ing",
+   "pdfPage": 38,
+   "page": 39,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Let's Call This",
+   "pdfPage": 39,
+   "page": 40,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Let's Cool One",
+   "pdfPage": 40,
+   "page": 41,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Little Rootie Tootie",
+   "pdfPage": 41,
+   "page": 42,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Light Blue",
+   "pdfPage": 43,
+   "page": 44,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Locomotive",
+   "pdfPage": 44,
+   "page": 45,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "A Merrier Christmas",
+   "pdfPage": 45,
+   "page": 46,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Misterioso",
+   "pdfPage": 46,
+   "page": 47,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Monk's Dream",
+   "pdfPage": 47,
+   "page": 48,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Monk's Mood",
+   "pdfPage": 48,
+   "page": 49,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Monk's Point",
+   "pdfPage": 49,
+   "page": 50,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "North Of The Sunset",
+   "pdfPage": 50,
+   "page": 51,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Nutty",
+   "pdfPage": 51,
+   "page": 52,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Off Minor",
+   "pdfPage": 52,
+   "page": 53,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Oska T.",
+   "pdfPage": 53,
+   "page": 54,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Pannonica",
+   "pdfPage": 54,
+   "page": 55,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Played Twice",
+   "pdfPage": 55,
+   "page": 56,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Raise Four",
+   "pdfPage": 56,
+   "page": 57,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Reflections",
+   "pdfPage": 57,
+   "page": 58,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Rhythm-a-ning",
+   "pdfPage": 58,
+   "page": 59,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "'Round Midnight",
+   "pdfPage": 59,
+   "page": 60,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Ruby, My Dear",
+   "pdfPage": 60,
+   "page": 61,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "San Francisco Holiday",
+   "pdfPage": 61,
+   "page": 62,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Shuffle Boil",
+   "pdfPage": 62,
+   "page": 63,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Sixteen",
+   "pdfPage": 63,
+   "page": 64,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Skippy",
+   "pdfPage": 64,
+   "page": 65,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Something In Blue",
+   "pdfPage": 65,
+   "page": 66,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Straight, No Chaser",
+   "pdfPage": 66,
+   "page": 67,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Stuffy Turkey",
+   "pdfPage": 67,
+   "page": 68,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Teo",
+   "pdfPage": 68,
+   "page": 69,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Thelonious",
+   "pdfPage": 69,
+   "page": 70,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Think Of One",
+   "pdfPage": 70,
+   "page": 71,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Trinkle-Tinkle",
+   "pdfPage": 71,
+   "page": 72,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Two Timer",
+   "pdfPage": 72,
+   "page": 73,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Ugly Beauty",
+   "pdfPage": 73,
+   "page": 74,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "We See",
+   "pdfPage": 74,
+   "page": 75,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Well You Needn't",
+   "pdfPage": 75,
+   "page": 76,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Who Knows?",
+   "pdfPage": 76,
+   "page": 77,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Work",
+   "pdfPage": 77,
+   "page": 78,
+   "composer": "Thelonious Monk",
+   "conf": "high"
+  }
+ ]
+}

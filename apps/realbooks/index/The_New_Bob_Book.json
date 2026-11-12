@@ -1,0 +1,4231 @@
+{
+ "file": "The_New_Bob_Book.pdf",
+ "method": "text-index",
+ "offset": 7,
+ "notes": "Bookmarks are useless (83 per-file bookmarks all pointing at page 1). The book has a text layer and a 'New Bob Book Index' on pdf pp2-7 (title ..... page, 3 columns, 666 entries, many titles truncated). I parsed the index text and mapped printed page -> pdfPage = page+7 (printed 1 = pdf 8), then read the full title and, where on the same line, composer from each page's own text layer. All 666 pages checked automatically (page title matched the index title); 19 differed only in wording (e.g. 'Getting Sentimental' vs \"I'm Getting Sentimental Over You\") and were set by hand from the page text; 4 pages (Driftin' 136, Lady Bird 321, Lament 322, Love Letters 343) have no title in the text layer (only the page number) so conf=med. Composer filled for ~227 entries only (when on the title line). Pages with no entry are 2nd pages of tunes.",
+ "entries": [
+  {
+   "title": "500 Miles High",
+   "pdfPage": 8,
+   "page": 1,
+   "conf": "high",
+   "composer": "Chick Corea/Neville Potter"
+  },
+  {
+   "title": "After You've Gone",
+   "pdfPage": 9,
+   "page": 2,
+   "conf": "high",
+   "composer": "Henry S. Creamer/Turner Layton"
+  },
+  {
+   "title": "Afternoon In Paris",
+   "pdfPage": 10,
+   "page": 3,
+   "conf": "high",
+   "composer": "John Lewis"
+  },
+  {
+   "title": "Again",
+   "pdfPage": 11,
+   "page": 4,
+   "conf": "high"
+  },
+  {
+   "title": "Agua De Beber",
+   "pdfPage": 12,
+   "page": 5,
+   "conf": "high",
+   "composer": "Antonio Carlos Jobim/Norman Gimbel"
+  },
+  {
+   "title": "Airegin",
+   "pdfPage": 13,
+   "page": 6,
+   "conf": "high"
+  },
+  {
+   "title": "Alice In Wonderland",
+   "pdfPage": 14,
+   "page": 7,
+   "conf": "high",
+   "composer": "Sammy Fain/Bob Hilliard"
+  },
+  {
+   "title": "All About Ronnie",
+   "pdfPage": 15,
+   "page": 8,
+   "conf": "high",
+   "composer": "Joe Greene"
+  },
+  {
+   "title": "All My Tomorrows",
+   "pdfPage": 16,
+   "page": 9,
+   "conf": "high",
+   "composer": "James Van Heusen/Sammy Cahn"
+  },
+  {
+   "title": "All Of Me",
+   "pdfPage": 17,
+   "page": 10,
+   "conf": "high"
+  },
+  {
+   "title": "All Of You",
+   "pdfPage": 18,
+   "page": 11,
+   "conf": "high"
+  },
+  {
+   "title": "All Or Nothing At All",
+   "pdfPage": 19,
+   "page": 12,
+   "conf": "high"
+  },
+  {
+   "title": "All The Things You Are",
+   "pdfPage": 20,
+   "page": 13,
+   "conf": "high"
+  },
+  {
+   "title": "All The Way",
+   "pdfPage": 21,
+   "page": 14,
+   "conf": "high"
+  },
+  {
+   "title": "Alone Together",
+   "pdfPage": 22,
+   "page": 15,
+   "conf": "high",
+   "composer": "Howard Dietz/Arthur Schwartz"
+  },
+  {
+   "title": "Along Came Betty",
+   "pdfPage": 23,
+   "page": 16,
+   "conf": "high",
+   "composer": "Benny Golson"
+  },
+  {
+   "title": "Always",
+   "pdfPage": 24,
+   "page": 17,
+   "conf": "high"
+  },
+  {
+   "title": "Am I Blue",
+   "pdfPage": 25,
+   "page": 18,
+   "conf": "high",
+   "composer": "Harry Akst/Grant Clarke"
+  },
+  {
+   "title": "Among My Souvenirs",
+   "pdfPage": 26,
+   "page": 19,
+   "conf": "high"
+  },
+  {
+   "title": "And I Love Her",
+   "pdfPage": 27,
+   "page": 20,
+   "conf": "high"
+  },
+  {
+   "title": "Angel Eyes",
+   "pdfPage": 28,
+   "page": 21,
+   "conf": "high",
+   "composer": "Matt Dennis/Earl Brent"
+  },
+  {
+   "title": "Angela (Jobim)",
+   "pdfPage": 29,
+   "page": 22,
+   "conf": "high",
+   "composer": "Antonio Carlos Jobim"
+  },
+  {
+   "title": "Angela (Minasi)",
+   "pdfPage": 30,
+   "page": 23,
+   "conf": "high",
+   "composer": "Dom Minasi"
+  },
+  {
+   "title": "Anthropology",
+   "pdfPage": 31,
+   "page": 24,
+   "conf": "high",
+   "composer": "Charlie Parker"
+  },
+  {
+   "title": "April In Paris",
+   "pdfPage": 32,
+   "page": 25,
+   "conf": "high"
+  },
+  {
+   "title": "Armando's Rhumba",
+   "pdfPage": 33,
+   "page": 26,
+   "conf": "high",
+   "composer": "Chick Corea"
+  },
+  {
+   "title": "As Long As I Live",
+   "pdfPage": 35,
+   "page": 28,
+   "conf": "high"
+  },
+  {
+   "title": "As Time Goes By",
+   "pdfPage": 36,
+   "page": 29,
+   "conf": "high"
+  },
+  {
+   "title": "Ask Me Now",
+   "pdfPage": 37,
+   "page": 30,
+   "conf": "high"
+  },
+  {
+   "title": "At Last",
+   "pdfPage": 38,
+   "page": 31,
+   "conf": "high"
+  },
+  {
+   "title": "Au Privave",
+   "pdfPage": 39,
+   "page": 32,
+   "conf": "high",
+   "composer": "Charlie \"Yardbird\" Parker"
+  },
+  {
+   "title": "Autumn In New York",
+   "pdfPage": 40,
+   "page": 33,
+   "conf": "high"
+  },
+  {
+   "title": "Autumn Leaves",
+   "pdfPage": 41,
+   "page": 34,
+   "conf": "high"
+  },
+  {
+   "title": "Autumn Serenade",
+   "pdfPage": 42,
+   "page": 35,
+   "conf": "high"
+  },
+  {
+   "title": "Barbados",
+   "pdfPage": 43,
+   "page": 36,
+   "conf": "high",
+   "composer": "Charlie Parker"
+  },
+  {
+   "title": "Barbara",
+   "pdfPage": 44,
+   "page": 37,
+   "conf": "high",
+   "composer": "Horace Silver"
+  },
+  {
+   "title": "Be My Love",
+   "pdfPage": 45,
+   "page": 38,
+   "conf": "high"
+  },
+  {
+   "title": "Beatrice",
+   "pdfPage": 46,
+   "page": 39,
+   "conf": "high"
+  },
+  {
+   "title": "Beautiful Friendship",
+   "pdfPage": 47,
+   "page": 40,
+   "conf": "high"
+  },
+  {
+   "title": "Beautiful Love",
+   "pdfPage": 48,
+   "page": 41,
+   "conf": "high",
+   "composer": "Victor Young/Haven Gillespie"
+  },
+  {
+   "title": "Because Of You",
+   "pdfPage": 49,
+   "page": 42,
+   "conf": "high",
+   "composer": "Art Hammerstein/Dudley Wilkinson"
+  },
+  {
+   "title": "Before You Go",
+   "pdfPage": 50,
+   "page": 43,
+   "conf": "high"
+  },
+  {
+   "title": "Bernie's Tune",
+   "pdfPage": 51,
+   "page": 44,
+   "conf": "high"
+  },
+  {
+   "title": "Besame Mucho",
+   "pdfPage": 52,
+   "page": 45,
+   "conf": "high",
+   "composer": "Consuelo Velazquez"
+  },
+  {
+   "title": "Bewitched",
+   "pdfPage": 53,
+   "page": 46,
+   "conf": "high"
+  },
+  {
+   "title": "Beyond The Sea",
+   "pdfPage": 54,
+   "page": 47,
+   "conf": "high",
+   "composer": "Jack Lawrence/Charles Trenet"
+  },
+  {
+   "title": "The Big Hurt",
+   "pdfPage": 55,
+   "page": 48,
+   "conf": "high",
+   "composer": "Wayne Shanklin"
+  },
+  {
+   "title": "Black And Blue",
+   "pdfPage": 56,
+   "page": 49,
+   "conf": "high"
+  },
+  {
+   "title": "Black Coffee",
+   "pdfPage": 57,
+   "page": 50,
+   "conf": "high",
+   "composer": "Paul Francis Webster/Sonny Burke"
+  },
+  {
+   "title": "Blame It On My Youth",
+   "pdfPage": 58,
+   "page": 51,
+   "conf": "high"
+  },
+  {
+   "title": "Bloomdido",
+   "pdfPage": 59,
+   "page": 52,
+   "conf": "high",
+   "composer": "Charlie Parker"
+  },
+  {
+   "title": "Blue And Sentimental",
+   "pdfPage": 60,
+   "page": 53,
+   "conf": "high"
+  },
+  {
+   "title": "Blue And White",
+   "pdfPage": 61,
+   "page": 54,
+   "conf": "high"
+  },
+  {
+   "title": "Blue Bossa",
+   "pdfPage": 62,
+   "page": 55,
+   "conf": "high"
+  },
+  {
+   "title": "Blue Daniel",
+   "pdfPage": 63,
+   "page": 56,
+   "conf": "high"
+  },
+  {
+   "title": "Blue In Green",
+   "pdfPage": 64,
+   "page": 57,
+   "conf": "high"
+  },
+  {
+   "title": "Blue Moon",
+   "pdfPage": 65,
+   "page": 58,
+   "conf": "high"
+  },
+  {
+   "title": "Blue Room",
+   "pdfPage": 66,
+   "page": 59,
+   "conf": "high",
+   "composer": "Lorenz Hart/Richard Rodgers"
+  },
+  {
+   "title": "Blue Seven",
+   "pdfPage": 67,
+   "page": 60,
+   "conf": "high"
+  },
+  {
+   "title": "Blue Skies",
+   "pdfPage": 68,
+   "page": 61,
+   "conf": "high",
+   "composer": "Irving Berlin"
+  },
+  {
+   "title": "Blues For Alice",
+   "pdfPage": 69,
+   "page": 62,
+   "conf": "high"
+  },
+  {
+   "title": "Bock To Bock",
+   "pdfPage": 70,
+   "page": 63,
+   "conf": "high"
+  },
+  {
+   "title": "Body And Soul",
+   "pdfPage": 71,
+   "page": 64,
+   "conf": "high",
+   "composer": "Edward Heyman/Robert Sour"
+  },
+  {
+   "title": "Bolivia",
+   "pdfPage": 72,
+   "page": 65,
+   "conf": "high"
+  },
+  {
+   "title": "Bossa Rocka",
+   "pdfPage": 73,
+   "page": 66,
+   "conf": "high"
+  },
+  {
+   "title": "Bouncin' With Bud",
+   "pdfPage": 74,
+   "page": 67,
+   "conf": "high",
+   "composer": "Bud Powell"
+  },
+  {
+   "title": "Broadway",
+   "pdfPage": 75,
+   "page": 68,
+   "conf": "high"
+  },
+  {
+   "title": "But Beautiful",
+   "pdfPage": 76,
+   "page": 69,
+   "conf": "high"
+  },
+  {
+   "title": "But Not For Me",
+   "pdfPage": 77,
+   "page": 70,
+   "conf": "high"
+  },
+  {
+   "title": "By Myself",
+   "pdfPage": 78,
+   "page": 71,
+   "conf": "high"
+  },
+  {
+   "title": "Bye Bye Blackbird",
+   "pdfPage": 79,
+   "page": 72,
+   "conf": "high"
+  },
+  {
+   "title": "Cafe Regio's",
+   "pdfPage": 80,
+   "page": 73,
+   "conf": "high"
+  },
+  {
+   "title": "Call Me",
+   "pdfPage": 81,
+   "page": 74,
+   "conf": "high",
+   "composer": "Tony Hatch"
+  },
+  {
+   "title": "Call Me Irresponsible",
+   "pdfPage": 82,
+   "page": 75,
+   "conf": "high"
+  },
+  {
+   "title": "Canadian Sunset",
+   "pdfPage": 83,
+   "page": 76,
+   "conf": "high"
+  },
+  {
+   "title": "Candy",
+   "pdfPage": 84,
+   "page": 77,
+   "conf": "high"
+  },
+  {
+   "title": "Cantaloupe Island",
+   "pdfPage": 85,
+   "page": 78,
+   "conf": "high"
+  },
+  {
+   "title": "Caravan",
+   "pdfPage": 86,
+   "page": 79,
+   "conf": "high",
+   "composer": "Duke Ellington/Irving Mills"
+  },
+  {
+   "title": "Catch Me",
+   "pdfPage": 87,
+   "page": 80,
+   "conf": "high",
+   "composer": "Joe Pass"
+  },
+  {
+   "title": "Ceora",
+   "pdfPage": 88,
+   "page": 81,
+   "conf": "high"
+  },
+  {
+   "title": "Change Partners",
+   "pdfPage": 89,
+   "page": 82,
+   "conf": "high",
+   "composer": "Irving Berlin"
+  },
+  {
+   "title": "Cheek To Cheek",
+   "pdfPage": 90,
+   "page": 83,
+   "conf": "high",
+   "composer": "Irving Berlin"
+  },
+  {
+   "title": "Cheesecake",
+   "pdfPage": 91,
+   "page": 84,
+   "conf": "high",
+   "composer": "Dexter Gordon"
+  },
+  {
+   "title": "Cherokee",
+   "pdfPage": 92,
+   "page": 85,
+   "conf": "high",
+   "composer": "Ray Noble"
+  },
+  {
+   "title": "Chega De Saudade",
+   "pdfPage": 93,
+   "page": 86,
+   "conf": "high"
+  },
+  {
+   "title": "A Child Is Born",
+   "pdfPage": 95,
+   "page": 88,
+   "conf": "high",
+   "composer": "Thad Jones"
+  },
+  {
+   "title": "Chlo-e",
+   "pdfPage": 96,
+   "page": 89,
+   "conf": "high"
+  },
+  {
+   "title": "Close Your Eyes",
+   "pdfPage": 97,
+   "page": 90,
+   "conf": "high",
+   "composer": "Bernice Petkere"
+  },
+  {
+   "title": "Come Fly With Me",
+   "pdfPage": 98,
+   "page": 91,
+   "conf": "high",
+   "composer": "Sammy Cahn/James Van Heusen"
+  },
+  {
+   "title": "Come Rain Or Come Shine",
+   "pdfPage": 99,
+   "page": 92,
+   "conf": "high"
+  },
+  {
+   "title": "Come Sunday",
+   "pdfPage": 100,
+   "page": 93,
+   "conf": "high"
+  },
+  {
+   "title": "Con Alma",
+   "pdfPage": 101,
+   "page": 94,
+   "conf": "high",
+   "composer": "Dizzy Gillespie"
+  },
+  {
+   "title": "Confirmation",
+   "pdfPage": 102,
+   "page": 95,
+   "conf": "high",
+   "composer": "Charlie Parker"
+  },
+  {
+   "title": "Corcovado",
+   "pdfPage": 103,
+   "page": 96,
+   "conf": "high"
+  },
+  {
+   "title": "Corner Pocket",
+   "pdfPage": 104,
+   "page": 97,
+   "conf": "high"
+  },
+  {
+   "title": "A Cottage For Sale",
+   "pdfPage": 105,
+   "page": 98,
+   "conf": "high"
+  },
+  {
+   "title": "Cottontail",
+   "pdfPage": 106,
+   "page": 99,
+   "conf": "high",
+   "composer": "Duke ellington"
+  },
+  {
+   "title": "Cry Me A River",
+   "pdfPage": 107,
+   "page": 100,
+   "conf": "high"
+  },
+  {
+   "title": "Dancing In The Dark",
+   "pdfPage": 108,
+   "page": 101,
+   "conf": "high"
+  },
+  {
+   "title": "Daahoud",
+   "pdfPage": 109,
+   "page": 102,
+   "conf": "high",
+   "composer": "Clifford Brown"
+  },
+  {
+   "title": "Dancing On The Ceiling",
+   "pdfPage": 111,
+   "page": 104,
+   "conf": "high"
+  },
+  {
+   "title": "Darn That Dream",
+   "pdfPage": 112,
+   "page": 105,
+   "conf": "high"
+  },
+  {
+   "title": "Day By Day",
+   "pdfPage": 113,
+   "page": 106,
+   "conf": "high",
+   "composer": "Sammy Cahn/Axel Stordahl"
+  },
+  {
+   "title": "Day In The Life Of A Fool",
+   "pdfPage": 114,
+   "page": 107,
+   "conf": "high"
+  },
+  {
+   "title": "Day In, Day Out",
+   "pdfPage": 115,
+   "page": 108,
+   "conf": "high",
+   "composer": "Johnny Mercer/Rube Bloom"
+  },
+  {
+   "title": "Daydream",
+   "pdfPage": 116,
+   "page": 109,
+   "conf": "high",
+   "composer": "Duke Ellington/Billy Strayhorn"
+  },
+  {
+   "title": "Days Of Wine And Roses",
+   "pdfPage": 117,
+   "page": 110,
+   "conf": "high"
+  },
+  {
+   "title": "Dearly Beloved",
+   "pdfPage": 118,
+   "page": 111,
+   "conf": "high"
+  },
+  {
+   "title": "'Deed I Do",
+   "pdfPage": 119,
+   "page": 112,
+   "conf": "high"
+  },
+  {
+   "title": "Deep Purple",
+   "pdfPage": 120,
+   "page": 113,
+   "conf": "high"
+  },
+  {
+   "title": "Desafinado",
+   "pdfPage": 121,
+   "page": 114,
+   "conf": "high",
+   "composer": "Jon Hendricks/Jesse Cavanaugh"
+  },
+  {
+   "title": "Delilah",
+   "pdfPage": 123,
+   "page": 116,
+   "conf": "high",
+   "composer": "Victor Young"
+  },
+  {
+   "title": "Detour Ahead",
+   "pdfPage": 124,
+   "page": 117,
+   "conf": "high",
+   "composer": "Lou Carter/Herb Ellis"
+  },
+  {
+   "title": "Devil May Care",
+   "pdfPage": 125,
+   "page": 118,
+   "conf": "high",
+   "composer": "Terrell P. kirk/Bob Dorough"
+  },
+  {
+   "title": "Dewey Square",
+   "pdfPage": 126,
+   "page": 119,
+   "conf": "high",
+   "composer": "Charlie Parker"
+  },
+  {
+   "title": "Dexterity",
+   "pdfPage": 127,
+   "page": 120,
+   "conf": "high",
+   "composer": "Charlie Parker"
+  },
+  {
+   "title": "Dig",
+   "pdfPage": 128,
+   "page": 121,
+   "conf": "high"
+  },
+  {
+   "title": "Dindi",
+   "pdfPage": 129,
+   "page": 122,
+   "conf": "high",
+   "composer": "Ray Gilbert/Aloysio De Oliveira"
+  },
+  {
+   "title": "Django",
+   "pdfPage": 130,
+   "page": 123,
+   "conf": "high",
+   "composer": "John Lewis"
+  },
+  {
+   "title": "Django's Castle",
+   "pdfPage": 131,
+   "page": 124,
+   "conf": "high"
+  },
+  {
+   "title": "Do Nothin' 'Til You Hear From Me",
+   "pdfPage": 132,
+   "page": 125,
+   "conf": "high"
+  },
+  {
+   "title": "Do You Know What It Means",
+   "pdfPage": 133,
+   "page": 126,
+   "conf": "high"
+  },
+  {
+   "title": "Dolphin Dance",
+   "pdfPage": 134,
+   "page": 127,
+   "conf": "high",
+   "composer": "Herbie Hancock"
+  },
+  {
+   "title": "Donna Lee",
+   "pdfPage": 135,
+   "page": 128,
+   "conf": "high",
+   "composer": "Charlie Parker"
+  },
+  {
+   "title": "Don't Be That Way",
+   "pdfPage": 136,
+   "page": 129,
+   "conf": "high"
+  },
+  {
+   "title": "Don't Blame Me",
+   "pdfPage": 137,
+   "page": 130,
+   "conf": "high"
+  },
+  {
+   "title": "Don't Get Around Much Anymore",
+   "pdfPage": 138,
+   "page": 131,
+   "conf": "high"
+  },
+  {
+   "title": "Don't Take Your Love From Me",
+   "pdfPage": 139,
+   "page": 132,
+   "conf": "high"
+  },
+  {
+   "title": "Doxy",
+   "pdfPage": 140,
+   "page": 133,
+   "conf": "high"
+  },
+  {
+   "title": "Dreamer",
+   "pdfPage": 141,
+   "page": 134,
+   "conf": "high",
+   "composer": "Antonio Carlos Jobim/Gene Lees"
+  },
+  {
+   "title": "Dreamsville",
+   "pdfPage": 142,
+   "page": 135,
+   "conf": "high",
+   "composer": "henry Mancini"
+  },
+  {
+   "title": "Driftin'",
+   "pdfPage": 143,
+   "page": 136,
+   "conf": "med"
+  },
+  {
+   "title": "The Drive",
+   "pdfPage": 144,
+   "page": 137,
+   "conf": "high",
+   "composer": "Oliver Nelson"
+  },
+  {
+   "title": "The Duke",
+   "pdfPage": 145,
+   "page": 138,
+   "conf": "high",
+   "composer": "Dave Brubeck"
+  },
+  {
+   "title": "Early Autumn",
+   "pdfPage": 146,
+   "page": 139,
+   "conf": "high",
+   "composer": "Ralph Burns/Woody Herman"
+  },
+  {
+   "title": "East Of The Sun",
+   "pdfPage": 147,
+   "page": 140,
+   "conf": "high"
+  },
+  {
+   "title": "Easy Living",
+   "pdfPage": 148,
+   "page": 141,
+   "conf": "high",
+   "composer": "Leo Robin/Ralph Rainger"
+  },
+  {
+   "title": "Easy Time",
+   "pdfPage": 149,
+   "page": 142,
+   "conf": "high"
+  },
+  {
+   "title": "Easy To Love",
+   "pdfPage": 150,
+   "page": 143,
+   "conf": "high"
+  },
+  {
+   "title": "Ecaroh",
+   "pdfPage": 151,
+   "page": 144,
+   "conf": "high",
+   "composer": "Horace Silver"
+  },
+  {
+   "title": "Eclypso",
+   "pdfPage": 153,
+   "page": 146,
+   "conf": "high",
+   "composer": "Tommy Flannagan"
+  },
+  {
+   "title": "Embraceable You",
+   "pdfPage": 154,
+   "page": 147,
+   "conf": "high",
+   "composer": "George & Ira Gershwin"
+  },
+  {
+   "title": "Emily",
+   "pdfPage": 155,
+   "page": 148,
+   "conf": "high",
+   "composer": "Johnny Mercer/Johnny Mandell"
+  },
+  {
+   "title": "The End Of A Love Affair",
+   "pdfPage": 156,
+   "page": 149,
+   "conf": "high",
+   "composer": "Edward C. Redding"
+  },
+  {
+   "title": "Estate",
+   "pdfPage": 157,
+   "page": 150,
+   "conf": "high",
+   "composer": "Bruno Martino/Bruno Brighetti"
+  },
+  {
+   "title": "Eternal Triangle",
+   "pdfPage": 158,
+   "page": 151,
+   "conf": "high"
+  },
+  {
+   "title": "Every Time We Say Goodbye",
+   "pdfPage": 159,
+   "page": 152,
+   "conf": "high",
+   "composer": "Cole Porter"
+  },
+  {
+   "title": "Everything Happens To Me",
+   "pdfPage": 160,
+   "page": 153,
+   "conf": "high",
+   "composer": "Tom Adair/Matt Dennis"
+  },
+  {
+   "title": "Everything I Have Is Yours",
+   "pdfPage": 161,
+   "page": 154,
+   "conf": "high"
+  },
+  {
+   "title": "Everything I Love",
+   "pdfPage": 162,
+   "page": 155,
+   "conf": "high"
+  },
+  {
+   "title": "Exactly Like You",
+   "pdfPage": 163,
+   "page": 156,
+   "conf": "high"
+  },
+  {
+   "title": "The Face I Love",
+   "pdfPage": 164,
+   "page": 157,
+   "conf": "high"
+  },
+  {
+   "title": "Falling In Love With Love",
+   "pdfPage": 165,
+   "page": 158,
+   "conf": "high"
+  },
+  {
+   "title": "Far Wes",
+   "pdfPage": 166,
+   "page": 159,
+   "conf": "high",
+   "composer": "John L \"Wes\" Montgomery"
+  },
+  {
+   "title": "Fascination",
+   "pdfPage": 167,
+   "page": 160,
+   "conf": "high",
+   "composer": "Fermo Dante Marchetti"
+  },
+  {
+   "title": "Fascinating Rhythm",
+   "pdfPage": 168,
+   "page": 161,
+   "conf": "high"
+  },
+  {
+   "title": "Favela",
+   "pdfPage": 169,
+   "page": 162,
+   "conf": "high"
+  },
+  {
+   "title": "A Felicidade",
+   "pdfPage": 170,
+   "page": 163,
+   "conf": "high",
+   "composer": "Antonio Carlos Jobim/Vinicius de Moraes"
+  },
+  {
+   "title": "Filthy McNasty",
+   "pdfPage": 171,
+   "page": 164,
+   "conf": "high",
+   "composer": "Horace Silver"
+  },
+  {
+   "title": "Fine Romance",
+   "pdfPage": 172,
+   "page": 165,
+   "conf": "high"
+  },
+  {
+   "title": "Five Brothers",
+   "pdfPage": 173,
+   "page": 166,
+   "conf": "high",
+   "composer": "Gerry Mulligan"
+  },
+  {
+   "title": "Five Spot After Dark",
+   "pdfPage": 174,
+   "page": 167,
+   "conf": "high"
+  },
+  {
+   "title": "Flamingo",
+   "pdfPage": 175,
+   "page": 168,
+   "conf": "high"
+  },
+  {
+   "title": "Fly Me To The Moon",
+   "pdfPage": 176,
+   "page": 169,
+   "conf": "high"
+  },
+  {
+   "title": "A Foggy Day",
+   "pdfPage": 177,
+   "page": 170,
+   "conf": "high"
+  },
+  {
+   "title": "The Folks Who Live On The Hill",
+   "pdfPage": 178,
+   "page": 171,
+   "conf": "high"
+  },
+  {
+   "title": "Fools Rush In",
+   "pdfPage": 179,
+   "page": 172,
+   "conf": "high"
+  },
+  {
+   "title": "Footprints",
+   "pdfPage": 180,
+   "page": 173,
+   "conf": "high"
+  },
+  {
+   "title": "For All We Know",
+   "pdfPage": 181,
+   "page": 174,
+   "conf": "high",
+   "composer": "J. Fred Coots/Sam M. Lewis"
+  },
+  {
+   "title": "For Heaven's Sake",
+   "pdfPage": 182,
+   "page": 175,
+   "conf": "high",
+   "composer": "Don Meyer/Elise Bretton"
+  },
+  {
+   "title": "For Minors Only",
+   "pdfPage": 183,
+   "page": 176,
+   "conf": "high",
+   "composer": "Jimmy heath"
+  },
+  {
+   "title": "For Sentimental Reasons",
+   "pdfPage": 184,
+   "page": 177,
+   "conf": "high"
+  },
+  {
+   "title": "Forest Flower",
+   "pdfPage": 185,
+   "page": 178,
+   "conf": "high",
+   "composer": "Charles Lloyd"
+  },
+  {
+   "title": "Fotografia",
+   "pdfPage": 186,
+   "page": 179,
+   "conf": "high"
+  },
+  {
+   "title": "Four",
+   "pdfPage": 187,
+   "page": 180,
+   "conf": "high",
+   "composer": "Miles Davis/Jon Hendricks"
+  },
+  {
+   "title": "Four Brothers",
+   "pdfPage": 188,
+   "page": 181,
+   "conf": "high",
+   "composer": "Jimmy Giuffre"
+  },
+  {
+   "title": "Four On Six",
+   "pdfPage": 189,
+   "page": 182,
+   "conf": "high"
+  },
+  {
+   "title": "Freddie The Freeloader",
+   "pdfPage": 190,
+   "page": 183,
+   "conf": "high"
+  },
+  {
+   "title": "Freedom Jazz Dance",
+   "pdfPage": 191,
+   "page": 184,
+   "conf": "high"
+  },
+  {
+   "title": "Freight Trane",
+   "pdfPage": 192,
+   "page": 185,
+   "conf": "high",
+   "composer": "Tommy Flanagan"
+  },
+  {
+   "title": "Fried Bananas",
+   "pdfPage": 193,
+   "page": 186,
+   "conf": "high",
+   "composer": "Dexter Gordon"
+  },
+  {
+   "title": "Fried Pies",
+   "pdfPage": 195,
+   "page": 188,
+   "conf": "high",
+   "composer": "John L \"Wes\" Montgomery"
+  },
+  {
+   "title": "Gee Baby, Ain't I Good To You",
+   "pdfPage": 196,
+   "page": 189,
+   "conf": "high"
+  },
+  {
+   "title": "Gentle Rain",
+   "pdfPage": 197,
+   "page": 190,
+   "conf": "high"
+  },
+  {
+   "title": "Georgia On My Mind",
+   "pdfPage": 198,
+   "page": 191,
+   "conf": "high"
+  },
+  {
+   "title": "Get Out Of Town",
+   "pdfPage": 199,
+   "page": 192,
+   "conf": "high"
+  },
+  {
+   "title": "I'm Getting Sentimental Over You",
+   "pdfPage": 200,
+   "page": 193,
+   "conf": "high",
+   "composer": "Ned Washington/George Bassman"
+  },
+  {
+   "title": "A Ghost Of A Chance",
+   "pdfPage": 201,
+   "page": 194,
+   "conf": "high"
+  },
+  {
+   "title": "The Girl From Ipanema",
+   "pdfPage": 202,
+   "page": 195,
+   "conf": "high"
+  },
+  {
+   "title": "The Girl Next Door",
+   "pdfPage": 203,
+   "page": 196,
+   "conf": "high"
+  },
+  {
+   "title": "Girl Talk",
+   "pdfPage": 204,
+   "page": 197,
+   "conf": "high",
+   "composer": "Neal Hefti/Bobby Troup"
+  },
+  {
+   "title": "Give Me The Simple Life",
+   "pdfPage": 205,
+   "page": 198,
+   "conf": "high",
+   "composer": "Rube Bloom/Harry Ruby"
+  },
+  {
+   "title": "God Bless The Child",
+   "pdfPage": 206,
+   "page": 199,
+   "conf": "high"
+  },
+  {
+   "title": "Gone With The Wind",
+   "pdfPage": 207,
+   "page": 200,
+   "conf": "high"
+  },
+  {
+   "title": "Good Bait",
+   "pdfPage": 208,
+   "page": 201,
+   "conf": "high",
+   "composer": "Tadd Dammeron/Count basie"
+  },
+  {
+   "title": "The Good Life",
+   "pdfPage": 209,
+   "page": 202,
+   "conf": "high"
+  },
+  {
+   "title": "Gravy Waltz",
+   "pdfPage": 210,
+   "page": 203,
+   "conf": "high"
+  },
+  {
+   "title": "Gratitude",
+   "pdfPage": 211,
+   "page": 204,
+   "conf": "high",
+   "composer": "Horace Silver"
+  },
+  {
+   "title": "The Great Pumpkin Waltz",
+   "pdfPage": 213,
+   "page": 206,
+   "conf": "high"
+  },
+  {
+   "title": "Green Dolphin Street",
+   "pdfPage": 214,
+   "page": 207,
+   "conf": "high"
+  },
+  {
+   "title": "Gregory Is Here",
+   "pdfPage": 215,
+   "page": 208,
+   "conf": "high",
+   "composer": "Horace Silver"
+  },
+  {
+   "title": "Grooveyard",
+   "pdfPage": 216,
+   "page": 209,
+   "conf": "high",
+   "composer": "Carl Perkins"
+  },
+  {
+   "title": "Groovin' High",
+   "pdfPage": 217,
+   "page": 210,
+   "conf": "high"
+  },
+  {
+   "title": "Groovy Samba",
+   "pdfPage": 218,
+   "page": 211,
+   "conf": "high"
+  },
+  {
+   "title": "Guilty",
+   "pdfPage": 219,
+   "page": 212,
+   "conf": "high",
+   "composer": "Gus Kahn/Harry Akst"
+  },
+  {
+   "title": "Half Nelson",
+   "pdfPage": 220,
+   "page": 213,
+   "conf": "high",
+   "composer": "Miles Davis"
+  },
+  {
+   "title": "Harold's House Of Jazz",
+   "pdfPage": 221,
+   "page": 214,
+   "conf": "high",
+   "composer": "Richie Cole/David Lahm"
+  },
+  {
+   "title": "The Hat Man",
+   "pdfPage": 223,
+   "page": 216,
+   "conf": "high",
+   "composer": "Randy Johnston"
+  },
+  {
+   "title": "Have You Met Miss Jones?",
+   "pdfPage": 224,
+   "page": 217,
+   "conf": "high"
+  },
+  {
+   "title": "Heartaches",
+   "pdfPage": 225,
+   "page": 218,
+   "conf": "high"
+  },
+  {
+   "title": "Here's That Rainy Day",
+   "pdfPage": 226,
+   "page": 219,
+   "conf": "high"
+  },
+  {
+   "title": "Hey There",
+   "pdfPage": 227,
+   "page": 220,
+   "conf": "high"
+  },
+  {
+   "title": "Hi-Fly",
+   "pdfPage": 228,
+   "page": 221,
+   "conf": "high",
+   "composer": "Randy Weston"
+  },
+  {
+   "title": "Home At Last",
+   "pdfPage": 229,
+   "page": 222,
+   "conf": "high",
+   "composer": "Hank Mobley"
+  },
+  {
+   "title": "Honeysuckle Rose",
+   "pdfPage": 230,
+   "page": 223,
+   "conf": "high"
+  },
+  {
+   "title": "Hot House",
+   "pdfPage": 231,
+   "page": 224,
+   "conf": "high"
+  },
+  {
+   "title": "How About You?",
+   "pdfPage": 232,
+   "page": 225,
+   "conf": "high"
+  },
+  {
+   "title": "How Deep Is The Ocean?",
+   "pdfPage": 233,
+   "page": 226,
+   "conf": "high"
+  },
+  {
+   "title": "How High The Moon",
+   "pdfPage": 234,
+   "page": 227,
+   "conf": "high"
+  },
+  {
+   "title": "How Insensitive",
+   "pdfPage": 235,
+   "page": 228,
+   "conf": "high"
+  },
+  {
+   "title": "How Long Has This Been Going On?",
+   "pdfPage": 236,
+   "page": 229,
+   "conf": "high"
+  },
+  {
+   "title": "How My Heart Sings",
+   "pdfPage": 237,
+   "page": 230,
+   "conf": "high"
+  },
+  {
+   "title": "Humpty Dumpty",
+   "pdfPage": 238,
+   "page": 231,
+   "conf": "high",
+   "composer": "Chick Corea"
+  },
+  {
+   "title": "I Believe In You",
+   "pdfPage": 239,
+   "page": 232,
+   "conf": "high",
+   "composer": "Frank Loesser"
+  },
+  {
+   "title": "I Can't Believe That You're In Love With Me",
+   "pdfPage": 240,
+   "page": 233,
+   "conf": "high"
+  },
+  {
+   "title": "I Can't Get Started",
+   "pdfPage": 241,
+   "page": 234,
+   "conf": "high"
+  },
+  {
+   "title": "I Concentrate On You",
+   "pdfPage": 242,
+   "page": 235,
+   "conf": "high",
+   "composer": "Cole Porter"
+  },
+  {
+   "title": "I Could Write A Book",
+   "pdfPage": 243,
+   "page": 236,
+   "conf": "high"
+  },
+  {
+   "title": "I Cover The Waterfront John Green/Edward Heyman, 1933",
+   "pdfPage": 244,
+   "page": 237,
+   "conf": "high"
+  },
+  {
+   "title": "I Didn't Know About You",
+   "pdfPage": 245,
+   "page": 238,
+   "conf": "high"
+  },
+  {
+   "title": "I Didn't Know What Time It Was",
+   "pdfPage": 246,
+   "page": 239,
+   "conf": "high"
+  },
+  {
+   "title": "I Fall In Love Too Easily",
+   "pdfPage": 247,
+   "page": 240,
+   "conf": "high"
+  },
+  {
+   "title": "I Got It Bad",
+   "pdfPage": 248,
+   "page": 241,
+   "conf": "high"
+  },
+  {
+   "title": "I Had The Craziest Dream",
+   "pdfPage": 249,
+   "page": 242,
+   "conf": "high"
+  },
+  {
+   "title": "I Hadn't Anyone Till You",
+   "pdfPage": 250,
+   "page": 243,
+   "conf": "high"
+  },
+  {
+   "title": "I Hear A Rhapsody",
+   "pdfPage": 251,
+   "page": 244,
+   "conf": "high",
+   "composer": "George Fragos/Jack Baker"
+  },
+  {
+   "title": "I Let A Song Go Out Of My Heart",
+   "pdfPage": 252,
+   "page": 245,
+   "conf": "high"
+  },
+  {
+   "title": "I Love Lucy",
+   "pdfPage": 253,
+   "page": 246,
+   "conf": "high"
+  },
+  {
+   "title": "I Love Paris",
+   "pdfPage": 254,
+   "page": 247,
+   "conf": "high"
+  },
+  {
+   "title": "I Love You",
+   "pdfPage": 255,
+   "page": 248,
+   "conf": "high"
+  },
+  {
+   "title": "I May Be Wrong But",
+   "pdfPage": 256,
+   "page": 249,
+   "conf": "high"
+  },
+  {
+   "title": "I Miss You",
+   "pdfPage": 257,
+   "page": 250,
+   "conf": "high",
+   "composer": "S. Goto"
+  },
+  {
+   "title": "I Only Have Eyes For You",
+   "pdfPage": 258,
+   "page": 251,
+   "conf": "high"
+  },
+  {
+   "title": "I Remember Clifford",
+   "pdfPage": 259,
+   "page": 252,
+   "conf": "high",
+   "composer": "Benny Golson"
+  },
+  {
+   "title": "I Remember You",
+   "pdfPage": 260,
+   "page": 253,
+   "conf": "high"
+  },
+  {
+   "title": "I Should Care",
+   "pdfPage": 261,
+   "page": 254,
+   "conf": "high"
+  },
+  {
+   "title": "I Thought About You Johnny Mercer/Jimmy Van Heusen, 1939",
+   "pdfPage": 262,
+   "page": 255,
+   "conf": "high"
+  },
+  {
+   "title": "I Will Wait For You Michel Legrand/Norman Gimbel, 1965",
+   "pdfPage": 263,
+   "page": 256,
+   "conf": "high"
+  },
+  {
+   "title": "I Wish I Knew",
+   "pdfPage": 264,
+   "page": 257,
+   "conf": "high"
+  },
+  {
+   "title": "I Wish You Love",
+   "pdfPage": 265,
+   "page": 258,
+   "conf": "high",
+   "composer": "Charles Trenet/Albert Beach"
+  },
+  {
+   "title": "Idle Moments",
+   "pdfPage": 266,
+   "page": 259,
+   "conf": "high"
+  },
+  {
+   "title": "If I Had You",
+   "pdfPage": 267,
+   "page": 260,
+   "conf": "high",
+   "composer": "Jimmy Campbell/Reg Connelly"
+  },
+  {
+   "title": "If I Should Lose You",
+   "pdfPage": 268,
+   "page": 261,
+   "conf": "high"
+  },
+  {
+   "title": "If I Were A Bell",
+   "pdfPage": 269,
+   "page": 262,
+   "conf": "high",
+   "composer": "Frank Loesser"
+  },
+  {
+   "title": "If You Could See Me Now",
+   "pdfPage": 270,
+   "page": 263,
+   "conf": "high"
+  },
+  {
+   "title": "If You Never Come To Me",
+   "pdfPage": 271,
+   "page": 264,
+   "conf": "high"
+  },
+  {
+   "title": "I'll Be Around",
+   "pdfPage": 272,
+   "page": 265,
+   "conf": "high",
+   "composer": "Alec Wilder"
+  },
+  {
+   "title": "I'll Be Seeing You",
+   "pdfPage": 273,
+   "page": 266,
+   "conf": "high"
+  },
+  {
+   "title": "I'll Close My Eyes",
+   "pdfPage": 274,
+   "page": 267,
+   "conf": "high"
+  },
+  {
+   "title": "I'll Remember April",
+   "pdfPage": 275,
+   "page": 268,
+   "conf": "high",
+   "composer": "Jon Raye/Gene DePaul"
+  },
+  {
+   "title": "I'll Take Romance Ben Oakland/Oscar Hammerstein III, 1937",
+   "pdfPage": 276,
+   "page": 269,
+   "conf": "high"
+  },
+  {
+   "title": "I'm A Fool To Want You",
+   "pdfPage": 277,
+   "page": 270,
+   "conf": "high",
+   "composer": "Frank Sinatra/Jack Wolfe"
+  },
+  {
+   "title": "I'm Beginning To See The Light",
+   "pdfPage": 278,
+   "page": 271,
+   "conf": "high"
+  },
+  {
+   "title": "I'm Confessin' That I Love You",
+   "pdfPage": 279,
+   "page": 272,
+   "conf": "high"
+  },
+  {
+   "title": "I'm Glad There Is You",
+   "pdfPage": 280,
+   "page": 273,
+   "conf": "high"
+  },
+  {
+   "title": "I'm Just A Lucky So And So",
+   "pdfPage": 281,
+   "page": 274,
+   "conf": "high"
+  },
+  {
+   "title": "I'm Old Fashioned",
+   "pdfPage": 282,
+   "page": 275,
+   "conf": "high"
+  },
+  {
+   "title": "I'm Through With Love",
+   "pdfPage": 283,
+   "page": 276,
+   "conf": "high"
+  },
+  {
+   "title": "Imagination",
+   "pdfPage": 284,
+   "page": 277,
+   "conf": "high"
+  },
+  {
+   "title": "In A Mellow Tone",
+   "pdfPage": 285,
+   "page": 278,
+   "conf": "high"
+  },
+  {
+   "title": "In A Sentimental Mood",
+   "pdfPage": 286,
+   "page": 279,
+   "conf": "high"
+  },
+  {
+   "title": "In Love In Vain",
+   "pdfPage": 287,
+   "page": 280,
+   "conf": "high",
+   "composer": "Leo Robin/Jerome Kern"
+  },
+  {
+   "title": "In Walked Bud",
+   "pdfPage": 288,
+   "page": 281,
+   "conf": "high"
+  },
+  {
+   "title": "In Your Own Sweet Way",
+   "pdfPage": 289,
+   "page": 282,
+   "conf": "high"
+  },
+  {
+   "title": "Incentive",
+   "pdfPage": 290,
+   "page": 283,
+   "conf": "high"
+  },
+  {
+   "title": "Indian Summer",
+   "pdfPage": 291,
+   "page": 284,
+   "conf": "high",
+   "composer": "Victor Herbert/Al Dubin"
+  },
+  {
+   "title": "Invitation",
+   "pdfPage": 292,
+   "page": 285,
+   "conf": "high",
+   "composer": "Paul Francis Webster/Bronislau Kaper"
+  },
+  {
+   "title": "Isn't It Romantic?",
+   "pdfPage": 293,
+   "page": 286,
+   "conf": "high"
+  },
+  {
+   "title": "Isn't She Lovely",
+   "pdfPage": 294,
+   "page": 287,
+   "conf": "high"
+  },
+  {
+   "title": "It All Depends On You",
+   "pdfPage": 295,
+   "page": 288,
+   "conf": "high"
+  },
+  {
+   "title": "It Could Happen To You",
+   "pdfPage": 296,
+   "page": 289,
+   "conf": "high"
+  },
+  {
+   "title": "It Don't Mean A Thing",
+   "pdfPage": 297,
+   "page": 290,
+   "conf": "high"
+  },
+  {
+   "title": "It Had To Be You",
+   "pdfPage": 298,
+   "page": 291,
+   "conf": "high",
+   "composer": "Isham Jones/Gus kahn"
+  },
+  {
+   "title": "It Might As Well Be Spring",
+   "pdfPage": 299,
+   "page": 292,
+   "conf": "high"
+  },
+  {
+   "title": "It Never Entered My Mind",
+   "pdfPage": 300,
+   "page": 293,
+   "conf": "high"
+  },
+  {
+   "title": "It's A Blue World",
+   "pdfPage": 301,
+   "page": 294,
+   "conf": "high"
+  },
+  {
+   "title": "It's All Right With Me",
+   "pdfPage": 302,
+   "page": 295,
+   "conf": "high",
+   "composer": "Cole Porter"
+  },
+  {
+   "title": "It's Only A Paper Moon",
+   "pdfPage": 303,
+   "page": 296,
+   "conf": "high"
+  },
+  {
+   "title": "It's You Or No One",
+   "pdfPage": 304,
+   "page": 297,
+   "conf": "high"
+  },
+  {
+   "title": "I've Got The World On A String",
+   "pdfPage": 305,
+   "page": 298,
+   "conf": "high"
+  },
+  {
+   "title": "I've Got You Under My Skin",
+   "pdfPage": 306,
+   "page": 299,
+   "conf": "high"
+  },
+  {
+   "title": "I've Grown Accustomed To Her Face",
+   "pdfPage": 307,
+   "page": 300,
+   "conf": "high"
+  },
+  {
+   "title": "I've Never Been In Love Before",
+   "pdfPage": 308,
+   "page": 301,
+   "conf": "high"
+  },
+  {
+   "title": "Jeannine",
+   "pdfPage": 309,
+   "page": 302,
+   "conf": "high",
+   "composer": "Duke Pearson"
+  },
+  {
+   "title": "Jeepers Creepers",
+   "pdfPage": 310,
+   "page": 303,
+   "conf": "high"
+  },
+  {
+   "title": "Jersey Bounce",
+   "pdfPage": 311,
+   "page": 304,
+   "conf": "high",
+   "composer": "Bobby Plater/Tiny Bradshaw"
+  },
+  {
+   "title": "Jitterbug Waltz",
+   "pdfPage": 312,
+   "page": 305,
+   "conf": "high",
+   "composer": "Thomas \"Fats\" Waller"
+  },
+  {
+   "title": "Jingles",
+   "pdfPage": 313,
+   "page": 306,
+   "conf": "high",
+   "composer": "John L. \"Wes\" Montgomery"
+  },
+  {
+   "title": "Jive Samba",
+   "pdfPage": 315,
+   "page": 308,
+   "conf": "high"
+  },
+  {
+   "title": "Jordu",
+   "pdfPage": 316,
+   "page": 309,
+   "conf": "high",
+   "composer": "Duke Jordan"
+  },
+  {
+   "title": "Journey To Recife",
+   "pdfPage": 317,
+   "page": 310,
+   "conf": "high"
+  },
+  {
+   "title": "Joy Spring",
+   "pdfPage": 318,
+   "page": 311,
+   "conf": "high",
+   "composer": "Clifford Brown"
+  },
+  {
+   "title": "June In January",
+   "pdfPage": 319,
+   "page": 312,
+   "conf": "high"
+  },
+  {
+   "title": "Just A Few",
+   "pdfPage": 320,
+   "page": 313,
+   "conf": "high"
+  },
+  {
+   "title": "Just Friends",
+   "pdfPage": 321,
+   "page": 314,
+   "conf": "high"
+  },
+  {
+   "title": "Just In Time",
+   "pdfPage": 322,
+   "page": 315,
+   "conf": "high",
+   "composer": "Jule Styne/Betty Comden"
+  },
+  {
+   "title": "Just One Of Those Things",
+   "pdfPage": 323,
+   "page": 316,
+   "conf": "high",
+   "composer": "Cole Porter"
+  },
+  {
+   "title": "Just Squeeze Me",
+   "pdfPage": 324,
+   "page": 317,
+   "conf": "high"
+  },
+  {
+   "title": "Just You, Just Me",
+   "pdfPage": 325,
+   "page": 318,
+   "conf": "high"
+  },
+  {
+   "title": "Killer Joe",
+   "pdfPage": 326,
+   "page": 319,
+   "conf": "high"
+  },
+  {
+   "title": "Lady Be Good",
+   "pdfPage": 327,
+   "page": 320,
+   "conf": "high"
+  },
+  {
+   "title": "Lady Bird",
+   "pdfPage": 328,
+   "page": 321,
+   "conf": "med"
+  },
+  {
+   "title": "Lament",
+   "pdfPage": 329,
+   "page": 322,
+   "conf": "med"
+  },
+  {
+   "title": "Last Night When We Were Young",
+   "pdfPage": 330,
+   "page": 323,
+   "conf": "high"
+  },
+  {
+   "title": "Laura",
+   "pdfPage": 331,
+   "page": 324,
+   "conf": "high"
+  },
+  {
+   "title": "Lazy Bird",
+   "pdfPage": 332,
+   "page": 325,
+   "conf": "high"
+  },
+  {
+   "title": "Lean Years",
+   "pdfPage": 333,
+   "page": 326,
+   "conf": "high"
+  },
+  {
+   "title": "Leila",
+   "pdfPage": 334,
+   "page": 327,
+   "conf": "high",
+   "composer": "John L \"Wes\" Montgomery"
+  },
+  {
+   "title": "Let's Cool One",
+   "pdfPage": 335,
+   "page": 328,
+   "conf": "high"
+  },
+  {
+   "title": "Let's Fall In Love",
+   "pdfPage": 336,
+   "page": 329,
+   "conf": "high"
+  },
+  {
+   "title": "Let's Get Away From It All",
+   "pdfPage": 337,
+   "page": 330,
+   "conf": "high"
+  },
+  {
+   "title": "Liberated Brother",
+   "pdfPage": 338,
+   "page": 331,
+   "conf": "high",
+   "composer": "Weldon Irvine"
+  },
+  {
+   "title": "Like Someone In Love",
+   "pdfPage": 339,
+   "page": 332,
+   "conf": "high"
+  },
+  {
+   "title": "L'il Darlin'",
+   "pdfPage": 340,
+   "page": 333,
+   "conf": "high"
+  },
+  {
+   "title": "Limehouse Blues",
+   "pdfPage": 341,
+   "page": 334,
+   "conf": "high"
+  },
+  {
+   "title": "Line For Lyons",
+   "pdfPage": 342,
+   "page": 335,
+   "conf": "high"
+  },
+  {
+   "title": "Little Boat",
+   "pdfPage": 343,
+   "page": 336,
+   "conf": "high"
+  },
+  {
+   "title": "Little Waltz",
+   "pdfPage": 344,
+   "page": 337,
+   "conf": "high",
+   "composer": "Ron Carter"
+  },
+  {
+   "title": "Lollipops And Roses",
+   "pdfPage": 345,
+   "page": 338,
+   "conf": "high",
+   "composer": "Tony Velona"
+  },
+  {
+   "title": "Long Ago & Far Away",
+   "pdfPage": 346,
+   "page": 339,
+   "conf": "high"
+  },
+  {
+   "title": "The Look Of Love",
+   "pdfPage": 347,
+   "page": 340,
+   "conf": "high"
+  },
+  {
+   "title": "Look To The Sky",
+   "pdfPage": 348,
+   "page": 341,
+   "conf": "high",
+   "composer": "Antonio Carlos Jobim"
+  },
+  {
+   "title": "Love For Sale",
+   "pdfPage": 349,
+   "page": 342,
+   "conf": "high",
+   "composer": "Cole Porter"
+  },
+  {
+   "title": "Love Letters",
+   "pdfPage": 350,
+   "page": 343,
+   "conf": "med"
+  },
+  {
+   "title": "Love Walked In",
+   "pdfPage": 351,
+   "page": 344,
+   "conf": "high"
+  },
+  {
+   "title": "Love You Madly",
+   "pdfPage": 352,
+   "page": 345,
+   "conf": "high",
+   "composer": "Duke Ellington"
+  },
+  {
+   "title": "Lover",
+   "pdfPage": 353,
+   "page": 346,
+   "conf": "high",
+   "composer": "Richard Rodgers/Lorenz Hart"
+  },
+  {
+   "title": "Lover Man",
+   "pdfPage": 354,
+   "page": 347,
+   "conf": "high",
+   "composer": "Jimmy Davis/Roger Ramirez"
+  },
+  {
+   "title": "Lucky Southern",
+   "pdfPage": 355,
+   "page": 348,
+   "conf": "high"
+  },
+  {
+   "title": "Lullaby In Rhythm",
+   "pdfPage": 356,
+   "page": 349,
+   "conf": "high"
+  },
+  {
+   "title": "Lullaby Of Birdland",
+   "pdfPage": 357,
+   "page": 350,
+   "conf": "high"
+  },
+  {
+   "title": "Lullaby Of The Leaves",
+   "pdfPage": 358,
+   "page": 351,
+   "conf": "high"
+  },
+  {
+   "title": "Lush Life",
+   "pdfPage": 359,
+   "page": 352,
+   "conf": "high",
+   "composer": "Billy Strayhorn"
+  },
+  {
+   "title": "Lyresto",
+   "pdfPage": 361,
+   "page": 354,
+   "conf": "high"
+  },
+  {
+   "title": "Maiden Voyage",
+   "pdfPage": 362,
+   "page": 355,
+   "conf": "high",
+   "composer": "Herbie Hancock"
+  },
+  {
+   "title": "Make Someone Happy",
+   "pdfPage": 363,
+   "page": 356,
+   "conf": "high"
+  },
+  {
+   "title": "The Man I Love",
+   "pdfPage": 364,
+   "page": 357,
+   "conf": "high"
+  },
+  {
+   "title": "The Man That Got Away",
+   "pdfPage": 365,
+   "page": 358,
+   "conf": "high"
+  },
+  {
+   "title": "Manhattan",
+   "pdfPage": 366,
+   "page": 359,
+   "conf": "high"
+  },
+  {
+   "title": "The Masquerade Is Over",
+   "pdfPage": 367,
+   "page": 360,
+   "conf": "high"
+  },
+  {
+   "title": "Maybe September",
+   "pdfPage": 368,
+   "page": 361,
+   "conf": "high",
+   "composer": "Percy Faith/Ray Evans"
+  },
+  {
+   "title": "Mean To Me",
+   "pdfPage": 369,
+   "page": 362,
+   "conf": "high"
+  },
+  {
+   "title": "Meditation",
+   "pdfPage": 370,
+   "page": 363,
+   "conf": "high"
+  },
+  {
+   "title": "Mellow Mood",
+   "pdfPage": 371,
+   "page": 364,
+   "conf": "high"
+  },
+  {
+   "title": "Memories Of You",
+   "pdfPage": 372,
+   "page": 365,
+   "conf": "high"
+  },
+  {
+   "title": "Menina Flor",
+   "pdfPage": 373,
+   "page": 366,
+   "conf": "high"
+  },
+  {
+   "title": "Midnight Creeper",
+   "pdfPage": 374,
+   "page": 367,
+   "conf": "high"
+  },
+  {
+   "title": "Midnight Sun",
+   "pdfPage": 375,
+   "page": 368,
+   "conf": "high",
+   "composer": "Lionel Hampton/Sonny Burke"
+  },
+  {
+   "title": "Mimosa",
+   "pdfPage": 376,
+   "page": 369,
+   "conf": "high"
+  },
+  {
+   "title": "Minority",
+   "pdfPage": 377,
+   "page": 370,
+   "conf": "high"
+  },
+  {
+   "title": "Misty",
+   "pdfPage": 378,
+   "page": 371,
+   "conf": "high",
+   "composer": "Errol Garner/Johnny Burke"
+  },
+  {
+   "title": "M.J.M.",
+   "pdfPage": 379,
+   "page": 372,
+   "conf": "high"
+  },
+  {
+   "title": "Moment's Notice",
+   "pdfPage": 380,
+   "page": 373,
+   "conf": "high",
+   "composer": "John Coltrane"
+  },
+  {
+   "title": "Moment To Moment",
+   "pdfPage": 381,
+   "page": 374,
+   "conf": "high"
+  },
+  {
+   "title": "Mona Lisa",
+   "pdfPage": 382,
+   "page": 375,
+   "conf": "high"
+  },
+  {
+   "title": "Montevideo",
+   "pdfPage": 383,
+   "page": 376,
+   "conf": "high",
+   "composer": "Othello Molineaux"
+  },
+  {
+   "title": "Mood Indigo",
+   "pdfPage": 385,
+   "page": 378,
+   "conf": "high"
+  },
+  {
+   "title": "Moon And Sand",
+   "pdfPage": 386,
+   "page": 379,
+   "conf": "high",
+   "composer": "Alec Wilder/Morty Palitz"
+  },
+  {
+   "title": "Moon River",
+   "pdfPage": 387,
+   "page": 380,
+   "conf": "high"
+  },
+  {
+   "title": "Moonglow",
+   "pdfPage": 388,
+   "page": 381,
+   "conf": "high"
+  },
+  {
+   "title": "Moonlight Becomes You",
+   "pdfPage": 389,
+   "page": 382,
+   "conf": "high"
+  },
+  {
+   "title": "Moonlight In Vermont",
+   "pdfPage": 390,
+   "page": 383,
+   "conf": "high"
+  },
+  {
+   "title": "Moonlight Serenade",
+   "pdfPage": 391,
+   "page": 384,
+   "conf": "high",
+   "composer": "Mitchell Parish/Glen Miller"
+  },
+  {
+   "title": "More",
+   "pdfPage": 392,
+   "page": 385,
+   "conf": "high",
+   "composer": "Riz Ortoloni/Nino Oliviero"
+  },
+  {
+   "title": "The More I See You",
+   "pdfPage": 393,
+   "page": 386,
+   "conf": "high"
+  },
+  {
+   "title": "More Than You Know",
+   "pdfPage": 394,
+   "page": 387,
+   "conf": "high",
+   "composer": "William Rose/Edward Eliscu"
+  },
+  {
+   "title": "Morning",
+   "pdfPage": 395,
+   "page": 388,
+   "conf": "high"
+  },
+  {
+   "title": "Move",
+   "pdfPage": 396,
+   "page": 389,
+   "conf": "high"
+  },
+  {
+   "title": "Mr. Lucky",
+   "pdfPage": 397,
+   "page": 390,
+   "conf": "high"
+  },
+  {
+   "title": "My Cherie Amour",
+   "pdfPage": 398,
+   "page": 391,
+   "conf": "high"
+  },
+  {
+   "title": "My Foolish Heart",
+   "pdfPage": 399,
+   "page": 392,
+   "conf": "high"
+  },
+  {
+   "title": "My Funny Valentine",
+   "pdfPage": 400,
+   "page": 393,
+   "conf": "high"
+  },
+  {
+   "title": "My Ideal",
+   "pdfPage": 401,
+   "page": 394,
+   "conf": "high"
+  },
+  {
+   "title": "My Little Suede Shoes",
+   "pdfPage": 402,
+   "page": 395,
+   "conf": "high"
+  },
+  {
+   "title": "My Old Flame",
+   "pdfPage": 403,
+   "page": 396,
+   "conf": "high",
+   "composer": "Arthur Johnston/Sam Coslow"
+  },
+  {
+   "title": "My One And Only Love",
+   "pdfPage": 404,
+   "page": 397,
+   "conf": "high",
+   "composer": "Robert Mellin/Guy Wood"
+  },
+  {
+   "title": "My Romance",
+   "pdfPage": 405,
+   "page": 398,
+   "conf": "high"
+  },
+  {
+   "title": "My Shining Hour",
+   "pdfPage": 406,
+   "page": 399,
+   "conf": "high"
+  },
+  {
+   "title": "My Ship",
+   "pdfPage": 407,
+   "page": 400,
+   "conf": "high",
+   "composer": "Ira Gershwin/Kurt Weill"
+  },
+  {
+   "title": "Naima",
+   "pdfPage": 408,
+   "page": 401,
+   "conf": "high",
+   "composer": "John Coltrane"
+  },
+  {
+   "title": "Namely You",
+   "pdfPage": 409,
+   "page": 402,
+   "conf": "high"
+  },
+  {
+   "title": "Nancy (With The Laughing Face)",
+   "pdfPage": 410,
+   "page": 403,
+   "conf": "high"
+  },
+  {
+   "title": "Nardis",
+   "pdfPage": 411,
+   "page": 404,
+   "conf": "high"
+  },
+  {
+   "title": "Nature Boy",
+   "pdfPage": 412,
+   "page": 405,
+   "conf": "high"
+  },
+  {
+   "title": "The Nearness Of You",
+   "pdfPage": 413,
+   "page": 406,
+   "conf": "high"
+  },
+  {
+   "title": "Nefertiti",
+   "pdfPage": 414,
+   "page": 407,
+   "conf": "high",
+   "composer": "Miles Davis"
+  },
+  {
+   "title": "Nica's Dream",
+   "pdfPage": 415,
+   "page": 408,
+   "conf": "high",
+   "composer": "Horace Silver"
+  },
+  {
+   "title": "Nice 'N Easy",
+   "pdfPage": 417,
+   "page": 410,
+   "conf": "high",
+   "composer": "Lew Spence/Alan Bergman"
+  },
+  {
+   "title": "Nice Work If You Can Get It",
+   "pdfPage": 418,
+   "page": 411,
+   "conf": "high"
+  },
+  {
+   "title": "Night And Day",
+   "pdfPage": 419,
+   "page": 412,
+   "conf": "high",
+   "composer": "Cole Porter"
+  },
+  {
+   "title": "The Night Has A Thousand Eyes",
+   "pdfPage": 420,
+   "page": 413,
+   "conf": "high"
+  },
+  {
+   "title": "A Night In Tunisia",
+   "pdfPage": 421,
+   "page": 414,
+   "conf": "high",
+   "composer": "Dizzy Gillespie"
+  },
+  {
+   "title": "A Nightingale Sang In Berkeley Square",
+   "pdfPage": 423,
+   "page": 416,
+   "conf": "high",
+   "composer": "Eric Maschwitz/Manning Sherwin"
+  },
+  {
+   "title": "Nobody Else But Me",
+   "pdfPage": 424,
+   "page": 417,
+   "conf": "high"
+  },
+  {
+   "title": "Nuages",
+   "pdfPage": 425,
+   "page": 418,
+   "conf": "high"
+  },
+  {
+   "title": "Nutville",
+   "pdfPage": 426,
+   "page": 419,
+   "conf": "high",
+   "composer": "Horace Silver"
+  },
+  {
+   "title": "O Grande Amor",
+   "pdfPage": 427,
+   "page": 420,
+   "conf": "high"
+  },
+  {
+   "title": "Off The Top",
+   "pdfPage": 428,
+   "page": 421,
+   "conf": "high"
+  },
+  {
+   "title": "The Old Country",
+   "pdfPage": 429,
+   "page": 422,
+   "conf": "high"
+  },
+  {
+   "title": "Old Devil Moon",
+   "pdfPage": 430,
+   "page": 423,
+   "conf": "high",
+   "composer": "Edgar Yipsel \"Yip\" Harburg"
+  },
+  {
+   "title": "Old Folks",
+   "pdfPage": 431,
+   "page": 424,
+   "conf": "high"
+  },
+  {
+   "title": "Oleo",
+   "pdfPage": 432,
+   "page": 425,
+   "conf": "high"
+  },
+  {
+   "title": "On A Clear Day",
+   "pdfPage": 433,
+   "page": 426,
+   "conf": "high"
+  },
+  {
+   "title": "On A Misty Night",
+   "pdfPage": 434,
+   "page": 427,
+   "conf": "high",
+   "composer": "Tadd Dameron"
+  },
+  {
+   "title": "On The Stairs",
+   "pdfPage": 435,
+   "page": 428,
+   "conf": "high"
+  },
+  {
+   "title": "On The Street Where You Live",
+   "pdfPage": 436,
+   "page": 429,
+   "conf": "high"
+  },
+  {
+   "title": "On The Trail",
+   "pdfPage": 437,
+   "page": 430,
+   "conf": "high"
+  },
+  {
+   "title": "Once I Loved",
+   "pdfPage": 438,
+   "page": 431,
+   "conf": "high",
+   "composer": "Antonio Carlos Jobim/Ray Gilbert"
+  },
+  {
+   "title": "Once In A While",
+   "pdfPage": 439,
+   "page": 432,
+   "conf": "high"
+  },
+  {
+   "title": "One Note Samba",
+   "pdfPage": 440,
+   "page": 433,
+   "conf": "high",
+   "composer": "Antonio Carlos Jobim"
+  },
+  {
+   "title": "One For My Baby",
+   "pdfPage": 441,
+   "page": 434,
+   "conf": "high"
+  },
+  {
+   "title": "One For Rose",
+   "pdfPage": 443,
+   "page": 436,
+   "conf": "high",
+   "composer": "Pat Martino"
+  },
+  {
+   "title": "Only Trust Your Heart",
+   "pdfPage": 445,
+   "page": 438,
+   "conf": "high"
+  },
+  {
+   "title": "Opus De Don",
+   "pdfPage": 446,
+   "page": 439,
+   "conf": "high",
+   "composer": "Don Patterson"
+  },
+  {
+   "title": "Opus De Funk",
+   "pdfPage": 447,
+   "page": 440,
+   "conf": "high",
+   "composer": "Horace Silver"
+  },
+  {
+   "title": "Opus One",
+   "pdfPage": 448,
+   "page": 441,
+   "conf": "high",
+   "composer": "Sy Oliver"
+  },
+  {
+   "title": "Ornithology",
+   "pdfPage": 449,
+   "page": 442,
+   "conf": "high"
+  },
+  {
+   "title": "Our Day Will Come",
+   "pdfPage": 450,
+   "page": 443,
+   "conf": "high"
+  },
+  {
+   "title": "Our Delight",
+   "pdfPage": 451,
+   "page": 444,
+   "conf": "high"
+  },
+  {
+   "title": "Our Love Is Here To Stay",
+   "pdfPage": 452,
+   "page": 445,
+   "conf": "high"
+  },
+  {
+   "title": "Out Of Nowhere",
+   "pdfPage": 453,
+   "page": 446,
+   "conf": "high"
+  },
+  {
+   "title": "Out Of The Night",
+   "pdfPage": 454,
+   "page": 447,
+   "conf": "high",
+   "composer": "Horace Silver"
+  },
+  {
+   "title": "Out Of This World",
+   "pdfPage": 455,
+   "page": 448,
+   "conf": "high",
+   "composer": "Harold Arlen/Johnny Mercer"
+  },
+  {
+   "title": "The Party's Over",
+   "pdfPage": 456,
+   "page": 449,
+   "conf": "high"
+  },
+  {
+   "title": "Pennies From Heaven",
+   "pdfPage": 457,
+   "page": 450,
+   "conf": "high"
+  },
+  {
+   "title": "Pensativa",
+   "pdfPage": 458,
+   "page": 451,
+   "conf": "high",
+   "composer": "Clare Fisher"
+  },
+  {
+   "title": "Pent-Up House",
+   "pdfPage": 459,
+   "page": 452,
+   "conf": "high",
+   "composer": "Sonny Rollins"
+  },
+  {
+   "title": "People",
+   "pdfPage": 460,
+   "page": 453,
+   "conf": "high",
+   "composer": "Jule Styne/Bob Merrill"
+  },
+  {
+   "title": "Perdido",
+   "pdfPage": 461,
+   "page": 454,
+   "conf": "high"
+  },
+  {
+   "title": "Pick Yourself Up",
+   "pdfPage": 462,
+   "page": 455,
+   "conf": "high",
+   "composer": "Jerome Kern/Dorothy Fields"
+  },
+  {
+   "title": "Poinciana",
+   "pdfPage": 463,
+   "page": 456,
+   "conf": "high"
+  },
+  {
+   "title": "Polkadots & Moonbeams",
+   "pdfPage": 464,
+   "page": 457,
+   "conf": "high"
+  },
+  {
+   "title": "Poor Butterfly",
+   "pdfPage": 465,
+   "page": 458,
+   "conf": "high"
+  },
+  {
+   "title": "Portrait Of Jennie",
+   "pdfPage": 466,
+   "page": 459,
+   "conf": "high"
+  },
+  {
+   "title": "Prelude To A Kiss",
+   "pdfPage": 467,
+   "page": 460,
+   "conf": "high",
+   "composer": "Duke Ellington/Irving Gordon"
+  },
+  {
+   "title": "Prince Albert",
+   "pdfPage": 468,
+   "page": 461,
+   "conf": "high"
+  },
+  {
+   "title": "Put Your Dreams Away",
+   "pdfPage": 469,
+   "page": 462,
+   "conf": "high",
+   "composer": "Ruth Lowe/Stephan Weiss"
+  },
+  {
+   "title": "Quicksilver",
+   "pdfPage": 470,
+   "page": 463,
+   "conf": "high",
+   "composer": "Horace Silver"
+  },
+  {
+   "title": "Ray's Idea",
+   "pdfPage": 471,
+   "page": 464,
+   "conf": "high",
+   "composer": "Ray Brown"
+  },
+  {
+   "title": "Recado Bossa Nova",
+   "pdfPage": 472,
+   "page": 465,
+   "conf": "high",
+   "composer": "Luiz Antonio/Paul Francis Webster"
+  },
+  {
+   "title": "Recorda-Me",
+   "pdfPage": 473,
+   "page": 466,
+   "conf": "high",
+   "composer": "Joe Henderson"
+  },
+  {
+   "title": "Red Clay",
+   "pdfPage": 474,
+   "page": 467,
+   "conf": "high"
+  },
+  {
+   "title": "Red Sails In The Sunset",
+   "pdfPage": 475,
+   "page": 468,
+   "conf": "high"
+  },
+  {
+   "title": "Relaxin' At Camarillo",
+   "pdfPage": 476,
+   "page": 469,
+   "conf": "high"
+  },
+  {
+   "title": "Remember",
+   "pdfPage": 477,
+   "page": 470,
+   "conf": "high"
+  },
+  {
+   "title": "Rhythm-a-ning",
+   "pdfPage": 478,
+   "page": 471,
+   "conf": "high"
+  },
+  {
+   "title": "Road Song",
+   "pdfPage": 479,
+   "page": 472,
+   "conf": "high"
+  },
+  {
+   "title": "Robbin's Nest",
+   "pdfPage": 480,
+   "page": 473,
+   "conf": "high"
+  },
+  {
+   "title": "Room 608",
+   "pdfPage": 481,
+   "page": 474,
+   "conf": "high",
+   "composer": "Horace Silver"
+  },
+  {
+   "title": "Rosetta",
+   "pdfPage": 482,
+   "page": 475,
+   "conf": "high"
+  },
+  {
+   "title": "Rough Ridin'",
+   "pdfPage": 483,
+   "page": 476,
+   "conf": "high",
+   "composer": "Ella Fitzgerald/Hank Jones/"
+  },
+  {
+   "title": "'Round Midnight",
+   "pdfPage": 484,
+   "page": 477,
+   "conf": "high",
+   "composer": "Thelonious Monk/Cootie Williams"
+  },
+  {
+   "title": "Ruby, My Dear",
+   "pdfPage": 485,
+   "page": 478,
+   "conf": "high",
+   "composer": "Thelonious Monk"
+  },
+  {
+   "title": "The Saddest Thing Of All",
+   "pdfPage": 486,
+   "page": 479,
+   "conf": "high"
+  },
+  {
+   "title": "Samba De Orfeu",
+   "pdfPage": 487,
+   "page": 480,
+   "conf": "high",
+   "composer": "Antonia Maria/Luiz Bonfa"
+  },
+  {
+   "title": "The Sands Of Time",
+   "pdfPage": 488,
+   "page": 481,
+   "conf": "high"
+  },
+  {
+   "title": "Sandu",
+   "pdfPage": 489,
+   "page": 482,
+   "conf": "high",
+   "composer": "Clifford Brown"
+  },
+  {
+   "title": "Satin Doll",
+   "pdfPage": 490,
+   "page": 483,
+   "conf": "high"
+  },
+  {
+   "title": "Save Your Love For Me",
+   "pdfPage": 491,
+   "page": 484,
+   "conf": "high"
+  },
+  {
+   "title": "Scrapple From The Apple",
+   "pdfPage": 492,
+   "page": 485,
+   "conf": "high"
+  },
+  {
+   "title": "The Second Time Around",
+   "pdfPage": 493,
+   "page": 486,
+   "conf": "high"
+  },
+  {
+   "title": "Secret Love",
+   "pdfPage": 494,
+   "page": 487,
+   "conf": "high",
+   "composer": "Sammy Fain/Paul Francis Webster"
+  },
+  {
+   "title": "September In The Rain",
+   "pdfPage": 495,
+   "page": 488,
+   "conf": "high"
+  },
+  {
+   "title": "September Song",
+   "pdfPage": 496,
+   "page": 489,
+   "conf": "high"
+  },
+  {
+   "title": "Serenade In Blue",
+   "pdfPage": 497,
+   "page": 490,
+   "conf": "high"
+  },
+  {
+   "title": "Serenata",
+   "pdfPage": 498,
+   "page": 491,
+   "conf": "high"
+  },
+  {
+   "title": "Seven Steps To Heaven Miles Davis/Victor Feldman, 1963",
+   "pdfPage": 499,
+   "page": 492,
+   "conf": "high"
+  },
+  {
+   "title": "Shadow Of Your Smile",
+   "pdfPage": 500,
+   "page": 493,
+   "conf": "high"
+  },
+  {
+   "title": "Shaker Song",
+   "pdfPage": 501,
+   "page": 494,
+   "conf": "high",
+   "composer": "Jay Beckenstein/David Lasley"
+  },
+  {
+   "title": "Shiny Stockings",
+   "pdfPage": 502,
+   "page": 495,
+   "conf": "high"
+  },
+  {
+   "title": "Sidewinder",
+   "pdfPage": 503,
+   "page": 496,
+   "conf": "high",
+   "composer": "Lee Morgan"
+  },
+  {
+   "title": "Silver's Serenade",
+   "pdfPage": 504,
+   "page": 497,
+   "conf": "high"
+  },
+  {
+   "title": "A Simple Waltz",
+   "pdfPage": 505,
+   "page": 498,
+   "conf": "high"
+  },
+  {
+   "title": "Simone",
+   "pdfPage": 507,
+   "page": 500,
+   "conf": "high"
+  },
+  {
+   "title": "Since I Fell For You",
+   "pdfPage": 508,
+   "page": 501,
+   "conf": "high",
+   "composer": "Buddy Johnson"
+  },
+  {
+   "title": "Sister Sadie",
+   "pdfPage": 509,
+   "page": 502,
+   "conf": "high"
+  },
+  {
+   "title": "Skating In Central Park",
+   "pdfPage": 510,
+   "page": 503,
+   "conf": "high"
+  },
+  {
+   "title": "Skylark",
+   "pdfPage": 511,
+   "page": 504,
+   "conf": "high"
+  },
+  {
+   "title": "On A Slow Boat To China",
+   "pdfPage": 512,
+   "page": 505,
+   "conf": "high"
+  },
+  {
+   "title": "Slow Hot Wind",
+   "pdfPage": 513,
+   "page": 506,
+   "conf": "high"
+  },
+  {
+   "title": "Smoke Gets In Your Eyes",
+   "pdfPage": 514,
+   "page": 507,
+   "conf": "high"
+  },
+  {
+   "title": "So In Love",
+   "pdfPage": 515,
+   "page": 508,
+   "conf": "high",
+   "composer": "Cole Porter"
+  },
+  {
+   "title": "So Nice",
+   "pdfPage": 516,
+   "page": 509,
+   "conf": "high",
+   "composer": "Marcos Valle/Paulo Sergio Valle"
+  },
+  {
+   "title": "So What",
+   "pdfPage": 517,
+   "page": 510,
+   "conf": "high"
+  },
+  {
+   "title": "Soft Summer Breeze",
+   "pdfPage": 518,
+   "page": 511,
+   "conf": "high"
+  },
+  {
+   "title": "Soft Winds",
+   "pdfPage": 519,
+   "page": 512,
+   "conf": "high"
+  },
+  {
+   "title": "Softly, As In A Morning Sunrise",
+   "pdfPage": 520,
+   "page": 513,
+   "conf": "high"
+  },
+  {
+   "title": "Solar",
+   "pdfPage": 521,
+   "page": 514,
+   "conf": "high"
+  },
+  {
+   "title": "Solitude",
+   "pdfPage": 522,
+   "page": 515,
+   "conf": "high"
+  },
+  {
+   "title": "Some Other Time",
+   "pdfPage": 523,
+   "page": 516,
+   "conf": "high",
+   "composer": "Leonard Bernstein"
+  },
+  {
+   "title": "Someday My Prince Will Come",
+   "pdfPage": 524,
+   "page": 517,
+   "conf": "high"
+  },
+  {
+   "title": "Someone To Watch Over Me",
+   "pdfPage": 525,
+   "page": 518,
+   "conf": "high"
+  },
+  {
+   "title": "Sometime Ago",
+   "pdfPage": 526,
+   "page": 519,
+   "conf": "high"
+  },
+  {
+   "title": "Somewhere In The Night",
+   "pdfPage": 527,
+   "page": 520,
+   "conf": "high"
+  },
+  {
+   "title": "Somewhere Over The Rainbow",
+   "pdfPage": 528,
+   "page": 521,
+   "conf": "high"
+  },
+  {
+   "title": "Song For My Father",
+   "pdfPage": 529,
+   "page": 522,
+   "conf": "high"
+  },
+  {
+   "title": "The Song Is Ended",
+   "pdfPage": 530,
+   "page": 523,
+   "conf": "high"
+  },
+  {
+   "title": "The Song Is You",
+   "pdfPage": 531,
+   "page": 524,
+   "conf": "high",
+   "composer": "Jerome Kern/Oscar Hammerstein II"
+  },
+  {
+   "title": "Soon",
+   "pdfPage": 532,
+   "page": 525,
+   "conf": "high"
+  },
+  {
+   "title": "Soon It's Gonna' Rain",
+   "pdfPage": 533,
+   "page": 526,
+   "conf": "high"
+  },
+  {
+   "title": "Sophisticated Lady",
+   "pdfPage": 534,
+   "page": 527,
+   "conf": "high",
+   "composer": "Duke Ellington/Irving Mills"
+  },
+  {
+   "title": "Soul Eyes",
+   "pdfPage": 535,
+   "page": 528,
+   "conf": "high"
+  },
+  {
+   "title": "Soultrane",
+   "pdfPage": 536,
+   "page": 529,
+   "conf": "high",
+   "composer": "Tadd Dameron"
+  },
+  {
+   "title": "Spain",
+   "pdfPage": 537,
+   "page": 530,
+   "conf": "high"
+  },
+  {
+   "title": "Speak Low",
+   "pdfPage": 538,
+   "page": 531,
+   "conf": "high",
+   "composer": "Kurt Weil/Ogden Nash"
+  },
+  {
+   "title": "Spectacular",
+   "pdfPage": 539,
+   "page": 532,
+   "conf": "high"
+  },
+  {
+   "title": "Spring Is Here",
+   "pdfPage": 540,
+   "page": 533,
+   "conf": "high"
+  },
+  {
+   "title": "Spring Can Really Hang You Up The Most",
+   "pdfPage": 541,
+   "page": 534,
+   "conf": "high"
+  },
+  {
+   "title": "St.Thomas",
+   "pdfPage": 543,
+   "page": 536,
+   "conf": "high"
+  },
+  {
+   "title": "Stablemates",
+   "pdfPage": 544,
+   "page": 537,
+   "conf": "high",
+   "composer": "Benny Golson"
+  },
+  {
+   "title": "Stairway To The Stars",
+   "pdfPage": 545,
+   "page": 538,
+   "conf": "high"
+  },
+  {
+   "title": "Star Eyes",
+   "pdfPage": 546,
+   "page": 539,
+   "conf": "high",
+   "composer": "Don Raye/Gene dePaul"
+  },
+  {
+   "title": "Stardust",
+   "pdfPage": 547,
+   "page": 540,
+   "conf": "high",
+   "composer": "Hoagy Carmichael/Mitchell Parish"
+  },
+  {
+   "title": "Stars Fell On Alabama",
+   "pdfPage": 548,
+   "page": 541,
+   "conf": "high"
+  },
+  {
+   "title": "Stella By Starlight",
+   "pdfPage": 549,
+   "page": 542,
+   "conf": "high"
+  },
+  {
+   "title": "Stolen Moments",
+   "pdfPage": 550,
+   "page": 543,
+   "conf": "high"
+  },
+  {
+   "title": "Stompin' At The Savoy",
+   "pdfPage": 551,
+   "page": 544,
+   "conf": "high"
+  },
+  {
+   "title": "Stormy Weather",
+   "pdfPage": 552,
+   "page": 545,
+   "conf": "high"
+  },
+  {
+   "title": "Stranger In Paradise",
+   "pdfPage": 553,
+   "page": 546,
+   "conf": "high"
+  },
+  {
+   "title": "Street Of Dreams",
+   "pdfPage": 554,
+   "page": 547,
+   "conf": "high"
+  },
+  {
+   "title": "Strollin'",
+   "pdfPage": 555,
+   "page": 548,
+   "conf": "high"
+  },
+  {
+   "title": "Summer In Central Park",
+   "pdfPage": 556,
+   "page": 549,
+   "conf": "high"
+  },
+  {
+   "title": "Summer Night",
+   "pdfPage": 557,
+   "page": 550,
+   "conf": "high"
+  },
+  {
+   "title": "Summertime",
+   "pdfPage": 558,
+   "page": 551,
+   "conf": "high"
+  },
+  {
+   "title": "Sunny",
+   "pdfPage": 559,
+   "page": 552,
+   "conf": "high"
+  },
+  {
+   "title": "On The Sunny Side Of The Street",
+   "pdfPage": 560,
+   "page": 553,
+   "conf": "high"
+  },
+  {
+   "title": "You Are The Sunshine Of My Life",
+   "pdfPage": 561,
+   "page": 554,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet And Lovely",
+   "pdfPage": 562,
+   "page": 555,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Georgia Brown",
+   "pdfPage": 563,
+   "page": 556,
+   "conf": "high",
+   "composer": "Ben Bernie/Maceo Pinkard"
+  },
+  {
+   "title": "Sweet Lorraine",
+   "pdfPage": 564,
+   "page": 557,
+   "conf": "high",
+   "composer": "Mitchell Parish/Cliff Burwell"
+  },
+  {
+   "title": "Swingin' The Samba",
+   "pdfPage": 565,
+   "page": 558,
+   "conf": "high",
+   "composer": "Horace Silver"
+  },
+  {
+   "title": "'S Wonderful",
+   "pdfPage": 566,
+   "page": 559,
+   "conf": "high"
+  },
+  {
+   "title": "Take Five",
+   "pdfPage": 567,
+   "page": 560,
+   "conf": "high",
+   "composer": "Paul Desmond"
+  },
+  {
+   "title": "Take The \"A\" Train",
+   "pdfPage": 568,
+   "page": 561,
+   "conf": "high"
+  },
+  {
+   "title": "Taking A Chance On Love",
+   "pdfPage": 569,
+   "page": 562,
+   "conf": "high"
+  },
+  {
+   "title": "Talk Of The Town",
+   "pdfPage": 570,
+   "page": 563,
+   "conf": "high"
+  },
+  {
+   "title": "Tangerine",
+   "pdfPage": 571,
+   "page": 564,
+   "conf": "high"
+  },
+  {
+   "title": "Tea For Two",
+   "pdfPage": 572,
+   "page": 565,
+   "conf": "high"
+  },
+  {
+   "title": "Teach Me Tonight",
+   "pdfPage": 573,
+   "page": 566,
+   "conf": "high"
+  },
+  {
+   "title": "Tenderly",
+   "pdfPage": 574,
+   "page": 567,
+   "conf": "high"
+  },
+  {
+   "title": "That Old Feeling",
+   "pdfPage": 575,
+   "page": 568,
+   "conf": "high"
+  },
+  {
+   "title": "That's All",
+   "pdfPage": 576,
+   "page": 569,
+   "conf": "high"
+  },
+  {
+   "title": "Theme For Ernie",
+   "pdfPage": 577,
+   "page": 570,
+   "conf": "high",
+   "composer": "Fred Lacey"
+  },
+  {
+   "title": "Theme From \"The Fox\"",
+   "pdfPage": 578,
+   "page": 571,
+   "conf": "high"
+  },
+  {
+   "title": "There Is No Greater Love",
+   "pdfPage": 579,
+   "page": 572,
+   "conf": "high"
+  },
+  {
+   "title": "There Will Never Be Another You",
+   "pdfPage": 580,
+   "page": 573,
+   "conf": "high"
+  },
+  {
+   "title": "There's A Small Hotel",
+   "pdfPage": 581,
+   "page": 574,
+   "conf": "high"
+  },
+  {
+   "title": "There's No You",
+   "pdfPage": 582,
+   "page": 575,
+   "conf": "high"
+  },
+  {
+   "title": "These Are Soulful Days",
+   "pdfPage": 583,
+   "page": 576,
+   "conf": "high",
+   "composer": "Calvin Massey"
+  },
+  {
+   "title": "These Foolish Things",
+   "pdfPage": 584,
+   "page": 577,
+   "conf": "high"
+  },
+  {
+   "title": "They Can't Take That Away From Me",
+   "pdfPage": 585,
+   "page": 578,
+   "conf": "high"
+  },
+  {
+   "title": "Things Ain't What They Used To Be",
+   "pdfPage": 586,
+   "page": 579,
+   "conf": "high"
+  },
+  {
+   "title": "The Things We Did Last Summer",
+   "pdfPage": 587,
+   "page": 580,
+   "conf": "high",
+   "composer": "Sammy Cahn/Jule Styne"
+  },
+  {
+   "title": "This Can't Be Love",
+   "pdfPage": 588,
+   "page": 581,
+   "conf": "high"
+  },
+  {
+   "title": "This I Dig Of You",
+   "pdfPage": 589,
+   "page": 582,
+   "conf": "high",
+   "composer": "Hank Mobley"
+  },
+  {
+   "title": "This Is New",
+   "pdfPage": 590,
+   "page": 583,
+   "conf": "high"
+  },
+  {
+   "title": "This Love Of Mine",
+   "pdfPage": 591,
+   "page": 584,
+   "conf": "high",
+   "composer": "Frank Sinatra/Sol Parker"
+  },
+  {
+   "title": "This Masquerade",
+   "pdfPage": 592,
+   "page": 585,
+   "conf": "high",
+   "composer": "Leon Russell"
+  },
+  {
+   "title": "This Time The Dream's On Me",
+   "pdfPage": 593,
+   "page": 586,
+   "conf": "high"
+  },
+  {
+   "title": "Thou Swell",
+   "pdfPage": 594,
+   "page": 587,
+   "conf": "high"
+  },
+  {
+   "title": "Three And One",
+   "pdfPage": 595,
+   "page": 588,
+   "conf": "high",
+   "composer": "Thad Jones"
+  },
+  {
+   "title": "Three Little Words",
+   "pdfPage": 596,
+   "page": 589,
+   "conf": "high"
+  },
+  {
+   "title": "Till There Was You",
+   "pdfPage": 597,
+   "page": 590,
+   "conf": "high"
+  },
+  {
+   "title": "Time After Time",
+   "pdfPage": 598,
+   "page": 591,
+   "conf": "high"
+  },
+  {
+   "title": "Time On My Hands",
+   "pdfPage": 599,
+   "page": 592,
+   "conf": "high"
+  },
+  {
+   "title": "'Tis Autumn",
+   "pdfPage": 600,
+   "page": 593,
+   "conf": "high",
+   "composer": "Henry Nemo"
+  },
+  {
+   "title": "Too Close For Comfort",
+   "pdfPage": 601,
+   "page": 594,
+   "conf": "high"
+  },
+  {
+   "title": "Too Late Now",
+   "pdfPage": 602,
+   "page": 595,
+   "conf": "high"
+  },
+  {
+   "title": "Too Marvelous For Words",
+   "pdfPage": 603,
+   "page": 596,
+   "conf": "high"
+  },
+  {
+   "title": "The Touch Of Your Lips",
+   "pdfPage": 604,
+   "page": 597,
+   "conf": "high"
+  },
+  {
+   "title": "Tricotism",
+   "pdfPage": 605,
+   "page": 598,
+   "conf": "high",
+   "composer": "Oscar Pettiford"
+  },
+  {
+   "title": "Triste",
+   "pdfPage": 606,
+   "page": 599,
+   "conf": "high",
+   "composer": "Antonio Carlos Jobim"
+  },
+  {
+   "title": "Tune Up",
+   "pdfPage": 607,
+   "page": 600,
+   "conf": "high",
+   "composer": "Miles Davis"
+  },
+  {
+   "title": "Two For The Road",
+   "pdfPage": 608,
+   "page": 601,
+   "conf": "high"
+  },
+  {
+   "title": "Undecided",
+   "pdfPage": 609,
+   "page": 602,
+   "conf": "high"
+  },
+  {
+   "title": "Unforgettable",
+   "pdfPage": 610,
+   "page": 603,
+   "conf": "high"
+  },
+  {
+   "title": "Unit Seven",
+   "pdfPage": 611,
+   "page": 604,
+   "conf": "high",
+   "composer": "Sam Jones"
+  },
+  {
+   "title": "Until The Real Thing Comes Along",
+   "pdfPage": 612,
+   "page": 605,
+   "conf": "high"
+  },
+  {
+   "title": "Up Jumped Spring",
+   "pdfPage": 613,
+   "page": 606,
+   "conf": "high",
+   "composer": "Freddie Hubbard"
+  },
+  {
+   "title": "Valdez In The Country",
+   "pdfPage": 614,
+   "page": 607,
+   "conf": "high"
+  },
+  {
+   "title": "Valse Hot",
+   "pdfPage": 615,
+   "page": 608,
+   "conf": "high"
+  },
+  {
+   "title": "Very Early",
+   "pdfPage": 616,
+   "page": 609,
+   "conf": "high"
+  },
+  {
+   "title": "The Very Thought Of You",
+   "pdfPage": 617,
+   "page": 610,
+   "conf": "high"
+  },
+  {
+   "title": "Violets For Your Furs",
+   "pdfPage": 618,
+   "page": 611,
+   "conf": "high"
+  },
+  {
+   "title": "The Visit",
+   "pdfPage": 619,
+   "page": 612,
+   "conf": "high"
+  },
+  {
+   "title": "Voyage",
+   "pdfPage": 620,
+   "page": 613,
+   "conf": "high",
+   "composer": "kenny barron"
+  },
+  {
+   "title": "Walk On By",
+   "pdfPage": 621,
+   "page": 614,
+   "conf": "high"
+  },
+  {
+   "title": "Walkin'",
+   "pdfPage": 622,
+   "page": 615,
+   "conf": "high"
+  },
+  {
+   "title": "Waltse For Dave",
+   "pdfPage": 623,
+   "page": 616,
+   "conf": "high",
+   "composer": "Chick Corea"
+  },
+  {
+   "title": "Waltz Dark",
+   "pdfPage": 624,
+   "page": 617,
+   "conf": "high",
+   "composer": "Robert M. Roetker"
+  },
+  {
+   "title": "Waltz For Debby",
+   "pdfPage": 625,
+   "page": 618,
+   "conf": "high"
+  },
+  {
+   "title": "Waltz New",
+   "pdfPage": 627,
+   "page": 620,
+   "conf": "high"
+  },
+  {
+   "title": "Watch What Happens",
+   "pdfPage": 628,
+   "page": 621,
+   "conf": "high"
+  },
+  {
+   "title": "Watermelon Man",
+   "pdfPage": 629,
+   "page": 622,
+   "conf": "high"
+  },
+  {
+   "title": "Wave",
+   "pdfPage": 630,
+   "page": 623,
+   "conf": "high",
+   "composer": "Antonio Carlos Jobim"
+  },
+  {
+   "title": "The Way You Look Tonight",
+   "pdfPage": 631,
+   "page": 624,
+   "conf": "high"
+  },
+  {
+   "title": "A Weaver Of Dreams",
+   "pdfPage": 632,
+   "page": 625,
+   "conf": "high"
+  },
+  {
+   "title": "Webb City",
+   "pdfPage": 633,
+   "page": 626,
+   "conf": "high"
+  },
+  {
+   "title": "Wee Small Hours",
+   "pdfPage": 634,
+   "page": 627,
+   "conf": "high"
+  },
+  {
+   "title": "We'll Be Together Again",
+   "pdfPage": 635,
+   "page": 628,
+   "conf": "high"
+  },
+  {
+   "title": "Well You Needn't",
+   "pdfPage": 636,
+   "page": 629,
+   "conf": "high"
+  },
+  {
+   "title": "Wendy",
+   "pdfPage": 637,
+   "page": 630,
+   "conf": "high"
+  },
+  {
+   "title": "West Coast Blues",
+   "pdfPage": 638,
+   "page": 631,
+   "conf": "high",
+   "composer": "John L 'Wes' Montgomery"
+  },
+  {
+   "title": "What A Difference A Day Made",
+   "pdfPage": 639,
+   "page": 632,
+   "conf": "high"
+  },
+  {
+   "title": "What A Wonderful World",
+   "pdfPage": 640,
+   "page": 633,
+   "conf": "high"
+  },
+  {
+   "title": "What Am I Here For?",
+   "pdfPage": 641,
+   "page": 634,
+   "conf": "high"
+  },
+  {
+   "title": "What Are You Doing The Rest Of Your Life",
+   "pdfPage": 642,
+   "page": 635,
+   "conf": "high"
+  },
+  {
+   "title": "What Is This Thing Called Love?",
+   "pdfPage": 643,
+   "page": 636,
+   "conf": "high"
+  },
+  {
+   "title": "What Kind Of Fool Am I?",
+   "pdfPage": 644,
+   "page": 637,
+   "conf": "high"
+  },
+  {
+   "title": "What The World Needs Now",
+   "pdfPage": 645,
+   "page": 638,
+   "conf": "high"
+  },
+  {
+   "title": "What'll I Do?",
+   "pdfPage": 646,
+   "page": 639,
+   "conf": "high",
+   "composer": "Irving berlin"
+  },
+  {
+   "title": "What's New?",
+   "pdfPage": 647,
+   "page": 640,
+   "conf": "high"
+  },
+  {
+   "title": "When I Fall In Love",
+   "pdfPage": 648,
+   "page": 641,
+   "conf": "high"
+  },
+  {
+   "title": "When Lights Are Low",
+   "pdfPage": 649,
+   "page": 642,
+   "conf": "high"
+  },
+  {
+   "title": "When Sunny Gets Blue",
+   "pdfPage": 650,
+   "page": 643,
+   "conf": "high"
+  },
+  {
+   "title": "When You Wish Upon A Star",
+   "pdfPage": 651,
+   "page": 644,
+   "conf": "high"
+  },
+  {
+   "title": "When Your Lover Has Gone",
+   "pdfPage": 652,
+   "page": 645,
+   "conf": "high"
+  },
+  {
+   "title": "Where Are You",
+   "pdfPage": 653,
+   "page": 646,
+   "conf": "high"
+  },
+  {
+   "title": "Where Is Love?",
+   "pdfPage": 654,
+   "page": 647,
+   "conf": "high"
+  },
+  {
+   "title": "Where Is The Love",
+   "pdfPage": 655,
+   "page": 648,
+   "conf": "high"
+  },
+  {
+   "title": "Where Or When",
+   "pdfPage": 656,
+   "page": 649,
+   "conf": "high"
+  },
+  {
+   "title": "While We're Young",
+   "pdfPage": 657,
+   "page": 650,
+   "conf": "high",
+   "composer": "Alec Wilder/Morty Palitz"
+  },
+  {
+   "title": "Whisper Not",
+   "pdfPage": 658,
+   "page": 651,
+   "conf": "high",
+   "composer": "Benny Golson"
+  },
+  {
+   "title": "Who Can I Turn To",
+   "pdfPage": 659,
+   "page": 652,
+   "conf": "high"
+  },
+  {
+   "title": "Who Knows?",
+   "pdfPage": 660,
+   "page": 653,
+   "conf": "high"
+  },
+  {
+   "title": "Wild Flower",
+   "pdfPage": 661,
+   "page": 654,
+   "conf": "high"
+  },
+  {
+   "title": "Will You Still Be Mine",
+   "pdfPage": 662,
+   "page": 655,
+   "conf": "high",
+   "composer": "Tom Adair/Matt Dennis"
+  },
+  {
+   "title": "Willow Weep For Me",
+   "pdfPage": 663,
+   "page": 656,
+   "conf": "high",
+   "composer": "Ann Ronell"
+  },
+  {
+   "title": "Windows",
+   "pdfPage": 664,
+   "page": 657,
+   "conf": "high",
+   "composer": "Chick Corea"
+  },
+  {
+   "title": "Witchcraft",
+   "pdfPage": 665,
+   "page": 658,
+   "conf": "high"
+  },
+  {
+   "title": "Without A Song",
+   "pdfPage": 666,
+   "page": 659,
+   "conf": "high",
+   "composer": "Vincent Youmans/William Rose"
+  },
+  {
+   "title": "Without You",
+   "pdfPage": 667,
+   "page": 660,
+   "conf": "high"
+  },
+  {
+   "title": "Wives & Lovers",
+   "pdfPage": 668,
+   "page": 661,
+   "conf": "high"
+  },
+  {
+   "title": "Wonder Why",
+   "pdfPage": 669,
+   "page": 662,
+   "conf": "high",
+   "composer": "Sammy Cahn/Nicholas Brodszky"
+  },
+  {
+   "title": "Woody 'N You",
+   "pdfPage": 670,
+   "page": 663,
+   "conf": "high",
+   "composer": "Dizzy Gillespie"
+  },
+  {
+   "title": "Work Song",
+   "pdfPage": 671,
+   "page": 664,
+   "conf": "high"
+  },
+  {
+   "title": "Yardbird Suite",
+   "pdfPage": 672,
+   "page": 665,
+   "conf": "high"
+  },
+  {
+   "title": "Yesterdays",
+   "pdfPage": 673,
+   "page": 666,
+   "conf": "high"
+  },
+  {
+   "title": "You & The Night & The Music",
+   "pdfPage": 674,
+   "page": 667,
+   "conf": "high",
+   "composer": "Arthur Schwartz/Howard Dietz"
+  },
+  {
+   "title": "You Are Too Beautiful",
+   "pdfPage": 675,
+   "page": 668,
+   "conf": "high"
+  },
+  {
+   "title": "You Don't Know What Love Is",
+   "pdfPage": 676,
+   "page": 669,
+   "conf": "high"
+  },
+  {
+   "title": "You Go To My Head",
+   "pdfPage": 677,
+   "page": 670,
+   "conf": "high",
+   "composer": "J. Fred Coots/Haven Gillespie"
+  },
+  {
+   "title": "You Make Me Feel So Young",
+   "pdfPage": 678,
+   "page": 671,
+   "conf": "high"
+  },
+  {
+   "title": "You Must Believe In Spring",
+   "pdfPage": 679,
+   "page": 672,
+   "conf": "high"
+  },
+  {
+   "title": "You Say You Care",
+   "pdfPage": 680,
+   "page": 673,
+   "conf": "high"
+  },
+  {
+   "title": "You Stepped Out Of A Dream",
+   "pdfPage": 681,
+   "page": 674,
+   "conf": "high"
+  },
+  {
+   "title": "You Took Advantage Of Me",
+   "pdfPage": 682,
+   "page": 675,
+   "conf": "high"
+  },
+  {
+   "title": "You Turned The Tables On Me",
+   "pdfPage": 683,
+   "page": 676,
+   "conf": "high"
+  },
+  {
+   "title": "You'd Be So Nice To Come Home To",
+   "pdfPage": 684,
+   "page": 677,
+   "conf": "high"
+  },
+  {
+   "title": "You'll Never Know",
+   "pdfPage": 685,
+   "page": 678,
+   "conf": "high"
+  },
+  {
+   "title": "Young And Foolish",
+   "pdfPage": 686,
+   "page": 679,
+   "conf": "high"
+  },
+  {
+   "title": "You're My Everything",
+   "pdfPage": 687,
+   "page": 680,
+   "conf": "high"
+  },
+  {
+   "title": "Yours Is My Heart Alone",
+   "pdfPage": 688,
+   "page": 681,
+   "conf": "high"
+  },
+  {
+   "title": "You've Changed",
+   "pdfPage": 689,
+   "page": 682,
+   "conf": "high"
+  },
+  {
+   "title": "You've Never Been There!",
+   "pdfPage": 690,
+   "page": 683,
+   "conf": "high",
+   "composer": "Johnny Griffin"
+  },
+  {
+   "title": "Zingaro",
+   "pdfPage": 691,
+   "page": 684,
+   "conf": "high"
+  }
+ ]
+}

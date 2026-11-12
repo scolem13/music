@@ -1,0 +1,1346 @@
+{
+ "file": "Real_Vocal_Book.pdf",
+ "method": "ocr-index",
+ "offset": 11,
+ "notes": "No usable bookmarks beyond letter dividers (they agree with the index: first tune of each letter at printed+11). Index by title on pdf pp5-7 (typewriter) read by eye from page images; a composer/lyricist index follows (pdf 7-10) but is not used (names listed under both composers and lyricists, ambiguous). Tunes run 2-4 pages each; entry = first page. pdfPage = printed page + 11 throughout (checked every letter-start via bookmarks plus 14 rendered pages: 1,41,111,115,158,201,246,301,357,385,399,449,470,479). Index misprint 'Spring Is Here 285' read as 385 (page 385 confirmed). 'Some Other Time' (2nd version, p.370), 'Good Bye Pork Pie Hat' (2nd, p.158) and 'You Don't Know What Love Is' (2nd, p.470) are separate arrangements listed twice in the index; the page 370 crop showed no title (conf low). Composer not recorded.",
+ "entries": [
+  {
+   "title": "A Child Is Born",
+   "pdfPage": 12,
+   "page": 1,
+   "conf": "high"
+  },
+  {
+   "title": "A Fine Romance",
+   "pdfPage": 14,
+   "page": 3,
+   "conf": "med"
+  },
+  {
+   "title": "A Foggy Day",
+   "pdfPage": 16,
+   "page": 5,
+   "conf": "med"
+  },
+  {
+   "title": "A Night In Tunisia",
+   "pdfPage": 18,
+   "page": 7,
+   "conf": "med"
+  },
+  {
+   "title": "Afro Blue",
+   "pdfPage": 20,
+   "page": 9,
+   "conf": "med"
+  },
+  {
+   "title": "Ain't Misbehavin'",
+   "pdfPage": 24,
+   "page": 13,
+   "conf": "med"
+  },
+  {
+   "title": "Alice In Wonderland",
+   "pdfPage": 26,
+   "page": 15,
+   "conf": "med"
+  },
+  {
+   "title": "All Blues",
+   "pdfPage": 28,
+   "page": 17,
+   "conf": "med"
+  },
+  {
+   "title": "All In Love Is Fair",
+   "pdfPage": 30,
+   "page": 19,
+   "conf": "med"
+  },
+  {
+   "title": "All Of Me",
+   "pdfPage": 32,
+   "page": 21,
+   "conf": "med"
+  },
+  {
+   "title": "All My Tomorrows",
+   "pdfPage": 34,
+   "page": 23,
+   "conf": "med"
+  },
+  {
+   "title": "All Of You",
+   "pdfPage": 36,
+   "page": 25,
+   "conf": "med"
+  },
+  {
+   "title": "All The Things You Are",
+   "pdfPage": 38,
+   "page": 27,
+   "conf": "med"
+  },
+  {
+   "title": "Alone Together",
+   "pdfPage": 40,
+   "page": 29,
+   "conf": "med"
+  },
+  {
+   "title": "Am I Blue",
+   "pdfPage": 42,
+   "page": 31,
+   "conf": "med"
+  },
+  {
+   "title": "Angel Eyes",
+   "pdfPage": 44,
+   "page": 33,
+   "conf": "med"
+  },
+  {
+   "title": "April In Paris",
+   "pdfPage": 46,
+   "page": 35,
+   "conf": "med"
+  },
+  {
+   "title": "As Time Goes By",
+   "pdfPage": 48,
+   "page": 37,
+   "conf": "med"
+  },
+  {
+   "title": "Autumn In New York",
+   "pdfPage": 50,
+   "page": 39,
+   "conf": "med"
+  },
+  {
+   "title": "Autumn Leaves",
+   "pdfPage": 52,
+   "page": 41,
+   "conf": "high"
+  },
+  {
+   "title": "Baubles, Bangles & Beads",
+   "pdfPage": 54,
+   "page": 43,
+   "conf": "med"
+  },
+  {
+   "title": "Beautiful Love",
+   "pdfPage": 56,
+   "page": 45,
+   "conf": "med"
+  },
+  {
+   "title": "Bewitched",
+   "pdfPage": 58,
+   "page": 47,
+   "conf": "med"
+  },
+  {
+   "title": "Beyond The Sea",
+   "pdfPage": 60,
+   "page": 49,
+   "conf": "med"
+  },
+  {
+   "title": "Black Orpheus",
+   "pdfPage": 62,
+   "page": 51,
+   "conf": "med"
+  },
+  {
+   "title": "Blue Monk",
+   "pdfPage": 64,
+   "page": 53,
+   "conf": "med"
+  },
+  {
+   "title": "Blue Room",
+   "pdfPage": 66,
+   "page": 55,
+   "conf": "med"
+  },
+  {
+   "title": "Bluesette",
+   "pdfPage": 68,
+   "page": 57,
+   "conf": "med"
+  },
+  {
+   "title": "Body & Soul",
+   "pdfPage": 72,
+   "page": 61,
+   "conf": "med"
+  },
+  {
+   "title": "But Beautiful",
+   "pdfPage": 74,
+   "page": 63,
+   "conf": "med"
+  },
+  {
+   "title": "Centerpiece",
+   "pdfPage": 76,
+   "page": 65,
+   "conf": "med"
+  },
+  {
+   "title": "Chega De Saudade",
+   "pdfPage": 78,
+   "page": 67,
+   "conf": "med"
+  },
+  {
+   "title": "Cherokee",
+   "pdfPage": 82,
+   "page": 71,
+   "conf": "med"
+  },
+  {
+   "title": "Come Rain Or Come Shine",
+   "pdfPage": 84,
+   "page": 73,
+   "conf": "med"
+  },
+  {
+   "title": "Come Sunday",
+   "pdfPage": 86,
+   "page": 75,
+   "conf": "med"
+  },
+  {
+   "title": "Confirmation",
+   "pdfPage": 88,
+   "page": 77,
+   "conf": "med"
+  },
+  {
+   "title": "Corcovado",
+   "pdfPage": 90,
+   "page": 79,
+   "conf": "med"
+  },
+  {
+   "title": "Cottontail",
+   "pdfPage": 92,
+   "page": 81,
+   "conf": "med"
+  },
+  {
+   "title": "Crystal Silence",
+   "pdfPage": 94,
+   "page": 83,
+   "conf": "med"
+  },
+  {
+   "title": "Could It Be You",
+   "pdfPage": 98,
+   "page": 87,
+   "conf": "med"
+  },
+  {
+   "title": "Dancing On The Ceiling",
+   "pdfPage": 100,
+   "page": 89,
+   "conf": "med"
+  },
+  {
+   "title": "Darn That Dream",
+   "pdfPage": 102,
+   "page": 91,
+   "conf": "med"
+  },
+  {
+   "title": "Dat Dere",
+   "pdfPage": 104,
+   "page": 93,
+   "conf": "med"
+  },
+  {
+   "title": "Days Of Wine & Roses",
+   "pdfPage": 108,
+   "page": 97,
+   "conf": "med"
+  },
+  {
+   "title": "Dearly Beloved",
+   "pdfPage": 110,
+   "page": 99,
+   "conf": "med"
+  },
+  {
+   "title": "Desafinado",
+   "pdfPage": 112,
+   "page": 101,
+   "conf": "med"
+  },
+  {
+   "title": "Dindi",
+   "pdfPage": 116,
+   "page": 105,
+   "conf": "med"
+  },
+  {
+   "title": "Do Nothing Till You Hear From Me",
+   "pdfPage": 118,
+   "page": 107,
+   "conf": "med"
+  },
+  {
+   "title": "Don't Get Around Much Anymore",
+   "pdfPage": 120,
+   "page": 109,
+   "conf": "med"
+  },
+  {
+   "title": "Donna Lee",
+   "pdfPage": 122,
+   "page": 111,
+   "conf": "high"
+  },
+  {
+   "title": "Don't Blame Me",
+   "pdfPage": 124,
+   "page": 113,
+   "conf": "med"
+  },
+  {
+   "title": "Don't Explain",
+   "pdfPage": 126,
+   "page": 115,
+   "conf": "high"
+  },
+  {
+   "title": "Doodlin'",
+   "pdfPage": 128,
+   "page": 117,
+   "conf": "med"
+  },
+  {
+   "title": "Doxy",
+   "pdfPage": 130,
+   "page": 119,
+   "conf": "med"
+  },
+  {
+   "title": "Easy Living",
+   "pdfPage": 132,
+   "page": 121,
+   "conf": "med"
+  },
+  {
+   "title": "Easy To Love",
+   "pdfPage": 134,
+   "page": 123,
+   "conf": "med"
+  },
+  {
+   "title": "Falling Grace",
+   "pdfPage": 136,
+   "page": 125,
+   "conf": "med"
+  },
+  {
+   "title": "Falling In Love With Love",
+   "pdfPage": 138,
+   "page": 127,
+   "conf": "med"
+  },
+  {
+   "title": "Fine & Mellow",
+   "pdfPage": 140,
+   "page": 129,
+   "conf": "med"
+  },
+  {
+   "title": "Five Hundred Miles High",
+   "pdfPage": 144,
+   "page": 133,
+   "conf": "med"
+  },
+  {
+   "title": "For Heavens Sake",
+   "pdfPage": 146,
+   "page": 135,
+   "conf": "med"
+  },
+  {
+   "title": "Four",
+   "pdfPage": 148,
+   "page": 137,
+   "conf": "med"
+  },
+  {
+   "title": "Freedom Jazz Dance",
+   "pdfPage": 150,
+   "page": 139,
+   "conf": "med"
+  },
+  {
+   "title": "From This Moment On",
+   "pdfPage": 152,
+   "page": 141,
+   "conf": "med"
+  },
+  {
+   "title": "Gentle Rain",
+   "pdfPage": 156,
+   "page": 145,
+   "conf": "med"
+  },
+  {
+   "title": "Georgia",
+   "pdfPage": 158,
+   "page": 147,
+   "conf": "med"
+  },
+  {
+   "title": "Giant Steps",
+   "pdfPage": 160,
+   "page": 149,
+   "conf": "med"
+  },
+  {
+   "title": "Girl From Ipanema",
+   "pdfPage": 162,
+   "page": 151,
+   "conf": "med"
+  },
+  {
+   "title": "God Bless The Child",
+   "pdfPage": 164,
+   "page": 153,
+   "conf": "med"
+  },
+  {
+   "title": "Golden Lady",
+   "pdfPage": 166,
+   "page": 155,
+   "conf": "med"
+  },
+  {
+   "title": "Good Bye Pork Pie Hat",
+   "pdfPage": 168,
+   "page": 157,
+   "conf": "med"
+  },
+  {
+   "title": "Good Bye Pork Pie Hat (2nd version)",
+   "pdfPage": 169,
+   "page": 158,
+   "conf": "high"
+  },
+  {
+   "title": "Good Bait",
+   "pdfPage": 172,
+   "page": 161,
+   "conf": "med"
+  },
+  {
+   "title": "Good Morn Heartache",
+   "pdfPage": 174,
+   "page": 163,
+   "conf": "med"
+  },
+  {
+   "title": "Green Dolphin Street",
+   "pdfPage": 176,
+   "page": 165,
+   "conf": "med"
+  },
+  {
+   "title": "Groovin' High",
+   "pdfPage": 178,
+   "page": 167,
+   "conf": "med"
+  },
+  {
+   "title": "Have You Met Miss Jones",
+   "pdfPage": 180,
+   "page": 169,
+   "conf": "med"
+  },
+  {
+   "title": "Hello Young Lovers",
+   "pdfPage": 182,
+   "page": 171,
+   "conf": "med"
+  },
+  {
+   "title": "Here's That Rainy Day",
+   "pdfPage": 186,
+   "page": 175,
+   "conf": "med"
+  },
+  {
+   "title": "Hey There",
+   "pdfPage": 188,
+   "page": 177,
+   "conf": "med"
+  },
+  {
+   "title": "Heaven",
+   "pdfPage": 190,
+   "page": 179,
+   "conf": "med"
+  },
+  {
+   "title": "How High The Moon",
+   "pdfPage": 192,
+   "page": 181,
+   "conf": "med"
+  },
+  {
+   "title": "How Insensitive",
+   "pdfPage": 194,
+   "page": 183,
+   "conf": "med"
+  },
+  {
+   "title": "I Can't Get Started",
+   "pdfPage": 196,
+   "page": 185,
+   "conf": "med"
+  },
+  {
+   "title": "I Could Write A Book",
+   "pdfPage": 198,
+   "page": 187,
+   "conf": "med"
+  },
+  {
+   "title": "I Cried For You",
+   "pdfPage": 200,
+   "page": 189,
+   "conf": "med"
+  },
+  {
+   "title": "I Didn't Know What Time It Was",
+   "pdfPage": 202,
+   "page": 191,
+   "conf": "med"
+  },
+  {
+   "title": "If You Never Come",
+   "pdfPage": 204,
+   "page": 193,
+   "conf": "med"
+  },
+  {
+   "title": "I Got It Bad",
+   "pdfPage": 206,
+   "page": 195,
+   "conf": "med"
+  },
+  {
+   "title": "I Let A Song Go Out Of My Heart",
+   "pdfPage": 208,
+   "page": 197,
+   "conf": "med"
+  },
+  {
+   "title": "I Love You",
+   "pdfPage": 210,
+   "page": 199,
+   "conf": "med"
+  },
+  {
+   "title": "I'll Remember You",
+   "pdfPage": 212,
+   "page": 201,
+   "conf": "high"
+  },
+  {
+   "title": "I'm All Smiles",
+   "pdfPage": 214,
+   "page": 203,
+   "conf": "med"
+  },
+  {
+   "title": "I'm Beginning To See The Light",
+   "pdfPage": 218,
+   "page": 207,
+   "conf": "med"
+  },
+  {
+   "title": "In A Mellow Tone",
+   "pdfPage": 220,
+   "page": 209,
+   "conf": "med"
+  },
+  {
+   "title": "In A Sentimental Mood",
+   "pdfPage": 222,
+   "page": 211,
+   "conf": "med"
+  },
+  {
+   "title": "Inchworm",
+   "pdfPage": 225,
+   "page": 214,
+   "conf": "med"
+  },
+  {
+   "title": "Invitation",
+   "pdfPage": 226,
+   "page": 215,
+   "conf": "med"
+  },
+  {
+   "title": "I Remember Clifford",
+   "pdfPage": 230,
+   "page": 219,
+   "conf": "med"
+  },
+  {
+   "title": "I Should Care",
+   "pdfPage": 232,
+   "page": 221,
+   "conf": "med"
+  },
+  {
+   "title": "Isn't It Romantic",
+   "pdfPage": 234,
+   "page": 223,
+   "conf": "med"
+  },
+  {
+   "title": "It Don't Mean A Thing",
+   "pdfPage": 236,
+   "page": 225,
+   "conf": "med"
+  },
+  {
+   "title": "It's A Raggy Waltz",
+   "pdfPage": 238,
+   "page": 227,
+   "conf": "med"
+  },
+  {
+   "title": "Joy Spring",
+   "pdfPage": 240,
+   "page": 229,
+   "conf": "med"
+  },
+  {
+   "title": "Just Friends",
+   "pdfPage": 242,
+   "page": 231,
+   "conf": "med"
+  },
+  {
+   "title": "Just In Time",
+   "pdfPage": 244,
+   "page": 233,
+   "conf": "med"
+  },
+  {
+   "title": "Lady Bird",
+   "pdfPage": 246,
+   "page": 235,
+   "conf": "med"
+  },
+  {
+   "title": "Lady Is A Tramp",
+   "pdfPage": 248,
+   "page": 237,
+   "conf": "med"
+  },
+  {
+   "title": "Let's Fall In Love",
+   "pdfPage": 250,
+   "page": 239,
+   "conf": "med"
+  },
+  {
+   "title": "Like Someone In Love",
+   "pdfPage": 252,
+   "page": 241,
+   "conf": "med"
+  },
+  {
+   "title": "Little Niles",
+   "pdfPage": 254,
+   "page": 243,
+   "conf": "med"
+  },
+  {
+   "title": "Little B's Poem",
+   "pdfPage": 257,
+   "page": 246,
+   "conf": "high"
+  },
+  {
+   "title": "Long Ago & Far Away",
+   "pdfPage": 258,
+   "page": 247,
+   "conf": "med"
+  },
+  {
+   "title": "Lover Man",
+   "pdfPage": 260,
+   "page": 249,
+   "conf": "med"
+  },
+  {
+   "title": "Lullaby Of Birdland",
+   "pdfPage": 262,
+   "page": 251,
+   "conf": "med"
+  },
+  {
+   "title": "Lush Life",
+   "pdfPage": 264,
+   "page": 253,
+   "conf": "med"
+  },
+  {
+   "title": "Mack The Knife",
+   "pdfPage": 266,
+   "page": 255,
+   "conf": "med"
+  },
+  {
+   "title": "Maiden Voyage",
+   "pdfPage": 268,
+   "page": 257,
+   "conf": "med"
+  },
+  {
+   "title": "Make Someone Happy",
+   "pdfPage": 270,
+   "page": 259,
+   "conf": "med"
+  },
+  {
+   "title": "The Man I Love",
+   "pdfPage": 272,
+   "page": 261,
+   "conf": "med"
+  },
+  {
+   "title": "This Masquerade",
+   "pdfPage": 274,
+   "page": 263,
+   "conf": "med"
+  },
+  {
+   "title": "Mean To Me",
+   "pdfPage": 278,
+   "page": 267,
+   "conf": "med"
+  },
+  {
+   "title": "Meditation",
+   "pdfPage": 280,
+   "page": 269,
+   "conf": "med"
+  },
+  {
+   "title": "Memories Of Tomorrow",
+   "pdfPage": 282,
+   "page": 271,
+   "conf": "med"
+  },
+  {
+   "title": "Michelle",
+   "pdfPage": 284,
+   "page": 273,
+   "conf": "med"
+  },
+  {
+   "title": "Misty",
+   "pdfPage": 286,
+   "page": 275,
+   "conf": "med"
+  },
+  {
+   "title": "Moanin'",
+   "pdfPage": 288,
+   "page": 277,
+   "conf": "med"
+  },
+  {
+   "title": "Mood Indigo",
+   "pdfPage": 290,
+   "page": 279,
+   "conf": "med"
+  },
+  {
+   "title": "The More I See You",
+   "pdfPage": 292,
+   "page": 281,
+   "conf": "med"
+  },
+  {
+   "title": "Mr. P.C.",
+   "pdfPage": 294,
+   "page": 283,
+   "conf": "med"
+  },
+  {
+   "title": "My Favourite Things",
+   "pdfPage": 296,
+   "page": 285,
+   "conf": "med"
+  },
+  {
+   "title": "My Foolish Heart",
+   "pdfPage": 298,
+   "page": 287,
+   "conf": "med"
+  },
+  {
+   "title": "My Funny Valentine",
+   "pdfPage": 300,
+   "page": 289,
+   "conf": "med"
+  },
+  {
+   "title": "My Little Boat",
+   "pdfPage": 302,
+   "page": 291,
+   "conf": "med"
+  },
+  {
+   "title": "My Man",
+   "pdfPage": 304,
+   "page": 293,
+   "conf": "med"
+  },
+  {
+   "title": "My One & Only Love",
+   "pdfPage": 306,
+   "page": 295,
+   "conf": "med"
+  },
+  {
+   "title": "My Romance",
+   "pdfPage": 308,
+   "page": 297,
+   "conf": "med"
+  },
+  {
+   "title": "My Ship",
+   "pdfPage": 310,
+   "page": 299,
+   "conf": "med"
+  },
+  {
+   "title": "Naima",
+   "pdfPage": 312,
+   "page": 301,
+   "conf": "high"
+  },
+  {
+   "title": "Nefertiti",
+   "pdfPage": 315,
+   "page": 304,
+   "conf": "med"
+  },
+  {
+   "title": "Never Will I Marry",
+   "pdfPage": 316,
+   "page": 305,
+   "conf": "med"
+  },
+  {
+   "title": "Night & Day",
+   "pdfPage": 318,
+   "page": 307,
+   "conf": "med"
+  },
+  {
+   "title": "The Night Has 1000 Eyes",
+   "pdfPage": 320,
+   "page": 309,
+   "conf": "med"
+  },
+  {
+   "title": "Oleo",
+   "pdfPage": 322,
+   "page": 311,
+   "conf": "med"
+  },
+  {
+   "title": "On A Clear Day",
+   "pdfPage": 324,
+   "page": 313,
+   "conf": "med"
+  },
+  {
+   "title": "Once I Loved",
+   "pdfPage": 326,
+   "page": 315,
+   "conf": "med"
+  },
+  {
+   "title": "One For My Baby",
+   "pdfPage": 328,
+   "page": 317,
+   "conf": "med"
+  },
+  {
+   "title": "One Note Samba",
+   "pdfPage": 332,
+   "page": 321,
+   "conf": "med"
+  },
+  {
+   "title": "Open Your Eyes, You Can Fly",
+   "pdfPage": 334,
+   "page": 323,
+   "conf": "med"
+  },
+  {
+   "title": "Our Love Is Here To Stay",
+   "pdfPage": 336,
+   "page": 325,
+   "conf": "med"
+  },
+  {
+   "title": "Out Of Nowhere",
+   "pdfPage": 338,
+   "page": 327,
+   "conf": "med"
+  },
+  {
+   "title": "Peace",
+   "pdfPage": 340,
+   "page": 329,
+   "conf": "med"
+  },
+  {
+   "title": "Prelude To A Kiss",
+   "pdfPage": 342,
+   "page": 331,
+   "conf": "med"
+  },
+  {
+   "title": "Red Clay",
+   "pdfPage": 344,
+   "page": 333,
+   "conf": "med"
+  },
+  {
+   "title": "'Round Midnight",
+   "pdfPage": 348,
+   "page": 337,
+   "conf": "med"
+  },
+  {
+   "title": "Saga Of Harrison Crabfeathers",
+   "pdfPage": 350,
+   "page": 339,
+   "conf": "med"
+  },
+  {
+   "title": "Satin Doll",
+   "pdfPage": 352,
+   "page": 341,
+   "conf": "med"
+  },
+  {
+   "title": "Scotch 'N' Soda",
+   "pdfPage": 354,
+   "page": 343,
+   "conf": "med"
+  },
+  {
+   "title": "Sea Journey",
+   "pdfPage": 356,
+   "page": 345,
+   "conf": "med"
+  },
+  {
+   "title": "Second Time Around",
+   "pdfPage": 358,
+   "page": 347,
+   "conf": "med"
+  },
+  {
+   "title": "Send In The Clowns",
+   "pdfPage": 360,
+   "page": 349,
+   "conf": "med"
+  },
+  {
+   "title": "September Song",
+   "pdfPage": 362,
+   "page": 351,
+   "conf": "med"
+  },
+  {
+   "title": "Sermonette",
+   "pdfPage": 364,
+   "page": 353,
+   "conf": "med"
+  },
+  {
+   "title": "The Shadow Of Your Smile",
+   "pdfPage": 366,
+   "page": 355,
+   "conf": "med"
+  },
+  {
+   "title": "Shiny Stockings",
+   "pdfPage": 368,
+   "page": 357,
+   "conf": "high"
+  },
+  {
+   "title": "Since I Fell For You",
+   "pdfPage": 370,
+   "page": 359,
+   "conf": "med"
+  },
+  {
+   "title": "Softly, As In A Morning Sunrise",
+   "pdfPage": 372,
+   "page": 361,
+   "conf": "med"
+  },
+  {
+   "title": "Solitude",
+   "pdfPage": 374,
+   "page": 363,
+   "conf": "med"
+  },
+  {
+   "title": "Someday My Prince Will Come",
+   "pdfPage": 376,
+   "page": 365,
+   "conf": "med"
+  },
+  {
+   "title": "Some Other Time",
+   "pdfPage": 378,
+   "page": 367,
+   "conf": "med"
+  },
+  {
+   "title": "Some Other Time (2nd version)",
+   "pdfPage": 381,
+   "page": 370,
+   "conf": "low"
+  },
+  {
+   "title": "Song For My Father",
+   "pdfPage": 382,
+   "page": 371,
+   "conf": "med"
+  },
+  {
+   "title": "The Song Is You",
+   "pdfPage": 384,
+   "page": 373,
+   "conf": "med"
+  },
+  {
+   "title": "Sophisticated Lady",
+   "pdfPage": 386,
+   "page": 375,
+   "conf": "med"
+  },
+  {
+   "title": "So What",
+   "pdfPage": 388,
+   "page": 377,
+   "conf": "med"
+  },
+  {
+   "title": "Speak Low",
+   "pdfPage": 390,
+   "page": 379,
+   "conf": "med"
+  },
+  {
+   "title": "Spring Can Really Hang You Up The Most",
+   "pdfPage": 392,
+   "page": 381,
+   "conf": "med"
+  },
+  {
+   "title": "Spring Is Here",
+   "pdfPage": 396,
+   "page": 385,
+   "conf": "high"
+  },
+  {
+   "title": "Stella By Starlight",
+   "pdfPage": 398,
+   "page": 387,
+   "conf": "med"
+  },
+  {
+   "title": "Stolen Moments",
+   "pdfPage": 400,
+   "page": 389,
+   "conf": "med"
+  },
+  {
+   "title": "Stompin' At The Savoy",
+   "pdfPage": 402,
+   "page": 391,
+   "conf": "med"
+  },
+  {
+   "title": "Stormy Weather",
+   "pdfPage": 404,
+   "page": 393,
+   "conf": "med"
+  },
+  {
+   "title": "Straight, No Chaser",
+   "pdfPage": 406,
+   "page": 395,
+   "conf": "med"
+  },
+  {
+   "title": "Street Of Dreams",
+   "pdfPage": 407,
+   "page": 396,
+   "conf": "med"
+  },
+  {
+   "title": "Sugar",
+   "pdfPage": 408,
+   "page": 397,
+   "conf": "med"
+  },
+  {
+   "title": "Take Five",
+   "pdfPage": 410,
+   "page": 399,
+   "conf": "high"
+  },
+  {
+   "title": "Take The \"A\" Train",
+   "pdfPage": 412,
+   "page": 401,
+   "conf": "med"
+  },
+  {
+   "title": "'Tain't Nobody's Bizz-Ness If I Do",
+   "pdfPage": 414,
+   "page": 403,
+   "conf": "med"
+  },
+  {
+   "title": "Teach Me Tonight",
+   "pdfPage": 416,
+   "page": 405,
+   "conf": "med"
+  },
+  {
+   "title": "Them There Eyes",
+   "pdfPage": 418,
+   "page": 407,
+   "conf": "med"
+  },
+  {
+   "title": "There Is No Greater Love",
+   "pdfPage": 420,
+   "page": 409,
+   "conf": "med"
+  },
+  {
+   "title": "There Will Never Be Another You",
+   "pdfPage": 422,
+   "page": 411,
+   "conf": "med"
+  },
+  {
+   "title": "They Can't Take That Away From Me",
+   "pdfPage": 424,
+   "page": 413,
+   "conf": "med"
+  },
+  {
+   "title": "This Is All I Ask",
+   "pdfPage": 426,
+   "page": 415,
+   "conf": "med"
+  },
+  {
+   "title": "These Foolish Things",
+   "pdfPage": 430,
+   "page": 419,
+   "conf": "med"
+  },
+  {
+   "title": "Triste",
+   "pdfPage": 432,
+   "page": 421,
+   "conf": "med"
+  },
+  {
+   "title": "Tune-Up",
+   "pdfPage": 434,
+   "page": 423,
+   "conf": "med"
+  },
+  {
+   "title": "Until The Real Thing Comes Along",
+   "pdfPage": 436,
+   "page": 425,
+   "conf": "med"
+  },
+  {
+   "title": "Wait Till You See Her",
+   "pdfPage": 438,
+   "page": 427,
+   "conf": "med"
+  },
+  {
+   "title": "Walkin'",
+   "pdfPage": 440,
+   "page": 429,
+   "conf": "med"
+  },
+  {
+   "title": "Waltz For Debby",
+   "pdfPage": 442,
+   "page": 431,
+   "conf": "med"
+  },
+  {
+   "title": "Watch What Happens",
+   "pdfPage": 446,
+   "page": 435,
+   "conf": "med"
+  },
+  {
+   "title": "Wave",
+   "pdfPage": 450,
+   "page": 439,
+   "conf": "med"
+  },
+  {
+   "title": "Well You Needn't",
+   "pdfPage": 452,
+   "page": 441,
+   "conf": "med"
+  },
+  {
+   "title": "We'll Be Together Again",
+   "pdfPage": 454,
+   "page": 443,
+   "conf": "med"
+  },
+  {
+   "title": "What Am I Here For",
+   "pdfPage": 456,
+   "page": 445,
+   "conf": "med"
+  },
+  {
+   "title": "What Are You Doing The Rest Of Your Life",
+   "pdfPage": 458,
+   "page": 447,
+   "conf": "med"
+  },
+  {
+   "title": "What Is This Thing Called Love",
+   "pdfPage": 460,
+   "page": 449,
+   "conf": "high"
+  },
+  {
+   "title": "When I Fall In Love",
+   "pdfPage": 462,
+   "page": 451,
+   "conf": "med"
+  },
+  {
+   "title": "When Sunny Gets Blue",
+   "pdfPage": 464,
+   "page": 453,
+   "conf": "med"
+  },
+  {
+   "title": "When Your Lover Has Gone",
+   "pdfPage": 466,
+   "page": 455,
+   "conf": "med"
+  },
+  {
+   "title": "Where Are You",
+   "pdfPage": 468,
+   "page": 457,
+   "conf": "med"
+  },
+  {
+   "title": "Yesterday",
+   "pdfPage": 470,
+   "page": 459,
+   "conf": "med"
+  },
+  {
+   "title": "Yesterdays",
+   "pdfPage": 472,
+   "page": 461,
+   "conf": "med"
+  },
+  {
+   "title": "You Are The Sunshine Of My Life",
+   "pdfPage": 474,
+   "page": 463,
+   "conf": "med"
+  },
+  {
+   "title": "You Are Too Beautiful",
+   "pdfPage": 476,
+   "page": 465,
+   "conf": "med"
+  },
+  {
+   "title": "You Don't Know What Love Is",
+   "pdfPage": 478,
+   "page": 467,
+   "conf": "med"
+  },
+  {
+   "title": "You Don't Know What Love Is (2nd version)",
+   "pdfPage": 481,
+   "page": 470,
+   "conf": "high"
+  },
+  {
+   "title": "You Go To My Head",
+   "pdfPage": 482,
+   "page": 471,
+   "conf": "med"
+  },
+  {
+   "title": "You're Everything",
+   "pdfPage": 484,
+   "page": 473,
+   "conf": "med"
+  },
+  {
+   "title": "You Stepped Out Of A Dream",
+   "pdfPage": 486,
+   "page": 475,
+   "conf": "med"
+  },
+  {
+   "title": "You Took Advantage Of Me",
+   "pdfPage": 488,
+   "page": 477,
+   "conf": "med"
+  },
+  {
+   "title": "You've Changed",
+   "pdfPage": 490,
+   "page": 479,
+   "conf": "high"
+  }
+ ]
+}

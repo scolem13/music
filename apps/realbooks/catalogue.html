@@ -1,0 +1,87 @@
+<!doctype html>
+<!-- Real Book Catalogue: every tune in the Songfinder and in the indexed books, with where to find it.
+     Data: catalogue-data.js from scripts/realbooks/build-catalogue.js. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real Book Catalogue</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#dcdad3; --card:#fff; --accent:#2a5db0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#17171a; --fg:#e8e6e1; --muted:#9a9aa0; --line:#34343a; --card:#202024; --accent:#7aa7ff; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.45 system-ui, sans-serif; }
+main { max-width:1100px; margin:0 auto; padding:16px; }
+h1 { font-size:1.4rem; margin:0 0 4px; } .sub { color:var(--muted); margin:0 0 12px; max-width:75ch; }
+.controls { display:flex; flex-wrap:wrap; gap:8px 12px; align-items:end; margin-bottom:10px; }
+.controls label { display:flex; flex-direction:column; font-size:.8rem; color:var(--muted); gap:2px; }
+input, select, button { font:inherit; color:var(--fg); background:var(--card); border:1px solid var(--line); border-radius:6px; padding:5px 8px; }
+#q { width:min(340px, 90vw); } select { max-width:min(320px, 90vw); }
+.bar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:8px 0; color:var(--muted); }
+table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); }
+th, td { text-align:left; padding:5px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { font-size:.8rem; color:var(--muted); font-weight:600; }
+.aka, .where { color:var(--muted); font-size:.82rem; }
+.where span { display:inline-block; margin-right:10px; white-space:nowrap; }
+.hand { font-style:italic; } .n { text-align:right; white-space:nowrap; }
+@media (max-width:640px) { .hide-sm { display:none; } }
+</style>
+</head>
+<body>
+<main>
+<h1>Real Book Catalogue</h1>
+<p class="sub" id="sub"></p>
+<div class="controls">
+  <label>Search<input id="q" type="search" placeholder="title or composer"></label>
+  <label>In book<select id="book"><option value="">Any</option></select></label>
+  <label>Songfinder volume<select id="vol"><option value="">Any</option></select></label>
+  <label>Found in<select id="min"><option value="0">Any number of books</option><option value="1">At least 1 of my books</option><option value="2">2 or more</option><option value="3">3 or more</option><option value="5">5 or more</option></select></label>
+  <label>PDF<select id="pdf"><option value="">Either</option><option value="y">I have a PDF with it</option><option value="n">No PDF</option></select></label>
+</div>
+<div class="bar"><button id="prev">← Previous</button><span id="count"></span><button id="next">Next →</button></div>
+<table><thead><tr><th>Tune</th><th>In my books (book, page)</th><th class="hide-sm">Songfinder</th><th class="n">Books</th></tr></thead><tbody id="rows"></tbody></table>
+</main>
+<script src="catalogue-data.js"></script>
+<script>
+(() => {
+  const D = window.REALBOOKS, $ = id => document.getElementById(id), PER = 100;
+  $("sub").textContent = D.tunes.length.toLocaleString() + " tunes from Hal Leonard's Real Book Songfinder (2014) and " + D.indexed.length + " of " + D.books.length +
+    " indexed books. ✓ marks a Songfinder volume I have as a PDF. Built " + D.built + ". Page is the printed page; the PDF page is in the tooltip.";
+  D.indexed.map(i => i.b).sort((a, b) => D.books[a].title.localeCompare(D.books[b].title)).forEach(b => $("book").add(new Option(D.books[b].title, b)));
+  Object.entries(D.sfVols).forEach(([n, t]) => $("vol").add(new Option(n + ". " + t, n)));
+  const norm = s => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  D.tunes.forEach(t => { t._s = norm([t.t, (t.aka || []).join(" "), t.c].join(" ")); t._n = new Set(t.at.map(a => a[0])).size; });
+  const qs = new URLSearchParams(location.search); ["q", "book", "vol", "min", "pdf"].forEach(k => { if (qs.has(k)) $(k).value = qs.get(k); });
+  let page = +qs.get("page") || 0;
+  function rows() {
+    const w = norm($("q").value).split(/\s+/).filter(Boolean), b = $("book").value, v = +$("vol").value, m = +$("min").value, pf = $("pdf").value;
+    return D.tunes.filter(t => w.every(x => t._s.includes(x)) && (b === "" || t.at.some(a => a[0] === +b)) && (!v || (t.sf || []).includes(v)) && t._n >= m && (!pf || (pf === "y") === !!t.pdf));
+  }
+  function render() {
+    const r = rows(), pages = Math.max(1, Math.ceil(r.length / PER)); page = Math.min(Math.max(0, page), pages - 1);
+    $("count").textContent = r.length.toLocaleString() + " tunes · page " + (page + 1) + " of " + pages;
+    const p = new URLSearchParams(); ["q", "book", "vol", "min", "pdf"].forEach(k => { const x = $(k).value; if (x && x !== "0") p.set(k, x); }); if (page) p.set("page", page);
+    history.replaceState(null, "", "?" + p);
+    const tb = $("rows"); tb.textContent = "";
+    r.slice(page * PER, page * PER + PER).forEach(t => {
+      const tr = tb.insertRow(), a = tr.insertCell(), wh = tr.insertCell(), s = tr.insertCell(), n = tr.insertCell();
+      a.textContent = t.t;
+      if (t.aka || t.c) { const d = document.createElement("div"); d.className = "aka"; d.textContent = [t.c, t.aka && "also " + t.aka.join("; ")].filter(Boolean).join(" · "); a.appendChild(d); }
+      wh.className = "where";
+      t.at.forEach(([bi, pp, pg, conf]) => { const sp = document.createElement("span"), bk = D.books[bi]; if (bk.hand) sp.className = "hand";
+        sp.textContent = bk.title.replace(/^The /, "") + ", " + (pg != null ? pg : "pdf " + pp); sp.title = bk.file + " · PDF page " + pp + (conf ? " · " + conf + " confidence" : ""); wh.appendChild(sp); });
+      s.className = "hide-sm aka";
+      (t.sf || []).forEach((v, i) => { const e = document.createElement(D.sfOwned[v] ? "b" : "span"); e.textContent = (i ? ", " : "") + String(v).padStart(2, "0") + (D.sfOwned[v] ? " ✓" : "");
+        e.title = D.sfVols[v] + (D.sfOwned[v] ? " — I have this as a PDF: " + D.sfOwned[v].map(b => D.books[b].file).join(", ") : " — no PDF"); s.appendChild(e); });
+      if (!t.pdf) { const e = document.createElement("div"); e.textContent = "no PDF"; wh.appendChild(e); }
+      else if (t.pdf === 2) { const e = document.createElement("div"); e.textContent = "in an owned Songfinder volume, page not indexed yet"; wh.appendChild(e); }
+      n.className = "n"; n.textContent = t._n || "";
+    });
+  }
+  let tm; ["q", "book", "vol", "min", "pdf"].forEach(k => $(k).addEventListener("input", () => { page = 0; clearTimeout(tm); tm = setTimeout(render, 120); }));
+  $("prev").onclick = () => { page--; render(); scrollTo(0, 0); }; $("next").onclick = () => { page++; render(); scrollTo(0, 0); };
+  render();
+})();
+</script>
+</body>
+</html>

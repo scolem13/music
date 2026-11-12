@@ -1,0 +1,1177 @@
+{
+ "file": "Brazilian-Real-Book.pdf",
+ "method": "text-index",
+ "offset": 14,
+ "notes": "Index (pdf pp2-14) from text layer, constant offset 14 (printed p1 = pdf 15). Auto-checked all 167 entries: title text found at top of pdfPage (after accent/case folding); exceptions handled by hand: Tardes na Tailandia (page is image-only, verified visually), Sete Anéis (printed as \"7 Anéis\"), Deixa Q'eu Boto spelling. Drão/Duas Contas are swapped in the printed index (actual order Drão 93, Duas Contas 94) - corrected. Index lists \"Tardes na Tailândia (part1) e (part2)\" as one entry.",
+ "entries": [
+  {
+   "title": "Ah! Se Eu Pudesse",
+   "pdfPage": 15,
+   "page": 1,
+   "conf": "high",
+   "composer": "Roberto Menescal & Ronaldo Bôscoli"
+  },
+  {
+   "title": "Amanhã",
+   "pdfPage": 16,
+   "page": 2,
+   "conf": "high",
+   "composer": "Pascoal Meirelles"
+  },
+  {
+   "title": "Amazonas",
+   "pdfPage": 17,
+   "page": 3,
+   "conf": "high",
+   "composer": "João Donato & Lysias Ênio"
+  },
+  {
+   "title": "Amor Certinho",
+   "pdfPage": 18,
+   "page": 4,
+   "conf": "high",
+   "composer": "Roberto Guimarães"
+  },
+  {
+   "title": "Amor em Paz",
+   "pdfPage": 19,
+   "page": 5,
+   "conf": "high",
+   "composer": "Tom & Vinícius"
+  },
+  {
+   "title": "A Morte de um Deus do Sal",
+   "pdfPage": 20,
+   "page": 6,
+   "conf": "high",
+   "composer": "Roberto Menescal & Ronaldo Bôscoli"
+  },
+  {
+   "title": "Anos Dourados",
+   "pdfPage": 21,
+   "page": 7,
+   "conf": "high",
+   "composer": "Tom & Chico Buarque"
+  },
+  {
+   "title": "A Paz",
+   "pdfPage": 22,
+   "page": 8,
+   "conf": "high",
+   "composer": "João Donato & Gilberto Gil"
+  },
+  {
+   "title": "Aquarela do Brasil",
+   "pdfPage": 23,
+   "page": 9,
+   "conf": "high",
+   "composer": "Ary Barroso"
+  },
+  {
+   "title": "Aquela Coisa",
+   "pdfPage": 25,
+   "page": 11,
+   "conf": "high",
+   "composer": "Hermeto Pascoal"
+  },
+  {
+   "title": "Aquela Valsa",
+   "pdfPage": 27,
+   "page": 13,
+   "conf": "high",
+   "composer": "Hermeto Pascoal"
+  },
+  {
+   "title": "Aqui, Oh!",
+   "pdfPage": 29,
+   "page": 15,
+   "conf": "high",
+   "composer": "Toninho Horta & Fernando Brant"
+  },
+  {
+   "title": "A Rã",
+   "pdfPage": 31,
+   "page": 17,
+   "conf": "high",
+   "composer": "João Donato & Caetano Veloso"
+  },
+  {
+   "title": "Arambaré",
+   "pdfPage": 32,
+   "page": 18,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Arte de Voar",
+   "pdfPage": 34,
+   "page": 20,
+   "conf": "high",
+   "composer": "Nelson Ayres"
+  },
+  {
+   "title": "Até quem Sabe",
+   "pdfPage": 36,
+   "page": 22,
+   "conf": "high",
+   "composer": "João Donato & Lysias Ênio"
+  },
+  {
+   "title": "Aula de Matemática",
+   "pdfPage": 37,
+   "page": 23,
+   "conf": "high",
+   "composer": "Tom & Marino Pinto"
+  },
+  {
+   "title": "Balanço Zona Sul",
+   "pdfPage": 39,
+   "page": 25,
+   "conf": "high",
+   "composer": "Tito Madi"
+  },
+  {
+   "title": "Batida Diferente",
+   "pdfPage": 40,
+   "page": 26,
+   "conf": "high",
+   "composer": "Maurício Einhorn & Durval Ferreira"
+  },
+  {
+   "title": "Beatriz",
+   "pdfPage": 41,
+   "page": 27,
+   "conf": "high",
+   "composer": "Edu Lobo & Chico Buarque"
+  },
+  {
+   "title": "Bebê",
+   "pdfPage": 43,
+   "page": 29,
+   "conf": "high",
+   "composer": "Hermeto Pascoal"
+  },
+  {
+   "title": "Beijo Partido",
+   "pdfPage": 45,
+   "page": 31,
+   "conf": "high",
+   "composer": "Toninho Horta"
+  },
+  {
+   "title": "Bolinha de Papel",
+   "pdfPage": 47,
+   "page": 33,
+   "conf": "high",
+   "composer": "Geraldo Pereira"
+  },
+  {
+   "title": "Bota na Roda",
+   "pdfPage": 48,
+   "page": 34,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Brigas Nunca Mais",
+   "pdfPage": 51,
+   "page": 37,
+   "conf": "high",
+   "composer": "Tom & Vinícius"
+  },
+  {
+   "title": "Brisa do Mar",
+   "pdfPage": 52,
+   "page": 38,
+   "conf": "high",
+   "composer": "João Donato & Abel Silva"
+  },
+  {
+   "title": "Bye Bye Brasil",
+   "pdfPage": 53,
+   "page": 39,
+   "conf": "high",
+   "composer": "Roberto Menescal & Chico Buarque"
+  },
+  {
+   "title": "Caçador de Mim",
+   "pdfPage": 54,
+   "page": 40,
+   "conf": "high",
+   "composer": "Milton Nascimento"
+  },
+  {
+   "title": "Camburi",
+   "pdfPage": 55,
+   "page": 41,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Caminho de Casa",
+   "pdfPage": 57,
+   "page": 43,
+   "conf": "high",
+   "composer": "Nelson Ayres"
+  },
+  {
+   "title": "Caminhos Cruzados",
+   "pdfPage": 58,
+   "page": 44,
+   "conf": "high",
+   "composer": "Tom & Newton Mendonça"
+  },
+  {
+   "title": "Canção que Morre No Ar",
+   "pdfPage": 60,
+   "page": 46,
+   "conf": "high",
+   "composer": "Carlos Lyra & Ronaldo Bôscoli"
+  },
+  {
+   "title": "Carinhoso",
+   "pdfPage": 61,
+   "page": 47,
+   "conf": "high",
+   "composer": "Pixinguinha & João de Barro"
+  },
+  {
+   "title": "Carioca",
+   "pdfPage": 63,
+   "page": 49,
+   "conf": "high",
+   "composer": "Márcio Montarroyos"
+  },
+  {
+   "title": "Cego Aderaldo",
+   "pdfPage": 65,
+   "page": 51,
+   "conf": "high",
+   "composer": "Egberto Gismonti"
+  },
+  {
+   "title": "Chansong",
+   "pdfPage": 67,
+   "page": 53,
+   "conf": "high",
+   "composer": "Tom Jobim"
+  },
+  {
+   "title": "Chega de Saudade",
+   "pdfPage": 69,
+   "page": 55,
+   "conf": "high",
+   "composer": "Tom Jobim"
+  },
+  {
+   "title": "Chora Tua Tristeza",
+   "pdfPage": 71,
+   "page": 57,
+   "conf": "high",
+   "composer": "Oscar Castro Neves & Luvercy Fiorini"
+  },
+  {
+   "title": "Chorinho Pra Ele",
+   "pdfPage": 73,
+   "page": 59,
+   "conf": "high",
+   "composer": "Hermeto Pascoal"
+  },
+  {
+   "title": "Choro Negro",
+   "pdfPage": 75,
+   "page": 61,
+   "conf": "high",
+   "composer": "Paulinho da Viola"
+  },
+  {
+   "title": "Chovendo na Roseira",
+   "pdfPage": 77,
+   "page": 63,
+   "conf": "high",
+   "composer": "Tom Jobim"
+  },
+  {
+   "title": "Chuva",
+   "pdfPage": 80,
+   "page": 66,
+   "conf": "high",
+   "composer": "Durval Ferreira & Pedro Camargo"
+  },
+  {
+   "title": "Ciúme",
+   "pdfPage": 81,
+   "page": 67,
+   "conf": "high",
+   "composer": "Carlos Lyra"
+  },
+  {
+   "title": "Coisa Mais Linda",
+   "pdfPage": 82,
+   "page": 68,
+   "conf": "high",
+   "composer": "Carlos Lyra & Vinícius"
+  },
+  {
+   "title": "Começaria Tudo Outra Vez",
+   "pdfPage": 83,
+   "page": 69,
+   "conf": "high",
+   "composer": "Gonzaguinha"
+  },
+  {
+   "title": "Como Uma Onda",
+   "pdfPage": 85,
+   "page": 71,
+   "conf": "high",
+   "composer": "Lulu Santos"
+  },
+  {
+   "title": "Corcovado",
+   "pdfPage": 87,
+   "page": 73,
+   "conf": "high",
+   "composer": "Tom Jobim"
+  },
+  {
+   "title": "Da Cor Brasileira",
+   "pdfPage": 88,
+   "page": 74,
+   "conf": "high",
+   "composer": "Joyce"
+  },
+  {
+   "title": "Deixa",
+   "pdfPage": 89,
+   "page": 75,
+   "conf": "high",
+   "composer": "Baden & Vinícius"
+  },
+  {
+   "title": "Deixa Q'eu Boto",
+   "pdfPage": 90,
+   "page": 76,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Desafinado",
+   "pdfPage": 92,
+   "page": 78,
+   "conf": "high",
+   "composer": "Tom & Newton Mendonça"
+  },
+  {
+   "title": "Desatando o Nó",
+   "pdfPage": 94,
+   "page": 80,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Descendo a Serra",
+   "pdfPage": 95,
+   "page": 81,
+   "conf": "high",
+   "composer": "Pixinguinha e Benedito Lacerda"
+  },
+  {
+   "title": "Deus Brasileiro",
+   "pdfPage": 97,
+   "page": 83,
+   "conf": "high",
+   "composer": "Marcos & Paulo Sérgio Valle"
+  },
+  {
+   "title": "Dindi",
+   "pdfPage": 98,
+   "page": 84,
+   "conf": "high",
+   "composer": "Tom & Aloysio de Oliveira"
+  },
+  {
+   "title": "Discussão",
+   "pdfPage": 99,
+   "page": 85,
+   "conf": "high",
+   "composer": "Tom & Newton Mendonça"
+  },
+  {
+   "title": "Dois Pra Lá, Dois Pra Cá",
+   "pdfPage": 100,
+   "page": 86,
+   "conf": "high",
+   "composer": "João Bosco & Aldir Blanc"
+  },
+  {
+   "title": "Dolphin",
+   "pdfPage": 102,
+   "page": 88,
+   "conf": "high",
+   "composer": "The) (Luiz Eça"
+  },
+  {
+   "title": "Dom de Iludir",
+   "pdfPage": 103,
+   "page": 89,
+   "conf": "high",
+   "composer": "Caetano Veloso"
+  },
+  {
+   "title": "Doralice",
+   "pdfPage": 105,
+   "page": 91,
+   "conf": "high",
+   "composer": "Dorival Caymmi & Antonio Almeida"
+  },
+  {
+   "title": "Duas Contas",
+   "pdfPage": 108,
+   "page": 94,
+   "conf": "high",
+   "composer": "Garoto"
+  },
+  {
+   "title": "Drão",
+   "pdfPage": 107,
+   "page": 93,
+   "conf": "high",
+   "composer": "Gilberto Gil"
+  },
+  {
+   "title": "Ela é Carioca",
+   "pdfPage": 109,
+   "page": 95,
+   "conf": "high",
+   "composer": "Tom & Vinícius"
+  },
+  {
+   "title": "Espinha de Bacalhau",
+   "pdfPage": 110,
+   "page": 96,
+   "conf": "high",
+   "composer": "Severino Araújo"
+  },
+  {
+   "title": "Esquenta-Por-Dentro",
+   "pdfPage": 113,
+   "page": 99,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Esquilo Rosa",
+   "pdfPage": 115,
+   "page": 101,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Essa Mulher",
+   "pdfPage": 117,
+   "page": 103,
+   "conf": "high",
+   "composer": "Joyce"
+  },
+  {
+   "title": "Esse Cara",
+   "pdfPage": 118,
+   "page": 104,
+   "conf": "high",
+   "composer": "Caetano Veloso"
+  },
+  {
+   "title": "Estamos Aí",
+   "pdfPage": 119,
+   "page": 105,
+   "conf": "high",
+   "composer": "Maurício Einhorn, Durval Ferreira e Regina Werneck"
+  },
+  {
+   "title": "Este Seu Olhar",
+   "pdfPage": 120,
+   "page": 106,
+   "conf": "high",
+   "composer": "Tom Jobim"
+  },
+  {
+   "title": "Estrada do Sol",
+   "pdfPage": 121,
+   "page": 107,
+   "conf": "high",
+   "composer": "Tom & Dolores Duran"
+  },
+  {
+   "title": "Eu e a Brisa",
+   "pdfPage": 122,
+   "page": 108,
+   "conf": "high",
+   "composer": "Johnny Alf"
+  },
+  {
+   "title": "Eu Te Amo",
+   "pdfPage": 124,
+   "page": 110,
+   "conf": "high",
+   "composer": "Tom & Chico Buarque"
+  },
+  {
+   "title": "Evem o Carangueijo",
+   "pdfPage": 126,
+   "page": 112,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Falando de Amor",
+   "pdfPage": 129,
+   "page": 115,
+   "conf": "high",
+   "composer": "Tom Jobim"
+  },
+  {
+   "title": "Falsa Baiana",
+   "pdfPage": 130,
+   "page": 116,
+   "conf": "high",
+   "composer": "Geraldo Pereira"
+  },
+  {
+   "title": "Fátima",
+   "pdfPage": 131,
+   "page": 117,
+   "conf": "high",
+   "composer": "Hermeto Pascoal"
+  },
+  {
+   "title": "Ferrovias",
+   "pdfPage": 133,
+   "page": 119,
+   "conf": "high",
+   "composer": "Chico Medori-Grupo Medusa"
+  },
+  {
+   "title": "Flora",
+   "pdfPage": 135,
+   "page": 121,
+   "conf": "high",
+   "composer": "Gilberto Gil"
+  },
+  {
+   "title": "Flor de Lis",
+   "pdfPage": 137,
+   "page": 123,
+   "conf": "high",
+   "composer": "Djavan"
+  },
+  {
+   "title": "Forró Brasil",
+   "pdfPage": 139,
+   "page": 125,
+   "conf": "high",
+   "composer": "Hermeto Pascoal"
+  },
+  {
+   "title": "Fotografia",
+   "pdfPage": 140,
+   "page": 126,
+   "conf": "high",
+   "composer": "Tom Jobim"
+  },
+  {
+   "title": "Frevo",
+   "pdfPage": 141,
+   "page": 127,
+   "conf": "high",
+   "composer": "Egberto Gismonti"
+  },
+  {
+   "title": "Frevo em Maceió",
+   "pdfPage": 144,
+   "page": 130,
+   "conf": "high",
+   "composer": "Hermeto Pascoal"
+  },
+  {
+   "title": "Giselle",
+   "pdfPage": 146,
+   "page": 132,
+   "conf": "high",
+   "composer": "Heraldo do Monte"
+  },
+  {
+   "title": "Hô-ba-lá-lá",
+   "pdfPage": 148,
+   "page": 134,
+   "conf": "high",
+   "composer": "João Gilberto"
+  },
+  {
+   "title": "Igarapé",
+   "pdfPage": 149,
+   "page": 135,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Iluminada",
+   "pdfPage": 152,
+   "page": 138,
+   "conf": "high",
+   "composer": "Egberto Gismonti"
+  },
+  {
+   "title": "Influência do Jazz",
+   "pdfPage": 154,
+   "page": 140,
+   "conf": "high",
+   "composer": "Carlos Lyra"
+  },
+  {
+   "title": "Ingênuo",
+   "pdfPage": 156,
+   "page": 142,
+   "conf": "high",
+   "composer": "Pixinguinha & Benedito Lacerda"
+  },
+  {
+   "title": "Insensatez",
+   "pdfPage": 158,
+   "page": 144,
+   "conf": "high",
+   "composer": "Tom & Vinícius"
+  },
+  {
+   "title": "Inútil Paisagem",
+   "pdfPage": 159,
+   "page": 145,
+   "conf": "high",
+   "composer": "Tom & Aloysio de Oliveira"
+  },
+  {
+   "title": "Isaura",
+   "pdfPage": 160,
+   "page": 146,
+   "conf": "high",
+   "composer": "Herivelto Martins & Roberto Roberti"
+  },
+  {
+   "title": "Isso é o Boi",
+   "pdfPage": 161,
+   "page": 147,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Karatê",
+   "pdfPage": 164,
+   "page": 150,
+   "conf": "high",
+   "composer": "Egberto Gismonti"
+  },
+  {
+   "title": "Lamentos",
+   "pdfPage": 166,
+   "page": 152,
+   "conf": "high",
+   "composer": "Pixinguinha & Vinícius"
+  },
+  {
+   "title": "Lígia",
+   "pdfPage": 168,
+   "page": 154,
+   "conf": "high",
+   "composer": "Tom Jobim"
+  },
+  {
+   "title": "Loro",
+   "pdfPage": 169,
+   "page": 155,
+   "conf": "high",
+   "composer": "Egberto Gismonti"
+  },
+  {
+   "title": "Louco Por Você",
+   "pdfPage": 171,
+   "page": 157,
+   "conf": "high",
+   "composer": "Caetano Veloso"
+  },
+  {
+   "title": "Lua de São Jorge",
+   "pdfPage": 173,
+   "page": 159,
+   "conf": "high",
+   "composer": "Caetano Veloso"
+  },
+  {
+   "title": "Lugar Comum",
+   "pdfPage": 174,
+   "page": 160,
+   "conf": "high",
+   "composer": "João Donato & Gilberto Gil"
+  },
+  {
+   "title": "Luiza",
+   "pdfPage": 175,
+   "page": 161,
+   "conf": "high",
+   "composer": "Tom Jobim"
+  },
+  {
+   "title": "Madrugada",
+   "pdfPage": 177,
+   "page": 163,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Maracatú",
+   "pdfPage": 179,
+   "page": 165,
+   "conf": "high",
+   "composer": "Egberto Gismonti"
+  },
+  {
+   "title": "Melancia",
+   "pdfPage": 181,
+   "page": 167,
+   "conf": "high",
+   "composer": "Rique Pantoja-Grupo Cama de Gato"
+  },
+  {
+   "title": "Menino do Rio",
+   "pdfPage": 182,
+   "page": 168,
+   "conf": "high",
+   "composer": "Caetano Veloso"
+  },
+  {
+   "title": "Meu Bem, Meu Mal",
+   "pdfPage": 183,
+   "page": 169,
+   "conf": "high",
+   "composer": "Caetano Veloso"
+  },
+  {
+   "title": "Meu Bem Querer",
+   "pdfPage": 185,
+   "page": 171,
+   "conf": "high",
+   "composer": "Djavan"
+  },
+  {
+   "title": "Minha Saudade",
+   "pdfPage": 187,
+   "page": 173,
+   "conf": "high",
+   "composer": "João Donato & Gilberto Gil"
+  },
+  {
+   "title": "Montreux",
+   "pdfPage": 188,
+   "page": 174,
+   "conf": "high",
+   "composer": "Hermeto Pascoal"
+  },
+  {
+   "title": "Nada Será Como Antes",
+   "pdfPage": 189,
+   "page": 175,
+   "conf": "high",
+   "composer": "Milton Nascimento"
+  },
+  {
+   "title": "Nordestina",
+   "pdfPage": 190,
+   "page": 176,
+   "conf": "high",
+   "composer": "Olmir Stoclker-\"Alemão\"-Grupo Medusa"
+  },
+  {
+   "title": "O Bêbado e a Equilibrista",
+   "pdfPage": 192,
+   "page": 178,
+   "conf": "high",
+   "composer": "João Bosco & Aldir Blanc"
+  },
+  {
+   "title": "O Que é Amar",
+   "pdfPage": 194,
+   "page": 180,
+   "conf": "high",
+   "composer": "Johnny Alf"
+  },
+  {
+   "title": "Outra Vez",
+   "pdfPage": 196,
+   "page": 182,
+   "conf": "high",
+   "composer": "Tom Jobim"
+  },
+  {
+   "title": "O Ovo",
+   "pdfPage": 198,
+   "page": 184,
+   "conf": "high",
+   "composer": "Hermeto Pascoal"
+  },
+  {
+   "title": "Palhaço",
+   "pdfPage": 199,
+   "page": 185,
+   "conf": "high",
+   "composer": "Egberto Gismonti"
+  },
+  {
+   "title": "Pétala",
+   "pdfPage": 200,
+   "page": 186,
+   "conf": "high",
+   "composer": "Djavan"
+  },
+  {
+   "title": "Poeira na Pomba",
+   "pdfPage": 201,
+   "page": 187,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Ponta-de-Lança",
+   "pdfPage": 203,
+   "page": 189,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Ponto de Fusão",
+   "pdfPage": 207,
+   "page": 193,
+   "conf": "high",
+   "composer": "Claudio Bertrami-Grupo Medusa"
+  },
+  {
+   "title": "Por Causa de Você",
+   "pdfPage": 209,
+   "page": 195,
+   "conf": "high",
+   "composer": "Tom & Dolores Duran"
+  },
+  {
+   "title": "Pra Machucar Meu Coração",
+   "pdfPage": 210,
+   "page": 196,
+   "conf": "high",
+   "composer": "Ary Barroso"
+  },
+  {
+   "title": "Prece",
+   "pdfPage": 211,
+   "page": 197,
+   "conf": "high",
+   "composer": "Durval Ferreira & Tibério Gaspar"
+  },
+  {
+   "title": "Preciso Aprender a Ser Só",
+   "pdfPage": 212,
+   "page": 198,
+   "conf": "high",
+   "composer": "Marcos & Paulo Sérgio Valle"
+  },
+  {
+   "title": "Primavera",
+   "pdfPage": 213,
+   "page": 199,
+   "conf": "high",
+   "composer": "Carlos Lyra & Vinícius"
+  },
+  {
+   "title": "Pro Brotinho",
+   "pdfPage": 215,
+   "page": 201,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Puxa um Pescoço-Gelado",
+   "pdfPage": 217,
+   "page": 203,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Rancho Fundo",
+   "pdfPage": 219,
+   "page": 205,
+   "conf": "high",
+   "composer": "No) (Ary Barroso & Lamartine Babo"
+  },
+  {
+   "title": "Rapaz de Bem",
+   "pdfPage": 220,
+   "page": 206,
+   "conf": "high",
+   "composer": "Johnny Alf"
+  },
+  {
+   "title": "Rebuliço",
+   "pdfPage": 222,
+   "page": 208,
+   "conf": "high",
+   "composer": "Hermeto Pascoal"
+  },
+  {
+   "title": "Retrato em Branco e Preto",
+   "pdfPage": 224,
+   "page": 210,
+   "conf": "high",
+   "composer": "Tom & Chico Buarque"
+  },
+  {
+   "title": "Revendo Amigos",
+   "pdfPage": 225,
+   "page": 211,
+   "conf": "high",
+   "composer": "Joyce"
+  },
+  {
+   "title": "Rio",
+   "pdfPage": 226,
+   "page": 212,
+   "conf": "high",
+   "composer": "Roberto Menescal & Ronaldo Bôscoli"
+  },
+  {
+   "title": "Sabe Você",
+   "pdfPage": 228,
+   "page": 214,
+   "conf": "high",
+   "composer": "Carlos Lyra & Vinícius"
+  },
+  {
+   "title": "Samba do Avião",
+   "pdfPage": 230,
+   "page": 216,
+   "conf": "high",
+   "composer": "Tom Jobim"
+  },
+  {
+   "title": "Samba do Carioca",
+   "pdfPage": 232,
+   "page": 218,
+   "conf": "high",
+   "composer": "Carlos Lyra & Vinícius"
+  },
+  {
+   "title": "Samba de Verão",
+   "pdfPage": 233,
+   "page": 219,
+   "conf": "high",
+   "composer": "Marcos & Paulo Sérgio Valle"
+  },
+  {
+   "title": "Sangrando",
+   "pdfPage": 234,
+   "page": 220,
+   "conf": "high",
+   "composer": "Gonzaguinha"
+  },
+  {
+   "title": "Saudade Fez Um Samba",
+   "pdfPage": 236,
+   "page": 222,
+   "conf": "high",
+   "composer": "Carlos Lyra & Ronaldo Bôscoli"
+  },
+  {
+   "title": "Se É Tarde Me Perdoa",
+   "pdfPage": 237,
+   "page": 223,
+   "conf": "high",
+   "composer": "Carlos Lyra & Ronaldo Bôscoli"
+  },
+  {
+   "title": "Sete Anéis",
+   "pdfPage": 238,
+   "page": 224,
+   "conf": "high",
+   "composer": "Egberto Gismonti"
+  },
+  {
+   "title": "Setembro",
+   "pdfPage": 240,
+   "page": 226,
+   "conf": "high",
+   "composer": "Ivan Lins, Gilson Peranzzzetta & Vítor Martins"
+  },
+  {
+   "title": "Se Eu Quiser Falar Com Deus",
+   "pdfPage": 241,
+   "page": 227,
+   "conf": "high",
+   "composer": "Gilberto Gil"
+  },
+  {
+   "title": "Sonho de Maria",
+   "pdfPage": 242,
+   "page": 228,
+   "conf": "high",
+   "composer": "Marcos & Paulo Sérgio Valle"
+  },
+  {
+   "title": "Sonoroso",
+   "pdfPage": 244,
+   "page": 230,
+   "conf": "high",
+   "composer": "K.Ximbinho"
+  },
+  {
+   "title": "Só Tinha de Ser Com Você",
+   "pdfPage": 245,
+   "page": 231,
+   "conf": "high",
+   "composer": "Tom & Aloysio de Oliveira"
+  },
+  {
+   "title": "Só Xote",
+   "pdfPage": 247,
+   "page": 233,
+   "conf": "high",
+   "composer": "Nelson Ayres"
+  },
+  {
+   "title": "Tardes na Tailândia",
+   "pdfPage": 248,
+   "page": 234,
+   "conf": "high",
+   "composer": "Toninho Horta"
+  },
+  {
+   "title": "Telefone",
+   "pdfPage": 249,
+   "page": 235,
+   "conf": "high",
+   "composer": "Roberto Menescal & Ronaldo Bôscoli"
+  },
+  {
+   "title": "Teletema",
+   "pdfPage": 250,
+   "page": 236,
+   "conf": "high",
+   "composer": "Antonio Adolfo & Tibério Gaspar"
+  },
+  {
+   "title": "Tintim Por Tintim",
+   "pdfPage": 251,
+   "page": 237,
+   "conf": "high",
+   "composer": "Haroldo Barbosa & Geraldo Jacques"
+  },
+  {
+   "title": "Triste",
+   "pdfPage": 253,
+   "page": 239,
+   "conf": "high",
+   "composer": "Tom Jobim"
+  },
+  {
+   "title": "Tristeza de Nós Dois",
+   "pdfPage": 254,
+   "page": 240,
+   "conf": "high",
+   "composer": "Maurício Einhorn, Durval Ferreira e Bebeto"
+  },
+  {
+   "title": "Trocando em Miúdos",
+   "pdfPage": 256,
+   "page": 242,
+   "conf": "high",
+   "composer": "Francis Hime & Chico Buarque"
+  },
+  {
+   "title": "Um a Zero",
+   "pdfPage": 258,
+   "page": 244,
+   "conf": "high",
+   "composer": "Pixinguinha & Benedito Lacerda"
+  },
+  {
+   "title": "Vagamente",
+   "pdfPage": 261,
+   "page": 247,
+   "conf": "high",
+   "composer": "Roberto Menescal & Ronaldo Bôscoli"
+  },
+  {
+   "title": "Vála-me!",
+   "pdfPage": 262,
+   "page": 248,
+   "conf": "high",
+   "composer": "Flavio Goulart"
+  },
+  {
+   "title": "Vidigal",
+   "pdfPage": 264,
+   "page": 250,
+   "conf": "high",
+   "composer": "Oberdan Magalhães-Grupo Index"
+  },
+  {
+   "title": "Vivo Sonhando",
+   "pdfPage": 266,
+   "page": 252,
+   "conf": "high",
+   "composer": "Tom Jobim"
+  },
+  {
+   "title": "Você é Linda",
+   "pdfPage": 267,
+   "page": 253,
+   "conf": "high",
+   "composer": "Caetano Veloso"
+  },
+  {
+   "title": "Você",
+   "pdfPage": 268,
+   "page": 254,
+   "conf": "high",
+   "composer": "Roberto Menescal & Ronaldo Bôscoli"
+  },
+  {
+   "title": "Você e Eu",
+   "pdfPage": 269,
+   "page": 255,
+   "conf": "high",
+   "composer": "Carlos Lyra & Vinícius"
+  },
+  {
+   "title": "Vôo dos Urubus",
+   "pdfPage": 270,
+   "page": 256,
+   "conf": "high",
+   "composer": "Toninho Horta"
+  },
+  {
+   "title": "Vou Vivendo",
+   "pdfPage": 272,
+   "page": 258,
+   "conf": "high",
+   "composer": "Pixinguinha & Benedito Lacerda"
+  },
+  {
+   "title": "Wave",
+   "pdfPage": 274,
+   "page": 260,
+   "conf": "high",
+   "composer": "Tom Jobim"
+  },
+  {
+   "title": "Zebi",
+   "pdfPage": 275,
+   "page": 261,
+   "conf": "high",
+   "composer": "Claudio Bertrami-Grupo Medusa"
+  }
+ ]
+}

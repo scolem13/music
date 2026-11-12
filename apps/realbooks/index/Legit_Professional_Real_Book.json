@@ -1,0 +1,4941 @@
+{
+ "file": "Legit_Professional_Real_Book.pdf",
+ "method": "ocr-index",
+ "offset": 0,
+ "notes": "Alphabetical Contents on pdf pp3-8 (2 columns, 'page...TITLE.....genre'), OCR at 300 dpi per column, titles recased from caps and OCR junk (trailing dots/digits) stripped by rule; a few fixed by hand. Printed page = pdfPage. Every entry's title searched in full-page OCR of its page: 715 of 807 found there (conf high; 19 corrected to the page where the title was found, e.g. OCR 9 for 2 in page numbers); 92 weak (noisy OCR of title or page, conf med). Several tunes per page. Classical items (pp402+) carry composer from the parenthesis. Genre labels dropped. Highlights guide at pp477+ not indexed. Index lists ~808 titles though cover says 1010 songs; titles missing from the contents list are not indexed (some tunes on the pages may be absent from the index). One unreadable title ('He...', Inspirational, p182) dropped.",
+ "entries": [
+  {
+   "title": "The Aba Daba Honeymoon",
+   "pdfPage": 10,
+   "page": 10,
+   "conf": "high"
+  },
+  {
+   "title": "Anchors Aweigh",
+   "pdfPage": 10,
+   "page": 10,
+   "conf": "high"
+  },
+  {
+   "title": "Across the Western Ocean",
+   "pdfPage": 11,
+   "page": 11,
+   "conf": "high"
+  },
+  {
+   "title": "Alabama Bound",
+   "pdfPage": 11,
+   "page": 11,
+   "conf": "high"
+  },
+  {
+   "title": "America (My Country ‘Tis Of Thee)",
+   "pdfPage": 11,
+   "page": 11,
+   "conf": "high"
+  },
+  {
+   "title": "An Affair to Remember",
+   "pdfPage": 12,
+   "page": 12,
+   "conf": "high"
+  },
+  {
+   "title": "Almost Like Being in Love",
+   "pdfPage": 12,
+   "page": 12,
+   "conf": "high"
+  },
+  {
+   "title": "The Aloha Waltz",
+   "pdfPage": 14,
+   "page": 14,
+   "conf": "high"
+  },
+  {
+   "title": "Angela",
+   "pdfPage": 14,
+   "page": 14,
+   "conf": "med"
+  },
+  {
+   "title": "Abide with Me",
+   "pdfPage": 15,
+   "page": 15,
+   "conf": "high"
+  },
+  {
+   "title": "Anniversary Song",
+   "pdfPage": 15,
+   "page": 15,
+   "conf": "high"
+  },
+  {
+   "title": "Alouette (The Lark)",
+   "pdfPage": 16,
+   "page": 16,
+   "conf": "med"
+  },
+  {
+   "title": "Amazing Grace",
+   "pdfPage": 16,
+   "page": 16,
+   "conf": "high"
+  },
+  {
+   "title": "Auld Lang Syne",
+   "pdfPage": 16,
+   "page": 16,
+   "conf": "high"
+  },
+  {
+   "title": "Aloha Oe (Farewell To Thee)",
+   "pdfPage": 17,
+   "page": 17,
+   "conf": "high"
+  },
+  {
+   "title": "Please Don't Leave Me",
+   "pdfPage": 17,
+   "page": 17,
+   "conf": "high"
+  },
+  {
+   "title": "The American Patrol",
+   "pdfPage": 18,
+   "page": 18,
+   "conf": "high"
+  },
+  {
+   "title": "Annabel Lee",
+   "pdfPage": 18,
+   "page": 18,
+   "conf": "med"
+  },
+  {
+   "title": "Ain't That a Shame",
+   "pdfPage": 19,
+   "page": 19,
+   "conf": "high"
+  },
+  {
+   "title": "The Patty Duke Theme",
+   "pdfPage": 19,
+   "page": 19,
+   "composer": "Cousins",
+   "conf": "high"
+  },
+  {
+   "title": "Applause",
+   "pdfPage": 20,
+   "page": 20,
+   "conf": "high"
+  },
+  {
+   "title": "Behold the Savior of Mankind",
+   "pdfPage": 20,
+   "page": 20,
+   "conf": "high"
+  },
+  {
+   "title": "All Things Bright and Beautiful",
+   "pdfPage": 21,
+   "page": 21,
+   "conf": "high"
+  },
+  {
+   "title": "April Love",
+   "pdfPage": 21,
+   "page": 21,
+   "conf": "high"
+  },
+  {
+   "title": "Aquarius",
+   "pdfPage": 22,
+   "page": 22,
+   "conf": "high"
+  },
+  {
+   "title": "Autumn of My Life",
+   "pdfPage": 22,
+   "page": 22,
+   "conf": "high"
+  },
+  {
+   "title": "America the Beautiful",
+   "pdfPage": 23,
+   "page": 23,
+   "conf": "med"
+  },
+  {
+   "title": "Are You Lonesome Tonight?",
+   "pdfPage": 23,
+   "page": 23,
+   "conf": "high"
+  },
+  {
+   "title": "And 1 Love You So",
+   "pdfPage": 24,
+   "page": 24,
+   "conf": "high"
+  },
+  {
+   "title": "April Showers",
+   "pdfPage": 24,
+   "page": 24,
+   "conf": "high"
+  },
+  {
+   "title": "All | Ever Need If You",
+   "pdfPage": 25,
+   "page": 25,
+   "conf": "high"
+  },
+  {
+   "title": "The Birth of the Blues",
+   "pdfPage": 25,
+   "page": 25,
+   "conf": "high"
+  },
+  {
+   "title": "All Through the Night",
+   "pdfPage": 26,
+   "page": 26,
+   "conf": "high"
+  },
+  {
+   "title": "The Bugle Call Rag",
+   "pdfPage": 26,
+   "page": 26,
+   "conf": "high"
+  },
+  {
+   "title": "All 1 Do is Dream of You",
+   "pdfPage": 27,
+   "page": 27,
+   "conf": "high"
+  },
+  {
+   "title": "Stars Fell on Alabama",
+   "pdfPage": 29,
+   "page": 29,
+   "conf": "high"
+  },
+  {
+   "title": "Baa! Baa! Black Sheep",
+   "pdfPage": 30,
+   "page": 30,
+   "conf": "high"
+  },
+  {
+   "title": "Good Friends",
+   "pdfPage": 30,
+   "page": 30,
+   "conf": "med"
+  },
+  {
+   "title": "After the Fox",
+   "pdfPage": 31,
+   "page": 31,
+   "conf": "high"
+  },
+  {
+   "title": "The Big Beat",
+   "pdfPage": 31,
+   "page": 31,
+   "conf": "med"
+  },
+  {
+   "title": "The Band Played on",
+   "pdfPage": 33,
+   "page": 33,
+   "conf": "med"
+  },
+  {
+   "title": "Bonnie Blue Eyes",
+   "pdfPage": 33,
+   "page": 33,
+   "conf": "high"
+  },
+  {
+   "title": "The Ballad of Gilligan's Island",
+   "pdfPage": 34,
+   "page": 34,
+   "conf": "high"
+  },
+  {
+   "title": "Believe Me If All Those Endearing Young Charms",
+   "pdfPage": 35,
+   "page": 35,
+   "conf": "high"
+  },
+  {
+   "title": "Blest Be the Tie That Binds",
+   "pdfPage": 35,
+   "page": 35,
+   "conf": "high"
+  },
+  {
+   "title": "Hey Landlord",
+   "pdfPage": 35,
+   "page": 35,
+   "conf": "high"
+  },
+  {
+   "title": "Be Honest with Me",
+   "pdfPage": 36,
+   "page": 36,
+   "conf": "high"
+  },
+  {
+   "title": "Beautiful Brown Eyes",
+   "pdfPage": 37,
+   "page": 37,
+   "conf": "high"
+  },
+  {
+   "title": "Blow the Man Down",
+   "pdfPage": 37,
+   "page": 37,
+   "conf": "high"
+  },
+  {
+   "title": "Bury Me Beneath the Willow",
+   "pdfPage": 37,
+   "page": 37,
+   "conf": "high"
+  },
+  {
+   "title": "Bemy Love",
+   "pdfPage": 38,
+   "page": 38,
+   "conf": "high"
+  },
+  {
+   "title": "The Big Rock Candy Mountain",
+   "pdfPage": 38,
+   "page": 38,
+   "conf": "high"
+  },
+  {
+   "title": "Bigspender",
+   "pdfPage": 39,
+   "page": 39,
+   "conf": "high"
+  },
+  {
+   "title": "Buckeve Jim",
+   "pdfPage": 39,
+   "page": 39,
+   "conf": "high"
+  },
+  {
+   "title": "Battle Hymn of the Republic",
+   "pdfPage": 40,
+   "page": 40,
+   "conf": "high"
+  },
+  {
+   "title": "Bo Weevil",
+   "pdfPage": 41,
+   "page": 41,
+   "conf": "high"
+  },
+  {
+   "title": "Barbary Allen",
+   "pdfPage": 42,
+   "page": 42,
+   "conf": "high"
+  },
+  {
+   "title": "Billy the Kid",
+   "pdfPage": 42,
+   "page": 42,
+   "conf": "high"
+  },
+  {
+   "title": "The Boll Weevil",
+   "pdfPage": 42,
+   "page": 42,
+   "conf": "high"
+  },
+  {
+   "title": "A Bicycle Built for Two (Daisy Bell)",
+   "pdfPage": 43,
+   "page": 43,
+   "conf": "high"
+  },
+  {
+   "title": "Brighten the Corner Where You Are",
+   "pdfPage": 43,
+   "page": 43,
+   "conf": "high"
+  },
+  {
+   "title": "Back in the Saddle Again",
+   "pdfPage": 44,
+   "page": 44,
+   "conf": "high"
+  },
+  {
+   "title": "A Bird Ina Gilded Cage",
+   "pdfPage": 44,
+   "page": 44,
+   "conf": "high"
+  },
+  {
+   "title": "The Bowery",
+   "pdfPage": 44,
+   "page": 44,
+   "conf": "high"
+  },
+  {
+   "title": "The Boy Next Door",
+   "pdfPage": 45,
+   "page": 45,
+   "conf": "high"
+  },
+  {
+   "title": "Brigadoon",
+   "pdfPage": 46,
+   "page": 46,
+   "conf": "high"
+  },
+  {
+   "title": "Bye Bye, Love",
+   "pdfPage": 46,
+   "page": 46,
+   "conf": "high"
+  },
+  {
+   "title": "Baby, | Love Your Way",
+   "pdfPage": 47,
+   "page": 47,
+   "conf": "high"
+  },
+  {
+   "title": "Bringing in the Sheaves",
+   "pdfPage": 47,
+   "page": 47,
+   "conf": "high"
+  },
+  {
+   "title": "Bill Bailey, Won't You Please Come Home?",
+   "pdfPage": 48,
+   "page": 48,
+   "conf": "high"
+  },
+  {
+   "title": "Broadway Melody",
+   "pdfPage": 48,
+   "page": 48,
+   "conf": "high"
+  },
+  {
+   "title": "Beautiful Dreamer",
+   "pdfPage": 49,
+   "page": 49,
+   "conf": "high"
+  },
+  {
+   "title": "The Family Tree",
+   "pdfPage": 49,
+   "page": 49,
+   "conf": "high"
+  },
+  {
+   "title": "Banks of the Ohio",
+   "pdfPage": 50,
+   "page": 50,
+   "conf": "high"
+  },
+  {
+   "title": "Blood on the Saddle",
+   "pdfPage": 50,
+   "page": 50,
+   "conf": "high"
+  },
+  {
+   "title": "The Butcher's Boy",
+   "pdfPage": 50,
+   "page": 50,
+   "conf": "high"
+  },
+  {
+   "title": "The Bridge at Remagen (Main Theme)",
+   "pdfPage": 52,
+   "page": 52,
+   "conf": "high"
+  },
+  {
+   "title": "Cindy",
+   "pdfPage": 52,
+   "page": 52,
+   "conf": "med"
+  },
+  {
+   "title": "'M Gonna Be a Wheel Someday",
+   "pdfPage": 52,
+   "page": 52,
+   "conf": "high"
+  },
+  {
+   "title": "Cara Mia",
+   "pdfPage": 53,
+   "page": 53,
+   "conf": "high"
+  },
+  {
+   "title": "Come Follow",
+   "pdfPage": 54,
+   "page": 54,
+   "conf": "high"
+  },
+  {
+   "title": "Dames at Sea",
+   "pdfPage": 54,
+   "page": 54,
+   "conf": "med"
+  },
+  {
+   "title": "The Caissons Go Rolling Along",
+   "pdfPage": 55,
+   "page": 55,
+   "conf": "high"
+  },
+  {
+   "title": "Careless Love",
+   "pdfPage": 55,
+   "page": 55,
+   "conf": "high"
+  },
+  {
+   "title": "Common Bill",
+   "pdfPage": 55,
+   "page": 55,
+   "conf": "high"
+  },
+  {
+   "title": "A Certain Smile",
+   "pdfPage": 56,
+   "page": 56,
+   "conf": "high"
+  },
+  {
+   "title": "Charmaine",
+   "pdfPage": 56,
+   "page": 56,
+   "conf": "high"
+  },
+  {
+   "title": "Chattanooga Choo Choo",
+   "pdfPage": 57,
+   "page": 57,
+   "conf": "high"
+  },
+  {
+   "title": ") Think I'm Gonna Like it Here",
+   "pdfPage": 57,
+   "page": 57,
+   "conf": "high"
+  },
+  {
+   "title": "Ciao, Ciao, Bambina",
+   "pdfPage": 58,
+   "page": 58,
+   "conf": "high"
+  },
+  {
+   "title": "Chisholm Trail",
+   "pdfPage": 59,
+   "page": 59,
+   "conf": "high"
+  },
+  {
+   "title": "Clementine",
+   "pdfPage": 59,
+   "page": 59,
+   "conf": "med"
+  },
+  {
+   "title": "Camptown Races",
+   "pdfPage": 60,
+   "page": 60,
+   "conf": "high"
+  },
+  {
+   "title": "Hey There, Good Times",
+   "pdfPage": 60,
+   "page": 60,
+   "conf": "high"
+  },
+  {
+   "title": "Bubbles in the Wine",
+   "pdfPage": 61,
+   "page": 61,
+   "conf": "high"
+  },
+  {
+   "title": "Come Back to Sorrento",
+   "pdfPage": 62,
+   "page": 62,
+   "conf": "high"
+  },
+  {
+   "title": "Come to Me-Bend Tome",
+   "pdfPage": 62,
+   "page": 62,
+   "conf": "high"
+  },
+  {
+   "title": "Columbia, the Gem of the Ocean",
+   "pdfPage": 63,
+   "page": 63,
+   "conf": "high"
+  },
+  {
+   "title": "'M a Brass Band",
+   "pdfPage": 63,
+   "page": 63,
+   "conf": "high"
+  },
+  {
+   "title": "Tie a Yellow Ribbon",
+   "pdfPage": 64,
+   "page": 64,
+   "conf": "high"
+  },
+  {
+   "title": "Ciribiribin",
+   "pdfPage": 65,
+   "page": 65,
+   "conf": "high"
+  },
+  {
+   "title": "The Heather on the Hill",
+   "pdfPage": 65,
+   "page": 65,
+   "conf": "high"
+  },
+  {
+   "title": "Carry Me Back to Old Virginny",
+   "pdfPage": 66,
+   "page": 66,
+   "conf": "high"
+  },
+  {
+   "title": "Cheryl's Going Home",
+   "pdfPage": 66,
+   "page": 66,
+   "conf": "high"
+  },
+  {
+   "title": "Beautiful Ohio",
+   "pdfPage": 67,
+   "page": 67,
+   "conf": "med"
+  },
+  {
+   "title": "California Herei Come",
+   "pdfPage": 67,
+   "page": 67,
+   "conf": "med"
+  },
+  {
+   "title": "Come to the Sea",
+   "pdfPage": 68,
+   "page": 68,
+   "conf": "high"
+  },
+  {
+   "title": "Ding-Dong! the Witch is Dead",
+   "pdfPage": 68,
+   "page": 68,
+   "conf": "high"
+  },
+  {
+   "title": "By Love Possessed",
+   "pdfPage": 69,
+   "page": 69,
+   "conf": "high"
+  },
+  {
+   "title": "Dance Mamma, Dance Pappa, Dance",
+   "pdfPage": 70,
+   "page": 70,
+   "conf": "high"
+  },
+  {
+   "title": "The Devil's Brigade March (| Want a Woman)",
+   "pdfPage": 70,
+   "page": 70,
+   "conf": "high"
+  },
+  {
+   "title": "Dark Eyes",
+   "pdfPage": 71,
+   "page": 71,
+   "conf": "med"
+  },
+  {
+   "title": "Do My Johnny Booker",
+   "pdfPage": 71,
+   "page": 71,
+   "conf": "high"
+  },
+  {
+   "title": "The Drunken Sailor",
+   "pdfPage": 71,
+   "page": 71,
+   "conf": "high"
+  },
+  {
+   "title": "The Darktown Strutters' Ball",
+   "pdfPage": 72,
+   "page": 72,
+   "conf": "high"
+  },
+  {
+   "title": "The Daughter of Peggy O'neil",
+   "pdfPage": 72,
+   "page": 72,
+   "conf": "high"
+  },
+  {
+   "title": "Daytime Friends",
+   "pdfPage": 73,
+   "page": 73,
+   "conf": "high"
+  },
+  {
+   "title": "Deep Purple",
+   "pdfPage": 74,
+   "page": 74,
+   "conf": "high"
+  },
+  {
+   "title": "Don't Get Around Much Anymore",
+   "pdfPage": 74,
+   "page": 74,
+   "conf": "high"
+  },
+  {
+   "title": "Don't it Make My Brown Eyes Blue",
+   "pdfPage": 75,
+   "page": 75,
+   "conf": "high"
+  },
+  {
+   "title": "Down Among the Sheltering Palms",
+   "pdfPage": 76,
+   "page": 76,
+   "conf": "high"
+  },
+  {
+   "title": "Down the Road",
+   "pdfPage": 78,
+   "page": 78,
+   "conf": "high"
+  },
+  {
+   "title": "Mood Indigo",
+   "pdfPage": 78,
+   "page": 78,
+   "conf": "high"
+  },
+  {
+   "title": "Do Nothin' Till You Hear from Me",
+   "pdfPage": 79,
+   "page": 79,
+   "conf": "high"
+  },
+  {
+   "title": "Don't Be That Way",
+   "pdfPage": 79,
+   "page": 79,
+   "conf": "high"
+  },
+  {
+   "title": "Sophisticated Lady",
+   "pdfPage": 80,
+   "page": 80,
+   "conf": "high"
+  },
+  {
+   "title": "Dixieland",
+   "pdfPage": 81,
+   "page": 81,
+   "conf": "med"
+  },
+  {
+   "title": "Do You Ever Think of Me",
+   "pdfPage": 81,
+   "page": 81,
+   "conf": "high"
+  },
+  {
+   "title": "Do You Want to Know a Secret",
+   "pdfPage": 82,
+   "page": 82,
+   "conf": "high"
+  },
+  {
+   "title": "Don't Go Out Into the Rain",
+   "pdfPage": 82,
+   "page": 82,
+   "conf": "high"
+  },
+  {
+   "title": "Down in the Valley",
+   "pdfPage": 83,
+   "page": 83,
+   "conf": "high"
+  },
+  {
+   "title": "Deep River",
+   "pdfPage": 84,
+   "page": 84,
+   "conf": "high"
+  },
+  {
+   "title": "Don't Sit Under the Apple Tree",
+   "pdfPage": 84,
+   "page": 84,
+   "conf": "high"
+  },
+  {
+   "title": "Drink to Me Only with Thine Eyes",
+   "pdfPage": 84,
+   "page": 84,
+   "conf": "high"
+  },
+  {
+   "title": "Easy Street",
+   "pdfPage": 85,
+   "page": 85,
+   "conf": "high"
+  },
+  {
+   "title": "Caravan",
+   "pdfPage": 86,
+   "page": 86,
+   "conf": "med"
+  },
+  {
+   "title": "Ma (He's Making Eyes At Me)",
+   "pdfPage": 86,
+   "page": 86,
+   "conf": "high"
+  },
+  {
+   "title": "Fraulein",
+   "pdfPage": 87,
+   "page": 87,
+   "conf": "high"
+  },
+  {
+   "title": "Ending with a Kiss",
+   "pdfPage": 89,
+   "page": 89,
+   "conf": "high"
+  },
+  {
+   "title": "' Ve Got the World Ona String",
+   "pdfPage": 90,
+   "page": 90,
+   "conf": "high"
+  },
+  {
+   "title": "Eh, Cumpari!",
+   "pdfPage": 91,
+   "page": 91,
+   "conf": "med"
+  },
+  {
+   "title": "Ev'ry Day of My Life",
+   "pdfPage": 91,
+   "page": 91,
+   "conf": "high"
+  },
+  {
+   "title": "Erie Canal",
+   "pdfPage": 92,
+   "page": 92,
+   "conf": "med"
+  },
+  {
+   "title": "Evening Star",
+   "pdfPage": 92,
+   "page": 92,
+   "composer": "Wagner",
+   "conf": "high"
+  },
+  {
+   "title": "Chitty Chitty Bang Bang",
+   "pdfPage": 93,
+   "page": 93,
+   "conf": "high"
+  },
+  {
+   "title": "Everything I Have is Yours",
+   "pdfPage": 94,
+   "page": 94,
+   "conf": "high"
+  },
+  {
+   "title": "A Full Moon and an Empty Heart",
+   "pdfPage": 94,
+   "page": 94,
+   "conf": "high"
+  },
+  {
+   "title": "The Farmer's Curst Wife",
+   "pdfPage": 95,
+   "page": 95,
+   "conf": "high"
+  },
+  {
+   "title": "Farewell My Lily Dear",
+   "pdfPage": 96,
+   "page": 96,
+   "conf": "high"
+  },
+  {
+   "title": "The Farmer in the Dell",
+   "pdfPage": 96,
+   "page": 96,
+   "conf": "high"
+  },
+  {
+   "title": "Fascination",
+   "pdfPage": 96,
+   "page": 96,
+   "conf": "med"
+  },
+  {
+   "title": "Feelings (?Dime?)",
+   "pdfPage": 97,
+   "page": 97,
+   "conf": "high"
+  },
+  {
+   "title": "Ferry-Boat Serenade",
+   "pdfPage": 97,
+   "page": 97,
+   "conf": "high"
+  },
+  {
+   "title": "Down by the River",
+   "pdfPage": 98,
+   "page": 98,
+   "conf": "high"
+  },
+  {
+   "title": "Five Foot Two, Eyes of Blue (Has Anybody Seen My Gal?)",
+   "pdfPage": 99,
+   "page": 99,
+   "conf": "high"
+  },
+  {
+   "title": "Frankie and Johnny",
+   "pdfPage": 99,
+   "page": 99,
+   "conf": "high"
+  },
+  {
+   "title": "Frere Jacques (Brother John)",
+   "pdfPage": 99,
+   "page": 99,
+   "conf": "high"
+  },
+  {
+   "title": "Father, | Stretch My Hands to Thee",
+   "pdfPage": 100,
+   "page": 100,
+   "conf": "high"
+  },
+  {
+   "title": "Fiddle Dee Dee",
+   "pdfPage": 101,
+   "page": 101,
+   "conf": "med"
+  },
+  {
+   "title": "Forget Domani",
+   "pdfPage": 101,
+   "page": 101,
+   "conf": "high"
+  },
+  {
+   "title": "Forever is a Long, Long Time",
+   "pdfPage": 102,
+   "page": 102,
+   "conf": "high"
+  },
+  {
+   "title": "Four Walls",
+   "pdfPage": 102,
+   "page": 102,
+   "conf": "high"
+  },
+  {
+   "title": "The First Time Ever | Saw Your Face",
+   "pdfPage": 103,
+   "page": 103,
+   "conf": "high"
+  },
+  {
+   "title": "Friendly Persuasion (Thee | Love)",
+   "pdfPage": 103,
+   "page": 103,
+   "conf": "high"
+  },
+  {
+   "title": "Frog Went A-Courtin'",
+   "pdfPage": 104,
+   "page": 104,
+   "conf": "high"
+  },
+  {
+   "title": "Vincent (Starry, Starry Night)",
+   "pdfPage": 104,
+   "page": 104,
+   "conf": "high"
+  },
+  {
+   "title": "Fair Ellender",
+   "pdfPage": 105,
+   "page": 105,
+   "conf": "med"
+  },
+  {
+   "title": "From Russia with Love",
+   "pdfPage": 105,
+   "page": 105,
+   "conf": "high"
+  },
+  {
+   "title": "Flow Gently, Sweet Afton",
+   "pdfPage": 106,
+   "page": 106,
+   "conf": "high"
+  },
+  {
+   "title": "Hold Me, Thrill Me, Kissme",
+   "pdfPage": 106,
+   "page": 106,
+   "conf": "high"
+  },
+  {
+   "title": "For He's a Jolly Good Fellow",
+   "pdfPage": 107,
+   "page": 107,
+   "conf": "high"
+  },
+  {
+   "title": "The Bed",
+   "pdfPage": 108,
+   "page": 108,
+   "conf": "med"
+  },
+  {
+   "title": "The Gang That Sang \"Heart of My Heart\"",
+   "pdfPage": 108,
+   "page": 108,
+   "conf": "high"
+  },
+  {
+   "title": "The Gentle Rain",
+   "pdfPage": 109,
+   "page": 109,
+   "conf": "high"
+  },
+  {
+   "title": "Graduation Day",
+   "pdfPage": 109,
+   "page": 109,
+   "conf": "high"
+  },
+  {
+   "title": "Gambler's Blues",
+   "pdfPage": 110,
+   "page": 110,
+   "conf": "high"
+  },
+  {
+   "title": "George Collins",
+   "pdfPage": 110,
+   "page": 110,
+   "conf": "high"
+  },
+  {
+   "title": "Green Tambourine",
+   "pdfPage": 110,
+   "page": 110,
+   "conf": "high"
+  },
+  {
+   "title": "Everythin''s Great!",
+   "pdfPage": 111,
+   "page": 111,
+   "conf": "high"
+  },
+  {
+   "title": "Go Tell Aunt Rhody",
+   "pdfPage": 111,
+   "page": 111,
+   "conf": "high"
+  },
+  {
+   "title": "The Green Leaves of Summer",
+   "pdfPage": 112,
+   "page": 112,
+   "conf": "high"
+  },
+  {
+   "title": "A Thousand Clowns",
+   "pdfPage": 112,
+   "page": 112,
+   "conf": "high"
+  },
+  {
+   "title": "Get Happy",
+   "pdfPage": 113,
+   "page": 113,
+   "conf": "high"
+  },
+  {
+   "title": "Let the Four Winds Blow",
+   "pdfPage": 113,
+   "page": 113,
+   "conf": "high"
+  },
+  {
+   "title": "Goodbye Columbus",
+   "pdfPage": 114,
+   "page": 114,
+   "conf": "high"
+  },
+  {
+   "title": "Good Morning, Mr. Zip-Zip-Zip!",
+   "pdfPage": 114,
+   "page": 114,
+   "conf": "med"
+  },
+  {
+   "title": "Gimme a Little Kiss (Will Yah, Huh?)",
+   "pdfPage": 115,
+   "page": 115,
+   "conf": "high"
+  },
+  {
+   "title": "The Greatest Story Ever Told",
+   "pdfPage": 115,
+   "page": 115,
+   "conf": "high"
+  },
+  {
+   "title": "Give My Regards to Broadway",
+   "pdfPage": 116,
+   "page": 116,
+   "conf": "high"
+  },
+  {
+   "title": "Give the Winds Thy Fears",
+   "pdfPage": 116,
+   "page": 116,
+   "conf": "high"
+  },
+  {
+   "title": "Goldfinger",
+   "pdfPage": 117,
+   "page": 117,
+   "conf": "med"
+  },
+  {
+   "title": "The Good, the Bad and the Ugly",
+   "pdfPage": 117,
+   "page": 117,
+   "conf": "high"
+  },
+  {
+   "title": "Gonna Fly Now (Theme From \"Rocky\")",
+   "pdfPage": 118,
+   "page": 118,
+   "conf": "high"
+  },
+  {
+   "title": "Goober Peas",
+   "pdfPage": 119,
+   "page": 119,
+   "conf": "high"
+  },
+  {
+   "title": "Good-Night Ladies",
+   "pdfPage": 119,
+   "page": 119,
+   "conf": "med"
+  },
+  {
+   "title": "Good Morning Starshine",
+   "pdfPage": 120,
+   "page": 120,
+   "conf": "high"
+  },
+  {
+   "title": "Goodnight Irene",
+   "pdfPage": 120,
+   "page": 120,
+   "conf": "med"
+  },
+  {
+   "title": "Go Down Moses",
+   "pdfPage": 121,
+   "page": 121,
+   "conf": "high"
+  },
+  {
+   "title": "Good-Bye Broadway, Hello France!",
+   "pdfPage": 121,
+   "page": 121,
+   "conf": "high"
+  },
+  {
+   "title": "Good Night Sweetheart",
+   "pdfPage": 121,
+   "page": 121,
+   "conf": "high"
+  },
+  {
+   "title": "Goodbye, Little Bonnie, Goodbye",
+   "pdfPage": 122,
+   "page": 122,
+   "conf": "high"
+  },
+  {
+   "title": "The Green Grass Growing All Around",
+   "pdfPage": 122,
+   "page": 122,
+   "conf": "high"
+  },
+  {
+   "title": "M Gettin' Sentimental Over You",
+   "pdfPage": 124,
+   "page": 124,
+   "conf": "high"
+  },
+  {
+   "title": "The Man on the Flying Trapeze",
+   "pdfPage": 124,
+   "page": 124,
+   "conf": "high"
+  },
+  {
+   "title": "Mother-In-Law",
+   "pdfPage": 125,
+   "page": 125,
+   "conf": "high"
+  },
+  {
+   "title": "Happiness is a Thing Called Joe",
+   "pdfPage": 126,
+   "page": 126,
+   "conf": "high"
+  },
+  {
+   "title": "1 Wonder Who's Kissing Her Now",
+   "pdfPage": 126,
+   "page": 126,
+   "conf": "high"
+  },
+  {
+   "title": "The Great Lover Tango",
+   "pdfPage": 128,
+   "page": 128,
+   "conf": "high"
+  },
+  {
+   "title": "The Happy Wanderer (Val De Ri-Val De Ra)",
+   "pdfPage": 128,
+   "page": 128,
+   "conf": "high"
+  },
+  {
+   "title": "Artza Alinu",
+   "pdfPage": 129,
+   "page": 129,
+   "conf": "med"
+  },
+  {
+   "title": "Hatikvah",
+   "pdfPage": 129,
+   "page": 129,
+   "conf": "med"
+  },
+  {
+   "title": "Havah Nagilah",
+   "pdfPage": 130,
+   "page": 130,
+   "conf": "high"
+  },
+  {
+   "title": "Hawaiian War Chant",
+   "pdfPage": 131,
+   "page": 131,
+   "conf": "high"
+  },
+  {
+   "title": "His Eye is on the Sparrow",
+   "pdfPage": 131,
+   "page": 131,
+   "conf": "high"
+  },
+  {
+   "title": "The House of the Rising Sun",
+   "pdfPage": 132,
+   "page": 132,
+   "conf": "high"
+  },
+  {
+   "title": "Corner of the Sky",
+   "pdfPage": 133,
+   "page": 133,
+   "conf": "med"
+  },
+  {
+   "title": "He's Got the Whole World in His Hands",
+   "pdfPage": 133,
+   "page": 133,
+   "conf": "high"
+  },
+  {
+   "title": "For the Love of Him",
+   "pdfPage": 134,
+   "page": 134,
+   "conf": "med"
+  },
+  {
+   "title": "Hawaii",
+   "pdfPage": 134,
+   "page": 134,
+   "conf": "med"
+  },
+  {
+   "title": "A Horse Named Bill",
+   "pdfPage": 134,
+   "page": 134,
+   "conf": "high"
+  },
+  {
+   "title": "Lovesick Blues",
+   "pdfPage": 135,
+   "page": 135,
+   "conf": "high"
+  },
+  {
+   "title": "Hush, Little Baby",
+   "pdfPage": 136,
+   "page": 136,
+   "conf": "high"
+  },
+  {
+   "title": "Hi-Lili, Hilo",
+   "pdfPage": 137,
+   "page": 137,
+   "conf": "high"
+  },
+  {
+   "title": "A Hot Time in the Old Town Tonight",
+   "pdfPage": 137,
+   "page": 137,
+   "conf": "high"
+  },
+  {
+   "title": "Gimme Some",
+   "pdfPage": 138,
+   "page": 138,
+   "conf": "high"
+  },
+  {
+   "title": "Hang 'Em High",
+   "pdfPage": 138,
+   "page": 138,
+   "conf": "med"
+  },
+  {
+   "title": "Home on the Range",
+   "pdfPage": 140,
+   "page": 140,
+   "conf": "high"
+  },
+  {
+   "title": "House of Blue Lights",
+   "pdfPage": 140,
+   "page": 140,
+   "conf": "high"
+  },
+  {
+   "title": "Hobo's Lullaby",
+   "pdfPage": 141,
+   "page": 141,
+   "conf": "high"
+  },
+  {
+   "title": "How About You?",
+   "pdfPage": 141,
+   "page": 141,
+   "conf": "high"
+  },
+  {
+   "title": "How Are Thy Servants, Blest, Olord",
+   "pdfPage": 142,
+   "page": 142,
+   "conf": "high"
+  },
+  {
+   "title": "How Can | Leave Thee?",
+   "pdfPage": 142,
+   "page": 142,
+   "conf": "high"
+  },
+  {
+   "title": "How to Murder Your Wife",
+   "pdfPage": 143,
+   "page": 143,
+   "conf": "high"
+  },
+  {
+   "title": "Hello! Ma Baby",
+   "pdfPage": 144,
+   "page": 144,
+   "conf": "high"
+  },
+  {
+   "title": "Home Sweet Home",
+   "pdfPage": 144,
+   "page": 144,
+   "conf": "high"
+  },
+  {
+   "title": "Humpty Dumpty",
+   "pdfPage": 144,
+   "page": 144,
+   "conf": "high"
+  },
+  {
+   "title": "After Love",
+   "pdfPage": 145,
+   "page": 145,
+   "conf": "high"
+  },
+  {
+   "title": "Hurt",
+   "pdfPage": 145,
+   "page": 145,
+   "conf": "high"
+  },
+  {
+   "title": "Easy to Behard",
+   "pdfPage": 146,
+   "page": 146,
+   "conf": "high"
+  },
+  {
+   "title": "7M Just a Lucky So and So",
+   "pdfPage": 147,
+   "page": 147,
+   "conf": "high"
+  },
+  {
+   "title": "LTS a Beautiful Day for a Ball Game",
+   "pdfPage": 147,
+   "page": 147,
+   "conf": "high"
+  },
+  {
+   "title": ") Don't Want to Play in Your Yard",
+   "pdfPage": 148,
+   "page": 148,
+   "conf": "high"
+  },
+  {
+   "title": "'M Sitting on Top of the World",
+   "pdfPage": 148,
+   "page": 148,
+   "conf": "high"
+  },
+  {
+   "title": "Cried for You",
+   "pdfPage": 149,
+   "page": 149,
+   "conf": "high"
+  },
+  {
+   "title": "'Ll Never Stop Loving You",
+   "pdfPage": 149,
+   "page": 149,
+   "conf": "high"
+  },
+  {
+   "title": "1 Don't Know You (Anymore)",
+   "pdfPage": 150,
+   "page": 150,
+   "conf": "high"
+  },
+  {
+   "title": "1 Gave My Love a Cherry",
+   "pdfPage": 150,
+   "page": 150,
+   "conf": "high"
+  },
+  {
+   "title": "'Ll See You in My Dreams",
+   "pdfPage": 150,
+   "page": 150,
+   "conf": "high"
+  },
+  {
+   "title": "LF | Give My Heart to You",
+   "pdfPage": 151,
+   "page": 151,
+   "conf": "high"
+  },
+  {
+   "title": "In a Sentimental Mood",
+   "pdfPage": 151,
+   "page": 151,
+   "conf": "high"
+  },
+  {
+   "title": "I'm Walkin'",
+   "pdfPage": 152,
+   "page": 152,
+   "conf": "med"
+  },
+  {
+   "title": ") Love My Love in the Morning",
+   "pdfPage": 153,
+   "page": 153,
+   "conf": "high"
+  },
+  {
+   "title": "LTS a Great Day for the Irish",
+   "pdfPage": 153,
+   "page": 153,
+   "conf": "high"
+  },
+  {
+   "title": ") Love to Tell the Story",
+   "pdfPage": 154,
+   "page": 154,
+   "conf": "high"
+  },
+  {
+   "title": "I've Just Seen Her (As Nobody Else Has Seen Her)",
+   "pdfPage": 154,
+   "page": 154,
+   "conf": "high"
+  },
+  {
+   "title": "In The Middle Of A Kiss",
+   "pdfPage": 154,
+   "page": 154,
+   "conf": "med"
+  },
+  {
+   "title": "1 Love You Truly",
+   "pdfPage": 155,
+   "page": 155,
+   "conf": "high"
+  },
+  {
+   "title": "1 Don't Know Why (i Just Do)",
+   "pdfPage": 156,
+   "page": 156,
+   "conf": "high"
+  },
+  {
+   "title": "1 Never Knew (I Could Love Anybody Like I'm Loving You)",
+   "pdfPage": 156,
+   "page": 156,
+   "conf": "high"
+  },
+  {
+   "title": "Jn the Gloaming",
+   "pdfPage": 156,
+   "page": 156,
+   "conf": "high"
+  },
+  {
+   "title": "1 Need Thee Every Hour",
+   "pdfPage": 157,
+   "page": 157,
+   "conf": "high"
+  },
+  {
+   "title": "LT Might as Well Be Me",
+   "pdfPage": 157,
+   "page": 157,
+   "conf": "high"
+  },
+  {
+   "title": "I'd Like to Teach the World to Sing (In Perfect Harmony)",
+   "pdfPage": 158,
+   "page": 158,
+   "conf": "high"
+  },
+  {
+   "title": "Ida, Sweet as Apple Cider",
+   "pdfPage": 159,
+   "page": 159,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Irma La Douce\" (Look Again)",
+   "pdfPage": 159,
+   "page": 159,
+   "conf": "high"
+  },
+  {
+   "title": "LN the Garden",
+   "pdfPage": 160,
+   "page": 160,
+   "conf": "high"
+  },
+  {
+   "title": "Blue Monday",
+   "pdfPage": 161,
+   "page": 161,
+   "conf": "high"
+  },
+  {
+   "title": "LF My Friends Could See Me Now!",
+   "pdfPage": 162,
+   "page": 162,
+   "conf": "high"
+  },
+  {
+   "title": "It Could Happen to You",
+   "pdfPage": 163,
+   "page": 163,
+   "conf": "high"
+  },
+  {
+   "title": "(Get Some) Cash for Your Trash",
+   "pdfPage": 164,
+   "page": 164,
+   "conf": "high"
+  },
+  {
+   "title": "The Girl | Left Behind",
+   "pdfPage": 164,
+   "page": 164,
+   "conf": "high"
+  },
+  {
+   "title": ") Know Where I'm Going",
+   "pdfPage": 164,
+   "page": 164,
+   "conf": "high"
+  },
+  {
+   "title": "1 Feel Like a Feather in the Breeze",
+   "pdfPage": 165,
+   "page": 165,
+   "conf": "high"
+  },
+  {
+   "title": ") Feel a Song Comin' on",
+   "pdfPage": 166,
+   "page": 166,
+   "conf": "high"
+  },
+  {
+   "title": "'Ll Get by (As Long As | Have You)",
+   "pdfPage": 166,
+   "page": 166,
+   "conf": "high"
+  },
+  {
+   "title": "Am a Man of Constant Sorrow",
+   "pdfPage": 167,
+   "page": 167,
+   "conf": "high"
+  },
+  {
+   "title": "'M a Ding Dong Daddy from Dumas",
+   "pdfPage": 167,
+   "page": 167,
+   "conf": "high"
+  },
+  {
+   "title": "'M Always Chasing Rainbows",
+   "pdfPage": 168,
+   "page": 168,
+   "conf": "high"
+  },
+  {
+   "title": "LM Thru with Love",
+   "pdfPage": 168,
+   "page": 168,
+   "conf": "high"
+  },
+  {
+   "title": "I'm in the Mood for Love",
+   "pdfPage": 169,
+   "page": 169,
+   "conf": "high"
+  },
+  {
+   "title": "Stranger in Paradise",
+   "pdfPage": 169,
+   "page": 169,
+   "conf": "high"
+  },
+  {
+   "title": "1 Love to Cry at Weddings",
+   "pdfPage": 170,
+   "page": 170,
+   "conf": "high"
+  },
+  {
+   "title": "'M Just a Country Boy",
+   "pdfPage": 170,
+   "page": 170,
+   "conf": "high"
+  },
+  {
+   "title": "Don't Stand a Ghost of a Chance (With You)",
+   "pdfPage": 171,
+   "page": 171,
+   "conf": "high"
+  },
+  {
+   "title": ") Believe in Love",
+   "pdfPage": 172,
+   "page": 172,
+   "conf": "high"
+  },
+  {
+   "title": "M Sorry | Made You Cry",
+   "pdfPage": 172,
+   "page": 172,
+   "conf": "high"
+  },
+  {
+   "title": "LT Takes a Great BiG Irish Heart to Sing an Irish Song",
+   "pdfPage": 173,
+   "page": 173,
+   "conf": "high"
+  },
+  {
+   "title": ") Love You",
+   "pdfPage": 174,
+   "page": 174,
+   "conf": "high"
+  },
+  {
+   "title": "In a Little Spanish Town",
+   "pdfPage": 174,
+   "page": 174,
+   "conf": "high"
+  },
+  {
+   "title": "Have You Ever Been Lonely?",
+   "pdfPage": 175,
+   "page": 175,
+   "conf": "high"
+  },
+  {
+   "title": "In the Sweet by and by",
+   "pdfPage": 175,
+   "page": 175,
+   "conf": "high"
+  },
+  {
+   "title": ") Got it Bad and That Ain't Good",
+   "pdfPage": 176,
+   "page": 176,
+   "conf": "high"
+  },
+  {
+   "title": "In the Good Old Summertime",
+   "pdfPage": 176,
+   "page": 176,
+   "conf": "high"
+  },
+  {
+   "title": "Min Love Again",
+   "pdfPage": 177,
+   "page": 177,
+   "conf": "high"
+  },
+  {
+   "title": "Inspector Clouseau Theme",
+   "pdfPage": 177,
+   "page": 177,
+   "conf": "high"
+  },
+  {
+   "title": "LF We Can't Be the Same Old Sweethearts (We'll Just Be The Same Old Friends)",
+   "pdfPage": 178,
+   "page": 178,
+   "conf": "high"
+  },
+  {
+   "title": "In My Merry Oldsmobile",
+   "pdfPage": 178,
+   "page": 178,
+   "conf": "high"
+  },
+  {
+   "title": "Ireland Must Be Heaven",
+   "pdfPage": 178,
+   "page": 178,
+   "conf": "high"
+  },
+  {
+   "title": "1 Forgot More Than You'll Ever Know",
+   "pdfPage": 179,
+   "page": 179,
+   "conf": "high"
+  },
+  {
+   "title": "The Grass Keeps Right on Growing",
+   "pdfPage": 180,
+   "page": 180,
+   "conf": "high"
+  },
+  {
+   "title": "'Ll Keep You Satisfied",
+   "pdfPage": 181,
+   "page": 181,
+   "conf": "high"
+  },
+  {
+   "title": "In the Saddle of the Old Apple Tree",
+   "pdfPage": 182,
+   "page": 182,
+   "conf": "high"
+  },
+  {
+   "title": "LT'S a Most Unusual Day",
+   "pdfPage": 182,
+   "page": 182,
+   "conf": "high"
+  },
+  {
+   "title": "'M Looking Over a Four Leaf Clover",
+   "pdfPage": 183,
+   "page": 183,
+   "conf": "high"
+  },
+  {
+   "title": "LT Happened in Monterey",
+   "pdfPage": 183,
+   "page": 183,
+   "conf": "high"
+  },
+  {
+   "title": "Mr. Smith Goes to Town",
+   "pdfPage": 183,
+   "page": 183,
+   "conf": "high"
+  },
+  {
+   "title": "Married an Angel",
+   "pdfPage": 184,
+   "page": 184,
+   "conf": "high"
+  },
+  {
+   "title": "It's Me, O Lord",
+   "pdfPage": 184,
+   "page": 184,
+   "conf": "med"
+  },
+  {
+   "title": "I've Got a Feelin' You're Foolin'",
+   "pdfPage": 184,
+   "page": 184,
+   "conf": "high"
+  },
+  {
+   "title": "Hey, Good Lookin'",
+   "pdfPage": 185,
+   "page": 185,
+   "conf": "med"
+  },
+  {
+   "title": "Cant Help it",
+   "pdfPage": 185,
+   "page": 185,
+   "conf": "high"
+  },
+  {
+   "title": "For Me and My Gal",
+   "pdfPage": 186,
+   "page": 186,
+   "conf": "high"
+  },
+  {
+   "title": "A Holly Jolly Christmas",
+   "pdfPage": 186,
+   "page": 186,
+   "conf": "high"
+  },
+  {
+   "title": "Hey! Baby!",
+   "pdfPage": 187,
+   "page": 187,
+   "conf": "med"
+  },
+  {
+   "title": "1 Want My Mama (Mama Yo Quiero)",
+   "pdfPage": 188,
+   "page": 188,
+   "conf": "high"
+  },
+  {
+   "title": "Slow Poke",
+   "pdfPage": 188,
+   "page": 188,
+   "conf": "high"
+  },
+  {
+   "title": "1 Wish | Had a Girl",
+   "pdfPage": 189,
+   "page": 189,
+   "conf": "high"
+  },
+  {
+   "title": "Jenny Jenkins",
+   "pdfPage": 190,
+   "page": 190,
+   "conf": "high"
+  },
+  {
+   "title": "Little Girls",
+   "pdfPage": 190,
+   "page": 190,
+   "conf": "med"
+  },
+  {
+   "title": "Heaven's Just a Sinaway",
+   "pdfPage": 192,
+   "page": 192,
+   "conf": "high"
+  },
+  {
+   "title": "Jeanie with the Light Brown Hair",
+   "pdfPage": 192,
+   "page": 192,
+   "conf": "high"
+  },
+  {
+   "title": "Johnson Rag",
+   "pdfPage": 193,
+   "page": 193,
+   "conf": "high"
+  },
+  {
+   "title": "Joshua Fought the Battle of Jericho",
+   "pdfPage": 194,
+   "page": 194,
+   "conf": "high"
+  },
+  {
+   "title": "Just a Closer Walk with Thee",
+   "pdfPage": 194,
+   "page": 194,
+   "conf": "high"
+  },
+  {
+   "title": "Its a Mad, Mad, Mad, Mad World",
+   "pdfPage": 195,
+   "page": 195,
+   "conf": "high"
+  },
+  {
+   "title": "Jack of Diamonds",
+   "pdfPage": 197,
+   "page": 197,
+   "conf": "high"
+  },
+  {
+   "title": "The James Bond Theme",
+   "pdfPage": 197,
+   "page": 197,
+   "conf": "high"
+  },
+  {
+   "title": "Kentucky Bootlegger",
+   "pdfPage": 198,
+   "page": 198,
+   "conf": "high"
+  },
+  {
+   "title": "Don't Forget 127th Street",
+   "pdfPage": 199,
+   "page": 199,
+   "conf": "high"
+  },
+  {
+   "title": "K-K-K-Katy",
+   "pdfPage": 199,
+   "page": 199,
+   "conf": "med"
+  },
+  {
+   "title": "Kashmiri Song (Pale Hands | Loved)",
+   "pdfPage": 200,
+   "page": 200,
+   "conf": "high"
+  },
+  {
+   "title": "A Kiss to Build a Dream on",
+   "pdfPage": 200,
+   "page": 200,
+   "conf": "high"
+  },
+  {
+   "title": "Kum Baya",
+   "pdfPage": 200,
+   "page": 200,
+   "conf": "high"
+  },
+  {
+   "title": "The Little Drummer Boy",
+   "pdfPage": 201,
+   "page": 201,
+   "conf": "high"
+  },
+  {
+   "title": "Girl of My Dreams",
+   "pdfPage": 202,
+   "page": 202,
+   "conf": "high"
+  },
+  {
+   "title": "Kiss an Angel Good Mornin'",
+   "pdfPage": 202,
+   "page": 202,
+   "conf": "high"
+  },
+  {
+   "title": "La Donna E Mobile",
+   "pdfPage": 204,
+   "page": 204,
+   "composer": "Verdi",
+   "conf": "high"
+  },
+  {
+   "title": "Live and Let Die",
+   "pdfPage": 204,
+   "page": 204,
+   "conf": "high"
+  },
+  {
+   "title": "1 Heard the Bells on Christmas Day",
+   "pdfPage": 205,
+   "page": 205,
+   "conf": "high"
+  },
+  {
+   "title": "The Last Rose of Summer",
+   "pdfPage": 205,
+   "page": 205,
+   "conf": "high"
+  },
+  {
+   "title": "London Bridge",
+   "pdfPage": 205,
+   "page": 205,
+   "conf": "high"
+  },
+  {
+   "title": "Love's Old Sweet Song",
+   "pdfPage": 205,
+   "page": 205,
+   "conf": "high"
+  },
+  {
+   "title": "Does Anybody Really Know What Time Itis",
+   "pdfPage": 206,
+   "page": 206,
+   "conf": "high"
+  },
+  {
+   "title": "Laura",
+   "pdfPage": 206,
+   "page": 206,
+   "conf": "high"
+  },
+  {
+   "title": "Londonderry Air",
+   "pdfPage": 207,
+   "page": 207,
+   "conf": "high"
+  },
+  {
+   "title": "The Lark and the Magpie",
+   "pdfPage": 208,
+   "page": 208,
+   "conf": "high"
+  },
+  {
+   "title": "Lazy Mary, Will You Get up?",
+   "pdfPage": 208,
+   "page": 208,
+   "conf": "high"
+  },
+  {
+   "title": "Love is a Many-Splendored Thing",
+   "pdfPage": 208,
+   "page": 208,
+   "conf": "high"
+  },
+  {
+   "title": "Let the Sunshine in",
+   "pdfPage": 209,
+   "page": 209,
+   "conf": "high"
+  },
+  {
+   "title": "Li'l Liza Jane",
+   "pdfPage": 210,
+   "page": 210,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Lilies of the Field\"",
+   "pdfPage": 210,
+   "page": 210,
+   "conf": "high"
+  },
+  {
+   "title": "Love Makes the World Go 'Round",
+   "pdfPage": 210,
+   "page": 210,
+   "conf": "high"
+  },
+  {
+   "title": "Love Will Find a Way",
+   "pdfPage": 210,
+   "page": 210,
+   "conf": "high"
+  },
+  {
+   "title": "The Liberty Song",
+   "pdfPage": 211,
+   "page": 211,
+   "conf": "high"
+  },
+  {
+   "title": "Little Boy Lost (Pieces Of Dreams)",
+   "pdfPage": 211,
+   "page": 211,
+   "conf": "high"
+  },
+  {
+   "title": "Loch Lomond",
+   "pdfPage": 212,
+   "page": 212,
+   "conf": "high"
+  },
+  {
+   "title": "Love is Just Around the Corner",
+   "pdfPage": 212,
+   "page": 212,
+   "conf": "high"
+  },
+  {
+   "title": "Love Letters",
+   "pdfPage": 212,
+   "page": 212,
+   "conf": "high"
+  },
+  {
+   "title": "Lead, Kindly Light",
+   "pdfPage": 213,
+   "page": 213,
+   "conf": "high"
+  },
+  {
+   "title": "Little Things Mean Alot",
+   "pdfPage": 213,
+   "page": 213,
+   "conf": "high"
+  },
+  {
+   "title": "All In Love Is Fair",
+   "pdfPage": 214,
+   "page": 214,
+   "conf": "med"
+  },
+  {
+   "title": "1 Can't Give You Anything but Love",
+   "pdfPage": 214,
+   "page": 214,
+   "conf": "high"
+  },
+  {
+   "title": "1 Want to Walk You Home",
+   "pdfPage": 215,
+   "page": 215,
+   "conf": "high"
+  },
+  {
+   "title": "Loveis All We Need",
+   "pdfPage": 215,
+   "page": 215,
+   "conf": "high"
+  },
+  {
+   "title": "Listen to the Mockingbird",
+   "pdfPage": 216,
+   "page": 216,
+   "conf": "high"
+  },
+  {
+   "title": "Little Brown Jug",
+   "pdfPage": 216,
+   "page": 216,
+   "conf": "high"
+  },
+  {
+   "title": "Lovely is She",
+   "pdfPage": 216,
+   "page": 216,
+   "conf": "high"
+  },
+  {
+   "title": "0oh Poo Pah Doo",
+   "pdfPage": 217,
+   "page": 217,
+   "conf": "high"
+  },
+  {
+   "title": "See the Funny Little Clown",
+   "pdfPage": 218,
+   "page": 218,
+   "conf": "high"
+  },
+  {
+   "title": "Lady of Spain",
+   "pdfPage": 219,
+   "page": 219,
+   "conf": "high"
+  },
+  {
+   "title": "The Magnificent Seven",
+   "pdfPage": 220,
+   "page": 220,
+   "conf": "high"
+  },
+  {
+   "title": "Make Me Rainbows",
+   "pdfPage": 221,
+   "page": 221,
+   "conf": "high"
+  },
+  {
+   "title": "Meet Me in St. Louis, Louis",
+   "pdfPage": 221,
+   "page": 221,
+   "conf": "high"
+  },
+  {
+   "title": "My Love Loves Me",
+   "pdfPage": 222,
+   "page": 222,
+   "conf": "high"
+  },
+  {
+   "title": "Mala Femmena",
+   "pdfPage": 223,
+   "page": 223,
+   "conf": "high"
+  },
+  {
+   "title": "Mary Had a Little Lamb",
+   "pdfPage": 223,
+   "page": 223,
+   "conf": "high"
+  },
+  {
+   "title": "My Faith Looks up to Thee",
+   "pdfPage": 223,
+   "page": 223,
+   "conf": "high"
+  },
+  {
+   "title": "Mr. Blue",
+   "pdfPage": 224,
+   "page": 224,
+   "conf": "med"
+  },
+  {
+   "title": "On the Sunny Side of the Street",
+   "pdfPage": 224,
+   "page": 224,
+   "conf": "high"
+  },
+  {
+   "title": "Mi Casa, Sucasa",
+   "pdfPage": 225,
+   "page": 225,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Midnight Cowboy\"",
+   "pdfPage": 225,
+   "page": 225,
+   "conf": "high"
+  },
+  {
+   "title": "Mary-Anne",
+   "pdfPage": 226,
+   "page": 226,
+   "conf": "high"
+  },
+  {
+   "title": "Johnny Angel",
+   "pdfPage": 227,
+   "page": 227,
+   "conf": "high"
+  },
+  {
+   "title": "Moonlight Serenade",
+   "pdfPage": 227,
+   "page": 227,
+   "conf": "high"
+  },
+  {
+   "title": "The Man on the Flying Trapeze",
+   "pdfPage": 229,
+   "page": 229,
+   "conf": "high"
+  },
+  {
+   "title": "Massa's in the Cold, Cold Ground",
+   "pdfPage": 229,
+   "page": 229,
+   "conf": "high"
+  },
+  {
+   "title": "Molly Malone (Cockles And Mussels)",
+   "pdfPage": 229,
+   "page": 229,
+   "conf": "high"
+  },
+  {
+   "title": "My Wild Irish Rose",
+   "pdfPage": 230,
+   "page": 230,
+   "conf": "high"
+  },
+  {
+   "title": "Maybe",
+   "pdfPage": 231,
+   "page": 231,
+   "conf": "high"
+  },
+  {
+   "title": "My Old Kentucky Home",
+   "pdfPage": 231,
+   "page": 231,
+   "conf": "high"
+  },
+  {
+   "title": "More Than You Know",
+   "pdfPage": 232,
+   "page": 232,
+   "conf": "high"
+  },
+  {
+   "title": "Manana",
+   "pdfPage": 233,
+   "page": 233,
+   "conf": "high"
+  },
+  {
+   "title": "Mighty Lak' a Rose",
+   "pdfPage": 233,
+   "page": 233,
+   "conf": "high"
+  },
+  {
+   "title": "Talk to the Animals",
+   "pdfPage": 235,
+   "page": 235,
+   "conf": "high"
+  },
+  {
+   "title": "Manhattan Serenade",
+   "pdfPage": 236,
+   "page": 236,
+   "conf": "high"
+  },
+  {
+   "title": "Everytime Two Fools Collide",
+   "pdfPage": 237,
+   "page": 237,
+   "conf": "high"
+  },
+  {
+   "title": "Marine's Hymn",
+   "pdfPage": 237,
+   "page": 237,
+   "conf": "high"
+  },
+  {
+   "title": "My Bonnie",
+   "pdfPage": 238,
+   "page": 238,
+   "conf": "high"
+  },
+  {
+   "title": "My Little Red Book",
+   "pdfPage": 239,
+   "page": 239,
+   "conf": "high"
+  },
+  {
+   "title": "Broadway Baby",
+   "pdfPage": 241,
+   "page": 241,
+   "conf": "high"
+  },
+  {
+   "title": "Think Summer",
+   "pdfPage": 242,
+   "page": 242,
+   "conf": "high"
+  },
+  {
+   "title": "My Little Grass Shack in Kealakekua, HAWAIl",
+   "pdfPage": 243,
+   "page": 243,
+   "conf": "high"
+  },
+  {
+   "title": "Michael, Row the Boat Ashore",
+   "pdfPage": 244,
+   "page": 244,
+   "conf": "high"
+  },
+  {
+   "title": "Annie",
+   "pdfPage": 245,
+   "page": 245,
+   "conf": "med"
+  },
+  {
+   "title": "A Mighty Fortress lS Our God",
+   "pdfPage": 245,
+   "page": 245,
+   "conf": "high"
+  },
+  {
+   "title": "Mister Banjo",
+   "pdfPage": 245,
+   "page": 245,
+   "conf": "high"
+  },
+  {
+   "title": "Down by the Old Mill Stream",
+   "pdfPage": 246,
+   "page": 246,
+   "conf": "high"
+  },
+  {
+   "title": "Mary's a Grand Old Name",
+   "pdfPage": 246,
+   "page": 246,
+   "conf": "high"
+  },
+  {
+   "title": "(Put Another Nickel In) Music, Music, Music",
+   "pdfPage": 246,
+   "page": 246,
+   "conf": "high"
+  },
+  {
+   "title": "Beer Barrel Polka",
+   "pdfPage": 247,
+   "page": 247,
+   "conf": "high"
+  },
+  {
+   "title": "Nearer My God to Thee",
+   "pdfPage": 247,
+   "page": 247,
+   "conf": "high"
+  },
+  {
+   "title": "Nobody Knows the Trouble I'vehad",
+   "pdfPage": 247,
+   "page": 247,
+   "conf": "high"
+  },
+  {
+   "title": "Nellie Was A Lady",
+   "pdfPage": 248,
+   "page": 248,
+   "conf": "med"
+  },
+  {
+   "title": "Nelly Bly",
+   "pdfPage": 248,
+   "page": 248,
+   "conf": "high"
+  },
+  {
+   "title": "No! No! a Thousand Times No!",
+   "pdfPage": 248,
+   "page": 248,
+   "conf": "high"
+  },
+  {
+   "title": "Now the Day is Over",
+   "pdfPage": 248,
+   "page": 248,
+   "conf": "high"
+  },
+  {
+   "title": "Never on Sunday",
+   "pdfPage": 249,
+   "page": 249,
+   "conf": "high"
+  },
+  {
+   "title": "North to Alaska",
+   "pdfPage": 249,
+   "page": 249,
+   "conf": "high"
+  },
+  {
+   "title": "Nobody Does it Better",
+   "pdfPage": 250,
+   "page": 250,
+   "conf": "high"
+  },
+  {
+   "title": "New River Train",
+   "pdfPage": 251,
+   "page": 251,
+   "conf": "high"
+  },
+  {
+   "title": "Nine Hundred Miles",
+   "pdfPage": 251,
+   "page": 251,
+   "conf": "high"
+  },
+  {
+   "title": "Oh Happy Day",
+   "pdfPage": 251,
+   "page": 251,
+   "conf": "high"
+  },
+  {
+   "title": "0 Waly, Waly",
+   "pdfPage": 252,
+   "page": 252,
+   "conf": "high"
+  },
+  {
+   "title": "Oh, My Little Darling",
+   "pdfPage": 252,
+   "page": 252,
+   "conf": "high"
+  },
+  {
+   "title": "On the Beach at Waikiki",
+   "pdfPage": 252,
+   "page": 252,
+   "conf": "high"
+  },
+  {
+   "title": "Open Now Thy Gates of Beauty",
+   "pdfPage": 252,
+   "page": 252,
+   "conf": "high"
+  },
+  {
+   "title": "The Great Escape March",
+   "pdfPage": 254,
+   "page": 254,
+   "conf": "high"
+  },
+  {
+   "title": "Oh Marie",
+   "pdfPage": 254,
+   "page": 254,
+   "conf": "med"
+  },
+  {
+   "title": "Old Dan Tucker",
+   "pdfPage": 255,
+   "page": 255,
+   "conf": "high"
+  },
+  {
+   "title": "Oh Bury Me Not on the Lone Prairie",
+   "pdfPage": 256,
+   "page": 256,
+   "conf": "high"
+  },
+  {
+   "title": "Oold Dog Tray",
+   "pdfPage": 256,
+   "page": 256,
+   "conf": "high"
+  },
+  {
+   "title": "The Old Oaken Bucket",
+   "pdfPage": 256,
+   "page": 256,
+   "conf": "high"
+  },
+  {
+   "title": "0 Sole Mio",
+   "pdfPage": 257,
+   "page": 257,
+   "conf": "high"
+  },
+  {
+   "title": "Old Folks at Home",
+   "pdfPage": 257,
+   "page": 257,
+   "conf": "high"
+  },
+  {
+   "title": "On the Banks of the Wabash",
+   "pdfPage": 257,
+   "page": 257,
+   "conf": "high"
+  },
+  {
+   "title": "City of New Orleans",
+   "pdfPage": 258,
+   "page": 258,
+   "conf": "high"
+  },
+  {
+   "title": "Never Ending Song of Love",
+   "pdfPage": 259,
+   "page": 259,
+   "conf": "high"
+  },
+  {
+   "title": "Old Blue",
+   "pdfPage": 259,
+   "page": 259,
+   "conf": "med"
+  },
+  {
+   "title": "Old Time Religion",
+   "pdfPage": 259,
+   "page": 259,
+   "conf": "high"
+  },
+  {
+   "title": "Old Black Joe",
+   "pdfPage": 260,
+   "page": 260,
+   "conf": "high"
+  },
+  {
+   "title": "On the Atchison, Topeka and the Santa Fe",
+   "pdfPage": 260,
+   "page": 260,
+   "conf": "high"
+  },
+  {
+   "title": "Old MacDONALD Had a Farm",
+   "pdfPage": 261,
+   "page": 261,
+   "conf": "high"
+  },
+  {
+   "title": "On Green Dolphin Street",
+   "pdfPage": 261,
+   "page": 261,
+   "conf": "high"
+  },
+  {
+   "title": "Over the River and Through the Woods",
+   "pdfPage": 261,
+   "page": 261,
+   "conf": "high"
+  },
+  {
+   "title": "Mira (Can You Imagine That?)",
+   "pdfPage": 262,
+   "page": 262,
+   "conf": "high"
+  },
+  {
+   "title": "Oh Where Has My Little Dog Gone?",
+   "pdfPage": 262,
+   "page": 262,
+   "conf": "high"
+  },
+  {
+   "title": "Roll Along Prairie Moon",
+   "pdfPage": 262,
+   "page": 262,
+   "conf": "high"
+  },
+  {
+   "title": "Onward, Christian Soldiers",
+   "pdfPage": 263,
+   "page": 263,
+   "conf": "high"
+  },
+  {
+   "title": "How Come You Do Me Like You Do",
+   "pdfPage": 264,
+   "page": 264,
+   "conf": "high"
+  },
+  {
+   "title": "One More River",
+   "pdfPage": 264,
+   "page": 264,
+   "conf": "high"
+  },
+  {
+   "title": "On the Isle of May",
+   "pdfPage": 265,
+   "page": 265,
+   "conf": "high"
+  },
+  {
+   "title": "One O'clock Jump",
+   "pdfPage": 265,
+   "page": 265,
+   "conf": "high"
+  },
+  {
+   "title": "My Melancholy Baby",
+   "pdfPage": 266,
+   "page": 266,
+   "conf": "high"
+  },
+  {
+   "title": "Once in a Lifetime",
+   "pdfPage": 267,
+   "page": 267,
+   "conf": "high"
+  },
+  {
+   "title": "Oh How Lovely is the Evening",
+   "pdfPage": 268,
+   "page": 268,
+   "conf": "high"
+  },
+  {
+   "title": "The Old Gray Mare",
+   "pdfPage": 269,
+   "page": 269,
+   "conf": "high"
+  },
+  {
+   "title": "On Top of Old Smoky",
+   "pdfPage": 269,
+   "page": 269,
+   "conf": "high"
+  },
+  {
+   "title": "Once Upon a Time",
+   "pdfPage": 269,
+   "page": 269,
+   "conf": "high"
+  },
+  {
+   "title": "On Her Majesty's Secret Service",
+   "pdfPage": 270,
+   "page": 270,
+   "conf": "high"
+  },
+  {
+   "title": "One Little Girl Ata Time",
+   "pdfPage": 271,
+   "page": 271,
+   "conf": "high"
+  },
+  {
+   "title": "Over the Rainbow",
+   "pdfPage": 271,
+   "page": 271,
+   "conf": "high"
+  },
+  {
+   "title": "Oh Dear! What Can the Matter Be?",
+   "pdfPage": 272,
+   "page": 272,
+   "conf": "high"
+  },
+  {
+   "title": "Oh! Susanna",
+   "pdfPage": 272,
+   "page": 272,
+   "conf": "high"
+  },
+  {
+   "title": "Over There",
+   "pdfPage": 272,
+   "page": 272,
+   "conf": "high"
+  },
+  {
+   "title": "0 for a Faith That Will Not Shrink",
+   "pdfPage": 273,
+   "page": 273,
+   "conf": "high"
+  },
+  {
+   "title": "Oh! Them Golden Slippers",
+   "pdfPage": 273,
+   "page": 273,
+   "conf": "high"
+  },
+  {
+   "title": "Peggy O'neil",
+   "pdfPage": 273,
+   "page": 273,
+   "conf": "med"
+  },
+  {
+   "title": "Paper of Pins",
+   "pdfPage": 274,
+   "page": 274,
+   "conf": "high"
+  },
+  {
+   "title": "Please",
+   "pdfPage": 274,
+   "page": 274,
+   "conf": "med"
+  },
+  {
+   "title": "Fight Song",
+   "pdfPage": 275,
+   "page": 275,
+   "conf": "med"
+  },
+  {
+   "title": "Paper Roses",
+   "pdfPage": 275,
+   "page": 275,
+   "conf": "med"
+  },
+  {
+   "title": "Pat-A-Cake",
+   "pdfPage": 276,
+   "page": 276,
+   "conf": "med"
+  },
+  {
+   "title": "Pennsylvania 6-5000",
+   "pdfPage": 276,
+   "page": 276,
+   "conf": "high"
+  },
+  {
+   "title": "Praise God from Whom All Blessings Flow",
+   "pdfPage": 277,
+   "page": 277,
+   "conf": "high"
+  },
+  {
+   "title": "Put a Little Love in Your Heart",
+   "pdfPage": 277,
+   "page": 277,
+   "conf": "high"
+  },
+  {
+   "title": "Pal of My Cradle Days",
+   "pdfPage": 278,
+   "page": 278,
+   "conf": "high"
+  },
+  {
+   "title": "Paris Blues",
+   "pdfPage": 278,
+   "page": 278,
+   "conf": "high"
+  },
+  {
+   "title": "Pagan Love Song",
+   "pdfPage": 279,
+   "page": 279,
+   "conf": "high"
+  },
+  {
+   "title": "Pick a Bale of Cotton",
+   "pdfPage": 279,
+   "page": 279,
+   "conf": "high"
+  },
+  {
+   "title": "Hail! Hail! the Gang's All Here",
+   "pdfPage": 280,
+   "page": 280,
+   "conf": "high"
+  },
+  {
+   "title": "Peg O' My Heart",
+   "pdfPage": 280,
+   "page": 280,
+   "conf": "high"
+  },
+  {
+   "title": "The Quilting Party",
+   "pdfPage": 280,
+   "page": 280,
+   "conf": "high"
+  },
+  {
+   "title": "Polly Wolly Doodle",
+   "pdfPage": 281,
+   "page": 281,
+   "conf": "high"
+  },
+  {
+   "title": "The Rose of Tralee",
+   "pdfPage": 281,
+   "page": 281,
+   "conf": "high"
+  },
+  {
+   "title": ") Heard the Voice of Jesus",
+   "pdfPage": 283,
+   "page": 283,
+   "conf": "high"
+  },
+  {
+   "title": "Ready for the Times to Get Better",
+   "pdfPage": 284,
+   "page": 284,
+   "conf": "high"
+  },
+  {
+   "title": "Red River Valley",
+   "pdfPage": 284,
+   "page": 284,
+   "conf": "med"
+  },
+  {
+   "title": "'Round Her Neck She Wears a Yellow Ribbon",
+   "pdfPage": 284,
+   "page": 284,
+   "conf": "high"
+  },
+  {
+   "title": "Racing with the Moon",
+   "pdfPage": 285,
+   "page": 285,
+   "conf": "high"
+  },
+  {
+   "title": "Looks Like We Made it",
+   "pdfPage": 286,
+   "page": 286,
+   "conf": "high"
+  },
+  {
+   "title": "Ragtime Cowboy Joe",
+   "pdfPage": 286,
+   "page": 286,
+   "conf": "high"
+  },
+  {
+   "title": "Reuben and Rachel",
+   "pdfPage": 287,
+   "page": 287,
+   "conf": "high"
+  },
+  {
+   "title": "Riorita",
+   "pdfPage": 287,
+   "page": 287,
+   "conf": "med"
+  },
+  {
+   "title": "Rome Will Never Leave You",
+   "pdfPage": 287,
+   "page": 287,
+   "conf": "high"
+  },
+  {
+   "title": "Rocked in the Cradle of the Deep",
+   "pdfPage": 288,
+   "page": 288,
+   "conf": "high"
+  },
+  {
+   "title": "Roses Are Red (My Love)",
+   "pdfPage": 288,
+   "page": 288,
+   "conf": "high"
+  },
+  {
+   "title": "Rock-A-Bye Your Baby with a Dixie Melody",
+   "pdfPage": 289,
+   "page": 289,
+   "conf": "high"
+  },
+  {
+   "title": "Rock-A-Bye, Baby",
+   "pdfPage": 290,
+   "page": 290,
+   "conf": "high"
+  },
+  {
+   "title": "Rock of Ages",
+   "pdfPage": 291,
+   "page": 291,
+   "conf": "high"
+  },
+  {
+   "title": "Roll Jordan, Roll",
+   "pdfPage": 291,
+   "page": 291,
+   "conf": "high"
+  },
+  {
+   "title": "The Russians Are Coming",
+   "pdfPage": 291,
+   "page": 291,
+   "conf": "high"
+  },
+  {
+   "title": "Ruby",
+   "pdfPage": 292,
+   "page": 292,
+   "conf": "high"
+  },
+  {
+   "title": "The Bow of Love",
+   "pdfPage": 293,
+   "page": 293,
+   "conf": "high"
+  },
+  {
+   "title": "Row, Row, Row Your Boat",
+   "pdfPage": 293,
+   "page": 293,
+   "conf": "high"
+  },
+  {
+   "title": "Scarborough Fair",
+   "pdfPage": 294,
+   "page": 294,
+   "conf": "high"
+  },
+  {
+   "title": "Sea Hunt",
+   "pdfPage": 294,
+   "page": 294,
+   "conf": "med"
+  },
+  {
+   "title": "Santa Lucia",
+   "pdfPage": 295,
+   "page": 295,
+   "conf": "high"
+  },
+  {
+   "title": "A Second Chance",
+   "pdfPage": 296,
+   "page": 296,
+   "conf": "high"
+  },
+  {
+   "title": "The Secret of Christmas",
+   "pdfPage": 297,
+   "page": 297,
+   "conf": "high"
+  },
+  {
+   "title": "Single Girl",
+   "pdfPage": 297,
+   "page": 297,
+   "conf": "high"
+  },
+  {
+   "title": "How Great Thou Art",
+   "pdfPage": 298,
+   "page": 298,
+   "conf": "high"
+  },
+  {
+   "title": "Sleigh Ride",
+   "pdfPage": 298,
+   "page": 298,
+   "conf": "med"
+  },
+  {
+   "title": "The Seventh Dawn",
+   "pdfPage": 299,
+   "page": 299,
+   "conf": "high"
+  },
+  {
+   "title": "Some Like Ithot",
+   "pdfPage": 299,
+   "page": 299,
+   "conf": "high"
+  },
+  {
+   "title": "She is More to Be Pitied Than Censured",
+   "pdfPage": 300,
+   "page": 300,
+   "conf": "high"
+  },
+  {
+   "title": "Shenandoah",
+   "pdfPage": 300,
+   "page": 300,
+   "conf": "high"
+  },
+  {
+   "title": "Springfield Mountain",
+   "pdfPage": 300,
+   "page": 300,
+   "conf": "high"
+  },
+  {
+   "title": "Doing Good",
+   "pdfPage": 301,
+   "page": 301,
+   "conf": "high"
+  },
+  {
+   "title": "Shortnin' Bread",
+   "pdfPage": 301,
+   "page": 301,
+   "conf": "high"
+  },
+  {
+   "title": "Sur Le Pont D'avignon",
+   "pdfPage": 301,
+   "page": 301,
+   "conf": "high"
+  },
+  {
+   "title": "Shoo Fly, Don't Bother Me",
+   "pdfPage": 302,
+   "page": 302,
+   "conf": "high"
+  },
+  {
+   "title": "Should I",
+   "pdfPage": 302,
+   "page": 302,
+   "conf": "med"
+  },
+  {
+   "title": "Siboney",
+   "pdfPage": 302,
+   "page": 302,
+   "conf": "med"
+  },
+  {
+   "title": "Si Cantemo",
+   "pdfPage": 303,
+   "page": 303,
+   "conf": "med"
+  },
+  {
+   "title": "Sing, Sing, Sing",
+   "pdfPage": 303,
+   "page": 303,
+   "conf": "high"
+  },
+  {
+   "title": "Sinner Man",
+   "pdfPage": 304,
+   "page": 304,
+   "conf": "high"
+  },
+  {
+   "title": "Swingin' Down the Lane",
+   "pdfPage": 304,
+   "page": 304,
+   "conf": "high"
+  },
+  {
+   "title": "Illya Darling",
+   "pdfPage": 305,
+   "page": 305,
+   "conf": "high"
+  },
+  {
+   "title": "Somewhere, My Love",
+   "pdfPage": 306,
+   "page": 306,
+   "conf": "high"
+  },
+  {
+   "title": "Softly, Asi Leave You",
+   "pdfPage": 307,
+   "page": 307,
+   "conf": "high"
+  },
+  {
+   "title": "The Sweetest Story Ever Told",
+   "pdfPage": 307,
+   "page": 307,
+   "conf": "high"
+  },
+  {
+   "title": "Spring is Here",
+   "pdfPage": 308,
+   "page": 308,
+   "conf": "high"
+  },
+  {
+   "title": "Somebody Stole My Gal",
+   "pdfPage": 309,
+   "page": 309,
+   "conf": "med"
+  },
+  {
+   "title": "A Song of Old Hawaii",
+   "pdfPage": 310,
+   "page": 310,
+   "conf": "high"
+  },
+  {
+   "title": "Stand up, Stand up for Jesus",
+   "pdfPage": 310,
+   "page": 310,
+   "conf": "high"
+  },
+  {
+   "title": "Swing Low, Sweet Chariot",
+   "pdfPage": 310,
+   "page": 310,
+   "conf": "high"
+  },
+  {
+   "title": "Just Walkin' in the Rain",
+   "pdfPage": 311,
+   "page": 311,
+   "conf": "high"
+  },
+  {
+   "title": "The Second Time Around",
+   "pdfPage": 311,
+   "page": 311,
+   "conf": "high"
+  },
+  {
+   "title": "The Streets of Laredo",
+   "pdfPage": 312,
+   "page": 312,
+   "conf": "high"
+  },
+  {
+   "title": "Hallelujah Trail",
+   "pdfPage": 313,
+   "page": 313,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet and Low",
+   "pdfPage": 313,
+   "page": 313,
+   "conf": "high"
+  },
+  {
+   "title": "She Was Poor but She Was Honest",
+   "pdfPage": 314,
+   "page": 314,
+   "conf": "high"
+  },
+  {
+   "title": "Splish Splash",
+   "pdfPage": 314,
+   "page": 314,
+   "conf": "high"
+  },
+  {
+   "title": "Singin' in the Rain",
+   "pdfPage": 315,
+   "page": 315,
+   "conf": "high"
+  },
+  {
+   "title": "Stagger Lee wo",
+   "pdfPage": 315,
+   "page": 315,
+   "conf": "high"
+  },
+  {
+   "title": "Stairway to the Stars",
+   "pdfPage": 316,
+   "page": 316,
+   "conf": "high"
+  },
+  {
+   "title": "The Shadow of Your Smile",
+   "pdfPage": 316,
+   "page": 316,
+   "conf": "high"
+  },
+  {
+   "title": "The Star-Spangled Banner",
+   "pdfPage": 317,
+   "page": 317,
+   "conf": "high"
+  },
+  {
+   "title": "Stompin' at the Savoy",
+   "pdfPage": 318,
+   "page": 318,
+   "conf": "high"
+  },
+  {
+   "title": "Donna",
+   "pdfPage": 319,
+   "page": 319,
+   "conf": "med"
+  },
+  {
+   "title": "Morning Glow",
+   "pdfPage": 320,
+   "page": 320,
+   "conf": "high"
+  },
+  {
+   "title": "Summer is A-Comin'in",
+   "pdfPage": 321,
+   "page": 321,
+   "conf": "high"
+  },
+  {
+   "title": "She'll Be Comin' Round the Mountain",
+   "pdfPage": 323,
+   "page": 323,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet and Lovely",
+   "pdfPage": 323,
+   "page": 323,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Rosie O'grady",
+   "pdfPage": 323,
+   "page": 323,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"the Saint\"",
+   "pdfPage": 324,
+   "page": 324,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Charity",
+   "pdfPage": 324,
+   "page": 324,
+   "conf": "high"
+  },
+  {
+   "title": "Sealed with a Kiss",
+   "pdfPage": 325,
+   "page": 325,
+   "conf": "high"
+  },
+  {
+   "title": "Seven Little Girls (Sitting In The Back Seat)",
+   "pdfPage": 325,
+   "page": 325,
+   "conf": "high"
+  },
+  {
+   "title": "Shady Grove",
+   "pdfPage": 326,
+   "page": 326,
+   "conf": "high"
+  },
+  {
+   "title": "So Rare",
+   "pdfPage": 326,
+   "page": 326,
+   "conf": "high"
+  },
+  {
+   "title": "The Sidewalks of New York",
+   "pdfPage": 327,
+   "page": 327,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Betsy from Pike",
+   "pdfPage": 327,
+   "page": 327,
+   "conf": "high"
+  },
+  {
+   "title": "Three O'clock in the Morning",
+   "pdfPage": 327,
+   "page": 327,
+   "conf": "high"
+  },
+  {
+   "title": "Minnie the Moocher (The Ho De Ho Song)",
+   "pdfPage": 328,
+   "page": 328,
+   "conf": "high"
+  },
+  {
+   "title": "The Top of the Mornin'",
+   "pdfPage": 328,
+   "page": 328,
+   "conf": "med"
+  },
+  {
+   "title": "It's a Nice Face",
+   "pdfPage": 329,
+   "page": 329,
+   "conf": "high"
+  },
+  {
+   "title": "Toyland",
+   "pdfPage": 329,
+   "page": 329,
+   "conf": "high"
+  },
+  {
+   "title": "Take a Chance on Me",
+   "pdfPage": 330,
+   "page": 330,
+   "conf": "high"
+  },
+  {
+   "title": "Taking a Chance on Love",
+   "pdfPage": 331,
+   "page": 331,
+   "conf": "high"
+  },
+  {
+   "title": "Turkey in the Straw",
+   "pdfPage": 331,
+   "page": 331,
+   "conf": "high"
+  },
+  {
+   "title": "A Taste of Honey",
+   "pdfPage": 332,
+   "page": 332,
+   "conf": "high"
+  },
+  {
+   "title": "That Old Feeling",
+   "pdfPage": 333,
+   "page": 333,
+   "conf": "high"
+  },
+  {
+   "title": "On the Good Ship Lollipop",
+   "pdfPage": 334,
+   "page": 334,
+   "conf": "high"
+  },
+  {
+   "title": "Three Coins in the Fountain",
+   "pdfPage": 334,
+   "page": 334,
+   "conf": "high"
+  },
+  {
+   "title": "Topkapi]",
+   "pdfPage": 335,
+   "page": 335,
+   "conf": "med"
+  },
+  {
+   "title": "Prelude Toa Kiss",
+   "pdfPage": 336,
+   "page": 336,
+   "conf": "high"
+  },
+  {
+   "title": "There Goes My Heart",
+   "pdfPage": 337,
+   "page": 337,
+   "conf": "high"
+  },
+  {
+   "title": "Things About Comin' My Way",
+   "pdfPage": 337,
+   "page": 337,
+   "conf": "high"
+  },
+  {
+   "title": "Ta-Ra-Ra Boom Der-E",
+   "pdfPage": 338,
+   "page": 338,
+   "conf": "high"
+  },
+  {
+   "title": "There is a Tavern in the Town",
+   "pdfPage": 338,
+   "page": 338,
+   "conf": "high"
+  },
+  {
+   "title": "Today",
+   "pdfPage": 338,
+   "page": 338,
+   "conf": "med"
+  },
+  {
+   "title": "There's a Broken Heart for Every Light on Broadway",
+   "pdfPage": 339,
+   "page": 339,
+   "conf": "high"
+  },
+  {
+   "title": "Tramp! Tramp! Tramp!",
+   "pdfPage": 339,
+   "page": 339,
+   "conf": "high"
+  },
+  {
+   "title": "Twinkle, Twinkle Little Star",
+   "pdfPage": 339,
+   "page": 339,
+   "conf": "high"
+  },
+  {
+   "title": "Toys In The Attic",
+   "pdfPage": 340,
+   "page": 340,
+   "conf": "med"
+  },
+  {
+   "title": "Thanksgiving Hymn",
+   "pdfPage": 341,
+   "page": 341,
+   "conf": "high"
+  },
+  {
+   "title": "There's a Hole in the Bottom of the Sea",
+   "pdfPage": 341,
+   "page": 341,
+   "conf": "high"
+  },
+  {
+   "title": "There's Music in the Air",
+   "pdfPage": 341,
+   "page": 341,
+   "conf": "high"
+  },
+  {
+   "title": "Three Blind Mice",
+   "pdfPage": 341,
+   "page": 341,
+   "conf": "high"
+  },
+  {
+   "title": "Tell Old Bill",
+   "pdfPage": 342,
+   "page": 342,
+   "conf": "high"
+  },
+  {
+   "title": "The Tiajuana Jail",
+   "pdfPage": 342,
+   "page": 342,
+   "conf": "high"
+  },
+  {
+   "title": "This Train",
+   "pdfPage": 343,
+   "page": 343,
+   "conf": "med"
+  },
+  {
+   "title": "Tiger Rag (Hold That Tiger!)",
+   "pdfPage": 343,
+   "page": 343,
+   "conf": "high"
+  },
+  {
+   "title": "Tomorrow May Never Come",
+   "pdfPage": 344,
+   "page": 344,
+   "conf": "high"
+  },
+  {
+   "title": "Try a Little Tenderness",
+   "pdfPage": 344,
+   "page": 344,
+   "conf": "high"
+  },
+  {
+   "title": "It Don't Mean a Thing (If It Ain't Got That Swing)",
+   "pdfPage": 345,
+   "page": 345,
+   "conf": "high"
+  },
+  {
+   "title": "That Kind of Woman",
+   "pdfPage": 345,
+   "page": 345,
+   "conf": "high"
+  },
+  {
+   "title": "Jack and Jill",
+   "pdfPage": 346,
+   "page": 346,
+   "conf": "high"
+  },
+  {
+   "title": "Tears on My Pillow",
+   "pdfPage": 346,
+   "page": 346,
+   "conf": "high"
+  },
+  {
+   "title": "There's Something in the Name of Ireland",
+   "pdfPage": 347,
+   "page": 347,
+   "conf": "high"
+  },
+  {
+   "title": "Two Sleepy People",
+   "pdfPage": 347,
+   "page": 347,
+   "conf": "high"
+  },
+  {
+   "title": "Girl Inmy Soup",
+   "pdfPage": 348,
+   "page": 348,
+   "conf": "high"
+  },
+  {
+   "title": "Tom Dooley",
+   "pdfPage": 348,
+   "page": 348,
+   "conf": "high"
+  },
+  {
+   "title": "Twilight on the Trail",
+   "pdfPage": 348,
+   "page": 348,
+   "conf": "high"
+  },
+  {
+   "title": "Tomorrow",
+   "pdfPage": 349,
+   "page": 349,
+   "conf": "high"
+  },
+  {
+   "title": "Here Comes the Reason I Live",
+   "pdfPage": 350,
+   "page": 350,
+   "conf": "high"
+  },
+  {
+   "title": "Toot, Toot, Tootsie! (Good-bye)",
+   "pdfPage": 350,
+   "page": 350,
+   "conf": "high"
+  },
+  {
+   "title": "That Lucky Old Sun",
+   "pdfPage": 351,
+   "page": 351,
+   "conf": "high"
+  },
+  {
+   "title": "Town Without Pity",
+   "pdfPage": 351,
+   "page": 351,
+   "conf": "high"
+  },
+  {
+   "title": "Does Your Heart Beat for Me?",
+   "pdfPage": 352,
+   "page": 352,
+   "conf": "high"
+  },
+  {
+   "title": "Talk with Us, Olord",
+   "pdfPage": 352,
+   "page": 352,
+   "conf": "high"
+  },
+  {
+   "title": "Under the Bamboo Tree",
+   "pdfPage": 352,
+   "page": 352,
+   "conf": "high"
+  },
+  {
+   "title": "Time on My Hands",
+   "pdfPage": 353,
+   "page": 353,
+   "conf": "high"
+  },
+  {
+   "title": "Toreador Song",
+   "pdfPage": 353,
+   "page": 353,
+   "conf": "high"
+  },
+  {
+   "title": "Thunderball",
+   "pdfPage": 354,
+   "page": 354,
+   "conf": "high"
+  },
+  {
+   "title": "Frank Mills",
+   "pdfPage": 355,
+   "page": 355,
+   "conf": "high"
+  },
+  {
+   "title": "Volare",
+   "pdfPage": 356,
+   "page": 356,
+   "conf": "med"
+  },
+  {
+   "title": "My Personal Property",
+   "pdfPage": 357,
+   "page": 357,
+   "conf": "high"
+  },
+  {
+   "title": "Voice of Night",
+   "pdfPage": 357,
+   "page": 357,
+   "conf": "high"
+  },
+  {
+   "title": ") Let a Song Go Out of My Heart",
+   "pdfPage": 360,
+   "page": 360,
+   "conf": "high"
+  },
+  {
+   "title": "Dead End",
+   "pdfPage": 362,
+   "page": 362,
+   "conf": "med"
+  },
+  {
+   "title": "Good Times Are Here to Stay",
+   "pdfPage": 364,
+   "page": 364,
+   "conf": "high"
+  },
+  {
+   "title": "It's Superman",
+   "pdfPage": 365,
+   "page": 365,
+   "conf": "med"
+  },
+  {
+   "title": "Me Ol' Bam-Boo",
+   "pdfPage": 378,
+   "page": 378,
+   "conf": "high"
+  },
+  {
+   "title": "Ain't Misbehavin'",
+   "pdfPage": 379,
+   "page": 379,
+   "conf": "high"
+  },
+  {
+   "title": "Needles and Pins",
+   "pdfPage": 385,
+   "page": 385,
+   "conf": "high"
+  },
+  {
+   "title": "Angels from Heaven",
+   "pdfPage": 386,
+   "page": 386,
+   "conf": "high"
+  },
+  {
+   "title": "Angels from the Realms of Glory",
+   "pdfPage": 386,
+   "page": 386,
+   "conf": "high"
+  },
+  {
+   "title": "Away In A Manger",
+   "pdfPage": 386,
+   "page": 386,
+   "conf": "med"
+  },
+  {
+   "title": "Angels We Have Heard on High",
+   "pdfPage": 387,
+   "page": 387,
+   "conf": "high"
+  },
+  {
+   "title": "Rudolph, the Reo-Nosed Reindeer",
+   "pdfPage": 387,
+   "page": 387,
+   "conf": "high"
+  },
+  {
+   "title": "The Cherry Tree Carol",
+   "pdfPage": 388,
+   "page": 388,
+   "conf": "high"
+  },
+  {
+   "title": "The Coventry Carol",
+   "pdfPage": 388,
+   "page": 388,
+   "conf": "high"
+  },
+  {
+   "title": "Deck the Hall",
+   "pdfPage": 388,
+   "page": 388,
+   "conf": "high"
+  },
+  {
+   "title": "It Came Upon a Midnight Clear",
+   "pdfPage": 388,
+   "page": 388,
+   "conf": "high"
+  },
+  {
+   "title": "The First Noel",
+   "pdfPage": 389,
+   "page": 389,
+   "conf": "high"
+  },
+  {
+   "title": "Go Tell it on the Mountain",
+   "pdfPage": 390,
+   "page": 390,
+   "conf": "high"
+  },
+  {
+   "title": "God Rest You Merry, Gentlemen",
+   "pdfPage": 390,
+   "page": 390,
+   "conf": "high"
+  },
+  {
+   "title": "Good King Wenceslas",
+   "pdfPage": 390,
+   "page": 390,
+   "conf": "high"
+  },
+  {
+   "title": "Glad Christmas Bells",
+   "pdfPage": 391,
+   "page": 391,
+   "conf": "high"
+  },
+  {
+   "title": "Hark! the Herald Angels Sing",
+   "pdfPage": 391,
+   "page": 391,
+   "conf": "high"
+  },
+  {
+   "title": "Here Comes Santa Claus",
+   "pdfPage": 391,
+   "page": 391,
+   "conf": "high"
+  },
+  {
+   "title": "Have Yourself a Merry Little Christmas",
+   "pdfPage": 392,
+   "page": 392,
+   "conf": "high"
+  },
+  {
+   "title": "The Holly Child",
+   "pdfPage": 392,
+   "page": 392,
+   "conf": "high"
+  },
+  {
+   "title": "Holy, Holy, Holy",
+   "pdfPage": 392,
+   "page": 392,
+   "conf": "high"
+  },
+  {
+   "title": "Christmas",
+   "pdfPage": 393,
+   "page": 393,
+   "conf": "high"
+  },
+  {
+   "title": "Here We Come A-Caroling",
+   "pdfPage": 393,
+   "page": 393,
+   "conf": "high"
+  },
+  {
+   "title": ") Saw Three Ships",
+   "pdfPage": 394,
+   "page": 394,
+   "conf": "high"
+  },
+  {
+   "title": "Jingle Bells",
+   "pdfPage": 394,
+   "page": 394,
+   "conf": "med"
+  },
+  {
+   "title": "Jolly Old St. Nicholas",
+   "pdfPage": 394,
+   "page": 394,
+   "conf": "high"
+  },
+  {
+   "title": "Joy to the World",
+   "pdfPage": 395,
+   "page": 395,
+   "conf": "high"
+  },
+  {
+   "title": "Mary Had a Baby",
+   "pdfPage": 396,
+   "page": 396,
+   "conf": "high"
+  },
+  {
+   "title": "The Night Before Christmas",
+   "pdfPage": 396,
+   "page": 396,
+   "conf": "high"
+  },
+  {
+   "title": "0 Christmas Tree",
+   "pdfPage": 396,
+   "page": 396,
+   "conf": "high"
+  },
+  {
+   "title": "0 Holy Night",
+   "pdfPage": 397,
+   "page": 397,
+   "conf": "high"
+  },
+  {
+   "title": "0 Little Town of Bethlehem",
+   "pdfPage": 397,
+   "page": 397,
+   "conf": "high"
+  },
+  {
+   "title": "0 Come, All Ye Faithful",
+   "pdfPage": 398,
+   "page": 398,
+   "conf": "high"
+  },
+  {
+   "title": "Up on the House-Top",
+   "pdfPage": 398,
+   "page": 398,
+   "conf": "high"
+  },
+  {
+   "title": "Santa Claus Js Comin' to Town",
+   "pdfPage": 399,
+   "page": 399,
+   "conf": "high"
+  },
+  {
+   "title": "Silver Bells",
+   "pdfPage": 399,
+   "page": 399,
+   "conf": "high"
+  },
+  {
+   "title": "There is No Christmas Like a Home Christmas",
+   "pdfPage": 400,
+   "page": 400,
+   "conf": "high"
+  },
+  {
+   "title": "Thirty-Two Feet and Eight Little Tails",
+   "pdfPage": 400,
+   "page": 400,
+   "conf": "high"
+  },
+  {
+   "title": "Albumblatt",
+   "pdfPage": 402,
+   "page": 402,
+   "composer": "Grieg",
+   "conf": "high"
+  },
+  {
+   "title": "Allegretto From \"Symphony No. 3\"",
+   "pdfPage": 402,
+   "page": 402,
+   "composer": "Brahms",
+   "conf": "high"
+  },
+  {
+   "title": "Alla Turca",
+   "pdfPage": 403,
+   "page": 403,
+   "composer": "Mozart",
+   "conf": "med"
+  },
+  {
+   "title": "Anitra's Dance From \"Peer Gynt\"",
+   "pdfPage": 403,
+   "page": 403,
+   "composer": "Grieg",
+   "conf": "high"
+  },
+  {
+   "title": "Andante Cantabile From Symphony No. 5\"",
+   "pdfPage": 404,
+   "page": 404,
+   "composer": "Tschaikovsky",
+   "conf": "high"
+  },
+  {
+   "title": "Anvil Chorus",
+   "pdfPage": 404,
+   "page": 404,
+   "composer": "Verdi",
+   "conf": "high"
+  },
+  {
+   "title": "Allegretto From \"Symphony No. 7\"",
+   "pdfPage": 405,
+   "page": 405,
+   "composer": "Beethoven",
+   "conf": "high"
+  },
+  {
+   "title": "Ase's Death From \"Peer Gynt\"",
+   "pdfPage": 405,
+   "page": 405,
+   "composer": "Grieg",
+   "conf": "high"
+  },
+  {
+   "title": "Amaryllis",
+   "pdfPage": 406,
+   "page": 406,
+   "composer": "Ghys",
+   "conf": "high"
+  },
+  {
+   "title": "Artist's Life Waltz",
+   "pdfPage": 406,
+   "page": 406,
+   "composer": "Strauss",
+   "conf": "high"
+  },
+  {
+   "title": "Ave Maria",
+   "pdfPage": 407,
+   "page": 407,
+   "composer": "Schubert",
+   "conf": "high"
+  },
+  {
+   "title": "Brahms' Lullaby",
+   "pdfPage": 407,
+   "page": 407,
+   "conf": "high"
+  },
+  {
+   "title": "Bouree",
+   "pdfPage": 408,
+   "page": 408,
+   "composer": "Bach",
+   "conf": "high"
+  },
+  {
+   "title": "Bridal March From \"Lohengrin\"",
+   "pdfPage": 408,
+   "page": 408,
+   "composer": "Wagner",
+   "conf": "high"
+  },
+  {
+   "title": "Barcarolle",
+   "pdfPage": 409,
+   "page": 409,
+   "composer": "Offenbach",
+   "conf": "med"
+  },
+  {
+   "title": "Caro Nome",
+   "pdfPage": 409,
+   "page": 409,
+   "composer": "Verdi",
+   "conf": "high"
+  },
+  {
+   "title": "Blue Danube Waltz",
+   "pdfPage": 410,
+   "page": 410,
+   "composer": "Strauss",
+   "conf": "high"
+  },
+  {
+   "title": "Claire De Lune",
+   "pdfPage": 410,
+   "page": 410,
+   "composer": "Debussy",
+   "conf": "high"
+  },
+  {
+   "title": "Castanet Song From \"Carmen\"",
+   "pdfPage": 411,
+   "page": 411,
+   "composer": "Bizet",
+   "conf": "high"
+  },
+  {
+   "title": "Celeste Aida",
+   "pdfPage": 411,
+   "page": 411,
+   "composer": "Verdi",
+   "conf": "high"
+  },
+  {
+   "title": "Celebrated Waltzes",
+   "pdfPage": 412,
+   "page": 412,
+   "composer": "Strauss",
+   "conf": "high"
+  },
+  {
+   "title": "Consolation",
+   "pdfPage": 412,
+   "page": 412,
+   "composer": "Mendelssohn",
+   "conf": "high"
+  },
+  {
+   "title": "Carnival of Venice",
+   "pdfPage": 413,
+   "page": 413,
+   "composer": "Benedict",
+   "conf": "high"
+  },
+  {
+   "title": "Dance of the Sugar Plum Fairy From \"the Nutcracker Suite\"",
+   "pdfPage": 413,
+   "page": 413,
+   "composer": "Tschaikovsky",
+   "conf": "high"
+  },
+  {
+   "title": "Drigo's Serenade",
+   "pdfPage": 413,
+   "page": 413,
+   "conf": "high"
+  },
+  {
+   "title": "Dance of the Slave Maidens",
+   "pdfPage": 414,
+   "page": 414,
+   "composer": "Borodin",
+   "conf": "high"
+  },
+  {
+   "title": "Elegie",
+   "pdfPage": 414,
+   "page": 414,
+   "composer": "Massenet",
+   "conf": "high"
+  },
+  {
+   "title": "Emperor Waltz",
+   "pdfPage": 415,
+   "page": 415,
+   "composer": "Strauss",
+   "conf": "high"
+  },
+  {
+   "title": "Expectation Waltz",
+   "pdfPage": 415,
+   "page": 415,
+   "conf": "med"
+  },
+  {
+   "title": "El Capitan",
+   "pdfPage": 416,
+   "page": 416,
+   "conf": "med"
+  },
+  {
+   "title": "Finlandia",
+   "pdfPage": 416,
+   "page": 416,
+   "composer": "Sibelius",
+   "conf": "high"
+  },
+  {
+   "title": "Elfin Dance",
+   "pdfPage": 417,
+   "page": 417,
+   "composer": "Grieg",
+   "conf": "med"
+  },
+  {
+   "title": "Funeral March",
+   "pdfPage": 417,
+   "page": 417,
+   "composer": "Chopin",
+   "conf": "high"
+  },
+  {
+   "title": "Elk''s Parade",
+   "pdfPage": 418,
+   "page": 418,
+   "conf": "high"
+  },
+  {
+   "title": "Fur Elise",
+   "pdfPage": 418,
+   "page": 418,
+   "composer": "Beethoven",
+   "conf": "med"
+  },
+  {
+   "title": "Estudiantina",
+   "pdfPage": 419,
+   "page": 419,
+   "composer": "Waldteufel",
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Fantasie Impromptu\"",
+   "pdfPage": 419,
+   "page": 419,
+   "composer": "Chopin",
+   "conf": "high"
+  },
+  {
+   "title": "Gavotte I (Bach)",
+   "pdfPage": 420,
+   "page": 420,
+   "conf": "med"
+  },
+  {
+   "title": "Gladiator March",
+   "pdfPage": 420,
+   "page": 420,
+   "conf": "high"
+  },
+  {
+   "title": "Glow Worm",
+   "pdfPage": 421,
+   "page": 421,
+   "conf": "high"
+  },
+  {
+   "title": "Gavotte Il",
+   "pdfPage": 422,
+   "page": 422,
+   "composer": "Bach",
+   "conf": "med"
+  },
+  {
+   "title": "Gold and Silver Waltz",
+   "pdfPage": 422,
+   "page": 422,
+   "composer": "Lehar",
+   "conf": "high"
+  },
+  {
+   "title": "Gypsy Baron Waltz",
+   "pdfPage": 423,
+   "page": 423,
+   "composer": "Strauss",
+   "conf": "high"
+  },
+  {
+   "title": "Gypsy Rondo",
+   "pdfPage": 423,
+   "page": 423,
+   "composer": "Haydn",
+   "conf": "high"
+  },
+  {
+   "title": "The Happy Farmer",
+   "pdfPage": 423,
+   "page": 423,
+   "composer": "Schumann",
+   "conf": "high"
+  },
+  {
+   "title": "Habanera From \"Carmen\"",
+   "pdfPage": 424,
+   "page": 424,
+   "composer": "Bizet",
+   "conf": "high"
+  },
+  {
+   "title": "Hungarian Dance No",
+   "pdfPage": 424,
+   "page": 424,
+   "composer": "Brahms",
+   "conf": "high"
+  },
+  {
+   "title": "Hail to the Chief",
+   "pdfPage": 425,
+   "page": 425,
+   "conf": "high"
+  },
+  {
+   "title": "Hungarian Dance No",
+   "pdfPage": 425,
+   "page": 425,
+   "composer": "Brahms",
+   "conf": "med"
+  },
+  {
+   "title": "Humoresque",
+   "pdfPage": 426,
+   "page": 426,
+   "composer": "Dvorak",
+   "conf": "high"
+  },
+  {
+   "title": "Hungarian Rhapsody No",
+   "pdfPage": 426,
+   "page": 426,
+   "composer": "Liszt",
+   "conf": "high"
+  },
+  {
+   "title": "High School Cadets",
+   "pdfPage": 427,
+   "page": 427,
+   "conf": "high"
+  },
+  {
+   "title": "Hymn to the Sun",
+   "pdfPage": 427,
+   "page": 427,
+   "composer": "Rimsky-Korsakov",
+   "conf": "high"
+  },
+  {
+   "title": "Invitation to the Dance (Von Weber)",
+   "pdfPage": 428,
+   "page": 428,
+   "conf": "high"
+  },
+  {
+   "title": "June",
+   "pdfPage": 429,
+   "page": 429,
+   "composer": "Tschaikovsky",
+   "conf": "high"
+  },
+  {
+   "title": "Lacumparsita",
+   "pdfPage": 429,
+   "page": 429,
+   "conf": "high"
+  },
+  {
+   "title": "Largo From \"the New World Symphony\"",
+   "pdfPage": 430,
+   "page": 430,
+   "composer": "Dvorak",
+   "conf": "high"
+  },
+  {
+   "title": "Liebestraum (Liszt)",
+   "pdfPage": 430,
+   "page": 430,
+   "conf": "med"
+  },
+  {
+   "title": "Meadowlands",
+   "pdfPage": 430,
+   "page": 430,
+   "conf": "high"
+  },
+  {
+   "title": "Merry Widow Waltz",
+   "pdfPage": 430,
+   "page": 430,
+   "composer": "Lehar",
+   "conf": "high"
+  },
+  {
+   "title": "La Golondrina",
+   "pdfPage": 431,
+   "page": 431,
+   "conf": "med"
+  },
+  {
+   "title": "Light Cavalry Overture (Von Suppe)",
+   "pdfPage": 431,
+   "page": 431,
+   "conf": "high"
+  },
+  {
+   "title": "La Marseillaise",
+   "pdfPage": 432,
+   "page": 432,
+   "conf": "high"
+  },
+  {
+   "title": "March Slav",
+   "pdfPage": 432,
+   "page": 432,
+   "composer": "Tschaikovsky",
+   "conf": "high"
+  },
+  {
+   "title": "Melody in F",
+   "pdfPage": 433,
+   "page": 433,
+   "composer": "Rubinstein",
+   "conf": "high"
+  },
+  {
+   "title": "Minuet",
+   "pdfPage": 433,
+   "page": 433,
+   "composer": "Mozart",
+   "conf": "high"
+  },
+  {
+   "title": "March From \"the Nutcracker Suite\"",
+   "pdfPage": 434,
+   "page": 434,
+   "composer": "TschaikOVSky",
+   "conf": "high"
+  },
+  {
+   "title": "Mexican Hat Dance",
+   "pdfPage": 434,
+   "page": 434,
+   "conf": "high"
+  },
+  {
+   "title": "Marche Militaire",
+   "pdfPage": 435,
+   "page": 435,
+   "composer": "Schubert",
+   "conf": "high"
+  },
+  {
+   "title": "Mendelssohn's Wedding March",
+   "pdfPage": 435,
+   "page": 435,
+   "conf": "med"
+  },
+  {
+   "title": "Mattinata",
+   "pdfPage": 436,
+   "page": 436,
+   "composer": "Leoncavallo",
+   "conf": "high"
+  },
+  {
+   "title": "Moment Musical",
+   "pdfPage": 436,
+   "page": 436,
+   "composer": "Schubert",
+   "conf": "high"
+  },
+  {
+   "title": "March of the Toys",
+   "pdfPage": 437,
+   "page": 437,
+   "conf": "high"
+  },
+  {
+   "title": "My Heart at Thy Sweet Voice From \"Samson and Delilah\"",
+   "pdfPage": 437,
+   "page": 437,
+   "composer": "Saint-Saens",
+   "conf": "high"
+  },
+  {
+   "title": "Nocturne",
+   "pdfPage": 437,
+   "page": 437,
+   "composer": "Mendelssohn",
+   "conf": "high"
+  },
+  {
+   "title": "Nocturne, Op. 9 No",
+   "pdfPage": 438,
+   "page": 438,
+   "composer": "Chopin",
+   "conf": "med"
+  },
+  {
+   "title": "Nocturne, Op. 55, No",
+   "pdfPage": 438,
+   "page": 438,
+   "composer": "Chopin",
+   "conf": "med"
+  },
+  {
+   "title": "Nocturne",
+   "pdfPage": 439,
+   "page": 439,
+   "composer": "Borodin",
+   "conf": "high"
+  },
+  {
+   "title": "Norwegian Dance",
+   "pdfPage": 439,
+   "page": 439,
+   "composer": "Grieg",
+   "conf": "high"
+  },
+  {
+   "title": "On Wings of Song",
+   "pdfPage": 440,
+   "page": 440,
+   "composer": "Mendelssohn",
+   "conf": "high"
+  },
+  {
+   "title": "Peter and the Wolf",
+   "pdfPage": 440,
+   "page": 440,
+   "composer": "Prokofiev",
+   "conf": "high"
+  },
+  {
+   "title": "Over the Waves",
+   "pdfPage": 441,
+   "page": 441,
+   "composer": "Rosas",
+   "conf": "high"
+  },
+  {
+   "title": "Pomp and Circumstance",
+   "pdfPage": 441,
+   "page": 441,
+   "composer": "Elgar",
+   "conf": "high"
+  },
+  {
+   "title": "Theme from \"Piano Concerto in a Minor\"",
+   "pdfPage": 442,
+   "page": 442,
+   "composer": "Grieg",
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Piano Concerto Op. 54\"",
+   "pdfPage": 442,
+   "page": 442,
+   "composer": "Schumann",
+   "conf": "high"
+  },
+  {
+   "title": "Second theme From \"Piano Concerto No. 2\"",
+   "pdfPage": 443,
+   "page": 443,
+   "composer": "Rachmaninoff",
+   "conf": "high"
+  },
+  {
+   "title": "Prelude From \"Carmen\"",
+   "pdfPage": 443,
+   "page": 443,
+   "composer": "Bizet",
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Piano Concerto in B Flat Minor\"",
+   "pdfPage": 444,
+   "page": 444,
+   "composer": "Tschaikovsky",
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Piano Concerto in B Flat Minor\" (2nd Movement)",
+   "pdfPage": 444,
+   "page": 444,
+   "composer": "TschaikKOVSky",
+   "conf": "high"
+  },
+  {
+   "title": "Prelude, Op. 28, No.9",
+   "pdfPage": 444,
+   "page": 444,
+   "composer": "Chopin",
+   "conf": "med"
+  },
+  {
+   "title": "Theme From \"Piano Concerto No. 2\"",
+   "pdfPage": 445,
+   "page": 445,
+   "composer": "Rachmaninoff",
+   "conf": "high"
+  },
+  {
+   "title": "Polonaise, Op",
+   "pdfPage": 445,
+   "page": 445,
+   "composer": "Chopin",
+   "conf": "med"
+  },
+  {
+   "title": "My Reverie",
+   "pdfPage": 446,
+   "page": 446,
+   "conf": "high"
+  },
+  {
+   "title": "Romany Life",
+   "pdfPage": 446,
+   "page": 446,
+   "composer": "Herbert",
+   "conf": "high"
+  },
+  {
+   "title": "Scotch Poem",
+   "pdfPage": 447,
+   "page": 447,
+   "composer": "MacDowell",
+   "conf": "high"
+  },
+  {
+   "title": "Semper Fideles",
+   "pdfPage": 447,
+   "page": 447,
+   "conf": "high"
+  },
+  {
+   "title": "Love Theme From \"Romeo and Juliet\"",
+   "pdfPage": 448,
+   "page": 448,
+   "composer": "Tschaikovsky",
+   "conf": "high"
+  },
+  {
+   "title": "Russian Sailor's Dance",
+   "pdfPage": 448,
+   "page": 448,
+   "conf": "high"
+  },
+  {
+   "title": "Song of India",
+   "pdfPage": 449,
+   "page": 449,
+   "composer": "Rimsky-Korsakov",
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"the Surprise Symphony\"",
+   "pdfPage": 449,
+   "page": 449,
+   "composer": "Haydn",
+   "conf": "high"
+  },
+  {
+   "title": "Salut D'amour",
+   "pdfPage": 450,
+   "page": 450,
+   "composer": "Elgar",
+   "conf": "high"
+  },
+  {
+   "title": "The Stars and Stripes Forever",
+   "pdfPage": 450,
+   "page": 450,
+   "conf": "high"
+  },
+  {
+   "title": "The Skater's Waltz",
+   "pdfPage": 451,
+   "page": 451,
+   "composer": "Waldteufel",
+   "conf": "med"
+  },
+  {
+   "title": "The Swan",
+   "pdfPage": 451,
+   "page": 451,
+   "composer": "Saint-Saens",
+   "conf": "high"
+  },
+  {
+   "title": "Song Without Words",
+   "pdfPage": 452,
+   "page": 452,
+   "composer": "Tschaikovsky",
+   "conf": "high"
+  },
+  {
+   "title": "Songs My Mother Taught Me",
+   "pdfPage": 452,
+   "page": 452,
+   "composer": "Dvorak",
+   "conf": "high"
+  },
+  {
+   "title": "Sleeping Beauty",
+   "pdfPage": 453,
+   "page": 453,
+   "composer": "Tschaikovsky",
+   "conf": "high"
+  },
+  {
+   "title": "Soldier's March",
+   "pdfPage": 453,
+   "page": 453,
+   "composer": "Schumann",
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Swan Lake\"",
+   "pdfPage": 454,
+   "page": 454,
+   "composer": "Tschaikovsky",
+   "conf": "med"
+  },
+  {
+   "title": "Tarantella",
+   "pdfPage": 454,
+   "page": 454,
+   "conf": "med"
+  },
+  {
+   "title": "Tales from the Vienna Woods",
+   "pdfPage": 455,
+   "page": 455,
+   "composer": "Strauss",
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"the Unfinished Symphony\"",
+   "pdfPage": 455,
+   "page": 455,
+   "composer": "Schubert",
+   "conf": "high"
+  },
+  {
+   "title": "Thunder and Blazes",
+   "pdfPage": 456,
+   "page": 456,
+   "conf": "high"
+  },
+  {
+   "title": "Two Guitars",
+   "pdfPage": 456,
+   "page": 456,
+   "conf": "high"
+  },
+  {
+   "title": "Toreador March From \"Carmen\"",
+   "pdfPage": 457,
+   "page": 457,
+   "composer": "Bizet",
+   "conf": "high"
+  },
+  {
+   "title": "Triumphal March From \"Aida\"",
+   "pdfPage": 457,
+   "page": 457,
+   "composer": "Verdi",
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Symphony No. 6\"",
+   "pdfPage": 458,
+   "page": 458,
+   "composer": "Tschaikovsky",
+   "conf": "high"
+  },
+  {
+   "title": "To a Wild Rose",
+   "pdfPage": 458,
+   "page": 458,
+   "composer": "MacDowell",
+   "conf": "high"
+  },
+  {
+   "title": "Traumerei",
+   "pdfPage": 459,
+   "page": 459,
+   "composer": "Schumann",
+   "conf": "high"
+  },
+  {
+   "title": "Trepak From \"the Nutcracker Suite\"",
+   "pdfPage": 459,
+   "page": 459,
+   "composer": "Tschaikovsky",
+   "conf": "high"
+  },
+  {
+   "title": "To the Waltz",
+   "pdfPage": 460,
+   "page": 460,
+   "conf": "high"
+  },
+  {
+   "title": "Under the Double Eagle",
+   "pdfPage": 460,
+   "page": 460,
+   "conf": "high"
+  },
+  {
+   "title": "Vienna Life",
+   "pdfPage": 461,
+   "page": 461,
+   "composer": "Strauss",
+   "conf": "high"
+  },
+  {
+   "title": "Volga Boat Song",
+   "pdfPage": 461,
+   "page": 461,
+   "conf": "high"
+  },
+  {
+   "title": "Bim Bam Boom",
+   "pdfPage": 465,
+   "page": 465,
+   "conf": "high"
+  },
+  {
+   "title": "Oye Negra",
+   "pdfPage": 465,
+   "page": 465,
+   "conf": "med"
+  },
+  {
+   "title": "Perfume De Amor",
+   "pdfPage": 465,
+   "page": 465,
+   "conf": "high"
+  },
+  {
+   "title": "Ca Ca",
+   "pdfPage": 466,
+   "page": 466,
+   "conf": "med"
+  },
+  {
+   "title": "Let a Smile Be Your Umbrella (On a Rainy Day)",
+   "pdfPage": 466,
+   "page": 466,
+   "conf": "high"
+  },
+  {
+   "title": "Sol Tropical",
+   "pdfPage": 466,
+   "page": 466,
+   "conf": "high"
+  },
+  {
+   "title": "Let Me Love You To-Night",
+   "pdfPage": 467,
+   "page": 467,
+   "conf": "high"
+  },
+  {
+   "title": "Linda Mujer",
+   "pdfPage": 468,
+   "page": 468,
+   "conf": "med"
+  },
+  {
+   "title": "Live for Life",
+   "pdfPage": 469,
+   "page": 469,
+   "conf": "high"
+  },
+  {
+   "title": "Maple Leaf Rag",
+   "pdfPage": 470,
+   "page": 470,
+   "conf": "high"
+  },
+  {
+   "title": "Peacherine Rag",
+   "pdfPage": 470,
+   "page": 470,
+   "conf": "high"
+  },
+  {
+   "title": "The Chrysanthemum",
+   "pdfPage": 471,
+   "page": 471,
+   "conf": "high"
+  },
+  {
+   "title": "Swipsey",
+   "pdfPage": 471,
+   "page": 471,
+   "conf": "med"
+  },
+  {
+   "title": "Because You're Mine",
+   "pdfPage": 472,
+   "page": 472,
+   "conf": "high"
+  },
+  {
+   "title": ") Fall in Love Too Easily",
+   "pdfPage": 472,
+   "page": 472,
+   "conf": "high"
+  },
+  {
+   "title": "Praise the Lord and Pass the Ammunition",
+   "pdfPage": 475,
+   "page": 475,
+   "conf": "high"
+  },
+  {
+   "title": "Scarlet Ribbons",
+   "pdfPage": 475,
+   "page": 475,
+   "conf": "high"
+  },
+  {
+   "title": "Bad Tome",
+   "pdfPage": 476,
+   "page": 476,
+   "conf": "high"
+  },
+  {
+   "title": "Did You See Her Eyes",
+   "pdfPage": 476,
+   "page": 476,
+   "conf": "high"
+  }
+ ]
+}

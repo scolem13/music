@@ -1,0 +1,302 @@
+{
+ "file": "real-easy-book-c.pdf",
+ "method": "ocr-page-titles",
+ "offset": 7,
+ "notes": "Scanned (image-only) Sher Real Easy Book Level 1 C. Index of Tunes on pdf 2 has OCR-garbled page numbers, so each tune page (pdf 8-90, 2 pages per tune) was OCR-read at the top and matched to the index titles in order; all 42 entries confirmed by OCR (title on its pdfPage); printed page = pdf-7 (e.g. Doxy pdf 22 = p15). Composers from the index. \"Mr. PC\" -> \"Mr. P.C.\", \"So Dango Samba\" -> \"So Danço Samba\" as printed.",
+ "entries": [
+  {
+   "title": "Bags' Groove",
+   "pdfPage": 8,
+   "page": 1,
+   "composer": "Milt Jackson",
+   "conf": "high"
+  },
+  {
+   "title": "Big Bertha",
+   "pdfPage": 10,
+   "page": 3,
+   "composer": "Duke Pearson",
+   "conf": "high"
+  },
+  {
+   "title": "Blue Seven",
+   "pdfPage": 12,
+   "page": 5,
+   "composer": "Sonny Rollins",
+   "conf": "high"
+  },
+  {
+   "title": "Blues By Five",
+   "pdfPage": 14,
+   "page": 7,
+   "composer": "Red Garland",
+   "conf": "high"
+  },
+  {
+   "title": "Blues In The Closet",
+   "pdfPage": 16,
+   "page": 9,
+   "composer": "Oscar Pettiford",
+   "conf": "high"
+  },
+  {
+   "title": "Cold Duck Time",
+   "pdfPage": 18,
+   "page": 11,
+   "composer": "Eddie Harris",
+   "conf": "high"
+  },
+  {
+   "title": "Contemplation",
+   "pdfPage": 20,
+   "page": 13,
+   "composer": "McCoy Tyner",
+   "conf": "high"
+  },
+  {
+   "title": "Doxy",
+   "pdfPage": 22,
+   "page": 15,
+   "composer": "Sonny Rollins",
+   "conf": "high"
+  },
+  {
+   "title": "Edward Lee",
+   "pdfPage": 24,
+   "page": 17,
+   "composer": "Harold Mabern, Jr.",
+   "conf": "high"
+  },
+  {
+   "title": "Equinox",
+   "pdfPage": 26,
+   "page": 19,
+   "composer": "John Coltrane",
+   "conf": "high"
+  },
+  {
+   "title": "Freedom Jazz Dance",
+   "pdfPage": 28,
+   "page": 21,
+   "composer": "Eddie Harris",
+   "conf": "high"
+  },
+  {
+   "title": "Gingerbread Boy",
+   "pdfPage": 30,
+   "page": 23,
+   "composer": "Jimmy Heath",
+   "conf": "high"
+  },
+  {
+   "title": "Groove Merchant",
+   "pdfPage": 32,
+   "page": 25,
+   "composer": "Jerome Richardson",
+   "conf": "high"
+  },
+  {
+   "title": "Jive Samba",
+   "pdfPage": 34,
+   "page": 27,
+   "composer": "Nat Adderley",
+   "conf": "high"
+  },
+  {
+   "title": "JoJo Calypso",
+   "pdfPage": 36,
+   "page": 29,
+   "composer": "Jim Nadel",
+   "conf": "high"
+  },
+  {
+   "title": "The Jody Grind",
+   "pdfPage": 38,
+   "page": 31,
+   "composer": "Horace Silver",
+   "conf": "high"
+  },
+  {
+   "title": "Killer Joe",
+   "pdfPage": 40,
+   "page": 33,
+   "composer": "Benny Golson",
+   "conf": "high"
+  },
+  {
+   "title": "Listen Here",
+   "pdfPage": 42,
+   "page": 35,
+   "composer": "Eddie Harris",
+   "conf": "high"
+  },
+  {
+   "title": "Little Sunflower",
+   "pdfPage": 44,
+   "page": 37,
+   "composer": "Freddie Hubbard",
+   "conf": "high"
+  },
+  {
+   "title": "Mercy, Mercy, Mercy",
+   "pdfPage": 46,
+   "page": 39,
+   "composer": "Joe Zawinul",
+   "conf": "high"
+  },
+  {
+   "title": "Midnight Waltz",
+   "pdfPage": 48,
+   "page": 41,
+   "composer": "Cedar Walton",
+   "conf": "high"
+  },
+  {
+   "title": "Mr. P.C.",
+   "pdfPage": 50,
+   "page": 43,
+   "composer": "John Coltrane",
+   "conf": "high"
+  },
+  {
+   "title": "One For Daddy-O",
+   "pdfPage": 52,
+   "page": 45,
+   "composer": "Nat Adderley",
+   "conf": "high"
+  },
+  {
+   "title": "Red's Good Groove",
+   "pdfPage": 54,
+   "page": 47,
+   "composer": "Red Garland",
+   "conf": "high"
+  },
+  {
+   "title": "Revelation",
+   "pdfPage": 56,
+   "page": 49,
+   "composer": "Kenny Barron",
+   "conf": "high"
+  },
+  {
+   "title": "Road Song",
+   "pdfPage": 58,
+   "page": 51,
+   "composer": "Wes Montgomery",
+   "conf": "high"
+  },
+  {
+   "title": "Short Stuff",
+   "pdfPage": 60,
+   "page": 53,
+   "composer": "Cedar Walton",
+   "conf": "high"
+  },
+  {
+   "title": "Shoshana",
+   "pdfPage": 62,
+   "page": 55,
+   "composer": "Mark Levine",
+   "conf": "high"
+  },
+  {
+   "title": "Sir John",
+   "pdfPage": 64,
+   "page": 57,
+   "composer": "Blue Mitchell",
+   "conf": "high"
+  },
+  {
+   "title": "Sister Sadie",
+   "pdfPage": 66,
+   "page": 59,
+   "composer": "Horace Silver",
+   "conf": "high"
+  },
+  {
+   "title": "So Danço Samba",
+   "pdfPage": 68,
+   "page": 61,
+   "composer": "Antonio Carlos Jobim",
+   "conf": "high"
+  },
+  {
+   "title": "Song For My Father",
+   "pdfPage": 70,
+   "page": 63,
+   "composer": "Horace Silver",
+   "conf": "high"
+  },
+  {
+   "title": "Sonnymoon For Two",
+   "pdfPage": 72,
+   "page": 65,
+   "composer": "Sonny Rollins",
+   "conf": "high"
+  },
+  {
+   "title": "St. James Infirmary",
+   "pdfPage": 74,
+   "page": 67,
+   "composer": "Joe Primrose",
+   "conf": "high"
+  },
+  {
+   "title": "St. Thomas",
+   "pdfPage": 76,
+   "page": 69,
+   "composer": "Sonny Rollins",
+   "conf": "high"
+  },
+  {
+   "title": "Straight Life",
+   "pdfPage": 78,
+   "page": 71,
+   "composer": "Freddie Hubbard",
+   "conf": "high"
+  },
+  {
+   "title": "Tenor Madness",
+   "pdfPage": 80,
+   "page": 73,
+   "composer": "Sonny Rollins",
+   "conf": "high"
+  },
+  {
+   "title": "Trail Dust",
+   "pdfPage": 82,
+   "page": 75,
+   "composer": "Jim Rotondi",
+   "conf": "high"
+  },
+  {
+   "title": "When The Saints Go Marching In",
+   "pdfPage": 84,
+   "page": 77,
+   "composer": "Traditional",
+   "conf": "high"
+  },
+  {
+   "title": "Work Song",
+   "pdfPage": 86,
+   "page": 79,
+   "composer": "Nat Adderley",
+   "conf": "high"
+  },
+  {
+   "title": "Yardbird Suite",
+   "pdfPage": 88,
+   "page": 81,
+   "composer": "Charlie Parker",
+   "conf": "high"
+  },
+  {
+   "title": "Z's Blues",
+   "pdfPage": 90,
+   "page": 83,
+   "composer": "Eric Alexander",
+   "conf": "high"
+  }
+ ]
+}

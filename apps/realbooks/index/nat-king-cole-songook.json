@@ -1,0 +1,206 @@
+{
+ "file": "nat-king-cole-songook.pdf",
+ "method": "outline",
+ "offset": 2,
+ "notes": "Bookmarks are one per song with real titles (33 songs, matching the 33 in the printed Song Index on pdf p3; the index's printed page numbers = pdfPage-2 for every song). Titles cleaned (stray spaces/punctuation in bookmarks). Checked all 33: the pdf text layer on each bookmarked page contains the song title. Pdf has a text layer, so composers could be added from 'Words by / Music by' lines but were not extracted. Multi-page songs: entry = first page.",
+ "entries": [
+  {
+   "title": "When I Fall In Love",
+   "pdfPage": 11,
+   "page": 9,
+   "conf": "high"
+  },
+  {
+   "title": "Unforgettable",
+   "pdfPage": 14,
+   "page": 12,
+   "conf": "high"
+  },
+  {
+   "title": "Mona Lisa",
+   "pdfPage": 16,
+   "page": 14,
+   "conf": "high"
+  },
+  {
+   "title": "Those Lazy-Hazy-Crazy Days Of Summer",
+   "pdfPage": 19,
+   "page": 17,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Lorraine",
+   "pdfPage": 22,
+   "page": 20,
+   "conf": "high"
+  },
+  {
+   "title": "Nature Boy",
+   "pdfPage": 25,
+   "page": 23,
+   "conf": "high"
+  },
+  {
+   "title": "Ramblin' Rose",
+   "pdfPage": 28,
+   "page": 26,
+   "conf": "high"
+  },
+  {
+   "title": "Answer Me (My Love)",
+   "pdfPage": 30,
+   "page": 28,
+   "conf": "high"
+  },
+  {
+   "title": "Autumn Leaves",
+   "pdfPage": 32,
+   "page": 30,
+   "conf": "high"
+  },
+  {
+   "title": "The Christmas Song",
+   "pdfPage": 34,
+   "page": 32,
+   "conf": "high"
+  },
+  {
+   "title": "A Blossom Fell",
+   "pdfPage": 36,
+   "page": 34,
+   "conf": "high"
+  },
+  {
+   "title": "Calypso Blues",
+   "pdfPage": 38,
+   "page": 36,
+   "conf": "high"
+  },
+  {
+   "title": "Darling, Je Vous Aime Beaucoup",
+   "pdfPage": 44,
+   "page": 42,
+   "conf": "high"
+  },
+  {
+   "title": "I Remember You",
+   "pdfPage": 46,
+   "page": 44,
+   "conf": "high"
+  },
+  {
+   "title": "Let There Be Love",
+   "pdfPage": 49,
+   "page": 47,
+   "conf": "high"
+  },
+  {
+   "title": "It's Only A Paper Moon",
+   "pdfPage": 52,
+   "page": 50,
+   "conf": "high"
+  },
+  {
+   "title": "Love Is The Thing",
+   "pdfPage": 56,
+   "page": 54,
+   "conf": "high"
+  },
+  {
+   "title": "Love Letters",
+   "pdfPage": 58,
+   "page": 56,
+   "conf": "high"
+  },
+  {
+   "title": "Lush Life",
+   "pdfPage": 60,
+   "page": 58,
+   "conf": "high"
+  },
+  {
+   "title": "Moon Love",
+   "pdfPage": 63,
+   "page": 61,
+   "conf": "high"
+  },
+  {
+   "title": "Red Sails In The Sunset",
+   "pdfPage": 66,
+   "page": 64,
+   "conf": "high"
+  },
+  {
+   "title": "Straighten Up And Fly Right",
+   "pdfPage": 69,
+   "page": 67,
+   "conf": "high"
+  },
+  {
+   "title": "Tangerine",
+   "pdfPage": 72,
+   "page": 70,
+   "conf": "high"
+  },
+  {
+   "title": "Tonight You Belong To Me",
+   "pdfPage": 75,
+   "page": 73,
+   "conf": "high"
+  },
+  {
+   "title": "(Get Your Kicks On) Route 66!",
+   "pdfPage": 78,
+   "page": 76,
+   "conf": "high"
+  },
+  {
+   "title": "Star Dust",
+   "pdfPage": 80,
+   "page": 78,
+   "conf": "high"
+  },
+  {
+   "title": "Smile",
+   "pdfPage": 82,
+   "page": 80,
+   "conf": "high"
+  },
+  {
+   "title": "That's My Girl",
+   "pdfPage": 84,
+   "page": 82,
+   "conf": "high"
+  },
+  {
+   "title": "These Foolish Things (Remind Me Of You)",
+   "pdfPage": 86,
+   "page": 84,
+   "conf": "high"
+  },
+  {
+   "title": "When I Take My Sugar To Tea",
+   "pdfPage": 90,
+   "page": 88,
+   "conf": "high"
+  },
+  {
+   "title": "Where Can I Go Without You?",
+   "pdfPage": 94,
+   "page": 92,
+   "conf": "high"
+  },
+  {
+   "title": "Twilight On The Trail",
+   "pdfPage": 96,
+   "page": 94,
+   "conf": "high"
+  },
+  {
+   "title": "Yes! We Have No Bananas",
+   "pdfPage": 99,
+   "page": 97,
+   "conf": "high"
+  }
+ ]
+}
