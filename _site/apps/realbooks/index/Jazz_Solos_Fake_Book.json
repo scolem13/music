@@ -1,0 +1,1371 @@
+{
+ "file": "Jazz_Solos_Fake_Book.pdf",
+ "method": "ocr-index",
+ "offset": 10,
+ "notes": "Collection of transcribed solos ('SPACES VI Jazz Solos'): each solo is an entry (same tune can appear for several players, e.g. Minority x3, Tune Up x2). No bookmarks beyond junk; the text layer's index is garbled OCR, so the typewritten index (pdf pp5-9) was read by eye from page images. pdfPage = printed page + 10 (printed 1 = pdf 11). Fields 'instrument' and 'player' added. Player names come from the index grouping where one name per solo group, and confirmed on the pages (each page header shows player + instrument) for the sampled ones; the 13 trumpet solos 149-179 (Admiral Halsey..Ugetsu) are listed under Freddie Hubbard in the index but the header names there were not checked, so player left blank. Checked 21 pages by rendering page tops (1,16,45,78,99,128,141,142,146,181,207,231,254,257,261,285,303,321,354,386,398): all matched. Problem: 'Bird's Mother' (Booker Little) is printed at p.140 in the index, but p.140 is the 3rd page of Dahomey Dance, so its real location is unknown (conf=low). Pdf pp1-10 and the last pages (guitar chord chart) are non-tune.",
+ "entries": [
+  {
+   "title": "Blues To You",
+   "pdfPage": 11,
+   "page": 1,
+   "conf": "high",
+   "instrument": "Saxophone",
+   "player": "John Coltrane"
+  },
+  {
+   "title": "Blue Train",
+   "pdfPage": 12,
+   "page": 2,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "John Coltrane"
+  },
+  {
+   "title": "Countdown",
+   "pdfPage": 16,
+   "page": 6,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "John Coltrane"
+  },
+  {
+   "title": "Giant Steps",
+   "pdfPage": 20,
+   "page": 10,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "John Coltrane"
+  },
+  {
+   "title": "Lover",
+   "pdfPage": 26,
+   "page": 16,
+   "conf": "high",
+   "instrument": "Saxophone",
+   "player": "John Coltrane"
+  },
+  {
+   "title": "Moment's Notice",
+   "pdfPage": 31,
+   "page": 21,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "John Coltrane"
+  },
+  {
+   "title": "My Shining Hour",
+   "pdfPage": 34,
+   "page": 24,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "John Coltrane"
+  },
+  {
+   "title": "Oleo",
+   "pdfPage": 37,
+   "page": 27,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "John Coltrane"
+  },
+  {
+   "title": "Promise, The",
+   "pdfPage": 40,
+   "page": 30,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "John Coltrane"
+  },
+  {
+   "title": "Tad's Delight",
+   "pdfPage": 41,
+   "page": 31,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "John Coltrane"
+  },
+  {
+   "title": "Tune Up",
+   "pdfPage": 43,
+   "page": 33,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "John Coltrane"
+  },
+  {
+   "title": "Straight, No Chaser",
+   "pdfPage": 46,
+   "page": 36,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "John Coltrane"
+  },
+  {
+   "title": "Bongo Beep",
+   "pdfPage": 47,
+   "page": 37,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Charlie Parker"
+  },
+  {
+   "title": "Cherokee",
+   "pdfPage": 48,
+   "page": 38,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Charlie Parker"
+  },
+  {
+   "title": "Crazeology",
+   "pdfPage": 52,
+   "page": 42,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Charlie Parker"
+  },
+  {
+   "title": "Embraceable You",
+   "pdfPage": 53,
+   "page": 43,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Charlie Parker"
+  },
+  {
+   "title": "Groovin' High",
+   "pdfPage": 55,
+   "page": 45,
+   "conf": "high",
+   "instrument": "Saxophone",
+   "player": "Charlie Parker"
+  },
+  {
+   "title": "Just Friends",
+   "pdfPage": 58,
+   "page": 48,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Charlie Parker"
+  },
+  {
+   "title": "K.C. Blues",
+   "pdfPage": 59,
+   "page": 49,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Charlie Parker"
+  },
+  {
+   "title": "Merry-Go-Round",
+   "pdfPage": 60,
+   "page": 50,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Charlie Parker"
+  },
+  {
+   "title": "Night In Tunisia",
+   "pdfPage": 62,
+   "page": 52,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Charlie Parker"
+  },
+  {
+   "title": "Now's The Time",
+   "pdfPage": 63,
+   "page": 53,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Charlie Parker"
+  },
+  {
+   "title": "Ornithology",
+   "pdfPage": 64,
+   "page": 54,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Charlie Parker"
+  },
+  {
+   "title": "Parker's Mood",
+   "pdfPage": 67,
+   "page": 57,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Charlie Parker"
+  },
+  {
+   "title": "Quasimodo",
+   "pdfPage": 69,
+   "page": 59,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Charlie Parker"
+  },
+  {
+   "title": "Relaxin' At Camarillo",
+   "pdfPage": 71,
+   "page": 61,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Charlie Parker"
+  },
+  {
+   "title": "She Rote",
+   "pdfPage": 72,
+   "page": 62,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Charlie Parker"
+  },
+  {
+   "title": "Airegin (tenor)",
+   "pdfPage": 73,
+   "page": 63,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Sonny Rollins"
+  },
+  {
+   "title": "Keep Hold Of Yourself",
+   "pdfPage": 76,
+   "page": 66,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Sonny Rollins"
+  },
+  {
+   "title": "St. Thomas",
+   "pdfPage": 80,
+   "page": 70,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Sonny Rollins"
+  },
+  {
+   "title": "Tune Up",
+   "pdfPage": 83,
+   "page": 73,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Sonny Rollins"
+  },
+  {
+   "title": "Just You, Just Me",
+   "pdfPage": 88,
+   "page": 78,
+   "conf": "high",
+   "instrument": "Saxophone",
+   "player": "Lester Young"
+  },
+  {
+   "title": "Meet Ya Here For Love",
+   "pdfPage": 89,
+   "page": 79,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Lester Young"
+  },
+  {
+   "title": "Opener, The",
+   "pdfPage": 91,
+   "page": 81,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Lester Young"
+  },
+  {
+   "title": "Black Forest",
+   "pdfPage": 92,
+   "page": 82,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Jimmy Forrest"
+  },
+  {
+   "title": "These Foolish Things",
+   "pdfPage": 95,
+   "page": 85,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Jimmy Forrest"
+  },
+  {
+   "title": "Con Alma",
+   "pdfPage": 98,
+   "page": 88,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Stan Getz"
+  },
+  {
+   "title": "Early Autumn",
+   "pdfPage": 100,
+   "page": 90,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Stan Getz"
+  },
+  {
+   "title": "Ray's Idea",
+   "pdfPage": 101,
+   "page": 91,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Sonny Stitt"
+  },
+  {
+   "title": "Tune Up",
+   "pdfPage": 104,
+   "page": 94,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Sonny Stitt"
+  },
+  {
+   "title": "Minority",
+   "pdfPage": 109,
+   "page": 99,
+   "conf": "high",
+   "instrument": "Saxophone",
+   "player": "Cannonball Adderley"
+  },
+  {
+   "title": "Rise",
+   "pdfPage": 111,
+   "page": 101,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Gary Bartz"
+  },
+  {
+   "title": "Minor Blues",
+   "pdfPage": 113,
+   "page": 103,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "George Coleman"
+  },
+  {
+   "title": "Round Trip",
+   "pdfPage": 114,
+   "page": 104,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Ornette Coleman"
+  },
+  {
+   "title": "Body & Soul",
+   "pdfPage": 118,
+   "page": 108,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Coleman Hawkins"
+  },
+  {
+   "title": "Soon",
+   "pdfPage": 120,
+   "page": 110,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Tubby Hayes"
+  },
+  {
+   "title": "All The Things You Are",
+   "pdfPage": 128,
+   "page": 118,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Jimmy Heath"
+  },
+  {
+   "title": "Recorda-Me",
+   "pdfPage": 130,
+   "page": 120,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Joe Henderson"
+  },
+  {
+   "title": "Passion Flower",
+   "pdfPage": 132,
+   "page": 122,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Johnny Hodges"
+  },
+  {
+   "title": "Sub-Conscious-Lee",
+   "pdfPage": 134,
+   "page": 124,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Lee Konitz"
+  },
+  {
+   "title": "Ummh",
+   "pdfPage": 135,
+   "page": 125,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Harold Land"
+  },
+  {
+   "title": "Frutti-Tutti",
+   "pdfPage": 137,
+   "page": 127,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Carmen Leggio"
+  },
+  {
+   "title": "Alto Madness",
+   "pdfPage": 138,
+   "page": 128,
+   "conf": "high",
+   "instrument": "Saxophone",
+   "player": "Jackie McLean"
+  },
+  {
+   "title": "Sun In Aquarius",
+   "pdfPage": 141,
+   "page": 131,
+   "conf": "med",
+   "instrument": "Saxophone",
+   "player": "Pharoah Sanders"
+  },
+  {
+   "title": "Birdlike",
+   "pdfPage": 143,
+   "page": 133,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Freddie Hubbard"
+  },
+  {
+   "title": "Dahomey Dance",
+   "pdfPage": 148,
+   "page": 138,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Freddie Hubbard"
+  },
+  {
+   "title": "Fe Fi Fo Fum",
+   "pdfPage": 151,
+   "page": 141,
+   "conf": "high",
+   "instrument": "Trumpet",
+   "player": "Freddie Hubbard"
+  },
+  {
+   "title": "Killer Joe",
+   "pdfPage": 152,
+   "page": 142,
+   "conf": "high",
+   "instrument": "Trumpet",
+   "player": "Freddie Hubbard"
+  },
+  {
+   "title": "Minority",
+   "pdfPage": 153,
+   "page": 143,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Freddie Hubbard"
+  },
+  {
+   "title": "Quota, The",
+   "pdfPage": 155,
+   "page": 145,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Freddie Hubbard"
+  },
+  {
+   "title": "Skylark",
+   "pdfPage": 156,
+   "page": 146,
+   "conf": "high",
+   "instrument": "Trumpet",
+   "player": "Freddie Hubbard"
+  },
+  {
+   "title": "Survival Of The Fittest",
+   "pdfPage": 157,
+   "page": 147,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Freddie Hubbard"
+  },
+  {
+   "title": "Walking In Space",
+   "pdfPage": 158,
+   "page": 148,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Freddie Hubbard"
+  },
+  {
+   "title": "Admiral Halsey",
+   "pdfPage": 159,
+   "page": 149,
+   "conf": "med",
+   "instrument": "Trumpet"
+  },
+  {
+   "title": "Arietas",
+   "pdfPage": 161,
+   "page": 151,
+   "conf": "med",
+   "instrument": "Trumpet"
+  },
+  {
+   "title": "Blue Moon",
+   "pdfPage": 164,
+   "page": 154,
+   "conf": "med",
+   "instrument": "Trumpet"
+  },
+  {
+   "title": "Blue Moses",
+   "pdfPage": 166,
+   "page": 156,
+   "conf": "med",
+   "instrument": "Trumpet"
+  },
+  {
+   "title": "Bob's Place",
+   "pdfPage": 168,
+   "page": 158,
+   "conf": "med",
+   "instrument": "Trumpet"
+  },
+  {
+   "title": "Changing Scene",
+   "pdfPage": 172,
+   "page": 162,
+   "conf": "med",
+   "instrument": "Trumpet"
+  },
+  {
+   "title": "Crisis",
+   "pdfPage": 174,
+   "page": 164,
+   "conf": "med",
+   "instrument": "Trumpet"
+  },
+  {
+   "title": "East B'Way Run Down",
+   "pdfPage": 177,
+   "page": 167,
+   "conf": "med",
+   "instrument": "Trumpet"
+  },
+  {
+   "title": "Interlude I",
+   "pdfPage": 180,
+   "page": 170,
+   "conf": "med",
+   "instrument": "Trumpet"
+  },
+  {
+   "title": "Pek-A-Sec",
+   "pdfPage": 182,
+   "page": 172,
+   "conf": "med",
+   "instrument": "Trumpet"
+  },
+  {
+   "title": "People Make The World",
+   "pdfPage": 186,
+   "page": 176,
+   "conf": "med",
+   "instrument": "Trumpet"
+  },
+  {
+   "title": "Sunflower",
+   "pdfPage": 188,
+   "page": 178,
+   "conf": "med",
+   "instrument": "Trumpet"
+  },
+  {
+   "title": "Ugetsu",
+   "pdfPage": 189,
+   "page": 179,
+   "conf": "med",
+   "instrument": "Trumpet"
+  },
+  {
+   "title": "Godchild",
+   "pdfPage": 191,
+   "page": 181,
+   "conf": "high",
+   "instrument": "Trumpet",
+   "player": "Miles Davis"
+  },
+  {
+   "title": "Green Dolphin Street",
+   "pdfPage": 192,
+   "page": 182,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Miles Davis"
+  },
+  {
+   "title": "Ladybird (Half Nelson)",
+   "pdfPage": 193,
+   "page": 183,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Miles Davis"
+  },
+  {
+   "title": "My Funny Valentine",
+   "pdfPage": 194,
+   "page": 184,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Miles Davis"
+  },
+  {
+   "title": "Petit Machins",
+   "pdfPage": 197,
+   "page": 187,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Miles Davis"
+  },
+  {
+   "title": "Sid's Ahead",
+   "pdfPage": 200,
+   "page": 190,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Miles Davis"
+  },
+  {
+   "title": "I Remember April",
+   "pdfPage": 217,
+   "page": 207,
+   "conf": "high",
+   "instrument": "Trumpet",
+   "player": "Clifford Brown"
+  },
+  {
+   "title": "Kiss & Run",
+   "pdfPage": 220,
+   "page": 210,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Clifford Brown"
+  },
+  {
+   "title": "Valse Hot",
+   "pdfPage": 223,
+   "page": 213,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Clifford Brown"
+  },
+  {
+   "title": "Yesterdays",
+   "pdfPage": 226,
+   "page": 216,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Clifford Brown"
+  },
+  {
+   "title": "Basin Street Blues",
+   "pdfPage": 228,
+   "page": 218,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Louis Armstrong"
+  },
+  {
+   "title": "Beau Koo Jack",
+   "pdfPage": 229,
+   "page": 219,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Louis Armstrong"
+  },
+  {
+   "title": "Struttin' With Some Barbeque",
+   "pdfPage": 230,
+   "page": 220,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Louis Armstrong"
+  },
+  {
+   "title": "Terrible Blues / S.O.L. Blues / Mahagony Hall",
+   "pdfPage": 231,
+   "page": 221,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Louis Armstrong"
+  },
+  {
+   "title": "West End Blues",
+   "pdfPage": 233,
+   "page": 223,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Louis Armstrong"
+  },
+  {
+   "title": "Blues",
+   "pdfPage": 235,
+   "page": 225,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Donald Byrd"
+  },
+  {
+   "title": "Minority",
+   "pdfPage": 237,
+   "page": 227,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Donald Byrd"
+  },
+  {
+   "title": "On It",
+   "pdfPage": 239,
+   "page": 229,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Donald Byrd"
+  },
+  {
+   "title": "Pretty For The People",
+   "pdfPage": 241,
+   "page": 231,
+   "conf": "high",
+   "instrument": "Trumpet",
+   "player": "Kenny Dorham"
+  },
+  {
+   "title": "Recorda-Me",
+   "pdfPage": 243,
+   "page": 233,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Kenny Dorham"
+  },
+  {
+   "title": "Woody N' You",
+   "pdfPage": 245,
+   "page": 235,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Kenny Dorham"
+  },
+  {
+   "title": "Blue Train",
+   "pdfPage": 247,
+   "page": 237,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Lee Morgan"
+  },
+  {
+   "title": "I'm Old Fashioned",
+   "pdfPage": 249,
+   "page": 239,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Lee Morgan"
+  },
+  {
+   "title": "Sidewinder",
+   "pdfPage": 250,
+   "page": 240,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Lee Morgan"
+  },
+  {
+   "title": "I Cover The Waterfront",
+   "pdfPage": 252,
+   "page": 242,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Red Allen"
+  },
+  {
+   "title": "Louisiana Swing",
+   "pdfPage": 254,
+   "page": 244,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Red Allen"
+  },
+  {
+   "title": "I Can't Get Started",
+   "pdfPage": 256,
+   "page": 246,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Dizzy Gillespie"
+  },
+  {
+   "title": "One Bass Hit",
+   "pdfPage": 258,
+   "page": 248,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Dizzy Gillespie"
+  },
+  {
+   "title": "Oh! Karen O",
+   "pdfPage": 261,
+   "page": 251,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Thad Jones"
+  },
+  {
+   "title": "Straight, No Chaser",
+   "pdfPage": 264,
+   "page": 254,
+   "conf": "high",
+   "instrument": "Trumpet",
+   "player": "Thad Jones"
+  },
+  {
+   "title": "Bird's Mother",
+   "pdfPage": 150,
+   "page": 140,
+   "conf": "low",
+   "instrument": "Trumpet",
+   "player": "Booker Little"
+  },
+  {
+   "title": "W.K. Blues",
+   "pdfPage": 267,
+   "page": 257,
+   "conf": "high",
+   "instrument": "Trumpet",
+   "player": "Booker Little"
+  },
+  {
+   "title": "Feedin' The Bean",
+   "pdfPage": 268,
+   "page": 258,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Clark Terry"
+  },
+  {
+   "title": "Tete A Tete",
+   "pdfPage": 271,
+   "page": 261,
+   "conf": "high",
+   "instrument": "Trumpet",
+   "player": "Clark Terry"
+  },
+  {
+   "title": "Good Morning Starshine",
+   "pdfPage": 273,
+   "page": 263,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Bobby Bryant"
+  },
+  {
+   "title": "Body & Soul",
+   "pdfPage": 274,
+   "page": 264,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Roy Eldridge"
+  },
+  {
+   "title": "Kera's Dance",
+   "pdfPage": 276,
+   "page": 266,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Frank Gordon"
+  },
+  {
+   "title": "Gingerbread Boy",
+   "pdfPage": 279,
+   "page": 269,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Blue Mitchell"
+  },
+  {
+   "title": "Softly In A Morning Sunrise",
+   "pdfPage": 281,
+   "page": 271,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Woody Shaw"
+  },
+  {
+   "title": "Lucretia's Reprise",
+   "pdfPage": 283,
+   "page": 273,
+   "conf": "med",
+   "instrument": "Trumpet",
+   "player": "Lew Soloff"
+  },
+  {
+   "title": "Gone With What Wind",
+   "pdfPage": 286,
+   "page": 276,
+   "conf": "med",
+   "instrument": "Guitar",
+   "player": "Charlie Christian"
+  },
+  {
+   "title": "I Got Rhythm",
+   "pdfPage": 288,
+   "page": 278,
+   "conf": "med",
+   "instrument": "Guitar",
+   "player": "Charlie Christian"
+  },
+  {
+   "title": "Profoundly Blue",
+   "pdfPage": 290,
+   "page": 280,
+   "conf": "med",
+   "instrument": "Guitar",
+   "player": "Charlie Christian"
+  },
+  {
+   "title": "Roseroom",
+   "pdfPage": 292,
+   "page": 282,
+   "conf": "med",
+   "instrument": "Guitar",
+   "player": "Charlie Christian"
+  },
+  {
+   "title": "Here's That Rainy Day",
+   "pdfPage": 295,
+   "page": 285,
+   "conf": "high",
+   "instrument": "Guitar",
+   "player": "Wes Montgomery"
+  },
+  {
+   "title": "Naptown Blues",
+   "pdfPage": 297,
+   "page": 287,
+   "conf": "med",
+   "instrument": "Guitar",
+   "player": "Wes Montgomery"
+  },
+  {
+   "title": "Tear It Down",
+   "pdfPage": 307,
+   "page": 297,
+   "conf": "med",
+   "instrument": "Guitar",
+   "player": "Wes Montgomery"
+  },
+  {
+   "title": "Breeze & I",
+   "pdfPage": 301,
+   "page": 291,
+   "conf": "med",
+   "instrument": "Guitar",
+   "player": "Kenny Burrell"
+  },
+  {
+   "title": "I Never Knew",
+   "pdfPage": 303,
+   "page": 293,
+   "conf": "med",
+   "instrument": "Guitar",
+   "player": "Kenny Burrell"
+  },
+  {
+   "title": "At Jimmy's Bar",
+   "pdfPage": 305,
+   "page": 295,
+   "conf": "med",
+   "instrument": "Guitar",
+   "player": "Django Reinhardt"
+  },
+  {
+   "title": "Limehouse Blues",
+   "pdfPage": 308,
+   "page": 298,
+   "conf": "med",
+   "instrument": "Guitar",
+   "player": "Django Reinhardt"
+  },
+  {
+   "title": "So What",
+   "pdfPage": 309,
+   "page": 299,
+   "conf": "med",
+   "instrument": "Guitar",
+   "player": "George Benson"
+  },
+  {
+   "title": "Miss Jones",
+   "pdfPage": 312,
+   "page": 302,
+   "conf": "med",
+   "instrument": "Guitar",
+   "player": "Tal Farlow"
+  },
+  {
+   "title": "Coral",
+   "pdfPage": 313,
+   "page": 303,
+   "conf": "high",
+   "instrument": "Guitar",
+   "player": "Mick Goodrick"
+  },
+  {
+   "title": "Sands Of Time",
+   "pdfPage": 314,
+   "page": 304,
+   "conf": "med",
+   "instrument": "Guitar",
+   "player": "Joe Pass"
+  },
+  {
+   "title": "Coffee Pot",
+   "pdfPage": 315,
+   "page": 305,
+   "conf": "med",
+   "instrument": "Trombone",
+   "player": "J.J. Johnson"
+  },
+  {
+   "title": "Now's The Time",
+   "pdfPage": 318,
+   "page": 308,
+   "conf": "med",
+   "instrument": "Trombone",
+   "player": "J.J. Johnson"
+  },
+  {
+   "title": "Shutter Bug",
+   "pdfPage": 322,
+   "page": 312,
+   "conf": "med",
+   "instrument": "Trombone",
+   "player": "J.J. Johnson"
+  },
+  {
+   "title": "Bourbon Street Parade",
+   "pdfPage": 324,
+   "page": 314,
+   "conf": "med",
+   "instrument": "Trombone",
+   "player": "Vic Dickenson"
+  },
+  {
+   "title": "Weary Blues / Gut Bucket Blues / Bucktown Stomp",
+   "pdfPage": 325,
+   "page": 315,
+   "conf": "med",
+   "instrument": "Trombone",
+   "player": "Kid Ory"
+  },
+  {
+   "title": "Shiny Stockings",
+   "pdfPage": 326,
+   "page": 316,
+   "conf": "med",
+   "instrument": "Bass",
+   "player": "Richard Davis"
+  },
+  {
+   "title": "Big Boy",
+   "pdfPage": 329,
+   "page": 319,
+   "conf": "med",
+   "instrument": "Bass",
+   "player": "Monk Montgomery"
+  },
+  {
+   "title": "Loner, The",
+   "pdfPage": 331,
+   "page": 321,
+   "conf": "high",
+   "instrument": "Violin",
+   "player": "Jean-Luc Ponty"
+  },
+  {
+   "title": "Sunday Walk",
+   "pdfPage": 334,
+   "page": 324,
+   "conf": "med",
+   "instrument": "Violin",
+   "player": "Jean-Luc Ponty"
+  },
+  {
+   "title": "Anderson Tapes Theme",
+   "pdfPage": 335,
+   "page": 325,
+   "conf": "med",
+   "instrument": "Vibes",
+   "player": "Milt Jackson"
+  },
+  {
+   "title": "Gula Matari",
+   "pdfPage": 336,
+   "page": 326,
+   "conf": "med",
+   "instrument": "Flute",
+   "player": "Hubert Laws"
+  },
+  {
+   "title": "Memphis Underground",
+   "pdfPage": 339,
+   "page": 329,
+   "conf": "med",
+   "instrument": "Flute",
+   "player": "Herbie Mann"
+  },
+  {
+   "title": "Superbaby",
+   "pdfPage": 338,
+   "page": 328,
+   "conf": "med",
+   "instrument": "Flute",
+   "player": "Jeremy Steig"
+  },
+  {
+   "title": "After The Cosmic Rain",
+   "pdfPage": 341,
+   "page": 331,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Chick Corea"
+  },
+  {
+   "title": "Matrix",
+   "pdfPage": 344,
+   "page": 334,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Chick Corea"
+  },
+  {
+   "title": "Sounddown",
+   "pdfPage": 349,
+   "page": 339,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Chick Corea"
+  },
+  {
+   "title": "Spain",
+   "pdfPage": 350,
+   "page": 340,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Chick Corea"
+  },
+  {
+   "title": "Firewater",
+   "pdfPage": 353,
+   "page": 343,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Herbie Hancock"
+  },
+  {
+   "title": "Hubtones",
+   "pdfPage": 356,
+   "page": 346,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Herbie Hancock"
+  },
+  {
+   "title": "Oliloqui Valley",
+   "pdfPage": 359,
+   "page": 349,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Herbie Hancock"
+  },
+  {
+   "title": "You're My Everything",
+   "pdfPage": 363,
+   "page": 353,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Herbie Hancock"
+  },
+  {
+   "title": "Deluge",
+   "pdfPage": 364,
+   "page": 354,
+   "conf": "high",
+   "instrument": "Piano",
+   "player": "Keith Jarrett"
+  },
+  {
+   "title": "Lucky Southern",
+   "pdfPage": 365,
+   "page": 355,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Keith Jarrett"
+  },
+  {
+   "title": "My Romance",
+   "pdfPage": 367,
+   "page": 357,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Keith Jarrett"
+  },
+  {
+   "title": "Secret Love",
+   "pdfPage": 370,
+   "page": 360,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Keith Jarrett"
+  },
+  {
+   "title": "Little Tracy",
+   "pdfPage": 376,
+   "page": 366,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Wynton Kelly"
+  },
+  {
+   "title": "No Blues",
+   "pdfPage": 378,
+   "page": 368,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Wynton Kelly"
+  },
+  {
+   "title": "So What",
+   "pdfPage": 379,
+   "page": 369,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Wynton Kelly"
+  },
+  {
+   "title": "Fascination Rhythm",
+   "pdfPage": 381,
+   "page": 371,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Oscar Peterson"
+  },
+  {
+   "title": "Joy Spring",
+   "pdfPage": 382,
+   "page": 372,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Oscar Peterson"
+  },
+  {
+   "title": "Lover",
+   "pdfPage": 386,
+   "page": 376,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Oscar Peterson"
+  },
+  {
+   "title": "Celia",
+   "pdfPage": 390,
+   "page": 380,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Bud Powell"
+  },
+  {
+   "title": "Dance Of The Infidels",
+   "pdfPage": 392,
+   "page": 382,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Bud Powell"
+  },
+  {
+   "title": "Nice Work If You Can Get It",
+   "pdfPage": 394,
+   "page": 384,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Bud Powell"
+  },
+  {
+   "title": "Pursuance",
+   "pdfPage": 396,
+   "page": 386,
+   "conf": "high",
+   "instrument": "Piano",
+   "player": "McCoy Tyner"
+  },
+  {
+   "title": "Transition",
+   "pdfPage": 397,
+   "page": 387,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "McCoy Tyner"
+  },
+  {
+   "title": "3,2,1,0",
+   "pdfPage": 400,
+   "page": 390,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Roger Kellaway"
+  },
+  {
+   "title": "I Mean You",
+   "pdfPage": 401,
+   "page": 391,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Thelonious Monk"
+  },
+  {
+   "title": "Opus De Funk",
+   "pdfPage": 403,
+   "page": 393,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Horace Silver"
+  },
+  {
+   "title": "Back Home",
+   "pdfPage": 407,
+   "page": 397,
+   "conf": "med",
+   "instrument": "Piano",
+   "player": "Lennie Tristano"
+  },
+  {
+   "title": "Eurydice",
+   "pdfPage": 408,
+   "page": 398,
+   "conf": "high",
+   "instrument": "Piano",
+   "player": "Joe Zawinul"
+  }
+ ]
+}

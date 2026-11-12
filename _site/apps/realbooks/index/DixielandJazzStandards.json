@@ -1,0 +1,2168 @@
+{
+ "file": "DixielandJazzStandards.pdf",
+ "method": "ocr-index",
+ "offset": null,
+ "notes": "Index (pdf pp2-5, alphabetical, typed) read by eye from page images. Its numbers are TUNE numbers (1-318), not page numbers; each tune is headed 'N. Title' in handwriting, ~2 tunes per page, many pages are duplicated scans or continuation pages, and the book has no printed page numbers (page=null, field 'tune' = tune number). I mapped tune number -> pdfPage by reading the heading numbers on every page 6-308 from contact sheets; pdfPage = first page where the tune's heading appears. Every returned tune's heading was seen on its page (conf=high). Index entries with no matching page in this PDF (omitted): Black Bottom (277), Crazy Rhythm (317), Don't Take Your Love From Me (316), Honey Hush (315), I Double Dare You (276), If I Had A Talking Picture Of You (314), Keepin' Out Of Mischief Now (310), Maryland, My Maryland (105), Rose Of Washington Square (256), Squeeze Me! (309). The PDF ends at tune 313, so tunes 314-318 and several others (105, 256, 269, 276, 277, 309, 310) are absent. Tune 246 is headed 'Stardust' on the page although the index gives Stardust as 318 and has no 246 (conf=med); tune 130 is headed 'Coquette' (a second setting; not in the index). Cross-referenced alternate titles for the same tune number are merged into 'alt'. Tune pdf pp1-5 are cover/index.",
+ "entries": [
+  {
+   "title": "Milenburg Joys",
+   "pdfPage": 6,
+   "page": null,
+   "tune": 1,
+   "conf": "high"
+  },
+  {
+   "title": "Nobody Knows You When You're Down And Out",
+   "pdfPage": 7,
+   "page": null,
+   "tune": 2,
+   "conf": "high"
+  },
+  {
+   "title": "Panama",
+   "pdfPage": 8,
+   "page": null,
+   "tune": 3,
+   "conf": "high"
+  },
+  {
+   "title": "Atlanta Blues",
+   "pdfPage": 9,
+   "page": null,
+   "tune": 4,
+   "conf": "high"
+  },
+  {
+   "title": "Clarinet Marmalade",
+   "pdfPage": 10,
+   "page": null,
+   "tune": 5,
+   "conf": "high"
+  },
+  {
+   "title": "My Honey's Lovin' Arms",
+   "pdfPage": 11,
+   "page": null,
+   "tune": 6,
+   "conf": "high"
+  },
+  {
+   "title": "Fidgety Feet",
+   "pdfPage": 12,
+   "page": null,
+   "tune": 7,
+   "conf": "high"
+  },
+  {
+   "title": "Once In A While",
+   "pdfPage": 13,
+   "page": null,
+   "tune": 8,
+   "conf": "high"
+  },
+  {
+   "title": "Willie The Weeper",
+   "pdfPage": 14,
+   "page": null,
+   "tune": 9,
+   "conf": "high"
+  },
+  {
+   "title": "Creole Love Song",
+   "pdfPage": 14,
+   "page": null,
+   "tune": 10,
+   "conf": "high"
+  },
+  {
+   "title": "Blues My Naughty Sweety Gives To Me",
+   "pdfPage": 16,
+   "page": null,
+   "tune": 11,
+   "conf": "high"
+  },
+  {
+   "title": "Save It Pretty Mama",
+   "pdfPage": 16,
+   "page": null,
+   "tune": 12,
+   "conf": "high"
+  },
+  {
+   "title": "After You've Gone",
+   "pdfPage": 18,
+   "page": null,
+   "tune": 13,
+   "conf": "high"
+  },
+  {
+   "title": "Bourbon Street Parade",
+   "pdfPage": 19,
+   "page": null,
+   "tune": 14,
+   "conf": "high"
+  },
+  {
+   "title": "St. James Infirmary Blues",
+   "pdfPage": 19,
+   "page": null,
+   "tune": 15,
+   "conf": "high"
+  },
+  {
+   "title": "Big Butter & Egg Man",
+   "pdfPage": 21,
+   "page": null,
+   "tune": 16,
+   "conf": "high"
+  },
+  {
+   "title": "Baby Won't You Please Come Home",
+   "pdfPage": 21,
+   "page": null,
+   "tune": 17,
+   "conf": "high"
+  },
+  {
+   "title": "Bill Bailey",
+   "pdfPage": 23,
+   "page": null,
+   "tune": 18,
+   "conf": "high"
+  },
+  {
+   "title": "Original Dixieland One-Step",
+   "pdfPage": 24,
+   "page": null,
+   "tune": 19,
+   "conf": "high"
+  },
+  {
+   "title": "When The Saints Come Marching In",
+   "pdfPage": 25,
+   "page": null,
+   "tune": 20,
+   "conf": "high"
+  },
+  {
+   "title": "When My Dreamboat Comes Home",
+   "pdfPage": 25,
+   "page": null,
+   "tune": 21,
+   "conf": "high"
+  },
+  {
+   "title": "See See Rider",
+   "pdfPage": 27,
+   "page": null,
+   "tune": 22,
+   "conf": "high"
+  },
+  {
+   "title": "Saturday Night Function",
+   "pdfPage": 27,
+   "page": null,
+   "tune": 23,
+   "conf": "high"
+  },
+  {
+   "title": "Darktown Strutter's Ball",
+   "pdfPage": 29,
+   "page": null,
+   "tune": 24,
+   "conf": "high"
+  },
+  {
+   "title": "Sweethearts On Parade",
+   "pdfPage": 30,
+   "page": null,
+   "tune": 25,
+   "conf": "high"
+  },
+  {
+   "title": "Do What Ory Say",
+   "pdfPage": 30,
+   "page": null,
+   "tune": 26,
+   "conf": "high"
+  },
+  {
+   "title": "Heebie Jeebies",
+   "pdfPage": 32,
+   "page": null,
+   "tune": 27,
+   "conf": "high"
+  },
+  {
+   "title": "Blue Turning Grey Over You",
+   "pdfPage": 33,
+   "page": null,
+   "tune": 28,
+   "conf": "high"
+  },
+  {
+   "title": "Shout 'Em Aunt Tillie",
+   "pdfPage": 33,
+   "page": null,
+   "tune": 29,
+   "conf": "high"
+  },
+  {
+   "title": "Doctor Jazz",
+   "pdfPage": 35,
+   "page": null,
+   "tune": 30,
+   "conf": "high"
+  },
+  {
+   "title": "At The Jazz Band Ball",
+   "pdfPage": 36,
+   "page": null,
+   "tune": 31,
+   "conf": "high"
+  },
+  {
+   "title": "Someday Sweetheart",
+   "pdfPage": 37,
+   "page": null,
+   "tune": 32,
+   "conf": "high"
+  },
+  {
+   "title": "Make Me A Pallet On The Floor",
+   "pdfPage": 37,
+   "page": null,
+   "tune": 33,
+   "conf": "high"
+  },
+  {
+   "title": "High Society",
+   "pdfPage": 39,
+   "page": null,
+   "tune": 34,
+   "conf": "high"
+  },
+  {
+   "title": "A Good Man Is Hard To Find",
+   "pdfPage": 40,
+   "page": null,
+   "tune": 35,
+   "conf": "high"
+  },
+  {
+   "title": "Riverboat Shuffle",
+   "pdfPage": 41,
+   "page": null,
+   "tune": 36,
+   "conf": "high"
+  },
+  {
+   "title": "Jazz Me Blues",
+   "pdfPage": 42,
+   "page": null,
+   "tune": 37,
+   "conf": "high"
+  },
+  {
+   "title": "Frankie And Johnny",
+   "pdfPage": 42,
+   "page": null,
+   "tune": 38,
+   "conf": "high"
+  },
+  {
+   "title": "Royal Garden Blues",
+   "pdfPage": 44,
+   "page": null,
+   "tune": 39,
+   "conf": "high"
+  },
+  {
+   "title": "Ain't Gonna Give Nobody None Of My Jelly Roll",
+   "pdfPage": 45,
+   "page": null,
+   "tune": 40,
+   "conf": "high"
+  },
+  {
+   "title": "Bye And Bye",
+   "pdfPage": 45,
+   "page": null,
+   "tune": 41,
+   "conf": "high"
+  },
+  {
+   "title": "Dallas Blues",
+   "pdfPage": 47,
+   "page": null,
+   "tune": 42,
+   "conf": "high"
+  },
+  {
+   "title": "Ja-Da",
+   "pdfPage": 47,
+   "page": null,
+   "tune": 43,
+   "conf": "high"
+  },
+  {
+   "title": "Someday You'll Be Sorry",
+   "pdfPage": 49,
+   "page": null,
+   "tune": 44,
+   "conf": "high"
+  },
+  {
+   "title": "Just A Closer Walk With Thee",
+   "pdfPage": 49,
+   "page": null,
+   "tune": 45,
+   "conf": "high"
+  },
+  {
+   "title": "Oh Baby!",
+   "pdfPage": 51,
+   "page": null,
+   "tune": 46,
+   "conf": "high"
+  },
+  {
+   "title": "Mecca Flat Blues",
+   "pdfPage": 51,
+   "page": null,
+   "tune": 47,
+   "conf": "high"
+  },
+  {
+   "title": "South Rampart Street Parade",
+   "pdfPage": 53,
+   "page": null,
+   "tune": 48,
+   "conf": "high"
+  },
+  {
+   "title": "Ballin' The Jack",
+   "pdfPage": 54,
+   "page": null,
+   "tune": 49,
+   "conf": "high"
+  },
+  {
+   "title": "Avalon",
+   "pdfPage": 54,
+   "page": null,
+   "tune": 50,
+   "conf": "high"
+  },
+  {
+   "title": "Beale Street Blues",
+   "pdfPage": 57,
+   "page": null,
+   "tune": 51,
+   "conf": "high"
+  },
+  {
+   "title": "Ace In The Hole",
+   "pdfPage": 58,
+   "page": null,
+   "tune": 52,
+   "conf": "high"
+  },
+  {
+   "title": "Mandy Make Up Your Mind",
+   "pdfPage": 59,
+   "page": null,
+   "tune": 53,
+   "conf": "high"
+  },
+  {
+   "title": "Basin Street Blues",
+   "pdfPage": 60,
+   "page": null,
+   "tune": 54,
+   "conf": "high"
+  },
+  {
+   "title": "Black And Blue",
+   "pdfPage": 61,
+   "page": null,
+   "tune": 55,
+   "conf": "high"
+  },
+  {
+   "title": "Careless Love",
+   "pdfPage": 61,
+   "page": null,
+   "tune": 56,
+   "conf": "high"
+  },
+  {
+   "title": "That's A-Plenty",
+   "pdfPage": 63,
+   "page": null,
+   "tune": 57,
+   "conf": "high"
+  },
+  {
+   "title": "South",
+   "pdfPage": 64,
+   "page": null,
+   "tune": 58,
+   "conf": "high"
+  },
+  {
+   "title": "Wolverine Blues",
+   "pdfPage": 65,
+   "page": null,
+   "tune": 59,
+   "conf": "high"
+  },
+  {
+   "title": "Farewell Blues",
+   "pdfPage": 66,
+   "page": null,
+   "tune": 60,
+   "conf": "high"
+  },
+  {
+   "title": "Cakewalking Babies",
+   "pdfPage": 67,
+   "page": null,
+   "tune": 61,
+   "conf": "high"
+  },
+  {
+   "title": "When It's Sleepy Time Down South",
+   "pdfPage": 68,
+   "page": null,
+   "tune": 62,
+   "conf": "high"
+  },
+  {
+   "title": "You Gotta See Your Mama Every Nite",
+   "pdfPage": 68,
+   "page": null,
+   "tune": 63,
+   "conf": "high"
+  },
+  {
+   "title": "Do You Know What It Means To Miss New Orleans",
+   "pdfPage": 70,
+   "page": null,
+   "tune": 64,
+   "conf": "high"
+  },
+  {
+   "title": "\"C\" Jam Blues",
+   "pdfPage": 70,
+   "page": null,
+   "tune": 65,
+   "conf": "high"
+  },
+  {
+   "title": "Apex Blues",
+   "pdfPage": 72,
+   "page": null,
+   "tune": 66,
+   "conf": "high"
+  },
+  {
+   "title": "Muskrat Ramble",
+   "pdfPage": 73,
+   "page": null,
+   "tune": 67,
+   "conf": "high"
+  },
+  {
+   "title": "Friendless Blues",
+   "pdfPage": 74,
+   "page": null,
+   "tune": 68,
+   "conf": "high"
+  },
+  {
+   "title": "China Boy",
+   "pdfPage": 75,
+   "page": null,
+   "tune": 69,
+   "conf": "high"
+  },
+  {
+   "title": "I'm Coming, Virginia",
+   "pdfPage": 75,
+   "page": null,
+   "tune": 70,
+   "conf": "high"
+  },
+  {
+   "title": "Weary Blues",
+   "pdfPage": 77,
+   "page": null,
+   "tune": 71,
+   "conf": "high"
+  },
+  {
+   "title": "At A Georgia Camp Meeting",
+   "pdfPage": 78,
+   "page": null,
+   "tune": 72,
+   "conf": "high"
+  },
+  {
+   "title": "Melancholy Blues",
+   "pdfPage": 79,
+   "page": null,
+   "tune": 73,
+   "conf": "high"
+  },
+  {
+   "title": "That Da-Da Strain",
+   "pdfPage": 80,
+   "page": null,
+   "tune": 74,
+   "conf": "high"
+  },
+  {
+   "title": "Trouble In Mind",
+   "pdfPage": 80,
+   "page": null,
+   "tune": 75,
+   "conf": "high"
+  },
+  {
+   "title": "Struttin' With Some Barbeque",
+   "pdfPage": 82,
+   "page": null,
+   "tune": 76,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Substitute",
+   "pdfPage": 83,
+   "page": null,
+   "tune": 77,
+   "conf": "high"
+  },
+  {
+   "title": "When You're Smiling",
+   "pdfPage": 83,
+   "page": null,
+   "tune": 78,
+   "conf": "high"
+  },
+  {
+   "title": "St. Louis Blues",
+   "pdfPage": 85,
+   "page": null,
+   "tune": 79,
+   "conf": "high"
+  },
+  {
+   "title": "Till We Meet Again",
+   "pdfPage": 86,
+   "page": null,
+   "tune": 80,
+   "conf": "high"
+  },
+  {
+   "title": "Smiles",
+   "pdfPage": 86,
+   "page": null,
+   "tune": 81,
+   "conf": "high"
+  },
+  {
+   "title": "Canal Street Blues",
+   "pdfPage": 88,
+   "page": null,
+   "tune": 82,
+   "conf": "high"
+  },
+  {
+   "title": "Rosetta",
+   "pdfPage": 89,
+   "page": null,
+   "tune": 83,
+   "conf": "high"
+  },
+  {
+   "title": "Buddy Bolden's Blues",
+   "pdfPage": 89,
+   "page": null,
+   "tune": 84,
+   "conf": "high"
+  },
+  {
+   "title": "Coquette",
+   "pdfPage": 91,
+   "page": null,
+   "tune": 85,
+   "conf": "high"
+  },
+  {
+   "title": "You Always Hurt The One You Love",
+   "pdfPage": 91,
+   "page": null,
+   "tune": 86,
+   "conf": "high"
+  },
+  {
+   "title": "Ain't Misbehavin'",
+   "pdfPage": 93,
+   "page": null,
+   "tune": 87,
+   "conf": "high"
+  },
+  {
+   "title": "Shake That Thing",
+   "pdfPage": 93,
+   "page": null,
+   "tune": 88,
+   "conf": "high"
+  },
+  {
+   "title": "I Ain't Got Nobody",
+   "pdfPage": 95,
+   "page": null,
+   "tune": 89,
+   "conf": "high"
+  },
+  {
+   "title": "Bye Bye Blues",
+   "pdfPage": 95,
+   "page": null,
+   "tune": 90,
+   "conf": "high"
+  },
+  {
+   "title": "Dinah",
+   "pdfPage": 97,
+   "page": null,
+   "tune": 91,
+   "conf": "high"
+  },
+  {
+   "title": "Nobody Knows",
+   "pdfPage": 97,
+   "page": null,
+   "tune": 92,
+   "conf": "high"
+  },
+  {
+   "title": "Cornet Chop Suey",
+   "pdfPage": 99,
+   "page": null,
+   "tune": 93,
+   "conf": "high"
+  },
+  {
+   "title": "Pretty Baby",
+   "pdfPage": 100,
+   "page": null,
+   "tune": 94,
+   "conf": "high"
+  },
+  {
+   "title": "You Can Depend On Me",
+   "pdfPage": 100,
+   "page": null,
+   "tune": 95,
+   "conf": "high"
+  },
+  {
+   "title": "Thanks A Million",
+   "pdfPage": 102,
+   "page": null,
+   "tune": 96,
+   "conf": "high"
+  },
+  {
+   "title": "How Come You Do Me Like You Do",
+   "pdfPage": 102,
+   "page": null,
+   "tune": 97,
+   "conf": "high"
+  },
+  {
+   "title": "Where Are You?",
+   "pdfPage": 104,
+   "page": null,
+   "tune": 98,
+   "conf": "high"
+  },
+  {
+   "title": "Ice Cream",
+   "pdfPage": 104,
+   "page": null,
+   "tune": 99,
+   "conf": "high"
+  },
+  {
+   "title": "Limehouse Blues",
+   "pdfPage": 106,
+   "page": null,
+   "tune": 100,
+   "conf": "high"
+  },
+  {
+   "title": "Way Down Yonder In New Orleans",
+   "pdfPage": 107,
+   "page": null,
+   "tune": 101,
+   "conf": "high"
+  },
+  {
+   "title": "Lady Love",
+   "pdfPage": 107,
+   "page": null,
+   "tune": 102,
+   "conf": "high"
+  },
+  {
+   "title": "Mandy",
+   "pdfPage": 109,
+   "page": null,
+   "tune": 103,
+   "conf": "high"
+  },
+  {
+   "title": "I'll Be Glad When You're Dead, You Rascal, You",
+   "pdfPage": 109,
+   "page": null,
+   "tune": 104,
+   "conf": "high",
+   "alt": [
+    "You Rascal, You"
+   ]
+  },
+  {
+   "title": "The Preacher",
+   "pdfPage": 111,
+   "page": null,
+   "tune": 106,
+   "conf": "high"
+  },
+  {
+   "title": "Cabin In The Sky",
+   "pdfPage": 112,
+   "page": null,
+   "tune": 107,
+   "conf": "high"
+  },
+  {
+   "title": "Come Back Sweet Papa",
+   "pdfPage": 112,
+   "page": null,
+   "tune": 108,
+   "conf": "high"
+  },
+  {
+   "title": "Washington & Lee Swing",
+   "pdfPage": 114,
+   "page": null,
+   "tune": 109,
+   "conf": "high"
+  },
+  {
+   "title": "Georgia On My Mind",
+   "pdfPage": 115,
+   "page": null,
+   "tune": 110,
+   "conf": "high"
+  },
+  {
+   "title": "Hindustan",
+   "pdfPage": 115,
+   "page": null,
+   "tune": 111,
+   "conf": "high"
+  },
+  {
+   "title": "I Can't Give You Anything But Love",
+   "pdfPage": 117,
+   "page": null,
+   "tune": 112,
+   "conf": "high"
+  },
+  {
+   "title": "It Makes My Love Come Down",
+   "pdfPage": 117,
+   "page": null,
+   "tune": 113,
+   "conf": "high"
+  },
+  {
+   "title": "1919 Rag",
+   "pdfPage": 119,
+   "page": null,
+   "tune": 114,
+   "conf": "high"
+  },
+  {
+   "title": "Bugle Call Rag",
+   "pdfPage": 120,
+   "page": null,
+   "tune": 115,
+   "conf": "high"
+  },
+  {
+   "title": "Copenhagen",
+   "pdfPage": 121,
+   "page": null,
+   "tune": 116,
+   "conf": "high"
+  },
+  {
+   "title": "Long Old Road",
+   "pdfPage": 122,
+   "page": null,
+   "tune": 117,
+   "conf": "high"
+  },
+  {
+   "title": "My Monday Date",
+   "pdfPage": 123,
+   "page": null,
+   "tune": 118,
+   "conf": "high"
+  },
+  {
+   "title": "Wasted Life Blues",
+   "pdfPage": 123,
+   "page": null,
+   "tune": 119,
+   "conf": "high"
+  },
+  {
+   "title": "Angry",
+   "pdfPage": 125,
+   "page": null,
+   "tune": 120,
+   "conf": "high"
+  },
+  {
+   "title": "Irish Black Bottom",
+   "pdfPage": 126,
+   "page": null,
+   "tune": 121,
+   "conf": "high"
+  },
+  {
+   "title": "Indiana",
+   "pdfPage": 127,
+   "page": null,
+   "tune": 122,
+   "conf": "high"
+  },
+  {
+   "title": "Mama's Gone Goodbye",
+   "pdfPage": 128,
+   "page": null,
+   "tune": 123,
+   "conf": "high"
+  },
+  {
+   "title": "Margie",
+   "pdfPage": 128,
+   "page": null,
+   "tune": 124,
+   "conf": "high"
+  },
+  {
+   "title": "Memphis Blues",
+   "pdfPage": 129,
+   "page": null,
+   "tune": 125,
+   "conf": "high"
+  },
+  {
+   "title": "Mississippi Mud",
+   "pdfPage": 130,
+   "page": null,
+   "tune": 126,
+   "conf": "high"
+  },
+  {
+   "title": "Just A Gigolo",
+   "pdfPage": 130,
+   "page": null,
+   "tune": 127,
+   "conf": "high"
+  },
+  {
+   "title": "Nobody's Sweetheart",
+   "pdfPage": 132,
+   "page": null,
+   "tune": 128,
+   "conf": "high"
+  },
+  {
+   "title": "Runnin' Wild",
+   "pdfPage": 132,
+   "page": null,
+   "tune": 129,
+   "conf": "high"
+  },
+  {
+   "title": "Coquette (second setting)",
+   "pdfPage": 134,
+   "page": null,
+   "tune": 130,
+   "conf": "med"
+  },
+  {
+   "title": "At Sundown",
+   "pdfPage": 134,
+   "page": null,
+   "tune": 131,
+   "conf": "high"
+  },
+  {
+   "title": "Caravan",
+   "pdfPage": 136,
+   "page": null,
+   "tune": 132,
+   "conf": "high"
+  },
+  {
+   "title": "Three Little Words",
+   "pdfPage": 136,
+   "page": null,
+   "tune": 133,
+   "conf": "high"
+  },
+  {
+   "title": "Mood Indigo",
+   "pdfPage": 138,
+   "page": null,
+   "tune": 134,
+   "conf": "high"
+  },
+  {
+   "title": "My Bucket's Got A Hole In It",
+   "pdfPage": 138,
+   "page": null,
+   "tune": 135,
+   "conf": "high"
+  },
+  {
+   "title": "You're Driving Me Crazy",
+   "pdfPage": 140,
+   "page": null,
+   "tune": 136,
+   "conf": "high"
+  },
+  {
+   "title": "Take The \"A\" Train",
+   "pdfPage": 140,
+   "page": null,
+   "tune": 137,
+   "conf": "high"
+  },
+  {
+   "title": "Oriental Strut",
+   "pdfPage": 142,
+   "page": null,
+   "tune": 138,
+   "conf": "high"
+  },
+  {
+   "title": "Sensation Rag",
+   "pdfPage": 143,
+   "page": null,
+   "tune": 139,
+   "conf": "high"
+  },
+  {
+   "title": "Love Me Or Leave Me",
+   "pdfPage": 144,
+   "page": null,
+   "tune": 140,
+   "conf": "high"
+  },
+  {
+   "title": "Yonder Comes The Blues",
+   "pdfPage": 144,
+   "page": null,
+   "tune": 141,
+   "conf": "high"
+  },
+  {
+   "title": "Under A Blanket Of Blue",
+   "pdfPage": 146,
+   "page": null,
+   "tune": 142,
+   "conf": "high"
+  },
+  {
+   "title": "West End Blues",
+   "pdfPage": 146,
+   "page": null,
+   "tune": 143,
+   "conf": "high"
+  },
+  {
+   "title": "After I Say I'm Sorry?",
+   "pdfPage": 148,
+   "page": null,
+   "tune": 144,
+   "conf": "high",
+   "alt": [
+    "(What Can I Say) After I Say I'm Sorry"
+   ]
+  },
+  {
+   "title": "Until The Real Thing Comes Along",
+   "pdfPage": 148,
+   "page": null,
+   "tune": 145,
+   "conf": "high"
+  },
+  {
+   "title": "I'm Gonna Sit Right Down And Write Myself A Letter",
+   "pdfPage": 150,
+   "page": null,
+   "tune": 146,
+   "conf": "high"
+  },
+  {
+   "title": "Everybody Loves My Baby",
+   "pdfPage": 150,
+   "page": null,
+   "tune": 147,
+   "conf": "high"
+  },
+  {
+   "title": "Do You Ever Think Of Me",
+   "pdfPage": 152,
+   "page": null,
+   "tune": 148,
+   "conf": "high"
+  },
+  {
+   "title": "On The Sunny Side Of The Street",
+   "pdfPage": 152,
+   "page": null,
+   "tune": 149,
+   "conf": "high"
+  },
+  {
+   "title": "I Can't Get Started",
+   "pdfPage": 154,
+   "page": null,
+   "tune": 150,
+   "conf": "high"
+  },
+  {
+   "title": "Mama Don't 'Low",
+   "pdfPage": 154,
+   "page": null,
+   "tune": 151,
+   "conf": "high"
+  },
+  {
+   "title": "I Surrender, Dear",
+   "pdfPage": 156,
+   "page": null,
+   "tune": 152,
+   "conf": "high"
+  },
+  {
+   "title": "Honeysuckle Rose",
+   "pdfPage": 156,
+   "page": null,
+   "tune": 153,
+   "conf": "high"
+  },
+  {
+   "title": "Lady Be Good",
+   "pdfPage": 158,
+   "page": null,
+   "tune": 154,
+   "conf": "high"
+  },
+  {
+   "title": "Sophisticated Lady",
+   "pdfPage": 158,
+   "page": null,
+   "tune": 155,
+   "conf": "high"
+  },
+  {
+   "title": "When Your Lover Has Gone",
+   "pdfPage": 160,
+   "page": null,
+   "tune": 156,
+   "conf": "high"
+  },
+  {
+   "title": "Shine",
+   "pdfPage": 160,
+   "page": null,
+   "tune": 157,
+   "conf": "high"
+  },
+  {
+   "title": "Some Of These Days",
+   "pdfPage": 162,
+   "page": null,
+   "tune": 158,
+   "conf": "high"
+  },
+  {
+   "title": "Tin Roof Blues",
+   "pdfPage": 162,
+   "page": null,
+   "tune": 159,
+   "conf": "high"
+  },
+  {
+   "title": "Sidewalk Blues",
+   "pdfPage": 164,
+   "page": null,
+   "tune": 160,
+   "conf": "high"
+  },
+  {
+   "title": "I Wish I Could Shimmy Like My Sister Kate",
+   "pdfPage": 165,
+   "page": null,
+   "tune": 161,
+   "conf": "high",
+   "alt": [
+    "Sister Kate"
+   ]
+  },
+  {
+   "title": "Pennies From Heaven",
+   "pdfPage": 166,
+   "page": null,
+   "tune": 162,
+   "conf": "high"
+  },
+  {
+   "title": "Solitude",
+   "pdfPage": 166,
+   "page": null,
+   "tune": 163,
+   "conf": "high"
+  },
+  {
+   "title": "Potato Head Blues",
+   "pdfPage": 168,
+   "page": null,
+   "tune": 164,
+   "conf": "high"
+  },
+  {
+   "title": "There'll Be Some Changes Made",
+   "pdfPage": 169,
+   "page": null,
+   "tune": 165,
+   "conf": "high"
+  },
+  {
+   "title": "I Got It Bad And That Ain't Good",
+   "pdfPage": 169,
+   "page": null,
+   "tune": 166,
+   "conf": "high"
+  },
+  {
+   "title": "Who's Sorry Now?",
+   "pdfPage": 171,
+   "page": null,
+   "tune": 167,
+   "conf": "high"
+  },
+  {
+   "title": "Creole Song",
+   "pdfPage": 171,
+   "page": null,
+   "tune": 168,
+   "conf": "high"
+  },
+  {
+   "title": "Tiger Rag",
+   "pdfPage": 173,
+   "page": null,
+   "tune": 169,
+   "conf": "high"
+  },
+  {
+   "title": "Yellow Dog Blues",
+   "pdfPage": 174,
+   "page": null,
+   "tune": 170,
+   "conf": "high"
+  },
+  {
+   "title": "Riverside Blues",
+   "pdfPage": 175,
+   "page": null,
+   "tune": 171,
+   "conf": "high"
+  },
+  {
+   "title": "Birth Of The Blues",
+   "pdfPage": 175,
+   "page": null,
+   "tune": 172,
+   "conf": "high"
+  },
+  {
+   "title": "Just A Little While To Stay Here",
+   "pdfPage": 177,
+   "page": null,
+   "tune": 173,
+   "conf": "high"
+  },
+  {
+   "title": "Stars Fell On Alabama",
+   "pdfPage": 178,
+   "page": null,
+   "tune": 174,
+   "conf": "high"
+  },
+  {
+   "title": "New Orleans",
+   "pdfPage": 178,
+   "page": null,
+   "tune": 175,
+   "conf": "high"
+  },
+  {
+   "title": "Down By The Riverside",
+   "pdfPage": 180,
+   "page": null,
+   "tune": 176,
+   "conf": "high"
+  },
+  {
+   "title": "Chattanooga Stomp",
+   "pdfPage": 181,
+   "page": null,
+   "tune": 177,
+   "conf": "high"
+  },
+  {
+   "title": "Get Out Of Here",
+   "pdfPage": 182,
+   "page": null,
+   "tune": 178,
+   "conf": "high"
+  },
+  {
+   "title": "In A Sentimental Mood",
+   "pdfPage": 183,
+   "page": null,
+   "tune": 179,
+   "conf": "high"
+  },
+  {
+   "title": "Prelude To A Kiss",
+   "pdfPage": 183,
+   "page": null,
+   "tune": 180,
+   "conf": "high"
+  },
+  {
+   "title": "It Don't Mean A Thing If It Ain't Got That Swing",
+   "pdfPage": 185,
+   "page": null,
+   "tune": 181,
+   "conf": "high"
+  },
+  {
+   "title": "Don't Get Around Much Anymore",
+   "pdfPage": 186,
+   "page": null,
+   "tune": 182,
+   "conf": "high"
+  },
+  {
+   "title": "Everything But You",
+   "pdfPage": 186,
+   "page": null,
+   "tune": 183,
+   "conf": "high"
+  },
+  {
+   "title": "Day Dream",
+   "pdfPage": 188,
+   "page": null,
+   "tune": 184,
+   "conf": "high"
+  },
+  {
+   "title": "Black Butterfly",
+   "pdfPage": 188,
+   "page": null,
+   "tune": 185,
+   "conf": "high"
+  },
+  {
+   "title": "Ring Dem Bells",
+   "pdfPage": 190,
+   "page": null,
+   "tune": 186,
+   "conf": "high"
+  },
+  {
+   "title": "What's New?",
+   "pdfPage": 190,
+   "page": null,
+   "tune": 187,
+   "conf": "high"
+  },
+  {
+   "title": "Boy Meets Horn",
+   "pdfPage": 192,
+   "page": null,
+   "tune": 188,
+   "conf": "high"
+  },
+  {
+   "title": "Lush Life",
+   "pdfPage": 193,
+   "page": null,
+   "tune": 189,
+   "conf": "high"
+  },
+  {
+   "title": "The Big Parade",
+   "pdfPage": 194,
+   "page": null,
+   "tune": 190,
+   "conf": "high"
+  },
+  {
+   "title": "Body & Soul",
+   "pdfPage": 195,
+   "page": null,
+   "tune": 191,
+   "conf": "high"
+  },
+  {
+   "title": "The Charleston",
+   "pdfPage": 195,
+   "page": null,
+   "tune": 192,
+   "conf": "high"
+  },
+  {
+   "title": "Rose Room",
+   "pdfPage": 197,
+   "page": null,
+   "tune": 193,
+   "conf": "high"
+  },
+  {
+   "title": "Should I",
+   "pdfPage": 198,
+   "page": null,
+   "tune": 194,
+   "conf": "high"
+  },
+  {
+   "title": "A Shanty In Old Shanty Town",
+   "pdfPage": 198,
+   "page": null,
+   "tune": 195,
+   "conf": "high",
+   "alt": [
+    "In A Shanty In Old Shanty Town"
+   ]
+  },
+  {
+   "title": "Liza",
+   "pdfPage": 200,
+   "page": null,
+   "tune": 196,
+   "conf": "high"
+  },
+  {
+   "title": "Thou Swell",
+   "pdfPage": 200,
+   "page": null,
+   "tune": 197,
+   "conf": "high"
+  },
+  {
+   "title": "Please Don't Talk About Me When I'm Gone",
+   "pdfPage": 202,
+   "page": null,
+   "tune": 198,
+   "conf": "high"
+  },
+  {
+   "title": "Goody Goody",
+   "pdfPage": 202,
+   "page": null,
+   "tune": 199,
+   "conf": "high"
+  },
+  {
+   "title": "Alabama Jubilee",
+   "pdfPage": 204,
+   "page": null,
+   "tune": 200,
+   "conf": "high"
+  },
+  {
+   "title": "New Orleans Shuffle",
+   "pdfPage": 205,
+   "page": null,
+   "tune": 201,
+   "conf": "high"
+  },
+  {
+   "title": "Storyville Blues",
+   "pdfPage": 206,
+   "page": null,
+   "tune": 202,
+   "conf": "high"
+  },
+  {
+   "title": "Grandpa's Spells",
+   "pdfPage": 207,
+   "page": null,
+   "tune": 203,
+   "conf": "high"
+  },
+  {
+   "title": "Ory's Creole Trombone",
+   "pdfPage": 208,
+   "page": null,
+   "tune": 204,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Lorraine",
+   "pdfPage": 209,
+   "page": null,
+   "tune": 205,
+   "conf": "high"
+  },
+  {
+   "title": "You're Nobody Till Somebody Loves You",
+   "pdfPage": 209,
+   "page": null,
+   "tune": 206,
+   "conf": "high"
+  },
+  {
+   "title": "'S Wonderful",
+   "pdfPage": 211,
+   "page": null,
+   "tune": 207,
+   "conf": "high"
+  },
+  {
+   "title": "All Of Me",
+   "pdfPage": 211,
+   "page": null,
+   "tune": 208,
+   "conf": "high"
+  },
+  {
+   "title": "Chicago",
+   "pdfPage": 213,
+   "page": null,
+   "tune": 209,
+   "conf": "high"
+  },
+  {
+   "title": "Lazy River (Up A)",
+   "pdfPage": 213,
+   "page": null,
+   "tune": 210,
+   "conf": "high",
+   "alt": [
+    "Up A Lazy River"
+   ]
+  },
+  {
+   "title": "Baby Face",
+   "pdfPage": 215,
+   "page": null,
+   "tune": 211,
+   "conf": "high"
+  },
+  {
+   "title": "Yes, Sir, That's My Baby",
+   "pdfPage": 215,
+   "page": null,
+   "tune": 212,
+   "conf": "high"
+  },
+  {
+   "title": "Ain't She Sweet",
+   "pdfPage": 217,
+   "page": null,
+   "tune": 213,
+   "conf": "high"
+  },
+  {
+   "title": "Five Foot Two, Eyes Of Blue",
+   "pdfPage": 217,
+   "page": null,
+   "tune": 214,
+   "conf": "high"
+  },
+  {
+   "title": "Bye Bye Blackbird",
+   "pdfPage": 219,
+   "page": null,
+   "tune": 215,
+   "conf": "high"
+  },
+  {
+   "title": "I Got Rhythm",
+   "pdfPage": 219,
+   "page": null,
+   "tune": 216,
+   "conf": "high"
+  },
+  {
+   "title": "Somebody Else Is Taking My Place",
+   "pdfPage": 221,
+   "page": null,
+   "tune": 217,
+   "conf": "high"
+  },
+  {
+   "title": "My Gal Sal",
+   "pdfPage": 221,
+   "page": null,
+   "tune": 218,
+   "conf": "high",
+   "alt": [
+    "They Called Her Frivolous Sal"
+   ]
+  },
+  {
+   "title": "Blue Skies",
+   "pdfPage": 223,
+   "page": null,
+   "tune": 219,
+   "conf": "high"
+  },
+  {
+   "title": "Undecided",
+   "pdfPage": 223,
+   "page": null,
+   "tune": 220,
+   "conf": "high"
+  },
+  {
+   "title": "Hard Hearted Hannah",
+   "pdfPage": 225,
+   "page": null,
+   "tune": 221,
+   "conf": "high"
+  },
+  {
+   "title": "Wabash Blues",
+   "pdfPage": 225,
+   "page": null,
+   "tune": 222,
+   "conf": "high"
+  },
+  {
+   "title": "Isle Of Capri",
+   "pdfPage": 227,
+   "page": null,
+   "tune": 223,
+   "conf": "high"
+  },
+  {
+   "title": "Home",
+   "pdfPage": 228,
+   "page": null,
+   "tune": 224,
+   "conf": "high"
+  },
+  {
+   "title": "Perdido",
+   "pdfPage": 228,
+   "page": null,
+   "tune": 225,
+   "conf": "high"
+  },
+  {
+   "title": "Lulu's Back In Town",
+   "pdfPage": 230,
+   "page": null,
+   "tune": 226,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Sue, Just You",
+   "pdfPage": 230,
+   "page": null,
+   "tune": 227,
+   "conf": "high"
+  },
+  {
+   "title": "Waiting For The Robert E. Lee",
+   "pdfPage": 232,
+   "page": null,
+   "tune": 228,
+   "conf": "high"
+  },
+  {
+   "title": "Wang Wang Blues",
+   "pdfPage": 232,
+   "page": null,
+   "tune": 229,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Georgia Brown",
+   "pdfPage": 235,
+   "page": null,
+   "tune": 230,
+   "conf": "high"
+  },
+  {
+   "title": "Exactly Like You",
+   "pdfPage": 236,
+   "page": null,
+   "tune": 231,
+   "conf": "high"
+  },
+  {
+   "title": "In A Mellotone",
+   "pdfPage": 236,
+   "page": null,
+   "tune": 232,
+   "conf": "high"
+  },
+  {
+   "title": "Moten Swing",
+   "pdfPage": 238,
+   "page": null,
+   "tune": 233,
+   "conf": "high"
+  },
+  {
+   "title": "Stompin' At The Savoy",
+   "pdfPage": 238,
+   "page": null,
+   "tune": 234,
+   "conf": "high"
+  },
+  {
+   "title": "Chimes Blues",
+   "pdfPage": 240,
+   "page": null,
+   "tune": 235,
+   "conf": "high"
+  },
+  {
+   "title": "Dardanella",
+   "pdfPage": 241,
+   "page": null,
+   "tune": 236,
+   "conf": "high"
+  },
+  {
+   "title": "Shim-Me-Sha-Wabble",
+   "pdfPage": 242,
+   "page": null,
+   "tune": 237,
+   "conf": "high"
+  },
+  {
+   "title": "Dippermouth Blues",
+   "pdfPage": 243,
+   "page": null,
+   "tune": 238,
+   "conf": "high"
+  },
+  {
+   "title": "Oh Didn't He Ramble",
+   "pdfPage": 244,
+   "page": null,
+   "tune": 239,
+   "conf": "high"
+  },
+  {
+   "title": "Back 'O Town Blues",
+   "pdfPage": 244,
+   "page": null,
+   "tune": 240,
+   "conf": "high"
+  },
+  {
+   "title": "Eccentric",
+   "pdfPage": 246,
+   "page": null,
+   "tune": 241,
+   "conf": "high"
+  },
+  {
+   "title": "Tishomingo Blues",
+   "pdfPage": 247,
+   "page": null,
+   "tune": 242,
+   "conf": "high"
+  },
+  {
+   "title": "Temptation Blues",
+   "pdfPage": 248,
+   "page": null,
+   "tune": 243,
+   "conf": "high"
+  },
+  {
+   "title": "Sugar",
+   "pdfPage": 249,
+   "page": null,
+   "tune": 244,
+   "conf": "high"
+  },
+  {
+   "title": "Drop That Sack",
+   "pdfPage": 249,
+   "page": null,
+   "tune": 245,
+   "conf": "high"
+  },
+  {
+   "title": "Stardust",
+   "pdfPage": 251,
+   "page": null,
+   "tune": 246,
+   "conf": "med"
+  },
+  {
+   "title": "From Monday On",
+   "pdfPage": 252,
+   "page": null,
+   "tune": 247,
+   "conf": "high"
+  },
+  {
+   "title": "Mack The Knife",
+   "pdfPage": 252,
+   "page": null,
+   "tune": 248,
+   "conf": "high"
+  },
+  {
+   "title": "Swing That Music",
+   "pdfPage": 253,
+   "page": null,
+   "tune": 249,
+   "conf": "high"
+  },
+  {
+   "title": "Sunday",
+   "pdfPage": 253,
+   "page": null,
+   "tune": 250,
+   "conf": "high"
+  },
+  {
+   "title": "Breezin' Along With The Breeze",
+   "pdfPage": 254,
+   "page": null,
+   "tune": 251,
+   "conf": "high"
+  },
+  {
+   "title": "I Found A New Baby",
+   "pdfPage": 254,
+   "page": null,
+   "tune": 252,
+   "conf": "high"
+  },
+  {
+   "title": "Nagasaki",
+   "pdfPage": 256,
+   "page": null,
+   "tune": 253,
+   "conf": "high"
+  },
+  {
+   "title": "Alcoholic Blues",
+   "pdfPage": 256,
+   "page": null,
+   "tune": 254,
+   "conf": "high"
+  },
+  {
+   "title": "Sobbin' Blues",
+   "pdfPage": 258,
+   "page": null,
+   "tune": 255,
+   "conf": "high"
+  },
+  {
+   "title": "Sorry",
+   "pdfPage": 259,
+   "page": null,
+   "tune": 257,
+   "conf": "high"
+  },
+  {
+   "title": "Shipwrecked Blues",
+   "pdfPage": 259,
+   "page": null,
+   "tune": 258,
+   "conf": "high"
+  },
+  {
+   "title": "Singin' The Blues",
+   "pdfPage": 261,
+   "page": null,
+   "tune": 259,
+   "conf": "high"
+  },
+  {
+   "title": "Hey Lawdy Mama",
+   "pdfPage": 261,
+   "page": null,
+   "tune": 260,
+   "conf": "high"
+  },
+  {
+   "title": "Since My Best Gal Turned Me Down",
+   "pdfPage": 263,
+   "page": null,
+   "tune": 261,
+   "conf": "high"
+  },
+  {
+   "title": "Four Or Five Times",
+   "pdfPage": 263,
+   "page": null,
+   "tune": 262,
+   "conf": "high"
+  },
+  {
+   "title": "Sugar Foot Strut",
+   "pdfPage": 265,
+   "page": null,
+   "tune": 263,
+   "conf": "high"
+  },
+  {
+   "title": "San",
+   "pdfPage": 265,
+   "page": null,
+   "tune": 264,
+   "conf": "high"
+  },
+  {
+   "title": "Did You Ever",
+   "pdfPage": 266,
+   "page": null,
+   "tune": 265,
+   "conf": "high"
+  },
+  {
+   "title": "Sugar Foot Stomp",
+   "pdfPage": 267,
+   "page": null,
+   "tune": 266,
+   "conf": "high"
+  },
+  {
+   "title": "Maple Leaf Rag",
+   "pdfPage": 267,
+   "page": null,
+   "tune": 267,
+   "conf": "high"
+  },
+  {
+   "title": "Floatin' Down To Cotton Town",
+   "pdfPage": 269,
+   "page": null,
+   "tune": 268,
+   "conf": "high"
+  },
+  {
+   "title": "Burnin' The Iceberg",
+   "pdfPage": 270,
+   "page": null,
+   "tune": 270,
+   "conf": "high"
+  },
+  {
+   "title": "Crazy Chords",
+   "pdfPage": 270,
+   "page": null,
+   "tune": 271,
+   "conf": "high"
+  },
+  {
+   "title": "Tom Cat Blues",
+   "pdfPage": 272,
+   "page": null,
+   "tune": 272,
+   "conf": "high"
+  },
+  {
+   "title": "Ostrich Walk (Beiderbecke Version)",
+   "pdfPage": 272,
+   "page": null,
+   "tune": 273,
+   "conf": "high"
+  },
+  {
+   "title": "Rockin' Chair",
+   "pdfPage": 274,
+   "page": null,
+   "tune": 274,
+   "conf": "high"
+  },
+  {
+   "title": "Red Sails In The Sunset",
+   "pdfPage": 274,
+   "page": null,
+   "tune": 275,
+   "conf": "high"
+  },
+  {
+   "title": "Brother Lowdown",
+   "pdfPage": 276,
+   "page": null,
+   "tune": 278,
+   "conf": "high"
+  },
+  {
+   "title": "Ostrich Walk (Sheet Music Version)",
+   "pdfPage": 277,
+   "page": null,
+   "tune": 279,
+   "conf": "high"
+  },
+  {
+   "title": "Winin' Boy Blues",
+   "pdfPage": 278,
+   "page": null,
+   "tune": 280,
+   "conf": "high"
+  },
+  {
+   "title": "Krooked Blues",
+   "pdfPage": 278,
+   "page": null,
+   "tune": 281,
+   "conf": "high"
+  },
+  {
+   "title": "Oh Daddy Blues",
+   "pdfPage": 280,
+   "page": null,
+   "tune": 282,
+   "conf": "high"
+  },
+  {
+   "title": "Buddy's Habits",
+   "pdfPage": 281,
+   "page": null,
+   "tune": 283,
+   "conf": "high"
+  },
+  {
+   "title": "Easy Street",
+   "pdfPage": 282,
+   "page": null,
+   "tune": 284,
+   "conf": "high"
+  },
+  {
+   "title": "'Taint So, Honey, 'Taint So",
+   "pdfPage": 283,
+   "page": null,
+   "tune": 285,
+   "conf": "high"
+  },
+  {
+   "title": "How Long, How Long Blues",
+   "pdfPage": 283,
+   "page": null,
+   "tune": 286,
+   "conf": "high"
+  },
+  {
+   "title": "I'll Be A Friend With Pleasure",
+   "pdfPage": 285,
+   "page": null,
+   "tune": 287,
+   "conf": "high"
+  },
+  {
+   "title": "Hear Me Talkin' To Ya",
+   "pdfPage": 285,
+   "page": null,
+   "tune": 288,
+   "conf": "high"
+  },
+  {
+   "title": "Sailing Down The Chesapeake Bay",
+   "pdfPage": 286,
+   "page": null,
+   "tune": 289,
+   "conf": "high"
+  },
+  {
+   "title": "Kansas City Man Blues",
+   "pdfPage": 287,
+   "page": null,
+   "tune": 290,
+   "conf": "high"
+  },
+  {
+   "title": "Dupree Blues",
+   "pdfPage": 287,
+   "page": null,
+   "tune": 291,
+   "conf": "high"
+  },
+  {
+   "title": "Satanic Blues",
+   "pdfPage": 289,
+   "page": null,
+   "tune": 292,
+   "conf": "high"
+  },
+  {
+   "title": "The Prisoner's Song",
+   "pdfPage": 290,
+   "page": null,
+   "tune": 293,
+   "conf": "high"
+  },
+  {
+   "title": "The Old Spinning Wheel",
+   "pdfPage": 290,
+   "page": null,
+   "tune": 294,
+   "conf": "high"
+  },
+  {
+   "title": "Aunt Hagar's Blues",
+   "pdfPage": 292,
+   "page": null,
+   "tune": 295,
+   "conf": "high"
+  },
+  {
+   "title": "Battle Hymn Of The Republic",
+   "pdfPage": 292,
+   "page": null,
+   "tune": 296,
+   "conf": "high"
+  },
+  {
+   "title": "The Lonesome Road",
+   "pdfPage": 294,
+   "page": null,
+   "tune": 297,
+   "conf": "high"
+  },
+  {
+   "title": "Roll Jordan Roll",
+   "pdfPage": 294,
+   "page": null,
+   "tune": 298,
+   "conf": "high"
+  },
+  {
+   "title": "Stranger On The Shore",
+   "pdfPage": 296,
+   "page": null,
+   "tune": 299,
+   "conf": "high"
+  },
+  {
+   "title": "Digga Digga Do",
+   "pdfPage": 296,
+   "page": null,
+   "tune": 300,
+   "conf": "high"
+  },
+  {
+   "title": "I Can't Believe That You're In Love With Me",
+   "pdfPage": 298,
+   "page": null,
+   "tune": 301,
+   "conf": "high"
+  },
+  {
+   "title": "Jealous",
+   "pdfPage": 298,
+   "page": null,
+   "tune": 302,
+   "conf": "high"
+  },
+  {
+   "title": "Memories Of You",
+   "pdfPage": 300,
+   "page": null,
+   "tune": 303,
+   "conf": "high"
+  },
+  {
+   "title": "Chinatown, My Chinatown",
+   "pdfPage": 300,
+   "page": null,
+   "tune": 304,
+   "conf": "high"
+  },
+  {
+   "title": "Japanese Sandman",
+   "pdfPage": 302,
+   "page": null,
+   "tune": 305,
+   "conf": "high"
+  },
+  {
+   "title": "There's Yes! Yes! In Your Eyes",
+   "pdfPage": 302,
+   "page": null,
+   "tune": 306,
+   "conf": "high"
+  },
+  {
+   "title": "What A Little Moonlight Can Do",
+   "pdfPage": 304,
+   "page": null,
+   "tune": 307,
+   "conf": "high"
+  },
+  {
+   "title": "Creole Belles",
+   "pdfPage": 304,
+   "page": null,
+   "tune": 308,
+   "conf": "high"
+  },
+  {
+   "title": "I've Got A Feeling I'm Falling",
+   "pdfPage": 306,
+   "page": null,
+   "tune": 311,
+   "conf": "high"
+  },
+  {
+   "title": "Changes",
+   "pdfPage": 307,
+   "page": null,
+   "tune": 312,
+   "conf": "high"
+  },
+  {
+   "title": "I've Got My Fingers Crossed",
+   "pdfPage": 307,
+   "page": null,
+   "tune": 313,
+   "conf": "high"
+  }
+ ]
+}

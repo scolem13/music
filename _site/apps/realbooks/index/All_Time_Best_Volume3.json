@@ -1,0 +1,134 @@
+{
+ "file": "All_Time_Best_Volume3.pdf",
+ "method": "text-index",
+ "offset": null,
+ "notes": "Piano/vocal songbook. Contents on pdf p1 read by OCR (300 dpi, clean); then each title located on its page by OCR of the page header (all 93 pages scanned). PROBLEM: the PDF is incomplete: printed pages 51-61 are missing (pdf p50 is printed 50, pdf p51 is printed 62). The contents lists Killing Me Softly With His Song (55) and Pray (58) but they are NOT in this PDF, and I'd Do Anything For Love is cut off after 5 pages. Offset is 0 up to pdf 50 and 11 after (10 for 7 Seconds: contents says 97, page shows 97 at pdf 87). 'page' is the printed number in the contents (confirmed on the page corner for 8 pages). All 18 entries checked by reading the page header, 8 also against the corner number. Composer from the page credits.",
+ "entries": [
+  {
+   "title": "Ain't Nobody",
+   "pdfPage": 2,
+   "page": 2,
+   "composer": "David Wolinski",
+   "conf": "high"
+  },
+  {
+   "title": "Anything For You",
+   "pdfPage": 8,
+   "page": 8,
+   "composer": "Gloria Estefan",
+   "conf": "high"
+  },
+  {
+   "title": "The Best",
+   "pdfPage": 13,
+   "page": 13,
+   "composer": "Mike Chapman, Holly Knight",
+   "conf": "high"
+  },
+  {
+   "title": "Crazy For You",
+   "pdfPage": 18,
+   "page": 18,
+   "composer": "Richard Wermerling",
+   "conf": "high"
+  },
+  {
+   "title": "(Everything I Do) I Do It For You",
+   "pdfPage": 24,
+   "page": 24,
+   "composer": "Bryan Adams, R. J. Lange",
+   "conf": "high"
+  },
+  {
+   "title": "Father Figure",
+   "pdfPage": 28,
+   "page": 28,
+   "composer": "George Michael",
+   "conf": "high"
+  },
+  {
+   "title": "How Am I Supposed To Live Without You",
+   "pdfPage": 37,
+   "page": 37,
+   "composer": "Michael Bolton, Doug James",
+   "conf": "high"
+  },
+  {
+   "title": "I Want To Break Free",
+   "pdfPage": 42,
+   "page": 42,
+   "composer": "John Deacon",
+   "conf": "high"
+  },
+  {
+   "title": "I'd Do Anything For Love (But I Won't Do That)",
+   "pdfPage": 46,
+   "page": 46,
+   "composer": "Jim Steinman",
+   "conf": "high"
+  },
+  {
+   "title": "Purple Rain",
+   "pdfPage": 51,
+   "page": 62,
+   "composer": "Prince",
+   "conf": "high"
+  },
+  {
+   "title": "Stand By Me",
+   "pdfPage": 58,
+   "page": 69,
+   "composer": "Ben E. King, Jerry Leiber, Mike Stoller",
+   "conf": "high"
+  },
+  {
+   "title": "Take It To The Limit",
+   "pdfPage": 61,
+   "page": 72,
+   "composer": "Randy Meisner, Don Henley, Glenn Frey",
+   "conf": "high"
+  },
+  {
+   "title": "Three Times A Lady",
+   "pdfPage": 64,
+   "page": 75,
+   "composer": "Lionel Richie",
+   "conf": "high"
+  },
+  {
+   "title": "Vogue",
+   "pdfPage": 69,
+   "page": 80,
+   "composer": "Madonna Ciccone",
+   "conf": "high"
+  },
+  {
+   "title": "We Have All The Time In The World",
+   "pdfPage": 77,
+   "page": 88,
+   "composer": "John Barry",
+   "conf": "high"
+  },
+  {
+   "title": "Wonderful Tonight",
+   "pdfPage": 79,
+   "page": 90,
+   "composer": "Eric Clapton",
+   "conf": "high"
+  },
+  {
+   "title": "Wuthering Heights",
+   "pdfPage": 83,
+   "page": 94,
+   "composer": "Kate Bush",
+   "conf": "high"
+  },
+  {
+   "title": "7 Seconds",
+   "pdfPage": 87,
+   "page": 97,
+   "composer": "Cameron McVey, Neneh Cherry",
+   "conf": "high"
+  }
+ ]
+}

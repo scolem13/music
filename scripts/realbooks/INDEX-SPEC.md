@@ -10,7 +10,7 @@ Write one file per book: `apps/realbooks/index/<pdf name without .pdf>.json`:
   "offset": 7,
   "notes": "short notes: what was hard, what is uncertain",
   "entries": [
-    { "title": "Happy Little Sunbeam", "pdfPage": 141, "page": 133, "composer": "R. Freeman", "conf": "high" }
+    { "title": "Happy Little Sunbeam", "pdfPage": 141, "page": 133, "composer": "R. Freeman", "artist": "", "conf": "high" }
   ]
 }
 ```
@@ -20,7 +20,8 @@ Write one file per book: `apps/realbooks/index/<pdf name without .pdf>.json`:
 - One entry per tune. A tune running over several pages: its first page. Several tunes on one page: one entry each.
 - Titles as printed, in title case, with "The" kept where the book has it ("The Days Of Wine And Roses" stays). Fix obvious OCR errors.
   Leave out non-tune pages (covers, teaching pages, solos sections) unless the book is a collection of solos (then each solo is an entry).
-- `composer` when the index or page gives it cheaply; otherwise leave it out.
+- `composer` when the index or page gives it cheaply; otherwise leave it out. Keep the credit as printed ("Words and Music by …").
+- `artist`: the performer the book credits for the song ("Recorded by Gloria Gaynor"), when the page prints one. Rock and pop books usually do; leave it out otherwise.
 - `conf`: "high" (from bookmarks or a clean text index, with the page checked), "med" (OCR, page not checked), "low" (guessed).
 
 **Method, cheapest first:**

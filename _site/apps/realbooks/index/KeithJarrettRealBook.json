@@ -1,0 +1,464 @@
+{
+ "file": "KeithJarrettRealBook.pdf",
+ "method": "mixed",
+ "offset": 0,
+ "notes": "Collection of fan transcriptions of Jarrett recordings (improvisations by album/track); not a lead-sheet book. pdf pp2-22 are an album/track contents with a 'Pages' column giving the start page only for the tracks transcribed in this PDF; I read those numbers by eye from the page images (tesseract could not read the small bold numbers). Contents page = pdf page (offset 0). Each entry's start page was then checked by viewing the top of the page as a contact sheet: all titles matched what is written/printed on the page except as noted. Multi-page long pieces (Koln, Sun Bear, Radiance etc.) are given at the first page. Problems: pdf 441 (U Dance) is rotated and untitled, 463/474 (Autumn Leaves) and 471 (It Could Happen To You), 201 (Heartland) have no readable title so rest on the contents number only (conf med); pdf 35 is a second Bop-Be transcription not in the contents; pdf 216 is headed 'Paint My Heart Red' (the contents lists Mon Coeur Est Rouge); pdf 181 starts with an introductory notice for the Tokyo Encore. Pages in the contents with no number (many album tracks) are not in the PDF.",
+ "entries": [
+  {
+   "title": "Lisbon Stomp",
+   "pdfPage": 23,
+   "page": 23,
+   "conf": "high"
+  },
+  {
+   "title": "Everything I Love",
+   "pdfPage": 24,
+   "page": 24,
+   "conf": "high"
+  },
+  {
+   "title": "The Magician In You",
+   "pdfPage": 26,
+   "page": 26,
+   "conf": "high"
+  },
+  {
+   "title": "There Is A Road (God's River)",
+   "pdfPage": 27,
+   "page": 27,
+   "conf": "high"
+  },
+  {
+   "title": "Backhand",
+   "pdfPage": 29,
+   "page": 29,
+   "conf": "high"
+  },
+  {
+   "title": "Fullsuvollivus (Fools Of All Of Us)",
+   "pdfPage": 30,
+   "page": 30,
+   "conf": "high"
+  },
+  {
+   "title": "Treasure Island",
+   "pdfPage": 32,
+   "page": 32,
+   "conf": "high"
+  },
+  {
+   "title": "Bop-Be",
+   "pdfPage": 34,
+   "page": 34,
+   "conf": "high"
+  },
+  {
+   "title": "Bop-Be (second transcription)",
+   "pdfPage": 35,
+   "page": 35,
+   "conf": "med"
+  },
+  {
+   "title": "Rainbow",
+   "pdfPage": 37,
+   "page": 37,
+   "conf": "high"
+  },
+  {
+   "title": "Survivors' Suite",
+   "pdfPage": 39,
+   "page": 39,
+   "conf": "high"
+  },
+  {
+   "title": "Spiral Dance",
+   "pdfPage": 41,
+   "page": 41,
+   "conf": "high"
+  },
+  {
+   "title": "Long As You Know You're Living Yours",
+   "pdfPage": 42,
+   "page": 42,
+   "conf": "high"
+  },
+  {
+   "title": "The Windup",
+   "pdfPage": 43,
+   "page": 43,
+   "conf": "high"
+  },
+  {
+   "title": "Questar",
+   "pdfPage": 49,
+   "page": 49,
+   "conf": "high"
+  },
+  {
+   "title": "My Song",
+   "pdfPage": 51,
+   "page": 51,
+   "conf": "high"
+  },
+  {
+   "title": "Country",
+   "pdfPage": 54,
+   "page": 54,
+   "conf": "high"
+  },
+  {
+   "title": "The Journey Home",
+   "pdfPage": 59,
+   "page": 59,
+   "conf": "high"
+  },
+  {
+   "title": "New Dance",
+   "pdfPage": 64,
+   "page": 64,
+   "conf": "high"
+  },
+  {
+   "title": "Personal Mountains",
+   "pdfPage": 68,
+   "page": 68,
+   "conf": "high"
+  },
+  {
+   "title": "Prism",
+   "pdfPage": 71,
+   "page": 71,
+   "conf": "high"
+  },
+  {
+   "title": "Innocence",
+   "pdfPage": 73,
+   "page": 73,
+   "conf": "high"
+  },
+  {
+   "title": "Late Nite Willie",
+   "pdfPage": 83,
+   "page": 83,
+   "conf": "high"
+  },
+  {
+   "title": "In Front",
+   "pdfPage": 86,
+   "page": 86,
+   "conf": "high"
+  },
+  {
+   "title": "Lalene",
+   "pdfPage": 107,
+   "page": 107,
+   "conf": "high"
+  },
+  {
+   "title": "Starbright",
+   "pdfPage": 114,
+   "page": 114,
+   "conf": "high"
+  },
+  {
+   "title": "Semblence",
+   "pdfPage": 120,
+   "page": 120,
+   "conf": "high"
+  },
+  {
+   "title": "Bremen Encore",
+   "pdfPage": 121,
+   "page": 121,
+   "conf": "high"
+  },
+  {
+   "title": "Lausanne",
+   "pdfPage": 137,
+   "page": 137,
+   "conf": "high"
+  },
+  {
+   "title": "Köln Concert Part IIb",
+   "pdfPage": 147,
+   "page": 147,
+   "conf": "high"
+  },
+  {
+   "title": "Köln Concert Part IIc",
+   "pdfPage": 148,
+   "page": 148,
+   "conf": "high"
+  },
+  {
+   "title": "Sun Bear Concert Osaka Part I",
+   "pdfPage": 166,
+   "page": 166,
+   "conf": "high"
+  },
+  {
+   "title": "Sun Bear Concert Sapporo Part I",
+   "pdfPage": 178,
+   "page": 178,
+   "conf": "high"
+  },
+  {
+   "title": "Sun Bear Concert Encore Tokyo",
+   "pdfPage": 181,
+   "page": 181,
+   "conf": "high"
+  },
+  {
+   "title": "Concerts Bregenz Part I",
+   "pdfPage": 195,
+   "page": 195,
+   "conf": "high"
+  },
+  {
+   "title": "Heartland",
+   "pdfPage": 201,
+   "page": 201,
+   "conf": "med"
+  },
+  {
+   "title": "Mon Coeur Est Rouge (Paint My Heart Red)",
+   "pdfPage": 216,
+   "page": 216,
+   "conf": "high"
+  },
+  {
+   "title": "Over The Rainbow (Last Solo)",
+   "pdfPage": 218,
+   "page": 218,
+   "conf": "high"
+  },
+  {
+   "title": "Tokyo '84 Encore (Last Solo Encore II)",
+   "pdfPage": 233,
+   "page": 233,
+   "conf": "high"
+  },
+  {
+   "title": "Americana",
+   "pdfPage": 247,
+   "page": 247,
+   "conf": "high"
+  },
+  {
+   "title": "The Night We Called It A Day",
+   "pdfPage": 251,
+   "page": 251,
+   "conf": "high"
+  },
+  {
+   "title": "I Loves You, Porgy",
+   "pdfPage": 264,
+   "page": 264,
+   "conf": "high"
+  },
+  {
+   "title": "Solar",
+   "pdfPage": 268,
+   "page": 268,
+   "conf": "high"
+  },
+  {
+   "title": "Then I'll Be Tired Of You",
+   "pdfPage": 297,
+   "page": 297,
+   "conf": "high"
+  },
+  {
+   "title": "I Got It Bad And That Ain't Good",
+   "pdfPage": 310,
+   "page": 310,
+   "conf": "high"
+  },
+  {
+   "title": "October 17, 1988",
+   "pdfPage": 322,
+   "page": 322,
+   "conf": "high"
+  },
+  {
+   "title": "The Wind",
+   "pdfPage": 325,
+   "page": 325,
+   "conf": "high"
+  },
+  {
+   "title": "Blues",
+   "pdfPage": 334,
+   "page": 334,
+   "conf": "high"
+  },
+  {
+   "title": "Over The Rainbow (La Scala)",
+   "pdfPage": 340,
+   "page": 340,
+   "conf": "high"
+  },
+  {
+   "title": "Don't Ever Leave Me",
+   "pdfPage": 353,
+   "page": 353,
+   "conf": "high"
+  },
+  {
+   "title": "Someone To Watch Over Me",
+   "pdfPage": 359,
+   "page": 359,
+   "conf": "high"
+  },
+  {
+   "title": "Old Man River",
+   "pdfPage": 366,
+   "page": 366,
+   "conf": "high"
+  },
+  {
+   "title": "Radiance Part 3",
+   "pdfPage": 376,
+   "page": 376,
+   "conf": "high"
+  },
+  {
+   "title": "Radiance Part 8",
+   "pdfPage": 382,
+   "page": 382,
+   "conf": "high"
+  },
+  {
+   "title": "All The Things You Are",
+   "pdfPage": 390,
+   "page": 390,
+   "conf": "high"
+  },
+  {
+   "title": "So Tender",
+   "pdfPage": 395,
+   "page": 395,
+   "conf": "high"
+  },
+  {
+   "title": "Stella By Starlight",
+   "pdfPage": 397,
+   "page": 397,
+   "conf": "high"
+  },
+  {
+   "title": "Rider",
+   "pdfPage": 412,
+   "page": 412,
+   "conf": "high"
+  },
+  {
+   "title": "My Funny Valentine",
+   "pdfPage": 413,
+   "page": 413,
+   "conf": "high"
+  },
+  {
+   "title": "Autumn Leaves (Still Live)",
+   "pdfPage": 427,
+   "page": 427,
+   "conf": "high"
+  },
+  {
+   "title": "U Dance",
+   "pdfPage": 441,
+   "page": 441,
+   "conf": "med"
+  },
+  {
+   "title": "Bemsha Swing",
+   "pdfPage": 442,
+   "page": 442,
+   "conf": "high"
+  },
+  {
+   "title": "Things Ain't What They Used To Be",
+   "pdfPage": 443,
+   "page": 443,
+   "conf": "high"
+  },
+  {
+   "title": "Straight, No Chaser",
+   "pdfPage": 444,
+   "page": 444,
+   "conf": "high"
+  },
+  {
+   "title": "Basin Street Blues",
+   "pdfPage": 455,
+   "page": 455,
+   "conf": "high"
+  },
+  {
+   "title": "No Lonely Nights",
+   "pdfPage": 461,
+   "page": 461,
+   "conf": "high"
+  },
+  {
+   "title": "Autumn Leaves (Blue Note, Sat. June 4)",
+   "pdfPage": 463,
+   "page": 463,
+   "conf": "med"
+  },
+  {
+   "title": "On Green Dolphin Street",
+   "pdfPage": 468,
+   "page": 468,
+   "conf": "high"
+  },
+  {
+   "title": "It Could Happen To You",
+   "pdfPage": 471,
+   "page": 471,
+   "conf": "med"
+  },
+  {
+   "title": "Autumn Leaves (Tokyo '96)",
+   "pdfPage": 474,
+   "page": 474,
+   "conf": "med"
+  },
+  {
+   "title": "Whisper Not",
+   "pdfPage": 480,
+   "page": 480,
+   "conf": "high"
+  },
+  {
+   "title": "What Is This Thing Called Love",
+   "pdfPage": 486,
+   "page": 486,
+   "conf": "high"
+  },
+  {
+   "title": "It's All In The Game",
+   "pdfPage": 505,
+   "page": 505,
+   "conf": "high"
+  },
+  {
+   "title": "Somewhere Before",
+   "pdfPage": 507,
+   "page": 507,
+   "conf": "high"
+  },
+  {
+   "title": "New Rag",
+   "pdfPage": 508,
+   "page": 508,
+   "conf": "high"
+  },
+  {
+   "title": "Fughata For Harpsichord",
+   "pdfPage": 509,
+   "page": 509,
+   "conf": "high"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+---
+title: "Real Book Catalogue"
+description: "Every tune in Hal Leonard's Real Book Songfinder and in the fake books I have as PDFs, with the book and page for each printing: search by title or composer, filter by book, Songfinder volume and how many books have the tune."
+toc: false
+---
+
+```{=html}
+<style>
+#rb-root .controls { display:flex; flex-wrap:wrap; gap:8px 12px; align-items:end; margin:.8rem 0; }
+#rb-root .controls label { display:flex; flex-direction:column; font-size:.8rem; opacity:.8; gap:2px; }
+#rb-root input, #rb-root select, #rb-root button { font:inherit; font-size:.9rem; color:inherit; background:var(--bs-body-bg,#fff); border:1px solid var(--bs-border-color,#ccc); border-radius:6px; padding:.25rem .5rem; }
+#rb-root #q { width:min(340px, 90vw); } #rb-root select { max-width:min(320px, 90vw); }
+#rb-root .bar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:8px 0; font-size:.9rem; }
+#rb-root table { width:100%; border-collapse:collapse; font-size:.92rem; }
+#rb-root th, #rb-root td { text-align:left; padding:5px 8px; border-bottom:1px solid var(--bs-border-color,#ddd); vertical-align:top; }
+#rb-root th { font-size:.8rem; opacity:.75; font-weight:600; }
+#rb-root .aka, #rb-root .where { opacity:.8; font-size:.82rem; }
+#rb-root .where span { display:inline-block; margin-right:10px; white-space:nowrap; }
+#rb-root .hand { font-style:italic; } #rb-root .n { text-align:right; white-space:nowrap; }
+@media (max-width:640px) { #rb-root .hide-sm { display:none; } }
+</style>
+<div id="rb-root">
+<p id="sub"></p>
+<div class="controls">
+  <label>Search<input id="q" type="search" placeholder="title, composer or artist"></label>
+  <label>In book<select id="book"><option value="">Any</option></select></label>
+  <label>Songfinder volume<select id="vol"><option value="">Any</option></select></label>
+  <label>Found in<select id="min"><option value="0">Any number of books</option><option value="1">At least 1 of my books</option><option value="2">2 or more</option><option value="3">3 or more</option><option value="5">5 or more</option></select></label>
+  <label>PDF<select id="pdf"><option value="">Either</option><option value="y">I have a PDF with it</option><option value="n">No PDF</option></select></label>
+</div>
+<div class="bar"><button id="prev">← Previous</button><span id="count"></span><button id="next">Next →</button></div>
+<table><thead><tr><th>Tune</th><th>In my books (book, page)</th><th class="hide-sm">Songfinder</th><th class="n">Books</th></tr></thead><tbody id="rows"></tbody></table>
+<p class="aka">Handwritten books are in <i>italics</i>. Hover over a printing for the PDF page and how sure the page number is (high: checked on the page; med: from the book's index, not checked; low: guessed).</p>
+</div>
+<script src="/apps/realbooks/catalogue-data.js?v=2"></script>
+<script src="/apps/realbooks/catalogue.js?v=2"></script>
+```

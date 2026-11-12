@@ -1,0 +1,120 @@
+{
+ "file": "Henry_Mancini_Songbook.pdf",
+ "method": "ocr-page-titles",
+ "offset": 0,
+ "notes": "Mancini Song Book (vocal/piano, 16 songs; pdf 1-3 cover/bio/contents, contents list has no page numbers and OCR'd text layer is poor). Printed page number = pdf page. Titles found by OCR of every page top (pp4-47); all 16 verified by OCR at that page. Contents lists 'I Love You And' + 'Don't You Forget It' as separate lines but it is one song (p20).",
+ "entries": [
+  {
+   "title": "Dear Heart",
+   "pdfPage": 4,
+   "page": 4,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  },
+  {
+   "title": "Charade",
+   "pdfPage": 6,
+   "page": 6,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  },
+  {
+   "title": "Dreamsville",
+   "pdfPage": 9,
+   "page": 9,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  },
+  {
+   "title": "Moon River",
+   "pdfPage": 12,
+   "page": 12,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  },
+  {
+   "title": "How Soon",
+   "pdfPage": 14,
+   "page": 14,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  },
+  {
+   "title": "Mr. Lucky",
+   "pdfPage": 16,
+   "page": 16,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  },
+  {
+   "title": "Man's Favourite Sport",
+   "pdfPage": 18,
+   "page": 18,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  },
+  {
+   "title": "I Love You And Don't You Forget It",
+   "pdfPage": 20,
+   "page": 20,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  },
+  {
+   "title": "Slow Hot Wind",
+   "pdfPage": 24,
+   "page": 24,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  },
+  {
+   "title": "Mostly For Lovers",
+   "pdfPage": 26,
+   "page": 26,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  },
+  {
+   "title": "Punch And Judy",
+   "pdfPage": 28,
+   "page": 28,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  },
+  {
+   "title": "Straight To Baby",
+   "pdfPage": 33,
+   "page": 33,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  },
+  {
+   "title": "Bye Bye",
+   "pdfPage": 36,
+   "page": 36,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  },
+  {
+   "title": "Joanna",
+   "pdfPage": 40,
+   "page": 40,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  },
+  {
+   "title": "To My Love",
+   "pdfPage": 42,
+   "page": 42,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  },
+  {
+   "title": "Song About Love",
+   "pdfPage": 44,
+   "page": 44,
+   "composer": "Henry Mancini",
+   "conf": "high"
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<!-- Swing test: RS200 12/8 melodies rewritten as 4/4 swing by Chord Entry's live take reader.
+     Data from scripts/swing-test.js. Serve the repo root and open /apps/themes/swing-test.html. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12/8 to Swing</title>
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#dcdad3; --card:#fff; --accent:#2a5db0; --pick:#e9f0fb; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#17171a; --fg:#e8e6e1; --muted:#9a9aa0; --line:#34343a; --card:#202024; --accent:#7aa7ff; --pick:#1f2a3d; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 system-ui, sans-serif; }
+main { max-width:1100px; margin:0 auto; padding:16px; }
+h1 { font-size:1.4rem; margin:0 0 4px; } h2 { font-size:1.15rem; margin:28px 0 2px; }
+.sub, .meta { color:var(--muted); } .sub { max-width:75ch; }
+.row { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap:12px; margin-top:8px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:10px 12px; min-width:0; }
+.card.pick { background:var(--pick); }
+.card h3 { font-size:.95rem; margin:0; } .card p { margin:2px 0 6px; font-size:.82rem; color:var(--muted); }
+.notation svg { max-width:100%; height:auto; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .notation svg { filter:invert(.9) hue-rotate(180deg); } }
+button, a.btn { font:inherit; font-size:.8rem; padding:3px 8px; color:var(--accent); background:none; border:1px solid var(--line); border-radius:6px; cursor:pointer; text-decoration:none; margin-right:6px; }
+details { margin-top:6px; font-size:.78rem; } pre { white-space:pre-wrap; margin:4px 0 0; }
+</style>
+</head>
+<body>
+<main>
+<h1>12/8 to swing: a notation test</h1>
+<p class="sub">RS200 writes slow triplet-feel songs in 12/8, which is exact for a machine and hard for a person to read. Here each one is
+"played" into Chord Entry's live take reader at its real tempo, each dotted-quarter beat becoming a quarter-note beat, and read in 4/4 with
+swing on, triplets on auto and sixteenths allowed. The other cards are the take's own DWIM readings, ranked by its cost score
+(lower is plainer; each dropped note costs a lot). The 4/4 versions play back swung.</p>
+<div id="out"></div>
+</main>
+<script src="../shared/abcjs-basic.js"></script>
+<script src="pop-themes-data.js"></script>
+<script src="swing-test-data.js"></script>
+<script>
+(() => {
+  const out = document.getElementById("out");
+  let synth = null, onBtn = null;
+  function stop() { if (synth) synth.stop(); synth = null; if (onBtn) onBtn.textContent = "▶ Play"; onBtn = null; }
+  async function play(abc, btn, swing) {
+    const was = onBtn === btn; stop(); if (was) return;
+    const vis = ABCJS.renderAbc(document.createElement("div"), abc)[0];
+    synth = new ABCJS.synth.CreateSynth();
+    await synth.init({ visualObj: vis, options: swing ? { swing } : {} }); await synth.prime(); synth.start();
+    btn.textContent = "■ Stop"; onBtn = btn;
+  }
+  const clean = (abc, s) => abc.replace(/^T:.*\n/m, "").replace(/^K:/m, "Q:1/4=" + s.bpm + "\nK:");
+  function origAbc(s) {
+    let b = s.orig.body;
+    (s.orig.chords || []).slice().sort((a, c) => c[0] - a[0]).forEach(([i, l]) => { b = b.slice(0, i) + '"' + l + '"' + b.slice(i); });
+    return ["X:1", "M:12/8", "L:1/8", "Q:3/8=" + s.bpm, "K:" + s.key, b].join("\n");
+  }
+  function card(parent, title, note, abc, swing, pick) {
+    const d = document.createElement("div"); d.className = "card" + (pick ? " pick" : "");
+    d.innerHTML = "<h3></h3><p></p><div class='notation'></div><div class='acts'></div><details><summary>ABC</summary><pre></pre></details>";
+    d.querySelector("h3").textContent = title; d.querySelector("p").textContent = note; d.querySelector("pre").textContent = abc;
+    parent.appendChild(d);
+    ABCJS.renderAbc(d.querySelector(".notation"), abc, { responsive: "resize", paddingleft: 0, paddingright: 0 });
+    if (ABCJS.synth.supportsAudio()) { const b = document.createElement("button"); b.textContent = "▶ Play"; b.onclick = () => play(abc, b, swing); d.querySelector(".acts").appendChild(b); }
+  }
+  window.SWING_TEST.forEach(s => {
+    const h = document.createElement("h2"); h.textContent = s.title + " — " + s.label; out.appendChild(h);
+    const m = document.createElement("div"); m.className = "meta";
+    m.innerHTML = s.artist + ", " + s.year + " · " + s.id + " · " + s.bpm + " beats a minute (dotted quarter in 12/8, quarter in 4/4) · swing read at " + s.swing + "% · " + s.notesIn + " notes in";
+    if (s.yt) { const a = document.createElement("a"); a.className = "btn"; a.href = s.yt; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Recording"; a.style.marginLeft = "8px"; m.appendChild(a); }
+    out.appendChild(m);
+    const row = document.createElement("div"); row.className = "row"; out.appendChild(row);
+    card(row, "As RS200 writes it (12/8)", "Exact triplet positions; ties across every beat.", origAbc(s), 0);
+    card(row, "4/4 swing: Chord Entry's reading", "Cost " + s.curScore + (s.dropped ? " · " + s.dropped + " note" + (s.dropped > 1 ? "s" : "") + " dropped" : " · no notes dropped") + ". Chords placed on the nearest beat.", clean(s.swung, s), 66, true);
+    s.alts.forEach(a => card(row, "DWIM: " + a.label, "Cost " + a.score + (a.lost ? " · " + a.lost + " notes dropped" : "") + ". " + a.why + " (No chords on DWIM cards.)", clean(a.abc, s), /straight/i.test(a.label) ? 0 : 66));
+  });
+})();
+</script>
+</body>
+</html>

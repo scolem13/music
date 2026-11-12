@@ -1,0 +1,1065 @@
+{
+ "file": "openbook.pdf",
+ "method": "text-index",
+ "offset": 0,
+ "notes": "Table of Contents (pdf pp2-3) parsed from text layer. All entries auto-checked: title found near top of its pdfPage text; offset 0. Titles keep printed spelling incl. typos in TOC.",
+ "entries": [
+  {
+   "title": "500 Miles High",
+   "pdfPage": 5,
+   "page": 5,
+   "composer": "Chick Corea",
+   "conf": "high"
+  },
+  {
+   "title": "A Cup Of Coffee, A Sandwich And You",
+   "pdfPage": 6,
+   "page": 6,
+   "composer": "Joseph Meyer, Billy Rose, Al Dubin",
+   "conf": "high"
+  },
+  {
+   "title": "A Day In The Life Of A Fool",
+   "pdfPage": 7,
+   "page": 7,
+   "composer": "Luiz Bonfa, Carl Sigman",
+   "conf": "high"
+  },
+  {
+   "title": "A Fine Romance",
+   "pdfPage": 8,
+   "page": 8,
+   "composer": "Jerome Kern, Dorothy Fields",
+   "conf": "high"
+  },
+  {
+   "title": "A Foggy Day",
+   "pdfPage": 9,
+   "page": 9,
+   "composer": "George Gershwin, Ira Gershwin",
+   "conf": "high"
+  },
+  {
+   "title": "A Night In Tunisia",
+   "pdfPage": 10,
+   "page": 10,
+   "composer": "John 'Dizzy' Gillespie, Frank Paparelli",
+   "conf": "high"
+  },
+  {
+   "title": "A Nightingale Sang in Berkeley Square",
+   "pdfPage": 11,
+   "page": 11,
+   "composer": "Manning Sherwin, Eric Maschwitz",
+   "conf": "high"
+  },
+  {
+   "title": "Afternoon in Paris",
+   "pdfPage": 12,
+   "page": 12,
+   "composer": "John Lewis",
+   "conf": "high"
+  },
+  {
+   "title": "Alice In Wonderland",
+   "pdfPage": 13,
+   "page": 13,
+   "composer": "Sammy Fain, Bob Hilliard",
+   "conf": "high"
+  },
+  {
+   "title": "All Of Me",
+   "pdfPage": 15,
+   "page": 15,
+   "composer": "Seymour Simons, Gerald Marks",
+   "conf": "high"
+  },
+  {
+   "title": "All Or Nothing At All",
+   "pdfPage": 16,
+   "page": 16,
+   "composer": "Arthur Altman, Jack Lawrence",
+   "conf": "high"
+  },
+  {
+   "title": "All The Things You Are",
+   "pdfPage": 18,
+   "page": 18,
+   "composer": "Jerome Kern, Oscar Hammerstein II",
+   "conf": "high"
+  },
+  {
+   "title": "Alone Together",
+   "pdfPage": 19,
+   "page": 19,
+   "composer": "Arthur Schwartz, Howard Dietz",
+   "conf": "high"
+  },
+  {
+   "title": "Always",
+   "pdfPage": 20,
+   "page": 20,
+   "composer": "Irving Berlin",
+   "conf": "high"
+  },
+  {
+   "title": "Among My Souvenirs",
+   "pdfPage": 21,
+   "page": 21,
+   "composer": "Horatio Nicholls, Edgar Leslie",
+   "conf": "high"
+  },
+  {
+   "title": "Angel Eyes",
+   "pdfPage": 22,
+   "page": 22,
+   "composer": "Matt Dennis, Earl Brent",
+   "conf": "high"
+  },
+  {
+   "title": "As Time Goes By",
+   "pdfPage": 23,
+   "page": 23,
+   "composer": "Herman Hupfeld",
+   "conf": "high"
+  },
+  {
+   "title": "Au Privave",
+   "pdfPage": 24,
+   "page": 24,
+   "composer": "Charlie Parker",
+   "conf": "high"
+  },
+  {
+   "title": "Autumn In New York",
+   "pdfPage": 25,
+   "page": 25,
+   "composer": "Vernon Duke",
+   "conf": "high"
+  },
+  {
+   "title": "Autumn Leaves",
+   "pdfPage": 26,
+   "page": 26,
+   "composer": "Joseph Kosma, Jacques Prevert, Johnny Mercer",
+   "conf": "high"
+  },
+  {
+   "title": "Bessies's Blues",
+   "pdfPage": 27,
+   "page": 27,
+   "composer": "John Coltrane",
+   "conf": "high"
+  },
+  {
+   "title": "Bewitched",
+   "pdfPage": 28,
+   "page": 28,
+   "composer": "Richard Rodgers, Lorenz Hart",
+   "conf": "high"
+  },
+  {
+   "title": "Billie's Bounce",
+   "pdfPage": 29,
+   "page": 29,
+   "composer": "Charlie Parker",
+   "conf": "high"
+  },
+  {
+   "title": "Blue Bossa",
+   "pdfPage": 30,
+   "page": 30,
+   "composer": "Kenny Dorham, Joan Cartwright",
+   "conf": "high"
+  },
+  {
+   "title": "Blue In Green",
+   "pdfPage": 31,
+   "page": 31,
+   "composer": "Miles Davis, Bill Evans",
+   "conf": "high"
+  },
+  {
+   "title": "Blue Monk",
+   "pdfPage": 32,
+   "page": 32,
+   "composer": "Thelonius Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Blue Room",
+   "pdfPage": 33,
+   "page": 33,
+   "composer": "Richard Rodgers, Lorenz Hart",
+   "conf": "high"
+  },
+  {
+   "title": "Blue Skies",
+   "pdfPage": 34,
+   "page": 34,
+   "composer": "Irving Berlin",
+   "conf": "high"
+  },
+  {
+   "title": "Blue Trane",
+   "pdfPage": 35,
+   "page": 35,
+   "composer": "John Coltrane",
+   "conf": "high"
+  },
+  {
+   "title": "Blues For Alice",
+   "pdfPage": 36,
+   "page": 36,
+   "composer": "Charlie Parker",
+   "conf": "high"
+  },
+  {
+   "title": "Bluesette",
+   "pdfPage": 37,
+   "page": 37,
+   "composer": "Jean 'Toots' Thielemans, Norman Gimbel",
+   "conf": "high"
+  },
+  {
+   "title": "Body And Soul",
+   "pdfPage": 39,
+   "page": 39,
+   "composer": "John Green, Edward Heyman, Robert Sour, Frank Eyton",
+   "conf": "high"
+  },
+  {
+   "title": "But Beautiful",
+   "pdfPage": 40,
+   "page": 40,
+   "composer": "Johnny Burke, James Van Heusen",
+   "conf": "high"
+  },
+  {
+   "title": "But Not For Me",
+   "pdfPage": 41,
+   "page": 41,
+   "composer": "George Gershwin, Ira Gershwin",
+   "conf": "high"
+  },
+  {
+   "title": "Bye Bye Blackbird",
+   "pdfPage": 42,
+   "page": 42,
+   "composer": "Ray Henderson, Mort Dixon",
+   "conf": "high"
+  },
+  {
+   "title": "Can't Help Lovin' Dat Man",
+   "pdfPage": 43,
+   "page": 43,
+   "composer": "Jerome Kern, Oscar Hammerstein III",
+   "conf": "high"
+  },
+  {
+   "title": "Caravan",
+   "pdfPage": 44,
+   "page": 44,
+   "composer": "Duke Ellington, Juan Tizol, Irving Mills",
+   "conf": "high"
+  },
+  {
+   "title": "Chega De Saudade",
+   "pdfPage": 45,
+   "page": 45,
+   "composer": "Antonio Carlos Jobim, Vinicius DeMoraes, John Hendricks, Jessie Cavanaugh",
+   "conf": "high"
+  },
+  {
+   "title": "Cocktails For Two",
+   "pdfPage": 47,
+   "page": 47,
+   "composer": "Arthur Johnston and Sam Coslow",
+   "conf": "high"
+  },
+  {
+   "title": "Come Rain Or Come Shine",
+   "pdfPage": 48,
+   "page": 48,
+   "composer": "Harold Arlen, Johnny Mercer",
+   "conf": "high"
+  },
+  {
+   "title": "Could It Be You",
+   "pdfPage": 49,
+   "page": 49,
+   "composer": "Cole Porter",
+   "conf": "high"
+  },
+  {
+   "title": "Cry Me A River",
+   "pdfPage": 50,
+   "page": 50,
+   "composer": "Arthur Hamilton",
+   "conf": "high"
+  },
+  {
+   "title": "Dancing on the Ceiling",
+   "pdfPage": 51,
+   "page": 51,
+   "composer": "Richard Rodgers, Lorenz Hart",
+   "conf": "high"
+  },
+  {
+   "title": "Darn That Dream",
+   "pdfPage": 52,
+   "page": 52,
+   "composer": "Jimmy Van Heusen, Eddie DeLange",
+   "conf": "high"
+  },
+  {
+   "title": "Desafinado",
+   "pdfPage": 53,
+   "page": 53,
+   "composer": "Antonio Carlos Jobim, Newton Mendonca, Jon Hendricks, Jessie Cavanaugh",
+   "conf": "high"
+  },
+  {
+   "title": "Donna Lee",
+   "pdfPage": 55,
+   "page": 55,
+   "composer": "Charlie Parker",
+   "conf": "high"
+  },
+  {
+   "title": "Don't Blame Me",
+   "pdfPage": 56,
+   "page": 56,
+   "composer": "Jimmy McHugh, Dorothy Fields",
+   "conf": "high"
+  },
+  {
+   "title": "Don't Explain",
+   "pdfPage": 57,
+   "page": 57,
+   "composer": "Billie Holiday, Arthur Herzog, Jr.",
+   "conf": "high"
+  },
+  {
+   "title": "Don't Get Around Much Anymore",
+   "pdfPage": 58,
+   "page": 58,
+   "composer": "Duke Ellington, Bob Russell",
+   "conf": "high"
+  },
+  {
+   "title": "Doxy",
+   "pdfPage": 59,
+   "page": 59,
+   "composer": "Sonny Rollins",
+   "conf": "high"
+  },
+  {
+   "title": "Easy Living",
+   "pdfPage": 60,
+   "page": 60,
+   "composer": "Ralph Rainger, Leo Robin",
+   "conf": "high"
+  },
+  {
+   "title": "Easy To Love",
+   "pdfPage": 61,
+   "page": 61,
+   "composer": "Cole Porter",
+   "conf": "high"
+  },
+  {
+   "title": "Epistrophy",
+   "pdfPage": 62,
+   "page": 62,
+   "composer": "Thelonius Monk",
+   "conf": "high"
+  },
+  {
+   "title": "Flamingo",
+   "pdfPage": 63,
+   "page": 63,
+   "composer": "Ted Grouya, Ed Anderson",
+   "conf": "high"
+  },
+  {
+   "title": "Fly Me To The Moon",
+   "pdfPage": 64,
+   "page": 64,
+   "composer": "Bart Howard",
+   "conf": "high"
+  },
+  {
+   "title": "Gentle Rain",
+   "pdfPage": 65,
+   "page": 65,
+   "composer": "Louis Bonfa, Matt Dubey",
+   "conf": "high"
+  },
+  {
+   "title": "Giant Steps",
+   "pdfPage": 66,
+   "page": 66,
+   "composer": "John Coltrane",
+   "conf": "high"
+  },
+  {
+   "title": "Gloria's Step",
+   "pdfPage": 67,
+   "page": 67,
+   "composer": "Scott LaFaro",
+   "conf": "high"
+  },
+  {
+   "title": "Green Dolphin Street",
+   "pdfPage": 68,
+   "page": 68,
+   "composer": "Bronislau Kaper, Ned Washington",
+   "conf": "high"
+  },
+  {
+   "title": "Greensleeves",
+   "pdfPage": 69,
+   "page": 69,
+   "composer": "Traditional",
+   "conf": "high"
+  },
+  {
+   "title": "Guilty",
+   "pdfPage": 70,
+   "page": 70,
+   "composer": "Gus Kahn, Harry Akst, Richard A. Whiting",
+   "conf": "high"
+  },
+  {
+   "title": "Hallelujah I Love Him (Her) So",
+   "pdfPage": 71,
+   "page": 71,
+   "composer": "Ray Charles",
+   "conf": "high"
+  },
+  {
+   "title": "Have you met Miss Jones?",
+   "pdfPage": 72,
+   "page": 72,
+   "composer": "Richard Rodgers, Lorenz Hart",
+   "conf": "high"
+  },
+  {
+   "title": "Heart And Soul",
+   "pdfPage": 73,
+   "page": 73,
+   "composer": "Frank Losser, Hoagy Carmichael",
+   "conf": "high"
+  },
+  {
+   "title": "Here's That Rainy Day",
+   "pdfPage": 74,
+   "page": 74,
+   "composer": "James Van Heusen, Johnny Burke",
+   "conf": "high"
+  },
+  {
+   "title": "Honeysuckle Rose",
+   "pdfPage": 75,
+   "page": 75,
+   "composer": "Thomas 'Fats' Waller, Andy Razaf",
+   "conf": "high"
+  },
+  {
+   "title": "How Deep Is the Ocean",
+   "pdfPage": 76,
+   "page": 76,
+   "composer": "Irving Berlin",
+   "conf": "high"
+  },
+  {
+   "title": "How High The Moon",
+   "pdfPage": 77,
+   "page": 77,
+   "composer": "Morgan Lewis, Nancy Hamilton",
+   "conf": "high"
+  },
+  {
+   "title": "How Insensitive",
+   "pdfPage": 78,
+   "page": 78,
+   "composer": "Antonio Carlos Jobim, Vincius De Moraes, Norman Gimbel",
+   "conf": "high"
+  },
+  {
+   "title": "I Can't Give You Anything But Love",
+   "pdfPage": 79,
+   "page": 79,
+   "composer": "Jimmy McHugh, Dorothy Fields",
+   "conf": "high"
+  },
+  {
+   "title": "I Concentrate On You",
+   "pdfPage": 80,
+   "page": 80,
+   "composer": "Cole Porter",
+   "conf": "high"
+  },
+  {
+   "title": "I Could Have Danced All Night",
+   "pdfPage": 81,
+   "page": 81,
+   "composer": "Frederick Loewe, Alan Jay Lerner",
+   "conf": "high"
+  },
+  {
+   "title": "I Could Write A Book",
+   "pdfPage": 82,
+   "page": 82,
+   "composer": "Richard Rodgers, Lorenz Hart",
+   "conf": "high"
+  },
+  {
+   "title": "I Don't Want To Set The World On Fire",
+   "pdfPage": 83,
+   "page": 83,
+   "composer": "Eddie Seiler, Sol Marcus, Bennie Benjamin",
+   "conf": "high"
+  },
+  {
+   "title": "I Got Plenty O' Nuttin'",
+   "pdfPage": 84,
+   "page": 84,
+   "composer": "George Gershwin, Ira Gershwin, DuBose Heyward",
+   "conf": "high"
+  },
+  {
+   "title": "I Left My Heart In San Francisco",
+   "pdfPage": 85,
+   "page": 85,
+   "composer": "Geroge Cory, Douglass Cross",
+   "conf": "high"
+  },
+  {
+   "title": "I Love You",
+   "pdfPage": 86,
+   "page": 86,
+   "composer": "Cole Porter",
+   "conf": "high"
+  },
+  {
+   "title": "If You Could See Me Now",
+   "pdfPage": 87,
+   "page": 87,
+   "composer": "Tadd Dameron, Carl Sigman",
+   "conf": "high"
+  },
+  {
+   "title": "I'll Be Seeing You",
+   "pdfPage": 88,
+   "page": 88,
+   "composer": "Irving Kahal, Sammy Fain",
+   "conf": "high"
+  },
+  {
+   "title": "I'll Close My Eyes",
+   "pdfPage": 89,
+   "page": 89,
+   "composer": "Billy Reid, Buddy Kaye",
+   "conf": "high"
+  },
+  {
+   "title": "I'll Never Smile Again",
+   "pdfPage": 90,
+   "page": 90,
+   "composer": "Ruth Lowe",
+   "conf": "high"
+  },
+  {
+   "title": "I'll Remember April",
+   "pdfPage": 91,
+   "page": 91,
+   "composer": "Don Raye, Gene De Paul, Pat Johnson",
+   "conf": "high"
+  },
+  {
+   "title": "I'm Beginning To See The Light",
+   "pdfPage": 92,
+   "page": 92,
+   "composer": "Harry James, Duke Ellington, Johnny Hodges, Don George",
+   "conf": "high"
+  },
+  {
+   "title": "I'm Sitting On Top Of The World",
+   "pdfPage": 93,
+   "page": 93,
+   "composer": "Ray Handerson, Sam M. Lewis and Joel Young",
+   "conf": "high"
+  },
+  {
+   "title": "Isn't It Romantic",
+   "pdfPage": 94,
+   "page": 94,
+   "composer": "Richard Rodgers, Lorenz Hart",
+   "conf": "high"
+  },
+  {
+   "title": "It Might As Well Be Spring",
+   "pdfPage": 95,
+   "page": 95,
+   "composer": "Richard Rodgers, Oscar Hammerstein II",
+   "conf": "high"
+  },
+  {
+   "title": "It Never Entered My Mind",
+   "pdfPage": 96,
+   "page": 96,
+   "composer": "Richard Rodgers, Lorenz Hart",
+   "conf": "high"
+  },
+  {
+   "title": "Just Friends",
+   "pdfPage": 97,
+   "page": 97,
+   "composer": "John Klenner, Sam M. Lewis",
+   "conf": "high"
+  },
+  {
+   "title": "Let's Call The Whole Thing Off",
+   "pdfPage": 98,
+   "page": 98,
+   "composer": "George Gershwin, Ira Gershwin",
+   "conf": "high"
+  },
+  {
+   "title": "Like Someone In Love",
+   "pdfPage": 99,
+   "page": 99,
+   "composer": "Johnny Burke, Jimmy Van Heusen",
+   "conf": "high"
+  },
+  {
+   "title": "Lost In The Stars",
+   "pdfPage": 100,
+   "page": 100,
+   "composer": "Kurt Weill, Maxwell Anderson",
+   "conf": "high"
+  },
+  {
+   "title": "Love For Sale",
+   "pdfPage": 101,
+   "page": 101,
+   "composer": "Cole Porter",
+   "conf": "high"
+  },
+  {
+   "title": "Lullaby of birdland",
+   "pdfPage": 103,
+   "page": 103,
+   "composer": "George Shearing, George David Weiss",
+   "conf": "high"
+  },
+  {
+   "title": "Misty",
+   "pdfPage": 104,
+   "page": 104,
+   "composer": "Errol Garner, Johnny Burke",
+   "conf": "high"
+  },
+  {
+   "title": "Moonlight in Vermont",
+   "pdfPage": 105,
+   "page": 105,
+   "composer": "Karl Suessdorf, John Blackburn",
+   "conf": "high"
+  },
+  {
+   "title": "My Favorite Things",
+   "pdfPage": 106,
+   "page": 106,
+   "composer": "Richard Rodgers, Oscar Hammerstein II",
+   "conf": "high"
+  },
+  {
+   "title": "My Foolish Heart",
+   "pdfPage": 108,
+   "page": 108,
+   "composer": "Victor Young, Ned Washington",
+   "conf": "high"
+  },
+  {
+   "title": "My Funny Valentine",
+   "pdfPage": 109,
+   "page": 109,
+   "composer": "Richard Rodgers, Lorenz Hart",
+   "conf": "high"
+  },
+  {
+   "title": "My One And Only Love",
+   "pdfPage": 110,
+   "page": 110,
+   "composer": "Guy Wood, Robert Mellin",
+   "conf": "high"
+  },
+  {
+   "title": "My Romance",
+   "pdfPage": 111,
+   "page": 111,
+   "composer": "Richard Rodgers, Lorenz Hart",
+   "conf": "high"
+  },
+  {
+   "title": "My Ship",
+   "pdfPage": 112,
+   "page": 112,
+   "composer": "Kurt Weil, Ira Gershwin",
+   "conf": "high"
+  },
+  {
+   "title": "Nature Boy",
+   "pdfPage": 113,
+   "page": 113,
+   "composer": "Eben Ahbez",
+   "conf": "high"
+  },
+  {
+   "title": "Nice Work If You Can Get It",
+   "pdfPage": 114,
+   "page": 114,
+   "composer": "George Gershwin, Ira Gershwin",
+   "conf": "high"
+  },
+  {
+   "title": "Night And Day",
+   "pdfPage": 115,
+   "page": 115,
+   "composer": "Cole Porter",
+   "conf": "high"
+  },
+  {
+   "title": "Now's The Time",
+   "pdfPage": 116,
+   "page": 116,
+   "composer": "Charlie Parker",
+   "conf": "high"
+  },
+  {
+   "title": "Ol' Man River",
+   "pdfPage": 117,
+   "page": 117,
+   "composer": "Jerome Kern, Oscar Hammerstein II",
+   "conf": "high"
+  },
+  {
+   "title": "Once I Loved",
+   "pdfPage": 118,
+   "page": 118,
+   "composer": "Antonio Carlos Jobim, Vinicius DeMoraes, Ray Gilbert",
+   "conf": "high"
+  },
+  {
+   "title": "One By One",
+   "pdfPage": 119,
+   "page": 119,
+   "composer": "Wayne Shorter",
+   "conf": "high"
+  },
+  {
+   "title": "One Note Samba",
+   "pdfPage": 120,
+   "page": 120,
+   "composer": "Antonio Carlos Jobim, Newton Mendonca",
+   "conf": "high"
+  },
+  {
+   "title": "Opus One",
+   "pdfPage": 121,
+   "page": 121,
+   "composer": "Sy Oliver",
+   "conf": "high"
+  },
+  {
+   "title": "Orchids In The Moonlight",
+   "pdfPage": 122,
+   "page": 122,
+   "composer": "Vincent Youmans, Gus Kahn, Edward Eliscu",
+   "conf": "high"
+  },
+  {
+   "title": "Ornithology",
+   "pdfPage": 123,
+   "page": 123,
+   "composer": "Charlie Parker, Benny Harris",
+   "conf": "high"
+  },
+  {
+   "title": "Polka Dots And Moonbeams",
+   "pdfPage": 124,
+   "page": 124,
+   "composer": "Jimmy Van Heusen, Johnny Burke",
+   "conf": "high"
+  },
+  {
+   "title": "Poor Butterfly",
+   "pdfPage": 125,
+   "page": 125,
+   "composer": "Raymond Hubbell, John L. Golden",
+   "conf": "high"
+  },
+  {
+   "title": "Prelude To A Kiss",
+   "pdfPage": 126,
+   "page": 126,
+   "composer": "Duke Ellington, Irving Gordon and Irving Mills",
+   "conf": "high"
+  },
+  {
+   "title": "Quiet Nights Of Quiet Stars",
+   "pdfPage": 127,
+   "page": 127,
+   "composer": "Antonio Carlos Jobim, Antonio Carlos Jobim, Gene Lees",
+   "conf": "high"
+  },
+  {
+   "title": "Red Sails In The Sunset",
+   "pdfPage": 128,
+   "page": 128,
+   "composer": "Hugh Williams, Jimmy Kennedy",
+   "conf": "high"
+  },
+  {
+   "title": "'Round Midnight",
+   "pdfPage": 129,
+   "page": 129,
+   "composer": "Cootie Williams, Thelonious Monk, Bernie Hanighen",
+   "conf": "high"
+  },
+  {
+   "title": "Satin Doll",
+   "pdfPage": 130,
+   "page": 130,
+   "composer": "Duke Ellington, Billy Strayhorn, Johnny Mercer",
+   "conf": "high"
+  },
+  {
+   "title": "Serenade To A Cuckoo",
+   "pdfPage": 131,
+   "page": 131,
+   "composer": "Roland Kirk",
+   "conf": "high"
+  },
+  {
+   "title": "Solar",
+   "pdfPage": 132,
+   "page": 132,
+   "composer": "Miles Davis",
+   "conf": "high"
+  },
+  {
+   "title": "Someday My Prince Will Come",
+   "pdfPage": 133,
+   "page": 133,
+   "composer": "Frank Churchill, Larry Morey",
+   "conf": "high"
+  },
+  {
+   "title": "Someone To Watch Over Me",
+   "pdfPage": 134,
+   "page": 134,
+   "composer": "George Gershwin, Ira Gershwin",
+   "conf": "high"
+  },
+  {
+   "title": "Somewhere, Over The Rainbow",
+   "pdfPage": 135,
+   "page": 135,
+   "composer": "Harold Arlen, Edgar Yipsel 'Yip' Harburg",
+   "conf": "high"
+  },
+  {
+   "title": "St. Thomas",
+   "pdfPage": 136,
+   "page": 136,
+   "composer": "Sonny Rollins",
+   "conf": "high"
+  },
+  {
+   "title": "Stella By Starlight",
+   "pdfPage": 137,
+   "page": 137,
+   "composer": "Victor Young, Ned Washington",
+   "conf": "high"
+  },
+  {
+   "title": "Stormy Weather",
+   "pdfPage": 138,
+   "page": 138,
+   "composer": "Harold Arlen, Ted Koehler",
+   "conf": "high"
+  },
+  {
+   "title": "Strang Fruit",
+   "pdfPage": 139,
+   "page": 139,
+   "composer": "Lewis Allan",
+   "conf": "high"
+  },
+  {
+   "title": "Strangers In The Night",
+   "pdfPage": 140,
+   "page": 140,
+   "composer": "Bert Kaempfert, Charles Singleton, Eddie Snyder",
+   "conf": "high"
+  },
+  {
+   "title": "Summertime",
+   "pdfPage": 141,
+   "page": 141,
+   "composer": "George Gershwin, DuBose Heyward",
+   "conf": "high"
+  },
+  {
+   "title": "Take Five",
+   "pdfPage": 142,
+   "page": 142,
+   "composer": "Paul Desmond",
+   "conf": "high"
+  },
+  {
+   "title": "Take the 'A' Train",
+   "pdfPage": 143,
+   "page": 143,
+   "composer": "Billy Strayhorn, The Delta Rhythm Boys, Joya Sherrill",
+   "conf": "high"
+  },
+  {
+   "title": "Tenderly",
+   "pdfPage": 144,
+   "page": 144,
+   "composer": "Walter Gross, Jack Lawrence",
+   "conf": "high"
+  },
+  {
+   "title": "That's All",
+   "pdfPage": 145,
+   "page": 145,
+   "composer": "Alan Brandt, Bob Haymes",
+   "conf": "high"
+  },
+  {
+   "title": "The Girl From Ipanema",
+   "pdfPage": 146,
+   "page": 146,
+   "composer": "Antonio Carlos Jobim, Vincius De Moraes, Norman Gimbel",
+   "conf": "high"
+  },
+  {
+   "title": "The Man I Love",
+   "pdfPage": 147,
+   "page": 147,
+   "composer": "George Gershwin, Ira Gershwin",
+   "conf": "high"
+  },
+  {
+   "title": "(I'm Afraid) The Masquerade Is Over",
+   "pdfPage": 148,
+   "page": 148,
+   "composer": "Allie Wrubel, Herb Magidson",
+   "conf": "high"
+  },
+  {
+   "title": "The Nearness Of You",
+   "pdfPage": 149,
+   "page": 149,
+   "composer": "Hoagy Carmichael, Ned Washington",
+   "conf": "high"
+  },
+  {
+   "title": "The Shadow of Your Smile",
+   "pdfPage": 150,
+   "page": 150,
+   "composer": "Johnny Mandel, Paul Francis Webster",
+   "conf": "high"
+  },
+  {
+   "title": "The Things We Did Last Summer",
+   "pdfPage": 151,
+   "page": 151,
+   "composer": "Sammy Chan, Jule Styne",
+   "conf": "high"
+  },
+  {
+   "title": "The Way You Look Tonight",
+   "pdfPage": 152,
+   "page": 152,
+   "composer": "Jerome Kern, Dorothy Fields",
+   "conf": "high"
+  },
+  {
+   "title": "There Will Never Be Another You",
+   "pdfPage": 154,
+   "page": 154,
+   "composer": "Harry Warren, Mack Gordon",
+   "conf": "high"
+  },
+  {
+   "title": "They All Laughed",
+   "pdfPage": 155,
+   "page": 155,
+   "composer": "George Gershwin, Ira Gershwin",
+   "conf": "high"
+  },
+  {
+   "title": "They Can't Take That Away From Me",
+   "pdfPage": 156,
+   "page": 156,
+   "composer": "George Gershwin, Ira Gershwin",
+   "conf": "high"
+  },
+  {
+   "title": "This Can't Be Love",
+   "pdfPage": 157,
+   "page": 157,
+   "composer": "Richard Rodgers, Lorenz Hart",
+   "conf": "high"
+  },
+  {
+   "title": "Unforgettable",
+   "pdfPage": 158,
+   "page": 158,
+   "composer": "Irving Gordon",
+   "conf": "high"
+  },
+  {
+   "title": "Waltz For Debby",
+   "pdfPage": 159,
+   "page": 159,
+   "composer": "Bill Evans, Gene Lees",
+   "conf": "high"
+  },
+  {
+   "title": "Watermelon Man",
+   "pdfPage": 160,
+   "page": 160,
+   "composer": "Herbie Hancock",
+   "conf": "high"
+  },
+  {
+   "title": "What A Diff'rence A Day Made",
+   "pdfPage": 161,
+   "page": 161,
+   "composer": "Maria Grever, Stanley Adams",
+   "conf": "high"
+  },
+  {
+   "title": "What A Wonderful World",
+   "pdfPage": 162,
+   "page": 162,
+   "composer": "George David Weiss, Bob Thiele",
+   "conf": "high"
+  },
+  {
+   "title": "When I Fall In Love",
+   "pdfPage": 163,
+   "page": 163,
+   "composer": "Victor Young, Edward Heyman",
+   "conf": "high"
+  }
+ ]
+}

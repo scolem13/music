@@ -17,7 +17,8 @@ function tune(title) {
   const k = key(title);
   if (!tunes.has(k)) tunes.set(k, { t: title, aka: [], sf: [], at: [] });
   const x = tunes.get(k);
-  if (x.t !== title && !x.aka.includes(title) && x.aka.length < 4) x.aka.push(title);
+  const same = (a, b) => a.toLowerCase().replace(/[’‘`]/g, "'") === b.toLowerCase().replace(/[’‘`]/g, "'");   // case or apostrophe style only
+  if (!same(x.t, title) && !x.aka.some(a => same(a, title)) && x.aka.length < 4) x.aka.push(title);
   return x;
 }
 sf.songs.forEach(s => { tune(s.title).sf = s.vols; });
@@ -33,6 +34,7 @@ if (fs.existsSync(idxDir)) for (const f of fs.readdirSync(idxDir).filter(f => f.
     const x = tune(e.title);
     x.at.push([b, e.pdfPage, e.page == null ? null : e.page, e.conf || "", e.composer || ""]);
     if (!x.c && e.composer) x.c = e.composer;
+    if (e.artist && !(x.ar = x.ar || []).includes(e.artist)) x.ar.push(e.artist);   // performer(s) the books credit
   });
 }
 const list = [...tunes.values()].sort((a, b) => key(a.t).localeCompare(key(b.t)));

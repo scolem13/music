@@ -484,6 +484,7 @@ website:
             - tools/part-reader.qmd
             - tools/classical-themes.qmd
             - tools/pop-themes.qmd
+            - tools/real-books.qmd
         - section: "Write music down"
           contents:
             - tools/notation.qmd
@@ -617,6 +618,7 @@ website:
           - tools/part-reader.qmd
           - tools/classical-themes.qmd
           - tools/pop-themes.qmd
+          - tools/real-books.qmd
           - text: "---"
           - text: "Write music down"
           - tools/notation.qmd

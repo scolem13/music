@@ -1,0 +1,2954 @@
+{
+ "file": "latin-fake-book_compress.pdf",
+ "method": "ocr-index",
+ "offset": null,
+ "notes": "Contents on pdf pp2-11 (two columns, 'number TITLE' in caps), OCRed at 300 dpi with autocontrast; faint scan, so many numbers were misread (dropped/added digits) and were repaired against their neighbours (book is in alphabetical order with ~1 tune per page). Printed page = pdf page up to about printed 320, then pdf = printed - 2 (two printed pages missing around 321-323; pdf 404 prints 406). pdfPage was then refined by OCRing the top of every page (pdf 12-459) and fuzzy-matching the title within +-2 of the expected page: conf high = title found on that page and index number agreed; med = either the title matched but the index number needed repair, or no title match (page OCR of the caps title often fails, or two tunes on one page); low = repaired number and no title match. Spot check by viewing the top of 24 random pages: about 16 matched exactly, the rest were off by 1-2 pages or a continuation page (e.g. El Dia Que Me Quieras listed at 144 is on the page after El Cumbanchero; Cat Talk is 84 not 83; Meditation is 273). So expect page errors of +-1-2 for conf med/low entries. Accents are lost in titles (OCR); some titles have OCR slips. Added 'A Esa' (pdf 12) by looking at the page; index line was lost. Entries are not de-duplicated across tunes listed with the same page.",
+ "entries": [
+  {
+   "title": "A Esa",
+   "pdfPage": 12,
+   "page": 12,
+   "conf": "med"
+  },
+  {
+   "title": "A Felicidade",
+   "pdfPage": 12,
+   "page": 12,
+   "conf": "med"
+  },
+  {
+   "title": "A Media Luz (The Light Of Love)",
+   "pdfPage": 13,
+   "page": 13,
+   "conf": "med"
+  },
+  {
+   "title": "Ami que",
+   "pdfPage": 14,
+   "page": 14,
+   "conf": "med"
+  },
+  {
+   "title": "A Santa Barbara",
+   "pdfPage": 15,
+   "page": 15,
+   "conf": "high"
+  },
+  {
+   "title": "Abran Paso",
+   "pdfPage": 16,
+   "page": 16,
+   "conf": "high"
+  },
+  {
+   "title": "Abrazame Asi",
+   "pdfPage": 17,
+   "page": 17,
+   "conf": "low"
+  },
+  {
+   "title": "Acercate Mas (Come Closer To Me)",
+   "pdfPage": 18,
+   "page": 18,
+   "conf": "high"
+  },
+  {
+   "title": "Acid",
+   "pdfPage": 18,
+   "page": 18,
+   "conf": "med"
+  },
+  {
+   "title": "Adios",
+   "pdfPage": 19,
+   "page": 19,
+   "conf": "med"
+  },
+  {
+   "title": "Adelita",
+   "pdfPage": 20,
+   "page": 20,
+   "conf": "high"
+  },
+  {
+   "title": "Adios Tristeza",
+   "pdfPage": 21,
+   "page": 21,
+   "conf": "med"
+  },
+  {
+   "title": "Adios Muchachos",
+   "pdfPage": 22,
+   "page": 22,
+   "conf": "high"
+  },
+  {
+   "title": "Adoro",
+   "pdfPage": 23,
+   "page": 23,
+   "conf": "high"
+  },
+  {
+   "title": "Again and Again",
+   "pdfPage": 24,
+   "page": 24,
+   "conf": "high"
+  },
+  {
+   "title": "Aguardiente de Cara",
+   "pdfPage": 25,
+   "page": 25,
+   "conf": "med"
+  },
+  {
+   "title": "Aguas de Marco (Waters Of March)",
+   "pdfPage": 26,
+   "page": 26,
+   "conf": "high"
+  },
+  {
+   "title": "Agua de Beber (Water To Drink)",
+   "pdfPage": 28,
+   "page": 28,
+   "conf": "high"
+  },
+  {
+   "title": "Ahora Seremos Felices (La Casita)",
+   "pdfPage": 28,
+   "page": 28,
+   "conf": "med"
+  },
+  {
+   "title": "Ahora Vengo Yo",
+   "pdfPage": 29,
+   "page": 29,
+   "conf": "med"
+  },
+  {
+   "title": "Al Impulso",
+   "pdfPage": 30,
+   "page": 30,
+   "conf": "high"
+  },
+  {
+   "title": "Alagados",
+   "pdfPage": 30,
+   "page": 30,
+   "conf": "med"
+  },
+  {
+   "title": "Alla en El Rancho Grande",
+   "pdfPage": 31,
+   "page": 31,
+   "conf": "med"
+  },
+  {
+   "title": "Amantes",
+   "pdfPage": 31,
+   "page": 31,
+   "conf": "med"
+  },
+  {
+   "title": "Alma Con Alma",
+   "pdfPage": 32,
+   "page": 32,
+   "conf": "high"
+  },
+  {
+   "title": "Almademujer",
+   "pdfPage": 32,
+   "page": 32,
+   "conf": "med"
+  },
+  {
+   "title": "Amapola (Pretty Little Poppy)",
+   "pdfPage": 33,
+   "page": 33,
+   "conf": "med"
+  },
+  {
+   "title": "Almendra",
+   "pdfPage": 34,
+   "page": 34,
+   "conf": "high"
+  },
+  {
+   "title": "Amanecientus Brazos",
+   "pdfPage": 36,
+   "page": 36,
+   "conf": "med"
+  },
+  {
+   "title": "Amor",
+   "pdfPage": 38,
+   "page": 38,
+   "conf": "high"
+  },
+  {
+   "title": "Amor Artificial",
+   "pdfPage": 38,
+   "page": 38,
+   "conf": "med"
+  },
+  {
+   "title": "Amor Ciego",
+   "pdfPage": 40,
+   "page": 40,
+   "conf": "high"
+  },
+  {
+   "title": "Amor Eterno",
+   "pdfPage": 41,
+   "page": 41,
+   "conf": "high"
+  },
+  {
+   "title": "Amor Perdido",
+   "pdfPage": 42,
+   "page": 42,
+   "conf": "high"
+  },
+  {
+   "title": "Amor Prohibido",
+   "pdfPage": 43,
+   "page": 43,
+   "conf": "high"
+  },
+  {
+   "title": "Amore Mio",
+   "pdfPage": 44,
+   "page": 44,
+   "conf": "high"
+  },
+  {
+   "title": "Anacaona",
+   "pdfPage": 44,
+   "page": 44,
+   "conf": "med"
+  },
+  {
+   "title": "Andi Love Her",
+   "pdfPage": 45,
+   "page": 45,
+   "conf": "med"
+  },
+  {
+   "title": "Andalucia",
+   "pdfPage": 46,
+   "page": 46,
+   "conf": "high"
+  },
+  {
+   "title": "Anema E Core (With All My Heart)",
+   "pdfPage": 46,
+   "page": 46,
+   "conf": "low"
+  },
+  {
+   "title": "Antigua",
+   "pdfPage": 46,
+   "page": 46,
+   "conf": "low"
+  },
+  {
+   "title": "Anos Dourados",
+   "pdfPage": 47,
+   "page": 47,
+   "conf": "high"
+  },
+  {
+   "title": "Angoa",
+   "pdfPage": 48,
+   "page": 48,
+   "conf": "high"
+  },
+  {
+   "title": "Aquellos Ojos Verdes (Green Eyes)",
+   "pdfPage": 51,
+   "page": 51,
+   "conf": "med"
+  },
+  {
+   "title": "Aqui, Oh! ‘s",
+   "pdfPage": 52,
+   "page": 52,
+   "conf": "high"
+  },
+  {
+   "title": "Armando’s Rhumba",
+   "pdfPage": 53,
+   "page": 53,
+   "conf": "med"
+  },
+  {
+   "title": "Arrancame La Vida",
+   "pdfPage": 54,
+   "page": 54,
+   "conf": "high"
+  },
+  {
+   "title": "Asf Fue",
+   "pdfPage": 55,
+   "page": 55,
+   "conf": "med"
+  },
+  {
+   "title": "Arroyito",
+   "pdfPage": 56,
+   "page": 56,
+   "conf": "high"
+  },
+  {
+   "title": "Asf se Compone un Son",
+   "pdfPage": 56,
+   "page": 56,
+   "conf": "med"
+  },
+  {
+   "title": "As{ Me Gusta",
+   "pdfPage": 57,
+   "page": 57,
+   "conf": "med"
+  },
+  {
+   "title": "Ausencia",
+   "pdfPage": 58,
+   "page": 58,
+   "conf": "med"
+  },
+  {
+   "title": "Azucenas",
+   "pdfPage": 59,
+   "page": 59,
+   "conf": "high"
+  },
+  {
+   "title": "Barroco",
+   "pdfPage": 62,
+   "page": 61,
+   "conf": "med"
+  },
+  {
+   "title": "Beauty and the Priest",
+   "pdfPage": 63,
+   "page": 63,
+   "conf": "med"
+  },
+  {
+   "title": "Basta de Clamares Inocencia",
+   "pdfPage": 64,
+   "page": 64,
+   "conf": "high"
+  },
+  {
+   "title": "Bata",
+   "pdfPage": 64,
+   "page": 62,
+   "conf": "med"
+  },
+  {
+   "title": "Bella Senora",
+   "pdfPage": 66,
+   "page": 66,
+   "conf": "high"
+  },
+  {
+   "title": "Besame Mucho (Kiss Me Much)",
+   "pdfPage": 67,
+   "page": 67,
+   "conf": "high"
+  },
+  {
+   "title": "Bilongo",
+   "pdfPage": 68,
+   "page": 68,
+   "conf": "high"
+  },
+  {
+   "title": "Bimbombey",
+   "pdfPage": 69,
+   "page": 69,
+   "conf": "med"
+  },
+  {
+   "title": "Bossa Antigua",
+   "pdfPage": 70,
+   "page": 70,
+   "conf": "high"
+  },
+  {
+   "title": "Bossa Nova Baby",
+   "pdfPage": 70,
+   "page": 70,
+   "conf": "med"
+  },
+  {
+   "title": "Black Orpheus",
+   "pdfPage": 71,
+   "page": 71,
+   "conf": "med"
+  },
+  {
+   "title": "Blame It on the Bossa Nova",
+   "pdfPage": 72,
+   "page": 72,
+   "conf": "high"
+  },
+  {
+   "title": "Borinquen Tiene Montuno",
+   "pdfPage": 73,
+   "page": 73,
+   "conf": "high"
+  },
+  {
+   "title": "Brazil",
+   "pdfPage": 74,
+   "page": 74,
+   "conf": "high"
+  },
+  {
+   "title": "Bregeiro",
+   "pdfPage": 76,
+   "page": 76,
+   "conf": "med"
+  },
+  {
+   "title": "The Breeze Andi",
+   "pdfPage": 76,
+   "page": 76,
+   "conf": "high"
+  },
+  {
+   "title": "Bruca Manigua",
+   "pdfPage": 77,
+   "page": 77,
+   "conf": "med"
+  },
+  {
+   "title": "Buche y Pluma “n” “ma”",
+   "pdfPage": 78,
+   "page": 78,
+   "conf": "low"
+  },
+  {
+   "title": "Cachita",
+   "pdfPage": 78,
+   "page": 78,
+   "conf": "high"
+  },
+  {
+   "title": "Cambios",
+   "pdfPage": 78,
+   "page": 78,
+   "conf": "med"
+  },
+  {
+   "title": "Camino de Guanajuato",
+   "pdfPage": 79,
+   "page": 79,
+   "conf": "med"
+  },
+  {
+   "title": "Campanitas de Cristal",
+   "pdfPage": 80,
+   "page": 80,
+   "conf": "low"
+  },
+  {
+   "title": "Cancion del Alma",
+   "pdfPage": 80,
+   "page": 80,
+   "conf": "high"
+  },
+  {
+   "title": "Canto Karabali",
+   "pdfPage": 81,
+   "page": 81,
+   "conf": "high"
+  },
+  {
+   "title": "Captain Marvel",
+   "pdfPage": 82,
+   "page": 82,
+   "conf": "high"
+  },
+  {
+   "title": "Capullito de Aleli",
+   "pdfPage": 83,
+   "page": 83,
+   "conf": "high"
+  },
+  {
+   "title": "Cat Talk",
+   "pdfPage": 83,
+   "page": 83,
+   "conf": "low"
+  },
+  {
+   "title": "Castigame",
+   "pdfPage": 84,
+   "page": 84,
+   "conf": "med"
+  },
+  {
+   "title": "(213) Cha Cha Cha",
+   "pdfPage": 86,
+   "page": 86,
+   "conf": "med"
+  },
+  {
+   "title": "Changuiri[",
+   "pdfPage": 87,
+   "page": 87,
+   "conf": "high"
+  },
+  {
+   "title": "Chanko",
+   "pdfPage": 88,
+   "page": 88,
+   "conf": "high"
+  },
+  {
+   "title": "Chega de Saudade (No More Blues)",
+   "pdfPage": 88,
+   "page": 88,
+   "conf": "med"
+  },
+  {
+   "title": "Che Che Cole",
+   "pdfPage": 90,
+   "page": 88,
+   "conf": "med"
+  },
+  {
+   "title": "Cherry Pink and",
+   "pdfPage": 90,
+   "page": 90,
+   "conf": "low"
+  },
+  {
+   "title": "Chiapanecas",
+   "pdfPage": 91,
+   "page": 91,
+   "conf": "med"
+  },
+  {
+   "title": "Cielito Lindo",
+   "pdfPage": 92,
+   "page": 92,
+   "conf": "high"
+  },
+  {
+   "title": "Clavelitos",
+   "pdfPage": 92,
+   "page": 92,
+   "conf": "med"
+  },
+  {
+   "title": "Cinco Robles (Five Oaks)",
+   "pdfPage": 94,
+   "page": 94,
+   "conf": "high"
+  },
+  {
+   "title": "Cocinando",
+   "pdfPage": 94,
+   "page": 94,
+   "conf": "med"
+  },
+  {
+   "title": "Como La Flor",
+   "pdfPage": 96,
+   "page": 95,
+   "conf": "med"
+  },
+  {
+   "title": "Como un Dia de Domingo",
+   "pdfPage": 96,
+   "page": 96,
+   "conf": "high"
+  },
+  {
+   "title": "Congoja",
+   "pdfPage": 97,
+   "page": 97,
+   "conf": "high"
+  },
+  {
+   "title": "Compadre Pedro Juan",
+   "pdfPage": 98,
+   "page": 96,
+   "conf": "med"
+  },
+  {
+   "title": "Con Tu Amor",
+   "pdfPage": 98,
+   "page": 98,
+   "conf": "med"
+  },
+  {
+   "title": "The Constant Rain (Chovve Chuva)",
+   "pdfPage": 100,
+   "page": 100,
+   "conf": "high"
+  },
+  {
+   "title": "Contigo Aprend{",
+   "pdfPage": 101,
+   "page": 101,
+   "conf": "high"
+  },
+  {
+   "title": "Contigo en La Distancia",
+   "pdfPage": 102,
+   "page": 102,
+   "conf": "med"
+  },
+  {
+   "title": "Copacabana (At The Copa)",
+   "pdfPage": 103,
+   "page": 103,
+   "conf": "med"
+  },
+  {
+   "title": "Coplas Guajiras (Guitarra Guajira)",
+   "pdfPage": 104,
+   "page": 104,
+   "conf": "high"
+  },
+  {
+   "title": "Corazon Corazon",
+   "pdfPage": 106,
+   "page": 106,
+   "conf": "high"
+  },
+  {
+   "title": "Corazon no Llores",
+   "pdfPage": 106,
+   "page": 106,
+   "conf": "med"
+  },
+  {
+   "title": "Coracao Apaixonado",
+   "pdfPage": 108,
+   "page": 108,
+   "conf": "med"
+  },
+  {
+   "title": "Cosas del Corazon",
+   "pdfPage": 108,
+   "page": 108,
+   "conf": "high"
+  },
+  {
+   "title": "Cuando Tu no Estas",
+   "pdfPage": 109,
+   "page": 109,
+   "conf": "med"
+  },
+  {
+   "title": "Cu-cu-rru-cu-cu Paloma",
+   "pdfPage": 110,
+   "page": 112,
+   "conf": "med"
+  },
+  {
+   "title": "Costumbres",
+   "pdfPage": 111,
+   "page": 111,
+   "conf": "med"
+  },
+  {
+   "title": "Cuando Vivas Conmigo",
+   "pdfPage": 112,
+   "page": 112,
+   "conf": "high"
+  },
+  {
+   "title": "Cuantolegusta",
+   "pdfPage": 113,
+   "page": 113,
+   "conf": "med"
+  },
+  {
+   "title": "Cuban Lullaby",
+   "pdfPage": 113,
+   "page": 114,
+   "conf": "med"
+  },
+  {
+   "title": "Curves Ahead",
+   "pdfPage": 114,
+   "page": 114,
+   "conf": "low"
+  },
+  {
+   "title": "Cuesta Abajo",
+   "pdfPage": 115,
+   "page": 115,
+   "conf": "high"
+  },
+  {
+   "title": "Cumana",
+   "pdfPage": 116,
+   "page": 116,
+   "conf": "high"
+  },
+  {
+   "title": "The Cup of Life",
+   "pdfPage": 116,
+   "page": 116,
+   "conf": "med"
+  },
+  {
+   "title": "A Day in the Life of a Fool",
+   "pdfPage": 119,
+   "page": 119,
+   "conf": "med"
+  },
+  {
+   "title": "Dame un Cachito Pa’ Huele",
+   "pdfPage": 119,
+   "page": 119,
+   "conf": "high"
+  },
+  {
+   "title": "Damisela Encantadora",
+   "pdfPage": 120,
+   "page": 120,
+   "conf": "high"
+  },
+  {
+   "title": "De Corazon a Corazon",
+   "pdfPage": 121,
+   "page": 121,
+   "conf": "high"
+  },
+  {
+   "title": "De Nina a Mujer",
+   "pdfPage": 122,
+   "page": 122,
+   "conf": "med"
+  },
+  {
+   "title": "De mi Enamorarte",
+   "pdfPage": 122,
+   "page": 122,
+   "conf": "high"
+  },
+  {
+   "title": "A Deeper Shade of Soul",
+   "pdfPage": 123,
+   "page": 123,
+   "conf": "med"
+  },
+  {
+   "title": "Dengozo",
+   "pdfPage": 124,
+   "page": 124,
+   "conf": "high"
+  },
+  {
+   "title": "Derecho Viejo",
+   "pdfPage": 124,
+   "page": 124,
+   "conf": "med"
+  },
+  {
+   "title": "Descarga Fania",
+   "pdfPage": 125,
+   "page": 125,
+   "conf": "med"
+  },
+  {
+   "title": "Desafinado (Off Key)",
+   "pdfPage": 126,
+   "page": 126,
+   "conf": "high"
+  },
+  {
+   "title": "Desencuentro",
+   "pdfPage": 128,
+   "page": 128,
+   "conf": "high"
+  },
+  {
+   "title": "Despues de Ti Soe",
+   "pdfPage": 128,
+   "page": 128,
+   "conf": "med"
+  },
+  {
+   "title": "Diez Anos",
+   "pdfPage": 131,
+   "page": 131,
+   "conf": "high"
+  },
+  {
+   "title": "A Different Shade of Black",
+   "pdfPage": 133,
+   "page": 133,
+   "conf": "med"
+  },
+  {
+   "title": "Dindi",
+   "pdfPage": 134,
+   "page": 134,
+   "conf": "high"
+  },
+  {
+   "title": "Don Quixote",
+   "pdfPage": 134,
+   "page": 134,
+   "conf": "med"
+  },
+  {
+   "title": "Dom de Iludir F La",
+   "pdfPage": 136,
+   "page": 136,
+   "conf": "high"
+  },
+  {
+   "title": "Don’t Ever Go Away",
+   "pdfPage": 136,
+   "page": 136,
+   "conf": "med"
+  },
+  {
+   "title": "Dulce Miel",
+   "pdfPage": 137,
+   "page": 137,
+   "conf": "med"
+  },
+  {
+   "title": "Dream Tango (Tango Du Reve)",
+   "pdfPage": 138,
+   "page": 138,
+   "conf": "high"
+  },
+  {
+   "title": "Echale Salsita",
+   "pdfPage": 138,
+   "page": 138,
+   "conf": "low"
+  },
+  {
+   "title": "El Choclo",
+   "pdfPage": 139,
+   "page": 139,
+   "conf": "high"
+  },
+  {
+   "title": "El Cazangero I",
+   "pdfPage": 142,
+   "page": 142,
+   "conf": "high"
+  },
+  {
+   "title": "El Cumbanchero",
+   "pdfPage": 144,
+   "page": 144,
+   "conf": "high"
+  },
+  {
+   "title": "El Dia que Me Quieras",
+   "pdfPage": 144,
+   "page": 144,
+   "conf": "med"
+  },
+  {
+   "title": "El Destino",
+   "pdfPage": 146,
+   "page": 146,
+   "conf": "high"
+  },
+  {
+   "title": "El Hombre Es Como El Auto",
+   "pdfPage": 147,
+   "page": 147,
+   "conf": "high"
+  },
+  {
+   "title": "El Mexico que se Nos Fue",
+   "pdfPage": 148,
+   "page": 148,
+   "conf": "high"
+  },
+  {
+   "title": "El Jinete",
+   "pdfPage": 150,
+   "page": 150,
+   "conf": "high"
+  },
+  {
+   "title": "El Malecon",
+   "pdfPage": 152,
+   "page": 152,
+   "conf": "high"
+  },
+  {
+   "title": "El Relicario (Shrine Of Love)",
+   "pdfPage": 152,
+   "page": 152,
+   "conf": "med"
+  },
+  {
+   "title": "El Triste",
+   "pdfPage": 154,
+   "page": 154,
+   "conf": "high"
+  },
+  {
+   "title": "El Toro Relajo",
+   "pdfPage": 155,
+   "page": 155,
+   "conf": "low"
+  },
+  {
+   "title": "El Rey",
+   "pdfPage": 156,
+   "page": 156,
+   "conf": "high"
+  },
+  {
+   "title": "El Tumbao Ycelia",
+   "pdfPage": 158,
+   "page": 158,
+   "conf": "med"
+  },
+  {
+   "title": "Elena, Elena",
+   "pdfPage": 159,
+   "page": 159,
+   "conf": "low"
+  },
+  {
+   "title": "Enamorado de Ti",
+   "pdfPage": 160,
+   "page": 160,
+   "conf": "high"
+  },
+  {
+   "title": "The End of a Love Affair",
+   "pdfPage": 161,
+   "page": 161,
+   "conf": "med"
+  },
+  {
+   "title": "Esa Mujer",
+   "pdfPage": 162,
+   "page": 162,
+   "conf": "high"
+  },
+  {
+   "title": "Esa Triste Guitarra",
+   "pdfPage": 163,
+   "page": 163,
+   "conf": "med"
+  },
+  {
+   "title": "Escandalo",
+   "pdfPage": 164,
+   "page": 164,
+   "conf": "high"
+  },
+  {
+   "title": "Espana Can]",
+   "pdfPage": 164,
+   "page": 164,
+   "conf": "med"
+  },
+  {
+   "title": "Esperanza",
+   "pdfPage": 166,
+   "page": 166,
+   "conf": "high"
+  },
+  {
+   "title": "Esta Noche Voy a Verla",
+   "pdfPage": 167,
+   "page": 167,
+   "conf": "med"
+  },
+  {
+   "title": "Estate",
+   "pdfPage": 168,
+   "page": 168,
+   "conf": "high"
+  },
+  {
+   "title": "Estoy Como Nunca",
+   "pdfPage": 169,
+   "page": 169,
+   "conf": "high"
+  },
+  {
+   "title": "Estoy Sentado Aqqul",
+   "pdfPage": 170,
+   "page": 170,
+   "conf": "med"
+  },
+  {
+   "title": "Estrellas de Fania",
+   "pdfPage": 171,
+   "page": 171,
+   "conf": "high"
+  },
+  {
+   "title": "Estrellita",
+   "pdfPage": 172,
+   "page": 172,
+   "conf": "high"
+  },
+  {
+   "title": "Evil Ways",
+   "pdfPage": 172,
+   "page": 172,
+   "conf": "med"
+  },
+  {
+   "title": "Feelings (Dime?)",
+   "pdfPage": 174,
+   "page": 174,
+   "conf": "high"
+  },
+  {
+   "title": "Feliz Navidad",
+   "pdfPage": 175,
+   "page": 174,
+   "conf": "med"
+  },
+  {
+   "title": "Flor de Lis (Upsipe Down)",
+   "pdfPage": 176,
+   "page": 176,
+   "conf": "high"
+  },
+  {
+   "title": "Frenes[",
+   "pdfPage": 177,
+   "page": 177,
+   "conf": "med"
+  },
+  {
+   "title": "Friends",
+   "pdfPage": 178,
+   "page": 178,
+   "conf": "high"
+  },
+  {
+   "title": "The Girl from Ipanema",
+   "pdfPage": 179,
+   "page": 179,
+   "conf": "low"
+  },
+  {
+   "title": "Gitanerias",
+   "pdfPage": 180,
+   "page": 180,
+   "conf": "high"
+  },
+  {
+   "title": "Golondrinas",
+   "pdfPage": 181,
+   "page": 181,
+   "conf": "high"
+  },
+  {
+   "title": "Granada",
+   "pdfPage": 182,
+   "page": 182,
+   "conf": "high"
+  },
+  {
+   "title": "Guantanamera",
+   "pdfPage": 182,
+   "page": 182,
+   "conf": "low"
+  },
+  {
+   "title": "Hard Hands",
+   "pdfPage": 183,
+   "page": 183,
+   "conf": "low"
+  },
+  {
+   "title": "Guadalajara",
+   "pdfPage": 184,
+   "page": 184,
+   "conf": "high"
+  },
+  {
+   "title": "Hasta que te Conoci",
+   "pdfPage": 186,
+   "page": 185,
+   "conf": "med"
+  },
+  {
+   "title": "Hasta que Vuelvas",
+   "pdfPage": 187,
+   "page": 187,
+   "conf": "high"
+  },
+  {
+   "title": "Hermandad Fania",
+   "pdfPage": 188,
+   "page": 188,
+   "conf": "med"
+  },
+  {
+   "title": "Ihasta Siempre! (No Te Digo Apiés)",
+   "pdfPage": 190,
+   "page": 188,
+   "conf": "med"
+  },
+  {
+   "title": "Horas y Minutos",
+   "pdfPage": 191,
+   "page": 191,
+   "conf": "med"
+  },
+  {
+   "title": "Hey",
+   "pdfPage": 192,
+   "page": 192,
+   "conf": "high"
+  },
+  {
+   "title": "Himno Nacional Mexicano",
+   "pdfPage": 192,
+   "page": 192,
+   "conf": "low"
+  },
+  {
+   "title": "Hey Bud",
+   "pdfPage": 193,
+   "page": 192,
+   "conf": "med"
+  },
+  {
+   "title": "How Insensitive (Insensatez)",
+   "pdfPage": 194,
+   "page": 194,
+   "conf": "high"
+  },
+  {
+   "title": "Huracan",
+   "pdfPage": 196,
+   "page": 196,
+   "conf": "high"
+  },
+  {
+   "title": "Eget Ideas",
+   "pdfPage": 197,
+   "page": 196,
+   "conf": "med"
+  },
+  {
+   "title": "If You Never Come to Me",
+   "pdfPage": 197,
+   "page": 197,
+   "conf": "med"
+  },
+  {
+   "title": "Indestructible",
+   "pdfPage": 198,
+   "page": 198,
+   "conf": "high"
+  },
+  {
+   "title": "Hoy que te Vas",
+   "pdfPage": 199,
+   "page": 199,
+   "conf": "med"
+  },
+  {
+   "title": "Inolvidable",
+   "pdfPage": 199,
+   "page": 199,
+   "conf": "med"
+  },
+  {
+   "title": "Irresistible",
+   "pdfPage": 200,
+   "page": 200,
+   "conf": "high"
+  },
+  {
+   "title": "It’s Impossible (Somos Novios)",
+   "pdfPage": 201,
+   "page": 201,
+   "conf": "high"
+  },
+  {
+   "title": "Isms",
+   "pdfPage": 202,
+   "page": 202,
+   "conf": "high"
+  },
+  {
+   "title": "Joe’s Donut",
+   "pdfPage": 204,
+   "page": 204,
+   "conf": "high"
+  },
+  {
+   "title": "Jogral",
+   "pdfPage": 204,
+   "page": 204,
+   "conf": "med"
+  },
+  {
+   "title": "Juan y Maria",
+   "pdfPage": 206,
+   "page": 206,
+   "conf": "med"
+  },
+  {
+   "title": "Juana Pena",
+   "pdfPage": 207,
+   "page": 207,
+   "conf": "high"
+  },
+  {
+   "title": "Jugando Mama Jugando",
+   "pdfPage": 208,
+   "page": 208,
+   "conf": "high"
+  },
+  {
+   "title": "Juventud",
+   "pdfPage": 209,
+   "page": 209,
+   "conf": "high"
+  },
+  {
+   "title": "Juntos Los Dos Danza",
+   "pdfPage": 210,
+   "page": 210,
+   "conf": "high"
+  },
+  {
+   "title": "La Carretilla (Son Jarocho)",
+   "pdfPage": 211,
+   "page": 211,
+   "conf": "med"
+  },
+  {
+   "title": "kiss of Fire",
+   "pdfPage": 211,
+   "page": 210,
+   "conf": "med"
+  },
+  {
+   "title": "La Comparsa",
+   "pdfPage": 213,
+   "page": 213,
+   "conf": "high"
+  },
+  {
+   "title": "La Cinquantine (Golden Wedding)",
+   "pdfPage": 214,
+   "page": 214,
+   "conf": "high"
+  },
+  {
+   "title": "La Conga Da Media Noche",
+   "pdfPage": 214,
+   "page": 214,
+   "conf": "med"
+  },
+  {
+   "title": "La Cucaracha",
+   "pdfPage": 214,
+   "page": 214,
+   "conf": "low"
+  },
+  {
+   "title": "La Cumparsita",
+   "pdfPage": 216,
+   "page": 214,
+   "conf": "med"
+  },
+  {
+   "title": "La Enganadora",
+   "pdfPage": 217,
+   "page": 217,
+   "conf": "high"
+  },
+  {
+   "title": "La Esencia del Guaguanco",
+   "pdfPage": 218,
+   "page": 218,
+   "conf": "high"
+  },
+  {
+   "title": "La Fiesta",
+   "pdfPage": 218,
+   "page": 218,
+   "conf": "med"
+  },
+  {
+   "title": "La Enorme Distancia",
+   "pdfPage": 220,
+   "page": 220,
+   "conf": "high"
+  },
+  {
+   "title": "La Fiesta no Es Para Feos",
+   "pdfPage": 221,
+   "page": 221,
+   "conf": "high"
+  },
+  {
+   "title": "La Fuerza de Amar",
+   "pdfPage": 222,
+   "page": 222,
+   "conf": "high"
+  },
+  {
+   "title": "La Gloria Eres Tu",
+   "pdfPage": 223,
+   "page": 223,
+   "conf": "med"
+  },
+  {
+   "title": "La Golondrina",
+   "pdfPage": 224,
+   "page": 224,
+   "conf": "high"
+  },
+  {
+   "title": "La Hiedra",
+   "pdfPage": 225,
+   "page": 225,
+   "conf": "high"
+  },
+  {
+   "title": "La Media Vuelta",
+   "pdfPage": 226,
+   "page": 226,
+   "conf": "high"
+  },
+  {
+   "title": "La Murga",
+   "pdfPage": 226,
+   "page": 226,
+   "conf": "med"
+  },
+  {
+   "title": "La Paloma",
+   "pdfPage": 227,
+   "page": 227,
+   "conf": "med"
+  },
+  {
+   "title": "La Pistola y El Corazon",
+   "pdfPage": 228,
+   "page": 228,
+   "conf": "high"
+  },
+  {
+   "title": "La Puerta",
+   "pdfPage": 229,
+   "page": 229,
+   "conf": "med"
+  },
+  {
+   "title": "La Sorella",
+   "pdfPage": 230,
+   "page": 230,
+   "conf": "high"
+  },
+  {
+   "title": "La Gltima Noche",
+   "pdfPage": 231,
+   "page": 231,
+   "conf": "med"
+  },
+  {
+   "title": "La Vida Es un Sueno",
+   "pdfPage": 232,
+   "page": 232,
+   "conf": "med"
+  },
+  {
+   "title": "La Violetera",
+   "pdfPage": 232,
+   "page": 232,
+   "conf": "high"
+  },
+  {
+   "title": "Lagrimas",
+   "pdfPage": 233,
+   "page": 233,
+   "conf": "med"
+  },
+  {
+   "title": "Ladron (Thief You Stole My Heart)",
+   "pdfPage": 234,
+   "page": 234,
+   "conf": "high"
+  },
+  {
+   "title": "Laia Ladaia",
+   "pdfPage": 235,
+   "page": 235,
+   "conf": "high"
+  },
+  {
+   "title": "Lagrimas Negras",
+   "pdfPage": 236,
+   "page": 236,
+   "conf": "high"
+  },
+  {
+   "title": "Lamento Borincano",
+   "pdfPage": 237,
+   "page": 237,
+   "conf": "med"
+  },
+  {
+   "title": "Las Cosas que Tiene La Vida",
+   "pdfPage": 238,
+   "page": 238,
+   "conf": "med"
+  },
+  {
+   "title": "Lejana Tierra Mia",
+   "pdfPage": 239,
+   "page": 239,
+   "conf": "high"
+  },
+  {
+   "title": "Lejos de Ti Danza",
+   "pdfPage": 241,
+   "page": 241,
+   "conf": "med"
+  },
+  {
+   "title": "Let Go",
+   "pdfPage": 241,
+   "page": 242,
+   "conf": "med"
+  },
+  {
+   "title": "Ligia",
+   "pdfPage": 242,
+   "page": 242,
+   "conf": "high"
+  },
+  {
+   "title": "Lisbon Antigua (In Old Lisbon)",
+   "pdfPage": 242,
+   "page": 242,
+   "conf": "med"
+  },
+  {
+   "title": "Little Boat (O Barquinho)",
+   "pdfPage": 243,
+   "page": 243,
+   "conf": "med"
+  },
+  {
+   "title": "Livin’ La Vida Loca",
+   "pdfPage": 244,
+   "page": 244,
+   "conf": "high"
+  },
+  {
+   "title": "Llorando se Fue (La Lambada)",
+   "pdfPage": 245,
+   "page": 245,
+   "conf": "med"
+  },
+  {
+   "title": "Lo Siento Por Ti",
+   "pdfPage": 246,
+   "page": 248,
+   "conf": "med"
+  },
+  {
+   "title": "Los Carreteros",
+   "pdfPage": 246,
+   "page": 246,
+   "conf": "med"
+  },
+  {
+   "title": "Lonely Girl",
+   "pdfPage": 248,
+   "page": 248,
+   "conf": "med"
+  },
+  {
+   "title": "Luna de Cristal",
+   "pdfPage": 248,
+   "page": 248,
+   "conf": "low"
+  },
+  {
+   "title": "Mala Suerte",
+   "pdfPage": 248,
+   "page": 248,
+   "conf": "low"
+  },
+  {
+   "title": "Malaguena",
+   "pdfPage": 248,
+   "page": 248,
+   "conf": "low"
+  },
+  {
+   "title": "Malditos Celos",
+   "pdfPage": 248,
+   "page": 248,
+   "conf": "low"
+  },
+  {
+   "title": "Mama Inez",
+   "pdfPage": 248,
+   "page": 248,
+   "conf": "low"
+  },
+  {
+   "title": "Mambo Inn",
+   "pdfPage": 248,
+   "page": 248,
+   "conf": "low"
+  },
+  {
+   "title": "Mambo Jambo (Que Rico El Mambo)",
+   "pdfPage": 248,
+   "page": 248,
+   "conf": "low"
+  },
+  {
+   "title": "Mambo no",
+   "pdfPage": 248,
+   "page": 248,
+   "conf": "low"
+  },
+  {
+   "title": "The Look of Love",
+   "pdfPage": 248,
+   "page": 248,
+   "conf": "med"
+  },
+  {
+   "title": "Look to the Sky",
+   "pdfPage": 249,
+   "page": 249,
+   "conf": "med"
+  },
+  {
+   "title": "Luz Do Sol",
+   "pdfPage": 249,
+   "page": 249,
+   "conf": "low"
+  },
+  {
+   "title": "Los Kimbos",
+   "pdfPage": 250,
+   "page": 250,
+   "conf": "high"
+  },
+  {
+   "title": "Los Tamalitos de Olga",
+   "pdfPage": 251,
+   "page": 251,
+   "conf": "med"
+  },
+  {
+   "title": "Love Me with All Your Heart",
+   "pdfPage": 251,
+   "page": 250,
+   "conf": "med"
+  },
+  {
+   "title": "Mambo no",
+   "pdfPage": 255,
+   "page": 255,
+   "conf": "low"
+  },
+  {
+   "title": "Manana",
+   "pdfPage": 262,
+   "page": 262,
+   "conf": "med"
+  },
+  {
+   "title": "Mandolina",
+   "pdfPage": 263,
+   "page": 263,
+   "conf": "med"
+  },
+  {
+   "title": "Mangos",
+   "pdfPage": 264,
+   "page": 264,
+   "conf": "high"
+  },
+  {
+   "title": "Mania de Maria",
+   "pdfPage": 264,
+   "page": 264,
+   "conf": "med"
+  },
+  {
+   "title": "Manteca",
+   "pdfPage": 265,
+   "page": 265,
+   "conf": "med"
+  },
+  {
+   "title": "Mare",
+   "pdfPage": 266,
+   "page": 266,
+   "conf": "high"
+  },
+  {
+   "title": "Maria Bonita",
+   "pdfPage": 267,
+   "page": 267,
+   "conf": "high"
+  },
+  {
+   "title": "Maria Lao",
+   "pdfPage": 267,
+   "page": 268,
+   "conf": "med"
+  },
+  {
+   "title": "Maria Elena",
+   "pdfPage": 268,
+   "page": 268,
+   "conf": "high"
+  },
+  {
+   "title": "Mas que Nada",
+   "pdfPage": 270,
+   "page": 270,
+   "conf": "high"
+  },
+  {
+   "title": "Matilda, Matilda",
+   "pdfPage": 271,
+   "page": 271,
+   "conf": "high"
+  },
+  {
+   "title": "Me Castiga Dios",
+   "pdfPage": 271,
+   "page": 271,
+   "conf": "med"
+  },
+  {
+   "title": "Me Nace del Corazon",
+   "pdfPage": 272,
+   "page": 272,
+   "conf": "med"
+  },
+  {
+   "title": "Meditation (Meditacao)",
+   "pdfPage": 272,
+   "page": 272,
+   "conf": "low"
+  },
+  {
+   "title": "Meeker’s Blues",
+   "pdfPage": 273,
+   "page": 273,
+   "conf": "med"
+  },
+  {
+   "title": "Melodia de Arrabal",
+   "pdfPage": 274,
+   "page": 274,
+   "conf": "high"
+  },
+  {
+   "title": "Menina Flor",
+   "pdfPage": 274,
+   "page": 274,
+   "conf": "med"
+  },
+  {
+   "title": "Mexican Hat Dance",
+   "pdfPage": 275,
+   "page": 275,
+   "conf": "med"
+  },
+  {
+   "title": "Mi Buenos Aires Querido",
+   "pdfPage": 276,
+   "page": 276,
+   "conf": "high"
+  },
+  {
+   "title": "Mi Debilidad",
+   "pdfPage": 277,
+   "page": 277,
+   "conf": "high"
+  },
+  {
+   "title": "Mi Carta (Querida...)",
+   "pdfPage": 278,
+   "page": 278,
+   "conf": "high"
+  },
+  {
+   "title": "Mi Fracaso X4",
+   "pdfPage": 278,
+   "page": 278,
+   "conf": "med"
+  },
+  {
+   "title": "Mi Gente",
+   "pdfPage": 279,
+   "page": 279,
+   "conf": "med"
+  },
+  {
+   "title": "Mi Magdalena",
+   "pdfPage": 280,
+   "page": 280,
+   "conf": "high"
+  },
+  {
+   "title": "Mi Sombrero",
+   "pdfPage": 281,
+   "page": 281,
+   "conf": "high"
+  },
+  {
+   "title": "Mi Rival",
+   "pdfPage": 282,
+   "page": 282,
+   "conf": "high"
+  },
+  {
+   "title": "Mi Triste Problema",
+   "pdfPage": 283,
+   "page": 283,
+   "conf": "med"
+  },
+  {
+   "title": "Mi Vida",
+   "pdfPage": 284,
+   "page": 284,
+   "conf": "high"
+  },
+  {
+   "title": "Miami Beach Rumba",
+   "pdfPage": 284,
+   "page": 284,
+   "conf": "med"
+  },
+  {
+   "title": "Milonga Sentimental",
+   "pdfPage": 285,
+   "page": 285,
+   "conf": "med"
+  },
+  {
+   "title": "Mis Amores",
+   "pdfPage": 286,
+   "page": 286,
+   "conf": "high"
+  },
+  {
+   "title": "Mixing",
+   "pdfPage": 286,
+   "page": 286,
+   "conf": "med"
+  },
+  {
+   "title": "Monk",
+   "pdfPage": 287,
+   "page": 287,
+   "conf": "med"
+  },
+  {
+   "title": "Momentos",
+   "pdfPage": 288,
+   "page": 288,
+   "conf": "high"
+  },
+  {
+   "title": "Morrinas",
+   "pdfPage": 289,
+   "page": 289,
+   "conf": "high"
+  },
+  {
+   "title": "More",
+   "pdfPage": 290,
+   "page": 288,
+   "conf": "med"
+  },
+  {
+   "title": "Muchacha",
+   "pdfPage": 290,
+   "page": 290,
+   "conf": "low"
+  },
+  {
+   "title": "Mucho Corazon",
+   "pdfPage": 291,
+   "page": 291,
+   "conf": "med"
+  },
+  {
+   "title": "Mujer",
+   "pdfPage": 292,
+   "page": 292,
+   "conf": "high"
+  },
+  {
+   "title": "My Shawl",
+   "pdfPage": 293,
+   "page": 293,
+   "conf": "med"
+  },
+  {
+   "title": "Nathalie",
+   "pdfPage": 294,
+   "page": 294,
+   "conf": "high"
+  },
+  {
+   "title": "Negra Consentida",
+   "pdfPage": 294,
+   "page": 294,
+   "conf": "med"
+  },
+  {
+   "title": "Naci Moreno",
+   "pdfPage": 296,
+   "page": 296,
+   "conf": "high"
+  },
+  {
+   "title": "Never on Sunday",
+   "pdfPage": 296,
+   "page": 296,
+   "conf": "low"
+  },
+  {
+   "title": "No Me Quieras Tanto",
+   "pdfPage": 297,
+   "page": 297,
+   "conf": "high"
+  },
+  {
+   "title": "Ni Habler (No Way)",
+   "pdfPage": 298,
+   "page": 298,
+   "conf": "high"
+  },
+  {
+   "title": "No Me Gusta que Lo Sepan",
+   "pdfPage": 298,
+   "page": 298,
+   "conf": "low"
+  },
+  {
+   "title": "No Me Platiques Mas",
+   "pdfPage": 300,
+   "page": 298,
+   "conf": "med"
+  },
+  {
+   "title": "No Tengo Dinero",
+   "pdfPage": 300,
+   "page": 300,
+   "conf": "low"
+  },
+  {
+   "title": "No Trates de Mentir",
+   "pdfPage": 301,
+   "page": 301,
+   "conf": "med"
+  },
+  {
+   "title": "Noche Azul",
+   "pdfPage": 302,
+   "page": 302,
+   "conf": "med"
+  },
+  {
+   "title": "Noche Criolla",
+   "pdfPage": 302,
+   "page": 302,
+   "conf": "med"
+  },
+  {
+   "title": "Noche de Ronda (Bé Mine Tonight)",
+   "pdfPage": 304,
+   "page": 304,
+   "conf": "high"
+  },
+  {
+   "title": "Numero",
+   "pdfPage": 305,
+   "page": 305,
+   "conf": "high"
+  },
+  {
+   "title": "Nosotros",
+   "pdfPage": 306,
+   "page": 306,
+   "conf": "med"
+  },
+  {
+   "title": "Novia Mia",
+   "pdfPage": 308,
+   "page": 308,
+   "conf": "high"
+  },
+  {
+   "title": "Nunca te Olvidare",
+   "pdfPage": 308,
+   "page": 308,
+   "conf": "med"
+  },
+  {
+   "title": "O Grande Amor",
+   "pdfPage": 310,
+   "page": 310,
+   "conf": "high"
+  },
+  {
+   "title": "O Me Quieres O Me Dejas",
+   "pdfPage": 310,
+   "page": 310,
+   "conf": "med"
+  },
+  {
+   "title": "O Morro Nao Tem Vez (Favela)",
+   "pdfPage": 311,
+   "page": 311,
+   "conf": "med"
+  },
+  {
+   "title": "O Pato",
+   "pdfPage": 312,
+   "page": 312,
+   "conf": "high"
+  },
+  {
+   "title": "Obsesion",
+   "pdfPage": 313,
+   "page": 313,
+   "conf": "high"
+  },
+  {
+   "title": "Oh, Vida",
+   "pdfPage": 314,
+   "page": 314,
+   "conf": "high"
+  },
+  {
+   "title": "On the Border",
+   "pdfPage": 314,
+   "page": 314,
+   "conf": "med"
+  },
+  {
+   "title": "Once | Loved (Amor Em Paz)",
+   "pdfPage": 315,
+   "page": 315,
+   "conf": "med"
+  },
+  {
+   "title": "One Note Samba",
+   "pdfPage": 316,
+   "page": 316,
+   "conf": "high"
+  },
+  {
+   "title": "Only Once in My Life",
+   "pdfPage": 317,
+   "page": 317,
+   "conf": "high"
+  },
+  {
+   "title": "One-two-three-kick",
+   "pdfPage": 318,
+   "page": 318,
+   "conf": "high"
+  },
+  {
+   "title": "Only Trust Your Heart",
+   "pdfPage": 318,
+   "page": 318,
+   "conf": "med"
+  },
+  {
+   "title": "Our Language of Love",
+   "pdfPage": 319,
+   "page": 319,
+   "conf": "med"
+  },
+  {
+   "title": "Outra Vez",
+   "pdfPage": 320,
+   "page": 320,
+   "conf": "high"
+  },
+  {
+   "title": "Palabras de Mujer Ne",
+   "pdfPage": 320,
+   "page": 322,
+   "conf": "med"
+  },
+  {
+   "title": "Pa’ Bravo Yo Vy",
+   "pdfPage": 321,
+   "page": 321,
+   "conf": "med"
+  },
+  {
+   "title": "Paloma Blanca",
+   "pdfPage": 322,
+   "page": 324,
+   "conf": "high"
+  },
+  {
+   "title": "Paloma Revolcada",
+   "pdfPage": 322,
+   "page": 324,
+   "conf": "med"
+  },
+  {
+   "title": "Pan Dulce",
+   "pdfPage": 323,
+   "page": 325,
+   "conf": "med"
+  },
+  {
+   "title": "Papa Loves Mambo",
+   "pdfPage": 324,
+   "page": 326,
+   "conf": "med"
+  },
+  {
+   "title": "Pare] Cochero",
+   "pdfPage": 324,
+   "page": 326,
+   "conf": "med"
+  },
+  {
+   "title": "Passarim",
+   "pdfPage": 326,
+   "page": 328,
+   "conf": "high"
+  },
+  {
+   "title": "Patricia, It’s Patricia Ww",
+   "pdfPage": 328,
+   "page": 330,
+   "conf": "high"
+  },
+  {
+   "title": "The Peanut Vendor (El Maniserc)",
+   "pdfPage": 329,
+   "page": 331,
+   "conf": "high"
+  },
+  {
+   "title": "Pedacito del C!elo",
+   "pdfPage": 330,
+   "page": 332,
+   "conf": "med"
+  },
+  {
+   "title": "Perdida A?",
+   "pdfPage": 330,
+   "page": 332,
+   "conf": "low"
+  },
+  {
+   "title": "Epero Porque?",
+   "pdfPage": 331,
+   "page": 333,
+   "conf": "med"
+  },
+  {
+   "title": "Perdon",
+   "pdfPage": 332,
+   "page": 332,
+   "conf": "med"
+  },
+  {
+   "title": "Perdoname, Olvidalo",
+   "pdfPage": 332,
+   "page": 334,
+   "conf": "high"
+  },
+  {
+   "title": "Perfidia",
+   "pdfPage": 332,
+   "page": 334,
+   "conf": "med"
+  },
+  {
+   "title": "Perfume de Gardenia",
+   "pdfPage": 333,
+   "page": 335,
+   "conf": "med"
+  },
+  {
+   "title": "Periquito",
+   "pdfPage": 334,
+   "page": 336,
+   "conf": "high"
+  },
+  {
+   "title": "Playera",
+   "pdfPage": 335,
+   "page": 337,
+   "conf": "high"
+  },
+  {
+   "title": "Persuasion",
+   "pdfPage": 336,
+   "page": 338,
+   "conf": "high"
+  },
+  {
+   "title": "Piensa en mi",
+   "pdfPage": 337,
+   "page": 339,
+   "conf": "med"
+  },
+  {
+   "title": "Pobre Gitana",
+   "pdfPage": 338,
+   "page": 338,
+   "conf": "med"
+  },
+  {
+   "title": "Poinciana",
+   "pdfPage": 339,
+   "page": 341,
+   "conf": "high"
+  },
+  {
+   "title": "Ponte Duro",
+   "pdfPage": 339,
+   "page": 341,
+   "conf": "med"
+  },
+  {
+   "title": "Ponteio",
+   "pdfPage": 340,
+   "page": 341,
+   "conf": "med"
+  },
+  {
+   "title": "Por Ella",
+   "pdfPage": 341,
+   "page": 343,
+   "conf": "med"
+  },
+  {
+   "title": "Por Eso te Quiero",
+   "pdfPage": 342,
+   "page": 343,
+   "conf": "med"
+  },
+  {
+   "title": "Por Una Cabeza",
+   "pdfPage": 342,
+   "page": 344,
+   "conf": "low"
+  },
+  {
+   "title": "Por Amor",
+   "pdfPage": 344,
+   "page": 344,
+   "conf": "med"
+  },
+  {
+   "title": "Porque",
+   "pdfPage": 345,
+   "page": 345,
+   "conf": "med"
+  },
+  {
+   "title": "Porque Tu Lo Quieres",
+   "pdfPage": 345,
+   "page": 347,
+   "conf": "high"
+  },
+  {
+   "title": "Porque Tu Me Acostumbraste",
+   "pdfPage": 347,
+   "page": 349,
+   "conf": "med"
+  },
+  {
+   "title": "Preciosa",
+   "pdfPage": 348,
+   "page": 350,
+   "conf": "high"
+  },
+  {
+   "title": "Pueblo Latino",
+   "pdfPage": 349,
+   "page": 351,
+   "conf": "med"
+  },
+  {
+   "title": "Que Sea mi Condena",
+   "pdfPage": 349,
+   "page": 351,
+   "conf": "med"
+  },
+  {
+   "title": "Preguntales a Las Estrellas",
+   "pdfPage": 350,
+   "page": 352,
+   "conf": "high"
+  },
+  {
+   "title": "Pura Novela",
+   "pdfPage": 350,
+   "page": 352,
+   "conf": "med"
+  },
+  {
+   "title": "Quedate Conmigo Esta Noche",
+   "pdfPage": 353,
+   "page": 355,
+   "conf": "med"
+  },
+  {
+   "title": "Que te Vaya Bonito",
+   "pdfPage": 354,
+   "page": 356,
+   "conf": "high"
+  },
+  {
+   "title": "Queixa",
+   "pdfPage": 355,
+   "page": 357,
+   "conf": "high"
+  },
+  {
+   "title": "Querida",
+   "pdfPage": 356,
+   "page": 358,
+   "conf": "high"
+  },
+  {
+   "title": "Quiero Amanecer Con Alguien",
+   "pdfPage": 357,
+   "page": 359,
+   "conf": "high"
+  },
+  {
+   "title": "Quiero Vivir La Vida Amandote",
+   "pdfPage": 358,
+   "page": 360,
+   "conf": "high"
+  },
+  {
+   "title": "Quiet Nights of Quiet Stars",
+   "pdfPage": 359,
+   "page": 361,
+   "conf": "med"
+  },
+  {
+   "title": "Quiero Dormir Cansado",
+   "pdfPage": 360,
+   "page": 362,
+   "conf": "high"
+  },
+  {
+   "title": "Quiet Village",
+   "pdfPage": 360,
+   "page": 362,
+   "conf": "med"
+  },
+  {
+   "title": "Quisiera Ser",
+   "pdfPage": 362,
+   "page": 364,
+   "conf": "high"
+  },
+  {
+   "title": "Quizas, Quizas, Quizas",
+   "pdfPage": 363,
+   "page": 365,
+   "conf": "med"
+  },
+  {
+   "title": "Quitate La Mascara",
+   "pdfPage": 364,
+   "page": 366,
+   "conf": "high"
+  },
+  {
+   "title": "Quitate Tu",
+   "pdfPage": 364,
+   "page": 364,
+   "conf": "med"
+  },
+  {
+   "title": "Rico Vacilon",
+   "pdfPage": 365,
+   "page": 367,
+   "conf": "high"
+  },
+  {
+   "title": "Rayito de Luna",
+   "pdfPage": 366,
+   "page": 368,
+   "conf": "high"
+  },
+  {
+   "title": "Regalame Esta Noche",
+   "pdfPage": 366,
+   "page": 368,
+   "conf": "med"
+  },
+  {
+   "title": "Resemblance",
+   "pdfPage": 367,
+   "page": 369,
+   "conf": "med"
+  },
+  {
+   "title": "Romance de Amor",
+   "pdfPage": 368,
+   "page": 370,
+   "conf": "high"
+  },
+  {
+   "title": "Rosa",
+   "pdfPage": 369,
+   "page": 371,
+   "conf": "high"
+  },
+  {
+   "title": "Rubias de New York",
+   "pdfPage": 370,
+   "page": 372,
+   "conf": "high"
+  },
+  {
+   "title": "Sabor a mi",
+   "pdfPage": 370,
+   "page": 372,
+   "conf": "med"
+  },
+  {
+   "title": "Samba Cantina",
+   "pdfPage": 371,
+   "page": 373,
+   "conf": "med"
+  },
+  {
+   "title": "Sabras que te Quiero",
+   "pdfPage": 372,
+   "page": 374,
+   "conf": "high"
+  },
+  {
+   "title": "Samba de Orfeu",
+   "pdfPage": 372,
+   "page": 374,
+   "conf": "med"
+  },
+  {
+   "title": "Samba Dees Days",
+   "pdfPage": 374,
+   "page": 376,
+   "conf": "med"
+  },
+  {
+   "title": "Samba Pa Ti",
+   "pdfPage": 374,
+   "page": 376,
+   "conf": "high"
+  },
+  {
+   "title": "Samba for Claudio",
+   "pdfPage": 374,
+   "page": 376,
+   "conf": "high"
+  },
+  {
+   "title": "Sambroso",
+   "pdfPage": 375,
+   "page": 377,
+   "conf": "med"
+  },
+  {
+   "title": "Say “si, Si”",
+   "pdfPage": 376,
+   "page": 378,
+   "conf": "high"
+  },
+  {
+   "title": "Se a Cabo",
+   "pdfPage": 377,
+   "page": 379,
+   "conf": "high"
+  },
+  {
+   "title": "Se Me Hizo Facil",
+   "pdfPage": 378,
+   "page": 380,
+   "conf": "high"
+  },
+  {
+   "title": "Se Me Olivdo Otra Vez",
+   "pdfPage": 379,
+   "page": 381,
+   "conf": "high"
+  },
+  {
+   "title": "Se Traba",
+   "pdfPage": 380,
+   "page": 382,
+   "conf": "high"
+  },
+  {
+   "title": "Senor Mouse",
+   "pdfPage": 381,
+   "page": 383,
+   "conf": "med"
+  },
+  {
+   "title": "She’s a Carioca",
+   "pdfPage": 382,
+   "page": 384,
+   "conf": "high"
+  },
+  {
+   "title": "Si Dios Me Ayuda",
+   "pdfPage": 383,
+   "page": 385,
+   "conf": "high"
+  },
+  {
+   "title": "Si El Amor Llama a Tu Puerta",
+   "pdfPage": 384,
+   "page": 386,
+   "conf": "high"
+  },
+  {
+   "title": "Si Nos Dejan",
+   "pdfPage": 385,
+   "page": 387,
+   "conf": "high"
+  },
+  {
+   "title": "Si Madame",
+   "pdfPage": 386,
+   "page": 388,
+   "conf": "high"
+  },
+  {
+   "title": "Si no Eres Tu",
+   "pdfPage": 386,
+   "page": 388,
+   "conf": "med"
+  },
+  {
+   "title": "Siempre en mi Mente",
+   "pdfPage": 387,
+   "page": 389,
+   "conf": "low"
+  },
+  {
+   "title": "Siempre en mi Corazon",
+   "pdfPage": 388,
+   "page": 390,
+   "conf": "med"
+  },
+  {
+   "title": "Siempre Me Va Bien",
+   "pdfPage": 389,
+   "page": 391,
+   "conf": "med"
+  },
+  {
+   "title": "Silencio",
+   "pdfPage": 390,
+   "page": 392,
+   "conf": "high"
+  },
+  {
+   "title": "Similau",
+   "pdfPage": 390,
+   "page": 392,
+   "conf": "med"
+  },
+  {
+   "title": "Sin Remedio",
+   "pdfPage": 391,
+   "page": 393,
+   "conf": "low"
+  },
+  {
+   "title": "Sin Ti",
+   "pdfPage": 392,
+   "page": 394,
+   "conf": "high"
+  },
+  {
+   "title": "Sin un Amor",
+   "pdfPage": 393,
+   "page": 394,
+   "conf": "med"
+  },
+  {
+   "title": "So Nice (Summer Samba)",
+   "pdfPage": 393,
+   "page": 395,
+   "conf": "low"
+  },
+  {
+   "title": "Soledad",
+   "pdfPage": 394,
+   "page": 396,
+   "conf": "high"
+  },
+  {
+   "title": "Someone to Light Up My Life",
+   "pdfPage": 395,
+   "page": 397,
+   "conf": "med"
+  },
+  {
+   "title": "Solo",
+   "pdfPage": 396,
+   "page": 398,
+   "conf": "med"
+  },
+  {
+   "title": "Somos",
+   "pdfPage": 396,
+   "page": 398,
+   "conf": "high"
+  },
+  {
+   "title": "Son de La Loma",
+   "pdfPage": 398,
+   "page": 400,
+   "conf": "high"
+  },
+  {
+   "title": "Song of the Jet (Samba Do Aviiao)",
+   "pdfPage": 398,
+   "page": 400,
+   "conf": "low"
+  },
+  {
+   "title": "The Soul Drummers",
+   "pdfPage": 399,
+   "page": 401,
+   "conf": "low"
+  },
+  {
+   "title": "Song of the Sabia",
+   "pdfPage": 400,
+   "page": 402,
+   "conf": "high"
+  },
+  {
+   "title": "Soy Antillana",
+   "pdfPage": 402,
+   "page": 404,
+   "conf": "low"
+  },
+  {
+   "title": "Soy El Mejor",
+   "pdfPage": 402,
+   "page": 404,
+   "conf": "med"
+  },
+  {
+   "title": "Soy Guajiro",
+   "pdfPage": 402,
+   "page": 404,
+   "conf": "low"
+  },
+  {
+   "title": "(1 Can Recall) Spain",
+   "pdfPage": 403,
+   "page": 405,
+   "conf": "high"
+  },
+  {
+   "title": "Spanish Eyes",
+   "pdfPage": 404,
+   "page": 406,
+   "conf": "med"
+  },
+  {
+   "title": "St. Thomas",
+   "pdfPage": 406,
+   "page": 408,
+   "conf": "high"
+  },
+  {
+   "title": "Suave Cha",
+   "pdfPage": 406,
+   "page": 408,
+   "conf": "med"
+  },
+  {
+   "title": "Speak Low",
+   "pdfPage": 407,
+   "page": 409,
+   "conf": "low"
+  },
+  {
+   "title": "Suavecito",
+   "pdfPage": 407,
+   "page": 409,
+   "conf": "med"
+  },
+  {
+   "title": "Sus Ojos se Cerraron",
+   "pdfPage": 409,
+   "page": 411,
+   "conf": "high"
+  },
+  {
+   "title": "Subway Harry",
+   "pdfPage": 410,
+   "page": 412,
+   "conf": "high"
+  },
+  {
+   "title": "Sway (Quien Sera)",
+   "pdfPage": 411,
+   "page": 412,
+   "conf": "med"
+  },
+  {
+   "title": "Taboo",
+   "pdfPage": 411,
+   "page": 413,
+   "conf": "med"
+  },
+  {
+   "title": "Tango in",
+   "pdfPage": 412,
+   "page": 414,
+   "conf": "high"
+  },
+  {
+   "title": "Tango of Roses",
+   "pdfPage": 414,
+   "page": 416,
+   "conf": "high"
+  },
+  {
+   "title": "Te Desaf{oo",
+   "pdfPage": 416,
+   "page": 418,
+   "conf": "high"
+  },
+  {
+   "title": "Te Quiero",
+   "pdfPage": 417,
+   "page": 419,
+   "conf": "high"
+  },
+  {
+   "title": "Te Sigo Amando",
+   "pdfPage": 418,
+   "page": 420,
+   "conf": "low"
+  },
+  {
+   "title": "Te Solte La Rienda",
+   "pdfPage": 418,
+   "page": 420,
+   "conf": "high"
+  },
+  {
+   "title": "This Masquerade",
+   "pdfPage": 419,
+   "page": 421,
+   "conf": "high"
+  },
+  {
+   "title": "Tico Tico (Tico No Fuba)",
+   "pdfPage": 420,
+   "page": 422,
+   "conf": "high"
+  },
+  {
+   "title": "Todo, Todo, Todo",
+   "pdfPage": 420,
+   "page": 422,
+   "conf": "med"
+  },
+  {
+   "title": "Time Was",
+   "pdfPage": 422,
+   "page": 424,
+   "conf": "high"
+  },
+  {
+   "title": "Tin Tin Deo",
+   "pdfPage": 422,
+   "page": 424,
+   "conf": "med"
+  },
+  {
+   "title": "Todo y Nada",
+   "pdfPage": 423,
+   "page": 425,
+   "conf": "med"
+  },
+  {
+   "title": "Together",
+   "pdfPage": 424,
+   "page": 426,
+   "conf": "high"
+  },
+  {
+   "title": "Tomo y Obligo",
+   "pdfPage": 424,
+   "page": 426,
+   "conf": "med"
+  },
+  {
+   "title": "Tres Lindas Cubanas",
+   "pdfPage": 425,
+   "page": 427,
+   "conf": "med"
+  },
+  {
+   "title": "Tres Palabras (Without You)",
+   "pdfPage": 426,
+   "page": 428,
+   "conf": "high"
+  },
+  {
+   "title": "Triste",
+   "pdfPage": 426,
+   "page": 428,
+   "conf": "med"
+  },
+  {
+   "title": "Tu Felicidad (Made For Each Other)",
+   "pdfPage": 427,
+   "page": 429,
+   "conf": "med"
+  },
+  {
+   "title": "Tu Loco Loco y Yo Tranquilo",
+   "pdfPage": 428,
+   "page": 430,
+   "conf": "high"
+  },
+  {
+   "title": "Tu, mi Delirio",
+   "pdfPage": 429,
+   "page": 431,
+   "conf": "high"
+  },
+  {
+   "title": "Tu no Comprendes",
+   "pdfPage": 430,
+   "page": 430,
+   "conf": "med"
+  },
+  {
+   "title": "Tu Solo Tu",
+   "pdfPage": 431,
+   "page": 433,
+   "conf": "high"
+  },
+  {
+   "title": "Typhoon",
+   "pdfPage": 432,
+   "page": 432,
+   "conf": "med"
+  },
+  {
+   "title": "Um Canto de Afoxe Para",
+   "pdfPage": 432,
+   "page": 434,
+   "conf": "low"
+  },
+  {
+   "title": "Un Sentimental",
+   "pdfPage": 433,
+   "page": 435,
+   "conf": "med"
+  },
+  {
+   "title": "Una Copa Mas",
+   "pdfPage": 434,
+   "page": 436,
+   "conf": "high"
+  },
+  {
+   "title": "Uno",
+   "pdfPage": 435,
+   "page": 436,
+   "conf": "med"
+  },
+  {
+   "title": "Un Tipo Como Yo",
+   "pdfPage": 436,
+   "page": 438,
+   "conf": "high"
+  },
+  {
+   "title": "Una Voz",
+   "pdfPage": 437,
+   "page": 439,
+   "conf": "high"
+  },
+  {
+   "title": "Usted",
+   "pdfPage": 438,
+   "page": 440,
+   "conf": "high"
+  },
+  {
+   "title": "Vaya Con Dios (May Gop Be With You)",
+   "pdfPage": 438,
+   "page": 440,
+   "conf": "low"
+  },
+  {
+   "title": "Veracruz",
+   "pdfPage": 440,
+   "page": 442,
+   "conf": "med"
+  },
+  {
+   "title": "Vive y Vacila",
+   "pdfPage": 440,
+   "page": 442,
+   "conf": "med"
+  },
+  {
+   "title": "Vivo Sonhando",
+   "pdfPage": 441,
+   "page": 443,
+   "conf": "med"
+  },
+  {
+   "title": "Ven y Dame un Poco Mas",
+   "pdfPage": 442,
+   "page": 444,
+   "conf": "med"
+  },
+  {
+   "title": "Voce. E Linda",
+   "pdfPage": 442,
+   "page": 444,
+   "conf": "high"
+  },
+  {
+   "title": "Volver",
+   "pdfPage": 442,
+   "page": 444,
+   "conf": "med"
+  },
+  {
+   "title": "Voy a Apagar La Luz",
+   "pdfPage": 443,
+   "page": 445,
+   "conf": "med"
+  },
+  {
+   "title": "Volvio Una Noche",
+   "pdfPage": 444,
+   "page": 446,
+   "conf": "high"
+  },
+  {
+   "title": "Watch What Happens",
+   "pdfPage": 444,
+   "page": 446,
+   "conf": "med"
+  },
+  {
+   "title": "Wave",
+   "pdfPage": 445,
+   "page": 447,
+   "conf": "med"
+  },
+  {
+   "title": "What a Diff’rence a Day Made",
+   "pdfPage": 446,
+   "page": 448,
+   "conf": "high"
+  },
+  {
+   "title": "Y Tu, £que Has Hecho?",
+   "pdfPage": 447,
+   "page": 449,
+   "conf": "low"
+  },
+  {
+   "title": "Y Voy a Ser Feliz",
+   "pdfPage": 448,
+   "page": 450,
+   "conf": "high"
+  },
+  {
+   "title": "Ya Es Muy Tarde",
+   "pdfPage": 449,
+   "page": 451,
+   "conf": "med"
+  },
+  {
+   "title": "Ya no Me Vuelvo a Enamorar",
+   "pdfPage": 450,
+   "page": 452,
+   "conf": "high"
+  },
+  {
+   "title": "Yellow Days",
+   "pdfPage": 450,
+   "page": 452,
+   "conf": "med"
+  },
+  {
+   "title": "Yesterday I Heard the Rain",
+   "pdfPage": 451,
+   "page": 453,
+   "conf": "med"
+  },
+  {
+   "title": "Yira Yira",
+   "pdfPage": 452,
+   "page": 454,
+   "conf": "high"
+  },
+  {
+   "title": "Yo Soy El Punto Cubano",
+   "pdfPage": 452,
+   "page": 454,
+   "conf": "med"
+  },
+  {
+   "title": "Yours (Cuando Se Quiere De Veras)",
+   "pdfPage": 453,
+   "page": 455,
+   "conf": "med"
+  },
+  {
+   "title": "You’re Everything",
+   "pdfPage": 454,
+   "page": 456,
+   "conf": "high"
+  }
+ ]
+}

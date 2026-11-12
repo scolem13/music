@@ -100,6 +100,48 @@ def score(root):
     ok = sum(1 for x in inner if x == want)
     return {"bars": len(lens), "ok": ok, "frac": round(ok / max(1, len(inner)), 2), "meter": f'{t.findtext("beats")}/{t.findtext("beat-type")}'}
 
+def key_alts(fifths):
+    return {st: (1 if st in "FCGDAEB"[:fifths] else 0) if fifths >= 0 else (-1 if st in "BEADGCF"[:-fifths] else 0) for st in STEPS}
+
+def respell(part, tune_key):
+    """homr spells notes against whatever key it read for each printed line (often none on later lines) and gives no
+    accidental marks. A note that differs from homr's own key there had a printed accidental: keep it, carried through
+    the bar. Every other note takes the tune's key."""
+    want_key, homr_key = key_alts(tune_key), key_alts(tune_key)
+    changed = 0
+    for m in part.findall("measure"):
+        for f in m.iter("fifths"): homr_key = key_alts(int(f.text))
+        held = {}
+        for n in m.findall("note"):
+            p = n.find("pitch")
+            if p is None: continue
+            st, octv = p.findtext("step"), p.findtext("octave")
+            cur = int(float(p.findtext("alter") or 0))
+            if cur != homr_key[st]: held[st + octv] = cur
+            want = held.get(st + octv, want_key[st])
+            if cur != want:
+                changed += 1
+                al = p.find("alter")
+                if want == 0: p.remove(al)
+                else:
+                    if al is None: al = ET.Element("alter"); p.insert(1, al)
+                    al.text = str(want)
+    return changed
+
+def add_breaks(part):
+    """Add <print new-system="yes"/> to bars whose first note sits on a different printed line from the bar before."""
+    prev = None; n = 1
+    for m in part.findall("measure"):
+        y = None
+        for c in m.iter():
+            if c.tag is ET.Comment and "imgpos" in (c.text or ""):
+                y = int(c.text.split(",")[1]); break
+        if y is not None:
+            if prev is not None and abs(y - prev) > 150:   # a system is ~90px of staff at 300 dpi plus lyrics and chords
+                m.insert(0, ET.Element("print", {"new-system": "yes"})); n += 1
+            prev = y
+    return n
+
 # --- one page ---------------------------------------------------------------------------------------
 def run(job):
     n, title, file, pdfPage, page, conf, span = job
@@ -119,10 +161,12 @@ def run(job):
                 if not os.path.exists(b + ".musicxml"):
                     if i == 0: raise RuntimeError("homr: no output " + r.stderr[-300:])
                     break
-            trees.append(ET.parse(b + ".musicxml"))
+            trees.append(ET.parse(b + ".musicxml", ET.XMLParser(target=ET.TreeBuilder(insert_comments=True))))
         tree = trees[0]
         rec["raw"] = score(tree.getroot())
         rec["clefFixed"] = sum(repair(t) for t in trees)
+        k = tree.find(".//key/fifths"); tune_key = int(k.text) if k is not None else 0
+        rec["respelled"] = sum(respell(t.getroot().find("part"), tune_key) for t in trees)
         part = tree.getroot().find("part")
         for t in trees[1:]:
             for m in t.getroot().find("part").findall("measure"): part.append(m)
@@ -135,6 +179,10 @@ def run(job):
                         if not first: at.remove(e)
                 if at.find("clef") is not None: first = False
             if k == 0: first = False
+        # line breaks where the printed page has them: homr leaves each note's page position in a comment
+        ms = part.findall("measure")   # drop trailing bars that are only rests
+        while len(ms) > 1 and not any(n.find("pitch") is not None for n in ms[-1].findall("note")): part.remove(ms.pop())
+        rec["lines"] = add_breaks(part)
         wt = tree.find(".//work-title")
         if wt is not None: wt.text = title
         tree.write(base + ".fixed.musicxml", encoding="utf-8", xml_declaration=True)

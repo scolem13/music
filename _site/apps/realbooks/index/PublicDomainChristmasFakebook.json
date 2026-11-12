@@ -1,0 +1,652 @@
+{
+ "file": "PublicDomainChristmasFakebook.pdf",
+ "method": "text-index",
+ "offset": 6,
+ "notes": "Four editions of the same 23 carols in one PDF (C, Bb, Eb, Bass Clef): 92 entries, each with an \"edition\" field; filter edition==\"C\" for one set. Offset is 6 for all editions. Index from text layer (pp3-6). 76 entries auto-verified by title text on the pdfPage; 16 (Go Tell It, Hark, O Holy Night \"Oh Holy Night\", Twelve Days) have differently laid-out title text, checked by hand on the C edition pages. Index spells \"Holly and the Ivy, The\"; normalized to \"The Holly and the Ivy\". Printed O Holy Night title is \"Oh Holy Night\".",
+ "entries": [
+  {
+   "title": "Angels We Have Heard On High",
+   "pdfPage": 7,
+   "page": 1,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "Auld Lang Syne",
+   "pdfPage": 8,
+   "page": 2,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "Away In a Manger",
+   "pdfPage": 9,
+   "page": 3,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "Carol of the Bells",
+   "pdfPage": 10,
+   "page": 4,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "Deck the Halls",
+   "pdfPage": 11,
+   "page": 5,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "God Rest Ye Merry Gentlemen",
+   "pdfPage": 12,
+   "page": 6,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "Good King Wenceslas",
+   "pdfPage": 13,
+   "page": 7,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "Go Tell it on the Mountain",
+   "pdfPage": 14,
+   "page": 8,
+   "edition": "C",
+   "conf": "low"
+  },
+  {
+   "title": "Hark! The Herald Angel Sings",
+   "pdfPage": 15,
+   "page": 9,
+   "edition": "C",
+   "conf": "low"
+  },
+  {
+   "title": "The Holly and the Ivy",
+   "pdfPage": 16,
+   "page": 10,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "It Came Upon a Midnight Clear",
+   "pdfPage": 17,
+   "page": 11,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "Jingle Bells",
+   "pdfPage": 18,
+   "page": 12,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "Joy to the World",
+   "pdfPage": 19,
+   "page": 13,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "Jolly Old Saint Nicholas",
+   "pdfPage": 20,
+   "page": 14,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "O Come, All Ye Faithful",
+   "pdfPage": 21,
+   "page": 15,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "O Holy Night",
+   "pdfPage": 23,
+   "page": 17,
+   "edition": "C",
+   "conf": "low"
+  },
+  {
+   "title": "O Little Town of Bethlehem",
+   "pdfPage": 25,
+   "page": 19,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "O Tannenbaum",
+   "pdfPage": 26,
+   "page": 20,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "Silent Night",
+   "pdfPage": 27,
+   "page": 21,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "The Twelve Days of Christmas",
+   "pdfPage": 29,
+   "page": 23,
+   "edition": "C",
+   "conf": "low"
+  },
+  {
+   "title": "We Three Kings",
+   "pdfPage": 31,
+   "page": 25,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "We Wish You a Merry Christmas",
+   "pdfPage": 32,
+   "page": 26,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "What Child is This?",
+   "pdfPage": 33,
+   "page": 27,
+   "edition": "C",
+   "conf": "high"
+  },
+  {
+   "title": "Angels We Have Heard On High",
+   "pdfPage": 35,
+   "page": 29,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "Auld Lang Syne",
+   "pdfPage": 36,
+   "page": 30,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "Away In a Manger",
+   "pdfPage": 37,
+   "page": 31,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "Carol of the Bells",
+   "pdfPage": 38,
+   "page": 32,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "Deck the Halls",
+   "pdfPage": 39,
+   "page": 33,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "God Rest Ye Merry Gentlemen",
+   "pdfPage": 40,
+   "page": 34,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "Good King Wenceslas",
+   "pdfPage": 41,
+   "page": 35,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "Go Tell it on the Mountain",
+   "pdfPage": 42,
+   "page": 36,
+   "edition": "Bb",
+   "conf": "low"
+  },
+  {
+   "title": "Hark! The Herald Angel Sings",
+   "pdfPage": 43,
+   "page": 37,
+   "edition": "Bb",
+   "conf": "low"
+  },
+  {
+   "title": "The Holly and the Ivy",
+   "pdfPage": 44,
+   "page": 38,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "It Came Upon a Midnight Clear",
+   "pdfPage": 45,
+   "page": 39,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "Jingle Bells",
+   "pdfPage": 46,
+   "page": 40,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "Joy to the World",
+   "pdfPage": 47,
+   "page": 41,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "Jolly Old Saint Nicholas",
+   "pdfPage": 48,
+   "page": 42,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "O Come, All Ye Faithful",
+   "pdfPage": 49,
+   "page": 43,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "O Holy Night",
+   "pdfPage": 51,
+   "page": 45,
+   "edition": "Bb",
+   "conf": "low"
+  },
+  {
+   "title": "O Little Town of Bethlehem",
+   "pdfPage": 53,
+   "page": 47,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "O Tannenbaum",
+   "pdfPage": 54,
+   "page": 48,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "Silent Night",
+   "pdfPage": 55,
+   "page": 49,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "The Twelve Days of Christmas",
+   "pdfPage": 57,
+   "page": 51,
+   "edition": "Bb",
+   "conf": "low"
+  },
+  {
+   "title": "We Three Kings",
+   "pdfPage": 59,
+   "page": 53,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "We Wish You a Merry Christmas",
+   "pdfPage": 60,
+   "page": 54,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "What Child is This?",
+   "pdfPage": 61,
+   "page": 55,
+   "edition": "Bb",
+   "conf": "high"
+  },
+  {
+   "title": "Angels We Have Heard On High",
+   "pdfPage": 63,
+   "page": 57,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "Auld Lang Syne",
+   "pdfPage": 64,
+   "page": 58,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "Away In a Manger",
+   "pdfPage": 65,
+   "page": 59,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "Carol of the Bells",
+   "pdfPage": 66,
+   "page": 60,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "Deck the Halls",
+   "pdfPage": 67,
+   "page": 61,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "God Rest Ye Merry Gentlemen",
+   "pdfPage": 68,
+   "page": 62,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "Good King Wenceslas",
+   "pdfPage": 69,
+   "page": 63,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "Go Tell it on the Mountain",
+   "pdfPage": 70,
+   "page": 64,
+   "edition": "Eb",
+   "conf": "low"
+  },
+  {
+   "title": "Hark! The Herald Angel Sings",
+   "pdfPage": 71,
+   "page": 65,
+   "edition": "Eb",
+   "conf": "low"
+  },
+  {
+   "title": "The Holly and the Ivy",
+   "pdfPage": 72,
+   "page": 66,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "It Came Upon a Midnight Clear",
+   "pdfPage": 73,
+   "page": 67,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "Jingle Bells",
+   "pdfPage": 74,
+   "page": 68,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "Joy to the World",
+   "pdfPage": 75,
+   "page": 69,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "Jolly Old Saint Nicholas",
+   "pdfPage": 76,
+   "page": 70,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "O Come, All Ye Faithful",
+   "pdfPage": 77,
+   "page": 71,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "O Holy Night",
+   "pdfPage": 79,
+   "page": 73,
+   "edition": "Eb",
+   "conf": "low"
+  },
+  {
+   "title": "O Little Town of Bethlehem",
+   "pdfPage": 81,
+   "page": 75,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "O Tannenbaum",
+   "pdfPage": 82,
+   "page": 76,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "Silent Night",
+   "pdfPage": 83,
+   "page": 77,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "The Twelve Days of Christmas",
+   "pdfPage": 85,
+   "page": 79,
+   "edition": "Eb",
+   "conf": "low"
+  },
+  {
+   "title": "We Three Kings",
+   "pdfPage": 87,
+   "page": 81,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "We Wish You a Merry Christmas",
+   "pdfPage": 88,
+   "page": 82,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "What Child is This?",
+   "pdfPage": 89,
+   "page": 83,
+   "edition": "Eb",
+   "conf": "high"
+  },
+  {
+   "title": "Angels We Have Heard On High",
+   "pdfPage": 91,
+   "page": 85,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "Auld Lang Syne",
+   "pdfPage": 92,
+   "page": 86,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "Away In a Manger",
+   "pdfPage": 93,
+   "page": 87,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "Carol of the Bells",
+   "pdfPage": 94,
+   "page": 88,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "Deck the Halls",
+   "pdfPage": 95,
+   "page": 89,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "God Rest Ye Merry Gentlemen",
+   "pdfPage": 96,
+   "page": 90,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "Good King Wenceslas",
+   "pdfPage": 97,
+   "page": 91,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "Go Tell it on the Mountain",
+   "pdfPage": 98,
+   "page": 92,
+   "edition": "Bass Clef",
+   "conf": "low"
+  },
+  {
+   "title": "Hark! The Herald Angel Sings",
+   "pdfPage": 99,
+   "page": 93,
+   "edition": "Bass Clef",
+   "conf": "low"
+  },
+  {
+   "title": "The Holly and the Ivy",
+   "pdfPage": 100,
+   "page": 94,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "It Came Upon a Midnight Clear",
+   "pdfPage": 101,
+   "page": 95,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "Jingle Bells",
+   "pdfPage": 102,
+   "page": 96,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "Joy to the World",
+   "pdfPage": 103,
+   "page": 97,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "Jolly Old Saint Nicholas",
+   "pdfPage": 104,
+   "page": 98,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "O Come, All Ye Faithful",
+   "pdfPage": 105,
+   "page": 99,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "O Holy Night",
+   "pdfPage": 107,
+   "page": 101,
+   "edition": "Bass Clef",
+   "conf": "low"
+  },
+  {
+   "title": "O Little Town of Bethlehem",
+   "pdfPage": 109,
+   "page": 103,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "O Tannenbaum",
+   "pdfPage": 110,
+   "page": 104,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "Silent Night",
+   "pdfPage": 111,
+   "page": 105,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "The Twelve Days of Christmas",
+   "pdfPage": 113,
+   "page": 107,
+   "edition": "Bass Clef",
+   "conf": "low"
+  },
+  {
+   "title": "We Three Kings",
+   "pdfPage": 115,
+   "page": 109,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "We Wish You a Merry Christmas",
+   "pdfPage": 116,
+   "page": 110,
+   "edition": "Bass Clef",
+   "conf": "high"
+  },
+  {
+   "title": "What Child is This?",
+   "pdfPage": 117,
+   "page": 111,
+   "edition": "Bass Clef",
+   "conf": "high"
+  }
+ ]
+}
