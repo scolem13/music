@@ -1,0 +1,27 @@
+X:1
+T:Shake, Rattle and Roll (verse)
+C:Big Joe Turner, 1954
+%%rs200 rs_126_1
+%%artist Big Joe Turner
+%%year 1954
+%%section verse
+%%label Verse
+%%repeats 3
+%%rank 126
+%%file BigJoeTurner_ShakeRattleAndRoll_1954
+%%link https://www.youtube.com/watch?v=YhELpSeeipg
+%%mode Eb mixolydian
+% CoCoPops/RollingStone/Data/BigJoeTurner_ShakeRattleAndRoll_1954.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 6 to 60; chords from **harte; 120 notes
+M:12/8
+L:1/8
+Q:1/4=234
+K:Ab
+"Eb"z2 E E3 E6 | E3 C3 C3 B,2 B, | G,12- | G,8- G, E2 E- |
+"Ab7"E2 E E3 E6 | E3 C3 C3 B,2 B, | "Eb"G,12- | G,8 E- E2 E |
+"Bb7"E2 E E3 E2 B, C2 B, | "Ab7"D3 C2 B, C3 B,2 B, | "Eb"E,12- | E,8 E- E2 E |
+E3 E3 E2 B,- B,2 B, | E3 C3 C3 B,2 B, | G,12- | G,8 E- E2 E |
+"Ab7"E3 E3 E2 E,- E,2 E, | E3 C3 C3 B,2 B, | "Eb"G,12- | G,8 B, E2 D |
+"Bb7"E3 E2 E- E3 C2 C | "Ab7"D3 C2 C- C3 B,2 B, | "Eb"E,12- | E,8 E- E2 E |
+E3 E2 E E3 E2 E | E2 E E3 C3 B,3 | G,12- | G,8 E- E2 E |
+"Ab7"_G3 F2 E E3 E2 E | E2 E E B,2 E3 E2 E | "Eb"z12 | z6 z2 E- E2 E- |
+"Bb7"E2 E- E2 E E4- EB, | "Ab7"D2 B, C3 C2 B,- B,2 B, | "Eb"E,12- | E,8 B, C3 ]

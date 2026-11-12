@@ -1,0 +1,19 @@
+X:1
+T:Stairway To Heaven (prechorus)
+C:Led Zeppelin, 1971
+%%rs200 rs_031_2
+%%artist Led Zeppelin
+%%year 1971
+%%section prechorus
+%%label P1
+%%repeats 1
+%%rank 31
+%%file LedZeppelin_StairwayToHeaven_1971
+%%link https://www.youtube.com/watch?v=RCOdXYoCBo
+%%keyfrom chords
+% CoCoPops/RollingStone/Data/LedZeppelin_StairwayToHeaven_1971.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 32 to 40; chords from **harte; 25 notes
+M:4/4
+L:1/8
+Q:1/4=72
+K:Am
+"Am"C2 DC/B,/ "E/G#"A,3 A,/B,/ | "Am7/G"C3/2D3/2 C "D/F#"B,/A,3/2 CD | "Fmaj7"D/ED C3/2 B,/A,3/2 A,G, | "G/B"G,A, "Am"A,2- A,4 ]

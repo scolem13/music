@@ -1,0 +1,15 @@
+X:1
+T:Temperature (chorus)
+C:Sean Paul, 2006
+%%bimmuda 2006_02_1
+%%artist Sean Paul
+%%year 2006
+%%section chorus
+% BiMMuDa 2006_02_1: C Minor (CSV tonic; written in Cm), CSV BPM 125, 62 note events in the CSV (Hamilton & Pearce, BiMMuDa; licence unverified)
+M:4/4
+L:1/8
+Q:1/4=125
+K:Cm
+B,B,/B, B,/ | B,B, _D2 B,B, B,/B,/D | B,B,B,B, A,FE_D | B,2 B,_D B,B,B,D |
+B,B,B,B, A,2 C2 | B,2 B,/B,/B,/B,/ B,B,B,B, | B,2 B,B, A,FE_D- | _D z B,/B,B,/ B,B,B,B, |
+B,2 B,B, A,_D B,2 ]

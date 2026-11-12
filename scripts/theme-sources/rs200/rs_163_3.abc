@@ -1,0 +1,27 @@
+X:1
+T:Bohemian Rhapsody (bridge)
+C:Queen, 1975
+%%rs200 rs_163_3
+%%artist Queen
+%%year 1975
+%%section bridge
+%%label Bridge
+%%repeats 1
+%%rank 163
+%%file Queen_BohemianRhapsody_1975
+%%link https://www.youtube.com/watch?v=M-9ERM0Jr4U
+% CoCoPops/RollingStone/Data/Queen_BohemianRhapsody_1975.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 107/2 to 94; chords from **harte; 213 notes
+M:4/4
+L:1/8
+Q:1/4=85
+K:A
+"A"D2 CC ^B,B,CC | DDCC ^B,2 EE | A2 EE A2 EE | ^DD E2 F2 E2 |
+"C#/G#"^EEEE "G#7"F2 F2 | "C/G"=GGGG "E"^G2 G2 | "A"A2 ee =feA,A, | _B,A,ee =feA,A, |
+_B,A,ee =fed=c | [M:2/4] "E"B_B, _BB | [M:4/4] "Cm7"_B =G2 _E- E=C _B,2 | "Bb"_C2 _B,B, A,2 B,2 |
+_C2 _B,B, A,2 B,2 | "Eb"_e2 ee e2 e2 | _ee e2 ee e2 | "Ab"=c2 c_e "Eb"_B2 BB |
+"F"A2 AA "Bb"_B4 | z4 z4 | _CC _B,2 A,A, B,2 | _CC_B,B, A,2 B,2 |
+"Eb"_E2 _B,2 _e3 =F | "Bb"=F=G_AG F_e"Eb"ee- | _e2 "Bb"_B,2 _E2 B,=F | =F=G_AG "Eb"F_eee- |
+_e2 "Bb"_B,2 _E2 B,=F | =F=G_AG "Eb"F_eee | "Bb"=F=G_AG "Eb"F_eee | "Bb"=F=G_AG _B,B,_EE |
+_D _B2 _G- G_F D2 | "Cbm"_E2 "A"=E2 "D"_G2 "Bb"_A2 | "Cb"_B2 "Bb"d2 "Eb"_e_B,B,B, | =C_B,B,B, CB,=GG |
+_A=G=F_E "Bb"F2 _B,2 | "Eb"_e3 e "Ab"e2 ee | "D7"dddd "Gm"=g2 g2 | "Bb"_A3 =G =F2 G2 |
+=c3 _B _A2 =G2 | _b8 ]

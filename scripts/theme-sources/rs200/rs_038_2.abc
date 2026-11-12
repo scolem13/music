@@ -1,0 +1,20 @@
+X:1
+T:Gimme Shelter (chorus)
+C:The Rolling Stones, 1969
+%%rs200 rs_038_2
+%%artist The Rolling Stones
+%%year 1969
+%%section chorus
+%%label Chorus
+%%repeats 4
+%%rank 38
+%%file TheRollingStones_GimmeShelter_1969
+%%link https://www.youtube.com/watch?v=SBva-z1AsGk
+% CoCoPops/RollingStone/Data/TheRollingStones_GimmeShelter_1969.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 32 to 44; chords from **harte; 31 notes
+M:4/4
+L:1/8
+Q:1/4=118
+K:C#m
+"C#"z2 c2- c3 e- | "B"e e3- e4- | "A"eccB cc c2- | "B"cccd ec c2 |
+"C#"c7 e- | "B"e e3- e4- | "A"eccB cc c2- | "B"cccd ec c2 |
+"C#"c8 ]

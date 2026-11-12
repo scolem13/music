@@ -1,0 +1,19 @@
+X:1
+T:In My Room (bridge)
+C:The Beach Boys, 1963
+%%cocopops cc_0270_3
+%%artist The Beach Boys
+%%year 1963
+%%section bridge
+%%label Bridge (letter D)
+%%repeats 1
+%%mcgill 270
+%%peak 23
+%%file TheBeachBoys_InMyRoom_1963
+% CoCoPops/Billboard/Data/TheBeachBoys_InMyRoom_1963.varms.hum (CC BY-NC 4.0): section from bar-time 28 to 40; chords from **harte; 27 notes
+M:12/8
+L:1/8
+Q:1/4=103
+K:B
+"G#m7"G,3 G,3 D,3 G,3 | "F#"F,3 F,3 G,3 F,2 z | "G#m"G,3 "F#"F,3 "G#m"D,3 "F#"C,3 | "B"D,3 F,3 z6 |
+"G#m7"D3 D3 B,3 D3 | "F#"C3 C3 A,3 C2 z | "C#m7"E3 E3 B,3 E3 | "Esus4"F6- "F#"F6 ]

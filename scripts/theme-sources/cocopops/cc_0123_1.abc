@@ -1,0 +1,23 @@
+X:1
+T:Silent Night (verse)
+C:Bing Crosby, 1960
+%%cocopops cc_0123_1
+%%artist Bing Crosby
+%%year 1960
+%%section verse
+%%label Verse (letter B)
+%%repeats 2
+%%mcgill 123
+%%peak 54
+%%file BingCrosby_SilentNight_1960
+% CoCoPops/Billboard/Data/BingCrosby_SilentNight_1960.hum (CC BY-NC 4.0): section from bar-time 15/4 to 87/4; chords from **harte; 46 notes
+M:3/4
+L:1/8
+Q:1/4=65
+K:Ab
+"Ab"E,3 F, E,2 | C,6 | E,3 F, E,2 | C,6 |
+"Ebsus4"B,4- B,B, | "Eb"G,6 | "Ab"A,4- A,A, | E,6 |
+"Db"F,4- F,F, | A,3 G, F,2 | "Ab"z E,2 F, E,2 | C,6 |
+"Db"z F,3 F,2 | A,3 G, z2 | "Ab"z A,, E,3 F,/E,/ | C,6 |
+"Eb7"B,4 B,2 | D3 B, G,2 | "Ab"A,6 | C6 |
+A,2 E,2 z C, | "Eb"E,3 D, B,,2 | "Ab"A,,6- | A,,4 ]

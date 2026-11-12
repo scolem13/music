@@ -1,0 +1,17 @@
+X:1
+T:Running Bear (verse)
+C:Johnny Preston, 1960
+%%bimmuda 1960_04_1
+%%artist Johnny Preston
+%%year 1960
+%%section verse
+% BiMMuDa 1960_04_1: F Minor (CSV tonic; written in Fm), CSV BPM 120, 61 note events in the CSV (Hamilton & Pearce, BiMMuDa; licence unverified)
+M:4/4
+L:1/8
+Q:1/4=120
+K:Fm
+G,=D, | F,2 z2 z2 G,F, | B, =D3 z B, B,B, | G,4 z B, G,B, |
+F,4 z2 G,=D, | F,G, z2 z F, G,F, | B,=D z2 z2 B,B, | B, G,3 z2 =A,B, |
+C6 G,=D, | F,G, z2 z2 G,F, | B,=D z2 z2 B,B, | B, G,3 z2 G,B, |
+F,4 z2 G,=D, | F,4 z F, G,F, | B, =D3 z2 F,F, | F,4 z z/ =D/ C3/2=A,/ |
+B,4 ]

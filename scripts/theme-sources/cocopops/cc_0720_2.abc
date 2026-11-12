@@ -1,0 +1,20 @@
+X:1
+T:Rocky Mountain High (chorus)
+C:John Denver, 1972
+%%cocopops cc_0720_2
+%%artist John Denver
+%%year 1972
+%%section chorus
+%%label Chorus (letter B)
+%%repeats 2
+%%mcgill 720
+%%peak 9
+%%file JohnDenver_RockyMountainHigh_1972
+% CoCoPops/Billboard/Data/JohnDenver_RockyMountainHigh_1972.hum (CC BY-NC 4.0): section from bar-time 21 to 57/2; chords from **harte; 43 notes
+M:4/4
+L:1/8
+Q:1/4=82
+K:E
+"Bsus4(b7)"C,/C,/ | "A"CC/C C3/2 "B"B,B,/B, G,/B,- | "E"B,4 z2 z C | "A"C/C3/2 CB, "B"B,B, B,/A,/A,/G,/- |
+"E"G,4 z2 z z/ A,,/ | "A"B,/C3/2 CC/C/ "B"DC z G,/B,/- | [M:2/4] "E"B,/B,/B,/B,/ CD/E/- | [M:4/4] "A"E8- |
+E4 z E/E/ "Bsus4(b7)"CG,/B,/ ]

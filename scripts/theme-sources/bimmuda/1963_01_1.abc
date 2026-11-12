@@ -1,0 +1,16 @@
+X:1
+T:Surfin' USA (verse)
+C:The Beach Boys, 1963
+%%bimmuda 1963_01_1
+%%artist The Beach Boys
+%%year 1963
+%%section verse
+% BiMMuDa 1963_01_1: Eb Major (CSV tonic; written in Eb), CSV BPM 159, 60 note events in the CSV (Hamilton & Pearce, BiMMuDa; licence unverified)
+M:4/4
+L:1/8
+Q:1/4=159
+K:Eb
+z _D DD DDCC | B,3 F,- F,4 | z B, CB, _D C2 C | B,8 |
+z _D DD DD C2 | B,3 F,- F,4 | z _D DD D C2 C | B,8 |
+z E EE EEEE- | E3 B, A,4 | z _D EE E E2 C | B,8 |
+z _D DD DD C2 | B,3 F,- F,4 | z2 A,A, G, F,2 E,- | E,8 ]

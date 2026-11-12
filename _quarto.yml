@@ -483,6 +483,7 @@ website:
             - tools/scale-patterns.qmd
             - tools/part-reader.qmd
             - tools/classical-themes.qmd
+            - tools/pop-themes.qmd
         - section: "Write music down"
           contents:
             - tools/notation.qmd
@@ -615,6 +616,7 @@ website:
           - tools/scale-patterns.qmd
           - tools/part-reader.qmd
           - tools/classical-themes.qmd
+          - tools/pop-themes.qmd
           - text: "---"
           - text: "Write music down"
           - tools/notation.qmd

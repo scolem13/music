@@ -88,6 +88,9 @@ Anglebert, Jean-Henry d'. *Pièces de clavecin ... Livre premier*. Paris, 1689. 
 "Arrangement View." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/arrangement-view/](https://www.ableton.com/en/live-manual/12/arrangement-view/). 
 [Used in: [DAW 4: Arranging a Song](lessons/daw-arrange.qmd), [DAW 8: Your First Session in a Real DAW](lessons/daw-real.qmd), [DAW 1: The Timeline and the Transport](lessons/daw-timeline.qmd)]{.wc-used}
 
+Arthur, Claire, and Nathaniel Condit-Schultz. "The Coordinated Corpus of Popular Musics (CoCoPops): A Meta-Corpus of Melodic and Harmonic Transcriptions." *Proceedings of the 24th International Society for Music Information Retrieval Conference*, 2023. [github.com/Computational-Cognitive-Musicology-Lab/CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops). The CoCoPops collection: 214 Billboard Hot 100 songs (1958-1991, McGill Billboard ids) with melodic transcriptions and their chords, one ABC per distinct section, converted by scripts/convert-cocopops.py (main vocal line, no lyrics read). Licence, from the README: "Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) ... you are free to share and adapt the data for non-commercial purposes, provided you give appropriate credit, link to the license, and indicate if changes were made": changes made here are the conversion to ABC, the choice of one melody to a distinct section and chord symbols written from its Harte chords. Paper title, authors and venue as the README names them; page numbers not checked. Commit 0958afa6 (2026-10-19). 
+[Used in: [Pop Themes](tools/pop-themes.qmd) (for teachers)]{.wc-used}
+
 "Ashes to Ashes (David Bowie song)." *Wikipedia*, Wikimedia Foundation. Music example (LilyPond) read 2026-11-04 by scripts/riffs/lily2fig.mjs: the band's ashes riff. 
 [Used in: [Fills, Riffs and Licks: Answering the Singer](lessons/fills-riffs.qmd) (for students)]{.wc-used}
 
@@ -205,6 +208,9 @@ Biamonte, Nicole. "Triadic Modal and Pentatonic Patterns in Rock Music." *Music 
 Biamonte, Nicole. "Triadic Modal and Pentatonic Patterns in Rock Music." *Music Theory Spectrum*, vol. 32, no. 2, 2010, pp. 95-. [escholarship.mcgill.ca/downloads/73666866p](https://escholarship.mcgill.ca/downloads/73666866p). Author's copy at McGill; end page not confirmed. 
 [Used in: [First Rock Song: One Loop, a Part for Everyone](lessons/first-rock-song.qmd), [Lesson: Four-Chord Loops](lessons/four-chord-loops.qmd) (for teachers)]{.wc-used}
 
+*BiMMuDa: A Billboard Melodic Music Dataset (1950–2022)*. GitHub. [github.com/tismirapplicant2/BiMMuDa](https://github.com/tismirapplicant2/BiMMuDa). The BiMMuDa collection's melodies (main melody of each section of the Billboard year-end top-five singles, 1950-2022), converted to ABC by scripts/convert-bimmuda.py, with the dataset's keys, modes, tempi and melody statistics. The repository shows no licence: licence unverified, so the page stays behind the site password; no lyrics are used. The repository (the git remote of the downloaded copy) is the anonymous one from the paper's review, so no authors are named here; the published paper (believed to be by Hamilton and Pearce, from memory, not checked) should be cited once its reference is confirmed. 
+[Used in: [Pop Themes](tools/pop-themes.qmd) (for teachers)]{.wc-used}
+
 "Black Sabbath (song)." *Wikipedia*, Wikimedia Foundation. Music example (LilyPond) read 2026-11-04 by scripts/riffs/lily2fig.mjs: the band's blackSabbath riff. 
 [Used in: [Fills, Riffs and Licks: Answering the Singer](lessons/fills-riffs.qmd) (for students)]{.wc-used}
 
@@ -281,7 +287,7 @@ Brown, Clive. *Classical and Romantic Performing Practice 1750–1900*. Oxford U
 [Used in: [Yamaha MODX](gear/modx.qmd)]{.wc-used}
 
 Burgoyne, John Ashley, Jonathan Wild, and Ichiro Fujinaga. "An Expert Ground Truth Set for Audio Chord Recognition and Music Analysis." *Proceedings of the 12th International Society for Music Information Retrieval Conference*, Miami, 2011, pp. 633–38. The 890 SALAMI chords files of the McGill Billboard Project (songs from the Billboard Hot 100, 1958–1991): sections, bars and chords, timed; released under CC0. [ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/](https://ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/). 
-[Used in: [Tune Directory](practice/tune-directory.qmd), [Timestamp Notes](tools/timestamp-notes.qmd)]{.wc-used}
+[Used in: [Tune Directory](practice/tune-directory.qmd), [Pop Themes](tools/pop-themes.qmd), [Timestamp Notes](tools/timestamp-notes.qmd)]{.wc-used}
 
 Burrows, George. "Scooby Dooby Doo: Making Sense of Scat Singing." *The Conversation*, 26 Oct. 2018, [theconversation.com/scooby-dooby-doo-making-sense-of-scat-singing-105190](https://theconversation.com/scooby-dooby-doo-making-sense-of-scat-singing-105190). 
 [Used in: [Jazz Singing: Swing, Scat and the Changes](lessons/voice-jazz.qmd) (for students)]{.wc-used}
@@ -486,6 +492,9 @@ Davis, Miles. *Kind of Blue*. Columbia, 1959. The recording.
 
 de Clercq, Trevor, and David Temperley. "A Corpus Analysis of Rock Harmony." *Popular Music*, vol. 30, no. 1, 2011, pp. 47-70. [www.cambridge.org/core/journals/popular-music/article/corpus-analysis-of-rock-harmony/C5210A8EC985DDF170B53124F4464DA4](https://www.cambridge.org/core/journals/popular-music/article/corpus-analysis-of-rock-harmony/C5210A8EC985DDF170B53124F4464DA4). Read the abstract and summary. 
 [Used in: [Lesson: Changing the Changes in a 12-Bar Blues](lessons/blues-changes.qmd), [First Rock Song: One Loop, a Part for Everyone](lessons/first-rock-song.qmd), [Lesson: Four-Chord Loops](lessons/four-chord-loops.qmd), [Pop Changes for Bass: Roots and the Walking Line](lessons/pop-changes-bass.qmd), [Pop Changes for Guitar: From Open Chords to Passing Chords](lessons/pop-changes-guitar.qmd), [Pop Changes for Piano: From Triads to Passing Chords](lessons/pop-changes-piano.qmd), [Lesson: Changing the Changes in C, Am, F, G](lessons/pop-changes.qmd) (for teachers)]{.wc-used}
+
+de Clercq, Trevor, and David Temperley. "A Corpus Analysis of Rock Harmony." *Popular Music*, vol. 30, no. 1, 2011. [rockcorpus.midside.com/](https://rockcorpus.midside.com/). The RS200 collection: the Rolling Stone 200 rock corpus (melodic transcriptions, harmonic analyses by both authors, timing), CC BY 4.0 ("it can be freely used and adapted in academic or commercial projects, without our permission, as long as appropriate credit is given"). Used through CoCoPops' Humdrum translation of it (so under CoCoPops' CC BY-NC 4.0 as well), which adds the formal sections and absolute chord symbols; the original v2.1 files were used to check that the translation kept every note onset (scripts/check-cocopops-source.py). The corpus records only when each note starts, so the converted note lengths are approximate. Songs from Rolling Stone's 2004 list of the 500 greatest songs. Volume and issue from memory of the journal's record; page numbers not checked. 
+[Used in: [Pop Themes](tools/pop-themes.qmd) (for teachers)]{.wc-used}
 
 de Clercq, Trevor. Review of *Hearing Harmony: Toward a Tonal Theory for the Rock Era*, by Christopher Doll. *Music Theory Online*, vol. 24, no. 1, 2018. [www.mtosmt.org/issues/mto.18.24.1/mto.18.24.1.declercq.php](https://www.mtosmt.org/issues/mto.18.24.1/mto.18.24.1.declercq.php). 
 [Used in: [First Rock Song: One Loop, a Part for Everyone](lessons/first-rock-song.qmd), [Lesson: Four-Chord Loops](lessons/four-chord-loops.qmd) (for teachers)]{.wc-used}
@@ -1027,7 +1036,7 @@ Isaacs, Dave. "Guitar Lesson: Melodic String Bending." *ArtistWorks Blog*. [my.a
 [Used in: [String Bends on Guitar: Bending in Tune](lessons/guitar-bends.qmd) (for students)]{.wc-used}
 
 Isophonics. Centre for Digital Music, Queen Mary, University of London, isophonics.net. Beatles chord, key, beat and segment annotations, personal and educational use. [isophonics.net/](http://isophonics.net/). 
-[Used in: [Tune Directory](practice/tune-directory.qmd), [Timestamp Notes](tools/timestamp-notes.qmd)]{.wc-used}
+[Used in: [Tune Directory](practice/tune-directory.qmd), [Pop Themes](tools/pop-themes.qmd), [Timestamp Notes](tools/timestamp-notes.qmd)]{.wc-used}
 
 "I–V–vi–IV progression." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/I%E2%80%93V%E2%80%93vi%E2%80%93IV_progression](https://en.wikipedia.org/wiki/I%E2%80%93V%E2%80%93vi%E2%80%93IV_progression). 
 [Used in: [First Rock Song: One Loop, a Part for Everyone](lessons/first-rock-song.qmd), [Lesson: Four-Chord Loops](lessons/four-chord-loops.qmd) (for students)]{.wc-used}
@@ -1253,6 +1262,9 @@ Mullen, Andy. *The Literate Musician: How to Hear, Speak, Think, Read & Write th
 
 "Musical Notation." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Musical_notation](https://en.wikipedia.org/wiki/Musical_notation). 
 [Used in: [DAW 3b: What the Computer Needs](lessons/daw-notation.qmd) (for students)]{.wc-used}
+
+MusicBrainz. *MusicBrainz Web Service*. [musicbrainz.org/doc/MusicBrainz_API](https://musicbrainz.org/doc/MusicBrainz_API). Recording and artist tags and genres (CC0 data), the first source of the genre labels (scripts/bimmuda-genres.py). 
+[Used in: [Pop Themes](tools/pop-themes.qmd) (for teachers)]{.wc-used}
 
 "MusicXML." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/MusicXML](https://en.wikipedia.org/wiki/MusicXML). Kept spelling, voices and layout that MIDI drops. 
 [Used in: [DAW 3b: What the Computer Needs](lessons/daw-notation.qmd) (for students)]{.wc-used}
@@ -2082,6 +2094,9 @@ White, Paul. "Two-mic Guitar Tracking." *Sound On Sound*, Oct. 2021. [www.soundo
 
 Wightman, Dennis C., and Gavan Lintern. "Part-Task Training of Tracking for Manual Control." *Human Factors*, vol. 27, no. 3, 1985, pp. 267–83. Read through later reviews that cite it. 
 [Used in: [Chunk Practice](tools/chunk-practice.qmd) (for teachers)]{.wc-used}
+
+Wikidata. *Wikidata Query Service*. [query.wikidata.org/](https://query.wikidata.org/). Genre (P136) of the songs and artists, the second source of the genre labels (CC0). 
+[Used in: [Pop Themes](tools/pop-themes.qmd) (for teachers)]{.wc-used}
 
 Wikidata. Wikimedia Foundation. [www.wikidata.org/](https://www.wikidata.org/). Years of composition (inception) or publication of the pieces, matched by composer and catalogue number; CC0. 
 [Used in: [Tune Directory](practice/tune-directory.qmd) (for teachers)]{.wc-used}

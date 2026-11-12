@@ -1,0 +1,26 @@
+X:1
+T:What'd I Say (verse)
+C:Ray Charles, 1959
+%%rs200 rs_010_1
+%%artist Ray Charles
+%%year 1959
+%%section verse
+%%label Verse
+%%repeats 2
+%%rank 10
+%%file RayCharles_WhatdISay_1959
+%%link https://www.youtube.com/watch?v=EPLZL4sJtI
+%%mode E dorian
+% CoCoPops/RollingStone/Data/RayCharles_WhatdISay_1959.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 36 to 72; chords from **harte; 85 notes
+M:4/4
+L:1/8
+Q:1/4=178
+K:D
+"E"z E3 EEEE | GEDE- E4- | E2 EE GEEE | G E2 E- E D2 B, |
+"A"A,G, A,2- A,4- | A,4- A,E B,2 | "E"E8- | E4- E E2 B, |
+"B"D8 | "A"z8 | "E"z8 | z2 "B"z2 z4 |
+"E"z2 ED E2 ED | ED E2- E4- | E2 EG- GG E2 | ^G E2 E- E D2 _B,- |
+"A"_B, A,2 G,- G, E,3- | E,4- E,E B,2 | "E"E8- | E4- E E2 B, |
+"B"D8 | "A"z8 | "E"z8 | z2 "B"z2 z4 |
+"E"z2 ED E E3- | E2 ED E4- | EDEE GEEE | G E2 E- E D2 A,- |
+"A"A,3 G,- G, E,3- | E,3 B, EEB,E | "E"z8 | z4 EEB,D ]

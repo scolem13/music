@@ -1,0 +1,14 @@
+X:1
+T:Another Brick in the Wall, Part II (chorus)
+C:Pink Floyd, 1980
+%%bimmuda 1980_02_2
+%%artist Pink Floyd
+%%year 1980
+%%section chorus
+% BiMMuDa 1980_02_2: C Major (CSV tonic; written in C), CSV BPM 104, 24 note events in the CSV (Hamilton & Pearce, BiMMuDa; licence unverified)
+M:4/4
+L:1/8
+Q:1/4=104
+K:C
+z2 F,F,/F,/- F,F,F,F,- | F, z E,/E,3/2 E,D,3/2 C,3/2 | D, z z2 z4 | z8 |
+z2 F,F,/F,/- F,F,F,F,- | F, z E,/E,3/2 E,D,3/2 C,3/2 | D, ]

@@ -4,28 +4,40 @@
 // tonality, meter, key, starts on, tonal pattern, rhythm patterns), so they read the ABC the same way.
 // The page adds: a sort on up to three keys, how many themes to show at a time (or all), columns, and Play.
 // Cards are drawn only when they scroll near the screen, so "All" stays usable.
+// The same script runs Pop Themes (tools/pop-themes.qmd: three collections, BiMMuDa's 1,104 section melodies of the Billboard year-end
+// top-5 singles 1950-2022, CoCoPops' 793 (Billboard Hot 100 songs 1958-1991) and the RS200's 514 (Rolling Stone's list), in
+// apps/themes/pop-themes-data.js from scripts/convert-bimmuda.py, scripts/convert-cocopops.py + `node scripts/import-themes.mjs --set pop`)
+// when that page sets window.POP_THEMES: artist for composer, collection / year / section / decade / genre filters, BiMMuDa's melody
+// statistics as sorts (the other collections have none: they sort last), chords (CoCoPops and RS200: from the corpus itself; BiMMuDa: a
+// Billboard analysis where one fits, scripts/bimmuda-salami.mjs) in place of Roman numerals. A song in several collections links to the
+// others (?song=<grp>), and one with a McGill Billboard id to its Timestamp Notes view (?salami=<id>).
 (function () {
   "use strict";
-  const T = window.CLASSICAL_THEMES || [];
+  const POP = !!window.POP_THEMES;
+  const T = (POP ? window.POP_THEMES : window.CLASSICAL_THEMES) || [];
   const root = document.getElementById("ct-root");
   if (!root || !T.length) return;
   const $ = (s) => root.querySelector(s);
   const store = {
-    get(k, d) { try { const v = localStorage.getItem("ct-" + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
-    set(k, v) { try { localStorage.setItem("ct-" + k, JSON.stringify(v)); } catch (e) {} },
+    get(k, d) { try { const v = localStorage.getItem((POP ? "pt-" : "ct-") + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem((POP ? "pt-" : "ct-") + k, JSON.stringify(v)); } catch (e) {} },
   };
 
   // ---- the themes as library records ----
   const byId = {};
-  T.forEach((t) => { byId["cmt-" + t.id] = t; });
-  const num = (id) => parseFloat(String(id).replace("-", "."));   // "0739-2" -> 739.2 (MTD splits a few themes)
-  const abcOf = (t, tempo) => "X:" + parseInt(t.id, 10) + "\nT:" + t.title + "\nC:" + t.first + " " + t.last + (t.movement || t.cat ? "\nS:" + [t.movement, t.cat].filter(Boolean).join(" · ") : "") + "\nM:" + t.meter +
+  const IDP = POP ? "pop-" : "cmt-", ord = {};
+  T.forEach((t, i) => { byId[IDP + t.id] = t; ord[t.id] = i; });
+  const num = (id) => (POP ? ord[id] : parseFloat(String(id).replace("-", ".")));   // "0739-2" -> 739.2 (MTD splits a few themes); pop: the order of the data (year, position, section)
+  const decade = (t) => Math.floor(t.year / 10) * 10 + "s";
+  const popTags = (t) => [t.set, t.section, decade(t)].concat(t.genre || [], [t.last]).map((x) => String(x).replace(/,/g, "")).join(", ");
+  const abcOf = (t, tempo) => POP ? "X:" + (ord[t.id] + 1) + "\nT:" + t.title + "\nC:" + t.last + "\nM:" + t.meter + "\nL:" + t.unit + (tempo ? "\nQ:1/4=" + tempo : "") +
+    "\n%%id " + IDP + t.id + "\n%%tags " + popTags(t) + "\n%%key-fixed\nK:" + t.key + "\n" + t.body + "\n" : "X:" + parseInt(t.id, 10) + "\nT:" + t.title + "\nC:" + t.first + " " + t.last + (t.movement || t.cat ? "\nS:" + [t.movement, t.cat].filter(Boolean).join(" · ") : "") + "\nM:" + t.meter +
     "\nL:" + t.unit + (tempo ? "\nQ:1/4=" + tempo : "") + "\n%%id cmt-" + t.id + "\n%%tags " + t.last + (t.bar ? "\n%%bar " + t.bar + (t.barOne ? " one-score" : "") : "") + "\n%%key-fixed\nK:" + t.key + "\n" + t.body + "\n";
   // recordings live in apps/shared/works/works-data.js (Works); the old one-link "yt" field is the fallback
   const workOf = (t) => (window.Works ? Works.of("theme", t.id) : null);
   const hasRec = (r) => { const w = workOf(r.t); return w ? (w.recordings || []).length > 0 : !!r.t.yt; };
   const status = $("#ct-status");
-  status.textContent = "Reading " + T.length.toLocaleString() + " themes…";
+  status.textContent = "Reading " + T.length.toLocaleString() + (POP ? " sections…" : " themes…");
 
   const NOTE = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"];
   const pname = (p) => NOTE[((p % 12) + 12) % 12] + (Math.floor(p / 12) - 1);
@@ -62,12 +74,36 @@
     random: ["Random", (r) => r.rand],
   };
 
+  if (POP) {   // the pop page's own sorts: the dataset's columns, artist for composer, no catalogue numbers
+    const o = (k) => (r) => r.t[k];   // undefined (CoCoPops and RS200 have no such figure): sorted last, whichever way
+    ["id", "cat", "composer"].forEach((k) => { delete SORTS[k]; });
+    const SECTIONS = ["intro", "verse", "prechorus", "chorus", "postchorus", "hook", "bridge", "break", "interlude", "solo", "transition", "instrumental", "theme", "outro", "unlabelled"];
+    Object.assign(SORTS, {
+      id: ["Collection, then year, position, section", (r) => num(r.t.id)],
+      year: ["Year", (r) => r.t.year],
+      pos: ["Position in the year (1 to 5; BiMMuDa)", (r) => (parseInt(r.t.pos, 10) || 9)],
+      set: ["Collection (BiMMuDa, CoCoPops, RS200)", (r) => ["BiMMuDa", "CoCoPops", "RS200"].indexOf(r.t.set)],
+      artist: ["Artist", (r) => r.t.last],
+      section: ["Section (verse, chorus…)", (r) => SECTIONS.indexOf(r.t.section)],
+      bpm: ["Tempo (BPM)", (r) => r.t.qpm || r.t.bpm || 0],
+      len: ["Length (seconds)", o("len")],
+      tonal: ["Tonality (how clearly one key)", o("tonal")],
+      mic: ["MIC (melodic information content)", o("mic")],
+      pstd: ["Pitch STD (spread of pitches)", o("pstd")],
+      mis: ["MIS (melodic interval size)", o("mis")],
+      od: ["Onset density (notes a second)", o("od")],
+      npvi: ["nPVI (rhythmic variability)", o("npvi")],
+      ric: ["RIC (rhythmic information content)", o("ric")],
+    });
+    delete SORTS.title; SORTS.title = ["Title", (r) => r.t.title];
+    const first = { id: 1, year: 1 }; Object.keys(first).forEach((k) => { const v = SORTS[k]; delete SORTS[k]; SORTS[k] = v; });
+  }
   let records = [], results = [], seed = Math.random();
   function hash(s) { let h = 2166136261 ^ Math.floor(seed * 1e9); for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return (h >>> 0) / 4294967296; }
 
   // ---- controls ----
   const sortRows = $("#ct-sorts");
-  const savedSorts = store.get("sorts", [["id", 1]]);
+  const savedSorts = store.get("sorts", [["id", 1]]).filter((k) => SORTS[k[0]]);
   function sortRow(key, dir, i) {
     const row = document.createElement("div"); row.className = "ct-sortrow";
     const lab = document.createElement("span"); lab.textContent = i ? "then by" : "Sort by";
@@ -100,20 +136,39 @@
   ytOnly.addEventListener("change", apply);
   // Roman numerals (apps/themes/themes-rn.js, scripts/theme-romantext.mjs: When in Rome's RomanText under the notes of the themes
   // whose piece it analyses). Off until asked for; the choice is kept.
-  const RN = window.THEME_RN || {}, hasRn = (t) => !!(RN[t.id] && RN[t.id].len === (t.body || "").length);
-  const rnOn = $("#ct-rn"), rnOnly = $("#ct-rnonly");
+  const RN = window.THEME_RN || {}, hasRn = (t) => (POP ? !!t.chords : !!(RN[t.id] && RN[t.id].len === (t.body || "").length));
+  // (on the pop page the same two checkboxes are "Show chords" / "Only sections that have them": t.chords from scripts/bimmuda-salami.mjs)
+  const rnOn = $("#ct-rn") || { checked: false, addEventListener() {} }, rnOnly = $("#ct-rnonly") || { checked: false, addEventListener() {} };
   rnOn.checked = store.get("rn", false); rnOnly.checked = store.get("rnonly", false);
-  $("#ct-rncount").textContent = T.filter(hasRn).length;
+  if ($("#ct-rncount")) $("#ct-rncount").textContent = T.filter(hasRn).length;
   rnOn.addEventListener("change", () => { store.set("rn", rnOn.checked); redrawShown(); });
   rnOnly.addEventListener("change", () => { store.set("rnonly", rnOnly.checked); apply(); });
   // the theme's ABC with each chord's Roman numeral as an annotation under the note it starts on
   const withRn = (t, abc) => {
     if (!rnOn.checked || !hasRn(t)) return abc;
     let body = t.body;
-    RN[t.id].at.slice().sort((a, b) => b[0] - a[0]).forEach(([i, lab]) => { body = body.slice(0, i) + '"_' + lab.replace(/"/g, "") + '"' + body.slice(i); });
+    (POP ? t.chords : RN[t.id].at).slice().sort((a, b) => b[0] - a[0]).forEach(([i, lab]) => { body = body.slice(0, i) + (POP ? '"^' : '"_') + lab.replace(/"/g, "") + '"' + body.slice(i); });
     return abc.replace(t.body, () => body);
   };
 
+  // pop page: section, decade, genre and position as selects (they combine; the finder's tag chips are any-of)
+  const popSel = {};
+  function popFilter() { const o = {}; Object.keys(popSel).forEach((k) => { o[k] = popSel[k].value; }); return o; }
+  if (POP && $("#ct-popfilters")) {
+    const box = $("#ct-popfilters"), count = (fn) => { const m = {}; T.forEach((t) => [].concat(fn(t)).forEach((v) => { m[v] = (m[v] || 0) + 1; })); return m; };
+    const add = (key, label, m, order) => {
+      const l = document.createElement("label"); l.textContent = label + " "; const sel = document.createElement("select"); sel.setAttribute("aria-label", label);
+      sel.innerHTML = '<option value="">any</option>' + (order || Object.keys(m).sort()).filter((k) => m[k]).map((k) => '<option value="' + k + '">' + k + " (" + m[k] + ")</option>").join("");
+      sel.addEventListener("change", () => { store.set("f-" + key, sel.value); apply(); });
+      l.appendChild(sel); box.appendChild(l); popSel[key] = sel;
+      const sv = store.get("f-" + key, ""); if ([...sel.options].some((o) => o.value === sv)) sel.value = sv;
+    };
+    add("set", "Collection", count((t) => t.set), ["BiMMuDa", "CoCoPops", "RS200"]);
+    add("section", "Section", count((t) => t.section), ["verse", "chorus", "prechorus", "postchorus", "bridge", "hook", "intro", "break", "interlude", "solo", "transition", "instrumental", "theme", "outro", "unlabelled"]);
+    add("decade", "Decade", count(decade));
+    add("genre", "Genre", count((t) => t.genre || []), ["pop", "rock", "r&b/soul", "country", "hip-hop", "jazz/standards", "dance/disco", "folk"]);
+    add("pos", "Chart position (BiMMuDa)", count((t) => (t.pos === undefined ? [] : String(t.pos))));
+  }
   // ---- sort + page ----
   let picked = null, page = 0;
   function apply() {
@@ -122,10 +177,13 @@
     let list = (picked || records).map((rec) => recOf[rec.id]).filter(Boolean);
     if (ytOnly.checked) list = list.filter(hasRec);
     if (rnOnly.checked) list = list.filter((r) => hasRn(r.t));
+    if (POP) { const f = popFilter(); list = list.filter((r) => (!f.set || r.t.set === f.set) && (!f.section || r.t.section === f.section) && (!f.decade || decade(r.t) === f.decade) &&
+      (!f.genre || (r.t.genre || []).includes(f.genre)) && (!f.pos || String(r.t.pos) === f.pos)); }
     const val = keys.map(([k, d]) => [SORTS[k][1], d]);
     list.sort((a, b) => {
       for (const [f, d] of val) {
         const x = f(a), y = f(b);
+        if (x === undefined || y === undefined) { if (x === y) continue; return x === undefined ? 1 : -1; }   // no value: last
         const c = typeof x === "string" ? x.localeCompare(y, undefined, { sensitivity: "base", numeric: true }) : x - y;
         if (c) return c * d;
       }
@@ -142,8 +200,8 @@
     page = Math.max(0, Math.min(page, pages - 1));
     const from = per === Infinity ? 0 : page * per, shown = results.slice(from, per === Infinity ? undefined : from + per);
     const n = results.length.toLocaleString();
-    $("#ct-count").textContent = results.length ? (shown.length === results.length ? n + " themes" :
-      "Themes " + (from + 1).toLocaleString() + "–" + (from + shown.length).toLocaleString() + " of " + n) : "No themes match.";
+    $("#ct-count").textContent = results.length ? (shown.length === results.length ? n + (POP ? " sections" : " themes") :
+      (POP ? "Sections " : "Themes ") + (from + 1).toLocaleString() + "–" + (from + shown.length).toLocaleString() + " of " + n) : (POP ? "No sections match." : "No themes match.");
     root.querySelectorAll(".ct-pager").forEach((p) => { p.hidden = pages < 2; });
     root.querySelectorAll(".ct-pagelab").forEach((p) => { p.textContent = "Page " + (page + 1) + " of " + pages; });
     $("#ct-prev").disabled = $("#ct-prev2").disabled = page === 0;
@@ -161,7 +219,10 @@
       if (r.t.movement) { const mv = document.createElement("div"); mv.className = "ct-move"; mv.textContent = r.t.movement; c.querySelector(".ct-title").after(mv); }
       const when = [r.t.composed && "composed " + r.t.composed, r.t.premiere && "first performed " + r.t.premiere,
         !r.t.composed && r.t.published && "published " + r.t.published].filter(Boolean).join(", ");
-      c.querySelector(".ct-comp").textContent = r.t.first + " " + r.t.last + (r.t.cat ? " · " + r.t.cat : "") + (when ? " · " + when : "") + " · No. " + String(r.t.id).replace(/^0+/, "");
+      if (POP) c.querySelector(".ct-comp").textContent = r.t.last + " · " + r.t.year + " · " +
+        (r.t.set === "CoCoPops" ? "peak No. " + r.t.peak + " on the Hot 100" : r.t.set === "RS200" ? "No. " + r.t.rank + " on Rolling Stone's 500 (2004)" : "No. " + r.t.pos + " of the year") + " · " + r.t.section +
+        (r.t.chords ? (r.t.set === "BiMMuDa" ? " · chords from a Billboard analysis" : " · chords from the transcription") : "");
+      else c.querySelector(".ct-comp").textContent = r.t.first + " " + r.t.last + (r.t.cat ? " · " + r.t.cat : "") + (when ? " · " + when : "") + " · No. " + String(r.t.id).replace(/^0+/, "");
       const btns = c.querySelector(".ct-btns");
       const play = document.createElement("button"); play.type = "button"; play.className = "ct-play"; play.textContent = "▶ Play";
       play.addEventListener("click", () => togglePlay(c));
@@ -171,7 +232,9 @@
       if (sc) { const a = document.createElement("a"); const at = r.t.bar ? Math.max(0, r.t.bar - (r.rec && r.rec.hasPickup ? 1 : 0)) : null;
         a.href = Works.href("score", Object.assign({}, sc, at != null ? { bar: at } : {})); a.className = "ct-fullscore";
         a.textContent = "Full score" + (at != null ? " from bar " + at : ""); a.title = "The whole movement, with this theme in context"; btns.appendChild(a); }
-      if (!workOf(r.t) && r.t.yt) { const a = document.createElement("a"); a.href = r.t.yt; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Recording"; btns.appendChild(a); }
+      if (!workOf(r.t) && r.t.yt) { const a = document.createElement("a"); a.href = r.t.yt; a.target = "_blank"; a.rel = "noopener"; a.textContent = POP ? (/spotify/.test(r.t.yt) ? "Spotify" : /youtu/.test(r.t.yt) ? "YouTube" : "Recording") : "Recording"; btns.appendChild(a); }
+      if (POP && r.t.salami) { const a = document.createElement("a"); a.href = "/tools/timestamp-notes.html?salami=" + r.t.salami; a.className = "ct-salami"; a.textContent = "Billboard chords"; a.title = "This song's McGill Billboard chord analysis, sections and bars, in Timestamp Notes"; btns.appendChild(a); }
+      if (POP && r.t.also) { const a = document.createElement("a"); a.href = "?song=" + encodeURIComponent(r.t.grp); a.className = "ct-also"; a.textContent = "Also in " + r.t.also.join(", "); a.title = "The same song's sections in the other collection(s)"; btns.appendChild(a); }
       const m = c.querySelector(".ct-meta"), rec = r.rec;
       const bits = [
         r.t.key.replace(/m$/, " minor").replace(/b/g, "♭").replace(/#/g, "♯") + (r.t.minor && r.t.modeFrom === "melody" ? " (guessed)" : r.t.minor ? "" : " major"),
@@ -179,6 +242,17 @@
         "range " + pname(r.t.lo) + "–" + pname(r.t.hi) + " (" + r.t.range + ")", "largest leap " + r.t.maxLeap,
         rec.startDegree ? "starts on " + rec.startDegree : "", r.t.chromatic ? r.t.chromatic + " outside the key" : "", r.t.fixed ? "hand-corrected" : "", r.t.barOne ? "bar numbers from one score" : "", hasRn(r.t) ? "Roman numerals: When in Rome" + (r.t.bar ? "" : ", bar 1 assumed") : "", r.t.twoVoice ? "melody of a two-voice score" : "", r.t.from === "mtd" ? "corrected (MTD)" : "", /\boctave\b/.test(r.t.repaired || "") ? "octave lowered (guessed)" : "",
       ];
+      if (POP) {   // the dataset's own figures; genre and decade as chips too
+        const f = (v, d) => (v === undefined ? "" : (+v).toFixed(d));
+        const kn = (x) => x.replace(/b/g, "♭").replace(/#/g, "♯");
+        bits.splice(0, bits.length, r.t.set, (r.t.genre || []).join(" / "), decade(r.t),
+          r.t.mode ? kn(r.t.mode) : kn(r.t.key).replace(/m$/, " minor") + (r.t.minor ? (r.t.modeFrom === "chords" ? " (from the chords)" : "") : " major"), rec.meterStr,
+          (r.t.qpm || r.t.bpm) + " per quarter", r.t.set === "RS200" ? "note lengths approximate" : "", (rec.measures || r.t.bars) + " bars" + (rec.hasPickup ? " + pickup" : ""), r.t.n + " notes",
+          "range " + pname(r.t.lo) + "–" + pname(r.t.hi) + " (" + r.t.range + ")", "largest leap " + r.t.maxLeap,
+          r.t.mic !== undefined ? "MIC " + f(r.t.mic, 2) : "", r.t.pstd !== undefined ? "pitch STD " + f(r.t.pstd, 2) : "", r.t.mis !== undefined ? "MIS " + f(r.t.mis, 2) : "",
+          r.t.od !== undefined ? "onsets/s " + f(r.t.od, 2) : "", r.t.npvi !== undefined ? "nPVI " + f(r.t.npvi, 1) : "", r.t.ric !== undefined ? "RIC " + f(r.t.ric, 2) : "",
+          r.t.tonal !== undefined ? "tonality " + f(r.t.tonal, 2) : "", r.t.fixed ? "hand-corrected" : "");
+      }
       bits.filter(Boolean).forEach((b) => { const s = document.createElement("span"); s.textContent = b; m.appendChild(s); });
       frag.appendChild(c); io.observe(c);
     });
@@ -334,7 +408,7 @@
   // ---- build (after first paint, so the page shows its controls straight away) ----
   const recOf = {};
   setTimeout(() => {
-    records = TuneLibrary.build({ "Classical themes": T.map((t) => abcOf(t)).join("\n") });
+    records = TuneLibrary.build({ [POP ? "Pop themes" : "Classical themes"]: T.map((t) => abcOf(t)).join("\n") });
     records.forEach((rec) => { const t = byId[rec.id]; if (t) recOf[rec.id] = { t, rec, rand: hash(t.id) }; });
     const pick = $("#ct-picker");
     TuneLibrary.renderPicker(pick, {
@@ -342,13 +416,24 @@
       onResults: (res) => { picked = res; apply(); },
     });
     // the tag of each theme is its composer; the movement rides in S: (the finder's search reads title, composer, source)
-    pick.querySelectorAll(".tl-facet > summary").forEach((s) => { if (s.textContent === "Tags") s.textContent = "Composer"; });
-    const box = pick.querySelector(".tl-search"); if (box) box.placeholder = "Search title, composer, movement or catalogue (Adagio, BWV 1046…)";
+    pick.querySelectorAll(".tl-facet > summary").forEach((s) => { if (s.textContent === "Tags") s.textContent = POP ? "Collection, section, decade, genre, artist" : "Composer"; });
+    const box = pick.querySelector(".tl-search"); if (box) box.placeholder = POP ? "Search title or artist (Beatles, Hey Jude…)" : "Search title, composer, movement or catalogue (Adagio, BWV 1046…)";
     status.textContent = "";
+    // ?song=<grp> (the "Also in" link): every section of that song in every collection that has it
+    const wantSong = POP && new URLSearchParams(location.search).get("song");
+    if (wantSong) {
+      Object.keys(popSel).forEach((k) => { popSel[k].value = ""; });   // (a saved filter must not hide the song's other sections)
+      picked = records.filter((rec) => recOf[rec.id] && recOf[rec.id].t.grp === wantSong); apply();
+      const one = T.find((t) => t.grp === wantSong);
+      status.textContent = "Showing one song in " + (one ? [one.set].concat(one.also).join(", ") : "several collections") + ". ";
+      const all = document.createElement("button"); all.type = "button"; all.textContent = "Show all sections";
+      all.addEventListener("click", () => { status.textContent = ""; history.replaceState(null, "", location.pathname); picked = null; apply(); });
+      status.appendChild(all);
+    }
     // ?theme=<id> (from the Tune Directory and the Recordings panel): that theme alone, with a way back to all
     const want = new URLSearchParams(location.search).get("theme");
-    if (want && recOf["cmt-" + want]) {
-      picked = records.filter((rec) => rec.id === "cmt-" + want); apply();
+    if (want && recOf[IDP + want]) {
+      picked = records.filter((rec) => rec.id === IDP + want); apply();
       status.textContent = "Showing one theme (No. " + want.replace(/^0+/, "") + "). ";
       const all = document.createElement("button"); all.type = "button"; all.textContent = "Show all themes";
       all.addEventListener("click", () => { status.textContent = ""; history.replaceState(null, "", location.pathname); picked = null; apply(); });

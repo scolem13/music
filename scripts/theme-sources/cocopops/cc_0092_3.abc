@@ -1,0 +1,22 @@
+X:1
+T:Shock The Monkey (bridge)
+C:Peter Gabriel, 1982
+%%cocopops cc_0092_3
+%%artist Peter Gabriel
+%%year 1982
+%%section bridge
+%%label Bridge (letter D)
+%%repeats 2
+%%mcgill 92
+%%peak 29
+%%file PeterGabriel_ShockTheMonkey_1982
+% CoCoPops/Billboard/Data/PeterGabriel_ShockTheMonkey_1982.varms.hum (CC BY-NC 4.0): section from bar-time 57 to 77; chords from **harte; 33 notes
+M:4/4
+L:1/8
+Q:1/4=149
+K:Dm
+"D5"F D2 z z4 | z4 z2 A2 | "C5"G2 z2 z4 | E/E3/2 F2 E2 D2 |
+"Dm"z8 | z8 | "C5"z8 | "Csus4"G2 F2 E2 D2- |
+"Dm"D z z2 z4 | z8 | "C"z2 G2 GFGF | "Csus4"A G2 G- GF3/2 z/ z |
+"Bb"z8 | z4 z G,2 z | z8 | z4 z G,2 z |
+z8 | z4 z G,2 z | "Csus4"z A2 G (3:2:3G2 F2 G2 | "Dm"A2 z2 G2 F2 ]

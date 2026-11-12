@@ -1,0 +1,21 @@
+X:1
+T:Rock & Roll Music (chorus)
+C:Chuck Berry, 1957
+%%rs200 rs_128_1
+%%artist Chuck Berry
+%%year 1957
+%%section chorus
+%%label Chorus
+%%repeats 5
+%%rank 128
+%%file ChuckBerry_RockAndRollMusic_1957
+%%link https://www.youtube.com/watch?v=pufTZyykLlw
+% CoCoPops/RollingStone/Data/ChuckBerry_RockAndRollMusic_1957.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 1 to 15; chords from **harte; 56 notes
+M:4/4
+L:1/8
+Q:1/4=164
+K:Eb
+"Eb"C2 B,2 B,2 G,B,- | B, C3- C3 _D- | _DDCA, B,2 G,B,- | B, E,3- E,2 _DB, |
+"Ab"_D2 C2 B, G,2 B,- | B, C3- C3 _D- | "Eb"_DD C2 B,2 G,B,- | B, E,3- E,4 |
+"Bb"_DDCB,- B, G,2 B,- | B, C3- C3 B,- | B,B,A,A, G,2 F,E,- | "Eb"E,7 B,- |
+"Bb"B,B,A,A, G,2 F,E,- | "Eb"E,B,B,B, B,A, A,2 ]

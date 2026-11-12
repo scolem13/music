@@ -1,0 +1,34 @@
+X:1
+T:Good Vibrations (bridge)
+C:The Beach Boys, 1966
+%%rs200 rs_006_3
+%%artist The Beach Boys
+%%year 1966
+%%section bridge
+%%label Bridge
+%%repeats 1
+%%rank 6
+%%file TheBeachBoys_GoodVibrations_1966
+%%link https://www.youtube.com/watch?v=mdt0SOqPJcg
+%%mode Bb mixolydian
+% CoCoPops/RollingStone/Data/TheBeachBoys_GoodVibrations_1966.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 96 to 189; chords from **harte; 139 notes
+M:12/8
+L:1/8
+Q:1/4=217
+K:Eb
+"Eb"C3 D3 | "Bb"z6 "Eb"z6 | "Bb"z6 "Eb"z6 | "Bb"z6 "Eb"z6 |
+"Bb"z3 B,3 "Eb"E3 D3 | "Bb"B,3 E3 "Eb"D6- | "Bb"D3 B,3 "Eb"E3 D3 | "Bb"B,3 E3 "Eb"D6- |
+"Bb"D3 B,3 "Eb"E3 D3 | "Bb"B,3 E3 "Eb"D6- | "Bb"D3 B,3 "Eb"E3 D3 | "Bb"B,3 E3 "Eb"D4- DA, |
+B,2 B,- B,2 B,- B,2 A, G,2 A,- | A,2 B,- B,2 B,- B,2 A, G,3- | G,6 "Ab"C6 | "Eb"B,4- B,A,- "Ab"A,3 G,2 F,- |
+"Bb"F,2 B,,- B,,3 "Eb"A2 G- G3 | "Bb"F4- FE- "Eb"E3 _D2 E- | "Bb"E2 B,- B,3- "Eb"B,6 | "Bb"z6 "Eb"z6 |
+"F"z12 | z12 | "Gm"z12 | "C"z12 |
+"F"z3 =A,3- A,3 ^G,2 A,- | =A,2 C,- C,3 D,2 D, F,3- | "Gm"F,3 G,2 G,- G,2 G,- G,2 G, | "C"=A,3 G,3 F,2 D,- D,3- |
+"F"D,3 =A3- A3 ^G2 A- | =A2 C- C3 D2 D F3- | "Gm"F3 G2 G- G2 G- G2 G | "C"=A3 G3 F2 D- D3- |
+"F"D3 =A3- A3 ^G2 A- | =A2 C- C3 D2 D F3- | "Gm"F3 G2 G- G2 G- G2 G | "C"=A12 |
+"F"z12 | z12 | "Gm"z12 | "C"z12 |
+"F"z12 | z12 | "F(135b7911)"e12 | z12 |
+"Bb"d6 "Eb"e6 | "Bb"f4- fB- "Eb"B2 B- B2 c- | "Bb"c2 d- d3- "Eb"d6 | "Bb"z6 "Eb"z6 |
+"Ab"c6 "Db"_d6 | "Ab"e4- eA- "Db"A2 A- A2 B- | "Ab"B2 c- c3- "Db"c6 | "Ab"z6 "Db"z6 |
+"F#"z12 | z12 | ^F2 ^G ^A2 =B ^c6 | ^d2 ^c ^A3- A6 |
+"Ab"A2 B c2 _d e6 | f2 e c3- c6 | "Bb"B2 c d2 e f6 | g2 f d3- d6 |
+"Ab"A2 B c2 _d e6 | f2 e c3- c6 ]

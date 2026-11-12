@@ -1,0 +1,21 @@
+X:1
+T:Georgia On My Mind (verse)
+C:Ray Charles, 1960
+%%rs200 rs_044_1
+%%artist Ray Charles
+%%year 1960
+%%section verse
+%%label Verse
+%%repeats 3
+%%rank 44
+%%file RayCharles_GeorgiaOnMyMind_1960
+%%link https://www.youtube.com/watch?v=-DFhuE_XeT8
+% CoCoPops/RollingStone/Data/RayCharles_GeorgiaOnMyMind_1960.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 6 to 30; chords from **harte; 50 notes
+M:12/8
+L:1/8
+Q:1/4=96
+K:G
+"G"z3 z2 B,- B,/ D2- D/- D3- | "B7"D4- D3/2B,/- B,/ A,2- A,/- A,3- | "Em"A,6 "G7/D"B,E3/2D/- DB,A,/G,/- | "C7"G,6- "C#dim7"G,4- G,G, |
+"G/D"A, B,2 D3/2E3/2- "E7"E6- | "A7"E4- EG, "D7"A,G,B,- B,/B,B,3/2 | "F7"z6 "E7"z6 | "A7"z6 "D7"z3 z B,B,/B,/ |
+"G"E3/2DD/ E3- E6- | "B7"E4- E/B,3/2 A,6- | "Em"A,6 "G7/D"B,E3/2D/- D3/2B,/A,/G,/- | "C7"G,E,G,- G,2 A,- "C#dim7"A,4- A,3/2G,/- |
+"G/D"G,/A,3/2B, D3/2E3/2- "E7"E6- | "A7"E7/2 E,/B,3/2G,/- "D7"G,3 G,G,G, ]

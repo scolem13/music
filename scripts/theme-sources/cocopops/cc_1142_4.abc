@@ -1,0 +1,19 @@
+X:1
+T:A Hard Day's Night (solo)
+C:The Beatles, 1964
+%%cocopops cc_1142_4
+%%artist The Beatles
+%%year 1964
+%%section solo
+%%label Solo (letter B)
+%%repeats 1
+%%mcgill 1142
+%%peak 1
+%%file TheBeatles_AHardDaysNight_1964
+% CoCoPops/Billboard/Data/TheBeatles_AHardDaysNight_1964.varms.hum (CC BY-NC 4.0): section from bar-time 46 to 58; chords from **harte; 25 notes
+M:4/4
+L:1/8
+Q:1/4=137
+K:G
+"G"E =F^F | "C"GF=FE z G G^G | "D"A_AGF z B, CB, | "G"D G,3 "C"_B, C2 B,- |
+"G"_B, z z2 D G2 F ]

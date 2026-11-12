@@ -1,0 +1,22 @@
+X:1
+T:Something About You (verse)
+C:Level 42, 1986
+%%cocopops cc_0158_1
+%%artist Level 42
+%%year 1986
+%%section verse
+%%label Verse (letter B)
+%%repeats 2
+%%mcgill 158
+%%peak 7
+%%file Level42_SomethingAboutYou_1986
+% CoCoPops/Billboard/Data/Level42_SomethingAboutYou_1986.varms.hum (CC BY-NC 4.0): section from bar-time 8 to 26; chords from **harte; 67 notes
+M:4/4
+L:1/8
+Q:1/4=105
+K:E
+"E"B,4- B, z z2 | "C#m7"z4 B,3/2A,3/2 G, | "D"F, F,2 z z2 z F,/G,/ | "Bm"A,2 z2 A,3/2G,3/2 F, |
+"E"G,3/2E,3/2 z E,F,G,B,- | "C#m7"B, z z B,, B,3/2A,3/2 G, | "D"F, F,2 z z2 z F,/G,/ | "Bm"A,2 z2 A,3/2G,3/2 F, |
+"E"G,3/2E,3/2 z z4 | "C#m7"z2 z B,, B,3/2A,3/2 G, | "D"F, F,2 z z2 z F,/G,/ | "Bm"A,2 z B,, A,3/2G,3/2 F, |
+"E"G,3/2B,3/2 z E,F, G,B,/C/ | "C#m7"B,2 z2 B,3/2A,3/2 G, | "D"F, F,2 z z2 z F,/G,/ | "Bm"A,2 G,F, F,2 G,E, |
+"E"E,8 ]

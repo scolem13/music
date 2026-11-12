@@ -1,10 +1,16 @@
 // Classical Themes (tools/classical-themes.qmd): the finder's filters narrow the themes, the sorts order them, Show N pages them,
 // All lays out every one (drawing only what is near the screen), Play plays one. Run after rendering it:
-//   quarto render tools/classical-themes.qmd; node tests/lessons/classical-themes.cdp.js
+//   sh scripts/render-test-page.sh tools/classical-themes.qmd; node tests/lessons/classical-themes.cdp.js
+//   (RAW=1 node ... when Quarto cannot run)
+// (the page from the test site, /apps/ from the source tree, so the newest scripts run)
 const http = require("http"), fs = require("fs"), path = require("path");
-const ROOT = path.resolve(__dirname, "../.."), SITE = ROOT + "/_site", { launch } = require(ROOT + "/tests/band/lead/cdp.js");
+const ROOT = path.resolve(__dirname, "../.."), SITE = ROOT + "/tests/band/lead/site", { launch } = require(ROOT + "/tests/band/lead/cdp.js");
 const type = f => f.endsWith(".js") ? "text/javascript" : f.endsWith(".css") ? "text/css" : "text/html";
-const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURIComponent(q.url.split(/[?#]/)[0]));
+// RAW=1: the page from its .qmd's HTML block, no Quarto (which needs macOS 14)
+const raw = process.env.RAW ? require("./qmd-raw-page.js")(ROOT + "/tools/classical-themes.qmd") : null;
+const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.split(/[?#]/)[0]);
+  if (raw && u === "/tools/classical-themes.html") { s.writeHead(200, { "content-type": "text/html" }); s.end(raw); return; }
+  const f = u.startsWith("/apps/") ? path.join(ROOT, u) : path.join(SITE, u);
   fs.readFile(f, (e, d) => { if (e) { s.writeHead(404); s.end(); return; } s.writeHead(200, { "content-type": type(f) }); s.end(d); }); }).listen(8531);
 (async () => {
   const b = await launch({ args: ["--autoplay-policy=no-user-gesture-required"] });

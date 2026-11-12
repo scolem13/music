@@ -1,0 +1,18 @@
+# Pop Themes (tools/pop-themes.qmd): where its melodies come from. Checked 11 Nov 2026 (dataset files, repositories, the corpora's READMEs).
+# BiMMuDa: licence unverified (page behind the site password). CoCoPops: CC BY-NC 4.0 (README, verbatim). RS200: CC BY 4.0 (the corpus site). Lyrics are never used.
+PT = "tools/pop-themes.qmd"
+SOURCES = [
+    web('*BiMMuDa: A Billboard Melodic Music Dataset (1950–2022)*. GitHub. URL.',
+        "https://github.com/tismirapplicant2/BiMMuDa", [PT], who="teacher",
+        note="The BiMMuDa collection's melodies (main melody of each section of the Billboard year-end top-five singles, 1950-2022), converted to ABC by scripts/convert-bimmuda.py, with the dataset's keys, modes, tempi and melody statistics. The repository shows no licence: licence unverified, so the page stays behind the site password; no lyrics are used. The repository (the git remote of the downloaded copy) is the anonymous one from the paper's review, so no authors are named here; the published paper (believed to be by Hamilton and Pearce, from memory, not checked) should be cited once its reference is confirmed."),
+    web('Arthur, Claire, and Nathaniel Condit-Schultz. "The Coordinated Corpus of Popular Musics (CoCoPops): A Meta-Corpus of Melodic and Harmonic Transcriptions." *Proceedings of the 24th International Society for Music Information Retrieval Conference*, 2023. URL.',
+        "https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops", [PT], who="teacher",
+        note="The CoCoPops collection: 214 Billboard Hot 100 songs (1958-1991, McGill Billboard ids) with melodic transcriptions and their chords, one ABC per distinct section, converted by scripts/convert-cocopops.py (main vocal line, no lyrics read). Licence, from the README: \"Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) ... you are free to share and adapt the data for non-commercial purposes, provided you give appropriate credit, link to the license, and indicate if changes were made\": changes made here are the conversion to ABC, the choice of one melody to a distinct section and chord symbols written from its Harte chords. Paper title, authors and venue as the README names them; page numbers not checked. Commit 0958afa6 (2026-10-19)."),
+    web('de Clercq, Trevor, and David Temperley. "A Corpus Analysis of Rock Harmony." *Popular Music*, vol. 30, no. 1, 2011. URL.',
+        "https://rockcorpus.midside.com/", [PT], who="teacher",
+        note="The RS200 collection: the Rolling Stone 200 rock corpus (melodic transcriptions, harmonic analyses by both authors, timing), CC BY 4.0 (\"it can be freely used and adapted in academic or commercial projects, without our permission, as long as appropriate credit is given\"). Used through CoCoPops' Humdrum translation of it (so under CoCoPops' CC BY-NC 4.0 as well), which adds the formal sections and absolute chord symbols; the original v2.1 files were used to check that the translation kept every note onset (scripts/check-cocopops-source.py). The corpus records only when each note starts, so the converted note lengths are approximate. Songs from Rolling Stone's 2004 list of the 500 greatest songs. Volume and issue from memory of the journal's record; page numbers not checked."),
+    web('MusicBrainz. *MusicBrainz Web Service*. URL.', "https://musicbrainz.org/doc/MusicBrainz_API", [PT], who="teacher",
+        note="Recording and artist tags and genres (CC0 data), the first source of the genre labels (scripts/bimmuda-genres.py)."),
+    web('Wikidata. *Wikidata Query Service*. URL.', "https://query.wikidata.org/", [PT], who="teacher",
+        note="Genre (P136) of the songs and artists, the second source of the genre labels (CC0)."),
+]

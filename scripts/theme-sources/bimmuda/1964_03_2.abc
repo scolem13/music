@@ -1,0 +1,16 @@
+X:1
+T:Hello, Dolly! (chorus)
+C:Louis Armstrong, 1964
+%%bimmuda 1964_03_2
+%%artist Louis Armstrong
+%%year 1964
+%%section chorus
+% BiMMuDa 1964_03_2: C Major (CSV tonic; written in C), CSV BPM 156, 45 note events in the CSV (Hamilton & Pearce, BiMMuDa; licence unverified)
+M:4/4
+L:1/8
+Q:1/4=157
+K:C
+z2 A,2 A,2 E,2 | G,2 z2 z2 E,C, | z4 E,2 G,2 | A,2 z2 z2 E,C, |
+z4 E,E,G,G, | D2 z D D2 D2 | z2 z D D2 C2 | A,2 z2 z4 |
+C2 z2 z4 | z2 C2 z2 A,2 | G,2 z2 E,G, z2 | CC z A, C2 A,2 |
+G,2 z2 E,G, z2 | E E3 z2 C2 | E2 CE- E2 E2 | C2 ]

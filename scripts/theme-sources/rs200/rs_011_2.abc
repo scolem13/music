@@ -1,0 +1,19 @@
+X:1
+T:My Generation (chorus)
+C:The Who, 1965
+%%rs200 rs_011_2
+%%artist The Who
+%%year 1965
+%%section chorus
+%%label Chorus
+%%repeats 2
+%%rank 11
+%%file TheWho_MyGeneration_1965
+%%link https://www.youtube.com/watch?v=lJW_2wLt704
+%%mode G dorian
+% CoCoPops/RollingStone/Data/TheWho_MyGeneration_1965.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 20 to 24; chords from **harte; 8 notes
+M:4/4
+L:1/8
+Q:1/4=195
+K:F
+"G"z2 B,2- B,4- | B,3 C- C2 C=B, | C2 =B,2 G,2 G,2 ]

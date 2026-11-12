@@ -1,0 +1,19 @@
+X:1
+T:Two Hearts (chorus)
+C:Phil Collins, 1989
+%%cocopops cc_0043_2
+%%artist Phil Collins
+%%year 1989
+%%section chorus
+%%label Chorus (letter A)
+%%repeats 6
+%%mcgill 43
+%%peak 1
+%%file PhilCollins_TwoHearts_1989
+% CoCoPops/Billboard/Data/PhilCollins_TwoHearts_1989.varms.hum (CC BY-NC 4.0): section from bar-time 33 to 41; chords from **harte; 22 notes
+M:4/4
+L:1/8
+Q:1/4=156
+K:G
+"C"B,3 A,- A,4 | z2 z D, G,G, F,2 | "D"A,4 A,3 B,- | "G"B,4 (3:2:3G,2 A,2 B,2 |
+"C"B,3 A,- A,4 | z4 G,G, F,2 | "D"A,4 D3 B, | "G"A, G,3 ]

@@ -1,0 +1,19 @@
+X:1
+T:Red Red Wine (chorus)
+C:UB40, 1984
+%%cocopops cc_0083_1
+%%artist UB40
+%%year 1984
+%%section chorus
+%%label Chorus (letter A)
+%%repeats 5
+%%mcgill 83
+%%peak 1
+%%file UB40_RedRedWine_1984
+% CoCoPops/Billboard/Data/UB40_RedRedWine_1984.varms.hum (CC BY-NC 4.0): section from bar-time 1 to 9; chords from **harte; 24 notes
+M:4/4
+L:1/8
+Q:1/4=89
+K:Db
+"Db"D4 "Gb"B,2 z2 | "Ab/Eb"z4 "Gb/Ab"E3/2F G3/2 | "Db"FD/B,/ D3/2B,/- "Gb"B, z z2 | "Ab/Eb"z4 "Gb/Ab"E3/2F3/2 G |
+"Db"F3/2D D/ z "Gb"z4 | "Ab/Eb"z4 "Gb/Ab"B,/A,A,3/2 G,/A,/- | "Ab"A,/A,B,/ A,2 ]

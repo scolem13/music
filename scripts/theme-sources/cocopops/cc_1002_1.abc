@@ -1,0 +1,22 @@
+X:1
+T:Freeze-Frame (verse)
+C:The J. Geils Band, 1982
+%%cocopops cc_1002_1
+%%artist The J. Geils Band
+%%year 1982
+%%section verse
+%%label Verse (letter B)
+%%repeats 4
+%%mcgill 1002
+%%peak 4
+%%file TheJGeilsBand_FreezeFrame_1982
+% CoCoPops/Billboard/Data/TheJGeilsBand_FreezeFrame_1982.hum (CC BY-NC 4.0): section from bar-time 20 to 44; chords from **harte; 52 notes
+M:4/4
+L:1/8
+Q:1/4=186
+K:C
+"C"z2 C_B, CCCC | E2 C2 _B,2 C2 | "Bb"z2 _B,2 B,2 C_E- | "F"_E D3 C2 A,C- |
+"C"C3 A, G,4 | z8 | "Bb"z2 _B,2 B,2 C2 | "F"_E2 D2 C2 _B,C- |
+"C"C3 A, G,4 | z8 | "Bb"z2 _B,2 B,2 C2 | "F"_E D3 C2 A,C- |
+"C"C3 A, G,4 | z8 | "Bb"_B,2 B,2 B, C2 _E- | "F"_E3 D C2 _B,=B,- |
+"G"B,8- | B,4- B,A, G,2 | "F"A,8 ]

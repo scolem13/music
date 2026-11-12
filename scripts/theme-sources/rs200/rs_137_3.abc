@@ -1,0 +1,19 @@
+X:1
+T:Eleanor Rigby (chorus)
+C:The Beatles, 1966
+%%rs200 rs_137_3
+%%artist The Beatles
+%%year 1966
+%%section chorus
+%%label Chorus
+%%repeats 3
+%%rank 137
+%%file TheBeatles_EleanorRigby_1966
+%%link https://www.youtube.com/watch?v=HuS5NuXRb5Y
+% CoCoPops/RollingStone/Data/TheBeatles_EleanorRigby_1966.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 18 to 26; chords from **harte; 24 notes
+M:4/4
+L:1/8
+Q:1/4=137
+K:Em
+"Em7"A,2 G,A,- A,2 B,G,- | "A7/E"G, E,3- E,2 E,E- | "C/E"E2 B,A,- A, G,2 E, | "Em"z8 |
+"Em7"A,2 G,A,- A,2 B,G,- | "A7/E"G, E,3- E,2 E,G- | "C/E"G2 EB,- B, A,2 G, ]

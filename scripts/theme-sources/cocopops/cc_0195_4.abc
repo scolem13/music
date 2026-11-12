@@ -1,0 +1,20 @@
+X:1
+T:School's Out (bridge)
+C:Alice Cooper, 1972
+%%cocopops cc_0195_4
+%%artist Alice Cooper
+%%year 1972
+%%section bridge
+%%label Bridge (letter E)
+%%repeats 2
+%%mcgill 195
+%%peak 7
+%%file AliceCooper_SchoolsOut_1972
+%%keyfrom chords
+% CoCoPops/Billboard/Data/AliceCooper_SchoolsOut_1972.hum (CC BY-NC 4.0): section from bar-time 42 to 50; chords from **harte; 16 notes
+M:4/4
+L:1/8
+Q:1/4=137
+K:Gm
+"C"G4 ^F4 | =E4 ^F2 z2 | G4 ^F4 | =E4 ^F2 z2 |
+"D"G4 ^F4 | =E4 ^F2 z2 | G4 ^F4 | =E2 z G- G4 ]

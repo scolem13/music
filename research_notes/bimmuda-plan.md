@@ -1,0 +1,40 @@
+# BiMMuDa / Pop Themes: what is done and what is not
+
+Done (11 Nov 2026): the Pop Themes page (`tools/pop-themes.qmd`), 1,104 BiMMuDa sections converted, CSV statistics as sorts, genres from MusicBrainz and Wikidata, chords from the McGill Billboard analyses where a song is in both. See `apps/themes/CLAUDE.md`. Licence of the dataset unverified: behind the site password only; no lyrics.
+
+Also done (11 Nov 2026): two more collections on the same page, with a Collection filter: **CoCoPops** (CC BY-NC 4.0; 793 sections of 214 Billboard songs, chords from the corpus) and **RS200** (CC BY 4.0, via CoCoPops' Humdrum copy; 514 sections of 194 songs, chords from the corpus, note lengths approximate: the source records onsets only). 44 songs are in more than one collection (kept in all, linked, `?song=`); songs with a McGill id link to Timestamp Notes `?salami=<id>`. Credits in `scripts/sources/pop-themes.py`. Open points for these two: the RS200's note lengths (a listening check, or the `.tim` timing plus the audio, could fix them); the 6 RS200 songs with no vocal melody in the corpus (rap, spoken: Nuthin' but a G Thang, The Message, Foxey Lady, Rock Lobster, Sabotage, God Save the Queen) and the sections the converter could not write (a 7/16-bar tuplet, irregular bar lengths, a 23-division timebase: listed by the converter); a section's repeats are not shown (only the first verse / chorus of each letter); BiMMuDa's chords from `bimmuda-salami.mjs` could be replaced by the CoCoPops chords for the 14 songs in both (the melodies differ in key and register, so the alignment would need the same fit test).
+
+Not done, in a sensible order:
+
+1. **Repetition / hook detection.** Find repeated figures inside and across sections (n-gram of intervals plus rhythm, or a self-similarity matrix of the melody); score how much of a section is repeated and where the hook sits. Validate on the 19 sections the dataset labels `hook`: the detector should put the hook on or inside them. Output as sort values ("share repeated", "hook position").
+2. **Contour and range.** Phrase contour (arch, rise, fall, flat), range per section, tessitura, the highest note's place in the section; compare by decade and genre.
+3. **Syncopation.** Share of onsets off the beat and of notes tied over a beat; a standard index (Longuet-Higgins and Lee, or Witek) per bar; compare decades.
+4. **Blues-degree share.** How often b3, b5 and b7 (and the major 3rd against a minor chord) sound against the key; by decade and genre. `chromatic` in the data already counts notes outside the key's own scale, which is a start.
+5. **Works entries.** One Works entry per song with the Spotify / YouTube link as a recording (the links are in the data as `yt`), and overlap with the Tune Library through `node scripts/works-suggest.mjs` (extend it to read `pop-themes-data.js`; the ids are `<year>_<position>_<section>`, `cc_<McGill id>_<n>`, `rs_<rank>_<n>`). The Billboard SALAMI link is done as a card link, not a Works entry. Chords for more sections: let a melody sit inside a longer Billboard section (an 8-bar chorus in a 16-bar one) at offsets other than -2..+2, and try the relative major / minor as a second shift.
+6. **"Pop Melody by the Numbers".** A statistics page: the dataset's figures by decade and genre (medians with spread, not just means), with the same charts as the rest of the site's data pages; this is the page the sorts were built to feed.
+7. Smaller: cite the published paper (the repository's remote is the anonymous review copy; authors and venue to be confirmed); the 120 sections whose MIDI note count differs from the CSV's `Number of Note Events` by more than 10% (CSV and MIDI may describe different sections; look at 1950_03_1, 1951_03_1, 1959_02_3); five songs with no melody (`extra_info.txt`) and 29 CSV rows with no MIDI file; two sections' pitch spelling hand fixes in `scripts/theme-fixes/` if any are wrong when listened to; chords for songs outside the Billboard set (none are free).
+
+## Hooktheory on the site (plan, not built)
+
+Data: `~/Projects/corpora/hooktheory/` (Hooktheory / Sheet Sage dataset, CC BY-NC-SA 3.0: non-commercial, share-alike, user contributions under Hooktheory's terms). `~/Projects/corpora/hooktheory/hooktheory-index.csv` (made by `~/Projects/corpora/scripts/hooktheory-csv.py`) lists all 26,175 sections. Every one has a YouTube video; 17,980 have a beat-by-beat refined alignment (beat -> seconds), 4,237 only a start and end (interpolate the beats), 3,958 none.
+
+Plan:
+1. A **fourth Pop Themes collection** ("Hooktheory"): `~/Projects/corpora/scripts/hooktheory-to-abc.py` (schema in `~/Projects/corpora/scripts/SCHEMA.md` there) writes one ABC per section with chords; import it as another set in `scripts/import-themes.mjs` (`set: "Hooktheory"`, ids `ht_<id>`), the page's Collection select and card text extended, genres by the same MusicBrainz route (title + artist are in the index), duplicates against the other collections grouped as now (`also` / `grp`).
+2. **Play from the recording**: each section a Works recording (its YouTube video, `start` / `end`) with `timing` + `bar1`, so `RecSync` (`apps/shared/rec-sync.js`) lights the current bar while the video plays; bar times from the refined alignment where there is one, interpolated from start / end otherwise, no recording button where there is neither.
+3. **Filter out game and library music by default** (Nintendo, Kevin MacLeod, ZUN, Sega, ... the top of `~/Projects/corpora/hooktheory/stats.txt`): a "Include game / library music" checkbox, off.
+4. Licence: CC BY-NC-SA 3.0, credit in `scripts/sources/pop-themes.py`; share-alike means anything derived and published is under the same terms, so keep the page behind the site password until that is settled. Lyrics: none in the data.
+
+### Priority tiers (`~/Projects/corpora/scripts/hooktheory-priority.py` -> `hooktheory/hooktheory-priority.csv`, columns `priority`, `why`)
+
+Priority 1 is sections that are not classical and not game / library music, with melody, chords and refined (beat-by-beat) timing. Classical entries are lower priority: their notation is worse than what the site has (Classical Themes / MTD, analysed scores), so they are used only as **timing maps for recordings**: match each to an existing theme / Work and borrow the YouTube timing, keeping the site's notation.
+
+| tier | meaning | sections |
+|---|---|---|
+| 1 | pop / rock / etc., melody + chords + refined timing (includes 17 sections of a short named whitelist of mega-hit game themes) | 13,811 |
+| 2 | the same but start / end timing only (3,104), no timing (2,645), no melody (2,197) or no harmony (170) | 8,116 |
+| 3 | classical, for timing only (Joplin 96, Mozart 73, Beethoven 65, Bach 57, Chopin 28, Grieg, Tchaikovsky, Liszt, Vivaldi, Satie, Debussy ...) | 464 |
+| 4 | game / library music, excluded by default | 3,784 |
+
+Where the lists live: `GAME_LIBRARY` (artist slugs: Nintendo, Kevin MacLeod, ZUN, Sega, Silent Partner, Toby Fox, Game Freak, Josh Woodward, Koji Kondo, Nobuo Uematsu, Homestuck, Capcom, Konami, C418, Disney ...), `CLASSICAL` (composer slugs: Mozart, Beethoven, Bach, Chopin, Joplin, Debussy, Satie, Vivaldi, Schubert, Brahms, Tchaikovsky, Liszt, Handel, Grieg, Ravel ...) and `WHITELIST` (anchored song titles of Nintendo / Koji Kondo / Toby Fox: Super Mario Bros overworld / underground / castle, Super Mario World and 64 and Odyssey and 3D World main themes, Zelda main theme, Gerudo Valley, The Great Sea, Tetris theme, Megalovania, Wii Sports theme) are at the top of that script. They are heuristic: extend them from `hooktheory/stats.txt` when a game or library artist slips into tier 1. Build order: tier 1 first, tier 2 next (timing interpolated), tier 3 only as timing maps, tier 4 behind an "include game / library music" checkbox.
+
+Note on coverage: the dataset is a 2022 snapshot, so songs can be partial (e.g. Bowie's "Changes" has only its chorus). Hooktheory's terms forbid scraping TheoryTab, so missing sections can only come from a written data licence from Hooktheory, from Hookpad by hand, or from the site's own ABC editor.

@@ -1,0 +1,14 @@
+X:1
+T:Circles (verse)
+C:Post Malone, 2020
+%%bimmuda 2020_02_1
+%%artist Post Malone
+%%year 2020
+%%section verse
+% BiMMuDa 2020_02_1: C Major (CSV tonic; written in C), CSV BPM 120, 28 note events in the CSV (Hamilton & Pearce, BiMMuDa; licence unverified)
+M:4/4
+L:1/8
+Q:1/4=120
+K:C
+z B, B,B, B,2 B,B, | C4 z4 | z A, A,A, A, A,2 A, | G,2 z2 z4 |
+z B, B,B, B, z/ B, z/ B, | C4 z4 | z A, A,A, A, z/ G, z/ G, | E,4 ]

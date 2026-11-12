@@ -1,0 +1,14 @@
+X:1
+T:Don't Be Cruel (verse)
+C:Elvis Presley, 1956
+%%bimmuda 1956_02_1
+%%artist Elvis Presley
+%%year 1956
+%%section verse
+% BiMMuDa 1956_02_1: D Major (CSV tonic; written in D), CSV BPM 85, 24 note events in the CSV (Hamilton & Pearce, BiMMuDa; licence unverified)
+M:12/8
+L:1/8
+Q:1/4=255
+K:D
+A, B,2- B, | A,3 A,3 A,3 B,2 D | z12 | A,2 A, A,3 A,3 B,2 D |
+z12 | B,3 B,3 B,3 B,2 B, | z6 z3 B,3 | A,3 A,3 A,3 B,2 D ]

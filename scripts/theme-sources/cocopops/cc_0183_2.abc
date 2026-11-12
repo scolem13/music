@@ -1,0 +1,22 @@
+X:1
+T:Chiquitita (chorus)
+C:ABBA, 1979
+%%cocopops cc_0183_2
+%%artist ABBA
+%%year 1979
+%%section chorus
+%%label Chorus (letter C)
+%%repeats 2
+%%mcgill 183
+%%peak 29
+%%file ABBA_Chiquitita_1979
+% CoCoPops/Billboard/Data/ABBA_Chiquitita_1979.varms.hum (CC BY-NC 4.0): section from bar-time 39 to 119/2; chords from **harte; 100 notes
+M:4/4
+L:1/8
+Q:1/4=84
+K:A
+"D"A8- | [M:5/4] A2 z F/G/ AB A/G/F AF/G/ | [M:4/4] "A"AEDC- C4 | z2 CD/E/- EF GA/G/- |
+"E"G3 F/G/ "D"A3 F | "E"E2 z B,/C/ D2 D2 | "A"DC/B,3/2 C- C4- | C2 z F/G/ AB A/G/F |
+"D"A8- | [M:5/4] A2 z F/G/ AB A/G/F AB | [M:4/4] "A"cB/A/ cA- "A6"A4 | "Amaj7"z2 CD/E/- "A6"EFGB |
+"E"G3 F/G/ "D"A3 F | "E"E2 z D/E/ F2 F2 | "A"FE/D3/2 C- C4 | z4 B3 A |
+"E"G3 F/G/ "D"A3 F | "E"E2 z B,/C/ D2 D2 | "A"DC/B,3/2 A,- "D"A,4- | "A"A,3 C/D/ EF E/D/C ]

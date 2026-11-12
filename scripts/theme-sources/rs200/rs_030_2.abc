@@ -1,0 +1,21 @@
+X:1
+T:I Walk the Line (verse)
+C:Johnny Cash, 1956
+%%rs200 rs_030_2
+%%artist Johnny Cash
+%%year 1956
+%%section verse
+%%label Verse
+%%repeats 5
+%%rank 30
+%%file JohnnyCash_IWalkTheLine_1956
+%%link https://www.youtube.com/watch?v=Ut34Q_tM0JM
+% CoCoPops/RollingStone/Data/JohnnyCash_IWalkTheLine_1956.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 19 to 35; chords from **harte; 36 notes
+M:4/4
+L:1/8
+Q:1/4=211
+K:F
+"C"G,4 G,3 G,- | G,2 A,2 _A,2 G,2 | "F"F,8- | F,2 F,2 F,2 F,2 |
+"C"G,4 G,4 | G,2 _A,A,- A,2 G,2 | "F"F,8- | F,2 F,2 G,2 A,B,- |
+"Bb"B,4 B,4 | B,2 DC- C2 B,2 | "F"G,2 A,2- A,4- | A,2 F,E,- E,2 D,2 |
+"C"C,8- | C,2 G,2 F,2 E,2 | "F"F,8 ]

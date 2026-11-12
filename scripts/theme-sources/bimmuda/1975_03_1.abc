@@ -1,0 +1,16 @@
+X:1
+T:Elton John (verse)
+C:Philadelphia Freedom, 1975
+%%bimmuda 1975_03_1
+%%artist Philadelphia Freedom
+%%year 1975
+%%section verse
+% BiMMuDa 1975_03_1: C Minor (CSV tonic; written in Cm), CSV BPM 125, 62 note events in the CSV (Hamilton & Pearce, BiMMuDa; licence unverified)
+M:4/4
+L:1/8
+Q:1/4=125
+K:Cm
+F, | F,F,G,F, _DCB,B,- | B,B,G,B, z4 | z2 G,B, _DCB,B,- |
+B,2 z2 z2 _DC- | C/B,/G, z2 z G, B,B, | DFG_D CB,G,B,- | B,2 z2 z4 |
+z4 z2 z F, | F,F,G,F, _D2 CB, | C B,2 B, z4 | z2 G,B, _DCB,B,- |
+B,2 z2 z4 | z G, B,C DFG_D | C B,2 G,- G, B,2 B,- | B,2 ]

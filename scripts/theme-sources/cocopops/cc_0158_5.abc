@@ -1,0 +1,19 @@
+X:1
+T:Something About You (outro)
+C:Level 42, 1986
+%%cocopops cc_0158_5
+%%artist Level 42
+%%year 1986
+%%section outro
+%%label Fadeout (letter A)
+%%repeats 1
+%%mcgill 158
+%%peak 7
+%%file Level42_SomethingAboutYou_1986
+% CoCoPops/Billboard/Data/Level42_SomethingAboutYou_1986.varms.hum (CC BY-NC 4.0): section from bar-time 90 to 101; chords from **harte; 14 notes
+M:4/4
+L:1/8
+Q:1/4=105
+K:E
+"C"z =D2 z =C B,2 A,- | "D"A,3 z z4 | "E"z8 | z2 "F#m7"B,B, "E/G#"B, B,2 =C- |
+"C"=C2 =DB,- B, A,3 | "D"z4 z2 =DB,- | "E"B,3 ]

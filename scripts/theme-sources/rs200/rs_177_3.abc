@@ -1,0 +1,19 @@
+X:1
+T:Free Fallin' (bridge)
+C:Tom Petty, 1989
+%%rs200 rs_177_3
+%%artist Tom Petty
+%%year 1989
+%%section bridge
+%%label Bridge
+%%repeats 1
+%%rank 177
+%%file TomPetty_FreeFallin_1989
+%%link https://www.youtube.com/watch?v=1lWJXDG2i0A
+% CoCoPops/RollingStone/Data/TomPetty_FreeFallin_1989.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 46 to 54; chords from **harte; 21 notes
+M:4/4
+L:1/8
+Q:1/4=84
+K:F
+"F"z A,2 B,- "Bb"B,B,B,B,- | B,A,-"F"A,G,- "C"G,G,G,A, | "F"z4 "Bb"z4 | z2 "F"z2 "C"z4 |
+"F"z A,2 B,- "Bb"B,B,B,B,- | B,A,-"F"A,G,- "C"G,G, G,F,/G,/ ]

@@ -1,0 +1,26 @@
+X:1
+T:Thunder Road (verse)
+C:Bruce Springsteen, 1975
+%%rs200 rs_086_1
+%%artist Bruce Springsteen
+%%year 1975
+%%section verse
+%%label Verse
+%%repeats 3
+%%rank 86
+%%file BruceSpringsteen_ThunderRoad_1975
+%%link https://www.youtube.com/watch?v=6O3MO2y30fU
+% CoCoPops/RollingStone/Data/BruceSpringsteen_ThunderRoad_1975.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 8 to 40; chords from **harte; 135 notes
+M:4/4
+L:1/8
+Q:1/4=139
+K:F
+"C"F, | "F"C C3 C4- | "Bb"C3 B,- B, B,2 B,- | "F"B,A,/G,/ F,2- "C7"F,4- |
+"F"F,4- "C7"F,2 A,C | "F"CCCC- C C2 C | "C"C2 CC- C B,2 B, | "Bb"B, B,2 A, G, F,3- |
+F,4- F, B,3 | B,B,B,B, A,A,A,A, | "C"A,G, G,2- G, A,2 A, | "F"A,A,A,A,- A, C2 C |
+"Bb"B, B,3- B,CCC | CB,B,B,- B, B,2 B,- | "F"B, A,2 A,- A, A,2 A,- | "C"A,A,A,G,- G,G, G,2- |
+G,4- G, C3 | "F"CCCC- C2 CB, | "Bb"B, B,3 B,A,A,A,- | "F"A,A,/G,/ F,2- "C7"F,4- |
+"F"F,4- "C7"F,A,CC- | "F"C2 CC CC C2 | "C"CCCC- C C2 D- | "Bb"D4 C2 CB,- |
+B,4 FFFF | F2 B,B,- B,B,B,A, | "C"A, G,3- G,A,A,A, | "F"A,A,A,B,- B,B, C2 |
+"Bb"C2 B,2- B,4- | B,3 D- D3 C | "F"C C3 B, A,2 F, | "C"E,8- |
+E,4- E,F,F,F, ]

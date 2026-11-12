@@ -1,0 +1,133 @@
+<!doctype html>
+<!-- Theme Browser: a plain page (no Quarto build) to search the classical and pop theme collections and show their ABC.
+     Serve the repo root (python3 -m http.server) and open /apps/themes/browser.html. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theme Browser</title>
+<link rel="stylesheet" href="../shared/abcjs-audio.css" onerror="this.remove()">
+<style>
+:root { --bg:#fbfaf7; --fg:#1d1d1f; --muted:#6b6b70; --line:#dcdad3; --card:#fff; --accent:#2a5db0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#17171a; --fg:#e8e6e1; --muted:#9a9aa0; --line:#34343a; --card:#202024; --accent:#7aa7ff; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.45 system-ui, sans-serif; }
+main { max-width:1200px; margin:0 auto; padding:16px; }
+h1 { font-size:1.4rem; margin:0 0 4px; }
+.sub { color:var(--muted); margin:0 0 14px; }
+.controls { display:flex; flex-wrap:wrap; gap:8px 12px; align-items:end; margin-bottom:12px; }
+.controls label { display:flex; flex-direction:column; font-size:.8rem; color:var(--muted); gap:2px; }
+input, select, button { font:inherit; color:var(--fg); background:var(--card); border:1px solid var(--line); border-radius:6px; padding:5px 8px; }
+#q { width:min(340px, 90vw); }
+input[type=number] { width:80px; }
+button { cursor:pointer; }
+.bar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:8px 0; color:var(--muted); }
+#list { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 520px), 1fr)); gap:12px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:10px 12px; min-width:0; }
+.card h2 { font-size:1rem; margin:0; }
+.meta { color:var(--muted); font-size:.82rem; margin:2px 0 6px; }
+.card .acts { display:flex; gap:6px; flex-wrap:wrap; margin-top:6px; }
+.card .acts a, .card .acts button { font-size:.8rem; padding:3px 8px; text-decoration:none; color:var(--accent); border:1px solid var(--line); border-radius:6px; background:none; }
+.notation svg { max-width:100%; height:auto; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .notation svg { filter:invert(.9) hue-rotate(180deg); } }
+pre.abc { white-space:pre-wrap; font-size:.78rem; background:var(--bg); border:1px solid var(--line); border-radius:6px; padding:6px; margin:6px 0 0; }
+</style>
+</head>
+<body>
+<main>
+<h1>Theme Browser</h1>
+<p class="sub">Search the Classical Themes and Pop Themes collections and see each one's notation. Runs without Quarto.</p>
+<div class="controls">
+  <label>Search<input id="q" type="search" placeholder="title, artist, composer, catalogue no., id"></label>
+  <label>Collection<select id="coll"><option value="">All</option></select></label>
+  <label>Genre<select id="genre"><option value="">Any</option></select></label>
+  <label>Meter<select id="meter"><option value="">Any</option></select></label>
+  <label>Mode<select id="mode"><option value="">Any</option><option value="maj">Major</option><option value="min">Minor</option></select></label>
+  <label>Year from<input id="y0" type="number"></label>
+  <label>to<input id="y1" type="number"></label>
+  <label><span><input id="chords" type="checkbox" checked> Show chords</span></label>
+  <label><span><input id="src" type="checkbox"> Show ABC text</span></label>
+</div>
+<div class="bar"><button id="prev">← Previous</button><span id="count"></span><button id="next">Next →</button>
+  <label>Per page <select id="per"><option>12</option><option selected>24</option><option>48</option><option>96</option></select></label></div>
+<div id="list"></div>
+<div class="bar"><button id="prev2">← Previous</button><button id="next2">Next →</button></div>
+</main>
+<script src="../shared/abcjs-basic.js"></script>
+<script src="themes-data.js"></script>
+<script src="pop-themes-data.js"></script>
+<script>
+(() => {
+  const C = (window.CLASSICAL_THEMES || []).map(t => ({ ...t, set: "Classical", year: t.published }));
+  const P = window.POP_THEMES || [];
+  const ALL = C.concat(P);
+  const $ = id => document.getElementById(id);
+  const uniq = f => [...new Set(ALL.flatMap(f).filter(Boolean))].sort();
+  const fill = (sel, vals) => vals.forEach(v => sel.add(new Option(v, v)));
+  fill($("coll"), uniq(t => [t.set]));
+  fill($("genre"), uniq(t => t.genre || []));
+  fill($("meter"), uniq(t => [t.meter]));
+
+  const norm = s => (s || "").toString().normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  ALL.forEach(t => { t._s = norm([t.title, t.last, t.first, t.cat, t.movement, t.label, t.section, t.id, t.year].join(" ")); });
+
+  // URL state: ?q=&coll=&genre=&meter=&mode=&y0=&y1=&page=
+  const ids = ["q", "coll", "genre", "meter", "mode", "y0", "y1", "per"];
+  const qs = new URLSearchParams(location.search);
+  ids.forEach(k => { if (qs.has(k)) $(k).value = qs.get(k); });
+  let page = +qs.get("page") || 0;
+
+  function abcOf(t) {
+    let body = t.body || "";
+    if ($("chords").checked && t.chords)
+      t.chords.slice().sort((a, b) => b[0] - a[0]).forEach(([i, lab]) => { body = body.slice(0, i) + '"^' + lab.replace(/"/g, "") + '"' + body.slice(i); });
+    return ["X:1", "M:" + t.meter, "L:" + (t.unit || "1/8"), "Q:1/4=" + (t.qpm || 100), "K:" + (t.sigKey || t.key || "C"), body].join("\n");
+  }
+  function filtered() {
+    const words = norm($("q").value).split(/\s+/).filter(Boolean);
+    const c = $("coll").value, g = $("genre").value, m = $("meter").value, md = $("mode").value;
+    const y0 = +$("y0").value || -1e9, y1 = +$("y1").value || 1e9;
+    return ALL.filter(t => words.every(w => t._s.includes(w)) && (!c || t.set === c) && (!g || (t.genre || []).includes(g)) &&
+      (!m || t.meter === m) && (!md || (md === "min") === !!t.minor) &&
+      ((!$("y0").value && !$("y1").value) || (t.year >= y0 && t.year <= y1)));
+  }
+  let synth = null;
+  async function play(t, btn) {
+    if (synth) { synth.stop(); synth = null; if (btn.dataset.on) { btn.textContent = "▶ Play"; delete btn.dataset.on; return; } }
+    document.querySelectorAll("button[data-on]").forEach(b => { b.textContent = "▶ Play"; delete b.dataset.on; });
+    const vis = ABCJS.renderAbc(document.createElement("div"), abcOf(t))[0];
+    synth = new ABCJS.synth.CreateSynth();
+    await synth.init({ visualObj: vis }); await synth.prime(); synth.start();
+    btn.textContent = "■ Stop"; btn.dataset.on = 1;
+  }
+  function render() {
+    const rows = filtered(), per = +$("per").value, pages = Math.max(1, Math.ceil(rows.length / per));
+    page = Math.min(Math.max(0, page), pages - 1);
+    $("count").textContent = rows.length.toLocaleString() + " of " + ALL.length.toLocaleString() + " · page " + (page + 1) + " of " + pages;
+    const p = new URLSearchParams(); ids.forEach(k => { if ($(k).value && !(k === "per" && $(k).value === "24")) p.set(k, $(k).value); }); if (page) p.set("page", page);
+    history.replaceState(null, "", "?" + p);
+    const list = $("list"); list.textContent = "";
+    rows.slice(page * per, page * per + per).forEach(t => {
+      const d = document.createElement("div"); d.className = "card";
+      const who = [t.first, t.last].filter(Boolean).join(" ");
+      d.innerHTML = "<h2></h2><div class='meta'></div><div class='notation'></div><div class='acts'></div>";
+      d.querySelector("h2").textContent = t.title + (t.label ? " — " + t.label : t.movement ? " — " + t.movement : "");
+      d.querySelector(".meta").textContent = [who, t.set, t.year, t.cat, t.key + (t.minor ? " minor" : " major"), t.meter, (t.genre || []).join(", "), t.id].filter(Boolean).join(" · ");
+      list.appendChild(d);
+      const abc = abcOf(t);
+      ABCJS.renderAbc(d.querySelector(".notation"), abc, { responsive: "resize", add_classes: true, paddingleft: 0, paddingright: 0 });
+      const acts = d.querySelector(".acts");
+      if (window.ABCJS.synth && ABCJS.synth.supportsAudio()) { const b = document.createElement("button"); b.textContent = "▶ Play"; b.onclick = () => play(t, b); acts.appendChild(b); }
+      const cp = document.createElement("button"); cp.textContent = "Copy ABC"; cp.onclick = () => navigator.clipboard.writeText("T:" + t.title + "\n" + abc).then(() => cp.textContent = "Copied"); acts.appendChild(cp);
+      if (t.yt) { const a = document.createElement("a"); a.href = t.yt; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Recording"; acts.appendChild(a); }
+      if ($("src").checked) { const pre = document.createElement("pre"); pre.className = "abc"; pre.textContent = abc; d.appendChild(pre); }
+    });
+  }
+  let tm; const go = reset => { if (reset) page = 0; clearTimeout(tm); tm = setTimeout(render, 150); };
+  ids.concat(["chords", "src"]).forEach(k => $(k).addEventListener("input", () => go(k !== "chords" && k !== "src")));
+  [["prev", -1], ["next", 1], ["prev2", -1], ["next2", 1]].forEach(([k, s]) => $(k).onclick = () => { page += s; render(); scrollTo(0, 0); });
+  render();
+})();
+</script>
+</body>
+</html>

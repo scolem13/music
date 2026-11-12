@@ -1,0 +1,19 @@
+X:1
+T:Oh, Pretty Woman (bridge)
+C:Roy Orbison, 1964
+%%bimmuda 1964_04_2
+%%artist Roy Orbison
+%%year 1964
+%%section bridge
+% BiMMuDa 1964_04_2: A Major (CSV tonic; written in A), CSV BPM 127, 69 note events in the CSV (Hamilton & Pearce, BiMMuDa; licence unverified)
+M:4/4
+L:1/8
+Q:1/4=127
+K:A
+z2 =FF FE E2 | E D2 D- D2 z2 | z2 EE E2 D2 | D =C2 C- C2 z2 |
+z2 DD D2 =C2 | =C B,2 B, A,3 B, | =C8 | z8 |
+z2 =FF FE E2 | E D2 D- D2 z2 | z2 EE E2 D2 | D =C2 C- C2 z2 |
+z2 DD D2 =C2 | =C B,2 B, A,3 B, | =C8 | C6 B,A,- |
+A, G,2 A,- A,2 z2 | z2 A,2 B,3 A, | G,8 | z2 C2 B,2 A,2 |
+G,3 A,- A,2 z2 | z2 A,2 B,2 z A, | G,8 | B,8 |
+E8- | E4 ]

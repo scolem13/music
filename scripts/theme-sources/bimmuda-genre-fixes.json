@@ -1,0 +1,76 @@
+{
+"_comment": "Hand fixes for scripts/bimmuda-genres.py, keyed year_position as in the song CSV; they win over the MusicBrainz / Wikidata tags. Set from general knowledge of the songs (no source consulted); the first 19 had no tags at all, the last three were mis-tagged.",
+"1950_03": [
+"folk"
+],
+"1950_05": [
+"jazz/standards"
+],
+"1952_01": [
+"jazz/standards"
+],
+"1954_04": [
+"r&b/soul"
+],
+"1955_04": [
+"jazz/standards"
+],
+"1957_03": [
+"r&b/soul"
+],
+"1957_04": [
+"pop"
+],
+"1960_01": [
+"jazz/standards"
+],
+"1960_05": [
+"pop"
+],
+"1963_03": [
+"pop"
+],
+"1970_02": [
+"pop"
+],
+"1974_01": [
+"pop"
+],
+"1975_03": [
+"pop",
+"r&b/soul"
+],
+"1976_01": [
+"rock",
+"pop"
+],
+"1977_04": [
+"pop"
+],
+"1979_05": [
+"r&b/soul",
+"dance/disco"
+],
+"1980_05": [
+"pop"
+],
+"1994_02": [
+"r&b/soul"
+],
+"2003_04": [
+"r&b/soul",
+"hip-hop"
+],
+"1956_03": [
+"jazz/standards"
+],
+"1975_04": [
+"country"
+],
+"1969_02": [
+"pop"
+],
+"cc_0670": [
+"rock"
+]
+}

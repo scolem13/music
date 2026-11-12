@@ -1,0 +1,20 @@
+X:1
+T:Disco Inferno (chorus)
+C:The Trammps, 1977
+%%cocopops cc_0546_2
+%%artist The Trammps
+%%year 1977
+%%section chorus
+%%label Chorus (letter A)
+%%repeats 4
+%%mcgill 546
+%%peak 11
+%%file TheTrammps_DiscoInferno_1977
+%%keyfrom chords
+% CoCoPops/Billboard/Data/TheTrammps_DiscoInferno_1977.hum (CC BY-NC 4.0): section from bar-time 43 to 51; chords from **harte; 24 notes
+M:4/4
+L:1/8
+Q:1/4=130
+K:Cm
+"Bb"=AGFF "Gm"^FG z2 | "C"z4 z2 B,B, | B,C C2 z4 | "F"z8 |
+"Bb"(3:2:3F2 _G2 F2 "Gm"F =G3- | "C"GG/_G/ F z z2 B,B, | B,C C ]

@@ -1,0 +1,17 @@
+X:1
+T:Billie Jean (verse)
+C:Michael Jackson, 1983
+%%bimmuda 1983_02_1
+%%artist Michael Jackson
+%%year 1983
+%%section verse
+% BiMMuDa 1983_02_1: B Minor (CSV tonic; written in Bm), CSV BPM 117, 88 note events in the CSV (Hamilton & Pearce, BiMMuDa; licence unverified)
+M:4/4
+L:1/8
+Q:1/4=117
+K:Bm
+z2 CC CA,A,B, | A,C z B,/A,/ B,A, C z | z A, CC CA,/A,/ A,B, | A, C2 B,- B,A,^G,F,- |
+F,2 z2 z2 F,/^G,/F, | z2 F,/^G,/F, z2 F,/G,/F, | z8 | z F, A,B,- B,A,^G,F,- |
+F,2 z2 z2 F,/^G,/F, | z2 F,/^G,/F, z2 F,/G,/F, | z8 | z8 |
+z C CC CB,A,B, | A,C z B,/A,/ B,A, C2 | z C CC CB, A,/A,/B, | A, C2 B,- B,A,^G,F,- |
+F,2 z2 z2 F,/^G,/F, | z2 F,/^G,/F, z2 F,/G,/F, ]

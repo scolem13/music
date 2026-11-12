@@ -1,0 +1,19 @@
+X:1
+T:Rock & Roll Music (verse)
+C:Chuck Berry, 1957
+%%rs200 rs_128_2
+%%artist Chuck Berry
+%%year 1957
+%%section verse
+%%label Verse
+%%repeats 4
+%%rank 128
+%%file ChuckBerry_RockAndRollMusic_1957
+%%link https://www.youtube.com/watch?v=pufTZyykLlw
+% CoCoPops/RollingStone/Data/ChuckBerry_RockAndRollMusic_1957.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 15 to 23; chords from **harte; 43 notes
+M:4/4
+L:1/8
+Q:1/4=165
+K:Eb
+"Bb"G,F,F,F,- F,4- | F,F,F,A, A,A,A,A, | "Eb"A, G,2 G, F, E,3- | E,G,A,A, B,B,B,B, |
+"Ab"B,A,A,A,- A,4- | A,A,A,B, CCCC | "Bb"C2 B,B,- B,4- | B,_DDD DD C2 ]

@@ -1,0 +1,22 @@
+X:1
+T:A Hazy Shade Of Winter (chorus)
+C:Simon & Garfunkel, 1966
+%%cocopops cc_1121_5
+%%artist Simon & Garfunkel
+%%year 1966
+%%section chorus
+%%label Chorus (letter A)
+%%repeats 1
+%%mcgill 1121
+%%peak 13
+%%file SimonAndGarfunkel_AHazyShadeOfWinter_1966
+% CoCoPops/Billboard/Data/SimonAndGarfunkel_AHazyShadeOfWinter_1966.varms.hum (CC BY-NC 4.0): section from bar-time 65 to 83; chords from **harte; 62 notes
+M:4/4
+L:1/8
+Q:1/4=142
+K:Dm
+"Dm"A, F,G,- | "C7"G,E,/D,/ C, z z G, G,B,- | "Bb7"B,2 z2 z B, B,^C- | "A7"^C A,2 C- C2 CF- |
+"Dm"FD z2 z F ED | "C7"C2 z2 z D C2 | "Bb7"B,2 z2 z B, B,A,- | "A7"A, G,2 F,- F,F,G,A,- |
+"Dm"A,2 z2 z F ED | "C7"C2 z2 (3:2:3z2 D2 C2 | "Bb7"B,2 z2 z B, B,A,- | "A7"A, G,2 F,- F,F,E,D,- |
+"Dm"D,2 z2 z F ED | "C7"C2 z2 (3:2:3z2 D2 C2 | "Bb7"B,2 z2 z B, B,A,- | "A7"A, G,2 F,- F,F,G,A,- |
+A,2 ]

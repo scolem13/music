@@ -1,0 +1,16 @@
+X:1
+T:I'm a Believer (verse)
+C:The Monkees, 1967
+%%bimmuda 1967_05_1
+%%artist The Monkees
+%%year 1967
+%%section verse
+% BiMMuDa 1967_05_1: C Major (CSV tonic; written in C), CSV BPM 160, 42 note events in the CSV (Hamilton & Pearce, BiMMuDa; licence unverified)
+M:4/4
+L:1/8
+Q:1/4=160
+K:C
+G,2 G,2 G,2 G,A,- | A,2 A,C- C2 C2 | B,3 A, G,4 | z8 |
+G,2 z G, G, G,2 A,- | A,2 A,C- C C3 | B,4 z4 | z4 z2 B,2 |
+C3 B, B,2 A,G,- | G, G,3 z4 | z G, CC B, A,2 G,- | G,4 z4 |
+z2 CC B,2 A,2 | G, G,3 F, F,2 ^F,- | ^F,4 ]

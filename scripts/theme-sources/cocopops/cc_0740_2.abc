@@ -1,0 +1,19 @@
+X:1
+T:Living Doll (bridge)
+C:Cliff Richard, 1959
+%%cocopops cc_0740_2
+%%artist Cliff Richard
+%%year 1959
+%%section bridge
+%%label Bridge (letter C)
+%%repeats 2
+%%mcgill 740
+%%peak 30
+%%file CliffRichard_LivingDoll_1959
+% CoCoPops/Billboard/Data/CliffRichard_LivingDoll_1959.hum (CC BY-NC 4.0): section from bar-time 19 to 27; chords from **harte; 37 notes
+M:4/4
+L:1/8
+Q:1/4=129
+K:A
+"D"F,2 z2 z A,2 A,- | A,A,A,,A,, D,2 F,A,- | "A"A,F,E,A,- A, A,2 F, | E,2 A,,A,, C, E,2 F,- |
+"D"F,A,F,A,- A,2 z F, | A, F,2 A,- A,A, F,2 | "E"CB,A,^E, F,2 D,2 | B,,2 z E, ]

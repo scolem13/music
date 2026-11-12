@@ -1,0 +1,22 @@
+X:1
+T:My Hometown (verse)
+C:Bruce Springsteen, 1985
+%%cocopops cc_1066_1
+%%artist Bruce Springsteen
+%%year 1985
+%%section verse
+%%label Verse (letter A)
+%%repeats 3
+%%mcgill 1066
+%%peak 6
+%%file BruceSpringsteen_MyHometown_1985
+% CoCoPops/Billboard/Data/BruceSpringsteen_MyHometown_1985.varms.hum (CC BY-NC 4.0): section from bar-time 9 to 25; chords from **harte; 64 notes
+M:4/4
+L:1/8
+Q:1/4=117
+K:A
+"D"E,/E,/ | "A/E"B, C2 C- C z z E, | B, C2 C- C z z C | "D/F#"D4 "A/E"C C2 B, |
+"E"B,4 z2 z/ E,/E,/E,/ | "Esus4/F#"A,B,-"E"B,B, B,2 z2 | "Esus4/F#"A,B,-"E"B,B,- B,B, z B, | "A/E"C4 "A/C#"B, A,3 |
+"D"A, F,3 z2 z E, | "A/E"B,CCC- C z z E,/E,/ | B, C2 C C z z D- | "D/F#"D2 DD "A/E"C2 B,2 |
+"E"B,4 z2 z E, | "Esus4/F#"A,B,"E"B,B,- B, z z E, | "Esus4/F#"A,B,-"E"B,B,- B,2 z B, | "A/E"C4 "A/C#"B, A,3 |
+"D"A, F,3 ]

@@ -1,0 +1,19 @@
+X:1
+T:Rock'n Me (chorus)
+C:Steve Miller Band, 1976
+%%cocopops cc_1249_2
+%%artist Steve Miller Band
+%%year 1976
+%%section chorus
+%%label Chorus (letter B)
+%%repeats 4
+%%mcgill 1249
+%%peak 1
+%%file SteveMillerBand_RocknMe_1976
+% CoCoPops/Billboard/Data/SteveMillerBand_RocknMe_1976.varms.hum (CC BY-NC 4.0): section from bar-time 31 to 39; chords from **harte; 32 notes
+M:4/4
+L:1/8
+Q:1/4=123
+K:B
+"B"=A, A,A, | =A,B,B,B,- B,2 B, z | z4 "B7"z =A, A,A, | "A"=A,B,B,B,- B,2 B, z |
+z4 "A7"z =A, A,A, | "E"=A,B,B,B,- B,2 B, z | z4 "E7"z =A, A,A, | "B"=A,B,B,B,- B,2 B, ]

@@ -1,0 +1,42 @@
+X:1
+T:Roll Over Beethoven (verse)
+C:Chuck Berry, 1956
+%%rs200 rs_097_1
+%%artist Chuck Berry
+%%year 1956
+%%section verse
+%%label Verse
+%%repeats 1
+%%rank 97
+%%file ChuckBerry_RollOverBeethoven_1956
+%%link https://www.youtube.com/watch?v=kKlzUKLOm_U
+%%mode Eb dorian
+% CoCoPops/RollingStone/Data/ChuckBerry_RollOverBeethoven_1956.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 0 to 108; chords from **harte; 332 notes
+M:4/4
+L:1/8
+Q:1/4=186
+K:Db
+"Eb"G GG | GGGG GEEE | "Ab"GEED EEE=G | "Eb"z8 |
+z4 z G GG | "Ab"GGGG GEEG | F E3 FEEC | "Eb"z8 |
+z4 z2 GG- | "Bb"GGFE- E C2 B, | "Ab"CC E/E/E G2 CC | "Eb"z8 |
+z4 z B, CC | EEFG- GFEE | "Ab"F2 F2 FEEG | "Eb"z8 |
+z4 z2 z B, | "Ab"G2 FF FEEE | G2 FE FEEC | "Eb"B,8- |
+B,6 GG- | "Bb"GGFE- EC B,2 | "Ab"G2 EF- FEEC | "Eb"z8 |
+z4 z B, DB, | EEFG- G F2 B, | "Ab"EEGE GEE=G | "Eb"z8 |
+z4 z C EC | "Ab"EEEC EEEC | E2 EC GCCC- | "Eb"C B,3- B,4- |
+B,6 GG- | "Bb"GGFE- ECB,B, | "Ab"CC E2 G G2 E | "Eb"z8 |
+z4 z B, CE | E2 C2 E2 C2- | CECE EE C2 | E2 C2 E2 C2- |
+C E2 E CE C2 | "Ab"E2 E2 E2 CB,- | B, E2 E EE C2 | "Eb"E2 C2 E2 B,2- |
+B, E2 E EEGG- | "Bb"GGFE- EC B,2 | G2 F2 FEEG- | "Eb"G E3- E4 |
+z8 | z8 | "Ab"z8 | "Eb"z8 |
+z8 | "Ab"z8 | z8 | "Eb"z8 |
+z8 | "Bb"z8 | "Ab"z8 | "Eb"z8 |
+z4 z G2 G- | GFFF FEEE | "Ab"GFFF FEEE | "Eb"G =G2 C E2 E2 |
+G7 G- | "Ab"G2 EC EEEC | E2 E2 E E3- | "Eb"E E2 E- EEEE |
+B,4- B, G2 G- | "Bb"GEEE- E B,3 | "Ab"G2 EF- FEEC | "Eb"z8 |
+z4 z E ED | EEEE F G3- | "Ab"G G2 E C2 EE- | "Eb"E C3- C4- |
+C4- CCEE | "Ab"G2 FF- F C2 C | EEEE- E E2 B, | "Eb"C8- |
+C4- C G2 G | "Bb"GGFE- E3 B, | "Ab"CC E2 G2 EC | "Eb"z8 |
+z2 GG- GE E2 | E2 B,2- B,4- | B,2 GG- GE E2 | E2 B,2- B,4- |
+B,2 BG- GE E2 | "Ab"E2 E2- E4- | E2 BG- GE E2 | "Eb"E2 B,2- B,4- |
+B,2 GG- GG F2 | "Bb"F2 B,2 C2 E2 | FFEG- "Eb"G E3 ]

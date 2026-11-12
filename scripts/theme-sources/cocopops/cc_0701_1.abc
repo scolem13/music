@@ -1,0 +1,24 @@
+X:1
+T:White Wedding (verse)
+C:Billy Idol, 1983
+%%cocopops cc_0701_1
+%%artist Billy Idol
+%%year 1983
+%%section verse
+%%label Verse (letter A)
+%%repeats 2
+%%mcgill 701
+%%peak 36
+%%file BillyIdol_WhiteWedding_1983
+% CoCoPops/Billboard/Data/BillyIdol_WhiteWedding_1983.varms.hum (CC BY-NC 4.0): section from bar-time 17 to 43; chords from **harte; 73 notes
+M:4/4
+L:1/8
+Q:1/4=148
+K:Bm
+"B5"B,,2 D,D, F,2 F,B,,- | B,, D,2 F,- F, E,3- | "A5"E,4 z4 | "E5"z8 |
+"B5"B,,2 D,D, F,2 F,A,- | A, F,2 E,- E,F, F,2- | "A5"F,4 z4 | "E5"z8 |
+"B5"B,,2 D,D, F,2 F,A,- | A, F,2 E,- E,F, F,2 | "A5"B,,2 D,D, F,2 F,A,- | A, F,2 E,- E,F, B,,2 |
+"B5"B,,2 D,D, F,2 F,A,- | A,F, z2 z2 B,,B,, | "A"z2 D,2 D,2 B,,2 | "E"z2 z A,- A,F,E,F,- |
+"Bm"F,2 z2 z4 | z4 z2 D,B,, | "E"z2 D,2 D,2 B,,B,, | "D"z2 D,2 D, D,3- |
+"Bm"D,4 z4 | z4 z2 D,B,, | "E"z2 D,2 ^D,2 B,,2 | "D"z2 z A,- A,F,E,F,- |
+"Bm"F,6 ]

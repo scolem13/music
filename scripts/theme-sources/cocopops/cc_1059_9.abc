@@ -1,0 +1,21 @@
+X:1
+T:I've Been Everywhere (chorus)
+C:Hank Snow, 1962
+%%cocopops cc_1059_9
+%%artist Hank Snow
+%%year 1962
+%%section chorus
+%%label Chorus (letter C4)
+%%repeats 1
+%%mcgill 1059
+%%peak 68
+%%file HankSnow_IveBeenEverywhere_1962
+% CoCoPops/Billboard/Data/HankSnow_IveBeenEverywhere_1962.varms.hum (CC BY-NC 4.0): section from bar-time 253/2 to 279/2; chords from **harte; 38 notes
+M:4/4
+L:1/8
+Q:1/4=240
+K:E
+"E"G,2 E,E,- E,2 C,2 | E,4 G,2 z G,- | G,2 E,E,- E,2 C,2 | E,4 G,2 z2 |
+"A7"G,2 E,E,- E,2 C,2 | E,3 G,- G,2 E,2 | "E"G,2 E,E,- E,2 C,2 | E,3 G,- G,2 E,2 |
+"B7"G,F, F,2 D,2 B,,2 | F,4 G,2 z2 | z8 | z4 z2 E,,2 |
+B,,2 A,,2 G,,2 F,,2 ]

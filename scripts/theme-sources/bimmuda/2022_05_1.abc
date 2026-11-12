@@ -1,0 +1,17 @@
+X:1
+T:Shivers (verse)
+C:Ed Sheeran, 2022
+%%bimmuda 2022_05_1
+%%artist Ed Sheeran
+%%year 2022
+%%section verse
+% BiMMuDa 2022_05_1: D Major (CSV tonic; written in D), CSV BPM 141, 74 note events in the CSV (Hamilton & Pearce, BiMMuDa; licence unverified)
+M:4/4
+L:1/8
+Q:1/4=141
+K:D
+z B, B,B, B,B,B,A, | B,2 z2 z4 | z B, B,B, B,A,A,G, | G,2 D2 D4 |
+z C DC- CA, A,2 | A,2 D2 D4 | z C DC DCDC- | C/B,/A, z2 z4 |
+z B, z B, z B, B,A, | B,2 z2 z4 | z B, B,B, B,A,A,G, | G,2 D2 D4 |
+z D z D z A, A,A, | A,2 D2 D4 | z C DC DCDC- | C/B,/A, z2 z2 z A,- |
+A,2 A,A, A,B, B,2 ]

@@ -1,0 +1,24 @@
+X:1
+T:Shout (Parts 1 and 2) (chorus)
+C:The Isley Brothers, 1959
+%%rs200 rs_118_1
+%%artist The Isley Brothers
+%%year 1959
+%%section chorus
+%%label Chorus
+%%repeats 3
+%%rank 118
+%%file TheIsleyBrothers_Shout_1959
+%%link https://www.youtube.com/watch?v=nEjLFpU2pJ4
+%%mode F mixolydian
+% CoCoPops/RollingStone/Data/TheIsleyBrothers_Shout_1959.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 3 to 27; chords from **harte; 107 notes
+M:4/4
+L:1/8
+Q:1/4=139
+K:Bb
+"F"z2 FD F2 FD- | "Dm"D2 _AG G/F3/2 FD- | "F"D2 _AG G/F3/2 FD- | "Dm"D2 _AG/F/- F G3 |
+"F"AGFD F F2 D- | "Dm"DC/ A,2- A,/- A,4 | "F"AGFD F2 A2 | "Dm"G/ F2- F/A G/F3/2 A2 |
+"F"z8 | "Dm"z2 AG G F2 G- | "F"G A3- A4- | "Dm"A2 FF- F2 FF |
+"F"z8 | "Dm"z2 GF/D/- DFFf | "F"z8 | "Dm"z2 AG/F/- FF D/C3/2- |
+"F"CAAG F2 G2- | "Dm"GAAG A/G/F F/G3/2- | "F"GAAG F2 G2- | "Dm"GAAG AG/F3/2 F- |
+"F"F2 _AG/F/- FF/ G2- G/- | "Dm"G2 _AG/F/- FF/ G2- G/- | "F"G2 _AG/F/- FF/ G2- G/- | "Dm"G3 C F2 F2 ]

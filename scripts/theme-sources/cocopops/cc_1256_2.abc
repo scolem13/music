@@ -1,0 +1,19 @@
+X:1
+T:Abacab (chorus)
+C:Genesis, 1982
+%%cocopops cc_1256_2
+%%artist Genesis
+%%year 1982
+%%section chorus
+%%label Chorus (letter D)
+%%repeats 3
+%%mcgill 1256
+%%peak 26
+%%file Genesis_Abacab_1982
+% CoCoPops/Billboard/Data/Genesis_Abacab_1982.varms.hum (CC BY-NC 4.0): section from bar-time 35 to 349/8; chords from **harte; 17 notes
+M:4/4
+L:1/8
+Q:1/4=152
+K:C
+"F/G"G z "G"z2 z4 | z4 z2 FF | [M:13/8] "F/G"G G2 "G"z z4 z4 z | [M:4/4] z4 z2 GA |
+"F/G"GG/E/ "G"D z z4 | z4 z F FF | "F/G"GG "G"G ]

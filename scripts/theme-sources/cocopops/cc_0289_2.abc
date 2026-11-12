@@ -1,0 +1,22 @@
+X:1
+T:Guitar Man (bridge)
+C:Elvis Presley, 1968
+%%cocopops cc_0289_2
+%%artist Elvis Presley
+%%year 1968
+%%section bridge
+%%label Bridge (letter C)
+%%repeats 1
+%%mcgill 289
+%%peak 28
+%%file ElvisPresley_GuitarMan_1968
+% CoCoPops/Billboard/Data/ElvisPresley_GuitarMan_1968.hum (CC BY-NC 4.0): section from bar-time 55 to 71; chords from **harte; 79 notes
+M:4/4
+L:1/8
+Q:1/4=234
+K:Db
+"Db7"A, _C2 | "Gb7"_C2 A,=G, _G, G,2 A,- | A,D, z2 z A, _CA, | D2 DD- DD,D,_F, |
+z4 z A, B,2 | "Db7"_C2 C2 CA, B,2 | _CCCA, B,A,=G,_G, | G,2 G,2 =G,2 G,2 |
+D,2 z2 z B, B,2 | "Gb7"_C2 B,2 G,2 F,G, | D,2 F,F, G, G,2 G,- | G, G,2 G, G,2 G,A,- |
+A,D, z2 z2 z A, | "Eb7"B,B,B,B, B,2 B,B,- | B,B, z2 z B, B,B, | "Ab7"EEEE C A,2 A,- |
+A,2 _CB,- B, A,3 ]

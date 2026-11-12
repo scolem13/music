@@ -1,0 +1,16 @@
+X:1
+T:Honky Tonk Women (verse)
+C:The Rolling Stones, 1969
+%%bimmuda 1969_04_1
+%%artist The Rolling Stones
+%%year 1969
+%%section verse
+% BiMMuDa 1969_04_1: G Major (CSV tonic; written in G), CSV BPM 120, 45 note events in the CSV (Hamilton & Pearce, BiMMuDa; licence unverified)
+M:4/4
+L:1/8
+Q:1/4=120
+K:G
+G, | B,G, z2 G,G, z B,- | B, B,2 G,- G, G,2 F, | G,2 z2 z4 |
+z4 z2 z G, | B,A,G,B,- B, G,2 B,- | B,A, G,2 G, G,2 A,- | A,2 z2 z4 |
+z4 z2 z G, | B,G, z2 G,2 G,B,- | B, A,2 G,- G, G,2 F,- | F, G,3 z4 |
+z4 z G, B,G- | G G2 D- DG, z2 | F2 DG- G G2 G- | G2 ]

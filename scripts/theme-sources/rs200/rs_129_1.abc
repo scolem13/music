@@ -1,0 +1,26 @@
+X:1
+T:Born To Be Wild (verse)
+C:Steppenwolf, 1968
+%%rs200 rs_129_1
+%%artist Steppenwolf
+%%year 1968
+%%section verse
+%%label Verse
+%%repeats 2
+%%rank 129
+%%file Steppenwolf_BornToBeWild_1968
+%%link https://www.youtube.com/watch?v=mLhpXUtxS1c
+%%mode E dorian
+% CoCoPops/RollingStone/Data/Steppenwolf_BornToBeWild_1968.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 8 to 40; chords from **harte; 118 notes
+M:4/4
+L:1/8
+Q:1/4=146
+K:D
+"E"D,E,E,E, G,2 E,2 | z8 | CDDD E2 E2 | z8 |
+D,E,G,E, A,2 G,2- | G,6 B,D | EE E3/2E/- EB,/A,/ G,2 | z8 |
+"G"z2 G2 "A"FEEE | "E"E2 DD- D E3- | "G"E2 DD "A"C2 CB, | "E"C B,2 B,- B,4- |
+"G"B,2 D2 "A"CB,A,B,- | "E"B,2 A,G,- G,2 B,2- | "G"B,2 D2 "A"CB,A,^A,- | "E"^A,2 B,2- B,4 |
+E,E,E,E, G,2 E,2 | z8 | CDDD E2 E2 | z8 |
+D,E,G,E, A,2 G,2- | G,6 B,C | EEEE G,2 E,2 | z8 |
+"G"z2 G2 "A"FEEE | "E"E2 DD- D E3- | "G"E2 CD "A"C2 CB, | "E"C B,2 B,- B,4- |
+"G"B,2 D2 "A"CB,A,B,- | "E"B,2 E,^G,- G, B,3- | "G"B,2 D2 "A"CB,A,B,- | "E"B,^A, B,2- B,2 B,D ]

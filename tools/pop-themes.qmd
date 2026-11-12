@@ -1,0 +1,127 @@
+---
+title: "Pop Themes"
+description: "The main melodies of 2,411 sections of pop and rock songs from three collections (the Billboard year-end top five, 1950 to 2022; Billboard Hot 100 songs; the Rolling Stone 200): filter by collection, section, decade, genre and key, with chords where the corpus has them, and play them."
+toc: false
+---
+
+```{=html}
+<style>
+#ct-root { max-width: 1200px; margin: 0 auto; }
+#ct-root .ct-controls { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; align-items: flex-start; margin: .8rem 0; }
+#ct-root .ct-sortrow { display: flex; gap: .4rem; align-items: center; margin: .2rem 0; flex-wrap: wrap; }
+#ct-root .ct-sortrow > span { min-width: 4.2em; font-size: .9rem; }
+#ct-root select, #ct-root input[type=number] { padding: .25rem .4rem; border: 1px solid var(--bs-border-color, #ccc); border-radius: 6px; background: var(--bs-body-bg, #fff); color: inherit; font: inherit; font-size: .9rem; }
+#ct-root input[type=number] { width: 5em; }
+#ct-root button { padding: .25rem .6rem; border: 1px solid var(--bs-border-color, #ccc); border-radius: 6px; background: var(--bs-body-bg, #fff); color: inherit; font-size: .88rem; cursor: pointer; }
+#ct-root button:disabled { opacity: .4; cursor: default; }
+#ct-root .ct-dir { min-width: 9.5em; text-align: left; }
+#ct-root .ct-group { display: flex; flex-direction: column; gap: .35rem; }
+#ct-root .ct-line { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; font-size: .9rem; }
+#ct-root .ct-pager { display: flex; gap: .6rem; align-items: center; margin: .6rem 0; font-size: .9rem; }
+#ct-count { font-weight: 600; margin-top: .6rem; scroll-margin-top: 80px; }
+#ct-status { opacity: .7; font-size: .9rem; }
+#ct-root .ct-credit { font-size: .85rem; opacity: .8; }
+#ct-list { display: grid; gap: .8rem; grid-template-columns: 1fr; }
+#ct-list[data-cols="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#ct-list[data-cols="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 760px) { #ct-list[data-cols] { grid-template-columns: 1fr; } }
+#ct-root .ct-card { border: 1px solid var(--bs-border-color, #ddd); border-radius: 10px; padding: .6rem .8rem; min-height: 190px; min-width: 0; }
+#ct-root .ct-head { display: flex; justify-content: space-between; gap: .8rem; align-items: flex-start; }
+#ct-root .ct-title { font-weight: 600; line-height: 1.25; }
+#ct-root .ct-move { font-style: italic; font-size: .9rem; }
+#ct-root .ct-comp { font-size: .85rem; opacity: .75; }
+#ct-root .ct-btns { display: flex; gap: .5rem; align-items: center; flex-shrink: 0; font-size: .85rem; }
+#ct-root .ct-meta { display: flex; flex-wrap: wrap; gap: .25rem .4rem; font-size: .76rem; }
+#ct-root .ct-meta span { padding: .05rem .45rem; border-radius: 999px; background: var(--bs-tertiary-bg, #f1f3f5); }
+#ct-root .ct-score { min-height: 90px; margin-bottom: .35rem; }
+#ct-root .ct-on { fill: #d6336c; }
+#ct-root .ct-barno { font-family: "Bar Numbers Mono", ui-monospace, monospace; font-size: 7.5px; font-weight: 400; fill: currentColor; }
+#ct-root .ct-barno-one { font-style: italic; opacity: .7; }   /* bar numbers from a single PDMX score */
+#ct-picker .tl-results, #ct-picker .tl-sort, #ct-picker .tl-count { display: none; }
+#ct-popfilters { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; margin: .6rem 0; font-size: .9rem; }
+</style>
+<div id="ct-root">
+  <p class="ct-hint">The main melody of each verse, chorus, bridge and other section of pop and rock songs, from three collections:
+  <strong>BiMMuDa</strong> (the five best-selling singles of every year on the Billboard year-end chart, 1950 to 2022: 1,104 sections),
+  <strong>CoCoPops</strong> (214 songs from the Billboard Hot 100, 1958 to 1991: 793 sections, with the chords of the transcription) and
+  <strong>RS200</strong> (194 of the Rolling Stone 200, 1949 to 2002: 514 sections, with chords; the original records only when each note starts, so
+  its note lengths are approximate). One melody to a distinct section: a verse that comes back three times is shown once. Filter them by collection,
+  section, decade, genre and chart position,
+  or the way the Tune Assessment's finder does (key, meter, the note a melody starts on, a tonal pattern such as <em>Do Mi So</em>, rhythm
+  patterns), then sort on up to three things. BiMMuDa's sections also carry the dataset's own figures:
+  <strong>MIC</strong> and <strong>RIC</strong> (melodic and rhythmic information content: how unpredictable the pitches and the rhythm
+  are to a statistical model), <strong>pitch STD</strong> (how widely the pitches are spread), <strong>MIS</strong> (melodic interval size),
+  <strong>onset density</strong> (notes a second), <strong>nPVI</strong> (how much neighbouring note lengths differ) and
+  <strong>tonality</strong> (how clearly the notes sit in one key); those are the dataset's names for its columns, and the other two collections have no
+  such figures, so they sort last. Keys and modes are the sources' (a mode the RS200 does not give is read from its tonic chord, and the card says so).
+  Genres are looked up (MusicBrainz tags, Wikidata) and mapped onto eight headings,
+  some corrected by hand: a guide, not a ruling. The scores are transcriptions of the sung (or, for a few, played) main melody, not the
+  recordings. A song that is in more than one collection (44 are) links to its other transcriptions, and a CoCoPops song, or one with a
+  McGill Billboard analysis, to that analysis in Timestamp Notes.</p>
+  <p class="ct-credit">The BiMMuDa melodies are the <a href="https://github.com/tismirapplicant2/BiMMuDa">BiMMuDa</a> dataset
+  (<em>A Billboard Melodic Music Dataset, 1950–2022</em>), main melody only, converted to ABC; no lyrics are used.
+  The dataset's licence is unverified, so this page stays behind the site password.
+  CoCoPops is the <a href="https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops">Coordinated Corpus of Popular Musics</a>
+  (Arthur and Condit-Schultz, ISMIR 2023; built on the McGill Billboard annotations), CC BY-NC 4.0: converted to ABC here, non-commercial use only. The RS200 is
+  de Clercq and Temperley's <a href="https://rockcorpus.midside.com/">Rolling Stone corpus</a> (CC BY 4.0), taken from CoCoPops' Humdrum translation of it
+  (so also under CC BY-NC 4.0 here), converted to ABC. Lyrics are never read or shown.</p>
+  <div id="ct-picker"></div>
+  <div id="ct-popfilters"></div>
+  <div class="ct-controls">
+    <div class="ct-group" id="ct-sorts"></div>
+    <div class="ct-group">
+      <div class="ct-line"><label for="ct-per">Show</label>
+        <select id="ct-per"><option value="1">1</option><option value="5">5</option><option value="10">10</option><option value="25">25</option>
+          <option value="50">50</option><option value="100">100</option><option value="250">250</option><option value="n">Other…</option><option value="all">All</option></select>
+        <input type="number" id="ct-pernum" min="1" max="10000" aria-label="Sections a page"> at a time</div>
+      <div class="ct-line"><label for="ct-cols">Columns</label>
+        <select id="ct-cols"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div>
+      <div class="ct-line"><label for="ct-tempo">Play at</label><input type="number" id="ct-tempo" min="10" max="600" placeholder="as in the file"> per quarter note</div>
+      <div class="ct-line"><label><input type="checkbox" id="ct-yt"> Only songs with a recording link (Spotify, YouTube)</label>
+        <button type="button" id="ct-reshuffle" title="New order for the Random sort">Reshuffle</button></div>
+      <div class="ct-line"><label><input type="checkbox" id="ct-rn"> Show chords</label>
+        <label><input type="checkbox" id="ct-rnonly"> Only sections that have them</label>
+        <span class="ct-note">(<span id="ct-rncount"></span> sections with chords: CoCoPops and RS200 give them for every section, BiMMuDa where a Billboard analysis fits)</span></div>
+    </div>
+  </div>
+  <div id="ct-status" aria-live="polite"></div>
+  <div id="ct-count"></div>
+  <div class="ct-pager"><button type="button" id="ct-prev">← Previous</button><span class="ct-pagelab"></span><button type="button" id="ct-next">Next →</button></div>
+  <div id="ct-list"></div>
+  <div class="ct-pager"><button type="button" id="ct-prev2">← Previous</button><span class="ct-pagelab"></span><button type="button" id="ct-next2">Next →</button></div>
+</div>
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/abc-core.js?v=3"></script>
+<script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
+<script src="/apps/shared/pitch-spelling.js?v=2"></script>
+<script src="/apps/shared/tonality.js?v=10"></script>
+<script src="/apps/shared/tune-chart.js?v=31"></script>
+<script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
+<script src="/apps/shared/rhythm-cells.js?v=1"></script>
+<script src="/apps/shared/tune-library.js?v=20"></script>
+<script src="/apps/shared/audio.js?v=10"></script>
+<script src="/apps/themes/pop-themes-data.js?v=2"></script>
+<script src="/apps/themes/themes-page.js?v=13"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Burgoyne, John Ashley, Jonathan Wild, and Ichiro Fujinaga. "An Expert Ground Truth Set for Audio Chord Recognition and Music Analysis." *Proceedings of the 12th International Society for Music Information Retrieval Conference*, Miami, 2011, pp. 633–38. The 890 SALAMI chords files of the McGill Billboard Project (songs from the Billboard Hot 100, 1958–1991): sections, bars and chords, timed; released under CC0. [ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/](https://ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/).
+
+Isophonics. Centre for Digital Music, Queen Mary, University of London, isophonics.net. Beatles chord, key, beat and segment annotations, personal and educational use. [isophonics.net/](http://isophonics.net/).
+
+**For teachers**
+
+Arthur, Claire, and Nathaniel Condit-Schultz. "The Coordinated Corpus of Popular Musics (CoCoPops): A Meta-Corpus of Melodic and Harmonic Transcriptions." *Proceedings of the 24th International Society for Music Information Retrieval Conference*, 2023. [github.com/Computational-Cognitive-Musicology-Lab/CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops). The CoCoPops collection: 214 Billboard Hot 100 songs (1958-1991, McGill Billboard ids) with melodic transcriptions and their chords, one ABC per distinct section, converted by scripts/convert-cocopops.py (main vocal line, no lyrics read). Licence, from the README: "Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) ... you are free to share and adapt the data for non-commercial purposes, provided you give appropriate credit, link to the license, and indicate if changes were made": changes made here are the conversion to ABC, the choice of one melody to a distinct section and chord symbols written from its Harte chords. Paper title, authors and venue as the README names them; page numbers not checked. Commit 0958afa6 (2026-10-19).
+
+*BiMMuDa: A Billboard Melodic Music Dataset (1950–2022)*. GitHub. [github.com/tismirapplicant2/BiMMuDa](https://github.com/tismirapplicant2/BiMMuDa). The BiMMuDa collection's melodies (main melody of each section of the Billboard year-end top-five singles, 1950-2022), converted to ABC by scripts/convert-bimmuda.py, with the dataset's keys, modes, tempi and melody statistics. The repository shows no licence: licence unverified, so the page stays behind the site password; no lyrics are used. The repository (the git remote of the downloaded copy) is the anonymous one from the paper's review, so no authors are named here; the published paper (believed to be by Hamilton and Pearce, from memory, not checked) should be cited once its reference is confirmed.
+
+de Clercq, Trevor, and David Temperley. "A Corpus Analysis of Rock Harmony." *Popular Music*, vol. 30, no. 1, 2011. [rockcorpus.midside.com/](https://rockcorpus.midside.com/). The RS200 collection: the Rolling Stone 200 rock corpus (melodic transcriptions, harmonic analyses by both authors, timing), CC BY 4.0 ("it can be freely used and adapted in academic or commercial projects, without our permission, as long as appropriate credit is given"). Used through CoCoPops' Humdrum translation of it (so under CoCoPops' CC BY-NC 4.0 as well), which adds the formal sections and absolute chord symbols; the original v2.1 files were used to check that the translation kept every note onset (scripts/check-cocopops-source.py). The corpus records only when each note starts, so the converted note lengths are approximate. Songs from Rolling Stone's 2004 list of the 500 greatest songs. Volume and issue from memory of the journal's record; page numbers not checked.
+
+MusicBrainz. *MusicBrainz Web Service*. [musicbrainz.org/doc/MusicBrainz_API](https://musicbrainz.org/doc/MusicBrainz_API). Recording and artist tags and genres (CC0 data), the first source of the genre labels (scripts/bimmuda-genres.py).
+
+Wikidata. *Wikidata Query Service*. [query.wikidata.org/](https://query.wikidata.org/). Genre (P136) of the songs and artists, the second source of the genre labels (CC0).
+:::
+<!-- /works-cited -->

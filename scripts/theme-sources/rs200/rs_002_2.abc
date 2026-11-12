@@ -1,0 +1,24 @@
+X:1
+T:Satisfaction (chorus)
+C:The Rolling Stones, 1965
+%%rs200 rs_002_2
+%%artist The Rolling Stones
+%%year 1965
+%%section chorus
+%%label Chorus
+%%repeats 3
+%%rank 2
+%%file TheRollingStones_Satisfaction_1965
+%%link https://www.youtube.com/watch?v=NEjkftp7J7I
+%%mode E dorian
+% CoCoPops/RollingStone/Data/TheRollingStones_Satisfaction_1965.hum (RS200, CC BY 4.0; CoCoPops CC BY-NC 4.0): section from bar-time 20 to 42; chords from **harte; 71 notes
+M:4/4
+L:1/8
+Q:1/4=137
+K:D
+"E"G2 E2- E4- | "A"E4 C E3 | "E"G2 E2- E4- | "A"E4 D E3 |
+"E"E2 ED EEDE- | "A"E4 D E3 | "E"E2 E2 E2 DE- | "A"E2 DE- E3 C |
+"E"ED E2 E2 CE- | "A"E3 B, D2 E2 | "E"E2 E2 E2 DE- | "A"E C2 C E2 E2 |
+"E"E2 ED E2 DE- | "A"E C3 D E3 | "E"G2 E2- E4- | "A"E3 B, D E3 |
+"E"E8- | E4 F E2 D/E/ | D/ B,7/2- B,4- | "A"B,2 E2 G E2 D/E/ |
+"E"D/ B,7/2- B,4 ]
