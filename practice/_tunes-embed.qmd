@@ -118,6 +118,13 @@
 			document.getElementById("tp-stop").addEventListener("click", stopTune);
 			document.getElementById("tp-bpm").addEventListener("change", restartIfPlaying);
 			document.getElementById("tp-from").addEventListener("change", restartIfPlaying);
+			const bar = document.getElementById("tn-bar");
+			if (window.PlayBar && PlayBar.swingSlot) bar.insertBefore(PlayBar.swingSlot({ id: "tp-swing", onChange: restartIfPlaying }), document.getElementById("tp-style").parentNode);
+			if (window.AbcPlay && AbcPlay.load) AbcPlay.load().then(() => {
+				const sel = document.getElementById("tp-style");
+				BandCatalog.styles.forEach((s) => { const o = document.createElement("option"); o.value = s.id; o.textContent = s.label; sel.appendChild(o); });
+				sel.addEventListener("change", restartIfPlaying);
+			}).catch(() => {});
 			if (window.PlayBar) PlayBar.attach(document.getElementById("tn-bar"), { stop: document.getElementById("tp-stop"), live: () => !!playing });
 		}
 		function restartIfPlaying() { if (playing) { stopTune(); playTune(); } }
@@ -134,7 +141,10 @@
 			const band = accomp !== "none" && AbcPlay.hasChords(cur.text);
 			if (!melody && !band) return;
 			const sound = document.getElementById("mel-instrument").value || "piano";
+			const swSel = document.getElementById("tp-swing"), swPct = swSel && swSel.value !== "auto" ? +swSel.value : null;
+			const abcSwing = /swing|shuffle/i.test((cur.text.match(/"[\^_<>@][^"]*"|^[TNPR]:.*$/mg) || []).join(" "));   // "Swing" in an annotation or the header
 			const opts = {
+				swing: swPct != null ? swPct : (abcSwing ? 67 : undefined),
 				sound: sound,
 				qpm: Math.max(20, Math.min(300, +document.getElementById("tp-bpm").value || baseQpm(cur.v))),
 				transpose: cur.transpose,
@@ -148,7 +158,10 @@
 			};
 			if (band) {
 				opts.abc = cur.text;
+				const st = document.getElementById("tp-style").value;
+				opts.style = st !== "auto" ? st : (abcSwing ? "swing" : "pop");
 				opts.bandOpts = { melodySound: sound };
+				if (swPct != null) opts.bandOpts.swingSet = swPct / 100;
 				if (accomp === "nodrums") opts.drums = false;
 				if (!melody) opts.melody = false;
 			}
@@ -369,6 +382,7 @@
 			<option value="Alto Sax">Alto Sax</option><option value="Trumpet">Trumpet</option><option value="Trombone">Trombone</option>
 			<option value="Tuba">Tuba</option><option value="Percussion">Percussion</option>
 		</select></span>
+		<span data-pri="4" data-pri-live="5"><label for="tp-style">Band</label><select id="tp-style" title="The backing band's style: Auto picks Swing when the tune says swing, else a piano ballad"><option value="auto">Auto</option></select></span>
 		<span data-pri="7" data-pri-live="8"><label for="mel-instrument">Sound</label><select id="mel-instrument" title="Playback instrument"></select></span>
 	</div>
 	<script src="/apps/shared/soundfont.js?v=1"></script>

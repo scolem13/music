@@ -420,5 +420,5 @@
     if (h.done) h.done.then(function () { if (!cur) P.sounding("abc-play", null); });
     return h;
   }
-  global.AbcPlay = { barStartMs: barStartMs, barIndex: barIndex, play: function (v, o) { return tracked(play(v, o)); }, chords: function (v, o) { return tracked(playBand(v, o, true)); }, hasChords: hasChords, stop: stop, ctx: ctx, playing: function () { return cur; } };
+  global.AbcPlay = { barStartMs: barStartMs, barIndex: barIndex, play: function (v, o) { return tracked(play(v, o)); }, chords: function (v, o) { return tracked(playBand(v, o, true)); }, hasChords: hasChords, load: loadBand, stop: stop, ctx: ctx, playing: function () { return cur; } };
 })(window);
