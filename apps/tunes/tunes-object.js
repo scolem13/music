@@ -32151,4 +32151,771 @@ K:F
 "F6"dc AF- F2 AB- | "Gm7"BD ^CD "C7"A2 cG- | "Am7(b5)"G8 | "Am7(b5)"z A GF "D7(b9)"^F_E DC |
 "Gm7"B,D FA G3 F | "C7"EF GB dc AF- | "F"F2 z2 z4 | z8 |]
 `
+,
+"jri-grade2":
+`X:1
+T:A-Hunting We Will Go
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-a-hunting-we-will-go
+M:2/2
+L:1/8
+Q:1/4=120
+K:Bb
+d3 c | B2 F2 D2 F2 | B6 B2 | c2 c2 c2 c2 |
+w: Oh! A- | hunt- ing we will | go. A- | hunt- ing we will
+c6 c2 | d2 d2 d2 d2 | eeee e2 e2 | d2 d2 c2 c2 |
+w: go. We'll | catch a fox and | put him in a box, And | then we'll let him
+B4 |]
+w: go.
+
+X:2
+T:A Very Sad Boy Am I
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-a-very-sad-boy-am-i
+M:2/4
+L:1/8
+Q:1/4=100
+K:Gmix
+B | "G"GA/2B/2 cB | "F"AFFA | "G"G/2A/2B "F"AF |
+w: I | don't have a home to | call my own, A | ve- ry sad boy am
+"G"G3 A | BA/2G/2 AB | "F"c/2B/2A "G"BG/2G/2 | "F"A/2c/2B AF |
+w: I. The | rea- son for this is | sim- ple e- nough: I'm a | hun- dred a three feet
+"G"G3 B | GA/2B/2 cB | "F"AFFA | "G"G/2A/2B "F"AF |
+w: high. I | once had a wife who | lived with me, A | ve- ry sad wife was
+"G"G3 A | BA/2G/2 AB | "F"c/2B/2A "G"BG/2G/2 | "F"A/2c/2B A/2A/2F |
+w: she. The | rea- son for this was | sim- ple e- nough: She's a | hun- dred feet short- er than
+"G"G3 |]
+w: me.
+
+X:3
+T:Bi, Bi, Og Blaka (Flip, Flap, and Fluttering)
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-bi-bi-og-blaka-flip-flap-and-fluttering
+M:4/4
+L:1/8
+Q:1/4=90
+K:F
+A2 FA c2 A2 | BBAA G2 G2 | AAFA c2 AA | B2 EE F2 F2 |
+w: Flip, flap, and flut- t'ring, | Fly- ing swans are honk- ing. | Real- ly wide a- wake, I pre- | tend to be slum- b'ring.
+B2 dd B2 G2 | EGcB A2 F2 | AAGG FGAA | B2 EE F2 F2 |]
+w: Flip, flap, and flut- t'ring, | Fly- ing swans are honk- ing. | Real- ly wide a- wake _ I pre- | tend to be slum- b'ring.
+
+X:4
+T:Bim Bam
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-bim-bam
+M:2/2
+L:1/8
+Q:1/4=120
+K:Dm
+"Dm"D4 F4 | DEDE F4 | DEDE F2 F2 | DEDE F4 |
+w: Bim bam, | bi- ri- bi- ri bam | Bi- ri- bi- ri bam bam, | Bi- ri- bi- ri bam
+"Gm"G4 G2 FE | "Dm"F4 F2 ED | "A7"E2 E2 AGFE | "Dm"D8 |
+w: Bim bam _ _ | Bim bam _ _ | Bim bam, bi- ri- bi- ri | bam.
+"Gm"G4 G2 FE | "Dm"F4 F2 ED | "A7"E2 E2 AGFE | "Dm"D8 |]
+w: Bim bam _ _ | Bim bam _ _ | Bim bam, bi- ri- bi- ri | bam.
+
+X:5
+T:Circle Around
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-circle-around
+M:3/4
+L:1/8
+Q:1/4=156
+K:G
+"G"D2 B2 B2 | D2 B2 B2 | B2 A2 B2 | "D7"c6 |
+w: Cir- cle a- | round to the | right in a | ring,
+D2 A2 A2 | D2 A2 A2 | AA G2 A2 | "G"B6 |
+w: Then to the | left as so | hap- pi- ly we | sing.
+"G"D2 B2 B2 | D2 B2 B2 | B2 A2 B2 | "D7"c6 |
+w: Walk to the | mid- dle as | close as you | can.
+c2 e2 A2 | "G"B2 d2 G2 | "D7"A2 c2 F2 | "G"G6 |]
+w: Step back in | rhythm to where | you be- gan. | *
+
+X:6
+T:Dance from Tsakonia
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-dance-from-tsakonia
+M:5/8
+L:1/8
+Q:1/4=90
+K:Em
+DGF/2D/2 E2 | DGF/2D/2 E2 | DGF/2G/2 A2 | DGF/2D/2 E2 |
+BBB (3B/2c/2B/2A | AAA (3A/2B/2A/2G | DGF/2G/2 A2 | DGF/2D/2 E2 |]
+
+X:7
+T:Donkeys Love Carrots
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-donkeys-love-carrots
+M:2/4
+L:1/8
+Q:1/4=112
+K:D
+"D"DDDE | FEDD | FFFG | AG F2 |
+w: Don- keys love to | much on car- rots, | Car- rots don't like | that at all.
+d2 A2 | d2 A2 | A3/2B/2 "A7"AG | "D"F"A7"E "D"D2 |]
+w: Hee- haw, | Hee- haw, | Lis- ten to the | don- key's call.
+
+X:8
+T:Geordie
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-geordie
+M:4/4
+L:1/8
+Q:1/4=90
+K:Gm
+D2 | "Gm"G2 A2 B2 AA | GGGF "Dm"D2 Bc | "Gm"dddd "C"c2 AG |
+"F"FA c2 z2 Bc | "Gm"d2 d2 "C"c2 d2 | "Gm"G2 GF "Dm"DCBA | "Gm"G2 GF "Dm"D2 C2 |
+"Gm"D2 G4 |]
+
+X:9
+T:Go In and Out the Window
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-go-in-and-out-the-window
+M:2/4
+L:1/8
+Q:1/4=120
+K:G
+B | "G"DG B3/2c/2 | "D7"BA z A | DF A3/2B/2 |
+w: Go | in and out the | win- dow, Go | in and out the
+"G"AG z B | DG B3/2c/2 | "D7"BA z A | ddcA |
+w: win- dow, Go | in and out the | win- dow, As | we have done be-
+"G"G2 z |]
+w: fore.
+
+X:10
+T:Green Bushes
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-green-bushes
+M:3/4
+L:1/8
+Q:1/4=90
+K:Fdor
+F2 | "Fm"F3 G AG | F2 G2 BB | c2 cB G2 |
+"Eb"E4 CC | "Fm"F2 F2 GF | E2 F2 AB | c2 e2 d2 |
+c4 AB | c2 f2 f2 | c2 dd ee | "Eb"GG B2 G2 |
+E4 CC | "Fm"F2 A2 GF | "Eb"E2 F2 AB | "Fm"c2 cB "Eb"G2 |
+"Fm"F4 |]
+
+X:11
+T:Here We Go 'Round the Mountain
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-here-we-go-round-the-mountain
+M:4/4
+L:1/8
+Q:1/4=132
+K:D
+"D"(3FFF F3/2F/2 F2 D2 | "D"F2 F2 A4 |
+w: Here we go 'round the moun- tain, | two by two
+"D"(3FFF F3/2F/2 F2 D2 | "D"F2 F2 "A7"E4 |
+w: Here we go 'round the moun- tain, | two by two
+"D"(3FFF F3/2F/2 F2 D2 | "D"F2 F2 A4 |
+w: Here we go 'round the moun- tain, | two by two
+"A7"A2 G2 FE- E2 | "D"D8 |]
+w: Ride _ Sal- ly, * | ride.
+
+X:12
+T:I Got a Letter This Morning
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-i-got-a-letter-this-morning
+M:2/4
+L:1/8
+Q:1/4=90
+K:Em
+B/2BA/2 B/2A/2G | G2 E z | E4 | G2 z2 |
+w: I got a let- ter this | morn- ing | Oh, | yes,
+B/2BA/2 B/2A/2G | G2 E z | G2 F2 | E4 |]
+w: I got a let- ter this | morn- ing | Oh _ | yes.
+
+X:13
+T:If All the World Were Paper
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-if-all-the-world-were-paper
+M:6/8
+L:1/8
+Q:1/4=90
+K:C
+G | A2 G A2 B | c3 c2 D | E2 D E2 ^F |
+w: If | all the world were | pa- per, And | all the sea were
+G3 G2 E | F2 E F2 G | A2 F D2 d | d2 G A2 B |
+w: ink, And _ | all the trees were | bread and cheese, What | would we ev- er
+c3- c z |]
+w: drink? *
+
+X:14
+T:Indian Taffeta
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-indian-taffeta
+M:2/4
+L:1/8
+Q:1/4=128
+K:Dm
+ddAA | ddAA | AABd | ^cB A2 |
+AA B/2A/2G | GG A/2G/2F | FF F/2G/2F | EE A2 |
+AA B/2A/2G | GG A/2G/2F | FF F/2G/2F | ED D2 |]
+
+X:15
+T:It's All Pretend
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-its-all-pretend
+M:6/8
+L:1/8
+Q:1/4=72
+K:Gm
+"Gm"GGG D z2 | "Cm"GGG E z2 | GGG "D7"A2 B | "Gm"G z2 "F7"z2 A |
+w: Hal- lo- ween night | does- n't scare me, | does- n't scare me a | bit. I've
+"Bb"B2 B F2 F | "Eb"G2 G B2 B | "C7"c2 B A2 G | "F7"F z2 "D7"^F z2 |
+w: heard folks say "It's | all pre- tend. That's | all there is to | it." But
+"Gm"G2 G D z2 | "Cm"GGG E z2 | "Gm"G2 G "D7"A2 B | "Gm"G z2 z3 |
+w: here I am, | all by my- self, | go- ing "Trick or | Treat."
+"Cm"ccc GGG | "Gm"B2 A GGG | "D7"D z2 ^F z2 | "Gm"G z2 z3 |
+w: Why in the world did I | come a- lone on this | dark, dark, | street?
+"Cm"e2 e c z2 | "Gm"d2 c B z2 | "Cm"cde d2 c | "Gm"d3 z3 |
+w: What was that?! | Some- thing moved | o- ver be- hind that | tree!
+"Cm"eee c3 | "Gm"d2 c "Bb"B2 B | "C7"c2 B A2 G | "F7"F3 "D7"z3 |
+w: What- 'll I do? | Nev- er mind. It | real- ly can't scare | me.
+"Gm"GGG D z2 | "Cm"GGG E2 E | "Gm"G2 G "D7"A2 B | "Gm"G z2 z3 |
+w: Hal- low- een night | does- n't scare me. It's | on- ly in my | head.
+"Cm"c2 c G2 G | "Gm"B2 A G2 G | "D7"DDD ^F2 A | "Gm"G |]
+w: E- ven though it's | all pre- tend, I | wish I were home in | bed!!
+
+X:16
+T:John Henry
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-john-henry
+M:4/4
+L:1/8
+Q:1/4=120
+K:D
+AB | "D"d d3 dd A2 | B A3 D2 AA | dddd A2 F2 |
+w: When John | Hen- ry was a- bout | three days old, Just a- | sit- tin' on his pap- py's
+"G"B4 z2 A2 | "D"d2 d2 d2 A2 | B A3 D2 DE | "A"FAFE D2 E2 |
+w: knee, He | gave one loud and | lone- some cry: "The _ | ham- mer'll be the death of
+"D"F4 z2 DE | "A"FAFE D2 E2 | "D"D4 |]
+w: me, The _ | ham- mer'll be the death of | me."
+
+X:17
+T:La Raspa
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-la-raspa
+M:4/4
+L:1/8
+Q:1/4=100
+K:G
+D | "G"G/2GD/2 GD G2 z D | G/2GD/2 FG "D7"A2 z D |
+w: The | work of the day is done, And | un- der the set- ting sun, the
+F/2FD/2 FD F2 z D | D/2DD/2 EF "G"G2 z D |
+w: mu- sic is bright to- day, just | hear those mu- si- cians play! Their
+GG/2F/2 GG/2F/2 GB D2 | G/2GG/2 FE "D7"D2 z D |
+w: voic- es are sin- ging a hap- py song. | This is fi- es- ta day. And
+FF/2E/2 FF/2E/2 FA D2 | D/2DD/2 EF "G"G2 z |]
+w: peo- ple are glad that the nigth is long, | This is the time to play!
+
+X:18
+T:My Hat
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-my-hat
+M:3/4
+L:1/8
+Q:1/4=162
+K:D
+A2 | "D"d4 A2 | G4 F2 | "A7"G2 E4 |
+w: My | hat it | has three | cor- ners,
+z4 F2 | G4 A2 | B4 c2 | "D"A2 z4 |
+w: Three | cor- ners | has my | hat.
+z4 A2 | d4 A2 | G2 z2 F2 | "A7"G2 E4 |
+w: And | had it | not three | cor- ners,
+z4 F2 | G4 A2 | B4 c2 | "D"d2 z4 |
+w: It | would not | be my | hat.
+z4 |]
+
+X:19
+T:My Horse
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-my-horse
+M:6/8
+L:1/8
+Q:1/4=90
+K:G
+D | "G"G2 G GFG | "D7"A2 A A2 c | "G"BAG GFG |
+w: So | fast, so fast _ my | horse can go, Oh | rig- get- ty jig- get- ty,
+"D7"A2 F D2 D | "G"G2 G GFG | "D7"A2 A A2 c | "G"BAG "D7"A2 D |
+w: jig, you know, We | gal- lop o- ver the | coun- try- side, A | rig- get- ty jig, we
+"G"G3- G2 D | [M:2/4]G G GG | "D7"AAAc | "G"BGFG |
+w: ride! * And | when he needs a | lit- tle rest, We | find that trot- ting
+"D7"AFDD | "G"GGGG | "D7"AAAc | "G"BG"D7"AF |
+w: is the best. We | head right for a | grass- y spot, A | trip- a trip- a
+"G"G2 z c | "G"BG"D7"AD | "G"G2 z c | B z G z |
+w: trot! A | trip- a trip- a | trot! A | trip- a
+"D7"A z D z | "G"G |]
+w: trip- a | stop!
+
+X:20
+T:Obwisana
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-obwisana
+M:2/4
+L:1/8
+Q:1/4=90
+K:D
+FAAF | B2 AG | FAED | F4 |
+w: Ob- wi- sa- na | sa- na- na, | Ob- wi- sa- na | sa.
+FAAF | B2 AG | FAEA | D4 |]
+w: Ob- wi- sa- na | sa- na- na, | Ob- wi- sa- na | sa.
+
+X:21
+T:Oh, How Lovely Is the Evening
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-oh-how-lovely-is-the-evening
+M:3/4
+L:1/8
+Q:1/4=90
+K:F
+"F"F4 G2 | A4 F2 | "Bb"B4 A2 | "F"A2 G2 F2 |
+w: Oh, how | love- ly | is the | eve _ ning,
+"Bb"B4 A2 | "F"A2 G2 F2 | "F"A4 B2 | c4 A2 |
+w: Is the | eve _ ning, | When the | bells are
+"Bb"d4 c2 | "F"c2 B2 A2 | "Bb"d4 c2 | "F"c2 B2 A2 |
+w: sweet- ly | ring _ ing, | Sweet- ly | ring _ ing,
+"F"F6 | F6 | "Bb"F6 | "F"F6 |
+w: Ding! | Dong! | Ding! | Dong!
+"Bb"F6 | "F"F6 |]
+w: Ding! | Dong!
+
+X:22
+T:Oh, I Am Quite Alone Here
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-oh-i-am-quite-alone-here
+M:4/4
+L:1/8
+Q:1/4=90
+K:Em
+E2 | "Am"A3 B c2 c2 | "Em"B4 G2 B2 | "G"d2 d2 "A"^c2 c2 |
+w: Oh | I am quite a- | lone here, A | friend I nev- er
+"Em"B4 z2 E2 | "Am"A3 B c2 c2 | "Em"B4 G2 B2 | "G"d2 d2 "A"^c2 c2 |
+w: see. Oh | I am quite a- | lone here, A | friend I nev- er
+"Em"B4 z2 B2 | e2 e2 d2 "A"^c2 | "Em"B4 E2 "A"^c2 | "Bm"B2 B2 G2 F2 |
+w: see. I | wan- der through strange | na- tions, so | dis- tant and so
+"A"E4 z2 B2 | "Em"e2 e2 d2 "A"^c2 | "Em"B4 E2 "A"^c2 | "Bm"B2 B2 G2 F2 |
+w: vast. I | wan- der through strange | na- tions, so | dis- tant and so
+"Em"E4 z2 |]
+w: vast.
+
+X:23
+T:Old Abram Brown
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-old-abram-brown
+M:2/4
+L:1/8
+Q:1/4=90
+K:Dm
+D | "Dm"DD"Gm"DD | "Dm"DD"Gm"DD | "Dm"FEDD |
+w: Old | A- Bram Brown has | left the town, You'll | nev- er see him
+d3 d | cBAc | "Gm"BAGB | "Am"AGFE |
+w: more. He | used to wear an | old gray coat, All | but- toned down be-
+"Dm"D3 |]
+w: fore.
+
+X:24
+T:Old Brass Wagon
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-old-brass-wagon
+M:2/4
+L:1/8
+Q:1/4=112
+K:G
+G/2G/2G/2G/2 G2 | GGED | A/2A/2A/2A/2 A2 | DDEG |
+w: Cir- cle to the left, | Old brass wag- on | Cir- cle to the left, | Old brass wag- on
+B/2B/2B/2B/2 B2 | AGEG | A3/2A/2 EF | G2 G2 |]
+w: Cir- cle to the left, | Old brass wag- on | You're the one, my | dar- ling.
+
+X:25
+T:Peas
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-peas
+M:6/8
+L:1/8
+Q:1/4=90
+K:Glyd
+D | G2 A B2 d | c A2 z2 A | d2 A F2 A |
+w: I | eat my peas with | hon- ey I've | done it all my
+B3 z2 D | G2 A B2 d | c A2 c2 A | d2 A F2 A |
+w: life It | makes the peas taste | fun- ny But it | keeps them on my
+G3- G2 |]
+w: knife. *
+
+X:26
+T:Poor Bengy
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-poor-bengy
+M:2/4
+L:1/8
+Q:1/4=90
+K:Dphr
+"Dm"D3/2D/2 D3/2D/2 | A3- A/2A/2 | "Bb"d2 d2 | "Dm"c2 A3/2A/2 |
+w: Ben- gy met a | bear; * The | bear met | Ben- gy; The
+"Gm"B2 "Dm"A2 | "Gm"G2 "Dm"F3/2F/2 | "Gm"G2 "Dm"F2 | "Eb"E2 "Dm"D2 |]
+w: bear was | bulg- y; The | bulge was | Ben- gy!
+
+X:27
+T:Poor Old Crow
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-poor-old-crow
+M:4/4
+L:1/8
+Q:1/4=144
+K:Dmix
+"D"D2 D2 F3 F | D2 D2 F4 | A2 A2 "Am"G2 A2 | "D"F2 "Am"E2 "D"D4 |
+w: Three old crows sat | on a tree, | Just as black as | crows could be.
+D2 D2 F4 | D2 D2 F4 | A2 A2 G2 "Am"AA | "D"F2 "Am"E2 "D"D3 D |
+w: Poor old crow, | poor old crow, | Just as black as a | crow could be. The
+A2 A2 "Am"c3 G | "D"A2 A2 "Am"c4 | "D"d2 dd "Am"c2 A2 | G2 F2 "D"D4 |
+w: old he crow says | to his mate, | "What shall we do for | meat to eat?"
+D2 D2 F3 F | D2 D2 F4 | A2 A2 "Am"G2 A2 | "D"F2 "Am"E2 "D"D4 |]
+w: Poor old crow, poor | old crow, Just | as black as a | crow could be.
+
+X:28
+T:Rain Come Wet Me
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-rain-come-wet-me
+M:3/4
+L:1/8
+Q:1/4=90
+K:Bb
+B2 B4 | G/2F3/2 D2 z2 | B2 B4 | G/2F3/2 D2 z2 |
+w: Rain, come | wet _ me, | Sun, come | dry _ me.
+B3/2B/2 d4 | c/2B3/2 G2 z2 | B2 F3 F | D/2B,3/2 B,2 z2 |]
+w: Keep a- way, | pret- ty girls, | Don't come a- | nigh _ me.
+
+X:29
+T:Sarasponda
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-sarasponda
+M:2/4
+L:1/8
+%%score (1 2)
+V:1 stem=up
+V:2 stem=down
+Q:1/4=132
+K:D
+[V:1] DF | "D"AAAB | AGFG | AG"A7"FE |
+w: Sar- a- | spon- da, Sar- a- | spon- da, Sar- a- | spon- da, ret set
+[V:2] x2 | x4 | x4 | x4 |
+[V:1] "D"D2 DF | AAAB | AGFG | AG"A7"FE |
+w: set. Sar- a- | spon- da, Sar- a- | spon- da, Sar- a- | spon- da, ret set
+[V:2] x4 | x4 | x4 | x4 |
+[V:1] "D"D2 D2 | "G"d3 B | "D"A2 z D | "G"ddBB |
+w: set. A- | do- re- | o. A- | do- re- boom- de-
+[V:2] x4 | B3 G | F2 z D | BBGG |
+[V:1] "D"A2 z F | "A7"GGEE | "D"FG A2 | "A7"EGFE |
+w: o. A- | do- re- boom- de, | ret set set. | Ha- se pa- se
+[V:2] F2 z x | x4 | x4 | x4 |
+[V:1] "D"D2 |]
+w: oh!
+[V:2] x2 |]
+
+X:30
+T:Scandinavian Folk Song
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-scandinavian-folk-song
+M:3/4
+L:1/8
+Q:1/4=132
+K:Gm
+"Gm"G2 G2 G2 | "D7"^F3 G A2 | "Gm"B2 B2 B2 | "D7"A3 ^F D2 |
+"Gm"G2 G2 G2 | "D7"^F3 G A2 | "Cm"B2 G2 "D7"^F2 | "Gm"G4 z2 |
+"Bb"d2 d2 d2 | "F"c3 B A2 | "Gm"B2 B2 B2 | "D7"A3 ^F D2 |
+"Gm"G2 G2 G2 | "D7"^F3 G A2 | "Gm"B2 G2 "D7"^F2 | "Gm"G4 z2 |]
+
+X:31
+T:Shake Those 'Simmons Down
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-shake-those-simmons-down
+M:2/4
+L:1/8
+Q:1/4=120
+K:G
+DE | G2 B/2B3/2 | B/2A3/2 DE | G2 G/2G3/2 |
+w: Cir- cle | left, doo- oh, | doo- oh, Cir- cle | left, doo- oh,
+E/2D3/2 DE | G2 B/2B3/2 | B/2A3/2 z2 | BB A/2A3/2 |
+w: doo- oh, Cir- cle | left, doo- oh, | doo- oh, | Shake those 'sim- mons
+G2 |]
+w: down!
+
+X:32
+T:Somebody Waiting
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-somebody-waiting
+M:4/4
+L:1/8
+Q:1/4=120
+K:G
+D2 D2 | "G"G2 G2 G2 G2 | B4 B2 A2 | "C"G2 A2 G2 E2 |
+w: As I | look in- to your | eyes, I be- | hold a sweet sur-
+"G"D4 F2 E2 | "D7"D4 F2 E2 | D4 E2 F2 | "G"G8- |
+w: prise, There is | so- me- body | wait- ing for | me.
+G4 D2 D2 | "G"G4 G2 G2 | G2 B2 A2 G2 | "C"E4 E2 E2 |
+w: * There is | so- me- body | wait- ing, There is | so- me- body
+E2 G2 F2 E2 | "D7"D4 F2 E2 | D4 E2 F2 | "G"G8- |
+w: wait- ing, There is | so- me- body | wait- ing for | me.
+G4 |]
+w: *
+
+X:33
+T:Swing a Lady
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-swing-a-lady
+M:4/4
+L:1/8
+Q:1/4=148
+K:Fmix
+c2 | "F"c2 B2 "Cm"eedd | "F"c2 A2 F2 FF | c2 B2 "Cm"e2 d2 |
+w: A- | way down yon- der in the | ce- dar swamp, Where the | wa- ter's deep and
+"F"c4 "Cm"c4 | "F"c2 B2 "Cm"e2 d2 | "F"ccAG F2 F2 | A2 A2 "Cm"G2 G2 |
+w: mud- dy, | There I spied my | pret- ty lit- tle miss, And | there I spied my
+"F"F4 F4 | "F"FFFF "Cm"FE C2 | "F"FFFF A4 | FFFF "Cm"FE C2 |
+w: hon- ey. | Swing a la- dy up and down, | Swing a la- dy 'round, | Swing a la- dy up and down,
+CCDD "F"F4 |]
+w: Swing a la- dy home.
+
+X:34
+T:The Bell Doth Toll
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-the-bell-doth-toll
+M:4/4
+L:1/8
+Q:1/4=120
+K:G
+d2 | "G"B3 c d2 d2 | B3 c d2 "C"e2 | "G"d2 c2 "D7"B2 A2 |
+w: The | bell doth toll, Its | ech- oes roll, I | know the sound full
+"G"B6 B2 | G3 A BBBB | G3 A BB"C"cc | "G"B2 A2 "D7"G2 F2 |
+w: well. I | love its ring- ing, For it | calls to sing- ing, With its | bim, bim, bim, bom
+"G"G6 z2 | G6 z2 | G6 z2 | G4 "D7"D4 |
+w: bell. | Bim, | bim, | bim, bom,
+"G"G6 |]
+w: bell.
+
+X:35
+T:The Birch Tree
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-the-birch-tree
+M:2/4
+L:1/8
+Q:1/4=90
+K:F
+AAAA | GGFF | E2 D z |
+w: Lit- tle birch tree | grow- ing in the | mead- ow,
+AAcA | GAFF | E2 D2 |
+w: Cur- ly- leaved and | grow- ing in the | mead- ow,
+E3 F | GAFF | E2 D z |
+w: Lu- lee, | lu- lee in the | mead- ow,
+E3 F | GAFF | E2 D2 |]
+w: Lu- lee, | lu- lee in the | mead- ow.
+
+X:36
+T:The Braes O' Yarrow
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-the-braes-o-yarrow
+M:6/4
+L:1/8
+Q:1/4=112
+K:Gm
+GG | "Gm"B2 c2 d4 G2 A2 | "Cm"B2 A2 "Gm"G4 z2 FF | B2 c2 d6 G2 |
+"Cm"B2 c4 "Gm"z4 Bc | "Dm"d2 f2 d6 GA | "Gm"B2 A2 "Cm"G4 z2 GA | "Gm"B2 A2 "Cm"G6 "Dm"D2 |
+D2 "Gm"G4 z4 |]
+
+X:37
+T:The Lumber Camp Song
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-the-lumber-camp-song
+M:6/8
+L:1/8
+Q:1/4=90
+K:Edor
+G | "Em"B2 B B2 B | B3 B2 B | "D"A2 A A2 F |
+w: Come | all you jol- ly | fel- lows and | lis- ten to my
+D3 z2 F | A2 A A2 A | A2 A A2 A | "Em"E2 F G2 A |
+w: song; It's | all a- bout the | shan- ty boys and | how they get a-
+B3 z BB | E2 F G2 A | B3 e2 e | "G"d2 c B2 c |
+w: long. We're the | jol- iest bunch of | fel- lows that | ev- er you could
+d3 z2 d | "Em"G2 G "D"F2 F | "Em"E2 E G2 A | "Bm"B2 A G2 F |
+w: find; The | way we spend our | win- ter months is | hurl- ing down the
+"Em"E3- E2 |]
+w: pine. *
+
+X:38
+T:The Miller
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-the-miller
+M:2/4
+L:1/8
+Q:1/4=100
+K:Gdor
+D | "Gm"GG G3/2A/2 | BDDE | "Dm"FEDE |
+w: Right | mer- ri- ly the | wheel goes 'round and | like- wise goes the
+F2 FE | "Gm"DG G3/2A/2 | BABc | "Bb"dcBB |
+w: stone. Oh, right | mer- ri- ly the | wheel goes 'round and | like- wise goes the
+"F"c3 d | "Bb"dc B3/2d/2 | "C7"cB "F"A2 | "Dm"AG "Am"G3/2A/2 |
+w: stone. Right | mer- ri- ly the | wheel goes 'round, | When the corn is
+"Dm"GF "Bb"D3/2D/2 | "Gm"BBBB | "Dm"cB A3/2A/2 | "Gm"GDD"Dm"F |
+w: dry and sound. A | bet- ter trade I | nev- er found Since | ev- er I've been
+"Gm"G3 |]
+w: born.
+
+X:39
+T:The Muffin man
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-the-muffin-man
+M:2/2
+L:1/8
+Q:1/4=132
+K:Bb
+F2 | F2 B2 B3 c | d2 B2 B3 A | G2 c2 c3 B |
+w: Oh | do you know the | muf- fin man, the | muf- fin man, the
+A2 F2 F2 F2 | F2 B2 B3 c | d2 B2 B3 B | c2 c2 F2 F2 |
+w: muf- fin man? Oh | do you know the | muf- fin man, That | lives on Dru- ry
+B6 |]
+w: Lane?
+
+X:40
+T:The Sky has Clouded
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-the-sky-has-clouded
+M:4/4
+L:1/8
+Q:1/4=90
+K:Em
+E2 | "Em"B2 BB B2 B2 | "Am"AGAB A3 E | "Em"B2 BB B2 B2 |
+"Am"AGAB A3 E | "Em"B2 B2 "Am"A3 F | "Em"G2 B2 "Am"A4 | "Em"E3 A "Am"A2 GF |
+"Em"G2 "Am"A2 "B7"BAGF | "Em"E4 z2 |]
+
+X:41
+T:Toodala
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-toodala
+M:2/4
+L:1/8
+Q:1/4=120
+K:G
+DEGA | B3/2B/2 G2 | A3/2A/2 E2 | G3/2G/2 D2 |
+w: Ev- 'ry'- bo- dy | move a- round, | Too- da- la, | too- da- la.
+DEGA | B3/2B/2 G2 | d3/2d/2 AB | G2 G2 |]
+w: Ev- 'ry'- bo- dy | move a- round, | Too- da- la- la- | la- day.
+
+X:42
+T:West Virginia
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-west-virginia
+M:2/2
+L:1/8
+Q:1/4=120
+K:Dm
+D2 A2 | "Dm"A6 G2 | "Gm"B6 A2 | "Dm"F2 D6 |
+z4 D2 FF | "Gm"G8- | G2 F2 G2 B2 | "Dm"A8 |
+z4 A2 c2 | "D"d8- | d2 A2 B2 AA | "Gm"G2 G2 z4 |
+z2 G2 G2 B2 | "A7"A8- | A2 E2 G2 F2 | "Dm"D8- |
+D4 |]
+
+X:43
+T:Who Has Seen the Wind?
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-who-has-seen-the-wind
+M:4/4
+L:1/8
+Q:1/4=90
+K:Cphr
+"Cm"ccBA G2 z2 | "Fm"FFED "Cm"C2 z G | "Fm"cdcd (3edc "Cm"BG | "Db"(3AGF "Bbm"ED "Cm"C2 z2 |
+w: Who has seen the wind? | Nei- ther you nor I. But | when the trees lift up _ their heads, The | wind _ is pass- ing by.
+"Cm"ccBA G2 z2 | "Fm"FFED "Cm"C2 z G | "Fm"cdcd (3edc "Cm"BG | "Db"(3AGF "Bbm"ED "Cm"C2 z2 |]
+w: Who has seen the wind? | Nei- ther I nor you. But | when the trees bow down _ their heads, The | wind _ is pass- ing through.
+
+X:44
+T:Will Winter End?
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-will-winter-end
+M:2/4
+L:1/8
+Q:1/4=124
+K:Dphr
+A2 AG | F2 FD | E2 F2 | D4 |
+w: Cold, i- cy | winds bow ac- | ross my | nose
+A2 Bc | d2 dA | c2 d2 | A4 |
+w: I'm real- ly | fro- zen down | to my | toes.
+d2 de | d2 A2 | c2 B2 | A4 |
+w: Right now I'm | rea- dy | for the | spring.
+A2 AG | F2 FD | E2 F2 | D4 |]
+w: 'Til then I'll | have this _ | song to | sing.
+
+X:45
+T:Wind the Bobbin
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-wind-the-bobbin
+M:2/2
+L:1/8
+Q:1/4=120
+K:Gmix
+"G"G3 G G2 G2 | B2 G2 z2 ED | G2 G2 G2 z2 | B2 G2 z4 |
+w: Wind the bob- bin, | ding, dang, Gon- na | wind it tight, | ding dang.
+"F"F2 FF A2 c2 | F2 FF A2 c2 | F2 FF A2 c2 | F2 F2 z4 |]
+w: Bob- bin a- wound up, | Bob- bin a- wound up, | Bob- bin a- wound up, | Break it!
+
+X:46
+T:Yonder Stands a Handsome Lady
+C:Trad.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+%%id jri2-yonder-stands-a-handsome-lady
+M:4/4
+L:1/8
+Q:1/4=90
+K:Ddor
+D2 DE F2 ED | A2 A2 FE D2 | A2 AB c2 BA | d2 cB A4 |
+w: Yon- der _ stands a _ | hand- some la- _ dy | Who she _ is I _ | do not _ know
+A2 AB c2 A2 | d2 D2 EF G2 | A2 dd A2 G2 | F2 E2 D4 |]
+w: Shall I yon court her | for her beau- _ ty? | What says you ma- dam, | "yes" or "no"?
+`
 };
