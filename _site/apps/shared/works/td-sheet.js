@@ -22,6 +22,13 @@
 // column (count, then the first names; filter by words in it) and two lists above the table: concept (grouped by source, those used only
 // once in a last group; a label joined with ";" in the data counts as its separate concepts; names cut at 48 characters, the full name on
 // hover) and source. A uses `work` id that is not in works-data.js becomes its own row (type Piece, "uses only").
+// HOOKTHEORY and REAL BOOK songs (apps/shared/data/dir-songs/hooktheory.json, realbook.json, from scripts/dir-songs/build.py; year, genre and
+// composer from MusicBrainz by scripts/dir-songs/enrich.py): types "Hooktheory" (13k songs of the Hooktheory / Sheet Sage set, tiers 1-2, no game or
+// library music; composer / artist column = the artist) and "Real Book" (every title in the Real Book Catalogue: composer where an index names
+// one, the books and pages in the Print column and the details). They have no home on the site, so the title opens the details; the Open column
+// has ▶ YouTube (cued to the section), ♫ a Spotify search (no Spotify ids in the data), ♯ the TheoryTab page. The Genre column is MusicBrainz tags
+// mapped onto the Pop Themes' genres (+ latin / christmas from the book); the Year of a Real Book song is the earliest recording MusicBrainz knows,
+// not a publication date (hover). A row with no MusicBrainz match has no year / genre.
 // SUSPECT TUNES: a tune in window.TUNE_QUALITY (apps/tunes/tune-quality.js, from scripts/tune-quality.mjs) or tagged needs-repair is left out
 // until "show suspect tunes" is ticked; shown with ⚠ and the reasons on hover.
 // The old per-type lists below the table start folded (the sheet has the same pieces); first visit only, then the reader's choice is kept.
@@ -73,7 +80,7 @@
   const PB = window.PRINT_BOOKS || {};
   const printOf = (w) => ((w && w.in && w.in.print) || []).map((x) => ((PB[x.book] || {}).short || x.book).split(",")[0] + ((PB[x.book] || {}).ref === "page" ? " p. " : " ") + x.fig).join(", ");
   const yearOf = (o) => (o && (o.composed || o.published)) || "";
-  const blank = () => ({ suspect: "", composer: "", part: "", set: "", kind: "", key: "", meter: "", year: "", print: "", notation: 0, recs: 0, timed: 0, chords: 0, tsn: null, cat: "" });
+  const blank = () => ({ suspect: "", genre: "", links: null, composer: "", part: "", set: "", kind: "", key: "", meter: "", year: "", print: "", notation: 0, recs: 0, timed: 0, chords: 0, tsn: null, cat: "" });
   const add = (r) => { rows.push(Object.assign(blank(), r)); };
   function worksRecs(kind, id) {
     const w = Wk && Wk.of(kind, id); if (!w) return [];
@@ -135,7 +142,28 @@
       tip: "PDMX · " + (g.arranger ? "arr. " + g.arranger : "original scoring?") + " " + Math.round(g.conf * 100) + "%" + (g.converted ? "" : " · MusicXML only, not on the site"),
       notation: g.converted ? 1 : 0, href: g.converted ? "/theory/analysed-scores/full-scores.html?id=" + g.id : null, id: g.id, cat: catKey(g.title) || stemKey(title), stem: stemOf(title) }, noUses())); });
   }).catch(() => {});
-  const ready = Promise.all([bbReady, pdReady]);
+  // Hooktheory songs and Real Book titles (scripts/dir-songs/build.py)
+  const sp = (q) => "https://open.spotify.com/search/" + encodeURIComponent(q);
+  const genreText = (g) => (g || []).join(" · ");
+  const htReady = fetch("/apps/shared/data/dir-songs/hooktheory.json").then((r) => r.json()).then((all) => {
+    all.forEach((g) => {
+      const links = []; if (g.y) links.push({ t: "▶", u: "https://www.youtube.com/watch?v=" + g.y + (g.s ? "&t=" + g.s + "s" : ""), tip: "YouTube, cued to the section" });
+      links.push({ t: "♫", u: sp(g.a + " " + g.t), tip: "Search Spotify" }, { t: "♯", u: "https://www.hooktheory.com/theorytab/view/" + g.h, tip: "Hooktheory TheoryTab" });
+      add(Object.assign({ title: g.t, type: "Hooktheory", composer: g.a, set: "Hooktheory", genre: genreText(g.g), key: g.k || "", meter: g.m || "",
+        year: g.yr || "", chords: 1, notation: 0, links, htRow: g, id: g.h }, noUses()));
+    });
+  }).catch(() => {});
+  const rbReady = fetch("/apps/shared/data/dir-songs/realbook.json").then((r) => r.json()).then((d) => {
+    d.songs.forEach((g) => {
+      const books = g.bk || [], vols = (g.sf || []).map((v) => (d.vols[v] || "Real Book " + v).replace(/^The /, ""));
+      add(Object.assign({ title: g.t, type: "Real Book", composer: g.c || (g.a || []).join(", "), genre: genreText(g.g),
+        set: books.length ? books[0][0] + (books.length > 1 ? " +" + (books.length - 1) : "") : vols.length ? "Songfinder" : "Real Book",
+        year: g.yr || "", print: books.map((b) => b[0] + " p. " + b[1]).join(", "), chords: 1,
+        links: [{ t: "♫", u: sp(g.t + (g.c ? " " + g.c.split(";")[0] : "")), tip: "Search Spotify" }, { t: "▶", u: "https://www.youtube.com/results?search_query=" + encodeURIComponent(g.t + " " + (g.c || "").split(";")[0]), tip: "Search YouTube" }],
+        rbRow: g, rbVols: vols, id: g.t, tip: g.cm ? "Composer from MusicBrainz, not the book" : "" }, noUses()));
+    });
+  }).catch(() => {});
+  const ready = Promise.all([bbReady, pdReady, htReady, rbReady]);
 
   // ---- concepts: uses/*.js and print figures with a concept ----
   const uses = Wk && Wk.usesAll ? Wk.usesAll() : [];
@@ -203,9 +231,9 @@
   regroup();
 
   // ---- table ----
-  const TYPES = ["Tune", "Theme", "Piece", "Score", "Song", "Billboard", "Isophonics", "Recording"];
+  const TYPES = ["Tune", "Theme", "Piece", "Score", "Song", "Billboard", "Isophonics", "Hooktheory", "Real Book", "Recording"];
   const COLS = [
-    { k: "title", label: "Title", fixed: 1 }, { k: "type", label: "Type", chips: TYPES }, { k: "composer", label: "Composer / artist" },
+    { k: "title", label: "Title", fixed: 1 }, { k: "type", label: "Type", chips: TYPES }, { k: "composer", label: "Composer / artist" }, { k: "genre", label: "Genre", w: "6rem" },
     { k: "part", label: "Movement / part" }, { k: "set", label: "Set / source" }, { k: "kind", label: "Kind", sel: [] },
     { k: "key", label: "Key", w: "4rem" }, { k: "meter", label: "Meter", w: "5rem" },
     { k: "year", label: "Year", num: 1, w: "4.5rem", ph: "<1800" }, { k: "print", label: "Print", w: "6rem" },
@@ -281,7 +309,7 @@
     const sq = fold((document.getElementById("td-q") || {}).value || "").split(/\s+/).filter(Boolean);
     const list = rows.filter((r) => {
       if (r.suspect && !showSus) return false;
-      if (sq.length) { const hay = fold([r.title, r.composer, r.part, r.set, r.kind, r.concepts, r.print].join(" ")); if (!sq.every((w) => hay.indexOf(w) >= 0)) return false; }
+      if (sq.length) { const hay = fold([r.title, r.composer, r.genre, r.part, r.set, r.kind, r.concepts, r.print].join(" ")); if (!sq.every((w) => hay.indexOf(w) >= 0)) return false; }
       if (q.recs && !r.recs) return false; if (q.timed && !r.timed) return false; if (q.notation && !r.notation) return false;
       if (q.chords && !r.chords) return false; if (q.print && !r.print) return false;
       if (typeOn.size && !typeOn.has(r.type)) return false;
@@ -320,7 +348,7 @@
     });
     return out;
   }
-  const hasDetail = (r) => !r.isGroup && (r.uses.length || r.from || (r.wid && W[r.wid]));
+  const hasDetail = (r) => !r.isGroup && (r.uses.length || r.from || (r.wid && W[r.wid]) || r.htRow || r.rbRow);
   function titleCell(r, n) {
     if (r.isGroup) return `<button type="button" class="tds-kids" aria-expanded="${openKids.has(r.gkey)}" title="Show its rows">${openKids.has(r.gkey) ? "▾" : "▸"}</button> <a href="#" class="tds-kids-t"><b>${esc(r.title)}</b></a> <span class="tds-dim">(${n}${n < r.kids.length ? " of " + r.kids.length : ""})</span>`;
     const btn = hasDetail(r) ? `<button type="button" class="tds-open" aria-expanded="false" title="Details: recordings, uses, source">▸</button> ` : "";
@@ -335,12 +363,12 @@
     for (const e of all) { if (!e.child) { if (top >= shown) break; top++; } if (!e.child || openKids.has(e.child.gkey)) vis.push(e); }
     curList = vis;
     tbody.innerHTML = vis.map((e, i) => { const r = e.r; return `<tr data-i="${i}"${e.child ? ` class="tds-child" data-g="${esc(e.child.gkey)}"` : r.isGroup ? ` class="tds-parent" data-g="${esc(r.gkey)}"` : ""}>
-      <td>${titleCell(r, e.n)}${r.suspect ? ` <span class="tds-sus-tag" title="${esc("Predicted bad ABC: " + r.suspect)}">⚠</span>` : ""}</td><td>${r.type}</td><td>${esc(r.composer)}</td><td class="tds-dim">${esc(r.part)}</td><td class="tds-dim">${esc(r.set)}</td>
+      <td>${titleCell(r, e.n)}${r.suspect ? ` <span class="tds-sus-tag" title="${esc("Predicted bad ABC: " + r.suspect)}">⚠</span>` : ""}</td><td>${r.type}</td><td>${esc(r.composer)}</td><td class="tds-dim">${esc(r.genre)}</td><td class="tds-dim">${esc(r.part)}</td><td class="tds-dim">${esc(r.set)}</td>
       <td class="tds-dim"${r.tip ? ` title="${esc(r.tip)}"` : ""}>${esc(r.kind)}</td>
-      <td>${esc(r.key)}</td><td>${esc(r.meter)}</td><td class="tds-c">${esc(r.year || "")}</td><td class="tds-dim">${esc(r.print || "")}</td><td class="tds-c">${r.notation ? "✓" : ""}</td><td class="tds-c">${r.recs || ""}</td>
+      <td>${esc(r.key)}</td><td>${esc(r.meter)}</td><td class="tds-c"${r.year && r.type === "Real Book" ? ' title="The earliest recording MusicBrainz knows, not a publication date"' : ""}>${esc(r.year || "")}</td><td class="tds-dim">${esc(r.print || "")}</td><td class="tds-c">${r.notation ? "✓" : ""}</td><td class="tds-c">${r.recs || ""}</td>
       <td class="tds-c">${r.timed ? "✓" + (r.timed > 1 ? " " + r.timed : "") : r.recs ? "–" : ""}</td><td class="tds-c">${r.chords ? "✓" : ""}</td>
       <td class="tds-con" title="${esc(r.concepts)}">${r.nconc ? `<b>${r.nconc}</b> ` + esc(r.concepts.split("; ").slice(0, 2).join("; ")) + (r.nconc > 2 ? "…" : "") : ""}</td>
-      <td>${r.tsn ? `<a href="${esc(r.tsn)}" title="Open ${r.recs > 1 ? "the first of " + r.recs + " recordings" : "it"} in Timestamp Notes${r.recs > 1 ? " (▸ lists them all)" : ""}">⏱</a>` : ""}</td></tr>`; }).join("");
+      <td>${(r.links || []).map((l) => `<a href="${esc(l.u)}" target="_blank" rel="noopener" title="${esc(l.tip)} ↗">${l.t}</a>`).join(" ")}${r.tsn ? `<a href="${esc(r.tsn)}" title="Open ${r.recs > 1 ? "the first of " + r.recs + " recordings" : "it"} in Timestamp Notes${r.recs > 1 ? " (▸ lists them all)" : ""}">⏱</a>` : ""}</td></tr>`; }).join("");
     more.hidden = top >= all.filter((e) => !e.child).length;
     const st = document.getElementById("td-stat"); if (st && sq0()) st.textContent = leaves.length.toLocaleString() + " match" + (leaves.length === 1 ? "" : "es");
     host.querySelector(".tds-n").textContent = leaves.length.toLocaleString() + " of " + rows.length.toLocaleString() + " rows";
@@ -349,6 +377,19 @@
   function detail(r) {
     const box = document.createElement("div");
     if (r.from) { const p = document.createElement("p"); p.className = "td-note"; p.textContent = r.from === "uses only" ? "Known only from the teaching sources below." : "From: " + r.from; box.appendChild(p); }
+    const line = (t) => { const p = document.createElement("p"); p.className = "td-note"; p.textContent = t; box.appendChild(p); };
+    if (r.htRow) {
+      const g = r.htRow;
+      line("Hooktheory TheoryTab: " + g.n + " section" + (g.n > 1 ? "s" : "") + (g.x && g.x.length ? " (" + g.x.join(", ") + ")" : "") + (g.b ? ", about " + g.b + " bpm" : "") + ". Key and meter are the best section's.");
+      line("Data: Hooktheory / Sheet Sage (CC BY-NC-SA 3.0). Year = earliest matching release on MusicBrainz; genre from its tags.");
+    }
+    if (r.rbRow) {
+      const g = r.rbRow;
+      if (g.bk && g.bk.length) line("In: " + g.bk.map((b) => b[0] + " p. " + b[1]).join("; "));
+      if (r.rbVols.length) line("Hal Leonard Songfinder: " + r.rbVols.join("; "));
+      if (g.f) line("Film: " + g.f);
+      line("Year = the earliest recording MusicBrainz knows (not the date written); genre from its tags and the book. A common title can match the wrong song.");
+    }
     const w = r.wid && W[r.wid];
     if (w && Wk && Wk.panel) box.appendChild(Wk.panel(Object.assign({ id: r.wid }, w), null));
     else if (r.uses.length && Wk) box.appendChild(Wk.usesList(r.uses));
