@@ -476,6 +476,20 @@
     trim(p);
     return null;
   }
+  // the notes from .. to keep their written values and become an n-tuplet (n in the time of n-1 for 3; others not yet):
+  // a quarter and an eighth, (3 -> "(3:2:2 f2 g". -> an error message or null (p changed)
+  function tuplet(p, from, to, n) {
+    if (n !== 3) return "Only triplets (3) for now; 5, 7 and the rest are on the to-do list.";
+    const olds = p.rhythm.slice(from, to + 1);
+    if (!olds.length) return "Nothing selected.";
+    if (olds.some(r => !onGrid(r.durQ))) return "Some of those notes are in a tuplet already.";
+    const test = p.rhythm.map((r, i) => i >= from && i <= to ? Object.assign({}, r, { durQ: r.durQ * 2 / 3 }) : r);
+    const g = tupletGroups(test);
+    if (!g[from] || !g[from].first || !g[to] || !g[to].last || (from < to && g.slice(from, to + 1).some(x => !x)))
+      return "Those notes don't add up to three of one note value (as written): a triplet needs, say, three eighths' worth.";
+    for (let i = from; i <= to; i++) p.rhythm[i] = Object.assign({}, p.rhythm[i], { durQ: snapQ(p.rhythm[i].durQ * 2 / 3) });
+    return null;
+  }
   function slotTime(p, slot) { let t = 0; for (let i = 0; i < slot; i++) t += p.rhythm[i].durQ; return r3(t); }
 
   // ---- takes and bars, for DWIM --------------------------------------------------------------------------------------
@@ -569,6 +583,10 @@
     const effective = l => (barAcc[l] !== undefined ? barAcc[l] : (s[l] || 0));
     let pick = wanted(midi, want);
     if (!pick) pick = cands.find(c => c.a === effective(c.l));          // needs no accidental written
+    if (!pick && /hm$/.test(key || "")) {                                 // harmonic minor: the raised seventh on the letter below the tonic (D: C#, not Db)
+      const l7 = LETTERS[(LETTERS.indexOf(key[0].toUpperCase()) + 6) % 7];
+      pick = cands.find(c => c.l === l7 && c.a === (s[l7] || 0) + 1);
+    }
     if (!pick) pick = cands.find(c => c.a === 0) || cands.find(c => c.a === (sharps ? 1 : -1)) || cands[0];
     let acc = "";
     if (pick.a !== effective(pick.l)) { acc = ACC[pick.a]; barAcc[pick.l] = pick.a; }
@@ -612,11 +630,11 @@
     const chunkBarSeen = {};
     const close = () => { beam(bar, barMi); bars.push(bar); bar = { items: [], syl: [] }; barAcc = {}; };
     doc.chunks.forEach((ch, ci) => {
-      const here = at(doc, ci), mi = meterInfo(here.meter);
+      const here = at(doc, ci), mi = strictOf(doc, meterInfo(here.meter));
       if (!mi) return;
       const len = chunkLen(doc, ci);
       if (!len) return;
-      const bar16 = Math.round(mi.barQ * 4);
+      const free = !!ch.free, bar16 = free ? 1 << 20 : Math.round(mi.barQ * 4);   // free time (ch.free): no barlines inside the chunk
       let fields = "";
       if (here.meter !== meter) { fields += "[M:" + here.meter + "]"; if (any && pos16 % prevBar16 !== 0) close(); pos16 = 0; }
       if (here.key !== key) { fields += "[K:" + keyName(here.key) + "]"; barAcc = {}; }
@@ -624,7 +642,8 @@
       const tHere = here.tempo || tempo;
       if (!tempoSet || tHere !== tempo) fields += "[Q:1/4=" + tHere + "]";
       tempo = tHere; tempoSet = true;
-      meter = here.meter; key = here.key; prevBar16 = bar16; barMi = mi;
+      meter = here.meter; key = here.key; prevBar16 = bar16; barMi = free ? Object.assign({}, mi, { strict: true }) : mi;
+      if (free) { if (bar.items.length) close(); pos16 = 0; }
       if (ch.pickup && ci === 0 && !any) { const p16 = Math.round(len * 4); if (p16 < bar16) pos16 = bar16 - p16; }   // a short first bar
       let padIn = 0;                                // every chunk starts on beat 1, or a lead (its pickup) before a barline
       const hasLead = ch.lead > EPS && ch.lead < mi.barQ - EPS, want = hasLead ? bar16 - Math.round(ch.lead * 4) : 0;
@@ -698,7 +717,7 @@
             else if (filled && slot.also && slot.also.length) tok = "[" + [midi].concat(slot.also).sort((a, b) => a - b).map(m => spell(m, here.key, barAcc, m === midi ? slot.spell : undefined)).join("") + "]" + LEN[pc];
             else tok = filled ? spell(midi, here.key, barAcc, slot.spell) + LEN[pc] : "!style=rhythm!B" + LEN[pc];   // an empty slot: never an accidental
             const lastOfSlot = k === all.length - 1 && take === left;
-            const item = { pre, tok, tail: slot.type === "note" && (!lastOfSlot || slot.tie) ? "-" : "", pos: piecePos, len: pc, note: slot.type === "note" };
+            const item = { pre, tok, tail: slot.type === "note" && (!lastOfSlot || slot.tie) ? "-" : "", pos: piecePos, len: pc, note: slot.type === "note", beam: lastOfSlot && slot.beam != null ? slot.beam : undefined };
             piecePos += pc;
             if (!slot.padding) item.mark = { chunk: ci, voice: v, slot: si, filled: slot.type === "note" ? filled : null,
               offQ: ((len16 - left) + (item.pos - inBar)) / 4, lenQ: pc / 4, atQ: r3(t), down: item.pos === 0 };   // atQ: from the chunk's start; down: on beat 1          // which piece of the slot this is (a note drawn as tied pieces)
@@ -715,6 +734,7 @@
           if (pos16 % bar16 === 0) { bar.endCi = ci; bar.endT = r3(t); close(); }
         }
       });
+      if (free) { if (bar.items.length) { bar.endCi = ci; bar.endT = r3(t); close(); } pos16 = 0; }
     });
     if (bar.items.length) { beam(bar, barMi); bars.push(Object.assign(bar, { open: true })); }
     return bars;
@@ -751,6 +771,7 @@
   }
   function range(a, b, step) { const out = []; for (let x = a; x < b; x += step) out.push(x); return out; }
   function clearCut(mi, pos) {
+    if (mi.strict) return Infinity;            // strict: a note is cut only at the barline
     if (mi.n === 4 && mi.d === 4) return pos % 4 !== 0 && pos < 8 ? 8 - pos : Infinity;
     if (mi.family === "triple" || mi.family === "other") {
       const g = groupStarts(mi), next = g.find(x => x > pos);
@@ -761,8 +782,18 @@
   // notes shorter than a quarter are beamed within a beat (a dotted quarter in compound meters, the 3+2 / 2+2+3 groups in
   // 5/8 and 7/8). Eighths fill a half bar of 4/4, or a whole bar of 2/4 or 3/4, as one beam when nothing else is in it.
   // A rest, a longer note or an inline field breaks the beam.
+  // strict rhythm (doc.strict; unset = on in 5/8, 7/8, 11/8): notes are written as entered, cut only at barlines, and beamed
+  // in unbroken runs (a rest or a quarter or longer ends one), so the grouping follows where the long notes fall. A bar with
+  // nothing to break its run (all eighths) is beamed by the meter's usual groups.
+  const strictDefault = mi => !!mi && mi.family === "other";
+  function strictOf(doc, mi) { if (!mi) return mi; const on = doc.strict == null ? strictDefault(mi) : !!doc.strict; return on ? Object.assign({}, mi, { strict: true }) : mi; }
   function beam(bar, mi) {
     if (!mi) return;
+    if (mi.strict) {
+      const ok = it => it.note && it.len < 4 && !/\[/.test(it.pre);
+      if (bar.items.some(it => !ok(it))) { bar.items.forEach((it, i) => { const prev = bar.items[i - 1]; it.join = !!prev && ok(prev) && ok(it); }); beamByHand(bar); return; }
+      mi = Object.assign({}, mi, { strict: false });
+    }
     const bar16 = Math.round(mi.barQ * 4), g = groupStarts(mi);
     const beamable = it => it.note && it.len < 4 && !/\[/.test(it.pre);
     const groupOf = pos => { let k = 0; g.forEach((x, i) => { if (pos >= x) k = i; }); return k; };
@@ -777,6 +808,33 @@
       const prev = bar.items[i - 1];
       it.join = !!prev && beamable(prev) && beamable(it) && key(prev.pos) === key(it.pos);
     });
+    beamByHand(bar);
+  }
+  // slot.beam (true: beamed to the next note, false: not; unset: the rules above), where both notes can take a beam
+  function beamByHand(bar) {
+    const can = it => it.note && it.len < 4 && !it.tuplet && !/\[/.test(it.pre);
+    bar.items.forEach((it, i) => { const prev = bar.items[i - 1]; if (prev && prev.beam != null && can(prev) && can(it)) it.join = prev.beam; });
+  }
+  // slot si of voice v in chunk ci and the note after it, as written: { join, can } (can: both take a beam, same bar), or null
+  // when the next note isn't beside it in a bar (a barline, a rest, the end)
+  function beamNext(doc, ci, v, si) {
+    for (const bar of voiceBars(doc, v)) for (let i = 1; i < bar.items.length; i++) {
+      const a = bar.items[i - 1], b = bar.items[i];
+      if (!a.mark || !b.mark || a.mark.chunk !== ci || a.mark.slot !== si || b.mark.slot === si) continue;
+      const ok = it => it.note && it.len < 4 && !it.tuplet && !/\[/.test(it.pre);
+      return { join: !!b.join, can: ok(a) && ok(b) && b.mark.chunk === ci && b.mark.slot === si + 1 };
+    }
+    return null;
+  }
+  // set slot si's beam to the next note (on: true / false; null: back to the rules), kept only where it differs from them
+  function setBeam(doc, ci, v, si, on) {
+    const s = part(doc.chunks[ci], v).rhythm[si]; if (!s) return false;
+    delete s.beam;
+    if (on == null) return true;
+    const def = beamNext(doc, ci, v, si);
+    if (!def || !def.can) return false;
+    if (def.join !== on) s.beam = on;
+    return true;
   }
 
   // where the lines end: after every 4 bars; or, with doc.lineEvery (bars a line, a chunk's pickup bar not counted) or any
@@ -946,9 +1004,9 @@
       r.written.forEach(ev => {
         const durQ = ev.t_off - ev.t_on, ci = chunkAt(ev.t_on), p = part(doc.chunks[ci], v);
         if (ev.kind === "note" && v === 0) { const x = syl[sylK++]; if (x) doc.chunks[ci].words += (x.s + (x.join ? "-" : " ")); else if (!held && sylK <= syl.length && syl.slice(sylK).some(Boolean)) doc.chunks[ci].words += "* "; }
-        if (held) { held.durQ += durQ; if (!ev.tieNext) held = null; return; }
+        if (held) { held.durQ += durQ; held._sp = ev.spaceAfter; if (!ev.tieNext) held = null; return; }
         if (ev.kind === "rest") { p.rhythm.push({ type: ev.visible === false ? "space" : "rest", durQ }); return; }
-        const slot = { type: "note", durQ }, rhy = (ev.decos || []).includes("style=rhythm"), mid = ev.pitches[0].midi;
+        const slot = { type: "note", durQ, _sp: ev.spaceAfter }, rhy = (ev.decos || []).includes("style=rhythm"), mid = ev.pitches[0].midi;
         // a letter other than the plain spelling's (Fb, E#, B##) is kept on the slot
         const allN = (ev.notes && ev.notes.length > 1) ? ev.notes : null;
         if (!rhy && ev.letter && !allN) { const kk = at(doc, ci).key || doc.key, plain = spell(mid, kk, {}).replace(/[\^_=,']/g, "").toUpperCase(); if (plain !== ev.letter) slot.spell = ev.letter + "@" + (((mid % 12) + 12) % 12); }
@@ -977,6 +1035,12 @@
       const end = ci + 1 < starts.length ? starts[ci + 1].t : total;
       if (ch.chords.length && !hasRhythm(doc, ch)) ch.chordLen = r3(end - starts[ci].t);
     });
+    // beams as written: where the spaces in the ABC beam differently from the rules, the slot keeps it (slot.beam)
+    doc.chunks.forEach((ch, ci) => { for (let v = 0; v < voiceCount(doc); v++) part(ch, v).rhythm.forEach((s, si, rr) => {
+      if (s._sp === undefined) return;
+      const want = !s._sp; delete s._sp;
+      if (rr[si + 1] && rr[si + 1].type === "note") { const d = beamNext(doc, ci, v, si); if (d && d.can && d.join !== want) s.beam = want; }
+    }); });
     const mi0 = meterInfo(doc.meter), c0 = doc.chunks[0];
     if (mi0 && doc.chunks.length > 1 && /^pickup$/i.test(c0.name)) { const l0 = starts[1].t; if (l0 > EPS && l0 < mi0.barQ - EPS) c0.pickup = true; }
     return doc;
@@ -1333,7 +1397,7 @@
     return res;
   }
 
-  const api = { triplet, splitSlot, enharmonics, wanted, sharpish, chunkLabels, sectionAbbr, bandChart, takeBand, bandOf, barSig, keepTake, takeAt, changedBars, replaceBars, fromTakeBars, replaceSpan, splitAt, sections, sectionOf, moveSection, duplicateSection, extract, removeSpan, insert, slotTime, create, upgrade, newChunk, part, chunkLen, meterInfo, spell, toAbc, pendingAbc, fromAbc, toChordPro, fromChordPro, at, info,
+  const api = { tuplet, beamNext, setBeam, strictDefault, triplet, splitSlot, enharmonics, wanted, sharpish, chunkLabels, sectionAbbr, bandChart, takeBand, bandOf, barSig, keepTake, takeAt, changedBars, replaceBars, fromTakeBars, replaceSpan, splitAt, sections, sectionOf, moveSection, duplicateSection, extract, removeSpan, insert, slotTime, create, upgrade, newChunk, part, chunkLen, meterInfo, spell, toAbc, pendingAbc, fromAbc, toChordPro, fromChordPro, at, info,
                 hasChanges, split, merge, combine, offsets, majorOf, keyName, duplicate, move, remove, addPitch, nudge, letterMidi, guessKey, scalePcs, parseChords, chordsText,
                 syllables, setSyllabify, barNotes, prevBar, writeLeadIn };
   if (typeof module !== "undefined" && module.exports) module.exports = api;

@@ -36,6 +36,22 @@ const assert = require("assert");
     await b.eval(`document.dispatchEvent(new KeyboardEvent("keydown", { key: "u", bubbles: true, cancelable: true })), 1`);
     await b.sleep(300);
     assert.strictEqual((await b.eval("NotationPage.doc()")).raw, abc, "u undid the raw edit");
+    // h / l / L move the active note (drawn red); Tab selects its code; Tab in the box comes back to the note at the caret
+    const keyDoc = k => b.eval(`(document.activeElement && document.activeElement.blur && document.activeElement.blur(), document.dispatchEvent(new KeyboardEvent("keydown", Object.assign({ bubbles: true, cancelable: true }, ${JSON.stringify(k)}))), 1)`);
+    await keyDoc({ key: "l" }); await keyDoc({ key: "l" }); await keyDoc({ key: "l" });
+    assert.ok(await b.eval(`document.querySelectorAll("#nt-paper .nt-sel").length`) > 0, "a note drawn active");
+    await keyDoc({ key: "Tab" });
+    const selTxt = await b.eval(`(() => { const t = document.getElementById("nt-abc-text"); return t.value.slice(t.selectionStart, t.selectionEnd); })()`);
+    assert.ok(/^\s*E/.test(selTxt), "Tab selected the 3rd note's code (E): " + JSON.stringify(selTxt));
+    await keyDoc({ key: "L" });
+    await keyDoc({ key: "Tab" });
+    const selTxt2 = await b.eval(`(() => { const t = document.getElementById("nt-abc-text"); return t.value.slice(t.selectionStart, t.selectionEnd); })()`);
+    assert.ok(/g\}?c3|c3/.test(selTxt2) || /c/.test(selTxt2), "L went to the next bar: " + JSON.stringify(selTxt2));
+    await b.eval(`(() => { const t = document.getElementById("nt-abc-text"); const i = t.value.indexOf("B2"); t.focus(); t.setSelectionRange(i, i); t.dispatchEvent(new KeyboardEvent("keydown", { key: "Tab", bubbles: true, cancelable: true })); return 1; })()`);
+    await b.sleep(200);
+    await keyDoc({ key: "Tab" });
+    const selTxt3 = await b.eval(`(() => { const t = document.getElementById("nt-abc-text"); return t.value.slice(t.selectionStart, t.selectionEnd); })()`);
+    assert.ok(/B2/.test(selTxt3), "Tab from the box landed on B2: " + JSON.stringify(selTxt3));
     // kept across a reload
     await b.goto("http://127.0.0.1:8500/tools/notation.html");
     await b.sleep(500);

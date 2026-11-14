@@ -161,6 +161,10 @@
       written.push(ev);
       if (chord && tok.t === "note") { chord.ev = ev; ev.notes = [ev.pitches[0].midi]; }
     }
+    // spaceAfter: whitespace in the text between this written event and the next (quoted strings and !decorations! blanked),
+    // which in ABC breaks a beam
+    const blank = text.replace(/"[^"]*"|![^!]*!|\+[^+\s]*\+/g, m => "x".repeat(m.length));
+    written.forEach((e, k) => { const nx = written[k + 1]; e.spaceAfter = nx ? /\s/.test(blank.slice(e.i, nx.i)) : true; });
     return { written, sounding: soundingFrom(written), chords, marks, fields, key, meter, barQuarters, quarters: t };
   }
 

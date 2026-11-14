@@ -1221,6 +1221,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             <div class="nt-row" style="margin-top:0">
               <div class="nt-field"><label for="nt-title">Title</label><input type="text" id="nt-title" placeholder="Untitled"></div>
               <div class="nt-field"><label for="nt-meter">Meter</label><select id="nt-meter"></select></div>
+              <div class="nt-field"><label title="Notes written as entered: cut only at barlines, eighths beamed in runs that a quarter or a rest breaks, so the grouping follows the rhythm. On by itself in 5/8, 7/8 and 11/8."><input type="checkbox" id="nt-strict"> Write rhythms as entered</label></div>
               <div class="nt-field"><label for="nt-key">Key</label><select id="nt-key" data-kind="key"></select></div>
               <div class="nt-field"><label for="nt-tempo">Tempo</label><input type="number" id="nt-tempo" min="20" max="320" placeholder="90" style="width:5.5rem"></div>
               <div class="nt-field"><span class="nt-lab" id="nt-tonality-lab">Heard as</span><output id="nt-tonality" class="nt-tonality" aria-labelledby="nt-tonality-lab" title="From the key and the chords: dominant sevenths on I and IV make a blues."></output></div>
@@ -1262,7 +1263,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             <p class="nt-hint" style="margin-top:0">Edit the code and the staff follows. Chunks start at <code>"^Name"</code> labels and at <code>[M:]</code> / <code>[K:]</code> changes; voices are <code>[V:1]</code> lines.</p>
             <label class="nt-hint" style="display:inline-flex;gap:.4em;align-items:center;margin:0 0 .3em"><input type="checkbox" id="nt-abc-vim" checked=""> Vim keys (Esc: normal mode, <kbd>i</kbd> to type; <kbd>=</kbd> respells the note under the cursor; <kbd>Tab</kbd> back to the score)</label>
             <label class="nt-hint" style="display:flex;gap:.4em;align-items:center;margin:0 0 .3em"><input type="checkbox" id="nt-abc-raw"> Raw ABC: the score draws exactly what I type (slurs, dynamics, grace notes, <code>%%</code> lines, my own beaming)</label>
-            <p class="nt-warn" id="nt-raw-note" hidden="">Raw ABC: the score shows the code as written. The score keys, the parts on the left and Play it in are off; <kbd>Space</kbd> plays the whole piece, <kbd>u</kbd> / Ctrl+Z undo. Untick to go back: the code is read into the score's model again and what it can't hold is dropped.</p>
+            <p class="nt-warn" id="nt-raw-note" hidden="">Raw ABC: the score shows the code as written. The score keys, the parts on the left and Play it in are off; <kbd>Space</kbd> plays the whole piece, <kbd>h</kbd> / <kbd>l</kbd> move note by note and <kbd>H</kbd> / <kbd>L</kbd> bar by bar (or click a note), <kbd>Tab</kbd> selects that note's code (Tab there: back to the note at the caret), <kbd>u</kbd> / Ctrl+Z undo. Untick to go back: the code is read into the score's model again and what it can't hold is dropped.</p>
             <textarea id="nt-abc-text" spellcheck="false" aria-label="ABC code"></textarea>
             <div id="nt-abc-vimline" class="nt-vimline" aria-live="polite"></div>
             <p class="nt-warn" id="nt-abc-warn" hidden=""></p>
@@ -2267,11 +2268,51 @@ document.addEventListener('DOMContentLoaded', async function () {
     $("nt-root").classList.add("nt-is-raw");
     var paper = $("nt-paper"), W = Math.max(300, paper.clientWidth - 40);
     map = []; pmap = []; drawn = []; sel = null;
-    try { tune = ABCJS.renderAbc(paper, doc.raw, { staffwidth: W, add_classes: true })[0] || null; }
+    try { tune = ABCJS.renderAbc(paper, doc.raw, { staffwidth: W, add_classes: true, clickListener: function (el) { var k = rawEls.findIndex(function (x) { return x.startChar === el.startChar; }); if (k >= 0) { rawAt = k; rawLight(); } } })[0] || null; }
     catch (err) { tune = null; $("nt-abc-warn").hidden = false; $("nt-abc-warn").textContent = "abcjs can't draw that: " + err.message; }
     var warn = tune && tune.warnings && tune.warnings.length ? tune.warnings : null;
     if (warn) { $("nt-abc-warn").hidden = false; $("nt-abc-warn").innerHTML = "abcjs: " + warn.slice(0, 3).join("<br>"); }
     tuneSrc = null;
+    rawEls = []; rawBars = [];
+    if (tune) tune.lines.forEach(function (l) { (l.staff || []).forEach(function (st) { st.voices.forEach(function (vv) { vv.forEach(function (el) {
+      if (el.el_type === "note" && el.abselem && el.startChar >= 0) rawEls.push(el); else if (el.el_type === "bar") rawBars.push(el.startChar);
+    }); }); }); });
+    rawEls.sort(function (a, b) { return a.startChar - b.startChar; }); rawBars.sort(function (a, b) { return a - b; });
+    if (rawAt >= rawEls.length) rawAt = rawEls.length - 1;
+    rawLight();
+  }
+  // raw ABC: the active note is a drawn element (rawEls in text order); h / l, H / L, a click and Tab move it
+  var rawEls = [], rawBars = [], rawAt = -1;
+  function rawLight() {
+    document.querySelectorAll("#nt-paper .nt-sel").forEach(function (g) { g.classList.remove("nt-sel"); });
+    var el = rawEls[rawAt]; if (!el) return;
+    el.abselem.elemset.forEach(function (g) { g.classList.add("nt-sel"); });
+  }
+  function rawMove(dir, byBar) {
+    if (!rawEls.length) return;
+    if (rawAt < 0) { rawAt = 0; rawLight(); return; }
+    if (!byBar) { rawAt = Math.max(0, Math.min(rawEls.length - 1, rawAt + dir)); rawLight(); return; }
+    var at = rawEls[rawAt].startChar;
+    var barBefore = function (pos) { var r = -1; rawBars.forEach(function (x) { if (x < pos) r = x; }); return r; };
+    var barAfter = function (pos) { var r = Infinity; rawBars.forEach(function (x) { if (x > pos && r === Infinity) r = x; }); return r; };
+    var firstAfter = function (pos) { return rawEls.findIndex(function (x) { return x.startChar > pos; }); };
+    var k;
+    if (dir > 0) k = firstAfter(barAfter(at));
+    else { var s0 = barBefore(at); k = firstAfter(s0); if (k === rawAt && s0 >= 0) k = firstAfter(barBefore(s0)); }
+    if (k >= 0) { rawAt = k; rawLight(); }
+  }
+  // Tab from the score: the active note's code selected in the box; Tab in the box: the note at the caret
+  function rawToText() {
+    var ta = $("nt-abc-text"), el = rawEls[rawAt];
+    jump("nt-abc"); ta.focus({ preventScroll: true }); if (vim && vim.mode() === "insert") vim.setMode("normal");
+    if (!el) return;
+    ta.setSelectionRange(el.startChar, el.endChar);
+    var lh = parseFloat(getComputedStyle(ta).lineHeight) || 16; ta.scrollTop = Math.max(0, doc.raw.slice(0, el.startChar).split("\n").length - 3) * lh;
+    status("Tab goes back to the score, on the note at the caret.");
+  }
+  function rawFromText(pos) {
+    var k = -1; rawEls.forEach(function (x, i) { if (x.startChar <= pos) k = i; });
+    rawAt = k >= 0 ? k : 0;
   }
   function render() {
     if (doc.raw) { renderRaw(); return; }
@@ -2280,6 +2321,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     $("nt-title").value = doc.title || "";
     if (document.activeElement !== $("nt-lines")) $("nt-lines").value = doc.lineEvery > 0 ? doc.lineEvery : "";
     setSel($("nt-meter"), doc.meter || "");
+    $("nt-strict").checked = doc.strict == null ? D.strictDefault(D.meterInfo(doc.meter)) : !!doc.strict;
     setSel($("nt-key"), doc.keyConfirmed && doc.key ? doc.key : "");
     if (document.activeElement !== $("nt-tempo")) $("nt-tempo").value = doc.tempo || "";
     var g = !doc.keyConfirmed ? D.guessKey(doc) : null, showGuess = g && g.key !== guessRefused;
@@ -2803,6 +2845,29 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
   // ( : slots from..to of chunk ci, voice v become three triplet notes in their time; the red note goes to the first one
   // still without a pitch, so letters fill them
+  // / and ?: beam the active note to the next / the one before, or not (a toggle); Visual /: the selection all beamed where
+  // notes can take a beam, again: back to the usual beaming. Quarters and longer, rests, barlines: left as they are, no warning.
+  function toggleBeam(ci, v, si) {
+    var d = D.beamNext(doc, ci, v, si);
+    if (!d || !d.can) { status(""); return; }
+    change(function () { D.setBeam(doc, ci, v, si, !d.join); });
+    status(d.join ? "Beam broken." : "Beamed.");
+  }
+  function beamSpan(ci, v, from, to) {
+    var pairs = [], all = true, own = false, rr = D.part(doc.chunks[ci], v).rhythm;
+    for (var si = from; si < to; si++) { var d = D.beamNext(doc, ci, v, si); if (d && d.can) { pairs.push(si); if (!d.join) all = false; } if (rr[si] && rr[si].beam != null) own = true; }
+    if (!pairs.length && !own) { status(""); render(); return; }
+    var back = all && own;
+    change(function () { for (var k = from; k <= to; k++) if (rr[k]) delete rr[k].beam; if (!back) pairs.forEach(function (si) { D.setBeam(doc, ci, v, si, true); }); });
+    status(back ? "Usual beaming again (/ again beams them all)." : "Beamed together where they can be (/ again: the usual beaming).");
+  }
+  var tupWait = null;   // Visual ( waiting for its number: { chunk, voice, from, to }
+  function makeTuplet(tw, n) {
+    var test = JSON.parse(JSON.stringify(D.part(doc.chunks[tw.chunk], tw.voice))), err = D.tuplet(test, tw.from, tw.to, n);
+    if (err) { status(err); render(); return; }
+    change(function () { D.tuplet(D.part(doc.chunks[tw.chunk], tw.voice), tw.from, tw.to, n); cur = tw.chunk; sel = { chunk: tw.chunk, voice: tw.voice, slot: tw.to }; });
+    status("Triplet of the notes as written. u undoes it.");
+  }
   function makeTriplet(ci, v, from, to) {
     if (to == null) { status("A triplet stays inside one chunk."); render(); return; }
     var p = D.part(doc.chunks[ci], v), err = null;
@@ -3086,7 +3151,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 
   var HELP = {
-    letters: "Type <kbd>a</kbd> to <kbd>g</kbd> for notes in the key, nearest the last one. <kbd>'</kbd> moves the last note up an octave, <kbd>,</kbd> down. <kbd>+</kbd> raises it a half step, <kbd>-</kbd> lowers it. In a chunk with a rhythm every key acts on the note in red (it moves on as you type): a letter gives it that pitch, <kbd>z</kbd> makes it a rest, <kbd>t</kbd> ties it to the next note, <kbd>T</kbd> to the note before (again: unties), <kbd>U</kbd> takes its pitch away, <kbd>Backspace</kbd> deletes it; <kbd>u</kbd> undoes. In a new chunk with no rhythm the letters just collect pitches; <kbd>|</kbd> draws a double barline to group them (in a chunk with rhythm, <kbd>|</kbd> puts a barline after what's there: the notes before it are a pickup), and Merge puts them onto a rhythm chunk. <kbd>h</kbd> <kbd>l</kbd> (or the arrows) move note by note, <kbd>H</kbd> <kbd>L</kbd> bar by bar, inside the selected chunk (<kbd>j</kbd> <kbd>k</kbd> or a click go to another); <kbd>J</kbd> joins the next chunk on, <kbd>M</kbd> merges it (both need to be on view). <kbd>o</kbd> / <kbd>O</kbd> start a new chunk after / before this one; <kbd>y</kbd><kbd>y</kbd> copies the chunk, <kbd>D</kbd><kbd>D</kbd> cuts it, <kbd>p</kbd> / <kbd>P</kbd> put it after / before this one; <kbd>v</kbd> starts Visual mode, as in vim: <kbd>h</kbd> <kbd>l</kbd> select notes (with a count: <kbd>v</kbd><kbd>8</kbd><kbd>l</kbd>), <kbd>H</kbd> <kbd>L</kbd> whole bars, <kbd>y</kbd> copies them, <kbd>d</kbd> cuts them, then <kbd>p</kbd> / <kbd>P</kbd> put them after / before the red note (<kbd>p</kbd> / <kbd>P</kbd> put whatever you copied last, notes or a chunk). <kbd>Alt</kbd>+<kbd>v</kbd> shows or hides this chunk, <kbd>V</kbd> all the others. <kbd>=</kbd> writes the red note another way (F# / Gb; again: every spelling, double sharp to double flat), <kbd>+</kbd> raises the last note a half step. <kbd>(</kbd> makes the red note a triplet, three notes in its time (letters then fill them); in Visual mode <kbd>(</kbd> makes the selected notes one. <kbd>Tab</kbd> jumps to the red note's ABC (selected in the ABC box); <kbd>Tab</kbd> there jumps back to the note at the caret. <kbd>&quot;</kbd> (or a click on a chord symbol) types a chord over the red note; there <kbd>h</kbd> <kbd>l</kbd> or the arrows go note by note, <kbd>Tab</kbd> / <kbd>Shift+Tab</kbd> or <kbd>L</kbd> / <kbd>H</kbd> to the next / last chord or beat 1, <kbd>j</kbd> <kbd>k</kbd> to the next / last chunk, <kbd>Enter</kbd> keeps it, <kbd>Esc</kbd> leaves it. The same keys work in Chords by bar. <kbd>Space</kbd> plays from the red note to the end of the chunk (again: stop). <kbd>r</kbd> records a take (MIDI or the computer keys) into a new chunk below this one. <kbd>i</kbd> (Insert mode; <kbd>I</kbd>: at the start) puts new rhythm in at a red line you move with <kbd>h</kbd> <kbd>l</kbd>, instead of at the end; the note just before the line is the one keys act on.",
+    letters: "Type <kbd>a</kbd> to <kbd>g</kbd> for notes in the key, nearest the last one. <kbd>'</kbd> moves the last note up an octave, <kbd>,</kbd> down. <kbd>+</kbd> raises it a half step, <kbd>-</kbd> lowers it. In a chunk with a rhythm every key acts on the note in red (it moves on as you type): a letter gives it that pitch, <kbd>z</kbd> makes it a rest, <kbd>t</kbd> ties it to the next note, <kbd>T</kbd> to the note before (again: unties), <kbd>U</kbd> takes its pitch away, <kbd>Backspace</kbd> deletes it; <kbd>u</kbd> undoes. In a new chunk with no rhythm the letters just collect pitches; <kbd>|</kbd> draws a double barline to group them (in a chunk with rhythm, <kbd>|</kbd> puts a barline after what's there: the notes before it are a pickup), and Merge puts them onto a rhythm chunk. <kbd>h</kbd> <kbd>l</kbd> (or the arrows) move note by note, <kbd>H</kbd> <kbd>L</kbd> bar by bar, inside the selected chunk (<kbd>j</kbd> <kbd>k</kbd> or a click go to another); <kbd>J</kbd> joins the next chunk on, <kbd>M</kbd> merges it (both need to be on view). <kbd>o</kbd> / <kbd>O</kbd> start a new chunk after / before this one; <kbd>y</kbd><kbd>y</kbd> copies the chunk, <kbd>D</kbd><kbd>D</kbd> cuts it, <kbd>p</kbd> / <kbd>P</kbd> put it after / before this one; <kbd>v</kbd> starts Visual mode, as in vim: <kbd>h</kbd> <kbd>l</kbd> select notes (with a count: <kbd>v</kbd><kbd>8</kbd><kbd>l</kbd>), <kbd>H</kbd> <kbd>L</kbd> whole bars, <kbd>y</kbd> copies them, <kbd>d</kbd> cuts them, then <kbd>p</kbd> / <kbd>P</kbd> put them after / before the red note (<kbd>p</kbd> / <kbd>P</kbd> put whatever you copied last, notes or a chunk). <kbd>Alt</kbd>+<kbd>v</kbd> shows or hides this chunk, <kbd>V</kbd> all the others. <kbd>=</kbd> writes the red note another way (F# / Gb; again: every spelling, double sharp to double flat), <kbd>+</kbd> raises the last note a half step. <kbd>(</kbd> makes the red note a triplet, three notes in its time (letters then fill them); in Visual mode <kbd>(</kbd> then a number makes the selected notes, as written, that tuplet (a quarter and an eighth, <kbd>(</kbd><kbd>3</kbd>: <code>(3:2:2 f2 g</code>; only 3 so far), <kbd>(</kbd><kbd>(</kbd> makes them three equal notes in their time. <kbd>q</kbd> is free time: the chunk drawn with no barlines, so notes you will squeeze into a tuplet are never cut at one (<kbd>q</kbd> again: barlines back). <kbd>/</kbd> beams the red note to the next (again: not), <kbd>?</kbd> to the one before; in Visual mode <kbd>/</kbd> beams the selection together (again: the usual beaming). <kbd>Tab</kbd> jumps to the red note's ABC (selected in the ABC box); <kbd>Tab</kbd> there jumps back to the note at the caret. <kbd>&quot;</kbd> (or a click on a chord symbol) types a chord over the red note; there <kbd>h</kbd> <kbd>l</kbd> or the arrows go note by note, <kbd>Tab</kbd> / <kbd>Shift+Tab</kbd> or <kbd>L</kbd> / <kbd>H</kbd> to the next / last chord or beat 1, <kbd>j</kbd> <kbd>k</kbd> to the next / last chunk, <kbd>Enter</kbd> keeps it, <kbd>Esc</kbd> leaves it. The same keys work in Chords by bar. <kbd>Space</kbd> plays from the red note to the end of the chunk (again: stop). <kbd>r</kbd> records a take (MIDI or the computer keys) into a new chunk below this one. <kbd>i</kbd> (Insert mode; <kbd>I</kbd>: at the start) puts new rhythm in at a red line you move with <kbd>h</kbd> <kbd>l</kbd>, instead of at the end; the note just before the line is the one keys act on.",
     piano: "Bottom row <kbd>Z</kbd> to <kbd>/</kbd> are white keys from C, the row above (<kbd>S</kbd> <kbd>D</kbd> <kbd>G</kbd> ...) the black ones. <kbd>Q</kbd> row: an octave higher, with black keys on the numbers. <kbd>↑</kbd> <kbd>↓</kbd> move the octave. <kbd>Backspace</kbd> deletes the note in red.",
     midi: "Play notes one at a time; each goes in the next slot (in red). <kbd>Backspace</kbd> deletes the note in red, <kbd>u</kbd> takes its pitch away."
   };
@@ -3209,10 +3274,26 @@ document.addEventListener('DOMContentLoaded', async function () {
       else if (e.key === "v" && clip) { e.preventDefault(); pasteAfter(); }
       return;
     }
+    if (tupWait && !e.ctrlKey && !e.metaKey && !e.altKey && e.key !== "Shift") {
+      var tw = tupWait; tupWait = null; e.preventDefault();
+      if (e.key === "(" || e.key === "Enter") { visual = false; makeTriplet(tw.chunk, tw.voice, tw.from, tw.to); return; }
+      if (/^[2-9]$/.test(e.key)) { visual = false; makeTuplet(tw, +e.key); return; }
+      status(e.key === "Escape" ? "" : "No tuplet (a number 2-9 makes one)."); return;
+    }
+    if (e.key === "q" && !e.altKey && !doc.raw && !chordsIn && !ENDING && mode !== "piano") {   // free time: this chunk drawn without barlines
+      e.preventDefault(); var fc = cur;
+      change(function () { doc.chunks[fc].free = !doc.chunks[fc].free; });
+      status(doc.chunks[fc].free ? "Free time: " + cname(fc) + " is drawn with no barlines, so notes are never cut at one. Select notes (v), ( and a number makes a tuplet. q again: barlines back." : "Barlines back in " + cname(fc) + ".");
+      return;
+    }
     if (doc.raw) {   // raw ABC: only play, undo and Tab to the code
       if (e.code === "Space" && !e.altKey) { e.preventDefault(); play(); return; }
       if (e.key === "u" && !e.altKey) { e.preventDefault(); undo(); return; }
-      if (e.key === "Tab" && !e.shiftKey) { e.preventDefault(); jump("nt-abc"); $("nt-abc-text").focus({ preventScroll: true }); return; }
+      if (e.key === "Tab" && !e.shiftKey) { e.preventDefault(); rawToText(); return; }
+      if ((e.key === "h" || e.key === "ArrowLeft") && !e.shiftKey) { e.preventDefault(); rawMove(-1); return; }
+      if ((e.key === "l" || e.key === "ArrowRight") && !e.shiftKey) { e.preventDefault(); rawMove(1); return; }
+      if (e.key === "H") { e.preventDefault(); rawMove(-1, true); return; }
+      if (e.key === "L") { e.preventDefault(); rawMove(1, true); return; }
       if (e.key.length === 1 && !e.altKey) status("Raw ABC is on: edit the code in the ABC box, or untick Raw ABC to use the score keys again.");
       return;
     }
@@ -3266,7 +3347,14 @@ document.addEventListener('DOMContentLoaded', async function () {
           if (e.key === "y") { sel = { chunk: vst.chunk, voice: sel.voice, slot: vst.slot }; render(); } else deleteSel();
           lastKey = null; e.preventDefault(); return;
         }
-        if (e.key === "(" && !e.altKey) { var tse = spanEnds(); visual = false; e.preventDefault(); makeTriplet(tse[0].chunk, sel.voice, tse[0].slot, tse[1].chunk === tse[0].chunk ? tse[1].slot : null); return; }
+        if (e.key === "/" && !e.altKey) { var bse = spanEnds(); e.preventDefault(); if (bse[0].chunk !== bse[1].chunk) { status("Beams stay inside one chunk."); return; } beamSpan(bse[0].chunk, sel.voice, bse[0].slot, bse[1].slot); return; }
+        if (e.key === "(" && !e.altKey) {          // ( then a number: the selected notes, as written, become that tuplet; ( again: three notes in their time
+          var tse = spanEnds(); e.preventDefault();
+          if (tse[1].chunk !== tse[0].chunk) { visual = false; status("A tuplet stays inside one chunk."); render(); return; }
+          tupWait = { chunk: tse[0].chunk, voice: sel.voice, from: tse[0].slot, to: tse[1].slot };
+          status("Tuplet: type how many (3: three in the time of two), as the notes are written. ( again: three equal notes in their time. Esc: no tuplet.");
+          return;
+        }
         if (e.key === "Escape" || e.key === "v") { visual = false; var vst2 = spanEnds()[0]; sel = { chunk: vst2.chunk, voice: sel.voice, slot: vst2.slot }; status(""); render(); e.preventDefault(); return; }
       }
     }
@@ -3367,6 +3455,11 @@ document.addEventListener('DOMContentLoaded', async function () {
       e.preventDefault(); var ta = activeSlot();
       if (!ta) { status("Write some rhythm first: ( makes the red note a triplet."); return; }
       makeTriplet(ta.chunk, ta.voice, ta.slot, ta.slot); return;
+    }
+    if ((e.key === "/" || e.key === "?") && !e.altKey && !chordsIn && !ENDING) {             // beam to the next / the note before
+      e.preventDefault(); var ba = activeSlot(); if (!ba || ba.slot === undefined) return;
+      if (e.key === "/") toggleBeam(ba.chunk, ba.voice, ba.slot); else if (ba.slot > 0) toggleBeam(ba.chunk, ba.voice, ba.slot - 1);
+      return;
     }
     if (e.key === "=" && !e.altKey && !chordsIn && mode !== "piano") { enharmonic(); e.preventDefault(); return; }
     if (chordsIn) return;
@@ -3932,6 +4025,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   $("nt-key").onchange = function () { var v = this.value; change(function () { doc.key = v || null; doc.keyConfirmed = !!v; }); };
   $("nt-keyguess-yes").onclick = function () { var g = D.guessKey(doc); if (g) change(function () { doc.key = g.key; doc.keyConfirmed = true; }); };
   $("nt-keyguess-no").onclick = function () { var g = D.guessKey(doc); guessRefused = g && g.key; render(); $("nt-key").focus(); };
+  $("nt-strict").onchange = function () { var on = this.checked; change(function () { doc.strict = on === D.strictDefault(D.meterInfo(doc.meter)) ? null : on; }); };
   $("nt-meter").onchange = function () { var v = this.value; change(function () { doc.meter = v || null; }); };
   $("nt-title").oninput = function () { doc.title = this.value; save(); refreshText(); };
   $("nt-voice-add").onclick = function () {
@@ -4238,6 +4332,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   function fromAbcText() {
     if (doc.raw && textTimer) { clearTimeout(textTimer); textTimer = null; if ($("nt-abc-text").value !== doc.raw) { snap(); doc.raw = $("nt-abc-text").value; save(); } }
     var ta = $("nt-abc-text"), m = abcNoteAt(ta.selectionStart);
+    if (doc.raw) { var pos = ta.selectionStart; editing = null; ta.blur(); render(); rawFromText(pos); rawLight(); var pp = $("nt-paper"); if (pp && pp.scrollIntoView) pp.scrollIntoView({ block: "nearest" }); status(""); return; }
     editing = null; ta.blur();
     if (m) { cur = m.chunk; voice = m.voice; sel = { chunk: m.chunk, voice: m.voice, slot: m.slot }; }
     render();
@@ -4270,7 +4365,8 @@ document.addEventListener('DOMContentLoaded', async function () {
   // what ABC and ChordPro don't carry: the line breaks, hidden chunks (by place, when the chunks still line up)
   function keepLayout(d) {
     if (doc.lineEvery) d.lineEvery = doc.lineEvery;
-    if (d.chunks.length === doc.chunks.length) d.chunks.forEach(function (c, i) { var o = doc.chunks[i]; if (o.nl) c.nl = o.nl.slice(); if (o.off) c.off = true; if (o.tempo && !c.tempo) c.tempo = o.tempo; });
+    if (doc.strict != null) d.strict = doc.strict;
+    if (d.chunks.length === doc.chunks.length) d.chunks.forEach(function (c, i) { var o = doc.chunks[i]; if (o.nl) c.nl = o.nl.slice(); if (o.off) c.off = true; if (o.free) c.free = true; if (o.tempo && !c.tempo) c.tempo = o.tempo; });
   }
   // ChordPro
   $("nt-cho-text").addEventListener("input", function () {

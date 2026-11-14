@@ -454,4 +454,35 @@ t("Merge: chords over rests + a melody with a pickup = the melody with the chord
   assert.ok(/A,2 \| "D"D\/2 z D\/2 D2 "A7"E2 \| "D"F\/2 z F\/2 F3 F \| "Em"EF "A7"G2 C2 \|/.test(music(D.toAbc(d).abc)), D.toAbc(d).abc);
 });
 
+t("strict rhythm: 7/8 written as entered, beamed by runs; off: the 2+2+3 grid", () => {
+  const mk = (m, durs, strict) => { const d = D.create(); d.meter = m; if (strict != null) d.strict = strict; const p = D.part(d.chunks[0], 0); p.rhythm = durs.map(q => ({ type: "note", durQ: q })); p.pitches = durs.map(() => 60); return music(D.toAbc(d).abc); };
+  assert.ok(/C C2 CCCC/.test(mk("7/8", [.5, 1, .5, .5, .5, .5])), mk("7/8", [.5, 1, .5, .5, .5, .5]));            // quarter on the 2nd eighth kept whole
+  assert.ok(/C2 CCCCC/.test(mk("7/8", [1, .5, .5, .5, .5, .5])));                                                   // 2 + 5
+  assert.ok(/CC CC CCC/.test(mk("7/8", [.5, .5, .5, .5, .5, .5, .5])));                                            // all eighths: the usual groups
+  assert.ok(/-/.test(mk("7/8", [.5, 1, .5, .5, .5, .5], false)), "off: the quarter tied across the group");
+  assert.ok(/C C2 C C2 C2/.test(mk("4/4", [.5, 1, .5, 1, 1], true)));
+  assert.ok(D.strictDefault(D.meterInfo("7/8")) && !D.strictDefault(D.meterInfo("4/4")));
+});
+
+t("harmonic minor: the raised seventh spelled on the seventh's letter", () => {
+  for (const [key, midi, want] of [["Dhm", 61, "^C"], ["Ghm", 66, "^F"], ["Chm", 71, "=B"], ["F#hm", 65, "^E"], ["Ahm", 68, "^G"]]) {
+    const out = D.spell(midi, key, {}); assert.ok(out.startsWith(want), key + ": " + out);
+  }
+});
+
+t("beams by hand: read from the spaces, kept, set and cleared", () => {
+  const rt = abc => music(D.toAbc(D.fromAbc(abc)).abc);
+  assert.ok(/C D EF GABc/.test(rt("X:1\nM:4/4\nL:1/8\nK:C\nC D EF GABc|")), rt("X:1\nM:4/4\nL:1/8\nK:C\nC D EF GABc|"));
+  assert.ok(/CDE FG AB/.test(rt("X:1\nM:7/8\nL:1/8\nK:C\nCDE FG AB|")));
+  assert.ok(/CDEF GABc/.test(rt("X:1\nM:4/4\nL:1/8\nK:C\nCDEF GABc|")));
+  const d = D.fromAbc("X:1\nM:4/4\nL:1/8\nK:C\nCDEF G2 AB|");
+  assert.ok(!d.chunks[0].rhythm.some(x => x.beam != null), "usual beaming: nothing kept");
+  assert.ok(D.setBeam(d, 0, 0, 3, true) === false, "a quarter after: no beam, no change");
+  assert.ok(D.setBeam(d, 0, 0, 1, false)); assert.ok(/CD EF G2 AB/.test(music(D.toAbc(d).abc)), music(D.toAbc(d).abc));
+  D.setBeam(d, 0, 0, 1, null); assert.ok(/CDEF G2 AB/.test(music(D.toAbc(d).abc)));
+  const e = D.fromAbc("X:1\nM:4/4\nL:1/8\nK:C\nCDEF GABc|"); D.setBeam(e, 0, 0, 3, true);
+  assert.ok(/CDEFGABc/.test(music(D.toAbc(e).abc)));
+  assert.ok(D.beamNext(e, 0, 0, 7) === null, "last note: nothing after it in the bar");
+});
+
 console.log("NOTATION DOC OK (" + n + " tests)");
