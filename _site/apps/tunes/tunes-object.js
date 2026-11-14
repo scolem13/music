@@ -32156,7 +32156,7 @@ K:F
 `X:1
 T:A-Hunting We Will Go
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.46.
 %%id jri2-a-hunting-we-will-go
 M:2/2
 L:1/8
@@ -32172,7 +32172,7 @@ w: go.
 X:2
 T:A Very Sad Boy Am I
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.52.
 %%id jri2-a-very-sad-boy-am-i
 M:2/4
 L:1/8
@@ -32192,7 +32192,7 @@ w: me.
 X:3
 T:Bi, Bi, Og Blaka (Flip, Flap, and Fluttering)
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Kindergarten p.116; JRI Teacher's Edition, Book 2 p.120.
 %%id jri2-bi-bi-og-blaka-flip-flap-and-fluttering
 M:4/4
 L:1/8
@@ -32206,7 +32206,7 @@ w: Flip, flap, and flut- t'ring, | Fly- ing swans are honk- ing. | Real- ly wide
 X:4
 T:Bim Bam
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Kindergarten p.60; JRI Teacher's Edition, Book 2 p.92; JRI Teacher's Edition, Book 4 p.142.
 %%id jri2-bim-bam
 M:2/2
 L:1/8
@@ -32222,7 +32222,7 @@ w: Bim bam _ _ | Bim bam _ _ | Bim bam, bi- ri- bi- ri | bam.
 X:5
 T:Circle Around
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.26.
 %%id jri2-circle-around
 M:3/4
 L:1/8
@@ -32240,7 +32240,7 @@ w: Step back in | rhythm to where | you be- gan. | *
 X:6
 T:Dance from Tsakonia
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.112; JRI Teacher's Edition, Book 4 p.22.
 %%id jri2-dance-from-tsakonia
 M:5/8
 L:1/8
@@ -32252,7 +32252,7 @@ BBB (3B/2c/2B/2A | AAA (3A/2B/2A/2G | DGF/2G/2 A2 | DGF/2D/2 E2 |]
 X:7
 T:Donkeys Love Carrots
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.36.
 %%id jri2-donkeys-love-carrots
 M:2/4
 L:1/8
@@ -32266,7 +32266,7 @@ w: Hee- haw, | Hee- haw, | Lis- ten to the | don- key's call.
 X:8
 T:Geordie
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.132.
 %%id jri2-geordie
 M:4/4
 L:1/8
@@ -32279,7 +32279,7 @@ D2 | "Gm"G2 A2 B2 AA | GGGF "Dm"D2 Bc | "Gm"dddd "C"c2 AG |
 X:9
 T:Go In and Out the Window
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.196.
 %%id jri2-go-in-and-out-the-window
 M:2/4
 L:1/8
@@ -32295,7 +32295,7 @@ w: fore.
 X:10
 T:Green Bushes
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 1 p.52; JRI Teacher's Edition, Book 2 p.264.
 %%id jri2-green-bushes
 M:3/4
 L:1/8
@@ -32310,7 +32310,7 @@ E4 CC | "Fm"F2 A2 GF | "Eb"E2 F2 AB | "Fm"c2 cB "Eb"G2 |
 X:11
 T:Here We Go 'Round the Mountain
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.12; JRI Teacher's Edition, Book 4 p.244.
 %%id jri2-here-we-go-round-the-mountain
 M:4/4
 L:1/8
@@ -32328,7 +32328,7 @@ w: Ride _ Sal- ly, * | ride.
 X:12
 T:I Got a Letter This Morning
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.138; JRI Teacher's Edition, Book 3 p.144; JRI Teacher's Edition, Book 4 p.120.
 %%id jri2-i-got-a-letter-this-morning
 M:2/4
 L:1/8
@@ -32342,7 +32342,7 @@ w: I got a let- ter this | morn- ing | Oh _ | yes.
 X:13
 T:If All the World Were Paper
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.142.
 %%id jri2-if-all-the-world-were-paper
 M:6/8
 L:1/8
@@ -32358,7 +32358,7 @@ w: drink? *
 X:14
 T:Indian Taffeta
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.266; JRI Teacher's Edition, Book 4 p.242.
 %%id jri2-indian-taffeta
 M:2/4
 L:1/8
@@ -32371,7 +32371,7 @@ AA B/2A/2G | GG A/2G/2F | FF F/2G/2F | ED D2 |]
 X:15
 T:It's All Pretend
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.44.
 %%id jri2-its-all-pretend
 M:6/8
 L:1/8
@@ -32397,7 +32397,7 @@ w: E- ven though it's | all pre- tend, I | wish I were home in | bed!!
 X:16
 T:John Henry
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.32.
 %%id jri2-john-henry
 M:4/4
 L:1/8
@@ -32413,7 +32413,7 @@ w: me, The _ | ham- mer'll be the death of | me."
 X:17
 T:La Raspa
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.24.
 %%id jri2-la-raspa
 M:4/4
 L:1/8
@@ -32431,7 +32431,7 @@ w: peo- ple are glad that the nigth is long, | This is the time to play!
 X:18
 T:My Hat
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.74.
 %%id jri2-my-hat
 M:3/4
 L:1/8
@@ -32450,7 +32450,7 @@ z4 |]
 X:19
 T:My Horse
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.38.
 %%id jri2-my-horse
 M:6/8
 L:1/8
@@ -32472,7 +32472,7 @@ w: trip- a | stop!
 X:20
 T:Obwisana
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.144.
 %%id jri2-obwisana
 M:2/4
 L:1/8
@@ -32486,7 +32486,7 @@ w: Ob- wi- sa- na | sa- na- na, | Ob- wi- sa- na | sa.
 X:21
 T:Oh, How Lovely Is the Evening
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.268.
 %%id jri2-oh-how-lovely-is-the-evening
 M:3/4
 L:1/8
@@ -32506,7 +32506,7 @@ w: Ding! | Dong!
 X:22
 T:Oh, I Am Quite Alone Here
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.122.
 %%id jri2-oh-i-am-quite-alone-here
 M:4/4
 L:1/8
@@ -32526,7 +32526,7 @@ w: vast.
 X:23
 T:Old Abram Brown
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.170; JRI Teacher's Edition, Book 4 p.246.
 %%id jri2-old-abram-brown
 M:2/4
 L:1/8
@@ -32542,7 +32542,7 @@ w: fore.
 X:24
 T:Old Brass Wagon
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.202.
 %%id jri2-old-brass-wagon
 M:2/4
 L:1/8
@@ -32556,7 +32556,7 @@ w: Cir- cle to the left, | Old brass wag- on | You're the one, my | dar- ling.
 X:25
 T:Peas
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Kindergarten p.14; JRI Teacher's Edition, Book 2 p.124.
 %%id jri2-peas
 M:6/8
 L:1/8
@@ -32572,7 +32572,7 @@ w: knife. *
 X:26
 T:Poor Bengy
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.40; JRI Teacher's Edition, Book 3 p.16.
 %%id jri2-poor-bengy
 M:2/4
 L:1/8
@@ -32586,7 +32586,7 @@ w: bear was | bulg- y; The | bulge was | Ben- gy!
 X:27
 T:Poor Old Crow
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.130.
 %%id jri2-poor-old-crow
 M:4/4
 L:1/8
@@ -32604,7 +32604,7 @@ w: Poor old crow, poor | old crow, Just | as black as a | crow could be.
 X:28
 T:Rain Come Wet Me
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.190.
 %%id jri2-rain-come-wet-me
 M:3/4
 L:1/8
@@ -32618,7 +32618,7 @@ w: Keep a- way, | pret- ty girls, | Don't come a- | nigh _ me.
 X:29
 T:Sarasponda
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.80.
 %%id jri2-sarasponda
 M:2/4
 L:1/8
@@ -32646,7 +32646,7 @@ w: oh!
 X:30
 T:Scandinavian Folk Song
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Kindergarten p.152; JRI Teacher's Edition, Book 2 p.82.
 %%id jri2-scandinavian-folk-song
 M:3/4
 L:1/8
@@ -32660,7 +32660,7 @@ K:Gm
 X:31
 T:Shake Those 'Simmons Down
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.198.
 %%id jri2-shake-those-simmons-down
 M:2/4
 L:1/8
@@ -32676,7 +32676,7 @@ w: down!
 X:32
 T:Somebody Waiting
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.140.
 %%id jri2-somebody-waiting
 M:4/4
 L:1/8
@@ -32696,7 +32696,7 @@ w: *
 X:33
 T:Swing a Lady
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Kindergarten p.132; JRI Teacher's Edition, Book 2 p.252; JRI Teacher's Edition, Book 3 p.282; JRI Teacher's Edition, Book 4 p.48.
 %%id jri2-swing-a-lady
 M:4/4
 L:1/8
@@ -32714,7 +32714,7 @@ w: Swing a la- dy home.
 X:34
 T:The Bell Doth Toll
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.158; JRI Teacher's Edition, Book 4 p.26.
 %%id jri2-the-bell-doth-toll
 M:4/4
 L:1/8
@@ -32732,7 +32732,7 @@ w: bell.
 X:35
 T:The Birch Tree
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.204.
 %%id jri2-the-birch-tree
 M:2/4
 L:1/8
@@ -32750,7 +32750,7 @@ w: Lu- lee, | lu- lee in the | mead- ow.
 X:36
 T:The Braes O' Yarrow
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Kindergarten p.4; JRI Teacher's Edition, Book 2 p.166; JRI Teacher's Edition, Book 4 p.12.
 %%id jri2-the-braes-o-yarrow
 M:6/4
 L:1/8
@@ -32763,7 +32763,7 @@ D2 "Gm"G4 z4 |]
 X:37
 T:The Lumber Camp Song
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.242; JRI Teacher's Edition, Book 4 p.234.
 %%id jri2-the-lumber-camp-song
 M:6/8
 L:1/8
@@ -32783,7 +32783,7 @@ w: pine. *
 X:38
 T:The Miller
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.64; JRI Teacher's Edition, Book 4 p.236.
 %%id jri2-the-miller
 M:2/4
 L:1/8
@@ -32803,7 +32803,7 @@ w: born.
 X:39
 T:The Muffin man
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.106.
 %%id jri2-the-muffin-man
 M:2/2
 L:1/8
@@ -32819,7 +32819,7 @@ w: Lane?
 X:40
 T:The Sky has Clouded
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Kindergarten p.218; JRI Teacher's Edition, Book 2 p.188.
 %%id jri2-the-sky-has-clouded
 M:4/4
 L:1/8
@@ -32832,7 +32832,7 @@ E2 | "Em"B2 BB B2 B2 | "Am"AGAB A3 E | "Em"B2 BB B2 B2 |
 X:41
 T:Toodala
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Kindergarten p.248; JRI Teacher's Edition, Book 2 p.160.
 %%id jri2-toodala
 M:2/4
 L:1/8
@@ -32846,7 +32846,7 @@ w: Ev- 'ry'- bo- dy | move a- round, | Too- da- la- la- | la- day.
 X:42
 T:West Virginia
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.50; JRI Teacher's Edition, Book 3 p.132.
 %%id jri2-west-virginia
 M:2/2
 L:1/8
@@ -32861,7 +32861,7 @@ D4 |]
 X:43
 T:Who Has Seen the Wind?
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.76.
 %%id jri2-who-has-seen-the-wind
 M:4/4
 L:1/8
@@ -32875,7 +32875,7 @@ w: Who has seen the wind? | Nei- ther I nor you. But | when the trees bow down _
 X:44
 T:Will Winter End?
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Kindergarten p.144; JRI Teacher's Edition, Book 2 p.128.
 %%id jri2-will-winter-end
 M:2/4
 L:1/8
@@ -32893,7 +32893,7 @@ w: 'Til then I'll | have this _ | song to | sing.
 X:45
 T:Wind the Bobbin
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.84.
 %%id jri2-wind-the-bobbin
 M:2/2
 L:1/8
@@ -32907,7 +32907,7 @@ w: Bob- bin a- wound up, | Bob- bin a- wound up, | Bob- bin a- wound up, | Break
 X:46
 T:Yonder Stands a Handsome Lady
 C:Trad.
-N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book.
+N:Source: Jump Right In: The Music Curriculum, Grade 2 (GIA); notated by the teacher from the book. Page refs: JRI Teacher's Edition, Book 2 p.136.
 %%id jri2-yonder-stands-a-handsome-lady
 M:4/4
 L:1/8

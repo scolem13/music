@@ -115,6 +115,23 @@ const META = fs.existsSync(META_FILE) ? JSON.parse(fs.readFileSync(META_FILE, "u
 // Timing maps: Timestamp Notes song files saved as apps/shared/mlt/timings/<rec id>.json.
 const TIMINGS = new URL("../apps/shared/mlt/timings/", import.meta.url).pathname;
 
+// JRI Solo and Accompaniment alto sax books (scripts/jri/solo-toc.json, from the photographed tables of contents): title, concert key and
+// tonality (the book prints the key WRITTEN for alto sax: G-DO = concert Bb major, up a minor third), song number and book page; R2 key
+// mlt/<col>/<title-slug>-jri-solo.mp3 / -jri-accomp.mp3 (both on one track: -jri-solo-accomp.mp3; a book's song with the same title twice gets the col id).
+const SOLO_TOC = (() => {
+  const f = new URL("./jri/solo-toc.json", import.meta.url); if (!fs.existsSync(f)) return {};
+  const j = JSON.parse(fs.readFileSync(f, "utf8")), out = {};
+  const PC = { C: 0, "C#": 1, D: 2, E: 4, F: 5, "F#": 6, G: 7, A: 9, B: 11 }, NAME = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
+  const TON = { DO: "major", RE: "dorian", LA: "minor" };
+  for (const [col, rows] of Object.entries(j)) { if (col[0] === "_") continue;
+    for (const [title, kt, s, a, no, pg] of rows) {
+      const [wk, syl] = kt.split("-"), slug = title.toLowerCase().replace(/[’']/g, "").replace(/^(the|a) /, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      const info = { title, no, bookPage: pg, writtenKey: wk, key: NAME[(PC[wk] + 3) % 12], tonality: TON[syl], slug };
+      if (a == null) out[col + ":" + s] = { ...info, both: true }; else { out[col + ":" + s] = { ...info, part: "solo" }; out[col + ":" + a] = { ...info, part: "acc" }; }
+    } }
+  return out;
+})();
+
 const cols = [], recs = [];
 for (const [rel, col] of COLLECTIONS) {
   const dir = path.join(ROOT, rel);
@@ -125,7 +142,8 @@ for (const [rel, col] of COLLECTIONS) {
   for (const f of files) {
     const t = probe(f);
     const base = path.basename(f);
-    const title = (t.title || base.replace(/\.(mp3|m4a)$/i, "").replace(/^\d+(-\d+)?[a-z]?\.?\s+/i, "")).trim();
+    const toc = SOLO_TOC[col.id + ":" + t.track];
+    const title = toc ? toc.title + (toc.both ? " - Solo and Accompaniment" : toc.part === "solo" ? " - Solo" : " - Acc") : (t.title || base.replace(/\.(mp3|m4a)$/i, "").replace(/^\d+(-\d+)?[a-z]?\.?\s+/i, "")).trim();
     const track = t.track || ++n;
     let id = `${col.id}-${t.disc}-${String(track).padStart(2, "0")}`;
     if (!t.track) id = `${col.id}-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`;   // untagged (Mullen): from the title
@@ -141,7 +159,8 @@ for (const [rel, col] of COLLECTIONS) {
     const rec = {
       id, col: col.id, disc: t.disc, track, title, dur: t.dur,
       kind: m.kind || kind || undefined,
-      tonality: m.tonality || tonality, meter: m.meter || meter, key: m.key || k.key,
+      tonality: m.tonality || (toc && toc.tonality) || tonality, meter: m.meter || meter, key: m.key || (toc && toc.key) || k.key,
+      no: toc && toc.no, bookPage: toc && toc.bookPage, writtenKey: toc && toc.writtenKey,
       tune: m.tune || (tl.length ? tl.map(x => x.id) : undefined),
       note: m.note,
       start: m.start,   // seconds where the music begins (a spoken introduction before it is skipped); players seek here
@@ -149,7 +168,8 @@ for (const [rel, col] of COLLECTIONS) {
       r2: `mlt/${col.id}/${path.relative(dir, f).split(path.sep).join("/")}`.replace(/\.{2,}/g, "."),   // Cloudflare's firewall refuses ".." in a URL
       file: path.relative(ROOT, f), size: t.size,
     };
-    const g2 = guess.filter(x => !m[x]); if (g2.length) rec.guess = g2;
+    if (toc) rec.r2 = `mlt/${col.id}/${toc.slug}-jri-${toc.both ? "solo-accomp" : toc.part === "solo" ? "solo" : "accomp"}.mp3`;
+    const g2 = guess.filter(x => !m[x] && !(toc && x === "tonality")); if (g2.length) rec.guess = g2;
     if (m.tune) rec.tuneChecked = 1;
     if (fs.existsSync(path.join(TIMINGS, id + ".json"))) rec.timing = 1;
     recs.push(rec);
