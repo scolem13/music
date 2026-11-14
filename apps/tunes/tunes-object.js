@@ -32917,5 +32917,156 @@ D2 DE F2 ED | A2 A2 FE D2 | A2 AB c2 BA | d2 cB A4 |
 w: Yon- der _ stands a _ | hand- some la- _ dy | Who she _ is I _ | do not _ know
 A2 AB c2 A2 | d2 D2 EF G2 | A2 dd A2 G2 | F2 E2 D4 |]
 w: Shall I yon court her | for her beau- _ ty? | What says you ma- dam, | "yes" or "no"?
+`,
+"real-easy":
+`X:1
+T:Bag's Groove
+N:Source: The Real Easy Book; notated by the teacher from the book.
+%%id re-bags-groove
+M:4/4
+L:1/8
+K:F
+F2 | "F7"c6 (3B/2c/2B/2_A | B2 (3_A/2B/2A/2F A2 (3F/2A/2F/2_E | F3 _E z4 | z4 z2 F2 |
+"Bb7"c6 (3B/2c/2B/2_A | B2 (3_A/2B/2A/2F A2 (3F/2A/2F/2_E | "F7"F3 _E z4 | z4 z2 F2 |
+"Gm7"c6 (3B/2c/2B/2_A | "C7"B2 (3_A/2B/2A/2F A2 (3F/2A/2F/2_E | "F7"F3 _E z4 | "C7"z8 |]
+
+X:2
+T:Equinox
+N:Source: The Real Easy Book; notated by the teacher from the book.
+%%id re-equinox
+M:4/4
+L:1/8
+K:Cm
+G | "Cm7"e3 c- c4- | c6 z G | ec- c6 | z4 z2 z e |
+"Fm7"f3 c- c4- | c6 z G | "Cm7"e3 c- c3 B | ce z2 z4 |
+"Ab7"z d3 d2 d2 | "G7"d3 c ec e2 | "Cm7"c8- | c6 z G |]
+
+X:3
+T:Killer Joe
+N:Source: The Real Easy Book; notated by the teacher from the book. Band set in the Notation page: swing, 116 bpm.
+%%id re-killer-joe
+M:4/4
+L:1/8
+Q:1/4=116
+K:C
+"^A1""C7"z4 f2 eg- | "Bb7"g8 | "C7"z4 e2 c_B- | "Bb7"_B8 |
+"C7"z4 f2 eg- | "Bb7"g6 eg- | "C7"g8- | "Bb7"g8 |
+"^A2""C7"z4 f2 eg- | "Bb7"g8 | "C7"z4 e2 c_B- | "Bb7"_B8 |
+"C7"z4 f2 eg- | "Bb7"g6 eg- | "C7"g8- | "Bb7"g8 |
+"^B""Em7b5"G8- | "A7b9"G4 A4 | "Ebm7"_B8- | "Ab7"_B4 c4 |
+"A7"^c8 | "Ab7"z4 _e4 | "Em7"e8- | "A7"e8 |
+"^A3""C7"z4 f2 eg- | "Bb7"g8 | "C7"z4 e2 c_B- | "Bb7"_B8 |
+"C7"z4 f2 eg- | "Bb7"g6 eg- | "C7"g8- | "Bb7"g8 |]
+
+X:4
+T:Listen Here
+N:Source: The Real Easy Book; notated by the teacher from the book. Band set in the Notation page: boogaloo, 116 bpm.
+%%id re-listen-here
+M:4/4
+L:1/8
+Q:1/4=132
+K:Bb
+B,_A, | "Bb7"C2 z2 z4 | "Eb7"z2 z B, EGFE | "Bb7"D2 B,2 z4 |
+"Eb7"z2 z B, EGFE | "Bb7"D2 B,2 z4 | "Eb7"z2 z B, EGFE | D2 B,2 z4 |
+"Eb7"z4 z2 B,_A, |]
+`,
+"jri-solo3":
+`X:1
+T:A La Nanita Nana
+N:Source: Jump Right In: The Music Curriculum, Solo and Accompaniment Book 3 (GIA); notated by the teacher from the book. Page refs: JRI Solo and Accompaniment Book 1A, song 35, p.12.
+%%id jri3-a-la-nanita-nana
+M:3/8
+L:1/8
+K:Am
+"Am"A A/2B/2 c/2d/2 | e e/2e/2 "Dm"f/2d/2 | "Am"e e/2e/2 "Dm"f/2d/2 | "Am"a e2 |
+"Dm"d e/2f/2 g/2f/2 | "Am"e/2d/2 c/2d/2 e/2c/2 | "E7"d/2c/2 B/2c/2 d/2B/2 | "Am"c/2B/2 A2 |]
+
+X:2
+T:Early One Morning
+N:Source: Jump Right In: The Music Curriculum, Solo and Accompaniment Book 3 (GIA); notated by the teacher from the book. Page refs: JRI Solo and Accompaniment Book 3, song 46, p.16.
+%%id jri3-early-one-morning
+M:2/4
+L:1/8
+Q:1/4=124
+K:C
+G | "C"c2 cc | "Am"ce "Em"gg | "F"af "Em"dc | "G7"Bd GG | "C"c2 cc |
+"Am"ce "Em"gg | "F"af "G7"dB | "C"c3 z | "G7"d2 ef | "C/E"ge "C"c2 |
+"G7"d2 ef | "Em"ge "Am"c2 | "C"ce "C/E"gc' | "F"ba gf | "G7"ed cB | "C"c3 |]
+
+X:3
+T:Flemish Melody
+N:Source: Jump Right In: The Music Curriculum, Solo and Accompaniment Book 3 (GIA); notated by the teacher from the book. Page refs: JRI Solo and Accompaniment Book 3, song 44, p.16.
+%%id jri3-flemish-melody
+M:3/4
+L:1/8
+K:G
+G2 | "G"B4 A2 | G2 G2 B2 | d2 d2 "C"e2 |
+"G"d4 G2 | B2 B2 A2 | G2 G2 B2 | d2 d2 "C"e2 |
+"G"d4 z2 | "C"c2 e2 c2 | "G"B2 d2 B2 | "D7"A2 B2 c2 |
+"G"d4 z2 | "C"c2 e2 c2 | "G"B2 d2 B2 | "D7"A2 B2 A2 |
+"G"G4 |]
+
+X:4
+T:Merry is the Morning
+N:Source: Jump Right In: The Music Curriculum, Solo and Accompaniment Book 3 (GIA); notated by the teacher from the book. Page refs: JRI Solo and Accompaniment Book 3, song 41, p.15.
+%%id jri3-merry-is-the-morning
+M:3/4
+L:1/8
+Q:1/4=132
+K:C
+"C"edefgg | edefgg | c'3 e ee | "Em"g2 f2 z2 |
+"Dm"d^Bdeff | fefgaa | "G7"b3 a gf | "C"e2 e2 z c |
+"C"g2 fe dc | g2 e2 z c | g2 fe dc | "G7sus"c2 "G7"B2 z B |
+"G7"f2 fe fg | a6 | z2 gg ga | b3 a gf |
+"C"e6- | e2 z2 z2 |]
+
+X:5
+T:My Youngest One
+N:Source: Jump Right In: The Music Curriculum, Solo and Accompaniment Book 3 (GIA); notated by the teacher from the book. Page refs: JRI Solo and Accompaniment Book 3, song 42, p.15.
+%%id jri3-my-youngest-one
+M:2/4
+L:1/8
+Q:1/4=120
+K:Em
+"Em"B2 B2 | c B2 B | cBcB | "Am"c A2 z |
+AAAA | A/2G/2F/2G/2 A2 | "Em"BGGG | G/2F/2E/2F/2 G2 |
+"B7"AFFF | F/2E/2^D/2E/2 FF/2F/2 | FAGF | "Em"E B2 F/2F/2 |
+"B7"FAGF | "Em"G E2 z |]
+
+X:6
+T:Passing Through Seville
+N:Source: Jump Right In: The Music Curriculum, Solo and Accompaniment Book 3 (GIA); notated by the teacher from the book. Page refs: JRI Solo and Accompaniment Book 3, song 48, p.17.
+%%id jri3-passing-through-seville
+M:6/8
+L:1/8
+K:Dm
+"Dm"AAd- "A7"deg | "Dm"fed- "A7"deg | "Dm"fed- "A7"dcB | "Dm"A3- "A7"A2 z |
+"D7"aaa- ag^f | "Gm"gef- fge | "Dm"fdd- "Bb7"de"A7"^c | "Dm"d3- d z |]
+
+X:7
+T:Sing Your Way Home
+N:Source: Jump Right In: The Music Curriculum, Solo and Accompaniment Book 3 (GIA); notated by the teacher from the book. Page refs: JRI Solo and Accompaniment Book 3, song 43, p.15.
+%%id jri3-sing-your-way-home
+M:3/4
+L:1/8
+Q:1/4=132
+K:D
+"D"f2 A2 d2 | f4 fg | "A7"f2 e3 A | e6 |
+"A7"e2 A2 c2 | e4 ef | "D"e2 d2 B2 | A6 |
+"D"f2 A2 d2 | f4 dd | "D7"d2 e2 f2 | "G"g4 ga |
+"G"b2 a2 g2 | "D"f4 ^ef | "A7"a2 g2 f2 | e4 ^de |
+"A7"g2 f2 e2 | "D"d6 |]
+
+X:8
+T:Up on the Housetop
+N:Source: Jump Right In: The Music Curriculum, Solo and Accompaniment Book 3 (GIA); notated by the teacher from the book. Page refs: JRI Solo and Accompaniment Book 1A, song 29, p.10.
+%%id jri3-up-on-the-housetop
+M:2/2
+L:1/8
+K:C
+"C"g2 ga g2 ed | c2 e2 g4 | "F"a2 a2 "C"g2 e2 | "G7"d2 g2 g4 |
+"C"g2 ga g2 ed | "C"c2 e2 g4 | "F"a2 aa "C"gg e2 | "G7"d2 g2 "C"c4 |
+"F"f2 f2 a4 | "C"g2 gg e4 | "G7"d2 f2 f4 | "C"e2 gg c2 e2 |
+"C"g2 ga g2 e2 | "F"f2 g2 a4 | "C"g2 ga g2 ee | "G7"d2 g2 "C"c4 |]
 `
 };
