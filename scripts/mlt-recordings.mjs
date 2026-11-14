@@ -124,6 +124,15 @@ const SOLO_TOC = (() => {
   const PC = { C: 0, "C#": 1, D: 2, E: 4, F: 5, "F#": 6, G: 7, A: 9, B: 11 }, NAME = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
   const TON = { DO: "major", RE: "dorian", LA: "minor" };
   for (const [col, rows] of Object.entries(j)) { if (col[0] === "_") continue;
+    if (col === "jrisolo3") {   // no keys printed; keyed "col:disc:track"; -jri-solo3 / -jri-accomp3
+      for (const [title, no, pg] of rows) {
+        const disc = no <= 50 ? 1 : 2, m = no <= 50 ? no : no - 50, slug = title.toLowerCase().replace(/[’']/g, "").replace(/^(the|a) /, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+        const info = { title, no, bookPage: pg, slug, book3: true };
+        if (m === 50) out[`${col}:${disc}:99`] = { ...info, both: true };
+        else { out[`${col}:${disc}:${2 * m - 1}`] = { ...info, part: "solo" }; out[`${col}:${disc}:${2 * m}`] = { ...info, part: "acc" }; }
+      }
+      continue;
+    }
     for (const [title, kt, s, a, no, pg] of rows) {
       const [wk, syl] = kt.split("-"), slug = title.toLowerCase().replace(/[’']/g, "").replace(/^(the|a) /, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
       const info = { title, no, bookPage: pg, writtenKey: wk, key: NAME[(PC[wk] + 3) % 12], tonality: TON[syl], slug };
@@ -142,7 +151,7 @@ for (const [rel, col] of COLLECTIONS) {
   for (const f of files) {
     const t = probe(f);
     const base = path.basename(f);
-    const toc = SOLO_TOC[col.id + ":" + t.track];
+    const toc = SOLO_TOC[col.id + ":" + t.track] || SOLO_TOC[col.id + ":" + ((/\(Disc (\d)\)/.exec(f) || [])[1] || 1) + ":" + t.track];
     const title = toc ? toc.title + (toc.both ? " - Solo and Accompaniment" : toc.part === "solo" ? " - Solo" : " - Acc") : (t.title || base.replace(/\.(mp3|m4a)$/i, "").replace(/^\d+(-\d+)?[a-z]?\.?\s+/i, "")).trim();
     const track = t.track || ++n;
     let id = `${col.id}-${t.disc}-${String(track).padStart(2, "0")}`;
@@ -168,7 +177,7 @@ for (const [rel, col] of COLLECTIONS) {
       r2: `mlt/${col.id}/${path.relative(dir, f).split(path.sep).join("/")}`.replace(/\.{2,}/g, "."),   // Cloudflare's firewall refuses ".." in a URL
       file: path.relative(ROOT, f), size: t.size,
     };
-    if (toc) rec.r2 = `mlt/${col.id}/${toc.slug}-jri-${toc.both ? "solo-accomp" : toc.part === "solo" ? "solo" : "accomp"}.mp3`;
+    if (toc) rec.r2 = `mlt/${col.id}/${toc.slug}-jri-${toc.both ? "solo-accomp" : toc.part === "solo" ? "solo" : "accomp"}${toc.book3 ? "3" : ""}.mp3`;
     const g2 = guess.filter(x => !m[x] && !(toc && x === "tonality")); if (g2.length) rec.guess = g2;
     if (m.tune) rec.tuneChecked = 1;
     if (fs.existsSync(path.join(TIMINGS, id + ".json"))) rec.timing = 1;
