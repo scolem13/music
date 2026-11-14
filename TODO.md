@@ -44,6 +44,25 @@ Search the file for `TODO` / `DECIDE`; about 90 open items. The groups:
 - Full scores: further scores beyond Mozart 40 iv. Analysed library: 9 renumbered movements added 2026-11-09 (608 now); Beethoven
   3-1, 24-1, 26-1 now fit but fail the 2% wrong-length-bar limit (cadenzas): decide whether to loosen it (waiting).
 
+## Notation page: limits of the model (`tools/_notation.qmd`, `apps/shared/notation-doc.js`, `.claude/docs/notation.md`)
+Raw ABC (ABC panel checkbox, 2026-11-14) draws the code as written, but with it on the score keys are off; unticking re-reads the
+code into the model, which drops what it can't hold. To clear, cheapest first (estimates from the 2026-11-14 assessment):
+- **Beat grouping in odd meters** (~1 day): `groupStarts` hard-codes 7/8 = 2+2+3 and 5/8 = 3+2; read `M:(3+2+2)/8` / `M:3+2+2/8`
+  into `meterInfo`, a grouping box in the meter menu's Other..., per chunk like a meter change. Also 11/8, 9/8 as 2+2+2+3, 3+3+2.
+- **Double dots and thirty-seconds** (~1-2 days): the model counts in sixteenths, plain or single-dotted only (`WRITABLE`, `LEN`,
+  `pieces`); count in thirty-seconds, add 7/4, 7/8, 7/16 and 1/32; `beam` / `clearCut` / `snapQ` follow; takes still snap to 16ths.
+- **Beaming by hand** (~1-2 days): `slot.beam` (join next yes / no / default) obeyed by `beam()`, read back from the spaces in the
+  ABC by `fromAbc`; keys `/` (to the next note), `?` (to the one before), Visual `/` toggles all-beamed / default (quarters and
+  longer left alone, no warning; cut at barlines). Check `?` is free on the score first.
+- **Extras on single notes kept through the model** (~3-5 days, "option 2"): decorations (`!p!`, `.`, `~`), slurs, grace notes,
+  annotations carried on the slot through pitch / length / respell / tie / split / cut and paste; `%%` and header lines kept
+  verbatim. Lets the score keys and raw-style extras mix.
+- **Hardest, maybe never**: slurs across chunks, voice overlays `&`, other `V:` options (keep within a chunk, warn on split / merge).
+- **Raw mode itself**: no click-to-select on the drawn notes, no band (piano only) and no note lighting during Play, Play it in /
+  Loop chunks / DWIM / Chords by bar / Words off; opening a file or a Backing Track hand-off while raw is on is refused (untick
+  first); Tab from the score jumps to the box but not to the note.
+- Known, not raw's: `tests/abc/notation.cdp.js` fails at "cells sized like the Song Builder's" (already failing before raw mode).
+
 ## Lessons and tools
 - **Chord Analysis**: chapters 9-21 built (2026-11-09). Left: each chapter's leftovers on the page; no ch23 level (one key
   per passage).

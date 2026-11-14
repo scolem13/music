@@ -1022,6 +1022,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 #nt-root .nt-scope{display:inline-flex;align-items:center;gap:.35rem;margin-left:auto;font-size:.85rem;color:var(--nt-ink2)}
 #nt-root .nt-scope[hidden]{display:none}
 #nt-root .nt-scope select{height:1.9rem;font-size:.85rem;max-width:14rem}
+#nt-root.nt-is-raw .nt-main > details.nt-panel:not(#nt-abc):not(#nt-score),#nt-root.nt-is-raw .nt-side > details.nt-panel:not(#nt-abc):not(#nt-score){opacity:.45;pointer-events:none}
 #nt-root .nt-paper{margin-top:.6rem;overflow-x:auto;background:#fff;border-radius:6px}
 #nt-root .nt-paper .nt-chord-on,#nt-root .nt-paper .nt-chord-on *{fill:#b3261e!important}
 #nt-chord-ed{position:absolute;z-index:2000;font:600 15px var(--font-mono,monospace);width:6.5em;padding:1px 4px;border:2px solid #b3261e;border-radius:4px;background:#fff3f1;color:#b3261e}
@@ -1260,6 +1261,8 @@ document.addEventListener('DOMContentLoaded', async function () {
           <div class="nt-body">
             <p class="nt-hint" style="margin-top:0">Edit the code and the staff follows. Chunks start at <code>"^Name"</code> labels and at <code>[M:]</code> / <code>[K:]</code> changes; voices are <code>[V:1]</code> lines.</p>
             <label class="nt-hint" style="display:inline-flex;gap:.4em;align-items:center;margin:0 0 .3em"><input type="checkbox" id="nt-abc-vim" checked=""> Vim keys (Esc: normal mode, <kbd>i</kbd> to type; <kbd>=</kbd> respells the note under the cursor; <kbd>Tab</kbd> back to the score)</label>
+            <label class="nt-hint" style="display:flex;gap:.4em;align-items:center;margin:0 0 .3em"><input type="checkbox" id="nt-abc-raw"> Raw ABC: the score draws exactly what I type (slurs, dynamics, grace notes, <code>%%</code> lines, my own beaming)</label>
+            <p class="nt-warn" id="nt-raw-note" hidden="">Raw ABC: the score shows the code as written. The score keys, the parts on the left and Play it in are off; <kbd>Space</kbd> plays the whole piece, <kbd>u</kbd> / Ctrl+Z undo. Untick to go back: the code is read into the score's model again and what it can't hold is dropped.</p>
             <textarea id="nt-abc-text" spellcheck="false" aria-label="ABC code"></textarea>
             <div id="nt-abc-vimline" class="nt-vimline" aria-live="polite"></div>
             <p class="nt-warn" id="nt-abc-warn" hidden=""></p>
@@ -1551,7 +1554,13 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
   function endTell(m) { try { window.parent.postMessage(m, location.origin); } catch (e) {} }
   function snap() { history.push(JSON.stringify(doc)); if (history.length > 200) history.shift(); }
-  function change(f) { snap(); f(); save(); render(); }
+  // raw ABC (doc.raw): the ABC box's text is the piece, drawn as written; nothing goes through the model, so the model's
+  // edits are refused until raw is unticked (rawOk lets the untick itself through)
+  var rawOk = false;
+  function change(f) {
+    if (doc.raw && !rawOk) { status("Raw ABC is on: edit the code in the ABC box, or untick Raw ABC to use the score keys again."); return; }
+    snap(); f(); save(); render();
+  }
   function status(s) { $("nt-status").textContent = s || ""; }
   function chunk() { return doc.chunks[cur]; }
   function part() { return D.part(chunk(), voice); }
@@ -2251,7 +2260,22 @@ document.addEventListener('DOMContentLoaded', async function () {
     return r;
   }
 
+  function renderRaw() {
+    var ta = $("nt-abc-text");
+    if (editing !== "abc") ta.value = doc.raw;
+    $("nt-abc-raw").checked = true; $("nt-raw-note").hidden = false; $("nt-abc-warn").hidden = true;
+    $("nt-root").classList.add("nt-is-raw");
+    var paper = $("nt-paper"), W = Math.max(300, paper.clientWidth - 40);
+    map = []; pmap = []; drawn = []; sel = null;
+    try { tune = ABCJS.renderAbc(paper, doc.raw, { staffwidth: W, add_classes: true })[0] || null; }
+    catch (err) { tune = null; $("nt-abc-warn").hidden = false; $("nt-abc-warn").textContent = "abcjs can't draw that: " + err.message; }
+    var warn = tune && tune.warnings && tune.warnings.length ? tune.warnings : null;
+    if (warn) { $("nt-abc-warn").hidden = false; $("nt-abc-warn").innerHTML = "abcjs: " + warn.slice(0, 3).join("<br>"); }
+    tuneSrc = null;
+  }
   function render() {
+    if (doc.raw) { renderRaw(); return; }
+    $("nt-root").classList.remove("nt-is-raw"); $("nt-abc-raw").checked = false; $("nt-raw-note").hidden = true;
     var h = here(), mi = D.meterInfo(h.meter), ch = chunk();
     $("nt-title").value = doc.title || "";
     if (document.activeElement !== $("nt-lines")) $("nt-lines").value = doc.lineEvery > 0 ? doc.lineEvery : "";
@@ -3183,6 +3207,13 @@ document.addEventListener('DOMContentLoaded', async function () {
       else if (e.key === "c" && copySel()) e.preventDefault();
       else if (e.key === "x" && copySel()) { e.preventDefault(); deleteSel(); }
       else if (e.key === "v" && clip) { e.preventDefault(); pasteAfter(); }
+      return;
+    }
+    if (doc.raw) {   // raw ABC: only play, undo and Tab to the code
+      if (e.code === "Space" && !e.altKey) { e.preventDefault(); play(); return; }
+      if (e.key === "u" && !e.altKey) { e.preventDefault(); undo(); return; }
+      if (e.key === "Tab" && !e.shiftKey) { e.preventDefault(); jump("nt-abc"); $("nt-abc-text").focus({ preventScroll: true }); return; }
+      if (e.key.length === 1 && !e.altKey) status("Raw ABC is on: edit the code in the ABC box, or untick Raw ABC to use the score keys again.");
       return;
     }
     if (STAGE && stageShow) {
@@ -4126,6 +4157,10 @@ document.addEventListener('DOMContentLoaded', async function () {
   $("nt-abc-text").addEventListener("input", function () {
     editing = "abc"; clearTimeout(textTimer);
     var txt = this.value;
+    if (doc.raw) {   // raw: the text is the piece; one undo step per pause in typing
+      textTimer = setTimeout(function () { textTimer = null; if (txt === doc.raw) return; snap(); doc.raw = txt; save(); render(); }, 400);
+      return;
+    }
     textTimer = setTimeout(function () {
       try {
         var d = D.fromAbc(txt);
@@ -4184,6 +4219,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   // the note at a place in the ABC box (what's typed there read in first)
   function abcNoteAt(pos) {
     var ta = $("nt-abc-text"), txt = ta.value;
+    if (doc.raw) return null;
     if (textTimer) { clearTimeout(textTimer); textTimer = null; try { var d = D.fromAbc(txt); if (d.meter) { keepLayout(d); change(function () { doc = d; cur = Math.min(cur, doc.chunks.length - 1); voice = Math.min(voice, doc.voices.length - 1); }); } } catch (err) {} }
     var r = D.toAbc(doc);
     if (r.abc !== txt) pos = Math.round(pos * r.abc.length / Math.max(1, txt.length));   // rewritten: the same place, roughly
@@ -4200,6 +4236,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     return m2 ? m2.start : pos;
   }
   function fromAbcText() {
+    if (doc.raw && textTimer) { clearTimeout(textTimer); textTimer = null; if ($("nt-abc-text").value !== doc.raw) { snap(); doc.raw = $("nt-abc-text").value; save(); } }
     var ta = $("nt-abc-text"), m = abcNoteAt(ta.selectionStart);
     editing = null; ta.blur();
     if (m) { cur = m.chunk; voice = m.voice; sel = { chunk: m.chunk, voice: m.voice, slot: m.slot }; }
@@ -4215,6 +4252,18 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
   (function () { var on = true; try { on = localStorage.getItem("ntAbcVim") !== "0"; } catch (e) {} $("nt-abc-vim").checked = on; setVim(on); })();
   $("nt-abc-vim").onchange = function () { setVim(this.checked); };
+  $("nt-abc-raw").onchange = function () {
+    var box = this, txt = $("nt-abc-text").value;
+    clearTimeout(textTimer); textTimer = null;
+    if (box.checked) { snap(); doc.raw = txt || D.toAbc(doc).abc; save(); render(); status("Raw ABC on: the score draws the code as written."); return; }
+    var d; try { d = D.fromAbc(txt); } catch (err) { box.checked = true; status("Can't read that ABC into the score's model: " + err.message); return; }
+    if (!d.meter) { box.checked = true; status("Add a meter line (M:4/4) before leaving Raw ABC."); return; }
+    var back = D.toAbc(d).abc, lost = txt.replace(/\s+/g, "") !== back.replace(/\s+/g, "");
+    if (lost && !confirm("Leaving Raw ABC reads the code into the score's model. What it can't hold (slurs, dynamics, grace notes, %% lines, your own beaming...) is dropped. u / Ctrl+Z brings it back. Go ahead?")) { box.checked = true; return; }
+    keepLayout(d); rawOk = true;
+    try { change(function () { doc = d; doc.raw = null; cur = Math.min(cur, doc.chunks.length - 1); voice = Math.min(voice, doc.voices.length - 1); sel = null; shownCur = -1; }); } finally { rawOk = false; }
+    status(lost ? "Back to the model (some of the raw ABC was dropped; u undoes)." : "Back to the model.");
+  };
   $("nt-abc-text").addEventListener("keydown", function (e) {
     if (e.key === "Tab" && !e.shiftKey && !e.altKey && !e.ctrlKey && !e.metaKey) { e.preventDefault(); fromAbcText(); }
   });
