@@ -161,6 +161,15 @@ const U = "http://127.0.0.1:8547";
   const rv = await ev(`(() => { const g = TdSheet.groups().filter(g => /^Riverside/.test(g.title) && g.kids.some(k => k.type === 'Recording')); return JSON.stringify(g.map(g => [g.title, g.kids.length])); })()`);
   check("recordings named for a tune are grouped under it", (/\["Riverside",\d+\]/.test(rv)) !== NEG, rv);
 
+  // a Hutchinson excerpt: title opens this site's theory page; details link the recording, his book's section, this site's section
+  const hb = await ev(`(() => { const r = TdSheet.rows().find(r => /Beyond the Sea/.test(r.title) && r.from === 'uses only'); if (!r) return 'none';
+    const ul = Works.usesList(r.uses); return [r.href, [...ul.querySelectorAll('a')].map(a => a.getAttribute('href')).join(' ')].join(' | '); })()`);
+  check("Hutchinson excerpt: links to YouTube, his book's section and this site's page", (/^\/theory\/progressions\.html#[\w-]+ \| https:\/\/www\.youtube\.com\/\S+ https:\/\/musictheory\.pugetsound\.edu\/mt21c\/ShorterProgressionsFromTheCircleOfFifths\.html#I-vi-ii-V \/theory\/progressions\.html#/.test(hb)) !== NEG, hb);
+  // OCR slips in book-index titles (scripts/realbooks/fix-title.js, scripts/print-books/cutler/combine.py)
+  await wait(`TdSheet.rows().filter(r => r.type === 'Real Book').length > 10000`);
+  const ocr = await ev(`JSON.stringify(TdSheet.rows().filter(r => r.type !== "Hooktheory").filter(r => !String(r.title || '').trim() || /[|\`~]|^['‘’]\\s?([Ll]l|[Mm]|[Vv]e)\\b|^M [A-Z]|^[!1]\\s|\\b0[A-Za-z]|^0 [A-Za-z]|ор\\.|[a-z]![a-z]/.test(r.title) && !/-\\|-/.test(r.title)).map(r => r.type + ': ' + r.title).slice(0, 12))`);
+  check("no OCR slips (| ! 1 for I, 0 for O, empty titles) in sheet titles", (ocr === "[]") !== NEG, ocr);
+
   // suspect tunes (scripts/tune-quality.mjs) are left out until the box is ticked
   await b.goto(U + "/practice/tune-directory.html"); await wait(`window.TdSheet && document.querySelectorAll('#td-sheet-box tbody tr').length > 50`);
   await ev(`TdSheet.ready`); await b.sleep(300);

@@ -36,3 +36,7 @@
   Full screen, zooms the grid to fit the screen, shrinks staves to their card. `AX_PARTS` (abc-ex.js): click a note to play
   from its measure, Show checkboxes per voice, and a Show notation switch.
   Sources `scripts/sources/elements.py`. Test: `node tests/lessons/elements.cdp.js` (after rendering the twelve pages).
+- DP Classical Style (`lessons/dp-classical-style.qmd`, sidebar Composing): the self-paced page for the DP1 Classical unit
+  (plan, Toddle texts and class summaries in `~/org/DP1-Music-Classical-Style-Unit.org`). Mozart K. 545 i as the anchor, a 32-bar
+  rounded-binary composition built 8 bars at a time, self-check quizzes `<div class="dq">` (JSON inside, script at the page end),
+  Words boxes linking glossary slugs. Sources `scripts/sources/dp-classical.py`. Test `node tests/lessons/dp-classical-style.cdp.js` (`NEG=1` must fail).

@@ -22,8 +22,10 @@ def load(p): return json.load(open(p, encoding="utf-8")) if os.path.exists(p) el
 # ---- Hooktheory ----
 cache = load(os.path.join(here, "cache-ht.json"))
 src = os.path.expanduser("~/Projects/corpora/hooktheory/hooktheory-priority.csv")
+HT = os.path.exists(src)        # the corpus is on one machine only: without it hooktheory.json is left as it is
+if not HT: print("no", src, "- hooktheory.json not rebuilt")
 by = {}
-for r in csv.DictReader(open(src, encoding="utf-8")):
+for r in (csv.DictReader(open(src, encoding="utf-8")) if HT else []):
     if r["priority"] not in ("1", "2"): continue
     by.setdefault(r["artist_slug"] + "/" + r["song_slug"], []).append(r)
 def keyname(r):
@@ -44,7 +46,7 @@ for h, v in by.items():
     if e.get("c"): row["c"] = e["c"]
     ht.append(row)
 ht.sort(key=lambda r: (r["a"].lower(), r["t"].lower()))
-json.dump(ht, open(os.path.join(out, "hooktheory.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+if HT: json.dump(ht, open(os.path.join(out, "hooktheory.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
 
 # ---- Real Books ----
 cache = load(os.path.join(here, "cache-rb.json"))
@@ -62,7 +64,7 @@ for t in D["tunes"]:
     if t.get("ar"): row["a"] = t["ar"]
     if t.get("sf"): row["sf"] = t["sf"]
     if t.get("fm"): row["f"] = t["fm"]
-    e = cache.get(t["t"]) or {}
+    e = cache.get(t["t"]) or cache.get(t.get("ocr", "")) or {}      # caches are keyed by the title as first read (before fix-title.js)
     if e.get("y"): row["yr"] = e["y"]
     if e.get("g"): row["g"] = e["g"]
     if e.get("c") and not row.get("c"): row["c"] = e["c"]; row["cm"] = 1      # composer from MusicBrainz, not the book

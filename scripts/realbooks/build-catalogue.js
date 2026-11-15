@@ -4,6 +4,7 @@
 const fs = require("fs"), path = require("path");
 const dir = path.join(__dirname, "../../apps/realbooks");
 const sf = JSON.parse(fs.readFileSync(path.join(dir, "songfinder.json"), "utf8"));
+const fixTitle = require("./fix-title.js");   // OCR slips in index titles (| for I, 0 for O, ...): rules and cases there
 const books = JSON.parse(fs.readFileSync(path.join(dir, "books.json"), "utf8")).books;
 
 // one key per tune: lower case, accents and punctuation gone, a leading "the"/"a" and bracketed parts dropped
@@ -21,7 +22,7 @@ function tune(title) {
   if (!same(x.t, title) && !x.aka.some(a => same(a, title)) && x.aka.length < 4) x.aka.push(title);
   return x;
 }
-sf.songs.forEach(s => { tune(s.title).sf = s.vols; });
+sf.songs.forEach(s => { const t = fixTitle(s.title), x = tune(t); x.sf = s.vols; if (t !== s.title && !x.ocr) x.ocr = s.title; });
 
 const idxDir = path.join(dir, "index"), used = [];
 if (fs.existsSync(idxDir)) for (const f of fs.readdirSync(idxDir).filter(f => f.endsWith(".json")).sort()) {
@@ -30,8 +31,10 @@ if (fs.existsSync(idxDir)) for (const f of fs.readdirSync(idxDir).filter(f => f.
   if (b < 0) { console.warn("not in books.json:", ix.file); continue; }
   used.push({ b, method: ix.method, n: (ix.entries || []).length, notes: ix.notes || "" });
   (ix.entries || []).forEach(e => {
+    const raw = (e.title || "").trim(); if (raw) e.title = fixTitle(raw);
     if (!e.title || !e.pdfPage) return;
     const x = tune(e.title);
+    if (raw !== e.title && !x.ocr) x.ocr = raw;                                       // as the index read it (dir-songs caches are keyed by it)
     x.at.push([b, e.pdfPage, e.page == null ? null : e.page, e.conf || "", e.composer || ""]);
     if (!x.c && e.composer) x.c = e.composer;
     if (e.film && !(x.fm = x.fm || []).includes(e.film)) x.fm.push(e.film);

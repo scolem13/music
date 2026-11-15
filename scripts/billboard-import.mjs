@@ -58,7 +58,8 @@ for (const id of fs.readdirSync(SRC + "/McGill-Billboard").filter((d) => /^\d+$/
   if (seen.has(same)) { dropped++; continue; }
   seen.add(same);
   const rn = romansOf(text, h("tonic"));
-  index.push({ id: +id, title: h("title"), artist: h("artist"), year: +(m.chart_date || "").slice(0, 4) || null,
+  index.push({ id: +id, title: h("title").replace(/`R\b/g, "'R'").replace(/`/g, "'"),   // SALAMI writes ' as ` ("The Goonies `R Good Enough")
+     artist: h("artist"), year: +(m.chart_date || "").slice(0, 4) || null,
     peak: +m.peak_rank || null, metre: h("metre"), tonic: h("tonic"), secs, form, romans: rn.romans, romanSeq: rn.romanSeq });
   fs.writeFileSync(path.join(OUT, +id + ".txt"), text);
 }

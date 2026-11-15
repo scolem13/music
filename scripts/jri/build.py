@@ -20,6 +20,28 @@ def norm(s):
     s = re.sub(r"\(.*?\)", "", s.lower()); s = re.sub(r"[^a-z0-9 ]", "", s)
     s = re.sub(r"^(the|a|an) ", "", s); return re.sub(r"\s+", " ", s).strip()
 def slug(s): return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", s.lower())).strip("-")
+# OCR slips in the digests' titles (mostly Song Collection 2): marks read before a title ("o~ ", "y~™ ", "es“ ", "oO ", "rN ", "a~ "),
+# quotes read as runs of “ ” ' * ("M"’ Is For Mary", "**Rodeo"’"), "--" for a dash, "E\ Grillo", a lower-case first letter, a stray
+# trailing "/". Each " / " part is cleaned on its own. HAND: slips the rules cannot see. Ids still come from the title as read, so
+# links to them stay put; two readings of one title now merge.
+JRI_HAND = {"Little Johnny Brown = Little \"Liza Jane": "Little Johnny Brown / Little Liza Jane", "E\\ Grillo--The Cricket": "El Grillo — The Cricket",
+            "Animal Fair, The / am, The Cookie Jar?": "Animal Fair, The / Who Stole The Cookie Jar?", "am, Sacramento": "Sacramento",
+            "Two Shape Continuity Movement 40S Uncle Joe": "Two Shape Continuity Movement / Uncle Joe"}
+def fix_part(t):
+    t = t.strip()
+    t = re.sub(r"^(?:[a-z][a-zA-Z]?[~™“”\"‘’*,.]+\s*|oO\s+|rN\s+|[a-z]{1,2}~\S*\s+|soTTLE CARD COLLECTION\s+)+", "", t)
+    t = re.sub(r"‘([^‘’\"]+)’’", r'"\1"', t)                                  # ‘Skip To My Lou’’
+    t = re.sub(r"[“”\"‘’*]{2,}|\*", '"', t)                                     # quote runs -> one "
+    if t.count('"') % 2 and re.match(r"^\w+\"", t): t = '"' + t              # M" Is For Mary -> "M" Is For Mary
+    if t.count('"') % 2: t = t.replace('"', "")
+    t = re.sub(r"\s*--\s*", " — ", t); t = re.sub(r"\s*—\s*", " — ", t)
+    t = re.sub(r"^(.+?)\. The$", r"\1, The", t)                                  # "Ghost Of John. The"
+    return t[:1].upper() + t[1:] if t else t
+def fix_title(t):
+    t = t.strip()
+    if t in JRI_HAND: return JRI_HAND[t]
+    return " / ".join(x for x in (fix_part(x) for x in re.split(r"\s*/\s*", t)) if x)
+
 def clean(v):
     v = v.strip()
     return None if v in ("", "-", "?", "NA") else v
@@ -61,9 +83,17 @@ for blk in t.split("\nX:")[1:]:
 # works that already hold a tune
 wd = open(ROOT + "/apps/shared/works/works-data.js", encoding="utf8").read()
 head = wd.split("// print-books:begin")[0]
+# tune links already in our own block (some were added there by hand) are kept for the same id; the block is not read for workof,
+# where a 600-character window spilled into the next entry and made a rerun reassign ids
+mb = re.search(r"// jri:begin.*?// jri:end", head, flags=re.S)
+kept = {}
+for m in re.finditer(r'^  "([^"]+)": (\{.*\}),?$', mb.group(0) if mb else "", re.M):
+    try: kept[m.group(1)] = (json.loads(m.group(2)).get("in") or {}).get("tune") or []
+    except ValueError: pass
+head = head.replace(mb.group(0), "") if mb else head
 workof = {}
 for m in re.finditer(r'^  "([^"]+)": \{', head, re.M):
-    seg = head[m.end():m.end() + 600]
+    seg = head[m.end():m.end() + 600].split("\n  \"")[0]               # this entry only, not the next one
     mm = re.search(r'"tune":\s*\[\s*((?:"[^"]+"\s*,?\s*)+)\]', seg)
     if mm:
         for tid in re.findall(r'"([^"]+)"', mm.group(1)): workof.setdefault(tid, m.group(1))
@@ -88,9 +118,9 @@ def rec_for(p):
     return best if ratio >= 0.5 or (len(cand) == 1 and plans_on[(p["book"], p["te"])] == 1) else None
 
 entries = collections.OrderedDict()
-def entry(title):
-    k = norm(title)
-    if k not in entries: entries[k] = dict(title=title, uses=[], recs=[], songs=[])
+def entry(raw):
+    title = fix_title(raw); k = norm(title)
+    if k not in entries: entries[k] = dict(title=title, raw=raw, uses=[], recs=[], songs=[])
     return entries[k]
 for p in plans:
     e = entry(p["title"]); e["uses"].append(p); r = rec_for(p)
@@ -103,7 +133,7 @@ for k, e in entries.items():
     u = e["uses"][0] if e["uses"] else None
     tid = tunes.get(k)
     wid = workof.get(tid) if tid else None
-    wid = wid or ("jri-" + slug(e["title"]))[:70]
+    wid = wid or ("jri-" + slug(e["raw"]))[:70]
     if wid in out: wid += "-" + str(len(out))
     where = []
     for p in e["uses"]: where.append("Teacher's Edition " + BOOKNAME[p["book"]] + " p." + p["te"])
@@ -132,7 +162,9 @@ for k, e in entries.items():
         w["note"] = "No CD track matched this plan's page in the catalogue (OCR page or catalogue page missing); to check."
         stat["plan, no recording"] += 1
     else: stat["song collection only"] += 1
-    stat["linked to library tune"] += bool(tid)
+    if wid not in existing_ids and kept.get(wid):
+        w["in"]["tune"] = list(dict.fromkeys(kept[wid] + w["in"].get("tune", [])))
+    stat["linked to library tune"] += bool(w["in"].get("tune"))
     out[wid] = w
 print(len(plans), "plans,", len(songs), "songs ->", len(out), "entries;", dict(stat))
 if WRITE:

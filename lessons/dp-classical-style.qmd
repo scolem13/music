@@ -1,0 +1,634 @@
+---
+title: "Classical Style: Research and Compose (DP Music)"
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+description: "For IB DP Music, self-paced: hear and name the conventions of the Classical style in Mozart's Sonata K. 545, write about them the way the Exploring component asks, and compose 32 bars of your own in the style, one eight-bar step at a time, with a quiz after every section and the vocabulary built up as you go."
+instruments: [piano, guitar, violin, sax, voice, other]
+topics: [composing, history, research]
+has: [notation, interactive]
+glossary: [classical-period, homophonic, alberti-bass, phrase, cadence, authentic-perfect-cadence, half-cadence, periods, tonic-harmony, dominant, sonata-form, binary-form, aoi-2]
+---
+
+{{< include _compose-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+.dq{border:1px solid var(--site-border);border-radius:8px;padding:.7rem 1rem;margin:1.2rem 0;background:var(--site-surface)}
+.dq h4{margin:.1rem 0 .5rem;font-size:1rem}
+.dq-item{margin:.2rem 0 .9rem}
+.dq-q{font-weight:600;margin-bottom:.3rem}
+.dq-opts{display:flex;flex-wrap:wrap;gap:.35rem}
+.dq-opts button{font-size:.9rem;text-align:left;border:1px solid var(--site-border);background:var(--site-bg, transparent);color:inherit;border-radius:6px;padding:.3rem .6rem;cursor:pointer}
+.dq-opts button.dq-right{border-color:var(--site-pass);background:color-mix(in srgb,var(--site-pass) 18%,transparent)}
+.dq-opts button.dq-wrong{border-color:var(--site-fail);background:color-mix(in srgb,var(--site-fail) 14%,transparent)}
+.dq-why{font-size:.88rem;color:var(--site-ink-2);margin-top:.3rem;min-height:1.2em}
+.dq-score{font-family:var(--font-mono);font-size:.85rem}
+.dq-reset{font-size:.8rem;margin-left:.6rem}
+.dp-words{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:1rem 0;background:var(--site-surface);font-size:.95rem}
+.dp-words strong:first-child{display:block;font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--site-ink-2);margin-bottom:.2rem}
+.dp-floor{border:1px dashed var(--site-border);border-radius:8px;padding:.5rem .9rem;margin:.8rem 0}
+.dp-check li{list-style:none;margin-left:-1.2rem}
+.dp-check input{margin-right:.45rem}
+</style>
+```
+
+This page takes you through the whole summative on your own, in order. If you miss a class, find the section the class
+covered (the class page on the Learning Experiences site says which) and work through it here.
+
+**What you will hand in on Friday 11 December** (the task is on Toddle):
+
+1. A **report** (600–900 words) on one Classical piece: its context, its area of inquiry, and three or four conventions of
+   the style, each with a measure number and a timestamp.
+2. A **32-bar piece** of your own in the same style, and a **statement** (about 300 words) saying which conventions you used
+   and where.
+
+The page uses one piece the whole way through: Mozart's **Piano Sonata in C major, K. 545, first movement**. If you write
+your report on a different piece, do every step on your piece as well.
+
+**How to use the page.** Each section has a short listening or reading task, a **Words** box (new vocabulary, each linked to the
+course [Glossary](../course/glossary.qmd)), and a **Check yourself** quiz. Do the quiz before moving on; it tells you at once if you
+got each one right, and why. Press ▶ under a staff to hear it. Click ▾ next to a heading to fold a section away.
+
+## 1. What Classical sounds like {#what-classical-sounds-like}
+
+Western art music from about 1650 to 1900 is called the **Common Practice period**. It has three parts: Baroque
+(about 1600–1750, which you researched in September), **Classical** (about 1750–1820) and Romantic (about 1820–1900). They
+share major and minor keys and the same basic chords. They differ in how they use them.
+
+**Listen.** Open [Mozart, Sonata K. 545, first movement](../theory/analysed-scores/view.qmd?id=mozart-sonata-16-1) in the
+Analysed Scores Library and press play. Listen once without the score, then once following the score. Write down three things
+you notice.
+
+Here is what most listeners hear, and what each one is called:
+
+| What you hear | What it is called |
+|---|---|
+| One clear tune on top, and the left hand only accompanying it | **homophonic** texture: melody and accompaniment |
+| The left hand playing the notes of each chord one at a time, in a repeating pattern | **Alberti bass** (m. 1–4) |
+| The tune falls into short, equal pieces, with a clear stop every four bars | **phrases** ending in **cadences** |
+| Few chords, mostly the same three | tonic, subdominant and dominant (**I, IV, V**) |
+| Fast, light, clear | tempo marking **Allegro** |
+
+Compare the Baroque music you researched: a **basso continuo** under everything, the same mood held through a movement,
+often **polyphonic** (several equal lines). In K. 545 there is no continuo, the right hand clearly leads, and the music
+changes character within a minute (the long scales from m. 5 sound nothing like the opening tune).
+
+<div class="dp-words"><strong>Words</strong>
+[Common Practice period](../course/glossary.qmd#common-practice-period) ·
+[Classical period](../course/glossary.qmd#classical-period) ·
+[texture](../course/glossary.qmd#texture) ·
+[homophonic](../course/glossary.qmd#homophonic) ·
+[polyphony](../course/glossary.qmd#polyphony) ·
+[Alberti bass](../course/glossary.qmd#alberti-bass) ·
+[sonata](../course/glossary.qmd#sonata) ·
+[allegro](../course/glossary.qmd#allegro)
+</div>
+
+<div class="dq"><h4>Check yourself</h4><script type="application/json">[
+{"q":"About when is the Classical period?","a":["1600–1750","1750–1820","1820–1900"],"c":1,"why":"Haydn, Mozart and early Beethoven. Baroque comes before, Romantic after."},
+{"q":"A melody with an accompaniment under it is called…","a":["polyphonic","monophonic","homophonic"],"c":2,"why":"Homophonic: one line leads, the rest accompany. Polyphonic means several equal lines."},
+{"q":"The left hand of K. 545 plays C G E G, C G E G… That pattern is…","a":["a basso continuo","an Alberti bass","a ground bass"],"c":1,"why":"Alberti bass: low, high, middle, high, one chord at a time."},
+{"q":"Which of these is MOST typical of Baroque, not Classical?","a":["basso continuo","four-bar phrases","Alberti bass"],"c":0,"why":"The continuo (keyboard plus bass line under everything) disappears in the Classical period."},
+{"q":"A sonata is…","a":["one movement in a fast tempo","a piece in several movements for one or two instruments","any piece for piano"],"c":1,"why":"K. 545 is a whole sonata in three movements; we study the first. Sonata form (section 6) is the form of one movement."}
+]</script></div>
+
+## 2. A little Romantic {#a-little-romantic}
+
+This section is short on purpose: you are writing about Classical music. Knowing what comes next helps you say what Classical
+*is*, and stops you mixing the styles in your piece.
+
+**Listen.** Schubert, ["Das Wandern"](../theory/analysed-scores/view.qmd?id=lied-schubert-franz-die-schone-mullerin-d-795-01-das-wandern)
+("Wandering"), the first song of *Die schöne Müllerin* (1823). A young miller sets out on a journey. It is short and
+mostly uses the three main chords (I, IV and V, section 4), so it still sounds close to Classical. But listen to the piano: its running notes paint the water and the
+turning mill wheel of the poem. Music telling a story or painting nature is a Romantic idea. Every verse uses the same music:
+**strophic form**.
+
+**Also listen.** Schumann, "The Wild Horseman" (*Album for the Young*, Op. 68, 1848): a short piano piece whose
+title is a picture. Romantic titles often name a scene or a story; Classical titles name a genre and key (Sonata in C,
+Symphony No. 40). Nicknames like "Moonlight" were mostly added later by other people.
+
+| | Classical (about 1750–1820) | Romantic (about 1820–1900) |
+|---|---|---|
+| Aim | balance, clarity, elegance | personal feeling, story, nature |
+| Phrases | regular, 4 + 4 bars | often longer, less regular |
+| Harmony | mostly I, IV, V; clear cadences | more **chromatic** notes and surprising keys |
+| Dynamics | a wider range than Baroque | extremes, from ppp to fff |
+| Tempo | steady | flexible: **rubato** |
+| Typical pieces | sonata, symphony, string quartet, minuet | art song (Lied), short piano piece, large symphony |
+
+<div class="cp-tip">
+**Keep your piece Classical.** The course book warns against "hybrid conventions": a piece that mixes features of two styles
+does not show that you understand either ([What Each Level Means](https://dp-music.seancoleman.org/book/exploring-criterion-guidance.html#criterion-c1-understanding-creating-conventions)).
+No rubato markings, no chromatic chords, no sudden fff.
+</div>
+
+<div class="dp-words"><strong>Words</strong>
+[Romantic period](../course/glossary.qmd#romantic-period) ·
+[strophic form](../course/glossary.qmd#strophic-form) ·
+[chromatic](../course/glossary.qmd#chromatic) ·
+[rubato](../course/glossary.qmd#rubato) ·
+[crescendo](../course/glossary.qmd#crescendo) ·
+[sforzando](../course/glossary.qmd#sforzando)
+</div>
+
+<div class="dq"><h4>Check yourself</h4><script type="application/json">[
+{"q":"Same music for every verse of a song is…","a":["through-composed","strophic","binary"],"c":1,"why":"Strophic form, as in 'Das Wandern'."},
+{"q":"Flexible tempo, pushing and pulling the beat, is…","a":["rubato","staccato","allegro"],"c":0,"why":"Rubato: very Romantic, not a Classical convention."},
+{"q":"Which is more typical of the Romantic than the Classical?","a":["regular four-bar phrases","music that paints a story or a scene","Alberti bass"],"c":1,"why":"Personal expression and story are Romantic aims."},
+{"q":"Your 32-bar Classical piece should…","a":["mix in a few Romantic features to be interesting","stay in the Classical style","use as many chromatic chords as possible"],"c":1,"why":"Hybrid conventions lose marks on C1."}
+]</script></div>
+
+## 3. Phrases and cadences {#phrases-and-cadences}
+
+Classical melodies are built in **phrases**, like sentences in writing. A phrase is usually four bars long and ends with a
+**cadence**, a resting point. There are two cadences you need:
+
+- **Perfect authentic cadence (PAC):** chord V (or V7) goes to chord I, and the melody ends on the tonic note. It sounds
+  finished, like a full stop.
+- **Half cadence (HC):** the phrase stops on chord V. It sounds open, like a comma or a question.
+
+Two phrases, the first ending with a half cadence and the second with a perfect authentic cadence, make a **period**: a
+question (the **antecedent**) and its answer (the **consequent**). Very often the answer starts the same way as the question.
+
+Here is a period written for this page in the Classical style. Listen for the open ending of bar 4 and the closed ending of bar 8.
+
+<div class="abc-ex" data-bpm="112" data-width="720"><script type="text/plain">
+X:1
+T:A Classical period in C: bars 1–4 ask (half cadence), bars 5–8 answer (perfect authentic cadence)
+M:4/4
+L:1/8
+Q:1/4=112
+K:C
+V:1
+c4 e2 g2 | f2 d2 B2 G2 | c2 e2 a2 f2 | g6 z2 |
+c4 e2 g2 | f2 d2 B2 G2 | e2 g2 f2 d2 | c6 z2 |]
+V:2 clef=bass
+"_I"C,G,E,G, C,G,E,G, | "_V7"B,,G,F,G, B,,G,F,G, | "_I"C,G,E,G, "_IV"C,A,F,A, | "_V (HC)"B,,G,D,G, B,,G,D,G, |
+"_I"C,G,E,G, C,G,E,G, | "_V7"B,,G,F,G, B,,G,F,G, | "_I"C,G,E,G, "_V7"B,,G,F,G, | "_I (PAC)"C,G,E,G, C,4 |]
+</script></div>
+
+**Now in Mozart.** In K. 545, find the first cadence (it comes at the end of m. 4). Is it open or closed? Then follow the
+long scales from m. 5: where do they finally stop, and on which chord? Write each answer as a measure number **and** a
+timestamp in your recording, then check the chord against the experts' analysis labels in the library.
+
+More practice: [Cadences](cadences.qmd) (build your own phrase endings and test your ear) and
+[Phrases in Combination](../theory/phrases-in-combination.qmd) (periods and sentences in real tunes).
+
+<div class="dp-words"><strong>Words</strong>
+[phrase](../course/glossary.qmd#phrase) ·
+[cadence](../course/glossary.qmd#cadence) ·
+[perfect authentic cadence](../course/glossary.qmd#authentic-perfect-cadence) ·
+[half cadence](../course/glossary.qmd#half-cadence) ·
+[period](../course/glossary.qmd#periods) ·
+[sentence](../course/glossary.qmd#sentence)
+</div>
+
+<div class="dq"><h4>Check yourself</h4><script type="application/json">[
+{"q":"A phrase that ends on chord V ends with a…","a":["perfect authentic cadence","half cadence","plagal cadence"],"c":1,"why":"Ending on V sounds open: a half cadence."},
+{"q":"Which ending sounds the most finished?","a":["V – I with the tonic in the melody","I – V","IV – V"],"c":0,"why":"That is a perfect authentic cadence (PAC)."},
+{"q":"In a period, the first phrase is called the…","a":["consequent","antecedent","coda"],"c":1,"why":"Antecedent = question (often a half cadence); consequent = answer (a PAC)."},
+{"q":"In the example above, how do bars 5–6 relate to bars 1–2?","a":["They are the same","They are upside down","They are in a new key"],"c":0,"why":"The answer starts like the question. That is what makes it a parallel period."},
+{"q":"Why does a Classical composer put a half cadence in bar 4 and a PAC in bar 8, not the other way round?","a":["So the music feels like a question, then an answer","Because bar 8 must be louder","Because the rules say four bars"],"c":0,"why":"The open ending makes you want the closed one. That is the 'so what' you can write in your report."}
+]</script></div>
+
+## 4. Three chords: I, IV, V {#three-chords}
+
+Most Classical music, and almost all of K. 545's first page, uses three chords. In C major:
+
+| Roman numeral | Name | Notes | What it does |
+|---|---|---|---|
+| **I** | tonic | C E G | home |
+| **IV** | subdominant | F A C | moves away from home |
+| **V** (or **V7**) | dominant | G B D (+ F) | wants to go home to I |
+
+The Roman numeral is the step of the scale the chord is built on: C is step 1 of C major, F step 4, G step 5. So in G major
+I = G, IV = C, V = D.
+
+**Harmonic rhythm** is how often the chord changes. In K. 545 it changes about once or twice a bar: slow enough that the
+melody is always the thing you follow.
+
+**Try it.** Open K. 545 in the [Analysed Scores Library](../theory/analysed-scores/view.qmd?id=mozart-sonata-16-1) and turn
+on the analysis. Under each of mm. 1–4, write the Roman numeral, then check yourself against the experts' labels. This is a short
+version of the course book's [Harmonic Reduction](https://dp-music.seancoleman.org/book/exploring-tasks.html#harmonic-reduction)
+task: chords in the right hand, bass in the left, cadences marked.
+
+Practise naming chords until it is quick: [Theory Drills](../theory/theory-drills.qmd) (triads, then Roman numerals, in C, G and
+F major). Ten minutes a day is better than an hour once.
+
+<div class="dp-words"><strong>Words</strong>
+[tonic](../course/glossary.qmd#tonic-harmony) ·
+[subdominant](../course/glossary.qmd#subdominant-harmony) ·
+[dominant](../course/glossary.qmd#dominant) ·
+[diatonic](../course/glossary.qmd#diatonic) ·
+[harmonic rhythm](../course/glossary.qmd#harmonic-rhythm) ·
+[broken chord](../course/glossary.qmd#broken-chord)
+</div>
+
+<div class="dq"><h4>Check yourself</h4><script type="application/json">[
+{"q":"In C major, chord V is…","a":["F A C","G B D","A C E"],"c":1,"why":"G is the fifth note of C major."},
+{"q":"In G major, chord IV is…","a":["C E G","D F# A","G B D"],"c":0,"why":"Count up G A B C: step 4 is C."},
+{"q":"Which chord 'wants' to go home to I?","a":["IV","V","I"],"c":1,"why":"The dominant. V – I is the strongest pull in tonal music."},
+{"q":"Harmonic rhythm means…","a":["the rhythm of the melody","how often the chords change","how fast the piece is"],"c":1,"why":"A slow harmonic rhythm (one chord a bar) is typical of Classical melody-and-accompaniment."},
+{"q":"V7 in C adds which note to G B D?","a":["F","E","A"],"c":0,"why":"The seventh above G is F. That F pulls down to E in the next chord, I."}
+]</script></div>
+
+## 5. Writing about the music {#writing-about-the-music}
+
+The report is marked mostly on **Criterion B1**: how well you find, explain and *locate* what is in the music. The course book
+says it plainly: examiners want analysis that explains *why*, not lists of facts that fit any piece
+([What Each Level Means](https://dp-music.seancoleman.org/book/exploring-criterion-guidance.html)).
+
+### Two kinds of findings
+
+- **Musical findings** come from the music itself: the score and the recording. ("The left hand plays an Alberti bass.")
+- **Extra-musical findings** come from writing about the music: the class texts. ("Mozart wrote the sonata in 1788 and called it a
+  sonata for beginners.") Each one needs an in-text citation.
+
+### Where, what, so what
+
+Every musical finding needs three things:
+
+1. **Where:** the measure number and the timestamp in your recording.
+2. **What:** the right term.
+3. **So what:** why it matters. What makes it Classical, or what it does for the listener.
+
+| Weak | Strong |
+|---|---|
+| The piece is in 4/4 and is fast. | — (true of thousands of pieces: leave it out) |
+| The left hand plays broken chords. | In mm. 1–4 (0:00–0:08) the left hand plays an Alberti bass under the melody. The accompaniment keeps moving but stays quiet and regular, so the melody is always heard on top: a homophonic texture typical of the Classical style. |
+| The first part ends. | Bar 4 (0:08) ends with a half cadence on G; it sounds unfinished, so the listener expects an answer. |
+
+(The timestamps here are examples. Use the ones in *your* recording.)
+
+The test from the course book: for every sentence, ask *so what?* If the answer is "nothing, it's just a fact", cut it
+([Common Mistakes](https://dp-music.seancoleman.org/book/exploring-common-mistakes.html)).
+
+### The area of inquiry
+
+You must say which **area of inquiry** (AOI) your piece belongs to *and why*. The AOI comes from what the music was
+**originally for**, not from where you hear it today (a Mozart piece in an advert is still not advert music).
+
+- **AOI 2: music for listening and performance.** Sonatas, symphonies, string quartets: concert and home music, played
+  to be listened to. K. 545 was written for a keyboard player at home; Symphony No. 40 for concert audiences.
+- **AOI 1: music for sociocultural and political expression** (including religious music): a Mass or a Requiem.
+- **AOI 3: music for dramatic impact, movement and entertainment:** opera, ballet, dance music. A minuet began as a
+  court dance, so think about whether yours was written *for dancing* or only in the dance's style.
+
+A good AOI paragraph names the AOI, gives the evidence (who it was for, where it was played, from your text), and links it to
+the music. For example: the simple, clear writing of K. 545 fits a piece meant for an amateur player at home.
+
+### A paragraph frame (use it if you are stuck)
+
+> In measures __–__ (__:__–__:__), the __________ [what: use a term]. This is typical of the Classical style because
+> __________ [convention, with a citation if it comes from a text]. The effect is __________ [so what].
+
+Sources: use the texts handed out in class. How to cite them, and what examiners say about sources:
+[Sources 3: Research for DP Music](sources-dp.qmd). How to annotate: [Annotated Bibliography 3](annotate-dp.qmd).
+
+<div class="dp-words"><strong>Words</strong>
+[area of inquiry](../course/glossary.qmd#area-of-inquiry) ·
+[AOI 2](../course/glossary.qmd#aoi-2) ·
+[primary source](../course/glossary.qmd#primary-source) ·
+[secondary source](../course/glossary.qmd#secondary-source) ·
+[describe](../course/glossary.qmd#describe) ·
+[analyse](../course/glossary.qmd#analyse) ·
+[explain](../course/glossary.qmd#explain)
+</div>
+
+<div class="dq"><h4>Check yourself</h4><script type="application/json">[
+{"q":"'Mozart wrote K. 545 in 1788' is…","a":["a musical finding","an extra-musical finding"],"c":1,"why":"It comes from a text about the music, not from the music itself. It needs a citation."},
+{"q":"Which sentence would score best on B1?","a":["The piece is in C major and is in 4/4.","The piece has lots of nice dynamics.","In m. 4 (0:08) the phrase stops on a half cadence, so the next phrase sounds like an answer."],"c":2,"why":"It has where (measure and timestamp), what (half cadence) and so what (the answer)."},
+{"q":"A score is a…","a":["primary source","secondary source"],"c":0,"why":"The music itself (score, recording) is primary. Writing about it is secondary."},
+{"q":"A Mozart sonata movement is used in a car advert. Its AOI is…","a":["AOI 3, because of the advert","AOI 2, from its original purpose","AOI 4, because it is on TV"],"c":1,"why":"The AOI comes from what the music was originally written for."},
+{"q":"Every musical finding needs…","a":["a measure number and a timestamp","a quotation","a picture"],"c":0,"why":"So the examiner can find it in your score and in your recording."}
+]</script></div>
+
+## 6. Form: sonata form and rounded binary {#form}
+
+**Sonata form** is the form of one movement (you mapped it in Mozart's Symphony No. 40 in October). It has three parts:
+
+- **Exposition:** a first theme in the home key, a transition, a second theme in a new key (in a major key, usually the
+  dominant). Usually repeated.
+- **Development:** the themes are broken up and moved through several keys. The most unstable part.
+- **Recapitulation:** the themes come back, now both in the home key.
+
+**Map K. 545.** Follow the score in the [Analysed Scores Library](../theory/analysed-scores/view.qmd?id=mozart-sonata-16-1)
+(its key labels come from the experts' analysis) and fill in the timestamps from your recording.
+
+| Section | Starts at | Key | Timestamp |
+|---|---|---|---|
+| Exposition: first theme | m. 1 | C major | |
+| Transition (the scales) | m. 5 | C major, moving to G | |
+| Second theme | m. 14 | G major (the dominant) | |
+| Development | m. 29 | G minor, then other minor keys | |
+| Recapitulation: first theme | m. 42 | **F major** | |
+| Recapitulation: second theme | find it | C major | |
+
+Look at the recapitulation: Mozart brings the first theme back in **F major**, not in C. That is not the usual convention,
+and it is a good thing to write about: what does it tell you about the convention, and why might he have done it? (The
+transition then has to bring the music round to C so the second theme can be in the home key.)
+
+### The plan for your 32 bars: rounded binary
+
+Your piece will be shorter than a sonata-form movement. Classical composers wrote many short pieces (minuets, the themes of
+variation sets) in **rounded binary** form: two halves, with the opening coming back near the end. This is your plan:
+
+| Bars | Section | Key | Ends with |
+|---|---|---|---|
+| 1–8 | **A**: a period (question, answer) | home (C) | half cadence in bar 4, PAC in bar 8 |
+| 9–16 | **A′** or new idea, moving to the dominant | to G | PAC in G in bar 16 |
+| 17–24 | **B**: contrast | back towards C | half cadence on V in bar 24 |
+| 25–32 | **A** returns | home (C) | PAC in C in bar 32 |
+
+It has the same journey as sonata form, on a small scale: home, away to the dominant, unstable middle, home again.
+
+<div class="dp-words"><strong>Words</strong>
+[form](../course/glossary.qmd#form) ·
+[sonata form](../course/glossary.qmd#sonata-form) ·
+[exposition](../course/glossary.qmd#exposition) ·
+[development](../course/glossary.qmd#development) ·
+[recapitulation](../course/glossary.qmd#recapitulation) ·
+[binary form](../course/glossary.qmd#binary-form) ·
+[modulation](../course/glossary.qmd#modulation-in-music)
+</div>
+
+<div class="dq"><h4>Check yourself</h4><script type="application/json">[
+{"q":"In a sonata-form exposition in C major, the second theme is usually in…","a":["C major","G major","C minor"],"c":1,"why":"The dominant key. K. 545 does this at m. 14."},
+{"q":"Which part of sonata form moves through the most keys?","a":["exposition","development","recapitulation"],"c":1,"why":"The development is the unstable middle."},
+{"q":"What is unusual about the recapitulation of K. 545?","a":["It starts in F major, not C","It is missing","It is slower"],"c":0,"why":"The convention is to return in the home key. Mozart starts in the subdominant (F) at m. 42."},
+{"q":"In your rounded binary plan, bar 16 ends with…","a":["a half cadence in C","a PAC in the dominant key","nothing: it keeps going"],"c":1,"why":"The first half moves to the dominant (G) and closes there."},
+{"q":"Moving from one key to another is called…","a":["modulation","imitation","augmentation"],"c":0,"why":"Modulation. Bars 9–16 of your piece modulate to the dominant."}
+]</script></div>
+
+## 7. Composing 1: an eight-bar period {#composing-1}
+
+Write in the [Notation page](../tools/notation.qmd), MuseScore, or on paper and then enter it. Use two staves: melody in the
+right hand (treble), accompaniment in the left (bass). Keep **every version** you write: see
+[Process 1: Keeping a Process Journal](process-journal.qmd).
+
+### The accompaniment: Alberti bass
+
+Here are the same four chords, first as block chords, then as an Alberti bass. The second is the Classical sound.
+
+<div class="abc-ex" data-bpm="112" data-width="720"><script type="text/plain">
+X:1
+T:I – IV – V7 – I as block chords (bars 1–4), then as an Alberti bass (bars 5–8)
+M:4/4
+L:1/8
+Q:1/4=112
+K:C
+V:1
+e4 g4 | a4 f4 | f4 d4 | c8 |
+e4 g4 | a4 f4 | f4 d4 | c8 |]
+V:2 clef=bass
+"_I"[C,E,G,]8 | "_IV"[C,F,A,]8 | "_V7"[B,,F,G,]8 | "_I"[C,E,G,]8 |
+"_I"C,G,E,G, C,G,E,G, | "_IV"C,A,F,A, C,A,F,A, | "_V7"B,,G,F,G, B,,G,F,G, | "_I"C,G,E,G, C,4 |]
+</script></div>
+
+The chords are in **close position** (all three notes within an octave) and move as little as possible from one to the
+next: C E G → C F A → B F G → C E G. That smooth movement is part of the style. Other Classical accompaniments to try:
+[Accompanimental Textures](../theory/accompaniment-textures.qmd), section 14.3.
+
+### The melody
+
+Go back to the period in [section 3](#phrases-and-cadences). Write your own with the same plan:
+
+- Bars 1–2: a short idea (your **motif**) that you will bring back.
+- Bars 3–4: lead to a half cadence: end bar 4 on a note of chord V (G, B or D in C major).
+- Bars 5–6: start the same as bars 1–2.
+- Bars 7–8: change the ending so it lands on V7 – I, with the tonic note (C) on the first beat of bar 8.
+- On the **strong beats** (beats 1 and 3), use a note of the chord. Between them, step through other notes.
+
+<div class="dp-floor">
+**Floor (if you are stuck):** use these chords, one per bar: I · V7 · I IV · V | I · V7 · I V7 · I, and the rhythm of the
+section 3 example. Only the melody notes are yours.<br>
+**Stretch:** choose your own chords from I, IV, V, ii and vi; make bars 7–8 different from bars 3–4 in rhythm as well.
+</div>
+
+More on melody writing: [Composing 1: Writing a Melody](compose-melody.qmd) (shape, steps and leaps, the period and the sentence).
+
+<div class="dp-words"><strong>Words</strong>
+[motif](../course/glossary.qmd#motif) ·
+[arpeggio](../course/glossary.qmd#arpeggio) ·
+[voicing](../course/glossary.qmd#voicing) ·
+[consonance](../course/glossary.qmd#consonance) ·
+[dissonance](../course/glossary.qmd#dissonance)
+</div>
+
+<div class="dq"><h4>Check yourself</h4><script type="application/json">[
+{"q":"Bar 4 of your period should end on…","a":["chord I","chord V","any chord"],"c":1,"why":"A half cadence: open, so bars 5–8 can answer it."},
+{"q":"On beat 1 of a bar with a C chord, the safest melody notes are…","a":["C, E or G","D, F or A","B, D or F"],"c":0,"why":"Chord notes on strong beats keep the melody consonant with the accompaniment."},
+{"q":"Alberti bass on a G chord (G B D) would be…","a":["G D B D","G B D G","D D D D"],"c":0,"why":"Low, high, middle, high."},
+{"q":"Why does the accompaniment use close position and small moves?","a":["It sounds smooth and stays out of the melody's way","It is easier to read","There is no reason"],"c":0,"why":"Smooth voice leading keeps the accompaniment quiet in the texture: the melody leads."}
+]</script></div>
+
+## 8. Composing 2: moving to the dominant (bars 9–16) {#composing-2}
+
+In the second eight bars your music travels to the **dominant key** and ends there with a perfect authentic cadence. In
+C major the dominant key is G major. The note that makes G major sound like a key is **F♯** (the leading note of G), so the
+chord that gets you there is **D7** (V7 of G), with an F♯ in it.
+
+<div class="abc-ex" data-bpm="112" data-width="720"><script type="text/plain">
+X:1
+T:Bars 9–16: the same plan, now in G major, ending with a PAC in G
+M:4/4
+L:1/8
+Q:1/4=112
+K:C
+V:1
+d4 B2 d2 | c2 A2 ^F2 D2 | B2 d2 e2 c2 | d6 z2 |
+d4 B2 d2 | c2 A2 ^F2 A2 | B2 d2 c2 A2 | G6 z2 |]
+V:2 clef=bass
+"_I of G"G,,D,B,,D, G,,D,B,,D, | "_V7 of G"^F,,D,C,D, F,,D,C,D, | "_I"G,,D,B,,D, "_IV"C,G,E,G, | "_V (HC)"^F,,D,A,,D, F,,D,A,,D, |
+"_I"G,,D,B,,D, G,,D,B,,D, | "_V7"^F,,D,C,D, F,,D,C,D, | "_I"G,,D,B,,D, "_V7"^F,,D,C,D, | "_I (PAC in G)"G,,D,B,,D, G,,4 |]
+</script></div>
+
+This example simply moves the bars 1–8 plan into G. Yours can do more:
+
+- **Sequence:** repeat a bit of your motif a step higher or lower ([Composing 2: Developing a Motif](compose-motif.qmd)).
+- **Passing notes** fill a gap between two chord notes by step (C D E); **neighbour notes** step away and back (E F E). Keep them on
+  weak beats.
+
+<div class="dp-floor">
+**Floor:** stay in C major for bars 9–16 and end with V7 – I in C. You lose the modulation, but you still have 16 bars.<br>
+**Stretch:** start bars 9–12 in C, and use D7 in bar 14 or 15 to turn towards G only at the end.
+</div>
+
+<div class="dp-words"><strong>Words</strong>
+[key change](../course/glossary.qmd#key-change) ·
+[leading note](../course/glossary.qmd#leading-note) ·
+[sequence](../course/glossary.qmd#sequence) ·
+[passing tone](../course/glossary.qmd#passing-tone) ·
+[neighbour tones](../course/glossary.qmd#neighbor-tones)
+</div>
+
+<div class="dq"><h4>Check yourself</h4><script type="application/json">[
+{"q":"The dominant key of C major is…","a":["F major","G major","A minor"],"c":1,"why":"G is the fifth note of C major."},
+{"q":"Which note do you add to move from C major to G major?","a":["B♭","F♯","C♯"],"c":1,"why":"G major has one sharp, F♯: the leading note of G."},
+{"q":"Repeating a short pattern a step higher or lower is a…","a":["sequence","cadence","pedal"],"c":0,"why":"A sequence. It moves the music on while keeping it unified."},
+{"q":"C – D – E in the melody over a C chord: the D is a…","a":["passing note","neighbour note","chord note"],"c":0,"why":"It passes by step between two chord notes, C and E."}
+]</script></div>
+
+## 9. Composing 3: the middle and the return (bars 17–32) {#composing-3}
+
+**Bars 17–24 (B): contrast.** After the PAC in G, the middle section makes its way back towards C and stops on its
+dominant, G, with a half cadence. That makes the return of the opening sound like coming home. Ways to contrast: a new
+register (higher or lower), a different rhythm, a sequence, a quieter dynamic. Here is a sequence over IV – I – ii – V:
+
+<div class="abc-ex" data-bpm="112" data-width="720"><script type="text/plain">
+X:1
+T:Bars 17–20: the same pattern a step lower each bar (a sequence), ending on V (half cadence)
+M:4/4
+L:1/8
+Q:1/4=112
+K:C
+V:1
+a2 g2 f2 a2 | g2 f2 e2 g2 | f2 e2 d2 f2 | d6 z2 |]
+V:2 clef=bass
+"_IV"F,CA,C F,CA,C | "_I"C,G,E,G, C,G,E,G, | "_ii"D,A,F,A, D,A,F,A, | "_V (HC)"B,,G,D,G, B,,G,D,G, |]
+</script></div>
+
+Bars 21–24 can repeat this, or hold a G in the bass for four bars (a **dominant pedal**) while the right hand builds up to the
+return.
+
+**Bars 25–32 (A): the return.** Bring back bars 1–8. Keep the half cadence in bar 28 and the PAC in C in bar 32. You can
+decorate the return a little (an ornament, a passing note, one octave higher); listeners should still recognise it at once.
+
+<div class="dp-floor">
+**Floor:** copy bars 1–8 into bars 25–32 exactly. Copy the four-bar sequence above twice for bars 17–24, in your own key.<br>
+**Stretch:** vary the return; use a dominant pedal in bars 21–24; add dynamics that mark the sections (p for B, f for the return).
+</div>
+
+**Check your whole piece:** cadences in bars 4, 8, 16, 24 and 32? Melody and accompaniment all the way? The opening back in bar 25?
+Play it to someone and ask them where it feels finished.
+
+<div class="dp-words"><strong>Words</strong>
+[pedal tone](../course/glossary.qmd#pedal-tone) ·
+[ternary form](../course/glossary.qmd#ternary-form) ·
+[minuet](../course/glossary.qmd#minuet) ·
+[coda](../course/glossary.qmd#coda)
+</div>
+
+<div class="dq"><h4>Check yourself</h4><script type="application/json">[
+{"q":"Bar 24 (end of B) should end on…","a":["V of the home key (half cadence)","I of the dominant key","anything"],"c":0,"why":"Stopping on V makes the return of the opening in bar 25 sound like coming home."},
+{"q":"A bass note held under changing chords is a…","a":["pedal","sequence","cadence"],"c":0,"why":"A pedal (pedal tone). On the dominant, it builds expectation."},
+{"q":"Your piece ends with…","a":["a half cadence","a PAC in the home key","a PAC in the dominant key"],"c":1,"why":"Bar 32: V7 – I in the home key, tonic in the melody."},
+{"q":"Why is it called ROUNDED binary?","a":["The opening comes back at the end","It is in 3/4","The melody is smooth"],"c":0,"why":"The A music returns at bar 25, rounding the form off."}
+]</script></div>
+
+## 10. The statement {#the-statement}
+
+The statement (about 300 words) is marked on **Criterion B2**: does your piece grow out of your research? Show the chain for
+each convention: **where you found it** in the piece you studied → **where you used it** in yours → **why**.
+
+> In my research I found that Mozart ends the first phrase of K. 545 with a half cadence (m. 4) and answers it with a longer
+> phrase that closes on the tonic, a convention of Classical phrasing (*class text*, p. __). I used the same plan in bars 1–8:
+> bar 4 stops on V and bar 8 closes with V7 – I, so the two phrases sound like a question and an answer. The left hand uses an
+> Alberti bass throughout (bars 1–16), as Mozart does in mm. 1–4, keeping the melody on top of a homophonic texture.
+
+Three conventions done like this is better than eight listed. Finish with one problem you had and how you solved it
+(for example: "my melody clashed with the Alberti bass on beat 3; I moved the melody to a chord note").
+
+Put the score **inside** the document, and point to bar numbers in it.
+
+<div class="dp-words"><strong>Words</strong>
+[researcher](../course/glossary.qmd#researcher) ·
+[creator](../course/glossary.qmd#creator) ·
+[justify](../course/glossary.qmd#justify)
+</div>
+
+## 11. Before you submit {#before-you-submit}
+
+Tick these off (the ticks are only for you; they are not saved).
+
+<ul class="dp-check">
+<li><label><input type="checkbox">The context paragraph says when, where and for whom, with an in-text citation.</label></li>
+<li><label><input type="checkbox">The AOI is named <em>and</em> justified from the original purpose of the music.</label></li>
+<li><label><input type="checkbox">Three or four conventions, each with a measure number, a timestamp and a "so what".</label></li>
+<li><label><input type="checkbox">At least one score excerpt is embedded and marked.</label></li>
+<li><label><input type="checkbox">Every term is used correctly (take the quiz below).</label></li>
+<li><label><input type="checkbox">My piece is 32 bars: cadences in bars 4, 8, 16, 24 and 32; the opening returns at bar 25.</label></li>
+<li><label><input type="checkbox">The statement links three conventions from my research to bar numbers in my piece.</label></li>
+<li><label><input type="checkbox">Bibliography: the score, the recording, the class texts.</label></li>
+<li><label><input type="checkbox">Three files: the PDF, the MP3 of my piece, the MP3 of the music I analysed (max 3 min).</label></li>
+</ul>
+
+The full Exploring checklist for the real IA is in the course book:
+[Exploring Checklist](https://dp-music.seancoleman.org/book/exploring-checklist.html).
+
+### Vocabulary quiz: everything
+
+Aim for at least 12 out of 15. For any you miss, open the term in the [Glossary](../course/glossary.qmd) and check that you use it
+correctly in your report.
+
+<div class="dq"><h4>All the words</h4><script type="application/json">[
+{"q":"homophonic","a":["several equal lines at once","a melody with accompaniment","one line alone"],"c":1},
+{"q":"Alberti bass","a":["a held bass note","a broken-chord pattern: low, high, middle, high","a bass line that walks by step"],"c":1},
+{"q":"half cadence","a":["a phrase ending on V","V going to I","IV going to I"],"c":0},
+{"q":"perfect authentic cadence","a":["I going to V","V going to I with the tonic in the melody","a cadence halfway through the piece"],"c":1},
+{"q":"period","a":["two phrases: question (antecedent) and answer (consequent)","any eight bars","the length of a piece"],"c":0},
+{"q":"dominant","a":["chord I","chord IV","chord V"],"c":2},
+{"q":"subdominant","a":["chord IV","chord V","chord vi"],"c":0},
+{"q":"harmonic rhythm","a":["how often the chords change","the rhythm of the drums","a rhythm that repeats"],"c":0},
+{"q":"modulation","a":["getting louder","changing key","repeating a phrase"],"c":1},
+{"q":"exposition","a":["the section that develops the themes","the section that presents the themes in two keys","the ending"],"c":1},
+{"q":"recapitulation","a":["the themes return in the home key","a new theme","a slow introduction"],"c":0},
+{"q":"sequence","a":["a pattern repeated higher or lower","a list of chords","the order of movements"],"c":0},
+{"q":"pedal","a":["a bass note held under changing chords","a fast scale","a cadence on IV"],"c":0},
+{"q":"AOI 2","a":["music for listening and performance","music for dramatic impact","music technology"],"c":0},
+{"q":"rubato","a":["a steady tempo","flexible tempo, pushed and pulled","very fast"],"c":1}
+]</script></div>
+
+```{=html}
+<script>
+(function () {
+  // Self-check quizzes: a div.dq holding an h4 and a JSON script tag: [{q, a:[…], c, why?}] (c = index of the right answer).
+  // A click marks the answer right or wrong at once; nothing is saved or recorded.
+  document.querySelectorAll(".dq").forEach(function (box) {
+    var data = JSON.parse(box.querySelector("script").textContent);
+    var answered = 0, right = 0;
+    var score = document.createElement("div"); score.className = "dq-score";
+    function show() { score.textContent = answered ? right + " of " + answered + " right (" + data.length + " questions)" : ""; }
+    data.forEach(function (item, qi) {
+      var el = document.createElement("div"); el.className = "dq-item";
+      var q = document.createElement("div"); q.className = "dq-q"; q.textContent = (qi + 1) + ". " + item.q;
+      var opts = document.createElement("div"); opts.className = "dq-opts";
+      var why = document.createElement("div"); why.className = "dq-why"; why.setAttribute("aria-live", "polite");
+      item.a.forEach(function (txt, ai) {
+        var b = document.createElement("button"); b.type = "button"; b.textContent = txt;
+        b.addEventListener("click", function () {
+          if (el.dataset.done) return;
+          el.dataset.done = "1"; answered++;
+          var ok = ai === item.c; if (ok) right++;
+          b.classList.add(ok ? "dq-right" : "dq-wrong");
+          opts.children[item.c].classList.add("dq-right");
+          why.textContent = (ok ? "Right. " : "Not quite: the answer is “" + item.a[item.c] + "”. ") + (item.why || "");
+          show();
+        });
+        opts.appendChild(b);
+      });
+      el.appendChild(q); el.appendChild(opts); el.appendChild(why); box.appendChild(el);
+    });
+    var reset = document.createElement("button"); reset.type = "button"; reset.className = "btn btn-sm btn-outline-secondary dq-reset"; reset.textContent = "Try again";
+    reset.addEventListener("click", function () {
+      box.querySelectorAll(".dq-item").forEach(function (el) { delete el.dataset.done; el.querySelector(".dq-why").textContent = ""; });
+      box.querySelectorAll(".dq-opts button").forEach(function (b) { b.classList.remove("dq-right", "dq-wrong"); });
+      answered = right = 0; show();
+    });
+    var foot = document.createElement("div"); foot.appendChild(score); foot.appendChild(reset); box.appendChild(foot);
+  });
+})();
+</script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Die schöne Müllerin." *Wikipedia*, [en.wikipedia.org/wiki/Die_sch%C3%B6ne_M%C3%BCllerin](https://en.wikipedia.org/wiki/Die_sch%C3%B6ne_M%C3%BCllerin). 1823, poems by Wilhelm Müller; "Das Wandern" strophic, piano evoking wheels and water (that section uncited).
+
+"Piano Sonata No. 16 (Mozart)." *Wikipedia*, [en.wikipedia.org/wiki/Piano_Sonata_No._16_(Mozart)](https://en.wikipedia.org/wiki/Piano_Sonata_No._16_(Mozart)). Catalogue entry 26 June 1788, "for beginners"; recapitulation in F major; second theme in G, development in G minor.
+:::
+<!-- /works-cited -->

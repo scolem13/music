@@ -83,10 +83,38 @@ e.g. [Beethoven, "Moonlight" Sonata, I](?analysed=beethoven-sonata-14-1).
     return "<p>" + (where ? "Cited in Vol. I of the book under <em>" + esc(where) + "</em>" + (c.volIpage ? " (Vol. I p. " + c.volIpage + ")" : "") + ". " : "") +
       (c.page ? "Printed score page " + c.page + " of the opera or symphonic work. " : "") + "</p><p class=\"fsp-sub\">" + esc(s.source) + (s.repaired ? ". A short bar in the Finale file was padded with an invisible rest so the staves line up." : "") + "</p>";
   }
+  // a score asked for (?id= / ?analysed=): the list folds away and the score comes first, right under the page title, scrolled to
+  // a Tune Library tune (?tune=<%%id>, e.g. from a Real Book row in the Tune Directory): its lead sheet on one staff (band: the chords and melody as on the Tunes page, FullScore o.band)
+  var tn = (new URLSearchParams(location.search).get("tune") || "").replace(/[^\w-]/g, "");
+  if (tn) {
+    var sc = document.createElement("script"); sc.src = "/apps/tunes/tunes-object.js";
+    sc.onload = function () {
+      var T = window.tunesObject || (typeof tunesObject !== "undefined" ? tunesObject : {}), abc = null;   // eslint-disable-line no-undef
+      Object.keys(T).some(function (set) { return String(T[set]).split(/\n(?=X:)/).some(function (t) { if (new RegExp("^%%id\\s+" + tn + "\\s*$", "m").test(t)) { abc = t; return true; } }); });
+      if (!abc) { document.getElementById("fsp-head").textContent = "No tune called " + tn + " in the Tune Library."; return; }
+      var f = function (k) { return ((new RegExp("^" + k + ":\\s*(.*)$", "m").exec(abc) || [])[1] || "").trim(); };
+      document.title = f("T") + " – score";
+      document.getElementById("fsp-head").innerHTML = "<h2>" + esc(f("T")) + "</h2><p>" + esc([f("C"), f("K") && "key " + f("K"), f("M")].filter(Boolean).join(" · ")) +
+        ' · from the Tune Library · <a href="/practice/tunes.html?tune=' + encodeURIComponent(tn) + '">open it there</a></p>';
+      var lines = abc.trim().split("\n"), k = lines.findIndex(function (l) { return /^K:/.test(l); });
+      var head = lines.slice(0, k + 1).filter(function (l) { return !/^T:/.test(l); }), body = lines.slice(k + 1).filter(function (l) { return !/^[A-Za-z]:|^%/.test(l) || /^V:/.test(l); });
+      if (!body.some(function (l) { return /^V:/.test(l); })) { head.push('V:1 nm="Lead sheet"'); body = ["V:1", body.join(" ")]; }
+      mounted(FullScore.mount("#fsp", { abc: head.join("\n") + "\n" + body.join("\n") + "\n", id: "tune-" + tn, band: true }));
+    };
+    document.head.appendChild(sc);
+  }
+  var open = !!(id || an || tn);
+  if (open) {
+    var sec = document.getElementById("fsp-list").closest("section") || document.getElementById("fsp-list").parentNode;
+    sec.parentNode.insertBefore(document.getElementById("fsp-head"), sec);
+    sec.parentNode.insertBefore(document.getElementById("fsp"), sec);
+    setTimeout(function () { document.getElementById("fsp-head").scrollIntoView({ block: "start" }); }, 0);
+  }
   fetch(BASE + "index.json?v=" + V).then(function (r) { return r.json(); }).then(function (list) {
-    document.getElementById("fsp-list").innerHTML = "<ul>" + list.map(function (s) {
+    var ul = "<ul>" + list.map(function (s) {
       return '<li><a href="?id=' + encodeURIComponent(s.id) + '">' + esc(s.composer + ": " + s.title + ", " + s.movement) + '</a><br><span class="fsp-sub">' + esc(s.orchestra) + "</span></li>";
     }).join("") + "</ul>";
+    document.getElementById("fsp-list").innerHTML = open ? "<details><summary>All " + list.length + " scores</summary>" + ul + "</details>" : ul;
     var s = list.filter(function (x) { return x.id === id; })[0];
     if (!s || an) return;
     document.getElementById("fsp-head").innerHTML = "<h2>" + esc(s.composer + ": " + s.title) + "</h2><p>" + esc(s.movement + " · " + s.orchestra) + "</p>";

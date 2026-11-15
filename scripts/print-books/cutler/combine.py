@@ -7,6 +7,12 @@ for w in d['works']:
     w['title'] = re.sub(r'\b([A-G])[6ob0](?= (Major|Minor|major|minor)\b)', r'\1♭', w['title'])
     w['title'] = re.sub(r'\b([A-G])#(?= (Major|Minor|major|minor)\b)', r'\1♯', w['title'])
     w['title'] = re.sub(r'\b(op|no), (\d)', r'\1. \2', w['title'])
+    w['title'] = w['title'].replace('ор.', 'op.')                       # Cyrillic о р read for op.
+    w['title'] = re.sub(r'\b([A-G])4(?= (Major|Minor)\b)', r'\1♯', w['title'])   # sharp read as 4
+# Gounod: the scan prints "Envoi de fleurs," 10-12 and Messe solennelle ..., 19-3 as two works; OCR put the first title on the second
+for w in d['works']:
+    if w['composer'].startswith('Gounod') and w['title'] == '' and w['refs'] == ['10-12']: w['title'] = '"Envoi de fleurs"'
+    if w['composer'].startswith('Gounod') and w['title'].startswith('"Envoi de fleurs," Messe'): w['title'] = w['title'].replace('"Envoi de fleurs," ', '')
 for w in d['works']:
     if w['title'].startswith('Cello Suite no. 1') and 'Menuet' in w['title']:
         w['title'] = w['title'].replace('I1', 'II'); w['refs'] = ['28-19']; w['note'] = 'Printed 28-18 in the works index; the concepts index and the Chopin prelude make it 28-19.'

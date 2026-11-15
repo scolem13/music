@@ -36,6 +36,7 @@
 // as the Notation page does), one clock, the cursor from its onBar / onBeat. A pickup is sounded in one bar of count-in.
 //   AbcPlay.chords(visualObj, { abc, qpm, transpose, onEnd }) -> handle: only the chords, held on the piano (rhythm "pad"),
 //       no bass, no drums, no melody.   AbcPlay.hasChords(abc) -> true when the text has chord symbols.
+//   opts.onBar(info)     (band) each bar as it sounds: BandPlayer's info (index = form bar, countIn = true in the count-in);
 //   opts.drums = false   the band without drums;  opts.bandOpts  extra BandPlayer options merged over the style's (e.g. { voicing });
 //   opts.melody = false  the chords alone (the tune's notes are drawn but not played).
 // MELODY AGAINST THE BAND (bug fixed 2026-10-28, MLT/DMTI pages): the band's beat and every melody note's position come from
@@ -176,7 +177,7 @@
       var fb = Math.max(0, (opts.fromBar | 0) - k0);
       var p = BandPlayer.create({ parsed: parsed, tempo: bpm, transpose: tr, countIn: (pick && !chordsOnly && !fb) ? 1 : 0, choruses: 1, opts: o,
         instruments: chordsOnly ? [so.opts.compSound || "piano"] : so.instruments, volumes: vol, humanize: chordsOnly ? 0 : 0.5,
-        onBar: function (info) { at = { idx: info.countIn ? -1 : info.index, beat: 0, t: performance.now() }; },
+        onBar: function (info) { at = { idx: info.countIn ? -1 : info.index, beat: 0, t: performance.now() }; if (opts.onBar) try { opts.onBar(info); } catch (e) {} },
         onBeat: function (info) { if (at) { at.beat = info.beat; at.t = performance.now(); } },
         onEnd: function () { done = true; } });
       me._band = p; if (fb) p.setStartBar(fb);

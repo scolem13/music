@@ -66,7 +66,17 @@
       li.appendChild(el("span", "wk-type", u.label || u.src));
       if (u.concept) li.appendChild(el("b", "wk-concept", u.concept));
       if (u.note) li.appendChild(el("span", "wk-note", u.note));
-      if (u.url) { var a = el("a", null, u.where || "link"); a.href = u.url; if (/^https?:/.test(u.url)) { a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); }
+      var link = function (text, href) {
+        var a = el("a", "wk-uselink", text + (/^https?:/.test(href) ? " ↗" : "")); a.href = href;
+        if (/^https?:/.test(href)) { a.target = "_blank"; a.rel = "noopener"; }
+        li.appendChild(a);
+      };
+      // u.more = [{t, href}]: further places the use lives (e.g. Hutchinson: his book's section, this site's page); then u.url is the recording
+      if (u.more && u.more.length) {
+        if (u.url) link(ytId(u.url) ? "▶ Recording on YouTube" : "Recording", u.url);
+        u.more.forEach(function (m) { if (m && m.href) link(m.t || "link", m.href); });
+      }
+      else if (u.url) link(u.where || "link", u.url);
       else if (u.where) li.appendChild(el("span", "wk-meta", u.where));
       if (u.date) li.appendChild(el("span", "wk-meta", u.date));
       ul.appendChild(li);

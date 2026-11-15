@@ -87,11 +87,15 @@
     return (w.recordings || []).filter(visible).map((r) => ({ timed: !!r.timing, tsn: Wk.tsnUrl ? Wk.tsnUrl(r, w) : null }));
   }
   const T = typeof tunesObject !== "undefined" ? tunesObject : {};   // eslint-disable-line no-undef
+  // library tunes by title (articles, punctuation and case ignored): a Real Book row whose title matches gets "𝄞 score" (the full-score player, ?tune=)
+  const tkey = (t) => fold(t).replace(/\([^)]*\)/g, " ").replace(/^\s*(the|a|an)\s+/, "").replace(/,\s*(the|a)\s*$/, "").replace(/[^a-z0-9]+/g, "");
+  const tuneByTitle = {};
   Object.keys(T).forEach((set) => String(T[set]).split(/\n(?=X:)/).forEach((t) => {
     const id = (/^%%id\s+(\S+)/m.exec(t) || [])[1]; if (!id) return;
     const body = t.replace(/^[A-Za-z]:.*$/gm, "");
     const recs = worksRecs("tune", id).concat(R ? R.forTune(id).map((r) => ({ timed: !!r.timing, tsn: "/tools/timestamp-notes.html?rec=" + encodeURIComponent(r.id) + "&tune=" + encodeURIComponent(id) })) : []);
     const title = ((/^T:\s*(.*)$/m.exec(t) || [])[1] || "(untitled)").trim(), composer = ((/^C:\s*(.*)$/m.exec(t) || [])[1] || "").trim();
+    if (!tuneByTitle[tkey(title)] && !/^%%tags.*\bneeds-repair\b/m.test(t)) tuneByTitle[tkey(title)] = id;
     add({ wid: (Wk && Wk.of("tune", id) || {}).id, title, type: "Tune", set, composer,
       key: ((/^K:\s*(\S+)/m.exec(t) || [])[1] || ""), meter: ((/^M:\s*(\S+)/m.exec(t) || [])[1] || ""), notation: 1,
       recs: recs.length, timed: recs.filter((r) => r.timed).length, chords: /"\^?[A-G][#b]?[^"]*"/.test(body) ? 1 : 0,
@@ -159,7 +163,9 @@
       add(Object.assign({ title: g.t, type: "Real Book", composer: g.c || (g.a || []).join(", "), genre: genreText(g.g),
         set: books.length ? books[0][0] + (books.length > 1 ? " +" + (books.length - 1) : "") : vols.length ? "Songfinder" : "Real Book",
         year: g.yr || "", print: books.map((b) => b[0] + " p. " + b[1]).join(", "), chords: 1,
-        links: [{ t: "♫", u: sp(g.t + (g.c ? " " + g.c.split(";")[0] : "")), tip: "Search Spotify" }, { t: "▶", u: "https://www.youtube.com/results?search_query=" + encodeURIComponent(g.t + " " + (g.c || "").split(";")[0]), tip: "Search YouTube" }],
+        links: (tuneByTitle[tkey(g.t)] ? [{ t: "𝄞 score", u: "/theory/analysed-scores/full-scores.html?tune=" + encodeURIComponent(tuneByTitle[tkey(g.t)]), tip: "The Tune Library's version in the full-score player", site: 1 }] : [])
+          .concat([{ t: "♫", u: sp(g.t + (g.c ? " " + g.c.split(";")[0] : "")), tip: "Search Spotify" }, { t: "▶", u: "https://www.youtube.com/results?search_query=" + encodeURIComponent(g.t + " " + (g.c || "").split(";")[0]), tip: "Search YouTube" }]),
+        notation: tuneByTitle[tkey(g.t)] ? 1 : 0,
         rbRow: g, rbVols: vols, id: g.t, tip: g.cm ? "Composer from MusicBrainz, not the book" : "" }, noUses()));
     });
   }).catch(() => {});
@@ -169,9 +175,11 @@
   const uses = Wk && Wk.usesAll ? Wk.usesAll() : [];
   Object.keys(W).forEach((wid) => { if (Wk && Wk.printUses) Array.prototype.push.apply(uses, Wk.printUses(Object.assign({ id: wid }, W[wid]))); });
   const byWork = {}; uses.forEach((u) => { (byWork[u.work] = byWork[u.work] || []).push(u); });
+  // the title of a uses-only row opens its page on this site (a `more` link starting "/"), else the use's url
+  const homeOf = (us) => { for (const u of us) for (const m of u.more || []) if (m && /^\//.test(m.href)) return m.href; return (us.find((u) => u.url) || {}).url || null; };
   Object.keys(byWork).filter((wid) => !W[wid]).forEach((wid) => {      // a work only the uses know: its own row
     const u = byWork[wid][0];
-    add({ wid: wid, title: u.title || wid, type: "Piece", composer: u.composer || "", set: u.label || u.src || "", from: "uses only", href: u.url || null, id: wid, cat: catKey(u.title) || stemKey(u.title), stem: stemOf(u.title) });
+    add({ wid: wid, title: u.title || wid, type: "Piece", composer: u.composer || "", set: u.label || u.src || "", from: "uses only", href: homeOf(byWork[wid]), id: wid, cat: catKey(u.title) || stemKey(u.title), stem: stemOf(u.title) });
   });
   const conceptKey = (c) => fold(c).trim();
   const split = (c) => String(c || "").split(/\s*;\s*/).map((s) => s.trim()).filter(Boolean);
@@ -189,6 +197,13 @@
   });
 
   // ---- groups (rebuilt when the fetched rows arrive) ----
+  // the piece's analysed score and full score in the Open column (site links, same tab), so a search shows them on the top row
+  rows.forEach((r) => {
+    const inn = r.wid && W[r.wid] && W[r.wid].in; if (!inn || !Wk || !Wk.href) return;
+    const add2 = (l) => { r.links = r.links || []; if (!r.links.some((x) => x.u === l.u)) r.links.push(l); };
+    (inn.analysed || []).forEach((x) => add2({ t: "▤ analysis", u: Wk.href("analysed", x), tip: "The analysed score", site: 1 }));
+    (inn.score || []).forEach((x) => { if (r.type !== "Score") add2({ t: "𝄞 full score", u: Wk.href("score", x), tip: "Open in the full-score player", site: 1 }); });
+  });
   let groups = [];
   function regroup() {
     const by = {};
@@ -223,7 +238,7 @@
         year: yrs.length ? Math.min.apply(null, yrs) : "", print: [...new Set(kids.map((r) => r.print).filter(Boolean))].join(", "),
         notation: kids.some((r) => r.notation) ? 1 : 0, recs: sum("recs"), timed: sum("timed"), chords: kids.some((r) => r.chords) ? 1 : 0,
         nconc: names.length, concepts: names.join("; "), cset: new Set(names.map(conceptKey)), sset: new Set(kids.flatMap((r) => [...r.sset])),
-        uses: [], href: null, tsn: (kids.find((r) => r.timed && r.tsn) || kids.find((r) => r.tsn) || {}).tsn || null };
+        uses: [], href: null, links: kids.flatMap((r) => (r.links || []).filter((l) => l.site)).filter((l, i, a) => a.findIndex((m) => m.u === l.u) === i), tsn: (kids.find((r) => r.timed && r.tsn) || kids.find((r) => r.tsn) || {}).tsn || null };
       kids.forEach((r) => { r.g = g; });
       return g;
     });
@@ -368,7 +383,7 @@
       <td>${esc(r.key)}</td><td>${esc(r.meter)}</td><td class="tds-c"${r.year && r.type === "Real Book" ? ' title="The earliest recording MusicBrainz knows, not a publication date"' : ""}>${esc(r.year || "")}</td><td class="tds-dim">${esc(r.print || "")}</td><td class="tds-c">${r.notation ? "✓" : ""}</td><td class="tds-c">${r.recs || ""}</td>
       <td class="tds-c">${r.timed ? "✓" + (r.timed > 1 ? " " + r.timed : "") : r.recs ? "–" : ""}</td><td class="tds-c">${r.chords ? "✓" : ""}</td>
       <td class="tds-con" title="${esc(r.concepts)}">${r.nconc ? `<b>${r.nconc}</b> ` + esc(r.concepts.split("; ").slice(0, 2).join("; ")) + (r.nconc > 2 ? "…" : "") : ""}</td>
-      <td>${(r.links || []).map((l) => `<a href="${esc(l.u)}" target="_blank" rel="noopener" title="${esc(l.tip)} ↗">${l.t}</a>`).join(" ")}${r.tsn ? `<a href="${esc(r.tsn)}" title="Open ${r.recs > 1 ? "the first of " + r.recs + " recordings" : "it"} in Timestamp Notes${r.recs > 1 ? " (▸ lists them all)" : ""}">⏱</a>` : ""}</td></tr>`; }).join("");
+      <td>${(r.links || []).map((l) => l.site ? `<a class="tds-site" href="${esc(l.u)}" title="${esc(l.tip)}">${l.t}</a>` : `<a href="${esc(l.u)}" target="_blank" rel="noopener" title="${esc(l.tip)} ↗">${l.t}</a>`).join(" ")}${r.tsn ? `<a href="${esc(r.tsn)}" title="Open ${r.recs > 1 ? "the first of " + r.recs + " recordings" : "it"} in Timestamp Notes${r.recs > 1 ? " (▸ lists them all)" : ""}">⏱</a>` : ""}</td></tr>`; }).join("");
     more.hidden = top >= all.filter((e) => !e.child).length;
     const st = document.getElementById("td-stat"); if (st && sq0()) st.textContent = leaves.length.toLocaleString() + " match" + (leaves.length === 1 ? "" : "es");
     host.querySelector(".tds-n").textContent = leaves.length.toLocaleString() + " of " + rows.length.toLocaleString() + " rows";

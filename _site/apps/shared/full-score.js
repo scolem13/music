@@ -302,10 +302,15 @@
     var firstV = S.parts[0].voices[0], pickup = S.bars[firstV].length > 1 && barLen(S.bars[firstV][0].text) < barLen(S.bars[firstV][1].text) - 1e-6;
     var visuals = [], drawnText = "", played = null, playVisual = null, playing = null, fromMs = 0, fromKey = null, elMap = {}, keyOf = new Map(), lit = [];
 
+    // BAND (o.band, e.g. a Tune Library lead sheet): with chord symbols, the band plays them and the melody (AbcPlay opts.abc, the Tunes page's
+    // playback) instead of each voice on its own sound; the score's own bar cursor, Follow and page turns run on as usual. It starts on a bar
+    // (a clicked note or a pause goes back to its bar's start). Band styles from BandCatalog, loaded with the band's scripts on first use.
+    var bandOn = !!(o.band && global.AbcPlay && global.AbcPlay.hasChords(o.abc));
     el.classList.add("fs");
     el.innerHTML =
       '<div class="fs-bar"><button type="button" class="fs-play">▶ Play</button><button type="button" class="fs-stop">■ Stop</button>' +
       '<label for="fs-q-' + id + '">♩ = <input id="fs-q-' + id + '" type="range" class="fs-q" min="40" max="' + Math.max(320, q0) + '" step="4" value="' + q0 + '"><span class="fs-tempo">' + q0 + '</span></label>' +
+      (bandOn ? '<label>Band <select class="fs-band" title="The backing band\'s style (as on the Tunes page): Auto = Swing when the tune says swing, else a piano ballad; None = the written notes alone"><option value="auto">Auto</option><option value="none">None</option></select></label>' : '') +
       '<label><input type="checkbox" class="fs-follow" checked> Follow</label>' +
       '<label title="Each bar once; of first and second endings, only the last"><input type="checkbox" class="fs-skip"> Skip repeats</label>' +
       '<span class="fs-pageturn" hidden><button type="button" class="fs-chip fs-prev" aria-label="Previous page">◀ Page</button> <button type="button" class="fs-chip fs-next" aria-label="Next page">Page ▶</button></span>' +
@@ -1036,9 +1041,40 @@
       });
     }
 
+    function bandStyle() { var v = $(".fs-band") && $(".fs-band").value; return v === "auto" ? (/swing/i.test(o.abc) ? "swing" : "pop") : v; }
+    if (bandOn) {
+      global.AbcPlay.load().then(function () {
+        var sel = $(".fs-band"); if (!sel || !global.BandCatalog) return;
+        global.BandCatalog.styles.forEach(function (st) { var x = document.createElement("option"); x.value = st.id; x.textContent = st.label; sel.appendChild(x); });
+        try { var k = store.get("fullscore-band", null); if (k && sel.querySelector('option[value="' + k + '"]')) sel.value = k; } catch (e) {}
+      }).catch(function () {});
+      setTimeout(function () { var sel = $(".fs-band"); if (sel) sel.addEventListener("change", function () { store.set("fullscore-band", sel.value); if (playing) play(); }); });
+    }
+    function playBand() {
+      playForm(); timing();
+      var bm = barMs(), j0 = fromMs ? jAt(fromMs) : 0, q = +qIn.value, bpm = q / (playVisual.getBeatLength() * 4);
+      fromMs = j0 ? bm[j0] : 0; fromKey = null;
+      var msBar = playVisual.millisecondsPerMeasure(bpm);           // the same bpm as setTiming (rule 5)
+      var shift = 0, t0 = 0, clock = { get currentTime() { return performance.now() / 1000 + shift; } };
+      var pick = !j0 && pickup && bm.length > 1, lead = pick ? Math.max(0, msBar - (bm[1] - bm[0])) : 0;   // the pickup sounds at the end of a count-in bar
+      var me = playing = global.AbcPlay.play(playVisual, { abc: played.abc, style: bandStyle(), qpm: q, fromBar: j0, light: false,
+        onStart: function () {
+          if (playing !== me) return;
+          status.textContent = "Playing with the band" + (j0 ? " from bar " + (played.order[j0] - (pickup ? 1 : 0) + 1) : "") + "…";
+          t0 = performance.now() / 1000 + lead / 1000; cursor(clock, t0);
+        },
+        // the cursor's clock is set again at each bar the band sounds (form bar i = played bar i + 1 after a pickup), so it cannot drift
+        onBar: function (info) {
+          if (playing !== me || info.countIn || info.index == null) return;
+          var j = info.index + (pickup ? 1 : 0); if (bm[j] == null) return;
+          shift = t0 + (bm[j] - fromMs) / 1000 - performance.now() / 1000;
+        },
+        onEnd: function () { if (playing === me) { playing = null; cancelAnimationFrame(raf); unlight(); status.textContent = ""; } } });
+    }
     function play() {
       stop();
       if (!global.AbcPlay) { status.textContent = "Playback is not loaded."; return; }
+      if (bandOn && bandStyle() !== "none") { status.textContent = "Loading the band…"; return playBand(); }
       status.textContent = "Loading the instruments…";
       playForm();
       timing();

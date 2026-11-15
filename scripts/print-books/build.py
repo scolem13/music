@@ -23,8 +23,13 @@ WD = os.path.join(ROOT, "apps/shared/works/works-data.js")
 BOOKS = {"cutler": {"title": "Anthology of Music for Analysis", "author": "Timothy Cutler", "short": "Cutler, Anthology",
                     "figure": "chapter–figure number, as in the book"},
          "tagg": {"title": "Everyday Tonality II", "author": "Philip Tagg", "short": "Tagg, Everyday Tonality", "ref": "page",
-                  "figure": "page of the book (★ = a music example of the piece on that page)"}}
-PAGE_BOOKS = {"tagg"}        # referenced by page, not figure: <book>/<book>-index.json is {works: [{title, artist, year, refs}]}
+                  "figure": "page of the book (★ = a music example of the piece on that page)"},
+         "nobile": {"title": "Form as Harmony in Rock Music", "author": "Drew Nobile", "short": "Nobile, Form as Harmony", "ref": "page",
+                    "figure": "page of the book, from its Song Index (★ = an example, bold in the index; t = table, n = footnote)"},
+         "declercq": {"title": "The Practice of Popular Music", "author": "Trevor de Clercq", "short": "de Clercq, Practice of Popular Music", "ref": "page",
+                      "figure": "page of the book where a figure or table shows the song (★; its caption is the note); songs only in the text are not indexed"}}
+TITLE_CLASH = {"jri-joy-to-the-world", "jri-round-and-round"}     # hand works with the title of a different (pop) song
+PAGE_BOOKS = {"tagg", "nobile", "declercq"}        # referenced by page, not figure: <book>/<book>-index.json is {works: [{title, artist, year, refs}]}
 # themes whose MTD titles put them in the wrong movement (BWV 1001: Fugue, Siciliana and Presto are all "1st Movement")
 NOT_SAME = {("27-2", "0267"), ("27-2", "0268"), ("27-2", "0269")}
 
@@ -86,6 +91,7 @@ def page_book(book):
     for tw in src["works"]:
         if not tw["refs"]: continue
         wid = title_owner.get(fold(tw["title"]))
+        if wid in TITLE_CLASH: wid = None          # same title, other song (the carol / the JRI tune vs the rock song)
         if not wid:
             wid = slug(((tw["artist"] or "").split(" ")[-1] + " " if tw["artist"] else "") + tw["title"]) or slug(tw["title"])
             base = wid
