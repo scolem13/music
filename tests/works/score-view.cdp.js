@@ -64,6 +64,16 @@ const U = "http://127.0.0.1:" + (process.env.PORT || 8562) + "/theory/analysed-s
   await b.goto(U + "?id=nothing-here");
   check("unknown id says so, list still there", await wait(`/No piece called/.test(document.getElementById('sv-title').textContent) && document.querySelectorAll('#sv-rows tr').length === ${total}`));
 
+  // K. 545 i: "V2[no3][add4]/IV" drawn as V⁴₂/IV with the additions on hover; m. 19-21 left hand in bass clef (clef-fix.mjs)
+  await b.goto(U + "?id=mozart-sonata-16-1");
+  check("K. 545 drawn", await wait(`document.querySelectorAll('.as-score svg text.abcjs-annotation[data-rn]').length > 50`));
+  const lab = await ev(`(() => { const t = [...document.querySelectorAll('text.abcjs-annotation')].find(t => t.querySelector('title') && /no 3rd, add 4th/.test(t.querySelector('title').textContent)); return t ? [...t.childNodes].filter(n => n.nodeName !== 'title').map(n => n.textContent).join('') : ''; })()`);
+  check("bracketed additions go to a hover title", /^V42(\/IV)?$/.test(lab), JSON.stringify(lab));
+  check("no bracket shows in any label", await ev(`![...document.querySelectorAll('text.abcjs-annotation')].some(t => /[[]/.test([...t.childNodes].filter(n => n.nodeName !== 'title').map(n => n.textContent).join('')))`));
+  const abc = JSON.parse(fs.readFileSync(SITE + "/apps/shared/data/scores/mozart-sonatas.json", "utf8"))["mozart-sonata-16-1"].abc;
+  const lh = abc.split("\n").find(l => l.startsWith("[V:s2v1]")).split("|");
+  check("K. 545 m. 19 left hand in bass clef", /\[K:clef=bass\]/.test(lh[18]) && /\[K:clef=treble\]/.test(lh[21]), lh[18].slice(0, 40));
+
   await b.close(); srv.close();
   console.log(fails ? fails + " failed" : "all ok"); process.exit(fails ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(1); });

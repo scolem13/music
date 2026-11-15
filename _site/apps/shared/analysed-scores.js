@@ -317,20 +317,8 @@
     if (vb && vb.height) svg.setAttribute("viewBox", [vb.x, vb.y, vb.width, vb.height + add].join(" "));
     var h = parseFloat(svg.getAttribute("height")); if (h) svg.setAttribute("height", h + add);
   }
-  // "I⁶₄/V" -> I, then 6 over 4 (the 4 straight under the 6), then /V
-  function stackFigures(paper) {
-    paper.querySelectorAll("text.abcjs-annotation").forEach(function (t) {
-      var s = t.textContent, m = /^(.*?)([⁰-⁹¹²³]+)([₀-₉]+)(.*)$/.exec(s); if (!m) return;
-      var ts = t.querySelector("tspan"), x = ts ? ts.getAttribute("x") : t.getAttribute("x");
-      while (t.firstChild) t.removeChild(t.firstChild);
-      var digits = function (str, set) { return str.split("").map(function (c) { var i = set.indexOf(c); return i >= 0 ? String(i) : c; }).join(""); };
-      var base = document.createElementNS(NS, "tspan"); base.setAttribute("x", x); base.textContent = m[1]; t.appendChild(base);
-      var up = document.createElementNS(NS, "tspan"); up.setAttribute("font-size", "70%"); up.setAttribute("dy", "-0.42em"); up.textContent = digits(m[2], SUP); t.appendChild(up);
-      var down = document.createElementNS(NS, "tspan"); down.setAttribute("font-size", "70%"); down.setAttribute("dy", "0.9em"); down.textContent = digits(m[3], SUB); t.appendChild(down);
-      var w = up.getComputedTextLength(); down.setAttribute("dx", (-w).toFixed(2));
-      if (m[4]) { var rest = document.createElementNS(NS, "tspan"); rest.setAttribute("dy", "-0.336em"); /* back to the baseline: +0.9em − 0.42em at 70% size */ rest.setAttribute("dx", Math.max(0, w - down.getComputedTextLength()).toFixed(2)); rest.textContent = m[4]; t.appendChild(rest); }
-    });
-  }
+  // labels: additions in brackets to a tooltip, figures stacked (rn-label.js)
+  function stackFigures(paper) { if (global.RNLabel) global.RNLabel.tidy(paper); }
   // Follow (sidebar box, on unless turned off): a lit note below the bottom of the window brings its line to the top
   var FOLLOW_KEY = "as-follow";
   function following() { try { return localStorage.getItem(FOLLOW_KEY) !== "0"; } catch (e) { return true; } }

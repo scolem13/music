@@ -14,7 +14,7 @@
   function pretty(t) {
     t = t.replace(/(\d)\/(\d)/g, "$1$2");   // V6/5 -> V65 (some analyses write figures with a slash)   // a RomanText token as the score writes it (V65 -> V⁶₅, viio -> vii°, F#: -> F♯:)
     if (/:$/.test(t)) return t.replace(/^([A-Ga-g])#/, "$1♯").replace(/^([A-Ga-g])-/, "$1♭").replace(/^([A-Ga-g])b/, "$1♭");
-    return t.replace(/\/o/g, "ø").replace(/o(?=\d|\/|$)/g, "°").replace(/^([^/]*?)(65|43|42|64|6|7)(?=\/|$)/, function (m, a, f) { return a + FIG[f]; });
+    return t.replace(/\/o/g, "ø").replace(/(?<!n)o(?=\d|\/|$)/g, "°").replace(/^([^/]*?)(65|43|42|64|6|7)(?=\/|$)/, function (m, a, f) { return a + FIG[f]; });
   }
 
   function navName(x) { return x.set === "lieder" ? x.title.replace(/^[^,]+, /, "") : x.sub; }   // songs: the title (their subs repeat the collection)

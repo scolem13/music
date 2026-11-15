@@ -9,6 +9,7 @@
 // A piece the converter cannot read is left out and listed at the end, with the reason.
 import fs from "fs";
 import path from "path";
+import { fixClefs } from "./clef-fix.mjs";
 import { parseKern, parseMusicXml, separateTies, buildPiece, PKEY, parseRomanText, toAbc, chordPcsFor, W } from "./build.mjs";
 import { execFileSync } from "child_process";
 import { createRequire } from "module";
@@ -204,7 +205,8 @@ for (const S of SETS) {
       if (bc.error || !bc.ok) { skipped.push([it.id, bc.error ? "abcjs: " + bc.error : `${bc.bad} of ${bc.bars} bars the wrong length`]); continue; }
       const who = analyst(it.dir, af, rtext);
       const bars = Math.max(...v.chords.map(() => 0), ...(rtext.match(/^m(\d+)/gm) || ["m0"]).map(x => +x.slice(1)));
-      data.push([it, { abc: v.abc, keys: v.keys, chords: v.chords.map(c => [c[0], c[1]]), bpm, pickup: /^m0\s/m.test(rtext) ? 1 : 0, who,
+      data.push([it, { abc: /sonata|prelude/.test(it.id) ? fixClefs(v.abc) : v.abc,  // left-hand bars far under a treble staff go to bass clef (clef-fix.mjs)
+        keys: v.keys, chords: v.chords.map(c => [c[0], c[1]]), bpm, pickup: /^m0\s/m.test(rtext) ? 1 : 0, who,
         notes: v.notes.filter(n => !/email corrections/i.test(n)),
         vars: v.vars.map(x => ({ m: x.m, text: x.text.split(/\s+/).filter(t => !/^b[\d.]+$/.test(t)).join(" ") })),
         misses: v.misses.map(x => [x.m, x.beat, x.text]) }, { key: v.keys.length ? PRETTY_K(v.keys[0][1]) : "", meter: k.meter, bars, unread }]);

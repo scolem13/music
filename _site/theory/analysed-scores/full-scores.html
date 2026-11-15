@@ -100,6 +100,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
 <script src="../../apps/shared/help-eye.js?v=2"></script>
 <script src="../../apps/shared/works-cited-fold.js?v=1"></script>
+<script src="../../apps/shared/works/song-flags.js"></script>
 <!-- MIDI learn: a pedal or key presses any button on the page (navbar "MIDI buttons"). -->
 <script src="../../apps/shared/midi-learn.js?v=1" defer=""></script>
 <script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
@@ -988,6 +989,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../../apps/shared/abcjs-basic.js?v=5"></script>
 <script src="../../apps/shared/abc-play.js?v=27"></script>
 <script src="../../apps/shared/full-score.js?v=6"></script>
+<script src="../../apps/shared/rn-label.js"></script>
 <style>
 #fsp { --fs-paper: #fffdf8; --fs-rule: var(--bs-border-color, #ccc); --fs-accent: #7a2e2a; }
 #fsp-list a { font-weight: 600; } #fsp-list .fsp-sub { font-size: .88rem; opacity: .75; }
@@ -1051,6 +1053,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         document.getElementById("fsp-head").innerHTML = "<h2>" + esc(p.title) + "</h2><p>" + esc(p.sub + " · " + p.key + " · " + p.meter) +
           ' · Analysis: ' + esc(d.who) + ' · <a href="view.html?id=' + encodeURIComponent(an) + '">the analysed score page</a></p>';
         mounted(FullScore.mount("#fsp", { abc: toFull(d.abc), id: "an-" + an }));
+        RNLabel.watch("#fsp");   // Roman numerals: figures stacked, bracketed additions on hover
       });
     }).catch(function (e) { document.getElementById("fsp-head").textContent = "The analysed score did not load: " + e.message; });
   }
