@@ -138,26 +138,27 @@ looks like an earlier one but ends with a different cadence gets a **prime**: a,
 a a′.) The prime marks a different ending, not an ornamented melody.
 [Read 13.4](https://musictheory.pugetsound.edu/mt21c/PhrasesInCombination.html)
 
-The chorus of "O Susanna" is contrasting: its first four bars (starting on A♭, the IV chord) are new, and they end on B♭7, the dominant.
-The next four-bar phrase brings back the tune of the verse and settles on E♭.
+The refrain of "Yankee Doodle" begins with a new tune (starting on A♭, the IV chord), different from its verse. Its own two phrases,
+though, begin alike: the first moves IV to I and stops on B♭, scale degree 5; the second brings the dominant and settles on E♭.
 
-<div class="abc-ex" data-bpm="100"><script type="text/plain">
+<div class="abc-ex" data-bpm="120"><script type="text/plain">
 X:1
-T:O Susanna, chorus (Tune Library): b ends HC, a ends PAC
+T:Yankee Doodle, refrain (Tune Library): b ends PC, b′ ends PAC
 M:2/4
 L:1/8
-Q:1/4=100
+Q:1/4=120
 K:Eb
-"Ab"A2 A2 | c c2 c | "Eb"BB GE | "Bb7"F3 E/F/ |
-"Eb"GB B3/2c/ | BG E3/2F/ | GG "Bb7"FF | "Eb"E4 |]
+"Ab" C>D CB,| CD E2|"Eb" B,>C B,A, | G,2 B,2 |
+"Ab" C>D CB,| CD EC|"Eb" B,E "Bb"DF |"Eb"E2 E2|]
 </script></div>
 
 ::: {.callout-tip collapse="true"}
 ## Answer
 
-Phrase 1 (bars 1-4) ends on B♭7 with the melody on F: **HC**. Phrase 2 (bars 5-8) ends B♭7 to E♭ with the melody on E♭: **PAC**. The
-phrases begin differently, so this is a **contrasting period**, labelled b a with HC and PAC. (The a here is the same tune as the verse's
-phrases. The letters are about the melody, so they follow the tune, not the order.)
+Phrase 1 (bars 1-4) goes A♭ to E♭ with the melody on B♭: IV to I, a **plagal cadence (PC)**, less conclusive than a PAC. Phrase 2 (bars
+5-8) ends B♭ to E♭ with the melody on E♭: **PAC**. The phrases begin the same, so this is a **parallel period**, b b′ (b, not a, because the
+tune is new against the verse). For a **contrasting** period, where the second phrase begins differently, see the Beethoven
+*Pathétique* slow movement in 13.6.
 :::
 
 ## 13.5 Repeated phrases and repeated periods
@@ -181,7 +182,7 @@ K:Eb
 </script></div>
 
 "Little Brown Jug" (13.1) has four phrases whose endings are IAC, PAC, IAC, PAC. The PAC halfway through ends the first period, so the whole
-tune is a **repeated period**. The verse of "O Susanna" is the same: HC, PAC, HC, PAC.
+tune is a **repeated period**.
 
 <div class="abc-ex" data-bpm="100"><script type="text/plain">
 X:1
@@ -240,7 +241,7 @@ For each excerpt, in this order (the book's own routine):
 3. Write a diagram: letters for the melody (a, a′, b), the cadence under each.
 4. Name the form: sentence, parallel or contrasting period, asymmetrical period, parallel double period, repeated phrase, or repeated period.
 
-**Try it** on the tunes in the Tune Library: "Yankee Doodle" (its verse and refrain), "Oh! Susanna" as a whole, "Simple Gifts", "America". The
+**Try it** on the tunes in the Tune Library: "Yankee Doodle" (its verse and refrain), "Simple Gifts", "America". The
 book's own practice excerpts (Mozart's "Ein Mädchen oder Weibchen", K. 333 I, and Dédé's *Chicago*) are under copyright or need the book's
 scores, so they are not reproduced here; the answers are in the
 [book's exercise section](https://musictheory.pugetsound.edu/mt21c/PhrasesInCombinationPracticeExercises.html).

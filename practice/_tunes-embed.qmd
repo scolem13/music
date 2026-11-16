@@ -264,7 +264,8 @@
 				["In print", w && w.in && w.in.print && Works.printLabel ? w.in.print.map(Works.printLabel).join("; ") : ""]].filter((r) => r[1]);
 			const notes = all("N").concat(all("D"));
 			const q = id && window.TUNE_QUALITY && TUNE_QUALITY[id];
-			box.innerHTML = (q ? `<p class="tn-note"><b>⚠ This ABC is probably wrong</b> (predicted by scripts/tune-quality.mjs): ${esc(q.r.join("; "))}. The "Edit the ABC" panel can fix it.</p>` : "") +
+			const fl = window.SongFlags && SongFlags.of(one("T"));
+			box.innerHTML = (fl ? `<p class="tn-note"><b>⚑ ${esc(fl.note)}.</b> The site keeps it because the MLT and band books use it, but does not use it as a lesson example.</p>` : "") + (q ? `<p class="tn-note"><b>⚠ This ABC is probably wrong</b> (predicted by scripts/tune-quality.mjs): ${esc(q.r.join("; "))}. The "Edit the ABC" panel can fix it.</p>` : "") +
 				`<dl>${rows.map((r) => `<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join("")}</dl>` +
 				(notes.length ? notes.map((n) => `<p>${esc(n)}</p>`).join("") : `<p class="tn-note">No notes with this tune.</p>`) +
 				`<p class="tn-note">${id ? `<a href="/practice/tune-directory.html#${encodeURIComponent(w ? w.id : id)}">In the Tune Directory</a> · ` : ""}<span class="tn-midi"></span></p>`;

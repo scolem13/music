@@ -100,6 +100,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
 <script src="../apps/shared/help-eye.js?v=2"></script>
 <script src="../apps/shared/works-cited-fold.js?v=1"></script>
+<script src="../apps/shared/works/song-flags.js"></script>
 <!-- MIDI learn: a pedal or key presses any button on the page (navbar "MIDI buttons"). -->
 <script src="../apps/shared/midi-learn.js?v=1" defer=""></script>
 <script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
@@ -870,7 +871,7 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
    
   <ul class="collapse">
   <li><a href="#the-eight-elements" id="toc-the-eight-elements" class="nav-link active" data-scroll-target="#the-eight-elements">15.1 The eight elements</a></li>
-  <li><a href="#a-verse-and-a-chorus-o-susanna" id="toc-a-verse-and-a-chorus-o-susanna" class="nav-link" data-scroll-target="#a-verse-and-a-chorus-o-susanna">15.2 A verse and a chorus: O Susanna</a></li>
+  <li><a href="#a-verse-and-a-refrain-yankee-doodle" id="toc-a-verse-and-a-refrain-yankee-doodle" class="nav-link" data-scroll-target="#a-verse-and-a-refrain-yankee-doodle">15.2 A verse and a refrain: Yankee Doodle</a></li>
   <li><a href="#a-rondos-contrast-map-eine-kleine-nachtmusik-ii" id="toc-a-rondos-contrast-map-eine-kleine-nachtmusik-ii" class="nav-link" data-scroll-target="#a-rondos-contrast-map-eine-kleine-nachtmusik-ii">15.3 A rondo’s contrast map: Eine kleine Nachtmusik, II</a></li>
   <li><a href="#contrast-in-a-pop-song" id="toc-contrast-in-a-pop-song" class="nav-link" data-scroll-target="#contrast-in-a-pop-song">15.4 Contrast in a pop song</a></li>
   <li><a href="#try-it" id="toc-try-it" class="nav-link" data-scroll-target="#try-it">15.5 Try it</a></li>
@@ -1051,32 +1052,32 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p><a href="https://musictheory.pugetsound.edu/mt21c/CreatingContrast.html">Read 15.1</a></p>
 <p>A good question for any pair of sections is not “what is different?” but “<strong>which one or two elements carry the contrast?</strong>” Usually most elements stay the same.</p>
 </section>
-<section id="a-verse-and-a-chorus-o-susanna" class="level2">
-<h2 class="anchored" data-anchor-id="a-verse-and-a-chorus-o-susanna">15.2 A verse and a chorus: O Susanna</h2>
-<p>Here are two eight-bar parts of one song from the Tune Library, the verse and the chorus. The notes are the same instrument at the same tempo, so only melody, harmony, rhythm and articulation can differ (timbre, dynamics and texture would be an arranger’s choice).</p>
+<section id="a-verse-and-a-refrain-yankee-doodle" class="level2">
+<h2 class="anchored" data-anchor-id="a-verse-and-a-refrain-yankee-doodle">15.2 A verse and a refrain: Yankee Doodle</h2>
+<p>Here are two eight-bar parts of one song from the Tune Library, the verse and the refrain. The notes are the same instrument at the same tempo, so only melody, harmony, rhythm and register can differ (timbre, dynamics and texture would be an arranger’s choice).</p>
 <div class="ax-pair">
-<div class="abc-ex" data-bpm="100">
+<div class="abc-ex" data-bpm="120">
 <script type="text/plain">
 X:1
-T:O Susanna, verse (Tune Library)
+T:Yankee Doodle, verse (Tune Library)
 M:2/4
 L:1/8
-Q:1/4=100
+Q:1/4=120
 K:Eb
-E/F/ | "Eb"GB B3/2c/ | BG E3/2F/ | GG FE | "Bb7"F3 E/F/ |
-"Eb"GB B3/2c/ | BG E3/2F/ | GG "Bb7"FF | "Eb"E3 |]
+"Eb" EE FG | EG "Bb" FB, | "Eb" EE FG | E2 "Bb"D2 |
+"Eb" EE FG |"Ab" AG FE | "Bb" DB, CD | "Eb" E2 E2 |]
 </script>
 </div>
-<div class="abc-ex" data-bpm="100">
+<div class="abc-ex" data-bpm="120">
 <script type="text/plain">
 X:2
-T:O Susanna, chorus (Tune Library)
+T:Yankee Doodle, refrain (Tune Library)
 M:2/4
 L:1/8
-Q:1/4=100
+Q:1/4=120
 K:Eb
-"Ab"A2 A2 | c c2 c | "Eb"BB GE | "Bb7"F3 E/F/ |
-"Eb"GB B3/2c/ | BG E3/2F/ | GG "Bb7"FF | "Eb"E4 |]
+"Ab" C>D CB,| CD E2|"Eb" B,>C B,A, | G,2 B,2 |
+"Ab" C>D CB,| CD EC|"Eb" B,E "Bb"DF |"Eb"E2 E2|]
 </script>
 </div>
 </div>
@@ -1093,9 +1094,10 @@ K:Eb
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>Harmony:</strong> the key stays E♭ major, but the chorus <em>opens</em> on the IV chord (A♭) instead of the tonic, which is the biggest change in the first bar.</li>
-<li><strong>Rhythm and melody:</strong> the verse is full of a quick dotted figure (a dotted eighth and a sixteenth, “B3/2c/”) and moves by step and skip; the chorus begins with long, repeated notes (A-A, C-C-C) and only returns to the verse’s dotted tune in its second half.</li>
-<li><strong>Not changed:</strong> key, tempo, register (roughly), instrument. Nothing here can tell you about timbre, dynamics or texture; that would be for a recording to show.</li>
+<li><strong>Harmony:</strong> the key stays E♭ major, but the refrain <em>opens</em> on the IV chord (A♭) instead of the tonic, which is the biggest change in the first bar.</li>
+<li><strong>Rhythm:</strong> the verse is even eighth notes all the way; the refrain starts with a dotted figure (a dotted eighth and a sixteenth, “C&gt;D”).</li>
+<li><strong>Register:</strong> the verse sits around E♭ to B♭ above it; the refrain drops below, down to the low G.</li>
+<li><strong>Not changed:</strong> key, tempo, meter, instrument. Nothing here can tell you about timbre, dynamics or texture; that would be for a recording to show.</li>
 </ul>
 </div>
 </div>
@@ -1191,7 +1193,7 @@ K:Eb
 <div class="callout-body-container callout-body">
 <ul>
 <li><strong>The grid</strong> is the book’s method. Which elements change in B and C is summarised from the chapter (checked against its text on 2026-11-09); the grid is left blank so students listen for the rest.</li>
-<li><strong>O Susanna:</strong> the two parts are the site’s Tune Library version (the recorder teacher’s guide). The reading is this page’s own, from the notation; it says nothing about performance.</li>
+<li><strong>Yankee Doodle:</strong> the two parts are the site’s Tune Library version. The reading is this page’s own, from the notation; it says nothing about performance. (This section used “O Susanna” until 2026-11-15; minstrel-show songs are no longer used as lesson examples, see <code>apps/shared/works/song-flags.js</code>.)</li>
 <li><strong>Not here:</strong> the book’s pop example (a copyrighted recording) and the “contrast” quiz the book lacks. A small listening drill is possible from the Arranger’s styles but has not been built.</li>
 <li>The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).</li>
 </ul>

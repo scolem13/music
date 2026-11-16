@@ -29,6 +29,10 @@
 // has ▶ YouTube (cued to the section), ♫ a Spotify search (no Spotify ids in the data), ♯ the TheoryTab page. The Genre column is MusicBrainz tags
 // mapped onto the Pop Themes' genres (+ latin / christmas from the book); the Year of a Real Book song is the earliest recording MusicBrainz knows,
 // not a publication date (hover). A row with no MusicBrainz match has no year / genre.
+// IN CLASS: songs played in class (song-usage.json, written by ~/Documents/Learning-Experiences/song-usage.py when the class site
+// publishes; read from classes.seancoleman.org, else the copy here). A song marks every row with the same title (tkey) whose composer /
+// artist shares a word with its artist; a song with no such row becomes its own row, type "Class". Column "In class" = the number of
+// classes (">0" lists them all; future dates are planned classes); ▸ lists the dates, linked to the deck and the day's page.
 // SUSPECT TUNES: a tune in window.TUNE_QUALITY (apps/tunes/tune-quality.js, from scripts/tune-quality.mjs) or tagged needs-repair is left out
 // until "show suspect tunes" is ticked; shown with ⚠ and the reasons on hover.
 // The old per-type lists below the table start folded (the sheet has the same pieces); first visit only, then the reader's choice is kept.
@@ -81,7 +85,8 @@
   const printOf = (w) => ((w && w.in && w.in.print) || []).map((x) => ((PB[x.book] || {}).short || x.book).split(",")[0] + ((PB[x.book] || {}).ref === "page" ? " p. " : " ") + x.fig).join(", ");
   const yearOf = (o) => (o && (o.composed || o.published)) || "";
   const blank = () => ({ suspect: "", genre: "", links: null, composer: "", part: "", set: "", kind: "", key: "", meter: "", year: "", print: "", notation: 0, recs: 0, timed: 0, chords: 0, tsn: null, cat: "" });
-  const add = (r) => { rows.push(Object.assign(blank(), r)); };
+  // SONG FLAGS: a title that apps/shared/works/song-flags.js knows (minstrel-show songs) gets ⚑ with the note on hover
+  const add = (r) => { const o = Object.assign(blank(), r); const f = window.SongFlags && SongFlags.of(o.title); o.flag = f ? f.note : ""; rows.push(o); };
   function worksRecs(kind, id) {
     const w = Wk && Wk.of(kind, id); if (!w) return [];
     return (w.recordings || []).filter(visible).map((r) => ({ timed: !!r.timing, tsn: Wk.tsnUrl ? Wk.tsnUrl(r, w) : null }));
@@ -169,7 +174,24 @@
         rbRow: g, rbVols: vols, id: g.t, tip: g.cm ? "Composer from MusicBrainz, not the book" : "" }, noUses()));
     });
   }).catch(() => {});
-  const ready = Promise.all([bbReady, pdReady, htReady, rbReady]);
+  const loaded = Promise.all([bbReady, pdReady, htReady, rbReady]);
+  const CLS_URLS = ["https://classes.seancoleman.org/song-usage.json", "/apps/shared/works/song-usage.json?v=1"];
+  const clsFetch = (i) => i >= CLS_URLS.length ? Promise.resolve(null) : fetch(CLS_URLS[i]).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }).catch(() => clsFetch(i + 1));
+  const artWords = (a) => fold(a).replace(/\([^)]*\)/g, " ").replace(/\b(the|and|with|feat|ft)\b/g, " ").split(/[^a-z0-9]+/).filter((w) => w.length > 2);
+  const ready = Promise.all([loaded, clsFetch(0)]).then(([, d]) => {
+    if (!d || !d.songs) return;
+    const byT = {}; rows.forEach((r) => { (byT[tkey(r.title)] = byT[tkey(r.title)] || []).push(r); });
+    d.songs.forEach((s) => {
+      const aw = artWords(s.artist);
+      let hit = (byT[tkey(s.title)] || []).filter((r) => { const c = fold(r.composer); return aw.some((w) => c.indexOf(w) >= 0); });
+      if (!hit.length) {
+        add(Object.assign({ title: s.title, type: "Class", composer: s.artist, set: "Classes", year: s.year || "", href: null,
+          id: "cls:" + tkey(s.title) + "|" + fold(s.artist), cat: catKey(s.title) }, noUses()));
+        hit = [rows[rows.length - 1]];
+      }
+      hit.forEach((r) => { r.clsUses = (r.clsUses || []).concat(s.uses || []); r.cls = r.clsUses.length; });
+    });
+  });
 
   // ---- concepts: uses/*.js and print figures with a concept ----
   const uses = Wk && Wk.usesAll ? Wk.usesAll() : [];
@@ -237,6 +259,7 @@
         set: Object.keys(tn).map((t) => tn[t] + " " + t.toLowerCase() + (tn[t] > 1 ? "s" : "")).join(" · "), kind: "", key: kids[0].key, meter: "",
         year: yrs.length ? Math.min.apply(null, yrs) : "", print: [...new Set(kids.map((r) => r.print).filter(Boolean))].join(", "),
         notation: kids.some((r) => r.notation) ? 1 : 0, recs: sum("recs"), timed: sum("timed"), chords: kids.some((r) => r.chords) ? 1 : 0,
+        cls: sum("cls"), clsUses: kids.flatMap((r) => r.clsUses || []),
         nconc: names.length, concepts: names.join("; "), cset: new Set(names.map(conceptKey)), sset: new Set(kids.flatMap((r) => [...r.sset])),
         uses: [], href: null, links: kids.flatMap((r) => (r.links || []).filter((l) => l.site)).filter((l, i, a) => a.findIndex((m) => m.u === l.u) === i), tsn: (kids.find((r) => r.timed && r.tsn) || kids.find((r) => r.tsn) || {}).tsn || null };
       kids.forEach((r) => { r.g = g; });
@@ -246,14 +269,14 @@
   regroup();
 
   // ---- table ----
-  const TYPES = ["Tune", "Theme", "Piece", "Score", "Song", "Billboard", "Isophonics", "Hooktheory", "Real Book", "Recording"];
+  const TYPES = ["Tune", "Theme", "Piece", "Score", "Song", "Billboard", "Isophonics", "Hooktheory", "Real Book", "Recording", "Class"];
   const COLS = [
     { k: "title", label: "Title", fixed: 1 }, { k: "type", label: "Type", chips: TYPES }, { k: "composer", label: "Composer / artist" }, { k: "genre", label: "Genre", w: "6rem" },
     { k: "part", label: "Movement / part" }, { k: "set", label: "Set / source" }, { k: "kind", label: "Kind", sel: [] },
     { k: "key", label: "Key", w: "4rem" }, { k: "meter", label: "Meter", w: "5rem" },
     { k: "year", label: "Year", num: 1, w: "4.5rem", ph: "<1800" }, { k: "print", label: "Print", w: "6rem" },
     { k: "notation", label: "Notation", yn: 1 }, { k: "recs", label: "Recordings", num: 1 }, { k: "timed", label: "Bars marked", num: 1 }, { k: "chords", label: "Chords", yn: 1 },
-    { k: "concepts", label: "Concepts", sortk: "nconc", w: "8rem" }
+    { k: "concepts", label: "Concepts", sortk: "nconc", w: "8rem" }, { k: "cls", label: "In class", num: 1, w: "4.5rem", ph: ">0" }
   ];
   const HIDE_DEFAULT = ["print", "meter", "chords", "kind"];
   let hidden; try { hidden = new Set(JSON.parse(store.get("td-sheet-cols") || "null") || HIDE_DEFAULT); } catch (e) { hidden = new Set(HIDE_DEFAULT); }
@@ -378,19 +401,29 @@
     for (const e of all) { if (!e.child) { if (top >= shown) break; top++; } if (!e.child || openKids.has(e.child.gkey)) vis.push(e); }
     curList = vis;
     tbody.innerHTML = vis.map((e, i) => { const r = e.r; return `<tr data-i="${i}"${e.child ? ` class="tds-child" data-g="${esc(e.child.gkey)}"` : r.isGroup ? ` class="tds-parent" data-g="${esc(r.gkey)}"` : ""}>
-      <td>${titleCell(r, e.n)}${r.suspect ? ` <span class="tds-sus-tag" title="${esc("Predicted bad ABC: " + r.suspect)}">⚠</span>` : ""}</td><td>${r.type}</td><td>${esc(r.composer)}</td><td class="tds-dim">${esc(r.genre)}</td><td class="tds-dim">${esc(r.part)}</td><td class="tds-dim">${esc(r.set)}</td>
+      <td>${titleCell(r, e.n)}${r.flag ? ` <span class="tds-flag" title="${esc(r.flag)}">⚑</span>` : ""}${r.suspect ? ` <span class="tds-sus-tag" title="${esc("Predicted bad ABC: " + r.suspect)}">⚠</span>` : ""}</td><td>${r.type}</td><td>${esc(r.composer)}</td><td class="tds-dim">${esc(r.genre)}</td><td class="tds-dim">${esc(r.part)}</td><td class="tds-dim">${esc(r.set)}</td>
       <td class="tds-dim"${r.tip ? ` title="${esc(r.tip)}"` : ""}>${esc(r.kind)}</td>
       <td>${esc(r.key)}</td><td>${esc(r.meter)}</td><td class="tds-c"${r.year && r.type === "Real Book" ? ' title="The earliest recording MusicBrainz knows, not a publication date"' : ""}>${esc(r.year || "")}</td><td class="tds-dim">${esc(r.print || "")}</td><td class="tds-c">${r.notation ? "✓" : ""}</td><td class="tds-c">${r.recs || ""}</td>
       <td class="tds-c">${r.timed ? "✓" + (r.timed > 1 ? " " + r.timed : "") : r.recs ? "–" : ""}</td><td class="tds-c">${r.chords ? "✓" : ""}</td>
       <td class="tds-con" title="${esc(r.concepts)}">${r.nconc ? `<b>${r.nconc}</b> ` + esc(r.concepts.split("; ").slice(0, 2).join("; ")) + (r.nconc > 2 ? "…" : "") : ""}</td>
+      <td class="tds-c"${r.cls ? ` title="${esc(clsTip(r))}"` : ""}>${r.cls || ""}</td>
       <td>${(r.links || []).map((l) => l.site ? `<a class="tds-site" href="${esc(l.u)}" title="${esc(l.tip)}">${l.t}</a>` : `<a href="${esc(l.u)}" target="_blank" rel="noopener" title="${esc(l.tip)} ↗">${l.t}</a>`).join(" ")}${r.tsn ? `<a href="${esc(r.tsn)}" title="Open ${r.recs > 1 ? "the first of " + r.recs + " recordings" : "it"} in Timestamp Notes${r.recs > 1 ? " (▸ lists them all)" : ""}">⏱</a>` : ""}</td></tr>`; }).join("");
     more.hidden = top >= all.filter((e) => !e.child).length;
     const st = document.getElementById("td-stat"); if (st && sq0()) st.textContent = leaves.length.toLocaleString() + " match" + (leaves.length === 1 ? "" : "es");
     host.querySelector(".tds-n").textContent = leaves.length.toLocaleString() + " of " + rows.length.toLocaleString() + " rows";
     host.querySelectorAll("th[data-k] .tds-arrow").forEach((s) => { s.textContent = s.parentNode.dataset.k === sortK ? (sortDir > 0 ? "▲" : "▼") : ""; });
   }
+  const today = new Date().toISOString().slice(0, 10);
+  const clsDate = (d) => new Date(d + "T12:00:00").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+  const clsTip = (r) => (r.clsUses || []).map((u) => u.course + " " + u.date + (u.date > today ? " (planned)" : "")).join(", ");
   function detail(r) {
     const box = document.createElement("div");
+    if (r.clsUses && r.clsUses.length) {
+      const p = document.createElement("p"); p.className = "td-note";
+      p.innerHTML = "In class: " + r.clsUses.slice().sort((a, b) => (a.date < b.date ? -1 : 1)).map((u) => esc(u.course) + " " + link(u.url, clsDate(u.date)) +
+        (u.title ? " (" + esc(u.title) + (u.lesson ? ", " + link(u.lesson, "page") : "") + ")" : "") + (u.date > today ? " · planned" : "")).join("; ");
+      box.appendChild(p);
+    }
     if (r.from) { const p = document.createElement("p"); p.className = "td-note"; p.textContent = r.from === "uses only" ? "Known only from the teaching sources below." : "From: " + r.from; box.appendChild(p); }
     const line = (t) => { const p = document.createElement("p"); p.className = "td-note"; p.textContent = t; box.appendChild(p); };
     if (r.htRow) {

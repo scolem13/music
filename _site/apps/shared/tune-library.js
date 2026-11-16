@@ -172,6 +172,7 @@
         usedIds[id] = 1;
         var tags = [coll];
         if (global.TUNE_QUALITY && global.TUNE_QUALITY[id]) tags.push("suspect");     // predicted bad ABC (scripts/tune-quality.mjs)
+        if (global.SongFlags && global.SongFlags.of(title)) tags.push("minstrel");    // a minstrel-show song (works/song-flags.js); shown, not hidden
         var manual = directive(abc, "tags");
         if (manual) manual.split(",").forEach(function (x){ x = x.trim(); if (x && tags.indexOf(x) < 0) tags.push(x); });
         // distinct chords + roman numerals (with applied-chord analysis), deduped in

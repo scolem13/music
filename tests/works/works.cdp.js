@@ -191,6 +191,14 @@ const U = "http://127.0.0.1:8547";
   check("sources: r2 waits for the bucket, then builds its URL; YouTube start from t=", r2 === JSON.stringify([{ kind: "missing", why: "the recordings bucket is not set up yet" },
     { kind: "audio", url: "https://media.example.com/a%20b/c.mp3", start: 65, end: 0 }, { kind: "yt", id: "vcBJLdKtaOQ", start: 610, end: 0 }]), r2);
 
+  // IN CLASS (song-usage.json): songs played in class mark their rows; songs the sheet lacks become type "Class" rows; ▸ lists the dates
+  await b.goto(U + "/practice/tune-directory.html"); await wait(`window.TdSheet`); await ev(`TdSheet.ready`); await b.sleep(300);
+  const ic = await ev(`(() => { const rs = TdSheet.rows().filter(r => r.cls > 0); const by = t => rs.filter(r => r.title === t).map(r => r.type + ':' + r.cls).join(',');
+    return JSON.stringify({ n: rs.length, cls: rs.filter(r => r.type === 'Class').length, cradle: by("Cat's in the Cradle"), virus: by('Beethoven Virus'),
+      dump: rs.map(r => r.type + ' | ' + r.title + ' | ' + r.composer + ' | ' + r.cls) }); })()`);
+  const icd = JSON.parse(ic);
+  check("In class: class songs mark their rows, unmatched ones become Class rows", (icd.n >= 30 && icd.cls > 0 && /Class:3/.test(icd.virus) && /:1/.test(icd.cradle)) !== NEG,
+    [icd.n, icd.cls, icd.cradle, icd.virus].join(" | ") + (process.env.DUMP ? "\n" + icd.dump.join("\n") : ""));
   b.close(); srv.close();
   console.log(fails ? fails + " failed" : "all passed"); process.exit(fails ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(1); });

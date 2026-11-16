@@ -231,6 +231,9 @@
     var head = S.head.filter(function (h) {
       if (/^Q:/.test(h)) { if (!firstQ || o.noTempo) return false; firstQ = false; }
       if (o.noTitle && /^[TC]:/.test(h)) return false;
+      // Z: (transcriber / licence, e.g. PDMX's "Domaine public"), N:, H:, S:, O: … are printed by abcjs as text under the music,
+      // so once per drawn system; the page shows what matters of them, the drawing never does
+      if (/^[ZNHSOABDFGRW]:/.test(h)) return false;
       return true;
     });
     var kI = head.findIndex(function (h) { return /^K:/.test(h); });
