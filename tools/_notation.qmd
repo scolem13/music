@@ -19,6 +19,24 @@
 #nt-root .nt-nav .nt-nav-tip{margin:.7rem 0 .5rem;font:400 .72rem/1.35 Inter,system-ui,sans-serif;letter-spacing:0;text-transform:none}
 #nt-root .nt-nav .nt-reset-cols{width:100%;font-size:.75rem}
 #nt-root .nt-main.pc-empty,#nt-root .nt-side.pc-empty{min-height:12rem}
+#nt-root .nt-nav li{display:flex;align-items:center}
+#nt-root .nt-nav li a{flex:1}
+#nt-root .nt-nav .nt-eye2{border:0;background:none;color:var(--nt-ink2);cursor:pointer;padding:0 .35rem;font-size:.9rem}
+#nt-root .nt-nav-all{display:flex;gap:.3rem;margin:.6rem 0 0}
+#nt-root .nt-nav-all .nt-btn{font-size:.72rem;min-height:1.6rem;padding:0 .45rem}
+#nt-root .nt-nav-fold{float:right;border:1px solid var(--nt-line);background:var(--nt-surface);color:var(--nt-ink2);border-radius:4px;cursor:pointer;padding:0 .4rem;line-height:1.4}
+#nt-root details.nt-panel.nt-gone{display:none!important}
+#nt-root .nt-x{margin-left:auto;border:0;background:none;color:var(--nt-ink2);font-size:1.2rem;line-height:1;padding:0 .3rem;cursor:pointer}
+#nt-root .nt-x:hover{color:#b02a37}
+/* the list folded: two columns of parts, the » button alone on the right */
+#nt-root.nt-nav-off .nt-layout{grid-template-columns:minmax(0,1fr) minmax(320px,400px) 2rem}
+#nt-root.nt-nav-off .nt-nav>*:not(.nt-nav-fold){display:none!important}
+@media (min-width:1101px){#nt-root.nt-nav-off .nt-nav-fold{transform:scaleX(-1)}}
+#title-block-header,#nt-root .nt-intro{display:none!important}
+#nt-root .nt-need{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;margin:0 0 1rem;padding:.7rem 1rem;border:2px solid #b3261e;border-radius:8px;background:#fff3f1;color:#5c1410}
+#nt-root .nt-need strong{font-size:1rem}
+#nt-root .nt-need select{height:2rem}
+#nt-root .nt-field.nt-want select{outline:2px solid #b3261e;outline-offset:1px}
 #nt-root .nt-layout>*{grid-column:auto!important}   /* Quarto puts page-columns on it */
 #nt-root .nt-main,#nt-root .nt-side{display:flex;flex-direction:column;gap:16px;min-width:0}
 #nt-root .nt-side details.nt-panel{background:var(--nt-surface2)}
@@ -228,58 +246,25 @@
       <button type="button" class="nt-btn is-main" id="nt-dict-hand">Hand in</button>
     </div>
   </div>
-  <p class="nt-intro">The quickest way in: press <kbd>r</kbd> and play the tune on a MIDI keyboard, a phrase at a time. Each take becomes a chunk. Chords, rhythms, typed notes and words go in from the sidebar, in any order. Click a note on the staff and move it with the arrow keys.</p>
+  <p class="nt-intro">Type it in: in <strong>Rhythm</strong> pick a meter and press the number keys for note values, then type the <strong>Pitches</strong> as letters (<kbd>z</kbd> a rest), or the other way round. Click a note on the staff and move it with the arrow keys. A MIDI keyboard, chords, words and the rest are in the right-hand column; hide any part you don&rsquo;t use with its &times; (the list on the right brings it back).</p>
 
+  <div class="nt-need" id="nt-need" hidden role="alert">
+    <strong>First, a meter and a key.</strong>
+    <div class="nt-field"><label for="nt-need-meter">Meter</label><select id="nt-need-meter"></select></div>
+    <div class="nt-field"><label for="nt-need-key">Key</label><select id="nt-need-key" data-kind="key"></select></div>
+    <span>Also in <a href="#nt-setup">The piece</a> and <a href="#nt-quick">Play it in</a>.</span>
+  </div>
   <div class="nt-layout">
     <div class="nt-main">
-      <details class="nt-panel" id="nt-quick" open>
-        <summary><h2>Play it in</h2><span class="nt-sum" id="nt-q-midi">MIDI: not connected</span></summary>
-        <div class="nt-body">
-          <div class="nt-deck">
-            <button type="button" class="nt-go" id="nt-q-go">&#9679; Record<small>r / pedal</small></button>
-            <div>
-              <div class="nt-qstate" id="nt-q-state">Ready</div>
-              <div class="nt-qbeats" id="nt-q-beats"></div>
-              <div class="nt-heard" id="nt-q-heard"></div>
-            </div>
-          </div>
-          <div class="nt-keys" id="nt-q-keys" aria-hidden="true"></div>
-          <div class="nt-quick">
-            <div class="nt-field"><label for="nt-q-into" title="New chunk: each take is a chunk of its own after this one. Over the notes: the take replaces the notes and rests from the bar of the active note on (into the chunks after it when it runs past this one); chord symbols stay as they are.">Take goes</label><select id="nt-q-into"><option value="new">New chunk below</option><option value="over">Over the notes here (chords kept)</option></select></div>
-            <div class="nt-field"><label for="nt-q-meter">Meter</label><select id="nt-q-meter"></select></div>
-            <div class="nt-field"><label for="nt-q-key">Key</label><select id="nt-q-key" data-kind="key"></select></div>
-            <div class="nt-field"><label for="nt-q-bpm">Tempo</label><input type="number" id="nt-q-bpm" min="30" max="240" value="90"></div>
-            <div class="nt-field"><label for="nt-q-count">Count-in</label><select id="nt-q-count"><option value="1">1 bar</option><option value="2">2 bars</option></select></div>
-            <div class="nt-field"><label for="nt-q-pickup">Pickup</label><select id="nt-q-pickup"></select></div>
-            <div class="nt-field"><label for="nt-q-res">Shortest note</label><select id="nt-q-res"><option value="1">Eighth</option><option value="0.5">Sixteenth</option></select></div>
-            <div class="nt-field"><label for="nt-q-feel">Feel</label><select id="nt-q-feel"><option value="straight">Straight</option><option value="swing">Swing</option></select></div>
-            <div class="nt-field"><label for="nt-q-trip">Triplets</label><select id="nt-q-trip"><option value="off">Off</option><option value="auto">Find them</option></select></div>
-            <div class="nt-field"><label for="nt-q-split" title="Notes below this key are the left hand; this key and above the right hand (the melody).">Split at</label><select id="nt-q-split"><option value="60">C4 (middle C)</option><option value="55">G3</option><option value="53">F3</option><option value="48">C3</option><option value="0">No split</option></select></div>
-            <div class="nt-field"><label for="nt-q-lh" title="Chord symbols: the left hand's chords named over the bars. Notated: the left hand written out on a bass staff (a voice of its own), with or without chord symbols.">Left hand</label><select id="nt-q-lh"><option value="chords">Chord symbols</option><option value="notate">Notated (bass staff)</option><option value="both">Notated + chord symbols</option></select></div>
-            <div class="nt-field"><label for="nt-q-quiet">Ends after</label><select id="nt-q-quiet"><option value="2">2 quiet bars</option><option value="1">1 quiet bar</option><option value="4">4 quiet bars</option><option value="0">Only when stopped</option></select></div>
-          </div>
-          <div class="nt-row">
-            <button type="button" class="nt-btn" id="nt-q-redo" disabled>Redo the last take</button>
-            <button type="button" class="nt-btn" id="nt-q-drop" disabled>Drop the last take</button>
-          </div>
-          <p class="nt-hint">Each take is a chunk of its own, after the selected one, in the selected voice (with <strong>Take goes</strong> set to <em>Over the notes here</em>, it replaces the notes from the active note's bar on and keeps the chord symbols; count-in notes go in the bar before). The right hand plays the melody; when the left hand plays chords (two notes or more together below the <strong>Left hand</strong> key) they are named and written over the bars; a take with no left-hand chords is all melody. Notes played in the last bar of the count-in of the piece's first take make a <strong>pickup</strong>, up to almost a whole bar. <kbd>r</kbd> or the sustain pedal records, <kbd>Space</kbd>, the pedal or <kbd>Esc</kbd> stops, <kbd>Shift</kbd>+<kbd>R</kbd> redoes the last take, <kbd>Shift</kbd>+<kbd>Backspace</kbd> drops it.</p>
-          <p class="nt-hint" id="nt-q-status" aria-live="polite"></p>
-        </div>
-      </details>
-
       <details class="nt-panel" id="nt-score" open>
-          <summary><h2>The music</h2></summary>
+          <summary><h2>Notation</h2></summary>
           <div class="nt-body">
             <div class="nt-row" style="margin-top:0">
               <button type="button" class="nt-btn is-main" id="nt-play">&#9654; Play</button>
               <label class="nt-through" title="Space plays on through the chunks after this one, to the end of the piece, instead of stopping at the chunk's end"><input type="checkbox" id="nt-through"> Play through</label>
               <label class="nt-through" title="While playing: when the sounding note goes below the bottom of the window, the page jumps so it is at the top"><input type="checkbox" id="nt-follow"> Follow</label>
               <button type="button" class="nt-btn" id="nt-undo">Undo</button>
-              <button type="button" class="nt-btn" id="nt-new">Start over</button>
               <button type="button" class="nt-btn" id="nt-insert" aria-pressed="false" title="i: new rhythm goes in at the caret (h / l move it) instead of at the end">Insert mode</button>
-              <button type="button" class="nt-btn" id="nt-file-save" title="Download the whole piece as a file, to open again later">Save to file</button>
-              <button type="button" class="nt-btn" id="nt-file-open" title="Open a piece saved with Save to file (or an .abc file)">Open file</button>
-              <input type="file" id="nt-file-in" accept=".json,.abc,.txt,application/json" hidden>
               <label class="nt-scope" title="Bars on each line of the score (a pickup bar not counted). Empty: as many as fit. RET puts a line break of your own after the active note's bar (↴); RET there again, or a click on ↴, takes it away.">Line break every <input type="number" id="nt-lines" min="1" max="32" placeholder="fit" style="width:3.6rem"> bars</label>
               <label class="nt-scope" id="nt-scope-l" hidden>Show <select id="nt-scope" title="The whole piece, or one section of it (as the Backing Track's tune notation does)"></select></label>
             </div>
@@ -302,7 +287,47 @@
             <p class="nt-phrase" id="nt-phrase" hidden><span id="nt-phrase-label"></span> <button type="button" class="nt-btn is-main" id="nt-back" title="Back to Timestamp Notes, looping the next phrase">Back to the recording, next phrase</button> <button type="button" class="nt-btn" id="nt-back-again" title="Back to Timestamp Notes, this phrase again">This phrase again</button> <span id="nt-passes" class="nt-passes" hidden title="Each pass of the loop you played is a take: pick the one to keep"></span> <button type="button" class="nt-btn" id="nt-seam-keep" hidden title="Where the pickup and the end of the phrase before both sounded, keep the phrase before's notes">Keep the earlier notes</button></p>
           </div>
         </details>
-
+      <details class="nt-panel" id="nt-rhythm" open>
+          <summary><h2>Rhythm</h2><span class="nt-sum" id="nt-rhythm-sum"></span></summary>
+          <div class="nt-body">
+            <div class="nt-target nt-voice-pick" role="group" aria-label="Voice"></div>
+            <div id="nt-rhythm-nometer">
+              <p class="nt-hint">A rhythm needs a meter. Choose one first:</p>
+              <div class="nt-row" id="nt-meter-quick"></div>
+            </div>
+            <div id="nt-rhythm-bank" hidden>
+              <div class="nt-row" role="group" aria-label="How to enter rhythm">
+                <button type="button" class="nt-btn" id="nt-rhythm-single" aria-pressed="false" title="Shift+R switches">One note at a time</button>
+              </div>
+              <div class="cell-bank" id="nt-cells"></div>
+              <div class="nt-row">
+                <button type="button" class="nt-btn" id="nt-rhythm-undo">Undo</button>
+                <button type="button" class="nt-btn" id="nt-rhythm-clear">Clear this chunk's rhythm</button>
+                <div class="cell-criteria" id="nt-cell-crit">
+                  <label><input type="checkbox" data-crit="macrobeat" checked> Macrobeat</label>
+                  <label><input type="checkbox" data-crit="microbeat" checked> Microbeat</label>
+                  <label><input type="checkbox" data-crit="division"> Division</label>
+                  <label><input type="checkbox" data-crit="elongation"> Elongation</label>
+                  <label><input type="checkbox" data-crit="rest"> Rest</label>
+                </div>
+              </div>
+              <p class="nt-hint" id="nt-rhythm-keys"></p>
+            </div>
+          </div>
+        </details>
+      <details class="nt-panel" id="nt-pitch" open>
+          <summary><h2>Pitches</h2><span class="nt-sum" id="nt-pitch-sum"></span></summary>
+          <div class="nt-body">
+            <div class="nt-target nt-voice-pick" role="group" aria-label="Voice"></div>
+            <div class="nt-row" role="group" aria-label="How to enter notes">
+              <button type="button" class="nt-btn" data-mode="letters" aria-pressed="true">Letters</button>
+              <button type="button" class="nt-btn" data-mode="piano" aria-pressed="false">Computer keys as a piano</button>
+              <button type="button" class="nt-btn" data-mode="midi" aria-pressed="false">MIDI keyboard</button>
+              <button type="button" class="nt-btn" id="nt-rest" title="z while typing letters">Rest</button>
+            </div>
+            <p class="nt-hint" id="nt-mode-help"></p>
+          </div>
+        </details>
       <details class="nt-panel" id="nt-chunks-panel" open>
           <summary><h2>Chunks</h2><span class="nt-sum" id="nt-chunks-sum"></span></summary>
           <div class="nt-body">
@@ -337,7 +362,6 @@
             <p class="nt-warn" id="nt-c-msg" hidden></p>
           </div>
         </details>
-
       <details class="nt-panel" id="nt-setup" open>
           <summary><h2>The piece</h2><span class="nt-sum" id="nt-setup-sum"></span></summary>
           <div class="nt-body">
@@ -357,6 +381,12 @@
             <p class="nt-hint" id="nt-key-hint"></p>
             <div class="nt-row">
               <button type="button" class="nt-btn" id="nt-band-piece">Band for the whole piece</button>
+            </div>
+            <div class="nt-row">
+              <button type="button" class="nt-btn" id="nt-file-save" title="Download the whole piece as a file, to open again later">Save to file</button>
+              <button type="button" class="nt-btn" id="nt-file-open" title="Open a piece saved with Save to file (or an .abc file)">Open file</button>
+              <input type="file" id="nt-file-in" accept=".json,.abc,.txt,application/json" hidden>
+              <button type="button" class="nt-btn" id="nt-new">Start over</button>
               <span class="nt-hint" id="nt-band-note" style="margin:0"></span>
             </div>
             <p class="nt-lab" style="margin-top:1rem">Voices</p>
@@ -370,16 +400,6 @@
             </div>
           </div>
         </details>
-
-      <details class="nt-panel" id="nt-dwim" open>
-          <summary><h2>DWIM</h2><span class="nt-sum" id="nt-dwim-sum"></span></summary>
-          <div class="nt-body">
-            <p class="nt-hint" style="margin-top:0">Do what I mean: select bars that were played in (<strong>Play it in time</strong>) and press <strong>DWIM</strong> to see the other ways they could be written, best first. The playing is kept with the chunk, so this keeps working after edits elsewhere, after splitting on a bar line, merging, duplicating, and after a reload.</p>
-            <p class="nt-warn" id="nt-dwim-warn" hidden></p>
-            <div id="nt-dwim-host"></div>
-          </div>
-        </details>
-
       <details class="nt-panel" id="nt-abc" open>
           <summary><h2>ABC</h2></summary>
           <div class="nt-body">
@@ -393,48 +413,48 @@
           </div>
         </details>
 
-      <details class="nt-panel" id="nt-cho" open>
-          <summary><h2>ChordPro</h2></summary>
-          <div class="nt-body">
-            <p class="nt-hint" style="margin-top:0">The chords and words of the piece, and at the end the notes as an ABC block (<code>{start_of_abc}</code> … <code>{end_of_abc}</code>), so this text is the whole song. Edit the words or the ABC here and the piece follows. ChordPro without an ABC block has no rhythm or notes: reading it in replaces the piece with its chords (one a bar, or as the <kbd>|</kbd> marks say) and words.</p>
-            <textarea id="nt-cho-text" spellcheck="false" aria-label="ChordPro"></textarea>
-            <div class="nt-row">
-              <button type="button" class="nt-btn" id="nt-cho-read">Read this ChordPro in</button>
-              <button type="button" class="nt-btn" id="nt-cho-copy">Copy</button>
-            </div>
-            <p class="nt-warn" id="nt-cho-warn" hidden></p>
-          </div>
-        </details>
+
+
+
+
+
     </div>
 
     <aside class="nt-side" aria-label="Other ways to enter music">
-      <details class="nt-panel" id="nt-start-panel" open>
-        <summary><h2>Other ways in</h2></summary>
+      <details class="nt-panel" id="nt-quick" open>
+        <summary><h2>Play it in</h2><span class="nt-sum" id="nt-q-midi">MIDI: not connected</span></summary>
         <div class="nt-body">
-          <div class="nt-start">
-            <button type="button" class="nt-btn" data-go="nt-pitch">Some notes<small>Type letters, play the computer keys like a piano, or use a MIDI keyboard. Add the rhythm later.</small></button>
-            <button type="button" class="nt-btn" data-go="nt-rhythm">A rhythm<small>Pick a meter, then build the rhythm from patterns. Add the notes later.</small></button>
-            <button type="button" class="nt-btn" data-go="nt-chords">Chords<small>Type them bar by bar, or play them on a keyboard. No key needed.</small></button>
-            <button type="button" class="nt-btn" data-go="nt-take">Play it in time: more<small>Chords as well as notes, a fixed length, into the selected chunk.</small></button>
-            <button type="button" class="nt-btn" data-go="nt-abc">ABC or ChordPro I already have<small>Paste it in, then change what you like.</small></button>
+          <div class="nt-deck">
+            <button type="button" class="nt-go" id="nt-q-go">&#9679; Record<small>r / pedal</small></button>
+            <div>
+              <div class="nt-qstate" id="nt-q-state">Ready</div>
+              <div class="nt-qbeats" id="nt-q-beats"></div>
+              <div class="nt-heard" id="nt-q-heard"></div>
+            </div>
           </div>
+          <div class="nt-keys" id="nt-q-keys" aria-hidden="true"></div>
+          <div class="nt-quick">
+            <div class="nt-field"><label for="nt-q-into" title="New chunk: each take is a chunk of its own after this one. Over the notes: the take replaces the notes and rests from the bar of the active note on (into the chunks after it when it runs past this one); chord symbols stay as they are.">Take goes</label><select id="nt-q-into"><option value="new">New chunk below</option><option value="over">Over the notes here (chords kept)</option></select></div>
+            <div class="nt-field"><label for="nt-q-meter">Meter</label><select id="nt-q-meter"></select></div>
+            <div class="nt-field"><label for="nt-q-key">Key</label><select id="nt-q-key" data-kind="key"></select></div>
+            <div class="nt-field"><label for="nt-q-bpm">Tempo</label><input type="number" id="nt-q-bpm" min="30" max="240" value="90"></div>
+            <div class="nt-field"><label for="nt-q-count">Count-in</label><select id="nt-q-count"><option value="1">1 bar</option><option value="2">2 bars</option></select></div>
+            <div class="nt-field"><label for="nt-q-pickup">Pickup</label><select id="nt-q-pickup"></select></div>
+            <div class="nt-field"><label for="nt-q-res">Shortest note</label><select id="nt-q-res"><option value="1">Eighth</option><option value="0.5">Sixteenth</option></select></div>
+            <div class="nt-field"><label for="nt-q-feel">Feel</label><select id="nt-q-feel"><option value="straight">Straight</option><option value="swing">Swing</option></select></div>
+            <div class="nt-field"><label for="nt-q-trip">Triplets</label><select id="nt-q-trip"><option value="off">Off</option><option value="auto">Find them</option></select></div>
+            <div class="nt-field"><label for="nt-q-split" title="Notes below this key are the left hand; this key and above the right hand (the melody).">Split at</label><select id="nt-q-split"><option value="60">C4 (middle C)</option><option value="55">G3</option><option value="53">F3</option><option value="48">C3</option><option value="0">No split</option></select></div>
+            <div class="nt-field"><label for="nt-q-lh" title="Chord symbols: the left hand's chords named over the bars. Notated: the left hand written out on a bass staff (a voice of its own), with or without chord symbols.">Left hand</label><select id="nt-q-lh"><option value="chords">Chord symbols</option><option value="notate">Notated (bass staff)</option><option value="both">Notated + chord symbols</option></select></div>
+            <div class="nt-field"><label for="nt-q-quiet">Ends after</label><select id="nt-q-quiet"><option value="2">2 quiet bars</option><option value="1">1 quiet bar</option><option value="4">4 quiet bars</option><option value="0">Only when stopped</option></select></div>
+          </div>
+          <div class="nt-row">
+            <button type="button" class="nt-btn" id="nt-q-redo" disabled>Redo the last take</button>
+            <button type="button" class="nt-btn" id="nt-q-drop" disabled>Drop the last take</button>
+          </div>
+          <p class="nt-hint">Each take is a chunk of its own, after the selected one, in the selected voice (with <strong>Take goes</strong> set to <em>Over the notes here</em>, it replaces the notes from the active note's bar on and keeps the chord symbols; count-in notes go in the bar before). The right hand plays the melody; when the left hand plays chords (two notes or more together below the <strong>Left hand</strong> key) they are named and written over the bars; a take with no left-hand chords is all melody. Notes played in the last bar of the count-in of the piece's first take make a <strong>pickup</strong>, up to almost a whole bar. <kbd>r</kbd> or the sustain pedal records, <kbd>Space</kbd>, the pedal or <kbd>Esc</kbd> stops, <kbd>Shift</kbd>+<kbd>R</kbd> redoes the last take, <kbd>Shift</kbd>+<kbd>Backspace</kbd> drops it.</p>
+          <p class="nt-hint" id="nt-q-status" aria-live="polite"></p>
         </div>
       </details>
-
-      <details class="nt-panel" id="nt-pitch" open>
-          <summary><h2>Notes</h2><span class="nt-sum" id="nt-pitch-sum"></span></summary>
-          <div class="nt-body">
-            <div class="nt-target nt-voice-pick" role="group" aria-label="Voice"></div>
-            <div class="nt-row" role="group" aria-label="How to enter notes">
-              <button type="button" class="nt-btn" data-mode="letters" aria-pressed="true">Letters</button>
-              <button type="button" class="nt-btn" data-mode="piano" aria-pressed="false">Computer keys as a piano</button>
-              <button type="button" class="nt-btn" data-mode="midi" aria-pressed="false">MIDI keyboard</button>
-              <button type="button" class="nt-btn" id="nt-rest" title="z while typing letters">Rest</button>
-            </div>
-            <p class="nt-hint" id="nt-mode-help"></p>
-          </div>
-        </details>
-
       <details class="nt-panel" id="nt-chords" open>
           <summary><h2>Chords</h2><span class="nt-sum" id="nt-chords-sum"></span></summary>
           <div class="nt-body">
@@ -449,36 +469,6 @@
             <p class="nt-big" id="nt-chords-heard" aria-live="polite"></p>
           </div>
         </details>
-
-      <details class="nt-panel" id="nt-rhythm" open>
-          <summary><h2>Rhythm</h2><span class="nt-sum" id="nt-rhythm-sum"></span></summary>
-          <div class="nt-body">
-            <div class="nt-target nt-voice-pick" role="group" aria-label="Voice"></div>
-            <div id="nt-rhythm-nometer">
-              <p class="nt-hint">A rhythm needs a meter. Choose one first:</p>
-              <div class="nt-row" id="nt-meter-quick"></div>
-            </div>
-            <div id="nt-rhythm-bank" hidden>
-              <div class="nt-row" role="group" aria-label="How to enter rhythm">
-                <button type="button" class="nt-btn" id="nt-rhythm-single" aria-pressed="false" title="Shift+R switches">One note at a time</button>
-              </div>
-              <div class="cell-bank" id="nt-cells"></div>
-              <div class="nt-row">
-                <button type="button" class="nt-btn" id="nt-rhythm-undo">Undo</button>
-                <button type="button" class="nt-btn" id="nt-rhythm-clear">Clear this chunk's rhythm</button>
-                <div class="cell-criteria" id="nt-cell-crit">
-                  <label><input type="checkbox" data-crit="macrobeat" checked> Macrobeat</label>
-                  <label><input type="checkbox" data-crit="microbeat" checked> Microbeat</label>
-                  <label><input type="checkbox" data-crit="division"> Division</label>
-                  <label><input type="checkbox" data-crit="elongation"> Elongation</label>
-                  <label><input type="checkbox" data-crit="rest"> Rest</label>
-                </div>
-              </div>
-              <p class="nt-hint" id="nt-rhythm-keys"></p>
-            </div>
-          </div>
-        </details>
-
       <details class="nt-panel" id="nt-words" open>
           <summary><h2>Words</h2><span class="nt-sum" id="nt-words-sum"></span></summary>
           <div class="nt-body">
@@ -491,35 +481,18 @@
             </div>
           </div>
         </details>
-
-      <details class="nt-panel" id="nt-rec" open>
-          <summary><h2>Recording</h2><span class="nt-sum" id="nt-rec-sum"></span></summary>
-          <div class="nt-body">
-            <div id="nt-rec-mount"></div>
-            <div class="nt-row">
-              <div class="nt-field"><label for="nt-rec-sec">Go to section</label><select id="nt-rec-sec" disabled><option value="">(open a song file)</option></select></div>
-              <label class="nt-through"><input type="checkbox" id="nt-rec-click" checked> Choosing a chunk moves the recording</label>
-              <label class="nt-through"><input type="checkbox" id="nt-rec-follow"> The band follows the recording&rsquo;s tempo</label>
-            </div>
-            <p class="nt-hint">Open the song file from Timestamp Notes (or a bar map) and its recording. A chunk&rsquo;s first bar is taken to be the map&rsquo;s bar of the same number (a Pickup chunk is not a bar); the number box shifts that. With the band following, Play uses the map&rsquo;s tempo bar by bar instead of the piece&rsquo;s.</p>
-            <p class="nt-hint" id="nt-rec-note" role="status"></p>
+      <details class="nt-panel" id="nt-start-panel" open>
+        <summary><h2>Other ways in</h2></summary>
+        <div class="nt-body">
+          <div class="nt-start">
+            <button type="button" class="nt-btn" data-go="nt-pitch">Some pitches<small>Type letters, play the computer keys like a piano, or use a MIDI keyboard. Add the rhythm later.</small></button>
+            <button type="button" class="nt-btn" data-go="nt-rhythm">A rhythm<small>Pick a meter, then build the rhythm from patterns. Add the notes later.</small></button>
+            <button type="button" class="nt-btn" data-go="nt-chords">Chords<small>Type them bar by bar, or play them on a keyboard. No key needed.</small></button>
+            <button type="button" class="nt-btn" data-go="nt-take">Play it in time: more<small>Chords as well as notes, a fixed length, into the selected chunk.</small></button>
+            <button type="button" class="nt-btn" data-go="nt-abc">ABC or ChordPro I already have<small>Paste it in, then change what you like.</small></button>
           </div>
-        </details>
-
-      <details class="nt-panel" id="nt-loop" open>
-          <summary><h2>Loop chunks</h2><span class="nt-sum" id="nt-loop-sum"></span></summary>
-          <div class="nt-body">
-            <div class="nt-row">
-              <div class="nt-field"><label for="nt-loop-mode" title="Listen: the recording. Play along: the recording and you, each pass a take. Play alone: the recording silent, a click, each pass a take. Listen, then play: the two by turns.">Loop</label><select id="nt-loop-mode"><option value="listen">Listen</option><option value="along">Play along</option><option value="alone">Play alone (click)</option><option value="cycle">Listen, then play</option></select></div>
-              <button type="button" class="nt-btn" id="nt-loop-go">Loop this chunk</button>
-            </div>
-            <ol class="nt-loop-rows" id="nt-loop-rows"></ol>
-            <p class="nt-hint" id="nt-loop-empty">Open the song file from Timestamp Notes in the Recording part: each chunk is found in the recording through its section, and loops from its <b>lead-in</b> to its <b>stop</b>.</p>
-            <p class="nt-hint">Keys: <kbd>\</kbd> then <kbd>p</kbd> loop on/off, <kbd>,</kbd> <kbd>.</kbd> the chunk before / after, <kbd>-</kbd> <kbd>=</kbd> lead-in, <kbd>{</kbd> <kbd>}</kbd> stop, <kbd>m</kbd> loop mode, <kbd>Space</kbd> play/pause, <kbd>a</kbd> this chunk again. Every pass you play is a take of the chunk (Play it in's settings: split, left hand); run on past the stop and the next chunks get drafts. A split or joined chunk keeps its timing: it comes from the bars. ≈: the map has no such section (its bar number is used); ⚠: the section's bars here and in the map differ.</p>
-            <p class="nt-hint" id="nt-loop-note" role="status"></p>
-          </div>
-        </details>
-
+        </div>
+      </details>
       <details class="nt-panel" id="nt-take" open>
           <summary><h2>Play it in time: more</h2><span class="nt-sum" id="nt-take-sum"></span></summary>
           <div class="nt-body">
@@ -544,11 +517,66 @@
             <p class="nt-hint">Listens to a MIDI keyboard and to the computer keys (laid out as a piano). What you play replaces this chunk's notes (and rhythm), or its chords, in the voice chosen above.</p>
           </div>
         </details>
+      <details class="nt-panel" id="nt-dwim" open>
+          <summary><h2>DWIM</h2><span class="nt-sum" id="nt-dwim-sum"></span></summary>
+          <div class="nt-body">
+            <p class="nt-hint" style="margin-top:0">Do what I mean: select bars that were played in (<strong>Play it in time</strong>) and press <strong>DWIM</strong> to see the other ways they could be written, best first. The playing is kept with the chunk, so this keeps working after edits elsewhere, after splitting on a bar line, merging, duplicating, and after a reload.</p>
+            <p class="nt-warn" id="nt-dwim-warn" hidden></p>
+            <div id="nt-dwim-host"></div>
+          </div>
+        </details>
+      <details class="nt-panel" id="nt-cho" open>
+          <summary><h2>ChordPro</h2></summary>
+          <div class="nt-body">
+            <p class="nt-hint" style="margin-top:0">The chords and words of the piece, and at the end the notes as an ABC block (<code>{start_of_abc}</code> … <code>{end_of_abc}</code>), so this text is the whole song. Edit the words or the ABC here and the piece follows. ChordPro without an ABC block has no rhythm or notes: reading it in replaces the piece with its chords (one a bar, or as the <kbd>|</kbd> marks say) and words.</p>
+            <textarea id="nt-cho-text" spellcheck="false" aria-label="ChordPro"></textarea>
+            <div class="nt-row">
+              <button type="button" class="nt-btn" id="nt-cho-read">Read this ChordPro in</button>
+              <button type="button" class="nt-btn" id="nt-cho-copy">Copy</button>
+            </div>
+            <p class="nt-warn" id="nt-cho-warn" hidden></p>
+          </div>
+        </details>
+      <details class="nt-panel" id="nt-rec" open>
+          <summary><h2>Recording</h2><span class="nt-sum" id="nt-rec-sum"></span></summary>
+          <div class="nt-body">
+            <div id="nt-rec-mount"></div>
+            <div class="nt-row">
+              <div class="nt-field"><label for="nt-rec-sec">Go to section</label><select id="nt-rec-sec" disabled><option value="">(open a song file)</option></select></div>
+              <label class="nt-through"><input type="checkbox" id="nt-rec-click" checked> Choosing a chunk moves the recording</label>
+              <label class="nt-through"><input type="checkbox" id="nt-rec-follow"> The band follows the recording&rsquo;s tempo</label>
+            </div>
+            <p class="nt-hint">Open the song file from Timestamp Notes (or a bar map) and its recording. A chunk&rsquo;s first bar is taken to be the map&rsquo;s bar of the same number (a Pickup chunk is not a bar); the number box shifts that. With the band following, Play uses the map&rsquo;s tempo bar by bar instead of the piece&rsquo;s.</p>
+            <p class="nt-hint" id="nt-rec-note" role="status"></p>
+          </div>
+        </details>
+      <details class="nt-panel" id="nt-loop" open>
+          <summary><h2>Loop chunks</h2><span class="nt-sum" id="nt-loop-sum"></span></summary>
+          <div class="nt-body">
+            <div class="nt-row">
+              <div class="nt-field"><label for="nt-loop-mode" title="Listen: the recording. Play along: the recording and you, each pass a take. Play alone: the recording silent, a click, each pass a take. Listen, then play: the two by turns.">Loop</label><select id="nt-loop-mode"><option value="listen">Listen</option><option value="along">Play along</option><option value="alone">Play alone (click)</option><option value="cycle">Listen, then play</option></select></div>
+              <button type="button" class="nt-btn" id="nt-loop-go">Loop this chunk</button>
+            </div>
+            <ol class="nt-loop-rows" id="nt-loop-rows"></ol>
+            <p class="nt-hint" id="nt-loop-empty">Open the song file from Timestamp Notes in the Recording part: each chunk is found in the recording through its section, and loops from its <b>lead-in</b> to its <b>stop</b>.</p>
+            <p class="nt-hint">Keys: <kbd>\</kbd> then <kbd>p</kbd> loop on/off, <kbd>,</kbd> <kbd>.</kbd> the chunk before / after, <kbd>-</kbd> <kbd>=</kbd> lead-in, <kbd>{</kbd> <kbd>}</kbd> stop, <kbd>m</kbd> loop mode, <kbd>Space</kbd> play/pause, <kbd>a</kbd> this chunk again. Every pass you play is a take of the chunk (Play it in's settings: split, left hand); run on past the stop and the next chunks get drafts. A split or joined chunk keeps its timing: it comes from the bars. ≈: the map has no such section (its bar number is used); ⚠: the section's bars here and in the map differ.</p>
+            <p class="nt-hint" id="nt-loop-note" role="status"></p>
+          </div>
+        </details>
+
+
+
+
+
+
+
     </aside>
     <nav class="nt-nav" aria-label="Sections on this page">
+      <button type="button" class="nt-nav-fold" id="nt-nav-fold" title="Hide this list (the button stays to bring it back)" aria-expanded="true">&raquo;</button>
       <p>On this page</p>
       <ul id="nt-nav"></ul>
-      <p class="nt-nav-tip">Shift+click: fold the rest. Drag a part's &#10303; grip, or click &#8644;, to move it to the other column.</p>
+      <div class="nt-nav-all"><button type="button" class="nt-btn" data-all="show">Show all</button><button type="button" class="nt-btn" data-all="hide">Hide all</button></div>
+      <p class="nt-nav-tip">&times; or the eye hides a part; its name brings it back. Shift+click a name: show only that part. Drag a part's &#10303; grip, or click &#8644;, to move it to the other column.</p>
       <button type="button" class="nt-btn nt-reset-cols" title="Every part back in the column it started in">Reset columns</button>
     </nav>
   </div>
@@ -695,7 +723,7 @@
   // ---- sections: collapsible, with the jump bar --------------------------------------------------------------------
   // every part moves between the two columns (panel-columns.js), first, so the sidebar lists them where they are
   if (!ENDING && window.PanelColumns) PanelColumns.init({ columns: [document.querySelector("#nt-root .nt-main"), document.querySelector("#nt-root .nt-side")],
-    panels: "details.nt-panel", key: "ntColumns", reset: document.querySelector("#nt-root .nt-reset-cols") });
+    panels: "details.nt-panel", key: "ntColumns2", reset: document.querySelector("#nt-root .nt-reset-cols") });
   var panels = Array.prototype.slice.call(document.querySelectorAll("#nt-root details.nt-panel"));
   document.addEventListener("panelcolumns:move", function () {
     panels.slice().sort(function (a, b) { return a.compareDocumentPosition(b) & 4 ? -1 : 1; })
@@ -703,13 +731,29 @@
   });
   var shut = {}; try { shut = JSON.parse(localStorage.getItem(OPEN) || "{}"); } catch (e) {}
   if (ENDING) panels = panels.filter(function (p) { return getComputedStyle(p).display !== "none"; });
+  // parts hide (× in the header, the eye in the list; kept in localStorage ntHidden) as on Timestamp Notes
+  var HID = OPEN.replace("Open", "Hidden"), gone = {}; try { gone = JSON.parse(localStorage.getItem(HID) || "{}") || {}; } catch (e) {}
+  function showPart(p, show) {
+    p.classList.toggle("nt-gone", !show); gone[p.id] = !show;
+    try { localStorage.setItem(HID, JSON.stringify(gone)); } catch (e) {}
+    var a = document.querySelector('#nt-nav a[data-for="' + p.id + '"]'); if (a) { a.classList.toggle("is-shut", !show || !p.open); var e = a.nextSibling; e.textContent = show ? "\u00d7" : "+"; e.title = show ? "Hide this part" : "Show this part"; }
+    if (show) { window.dispatchEvent(new Event("resize")); if (p.open) render(); }
+  }
   panels.forEach(function (p) {
     if (shut[p.id]) p.open = false;
-    var li = document.createElement("li"), a = document.createElement("a");
+    var li = document.createElement("li"), a = document.createElement("a"), eye = document.createElement("button");
     a.href = "#" + p.id; a.textContent = p.querySelector("summary h2").textContent; a.dataset.for = p.id;
-    a.title = "Shift+click: open this and fold every other section";
-    a.onclick = function (e) { e.preventDefault(); if (e.shiftKey) panels.forEach(function (o) { if (o !== p) o.open = false; }); jump(p.id); };
-    li.appendChild(a); $("nt-nav").appendChild(li);
+    a.title = "Show it and go there · Shift+click: show only this part";
+    a.onclick = function (e) { e.preventDefault(); if (e.shiftKey) panels.forEach(function (o) { if (o !== p) showPart(o, false); }); showPart(p, true); if (!p.open) p.open = true; jump(p.id); };
+    eye.type = "button"; eye.className = "nt-eye2";
+    eye.onclick = function () { showPart(p, p.classList.contains("nt-gone")); eye.blur(); };
+    li.appendChild(a); li.appendChild(eye); $("nt-nav").appendChild(li);
+    var x = document.createElement("button");
+    x.type = "button"; x.className = "nt-x"; x.textContent = "\u00d7"; x.title = "Hide this part (the list on the right brings it back)";
+    x.setAttribute("aria-label", "Hide " + a.textContent);
+    x.addEventListener("click", function (e) { e.preventDefault(); e.stopPropagation(); showPart(p, false); });
+    p.querySelector("summary").appendChild(x);
+    setTimeout(function () { showPart(p, !gone[p.id]); });
     p.addEventListener("toggle", function () {
       shut[p.id] = !p.open; try { localStorage.setItem(OPEN, JSON.stringify(shut)); } catch (e) {}
       a.classList.toggle("is-shut", !p.open);
@@ -717,6 +761,16 @@
     });
     a.classList.toggle("is-shut", !p.open);
   });
+  document.querySelectorAll("#nt-root .nt-nav-all [data-all]").forEach(function (b) {
+    b.onclick = function () { panels.forEach(function (p) { showPart(p, b.dataset.all === "show"); }); b.blur(); };
+  });
+  (function () {   // the list itself folds away, remembered (ntNavOff)
+    var root = document.getElementById("nt-root"), btn = document.getElementById("nt-nav-fold");
+    function set(off) { root.classList.toggle("nt-nav-off", off); btn.setAttribute("aria-expanded", String(!off)); btn.title = off ? "Show the list of parts" : "Hide this list (the button stays to bring it back)"; }
+    var off = false; try { off = localStorage.getItem("ntNavOff") === "1"; } catch (e) {}
+    set(off);
+    btn.onclick = function () { off = !root.classList.contains("nt-nav-off"); set(off); try { localStorage.setItem("ntNavOff", off ? "1" : "0"); } catch (e) {} btn.blur(); window.dispatchEvent(new Event("resize")); };
+  })();
   function jump(id) {
     var p = $(id); p.open = true;
     p.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -2811,6 +2865,13 @@
       $("nt-q-key").innerHTML = options(KEYS, "C (not chosen)", KEYNAME);
     }
     setSel($("nt-q-meter"), doc.meter || ""); setSel($("nt-q-key"), doc.keyConfirmed && doc.key ? doc.key : "");
+    // a clear page asks for a meter and a key: the banner above, and the same two fields marked in The piece and Play it in
+    if (!$("nt-need-meter").options.length) { $("nt-need-meter").innerHTML = options(METERS, "Choose"); $("nt-need-key").innerHTML = options(KEYS, "Choose", KEYNAME); }
+    var noM = !doc.meter, noK = !(doc.keyConfirmed && doc.key);
+    $("nt-need").hidden = !(noM || noK) || DICT || ENDING || STAGE;
+    setSel($("nt-need-meter"), doc.meter || ""); setSel($("nt-need-key"), noK ? "" : doc.key);
+    ["nt-meter", "nt-q-meter"].forEach(function (id) { $(id).closest(".nt-field").classList.toggle("nt-want", noM); });
+    ["nt-key", "nt-q-key"].forEach(function (id) { $(id).closest(".nt-field").classList.toggle("nt-want", noK); });
     ["into", "count", "res", "feel", "trip", "quiet", "split", "lh"].forEach(function (k) { $("nt-q-" + k).value = Q[k]; });
     if (document.activeElement !== $("nt-q-bpm")) $("nt-q-bpm").value = takeBpm();
     qPickupOptions();
@@ -3350,6 +3411,7 @@
     var name = ((doc.title || "untitled").trim().replace(/[^\w\- ]+/g, "").replace(/\s+/g, "-") || "untitled") + ".notation.json";
     var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([body], { type: "application/json" })); a.download = name;
     document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+    savedAs = JSON.stringify(doc);
     status("Saved " + name + ".");
     this.blur();
   };
@@ -3362,10 +3424,17 @@
       try { var j = JSON.parse(txt); nd = j && j.kind === "notation-doc" ? j.doc : j && j.chunks ? j : null; } catch (e) { if (/^\s*(X:|M:|L:|K:|T:)/m.test(txt)) nd = D.fromAbc(txt); }
       if (!nd || !nd.chunks) { status("That file isn't a piece saved from this page (or ABC)."); return; }
       change(function () { doc = D.upgrade(JSON.parse(JSON.stringify(nd))); cur = 0; voice = 0; sel = null; shownCur = -1; });
+      savedAs = JSON.stringify(doc);
       status("Opened " + f.name + ".");
     });
   };
-  $("nt-new").onclick = function () { if (confirm("Clear everything and start over?")) change(function () { doc = D.create(); cur = 0; voice = 0; sel = null; guessRefused = null; shownCur = -1; }); };
+  var savedAs = null;   // the piece as last saved to a file (Start over doesn't ask when nothing changed since; u undoes it anyway)
+  $("nt-new").onclick = function () {
+    var now = JSON.stringify(doc), blank = now === JSON.stringify(D.create());
+    if (!blank && now !== savedAs && !confirm("Clear everything and start over? (Not saved to a file since the last change; u undoes this.)")) return;
+    status("Started over (u brings the piece back).");
+    change(function () { doc = D.create(); cur = 0; voice = 0; sel = null; guessRefused = null; shownCur = -1; });
+  };
   document.querySelectorAll("[data-go]").forEach(function (b) {
     b.onclick = function () { jump(b.dataset.go); if (b.dataset.go === "nt-abc") $("nt-abc-text").focus({ preventScroll: true }); else b.blur(); };
   });
@@ -3680,6 +3749,8 @@
   $("nt-q-go").onclick = function () { if (rec) stopTake(); else quickStart(false); this.blur(); };
   $("nt-q-redo").onclick = function () { quickRedo(); this.blur(); };
   $("nt-q-drop").onclick = function () { quickDrop(); this.blur(); };
+  $("nt-need-meter").onchange = function () { var v = this.value || null; change(function () { doc.meter = v; }); this.blur(); };
+  $("nt-need-key").onchange = function () { var v = this.value; change(function () { doc.key = v || null; doc.keyConfirmed = !!v; }); this.blur(); };
   $("nt-q-meter").onchange = function () { var v = this.value || null; change(function () { doc.meter = v; }); this.blur(); };
   $("nt-q-key").onchange = function () { var v = this.value; change(function () { doc.key = v || null; doc.keyConfirmed = !!v; }); this.blur(); };
   $("nt-tempo").onchange = function () { var v = Math.round(+this.value) || null; if (v) v = Math.max(20, Math.min(320, v)); change(function () { doc.tempo = v; }); this.blur(); };

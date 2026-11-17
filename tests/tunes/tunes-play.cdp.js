@@ -76,11 +76,51 @@ const U = "http://127.0.0.1:8564";
   await ev(`document.getElementById('tp-hear').value = 'both', AbcPlay.stop(), stopTune(), 0`);
   check("a new tune stops playback", await ev(`(document.getElementById('tp-play').click(), 0)`) === 0 && await wait(`!!AbcPlay.playing()`, 60) &&
     await ev(`(document.querySelector('.next').click(), pickTune(), !AbcPlay.playing())`));
+  // Show: the chord grid
+  await ev(`(document.getElementById('tn-show').value = 'both', tnShow(), 0)`);
+  check("Both: score and grid shown, bars drawn", await wait(`document.querySelectorAll('#tn-grid [class*=tc-]').length > 4 && !document.getElementById('tn-grid').hidden && document.getElementById('paper').style.display !== 'none'`));
+  check("the choice is remembered", await ev(`localStorage.getItem('tunesView') === 'both'`));
+  const g0 = await ev(`document.getElementById('tn-grid').textContent.replace(/\\s+/g,' ')`);
+  await ev(`(document.getElementById('vis-transpose').value = '2', setTune(false), 0)`);
+  check("the grid follows the Key menu", await wait(`document.getElementById('tn-grid').textContent.replace(/\\s+/g,' ') !== ${JSON.stringify(g0)}`));
+  await ev(`(document.getElementById('vis-transpose').value = '0', setTune(false), 0)`);
+  await ev(`(document.getElementById('tn-show').value = 'grid', tnShow(), 0)`);
+  check("Chord grid: the score is hidden", await ev(`document.getElementById('paper').style.display === 'none' && !document.getElementById('tn-grid').hidden`));
+  await ev(`document.getElementById('tp-from').value = 1; document.getElementById('tp-hear').value = 'both'; document.getElementById('tp-play').click(), 0`);
+  check("the playing bar is lit in the grid", await wait(`document.querySelectorAll('#tn-grid .tc-live').length === 1`, 120));
+  await ev(`stopTune(), 0`);
+  check("Stop clears the lit bar", await wait(`document.querySelectorAll('#tn-grid .tc-live').length === 0`, 20));
+  await ev(`(document.getElementById('tn-show').value = 'score', tnShow(), 0)`);
+  check("Score again: drawn at width", await wait(`document.getElementById('paper').style.display !== 'none' && document.getElementById('tn-grid').hidden && document.querySelectorAll('#paper .abcjs-note').length > 10`));
   // a rhythm chant (one pitch, no chords) on a one-line staff
   await b.goto(U + "/practice/tunes.html?tune=duple-acculturation"); await b.sleep(800);
   check("a chant is drawn on one staff line", await wait(`document.querySelectorAll('#paper .abcjs-note').length > 10`) &&
     await ev(`!!chant(abc[currentTune]) && cur.transpose === -4 && document.querySelectorAll('#paper .abcjs-staff path').length > 0 && !document.querySelector('#paper .abcjs-clef[data-name="treble"], #paper .abcjs-key-signature path')`));
+  check("a tune with no chords: option says no chords, score shown", await ev(`document.getElementById('tn-show-hint').textContent === 'no chords' && document.getElementById('tn-grid').hidden && document.getElementById('paper').style.display !== 'none'`));
   check("a tune is not a chant", await ev(`chant("X:1\\nT:t\\nK:C\\nCDEF|GABc|\\n") === null`));
+  // Layout: Pages across (2026-11-17): systems in white pages in a horizontal strip, ~1.3 pages in view
+  await b.goto(U + "/practice/tunes.html?tune=yankee-doodle");
+  await ev(`Object.defineProperty(window, "getSoundfontUrl", { configurable: true, value: () => Promise.resolve(location.origin + "/sf/") }), 0`);
+  await b.resize(1400, 500); await b.sleep(300);
+  await ev(`document.getElementById('tn-layout').value = 'across', document.getElementById('tn-layout').dispatchEvent(new Event('change')), 0`);
+  check("Pages across: saved, systems in white pages", await wait(`document.querySelectorAll('#paper > .tn-page').length >= 1 && localStorage.getItem('tunesLayout') === 'across' && document.querySelectorAll('#paper .tn-page svg').length >= 1`));
+  const geo = await ev(`(() => { const p = document.getElementById('paper'), g = p.querySelector('.tn-page'); return [p.clientWidth / g.getBoundingClientRect().width, getComputedStyle(g).backgroundColor].join(' | '); })()`);
+  check("a page is about paper width / 1.3", /^1\.[0-4]\d* \| rgb\(255, 255, 255\)$/.test(geo), geo);
+  const np = await ev(`document.querySelectorAll('#paper > .tn-page').length`);
+  if (np > 1) {
+    check("scrolls horizontally (more pages than fit)", await ev(`document.getElementById('paper').scrollWidth > document.getElementById('paper').clientWidth`));
+    await ev(`document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true })), 0`);
+    check("the right arrow turns a page", await wait(`document.getElementById('paper').scrollLeft > 50`, 30));
+    await ev(`document.getElementById('tn-prev').click(), 0`);
+    check("the left button turns back", await wait(`document.getElementById('paper').scrollLeft < 5`, 30));
+  } else console.log("note: tune fits one page; turning not tested");
+  await ev(`(() => { document.getElementById('tp-from').value = 1; const n = document.querySelectorAll('#paper .abcjs-note'); n[n.length - 3].dispatchEvent(new MouseEvent('mousedown', { bubbles: true })); n[n.length - 3].dispatchEvent(new MouseEvent('mouseup', { bubbles: true })); })(), 0`);
+  check("clicking a note still sets From bar", await wait(`+document.getElementById('tp-from').value > 1`, 20));
+  await ev(`(document.getElementById('tp-from').value = 1, document.getElementById('tp-play').click(), 0)`);
+  check("Pages across: notes light while playing", await wait(`document.querySelectorAll('#paper .tn-page .abc-on').length > 0`, 60));
+  await ev(`document.getElementById('tp-stop').click(), 0`);
+  await ev(`document.getElementById('tn-layout').value = 'down', document.getElementById('tn-layout').dispatchEvent(new Event('change')), 0`);
+  check("Scroll down again: no pages", await wait(`!document.querySelector('#paper .tn-page') && !document.getElementById('paper').classList.contains('tn-across') && document.querySelectorAll('#paper .abcjs-note').length > 10`));
   await b.close(); srv.close();
   console.log(fails ? fails + " failed" : "all ok"); process.exit(fails ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(1); });

@@ -862,6 +862,11 @@ document.addEventListener('DOMContentLoaded', async function () {
         .tn-about p { margin: .3rem 0; }
         .highlight { fill: #0057b7; }
         .abcjs-cursor { stroke: red; stroke-width: 4; }
+        /* Layout "Pages across": the drawn systems cut into white pages in a horizontal strip, 1.3 pages in view (apps/shared/full-score.js's paged mode, simplified) */
+        #paper.tn-across { width: 100%; max-width: 100%; box-sizing: border-box; background: none; box-shadow: none; padding: 0; display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x proximity; border: 0; }
+        #paper.tn-across .tn-page { flex: 0 0 auto; box-sizing: border-box; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.25); padding: .6rem .5rem; scroll-snap-align: start; }
+        #tn-nav { display: none; gap: .5rem; align-items: center; margin: .3rem 0; }
+        #tn-nav.on { display: flex; }
         #tn-bar label { margin-right: .3rem; font-size: .8rem; opacity: .8; }
         #tn-bar select, .playbar-pop select { max-width: 12rem; }
         #tn-bar input[type=number], .playbar-pop input[type=number] { width: 4.2rem; }
@@ -981,6 +986,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         function playBtn() {
             const b = document.getElementById("tp-play"); if (b) b.textContent = playing ? "⏸ Pause" : paused != null ? "▶ Resume" : "▶ Play";
             const s = document.getElementById("tp-stop"); if (s) s.disabled = !playing && paused == null;
+            if (!playing && tnChart) tnChart.setLive(-1);
         }
         function halt() { wantLoop = false; if (playing) { const p = playing; playing = null; p.stop(); } pos = null; playBtn(); }
         function stopTune() { paused = null; halt(); }
@@ -1020,7 +1026,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 light: OPT.light,
                 fromBar: from,
                 onStart: function (c) { if (pos && c && c.ac) { pos.ac = c.ac; pos.t0 = c.t0; } },
-                onBar: function (info) { if (pos && info.bar >= 0) pos.bar = info.bar; },
+                onBar: function (info) { if (pos && info.bar >= 0) pos.bar = info.bar; tnLive(info.bar); },
                 onEnd: function () {
                     if (playing !== me) return;
                     playing = null; pos = null; paused = null; playBtn();
@@ -1130,11 +1136,11 @@ document.addEventListener('DOMContentLoaded', async function () {
             const one = (f) => all(f).join("; ");
             const id = (/^%%id\s+(\S+)/m.exec(t) || [])[1], tags = (/^%%tags\s+(.+)$/m.exec(t) || [])[1];
             const w = id && window.Works ? Works.of("tune", id) : null;
-            const rows = [["Composer", one("C") || (w && w.composer) || ""], ["Origin", one("O")], ["Source", one("S")], ["Transcribed by", one("Z")],
+            const rows = [["Composer", one("C") || (w && w.composer) || ""], ["Origin", one("O")], ["Source", one("S")], ["Transcribed by", one("Z")], ["Book", one("B")],
                 ["Year", w && Works.year ? Works.year(w) : ""], ["Rhythm", one("R")], ["Meter", one("M")], ["Key", one("K")], ["Tempo", one("Q")],
                 ["Collection", document.getElementById("collection-selector").value], ["Tags", tags || ""],
                 ["In print", w && w.in && w.in.print && Works.printLabel ? w.in.print.map(Works.printLabel).join("; ") : ""]].filter((r) => r[1]);
-            const notes = all("N").concat(all("D"));
+            const notes = all("N").concat(all("D"), all("H"));
             const q = id && window.TUNE_QUALITY && TUNE_QUALITY[id];
             const fl = window.SongFlags && SongFlags.of(one("T"));
             box.innerHTML = (fl ? `<p class="site-hint"><b>⚑ ${esc(fl.note)}.</b> The site keeps it because the MLT and band books use it, but does not use it as a lesson example.</p>` : "") + (q ? `<p class="site-hint"><b>⚠ This ABC is probably wrong</b> (predicted by scripts/tune-quality.mjs): ${esc(q.r.join("; "))}. The "Edit the ABC" panel can fix it.</p>` : "") +
@@ -1161,6 +1167,9 @@ document.addEventListener('DOMContentLoaded', async function () {
             abcString = abcString.join("\n");
             // a rhythm chant (every note one pitch, no chords) is drawn on a one-line rhythm staff, as the DMTI pages draw rhythm,
             // and still sounds at its written pitch (moved by the Key menu); octave and instrument do not apply to it
+            // the header lines abcjs prints under the score (N: notes, S: source, Z: transcription, D: discography, H: history, B: book)
+            // are shown in the About / notes panel instead
+            abcString = abcString.replace(/^[NSZDHB]:.*\n?/gm, "");
             const ch = chant(abcString);
             if (ch) { abcString = ch.abc; visualTransposeHalfSteps = 0; }
 
@@ -1169,8 +1178,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 clickListener: tuneClick,
                 responsive: "resize",
                 visualTranspose: visualTransposeHalfSteps,
-                // a larger title; the N: / S: lines under the score ("Notes: Source: …") small, since the About panel has them too
-                format: { titlefont: '"Times New Roman" 23', historyfont: '"Times New Roman" 7' },
+                format: { titlefont: '"Times New Roman" 23' },   // a larger title
                 // Line widths. A line of words can need more room than the 740 every line is fitted to; abcjs then let that line
                 // run past the others' right edge (by-the-break-of-day's second line). expandToWidest lays every line out again
                 // at the widest one's width. minPadding: the least space between notes when there are words under them
@@ -1178,6 +1186,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                 expandToWidest: true
             };
             if (/^w:/m.test(abcString)) abcOptions.minPadding = 7;
+            document.getElementById("paper").style.display = "";   // drawn while shown (a hidden box has no width); tnGrid hides it again
+            layoutOptions(abcOptions);
 
             const wasPlaying = !!playing;
             const w0id = (/^%%id\s+(\S+)/m.exec(abc[currentTune]) || [])[1];
@@ -1185,6 +1195,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             if (userAction) document.getElementById("tp-from").value = 1;
             if (!fromEditor) editorFor();
             const visualObj = ABCJS.renderAbc("paper", abcString, abcOptions)[0];
+            paginate();
             if (window.Works) Works.mount(document.getElementById("tune-works"), "tune", (/^%%id\s+(\S+)/m.exec(abc[currentTune]) || [])[1]);
             const resNone = () => { const n = document.querySelector(".tn-res-none"); if (n) n.hidden = !document.getElementById("tune-works").hidden || !document.getElementById("tune-recsync").hidden; };
             setTimeout(resNone, 0); setTimeout(resNone, 1500);
@@ -1200,7 +1211,80 @@ document.addEventListener('DOMContentLoaded', async function () {
             if (userAction || !bpm.value) bpm.value = Math.round(baseQpm(visualObj));   // the tune's own Q: (100 when it has none)
             about();
             openLinks(w0id);
+            tnGrid();
             if (wasPlaying && !userAction) playTune();   // an option changed while playing: carry on with it
+        }
+
+        // ---- Layout: "Scroll down" (one drawing that fills the paper) or "Pages across" (tunesLayout) ----
+        // Across: abcjs draws at a fixed staffwidth, one svg per system (oneSvgPerLine); paginate() moves those systems into
+        // white .tn-page boxes of equal height in a horizontal strip, each paperWidth/1.3 wide so a page and the start of the
+        // next show. The systems are moved, not copied, so clicking and the lit notes (.abc-on) still work. Arrow keys and the
+        // buttons turn a page; while playing, the strip scrolls to the page holding the lit notes.
+        function layoutMode() { let m = null; try { m = localStorage.getItem("tunesLayout"); } catch (e) {} return m === "across" ? "across" : "down"; }
+        let pageW = 0;
+        function layoutOptions(o) {
+            const paper = document.getElementById("paper"), on = layoutMode() === "across";
+            paper.classList.toggle("tn-across", on);
+            document.getElementById("tn-nav").classList.toggle("on", on);
+            if (!on) return;
+            paper.removeAttribute("style");   // the inline size abcjs leaves from a responsive drawing
+            pageW = Math.max(260, Math.floor(paper.clientWidth / 1.3) - 16);
+            delete o.responsive; delete o.expandToWidest; o.wrap = { minSpacing: 1.4, maxSpacing: 2.7, preferredMeasuresPerLine: 4 }; o.oneSvgPerLine = true; o.staffwidth = pageW - 24; o.scale = 1;
+        }
+        function pages() { return [...document.querySelectorAll("#paper > .tn-page")]; }
+        function paginate() {
+            const paper = document.getElementById("paper");
+            if (layoutMode() !== "across") return;
+            const lines = [...paper.children].filter((c) => !c.classList.contains("tn-page"));
+            const H = Math.max(360, Math.min(window.innerHeight - 160, Math.round(pageW * 1.3)));
+            lines.forEach((l) => paper.removeChild(l));
+            let page = null, used = 0;
+            lines.forEach((l) => {
+                paper.appendChild(l);   // measured in place
+                const h = l.getBoundingClientRect().height;
+                paper.removeChild(l);
+                if (!page || (used + h > H && used > 0)) {
+                    page = document.createElement("div"); page.className = "tn-page site-paper"; page.style.width = pageW + "px"; page.style.height = H + "px"; page.style.overflow = "hidden";
+                    paper.appendChild(page); used = 0;
+                }
+                page.appendChild(l); used += h;
+            });
+            paper.scrollLeft = 0; navState();
+        }
+        function curPage() {
+            const ps = pages(), x = document.getElementById("paper").scrollLeft; let k = 0;
+            ps.forEach((p, i) => { if (p.offsetLeft - ps[0].offsetLeft <= x + 20) k = i; });
+            return k;
+        }
+        function goPage(k) {
+            const ps = pages(); if (!ps.length) return;
+            k = Math.max(0, Math.min(ps.length - 1, k));
+            document.getElementById("paper").scrollTo({ left: ps[k].offsetLeft - ps[0].offsetLeft, behavior: "smooth" });
+            const n = document.getElementById("tn-pg"); if (n) n.textContent = "Page " + (k + 1) + " of " + ps.length;
+        }
+        function navState() { const ps = pages(), n = document.getElementById("tn-pg"); if (n) n.textContent = ps.length ? "Page " + (curPage() + 1) + " of " + ps.length : ""; }
+        function setLayout(m) {
+            try { localStorage.setItem("tunesLayout", m); } catch (e) {}
+            if (document.getElementById("tn-layout").value !== m) document.getElementById("tn-layout").value = m;
+            if (cur) setTune(false);
+        }
+        function initLayout() {
+            const sel = document.getElementById("tn-layout"); sel.value = layoutMode();
+            sel.addEventListener("change", () => setLayout(sel.value));
+            document.getElementById("tn-prev").addEventListener("click", () => goPage(curPage() - 1));
+            document.getElementById("tn-next").addEventListener("click", () => goPage(curPage() + 1));
+            const paper = document.getElementById("paper");
+            paper.addEventListener("scroll", navState);
+            document.addEventListener("keydown", (e) => {
+                if (layoutMode() !== "across" || e.altKey || e.ctrlKey || e.metaKey || !/^Arrow(Left|Right)$/.test(e.key)) return;
+                if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable) return;
+                e.preventDefault(); goPage(curPage() + (e.key === "ArrowRight" ? 1 : -1));
+            });
+            new MutationObserver(() => {
+                if (layoutMode() !== "across" || !playing) return;
+                const on = paper.querySelector(".abc-on"), pg = on && on.closest(".tn-page");
+                if (pg) { const k = pages().indexOf(pg); if (k >= 0 && k !== curPage()) goPage(k); }
+            }).observe(paper, { attributes: true, attributeFilter: ["class"], subtree: true });
         }
 
         // A rhythm chant: the music lines (not the header, w: words, "chords" or !decorations!) hold one pitch only, at least four
@@ -1233,6 +1317,35 @@ document.addEventListener('DOMContentLoaded', async function () {
             box.querySelector(".tn-to-dir").href = "/practice/tune-directory.html#" + encodeURIComponent(w ? w.id : id);
         }
 
+        // Show: the score, the chord grid (TuneChart.render, as on the Backing Track page), or both. The grid is in its own paper box
+        // (#tn-grid), in the Key menu's key, and lights the bar the band is playing. A tune with no chord symbols has no grid.
+        let tnChart = null;
+        function tnView() { let v = "score"; try { v = localStorage.getItem("tunesView") || "score"; } catch (e) {} return ["score", "grid", "both"].includes(v) ? v : "score"; }
+        function tnGrid() {
+            const sel = document.getElementById("tn-show"), box = document.getElementById("tn-grid"), paper = document.getElementById("paper"); if (!sel || !box) return;
+            const has = !!window.AbcPlay && AbcPlay.hasChords(abc[currentTune] || "");
+            sel.querySelectorAll("option").forEach((o) => { if (o.value !== "score") o.disabled = !has; });
+            const hint = document.getElementById("tn-show-hint"); if (hint) hint.textContent = has ? "" : "no chords";
+            const mode = has ? sel.value : "score";
+            paper.style.display = mode === "grid" ? "none" : ""; box.hidden = mode === "score"; box.style.display = mode === "score" ? "none" : "";
+            if (mode === "score" || !window.AbcPlay) return;
+            const text = abc[currentTune], semis = parseInt(document.getElementById("vis-transpose").value) || 0;
+            AbcPlay.load().then(() => {
+                if (text !== abc[currentTune]) return;
+                const parsed = TuneChart.parse(text);
+                if (tnChart && box.firstChild) { tnChart.setTune(parsed); tnChart.setTranspose(semis, true); }
+                else { box.innerHTML = ""; tnChart = TuneChart.render(box, parsed, { header: false, preferFlats: true, transpose: semis }); }
+                box.setAttribute("data-bars", String(parsed.bars.length));
+            }).catch(() => {});
+        }
+        function tnShow() {
+            try { localStorage.setItem("tunesView", document.getElementById("tn-show").value); } catch (e) {}
+            const wasHidden = document.getElementById("paper").style.display === "none";
+            tnGrid();
+            if (wasHidden && document.getElementById("tn-show").value !== "grid" && cur) setTune(false);   // the score was drawn while hidden (no width): draw it again
+        }
+        function tnLive(bar) { const g = document.getElementById("tn-grid"); if (tnChart && g && !g.hidden) tnChart.setPlayMeasure(bar); }
+
         function next() {
             currentTune = (parseInt(currentTune) + 1) % abc.length;
             document.getElementById("tune-selector").value = currentTune;
@@ -1246,7 +1359,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     </script>
 
 <div id="tunes-root">
-    <div id="paper" class="site-paper"></div>
+    <div id="tn-nav"><button type="button" id="tn-prev" aria-label="Previous page">‹</button><button type="button" id="tn-next" aria-label="Next page">›</button><span id="tn-pg" class="site-hint"></span></div>
+        <div id="paper" class="site-paper"></div>
+    <div id="tn-grid" class="site-paper" hidden="" aria-label="Chord grid"></div>
     <div class="tn-side" id="tn-side" role="complementary" aria-label="The tune and what goes with it">
         <details class="site-panel" id="tn-pick" open="">
             <summary>Tune</summary>
@@ -1255,6 +1370,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                 <select id="tune-selector" aria-label="Tune" onchange="pickTune()"></select>
                 <button type="button" class="next">Next tune</button>
             </div>
+            <p class="tn-pick"><label for="tn-show">Show</label><select id="tn-show" aria-label="Show the score, the chord grid or both"><option value="score">Score</option><option value="grid">Chord grid</option><option value="both">Both</option></select> <span class="site-hint" id="tn-show-hint"></span></p>
+            <p class="tn-pick"><label for="tn-layout">Layout</label><select id="tn-layout"><option value="down">Scroll down</option><option value="across">Pages across</option></select></p>
             <p class="tn-open" id="tn-open"><a class="tn-to-notation" href="../tools/notation.html">✎ Open in Notation</a><a class="tn-to-band" href="../tools/backing-track.html">♫ Backing Track</a><a class="tn-to-dir" href="../practice/tune-directory.html">Tune Directory</a></p>
             <p class="site-hint">Click a note to hear it and to play from its bar.</p>
         </details>
@@ -1321,7 +1438,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     <script src="../apps/shared/audio.js?v=10"></script>
     <script src="../apps/shared/establish-button.js?v=1"></script>
     <script>
+        (function () { const sh = document.getElementById("tn-show"); sh.value = tnView(); sh.addEventListener("change", tnShow); })();
         load();
+        initLayout();
         // the panels into the site's right sidebar (it comes after <main>, so once the page is parsed); back under the score when narrow
         document.body.classList.add("tunes-page");
         function placePanels() {
