@@ -1,5 +1,6 @@
 // The Tunes page plays through AbcPlay (the band's samples), not abcjs's synth: Play / Stop, the band with the chords,
-// the melody sounds menu, From bar set by clicking a note, Space. Render first:
+// the melody sounds menu, From bar set by clicking a note, Space; Play becomes Pause and resumes; Hear (melody / band / both);
+// the score on white paper, the panels in the site's folding right sidebar; "Open in" links; chants on a one-line staff. Render first:
 //   quarto render practice/tunes.qmd
 //   node tests/tunes/tunes-play.cdp.js        (SITE=<dir> tests a render made elsewhere)
 // Samples come from the mirror tests/band/lead/site/sf/ (node tests/band/meter/fetch-samples.js), served here as /sf/.
@@ -22,31 +23,45 @@ const U = "http://127.0.0.1:8564";
   check("the score is drawn", await wait(`document.querySelectorAll('#paper .abcjs-note').length > 10`));
   check("no abcjs player bar", await ev(`!document.querySelector('.abcjs-midi-start') && !!document.getElementById('tp-play')`));
   check("melody sounds menu has the melody instruments", await ev(`['flute','asax','trumpet','piano'].every(v => document.querySelector('#mel-instrument option[value="' + v + '"]'))`));
-  // the page itself (2026-11-11): no Works Cited, no title, two columns when wide, the ABC box visible, a PlayBar with four menus
+  // the page itself (2026-11-17): no Works Cited, no title, the score on white paper, the panels in the site's right sidebar
+  // (it folds from the navbar button), under the score when narrow; no buttons to move panels
   check("no Works Cited block", await ev(`!document.querySelector('.works-cited') && ![...document.querySelectorAll('h2')].some(h => /Works Cited/.test(h.textContent))`));
   check("no page title shown", await ev(`!document.querySelector('#title-block-header') || getComputedStyle(document.querySelector('#title-block-header')).display === 'none'`));
+  check("the score is on white paper", await ev(`getComputedStyle(document.getElementById('paper')).backgroundColor === 'rgb(255, 255, 255)' && document.getElementById('paper').classList.contains('site-paper')`));
   await b.resize(1400, 900); await b.sleep(300);
-  const cols = await ev(`(() => { const m = document.querySelector('.tn-main').getBoundingClientRect(), s = document.querySelector('.tn-side').getBoundingClientRect(); return [Math.round(m.left), Math.round(s.left), Math.round(m.top), Math.round(s.top), m.right <= s.left + 1].join(' | '); })()`);
-  check("two columns at 1400px: notation left, panels right", /\| true$/.test(cols) && +cols.split(' | ')[1] > 600, cols);
+  check("panels in the right sidebar at 1400px", await ev(`document.getElementById('tn-side').parentNode.id === 'quarto-margin-sidebar' && document.getElementById('tn-side').getBoundingClientRect().left > document.getElementById('paper').getBoundingClientRect().right - 1`));
+  check("no move-panel buttons", await ev(`!document.querySelector('.pc-tools, .tn-reset-cols')`));
+  await ev(`document.querySelector('.sidebar-toggle-right').click(), 0`); await b.sleep(200);
+  check("the navbar button folds the panels away", await ev(`document.getElementById('tn-side').getBoundingClientRect().width === 0`));
+  await ev(`document.querySelector('.sidebar-toggle-right').click(), 0`); await b.sleep(200);
   await b.resize(700, 900); await b.sleep(300);
-  check("one column when narrow", await ev(`document.querySelector('.tn-side').getBoundingClientRect().top > document.querySelector('#paper').getBoundingClientRect().bottom - 5`));
+  check("under the score when narrow", await ev(`document.querySelector('.tn-side').getBoundingClientRect().top > document.querySelector('#paper').getBoundingClientRect().bottom - 5`));
   await b.resize(1400, 900); await b.sleep(200);
+  const links = await ev(`['.tn-to-notation', '.tn-to-band'].map(s => new URL(document.querySelector(s).href).pathname + new URL(document.querySelector(s).href).search).join(' ')`);
+  check("Open in Notation / Backing Track links carry the tune", links === "/tools/notation.html?tune=yankee-doodle /tools/backing-track.html?tune=yankee-doodle", links);
   const ta = await ev(`(() => { document.getElementById('tn-edit').open = true; const t = document.querySelector('#tune-abc-edit textarea'); return t ? [t.offsetHeight > 40, /^X:/m.test(t.value), getComputedStyle(t).display].join(' | ') : 'none'; })()`);
   check("Edit the ABC shows the tune in a visible textarea", /^true \| true \| (?!none)/.test(ta), ta);
   check("no tempo slider (BPM box instead, from the tune's Q:)", await ev(`!document.querySelector('#tn-bar input[type=range], .playbar-pop input[type=range]') && +document.getElementById('tp-bpm').value > 0`));
   const sels = await ev(`[...document.querySelectorAll('#tn-bar select, .playbar-pop select')].map(s => s.id).sort().join(',')`);
-  check("only four menus in the bar: instrument, sound, key, octave", sels === "inst-select,key-select,mel-instrument,vis-octaves", sels);
+  check("the bar's menus: hear, instrument, sound, key, octave, band, swing", sels === "inst-select,key-select,mel-instrument,tp-hear,tp-style,tp-swing,vis-octaves", sels);
   check("removed options are gone", await ev(`['accomp','play-tune','bass-clef','show-cursor','show-options','midi-transpose','tp-tempo'].every(id => !document.getElementById(id))`));
   check("the bar is a PlayBar with Play, Stop, From bar and Loop", await ev(`document.getElementById('tn-bar').classList.contains('playbar') && ['tp-play','tp-stop','tp-from','tp-loop'].every(id => document.getElementById(id))`));
   const ab = await ev(`(() => { const d = document.getElementById('tn-about'); return [d.open, /Composer|Meter/.test(d.textContent)].join(' | '); })()`);
   check("About / notes panel, folded, with the tune's details", ab === "false | true", ab);
   // the tune alone on piano
-  await ev(`OPT.accomp = 'none', 0`);   // the "With the chords" menu is gone; its default (band) is OPT.accomp
+  await ev(`document.getElementById('tp-hear').value = 'melody', 0`);
   await ev(`document.getElementById('tp-play').click(), 0`);
-  check("Play starts AbcPlay", await wait(`!!AbcPlay.playing() && /Stop/.test(document.getElementById('tp-play').textContent)`, 20));
+  check("Play starts AbcPlay and becomes Pause", await wait(`!!AbcPlay.playing() && /Pause/.test(document.getElementById('tp-play').textContent)`, 20));
   check("notes are lit as they sound", await wait(`document.querySelectorAll('#paper .abc-on').length > 0`, 60));
+  check("the melody alone: no band", await ev(`!AbcPlay.playing()._band`));
+  await wait(`nowBar() >= 2`, 80);
   await ev(`document.getElementById('tp-play').click(), 0`);
-  check("Stop stops it", await wait(`!AbcPlay.playing() && /Play/.test(document.getElementById('tp-play').textContent)`, 20));
+  const pz = await ev(`[!AbcPlay.playing(), document.getElementById('tp-play').textContent, paused, document.getElementById('tp-stop').disabled].join(' | ')`);
+  check("Pause stops the sound, remembers the bar, shows Resume, Stop stays on", /^true \| ▶ Resume \| [2-9]\d* \| false$/.test(pz), pz);
+  await ev(`document.getElementById('tp-play').click(), 0`);
+  check("Resume plays from the paused bar", await wait(`!!AbcPlay.playing() && paused == null && nowBar() >= 2`, 20));
+  await ev(`document.getElementById('tp-play').click(), document.getElementById('tp-stop').click(), 0`);
+  check("Stop after a pause forgets it", await wait(`!AbcPlay.playing() && paused == null && /▶ Play/.test(document.getElementById('tp-play').textContent) && document.getElementById('tp-stop').disabled`, 20));
   // Space
   await ev(`document.activeElement && document.activeElement.blur(), document.dispatchEvent(new KeyboardEvent('keydown', { code: 'Space', bubbles: true })), 0`);
   check("Space plays", await wait(`!!AbcPlay.playing()`, 20));
@@ -55,11 +70,17 @@ const U = "http://127.0.0.1:8564";
   await ev(`(() => { const n = document.querySelectorAll('#paper .abcjs-note'); n[n.length - 3].dispatchEvent(new MouseEvent('mousedown', { bubbles: true })); n[n.length - 3].dispatchEvent(new MouseEvent('mouseup', { bubbles: true })); })(), 0`);
   check("clicking a note sets From bar", await wait(`+document.getElementById('tp-from').value > 1`, 20), await ev(`document.getElementById('tp-from').value`));
   // the band with the chords (Yankee Doodle has chord symbols)
-  await ev(`document.getElementById('tp-from').value = 1; OPT.accomp = 'band'; document.getElementById('tp-play').click(), 0`);
-  check("the band plays the chords", await wait(`!!(AbcPlay.playing() && AbcPlay.playing()._band)`, 120));
-  await ev(`AbcPlay.stop(), 0`);
+  await ev(`document.getElementById('tp-from').value = 1; document.getElementById('tp-hear').value = 'band'; document.getElementById('tp-play').click(), 0`);
+  check("Band only: the band plays the chords", await wait(`!!(AbcPlay.playing() && AbcPlay.playing()._band)`, 120));
+  check("Band only: hearing() leaves the melody out", await ev(`JSON.stringify(hearing()) === '{"melody":false,"band":true}'`));
+  await ev(`document.getElementById('tp-hear').value = 'both', AbcPlay.stop(), stopTune(), 0`);
   check("a new tune stops playback", await ev(`(document.getElementById('tp-play').click(), 0)`) === 0 && await wait(`!!AbcPlay.playing()`, 60) &&
     await ev(`(document.querySelector('.next').click(), pickTune(), !AbcPlay.playing())`));
+  // a rhythm chant (one pitch, no chords) on a one-line staff
+  await b.goto(U + "/practice/tunes.html?tune=duple-acculturation"); await b.sleep(800);
+  check("a chant is drawn on one staff line", await wait(`document.querySelectorAll('#paper .abcjs-note').length > 10`) &&
+    await ev(`!!chant(abc[currentTune]) && cur.transpose === -4 && document.querySelectorAll('#paper .abcjs-staff path').length > 0 && !document.querySelector('#paper .abcjs-clef[data-name="treble"], #paper .abcjs-key-signature path')`));
+  check("a tune is not a chant", await ev(`chant("X:1\\nT:t\\nK:C\\nCDEF|GABc|\\n") === null`));
   await b.close(); srv.close();
   console.log(fails ? fails + " failed" : "all ok"); process.exit(fails ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(1); });

@@ -47,6 +47,7 @@
   Timestamp Notes' `nt-goto` a Play it in take goes into that phrase, count-in notes into the bar before; `node tests/abc/phrase-seam.test.js`). It opens the Backing Track
   as a remote window (`bt-load`, `bt-focus`, and `bt-setup` reports back). Tests: `node tests/abc/notation-doc.test.js`,
   `node tests/abc/notation.cdp.js`.
+- `?tune=<%%id>` opens a Tune Library tune (`readIn`, loads `apps/tunes/tunes-object.js` on demand, asks before replacing a piece, then drops `tune` from the address); skipped in Dictation / Ending / Stage modes.
 - Loop chunks (`#nt-loop`, `apps/shared/chunk-loop.js`, `ChunkLoop`): with a song file open in the Recording part, each chunk is found in the
   map through its section (section start + the chunk's bar offset in it, so a split / join / bar added elsewhere moves nothing; ≈ no such
   section in the map, ⚠ the section's bar count differs). Lead-in / stop: `chunk.loop` set here, else the song file's (`model.prefs`, Timestamp

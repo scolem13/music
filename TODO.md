@@ -94,3 +94,12 @@ code into the model, which drops what it can't hold. To clear, cheapest first (e
 - **Print anthologies**: more books via `scripts/print-books/ADDING-A-BOOK.md` when a scan arrives.
 - **Unverified facts** (instrument charts, arpeggiator, polyrhythm, organ) are listed in the header of each data file; check and
   cite in `scripts/works-cited.py`.
+- **Real Book Catalogue: 16 new PDFs** in `~/Downloads/realBooks/real-books-2026-11-17/` (Real Book IV there is the same file
+  as the one already indexed). Index each by `scripts/realbooks/INDEX-SPEC.md`, add to `books.json`, run `build-catalogue.js`,
+  then the Tune Directory's Real Book rows (`scripts/dir-songs/build.py`). New: European Real Book, Latin Real Easy Book, Latin
+  Jazz Standards (has bookmarks), Real Easy Book 2 and 3, Ultimate Country, Ultimate Broadway, Beatles Fake Book, Pat Metheny
+  Songbook, Hal Leonard TV Fake Book, 101x2 New Popular Fake Book. Maybe other copies of indexed books, so compare first: Real
+  Book V (506 pp vs a 400-tune index), New Real Book 3 C Vocal, World's Greatest Fake Book (Sher), Real Vocal Book I+II
+  (old copy probably Vol. I only). Real Easy Book 1 (3 Horn) is the indexed `real-easy-book-c` in its 3-horn version: skip it. Started 2026-11-17 and stopped part-way: four index files in
+  `apps/realbooks/index/` (TV Fake Book 170 entries, Real Easy 2/3 101/63, World's Greatest 207) may be incomplete, so check
+  them before use.

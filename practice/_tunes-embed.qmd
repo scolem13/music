@@ -3,22 +3,47 @@
 	<link rel="stylesheet" href="/apps/shared/abcjs-audio.css">
 	
 	<style>
-		/* two columns when wide (notation left, the panels right; PanelColumns moves panels between them), one when narrow */
-		#tunes-root .tn-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, 26rem); gap: 1.2rem; align-items: start; max-width: 1500px; margin: 0 auto; }
-		
-		#tunes-root .tn-layout > * { grid-column: auto !important; }   /* Quarto puts page-columns on it */
-		#tunes-root .tn-main, #tunes-root .tn-side { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
-		#tunes-root .tn-main.pc-empty, #tunes-root .tn-side.pc-empty { min-height: 6rem; }
-		@media (max-width: 1000px) { #tunes-root .tn-layout { grid-template-columns: minmax(0, 1fr); } }
-		#tunes-root details.tn-panel { border: 1px solid var(--bs-border-color, #dee2e6); border-radius: 6px; padding: .4rem .7rem; background: var(--bs-body-bg, #fff); }
-		#tunes-root details.tn-panel > summary { cursor: pointer; font-weight: 600; }
-		#tunes-root .tn-pick { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin: .4rem 0; }
-		#tunes-root .tn-pick select { max-width: 100%; }
-		#tunes-root .tn-about dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .15rem .8rem; margin: .4rem 0; font-size: .9rem; }
-		#tunes-root .tn-about dt { opacity: .7; font-weight: 400; }
-		#tunes-root .tn-about dd { margin: 0; }
-		#tunes-root .tn-about p { font-size: .9rem; margin: .3rem 0; }
-		#tunes-root .tn-note { font-size: .85rem; opacity: .75; }
+		/* The score on white paper in the page (.site-paper, custom.css); the panels in the site's right sidebar, which folds from
+		   its navbar button like every other page's (placed there by placePanels below); under the score when the screen is narrow. */
+		@media (min-width: 992px) {
+			/* the right sidebar wide enough for the panels (the ABC editor, the Works list) */
+			body.tunes-page:not(.margin-hidden):not(.sidebar-hidden) #quarto-content.page-columns {
+				grid-template-columns:
+					[screen-start] 1.5em
+					[screen-start-inset page-start] minmax(50px, 100px)
+					[page-start-inset] 50px
+					[body-start-outset] 50px
+					[body-start] 1.5em
+					[body-content-start] minmax(0, 1fr)
+					[body-content-end] 1.5em
+					[body-end] 0
+					[body-end-outset] minmax(17rem, 24rem)
+					[page-end-inset] 0
+					[page-end screen-end-inset] 1.5em [screen-end];
+			}
+			body.tunes-page.sidebar-hidden:not(.margin-hidden) #quarto-content.page-columns {
+				grid-template-columns:
+					[screen-start] 1.5em
+					[screen-start-inset page-start page-start-inset body-start-outset body-start body-content-start] minmax(0, 1fr)
+					[body-content-end] 1.5em
+					[body-end] 0
+					[body-end-outset] minmax(17rem, 24rem)
+					[page-end-inset] 0
+					[page-end screen-end-inset] 1.5em [screen-end];
+			}
+		}
+		#tunes-root { max-width: 1300px; margin: 0 auto; }
+		.tn-side { display: flex; flex-direction: column; gap: .6rem; }
+		#tunes-root > .tn-side { margin-top: 1rem; }
+		#quarto-margin-sidebar > .tn-side { margin: .25rem 0 1rem; font-size: .92rem; }
+		.tn-side .tn-pick { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin: .45rem 0; }
+		.tn-side .tn-pick select { max-width: 100%; min-width: 0; flex: 1 1 10rem; }
+		.tn-side .tn-open { display: flex; flex-wrap: wrap; gap: .3rem .9rem; margin: .4rem 0 .2rem; }
+		.tn-side .tn-open[hidden] { display: none; }
+		.tn-about dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .15rem .8rem; margin: .4rem 0; }
+		.tn-about dt { color: var(--site-ink-2); font-weight: 400; }
+		.tn-about dd { margin: 0; overflow-wrap: anywhere; }
+		.tn-about p { margin: .3rem 0; }
 		.highlight { fill: #0057b7; }
 		.abcjs-cursor { stroke: red; stroke-width: 4; }
 		#tn-bar label { margin-right: .3rem; font-size: .8rem; opacity: .8; }
@@ -36,7 +61,8 @@
 
 		// options taken off the page (2026-11-11), kept at their old defaults so the code paths stay as they were:
 		// chords played by the band, the tune played too, treble clef, the notes lit as they sound, no further MIDI transposition
-		const OPT = { accomp: "band", playTune: true, bassClef: false, light: true, midiTranspose: 0 };
+		// What is heard comes from the Hear menu (melody and band, the melody alone, the band alone), not from here.
+		const OPT = { bassClef: false, light: true, midiTranspose: 0 };
 
 		// the ABC editor (abc-editor.js): edits kept in this browser by %%id (else "collection#title"), drawn in place of the site's
 		const abcBase = [];
@@ -112,47 +138,76 @@
 		// ---- playback: the band's samples through AbcPlay (apps/shared/abc-play.js), not abcjs's synth ----
 		// cur = what the current tune needs to play: its drawn visualObj, its text, the sounding transposition
 		let cur = null, playing = null, wantLoop = false;
-		// the bar at the foot of the window is a PlayBar (apps/shared/playbar.js): Play, Stop, From bar, Loop, BPM and the four menus
+		// Play becomes Pause while it sounds. Pause remembers the bar it was in (played order, as AbcPlay's fromBar counts) and
+		// Play resumes from the start of that bar; Stop, a new tune or a new From bar forget it. pos: where the playing tune is.
+		let paused = null, pos = null;
+		let pbar = null;
+		// the bar at the foot of the window is a PlayBar (apps/shared/playbar.js): Play, Stop, From bar, Loop, BPM, Hear and the menus
 		function buildPlayer() {
-			document.getElementById("tp-play").addEventListener("click", () => playing ? stopTune() : playTune());
+			document.getElementById("tp-play").addEventListener("click", () => playing ? pauseTune() : playTune());
 			document.getElementById("tp-stop").addEventListener("click", stopTune);
 			document.getElementById("tp-bpm").addEventListener("change", restartIfPlaying);
-			document.getElementById("tp-from").addEventListener("change", restartIfPlaying);
+			document.getElementById("tp-from").addEventListener("change", () => { paused = null; playBtn(); restartIfPlaying(); });
+			const hear = document.getElementById("tp-hear");
+			try { const h = localStorage.getItem("tunesHear"); if (h && hear.querySelector(`option[value="${h}"]`)) hear.value = h; } catch (e) {}
+			hear.addEventListener("change", () => { try { localStorage.setItem("tunesHear", hear.value); } catch (e) {} restartIfPlaying(); });
 			const bar = document.getElementById("tn-bar");
 			if (window.PlayBar && PlayBar.swingSlot) bar.insertBefore(PlayBar.swingSlot({ id: "tp-swing", onChange: restartIfPlaying }), document.getElementById("tp-style").parentNode);
 			if (window.AbcPlay && AbcPlay.load) AbcPlay.load().then(() => {
 				const sel = document.getElementById("tp-style");
 				BandCatalog.styles.forEach((s) => { const o = document.createElement("option"); o.value = s.id; o.textContent = s.label; sel.appendChild(o); });
 				sel.addEventListener("change", restartIfPlaying);
+				if (pbar && pbar.refit) pbar.refit();   // the Band menu is wider now: fit the bar again (it moves the least needed into Options)
 			}).catch(() => {});
-			if (window.PlayBar) PlayBar.attach(document.getElementById("tn-bar"), { stop: document.getElementById("tp-stop"), live: () => !!playing });
+			if (window.PlayBar) pbar = PlayBar.attach(document.getElementById("tn-bar"), { stop: document.getElementById("tp-stop"), live: () => !!playing || paused != null });
 		}
-		function restartIfPlaying() { if (playing) { stopTune(); playTune(); } }
-		function playBtn(on) { const b = document.getElementById("tp-play"); if (b) b.textContent = on ? "■ Stop" : "▶ Play"; }
-		function stopTune() { wantLoop = false; if (playing) { const p = playing; playing = null; p.stop(); } playBtn(false); }
+		function restartIfPlaying() { if (playing) { const b = nowBar(); halt(); playTune(b); } }
+		function playBtn() {
+			const b = document.getElementById("tp-play"); if (b) b.textContent = playing ? "⏸ Pause" : paused != null ? "▶ Resume" : "▶ Play";
+			const s = document.getElementById("tp-stop"); if (s) s.disabled = !playing && paused == null;
+		}
+		function halt() { wantLoop = false; if (playing) { const p = playing; playing = null; p.stop(); } pos = null; playBtn(); }
+		function stopTune() { paused = null; halt(); }
+		function pauseTune() { const b = nowBar(); halt(); paused = b; playBtn(); }
+		// the bar sounding now: the band says so bar by bar (onBar's bar); the melody alone from the audio clock against its timing
+		function nowBar() {
+			if (!pos || !cur) return null;
+			if (pos.bar != null) return Math.max(0, pos.bar);
+			if (!pos.ac) return pos.from;
+			const ms = (pos.ac.currentTime - pos.t0) * 1000, timing = cur.v.setTiming(pos.qpm / (cur.v.getBeatLength() * 4));
+			let k = 0;
+			for (let t; (t = AbcPlay.barStartMs(timing, k + 1)) > 0 && t <= ms + 1; ) k++;
+			return k;
+		}
 		function baseQpm(v) {
 			const t = v.metaText && v.metaText.tempo;
 			return t && t.bpm ? t.bpm * (t.duration && t.duration[0] ? t.duration[0] * 4 : 1) : 100;
 		}
-		function playTune() {
+		// Hear: "both" (the melody with the band), "melody" (alone), "band" (the band alone). No chords: the melody, whatever is chosen.
+		function hearing() {
+			const h = document.getElementById("tp-hear").value, chords = !!cur && AbcPlay.hasChords(cur.text);
+			return { melody: h !== "band" || !chords, band: h !== "melody" && chords };
+		}
+		function playTune(resumeAt) {
 			if (!cur || !window.AbcPlay) return;
-			const accomp = OPT.accomp;
-			const melody = OPT.playTune;
-			const band = accomp !== "none" && AbcPlay.hasChords(cur.text);
-			if (!melody && !band) return;
+			const { melody, band } = hearing();
+			const from = resumeAt != null ? resumeAt : paused != null ? paused : Math.max(0, (parseInt(document.getElementById("tp-from").value) || 1) - 1);
 			const sound = document.getElementById("mel-instrument").value || "piano";
 			const swSel = document.getElementById("tp-swing"), swPct = swSel && swSel.value !== "auto" ? +swSel.value : null;
 			const abcSwing = /swing|shuffle/i.test((cur.text.match(/"[\^_<>@][^"]*"|^[TNPR]:.*$/mg) || []).join(" "));   // "Swing" in an annotation or the header
+			const qpm = Math.max(20, Math.min(300, +document.getElementById("tp-bpm").value || baseQpm(cur.v)));
 			const opts = {
 				swing: swPct != null ? swPct : (abcSwing ? 67 : undefined),
 				sound: sound,
-				qpm: Math.max(20, Math.min(300, +document.getElementById("tp-bpm").value || baseQpm(cur.v))),
+				qpm: qpm,
 				transpose: cur.transpose,
 				light: OPT.light,
-				fromBar: Math.max(0, (parseInt(document.getElementById("tp-from").value) || 1) - 1),
+				fromBar: from,
+				onStart: function (c) { if (pos && c && c.ac) { pos.ac = c.ac; pos.t0 = c.t0; } },
+				onBar: function (info) { if (pos && info.bar >= 0) pos.bar = info.bar; },
 				onEnd: function () {
 					if (playing !== me) return;
-					playing = null; playBtn(false);
+					playing = null; pos = null; paused = null; playBtn();
 					if (wantLoop && document.getElementById("tp-loop").checked) playTune();
 				}
 			};
@@ -162,19 +217,20 @@
 				opts.style = st !== "auto" ? st : (abcSwing ? "swing" : "pop");
 				opts.bandOpts = { melodySound: sound };
 				if (swPct != null) opts.bandOpts.swingSet = swPct / 100;
-				if (accomp === "nodrums") opts.drums = false;
 				if (!melody) opts.melody = false;
 			}
-			stopTune();
+			halt();
+			paused = null;
 			wantLoop = true;
+			pos = { from: from, qpm: qpm, bar: null };
 			const me = AbcPlay.play(cur.v, opts);
-			playing = me; playBtn(true);
+			playing = me; playBtn();
 		}
 		// clicking a note sounds it and makes its bar the "From bar"
 		function tuneClick(abcElem, tuneNumber, classes, analysis, drag, mouseEvent) {
 			if (cur && mouseEvent && mouseEvent.target) {
 				const k = AbcPlay.barIndex(cur.v.setTiming(), mouseEvent.target.closest(".abcjs-note, .abcjs-rest") || mouseEvent.target);
-				if (k >= 0) document.getElementById("tp-from").value = k + 1;
+				if (k >= 0) { document.getElementById("tp-from").value = k + 1; paused = null; playBtn(); }
 			}
 			const notes = abcElem.midiPitches; if (!notes || !window.AbcPlay) return;
 			const sound = document.getElementById("mel-instrument").value || "piano";
@@ -265,10 +321,10 @@
 			const notes = all("N").concat(all("D"));
 			const q = id && window.TUNE_QUALITY && TUNE_QUALITY[id];
 			const fl = window.SongFlags && SongFlags.of(one("T"));
-			box.innerHTML = (fl ? `<p class="tn-note"><b>⚑ ${esc(fl.note)}.</b> The site keeps it because the MLT and band books use it, but does not use it as a lesson example.</p>` : "") + (q ? `<p class="tn-note"><b>⚠ This ABC is probably wrong</b> (predicted by scripts/tune-quality.mjs): ${esc(q.r.join("; "))}. The "Edit the ABC" panel can fix it.</p>` : "") +
+			box.innerHTML = (fl ? `<p class="site-hint"><b>⚑ ${esc(fl.note)}.</b> The site keeps it because the MLT and band books use it, but does not use it as a lesson example.</p>` : "") + (q ? `<p class="site-hint"><b>⚠ This ABC is probably wrong</b> (predicted by scripts/tune-quality.mjs): ${esc(q.r.join("; "))}. The "Edit the ABC" panel can fix it.</p>` : "") +
 				`<dl>${rows.map((r) => `<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join("")}</dl>` +
-				(notes.length ? notes.map((n) => `<p>${esc(n)}</p>`).join("") : `<p class="tn-note">No notes with this tune.</p>`) +
-				`<p class="tn-note">${id ? `<a href="/practice/tune-directory.html#${encodeURIComponent(w ? w.id : id)}">In the Tune Directory</a> · ` : ""}<span class="tn-midi"></span></p>`;
+				(notes.length ? notes.map((n) => `<p>${esc(n)}</p>`).join("") : `<p class="site-hint">No notes with this tune.</p>`) +
+				`<p class="site-hint"><span class="tn-midi"></span></p>`;
 			try { box.querySelector(".tn-midi").innerHTML = ABCJS.synth.getMidiFile(t); } catch (e) {}   // the MIDI file download (no sound)
 		}
 
@@ -287,15 +343,28 @@
 				visualTransposeHalfSteps -= 12;
 			}
 			abcString = abcString.join("\n");
+			// a rhythm chant (every note one pitch, no chords) is drawn on a one-line rhythm staff, as the DMTI pages draw rhythm,
+			// and still sounds at its written pitch (moved by the Key menu); octave and instrument do not apply to it
+			const ch = chant(abcString);
+			if (ch) { abcString = ch.abc; visualTransposeHalfSteps = 0; }
 
 			const abcOptions = {
 				add_classes: true,
 				clickListener: tuneClick,
 				responsive: "resize",
-				visualTranspose: visualTransposeHalfSteps
+				visualTranspose: visualTransposeHalfSteps,
+				// a larger title; the N: / S: lines under the score ("Notes: Source: …") small, since the About panel has them too
+				format: { titlefont: '"Times New Roman" 23', historyfont: '"Times New Roman" 7' },
+				// Line widths. A line of words can need more room than the 740 every line is fitted to; abcjs then let that line
+				// run past the others' right edge (by-the-break-of-day's second line). expandToWidest lays every line out again
+				// at the widest one's width. minPadding: the least space between notes when there are words under them
+				// (LessonScore's wordGap), so "the break of" does not run together.
+				expandToWidest: true
 			};
+			if (/^w:/m.test(abcString)) abcOptions.minPadding = 7;
 
 			const wasPlaying = !!playing;
+			const w0id = (/^%%id\s+(\S+)/m.exec(abc[currentTune]) || [])[1];
 			stopTune();
 			if (userAction) document.getElementById("tp-from").value = 1;
 			if (!fromEditor) editorFor();
@@ -309,11 +378,43 @@
 			let midiTransposeHalfSteps = visualTransposeHalfSteps +
 				OPT.midiTranspose;
 			if (instAdjust % 12 !== 0) midiTransposeHalfSteps -= instAdjust;
+			if (ch) midiTransposeHalfSteps = ch.shift + (parseInt(document.getElementById("vis-transpose").value) || 0);
 			cur = { v: visualObj, text: abc[currentTune], transpose: midiTransposeHalfSteps };
 			const bpm = document.getElementById("tp-bpm");
 			if (userAction || !bpm.value) bpm.value = Math.round(baseQpm(visualObj));   // the tune's own Q: (100 when it has none)
 			about();
+			openLinks(w0id);
 			if (wasPlaying && !userAction) playTune();   // an option changed while playing: carry on with it
+		}
+
+		// A rhythm chant: the music lines (not the header, w: words, "chords" or !decorations!) hold one pitch only, at least four
+		// times, and no chord symbols. Returns the ABC redrawn on one line (K:C clef=perc stafflines=1, every note B, the line's
+		// note) and the semitones from that B back to the written pitch; null for a tune.
+		function chant(text) {
+			const lines = text.split("\n"), k = lines.findIndex((l) => /^K:/.test(l));
+			if (k < 0) return null;
+			const music = (l) => !/^[A-Za-z]:|^%/.test(l) && l.trim();
+			const NOTE = /[_=^]*[A-Ga-g][,']*/g, strip = (l) => l.replace(/"[^"]*"|![^!]*!|\+[^+]*\+|\[[A-Za-z]:[^\]]*\]/g, " ");
+			const seen = new Set(); let n = 0, chords = false;
+			lines.slice(k + 1).filter(music).forEach((l) => { if (/"[A-G]/.test(l)) chords = true; (strip(l).match(NOTE) || []).forEach((t) => { seen.add(t); n++; }); });
+			if (chords || seen.size !== 1 || n < 4) return null;
+			const t = [...seen][0], L = t.replace(/[_=^,']/g, "");
+			const midi = 60 + { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 }[L.toUpperCase()] + (L === L.toLowerCase() ? 12 : 0)
+				+ 12 * ((t.match(/'/g) || []).length - (t.match(/,/g) || []).length) + (/\^/.test(t) ? 1 : /_/.test(t) ? -1 : 0);
+			const out = lines.map((l, i) => i === k ? "K:C clef=perc stafflines=1" : i > k && music(l)
+				? l.replace(/("[^"]*"|![^!]*!|\+[^+]*\+|\[[A-Za-z]:[^\]]*\])|[_=^]*[A-Ga-g][,']*/g, (m, keep) => keep || "B") : l);
+			return { abc: out.join("\n"), shift: midi - 71 };
+		}
+
+		// "Open in": this tune on the Notation page, with the Backing Track's band, in the Tune Directory (by %%id; the
+		// collection's ABC, not edits made here). A tune with no %%id has nowhere to go.
+		function openLinks(id) {
+			const box = document.getElementById("tn-open"); if (!box) return;
+			box.hidden = !id; if (!id) return;
+			const q = encodeURIComponent(id), w = window.Works ? Works.of("tune", id) : null;
+			box.querySelector(".tn-to-notation").href = "/tools/notation.html?tune=" + q;
+			box.querySelector(".tn-to-band").href = "/tools/backing-track.html?tune=" + q;
+			box.querySelector(".tn-to-dir").href = "/practice/tune-directory.html#" + encodeURIComponent(w ? w.id : id);
 		}
 
 		function next() {
@@ -329,38 +430,34 @@
 	</script>
 
 <div id="tunes-root">
-	<div class="tn-layout">
-		<div class="tn-main">
-			<div id="paper"></div>
-		</div>
-		<div class="tn-side" role="complementary" aria-label="The tune and what goes with it">
-			<details class="tn-panel" id="tn-pick" open>
-				<summary>Tune</summary>
-				<div class="tn-pick">
-					<select id="collection-selector" aria-label="Collection" onchange="refreshCollection()"></select>
-					<select id="tune-selector" aria-label="Tune" onchange="pickTune()"></select>
-					<button type="button" class="next">Next tune</button>
-				</div>
-				<p class="tn-note">Click a note to hear it and to play from its bar.</p>
-			</details>
-			<details class="tn-panel tn-about" id="tn-about">
-				<summary>About / notes</summary>
-				<div id="tn-about-body"></div>
-			</details>
-			<details class="tn-panel" id="tn-res" open>
-				<summary>Recordings &amp; resources</summary>
-				<div id="tune-recsync" hidden></div>
-				<div id="tune-works" hidden></div>
-				<p class="tn-note tn-res-none">No recording or other resource is linked to this tune yet.</p>
-			</details>
-			<details class="tn-panel tune-abc-fold" id="tn-edit">
-				<summary>Edit the ABC</summary>
-				<p class="tn-note">Change the tune and Apply (Ctrl+Enter). Edits stay in this browser and are drawn instead of the site's
-				version; Download edits saves them all in one file, which <code>node scripts/apply-abc-edits.mjs &lt;file&gt;</code> writes into the collection.</p>
-				<div id="tune-abc-edit"></div>
-			</details>
-			<button type="button" class="tn-reset-cols btn btn-sm btn-outline-secondary">Put the panels back</button>
-		</div>
+	<div id="paper" class="site-paper"></div>
+	<div class="tn-side" id="tn-side" role="complementary" aria-label="The tune and what goes with it">
+		<details class="site-panel" id="tn-pick" open>
+			<summary>Tune</summary>
+			<div class="tn-pick">
+				<select id="collection-selector" aria-label="Collection" onchange="refreshCollection()"></select>
+				<select id="tune-selector" aria-label="Tune" onchange="pickTune()"></select>
+				<button type="button" class="next">Next tune</button>
+			</div>
+			<p class="tn-open" id="tn-open"><a class="tn-to-notation" href="/tools/notation.html">✎ Open in Notation</a><a class="tn-to-band" href="/tools/backing-track.html">♫ Backing Track</a><a class="tn-to-dir" href="/practice/tune-directory.html">Tune Directory</a></p>
+			<p class="site-hint">Click a note to hear it and to play from its bar.</p>
+		</details>
+		<details class="site-panel tn-about" id="tn-about">
+			<summary>About / notes</summary>
+			<div id="tn-about-body"></div>
+		</details>
+		<details class="site-panel" id="tn-res" open>
+			<summary>Recordings &amp; resources</summary>
+			<div id="tune-recsync" hidden></div>
+			<div id="tune-works" hidden></div>
+			<p class="site-hint tn-res-none">No recording or other resource is linked to this tune yet.</p>
+		</details>
+		<details class="site-panel tune-abc-fold" id="tn-edit">
+			<summary>Edit the ABC</summary>
+			<p class="site-hint">Change the tune and Apply (Ctrl+Enter). Edits stay in this browser and are drawn instead of the site's
+			version; Download edits saves them all in one file, which <code>node scripts/apply-abc-edits.mjs &lt;file&gt;</code> writes into the collection.</p>
+			<div id="tune-abc-edit"></div>
+		</details>
 	</div>
 	<input type="hidden" id="vis-transpose" value="0">
 	<div id="tn-bar">
@@ -383,12 +480,14 @@
 			<option value="Alto Sax">Alto Sax</option><option value="Trumpet">Trumpet</option><option value="Trombone">Trombone</option>
 			<option value="Tuba">Tuba</option><option value="Percussion">Percussion</option>
 		</select></span>
+		<span data-pri="2" data-pri-live="2"><label for="tp-hear">Hear</label><select id="tp-hear" title="What plays: the tune with the band, the tune alone, or the band alone (a tune with no chord symbols has no band)">
+			<option value="both">Melody + band</option><option value="melody">Melody only</option><option value="band">Band only</option>
+		</select></span>
 		<span data-pri="4" data-pri-live="5"><label for="tp-style">Band</label><select id="tp-style" title="The backing band's style: Auto picks Swing when the tune says swing, else a piano ballad"><option value="auto">Auto</option></select></span>
 		<span data-pri="7" data-pri-live="8"><label for="mel-instrument">Sound</label><select id="mel-instrument" title="Playback instrument"></select></span>
 	</div>
 	<script src="/apps/shared/soundfont.js?v=1"></script>
 	<script src="/apps/shared/playbar.js?v=4"></script>
-	<script src="/apps/shared/panel-columns.js"></script>
 	<script src="/apps/shared/band/sounds.js?v=23"></script>
 	<script src="/apps/shared/abc-play.js?v=27"></script>
 	<script src="/apps/shared/abcjs-basic.js?v=5"></script>
@@ -406,9 +505,16 @@
 	<script src="/apps/shared/audio.js?v=10"></script>
 	<script src="/apps/shared/establish-button.js?v=1"></script>
 	<script>
-		if (window.PanelColumns) PanelColumns.init({ columns: [document.querySelector("#tunes-root .tn-main"), document.querySelector("#tunes-root .tn-side")],
-			panels: "details.tn-panel", key: "tnColumns", reset: document.querySelector("#tunes-root .tn-reset-cols") });
 		load();
+		// the panels into the site's right sidebar (it comes after <main>, so once the page is parsed); back under the score when narrow
+		document.body.classList.add("tunes-page");
+		function placePanels() {
+			const box = document.getElementById("tn-side"), side = document.getElementById("quarto-margin-sidebar"), root = document.getElementById("tunes-root");
+			const into = side && matchMedia("(min-width: 992px)").matches ? side : root;
+			if (box.parentNode !== into) { if (into === side) side.insertBefore(box, side.firstChild); else root.appendChild(box); }
+		}
+		if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", placePanels); else placePanels();
+		matchMedia("(min-width: 992px)").addEventListener("change", placePanels);
 	</script>
 </div>
 <script src="/apps/shared/space-play.js?v=2"></script>

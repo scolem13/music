@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-15T14:52",
+"generated": "2026-11-17T11:13",
 "terms": {
 "audiation": [
 {
@@ -7,6 +7,46 @@
 "course": "dp1",
 "title": "Baroque Research Feedback",
 "url": "https://classes.seancoleman.org/dp1/2026-09-28.html"
+}
+],
+"allegro": [
+{
+"date": "2026-10-08",
+"course": "dp1",
+"title": "Measure Numbers",
+"url": "https://classes.seancoleman.org/dp1/2026-10-08.html"
+},
+{
+"date": "2026-10-09",
+"course": "dp1",
+"title": "Sonata Form",
+"url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
+}
+],
+"sonata-form": [
+{
+"date": "2026-10-08",
+"course": "dp1",
+"title": "Measure Numbers",
+"url": "https://classes.seancoleman.org/dp1/2026-10-08.html"
+},
+{
+"date": "2026-10-09",
+"course": "dp1",
+"title": "Sonata Form",
+"url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
+},
+{
+"date": "2026-11-16",
+"course": "dp1",
+"title": "Where We Are, Where We're Going",
+"url": "https://classes.seancoleman.org/dp1/2026-11-16.html"
+},
+{
+"date": "2026-11-26",
+"course": "dp1",
+"title": "Form: Sonata Form and Rounded Binary",
+"url": "https://classes.seancoleman.org/dp1/2026-11-26.html"
 }
 ],
 "sonata": [
@@ -59,13 +99,7 @@
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
 }
 ],
-"sonata-form": [
-{
-"date": "2026-10-08",
-"course": "dp1",
-"title": "Measure Numbers",
-"url": "https://classes.seancoleman.org/dp1/2026-10-08.html"
-},
+"arpeggio": [
 {
 "date": "2026-10-09",
 "course": "dp1",
@@ -73,30 +107,10 @@
 "url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
 },
 {
-"date": "2026-11-16",
+"date": "2026-11-30",
 "course": "dp1",
-"title": "Where We Are, Where We're Going",
-"url": "https://classes.seancoleman.org/dp1/2026-11-16.html"
-},
-{
-"date": "2026-11-26",
-"course": "dp1",
-"title": "Form: Sonata Form and Rounded Binary",
-"url": "https://classes.seancoleman.org/dp1/2026-11-26.html"
-}
-],
-"allegro": [
-{
-"date": "2026-10-08",
-"course": "dp1",
-"title": "Measure Numbers",
-"url": "https://classes.seancoleman.org/dp1/2026-10-08.html"
-},
-{
-"date": "2026-10-09",
-"course": "dp1",
-"title": "Sonata Form",
-"url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
+"title": "Composing 1: An Eight-Bar Period",
+"url": "https://classes.seancoleman.org/dp1/2026-11-30.html"
 }
 ],
 "recapitulation": [
@@ -131,20 +145,6 @@
 "course": "dp1",
 "title": "Classical Style: Exploration and Creating Exercise",
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
-}
-],
-"arpeggio": [
-{
-"date": "2026-10-09",
-"course": "dp1",
-"title": "Sonata Form",
-"url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
-},
-{
-"date": "2026-11-30",
-"course": "dp1",
-"title": "Composing 1: An Eight-Bar Period",
-"url": "https://classes.seancoleman.org/dp1/2026-11-30.html"
 }
 ],
 "sentence": [
@@ -277,6 +277,22 @@
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
 }
 ],
+"texture": [
+{
+"date": "2026-11-16",
+"course": "dp1",
+"title": "Where We Are, Where We're Going",
+"url": "https://classes.seancoleman.org/dp1/2026-11-16.html"
+}
+],
+"homophonic": [
+{
+"date": "2026-11-16",
+"course": "dp1",
+"title": "Where We Are, Where We're Going",
+"url": "https://classes.seancoleman.org/dp1/2026-11-16.html"
+}
+],
 "periods": [
 {
 "date": "2026-11-16",
@@ -309,22 +325,6 @@
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
 }
 ],
-"texture": [
-{
-"date": "2026-11-16",
-"course": "dp1",
-"title": "Where We Are, Where We're Going",
-"url": "https://classes.seancoleman.org/dp1/2026-11-16.html"
-}
-],
-"homophonic": [
-{
-"date": "2026-11-16",
-"course": "dp1",
-"title": "Where We Are, Where We're Going",
-"url": "https://classes.seancoleman.org/dp1/2026-11-16.html"
-}
-],
 "common-practice-period": [
 {
 "date": "2026-11-16",
@@ -341,14 +341,6 @@
 "url": "https://classes.seancoleman.org/dp1/2026-11-17.html"
 }
 ],
-"rubato": [
-{
-"date": "2026-11-17",
-"course": "dp1",
-"title": "After the Classical: A Little Romantic",
-"url": "https://classes.seancoleman.org/dp1/2026-11-17.html"
-}
-],
 "chromatic": [
 {
 "date": "2026-11-17",
@@ -357,7 +349,15 @@
 "url": "https://classes.seancoleman.org/dp1/2026-11-17.html"
 }
 ],
-"sforzando": [
+"rubato": [
+{
+"date": "2026-11-17",
+"course": "dp1",
+"title": "After the Classical: A Little Romantic",
+"url": "https://classes.seancoleman.org/dp1/2026-11-17.html"
+}
+],
+"strophic-form": [
 {
 "date": "2026-11-17",
 "course": "dp1",
@@ -373,7 +373,7 @@
 "url": "https://classes.seancoleman.org/dp1/2026-11-17.html"
 }
 ],
-"strophic-form": [
+"sforzando": [
 {
 "date": "2026-11-17",
 "course": "dp1",
@@ -399,32 +399,6 @@
 "course": "dp1",
 "title": "Composing 2: Moving to the Dominant",
 "url": "https://classes.seancoleman.org/dp1/2026-12-01.html"
-},
-{
-"date": "2026-12-04",
-"course": "dp1",
-"title": "Composing 3: The Middle and the Return",
-"url": "https://classes.seancoleman.org/dp1/2026-12-04.html"
-},
-{
-"date": "2026-12-04",
-"course": "dp1",
-"title": "Formative 2: The First 16 Bars",
-"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-04-classical-composing-formative.html"
-}
-],
-"authentic-perfect-cadence": [
-{
-"date": "2026-11-19",
-"course": "dp1",
-"title": "Phrases and Cadences",
-"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
-},
-{
-"date": "2026-11-30",
-"course": "dp1",
-"title": "Composing 1: An Eight-Bar Period",
-"url": "https://classes.seancoleman.org/dp1/2026-11-30.html"
 },
 {
 "date": "2026-12-04",
@@ -465,28 +439,30 @@
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-04-classical-composing-formative.html"
 }
 ],
-"concerto": [
+"authentic-perfect-cadence": [
 {
-"date": "2026-11-20",
+"date": "2026-11-19",
 "course": "dp1",
-"title": "Writing About Music",
-"url": "https://classes.seancoleman.org/dp1/2026-11-20.html"
-}
-],
-"aoi-2": [
+"title": "Phrases and Cadences",
+"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
+},
 {
-"date": "2026-11-20",
+"date": "2026-11-30",
 "course": "dp1",
-"title": "Writing About Music",
-"url": "https://classes.seancoleman.org/dp1/2026-11-20.html"
-}
-],
-"secondary-source": [
+"title": "Composing 1: An Eight-Bar Period",
+"url": "https://classes.seancoleman.org/dp1/2026-11-30.html"
+},
 {
-"date": "2026-11-20",
+"date": "2026-12-04",
 "course": "dp1",
-"title": "Writing About Music",
-"url": "https://classes.seancoleman.org/dp1/2026-11-20.html"
+"title": "Composing 3: The Middle and the Return",
+"url": "https://classes.seancoleman.org/dp1/2026-12-04.html"
+},
+{
+"date": "2026-12-04",
+"course": "dp1",
+"title": "Formative 2: The First 16 Bars",
+"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-04-classical-composing-formative.html"
 }
 ],
 "analyse": [
@@ -497,7 +473,7 @@
 "url": "https://classes.seancoleman.org/dp1/2026-11-20.html"
 }
 ],
-"explain": [
+"concerto": [
 {
 "date": "2026-11-20",
 "course": "dp1",
@@ -506,6 +482,14 @@
 }
 ],
 "primary-source": [
+{
+"date": "2026-11-20",
+"course": "dp1",
+"title": "Writing About Music",
+"url": "https://classes.seancoleman.org/dp1/2026-11-20.html"
+}
+],
+"secondary-source": [
 {
 "date": "2026-11-20",
 "course": "dp1",
@@ -533,7 +517,45 @@
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
 }
 ],
+"aoi-2": [
+{
+"date": "2026-11-20",
+"course": "dp1",
+"title": "Writing About Music",
+"url": "https://classes.seancoleman.org/dp1/2026-11-20.html"
+}
+],
+"explain": [
+{
+"date": "2026-11-20",
+"course": "dp1",
+"title": "Writing About Music",
+"url": "https://classes.seancoleman.org/dp1/2026-11-20.html"
+}
+],
 "harmonic-rhythm": [
+{
+"date": "2026-11-25",
+"course": "dp1",
+"title": "Three Chords: I, IV, V",
+"url": "https://classes.seancoleman.org/dp1/2026-11-25.html"
+}
+],
+"broken-chord": [
+{
+"date": "2026-11-25",
+"course": "dp1",
+"title": "Three Chords: I, IV, V",
+"url": "https://classes.seancoleman.org/dp1/2026-11-25.html"
+},
+{
+"date": "2026-11-30",
+"course": "dp1",
+"title": "Composing 1: An Eight-Bar Period",
+"url": "https://classes.seancoleman.org/dp1/2026-11-30.html"
+}
+],
+"tonic-harmony": [
 {
 "date": "2026-11-25",
 "course": "dp1",
@@ -561,26 +583,12 @@
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-04-classical-composing-formative.html"
 }
 ],
-"tonic-harmony": [
+"subdominant-harmony": [
 {
 "date": "2026-11-25",
 "course": "dp1",
 "title": "Three Chords: I, IV, V",
 "url": "https://classes.seancoleman.org/dp1/2026-11-25.html"
-}
-],
-"broken-chord": [
-{
-"date": "2026-11-25",
-"course": "dp1",
-"title": "Three Chords: I, IV, V",
-"url": "https://classes.seancoleman.org/dp1/2026-11-25.html"
-},
-{
-"date": "2026-11-30",
-"course": "dp1",
-"title": "Composing 1: An Eight-Bar Period",
-"url": "https://classes.seancoleman.org/dp1/2026-11-30.html"
 }
 ],
 "diatonic": [
@@ -591,15 +599,15 @@
 "url": "https://classes.seancoleman.org/dp1/2026-11-25.html"
 }
 ],
-"subdominant-harmony": [
+"development": [
 {
-"date": "2026-11-25",
+"date": "2026-11-26",
 "course": "dp1",
-"title": "Three Chords: I, IV, V",
-"url": "https://classes.seancoleman.org/dp1/2026-11-25.html"
+"title": "Form: Sonata Form and Rounded Binary",
+"url": "https://classes.seancoleman.org/dp1/2026-11-26.html"
 }
 ],
-"modulation-in-music": [
+"exposition": [
 {
 "date": "2026-11-26",
 "course": "dp1",
@@ -621,6 +629,14 @@
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
 }
 ],
+"modulation-in-music": [
+{
+"date": "2026-11-26",
+"course": "dp1",
+"title": "Form: Sonata Form and Rounded Binary",
+"url": "https://classes.seancoleman.org/dp1/2026-11-26.html"
+}
+],
 "form": [
 {
 "date": "2026-11-26",
@@ -629,20 +645,24 @@
 "url": "https://classes.seancoleman.org/dp1/2026-11-26.html"
 }
 ],
-"development": [
+"alberti-bass": [
 {
-"date": "2026-11-26",
+"date": "2026-11-30",
 "course": "dp1",
-"title": "Form: Sonata Form and Rounded Binary",
-"url": "https://classes.seancoleman.org/dp1/2026-11-26.html"
-}
-],
-"exposition": [
+"title": "Composing 1: An Eight-Bar Period",
+"url": "https://classes.seancoleman.org/dp1/2026-11-30.html"
+},
 {
-"date": "2026-11-26",
+"date": "2026-12-04",
 "course": "dp1",
-"title": "Form: Sonata Form and Rounded Binary",
-"url": "https://classes.seancoleman.org/dp1/2026-11-26.html"
+"title": "Formative 2: The First 16 Bars",
+"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-04-classical-composing-formative.html"
+},
+{
+"date": "2026-12-11",
+"course": "dp1",
+"title": "Classical Style: Exploration and Creating Exercise",
+"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
 }
 ],
 "dissonance": [
@@ -669,27 +689,15 @@
 "url": "https://classes.seancoleman.org/dp1/2026-11-30.html"
 }
 ],
-"alberti-bass": [
+"key-change": [
 {
-"date": "2026-11-30",
+"date": "2026-12-01",
 "course": "dp1",
-"title": "Composing 1: An Eight-Bar Period",
-"url": "https://classes.seancoleman.org/dp1/2026-11-30.html"
-},
-{
-"date": "2026-12-04",
-"course": "dp1",
-"title": "Formative 2: The First 16 Bars",
-"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-04-classical-composing-formative.html"
-},
-{
-"date": "2026-12-11",
-"course": "dp1",
-"title": "Classical Style: Exploration and Creating Exercise",
-"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
+"title": "Composing 2: Moving to the Dominant",
+"url": "https://classes.seancoleman.org/dp1/2026-12-01.html"
 }
 ],
-"neighbor-tones": [
+"leading-note": [
 {
 "date": "2026-12-01",
 "course": "dp1",
@@ -713,7 +721,7 @@
 "url": "https://classes.seancoleman.org/dp1/2026-12-01.html"
 }
 ],
-"key-change": [
+"neighbor-tones": [
 {
 "date": "2026-12-01",
 "course": "dp1",
@@ -721,15 +729,7 @@
 "url": "https://classes.seancoleman.org/dp1/2026-12-01.html"
 }
 ],
-"leading-note": [
-{
-"date": "2026-12-01",
-"course": "dp1",
-"title": "Composing 2: Moving to the Dominant",
-"url": "https://classes.seancoleman.org/dp1/2026-12-01.html"
-}
-],
-"ternary-form": [
+"pedal-tone": [
 {
 "date": "2026-12-04",
 "course": "dp1",
@@ -751,7 +751,7 @@
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
 }
 ],
-"pedal-tone": [
+"ternary-form": [
 {
 "date": "2026-12-04",
 "course": "dp1",
@@ -767,14 +767,6 @@
 "url": "https://classes.seancoleman.org/dp1/2026-12-04.html"
 }
 ],
-"researcher": [
-{
-"date": "2026-12-07",
-"course": "dp1",
-"title": "The Creating Statement",
-"url": "https://classes.seancoleman.org/dp1/2026-12-07.html"
-}
-],
 "justify": [
 {
 "date": "2026-12-07",
@@ -784,6 +776,14 @@
 }
 ],
 "creator": [
+{
+"date": "2026-12-07",
+"course": "dp1",
+"title": "The Creating Statement",
+"url": "https://classes.seancoleman.org/dp1/2026-12-07.html"
+}
+],
+"researcher": [
 {
 "date": "2026-12-07",
 "course": "dp1",
@@ -955,6 +955,18 @@
 "course": "myp1b",
 "title": "Crit D Due: Looking Back at Voices in Harmony",
 "url": "https://classes.seancoleman.org/myp1b/2026-11-05.html"
+},
+{
+"date": "2027-03-09",
+"course": "myp5",
+"title": "Criterion C (ePortfolio draft)",
+"url": "https://classes.seancoleman.org/assessments/for-myp5/2027-03-09-summative-crit-c-eportfolio-draft.html"
+},
+{
+"date": "2027-03-12",
+"course": "myp5",
+"title": "Criterion C (ePortfolio final)",
+"url": "https://classes.seancoleman.org/assessments/for-myp5/2027-03-12-summative-crit-c-eportfolio-final.html"
 },
 {
 "date": "2027-04-08",
@@ -1139,6 +1151,18 @@
 "url": "https://classes.seancoleman.org/myp1b/2026-11-05.html"
 },
 {
+"date": "2027-03-24",
+"course": "myp5",
+"title": "Criterion D (ePortfolio draft)",
+"url": "https://classes.seancoleman.org/assessments/for-myp5/2027-03-24-summative-crit-d-eportfolio-draft.html"
+},
+{
+"date": "2027-03-30",
+"course": "myp5",
+"title": "Criterion D (ePortfolio final)",
+"url": "https://classes.seancoleman.org/assessments/for-myp5/2027-03-30-summative-crit-d-eportfolio-final.html"
+},
+{
 "date": "2027-04-08",
 "course": "dp1",
 "title": "CMM: Music Outline",
@@ -1291,10 +1315,34 @@
 "url": "https://classes.seancoleman.org/myp4/2026-11-02.html"
 },
 {
+"date": "2026-12-07",
+"course": "myp5",
+"title": "Formative B: Three beginning-stage ideas + draft intention",
+"url": "https://classes.seancoleman.org/assessments/for-myp5/2026-12-07-formative-b.html"
+},
+{
 "date": "2026-12-10",
 "course": "dp1",
 "title": "CMM: Collaborator Identification",
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-10-cmm-collaborator-identification.html"
+},
+{
+"date": "2027-01-14",
+"course": "myp5",
+"title": "Criterion B (non-ePortfolio)",
+"url": "https://classes.seancoleman.org/assessments/for-myp5/2027-01-14-summative-crit-b-non-eportfolio.html"
+},
+{
+"date": "2027-01-21",
+"course": "myp5",
+"title": "Criterion B (ePortfolio draft)",
+"url": "https://classes.seancoleman.org/assessments/for-myp5/2027-01-21-summative-crit-b-eportfolio-draft.html"
+},
+{
+"date": "2027-03-02",
+"course": "myp5",
+"title": "Criterion B (ePortfolio final)",
+"url": "https://classes.seancoleman.org/assessments/for-myp5/2027-03-02-summative-crit-b-eportfolio-final.html"
 },
 {
 "date": "2027-04-29",
@@ -1321,9 +1369,15 @@
 "course": "myp4",
 "title": "Formative 1: Two ideas at the beginning",
 "url": "https://classes.seancoleman.org/assessments/for-myp4/2026-10-08-formative-1.html"
+},
+{
+"date": "2026-11-17",
+"course": "myp4",
+"title": "Rock from the blues",
+"url": "https://classes.seancoleman.org/myp4/2026-11-17.html"
 }
 ],
-"voice-leading": [
+"voicing": [
 {
 "date": "2026-09-28",
 "course": "myp4",
@@ -1331,7 +1385,7 @@
 "url": "https://classes.seancoleman.org/myp4/2026-09-28.html"
 }
 ],
-"voicing": [
+"voice-leading": [
 {
 "date": "2026-09-28",
 "course": "myp4",
@@ -1353,10 +1407,28 @@
 "url": "https://classes.seancoleman.org/myp4/2026-11-02.html"
 },
 {
+"date": "2026-11-27",
+"course": "myp5",
+"title": "Formative A: Genre research + critique draft",
+"url": "https://classes.seancoleman.org/assessments/for-myp5/2026-11-27-formative-a.html"
+},
+{
 "date": "2026-12-10",
 "course": "dp1",
 "title": "CMM: Collaborator Identification",
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-10-cmm-collaborator-identification.html"
+},
+{
+"date": "2026-12-14",
+"course": "myp5",
+"title": "Criterion A (ePortfolio final)",
+"url": "https://classes.seancoleman.org/assessments/for-myp5/2026-12-14-summative-crit-a-eportfolio-final.html"
+},
+{
+"date": "2026-12-15",
+"course": "myp5",
+"title": "Criterion A (non-ePortfolio)",
+"url": "https://classes.seancoleman.org/assessments/for-myp5/2026-12-15-summative-crit-a-non-eportfolio.html"
 },
 {
 "date": "2027-03-09",
@@ -1437,6 +1509,12 @@
 "course": "myp5",
 "title": "Crit D Due: Closing the Practice ePortfolio",
 "url": "https://classes.seancoleman.org/myp5/2026-10-30.html"
+},
+{
+"date": "2026-11-17",
+"course": "myp5",
+"title": "Researching your genre",
+"url": "https://classes.seancoleman.org/myp5/2026-11-17.html"
 }
 ],
 "artistic-intention": [
@@ -1543,6 +1621,14 @@
 "url": "https://classes.seancoleman.org/myp4/2026-11-02.html"
 }
 ],
+"blue-notes": [
+{
+"date": "2026-11-17",
+"course": "myp4",
+"title": "Rock from the blues",
+"url": "https://classes.seancoleman.org/myp4/2026-11-17.html"
+}
+],
 "eportfolio": [
 {
 "date": "2026-10-06",
@@ -1573,6 +1659,14 @@
 "course": "myp5",
 "title": "Summative: Criterion D (Evaluating)",
 "url": "https://classes.seancoleman.org/assessments/for-myp5/2026-10-30-summative-crit-d.html"
+}
+],
+"critique": [
+{
+"date": "2026-11-18",
+"course": "myp5",
+"title": "Critique, not describe",
+"url": "https://classes.seancoleman.org/myp5/2026-11-18.html"
 }
 ],
 "exploring-music-in-context": [

@@ -1,0 +1,1028 @@
+{
+ "file": "Hal Leonard. The TV Fake Book.pdf",
+ "method": "text-index",
+ "offset": 0,
+ "notes": "Hal Leonard The TV Fake Book, 96-page PDF (not the TV Guide Fake Book: that is 239 pages, different contents). Two printed indices (by song title, no pages; by show, with pages) whose text layer is OCR-garbled; titles taken from the song-title index and cleaned, page numbers from the show index and checked against the text layer of every tune page (printed page = pdf page, offset 0). Titles listed in file order. Composers left out. Page 14 is image-only (Ben Casey and Davy Crockett read by eye); Dobie (26), The Wild Wild West Theme (84) and A Year In The Life (93) seen on page images. pdf 96 is a CD/credits-style list, not a tune. Page 15 is a continuation of Davy Crockett; 13 of Bandstand Boogie.",
+ "entries": [
+  {
+   "title": "Theme From \"The A Team\"",
+   "pdfPage": 10,
+   "page": 10,
+   "conf": "high"
+  },
+  {
+   "title": "The Addams Family Theme",
+   "pdfPage": 10,
+   "page": 10,
+   "conf": "high"
+  },
+  {
+   "title": "Adam 12 Theme",
+   "pdfPage": 11,
+   "page": 11,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Alf\"",
+   "pdfPage": 11,
+   "page": 11,
+   "conf": "high"
+  },
+  {
+   "title": "Ballad Of Jed Clampett",
+   "pdfPage": 11,
+   "page": 11,
+   "conf": "high"
+  },
+  {
+   "title": "Bandstand Boogie",
+   "pdfPage": 12,
+   "page": 12,
+   "conf": "high"
+  },
+  {
+   "title": "The Ballad Of Davy Crockett",
+   "pdfPage": 14,
+   "page": 14,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Ben Casey\"",
+   "pdfPage": 14,
+   "page": 14,
+   "conf": "high"
+  },
+  {
+   "title": "Battlestar Galactica",
+   "pdfPage": 16,
+   "page": 16,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Bewitched\"",
+   "pdfPage": 16,
+   "page": 16,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Beauty And The Beast\"",
+   "pdfPage": 17,
+   "page": 17,
+   "conf": "high"
+  },
+  {
+   "title": "The Brady Bunch",
+   "pdfPage": 17,
+   "page": 17,
+   "conf": "high"
+  },
+  {
+   "title": "Bonanza",
+   "pdfPage": 18,
+   "page": 18,
+   "conf": "high"
+  },
+  {
+   "title": "Brandenburg Concerto No. 2",
+   "pdfPage": 18,
+   "page": 18,
+   "conf": "high"
+  },
+  {
+   "title": "Call To Glory",
+   "pdfPage": 19,
+   "page": 19,
+   "conf": "high"
+  },
+  {
+   "title": "Casper The Friendly Ghost",
+   "pdfPage": 19,
+   "page": 19,
+   "conf": "high"
+  },
+  {
+   "title": "Where Everybody Knows Your Name",
+   "pdfPage": 20,
+   "page": 20,
+   "conf": "high"
+  },
+  {
+   "title": "Courtship Of Eddie's Father",
+   "pdfPage": 20,
+   "page": 20,
+   "conf": "high"
+  },
+  {
+   "title": "Bubbles In The Wine",
+   "pdfPage": 21,
+   "page": 21,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Star Trek: Deep Space Nine\"",
+   "pdfPage": 21,
+   "page": 21,
+   "conf": "high"
+  },
+  {
+   "title": "Chip 'N Dale Rescue Rangers Theme Song",
+   "pdfPage": 22,
+   "page": 22,
+   "conf": "high"
+  },
+  {
+   "title": "Dallas",
+   "pdfPage": 22,
+   "page": 22,
+   "conf": "high"
+  },
+  {
+   "title": "Chico And The Man",
+   "pdfPage": 23,
+   "page": 23,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Coach\"",
+   "pdfPage": 24,
+   "page": 24,
+   "conf": "high"
+  },
+  {
+   "title": "Danny Boy (Londonderry Air)",
+   "pdfPage": 24,
+   "page": 24,
+   "conf": "high"
+  },
+  {
+   "title": "Day By Day",
+   "pdfPage": 25,
+   "page": 25,
+   "conf": "high"
+  },
+  {
+   "title": "Dear John",
+   "pdfPage": 25,
+   "page": 25,
+   "conf": "high"
+  },
+  {
+   "title": "Dinosaurs Main Title",
+   "pdfPage": 25,
+   "page": 25,
+   "conf": "high"
+  },
+  {
+   "title": "Different Worlds",
+   "pdfPage": 26,
+   "page": 26,
+   "conf": "high"
+  },
+  {
+   "title": "Dobie",
+   "pdfPage": 26,
+   "page": 26,
+   "conf": "high"
+  },
+  {
+   "title": "Donna Reed Theme",
+   "pdfPage": 27,
+   "page": 27,
+   "conf": "high"
+  },
+  {
+   "title": "Drive",
+   "pdfPage": 27,
+   "page": 27,
+   "conf": "high"
+  },
+  {
+   "title": "DuckTales Theme",
+   "pdfPage": 28,
+   "page": 28,
+   "conf": "high"
+  },
+  {
+   "title": "Falcon Crest",
+   "pdfPage": 28,
+   "page": 28,
+   "conf": "high"
+  },
+  {
+   "title": "Entertainment Tonight",
+   "pdfPage": 29,
+   "page": 29,
+   "conf": "high"
+  },
+  {
+   "title": "Flamingo Road",
+   "pdfPage": 29,
+   "page": 29,
+   "conf": "high"
+  },
+  {
+   "title": "Equalizer - Main Title",
+   "pdfPage": 30,
+   "page": 30,
+   "conf": "high"
+  },
+  {
+   "title": "Everyone Makes Mistakes",
+   "pdfPage": 30,
+   "page": 30,
+   "conf": "high"
+  },
+  {
+   "title": "Felix The Wonderful Cat",
+   "pdfPage": 31,
+   "page": 31,
+   "conf": "high"
+  },
+  {
+   "title": "(Meet) The Flintstones",
+   "pdfPage": 31,
+   "page": 31,
+   "conf": "high"
+  },
+  {
+   "title": "Father Knows Best Theme",
+   "pdfPage": 32,
+   "page": 32,
+   "conf": "high"
+  },
+  {
+   "title": "Fractured Fairy Tales",
+   "pdfPage": 32,
+   "page": 32,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Frasier\"",
+   "pdfPage": 32,
+   "page": 32,
+   "conf": "high"
+  },
+  {
+   "title": "Fraggle Rock Theme",
+   "pdfPage": 33,
+   "page": 33,
+   "conf": "high"
+  },
+  {
+   "title": "The Grouch Song",
+   "pdfPage": 33,
+   "page": 33,
+   "conf": "high"
+  },
+  {
+   "title": "George Of The Jungle",
+   "pdfPage": 34,
+   "page": 34,
+   "conf": "high"
+  },
+  {
+   "title": "Get Smart",
+   "pdfPage": 34,
+   "page": 34,
+   "conf": "high"
+  },
+  {
+   "title": "Gillette Look Sharp March",
+   "pdfPage": 34,
+   "page": 34,
+   "conf": "high"
+  },
+  {
+   "title": "Funeral March Of A Marionette",
+   "pdfPage": 35,
+   "page": 35,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"The Greatest American Hero\"",
+   "pdfPage": 35,
+   "page": 35,
+   "conf": "high"
+  },
+  {
+   "title": "Hall Or Nothing",
+   "pdfPage": 36,
+   "page": 36,
+   "conf": "high"
+  },
+  {
+   "title": "Happy Days",
+   "pdfPage": 36,
+   "page": 36,
+   "conf": "high"
+  },
+  {
+   "title": "The Hands Of Time",
+   "pdfPage": 37,
+   "page": 37,
+   "conf": "high"
+  },
+  {
+   "title": "Happy Trails",
+   "pdfPage": 37,
+   "page": 37,
+   "conf": "high"
+  },
+  {
+   "title": "Harlem Nocturne",
+   "pdfPage": 38,
+   "page": 38,
+   "conf": "high"
+  },
+  {
+   "title": "Hawaii Five-0",
+   "pdfPage": 38,
+   "page": 38,
+   "conf": "high"
+  },
+  {
+   "title": "Hawaiian Eye",
+   "pdfPage": 39,
+   "page": 39,
+   "conf": "high"
+  },
+  {
+   "title": "Hazel",
+   "pdfPage": 39,
+   "page": 39,
+   "conf": "high"
+  },
+  {
+   "title": "HBO Main Theme",
+   "pdfPage": 40,
+   "page": 40,
+   "conf": "high"
+  },
+  {
+   "title": "Hill Street Blues Theme",
+   "pdfPage": 40,
+   "page": 40,
+   "conf": "high"
+  },
+  {
+   "title": "Home Improvement",
+   "pdfPage": 40,
+   "page": 40,
+   "conf": "high"
+  },
+  {
+   "title": "Hogan's Heroes March",
+   "pdfPage": 41,
+   "page": 41,
+   "conf": "high"
+  },
+  {
+   "title": "Huckleberry Hound",
+   "pdfPage": 41,
+   "page": 41,
+   "conf": "high"
+  },
+  {
+   "title": "Home To Emily",
+   "pdfPage": 42,
+   "page": 42,
+   "conf": "high"
+  },
+  {
+   "title": "I Don't Want To Live On The Moon",
+   "pdfPage": 42,
+   "page": 42,
+   "conf": "high"
+  },
+  {
+   "title": "I Love Lucy",
+   "pdfPage": 43,
+   "page": 43,
+   "conf": "high"
+  },
+  {
+   "title": "I Love Trash",
+   "pdfPage": 43,
+   "page": 43,
+   "conf": "high"
+  },
+  {
+   "title": "I'm Popeye The Sailor Man",
+   "pdfPage": 44,
+   "page": 44,
+   "conf": "high"
+  },
+  {
+   "title": "The Incredible Hulk",
+   "pdfPage": 44,
+   "page": 44,
+   "conf": "high"
+  },
+  {
+   "title": "Imagine That",
+   "pdfPage": 45,
+   "page": 45,
+   "conf": "high"
+  },
+  {
+   "title": "I'm So Glad We Had This Time Together",
+   "pdfPage": 46,
+   "page": 46,
+   "conf": "high"
+  },
+  {
+   "title": "Jeannie",
+   "pdfPage": 46,
+   "page": 46,
+   "conf": "high"
+  },
+  {
+   "title": "The Ironside Theme",
+   "pdfPage": 47,
+   "page": 47,
+   "conf": "high"
+  },
+  {
+   "title": "It's Howdy Doody Time",
+   "pdfPage": 47,
+   "page": 47,
+   "conf": "high"
+  },
+  {
+   "title": "Keep Your Eye On The Sparrow",
+   "pdfPage": 47,
+   "page": 47,
+   "conf": "high"
+  },
+  {
+   "title": "Knots Landing",
+   "pdfPage": 48,
+   "page": 48,
+   "conf": "high"
+  },
+  {
+   "title": "Kojak",
+   "pdfPage": 48,
+   "page": 48,
+   "conf": "high"
+  },
+  {
+   "title": "Jetsons Main Theme",
+   "pdfPage": 49,
+   "page": 49,
+   "conf": "high"
+  },
+  {
+   "title": "Love, American Style",
+   "pdfPage": 49,
+   "page": 49,
+   "conf": "high"
+  },
+  {
+   "title": "The Life And Legend Of Wyatt Earp",
+   "pdfPage": 50,
+   "page": 50,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Magnum, P.I.\"",
+   "pdfPage": 50,
+   "page": 50,
+   "conf": "high"
+  },
+  {
+   "title": "The Little House (On The Prairie)",
+   "pdfPage": 51,
+   "page": 51,
+   "conf": "high"
+  },
+  {
+   "title": "Little Lulu",
+   "pdfPage": 51,
+   "page": 51,
+   "conf": "high"
+  },
+  {
+   "title": "McHale's Navy March",
+   "pdfPage": 51,
+   "page": 51,
+   "conf": "high"
+  },
+  {
+   "title": "Magilla Gorilla",
+   "pdfPage": 52,
+   "page": 52,
+   "conf": "high"
+  },
+  {
+   "title": "Major Dad",
+   "pdfPage": 52,
+   "page": 52,
+   "conf": "high"
+  },
+  {
+   "title": "MacGyver",
+   "pdfPage": 53,
+   "page": 53,
+   "conf": "high"
+  },
+  {
+   "title": "Miami Vice",
+   "pdfPage": 53,
+   "page": 53,
+   "conf": "high"
+  },
+  {
+   "title": "Making Our Dreams Come True",
+   "pdfPage": 54,
+   "page": 54,
+   "conf": "high"
+  },
+  {
+   "title": "Mickey Mouse March",
+   "pdfPage": 54,
+   "page": 54,
+   "conf": "high"
+  },
+  {
+   "title": "Mannix",
+   "pdfPage": 55,
+   "page": 55,
+   "conf": "high"
+  },
+  {
+   "title": "Mariko Love Theme",
+   "pdfPage": 55,
+   "page": 55,
+   "conf": "high"
+  },
+  {
+   "title": "The Masterpiece",
+   "pdfPage": 56,
+   "page": 56,
+   "conf": "high"
+  },
+  {
+   "title": "Mission: Impossible Theme",
+   "pdfPage": 56,
+   "page": 56,
+   "conf": "high"
+  },
+  {
+   "title": "Mr. Ed",
+   "pdfPage": 57,
+   "page": 57,
+   "conf": "high"
+  },
+  {
+   "title": "The Mommies",
+   "pdfPage": 57,
+   "page": 57,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"The Monkees\"",
+   "pdfPage": 58,
+   "page": 58,
+   "conf": "high"
+  },
+  {
+   "title": "Murder, She Wrote",
+   "pdfPage": 58,
+   "page": 58,
+   "conf": "high"
+  },
+  {
+   "title": "Mork And Mindy",
+   "pdfPage": 59,
+   "page": 59,
+   "conf": "high"
+  },
+  {
+   "title": "The Muppet Show Theme",
+   "pdfPage": 59,
+   "page": 59,
+   "conf": "high"
+  },
+  {
+   "title": "My Gidget",
+   "pdfPage": 60,
+   "page": 60,
+   "conf": "high"
+  },
+  {
+   "title": "Mystery",
+   "pdfPage": 60,
+   "page": 60,
+   "conf": "high"
+  },
+  {
+   "title": "The Munsters Theme",
+   "pdfPage": 61,
+   "page": 61,
+   "conf": "high"
+  },
+  {
+   "title": "Nadia's Theme",
+   "pdfPage": 61,
+   "page": 61,
+   "conf": "high"
+  },
+  {
+   "title": "The Name Of The Game",
+   "pdfPage": 62,
+   "page": 62,
+   "conf": "high"
+  },
+  {
+   "title": "Nelson Riddle's New Naked City Theme",
+   "pdfPage": 62,
+   "page": 62,
+   "conf": "high"
+  },
+  {
+   "title": "Nero Wolfe",
+   "pdfPage": 63,
+   "page": 63,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From Ninth Symphony",
+   "pdfPage": 63,
+   "page": 63,
+   "conf": "high"
+  },
+  {
+   "title": "National Geographic Theme",
+   "pdfPage": 64,
+   "page": 64,
+   "conf": "high"
+  },
+  {
+   "title": "Nothing's Gonna Stop Me Now",
+   "pdfPage": 64,
+   "page": 64,
+   "conf": "high"
+  },
+  {
+   "title": "Northern Exposure (Main Title)",
+   "pdfPage": 65,
+   "page": 65,
+   "conf": "high"
+  },
+  {
+   "title": "Octopus Blues",
+   "pdfPage": 65,
+   "page": 65,
+   "conf": "high"
+  },
+  {
+   "title": "The Odd Couple",
+   "pdfPage": 66,
+   "page": 66,
+   "conf": "high"
+  },
+  {
+   "title": "Quincy",
+   "pdfPage": 66,
+   "page": 66,
+   "conf": "high"
+  },
+  {
+   "title": "One Fine Face",
+   "pdfPage": 67,
+   "page": 67,
+   "conf": "high"
+  },
+  {
+   "title": "Perry Mason Theme",
+   "pdfPage": 67,
+   "page": 67,
+   "conf": "high"
+  },
+  {
+   "title": "One Small Voice",
+   "pdfPage": 68,
+   "page": 68,
+   "conf": "high"
+  },
+  {
+   "title": "Put Your Dreams Away (For Another Day)",
+   "pdfPage": 68,
+   "page": 68,
+   "conf": "high"
+  },
+  {
+   "title": "People In Your Neighborhood",
+   "pdfPage": 69,
+   "page": 69,
+   "conf": "high"
+  },
+  {
+   "title": "Scooby-Doo Main Title",
+   "pdfPage": 69,
+   "page": 69,
+   "conf": "high"
+  },
+  {
+   "title": "Petticoat Junction",
+   "pdfPage": 70,
+   "page": 70,
+   "conf": "high"
+  },
+  {
+   "title": "The Naked Gun From The Files Of Police Squad!",
+   "pdfPage": 70,
+   "page": 70,
+   "conf": "high"
+  },
+  {
+   "title": "The Real McCoys",
+   "pdfPage": 71,
+   "page": 71,
+   "conf": "high"
+  },
+  {
+   "title": "The Rockford Files",
+   "pdfPage": 71,
+   "page": 71,
+   "conf": "high"
+  },
+  {
+   "title": "Robin Hood",
+   "pdfPage": 72,
+   "page": 72,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Route 66\"",
+   "pdfPage": 72,
+   "page": 72,
+   "conf": "high"
+  },
+  {
+   "title": "Rubber Duckie",
+   "pdfPage": 73,
+   "page": 73,
+   "conf": "high"
+  },
+  {
+   "title": "Seattle",
+   "pdfPage": 73,
+   "page": 73,
+   "conf": "high"
+  },
+  {
+   "title": "Rocky & Bullwinkle",
+   "pdfPage": 74,
+   "page": 74,
+   "conf": "high"
+  },
+  {
+   "title": "SeaQuest DSV",
+   "pdfPage": 74,
+   "page": 74,
+   "conf": "high"
+  },
+  {
+   "title": "77 Sunset Strip",
+   "pdfPage": 74,
+   "page": 74,
+   "conf": "high"
+  },
+  {
+   "title": "Secret Agent Man",
+   "pdfPage": 75,
+   "page": 75,
+   "conf": "high"
+  },
+  {
+   "title": "The Smurfs",
+   "pdfPage": 75,
+   "page": 75,
+   "conf": "high"
+  },
+  {
+   "title": "The Secret Of Silent Hills",
+   "pdfPage": 76,
+   "page": 76,
+   "conf": "high"
+  },
+  {
+   "title": "Solid Gold",
+   "pdfPage": 76,
+   "page": 76,
+   "conf": "high"
+  },
+  {
+   "title": "Seems Like Old Times",
+   "pdfPage": 77,
+   "page": 77,
+   "conf": "high"
+  },
+  {
+   "title": "Simon And Simon",
+   "pdfPage": 77,
+   "page": 77,
+   "conf": "high"
+  },
+  {
+   "title": "Song From Buck Rogers",
+   "pdfPage": 77,
+   "page": 77,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Star Trek\"",
+   "pdfPage": 78,
+   "page": 78,
+   "conf": "high"
+  },
+  {
+   "title": "Star Trek - The Next Generation",
+   "pdfPage": 78,
+   "page": 78,
+   "conf": "high"
+  },
+  {
+   "title": "St. Elsewhere",
+   "pdfPage": 79,
+   "page": 79,
+   "conf": "high"
+  },
+  {
+   "title": "Then Came You",
+   "pdfPage": 79,
+   "page": 79,
+   "conf": "high"
+  },
+  {
+   "title": "Superman",
+   "pdfPage": 80,
+   "page": 80,
+   "conf": "high"
+  },
+  {
+   "title": "This Is It",
+   "pdfPage": 80,
+   "page": 80,
+   "conf": "high"
+  },
+  {
+   "title": "That Was The Week That Was",
+   "pdfPage": 81,
+   "page": 81,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"The Untouchables\"",
+   "pdfPage": 81,
+   "page": 81,
+   "conf": "high"
+  },
+  {
+   "title": "This Could Be The Start Of Something",
+   "pdfPage": 82,
+   "page": 82,
+   "conf": "high"
+  },
+  {
+   "title": "Thirtysomething (Main Title Theme)",
+   "pdfPage": 83,
+   "page": 83,
+   "conf": "high"
+  },
+  {
+   "title": "Three's Company Theme",
+   "pdfPage": 83,
+   "page": 83,
+   "conf": "high"
+  },
+  {
+   "title": "Top Cat",
+   "pdfPage": 84,
+   "page": 84,
+   "conf": "high"
+  },
+  {
+   "title": "Twilight Zone",
+   "pdfPage": 84,
+   "page": 84,
+   "conf": "high"
+  },
+  {
+   "title": "The Wild Wild West Theme",
+   "pdfPage": 84,
+   "page": 84,
+   "conf": "high"
+  },
+  {
+   "title": "The Toy Parade",
+   "pdfPage": 85,
+   "page": 85,
+   "conf": "high"
+  },
+  {
+   "title": "Victory At Sea",
+   "pdfPage": 85,
+   "page": 85,
+   "conf": "high"
+  },
+  {
+   "title": "Twin Peaks Theme",
+   "pdfPage": 86,
+   "page": 86,
+   "conf": "high"
+  },
+  {
+   "title": "Wagon Train (Roll Along)",
+   "pdfPage": 86,
+   "page": 86,
+   "conf": "high"
+  },
+  {
+   "title": "The Waltons",
+   "pdfPage": 87,
+   "page": 87,
+   "conf": "high"
+  },
+  {
+   "title": "When You Wish Upon A Star",
+   "pdfPage": 87,
+   "page": 87,
+   "conf": "high"
+  },
+  {
+   "title": "William Tell Overture",
+   "pdfPage": 88,
+   "page": 88,
+   "conf": "high"
+  },
+  {
+   "title": "Winds Of War (Love Theme)",
+   "pdfPage": 89,
+   "page": 89,
+   "conf": "high"
+  },
+  {
+   "title": "Yakety Sax",
+   "pdfPage": 89,
+   "page": 89,
+   "conf": "high"
+  },
+  {
+   "title": "Wings",
+   "pdfPage": 90,
+   "page": 90,
+   "conf": "high"
+  },
+  {
+   "title": "Theme From \"Zorro\"",
+   "pdfPage": 90,
+   "page": 90,
+   "conf": "high"
+  },
+  {
+   "title": "With A Little Help From My Friends",
+   "pdfPage": 91,
+   "page": 91,
+   "conf": "high"
+  },
+  {
+   "title": "Without Us",
+   "pdfPage": 92,
+   "page": 92,
+   "conf": "high"
+  },
+  {
+   "title": "Won't You Be My Neighbor?",
+   "pdfPage": 93,
+   "page": 93,
+   "conf": "high"
+  },
+  {
+   "title": "A Year In The Life",
+   "pdfPage": 93,
+   "page": 93,
+   "conf": "high"
+  },
+  {
+   "title": "Woody Woodpecker",
+   "pdfPage": 94,
+   "page": 94,
+   "conf": "high"
+  },
+  {
+   "title": "Yogi Bear Song",
+   "pdfPage": 94,
+   "page": 94,
+   "conf": "high"
+  },
+  {
+   "title": "You Look At Me",
+   "pdfPage": 95,
+   "page": 95,
+   "conf": "high"
+  }
+ ]
+}

@@ -25084,7 +25084,7 @@ var EngraverController = function EngraverController(paper, params) {
   this.space = 3 * spacing.SPACE;
   this.initialClef = params.initialClef;
   this.timeBasedLayout = params.timeBasedLayout;
-  this.expandToWidest = !!params.expandToWidest;
+  this.expandToWidest = params.expandToWidest !== false;   // everything-music-site: on by default, so no line runs past the others (pass false for abcjs's own)
   this.scale = params.scale ? parseFloat(params.scale) : 0;
   this.classes = new Classes({
     shouldAddClasses: params.add_classes

@@ -1,6 +1,6 @@
 // playbar.js — the bar of playing controls fixed to the bottom of the window (PlayBar): the lesson pages and the Backing Track.
 // One row, always the same height. When the window is too narrow for everything, the least important controls leave the bar
-// and an "Options" button appears; it opens a small panel over the bar holding the controls that left. Nothing is copied: the
+// and a "More options" button appears; it opens a small panel over the bar holding the controls that left. Nothing is copied: the
 // page's own elements are moved, so their ids and listeners go with them.
 //
 //   PlayBar.attach(bar, { live: function(){ return true while something is playing } }) -> { refit }
@@ -18,8 +18,8 @@
     if (document.getElementById("playbar-css")) return;
     var st = document.createElement("style"); st.id = "playbar-css"; st.textContent =
       "body{padding-bottom:calc(" + HEIGHT + " + 1.5rem)}"
-      + ".playbar{position:fixed;left:0;right:0;bottom:0;z-index:1020;box-sizing:border-box;height:" + HEIGHT + ";margin:0;display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:1rem;"
-      +   "padding:0 .8rem;overflow:hidden;background:var(--parch,#f5efe2);border:0;border-top:1px solid var(--parch-edge,#e0d8ce);border-radius:0;box-shadow:0 -6px 18px -12px rgba(0,0,0,.35);font-size:.85rem}"
+      + ".playbar{position:fixed;left:0;right:0;bottom:0;z-index:1020;box-sizing:border-box;height:" + HEIGHT + ";margin:0;display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;justify-content:safe center;gap:1rem;"
+      +   "padding:0 1rem;overflow:hidden;background:var(--parch,#f5efe2);border:0;border-top:1px solid var(--parch-edge,#e0d8ce);border-radius:0;box-shadow:0 -6px 18px -12px rgba(0,0,0,.35);font-size:.85rem}"
       + ".playbar>*{flex:0 0 auto;white-space:nowrap}"
       + ".playbar-more{height:1.9rem;padding:0 .6rem;border:1px solid var(--parch-edge,#c9c0b2);border-radius:4px;background:#fff;color:inherit;font:inherit;font-size:.78rem;cursor:pointer}"
       + ".playbar-more[aria-expanded=true]{background:var(--site-accent-dk,#2b9c90);border-color:var(--site-accent-dk,#2b9c90);color:#fff}"
@@ -42,7 +42,7 @@
       sb.addEventListener("click", stopAll); }
     var items = Array.prototype.map.call(bar.children, function (el, i){ return { el: el, at: i }; });
     var more = document.createElement("button"), pop = document.createElement("div"), busy = false;
-    more.type = "button"; more.className = "playbar-more"; more.textContent = "Options"; more.hidden = true; more.setAttribute("aria-expanded", "false"); more.title = "The controls there is no room for in the bar";
+    more.type = "button"; more.className = "playbar-more"; more.textContent = "More options ▴"; more.hidden = true; more.setAttribute("aria-expanded", "false"); more.title = "The controls there is no room for in the bar";
     pop.className = "playbar-pop"; pop.hidden = true; pop.setAttribute("role", "group"); pop.setAttribute("aria-label", "More playing controls");
     bar.appendChild(more); bar.parentNode.insertBefore(pop, bar.nextSibling);
     function open(on){ pop.hidden = !on; more.setAttribute("aria-expanded", String(!!on)); }

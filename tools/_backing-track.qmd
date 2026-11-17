@@ -232,7 +232,7 @@
 #bt-chart .bt-tabset .nav-link.is-live::after{content:"";display:inline-block;width:.45rem;height:.45rem;margin-left:.4rem;border-radius:50%;background:var(--site-accent,#3fc2b4);vertical-align:.08em}
 @media print{ #bt-root .bt-tabstrip,#bt-chart .bt-tabset .nav{display:none} #bt-chart .bt-tabset .tab-pane{display:block!important;opacity:1!important}
   #bt-chart .bt-tabset .tab-pane::before{content:attr(data-print-title);display:block;font-weight:700;margin:.8rem 0 .3rem} #bt-chart .tc-systems[hidden]{display:flex} }
-#bt-mel-score{margin:.8rem 0 .4rem;background:#fff;border:1px solid var(--site-border,#e0d8ce);border-radius:10px;padding:.5rem .8rem;overflow-x:auto}
+#bt-mel-score{margin:.8rem 0 .4rem}
 #bt-mel-score:empty{display:none}
 #bt-chart .tc-bar.bt-start::before{content:"\25B6";position:absolute;top:3px;right:5px;font-size:.6rem;line-height:1;color:var(--site-accent-dk,#2b9c90)}
 </style>
@@ -675,7 +675,7 @@
       <span class="bt-hint" id="bt-mel-log-note" style="margin:0"></span>
     </div>
     <p class="bt-hint" id="bt-mel-note" role="status"></p>
-    <div id="bt-mel-score" aria-label="The melody as notation"></div>
+    <div id="bt-mel-score" class="site-paper" aria-label="The melody as notation"></div>
     <div id="bt-mel-dwim" hidden></div>
     <div class="bt-row" id="bt-mel-out" hidden>
       <button type="button" class="bt-btn" id="bt-mel-copy">Copy the ABC with the melody</button>
@@ -922,11 +922,16 @@
   // A tune from the collection: its ABC becomes the changes, its notes the melody the band plays along.
   var tuneLibReady = null;
   function loadScript(src){ return new Promise(function(res, rej){ var sc = document.createElement("script"); sc.src = src; sc.onload = res; sc.onerror = function(){ rej(); }; document.head.appendChild(sc); }); }
-  function tunePicker(){
-    var box = $("bt-tunepick"), open = box.hidden; box.hidden = !open; $("bt-tune-load").setAttribute("aria-expanded", String(open)); if (!open) return;
+  // The collection's scripts, loaded once (abcjs, tunesObject, quality marks), then the picker built.
+  function tuneLib(){
     if (!tuneLibReady) tuneLibReady = loadAbcjs().then(function(){ return window.tunesObject ? 0 : loadScript("/apps/tunes/tunes-object.js"); }).then(function(){ return window.TUNE_QUALITY ? 0 : loadScript("/apps/tunes/tune-quality.js"); }).then(function(){
       TuneLibrary.build(window.tunesObject || tunesObject); $("bt-tunepick-body").innerHTML = "";
       TuneLibrary.renderPicker($("bt-tunepick-body"), { onSelect: tuneLoad, facets: ["tags", "tonality", "meter", "key", "chords"] }); });
+    return tuneLibReady;
+  }
+  function tunePicker(){
+    var box = $("bt-tunepick"), open = box.hidden; box.hidden = !open; $("bt-tune-load").setAttribute("aria-expanded", String(open)); if (!open) return;
+    tuneLib();
     tuneLibReady.catch(function(){ tuneLibReady = null; $("bt-tunepick-body").textContent = "The tune collection could not be loaded."; });
   }
   function tuneLoad(rec){
@@ -1894,6 +1899,7 @@
     return h;
   }
   // Links from the Accompaniment Styles page preselect the band: ?bass=riff&rhythm=charleston&feel=straight&comp=guitar
+  // ?tune=<%%id> opens a tune from the collection (loadTuneParam).
   function applyQuery(){
     var q = {}; location.search.replace(/[?&]([a-z]+)=([^&]*)/g, function(_, k, v){ q[k] = decodeURIComponent(v); });
     function pick(id, v){ var el = $(id); if (v && Array.prototype.some.call(el.options, function(o){ return o.value === v; })){ el.value = v; return true; } return false; }
@@ -1909,6 +1915,16 @@
       any = true; });
     if (q.feel && q.feel !== $("bt-feel").value && !q.style){ if (!allowedFeel(q.feel)) $("bt-unlock").checked = true; rebuild(false); pick("bt-feel", q.feel); any = true; }
     if (any){ player.setInstruments(neededSounds()); player.setOpts(bandOpts()); }
+  }
+  // ?tune=<%%id>: open that tune from the collection (from a link on the Tunes page); its %%id line finds it in any collection.
+  function loadTuneParam(){
+    var m = /[?&]tune=([^&]*)/.exec(location.search); if (!m) return;
+    var id = decodeURIComponent(m[1]).replace(/[^\w-]/g, ""); if (!id) return;
+    tuneLib().then(function(){
+      var o = window.tunesObject || tunesObject, found = "", re = new RegExp("^%%id[ \\t]+" + id + "[ \\t]*$", "m");
+      Object.keys(o).some(function(k){ return String(o[k]).split(/\n(?=X:)/).some(function(t){ if (re.test(t)){ found = t; return true; } return false; }); });
+      if (found) tuneLoad({ abc: found }); else $("bt-tune-note").textContent = "No tune called \u201c" + id + "\u201d in the collection.";
+    }).catch(function(){ tuneLibReady = null; $("bt-tune-note").textContent = "The tune collection could not be loaded."; });
   }
   function allowedFeel(f){ return unlocked() || styleDef().feel === f; }
   function loadHandoff(){
@@ -2019,6 +2035,7 @@
 
   applyQuery();
   loadHandoff();
+  loadTuneParam();
 
   // ---- practice: start bar, cycle, tempo steps ----
   // Bars are FORM bars (the order the band plays them), numbered from 1 in the fields.

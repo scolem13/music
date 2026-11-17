@@ -297,7 +297,7 @@
 
   var css = el("style");
   css.textContent =
-    ".wk-panel{border:1px solid var(--bs-border-color,#dee2e6);border-radius:6px;padding:.5rem .75rem;margin:.75rem 0;font-size:.9rem}" +
+    ".wk-panel{border:1px solid var(--site-border,#e0d8ce);border-radius:8px;background:var(--site-surface,#fff);padding:.5rem .75rem;margin:.75rem 0;font-size:.9rem}" +
     ".wk-head{display:flex;flex-wrap:wrap;gap:.25rem .75rem;align-items:baseline;margin-bottom:.35rem}" +
     ".wk-title{font-weight:600}.wk-work{opacity:.7;font-size:.85rem}" +
     ".wk-recs,.wk-links{list-style:none;padding:0;margin:0 0 .35rem}" +

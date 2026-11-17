@@ -26,7 +26,7 @@
   background:var(--site-surface-2,#f2ede5);color:inherit;font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);font-size:.8rem;line-height:1.55}
 #nr-root textarea{min-height:6rem;resize:vertical}
 #nr-root pre{white-space:pre-wrap;overflow-x:auto;margin-bottom:0}
-#nr-score{margin:.8rem 0 0;background:#fff;border:1px solid var(--site-border,#e0d8ce);border-radius:10px;padding:.5rem .8rem;overflow-x:auto}
+#nr-score{margin:.8rem 0 0}
 #nr-score:empty{display:none}
 #nr-roll{margin:.8rem 0 0;overflow-x:auto;border:1px solid var(--site-border,#e0d8ce);border-radius:10px;background:var(--site-surface,#fff)}
 #nr-roll svg{display:block;font-family:var(--font-mono,monospace)}
@@ -93,7 +93,7 @@
     <div id="nr-dwim"></div>
     <h3>What was written</h3>
     <pre id="nr-abc"></pre>
-    <div id="nr-score" aria-label="The result as notation"></div>
+    <div id="nr-score" class="site-paper" aria-label="The result as notation"></div>
     <h3>The take against the bars</h3>
     <div id="nr-roll" role="img" aria-label="The notes as played and as written, on the bars"></div>
     <div class="nr-legend"><span><i style="border:2px solid #d9822b"></i>a chord's notes as played</span><span><i style="border:2px solid #2b9c90"></i>a melody note as played</span><span><i style="background:rgba(43,156,144,.4)"></i>the melody as written</span><span><i style="background:#d9822b"></i>a chord as placed</span><span><i style="background:#7b5ea7"></i>the pedal held</span></div>

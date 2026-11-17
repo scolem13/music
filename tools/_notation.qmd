@@ -3579,6 +3579,40 @@
     endTell({ type: "st-ready" });
   }
 
+  // Read a piece in (nt-doc / nt-chordpro / nt-abc message, or the ?tune= loader): asks first when the doc has content; false = declined
+  function readIn(m) {
+    var f = doc.chunks.some(function (c, i) { var x = D.info(doc, i); return x.rhythm || x.pitches || x.chords || x.words; });
+    if (f && !confirm("Read in \u201c" + (m.title || "Untitled") + "\u201d from " + (m.host || "Timestamp Notes") + "? It replaces the piece here.")) return false;
+    change(function () { doc = m.type === "nt-doc" ? D.upgrade(JSON.parse(JSON.stringify(m.doc))) : m.type === "nt-abc" ? D.upgrade(D.fromAbc(m.abc)) : D.fromChordPro(m.chordpro, doc.meter); if (m.title) doc.title = m.title; if (!doc.tempo && +m.tempo > 0) doc.tempo = Math.round(+m.tempo); Q.bpmOwn = null; qSave(); cur = 0; voice = 0; sel = null; shownCur = -1; });
+    return true;
+  }
+
+  // ?tune=<%%id>: open a tune from the Tune Library (the Tunes page links here); the address is cleaned so a reload doesn't re-ask
+  (function () {
+    var mt = /[?&]tune=([^&#]*)/.exec(location.search);
+    if (!mt || DICT || ENDING || STAGE) return;
+    var id = decodeURIComponent(mt[1]).replace(/[^\w-]/g, "");
+    try { var u = new URL(location.href); u.searchParams.delete("tune"); window.history.replaceState(null, "", u.pathname + u.search + u.hash); } catch (e) {}
+    function loadScript(src) { return new Promise(function (ok, bad) { var el = document.createElement("script"); el.src = src; el.onload = ok; el.onerror = bad; document.head.appendChild(el); }); }
+    function find() {   // const at the top of tunes-object.js is not a window property
+      if (typeof tunesObject === "undefined") return null;
+      for (var k in tunesObject) {
+        var ts = String(tunesObject[k]).split(/\n(?=X:)/);
+        for (var i = 0; i < ts.length; i++) if (new RegExp("^%%id[ \\t]+" + id + "[ \\t]*$", "m").test(ts[i])) return ts[i];
+      }
+      return null;
+    }
+    if (!id) return;
+    status("Opening the tune\u2026");
+    (typeof tunesObject === "undefined" ? loadScript("/apps/tunes/tunes-object.js") : Promise.resolve()).then(function () {
+      var abc = find();
+      if (!abc) { status("No tune with the id \u201c" + id + "\u201d in the Tune Library."); return; }
+      var t = /^T:\s*(.+)$/m.exec(abc), title = t ? t[1].trim() : id;
+      if (readIn({ type: "nt-abc", abc: abc, title: title, host: "Tunes" })) status("Opened \u201c" + title + "\u201d from the Tune Library.");
+      else status("");
+    }, function () { status("Couldn't load the Tune Library."); });
+  })();
+
   // The Backing Track's Melody tab sends nt-abc { abc, title } the same way (?remote=1, after nt-ready).
   // Timestamp Notes (tools/timestamp-notes.qmd) opens this page with ?remote=1 and sends nt-doc { doc, title } (a piece: sections
   // the length tapped, chords where they were played) or nt-chordpro { chordpro, title } (words and chords, a chord per bar)
@@ -3622,9 +3656,7 @@
       }
       // nt-doc: a whole piece (its chords already placed where they were played); nt-chordpro: words and chords to read in
       if (!(m.type === "nt-chordpro" && typeof m.chordpro === "string") && !(m.type === "nt-doc" && m.doc && Array.isArray(m.doc.chunks)) && !(m.type === "nt-abc" && typeof m.abc === "string")) return;
-      var f = doc.chunks.some(function (c, i) { var x = D.info(doc, i); return x.rhythm || x.pitches || x.chords || x.words; });
-      if (f && !confirm("Read in “" + (m.title || "Untitled") + "” from " + (m.host || "Timestamp Notes") + "? It replaces the piece here.")) return;
-      change(function () { doc = m.type === "nt-doc" ? D.upgrade(JSON.parse(JSON.stringify(m.doc))) : m.type === "nt-abc" ? D.upgrade(D.fromAbc(m.abc)) : D.fromChordPro(m.chordpro, doc.meter); if (m.title) doc.title = m.title; if (!doc.tempo && +m.tempo > 0) doc.tempo = Math.round(+m.tempo); Q.bpmOwn = null; qSave(); cur = 0; voice = 0; sel = null; shownCur = -1; });
+      if (!readIn(m)) return;
       status("Read in from " + (m.host || "Timestamp Notes") + ": add the melody chunk by chunk.");
       if (m.host === "DAW" && m.back) { $("nt-daw").hidden = false; $("nt-daw-what").textContent = "“" + (m.title || "Clip") + "”: edit it here, then send it back to its clip."; }
       try { window.focus(); } catch (err) {}

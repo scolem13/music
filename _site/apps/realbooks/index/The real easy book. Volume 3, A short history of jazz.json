@@ -1,0 +1,386 @@
+{
+ "file": "The real easy book. Volume 3, A short history of jazz.pdf",
+ "method": "mixed",
+ "offset": 11,
+ "notes": "Bb edition (p3); the book states 63 tunes and 63 entries are here. Text layer is Internet Archive OCR: table of contents (p4-5) garbled, so titles come from each tune's first-page heading plus 'SUPPLEMENTAL MATERIAL - title' pages; printed page = pdfPage-11 (Alexander's 3, Bill Bailey 7 ... agree with the TOC numbers). Rifftide (60), Social Call (64) and Little O In The Sky (118) read from page images. Composers not captured (the TOC gives 'as written or played by', mixed). Section divider pages and appendices are not entries.",
+ "entries": [
+  {
+   "title": "Alexander's Ragtime Band",
+   "pdfPage": 14,
+   "page": 3,
+   "conf": "high"
+  },
+  {
+   "title": "Bill Bailey, Won't You Please Come Home?",
+   "pdfPage": 18,
+   "page": 7,
+   "conf": "high"
+  },
+  {
+   "title": "The Birth Of The Blues",
+   "pdfPage": 22,
+   "page": 11,
+   "conf": "high"
+  },
+  {
+   "title": "St. Louis Blues",
+   "pdfPage": 24,
+   "page": 13,
+   "conf": "high"
+  },
+  {
+   "title": "When It's Sleepy Time Down South",
+   "pdfPage": 26,
+   "page": 15,
+   "conf": "high"
+  },
+  {
+   "title": "Flying Home",
+   "pdfPage": 30,
+   "page": 19,
+   "conf": "high"
+  },
+  {
+   "title": "Night Train",
+   "pdfPage": 32,
+   "page": 21,
+   "conf": "high"
+  },
+  {
+   "title": "Opus One",
+   "pdfPage": 34,
+   "page": 23,
+   "conf": "high"
+  },
+  {
+   "title": "Perdido",
+   "pdfPage": 36,
+   "page": 25,
+   "conf": "high"
+  },
+  {
+   "title": "Poinciana",
+   "pdfPage": 38,
+   "page": 27,
+   "conf": "high"
+  },
+  {
+   "title": "Robbin's Nest",
+   "pdfPage": 40,
+   "page": 29,
+   "conf": "high"
+  },
+  {
+   "title": "So Rare",
+   "pdfPage": 44,
+   "page": 33,
+   "conf": "high"
+  },
+  {
+   "title": "Things Ain't What They Used To Be",
+   "pdfPage": 46,
+   "page": 35,
+   "conf": "high"
+  },
+  {
+   "title": "When Lights Are Low",
+   "pdfPage": 48,
+   "page": 37,
+   "conf": "high"
+  },
+  {
+   "title": "Au Privave",
+   "pdfPage": 52,
+   "page": 41,
+   "conf": "high"
+  },
+  {
+   "title": "My Little Suede Shoes",
+   "pdfPage": 54,
+   "page": 43,
+   "conf": "high"
+  },
+  {
+   "title": "Now's The Time",
+   "pdfPage": 56,
+   "page": 45,
+   "conf": "high"
+  },
+  {
+   "title": "Red Cross",
+   "pdfPage": 58,
+   "page": 47,
+   "conf": "high"
+  },
+  {
+   "title": "Rifftide",
+   "pdfPage": 60,
+   "page": 49,
+   "conf": "high"
+  },
+  {
+   "title": "Social Call",
+   "pdfPage": 64,
+   "page": 53,
+   "conf": "high"
+  },
+  {
+   "title": "Things Are Getting Better",
+   "pdfPage": 66,
+   "page": 55,
+   "conf": "high"
+  },
+  {
+   "title": "Bernie's Tune",
+   "pdfPage": 70,
+   "page": 59,
+   "conf": "high"
+  },
+  {
+   "title": "Line For Lyons",
+   "pdfPage": 74,
+   "page": 63,
+   "conf": "high"
+  },
+  {
+   "title": "Look For The Silver Lining",
+   "pdfPage": 78,
+   "page": 67,
+   "conf": "high"
+  },
+  {
+   "title": "Nights At The Turntable",
+   "pdfPage": 80,
+   "page": 69,
+   "conf": "high"
+  },
+  {
+   "title": "Take Five",
+   "pdfPage": 84,
+   "page": 73,
+   "conf": "high"
+  },
+  {
+   "title": "Blue Train",
+   "pdfPage": 88,
+   "page": 77,
+   "conf": "high"
+  },
+  {
+   "title": "The Cape Verdean Blues",
+   "pdfPage": 90,
+   "page": 79,
+   "conf": "high"
+  },
+  {
+   "title": "Foot Pattin' Time",
+   "pdfPage": 94,
+   "page": 83,
+   "conf": "high"
+  },
+  {
+   "title": "Idle Moments",
+   "pdfPage": 96,
+   "page": 85,
+   "conf": "high"
+  },
+  {
+   "title": "Impressions",
+   "pdfPage": 100,
+   "page": 89,
+   "conf": "high"
+  },
+  {
+   "title": "Lazy Bird",
+   "pdfPage": 102,
+   "page": 91,
+   "conf": "high"
+  },
+  {
+   "title": "Sayonara Blues",
+   "pdfPage": 104,
+   "page": 93,
+   "conf": "high"
+  },
+  {
+   "title": "Speedball",
+   "pdfPage": 106,
+   "page": 95,
+   "conf": "high"
+  },
+  {
+   "title": "Streamlined Stanley",
+   "pdfPage": 110,
+   "page": 99,
+   "conf": "high"
+  },
+  {
+   "title": "Highway 14",
+   "pdfPage": 114,
+   "page": 103,
+   "conf": "high"
+  },
+  {
+   "title": "In Your Own Sweet Way",
+   "pdfPage": 116,
+   "page": 105,
+   "conf": "high"
+  },
+  {
+   "title": "Little O In The Sky",
+   "pdfPage": 118,
+   "page": 107,
+   "conf": "high"
+  },
+  {
+   "title": "Simone",
+   "pdfPage": 120,
+   "page": 109,
+   "conf": "high"
+  },
+  {
+   "title": "Stand For Jazz",
+   "pdfPage": 122,
+   "page": 111,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Georgia Bright",
+   "pdfPage": 124,
+   "page": 113,
+   "conf": "high"
+  },
+  {
+   "title": "Three And One",
+   "pdfPage": 128,
+   "page": 117,
+   "conf": "high"
+  },
+  {
+   "title": "Up Jumped Spring",
+   "pdfPage": 130,
+   "page": 119,
+   "conf": "high"
+  },
+  {
+   "title": "Eighty One",
+   "pdfPage": 134,
+   "page": 123,
+   "conf": "high"
+  },
+  {
+   "title": "I'll Take Les",
+   "pdfPage": 136,
+   "page": 125,
+   "conf": "high"
+  },
+  {
+   "title": "Sister Cheryl",
+   "pdfPage": 138,
+   "page": 127,
+   "conf": "high"
+  },
+  {
+   "title": "Spring Song",
+   "pdfPage": 140,
+   "page": 129,
+   "conf": "high"
+  },
+  {
+   "title": "These Times",
+   "pdfPage": 144,
+   "page": 133,
+   "conf": "high"
+  },
+  {
+   "title": "This Masquerade",
+   "pdfPage": 146,
+   "page": 135,
+   "conf": "high"
+  },
+  {
+   "title": "Unchain My Heart",
+   "pdfPage": 148,
+   "page": 137,
+   "conf": "high"
+  },
+  {
+   "title": "Yeah, Yeah, Yeah",
+   "pdfPage": 150,
+   "page": 139,
+   "conf": "high"
+  },
+  {
+   "title": "Favela",
+   "pdfPage": 154,
+   "page": 143,
+   "conf": "high"
+  },
+  {
+   "title": "Fotografia",
+   "pdfPage": 156,
+   "page": 145,
+   "conf": "high"
+  },
+  {
+   "title": "Minha Saudade",
+   "pdfPage": 158,
+   "page": 147,
+   "conf": "high"
+  },
+  {
+   "title": "Não Me Diga Adeus",
+   "pdfPage": 160,
+   "page": 149,
+   "conf": "high"
+  },
+  {
+   "title": "Saudade",
+   "pdfPage": 162,
+   "page": 151,
+   "conf": "high"
+  },
+  {
+   "title": "Si Señora",
+   "pdfPage": 164,
+   "page": 153,
+   "conf": "high"
+  },
+  {
+   "title": "Brisa",
+   "pdfPage": 168,
+   "page": 157,
+   "conf": "high"
+  },
+  {
+   "title": "Chile Con Soul",
+   "pdfPage": 170,
+   "page": 159,
+   "conf": "high"
+  },
+  {
+   "title": "Linda Chicana",
+   "pdfPage": 172,
+   "page": 161,
+   "conf": "high"
+  },
+  {
+   "title": "Nadie",
+   "pdfPage": 174,
+   "page": 163,
+   "conf": "high"
+  },
+  {
+   "title": "Quindembo",
+   "pdfPage": 176,
+   "page": 165,
+   "conf": "high"
+  },
+  {
+   "title": "Yellow Days",
+   "pdfPage": 178,
+   "page": 167,
+   "conf": "high"
+  }
+ ]
+}

@@ -1,0 +1,1457 @@
+{
+ "file": "The worlds greatest fake book (Chuck Sher).pdf",
+ "method": "text-index",
+ "offset": 12,
+ "notes": "Different book from Worlds_Greatest_Fake_Book.pdf (719 pp, pop/standards, 1215 entries): this is Chuck Sher's jazz-originals World's Greatest Fake Book, 495 pp. Index = scanner-added alphabetical list on pdf p2-6 (text layer, 'not included in the original book'), 'Title (composer) page'; 207 entries, printed page numbers; pdfPage = page + 12 throughout. Title of page 1 (After The Love Has Gone) is pdf 13. Titles of two tunes on one page do not occur; pages 143/144 are two different Humpty Dumpty tunes. Checked: OCR of the title strip of every entry's pdf page matched 123 of 207 (spread from p4 to p477); the rest (script-font titles OCR badly) 10 viewed by eye, all right. Pages after 477 = appendix (sample drum parts) and bass parts, left out. Index has no entry for tunes absent from the scanner list, so a tune not listed would be missing; the book's own composer index (pdf 9-11) lists same names. Printed page 477 is the last tune.",
+ "entries": [
+  {
+   "title": "After The Love Has Gone",
+   "pdfPage": 13,
+   "page": 1,
+   "composer": "J. Graydon",
+   "conf": "high"
+  },
+  {
+   "title": "Aileron",
+   "pdfPage": 15,
+   "page": 3,
+   "composer": "John Scofield",
+   "conf": "high"
+  },
+  {
+   "title": "Aisha",
+   "pdfPage": 16,
+   "page": 4,
+   "composer": "McCoy Tyner",
+   "conf": "high"
+  },
+  {
+   "title": "All Across The City",
+   "pdfPage": 17,
+   "page": 5,
+   "composer": "Jim Hall",
+   "conf": "high"
+  },
+  {
+   "title": "Arcade",
+   "pdfPage": 18,
+   "page": 6,
+   "composer": "John Abercrombie",
+   "conf": "high"
+  },
+  {
+   "title": "And The Melody Still Lingers On",
+   "pdfPage": 21,
+   "page": 9,
+   "composer": "Dizzy Gillespie",
+   "conf": "high"
+  },
+  {
+   "title": "The Beatles",
+   "pdfPage": 27,
+   "page": 15,
+   "composer": "John Scofield",
+   "conf": "high"
+  },
+  {
+   "title": "Bebop",
+   "pdfPage": 30,
+   "page": 18,
+   "composer": "Dizzy Gillespie",
+   "conf": "high"
+  },
+  {
+   "title": "Bebop Lives (Boblicity)",
+   "pdfPage": 31,
+   "page": 19,
+   "composer": "Miles Davis",
+   "conf": "high"
+  },
+  {
+   "title": "Big P",
+   "pdfPage": 33,
+   "page": 21,
+   "composer": "Jimmy Heath",
+   "conf": "high"
+  },
+  {
+   "title": "Birdland",
+   "pdfPage": 35,
+   "page": 23,
+   "composer": "Joe Zawinul",
+   "conf": "high"
+  },
+  {
+   "title": "The Blessing",
+   "pdfPage": 39,
+   "page": 27,
+   "composer": "Ornette Coleman",
+   "conf": "high"
+  },
+  {
+   "title": "Blues For Sarka",
+   "pdfPage": 40,
+   "page": 28,
+   "composer": "George Mraz",
+   "conf": "high"
+  },
+  {
+   "title": "Blue Dove",
+   "pdfPage": 41,
+   "page": 29,
+   "composer": "Jim Hall",
+   "conf": "high"
+  },
+  {
+   "title": "Brazilian Love Affair",
+   "pdfPage": 43,
+   "page": 31,
+   "composer": "George Duke",
+   "conf": "high"
+  },
+  {
+   "title": "A Brite Piece",
+   "pdfPage": 47,
+   "page": 35,
+   "composer": "Dave Liebmann",
+   "conf": "high"
+  },
+  {
+   "title": "Bullet Train",
+   "pdfPage": 49,
+   "page": 37,
+   "composer": "Lee Ritenour & Ernie Watts",
+   "conf": "high"
+  },
+  {
+   "title": "Burgundy & The Virgin Snow",
+   "pdfPage": 53,
+   "page": 41,
+   "composer": "Jim McNeely",
+   "conf": "high"
+  },
+  {
+   "title": "Cannonball",
+   "pdfPage": 57,
+   "page": 45,
+   "composer": "Joe Zawinul",
+   "conf": "high"
+  },
+  {
+   "title": "Capuccino",
+   "pdfPage": 61,
+   "page": 49,
+   "composer": "Chick Corea",
+   "conf": "high"
+  },
+  {
+   "title": "Caravanessa",
+   "pdfPage": 65,
+   "page": 53,
+   "composer": "Joe Chambers",
+   "conf": "high"
+  },
+  {
+   "title": "Carole’s Garden",
+   "pdfPage": 67,
+   "page": 55,
+   "composer": "Denny Zeitlin",
+   "conf": "high"
+  },
+  {
+   "title": "Cassidae",
+   "pdfPage": 69,
+   "page": 57,
+   "composer": "John Scofield",
+   "conf": "high"
+  },
+  {
+   "title": "Central Park",
+   "pdfPage": 71,
+   "page": 59,
+   "composer": "Chick Corea",
+   "conf": "high"
+  },
+  {
+   "title": "Champotch",
+   "pdfPage": 77,
+   "page": 65,
+   "composer": "Lennie Lasher",
+   "conf": "high"
+  },
+  {
+   "title": "Children Of The Night",
+   "pdfPage": 79,
+   "page": 67,
+   "composer": "Wayne Shorter",
+   "conf": "high"
+  },
+  {
+   "title": "City By The Bay",
+   "pdfPage": 81,
+   "page": 69,
+   "composer": "Vince Wallace",
+   "conf": "high"
+  },
+  {
+   "title": "Cloudburst",
+   "pdfPage": 85,
+   "page": 73,
+   "composer": "Jon Hendricks, et. al.",
+   "conf": "high"
+  },
+  {
+   "title": "Come Running To Me",
+   "pdfPage": 87,
+   "page": 75,
+   "composer": "Herbie Hancock",
+   "conf": "high"
+  },
+  {
+   "title": "Cool Aide",
+   "pdfPage": 93,
+   "page": 81,
+   "composer": "Phil Woods",
+   "conf": "high"
+  },
+  {
+   "title": "Cutting Edge",
+   "pdfPage": 94,
+   "page": 82,
+   "composer": "Ulf Wakenius",
+   "conf": "high"
+  },
+  {
+   "title": "Daahoud",
+   "pdfPage": 95,
+   "page": 83,
+   "composer": "Clifford Brown",
+   "conf": "high"
+  },
+  {
+   "title": "Daisy Mae",
+   "pdfPage": 97,
+   "page": 85,
+   "composer": "George Duke",
+   "conf": "high"
+  },
+  {
+   "title": "A Dance For Your Thoughts",
+   "pdfPage": 101,
+   "page": 89,
+   "composer": "Dave Liebman",
+   "conf": "high"
+  },
+  {
+   "title": "Dark Lady",
+   "pdfPage": 103,
+   "page": 91,
+   "composer": "Richie Beirach",
+   "conf": "high"
+  },
+  {
+   "title": "Dark Light",
+   "pdfPage": 105,
+   "page": 93,
+   "composer": "Mike Nock",
+   "conf": "high"
+  },
+  {
+   "title": "D.C. Farewell",
+   "pdfPage": 106,
+   "page": 94,
+   "composer": "Richie Cole",
+   "conf": "high"
+  },
+  {
+   "title": "Del Sasser",
+   "pdfPage": 107,
+   "page": 95,
+   "composer": "Sam Jones",
+   "conf": "high"
+  },
+  {
+   "title": "Driftin’",
+   "pdfPage": 109,
+   "page": 97,
+   "composer": "Herbie Hancock",
+   "conf": "high"
+  },
+  {
+   "title": "Duquility",
+   "pdfPage": 112,
+   "page": 100,
+   "composer": "Mal Waldron",
+   "conf": "high"
+  },
+  {
+   "title": "Ebony Moonbeams",
+   "pdfPage": 113,
+   "page": 101,
+   "composer": "George Cables",
+   "conf": "high"
+  },
+  {
+   "title": "Elegant People",
+   "pdfPage": 115,
+   "page": 103,
+   "composer": "Wayne Shorter",
+   "conf": "high"
+  },
+  {
+   "title": "Elsa",
+   "pdfPage": 119,
+   "page": 107,
+   "composer": "Earl Zindars",
+   "conf": "high"
+  },
+  {
+   "title": "Everywhere",
+   "pdfPage": 120,
+   "page": 108,
+   "composer": "Bunny Brunel",
+   "conf": "high"
+  },
+  {
+   "title": "Exits And Flags",
+   "pdfPage": 122,
+   "page": 110,
+   "composer": "Milton Nascimento",
+   "conf": "high"
+  },
+  {
+   "title": "The Face I Love",
+   "pdfPage": 123,
+   "page": 111,
+   "composer": "Marcos Valle",
+   "conf": "high"
+  },
+  {
+   "title": "Festival",
+   "pdfPage": 125,
+   "page": 113,
+   "composer": "George Duke",
+   "conf": "high"
+  },
+  {
+   "title": "Flight",
+   "pdfPage": 127,
+   "page": 115,
+   "composer": "Larry Dunlop",
+   "conf": "high"
+  },
+  {
+   "title": "Fly With The Wind",
+   "pdfPage": 129,
+   "page": 117,
+   "composer": "McCoy Tyner",
+   "conf": "high"
+  },
+  {
+   "title": "Foolish Door",
+   "pdfPage": 132,
+   "page": 120,
+   "composer": "John Abercrombie",
+   "conf": "high"
+  },
+  {
+   "title": "4 A.M.",
+   "pdfPage": 133,
+   "page": 121,
+   "composer": "Herbie Hancock",
+   "conf": "high"
+  },
+  {
+   "title": "Frankenstein",
+   "pdfPage": 137,
+   "page": 125,
+   "composer": "Grachan Moncur III",
+   "conf": "high"
+  },
+  {
+   "title": "Free Cell Block F – ’Tis Nazi USA",
+   "pdfPage": 138,
+   "page": 126,
+   "composer": "Charles Mingus",
+   "conf": "high"
+  },
+  {
+   "title": "Freight Trane",
+   "pdfPage": 139,
+   "page": 127,
+   "composer": "Tommy Flanagan",
+   "conf": "high"
+  },
+  {
+   "title": "Fried Bananas",
+   "pdfPage": 140,
+   "page": 128,
+   "composer": "Dexter Gordon",
+   "conf": "high"
+  },
+  {
+   "title": "Gibraltar",
+   "pdfPage": 141,
+   "page": 129,
+   "composer": "Joe Zawinul",
+   "conf": "high"
+  },
+  {
+   "title": "Green St. Caper",
+   "pdfPage": 145,
+   "page": 133,
+   "composer": "Woody Shaw",
+   "conf": "high"
+  },
+  {
+   "title": "Harold’s House Of Jazz",
+   "pdfPage": 147,
+   "page": 135,
+   "composer": "Richie Cole",
+   "conf": "high"
+  },
+  {
+   "title": "Highway One",
+   "pdfPage": 150,
+   "page": 138,
+   "composer": "Bobby Hutcherson",
+   "conf": "high"
+  },
+  {
+   "title": "High Wire – The Aerialist",
+   "pdfPage": 151,
+   "page": 139,
+   "composer": "Chick Corea",
+   "conf": "high"
+  },
+  {
+   "title": "Humpty Dumpty",
+   "pdfPage": 155,
+   "page": 143,
+   "composer": "Ornette Coleman",
+   "conf": "high"
+  },
+  {
+   "title": "Humpty Dumpty",
+   "pdfPage": 156,
+   "page": 144,
+   "composer": "Chick Corea",
+   "conf": "high"
+  },
+  {
+   "title": "Hungry Heart",
+   "pdfPage": 157,
+   "page": 145,
+   "composer": "Paul McIndless",
+   "conf": "high"
+  },
+  {
+   "title": "If You Went Away",
+   "pdfPage": 159,
+   "page": 147,
+   "composer": "Marcos Valle",
+   "conf": "high"
+  },
+  {
+   "title": "Images",
+   "pdfPage": 161,
+   "page": 149,
+   "composer": "Oliver Nelson",
+   "conf": "high"
+  },
+  {
+   "title": "I’m Home",
+   "pdfPage": 164,
+   "page": 152,
+   "composer": "Greg Mathiesen",
+   "conf": "high"
+  },
+  {
+   "title": "In Blossom",
+   "pdfPage": 165,
+   "page": 153,
+   "composer": "Kent Glenn",
+   "conf": "high"
+  },
+  {
+   "title": "Infant Eyes",
+   "pdfPage": 166,
+   "page": 154,
+   "composer": "Wayne Shorter",
+   "conf": "high"
+  },
+  {
+   "title": "Inner Space",
+   "pdfPage": 167,
+   "page": 155,
+   "composer": "Chick Corea",
+   "conf": "high"
+  },
+  {
+   "title": "In, Out & Around",
+   "pdfPage": 172,
+   "page": 160,
+   "composer": "Mike Nock",
+   "conf": "high"
+  },
+  {
+   "title": "In Search Of My Heart",
+   "pdfPage": 173,
+   "page": 161,
+   "composer": "McCoy Tyner",
+   "conf": "high"
+  },
+  {
+   "title": "I-Thou",
+   "pdfPage": 176,
+   "page": 164,
+   "composer": "Denny Zeitlin",
+   "conf": "high"
+  },
+  {
+   "title": "I Thought It Was You",
+   "pdfPage": 177,
+   "page": 165,
+   "composer": "Herbie Hancock",
+   "conf": "high"
+  },
+  {
+   "title": "I Wanna Stand Over There",
+   "pdfPage": 182,
+   "page": 170,
+   "composer": "Bobby Hutcherson",
+   "conf": "high"
+  },
+  {
+   "title": "I X Love",
+   "pdfPage": 183,
+   "page": 171,
+   "composer": "Charles Mingus",
+   "conf": "high"
+  },
+  {
+   "title": "Jeannine",
+   "pdfPage": 185,
+   "page": 173,
+   "composer": "Duke Pearson",
+   "conf": "high"
+  },
+  {
+   "title": "Jubilee",
+   "pdfPage": 187,
+   "page": 175,
+   "composer": "Bobby McFerrin",
+   "conf": "high"
+  },
+  {
+   "title": "Jungle Fever",
+   "pdfPage": 189,
+   "page": 177,
+   "composer": "Neil Larsen",
+   "conf": "high"
+  },
+  {
+   "title": "Katherine",
+   "pdfPage": 191,
+   "page": 179,
+   "composer": "Jeff Lorber",
+   "conf": "high"
+  },
+  {
+   "title": "Las Pulgas Freeway",
+   "pdfPage": 195,
+   "page": 183,
+   "composer": "Eugenio Toussaint",
+   "conf": "high"
+  },
+  {
+   "title": "Leaving",
+   "pdfPage": 198,
+   "page": 186,
+   "composer": "Richie Beirach",
+   "conf": "high"
+  },
+  {
+   "title": "Lemme At It",
+   "pdfPage": 199,
+   "page": 187,
+   "composer": "George Duke",
+   "conf": "high"
+  },
+  {
+   "title": "Lennie’s Pennies",
+   "pdfPage": 201,
+   "page": 189,
+   "composer": "Lennie Tristao",
+   "conf": "high"
+  },
+  {
+   "title": "Lester Left Town",
+   "pdfPage": 202,
+   "page": 190,
+   "composer": "Wayne Shorter",
+   "conf": "high"
+  },
+  {
+   "title": "Listen Here",
+   "pdfPage": 203,
+   "page": 191,
+   "composer": "Dave Frishberg",
+   "conf": "high"
+  },
+  {
+   "title": "Listen Now",
+   "pdfPage": 205,
+   "page": 193,
+   "composer": "Bunny Brunel",
+   "conf": "high"
+  },
+  {
+   "title": "Little One",
+   "pdfPage": 207,
+   "page": 195,
+   "composer": "Herbie Hancock",
+   "conf": "high"
+  },
+  {
+   "title": "The Littlest One Of All",
+   "pdfPage": 209,
+   "page": 197,
+   "composer": "Bobby Hutcherson",
+   "conf": "high"
+  },
+  {
+   "title": "A Little Taste",
+   "pdfPage": 211,
+   "page": 199,
+   "composer": "Dave Frishberg",
+   "conf": "high"
+  },
+  {
+   "title": "Looks Like Meringue",
+   "pdfPage": 213,
+   "page": 201,
+   "composer": "John Scofield",
+   "conf": "high"
+  },
+  {
+   "title": "The Love Connection",
+   "pdfPage": 215,
+   "page": 203,
+   "composer": "Freddie Hubbard",
+   "conf": "high"
+  },
+  {
+   "title": "Love Child",
+   "pdfPage": 219,
+   "page": 207,
+   "composer": "Mark Nock",
+   "conf": "high"
+  },
+  {
+   "title": "Love Reborn",
+   "pdfPage": 220,
+   "page": 208,
+   "composer": "George Duke",
+   "conf": "high"
+  },
+  {
+   "title": "Lusitanos",
+   "pdfPage": 221,
+   "page": 209,
+   "composer": "Wayne Shorter",
+   "conf": "high"
+  },
+  {
+   "title": "Magic Lady",
+   "pdfPage": 225,
+   "page": 213,
+   "composer": "Jeff Lorber",
+   "conf": "high"
+  },
+  {
+   "title": "Magic Sam",
+   "pdfPage": 229,
+   "page": 217,
+   "composer": "Roben Ford",
+   "conf": "high"
+  },
+  {
+   "title": "Man In The Moon",
+   "pdfPage": 231,
+   "page": 219,
+   "composer": "Russel Ferrante",
+   "conf": "high"
+  },
+  {
+   "title": "The Maze",
+   "pdfPage": 234,
+   "page": 222,
+   "composer": "Herbie Hancock",
+   "conf": "high"
+  },
+  {
+   "title": "Miss Ann",
+   "pdfPage": 235,
+   "page": 223,
+   "composer": "Eric Dolphy",
+   "conf": "high"
+  },
+  {
+   "title": "The Missing Link",
+   "pdfPage": 236,
+   "page": 224,
+   "composer": "Vince Wallace",
+   "conf": "high"
+  },
+  {
+   "title": "Monmouth College Fight Song",
+   "pdfPage": 237,
+   "page": 225,
+   "composer": "Russel Ferrante",
+   "conf": "high"
+  },
+  {
+   "title": "Moon And Mind",
+   "pdfPage": 241,
+   "page": 229,
+   "composer": "Paul McCandless",
+   "conf": "high"
+  },
+  {
+   "title": "Morning",
+   "pdfPage": 243,
+   "page": 231,
+   "composer": "Clare Fisher",
+   "conf": "high"
+  },
+  {
+   "title": "Motion",
+   "pdfPage": 245,
+   "page": 233,
+   "composer": "Jimmy Raney",
+   "conf": "high"
+  },
+  {
+   "title": "Neo Terra",
+   "pdfPage": 247,
+   "page": 235,
+   "composer": "Freddie Hubbard",
+   "conf": "high"
+  },
+  {
+   "title": "Never Say Yes",
+   "pdfPage": 251,
+   "page": 239,
+   "composer": "Natt Adderley",
+   "conf": "high"
+  },
+  {
+   "title": "A New Blue",
+   "pdfPage": 253,
+   "page": 241,
+   "composer": "Jimmy Heath",
+   "conf": "high"
+  },
+  {
+   "title": "New Breed",
+   "pdfPage": 255,
+   "page": 243,
+   "composer": "Dave Liebman",
+   "conf": "high"
+  },
+  {
+   "title": "New York Afternoon",
+   "pdfPage": 257,
+   "page": 245,
+   "composer": "Richie Cole",
+   "conf": "high"
+  },
+  {
+   "title": "Night Flower",
+   "pdfPage": 260,
+   "page": 248,
+   "composer": "Lennie Lasher",
+   "conf": "high"
+  },
+  {
+   "title": "Nippon Soul",
+   "pdfPage": 261,
+   "page": 249,
+   "composer": "Cannonball Adderley",
+   "conf": "high"
+  },
+  {
+   "title": "No Siree Bob",
+   "pdfPage": 262,
+   "page": 250,
+   "composer": "Bobby Hutcherson",
+   "conf": "high"
+  },
+  {
+   "title": "Nothing You Can Do About It",
+   "pdfPage": 263,
+   "page": 251,
+   "composer": "Jay Graydon",
+   "conf": "high"
+  },
+  {
+   "title": "Now He Sings, Now He Sobs",
+   "pdfPage": 268,
+   "page": 256,
+   "composer": "Chick Corea",
+   "conf": "high"
+  },
+  {
+   "title": "October 10th",
+   "pdfPage": 273,
+   "page": 261,
+   "composer": "Richie Beirach",
+   "conf": "high"
+  },
+  {
+   "title": "Oliliqui Valley",
+   "pdfPage": 275,
+   "page": 263,
+   "composer": "Herbie Hancock",
+   "conf": "high"
+  },
+  {
+   "title": "One By One",
+   "pdfPage": 277,
+   "page": 265,
+   "composer": "Wayne Shorter",
+   "conf": "high"
+  },
+  {
+   "title": "One Coin",
+   "pdfPage": 279,
+   "page": 267,
+   "composer": "Milton Nascimento",
+   "conf": "high"
+  },
+  {
+   "title": "111-44",
+   "pdfPage": 283,
+   "page": 271,
+   "composer": "Oliver Nelson",
+   "conf": "high"
+  },
+  {
+   "title": "One Of A Kind",
+   "pdfPage": 285,
+   "page": 273,
+   "composer": "Freddie Hubbard",
+   "conf": "high"
+  },
+  {
+   "title": "The One Step",
+   "pdfPage": 288,
+   "page": 276,
+   "composer": "Chick Corea",
+   "conf": "high"
+  },
+  {
+   "title": "Only Love",
+   "pdfPage": 293,
+   "page": 281,
+   "composer": "Angela Bofill",
+   "conf": "high"
+  },
+  {
+   "title": "On The Boulevard",
+   "pdfPage": 295,
+   "page": 283,
+   "composer": "Jay Graydon",
+   "conf": "high"
+  },
+  {
+   "title": "Osaka Express",
+   "pdfPage": 301,
+   "page": 289,
+   "composer": "Jim Hall",
+   "conf": "high"
+  },
+  {
+   "title": "Other Mansions",
+   "pdfPage": 303,
+   "page": 291,
+   "composer": "David Friesen",
+   "conf": "high"
+  },
+  {
+   "title": "Palladium",
+   "pdfPage": 305,
+   "page": 293,
+   "composer": "Wayne Shorter",
+   "conf": "high"
+  },
+  {
+   "title": "Pass It On",
+   "pdfPage": 309,
+   "page": 297,
+   "composer": "Russell Ferante",
+   "conf": "high"
+  },
+  {
+   "title": "Pathway",
+   "pdfPage": 313,
+   "page": 301,
+   "composer": "David Friesen",
+   "conf": "high"
+  },
+  {
+   "title": "The Peacocks",
+   "pdfPage": 315,
+   "page": 303,
+   "composer": "Jimmy Rowles",
+   "conf": "high"
+  },
+  {
+   "title": "Pensativa",
+   "pdfPage": 316,
+   "page": 304,
+   "composer": "Clare Fischer",
+   "conf": "high"
+  },
+  {
+   "title": "Peresina",
+   "pdfPage": 319,
+   "page": 307,
+   "composer": "McCoy Tyner",
+   "conf": "high"
+  },
+  {
+   "title": "Phantazia",
+   "pdfPage": 323,
+   "page": 311,
+   "composer": "Dave Grusin",
+   "conf": "high"
+  },
+  {
+   "title": "Pinocchio",
+   "pdfPage": 326,
+   "page": 314,
+   "composer": "Wayne Shorter",
+   "conf": "high"
+  },
+  {
+   "title": "The Plot Thickens",
+   "pdfPage": 327,
+   "page": 315,
+   "composer": "Jim McNeely",
+   "conf": "high"
+  },
+  {
+   "title": "Pools",
+   "pdfPage": 329,
+   "page": 317,
+   "composer": "Dan Grolnick",
+   "conf": "high"
+  },
+  {
+   "title": "Povo",
+   "pdfPage": 335,
+   "page": 323,
+   "composer": "Freddie Hubbard",
+   "conf": "high"
+  },
+  {
+   "title": "Punk Jazz",
+   "pdfPage": 339,
+   "page": 327,
+   "composer": "Jaco Pastorius",
+   "conf": "high"
+  },
+  {
+   "title": "Persuance",
+   "pdfPage": 341,
+   "page": 329,
+   "composer": "John Coltrane",
+   "conf": "high"
+  },
+  {
+   "title": "Quasimodo",
+   "pdfPage": 342,
+   "page": 330,
+   "composer": "Charlie Parker",
+   "conf": "high"
+  },
+  {
+   "title": "Quiet Fire",
+   "pdfPage": 343,
+   "page": 331,
+   "composer": "George Cables",
+   "conf": "high"
+  },
+  {
+   "title": "Quiet Now",
+   "pdfPage": 345,
+   "page": 333,
+   "composer": "Denny Zeitlin",
+   "conf": "high"
+  },
+  {
+   "title": "Random Thoughts",
+   "pdfPage": 347,
+   "page": 335,
+   "composer": "Steve Kuhn",
+   "conf": "high"
+  },
+  {
+   "title": "A Remark You Made",
+   "pdfPage": 349,
+   "page": 337,
+   "composer": "Joe Zawinul",
+   "conf": "high"
+  },
+  {
+   "title": "Resolution",
+   "pdfPage": 351,
+   "page": 339,
+   "composer": "John Coltrane",
+   "conf": "high"
+  },
+  {
+   "title": "Return To Forever",
+   "pdfPage": 352,
+   "page": 340,
+   "composer": "Chick Corea",
+   "conf": "high"
+  },
+  {
+   "title": "Revelation 21:4",
+   "pdfPage": 355,
+   "page": 343,
+   "composer": "Bob Magnusson",
+   "conf": "high"
+  },
+  {
+   "title": "Romaine",
+   "pdfPage": 357,
+   "page": 345,
+   "composer": "Jim Hall",
+   "conf": "high"
+  },
+  {
+   "title": "Rosewood",
+   "pdfPage": 359,
+   "page": 347,
+   "composer": "Woody Shaw",
+   "conf": "high"
+  },
+  {
+   "title": "Rough House",
+   "pdfPage": 361,
+   "page": 349,
+   "composer": "John Scofield",
+   "conf": "high"
+  },
+  {
+   "title": "Route Four",
+   "pdfPage": 363,
+   "page": 351,
+   "composer": "Teddy Charles",
+   "conf": "high"
+  },
+  {
+   "title": "Samba Song",
+   "pdfPage": 365,
+   "page": 353,
+   "composer": "Chick Corea",
+   "conf": "high"
+  },
+  {
+   "title": "Sareen Jurer",
+   "pdfPage": 371,
+   "page": 359,
+   "composer": "Earl Zindars",
+   "conf": "high"
+  },
+  {
+   "title": "A Sassy Samba",
+   "pdfPage": 373,
+   "page": 361,
+   "composer": "Jimmy Heath",
+   "conf": "high"
+  },
+  {
+   "title": "Scoochie",
+   "pdfPage": 376,
+   "page": 364,
+   "composer": "Booker Ervin",
+   "conf": "high"
+  },
+  {
+   "title": "Secrets Of Love",
+   "pdfPage": 377,
+   "page": 365,
+   "composer": "George Cables",
+   "conf": "high"
+  },
+  {
+   "title": "Senor Carlos",
+   "pdfPage": 379,
+   "page": 367,
+   "composer": "McCoy Tyner",
+   "conf": "high"
+  },
+  {
+   "title": "Serengeti",
+   "pdfPage": 384,
+   "page": 372,
+   "composer": "Mark Levine",
+   "conf": "high"
+  },
+  {
+   "title": "S.E.’s Dream",
+   "pdfPage": 387,
+   "page": 375,
+   "composer": "Mel Martin",
+   "conf": "high"
+  },
+  {
+   "title": "Shadowland",
+   "pdfPage": 389,
+   "page": 377,
+   "composer": "Sarah Cassey",
+   "conf": "high"
+  },
+  {
+   "title": "Share Your Love",
+   "pdfPage": 393,
+   "page": 381,
+   "composer": "Derrick Hoitsma",
+   "conf": "high"
+  },
+  {
+   "title": "Sicily",
+   "pdfPage": 395,
+   "page": 383,
+   "composer": "Chick Corea",
+   "conf": "high"
+  },
+  {
+   "title": "Silence",
+   "pdfPage": 399,
+   "page": 387,
+   "composer": "Charlie Haden",
+   "conf": "high"
+  },
+  {
+   "title": "Silver Hollow",
+   "pdfPage": 401,
+   "page": 389,
+   "composer": "Jack DeJohnette",
+   "conf": "high"
+  },
+  {
+   "title": "Smile Again",
+   "pdfPage": 403,
+   "page": 391,
+   "composer": "Jay Graydon",
+   "conf": "high"
+  },
+  {
+   "title": "Smooch",
+   "pdfPage": 405,
+   "page": 393,
+   "composer": "Charles Mingus",
+   "conf": "high"
+  },
+  {
+   "title": "Someday",
+   "pdfPage": 407,
+   "page": 395,
+   "composer": "George Duke",
+   "conf": "high"
+  },
+  {
+   "title": "Something Old, Something Blue",
+   "pdfPage": 409,
+   "page": 397,
+   "composer": "Mark Levine",
+   "conf": "high"
+  },
+  {
+   "title": "Something Everywhere",
+   "pdfPage": 413,
+   "page": 401,
+   "composer": "Steve Kuhn",
+   "conf": "high"
+  },
+  {
+   "title": "Something Sweet, Something Tender",
+   "pdfPage": 414,
+   "page": 402,
+   "composer": "Eric Dolphy",
+   "conf": "high"
+  },
+  {
+   "title": "Song For Che",
+   "pdfPage": 415,
+   "page": 403,
+   "composer": "Charlie Haden",
+   "conf": "high"
+  },
+  {
+   "title": "SOS",
+   "pdfPage": 416,
+   "page": 404,
+   "composer": "Wes Montgomery",
+   "conf": "high"
+  },
+  {
+   "title": "Soul Eyes",
+   "pdfPage": 417,
+   "page": 405,
+   "composer": "Mal Waldron",
+   "conf": "high"
+  },
+  {
+   "title": "A Sound For Some Ears",
+   "pdfPage": 418,
+   "page": 406,
+   "composer": "Jimmy Heath",
+   "conf": "high"
+  },
+  {
+   "title": "Spoons",
+   "pdfPage": 419,
+   "page": 407,
+   "composer": "John Scofield",
+   "conf": "high"
+  },
+  {
+   "title": "Straight Up And Down",
+   "pdfPage": 420,
+   "page": 408,
+   "composer": "Chick Corea",
+   "conf": "high"
+  },
+  {
+   "title": "Straight Street",
+   "pdfPage": 423,
+   "page": 411,
+   "composer": "John Coltrane",
+   "conf": "high"
+  },
+  {
+   "title": "Stray",
+   "pdfPage": 425,
+   "page": 413,
+   "composer": "Richie Beirach",
+   "conf": "high"
+  },
+  {
+   "title": "Summer Band Camp",
+   "pdfPage": 426,
+   "page": 414,
+   "composer": "Mick Goodrich",
+   "conf": "high"
+  },
+  {
+   "title": "Sunset At Sunset",
+   "pdfPage": 427,
+   "page": 415,
+   "composer": "Eugenio Toussaint",
+   "conf": "high"
+  },
+  {
+   "title": "Suspended Sentence",
+   "pdfPage": 428,
+   "page": 416,
+   "composer": "Wayne Shorter",
+   "conf": "high"
+  },
+  {
+   "title": "A Sweet And Sorrowful Fantasy",
+   "pdfPage": 429,
+   "page": 417,
+   "composer": "Susan Muscarella",
+   "conf": "high"
+  },
+  {
+   "title": "Take Some Time To Walk With The One You Love",
+   "pdfPage": 433,
+   "page": 421,
+   "composer": "Bill Mays",
+   "conf": "high"
+  },
+  {
+   "title": "Teaneck",
+   "pdfPage": 436,
+   "page": 424,
+   "composer": "Nat Adderley",
+   "conf": "high"
+  },
+  {
+   "title": "Teen Town",
+   "pdfPage": 437,
+   "page": 425,
+   "composer": "Jaco Pastorius",
+   "conf": "high"
+  },
+  {
+   "title": "Tee Time For Eric",
+   "pdfPage": 439,
+   "page": 427,
+   "composer": "Robben Ford",
+   "conf": "high"
+  },
+  {
+   "title": "Tell Me A Bedtime Story",
+   "pdfPage": 441,
+   "page": 429,
+   "composer": "Herbie Hancock",
+   "conf": "high"
+  },
+  {
+   "title": "Thermo",
+   "pdfPage": 443,
+   "page": 431,
+   "composer": "Freddie Hubbard",
+   "conf": "high"
+  },
+  {
+   "title": "Think On Me",
+   "pdfPage": 445,
+   "page": 433,
+   "composer": "George Cables",
+   "conf": "high"
+  },
+  {
+   "title": "This Is For Albert",
+   "pdfPage": 449,
+   "page": 437,
+   "composer": "Wayne Shorter",
+   "conf": "high"
+  },
+  {
+   "title": "Time Is Right",
+   "pdfPage": 453,
+   "page": 441,
+   "composer": "Judy Singh",
+   "conf": "high"
+  },
+  {
+   "title": "Tomato Kiss",
+   "pdfPage": 456,
+   "page": 444,
+   "composer": "Larry Schneider",
+   "conf": "high"
+  },
+  {
+   "title": "Tones For Joan’s Bones",
+   "pdfPage": 457,
+   "page": 445,
+   "composer": "Chick Corea",
+   "conf": "high"
+  },
+  {
+   "title": "True Or False",
+   "pdfPage": 459,
+   "page": 447,
+   "composer": "Ray Obiedo",
+   "conf": "high"
+  },
+  {
+   "title": "Twilight Tone",
+   "pdfPage": 463,
+   "page": 451,
+   "composer": "Jay Graydon",
+   "conf": "high"
+  },
+  {
+   "title": "Twelve Tone Tune",
+   "pdfPage": 465,
+   "page": 453,
+   "composer": "Bille Evans",
+   "conf": "high"
+  },
+  {
+   "title": "Una Muy Bonita",
+   "pdfPage": 466,
+   "page": 454,
+   "composer": "Ornette Coleman",
+   "conf": "high"
+  },
+  {
+   "title": "Utopia",
+   "pdfPage": 469,
+   "page": 457,
+   "composer": "McCoy Tyner",
+   "conf": "high"
+  },
+  {
+   "title": "V",
+   "pdfPage": 471,
+   "page": 459,
+   "composer": "John Scofield",
+   "conf": "high"
+  },
+  {
+   "title": "Vignette",
+   "pdfPage": 472,
+   "page": 460,
+   "composer": "Gary Peacock",
+   "conf": "high"
+  },
+  {
+   "title": "Water Sign",
+   "pdfPage": 473,
+   "page": 461,
+   "composer": "Jeff Lorber",
+   "conf": "high"
+  },
+  {
+   "title": "What Does It Matter?",
+   "pdfPage": 477,
+   "page": 465,
+   "composer": "George Mraz",
+   "conf": "high"
+  },
+  {
+   "title": "When It Was Now",
+   "pdfPage": 479,
+   "page": 467,
+   "composer": "Wayne Shorter",
+   "conf": "high"
+  },
+  {
+   "title": "Windflower",
+   "pdfPage": 483,
+   "page": 471,
+   "composer": "Sarah Cassey",
+   "conf": "high"
+  },
+  {
+   "title": "Witch Hunt",
+   "pdfPage": 484,
+   "page": 472,
+   "composer": "Wayne Shorter",
+   "conf": "high"
+  },
+  {
+   "title": "Woody I – On The New Ark",
+   "pdfPage": 485,
+   "page": 473,
+   "composer": "Woody Shaw",
+   "conf": "high"
+  },
+  {
+   "title": "Young And Fine",
+   "pdfPage": 487,
+   "page": 475,
+   "composer": "Joe Zawinul",
+   "conf": "high"
+  },
+  {
+   "title": "Young One",
+   "pdfPage": 489,
+   "page": 477,
+   "composer": "Jim Hall",
+   "conf": "high"
+  }
+ ]
+}

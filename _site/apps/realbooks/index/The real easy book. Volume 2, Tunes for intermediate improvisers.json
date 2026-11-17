@@ -1,0 +1,614 @@
+{
+ "file": "The real easy book. Volume 2, Tunes for intermediate improvisers.pdf",
+ "method": "mixed",
+ "offset": 11,
+ "notes": "Bass-clef edition (p3). Text layer is Internet Archive OCR: clean main index (p4) giving the 101 tune titles, garbled alphabetical page index (p6-7); pdfPage from each tune's first-page heading in the text layer; printed page = pdfPage-11 (Afro Blue 1 ... Whisper Not 239). Pages for Don't Get Scared, Jubilation, Leyte, Lyresto, O.P., Primal Urge (title garbled/missing in text layer) located by position in the alphabetical sequence and the following 'SUPPLEMENTAL MATERIAL - title' page. Some tunes have extra Harmony Part / Rhythm Section pages (not entries). Composers not captured (the book's index lists the artist who played each tune, not always the composer).",
+ "entries": [
+  {
+   "title": "Afro Blue",
+   "pdfPage": 12,
+   "page": 1,
+   "conf": "high"
+  },
+  {
+   "title": "Alice In Wonderland",
+   "pdfPage": 14,
+   "page": 3,
+   "conf": "high"
+  },
+  {
+   "title": "Are You Real?",
+   "pdfPage": 16,
+   "page": 5,
+   "conf": "high"
+  },
+  {
+   "title": "Azure-Té (Paris Blues)",
+   "pdfPage": 20,
+   "page": 9,
+   "conf": "high"
+  },
+  {
+   "title": "Barbara",
+   "pdfPage": 22,
+   "page": 11,
+   "conf": "high"
+  },
+  {
+   "title": "Black Orchid",
+   "pdfPage": 24,
+   "page": 13,
+   "conf": "high"
+  },
+  {
+   "title": "Blues March",
+   "pdfPage": 26,
+   "page": 15,
+   "conf": "high"
+  },
+  {
+   "title": "Byrd Like",
+   "pdfPage": 28,
+   "page": 17,
+   "conf": "high"
+  },
+  {
+   "title": "Cedar's Blues",
+   "pdfPage": 30,
+   "page": 19,
+   "conf": "high"
+  },
+  {
+   "title": "A Child Is Born",
+   "pdfPage": 32,
+   "page": 21,
+   "conf": "high"
+  },
+  {
+   "title": "Chitlins Con Carne",
+   "pdfPage": 34,
+   "page": 23,
+   "conf": "high"
+  },
+  {
+   "title": "Come On Home",
+   "pdfPage": 36,
+   "page": 25,
+   "conf": "high"
+  },
+  {
+   "title": "Confirmation",
+   "pdfPage": 40,
+   "page": 29,
+   "conf": "high"
+  },
+  {
+   "title": "Cousin Mary",
+   "pdfPage": 42,
+   "page": 31,
+   "conf": "high"
+  },
+  {
+   "title": "Cutie",
+   "pdfPage": 44,
+   "page": 33,
+   "conf": "high"
+  },
+  {
+   "title": "Dat Dere",
+   "pdfPage": 46,
+   "page": 35,
+   "conf": "high"
+  },
+  {
+   "title": "Day By Day",
+   "pdfPage": 50,
+   "page": 39,
+   "conf": "high"
+  },
+  {
+   "title": "Dear Old Stockholm",
+   "pdfPage": 52,
+   "page": 41,
+   "conf": "high"
+  },
+  {
+   "title": "Diane",
+   "pdfPage": 54,
+   "page": 43,
+   "conf": "high"
+  },
+  {
+   "title": "Do You Know What It Means To Miss New Orleans?",
+   "pdfPage": 56,
+   "page": 45,
+   "conf": "high"
+  },
+  {
+   "title": "Doin' My Thing",
+   "pdfPage": 58,
+   "page": 47,
+   "conf": "high"
+  },
+  {
+   "title": "Don't Ask",
+   "pdfPage": 60,
+   "page": 49,
+   "conf": "high"
+  },
+  {
+   "title": "Don't Get Scared",
+   "pdfPage": 62,
+   "page": 51,
+   "conf": "high"
+  },
+  {
+   "title": "Don't Shoot The Messenger",
+   "pdfPage": 64,
+   "page": 53,
+   "conf": "high"
+  },
+  {
+   "title": "Early Autumn",
+   "pdfPage": 66,
+   "page": 55,
+   "conf": "high"
+  },
+  {
+   "title": "Enchantment",
+   "pdfPage": 68,
+   "page": 57,
+   "conf": "high"
+  },
+  {
+   "title": "Europa",
+   "pdfPage": 72,
+   "page": 61,
+   "conf": "high"
+  },
+  {
+   "title": "A Face Like Yours",
+   "pdfPage": 74,
+   "page": 63,
+   "conf": "high"
+  },
+  {
+   "title": "Fantasy In D",
+   "pdfPage": 76,
+   "page": 65,
+   "conf": "high"
+  },
+  {
+   "title": "Feeling Good",
+   "pdfPage": 78,
+   "page": 67,
+   "conf": "high"
+  },
+  {
+   "title": "Feels So Good",
+   "pdfPage": 80,
+   "page": 69,
+   "conf": "high"
+  },
+  {
+   "title": "Four",
+   "pdfPage": 84,
+   "page": 73,
+   "conf": "high"
+  },
+  {
+   "title": "Four On Six",
+   "pdfPage": 86,
+   "page": 75,
+   "conf": "high"
+  },
+  {
+   "title": "Full House",
+   "pdfPage": 88,
+   "page": 77,
+   "conf": "high"
+  },
+  {
+   "title": "Fuscia Swing Song",
+   "pdfPage": 90,
+   "page": 79,
+   "conf": "high"
+  },
+  {
+   "title": "Gee Baby, Ain't I Good To You",
+   "pdfPage": 92,
+   "page": 81,
+   "conf": "high"
+  },
+  {
+   "title": "Getting Some Fun Out Of Life",
+   "pdfPage": 94,
+   "page": 83,
+   "conf": "high"
+  },
+  {
+   "title": "Ginza Samba",
+   "pdfPage": 96,
+   "page": 85,
+   "conf": "high"
+  },
+  {
+   "title": "Gnid",
+   "pdfPage": 98,
+   "page": 87,
+   "conf": "high"
+  },
+  {
+   "title": "Groovin' High",
+   "pdfPage": 100,
+   "page": 89,
+   "conf": "high"
+  },
+  {
+   "title": "Hi Fly",
+   "pdfPage": 102,
+   "page": 91,
+   "conf": "high"
+  },
+  {
+   "title": "I Should Care",
+   "pdfPage": 106,
+   "page": 95,
+   "conf": "high"
+  },
+  {
+   "title": "Icarus",
+   "pdfPage": 108,
+   "page": 97,
+   "conf": "high"
+  },
+  {
+   "title": "Jeannine",
+   "pdfPage": 110,
+   "page": 99,
+   "conf": "high"
+  },
+  {
+   "title": "Jubilation",
+   "pdfPage": 114,
+   "page": 103,
+   "conf": "high"
+  },
+  {
+   "title": "Leyte",
+   "pdfPage": 118,
+   "page": 107,
+   "conf": "high"
+  },
+  {
+   "title": "Look To The Sky",
+   "pdfPage": 120,
+   "page": 109,
+   "conf": "high"
+  },
+  {
+   "title": "Lyresto",
+   "pdfPage": 122,
+   "page": 111,
+   "conf": "high"
+  },
+  {
+   "title": "Mating Call",
+   "pdfPage": 124,
+   "page": 113,
+   "conf": "high"
+  },
+  {
+   "title": "Mimosa",
+   "pdfPage": 128,
+   "page": 117,
+   "conf": "high"
+  },
+  {
+   "title": "Moonlight In Vermont",
+   "pdfPage": 130,
+   "page": 119,
+   "conf": "high"
+  },
+  {
+   "title": "Moose The Mooche",
+   "pdfPage": 132,
+   "page": 121,
+   "conf": "high"
+  },
+  {
+   "title": "Mr. Day (aka One And Four)",
+   "pdfPage": 134,
+   "page": 123,
+   "conf": "high"
+  },
+  {
+   "title": "No Me Esqueca",
+   "pdfPage": 136,
+   "page": 125,
+   "conf": "high"
+  },
+  {
+   "title": "No Moe",
+   "pdfPage": 138,
+   "page": 127,
+   "conf": "high"
+  },
+  {
+   "title": "On A Misty Night",
+   "pdfPage": 140,
+   "page": 129,
+   "conf": "high"
+  },
+  {
+   "title": "On The Marc",
+   "pdfPage": 142,
+   "page": 131,
+   "conf": "high"
+  },
+  {
+   "title": "Once I Loved",
+   "pdfPage": 144,
+   "page": 133,
+   "conf": "high"
+  },
+  {
+   "title": "O.P.",
+   "pdfPage": 146,
+   "page": 135,
+   "conf": "high"
+  },
+  {
+   "title": "Orange Colored Sky",
+   "pdfPage": 148,
+   "page": 137,
+   "conf": "high"
+  },
+  {
+   "title": "Ornithology",
+   "pdfPage": 150,
+   "page": 139,
+   "conf": "high"
+  },
+  {
+   "title": "Passion Dance",
+   "pdfPage": 152,
+   "page": 141,
+   "conf": "high"
+  },
+  {
+   "title": "Paul's Pal",
+   "pdfPage": 154,
+   "page": 143,
+   "conf": "high"
+  },
+  {
+   "title": "Peace",
+   "pdfPage": 156,
+   "page": 145,
+   "conf": "high"
+  },
+  {
+   "title": "Primal Urge",
+   "pdfPage": 158,
+   "page": 147,
+   "conf": "high"
+  },
+  {
+   "title": "Rakin' And Scrapin'",
+   "pdfPage": 160,
+   "page": 149,
+   "conf": "high"
+  },
+  {
+   "title": "Room 608",
+   "pdfPage": 166,
+   "page": 155,
+   "conf": "high"
+  },
+  {
+   "title": "Sack Of Woe",
+   "pdfPage": 168,
+   "page": 157,
+   "conf": "high"
+  },
+  {
+   "title": "Saucer Eyes",
+   "pdfPage": 172,
+   "page": 161,
+   "conf": "high"
+  },
+  {
+   "title": "Sco's Bossa",
+   "pdfPage": 174,
+   "page": 163,
+   "conf": "high"
+  },
+  {
+   "title": "Scotch And Water",
+   "pdfPage": 176,
+   "page": 165,
+   "conf": "high"
+  },
+  {
+   "title": "Scrapple From The Apple",
+   "pdfPage": 180,
+   "page": 169,
+   "conf": "high"
+  },
+  {
+   "title": "Shiny Stockings",
+   "pdfPage": 182,
+   "page": 171,
+   "conf": "high"
+  },
+  {
+   "title": "Silver's Serenade",
+   "pdfPage": 184,
+   "page": 173,
+   "conf": "high"
+  },
+  {
+   "title": "Sky Dive",
+   "pdfPage": 186,
+   "page": 175,
+   "conf": "high"
+  },
+  {
+   "title": "The Snapper",
+   "pdfPage": 190,
+   "page": 179,
+   "conf": "high"
+  },
+  {
+   "title": "Solar",
+   "pdfPage": 192,
+   "page": 181,
+   "conf": "high"
+  },
+  {
+   "title": "Some Other Blues",
+   "pdfPage": 194,
+   "page": 183,
+   "conf": "high"
+  },
+  {
+   "title": "Split Kick",
+   "pdfPage": 196,
+   "page": 185,
+   "conf": "high"
+  },
+  {
+   "title": "S'posin'",
+   "pdfPage": 202,
+   "page": 191,
+   "conf": "high"
+  },
+  {
+   "title": "Starrburst",
+   "pdfPage": 204,
+   "page": 193,
+   "conf": "high"
+  },
+  {
+   "title": "Stuff You Gotta Watch",
+   "pdfPage": 206,
+   "page": 195,
+   "conf": "high"
+  },
+  {
+   "title": "Sugar",
+   "pdfPage": 208,
+   "page": 197,
+   "conf": "high"
+  },
+  {
+   "title": "Super Jet",
+   "pdfPage": 210,
+   "page": 199,
+   "conf": "high"
+  },
+  {
+   "title": "Sweet Pumpkin",
+   "pdfPage": 212,
+   "page": 201,
+   "conf": "high"
+  },
+  {
+   "title": "Swinging At The Haven",
+   "pdfPage": 214,
+   "page": 203,
+   "conf": "high"
+  },
+  {
+   "title": "Tee Pee Time",
+   "pdfPage": 216,
+   "page": 205,
+   "conf": "high"
+  },
+  {
+   "title": "Trane Connections",
+   "pdfPage": 218,
+   "page": 207,
+   "conf": "high"
+  },
+  {
+   "title": "Triste",
+   "pdfPage": 222,
+   "page": 211,
+   "conf": "high"
+  },
+  {
+   "title": "Tune Up",
+   "pdfPage": 224,
+   "page": 213,
+   "conf": "high"
+  },
+  {
+   "title": "Two Bass Hit",
+   "pdfPage": 226,
+   "page": 215,
+   "conf": "high"
+  },
+  {
+   "title": "Unit 7",
+   "pdfPage": 230,
+   "page": 219,
+   "conf": "high"
+  },
+  {
+   "title": "Uptown After Dark",
+   "pdfPage": 232,
+   "page": 221,
+   "conf": "high"
+  },
+  {
+   "title": "Walk Between Raindrops",
+   "pdfPage": 236,
+   "page": 225,
+   "conf": "high"
+  },
+  {
+   "title": "Walkin'",
+   "pdfPage": 238,
+   "page": 227,
+   "conf": "high"
+  },
+  {
+   "title": "Walkin' Shoes",
+   "pdfPage": 240,
+   "page": 229,
+   "conf": "high"
+  },
+  {
+   "title": "Wave",
+   "pdfPage": 242,
+   "page": 231,
+   "conf": "high"
+  },
+  {
+   "title": "Wendy",
+   "pdfPage": 244,
+   "page": 233,
+   "conf": "high"
+  },
+  {
+   "title": "West Coast Blues",
+   "pdfPage": 246,
+   "page": 235,
+   "conf": "high"
+  },
+  {
+   "title": "What Might Have Been",
+   "pdfPage": 248,
+   "page": 237,
+   "conf": "high"
+  },
+  {
+   "title": "Whisper Not",
+   "pdfPage": 250,
+   "page": 239,
+   "conf": "high"
+  }
+ ]
+}

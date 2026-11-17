@@ -293,6 +293,29 @@ h2.panel-jump {
   border-color: var(--parch-edge) !important;
 }
 
+/* ── Shared tool pieces ──────────────────────────────────────────────────── */
+/* One look for every tool page, instead of a copy per page (.bt-panel, .nr-panel, .tn-panel, …):
+   .site-paper  a drawn score on white paper, inside the warm page canvas
+   .site-panel  a folding <details> card (summary = its handle)
+   .site-hint   small grey help text under a control */
+.site-paper {
+  background: #fff;
+  color: #1e1c18;
+  border: 1px solid var(--site-border);
+  border-radius: 10px;
+  padding: .6rem .9rem;
+  overflow-x: auto;
+}
+.site-panel {
+  background: var(--site-surface);
+  border: 1px solid var(--site-border);
+  border-radius: 10px;
+  padding: .45rem .8rem;
+}
+.site-panel > summary { cursor: pointer; font-weight: 600; font-size: .92rem; color: var(--site-ink); }
+.site-panel[open] > summary { margin-bottom: .2rem; }
+.site-hint { font-size: .84rem; color: var(--site-ink-2); margin: .4rem 0; }
+
 /* figured bass (I⁶, I⁶₄): the numbers stacked one above the other, as printed in theory books */
 .fb{display:inline-flex;flex-direction:column;align-items:center;font-size:.75em;line-height:.9;vertical-align:.5em;margin:0 .08em;font-variant-numeric:lining-nums}
 .fb.solo{font-size:1em;vertical-align:middle}

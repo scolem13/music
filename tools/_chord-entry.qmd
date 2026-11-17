@@ -47,7 +47,7 @@
 #ce-root .ce-lyr textarea{min-height:8.5rem;margin-top:.25rem;background:var(--site-surface,#fff)}
 #ce-root .ce-warn{color:#9a4b00}
 #ce-root .ce-work{display:flex;gap:.6rem 1rem;flex-wrap:wrap;align-items:center;margin:0 0 1rem;padding:.6rem .9rem;border:1px dashed var(--site-border,#d6cdbf);border-radius:10px;font-size:.86rem;color:var(--site-ink-2,#5c5246)}
-#ce-score{margin:0 0 1rem;background:#fff;border:1px solid var(--site-border,#e0d8ce);border-radius:10px;padding:.5rem .8rem;overflow-x:auto}
+#ce-score{margin:0 0 1rem}
 #ce-score:empty{display:none}
 #ce-chart:empty::before{content:"No chords yet. Play one.";display:block;padding:1.2rem;border:1px dashed var(--site-border,#e0d8ce);border-radius:10px;color:var(--site-ink-2,#5c5246)}
 #ce-root details.ce-more{flex-basis:100%;margin-top:.2rem}
@@ -231,7 +231,7 @@
   </div>
   <div id="ce-tabs" hidden></div>
   <div id="ce-chart"></div>
-  <div id="ce-score" aria-label="The melody as notation"></div>
+  <div id="ce-score" class="site-paper" aria-label="The melody as notation"></div>
   </div>
   <div class="ce-panel" id="ce-sec" hidden>
     <h2 id="ce-sec-name">Words</h2>
