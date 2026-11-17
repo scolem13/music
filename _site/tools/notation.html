@@ -915,7 +915,18 @@ document.addEventListener('DOMContentLoaded', async function () {
 #nt-root .nt-need strong{font-size:1rem}
 #nt-root .nt-need select{height:2rem}
 #nt-root .nt-field.nt-want select{outline:2px solid #b3261e;outline-offset:1px}
-#nt-root .nt-layout>*{grid-column:auto!important}   /* Quarto puts page-columns on it */
+#nt-root .nt-layout>*{grid-column:auto!important}
+/* parts across both columns (↔ in a part's header): a row of their own above the two columns */
+#nt-root .nt-wide{display:none;flex-direction:column;gap:16px;min-width:0}
+#nt-root .nt-layout.has-wide>.nt-wide{display:flex;grid-column:1 / 3!important;grid-row:1}
+#nt-root .nt-layout.has-wide>.nt-main{grid-column:1!important;grid-row:2}
+#nt-root .nt-layout.has-wide>.nt-side{grid-column:2!important;grid-row:2}
+#nt-root .nt-layout.has-wide>.nt-nav{grid-column:3!important;grid-row:1 / 3}
+#nt-root .nt-widen{border:0;background:none;color:var(--nt-ink2);cursor:pointer;padding:0 .3rem;font-size:1rem;line-height:1}
+#nt-root .nt-widen{margin-left:auto}#nt-root .nt-widen+.nt-x{margin-left:0}
+#nt-root .nt-widen:hover{color:var(--nt-ink)}
+#nt-root .nt-wide .nt-widen{color:var(--nt-accdk)}
+@media (max-width:1100px){#nt-root .nt-widen{display:none}#nt-root .nt-layout.has-wide>*{grid-column:1!important;grid-row:auto}}   /* Quarto puts page-columns on it */
 #nt-root .nt-main,#nt-root .nt-side{display:flex;flex-direction:column;gap:16px;min-width:0}
 #nt-root .nt-side details.nt-panel{background:var(--nt-surface2)}
 #nt-root .nt-side .nt-start{grid-template-columns:minmax(0,1fr)}
@@ -1133,6 +1144,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     <span>Also in <a href="#nt-setup">The piece</a> and <a href="#nt-quick">Play it in</a>.</span>
   </div>
   <div class="nt-layout page-columns page-full">
+    <div class="nt-wide" id="nt-wide"></div>
     <div class="nt-main">
       <details class="nt-panel" id="nt-score" open="">
           <summary><h2 class="anchored">Notation</h2></summary>
@@ -1642,6 +1654,33 @@ document.addEventListener('DOMContentLoaded', async function () {
   document.querySelectorAll("#nt-root .nt-nav-all [data-all]").forEach(function (b) {
     b.onclick = function () { panels.forEach(function (p) { showPart(p, b.dataset.all === "show"); }); b.blur(); };
   });
+  // a part across both columns (↔ in its header; ids kept in localStorage ntWide): it goes to the wide row, and back to
+  // the top of the column it came from
+  (function () {
+    if (ENDING || STAGE) return;
+    var wide = $("nt-wide"), lay = wide.parentNode, list = [];
+    try { list = JSON.parse(localStorage.getItem("ntWide") || "[]") || []; } catch (e) {}
+    function keep() { list = [].map.call(wide.children, function (p) { return p.id; }); try { localStorage.setItem("ntWide", JSON.stringify(list)); } catch (e) {} lay.classList.toggle("has-wide", list.length > 0); }
+    function setWide(p, on, quiet) {
+      var b = p.querySelector(".nt-widen");
+      if (on) { p._ntFrom = p.closest(".nt-side") ? "side" : "main"; wide.appendChild(p); }
+      else { var col = document.querySelector("#nt-root .nt-" + (p._ntFrom || "main")); col.insertBefore(p, col.firstChild); }
+      b.title = on ? "Back into one column" : "Across both columns"; b.setAttribute("aria-pressed", String(on));
+      keep();
+      if (!quiet) { window.dispatchEvent(new Event("resize")); document.dispatchEvent(new Event("panelcolumns:move")); render(); }
+    }
+    panels.forEach(function (p) {
+      var b = document.createElement("button"); b.type = "button"; b.className = "nt-widen"; b.textContent = "\u2194";
+      b.title = "Across both columns"; b.setAttribute("aria-pressed", "false");
+      b.addEventListener("click", function (e) { e.preventDefault(); e.stopPropagation(); setWide(p, p.parentNode !== wide); b.blur(); });
+      var x = p.querySelector("summary .nt-x"); p.querySelector("summary").insertBefore(b, x);
+    });
+    list.forEach(function (id) { var p = $(id); if (p && panels.indexOf(p) >= 0) setWide(p, true, true); });
+    keep(); document.dispatchEvent(new Event("panelcolumns:move"));
+  })();
+  // a menu lets go of the keyboard once something is picked, so letters and numbers go to the score again
+  // (with a menu focused the browser takes typed letters as a choice in it)
+  $("nt-root").addEventListener("change", function (e) { if (e.target.tagName === "SELECT") setTimeout(function () { e.target.blur(); }); });
   (function () {   // the list itself folds away, remembered (ntNavOff)
     var root = document.getElementById("nt-root"), btn = document.getElementById("nt-nav-fold");
     function set(off) { root.classList.toggle("nt-nav-off", off); btn.setAttribute("aria-expanded", String(!off)); btn.title = off ? "Show the list of parts" : "Hide this list (the button stays to bring it back)"; }
