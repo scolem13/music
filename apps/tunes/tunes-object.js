@@ -26475,29 +26475,21 @@ w:  * | * * |]
 X:863
 T:All Of Me
 C:Seymour Simons, Gerald Marks
-N:Lyrics: Seymour Simons, Gerald Marks
-N:Source: openbook
-N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
+N:Source: openbook (read from its LilyPond source; version Real)
+N:Moderately
 M:4/4
 L:1/8
+Q:1/4=168
 %%id all-of-me-4
 K:C
-"Cmaj7" c2 G E- E4- | "E7" E4 c2 D2 C2 | "A7" B2 ^G E- E4- | "Dm" E8 |
-w: All of me _ | why not take all | of me _ Can't | you |
-"E7" A3 G E4- | "Am" E2 ^D2 E2 _b2 A2 | "D7" G4 F4- | "Dm7" F8 |
-w: see _ I'm | no good with- out you | _ Take | my |
-"G7" E3 _E D4- | "Cmaj7" D4 E2 ^G2 B2 | "E7" D4 C4- | "A7" C8 |
-w: lips _ I | want to lose them | _ Take | my |
-"Dm" B3 _B A4- | "F" A4 A2 D2 B2 | "Fm" A8 | "Cmaj7" B8 |
-w: arms _ I'll | ne- ver use them | _ | Your |
-"A7" C2 G E- E4- | "Dm7" E4 c2 D2 C2 | "G7" B2 ^G E- E4- | "C6" E8 |
-w: good- bye _ left | me with eyes that | cry _ How can | I |
-"Dm7" A3 G E4- | E2 ^D2 E2 _b2 A2 | G4 F4- | F8 |
-w: _ get a- | long with- out you _ | You took | the |
-d4 C2 B2 | D6 C2 | B4 E,2 G2 | B6 A2 |
-w: part that once | was my | heart So why | not take |
-C4 A2 C2 | E4 E4 | C8- | C8 |
-w: all of me | _ * | * | * |]
+"Cmaj7"c2 GE- E4- | E4 (3:2:3c2d2c2 | "E7"B2 ^GE- E4- | "A7"E8 |
+"Dm"A3 G E4- | "E7"E2 ^D2 (3:2:3E2_B2A2 | "Am"G4 F4- | "D7"F8 |
+"Dm7"E3 _E D4- | "G7"D4 (3:2:3E2^G2B2 | "Cmaj7"d4 c4- | c8 |
+"E7"B3 _B A4- | "A7"A4 (3:2:3A2d2B2 | "Dm"A8 | "F"B8 |
+"Fm"c2 GE- E4- | "Cmaj7"E4 "Em7"(3:2:3c2d2c2 | "A7"B2 ^GE- E4- | "Dm7"E8 |
+"G7"A3 G E4- | "C6"E2 ^D2 "Ebdim"(3:2:3E2_B2A2 | "Dm7"G4 "G7"F4- | F8 |
+d4 c2 B2 | d6 c2 | B4 E2 G2 | B6 A2 |
+c4 A2 c2 | e4 e4 | c8- | c8 |]
 
 X:864
 T:All Or Nothing At All
@@ -26951,67 +26943,40 @@ K:F
 
 X:885
 T:Bluesette
-C:Jean 'Toots' Thielemans
-N:Lyrics: Norman Gimbel
-N:Source: openbook
-N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
+C:Jean \'Toots\' Thielemans
+N:Source: openbook (read from its LilyPond source; version Fake)
+N:Moderate Waltz
 M:3/4
 L:1/8
+Q:1/4=168
 %%id bluesette-2
-%%tags needs-repair
 K:G
-|: "G" D2 E2 ^F2 | "F#" G2 A2 B2 | "B7b9" C4 E,2 | "Em7" ^D6 |
-w:  Poor lit- tle, | sad lit- tle | blue Blues- | ette, |
-"A7b9" b4 D,4 | "Dm7" ^C6 | "G7" a4 C,4 | "Cmaj7" B6 |
-w: don't you | cry, | don't you | fret. |
-"C6" g4 B,2 | "Cm7" C3 D _E F | "F9" G4 _e2 | "Bb" D4 C2 |
-w: You can | bet one luck- y | day you'll | wak- en |
-"Bb" F,4 d2 | "Eb9" C4 _B2 | "Abmaj7" F4 _d2 | "Ab" C4 _B2 |
-w: and your | blues will | be for- | sak- en. |
-"Am7b5" _E,2 F2 G2 | "D7b9" _A2 _B2 C2 | "Bm7" D4 C2 | "Bb7" B4 A2 |
-w: One luck- y | day love- ly | love will | come your |
-"Am7" D,6- | "D7" D6- | D6- | "G" D2 z2 z2 |
-w: way. | _ | Get | set, * * |
-"F#" :| "B7" G2 A2 B2 | "Em7" D2 z2 z2 | "A7" C2 B2 A2 | "Dm7" G4 ^F2 |
-w:  Blues- ette, true | love * * | is com- ing. | Your trou- |
-"G7" E2 ^F2 G2 | "Cmaj7" B6 | "C6" A2 G2 F2 | "Cm7" E4 D2 |
-w: bled heart soon | will | be hum- ming. | markup italic |
-"F7" G4 B,2 | "Bbmaj7" C3 B C D | "Bb6" _E3 F G _B | "Bbm7" A2 _B2 C2 |
-w: Hum _ | _ _ _ _ | _ _ _ _ | _ _ _ |
-"Eb9" F,4 A,2 | "Ab" _B3 C _D _E | "A" F4 _d2 | "D7b9" C4 _B2 |
-w: _ _ | _ _ _ _ | _ _ | _ _ |
-"Bm7" _E, _E F F G G | "Bb7" _A _A _B _B C C | "Am7" D4 C D C | "D7" B4 A2 |
-w: _ Doo- ya, doo- ya, doo- | ya, doo- ya, doo- ya, doo- | ya, Doo- oo- _ | _ oo |
-"G" D,6- | "F#" D6- | "B7" D6 | "Em7" z6 |
-w: Blues- | ette. | _ | * |
-"A7" z2 d D D D | "Dm7" C2 B4 | "G7" z2 C C C C | "Cmaj7" B2 A4 |
-w: * Pret- ty lit- tle | Blues- ette | * must- n't be a | mourn- er. |
-"C6" z2 B B B B | "Cm7" A2 G4 | "F7" z2 A A A A | "Bbmaj7" G2 F4 |
-w: * Have you heard the | news yet? | * Love is 'round the | cor- ner. |
-"Bb6" E2 F2 ^F2 | "Bb7" G2 A2 B2 | "Eb7" C2 ^C2 D2 | "Ab" _E2 D2 C2 |
-w: Love wrapped in | rain- bows and | tied with pink | rib- bon to |
-"A" F,2 G2 A2 | "D7" _B2 B2 C2 | "Bm7" ^C2 D2 ^D2 | "Bb7" E2 _E2 _D2 |
-w: make your next | spring- time your | gold wed- ding | ring time. So, |
-"Am7" C2 z _B3 | "D7" _A2 z _B2 C | "G" D2 z C2 B | "F#" _A2 z2 ^F E |
-w: dry * your | eyes. * Don't- cha | pout, * don't- cha | fret, * good- y |
-"B7b9" D2 D2 D2 | "Em7" F2 D3 C | "A7b9" D6- | "Dm7" D4 z2 |
-w: good times are | com- ing, Blues- | ette. | _ * |
-"G7" D2 E2 ^F2 | "Cmaj7" G2 A2 B2 | "C6" C4 E,2 | "Cm7" ^D6 |
-w: Long as there's | love in your | heart to | share, |
-"F9" b4 D,4 | "Bb" ^C6 | "Bb" a4 C,4 | "Eb9" B6 |
-w: dear Blues- | ette, | don't des- | pair. |
-"Ab" g4 B,2 | "A" C3 D _E F | "D9" G4 _e2 | "B" D4 C2 |
-w: Some blue | boy is long- ing, | just like | you, to |
-"E" F,2 d2 | "E7#5" C4 _B2 | "A" F4 _d2 | "D7" C4 _B2 |
-w: find a | some- one | to be | true to. |
-"G" _E,2 F2 G2 | "D7#9" _A2 _B2 C2 | "Bm7" D4 C2 | "G" B4 A2 |
-w: One luck- y | day love- ly | love will | come your |
-e6- | E6- | E4 D2 | C4 B2 |
-w: way. | _ | That mag- | ic day |
-D6- | D6- | D4 C2 | B2 G3 E |
-w: _ | may | just be | to- day. _ |
-G6- | G6- | G6- | G2 z2 z2 |
-w: * | * | * | * * * |]
+|: "G"D2 E2 F2 | G2 A2 B2 | "F#m7b5"c4 E2 | "B7b9"^D6 |
+"Em7"B4 D2 | "A7b9"^C6 | "Dm7"A4 C2 | "G7"B,6 |
+"Cmaj7"G4 B,2 | "C6"C3 D _E=F | "Cm7"G4 _e2 | "F9"d4 c2 |
+"Bbmaj7"=F4 d2 | c4 _B2 | "Bbm7"=F4 _d2 | "Eb9"c4 _B2 |
+"Abmaj7"_E2 =F2 G2 | "Ab"_A2 _B2 c2 | "Am7b5"d4 c2 | "D7b9"B4 A2 |
+"Bm7"D6- | "Bb7"D6- | "Am7"D6- | "D7"D2 z2 z2 :|
+"G"G2 A2 B2 | d2 z2 z2 | "F#m7b5"c2 B2 A2 | "B7"G4 F2 |
+"Em7"E2 F2 G2 | "A7"B6 | "Dm7"A2 G2 =F2 | "G7"E4 D2 |
+"Cmaj7"G4 B,2 | "C6"C3 B, CD | "Cm7"_E3 =F G_B | "F7"A2 _B2 c2 |
+"Bbmaj7"=F4 A,2 | "Bb6"_B,3 C _D_E | "Bbm7"=F4 _d2 | "Eb9"c4 _B2 |
+"Abmaj7"_EE =FF GG | _AA _BB cc | "Am7b5"d4 (3:2:3cdc | "D7b9"B4 A2 |
+"Bm7"D6- | "Bb7"D6- | "Am7"D6 | "D7"z6 |
+"G"z2 dd dd | c2 B4 | "F#m7b5"z2 cc cc | "B7"B2 A4 |
+"Em7"z2 BB BB | "A7"A2 G4 | "Dm7"z2 AA AA | "G7"G2 =F4 |
+"Cmaj7"E2 =F2 ^F2 | "C6"G2 A2 B2 | "Cm7"c2 ^c2 d2 | "F7"_e2 d2 c2 |
+"Bbmaj7"=F2 G2 A2 | "Bb6"_B2 =B2 c2 | "Bb7"^c2 d2 ^d2 | "Eb7"e2 _e2 _d2 |
+"Abmaj7"c2 z _B3 | _A2 z _B2 c | "Am7b5"d2 z c2 B | "D7"_A2 z2 FE |
+"Bm7"D2 D2 D2 | "Bb7"=F2 D3 C | "Am7"D6- | "D7"D4 z2 |
+"G"D2 E2 F2 | G2 A2 B2 | "F#m7b5"c4 E2 | "B7b9"^D6 |
+"Em7"B4 D2 | "A7b9"^C6 | "Dm7"A4 C2 | "G7"B,6 |
+"Cmaj7"G4 B,2 | "C6"C3 D _E=F | "Cm7"G4 _e2 | "F9"d4 c2 |
+"Bbmaj7"=F4 d2 | c4 _B2 | "Bbm7"=F4 _d2 | "Eb9"c4 _B2 |
+"Abmaj7"_E2 =F2 G2 | _A2 _B2 c2 | "Am7b5"d4 c2 | "D9"B4 A2 |
+"Bm7"e6- | e6- | "E7"e4 d2 | "E7#5"c4 "E7"B2 |
+"Am7"d6- | d6- | "D7"d4 c2 | "G"B2 G3 E |
+"D7#9"G4- "D9"G2- | "Bm7"G2- "Am7"G2- "Abmaj7"G2- | "Gmaj7"G6- | G2 z2 z2 |]
 
 X:886
 T:Body And Soul
@@ -28770,20 +28735,20 @@ w: * * * * * |]
 X:950
 T:Misty
 C:Errol Garner
-N:Lyrics: Johnny Burke
-N:Source: openbook
-N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
-M:2/2
+N:Source: openbook (read from its LilyPond source; version Real)
+N:Ballad
+M:4/4
 L:1/8
+Q:1/4=88
 %%id misty
-%%tags needs-repair
 K:Eb
-_b G |: "Ebmaj7" D6 _B C | "Bbm7" _D c C C C _B G _E | "Abmaj7" C4 z G _A C _E G |
-w: Look at |  me, I'm as | help- les as a kit- ten up a | tree * and I feel like I'm |
-"Abm7" _B _B _B _A _B3 _A | "Ebmaj7" G2- G _A _B _E,2- _E F G | "Fm7" _A C,2 C D2 _E2 F2 | :|1 "G7" G8- |
-w: cling- ing to a cloud, I | can't _ un- der- stand, _ I get | Mist- y just hold- ing your |  hand. |
-"F7" G4 z2 _B G | :|2 "Eb" _E8 | "Eb" z2 _E2 F2 |
-w: _ * Walk my |  * | * * * |]
+BG |: "Ebmaj7"D6 B,C | "Bbm7"_Dc cc "Eb7"cB GE | "Abmaj7"C4 (3:2:6zG,A, CEG |
+"Abm7"BB BA "Db7"B2 AB | "Ebmaj7"G2- (3:2:3GAB "Cm7"E2- (3:2:3EFG | "Fm7"A C2 C "Bb7"(3:2:3D2E2F2 |1 "Gm7"G4- "C7"G4- |
+"Fm7"G4- "Bb7"G2 BG :|2 "Eb6"E8 | (3:2:3z2E2F2 (3:2:3G2B2c2 || "Bbm7"_dd dd- _d4- |
+"Eb7b9"_d2 de (3:2:3_f2e2d2 | "Abmaj7"cc cc- c4 | (3:2:6z2E2F2 A2B2c2 | "Am7"dd dc d4- |
+"D7"dd dc "F7"(3:2:3f2d2c2 | "Gm7b5"B4- "C7b9"B4- | "Fm7"B4- "Bb7"B2 BG | "Ebmaj7"D6 B,C |
+"Bbm7"_Dc cc "Eb7"cB GE | "Abmaj7"C4 (3:2:6zG,A, CEG | "Abm7"BB BA "Db7"B2 AB | "Ebmaj7"G2- (3:2:3GAB "Cm7"E2- (3:2:3EFG |
+"Fm7"A C2 C "Bb7"(3:2:3D2E2F2 | "Eb6"E8 | "Fm7"z4 "Bb7"z4 |]
 
 X:951
 T:Moonlight in Vermont
@@ -29552,32 +29517,21 @@ K:C
 X:983
 T:Stella By Starlight
 C:Victor Young
-N:Lyrics: Ned Washington
-N:Source: openbook
-N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
+N:Source: openbook (read from its LilyPond source; version Real)
+N:Slowly, with Expression
 M:4/4
 L:1/8
+Q:1/4=130
 %%id stella-by-starlight
-%%tags needs-repair
 K:Bb
-_b2 | "Em7b5" A8- | "A7b9" A2 G2 A2 _B2 | "Cm7" F8- |
-w: The | song | a rob- in sings, | Through |
-"F7" F6 F2 | "Fm7" G8- | "Bb7" G2 F2 F2 G2 | "Ebmaj7" _B,8- |
-w: years of | end- | less springs, The mur- | mur |
-"Ab7" _B6 C2 | "Bbmaj7" _E2 D2 C2 _B2 | "Em7b5" D6 E2 | "Dm7" G3 F F4- |
-w: of a | brook at even- ing | tides. That | rip- ples through |
-"Bbm7" F6 G2 | "Fmaj7" _B2 A2 G2 F2 | "Em7b5" G4 A2 _B2 | "Am7b5" D3 C C4- |
-w: a nook | where two lov- ers | hide. That great | sym- pho- nic |
-"D7b9" C4 D4 | "G7#5" _E8- | "Cm7" _E2 _E2 _E2 D2 | "Ab7" F8- |
-w: theme, That's | Stel- | la by star- light, | And |
-"Bbmaj7" F2 _E2 D2 C2 _B2 | "Em7b5" D4 D4- | "A7b9" D2 C2 _B2 A2 | "Dm7b5" C8- |
-w: not a dream, My heart | and I | ag- ree, She's eve- | ry- |
-"G7b9" C6 _B2 | "Cm7b5" A8- | "F7b9" A2 G2 A2 _B2 | "Bbmaj7" F8- |
-w: thing onthis | earth | to me. * * | * |
-F2 F2 F2 _E2 | _G8- | _G2 _G2 _G2 F2 | F8- |
-w: * * * * | * | * * * * | * |
-F8 |
-w: * |]
+B2 | "Em7b5"A8- | "A7b9"A2 G2 A2 B2 | "Cm7"F8- |
+"F7"F6 F2 | "Fm7"G8- | "Bb7"G2 F2 F2 G2 | "Ebmaj7"B,8- |
+"Ab7"B,6 C2 | "Bbmaj7"E2 D2 C2 B,2 | "Em7b5"D4- "A7b9"D2 =E2 | "Dm7"G3 F F4- |
+"Bbm7"F4- "Eb7"F2 G2 | "Fmaj7"B2 A2 G2 F2 | "Em7b5"G4 "A7"A2 B2 | "Am7b5"d3 c c4- |
+"D7b9"c4 d4 | "G7#5"e8- | e2 e2 e2 d2 | "Cm7"f8- |
+"Ab7"f2 e2 (3:2:3d2c2B2 | "Bbmaj7"d4 d4- | "Em7b5"d2 c2 B2 A2 | "A7b9"c8- |
+"Dm7b5"c6 B2 | "G7b9"A8- | "Cm7b5"A2 G2 A2 B2 | "F7b9"F8- |
+"Bbmaj7"F2 F2 F2 E2 | _G8- | _G2 G2 G2 F2 | F8- | F8 |]
 
 X:984
 T:Stormy Weather
@@ -29688,19 +29642,19 @@ w: in' | by. * |]
 X:988
 T:Take Five
 C:Paul Desmond
-N:Source: openbook
+N:Source: openbook (read from its LilyPond source; version Unknown)
+N:Moderately
 M:5/4
-L:1/8
+L:1/16
+Q:1/4=88
 %%id take-five
-%%tags needs-repair
-K:Dmin
-A D F G | "D" ^G A ^G G F2 A,2 C2 | "D" D6 E/ F/ E/ D C2 | "D" D6 C/ D/ C/ A G2 |
-"D" A6- A D F G | "D" ^G A ^G G F2 A,2 C2 | "D" D6 E/ F/ E/ D C2 | "D" D6 C/ D/ C/ A G2 |
-"D" A6- A4 | "Bb" d F2 D _B2 G A _B B | "A" C E2 C A2 F G ^G A | "G" _B D2 _B G2 E F G ^G |
-"F" A ^G A _B C2 C B C ^C | "Bb" D F2 D _B2 G A _B B | "A" C E2 C A2 F G ^G A | "G" _B D2 _B G2 E G C _B |
-"E" A6 A, D F G | "D" ^G A ^G G F2 A,2 C2 | "D" D6 E/ F/ E/ D C2 | "D" D6 C/ D/ C/ A G2 |
-"D" A6- A D F G | "D" ^G A ^G G F2 A,2 C2 | "D" D6 C/ D/ C/ A G2 | "D" A6 e/ F/ E/ D C2 |
-"D" D6- D4 |]
+K:Dm
+A,2D2 F2G2 | "Dm"^G2A2 G2=G2 F4 "Am7"A,4 C4 | "Dm"D12 "Am7"(3:2:3EFED2 C4 | "Dm"D12 "Am7"(3:2:3CDCA,2 G,4 |
+"Dm"A,12- "Am7"A,2D2 F2G2 | "Dm"^G2A2 G2=G2 F4 "Am7"A,4 C4 | "Dm"D12 "Am7"(3:2:3EFED2 C4 | "Dm"D12 "Am7"(3:2:3CDCA,2 G,4 |
+"Dm"A,12- "Am7"A,8 | "Bb"d2 f4 d2 B4 "C7"G2A2 B2=B2 | "Am7"c2 e4 c2 A4 "Dm"F2G2 ^G2A2 | "Gm7"B2 d4 B2 G4 "C7"E2F2 G2^G2 |
+"F"A2^G2 A2B2 c4 "F7"c2=B2 c2^c2 | "Bb"d2 f4 d2 B4 "C7"G2A2 B2=B2 | "Am7"c2 e4 c2 A4 "Dm"F2G2 ^G2A2 | "Gm7"B2 d4 B2 G4 "C7"E2G2 c2B2 |
+"Em7"A12 "A7"A,2D2 F2G2 | "Dm"^G2A2 G2=G2 F4 "Am7"A,4 C4 | "Dm"D12 "Am7"(3:2:3EFED2 C4 | "Dm"D12 "Am7"(3:2:3CDCA,2 G,4 |
+"Dm"A,12- "Am7"A,2D2 F2G2 | "Dm"^G2A2 G2=G2 F4 "Am7"A,4 C4 | "Dm"D12 "Am7"(3:2:3CDCA,2 G,4 | "Dm"A,12 "Am7"(3:2:3EFED2 C4 | "Dm"D12- "Dm"D8 |]
 
 X:989
 T:Take the 'A' Train
@@ -29769,19 +29723,23 @@ w: All. I can |  _ _ | _ _ _ |]
 X:992
 T:The Girl From Ipanema
 C:Antonio Carlos Jobim
-N:Lyrics: Vincius De Moraes, Norman Gimbel
-N:Source: openbook
-N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
+N:Source: openbook (read from its LilyPond source; version Fake)
+N:Moderate Bossa Nova
 M:2/2
 L:1/8
+Q:1/4=130
 %%id the-girl-from-ipanema
 K:F
-|: "Fmaj7" g3 E E2 D G- | "G7" G2 E E- E E D G- | "Gm7" G2 E2 E2 D G- | "Gb7" G G E E- E E D F- |
-w:  Tall and tan and young | _ and love- _ ly, the Girl | _ From I- pa- ne- | _ ma goes walk- _ ing, and when |
-F D2 D- D D C E- | "Fmaj7" E C2 C- C C _B2 | "Gb7b5" :|1 z2 C6- | "Fmaj7" C4 z4 |
-w: _ she pass- _ es, each one | _ she pass- _ es goes |  * ""ah!"" | _ * |
-:|2 z2 C6- | C4 z4 |
-w:  * _ | Oh, * |]
+|: "Fmaj7"G3 E E2 DG- | G2 EE- EEDG- | "G7"G2 E2 E2 DG- | "Gm7"GGEE- EEDF- |
+"Gb7"F D2 D- DDCE- | "Fmaj7"E C2 C- CC B,2 |1 "Gb7b5"z2 C6- | "Fmaj7"C4 z4 :|2
+z2 C6- | "Gbmaj7"C4 z4 || F8- | "Cb9"(3:2:3F2_G2F2 (3:2:3_E2F2E2 |
+"F#m7"_D3 _E- _E4- | "D9"_E6 z^G- | "Gm7"^G8- | "Eb9"(3:2:3^G2A2G2 (3:2:3^F2G2F2 |
+"Am7"E3 ^F- ^F4- | "D7b5b9"^F6 zA- | "Gm7"A8- | "C7b5b9"(3:2:3A2B2A2 (3:2:3G2A2G2 |
+"Fmaj7"F3 G- G4- | G4 (3:2:3z2A2B2 | "G7"(3:2:3c2C2D2 (3:2:3E2F2G2 | "Gm7"^G6 A2 |
+"Gb7b5"(3:2:3B2B,2C2 (3:2:3D2E2F2 | "Fmaj7"^F6 z2 | "Gb7"G3 E E2 DG- | "Fmaj7"G2 EE- EEDG- |
+"Gb7"G2 E2 E2 DG- | "Fmaj7"GGEE- EEDA- | A3 F FFDc- | c3 E (3:2:3E2E2D2 |
+E8 | z2 zE (3:2:3E2E2D2 | E8 | z2 zE (3:2:3E2E2D2 |
+E8- | E6 z2 |]
 
 X:993
 T:The Man I Love

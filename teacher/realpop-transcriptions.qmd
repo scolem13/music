@@ -1,0 +1,99 @@
+---
+title: "Real Pop transcriptions (in progress)"
+toc: false
+---
+
+Rhythms, chords and (some) lyrics read by model from *The Real Pop Book Vol. 2*. **Pitches are not
+transcribed: every note is written as B.** Treat each as a draft to review against the book.
+Badge **bars off** = some bars do not add up to a full measure; **unsure** = lines the transcriber
+marked `%unsure`. Not shown on the public site; reach it at `/teacher/realpop-transcriptions.html`.
+Built by `scripts/realbooks/build-transcriptions.py`.
+
+**Open in Notation** sends a draft to the Notation page in a new tab. **Comments** are your reminders per tune.
+They are kept in this browser at once and saved for good in `apps/realbooks/rhythm-comments.json`: after adding
+some, press **Download comments.json**, replace that file, and commit it (the page shows how many are not yet in the file).
+
+```{=html}
+<style>
+#rpt .tune { margin: 0 0 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--site-border, #ccc); }
+#rpt h3 { margin: 0 0 .2rem; font-size: 1.1rem; }
+#rpt .meta { color: var(--site-ink-2, #666); font-size: .85rem; margin-bottom: .4rem; }
+#rpt .b { display: inline-block; font-size: .75rem; font-weight: 600; padding: .05rem .4rem; border-radius: .3rem; margin-right: .3rem; border: 1px solid; }
+#rpt .ok { color: #1a7f37; } #rpt .warn { color: #b35900; } #rpt .bad { color: #cf222e; }
+#rpt .bar { display: flex; gap: .5rem; margin: .4rem 0; flex-wrap: wrap; }
+#rpt button { font: inherit; font-size: .8rem; padding: .15rem .6rem; cursor: pointer; }
+#rpt .cm { font-size: .88rem; margin: .5rem 0 0; }
+#rpt .cm li { margin: .15rem 0; } #rpt .cm .dt { color: var(--site-ink-2, #666); font-size: .75rem; }
+#rpt .cm textarea { width: 100%; min-height: 2.6rem; font: inherit; }
+#rpt #top { position: sticky; top: 0; background: var(--site-surface, #fff); padding: .4rem 0; z-index: 5; border-bottom: 1px solid var(--site-border, #ccc); }
+#rpt .paper { background: #fff; color: #000; padding: .5rem; border-radius: .3rem; overflow-x: auto; }
+</style>
+<div id="rpt"><div id="top"><button id="dl">Download comments.json</button> <span id="pend"></span></div></div>
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/realbooks/rhythm-transcriptions.js"></script>
+<script>
+(function(){
+  var root = document.getElementById('rpt'), KEY = 'rpt-comments';
+  var saved = {}, local = {};
+  try { local = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) {}
+  function merged() {   // file comments + any added here; each {t: ISO time, x: text}
+    var m = {}; Object.keys(saved).forEach(function (k) { m[k] = saved[k].slice(); });
+    Object.keys(local).forEach(function (k) { local[k].forEach(function (c) {
+      if (!(m[k] || []).some(function (o) { return o.t === c.t && o.x === c.x; })) (m[k] = m[k] || []).push(c); }); });
+    return m;
+  }
+  function pending() { var n = 0, m = merged(); Object.keys(m).forEach(function (k) { n += m[k].length - (saved[k] || []).length; }); return n; }
+  function store() { try { localStorage.setItem(KEY, JSON.stringify(local)); } catch (e) {} }
+  function refresh() { var n = pending(); document.getElementById('pend').textContent = n ? n + ' comment' + (n > 1 ? 's' : '') + ' not yet in the file' : 'all comments are in the file'; }
+  function drawComments(t, ul) {
+    ul.innerHTML = '';
+    (merged()[t.id] || []).forEach(function (c) {
+      var li = document.createElement('li'), d = document.createElement('span'); d.className = 'dt'; d.textContent = c.t.slice(0, 10) + '  ';
+      li.appendChild(d); li.appendChild(document.createTextNode(c.x)); ul.appendChild(li); });
+  }
+  function openNotation(t) {
+    var w = window.open('/tools/notation.html?remote=1');
+    if (!w) { alert('Allow pop-ups to open Notation.'); return; }
+    function on(e) {
+      if (e.source !== w || e.origin !== location.origin || !e.data || e.data.type !== 'nt-ready') return;
+      window.removeEventListener('message', on);
+      w.postMessage({ type: 'nt-abc', abc: t.abc, title: t.title, host: 'Real Pop transcriptions' }, location.origin);
+    }
+    window.addEventListener('message', on);
+  }
+  function build(all) {
+    saved = all || {};
+    window.RHYTHM_TRANSCRIPTIONS.forEach(function(t){
+      var d = document.createElement('div'); d.className = 'tune'; d.id = t.id;
+      var badges = (t.bad ? '<span class="b bad">'+t.bad+' bars off</span>' : '<span class="b ok">bars ok</span>')
+        + (t.unsure ? '<span class="b warn">'+t.unsure+' unsure</span>' : '');
+      d.innerHTML = '<h3></h3><div class="meta">'+badges+'<span class="n"></span></div>'
+        + '<div class="bar"><button class="to">Open in Notation</button><button class="add">Add comment</button></div>'
+        + '<ul class="cm"></ul><div class="paper"></div>';
+      d.querySelector('h3').textContent = t.title + (t.pdf ? '  (pdf ' + t.pdf + ')' : '');
+      d.querySelector('.n').textContent = t.note;
+      var ul = d.querySelector('.cm'); drawComments(t, ul);
+      d.querySelector('.to').onclick = function () { openNotation(t); };
+      d.querySelector('.add').onclick = function () {
+        var box = document.createElement('div'); box.innerHTML = '<textarea placeholder="What still needs doing on this one?"></textarea><button class="ok">Save</button> <button class="no">Cancel</button>';
+        d.querySelector('.bar').after(box);
+        box.querySelector('.no').onclick = function () { box.remove(); };
+        box.querySelector('.ok').onclick = function () {
+          var x = box.querySelector('textarea').value.trim(); if (!x) return;
+          (local[t.id] = local[t.id] || []).push({ t: new Date().toISOString(), x: x });
+          store(); box.remove(); drawComments(t, ul); refresh(); };
+        box.querySelector('textarea').focus();
+      };
+      root.appendChild(d);
+      ABCJS.renderAbc(d.querySelector('.paper'), t.abc, { responsive: 'resize', add_classes: true, paddingleft: 0, paddingright: 0 });
+    });
+    refresh();
+  }
+  document.getElementById('dl').onclick = function () {
+    var blob = new Blob([JSON.stringify(merged(), null, 1) + '\n'], { type: 'application/json' });
+    var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'rhythm-comments.json'; a.click();
+  };
+  fetch('/apps/realbooks/rhythm-comments.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(build);
+})();
+</script>
+```

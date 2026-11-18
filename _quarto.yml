@@ -541,6 +541,7 @@ website:
       contents:
         - teacher/session-builder.qmd
         - teacher/report.qmd
+        - teacher/realpop-transcriptions.qmd
         - section: "LSA"
           contents:
             - teacher/lsa-directory.qmd
