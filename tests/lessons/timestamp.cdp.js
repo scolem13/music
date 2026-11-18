@@ -12,7 +12,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   let fails = 0; const check = (name, ok, info) => { console.log((ok ? "ok   " : "FAIL ") + name + (info ? "  " + info : "")); if (!ok) fails++; };
   const ev = e => b.eval(e), noErr = () => b.errors.filter(e => !/supabaseUrl|youtube/i.test(e));
   await b.goto("http://127.0.0.1:8517/tools/timestamp-notes.html"); await b.sleep(600);
-  await ev(`localStorage.clear()`); await b.goto("http://127.0.0.1:8517/tools/timestamp-notes.html"); await b.sleep(600);
+  await ev(`localStorage.clear(); localStorage.setItem('ts-advanced', '1')`); await b.goto("http://127.0.0.1:8517/tools/timestamp-notes.html"); await b.sleep(600);   // Advanced: the basic view hides most parts
   check("loads without errors, bar map present", !noErr().length && await ev(`!!document.querySelector('.btp-barmap')`), noErr().join(" | "));
 
   // 40 s of silence, 8 kHz mono 16-bit
@@ -113,7 +113,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   const song = await saveSong(), json = JSON.parse(song.text);
   check("the song file has the stamps, the bar map and the recording", json.app === "timestamp-notes" && json.barMap.bars.length === 9 && json.barMap.beatsPerBar === 4
     && json.barMap.sections[1].name === "Verse 1" && json.barMap.sections[1].bar === 3 && json.stamps.length === 4 && json.source.file === "silence.wav" && /\.json$/.test(song.name), song.name + " " + song.text.slice(0, 200));
-  await ev(`localStorage.clear()`); await b.goto("http://127.0.0.1:8517/tools/timestamp-notes.html"); await b.sleep(600);
+  await ev(`localStorage.clear(); localStorage.setItem('ts-advanced', '1')`); await b.goto("http://127.0.0.1:8517/tools/timestamp-notes.html"); await b.sleep(600);
   await ev(`(() => { document.querySelector('.btp-paste-open').click(); document.querySelector('.btp-paste textarea').value = ${JSON.stringify(song.text)}; document.querySelector('.btp-paste-go').click(); })()`);
   await b.sleep(150);
   check("opening it brings back the bars and the sections", /^9 bars/.test(await ev(`document.querySelector('.btp-bars-summary').textContent`)) && await ev(`document.querySelectorAll('.btp-barmap .btp-sec-rows li').length`) === 3
@@ -293,7 +293,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   check("ChordPro alone: one wide box", await ev(`getComputedStyle(document.querySelector('.btp-ug')).display`) === "none" && await ev(`document.querySelector('.btp-cho').getBoundingClientRect().width`) > 400);
   await ev(`document.querySelector('button[data-view=both]').click()`);
   // the sidebar: every part listed; Hide all hides the player, the words being played and the log too; a click shows one
-  check("the sidebar lists every part", await ev(`[...document.querySelectorAll('.ts-nav a')].map(a => a.textContent).join('|')`).then(x => /^Clock\|Player\|Chord grid\|Chord timing and MIDI\|Words and chords.*\|Now playing\|Timestamps$/.test(x)));
+  check("the sidebar lists every part", await ev(`[...document.querySelectorAll('.ts-nav a')].map(a => a.textContent).join('|')`).then(x => /^Clock\|Notation\|Player\|Chord grid\|Chord timing and MIDI\|Words and chords.*\|Now playing\|Timestamps$/.test(x)));
   await ev(`document.querySelector('[data-all=hide]').click()`);
   check("Hide all hides everything", await ev(`['ts-player','ts-now','ts-log'].every(id => getComputedStyle(document.getElementById(id)).display === 'none')`));
   await ev(`document.querySelector('.ts-nav a[data-for=ts-log]').click()`);

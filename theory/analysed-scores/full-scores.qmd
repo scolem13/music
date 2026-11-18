@@ -98,10 +98,7 @@ e.g. [Beethoven, "Moonlight" Sonata, I](?analysed=beethoven-sonata-14-1).
       document.title = f("T") + " – score";
       document.getElementById("fsp-head").innerHTML = "<h2>" + esc(f("T")) + "</h2><p>" + esc([f("C"), f("K") && "key " + f("K"), f("M")].filter(Boolean).join(" · ")) +
         ' · from the Tune Library · <a href="/practice/tunes.html?tune=' + encodeURIComponent(tn) + '">open it there</a></p>';
-      var lines = abc.trim().split("\n"), k = lines.findIndex(function (l) { return /^K:/.test(l); });
-      var head = lines.slice(0, k + 1).filter(function (l) { return !/^T:/.test(l); }), body = lines.slice(k + 1).filter(function (l) { return !/^[A-Za-z]:|^%/.test(l) || /^V:/.test(l); });
-      if (!body.some(function (l) { return /^V:/.test(l); })) { head.push('V:1 nm="Lead sheet"'); body = ["V:1", body.join(" ")]; }
-      mounted(FullScore.mount("#fsp", { abc: head.join("\n") + "\n" + body.join("\n") + "\n", id: "tune-" + tn, band: true }));
+      mounted(FullScore.mount("#fsp", { abc: FullScore.fromTune(abc), id: "tune-" + tn, band: true }));
     };
     document.head.appendChild(sc);
   }

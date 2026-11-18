@@ -18,10 +18,10 @@ const U = "http://127.0.0.1:8562";
   await b.resize(1300, 900);
 
   await b.goto(U + "/tools/timestamp-notes.html");
-  await ev(`localStorage.clear(), 0`); await b.goto(U + "/tools/timestamp-notes.html");
+  await ev(`localStorage.clear(), localStorage.setItem('ts-advanced', '1'), 0`); await b.goto(U + "/tools/timestamp-notes.html");
   await wait(`!!document.querySelector('.ts-nav ul li')`);
   check("help folded at the bottom", await ev(`(() => { const h = document.querySelector('.ts-help'); return !!h && !h.open && !!h.querySelector('.btp-steps') && !!(h.compareDocumentPosition(document.querySelector('.btp-layout')) & 2); })()`));
-  check("no Notation part without a tune", await ev(`document.getElementById('ts-notation').hidden && !document.querySelector('.ts-nav a[data-for="ts-notation"]')`));
+  check("Notation part without a tune is a tune finder, no score", await ev(`!!document.querySelector('#ts-notation .ts-nt-q') && !document.querySelector('#ts-notation .ts-nt-paper svg')`));
   // hide / show
   await ev(`document.querySelector('#ts-barmap .ts-hide').click()`);
   check("× hides the part", await ev(`getComputedStyle(document.getElementById('ts-barmap')).display === 'none' && document.querySelector('.ts-nav a[data-for="ts-barmap"]').classList.contains('is-shut')`));
@@ -60,12 +60,12 @@ const U = "http://127.0.0.1:8562";
   check("Delete all keeps only the one on the page", await ev(`document.querySelectorAll('#ts-library .tsn-lib-row').length === 1`));
 
   // notation for a linked recording
-  await ev(`localStorage.clear(), 0`);
+  await ev(`localStorage.clear(), localStorage.setItem('ts-advanced', '1'), 0`);
   await b.goto(U + "/tools/timestamp-notes.html?rec=mullen-chew-chew-chew-c-with-vocals");
   check("Notation part shows the linked tune", await wait(`!!document.querySelector('#ts-notation .ts-nt-paper svg') && !document.getElementById('ts-notation').hidden`, 120));
   await ev(`(() => { const m = document.querySelector('.btp-barmap')._btpMap; m.load({ beatsPerBar: 2, bars: [0,1,2,3,4,5,6,7,8,9] }); })()`);
   await ev(`document.querySelector('.btp')._btp.seek(3.5), 0`);
-  check("the bar the recording is in is lit", await wait(`document.querySelectorAll('#ts-notation .rs-bar').length > 0`, 40));
+  check("the bar the recording is in is lit", await wait(`document.querySelectorAll('#ts-notation .fs-cur').length > 0`, 40));
 
   // spreadsheet
   await b.goto(U + "/practice/tune-directory.html");

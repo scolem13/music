@@ -4,7 +4,11 @@
    each name hides or shows it. Show all / Hide all. Which parts are hidden is remembered (localStorage "ts-hidden").
 
    A part is any .ts-panel with an id and a data-nav label: a <details> (its summary folds it) or anything with a .ts-fold-h
-   header that folds its .ts-fold-body. Each header gets a × that hides the part. */
+   header that folds its .ts-fold-body. Each header gets a × that hides the part.
+
+   Basic / Advanced (localStorage "ts-advanced"): by default only the Player and the Timestamps show (.ts-basic on .ts-root hides
+   the other parts in CSS, so what a student hid or folded is kept); the "Advanced" button in the strip shows them all.
+   The strip (clock, bar and section, Parts, Advanced) stays on screen; "Parts" folds the list below it (localStorage "ts-nav-folded"). */
 (function () {
   "use strict";
   var KEY = 'ts-hidden';
@@ -42,7 +46,25 @@
       eyes[p.id].title = show ? 'Hide this part' : 'Show this part';
       if (show) window.dispatchEvent(new Event('resize'));
     }
+    var root = document.querySelector('.ts-root'), layout = document.querySelector('.btp-layout');
+    var BASIC = { 'ts-player': 1, 'ts-log': 1 };
+    function store(k, v) { try { localStorage.setItem(k, v ? '1' : '0'); } catch (e) {} }
+    function setAdvanced(on) {
+      root.classList.toggle('ts-basic', !on);
+      var ab = nav.querySelector('.ts-adv-toggle');
+      if (ab) { ab.setAttribute('aria-pressed', String(on)); ab.textContent = on ? 'Basic' : 'Advanced'; }
+      store('ts-advanced', on);
+      window.dispatchEvent(new Event('resize'));
+    }
+    function setFolded(on) {
+      nav.classList.toggle('is-folded', on);
+      if (layout) layout.classList.toggle('ts-nav-off', on);
+      var tb = nav.querySelector('.ts-nav-toggle');
+      if (tb) { tb.setAttribute('aria-expanded', String(!on)); tb.innerHTML = on ? 'Parts &#9656;' : 'Parts &#9662;'; }
+      store('ts-nav-folded', on);
+    }
     function jump(p) {
+      if (!BASIC[p.id] && root.classList.contains('ts-basic')) setAdvanced(true);
       set(p, true); if (!isOpen(p)) fold(p, true);
       p.scrollIntoView({ behavior: 'smooth', block: 'start' });
       p.classList.add('is-lit'); setTimeout(function () { p.classList.remove('is-lit'); }, 1400);
@@ -59,6 +81,7 @@
       });
       eye.type = 'button'; eye.className = 'ts-eye';
       eye.addEventListener('click', function () { set(p, !shown(p)); eye.blur(); });
+      if (!BASIC[p.id]) li.className = 'ts-adv';
       li.appendChild(a); li.appendChild(eye); list.appendChild(li); links[p.id] = a; eyes[p.id] = eye;
 
       // the header folds the part; its × hides it
@@ -81,6 +104,13 @@
       if (shut[p.id] != null && shut[p.id] === isOpen(p)) fold(p, !shut[p.id]);
       set(p, !hidden[p.id]);
     });
+    var adv = nav.querySelector('.ts-adv-toggle'), fold0 = nav.querySelector('.ts-nav-toggle');
+    var isAdv = false, isFolded = false;
+    try { isAdv = localStorage.getItem('ts-advanced') === '1'; isFolded = localStorage.getItem('ts-nav-folded') === '1'; } catch (e) {}
+    if (/[?&]advanced=1/.test(location.search)) isAdv = true;
+    setAdvanced(isAdv); setFolded(isFolded);
+    if (adv) adv.addEventListener('click', function () { setAdvanced(root.classList.contains('ts-basic')); adv.blur(); });
+    if (fold0) fold0.addEventListener('click', function () { setFolded(!nav.classList.contains('is-folded')); fold0.blur(); });
     nav.querySelectorAll('[data-all]').forEach(function (b) {
       b.addEventListener('click', function () { var show = b.dataset.all === 'show'; panels.forEach(function (p) { set(p, show); }); b.blur(); });
     });

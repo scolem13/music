@@ -247,7 +247,7 @@ START, END = "<!-- works-cited", "<!-- /works-cited -->"
 pages = sorted({p for s in SOURCES for p in s["pages"]})
 # pages whose sources are the data they show (the tune collection), not their text: no Works Cited block there (any old one is
 # taken out); bibliography.qmd still lists them under "Used in"
-NO_BLOCK = {"practice/tunes.qmd", "practice/assessment-tune.qmd"}
+NO_BLOCK = {"practice/tunes.qmd", "practice/assessment-tune.qmd", "tools/timestamp-notes.qmd"}
 for page in pages:
     f = ROOT / page; t = f.read_text()
     if page in NO_BLOCK:

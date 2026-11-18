@@ -2,6 +2,11 @@
 // voice on its own instrument), with views that show and play only some instruments. Global FullScore.
 //
 //   FullScore.mount(el, { abc, id, notes?: html }) -> { view(keys), play(), stop(), layout(obj), parts, abc(), systems() }
+//   FullScore.fromTune(abc) -> the ABC of a Tune Library tune as a one-staff lead sheet (no T:, one voice line), for mount()
+//   o.mark: true = a score to follow, not to play (Timestamp Notes, where the recording is the sound): the play bar, chips and
+//     instrument chooser are hidden, the sheet scrolls inside its own box, and the score gets showPlayed(j) (the j-th bar in playing
+//     order, pickup = 0, wrapping round when the recording goes on past the tune's end: a lit bar that turns pages by itself),
+//     clearMark(), nPlayed() (bars in playing order)
 //     abc  the score as scripts/full-score/convert.mjs (+ arrange.mjs) writes it, checked against its MusicXML: header lines, one
 //          V: line per voice (nm="..." starts an instrument; an unnamed voice belongs to the instrument before it), then each
 //          voice's music on ONE line. arrange.mjs hints: "%fs-staves ( 18 19 )" voices drawn on one staff; "%fs-display V:19
@@ -281,7 +286,7 @@
     ".fs-sheet.fs-line .fs-paper{min-width:0;width:max-content}.fs-sys{padding-top:14px}.fs-sys+.fs-sys{margin-top:var(--fs-sysgap,8px)}" +
     ".fs-sheet.fs-paged{background:transparent;padding:4px 0 10px;scroll-snap-type:x proximity}.fs-sheet.fs-paged .fs-paper{display:flex;gap:20px;width:max-content;min-width:0;align-items:flex-start}" +
     ".fs-page{flex:none;box-sizing:border-box;background:var(--fs-paper,#fffdf8);padding:8px 14px 18px;border-radius:2px;box-shadow:0 1px 0 var(--fs-rule,#ccc),0 10px 26px -18px rgba(0,0,0,.5);scroll-snap-align:start}" +
-    ".fs-go{display:inline-flex;gap:6px;align-items:center}.fs-goto{width:4.5em;font:inherit;padding:3px 4px}.fs-flash{fill:var(--fs-accent,#7a2e2a);opacity:.16;pointer-events:none}.fs-sheet.fs-line .fs-paper{display:flex;align-items:flex-start}.fs-sheet.fs-line .fs-sys+.fs-sys{margin-top:0}.fs-pageno{font:italic 12px Georgia,serif;opacity:.6;text-align:right}.fs-barjoin{fill:#1a1915;stroke:none}.fs-pageturn{display:inline-flex;gap:6px}" +
+    ".fs-go{display:inline-flex;gap:6px;align-items:center}.fs-goto{width:4.5em;font:inherit;padding:3px 4px}.fs-mark .fs-bar,.fs-mark .fs-chips,.fs-mark .fs-choose{display:none}.fs-mark .fs-sheet{overflow:auto;max-height:var(--fs-mark-h,55vh)}.fs-cur{fill:var(--fs-accent,#7a2e2a);opacity:.22;pointer-events:none}.fs-flash{fill:var(--fs-accent,#7a2e2a);opacity:.16;pointer-events:none}.fs-sheet.fs-line .fs-paper{display:flex;align-items:flex-start}.fs-sheet.fs-line .fs-sys+.fs-sys{margin-top:0}.fs-pageno{font:italic 12px Georgia,serif;opacity:.6;text-align:right}.fs-barjoin{fill:#1a1915;stroke:none}.fs-pageturn{display:inline-flex;gap:6px}" +
     ".fs-names{position:sticky;left:0;width:0;height:0;z-index:2}.fs-names span{position:absolute;left:0;transform:translateY(-50%);font:600 12px/1.1 Georgia,serif;white-space:nowrap;background:var(--fs-paper,#fffdf8);padding:2px 6px 2px 2px;box-shadow:4px 0 6px -4px rgba(0,0,0,.35)}" +
     ".fs-paper .abcjs-note,.fs-paper .abcjs-rest{cursor:pointer}.fs-paper .fs-from{fill:var(--fs-accent,#7a2e2a)}.fs-paper .abc-on{fill:#b3372f}.fs-src{max-height:360px;overflow:auto;font-size:11px;white-space:pre}" +
     ".fs-abc{width:100%;height:320px;font:11px/1.4 ui-monospace,Menlo,monospace;white-space:pre;overflow:auto;background:var(--fs-paper,#fffdf8);color:#1a1915;border:1px solid var(--fs-rule,#ccc);border-radius:3px;padding:6px}";
@@ -309,7 +314,7 @@
     // playback) instead of each voice on its own sound; the score's own bar cursor, Follow and page turns run on as usual. It starts on a bar
     // (a clicked note or a pause goes back to its bar's start). Band styles from BandCatalog, loaded with the band's scripts on first use.
     var bandOn = !!(o.band && global.AbcPlay && global.AbcPlay.hasChords(o.abc));
-    el.classList.add("fs");
+    el.classList.add("fs"); if (o.mark) el.classList.add("fs-mark");
     el.innerHTML =
       '<div class="fs-bar"><button type="button" class="fs-play">▶ Play</button><button type="button" class="fs-stop">■ Stop</button>' +
       '<label for="fs-q-' + id + '">♩ = <input id="fs-q-' + id + '" type="range" class="fs-q" min="40" max="' + Math.max(320, q0) + '" step="4" value="' + q0 + '"><span class="fs-tempo">' + q0 + '</span></label>' +
@@ -850,6 +855,22 @@
       var x = sheet.scrollLeft, i = pages.findIndex(function (p) { return p.offsetLeft >= x - 4; }); if (i < 0) i = pages.length - 1;
       var to = pages[Math.max(0, Math.min(pages.length - 1, i + d))]; sheet.scrollTo({ left: to.offsetLeft - 10, behavior: "smooth" });
     }
+    // o.mark: light the j-th played bar and bring it into view inside the sheet (a page turn when pages go across)
+    var markEl = null, markIdx = -1;
+    function clearMark() { if (markEl) markEl.remove(); markEl = null; markIdx = -1; }
+    function showPlayed(j) {
+      playForm(); var n = played.order.length; if (!n || j < 0) { clearMark(); return false; }
+      var idx = played.order[j % n]; if (idx === markIdx && markEl && markEl.parentNode) return true;
+      var k = job.systems.findIndex(function (r) { return idx >= r.s && idx < r.e; }); if (k >= 0) job.ensure(k);
+      if (!barAt[idx]) return false;
+      var svg = barAt[idx].target.querySelector("svg"); if (markEl && markEl.ownerSVGElement !== svg) markEl.remove();
+      markEl = highlight(idx, "fs-cur", markEl && markEl.ownerSVGElement === svg ? markEl : null); markIdx = idx;
+      var sr = sheet.getBoundingClientRect(), r = markEl.getBoundingClientRect(), pg = markEl.closest && markEl.closest(".fs-page");
+      if (pg && (pg.getBoundingClientRect().left < sr.left - 2 || pg.getBoundingClientRect().right > sr.right + 2)) sheet.scrollTo({ left: pg.offsetLeft - 10, behavior: "smooth" });
+      if (r.top < sr.top + 4 || r.bottom > sr.bottom - 4) sheet.scrollTo({ top: sheet.scrollTop + r.top - sr.top - sr.height * 0.25, behavior: "smooth" });
+      if (L.mode === "line" && (r.left < sr.left + 90 || r.right > sr.right - 30)) sheet.scrollBy({ left: r.left - sr.left - sr.width * 0.3, behavior: "smooth" });
+      return true;
+    }
     var rt, lastW = 0; global.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { var w = sheet.clientWidth; if (Math.abs(w - lastW) > 8) { lastW = w; var keep = playing; stop(); draw(); if (keep) play(); } }, 250); });
 
     // ---------- the played form and its timing
@@ -1116,6 +1137,7 @@
     return { view: function (keys) { chosen = keys.slice(); apply(); }, play: play, stop: stop, parts: S.parts,
       layout: function (x) { if (x) { Object.assign(L, x); store.set(KY, L); showLayout(); stop(); draw(true); } return Object.assign({}, L); },
       goBar: function (n) { goBar(n); },
+      showPlayed: showPlayed, clearMark: clearMark, nPlayed: function () { playForm(); return played.order.length; }, pickup: pickup,
       // for tests: where play would start (ms and bar index), the bars of the lit notes, the bar of an event time
       debug: function () { playForm(); var ev = timing(); return { ev: ev, fromMs: fromMs, pickup: pickup, curMs: curMs, curBar: curBar, order: played.order, barMs: barMs(),
         barsAt: function (ms) { var e = ev.filter(function (x) { return Math.abs(x.ms - ms) < 1; }); return e.map(function (x) { return x.keys.map(barOfKey); }); } }; },
@@ -1129,5 +1151,12 @@
     return n;
   }
 
-  global.FullScore = { mount: mount, parse: parse, playOrder: playOrder, repeatMap: repeatMap, splitBars: splitBars, shortName: shortName, INSTRUMENTS: INSTRUMENTS, FAMILIES: FAMILIES };
+  // a Tune Library tune as one staff: no title, one V: line holding the music (the form full-scores.qmd's ?tune= and Timestamp Notes mount)
+  function fromTune(abc) {
+    var lines = String(abc).trim().split("\n"), k = lines.findIndex(function (l) { return /^K:/.test(l); });
+    var head = lines.slice(0, k + 1).filter(function (l) { return !/^T:/.test(l); }), body = lines.slice(k + 1).filter(function (l) { return !/^[A-Za-z]:|^%/.test(l) || /^V:/.test(l); });
+    if (!body.some(function (l) { return /^V:/.test(l); })) { head.push('V:1 nm="Lead sheet"'); body = ["V:1", body.join(" ")]; }
+    return head.join("\n") + "\n" + body.join("\n") + "\n";
+  }
+  global.FullScore = { fromTune: fromTune, mount: mount, parse: parse, playOrder: playOrder, repeatMap: repeatMap, splitBars: splitBars, shortName: shortName, INSTRUMENTS: INSTRUMENTS, FAMILIES: FAMILIES };
 })(typeof window !== "undefined" ? window : this);
