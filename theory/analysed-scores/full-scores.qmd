@@ -50,19 +50,7 @@ e.g. [Beethoven, "Moonlight" Sonata, I](?analysed=beethoven-sonata-14-1).
   // ?bar=N (from a Classical Theme's "Full score from bar N"): go there once the score is mounted
   var goTo = parseInt(new URLSearchParams(location.search).get("bar"), 10);
   function mounted(sc) { window.score = sc; if (!isNaN(goTo)) (function tryGo(n) { if (document.querySelector("#fsp .fs-paper svg")) sc.goBar(goTo); else if (n < 100) setTimeout(function () { tryGo(n + 1); }, 100); })(0); }
-  function toFull(abc) {
-    var head = [], body = [], named = false;
-    abc.replace(/\r/g, "").split("\n").forEach(function (ln) {
-      var b = /^\[V:(\S+)\]\s*(.*)$/.exec(ln);
-      if (b) { body.push("V:" + b[1], b[2]); return; }
-      if (/^V:\S+/.test(ln)) {
-        if (/ name="/.test(ln)) { ln = ln.replace(/ name="/, ' nm="'); named = true; }
-        else if (named !== "piano") { ln += ' nm="Piano"'; named = "piano"; }
-      }
-      if (ln.trim()) head.push(ln);
-    });
-    return head.concat(body).join("\n") + "\n";
-  }
+  function toFull(abc) { return FullScore.fromLibrary(abc); }
   if (an) {
     an = an.replace(/[^\w-]/g, "");
     fetch(LIB + "index.json?v=" + LV).then(function (r) { return r.json(); }).then(function (index) {

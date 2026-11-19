@@ -5,15 +5,44 @@
    tapped is lit, so the next bar to tap is the one after it. "Score bar 1 = recording bar [n]" lines them up when the tune starts
    after an intro (n counted in tapped bars; a pickup in the tune is shown before bar 1).
    Which tune: ?tune=<tune collection id>, else the MLT recording's first linked tune (?rec=<id>), else "Find a tune" (search the
-   collection by title; the recording's title is tried first). The collection (1.2 MB) loads only when a tune is wanted.
+   collection, the full scores (apps/shared/data/full-scores/) and the Analysed Scores Library (apps/shared/data/scores/) by title,
+   composer or catalogue number, "k545" = "K. 545"; the recording's title is tried first). ?score=<full-score id> and
+   ?analysed=<library id> open one of those directly. The collection (1.2 MB) loads only when a tune is wanted.
    Needs abcjs, full-score.js. */
 (function () {
   "use strict";
   var TUNES = "/apps/tunes/tunes-object.js?v=3";
+  var FS = "/apps/shared/data/full-scores/", FSV = "3", LIB = "/apps/shared/data/scores/", LV = "4";
+  var scores = [];            // [{ kind: "score" | "analysed", id, title, hay, ... }] from the two indexes
+  var scoresP = null;
+  function loadScores() {
+    if (scoresP) return scoresP;
+    var j = function (u) { return fetch(u).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }); };
+    scoresP = Promise.all([j(FS + "index.json?v=" + FSV), j(LIB + "index.json?v=" + LV)]).then(function (a) {
+      (a[0] || []).forEach(function (x) {
+        var t = x.title + (x.movement ? ", " + x.movement : "");
+        scores.push({ kind: "score", id: x.id, file: x.abc, title: t, label: (x.composer ? x.composer + ": " : "") + t + " (full score)", hay: [x.composer, t, x.orchestra].join(" ") });
+      });
+      (a[1] || []).forEach(function (x) {
+        var t = x.title + (x.sub ? ", " + x.sub : "");
+        scores.push({ kind: "analysed", id: x.id, file: x.file, title: t, label: t + " (analysed score)", hay: t + " " + (x.setName || "") });
+      });
+    });
+    return scoresP;
+  }
+  function loadAll() { return Promise.all([loadTunes(), loadScores()]); }
+  // the ABC for the full-score view, fetched for scores, at once for tunes
+  function abcOf(t) {
+    if (t.kind === "score") return fetch(FS + t.file + "?v=" + FSV).then(function (r) { return r.text(); });
+    if (t.kind === "analysed") return fetch(LIB + t.file + ".json?v=" + LV).then(function (r) { return r.json(); }).then(function (B) { return FullScore.fromLibrary(B[t.id].abc); });
+    return Promise.resolve(FullScore.fromTune(t.abc));
+  }
 
   function tuneId() {
     var q = new URLSearchParams(location.search), t = q.get("tune");
     if (t) return t;
+    if (q.get("score")) return "score:" + q.get("score");
+    if (q.get("analysed")) return "analysed:" + q.get("analysed");
     var R = window.MLTRecordings, r = R && R.byId(q.get("rec") || "");
     return r && r.tune && r.tune[0] || null;
   }
@@ -28,7 +57,7 @@
     Object.keys(o).forEach(function (k) {
       String(o[k]).split(/\n(?=X:)/).forEach(function (t) {
         var id = /^%%id\s+(\S+)/m.exec(t), ti = /^T:\s*(.*)$/m.exec(t);
-        if (id && ti) index.push({ id: id[1], title: ti[1].trim(), abc: t });
+        if (id && ti) index.push({ kind: "tune", id: id[1], title: ti[1].trim(), label: ti[1].trim(), hay: ti[1], abc: t });
       });
     });
     return index;
@@ -36,7 +65,8 @@
   function find(q, n) {
     var w = String(q).toLowerCase().replace(/[^a-z0-9' ]+/g, " ").split(/\s+/).filter(Boolean);
     if (!w.length) return [];
-    return all().filter(function (t) { var s = t.title.toLowerCase(); return w.every(function (x) { return s.indexOf(x) >= 0; }); }).slice(0, n || 12);
+    var hit = function (t) { var s = t.hay.toLowerCase(), c = s.replace(/[.\s]+/g, ""); return w.every(function (x) { return s.indexOf(x) >= 0 || c.indexOf(x) >= 0; }); };
+    return scores.filter(hit).concat(all().filter(hit)).slice(0, n || 12);
   }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
@@ -50,8 +80,8 @@
     paper.style.maxHeight = "none"; paper.style.overflow = "visible";
 
     var ui = document.createElement("div"); ui.className = "ts-nt-ui";
-    ui.innerHTML = '<div class="ts-nt-find"><input type="search" class="ts-nt-q" placeholder="Find a tune by title…" spellcheck="false" aria-label="Find a tune by title">' +
-      '<button type="button" class="ts-nt-go">Find</button> <span class="ts-nt-hint">Tunes in the collection have notation that follows your bars.</span></div>' +
+    ui.innerHTML = '<div class="ts-nt-find"><input type="search" class="ts-nt-q" placeholder="Find a tune or score (title, composer, K. 545…)" spellcheck="false" aria-label="Find a tune by title">' +
+      '<button type="button" class="ts-nt-go">Find</button> <span class="ts-nt-hint">Tunes in the collection, full scores and analysed scores have notation that follows your bars.</span></div>' +
       '<ul class="ts-nt-res"></ul>' +
       '<div class="ts-nt-on" hidden><label>Score bar 1 = recording bar <input type="number" class="ts-nt-off" min="1" value="1" inputmode="numeric"></label> ' +
       '<button type="button" class="ts-nt-other">Another tune</button> <span class="ts-nt-st" aria-live="off"></span></div>';
@@ -75,19 +105,24 @@
     }
     function show(t) {
       res.innerHTML = ""; cur.hidden = true; on.hidden = false; lastJ = null;
-      note.innerHTML = 'Notation from the tune collection: <a href="/practice/tunes.html?tune=' + encodeURIComponent(t.id) + '">' + esc(t.title) + "</a>. The lit bar follows your taps and the recording.";
-      paper.innerHTML = "";
-      score = FullScore.mount(paper, { abc: FullScore.fromTune(t.abc), id: "tsn-" + t.id, mark: true });
-      clearInterval(timer); timer = setInterval(tick, 150); tick();
+      var from = t.kind === "score" ? 'Full score: <a href="/theory/analysed-scores/full-scores.html?id=' + encodeURIComponent(t.id) + '">'
+        : t.kind === "analysed" ? 'Analysed Scores Library: <a href="/theory/analysed-scores/view.html?id=' + encodeURIComponent(t.id) + '">'
+        : 'Notation from the tune collection: <a href="/practice/tunes.html?tune=' + encodeURIComponent(t.id) + '">';
+      note.innerHTML = from + esc(t.title) + "</a>. The lit bar follows your taps and the recording.";
+      paper.innerHTML = ""; clearInterval(timer); score = null;
+      abcOf(t).then(function (abc) {
+        score = FullScore.mount(paper, { abc: abc, id: "tsn-" + t.kind + "-" + t.id, mark: true });
+        timer = setInterval(tick, 150); tick();
+      }).catch(function (e) { note.textContent = "That score did not load: " + e.message; });
     }
     function search() {
       var r = find(q.value, 14);
-      res.innerHTML = r.length ? r.map(function (t, i) { return '<li><button type="button" data-i="' + i + '">' + esc(t.title) + "</button></li>"; }).join("") : "<li class=\"ts-nt-none\">No tune with that title.</li>";
+      res.innerHTML = r.length ? r.map(function (t, i) { return '<li><button type="button" data-i="' + i + '">' + esc(t.label) + "</button></li>"; }).join("") : "<li class=\"ts-nt-none\">No tune or score with that title.</li>";
       res._r = r;
     }
     res.addEventListener("click", function (e) { var b = e.target.closest("button[data-i]"); if (b && res._r) show(res._r[+b.dataset.i]); });
-    ui.querySelector(".ts-nt-go").addEventListener("click", function () { loadTunes().then(search); });
-    q.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); e.stopPropagation(); loadTunes().then(search); } e.stopPropagation(); });
+    ui.querySelector(".ts-nt-go").addEventListener("click", function () { loadAll().then(search); });
+    q.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); e.stopPropagation(); loadAll().then(search); } e.stopPropagation(); });
     q.addEventListener("keyup", function (e) { e.stopPropagation(); });
     offIn.addEventListener("input", function () { offset = Math.max(1, +offIn.value || 1); lastJ = null; tick(); });
     offIn.addEventListener("keydown", function (e) { e.stopPropagation(); });
@@ -98,8 +133,9 @@
     var id = tuneId();
     if (id) {
       panel.classList.add("has-tune");
-      loadTunes().then(function () {
-        var t = all().filter(function (x) { return x.id === id; })[0];
+      loadAll().then(function () {
+        var m = /^(score|analysed):(.*)$/.exec(id);
+        var t = m ? scores.filter(function (x) { return x.kind === m[1] && x.id === m[2]; })[0] : all().filter(function (x) { return x.id === id; })[0];
         if (t) show(t); else note.textContent = "The tune " + id + " is not in the tune collection.";
       });
     } else {

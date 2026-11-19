@@ -1158,5 +1158,20 @@
     if (!body.some(function (l) { return /^V:/.test(l); })) { head.push('V:1 nm="Lead sheet"'); body = ["V:1", body.join(" ")]; }
     return head.join("\n") + "\n" + body.join("\n") + "\n";
   }
-  global.FullScore = { fromTune: fromTune, mount: mount, parse: parse, playOrder: playOrder, repeatMap: repeatMap, splitBars: splitBars, shortName: shortName, INSTRUMENTS: INSTRUMENTS, FAMILIES: FAMILIES };
+  // an Analysed Scores Library piece's ABC in the full-score form (bare V: lines, each voice's music on one line; name= kept as nm=,
+  // the first unnamed voice is "Piano" and the voices after it belong to it). Used by full-scores.qmd ?analysed= and Timestamp Notes.
+  function fromLibrary(abc) {
+    var head = [], body = [], named = false;
+    String(abc).replace(/\r/g, "").split("\n").forEach(function (ln) {
+      var b = /^\[V:(\S+)\]\s*(.*)$/.exec(ln);
+      if (b) { body.push("V:" + b[1], b[2]); return; }
+      if (/^V:\S+/.test(ln)) {
+        if (/ name="/.test(ln)) { ln = ln.replace(/ name="/, ' nm="'); named = true; }
+        else if (named !== "piano") { ln += ' nm="Piano"'; named = "piano"; }
+      }
+      if (ln.trim()) head.push(ln);
+    });
+    return head.concat(body).join("\n") + "\n";
+  }
+  global.FullScore = { fromTune: fromTune, fromLibrary: fromLibrary, mount: mount, parse: parse, playOrder: playOrder, repeatMap: repeatMap, splitBars: splitBars, shortName: shortName, INSTRUMENTS: INSTRUMENTS, FAMILIES: FAMILIES };
 })(typeof window !== "undefined" ? window : this);

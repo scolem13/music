@@ -32,6 +32,15 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   const a1 = await bar(2.5), a2 = await bar(9.5);
   check("lit bar follows the time", /Tune bar 3 /.test(a1) && /recording bar 3/.test(a1) && /recording bar 10/.test(a2), a1 + " | " + a2);
   check("a bar is shaded", await ev(`document.querySelectorAll('#ts-notation .fs-cur').length === 1`));
+  // a score that is not in the tune collection: Mozart K. 545 from the Analysed Scores Library ("k545" finds "K. 545")
+  await ev(`document.querySelector('.ts-nt-other').click()`);
+  await ev(`document.querySelector('.ts-nt-q').value = 'k545'; document.querySelector('.ts-nt-go').click()`); await b.sleep(1500);
+  const hits = await ev(`[...document.querySelectorAll('.ts-nt-res button')].map(x => x.textContent).join(' | ')`);
+  check("finder lists K. 545 from the analysed scores", /K\. 545, movement 1 \(analysed score\)/.test(hits), hits);
+  await ev(`[...document.querySelectorAll('.ts-nt-res button')].find(x => /movement 1/.test(x.textContent)).click()`); await b.sleep(3000);
+  check("K. 545 drawn on two staves", await ev(`!!document.querySelector('#ts-notation .ts-nt-paper svg') && /Analysed Scores Library/.test(document.querySelector('#ts-notation .ts-nt-note').textContent)`));
+  const k1 = await bar(2.5);
+  check("K. 545 lit bar follows the time", /Tune bar 3 /.test(k1), k1);
   await ev(`window.innerWidth`);
   check("no errors", !b.errors.filter(e => !/supabaseUrl|youtube/i.test(e)).length, b.errors.join(" | "));
   await b.close(); srv.close(); process.exit(fails ? 1 : 0);
