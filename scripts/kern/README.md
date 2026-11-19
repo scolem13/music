@@ -19,7 +19,7 @@ the Mozart / chorale repositories by the same encoder say CC BY-NC-SA 4.0. Cited
    still has 13 such faults (bars 116-141) and is not added.
 3. Copy the ABC to `apps/shared/data/full-scores/<id>.abc`, append a row to `index.json` (re-read it first; others write there too),
    bump `V` in `theory/analysed-scores/full-scores.qmd`.
-4. Bar numbers are the kern's (`=N`): the pickup is bar 0, as the player counts. Link with `analysed-scores/full-scores.qmd?id=<id>&bar=N`.
+4. Bar numbers are the kern's (`=N`): the pickup is bar 0, as the player counts. Link with `analysed-scores/full-scores.html?id=<id>&bar=N`.
 
 ## What kern2xml.py does and does not read
 See its header. Done: staves, spine splits (voices), chords, ties, slurs, beams, grace notes, tuplets (septuplets too), dots, dynamics letters,

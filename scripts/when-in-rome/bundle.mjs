@@ -1,5 +1,5 @@
 // bundle.mjs — When in Rome's Bach chorales and Beethoven / Mozart piano sonatas, every analysed one, as data for the one score viewer
-// (theory/analysed-scores/view.qmd?id=<id>) instead of a Quarto page each. Scores: Craig Sapp's **kern files in ~/Projects/corpora,
+// (theory/analysed-scores/view.html?id=<id>) instead of a Quarto page each. Scores: Craig Sapp's **kern files in ~/Projects/corpora,
 // analyses: ~/Projects/When-in-Rome/Corpus; both put through build.mjs's buildPiece, the same as the hand-made pages.
 //   node scripts/when-in-rome/bundle.mjs       (WIR=..., CORPORA=... to move them)
 // Writes apps/shared/data/scores/:
