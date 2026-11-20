@@ -244,7 +244,9 @@
     var kI = head.findIndex(function (h) { return /^K:/.test(h); });
     head.forEach(function (h, i) {
       if (i === 1) (o.directives || []).forEach(function (d) { out.push(d); });
-      if (i === kI) out.push("%%score " + fams.map(function (st) { return "[" + st.map(function (g) { return g.length > 1 ? "(" + g.join(" ") + ")" : g[0]; }).join(" ") + "]"; }).join(" "));
+      if (i === kI) out.push("%%score " + fams.map(function (st) {   // one instrument on several staves (a piano's two hands): a brace, not a bracket
+        var one = st.length > 1 && st.every(function (g) { return partOfVoice(S, g[0]) === partOfVoice(S, st[0][0]); }), o1 = one ? "{" : "[", c1 = one ? "}" : "]";
+        return o1 + st.map(function (g) { return g.length > 1 ? "(" + g.join(" ") + ")" : g[0]; }).join(" ") + c1; }).join(" "));
       out.push(h);
     });
     var flat = [], staffHead = {}; fams.forEach(function (st) { st.forEach(function (g) { staffHead[g[0]] = true; g.forEach(function (v) { flat.push(v); }); }); });
@@ -462,6 +464,13 @@
       var vStaff = [], famOf = [], n = 0;
       text.fams.forEach(function (fam, fi) { fam.forEach(function (g) { g.forEach(function () { vStaff.push(n); }); famOf.push(fi); n++; }); });
       var nameAt = 0, G = []; for (var s = 0; s < n; s++) G.push({ els: [], lines: null, br: [], bars: [], lead: [], keyR: -1e9, first: 1e9 });
+      // abcjs can put a brace or bracket inside the group with the part's name, which moves with the top staff only: lift it out
+      // (keeping where it is drawn) so it is stretched from the first staff to the last like the rest
+      [].forEach.call(svg.querySelectorAll(".abcjs-brace,.abcjs-bracket"), function (e) {
+        var p = e.parentElement; if (!p || p === svg || !p.closest("[class*='abcjs-v']")) return;
+        var pt = p.getAttribute("transform"); if (pt) e.setAttribute("transform", (pt + " " + (e.getAttribute("transform") || "")).trim());
+        svg.appendChild(e);
+      });
       [].forEach.call(svg.querySelectorAll("[class*='abcjs-v']"), function (e) {
         if (e.parentElement && e.parentElement.closest("[class*='abcjs-v']")) return;   // moves with its parent
         var c = e.getAttribute("class") || "", mm = /abcjs-v(\d+)/.exec(c); if (!mm) return;
@@ -1185,7 +1194,45 @@
       }
       if (ln.trim()) head.push(ln);
     });
-    return head.concat(body).join("\n") + "\n";
+    return rnLabels(head.concat(body).join("\n") + "\n");
+  }
+  // Roman numerals in a library piece: (1) all on the lowest staff, so they read along one line: a label on an upper voice moves
+  // to the lowest voice's note or rest that starts at the same time in the same bar (left where it is when none does, e.g. a held
+  // note); (2) DCML additions ("V2[no3][add4]") shortened to the chord ("V⁴₂") before abcjs lays them out, so a long label does not
+  // push its neighbour onto a second line; the additions go to RNLabel.tips, which shows them on hover.
+  function rnLabels(abc) {
+    var RN = global.RNLabel;
+    if (RN) { RN.tips = RN.tips || {}; abc = abc.replace(/"_([^"]*\[[^"]*)"/g, function (m, t) { var c = RN.clean(t); if (c.tip) RN.tips[c.text] = c.tip; return '"_' + c.text + '"'; }); }
+    if (!global.ABCJS || !ABCJS.parseOnly) return abc;
+    var tune; try { tune = ABCJS.parseOnly(abc)[0]; } catch (e) { return abc; }
+    if (!tune || !tune.lines) return abc;
+    var vs = {};                                          // "staff.voice" -> [{ bar, t, el }]
+    tune.lines.forEach(function (ln) { (ln.staff || []).forEach(function (st, si) { (st.voices || []).forEach(function (vo, vi) {
+      var k = si + "." + vi, a = vs[k] = vs[k] || { bar: 0, t: 0, els: [] };
+      vo.forEach(function (el) {
+        if (el.el_type === "bar") { if (a.t > 0) { a.bar++; a.t = 0; } return; }
+        if (el.el_type !== "note") return;
+        a.els.push({ bar: a.bar, t: a.t, el: el });
+        a.t += (el.duration || 0) * (el.tripletMultiplier || 1);
+      });
+    }); }); });
+    var keys = Object.keys(vs).sort(function (x, y) { var p = x.split(".").map(Number), q = y.split(".").map(Number); return p[0] - q[0] || p[1] - q[1]; });
+    if (keys.length < 2) return abc;
+    var low = vs[keys.filter(function (k) { return /\.0$/.test(k); }).pop()], edits = [];
+    var at = {}; low.els.forEach(function (e) { at[e.bar + ":" + e.t.toFixed(5)] = e; });
+    keys.forEach(function (k) {
+      if (vs[k] === low) return;
+      vs[k].els.forEach(function (e) {
+        var lab = (e.el.chord || []).filter(function (c) { return c.position === "below"; }); if (!lab.length) return;
+        var to = at[e.bar + ":" + e.t.toFixed(5)];
+        lab.forEach(function (c) {
+          var q = '"_' + c.name + '"', from = abc.lastIndexOf(q, e.el.endChar); if (from < 0 || e.el.startChar - from > 200) return;   // (abcjs's startChar can fall after the label or on it)
+          edits.push({ at: from, cut: q.length, put: "" }, { at: to.el.startChar, cut: 0, put: q });
+        });
+      });
+    });
+    edits.sort(function (x, y) { return y.at - x.at; }).forEach(function (d) { abc = abc.slice(0, d.at) + d.put + abc.slice(d.at + d.cut); });
+    return abc;
   }
   global.FullScore = { fromTune: fromTune, fromLibrary: fromLibrary, mount: mount, parse: parse, playOrder: playOrder, repeatMap: repeatMap, splitBars: splitBars, shortName: shortName, INSTRUMENTS: INSTRUMENTS, FAMILIES: FAMILIES };
 })(typeof window !== "undefined" ? window : this);

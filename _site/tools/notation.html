@@ -210,6 +210,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
  <span class="dropdown-text">Tunes</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../practice/piano-chord-songs.html">
+ <span class="dropdown-text">Piano: Songs with 1, 2 or 3 Chords</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../practice/patterns.html">
  <span class="dropdown-text">Tonal Patterns</span></a>
   </li>  
@@ -1063,6 +1067,15 @@ document.addEventListener('DOMContentLoaded', async function () {
 #nt-root .nt-paper .nt-sel,#nt-root .nt-paper .nt-sel *{fill:#b3261e!important;stroke:#b3261e}
 #nt-root .nt-paper .nt-playing,#nt-root .nt-paper .nt-playing *{fill:#1565c0!important;stroke:#1565c0}
 #nt-root .nt-paper .nt-playing{scroll-margin-top:90px}
+/* the ABC box and the score light each other: a layer behind the (transparent) textarea marks the note's code; the note
+   under the caret is lit in the score (nt-code) and the score's own active note steps back while the box has the caret */
+#nt-root .nt-abc-wrap{position:relative}
+#nt-root .nt-abc-wrap textarea{position:relative;z-index:1;background:transparent}
+#nt-root .nt-abc-wrap::before{content:"";position:absolute;inset:.6rem 0 0;border-radius:7px;background:var(--nt-surface2)}
+#nt-abc-hl{position:absolute;z-index:0;box-sizing:border-box;overflow:hidden;white-space:pre-wrap;overflow-wrap:break-word;color:transparent;pointer-events:none}
+#nt-abc-hl mark{color:transparent;background:rgba(179,38,30,.22);border-radius:2px;padding:0}
+#nt-root .nt-paper .nt-code,#nt-root .nt-paper .nt-code *{fill:#b3261e!important;stroke:#b3261e}
+#nt-root.nt-in-abc .nt-paper .nt-sel:not(.nt-code),#nt-root.nt-in-abc .nt-paper .nt-sel:not(.nt-code) *{fill:currentColor!important;stroke:currentColor}
 #nt-root .nt-paper .abcjs-note,#nt-root .nt-paper .abcjs-rest{cursor:pointer}
 #nt-root textarea{display:block;width:100%;min-height:12rem;margin-top:.6rem;padding:.7rem .8rem;resize:vertical;border:1px solid var(--nt-line);border-radius:7px;
   background:var(--nt-surface2);color:inherit;font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);font-size:.84rem;line-height:1.55}
@@ -1156,6 +1169,7 @@ document.addEventListener('DOMContentLoaded', async function () {
               <button type="button" class="nt-btn" id="nt-undo">Undo</button>
               <button type="button" class="nt-btn" id="nt-insert" aria-pressed="false" title="i: new rhythm goes in at the caret (h / l move it) instead of at the end">Insert mode</button>
               <label class="nt-scope" title="Bars on each line of the score (a pickup bar not counted). Empty: as many as fit. RET puts a line break of your own after the active note's bar (↴); RET there again, or a click on ↴, takes it away.">Line break every <input type="number" id="nt-lines" min="1" max="32" placeholder="fit" style="width:3.6rem"> bars</label>
+              <label class="nt-scope" title="How wide each bar is drawn (as on the Full Scores page): wider spreads the notes out, narrower fits more bars on a line. Double-click: back to normal.">Bar width <input type="range" id="nt-barw" min="50" max="250" step="10" value="100" style="width:7rem;vertical-align:middle"> <output id="nt-barw-out">100%</output></label>
               <label class="nt-scope" id="nt-scope-l" hidden="">Show <select id="nt-scope" title="The whole piece, or one section of it (as the Backing Track's tune notation does)"></select></label>
             </div>
             <div class="nt-seltools" id="nt-seltools">
@@ -1297,7 +1311,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             <label class="nt-hint" style="display:inline-flex;gap:.4em;align-items:center;margin:0 0 .3em"><input type="checkbox" id="nt-abc-vim" checked=""> Vim keys (Esc: normal mode, <kbd>i</kbd> to type; <kbd>=</kbd> respells the note under the cursor; <kbd>Tab</kbd> back to the score)</label>
             <label class="nt-hint" style="display:flex;gap:.4em;align-items:center;margin:0 0 .3em"><input type="checkbox" id="nt-abc-raw"> Raw ABC: the score draws exactly what I type (slurs, dynamics, grace notes, <code>%%</code> lines, my own beaming)</label>
             <p class="nt-warn" id="nt-raw-note" hidden="">Raw ABC: the score shows the code as written. The score keys, the parts on the left and Play it in are off; <kbd>Space</kbd> plays the whole piece, <kbd>h</kbd> / <kbd>l</kbd> move note by note and <kbd>H</kbd> / <kbd>L</kbd> bar by bar (or click a note), <kbd>Tab</kbd> selects that note's code (Tab there: back to the note at the caret), <kbd>u</kbd> / Ctrl+Z undo. Untick to go back: the code is read into the score's model again and what it can't hold is dropped.</p>
-            <textarea id="nt-abc-text" spellcheck="false" aria-label="ABC code"></textarea>
+            <div class="nt-abc-wrap"><div id="nt-abc-hl" aria-hidden="true"></div><textarea id="nt-abc-text" spellcheck="false" aria-label="ABC code"></textarea></div>
             <div id="nt-abc-vimline" class="nt-vimline" aria-live="polite"></div>
             <p class="nt-warn" id="nt-abc-warn" hidden=""></p>
           </div>
@@ -1680,7 +1694,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   })();
   // a menu lets go of the keyboard once something is picked, so letters and numbers go to the score again
   // (with a menu focused the browser takes typed letters as a choice in it)
-  $("nt-root").addEventListener("change", function (e) { if (e.target.tagName === "SELECT") setTimeout(function () { e.target.blur(); }); });
+  $("nt-root").addEventListener("change", function (e) { if (e.target.tagName === "SELECT" || e.target.type === "range") setTimeout(function () { e.target.blur(); }); });
   (function () {   // the list itself folds away, remembered (ntNavOff)
     var root = document.getElementById("nt-root"), btn = document.getElementById("nt-nav-fold");
     function set(off) { root.classList.toggle("nt-nav-off", off); btn.setAttribute("aria-expanded", String(!off)); btn.title = off ? "Show the list of parts" : "Hide this list (the button stays to bring it back)"; }
@@ -2349,7 +2363,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 
   function refreshText() {
-    var r = D.toAbc(doc);
+    var r = D.toAbc(doc); boxAbc = r;
     if (editing !== "abc") $("nt-abc-text").value = r.abc;
     if (editing !== "cho") $("nt-cho-text").value = D.toChordPro(doc);
     return r;
@@ -2358,6 +2372,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   function renderRaw() {
     var ta = $("nt-abc-text");
     if (editing !== "abc") ta.value = doc.raw;
+    boxAbc = null;
     $("nt-abc-raw").checked = true; $("nt-raw-note").hidden = false; $("nt-abc-warn").hidden = true;
     $("nt-root").classList.add("nt-is-raw");
     var paper = $("nt-paper"), W = Math.max(300, paper.clientWidth - 40);
@@ -2381,6 +2396,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     document.querySelectorAll("#nt-paper .nt-sel").forEach(function (g) { g.classList.remove("nt-sel"); });
     var el = rawEls[rawAt]; if (!el) return;
     el.abselem.elemset.forEach(function (g) { g.classList.add("nt-sel"); });
+    if (typeof syncCode === "function" && rawEls.length) syncCode();
   }
   function rawMove(dir, byBar) {
     if (!rawEls.length) return;
@@ -2408,7 +2424,79 @@ document.addEventListener('DOMContentLoaded', async function () {
     var k = -1; rawEls.forEach(function (x, i) { if (x.startChar <= pos) k = i; });
     rawAt = k >= 0 ? k : 0;
   }
+  // ---- the ABC box and the score light each other ----------------------------------------------------------------
+  // the box's text is boxAbc.abc (the model's ABC, set by refreshText) unless typing has changed it; then places are
+  // matched roughly by proportion, as abcNoteAt does. Raw ABC: rawEls' own startChar / endChar
+  var boxAbc = null;
+  function codeNoteAt(pos) {
+    var ta = $("nt-abc-text");
+    if (doc.raw) { var k = -1; rawEls.forEach(function (x, i) { if (x.startChar <= pos) k = i; }); return rawEls[k] || rawEls[0] || null; }
+    if (!boxAbc) return null;
+    if (boxAbc.abc !== ta.value) pos = Math.round(pos * boxAbc.abc.length / Math.max(1, ta.value.length));
+    var m = null; boxAbc.map.forEach(function (n) { if (n.slot !== undefined && n.start <= pos) m = n; });
+    return m || boxAbc.map.find(function (n) { return n.slot !== undefined; }) || null;
+  }
+  function codeRange(inBox) {
+    var ta = $("nt-abc-text");
+    if (inBox) {
+      var n = codeNoteAt(ta.selectionStart); if (!n) return null;
+      return doc.raw ? [n.startChar, n.endChar] : boxAbc.abc === ta.value ? [n.start, n.end] : null;
+    }
+    if (doc.raw) { var el = rawEls[rawAt]; return el ? [el.startChar, el.endChar] : null; }
+    if (!boxAbc || boxAbc.abc !== ta.value) return null;
+    var a = sel ? null : activeSlot();
+    var hit = boxAbc.map.filter(function (e) { return e.slot !== undefined && (sel ? inSel(e) : a && e.chunk === a.chunk && e.voice === a.voice && e.slot === a.slot); });
+    if (!hit.length) return null;
+    return [Math.min.apply(null, hit.map(function (e) { return e.start; })), Math.max.apply(null, hit.map(function (e) { return e.end; }))];
+  }
+  function lightCode(n) {
+    document.querySelectorAll("#nt-paper .nt-code").forEach(function (g) { g.classList.remove("nt-code"); });
+    if (!n) return;
+    if (doc.raw) { if (n.abselem) n.abselem.elemset.forEach(function (g) { g.classList.add("nt-code"); }); return; }
+    drawn.forEach(function (d) {
+      var want = d.m.filter(function (e) { return e.chunk === n.chunk && e.voice === n.voice && e.slot === n.slot; });
+      if (!want.length) return;
+      d.t.lines.forEach(function (l) { (l.staff || []).forEach(function (st) { st.voices.forEach(function (v) { v.forEach(function (el) {
+        if (el.abselem && want.some(function (e) { return covers(el, e); })) el.abselem.elemset.forEach(function (g) { g.classList.add("nt-code"); });
+      }); }); }); });
+    });
+  }
+  function syncCode() {
+    var ta = $("nt-abc-text"), hl = $("nt-abc-hl"); if (!ta || !hl) return;
+    var inBox = document.activeElement === ta;
+    $("nt-root").classList.toggle("nt-in-abc", inBox);
+    lightCode(inBox ? codeNoteAt(ta.selectionStart) : null);
+    var cs = getComputedStyle(ta), rg = codeRange(inBox), txt = ta.value;
+    ["fontFamily", "fontSize", "lineHeight", "letterSpacing", "tabSize", "paddingTop", "paddingRight", "paddingBottom", "paddingLeft"].forEach(function (k) { hl.style[k] = cs[k]; });
+    hl.style.left = (ta.offsetLeft + ta.clientLeft) + "px"; hl.style.top = (ta.offsetTop + ta.clientTop) + "px";
+    hl.style.width = ta.clientWidth + "px"; hl.style.height = ta.clientHeight + "px";
+    var esc = function (x) { return x.replace(/&/g, "&amp;").replace(/</g, "&lt;"); };
+    hl.innerHTML = rg ? esc(txt.slice(0, rg[0])) + "<mark>" + esc(txt.slice(rg[0], rg[1])) + "</mark>" + esc(txt.slice(rg[1])) + "\n" : "";
+    hl.scrollTop = ta.scrollTop;
+    // the mark kept in view when the score moved it (not while the caret is in the box: the box scrolls itself)
+    if (rg && !inBox) { var mk = hl.querySelector("mark"); if (mk && (mk.offsetTop < ta.scrollTop || mk.offsetTop + mk.offsetHeight > ta.scrollTop + ta.clientHeight)) { ta.scrollTop = Math.max(0, mk.offsetTop - ta.clientHeight / 3); hl.scrollTop = ta.scrollTop; } }
+  }
+  (function () {
+    var ta = $("nt-abc-text"), q = function () { requestAnimationFrame(syncCode); };
+    ["input", "keyup", "click", "focus", "blur", "select", "mouseup"].forEach(function (ev) { ta.addEventListener(ev, q); });
+    ta.addEventListener("scroll", function () { $("nt-abc-hl").scrollTop = ta.scrollTop; });
+    document.addEventListener("selectionchange", function () { if (document.activeElement === ta) q(); });
+    if (window.ResizeObserver) new ResizeObserver(q).observe(ta);
+  })();
   function render() {
+    renderMain(); syncCode();
+  }
+  // Bar width: a share of each meter's normal bar (kept in localStorage ntBarW)
+  function barScale() { return (+$("nt-barw").value || 100) / 100; }
+  (function () {
+    var r = $("nt-barw"), o = $("nt-barw-out"), t = null;
+    try { var v = +localStorage.getItem("ntBarW"); if (v >= 50 && v <= 250) r.value = v; } catch (e) {}
+    o.textContent = r.value + "%";
+    var set = function () { o.textContent = r.value + "%"; try { localStorage.setItem("ntBarW", r.value); } catch (e) {} clearTimeout(t); t = setTimeout(render, 60); };
+    r.addEventListener("input", set);
+    r.addEventListener("dblclick", function () { r.value = 100; set(); });
+  })();
+  function renderMain() {
     if (doc.raw) { renderRaw(); return; }
     $("nt-root").classList.remove("nt-is-raw"); $("nt-abc-raw").checked = false; $("nt-raw-note").hidden = true;
     var h = here(), mi = D.meterInfo(h.meter), ch = chunk();
@@ -2531,7 +2619,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         var keyAcc = Object.keys(AbcCore.keyAccidentals(a.key || "C") || {}).length, over = 70 + 9 * keyAcc;
         // the short first bar (a pickup, a lead) gets its share of a bar's width, not a whole one
         var shortQ = c.pickup ? (len < mi.barQ - 1e-6 ? mi.barQ - len : 0) : c.lead > 1e-6 && c.lead < mi.barQ - 1e-6 ? mi.barQ - c.lead : 0;
-        var barW = Math.max(120, 38 * mi.barQ), bars = Math.max(1, Math.ceil((shortQ + len) / mi.barQ - 1e-6)), cutW = shortQ / mi.barQ * barW;
+        var barW = Math.max(120, 38 * mi.barQ) * barScale(), bars = Math.max(1, Math.ceil((shortQ + len) / mi.barQ - 1e-6)), cutW = shortQ / mi.barQ * barW;
         var maxPer = Math.max(1, Math.floor((W - over) / barW)), lines = Math.ceil(bars / maxPer), per = Math.ceil(bars / lines);
         var SL = "%%stretchlast " + (lines > 1 ? 0 : 1) + "\n", abc = rs.abc.replace(/^(X:.*\n)/, "$1" + SL), shift = SL.length;   // the line moves every note on
         var showM = a.meter !== lastMeter; lastMeter = a.meter;

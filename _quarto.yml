@@ -123,6 +123,7 @@ website:
             - lessons/chord-shapes-piano.qmd
             - lessons/chord-shapes-piano-hand.qmd
             - lessons/inversions.qmd
+            - lessons/inversions-voice-leading.qmd
         - section: "Voice"
           contents:
             - lessons/voice-pop.qmd
@@ -311,6 +312,13 @@ website:
         - course/pathway.qmd
         - course/enrichment.qmd
         - course/glossary.qmd
+        - section: "MYP5 ePortfolio"
+          contents:
+            - course/eportfolio-guide.qmd
+            - course/eportfolio-criteria.qmd
+            - course/eportfolio-checklist.qmd
+            - course/eportfolio-mistakes.qmd
+            - course/eportfolio-example.qmd
     - id: theory
       title: Theory
       style: docked
@@ -429,6 +437,7 @@ website:
             - practice/songs.qmd
             - songs/index.qmd
             - practice/tunes.qmd
+            - practice/piano-chord-songs.qmd
             - practice/patterns.qmd
             - practice/patterns-by-ear.qmd
             - practice/sax-patterns-by-ear.qmd
@@ -571,6 +580,7 @@ website:
           - practice/songs.qmd
           - songs/index.qmd
           - practice/tunes.qmd
+          - practice/piano-chord-songs.qmd
           - practice/patterns.qmd
           - practice/patterns-by-ear.qmd
           - practice/sax-patterns-by-ear.qmd

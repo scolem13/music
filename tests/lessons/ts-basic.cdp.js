@@ -47,6 +47,12 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
     sv.querySelectorAll('path,text').forEach(e => { const q = e.getBoundingClientRect(); if (q.width < 400) mx = Math.max(mx, q.right); }); return Math.round(mx - pr.right); }).filter(x => x > -6).join(',')`);
   check("K. 545 side by side: no system runs past its page", bleed === "", bleed);
   const sizes = await ev(`[...new Set([...document.querySelectorAll('#ts-notation .fs-page .fs-sys svg')].map(sv => (parseFloat(sv.getAttribute('width')) / sv.viewBox.baseVal.width).toFixed(3)))].join(',')`);
+  const rn = await ev(`(() => { let low = 0, br = 0, bad = 0; document.querySelectorAll('#ts-notation .fs-page .fs-sys svg').forEach(sv => {
+    const st = [...sv.querySelectorAll('.abcjs-staff')].map(e => e.getBoundingClientRect()); if (st.length < 2) return; const bot = Math.max(...st.map(r => r.bottom)), top = Math.min(...st.map(r => r.top));
+    sv.querySelectorAll('text.abcjs-annotation').forEach(t => { if (t.getBoundingClientRect().bottom < st[st.length - 1].top) low++; if (t.textContent.includes('[')) br++; });
+    sv.querySelectorAll('.abcjs-brace').forEach(e => { const r = e.getBoundingClientRect(); if (Math.abs(r.top - top) > 4 || Math.abs(r.bottom - bot) > 4) bad++; }); });
+    return low + ' above the bass, ' + br + ' with brackets, ' + bad + ' braces off'; })()`);
+  check("K. 545: Roman numerals all under the bass, additions shortened, braces span both staves", rn === "0 above the bass, 0 with brackets, 0 braces off", rn);
   check("K. 545 side by side: every system at one staff size", !sizes.includes(","), sizes);
   await ev(`(() => { const s = document.querySelector('#ts-notation select[data-k="mode"]'); s.value = 'pages'; s.dispatchEvent(new Event('input', { bubbles: true })); })()`); await b.sleep(1500);
   await ev(`window.innerWidth`);

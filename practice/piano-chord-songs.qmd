@@ -1,0 +1,86 @@
+---
+title: "Piano: Songs with 1, 2 or 3 Chords"
+description: "Get playing fast on the piano: learn one chord, two or three from a jam card, then play along with the band on songs from the Tune Library that use only those chords."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js?v=5"></script>
+<script src="/apps/shared/band/sounds.js?v=23"></script>
+<script src="/apps/shared/abc-play.js?v=27"></script>
+<script src="/apps/shared/abc-transpose.js?v=4"></script>
+<script src="/apps/shared/tune-chart.js?v=31"></script>
+<script src="/apps/tunes/tunes-object.js?v=3"></script>
+<script src="/apps/tunes/tune-quality.js"></script>
+<script src="/apps/shared/piano-chord-songs.js"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+.pcs { --pcs-line: var(--site-line, #ced4da); --pcs-mute: var(--site-ink-2, #6c757d); --pcs-acc: var(--site-accent, #2780e3); }
+.pcs button { border: 1px solid var(--pcs-line); border-radius: .5rem; background: var(--site-surface, #fff); color: inherit; cursor: pointer; touch-action: manipulation; }
+.pcs-levels { display: flex; gap: .6rem; flex-wrap: wrap; margin: .4rem 0 .8rem; }
+.pcs-levels button { font-size: 1.3rem; font-weight: 700; padding: .7rem 1.4rem; }
+.pcs-levels button.pcs-on { background: var(--pcs-acc); border-color: var(--pcs-acc); color: #fff; }
+.pcs-tools, .pcs-bar { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; align-items: center; margin: .4rem 0 .8rem; }
+.pcs-tools label, .pcs-bar label { display: flex; gap: .4rem; align-items: center; margin: 0; }
+.pcs-count { color: var(--pcs-mute); }
+.pcs-cols { display: grid; grid-template-columns: minmax(14rem, 20rem) minmax(0, 1fr); gap: 1.2rem; align-items: start; }
+@media (max-width: 900px) { .pcs-cols { grid-template-columns: 1fr; } .pcs-list { max-height: 22rem; } }
+.pcs-list { display: flex; flex-direction: column; gap: .35rem; max-height: 70vh; overflow-y: auto; padding-right: .3rem; }
+.pcs-song { text-align: left; padding: .5rem .7rem; display: flex; flex-direction: column; gap: .2rem; }
+.pcs-song.pcs-sel { border-color: var(--pcs-acc); outline: 2px solid var(--pcs-acc); }
+.pcs-chips { display: flex; gap: .3rem; flex-wrap: wrap; }
+.pcs-chips i { font-style: normal; font-size: .85rem; padding: 0 .45rem; border-radius: .3rem; background: var(--site-surface-2, #f1f3f5); }
+.pcs-title { margin-top: 0; }
+.pcs-chords { display: flex; gap: .6rem; flex-wrap: wrap; margin: .2rem 0 .6rem; }
+.pcs-big { font-size: 2rem; font-weight: 800; padding: .2rem .9rem; border-radius: .5rem; border: 3px solid var(--pcs-line); }
+.pcs-big.pcs-now { border-color: #1f8f83; background: #1f8f83; color: #fff; }
+.pcs-big.pcs-next { border-color: #e08a1e; color: #e08a1e; }
+.pcs-frame { width: 100%; height: 14rem; border: 0; display: block; }
+.pcs-play { font-size: 1.1rem; font-weight: 700; padding: .55rem 1.2rem; background: var(--pcs-acc) !important; border-color: var(--pcs-acc) !important; color: #fff !important; }
+.pcs-score { padding: .5rem; }
+.pcs-walk { border: 1px solid var(--pcs-line); border-radius: .5rem; padding: .6rem .9rem; margin: .6rem 0 1rem; background: var(--site-surface-2, #f8f9fa); }
+.pcs-walk > summary { font-weight: 700; cursor: pointer; }
+.pcs-wtabs, .pcs-wnav, .pcs-wrow { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .5rem 0; }
+.pcs-wtabs button { padding: .45rem .9rem; font-weight: 600; } .pcs-wtabs button.pcs-on { background: var(--pcs-acc); border-color: var(--pcs-acc); color: #fff; }
+.pcs-wlen { display: flex; gap: .4rem; align-items: center; margin: 0 0 0 auto; }
+.pcs-wnav button, .pcs-wplay { padding: .45rem 1rem; font-size: 1rem; } .pcs-wnav button:disabled { opacity: .4; }
+.pcs-wcount { color: var(--pcs-mute); min-width: 6rem; text-align: center; }
+.pcs-wstep .pcs-big { font-size: 1.4rem; }
+.pcs-wscore { padding: .4rem; max-width: 40rem; }
+.pcs-none { color: var(--pcs-mute); }
+</style>
+```
+
+## Choose a song
+
+How many chords can you play? Start with **1 chord**. Pick a song, find the chords on the jam card, press ▶ Play and keep your hand on the chord that is lit green. Orange is the chord coming next.
+
+```{=html}
+<div class="pcs" id="pcs"></div>
+<script>document.addEventListener("DOMContentLoaded", function () { PianoChordSongs.mount(document.getElementById("pcs")); });</script>
+```
+
+## Step by step
+
+Under each song, **Step by step** goes slowly:
+
+1. **Learn the chords**: one chord at a time. Each new chord is shown on the jam card next to the one before, then ▶ Practise switches between the two with the band. The last step is the whole song with the band.
+2. **Learn the tune**: 1, 2 or 4 bars at a time, with finger numbers over the notes (1 = thumb, 5 = little finger). Hear it, copy it, then try it with the band. The last step puts all the pieces together.
+
+The finger numbers keep your hand in one five-finger place for as long as the tune fits, and say "move" where the hand has to jump. This is a simple rule, not taken from a piano method: a teacher may choose other fingers.
+
+## How to read the jam card
+
+- Each row is one chord. The dots show the keys to press together.
+- The chords are moved close together on purpose, so your hand hardly moves: often only one or two fingers change.
+- Use your right hand. Thumb on the lowest dot, then the fingers above it.
+- Ready for more? Play the lowest note of each chord with your left hand too.
+
+## Steps for beginners
+
+1. **One chord.** Play it on every beat while the band plays. Then once a bar.
+2. **Two chords.** Practise moving between them without the band first: back and forth, slowly, four times.
+3. **Three chords.** Choose "Band only" and sing the tune while you play the chords.
+4. Change the **Speed** slider: start slow, speed up when it feels easy.
+5. Each song is moved to **C or A minor** by default, so the chords sit near the white keys. "As written" plays it in its own key.

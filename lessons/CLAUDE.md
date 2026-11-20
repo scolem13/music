@@ -40,3 +40,7 @@
   (plan, Toddle texts and class summaries in `~/org/DP1-Music-Classical-Style-Unit.org`). Mozart K. 545 i as the anchor, a 32-bar
   rounded-binary composition built 8 bars at a time, self-check quizzes `<div class="dq">` (JSON inside, script at the page end),
   Words boxes linking glossary slugs. Sources `scripts/sources/dp-classical.py`. Test `node tests/lessons/dp-classical-style.cdp.js` (`NEG=1` must fail).
+- Inversions for Smooth Chord Changes (`lessons/inversions-voice-leading.qmd`, sidebar Piano Technique after Inversions): root position vs voice-led
+  (keep the shared note, move the others to the nearest), RH fingers 1-3-5 / 1-2-5 (rule of thumb), LH roots, when to jump. Diagrams are
+  `sh-shapes` (`_shape-kit.qmd`); the Inversion Picker `<div class="ip" data-prog>` is `apps/shared/lessons/inversion-picker.js` (rules in
+  its header: Smoothest = fewest half steps, the first chord kept). Test `node tests/lessons/inversions-voice-leading.cdp.js` (`NEG=1` must fail).

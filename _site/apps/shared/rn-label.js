@@ -36,8 +36,9 @@
     (root || document).querySelectorAll("text.abcjs-annotation:not([data-rn])").forEach(function (t) {
       t.setAttribute("data-rn", "");
       var c = clean(t.textContent);
+      if (!c.tip && RNLabel.tips && RNLabel.tips[c.text]) c.tip = RNLabel.tips[c.text];   // shortened before drawing (FullScore.fromLibrary)
       if (c.tip) {
-        var ts = t.querySelector("tspan"); (ts || t).textContent = c.text;
+        var ts = t.querySelector("tspan"); if (label(t) !== c.text) (ts || t).textContent = c.text;
         var title = document.createElementNS(NS, "title"); title.textContent = c.tip; t.insertBefore(title, t.firstChild);
         t.style.cursor = "help";
       }
@@ -49,5 +50,5 @@
     tidy(root); var busy = false;
     new MutationObserver(function () { if (busy) return; busy = true; requestAnimationFrame(function () { busy = false; tidy(root); }); }).observe(root, { childList: true, subtree: true });
   }
-  global.RNLabel = { clean: clean, tidy: tidy, watch: watch };
+  var RNLabel = global.RNLabel = { clean: clean, tidy: tidy, watch: watch, tips: {} };
 })(window);

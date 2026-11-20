@@ -56,9 +56,6 @@ code into the model, which drops what it can't hold. To clear, cheapest first (e
   tuplet stored on its notes (p:q, which group) instead of guessed from off-grid lengths (`tupletGroups`), the writer and reader
   doing `(p:q:r`, a finer grid than 1/48 quarter, and ties / splits / cut and paste carrying it. q from ABC's defaults unless
   the selection only fits another.
-- **Highlight the active note in the ABC box and the score at once** (~half day, both modes): a highlight layer behind the
-  textarea (a textarea shows no selection unfocused); score moves mark the code, caret moves (click, typing, vim motions) light
-  the note. Default mode through the page's map; when typing is re-read and the box rewritten, follow the note under the caret.
 - **Beat grouping in the meter** (~1 day, less needed now that strict mode exists): `groupStarts` hard-codes 7/8 = 2+2+3 and 5/8 = 3+2; read `M:(3+2+2)/8` / `M:3+2+2/8`
   into `meterInfo`, a grouping box in the meter menu's Other..., per chunk like a meter change. Also 11/8, 9/8 as 2+2+2+3, 3+3+2.
 - **Double dots and thirty-seconds** (~1-2 days): the model counts in sixteenths, plain or single-dotted only (`WRITABLE`, `LEN`,

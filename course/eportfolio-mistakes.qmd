@@ -1,0 +1,102 @@
+---
+title: "MYP5 ePortfolio: Common Mistakes"
+description: "What went wrong in MYP arts ePortfolios in May 2026, from the IB subject report, and what a music student does instead."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/course/course.css">
+<script src="/apps/shared/section-fold.js"></script>
+```
+
+*See also: [How to do it](eportfolio-guide.qmd) · [Criteria](eportfolio-criteria.qmd) · [Checklist](eportfolio-checklist.qmd) · [An IB example](eportfolio-example.qmd)*
+
+Every year the IB writes a subject report on what examiners saw. These are the problems from the **May 2026** report that
+matter for music, roughly in order of how many marks they cost.
+
+## 1. Going over 30 pages
+
+**The problem:** portfolios longer than 30 pages (or the equivalent in minutes). Anything past the limit "cannot be
+considered for assessment". If Task 1 alone runs over, Tasks 2, 3 and 4 are not marked at all. "Several students presented
+highly accomplished final artworks that could not be considered due to excessive page count or video/audio duration."
+
+**Instead:** keep a running total in the [page budget](eportfolio-checklist.qmd#page-budget). Remember that one minute of
+audio or video is two pages, that everything but the bibliography counts, and that a video of the song you critique counts
+too. Shrinking the font or speeding up a recording to fit is not allowed.
+
+## 2. A topic that is not a genre or movement
+
+**The problem:** "some students did not select topics or techniques that could be considered movements or genres of
+Music." A single song, one artist, or a technique is not a genre.
+
+**Instead:** name a genre or movement (punk, protest folk, reggae, Nueva canción, conscious hip-hop) and write about it as a
+whole: where it came from, what it stands for, what it sounds like across several recordings. Artists are part of it, but
+"not all of this".
+
+## 3. Critiquing the lyrics instead of the music
+
+**The problem:** "students often critiqued song lyrics rather than the music in order to meet the requirements for strand
+Aii."
+
+**Weaker:** *"The lyrics say the government is lying, which shows the song questions power."*
+
+**Stronger:** *"At 1:12 the band drops out and the last line is sung over one held chord, so the accusation lands with
+nothing to soften it."* The lyric is still there, but the critique is about what the **music** does with it.
+
+## 4. Elements and techniques, but hardly any context
+
+**The problem:** "Even when techniques and elements were addressed in detail, students could not achieve higher levels when
+the context was barely mentioned."
+
+**Instead:** give context real space in both Ai and Aii, and explain how it **shaped the music**, not just when it was
+released.
+
+## 5. Screenshots instead of sound in Bi
+
+**The problem:** "In Music, screenshots of computer music programs continue to be submitted as evidence instead of drafts of
+compositions or audio and video excerpts of work in progress." Also: lots of writing with few trials, voice-overs drowning
+the music, sped-up clips, and a camera that cuts off the player.
+
+**Instead:** record at the beginning, the middle and towards the end. Keep clips short, at normal speed, with no talking
+over them, and write your commentary beside them. A DAW screenshot can sit next to the audio of that draft, never instead
+of it.
+
+## 6. Writing about the process in Di
+
+**The problem:** "students still struggled to critique their own artwork and wrote about the process of their work rather
+than appraising it."
+
+**Instead:** in Di, judge the **finished recording**: strengths and limitations of its elements and techniques, with time
+stamps, measured against your artistic intention. The story of how you made it belongs in Bi and Dii.
+
+## 7. Mixing up Di and Dii
+
+**The problem:** the hardest strand. Students "often failed to make the crucial distinction between analysing an artwork and
+analysing themselves as developing artists", commenting on outcomes and "failing to identify key learning moments, evolving
+intentions, or the influences shaping their practice."
+
+**Instead:** Dii is about **you as a musician**. What can you do now that you could not in week 1? Which moment changed your
+approach? Who influenced you? Point to the Bi clip that shows each change.
+
+## 8. Links, unreadable pages, and missing citations
+
+**The problem:** "hyperlinks are not accessible by examiners", "Examiners will not zoom in to read small font sizes", and
+"There are still instances when students submit work that is not appropriately cited."
+
+**Instead:** upload every file; normal font size; cite every source in the text and the bibliography.
+
+## 9. Letting AI make the music
+
+**The problem:** "Care however must be taken not to rely on AI to compose music for students." AI can help with
+brainstorming and planning, "it should not be used to create the whole artwork".
+
+**Instead:** the music must be yours. If you used an AI tool at any stage, say what for and cite it.
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+International Baccalaureate Organization. *May 2026 Subject Report: Arts*. International Baccalaureate Organization, 2026. Music grade boundaries (p. 2); music under criteria A–C and the general findings for every criterion (pp. 3–5); submission limits, legibility, links, citation and AI (pp. 6–7); checkpoints (p. 8).
+:::
+<!-- /works-cited -->

@@ -1,0 +1,115 @@
+---
+title: "Inversions for Smooth Chord Changes"
+toc: true
+toc-depth: 2
+description: "Choose an inversion for each chord so the right hand hardly moves: keep the shared note, move the others to the nearest chord note, and let the fingers change instead of the hand. With an inversion picker that counts how far your hand travels."
+instruments: [piano]
+topics: [harmony]
+has: [fingering, interactive, notation]
+---
+
+[Inversions](inversions.qmd) showed how to build root position, first and second inversion. This lesson is about **why you use them**. If you play every chord in root position, the hand jumps each time the chord changes. If you choose the inversion of each chord carefully, the hand stays in one place and only one or two fingers move. That is easier to play, easier to play *in time*, and it sounds smoother. Musicians call it **voice leading**: each note of one chord leads to a note of the next.
+
+## Jumping: every chord in root position {#jumping}
+
+Here is C – F – G – C with every chord in root position. Press **▶ Play in order** and watch the dots: the whole hand moves up and down.
+
+<div class="sh-toggles"></div>
+
+<div class="sh-shapes" data-inst="piano" data-shapes="C = - / C4 E4 G4; F = - / F4 A4 C5; G = - / G4 B4 D5; C = - / C4 E4 G4"></div>
+
+Every change moves all three fingers, and from G back to C the hand drops seven keys. When you are learning, that jump is where you lose the beat.
+
+## Staying close: the two rules {#rules}
+
+To choose an inversion for the next chord:
+
+1. **Keep the note the chords share.** If a note is in both chords, the finger on it stays down.
+2. **Move every other finger to the nearest note of the new chord**, usually one or two keys away.
+
+The same C – F – G – C, voice-led:
+
+<div class="sh-shapes" data-inst="piano" data-shapes="C = - / C4 E4 G4; F/C = - / C4 F4 A4; G/B = - / B3 D4 G4; C = - / C4 E4 G4"></div>
+
+- C to F: **C** is in both chords, so the thumb stays on C. E moves up to F, G moves up to A. F is now in second inversion (F/C).
+- F to G: there is no shared note, so every finger moves, but only a step: C down to B, F down to D, A down to G. G is now in first inversion (G/B).
+- G to C: **G** is shared and stays. B goes up to C, D goes down to E.
+
+Count it: the root-position version moves the fingers 42 half steps in all, the voice-led one 12. The thumb never moves more than one key.
+
+**Practice:** play the voice-led version slowly, saying "stay, move, move" for each change. Then play the root-position version and feel the difference.
+
+## Fingers, not the hand {#fingers}
+
+In the voice-led version the hand sits in one place and the fingers change. Use these right-hand fingers (a rule of thumb; your teacher may prefer others):
+
+- **Root position** and **second inversion**: 1-3-5. The notes are fairly evenly spaced.
+- **First inversion**: 1-2-5. The wide gap (a 4th) is at the top, so the 5th finger reaches up and the 2nd takes the middle note.
+
+Press **Show finger numbers** above the first diagram to see them on the keys.
+
+Tips for the hand:
+
+- **Keep the thumb near middle C.** Most beginner songs can be voice-led so the lowest note stays between A below middle C and the E above it.
+- **Lift only the fingers that move.** A held note should keep sounding, and that held note is what makes the change sound connected.
+- **Look at the next chord before you need it.** Find the finger that stays, then the ones that step.
+
+## Try it: the inversion picker {#picker}
+
+Type your own chords or pick a progression. Choose **Root / 1st / 2nd** under each chord and watch the numbers: notes kept, fingers that move, half steps moved, and whether the thumb moves. **Smoothest** keeps your first chord and picks the inversions that move the hand least. Press a lane's label, or an inversion button, to hear that chord.
+
+<div class="ip" data-prog="C G Am F"></div>
+
+Things to try:
+
+- Press **All root position**, then **Smoothest**, and compare the total.
+- Start the same progression on C in first or second inversion, then press Smoothest. The whole progression moves to a new place on the keyboard but stays close together.
+- Try **Am Dm E Am**. The E chord has a G♯: the voice-led version puts your thumb on G♯, one key under the A it came from.
+- Try **Dm7 G7 Cmaj7** (a ii–V–I). With 7th chords two notes are often shared, and the other two move a step.
+
+## The left hand plays the root {#left-hand}
+
+An inversion has a different note on the bottom, which changes the sound a little. If you want the chord to sound "solid", let the **left hand play the root** low down while the right hand voice-leads above it. Tick **Left hand plays the root** in the picker to see it. The right hand moves as little as before, and the bass still tells everyone which chord it is.
+
+<div class="sh-shapes" data-inst="piano" data-shapes="C = C3 / C4 E4 G4; G = G2 / B3 D4 G4; Am = A2 / C4 E4 A4; F = F2 / C4 F4 A4"></div>
+
+This is the pattern most pop piano parts start from: roots in the left hand, smooth inversions in the right. [Piano voicings by hand](chord-shapes-piano-hand.qmd#p-b3) has more on it.
+
+## When to jump on purpose {#jumps}
+
+Smoothest is not always best. Sometimes you want a jump:
+
+- to make a new section (the chorus) sound bigger, move the right hand up to a higher inversion;
+- if the hand has crept too high or too low over many chords, jump back near middle C at the start of a phrase;
+- when the melody is in the right hand, the chords may need to sit lower, under it.
+
+The skill is to choose: small moves most of the time, a jump when it means something.
+
+## Play it in songs {#songs}
+
+Every jam card on [Songs with 1, 2 or 3 Chords](../practice/piano-chord-songs.qmd) is already voice-led this way: each chord is the inversion nearest the one before it. Pick a two-chord song, find the note the chords share, and keep that finger down.
+
+```{=html}
+<style>
+.ip { border: 1px solid var(--site-border, #ced4da); border-radius: .5rem; padding: .7rem .9rem; margin: .8rem 0 1.6rem; background: var(--site-surface-2, #f8f9fa); }
+.ip button { border: 1px solid var(--site-border, #ced4da); border-radius: .4rem; background: var(--site-surface, #fff); color: inherit; padding: .3rem .7rem; cursor: pointer; }
+.ip-top, .ip-btns { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin-bottom: .5rem; }
+.ip-top label, .ip-btns label { display: flex; gap: .4rem; align-items: center; margin: 0; }
+.ip-in { width: 16rem; max-width: 100%; font-family: var(--font-mono, monospace); }
+.ip-board svg { width: 100%; max-width: 44rem; }
+.ip-picks { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .4rem; }
+.ip-col { flex: 1 1 9rem; border: 1px solid var(--site-border, #ced4da); border-radius: .4rem; padding: .35rem .5rem; background: var(--site-surface, #fff); }
+.ip-col.ip-now { outline: 2px solid var(--site-accent, #2780e3); }
+.ip-inv { display: flex; gap: .25rem; margin: .25rem 0; }
+.ip-inv button { padding: .15rem .45rem; font-size: .85rem; }
+.ip-inv button.ip-on { background: var(--site-accent, #2780e3); border-color: var(--site-accent, #2780e3); color: #fff; }
+.ip-stat { font-size: .82rem; color: var(--site-ink-2, #6c757d); }
+.ip-stat.ip-good b { color: #2f9e44; } .ip-stat.ip-bad b { color: #e03131; }
+</style>
+```
+
+{{< include _shape-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/lessons/inversion-picker.js"></script>
+```

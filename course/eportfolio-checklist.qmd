@@ -1,0 +1,160 @@
+---
+title: "MYP5 ePortfolio: Checklist"
+description: "A page budget for the 30-page limit (1 minute = 2 pages) and a tick list for each task of the MYP5 music ePortfolio, kept in your browser."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/course/course.css">
+<script src="/apps/shared/course/course-common.js"></script>
+<script src="/apps/shared/section-fold.js"></script>
+<style>
+.ep-tab { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.ep-tab th, .ep-tab td { padding: .3rem .4rem; border-bottom: 1px solid var(--c-line); text-align: left; }
+.ep-tab input { width: 5rem; font-size: .9rem; padding: .15rem .3rem; border: 1px solid var(--c-line); border-radius: .3rem;
+  background: var(--site-surface, #fff); color: var(--c-ink); }
+.ep-total { font-weight: 600; }
+.ep-over { color: #c92a2a; }
+.ep-list { list-style: none; padding-left: 0; }
+.ep-list li { margin: .3rem 0; }
+.ep-list label { display: flex; gap: .5rem; align-items: flex-start; cursor: pointer; }
+.ep-list input { margin-top: .3rem; }
+</style>
+```
+
+*See also: [How to do it](eportfolio-guide.qmd) · [Criteria](eportfolio-criteria.qmd) · [Common mistakes](eportfolio-mistakes.qmd) · [An IB example](eportfolio-example.qmd)*
+
+Your numbers and ticks stay in this browser.
+
+## Page budget
+
+Pages of writing, images and score, plus **2 pages for every minute** of audio or video. Everything counts except the
+bibliography. Over 30 and the rest is not marked.
+
+::: {.crs}
+<div id="ep-budget"></div>
+:::
+
+## Task 1: Investigating (A)
+
+::: {.crs}
+<ul class="ep-list" data-ep="a">
+<li>My topic is a genre or movement of music, not one song, artist or technique, and my teacher has agreed it.</li>
+<li>Ai covers context, concepts and characteristics of the genre, with examples from more than one recording.</li>
+<li>Ai is about the genre as a whole, not artists' biographies.</li>
+<li>Every section links back to "Art questions power and privilege".</li>
+<li>Aii critiques one recording with at least one element, one technique and one context, in similar depth.</li>
+<li>Aii is about the music (with time stamps), not only the lyrics.</li>
+<li>Aii ends with a judgement: strengths and limitations.</li>
+<li>Every source is cited in the text and in the MLA bibliography.</li>
+</ul>
+:::
+
+## Task 2: Developing (B)
+
+::: {.crs}
+<ul class="ep-list" data-ep="b">
+<li>Bi has audio or video clips from the beginning, the middle and towards the end.</li>
+<li>No screenshot or photo stands in for a clip (screenshots only beside the audio of that draft).</li>
+<li>Each clip says what I tried, what changed, and why.</li>
+<li>Clips play at normal speed, with no voice-over drowning the music, and my part is clear.</li>
+<li>Bii was written before the final work and looks forward.</li>
+<li>Bii links the intention to the statement of inquiry.</li>
+<li>Each artistic choice is justified with a reason: a Task 1 finding or a Bi clip.</li>
+<li>Bii says why I chose this idea over the others I tried.</li>
+</ul>
+:::
+
+## Task 3: Creating/Performing (C)
+
+::: {.crs}
+<ul class="ep-list" data-ep="c">
+<li>The final recording has good sound, and on video my hands and instrument are in shot.</li>
+<li>If it is a portion, I say which part, with time stamps.</li>
+<li>Title, performers and instruments are listed.</li>
+<li>The music is mine; any AI use is stated and cited.</li>
+</ul>
+:::
+
+## Task 4: Evaluating (D)
+
+::: {.crs}
+<ul class="ep-list" data-ep="d">
+<li>Di judges the finished recording, not the process.</li>
+<li>Di weighs strengths and limitations of elements and techniques, with time stamps.</li>
+<li>Di measures the piece against my artistic intention and the statement of inquiry.</li>
+<li>Dii is about me as a musician: skills, learning moments, changing intentions, influences.</li>
+<li>Each skill in Dii points to evidence (a Bi clip).</li>
+<li>Dii says what did not improve and what I will do next.</li>
+</ul>
+:::
+
+## Before you upload
+
+::: {.crs}
+<ul class="ep-list" data-ep="u">
+<li>The page budget is 30 or under.</li>
+<li>Every file is uploaded; there are no links to YouTube or other sites.</li>
+<li>Normal font size; nothing needs zooming to read.</li>
+<li>The template's italic prompts are deleted.</li>
+</ul>
+:::
+
+```{=html}
+<script>
+(function () {
+  var K = CourseKit, esc = K.esc;
+  var TASKS = [["Task 1 · A", "6–8"], ["Task 2 · B", "8"], ["Task 3 · C", "6–8"], ["Task 4 · D", "6"]];
+  var bud = K.load("eportfolio-budget", {});
+  var box = document.getElementById("ep-budget");
+  var rows = TASKS.map(function (t, i) {
+    var r = bud[i] || {};
+    return "<tr><td>" + t[0] + "</td><td>" + t[1] + "</td>" +
+      '<td><input type="number" min="0" step="0.5" data-i="' + i + '" data-k="p" value="' + esc(r.p || "") + '"></td>' +
+      '<td><input type="number" min="0" step="0.25" data-i="' + i + '" data-k="m" value="' + esc(r.m || "") + '"></td>' +
+      '<td class="ep-sub" data-i="' + i + '"></td></tr>';
+  }).join("");
+  box.innerHTML = '<table class="ep-tab"><thead><tr><th>Task</th><th>Suggested</th><th>Pages</th><th>Minutes</th><th>Counts as</th></tr></thead>' +
+    "<tbody>" + rows + '</tbody><tfoot><tr><td colspan="4">Total (limit 30)</td><td class="ep-total" id="ep-total"></td></tr></tfoot></table>';
+  function num(v) { v = parseFloat(v); return isFinite(v) && v > 0 ? v : 0; }
+  function draw() {
+    var tot = 0;
+    TASKS.forEach(function (_, i) {
+      var r = bud[i] || {}, s = num(r.p) + 2 * num(r.m);
+      tot += s;
+      box.querySelector('.ep-sub[data-i="' + i + '"]').textContent = s ? s + " pages" : "";
+    });
+    var el = document.getElementById("ep-total");
+    el.textContent = tot + " pages" + (tot > 30 ? ": over the limit by " + (tot - 30) : ", " + (30 - tot) + " left");
+    el.classList.toggle("ep-over", tot > 30);
+  }
+  box.addEventListener("input", function (e) {
+    var t = e.target; if (!t.dataset.k) return;
+    var i = t.dataset.i; bud[i] = bud[i] || {}; bud[i][t.dataset.k] = t.value;
+    K.save("eportfolio-budget", bud); draw();
+  });
+  draw();
+  var ticks = K.load("eportfolio-ticks", {});
+  document.querySelectorAll(".ep-list").forEach(function (ul) {
+    Array.prototype.forEach.call(ul.children, function (li, n) {
+      var id = ul.dataset.ep + n;
+      li.innerHTML = '<label><input type="checkbox"' + (ticks[id] ? " checked" : "") + "><span>" + li.innerHTML + "</span></label>";
+      li.querySelector("input").addEventListener("change", function (e) {
+        ticks[id] = e.target.checked; K.save("eportfolio-ticks", ticks);
+      });
+    });
+  });
+})();
+</script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+International Baccalaureate Organization. *May 2026 Subject Report: Arts*. International Baccalaureate Organization, 2026. Music grade boundaries (p. 2); music under criteria A–C and the general findings for every criterion (pp. 3–5); submission limits, legibility, links, citation and AI (pp. 6–7); checkpoints (p. 8).
+
+International Baccalaureate Organization. *MYP Arts Partially Completed Unit Planner: Power, Privilege and Art*. May 2027 eAssessment, International Baccalaureate Organization, 2026. Unit name, global context, concepts, statement of inquiry, the four tasks and their evidence, the 30-page / 1 minute = 2 pages limit, links not permitted, suggested songs.
+:::
+<!-- /works-cited -->

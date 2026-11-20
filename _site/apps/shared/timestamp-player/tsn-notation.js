@@ -112,6 +112,7 @@
       paper.innerHTML = ""; clearInterval(timer); score = null;
       abcOf(t).then(function (abc) {
         score = FullScore.mount(paper, { abc: abc, id: "tsn-" + t.kind + "-" + t.id, mark: true });
+        if (window.RNLabel && !paper._rn) { paper._rn = true; RNLabel.watch(paper); }   // Roman numerals: figures stacked, additions on hover
         timer = setInterval(tick, 150); tick();
       }).catch(function (e) { note.textContent = "That score did not load: " + e.message; });
     }
