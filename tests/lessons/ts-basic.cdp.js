@@ -41,6 +41,14 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   check("K. 545 drawn on two staves", await ev(`!!document.querySelector('#ts-notation .ts-nt-paper svg') && /Analysed Scores Library/.test(document.querySelector('#ts-notation .ts-nt-note').textContent)`));
   const k1 = await bar(2.5);
   check("K. 545 lit bar follows the time", /Tune bar 3 /.test(k1), k1);
+  // pages side by side in this narrow column: bars of sixteenths overfill a system; it gets a bar fewer (one staff size), never drawn past its page
+  await ev(`(() => { const s = document.querySelector('#ts-notation select[data-k="mode"]'); s.value = 'paged'; s.dispatchEvent(new Event('input', { bubbles: true })); })()`); await b.sleep(4000);
+  const bleed = await ev(`[...document.querySelectorAll('#ts-notation .fs-page .fs-sys svg')].map(sv => { const pr = sv.closest('.fs-page').getBoundingClientRect(); let mx = 0;
+    sv.querySelectorAll('path,text').forEach(e => { const q = e.getBoundingClientRect(); if (q.width < 400) mx = Math.max(mx, q.right); }); return Math.round(mx - pr.right); }).filter(x => x > -6).join(',')`);
+  check("K. 545 side by side: no system runs past its page", bleed === "", bleed);
+  const sizes = await ev(`[...new Set([...document.querySelectorAll('#ts-notation .fs-page .fs-sys svg')].map(sv => (parseFloat(sv.getAttribute('width')) / sv.viewBox.baseVal.width).toFixed(3)))].join(',')`);
+  check("K. 545 side by side: every system at one staff size", !sizes.includes(","), sizes);
+  await ev(`(() => { const s = document.querySelector('#ts-notation select[data-k="mode"]'); s.value = 'pages'; s.dispatchEvent(new Event('input', { bubbles: true })); })()`); await b.sleep(1500);
   await ev(`window.innerWidth`);
   check("no errors", !b.errors.filter(e => !/supabaseUrl|youtube/i.test(e)).length, b.errors.join(" | "));
   await b.close(); srv.close(); process.exit(fails ? 1 : 0);

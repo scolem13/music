@@ -419,7 +419,7 @@
     function drawnBody(v, shownV) { var d = S.display[v]; return d && shownV[d.of] ? d.body : S.body[v]; }
     function shownVoices() { var s = {}; S.parts.forEach(function (p) { if (chosen.indexOf(p.key) >= 0) p.voices.forEach(function (v) { s[v] = true; }); }); return s; }
     var NS = "http://www.w3.org/2000/svg", colCache = {};
-    function render(target, text, w, base, matchable, startBar, sys) {   // base: { v: bar offset into the voice's line }
+    function render(target, text, w, base, matchable, startBar, sys, opts) {   // base: { v: bar offset into the voice's line }
       // staffwidth is in screen pixels (abcjs divides by the scale itself); the names column comes on top when the music needs the
       // room: draw once, measure the column, draw again so the whole system is w wide
       var o2 = { scale: L.scale, staffwidth: Math.max(150, w - 4), add_classes: true, paddingleft: 0, paddingright: 4, paddingtop: 0, paddingbottom: 0, clickListener: clicked };
@@ -438,6 +438,14 @@
       var r1 = once(), v = r1.v;
       if (r1.w && Math.abs(r1.w - w) > 2) { var extra = r1.w - 4 - o2.staffwidth; colCache[ck] = extra; o2.staffwidth = Math.max(150, w - 4 - extra); v = once().v; }
       if (!v) return null;
+      // bars too full for the width (narrow pages: Timestamp Notes, two pages across) come out wider than asked whatever staffwidth
+      // says, since abcjs will not squeeze notes past its minimum spacing (and draws past its own viewBox). The caller (sys != null,
+      // pages) is told instead, and draws the system again with a bar fewer: staves never shrink, so every system keeps one staff size
+      if (L.mode !== "line" && opts && opts.fit) {
+        var svF = target.querySelector("svg"), cb = null; try { cb = svF.getBBox(); } catch (x) { /* not laid out */ }
+        var vbF = (svF.getAttribute("viewBox") || "").split(/[\s,]+/).map(Number), sc1 = vbF[2] > 0 ? parseFloat(svF.getAttribute("width")) / vbF[2] : 1;
+        if (cb && cb.width && (cb.x + cb.width + 4 - vbF[0]) * sc1 > w + 8) { target.innerHTML = ""; return { over: true }; }
+      }
       visuals.push(v);
       index(v, text, base || {}, matchable);
       if (L.rests) centerRests(v, target);
@@ -760,10 +768,16 @@
         var r = systems[i], t = systemText(fams, shownV, r.s, r.e, i, cut, line && i > 0);
         if (!firstText) firstText = t;
         texts.push(t.abc);
-        var w = line ? (r.e - r.s) * barPx + (i ? 40 : 160) : colW * (r.e - r.s < per ? Math.max(0.4, (r.e - r.s) / per) : 1);
+        var w = line ? (r.e - r.s) * barPx + (i ? 40 : 160) : colW * (r.e - r.s < per && !r.full ? Math.max(0.4, (r.e - r.s) / per) : 1);
         var dv = document.createElement("div"); dv.className = "fs-sys"; dv.dataset.sys = i;
         if (paged) { if (!page) newPage(); page.appendChild(dv); } else paper.appendChild(dv);
-        var res = render(dv, t, w, t.base, matchable, r.s, i);
+        var res = render(dv, t, w, t.base, matchable, r.s, i, { fit: !line && r.e - r.s > 1 });
+        if (res && res.over) {                            // overfull: a bar fewer on this system (drawn full width), the rest laid out again from there
+          dv.remove(); texts.pop(); if (firstText === t && i === 0) firstText = null;
+          r.e--; r.full = true; systems.length = i + 1;
+          for (var s1 = r.e; s1 < S.nBars; s1 += per) systems.push({ s: s1, e: Math.min(S.nBars, s1 + per) });
+          return step();
+        }
         if (res && res.m) {
           var M = res.m, I0 = M.I[0];
           if (I0) { var want = I0.top - I0.ct + (L.numbers !== "off" ? 18 : 4); if (want > head) { head = want; done.forEach(function (d) { place(d.dv, d.gaps, head); }); if (lineGaps) lineSys.forEach(function (d) { place(d, lineGaps, head); }); } }
