@@ -946,6 +946,27 @@
     }
     return out.join("\n");
   }
+  // "%unsure [bars 12-13] text" lines (the real-book rhythm transcriptions; scripts/realbooks/abcbars.py): -> ev => text or null.
+  // Bars are counted in the order written, repeats not unrolled; a first bar shorter than the meter is the pickup, bar 0.
+  // The slots of those bars get slot.flag = text, which the score shades until the flag is cleared.
+  function unsureFlags(abc, r0) {
+    const want = {};
+    abc.split("\n").forEach(l => {
+      const m = /^%unsure\s*\[(?:bars?\s+)?([^\]]*)\]\s*(.*)$/.exec(l); if (!m) return;
+      const add = n => { want[n] = want[n] ? want[n] + " / " + m[2].trim() : m[2].trim(); };
+      m[1].split(/[,\s]+(?:and\s+)?/).forEach(p => {
+        const r = /^(\d+)\s*[-\u2013]\s*(\d+)$/.exec(p);
+        if (r) for (let n = +r[1]; n <= +r[2]; n++) add(n); else if (/^\d+$/.test(p)) add(+p);
+      });
+    });
+    if (!Object.keys(want).length) return () => null;
+    const order = [], dur = {};
+    r0.written.forEach(e => { if (!(e.bar in dur)) { order.push(e.bar); dur[e.bar] = 0; } dur[e.bar] += e.t_off - e.t_on; });
+    const mi = meterInfo((/^M:\s*(\d+\/\d+)/m.exec(abc) || [])[1]);
+    const first = order.length && mi && dur[order[0]] < mi.barQ - EPS ? 0 : 1, num = {};
+    order.forEach((b, i) => { num[b] = i + first; });
+    return ev => want[num[ev.bar]] || null;
+  }
   function fromAbc(abc) {
     abc = inlineBodyFields(abc);
     const doc = create();
@@ -999,18 +1020,22 @@
     if (starts[0].key) doc.key = starts[0].key;
     const chunkAt = tt => { let i = 0; while (i + 1 < starts.length && tt >= starts[i + 1].t - EPS) i++; return i; };
     const syl = wSyllables(abc, ids.length ? ids[0] : null);
+    const flagAt = unsureFlags(abc, r0);
     reads.forEach((r, v) => {
       let held = null, sylK = 0;
       r.written.forEach(ev => {
         const durQ = ev.t_off - ev.t_on, ci = chunkAt(ev.t_on), p = part(doc.chunks[ci], v);
+        const fl = v === 0 ? flagAt(ev) : null;
+        if (fl && held && held.flag !== fl) held.flag = held.flag ? held.flag + " / " + fl : fl;   // a tie into a flagged bar
         if (ev.kind === "note" && v === 0) { const x = syl[sylK++]; if (x) doc.chunks[ci].words += (x.s + (x.join ? "-" : " ")); else if (!held && sylK <= syl.length && syl.slice(sylK).some(Boolean)) doc.chunks[ci].words += "* "; }
         if (held) { held.durQ += durQ; held._sp = ev.spaceAfter; if (!ev.tieNext) held = null; return; }
-        if (ev.kind === "rest") { p.rhythm.push({ type: ev.visible === false ? "space" : "rest", durQ }); return; }
+        if (ev.kind === "rest") { const rs = { type: ev.visible === false ? "space" : "rest", durQ }; if (fl) rs.flag = fl; p.rhythm.push(rs); return; }
         const slot = { type: "note", durQ, _sp: ev.spaceAfter }, rhy = (ev.decos || []).includes("style=rhythm"), mid = ev.pitches[0].midi;
         // a letter other than the plain spelling's (Fb, E#, B##) is kept on the slot
         const allN = (ev.notes && ev.notes.length > 1) ? ev.notes : null;
         if (!rhy && ev.letter && !allN) { const kk = at(doc, ci).key || doc.key, plain = spell(mid, kk, {}).replace(/[\^_=,']/g, "").toUpperCase(); if (plain !== ev.letter) slot.spell = ev.letter + "@" + (((mid % 12) + 12) % 12); }
         if (!rhy && allN) slot.also = allN.filter(m => m !== mid);         // [CEG]: a chord in this voice
+        if (fl) slot.flag = fl;
         p.rhythm.push(slot);
         p.pitches.push(rhy ? null : mid);
         if (ev.tieNext) held = slot;

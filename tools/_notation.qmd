@@ -182,6 +182,11 @@
 #nt-root .nt-cbar{display:inline-flex;gap:2px;align-items:center;padding:1px 6px;border-left:2px solid var(--nt-line)}
 #nt-root .nt-cchip{border:0;background:none;padding:1px 4px;border-radius:3px;cursor:pointer;color:inherit;font:inherit}
 #nt-root .nt-cchip.is-on{background:#b3261e;color:#fff}
+#nt-root .nt-paper rect.nt-flag{fill:#f5a623;fill-opacity:.28}
+#nt-root .nt-flags{margin:0 0 .6rem;padding:.5rem .8rem;border:1px solid #d9a441;border-left:4px solid #f5a623;border-radius:6px;font-size:.88rem}
+#nt-root .nt-flags ul{margin:.3rem 0 0;padding-left:1.1rem}#nt-root .nt-flags li{margin:.15rem 0}
+#nt-root .nt-flags .nt-flag-where{font-weight:600;color:#8a4b00;margin-right:.35rem}
+#nt-root .nt-flags button{margin-left:.4rem;font-size:.78rem;min-height:0;padding:0 .45rem}
 #nt-root .nt-paper .nt-sel,#nt-root .nt-paper .nt-sel *{fill:#b3261e!important;stroke:#b3261e}
 #nt-root .nt-paper .nt-playing,#nt-root .nt-paper .nt-playing *{fill:#1565c0!important;stroke:#1565c0}
 #nt-root .nt-paper .nt-playing{scroll-margin-top:90px}
@@ -299,6 +304,7 @@
               <button type="button" class="nt-btn" id="nt-s-del">Delete</button>
               <button type="button" class="nt-btn is-main" id="nt-s-dwim" title="Do what I mean: the other ways the selected bars could be written from how they were played">DWIM</button>
             </div>
+            <div id="nt-flags" class="nt-flags" hidden></div>
             <div class="nt-paper" id="nt-paper"></div>
             <div id="nt-pending-wrap" hidden>
               <p class="nt-lab" style="margin-top:.8rem">Pitches only (waiting for a rhythm)</p>
@@ -1270,6 +1276,56 @@
   // ---- drawing -----------------------------------------------------------------------------------------------------
   // abcjs starts a note after a barline at the space before it ("| G2": G's startChar is the space), so a drawn element
   // is matched to the map's entry whose start falls inside it, not by an equal start
+  // %unsure bars from a real-book rhythm transcription (slot.flag, set by D.fromAbc): shaded amber behind the notes, hover for the note;
+  // the list above the score clears them one note at a time or all at once
+  function slotFlag(e) { var c = doc.chunks[e.chunk], r = c && D.part(c, e.voice).rhythm[e.slot]; return r && r.flag || null; }
+  function lightFlags(t, m, host) {
+    var svg = host && host.querySelector("svg"); if (!t || !svg) return;
+    var hit = m.filter(slotFlag); if (!hit.length) return;
+    var NS = "http://www.w3.org/2000/svg";
+    t.lines.forEach(function (l) { (l.staff || []).forEach(function (st) { st.voices.forEach(function (v) {
+      var run = null, runs = [];
+      v.forEach(function (el) {
+        if (el.el_type === "bar") return;
+        var e = el.abselem && hit.find(function (x) { return covers(el, x); }), f = e && slotFlag(e);
+        if (!f) { if (el.el_type === "note") run = null; return; }
+        if (!run || run.f !== f) { run = { f: f, els: [] }; runs.push(run); }
+        run.els.push(el);
+      });
+      runs.forEach(function (r) {
+        var x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9;
+        r.els.forEach(function (el) { el.abselem.elemset.forEach(function (g) { try { var b = g.getBBox(); if (!b.width && !b.height) return;
+          x0 = Math.min(x0, b.x); x1 = Math.max(x1, b.x + b.width); y0 = Math.min(y0, b.y); y1 = Math.max(y1, b.y + b.height); } catch (err) {} }); });
+        if (x0 > x1) return;
+        var rc = document.createElementNS(NS, "rect");
+        rc.setAttribute("x", x0 - 5); rc.setAttribute("y", y0 - 4); rc.setAttribute("width", x1 - x0 + 10); rc.setAttribute("height", y1 - y0 + 8);
+        rc.setAttribute("rx", 4); rc.setAttribute("class", "nt-flag");
+        var tt = document.createElementNS(NS, "title"); tt.textContent = "Unsure: " + r.f; rc.appendChild(tt);
+        svg.insertBefore(rc, svg.firstChild);
+      });
+    }); }); });
+  }
+  function drawFlagList() {
+    var box = $("nt-flags"); if (!box) return;
+    var seen = [], where = {};
+    doc.chunks.forEach(function (c, ci) { for (var v = 0; v < doc.voices.length; v++) D.part(c, v).rhythm.forEach(function (s) {
+      if (!s.flag) return; if (seen.indexOf(s.flag) < 0) { seen.push(s.flag); where[s.flag] = []; }
+      if (where[s.flag].indexOf(cname(ci)) < 0) where[s.flag].push(cname(ci)); }); });
+    box.hidden = !seen.length; if (!seen.length) { box.innerHTML = ""; return; }
+    box.innerHTML = "<strong>Unsure in the transcription</strong> (shaded amber in the score)<button type=\"button\" class=\"nt-btn\" data-all=\"1\">Clear all</button><ul></ul>";
+    var ul = box.querySelector("ul");
+    seen.forEach(function (f) {
+      var li = document.createElement("li"), w = document.createElement("span"); w.className = "nt-flag-where"; w.textContent = where[f].join(", ");
+      li.appendChild(w); li.appendChild(document.createTextNode(f));
+      var b = document.createElement("button"); b.type = "button"; b.className = "nt-btn"; b.textContent = "Done"; b.title = "Checked: take the shading away";
+      b.onclick = function () { clearFlags(f); }; li.appendChild(b); ul.appendChild(li);
+    });
+    box.querySelector("[data-all]").onclick = function () { clearFlags(null); };
+  }
+  function clearFlags(f) {
+    change(function () { doc.chunks.forEach(function (c) { for (var v = 0; v < doc.voices.length; v++) D.part(c, v).rhythm.forEach(function (s) {
+      if (s.flag && (f === null || s.flag === f)) delete s.flag; }); }); });
+  }
   function covers(el, m) { return el.startChar <= m.start && m.start < Math.max(el.endChar, el.startChar + 1); }
   function lightSelection(t, m, want) {
     if (!t || !want) return;
@@ -1754,7 +1810,7 @@
             var lw = (li && showM ? over - 20 : over) + L.bars * barW - (li ? 0 : cutW);
             var lt = ABCJS.renderAbc(lb, h0 + abc.slice(s0, s1), { staffwidth: Math.min(W, lw), add_classes: true,
               clickListener: function (el, tn, cls, an, drag, ev) { map = lm; clickScore(el, tn, cls, an, drag, ev); } })[0];
-            lightSelection(lt, lm, lightWant); drawn.push({ t: lt, m: lm });
+            lightSelection(lt, lm, lightWant); lightFlags(lt, lm, lb); drawn.push({ t: lt, m: lm });
             if (ci === cur) drawCaret(lt, lm);
             map = map.concat(lm);
             if (L.manual) {
@@ -1770,7 +1826,7 @@
           clickListener: function (el, tn, cls, an, drag, ev) { map = cmap; clickScore(el, tn, cls, an, drag, ev); } };
         if (lines > 1) opts.wrap = { minSpacing: 0.5, maxSpacing: 6, preferredMeasuresPerLine: per };
         var t = ABCJS.renderAbc(box, abc, opts)[0];
-        lightSelection(t, cmap, lightWant); drawn.push({ t: t, m: cmap });
+        lightSelection(t, cmap, lightWant); lightFlags(t, cmap, box); drawn.push({ t: t, m: cmap });
         if (ci === cur) drawCaret(t, cmap);
         map = map.concat(cmap);
         }
@@ -1797,6 +1853,7 @@
       }
     });
     placeChord();
+    drawFlagList();
     if (!shown.length) paper.innerHTML = '<p class="nt-hint" style="padding:.6rem">' + (doc.chunks.length ? "Every chunk is hidden: press V, or use the eyes in Chunks." : "Nothing yet.") + "</p>";
   }
 

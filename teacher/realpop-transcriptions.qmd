@@ -1,41 +1,61 @@
 ---
-title: "Real Pop transcriptions (in progress)"
+title: "Rhythm transcriptions (in progress)"
 toc: false
 ---
 
-Rhythms, chords and (some) lyrics read by model from *The Real Pop Book Vol. 2*. **Pitches are not
-transcribed: every note is written as B.** Treat each as a draft to review against the book.
-Badge **bars off** = some bars do not add up to a full measure; **unsure** = lines the transcriber
-marked `%unsure`. Not shown on the public site; reach it at `/teacher/realpop-transcriptions.html`.
-Built by `scripts/realbooks/build-transcriptions.py`.
+Rhythms, chords and (some) lyrics read by model from the real books (*The Real Pop Book Vol. 2* and the Sher books).
+**Pitches are not transcribed: every note is written as B.** Treat each as a draft to review against the book.
+Not shown on the public site; reach it at `/teacher/realpop-transcriptions.html`. Built by
+`scripts/realbooks/build-transcriptions.py`.
 
-**Open in Notation** sends a draft to the Notation page in a new tab. **Comments** are your reminders per tune.
-They are kept in this browser at once and saved for good in `apps/realbooks/rhythm-comments.json`: after adding
-some, press **Download comments.json**, replace that file, and commit it (the page shows how many are not yet in the file).
+**In the scores:** bars shaded **amber** are ones the transcriber marked unsure; bars shaded **red** don't add up to
+a full measure. Each shaded bar has its number above it, and hovering shows the note. Under each title, the list says what
+is unsure; click an item to jump to its bars. Notes about the form or the whole tune have no bars to shade.
+
+**Open in Notation** sends a draft to the Notation page in a new tab, with the same bars shaded there. **Comments** are your
+reminders per tune. They are kept in this browser at once and saved for good in `apps/realbooks/rhythm-comments.json`: after
+adding some, press **Download comments.json**, replace that file, and commit it (the page shows how many are not yet in the file).
 
 ```{=html}
 <style>
 #rpt .tune { margin: 0 0 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--site-border, #ccc); }
+#rpt h2.bk { margin: 2rem 0 .8rem; }
 #rpt h3 { margin: 0 0 .2rem; font-size: 1.1rem; }
 #rpt .meta { color: var(--site-ink-2, #666); font-size: .85rem; margin-bottom: .4rem; }
 #rpt .b { display: inline-block; font-size: .75rem; font-weight: 600; padding: .05rem .4rem; border-radius: .3rem; margin-right: .3rem; border: 1px solid; }
 #rpt .ok { color: #1a7f37; } #rpt .warn { color: #b35900; } #rpt .bad { color: #cf222e; }
 #rpt .bar { display: flex; gap: .5rem; margin: .4rem 0; flex-wrap: wrap; }
 #rpt button { font: inherit; font-size: .8rem; padding: .15rem .6rem; cursor: pointer; }
+#rpt .fl { font-size: .88rem; margin: .3rem 0 .5rem; padding-left: 1.2rem; }
+#rpt .fl li { margin: .15rem 0; cursor: pointer; }
+#rpt .fl li.nobars { cursor: default; }
+#rpt .fl li:not(.nobars):hover { text-decoration: underline; }
+#rpt .fl .where { font-weight: 600; margin-right: .35rem; }
+#rpt .fl .u .where { color: #b35900; } #rpt .fl .o .where { color: #cf222e; } #rpt .fl .nobars .where { color: var(--site-ink-2, #666); }
 #rpt .cm { font-size: .88rem; margin: .5rem 0 0; }
 #rpt .cm li { margin: .15rem 0; } #rpt .cm .dt { color: var(--site-ink-2, #666); font-size: .75rem; }
 #rpt .cm textarea { width: 100%; min-height: 2.6rem; font: inherit; }
-#rpt #top { position: sticky; top: 0; background: var(--site-surface, #fff); padding: .4rem 0; z-index: 5; border-bottom: 1px solid var(--site-border, #ccc); }
+#rpt #top { position: sticky; top: 0; background: var(--site-surface, #fff); padding: .4rem 0; z-index: 5; border-bottom: 1px solid var(--site-border, #ccc); display: flex; gap: .8rem; flex-wrap: wrap; align-items: center; font-size: .88rem; }
 #rpt .paper { background: #fff; color: #000; padding: .5rem; border-radius: .3rem; overflow-x: auto; }
+#rpt .paper rect.hl-u { fill: #f5a623; fill-opacity: .28; }
+#rpt .paper rect.hl-o { fill: #e5484d; fill-opacity: .25; }
+#rpt .paper rect.hl-u.pulse, #rpt .paper rect.hl-o.pulse { fill-opacity: .6; }
+#rpt .paper text.hl-n { font: 600 10px sans-serif; }
+#rpt .paper text.hl-n.u { fill: #8a4b00; } #rpt .paper text.hl-n.o { fill: #a40e26; }
 </style>
-<div id="rpt"><div id="top"><button id="dl">Download comments.json</button> <span id="pend"></span></div></div>
+<div id="rpt"><div id="top">
+  <label>Book <select id="bk"><option value="">All books</option></select></label>
+  <label><input type="checkbox" id="only"> Only tunes with something to check</label>
+  <button id="dl">Download comments.json</button> <span id="pend"></span>
+</div><div id="list"></div></div>
 <script src="/apps/shared/abcjs-basic.js?v=5"></script>
-<script src="/apps/realbooks/rhythm-transcriptions.js"></script>
+<script src="/apps/realbooks/rhythm-transcriptions.js?v=2"></script>
 <script>
 (function(){
-  var root = document.getElementById('rpt'), KEY = 'rpt-comments';
-  var saved = {}, local = {};
+  var root = document.getElementById('list'), KEY = 'rpt-comments', SEL = 'rpt-view';
+  var saved = {}, local = {}, view = {};
   try { local = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) {}
+  try { view = JSON.parse(localStorage.getItem(SEL) || '{}') || {}; } catch (e) {}
   function merged() {   // file comments + any added here; each {t: ISO time, x: text}
     var m = {}; Object.keys(saved).forEach(function (k) { m[k] = saved[k].slice(); });
     Object.keys(local).forEach(function (k) { local[k].forEach(function (c) {
@@ -57,43 +77,128 @@ some, press **Download comments.json**, replace that file, and commit it (the pa
     function on(e) {
       if (e.source !== w || e.origin !== location.origin || !e.data || e.data.type !== 'nt-ready') return;
       window.removeEventListener('message', on);
-      w.postMessage({ type: 'nt-abc', abc: t.abc, title: t.title, host: 'Real Pop transcriptions' }, location.origin);
+      w.postMessage({ type: 'nt-abc', abc: t.abc, title: t.title, host: 'Rhythm transcriptions' }, location.origin);
     }
     window.addEventListener('message', on);
   }
-  function build(all) {
-    saved = all || {};
-    window.RHYTHM_TRANSCRIPTIONS.forEach(function(t){
-      var d = document.createElement('div'); d.className = 'tune'; d.id = t.id;
-      var badges = (t.bad ? '<span class="b bad">'+t.bad+' bars off</span>' : '<span class="b ok">bars ok</span>')
-        + (t.unsure ? '<span class="b warn">'+t.unsure+' unsure</span>' : '');
-      d.innerHTML = '<h3></h3><div class="meta">'+badges+'<span class="n"></span></div>'
-        + '<div class="bar"><button class="to">Open in Notation</button><button class="add">Add comment</button></div>'
-        + '<ul class="cm"></ul><div class="paper"></div>';
-      d.querySelector('h3').textContent = t.title + (t.pdf ? '  (pdf ' + t.pdf + ')' : '');
-      d.querySelector('.n').textContent = t.note;
-      var ul = d.querySelector('.cm'); drawComments(t, ul);
-      d.querySelector('.to').onclick = function () { openNotation(t); };
-      d.querySelector('.add').onclick = function () {
-        var box = document.createElement('div'); box.innerHTML = '<textarea placeholder="What still needs doing on this one?"></textarea><button class="ok">Save</button> <button class="no">Cancel</button>';
-        d.querySelector('.bar').after(box);
-        box.querySelector('.no').onclick = function () { box.remove(); };
-        box.querySelector('.ok').onclick = function () {
-          var x = box.querySelector('textarea').value.trim(); if (!x) return;
-          (local[t.id] = local[t.id] || []).push({ t: new Date().toISOString(), x: x });
-          store(); box.remove(); drawComments(t, ul); refresh(); };
-        box.querySelector('textarea').focus();
+  function span(nums) {   // [3,4,5,9] -> "3-5, 9"
+    var out = [], i = 0;
+    while (i < nums.length) { var j = i; while (j + 1 < nums.length && nums[j + 1] === nums[j] + 1) j++; out.push(j > i ? nums[i] + '–' + nums[j] : '' + nums[i]); i = j + 1; }
+    return out.join(', ');
+  }
+  // the bar groups of a rendered tune: group index (bars in the order written, counted as abcbars.py does) -> SVG nodes, by line
+  function barNodes(tune) {
+    var g = 0, has = false, res = {};
+    tune.lines.forEach(function (l, li) { if (!l.staff) return; l.staff[0].voices[0].forEach(function (el) {
+      if (el.el_type === 'bar') { if (has) { g++; has = false; } return; }
+      if (el.el_type !== 'note' || !el.abselem) return;
+      has = true; var k = g + ':' + li; (res[k] = res[k] || { g: g, nodes: [] }).nodes = res[k].nodes.concat(el.abselem.elemset);
+    }); });
+    return res;
+  }
+  // shade bars: kinds = {group: {cls: 'u'|'o', number, text}}; returns {group: [rects]}
+  function shade(paper, tune, kinds) {
+    var svg = paper.querySelector('svg'); if (!svg) return {};
+    var NS = 'http://www.w3.org/2000/svg', rects = {}, nodes = barNodes(tune);
+    Object.keys(nodes).forEach(function (k) {
+      var n = nodes[k], kd = kinds[n.g]; if (!kd) return;
+      var x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9;
+      n.nodes.forEach(function (el) { try { var b = el.getBBox(); if (!b.width && !b.height) return;
+        x0 = Math.min(x0, b.x); x1 = Math.max(x1, b.x + b.width); y0 = Math.min(y0, b.y); y1 = Math.max(y1, b.y + b.height); } catch (e) {} });
+      if (x0 > x1) return;
+      var r = document.createElementNS(NS, 'rect');
+      r.setAttribute('x', x0 - 6); r.setAttribute('y', y0 - 4); r.setAttribute('width', x1 - x0 + 12); r.setAttribute('height', y1 - y0 + 8);
+      r.setAttribute('rx', 4); r.setAttribute('class', 'hl-' + kd.cls);
+      var tt = document.createElementNS(NS, 'title'); tt.textContent = 'Bar ' + kd.number + ': ' + kd.text; r.appendChild(tt);
+      svg.insertBefore(r, svg.firstChild);
+      var tx = document.createElementNS(NS, 'text'); tx.setAttribute('x', x0 - 4); tx.setAttribute('y', y0 - 6);
+      tx.setAttribute('class', 'hl-n ' + kd.cls); tx.textContent = kd.number; svg.appendChild(tx);
+      (rects[n.g] = rects[n.g] || []).push(r);
+    });
+    return rects;
+  }
+  function draw(t, d) {
+    var paper = d.querySelector('.paper'), first = t.first == null ? 1 : t.first;
+    var tune = ABCJS.renderAbc(paper, t.abc, { responsive: 'resize', add_classes: true, paddingleft: 0, paddingright: 0 })[0];
+    var kinds = {};
+    (t.off || []).forEach(function (n) { kinds[n - first] = { cls: 'o', number: n, text: "doesn't add up to a full measure" }; });
+    (t.flags || []).forEach(function (f) { (f.groups || []).forEach(function (g, i) {
+      var k = kinds[g]; kinds[g] = { cls: 'u', number: f.bars[i], text: (k ? k.text + ' / ' : '') + f.text }; }); });
+    var rects = tune ? shade(paper, tune, kinds) : {};
+    d.querySelectorAll('.fl li[data-g]').forEach(function (li) {
+      li.onclick = function () {
+        var gs = li.dataset.g.split(',').map(Number), rs = [];
+        gs.forEach(function (g) { rs = rs.concat(rects[g] || []); });
+        if (!rs.length) return;
+        rs[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        rs.forEach(function (r) { r.classList.add('pulse'); });
+        setTimeout(function () { rs.forEach(function (r) { r.classList.remove('pulse'); }); }, 1600);
       };
-      root.appendChild(d);
-      ABCJS.renderAbc(d.querySelector('.paper'), t.abc, { responsive: 'resize', add_classes: true, paddingleft: 0, paddingright: 0 });
+    });
+  }
+  function tuneEl(t) {
+    var d = document.createElement('div'); d.className = 'tune'; d.id = t.id;
+    var nf = (t.flags || []).length;
+    var badges = (t.bad ? '<span class="b bad">' + t.bad + ' bar' + (t.bad > 1 ? 's' : '') + ' off</span>' : '<span class="b ok">bars ok</span>')
+      + (nf ? '<span class="b warn">' + nf + ' unsure</span>' : '') + (t.form ? '<span class="b">form ' + t.form.replace(/</g, '') + '</span>' : '');
+    d.innerHTML = '<h3></h3><div class="meta">' + badges + '<span class="n"></span></div><ul class="fl"></ul>'
+      + '<div class="bar"><button class="to">Open in Notation</button><button class="add">Add comment</button></div>'
+      + '<ul class="cm"></ul><div class="paper"></div>';
+    d.querySelector('h3').textContent = t.title + (t.pdf ? '  (pdf ' + t.pdf + ')' : '');
+    d.querySelector('.n').textContent = t.note;
+    var fl = d.querySelector('.fl'), first = t.first == null ? 1 : t.first;
+    function item(cls, where, text, groups) {
+      var li = document.createElement('li'); li.className = cls + (groups.length ? '' : ' nobars');
+      if (groups.length) li.dataset.g = groups.join(',');
+      var w = document.createElement('span'); w.className = 'where'; w.textContent = where; li.appendChild(w);
+      li.appendChild(document.createTextNode(text)); fl.appendChild(li);
+    }
+    if (t.off && t.off.length) item('o', (t.off.length > 1 ? 'Bars ' : 'Bar ') + span(t.off), "don't add up to a full measure", t.off.map(function (n) { return n - first; }));
+    (t.flags || []).forEach(function (f) {
+      item('u', f.bars.length ? (f.bars.length > 1 ? 'Bars ' : 'Bar ') + span(f.bars) : 'General', f.text, f.groups || []);
+    });
+    var ul = d.querySelector('.cm'); drawComments(t, ul);
+    d.querySelector('.to').onclick = function () { openNotation(t); };
+    d.querySelector('.add').onclick = function () {
+      var box = document.createElement('div'); box.innerHTML = '<textarea placeholder="What still needs doing on this one?"></textarea><button class="ok">Save</button> <button class="no">Cancel</button>';
+      d.querySelector('.bar').after(box);
+      box.querySelector('.no').onclick = function () { box.remove(); };
+      box.querySelector('.ok').onclick = function () {
+        var x = box.querySelector('textarea').value.trim(); if (!x) return;
+        (local[t.id] = local[t.id] || []).push({ t: new Date().toISOString(), x: x });
+        store(); box.remove(); drawComments(t, ul); refresh(); };
+      box.querySelector('textarea').focus();
+    };
+    return d;
+  }
+  // scores are drawn when they come near the screen (a few hundred tunes)
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) { es.forEach(function (e) {
+    if (e.isIntersecting && !e.target._drawn) { e.target._drawn = true; io.unobserve(e.target); draw(e.target._t, e.target); } }); }, { rootMargin: '800px 0px' }) : null;
+  function build() {
+    var bk = document.getElementById('bk').value, only = document.getElementById('only').checked, last = null;
+    root.innerHTML = '';
+    window.RHYTHM_TRANSCRIPTIONS.forEach(function (t) {
+      if (bk && t.book !== bk) return;
+      if (only && !t.bad && !(t.flags || []).length) return;
+      if (t.book !== last) { var h = document.createElement('h2'); h.className = 'bk'; h.textContent = t.book; root.appendChild(h); last = t.book; }
+      var d = tuneEl(t); d._t = t; root.appendChild(d);
+      if (io) io.observe(d); else draw(t, d);
     });
     refresh();
   }
+  var books = [];
+  window.RHYTHM_TRANSCRIPTIONS.forEach(function (t) { if (books.indexOf(t.book) < 0) books.push(t.book); });
+  var sel = document.getElementById('bk');
+  books.forEach(function (b) { var o = document.createElement('option'); o.value = b; o.textContent = b + ' (' + window.RHYTHM_TRANSCRIPTIONS.filter(function (t) { return t.book === b; }).length + ')'; sel.appendChild(o); });
+  if (view.bk && books.indexOf(view.bk) >= 0) sel.value = view.bk;
+  document.getElementById('only').checked = !!view.only;
+  function keep() { view = { bk: sel.value, only: document.getElementById('only').checked }; try { localStorage.setItem(SEL, JSON.stringify(view)); } catch (e) {} build(); }
+  sel.onchange = keep; document.getElementById('only').onchange = keep;
   document.getElementById('dl').onclick = function () {
     var blob = new Blob([JSON.stringify(merged(), null, 1) + '\n'], { type: 'application/json' });
     var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'rhythm-comments.json'; a.click();
   };
-  fetch('/apps/realbooks/rhythm-comments.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(build);
+  fetch('/apps/realbooks/rhythm-comments.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(function (all) { saved = all || {}; build(); });
 })();
 </script>
 ```

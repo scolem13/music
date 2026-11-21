@@ -2,236 +2,9243 @@
 window.RHYTHM_TRANSCRIPTIONS = [
 {
 "id": "23-angel",
+"book": "The Real Pop Book Vol. 2",
 "title": "Angel",
 "pdf": "23",
-"bad": 0,
+"form": "",
+"bad": 1,
+"off": [
+52
+],
+"first": 1,
 "unsure": 6,
+"flags": [
+{
+"bars": [
+7
+],
+"groups": [
+6
+],
+"text": "bar 7: chord then a treble-clef note, read as half + quarter"
+},
+{
+"bars": [
+14,
+15
+],
+"groups": [
+13,
+14
+],
+"text": "bar 2 ties (it o- / kay) read from the print: tie from 'o' to the next eighth, 'kay' tied to bar 3"
+},
+{
+"bars": [
+35
+],
+"groups": [
+34
+],
+"text": "'weight' bar: two eighths then two quarters, 'weight-less and'; second eighth given _"
+},
+{
+"bars": [
+42,
+43,
+44,
+45,
+46
+],
+"groups": [
+41,
+42,
+43,
+44,
+45
+],
+"text": "'an-gel' has one more note than syllables; extra note given _"
+},
+{
+"bars": [
+52
+],
+"groups": [
+51
+],
+"text": "first bar: rest then four eighths, read as 'and _ the end' (and held)"
+},
+{
+"bars": [
+61,
+62,
+63,
+64
+],
+"groups": [
+60,
+61,
+62,
+63
+],
+"text": "si-lent: syllables vs notes (eighth, quarter, eighth, quarter) and rev-er-ie ties"
+}
+],
 "note": "Rhythms, chords and lyrics only.",
-"abc": "X:1\nT:Angel\nC:Sarah McLachlan\n%source Real Pop Book Vol 2 p24 (pdf 23)\n%style (Gently)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:3/4\nL:1/8\nK:C\n%intro (piano) - tied chords, a bar line falls inside each tie\n\"C\"B6- | B6 | \"F(add9)/C\"B6- | B6 |\n\"C\"B6- | B6 | \"F(add9)/C\"B4 B2 | B2 BB B2 ||\nw: * * * * * * * * Spend all your time\n%segno, verse 1 (verse 2 is printed under it)\n\"D-\"B B3 z2 | z2 zB B2 | \"F\"B B2 B B2 | z2 z2 BB |\nw: wait- ing for that sec- ond chance, _ for a\nW: straight line, and ev- 'ry-where you turn there's\n\"C\"B2 B2 BB- | \"Fsus2/A\"B2 BB- BB- | \"G\"B2 z2 zB | B2 B2 BB |\nw: break that would make _ it o- _ kay. _ There's al- ways some _\n\"D-7\"B2 B2 z2 | z2 BB- B2 | \"F\"B2 B2 BB | \"Fsus2\"z2 z2 BB |\nw: rea- son to feel _ not good e- nough, and it's\n\"C\"B2 B2 BB- | \"Fsus2/A\"B2 B2 BB- | \"G\"B2 z2 zB | B2 B2 B2 |\nw: hard at the end _ of the day. _ I need some dis-\n\"D-7\"B2 B2 z2 | z2 B2- BB | \"F\"BB B2 BB | B2 z2 z2 |\nw: trac- tion, oh, _ _ beau- ti- ful re- lease. _\n\"C\"B2 B2 B2 | \"Fsus2/A\"B2 BB- B2 | \"G\"B2 z2 z2 | B2 B2 B2 |\nw: Mem- o- ries seep from my _ veins. Let me be\n\"D-\"B2 B2 z2 | z2 B2 B2 | \"F\"BB B2 B2 | B2 B2 zB |\nw: emp- ty, oh, and weight- _ less and may- be I'll\n%page 25 (pdf 24)\n\"C\"B4 B2 | \"A-7\"B4 BB | \"G7\"B4 z2 | z2 z2 BB |\nw: find some peace to- night _ in the\n\"C\"B6 |\nw: arms\n\"C6\"B4 BB | \"C\"B2 B2 z2 | z2 B2 B2 | \"E-\"B6- |\nw: of the an- _ gel. Fly a- way\nB4 BB- |\nw: _ from here,\nB4 z2 | z2 B2 B2 | \"F\"B6 | B4- BB |\nw: _ from this dark, cold _ ho-\nB B3 z2 |\nw: tel room\nBz BB B- | \"C\"B4 BB- | \"A-7\"B2 B2 BB | \"G7\"B4 z2 |\nw: and _ the end _ less- ness _ that you fear. _\n\"G7sus4\"z2 BB- B2 | \"C\"B6 | B4- BB | B B3 z2 |\nw: You are _ pulled from _ the wreck- age\nz2 B2 B2 |\nw: of your\n\"E-\"B B2 B- B2- | B2 BB- BB | B2 z2 z2 | z2 zB BB |\nw: si- * lent _ _ rev- er- _ ie. _ You're in the\n%segno segno (D.S.S. target)\n\"F\"B6 | \"Fsus4\"B4 BB | \"F\"B3 B B2 | z2 B2 B2 |\nw: arms of _ the an- * gel. May you\n\"C\"B6- |\nw: find\n\"A-7\"B2 BB B2- | \"G\"B2 z2 z2 | B2 B2 B2- | \"C\"B2 B4 |\n%TO CODA 1 sign before the C bar; TO CODA 2 over the whole-bar rest that follows\nw: _ _ _ _ _ some com- fort _ here.\nz6 | \"F/C\"z6 | z6 | \"C\"z6 |\nz6 | \"F(add9)/C\"z2 z2 B2 | B2 BB- BB ||\n%D.S. al coda 1\nw: You're so tired of _ the\n%coda 1\nB2 B4 | z6 | z6 | z2 zB BB ||\n%D.S.S. al coda 2\nw: _ here. You're in the\n%coda 2\nB6- | B6 | \"C\"B6- | B6 ||\n\n%unsure bar 7: chord then a treble-clef note, read as half + quarter\n%unsure bar 2 ties (it o- / kay) read from the print: tie from 'o' to the next eighth, 'kay' tied to bar 3\n%unsure 'weight' bar: two eighths then two quarters, 'weight-less and'; second eighth given _\n%unsure 'an-gel' has one more note than syllables; extra note given _\n%unsure first bar: rest then four eighths, read as 'and _ the end' (and held)\n%unsure si-lent: syllables vs notes (eighth, quarter, eighth, quarter) and rev-er-ie ties"
+"abc": "X:1\nT:Angel\nC:Sarah McLachlan\n%source Real Pop Book Vol 2 p24 (pdf 23)\n%style (Gently)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:3/4\nL:1/8\nK:C\n%intro (piano) - tied chords, a bar line falls inside each tie\n\"C\"B6- | B6 | \"F(add9)/C\"B6- | B6 |\n\"C\"B6- | B6 | \"F(add9)/C\"B4 B2 | B2 BB B2 ||\nw: * * * * * * * * Spend all your time\n%segno, verse 1 (verse 2 is printed under it)\n\"D-\"B B3 z2 | z2 zB B2 | \"F\"B B2 B B2 | z2 z2 BB |\nw: wait- ing for that sec- ond chance, _ for a\nW: straight line, and ev- 'ry-where you turn there's\n\"C\"B2 B2 BB- | \"Fsus2/A\"B2 BB- BB- | \"G\"B2 z2 zB | B2 B2 BB |\nw: break that would make _ it o- _ kay. _ There's al- ways some _\n\"D-7\"B2 B2 z2 | z2 BB- B2 | \"F\"B2 B2 BB | \"Fsus2\"z2 z2 BB |\nw: rea- son to feel _ not good e- nough, and it's\n\"C\"B2 B2 BB- | \"Fsus2/A\"B2 B2 BB- | \"G\"B2 z2 zB | B2 B2 B2 |\nw: hard at the end _ of the day. _ I need some dis-\n\"D-7\"B2 B2 z2 | z2 B2- BB | \"F\"BB B2 BB | B2 z2 z2 |\nw: trac- tion, oh, _ _ beau- ti- ful re- lease. _\n\"C\"B2 B2 B2 | \"Fsus2/A\"B2 BB- B2 | \"G\"B2 z2 z2 | B2 B2 B2 |\nw: Mem- o- ries seep from my _ veins. Let me be\n\"D-\"B2 B2 z2 | z2 B2 B2 | \"F\"BB B2 B2 | B2 B2 zB |\nw: emp- ty, oh, and weight- _ less and may- be I'll\n%page 25 (pdf 24)\n\"C\"B4 B2 | \"A-7\"B4 BB | \"G7\"B4 z2 | z2 z2 BB |\nw: find some peace to- night _ in the\n\"C\"B6 |\nw: arms\n\"C6\"B4 BB | \"C\"B2 B2 z2 | z2 B2 B2 | \"E-\"B6- |\nw: of the an- _ gel. Fly a- way\nB4 BB- |\nw: _ from here,\nB4 z2 | z2 B2 B2 | \"F\"B6 | B4- BB |\nw: _ from this dark, cold _ ho-\nB B3 z2 |\nw: tel room\nBz BB B- | \"C\"B4 BB- | \"A-7\"B2 B2 BB | \"G7\"B4 z2 |\nw: and _ the end _ less- ness _ that you fear. _\n\"G7sus4\"z2 BB- B2 | \"C\"B6 | B4- BB | B B3 z2 |\nw: You are _ pulled from _ the wreck- age\nz2 B2 B2 |\nw: of your\n\"E-\"B B2 B- B2- | B2 BB- BB | B2 z2 z2 | z2 zB BB |\nw: si- * lent _ _ rev- er- _ ie. _ You're in the\n%segno segno (D.S.S. target)\n\"F\"B6 | \"Fsus4\"B4 BB | \"F\"B3 B B2 | z2 B2 B2 |\nw: arms of _ the an- * gel. May you\n\"C\"B6- |\nw: find\n\"A-7\"B2 BB B2- | \"G\"B2 z2 z2 | B2 B2 B2- | \"C\"B2 B4 |\n%TO CODA 1 sign before the C bar; TO CODA 2 over the whole-bar rest that follows\nw: _ _ _ _ _ some com- fort _ here.\nz6 | \"F/C\"z6 | z6 | \"C\"z6 |\nz6 | \"F(add9)/C\"z2 z2 B2 | B2 BB- BB ||\n%D.S. al coda 1\nw: You're so tired of _ the\n%coda 1\nB2 B4 | z6 | z6 | z2 zB BB ||\n%D.S.S. al coda 2\nw: _ here. You're in the\n%coda 2\nB6- | B6 | \"C\"B6- | B6 ||\n\n%unsure [bar 7] bar 7: chord then a treble-clef note, read as half + quarter\n%unsure [bars 14-15] bar 2 ties (it o- / kay) read from the print: tie from 'o' to the next eighth, 'kay' tied to bar 3\n%unsure [bar 35] 'weight' bar: two eighths then two quarters, 'weight-less and'; second eighth given _\n%unsure [bars 42-46] 'an-gel' has one more note than syllables; extra note given _\n%unsure [bar 52] first bar: rest then four eighths, read as 'and _ the end' (and held)\n%unsure [bars 61-64] si-lent: syllables vs notes (eighth, quarter, eighth, quarter) and rev-er-ie ties"
 },
 {
 "id": "25-angel-eyes",
+"book": "The Real Pop Book Vol. 2",
 "title": "Angel Eyes",
 "pdf": "25",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 6,
+"flags": [
+{
+"bars": [
+1,
+2
+],
+"groups": [
+0,
+1
+],
+"text": "bars 1-2: opening rest value and the 2+1+1 split of each 3-note group"
+},
+{
+"bars": [
+3
+],
+"groups": [
+2
+],
+"text": "bar 3: rest as quarter, triplet of eighths on beat 2"
+},
+{
+"bars": [
+4,
+6
+],
+"groups": [
+3,
+5
+],
+"text": "bar 4 (and 6): the 16th pairs and the tie"
+},
+{
+"bars": [
+5
+],
+"groups": [
+4
+],
+"text": "bar 5 last beat (tied a, a, g)"
+},
+{
+"bars": [
+9
+],
+"groups": [
+8
+],
+"text": "bar 9: beats 3-4 tie placement"
+},
+{
+"bars": [
+10
+],
+"groups": [
+9
+],
+"text": "bar 10: opening rest and note values"
+}
+],
 "note": "Rhythms and chords only.  No lyrics. Bars 11-16 of the page not transcribed (out of time).",
-"abc": "X:1\nT:Angel Eyes\nC:John Hiatt / Fred Koller\n%source Real Pop Book Vol 2 p26 (pdf 25)\n%style (Med. slow)\n%note Rhythms and chords only. Pitches NOT transcribed: every note is written as B. No lyrics. Bars 11-16 of the page not transcribed (out of time).\nM:4/4\nL:1/16\nK:C\n%intro (guitar)\n|: \"C\"z2B2 B2BB \"G/C\"B2BB \"F/C\"B2BB | \"C\"z2B2 B2BB \"G/C\"B2BB \"F/C\"B2BB :|\n%verse (segno)\n|: \"C\"z4 (3B2B2B2 \"E-7\"B2BB- B2B2 | \"Fmaj7\"BB B4 BB- B4 \"G\"z4 | \"C\"z3B B2B2 \"E-7\"B3B- B2BB | \"Fmaj7\"BB B4 BB- B4 \"G\"z4 |\n\"F\"z4 z2BB B2 B4 \"E-7\"BB | \"D-7\"B2BB- B2B2 \"C/E\"B2 B6 | \"F\"z3B B2BB- \"E-7\"BBB2- BBB2 | \"D7\"z2B2 B2B2- BB B4 BB |\n\n%unsure bars 1-2: opening rest value and the 2+1+1 split of each 3-note group\n%unsure bar 3: rest as quarter, triplet of eighths on beat 2\n%unsure bar 4 (and 6): the 16th pairs and the tie\n%unsure bar 5 last beat (tied a, a, g)\n%unsure bar 9: beats 3-4 tie placement\n%unsure bar 10: opening rest and note values"
+"abc": "X:1\nT:Angel Eyes\nC:John Hiatt / Fred Koller\n%source Real Pop Book Vol 2 p26 (pdf 25)\n%style (Med. slow)\n%note Rhythms and chords only. Pitches NOT transcribed: every note is written as B. No lyrics. Bars 11-16 of the page not transcribed (out of time).\nM:4/4\nL:1/16\nK:C\n%intro (guitar)\n|: \"C\"z2B2 B2BB \"G/C\"B2BB \"F/C\"B2BB | \"C\"z2B2 B2BB \"G/C\"B2BB \"F/C\"B2BB :|\n%verse (segno)\n|: \"C\"z4 (3B2B2B2 \"E-7\"B2BB- B2B2 | \"Fmaj7\"BB B4 BB- B4 \"G\"z4 | \"C\"z3B B2B2 \"E-7\"B3B- B2BB | \"Fmaj7\"BB B4 BB- B4 \"G\"z4 |\n\"F\"z4 z2BB B2 B4 \"E-7\"BB | \"D-7\"B2BB- B2B2 \"C/E\"B2 B6 | \"F\"z3B B2BB- \"E-7\"BBB2- BBB2 | \"D7\"z2B2 B2B2- BB B4 BB |\n\n%unsure [bars 1-2] bars 1-2: opening rest value and the 2+1+1 split of each 3-note group\n%unsure [bar 3] bar 3: rest as quarter, triplet of eighths on beat 2\n%unsure [bars 4, 6] bar 4 (and 6): the 16th pairs and the tie\n%unsure [bar 5] bar 5 last beat (tied a, a, g)\n%unsure [bar 9] bar 9: beats 3-4 tie placement\n%unsure [bar 10] bar 10: opening rest and note values"
 },
 {
 "id": "45-blackbird",
+"book": "The Real Pop Book Vol. 2",
 "title": "Blackbird",
 "pdf": "45",
-"bad": 15,
+"form": "",
+"bad": 4,
+"off": [
+4,
+6,
+16,
+17
+],
+"first": 1,
 "unsure": 8,
+"flags": [
+{
+"bars": [
+2
+],
+"groups": [
+1
+],
+"text": "4/4 bar: two half notes, chord G"
+},
+{
+"bars": [
+3,
+4
+],
+"groups": [
+2,
+3
+],
+"text": "last 3/4 bar of the line: 16th, eighth, 16th beam read from partial beams; tied into a half note in a 4/4 bar that totals only 8"
+},
+{
+"bars": [
+5
+],
+"groups": [
+4
+],
+"text": "C bar: groups of 16ths and tie read by eye"
+},
+{
+"bars": [
+6
+],
+"groups": [
+5
+],
+"text": "bar of dotted half + rest in 4/4 against two chords; real meter unclear"
+},
+{
+"bars": [
+7
+],
+"groups": [
+6
+],
+"text": "3/2 bars (24 sixteenths)"
+},
+{
+"bars": [
+9,
+10,
+11,
+12
+],
+"groups": [
+8,
+9,
+10,
+11
+],
+"text": "ending 1 and 2: chord placement and meter changes (4/4, 2/4, (3/4)) read by eye"
+},
+{
+"bars": [
+13,
+14,
+15
+],
+"groups": [
+12,
+13,
+14
+],
+"text": "bridge bars: dotted quarter + eighth ties; tie into the half-note bar makes it over-full"
+},
+{
+"bars": [
+16,
+17,
+18
+],
+"groups": [
+15,
+16,
+17
+],
+"text": "last line: tie into bar, 2/4 sixteenth bar and 3/4 dotted half"
+}
+],
 "note": "Rhythms and chords only.",
-"abc": "X:1\nT:Blackbird\nC:John Lennon / Paul McCartney\n%source Real Pop Book Vol 2 p46 (pdf 45)\n%style (Slowly)\n%note Rhythms and chords only. Pitches NOT transcribed: every note is written as B.\nM:3/4\nL:1/16\nK:G\n%intro (guitar)\n\"G\"B4 \"A-7\"B4 \"G/B\"B4 | [M:4/4]\"G\"B8 B8 ||\n%verse\n|: \"G\"B2B2 \"A-7\"BBBB \"G/B\"BB2B- | [M:4/4]B8 | \"C\"B2B2 \"A7/C#\"BBB2- \"D7\"B2B2 \"B7/D#\"BB2B- | \"E-\"B6 \"C-/Eb\"z2 |\n[M:3/2]\"G/D\"B4 \"A7/C#\"B2B2- \"A-7/C\"B8- \"C-\"B4 z4 | \"G/B\"BB3 B2B2 \"A7\"B2B2 B2B2 \"A-7/D\"B2B2 \"D7\"B2B2 | [1 \"G\"B8 \"C\"z8 | \"G/B\"z8 \"A7\"z4 \"D7\"z4 |\n[M:2/4]\"G\"z8 :|2 [M:2/4]\"G\"B8 || [M:4/4]\"F\"B6 \"C/E\"B2- B4 \"D-\"B2-\"C\"B2 | \"Bb\"B8- \"C\"B8 |\n\"F\"B6 \"C/E\"B2- B4 \"D-\"B2-\"C\"B2- | \"Bb\"B6 \"A7\"B2 B1B1B2 | [M:2/4]\"D7\"B2B2 B2B1B1 B2 | [M:3/4]\"G\"B6 \"A-7\"z2 \"G/B\"z4 |]\n\n%unsure 4/4 bar: two half notes, chord G\n%unsure last 3/4 bar of the line: 16th, eighth, 16th beam read from partial beams; tied into a half note in a 4/4 bar that totals only 8\n%unsure C bar: groups of 16ths and tie read by eye\n%unsure bar of dotted half + rest in 4/4 against two chords; real meter unclear\n%unsure 3/2 bars (24 sixteenths)\n%unsure ending 1 and 2: chord placement and meter changes (4/4, 2/4, (3/4)) read by eye\n%unsure bridge bars: dotted quarter + eighth ties; tie into the half-note bar makes it over-full\n%unsure last line: tie into bar, 2/4 sixteenth bar and 3/4 dotted half"
+"abc": "X:1\nT:Blackbird\nC:John Lennon / Paul McCartney\n%source Real Pop Book Vol 2 p46 (pdf 45)\n%style (Slowly)\n%note Rhythms and chords only. Pitches NOT transcribed: every note is written as B.\nM:3/4\nL:1/16\nK:G\n%intro (guitar)\n\"G\"B4 \"A-7\"B4 \"G/B\"B4 | [M:4/4]\"G\"B8 B8 ||\n%verse\n|: \"G\"B2B2 \"A-7\"BBBB \"G/B\"BB2B- | [M:4/4]B8 | \"C\"B2B2 \"A7/C#\"BBB2- \"D7\"B2B2 \"B7/D#\"BB2B- | \"E-\"B6 \"C-/Eb\"z2 |\n[M:3/2]\"G/D\"B4 \"A7/C#\"B2B2- \"A-7/C\"B8- \"C-\"B4 z4 | \"G/B\"BB3 B2B2 \"A7\"B2B2 B2B2 \"A-7/D\"B2B2 \"D7\"B2B2 | [1 \"G\"B8 \"C\"z8 | \"G/B\"z8 \"A7\"z4 \"D7\"z4 |\n[M:2/4]\"G\"z8 :|2 [M:2/4]\"G\"B8 || [M:4/4]\"F\"B6 \"C/E\"B2- B4 \"D-\"B2-\"C\"B2 | \"Bb\"B8- \"C\"B8 |\n\"F\"B6 \"C/E\"B2- B4 \"D-\"B2-\"C\"B2- | \"Bb\"B6 \"A7\"B2 B1B1B2 | [M:2/4]\"D7\"B2B2 B2B1B1 B2 | [M:3/4]\"G\"B6 \"A-7\"z2 \"G/B\"z4 |]\n\n%unsure [bar 2] 4/4 bar: two half notes, chord G\n%unsure [bars 3-4] last 3/4 bar of the line: 16th, eighth, 16th beam read from partial beams; tied into a half note in a 4/4 bar that totals only 8\n%unsure [bar 5] C bar: groups of 16ths and tie read by eye\n%unsure [bar 6] bar of dotted half + rest in 4/4 against two chords; real meter unclear\n%unsure [bar 7] 3/2 bars (24 sixteenths)\n%unsure [bars 9-12] ending 1 and 2: chord placement and meter changes (4/4, 2/4, (3/4)) read by eye\n%unsure [bars 13-15] bridge bars: dotted quarter + eighth ties; tie into the half-note bar makes it over-full\n%unsure [bars 16-18] last line: tie into bar, 2/4 sixteenth bar and 3/4 dotted half"
 },
 {
 "id": "47-both-sides-now",
+"book": "The Real Pop Book Vol. 2",
 "title": "Both Sides Now",
 "pdf": "47",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 2,
+"flags": [
+{
+"bars": [
+3
+],
+"groups": [
+2
+],
+"text": "bar 2 chord D6/A placed before the tied quarter (3rd beat)"
+},
+{
+"bars": [
+16,
+17
+],
+"groups": [
+15,
+16
+],
+"text": "last two bars end with a tie into the next page (bar 17 final eighth tied)"
+}
+],
 "note": "Rhythms and chords only, no lyrics.  Page 47 only; page 48 not done.",
-"abc": "X:1\nT:Both Sides Now\nC:Joni Mitchell\n%source Real Pop Book Vol 2 p48 (pdf 47)\n%style (Med.)\n%note Rhythms and chords only, no lyrics. Pitches NOT transcribed: every note is B. Page 47 only; page 48 not done.\nM:4/4\nL:1/16\nK:A\n%intro (strings)\nB2B2 B2B2 B2B2 B2B2 | B2B2 B2B2 B2B2 B2B2 |]\n%verse\n|: \"A\"B4 B4 \"D6/A\"B4 B4 | B4 B2B2- B4 z2B2 | \"A\"B4 B4 \"C#-\"B2 B6- | \"D\"B4 B2B2 \"A\"B4 z2B2 |\nB4 B2B2- \"D\"B4 B4- | \"B-7\"(3B2B2B2 B12 | z2B2 B2B2 B8 | \"E7\"B2 B6- B4 z2B2 |\n\"A\"B6 B2 \"D6/A\"B4 B4 | \"A\"B4 B2B2- \"D6/A\"B4 z2B2 | \"A\"B4 B4 \"C#-\"B4 B4 | \"D\"B4 B2B2- \"A\"B8 |\n\"D\"z2B2 B4 B2 B4 B2- | \"B-7\"B4 B2B2 B8 | z2B2 B4- B2B2 B2B2- |\n\n%unsure bar 2 chord D6/A placed before the tied quarter (3rd beat)\n%unsure last two bars end with a tie into the next page (bar 17 final eighth tied)"
+"abc": "X:1\nT:Both Sides Now\nC:Joni Mitchell\n%source Real Pop Book Vol 2 p48 (pdf 47)\n%style (Med.)\n%note Rhythms and chords only, no lyrics. Pitches NOT transcribed: every note is B. Page 47 only; page 48 not done.\nM:4/4\nL:1/16\nK:A\n%intro (strings)\nB2B2 B2B2 B2B2 B2B2 | B2B2 B2B2 B2B2 B2B2 |]\n%verse\n|: \"A\"B4 B4 \"D6/A\"B4 B4 | B4 B2B2- B4 z2B2 | \"A\"B4 B4 \"C#-\"B2 B6- | \"D\"B4 B2B2 \"A\"B4 z2B2 |\nB4 B2B2- \"D\"B4 B4- | \"B-7\"(3B2B2B2 B12 | z2B2 B2B2 B8 | \"E7\"B2 B6- B4 z2B2 |\n\"A\"B6 B2 \"D6/A\"B4 B4 | \"A\"B4 B2B2- \"D6/A\"B4 z2B2 | \"A\"B4 B4 \"C#-\"B4 B4 | \"D\"B4 B2B2- \"A\"B8 |\n\"D\"z2B2 B4 B2 B4 B2- | \"B-7\"B4 B2B2 B8 | z2B2 B4- B2B2 B2B2- |\n\n%unsure [bar 3] bar 2 chord D6/A placed before the tied quarter (3rd beat)\n%unsure [bars 16-17] last two bars end with a tie into the next page (bar 17 final eighth tied)"
 },
 {
 "id": "61-candle-in-the-wind",
+"book": "The Real Pop Book Vol. 2",
 "title": "Candle In The Wind",
 "pdf": "61",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 9,
+"flags": [
+{
+"bars": [
+1
+],
+"groups": [
+0
+],
+"text": "bar 1: dotted-quarter chord, low eighth, then four eighths"
+},
+{
+"bars": [
+2
+],
+"groups": [
+1
+],
+"text": "bar 2: chord placement of E/G# and F#-7 by eye"
+},
+{
+"bars": [
+3
+],
+"groups": [
+2
+],
+"text": "bar 3: rhythm and chord positions (E, Eadd4, E) by eye"
+},
+{
+"bars": [
+4
+],
+"groups": [
+3
+],
+"text": "bar 4: 6+2+2+2+4 and B7 position by eye"
+},
+{
+"bars": [
+5,
+6
+],
+"groups": [
+4,
+5
+],
+"text": "verse bar 1-2: ties across barline"
+},
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "bars 3-4: sixteenth groups and what is tied by eye"
+},
+{
+"bars": [
+9,
+10
+],
+"groups": [
+8,
+9
+],
+"text": "bars 5-6"
+},
+{
+"bars": [
+13,
+14
+],
+"groups": [
+12,
+13
+],
+"text": "bar 8-9 (the first bar of a system here: rest lengths by eye)"
+},
+{
+"bars": [
+17,
+18
+],
+"groups": [
+16,
+17
+],
+"text": "whole next system"
+}
+],
 "note": "Rhythms and chords only.  Page 1 of 2 (continues on pdf 62).",
-"abc": "X:1\nT:Candle In The Wind\nC:Elton John / Bernie Taupin\n%source Real Pop Book Vol 2 p62 (pdf 61)\n%style (Med. slow)\n%note Rhythms and chords only. Pitches NOT transcribed: every note is written as B. Page 1 of 2 (continues on pdf 62).\nM:4/4\nL:1/16\nK:E\n%intro (piano)\n\"B\"B6 B2 B2B2 B2B2 | \"A\"B2B2 B2\"E/G#\"B2 B2 \"F#-7\"B4 B2 | \"E\"B6 \"Eadd4\"B2 \"E\"B2B2 B2B2 | \"B\"B6 B2 \"B7\"B2B2 B4 |]\n%segno\n|: \"E\"B2 B4 B2- B2B2 B4- | B4 z4 B2B2 B2B2 | \"A\"z4 B2B2- B2B2 B2B1B1- | B2B1B1 B2-B2 B2B2 B2B2- |\n\"E/G#\"B2B2 B8 z2B2 | B4 B2B2- B2B2 B2B2- | \"A\"B4 z4 z8 | z8 z4 B2B2 |\n\"E\"B2 B6 z8 | z8 B2B2 B2B2 | \"A\"z4 B2B2- B2B2 B2B1B1- | B2B2 B2B2- B2B2 B2B2- |\n\"E/G#\"B2 B6 z4 B2B2 | B4 B2B2- B2B2 B2B2- | \"A\"B4 z4 z8 | z8 z4 B2B2 |\n%bridge\n\"B\"B4 B2B2- B4 z2B2 | B2 B4 B1B1 B4 B2B2 |\n\n%unsure bar 1: dotted-quarter chord, low eighth, then four eighths\n%unsure bar 2: chord placement of E/G# and F#-7 by eye\n%unsure bar 3: rhythm and chord positions (E, Eadd4, E) by eye\n%unsure bar 4: 6+2+2+2+4 and B7 position by eye\n%unsure verse bar 1-2: ties across barline\n%unsure bars 3-4: sixteenth groups and what is tied by eye\n%unsure bars 5-6\n%unsure bar 8-9 (the first bar of a system here: rest lengths by eye)\n%unsure whole next system"
+"abc": "X:1\nT:Candle In The Wind\nC:Elton John / Bernie Taupin\n%source Real Pop Book Vol 2 p62 (pdf 61)\n%style (Med. slow)\n%note Rhythms and chords only. Pitches NOT transcribed: every note is written as B. Page 1 of 2 (continues on pdf 62).\nM:4/4\nL:1/16\nK:E\n%intro (piano)\n\"B\"B6 B2 B2B2 B2B2 | \"A\"B2B2 B2\"E/G#\"B2 B2 \"F#-7\"B4 B2 | \"E\"B6 \"Eadd4\"B2 \"E\"B2B2 B2B2 | \"B\"B6 B2 \"B7\"B2B2 B4 |]\n%segno\n|: \"E\"B2 B4 B2- B2B2 B4- | B4 z4 B2B2 B2B2 | \"A\"z4 B2B2- B2B2 B2B1B1- | B2B1B1 B2-B2 B2B2 B2B2- |\n\"E/G#\"B2B2 B8 z2B2 | B4 B2B2- B2B2 B2B2- | \"A\"B4 z4 z8 | z8 z4 B2B2 |\n\"E\"B2 B6 z8 | z8 B2B2 B2B2 | \"A\"z4 B2B2- B2B2 B2B1B1- | B2B2 B2B2- B2B2 B2B2- |\n\"E/G#\"B2 B6 z4 B2B2 | B4 B2B2- B2B2 B2B2- | \"A\"B4 z4 z8 | z8 z4 B2B2 |\n%bridge\n\"B\"B4 B2B2- B4 z2B2 | B2 B4 B1B1 B4 B2B2 |\n\n%unsure [bar 1] bar 1: dotted-quarter chord, low eighth, then four eighths\n%unsure [bar 2] bar 2: chord placement of E/G# and F#-7 by eye\n%unsure [bar 3] bar 3: rhythm and chord positions (E, Eadd4, E) by eye\n%unsure [bar 4] bar 4: 6+2+2+2+4 and B7 position by eye\n%unsure [bars 5-6] verse bar 1-2: ties across barline\n%unsure [bars 7-8] bars 3-4: sixteenth groups and what is tied by eye\n%unsure [bars 9-10] bars 5-6\n%unsure [bars 13-14] bar 8-9 (the first bar of a system here: rest lengths by eye)\n%unsure [bars 17-18] whole next system"
 },
 {
 "id": "69-chasing-cars",
+"book": "The Real Pop Book Vol. 2",
 "title": "Chasing Cars",
 "pdf": "69",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 0,
+"flags": [],
 "note": "Rhythms and chords only.  Page 69 only (page 70 not done).",
 "abc": "X:1\nT:Chasing Cars\nC:Gary Lightbody / Tom Simpson / Paul Wilson / Jonathan Quinn / Nathan Connolly\n%source Real Pop Book Vol 2 p70 (pdf 69)\n%style (Med.)\n%note Rhythms and chords only. Pitches NOT transcribed: every note is written as B. Page 69 only (page 70 not done).\nM:4/4\nL:1/16\nK:A\n%intro (guitar)\n\"A\"B2B2 B2B2 B2B2 B2B2 | B2B2 B2B2 B2B2 B2B2 |\n%verse\n|: z8 z4 z2B2 | B2 B4 B2- B4 B2B2- | \"E/G#\"B4 z4 z8 | B2 B4 B2- B4 B2B2- |\n\"Dsus2\"B4 z4 z8 | B6 B2- B4 B2B2- | \"A5\"B4 z4 z8 | B2B2 B2B2 B2B2 B2B2 |\nB2B2 B2B2 B2B2 B2B2 | B6 B2- B4 B4- | \"E/G#\"B4 z4 z8 | B2 B4 B2- B4 B2B2- |\n\"Dsus2\"B4 z4 z4 z2B2 | B2 B4 B2- B4 B2B2- | \"A5\"B4 z4 z8 | z8 B2B2 B4 |\n%chorus (segno)\nB8 z8 | z8 B2B2 B4 | \"E/G#\"B6 B2- B8 | z8 B2B2 B4 |\n\"Dsus2\"B6 B2- B2 B6 | B2 B4 B2 B2 B6 |\n%to coda 2\n[1 \"A5\"B2B2 B2B2 B2B2 B2B2 | B2B2 B2B2 B2B2 B2B2 :|2 B2B2 B2B2 B2B2 B2B2 | z4 z2B2 B2B2 B4 |\nB2 B6 z8 | z4 z2B2 B2B2 B4 |\n"
 },
 {
 "id": "103-easy",
+"book": "The Real Pop Book Vol. 2",
 "title": "Easy",
 "pdf": "103",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 2,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro rhythm (quarter rest then dotted-8th + 16th pairs) read from a small scan"
+},
+{
+"bars": [
+5
+],
+"groups": [
+4
+],
+"text": "first bar of the verse: 16th groupings guessed so the bar adds up; second verse not given"
+}
+],
 "note": "Rhythms, chords and lyrics only.",
-"abc": "X:1\nT:Easy\nC:Lionel Richie\n%source Real Pop Book Vol 2 p104 (pdf 103)\n%style (Slow Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Ab\n%intro\nz2 \"Cm7\"B3/2B/2 B2 B3/2B/2 | z2 B3/2B/2 B2 B3/2B/2 | z2 B3/2B/2 B2 B3/2B/2 | B8 |\n%verse\n\"Ab\"z3/2B/2 B/2B/2B \"Cm7\"B/2B/2B/2B/2 BB | \"Bbm7\"BB/2B/2- B2 \"Db/Eb\"z4 |\nw: I know it sounds fun- ny, but I just can't stand the pain. _\n\n%unsure intro rhythm (quarter rest then dotted-8th + 16th pairs) read from a small scan\n%unsure first bar of the verse: 16th groupings guessed so the bar adds up; second verse not given"
+"abc": "X:1\nT:Easy\nC:Lionel Richie\n%source Real Pop Book Vol 2 p104 (pdf 103)\n%style (Slow Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Ab\n%intro\nz2 \"Cm7\"B3/2B/2 B2 B3/2B/2 | z2 B3/2B/2 B2 B3/2B/2 | z2 B3/2B/2 B2 B3/2B/2 | B8 |\n%verse\n\"Ab\"z3/2B/2 B/2B/2B \"Cm7\"B/2B/2B/2B/2 BB | \"Bbm7\"BB/2B/2- B2 \"Db/Eb\"z4 |\nw: I know it sounds fun- ny, but I just can't stand the pain. _\n\n%unsure [bars 1-4] intro rhythm (quarter rest then dotted-8th + 16th pairs) read from a small scan\n%unsure [bar 5] first bar of the verse: 16th groupings guessed so the bar adds up; second verse not given"
 },
 {
 "id": "111-endless-love",
+"book": "The Real Pop Book Vol. 2",
 "title": "Endless Love",
 "pdf": "111",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 2,
+"flags": [
+{
+"bars": [
+4
+],
+"groups": [
+3
+],
+"text": "verse 2 words (\"Two hearts, two hearts that beat as one\") not given; lyric alignment of bar 2 approximate"
+},
+{
+"bars": [],
+"groups": [],
+"text": "only the first system and a half of page 112 transcribed (out of time); rest of page and page 113 not done"
+}
+],
 "note": "Rhythms, chords and lyrics only.",
-"abc": "X:1\nT:Endless Love\nC:Lionel Richie\n%source Real Pop Book Vol 2 p112 (pdf 111)\n%style (Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Bb\n%intro (piano)\n\"Bb\"BB BB BB BB | BB BB BB BB |: \"Bb\"B3 B- B4 |\nw: My love, _\nz4 (3B2B2B2 | \"Eb\"B2- (3BBB B B3 | \"Cm7/F\"z3 \"F\"B B2 B2 |\nw: there's on- ly you _ in my life; _ the on- ly\n\"Bb\"B B2 B- B4 | z8 | BB BB- B4 | z4 (3B2B2B2 |\nw: thing that's right. _ My first _ love, _ you're ev- 'ry\n\n%unsure verse 2 words (\"Two hearts, two hearts that beat as one\") not given; lyric alignment of bar 2 approximate\n%unsure only the first system and a half of page 112 transcribed (out of time); rest of page and page 113 not done"
+"abc": "X:1\nT:Endless Love\nC:Lionel Richie\n%source Real Pop Book Vol 2 p112 (pdf 111)\n%style (Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Bb\n%intro (piano)\n\"Bb\"BB BB BB BB | BB BB BB BB |: \"Bb\"B3 B- B4 |\nw: My love, _\nz4 (3B2B2B2 | \"Eb\"B2- (3BBB B B3 | \"Cm7/F\"z3 \"F\"B B2 B2 |\nw: there's on- ly you _ in my life; _ the on- ly\n\"Bb\"B B2 B- B4 | z8 | BB BB- B4 | z4 (3B2B2B2 |\nw: thing that's right. _ My first _ love, _ you're ev- 'ry\n\n%unsure [bar 4] verse 2 words (\"Two hearts, two hearts that beat as one\") not given; lyric alignment of bar 2 approximate\n%unsure [general] only the first system and a half of page 112 transcribed (out of time); rest of page and page 113 not done"
 },
 {
 "id": "115-eternal-flame",
+"book": "The Real Pop Book Vol. 2",
 "title": "Eternal Flame",
 "pdf": "115",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 4,
+"flags": [
+{
+"bars": [
+3,
+4
+],
+"groups": [
+2,
+3
+],
+"text": "beat grouping of bars 1-2 read from a small scan: some note lengths may be off"
+},
+{
+"bars": [
+5,
+6
+],
+"groups": [
+4,
+5
+],
+"text": "lyric alignment on this line is approximate (tie after \"feel\", syllable \"ing\")"
+},
+{
+"bars": [
+7
+],
+"groups": [
+6
+],
+"text": "first bar of this line: rests and tie read approximately"
+},
+{
+"bars": [
+9,
+10
+],
+"groups": [
+8,
+9
+],
+"text": "ending 1 is 4 bars in the book (2 + 2 after repeat), only what is clear is written"
+}
+],
 "note": "Rhythms, chords and lyrics only.",
-"abc": "X:1\nT:Eternal Flame\nC:Billy Steinberg / Tom Kelly / Susanna Hoffs\n%source Real Pop Book Vol 2 p116 (pdf 115)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:G\n%intro (guitar)\n|: \"G\"BB BB \"Gaug\"BB BB | \"G\"BB BB \"Gaug\"BB BB :|\n%verse\n|: \"G\"z2 BB/B/- \"Em7\"B2 z2 | \"C\"BB BB- B2 \"D\"BB |\nw: Close your eyes, _ give me your hand, _ dar- ling.\n\"G\"z2 BB/B/- BB BB | \"C\"BB z2 \"D\"BB BB/B/- |\nw: Do you feel _ my heart beat- ing? Do you un- der- stand? _\n\"Em7\"zB BB \"B7\"BB zB- | \"Em7\"B z3 \"A7\"z/B/B BB |\nw: Do you feel the same _ or am I on- ly\n[1 \"D\"B3 B B4 | \"Bm\"B2 B2 BB zB :|\nw: dream- in'? Is this burn- ing\n\n%unsure beat grouping of bars 1-2 read from a small scan: some note lengths may be off\n%unsure lyric alignment on this line is approximate (tie after \"feel\", syllable \"ing\")\n%unsure first bar of this line: rests and tie read approximately\n%unsure ending 1 is 4 bars in the book (2 + 2 after repeat), only what is clear is written"
+"abc": "X:1\nT:Eternal Flame\nC:Billy Steinberg / Tom Kelly / Susanna Hoffs\n%source Real Pop Book Vol 2 p116 (pdf 115)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:G\n%intro (guitar)\n|: \"G\"BB BB \"Gaug\"BB BB | \"G\"BB BB \"Gaug\"BB BB :|\n%verse\n|: \"G\"z2 BB/B/- \"Em7\"B2 z2 | \"C\"BB BB- B2 \"D\"BB |\nw: Close your eyes, _ give me your hand, _ dar- ling.\n\"G\"z2 BB/B/- BB BB | \"C\"BB z2 \"D\"BB BB/B/- |\nw: Do you feel _ my heart beat- ing? Do you un- der- stand? _\n\"Em7\"zB BB \"B7\"BB zB- | \"Em7\"B z3 \"A7\"z/B/B BB |\nw: Do you feel the same _ or am I on- ly\n[1 \"D\"B3 B B4 | \"Bm\"B2 B2 BB zB :|\nw: dream- in'? Is this burn- ing\n\n%unsure [bars 3-4] beat grouping of bars 1-2 read from a small scan: some note lengths may be off\n%unsure [bars 5-6] lyric alignment on this line is approximate (tie after \"feel\", syllable \"ing\")\n%unsure [bar 7] first bar of this line: rests and tie read approximately\n%unsure [bars 9-10] ending 1 is 4 bars in the book (2 + 2 after repeat), only what is clear is written"
 },
 {
 "id": "129-fields-of-gold",
+"book": "The Real Pop Book Vol. 2",
 "title": "Fields Of Gold",
 "pdf": "129",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 5,
+"flags": [
+{
+"bars": [
+14
+],
+"groups": [
+13
+],
+"text": "bar 4 shows a half rest with a half-note head under it (a cue); written as a half rest, z4"
+},
+{
+"bars": [
+22
+],
+"groups": [
+21
+],
+"text": "the vocal on the 1st ending (\"Will you\") leads back to the verse; the D.S. al Coda and TO CODA signs are printed here (TO CODA on the 1st ending bar)"
+},
+{
+"bars": [
+31
+],
+"groups": [
+30
+],
+"text": "triplet lyrics: \"We'll\" over the first note, held through the second and third"
+},
+{
+"bars": [
+44
+],
+"groups": [
+43
+],
+"text": "second ending triplet: \"when\" on the first note, held, \"we\" on the third"
+},
+{
+"bars": [],
+"groups": [],
+"text": "verse 2 is printed under the same notes but not checked note for note, so it is given as plain text"
+}
+],
 "note": "Rhythms, chords and lyrics only.",
-"abc": "X:1\nT:Fields Of Gold\nC:Sting\n%source Real Pop Book Vol 2 p130 (pdf 129)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:D\n%intro (bass, bars repeat; 4th time the vocal enters)\n|: \"Bm7\"B3 B- B2 BB |1 ,2,3B3 B- B2 BB :|4 z4 z2 BB |: \"Bsus2\"B B2 B z2 BB |\nw: * * _ * * * * _ * * You'll re- mem- ber me when the\n\"G\"B B2 B- B2 zB | B2 BB- B2 BB- | \"D\"BB z2 z2 BB |\nw: west wind moves _ up- on the fields _ of bar- _ ley. You'll for-\n\"Bsus2\"B B2 B z2 BB | \"G\"B B2 \"D\"B z2 BB | \"G/B\"B B2 \"A\"B- BB B2 ||\nw: get the sun in his jeal- ous sky as we walk in fields _ of gold.\n%instrumental (Northumbrian smallpipes)\n\"Bm7\"B8- | \"G\"B3 B/B/ BB/B/ B2 | \"D\"B6 BB | z4 z2 BB |\nw: * * * * * * * * * * * So she\n%segno\n\"Bsus2\"B B2 B z2 BB | \"G\"B2 BB- B2 zB | B2 BB- B2 BB- |\nw: took her love for to gaze a- while _ up- on the fields _ of bar-\n\"D\"BB z2 z2 BB | \"Bsus2\"B2 BB z2 BB | \"G\"B B2 \"D\"B z2 BB- |\nw: _ ley. In his arms she fell as her hair came down a- mong\n\"G/B\"B2 B\"A\"B- BB B2 |1 \"D\"z4 z2 BB :|2 \"D\"z8 || \"G\"z2 zB BB B2 |\nw: _ the fields _ of gold. Will you I nev- er made\n\"D\"BB B2 B2 B2 | \"G\"z2 zB BB B2 | \"D\"BB B2 B2 B2 |\nw: prom- is- es light- ly, and there have been some that I've bro- ken,\n\"G\"zB BB- B2 BB | \"D\"B2 B2 B2 BB- | \"G/B\"B2 B\"A\"B- BB B2 |\nw: but I swear _ in the days still left we'll walk _ in fields _ of gold.\n%D.S. al Coda\n\"D\"z4 z2 (3BBB | \"G/B\"B2 B\"A\"B- BB B2 | \"D\"z8 | z8 ||\nw: We'll _ _ walk in fields _ of gold.\n%coda\n\"D\"z4 z2 BB |: \"Bsus2\"B B2 B z2 BB- | \"G\"BB/B/ B4 zB |\nw: Man- y years have passed since those _ sum- mer days a-\nB2 BB- B2 BB- | \"D\"BB z2 z2 BB | \"Bsus2\"B B2 B z2 BB |\nw: mong the fields _ of bar- _ ley. See the chil- dren run as the\n\"G\"B B2 \"D\"B z2 BB- | \"G/B\"B2 B\"A\"B- BB B2 |1 \"D\"z4 z2 BB :|\nw: sun goes down a- mong _ the fields _ of gold. You'll re-\n|2 \"D\"z4 z2 (3BBB | \"G/B\"B2 B\"A\"B- BB B2 | \"D\"z4 z2 BB | \"G/B\"B2 B\"A\"B- BB B2 |\nw: when _ we walked in fields _ of gold, when we walked in fields _ of gold.\n%outro (rhythm slashes, play 7x)\n|: \"D\"B3 \"G/D\"B- B2 \"D\"B2 :| \"D\"B8 |]\nW:Verse 2: (Will you) stay with me, will you be my love a-mong the fields of bar-ley? We'll for-get the sun in his jeal-ous sky as we lie in fields of gold. (Instrumental) See the west wind move like a lov-er so up-on the fields of bar-ley. Feel her bod-y rise when you kiss her mouth a-mong the fields of gold. (Coda) Re-mem-ber me when the west wind moves up-on the fields of bar-ley. You can tell the sun in his jeal-ous sky when we walked in fields of gold, when we walked in fields of gold.\n\n%unsure bar 4 shows a half rest with a half-note head under it (a cue); written as a half rest, z4\n%unsure the vocal on the 1st ending (\"Will you\") leads back to the verse; the D.S. al Coda and TO CODA signs are printed here (TO CODA on the 1st ending bar)\n%unsure triplet lyrics: \"We'll\" over the first note, held through the second and third\n%unsure second ending triplet: \"when\" on the first note, held, \"we\" on the third\n%unsure verse 2 is printed under the same notes but not checked note for note, so it is given as plain text"
+"abc": "X:1\nT:Fields Of Gold\nC:Sting\n%source Real Pop Book Vol 2 p130 (pdf 129)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:D\n%intro (bass, bars repeat; 4th time the vocal enters)\n|: \"Bm7\"B3 B- B2 BB |1 ,2,3B3 B- B2 BB :|4 z4 z2 BB |: \"Bsus2\"B B2 B z2 BB |\nw: * * _ * * * * _ * * You'll re- mem- ber me when the\n\"G\"B B2 B- B2 zB | B2 BB- B2 BB- | \"D\"BB z2 z2 BB |\nw: west wind moves _ up- on the fields _ of bar- _ ley. You'll for-\n\"Bsus2\"B B2 B z2 BB | \"G\"B B2 \"D\"B z2 BB | \"G/B\"B B2 \"A\"B- BB B2 ||\nw: get the sun in his jeal- ous sky as we walk in fields _ of gold.\n%instrumental (Northumbrian smallpipes)\n\"Bm7\"B8- | \"G\"B3 B/B/ BB/B/ B2 | \"D\"B6 BB | z4 z2 BB |\nw: * * * * * * * * * * * So she\n%segno\n\"Bsus2\"B B2 B z2 BB | \"G\"B2 BB- B2 zB | B2 BB- B2 BB- |\nw: took her love for to gaze a- while _ up- on the fields _ of bar-\n\"D\"BB z2 z2 BB | \"Bsus2\"B2 BB z2 BB | \"G\"B B2 \"D\"B z2 BB- |\nw: _ ley. In his arms she fell as her hair came down a- mong\n\"G/B\"B2 B\"A\"B- BB B2 |1 \"D\"z4 z2 BB :|2 \"D\"z8 || \"G\"z2 zB BB B2 |\nw: _ the fields _ of gold. Will you I nev- er made\n\"D\"BB B2 B2 B2 | \"G\"z2 zB BB B2 | \"D\"BB B2 B2 B2 |\nw: prom- is- es light- ly, and there have been some that I've bro- ken,\n\"G\"zB BB- B2 BB | \"D\"B2 B2 B2 BB- | \"G/B\"B2 B\"A\"B- BB B2 |\nw: but I swear _ in the days still left we'll walk _ in fields _ of gold.\n%D.S. al Coda\n\"D\"z4 z2 (3BBB | \"G/B\"B2 B\"A\"B- BB B2 | \"D\"z8 | z8 ||\nw: We'll _ _ walk in fields _ of gold.\n%coda\n\"D\"z4 z2 BB |: \"Bsus2\"B B2 B z2 BB- | \"G\"BB/B/ B4 zB |\nw: Man- y years have passed since those _ sum- mer days a-\nB2 BB- B2 BB- | \"D\"BB z2 z2 BB | \"Bsus2\"B B2 B z2 BB |\nw: mong the fields _ of bar- _ ley. See the chil- dren run as the\n\"G\"B B2 \"D\"B z2 BB- | \"G/B\"B2 B\"A\"B- BB B2 |1 \"D\"z4 z2 BB :|\nw: sun goes down a- mong _ the fields _ of gold. You'll re-\n|2 \"D\"z4 z2 (3BBB | \"G/B\"B2 B\"A\"B- BB B2 | \"D\"z4 z2 BB | \"G/B\"B2 B\"A\"B- BB B2 |\nw: when _ we walked in fields _ of gold, when we walked in fields _ of gold.\n%outro (rhythm slashes, play 7x)\n|: \"D\"B3 \"G/D\"B- B2 \"D\"B2 :| \"D\"B8 |]\nW:Verse 2: (Will you) stay with me, will you be my love a-mong the fields of bar-ley? We'll for-get the sun in his jeal-ous sky as we lie in fields of gold. (Instrumental) See the west wind move like a lov-er so up-on the fields of bar-ley. Feel her bod-y rise when you kiss her mouth a-mong the fields of gold. (Coda) Re-mem-ber me when the west wind moves up-on the fields of bar-ley. You can tell the sun in his jeal-ous sky when we walked in fields of gold, when we walked in fields of gold.\n\n%unsure [bar 14] bar 4 shows a half rest with a half-note head under it (a cue); written as a half rest, z4\n%unsure [bar 22] the vocal on the 1st ending (\"Will you\") leads back to the verse; the D.S. al Coda and TO CODA signs are printed here (TO CODA on the 1st ending bar)\n%unsure [bar 31] triplet lyrics: \"We'll\" over the first note, held through the second and third\n%unsure [bar 44] second ending triplet: \"when\" on the first note, held, \"we\" on the third\n%unsure [general] verse 2 is printed under the same notes but not checked note for note, so it is given as plain text"
 },
 {
 "id": "131-fire-and-rain",
+"book": "The Real Pop Book Vol. 2",
 "title": "Fire and Rain",
 "pdf": "131",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 8,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "the guitar intro (3 bars of two-voice fingerpicking and a bar of sixteenths in 8vb) is not transcribed: written as rests so the chords sit in the right bars"
+},
+{
+"bars": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12
+],
+"groups": [
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11
+],
+"text": "the dotted-eighth / sixteenth groupings (z3/ B/, B/ B B/, B3/ B/) in bars with sixteenths were read from small print; every bar adds up to 4/4 but the exact split inside a beat may be off"
+},
+{
+"bars": [
+20
+],
+"groups": [
+19
+],
+"text": "after \"again\" a tie runs into the guitar bar (C9, TO CODA), a bar of one beat then three groups of four sixteenth chords; written as B2 plus twelve sixteenths, not checked against the chord stacks"
+},
+{
+"bars": [
+21,
+22
+],
+"groups": [
+20,
+21
+],
+"text": "the guitar bar of the endings (chord stacks) is read as B3/ B/ B B- B/ B/ B- B B/ B/ from 10 stacks; the words \"Won't you\" / \"Now I'm\" sit under the 8th and 9th"
+},
+{
+"bars": [
+23,
+24
+],
+"groups": [
+22,
+23
+],
+"text": "\"towards\" is one word with a tie; the sixteenth rest / dotted rest splits as above"
+},
+{
+"bars": [
+28
+],
+"groups": [
+27
+],
+"text": "bar 2: the first group (B/ B/ B) and the dotted G at the end read from small print"
+},
+{
+"bars": [
+13,
+14,
+15,
+16,
+17,
+18,
+19
+],
+"groups": [
+12,
+13,
+14,
+15,
+16,
+17,
+18
+],
+"text": "the chorus words line up with the notes but \"on ___ the ground.\" has two underline notes before \"the\" (read as two holds)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "verse 2 is printed under the same notes but I did not check it note for note, so it is given as plain text"
+}
+],
 "note": "Rhythms, chords and lyrics only.",
-"abc": "X:1\nT:Fire and Rain\nC:James Taylor\n%source Real Pop Book Vol 2 p132 (pdf 131)\n%style (Slowly)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:C\n%intro (guitar)\n\"C\"z4 \"G-7\"z4 | \"F\"z2 \"C\"z6 | \"G\"z8 | z8 |\n%verse\n|: \"C\"zB B/B/B \"G-7\"B/B3/ B/B/B/B/- |\nw: Just yes- ter- day morn- ing they let me know\n\"F\"BB BB- \"C\"B4 | z2 B/BB/ \"G\"BB BB/B/ | \"Bbmaj7\"BB B4 z2 |\nw: _ you were gone. _ Su- san, the plans they made put an end to you.\n\"C\"z3/B/ B/BB/ \"G-7\"BB zB/B/ | \"F\"BB BB- \"C\"B4 |\nw: I walked out this morn- ing and I wrote down this song. _\nz3/B/ B/BB/ \"G\"BB BB/B/- | \"Bbmaj7\"B/B/ B3- B2 z2 |\nw: I just can't re- mem- ber who to send _ it to. _\n%chorus\n%segno\n\"F\"z2 \"F/E\"BB \"D-7\"B3/B/ \"G7\"BB | \"C\"B4 z2 z/B/B |\nw: I've seen fire and I've seen rain. I've seen\n\"F\"B/BB/- \"F/E\"B/B/B/B/- \"D-7\"BB \"G7\"BB/B/- | \"C\"B4 z2 z/B/B |\nw: sun- ny days _ that I thought _ would nev- er end. _ I've seen\n\"F\"BB/B/- \"F/E\"B/B/B \"D-7\"BB \"G7\"BB/B/- | \"C\"B4 z2 z/B/B |\nw: lone- ly times _ when I could not find a friend, _ but I\n\"Bb\"BB \"F/A\"BB/B/ \"G-7\"BB BB | \"C9\"B2 B/B/B/B/ B/B/B/B/ B/B/B/B/ |\nw: al- ways thought that I'd see you a- gain.\n%repeat to verse start\n|1 B3/B/ BB- B/B/B- BB/B/ :|2 B3/B/ BB- B/B/B- BB/B/ |\nw: * * * * * * * Won't you * * * * * * * * Now I'm\n\"C\"B/B/B BB/B/ \"G-7/C\"B/B/B z3/B/ | \"F/C\"BB/B/- BB/B/- \"C\"B2 z2 |\nw: walk- ing my mind to an eas- y time, my back turned to- wards _ the sun. _\nzB BB/B/ \"G/C\"BB BB/B/ | \"Bb/C\"BB/B/- B/B/B- B2 zB/B/ |\nw: Lord knows when the cold wind blows it- 'll turn your head _ a- round. _ Well, there's\n\"C\"BB/B/- BB/B/ \"G-7/C\"B/B/B/B/- B3/B/ | \"F/C\"B/B/B BB/B/- \"C\"B/B3/ z2 |\nw: hours of time _ on the tel- e- phone line _ to talk a- bout things to come, _ _\nzB BB/B/- B/B/B BB | \"Bb/C\"BB/B/- B/B/B B4 |\nw: sweet dreams and fly _ ing ma- chines in piec- es on _ _ the ground.\n%D.S. al Coda\n%coda (guitar, fermata)\n\"G-7/C\"B3/B/ BB- B/B/B !fermata!B2 |]\nW:Verse 2: (Won't you) look down upon me, Je-sus? You got-ta help me make a stand. You've just got to see me through an-oth-er day. My bod-y's ach-ing and my time is at hand and I won't make it an-y oth-er way.\n\n%unsure the guitar intro (3 bars of two-voice fingerpicking and a bar of sixteenths in 8vb) is not transcribed: written as rests so the chords sit in the right bars\n%unsure the dotted-eighth / sixteenth groupings (z3/ B/, B/ B B/, B3/ B/) in bars with sixteenths were read from small print; every bar adds up to 4/4 but the exact split inside a beat may be off\n%unsure after \"again\" a tie runs into the guitar bar (C9, TO CODA), a bar of one beat then three groups of four sixteenth chords; written as B2 plus twelve sixteenths, not checked against the chord stacks\n%unsure the guitar bar of the endings (chord stacks) is read as B3/ B/ B B- B/ B/ B- B B/ B/ from 10 stacks; the words \"Won't you\" / \"Now I'm\" sit under the 8th and 9th\n%unsure \"towards\" is one word with a tie; the sixteenth rest / dotted rest splits as above\n%unsure bar 2: the first group (B/ B/ B) and the dotted G at the end read from small print\n%unsure the chorus words line up with the notes but \"on ___ the ground.\" has two underline notes before \"the\" (read as two holds)\n%unsure verse 2 is printed under the same notes but I did not check it note for note, so it is given as plain text"
+"abc": "X:1\nT:Fire and Rain\nC:James Taylor\n%source Real Pop Book Vol 2 p132 (pdf 131)\n%style (Slowly)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:C\n%intro (guitar)\n\"C\"z4 \"G-7\"z4 | \"F\"z2 \"C\"z6 | \"G\"z8 | z8 |\n%verse\n|: \"C\"zB B/B/B \"G-7\"B/B3/ B/B/B/B/- |\nw: Just yes- ter- day morn- ing they let me know\n\"F\"BB BB- \"C\"B4 | z2 B/BB/ \"G\"BB BB/B/ | \"Bbmaj7\"BB B4 z2 |\nw: _ you were gone. _ Su- san, the plans they made put an end to you.\n\"C\"z3/B/ B/BB/ \"G-7\"BB zB/B/ | \"F\"BB BB- \"C\"B4 |\nw: I walked out this morn- ing and I wrote down this song. _\nz3/B/ B/BB/ \"G\"BB BB/B/- | \"Bbmaj7\"B/B/ B3- B2 z2 |\nw: I just can't re- mem- ber who to send _ it to. _\n%chorus\n%segno\n\"F\"z2 \"F/E\"BB \"D-7\"B3/B/ \"G7\"BB | \"C\"B4 z2 z/B/B |\nw: I've seen fire and I've seen rain. I've seen\n\"F\"B/BB/- \"F/E\"B/B/B/B/- \"D-7\"BB \"G7\"BB/B/- | \"C\"B4 z2 z/B/B |\nw: sun- ny days _ that I thought _ would nev- er end. _ I've seen\n\"F\"BB/B/- \"F/E\"B/B/B \"D-7\"BB \"G7\"BB/B/- | \"C\"B4 z2 z/B/B |\nw: lone- ly times _ when I could not find a friend, _ but I\n\"Bb\"BB \"F/A\"BB/B/ \"G-7\"BB BB | \"C9\"B2 B/B/B/B/ B/B/B/B/ B/B/B/B/ |\nw: al- ways thought that I'd see you a- gain.\n%repeat to verse start\n|1 B3/B/ BB- B/B/B- BB/B/ :|2 B3/B/ BB- B/B/B- BB/B/ |\nw: * * * * * * * Won't you * * * * * * * * Now I'm\n\"C\"B/B/B BB/B/ \"G-7/C\"B/B/B z3/B/ | \"F/C\"BB/B/- BB/B/- \"C\"B2 z2 |\nw: walk- ing my mind to an eas- y time, my back turned to- wards _ the sun. _\nzB BB/B/ \"G/C\"BB BB/B/ | \"Bb/C\"BB/B/- B/B/B- B2 zB/B/ |\nw: Lord knows when the cold wind blows it- 'll turn your head _ a- round. _ Well, there's\n\"C\"BB/B/- BB/B/ \"G-7/C\"B/B/B/B/- B3/B/ | \"F/C\"B/B/B BB/B/- \"C\"B/B3/ z2 |\nw: hours of time _ on the tel- e- phone line _ to talk a- bout things to come, _ _\nzB BB/B/- B/B/B BB | \"Bb/C\"BB/B/- B/B/B B4 |\nw: sweet dreams and fly _ ing ma- chines in piec- es on _ _ the ground.\n%D.S. al Coda\n%coda (guitar, fermata)\n\"G-7/C\"B3/B/ BB- B/B/B !fermata!B2 |]\nW:Verse 2: (Won't you) look down upon me, Je-sus? You got-ta help me make a stand. You've just got to see me through an-oth-er day. My bod-y's ach-ing and my time is at hand and I won't make it an-y oth-er way.\n\n%unsure [bars 1-4] the guitar intro (3 bars of two-voice fingerpicking and a bar of sixteenths in 8vb) is not transcribed: written as rests so the chords sit in the right bars\n%unsure [bars 5-12] the dotted-eighth / sixteenth groupings (z3/ B/, B/ B B/, B3/ B/) in bars with sixteenths were read from small print; every bar adds up to 4/4 but the exact split inside a beat may be off\n%unsure [bar 20] after \"again\" a tie runs into the guitar bar (C9, TO CODA), a bar of one beat then three groups of four sixteenth chords; written as B2 plus twelve sixteenths, not checked against the chord stacks\n%unsure [bars 21-22] the guitar bar of the endings (chord stacks) is read as B3/ B/ B B- B/ B/ B- B B/ B/ from 10 stacks; the words \"Won't you\" / \"Now I'm\" sit under the 8th and 9th\n%unsure [bars 23-24] \"towards\" is one word with a tie; the sixteenth rest / dotted rest splits as above\n%unsure [bar 28] bar 2: the first group (B/ B/ B) and the dotted G at the end read from small print\n%unsure [bars 13-19] the chorus words line up with the notes but \"on ___ the ground.\" has two underline notes before \"the\" (read as two holds)\n%unsure [general] verse 2 is printed under the same notes but I did not check it note for note, so it is given as plain text"
 },
 {
 "id": "149-happy-together",
+"book": "The Real Pop Book Vol. 2",
 "title": "Happy Together",
 "pdf": "149",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 0,
 "unsure": 1,
+"flags": [
+{
+"bars": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14
+],
+"groups": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14
+],
+"text": "Verse 2 words are printed under the same notes, but they do not line up note for note (more syllables than notes in the first two bars), so they are given as plain text here, not aligned."
+}
+],
 "note": "Rhythms, chords and lyrics only.",
-"abc": "X:1\nT:Happy Together\nC:Garry Bonner / Alan Gordon\n%source Real Pop Book Vol 2 p150 (pdf 149)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Em\n%intro (guitar)\nz | \"Em\"zB B2 B B2 z | zB B2 B B2 z | zB B2 B B2 z | zB B2 BB BB |:\nw: * * * I- mag- ine\n\"Em\"BB B2- BB B2 | z2 B2 BB BB |\nw: me and you, _ I do. I think a- bout you\n\"D\"BB B2- BB BB | B3 B BB BB |\nw: day and night. _ It's on- ly right to think a- bout the\n\"C\"BB B2- BB BB | B3 B B B2 B |\nw: girl you love _ and hold her tight, so hap- py to-\n[1 \"B\"B2 B6- | B4 zB BB :|2 \"B\"B2 B6- | B6 z2 ||\nw: geth- er. _ If I should geth- er. _\n%bridge\n|: \"E\"B2 B2 B2 B2 | \"Bm7\"BB BB- BB B2 | \"E\"B3 B B B2 B- | \"G\"!fermata!B8 |\nw: I can see me lov- in' no- bod- _ y but you for all my life. _\n\"E\"B2 B2 B2 B2 | \"Bm7\"BB BB- BB B2 | \"E\"B3 B B B2 B- | \"G\"!fermata!B6 z2 |]\nw: When you're with me, ba- by, the skies _ 'll be blue for all my life. _\nW:Verse 2: (If I should) call you up, invest a dime, and you say you be-long to me and ease my mind, i-mag-ine how the world could be so ver-y fine, so hap-py to-geth-er.\n\n%unsure Verse 2 words are printed under the same notes, but they do not line up note for note (more syllables than notes in the first two bars), so they are given as plain text here, not aligned."
+"abc": "X:1\nT:Happy Together\nC:Garry Bonner / Alan Gordon\n%source Real Pop Book Vol 2 p150 (pdf 149)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Em\n%intro (guitar)\nz | \"Em\"zB B2 B B2 z | zB B2 B B2 z | zB B2 B B2 z | zB B2 BB BB |:\nw: * * * I- mag- ine\n\"Em\"BB B2- BB B2 | z2 B2 BB BB |\nw: me and you, _ I do. I think a- bout you\n\"D\"BB B2- BB BB | B3 B BB BB |\nw: day and night. _ It's on- ly right to think a- bout the\n\"C\"BB B2- BB BB | B3 B B B2 B |\nw: girl you love _ and hold her tight, so hap- py to-\n[1 \"B\"B2 B6- | B4 zB BB :|2 \"B\"B2 B6- | B6 z2 ||\nw: geth- er. _ If I should geth- er. _\n%bridge\n|: \"E\"B2 B2 B2 B2 | \"Bm7\"BB BB- BB B2 | \"E\"B3 B B B2 B- | \"G\"!fermata!B8 |\nw: I can see me lov- in' no- bod- _ y but you for all my life. _\n\"E\"B2 B2 B2 B2 | \"Bm7\"BB BB- BB B2 | \"E\"B3 B B B2 B- | \"G\"!fermata!B6 z2 |]\nw: When you're with me, ba- by, the skies _ 'll be blue for all my life. _\nW:Verse 2: (If I should) call you up, invest a dime, and you say you be-long to me and ease my mind, i-mag-ine how the world could be so ver-y fine, so hap-py to-geth-er.\n\n%unsure [bars 5-14] Verse 2 words are printed under the same notes, but they do not line up note for note (more syllables than notes in the first two bars), so they are given as plain text here, not aligned."
 },
 {
 "id": "151-hard-to-say-im-sorry",
+"book": "The Real Pop Book Vol. 2",
 "title": "Hard To Say I'm Sorry",
 "pdf": "151",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 8,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5
+],
+"text": "intro: the 16th-note figures are too small to read at this size; bar totals are right but the exact groupings are a guess"
+},
+{
+"bars": [
+9
+],
+"groups": [
+8
+],
+"text": "bar 3 of line 1: the held note's length (B3) and the rests are partly guessed"
+},
+{
+"bars": [
+13,
+14,
+15
+],
+"groups": [
+12,
+13,
+14
+],
+"text": "\"oth-er\": three notes under two syllables, second note given * ; the held notes' lengths are partly guessed"
+},
+{
+"bars": [
+17
+],
+"groups": [
+16
+],
+"text": "line above: bar 2 has 6 notes for \"I just want you to stay\"; the dotted eighth on \"just\" is my reading"
+},
+{
+"bars": [
+19,
+20,
+21
+],
+"groups": [
+18,
+19,
+20
+],
+"text": "line above: \"through\" given to the next bar's first note; rhythm of \"I will make it up\" guessed"
+},
+{
+"bars": [
+22,
+23,
+24
+],
+"groups": [
+21,
+22,
+23
+],
+"text": "rhythm of \"And after all that's been said and done\" read from a small print, bar totals only certain"
+},
+{
+"bars": [
+25
+],
+"groups": [
+24
+],
+"text": "the 11 notes of \"the part of me I can't let go\" are grouped by bar total only"
+},
+{
+"bars": [],
+"groups": [],
+"text": "INCOMPLETE: the second coda (D.S.S. al coda 2: \"After all that we've been through ... guitar solo ... You're gonna be the lucky one\", last 3 systems of the book page 153) is not transcribed; lyric alignment in this file is approximate throughout"
+}
+],
 "note": "Rhythms, chords and lyrics only.",
-"abc": "X:1\nT:Hard To Say I'm Sorry\nC:Peter Cetera / David Foster\n%source Real Pop Book Vol 2 p152 (pdf 151)\n%style (Med. Slow)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:E\n%intro (piano)\n\"E\"B2- B/B/B/B/ \"A/C#\"BB/B/ B/B/B/B/ | \"B/D#\"B2- B/B/B/B/ \"B/C#\"B\"G#/B#\"B B/B/B/B/ | \"C#m\"B2- B/B/B/B/ \"C#m/B\"BB/B/ \"F#/A#\"BB | \"Bsus4\"B2 B2 \"B\"B2 B2 |\n\"E\"B2 B2 B2 B2 | B2 B2 B2 B2 |]\n%segno\n%verse\n|: \"E\"z2 B/B/B/B/ B/B/B/B/ BB/B/- | \"G#m7\"B2 z2 zB/BBB/- | \"A\"B3 z2 z \"B\"BB |\nw: Ev- 'ry- bod- y needs a lit- tle time a- way, _ I heard her say, _ from each\n\"C#m\"B3 B \"B\"B2 z2 | \"E\"z2 zB/B/ B/B/B/B/ BB/B/- | \"G#m7\"B2 z2 z4 |\nw: oth - er. * Ev- en lov- ers need a hol- i- day, _\n\"A\"z2 BB/B/- B2 \"B\"BB | \"C#m\"B3 B \"B\"B2 z2 | \"C#m\"B3 B/B/- \"F#m7\"B2 z3/2B/ |\nw: far a- way _ from each oth - er. * Hold me now _ It's\n\"Bsus4\"B/B/B/B/ \"B\"BB \"E\"BB z2 | \"C#m\"z2 B/B3/2 \"F#m7\"B2 BB/B/- | \"Bsus4\"B2 \"B\"z2 z4 |\nw: hard for me to say I'm sor- ry. I just want you to stay, _\n%text TO CODA 1 here (second time D.S. al coda)\n%segno2\n\"E\"z2 BB/B/- BB BB | \"B/D#\"B2 zB BB B/B/-B | \"C#m\"B B3 z2 BB- |\nw: Af- ter all _ that we've been through, I will make it up _ to you. I prom-\n\"Bsus4\"BB B2 z4 | \"E\"zB BB BB BB- | \"B/D#\"BB B2 z2 BB- |\nw: _ ise to. And af- ter all that's been said _ and done, you're just _\n\"C#m\"BB/B/ B\"C#m/B\"B/B/ BB \"F#/A#\"B/B/B |\nw: _ the part _ of me _ I can't _ let\n\"Bsus4\"B4 \"B\"z4 | \"Bsus4\"z8 |]\nw: go.\n%text D.S. al coda 1 (2nd time), to the signs on the page\n%coda1\n|: \"C#m\"B3 B/B/- \"F#m7\"B2 z3/2B/ | \"Bsus4\"B/B/B/B/ \"B\"B/B/B \"E\"BB z2 | \"C#m\"z2 B/B3/2 \"F#m7\"BB BB | \"Bsus4\"B4 \"B\"z4 |\nw: Hold me now _ I real- ly want to tell you I'm sor- ry. I could nev- er let you go.\n\n%unsure intro: the 16th-note figures are too small to read at this size; bar totals are right but the exact groupings are a guess\n%unsure bar 3 of line 1: the held note's length (B3) and the rests are partly guessed\n%unsure \"oth-er\": three notes under two syllables, second note given * ; the held notes' lengths are partly guessed\n%unsure line above: bar 2 has 6 notes for \"I just want you to stay\"; the dotted eighth on \"just\" is my reading\n%unsure line above: \"through\" given to the next bar's first note; rhythm of \"I will make it up\" guessed\n%unsure rhythm of \"And after all that's been said and done\" read from a small print, bar totals only certain\n%unsure the 11 notes of \"the part of me I can't let go\" are grouped by bar total only\n%unsure INCOMPLETE: the second coda (D.S.S. al coda 2: \"After all that we've been through ... guitar solo ... You're gonna be the lucky one\", last 3 systems of the book page 153) is not transcribed; lyric alignment in this file is approximate throughout"
+"abc": "X:1\nT:Hard To Say I'm Sorry\nC:Peter Cetera / David Foster\n%source Real Pop Book Vol 2 p152 (pdf 151)\n%style (Med. Slow)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:E\n%intro (piano)\n\"E\"B2- B/B/B/B/ \"A/C#\"BB/B/ B/B/B/B/ | \"B/D#\"B2- B/B/B/B/ \"B/C#\"B\"G#/B#\"B B/B/B/B/ | \"C#m\"B2- B/B/B/B/ \"C#m/B\"BB/B/ \"F#/A#\"BB | \"Bsus4\"B2 B2 \"B\"B2 B2 |\n\"E\"B2 B2 B2 B2 | B2 B2 B2 B2 |]\n%segno\n%verse\n|: \"E\"z2 B/B/B/B/ B/B/B/B/ BB/B/- | \"G#m7\"B2 z2 zB/BBB/- | \"A\"B3 z2 z \"B\"BB |\nw: Ev- 'ry- bod- y needs a lit- tle time a- way, _ I heard her say, _ from each\n\"C#m\"B3 B \"B\"B2 z2 | \"E\"z2 zB/B/ B/B/B/B/ BB/B/- | \"G#m7\"B2 z2 z4 |\nw: oth - er. * Ev- en lov- ers need a hol- i- day, _\n\"A\"z2 BB/B/- B2 \"B\"BB | \"C#m\"B3 B \"B\"B2 z2 | \"C#m\"B3 B/B/- \"F#m7\"B2 z3/2B/ |\nw: far a- way _ from each oth - er. * Hold me now _ It's\n\"Bsus4\"B/B/B/B/ \"B\"BB \"E\"BB z2 | \"C#m\"z2 B/B3/2 \"F#m7\"B2 BB/B/- | \"Bsus4\"B2 \"B\"z2 z4 |\nw: hard for me to say I'm sor- ry. I just want you to stay, _\n%text TO CODA 1 here (second time D.S. al coda)\n%segno2\n\"E\"z2 BB/B/- BB BB | \"B/D#\"B2 zB BB B/B/-B | \"C#m\"B B3 z2 BB- |\nw: Af- ter all _ that we've been through, I will make it up _ to you. I prom-\n\"Bsus4\"BB B2 z4 | \"E\"zB BB BB BB- | \"B/D#\"BB B2 z2 BB- |\nw: _ ise to. And af- ter all that's been said _ and done, you're just _\n\"C#m\"BB/B/ B\"C#m/B\"B/B/ BB \"F#/A#\"B/B/B |\nw: _ the part _ of me _ I can't _ let\n\"Bsus4\"B4 \"B\"z4 | \"Bsus4\"z8 |]\nw: go.\n%text D.S. al coda 1 (2nd time), to the signs on the page\n%coda1\n|: \"C#m\"B3 B/B/- \"F#m7\"B2 z3/2B/ | \"Bsus4\"B/B/B/B/ \"B\"B/B/B \"E\"BB z2 | \"C#m\"z2 B/B3/2 \"F#m7\"BB BB | \"Bsus4\"B4 \"B\"z4 |\nw: Hold me now _ I real- ly want to tell you I'm sor- ry. I could nev- er let you go.\n\n%unsure [bars 1-6] intro: the 16th-note figures are too small to read at this size; bar totals are right but the exact groupings are a guess\n%unsure [bar 9] bar 3 of line 1: the held note's length (B3) and the rests are partly guessed\n%unsure [bars 13-15] \"oth-er\": three notes under two syllables, second note given * ; the held notes' lengths are partly guessed\n%unsure [bar 17] line above: bar 2 has 6 notes for \"I just want you to stay\"; the dotted eighth on \"just\" is my reading\n%unsure [bars 19-21] line above: \"through\" given to the next bar's first note; rhythm of \"I will make it up\" guessed\n%unsure [bars 22-24] rhythm of \"And after all that's been said and done\" read from a small print, bar totals only certain\n%unsure [bar 25] the 11 notes of \"the part of me I can't let go\" are grouped by bar total only\n%unsure [general] INCOMPLETE: the second coda (D.S.S. al coda 2: \"After all that we've been through ... guitar solo ... You're gonna be the lucky one\", last 3 systems of the book page 153) is not transcribed; lyric alignment in this file is approximate throughout"
 },
 {
 "id": "153-have-i-told-you-lately",
+"book": "The Real Pop Book Vol. 2",
 "title": "Have I Told You Lately",
 "pdf": "153",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 8,
+"flags": [
+{
+"bars": [
+11
+],
+"groups": [
+10
+],
+"text": "last three notes of bar: 16th, 8th, 16th guessed from the beaming"
+},
+{
+"bars": [
+12
+],
+"groups": [
+11
+],
+"text": "tie and dotted rhythm of the first beat"
+},
+{
+"bars": [
+13
+],
+"groups": [
+12
+],
+"text": "two triplets and the rests at the start"
+},
+{
+"bars": [
+14
+],
+"groups": [
+13
+],
+"text": "dense bar: sixteenths and tie guessed"
+},
+{
+"bars": [
+15
+],
+"groups": [
+14
+],
+"text": "dense bar, rests and beaming guessed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "the segno / coda marks (D.S. al Coda) not shown; verse 2 starts here"
+},
+{
+"bars": [
+19
+],
+"groups": [
+18
+],
+"text": "dense bar, first rest value guessed"
+},
+{
+"bars": [
+21
+],
+"groups": [
+20
+],
+"text": "dense bar"
+}
+],
 "note": "Rhythms and chords only.  Page 154 (pdf) not done.",
-"abc": "X:1\nT:Have I Told You Lately\nC:Van Morrison\n%source Real Pop Book Vol 2 p154 (pdf 153)\n%style (Ballad)\n%note Rhythms and chords only. Pitches NOT transcribed: every note is written as B. Page 154 (pdf) not done.\nM:4/4\nL:1/16\nK:E\n%intro (instrumental solo)\n\"F#-7\"z16 | \"A/B\"z16 |: \"Emaj7\"z8 \"G#-7\"z8 | \"Amaj7\"z8 \"A/B\"z8 :|\n\"Amaj7\"z16 | \"G#-7\"z16 | \"F#-7\"z8 \"A/B\"z8 | \"Emaj7\"z8 \"A/B\"z4 B2B2 ||\n%verse (segno)\n|: \"Emaj7\"B6 B2 \"G#-7\"B2B2 B2B2 | \"Amaj7\"B2 B4 B2 \"A/B\"z8 | \"Emaj7\"z2B1B1 B2B2 \"G#-7\"B2B2 B1B2B1 | \"Amaj7\"B2B2- B1B3 \"A/B\"z8 |\n\"Amaj7\"z4 (3z2B2B2 (3B2B2B2 B2B2 | \"G#-7\"z4 z2B1B1 B1-B1B2 B1B1B2 | \"F#-7\"z4 z2B2 \"A/B\"B1B1B2 B2B1B1- |\n%to coda\n\"Emaj7\"B4 z4 \"A/B\"z8 || \"Emaj7\"z4 z2B1B1 \"G#-7\"B2B2 B1B1B1B1 | \"Amaj7\"B2B2 z4 \"A/B\"z8 | \"Emaj7\"z2B1B1 B2B2 B2\"G#-7\"B2 B1B1B1B1 |\n\"Amaj7\"B4- B4 \"A/B\"z8 | \"Amaj7\"z2B1B1 B2B1B1 B2B2 B2B1B1 | \"G#-7\"z4 (3z2B2B2 (3B2B2B2 B4 |]\n\n%unsure last three notes of bar: 16th, 8th, 16th guessed from the beaming\n%unsure tie and dotted rhythm of the first beat\n%unsure two triplets and the rests at the start\n%unsure dense bar: sixteenths and tie guessed\n%unsure dense bar, rests and beaming guessed\n%unsure the segno / coda marks (D.S. al Coda) not shown; verse 2 starts here\n%unsure dense bar, first rest value guessed\n%unsure dense bar"
+"abc": "X:1\nT:Have I Told You Lately\nC:Van Morrison\n%source Real Pop Book Vol 2 p154 (pdf 153)\n%style (Ballad)\n%note Rhythms and chords only. Pitches NOT transcribed: every note is written as B. Page 154 (pdf) not done.\nM:4/4\nL:1/16\nK:E\n%intro (instrumental solo)\n\"F#-7\"z16 | \"A/B\"z16 |: \"Emaj7\"z8 \"G#-7\"z8 | \"Amaj7\"z8 \"A/B\"z8 :|\n\"Amaj7\"z16 | \"G#-7\"z16 | \"F#-7\"z8 \"A/B\"z8 | \"Emaj7\"z8 \"A/B\"z4 B2B2 ||\n%verse (segno)\n|: \"Emaj7\"B6 B2 \"G#-7\"B2B2 B2B2 | \"Amaj7\"B2 B4 B2 \"A/B\"z8 | \"Emaj7\"z2B1B1 B2B2 \"G#-7\"B2B2 B1B2B1 | \"Amaj7\"B2B2- B1B3 \"A/B\"z8 |\n\"Amaj7\"z4 (3z2B2B2 (3B2B2B2 B2B2 | \"G#-7\"z4 z2B1B1 B1-B1B2 B1B1B2 | \"F#-7\"z4 z2B2 \"A/B\"B1B1B2 B2B1B1- |\n%to coda\n\"Emaj7\"B4 z4 \"A/B\"z8 || \"Emaj7\"z4 z2B1B1 \"G#-7\"B2B2 B1B1B1B1 | \"Amaj7\"B2B2 z4 \"A/B\"z8 | \"Emaj7\"z2B1B1 B2B2 B2\"G#-7\"B2 B1B1B1B1 |\n\"Amaj7\"B4- B4 \"A/B\"z8 | \"Amaj7\"z2B1B1 B2B1B1 B2B2 B2B1B1 | \"G#-7\"z4 (3z2B2B2 (3B2B2B2 B4 |]\n\n%unsure [bar 11] last three notes of bar: 16th, 8th, 16th guessed from the beaming\n%unsure [bar 12] tie and dotted rhythm of the first beat\n%unsure [bar 13] two triplets and the rests at the start\n%unsure [bar 14] dense bar: sixteenths and tie guessed\n%unsure [bar 15] dense bar, rests and beaming guessed\n%unsure [form] the segno / coda marks (D.S. al Coda) not shown; verse 2 starts here\n%unsure [bar 19] dense bar, first rest value guessed\n%unsure [bar 21] dense bar"
 },
 {
 "id": "157-hero",
+"book": "The Real Pop Book Vol. 2",
 "title": "Hero",
 "pdf": "157",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 8,
+"flags": [
+{
+"bars": [
+1,
+2
+],
+"groups": [
+0,
+1
+],
+"text": "intro bars 1-2 beat grouping and tie placement read from a small print"
+},
+{
+"bars": [
+2
+],
+"groups": [
+1
+],
+"text": "bar 2 split of chords and ties guessed"
+},
+{
+"bars": [
+8
+],
+"groups": [
+7
+],
+"text": "bar below (B9sus4 / B) dense sixteenths guessed to total 16"
+},
+{
+"bars": [
+9
+],
+"groups": [
+8
+],
+"text": "bar above, quarters and small rests"
+},
+{
+"bars": [
+11
+],
+"groups": [
+10
+],
+"text": "bar below, dense run with accidental"
+},
+{
+"bars": [
+13
+],
+"groups": [
+12
+],
+"text": "next bar, rests at start guessed"
+},
+{
+"bars": [
+14
+],
+"groups": [
+13
+],
+"text": "bar above not read, placeholder"
+},
+{
+"bars": [
+16
+],
+"groups": [
+15
+],
+"text": "bar above, chord G#-7 placement and last beat guessed"
+}
+],
 "note": "Rhythms and chords only.  No lyrics. Page 2 (pdf 158) not done.",
-"abc": "X:1\nT:Hero\nC:Mariah Carey / Walter Afanasieff\n%source Real Pop Book Vol 2 p158 (pdf 157)\n%style (Med.)\n%note Rhythms and chords only. Pitches NOT transcribed: every note is written as B. No lyrics. Page 2 (pdf 158) not done.\nM:4/4\nL:1/16\nK:E\n%intro (keyboard)\n\"E(add9)\"B4- BBB2 B2BB- B2BB | \"B/D#\"B2BB- \"C#-7\"B4- B2BB \"E/B\"B2BB- | \"A\"B2B2 B2B2- B4 \"E/G#\"B2B2 | \"F#-7\"B4 B2B2 \"B9sus4\"B2z2 \"B\"B2B2 |:\n%verse\n\"E(add9)\"B3B B8 z2BB | \"D6/9\"B2BB- BB3 B4 z2BB | \"C#-7\"B2BB- BBB2 z2B2 B2B2- | \"B9sus4\"BBBB BB-BB B2z2 B2BB |\n\"E(add9)\"B2BB- B4 B4 z2BB | \"D/F#\"B2BB- B2B2 BBB2 z2BB | \"C(add9)\"B2BB- BBBB Bz3 BBBB- | \"B9sus4\"B8 \"B\"B2B2 B2B2 |\n\"E(add9)\"z3z2BBB B2BB- B2BB- | \"B/D#\"B2BB- B2BB- B2BB- B2BB | \"C#-7\"B4 z2BB B2BB- \"E/B\"BBBB | \"A(add9)\"B4 z2BB B2BB \"G#-7\"B2BB |\n\"F#-7\"B4 z2BB B2BB- \"A/B\"B2BB | \"E\"B4 zBBB B2BB \"B/D#\"B2BB |\n\n%unsure intro bars 1-2 beat grouping and tie placement read from a small print\n%unsure bar 2 split of chords and ties guessed\n%unsure bar below (B9sus4 / B) dense sixteenths guessed to total 16\n%unsure bar above, quarters and small rests\n%unsure bar below, dense run with accidental\n%unsure next bar, rests at start guessed\n%unsure bar above not read, placeholder\n%unsure bar above, chord G#-7 placement and last beat guessed"
+"abc": "X:1\nT:Hero\nC:Mariah Carey / Walter Afanasieff\n%source Real Pop Book Vol 2 p158 (pdf 157)\n%style (Med.)\n%note Rhythms and chords only. Pitches NOT transcribed: every note is written as B. No lyrics. Page 2 (pdf 158) not done.\nM:4/4\nL:1/16\nK:E\n%intro (keyboard)\n\"E(add9)\"B4- BBB2 B2BB- B2BB | \"B/D#\"B2BB- \"C#-7\"B4- B2BB \"E/B\"B2BB- | \"A\"B2B2 B2B2- B4 \"E/G#\"B2B2 | \"F#-7\"B4 B2B2 \"B9sus4\"B2z2 \"B\"B2B2 |:\n%verse\n\"E(add9)\"B3B B8 z2BB | \"D6/9\"B2BB- BB3 B4 z2BB | \"C#-7\"B2BB- BBB2 z2B2 B2B2- | \"B9sus4\"BBBB BB-BB B2z2 B2BB |\n\"E(add9)\"B2BB- B4 B4 z2BB | \"D/F#\"B2BB- B2B2 BBB2 z2BB | \"C(add9)\"B2BB- BBBB Bz3 BBBB- | \"B9sus4\"B8 \"B\"B2B2 B2B2 |\n\"E(add9)\"z3z2BBB B2BB- B2BB- | \"B/D#\"B2BB- B2BB- B2BB- B2BB | \"C#-7\"B4 z2BB B2BB- \"E/B\"BBBB | \"A(add9)\"B4 z2BB B2BB \"G#-7\"B2BB |\n\"F#-7\"B4 z2BB B2BB- \"A/B\"B2BB | \"E\"B4 zBBB B2BB \"B/D#\"B2BB |\n\n%unsure [bars 1-2] intro bars 1-2 beat grouping and tie placement read from a small print\n%unsure [bar 2] bar 2 split of chords and ties guessed\n%unsure [bar 8] bar below (B9sus4 / B) dense sixteenths guessed to total 16\n%unsure [bar 9] bar above, quarters and small rests\n%unsure [bar 11] bar below, dense run with accidental\n%unsure [bar 13] next bar, rests at start guessed\n%unsure [bar 14] bar above not read, placeholder\n%unsure [bar 16] bar above, chord G#-7 placement and last beat guessed"
 },
 {
 "id": "213-if-you-leave-me-now",
+"book": "The Real Pop Book Vol. 2",
 "title": "If You Leave Me Now",
 "pdf": "213",
-"bad": 10,
+"form": "",
+"bad": 5,
+"off": [
+4,
+14,
+42,
+53,
+54
+],
+"first": 1,
 "unsure": 15,
+"flags": [
+{
+"bars": [
+3
+],
+"groups": [
+2
+],
+"text": "intro bar 3 chord placements and ties read at small size"
+},
+{
+"bars": [
+4
+],
+"groups": [
+3
+],
+"text": "the two-eighth pickup before |: is a partial bar; the check will flag it"
+},
+{
+"bars": [
+9
+],
+"groups": [
+8
+],
+"text": "\"Ooh\" and \"no\" alignment in the Am7/D7 bars (extender lines only)"
+},
+{
+"bars": [
+11,
+12,
+13
+],
+"groups": [
+10,
+11,
+12
+],
+"text": "volta 1 second bar \"And if you\" placed under the last three notes; volta 2 verse 1 text blank in book (second verse only: Ooh)"
+},
+{
+"bars": [
+14
+],
+"groups": [
+13
+],
+"text": "Em-7 triplet bar: \"(3B2B (3BBB\" is a guess at the D7 triplet; check"
+},
+{
+"bars": [
+15
+],
+"groups": [
+14
+],
+"text": "2/4 bar before C G C inferred from bar sums (4 eighths); time signature glyph unclear"
+},
+{
+"bars": [
+18,
+19,
+20,
+21,
+22,
+23
+],
+"groups": [
+17,
+18,
+19,
+20,
+21,
+22
+],
+"text": "second verse: We've come too far to leave it all be- hind."
+},
+{
+"bars": [
+21
+],
+"groups": [
+20
+],
+"text": "bar 1 beamed 16ths shape read at small size"
+},
+{
+"bars": [
+24,
+25,
+26
+],
+"groups": [
+23,
+24,
+25
+],
+"text": "volta 1,3 first bar and volta 2,4 bar rhythm guessed from small beams"
+},
+{
+"bars": [
+27
+],
+"groups": [
+26
+],
+"text": "lyric alignment of \"When to-mor-row\" over the Em7 bar"
+},
+{
+"bars": [
+42
+],
+"groups": [
+41
+],
+"text": "D.S. al Coda bars: last bar is a half note only (cut-short ending before D.S.)"
+},
+{
+"bars": [
+44,
+45,
+46,
+47
+],
+"groups": [
+43,
+44,
+45,
+46
+],
+"text": "coda 2 bar lengths inferred; extender-only syllables"
+},
+{
+"bars": [
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58
+],
+"groups": [
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57
+],
+"text": "fade section bars read at small size; first chord bar groups guessed"
+},
+{
+"bars": [
+53,
+54
+],
+"groups": [
+52,
+53
+],
+"text": "the \"G\" 2/4 bar and the \"G\" 4/4 bar assignment; second verse: Ooh, ma-ma, just got to have your lov-in'."
+},
+{
+"bars": [],
+"groups": [],
+"text": "check.py N=10 remains: 2/4 bars written with inline [M:2/4] (checker probably counts them as 4/4), the pickup, and guessed rhythms in the fade section; not fully verified"
+}
+],
 "note": "Rhythms, chords and lyrics only.",
-"abc": "X:1\nT:If You Leave Me Now\nC:Peter Cetera\n%source Real Pop Book Vol 2 p214 (pdf 213)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:C\n%intro (instrumental)\n\"C\"BB BB- \"G/C\"B \"C\"B2 \"G/C\"B- | B \"C\"B2 \"G/C\"B \"C\"B2 B2 | \"G/C\"BB BB- \"C\"B B2 \"G/C\"B ||\n%segno section: D.S.S. anacrusis \"If you\" then repeat\nBB |: \"Cmaj7\"B2 BB- B2 zB | \"Am7\"BB BB B2 BB- |\nw: If you leave me now, _ you'll take a- way the big- gest part _\n\"Em7\"B2 BB- B2 z2 | z4 zB BB- | \"Am7\"B2 \"D7\"BB- BB BB- |\nw: _ of me. _ Ooh. _ _ _ no, _ ba- by, please_\n[M:2/4]\"G\"B B2 B- | [1 [M:4/4]\"C\"B2 z2 z4 | \"G\"z4 zB \"C\"BB :|2 \"C\"B3 z zB BB- |\nw: _ don't go. _ _ And if you\n\"Am7\"B2 BB- B2 \"D7\"(3B2B(3BBB | [M:2/4]BB BB |\nw: _ _ girl, _ I just want you to\n[M:4/4]\"C\"B4- B\"G\"z \"C\"z2 | z8 ||\nw: stay. _\n%coda section\n|: \"F9sus\"z4 z2 BB | B B2 B- B2 BB- | \"Bb-/F\"B2 BB- B2 BB- |\nw: A love _ like ours _ is love _ that's hard _ to find. _\n\"F\"BB/B/ Bz z4 | \"Am7\"z4 BB BB- | \"F\"B2 B/B/B- \"G\"B2 BB- |\nw: _ _ _ _ How could we let _ it _ slip _ a- way?\nW:2. We've come too far to leave it all be-hind. How could we end it all this way?\n%page 215 (pdf 214)\n[1,3 \"C\"BB/B/ Bz z4 | z8 :|2 ,4\"C\"BB/B/ Bz zB BB- | \"Em7\"B B2 B- BB BB- | \"Am7\"B B2 B B2 zB |\nw: When to- mor- row comes _ then we'll both _ re- gret _\n\"D-\"B2 BB- BB BB- | \"E-\"B3 B/B/ BB BB- |\nw: the things we said _ to - day. _\nB B2 B BB (3B/B/B/B | \"Cmaj7\"B B2 B- B3 B | \"Am7\"BB BB B3 B |\n%instrumental\n\"E-7\"BB BB- B4 | z4 z2 (3zBB | \"Am7\"(3B2B2B2 \"D\"B2 (3zBB | [M:2/4]\"G\"(3B2B2B2 |\n[M:4/4]\"C\"B6 (3zBB | \"Am7\"(3B2B2B2 \"D7\"(3B2B2B2 | [M:2/4]\"G\"(3B2B2B2 | [M:4/4]\"C\"B4- B \"G\"B2 \"C\"B- | B4 |]\n%coda 1 (\"If you\" lead-in to D.S.S.)\nBz z2 z2 BB |]\nw: _ If you\n%coda 2\n|: \"Am7\"B2 BB- BB BB- | [M:2/4]\"D7\"B B2 B- | [M:4/4]\"G\"B6 (3zBB | \"C\"B6 (3zBB |\nw: _ _ no, _ ba- by, please_ don't go. _\n\"Am7\"(3B2B2B2 \"D7\"B3 B/B/ | [M:2/4](3B2B2B2 | [M:4/4]\"C\"BB BB- \"G\"B \"C\"B2 B- | B \"G\"B2 B \"C\"B2 B2 |\n\"Am7\"B2 B/B/B- Bz zB | [M:2/4]\"D\"BB/B/ B-B B | [M:4/4]\"G\"BB B-B/B/ B/B/- B2 (3zBB |\nw: Ooh, _ girl, _ just got to have you by my side.\n\"Am7\"(3B2B2B2 \"D7\"B3 B/B/ | [M:2/4](3B2B2B2 | [M:4/4]\"C\"BB BB- \"G\"B \"C\"B2 B- | B \"G\"B2 B \"C\"BB BB :|\nw: * * * * * * * * * * * * * * * * Ooh,\n%repeat and fade\n\n%unsure intro bar 3 chord placements and ties read at small size\n%unsure the two-eighth pickup before |: is a partial bar; the check will flag it\n%unsure \"Ooh\" and \"no\" alignment in the Am7/D7 bars (extender lines only)\n%unsure volta 1 second bar \"And if you\" placed under the last three notes; volta 2 verse 1 text blank in book (second verse only: Ooh)\n%unsure Em-7 triplet bar: \"(3B2B (3BBB\" is a guess at the D7 triplet; check\n%unsure 2/4 bar before C G C inferred from bar sums (4 eighths); time signature glyph unclear\n%unsure second verse: We've come too far to leave it all be- hind.\n%unsure bar 1 beamed 16ths shape read at small size\n%unsure volta 1,3 first bar and volta 2,4 bar rhythm guessed from small beams\n%unsure lyric alignment of \"When to-mor-row\" over the Em7 bar\n%unsure D.S. al Coda bars: last bar is a half note only (cut-short ending before D.S.)\n%unsure coda 2 bar lengths inferred; extender-only syllables\n%unsure fade section bars read at small size; first chord bar groups guessed\n%unsure the \"G\" 2/4 bar and the \"G\" 4/4 bar assignment; second verse: Ooh, ma-ma, just got to have your lov-in'.\n%unsure check.py N=10 remains: 2/4 bars written with inline [M:2/4] (checker probably counts them as 4/4), the pickup, and guessed rhythms in the fade section; not fully verified"
+"abc": "X:1\nT:If You Leave Me Now\nC:Peter Cetera\n%source Real Pop Book Vol 2 p214 (pdf 213)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:C\n%intro (instrumental)\n\"C\"BB BB- \"G/C\"B \"C\"B2 \"G/C\"B- | B \"C\"B2 \"G/C\"B \"C\"B2 B2 | \"G/C\"BB BB- \"C\"B B2 \"G/C\"B ||\n%segno section: D.S.S. anacrusis \"If you\" then repeat\nBB |: \"Cmaj7\"B2 BB- B2 zB | \"Am7\"BB BB B2 BB- |\nw: If you leave me now, _ you'll take a- way the big- gest part _\n\"Em7\"B2 BB- B2 z2 | z4 zB BB- | \"Am7\"B2 \"D7\"BB- BB BB- |\nw: _ of me. _ Ooh. _ _ _ no, _ ba- by, please_\n[M:2/4]\"G\"B B2 B- | [1 [M:4/4]\"C\"B2 z2 z4 | \"G\"z4 zB \"C\"BB :|2 \"C\"B3 z zB BB- |\nw: _ don't go. _ _ And if you\n\"Am7\"B2 BB- B2 \"D7\"(3B2B(3BBB | [M:2/4]BB BB |\nw: _ _ girl, _ I just want you to\n[M:4/4]\"C\"B4- B\"G\"z \"C\"z2 | z8 ||\nw: stay. _\n%coda section\n|: \"F9sus\"z4 z2 BB | B B2 B- B2 BB- | \"Bb-/F\"B2 BB- B2 BB- |\nw: A love _ like ours _ is love _ that's hard _ to find. _\n\"F\"BB/B/ Bz z4 | \"Am7\"z4 BB BB- | \"F\"B2 B/B/B- \"G\"B2 BB- |\nw: _ _ _ _ How could we let _ it _ slip _ a- way?\nW:2. We've come too far to leave it all be-hind. How could we end it all this way?\n%page 215 (pdf 214)\n[1,3 \"C\"BB/B/ Bz z4 | z8 :|2 ,4\"C\"BB/B/ Bz zB BB- | \"Em7\"B B2 B- BB BB- | \"Am7\"B B2 B B2 zB |\nw: When to- mor- row comes _ then we'll both _ re- gret _\n\"D-\"B2 BB- BB BB- | \"E-\"B3 B/B/ BB BB- |\nw: the things we said _ to - day. _\nB B2 B BB (3B/B/B/B | \"Cmaj7\"B B2 B- B3 B | \"Am7\"BB BB B3 B |\n%instrumental\n\"E-7\"BB BB- B4 | z4 z2 (3zBB | \"Am7\"(3B2B2B2 \"D\"B2 (3zBB | [M:2/4]\"G\"(3B2B2B2 |\n[M:4/4]\"C\"B6 (3zBB | \"Am7\"(3B2B2B2 \"D7\"(3B2B2B2 | [M:2/4]\"G\"(3B2B2B2 | [M:4/4]\"C\"B4- B \"G\"B2 \"C\"B- | B4 |]\n%coda 1 (\"If you\" lead-in to D.S.S.)\nBz z2 z2 BB |]\nw: _ If you\n%coda 2\n|: \"Am7\"B2 BB- BB BB- | [M:2/4]\"D7\"B B2 B- | [M:4/4]\"G\"B6 (3zBB | \"C\"B6 (3zBB |\nw: _ _ no, _ ba- by, please_ don't go. _\n\"Am7\"(3B2B2B2 \"D7\"B3 B/B/ | [M:2/4](3B2B2B2 | [M:4/4]\"C\"BB BB- \"G\"B \"C\"B2 B- | B \"G\"B2 B \"C\"B2 B2 |\n\"Am7\"B2 B/B/B- Bz zB | [M:2/4]\"D\"BB/B/ B-B B | [M:4/4]\"G\"BB B-B/B/ B/B/- B2 (3zBB |\nw: Ooh, _ girl, _ just got to have you by my side.\n\"Am7\"(3B2B2B2 \"D7\"B3 B/B/ | [M:2/4](3B2B2B2 | [M:4/4]\"C\"BB BB- \"G\"B \"C\"B2 B- | B \"G\"B2 B \"C\"BB BB :|\nw: * * * * * * * * * * * * * * * * Ooh,\n%repeat and fade\n\n%unsure [bar 3] intro bar 3 chord placements and ties read at small size\n%unsure [bar 4] the two-eighth pickup before |: is a partial bar; the check will flag it\n%unsure [bar 9] \"Ooh\" and \"no\" alignment in the Am7/D7 bars (extender lines only)\n%unsure [bars 11-13] volta 1 second bar \"And if you\" placed under the last three notes; volta 2 verse 1 text blank in book (second verse only: Ooh)\n%unsure [bar 14] Em-7 triplet bar: \"(3B2B (3BBB\" is a guess at the D7 triplet; check\n%unsure [bar 15] 2/4 bar before C G C inferred from bar sums (4 eighths); time signature glyph unclear\n%unsure [bars 18-23] second verse: We've come too far to leave it all be- hind.\n%unsure [bar 21] bar 1 beamed 16ths shape read at small size\n%unsure [bars 24-26] volta 1,3 first bar and volta 2,4 bar rhythm guessed from small beams\n%unsure [bar 27] lyric alignment of \"When to-mor-row\" over the Em7 bar\n%unsure [bar 42] D.S. al Coda bars: last bar is a half note only (cut-short ending before D.S.)\n%unsure [bars 44-47] coda 2 bar lengths inferred; extender-only syllables\n%unsure [bars 48-58] fade section bars read at small size; first chord bar groups guessed\n%unsure [bars 53-54] the \"G\" 2/4 bar and the \"G\" 4/4 bar assignment; second verse: Ooh, ma-ma, just got to have your lov-in'.\n%unsure [general] check.py N=10 remains: 2/4 bars written with inline [M:2/4] (checker probably counts them as 4/4), the pickup, and guessed rhythms in the fade section; not fully verified"
 },
 {
 "id": "219-just-give-me-a-reason",
+"book": "The Real Pop Book Vol. 2",
 "title": "Just Give Me a Reason",
 "pdf": "219",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 4,
+"flags": [
+{
+"bars": [
+4
+],
+"groups": [
+3
+],
+"text": "bar 4: rhythm after the half-note chord (eighth pair, then 16th 16th eighth) read from a dense beam"
+},
+{
+"bars": [
+10
+],
+"groups": [
+9
+],
+"text": "bar 10: eighth rest and 16ths at the end read as C B G (beams) and quarter rest; check"
+},
+{
+"bars": [
+24
+],
+"groups": [
+23
+],
+"text": "bar 24: \"C. B\" dotted eighth + 16th, then 16th 16th eighth tied, read from beams"
+},
+{
+"bars": [
+28
+],
+"groups": [
+27
+],
+"text": "bar 28 as bar 24"
+}
+],
 "note": "Rhythms and chords only.  No lyrics.",
-"abc": "X:1\nT:Just Give Me a Reason\nC:Alecia Moore / Jeff Bhasker / Nate Ruess\n%source Real Pop Book Vol 2 p220 (pdf 219)\n%style (Med.)\n%note Rhythms and chords only. Pitches NOT transcribed: every note is written as B. No lyrics.\nM:4/4\nL:1/16\nK:G\n%intro (piano), bars 3-4 in bass clef\n\"E-\"B2B2 B2B2 \"B-/D\"B4 \"A/C#\"B4 | \"D\"B4 B4 \"G/B\"B4 B4 | \"C\"B8 \"G/B\"B8 | \"A-\"B8 B2B2 B1B1B2 ||\n%verse (female)\n\"G\"z2B2 B1B1B2- B2G2 A1B1C2- | \"C\"B2B2 B2B2 B4 \"E-\"z2B2 | \"C\"B6 B2 B4 B2B2 | \"G\"B4 z4 z4 z3B1 |\nB2B2 B1B1B2- B2G2 A2B2 | \"C\"B2B2 B2B1B1 z4 \"E-\"z2B1B1 | \"C\"B6 B2 B4 B2B2 | \"G\"B4 z4 z4 z2B2 |\n\"E-\"B2B2 B2B2 \"B-/D\"B4 \"A/C#\"B4 | \"D\"B4 z4 \"Dsus4\"B4 B4 | \"E-\"B2B2 B2B2 \"B-/D\"B4 \"A/C#\"B4 | \"D\"B4 z4 \"Dsus4\"B4 B4 |\n\"E-\"B2B2 B2B2 \"B-/D\"B4 \"A/C#\"B4 | \"D\"B4 z4 \"G/B\"B4 B4 | \"C\"B6 z2 \"G/B\"B8 | \"Dsus4\"B8 \"D\"z8 |\n\"G\"B2B2 B2B2 B2B2 B2B2 | \"D/F#\"B2B2 B2B2 B2z2 B2B2 |\n%chorus\n\"E-\"B2B2 B2B2 B2\"B-/D\"B2 \"C\"B2\"B-\"B2- | B2B2 B2B2 \"D7sus4\"B3B1 B1B1B2- | B2B2 B2B2 B2z2 B2B2 | \"D/F#\"B2B2 B2B2 B2B2 B2B2 |\n\"E-\"z4 B2B2 B2\"B-/D\"B2 \"C\"B2\"B-\"B2- | B2B2 B2B2 B2B2 \"D7sus4\"B1B1B2- | \"G\"B4 z4 z4 z2B2 |]\n\n%unsure bar 4: rhythm after the half-note chord (eighth pair, then 16th 16th eighth) read from a dense beam\n%unsure bar 10: eighth rest and 16ths at the end read as C B G (beams) and quarter rest; check\n%unsure bar 24: \"C. B\" dotted eighth + 16th, then 16th 16th eighth tied, read from beams\n%unsure bar 28 as bar 24"
+"abc": "X:1\nT:Just Give Me a Reason\nC:Alecia Moore / Jeff Bhasker / Nate Ruess\n%source Real Pop Book Vol 2 p220 (pdf 219)\n%style (Med.)\n%note Rhythms and chords only. Pitches NOT transcribed: every note is written as B. No lyrics.\nM:4/4\nL:1/16\nK:G\n%intro (piano), bars 3-4 in bass clef\n\"E-\"B2B2 B2B2 \"B-/D\"B4 \"A/C#\"B4 | \"D\"B4 B4 \"G/B\"B4 B4 | \"C\"B8 \"G/B\"B8 | \"A-\"B8 B2B2 B1B1B2 ||\n%verse (female)\n\"G\"z2B2 B1B1B2- B2G2 A1B1C2- | \"C\"B2B2 B2B2 B4 \"E-\"z2B2 | \"C\"B6 B2 B4 B2B2 | \"G\"B4 z4 z4 z3B1 |\nB2B2 B1B1B2- B2G2 A2B2 | \"C\"B2B2 B2B1B1 z4 \"E-\"z2B1B1 | \"C\"B6 B2 B4 B2B2 | \"G\"B4 z4 z4 z2B2 |\n\"E-\"B2B2 B2B2 \"B-/D\"B4 \"A/C#\"B4 | \"D\"B4 z4 \"Dsus4\"B4 B4 | \"E-\"B2B2 B2B2 \"B-/D\"B4 \"A/C#\"B4 | \"D\"B4 z4 \"Dsus4\"B4 B4 |\n\"E-\"B2B2 B2B2 \"B-/D\"B4 \"A/C#\"B4 | \"D\"B4 z4 \"G/B\"B4 B4 | \"C\"B6 z2 \"G/B\"B8 | \"Dsus4\"B8 \"D\"z8 |\n\"G\"B2B2 B2B2 B2B2 B2B2 | \"D/F#\"B2B2 B2B2 B2z2 B2B2 |\n%chorus\n\"E-\"B2B2 B2B2 B2\"B-/D\"B2 \"C\"B2\"B-\"B2- | B2B2 B2B2 \"D7sus4\"B3B1 B1B1B2- | B2B2 B2B2 B2z2 B2B2 | \"D/F#\"B2B2 B2B2 B2B2 B2B2 |\n\"E-\"z4 B2B2 B2\"B-/D\"B2 \"C\"B2\"B-\"B2- | B2B2 B2B2 B2B2 \"D7sus4\"B1B1B2- | \"G\"B4 z4 z4 z2B2 |]\n\n%unsure [bar 4] bar 4: rhythm after the half-note chord (eighth pair, then 16th 16th eighth) read from a dense beam\n%unsure [bar 10] bar 10: eighth rest and 16ths at the end read as C B G (beams) and quarter rest; check\n%unsure [bar 24] bar 24: \"C. B\" dotted eighth + 16th, then 16th 16th eighth tied, read from beams\n%unsure [bar 28] bar 28 as bar 24"
 },
 {
 "id": "222-kiss-from-a-rose",
+"book": "The Real Pop Book Vol. 2",
 "title": "Kiss from a Rose",
 "pdf": "222",
-"bad": 6,
+"form": "",
+"bad": 2,
+"off": [
+13,
+15
+],
+"first": 0,
 "unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "time signature printed looks like 6/8 (12 sixteenths a bar); later bars have 18"
+},
+{
+"bars": [
+8
+],
+"groups": [
+8
+],
+"text": "bar of 18 sixteenths (9/8): rests, tied f and dotted rhythm read by eye"
+},
+{
+"bars": [
+10
+],
+"groups": [
+10
+],
+"text": "9/8 bar, same shape as above"
+},
+{
+"bars": [
+12
+],
+"groups": [
+12
+],
+"text": "9/8 bar, second half of 'pill' line: beaming of first group hard to read"
+},
+{
+"bars": [
+13
+],
+"groups": [
+13
+],
+"text": "last notes of previous bar (rest then dotted F)"
+},
+{
+"bars": [
+15
+],
+"groups": [
+15
+],
+"text": "short 6-sixteenth bar"
+}
+],
 "note": "Rhythms and chords only.",
-"abc": "X:1\nT:Kiss from a Rose\nC:Henry Olusegun Adeola Samuel\n%source Real Pop Book Vol 2 p223 (pdf 222)\n%style (Slowly)\n%note Rhythms and chords only. Pitches NOT transcribed: every note is written as B.\nM:6/8\nL:1/16\nK:Gm\nB2 |: \"G-\"B3BB2 \"F\"B2B2B2 | \"G\"B4 BB B4 BB | \"G-\"B3BB2 \"F\"B2B2B2 |\n[1 \"G\"B4 BB B4 BB :|2 \"G\"B4 BB B4 z2 ||\n%verse\nzB B4 BBBBBB | \"Eb\"B2B2B2 \"F\"B2B2B2 | [M:9/8]\"G\"BBz2zB BBB3-B B4 B2 | [M:6/8]\"Eb\"B2B2B2 \"F\"B2B2B2 |\n[M:9/8]BBz2zB BBB3-B B4 B2 | [M:6/8]\"F\"B2B2B2 \"C\"BBB2B2 | [M:9/8]\"G\"BBzBBB B3BBB \"G-\"B4 B2 | [M:6/8]\"Eb\"B3BB2 \"F\"B2BzB |\n\"Eb\"B3BB2 \"F\"B2B2B2 | \"G\"B3zB2 | \"G\"BB B4 BBBBBB |]\n\n%unsure time signature printed looks like 6/8 (12 sixteenths a bar); later bars have 18\n%unsure bar of 18 sixteenths (9/8): rests, tied f and dotted rhythm read by eye\n%unsure 9/8 bar, same shape as above\n%unsure 9/8 bar, second half of 'pill' line: beaming of first group hard to read\n%unsure last notes of previous bar (rest then dotted F)\n%unsure short 6-sixteenth bar"
+"abc": "X:1\nT:Kiss from a Rose\nC:Henry Olusegun Adeola Samuel\n%source Real Pop Book Vol 2 p223 (pdf 222)\n%style (Slowly)\n%note Rhythms and chords only. Pitches NOT transcribed: every note is written as B.\nM:6/8\nL:1/16\nK:Gm\nB2 |: \"G-\"B3BB2 \"F\"B2B2B2 | \"G\"B4 BB B4 BB | \"G-\"B3BB2 \"F\"B2B2B2 |\n[1 \"G\"B4 BB B4 BB :|2 \"G\"B4 BB B4 z2 ||\n%verse\nzB B4 BBBBBB | \"Eb\"B2B2B2 \"F\"B2B2B2 | [M:9/8]\"G\"BBz2zB BBB3-B B4 B2 | [M:6/8]\"Eb\"B2B2B2 \"F\"B2B2B2 |\n[M:9/8]BBz2zB BBB3-B B4 B2 | [M:6/8]\"F\"B2B2B2 \"C\"BBB2B2 | [M:9/8]\"G\"BBzBBB B3BBB \"G-\"B4 B2 | [M:6/8]\"Eb\"B3BB2 \"F\"B2BzB |\n\"Eb\"B3BB2 \"F\"B2B2B2 | \"G\"B3zB2 | \"G\"BB B4 BBBBBB |]\n\n%unsure [general] time signature printed looks like 6/8 (12 sixteenths a bar); later bars have 18\n%unsure [bar 8] bar of 18 sixteenths (9/8): rests, tied f and dotted rhythm read by eye\n%unsure [bar 10] 9/8 bar, same shape as above\n%unsure [bar 12] 9/8 bar, second half of 'pill' line: beaming of first group hard to read\n%unsure [bar 13] last notes of previous bar (rest then dotted F)\n%unsure [bar 15] short 6-sixteenth bar"
 },
 {
 "id": "259-mad-world",
+"book": "The Real Pop Book Vol. 2",
 "title": "Mad World",
 "pdf": "259",
-"bad": 1,
+"form": "",
+"bad": 0,
+"off": [],
+"first": 1,
 "unsure": 2,
+"flags": [
+{
+"bars": [
+6
+],
+"groups": [
+5
+],
+"text": "fa-mil-iar: syllable spacing under the first Ab bar read from the printed text (mil / iar / fac / es), tie assumed on the eighth before the last eighth"
+},
+{
+"bars": [],
+"groups": [],
+"text": "verse 2 words sit under the same notes with different syllable counts, so given as plain text, not aligned"
+}
+],
 "note": "Rhythms, chords and lyrics only.",
-"abc": "X:1\nT:Mad World\nC:Roland Orzabal\n%source Real Pop Book Vol 2 p260 (pdf 259)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Fm\n%intro (keys)\n\"Fm\"BB BB BB BB | \"Bb\"z4 z2 zB- | \"Fm\"BB BB BB BB- | \"Bb\"B8 |]\n|: \"Fm\"z2 BB BB BB | \"Ab\"B B2 B- BB z2 |\nw: All a- round me are fa- mil- iar _ fac- es,\n\"Eb\"B B2 B- BB z2 | \"Bb\"B B2 B- BB BB |\nw: worn out plac- _ es, worn out fac- _ es. _ _ _\n\"Fm\"z2 BB BB BB | \"Ab\"B B2 B- BB z2 |\nw: Bright and ear- ly for their dai- ly rac- _ es,\n\"Eb\"B B2 B- BB z2 | \"Bb\"B B2 B- BB BB |\nw: go- ing no- _ where, go- ing no- _ where. _ _ _\n\"Fm\"z2 zB BB BB | \"Ab\"B B2 B- BB z2 |\nw: Their tears are fill- ing up their glass- _ es,\n\"Eb\"B B2 B- BB z2 | \"Bb\"B B2 B- BB BB |\nw: no ex- pres- _ sion, no ex- pres- _ sion. _ _ _\nW:Verse 2: Children wait-ing for the day they feel good, hap-py birth-day, hap-py birth-day. And I feel the way that ev-'ry child should sit and lis-ten, sit and lis-ten. Went to school and I was ver-y ner-vous, no one knew me, no one knew me. (line 3 of verse 2 below)\n\"Fm\"z2 BB BB BB | \"Bb\"BB zB BB BB |\nw: Hide my head, I wan- na drown my sor- row,\n\n%unsure fa-mil-iar: syllable spacing under the first Ab bar read from the printed text (mil / iar / fac / es), tie assumed on the eighth before the last eighth\n%unsure verse 2 words sit under the same notes with different syllable counts, so given as plain text, not aligned"
+"abc": "X:1\nT:Mad World\nC:Roland Orzabal\n%source Real Pop Book Vol 2 p260 (pdf 259)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Fm\n%intro (keys)\n\"Fm\"BB BB BB BB | \"Bb\"z4 z2 zB- | \"Fm\"BB BB BB BB- | \"Bb\"B8 |]\n|: \"Fm\"z2 BB BB BB | \"Ab\"B B2 B- BB z2 |\nw: All a- round me are fa- mil- iar _ fac- es,\n\"Eb\"B B2 B- BB z2 | \"Bb\"B B2 B- BB BB |\nw: worn out plac- _ es, worn out fac- _ es. _ _ _\n\"Fm\"z2 BB BB BB | \"Ab\"B B2 B- BB z2 |\nw: Bright and ear- ly for their dai- ly rac- _ es,\n\"Eb\"B B2 B- BB z2 | \"Bb\"B B2 B- BB BB |\nw: go- ing no- _ where, go- ing no- _ where. _ _ _\n\"Fm\"z2 zB BB BB | \"Ab\"B B2 B- BB z2 |\nw: Their tears are fill- ing up their glass- _ es,\n\"Eb\"B B2 B- BB z2 | \"Bb\"B B2 B- BB BB |\nw: no ex- pres- _ sion, no ex- pres- _ sion. _ _ _\nW:Verse 2: Children wait-ing for the day they feel good, hap-py birth-day, hap-py birth-day. And I feel the way that ev-'ry child should sit and lis-ten, sit and lis-ten. Went to school and I was ver-y ner-vous, no one knew me, no one knew me. (line 3 of verse 2 below)\n\"Fm\"z2 BB BB BB | \"Bb\"BB zB BB BB |\nw: Hide my head, I wan- na drown my sor- row,\n\n%unsure [bar 6] fa-mil-iar: syllable spacing under the first Ab bar read from the printed text (mil / iar / fac / es), tie assumed on the eighth before the last eighth\n%unsure [general] verse 2 words sit under the same notes with different syllable counts, so given as plain text, not aligned"
 },
 {
 "id": "309-rainy-days-and-mondays",
+"book": "The Real Pop Book Vol. 2",
 "title": "Rainy Days and Mondays",
 "pdf": "309",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 4,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4,
+5
+],
+"groups": [
+0,
+1,
+2,
+3,
+4
+],
+"text": "intro rhythms are small and a best reading; the 4-chord whole-note bars are written as two half notes"
+},
+{
+"bars": [
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21
+],
+"groups": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"text": "16th-note groupings and ties in the verse bars are a best reading from a small scan; each bar is forced to 4 beats"
+},
+{
+"bars": [],
+"groups": [],
+"text": "second verse words (Talk-in' / What I've got ...) are printed under the first and not given; no lyrics for repeat bars beyond the first pass"
+},
+{
+"bars": [],
+"groups": [],
+"text": "the printed coda/D.S. al Coda route is not transcribed beyond the first page"
+}
+],
 "note": "Rhythms, chords and lyrics only.",
-"abc": "X:1\nT:Rainy Days and Mondays\nC:Paul Williams / Roger Nichols\n%source Real Pop Book Vol 2 p310 (pdf 309)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Fm\n%intro (harmonica)\n\"Cm\"B2 B2 \"Abmaj7\"B4 | \"Fm7\"BB \"Fm7/Bb\"BB \"Eb\"B2 B2 | \"Abmaj7\"BB BB B2 \"Fm7/Bb\"Bz | \"Gm/Bb\"B4 \"Fm7/Bb\"B4- |\n\"Eb/Bb\"B4 \"Fm7\"B4 |\n%verse\n|: \"Eb\"BB B3 B BB | \"Gm/D\"BB \"Gm7b5/Db\"B4 \"C7\"z2 |\nw: Talk- in' to my- self and feel- in' old.\n\"Fm7\"BB BB B B2 B | \"Gm7\"BB B2 BB zB |\nw: Some- times I'd like to quit, _ noth- in' ev- er seems to fit.\n\"Cm\"B B2 B \"Abmaj7\"B2 B2 | \"Fm7\"BB BB \"Fm7/Bb\"BB \"Eb/G\"B\"Gm\"B |\nw: Hang- in' a- round, _ noth- in' to do but frown.\n\"Fm7\"BB BB BB \"Fm7/Bb\"BB | BB BB B2 B2 |\nw: Rain- y days and Mon- days al- ways get me _ down.\n[1 \"Gm/Bb\"B8- | B6 \"Fm7/Bb\"z2 :|\nw: down. _\n[2 \"Gm/Bb\"B8 | \"Cm7\"BB BB BB BB |\nw: Fun- ny, but it seems I al- ways\n\"Fm7\"BB \"Bb\"BB \"Ebmaj7\"BB B2 | \"Gm7\"zB BB BB BB |\nw: wind up here with you. Nice to know some- bod- y\n\"Fm7\"BB B2 \"Bb\"B2 \"G7\"z2 | \"Cm7\"BB BB BB BB |\nw: loves me. Fun- ny, but it seems that it's the\n\n%unsure intro rhythms are small and a best reading; the 4-chord whole-note bars are written as two half notes\n%unsure 16th-note groupings and ties in the verse bars are a best reading from a small scan; each bar is forced to 4 beats\n%unsure second verse words (Talk-in' / What I've got ...) are printed under the first and not given; no lyrics for repeat bars beyond the first pass\n%unsure the printed coda/D.S. al Coda route is not transcribed beyond the first page"
+"abc": "X:1\nT:Rainy Days and Mondays\nC:Paul Williams / Roger Nichols\n%source Real Pop Book Vol 2 p310 (pdf 309)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Fm\n%intro (harmonica)\n\"Cm\"B2 B2 \"Abmaj7\"B4 | \"Fm7\"BB \"Fm7/Bb\"BB \"Eb\"B2 B2 | \"Abmaj7\"BB BB B2 \"Fm7/Bb\"Bz | \"Gm/Bb\"B4 \"Fm7/Bb\"B4- |\n\"Eb/Bb\"B4 \"Fm7\"B4 |\n%verse\n|: \"Eb\"BB B3 B BB | \"Gm/D\"BB \"Gm7b5/Db\"B4 \"C7\"z2 |\nw: Talk- in' to my- self and feel- in' old.\n\"Fm7\"BB BB B B2 B | \"Gm7\"BB B2 BB zB |\nw: Some- times I'd like to quit, _ noth- in' ev- er seems to fit.\n\"Cm\"B B2 B \"Abmaj7\"B2 B2 | \"Fm7\"BB BB \"Fm7/Bb\"BB \"Eb/G\"B\"Gm\"B |\nw: Hang- in' a- round, _ noth- in' to do but frown.\n\"Fm7\"BB BB BB \"Fm7/Bb\"BB | BB BB B2 B2 |\nw: Rain- y days and Mon- days al- ways get me _ down.\n[1 \"Gm/Bb\"B8- | B6 \"Fm7/Bb\"z2 :|\nw: down. _\n[2 \"Gm/Bb\"B8 | \"Cm7\"BB BB BB BB |\nw: Fun- ny, but it seems I al- ways\n\"Fm7\"BB \"Bb\"BB \"Ebmaj7\"BB B2 | \"Gm7\"zB BB BB BB |\nw: wind up here with you. Nice to know some- bod- y\n\"Fm7\"BB B2 \"Bb\"B2 \"G7\"z2 | \"Cm7\"BB BB BB BB |\nw: loves me. Fun- ny, but it seems that it's the\n\n%unsure [bars 1-5] intro rhythms are small and a best reading; the 4-chord whole-note bars are written as two half notes\n%unsure [bars 6-21] 16th-note groupings and ties in the verse bars are a best reading from a small scan; each bar is forced to 4 beats\n%unsure [general] second verse words (Talk-in' / What I've got ...) are printed under the first and not given; no lyrics for repeat bars beyond the first pass\n%unsure [form] the printed coda/D.S. al Coda route is not transcribed beyond the first page"
 },
 {
 "id": "323-the-rose",
+"book": "The Real Pop Book Vol. 2",
 "title": "The Rose",
 "pdf": "323",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "16th-note and tie details are a best reading of the scan; bars were forced to 4 beats and may differ from the print"
+},
+{
+"bars": [
+7,
+8,
+9,
+10
+],
+"groups": [
+6,
+7,
+8,
+9
+],
+"text": "lyric alignment in bars 5-8 of the verse is approximate"
+},
+{
+"bars": [],
+"groups": [],
+"text": "second verse words (night has been too lone-ly ...) printed under the same notes, not transcribed"
+}
+],
 "note": "Rhythms, chords and lyrics only.",
-"abc": "X:1\nT:The Rose\nC:Amanda McBroom\n%source Real Pop Book Vol 2 p324 (pdf 323)\n%style (Tenderly)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:C\n%intro (keys)\n\"C\"B2 B2 B2 B2 | B2 B2 B2 BB |\nw: * * * * * * * * * Some say\n|: \"C\"B4 zB B3/B/ | \"G7\"B3/B/ B2 z2 zB | \"F\"B4- Bz/B/ \"G\"B3/B/- |\nw: love, it is a riv- er that drowns _ the ten- der\n[1 \"C\"B B3 z2 BB/B/ :|\nw: reed. Some say\n[2 \"C\"B B3 z2 BB/B/ | \"Cmaj7\"B4- BB BB |\nw: bleed. Some say love, _ it is a\n\"F(add9)\"B B3 B2 zB | \"F\"B4- BB BB | \"G7sus4\"B B2- B \"G7\"BB BB/B/ | \"C\"B4 zB B3/B/ |\nw: hun- ger, an end- less ach- ing need. _ I say love, it is a\n\"G\"B3/B/ B2 z2 zB | \"F\"B4 zB B3/B/ | \"C\"B8- | B2 z2 z2 BB/B/ |]\nw: flow- er, and you, its on- ly seed. _ It's the\n%chorus\n|: \"C\"B4 zB B3/B/ | \"G\"B3/B/ B4 zB | \"F\"B B3- Bz \"G\"B3/B/ |\nw: heart a- fraid of break- ing that nev- er learns to\n\"C\"B4 zB BB/B/ | B4- BB BB | \"G\"B3/B/ B4 zB |\nw: dance. It's the dream a- fraid of wak- ing that\n\"F\"B3/B/ B3 z BB/B/ | \"G\"BB B/B/-B zB BB/B/ | \"C\"B4 zB BB | \"G\"B3/B/ B4 zB |\nw: nev- er takes the chance. It's the one who won't\n\n%unsure 16th-note and tie details are a best reading of the scan; bars were forced to 4 beats and may differ from the print\n%unsure lyric alignment in bars 5-8 of the verse is approximate\n%unsure second verse words (night has been too lone-ly ...) printed under the same notes, not transcribed"
+"abc": "X:1\nT:The Rose\nC:Amanda McBroom\n%source Real Pop Book Vol 2 p324 (pdf 323)\n%style (Tenderly)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:C\n%intro (keys)\n\"C\"B2 B2 B2 B2 | B2 B2 B2 BB |\nw: * * * * * * * * * Some say\n|: \"C\"B4 zB B3/B/ | \"G7\"B3/B/ B2 z2 zB | \"F\"B4- Bz/B/ \"G\"B3/B/- |\nw: love, it is a riv- er that drowns _ the ten- der\n[1 \"C\"B B3 z2 BB/B/ :|\nw: reed. Some say\n[2 \"C\"B B3 z2 BB/B/ | \"Cmaj7\"B4- BB BB |\nw: bleed. Some say love, _ it is a\n\"F(add9)\"B B3 B2 zB | \"F\"B4- BB BB | \"G7sus4\"B B2- B \"G7\"BB BB/B/ | \"C\"B4 zB B3/B/ |\nw: hun- ger, an end- less ach- ing need. _ I say love, it is a\n\"G\"B3/B/ B2 z2 zB | \"F\"B4 zB B3/B/ | \"C\"B8- | B2 z2 z2 BB/B/ |]\nw: flow- er, and you, its on- ly seed. _ It's the\n%chorus\n|: \"C\"B4 zB B3/B/ | \"G\"B3/B/ B4 zB | \"F\"B B3- Bz \"G\"B3/B/ |\nw: heart a- fraid of break- ing that nev- er learns to\n\"C\"B4 zB BB/B/ | B4- BB BB | \"G\"B3/B/ B4 zB |\nw: dance. It's the dream a- fraid of wak- ing that\n\"F\"B3/B/ B3 z BB/B/ | \"G\"BB B/B/-B zB BB/B/ | \"C\"B4 zB BB | \"G\"B3/B/ B4 zB |\nw: nev- er takes the chance. It's the one who won't\n\n%unsure [general] 16th-note and tie details are a best reading of the scan; bars were forced to 4 beats and may differ from the print\n%unsure [bars 7-10] lyric alignment in bars 5-8 of the verse is approximate\n%unsure [general] second verse words (night has been too lone-ly ...) printed under the same notes, not transcribed"
 },
 {
 "id": "334-say-something",
+"book": "The Real Pop Book Vol. 2",
 "title": "Say Something",
 "pdf": "334",
+"form": "",
 "bad": 0,
+"off": [],
+"first": 1,
 "unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "rhythms read from a small scan; bars forced to 3 beats. Pages after the verse (pdf 335-336) are transcribed more roughly: the D.S. / coda route, tuplet and second endings are not all shown"
+},
+{
+"bars": [
+40
+],
+"groups": [
+39
+],
+"text": "the last bar above (tied dotted half then 2 eighths, \"And\") is read as B4 B B; the repeat sign at the segno follows"
+},
+{
+"bars": [],
+"groups": [],
+"text": "verses 2 and 3 (I will stum-ble and fall / I will swal-low my pride) are printed under verse 1 and not given"
+},
+{
+"bars": [
+48,
+49
+],
+"groups": [
+47,
+48
+],
+"text": "the above two bars: ties and syllable alignment approximate"
+},
+{
+"bars": [],
+"groups": [],
+"text": "the printed D.S. al Coda route and first/second endings are not transcribed in full"
+}
+],
 "note": "Rhythms, chords and lyrics only.",
-"abc": "X:1\nT:Say Something\nC:Ian Axel / Chad Vaccarino / Mike Campbell\n%source Real Pop Book Vol 2 p335 (pdf 334)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:3/4\nL:1/8\nK:Bm\n%intro (piano)\n\"Bm\"B6 | B6 | \"G\"B6 | B6 |\n\"D\"B6 | B6 | \"A(add4)\"B6- | B6 |]\n%verse\n\"Bm\"z6 | B2 B2 B2 | \"G\"B2 B2 B2 | B2 B2 B2 |\nw: Say some- thing, I'm giv- ing up on you.\n\"D\"B6- | B6 | \"A(add4)\"B6- | B4 B2 |\n\"Bm\"B6 | B2 B3/B/- BB | \"G\"z2 B2 B2 | B3/B/- BB- B2 | \"D\"B6- |\nw: I'll be the _ one if you want me _ to. _\nB4 B2 | \"A(add4)\"B6- | B6 | \"Bm\"B6 | B3/B/- BB- B2 |\nw: An- y- _ where _\n\"G\"B4 zB/B/ | B3/B/- BB B2 | \"D\"B6- | B6 |\nw: I would have fol- lowed _ you. _\n\"A(add4)\"B6- | B4 B2 | \"Bm\"B6 | B2 B2 B2 | \"G\"B2 B2 B2 |\nw: Say some- thing, I'm giv-\nB2 B2 B2 | \"D\"B6- | B4 B2 | \"A(add4)\"B6- | B4 BB |\nw: up on you. _ And\n|: \"D\"B6 | z6 | z2 z2 zB | B B2 B B2- | \"D/C#\"B6 |\nw: I am feel- ing so _ small.\nz6 | z6 | z2 B B2- B | \"G(add2)\"B2 B3/B/- BB |\nw: It was _ o- ver my _ head;\nz6 | z6 | z2 z2 (3zBB | B2 BB- B2 |\nw: I know noth- ing at all.\n\"D\"B6 | z6 | \"A(add4)\"z6 | z2 z2 zB |\nw: And\n\n%unsure rhythms read from a small scan; bars forced to 3 beats. Pages after the verse (pdf 335-336) are transcribed more roughly: the D.S. / coda route, tuplet and second endings are not all shown\n%unsure the last bar above (tied dotted half then 2 eighths, \"And\") is read as B4 B B; the repeat sign at the segno follows\n%unsure verses 2 and 3 (I will stum-ble and fall / I will swal-low my pride) are printed under verse 1 and not given\n%unsure the above two bars: ties and syllable alignment approximate\n%unsure the printed D.S. al Coda route and first/second endings are not transcribed in full"
+"abc": "X:1\nT:Say Something\nC:Ian Axel / Chad Vaccarino / Mike Campbell\n%source Real Pop Book Vol 2 p335 (pdf 334)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:3/4\nL:1/8\nK:Bm\n%intro (piano)\n\"Bm\"B6 | B6 | \"G\"B6 | B6 |\n\"D\"B6 | B6 | \"A(add4)\"B6- | B6 |]\n%verse\n\"Bm\"z6 | B2 B2 B2 | \"G\"B2 B2 B2 | B2 B2 B2 |\nw: Say some- thing, I'm giv- ing up on you.\n\"D\"B6- | B6 | \"A(add4)\"B6- | B4 B2 |\n\"Bm\"B6 | B2 B3/B/- BB | \"G\"z2 B2 B2 | B3/B/- BB- B2 | \"D\"B6- |\nw: I'll be the _ one if you want me _ to. _\nB4 B2 | \"A(add4)\"B6- | B6 | \"Bm\"B6 | B3/B/- BB- B2 |\nw: An- y- _ where _\n\"G\"B4 zB/B/ | B3/B/- BB B2 | \"D\"B6- | B6 |\nw: I would have fol- lowed _ you. _\n\"A(add4)\"B6- | B4 B2 | \"Bm\"B6 | B2 B2 B2 | \"G\"B2 B2 B2 |\nw: Say some- thing, I'm giv-\nB2 B2 B2 | \"D\"B6- | B4 B2 | \"A(add4)\"B6- | B4 BB |\nw: up on you. _ And\n|: \"D\"B6 | z6 | z2 z2 zB | B B2 B B2- | \"D/C#\"B6 |\nw: I am feel- ing so _ small.\nz6 | z6 | z2 B B2- B | \"G(add2)\"B2 B3/B/- BB |\nw: It was _ o- ver my _ head;\nz6 | z6 | z2 z2 (3zBB | B2 BB- B2 |\nw: I know noth- ing at all.\n\"D\"B6 | z6 | \"A(add4)\"z6 | z2 z2 zB |\nw: And\n\n%unsure [general] rhythms read from a small scan; bars forced to 3 beats. Pages after the verse (pdf 335-336) are transcribed more roughly: the D.S. / coda route, tuplet and second endings are not all shown\n%unsure [bar 40] the last bar above (tied dotted half then 2 eighths, \"And\") is read as B4 B B; the repeat sign at the segno follows\n%unsure [general] verses 2 and 3 (I will stum-ble and fall / I will swal-low my pride) are printed under verse 1 and not given\n%unsure [bars 48-49] the above two bars: ties and syllable alignment approximate\n%unsure [form] the printed D.S. al Coda route and first/second endings are not transcribed in full"
 },
 {
 "id": "351-songbird",
+"book": "The Real Pop Book Vol. 2",
 "title": "Songbird",
 "pdf": "351",
+"form": "",
 "bad": 1,
+"off": [
+22
+],
+"first": 1,
 "unsure": 4,
+"flags": [
+{
+"bars": [
+2,
+4
+],
+"groups": [
+1,
+3
+],
+"text": "intro rhythms read from a small scan; bars 2 and 4 are best guesses"
+},
+{
+"bars": [
+7,
+8,
+9
+],
+"groups": [
+6,
+7,
+8
+],
+"text": "bars 7-9: tied notes and 16th groupings are guesses; second verse (I would give the world) given as W:"
+},
+{
+"bars": [],
+"groups": [],
+"text": ""
+},
+{
+"bars": [
+11,
+12,
+13,
+14,
+15,
+16,
+17
+],
+"groups": [
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"text": "bars 11-17 of the tune are rough: dense small notes, triplets and ties could not be read reliably"
+}
+],
 "note": "Rhythms, chords and lyrics only.",
-"abc": "X:1\nT:Songbird\nC:Christine McVie\n%source Real Pop Book Vol 2 p352 (pdf 351)\n%style (Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:G\n%intro (piano)\n\"G\"BB BB- B B2 B | \"C(add2)\"B3/2z/ BB- B B2 B | \"G\"BB BB- B B2 B | \"C(add2)\"B3 B B2 B2 |\n\"G\"BB BB- B B3 | \"E/G\"B3 B \"D\"zB- B/B/B/B/ ||\nw: * * For you\n\"C(add2)\"BB- B6 | z3 B- B3 B | \"G\"BB B/BB/ B- B3 |\nw: you _ there'll _ be no cry- ing.\nW:Verse 2: you ... I would give the world.\n\"A-7\"z4 zB- B/B/B/B/- | \"G/B\"B \"C(add2)\"B3- B2- B/B/B | B/B/B B3- B2 z |\nw: For you _ _ _ _ _ _ _ _\n\"G\"zB B2- BB BB- | (3B/B/B/B/B/ (3B/B/B/ B5- | \"A-7\"BB \"G/B\"BB B2 B2 |\nw: the sun will be shin- ing. 'cause I feel that when\n\"A-\"B2 B(3B/B/B/ B4 | \"E-\"B B3 zz BB- | \"D/E\"B/B/B/B/ B6- | \"C(add2)\"B2 zz BB- B2 |\n\"G\"BB/B/ BB B4- | \"C\"B(3BBB B2 z B2 | \"E-\"BB B- B6 | \"B-/D\"B2 B2 BB BB |\n\n%unsure intro rhythms read from a small scan; bars 2 and 4 are best guesses\n%unsure bars 7-9: tied notes and 16th groupings are guesses; second verse (I would give the world) given as W:\n%unsure\n%unsure bars 11-17 of the tune are rough: dense small notes, triplets and ties could not be read reliably"
+"abc": "X:1\nT:Songbird\nC:Christine McVie\n%source Real Pop Book Vol 2 p352 (pdf 351)\n%style (Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:G\n%intro (piano)\n\"G\"BB BB- B B2 B | \"C(add2)\"B3/2z/ BB- B B2 B | \"G\"BB BB- B B2 B | \"C(add2)\"B3 B B2 B2 |\n\"G\"BB BB- B B3 | \"E/G\"B3 B \"D\"zB- B/B/B/B/ ||\nw: * * For you\n\"C(add2)\"BB- B6 | z3 B- B3 B | \"G\"BB B/BB/ B- B3 |\nw: you _ there'll _ be no cry- ing.\nW:Verse 2: you ... I would give the world.\n\"A-7\"z4 zB- B/B/B/B/- | \"G/B\"B \"C(add2)\"B3- B2- B/B/B | B/B/B B3- B2 z |\nw: For you _ _ _ _ _ _ _ _\n\"G\"zB B2- BB BB- | (3B/B/B/B/B/ (3B/B/B/ B5- | \"A-7\"BB \"G/B\"BB B2 B2 |\nw: the sun will be shin- ing. 'cause I feel that when\n\"A-\"B2 B(3B/B/B/ B4 | \"E-\"B B3 zz BB- | \"D/E\"B/B/B/B/ B6- | \"C(add2)\"B2 zz BB- B2 |\n\"G\"BB/B/ BB B4- | \"C\"B(3BBB B2 z B2 | \"E-\"BB B- B6 | \"B-/D\"B2 B2 BB BB |\n\n%unsure [bars 2, 4] intro rhythms read from a small scan; bars 2 and 4 are best guesses\n%unsure [bars 7-9] bars 7-9: tied notes and 16th groupings are guesses; second verse (I would give the world) given as W:\n%unsure [general]\n%unsure [bars 11-17] bars 11-17 of the tune are rough: dense small notes, triplets and ties could not be read reliably"
 },
 {
 "id": "355-stay",
+"book": "The Real Pop Book Vol. 2",
 "title": "Stay",
 "pdf": "355",
-"bad": 10,
+"form": "",
+"bad": 14,
+"off": [
+5,
+6,
+9,
+13,
+14,
+15,
+18,
+19,
+21,
+23,
+24,
+25,
+26,
+27
+],
+"first": 1,
 "unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "whole tune: dense 16th-note rhythms read from a small scan; many bars are best guesses (counts add up to the measure, notes inside bars may be off)"
+}
+],
 "note": "Rhythms, chords and lyrics only.",
-"abc": "X:1\nT:Stay\nC:Lisa Loeb\n%source Real Pop Book Vol 2 p356 (pdf 355)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:C\n%intro (guitar)\n\"C(add9)\"zB B-B B4 | \"A-7\"B/B/B/B/ B6 | \"D-7\"zB B2 \"C/E\"zB B2 | \"F(add9)\"zB/B/ B B5 ||\n%verse\n\"C\"zB3/2B/ B2- B z | \"A-7\"zz/B/ B/BB/ B/BB/ B/BB- | \"D-7\"B2 B\"C/E\"z zB B2 | \"F(add9)\"zB/B/ BB B4 |]\nw: You say _ I on- ly hear what I want to. _\n\"C\"zB3/2B/ B2- B z | \"A-7\"zz/B/ BB B/B/B B2 | \"D-7\"z2 zB- \"C/E\"B2 z2 |\nw: You say _ I talk so all the time. So? _\n\"F(add9)\"z8 | \"D-7\"zB/B/ BB BB/B/ B-B/B3/2 | \"C\"BB B/B/B B/B3/2 |\nw: And I thought what I felt was sim- ple.\n\"D-7\"zB/B/ BB/B/ B B2- B z | \"D-7\"zB/B/- BB/B/ \"C\"BB/B/ BB/B/ |\nw: And I thought that I don't be- long. _ And now _ that I am _ leav- in' _\n\"D-7\"zB/B/ BB/B/ BB/B/ BB | \"C\"BB/B/ BB B2 B | \"F(add9)\"BB z z2 z2 |\nw: now I know that I did some- thing wrong. 'Cause I missed you,\n\"F-\"zB B/B/B/B/ B2 zB/B/ | \"D-7\"BB \"C\"z z2 z2 | \"D-7\"z8 | \"C(add9)\"zB3/2B/ B2- B z |\nw: yeah, _ yeah, I missed you. And you say _\n\"A-7\"zz/B/ B/B/B/BB/B/BB/B/ | \"D-7\"BB/B/ BB/B/ B3/2B/ \"C/E\"BB/B/ BB/B/ |\nw: I on- ly hear what I want to. I don't lis- ten hard, I don't pay at- ten- tion to the\n%pdf356\n\"F\"B/B/B/B/ B/B/B/B/ B/B/B/B/ B/B/B B/B/ | \"C\"B/B/B/B/ BB/B/ BB/B/ | \"D-7\"zB B/B/B- BB/B/ BB/B/ B/B/ |\nw: dis- tance that you're run- ning, or to an- y- one, an- y- where. I don't un- der- stand _ if you real- ly care. I'm\n\n%unsure whole tune: dense 16th-note rhythms read from a small scan; many bars are best guesses (counts add up to the measure, notes inside bars may be off)"
+"abc": "X:1\nT:Stay\nC:Lisa Loeb\n%source Real Pop Book Vol 2 p356 (pdf 355)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:C\n%intro (guitar)\n\"C(add9)\"zB B-B B4 | \"A-7\"B/B/B/B/ B6 | \"D-7\"zB B2 \"C/E\"zB B2 | \"F(add9)\"zB/B/ B B5 ||\n%verse\n\"C\"zB3/2B/ B2- B z | \"A-7\"zz/B/ B/BB/ B/BB/ B/BB- | \"D-7\"B2 B\"C/E\"z zB B2 | \"F(add9)\"zB/B/ BB B4 |]\nw: You say _ I on- ly hear what I want to. _\n\"C\"zB3/2B/ B2- B z | \"A-7\"zz/B/ BB B/B/B B2 | \"D-7\"z2 zB- \"C/E\"B2 z2 |\nw: You say _ I talk so all the time. So? _\n\"F(add9)\"z8 | \"D-7\"zB/B/ BB BB/B/ B-B/B3/2 | \"C\"BB B/B/B B/B3/2 |\nw: And I thought what I felt was sim- ple.\n\"D-7\"zB/B/ BB/B/ B B2- B z | \"D-7\"zB/B/- BB/B/ \"C\"BB/B/ BB/B/ |\nw: And I thought that I don't be- long. _ And now _ that I am _ leav- in' _\n\"D-7\"zB/B/ BB/B/ BB/B/ BB | \"C\"BB/B/ BB B2 B | \"F(add9)\"BB z z2 z2 |\nw: now I know that I did some- thing wrong. 'Cause I missed you,\n\"F-\"zB B/B/B/B/ B2 zB/B/ | \"D-7\"BB \"C\"z z2 z2 | \"D-7\"z8 | \"C(add9)\"zB3/2B/ B2- B z |\nw: yeah, _ yeah, I missed you. And you say _\n\"A-7\"zz/B/ B/B/B/BB/B/BB/B/ | \"D-7\"BB/B/ BB/B/ B3/2B/ \"C/E\"BB/B/ BB/B/ |\nw: I on- ly hear what I want to. I don't lis- ten hard, I don't pay at- ten- tion to the\n%pdf356\n\"F\"B/B/B/B/ B/B/B/B/ B/B/B/B/ B/B/B B/B/ | \"C\"B/B/B/B/ BB/B/ BB/B/ | \"D-7\"zB B/B/B- BB/B/ BB/B/ B/B/ |\nw: dis- tance that you're run- ning, or to an- y- one, an- y- where. I don't un- der- stand _ if you real- ly care. I'm\n\n%unsure [general] whole tune: dense 16th-note rhythms read from a small scan; many bars are best guesses (counts add up to the measure, notes inside bars may be off)"
 },
 {
 "id": "423-wonderwall",
+"book": "The Real Pop Book Vol. 2",
 "title": "Wonderwall",
 "pdf": "423",
+"form": "",
 "bad": 2,
+"off": [
+8,
+9
+],
+"first": 1,
 "unsure": 4,
+"flags": [
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "lyric alignment in the next two bars: nine syllables on ten notes in the first"
+},
+{
+"bars": [
+7
+],
+"groups": [
+6
+],
+"text": "next bar: tie and 16th grouping read at 200 dpi, not certain"
+},
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "the two bars above (\"I don't believe ... about you now\") are the least certain rhythms on the page"
+},
+{
+"bars": [],
+"groups": [],
+"text": "the last system of this page (\"And all the roads ...\") is not transcribed"
+}
+],
 "note": "Rhythms, chords and lyrics only.  Only pdf page 423 (printed p424) is attempted; pdf 424 is not done.",
-"abc": "X:1\nT:Wonderwall\nC:Noel Gallagher\n%source Real Pop Book Vol 2 p424-425 (pdf 423-424)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is B. Only pdf page 423 (printed p424) is attempted; pdf 424 is not done.\nM:4/4\nL:1/16\nK:F#m\n%intro (guitar), play 4x\n|: \"F#m\"B4 \"A\"B4 z2B3B3 | \"Esus4\"z2B3B3 \"B7sus4\"z2B3B3 :|\n%verse 1\n\"F#m\"z2B2 B3B \"A\"BBBB B2BB | \"Esus4\"BBBB B2BB- \"B7sus4\"B4 z4 |\nw: To- day is gon- na be the day that they're gon- na throw it back to you. _\n\"F#m\"z2B2 B3B \"A\"BBBB B2BB | \"Esus4\"B2BB B2BB- \"B7sus4\"B8 |\nw: By now you should- 've some- how re- al- ised what you got- ta do. _\n\"F#m\"BBBB- B2BB- \"A\"B2BB- BB3 | \"Esus4\"B3B BBBB- \"B7sus4\"B3B BBB- | \"Dmaj7\"B2B2 z4 \"Esus4\"z4 \"B7sus4\"z8 | z16 |]\n%repeated verse bars (same rhythm as bars 1-2, two verses of words)\n|: \"F#m\"z2B2 B3B \"A\"BBBB B2BB | \"Esus4\"BBBB B2BB- \"B7sus4\"B4 z4 |\nw: Back- beat the word was on the street that the fi- re in your heart is out. _\n\"F#m\"z2B2 B3B \"A\"BBBB B2BB | \"Esus4\"BBBB B2BB- \"B7sus4\"B4 z4 |\nw: I'm sure you've heard it all be- fore but you nev- er real- ly had a doubt. _\n%verse 2 words for these bars, as plain text (they differ from verse 1 here): To- day was gon- na be the day, but they'll nev- er throw it back to you. / By now you should- 've some- how re- al- ised what you're not to do.\n\n%unsure lyric alignment in the next two bars: nine syllables on ten notes in the first\n%unsure next bar: tie and 16th grouping read at 200 dpi, not certain\n%unsure the two bars above (\"I don't believe ... about you now\") are the least certain rhythms on the page\n%unsure the last system of this page (\"And all the roads ...\") is not transcribed"
+"abc": "X:1\nT:Wonderwall\nC:Noel Gallagher\n%source Real Pop Book Vol 2 p424-425 (pdf 423-424)\n%style (Med.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is B. Only pdf page 423 (printed p424) is attempted; pdf 424 is not done.\nM:4/4\nL:1/16\nK:F#m\n%intro (guitar), play 4x\n|: \"F#m\"B4 \"A\"B4 z2B3B3 | \"Esus4\"z2B3B3 \"B7sus4\"z2B3B3 :|\n%verse 1\n\"F#m\"z2B2 B3B \"A\"BBBB B2BB | \"Esus4\"BBBB B2BB- \"B7sus4\"B4 z4 |\nw: To- day is gon- na be the day that they're gon- na throw it back to you. _\n\"F#m\"z2B2 B3B \"A\"BBBB B2BB | \"Esus4\"B2BB B2BB- \"B7sus4\"B8 |\nw: By now you should- 've some- how re- al- ised what you got- ta do. _\n\"F#m\"BBBB- B2BB- \"A\"B2BB- BB3 | \"Esus4\"B3B BBBB- \"B7sus4\"B3B BBB- | \"Dmaj7\"B2B2 z4 \"Esus4\"z4 \"B7sus4\"z8 | z16 |]\n%repeated verse bars (same rhythm as bars 1-2, two verses of words)\n|: \"F#m\"z2B2 B3B \"A\"BBBB B2BB | \"Esus4\"BBBB B2BB- \"B7sus4\"B4 z4 |\nw: Back- beat the word was on the street that the fi- re in your heart is out. _\n\"F#m\"z2B2 B3B \"A\"BBBB B2BB | \"Esus4\"BBBB B2BB- \"B7sus4\"B4 z4 |\nw: I'm sure you've heard it all be- fore but you nev- er real- ly had a doubt. _\n%verse 2 words for these bars, as plain text (they differ from verse 1 here): To- day was gon- na be the day, but they'll nev- er throw it back to you. / By now you should- 've some- how re- al- ised what you're not to do.\n\n%unsure [bars 7-8] lyric alignment in the next two bars: nine syllables on ten notes in the first\n%unsure [bar 7] next bar: tie and 16th grouping read at 200 dpi, not certain\n%unsure [bars 7-8] the two bars above (\"I don't believe ... about you now\") are the least certain rhythms on the page\n%unsure [general] the last system of this page (\"And all the roads ...\") is not transcribed"
 },
 {
 "id": "486-total-eclipse-of-the-heart",
+"book": "The Real Pop Book Vol. 2",
 "title": "Total Eclipse of the Heart",
 "pdf": "486",
-"bad": 3,
+"form": "",
+"bad": 0,
+"off": [],
+"first": 1,
 "unsure": 29,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13
+],
+"text": "rhythm of every intro bar: 12 sixteenths after an assumed quarter rest in bar 1, the lone- tie and the last held syllable are read from beaming, not the notes"
+},
+{
+"bars": [
+3,
+4
+],
+"groups": [
+2,
+3
+],
+"text": "same pattern assumed as bar 1-2; \"tired\" held"
+},
+{
+"bars": [
+5,
+6
+],
+"groups": [
+4,
+5
+],
+"text": "Db bar: the first group looks dotted (eighth + sixteenth); B bar: dotted figures near the end"
+},
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "same as the previous pair"
+},
+{
+"bars": [
+9,
+10
+],
+"groups": [
+8,
+9
+],
+"text": "first bar split read from beaming only; the 2/4 bar sits under a meter change to 2/4"
+},
+{
+"bars": [
+13,
+14
+],
+"groups": [
+12,
+13
+],
+"text": "2nd/3rd ending: the E/A bar has a dotted figure; the printed key signature returns to flats (4/4) after the repeat sign, written here as the verse key"
+},
+{
+"bars": [
+16
+],
+"groups": [
+15
+],
+"text": ""
+},
+{
+"bars": [
+17
+],
+"groups": [
+16
+],
+"text": ""
+},
+{
+"bars": [
+18
+],
+"groups": [
+17
+],
+"text": ""
+},
+{
+"bars": [
+19
+],
+"groups": [
+18
+],
+"text": ""
+},
+{
+"bars": [
+20
+],
+"groups": [
+19
+],
+"text": ""
+},
+{
+"bars": [
+21
+],
+"groups": [
+20
+],
+"text": ""
+},
+{
+"bars": [
+22
+],
+"groups": [
+21
+],
+"text": ""
+},
+{
+"bars": [
+23
+],
+"groups": [
+22
+],
+"text": ""
+},
+{
+"bars": [
+25
+],
+"groups": [
+24
+],
+"text": ""
+},
+{
+"bars": [
+26
+],
+"groups": [
+25
+],
+"text": ""
+},
+{
+"bars": [
+28
+],
+"groups": [
+27
+],
+"text": ""
+},
+{
+"bars": [
+29
+],
+"groups": [
+28
+],
+"text": ""
+},
+{
+"bars": [
+30
+],
+"groups": [
+29
+],
+"text": ""
+},
+{
+"bars": [
+31
+],
+"groups": [
+30
+],
+"text": ""
+},
+{
+"bars": [
+33
+],
+"groups": [
+32
+],
+"text": ""
+},
+{
+"bars": [
+34,
+35
+],
+"groups": [
+33,
+34
+],
+"text": "instrumental bars, no lyrics"
+},
+{
+"bars": [
+36
+],
+"groups": [
+35
+],
+"text": ""
+},
+{
+"bars": [
+37
+],
+"groups": [
+36
+],
+"text": ""
+},
+{
+"bars": [
+38
+],
+"groups": [
+37
+],
+"text": ""
+},
+{
+"bars": [
+39
+],
+"groups": [
+38
+],
+"text": "instrumental, no lyrics"
+},
+{
+"bars": [
+39
+],
+"groups": [
+38
+],
+"text": "this last bar before D.C. al Coda has no chord and a dotted figure"
+},
+{
+"bars": [
+41,
+42
+],
+"groups": [
+40,
+41
+],
+"text": ""
+},
+{
+"bars": [
+41,
+42
+],
+"groups": [
+40,
+41
+],
+"text": "Repeat ad lib. and fade"
+}
+],
 "note": "Rhythms, chords, key signatures, repeats and lyrics only.  Written by a model from the page images; most dense sixteenth bars are reconstructed from the lyric layout and flagged %unsure. Verse 2 (\"Once upon a time there was light in my life\") and the instrumental bars are not given words.",
-"abc": "X:1\nT:Total Eclipse of the Heart\nC:Jim Steinman\n%source The Ultimate Rock Pop Fake Book (Hal Leonard) printed pp484-485 (pdf 486-487)\n%style Rock Ballad\n%note Rhythms, chords, key signatures, repeats and lyrics only. Pitches NOT transcribed: every note is written as B. Written by a model from the page images; most dense sixteenth bars are reconstructed from the lyric layout and flagged %unsure. Verse 2 (\"Once upon a time there was light in my life\") and the instrumental bars are not given words.\nM:4/4\nL:1/16\nQ:1/4=66\nK:Db\n%intro: instrumental solo, played with the sung \"Turn around\" part; repeats three times (1st ending, 2nd/3rd ending below)\n|: \"Bbm\"z4 BBB-B BBBB BBBB | \"Ab\"BBBB- BBBB BBBB BBBB |\nw: Turn a- round * Ev- 'ry now and then I get a lit- tle bit lone- * ly and you're nev- er com- ing 'round. _ _ _\n\"Bbm\"z4 BBB-B BBBB BBBB | \"Ab\"BBBB- BBBB BBBB BBBB |\nw: Turn a- round * Ev- 'ry now and then I get a lit- tle bit tired * of lis- t'ning to the sound of my tears.\n\"Db\"z4 B3B BBBB BBBB | \"B\"BBBB- BBBB BBBB BBBB |\nw: Turn a- round * Ev- 'ry now and then I get a lit- tle bit ner- vous that the best of all the years have gone by.\n\"Db\"z4 B3B BBBB BBBB | \"B\"BBBB- BBBB BBBB BBBB |\nw: Turn a- round * Ev- 'ry now and then I get a lit- tle bit ter- ri- fied and then I see the look in your eyes.\n[K:E]\"E\"B3B B4 \"E/A\"B2B2 \"A\"B4- | [M:2/4]BBBB BBBB |\nw: Turn a- round * bright * eyes * Ev- 'ry now and then I fall a-\n|1 [M:4/4]\"E\"B3B B4 \"E/A\"B2B2 \"A\"B4- | [M:2/4]BBBB BBBB :|\nw: part. * * * _ _ * bright _ eyes * Ev- 'ry now and then I fall a-\n|2 [M:4/4]\"E\"B3B B4 \"E/A\"B2B2 \"A\"B2BB | [M:2/4]BBBB BBBB ||\nw: part. * * * * * _ * * * Ev- 'ry now and then I fall a- part,\n%verse (4 flats)\n[K:Ab][M:4/4]\"Ab\"B4 z2BB \"Fm\"B2BB- B2BB |\nw: and I need you now * to- night,\n\"Db\"z4 z2BB \"Eb7\"BBBB- BBB2 |\nw: and I need you more * than ev- er.\n\"Ab\"B4- z2zB \"Fm\"BBBB B2BB |\nw: And if you on- ly hold me tight,\n\"Db\"z4 z2BB \"Eb7\"BBBB- BBB2 |\nw: we'll be hold- ing on * for- ev- er.\n\"Ab\"B2Bz2zBB \"Fm\"BBB-B BBBB |\nw: And we'll on- ly be mak- ing it\n\"Db\"BBBz2BBB \"Eb7\"BBBB- BBB2 |\nw: right * 'cause we'll nev- er be wrong\n\"Db/F\"BBBB BBBB \"Eb/G\"B3B Bz2B |\nw: to- geth- er we can take it to the end of the line. Your\n\"Fm\"BBBB BBBB \"Bb\"BBBB- BBBB |\nw: love is like a shad- ow on me all of the time. *\n[M:2/4]z4 z2zB |\nw: I\n[M:4/4]\"Ab\"BBBB BBBB \"Eb/G\"BBBB BBz2 |\nw: don't know what to do and I'm al- ways in the dark.\n\"Fm\"BBBB BBBB \"Bb\"BBz2 BBB2 |\nw: We're liv- ing in a pow- der keg and giv- ing off sparks.\n[M:2/4]zBBB BBBB |\nw: I real- ly need you to- night.\n[M:4/4]\"Ab/C\"z4 z2BB \"Eb/Bb\"B-BBB \"Ab/C\"B2BB- |\nw: For- ev- er's gon- na start to- night,\n\"Db\"BBBz z2BB \"Eb7\"B-BBB BBBB |\nw: for- ev- er's gon- na start * to- night.\n\"Ab\"B4 BBBB \"Fm\"BBBB BBBB |\nw: Once up- on a time I was fall- ing in love, but *\n[M:2/4]\"C\"BBBB BBBB |\nw: now I'm on- ly fall- ing a- part.\n[M:4/4]\"Db\"z8 z4 z2\"Ab/C\"zB |\nw: There's\n\"Bbm7\"BBBB Bz2B \"Eb7b9\"BBBB- BBBB- |\nw: noth- ing I can do; a to- tal e- clipse of the heart. _\n\"Ab\"z4 z2zB \"Fm\"BBB-B BBBB |\n%(Instrumental)\n\"Db\"B4- B4 \"Eb7\"B2B2 \"Eb/G\"BBBB | \"Ab\"BBBB BBBB \"Fm\"BBBB B3B |\nw: Once up- on a time there was light in my life, but\n\"C\"BBBB BBBB \"Db\"z4 \"Ab/C\"z4 |\n%To Coda\nw: now there's on- ly love in the dark.\n\"Bbm\"BBBB Bz2B \"Eb7b9\"BBBB- BBBB- |\nw: Noth- ing I can say; a to- tal e- clipse of the heart. _\n\"Ab\"B4 z2zB \"Fm\"BBB-B BBBB |\n%(Instrumental)\nB2z2 B2z2 BBBB B4 ||\n%D.C. al Coda (back to the very beginning, play to \"To Coda\", then the coda)\n%CODA\n\"Bbm\"BBBB B3z \"Eb7b9\"BBBB- BBBB |\nw: Noth- ing I can say; a to- tal e- clipse of the heart. _\n|: \"Ab\"B8 \"Fm\"z8 | \"Db\"z4 z2zB \"Eb7\"BBBB \"Eb/G\"B-BBB :|\nw: * A to- tal e- clipse of the heart. _\n\n%unsure rhythm of every intro bar: 12 sixteenths after an assumed quarter rest in bar 1, the lone- tie and the last held syllable are read from beaming, not the notes\n%unsure same pattern assumed as bar 1-2; \"tired\" held\n%unsure Db bar: the first group looks dotted (eighth + sixteenth); B bar: dotted figures near the end\n%unsure same as the previous pair\n%unsure first bar split read from beaming only; the 2/4 bar sits under a meter change to 2/4\n%unsure 2nd/3rd ending: the E/A bar has a dotted figure; the printed key signature returns to flats (4/4) after the repeat sign, written here as the verse key\n%unsure\n%unsure\n%unsure\n%unsure\n%unsure\n%unsure\n%unsure\n%unsure\n%unsure\n%unsure\n%unsure\n%unsure\n%unsure\n%unsure\n%unsure\n%unsure instrumental bars, no lyrics\n%unsure\n%unsure\n%unsure\n%unsure instrumental, no lyrics\n%unsure this last bar before D.C. al Coda has no chord and a dotted figure\n%unsure\n%unsure Repeat ad lib. and fade"
+"abc": "X:1\nT:Total Eclipse of the Heart\nC:Jim Steinman\n%source The Ultimate Rock Pop Fake Book (Hal Leonard) printed pp484-485 (pdf 486-487)\n%style Rock Ballad\n%note Rhythms, chords, key signatures, repeats and lyrics only. Pitches NOT transcribed: every note is written as B. Written by a model from the page images; most dense sixteenth bars are reconstructed from the lyric layout and flagged %unsure. Verse 2 (\"Once upon a time there was light in my life\") and the instrumental bars are not given words.\nM:4/4\nL:1/16\nQ:1/4=66\nK:Db\n%intro: instrumental solo, played with the sung \"Turn around\" part; repeats three times (1st ending, 2nd/3rd ending below)\n|: \"Bbm\"z4 BBB-B BBBB BBBB | \"Ab\"BBBB- BBBB BBBB BBBB |\nw: Turn a- round * Ev- 'ry now and then I get a lit- tle bit lone- * ly and you're nev- er com- ing 'round. _ _ _\n\"Bbm\"z4 BBB-B BBBB BBBB | \"Ab\"BBBB- BBBB BBBB BBBB |\nw: Turn a- round * Ev- 'ry now and then I get a lit- tle bit tired * of lis- t'ning to the sound of my tears.\n\"Db\"z4 B3B BBBB BBBB | \"B\"BBBB- BBBB BBBB BBBB |\nw: Turn a- round * Ev- 'ry now and then I get a lit- tle bit ner- vous that the best of all the years have gone by.\n\"Db\"z4 B3B BBBB BBBB | \"B\"BBBB- BBBB BBBB BBBB |\nw: Turn a- round * Ev- 'ry now and then I get a lit- tle bit ter- ri- fied and then I see the look in your eyes.\n[K:E]\"E\"B3B B4 \"E/A\"B2B2 \"A\"B4- | [M:2/4]BBBB BBBB |\nw: Turn a- round * bright * eyes * Ev- 'ry now and then I fall a-\n|1 [M:4/4]\"E\"B3B B4 \"E/A\"B2B2 \"A\"B4- | [M:2/4]BBBB BBBB :|\nw: part. * * * _ _ * bright _ eyes * Ev- 'ry now and then I fall a-\n|2 [M:4/4]\"E\"B3B B4 \"E/A\"B2B2 \"A\"B2BB | [M:2/4]BBBB BBBB ||\nw: part. * * * * * _ * * * Ev- 'ry now and then I fall a- part,\n%verse (4 flats)\n[K:Ab][M:4/4]\"Ab\"B4 z2BB \"Fm\"B2BB- B2BB |\nw: and I need you now * to- night,\n\"Db\"z4 z2BB \"Eb7\"BBBB- BBB2 |\nw: and I need you more * than ev- er.\n\"Ab\"B4- z2zB \"Fm\"BBBB B2BB |\nw: And if you on- ly hold me tight,\n\"Db\"z4 z2BB \"Eb7\"BBBB- BBB2 |\nw: we'll be hold- ing on * for- ev- er.\n\"Ab\"B2Bz2zBB \"Fm\"BBB-B BBBB |\nw: And we'll on- ly be mak- ing it\n\"Db\"BBBz2BBB \"Eb7\"BBBB- BBB2 |\nw: right * 'cause we'll nev- er be wrong\n\"Db/F\"BBBB BBBB \"Eb/G\"B3B Bz2B |\nw: to- geth- er we can take it to the end of the line. Your\n\"Fm\"BBBB BBBB \"Bb\"BBBB- BBBB |\nw: love is like a shad- ow on me all of the time. *\n[M:2/4]z4 z2zB |\nw: I\n[M:4/4]\"Ab\"BBBB BBBB \"Eb/G\"BBBB BBz2 |\nw: don't know what to do and I'm al- ways in the dark.\n\"Fm\"BBBB BBBB \"Bb\"BBz2 BBB2 |\nw: We're liv- ing in a pow- der keg and giv- ing off sparks.\n[M:2/4]zBBB BBBB |\nw: I real- ly need you to- night.\n[M:4/4]\"Ab/C\"z4 z2BB \"Eb/Bb\"B-BBB \"Ab/C\"B2BB- |\nw: For- ev- er's gon- na start to- night,\n\"Db\"BBBz z2BB \"Eb7\"B-BBB BBBB |\nw: for- ev- er's gon- na start * to- night.\n\"Ab\"B4 BBBB \"Fm\"BBBB BBBB |\nw: Once up- on a time I was fall- ing in love, but *\n[M:2/4]\"C\"BBBB BBBB |\nw: now I'm on- ly fall- ing a- part.\n[M:4/4]\"Db\"z8 z4 z2\"Ab/C\"zB |\nw: There's\n\"Bbm7\"BBBB Bz2B \"Eb7b9\"BBBB- BBBB- |\nw: noth- ing I can do; a to- tal e- clipse of the heart. _\n\"Ab\"z4 z2zB \"Fm\"BBB-B BBBB |\n%(Instrumental)\n\"Db\"B4- B4 \"Eb7\"B2B2 \"Eb/G\"BBBB | \"Ab\"BBBB BBBB \"Fm\"BBBB B3B |\nw: Once up- on a time there was light in my life, but\n\"C\"BBBB BBBB \"Db\"z4 \"Ab/C\"z4 |\n%To Coda\nw: now there's on- ly love in the dark.\n\"Bbm\"BBBB Bz2B \"Eb7b9\"BBBB- BBBB- |\nw: Noth- ing I can say; a to- tal e- clipse of the heart. _\n\"Ab\"B4 z2zB \"Fm\"BBB-B BBBB |\n%(Instrumental)\nB2z2 B2z2 BBBB B4 ||\n%D.C. al Coda (back to the very beginning, play to \"To Coda\", then the coda)\n%CODA\n\"Bbm\"BBBB B3z \"Eb7b9\"BBBB- BBBB |\nw: Noth- ing I can say; a to- tal e- clipse of the heart. _\n|: \"Ab\"B8 \"Fm\"z8 | \"Db\"z4 z2zB \"Eb7\"BBBB \"Eb/G\"B-BBB :|\nw: * A to- tal e- clipse of the heart. _\n\n%unsure [bars 1-14] rhythm of every intro bar: 12 sixteenths after an assumed quarter rest in bar 1, the lone- tie and the last held syllable are read from beaming, not the notes\n%unsure [bars 3-4] same pattern assumed as bar 1-2; \"tired\" held\n%unsure [bars 5-6] Db bar: the first group looks dotted (eighth + sixteenth); B bar: dotted figures near the end\n%unsure [bars 7-8] same as the previous pair\n%unsure [bars 9-10] first bar split read from beaming only; the 2/4 bar sits under a meter change to 2/4\n%unsure [bars 13-14] 2nd/3rd ending: the E/A bar has a dotted figure; the printed key signature returns to flats (4/4) after the repeat sign, written here as the verse key\n%unsure [bar 16]\n%unsure [bar 17]\n%unsure [bar 18]\n%unsure [bar 19]\n%unsure [bar 20]\n%unsure [bar 21]\n%unsure [bar 22]\n%unsure [bar 23]\n%unsure [bar 25]\n%unsure [bar 26]\n%unsure [bar 28]\n%unsure [bar 29]\n%unsure [bar 30]\n%unsure [bar 31]\n%unsure [bar 33]\n%unsure [bars 34-35] instrumental bars, no lyrics\n%unsure [bar 36]\n%unsure [bar 37]\n%unsure [bar 38]\n%unsure [bar 39] instrumental, no lyrics\n%unsure [bar 39] this last bar before D.C. al Coda has no chord and a dotted figure\n%unsure [bars 41-42]\n%unsure [bars 41-42] Repeat ad lib. and fade"
+},
+{
+"id": "The_Colorado_Cookbook/012-a-night-in-tunisia",
+"book": "The Colorado Cookbook",
+"title": "A Night in Tunisia",
+"pdf": "12",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+7,
+24
+],
+"groups": [
+6,
+23
+],
+"text": "Eo7 bar: 16th triplet plus one 16th grouping guessed"
+},
+{
+"bars": [
+16
+],
+"groups": [
+15
+],
+"text": "Fmaj7 bar: two beamed 16th groups marked 3 read as plain 16ths"
+},
+{
+"bars": [
+25
+],
+"groups": [
+24
+],
+"text": "last two eighths (rest, quarter, eighth tied) play only when going to tag"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:A Night in Tunisia\nC:John Birks \"Dizzy\" Gillespie\nP:AABC\n%source The Colorado Cookbook p9 (pdf 12)\n%style (Latin & Jazz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:F\n%intro bass intro on bass staff (Eb7 | Dm6/9, 2 bars repeated, to A on cue) not transcribed\nP:A\n|: \"Eb7\"(3BBB B4 BB | \"Dm6/9\"BB- B4 zB | \"Eb7\"(3BBB BB B2 BB | \"Dm6/9\"B6 zB |\n\"Eb7\"(3BBB B4 BB | \"Dm6/9\"BB- B4 z2 | \"Eo7\"BB (3B/B/B/B B2 \"A7#9\"BB- |1 \"Dm\"B4 z2 zB :|2\n\"Dm\"B4 z2 zB ||\nP:B\n\"Am7b5\"B3 B- B3 B | \"D7#9\"B2 BB B B2 B | \"Gm\"B B2 B- B2 BB | \"Gm\"BB B4 zB |\n\"Go7\"z B3 B3 B | \"C7#9\"B2 BB B B2 B | \"Fmaj7\"B3 B B/B/B/B/ B/B/B/B/ | \"Eo7\"B4- \"A7#9\"B2 zB ||\nP:C\n\"Eb7\"(3BBB B4 BB | \"Dm6/9\"BB- B4 zB | \"Eb7\"(3BBB BB B2 BB | \"Dm6/9\"B6 zB |\n\"Eb7\"(3BBB B4 BB | \"Dm6/9\"BB- B4 z2 | \"Eo7\"BB (3B/B/B/B B2 \"A7#9\"BB- | \"Dm\"B4 z B2 B- ||\n%tag (play at end of head and end of each solo)\n\"Em\"B2 BB B2 BB | BB BB z2 zB- | \"Eb7#11\"B2 BB B2 BB | BB BB z2 zB- |\n\"Dm\"B2 BB B2 BB | BB BB z2 zB- | \"G7#11\"B2 BB B2 BB | BB BB z2 zB- |\n\"C7#11\"B2 BB B2 BB | \"Gm/C\"BB BB z2 zB- | \"F#7#9\"B2 BB B2 BB | !coda!BB BB z2 \"F\"BB ||\n%solo break 4 bars, then solos on AABC; after final solo D.S. al coda\nz8 | z8 | z8 | z8 ||\n%coda\n\"F#7#9\"BB BB- B2 \"F\"BB |]\n\n%unsure [bars 7, 24] Eo7 bar: 16th triplet plus one 16th grouping guessed\n%unsure [bar 16] Fmaj7 bar: two beamed 16th groups marked 3 read as plain 16ths\n%unsure [bar 25] last two eighths (rest, quarter, eighth tied) play only when going to tag"
+},
+{
+"id": "The_Colorado_Cookbook/014-a-song-for-nicholas",
+"book": "The Colorado Cookbook",
+"title": "A Song for Nicholas",
+"pdf": "14",
+"form": "AB 8+8 (whole form repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+4,
+8,
+15,
+16
+],
+"groups": [
+3,
+7,
+14,
+15
+],
+"text": "Dbmaj7 bars also show a rhythm-section cue (eighth, then dotted half tied to whole) under the melody; melody only kept"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:A Song for Nicholas\nC:Bob Montgomery\nP:AB\n%source The Colorado Cookbook p11 (pdf 14)\n%style (Medium Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+8 (whole form repeated)\nM:4/4\nL:1/8\nK:C\nP:A\n|: \"Cmaj7\"z B3 B3 B | \"Ebmaj7\"BB BB- B2 BB- | \"Abmaj7\"B3 B BB BB- | \"Dbmaj7\"B8 |\n\"Cmaj7\"z B3 B3 B | \"Ebmaj7\"BB BB- BB BB- | \"Abmaj7\"B8- | \"Dbmaj7\"B4 zB BB- ||\nP:B\n\"Cmaj7\"B3 B B2 B2 | B3 B- B4 | \"Gbmaj7\"(3z2B2B2 B2 B2 | B3 B- B4 |\n\"Cmaj7\"(3z2B2B2 B3 B | B3 B- B3 B | \"Dbmaj7\"Bz B6- | B8 :|\n\n%unsure [bars 4, 8, 15-16] Dbmaj7 bars also show a rhythm-section cue (eighth, then dotted half tied to whole) under the melody; melody only kept"
+},
+{
+"id": "The_Colorado_Cookbook/015-a-sound-for-sore-ears",
+"book": "The Colorado Cookbook",
+"title": "A Sound for Sore Ears",
+"pdf": "15",
+"form": "AB 16+8 (A latin, B swing)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"text": "A section also has a rhythm-section cue pattern under the melody (not transcribed)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:A Sound for Sore Ears\nC:Jimmy Heath\nP:AB\n%source The Colorado Cookbook p12 (pdf 15)\n%style (Latin & Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+8 (A latin, B swing)\nM:4/4\nL:1/8\nK:C\n%intro (Latin)\n\"Abmaj7\"B3 \"G7#9\"B- B4- | B6 \"C7#5\"B2 | \"Fmaj7\"B3 \"E7#9\"B- B4- | B6 \"A7#5\"B2 |\n\"Dmaj7\"B3 \"C#7#9\"B- B4- | B6 \"F#7#5\"B2 | \"Bmaj7\"B3 \"Bb7#9\"B- B4- | B6 zB ||\nP:A\n|: \"Bbsus4\"B8 | z2 B2 B2 B2 | B8 | zB BB BB BB |\n\"Bbsus4\"B8 | z2 B2 B3 B | B8 | z2 B2 B3 B |\n\"Gsus4\"B8 | z2 B2 B2 B2 | B8 | zB BB BB BB |\n\"Gsus4\"B8 | z2 B2 B3 B | B8 | z2 zB B2 B2 ||\nP:B\n\"Bm7\"B4 \"E7\"B3 \"Amaj7\"B- | B4 zB BB || !coda!\"Bbm7\"B4 \"Eb7\"B3 \"Abmaj7\"B- | B6 zB |\n\"Abmaj7\"(3B2B2B2 (3B2B2B2 | \"Fmaj7\"(3B2B2B2 (3B2B2B2 | \"Dmaj7\"(3B2B2B2 (3B2B2B2 | \"Bmaj7\"(3B2B2B2 (3B2B2B2 :|\n%solos on A & B, then D.S. (with repeat) al coda\n%coda\n\"Bbm7\"B4 \"Eb7\"B4 | \"Abmaj7\"!fermata!B8 |]\n\n%unsure [bars 9-24] A section also has a rhythm-section cue pattern under the melody (not transcribed)"
+},
+{
+"id": "The_Colorado_Cookbook/016-africa",
+"book": "The Colorado Cookbook",
+"title": "Africa",
+"pdf": "16",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form: A repeat assumed played twice; whole tune over Dm6/9/E pedal (only chord printed)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Africa\nC:John Coltrane\nP:AABC\n%source The Colorado Cookbook p13 (pdf 16)\n%style (Bright Afro-Latin)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\n%unsure [form] form: A repeat assumed played twice; whole tune over Dm6/9/E pedal (only chord printed)\nM:4/4\nL:1/8\nK:C\n%intro vamp: 2-bar bass solo on bass staff (Dm6/9/E), add drums, add piano, on cue go to A (not transcribed)\nP:A\n|: \"Dm6/9/E\"z2 B6- | B4 BB z2 | z4 B4- | B4 B2 B2 |\nz4 BB BB- | B2 BB BB BB | B2 BB- B4- | B8 :|\nP:B\nB8- | B6 BB | B8- | B6 B2 |\nB8- | B6 BB | (3BBB- B6- | B6 B2 ||\nP:C\nB8- | B4 BB z2 | z4 B4- | B4 B2 B2 |\nz4 BB BB- | B2 BB BB BB | B2 BB- B4- | B8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/017-afternoon-in-paris",
+"book": "The Colorado Cookbook",
+"title": "Afternoon in Paris",
+"pdf": "17",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19
+],
+"groups": [
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18
+],
+"text": "B: G pedal under bars 1-4 and 5-6; chords in parentheses are the printed alternates"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Afternoon in Paris\nC:John Lewis\nP:AABC\n%source The Colorado Cookbook p14 (pdf 17)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:C\nz4 z2 BB |\nP:A\n|: \"Cmaj7\"z B2 B BB BB | \"Cm7\"BB BB \"F7\"B2 BB | \"Bbmaj7\"z B2 B BB BB | \"Bbm7\"BB BB \"Eb7\"B2 BB |\n\"Abmaj7\"zB BB BB BB- | \"Do7\"B4 \"G7b9\"(3B2B2B2 |1 \"Cmaj7\"BB BB \"Am7\"BB BB | \"Dm7\"BB BB \"G7\"B2 BB :|2\n\"Cmaj7\"B8 | z4 B2 B2 ||\nP:B\n\"Dm7\"B6 B2 | \"G7\"B6 B2 | \"Cmaj7\"\"(Fm7)\"B4 \"(Bb7)\"B2 B2 | \"Am7\"\"(Em7)\"B4 \"(A7)\"B2 B2 |\n\"Dm7\"B6 B2 | \"G7\"B6 B2 | \"Dm7\"\"(Dbm7)\"B4 \"(Gb7)\"B4 | \"G7\"\"(Dm7)\"B4 \"(G7)\"B2 BB ||\nP:C\n\"Cmaj7\"z B2 B BB BB | \"Cm7\"BB BB \"F7\"B2 BB | \"Bbmaj7\"z B2 B BB BB | \"Bbm7\"BB BB \"Eb7\"B2 BB |\n\"Abmaj7\"zB BB BB BB- | \"Do7\"B4 \"G7b9\"(3B2B2B2 | \"Cmaj7\"B4 \"Am7\"B4 | \"Dm7\"z4 \"G7\"z4 |]\n\n%unsure [bars 12-19] B: G pedal under bars 1-4 and 5-6; chords in parentheses are the printed alternates"
+},
+{
+"id": "The_Colorado_Cookbook/018-all-blues",
+"book": "The Colorado Cookbook",
+"title": "All Blues",
+"pdf": "18",
+"form": "12-bar blues",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "melody (top voice) only; inner-voice harmony and bass-line staff not transcribed"
+},
+{
+"bars": [
+11,
+12
+],
+"groups": [
+10,
+11
+],
+"text": "bars 11-12: melody is chord voicings (top note taken)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:All Blues\nC:Miles Davis\n%source The Colorado Cookbook p15 (pdf 18)\n%style (Blues)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues\nM:6/8\nL:1/8\nK:G\n|: \"G7\"B3- B2- B/B/ | B3- B2- B/B/ | \"G7\"B2 B B2 B | B3- B2 z |\n\"C7/G\"B2 B B2 B | B2 B B2- B/B/ | \"G7\"B6- | B3 z2 z/B/ |\n\"D7#9\"B6 | \"Eb7#9\"B3 \"D7#9\"B3 | \"G7\"B3 B3 | B3 B3 :|\n\n%unsure [general] melody (top voice) only; inner-voice harmony and bass-line staff not transcribed\n%unsure [bars 11-12] bars 11-12: melody is chord voicings (top note taken)"
+},
+{
+"id": "The_Colorado_Cookbook/019-all-the-things-you-are",
+"book": "The Colorado Cookbook",
+"title": "All the Things You Are",
+"pdf": "19",
+"form": "ABCD 8+8+8+12",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+0,
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3,
+4
+],
+"text": "intro is on a bass staff with a bass line below; only the upper voice rhythm transcribed"
+},
+{
+"bars": [
+39,
+40
+],
+"groups": [
+39,
+40
+],
+"text": "\"(OR) A maj7\" alternate over the last two bars"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:All the Things You Are\nC:Jerome Kern\nP:ABCD\n%source The Colorado Cookbook p16 (pdf 19)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+12\nM:4/4\nL:1/8\nK:Ab\n%intro\nz |: \"Dbm9\"z2 zB- B4 | \"Dbm9\"z B3- B4 | \"C7#9\"z2 zB- B4 | \"C7#9\"z B3- B4 :|\nP:A\n\"Fm7\"B8 | \"Bbm7\"\"(Bm7)\"B6 B2 | \"Eb7b9\"\"(Em7)\"B2 B2 \"(A7b9)\"B2 B2 | \"Abmaj7\"B2 B4 B2 |\n\"Dbmaj7\"B2 B2 B2 B2 | \"Dm7\"B2 \"G7\"B4 B2 | \"Cmaj7\"B8- | B4 z4 ||\nP:B\n\"Cm7\"B8 | \"Fm7\"\"(F#m7)\"B6 \"(B7)\"B2 | \"Bb7b9\"\"(Bm7)\"B2 B2 \"(E7b9)\"B2 B2 | \"Ebmaj7\"B2 B4 B2 |\n\"Abmaj7\"B2 B2 B2 B2 | \"Am7\"B2 BB \"D7\"B2 B2 | \"Gmaj7\"B8 | z2 B2 B2 B2 ||\nP:C\n\"Am7\"B2 B2 B4 | \"D7\"z2 B2 B2 B2 | \"Gmaj7\"B8 | z2 B2 B2 B2 |\n\"F#m7\"B2 B2 B4 | \"B7\"z2 B2 B2 B2 | \"Emaj7\"B8- | \"C+\"B8 ||\nP:D\n\"Fm7\"B8 | \"Bbm7\"\"(Bm7)\"B6 \"(E7)\"B2 | \"Eb7b9\"\"(Em7)\"B2 B2 \"(A7b9)\"B2 B2 | \"Abmaj7\"B2 B4 B2 |\n\"Dm7b5\"B8 | \"Dbm7\"B6 B2 | \"Cm7\"B2 B2 (3B2B2B2 | \"Bo7\"B6 B2 |\n\"Bbm7\"B2 B2 B2 \"Eb7\"B2 | B4 B4 | \"Abmaj7\"\"(Amaj7)\"B8 | \"Gm7b5\"B4 \"C7b9\"z4 |]\n\n%unsure [bars 0-4] intro is on a bass staff with a bass line below; only the upper voice rhythm transcribed\n%unsure [bars 39-40] \"(OR) A maj7\" alternate over the last two bars"
+},
+{
+"id": "The_Colorado_Cookbook/020-all-you-were-to-us",
+"book": "The Colorado Cookbook",
+"title": "All You Were to Us",
+"pdf": "20",
+"form": "AABC 16+16+16",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form/bar counts inferred: A with 1st/2nd endings, B, C, then D.C. al Coda"
+},
+{
+"bars": [
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49
+],
+"groups": [
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49
+],
+"text": "bar counts of the C section: 14 bars + coda sign as printed"
+},
+{
+"bars": [
+50,
+51,
+52,
+53,
+54,
+55
+],
+"groups": [
+50,
+51,
+52,
+53,
+54,
+55
+],
+"text": "coda printed as block chords; top-voice rhythm only"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:All You Were to Us\nC:Stefan Karlsson\nP:AABC\n%source The Colorado Cookbook p17 (pdf 20)\n%style (Jazz Waltz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+16\n%unsure [form] form/bar counts inferred: A with 1st/2nd endings, B, C, then D.C. al Coda\nM:3/4\nL:1/8\nK:F\nB BB |:\nP:A\n\"Fmaj7\"B4 B2 | \"B7#11\"B4 BB | \"Bbmaj7\"B4 B2 | \"A7b9/C#\"(4:3:4B2B2B2B2 |\n\"Dm7\"B6 | \"Dm/C#\"(4:3:4z2B2\"Dm/C\"B2B2 | \"Bm7b5\"B6 | \"Bbm7\"z4 \"Eb7#11\"BB |\n\"Am7\"B4 BB | \"Bbmaj7\"B4 BB | \"Am7\"B4 BB | \"D7alt\"B4 BB |\n\"Gm7\"B3 \"F/A\"B3 |1 \"Bbmaj7\"B3 \"Bo7\"B3 | \"Csus4\"B3 \"C7b9\"B3- | B2 zB BB :|2\n\"Bbmaj7\"B3 \"C7\"B3 | \"Fmaj7\"B6 | \"Db7\"z2 zB BB ||\nP:B\n\"Gbmaj7/Db\"B3 B3 | \"Eb7#9/Db\"B4 zB | \"Abm9/Db\"B3 B3 | \"Db7#11\"(4:3:4B2B2\"Db7#11/B\"B2B2 |\n\"Bbm9\"B4 BB | \"A7#11\"B4 BB | \"Abm7\"B6- | \"Db7\"B2 zB BB |\n\"Gbmaj7/Db\"B3 B3 | \"Gbmaj7/Db\"B6 | \"Csus4\"B4 BB | \"C7#11\"(4:3:4B2B2B2B2 |\n\"Am7\"B4 BB | \"D7\"B4 BB | \"Gm11\"B6 | \"C7\"B2 zB BB ||\nP:C\n\"Fmaj7\"B4 B2 | \"B7#11\"B4 BB | \"Bbmaj7\"B4 B2 | \"A7b9/C#\"(4:3:4B2B2B2B2 |\n\"Dm7\"B6 | \"Dm/C#\"(4:3:4z2B2\"Dm/C\"B2B2 | \"Bm7b5\"B6 | \"Bbm7\"z4 \"Eb7#11\"BB |\n\"Am7\"B4 BB | \"Bbmaj7\"B4 BB | \"Am7\"B4 BB | \"D7alt\"B4 BB |\n\"Gm7\"B3 \"F/A\"B3 | \"Bbmaj7\"B3 \"C7\"B3 || \"Fmaj7\"B6- | B2 z2 z2 || \"^SOLOS\"z6 |]\n%coda\n\"Fmaj7\"B3 \"Bb6\"B3 | \"Am7\"B3 \"Gm7\"B3 | \"F6\"!fermata!B6 |]\n\n%unsure [bars 36-49] bar counts of the C section: 14 bars + coda sign as printed\n%unsure [bars 50-55] coda printed as block chords; top-voice rhythm only"
+},
+{
+"id": "The_Colorado_Cookbook/021-alone-together",
+"book": "The Colorado Cookbook",
+"title": "Alone Together",
+"pdf": "21",
+"form": "AABC 14+14+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Alone Together\nC:Howard Dietz & Arthur Schwartz\nP:AABC\n%source The Colorado Cookbook p18 (pdf 21)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 14+14+8+8\nM:4/4\nL:1/8\nK:Dm\nz4 z2 B2 |:\nP:A\n\"Dm\"B6 B2 | \"Em7b5\"B2 \"A7#9\"B6- | \"Dm\"B2 B2 B2 B2 | \"Em7b5\"B4- \"A7#9\"B4 |\n\"Dm\"z2 B2 B2 B2 | \"Am7b5\"B4 \"D7#9\"B4 | \"Gm\"z2 B2 B2 B2 | \"Gm\"B6 B2 ||\n\"Bm7\"B6 \"E7\"B2 | \"Gm7\"B2 B4 \"C7\"B2 | \"Fmaj7\"B3 B B3 B | \"Em7\"B6 \"A7\"B2 |\n\"Dmaj7\"B2 B6- |1 B6 B2 :|2 B6 B2 ||\nP:B\n\"Am7b5\"B8- | \"D7b9\"(3B2B2B2 (3B2B2B2 | \"Gm\"B8- | B6 B2 |\n\"Gm7b5\"B8- | \"C7b9\"(3B2B2B2 (3B2B2B2 | \"Fmaj7\"B6 B2 | \"Em7b5\"B4- \"A7#9\"B2 B2 ||\nP:C\n\"Dm\"B6 B2 | \"Em7b5\"B2 \"A7#9\"B6- | \"Dm\"B2 B2 B2 B2 | \"Em7b5\"B4- \"A7#9\"B4 |\n\"Dm\"z2 B2 B2 B2 | \"Bb7\"B6 \"A7#9\"B2 | \"Dm\"B2 B6- | \"Em7b5\"B4 \"A7#9\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/022-along-came-betty",
+"book": "The Colorado Cookbook",
+"title": "Along Came Betty",
+"pdf": "22",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+23
+],
+"groups": [
+22
+],
+"text": "Fm7 bar: tie and triplet grouping guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Along Came Betty\nC:Benny Golson\nP:ABCD\n%source The Colorado Cookbook p19 (pdf 22)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:Ab\nP:A\n\"Bbm7\"z4 B2 BB- | \"Bm7\"B8 | \"Bbm7\"z2 zB- BB BB | \"Bm7\"B4 \"E7\"B4 |\n\"Amaj7\"zB BB BB BB | \"Ab7\"B8 | \"Gmaj7\"zB BB B2 BB- | \"F#7\"B8 ||\nP:B\n\"F#m7\"z4 B2 BB- | \"Gm7\"B8 | \"F#m7\"z2 zB- BB BB | \"Gm7\"B6 \"C7#9\"B2 |\n\"Fmaj7\"B2- BB BB BB | \"A7#9\"(3B2B2B2 B2- BB/B/ | \"Dm7\"BB BB BB BB | \"G9\"B8 ||\nP:C\n\"Cm7\"BB BB B4 | zB BB BB BB | \"Am7b5\"B4- BB \"D7#9\"BB | \"Gm7\"BB BB BB BB |\n\"Em7b5\"B8 | \"A7\"zB BB BB BB | \"Fm7\"B3 B- (3B2B2B2 | \"Bb7\"B2- BB/B/ B4 ||\nP:D\n\"Bbm7\"z4 B2 BB- | \"Bm7\"B8 | \"Bbm7\"z2 zB- BB BB | \"Bm7\"B6 \"E7\"B2 |\n\"Cm7b5\"B8- | \"F7#9\"B3 B z B2 B | \"Bbm7b5\"B8 | \"Eb7#9\"B2- BB (3B2B2B2 |\n\"Abmaj7\"B8 | \"Bm7\"z4 \"E7\"z4 |]\n\n%unsure [bar 23] Fm7 bar: tie and triplet grouping guessed"
+},
+{
+"id": "The_Colorado_Cookbook/023-angel-eyes",
+"book": "The Colorado Cookbook",
+"title": "Angel Eyes",
+"pdf": "23",
+"form": "AABA 8+8+8+8 (C = last A, with tag)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+8
+],
+"groups": [
+7
+],
+"text": "1st ending: Ab7 G7b9 placed over the quarter rest"
+},
+{
+"bars": [
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17
+],
+"groups": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"text": "B section: positions of the alternate (upper) chords guessed; Bb7 and Bo7 alternates share beats"
+},
+{
+"bars": [
+26,
+27
+],
+"groups": [
+25,
+26
+],
+"text": "tag: play only on head, not on solos"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Angel Eyes\nC:Matt Dennis\nP:AABA\n%source The Colorado Cookbook p20 (pdf 23)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (C = last A, with tag)\nM:4/4\nL:1/8\nK:Cm\n|:\nP:A\n\"Cm\"z2 BB \"Ab7#11\"B3 B | \"Cm\"B2 \"Cm/Bb\"BB \"Ab7\"B2 \"G7b9\"B2 | \"Cm\"zB \"Cm/Bb\"BB \"Am7b5\"B2 BB | \"Dm7b5\"B4 \"G7b9\"B4 |\n\"Cm\"zB BB- \"Ab7#11\"\"(Ab7)\"B3 \"(G7)\"B | \"Cm7\"\"(Gb7)\"BB \"F7\"B2 \"Bbm7\"\"(F7)\"B3 \"Eb7\"B | \"Ab7\"BB BB \"G7b9\"B2 B2 |1 \"Cm\"B6 \"Ab7\"z\"G7b9\"z :|2\n\"Cm\"B6 B2 ||\nP:B\n\"Bbm7\"B2 B4 \"Eb7b9\"BB | \"Abmaj7\"\"(Abmaj7)\"B2 \"(Db7)\"B4 \"(Cm7)\"\"(F7b9)\"z2 | \"Bbm7\"B B2 \"Eb7b9\"B B2 B2 | \"Abmaj7\"\"(Abmaj7)\"B6 \"(Bbm7)\"\"(Bo7)\"\"(Cm7)\"B2 |\n\"Am7\"B4 z\"D7b9\"B BB | \"Gmaj7\"B2 B4 B2 | \"Dbm11\"B2 BB \"Gb7b9\"B2 B2 | \"Dm7b5\"B4 \"G7b9\"B4 ||\nP:A\n\"Cm\"z2 BB \"Ab7#11\"B3 B | \"Cm\"B2 \"Cm/Bb\"BB \"Ab7\"B2 \"G7b9\"B2 | \"Cm\"zB \"Cm/Bb\"BB \"Am7b5\"BB B2 | \"Dm7b5\"B4 \"G7b9\"B4 |\n\"Cm\"zB BB- \"Ab7#11\"\"(Ab7)\"B3 \"(G7)\"B | \"Cm7\"\"(Gb7)\"BB \"F7\"B2 \"Bbm7\"\"(F7)\"B3 \"Eb7\"B | \"Ab7\"BB BB \"G7b9\"B2 B2 | \"Cm\"B6 z2 ||\n%tag\n\"Ab7\"BB BB \"G7#9\"B2 BB | \"Cm\"B8 |]\n\n%unsure [bar 8] 1st ending: Ab7 G7b9 placed over the quarter rest\n%unsure [bars 10-17] B section: positions of the alternate (upper) chords guessed; Bb7 and Bo7 alternates share beats\n%unsure [bars 26-27] tag: play only on head, not on solos"
+},
+{
+"id": "The_Colorado_Cookbook/024-anthropology",
+"book": "The Colorado Cookbook",
+"title": "Anthropology",
+"pdf": "24",
+"form": "AABA 8+8+8+8 (C = last A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Anthropology\nC:Dizzy Gillespie\nP:AABA\n%source The Colorado Cookbook p21 (pdf 24)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (C = last A)\nM:4/4\nL:1/8\nK:Bb\n|:\nP:A\n\"Bbmaj7\"BB (3BBB BB BB | \"Cm7\"z2 zB \"F7\"zB B2 | \"Bbmaj7\"zB BB BB BB | \"Cm7\"BB BB \"F7\"z2 zB- |\n\"Bb7\"B2 BB B B2 B | \"Eb7\"z B2 B \"Ab7\"zB BB |1 \"Bbmaj7\"B2 zB z B2 B | \"Cm7\"BB BB \"F7\"BB zB :|2\n\"Bbmaj7\"BB BB zB BB | BB BB z2 zB- ||\nP:B\n\"D7\"B2 BB BB BB | BB z2 z2 zB | \"G7\"BB BB BB BB | z2 zB z B2 B- |\n\"C7\"BB BB B3 B | BB BB z2 zB- | \"F7\"B2 BB BB BB | B2 BB z2 zB ||\nP:A\n\"Bbmaj7\"BB (3BBB BB BB | \"Cm7\"z2 zB \"F7\"zB B2 | \"Bbmaj7\"zB BB BB BB | \"Cm7\"BB BB \"F7\"z2 zB- |\n\"Bb7\"B2 BB B B2 B | \"Eb7\"z B2 B \"Ab7\"zB BB | \"Bbmaj7\"BB BB zB BB | BB BB z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/025-antigua",
+"book": "The Colorado Cookbook",
+"title": "Antigua",
+"pdf": "25",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "ending 1 bars 2-3: lower harmony voice ignored, top voice held"
+},
+{
+"bars": [
+18
+],
+"groups": [
+17
+],
+"text": "F bar: rhythm section hits (RHY) under melody ignored"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Antigua\nC:Roland Prince\nP:AABC\n%source The Colorado Cookbook p22 (pdf 25)\n%style (Samba)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Dm\nP:A\n|: \"Dm\"B4 B3 B | \"Em7b5\"z B2 B2 \"A7\"B2 B | \"Dm\"B4 B3 B- | \"Em7b5\"B4 \"A7\"B4 |\n\"Dm\"B4 B3 B |1 \"Em7b5\"z B2 B2 \"A7\"B2 B | \"Dm\"B8- | \"Em7b5\"B4 \"A7\"B4 :|2\n\"Gm7\"z B2 B2 \"C7\"B2 B | \"Fmaj7\"B8 | \"Cm7\"z2 z B2 \"F7\"B2 B ||\nP:B\n\"Bbmaj7\"B4 B3 B- | \"Bo7\"B3 B z B2 B | \"Am7\"B8- | \"D7\"B3 B z B2 B |\n\"Gm7\"B8- | \"C7\"B3 B z B2 B | \"F\"BB BB BB BB | \"Cm7\"B2 z B2 \"F7\"B2 B ||\nP:C\n\"Bbmaj7\"B4 B3 B- | \"Bo7\"B3 B z B2 B | \"Am7\"B4 B3 B- | \"D7\"B8 |\n\"Gm7\"zB BB B2 z2 | \"C7\"BB BB z B2 \"F\"B | z8 | \"Em7b5\"z4 \"A7\"z4 |]\n\n%unsure [bars 7-8] ending 1 bars 2-3: lower harmony voice ignored, top voice held\n%unsure [bar 18] F bar: rhythm section hits (RHY) under melody ignored"
+},
+{
+"id": "The_Colorado_Cookbook/026-autumn-leaves",
+"book": "The Colorado Cookbook",
+"title": "Autumn Leaves",
+"pdf": "26",
+"form": "AABC 8+8+8+6 (C runs into the tag; solo C section is 8 bars)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form letters as printed (A, B); B split into B and C from the solo chart"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5
+],
+"groups": [
+0,
+1,
+2,
+3,
+4
+],
+"text": "intro 16th run: written as a 32nd-looking slash group, read as four 16ths"
+},
+{
+"bars": [],
+"groups": [],
+"text": "solos on AABC with slashes (alternate B-7 E7 / Bb-7 Eb7 etc. changes) not transcribed; after final solo D.S. al Coda"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Autumn Leaves\nC:Joseph Kosma\nP:AABC\n%source The Colorado Cookbook p23-24 (pdf 26-27)\n%style (Medium Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+6 (C runs into the tag; solo C section is 8 bars)\n%unsure [form] form letters as printed (A, B); B split into B and C from the solo chart\nM:4/4\nL:1/8\nK:Fm\n%intro (Clark Terry's intro)\n|: \"Fm\"B2- B/B/B/B/ \"Bb7\"B2 B2 | \"Db7\"B2 B\"C7\"B- B3 B/B/ |1 \"Fm\"B2- B/B/B/B/ \"Bb7\"B2 B2 | \"Db7\"B2 B\"C7\"B- B3 B/B/ :|2\n\"Fm\"B2- B/B/B/B/ \"Bb7\"B2 \"Db7\"BB | z2 zB B B2 B- ||\nP:A\n|: \"Bbm7\"B4 \"Eb7\"B4 | z2 zB B B2 B- | \"Abmaj7\"B4 \"Dbmaj7\"B4 | z2 zB B B2 B- |\n\"Gm7b5\"B4 \"C7b9\"B4 |1 z2 zB B B2 B- | \"Fm\"B8 | z2 zB B B2 B- :|2\nz2 zB B B2 B- | \"Fm\"B8 | z2 zB B2 B2 ||\nP:B\n\"Gm7b5\"B6 B2 | \"C7b9\"B3 B B2 B2 | \"Fm\"B8 | z2 B2 B2 B2 |\n\"Bbm7\"B6 B2 | \"Eb7\"B4 B4 | \"Abmaj7\"B8 | \"Dbmaj7\"z2 B2 B2 B2 ||\nP:C\n\"Gm7b5\"B2 B2 B2 B2 | \"C7b9\"B6 B2 | \"Fm7\"B4 \"E7\"B4- | \"Ebm7\"B6 \"D7\"B2 |\n\"Dbmaj7\"B6 B2 | \"Gm7b5\"B4 \"C7b9\"B2 B2 ||\n%tag\n|: \"Fm\"B2- B/B/B/B/ \"Bb7\"B2 B2 | \"Db7\"B2 B\"C7\"B- B3 B/B/ |1 \"Fm\"B2- B/B/B/B/ \"Bb7\"B2 B2 | \"Db7\"B2 B\"C7\"B- B3 B/B/ :|2\n\"Fm\"B2- B/B/B/B/ \"Bb7\"B2 \"Db7\"BB | z8 ||\n%coda\n!coda!\"Fm\"B2- B/B/B/B/ \"Bb7\"B2 B2 | \"Db7\"B2 B\"C7\"B- B3 B/B/ | \"Fm\"B2- B/B/B/B/ \"Bb7\"B2 B2 | \"Db7\"B2 \"C7\"B2 \"Fm\"!fermata!B4 |]\n\n%unsure [bars 1-5] intro 16th run: written as a 32nd-looking slash group, read as four 16ths\n%unsure [general] solos on AABC with slashes (alternate B-7 E7 / Bb-7 Eb7 etc. changes) not transcribed; after final solo D.S. al Coda"
+},
+{
+"id": "The_Colorado_Cookbook/028-avalon",
+"book": "The Colorado Cookbook",
+"title": "Avalon",
+"pdf": "28",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Avalon\nC:Vincent Rose\nP:ABCD\n%source The Colorado Cookbook p25 (pdf 28)\n%style (Up Tempo)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:F\nz4 B4 ||\nP:A\n\"Gm7\"B4 B4 | B4 B4 | \"C7\"B2 B2 B4- | B4 B4 |\n\"Fmaj7\"B8- | \"Bb7\"B4 B4 | \"Am7\"B8- | \"D7\"B4 B4 ||\nP:B\n\"C7\"B4 B4 | B4 B4 | \"Gm7\"B2 B2 B4- | \"C7\"B4 B4 |\n\"Fmaj7\"B8- | B4 B4 | B8- | B4 B4 ||\nP:C\n\"Am7b5\"B4 B4 | B4 B4 | \"D7\"B2 B2 B4- | B4 B4 |\n\"Gm7\"B8- | B4 B4 | \"Bbm7\"B8 | \"Eb7\"z4 B4 ||\nP:D\n\"Fmaj7\"B4 B4 | \"Bb7\"B4 B4 | \"Am7\"B2 B2 B4- | \"D7\"B4 B4 |\n\"Gm7\"B8 | \"C7\"B8 | \"Fmaj7\"B8- | B4 z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/029-baby-steps",
+"book": "The Colorado Cookbook",
+"title": "Baby Steps",
+"pdf": "29",
+"form": "AB 8+8 (repeated; solos on A & B; use intro for ending)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+30
+],
+"groups": [
+29
+],
+"text": "B bar 6: last note read as dotted quarter"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Baby Steps\nC:Jeff Jenkins\nP:AB\n%source The Colorado Cookbook p26 (pdf 29)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+8 (repeated; solos on A & B; use intro for ending)\nM:4/4\nL:1/8\nK:Eb\n%intro\n\"Ebmaj7\"B4 zB BB- | \"Dmaj7\"B3 B- B4 | \"Gmaj7\"B4 B2 BB- | \"F#7\"B6 BB- |\n\"Bmaj7\"B4 zB BB- | \"Ab/Bb\"B4 B3 B | \"Ebmaj7\"zB BB- B4- | \"Gb7\"B8 ||\n\"Bmaj7\"B4 B3 B- | \"Bbsus4\"B4 B2 BB- | \"Ebmaj7\"B6 zB | \"Dmaj7\"B2 B2 B2 BB- |\n\"Gmaj7\"B8 | \"Bb7\"zB BB B2 BB- | \"Ebmaj7\"B8 | \"C#m7\"B3 B \"F#7\"z4 ||\nP:A\n|: \"Bmaj7\"B2 B2 \"D7\"B2 BB- | \"Gmaj7\"B4 \"Bb7\"B3 B- | \"Ebmaj7\"B6 BB | \"Am7\"BB BB \"D7\"B2 BB- |\n\"Gmaj7\"B B2 B \"Bb7\"B2 BB- | \"Ebmaj7\"BB BB \"Gb7\"BB BB | \"Bmaj7\"B2 BB- B4 | \"Fm7\"zB BB \"Bb7\"B2 BB- ||\nP:B\n\"Ebmaj7\"B6 BB- | \"Am7/D\"B4 \"D7\"B3 B- | \"Gmaj7/D\"B8 | \"C#m7\"zB (3BBB \"F#7\"B2 BB- |\n\"Bmaj7\"B3 B B B2 B | \"Fm7\"z B2 B \"Bb7\"B B3 | \"Ebmaj7\"B2 BB- BB BB- | \"C#m7\"B4 \"F#7\"B4 :|\n\n%unsure [bar 30] B bar 6: last note read as dotted quarter"
+},
+{
+"id": "The_Colorado_Cookbook/030-basin-street-blues",
+"book": "The Colorado Cookbook",
+"title": "Basin Street Blues",
+"pdf": "30",
+"form": "AABCA 8+8+8+8+8 (solos on B & C, D.C. al Fine)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form order inferred from repeat, D.C. al Fine and Fine at end of A"
+},
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "A bar 6 chord printed Eb-6/9 over Gb, A bar 7 Bb6/9 over F (break)"
+},
+{
+"bars": [
+25
+],
+"groups": [
+24
+],
+"text": "last bar alternate changes printed above: Db-7 Gb7 C-7 F7"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Basin Street Blues\nC:Spencer Williams\nP:AABCA\n%source The Colorado Cookbook p27 (pdf 30)\n%style (Slow Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABCA 8+8+8+8+8 (solos on B & C, D.C. al Fine)\n%unsure [form] form order inferred from repeat, D.C. al Fine and Fine at end of A\nM:4/4\nL:1/8\nK:Bb\nz6 BB ||\nP:A\n%horn call - no rhythm section / rhythm section response\n|: BB B2 BB B2 | \"Bbmaj7\"BB \"Cm7\"B2 \"C#m7\"BB \"Dm7\"B2 | BB BB BB- B2 | \"Bb\"BB BB \"F+\"BB B2 |\n%all play\n\"Bb\"B B2 B \"Bb7/Ab\"B2 BB | \"Eb7/G\"B2 BB \"Ebm6/Gb\"B4 | \"Bb6/F\"zB BB BB BB | B2 BB- B4 :|\nP:B\n\"Bbmaj7\"B B2 B- B4 | \"Am7\"B B2 B- \"D7\"B3 B | \"G7\"B B2 B- B4 | \"Ab7\"BB BB \"G7\"BB B2 |\n\"C7\"B B2 B- B3 B | \"F7\"B B2 B- B3 B | \"Dm7\"BB BB \"Dbo7\"BB BB | \"Cm7\"BB BB \"F7\"BB BB ||\nP:C\n\"Bbmaj7\"B B2 B- B4 | \"Am7\"B2 BB- \"D7\"B4 | \"G7\"B B2 B- B4 | \"Ab7\"B2 BB- \"G7\"B3 B |\n\"C7\"BB BB- B4 | \"F7\"z2 BB BB BB- | \"Bbmaj7\"B8- | \"Cm7\"\"^(Dbm7 Gb7)\"B4 \"F7\"\"^(Cm7 F7)\"z4 |]\n\n%unsure [bars 7-8] A bar 6 chord printed Eb-6/9 over Gb, A bar 7 Bb6/9 over F (break)\n%unsure [bar 25] last bar alternate changes printed above: Db-7 Gb7 C-7 F7"
+},
+{
+"id": "The_Colorado_Cookbook/031-baubles-bangles-beads",
+"book": "The Colorado Cookbook",
+"title": "Baubles, Bangles and Beads",
+"pdf": "31",
+"form": "ABCD 8+8+8+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36
+],
+"groups": [
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35
+],
+"text": "D section is 12 bars as printed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Baubles, Bangles and Beads\nC:Borodin, Wright, and Forrest\nP:ABCD\n%source The Colorado Cookbook p28 (pdf 31)\n%style (Jazz Waltz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+12\nM:3/4\nL:1/8\nK:Ab\nP:A\n\"Bbm7\"B2 B4 | \"Eb9\"B2 B4 | \"Abmaj7\"B2 B2 B2 | \"Fm7\"B2 \"Cm7\"BB \"Bo7\"BB |\n\"Bbm7\"B2 B4 | \"Eb9\"B2 B4 | \"Abmaj7\"B2 B2 B2 | \"Ab6\"B6 ||\nP:B\n\"Dm7\"B2 B4 | \"G9\"B2 B4 | \"Cmaj7\"B2 B2 B2 | \"Am7\"B2 \"Em7\"BB \"Ebo7\"BB |\n\"Dm7\"B2 B4 | \"G9\"B2 B4 | \"Cmaj7\"B2 B2 B2 | \"C6\"B6 ||\nP:C\n\"F#m7\"B6 | \"B9\"B2 B2 B2 | \"Emaj7\"B6 | \"Bb9#11\"B6 |\n\"Amaj7\"B6 | \"Bbm11\"B2 B2 \"Eb7\"B2 | \"Abmaj7\"B6 | \"Cm7\"B4 \"Bm11\"B2 ||\nP:D\n\"Bbm7\"B2 B4 | \"Eb9\"B2 B4 | \"Abmaj7\"B2 B2 B2 | \"Cm7b5\"B2 BB \"F7#5b9\"BB |\n\"Bbm7\"B2 B4 | \"Eb9\"B2 B2 B2 | \"Cm7b5\"B6 | \"F7#5b9\"z2 B2 B2 |\n\"Bbm9\"B2 B4 | \"Eb9\"B2 B2 B2 | \"Abmaj7\"B6- | B2 z4 |]\n\n%unsure [bars 25-36] D section is 12 bars as printed"
+},
+{
+"id": "The_Colorado_Cookbook/032-beatrice",
+"book": "The Colorado Cookbook",
+"title": "Beatrice",
+"pdf": "32",
+"form": "16 bars + coda (no section letters printed)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Beatrice\nC:Sam Rivers\n%source The Colorado Cookbook p29 (pdf 32)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars + coda (no section letters printed)\nM:4/4\nL:1/8\nK:Bb\n\"Fmaj7\"z2 zB B2 B2 | \"Gbmaj7\"B2 B2 B2 B2 | \"Fmaj7\"B3 B B2 B2 | \"Ebmaj7\"BB- B6 |\n\"Dm\"z2 zB B2 B2 | \"Ebmaj7\"B2 B2 B B2 B- | \"Dm\"B4 \"Cm\"B3 B | \"Bbm\"BB- B4 zB |\n\"Am\"B6 B2 | \"Bbmaj7\"B4 B3 B- | \"Em7b5\"B4- \"A7\"B4- | \"Dm\"B6 B2 |\n\"Gm\"zB z2 B3 B- | \"Gbmaj7\"B4- BB BB- | \"Fm\"B3 B BB B2- | \"Gbmaj7\"B8 |]\n%solos, D.C. al coda\n%coda\n\"Gm\"zB z2 B3 B- | \"Gbmaj7\"B4- BB BB- |1 \"Fm\"B3 B BB B2- | \"Gbmaj7\"B8 :|2\n\"Fm\"B3 B BB BB- | !fermata!B8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/033-below-zero",
+"book": "The Colorado Cookbook",
+"title": "Below Zero",
+"pdf": "33",
+"form": "AABC 8+8+8+10",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+3
+],
+"groups": [
+3
+],
+"text": "bar 3 beaming/16ths guessed from a dense scan"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Below Zero\nC:Stefan Karlsson\nP:AABC\n%source The Colorado Cookbook p30 (pdf 33)\n%style (Straight Eight Latin)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+10\nM:4/4\nL:1/8\nK:Bb\n(3zBB |:\nP:A\n\"Bbmaj7#5\"B6 (3zBB | \"Ebm7/Bb\"B6 (3zBB | \"Bbmaj7#5\"B2- BB/B/ \"Ebm7/Bb\"B2- BB/B/ | \"E7#11\"B6 (3zBB |\n\"Ebmaj7#5\"B2 (3zBB B2 (3zBB | \"Em7b5\"BB/B/ B4 \"A7\"BB |1 \"Dm7\"B4- \"G7\"B4- | \"Cm7\"B4 \"F7\"z2 (3zBB :|2\n\"Dmaj7#5\"B4- \"A7\"B4- | \"Dmaj7#5\"B4 \"Ab7#11\"z4 ||\nP:B\n\"Gmaj7\"z2 zB BB BB | \"C7#11\"B3 B B2 B2 | \"Bbm7\"z2 zB BB BB | \"Eb7b9\"B3 B B2 B2 |\n\"Am7\"z2 zB BB BB | \"D7\"BB BB \"Ebo7\"BB BB | \"Em11\"B2- BB/B/ \"Dm11\"B4 | \"Dbm7\"B2 \"Gb7\"BB \"Cm7\"B2 \"F7\"(3zBB ||\nP:C\n\"Bbmaj7#5\"B6 (3zBB | \"Ebm7/Bb\"B6 (3zBB | \"Bbmaj7#5\"B2- BB/B/ \"Ebm7/Bb\"B2- BB/B/ | \"E7#11\"B6 (3zBB |\n\"Ebmaj7\"B2 (3zBB B2 (3zBB | \"Em7b5\"BB/B/ B4 \"A7\"BB | \"Abm11\"B8- | B8- |\nB8 | \"Cm7b5\"z4 \"F7\"z4 |]\n\n%unsure [bar 3] bar 3 beaming/16ths guessed from a dense scan"
+},
+{
+"id": "The_Colorado_Cookbook/034-bernie-s-tune",
+"book": "The Colorado Cookbook",
+"title": "Bernie's Tune",
+"pdf": "34",
+"form": "AABA 8+8+8+8 (last section printed as C, same as A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Bernie's Tune\nC:Bernie Miller\nP:AABA\n%source The Colorado Cookbook p31 (pdf 34)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (last section printed as C, same as A)\nM:4/4\nL:1/8\nK:F\n|:\nP:A\n\"Dm\"z B2 B B2 zB | zB B2 BB BB | \"Bb7\"B6- BB- | B8 |\n\"Em7b5\"z B2 B B2 zB | \"A7\"zB B2 BB BB | \"Dm\"B6- BB- |1 \"Em7b5\"B4- \"A7\"B4 :|2\nB8 ||\nP:B\n\"Bbmaj7\"B2 \"G7\"z2 B B2 B | \"Cm7\"B3 \"F7\"B- B4 | \"Bbmaj7\"B2 \"G7\"B2 B B2 B | \"Cm7\"B4- \"F7\"B4 |\n\"Bbmaj7\"B2 \"G7\"z2 B B2 B | \"Cm7\"B3 \"F7\"B- B4 | \"Bbmaj7\"B2 B2 B4- | \"Em7b5\"BB BB \"A7\"z4 ||\nP:A\n\"Dm\"z B2 B B2 zB | zB B2 BB BB | \"Bb7\"B6- BB- | B8 |\n\"Em7b5\"z B2 B B2 zB | \"A7\"zB B2 BB BB | \"Dm\"B6- BB- | B8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/035-besame-mucho",
+"book": "The Colorado Cookbook",
+"title": "Besame Mucho",
+"pdf": "35",
+"form": "ABCDE 8+8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"text": "section C beat-2 figures read as two 16ths + eighth"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Besame Mucho\nT:(Kiss Me Much)\nC:Carlos Velazquez\nP:ABCDE\n%source The Colorado Cookbook p32 (pdf 35)\n%style (Tango or Slow Latin)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCDE 8+8+8+8+8\nM:4/4\nL:1/8\nK:Cm\nP:A\n\"Cm\"B3 B- B4- | B4 (3B2B2B2 | \"Fm\"B4 B4- | B6 z2 |\n(3B2B2B2 (3B2B2B2 | (3B2B2B2 \"G7\"(3B2B2B2 | \"Cm\"B8- | B4 z4 ||\nP:B\n\"C7\"B8- | B4 B2 B2 | \"Fm\"B4 B4- | B6 z2 |\n\"Cm\"(3B2B2B2 (3B2B2B2 | \"D7\"(3B2B2B2 \"G7\"(3B2B2B2 | \"Cm\"B8- | B4 z4 ||\nP:C\n\"Fm\"B2 B/B/B (3B2B2B2 | \"Cm\"B2 B/B/B (3B2B2B2 | \"G7\"B3 B BB BB | \"Cm\"B8 |\n\"Fm\"B2 B/B/B (3B2B2B2 | \"Cm\"B2 B/B/B (3B2B2B2 | \"D7\"B2 B/B/B \"Ab7\"(3B2B2B2 | \"G7\"B8 ||\nP:D\n\"Cm\"B3 B- B4- | B4 (3B2B2B2 | \"Fm\"B4 B4- | B6 z2 |\n(3B2B2B2 (3B2B2B2 | (3B2B2B2 \"G7\"(3B2B2B2 | \"Cm\"B8- | B4 z4 ||\nP:E\n\"C7\"B8- | B4 B2 B2 | \"Fm\"B4 B4- | B6 z2 |\n\"Cm\"(3B2B2B2 (3B2B2B2 | \"D7\"(3B2B2B2 \"G7\"(3B2B2B2 | \"Cm\"B8- | B4 z4 |]\n\n%unsure [bars 17-24] section C beat-2 figures read as two 16ths + eighth"
+},
+{
+"id": "The_Colorado_Cookbook/036-bessie-s-blues",
+"book": "The Colorado Cookbook",
+"title": "Bessie's Blues",
+"pdf": "36",
+"form": "12-bar blues",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Bessie's Blues\nC:John Coltrane\n%source The Colorado Cookbook p33 (pdf 36)\n%style (Bright Blues)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues\nM:4/4\nL:1/8\nK:Eb\n|: \"Eb7\"B2 BB- B2 zB- | \"Ab7\"B2 BB- B3 B | \"Eb7\"BB B2 B2 BB- | BB BB- B4 |\n\"Ab7\"z B2 B B B2 B- | B3 B z B2 B | \"Eb7\"BB B2 B2 BB- | BB BB z2 BB- |\n\"Bb7\"B2 BB BB BB | \"Ab7\"BB B2 B2 BB- | \"Eb7\"B4 z4 |1 \"Bb7\"z2 zB BB BB :|2 \"Bb7\"z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/036-blue-trane",
+"book": "The Colorado Cookbook",
+"title": "Blue Trane",
+"pdf": "36",
+"form": "12-bar blues",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blue Trane\nC:John Coltrane\n%source The Colorado Cookbook p33 (pdf 36)\n%style (Medium Blues)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Lower-voice rhythm cue (half rest, dotted quarter, eighth) under the held notes omitted.\n%form 12-bar blues\nM:4/4\nL:1/8\nK:Eb\nz2 zB BB BB- |: \"Eb7#9\"B8 | z2 zB BB BB- | B8 |\nz2 zB BB BB- | \"Ab7#11\"B8 | z2 zB BB BB- | \"Eb7#9\"B8 |\nz2 zB BB BB- | \"Bb7#9\"B8 | z2 zB BB BB- | \"Eb7#9\"B8 |1 z2 zB BB BB- :|2 z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/037-billie-s-bounce",
+"book": "The Colorado Cookbook",
+"title": "Billie's Bounce",
+"pdf": "37",
+"form": "12-bar blues 12 (repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form not printed as letters; 12-bar blues inferred"
+},
+{
+"bars": [
+9
+],
+"groups": [
+8
+],
+"text": "bar 8: last notes (Eb, C-C# sixteenths) grouping guessed so the bar adds up"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Billie's Bounce\nC:Charlie Parker\nP:A\n%source The Colorado Cookbook p34 (pdf 37)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues 12 (repeated)\n%unsure [form] form not printed as letters; 12-bar blues inferred\nM:4/4\nL:1/8\nK:F\nz6 zB |\nP:A\n|: \"F7\"BB BB BB BB- | \"Bb7\"BB B2 z B2 B | \"F7\"B2 zB- BB BB | \"F7\"BB (3B/B/B/B BB BB |\n\"Bb7\"z2 zB BB zB | \"Bb7\"z B3 BB BB | \"F7\"zB B2 z2 zB- | \"F7\"B2 BB B B2 B/B/ |\n\"Gm7\"B2 zB (3B/B/B/B BB | \"C7\"B2 zB BB BB | \"F7\"B2 zB- BB B2 | \"C7\"z B2 B B2 z2 :|\n\n%unsure [bar 9] bar 8: last notes (Eb, C-C# sixteenths) grouping guessed so the bar adds up"
+},
+{
+"id": "The_Colorado_Cookbook/037-blue-monk",
+"book": "The Colorado Cookbook",
+"title": "Blue Monk",
+"pdf": "37",
+"form": "12-bar blues 12 (repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form not printed as letters; 12-bar blues inferred"
+},
+{
+"bars": [
+4
+],
+"groups": [
+3
+],
+"text": "bar 4: quarter-note triplet then tied note; durations adjusted to fit the bar"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blue Monk\nC:Thelonious Monk\nP:A\n%source The Colorado Cookbook p34 (pdf 37)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues 12 (repeated)\n%unsure [form] form not printed as letters; 12-bar blues inferred\nM:4/4\nL:1/8\nK:Bb\nP:A\n|: \"Bb7\"BB BB B4 | \"Eb7\"BB BB- B4 | \"Bb7\"BB BB BB BB- | \"Bb7\"B2 (3B2B2B2- B2 |\n\"Eb7\"BB BB- B4 | \"Eb7\"BB BB- B4 | \"Bb7\"BB BB BB BB- | \"Bb7\"B4 zB (3BBB |\n\"Cm7\"BB B6 | \"F7\"(3BBB BB BB BB- | \"Bb7\"B2 (3BBB BB BB | \"F7\"BB- B6 :|\n\n%unsure [bar 4] bar 4: quarter-note triplet then tied note; durations adjusted to fit the bar"
+},
+{
+"id": "The_Colorado_Cookbook/038-birks-works",
+"book": "The Colorado Cookbook",
+"title": "Birks' Works",
+"pdf": "38",
+"form": "12-bar minor blues 12 (repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form not printed as letters; 12-bar blues inferred"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Birks' Works\nC:Dizzy Gillespie\nP:A\n%source The Colorado Cookbook p35 (pdf 38)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar minor blues 12 (repeated)\n%unsure [form] form not printed as letters; 12-bar blues inferred\nM:4/4\nL:1/8\nK:Fm\nz5 B BB |\nP:A\n|: \"Fm\"BB BB BB BB | B2 BB zB BB | BB BB BB BB | z4 zB BB |\n\"Db7\"BB BB BB BB | B2 BB zB BB | \"Fm\"BB BB BB BB | z4 zB BB |\n\"Abm7\"z B3 \"Db7\"zB BB | \"Gm7\"z B3 \"C7\"(3B/B/B/B BB- | \"Fm\"B8 | z4 zB BB :|\n"
+},
+{
+"id": "The_Colorado_Cookbook/038-jeep-s-blues",
+"book": "The Colorado Cookbook",
+"title": "Jeep's Blues",
+"pdf": "38",
+"form": "12-bar blues 12 (repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form not printed as letters; 12-bar blues inferred"
+},
+{
+"bars": [
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13
+],
+"groups": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12
+],
+"text": "bars 5-12 are rhythm slashes in the book (written as rests with chords)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Jeep's Blues\nC:Duke Ellington & Johnny Hodges\nP:A\n%source The Colorado Cookbook p35 (pdf 38)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues 12 (repeated)\n%unsure [form] form not printed as letters; 12-bar blues inferred\n%text These changes are for the head only. Use \"F\" blues changes on solos.\nM:4/4\nL:1/8\nK:F\n\"Gm7/C\"z6 BB/B/ |\nP:A\n|: \"F6\"BB- B6 | \"Bb6\"BB B2 \"Bbm7\"BB- B2 | \"F6\"BB- B4 z2 | \"F7\"B4- B/B/B/B/ BB |\n\"B7\"z2 \"Bb7\"z6 | z8 | \"F7\"z8 | z8 |\n\"Gm7\"z8 | \"C7\"z8 | \"F7\"z8 | \"Gm7\"z4 \"Gm7/C\"z4 :|\n\n%unsure [bars 6-13] bars 5-12 are rhythm slashes in the book (written as rests with chords)"
+},
+{
+"id": "The_Colorado_Cookbook/039-blue-bossa",
+"book": "The Colorado Cookbook",
+"title": "Blue Bossa",
+"pdf": "39",
+"form": "16 bars 16 (repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form not printed as letters"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blue Bossa\nC:Kenny Dorham\nP:A\n%source The Colorado Cookbook p36 (pdf 39)\n%style (Bossa Nova or Samba)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars 16 (repeated)\n%unsure [form] form not printed as letters\n%note Book prints C minor and G minor versions; C minor version transcribed.\nM:4/4\nL:1/8\nK:Cm\nz6 B2 |\nP:A\n|: \"Cm\"B3 B B B2 B- | B6 B2 | \"Fm\"B4 B3 B- | B8 |\n\"Dm7b5\"B3 B B B2 B- | \"G7#9\"B6 B2 | \"Cm\"B4 B3 B- | B8 ||\n\"Ebm7\"B3 B B B2 B- | \"Ab7\"B6 B2 | \"Dbmaj7\"B2 BB- B2 BB- | B6 z2 |\n\"Dm7b5\"B2 BB- B3 B | \"G7#9\"B2 BB- B2 BB- | \"Cm\"B8- | \"Dm7b5\"B4- \"G7#9\"B2 z2 :|\n"
+},
+{
+"id": "The_Colorado_Cookbook/040-blue-silver",
+"book": "The Colorado Cookbook",
+"title": "Blue Silver",
+"pdf": "40",
+"form": "20 bars 20",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form not printed as letters"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blue Silver\nC:Blue Mitchell\nP:A\n%source The Colorado Cookbook p37 (pdf 40)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 20 bars 20\n%unsure [form] form not printed as letters\n%note Melody chords (double stops) written as single B; bass pedal staff in bars 9-12 (\"Pedals on head only\") skipped.\nM:4/4\nL:1/8\nK:Bb\nP:A\n\"Am7b5\"z B3 B3 B- | \"D7\"B3 B BB BB | \"Gm7\"z B3 BB BB- | \"C7\"B8 |\n\"Bmaj7\"z2 BB BB BB | \"Cm7b5\"zB (3BBB \"F7\"B2 BB- | \"Bbmaj7\"B8- | B8 |\n\"Bm7\"zB BB zB BB- | \"E7\"B4 B2 BB- | \"Amaj7\"B4- BB BB- | \"F#m7\"B4 BB BB |\n\"Ebm7b5\"B2 BB (3BBB BB- | \"Ab7b9\"B2 BB- B2 BB- | \"Dbmaj7\"B8- | B8 |\n\"Cm7b5\"z B3 BB B2 | \"F7alt\"z B3 BB B2 | \"Bbmaj7\"B3 B- B4- | B8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/041-blues-for-jan",
+"book": "The Colorado Cookbook",
+"title": "Blues for Jan",
+"pdf": "41",
+"form": "AB 12+open (A repeated; B = solos on F blues)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+12,
+13,
+14,
+15,
+16,
+17
+],
+"groups": [
+11,
+12,
+13,
+14,
+15,
+16
+],
+"text": "dyads written as single notes; held notes of B section read as ties into open solo section"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blues for Jan\nC:Bob Montgomery\nP:AB\n%source The Colorado Cookbook p38 (pdf 41)\n%style (Medium/Up Blues)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 12+open (A repeated; B = solos on F blues)\nM:4/4\nL:1/8\nK:F\nP:A\n|: \"F7\"BB BB BB BB | \"Bb7\"z2 zB z4 | \"F7\"z2 BB BB BB | z2 zB- B4 |\n\"Bb7\"BB BB BB BB | z2 zB z4 | \"F7\"z2 BB BB BB | z2 zB- B4 |\n\"Gm7\"BB BB BB BB | \"C7\"z2 zB z4 | \"F7\"BB BB BB BB |1 BB- B6 :|2\nBB- B6- ||\nP:B\n\"^Solos on F blues\"B8- | B8- | B8- | B8- |]\n\n%unsure [bars 12-17] dyads written as single notes; held notes of B section read as ties into open solo section"
+},
+{
+"id": "The_Colorado_Cookbook/041-blues-for-willie",
+"book": "The Colorado Cookbook",
+"title": "Blues for Willie",
+"pdf": "41",
+"form": "12-bar blues (unlettered, repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+12
+],
+"groups": [
+11
+],
+"text": "last bar: rhythm-section figure (quarter rest, eighth rest, eighth tied to half, F13) printed under a melody whole rest"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blues for Willie\nC:Bob Montgomery\n%source The Colorado Cookbook p38 (pdf 41)\n%style (Medium/Up Blues)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues (unlettered, repeated)\nM:4/4\nL:1/8\nK:Bb\n|: \"Bb7\"B2 BB B B2 B- | \"Eb7\"B2 BB B B2 B- | \"Bb7\"B2 BB B2 BB | z8 |\n\"Eb7\"B2 BB B B2 B- | B2 BB B B2 B- | \"Bb7\"B2 BB B2 BB | B2 BB B2 BB |\n\"Dbm7\"B2 BB \"Gb7\"B B2 B- | \"Cm7\"B2 BB \"F7\"B2 BB- | \"B7#11\"B8 | z2 z\"F13\"B- B4 :|\n\n%unsure [bar 12] last bar: rhythm-section figure (quarter rest, eighth rest, eighth tied to half, F13) printed under a melody whole rest"
+},
+{
+"id": "The_Colorado_Cookbook/042-blues-for-l-j",
+"book": "The Colorado Cookbook",
+"title": "Blues for L.J.",
+"pdf": "42",
+"form": "12-bar blues (unlettered, repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+1
+],
+"groups": [
+0
+],
+"text": "bar 1 grouping guessed so the bar adds up"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blues for L.J.\nC:Ken Walker\n%source The Colorado Cookbook p39 (pdf 42)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues (unlettered, repeated)\nM:4/4\nL:1/8\nK:Bb\n|: \"Bb7\"zB BB BB B-B | \"Eb7\"BB BB- B2 zB | \"Bb7\"BB BB B2 BB | z4 z2 zB |\n\"Eb7\"BB BB- B3 B | \"Eo7\"BB BB- B2 zB | \"Bb7\"BB BB B2 BB | \"G7\"z2 zB BB BB- |\n\"Cm7\"B2 BB BB- B2 | \"F7\"BB BB B2 BB | \"Bb7\"z8 | \"Cm7\"z4 \"F7\"z4 :|\n\n%unsure [bar 1] bar 1 grouping guessed so the bar adds up"
+},
+{
+"id": "The_Colorado_Cookbook/042-blues-walk",
+"book": "The Colorado Cookbook",
+"title": "Blues Walk",
+"pdf": "42",
+"form": "12-bar blues (unlettered, repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+9
+],
+"groups": [
+8
+],
+"text": "bar 9 held-note length guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blues Walk\nC:Clifford Brown\n%source The Colorado Cookbook p39 (pdf 42)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues (unlettered, repeated)\nM:4/4\nL:1/8\nK:Bb\n|: \"Bb7\"B2 B4 zB | BB z2 z2 zB | z B2 B B2 B2 | BB BB z4 |\n\"Eb7\"B2 B4 zB | BB z2 z2 zB | \"Bb7\"z B2 B B2 B2 | BB BB z4 |\n\"Cm7\"BB- B4 BB- | \"F7\"B3 B BB BB | \"Bb7\"z8 | z8 :|\n\n%unsure [bar 9] bar 9 held-note length guessed"
+},
+{
+"id": "The_Colorado_Cookbook/043-bags-groove",
+"book": "The Colorado Cookbook",
+"title": "Bags' Groove",
+"pdf": "43",
+"form": "12-bar blues (unlettered, repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+13
+],
+"groups": [
+12
+],
+"text": "last bar: melody pickup (quarter) not reprinted before the repeat"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Bags' Groove\nC:Milt Jackson\n%source The Colorado Cookbook p40 (pdf 43)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues (unlettered, repeated)\nM:4/4\nL:1/8\nK:F\nz4 z2 B2 |: \"F7\"B6 BB | \"Bb7\"B2 BB B2 BB | \"F7\"B3 B z4 |\nz4 z2 B2 | \"Bb7\"B6 BB | B2 BB B2 BB | \"F7\"B3 B z4 |\nz4 z2 B2 | \"Gm7\"B6 BB | \"C7\"B2 BB B2 BB | \"F7\"B3 B z4 | \"C7\"z8 :|\n\n%unsure [bar 13] last bar: melody pickup (quarter) not reprinted before the repeat"
+},
+{
+"id": "The_Colorado_Cookbook/043-blues-in-a-closet",
+"book": "The Colorado Cookbook",
+"title": "Blues in a Closet",
+"pdf": "43",
+"form": "12-bar blues (unlettered, repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blues in a Closet\nT:(Collard Greens and Black Eyed Peas)\nC:Oscar Pettiford\n%source The Colorado Cookbook p40 (pdf 43)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues (unlettered, repeated)\nM:4/4\nL:1/8\nK:F\n|: \"F7\"B2 BB B2 BB | \"Bb7\"B2 BB z B3 | \"F7\"B2 BB B2 BB | z8 |\n\"Bb7\"B2 BB B2 BB | B2 BB z B3 | \"F7\"B2 BB B2 BB | z8 |\n\"Gm7\"B2 BB B2 BB | \"C7\"B2 BB z B3 | \"F7\"B2 BB B2 BB | \"C7\"z8 :|\n"
+},
+{
+"id": "The_Colorado_Cookbook/044-body-and-soul",
+"book": "The Colorado Cookbook",
+"title": "Body and Soul",
+"pdf": "44",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+5,
+11,
+22
+],
+"groups": [
+4,
+10,
+21
+],
+"text": "chord placements in bar 2 of B (Gm7 C7) and Ebm/Db placement estimated"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Body and Soul\nC:Johnny Green\nP:AABA\n%source The Colorado Cookbook p41 (pdf 44)\n%style (Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\nM:4/4\nL:1/8\nK:Db\nP:A\n|: \"Ebm\"zB BB B2 \"Bb7b9\"B2 | \"Ebm7\"B2 \"Ab7\"B6 | \"Dbmaj7\"zB BB \"Gb7\"B2 B2 | \"Fm\"B2 B2 \"Eo7\"B2 B2 |\n\"Ebm\"z2 B2 \"Ebm/Db\"B B2 B | \"Cm7b5\"B4 \"F7b9\"B4 | \"Bbm\"zB BB \"Ebm7\"B2 \"Ab7\"(3BBB |1 \"Dbmaj7\"B4 \"Bb7b9\"z4 :|2\n\"Dbmaj7\"B6 \"Em7\"z\"A7\"z ||\nP:B\n\"Dmaj7\"zB BB \"Em7\"B B2 B | \"Dmaj7/F#\"B B2 B \"Gm7\"B \"C7\"B2 B | \"F#m7\"B B2 \"B7\"B \"Em7\"B2 \"A7\"B2 | \"Dmaj7\"B6 z2 |\n\"Dm7\"zB BB \"G7\"B B2 B | \"Em7\"B B2 B \"Ebo7\"B B2 B | \"Dm7\"B B2 B \"G7\"B B2 B | \"C7\"B2 \"B7\"B2 \"Bb7\"B2 \"E7\"B2 ||\nP:A\n\"Ebm\"zB BB B2 \"Bb7b9\"B2 | \"Ebm7\"B2 \"Ab7\"B6 | \"Dbmaj7\"zB BB \"Gb7\"B2 B2 | \"Fm\"B2 B2 \"Eo7\"B2 B2 |\n\"Ebm\"z2 B2 \"Ebm/Db\"B B2 B | \"Cm7b5\"B4 \"F7b9\"B4 | \"Bbm\"zB BB \"Ebm7\"B2 \"Ab7\"(3BBB | \"Dbmaj7\"B4 \"Bb7b9\"z4 |]\n\n%unsure [bars 5, 11, 22] chord placements in bar 2 of B (Gm7 C7) and Ebm/Db placement estimated"
+},
+{
+"id": "The_Colorado_Cookbook/045-bolivia",
+"book": "The Colorado Cookbook",
+"title": "Bolivia",
+"pdf": "45",
+"form": "AAB 8+8+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+"text": "A section is a bass-clef vamp figure with dyads; written as single notes"
+},
+{
+"bars": [
+14,
+22,
+26
+],
+"groups": [
+13,
+21,
+25
+],
+"text": "rhythm-section hits under rests (Ab7b9 bar, Gm7 C7 bar, A7#9 break) not transcribed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Bolivia\nC:Cedar Walton\nP:AAB\n%source The Colorado Cookbook p42 (pdf 45)\n%style (Latin / Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AAB 8+8+16\nM:4/4\nL:1/8\nK:C\nP:A\n|: \"G7\"B2 B2 B2 BB- | B2 B2 B2 B2 | B2 B2 B2 BB- | B2 B2 B2 B2 |\nB2 B2 B2 BB- | B2 B2 B2 B2 |1 B2 B2 B2 BB- | B2 B2 B2 B2 :|2\nB2 B2 B2 BB- | \"G7b9\"B6 \"^Swing\"B2 ||\nP:B\n\"Ebmaj7\"B4 B3 B- | \"Em7\"B6 \"A7\"B2 | \"Dmaj7\"B2 BB- B4- | B6 \"Ab7b9\"z2 |\n\"^Latin\"\"Gmaj7\"B2 BB z B2 B- | \"F#7#9#5\"B2 B2 B2 B2 | \"Bm7\"B2 BB z B2 B | \"Cmaj7#11\"z B2 B- B2 B2 |\n\"Bm7\"B2 BB z B2 B | \"Bm7/A\"zB zB zB B2- | \"Abm7b5\"B8 | \"Gm7\"z4 \"C7\"z4 |\n\"Fmaj7\"BB BB BB BB | \"Bb7b9\"B\"B7b9\"B- B6 | \"Bbmaj7\"B3 B BB- B2 | \"A7#9\"z8 |]\n\n%unsure [bars 1-10] A section is a bass-clef vamp figure with dyads; written as single notes\n%unsure [bars 14, 22, 26] rhythm-section hits under rests (Ab7b9 bar, Gm7 C7 bar, A7#9 break) not transcribed"
+},
+{
+"id": "The_Colorado_Cookbook/046-bustin-chops",
+"book": "The Colorado Cookbook",
+"title": "Bustin' Chops",
+"pdf": "46",
+"form": "intro + A 24 (solo changes 8+8+8)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+9,
+10,
+11,
+12,
+13,
+14,
+15
+],
+"groups": [
+8,
+9,
+10,
+11,
+12,
+13,
+14
+],
+"text": "vamp after segno is piano chord hits over G pedal (no melody); rhythm of top piano staff transcribed, chords omitted"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32
+],
+"groups": [
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31
+],
+"text": "chords placed from the Solo Changes chart (bass staff shows Gm7/Am7 alternation in bars 1-8 and 13-16); bar 4 of the A-line pickups read as same horn line"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Bustin' Chops\nC:Stefan Karlsson\nP:A\n%source The Colorado Cookbook p43-44 (pdf 46-47)\n%style (Fast Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form intro + A 24 (solo changes 8+8+8)\nM:4/4\nL:1/8\nK:Bb\n%intro\n\"^Drum fill (8 bars)\"z8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 ||\n|: !segno!z4 Bz zB- | B4 B4 | B2 B3 B- B2 | z4 Bz zB- |1 B2 B3 B- B2 | B8 :|2 B2 B3 B z2 | \"^Horn line\"zB BB BB BB- ||\nP:A\n\"Gm7\"B8- | B8 | z8 | zB BB BB BB- |\nB8- | B8 | z8 | zB BB BB BB- |\n\"Fm7\"B8- | B8 | z8 | zB BB BB BB- |\n\"Gm7\"B4 z4 | z8 | z8 | z4 z2 zB- |\n\"Bbm9\"B2 BB BB BB- | B8 | \"Dbm7\"Bz z2 z4 | z4 z2 zB- |\n\"Bb/Gb\"B8- | B4 zB BB- | \"C/Db\"B8- | !fine!B8 |]\n%coda D.S. al Fine after last solo\n\n%unsure [bars 9-15] vamp after segno is piano chord hits over G pedal (no melody); rhythm of top piano staff transcribed, chords omitted\n%unsure [bars 17-32] chords placed from the Solo Changes chart (bass staff shows Gm7/Am7 alternation in bars 1-8 and 13-16); bar 4 of the A-line pickups read as same horn line"
+},
+{
+"id": "The_Colorado_Cookbook/048-but-not-for-me",
+"book": "The Colorado Cookbook",
+"title": "But Not for Me",
+"pdf": "48",
+"form": "AA 16+16 (repeat with 1st/2nd endings)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+10,
+11,
+12,
+13
+],
+"groups": [
+9,
+10,
+11,
+12
+],
+"text": "alternate 2nd-time chords (parenthesized) apply to the repeat; their exact bars estimated"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:But Not for Me\nC:George Gershwin\nP:AA\n%source The Colorado Cookbook p45 (pdf 48)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AA 16+16 (repeat with 1st/2nd endings)\nM:4/4\nL:1/8\nK:Eb\n%intro (horn intro)\nz2 B2 B2 B2 || B4 B4 | B2 B2 B2 B2 | B4 B4 |\nB2 B2 B2 B2 | B6 B2 | B4 B4 | B4 B3 B |\nz B3 B2 B2 ||\nP:A\n|: \"F7\"\"(Ao7)\"B4 B4 | \"Fm7\"\"(Abm6)\"B2 B2 \"Bb7\"B2 B2 | \"Ebmaj7\"\"(G7#5)\"B4 \"Abmaj7\"B4 | \"Gm7\"\"(Gb13)\"z2 B2 \"C7\"B2 B2 |\n\"F7\"B4 B4 | \"Fm7\"B2 B2 \"Bb7\"B2 B2 | \"Bbm7\"B8 | \"Eb7\"z2 B2 B2 B2 ||\n\"Abmaj7\"B4 B4 | \"Abm7\"B2 B2 \"Db7\"B2 B2 | \"Gm7\"B4 B4 |1 \"Cm7\"B2 B2 B2 B2 |\n\"F7\"B4 B4 | \"F7\"B2 B2 B2 B2 | \"Fm7\"B4 \"B7#11\"B4 | \"Bb7\"z2 B2 B2 B2 :|2\n\"Cm7\"B2 B2 \"Gb7#11\"B2 B2 | \"Fm7\"B6 B2 | \"Bb7\"B4 B4 | \"Eb6/9\"B8 | \"Gm7\"z4 \"C7\"z4 |]\n\n%unsure [bars 10-13] alternate 2nd-time chords (parenthesized) apply to the repeat; their exact bars estimated"
+},
+{
+"id": "The_Colorado_Cookbook/049-bye-bye-blackbird",
+"book": "The Colorado Cookbook",
+"title": "Bye, Bye, Blackbird",
+"pdf": "49",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "chords in parentheses are the printed solo changes (melody changes unbracketed)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Bye, Bye, Blackbird\nC:Ray Henderson\nP:ABCD\n%source The Colorado Cookbook p46 (pdf 49)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\n%unsure [general] chords in parentheses are the printed solo changes (melody changes unbracketed)\nM:4/4\nL:1/8\nK:F\nP:A\n\"Fmaj7\"\"(Fmaj7)\"B2 B2 \"Bbmaj7\"\"(Eb7)\"B2 B2 | \"Am7\"\"(D7)\"B2 B2 \"D7\"B4 | \"Gm7\"B2 B2 \"C7\"B4 | \"Fmaj7\"B2 B2 B4 |\n\"Dm7/A\"B8 | \"Abo7\"B8 | \"Gm7\"B4 B4- | \"C7\"B4 z4 ||\nP:B\n\"Gm\"\"(Gm)\"B2 B2 B2 B2 | \"Gmmaj7\"\"(Abm)\"B2 B2 B4 | \"Gm7\"\"(Am)\"B2 B2 B4 | \"C7\"\"(Abm)\"B2 B2 B4 |\n\"Gm7\"B8 | \"C7\"B8 | \"Fmaj7\"B4 B4- | B8 ||\nP:C\n\"F7\"\"(Cm7)\"B2 B2 \"(F7)\"B2 B2 | \"(Bm7)\"B2 B2 \"(E7)\"B2 B2 | \"Ao7\"\"(Bbm7)\"B4 \"(Eb7)\"B4 | \"D7b9\"\"(Am7)\"B4 \"(D7)\"B4 |\n\"Gm\"B2 B2 B2 B2 | B2 B2 B2 B2 | \"Abm7\"B4 \"Db7\"B4 | \"Gm7\"B4 \"C7b9\"B4 ||\nP:D\n\"Fmaj7\"B2 B2 B2 B2 | \"Bbmaj7\"B2 B2 B4 | \"Ao7\"B2 B2 B4 | \"D7b9\"B2 B2 B4 |\n\"Gm7\"B4 B4- | \"C7\"B4 B4 | \"Fmaj7\"B8 | \"Gm7\"z4 \"C7\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/050-cantaloupe-island",
+"book": "The Colorado Cookbook",
+"title": "Cantaloupe Island",
+"pdf": "50",
+"form": "A 16 (4+4+4+4), repeated",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "key signature none printed; piano-vamp staves skipped"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Cantaloupe Island\nC:Herbie Hancock\nP:A\n%source The Colorado Cookbook p47 (pdf 50)\n%style (Jazz-Rock)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 16 (4+4+4+4), repeated\nM:4/4\nL:1/8\nK:C\n%intro (piano vamp only; pickup on cue)\n|: \"Fm\"z8 | z8 | z8 | z4 z2 \"^On cue\"BB :|\nP:A\n|: \"Fm\"z4 BB B2- | B3 B BB BB | z8 | z4 z2 BB |\n\"Db7\"z4 BB B2- | B3 B BB BB | z8 | z4 BB BB |\n\"Dm\"\"(D7#9)\"B3 B- B4 | z4 BB BB | B3 B- B4 | z8 |\n\"Fm\"z8 | z8 | z8 | z4 z2 BB :|\n\n%unsure [general] key signature none printed; piano-vamp staves skipped"
+},
+{
+"id": "The_Colorado_Cookbook/051-caravan",
+"book": "The Colorado Cookbook",
+"title": "Caravan",
+"pdf": "51",
+"form": "AABC 16+16+16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Caravan\nC:Juan Tizol & Duke Ellington\nP:AABC\n%source The Colorado Cookbook p48 (pdf 51)\n%style (Latin & Jazz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+16+16\nM:4/4\nL:1/8\nK:Fm\nP:A\n\"^Latin feel\"\"C7b9\"B8- | B8 | z2 B2 B2 B2 | B2 B2 B2 B2 |\n\"C7b9\"B8- | B8 | z2 B2 B2 B2 | B2 B2 B2 B2 |\n\"C7b9\"B8- | B8 | z2 B2 B2 B2 | B2 B2 B2 B2 |\n\"Fm\"B8- | B8- | B8- | B4 z4 :|\nP:B\n\"^Swing feel\"\"F7\"B8 | B4 B4 | B8- | B4 B4 |\n\"Bb7\"B8 | B4 B4 | B8- | B8 |\n\"Eb7\"B8 | B4 B4 | B8- | B4 B2 B2 |\n\"Ab7\"B8- | B4 B4 | \"G7#9\"B8- | B4 z4 ||\nP:C\n\"^Latin feel\"\"C7b9\"B8- | B8 | z2 B2 B2 B2 | B2 B2 B2 B2 |\n\"C7b9\"B8- | B8 | z2 B2 B2 B2 | B2 B2 B2 B2 |\n\"C7b9\"B8- | B8 | z2 B2 B2 B2 | B2 B2 B2 B2 |\n\"Fm\"B8- | B8- | B8- | B4 z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/052-cedars-blues",
+"book": "The Colorado Cookbook",
+"title": "Cedar's Blues",
+"pdf": "52",
+"form": "unlettered head 16 bars; solos on Bb blues, D.C. al coda",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred, not printed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "written chord voicings shown as single notes"
+},
+{
+"bars": [
+9,
+10,
+11,
+12
+],
+"groups": [
+8,
+9,
+10,
+11
+],
+"text": "pedal F bars: small dense chord rhythms, grouping guessed; last bar rest guessed"
+},
+{
+"bars": [
+13,
+14,
+15,
+16
+],
+"groups": [
+12,
+13,
+14,
+15
+],
+"text": "pedal Eb bars: rhythm grouping guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Cedar's Blues\nC:Cedar Walton\n%source The Colorado Cookbook p49 (pdf 52)\n%style (\"Two feel\" on melody)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form unlettered head 16 bars; solos on Bb blues, D.C. al coda\n%unsure [form] form inferred, not printed\nM:4/4\nL:1/8\nK:Bb\n%head\n|: \"Bb7\"(3BBB BB BB BB | B2 BB z B2 B- | B2 BB B2 BB | B2 BB z B2 B- |\n\"Eb7\"B8- | B4 z B2 \"Bb7\"B- | B8- | B6 z2 ||\n\"^Pedal F\"B4 B B2 B- | B4 B B2 B- | B4 B B2 B- | B4 z4 |\n\"^Pedal Eb\"B4 B B2 B- | B4 B B2 B- | B4 B B2 B- | B B2 B2 B2 B | Oz2 \"B7#9\"B6 :|\n%solos\n\"^Solos: Bb blues; D.C. al coda\"x8 ||\n%coda\nz2 \"B7#9\"B6 | \"Bb7#9\"!fermata!B8 |]\n\n%unsure [general] written chord voicings shown as single notes\n%unsure [bars 9-12] pedal F bars: small dense chord rhythms, grouping guessed; last bar rest guessed\n%unsure [bars 13-16] pedal Eb bars: rhythm grouping guessed"
+},
+{
+"id": "The_Colorado_Cookbook/053-centerpiece-keester-parade",
+"book": "The Colorado Cookbook",
+"title": "Centerpiece (Keester Parade)",
+"pdf": "53",
+"form": "AB 12+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25
+],
+"groups": [
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"text": "B section is written in two-note chords, shown as single notes; final tie into solos"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Centerpiece (Keester Parade)\nC:Harry \"Sweets\" Edison\nP:AB\n%source The Colorado Cookbook p50 (pdf 53)\n%style (Blues)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 12+12\nM:4/4\nL:1/8\nK:Bb\nz4 z2 zB ||\nP:A\n\"Bb7\"BB BB B2 B2 | \"Eb7\"B3 B z2 zB | \"Bb7\"BB BB B2 BB | z4 z2 zB |\n\"Eb7\"BB BB B2 B2 | B3 B z2 zB | \"Bb7\"BB BB B2 BB | z4 z2 zB |\n\"Cm7\"BB BB B2 B2 | \"F7\"B3 B z2 zB | \"Bb7\"BB BB B2 BB | \"F7\"z4 z2 zB ||\nP:B\n\"Bb7\"BB BB B2 B2 | \"Eb7\"B3 B z2 zB | \"Bb7\"B B2 B2 B2 B- | B B2 B- B3 B |\n\"Eb7\"BB BB B2 B2 | B3 B z2 zB | \"Bb7\"B B2 B2 B2 B- | B B2 B- B3 B |\n\"Cm7\"BB BB B2 B2 | \"F7\"B3 B z2 zB | \"Bb7\"B B2 B2 B2 B- | \"F7\"B B2 B2 B2 B- |]\n\n%unsure [bars 14-25] B section is written in two-note chords, shown as single notes; final tie into solos"
+},
+{
+"id": "The_Colorado_Cookbook/054-ceora",
+"book": "The Colorado Cookbook",
+"title": "Ceora",
+"pdf": "54",
+"form": "AB 16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+16
+],
+"groups": [
+15
+],
+"text": "last A bar: grouping of the closing 16ths/eighths guessed so the bar adds up"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Ceora\nC:Lee Morgan\nP:AB\n%source The Colorado Cookbook p51 (pdf 54)\n%style (Bossa Nova)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16\nM:4/4\nL:1/8\nK:Ab\nP:A\n\"Abmaj7\"zB BB z B2 B/B/ | \"Bbm7\"B4 \"Eb7\"B4 | \"Abmaj7\"zB BB z B2 B- | \"Ebm7\"B4 \"Ab7\"B4 |\n\"Dbmaj7\"zB BB z B2 B | \"Do7\"B6 \"G7#9\"BB/B/ | \"Cm7\"B6- BB/B/ | \"F7#9\"B3 B (3B/B/B/B BB ||\n\"Bbm7\"B B2 B- B B2 B/B/ | \"Eb7\"B6 B/B/B/B/ | \"Cm7\"B B2 B- B B2 B/B/ | \"F7\"B6 B/B/B/B/ |\n\"Dm7\"B B2 B- BB B/B/B/B/ | \"G7\"B3 B zB (3B/B/B/B | \"Cm7\"B3 \"F7\"B (3B/B/B/B BB | \"Bbm7\"B2 Bz \"Eb7\"B/B/B BB ||\nP:B\n\"Abmaj7\"BB BB z B2 B/B/ | \"Bbm7\"B4 \"Eb7\"B4 | \"Abmaj7\"zB BB z B2 B- | \"Ebm7\"B4 \"Ab7\"B4 |\n\"Dbmaj7\"zB BB z B2 B | \"Do7\"B6 \"G7#9\"BB/B/ | \"Cm7\"B6- BB/B/ | \"F7#9\"B3 B (3B/B/B/B BB ||\n\"Bbm7\"B B2 B- B B2 B/B/ | \"Eb7\"B6 B/B/B/B/ | \"Co7\"B4 (3B/B/B/B/B/ BB | \"F7#9\"B3 B (3zBB BB |\n\"Bbm7\"B4- BB B/B/B | \"Eb7\"B4- BB/B/ B/B/B/B/ | \"Abmaj7\"B6 B/B/B/B/ | \"Bbm7\"B3 B \"Eb7\"zB BB |]\n\n%unsure [bar 16] last A bar: grouping of the closing 16ths/eighths guessed so the bar adds up"
+},
+{
+"id": "The_Colorado_Cookbook/055-cherokee",
+"book": "The Colorado Cookbook",
+"title": "Cherokee",
+"pdf": "55",
+"form": "AABC 16+16+16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+14
+],
+"groups": [
+13
+],
+"text": "1st ending: alternate chord placement (Do7 G7b9 Gb7#11) spread over one bar guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Cherokee\nC:Ray Noble\nP:AABC\n%source The Colorado Cookbook p52 (pdf 55)\n%style (Up Tempo)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Standard changes in plain quotes; the book's \"alternate\" changes in parentheses.\n%form AABC 16+16+16+16\nM:4/4\nL:1/8\nK:Bb\nP:A\n|: \"Bbmaj7\"B8 | B4 B4 | \"Fm7\"B8 | \"Bb7\"B8 |\n\"Ebmaj7\"B8 | B4 B4 | \"Ab7#11\"B8 | B8 |\n\"Bbmaj7\"\"(Bbmaj7)\"B4 \"(Eb7)\"B4 | \"(Dm7)\"B4 \"(G7b9)\"B4 | \"C7\"B8 | \"(Db7)\"B8 |\n\"Cm7\"B8 |1 \"G7b9\"\"(Do7)\"B4 \"(G7b9)\"B2 \"(Gb7#11)\"B2 | \"Cm7\"B8 | \"F7alt\"B8 :|2\n\"F7\"B8 | \"Bbmaj7\"B8- | B8 ||\nP:B\n\"C#m7\"B8- | \"F#7\"B4 B4 | \"Bmaj7\"B2 B2 B4- | B4 B4 |\n\"Bm7\"B2 B2 B4- | \"E7\"B4 B4 | \"Amaj7\"B8- | B8 |\n\"Am7\"B8- | \"D7\"B4 B4 | \"Gmaj7\"B2 B2 B4- | B4 B4 |\n\"Gm7\"B2 B2 B4- | \"C7\"B4 B4 | \"Cm7\"B8 | \"F7\"B8 ||\nP:C\n\"Bbmaj7\"B8 | B4 B4 | \"Fm7\"B8 | \"Bb7\"B8 |\n\"Ebmaj7\"B8 | B4 B4 | \"Ab7\"B8 | B8 |\n\"Bbmaj7\"\"(Bbmaj7)\"B4 \"(Eb7)\"B4 | \"(Dm7)\"B4 \"(G7)\"B4 | \"C7\"B8 | \"(Db7#11)\"B8 |\n\"Cm7\"B8 | \"F7\"B8 | \"Bbmaj7\"B8- | B8 |]\n\n%unsure [bar 14] 1st ending: alternate chord placement (Do7 G7b9 Gb7#11) spread over one bar guessed"
+},
+{
+"id": "The_Colorado_Cookbook/056-con-alma",
+"book": "The Colorado Cookbook",
+"title": "Con Alma",
+"pdf": "56",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17
+],
+"groups": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"text": "checker miscounts bars around the 4/4 <-> 12/8 meter changes; bars add up by hand"
+},
+{
+"bars": [
+25
+],
+"groups": [
+24
+],
+"text": "final bar printed as a single dotted half; rest added to fill the 12/8 bar"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Con Alma\nC:John Birks \"Dizzy\" Gillespie\nP:AABC\n%source The Colorado Cookbook p53 (pdf 56)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:12/8\nL:1/8\nK:C\nP:A\n|: \"Emaj7\"B6 \"Ab7/Eb\"B6 | \"Dbm7\"B6 \"B7\"B6 | \"Bb7\"B3- BBB \"E7\"B3 B3 | \"Ebmaj7\"B6 \"Ebm7\"B3 \"Ab7\"B3 |\n\"Dbmaj7\"B6 \"F7/C\"B6 | \"Bbm7\"B6 \"Ab7\"B6 | \"G7\"B3- BBB \"Db7\"B3 B3 |1 \"Cmaj7\"B6- \"F#m7\"B3 \"B7\"z2 z :|2\n\"Cmaj7\"B6- B3 zBB ||\nP:B\nM:4/4\n\"^dotted quarter = quarter\"\"Co7\"BBB/B/ B B4- | B4 \"F7b9\"(3B2B2B2 | \"F#m7\"BBB/B/ B B4- | \"B7\"B4 B2 B2 |\nM:12/8\n\"^quarter = dotted quarter\"\"Emaj7\"B12- | B6- B3 BBB | \"Fm7\"B12- | \"Bb7\"B6 \"F#m7\"z3 \"B7\"z3 ||\nP:C\n\"Emaj7\"B6 \"Ab7/Eb\"B6 | \"Dbm7\"B6 \"B7\"B6 | \"Bb7\"B3- BBB \"E7\"B3 B3 | \"Ebmaj7\"B6 \"Ebm7\"B3 \"Ab7\"B3 |\n\"Dbmaj7\"B6 \"F7/C\"B6 | \"Bbm7\"B6 \"Ab7\"B6 | \"G7\"B3- BBB \"Db7\"B3 B3 | \"Cmaj7\"B6 z6 |]\n\n%unsure [bars 10-17] checker miscounts bars around the 4/4 <-> 12/8 meter changes; bars add up by hand\n%unsure [bar 25] final bar printed as a single dotted half; rest added to fill the 12/8 bar"
+},
+{
+"id": "The_Colorado_Cookbook/057-confirmation",
+"book": "The Colorado Cookbook",
+"title": "Confirmation",
+"pdf": "57",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+23
+],
+"groups": [
+22
+],
+"text": "bar 23: sixteenth groupings guessed so the bar adds up"
+},
+{
+"bars": [
+31
+],
+"groups": [
+30
+],
+"text": "bar 31: last eighth is an x-notehead (ghost note) in the book"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Confirmation\nC:Charlie Parker\nP:ABCD\n%source The Colorado Cookbook p54 (pdf 57)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:F\nP:A\n\"Fmaj7\"BB zB BB (3BBB | \"Em7b5\"BB BB \"A7\"B B2 B | \"Dm7\"zB z2 \"G7\"z2 zB | \"Cm7\"BB BB \"F7\"z B2 B |\n\"Bb7\"BB BB BB- B2 | \"Am7\"zB BB \"D7\"BB BB- | \"G7#11\"B2 BB z2 zB/B/ | \"Gm7\"BB BB \"C7\"z B3 ||\nP:B\n\"Fmaj7\"B2 zB (3BBB BB | \"Em7b5\"B/B/B z2 \"A7\"z B2 B- | \"Dm7\"BB z2 \"G7\"z2 zB | \"Cm7\"BB BB \"F7\"BB BB- |\n\"Bb7\"BB BB BB z2 | \"Am7\"zB BB \"D7\"BB z2 | \"Gm7\"BB (3B/B/B/B \"C7\"BB BB | \"Fmaj7\"z4 z B3 ||\nP:C\n\"Cm7\"B2 z/B/B/B/ BB zB | \"F7\"(3BBB BB BB BB | \"Bbmaj7\"BB BB- B3 B | z4 z2 zB |\n\"Ebm7\"B/B/B/B/ B/B/B- BB BB | \"Ab7\"BB B2 BB zB/B/ | \"Dbmaj7\"(3B/B/B/B- BB/B/ B/B/z z2 | \"Gm7\"zB BB \"C7\"BB BB ||\nP:D\n\"Fmaj7\"z B3 BB (3BBB | \"Em7b5\"BB BB \"A7\"B B2 B | \"Dm7\"zB z2 \"G7\"z2 zB | \"Cm7\"BB BB \"F7\"z B2 B |\n\"Bb7\"BB BB BB- B2 | \"Am7\"zB BB \"D7\"BB BB- | \"Gm7\"BB BB \"C7\"zB zB | \"Fmaj7\"B2 B6 |]\n\n%unsure [bar 23] bar 23: sixteenth groupings guessed so the bar adds up\n%unsure [bar 31] bar 31: last eighth is an x-notehead (ghost note) in the book"
+},
+{
+"id": "The_Colorado_Cookbook/058-corner-pocket-until-i-met-you",
+"book": "The Colorado Cookbook",
+"title": "Corner Pocket (Until I Met You)",
+"pdf": "58",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Corner Pocket (Until I Met You)\nC:Freddy Greene\nP:AABC\n%source The Colorado Cookbook p55 (pdf 58)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Bb\nz6 zB |\nP:A\n|: \"Cm7\"BB BB \"F7\"BB BB | \"Cm7\"BB BB \"F7\"BB BB | \"Dm7\"BB BB- \"G7\"B4 | \"Dm7\"BB BB- \"G7\"B4 |\n\"Cm7\"zB BB \"F7\"BB BB | \"Cm7\"BB BB \"F7\"BB BB |1 \"Bb6\"z4 zB BB | \"Dm7\"BB BB \"G7\"B3 B :|2\n\"Bb6\"zB BB zB BB- | B2 BB zB BB- ||\nP:B\n\"Fm7\"B3 B \"Bb7\"z2 zB | \"Fm7\"z B2 B \"Bb7\"BB BB | \"Ebmaj7\"BB BB- B4 | BB BB zB BB- |\n\"Gm7\"B3 B \"C7\"z2 zB | \"Gm7\"z B2 B \"C7\"BB BB | \"F7\"BB BB- B4 | \"Cm7\"BB BB- \"F7\"B2 zB ||\nP:C\n\"Cm7\"BB BB \"F7\"BB BB | \"Cm7\"BB BB \"F7\"BB BB | \"Dm7\"BB BB- \"G7\"B4 | \"Dm7\"BB BB- \"G7\"B4 |\n\"Cm7\"zB BB \"F7\"BB BB | \"Cm7\"BB BB \"F7\"BB BB | \"Bb6\"z8 | \"Dm7\"z4 \"G7\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/059-cottontail",
+"book": "The Colorado Cookbook",
+"title": "Cottontail",
+"pdf": "59",
+"form": "AABC 8+8+8+8 (C = A melody)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17
+],
+"groups": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"text": "bridge is rhythm slashes in the book (written as rests with chords)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Cottontail\nC:Duke Ellington\nP:AABC\n%source The Colorado Cookbook p56 (pdf 59)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8 (C = A melody)\nM:4/4\nL:1/8\nK:Bb\nP:A\n|: \"Bb\"z B3 BB B2 | \"Cm7\"B3 B \"F7\"z4 | \"Bb\"z B2 z B3 B | \"Cm7\"BB B2 \"F7\"B4 |\n\"Bb7\"z2 B2- B3 B | \"Eb7\"B B2 B2 \"Ab7\"B2 B- | \"Bb\"BB BB zB BB |1 \"Cm7\"zB BB \"F7\"z4 :|2\n\"Bb\"zB BB z4 ||\nP:B\n\"D7\"z8 | z8 | \"G7\"z8 | z8 |\n\"C7\"z8 | z8 | \"F7\"z8 | z8 ||\nP:C\n\"Bb\"z B3 BB B2 | \"Cm7\"B3 B \"F7\"z4 | \"Bb\"z B2 z B3 B | \"Cm7\"BB B2 \"F7\"B4 |\n\"Bb7\"z2 B2- B3 B | \"Eb7\"B B2 B2 \"Ab7\"B2 B- | \"Bb\"BB BB zB BB | \"Bb\"zB BB z4 |]\n\n%unsure [bars 10-17] bridge is rhythm slashes in the book (written as rests with chords)"
+},
+{
+"id": "The_Colorado_Cookbook/060-dance-cadaverous",
+"book": "The Colorado Cookbook",
+"title": "Dance Cadaverous",
+"pdf": "60",
+"form": "ABCD 16+16+16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+61,
+62,
+63,
+64
+],
+"groups": [
+60,
+61,
+62,
+63
+],
+"text": "last 4 bars are two-note chords in the book; written as single B"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Dance Cadaverous\nC:Wayne Shorter\nP:ABCD\n%source The Colorado Cookbook p57 (pdf 60)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 16+16+16+16\nM:3/4\nL:1/8\nK:C\nP:A\n\"Cm(maj7)\"B6- | B2 B2 B2 | \"Dbm(maj7)\"B6- | B4 B2 |\n\"Dm7b5\"B6- | B6- | \"G7#9#5\"B6- | B4 z2 |\n\"Cm(maj7)\"B6- | B4 BB | \"Dbm(maj7)\"B6- | B4 B2 |\n\"Gm\"B6- | B6- | B6 | z4 B2 ||\nP:B\n\"Abmaj7\"B6- | B4 BB | \"Db7#9\"B6- | B4 zB |\nBB- BB- BB- | B3 B3 | \"Cmaj7\"B6- | B4 z2 |\n\"Gbm7b5\"B6- | B3 B z2 | \"Cb7#9#5\"B6- | B4 B2 |\n\"Bm/E\"B6- | B6- | \"Dm7b5\"B6- | \"G7b9\"B4 z2 ||\nP:C\n\"Cm(maj7)\"B6- | B2 B2 B2 | \"Dbm(maj7)\"B6- | B4 B2 |\n\"Dm7b5\"B6- | B6- | \"G7#9#5\"B6 | B2 B2 B2 |\n\"Cm(maj7)\"B6- | B4 BB | \"Bbm7\"B6- | \"Eb7b9\"B4 B2 |\n\"Abmaj7#5\"B6- | B6- | B6 | z4 B2 ||\nP:D\n\"Dm7b5\"B6- | B4 BB | \"Db7#9\"B6- | B4 zB |\nBB- BB- BB- | B3 B3 | \"Cmaj7\"B6- | B4 z2 |\n\"Ebm\"B6- | B4 BB | \"Dm7b5\"B6- | B4 z2 |\n\"Dbmaj7\"B6- | B6- | B6- | B2 z2 z2 |]\n\n%unsure [bars 61-64] last 4 bars are two-note chords in the book; written as single B"
+},
+{
+"id": "The_Colorado_Cookbook/061-dance-of-the-infidels",
+"book": "The Colorado Cookbook",
+"title": "Dance of the Infidels",
+"pdf": "61",
+"form": "Intro(4)+piano solo(4)+A 12+Tag; solos on the 12-bar A section",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+5,
+6,
+7,
+8
+],
+"groups": [
+4,
+5,
+6,
+7
+],
+"text": "piano-solo bars are rhythm slashes (rests with chords); \"G--\" read as Gm"
+},
+{
+"bars": [
+19,
+20
+],
+"groups": [
+18,
+19
+],
+"text": "bars 23-24 are two-note chords over a C pedal; written as single B"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Dance of the Infidels\nC:Bud Powell\nP:A\n%source The Colorado Cookbook p58 (pdf 61)\n%style (Fast)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form Intro(4)+piano solo(4)+A 12+Tag; solos on the 12-bar A section\nM:4/4\nL:1/8\nK:F\n%intro (Fast)\nBB BB B2 B2 | BB/B/ BB B4 | BB BB B2 B2 | BB/B/ BB B4 ||\n%intro piano solo - set tempo (slower)\n\"Am\"z8 | \"Ab7\"z8 | \"Gm\"z8 | \"Gb7\"z6 zB/B/ ||\nP:A\n|: \"Fmaj7\"BB BB BB BB | \"Bbm7\"BB BB \"Eb7\"z2 zB | \"Am\"(3BBB BB \"Gm\"BB BB | \"F#m7\"BB (3BBB \"B7\"z2 B/B/B |\n\"Fm7\"BB BB BB BB | \"Bb7\"BB BB zB BB | \"Am\"BB BB B4 | \"Abm\"BB BB BB zB- |\n\"Gm\"BB BB BB BB- | \"Dbm7\"B/B/B/B/ BB \"Gb7\"BB B2 | \"Fmaj7\"zB BB BB BB- | BB B4 B2 :|\n%tag (play after each head, not during solos)\n\"Fmaj7\"z2 B4 B2 |1 z2 B4 BB/B/ :|2 \"Fmaj7\"z2 B6- | B6 B2 |]\n\n%unsure [bars 5-8] piano-solo bars are rhythm slashes (rests with chords); \"G--\" read as Gm\n%unsure [bars 19-20] bars 23-24 are two-note chords over a C pedal; written as single B"
+},
+{
+"id": "The_Colorado_Cookbook/062-days-of-wine-and-roses",
+"book": "The Colorado Cookbook",
+"title": "Days of Wine and Roses",
+"pdf": "62",
+"form": "AB 16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Days of Wine and Roses\nC:Henry Mancini\nP:AB\n%source The Colorado Cookbook p59 (pdf 62)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16\nM:4/4\nL:1/8\nK:F\nz6 B2 ||\nP:A\n\"Fmaj7\"B8- | \"Eb7#11\"B2 B2 B2 B2 | \"Am7\"B4 B4- | \"D7#9\"B4 B2 B2 |\n\"Gm\"B2 B2 B4- | B4 B2 B2 | \"Eb7#11\"B2 B2 B4- | B4 B2 B2 |\n\"Am7\"B2 B2 B2 B2 | \"Dm\"B2 B2 B2 B2 | \"Gm\"B6 B2 | \"Gm\"B2 B2 \"Gm/F\"B2 B2 |\n\"Em7b5\"B6 \"A7#9\"B2 | \"Dm7\"B2 B2 \"G7\"B2 B2 | \"Gm7/C\"B8- | \"C7b9\"B6 B2 ||\nP:B\n\"Fmaj7\"B8- | \"Eb7#11\"B2 B2 B2 B2 | \"Am7\"B4 B4- | \"D7#9\"B4 B2 B2 |\n\"Gm\"B2 B2 B4- | B4 B2 B2 | \"Eb7#11\"B2 B2 B4- | B4 B2 B2 ||\n\"Am7\"B2 B2 B2 B2 | \"Dm\"B2 B2 \"Dm/C\"B2 B2 | \"Bm7b5\"B8- | \"E7#9\"B6 B2 |\n\"Am\"B2 B2 \"Dm\"B2 B2 | \"Gm7\"B2 B4 \"C7\"B2 | \"Fmaj7\"B4- \"D7#9\"B4- | \"Gm7\"B4 \"C7b9\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/063-days-of-wine-and-roses",
+"book": "The Colorado Cookbook",
+"title": "Days of Wine and Roses",
+"pdf": "63",
+"form": "AB 16+16 (A in F, B is the same tune in Ab)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+3,
+4,
+13,
+14,
+27
+],
+"groups": [
+2,
+3,
+12,
+13,
+26
+],
+"text": "A-section chord placement in bars 3,4,13,14 follows printed positions; Fm/Eb sits on beat 3 of its bar"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Days of Wine and Roses\nC:Henry Mancini\nP:AB\n%source The Colorado Cookbook p60 (pdf 63)\n%style (Two keys - concert F & Ab)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16 (A in F, B is the same tune in Ab)\nM:4/4\nL:1/8\nK:F\nz4 z2 B2 ||\nP:A\n\"Fmaj7\"B8- | \"Eb7#11\"B2 B2 B2 B2 | \"Am7\"B4 B4- | \"D7#9\"B4 B2 B2 |\n\"Gm\"B2 B2 B4- | B4 B2 B2 | \"Eb7#11\"B2 B2 B4- | B4 B2 B2 ||\n\"Am7\"B2 B2 B2 B2 | \"Dm\"B2 B2 B2 B2 | \"Gm\"B6 B2 | \"Gm\"B2 B2 \"Gm/F\"B2 B2 |\n\"Eo7\"B6 \"A7#9\"B2 | \"Dm7\"B2 B2 \"G7\"B2 B2 | \"Gm7/C\"B8- | \"Eb7b9\"B6 B2 ||\nP:B\nK:Ab\n\"Abmaj7\"B8- | \"Gb7#11\"B2 B2 B2 B2 | \"Cm7\"B4 B4- | \"F7#9\"B4 B2 B2 |\n\"Bbm\"B2 B2 B4- | B4 B2 B2 | \"Gb7#11\"B2 B2 B4- | B4 B2 B2 ||\n\"Cm7\"B2 B2 B2 B2 | \"Fm\"B2 B2 \"Fm/Eb\"B2 B2 | \"Do7\"B8- | \"G7#9\"B6 B2 |\n\"Cm\"B2 B2 \"Fm\"B2 B2 | \"Bbm7\"B2 \"Eb7\"B4 B2 | \"Abmaj7\"B8- | \"C7b9\"B4 z4 |]\n\n%unsure [bars 3-4, 13-14, 27] A-section chord placement in bars 3,4,13,14 follows printed positions; Fm/Eb sits on beat 3 of its bar"
+},
+{
+"id": "The_Colorado_Cookbook/064-darn-that-dream",
+"book": "The Colorado Cookbook",
+"title": "Darn That Dream",
+"pdf": "64",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+8
+],
+"groups": [
+7
+],
+"text": "first ending bar 2 is a whole note under four chords; written as quarters so each chord has a beat"
+},
+{
+"bars": [
+18
+],
+"groups": [
+17
+],
+"text": "B bar 8: two half notes split with ties so each of the four chords sits on its beat"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Darn That Dream\nC:Jimmy Van Heusen\nP:AABA\n%source The Colorado Cookbook p61 (pdf 64)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\nM:4/4\nL:1/8\nK:G\nP:A\n|: \"Gmaj7\"B2 B2 \"Bbm7\"B3 \"Eb7\"B | \"Am7\"B2 B2 \"B7\"B3 B | \"Em\"B2 \"Em/D#\"B2 \"D7\"BB \"D7/C\"BB | \"Bm7b5\"B2 \"E7\"B2 B4 |\n\"Am7\"z2 BB \"F9\"BB BB | \"Bm7\"B2 B2 \"Bbm7\"B2 B2 |1 \"Am7\"B4 \"D7\"B4 | \"Bm7\"B2 \"Bb7\"B2 \"Am7\"B2 \"D7\"B2 :|2\n\"Am7\"B4 \"D13\"B4 | \"Fm7\"B6 \"Bb7\"z2 ||\nP:B\n\"Ebmaj7\"z B2 B \"Cm7\"B2 B2 | \"Fm7\"B2 B2 \"Bb7\"B3 B | \"Gm7\"B2 BB \"F#m7\"B2 \"B7\"B2 | \"Fm7\"B2 \"Bb7\"B2 B4 |\n\"Ebmaj7\"z B2 B \"Cm7\"B2 B2 | \"Ao7\"B2 \"D7\"B2 \"Gm\"B2 B2 | \"Am7\"BB BB- \"D7\"B2 B2 | \"Bbm7\"B2- \"Eb7\"B2 \"Am9\"B2- \"D13\"B2 ||\nP:A\n\"Gmaj7\"B2 B2 \"Bbm7\"B3 \"Eb7\"B | \"Am7\"B2 B2 \"B7\"B3 B | \"Em\"B2 \"Em/D#\"B2 \"D7\"BB \"D7/C\"BB | \"Bm7b5\"B2 B2 \"E7\"B4 |\n\"Am7\"B2 \"F9\"B2 BB BB | \"Bm7\"B2 B2 \"Bbm7\"B2 B2 | \"Am7\"B4 \"D13\"B4 | \"Gmaj7\"B6 z2 |]\n\n%unsure [bar 8] first ending bar 2 is a whole note under four chords; written as quarters so each chord has a beat\n%unsure [bar 18] B bar 8: two half notes split with ties so each of the four chords sits on its beat"
+},
+{
+"id": "The_Colorado_Cookbook/065-dearly-beloved",
+"book": "The Colorado Cookbook",
+"title": "Dearly Beloved",
+"pdf": "65",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+10
+],
+"groups": [
+9
+],
+"text": "B bar 2 is a whole note under Em7 A7; split at beat 3 for the chord"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Dearly Beloved\nC:Jerome Kern\nP:ABCD\n%source The Colorado Cookbook p62 (pdf 65)\n%style (Latin & Jazz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:C\nP:A\n%Latin feel\n\"Dm7/G\"B4 B3 B | \"Dm7/G\"B2 B4 B2 | \"G9\"B4 B3 B | \"G9\"B8 |\n\"Dm7/G\"B4 B3 B | \"Dm7/G\"B2 B2 B2 B2 | \"G9\"B4 B3 B | \"G9\"B8 ||\nP:B\n%swing feel\n\"Cmaj7\"B2 B2 \"F7\"B4- | \"Em7\"B4- \"A7\"B4 | \"Dm7\"B4 B4- | \"G7\"B8 |\n\"Em7\"B2 B2 B4- | \"Am7\"B2 B2 B2 B2 | \"Ebm7\"B4 B4- | \"Ab7\"B8 ||\nP:C\n%Latin feel\n\"Dm7/G\"B4 B3 B | \"Dm7/G\"B2 B4 B2 | \"G9\"B4 B3 B | \"G9\"B8 |\n\"Dm7/G\"B4 B3 B | \"Dm7/G\"B2 B2 B2 B2 | \"G9\"B4 B3 B | \"G9\"B8 ||\nP:D\n%swing feel\n\"Cmaj7\"B2 B2 \"F7\"B4- | \"Em7\"B4- \"A7\"B4 | \"D7\"B4 B4- | \"Ebo7\"B8 |\n\"Dm7\"B4 B3 B | \"G7\"B2 B4 B2 | \"Cmaj7\"B8 | \"Em7\"z4 \"A7#9\"z4 |]\n\n%unsure [bar 10] B bar 2 is a whole note under Em7 A7; split at beat 3 for the chord"
+},
+{
+"id": "The_Colorado_Cookbook/066-don-t-take-your-love-from-me",
+"book": "The Colorado Cookbook",
+"title": "Don't Take Your Love from Me",
+"pdf": "66",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Don't Take Your Love from Me\nC:Henry Nemo\nP:ABCD\n%source The Colorado Cookbook p63 (pdf 66)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:C\nz4 z2 BB ||\nP:A\n\"Cmaj7\"B2 \"Dm7\"B2 B B2 B- | \"Em7\"B6 \"Ebo7\"BB | \"Dm7\"B2 B2 \"G7\"B4- | \"Dm7\"B6 \"G7\"BB |\n\"Dm7\"B2 B2 B B2 B- | \"G7\"B6 BB | \"Cmaj7\"B2 B2 B4- | B6 z2 ||\nP:B\n\"Cmaj7/E\"B2 B2 B2 B2 | \"Ebo7\"B2 B2 B2 B2 | \"Dm7\"B2 B2 \"A7\"B2 B2 | \"Dm7\"B6 B2 |\n\"Dm7\"B2 B2 \"A7\"B2 B2 | \"Do7\"B6 \"G7\"B2 | \"C\"B2 BB \"Ab7\"B3 B | \"G7\"B6 BB ||\nP:C\n\"Cmaj7\"B2 \"Dm7\"B2 B B2 B- | \"Em7\"B6 \"Ebo7\"BB | \"Dm7\"B2 B2 \"G7\"B4- | \"Dm7\"B6 \"G7\"BB |\n\"Dm7\"B2 B2 B B2 B- | \"G7\"B6 BB | \"Cmaj7\"B2 B2 B4- | \"Gm7\"B6 \"C7\"B2 ||\nP:D\n\"Fmaj7\"B2 B2 B2 B2 | \"Bb7\"B2 BB- B4 | \"Cmaj7\"z2 BB B2 B2 | \"Eo7\"B2 B2 \"A7b9\"B4 |\n\"Dm7\"z2 B2 B2 B2 | \"G7\"B4 B4 | \"Cmaj7\"B8- | B4 z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/067-don-t-get-around-much-anymore",
+"book": "The Colorado Cookbook",
+"title": "Don't Get Around Much Anymore",
+"pdf": "67",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26
+],
+"text": "A sections have a second (background) staff with passing chords (Cmaj7 Dm7 Ebm7 Em7; Cmaj7 B7 Bb7 A7); melody staff only kept"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Don't Get Around Much Anymore\nC:Duke Ellington\nP:AABA\n%source The Colorado Cookbook p64 (pdf 67)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\nM:4/4\nL:1/8\nK:C\nz B2 B BB BB- |\nP:A\n|: \"Cmaj7\"B8 | z B2 B BB BB- | \"Cmaj7\"B4- \"Bb7\"B4 | \"A7\"z B2 B BB B2 |\n\"Dm7\"B3 B- B4 | \"G7\"zB BB BB BB |1 \"Cmaj7\"B8 | \"G7\"z B2 B BB BB- :|2\n\"Cmaj7\"B8 | \"C7\"z4 z2 B2 ||\nP:B\n\"Fmaj7\"B4 B B2 B- | \"Bb7\"B6 B2 | \"Cmaj7\"B4 B B2 B- | \"C7\"B4 z2 B2 |\n\"Fmaj7\"B4 B B2 B- | \"F#o7\"B3 B- \"B7\"B4 | \"Em7\"zB BB \"Ebo7\"B2 BB | \"Dm7\"z B2 B \"G7\"BB BB- ||\nP:A\n\"Cmaj7\"B8 | z B2 B BB BB- | \"Cmaj7\"B4- \"Bb7\"B4 | \"A7\"z B2 B BB B2 |\n\"Dm7\"B3 B- B4 | \"G7\"zB BB BB BB | \"Cmaj7\"B8 | z8 |]\n\n%unsure [bars 1-11, 20-27] A sections have a second (background) staff with passing chords (Cmaj7 Dm7 Ebm7 Em7; Cmaj7 B7 Bb7 A7); melody staff only kept"
+},
+{
+"id": "The_Colorado_Cookbook/068-doxy",
+"book": "The Colorado Cookbook",
+"title": "Doxy",
+"pdf": "68",
+"form": "AABC 4+4+4+4",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Doxy\nC:Sonny Rollins\nP:AABC\n%source The Colorado Cookbook p65 (pdf 68)\n%style (Slow to Medium Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 4+4+4+4\nM:4/4\nL:1/8\nK:Bb\nB |\nP:A\n|: \"Bb7\"BB BB \"Eb7\"B2 zB | \"D7\"BB BB \"G7\"z B2 B |1 \"C7\"BB BB \"F7\"(3BBB BB | \"Bb7\"z4 z2 zB :|2\n\"C7\"zB BB (3BBB BB | \"F7\"z8 ||\nP:B\n\"Bb7\"B2 zB z2 B2- | \"Bb7\"B3 B z B2 B | \"Eb7\"B2 BB B2 B2 | \"Eo7\"z4 z2 zB ||\nP:C\n\"Bb7\"BB BB \"Eb7\"B2 zB | \"D7\"BB BB \"G7\"z B2 B | \"C7\"BB BB \"F7\"(3BBB BB | \"Bb\"z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/068-st-thomas",
+"book": "The Colorado Cookbook",
+"title": "St. Thomas",
+"pdf": "68",
+"form": "AAB 4+4+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:St. Thomas\nC:Sonny Rollins\nP:AAB\n%source The Colorado Cookbook p65 (pdf 68)\n%style (Latin)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AAB 4+4+8\nM:4/4\nL:1/8\nK:C\nP:A\n|: \"C6/9\"z2 BB \"F7\"zB zB | \"Em7\"B2 B2 \"A7\"B2 B2 | \"Dm7\"B2 B2 \"G7\"B2 B2 | \"C6/9\"z8 :|\nP:B\n\"Em7b5\"B4 \"Bb7#11\"B3 B | \"A7#9\"z8 | \"Ab7#11\"B4 \"Dm7\"B3 B | \"G7\"z8 |\n\"C6/9\"B4 \"C7/E\"B4 | \"F\"B3 B- \"F#o7\"B2 z2 | \"C/G\"B2 B2 \"G7\"B2 \"C6/9\"B2 | z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/069-dwellings",
+"book": "The Colorado Cookbook",
+"title": "Dwellings",
+"pdf": "69",
+"form": "AAB 8+8+10 (head and solo form AAB as printed; ending: vamp out on E-)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"groups": [
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19
+],
+"text": "bass staff (written bass line) skipped; melody staff only; B section voiced in chords, top rhythm taken"
+},
+{
+"bars": [
+3
+],
+"groups": [
+2
+],
+"text": "A bar 2: 16th grouping after the dotted quarter simplified to eighths"
+},
+{
+"bars": [
+16,
+19,
+20
+],
+"groups": [
+15,
+18,
+19
+],
+"text": "last two bars are rhythm slashes (written as rests); bar 6 16th grouping approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Dwellings\nC:Bob Gillis\nP:AAB\n%source The Colorado Cookbook p66 (pdf 69)\n%style (Slow Groove - Even Sixteenths)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AAB 8+8+10 (head and solo form AAB as printed; ending: vamp out on E-)\n%unsure [bars 11-20] bass staff (written bass line) skipped; melody staff only; B section voiced in chords, top rhythm taken\nM:4/4\nL:1/8\nK:Em\nz8 ||\nP:A\n|: \"Em\"z2 zB BB BB | B3 B- BB B2- | \"Dsus4\"z2 zB BB BB | B8 |\n\"Dsus4\"z2 zB BB BB | B8- | \"Em\"B3 B BB B2 |1 B2 B2 z4 :|2\nB2 z2 z4 ||\nP:B\n\"Am\"zB BB \"Am/G\"BB BB | \"Fmaj7#11\"B3 B/B/ B4 | \"Dm\"zB BB \"Dm/C\"B B2 B- | \"Bbmaj7#11\"B8 |\n\"Gm\"zB BB \"Gm/F\"B B2 B- | \"Ebmaj7#11\"BB/B/ BB B2 BB- | \"Dbmaj7#11\"B8- | B6 zB- |\n\"Bmaj7#11\"z8 | z8 |]\n\n%unsure [bar 3] A bar 2: 16th grouping after the dotted quarter simplified to eighths\n%unsure [bars 16, 19-20] last two bars are rhythm slashes (written as rests); bar 6 16th grouping approximate"
+},
+{
+"id": "The_Colorado_Cookbook/070-edda",
+"book": "The Colorado Cookbook",
+"title": "Edda",
+"pdf": "70",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+5,
+13
+],
+"groups": [
+4,
+12
+],
+"text": "grace note before the trilled note omitted"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Edda\nC:Wayne Shorter\nP:ABCD\n%source The Colorado Cookbook p67 (pdf 70)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:3/4\nL:1/8\nK:C\nP:A\n\"G6/9\"BB B4 | \"F6/9\"BB B4 | \"G6/9\"BB BB B2- | \"F6/9\"BB B2- BB |\n\"G6/9\"!trill!B6- | \"F6/9\"B6- | \"G6/9\"B6- | \"F6/9\"B4 z2 ||\nP:B\n\"Fmaj7\"BB B4 | \"Em\"BB B4 | \"Fmaj7\"BB BB B2- | \"Em\"BB B2- BB |\n\"Fmaj7\"!trill!B6- | \"Em\"B6- | \"Fmaj7\"B6- | \"Em\"B4 B2 ||\nP:C\n\"Ebmaj7\"B6- | B4 BB | \"Ebmaj7\"B2 BB- B2- | B4 BB |\n\"Ebmaj7\"B6- | B4 BB | \"Ebmaj7\"B2 BB- B2- | B4 BB ||\nP:D\n\"Em7b5\"B6- | \"A7b9\"B4 BB | \"Em7b5\"B2 BB- B2- | \"A7b9\"B4 BB |\n\"Em7b5\"B6- | \"A7b9\"B4 BB | \"Ebm7\"B2 BB- B2- | \"Ab7\"B4 z2 |]\n\n%unsure [bars 5, 13] grace note before the trilled note omitted"
+},
+{
+"id": "The_Colorado_Cookbook/071-el-otono",
+"book": "The Colorado Cookbook",
+"title": "El Otono",
+"pdf": "71",
+"form": "no section letters printed; 22-bar repeated section, 2nd ending 16 bars",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+4
+],
+"groups": [
+3
+],
+"text": "E7#9 bar: printed as slash quarter + diamond dotted half (hit/held)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:El Otono\nC:Stefan Karlsson\n%source The Colorado Cookbook p68 (pdf 71)\n%style (Latin)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form no section letters printed; 22-bar repeated section, 2nd ending 16 bars\nM:4/4\nL:1/8\nK:Am\n|: \"Am9\"z4 zB BB | \"Am9/G\"B2 BB- B B2 B- | \"Fmaj7\"B8 | \"E7#9\"B2 B6 |\n\"Am9\"z4 zB BB | \"Am9/G\"B2 BB zB \"F#m7b5\"B2- | B8 | \"B7\"z8 |\n\"Em9\"B4 \"Em9/D\"B4 | \"C#m7\"zB BB \"F#7\"B2 BB- | \"Bmaj7\"B8 | \"Cm7\"zB BB \"F7b9\"B2 BB- |\n\"Bbmaj7\"B8 | \"Dm7b5\"zB BB \"G7\"B2 BB- |1 \"Cm7\"B8- | \"Csus7b9\"B4 (3B2B2B2 |\n\"Cm7\"B8- | \"Csus7b9\"B4 BB BB | \"Cm7\"B8- | \"Csus7b9\"B4 (3B2B2B2 |\n\"Cm11\"B8 | \"Bm7b5\"B2 \"E7#9\"B6 :|2 \"Cmaj7\"B8 | \"Am7\"zB BB \"Am7/G\"BB BB |\n\"F#m7b5\"B2 BB zB zB- | \"Fm7\"B3 B \"Bb7\"B2 B2 | \"Em7\"B8- | \"A7\"B6 z2 |\n\"Dm7\"B2 \"Ab7#5\"B2 B2 B2 | \"Gsus\"B4 \"G7alt\"B3 B- | \"Cmaj7\"B8- | \"Db/C\"B8 |\n\"Cmaj7\"z8 | \"Db/C\"z8 | \"Cmaj7\"z8 | \"Db/C\"z8 |\n\"Cmaj7\"z8 | \"Bm7b5\"z4 \"E7b9\"z4 |]\n\n%unsure [bar 4] E7#9 bar: printed as slash quarter + diamond dotted half (hit/held)"
+},
+{
+"id": "The_Colorado_Cookbook/072-epistrophy",
+"book": "The Colorado Cookbook",
+"title": "Epistrophy",
+"pdf": "72",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Epistrophy\nC:Thelonious Monk & Kenny Clarke\nP:ABCD\n%source The Colorado Cookbook p69 (pdf 72)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:C\nP:A\n\"Db7\"z2 BB \"D7\"B B3 | \"Db7\"BB BB- \"D7\"B2 z2 | \"Db7\"z2 BB \"D7\"B B3 | \"Db7\"BB BB- \"D7\"B2 z2 |\n\"Eb7\"z2 BB \"E7\"B B3 | \"Eb7\"BB BB- \"E7\"B2 z2 | \"Eb7\"z2 BB \"E7\"B B3 | \"Eb7\"BB BB- \"E7\"B2 z2 ||\nP:B\n\"Eb7\"z2 BB \"E7\"B B3 | \"Eb7\"BB BB- \"E7\"B2 z2 | \"Eb7\"z2 BB \"E7\"B B3 | \"Eb7\"BB BB- \"E7\"B2 z2 |\n\"Db7\"z2 BB \"D7\"B B3 | \"Db7\"BB BB- \"D7\"B2 z2 | \"Db7\"z2 BB \"D7\"B B3 | \"Db7\"BB BB- \"D7\"B2 z2 ||\nP:C\n\"F#m6\"z4 BB BB | B2- BB B2 B2 | \"F#m6\"z4 BB BB | z B2 B B2 B2 |\n\"B7\"z4 BB BB | B2 BB B2 B2 | \"Db7\"BB BB zB- B2 | \"D7\"BB BB z B3 ||\nP:D\n\"Eb7\"z2 BB \"E7\"B B3 | \"Eb7\"BB BB- \"E7\"B2 z2 | \"Eb7\"z2 BB \"E7\"B B3 | \"Eb7\"BB BB- \"E7\"B2 z2 |\n\"Db7\"z2 BB \"D7\"B B3 | \"Db7\"BB BB- \"D7\"B2 z2 | \"Db7\"z2 BB \"D7\"B B3 | \"Db7\"BB BB- \"D7\"B2 z2 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/073-everything-i-love",
+"book": "The Colorado Cookbook",
+"title": "Everything I Love",
+"pdf": "73",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Everything I Love\nC:Cole Porter\nP:ABCD\n%source The Colorado Cookbook p70 (pdf 73)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:Eb\nP:A\n\"Eb\"B4 B2 BB- | \"A7#11\"B6 B2 | \"Abmaj7\"B4 B2 BB- | \"Gm7b5\"B6 \"C7b9\"z2 |\n\"Fm7\"z B3 B2 B2 | \"Bb7\"B6 B2 | \"Ebmaj7\"B4 B2 BB- | \"Dm7b5\"B6 \"G7b9\"z2 ||\nP:B\n\"Cm\"z2 B4 BB- | \"Bbm7\"B6 \"Eb7\"B2 | \"Abmaj7\"B4 B2 BB- | \"Gm7\"B6 \"C7\"z2 |\n\"Abm7\"B4 B3 B- | \"Db7\"B4 B4 | \"Gbmaj7\"B4 B3 B- | \"Fm7\"B6 \"E7\"z2 ||\nP:C\n\"Ebmaj7\"B4 B2 BB- | \"A7#11\"B6 B2 | \"Abmaj7\"B4 B2 BB- | \"Gm7b5\"B6 \"C7b9\"z2 |\n\"Fm7\"z2 B4 B2 | \"Bb7\"B2 BB B2 B2 | \"Ebmaj7\"B4 B2 BB- | \"Dm7b5\"B6 \"G7b9\"z2 ||\nP:D\n\"Cm7\"B6 \"F7\"B2 | \"Bbm7\"B2 BB \"Eb7\"B2 B2 | \"Abmaj7\"B4 BB BB- | \"Abm7\"B6 \"Db7\"z2 |\n\"Gm7\"z2 BB- \"C7\"B2 B2 | \"Fm7\"B2 B2 \"Bb7\"B2 B2 | \"Ebmaj7\"B8 | \"Fm7\"z4 \"E7\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/074-fingers",
+"book": "The Colorado Cookbook",
+"title": "Fingers",
+"pdf": "74",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+15
+],
+"groups": [
+14
+],
+"text": "B section bar 7: first four notes read as eighths"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Fingers\nC:Thad Jones\nP:ABCD\n%source The Colorado Cookbook p71 (pdf 74)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:Bb\nP:A\n\"Bbmaj7\"B B2 B zB B2- | \"Cm7\"B2 B2 \"F7\"BB BB | \"Bbmaj7\"BB BB BB BB- | \"Cm7\"B2 BB \"F7\"BB BB- |\n\"Bb7\"B2 BB BB z2 | \"Eb7\"BB BB \"Ab7\"z2 zB | \"Bbmaj7\"z B2 B BB BB | \"Cm7\"B2 B2 \"F7\"z2 B2- ||\nP:B\n\"Bbmaj7\"B3 B/B/ B B2 B- | \"Cm7\"B2 BB- \"F7\"B2 B2- | \"Bbmaj7\"B2 B2 B2 z2 | \"Cm7\"z4 \"F7\"B2 B2- |\n\"Bb7\"BB BB B B2 B | \"Eb7\"B B2 B \"Ab7\"B B2 B | \"Bbmaj7\"BB BB zB B2- | B6 zB ||\nP:C\n\"D7\"z B2 B B2 BB | zB B2 B B2 B | \"G7\"BB BB B4- | B6 z2 |\n\"C7\"B4 B3 B/B/ | BB BB BB BB | \"F7\"BB BB BB BB | BB BB BB B2 ||\nP:D\n\"Bbmaj7\"B B2 B zB B2- | \"Cm7\"B2 B2 \"F7\"BB BB | \"Bbmaj7\"BB BB B2 B2- | \"Cm7\"B2 B2 \"F7\"BB BB |\n\"Bb7\"z4 B2 B2- | \"Eb7\"B4 \"Ab7\"B2 B2- | \"Bbmaj7\"B3 B B2 B2- | B8 |]\n\n%unsure [bar 15] B section bar 7: first four notes read as eighths"
+},
+{
+"id": "The_Colorado_Cookbook/075-flintstones",
+"book": "The Colorado Cookbook",
+"title": "Flintstones",
+"pdf": "75",
+"form": "AABA 8+8+8+8 (C = last A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Flintstones\nC:Hoyt Curtain\nP:AABA\n%source The Colorado Cookbook p72 (pdf 75)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (C = last A)\nM:4/4\nL:1/8\nK:Bb\n|:\nP:A\n\"Bb\"B4 B4 | \"Cm7\"z2 B4 \"F7\"B2 | \"Bb\"B4 B4 | \"Cm7\"z2 B4 \"F7\"B2 |\n\"Bb7\"B2 B2 B2 B2 | \"Eb7\"B4 \"Ab7\"B4 |1 \"Bb\"B8 | \"Cm7\"z4 \"F7\"z4 :|2\n\"Bb\"B8 | z8 ||\nP:B\n\"D7\"B4 B4 | z2 B4 B2 | \"G7\"B2 B2 B2 B2 | B8 |\n\"C7\"B4 B4 | z2 B4 B2 | \"F7\"B2 B2 B2 B2 | B8 ||\nP:A\n\"Bb\"B4 B4 | \"Cm7\"z2 B4 \"F7\"B2 | \"Bb\"B4 B4 | \"Cm7\"z2 B4 \"F7\"B2 |\n\"Bb7\"B2 B2 B2 B2 | \"Eb7\"B4 \"Ab7\"B4 | \"Bb\"B2 z2 z4 | z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/076-cote-d-azur",
+"book": "The Colorado Cookbook",
+"title": "Cote D'Azur",
+"pdf": "76",
+"form": "12-bar minor blues",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Cote D'Azur\nC:Clark Terry\n%source The Colorado Cookbook p73 (pdf 76)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar minor blues\nM:4/4\nL:1/8\nK:Bbm\n|: \"Bbm\"zB BB z2 zB | BB z2 zB BB | z2 zB BB z2 | zB BB z2 zB |\n\"Ebm\"BB z2 zB BB | z2 zB BB z2 | \"Bbm\"zB BB z2 zB | BB z2 zB BB |\n\"Cm7b5\"zB BB B2 B2 | \"F7\"B2 B2 B2 BB- | \"Bbm\"B8 | \"Cm7b5\"z4 \"F7\"z4 :|\n"
+},
+{
+"id": "The_Colorado_Cookbook/076-flugelin-the-blues",
+"book": "The Colorado Cookbook",
+"title": "Flugelin' the Blues",
+"pdf": "76",
+"form": "12-bar blues",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+16
+],
+"groups": [
+15
+],
+"text": "coda bar 2: last pair read as eighths (may be 16ths)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Flugelin' the Blues\nC:Clark Terry\n%source The Colorado Cookbook p73 (pdf 76)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues\nM:4/4\nL:1/8\nK:Bb\nz4 z2 B2- |: \"Bb7\"B B2 B- B4 | \"Eb7\"z2 zB \"Eo7\"z2 B2- | \"Bb7\"B B2 B- B4 |\nz2 zB z2 B2- | \"Eb7\"B B2 B- B4 | \"Eo7\"z2 zB z2 B2- | \"Bb7\"B B2 B- B4 |\n\"G7\"z2 zB z2 B2- | \"Cm7\"B B2 B- B4 | \"F7\"z2 zB z2 B2- | \"Bb7\"B B2 B- B4 |\n\"F7\"z2 zB z2 B2- :| \"^SOLOS\"z8 ||\n%D.C. al Coda\n%coda\n\"F7\"z2 zB z2 BB- | \"Bb7\"B2 BB BB BB | \"F7\"B2 BB \"Bb7#11\"!fermata!B4 |]\n\n%unsure [bar 16] coda bar 2: last pair read as eighths (may be 16ths)"
+},
+{
+"id": "The_Colorado_Cookbook/077-coral",
+"book": "The Colorado Cookbook",
+"title": "Coral",
+"pdf": "77",
+"form": "8 bars",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Coral\nC:Keith Jarrett\n%source The Colorado Cookbook p74 (pdf 77)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 8 bars\nM:4/4\nL:1/8\nK:Ab\n\"Cm7\"B2 BB- \"F7\"B B2 B- | \"D/Bb\"B3 B \"Bbmaj9\"(3B2B2B2 | \"Am7b5\"(3:2:4B2B2BB \"D7b9\"B3 B | \"Gm7\"B3 B/B/ \"C7\"BB BB |\n\"Cbmaj7\"BB- B2 \"Gbmaj7/Bb\"B2 B2 | \"Abm7\"B2 B2 \"Cbmaj7/Gb\"B2 B2 | \"Gbmaj7#11\"BB- B2- \"Gbsus\"B4 | \"Fm11\"B2 BB- \"(Dm7b5)\"BB \"(G7b9)\"B2 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/077-footprints",
+"book": "The Colorado Cookbook",
+"title": "Footprints",
+"pdf": "77",
+"form": "12-bar minor blues in 6/4",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+9,
+10
+],
+"groups": [
+8,
+9
+],
+"text": "alternate changes for bars 9-10 (quadruplet sus chords: Dbsus/Ab Csus/Db Bsus/F# Bbsus/B | Asus/E Absus/A Gsus/D Gbsus/G) given in this comment only"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Footprints\nC:Wayne Shorter\n%source The Colorado Cookbook p74 (pdf 77)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar minor blues in 6/4\nM:6/4\nL:1/8\nK:Cm\n|: \"Cm\"B2 B2 B2 B2 B2 B2 | B3 B BB B4 B2 | z12 | z12 |\n\"Fm\"B2 B2 B2 B2 B2 B2 | B3 B BB B4 B2 | \"Cm\"B3 B BB B4 B2 | z12 |\n\"Gbm7b5\"B2 B2 \"F7#11\"B2 B2 B2 B2 | \"E7#9\"B6 \"A7alt\"B3 B BB | \"Cm\"B12- | B12 :|\n\n%unsure [bars 9-10] alternate changes for bars 9-10 (quadruplet sus chords: Dbsus/Ab Csus/Db Bsus/F# Bbsus/B | Asus/E Absus/A Gsus/D Gbsus/G) given in this comment only"
+},
+{
+"id": "The_Colorado_Cookbook/078-four",
+"book": "The Colorado Cookbook",
+"title": "Four",
+"pdf": "78",
+"form": "32 bars (A with 1st/2nd endings)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+8,
+9
+],
+"groups": [
+7,
+8
+],
+"text": "intro bars 8-9: \"PLAY\" slash rhythm (dotted q, e tied to half) read as rhythm with chords"
+},
+{
+"bars": [
+30
+],
+"groups": [
+29
+],
+"text": "end here on final chorus (after the Fm7 Bb7 bar of the 2nd ending)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Four\nC:Miles Davis\n%source The Colorado Cookbook p75 (pdf 78)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 32 bars (A with 1st/2nd endings)\nM:4/4\nL:1/8\nK:Eb\n%intro (horn intro)\nz4 BB BB | B4 BB BB | B2 BB- B4 | z B3 B2 BB- |\nB4 BB BB | B2 BB BB B2 | B2 BB B2 BB | z4 \"Fm9\"B3 \"E7#9\"B- | B4 zB BB |:\nP:A\n\"Ebmaj7\"zB BB zB BB | zB BB zB BB- | \"Ebm7\"B8 | \"Ab7\"z4 BB BB |\n\"Fm\"BB BB zB BB | zB BB zB BB- | \"Abm7\"B8 | \"Db7\"z4 BB BB ||\n\"Gm7\"B4 BB BB | \"Gbm7\"z B3 B4 | \"Fm7\"z B3 B2 BB- |1 \"Bb7\"B4 BB BB |\n\"Gm7\"B4 BB BB- | \"Gbm7\"B2 BB- B4 | \"Fm7\"z B3 B2 BB | \"Bb7\"z4 zB BB :|2\n\"Bb7\"B4 BB BB | \"Gm7\"B2 BB \"Gbm7\"BB B2 | \"Fm7\"B2 BB \"Bb7\"B2 BB | \"Ebmaj7\"z8 | \"Fm7\"z4 \"Bb7\"z4 |]\n\n%unsure [bars 8-9] intro bars 8-9: \"PLAY\" slash rhythm (dotted q, e tied to half) read as rhythm with chords\n%unsure [bar 30] end here on final chorus (after the Fm7 Bb7 bar of the 2nd ending)"
+},
+{
+"id": "The_Colorado_Cookbook/079-gentle-rain",
+"book": "The Colorado Cookbook",
+"title": "Gentle Rain",
+"pdf": "79",
+"form": "ABABC 8+8+8+8+6 (B ends with 1st/2nd endings; C follows the 2nd ending)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form letters/order inferred from repeat and endings"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Gentle Rain\nC:Luiz Bonfa\nP:ABABC\n%source The Colorado Cookbook p76 (pdf 79)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABABC 8+8+8+8+6 (B ends with 1st/2nd endings; C follows the 2nd ending)\n%unsure [form] form letters/order inferred from repeat and endings\nM:4/4\nL:1/8\nK:C\n|:\nP:A\n\"Am7\"B6 BB | B6 BB | \"Bm7b5\"B6 BB | \"E7b9\"B6 BB |\n\"Am7\"B8- | \"Gm7\"B4 \"C7b9\"BB BB | \"F6\"B8- | B4 z4 ||\nP:B\n\"F#m7b5\"B6 BB | \"B7b9\"B6 BB | \"Em7b5\"B6 BB | \"A7b9\"B6 BB |\n\"Dm7b5\"B6 BB | \"Bm7b5\"B4 \"E7b9\"BB BB |1 \"Am7\"B8- | \"Bb7#11\"B4 z4 :|2\n\"Am7\"B4- \"D7\"B4- | \"Gm7\"B4 \"C7b9\"BB BB ||\nP:C\n\"F6\"B8- | \"C9\"B4 BB BB | \"F6\"B8- | \"Em7\"B4 BB BB |\n\"Am\"B8- | B4 z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/080-georgia-on-my-mind",
+"book": "The Colorado Cookbook",
+"title": "Georgia on My Mind",
+"pdf": "80",
+"form": "AABA 8+8+8+8 (C = last A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+6,
+7,
+8,
+9,
+10,
+11
+],
+"groups": [
+5,
+6,
+7,
+8,
+9,
+10
+],
+"text": "1st ending runs 3 bars, 2nd ending 3 bars, as printed"
+},
+{
+"bars": [
+13
+],
+"groups": [
+12
+],
+"text": "B bar 2: Bb7 A7 both over the final half note"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Georgia on My Mind\nC:Hoagy Carmichael\nP:AABA\n%source The Colorado Cookbook p77 (pdf 80)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (C = last A)\nM:4/4\nL:1/8\nK:F\n|:\nP:A\n\"Fmaj7\"B2 B6 | \"Em7b5\"B2 \"A7b9\"B6 | \"Dm\"z2 B2 \"Dm/C\"B2 B2 | \"Bm7b5\"B6 \"Bbm7\"B\"Eb7\"B |\n\"Am7\"B2 B2 \"D7\"B2 B2 |1 \"Gm7\"B2 B2 \"C7\"B2 B2 | \"Am7\"B4 \"D7\"B4 | \"Gm7\"BB BB \"C7#5b9\"B4 :|2\n\"Gm7\"B2 B2 \"C7\"B2 B2 | \"Fmaj7\"B8- | \"Em7b5\"B4 \"A7#9\"z4 ||\nP:B\n\"Dm\"B2 B2 B2 B2 | B2 B2 \"Bb7\"B2- \"A7\"B2 | \"Dm\"B2 B2 B2 B2 | \"Dm7\"B2 B2 \"G7\"B4 |\n\"Dm\"B2 B2 \"Dm/C#\"B2 B2 | \"Dm/C\"B2 B2 \"Bm7b5\"B2 \"E7alt\"B2 | \"Am7\"B2 B2 \"D7\"B2 B2 | \"Gm7\"B4 \"C7\"B4 ||\nP:A\n\"Fmaj7\"B2 B6 | \"Em7b5\"B2 \"A7b9\"B6 | \"Dm\"z2 B2 \"Dm/C\"B2 B2 | \"Bm7b5\"B6 \"Bbm7\"B\"Eb7\"B |\n\"Am7\"B2 B2 \"D7\"B2 B2 | \"Gm7\"B2 B2 \"C7\"B2 B2 | \"Fmaj7\"B8- | \"Gm7\"B4 \"C7\"z4 |]\n\n%unsure [bars 6-11] 1st ending runs 3 bars, 2nd ending 3 bars, as printed\n%unsure [bar 13] B bar 2: Bb7 A7 both over the final half note"
+},
+{
+"id": "The_Colorado_Cookbook/081-giant-steps",
+"book": "The Colorado Cookbook",
+"title": "Giant Steps",
+"pdf": "81",
+"form": "16 bars",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Giant Steps\nC:John Coltrane\n%source The Colorado Cookbook p78 (pdf 81)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars\nM:4/4\nL:1/8\nK:C\n|: \"Bmaj7\"B4 \"D7\"B4 | \"Gmaj7\"B4 \"Bb7\"B4 | \"Ebmaj7\"B8 | \"Am7\"B4 \"D7\"B4 |\n\"Gmaj7\"B4 \"Bb7\"B4 | \"Ebmaj7\"B4 \"F#7\"B4 | \"Bmaj7\"B8 | \"Fm7\"B4 \"Bb7\"B4 |\n\"Ebmaj7\"B8 | \"Am7\"B4 \"D7\"B4 | \"Gmaj7\"B8 | \"C#m7\"B4 \"F#7\"B4 |\n\"Bmaj7\"B8 || \"Fm7\"B4 \"Bb7\"B4 | \"Ebmaj7\"B8 | \"C#m7\"B3 B \"F#7\"z4 :|\n\"^SOLOS\"z8 ||\n%D.C. al Coda\n%coda\n\"Fm7\"B4 \"Bb7\"B3 \"Ebmaj7\"B- | !fermata!B8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/082-girl-from-ipanema",
+"book": "The Colorado Cookbook",
+"title": "The Girl from Ipanema",
+"pdf": "82",
+"form": "AABA 8+8+16+8 (C = last A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Girl from Ipanema\nC:Antonio Carlos Jobim\nP:AABA\n%source The Colorado Cookbook p79 (pdf 82)\n%style (Bossa Nova)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+16+8 (C = last A)\nM:4/4\nL:1/8\nK:F\n|:\nP:A\n\"Fmaj7\"B3 B B2 B2 | B2 BB- BB B2 | \"G7\"B2 B2 B2 BB | zB BB- BB B2 |\n\"Gm7\"B B2 B- BB BB | \"Gb7\"z B2 B- BB B2 | \"Fmaj7\"z2 B6 |1 \"Gb7\"z8 :|2\n\"Fmaj7\"z8 ||\nP:B\n\"Gbmaj7\"B8- | (3B2B2B2 (3B2B2B2 | \"B7#11\"B3 B- B4- | B6 z2 |\n\"F#m\"B8- | (3B2B2B2 (3B2B2B2 | \"Am7/D\"B3 B- B4- | \"D7\"B6 z2 |\n\"Gm\"B8- | (3B2B2B2 (3B2B2B2 | \"Bbm/Eb\"B3 B- B4- | \"Eb7\"B4 (3z2B2B2 |\n\"Am\"(3B2B2B2 (3B2B2B2 | \"D7#9#11\"B6 B2 | \"Gm\"(3B2B2B2 (3B2B2B2 | \"C7b9#11\"B6 z2 ||\nP:A\n\"Fmaj7\"B3 B B2 B2 | B2 BB- BB B2 | \"G7\"B2 B2 B2 BB | zB BB- BB B2 |\n\"Gm7\"B B2 B- BB BB | \"Gb7\"z B2 B- BB B2 | \"Fmaj7\"z2 B6 | \"Gb7\"z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/083-give-thanks",
+"book": "The Colorado Cookbook",
+"title": "Give Thanks",
+"pdf": "83",
+"form": "AB 8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+1
+],
+"groups": [
+0
+],
+"text": "intro bar 1 beat 4 (16th rests and notes) read from a small scan"
+},
+{
+"bars": [
+17
+],
+"groups": [
+16
+],
+"text": "B bar 7 printed as chord stabs (two-note 16ths); top voice rhythm only"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Give Thanks\nC:Stefan Karlsson\nP:AB\n%source The Colorado Cookbook p80 (pdf 83)\n%style (Rock/Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+8\nM:4/4\nL:1/8\nK:Eb\n%intro\nB/B/B B/B/B B/B/B/B/ z/B/z/\"Ebmaj7\"B/- | B4 \"Bbsus\"B/z3/2 B/B/B/B/ ||\nP:A\n\"Cm11\"B2- \"Cm11/Bb\"B5 B/B/ | \"E/A\"B3 B/B/ \"Abo7\"BB BB | \"Gm7\"B4 \"Gbo7\"B3 B/B/ | \"Fm7\"B2 BB \"Bb7\"B2 \"Bo7\"B/B/B/B/ |\n\"Cm7/Bb\"B7 B/B/ | \"E/A\"B3 B/B/ \"Abo7\"BB BB | \"Gm7\"B4 \"C7#9\"B3 B/B/ | \"Bbm7\"B2 BB \"Eb7\"B3 B ||\nP:B\n\"Abmaj7\"B7 B/B/ | \"E/A\"B3 B \"Abo7\"BB BB | \"Fm7\"B3 B \"C7\"BB BB | \"Fm7\"B3 B \"Bb7\"B2 \"Bo7\"B/B/B/B/ |\n\"Cm11\"B2- \"Cm11/Bb\"B5 B/B/ | \"E/A\"B3 B/B/ \"Abo7\"BB BB | \"Gm7\"B/B/B/B/ \"Cm7\"B/B/B/B/ \"Fm7\"B/B/B/B/ \"Bb7\"z/B/z/B/- | \"Eb6\"B4 \"Bbsus\"B/z3/2 \"(Bo7)\"z2 |]\n\n%unsure [bar 1] intro bar 1 beat 4 (16th rests and notes) read from a small scan\n%unsure [bar 17] B bar 7 printed as chord stabs (two-note 16ths); top voice rhythm only"
+},
+{
+"id": "The_Colorado_Cookbook/084-got-eyes-for-you",
+"book": "The Colorado Cookbook",
+"title": "Got Eyes for You",
+"pdf": "84",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "each printed bar holds two 4/4 measures; split here into 4/4 bars (some long notes drawn as halves read as wholes so bars fill)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Got Eyes for You\nC:Bob Montgomery\nP:AABC\n%source The Colorado Cookbook p81 (pdf 84)\n%style (Bossa Nova)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\n%unsure [general] each printed bar holds two 4/4 measures; split here into 4/4 bars (some long notes drawn as halves read as wholes so bars fill)\nM:4/4\nL:1/8\nK:Eb\nP:A\n|: \"Ebmaj7\"z2 zB B2 BB- | B8 | \"Abmaj7\"z4 BB BB- | BB BB- B4 |\n\"Gm7\"z B3 B2 BB- | \"C7b9\"B3 B B2 BB- | \"Fm7\"B4 B2 BB- |1 \"Bb7b9\"B8 :|2\n\"G7b9\"B8 ||\nP:B\n\"Cmaj7\"z2 zB B2 BB- | B4 (3B2B2B2 | \"Fmaj7\"B3 B B4- | \"Dm7\"B4 \"G9\"B4 |\n\"Em7\"z2 zB B2 BB- | \"Am7\"B3 B B2 BB- | \"Fmaj7\"B8- | \"Em7\"B6 z2 ||\nP:C\n\"Ebmaj7\"z2 zB B2 BB- | \"Abmaj7\"B4 (3B2B2B2 | \"Fm7\"B4 B2 BB- | \"Bb7b9\"B8 |\n\"Ebmaj7\"z2 zB B2 BB- | B3 B B2 BB- | \"Fm7\"B8- | \"Bb7b9\"B6 z2 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/085-groovin-high",
+"book": "The Colorado Cookbook",
+"title": "Groovin' High",
+"pdf": "85",
+"form": "A A2 16+16 (repeat with 1st/2nd endings; only A is lettered)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred: one lettered section played twice with different last 5 bars"
+},
+{
+"bars": [
+23
+],
+"groups": [
+22
+],
+"text": "bar 29: the two notes before the last quarter look beamed as 16ths; read as 8ths so the bar fills"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Groovin' High\nC:John Birks \"Dizzy\" Gillespie\nP:AA\n%source The Colorado Cookbook p82 (pdf 85)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A A2 16+16 (repeat with 1st/2nd endings; only A is lettered)\n%unsure [form] form inferred: one lettered section played twice with different last 5 bars\nM:4/4\nL:1/8\nK:Eb\n%intro horn intro\nBB BB- B2 BB | BB z2 z4 | BB BB- B2 BB | BB z2 z2 BB ||\nP:A\n|: \"Ebmaj7\"BB z2 z4 | BB z2 z4 | \"Am7\"zB BB BB BB | \"D7\"BB BB- B2 BB |\n\"Ebmaj7\"BB z2 z4 | BB z2 z4 | \"Gm7\"zB BB BB BB | \"C7\"BB BB- B2 BB ||\n\"F7\"BB z2 z4 | (3BBB B2 z4 | \"Fm7\"zB BB BB BB |1 \"Bb7\"BB BB- B2 BB |\n\"Gm7\"BB BB- B2 BB | \"F#m7\"BB z2 z4 | \"Fm7\"BB BB- B2 BB | \"Bb7b9\"BB z2 z2 B/B/B/B/ :|2\n\"Bb7\"BB BB- B2 BB | \"Fm\"B2 BB BB B2 | \"Abm7\"B2 BB \"Db7\"BB B2 | \"Ebmaj7\"B2 z2 z4 | \"Fm7\"z4 \"Bb7\"z4 |]\n\n%unsure [bar 23] bar 29: the two notes before the last quarter look beamed as 16ths; read as 8ths so the bar fills"
+},
+{
+"id": "The_Colorado_Cookbook/086-happy-go-lucky-local-night-train",
+"book": "The Colorado Cookbook",
+"title": "Happy Go Lucky Local (Night Train)",
+"pdf": "86",
+"form": "ABCD 12+12+12+12, solos on Bb blues, then D.C. al Fine (ends after B)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+24
+],
+"groups": [
+23
+],
+"text": "last bar of B: fermata note marked \"final x only\""
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Happy Go Lucky Local (Night Train)\nC:Duke Ellington\nP:ABCDAB\n%source The Colorado Cookbook p83-84 (pdf 86-87)\n%style (Blues Shuffle)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 12+12+12+12, solos on Bb blues, then D.C. al Fine (ends after B)\nM:4/4\nL:1/8\nK:Bb\nP:A\n\"Bb7\"B6- BB- | B6 zB | BB BB BB BB- | B6 z2 |\n\"Eb7\"B6- BB- | B6 zB | \"Bb7\"BB BB BB BB- | B6 z2 |\n\"Eb7\"B6- BB- | B6 zB | \"Bb7\"BB BB BB BB- | \"F7\"B6 zB ||\nP:B\n\"Bb7\"BB BB BB BB | BB BB BB BB | BB z2 B2 z2 | B2 zB- B3 B |\n\"Eb7\"BB BB BB BB | BB BB BB BB | \"Bb7\"BB z2 B2 z2 | B2 zB- B3 B |\n\"Eb7\"BB BB BB BB | BB BB BB BB | \"Bb7\"BB z2 B2 z2 | B2 zB- B2 !fermata!B2 ||\nP:C\n\"Bb7\"B6 BB | \"Ebm\"BB BB- BB BB | \"Bb7\"B4- BB BB | B6 BB |\n\"Eb7\"B6 BB | BB BB- BB BB | \"Bb7\"B4- BB BB | B6 BB |\n\"Eb7\"B6 BB | BB BB- BB BB | \"Bb7\"B4- BB BB | \"F7\"B4 z2 zB ||\nP:D\n\"Bb7\"BB BB BB BB | BB BB BB BB | BB z2 B2 z2 | B2 zB- B3 B |\n\"Eb7\"BB BB BB BB | BB BB BB BB | \"Bb7\"BB z2 B2 z2 | B2 zB- B3 B |\n\"Eb7\"BB BB BB BB | BB BB BB BB | \"Bb7\"BB z2 B2 z2 | B2 zB- B4 ||\n%text Solos: Bb blues. D.C. al Fine.\n\n%unsure [bar 24] last bar of B: fermata note marked \"final x only\""
+},
+{
+"id": "The_Colorado_Cookbook/088-have-you-met-miss-jones",
+"book": "The Colorado Cookbook",
+"title": "Have You Met Miss Jones",
+"pdf": "88",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Have You Met Miss Jones\nC:Richard Rodgers\nP:AABC\n%source The Colorado Cookbook p85 (pdf 88)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:F\nP:A\n|: \"Fmaj7\"B2 B2 \"Bb7\"B2 B2 | \"Am7\"B4 \"D7b9\"B4 | \"Gm7\"B2 B2 B2 B2 | \"C7\"B2 B2 B4 |\n\"Am\"B2 B2 B2 B2 | \"Dm\"B6 B2 |1 \"Abm7\"B4- \"Db7\"B4 | \"Gm7\"B6 \"C7\"z2 :|2\n\"Cm7\"B8 | \"F7\"z2 B2 B2 B2 ||\nP:B\n\"Bbmaj7\"B2 B2 \"A7alt\"B2 B2 | \"Abm7\"B2 B2 \"Db7\"B2 B2 | \"Gbmaj7\"B2 B2 \"F7alt\"B2 B2 | \"Em7\"B2 B2 \"A7\"B2 B2 |\n\"Dmaj7\"B2 B2 B2 B2 | \"Abm7\"B4 \"Db7\"B4 | \"Gbmaj7\"B8- | \"Gm7\"B6 \"C7\"z2 ||\nP:C\n\"Fmaj7\"B2 B2 \"Bb7\"B2 B2 | \"Am7\"B4 \"D7b9\"B4 | \"Gm7\"B2 B2 B2 B2 | \"Bm7b5\"B2 B2 \"Bb7\"B2 B2 |\n\"Am7\"B4- \"D7\"B4- | \"Gm7\"B2 B2 \"C7\"B2 B2 | \"Fmaj7\"B8 | \"Gm7\"z4 \"C7\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/089-here-s-that-rainy-day",
+"book": "The Colorado Cookbook",
+"title": "Here's That Rainy Day",
+"pdf": "89",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Here's That Rainy Day\nC:Jimmy Van Heusen\nP:ABCD\n%source The Colorado Cookbook p86 (pdf 89)\n%style (Bossa Nova)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:G\nP:A\n\"Gmaj7\"B2 B4 \"Gb7alt\"B2 | \"Fm7\"B2 B2 \"Bb7\"B2 B2 | \"Ebmaj7\"B4 B2 B2 | \"Abmaj7\"B8 |\n\"Am7\"B2 B4 B2 | \"D7\"B2 B2 B2 B2 | \"Gmaj7\"B8- | \"Dm7\"B6 \"G7\"z2 ||\nP:B\n\"Cm7\"B4 B4 | \"F7\"B2 B2 B2 B2 | \"Bbmaj7\"B4 B2 B2 | \"Ebmaj7\"B4 B2 B2 |\n\"Am7\"B2 BB B2 BB | \"D7\"B2 B2 B2 B2 | \"Gmaj7\"B8- | \"Am7\"B6 \"D7\"z2 ||\nP:C\n\"Gmaj7\"B2 B4 \"Gb7alt\"B2 | \"Fm7\"B2 B2 \"Bb7\"B2 B2 | \"Ebmaj7\"B4 B2 B2 | \"Abmaj7\"B8 |\n\"Am7\"B2 B4 B2 | \"D7\"B2 B2 B2 B2 | \"Gmaj7\"B8- | \"Dm7\"B6 \"G7\"z2 ||\nP:D\n\"Cmaj7\"B2 B4 B2 | \"Am7\"B2 B2 \"D7\"B2 B2 | \"Bm7\"B4 \"Em7\"B2 B2 | \"A7#11\"B4 \"Bbo7\"B4 |\n\"Am7\"B2 B4 B2 | \"D7\"B2 B2 B2 B2 | \"Ebmaj7\"B8 | \"Abmaj7\"z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/090-hide-and-seek",
+"book": "The Colorado Cookbook",
+"title": "Hide and Seek",
+"pdf": "90",
+"form": "AB 16+16 (repeated), after an 8-bar vamp intro",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6
+],
+"text": "intro: 7-bar multirest written as 7 bars of rest"
+},
+{
+"bars": [
+38
+],
+"groups": [
+37
+],
+"text": "bar 30: run of sixteenths at end of bar, grouping guessed so the bar fills"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Hide and Seek\nC:Bob Gillis\nP:AB\n%source The Colorado Cookbook p87-88 (pdf 90-91)\n%style (Rhythm section vamp; even eighths - broken time)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16 (repeated), after an 8-bar vamp intro\n%note Bass-line staff skipped. \"F Phrygian\" written as \"Fphryg\".\nM:4/4\nL:1/8\nK:C\n%intro rhythm section vamp, F Phrygian (7 bars rest + pickup bar)\n\"Fphryg\"z8 | z8 | z8 | z8 |\nz8 | z8 | z8 | zB BB B2 BB ||\nP:A\n|: \"Fphryg\"B8- | B8- | \"D/F7\"B8- | B8 |\n\"Bbm11\"BB \"Absus4\"BB- B3 B | \"C#m11\"BB \"Bsus4\"BB BB BB- | \"Bbm11\"B8- | B4 BB BB- |\n\"Fphryg\"B8- | B8- | \"D/F7\"B8- | B8 |\n\"Bbm11\"BB \"Absus4\"BB- B B2 B- | \"C#m11\"BB B4 \"Bsus4\"B2- | B8- | B8 ||\nP:B\n\"Abmaj7#5/G\"z4 B3 B | B4- (3B2B2B2 | \"Dm9/G\"B4 \"Csus4/G\"B2 BB- | B8 |\n\"Abmaj7#5/G\"z2 zB- B B2 B | B2 B2- (3B2B2B2 | \"Bbm11\"B4- \"Absus4\"B4- | B2 BB BB BB- |\n\"Fphryg\"B8- | B8- | \"D/F7\"B8- | B8 |\n\"Bbm11\"BB \"Absus4\"BB- B B2 B- | \"C#m11\"BB B2- \"Bsus4\"B/B/B/B/ B/B/B | \"C#sus4\"z !fermata!B7- | B4 BB BB- :|\n%text Last bar: head-out pick-ups. Fermata for ending.\n\n%unsure [bars 1-7] intro: 7-bar multirest written as 7 bars of rest\n%unsure [bar 38] bar 30: run of sixteenths at end of bar, grouping guessed so the bar fills"
+},
+{
+"id": "The_Colorado_Cookbook/092-high-fly",
+"book": "The Colorado Cookbook",
+"title": "High Fly",
+"pdf": "92",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:High Fly\nC:Randy Weston\nP:AABC\n%source The Colorado Cookbook p89 (pdf 92)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Bars 5-6 of A and C: head chords given; solo chords in parentheses.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:C\n|:\nP:A\n\"Dm\"BB (3BBB- B4 | \"G7\"z2 BB (3BBB- B2 | \"Cm7\"BB (3BBB- \"F7\"B4 | \"Em7\"z2 \"A7\"BB \"Dm7\"(3BBB- \"G7\"B2 |\n\"Cm7\"\"(Dbm7)\"BB (3BBB- \"(Gb7)\"B4 | \"F7\"\"(Cm7)\"z2 BB \"(F7)\"(3BBB- BB |1 \"Bb7\"B6 zB | \"B7\"B8 :|2\n\"Dm7b5\"B6 zB | \"G7#9\"B6 B2 ||\nP:B\n\"Cm7b5\"B8 | \"F7b9\"z4 (3B2B2B2 | \"Dm\"B8 | \"G7b9\"B6 B2 |\n\"Cm7b5\"B8 | \"F7b9\"z4 (3B2B2B2 | \"Em\"B4 \"A7\"B2 zB | \"Ebm\"B4 \"Ab7\"B4 ||\nP:C\n\"Dm\"BB (3BBB- B4 | \"G7\"z2 BB (3BBB- B2 | \"Cm7\"BB (3BBB- \"F7\"B4 | \"Em7\"z2 \"A7\"BB \"Dm7\"(3BBB- \"G7\"B2 |\n\"Cm7\"\"(Dbm7)\"BB (3BBB- \"(Gb7)\"B4 | \"F7\"\"(Cm7)\"z2 BB \"(F7)\"(3BBB- BB | \"Bb6/9\"B6 zB | \"B7\"B8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/093-high-life",
+"book": "The Colorado Cookbook",
+"title": "High Life",
+"pdf": "93",
+"form": "AABBCD 8+8+8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25
+],
+"groups": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"text": "section C is a two-stave piano/ensemble figure (no chord symbols); top-staff hit rhythm only, bass staff skipped"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:High Life\nC:Jeff Jenkins\nP:AABBCD\n%source The Colorado Cookbook p90 (pdf 93)\n%style (South African (Calypso Like))\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Solos on A A B B; play C D between solos.\n%form AABBCD 8+8+8+8+8+8\nM:C|\nL:1/8\nK:C\n|:\nP:A\n\"C\"z4 B2 BB- | B B2 B2 B2 B- | B B3 B2 BB- | B8 |\n\"Bb\"B2 \"F\"BB- B4- | B4 B2 BB | \"C\"z B3- B4 |1 z8 :|2 z4 BB B2 |:\nP:B\n\"Bb7#11\"B6 BB- | \"Am\"B4 BB B2 | \"Ab7#11\"B4 B2 BB- | \"Gsus4\"B4 BB B2 |\n\"Gbm7b5\"B4 \"Fm7\"B4 | \"C/E\"B3 \"F/D\"B3 \"C\"B2- | B8- | B4 BB B2 ::\nP:C\nz2 B2 B2 z2 | z2 zB- BB B2 | z2 B2 B2 z2 | z2 zB- BB B2 |\nz2 B2 B2 z2 | z2 zB- BB B2 | B4 B4 | B3 B3 z2 :|\nP:D\n\"C\"z4 B2 BB- | B B2 B2 B2 B- | B B3 B2 BB- | B8 |\n\"Bb\"B2 \"F\"BB- B4- | B4 B2 BB | \"C\"z B3- B4 | z8 |]\n\n%unsure [bars 18-25] section C is a two-stave piano/ensemble figure (no chord symbols); top-staff hit rhythm only, bass staff skipped"
+},
+{
+"id": "The_Colorado_Cookbook/094-honeysuckle-rose",
+"book": "The Colorado Cookbook",
+"title": "Honeysuckle Rose",
+"pdf": "94",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Honeysuckle Rose\nC:Fats Waller\nP:AABC\n%source The Colorado Cookbook p91 (pdf 94)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Bar 2 of C is an optional melody; if not used, play the original melody of A.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:F\n|:\nP:A\n\"Gm7\"BB BB \"C7\"B4 | \"Gm7\"BB BB \"C7\"B4 | \"Gm7\"BB BB \"C7\"B2 BB | \"C7\"z4 BB BB |\n\"F6\"B2 \"Gm7b5\"BB \"F6\"z4 | \"G7\"z4 \"C7\"BB BB |1 \"F6\"B8 | \"Am7\"z4 \"D7\"z4 :|2\n\"F6\"B2 \"Gm7b5\"BB \"F6\"z4 | \"Gm7b5\"z4 \"C7b9\"z4 ||\nP:B\n\"F7\"B4 B4 | B4 B4 | \"Bb7\"z2 BB z B2 B | B2 BB z4 |\n\"G7\"B4 B4 | B4 B4 | \"C7\"z2 BB z B2 B | B2 BB z4 ||\nP:C\n\"Gm7\"BB BB \"C7\"B4 | \"Abm7\"BB BB \"Db7\"B4 | \"Gm7\"BB BB \"C7\"B2 BB | \"C7\"z4 BB BB |\n\"F6\"B2 \"Gm7b5\"BB \"F6\"z4 | \"G7\"z4 \"C7\"BB BB | \"F6\"B2 \"Gm7b5\"BB \"F6\"z4 | z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/095-i-can-t-get-started",
+"book": "The Colorado Cookbook",
+"title": "I Can't Get Started",
+"pdf": "95",
+"form": "AABC 8+8+8+8 (last section printed as C)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I Can't Get Started\nC:Vernon Duke\nP:AABC\n%source The Colorado Cookbook p92 (pdf 95)\n%style (Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Upper-row alternate chords printed above some bars are given in parentheses.\n%form AABC 8+8+8+8 (last section printed as C)\nM:4/4\nL:1/8\nK:C\nz4 zB BB |:\nP:A\n\"Cmaj7\"\"(F#m7b5)\"B2 \"(B7)\"BB- \"Am7\"\"(Em7)\"BB \"(A7)\"B2 | \"Dm7\"B4- \"G7\"BB BB | \"Bm7\"B2 \"E7\"BB- \"Bbm7\"BB \"Eb7\"B2 | \"Am7\"B2- \"D7\"B2 \"Abm7\"zB \"Db7\"BB |\n\"Cmaj7\"B2 BB- \"Am7\"B B2 B | \"Dm7\"B2 BB- \"G7b9\"BB B2 |1 \"Em7b5\"B4- \"A7#9\"B4 | \"Dm7\"z4 \"G7\"zB BB :|2\n\"Cmaj7\"B4- \"Bb7\"B4 | \"Cmaj7\"z2 B2 B2 B2 ||\nP:B\n\"Em7\"B4- \"A7\"B4 | \"Em7\"BB BB- \"A7\"BB B2 | \"Dmaj7\"B4- \"Gmaj9\"B4 | \"Dmaj7\"\"(F#m7)\"BB \"(B7)\"BB- \"Gmaj9\"\"(Em7)\"BB \"(A7)\"B2 |\n\"Dm7\"B4- \"G7\"B4 | \"Dm7\"BB BB- \"G7\"BB B2 | \"Em7\"B4 \"A7\"B4 | \"Dm7\"B2 BB \"G7\"zB BB ||\nP:C\n\"Cmaj7\"\"(F#m7b5)\"B2 \"(B7)\"BB- \"Am7\"\"(Em7)\"BB \"(A7)\"B2 | \"Dm7\"B4- \"G7\"BB BB | \"Bm7\"B2 \"E7\"BB- \"Bbm7\"BB \"Eb7\"B2 | \"Am7\"B2- \"D7\"B2 \"Abm7\"zB \"Db7\"BB |\n\"Cmaj7\"B2 BB- \"A7#5b9\"BB BB | \"Dm7\"B2 BB- \"G7\"BB B2 | \"Cmaj7\"B8 | \"Dm7\"z4 \"G7\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/096-i-fall-in-love-too-easily",
+"book": "The Colorado Cookbook",
+"title": "I Fall in Love Too Easily",
+"pdf": "96",
+"form": "AB 8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+13
+],
+"groups": [
+12
+],
+"text": "bar 13: tied note + 16th pair grouping guessed so the bar adds up"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I Fall in Love Too Easily\nC:Jule Styne\nP:AB\n%source The Colorado Cookbook p93 (pdf 96)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+8\nM:4/4\nL:1/8\nK:Eb\nP:A\n\"Fm7\"zB BB \"Bb7\"B3 B | \"Ebmaj7\"BB B6 | \"Dm7b5\"zB BB \"G7b9\"B3 B | \"Cm7\"B8 |\n\"Dm7b5\"zB BB \"G7b9\"B3 B | \"Cm7\"BB BB- B4 | \"D7\"zB BB \"Ab7#11\"B2 B2 | \"G7\"B8 ||\nP:B\n\"Am7b5\"zB BB \"D7b9\"B3 B | \"G7\"B4- BB BB | \"Gm7\"B6 \"C7\"BB | \"Fm7\"B4- \"C7\"BB BB |\n\"Fm7\"B4- \"Bb9\"BB/B/ BB | \"Db7#11\"BB \"C7\"B6 | \"Fm7\"zB BB \"Bb13\"B3 B | \"Eb6/9\"B8 |]\n\n%unsure [bar 13] bar 13: tied note + 16th pair grouping guessed so the bar adds up"
+},
+{
+"id": "The_Colorado_Cookbook/096-squirrel",
+"book": "The Colorado Cookbook",
+"title": "Squirrel",
+"pdf": "96",
+"form": "12-bar blues",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Squirrel\nC:Tadd Dameron\n%source The Colorado Cookbook p93 (pdf 96)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Melody printed in two-note voicings; written as single notes.\n%form 12-bar blues\nM:4/4\nL:1/8\nK:F\nz4 z B3 || \"F7\"B2 z2 B2 zB | \"Bb7\"z2 B4 B2 | \"F7\"B2 z2 z4 |\nz4 z B3 | \"Bb7\"B2 z2 B2 zB | z2 B4 B2 | \"F7\"B2 B2 z4 |\nz4 z B3 | \"Gm7\"B2 z2 B2 zB | \"C7\"z2 B4 B2 | \"F7\"B2 B2 B2 z2 | z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/097-i-love-you",
+"book": "The Colorado Cookbook",
+"title": "I Love You",
+"pdf": "97",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I Love You\nC:Cole Porter\nP:ABCD\n%source The Colorado Cookbook p94 (pdf 97)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:F\nz6 B2 ||\nP:A\n\"Gm7b5\"B4 B4- | \"C7b9\"B4 B2 B2 | \"Fmaj7\"B2 B2 \"Bbmaj7\"B4- | \"Am7\"B6 \"D7#9\"B2 |\n\"Gm7\"B4 B4- | \"C7\"B4 BB BB- | \"Fmaj7\"B4 \"Bbmaj7\"z4 | \"Am7b5\"z4 \"D7\"z2 B2 ||\nP:B\n\"Gm7b5\"B4 B4- | \"C7b9\"B4 B2 B2 | \"Fmaj7\"B2 B2 B4- | \"Bo7\"B4 \"E7#9\"z2 B2 |\n\"Amaj7\"B2 B2 \"F#m7\"B4 | \"Bm7\"B4 \"E7\"B4 | \"Amaj7\"B8- | B6 \"Am7\"\"D7\"B2 ||\nP:C\n\"Gm7\"B2 B2 B4 | \"C7\"z4 BB BB- | \"Fmaj7\"B2 B2 B4- | B4 B2 B2 |\n\"Ao7\"B2 B2 B2 BB | \"D7#9\"z B3 B2 B2 | \"Gm7\"B8- | \"C7b9\"B4 z2 B2 ||\nP:D\n\"Gm7b5\"B4 B4- | \"C7b9\"B4 B2 B2 | \"Ao7\"B2 B2 B4- | \"D7#9\"B4 B2 B2 |\n\"G7\"B2 B4 B2 | \"Gm7\"B4 \"C7\"B4 | \"Fmaj7\"B4- \"Bbmaj7\"B4- | \"Am7\"B4 \"D7\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/098-i-mean-you",
+"book": "The Colorado Cookbook",
+"title": "I Mean You",
+"pdf": "98",
+"form": "AABC 8+8+8+8 (last C bar is 2/4; solos on AABC, after final solo D.S. al Fine)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "head chords (except intro/tag Eb7 and final F6/9) taken from the solo chart; bass staff skipped"
+},
+{
+"bars": [
+10
+],
+"groups": [
+9
+],
+"text": "A bar 6: grace notes before the two quarters omitted"
+},
+{
+"bars": [
+14
+],
+"groups": [
+13
+],
+"text": "A 2nd ending bar 2 not clearly printed; bar 1 repeated"
+},
+{
+"bars": [
+30
+],
+"groups": [
+29
+],
+"text": "2/4 bar as printed (F6/9 hit before the tag)"
+},
+{
+"bars": [
+30
+],
+"groups": [
+29
+],
+"text": "2/4 bar as printed (F6/9) before the tag"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I Mean You\nT:(Stickball)\nC:Thelonious Monk & Coleman Hawkins\nP:AABC\n%source The Colorado Cookbook p95-96 (pdf 98-99)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8 (last C bar is 2/4; solos on AABC, after final solo D.S. al Fine)\n%unsure [general] head chords (except intro/tag Eb7 and final F6/9) taken from the solo chart; bass staff skipped\nM:4/4\nL:1/8\nK:F\n%intro\n\"Eb7\"BB BB BB BB | B2 BB zB BB | BB BB B2 BB | z B2 B z2 zB- ||\nP:A\n|: \"Fmaj7\"BB BB BB B2 | B2 z2 zB B2 | \"Db7\"B2 z2 z B2 B- | \"D7\"B B2 B- B2 zB- |\n\"Gm7\"BB BB BB B2 | \"C7\"B2 z2 B2 B2 |1 \"Fmaj7\"B2 z2 \"D7\"zB B2 | \"Gm7\"B2 z2 \"C7\"z2 zB- :|2\n\"Fmaj7\"B2 z2 zB B2 | B2 z2 zB B2 ||\nP:B\n\"Eb7\"B8 | z4 (3B2B2B2 | \"Fmaj7\"B8 | z4 zB B2 |\n\"Db7\"B8 | z4 (3B2B2B2 | \"C7\"B B2 B- B4 | z4 z2 zB- ||\nP:C\n\"Fmaj7\"BB BB BB B2 | B2 z2 zB B2 | \"Db7\"B2 z2 z B2 B- | \"D7\"B B2 B- B2 zB- |\n\"Gm7\"BB BB BB B2 | \"C7\"B2 z2 B2 B2 | \"Fmaj7\"B2 z2 zB B2 | [M:2/4]\"F6/9\"B2 zB- |]\n%tag\n[M:4/4]\"Eb7\"BB BB BB BB | B2 BB zB BB | BB BB B2 BB | z B2 B z4 |]\n\n%unsure [bar 10] A bar 6: grace notes before the two quarters omitted\n%unsure [bar 14] A 2nd ending bar 2 not clearly printed; bar 1 repeated\n%unsure [bar 30] 2/4 bar as printed (F6/9 hit before the tag)\n%unsure [bar 30] 2/4 bar as printed (F6/9) before the tag"
+},
+{
+"id": "The_Colorado_Cookbook/100-i-remember-you",
+"book": "The Colorado Cookbook",
+"title": "I Remember You",
+"pdf": "100",
+"form": "AABC 8+8+8+10 (solos, then D.S. A al Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [
+9,
+10
+],
+"groups": [
+8,
+9
+],
+"text": "last intro bars: diamond-head hits read as half notes"
+},
+{
+"bars": [
+18
+],
+"groups": [
+17
+],
+"text": "1st ending bar 2 is rhythm slashes (rest); alt chords Abmaj7 / G-7 Gb7 printed above"
+},
+{
+"bars": [
+20
+],
+"groups": [
+19
+],
+"text": "2nd ending bar 2 is rhythm slashes (rest)"
+},
+{
+"bars": [
+28
+],
+"groups": [
+27
+],
+"text": "last B bar is rhythm slashes (rest)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I Remember You\nC:Victor Schertzinger\nP:AABC\n%source The Colorado Cookbook p97-98 (pdf 100-101)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+10 (solos, then D.S. A al Coda)\nM:4/4\nL:1/8\nK:F\n%intro (horn intro)\nB3 B B B2 B- | B3 B B B2 B- | B4 B3 B- | B4 B B2 B |\nB4 B3 B- | B3 B z B2 B | B2 B2 B2 B2 | B4 B3 B |\n%play\nz4 \"Abm7\"!open!B4 | \"Gm7\"B4 \"Gb7b9\"B4 ||\nP:A\n|: \"Fmaj7\"B2 B2 B2 B2 | \"Bm7\"B4 \"E7\"B4 | \"Fmaj7\"B2 B2 B2 B2 | \"Cm7\"B2 B2 \"F7\"B2 B2 |\n\"Bbmaj7\"B6 B2 | \"Bbm7\"B4 \"Eb7\"(3B2B2B2 |1 \"Am7\"\"^(Abmaj7)\"B4 \"D7\"B4 | \"Gm7\"z4 \"C7\"\"^(Gb7)\"z4 :|2\n\"Fmaj7\"B8 | \"Cm7\"z4 \"F7\"z4 ||\nP:B\n\"Bbmaj7\"B2 B2 B2 B2 | \"Em7\"B2 B2 \"A7\"B2 B2 | \"Dmaj7\"B8 | \"Em7\"z2 B2 \"A7\"B2 B2 |\n\"Dmaj7\"B4 B2 B2 | \"Dm7\"B4 \"G7\"(3B2B2B2 | \"Cmaj7\"B8 | \"Gm7\"z4 \"C7\"z4 ||\nP:C\n\"Fmaj7\"B2 B2 B2 B2 | \"Bm7\"B4 \"E7\"B4 | \"Fmaj7\"B2 B2 B2 B2 | \"Am7b5\"\"^(Cm7)\"B2 B2 \"D7b9\"\"^(F7)\"B2 B2 |\n\"Gm\"\"^(Bbmaj7)\"B8 | \"Bbm7\"z2 B2 \"Eb7\"(3B2B2B2 | \"Fmaj7\"B8 | \"Bo7\"z2 B2 \"Bbm7\"B2 B2 |\n\"Am7\"B2 B2 \"Ab7\"B2 B2 | !coda!\"Gm7\"B4 \"C7b9\"B3 \"F\"B | z8 | z8 ||\n%solos, D.S. A al Coda\n%coda\n!coda!\"Gm7\"B4 \"C7\"B4 | \"Cm7\"B2 B2 \"B7\"B2 B2 | \"Bbm7\"B4 \"Eb7\"B4 |\n%standard ending\n\"Am7\"B2 B2 \"Ab7\"B2 B2 | \"Gm7\"B4 \"C7\"B3 \"F\"B | z8 ||\n%extended ending\n\"Ebm7\"B2 B2 \"D7\"B2 B2 | \"Dbm7\"B4 \"Gb7\"B4 | \"F#m7\"B2 B2 \"F7\"B2 B2 | \"Em7\"B4 \"A7\"B4 |\n\"Am7\"B2 B2 \"Ab7\"B2 B2 | \"Gm7\"B4 \"C7\"B3 \"Fmaj7\"B |]\n\n%unsure [bars 9-10] last intro bars: diamond-head hits read as half notes\n%unsure [bar 18] 1st ending bar 2 is rhythm slashes (rest); alt chords Abmaj7 / G-7 Gb7 printed above\n%unsure [bar 20] 2nd ending bar 2 is rhythm slashes (rest)\n%unsure [bar 28] last B bar is rhythm slashes (rest)"
+},
+{
+"id": "The_Colorado_Cookbook/102-i-ll-close-my-eyes",
+"book": "The Colorado Cookbook",
+"title": "I'll Close My Eyes",
+"pdf": "102",
+"form": "no section letters printed; 16-bar section repeated with 1st/2nd endings (32 bars)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I'll Close My Eyes\nC:Billy Reid\n%source The Colorado Cookbook p99 (pdf 102)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form no section letters printed; 16-bar section repeated with 1st/2nd endings (32 bars)\nM:4/4\nL:1/8\nK:F\nz2 B2 B2 BB- |: \"Fmaj7\"B8 | z2 B2 B2 B2 | \"Em7\"B2 BB- B4 |\n\"A7\"z2 B2 B2 BB- | \"Dm7\"B8 | \"G7\"z2 B2 B2 BB- | \"Cm7\"B8- |\n\"F7\"B4 z2 B2 || \"Bbmaj7\"B2 B2 B4- | \"Eb7\"B2 B2 B2 B2 |1 \"Fmaj7\"B3 B B B2 B- |\nB4 (3B2B2B2 | \"Bm7b5\"B3 B B4- | \"E7b9\"B2 B2 B2 B2 | \"Am7\"B4 \"Abo7\"B4 |\n\"Gm7\"z2 B2 \"Gb7/C\"B2 BB- :|2 \"Am7b5\"B3 B B B2 B- | \"D7b9\"B2 B2 B2 B2 | \"G7\"B3 B B B2 B- |\n\"Gm7\"B4 \"C7\"B4 | \"F6/9\"B8- | B4 z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/103-i-ll-remember-april",
+"book": "The Colorado Cookbook",
+"title": "I'll Remember April",
+"pdf": "103",
+"form": "ABC 16+16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+30
+],
+"groups": [
+29
+],
+"text": "B7 bar: triplet bracket over the last notes doesn't fit; read as quarters"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I'll Remember April\nC:Don Raye, Gene de Paul, Pat Johnson\nP:ABC\n%source The Colorado Cookbook p100 (pdf 103)\n%style (Latin & Jazz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+16+16\nM:4/4\nL:1/8\nK:G\nP:A\n%latin feel\n\"Gmaj7\"z2 B2 B2 B2 | B2 B2 B2 B2 | B6 B2 | B4 B4 |\n\"Gm\"z2 B2 B2 B2 | B2 B2 B2 B2 | BB B6- | B4 z2 B2 ||\n%swing feel\n\"Am7b5\"B6 B2 | \"D7#9\"B2 B2 B2 B2 | \"Bm7b5\"B4 B4- | \"E7#9\"B4 B2 B2 |\n\"Am7\"B2 B2 B2 B2- | \"D7\"B4 B2 B2 | \"Gmaj7\"B8 | z4 z2 B2 ||\nP:B\n\"Cm7\"B2 B2 B4 | \"F7\"z2 B2 B2 B2 | \"Bbmaj7\"B6 B2 | B2 B4 B2 |\n\"Cm7\"B2 B2 B4 | \"F7\"z2 B2 B2 B2 | \"Bbmaj7\"B2 B2 B4 | z2 B2 (3B2B2B2 |\n\"Am7\"B6 B2 | \"D7#9\"B2 B2 B2 B2 | \"Gmaj7\"B4 B4- | B2 B2 B2 B2 |\n\"F#m7\"B4 B4- | \"B7\"B4 B2 B2 | \"Emaj7\"B8 | \"Am7\"z4 \"D7\"z4 ||\nP:C\n%latin feel\n\"Gmaj7\"z2 B2 B2 B2 | B2 B2 B2 B2 | B6 B2 | B4 B4 |\n\"Gm\"z2 B2 B2 B2 | B2 B2 B2 B2 | BB B6- | B4 z2 B2 ||\n%swing feel\n\"Am7b5\"B6 B2 | \"D7#9\"B2 B2 B2 B2 | \"Bm7b5\"B4 B4- | \"E7#9\"B4 B2 B2 |\n\"Am7\"B2 B2 B2 B2- | \"D7\"B4 B2 B2 | \"Gmaj7\"B8 | z8 |]\n\n%unsure [bar 30] B7 bar: triplet bracket over the last notes doesn't fit; read as quarters"
+},
+{
+"id": "The_Colorado_Cookbook/104-i-m-an-old-cowhand",
+"book": "The Colorado Cookbook",
+"title": "I'm An Old Cowhand",
+"pdf": "104",
+"form": "AB 8+12, repeated",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I'm An Old Cowhand\nC:Johnny Mercer\nP:ABAB\n%source The Colorado Cookbook p101 (pdf 104)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+12, repeated\nM:4/4\nL:1/8\nK:Eb\nz2 BB B2 B2 |\nP:A\n|: \"Fm7\"B8 | \"Bb7\"z2 BB B2 B2 | \"Ebmaj7\"B4 \"Ab7\"B4 | \"Gm7\"z2 BB \"C7#9\"B2 B2 |\n\"Fm7\"B8 | \"Bb7\"z2 BB B2 B2 | \"Ebmaj7\"B8- | \"Do7\"B4 \"G7alt\"z2 BB ||\nP:B\n\"Cm7\"B2 B2 B2 BB | \"Gm7\"B2 B2 B2 BB | \"Cm7\"B2 B2 B2 BB | \"Gm7\"B2 B2 B2 BB |\n\"Cm7\"B2 B2 B2 BB | \"Gm7\"B2 B2 \"C7#9\"B4 | \"Fm7\"BB B2 \"Bb7\"B2 B2 | \"Ebmaj7\"B4 \"C7#9\"B4 |\n\"Fm7\"BB B2 \"Bb7\"B2 B2 |1 \"Ebmaj7\"B2 BB B2 B2 :|2 \"Ebmaj7\"B4 z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/105-i-m-old-fashioned",
+"book": "The Colorado Cookbook",
+"title": "I'm Old Fashioned",
+"pdf": "105",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+13,
+14
+],
+"groups": [
+12,
+13
+],
+"text": "upper chord row in bars 13-14 (Gm7, Am7, D7alt) taken as alternates"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I'm Old Fashioned\nC:Jerome Kern\nP:ABCD\n%source The Colorado Cookbook p102 (pdf 105)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:F\nP:A\n\"Fmaj7\"B4- \"Dm7\"B2 B2 | \"Gm7\"B2 B2- \"C7b9\"B2 B2 | \"Fmaj7\"B4- \"Dm7\"B2 B2 | \"Gm7\"B2 B2- \"C7b9\"B2 B2 |\n\"Fmaj7\"B6 B2 | \"Fmaj7\"B2 B2- \"Dm7\"B2 B2 | \"Em7b5\"B8- | \"A7#9\"B6 B2 ||\nP:B\n\"Dm11\"B6 B2 | \"G7#11\"B6 B2 | \"Dm11\"B2 B2 B2 B2 | \"G7#11\"B6 B2 |\n\"Gm7\"B2 B2 \"A7#9\"\"(Gm7)\"B2 B2 | \"Dm7\"\"(Am7)\"B4 \"G7b9\"\"(D7alt)\"B4 | \"Gm7\"B8- | \"C7b9\"B8 ||\nP:C\n\"Fmaj7\"B4- \"Dm7\"B2 B2 | \"Gm7\"B2 B2- \"C7\"B2 B2 | \"Fmaj7\"B4- \"Dm7\"B2 B2 | \"Bm7b5\"B2 B2- \"E7#9\"B2 B2 |\n\"Amaj7\"B2 B2 \"Bm7\"B4 | \"C#m7\"B2 B2 \"Dmaj7\"B4 | \"E7\"B2 B2 \"F#m7b5\"B4 | \"Gm7\"B2 B2 \"C7b9\"B4 ||\nP:D\n\"Fmaj7\"B4- \"Dm7\"B2 B2 | \"Gm7\"B2 B2- \"C7\"B2 B2 | \"Fmaj7\"B4- \"Dm7\"B2 B2 | \"Gm7\"B2 B2- \"C7\"B2 B2 |\n\"Cm7\"B2 B2 \"F7\"B2 B2 | \"Bbmaj7\"B4- \"Eb7\"B2 B2 | \"Am7\"B2 B2 \"Dm7\"B2 B2 | \"Bm7b5\"B4- \"Bbm6\"B2 B2 |\n\"Am7\"B4- \"Ab7\"B2 B2 | \"Gm7\"B2 B2- \"C7\"B2 B2 | \"Fmaj7\"B8 | \"Gm7\"z4 \"C7\"z4 |]\n\n%unsure [bars 13-14] upper chord row in bars 13-14 (Gm7, Am7, D7alt) taken as alternates"
+},
+{
+"id": "The_Colorado_Cookbook/106-i-ve-got-a-crush-on-you",
+"book": "The Colorado Cookbook",
+"title": "I've Got a Crush on You",
+"pdf": "106",
+"form": "AB 8+10",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I've Got a Crush on You\nC:George Gershwin\nP:AB\n%source The Colorado Cookbook p103 (pdf 106)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+10\nM:4/4\nL:1/8\nK:Bb\nz4 zB BB ||\nP:A\n\"Dm7\"B2 BB- \"Dbo7\"B4 | \"Cm7\"B B2 B- \"F7\"B4 | \"Dm7\"BB BB \"Dbo7\"B B3 | \"Cm7\"B B2 B- \"F7\"B3 B |\n\"Bbmaj7\"B2 BB- \"Gm7\"BB B2 | \"C7\"B3 B- BB BB | \"Gm7\"B3 B- \"C7\"BB BB | \"Cm7\"B3 B- \"F7\"B4 ||\nP:B\n\"Dm7\"B2 BB- \"Dbo7\"B4 | \"Cm7\"B B2 B- \"F7\"B4 | \"Dm7\"BB BB \"Dbo7\"B B3 | \"Cm7\"B B2 \"Ebm7\"B- \"Ab7\"B3 B |\n\"Dm7\"B2 BB- \"Gm7\"BB B2 | \"C7\"B6 z2 | \"Bb/F\"B2 B2 \"Gm7\"B2 B2 | \"C7\"B2 BB- \"F7\"BB B2 |\n\"Bbmaj7\"B8- | B4 z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/107-i-ve-got-rhythm",
+"book": "The Colorado Cookbook",
+"title": "I've Got Rhythm",
+"pdf": "107",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26
+],
+"groups": [
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25
+],
+"text": "last section is boxed C in the book but is the A melody; form written AABA"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I've Got Rhythm\nC:George Gershwin\nP:AABA\n%source The Colorado Cookbook p104 (pdf 107)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\nM:4/4\nL:1/8\nK:Bb\nP:A\n|: \"Bb\"z2 B4 B2 | \"Cm7\"B4 \"F7\"B4 | \"Bb\"z2 B4 B2 | \"Cm7\"B4 \"F7\"B4 |\n\"Bb7\"z2 B4 B2 | \"Eb7\"B4 \"Ab7\"B B2 B |1 \"Bb\"B2 B2 BB BB- | \"Cm7\"B4 \"F7\"B4 :|2\n\"Bb\"B2 B2 BB BB- | B4 z4 ||\nP:B\n\"D7\"z2 B4 B2 | B4 B4 | \"G7\"z2 B4 B2 | B4 B4 |\n\"C7\"z2 B4 B2 | B4 B4 | \"F7\"z2 B4 B2 | B6 z2 ||\nP:C\n\"Bb\"z2 B4 B2 | \"Cm7\"B4 \"F7\"B4 | \"Bb\"z2 B4 B2 | \"Cm7\"B4 \"F7\"B4 |\n\"Bb7\"z2 B4 B2 | \"Eb7\"B4 \"Ab7\"B B2 B | \"Bb\"B2 B2 BB BB- | \"Cm7\"B4 \"F7\"B4 |]\n\n%unsure [bars 19-26] last section is boxed C in the book but is the A melody; form written AABA"
+},
+{
+"id": "The_Colorado_Cookbook/108-i-ve-never-been-in-love-before",
+"book": "The Colorado Cookbook",
+"title": "I've Never Been in Love Before",
+"pdf": "108",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I've Never Been in Love Before\nC:Frank Loesser\nP:AABC\n%source The Colorado Cookbook p105 (pdf 108)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Bb\nz6 B2 ||\nP:A\n|: \"Bbmaj7\"B4- \"Gm7\"B2 B2 | \"Cm7\"B2 B2 \"F7\"B2 B2 | \"Bbmaj7\"B4- \"Eb7\"B2 B2 | \"Dm7\"B2 B2 \"G7b9\"B2 B2 |\n\"Cm7\"B6 B2 | \"F7\"B2 B2 B2 B2 | \"Bbmaj7\"B8- |1 \"Cm7\"B4- \"F7\"B2 B2 :|2\n\"Fm7\"B4- \"Bb7b9\"B2 B2 ||\nP:B\n\"Ebmaj7\"B6 B2 | \"Cm7\"B2 B2 \"F7\"B2 B2 | \"Bbmaj7\"B6 B2 | \"Am7\"B2 B2 \"D7\"B2 B2 |\n\"Gm7\"B6 B2 | \"Em7b5\"B2 B2 \"A7b9\"B2 B2 | \"Dmaj7\"B8- | \"Cm7\"B4- \"F7\"B2 B2 ||\nP:C\n\"Bbmaj7\"B4- \"Gm7\"B2 B2 | \"Cm7\"B2 B2 \"F7\"B2 B2 | \"Bbmaj7\"B4- \"Eb7\"B2 B2 | \"Dm7\"B2 B2 \"G7b9\"B2 B2 |\n\"Cm7\"B4 B4 | \"F7\"B4 B4 | \"Bbmaj7\"B8- | \"Cm7\"B4 \"F7\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/109-in-and-out",
+"book": "The Colorado Cookbook",
+"title": "In and Out",
+"pdf": "109",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+10,
+11,
+12
+],
+"groups": [
+9,
+10,
+11
+],
+"text": "Abmaj7 likely sits on the tied eighth before the bar (anticipation); bar 12 grouping guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:In and Out\nC:Bob Montgomery\nP:ABCD\n%source The Colorado Cookbook p106 (pdf 109)\n%style (Up Tempo)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:F\nP:A\n\"Gm7\"B4 B4 | \"C7\"B4 B4 | \"Fmaj7\"BB zB z B3 | \"D7\"B4 B3 B- |\n\"Gm7\"!trill!B8- | \"C7\"B8- | \"Fmaj7\"B8- | B8 ||\nP:B\n\"Bbm7\"B3 B BB BB | \"Eb7\"BB BB z B2 \"Abmaj7\"B- | B8 | \"G7#9\"B3 B- B3 B- |\n\"Cmaj7\"!trill!B8- | \"Dm7\"B4- \"G7\"B4- | \"Cmaj7\"B8- | \"Am7\"B4- \"D7\"B4 ||\nP:C\n\"Gm7\"B4 B4 | \"C7\"B4 B4 | \"Fmaj7\"BB zB z B3 | \"D7\"B4 B3 B- |\n\"Gm7\"!trill!B8- | \"C7\"B8- | \"Cm7\"B8- | \"F7\"B8 ||\nP:D\n\"Bbmaj7\"B3 B B B2 B- | \"Bbm7\"B2 BB \"Eb7\"z2 zB | \"Fmaj7\"z B2 B B2 B2 | \"Abm7\"B2 BB \"Db7\"z4 |\n\"Gm7\"BB BB BB BB | \"C7\"B4 B3 \"F\"B | z8 | z8 |]\n\n%unsure [bars 10-12] Abmaj7 likely sits on the tied eighth before the bar (anticipation); bar 12 grouping guessed"
+},
+{
+"id": "The_Colorado_Cookbook/110-in-a-mellow-tone",
+"book": "The Colorado Cookbook",
+"title": "In a Mellow Tone",
+"pdf": "110",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:In a Mellow Tone\nC:Duke Ellington\nP:ABCD\n%source The Colorado Cookbook p107 (pdf 110)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Traditional changes in plain quotes; Tommy Flanagan changes in parentheses.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:Ab\nz2 BB B B2 B- ||\nP:A\n\"Bb7\"\"(F#m9)\"B4 \"(B7)\"B4 | \"Eb7\"\"(E7)\"z2 BB \"(A7alt)\"B B2 B- | \"Abmaj7\"\"(D7alt)\"B4 \"(G7b9)\"B4 | \"Abmaj7\"\"(C7alt)\"z2 BB \"(F7alt)\"B B2 B- |\n\"Ebm7\"\"(Bbm7)\"B8 | \"Ab7\"\"(Eb7)\"z2 BB B B2 B- | \"Dbmaj7\"\"(Ebm7)\"B8 | \"Dbmaj7\"\"(Ab7)\"z2 BB B B2 B- ||\nP:B\n\"Dbmaj7\"B8 | \"Dbm7\"z2 BB- B2 \"Gb7\"BB- | \"Abmaj7\"\"(C7)\"B8 | \"F7\"\"(F7alt)\"z2 BB B B2 B- |\n\"Bb7\"B8 | z2 BB- B2 BB- | \"Bbm7\"\"(Eb7)\"B8 | \"Eb7\"z2 BB B B2 B- ||\nP:C\n\"Bb7\"\"(D7alt)\"B8 | \"Eb7\"\"(Db7#9)\"z2 BB B B2 B- | \"Abmaj7\"\"(C7alt)\"B8 | \"Abmaj7\"\"(B7)\"z2 BB B B2 B- |\n\"Ebm7\"\"(Bbm7)\"B8 | \"Ab7\"\"(A7)\"z2 BB B B2 B- | \"Dbmaj7\"\"(Ebm7)\"B8 | \"Dbmaj7\"\"(Ab7)\"z2 BB- B2 BB- ||\nP:D\n\"Dbmaj7\"B8 | \"Do7\"\"(G7alt)\"z2 BB- B2 BB- | \"Abmaj7\"B8 | \"F7\"z2 BB- B2 BB- |\n\"Bb7\"B8 | \"Eb7\"z2 BB B B2 B- | \"Abmaj7\"\"(D7#11)\"B4 \"G7\"z4 | \"Gb7\"z4 \"F7\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/111-in-a-sentimental-mood",
+"book": "The Colorado Cookbook",
+"title": "In a Sentimental Mood",
+"pdf": "111",
+"form": "AABA 8+8+8+8 (last A labelled C)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+18
+],
+"groups": [
+17
+],
+"text": "B bar 8 marked BREAK"
+},
+{
+"bars": [
+23
+],
+"groups": [
+22
+],
+"text": "C bar 5: Bm7b5 and Eb7/Bb printed stacked above Dm7, taken as alternates"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:In a Sentimental Mood\nC:Duke Ellington\nP:AABA\n%source The Colorado Cookbook p108 (pdf 111)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (last A labelled C)\nM:4/4\nL:1/8\nK:F\nz2 BB BB BB |\nP:A\n|: \"Dm\"B4 \"Dmmaj7\"B4 | \"Dm7\"z2 BB \"G7\"BB BB | \"Gm\"B3 B \"Gmmaj7\"B4 | \"Gm7\"z2 BB \"C7\"BB BB |\n\"Dm7\"B4- BB BB | \"Am7\"B6 \"D7\"B2 | \"Gm7\"B4 \"C7\"B4 |1 \"Fmaj9\"B3 B/B/ BB BB :|2\n\"Fmaj7\"B4 \"Ebm7\"z2 \"Ab7\"z2 ||\nP:B\n\"Dbmaj7\"B2 BB \"Bbm7\"BB BB | \"Ebm7\"B2 BB \"Ab7\"BB BB | \"Dbmaj7\"B4 \"Bb7\"z4 | \"Eb7\"z4 \"Ab7\"z4 |\n\"Dbmaj7\"B2 BB \"Bbm7\"BB BB | \"Ebm7\"B2 BB \"Ab7\"BB BB | \"Gm7\"B8 | \"C7\"z2 BB BB BB ||\nP:C\n\"Bm7b5\"B4 \"Bbm13\"B4 | \"Am7\"z2 BB \"Abo7\"BB BB | \"Gm\"B3 B \"Gmmaj7\"B4 | \"Gm7\"z2 BB \"C7\"BB BB |\n\"Dm7\"\"(Bm7b5)\"B4- \"(Eb7/Bb)\"BB BB | \"Am7\"B6 \"D7\"B2 | \"Gm7\"B4 \"C7\"B4 | \"F6/9\"B8 |]\n\n%unsure [bar 18] B bar 8 marked BREAK\n%unsure [bar 23] C bar 5: Bm7b5 and Eb7/Bb printed stacked above Dm7, taken as alternates"
+},
+{
+"id": "The_Colorado_Cookbook/112-in-walked-bud",
+"book": "The Colorado Cookbook",
+"title": "In Walked Bud",
+"pdf": "112",
+"form": "AABBC 8+8+4+4+8 (AABA, bridge B is 4 bars repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+12,
+13
+],
+"groups": [
+11,
+12
+],
+"text": "Db7 bars: lower second voice (quarter rest, quarters, eighths) not transcribed; top whole notes kept"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:In Walked Bud\nC:Thelonious Monk\nP:AABBC\n%source The Colorado Cookbook p109 (pdf 112)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABBC 8+8+4+4+8 (AABA, bridge B is 4 bars repeated)\nM:4/4\nL:1/8\nK:Ab\nP:A\n|: \"Fm\"BB- B4 B2 | \"Fmmaj7\"BB- B4 B2 | \"Fm7\"BB- B4 B2 | \"Bb7\"B B3 \"Eb7\"B3 B |\n\"Ab6\"BB- B4 BB | \"Bb7\"B B3 \"Eb7#11\"B3 B | \"Ab6\"BB BB B2 BB |1 \"Ab6\"z B3 \"C7#9\"z4 :|2\n\"Ab6\"z B3 z4 ||\nP:B\n|: \"Fm\"BB B2 (3BBB BB | B2 (3BBB BB BB | \"Db7\"B8- | B8 :|\nP:C\n\"Fm\"BB- B4 B2 | \"Fmmaj7\"BB- B4 B2 | \"Fm7\"BB- B4 B2 | \"Bb7\"B B3 \"Eb7\"B3 B |\n\"Ab6\"BB- B4 BB | \"Bb7\"B B3 \"Eb7#11\"B3 B | \"Ab6\"BB BB B2 BB | z B3 z4 |]\n\n%unsure [bars 12-13] Db7 bars: lower second voice (quarter rest, quarters, eighths) not transcribed; top whole notes kept"
+},
+{
+"id": "The_Colorado_Cookbook/113-invitation",
+"book": "The Colorado Cookbook",
+"title": "Invitation",
+"pdf": "113",
+"form": "ABCDEF 8+8+8+8+8+8 (A,B,E,F latin; C,D swing)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Invitation\nC:Bronislau Kaper\nP:ABCDEF\n%source The Colorado Cookbook p110 (pdf 113)\n%style (Latin & Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCDEF 8+8+8+8+8+8 (A,B,E,F latin; C,D swing)\nM:4/4\nL:1/8\nK:C\nP:A\n%Latin feel\n\"Cm\"(3B2B2B2 B4- | B2 BB B B2 B | \"Cm\"B4 B4- | B4 (3B2B2B2 |\n\"Cm\"B4 (3B2B2B2 | \"F7\"B6 B2 | \"Bb7#11\"B8- | B6 z2 ||\nP:B\n\"Ebm\"(3B2B2B2 B4- | B2 BB B B2 B | \"Ebm\"B4 B4- | B4 (3B2B2B2 |\n\"Ebm\"B4 (3B2B2B2 | \"Ab7\"B6 B2 | \"Db7#11\"B8- | B6 B2 ||\nP:C\n%swing feel\n\"C#m7\"BB BB- B4- | \"F#7\"B2 BB \"F#7#9\"B2 BB | \"Bmmaj7\"B4 B4- | B8 |\n\"Bm7\"BB BB- B4- | \"E7\"B2 BB \"E7#9\"B2 BB | \"Amaj7\"B8- | B6 B2 ||\nP:D\n\"Am7\"BB BB- B4- | \"D7\"B2 BB \"D7#9\"B2 BB | \"Gmmaj7\"B4 B4- | B2 B2 B2 B2 |\n\"Eo7\"B8- | \"A7alt\"(3B2B2B2 (3B2B2B2 | \"D7#9\"B8- | \"G7#9\"B6 B2 ||\nP:E\n%Latin feel\n\"Cm\"(3B2B2B2 B4- | B2 BB B B2 B | \"Cm\"B4 B4- | B4 (3B2B2B2 |\n\"Cm\"B4 (3B2B2B2 | \"F7\"B6 B2 | \"Bb7#11\"B8- | B6 z2 ||\nP:F\n\"Ebm\"(3B2B2B2 B4- | B2 BB B B2 B | \"B7#11\"B4 B4- | B4 (3B2B2B2 |\n\"F7alt\"B4 (3B2B2B2 | \"Bb7#9\"B3 B (3B2B2B2 | \"Ebmmaj7\"B8- | \"D7#9\"B6 \"G7#9\"z2 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/114-it-s-you-or-no-one",
+"book": "The Colorado Cookbook",
+"title": "It's You or No One",
+"pdf": "114",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "intro bars 7-8 are diamond (rhythm-section \"play\") hits"
+},
+{
+"bars": [
+11
+],
+"groups": [
+10
+],
+"text": "A bar 3: whole note under Fmaj7 Bb7, split for the chord"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:It's You or No One\nC:Jule Styne\nP:ABCD\n%source The Colorado Cookbook p111 (pdf 114)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:F\n%intro (horn intro)\nz B3 B2 B2 | B4 B2 B2 | z B3 B2 B2 | B4 B2 B2 |\nz B3 B2 B2 | B2 B2 B2 BB | z4 \"Bbm7\"B4 | \"Am7\"B4 \"D7\"B4 ||\nP:A\n!segno!\"Gm7\"z2 B2 B2 B2 | \"C7\"B4 B2 B2 | \"Fmaj7\"B4- \"Bb7\"B4 | \"Am7\"z2 B2 \"D7\"B2 B2 |\n\"Gm7\"B8 | \"C7\"z2 B2 B2 B2 | \"Fmaj7\"B8- | B4 z4 ||\nP:B\n\"Bbm7\"z2 B2 B2 B2 | \"Eb7\"B4 B2 B2 | \"Abmaj7\"B2 B2 B2 B2 | \"G7\"B6 B2 |\n\"Cmaj7\"B2 B2 B2 B2 | \"Dm7\"B4 \"G7\"B4 | \"Cmaj7\"B8- | \"Am7\"B4 \"D7\"z4 ||\nP:C\n\"Gm7\"z2 B2 B2 B2 | \"C7\"B4 B2 B2 | \"Fmaj7\"B8 | \"D7\"z2 B2 B2 B2 |\n\"Gm7\"B8 | \"C7\"z2 B2 B2 B2 | \"Cm7\"B8- | \"F7\"B4 z4 ||\nP:D\n\"Bm7b5\"z2 B2 \"E7alt\"B2 B2 | \"Bbm7\"B4 \"Eb7\"B2 B2 | \"Am7\"B2 B2 \"D7\"B2 B2 | \"Abm7\"B4 \"Db7\"B4 |\n\"Gm7\"z2 B2 B2 B2 | \"C7\"B4 B2 B2 | \"Fmaj7\"B2 z2 z4 | z8 ||\n%solos, then D.S. to A al coda\n%coda\n\"Abm7\"z2 B2 B2 B2 | \"Db7\"B4 B2 B2 | \"Gm7\"z2 B2 B2 B2 | \"C7\"B2 B2 B2 B\"F\"B |]\n\n%unsure [bars 7-8] intro bars 7-8 are diamond (rhythm-section \"play\") hits\n%unsure [bar 11] A bar 3: whole note under Fmaj7 Bb7, split for the chord"
+},
+{
+"id": "The_Colorado_Cookbook/115-jammin-at-the-jazzworks",
+"book": "The Colorado Cookbook",
+"title": "Jammin' at the Jazzworks",
+"pdf": "115",
+"form": "ABC 8+8+8, solos on Bb blues",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "horn staff only; rhythm-staff hits not transcribed; few chords printed (stop-time A and B)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Jammin' at the Jazzworks\nC:Bob Montgomery\nP:ABC\n%source The Colorado Cookbook p112 (pdf 115)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 8+8+8, solos on Bb blues\n%unsure [general] horn staff only; rhythm-staff hits not transcribed; few chords printed (stop-time A and B)\nM:4/4\nL:1/8\nK:Bb\nB |\nP:A\nB2 BB B B2 B | B2 BB \"Bb7\"z2 zB | B2 BB B B2 B | B B2 B2 B2 B |\nBB z2 B3 B | BB BB z B2 B | BB BB z B2 B | BB BB \"F7\"z2 zB ||\nP:B\nB2 BB B B2 B | B2 BB \"Bb7\"z2 zB | B2 BB B B2 B | B B2 B2 B2 B |\nBB z2 B3 B | BB BB z B2 B | BB BB z B2 B | BB BB \"F7\"z2 zB ||\nP:C\n\"Eb7\"B2 BB B B2 B | B2 BB z2 zB | \"Bb7\"B2 BB B B2 B | B B2 B2 B2 B |\n\"Cm7\"BB z2 B3 B | \"F7\"BB BB z B2 B | \"Bb7\"BB BB z B2 B | \"F7\"BB BB z4 ||\n%fill; solos on Bb blues, then D.C. al coda\n%coda (written on bass staff)\nB2 BB B B2 B | BB BB z2 !accent!B2 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/116-jeannine",
+"book": "The Colorado Cookbook",
+"title": "Jeannine",
+"pdf": "116",
+"form": "AABC 16+16+8+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Jeannine\nC:Duke Pearson\nP:AABC\n%source The Colorado Cookbook p113 (pdf 116)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+8+16\nM:4/4\nL:1/8\nK:Ab\nP:A\n|: \"Abm\"z B2 z B2 z2 | z B2 z B2 B2 | \"Abm\"B2 BB- B4- | B8 |\n\"Abm\"z B2 z B2 z2 | z B2 z B2 B2 | \"Abm\"B2 BB- B4- | B4 zB BB- ||\n\"F#m7\"B3 B- BB- BB | \"B7\"B2 BB- BB BB- | \"Emaj7\"B4- BB BB- | \"A7#11\"B6 BB- |\n\"Bbm7\"B3 B z4 | \"Eb7\"zB (3BBB B2 BB- |1 \"Abmaj7\"B8- | B8 :|2\n\"Abmaj7\"B4- (3B2B2B2 | \"Ebm7\"B4 \"Ab7\"B4 ||\nP:B\n\"Dbmaj7\"B4- BB (3BBB | \"Gm7\"B2 zB- \"C7\"BB BB- | \"Fmaj7\"B8 | \"Fmaj7\"z B3 (3B2B2B2 |\n\"Fm7\"B4- (3B2B2B2 | \"Bb7\"B4 B4 | \"Bbm7\"B8- | \"Eb7\"B6 z2 ||\nP:C\n\"Abm\"z B2 z B2 z2 | z B2 z B2 B2 | \"Abm\"B2 BB- B4- | B8 |\n\"Abm\"z B2 z B2 z2 | z B2 z B2 B2 | \"Abm\"B2 BB- B4- | B4 zB BB- ||\n\"F#m7\"B3 B- BB- BB | \"B7\"B2 BB- BB BB- | \"Emaj7\"B4- BB BB- | \"A7#11\"B6 BB- |\n\"Bbm7\"B3 B z4 | \"Eb7\"zB (3BBB B2 BB- | \"Abmaj7\"B8- | B8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/117-jive-at-five",
+"book": "The Colorado Cookbook",
+"title": "Jive at Five",
+"pdf": "117",
+"form": "AABA 8+8+8+8 (A repeated, B, C = A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"text": "book letters the last A as C (same music as A)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Jive at Five\nC:Harry Edison & William Basie\nP:AABA\n%source The Colorado Cookbook p114 (pdf 117)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (A repeated, B, C = A)\nM:4/4\nL:1/8\nK:Eb\nP:A\n|: \"Ebmaj7\"BB z2 \"Cm7\"B4 | \"Fm7\"z B2 B \"Bb7\"BB BB | \"Ebmaj7\"BB z2 \"Cm7\"B4 | \"Fm7\"z B2 B \"Bb7\"BB BB |\n\"Eb7\"zB B2 \"D7\"B B2 B | \"Db7\"B2 BB- \"C7\"B2 z2 | \"B7\"B2 B2 \"Bb7\"BB BB | \"Ebmaj7\"B B2 B- B2 z2 :|\nP:B\n\"Ebmaj7\"B B2 B \"Co7\"B B2 B | \"Fm7\"B2 BB- \"Eb6\"B2 z2 | \"Ebmaj7\"B B2 B \"Co7\"B B2 B | \"Fm7\"B2 BB- \"Eb6\"B2 z2 |\n\"Ebmaj7\"B B2 B \"Co7\"B B2 B | \"Fm7\"B2 BB- \"Eb6\"B2 z2 | \"F9\"B2 B2 B2 BB | \"Bb7#5\"B B2 B- B2 z2 ||\nP:A\n\"Ebmaj7\"BB z2 \"Cm7\"B4 | \"Fm7\"z B2 B \"Bb7\"BB BB | \"Ebmaj7\"BB z2 \"Cm7\"B4 | \"Fm7\"z B2 B \"Bb7\"BB BB |\n\"Eb7\"zB B2 \"D7\"B B2 B | \"Db7\"B2 BB- \"C7\"B2 z2 | \"B7\"B2 B2 \"Bb7\"BB BB | \"Ebmaj7\"B B2 B- B2 z2 |]\n\n%unsure [bars 17-24] book letters the last A as C (same music as A)"
+},
+{
+"id": "The_Colorado_Cookbook/118-joy-spring",
+"book": "The Colorado Cookbook",
+"title": "Joy Spring",
+"pdf": "118",
+"form": "ABCA 8+8+8+8 (C section in G; letters A B C D printed, D = A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+26,
+27
+],
+"groups": [
+25,
+26
+],
+"text": "C section chord at bar 2 (Gm7 C7) is printed at top of p116; C-section bar 1 Gmaj7 rhythm read at small size"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Joy Spring\nC:Clifford Brown\nP:ABCA\n%source The Colorado Cookbook p115-116 (pdf 118-119)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCA 8+8+8+8 (C section in G; letters A B C D printed, D = A)\nM:4/4\nL:1/8\nK:F\n%intro (horn intro)\nz4 z2 (3BBB || B B3 B3 B | zB BB BB BB | B B3 B3 B |\nzB BB BB BB | B B3 B3 B | zB BB BB BB | BB BB z4 |\n\"^Play\"\"Gm7\"z4 \"Gb7\"zB BB- || !segno!\nP:A\n\"Fmaj7\"B4 zB BB | \"Gm7\"B3 B \"C7\"z4 | \"Fmaj7\"zB BB BB BB | \"Bbm7\"BB/B/ BB- \"Eb7\"B2 (3BBB |\n\"Am7\"B B3 \"D7#9\"B3 B | \"Gm7\"zB BB \"C7\"BB BB | \"Fmaj7\"BB BB z4 | \"Abm7\"zB BB \"Db7\"BB BB- ||\nP:B\n\"Gbmaj7\"B4 zB BB | \"Abm7\"B3 B \"Db7\"z4 | \"Gbmaj7\"zB BB BB BB | \"Bm7\"BB/B/ BB- \"E7\"z2 (3BBB |\n\"Bbm7\"B B3 \"Eb7#9\"B3 B | \"Abm7\"zB BB \"Db7\"BB BB | \"Gbmaj7\"BB BB z4 | \"Am7\"zB BB \"D7\"BB B/B/B/B/ ||\nP:C\n\"Gmaj7\"B3 B BB B2- | \"Gm7\"BB BB \"C7\"BB BB | \"Fmaj7\"B3 B BB B2- | \"Fm7\"BB BB \"Bb7\"BB BB |\n\"Ebmaj7\"B2 (3BBB B2 BB | \"Abm7\"zB BB \"Db7\"BB BB | \"Gbmaj7\"B2 (3BBB B2 B2 | \"Gm7\"zB BB \"C7\"BB BB- ||\nP:A\n\"Fmaj7\"B4 zB BB | \"Gm7\"B3 B \"C7\"z4 | \"Fmaj7\"zB BB BB BB | \"Bbm7\"BB/B/ BB- \"Eb7\"B2 (3BBB |\n\"Am7\"B B3 \"D7#9\"B3 B | \"Gm7\"zB BB \"C7\"BB BB | !coda!\"Fmaj7\"BB BB z4 | \"Gm7\"z4 \"C7\"z4 ||\n\"^Solos, D.S. al Coda\"z8 ||\n%coda\n!coda!\"Am7\"B B3 \"D7#9\"B3 B | \"Gm7\"zB BB \"C7\"BB BB | \"Am7\"B B3 \"D7#9\"B3 B | \"Gm7\"zB BB \"C7\"BB BB |\n\"F\"BB B!accent!B z4 |]\n\n%unsure [bars 26-27] C section chord at bar 2 (Gm7 C7) is printed at top of p116; C-section bar 1 Gmaj7 rhythm read at small size"
+},
+{
+"id": "The_Colorado_Cookbook/120-just-around-the-corner",
+"book": "The Colorado Cookbook",
+"title": "Just Around the Corner",
+"pdf": "120",
+"form": "12-bar blues (unlettered, repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+11,
+12,
+13,
+14
+],
+"groups": [
+10,
+11,
+12,
+13
+],
+"text": "harmonized dyads written as single notes; rhythm-section hits in bar 11 and endings not transcribed; bar 11 grouping estimated"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Just Around the Corner\nC:John McNeil\n%source The Colorado Cookbook p117 (pdf 120)\n%style (Up Blues)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues (unlettered, repeated)\nM:4/4\nL:1/8\nK:Bb\nz4 zB \"B7\"BB |: \"Bb7\"BB BB BB BB | \"Ab7\"BB BB \"A7\"BB BB- | \"B7\"B3 B BB BB |\n\"Bb7\"z4 BB BB- | \"Eb7\"B4 BB B2- | \"F7\"B2 BB- B3 B | \"Gb7\"BB- B4 BB- |\n\"Ab7\"B2 BB- B2 zB | \"Em7/A\"BB BB BB BB | BB BB BB BB | \"Em7/A\"BB BB zB B2- |1 B4 \"B7\"zB BB :|2 B8 |]\n\n%unsure [bars 11-14] harmonized dyads written as single notes; rhythm-section hits in bar 11 and endings not transcribed; bar 11 grouping estimated"
+},
+{
+"id": "The_Colorado_Cookbook/121-just-friends",
+"book": "The Colorado Cookbook",
+"title": "Just Friends",
+"pdf": "121",
+"form": "AA 16+16 (1st/2nd endings)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "intro bars 7-8 are rhythm-section hits (diamond notes)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Just Friends\nC:John Klenner & Sam Lewis\nP:AA\n%source The Colorado Cookbook p118 (pdf 121)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AA 16+16 (1st/2nd endings)\nM:4/4\nL:1/8\nK:F\n%intro (horn intro)\nB3 B BB BB- | B4 zB B2 | B3 B B B2 B | z B2 B2 B2 B- |\nB4 B4 | B4 B3 B | \"^Play\"z4 \"Fmaj7\"B4 | \"Cm7\"B4 \"F7\"B4 ||\nP:A\n|: \"Bbmaj7\"B8- | B4 (3B2B2B2 | \"Bbm7\"B8- | \"Eb7\"B4 B4 |\n\"Fmaj7\"B8- | B2 B2 (3B2B2B2 | \"Abm7\"B8- | \"Db7\"B4 z2 B2 |\n\"Gm7\"B3 B B3 B | \"C7\"B6 B2 |1 \"Em7b5\"B3 B \"A7#9\"B3 B | \"Dm7\"B2 B2 B2 B2 |\n\"G7#11\"B4 B4- | B2 B2 (3B2B2B2 | \"Gm7\"B4 \"C7\"B4- | \"Cm7\"B4 \"F7\"B4 :|2\n\"Em7b5\"B3 B \"A7#9\"B3 B | \"Dm7\"B2 B2 B2 B2 | \"G7\"B6 B2 | \"Gm7\"B4 \"C7\"B4 |\n\"Fmaj7\"B8- | \"Cm7\"B4 \"F7\"z4 |]\n\n%unsure [bars 7-8] intro bars 7-8 are rhythm-section hits (diamond notes)"
+},
+{
+"id": "The_Colorado_Cookbook/122-killer-joe",
+"book": "The Colorado Cookbook",
+"title": "Killer Joe",
+"pdf": "122",
+"form": "AABA 8+8+8+8 (book letters last A as C)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Killer Joe\nC:Benny Golson\nP:AABA\n%source The Colorado Cookbook p119 (pdf 122)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (book letters last A as C)\nM:4/4\nL:1/8\nK:C\nP:A\n|: \"C7\"z4 B2 BB- | \"Bb7\"B8- | \"C7\"B4 B2 BB- | \"Bb7\"B8 |\n\"C7\"z4 B2 BB- | \"Bb7\"B6 BB- | \"C7\"B8- | \"Bb7\"B8 :|\nP:B\n\"Em7b5\"B8- | \"A7b9\"B4 B4 | \"Ebm7\"B8- | \"Ab7\"B4 B4 |\n\"A7\"B8- | \"Ab7\"B4 B4 | \"Em7\"B8- | \"A7\"B8 ||\nP:A\n\"C7\"z4 B2 BB- | \"Bb7\"B8- | \"C7\"B4 B2 BB- | \"Bb7\"B8 |\n\"C7\"z4 B2 BB- | \"Bb7\"B6 BB- | \"C7\"B8- | \"Bb7\"B8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/123-lady-bird",
+"book": "The Colorado Cookbook",
+"title": "Lady Bird",
+"pdf": "123",
+"form": "16 bars (unlettered, repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Lady Bird\nC:Tad Dameron\n%source The Colorado Cookbook p120 (pdf 123)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars (unlettered, repeated)\nM:4/4\nL:1/8\nK:C\n|: \"Cmaj7\"z B3 B2 B2 | B3 B- B2 B2 | \"Fm7\"B4 (3B2B2B2 | \"Bb7\"B8 |\n\"Cmaj7\"z B3 B2 B2 | B3 B- B2 B2 | \"Bbm7\"B4 (3B2B2B2 | \"Eb7\"B8 |\n\"Abmaj7\"z B3 B2 B2 | B2 BB- B4 | \"Am7\"z B3 B2 B2 | \"D7\"B2 BB- B4 |\n\"Dm7\"B4- BB BB- | \"G7\"B4 B2 BB- | \"Em7\"B4- \"Eb7\"B4- | \"Abmaj7\"B4 \"Db7\"B4 :|\n"
+},
+{
+"id": "The_Colorado_Cookbook/123-little-boat",
+"book": "The Colorado Cookbook",
+"title": "Little Boat",
+"pdf": "123",
+"form": "16 bars (no section letters printed)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Little Boat\nT:(O Barquino)\nC:Roberto Menescal\n%source The Colorado Cookbook p120 (pdf 123)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars (no section letters printed)\nM:4/4\nL:1/8\nK:Bb\n\"Bbmaj7\"B B2 B B2 BB | zB B2 B2 B2 | \"Em7\"BB BB B2 BB | \"A7\"BB BB B4 |\n\"Abmaj7\"B B2 B B2 BB | zB B2 B2 B2 | \"Dm7\"BB BB B2 BB | \"G7\"BB BB B4 |\n\"Gbmaj7\"B B2 B B2 BB | zB B2 B2 B2 | \"Cm7\"BB BB B2 BB | \"F7\"B4 z B2 B |\n\"Dm7\"B6 B2 | \"G7b9\"B4 z B2 B | \"Cm7\"B6 B2 | \"F7b9\"B6 z2 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/124-land-of-make-believe",
+"book": "The Colorado Cookbook",
+"title": "Land of Make Believe",
+"pdf": "124",
+"form": "AABC 16+16+16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Land of Make Believe\nC:Chuck Mangione\nP:AABC\n%source The Colorado Cookbook p121 (pdf 124)\n%style (Samba)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Two-note dyads written as single notes; grace note in B omitted.\n%form AABC 16+16+16+16\nM:C|\nL:1/8\nK:Bb\nz4 B2 B2 |:\nP:A\n\"Bbmaj7\"B2 B2 B B2 B- | \"Cm7/Bb\"B8- | B8- | B4 B2 B2 |\n\"Cm7/Bb\"B2 B2 B B2 B- | \"Bbmaj7\"B8- | B8- | B6 B2 ||\n\"Cm7/Bb\"B2 B2 B B2 B- | B8- | B8- | B6 B2 |\n\"Bbmaj7\"B4 B4- | B8- | B8- |1 B4 B2 B2 :|2\nB8 ||\nP:B\n\"Ebmaj7\"B8- | B8- | B8- | B4 B4 |\n\"Dm7\"B4 B4- | B8- | B8- | B4 B3 B- |\n\"Dbmaj7\"(3B4B4B4- | B8- | B8- | B4 B4 |\n\"Cm7\"B4 B2 BB- | B8- | B8- | B4 B2 B2 ||\nP:C\n\"Bbmaj7\"B2 B2 B B2 B- | \"Cm7/Bb\"B8- | B8- | B4 B2 B2 |\nB2 B2 B B2 B- | \"Bbmaj7\"B8- | B8- | B6 B2 ||\n\"Cm7/Bb\"B2 B2 B B2 B- | B8- | B8- | B6 B2 |\n\"Bbmaj7\"B4 B4- | B8- | B8- | B8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/125-laura",
+"book": "The Colorado Cookbook",
+"title": "Laura",
+"pdf": "125",
+"form": "ABCD 8+8+8+8 (C repeats A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+30
+],
+"groups": [
+29
+],
+"text": "bar 6 of D: the two notes on beat 2 read as eighths (could be 16ths)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Laura\nC:David Raskin\nP:ABCD\n%source The Colorado Cookbook p122 (pdf 125)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Upper-row alternate chords over held notes are given in parentheses.\n%form ABCD 8+8+8+8 (C repeats A)\nM:4/4\nL:1/8\nK:C\n|:\nP:A\n\"Am9\"B4 B4- | \"D7b9\"B2 BB (3B2B2B2 | \"Gmaj7\"B3 B \"C7\"B4- | \"Gmaj7\"\"(Bm7)\"B2- \"(E7)\"B2- \"(Am7)\"B2- \"(D7)\"B2 |\n\"Gm9\"B4 B4- | \"C7b9\"B2 BB (3B2B2B2 | \"Fmaj7\"B4- \"Bb7\"B4- | \"Fmaj7\"\"(Am7)\"B2- \"(D7)\"B2- \"(Gm7)\"B2- \"(C7)\"B2 ||\nP:B\n\"Fm7\"z2 B2 B4- | \"Bb7b9\"B2 B2 (3B2B2B2 | \"Ebmaj7\"B3 B B4- | \"Cm7\"B2 B2 B2 B2 |\n\"Am7b5\"B3 B \"D7b9\"B4- | B4 B4 | \"Gmaj7\"B8 | \"Bm7\"z2 B2 \"E7b9\"B2 B2 ||\nP:C\n\"Am9\"B4 B4- | \"D7b9\"B2 BB (3B2B2B2 | \"Gmaj7\"B3 B \"C7\"B4- | \"Gmaj7\"\"(Bm7)\"B2- \"(E7)\"B2- \"(Am7)\"B2- \"(D7)\"B2 |\n\"Gm9\"B4 B4- | \"C7b9\"B2 BB (3B2B2B2 | \"Fmaj7\"B4- \"Bb7\"B4- | \"Fmaj7\"\"(Am7)\"B2- \"(D7)\"B2- \"(Gm7)\"B2- \"(C7)\"B2 ||\nP:D\n\"Fm7\"z2 B2 B4- | \"G7b9\"B2 B2 (3B2B2B2 | \"Cmaj7\"B3 B B4- | \"D7\"B4 B2 B2 |\n\"Ebm7\"B4 \"Ab7b9\"B4 | \"Dm7\"z2 BB \"G9\"(3B2B2B2 |1 \"C6/9\"B8 | \"Bm7\"z4 \"E7b9\"z4 :|\n%to ending\n\"F#m7b5\"B4 \"B7b9\"B4 | \"Em7b5\"B4 \"A7#9\"B4 | \"Dm7\"B4 \"Dbmaj7\"B4 | \"Cmaj7\"!fermata!B8 |]\n\n%unsure [bar 30] bar 6 of D: the two notes on beat 2 read as eighths (could be 16ths)"
+},
+{
+"id": "The_Colorado_Cookbook/129-little-sunflower",
+"book": "The Colorado Cookbook",
+"title": "Little Sunflower",
+"pdf": "129",
+"form": "AABBAA 8+8 (head AABBAA, solos AABB as printed)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "first line printed without inner barlines; split into bars by count"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Little Sunflower\nC:Freddie Hubbard\nP:AABBAA\n%source The Colorado Cookbook p126 (pdf 129)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABBAA 8+8 (head AABBAA, solos AABB as printed)\nM:4/4\nL:1/8\nK:F\nP:A\n|: \"Dm\"z4 B B2 B- | B B2 B- B4 | z4 B B2 B- | B B2 B B2 BB |\nB2 B2 B4- | B8- | B8 |1 z8 :|2\nz4 BB BB ||\nP:B\n|: \"Ebmaj7\"B2 BB- B4- | B8- | B8 | z2 zB BB BB |\n\"Dmaj7\"B2 BB- B4- | B8- | B8 |1 z4 BB BB :|2 z8 |]\n\n%unsure [bars 1-4] first line printed without inner barlines; split into bars by count"
+},
+{
+"id": "The_Colorado_Cookbook/129-pfrancing",
+"book": "The Colorado Cookbook",
+"title": "Pfrancing",
+"pdf": "129",
+"form": "12-bar blues (solos on F blues)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred, no section letters printed"
+},
+{
+"bars": [
+11,
+12
+],
+"groups": [
+10,
+11
+],
+"text": "bars 10-11 dense ending figure, grouping guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Pfrancing\nC:Miles Davis\n%source The Colorado Cookbook p126 (pdf 129)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues (solos on F blues)\n%unsure [form] form inferred, no section letters printed\nM:4/4\nL:1/8\nK:F\nz4 zB (3BBB |: \"F7\"BB z2 zB (3BBB | BB z2 zB (3BBB | BB z2 zB (3BBB |\nBB z2 zB (3BBB | \"Bb7\"BB B2 zB (3BBB | BB B2 zB (3BBB | \"F7\"BB z2 z2 (3BBB |\n\"Ab7\"BB z2 zB (3BBB | \"Db7\"BB z2 zB (3BBB | \"C7#9\"BB z2 zB BB | \"F7\"B2 (3B/B/B/B BB B2 |1 \"F7\"B2 z2 zB (3BBB :|2 \"F7\"B2 z2 z4 |]\n\n%unsure [bars 11-12] bars 10-11 dense ending figure, grouping guessed"
+},
+{
+"id": "The_Colorado_Cookbook/134-marie-antoinette",
+"book": "The Colorado Cookbook",
+"title": "Marie Antoinette",
+"pdf": "134",
+"form": "AB 8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+7
+],
+"groups": [
+6
+],
+"text": "bar 6 is written in two-note chords, shown as single notes"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Marie Antoinette\nC:Wayne Shorter\nP:AB\n%source The Colorado Cookbook p131 (pdf 134)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+8\nM:4/4\nL:1/8\nK:C\nz4 z B2 B ||\nP:A\n|: \"G7\"B2 B2 B2 B2 | \"C7\"B3 B- B3 B- | \"F#m7\"B3 \"B7\"B- B3 B- | \"Cm7\"B3 \"F7\"B- B3 B- |\n\"Bb7\"B3 B z4 | \"Bm7\"zB BB- \"E7\"B B2 B- | \"Ebmaj7\"B6 zB | \"Dm7b5\"(3BBB B2 \"G7b9\"(3BBB B2 ||\nP:B\n\"Am7b5\"\"(Cm)\"B6 z(3B/B/B/ | \"Ab7\"B3 B B B2 B- | \"Cm\"B4 zB (3BBB | \"Ab7\"B3 B B B2 B- |\n\"Cm\"B8 | \"Ab7\"z8 | \"Cm\"z8 |1 \"Am7\"z4 \"D7\"z B2 B :|2 \"Am7\"z4 \"D7\"z4 |]\n%note first chord of B: Am7b5 for the head, Cm for solos (as printed)\n\n%unsure [bar 7] bar 6 is written in two-note chords, shown as single notes"
+},
+{
+"id": "The_Colorado_Cookbook/151-my-one-and-only-love",
+"book": "The Colorado Cookbook",
+"title": "My One and Only Love",
+"pdf": "151",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+13,
+14
+],
+"groups": [
+12,
+13
+],
+"text": "B section alternate chords (Gm7 C7, Fmaj7) printed above; placement guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:My One and Only Love\nC:Guy Wood\nP:AABC\n%source The Colorado Cookbook p148 (pdf 151)\n%style (Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:F\nP:A\n|: \"Fmaj7\"zB BB \"Dm7\"BB BB | \"Gm7\"B2 B2 \"C7\"B3 \"C#o7\"B/B/ | \"Dm7\"B2 B2 \"Bbmaj7\"B3 B/B/ | \"Bm7b5\"B2 \"E7\"B2 \"Am7\"B2- \"D7b9\"B2 |\n\"Gm7\"zB BB \"Eo7\"BB \"A7#9\"BB | \"Dm7\"BB B2- \"G7#11\"B4 |1 \"Gm7\"zB BB \"C7\"B2 B2 | \"Am7\"B2- \"D7\"B2- \"Gm7\"B2- \"C7\"B2 :|2\n\"Gm7\"zB BB \"C7\"B2 B2 | \"F\"B4- \"Bm7b5\"B2 \"E7b9\"zB ||\nP:B\n\"Am7\"B2- (3BBB \"F#o7\"B2- (3BBB | \"Bm7b5\"B2 B2- \"E7b9\"B2 zB | \"Am7\"B2- (3BBB \"F#o7\"\"(Gm7)\"B2- \"(C7)\"(3BBB | \"Bm7b5\"\"(Fmaj7)\"B6 \"E7b9\"zB |\n\"Am\"B2- (3BBB \"Ammaj7\"B3 B | \"Am7\"B2- (3BBB \"D9\"B4 | \"Gm7\"(3B2B2B2 \"Abmaj7\"(3B2B2B2 | \"Db7#11\"B4- \"C7b9\"B4 ||\nP:C\n\"Fmaj7\"zB BB \"Dm7\"BB BB | \"Gm7\"B2 B2 \"C7\"B3 \"C#o7\"B/B/ | \"Dm7\"B2 B2 \"Bbmaj7\"B3 B/B/ | \"Bm7b5\"B2 \"E7\"B2 \"Am7\"B2- \"D7b9\"B2 |\n\"Gm7\"zB BB \"Eo7\"BB \"A7#9\"BB | \"Dm7\"BB B2- \"G7#11\"B4 | \"Gm7\"zB BB \"C7b9\"B2 B2 | \"F\"B8 |]\n\n%unsure [bars 13-14] B section alternate chords (Gm7 C7, Fmaj7) printed above; placement guessed"
+},
+{
+"id": "The_Colorado_Cookbook/152-my-romance",
+"book": "The Colorado Cookbook",
+"title": "My Romance",
+"pdf": "152",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+14,
+15
+],
+"groups": [
+14,
+15
+],
+"text": "bars 6-7 of B: head chords used; solo chords (Dm7 G7 | Dbm7 Gb7) put in parentheses"
+},
+{
+"bars": [],
+"groups": [],
+"text": "chord placement within bars where chord falls mid-held-note guessed at beat 3"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:My Romance\nC:Richard Rodgers\nP:ABCD\n%source The Colorado Cookbook p149 (pdf 152)\n%style (Ballad or Medium Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:Bb\nBB ||\nP:A\n\"Bbmaj7\"B4- \"Cm7\"\"(Ebmaj7)\"B2 BB | \"Dm7\"B2 B2 \"Dbo7\"B2 B2 | \"Cm7\"B4- \"F7\"B2 BB | \"Bbmaj7\"B4- \"Ao7\"B2 \"D7b9\"BB |\n\"Gm\"B4- \"Gmmaj7\"B2 BB | \"Gm7\"B2 B2 \"G7\"B2 B2 | \"Cm7\"B4- \"F7\"B2 BB | \"Bbmaj7\"B6 \"Bb7\"B2 ||\nP:B\n\"Ebmaj7\"B4- \"Ab7\"B2 B2 | \"Bbmaj7\"B4- \"Bb7\"B2 B2 | \"Ebmaj7\"B4- \"Ab7\"B2 B2 | \"Bbmaj7\"B6 B2 |\n\"Eo7\"B4- \"A7b9\"B2 B2 | \"Dm7\"B4- \"Db7\"\"(G7)\"B2 B2 | \"Csus4\"\"(Dbm7)\"B4- \"C7\"\"(Gb7)\"B2 B2 | \"Cm7\"B4- \"F7\"B2 BB ||\nP:C\n\"Bbmaj7\"B4- \"Cm7\"\"(Ebmaj7)\"B2 BB | \"Dm7\"B2 B2 \"Dbo7\"B2 B2 | \"Cm7\"B4- \"F7\"B2 BB | \"Bbmaj7\"B4- \"Ao7\"B2 \"D7b9\"BB |\n\"Gm\"B4- \"Gmmaj7\"B2 BB | \"Gm7\"B2 B2 \"G7\"B2 B2 | \"Cm7\"B4- \"F7\"B2 BB | \"Fm7\"B4- \"Bb7\"B2 BB ||\nP:D\n\"Ebmaj7\"B4- \"G7\"B2 BB | \"Cm7\"B2 B2 \"Cm7/Bb\"B2 B2 | \"Ao7\"B2 B2 \"D7b9\"B2 B2 | \"Gm\"B4- \"Ebm7\"B2 \"Ab7\"BB |\n\"Bbmaj7/F\"B6 BB | \"Cm7/F\"B2 B2 \"F7\"B2 B2 | \"Bbmaj7\"B8 | \"Cm7\"z4 \"F7\"z4 |]\n\n%unsure [bars 14-15] bars 6-7 of B: head chords used; solo chords (Dm7 G7 | Dbm7 Gb7) put in parentheses\n%unsure [general] chord placement within bars where chord falls mid-held-note guessed at beat 3"
+},
+{
+"id": "The_Colorado_Cookbook/153-my-shining-hour",
+"book": "The Colorado Cookbook",
+"title": "My Shining Hour",
+"pdf": "153",
+"form": "32 bars, no section letters printed (8+8+8+8 by double bars)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:My Shining Hour\nC:Harold Arlen\n%source The Colorado Cookbook p150 (pdf 153)\n%style (Samba)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 32 bars, no section letters printed (8+8+8+8 by double bars)\nM:C|\nL:1/8\nK:Eb\n\"Ebmaj7\"B6 B2 | \"Cm7\"B4 B4 | \"Fm7\"B6 B2 | \"Bb7\"B4 B4 |\n\"Ebmaj7\"B6 B2 | B2 B2 B4 | \"Do7\"B8- | \"G7#9\"B8 ||\n\"Cm\"B6 B2 | \"Ao7\"B4 B4 | \"Do7\"B4 B4 | \"G7#9\"B4 B4 |\n\"Cm7\"B6 B2 | \"F7\"B2 B2 B2 B2 | \"Fm7/Bb\"B8- | \"Bb7\"B8 ||\n\"Bbm7\"B6 B2 | \"Eb7\"B4 B4 | \"Abmaj7\"B4 B4 | B4 B4 |\n\"Abm7\"B4 B4 | \"Db7\"B4 B4 | \"Eb/G\"B4 \"Gbo7\"B4 | \"Fm7\"B4 \"Bb7\"B4 ||\n\"Ebmaj7\"B6 B2 | \"Ab7\"B4 B4 | \"Go7\"B4 B4 | \"C7#9\"B4 B4 |\n\"Fm7\"B6 B2 | \"Bb7\"B2 B4 B2 | \"Ebmaj7\"B8 | z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/154-naima",
+"book": "The Colorado Cookbook",
+"title": "Naima",
+"pdf": "154",
+"form": "AABC 4+4+8+4, solos then D.C. al Coda",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+19
+],
+"groups": [
+18
+],
+"text": "coda bar 3 ends tied over the line break in print? read as ending with triplet"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Naima\nC:John Coltrane\nP:AABC\n%source The Colorado Cookbook p151 (pdf 154)\n%style (no style marking printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 4+4+8+4, solos then D.C. al Coda\nM:4/4\nL:1/8\nK:Ab\nP:A\n%Pedal Eb\n|: \"Bbm\"B6- (3BBB | \"Ebm\"B6 z2 | \"B7#11\"B4 \"A7#11\"B2- (3BBB | \"Abmaj7\"B6 z2 :|\nP:B\n%Pedal Bb\n\"Bmaj7\"B6- (3BBB | \"Bb7#11b9\"B6 (3zBB | \"Bmaj7\"B6- (3BBB | \"Bb7b9\"B6 (3zBB |\n\"E7#11\"B6 (3BBB | \"Bmaj7\"B6 (3zBB | \"Fm\"B6- (3BBB | \"Gb7#11\"B6 z2 ||\nP:C\n%Pedal Eb\n\"Bbm\"B6- (3BBB | \"Ebm\"B6 z2 | \"B7#11\"B4 \"A7#11\"B2- (3BBB | \"Abmaj7\"B6 z2 ||\n%solos on the form, then D.C. al Coda\n%coda\n%Pedal Eb\n\"Bbm\"B4 \"A7#11\"B2- (3BBB | \"Abmaj7\"B6 z2 | \"B7#11\"B4 \"A7#11\"B2- (3BBB | \"Abmaj7\"B4 \"Dbmaj7\"B4 |\n\"Abmaj7\"B4 \"Dbmaj7\"B4 | \"Abmaj7\"B4 \"Dbmaj7\"B4 | \"Abmaj7\"!fermata!B8 |]\n\n%unsure [bar 19] coda bar 3 ends tied over the line break in print? read as ending with triplet"
+},
+{
+"id": "The_Colorado_Cookbook/155-nardis",
+"book": "The Colorado Cookbook",
+"title": "Nardis",
+"pdf": "155",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+2
+],
+"groups": [
+1
+],
+"text": "A bar 1: rhythm-section hits (half rest, dotted quarter, eighth) printed below the melody, not transcribed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Nardis\nC:Miles Davis\nP:AABC\n%source The Colorado Cookbook p152 (pdf 155)\n%style (no style marking printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Em\nz4 z2 B2 |\nP:A\n|: \"Em\"B8 | \"Fmaj7\"zB BB \"Eo7\"B3 B | \"B7\"B8- | \"Cmaj7\"B4 z4 |\n\"Am\"z B3 B2 B2 | \"Fmaj7\"B3 B- B4 | \"Emaj7\"(3BBB B4 \"Em\"B2- |1 \"Em\"B6 B2 :|2\n\"Em\"B6 B2 ||\nP:B\n\"Am\"B6 \"Fmaj7#11\"B2- | B4 BB BB | \"Am\"B6 \"Fmaj7#11\"B2- | B6 z2 |\n\"Dm\"z B3 B2 B2 | B4 \"G7\"B4 | \"Cmaj7\"B6 \"Fmaj7#11\"B2- | B6 B2 ||\nP:C\n\"Em\"B8 | \"Fmaj7\"zB BB B3 B | \"B7\"B8- | \"Cmaj7\"B4 z4 |\n\"Am\"z B3 B2 B2 | \"Fmaj7\"B3 B- B4 | \"Emaj7\"(3BBB B4 \"Em\"B2- | B6 z2 |]\n\n%unsure [bar 2] A bar 1: rhythm-section hits (half rest, dotted quarter, eighth) printed below the melody, not transcribed"
+},
+{
+"id": "The_Colorado_Cookbook/156-nature-boy",
+"book": "The Colorado Cookbook",
+"title": "Nature Boy",
+"pdf": "156",
+"form": "16-bar section with 1st/2nd endings, no section letters printed",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Nature Boy\nC:Eden Ahbez\n%source The Colorado Cookbook p153 (pdf 156)\n%style (Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16-bar section with 1st/2nd endings, no section letters printed\nM:3/4\nL:1/8\nK:Dm\nB |: \"Dm\"BB B4 | \"Gm\"zB BB BB | \"Dm\"BB B4 |\n\"Gm\"zB BB BB | \"Dmmaj7\"BB B4 | \"Dm7\"BB B4 | \"Dm6\"BB B3 B |\n\"Gm\"B4 zB | BB B4- | B4 zB | \"Dm\"BB B4- |\nB4 zB |1 \"E7b9\"BB B4- | B4 B2 | \"A7b9\"B6- |\nB4 zB :|2 \"E7b9\"BB B3 B | \"A7alt\"BB- B3 B/B/ | \"Dm\"B6- | B4 z2 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/157-nearness",
+"book": "The Colorado Cookbook",
+"title": "Nearness",
+"pdf": "157",
+"form": "32 bars (16+16), no section letters printed",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+20
+],
+"groups": [
+19
+],
+"text": "placement of Bbm7 / Bm7 in bar 20"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Nearness\nC:Bob Gillis\n%source The Colorado Cookbook p154 (pdf 157)\n%style (Bright Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 32 bars (16+16), no section letters printed\nM:4/4\nL:1/8\nK:C\n\"Bm7\"B4 B3 B- | B8 | z B2 B B B2 B- | B3 B B2 BB- |\n\"Bbmaj7#11\"B4 B2 BB- | \"Abmaj7#11\"B4 B3 B- | \"Gb7#11\"B8- | B8 |\n\"Bm7\"z4 B2 BB- | B8 | \"Bbmaj7#11\"z4 BB BB | B2 B2 B B2 B- |\n\"Am7\"B8 | \"Bbmaj7#11\"z8 | \"Am7\"z8 | \"Bbmaj7#11\"z4 \"Am7\"z4 ||\n\"Abm7\"B4 B3 B- | B8 | z B2 B B B2 B- | B3 \"Bbm7\"B B B2 \"Bm7\"B- |\n\"Bm7\"B4 B2 BB- | \"Bbmaj7#11\"B3 B \"Dm7\"BB BB- | \"Eb7#11\"B8- | \"Eb7/Db\"B8 |\n\"Fmaj7/C\"z4 B2 BB- | \"Gm7/C\"B4 zB BB | \"Am7/C\"B2 B2 B B2 B- | \"Bbmaj7#11/C\"B2 B2 B B2 B- |\n\"Bm7b5\"B4 zB BB | \"Bbm7\"B2 B2 B B2 B- | \"Fsus4\"B8- | B8 |]\n\n%unsure [bar 20] placement of Bbm7 / Bm7 in bar 20"
+},
+{
+"id": "The_Colorado_Cookbook/158-nefertiti",
+"book": "The Colorado Cookbook",
+"title": "Nefertiti",
+"pdf": "158",
+"form": "16 bars, repeated; no section letters printed",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Nefertiti\nC:Wayne Shorter\n%source The Colorado Cookbook p155 (pdf 158)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars, repeated; no section letters printed\nM:4/4\nL:1/8\nK:C\n|: \"Abmaj7#11\"z2 zB B3 B | \"Dbmaj7\"B3 B z B2 B | \"Gm7b5\"B6 BB- | \"C7\"B6 BB- |\n\"Bmaj7\"B6 \"Bmaj7#11\"B2- | B4 B2 BB- | \"Bbm7b5\"B6 \"Eb7#11\"B2- | B8 ||\n\"Emaj7\"B6- BB | \"Em/A\"B2 B2 B2 z2 | \"Ab13/Bb\"z2 zB- B3 B | \"E/F#\"B2 B2 B2 BB- |\n\"Em7\"B6 BB- | \"Eb7#11\"B8 | !coda!\"A13b9\"z8 | z8 :|\n%coda\n!coda!\"A/Eb\"!fermata!B8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/159-now-s-the-time",
+"book": "The Colorado Cookbook",
+"title": "Now's the Time",
+"pdf": "159",
+"form": "12-bar blues, repeated",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Now's the Time\nC:Charlie Parker\n%source The Colorado Cookbook p156 (pdf 159)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues, repeated\nM:4/4\nL:1/8\nK:F\nz4 z2 zB |: \"F7\"BB BB B2 zB | \"Bb7\"BB BB B2 zB | \"F7\"BB BB BB BB |\n\"F7\"BB BB B2 zB | \"Bb7\"BB BB B B3 | \"Bb7\"BB BB B B3 | \"F7\"BB BB BB BB |\n\"F7\"BB BB B2 zB- | \"Gm7\"BB BB B2 z2 | \"C7\"z B3 BB BB | \"F7\"z B2 B B2 z2 | \"C7\"z8 :|\n"
+},
+{
+"id": "The_Colorado_Cookbook/159-straight-no-chaser",
+"book": "The Colorado Cookbook",
+"title": "Straight, No Chaser",
+"pdf": "159",
+"form": "12-bar blues, repeated",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Straight, No Chaser\nC:Thelonious Monk\n%source The Colorado Cookbook p156 (pdf 159)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues, repeated\nM:4/4\nL:1/8\nK:F\nz4 z2 zB |: \"F7\"BB BB zB BB | \"Bb7\"BB BB B3 B | \"F7\"BB BB zB BB |\n\"F7\"B B2 B BB B2 | \"Bb7\"zB BB BB BB- | \"Bb7\"B8 | \"F7\"zB BB B B2 B |\n\"F7\"BB BB zB BB | \"Gm7\"BB BB BB BB- | \"C7\"BB BB BB BB | \"F7\"BB BB B4- | \"C7\"B4 z4 :|\n"
+},
+{
+"id": "The_Colorado_Cookbook/160-nica-s-dream",
+"book": "The Colorado Cookbook",
+"title": "Nica's Dream",
+"pdf": "160",
+"form": "AABBC 16+16+8+8+16 (tag used as intro, between solos and for ending)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "tag bar 6: last beat is a 16th-beamed pair of double-stops, read as two eighths; Bbm bar marked \"end here final time\", then drum fill"
+},
+{
+"bars": [
+27,
+32
+],
+"groups": [
+26,
+31
+],
+"text": "B section bar 1: rhythm slashes above the melody (chord hits) not transcribed; chord placement in B bar 6 approximate"
+},
+{
+"bars": [
+52
+],
+"groups": [
+51
+],
+"text": "last bar: the eighth-note pickup is played only when going to the tag"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Nica's Dream\nC:Horace Silver\nP:AABBC\n%source The Colorado Cookbook p157 (pdf 160)\n%style (Latin & Jazz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABBC 16+16+8+8+16 (tag used as intro, between solos and for ending)\nM:4/4\nL:1/8\nK:Bbm\n%intro tag (use as intro, between solos, and for ending)\nz4 BB BB || \"Bbmmaj7\"B3 B- B4 | \"Abmmaj7\"B3 B- B4 | \"Gbmaj7\"B3 B- B4 |\n\"Cm7b5\"B3 B- B4 | \"F7b9#11\"B3 B- B2 \"F7#9#11\"B2- | B2 BB BB BB | \"Bbm\"B2 z2 z4 |\nz4 z2 B2 ||\nP:A\n|: \"Bbmmaj7\"B8- | B3 B z B2 B | \"Abmmaj7\"B8- | B6 B2 |\n\"Bbmmaj7\"(3B2B2B2 B4- | B3 B z B2 B | \"Ebm7\"(3B2B2B2 B4- | \"Ab7\"B6 B2 |\n\"Abm7\"B8- | \"Db7\"B3 B z B2 B | \"Gbmaj7\"B3 \"Db9\"B- B2 \"C7#9\"B2- | B8 |\n\"Cm7b5\"BB BB B4- | \"F7#9\"B4 B2 zB | \"Bbmmaj7\"B8- |1 B6 B2 :|2\nB6 z2 ||\nP:B\n|: \"Ebm7/Ab\"z2 B2 B3 B | \"Ab7\"B2 B4 B2 | \"Dbmaj7\"B2 B2 B2 BB- | \"Bb7b9\"B6 B2 |\n\"Eb7\"B2 BB z B2 B | \"Ebm7\"B2 B4 \"Ab7\"B2 |1 \"Dbmaj9\"B8 | \"Em7\"BB BB \"A7\"B4 :|2\n\"Dbmaj9\"B6 BB | \"F7#9\"zB BB B2 B2 ||\nP:C\n\"Bbmmaj7\"B8- | B3 B z B2 B | \"Abmmaj7\"B8- | B6 B2 |\n\"Bbmmaj7\"(3B2B2B2 B4- | B3 B z B2 B | \"Ebm7\"(3B2B2B2 B4- | \"Ab7\"B6 B2 |\n\"Abm7\"B8- | \"Db7\"B3 B z B2 B | \"Gbmaj7\"B3 \"Db9\"B- B2 \"C7#9\"B2- | B8 |\n\"Cm7b5\"BB BB B4- | \"F7#9\"B4 B2 zB | \"Bbmmaj7\"B8- | B4 BB BB ||\n%solos AABBC, play tag at end of solo; D.S. after final solo\n\n%unsure [bars 7-8] tag bar 6: last beat is a 16th-beamed pair of double-stops, read as two eighths; Bbm bar marked \"end here final time\", then drum fill\n%unsure [bars 27, 32] B section bar 1: rhythm slashes above the melody (chord hits) not transcribed; chord placement in B bar 6 approximate\n%unsure [bar 52] last bar: the eighth-note pickup is played only when going to the tag"
+},
+{
+"id": "The_Colorado_Cookbook/162-ode-to-a-flugelhorn",
+"book": "The Colorado Cookbook",
+"title": "Ode to a Flugelhorn",
+"pdf": "162",
+"form": "ABCD 8+8+8+8 (A Latin, B swing, C Latin, D swing)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+5
+],
+"groups": [
+4
+],
+"text": "A bar 4: last two notes read as eighths (beaming unclear)"
+},
+{
+"bars": [
+10,
+11,
+26,
+27
+],
+"groups": [
+9,
+10,
+25,
+26
+],
+"text": "D bars 1-2 and B bars 1-2 grouping read across line breaks"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Ode to a Flugelhorn\nC:Clark Terry\nP:ABCD\n%source The Colorado Cookbook p159 (pdf 162)\n%style (Medium Up Tempo, Latin and Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8 (A Latin, B swing, C Latin, D swing)\nM:4/4\nL:1/8\nK:Eb\nz4 z2 B2 ||\nP:A\n\"Bb7\"B8- | B4 B2 BB- | \"Ebmaj7\"B8- | B4 BB BB- |\n\"Bb7\"B8- | B4 B2 BB- | \"Ebmaj7\"B8 | z B3 B2 B2 ||\nP:B\n\"Fm7\"B8- | \"Bb7\"BB BB B2 BB- | \"Ebmaj7\"B8 | \"Cm7\"z4 BB BB |\n\"F7\"B8 | B4 B2 BB- | \"Bb7\"B4- BB BB | B2 z2 z2 B2 ||\nP:C\n\"Bb7\"B8- | B4 B2 BB- | \"Ebmaj7\"B8- | B4 B2 BB- |\n\"Eb7\"B6 B2 | B4 B4 | \"Abmaj7\"B/2B/2 B7 | B2 z2 z4 ||\nP:D\n\"Ab7\"z B2 B2 B2 B- | B4 B4 | \"Ebmaj7\"B8- | \"C7\"B6 BB- |\n\"Fm7\"B8- | \"Bb7\"B4 B2 BB | \"Ebmaj7\"z8 | z8 |]\n\n%unsure [bar 5] A bar 4: last two notes read as eighths (beaming unclear)\n%unsure [bars 10-11, 26-27] D bars 1-2 and B bars 1-2 grouping read across line breaks"
+},
+{
+"id": "The_Colorado_Cookbook/163-offshore",
+"book": "The Colorado Cookbook",
+"title": "Offshore",
+"pdf": "163",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Offshore\nC:Booker Little\nP:AABC\n%source The Colorado Cookbook p160 (pdf 163)\n%style (no style marking printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Ab\nB2 |\nP:A\n|: \"Abmaj7\"B4- BB BB | \"Gbmaj7\"BB- B4 B2 | \"Abmaj7\"B4- BB BB | \"Db9#11\"BB- B4 B2 |\n\"Gbmaj7\"B4 (3B2B2B2 | \"E9#11\"BB- B2- BB BB- |1 \"Bbm7\"B2 BB B2 BB- | \"Eb7\"B6 B2 :|2\n\"Bbm7\"B2 BB \"Eb7\"B2 BB- | \"Abmaj7\"B6 \"Ab7alt\"B2 ||\nP:B\n\"Dbm\"B3 B (3B2B2B2 | \"Ab7alt\"B2 B4 B2 | \"Dbm7\"BB BB \"Gb7\"B2 BB- | \"Abmaj7\"B6 B2 |\n\"Dbm7\"B3 B \"Gb7\"(3B2B2B2 | \"Abmaj7\"BB- B2- BB BB- | \"Bm7\"B3 B- \"E7\"B4 | \"Bbm7\"B3 B- \"Eb7\"B2 BB- ||\nP:C\n\"Abmaj7\"B4- BB BB | \"Gbmaj7\"BB- B4 B2 | \"Abmaj7\"B4- BB BB | \"Db9#11\"BB- B4 B2 |\n\"Gbmaj7\"B4 (3B2B2B2 | \"E9#11\"BB- B2- BB BB- | \"Bbm7\"B2 BB \"Eb7\"B2 BB- | \"Abmaj7\"B8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/164-oh-lady-be-good",
+"book": "The Colorado Cookbook",
+"title": "Oh, Lady Be Good",
+"pdf": "164",
+"form": "AABA 8+8+8+8 (last A lettered C)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Oh, Lady Be Good\nC:George Gershwin\nP:AABA\n%source The Colorado Cookbook p161 (pdf 164)\n%style (no style marking printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (last A lettered C)\nM:4/4\nL:1/8\nK:F\nP:A\n|: \"Fmaj7\"B4 B2 B2 | \"Bb7\"B4 B4 | \"Fmaj7\"(3B2B2B2 \"Bb7\"B4- | \"Am7\"B4 \"D7\"B4 |\n\"Gm7\"(3B2B2B2 B4- | \"C7\"B4 B4 |1 \"Fmaj7\"B4- \"D7\"B4- | \"Gm7\"B4 \"C7\"z4 :|2\n\"Fmaj7\"B8- | \"Cm7\"B4 \"F7\"z4 ||\nP:B\n\"Bbmaj7\"B8 | \"Bo7\"z2 B2 B2 B2 | \"Fmaj7\"B4 B4- | \"Em7b5\"B4 \"A7#9\"z4 |\n\"Dm\"z2 B2 \"Dmmaj7\"B2 B2 | \"Dm7\"B2 B2 \"G7\"B2 B2 | \"Gm7\"B4 B4 | \"C7\"z2 B2 B2 B2 ||\nP:A\n\"Fmaj7\"B4 B2 B2 | \"Bb7\"B4 B4 | \"Fmaj7\"(3B2B2B2 \"Bb7\"B4- | \"Am7\"B4 \"D7\"B4 |\n\"Gm7\"(3B2B2B2 B4- | \"C7\"B4 B4 | \"Fmaj7\"B4- \"D7\"B4- | \"Gm7\"B4 \"C7\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/165-old-devil-moon",
+"book": "The Colorado Cookbook",
+"title": "Old Devil Moon",
+"pdf": "165",
+"form": "ABCABD 8+8+8+8+8+8 (C is 1st ending, D is 2nd ending)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro is rhythm slashes, written as rests with chords"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Old Devil Moon\nC:Burton Lane\nP:ABCABD\n%source The Colorado Cookbook p162 (pdf 165)\n%style (Killer Joe feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCABD 8+8+8+8+8+8 (C is 1st ending, D is 2nd ending)\nM:4/4\nL:1/8\nK:F\n%intro\n|: \"F7\"z8 | \"Eb7\"z8 | \"F7\"z8 | \"Eb7\"z8 :|\nP:A\n|: \"F7\"B8 | \"Eb7\"BB BB B2 B2 | \"F7\"B8 | \"Eb7\"BB BB B2 B2 |\n\"F7\"B8 | \"Eb7\"BB BB B2 B2 | \"F7\"B8- | \"Cm7\"B4 \"F7b9\"B2 B2 ||\nP:B\n\"Bbmaj7\"B4 B2 B2 | B4 B2 B2 | \"Bbm7\"B4 B2 B2 | \"Eb7\"B4 B2 B2 |\n\"Abm7\"B4 \"Db7\"B2 B2 | \"Gbmaj7\"B4 \"C7\"B2 B2 | \"F7\"B8 | \"Eb7\"z4 BB B2 |1\nP:C\n\"F7\"B4 BB B2 | \"Eb7\"B4 B2 BB | \"Dmaj7\"B4 B4- | B4 BB B2 |\n\"Dm7\"B4 BB B2 | \"G7\"B4 B2 BB | \"Gm7\"B4 B4 | \"C7\"z B2 B BB BB :|2\nP:D\n\"F7\"B4 B4- | \"Eb7\"B4 BB B2 | \"F7\"B8- | \"Eb7\"B4 (3B2B2B2 |\n\"Am7\"B4 \"D7\"(3B2B2B2 | \"Gm7\"B4 \"C7\"(3B2B2B2 | \"F7\"B8 | \"Eb7\"z8 |]\n\n%unsure [bars 1-4] intro is rhythm slashes, written as rests with chords"
+},
+{
+"id": "The_Colorado_Cookbook/166-oleo",
+"book": "The Colorado Cookbook",
+"title": "Oleo",
+"pdf": "166",
+"form": "AABA 8+8+8+8 (last A lettered C)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17
+],
+"groups": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"text": "B section is rhythm slashes (improvised bridge), written as rests with chords"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Oleo\nC:Sonny Rollins\nP:AABA\n%source The Colorado Cookbook p163 (pdf 166)\n%style (no style marking printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (last A lettered C)\nM:4/4\nL:1/8\nK:Bb\nP:A\n|: \"Bb\"z B2 B B3 B | \"Cm7\"zB B2- \"F7\"B2 BB | \"Bb\"z B2 B BB BB | \"Cm7\"BB BB \"F7\"z B2 B |\n\"Bb7\"B3 B zB B2 | \"Eb7\"z B2 B \"Eo7\"BB BB | \"Bb\"z2 zB z B2 B |1 \"Cm7\"B3 B \"F7\"BB BB :|2\n\"Bb\"BB BB z4 ||\nP:B\n\"D7\"z8 | z8 | \"G7\"z8 | z8 |\n\"C7\"z8 | z8 | \"F7\"z8 | z8 ||\nP:A\n\"Bb\"z B2 B B3 B | \"Cm7\"zB B2- \"F7\"B2 BB | \"Bb\"z B2 B BB BB | \"Cm7\"BB BB \"F7\"z B2 B |\n\"Bb7\"B3 B zB B2 | \"Eb7\"z B2 B \"Eo7\"BB BB | \"Bb\"z2 zB z B2 B | BB BB z4 |]\n\n%unsure [bars 10-17] B section is rhythm slashes (improvised bridge), written as rests with chords"
+},
+{
+"id": "The_Colorado_Cookbook/167-on-a-misty-night",
+"book": "The Colorado Cookbook",
+"title": "On a Misty Night",
+"pdf": "167",
+"form": "AABC 8+8+8+8, solos then D.C. al Coda",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form bar counts inferred (A 1st ending 8 bars, 2nd ending runs to 9)"
+},
+{
+"bars": [
+2
+],
+"groups": [
+1
+],
+"text": "grace note before the 2nd note of bar 2 omitted"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:On a Misty Night\nC:Tadd Dameron\nP:AABC\n%source The Colorado Cookbook p164 (pdf 167)\n%style (no style marking printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8, solos then D.C. al Coda\n%unsure [form] form bar counts inferred (A 1st ending 8 bars, 2nd ending runs to 9)\nM:4/4\nL:1/8\nK:Eb\nP:A\n|: \"Ebmaj7\"\"(Ebmaj7)\"B4 \"G7alt\"\"(Bmaj7)\"B4 | \"Cm7\"\"(Abmaj7)\"B4 \"(Gm7)\"B2 \"(Gbm7)\"BB- | \"Fm9\"B6 BB- | z4 z2 BB- |\n\"Abm9\"B6 BB- |1 \"Db7#11\"B6 BB- | \"Gm7\"B4- \"C7alt\"B4- | \"Fm9\"B4 \"Bb7b9\"z4 :|2\n\"Db7#11\"B4 B2 BB- | \"Ebmaj7\"B8- | B4 z4 ||\nP:B\n\"Bm9\"B4 \"E9\"B4 | \"Bbm9\"B4 \"Eb9\"B2 BB- | \"Abmaj7\"B8- | B4 z4 |\n\"Dbm9\"B4 \"Gb9\"B4 | \"Cm9\"B4 \"F9\"B2 BB- | \"Bb13\"B8 | \"E7#11\"z8 ||\nP:C\n\"Ebmaj7\"\"(Ebmaj7)\"B4 \"G7alt\"\"(Bmaj7)\"B4 | \"Cm7\"\"(Abmaj7)\"B4 \"(Gm7)\"B2 \"(Fm7)\"BB- | \"Fm9\"B6 BB- | z4 z2 BB- |\n\"Abm9\"B6 BB- | \"Db7#11\"B4 B2 BB- | \"Ebmaj7\"B8- | B6 z2 ||\n%solos, then D.C. al Coda\n%coda\nB6 BB- | \"Abm7\"B6 BB- | \"Db7#11\"B4 B2 BB- | \"Ebmaj9\"!fermata!B8 |]\n\n%unsure [bar 2] grace note before the 2nd note of bar 2 omitted"
+},
+{
+"id": "The_Colorado_Cookbook/168-on-green-dolphin-street",
+"book": "The Colorado Cookbook",
+"title": "On Green Dolphin Street",
+"pdf": "168",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:On Green Dolphin Street\nC:Bronislau Kaper\nP:ABCD\n%source The Colorado Cookbook p165 (pdf 168)\n%style (Latin feel / swing feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:C\nP:A\n%Latin feel\n\"Cmaj7\"B4 B4- | B4 (3B2B2B2 | \"Ebmaj7\"B8- | B8 |\n\"Dmaj7\"B4 B4- | \"Dbmaj7\"B4 (3B2B2B2 | \"Cmaj7\"B4- \"F7\"B4- | \"Em7b5\"B4 \"A7b9\"z4 ||\nP:B\n%Swing feel\n\"Dm7\"B4 B2 B2 | \"G7b9\"B2 B2 B2 B2 | \"Cmaj7\"B4 B4- | B6 B2 |\n\"Fm7\"B2 B4 B2 | \"Bb7b9\"B2 B2 B2 B2 | \"Ebmaj7\"B4 B4- | \"Dm7\"B4 \"G7\"B4 ||\nP:C\n%Latin feel\n\"Cmaj7\"B4 B4- | B4 (3B2B2B2 | \"Ebmaj7\"B8- | B8 |\n\"Dmaj7\"B4 B4- | \"Dbmaj7\"B4 (3B2B2B2 | \"Cmaj7\"B4- \"F7\"B4- | \"Em7b5\"B4 \"A7b9\"z4 ||\nP:D\n%Swing feel\n\"Dm\"B4 \"Dm/C\"B2 B2 | \"Bm7b5\"B2 B2 \"E7b9\"B2 B2 | \"Am\"B4 \"Am/G\"B4 | \"F#m7b5\"B2 B2 \"B7\"B2 B2 |\n\"Em7\"B4 \"A7#9\"B4 | \"Dm7\"z2 B2 \"G7#9\"B2 B2 | \"Cmaj7\"B4- \"A7\"B4- | \"Dm7\"B4 \"G7\"B4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/169-on-green-dolphin-street",
+"book": "The Colorado Cookbook",
+"title": "On Green Dolphin Street",
+"pdf": "169",
+"form": "ABCD 8+8+8+8 (A-B in C, C-D in Eb)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+32
+],
+"groups": [
+31
+],
+"text": "last bar printed as a half note; filled to a full bar with chord changes on beats 1 and 3"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:On Green Dolphin Street\nC:Bronislau Kaper\nP:ABCD\n%source The Colorado Cookbook p166 (pdf 169)\n%style (Two keys - concert C & Eb; A/C Latin feel, B/D swing feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8 (A-B in C, C-D in Eb)\nM:4/4\nL:1/8\nK:C\nP:A\n\"Cmaj7\"B4 B4- | B4 (3B2B2B2 | \"Ebmaj7\"B8- | B8 |\n\"Dmaj7\"B4 B4- | \"Dbmaj7\"B4 (3B2B2B2 | \"Cmaj7\"B4- \"F7\"B4- | \"Em7b5\"B4 \"A7b9\"z4 ||\nP:B\n\"Dm7\"B4 B2 B2 | \"G7b9\"B2 B2 B2 B2 | \"Cmaj7\"B4 B4- | B6 B2 |\n\"Fm7\"B2 B4 B2 | \"Bb7b9\"B2 B2 B2 B2 | \"Ebmaj7\"B4 B4- | \"Fm7\"B4 \"Bb7\"B4 ||\nK:Eb\nP:C\n\"Ebmaj7\"B4 B4- | B4 (3B2B2B2 | \"Gbmaj7\"B8- | B8 |\n\"Fmaj7\"B4 B4- | \"Fbmaj7\"B4 (3B2B2B2 | \"Ebmaj7\"B4- \"Ab7\"B4- | \"Gm7b5\"B4 \"C7b9\"z4 ||\nP:D\n\"Fm\"B4 \"Fm/Eb\"B2 B2 | \"Dm7b5\"B2 B2 \"G7b9\"B2 B2 | \"Cm\"B4 \"Cm/Bb\"B4 | \"Am7b5\"B2 B2 \"D7\"B2 B2 |\n\"Gm7\"B4 \"C7#9\"B4 | \"Fm7\"z2 B2 \"Bb7#9\"B2 B2 | \"Ebmaj7\"B8- | \"Dm7b5\"B4 \"G7b9\"B4 |]\n\n%unsure [bar 32] last bar printed as a half note; filled to a full bar with chord changes on beats 1 and 3"
+},
+{
+"id": "The_Colorado_Cookbook/170-on-the-trail",
+"book": "The Colorado Cookbook",
+"title": "On the Trail",
+"pdf": "170",
+"form": "AB 8+8 repeated, horn intro, coda for ending only",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+3,
+4
+],
+"groups": [
+2,
+3
+],
+"text": "2-bar repeat signs written out as repeats of bars 1-2"
+},
+{
+"bars": [
+13,
+14
+],
+"groups": [
+12,
+13
+],
+"text": "alternate chords (Gm in bar 7, Em7b5 / A7b9 in bar 8) printed above the main chords"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:On the Trail\nC:Ferde Grofe\nP:AB\n%source The Colorado Cookbook p167 (pdf 170)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+8 repeated, horn intro, coda for ending only\nM:4/4\nL:1/8\nK:F\n%intro horn intro (2-bar phrase, then 2-bar repeat sign marked \"2\")\n(3B2z2B2 (3B2z2B2 | (3B2z2B2 (3B2B2B2 | (3B2z2B2 (3B2z2B2 | (3B2z2B2 (3B2B2B2 |\nB2 zB B2 zB | B2 zB BB B2 ||\nP:A\n|: \"Fmaj7\"B4- \"Dm7\"B4- | \"Gm7\"B4 \"C7\"B4 | \"Fmaj7\"B4- \"Dm7\"B4- | \"Gm7\"B6 \"C7\"B2 |\n\"Fmaj7\"B2 B2 \"Bbmaj7\"B4 | \"Am7\"z2 B2 \"Dm7\"(3B2B2B2 | \"Gm\"B4- \"Gmmaj7\"B4- | \"Gm7\"\"(Em7b5)\"B4 \"C7\"\"(A7b9)\"B4 ||\nP:B\n\"Abm7\"B8- | \"Db7\"B4 B4 | \"Abm7\"B8- | \"Db7\"B4 B4 |\n\"Gm7\"B8 | \"C7\"z2 B2 (3B2B2B2 || !coda!\"Fmaj7\"B8- | \"Gm7\"B4 \"C7\"B4 :|\n%coda only use coda for ending\n!coda!(3B2z2B2 (3B2z2B2 | (3B2z2B2 (3B2B2B2 | (3B2z2B2 (3B2z2B2 | (3B2z2B2 (3B2B2B2 |\n\"Fmaj7#11\"B/2B/2B/2B/2 !fermata!B6 |]\n\n%unsure [bars 3-4] 2-bar repeat signs written out as repeats of bars 1-2\n%unsure [bars 13-14] alternate chords (Gm in bar 7, Em7b5 / A7b9 in bar 8) printed above the main chords"
+},
+{
+"id": "The_Colorado_Cookbook/171-once-i-loved",
+"book": "The Colorado Cookbook",
+"title": "Once I Loved",
+"pdf": "171",
+"form": "AAB 16+16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Once I Loved\nT:(O Amor em Paz)\nC:Antonio Carlos Jobim\nP:AAB\n%source The Colorado Cookbook p168 (pdf 171)\n%style (Bossa Nova)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AAB 16+16+16\nM:4/4\nL:1/8\nK:F\nP:A\n|: \"Gm7\"B8- | \"C7\"B4 B4 | \"Fmaj7\"B8- | \"Am7b5\"B4 \"D7alt\"(3z2B2B2 |\n\"Gm7\"(3B2B2B2 (3B2B2B2 | \"Bm7b5\"B4 \"E7alt\"(3B2B2B2 | \"Am7\"(3B2B2B2- \"D7\"B4- | \"Gm7\"B4 \"C7\"z4 ||\n\"Fm7\"B8- | \"Bb7\"B4 B4 | \"Ebmaj7\"B8- | B4 (3z2B2B2 |\n\"Em7b5\"(3B2B2B2 (3B2B2B2 | \"A7b9\"B4 (3B2B2B2 |1 \"Dmaj7\"B B2 B- B4- | \"D7b9\"B4 z4 :|2\n\"Dmaj7\"B B2 B- B4 | \"Dm7\"B B2 \"G7\"B2 B2 B- ||\nP:B\n\"Cmaj7\"B8 | \"Cm7\"B4 \"F7\"z B2 B- | \"Bbmaj7\"B8- | B4 (3z2B2B2 |\n\"Bm7b5\"(3B2B2B2- (3B2B2B2 | \"Bbm6/9\"B4 z B2 B | \"Am7\"B2 BB- B4- | \"Ab7#11\"B4 (3z2B2B2 |\n\"G7\"(3B2B2B2- (3B2B2B2 | \"Gm7\"B4 \"A7b9\"z B2 B | \"Dm6/9\"B3 B B4- | \"D7#9\"B8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/172-one-foot-in-the-gutter",
+"book": "The Colorado Cookbook",
+"title": "One Foot in the Gutter",
+"pdf": "172",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+32,
+33
+],
+"groups": [
+31,
+32
+],
+"text": "last two bars: fermatas on F7, Bb7, F7 are \"for ending only\""
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:One Foot in the Gutter\nC:Clark Terry\nP:ABCD\n%source The Colorado Cookbook p169 (pdf 172)\n%style (Medium Fat-Back Shuffle)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:F\nz4 z2 B2 ||\nP:A\n\"F7\"B6 BB | z B3- B2 BB- | \"Bb7\"BB BB BB BB | \"Bo7\"B3 B- z2 B2 |\n\"F7\"!fermata!B4 B B2 B | \"D7\"B2 B2 B2 B2 | \"G7\"B4 B4 | \"C7\"B4 z2 B2 ||\nP:B\n\"F7\"B6 BB | z B3- B2 BB- | \"Bb7\"BB BB BB (3BBB- | \"Bo7\"B3 B- BB BB |\n\"Am7\"z B3- \"D7\"B4 | \"Gm7\"z2 B2 \"C7\"BB (3BBB- | \"F7\"B4- \"Bb7\"B4 | \"F7\"z4 z2 B2 ||\nP:C\n\"C7\"B4 B4 | B4 B4 | \"F7\"B4 B4 | B4 B4 |\n\"Bb7\"B4 B4 | \"Bo7\"B4 B3 B- | \"Am7\"B4- \"D7\"B3 B | \"Gm7\"z4 \"C7\"z2 B2 ||\nP:D\n\"F7\"B6 BB | z B3- B2 BB- | \"Bb7\"BB BB BB (3BBB- | \"Bo7\"B3 B- BB BB |\n\"Am7\"z B3- \"D7\"B4 | \"Gm7\"z2 B2 \"C7\"BB (3BBB- | \"F7\"B4- \"Bb7\"B4- | \"F7\"B4 z4 |]\n\n%unsure [bars 32-33] last two bars: fermatas on F7, Bb7, F7 are \"for ending only\""
+},
+{
+"id": "The_Colorado_Cookbook/173-one-note-samba",
+"book": "The Colorado Cookbook",
+"title": "One Note Samba",
+"pdf": "173",
+"form": "AABC 16+8+16 (A and C each have a 4-bar repeat with 1st/2nd endings)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+17,
+21
+],
+"groups": [
+16,
+20
+],
+"text": "B bars 3 and 7: last two notes read as eighths"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:One Note Samba\nT:(Samba de Uma Nota So)\nC:Antonio Carlos Jobim\nP:ABC\n%source The Colorado Cookbook p170 (pdf 173)\n%style (Samba)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+8+16 (A and C each have a 4-bar repeat with 1st/2nd endings)\nM:4/4\nL:1/8\nK:Bb\nz4 z B2 B |:\nP:A\n\"Dm7\"B2 BB z B2 B- | \"Db7\"B3 B z B2 B | \"Cm7\"B2 BB z B2 B- |1 \"B7#11\"B4 z B2 B :|2\n\"B7#11\"B4 z B2 B || \"Fm7\"B2 BB z B2 B | \"Bb7\"zB B2- B B2 B | \"Ebmaj7\"B2 BB z B2 B- |\n\"Ab7\"B4 z B2 B | \"Dm7\"B2 BB z B2 B | \"Db7\"z B2 B zB B2 | \"Cm7\"B2 BB z B2 \"B7#11\"B- |\n\"Bbmaj7\"B6 z2 ||\nP:B\n\"Ebm7\"BB BB BB BB | \"Ab7\"BB BB BB B2 | \"Dbmaj7\"B3 B zB BB | \"Dbmaj7\"B3 B z4 |\n\"Dbm7\"BB BB BB BB | \"Gb7\"BB BB BB BB | \"Cbmaj7\"B3 B zB BB | \"Cm7b5\"B3 B \"F7\"z B2 B ||\nP:C\n|: \"Dm7\"B2 BB z B2 B- | \"Db7\"B3 B z B2 B | \"Cm7\"B2 BB z B2 B- |1 \"B7#11\"B4 z B2 B :|2\n\"B7#11\"B4 z B2 B || \"Fm7\"B2 BB z B2 B | \"Bb7\"zB B2- B B2 B | \"Ebmaj7\"B2 BB z B2 B- |\n\"Ab7\"B4 z B2 B | \"Dbmaj7\"B2 BB z B2 B | \"C7\"zB B2- B B2 B- | \"Cbmaj7\"B2 BB z B2 \"Bb\"B | z8 |]\n\n%unsure [bars 17, 21] B bars 3 and 7: last two notes read as eighths"
+},
+{
+"id": "The_Colorado_Cookbook/174-our-delight",
+"book": "The Colorado Cookbook",
+"title": "Our Delight",
+"pdf": "174",
+"form": "AABC 8+8+8+8 (C is A with the 2nd ending; printed letters A, B, C)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Our Delight\nC:Tadd Dameron\nP:AABC\n%source The Colorado Cookbook p171 (pdf 174)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8 (C is A with the 2nd ending; printed letters A, B, C)\nM:4/4\nL:1/8\nK:Ab\n\"B7#11\"z4 z B3 |:\nP:A\n\"Bb13\"BB z2 z4 | \"Eb7#9\"z B3 B2 BB- | \"Abmaj7\"B4 B3 B- | \"F7\"B6 B2 |\n\"Bb7\"BB z2 z4 | \"Bbm7\"B2 B2 \"Bo7\"B B2 B- | \"Ab/C\"B3 B- B3 \"Bo7\"B- |1 \"Bbm7\"B3 \"Eb13\"B \"B7#11\"z B3 :|2\n\"Ebsus4\"B2 BB \"Abmaj7\"z4 ||\nP:B\n\"Ebm7\"BB BB BB BB- | \"Ab7alt\"BB BB BB BB- | \"Dbmaj7\"B2 B2 B2 B2 | B2 BB z4 |\n\"Dbm7\"B2 zB- \"Gb7\"B4 | \"Cm7\"B2 zB- \"F7\"B4 | \"Bm7\"B2 zB- \"E7\"B2 BB | \"Eb7\"z4 \"B7#11\"z B3 ||\nP:C\n\"Bb13\"BB z2 z4 | \"Eb7#9\"z B3 B2 BB- | \"Abmaj7\"B4 B3 B- | \"F7\"B6 B2 |\n\"Bb7\"BB z2 z4 | \"Bbm7\"B2 B2 \"Bo7\"B B2 B- | \"Ab/C\"B3 B- B3 \"Bo7\"B- | \"Ebsus4\"B2 BB \"Abmaj7\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/175-ow",
+"book": "The Colorado Cookbook",
+"title": "Ow",
+"pdf": "175",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+3,
+5,
+7,
+21,
+23,
+25
+],
+"groups": [
+2,
+4,
+6,
+20,
+22,
+24
+],
+"text": "Cm7 F7 chord placement in the rest bars guessed (beats 3 and 4)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Ow\nC:John Birks (Dizzy) Gillespie\nP:AABA\n%source The Colorado Cookbook p172 (pdf 175)\n%style (no style marking printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\nM:4/4\nL:1/8\nK:Bb\nz4 z B3 |\nP:A\n|: \"Bbmaj7\"B2 zB (3B/B/B/B BB | z4 \"Cm7\"z \"F7\"B3 | \"Bbmaj7\"B2 zB (3B/B/B/B BB | z4 \"Cm7\"z \"F7\"B3 |\n\"Bbmaj7\"B2 zB (3B/B/B/B BB | \"Cm7\"z4 \"F7\"z4 |1 \"Gb7\"zB (3B/B/B/B B2 \"F7\"zB- | \"Bbmaj7\"(3B/B/B/B B2 z B3 :|2\n\"Gb7\"zB (3B/B/B/B B2 \"F7\"zB- | \"Bbmaj7\"(3B/B/B/B B2 z4 ||\nP:B\n\"D7\"B B2 B B B2 B | B2 BB- B3 B- | \"G7\"BB BB (3BBB BB | B2 BB- B4 |\n\"C7\"B B2 B B B2 B | B2 BB- B3 B- | \"F7\"BB BB (3BBB BB | B2 BB z B3 ||\nP:A\n\"Bbmaj7\"B2 zB (3B/B/B/B BB | z4 \"Cm7\"z \"F7\"B3 | \"Bbmaj7\"B2 zB (3B/B/B/B BB | z4 \"Cm7\"z \"F7\"B3 |\n\"Bbmaj7\"B2 zB (3B/B/B/B BB | \"Cm7\"z4 \"F7\"z4 | \"Gb7\"zB (3B/B/B/B B2 \"F7\"zB- | \"Bbmaj7\"(3B/B/B/B B2 z4 |]\n\n%unsure [bars 3, 5, 7, 21, 23, 25] Cm7 F7 chord placement in the rest bars guessed (beats 3 and 4)"
+},
+{
+"id": "The_Colorado_Cookbook/176-peace",
+"book": "The Colorado Cookbook",
+"title": "Peace",
+"pdf": "176",
+"form": "10 bars, no section letters printed",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+3
+],
+"groups": [
+3
+],
+"text": "bar 3: triplet read as eighth-note triplet (beam spans wider); Co7 placement guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Peace\nC:Horace Silver\n%source The Colorado Cookbook p173 (pdf 176)\n%style (Jazz Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 10 bars, no section letters printed\nM:4/4\nL:1/8\nK:Bb\n(3zBB || \"Ao7\"B3 B/B/ \"D7b9\"B3 B/B/ | \"Gm7\"(3BBB- B4 \"C7\"zB | \"Cbmaj7\"(3BBB- \"Co7\"B4 \"F7b9\"B2 |\n\"Bbmaj7\"B6 (3zBB | \"Bm7\"B3 B/B/ \"E9\"B3 B/B/ | \"Amaj7\"BB BB \"F#m7\"B2- (3BBB | \"Ebo7\"B3 B/B/ \"D7b9b5\"B3 B |\n\"Dbmaj7\"B8 | \"Co7\"B3 B/B/ \"Cb7b9b5\"B2 B2 | \"Bbmaj7\"B8 |]\n\n%unsure [bar 3] bar 3: triplet read as eighth-note triplet (beam spans wider); Co7 placement guessed"
+},
+{
+"id": "The_Colorado_Cookbook/177-pent-up-house",
+"book": "The Colorado Cookbook",
+"title": "Pent-Up House",
+"pdf": "177",
+"form": "ABC 8+4+4 (head, repeated); solos AABC 4+4+4+4",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30
+],
+"groups": [
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29
+],
+"text": "solo section is rhythm slashes, written as rests with chords"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Pent-Up House\nC:Sonny Rollins\nP:ABC\n%source The Colorado Cookbook p174 (pdf 177)\n%style (no style marking printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 8+4+4 (head, repeated); solos AABC 4+4+4+4\nM:4/4\nL:1/8\nK:G\nzB BB BB BB |\nP:A\n|: \"Am7\"B B2 \"Ab7\"B B2 BB | \"Am7\"zB B2 \"Ab7\"B B2 B | \"Gmaj7\"B4 \"Ab7\"B3 \"Gmaj7\"B | zB BB BB BB |\n\"Am7\"B B2 \"Ab7\"B B2 BB | \"Am7\"zB B2 \"D7\"B B2 B | \"Gmaj7\"B4 \"Ab7\"B3 \"Gmaj7\"B | zB BB BB BB ||\n%break: bars 4 and 8 of A are unaccompanied breaks\nP:B\n\"Dm7\"B B2 \"Db7\"B B2 BB | \"Dm7\"zB B2 \"Db7\"B B2 B | \"Cm7\"B6 z2 | \"F7\"B B2 \"E7\"B B4 ||\nP:C\n\"Am7\"B B2 \"Ab7\"B B2 BB | \"Am7\"zB B2 \"Ab7\"B B2 B | \"Gmaj7\"B4 \"Ab7\"B3 \"Gmaj7\"B |1 zB BB BB BB :|2 z8 |]\n%solos\nP:A\n|: \"Am7\"z8 | \"D7\"z8 | \"Gmaj7\"z8 | z8 :|\nP:B\n\"Dm7\"z8 | \"G7\"z8 | \"Cm7\"z8 | \"F7\"z8 ||\nP:C\n\"Am7\"z8 | \"D7\"z8 | \"Gmaj7\"z8 | z8 |]\n\n%unsure [bars 19-30] solo section is rhythm slashes, written as rests with chords"
+},
+{
+"id": "The_Colorado_Cookbook/178-perdido",
+"book": "The Colorado Cookbook",
+"title": "Perdido",
+"pdf": "178",
+"form": "AABA 8+8+8+8 (last A lettered C), horn intro 8 bars",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Perdido\nC:Juan Tizol\nP:AABA\n%source The Colorado Cookbook p175 (pdf 178)\n%style (no style marking printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (last A lettered C), horn intro 8 bars\nM:4/4\nL:1/8\nK:Bb\n%intro (horn intro, no chords printed)\nz B3 BB (3BBB | B2 BB zB B2 | z B3 BB (3BBB | B2 BB zB B2 |\nz B3 BB (3BBB | B2 BB zB B2 | BB BB zB BB | zB BB z2 zB ||\nP:A\n|: \"Cm7\"BB z2 z2 zB | \"F7\"B B2 B B B2 B | \"Bbmaj7\"BB z2 \"Eb7\"z2 zB | \"Dm7\"B B2 B \"G7\"B B2 B |\n\"Cm7\"BB z2 z2 zB | \"F7\"BB BB B3 B |1 \"Bbmaj7\"BB- B2- \"Eb7\"B4 | \"Dm7\"z4 \"G7\"z2 zB :|2\n\"Bbmaj7\"BB- B6- | B4 \"Eb7\"z4 ||\nP:B\n\"D7\"B8 | (3B2B2B2 B2 BB- | \"G7\"B8 | B3 B- B4 |\n\"C7\"B8 | (3B2B2B2 B2 BB- | \"F7\"B8 | B3 B- B3 B ||\nP:A\n\"Cm7\"BB z2 z2 zB | \"F7\"B B2 B B B2 B | \"Bbmaj7\"BB z2 \"Eb7\"z2 zB | \"Dm7\"B B2 B \"G7\"B B2 B |\n\"Cm7\"BB z2 z2 zB | \"F7\"BB BB B3 B | \"Bbmaj7\"BB- B6- | \"Cm7\"B4 \"F7\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/179-polka-dots-and-moonbeams",
+"book": "The Colorado Cookbook",
+"title": "Polka Dots and Moonbeams",
+"pdf": "179",
+"form": "AABA 8+8+8+8 (last A lettered C)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+2,
+3,
+8,
+20,
+21
+],
+"groups": [
+1,
+2,
+7,
+19,
+20
+],
+"text": "upper chord row in bars 2-3 of A (Ao7 D7, Gm7, C7#9) written in parentheses as alternates; 1st ending bar 2 is a whole note with four chords, written tied"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Polka Dots and Moonbeams\nC:Jimmy Van Heusen\nP:AABA\n%source The Colorado Cookbook p176 (pdf 179)\n%style (no style marking printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (last A lettered C)\nM:4/4\nL:1/8\nK:Eb\nP:A\n|: \"Ebmaj7\"zB BB \"Cm7\"BB BB | \"Fm7\"B2 BB \"Bb7\"\"(Ao7)\"B2 \"(D7)\"B2 | \"Ebmaj7\"\"(Gm7)\"zB BB \"Cm7\"\"(C7#9)\"BB BB | \"Fm7\"B2 BB \"Do7\"B2 \"G7b9\"B2 |\n\"Cm7\"BB BB \"Abm7/Db\"B4 | \"Ebmaj7\"BB \"Ab7\"BB \"Gm7\"B2 \"Gbm7\"B2 |1 \"Fm7\"BB BB \"Bb7\"B2 B2 | \"Gm7\"B2- \"C7b9\"B2- \"Fm7\"B2- \"Bb7b9\"B2 :|2\n\"Fm7\"BB BB \"Bb7b9\"B2 B2 | \"Ao7\"B6 \"D7#9\"BB ||\nP:B\n\"Gmaj7\"B2 \"G#o7\"B4 BB | \"Am7\"BB BB \"D7\"B2 B2 | \"Bm7\"BB BB \"Em7\"(3B2B2B2 | \"Am7\"B6 \"D7\"BB |\n\"Gmaj7\"B2 \"G#o7\"B4 BB | \"Am7\"BB BB \"D7b9\"B2 B2 | \"G7\"z B2 B \"C7b9\"B2 B2 | \"Fm7\"B2 B2 \"Bb7b9\"B2 z2 ||\nP:A\n\"Ebmaj7\"zB BB \"Cm7\"BB BB | \"Fm7\"B2 BB \"Bb7\"\"(Ao7)\"B2 \"(D7)\"B2 | \"Ebmaj7\"\"(Gm7)\"zB BB \"Cm7\"\"(C7#9)\"BB BB | \"Fm7\"B2 BB \"Do7\"B2 \"G7b9\"B2 |\n\"Cm7\"BB BB \"Abm7/Db\"B4 | \"Ebmaj7\"BB \"Ab7\"BB \"Gm7\"B2 \"Gbm7\"B2 | \"Fm7\"BB BB \"Bb7b9\"B2 B2 | \"Ebmaj7\"B6 z2 |]\n\n%unsure [bars 2-3, 8, 20-21] upper chord row in bars 2-3 of A (Ao7 D7, Gm7, C7#9) written in parentheses as alternates; 1st ending bar 2 is a whole note with four chords, written tied"
+},
+{
+"id": "The_Colorado_Cookbook/180-recado-bossa-nova",
+"book": "The Colorado Cookbook",
+"title": "Recado Bossa Nova",
+"pdf": "180",
+"form": "AABC 16+16+8+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form bar counts inferred from endings (A 1st ending 16 bars, 2nd ending 16 bars)"
+},
+{
+"bars": [
+20,
+44
+],
+"groups": [
+19,
+43
+],
+"text": "A7 bar: tied note then 16th/8th group; read as four eighths so the bar adds up"
+},
+{
+"bars": [
+46,
+47,
+48,
+49,
+50,
+51
+],
+"groups": [
+45,
+46,
+47,
+48,
+49,
+50
+],
+"text": "C ending: \"to solos\" / \"to end\" brackets written as 1st/2nd endings"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Recado Bossa Nova\nC:Djalma Ferreira\nP:AABC\n%source The Colorado Cookbook p177 (pdf 180)\n%style (no style marking printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+8+16\n%unsure [form] form bar counts inferred from endings (A 1st ending 16 bars, 2nd ending 16 bars)\nM:4/4\nL:1/8\nK:Dm\nz4 z B2 B- |\nP:A\n|: \"Dm\"B4 z B2 B- | \"Dm6\"B4 B B2 B- | \"A7b9\"B6 B2 | B8 |\n\"Ao7\"z2 B2 B B2 B- | \"D7b9\"B2 B2 B B2 B- | \"Gm\"B4 z B2 B- | \"Gm7\"B4 \"Gm7/F\"B4 |\n\"Eo7\"z2 B2 B B2 B- | \"A7#9#5\"B4 B B2 B- | \"Dsus4\"B4 B B2 B- |1 \"Dm\"B4 \"Dm7/C\"B B2 B- |\n\"Bo7\"B2 B2 B4- | \"E7b9\"B4 z B2 B- | \"Eo7\"B2 B2 B4- | \"A7b9\"B4 z B2 B- :|2\n\"Dm\"B2 B2 B B2 B- | \"Ebmaj7\"B2 B2 B B2 B | \"A7\"B4- BB BB | \"Dm\"B8- |\nB4 z2 B2 ||\nP:B\n\"D7b9\"B2 B2 B B2 B- | B2 B2 B B2 B- | \"Gm9\"B8- | \"Gm6\"B4 z2 B2 |\n\"E7b9\"B2 B2 B B2 B- | B2 B2 B B2 B- | \"Am9\"B8- | \"Eo7\"B4 \"A7#9#5\"z B2 B- ||\nP:C\n\"Dm\"B4 z B2 B- | \"Dm6\"B4 B B2 B- | \"A7b9\"B6 B2 | B8 |\n\"Ao7\"z2 B2 B B2 B- | \"D7b9\"B2 B2 B B2 B- | \"Gm\"B4 z B2 B- | \"Gm7\"B4 \"Gm7/F\"B4 |\n\"Eo7\"z2 B2 B B2 B- | \"A7#9#5\"B4 B B2 B- | \"Dsus4\"B4 B B2 B- | \"Dm\"B2 B2 B B2 B- |\n\"Ebmaj7\"B2 B2 B B2 B | \"A7\"B4- BB BB | \"Dm\"B8- |1 B2 z2 z4 :|2\nB2 (3B2B2B2 B2 | \"A7\"B2 B2 B2 B2 | B2 B2 B B2 B- | \"Dm\"B8- | B2 z2 z4 |]\n\n%unsure [bars 20, 44] A7 bar: tied note then 16th/8th group; read as four eighths so the bar adds up\n%unsure [bars 46-51] C ending: \"to solos\" / \"to end\" brackets written as 1st/2nd endings"
+},
+{
+"id": "The_Colorado_Cookbook/181-recorda-me",
+"book": "The Colorado Cookbook",
+"title": "Recorda-Me",
+"pdf": "181",
+"form": "AB 8+8 repeated (A16 printed as 8 bars of 2-bar phrases), intro repeated",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+9
+],
+"groups": [
+8
+],
+"text": "intro bar 9 chord-hit rhythm adds to only 7 eighths as read; grouping guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Recorda-Me\nC:Joe Henderson\nP:AB\n%source The Colorado Cookbook p178 (pdf 181)\n%style (Latin Jazz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+8 repeated (A16 printed as 8 bars of 2-bar phrases), intro repeated\nM:4/4\nL:1/8\nK:C\n%intro piano chords on top staff (add piano 2nd x); bass-solo staff skipped\n|: \"Am\"B6 z2 | z2 B6 | B6 z2 | z2 B6 |\nB6 z2 | \"C7\"z2 B6 | \"Fmaj7\"B6 z2 | \"Bbmaj7\"z2 B6 |\n\"Am\"B2 BB- B2 B2 |1 z8 :|2 z2 zB BB BB ||\nP:A\n|: \"Am\"B4 zB BB | B2 BB zB BB | \"Am\"B B2 B2 B2 B- | BB BB BB BB |\n\"Cm\"B4 zB BB | B2 BB zB BB | \"Cm\"B B2 B2 B2 B | \"Cm7\"z2 zB \"F7\"B2 BB- ||\nP:B\n\"Bbmaj7\"B8 | \"Bbm7\"zB BB- \"Eb7\"B2 BB | \"Abmaj7\"B4 zB BB- | \"Abm7\"B4 \"Db7\"B2 BB- |\n\"Gbmaj7\"B8 | \"Gm7\"z2 B4- \"C7\"BB | \"Fmaj7\"B3 B zB \"E7#9\"B2- |1 B2 zB BB BB :|2 \"E7#9\"B8 |]\n\n%unsure [bar 9] intro bar 9 chord-hit rhythm adds to only 7 eighths as read; grouping guessed"
+},
+{
+"id": "The_Colorado_Cookbook/182-relaxin",
+"book": "The Colorado Cookbook",
+"title": "Relaxin'",
+"pdf": "182",
+"form": "AB 16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Relaxin'\nC:Jimmy Guinn\nP:AB\n%source The Colorado Cookbook p179 (pdf 182)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16\nM:4/4\nL:1/8\nK:Ab\nz6 BB- ||\nP:A\n\"Bb7\"B4 B4 | \"Eb7\"B4 B3 B- | \"Abmaj7\"B8 | z4 zB BB- |\n\"Ebm7\"B8 | \"Ab7\"B4 B3 B- | \"Dbmaj7\"B8- | B4 z4 ||\n\"Dbmaj7\"z B3 BB BB | \"Dbm7\"B2 BB- B4 | \"Abmaj7\"z B3 BB BB | \"F7\"B2 BB- B4 |\n\"Bb7\"BB- B6 | BB BB BB BB | \"Eb7\"z B3- B4 | \"F7\"z4 z2 BB- ||\nP:B\n\"Bb7\"B4 B4 | \"Eb7\"B4 B3 B- | \"Abmaj7\"B8 | z4 zB BB- |\n\"Ebm7\"B8 | \"Ab7\"B4 B3 B- | \"Dbmaj7\"B8- | B4 z4 ||\n\"Dbmaj7\"z B3 BB BB | \"Do7\"B2 BB- B4 | \"Abmaj7\"z B3 BB BB | \"F7\"B2 BB- B2 B2 |\n\"Bb7\"BB- B4 B2 | \"Bbm7\"B2 B2 \"Eb7\"BB \"Ab6\"BB | z8 | z8 ||\n"
+},
+{
+"id": "The_Colorado_Cookbook/183-rhythm-a-ning",
+"book": "The Colorado Cookbook",
+"title": "Rhythm-A-Ning",
+"pdf": "183",
+"form": "AABC 8+8+8+8 (C = last A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Rhythm-A-Ning\nC:Thelonious Monk\nP:AABC\n%source The Colorado Cookbook p180 (pdf 183)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8 (C = last A)\nM:4/4\nL:1/8\nK:Bb\nP:A\n|: \"Bb\"B2 B2 \"Bb7/D\"B4 | \"Eb7\"B2 BB \"Eo7\"z2 B2- | \"Bb/F\"B2 B2 \"G7\"B2 B2 | \"Cm7\"B2 BB \"F7\"z2 zB |\n\"Bb\"B B2 B \"Bb7/D\"B2 B2 | \"Eb7\"z2 zB \"Eo7\"B B2 B | \"Bb7\"B2 B2 B2 B2 |1 B8 :|2\nB4 z2 zB ||\nP:B\n\"D7\"B B2 B B2 B2 | z2 zB B B2 B | \"G7\"B2 B2 z4 | z4 z2 zB |\n\"C7\"B B2 B B2 B2 | z2 zB B B2 B | \"F7\"B2 B2 B2 B2 | B2 z2 z4 ||\nP:C\n\"Bb\"B2 B2 \"Bb7/D\"B4 | \"Eb7\"B2 BB \"Eo7\"z2 B2- | \"Bb/F\"B2 B2 \"G7\"B2 B2 | \"Cm7\"B2 BB \"F7\"z2 zB |\n\"Bb\"B B2 B \"Bb7/D\"B2 B2 | \"Eb7\"z2 zB \"Eo7\"B B2 B | \"Bb7\"B2 B2 B2 B2 | B8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/184-round-midnight",
+"book": "The Colorado Cookbook",
+"title": "'Round Midnight",
+"pdf": "184",
+"form": "AABC 8+8+8+8 (intro, tag after head only, coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "intro bars 7-8 are rhythm-slash hits (D triad over Ebmaj7), kept as notes"
+},
+{
+"bars": [
+23
+],
+"groups": [
+22
+],
+"text": "B bar 5: last two notes' durations guessed to fill the bar"
+},
+{
+"bars": [
+35,
+36,
+37
+],
+"groups": [
+34,
+35,
+36
+],
+"text": "tag is rhythm slashes with drum fills, kept as notes"
+},
+{
+"bars": [
+38,
+45
+],
+"groups": [
+37,
+44
+],
+"text": "coda: first bar is a break; the eighth-note bar before the last is a cadenza"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:'Round Midnight\nC:Cootie Williams & Thelonious Monk\nP:AABC\n%source The Colorado Cookbook p181-182 (pdf 184-185)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8 (intro, tag after head only, coda)\nM:4/4\nL:1/8\nK:Ebm\n%intro (rhythm section x-note hits below the melody skipped)\n\"Ao7\"z3/2B/2 B/2B/2B/2B/2 BB/2B/2 BB/2B/2 | \"D7b9\"B2- B/2B/2B/2B/2 \"Ab7b9b5\"B4 | \"Go7\"z3/2B/2 B/2B/2B/2B/2 BB/2B/2 BB/2B/2 | \"C7b9\"B2- B/2B/2B/2B/2 \"Gb7b9b5\"B4 |\n\"Fo7\"z3/2B/2 B/2B/2B/2B/2 BB/2B/2 BB/2B/2 | \"Bb7b9\"B2- B/2B/2B/2B/2 \"E7b9b5\"B4 | \"Ebmaj7\"z/2B/2B BB/2B/2 z/2B/2B BB/2B/2 | z/2B/2B BB/2B/2 z/2B/2B/2B/2- \"Bb7b9\"B2 ||\nP:A\n|: \"Ebm\"z2 \"Ebm/D\"B/2B/2B/2B/2 \"Ebm/Db\"B3 B | \"Co7\"B3 B/2B/2 \"Abm7\"BB- \"Db7\"B2 | \"Co7\"z2 B/2B/2B/2B/2 \"F7\"B3 B | \"Bm7\"B2 \"E7\"B2 \"Bbm7\"B2 \"Eb7\"B2 |\n\"Abm7\"z2 B/2B/2B/2B/2 \"Db7\"B3 B | \"Gbmaj7\"B4- \"G7\"B2 \"Ab7#11\"BB |1 \"Co7\"B3 B/2B/2 \"F7\"B3 B | \"Bb7#11\"BB- B6 :|2\n\"Co7\"B2 \"F7\"B2 \"Fo7/Bb\"B2 \"Bb7\"B2 | \"Ebmaj7\"B6 BB ||\nP:B\n\"Co7\"B3 B/2B/2 \"F7b9\"B3 B | \"Bb7#11\"BB- B4 BB | \"Co7\"B3 B/2B/2 \"F7b9\"B3 B | \"Bb7#11\"B B3- B4 |\n\"Abm7\"B3 B \"Fo7\"B B3 | \"Co7\"B3 B \"F7b9\"B3 B | \"Bbm7\"B3 \"Eb7\"B \"Abm7\"B3 \"Db7\"B | \"Gbm7\"B3 \"Cb7\"B/2B/2 \"Fo7\"B2- \"Bb7b9\"B2 ||\nP:C\n\"Ebm\"z2 \"Ebm/D\"B/2B/2B/2B/2 \"Ebm/Db\"B3 B | \"Co7\"B3 B/2B/2 \"Abm7\"BB- \"Db7\"B2 | \"Co7\"z2 B/2B/2B/2B/2 \"F7\"B3 B | \"Bm7\"B2 \"E7\"B2 \"Bbm7\"B2 \"Eb7\"B2 |\n\"Abm7\"z2 B/2B/2B/2B/2 \"Db7\"B3 B | \"Gbmaj7\"B4- \"G7\"B2 \"Ab7#11\"BB | \"Co7\"B2 \"F7\"B2 \"Fo7/Bb\"B2 \"Bb7\"B2 | !coda!\"Ebmmaj7\"B8 |]\n%tag use after head only (double time feel), not after solos\n\"Fo7\"BB B3/2B/2 z/2Bz/2 z2 | \"Bb7#9\"z/2Bz/2 B3/2B/2 z4 | z4 zz/2\"Bb7#9\"B/2- B2 ||\n%solos AABC, D.S. al coda\n%coda\n!coda!\"Ebm\"BB BB B B2 B/2B/2 || \"Co7\"B8 | \"F7b9\"zB BB BB (3BBB | \"F#m7\"(3BBB B6 |\n\"B7b9\"zB BB BB (3BBB | \"Bm7\"B6 \"E7\"BB | \"Fo7\"BB BB \"Bb7b9#11\"!fermata!B3 B | BB BB BB BB |\n\"Ebmmaj7\"!fermata!B8 |]\n\n%unsure [bars 7-8] intro bars 7-8 are rhythm-slash hits (D triad over Ebmaj7), kept as notes\n%unsure [bar 23] B bar 5: last two notes' durations guessed to fill the bar\n%unsure [bars 35-37] tag is rhythm slashes with drum fills, kept as notes\n%unsure [bars 38, 45] coda: first bar is a break; the eighth-note bar before the last is a cadenza"
+},
+{
+"id": "The_Colorado_Cookbook/186-sack-of-woe",
+"book": "The Colorado Cookbook",
+"title": "Sack of Woe",
+"pdf": "186",
+"form": "AB 12+12 (F blues; A rock feel, B swing), intro vamp on cue",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+13,
+14
+],
+"groups": [
+12,
+13
+],
+"text": "A bars 9-10 chords sit on the bass staff; fill to swing at end of A"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sack of Woe\nC:Julian \"Cannonball\" Adderley\nP:AB\n%source The Colorado Cookbook p183-184 (pdf 186-187)\n%style (Rock & Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 12+12 (F blues; A rock feel, B swing), intro vamp on cue\nM:4/4\nL:1/8\nK:F\n%intro rock feel, repeat until cue (bass line only, skipped)\n|: \"F7\"z8 | z8 | \"F7\"z8 | z8 :|\nP:A\n|: \"F7\"z4 BB- B2 | (3BBB B2 B B2 B- | \"F7\"B8- | B8 |\n\"Bb7\"z4 BB- B2 | (3BBB B2 B B2 B- | \"F7\"B8- | B8 |\n\"C7\"z4 BB- B2 | \"Bb7\"(3BBB B2 B B2 B- | \"F7\"B8- | B4 z4 ||\nP:B\n\"F7\"BB BB- B2 B2 | B2 B2 B2 z2 | \"F7\"z2 B3/2B/2 B3/2B/2 B/2B/2B- | B8 |\n\"Bb7\"BB BB- B2 B2 | B2 B2 B2 z2 | \"F7\"z2 B3/2B/2 B3/2B/2 B/2B/2B- | B8 |\n\"C7\"BB BB- B2 B2 | \"Bb7\"B2 B2 B2 z2 | \"C7\"z4 BB- B2 | (3BBB B2 B B2 B- |1 \"F7\"B8- | B8- | \"F7\"B8- | B4 z4 :|2\n%solos F blues, each solo starts rock feel and moves to swing on cue; D.C. after final solo\n\n%unsure [bars 13-14] A bars 9-10 chords sit on the bass staff; fill to swing at end of A"
+},
+{
+"id": "The_Colorado_Cookbook/188-salt-peanuts",
+"book": "The Colorado Cookbook",
+"title": "Salt Peanuts",
+"pdf": "188",
+"form": "AABC 8+8+8+8 (C = last A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19
+],
+"groups": [
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18
+],
+"text": "B section is rhythm slashes only (solo/blowing changes), written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Salt Peanuts\nC:John Birks \"Dizzy\" Gillespie\nP:AABC\n%source The Colorado Cookbook p185 (pdf 188)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8 (C = last A)\nM:4/4\nL:1/8\nK:Bb\nz4 z2 zB |:\nP:A\n\"Bb\"B2 B2 B B2 B | \"Cm7\"B2 BB \"F7\"z4 | \"Bb\"z2 B2 BB z2 | \"Cm7\"B2 BB \"F7\"z2 zB |\n\"Bb7\"B2 B2 BB zB | \"Eb7\"B2 BB \"Eo7\"z4 |1 \"Bb\"z2 B2 BB z2 | \"Cm7\"B2 BB \"F7\"z2 zB :|2\n\"Bb\"z2 B2 BB z2 | B2 BB z4 ||\nP:B\n\"D7\"z8 | z8 | \"G7\"z8 | z8 |\n\"C7\"z8 | z8 | \"F7\"z8 | z8 ||\nP:C\n\"Bb\"B2 B2 B B2 B | \"Cm7\"B2 BB \"F7\"z4 | \"Bb\"z2 B2 BB z2 | \"Cm7\"B2 BB \"F7\"z2 zB |\n\"Bb7\"B2 B2 BB zB | \"Eb7\"B2 BB \"Eo7\"z4 | \"Bb\"z2 B2 BB z2 | B2 BB z4 |]\n\n%unsure [bars 12-19] B section is rhythm slashes only (solo/blowing changes), written as rests"
+},
+{
+"id": "The_Colorado_Cookbook/189-samantha-s-bossa",
+"book": "The Colorado Cookbook",
+"title": "Samantha's Bossa",
+"pdf": "189",
+"form": "AB 8+8 (2nd ending, solos, D.C. al Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+18
+],
+"groups": [
+17
+],
+"text": "second-ending note looks like a whole or half note; written as whole"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Samantha's Bossa\nC:Bob Montgomery\nP:AB\n%source The Colorado Cookbook p186 (pdf 189)\n%style (Bossa Nova)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+8 (2nd ending, solos, D.C. al Coda)\nM:4/4\nL:1/8\nK:Eb\nP:A\n|: \"Bmaj7\"B4- \"D7\"B4 | \"Gmaj7\"B4 \"Bb7\"B3 B- | \"Ebmaj7\"B4 B3 B- | \"Am7\"B4- \"D7\"B2 z2 |\n\"Gmaj7\"B4- \"Bb7\"B4- | \"Ebmaj7\"B4 \"F#7\"B4 | \"Bmaj7\"B4 B3 B- | \"Fm7\"B4- \"Bb7\"B2 z2 ||\nP:B\n\"Ebmaj7\"B3 B B2 BB- | \"Am7\"B4 \"D7\"B3 B- | \"Gmaj7\"B8- | \"C#m7\"B4- \"F#7\"B2 z2 |\n\"Bmaj7\"B3 B B2 BB- |1 \"Fm7\"B4 \"Bb7\"B3 B- | \"Ebmaj7\"B6 zB | \"C#m7\"BB BB \"F#7\"BB BB :|2\n\"Fm7\"B4 \"Bb7\"B3 B- | \"Ebmaj7\"B8 | \"C#m7\"B4- \"F#7\"B4 | \"^SOLOS\"z8 ||\n%coda\n\"Bmaj7\"B3 B B2 BB- | \"Fm7\"B4 \"B7\"B4 | \"Bb7\"B4 \"E7\"B4 | \"Ebmaj7#11\"!fermata!B8 |]\n\n%unsure [bar 18] second-ending note looks like a whole or half note; written as whole"
+},
+{
+"id": "The_Colorado_Cookbook/190-samba-de-orpheus",
+"book": "The Colorado Cookbook",
+"title": "Samba De Orpheus",
+"pdf": "190",
+"form": "AABC 16+16+8+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the endings; A is 13 bars + 3-bar 1st ending / 3-bar 2nd ending"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Samba De Orpheus\nT:(Samba De Orfeu)\nC:Luiz Bonfa\nP:AABC\n%source The Colorado Cookbook p187 (pdf 190)\n%style (Samba)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+8+16\n%unsure [form] section lengths counted from the endings; A is 13 bars + 3-bar 1st ending / 3-bar 2nd ending\nM:C|\nL:1/8\nK:Bb\nz2 B2 B2 B2 |\nP:A\n|: \"Bbmaj7\"B8 | z2 B2 B2 B2 | B8 | z2 B2 B2 B2 |\n\"Bbmaj7\"B3 B \"Eb7\"B B2 B | \"Dm7\"z B3 \"G7b9\"B2 B2 | \"Cm7\"B4 B4- | \"F7\"B2 B2 B2 B2 |\n\"Cm\"B8 | \"Cm(maj7)/B\"z2 B2 B2 B2 | \"Cm7/Bb\"B8 | \"F7/A\"z2 B2 B2 B2 |\n\"Cm7\"B3 B B B2 B |1 \"F7\"z B3 B2 B2 | \"D7\"B4 \"G7alt\"B4 | \"C7\"B2 B2 \"F7\"B2 B2 :|2\n\"F7\"z B3 B2 B2 | \"Bbmaj7\"B8- | B4 B2 B2 ||\nP:B\n\"Fm7\"B8 | \"Bb7\"z2 B2 B2 B2 | \"Ebmaj7\"B8- | B4 B2 B2 |\n\"Ebm7\"B8- | \"Ab7\"B2 B2 B2 B2 | \"Dbmaj7\"B8 | \"F7\"z2 B2 B2 B2 ||\nP:C\n\"Bbmaj7\"B8 | z2 B2 B2 B2 | B8 | z2 B2 B2 B2 |\n\"Bbmaj7\"B3 B \"Eb7\"B B2 B | \"Dm7\"z B3 \"G7b9\"B2 B2 | \"Cm7\"B4 B4- | \"F7\"B2 B2 B2 B2 |\n\"Cm\"B8 | \"Cm(maj7)/B\"z2 B2 B2 B2 | \"Cm7/Bb\"B8 | \"F7/A\"z2 B2 B2 B2 |\n\"Cm7\"B3 B B B2 B | \"F7\"z B3 B2 B2 | \"Bbmaj7\"B8- | B4 z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/191-sandu",
+"book": "The Colorado Cookbook",
+"title": "Sandu",
+"pdf": "191",
+"form": "12-bar blues",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "2nd ending is a 2-bar rest (solos follow); swing/shuffle eighths written straight"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sandu\nC:Clifford Brown\n%source The Colorado Cookbook p188 (pdf 191)\n%style (Blues Shuffle)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues\nM:4/4\nL:1/8\nK:Eb\nz2 zB BB (3BBB |: \"Eb7\"z2 zB B2 BB | \"Ab7\"z2 zB- B2 BB | \"Eb7\"B2 zB B2 BB |\n\"Eb7\"z2 zB- BB BB | \"Ab7\"(3BBB- B4 B2 | \"Ab7\"z2 BB BB BB | \"Eb7\"(3BBB- B4 B2 |\n\"Eb7\"z2 BB BB BB | \"Fm7\"BB BB B2 B2 | \"Bb7\"B2 B2 BB BB |1 \"Eb7\"zB BB zB BB |\n\"Bb7\"z2 zB BB (3BBB :|2 z8 | z8 ||\n\n%unsure [general] 2nd ending is a 2-bar rest (solos follow); swing/shuffle eighths written straight"
+},
+{
+"id": "The_Colorado_Cookbook/192-sascha-s-tune",
+"book": "The Colorado Cookbook",
+"title": "Sascha's Tune",
+"pdf": "192",
+"form": "AB 8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sascha's Tune\nC:Bob Montgomery\nP:AB\n%source The Colorado Cookbook p189 (pdf 192)\n%style (Medium Up Be-Bop & Latin)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+8\nM:4/4\nL:1/8\nK:Fm\nP:A\n|: \"^Be-Bop\"\"Fm(maj7)\"B B2 B2 B2 B- | B4 zB BB- | \"C7b9\"B2 B2 B2 BB | z8 |\n\"Fm(maj7)\"B B2 B2 B2 B- | B4 zB BB- | \"F7b9\"B4 B3 B | \"^Fill to Latin\"z8 ||\nP:B\n\"^Latin\"\"Bbm7\"BB BB- B4- | \"Eb7\"B4 B4 | \"Abm7\"BB BB- B4- | \"Db7\"B4 zB B2 |\n\"Gbm7\"BB BB- B4- | \"Cb7\"B6 BB | \"Gm7b5\"z8 | \"C7b9\"\"^Fill to Be-Bop\"z8 :|\n"
+},
+{
+"id": "The_Colorado_Cookbook/193-satellite",
+"book": "The Colorado Cookbook",
+"title": "Satellite",
+"pdf": "193",
+"form": "ABCD 8+8+8+8 (+4-bar 1st ending to solos)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+36
+],
+"groups": [
+35
+],
+"text": "last bar of 1st ending: half note then no rest printed; rest added to fill"
+},
+{
+"bars": [],
+"groups": [],
+"text": "no style marking printed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Satellite\nC:John Coltrane\nP:ABCD\n%source The Colorado Cookbook p190 (pdf 193)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8 (+4-bar 1st ending to solos)\nM:4/4\nL:1/8\nK:G\nP:A\n|: \"Gmaj7\"B4 \"Bb7\"B4 | \"Ebmaj7\"B4 \"F#7\"B4 | \"Bmaj7\"B4 \"D7\"B4 | \"Gm7\"B3 B \"C7\"z4 |\n\"Fmaj7\"B4 \"Ab7\"B4 | \"Dbmaj7\"B4 \"E7\"B4 | \"Amaj7\"B4 \"C7\"B4 | \"Fm7\"B4 \"Bb7\"B3 B- ||\nP:B\n\"Ebmaj7\"B8 | \"Am7b5\"z B2 B \"D7\"B2 BB- | \"Gm\"B8- | B4 z B2 B |\n\"Gmaj7\"B8 | \"Fm7\"B3 B \"Bb7\"B2 B2 | \"Ebmaj7\"B4 \"Gb7\"B B2 B | \"Bmaj7\"B3 B \"D7\"B2 B2 ||\nP:C\n\"Gmaj7\"B4 \"Bb7\"B4 | \"Ebmaj7\"B4 \"F#7\"B4 | \"Bmaj7\"B4 \"D7\"B4 | \"Gm7\"B3 B \"C7\"z4 |\n\"Fmaj7\"B4 \"Ab7\"B4 | \"Dbmaj7\"B4 \"E7\"B4 | \"Amaj7\"B4 \"C7\"B4 | \"Fm7\"B4 \"Bb7\"B3 B- ||\nP:D\n\"Ebmaj7\"B8 | \"Am7b5\"z B2 B \"D7\"B2 BB | \"G\"B8 | \"Cm7\"B3 B \"F7\"B2 B2 |\n\"D9sus4\"B4 B2 BB- | B3 B B3 B | B4 B2 BB- | B4 B3 B |1 \"^To Solos\"\"D9sus4\"B4 B2 BB- | B3 B BB B2 | B4 B2 BB- | B4 z4 :|2\n\"^To End\"\"D9sus4\"B8 | B8 | B8 | B8 |\nB8 | B8 | \"Abmaj7#11\"!fermata!B8 | \"Gmaj7\"!fermata!B8 |]\n\n%unsure [bar 36] last bar of 1st ending: half note then no rest printed; rest added to fill\n%unsure [general] no style marking printed"
+},
+{
+"id": "The_Colorado_Cookbook/194-satin-doll",
+"book": "The Colorado Cookbook",
+"title": "Satin Doll",
+"pdf": "194",
+"form": "AABA 8+8+8+8 (C = last A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro is two-note dyads, written as single notes; no chords printed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "no style marking printed; book labels the last A as section C"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Satin Doll\nC:Duke Ellington & Billy Strayhorn\nP:AABA\n%source The Colorado Cookbook p191 (pdf 194)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (C = last A)\nM:4/4\nL:1/8\nK:C\n%intro\n|: B2 BB z4 | B2 BB z4 | B2 BB z4 | B B2 B z4 :|\nP:A\n|: \"Dm7\"BB BB \"G7\"z B3 | \"Dm7\"z B3 \"G7\"BB- B2 | \"Em7\"BB BB \"A7\"z B3 | \"Em7\"z B3 \"A7\"BB- B2 |\n\"Am7\"z B3 \"D7\"BB- B2 | \"Abm7\"z B3 \"Db7\"B2 BB- |1 \"C7\"B4- \"B7\"B4- | \"Bb7\"B4 \"A7\"z4 :|2\n\"Cmaj7\"B8 | z4 z2 B2 ||\nP:B\n\"Gm7\"B2 BB BB B2 | \"C7\"B2 BB BB B2 | \"Fmaj7\"B8- | B6 zB |\n\"Am7\"BB BB- BB B2 | \"D7\"BB BB- BB B2 | \"Dm7\"B8 | \"G7\"z8 ||\nP:A\n\"Dm7\"BB BB \"G7\"z B3 | \"Dm7\"z B3 \"G7\"BB- B2 | \"Em7\"BB BB \"A7\"z B3 | \"Em7\"z B3 \"A7\"BB- B2 |\n\"Am7\"z B3 \"D7\"BB- B2 | \"Abm7\"z B3 \"Db7\"B2 BB- | \"Cmaj7\"B8 | \"Dm7\"z4 \"G7\"z4 |]\n\n%unsure [bars 1-4] intro is two-note dyads, written as single notes; no chords printed\n%unsure [general] no style marking printed; book labels the last A as section C"
+},
+{
+"id": "The_Colorado_Cookbook/195-scrapple-from-the-apple",
+"book": "The Colorado Cookbook",
+"title": "Scrapple from the Apple",
+"pdf": "195",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18
+],
+"groups": [
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17
+],
+"text": "rhythm slashes (blowing changes) written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Scrapple from the Apple\nC:Charlie Parker\nP:AABC\n%source The Colorado Cookbook p192 (pdf 195)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:F\nP:A\n|: \"Gm7\"zB BB BB BB | \"C7\"BB z2 z B2 B | \"Gm7\"BB (3BBB BB BB | \"C7b9\"z2 zB zB zB |\n\"Fmaj7\"BB (3BBB- B2 zB | \"Bbmaj7\"B2 zB- \"Bo7\"BB (3BBB |1 \"Fmaj7\"B2 zB \"Gm7\"BB BB | \"Am7\"BB BB \"D7\"z4 :|2\n\"Fmaj7\"B2 zB \"C7\"BB BB | \"Fmaj7\"BB BB z4 ||\nP:B\n\"Em7\"z8 | \"A7\"z8 | \"Am7\"z8 | \"D7\"z8 |\n\"Dm7\"z8 | \"G7\"z8 | \"Gm7\"z8 | \"C7\"z8 ||\nP:C\n\"Gm7\"zB BB BB BB | \"C7\"BB z2 z B2 B | \"Gm7\"BB (3BBB BB BB | \"C7b9\"z2 zB zB zB |\n\"Fmaj7\"BB (3BBB- B2 zB | \"Bbmaj7\"B2 zB- \"Bo7\"BB (3BBB | \"Fmaj7\"B2 zB \"C7\"BB BB | \"Fmaj7\"BB BB z4 |]\n\n%unsure [bars 11-18] rhythm slashes (blowing changes) written as rests"
+},
+{
+"id": "The_Colorado_Cookbook/196-seven-steps-to-heaven",
+"book": "The Colorado Cookbook",
+"title": "Seven Steps to Heaven",
+"pdf": "196",
+"form": "ABC 8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 8,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "intro and D section are a bass-clef bass line (with drum hits); written as rests with chords. Solos on AABC (A repeated), then D.C. al coda to vamp"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5
+],
+"text": "bass-line intro written as rests; bar 6 drum fill"
+},
+{
+"bars": [
+10,
+11,
+12,
+14
+],
+"groups": [
+9,
+10,
+11,
+13
+],
+"text": "drum fill bars"
+},
+{
+"bars": [
+18,
+20
+],
+"groups": [
+17,
+19
+],
+"text": "chord placement: Fm7/Bb7 and Abm7/Db7 printed over the second half of bars 18 and 20; bar 22 slashes written as rests"
+},
+{
+"bars": [
+26,
+27,
+28
+],
+"groups": [
+25,
+26,
+27
+],
+"text": "drum fill bars"
+},
+{
+"bars": [
+29,
+30
+],
+"groups": [
+28,
+29
+],
+"text": "coda sign at bar 29; vamp ending (page 194) repeats these two bars"
+},
+{
+"bars": [
+31,
+32,
+33,
+34,
+35,
+36
+],
+"groups": [
+30,
+31,
+32,
+33,
+34,
+35
+],
+"text": "D section is the bass line again, written as rests; last 2 bars soloist fill"
+},
+{
+"bars": [
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60
+],
+"groups": [
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59
+],
+"text": "solo changes (page 194) are slashes, written as rests; alternate Eb7 printed under Am7 and Gm7 in bars 43-44"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Seven Steps to Heaven\nC:Miles Davis & Victor Feldman\nP:ABC\n%source The Colorado Cookbook p193 (pdf 196)\n%style (Up Tempo)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 8+8+8\n%unsure [form] intro and D section are a bass-clef bass line (with drum hits); written as rests with chords. Solos on AABC (A repeated), then D.C. al coda to vamp\nM:4/4\nL:1/8\nK:F\n%intro\n|: \"F13\"z8 | \"Eb13\"z8 |1 \"F13\"z8 | \"Eb13\"z8 :|2\n\"Fmaj7\"z8 | z8 ||\nP:A\n|: \"Fmaj7\"B2 z2 \"Bbmaj7\"B2 z2 | \"Em7b5\"B2 z2 \"A7#9\"B2 z2 | \"Dm7\"B4 \"Ab7\"B3 \"G7\"B | z8 |\nz8 | z8 | \"Eb6/9\"B4 \"E7b9\"B3 \"F6\"B | z8 :|\nP:B\n\"Cmaj7\"BB BB- BB BB- | \"Dm7\"B2 BB \"G7\"B B2 B- | \"Cmaj7\"B8- | B4 \"Fm7\"zB \"Bb7\"BB- |\n\"Ebmaj7\"B8- | \"Abm7\"B4 zB \"Db7\"BB- | \"Gbmaj7\"B8 | \"Gm7\"z4 \"C7\"z4 ||\nP:C\n\"Fmaj7\"B2 z2 \"Bbmaj7\"B2 z2 | \"Em7b5\"B2 z2 \"A7#9\"B2 z2 | \"Dm7\"B4 \"Ab7\"B3 \"G7\"B | z8 |\nz8 | z8 ||\n%coda\n\"Eb6/9\"B4 \"E7b9\"B3 \"F6\"B | z8 ||\nP:D\n|: \"F13\"z8 | \"Eb13\"z8 |1 \"F13\"z8 | \"Eb13\"z8 :|2\n\"Fmaj7\"z8 | z8 ||\n%solos\n|: \"Fmaj7\"z8 | \"Em7b5\"z4 \"A7#9\"z4 | \"Dm7\"z8 | \"G7\"z8 |\n\"Gm7\"z8 | \"C7\"z8 | \"Am7\"z4 \"D7\"z4 | \"Gm7\"z4 \"C7\"z4 :|\n\"Cmaj7\"z8 | \"Dm7\"z4 \"G7\"z4 | \"Cmaj7\"z8 | \"Fm7\"z4 \"Bb7\"z4 |\n\"Ebmaj7\"z8 | \"Abm7\"z4 \"Db7\"z4 | \"Gbmaj7\"z8 | \"Gm7\"z4 \"C7\"z4 ||\n\"Fmaj7\"z8 | \"Em7b5\"z4 \"A7#9\"z4 | \"Dm7\"z8 | \"G7\"z8 |\n\"Gm7\"z8 | \"C7\"z8 | \"Eb6/9\"B4 \"E7b9\"B3 \"F6\"B | z8 |]\n\n%unsure [bars 1-6] bass-line intro written as rests; bar 6 drum fill\n%unsure [bars 10-12, 14] drum fill bars\n%unsure [bars 18, 20] chord placement: Fm7/Bb7 and Abm7/Db7 printed over the second half of bars 18 and 20; bar 22 slashes written as rests\n%unsure [bars 26-28] drum fill bars\n%unsure [bars 29-30] coda sign at bar 29; vamp ending (page 194) repeats these two bars\n%unsure [bars 31-36] D section is the bass line again, written as rests; last 2 bars soloist fill\n%unsure [bars 37-60] solo changes (page 194) are slashes, written as rests; alternate Eb7 printed under Am7 and Gm7 in bars 43-44"
+},
+{
+"id": "The_Colorado_Cookbook/198-secret-love",
+"book": "The Colorado Cookbook",
+"title": "Secret Love",
+"pdf": "198",
+"form": "AABC 16+16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+11,
+12
+],
+"groups": [
+10,
+11
+],
+"text": "head uses Fm7/Bb7; solos use F#m7/B7 (in parentheses)"
+},
+{
+"bars": [
+16,
+18
+],
+"groups": [
+15,
+17
+],
+"text": "chord placement over whole rest: chords spaced over a whole rest; beats guessed"
+},
+{
+"bars": [
+26
+],
+"groups": [
+25
+],
+"text": "Abm7 Db7 bar holds a whole note; Db7 placed on beat 3"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Secret Love\nT:(Once I Had a) Secret Love\nC:Bobby Sherwood\nP:AABC\n%source The Colorado Cookbook p195 (pdf 198)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+8+8\nM:4/4\nL:1/8\nK:Eb\nP:A\n|: \"Ebmaj7\"B6 B2 | \"Fm7/Bb\"B2 B2 B2 B2 | \"Ebmaj7\"B8- | \"Fm7/Bb\"B6 B2 |\n\"Ebmaj7\"B6 \"Ab7\"B2 | \"Gm7\"B2 B2 \"C7b9\"B2 B2 | \"B7alt\"B8- | \"Bb7b9\"B4 z4 |\n\"Fm7\"B6 B2 | \"Bb7\"B2 B2 B2 B2 | \"Fm7\"\"(F#m7)\"B8- | \"Bb7\"\"(B7)\"B6 B2 |\n\"Fm7\"B6 B2 | \"Bb7b9\"B2 B2 B2 B2 |1 \"Gm7\"B8 | \"C7b9\"z4 \"Fm7\"z2 \"Bb7b9\"z2 :|2\n\"Ebmaj7\"B8 | \"Dm7b5\"z4 \"G7b9\"z4 ||\nP:B\n\"Cm7\"B6 B2 | \"F7\"B2 B2 B2 B2 | \"Bbmaj7\"B6 B2 | B8 |\n\"Bbm7\"B6 B2 | \"Eb7\"B2 B2 B2 B2 | \"Abmaj7\"B4 B4 | \"Abm7\"B4 \"Db7\"B4 ||\nP:C\n\"Ebmaj7\"B6 B2 | \"Fm7\"B2 B2 B2 B2 | \"Gm7b5\"B8- | \"C7b9\"B6 B2 |\n\"Fm7\"B2 B2 B2 B2 | \"Bb7b9\"B2 B2 B2 B2 | \"Ebmaj7\"B8- | \"Fm7\"B4 \"Bb7b9\"z4 |]\n\n%unsure [bars 11-12] head uses Fm7/Bb7; solos use F#m7/B7 (in parentheses)\n%unsure [bars 16, 18] chord placement over whole rest: chords spaced over a whole rest; beats guessed\n%unsure [bar 26] Abm7 Db7 bar holds a whole note; Db7 placed on beat 3"
+},
+{
+"id": "The_Colorado_Cookbook/199-sheba",
+"book": "The Colorado Cookbook",
+"title": "Sheba",
+"pdf": "199",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+9
+],
+"groups": [
+8
+],
+"text": "F7 printed over the C half note; half split with a tie on beat 3"
+},
+{
+"bars": [
+26
+],
+"groups": [
+25
+],
+"text": "sixteenth + dotted eighth then eighth triplet read from small print"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sheba\nC:Clark Terry\nP:AABC\n%source The Colorado Cookbook p196 (pdf 199)\n%style (Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Bb\nz6 B2 |\nP:A\n|: \"Bbmaj7\"BB- B6 | \"Fm7\"zB/B/ BB \"Bb7\"BB BB | \"Ebmaj7\"BB- B4 zB | \"Ab7\"BB- B4 BB |1 \"Bbmaj7\"BB- B2- \"Gm7\"BB BB | \"Cm7\"BB- B2- \"F7\"BB BB | \"Dm7\"B4- \"G7\"BB- B2 | \"Cm7\"BB B2- \"F7\"B2 B2 :|2\n\"Dm7\"B2 BB- \"G7\"BB BB | \"Cm7\"B2 \"Dm7\"B2 \"Ebmaj7\"B2 \"F7\"B2 | \"Bbmaj7\"B4- \"Ab7\"B4 | \"Bbmaj7\"z6 B2 ||\nP:B\n\"Fm7\"B2 B4 B2 | \"Bb7\"BB B4 B2 | \"Ebmaj7\"B2 B2 B2 BB- | B6 B2 |\n\"Gm7\"B6 BB | \"C7\"BB- B4 B2 | \"F7\"B4 \"Gb7\"z B3 | \"F7\"(3B2B2B2 B2 B2 ||\nP:C\n\"Bbmaj7\"BB- B6 | \"Fm7\"zB/B/ BB \"Bb7\"BB BB | \"Ebmaj7\"BB- B6 | \"Ebm7\"BB- B4 \"Ab7\"zB/B/ |\n\"Dm7\"B2 B2 \"Gm7\"B/B3/2 (3BBB | \"Cm7\"B2 \"Dm7\"B2 \"Ebmaj7\"B2 \"F7\"B2 | \"Bbmaj7\"B4- \"Ab7\"B4 | \"Bbmaj7\"z8 |]\n\n%unsure [bar 9] F7 printed over the C half note; half split with a tie on beat 3\n%unsure [bar 26] sixteenth + dotted eighth then eighth triplet read from small print"
+},
+{
+"id": "The_Colorado_Cookbook/200-miles-mode",
+"book": "The Colorado Cookbook",
+"title": "Miles' Mode",
+"pdf": "200",
+"form": "",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+6
+],
+"groups": [
+5
+],
+"text": "tied note then a small triplet (looks like 16ths under a 3): read as an eighth triplet so the bar adds up"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Miles' Mode\nC:John Coltrane\n%source The Colorado Cookbook p197 (pdf 200)\n%style (Solos on B minor)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Bass line staff under the melody not transcribed.\nM:4/4\nL:1/8\nK:Bdor\n\"Bm\"BB BB BB BB | BB BB- B4 | BB BB BB BB | BB BB- B4 |\nB4 B B2 B | z2 B2- (3BBB B2 | BB BB- B4- | B8 |]\n\n%unsure [bar 6] tied note then a small triplet (looks like 16ths under a 3): read as an eighth triplet so the bar adds up"
+},
+{
+"id": "The_Colorado_Cookbook/200-shifting-down",
+"book": "The Colorado Cookbook",
+"title": "Shifting Down",
+"pdf": "200",
+"form": "12-bar blues (unlettered)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred: 12 bars with first/second endings"
+},
+{
+"bars": [
+6
+],
+"groups": [
+6
+],
+"text": "sixteenth triplet then eighths: grouping guessed so the bar adds up"
+},
+{
+"bars": [
+10
+],
+"groups": [
+10
+],
+"text": "triplet bracket position and last notes guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Shifting Down\nC:Kenny Dorham\n%source The Colorado Cookbook p197 (pdf 200)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues (unlettered)\n%unsure [form] form inferred: 12 bars with first/second endings\nM:4/4\nL:1/8\nK:Bb\nzB (3BBB |: \"Bb7\"B2 zB- BB B2 | \"Eb7\"zB BB BB BB | \"Bb7\"B2 zB- BB B2 |\nz B2 B BB BB | \"Eb7\"zB/B/ BB- B B2 B | \"Ebm\"B2 (3B/B/B/B BB BB | \"Dm\"BB (3BBB B2 B3/2B/ |\n\"Dbm\"BB (3BBB B2 B3/2B/ | \"Cm7\"BB (3BBB B B2 B- | \"F7\"BB (3BBB B B2 B | \"Bb7\"zB BB BB BB- |1 B4 zB (3BBB :|2 B4 z4 |]\n\n%unsure [bar 6] sixteenth triplet then eighths: grouping guessed so the bar adds up\n%unsure [bar 10] triplet bracket position and last notes guessed"
+},
+{
+"id": "The_Colorado_Cookbook/201-silver-s-serenade",
+"book": "The Colorado Cookbook",
+"title": "Silver's Serenade",
+"pdf": "201",
+"form": "A 16 (repeated, solos, D.C. al Coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no style marking printed; coda notes are diamond (open) whole notes"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Silver's Serenade\nC:Horace Silver\nP:A\n%source The Colorado Cookbook p198 (pdf 201)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 16 (repeated, solos, D.C. al Coda)\nM:4/4\nL:1/8\nK:G\nB2 |\nP:A\n|: \"Em\"B8 | z B3 B2 BB- | \"Bbm\"B8- | B4 z4 |\n\"Am\"B8 | z B3 B2 BB- | \"Ebm\"B8- | B4 z4 |\n\"Am\"z B3 B2 B2 | B B2 B- B4 | \"Cm7\"z B3 B2 BB- | \"F7\"B4- BB BB- |\n\"Bbmaj7\"B4- \"Cm7\"B4 | \"Dm7\"z B2 z \"Ebmaj7\"BB BB- | \"Am7\"B8 |1 \"D7\"z4 z2 B2 :|2\n\"D7\"z8 || \"^Solos\"z8 ||\n%coda\n\"D7\"!fermata!B8 | \"^Cadenza\"!fermata!z8 | \"Gmaj7#11\"!fermata!B8 |]\n\n%unsure [general] no style marking printed; coda notes are diamond (open) whole notes"
+},
+{
+"id": "The_Colorado_Cookbook/202-saint-james-infirmary",
+"book": "The Colorado Cookbook",
+"title": "Saint James Infirmary",
+"pdf": "202",
+"form": "8 bars, repeated",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+2,
+4
+],
+"groups": [
+1,
+3
+],
+"text": "chord placement over held notes/tied pairs estimated from chord spacing"
+},
+{
+"bars": [],
+"groups": [],
+"text": "no composer or style printed; composer given as Traditional"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Saint James Infirmary\nC:Traditional\n%source The Colorado Cookbook p199 (pdf 202)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 8 bars, repeated\nM:4/4\nL:1/8\nK:Dm\nz4 z2 BB |: \"Dm\"B3 B \"A7/E\"B3 B | \"Dm/F\"BB- B2- \"A7/E\"B4 | \"Dm\"B3 B \"Em7b5\"B2 B2 |\n\"A7\"B4- \"Em7/B\"B2 \"Em7b5/C\"B\"A7/C#\"B | \"Dm\"B2 BB \"A7/C#\"B3 B/B/ | \"Dm/C\"BB- B2 \"G/B\"z2 zB | \"Bb7\"B2 BB- \"A7\"B2 BB- | \"Dm\"B8 :|\n\n%unsure [bars 2, 4] chord placement over held notes/tied pairs estimated from chord spacing\n%unsure [general] no composer or style printed; composer given as Traditional"
+},
+{
+"id": "The_Colorado_Cookbook/202-simple-waltz",
+"book": "The Colorado Cookbook",
+"title": "Simple Waltz",
+"pdf": "202",
+"form": "24 bars, repeated",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no style marking printed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Simple Waltz\nC:Clark Terry\n%source The Colorado Cookbook p199 (pdf 202)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 24 bars, repeated\nM:3/4\nL:1/8\nK:F\n|: \"F7\"B2 B4- | B4 B2 | \"Bb7\"B2 B4- | B6 |\n\"F7\"B2 B4- | B4 B2 | B2 B4- | B6 |\n\"Bb7\"BB B4- | B4 B2 | B2 B4- | B6 |\n\"F7\"B2 B4- | B4 B2 | B2 B4- | B4 B2 |\n\"Gm7\"B2 B2 B2 | B2 B2 B2 | \"C7\"B2 B2 B2 | B4 B2 |\n\"F\"B6- | \"Bb\"B6- | \"F\"B6 | \"C7\"z6 :|\n\n%unsure [general] no style marking printed"
+},
+{
+"id": "The_Colorado_Cookbook/203-slow-boat-to-china",
+"book": "The Colorado Cookbook",
+"title": "Slow Boat to China",
+"pdf": "203",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+2,
+18
+],
+"groups": [
+1,
+17
+],
+"text": "Dm7b5 printed stacked over Bo7 (alternate chord); G7 placement estimated"
+},
+{
+"bars": [],
+"groups": [],
+"text": "no style marking printed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Slow Boat to China\nT:(On A) Slow Boat to China\nC:Frank Loesser\nP:ABCD\n%source The Colorado Cookbook p200 (pdf 203)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:Bb\nP:A\n\"Bbmaj7\"B4 B2 B2 | \"Dm7b5\"\"(Bo7)\"B2 B2 \"G7\"B2 BB | \"Cm7\"B4 B2 B2 | \"Dbo7\"B2 B6 |\n\"Bbmaj7/D\"B4 B2 B2 | \"Am7b5\"B4 \"D7b9\"B4 | \"Ebmaj7\"B8- | \"Dm7b5\"B6 \"G7\"z2 ||\nP:B\n\"Cm7\"B4 B2 B2 | \"Em7b5\"B2 B4 \"A7b9\"BB | \"Bbmaj7\"B4 \"Ab7#11\"B2 BB- | \"G7\"B6 z2 |\n\"C7\"B4 B2 B2 | B2 B6 | \"Cm7\"B2 B2 BB BB- | \"F9\"B6 z2 ||\nP:C\n\"Bbmaj7\"B4 B2 B2 | \"Dm7b5\"\"(Bo7)\"B2 B2 \"G7\"B2 BB | \"Cm7\"B4 B2 B2 | \"Dbo7\"B2 B6 |\n\"Bbmaj7/D\"B4 B2 B2 | \"Am7b5\"B4 \"D7b9\"B4 | \"Ebmaj7\"B8- | \"Dm7b5\"B6 \"G7\"z2 ||\nP:D\n\"Cm7\"B4 B2 B2 | \"Ab7#11\"B2 B4 BB | \"Bbmaj7\"B4 B2 B2 | \"Dm7b5\"B2 B4- \"G7\"B2 |\n\"C7\"B4 B2 B2 | \"F7\"B4 B4 | \"Bbmaj7\"B8- | B4 z4 |]\n\n%unsure [bars 2, 18] Dm7b5 printed stacked over Bo7 (alternate chord); G7 placement estimated\n%unsure [general] no style marking printed"
+},
+{
+"id": "The_Colorado_Cookbook/204-s-matter",
+"book": "The Colorado Cookbook",
+"title": "S'Matter",
+"pdf": "204",
+"form": "AB 8+11 (last 3 bars in 3/4; may be used as intro)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+17,
+18,
+19
+],
+"groups": [
+17,
+18,
+19
+],
+"text": "these bars are in 3/4 as printed; the checker assumes one meter and flags them"
+},
+{
+"bars": [],
+"groups": [],
+"text": "solo-changes page section (slashes) not transcribed; no style marking printed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:S'Matter\nT:Smatter\nC:Kenny Wheeler\nP:AB\n%source The Colorado Cookbook p201 (pdf 204)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+11 (last 3 bars in 3/4; may be used as intro)\nM:4/4\n\nL:1/8\nK:Bbm\nB3 B |\nP:A\n|: \"Emaj7#11\"B3 B B4- | \"Ebm\"B3 B BB BB | \"Abm\"B2 BB- B4 | \"Bbm\"z4 B3 B |\n\"Bmaj7#11\"B3 B B4- | B3 B BB BB | \"Bbm\"BB B6 | \"Gbmaj7#11\"z2 BB BB BB ||\nP:B\n\"Cm\"B6 z2 | \"A7#9\"z2 BB BB BB | \"Abmaj7#11\"B3 B B4- | \"D7#9#5\"B4 B3 B |\n\"Gm\"B8 | \"C/F\"z2 zB BB BB | \"Dm\"B4- \"Em\"B4 | \"Fmaj7#11\"z2 zB BB BB |\nM:3/4\n\"^May use as an intro\"\"Bbmaj7\"B3 \"A7\"B3 | \"Abmaj7\"B3 \"Gm\"B3 | \"Gbmaj7\"B3 \"F7\"B3 |\nM:4/4\n\n|1 \"Bbm\"B2 z2 B3 B :|2 \"Bbm\"B2 z2 z4 |]\n\n%unsure [bars 17-19] these bars are in 3/4 as printed; the checker assumes one meter and flags them\n%unsure [general] solo-changes page section (slashes) not transcribed; no style marking printed"
+},
+{
+"id": "The_Colorado_Cookbook/205-smile",
+"book": "The Colorado Cookbook",
+"title": "Smile",
+"pdf": "205",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Smile\nC:Charles Chaplin\nP:ABCD\n%source The Colorado Cookbook p202 (pdf 205)\n%style (Samba)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:F\nP:A\n\"Fmaj7\"B4 B2 B2 | B2 B2 B2 B2 | B4 B2 B2 | B2 B2 B2 B2 |\n\"Fmaj7\"B4 B2 B2 | \"Abo7\"B4 B2 B2 | \"Gm7\"B4 B2 B2 | \"D7b9\"B4 B2 B2 ||\nP:B\n\"Gm\"B4 B2 B2 | B2 B2 B2 B2 | \"Bbm7\"B4 B2 B2 | \"Eb7\"B2 B2 B2 B2 |\n\"Fmaj7\"B4 B2 B2 | B2 B2 B2 B2 | \"Gm7\"B6 B2 | \"C7b9\"B4 \"Gb7\"B4 ||\nP:C\n\"Fmaj7\"B4 B2 B2 | B2 B2 B2 B2 | B4 B2 B2 | B2 B2 B2 B2 |\n\"Fmaj7\"B4 B2 B2 | \"Abo7\"B4 B2 B2 | \"Gm7\"B4 B2 B2 | \"D7b9\"B4 B2 B2 ||\nP:D\n\"Gm7\"B4 B2 B2 | \"C7b9\"B2 B2 B2 B2 | \"Abm7\"z2 B2 B2 B2 | \"Db7b9\"B2 B2 B2 B2 |\n\"Gm7\"z2 B2 B2 B2 | \"C7b9\"B2 B2 B2 \"F\"BB | z8 | z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/206-snapper",
+"book": "The Colorado Cookbook",
+"title": "Snapper",
+"pdf": "206",
+"form": "AABC 12+12+8+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Snapper\nC:Clark Terry\nP:AABC\n%source The Colorado Cookbook p203 (pdf 206)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 12+12+8+12\nM:4/4\nL:1/8\nK:Fm\nP:A\n|: \"Fm\"BB BB B2 z2 | z2 BB BB B2 | BB BB B2 z2 | z2 BB BB B2 |\n\"Bbm\"BB BB B2 z2 | z2 BB BB B2 | \"Fm\"BB BB B2 z2 | z2 BB BB B2 |\n\"Gm7b5\"B6 BB | \"C7\"BB BB BB BB | \"Fm\"BB BB B2 z2 | z8 :|\nP:B\n\"Bbm\"B6 B2 | B4 B2 B2 | \"Fm\"B6 B2 | B4 B2 B2 |\n\"Gm7b5\"B6 B2 | B3 B- B3 B- | \"C7\"B3 B- B3 B- | B3 B- B4 ||\nP:C\n\"Fm\"BB BB B2 z2 | z2 BB BB B2 | BB BB B2 z2 | z2 BB BB B2 |\n\"Bbm\"BB BB B2 z2 | z2 BB BB B2 | \"Fm\"BB BB B2 z2 | z2 BB BB B2 |\n\"Gm7b5\"B6 BB | \"C7\"BB BB BB BB | \"Fm\"BB BB B2 z2 | z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/207-social-call",
+"book": "The Colorado Cookbook",
+"title": "Social Call",
+"pdf": "207",
+"form": "AABC 8+8+8+10",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37
+],
+"groups": [
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36
+],
+"text": "drum tag: new A melody, drum solo bars as rests; 2nd ending then D.S. to bridge (B)"
+},
+{
+"bars": [
+3,
+20
+],
+"groups": [
+2,
+19
+],
+"text": "Ab7 chord (b13 b9) placed on beat 3 though printed slightly later"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Social Call\nC:Gigi Gryce\nP:AABC\n%source The Colorado Cookbook p204 (pdf 207)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+10\nM:4/4\nL:1/8\nK:Db\nP:A\n|: \"Fm7b5\"BB BB- \"Bb7b9\"B3 B | \"Ebm7\"BB- B4 z2 | \"Ebm7\"BB BB- B2 \"Ab7b13b9\"BB- | \"Dbmaj7\"B6 z2 |\n\"Fm7\"BB BB \"Em7\"z B2 B | \"Ebm7\"BB zB- BB BB | \"Eb7\"B B3 \"D7\"B B3 |1 \"Dbmaj7\"B2 z2 z4 :|2\n\"Dbmaj7\"B2 z2 BB BB- ||\nP:B\n\"Abm7\"B8- | \"Db7\"B4 BB BB- | \"Gbmaj7\"B4- \"Abm7\"B4 | \"Bbm7\"z2 zB- BB BB |\n\"F#m7\"B8- | \"B7\"B4 BB zB | \"Emaj7\"B8 | \"Ebm7\"B3 B- \"Ab7#5b9\"B2 z2 ||\nP:C\n\"Fm7b5\"BB BB- \"Bb7b9\"B3 B | \"Ebm7\"BB- B4 z2 | \"Ebm7\"BB BB- B2 \"Ab7b13b9\"BB- | \"Dbmaj7\"B6 z2 |\n\"Fm7\"BB BB \"Em7\"z B2 B | \"Ebm7\"BB zB- BB BB | \"Eb7\"B B3 \"D7\"B B3 | \"Dbmaj7\"B B3 B B3 |\n\"Ebm7\"B B3 \"Ab7\"B B3 | \"Db\"B2 z2 z4 |]\n%tag\n\"_Drum tag\"z4 zB (3BBB |\nP:A\n|: \"Fm7b5\"BB BB \"Bb7b9\"BB zB | \"Ebm7\"BB z2 BB BB- | \"Ebm7\"BB BB- \"Ab7b13b9\"B2 (3BBB | \"Dbmaj7\"BB BB BB BB |\nz8 | z8 | z8 |1 z4 zB (3BBB :|2\nz4 BB BB- ||\n\n%unsure [bars 28-37] drum tag: new A melody, drum solo bars as rests; 2nd ending then D.S. to bridge (B)\n%unsure [bars 3, 20] Ab7 chord (b13 b9) placed on beat 3 though printed slightly later"
+},
+{
+"id": "The_Colorado_Cookbook/208-soft-winds",
+"book": "The Colorado Cookbook",
+"title": "Soft Winds",
+"pdf": "208",
+"form": "12-bar blues",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Soft Winds\nC:Benny Goodman\n%source The Colorado Cookbook p205 (pdf 208)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues\nM:4/4\nL:1/8\nK:Bb\n|: \"Bb7\"z B3 B2 z2 | \"Eb7\"B3 B z4 | \"Bb7\"z B3 B2 B2 | B3 B z4 |\n\"Eb7\"z B3 B2 z2 | B3 B z4 | \"Bb7\"z B3 B2 B2 | B3 B z4 |\n\"Cm7\"z B3 B2 z2 | \"F7\"B3 B z2 zB | \"Bb7\"z B3 BB BB | \"F7\"z8 :|\n"
+},
+{
+"id": "The_Colorado_Cookbook/208-sonnymoon-for-two",
+"book": "The Colorado Cookbook",
+"title": "Sonnymoon for Two",
+"pdf": "208",
+"form": "12-bar blues",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sonnymoon for Two\nC:Sonny Rollins\n%source The Colorado Cookbook p205 (pdf 208)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues\nM:4/4\nL:1/8\nK:Bb\n|: \"Bb7\"z B3 B2 B2 | \"Eb7\"B2 B2 B2 BB | \"Bb7\"zB BB- B2 BB | zB BB- B2 BB |\n\"Eb7\"z B3 B2 B2 | B2 B2 B2 BB | \"Bb7\"zB BB- B2 BB | zB BB- B2 BB |\n\"Cm7\"z B3 B2 B2 | \"F7\"B2 B2 B2 BB | \"Bb7\"zB BB- B2 BB | \"F7\"zB BB- B2 BB :|\n"
+},
+{
+"id": "The_Colorado_Cookbook/209-softly-as-in-a-morning-sunrise",
+"book": "The Colorado Cookbook",
+"title": "Softly, as in a Morning Sunrise",
+"pdf": "209",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"text": "horn intro has no chords printed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Softly, as in a Morning Sunrise\nC:Sigmund Romberg\nP:AABC\n%source The Colorado Cookbook p206 (pdf 209)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Cm\n%intro\n\"_Horn intro\"z2 BB BB BB || B4 B4 | zB BB B2 B2 | B4 B4 |\nzB BB BB BB | B4 B4 | zB BB B2 B2 | B6 BB |\nz B2 B B2 B2 ||\nP:A\n|: \"Cm\"B4 B4 | \"Dm7b5\"zB BB \"G7b9\"B2 B2 | \"Cm\"B4 B4 | \"Dm7b5\"zB BB \"G7b9\"B2 B2 |\n\"Cm\"B4 B4 | \"Dm7b5\"zB BB \"G7b9\"B2 B2 | \"Cm\"B8 |1 \"Dm7b5\"z4 \"G7b9\"z2 B2 :|2\n\"Fm7\"z2 BB \"Bb7b9\"BB BB ||\nP:B\n\"Ebmaj7\"B4 B4 | \"Abmaj7\"zB BB B2 B2 | \"Gm7\"B4 B4 | \"C7\"zB BB BB BB |\n\"Fm7\"B4 B4 | \"Am7b5\"zB BB \"D7\"B2 B2 | \"Dm7b5\"B6 BB | \"G7b9\"z B2 B B2 B2 ||\nP:C\n\"Cm\"B4 B4 | \"Dm7b5\"zB BB \"G7b9\"B2 B2 | \"Cm\"B4 B4 | \"Dm7b5\"zB BB \"G7b9\"B2 B2 |\n\"Cm\"B4 B4 | \"Dm7b5\"zB BB \"G7b9\"B2 B2 | \"Cm\"B8 | \"Dm7b5\"z4 \"G7b9\"z4 |]\n\n%unsure [bars 1-9] horn intro has no chords printed"
+},
+{
+"id": "The_Colorado_Cookbook/210-solar",
+"book": "The Colorado Cookbook",
+"title": "Solar",
+"pdf": "210",
+"form": "12 bars (unlettered)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+6
+],
+"groups": [
+5
+],
+"text": "second note looks like a quarter but bar only adds up as a dotted quarter"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Solar\nC:Miles Davis\n%source The Colorado Cookbook p207 (pdf 210)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12 bars (unlettered)\nM:4/4\nL:1/8\nK:C\n|: \"Cm\"z2 zB B2 BB | z B3- B3 B | \"Gm7\"B3 B B2 BB- | \"C7#9\"B8 |\n\"Fmaj7\"z2 zB B2 BB | z B3 B3 B | \"Fm7\"B3 B B2 BB- | \"Bb7#9\"B8 |\n\"Ebmaj7\"zB BB B B2 B- | \"Ebm7\"B2 BB B \"Ab7#9\"B2 B- | \"Dbmaj7\"B8 | \"Dm7b5\"zB BB \"G7#9\"BB B2 :|\n\n%unsure [bar 6] second note looks like a quarter but bar only adds up as a dotted quarter"
+},
+{
+"id": "The_Colorado_Cookbook/210-tune-up",
+"book": "The Colorado Cookbook",
+"title": "Tune Up",
+"pdf": "210",
+"form": "16 bars, repeated",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+13
+],
+"groups": [
+12
+],
+"text": "chord printed E-7 (usual changes have Eb-7); kept as printed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "no style marking printed; page shared with Solar (not transcribed)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Tune Up\nC:Miles Davis\n%source The Colorado Cookbook p207 (pdf 210)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars, repeated\nM:4/4\nL:1/8\nK:C\n|: \"Em7\"B6 B2 | \"A7\"B4 B4 | \"Dmaj7\"B8 | z8 |\n\"Dm7\"B6 B2 | \"G7\"B4 B4 | \"Cmaj7\"B8 | z8 |\n\"Cm7\"B4 B3 B | \"F7\"z2 zB B2 B2 | \"Bbmaj7\"B4 B3 B | z2 zB B2 BB- |\n\"Em7\"B8 | \"F7\"z2 zB BB BB | \"Bbmaj7\"B8 | \"Eb7\"z8 :|\n\n%unsure [bar 13] chord printed E-7 (usual changes have Eb-7); kept as printed\n%unsure [general] no style marking printed; page shared with Solar (not transcribed)"
+},
+{
+"id": "The_Colorado_Cookbook/211-some-other-blues",
+"book": "The Colorado Cookbook",
+"title": "Some Other Blues",
+"pdf": "211",
+"form": "12-bar blues",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+1
+],
+"groups": [
+1
+],
+"text": "last note looks like a quarter but bar only fits eighths; all written as eighths"
+},
+{
+"bars": [],
+"groups": [],
+"text": "solo-changes section (slashes; Bb7 bar 2, D7 bar 8, Gm7-C7 bars 9-10) not transcribed; no style marking printed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Some Other Blues\nC:John Coltrane\n%source The Colorado Cookbook p208 (pdf 211)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues\nM:4/4\nL:1/8\nK:F\nB |: \"F7\"BB BB BB BB | \"Bb7\"BB BB BB BB- | \"F7\"B4- BB BB |\nz8 | \"Bb7\"BB BB BB BB | \"Eb7\"BB BB BB BB- | \"Ab7\"B4- BB BB |\n\"Db7\"z8 | \"C7\"B2 BB BB BB | \"Bb7\"!tenuto!B2 .B2 !tenuto!B2 !tenuto!B2 |1 \"F7\"B4 .B2 !tenuto!B2 |\nz8 :|2 \"F7\"B3 B zB z2 | z8 |]\n\n%unsure [bar 1] last note looks like a quarter but bar only fits eighths; all written as eighths\n%unsure [general] solo-changes section (slashes; Bb7 bar 2, D7 bar 8, Gm7-C7 bars 9-10) not transcribed; no style marking printed"
+},
+{
+"id": "The_Colorado_Cookbook/212-somewhere-over-the-rainbow",
+"book": "The Colorado Cookbook",
+"title": "Somewhere Over the Rainbow",
+"pdf": "212",
+"form": "AABA 8+8+8+8 (book letters A, B, C; C is the last A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Somewhere Over the Rainbow\nC:Harold Arlen\nP:AABA\n%source The Colorado Cookbook p209 (pdf 212)\n%style (Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (book letters A, B, C; C is the last A)\nM:4/4\nL:1/8\nK:Eb\nP:A\n|: \"Am7b5\"B4 \"D7b9\"B4 | \"Gm7\"B2 BB B2 \"A7b5\"B2 | \"Abmaj7\"B4 \"Am7b5\"B2- \"D7b9\"B2 | \"Gm7\"B4- \"C7b9\"B4 |\n\"Fm7\"B4 \"Abm7\"B4 | \"Gm7\"B2 BB \"C7b9\"B2 B2 | \"Fm7\"B2 BB \"Bb7b9\"B2 B2 |1 \"Ebmaj7\"B4 \"Fm7\"z2 \"Bb7b9\"z2 :|2\n\"Ebmaj7\"B4- \"Fm7\"B2 \"Bb7b9\"B2 ||\nP:B\n\"Ebmaj7\"BB BB BB BB | \"Fm7\"BB BB \"Bb7b9\"BB BB | \"Gm7\"B4 \"C7b9\"B4- | \"Fm7\"B4 \"Bb7b9\"z2 B2 |\n\"Ebmaj7\"BB BB BB BB | \"Am7b5\"BB BB \"D7b9\"BB BB | \"Gm7\"B4 \"C9\"B4 | \"Fm7\"B4 \"Bb7b9\"B4 ||\nP:A\n\"Am7b5\"B4 \"D7b9\"B4 | \"Gm7\"B2 BB B2 \"A7b5\"B2 | \"Abmaj7\"B4 \"Am7b5\"B2- \"D7b9\"B2 | \"Gm7\"B4- \"C7b9\"B4 |\n\"Fm7\"B4 \"Abm7\"B4 | \"Gm7\"B2 BB \"C7b9\"B2 B2 | \"Fm7\"B2 BB \"Bb7b9\"B2 B2 | \"Ebmaj7\"B4 \"Fm7\"z2 \"Bb7b9\"z2 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/213-somewhere-over-the-rainbow",
+"book": "The Colorado Cookbook",
+"title": "Somewhere Over the Rainbow",
+"pdf": "213",
+"form": "AABA 16+16+16+16 (book letters A, B, C; C is the last A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Somewhere Over the Rainbow\nC:Harold Arlen\nP:AABA\n%source The Colorado Cookbook p210 (pdf 213)\n%style (Samba)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 16+16+16+16 (book letters A, B, C; C is the last A)\nM:C|\nL:1/8\nK:Eb\nP:A\n|: \"Am7b5\"B8 | \"D7b9\"B8 | \"Gm7\"B4 B2 B2 | B4 \"A7b5\"B4 |\n\"Abmaj7\"B8 | \"Am7b5\"B4- \"D7b9\"B4 | \"Gm7\"B8- | \"C7b9\"B8 ||\n\"Fm7\"B8 | \"Abm7\"B8 | \"Gm7\"B4 B2 B2 | \"C7b9\"B4 B4 |\n\"Fm7\"B4 B2 B2 | \"Bb7b9\"B4 B4 | \"Ebmaj7\"B8 |1 \"Fm7\"z4 \"Bb7b9\"z4 :|2\n\"Fm7\"z4 \"Bb7b9\"z2 B2 ||\nP:B\n\"Ebmaj7\"B2 B2 B2 B2 | B2 B2 B2 B2 | \"Fm7\"B2 B2 B2 B2 | \"Bb7b9\"B2 B2 B2 B2 |\n\"Gm7\"B8 | \"C7b9\"B8- | \"Fm7\"B8 | \"Bb7b9\"z4 z2 B2 ||\n\"Ebmaj7\"B2 B2 B2 B2 | B2 B2 B2 B2 | \"Am7b5\"B2 B2 B2 B2 | \"D7b9\"B2 B2 B2 B2 |\n\"Gm7\"B8 | \"C7\"B8 | \"Fm7\"B8 | \"Bb7\"B8 ||\nP:A\n\"Am7b5\"B8 | \"D7b9\"B8 | \"Gm7\"B4 B2 B2 | B4 \"A7b5\"B4 |\n\"Abmaj7\"B8 | \"Am7b5\"B4- \"D7b9\"B4 | \"Gm7\"B8- | \"C7b9\"B8 ||\n\"Fm7\"B8 | \"Abm7\"B8 | \"Gm7\"B4 B2 B2 | \"C7b9\"B4 B4 |\n\"Fm7\"B4 B2 B2 | \"Bb7b9\"B4 B4 | \"Ebmaj7\"B8 | \"Fm7\"z4 \"Bb7b9\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/214-someday-my-prince-will-come",
+"book": "The Colorado Cookbook",
+"title": "Someday My Prince Will Come",
+"pdf": "214",
+"form": "16 + 16 with 1st/2nd endings",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Someday My Prince Will Come\nC:Frank Churchill\n%source The Colorado Cookbook p211 (pdf 214)\n%style (Jazz Waltz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 + 16 with 1st/2nd endings\nM:3/4\nL:1/8\nK:F\n|: \"Fmaj7\"B6 | \"B7#11\"B4 B2 | \"Bbmaj7\"B4 B2 | \"D7#9#5\"B6 |\n\"Gm7\"B6 | \"D7#9#5\"B4 B2 | \"G9\"B4 B2 | \"C7\"B2 B2 B2 |1 \"Am7\"B2 B2 B2 | \"Abo7\"B2 B2 B2 | \"Gm7\"B6- | \"C7b9\"B2 B2 B2 |\n\"Am7\"B2 B2 B2 | \"Abo7\"B2 B2 B2 | \"Gm7\"B6- | \"C7b9\"B2 z2 z2 :|2\n\"Cm7\"B4 B2 | \"F9\"B4 B2 | \"Bbmaj7\"B3 B BB | \"Bo7\"B4 B2 |\n\"F6/9/C\"B2 B2 B2 | \"Gm7/C\"B4 \"C7\"B2 | \"F6/9\"B6- | B4 z2 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/215-song-for-my-father",
+"book": "The Colorado Cookbook",
+"title": "Song for My Father",
+"pdf": "215",
+"form": "AAB 8+8+8 (book: solo form is always AAB)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+1,
+2
+],
+"groups": [
+0,
+1
+],
+"text": "sixteenth-triplet figures read as an eighth then a 16th triplet per beat"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Song for My Father\nC:Horace Silver\nP:AAB\n%source The Colorado Cookbook p212 (pdf 215)\n%style (Latin - Rock)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AAB 8+8+8 (book: solo form is always AAB)\nM:4/4\nL:1/8\nK:Fm\nz4 zB BB |\nP:A\n|: \"Fm\"B(3B/B/B/ BB- B(3B/B/B/ BB- | B(3B/B/B/ BB- B(3B/B/B/ BB- | \"Eb7\"B8- | B4 z2 BB |\n\"Db7\"BB- B6 | \"Gm7/C\"z4 B3 B- | \"Fm\"B8 |1 z4 zB BB :|2\nz4 zB BB ||\nP:B\n\"Eb7\"B B2 B- B4- | B4 zB BB | \"Fm\"B B2 B- B4- | B4 zB BB |\n\"Eb7\"B B2 B- \"Db7\"B4 | \"C7#9\"z4 B3 B- | \"Fm\"B8- | B4 z4 |]\n\n%unsure [bars 1-2] sixteenth-triplet figures read as an eighth then a 16th triplet per beat"
+},
+{
+"id": "The_Colorado_Cookbook/216-sophisticated-lady",
+"book": "The Colorado Cookbook",
+"title": "Sophisticated Lady",
+"pdf": "216",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sophisticated Lady\nC:Duke Ellington\nP:AABC\n%source The Colorado Cookbook p213 (pdf 216)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Bbm\n\"F7b9\"B2 |\nP:A\n|: \"Bbm\"B4- BB BB | \"Gb7\"B2 \"F7\"B2 \"E7\"B2 \"Eb7\"BB | \"Abmaj7\"B4 zB BB | \"Ab7\"B2 \"G7\"B2 \"Gb7\"B2 \"F7\"BB |\n\"Bb7\"B4 zB BB | \"Bbm7\"(3BBB B4 \"Eb7\"B2 |1 \"Abmaj7\"B4 \"Db7\"z2 B2 | \"Cm7b5\"B4 \"F7b9\"z2 B2 :|2\n\"Abmaj7\"BB B6 | \"Am7\"z4 \"D7\"z4 ||\nP:B\n\"Gmaj7\"z B2 B B2 \"Em7\"BB- | \"Am7\"BB B2 \"D7\"B B2 B | \"Bm7b5\"B2 \"E7b9\"B6 | \"Am7\"BB \"D7b9\"B6 |\n\"Gmaj7\"z B2 B B2 \"Em7\"BB- | \"Am7\"BB B2 \"D7\"B B2 B | \"Gmaj7\"B3 \"G7alt/Db\"B/B/ \"Cm7\"BB B2 | \"Eb7\"BB \"Db7\"BB \"Cm7b5\"BB \"F7b9\"B2 ||\nP:C\n\"Bbm\"B4- BB BB | \"Gb7\"B2 \"F7\"B2 \"E7\"B2 \"Eb7\"BB | \"Abmaj7\"B4 zB BB | \"Ab7\"B2 \"G7\"B2 \"Gb7\"B2 \"F7\"BB |\n\"Bb7\"B4 zB BB | \"Bbm7\"(3BBB B4 \"Eb7\"B2 | \"Abmaj9\"BB B6 | \"Db7\"z2 \"Cm7\"z2 \"F7b9\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/217-spacemen",
+"book": "The Colorado Cookbook",
+"title": "Spacemen",
+"pdf": "217",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+2,
+4,
+6
+],
+"groups": [
+2,
+4,
+6
+],
+"text": "rhythm-section hits (x noteheads, \"RHY\": quarter, eighth) written as rests"
+},
+{
+"bars": [
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"groups": [
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"text": "slashes written as rests"
+},
+{
+"bars": [
+19,
+21,
+23
+],
+"groups": [
+19,
+21,
+23
+],
+"text": "rhythm-section hits written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Spacemen\nC:Clark Terry\nP:AABC\n%source The Colorado Cookbook p214 (pdf 217)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Bb\nzB BB |\nP:A\n|: \"Bbmaj7\"BB BB BB z2 | \"Cm7\"z2 z\"F7\"z zB BB | \"Bbmaj7\"BB BB BB z2 | \"Cm7\"z2 z\"F7\"z zB BB |\n\"Bb7\"BB BB BB z2 | \"Cm7\"z2 z\"F7\"z zB BB | \"Bb7\"BB BB \"F7\"BB BB |1 \"Bbmaj7\"B2 BB zB BB :|2\n\"Bbmaj7\"B2 BB z4 ||\nP:B\n\"D7\"z8 | z8 | \"G7\"z8 | z8 |\n\"C7\"z8 | z8 | \"F7\"z8 | z4 zB BB ||\nP:C\n\"Bbmaj7\"BB BB BB z2 | \"Cm7\"z2 z\"F7\"z zB BB | \"Bbmaj7\"BB BB BB z2 | \"Cm7\"z2 z\"F7\"z zB BB |\n\"Bb7\"BB BB BB z2 | \"Cm7\"z2 z\"F7\"z zB BB | \"Bb7\"BB BB \"F7\"BB BB | \"Bbmaj7\"B2 BB z4 |]\n\n%unsure [bars 2, 4, 6] rhythm-section hits (x noteheads, \"RHY\": quarter, eighth) written as rests\n%unsure [bars 10-16] slashes written as rests\n%unsure [bars 19, 21, 23] rhythm-section hits written as rests"
+},
+{
+"id": "The_Colorado_Cookbook/218-speak-low",
+"book": "The Colorado Cookbook",
+"title": "Speak Low",
+"pdf": "218",
+"form": "AABCD 16+16+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "rhythm-section hits (x noteheads) above the melody not transcribed; chords placed where printed over them. Solo changes on page 216 (same chords as head) not written out"
+},
+{
+"bars": [
+17,
+18
+],
+"groups": [
+17,
+18
+],
+"text": "second ending: F held while rhythm slashes play; chord Fmaj7 placed on beat 3 like the hits above"
+},
+{
+"bars": [
+25
+],
+"groups": [
+25
+],
+"text": "F looks like a half then E quarter (only 6 beats); tied so the bar adds up"
+},
+{
+"bars": [
+41,
+42
+],
+"groups": [
+41,
+42
+],
+"text": "solo break"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Speak Low\nC:Kurt Weill\nP:AABCD\n%source The Colorado Cookbook p215 (pdf 218)\n%style (Up Tempo)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABCD 16+16+8+8+8\n%unsure [general] rhythm-section hits (x noteheads) above the melody not transcribed; chords placed where printed over them. Solo changes on page 216 (same chords as head) not written out\nM:4/4\nL:1/8\nK:F\nB2 |\nP:A\n|: B4- \"Gm7\"B3- \"C7\"B | B4 (3B2B2B2 | B4- \"Gm7\"B3- \"C7\"B | B4 (3B2B2B2 |\n\"Gm7\"B4 (3B2B2B2 | \"C7\"B6 B2 | \"Am7\"B6 B2 | \"D7\"B6 B2 ||\nB4- \"Bbm7\"B3- \"Eb7\"B | B4 (3B2B2B2 | B4- \"Bbm7\"B3- \"Eb7\"B | B3 B (3B2B2B2 |\n\"Am7\"B4 \"D7\"(3B2B2B2 | \"Gm7\"B4 \"C7\"(3B2B2B2 |1 B4 \"Fmaj7\"B4- | B6 B2 :|2\nB4- \"Fmaj7\"B4- | B8 ||\nP:B\n\"Abmaj7\"B4 B2 B2 | B6 B2 | \"Db7#11\"B6 B2 | B8 |\n\"Ebmaj7\"B4 B2 B2 | B6 B2 | \"Bm7b5\"\"(Db7)\"B4- \"E7alt\"B2 B2 | \"Am7\"\"(C7)\"B4- \"D7\"B2 B2 ||\nP:C\nB4- \"Gm7\"B3- \"C7\"B | B4 (3B2B2B2 | B4- \"Gm7\"B3- \"C7\"B | B4 (3B2B2B2 |\n\"Gm7\"B4 (3B2B2B2 | \"C7\"B6 B2 | \"Am7\"B6 B2 | \"D7\"B6 B2 ||\nP:D\nB4- \"Bbm7\"B3- \"Eb7\"B | B4 (3B2B2B2 | B4- \"Bbm7\"B3- \"Eb7\"B | z B3 B2 B2 |\n\"Am7\"B2 B2 \"D7\"B3 B | \"Gm7\"B2 B2 \"C7\"B3 B | \"Fmaj7\"z8 | z8 |]\n\n%unsure [bars 17-18] second ending: F held while rhythm slashes play; chord Fmaj7 placed on beat 3 like the hits above\n%unsure [bar 25] F looks like a half then E quarter (only 6 beats); tied so the bar adds up\n%unsure [bars 41-42] solo break"
+},
+{
+"id": "The_Colorado_Cookbook/220-speak-no-evil",
+"book": "The Colorado Cookbook",
+"title": "Speak No Evil",
+"pdf": "220",
+"form": "AABC 14+14+8+14",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+9,
+10
+],
+"groups": [
+9,
+10
+],
+"text": "two-voice chord melody; Cm and Bbm placed where printed (beats 4 and 3)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Speak No Evil\nC:Wayne Shorter\nP:AABC\n%source The Colorado Cookbook p217 (pdf 220)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 14+14+8+14\nM:4/4\nL:1/8\nK:C\nzB BB |\nP:A\n|: \"Cm\"B8- | \"Dbmaj7#11\"B8- | \"Cm\"B8- | \"Dbmaj7#11\"B4 zB BB |\n\"Cm\"B8- | \"Dbmaj7#11\"B8- | \"Cm\"B8- | \"Dbmaj7#11\"B4 \"Ebm\"B3 B- |\n\"Em\"B2 BB B2 \"Cm\"BB- | \"Dm\"B2 BB \"Bbm\"B2 BB- | \"A7#11\"B8- | \"Bbm\"B8- |\n\"A7#11\"B8- |1 \"Bbm\"B4 zB BB :|2 \"Bbm\"B8 ||\nP:B\n\"Am7b5\"BB B2 zB BB | \"Ab7\"z2 zB BB z2 | \"Gm\"BB B2 zB BB | \"Gb7\"z2 zB BB z2 |\n\"Fm\"BB B2 zB BB | \"Bb7alt\"z2 zB BB z2 | \"D/Eb\"B3 B z4 | \"Dbmaj7#11\"z4 zB BB ||\nP:C\n\"Cm\"B8- | \"Dbmaj7#11\"B8- | \"Cm\"B8- | \"Dbmaj7#11\"B4 zB BB |\n\"Cm\"B8- | \"Dbmaj7#11\"B8- | \"Cm\"B8- | \"Dbmaj7#11\"B4 \"Ebm\"B3 B- |\n\"Em\"B2 BB B2 \"Cm\"BB- | \"Dm\"B2 BB \"Bbm\"B2 BB- | \"A7#11\"B8- | \"Bbm\"B8- |\n\"A7#11\"B8- | \"Bbm\"B8 |]\n\n%unsure [bars 9-10] two-voice chord melody; Cm and Bbm placed where printed (beats 4 and 3)"
+},
+{
+"id": "The_Colorado_Cookbook/221-just-squeeze-me",
+"book": "The Colorado Cookbook",
+"title": "(Just) Squeeze Me",
+"pdf": "221",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:(Just) Squeeze Me\nC:Duke Ellington\nP:AABC\n%source The Colorado Cookbook p218 (pdf 221)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:F\nP:A\n|: \"Fmaj7\"B2 B2 \"Gm7\"B B2 B- | \"Am7\"B3 B- \"Gm7\"B4 | \"Fmaj7\"zB B2 \"Gm7\"B B2 B- | \"Am7\"B3 B- \"D7\"B3 B- |\n\"Gm7\"B3 B- B4 | \"C7\"z B3 B2 B2 | \"Fmaj7\"B3 B- B4 |1 \"Gm7\"z4 \"C7\"z4 :|2\n\"Fmaj7\"z8 ||\nP:B\n\"F7\"(3BBB BB \"Cm7\"B/B/B- B2 | \"F7\"(3BBB BB \"Cm7\"B/B/B- B2 | \"Bbmaj7\"(3BBB BB BB BB- | B8 |\n\"G7\"(3BBB BB \"Dm7\"BB B2 | \"G7\"(3BBB BB \"Dm7\"BB B2 | \"Gm7\"B4 B3 B | \"C7\"B B2 B- B2 zB ||\nP:C\n\"Fmaj7\"B2 B2 \"Gm7\"B B2 B- | \"Am7\"B3 B- \"Gm7\"B4 | \"Fmaj7\"zB B2 \"Gm7\"B B2 B- | \"Am7\"B3 B- \"D7\"B3 B- |\n\"Gm7\"B3 B- B4 | \"C7\"z B3 B2 B2 | \"Fmaj7\"B3 B- B4 | \"Gm7\"z4 \"C7\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/222-star-dust",
+"book": "The Colorado Cookbook",
+"title": "Star Dust",
+"pdf": "222",
+"form": "AA 16+16 (with 1st/2nd endings)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form letters: only one boxed A printed; repeat with endings, form inferred"
+},
+{
+"bars": [
+21
+],
+"groups": [
+20
+],
+"text": "chord placement (Ebm7 Eo7 Fm7 Bbm7 across a tied half) guessed"
+},
+{
+"bars": [
+26
+],
+"groups": [
+25
+],
+"text": "D07 read as Dm7b5 (slashed 0); placement of Dm7b5/G7 in last beats guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Star Dust\nC:Hoagy Carmichael\nP:AA\n%source The Colorado Cookbook p219 (pdf 222)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AA 16+16 (with 1st/2nd endings)\n%unsure [form] form letters: only one boxed A printed; repeat with endings, form inferred\nM:4/4\nL:1/8\nK:Db\n%intro\n|: \"Dbmaj7\"zB BB BB BB | \"Gb7#11\"BB B6 | \"F7b9\"BB BB BB BB | \"Bb7\"B8 |\n\"Ebm7\"z2 BB \"Ab7\"BB BB | \"Fm7\"B2 BB \"Bbm7\"B4 |1 \"Gm7\"B2 BB \"C7\"BB BB | \"Ebm7\"B2 B2 \"Ab7\"B4 :|2\n\"Ebm7\"zB BB \"Ab7\"BB BB | \"Dbmaj7\"B4 \"Db7\"zB BB |]\nP:A\n|: \"Gbmaj7\"B2 B2 B2 B2 | B2 B2 B2 B2 | \"Gbm(maj7)\"B8 | \"Gbm7\"BB BB \"Cb7b9\"B3 B |\n\"Dbmaj7\"B2 B2 B4 | \"Fm7\"BB BB \"Bb7\"B4 | \"Ebm7\"zB BB \"Bb7\"BB BB | \"Ebm7\"B6 BB |1 \"Ab7\"B2 B2 B4 | \"Ebm7\"z2 BB \"Ab7\"BB BB | \"Dbmaj7\"B4 \"Ebm7\"B2- \"Eo7\"B2- | \"Fm7\"B4 \"Bbm7\"z2 B2 |\n\"Eb9\"BB BB B2 B2 | \"Bbm7\"B2 BB \"Eb7\"B B2 B | \"Ab7\"B2 B2 \"Ebm7\"BB BB | \"Ab7\"B6 \"Dm7b5\"B\"G7\"B :|2\n\"Gbm7\"B2 B2 B4- | \"Cb7b9\"B4 z2 BB | \"Dbmaj7\"B2 B2 \"Bbm7\"B2 B2 | \"Fm7\"B6 \"Bb7b9\"B2 |\n\"Ebm7\"BB BB B4 | \"Ab7\"zB BB BB BB | \"Dbmaj7\"B8 | \"Abm7\"z4 \"Db7b9\"z4 |]\n\n%unsure [bar 21] chord placement (Ebm7 Eo7 Fm7 Bbm7 across a tied half) guessed\n%unsure [bar 26] D07 read as Dm7b5 (slashed 0); placement of Dm7b5/G7 in last beats guessed"
+},
+{
+"id": "The_Colorado_Cookbook/223-star-eyes",
+"book": "The Colorado Cookbook",
+"title": "Star Eyes",
+"pdf": "223",
+"form": "AABC 8+8+8+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Star Eyes\nC:Gene De Paul\nP:AABC\n%source The Colorado Cookbook p220 (pdf 223)\n%style (Latin)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+12\nM:4/4\nL:1/8\nK:Eb\n%intro vamp\n|: B2 z2 B2 B2 | B2 zB- B B2 B :|\nP:A\n|: \"Ebmaj7\"B4 B4 | \"Fm7\"z2 BB \"Bb7\"BB BB | \"Ebmaj7\"B4 B4 | \"Ebm7\"z2 BB \"Ab7\"BB BB |\n\"Dbmaj7\"B4 B4 | \"Gm7b5\"z2 BB \"C7#9\"BB BB | \"Fmaj7\"B4- B3 B |1 \"Fm7b5\"BB BB \"Bb7\"B4 :|2\n\"Fm7b5\"BB BB \"Bb7\"B2 \"A7\"B2 |\nP:B\n\"Abmaj7\"B2 B2 B3 B | B6 B2 | \"Abm7\"B3 B BB BB | \"Db7\"B8 |\n\"Gbmaj7\"B3 B BB BB | B6 BB | \"Fm7\"B B3 B2 B2 | \"Bb7\"B8 |\nP:C\n\"Ebmaj7\"B4 B4 | \"Fm7\"z2 BB \"Bb7\"BB BB | \"Ebmaj7\"B4 B4 | \"Ebm7\"z2 BB \"Ab7\"BB BB |\n\"Dbmaj7\"B4 B4 | \"Gm7b5\"z2 BB \"C7#9\"BB BB | \"Fmaj7\"B4- B3 B | \"Fm7b5\"BB BB \"Bb7\"B2 B2 |\n\"Eb7\"B6 \"D7\"B2 | \"Db7\"B4 \"C7b9\"B4 | \"Fm7\"z2 (3B2\"Fm7/Bb\"B2B2 B2 | \"Ebmaj7\"B8 |]\n%solos D.S. al Coda\n%coda\n|: B2 z2 B2 B2 | B2 zB- B B2 B :| B2 z2 z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/224-stella-by-starlight",
+"book": "The Colorado Cookbook",
+"title": "Stella by Starlight",
+"pdf": "224",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+1,
+3,
+5,
+7,
+25,
+27,
+29
+],
+"groups": [
+1,
+3,
+5,
+7,
+25,
+27,
+29
+],
+"text": "chords sit on rhythm-section hits (beat 3, and of 4) over a held melody note; melody split with ties to place them"
+},
+{
+"bars": [
+13
+],
+"groups": [
+13
+],
+"text": "alternate chords A7b9 / Dm11 printed above Fmaj7 in bar 13, given in parentheses"
+},
+{
+"bars": [],
+"groups": [],
+"text": "pdf 225 is a solo-changes page (slashes only, last row Dbm7 Gb7 Cm7 F7 differs from head); not transcribed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Stella by Starlight\nC:Victor Young\nP:ABCD\n%source The Colorado Cookbook p221 (pdf 224)\n%style (Medium to up tempo)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:Bb\nB4 ||\nP:A\n\"Em7\"B4- B3- \"A7b9\"B | z2 B2 B2 B2 | \"Cm7\"B4- B3- \"F7\"B | z4 B4 |\n\"Fm7\"B4- B3- \"Bb7\"B | z2 B2 B2 B2 | \"Ebmaj7\"B4- B3- \"Ab7#11\"B | B4 z2 B2 ||\nP:B\n\"Bbmaj7\"B2 B2 B2 B2 | \"Em7b5\"B6 \"A7b9\"B2 | \"Dm7\"B2 B2 B4- | \"Bbm7\"B6 \"Eb7\"B2 |\n\"Fmaj7\"\"(A7b9)\"B2 B2 \"(Dm11)\"B2 B2 | \"Gm7\"B4 \"C7\"B2 B2 | \"Am7b5\"B2 B2 B4 | \"D7b9\"z4 B4 ||\nP:C\n\"G7#9\"B8 | z2 B2 B2 B2 | \"Cm\"B8 | z2 B2 (3B2B2B2 |\n\"Ab7#11\"B2 B6 | z2 B2 B2 B2 | \"Bbmaj7\"B8 | z4 B4 ||\nP:D\n\"Em7\"B4- B3- \"A7b9\"B | z2 B2 B2 B2 | \"Dm7b5\"B4- B3- \"G7b9\"B | z2 B2 B2 B2 |\n\"Cm7b5\"B4- B3- \"F7b9\"B | z2 B2 B2 B2 | \"Bb\"B2 z2 z4 | z8 |]\n\n%unsure [bars 1, 3, 5, 7, 25, 27, 29] chords sit on rhythm-section hits (beat 3, and of 4) over a held melody note; melody split with ties to place them\n%unsure [bar 13] alternate chords A7b9 / Dm11 printed above Fmaj7 in bar 13, given in parentheses\n%unsure [general] pdf 225 is a solo-changes page (slashes only, last row Dbm7 Gb7 Cm7 F7 differs from head); not transcribed"
+},
+{
+"id": "The_Colorado_Cookbook/226-sticks",
+"book": "The Colorado Cookbook",
+"title": "Sticks",
+"pdf": "226",
+"form": "12-bar blues head with drum-fill breaks; solos on 12-bar F blues",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sticks\nC:Cannonball Adderley\n%source The Colorado Cookbook p223 (pdf 226)\n%style (Blues Shuffle)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues head with drum-fill breaks; solos on 12-bar F blues\nM:4/4\nL:1/8\nK:F\n\"F7\"B\"Eb7\"B |: \"F7\"B2 z2 z2 zB | \"Bb7\"z8 | \"F7\"z2 BB BB- B2 |\nBB- B2 (3BBB BB | \"Bb7\"B2 z2 z2 zB | z8 | \"F7\"z2 BB BB- B2 |\nBB- B2 (3BBB BB | \"Bb7\"B2 z \"B7\"B2 z \"C7\"B2 | \"^drum fill\"z8 | \"Bb7\"B2 z \"B7\"B2 z \"C7\"B2 |\n\"^drum fill\"z8 | \"Bb7\"B2 \"^drum fill\"z2 z2 \"C7\"B2 |1 \"^drum fill\"z4 z2 \"F7\"B\"Eb7\"B :|2 \"^drum fill\"z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/227-stolen-moments",
+"book": "The Colorado Cookbook",
+"title": "Stolen Moments",
+"pdf": "227",
+"form": "AB 8+8 (16-bar head); solos on 12-bar C minor blues",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4,
+5
+],
+"groups": [
+0,
+1,
+2,
+3,
+4
+],
+"text": "intro is rhythm slashes only; written as rests with chords"
+},
+{
+"bars": [
+17
+],
+"groups": [
+16
+],
+"text": "last beat grouping (eighth + two low notes, tie) read loosely"
+},
+{
+"bars": [
+19,
+20
+],
+"groups": [
+18,
+19
+],
+"text": "bar 19 beats 3-4 marked BREAK; G7alt is a rhythm-section hit under the held note"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Stolen Moments\nC:Oliver Nelson\nP:AB\n%source The Colorado Cookbook p224 (pdf 227)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+8 (16-bar head); solos on 12-bar C minor blues\nM:4/4\nL:1/8\nK:Cm\n%intro\n|: \"Cm7\"z8 | \"Dm7/C\"z8 | \"Ebmaj7/C\"z8 |1 \"Dm7/C\"z8 :|2\n\"Dm7/C\"z8 ||\nP:A\n|: \"Cm7\"zB BB z B2 B | \"Cm6\"BB- BB/B/ BB- B2 | \"Cm7\"zB BB z B2 B | \"Cm6\"BB- B2 B4 |\n\"Fm7\"zB BB z B2 B | \"Fm6\"BB- B2 BB- B2 | \"Cm7\"zB BB z B2 B | \"Cm6\"BB- B2 B2 BB ||\nP:B\n\"Dsus\"BB BB \"Ebsus\"BB BB- | \"Esus\"BB BB \"Fsus\"BB BB- | \"Gbsus\"BB BB \"Fsus\"BB BB- | \"Esus\"BB BB B\"Ebsus\"B BB- |\n\"Dm\"BB BB \"Ebm\"BB BB- | \"Em\"BB/B/ \"Fm\"BB zB BB | B2 BB \"G7alt\"B4- | B6 z2 :|\n\n%unsure [bars 1-5] intro is rhythm slashes only; written as rests with chords\n%unsure [bar 17] last beat grouping (eighth + two low notes, tie) read loosely\n%unsure [bars 19-20] bar 19 beats 3-4 marked BREAK; G7alt is a rhythm-section hit under the held note"
+},
+{
+"id": "The_Colorado_Cookbook/228-stompin-at-the-savoy",
+"book": "The Colorado Cookbook",
+"title": "Stompin' at the Savoy",
+"pdf": "228",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+1
+],
+"groups": [
+0
+],
+"text": "lead-in bar: melody rests; lower staff (bass/backing figure) not transcribed"
+},
+{
+"bars": [
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11
+],
+"groups": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10
+],
+"text": "chords printed under the second (backing) staff; placed on the melody bars at beats 1/3"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Stompin' at the Savoy\nC:Benny Goodman & Chick Webb\nP:AABC\n%source The Colorado Cookbook p225 (pdf 228)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Db\n%intro\nz4 \"Ab7\"z4 ||\nP:A\n|: \"Dbmaj7\"zB BB B2 BB- | B4 \"Dbmaj7\"z2 \"Ab7\"z2 | \"Dbmaj7\"zB BB \"Gb7\"B2 BB- | \"Fm7\"B4 \"Bb7b9\"z4 |\n\"Ebm7\"zB BB B2 BB- | \"Ab7\"B4 z4 |1 \"Dbmaj7\"z4 \"Bb7\"z4 | \"Ebm7\"z4 \"Ab7\"z4 :|2\n\"Dbmaj7\"z8 | \"Dbmaj7\"z4 \"Db7\"z4 ||\nP:B\n\"Gb7\"B B3 \"G7\"B B3 | \"Gb7\"BB- B4 z2 | \"B7\"B B3 \"D7\"B B3 | \"B7\"BB- B4 z2 |\n\"E7\"B B3 \"F7\"B B3 | \"E7\"BB- B4 zB | \"Em7\"BB BB- \"A7\"B2 z2 | \"Ebm7\"BB BB \"Ab7\"z B3 |\nP:C\n\"Dbmaj7\"zB BB B2 BB- | B4 \"Dbmaj7\"z2 \"Ab7\"z2 | \"Dbmaj7\"zB BB \"Gb7\"B2 BB- | \"Fm7\"B4 \"Bb7\"z4 |\n\"Ebm7\"zB BB B2 BB- | \"Ab7\"B4 B3 B- | \"Dbmaj7\"B8 | z8 |]\n\n%unsure [bar 1] lead-in bar: melody rests; lower staff (bass/backing figure) not transcribed\n%unsure [bars 2-11] chords printed under the second (backing) staff; placed on the melody bars at beats 1/3"
+},
+{
+"id": "The_Colorado_Cookbook/229-strollin",
+"book": "The Colorado Cookbook",
+"title": "Strollin'",
+"pdf": "229",
+"form": "AB 16+16 (plus 4-bar coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+28
+],
+"groups": [
+27
+],
+"text": "beamed 16th group with triplet bracket read as a quarter-note triplet so the bar adds up"
+},
+{
+"bars": [],
+"groups": [],
+"text": "after bar 32 an empty bar marked SOLOS; after final solo D.C. al Coda"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Strollin'\nC:Horace Silver\nP:AB\n%source The Colorado Cookbook p226 (pdf 229)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16 (plus 4-bar coda)\nM:4/4\nL:1/8\nK:Db\nP:A\n\"Dbmaj7\"z2 zB B B2 B | z B3 B2 B2 | \"Em7\"B6 \"A7\"BB- | \"Ebm7\"B4- \"Ab7\"B4 |\n\"Dbmaj7\"z2 zB B B2 B | z B3 B2 B2 | \"Abm7\"B6 \"Db7\"BB- | \"Gm7\"B6 \"C7\"BB- ||\n\"Fm\"B4 B2 B2 | \"Bbm\"B2 B4 B2 | \"Ebm7\"B4 B B2 B- | \"Ab7\"B8 |\n\"Dbmaj7\"z2 zB B B2 B | \"Bbm7\"z B3- B2 BB- | \"Eb7#11\"B4- BB BB- | \"D7#9\"B8 ||\nP:B\n\"Dbmaj7\"z2 zB B B2 B | z B3 B2 B2 | \"Em7\"B6 \"A7\"BB- | \"Ebm7\"B4- \"Ab7\"B4 |\n\"Dbmaj7\"z2 zB B B2 B | z B3 B2 B2 | \"Abm7\"B6 \"Db7\"BB- | \"Gm7\"B6 \"C7\"BB- ||\n\"Fm\"B4 B2 B2 | \"Bbm7\"B2 B4 BB- | \"Eb7#11\"B4 BB BB- | \"F#m7\"B2 (3BBB B2 \"B7\"z2 |\n\"Fm7\"z B3 \"Bb7\"B2 B2 | \"Ebm7\"BB BB \"Ab7\"z B3 || !coda!\"Dbmaj7\"B2 z2 \"Fm7\"B4 | \"Ebm7\"BB BB \"Ab7\"z B3 ||\n%coda\n\"Dbmaj7\"B2 zB- \"Gb7#11\"BB BB | \"Fm7\"z2 zB- \"Bb7#9\"BB BB | \"Ebm7\"z2 zB- \"Ab7#9\"B3 B- | \"Dbmaj7#11\"!fermata!B8 |]\n\n%unsure [bar 28] beamed 16th group with triplet bracket read as a quarter-note triplet so the bar adds up\n%unsure [general] after bar 32 an empty bar marked SOLOS; after final solo D.C. al Coda"
+},
+{
+"id": "The_Colorado_Cookbook/230-sugar",
+"book": "The Colorado Cookbook",
+"title": "Sugar",
+"pdf": "230",
+"form": "A 16 (repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "only one lettered section (A), 16 bars with 1st/2nd endings, played twice"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sugar\nC:Stanley Turrentine\nP:A\n%source The Colorado Cookbook p227 (pdf 230)\n%style (Jazz Shuffle)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 16 (repeated)\n%unsure [form] only one lettered section (A), 16 bars with 1st/2nd endings, played twice\nM:4/4\nL:1/8\nK:Cm\n%pickup\nz2 zB B B2 B- |:\nP:A\n\"Cm\"B3 B (3B/B/B/B BB- | \"Dm7b5\"B3 B \"G7#9\"BB BB | \"Cm\"B8 | \"Dm7b5\"z2 zB \"G7#9\"B B2 B- |\n\"Cm\"B3 B (3B/B/B/B BB- | \"Cm\"B3 B BB BB- | \"Dm7b5\"B8 | \"G7#9\"z2 zB B B2 B- ||\n\"Cm\"B3 B (3B/B/B/B BB- | \"Gb7\"B3 B (3B/B/B/B BB- | \"Fm7\"B3 B (3B/B/B/B BB- | \"Eb7\"B3 B (3B/B/B/B BB- |\n\"D7#9\"B3 B (3B/B/B/B BB- | \"G7#9\"B3 B (3B/B/B/B BB- | \"Ab7#11\"B8 |1 \"Ab7#11\"z2 zB B B2 B- :|2 \"Ab7#11\"z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/231-summertime",
+"book": "The Colorado Cookbook",
+"title": "Summertime",
+"pdf": "231",
+"form": "AB 8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+8
+],
+"groups": [
+7
+],
+"text": "two quarter notes in parentheses after this bar, marked ON CUE (pickup into A), not written"
+},
+{
+"bars": [
+13,
+14
+],
+"groups": [
+12,
+13
+],
+"text": "alternate chords G-7 C7 / Fmaj7 Bbmaj7 printed above G- ; placed as (alt) on beats 1 and 3"
+},
+{
+"bars": [],
+"groups": [],
+"text": "then SOLOS on A & B, D.S. al Coda; coda is the vamp to fade"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Summertime\nC:George Gershwin\nP:AB\n%source The Colorado Cookbook p228 (pdf 231)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+8\nM:4/4\nL:1/8\nK:Dm\n%intro (horn intro)\n|: B4 B4 | B4 B4 | z B2 B B2 B2 | B2 BB- B4 :|\n%vamp (segno)\n|: \"Dm\"B4 \"Dm(maj7)\"B4 | \"Dm7\"B4 \"Dm6\"B4 | \"Dm\"z B2 B \"Dm(maj7)\"B2 B2 | \"Dm7\"B2 B\"Dm6\"B- B4 :|\nP:A\n\"Dm\"B8 | z2 BB BB B2 | B4 B4- | B4 B2 B2 |\n\"Gm\"\"(Gm7)\"B4 \"(C7)\"B4 | \"Gm\"\"(Fmaj7)\"z2 BB \"(Bbmaj7)\"BB B2 | \"Em7b5\"B8- | \"A7\"B4 B2 B2 ||\nP:B\n\"Dm\"B8 | z2 BB BB B2 | B4 B4- | \"Gm7\"B4 \"C7\"z2 B2 |\n\"Fmaj7\"B2 BB \"Bb7\"B2 B2 | \"Em7b5\"B2 B4 \"A7\"B2 || !coda!\"Dm\"B8- | \"Em7b5\"B4 \"A7\"z4 ||\n%coda (vamp to fade)\n|: \"Dm\"B4 \"Dm(maj7)\"B4 | \"Dm7\"B4 \"Dm6\"B4 | \"Dm\"z B2 B \"Dm(maj7)\"B2 B2 | \"Dm7\"B2 B\"Dm6\"B- B4 :|\n\n%unsure [bar 8] two quarter notes in parentheses after this bar, marked ON CUE (pickup into A), not written\n%unsure [bars 13-14] alternate chords G-7 C7 / Fmaj7 Bbmaj7 printed above G- ; placed as (alt) on beats 1 and 3\n%unsure [general] then SOLOS on A & B, D.S. al Coda; coda is the vamp to fade"
+},
+{
+"id": "The_Colorado_Cookbook/232-sunny-side-of-the-street",
+"book": "The Colorado Cookbook",
+"title": "(On the) Sunny Side of the Street",
+"pdf": "232",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:(On the) Sunny Side of the Street\nC:Jimmy McHugh\nP:AABC\n%source The Colorado Cookbook p229 (pdf 232)\n%style (Medium Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:C\nz6 BB |:\nP:A\n\"C6/9\"B2 B2 B2 B2 | \"Bm7\"B6 \"E7\"BB | \"Fmaj7\"B2 B2 B2 B2 | \"Bm7b5\"B4 \"E7\"B4 |\n\"Am7\"B2 B2 B2 B2 | \"D7\"B6 BB | \"Dm7\"B2 BB \"G7\"zB B2 |1 \"Em7\"B4- \"A7\"B2 \"Dm7\"B\"G7\"B :|2\n\"C6/9\"B2 B2 B2 B2 ||\nP:B\n\"Gm7\"B4 B2 B2 | \"C7\"B4 B2 B2 | \"Fmaj7\"B4 \"C7\"B2 B2 | \"F6/9\"B2- \"F7/C\"B2- \"E7/B\"B2 \"Eb7/Bb\"B2 |\n\"Am7\"B4 B2 B2 | \"D7\"B6 B2 | \"Dm7\"B2 B2 z2 B2 | \"Gsus\"B2 B2 \"G7\"z2 BB ||\nP:C\n\"C6/9\"B2 B2 B2 B2 | \"Bm7\"B6 \"E7\"BB | \"Fmaj7\"B2 B2 B2 B2 | \"Bm7b5\"B4 \"E7\"B4 |\n\"Am7\"B2 B2 B2 B2 | \"D7\"B6 BB | \"Dm7\"B2 BB \"G7\"zB B2 | \"C6/9\"B4 z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/233-t-n-t",
+"book": "The Colorado Cookbook",
+"title": "T.N.T.",
+"pdf": "233",
+"form": "AB 12+12 (two blues choruses); solos on Bb blues, D.C. al Fine",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:T.N.T.\nC:\"Tiny\" Kahn\nP:AB\n%source The Colorado Cookbook p230 (pdf 233)\n%style (Medium Blues)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 12+12 (two blues choruses); solos on Bb blues, D.C. al Fine\nM:4/4\nL:1/8\nK:Bb\nz7 B ||\nP:A\n\"Bb7\"B2 BB B2 zB | \"Eb7\"B2 BB B2 zB | \"Bb7\"B2 BB BB BB | BB BB zB zB- |\n\"Eb7\"B2 BB BB z2 | z2 zB zB zB- | \"Bb7\"B2 BB BB z2 | z4 z2 zB |\n\"Cm7\"B2 BB B2 zB | \"F7\"B2 BB B2 zB | \"Bb7\"B2 BB BB BB | \"F7\"BB BB zB zB- ||\nP:B\n\"Bb7\"B2 BB BB z2 | \"Eb7\"z2 zB zB zB- | \"Bb7\"B2 BB BB z2 | z4 z2 zB |\n\"Eb7\"B2 BB B2 zB | B2 BB B2 zB | \"Bb7\"B2 BB BB BB | BB BB zB zB- |\n\"Cm7\"B2 BB BB z2 | \"F7\"z2 zB zB zB- | \"Bb7\"B2 BB BB BB | \"Cm7\"BB BB \"F7\"BB \"Bb7\"BB ||\n"
+},
+{
+"id": "The_Colorado_Cookbook/234-take-the-a-train",
+"book": "The Colorado Cookbook",
+"title": "Take the 'A' Train",
+"pdf": "234",
+"form": "AABA 8+8+8+8 (third A lettered C)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Take the 'A' Train\nC:Duke Ellington\nP:AABA\n%source The Colorado Cookbook p231 (pdf 234)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (third A lettered C)\nM:4/4\nL:1/8\nK:C\n%intro (play 4 times)\n|: \"D7alt\"z B3 B4 | B4 BB z2 :|\nP:A\n|: \"Cmaj7\"B8 | z B3 B2 B2 | \"D7alt\"BB- B6- | B8 |\n\"Dm7\"B8 | \"G7\"BB BB BB BB | \"Cmaj7\"BB- B6- |1 \"Dm7\"B4- \"G7\"B4 :|2\n\"Gm7\"B4 \"C7\"B4 ||\nP:B\n\"Fmaj7\"BB- B6 | BB- B2 B2 B2 | BB- B6- | B8 |\n\"D7\"BB- B6 | B2 B2 B2 B2 | \"Dm7\"BB- B6- | B4 \"G7b9\"B4 ||\nP:A\n\"Cmaj7\"B8 | z B3 B2 B2 | \"D7alt\"BB- B6- | B8 |\n\"Dm7\"B8 | \"G7\"BB BB BB BB | \"Cmaj7\"BB- B6- | \"Dm7\"B4- \"G7\"B4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/235-tangerine",
+"book": "The Colorado Cookbook",
+"title": "Tangerine",
+"pdf": "235",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+2
+],
+"groups": [
+1
+],
+"text": "last two notes look like 16ths (A F#) after a dotted half; written as eighths so the bar adds up"
+},
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "\"PLAY\" marking; diamond notehead in bar 8 read as a half note"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Tangerine\nC:Victor Schertzinger\nP:ABCD\n%source The Colorado Cookbook p232 (pdf 235)\n%style (Samba)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:F\n%intro (horn intro, small notes)\nz4 B2 B2 || B2 B2 BB BB- | B6 BB | B2 B2 BB BB- |\nB6 B2 | B2 B2 B2 B2 | B4 B3 B | \"Am7\"z4 B3 \"D7b9\"B- |\nB4 B2 B2 ||\nP:A\n\"Gm9\"B8- | \"C7\"B4 B2 B2 | \"Fmaj7\"B2 B2 \"Bbmaj7\"B4- | \"Am7\"B4 \"D7b9\"B2 B2 |\n\"Gm7\"B2 B2 \"C7\"B2 B2 | \"Gm7\"B2 B2 \"C7\"B2 B2 | \"Fmaj7\"B8- | \"Am7b5\"B4 \"D7#9\"B2 B2 ||\nP:B\n\"Gm9\"B8- | \"C7\"B4 B2 B2 | \"Fmaj7\"B2 B2 B4- | \"Bm7b5\"B4 \"E7#9\"B2 B2 |\n\"Amaj7\"B2 B2 B2 B2 | \"Bm7\"B2 B2 \"E7\"B2 B2 | \"A7\"B8- | B4 \"D7b9\"B2 B2 ||\nP:C\n\"Gm9\"B8- | \"C7\"B4 B2 B2 | \"Fmaj7\"B2 B2 \"Bbmaj7\"B4- | \"Am7\"B4 \"D7b9\"B2 B2 |\n\"Gm7\"B2 B2 \"C7\"B2 B2 | \"Gm7\"B2 B2 \"C7\"B2 B2 | \"Eb7\"B8- | B4 \"D7#9\"B2 B2 ||\nP:D\n\"Gm9\"B2 B2 (3B2B2B2 | \"Em7b5\"B6 \"A7#9\"BB | \"Dm7\"B2 B2 (3B2B2B2 | \"G7\"B6 B2 |\n\"Gm7\"B2 B2 B2 B2 | \"C7\"B4 B4 | \"Fmaj7\"B8- | B4 \"D7#9\"z4 |]\n\n%unsure [bar 2] last two notes look like 16ths (A F#) after a dotted half; written as eighths so the bar adds up\n%unsure [bars 7-8] \"PLAY\" marking; diamond notehead in bar 8 read as a half note"
+},
+{
+"id": "The_Colorado_Cookbook/236-teach-me-tonight",
+"book": "The Colorado Cookbook",
+"title": "Teach Me Tonight",
+"pdf": "236",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths inferred: A has 1st/2nd endings, B and C lettered"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Teach Me Tonight\nC:Gene De Paul\nP:AABC\n%source The Colorado Cookbook p233 (pdf 236)\n%style (Slow Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\n%unsure [form] section lengths inferred: A has 1st/2nd endings, B and C lettered\nM:4/4\nL:1/8\nK:C\nz2 \"Dm7\"BB \"G7\"BB \"G7#5\"BB |:\nP:A\n\"Cmaj7\"BB B2- \"F9\"B4 | \"Em7\"z2 BB \"A7\"BB BB | \"Dm7\"BB B2- \"G7\"B4 | \"Em7b5\"z2 BB \"A7b9\"BB BB |\n\"Dm7\"BB B6 |1 \"Dm7/G\"B2 B4 \"G7\"B2 | \"Cmaj7\"B4- \"A7\"B4 | \"Dm7\"z2 BB \"G7\"BB \"G7#5\"BB :|2\n\"Dm7/G\"B2 B4 \"G7\"B2 | \"Cmaj7\"B4- \"F7\"B4 | \"C\"z2 B2 \"Em7\"B2 \"Ebm7\"B2 ||\nP:B\n\"Dm7\"B2 B2 \"G7\"B3 B | \"Cmaj7\"B2 B2- \"A7b9\"B2 BB | \"Dm7\"B2 B2 \"G7\"B3 B | \"Cmaj7\"B4- BB BB |\n\"F#m7b5\"B2 B2 \"B7b9\"B2 B2 | \"Em7\"B2 B4 \"A7\"B2 | \"Am7\"BB BB \"D7\"B3 B | \"Dm7\"B2 BB \"G7\"BB \"G7#5\"BB ||\nP:C\n\"Cmaj7\"BB B2- \"F9\"B4 | \"Em7\"z2 BB \"A7\"BB BB | \"Dm7\"BB B2- \"G7\"B4 | \"Em7b5\"z2 BB \"A7b9\"BB BB |\n\"Dm7\"BB B6 | \"Dm7/G\"B2 B4 \"G7\"B2 | \"Cmaj7\"B4- \"A7b9\"B4- | \"Dm7\"B4 \"G7\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/237-tee-pee-time",
+"book": "The Colorado Cookbook",
+"title": "Tee Pee Time",
+"pdf": "237",
+"form": "AABC 12+12+8+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "inferred from letters and endings (A with 1st/2nd endings)"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"groups": [
+16,
+17,
+18,
+19,
+20,
+21,
+22
+],
+"text": "rhythm slashes (blowing changes) written as rests with chords"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Tee Pee Time\nC:Clark Terry\nP:AABC\n%source The Colorado Cookbook p234 (pdf 237)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 12+12+8+12\n%unsure [form] inferred from letters and endings (A with 1st/2nd endings)\nM:4/4\nL:1/8\nK:Bb\nz4 zB BB- |:\nP:A\n\"Bb7\"B2 B2 B2 B2 | \"Eb7\"B2 B2 B2 BB | \"Bb7\"BB z2 z4 | z4 z2 BB |\n\"Eb7\"BB z2 z4 | z4 BB BB | \"Bb7\"BB z2 z4 | z8 |\n\"Cm7\"z2 B4 B2 |1 \"F7\"B4 B2 BB- | \"Bb7\"B8 | \"Cm7\"z4 \"F7\"zB BB- :|2\n\"F7\"B4 B2 BB- | \"Bb7\"B8- | B4 z4 ||\nP:B\n\"D7\"z8 | z8 | \"G7\"z8 | z8 |\n\"C7\"z8 | z8 | \"F7\"z8 | z4 zB BB- ||\nP:C\n\"Bb7\"B2 B2 B2 B2 | \"Eb7\"B2 B2 B2 BB | \"Bb7\"BB z2 z4 | z4 z2 BB |\n\"Eb7\"BB z2 z4 | z4 BB BB | \"Bb7\"BB z2 z4 | z8 |\n\"Cm7\"z2 B4 B2 | \"F7\"B4 B2 BB- | \"Bb7\"B8- | \"Cm7\"B4 \"F7\"z4 |]\n\n%unsure [bars 17-23] rhythm slashes (blowing changes) written as rests with chords"
+},
+{
+"id": "The_Colorado_Cookbook/238-that-s-what-i-m-talkin-bout",
+"book": "The Colorado Cookbook",
+"title": "That's What I'm Talkin' 'Bout",
+"pdf": "238",
+"form": "blues 12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no letters printed; 12-bar blues inferred"
+},
+{
+"bars": [
+10
+],
+"groups": [
+9
+],
+"text": "Gb7 is for the head, F7 (in parentheses) for solos"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:That's What I'm Talkin' 'Bout\nC:Shorty Rogers\n%source The Colorado Cookbook p235 (pdf 238)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form blues 12\n%unsure [form] no letters printed; 12-bar blues inferred\nM:4/4\nL:1/8\nK:Bb\nz4 z2 B2 |: \"Bb7\"B4 B2 BB- | \"Eb7\"B3 B BB BB | \"Bb7\"z8 |\nz4 z2 B2 | \"Eb7\"B4 B2 BB- | B3 B BB BB | \"Bb7\"z8 |\nz4 z2 B2 | \"Cm7\"B4 B2 BB- | \"Gb7\"\"(F7)\"B3 B \"F7\"BB BB | \"Bb7\"z8 | \"Cm7\"z4 \"F7\"z4 :|\n\n%unsure [bar 10] Gb7 is for the head, F7 (in parentheses) for solos"
+},
+{
+"id": "The_Colorado_Cookbook/238-things-ain-t-what-they-used-to-be",
+"book": "The Colorado Cookbook",
+"title": "Things Ain't What They Used to Be",
+"pdf": "238",
+"form": "blues 12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no letters printed; 12-bar blues inferred"
+},
+{
+"bars": [
+9,
+11,
+12
+],
+"groups": [
+8,
+10,
+11
+],
+"text": "bar 9 second note value read as a half so the bar adds up; bars 11-12 are two-note chord stabs"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Things Ain't What They Used to Be\nC:Duke Ellington\n%source The Colorado Cookbook p235 (pdf 238)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form blues 12\n%unsure [form] no letters printed; 12-bar blues inferred\nM:4/4\nL:1/8\nK:Db\n|: \"Db7\"(3zBB (3BBB B2 B2 | B3 B z4 | (3zBB (3BBB B2 B2 | B3 B z4 |\n\"Gb7\"(3zBB (3BBB B2 B2 | B3 B zB BB | \"Db7\"(3zBB (3BBB B2 B2 | B3 B z2 zB |\n\"Ebm7\"(3BBB- B4 zB | \"Ab7\"(3BBB (3BBB B2 BB | \"Db7\"z2 zB \"E7\"z2 zB | \"Eb7\"z2 zB \"D7\"z4 :|\n\n%unsure [bars 9, 11-12] bar 9 second note value read as a half so the bar adds up; bars 11-12 are two-note chord stabs"
+},
+{
+"id": "The_Colorado_Cookbook/239-the-night-has-a-thousand-eyes",
+"book": "The Colorado Cookbook",
+"title": "The Night Has a Thousand Eyes",
+"pdf": "239",
+"form": "ABABCD 8+8+8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A latin, B swing (\"fill to swing\"/\"fill to latin\"); repeat of A-B then C, D"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Night Has a Thousand Eyes\nC:Weisman, Garrett, Wayne\nP:ABABCD\n%source The Colorado Cookbook p236 (pdf 239)\n%style (Latin & Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABABCD 8+8+8+8+8+8\n%unsure [form] A latin, B swing (\"fill to swing\"/\"fill to latin\"); repeat of A-B then C, D\nM:4/4\nL:1/8\nK:G\nz4 z2 B2 |:\nP:A\n\"Gmaj7/D\"B8- | B4 B2 B2 | \"Dsus4\"B8- | B4 z B2 B |\n\"Gmaj7/D\"B3 B B2 B2 | B4 B2 B2 | \"Dsus4\"B3 B B2 B2 | \"D7\"B6 B2 ||\nP:B\n\"Dm7\"B8 | \"G7\"z2 BB B2 B2 | \"C#m7b5\"B8- | \"Cm6\"B4 B2 B2 |\n\"Bm7\"B3 B- \"Bb7\"B4 | \"Am7\"zB BB \"D7\"B2 B2 | \"Gmaj7/D\"B8 |1 \"Dsus4\"z4 z2 B2 :|2\n\"Gmaj7\"z4 \"Db7\"z2 B2 ||\nP:C\n\"Cm7\"B4 B4 | \"F7\"zB BB- B2 B2 | \"Bbmaj7\"B8- | B4 z2 B2 |\n\"Bbm7\"B4 B4 | \"Eb7\"zB BB- B2 B2 | \"Abmaj7\"B8- | B4 z4 ||\nP:D\n\"Am7\"B4 B4 | \"Dsus4\"B3 B B2 B2 | \"Gmaj7\"B8- | \"Em7\"B4 B2 B2 |\n\"Am7/D\"B4 B4 | \"Dsus4\"zB BB B2 B2 | \"Gmaj7\"B8 | z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/240-the-night-we-first-met",
+"book": "The Colorado Cookbook",
+"title": "The Night We First Met",
+"pdf": "240",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+7
+],
+"groups": [
+6
+],
+"text": "1st ending bar 1: last two beats (eighths then tied quarter) read loosely"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Night We First Met\nC:Stefan Karlsson\nP:AABC\n%source The Colorado Cookbook p237 (pdf 240)\n%style (Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Fm\nP:A\n|: \"Fm7\"B6 BB | \"Bbm7\"B6 BB | \"Ebm7\"B2 (3zBB \"D7#11\"B2 (3zBB | \"Dbmaj7\"BB- B4 \"Gb7#11\"z2 |\n\"Fm7\"z2 zB \"Fm7/Eb\"(3BBB (3BBB | \"Dbmaj7\"B2 (3zBB B3 B |1 \"Db7\"B2 (3zBB BB- B2 | \"Gm7b5\"B2 (3zBB \"C7alt\"B B2 B :|2\n\"Db7\"B2 (3zBB \"C7\"B2 (3zBB | \"Fm\"BB- B4 z2 ||\nP:B\n\"Dm7\"BB BB \"G7\"B B2 B | \"Cmaj7\"B2 z2 \"Am7\"z2 zB | \"Dm7\"BB BB \"G7\"B B2 B | \"Cmaj7\"B/B/B- \"Gb7b9\"B4 z2 |\n\"Fmaj7\"z2 z\"Fmaj7/E\"B \"Fmaj7/D\"BB \"Fmaj7/C\"BB | \"Bm7b5\"B2- B/B/B/B/ \"E7b13\"B3 B | \"Am7\"B2 (3zBB \"Abo7\"B4 | \"Gm7\"BB/B/ \"C7#11\"B4 z2 ||\nP:C\n\"Fm7\"B6 BB | \"Bbm7\"B6 BB | \"Ebm7\"B2 (3zBB \"D7#11\"B2 (3zBB | \"Dbmaj7\"BB- B4 \"Gb7#11\"z2 |\n\"Fm7\"z2 zB \"Fm7/Eb\"(3BBB (3BBB | \"Dbmaj7\"B2 (3zBB B3 B | \"Db7\"B2 (3zBB \"C7\"B2 (3zBB | \"Fm\"BB- B4 z2 |]\n\n%unsure [bar 7] 1st ending bar 1: last two beats (eighths then tied quarter) read loosely"
+},
+{
+"id": "The_Colorado_Cookbook/241-the-song-is-you",
+"book": "The Colorado Cookbook",
+"title": "The Song Is You",
+"pdf": "241",
+"form": "AABC 16+16+16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "book prints a second chord line (solo changes) above the head chords: A bars 1-2 Cmaj7 F7 Em7 Ebo7, 1st ending Fm7 Bb7 / Em7 A7 / Ebm7 Ab7 / Dm7 G7, 2nd ending turnaround Cmaj7 F7 Bb7 Eb7 Ab7 Db7 Gb7 B7, C bars 1-2 as A; head chords written here"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Song Is You\nC:Jerome Kern\nP:AABC\n%source The Colorado Cookbook p238 (pdf 241)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+16+16\nM:4/4\nL:1/8\nK:C\nP:A\n|: \"Cmaj7\"B2 B2 B2 B2 | \"Ebo7\"B2 B2 B2 B2 | \"Dm7\"B8 | \"G7\"z2 B2 B2 B2 |\n\"Cmaj7\"B2 B2 B2 B2 | \"A7\"B2 B2 B2 B2 | \"Dm7\"B8 | \"G7\"z2 B2 B2 B2 |\n\"Bb7\"B8 | \"A7\"z2 B2 B2 B2 |1 \"Dm7\"B8 | \"G7\"z2 B2 B2 B2 |\n\"Bb7\"B8 | \"A7\"z2 B2 B2 B2 | \"D7\"B8- | \"G7\"B4 z4 :|2\n\"Dm7\"B8 | \"G7\"z2 B2 B2 B2 | \"Cmaj7\"B8- | B8- |\n\"F#m7b5\"B8- | \"B7#9\"B4 z4 ||\nP:B\n\"Emaj7\"B2 B2 B4- | \"C#7b9\"B2 B2 B2 B2 | \"F#m7\"B2 B2 B4- | \"B7\"B8 |\n\"Emaj7\"B2 B2 B4- | \"C#m7\"B2 B2 B2 B2 | \"Bbo7\"B2 B2 B4- | \"Eb7#9\"B8 |\n\"Abm\"B2 B2 B4- | \"Abm(maj7)\"B2 B2 (3B2B2B2 | \"Abm7\"B2 B2 B4- | \"Db7\"B2 B2 B2 B2 |\n\"Gb7\"B2 B2 B4- | B2 B2 B2 B2 | \"B7\"B2 B2 B4- | B2 B2 B2 B2 ||\nP:C\n\"Cmaj7\"B2 B2 B2 B2 | \"Ebo7\"B2 B2 B2 B2 | \"Dm7\"B8 | \"G7\"z2 B2 B2 B2 |\n\"Gm7\"B2 B2 B2 B2 | \"C7\"B2 B2 B2 B2 | \"Fmaj7\"B8 | \"Bb7\"z2 B2 B2 B2 |\n\"Em7\"B8 | \"A7#9\"z2 B2 B2 B2 | \"Dm7\"B8 | \"G7\"z2 B2 B2 B2 |\n\"Cmaj7\"B8- | \"A7#9\"B8- | \"Dm7\"B8 | \"G7\"z8 |]\n\n%unsure [general] book prints a second chord line (solo changes) above the head chords: A bars 1-2 Cmaj7 F7 Em7 Ebo7, 1st ending Fm7 Bb7 / Em7 A7 / Ebm7 Ab7 / Dm7 G7, 2nd ending turnaround Cmaj7 F7 Bb7 Eb7 Ab7 Db7 Gb7 B7, C bars 1-2 as A; head chords written here"
+},
+{
+"id": "The_Colorado_Cookbook/242-the-tender-storm",
+"book": "The Colorado Cookbook",
+"title": "The Tender Storm",
+"pdf": "242",
+"form": "16 bars, repeated with 1st/2nd endings (no section letters)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+2,
+6
+],
+"groups": [
+1,
+5
+],
+"text": "chord placement within the bar (Bbm7/Eb7, Abm7/Db7) approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Tender Storm\nC:Eddie Harris\n%source The Colorado Cookbook p239 (pdf 242)\n%style (Be-Bop - Medium Up)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars, repeated with 1st/2nd endings (no section letters)\nM:4/4\nL:1/8\nK:D\n|: \"Em7\"B3 B B B2 B- | B2 \"Bbm7\"BB \"Eb7\"B B2 B- | \"Dmaj7\"B3 B z2 zB | \"Ebm7\"B2 BB \"Ab7\"BB z2 |\n\"Dm7\"B3 B B B2 B- | B2 BB \"Abm7\"B \"Db7\"B2 B- | \"Cmaj7\"B3 B z2 zB | \"C#m7\"B2 BB \"F#7\"BB z2 |\n\"Cm7\"B3 B B B2 B- | \"F#m7\"B2 BB \"B7\"B B2 B- | \"Bbmaj7\"B6 BB- | \"Ebmaj7\"B6 BB- |1 \"Em11\"B6 BB- | \"F9\"B6 BB- | \"Bbmaj7\"B6 BB- | \"Eb9\"B6 z2 :|2\n\"Dmaj7\"B8- | B8- | B8 | z8 |]\n\n%unsure [bars 2, 6] chord placement within the bar (Bbm7/Eb7, Abm7/Db7) approximate"
+},
+{
+"id": "The_Colorado_Cookbook/243-the-theme",
+"book": "The Colorado Cookbook",
+"title": "The Theme",
+"pdf": "243",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19
+],
+"groups": [
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18
+],
+"text": "bridge is rhythm slashes only (blow over changes); written as rests with chords"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Theme\nC:Miles Davis\nP:AABC\n%source The Colorado Cookbook p240 (pdf 243)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Bb\nz4 zB (3BBB |\nP:A\n|: \"Bb\"B B3 B2 z2 | \"Cm7\"z2 BB \"F7\"zB (3BBB | \"Bb\"B B3 B2 z2 | \"Cm7\"z2 BB \"F7\"zB (3BBB |\n\"Bb7\"B B3 B2 z2 | \"Eb7\"z2 BB \"Eo7\"zB (3BBB |1 \"Bb\"B B3 B2 B2 | \"Cm7\"BB BB \"F7\"zB (3BBB :|2\n\"Bb\"B B3 B2 B2 | BB BB z4 ||\nP:B\n\"D7\"z8 | z8 | \"G7\"z8 | z8 |\n\"C7\"z8 | z8 | \"F7\"z8 | z8 ||\nP:C\n\"Bb\"B B3 B2 z2 | \"Cm7\"z2 BB \"F7\"zB (3BBB | \"Bb\"B B3 B2 z2 | \"Cm7\"z2 BB \"F7\"zB (3BBB |\n\"Bb7\"B B3 B2 z2 | \"Eb7\"z2 BB \"Eo7\"zB (3BBB | \"Bb\"B B3 B2 B2 | BB BB z4 |]\n\n%unsure [bars 12-19] bridge is rhythm slashes only (blow over changes); written as rests with chords"
+},
+{
+"id": "The_Colorado_Cookbook/244-the-things-we-did-last-summer",
+"book": "The Colorado Cookbook",
+"title": "The Things We Did Last Summer",
+"pdf": "244",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+8,
+9
+],
+"groups": [
+8,
+9
+],
+"text": "chord placement in the endings (four chords over a dotted half; Dm7 Dbm on beats 3-4) approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Things We Did Last Summer\nC:Jule Styne\nP:AABC\n%source The Colorado Cookbook p241 (pdf 244)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:F\nB |\nP:A\n|: \"Fmaj7\"BB BB \"D7\"B3 B | \"Gm7\"BB BB \"C7\"B3 B | \"Am7\"BB BB \"Bbmaj7\"BB BB | \"Am7b5\"B6 \"D7\"zB |\n\"Gm7\"B2 B2 \"Eb7#11\"B2 B2 | \"Am\"B2 B4 \"Abm\"BB | \"Gm7\"B2 B2- \"C7\"BB BB |1 \"Am7\"B2- \"D7\"B2- \"Gm7\"B2 \"C7\"zB :|2\n\"Fmaj7\"B6 \"Dm7\"z\"Dbm\"B ||\nP:B\n\"Cm7\"BB BB \"F7\"B3 B | \"Cm7\"BB BB \"F7\"B3 B | \"Bbmaj7\"BB BB \"Eb7#11\"B2 BB- | \"Bbmaj7\"B6 \"Em7b5\"z\"A7\"B |\n\"Dm7\"BB BB \"G7\"B3 B | \"Dm7\"BB BB \"G7\"B3 B | \"Gm/C\"BB BB \"Abm/Db\"B2 BB- | \"Gm7\"B6 \"C7\"zB ||\nP:C\n\"Fmaj7\"BB BB \"D7\"B3 B | \"Gm7\"BB BB \"C7\"B3 B | \"Am7\"BB BB \"Bbmaj7\"BB BB | \"Am7b5\"B6 \"D7\"zB |\n\"Gm7\"B2 B2 \"Eb7#11\"B2 B2 | \"Am\"B2 B4 \"Abm\"BB | \"Gm7\"B2 B2- \"C7\"BB BB | \"Fmaj7\"B8 |]\n\n%unsure [bars 8-9] chord placement in the endings (four chords over a dotted half; Dm7 Dbm on beats 3-4) approximate"
+},
+{
+"id": "The_Colorado_Cookbook/245-there-will-never-be-another-you",
+"book": "The Colorado Cookbook",
+"title": "There Will Never Be Another You",
+"pdf": "245",
+"form": "AB 16+16",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+3,
+4,
+14,
+15,
+16
+],
+"groups": [
+3,
+4,
+14,
+15,
+16
+],
+"text": "book prints standard and alternate changes; standard written, alternates in parentheses"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:There Will Never Be Another You\nC:Harry Warren\nP:AB\n%source The Colorado Cookbook p242 (pdf 245)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16\nM:4/4\nL:1/8\nK:Eb\nB2 ||\nP:A\n\"Ebmaj7\"B2 B2 B2 B2 | B2 B2 B2 B2 | \"Dm7b5\"\"(Ebm7)\"B4- \"(Ab7)\"B4- | \"G7b9\"\"(Dm7)\"B4 \"(G7)\"B2 B2 |\n\"Cm\"B2 B2 B2 B2 | B2 B2 B2 B2 | \"Bbm7\"B8- | \"Eb7\"B6 B2 ||\n\"Abmaj7\"B2 B2 B2 B2 | \"Db7#11\"B2 B2 B2 B2 | \"Ebmaj7\"B2 B2 B2 B2 | \"Cm7\"B2 B2 B2 B2 |\n\"F7#11\"B2 B2 B2 B2 | \"F7#11\"\"(Db7#11)\"B2 B2 B2 B2 | \"Fm7\"\"(F#m7)\"B4- \"(B7)\"B4- | \"Bb7b9\"\"(Fm7)\"B4 \"(Bb7)\"z2 B2 ||\nP:B\n\"Ebmaj7\"B2 B2 B2 B2 | B2 B2 B2 B2 | \"Dm7b5\"B8- | \"G7b9\"B6 B2 |\n\"Cm\"B2 B2 B2 B2 | B2 B2 B2 B2 | \"Bbm7\"B8- | \"Eb7\"B6 B2 ||\n\"Abmaj7\"B2 B2 B2 B2 | \"Db7#11\"B2 B2 B2 B2 | \"Ebmaj7\"B2 B2 B2 B2 | \"Am7\"B6 \"D7\"B2 |\n\"Gm7\"B2 B2 \"Ab7\"B2 B2 | \"Gm7\"B2 B2 \"C7b9\"B2 B2 | \"Fm7\"B4 \"Bb7b9\"B4 | \"Ebmaj7\"B8 |]\n\n%unsure [bars 3-4, 14-16] book prints standard and alternate changes; standard written, alternates in parentheses"
+},
+{
+"id": "The_Colorado_Cookbook/246-there-is-no-greater-love",
+"book": "The Colorado Cookbook",
+"title": "There Is No Greater Love",
+"pdf": "246",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+4,
+5,
+6,
+7,
+8,
+9
+],
+"groups": [
+3,
+4,
+5,
+6,
+7,
+8
+],
+"text": "horn only with rhythm-section hits (x noteheads, dotted quarter + eighth) on the chords; hits not written as melody"
+},
+{
+"bars": [
+13
+],
+"groups": [
+12
+],
+"text": "diamond note tied over a rest on beat 1 (hit held); read as a rest; \"TIME\" starts next bar"
+},
+{
+"bars": [],
+"groups": [],
+"text": "pdf 247 is a solo-changes page (alternate/standard chords: Fm7 Bb7 | Em7 A7 | Ebm7 Ab7 | Dm7 G7 over Bbmaj7 | Eb7 | Ab7 | G7); not transcribed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:There Is No Greater Love\nC:Isham Jones\nP:ABCD\n%source The Colorado Cookbook p243 (pdf 246)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:Bb\n%horn only\nz2 B2 B2 B2 ||\nP:A\nB2 B2 B2 B2 | B2 B2 B2 B2 | B4- \"Ab7\"B3 \"G7\"B | z2 B2 B2 B2 |\nB4- \"Gm7\"B3 \"C7\"B | z2 B2 B2 B2 | B4- \"Cm7\"B3 \"F7\"B | z2 B2 B2 B2 ||\nP:B\nB2 B2 B2 B2 | B2 B2 B2 B2 | B4- \"Ab7\"B3 \"G7\"B- | z2 B2 B2 B2 |\n\"Gm7\"B2 B2 \"C7\"B2 B2 | \"Cm7\"B4 \"F7\"B4 | \"Bbmaj7\"B8- | B4 z4 ||\nP:C\n\"Am7b5\"B2 B2 \"D7\"B2 B2 | \"Gm\"B8 | \"Am7b5\"B2 B2 \"D7\"B2 B2 | \"Gm\"B8 |\n\"Am7b5\"B2 B2 \"D7\"B2 B2 | \"Gm7\"B2 B2 B2 B2 | \"C7\"B8 | \"F7\"z2 B2 B2 B2 ||\nP:D\nB2 B2 B2 B2 | B2 B2 B2 B2 | B4- \"Ab7\"B3 \"G7\"B- | z2 B2 B2 B2 |\n\"Gm7\"B2 B2 \"C7\"B2 B2 | \"Cm7\"B4 \"F7\"B4 | \"Bbmaj7\"B8- | B4 z4 |]\n\n%unsure [bars 4-9] horn only with rhythm-section hits (x noteheads, dotted quarter + eighth) on the chords; hits not written as melody\n%unsure [bar 13] diamond note tied over a rest on beat 1 (hit held); read as a rest; \"TIME\" starts next bar\n%unsure [general] pdf 247 is a solo-changes page (alternate/standard chords: Fm7 Bb7 | Em7 A7 | Ebm7 Ab7 | Dm7 G7 over Bbmaj7 | Eb7 | Ab7 | G7); not transcribed"
+},
+{
+"id": "The_Colorado_Cookbook/248-thinking-of-you",
+"book": "The Colorado Cookbook",
+"title": "Thinking of You",
+"pdf": "248",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+7
+],
+"groups": [
+6
+],
+"text": "first-ending whole note in bar 7 split with a tie for the C7b9 chord"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Thinking of You\nC:Harry Ruby\nP:AABC\n%source The Colorado Cookbook p245 (pdf 248)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Eb\nP:A\n|: \"Ebmaj7\"B8 | \"Am7b5\"z4 \"D7b9\"(3B2B2B2 | \"Abm7\"B4 \"Db7\"B4 | \"Gm7\"B4 \"C7b9\"(3B2B2B2 |\n\"F#m7\"B4 \"B7b9\"B4 |1 \"Fm7\"B4 \"Bb7b9\"(3B2B2B2 | \"Gm7\"B4- \"C7b9\"B4 | \"Fm7\"z4 \"Bb7b9\"B4 :|2\n\"Fm7\"B4 \"Bb7b9\"(3B2B2B2 | \"Ebmaj7\"B8 | \"Dm7b5\"B6 \"G7#9\"z2 ||\nP:B\n\"Cm\"B2 B2 B2 B2 | B2 B2 B2 B2 | \"Gm\"B8- | B4 \"Bbm7\"z2 \"Eb7\"z2 |\n\"Abmaj7\"B2 B2 B2 B2 | B2 B2 B2 B2 | \"Dm7b5\"B8- | \"G7b9\"B4 \"Db7#11\"B4 ||\nP:C\n\"Ebmaj7\"B8 | \"Am7b5\"z4 \"D7b9\"(3B2B2B2 | \"Abm7\"B4 \"Db7\"B4 | \"Gm7\"B4 \"C7b9\"(3B2B2B2 |\n\"F#m7\"B4 \"B7b9\"B4 | \"Fm7\"B4 \"Bb7b9\"(3B2B2B2 | \"Ebmaj7\"B8- | B4 z4 |]\n\n%unsure [bar 7] first-ending whole note in bar 7 split with a tie for the C7b9 chord"
+},
+{
+"id": "The_Colorado_Cookbook/249-thinking-out-loud",
+"book": "The Colorado Cookbook",
+"title": "Thinking Out Loud",
+"pdf": "249",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "then SOLOS, D.C. al Coda; coda sign after bar 32"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Thinking Out Loud\nC:Steve Swallow\nP:ABCD\n%source The Colorado Cookbook p246 (pdf 249)\n%style (Latin)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:C\nP:A\n\"Ebm7\"B8- | \"Abm7\"B4 \"F7alt\"B3 B- | \"Bbm7\"B8- | \"Gbmaj7\"B4 \"Eb7alt\"B3 B- |\n\"Abm7\"B8- | \"F7alt\"B4 z B3 | \"Bbmaj7\"B8- | \"G7b9\"B8 ||\nP:B\n\"Cm7\"B8- | \"Abmaj7\"B4 \"G7alt\"B3 B- | \"Gbmaj7\"B8- | \"Bbm7\"B4 \"Eb7alt\"B3 B- |\n\"Abm7\"B8- | \"F7alt\"B4 z B3 | \"Bbmaj7\"B8- | \"E7alt\"B8 ||\nP:C\n\"Ebmaj7\"B8- | \"Am7b5\"B4 \"D7alt\"B3 B- | \"Gm11\"B4 z B3 | \"Cm7\"B3 B \"A7alt\"B3 B- |\n\"Dm11\"B8- | \"G7\"B4 \"G7alt\"B4 | \"Gbmaj7\"B4 \"Cbmaj7\"B4 | \"Bbm7\"B4 \"G7alt\"B3 B- ||\nP:D\n\"Cm7\"B8- | \"A7alt\"B4 z B3 | \"Dm7\"B8- | \"Ab7\"B6 B2 |\n\"Dbmaj7\"B4 z B3 | \"C7alt\"B6 B2 | \"Fm7\"B8 | \"Bb7alt\"B8 ||\n%coda\n\"Ebm7\"!fermata!B8- | \"Ab7alt\"!fermata!B8- | \"Dbmaj7\"!fermata!B8 |]\n\n%unsure [general] then SOLOS, D.C. al Coda; coda sign after bar 32"
+},
+{
+"id": "The_Colorado_Cookbook/250-this-i-dig-of-you",
+"book": "The Colorado Cookbook",
+"title": "This I Dig of You",
+"pdf": "250",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:This I Dig of You\nC:Lee Morgan & Hank Mobley\nP:ABCD\n%source The Colorado Cookbook p247 (pdf 250)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:Bb\nP:A\n%pedal F to B\n\"Bbmaj7\"B6- BB | \"Cm\"B6- BB | \"Bbmaj7\"B6- BB | \"Cm\"B4 z B2 B |\n\"Bbmaj7\"B4 z B2 B | \"Cm\"B4 z B2 B | \"Bbmaj7\"B6 B2 | \"Fm7\"B4 \"Bb7\"z2 B2 ||\nP:B\n\"Ebmaj7\"B8 | \"Em7b5\"B3 B z \"A7#9\"B2 B | \"Dm7\"B4- BB BB- | \"G7\"B4 z4 |\n\"Dbm7\"z B2 B2 B2 B | \"Gb7\"B3 B BB z2 | \"Cm7\"z B2 B2 B2 B | \"F7\"B2 z2 z2 B2 ||\nP:C\n%pedal F to D\n\"Bbmaj7\"B6- BB | \"Cm\"B6- BB | \"Bbmaj7\"B6- BB | \"Cm\"B4 z B2 B |\n\"Bbmaj7\"B4 z B2 B | \"Cm\"B4 z B2 B | \"Bbmaj7\"B6 B2 | \"Fm7\"B4 \"Bb7\"z2 B2 ||\nP:D\n\"Ebmaj7\"B8 | \"Em7b5\"B3 B \"A7#9\"B2 BB- | \"Dm7\"B4- BB BB | \"G7\"z4 z2 zB |\n\"Cm7\"z B2 B B2 (3BBB | \"F7\"B2 B2 BB B2 | \"Bbmaj7\"B2 z2 z4 | z8 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/251-this-is-new",
+"book": "The Colorado Cookbook",
+"title": "This Is New",
+"pdf": "251",
+"form": "ABCD 8+8+8+6 (plus tag)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "D section printed as 6 bars, leading into the tag"
+},
+{
+"bars": [
+32,
+33,
+34,
+35,
+36,
+37,
+38
+],
+"groups": [
+31,
+32,
+33,
+34,
+35,
+36,
+37
+],
+"text": "tag continues with rhythm slashes on Abm, written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:This Is New\nC:Kurt Weill\nP:ABCD\n%source The Colorado Cookbook p248 (pdf 251)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+6 (plus tag)\nM:4/4\nL:1/8\nK:C\nP:A\n\"Cm\"B4- BB BB- | \"G7alt\"B4- BB BB- | \"Cm\"B8- | \"F7\"B4 B4 |\n\"Bbm\"B4- BB BB- | \"F7b9\"B4- BB BB- | \"Bbm\"B8- | \"Fm7b5\"B4 \"Bb7alt\"B4 ||\nP:B\n\"Ebm\"B6 B2 | B2 B2 B2 B2 | B4- BB BB- | \"Ab7\"B8 |\n\"C#m\"B8- | B2 B2 B2 B2 | B4- BB BB- | \"G7alt\"B8 ||\nP:C\n\"Cm\"B4- BB BB- | \"G7alt\"B4- BB BB- | \"Cm\"B8- | \"Ebm11\"B4 \"Ab7\"B4 |\n\"Dbmaj7\"B4- BB BB- | \"C7alt\"B4- BB BB- | \"Fm\"B8- | \"F7alt\"B2 B4 B2 ||\nP:D\n\"Bbm7\"B6 B2 | \"Eb7alt\"B2 B2 B2 B2 | \"Cm7\"B4 B2 BB- | \"F7alt\"B6 B2 |\n\"Bbm7\"B2 B2 B2 B2 | \"Eb7alt\"B4 B4 ||\n%tag\n\"Abm\"B8- | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 |]\n\n%unsure [form] D section printed as 6 bars, leading into the tag\n%unsure [bars 32-38] tag continues with rhythm slashes on Abm, written as rests"
+},
+{
+"id": "The_Colorado_Cookbook/252-tidal-breeze",
+"book": "The Colorado Cookbook",
+"title": "Tidal Breeze",
+"pdf": "252",
+"form": "16 (through-composed)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no section letters printed; 16 bars plus pickup"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Tidal Breeze\nC:Harold Danko\n%source The Colorado Cookbook p249 (pdf 252)\n%style (Medium Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 (through-composed)\n%unsure [form] no section letters printed; 16 bars plus pickup\nM:4/4\nL:1/8\nK:Bb\nz4 B2 BB- || \"Bb6/9\"B2 B2 BB- B2- | B4 B2 BB- | \"Ab7\"B8- |\nB4 z2 BB- | \"Bb6/9\"B2 B2 BB- B2- | B4 B2 BB- | \"Ab7\"B8- |\nB4 B2 B2 | \"F7\"B2 BB- BB B2 | \"Gb7\"BB- B4 B2 | \"F7\"B2 BB- B2 B2 |\n\"Gb7\"BB- B2 B2 BB- | \"G7\"B6 BB- | B8 | \"Ab7\"zB z2 B2 BB- | B6 z2 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/253-time-after-time",
+"book": "The Colorado Cookbook",
+"title": "Time After Time",
+"pdf": "253",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Time After Time\nC:Jule Styne\nP:ABCD\n%source The Colorado Cookbook p250 (pdf 253)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:C\nP:A\n\"Cmaj7\"B4 B2 B2 | \"Dm7\"B6 \"G7\"B2 | \"Cmaj7\"B2 B2 B2 B2 | \"Dm7\"B6 \"G7\"B2 |\n\"Cmaj7\"B2 B2 B2 B2 | \"Am7\"B6 B2 | \"Bm7b5\"B8- | \"E7#9\"B4 z2 B2 ||\nP:B\n\"Am7\"B4 \"Am7/G\"B2 B2 | \"F#m7b5\"B6 \"B7#9\"B2 | \"Em7\"B2 B2 B2 B2 | \"A7b9\"B4 B2 B2 |\n\"Dm7\"B2 B2 B2 B2 | \"Em7b5\"B4 \"A7#9\"B4 | \"Ab7#11\"B8 | \"G7\"z2 B2 B2 B2 ||\nP:C\n\"Cmaj7\"B4 B2 B2 | \"Dm7\"B6 \"G7\"B2 | \"Cmaj7\"B2 B2 B2 B2 | \"Dm7\"B6 \"G7\"B2 |\n\"Cmaj7\"B2 B2 B2 B2 | \"Gm7\"B6 \"C7\"B2 | \"Fmaj7\"B8- | \"Bb7\"B4 z2 B2 ||\nP:D\n\"Cmaj7\"B4 B2 B2 | \"Gbm7b5\"B6 \"Fm6\"B2 | \"Em7\"B2 B2 \"Am7/G\"B2 B2 | \"Gbm7b5\"B6 \"Fm7\"B2 |\n\"Em7\"B2 B2 \"A7#9\"B2 B2 | \"Dm7/G\"B4 \"G7\"B4 | \"Cmaj7\"B8- | B4 z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/254-triste",
+"book": "The Colorado Cookbook",
+"title": "Triste",
+"pdf": "254",
+"form": "ABCD 8+8+8+10",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+9,
+10,
+11
+],
+"groups": [
+8,
+9,
+10
+],
+"text": "B section eighth-note groupings and slash-chord placement read from a dense line"
+},
+{
+"bars": [
+15
+],
+"groups": [
+14
+],
+"text": "ties across the D-G7 bar (tied quarter into next bar) approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Triste\nC:Antonio Carlos Jobim\nP:ABCD\n%source The Colorado Cookbook p251 (pdf 254)\n%style (Bossa Nova)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+10\nM:4/4\nL:1/8\nK:Bb\nP:A\n\"Bbmaj7\"z2 zB zB zB | B2 BB- B B2 B- | \"Gbmaj7\"B8- | \"B7#11\"B8 |\n\"Bbmaj7\"z2 zB zB zB | B2 BB- B B2 B- | \"Dm7\"B8- | \"G7b9\"B8 ||\nP:B\n\"Cm\"z2 zB \"Cm/Bb\"B B2 B- | \"Am7b5\"B B2 B2 \"D7#9#5\"B2 B- | \"Gm\"BB BB \"Gm/F\"B B2 B- | \"Em7b5\"B4 \"A7#9#5\"z2 BB- |\n\"Dmaj7\"BB BB- B4 | \"Em7\"BB BB- \"A7\"B3 B- | \"Dm7\"BB BB- \"G7\"B2 B2- | \"Cm7\"BB BB- \"F7\"B4 ||\nP:C\n\"Bbmaj7\"z2 zB zB zB | B2 BB- B B2 B- | \"Gbmaj7\"B8- | \"B7#11\"B8 |\n\"Bbmaj7\"z2 zB zB zB | B2 BB- B B2 B- | \"Fm7\"B8- | \"Bb7b9\"B8 ||\nP:D\n\"Ebmaj7\"z2 zB BB BB | \"Ab7#11\"B2 BB- B2 B2- | \"Gm7\"B2 BB B B2 B- | \"C7#11\"B8 |\n\"Cm7\"z2 zB zB zB | \"F7\"B2 BB- B B2 B- | \"Bbm7\"B8- | \"Eb7\"B8- |\n\"Bbm7\"B8- | \"Eb7\"B8 |]\n\n%unsure [bars 9-11] B section eighth-note groupings and slash-chord placement read from a dense line\n%unsure [bar 15] ties across the D-G7 bar (tied quarter into next bar) approximate"
+},
+{
+"id": "The_Colorado_Cookbook/255-unit-seven",
+"book": "The Colorado Cookbook",
+"title": "Unit Seven",
+"pdf": "255",
+"form": "AABC 12+12+8+12",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A sections have 1st/2nd endings of different length; bar counts per section approximate"
+},
+{
+"bars": [
+14
+],
+"groups": [
+14
+],
+"text": "2nd-ending C7 note drawn like a half note; written as a whole note to fill the bar"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Unit Seven\nC:Sam Jones\nP:AABC\n%source The Colorado Cookbook p252 (pdf 255)\n%style (Jazz/Latin)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 12+12+8+12\n%unsure [form] A sections have 1st/2nd endings of different length; bar counts per section approximate\nM:4/4\nL:1/8\nK:C\n\"^swing feel\"B BB- |\nP:A\n|: \"C7\"B8- | B4 zB BB- | \"C7\"B8- | B4 zB BB- |\n\"F7\"B8- | B4 zB BB- | \"C7\"B6 BB | \"A7#9\"z4 zB B2 |\n\"Abmaj7\"BB BB- B4- |1 \"G7#9\"B4 BB BB- | \"C7\"B4- \"A7\"B4 | \"D7\"z4 \"G7#9\"zB BB- :|2\n\"G7#9\"B4 BB BB- | \"C7\"B8 | \"A7#9\"z2 \"^latin feel\"BB BB BB ||\nP:B\n\"Dm7\"BB BB BB BB | \"G7\"B6 BB- | \"Em7\"B8- | \"A7#9\"BB BB- B2 BB- |\n\"Dm7\"B8- | \"G7\"BB BB- B2 BB- | \"Em7\"B4- \"A7\"BB BB | \"Dm7\"z4 \"G7\"zB BB- ||\nP:C\n\"C7\"\"^swing feel\"B8- | B4 zB BB- | \"C7\"B8- | B4 zB BB- |\n\"F7\"B8- | B4 zB BB- | \"C7\"B6 BB | \"A7#9\"z4 zB B2 |\n\"Abmaj7\"BB BB- B4- | \"G7#9\"B4 BB BB- | \"C7\"B4- \"A7#9\"B4 | \"D7\"z8 |]\n\n%unsure [bar 14] 2nd-ending C7 note drawn like a half note; written as a whole note to fill the bar"
+},
+{
+"id": "The_Colorado_Cookbook/256-up-jumped-spring",
+"book": "The Colorado Cookbook",
+"title": "Up Jumped Spring",
+"pdf": "256",
+"form": "AABC 16+16+8+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Up Jumped Spring\nC:Freddie Hubbard\nP:AABC\n%source The Colorado Cookbook p253 (pdf 256)\n%style (Jazz Waltz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+8+16\nM:3/4\nL:1/8\nK:Bb\n\"F7b9\"z2 z2 BB |\nP:A\n|: \"Bbmaj7\"B2 z2 BB | \"G7#9\"BB- B2 B2 | \"Cm7\"B2 z2 BB | \"F7\"BB- B2 \"F#o7\"B2 |\n\"Gm7\"B4 BB | \"Fm7\"BB- B2 B2 | \"Em7\"B6- | \"A7\"B4 zB |\n\"Dm7\"B6 | \"Ebm7\"B6 | \"Dm7\"B6 | \"Ebm7\"B6 |1 \"Bm7b5\"B6 | \"E7#9\"B4 B2 | \"Cm7b5\"B6 | \"F7#9\"B4 BB :|2\n\"Cm7\"B2 z2 zB | \"F7\"B2 B2 B2 | \"Bbmaj7\"B6 | \"Am7\"z2 z\"D7\"B BB ||\nP:B\n\"Gm7\"B4 BB | \"C7\"B2 B2 B2 | \"Fmaj7\"B3 B B2 | \"Dm7\"B4 B2 |\n\"Abm7\"B3 B B2 | \"Db7\"B4 B2 | \"Cm7\"B6- | \"F7\"B4 BB ||\nP:C\n\"Bbmaj7\"B2 z2 BB | \"G7#9\"BB- B2 B2 | \"Cm7\"B2 z2 BB | \"F7\"BB- B2 \"F#o7\"B2 |\n\"Gm7\"B4 BB | \"Fm7\"BB- B2 B2 | \"Em7\"B6- | \"A7\"B4 zB |\n\"Dm7\"B6 | \"Ebm7\"B6 | \"Dm7\"B6 | \"Ebm7\"B6 |\n\"Cm7\"B2 z2 zB | \"F7\"B2 B2 B2 | \"Bmaj7\"z B2 B2 B | \"Bmaj7\"BB- \"Bbmaj7\"B4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/257-voyage",
+"book": "The Colorado Cookbook",
+"title": "Voyage",
+"pdf": "257",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Voyage\nC:Kenny Barron\nP:AABC\n%source The Colorado Cookbook p254 (pdf 257)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Fm\nP:A\n|: \"Fm6/9\"BB BB- B4 | z2 zB BB z2 | \"Gbm6/9\"BB BB- B4 | \"F7b9\"zB BB BB BB |\n\"Bbm7\"B3 B zB BB | \"Gm7b5\"zB BB \"C7\"BB BB | \"Fm6/9\"BB BB- B4 |1 \"Gm7b5\"z4 \"C7\"z4 :|2\n\"Fm6/9\"z2 zB BB z2 ||\nP:B\n\"Dbmaj7\"B2 (3BBB BB BB | \"Em7\"B4 \"A7\"B3 B- | \"Dmaj7\"B2 (3BBB BB BB | \"Fm7\"B4 \"Bb7\"B3 B- |\n\"Ebmaj7\"B2 (3BBB BB BB | \"F#m7\"B4 \"B7\"B3 B- | \"Emaj7\"B2 (3BBB BB BB | \"Gm7b5\"BB BB \"C7\"BB z2 ||\nP:C\n\"Fm6/9\"BB BB- B4 | z2 zB BB z2 | \"Gbm6/9\"BB BB- B4 | \"F7b9\"zB BB BB BB |\n\"Bbm7\"B3 B zB BB | \"Gm7b5\"zB BB \"C7\"BB BB | \"Fm6/9\"BB BB- B4 | \"Gm7b5\"z4 \"C7\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/258-walkin",
+"book": "The Colorado Cookbook",
+"title": "Walkin'",
+"pdf": "258",
+"form": "12-bar blues in F with intro; solos on F blues; intro may be used as ending",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"groups": [
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "intro is in two-note voicings; one rhythm written, no chord symbols printed"
+},
+{
+"bars": [
+17,
+18,
+19
+],
+"groups": [
+17,
+18,
+19
+],
+"text": "head chords written; solo changes (Gm7 | C7 | F7) in parentheses; exact chord placement in bars 17-18 approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Walkin'\nC:Miles Davis\n%source The Colorado Cookbook p255 (pdf 258)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues in F with intro; solos on F blues; intro may be used as ending\nM:4/4\nL:1/8\nK:F\n%intro\nB2 | \"^pedal C on 2 & 4\"BB- B2 B2 B2 | BB- B2 B2 B2 | BB- B2 B4- |\nB6 B2 | BB- B2 B2 B2 | BB- B2 B2 B2 | BB- B2 B4 |\n\"^time\"z2 zB B B2 B- |\nP:A\n|: \"F7\"B6 BB | \"Bb7\"z2 zB B B2 B- | \"F7\"B4 zB BB | z2 zB/B/ B B2 B- |\n\"Bb7\"B6 BB | z2 zB B B2 B- | \"F7\"B6 BB | z4 zB (3BBB |\n\"C7#9\"\"(Gm7)\"BB \"B7#9\"B2 z2 \"Bb7#9\"BB | \"A7#9\"\"(C7)\"B2 z2 \"Ab7#9\"BB \"G7#9\"BB | \"F7#9\"\"(F7)\"B6 BB |1 \"C7\"z2 zB B B2 B- :|2 \"C7\"z8 |]\n\n%unsure [bars 1-7] intro is in two-note voicings; one rhythm written, no chord symbols printed\n%unsure [bars 17-19] head chords written; solo changes (Gm7 | C7 | F7) in parentheses; exact chord placement in bars 17-18 approximate"
+},
+{
+"id": "real-easy-book-c/008-bags-groove",
+"book": "The Real Easy Book (C)",
+"title": "Bags' Groove",
+"pdf": "8",
+"form": "12-bar blues 12",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+12
+],
+"groups": [
+12
+],
+"text": "last bar prints only a half rest before the repeat (pickup implied); written as a full-bar rest"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Bags' Groove\nC:Milt Jackson\n%source Real Easy Book C p1 (pdf 8)\n%style (medium-slow swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues 12\nM:4/4\nL:1/8\nK:F\nB2 |: \"F7\"B6 (3B/2B/2B/2B | B2 (3B/2B/2B/2B B2 (3B/2B/2B/2B | B3 B z4 |\nz4 z2 B2 | \"Bb7\"B6 (3B/2B/2B/2B | B2 (3B/2B/2B/2B B2 (3B/2B/2B/2B | \"F7\"B3 B z4 |\nz4 z2 B2 | \"Gm7\"B6 (3B/2B/2B/2B | \"C7\"B2 (3B/2B/2B/2B B2 (3B/2B/2B/2B | \"F7\"B3 B z4 | \"C7\"z8 :|\n\n%unsure [bar 12] last bar prints only a half rest before the repeat (pickup implied); written as a full-bar rest"
+},
+{
+"id": "real-easy-book-c/010-big-bertha",
+"book": "The Real Easy Book (C)",
+"title": "Big Bertha",
+"pdf": "10",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Big Bertha\nC:Duke Pearson\nP:AABA\n%source Real Easy Book C p3 (pdf 10)\n%style (medium swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\nM:4/4\nL:1/8\nK:Bbm\nP:A\n|: \"Bbm6\"zB BB BB BB | B2 B2 (3BBB BB | z8 | \"F7\"z8 |\n\"Bbm6\"zB BB BB BB | B2 B2 (3BBB BB | z8 |1 \"F7\"z8 :|2\n\"Bbm6\"z4 zB BB- ||\nP:B\n\"Ab7\"B8- | B8 | z B3 B3 B | BB BB- B B2 B- |\n\"Gb7\"B8- | B3 B- BB BB- | \"F7\"B2 z2 z4 | z8 ||\nP:A\n\"Bbm6\"zB BB BB BB | B2 B2 (3BBB BB | z8 | \"F7\"z8 |\n\"Bbm6\"zB BB BB BB | B2 B2 (3BBB BB | z8 | \"(F7)\"z8 |]\n"
+},
+{
+"id": "real-easy-book-c/012-blue-seven",
+"book": "The Real Easy Book (C)",
+"title": "Blue Seven",
+"pdf": "12",
+"form": "12-bar blues 12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blue Seven\nC:Sonny Rollins\n%source Real Easy Book C p5 (pdf 12)\n%style (medium-slow swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues 12\nM:4/4\nL:1/8\nK:Bb\n\"Bb7\"B2 B6 | \"Eb7\"z4 BB BB | \"Bb7\"BB z2 B2 z2 | z8 |\n\"Eb7\"BB B2 z4 | z4 BB BB | \"Bb7\"BB z2 B2 z2 | z4 z2 BB |\n\"F7\"z B3- B2 z2 | \"Eb7\"z4 BB BB | \"Bb7\"BB z2 B2 z2 | \"F7\"z8 |]\n"
+},
+{
+"id": "real-easy-book-c/014-blues-by-five",
+"book": "The Real Easy Book (C)",
+"title": "Blues By Five",
+"pdf": "14",
+"form": "12-bar blues 12",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blues By Five\nC:Red Garland\n%source Real Easy Book C p7 (pdf 14)\n%style (medium swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues 12\nM:4/4\nL:1/8\nK:Bb\nB2 |: \"Bb7\"B3 B- B2 B2 | B3 B- B2 B2 | BB B2 B2 BB |\nz4 z2 B2 | \"Eb7\"B3 B- B2 B2 | B3 B- B2 B2 | \"Bb7\"BB B2 B2 BB |\nz4 z2 B2 | \"F7\"B3 B- B2 B2- | B B3 BB BB | \"Bb7\"z8 | \"F7\"z8 :|\n"
+},
+{
+"id": "real-easy-book-c/016-blues-in-the-closet",
+"book": "The Real Easy Book (C)",
+"title": "Blues In The Closet",
+"pdf": "16",
+"form": "12-bar blues 12",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blues In The Closet\nC:Oscar Pettiford\n%source Real Easy Book C p9 (pdf 16)\n%style (medium-slow swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues 12\nM:4/4\nL:1/8\nK:F\nB- || \"F7\"B2 BB B2 BB | B2 BB- B B2 B- | B2 BB B2 BB- |\nB B3- B2 zB- | \"Bb7\"B2 BB B2 BB | B2 BB- B B2 B- | \"F7\"B2 BB B2 BB- |\nB B3- B2 zB- | \"Gm7\"B2 BB B2 BB | \"C7\"B2 BB- B B2 B- | \"F7\"B2 BB B2 BB- | \"C7\"B4 z4 |]\n"
+},
+{
+"id": "real-easy-book-c/018-cold-duck-time",
+"book": "The Real Easy Book (C)",
+"title": "Cold Duck Time",
+"pdf": "18",
+"form": "12-bar 12",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Cold Duck Time\nC:Eddie Harris\n%source Real Easy Book C p11 (pdf 18)\n%style (straight-eighth feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar 12\nM:4/4\nL:1/8\nK:F\nzB BB BB |: \"F7\"z2 zB BB BB | \"Bb7\"z2 zB BB BB | \"F7\"zB zB B2 BB |\n\"Bb7\"B2 zB BB BB | \"F7\"z2 zB BB BB | \"Bb7\"z2 zB BB BB | \"F7\"zB zB B2 BB |\n\"Bb7\"B2 zB BB BB- | \"Dbmaj7\"B7 B- | \"Ebmaj7\"B7 B | \"F7\"z8 | B2 zB BB BB :|\n"
+},
+{
+"id": "real-easy-book-c/020-contemplation",
+"book": "The Real Easy Book (C)",
+"title": "Contemplation",
+"pdf": "20",
+"form": "16 bars (as stated in text)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Contemplation\nC:McCoy Tyner\n%source Real Easy Book Vol 1 (C) p13 (pdf 20)\n%style (slow jazz waltz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars (as stated in text)\nM:3/4\nL:1/8\nK:Cm\n\"Cm7\"z2 B2- BB/B/ | B4- BB | B6- | B6 |\nz2 B2- BB/B/ | \"Cm7\"B4- BB | B2 B4- | B6 |\n\"Abmaj7#11\"z2 B2- BB/B/ | B4- BB/B/ | \"Abmaj7#11\"B6- | B6 |\n\"G7sus(b9)\"z2 B2- BB/B/ | B4- BB/B/ | B4- BB/B/ | B6 |]\n"
+},
+{
+"id": "real-easy-book-c/022-doxy",
+"book": "The Real Easy Book (C)",
+"title": "Doxy",
+"pdf": "22",
+"form": "16 bars (as stated in text)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+16
+],
+"groups": [
+16
+],
+"text": "last-bar pickup note is printed in parentheses (repeat only)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Doxy\nC:Sonny Rollins\n%source Real Easy Book Vol 1 (C) p15 (pdf 22)\n%style (medium-slow swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars (as stated in text)\nM:4/4\nL:1/8\nK:Bb\nB |: \"Bb7\"BB BB B2 zB | \"G7\"BB BB z B2 B | \"C7\"BB BB \"F7\"(3BBB BB |\n\"Bb\"z4 \"F7\"z2 zB | \"Bb7\"BB BB B2 zB | \"G7\"BB BB z B2 B | \"C7\"BB BB (3BBB BB |\n\"F7\"z8 || \"Bb7\"B2 zB z2 B2- | B3 B- B B2 B | \"Eb7\"B2 BB B2 B2 |\n\"Eo7\"z4 z2 zB | \"Bb7\"BB BB B2 zB | \"G7\"BB BB z B2 B | \"C7\"BB BB \"F7\"(3BBB BB | \"Bb\"z4 \"F7\"z2 zB :|\n\n%unsure [bar 16] last-bar pickup note is printed in parentheses (repeat only)"
+},
+{
+"id": "real-easy-book-c/024-edward-lee",
+"book": "The Real Easy Book (C)",
+"title": "Edward Lee",
+"pdf": "24",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Edward Lee\nC:Harold Mabern, Jr.\nP:AABA\n%source Real Easy Book Vol 1 (C) p17 (pdf 24)\n%style (medium swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\nM:4/4\nL:1/8\nK:Em\nP:A\n|: \"Em7\"zB BB B2 B2 | B2 BB- B4 | zB BB B4 | \"A7\"B2 BB- B4 |\n\"B7\"zB BB B3 B | \"Em7\"BB BB- B4 | \"Cmaj7\"zB BB B2 (3BBB | \"B7\"B2 BB- \"Em7\"B4 :|\nP:B\n\"G7\"B4 BB BB- | \"Cmaj7\"B4 B2 BB | \"E7\"B4 B2 BB- | \"Amaj7\"B6 z2 |\n\"D7\"B4 BB BB- | \"Gmaj7\"B4 B2 BB | \"C7sus\"B4 BB BB- | \"B7\"B2 (3BBB B2 BB ||\nP:A\n\"Em7\"zB BB B2 B2 | B2 BB- B4 | zB BB B4 | \"A7\"B2 BB- B4 |\n\"B7\"zB BB B3 B | \"Em7\"BB BB- B4 | \"Cmaj7\"zB BB B2 (3BBB | \"B7\"B2 BB- \"Em7\"B4 |]\n"
+},
+{
+"id": "real-easy-book-c/026-equinox",
+"book": "The Real Easy Book (C)",
+"title": "Equinox",
+"pdf": "26",
+"form": "12-bar minor blues (as stated in text)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+12
+],
+"groups": [
+12
+],
+"text": "last pickup note is printed in parentheses (repeat only)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Equinox\nC:John Coltrane\n%source Real Easy Book Vol 1 (C) p19 (pdf 26)\n%style (slow swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar minor blues (as stated in text)\nM:4/4\nL:1/8\nK:Cm\nB |: \"Cm7\"B3 B- B4- | B6 zB | BB- B6 |\nz4 z2 zB | \"Fm7\"B3 B- B4- | B6 zB | \"Cm7\"B3 B- B3 B |\nBB z2 z4 | \"Ab7\"z B3 B2 B2 | \"G7\"B3 B BB B2 | \"Cm7\"B8- | B6 zB :|\n\n%unsure [bar 12] last pickup note is printed in parentheses (repeat only)"
+},
+{
+"id": "real-easy-book-c/028-freedom-jazz-dance",
+"book": "The Real Easy Book (C)",
+"title": "Freedom Jazz Dance",
+"pdf": "28",
+"form": "16 bars",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form count inferred (not printed); final note is a two-note accented chord"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Freedom Jazz Dance\nC:Eddie Harris\n%source Real Easy Book Vol 1 (C) p21 (pdf 28)\n%style (straight eighths)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars\nM:4/4\nL:1/8\nK:Bb\nBB || \"Bb7\"BB BB BB BB | BB BB B2 z2 | z8 |\nz8 | \"Bb7\"zB BB BB BB | BB BB B2 z2 | z8 |\nz4 z2 zB | \"Bb7\"BB BB BB BB | BB BB BB BB | BB BB BB BB |\n(3BBB BB B2 \"Bb7#9\"B2 | \"Bb7\"z8 | z8 | z8 | z8 |]\n\n%unsure [form] form count inferred (not printed); final note is a two-note accented chord"
+},
+{
+"id": "real-easy-book-c/030-gingerbread-boy",
+"book": "The Real Easy Book (C)",
+"title": "Gingerbread Boy",
+"pdf": "30",
+"form": "16-bar modified blues (as stated in text); solos on 12-bar Bb blues",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+2,
+3,
+4,
+6,
+7,
+8
+],
+"groups": [
+2,
+3,
+4,
+6,
+7,
+8
+],
+"text": "bars 2-4 and 6-8 rests hold a printed band rhythm figure (rhythm slashes) on Bb7#9; bass staff skipped"
+},
+{
+"bars": [
+11,
+12,
+13,
+14,
+15,
+16
+],
+"groups": [
+11,
+12,
+13,
+14,
+15,
+16
+],
+"text": "bars 13-16 are band rhythm hits (from beat 2) under melody rests; bars 11-12 printed in octaves"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Gingerbread Boy\nC:Jimmy Heath\n%source Real Easy Book Vol 1 (C) p23 (pdf 30)\n%style (medium swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16-bar modified blues (as stated in text); solos on 12-bar Bb blues\nM:4/4\nL:1/8\nK:Bb\nB | \"Bb7\"BB BB B3 B | BB BB \"Bb7#9\"z4 | z8 |\nz8 | \"Eb7\"zB BB \"E7\"BB BB | \"Eb7\"BB BB \"Bb7#9\"z4 | z8 |\nz4 zB B2 | \"Bb7\"B2 BB B2 B2 | \"G7\"BB B2 z4 | \"C7\"B2 BB B2 B2 |\n\"F7\"BB B2 z4 | \"Bb7#9\"z8 | z8 | z8 | z8 |]\n\n%unsure [bars 2-4, 6-8] bars 2-4 and 6-8 rests hold a printed band rhythm figure (rhythm slashes) on Bb7#9; bass staff skipped\n%unsure [bars 11-16] bars 13-16 are band rhythm hits (from beat 2) under melody rests; bars 11-12 printed in octaves"
+},
+{
+"id": "real-easy-book-c/032-groove-merchant",
+"book": "The Real Easy Book (C)",
+"title": "Groove Merchant",
+"pdf": "32",
+"form": "16 bars, repeated",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+16,
+17
+],
+"groups": [
+15,
+16
+],
+"text": "bar 15 dotted 16th/8th pairings read approximately (printed with extra notes); last-bar pickup is in parentheses"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Groove Merchant\nC:Jerome Richardson\n%source Real Easy Book C p25 (pdf 32)\n%style (originally medium-swing feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars, repeated\nM:4/4\nL:1/8\nK:Bb\nz4 BB BB |: \"Bb7\"B2 z2 z4 | \"Eb7\"z2 BB BB BB | \"Bb7\"B2 z2 z4 |\n\"F7\"z4 BB BB | \"Bb7\"BB- B6 | \"C7\"z2 B2 B/2B3/2 BB | \"F7\"B2 z2 \"C7\"z4 |\n\"F7\"z4 BB BB | \"Bb7\"BB- B4 BB | z4 BB BB | \"Eb7\"BB- B4 BB |\n\"Eo7\"z4 BB BB | \"Bb7\"B2 zB \"D7\"z4 | \"Gm7\"BB BB \"Eb7\"B2 BB | \"Cm7\"B/2B3/2 B/2B3/2 \"F7\"B/2B3/2 B3/2B/2 | \"Bb7\"B2 z2 BB BB :|\n\n%unsure [bars 16-17] bar 15 dotted 16th/8th pairings read approximately (printed with extra notes); last-bar pickup is in parentheses"
+},
+{
+"id": "real-easy-book-c/034-jive-samba",
+"book": "The Real Easy Book (C)",
+"title": "Jive Samba",
+"pdf": "34",
+"form": "AABB 8+8 (A1/A2, B1/B2 via 1st/2nd endings)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "bass staff skipped; chords taken from it"
+},
+{
+"bars": [
+10,
+11
+],
+"groups": [
+10,
+11
+],
+"text": "B section: break over Bb7 in bars 1-2"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Jive Samba\nC:Nat Adderley\nP:AABB\n%source Real Easy Book C p27 (pdf 34)\n%style (originally straight-eighth feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABB 8+8 (A1/A2, B1/B2 via 1st/2nd endings)\n%unsure [general] bass staff skipped; chords taken from it\nM:4/4\nL:1/8\nK:F\nB |:\nP:A\n\"F7#9\"B B3- B4- | B6 BB | B3 B- B4- | B8 |\nz2 zB B B3- | B4- BB BB | B2 BB- B4- |1 B6 zB :|2 B6 z2 |]\nP:B\n|: \"Bb7\"BB zB zB B2 | B2 zB \"F7#9\"B2 B2 | BB zB- B4- | B6 zB |\nB B3- B4- |1 B6 BB | B3 B- B4- | B6 z2 :|2\nB4- BB BB | B3 B- B4- | B8 |]\n\n%unsure [bars 10-11] B section: break over Bb7 in bars 1-2"
+},
+{
+"id": "real-easy-book-c/036-jojo-calypso",
+"book": "The Real Easy Book (C)",
+"title": "Jo Jo Calypso",
+"pdf": "36",
+"form": "16 bars, repeated",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+15,
+16
+],
+"groups": [
+15,
+16
+],
+"text": "last bar: pickup 8th printed in parentheses (for the repeat); bar 15 has double-stop chords"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Jo Jo Calypso\nC:Jim Nadel\n%source Real Easy Book C p29 (pdf 36)\n%style (originally straight-eighth feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars, repeated\nM:4/4\nL:1/8\nK:F\nB |: \"F\"BB BB- B3 B | \"Gm7\"B2 BB- B B3 | \"C7\"zB BB B2 BB |\n\"F\"B B2 B- B3 B | \"F\"B2 BB B B3 | \"Gm7\"BB BB- B4 | \"C7\"(3B2B2B2 (3B2B2B2 |\n\"F\"B8 || \"F\"BB BB- B B3 | \"Gm7\"B B2 B- B4 | \"C7\"B2 BB (3B2B2B2 |\n\"F\"B B2 B- B4 | \"F\"BB BB B B2 B- | \"Gm7\"B B2 B- B4 | \"C7\"(3B2B2B2 (3B2B2B2 | \"F\"B6 zB :|\n\n%unsure [bars 15-16] last bar: pickup 8th printed in parentheses (for the repeat); bar 15 has double-stop chords"
+},
+{
+"id": "real-easy-book-c/038-the-jody-grind",
+"book": "The Real Easy Book (C)",
+"title": "The Jody Grind",
+"pdf": "38",
+"form": "12-bar blues",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+0,
+12
+],
+"groups": [
+0,
+12
+],
+"text": "pickup tied over the repeat (grace note ignored); key signature 4 flats read as Ab"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Jody Grind\nC:Horace Silver\n%source Real Easy Book C p31 (pdf 38)\n%style (12-bar blues, originally straight-eighth feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues\nM:4/4\nL:1/8\nK:Ab\nB- |: \"Bbm7\"B B2 B B2 B2 | z4 z2 zB | BB BB B2 z2 |\nz4 z2 zB | \"Eb7\"BB BB BB z2 | z4 z2 zB | \"Bbm7\"(3BBB BB- B2 z2 |\nz8 | \"A7#11\"zB BB BB BB | \"B7#11\"BB BB- B2 z2 | \"Bbm7\"z2 B4 zB |\n\"Bbm7\"B/2B/2B BB B2 zB- :|\n\n%unsure [bars 0, 12] pickup tied over the repeat (grace note ignored); key signature 4 flats read as Ab"
+},
+{
+"id": "real-easy-book-c/040-killer-joe",
+"book": "The Real Easy Book (C)",
+"title": "Killer Joe",
+"pdf": "40",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Killer Joe\nC:Benny Golson\nP:AABA\n%source Real Easy Book C p33 (pdf 40)\n%style (originally medium-swing feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\nM:4/4\nL:1/8\nK:C\n|:\nP:A\n\"C7\"z4 B2 BB- | \"Bb7\"B8 | \"C7\"z4 B2 BB- | \"Bb7\"B8 |\n\"C7\"z4 B2 BB- | \"Bb7\"B6 BB- | \"C7\"B8- | \"Bb7\"B8 :|\nP:B\n\"Em7b5\"B8- | \"A7b9\"B4 B4 | \"Ebm7\"B8- | \"Ab7\"B4 B4 |\n\"A7\"B8 | \"Ab7\"z4 B4 | \"Em7\"B8- | \"A7\"B8 ||\nP:A\n\"C7\"z4 B2 BB- | \"Bb7\"B8 | \"C7\"z4 B2 BB- | \"Bb7\"B8 |\n\"C7\"z4 B2 BB- | \"Bb7\"B6 BB- | \"C7\"B8- | \"Bb7\"B8 |]\n"
+},
+{
+"id": "real-easy-book-c/042-listen-here",
+"book": "The Real Easy Book (C)",
+"title": "Listen Here",
+"pdf": "42",
+"form": "8 bars, repeated",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+0,
+8
+],
+"groups": [
+0,
+8
+],
+"text": "grace notes omitted; last two 8ths printed in parentheses (pickup for the repeat)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Listen Here\nC:Eddie Harris\n%source Real Easy Book C p35 (pdf 42)\n%style (originally straight-eighth feel; 2nd x, play 8va)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 8 bars, repeated\nM:4/4\nL:1/8\nK:Bb\nBB |: \"Bb7\"B2 z2 z4 | \"Eb7\"z2 zB BB BB | \"Bb7\"B2 B2 z4 |\n\"Eb7\"z2 zB BB BB | \"Bb7\"B2 B2 z4 | \"Eb7\"z2 zB BB BB | \"Bb7\"B2 B2 z4 | \"Eb7\"z4 z2 BB :|\n\n%unsure [bars 0, 8] grace notes omitted; last two 8ths printed in parentheses (pickup for the repeat)"
+},
+{
+"id": "real-easy-book-c/044-little-sunflower",
+"book": "The Real Easy Book (C)",
+"title": "Little Sunflower",
+"pdf": "44",
+"form": "AABBAA 8+8+8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Little Sunflower\nC:Freddie Hubbard\nP:AABBAA\n%form AABBAA 8+8+8+8+8+8\n%source Real Easy Book C p37 (pdf 44)\n%style (straight-eighth feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:F\nP:A\n|: \"Dm7\"z4 B B2 B- | B B2 B- B4 | z4 B B2 B- | B B2 B- B2 BB |\n\"Dm7\"B2 BB B4- | B8- | B8- |1 B8 :|2\nB2 z2 BB BB ||\nP:B\n|: \"Ebmaj7\"B3 B- B4- | B8- | B8 | z2 zB BB BB |\n\"Dmaj7\"B3 B- B4- | B8- | B8- |1 B4 BB BB :|2\nB6 z2 ||\nP:A\n|: \"Dm7\"z4 B B2 B- | B B2 B- B4 | z4 B B2 B- | B B2 B- B2 BB |\n\"Dm7\"B2 BB B4- | B8- | B8- | B8 :|\n"
+},
+{
+"id": "real-easy-book-c/046-mercy-mercy-mercy",
+"book": "The Real Easy Book (C)",
+"title": "Mercy, Mercy, Mercy",
+"pdf": "46",
+"form": "",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+9,
+10,
+11,
+12
+],
+"groups": [
+8,
+9,
+10,
+11
+],
+"text": "key change to C (no flats) from bar 9 as printed; Eb/Bb placement on beat 3 approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Mercy, Mercy, Mercy\nC:Josef Zawinul\n%source Real Easy Book C p39 (pdf 46)\n%style (slow straight-eighth feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Bb\n%verse\n\"Bb7\"z2 BB- B2 BB | \"Eb7\"BB BB B2 B2 | \"Bb7\"z2 BB- B2 BB | \"Eb7\"BB BB B2 B2 |\n\"Bb7\"z2 BB- B2 BB | \"Eb7\"BB BB B2 B2 | \"Bb7\"z2 BB- B2 BB | \"Eb7\"BB BB B2 B2 |\nK:C\n%%bridge\n\"Bb\"B2 B2 \"Eb/Bb\"B B2 B- | \"Bb7\"B2 B2 \"Eb/Bb\"B B2 B- | \"Bb\"B2 B2 \"Eb/Bb\"B B2 B- | \"Bb7\"B2 B2 \"Eb/Bb\"B B2 B- |\n\"Bb\"B2 BB \"Bb/D\"BB \"Eb\"BB | \"F\"B2 \"F7sus\"B4- Bz | \"Bb\"z2 BB \"Bb/D\"BB \"Eb\"BB | \"F\"B2 z2 zB BB |\n\"Cm7\"B3 B z2 zB | \"Dm7\"B3 B z2 BB | \"Gm\"B3 \"F\"B \"Gm\"B3 \"F\"B | \"Gm\"B4 z4 |]\n\n%unsure [bars 9-12] key change to C (no flats) from bar 9 as printed; Eb/Bb placement on beat 3 approximate"
+},
+{
+"id": "real-easy-book-c/048-midnight-waltz",
+"book": "The Real Easy Book (C)",
+"title": "Midnight Waltz",
+"pdf": "48",
+"form": "24-bar blues",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+24
+],
+"groups": [
+24
+],
+"text": "last-bar quarter is a parenthesized pickup back to the top"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Midnight Waltz\nC:Cedar Walton\n%form 24-bar blues\n%source Real Easy Book C p41 (pdf 48)\n%style (jazz-waltz feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:3/4\nL:1/8\nK:C\nB2 |: \"C7\"B/B/B- B2 B2 | \"C7sus\"B/B/B- B2 B2 | \"C7\"BB- B2 B2 |\n\"C7sus\"BB- B2 B2 | \"C7\"BB- B4- | \"C7sus\"B6- | \"C7\"B6 |\n\"C7sus\"z6 | \"F7\"zB- B2 B2 | zB- B2 B2 | \"F7sus\"zB- B2 B2 |\nzB- B2 B2 | \"C7\"BB- B4- | \"C7sus\"B6- | \"C7\"B6 |\n\"C7sus\"z6 | \"Ab7\"zB- B2 B2 | B2 BB- B2 | \"G7b9\"z2 B2 B2 |\nB2 BB- BB | \"C7\"BB- B4- | \"C7sus\"B6- | \"C7\"B6- | \"C7sus\"B4 B2 :|\n\n%unsure [bar 24] last-bar quarter is a parenthesized pickup back to the top"
+},
+{
+"id": "real-easy-book-c/050-mr-p-c",
+"book": "The Real Easy Book (C)",
+"title": "Mr. P.C.",
+"pdf": "50",
+"form": "12-bar minor blues",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Mr. P.C.\nC:John Coltrane\n%form 12-bar minor blues\n%source Real Easy Book C p43 (pdf 50)\n%style (fast swing feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Cm\n\"Cm7\"BB BB BB BB | B3 B B B2 B | B4 B3 B- | B8 |\n\"Fm7\"BB BB BB BB | B3 B B B2 B | \"Cm7\"B4 B3 B | z4 BB BB |\n\"Ab7\"z B3- B3 B | \"G7\"z B2 B B2 B2 | \"Cm7\"B4 B3 B- | B4 z4 |]\n"
+},
+{
+"id": "real-easy-book-c/052-one-for-daddy-o",
+"book": "The Real Easy Book (C)",
+"title": "One For Daddy-O",
+"pdf": "52",
+"form": "12-bar minor blues",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+1,
+2,
+5,
+6
+],
+"groups": [
+0,
+1,
+4,
+5
+],
+"text": "bars 1-2 and 5-6: after the first quarter, the bracketed figure is marked \"(piano only)\"; kept as notes"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:One For Daddy-O\nC:Nat Adderley\n%form 12-bar minor blues\n%source Real Easy Book C p45 (pdf 52)\n%style (medium-slow swing feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Bbm\nz2 B2 BB B2 |: \"Bbm7\"B2 B2 BB B2 | B2 B2 BB B2 | B2 B2 B B2 B |\n\"Bb7\"z2 B2 BB B2 | \"Ebm7\"B2 B2 BB B2 | B2 B2 BB B2 | \"Bbm7\"B2 B2 B B2 B |\nz2 B2 BB B2 | \"Cm7b5\"BB BB- B2 BB | \"F7\"B B3 BB BB | \"Bbm7\"z8 | \"F7\"z2 B2 BB B2 :|\n\n%unsure [bars 1-2, 5-6] bars 1-2 and 5-6: after the first quarter, the bracketed figure is marked \"(piano only)\"; kept as notes"
+},
+{
+"id": "real-easy-book-c/054-red-s-good-groove",
+"book": "The Real Easy Book (C)",
+"title": "Red's Good Groove",
+"pdf": "54",
+"form": "12-bar blues",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+12
+],
+"groups": [
+12
+],
+"text": "last-bar pickup notes are parenthesized in the book (repeat pickup)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Red's Good Groove\nC:Red Garland\n%form 12-bar blues\n%source Real Easy Book C p47 (pdf 54)\n%style (slow swing feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Bb\nB BB |: \"Bb7\"B2 BB zB BB | \"Eb7\"B2 BB zB BB | \"Bb7\"BB BB BB BB |\nz4 zB BB | \"Eb7\"B2 BB zB BB | B2 BB zB BB | \"Bb7\"BB BB BB BB |\nz4 zB (3BBB | \"Cm7\"BB BB BB BB | \"F7\"BB BB BB (3BBB | \"Bb7\"B2 z2 z4 | \"F7\"z4 zB BB :|\n\n%unsure [bar 12] last-bar pickup notes are parenthesized in the book (repeat pickup)"
+},
+{
+"id": "real-easy-book-c/056-revelation",
+"book": "The Real Easy Book (C)",
+"title": "Revelation",
+"pdf": "56",
+"form": "12-bar minor blues",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Revelation\nC:Kenny Barron\nP:A\n%source Real Easy Book C p49 (pdf 56)\n%style (Medium Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar minor blues\nM:4/4\nL:1/8\nK:F\nB BB || \"Dm7\"B2 BB- B4- | B4 zB BB | B2 BB- B4- |\nB4 zB BB | \"Gm7\"B2 BB- B4- | B4 zB BB | \"Dm7\"B2 BB- B4- |\nB6 z2 | \"Bb7#11\"B2 BB- B4 | \"A7#11\"B2 BB- B4 | \"Dm7\"B2 BB- B4- | B6 z2 |]\n"
+},
+{
+"id": "real-easy-book-c/058-road-song",
+"book": "The Real Easy Book (C)",
+"title": "Road Song",
+"pdf": "58",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+25
+],
+"groups": [
+25
+],
+"text": "last quarter note is printed in parentheses (pickup back to top)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Road Song\nC:John L. (\"Wes\") Montgomery\nP:AABA\n%source Real Easy Book C p51 (pdf 58)\n%style (Straight Eighths)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\n%note grace notes omitted\nM:4/4\nL:1/8\nK:C\nB2 |:\nP:A\n\"Gm7\"BB BB B2 B2 | z8 | \"D7#9\"BB BB B4 | z4 z2 zB |\n\"Gm7\"BB BB- B B2 B- | \"C7\"B B2 B- B B2 B | \"Cm7\"B3 B- B3 B |1 \"D7#9\"B2 \"Gm7\"B4 B2- :|2\n\"D7#9\"B2 \"Gm7\"B4 z2 ||\nP:B\n\"Cm7\"z2 zB- B B2 B | \"F7\"B3 B B2 BB- | \"Bbmaj7\"B8 | \"E7\"z8 |\n\"Bbm7\"z2 zB- B B2 B | \"Eb7\"B3 B B2 BB- | \"Abmaj7\"B8 | \"D7#9\"z4 z2 B2 ||\nP:A\n\"Gm7\"BB BB B2 B2 | z8 | \"D7#9\"BB BB B4 | z4 z2 zB |\n\"Gm7\"BB BB- B B2 B- | \"C7\"B B2 B- B B2 B | \"Cm7\"B3 B- B3 B | \"D7#9\"B2 \"Gm7\"B4 B2 |]\n\n%unsure [bar 25] last quarter note is printed in parentheses (pickup back to top)"
+},
+{
+"id": "real-easy-book-c/060-short-stuff",
+"book": "The Real Easy Book (C)",
+"title": "Short Stuff",
+"pdf": "60",
+"form": "8-bar 8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "bars 7-8 are rhythm slashes, written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Short Stuff\nC:Cedar Walton\nP:A\n%source Real Easy Book C p53 (pdf 60)\n%style (Medium-Slow Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 8-bar 8\nM:4/4\nL:1/8\nK:Bb\n|: \"Bb7\"z2 BB BB z2 | BB BB z4 | \"Eb7\"z2 zB- B B2 B | \"Bb7\"BB BB B2 B2 |\n\"Eb7\"z2 zB- B B2 B | \"F7\"(3BBB BB B2 BB | \"Bb7\"z4 \"Ab7\"z4 | \"Gb7\"z4 \"F7\"z4 :|\n\n%unsure [bars 7-8] bars 7-8 are rhythm slashes, written as rests"
+},
+{
+"id": "real-easy-book-c/062-shoshana",
+"book": "The Real Easy Book (C)",
+"title": "Shoshana",
+"pdf": "62",
+"form": "AABB 8+8+8+8 (A: 8 bars with repeat and endings; B interlude)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+18
+],
+"groups": [
+17
+],
+"text": "ending 2 whole note is shown tied from the previous bar"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Shoshana\nC:Mark Levine\nP:AABB\n%source Real Easy Book C p55 (pdf 62)\n%style (Straight Eighths)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABB 8+8+8+8 (A: 8 bars with repeat and endings; B interlude)\n%note B section printed in octaves; one line kept\nM:4/4\nL:1/8\nK:Eb\n%intro piano montuno (top staff only; bass staff skipped)\n|: \"Fm7\"B2 BB B2 BB | zB BB B2 BB | B2 BB B2 BB | zB BB B2 BB |\n\"Ebm7\"B2 BB B2 BB | zB BB B2 BB | B2 BB B2 BB |1 zB BB B2 BB :|2\nzB BB B2 zB ||\nP:A\n|: \"Bb7\"B2 B2 B4- | B8- | B8- | B7 B |\n\"Ab7\"B2 B2 B4- | B8- | B8- |1 B7 B :|2\nB8 ||\nP:B\n|: \"Fm7\"B4 B3 B | zB BB B B2 B | B2 B2 B3 B | z2 zB B2 B2 |\n\"Ebm7\"B4 B3 B | zB BB B B2 B | B2 B2 B3 B | z2 zB B2 B2 :|\n\n%unsure [bar 18] ending 2 whole note is shown tied from the previous bar"
+},
+{
+"id": "real-easy-book-c/064-sir-john",
+"book": "The Real Easy Book (C)",
+"title": "Sir John",
+"pdf": "64",
+"form": "12-bar blues 12",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+12
+],
+"groups": [
+12
+],
+"text": "last three notes (pickup back to top) are printed in parentheses"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sir John\nC:Blue Mitchell\nP:A\n%source Real Easy Book C p57 (pdf 64)\n%style (Medium Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues 12\nM:4/4\nL:1/8\nK:Bb\nB BB- |: \"Bb7\"B B2 B- B B2 B | \"Eb6\"\"(Eb7)\"B2 BB BB zB- | \"Bb7\"B2 BB B2 B2 |\nBB BB B2 B2 | \"Eb7\"zB BB z B2 B | B2 BB BB zB- | \"Bb7\"B2 BB B2 BB |\n\"G7b9\"B2 (3BBB BB BB | \"Cm7\"BB BB BB BB | \"F7\"B2 (3BBB BB BB- | \"Bb7\"BB- B6 | \"F7\"z4 zB BB- :|\n\n%unsure [bar 12] last three notes (pickup back to top) are printed in parentheses"
+},
+{
+"id": "real-easy-book-c/066-sister-sadie",
+"book": "The Real Easy Book (C)",
+"title": "Sister Sadie",
+"pdf": "66",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+8
+],
+"groups": [
+8
+],
+"text": "(Ab7) and bass hit at end of A2 marked 1st time only"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sister Sadie\nC:Horace Silver\nP:AABA\n%source Real Easy Book C p59 (pdf 66)\n%style (Medium Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\n%note bass stop-time staff skipped; Ab7 hits fall on the last eighth of the bar\nM:4/4\nL:1/8\nK:C\nz3 \"Ab7\"z |:\nP:A\n\"G7\"z B2 B BB BB | B3 B z3 \"Ab7\"z | \"G7\"z B2 B BB BB | B3 B z3 \"Ab7\"z |\n\"G7\"z B2 B BB BB | BB- BB B2 z\"Ab7\"B | \"G7\"BB BB (3BBB BB | (3BBB BB B2 z\"(Ab7)\"z :|\nP:B\n\"C7\"z4 z B2 B | (3BBB BB B4- | \"G7\"B2 z2 z B2 B | (3BBB BB B4- |\n\"C7\"B2 z2 z B2 B | \"Bb7\"(3BBB BB B4- | \"A7\"B2 z2 z B2 B | \"Ab7\"(3BBB BB- \"Ab7\"B2 z2 ||\nP:A\n\"G7\"z B2 B BB BB | B3 B z3 \"Ab7\"z | \"G7\"z B2 B BB BB | B3 B z3 \"Ab7\"z |\n\"G7\"z B2 B BB BB | BB- BB B2 z\"Ab7\"B | \"G7\"BB BB (3BBB BB | (3BBB BB B2 z2 |]\n\n%unsure [bar 8] (Ab7) and bass hit at end of A2 marked 1st time only"
+},
+{
+"id": "real-easy-book-c/068-so-dan-o-samba",
+"book": "The Real Easy Book (C)",
+"title": "So Danço Samba",
+"pdf": "68",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:So Danço Samba\nC:Antonio Carlos Jobim\nP:AABA\n%source Real Easy Book C p61 (pdf 68)\n%style (straight-eighth feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\nM:4/4\nL:1/8\nK:C\n%pickup\nB |:\nP:A\n\"C6/9\"B2 BB- B B2 B | B2 BB- B B3 | \"D7\"(3z2B2B2 (3B2B2B2- | B4 z2 zB |\n\"Dm7\"B2 BB- B B2 B | \"G7\"B2 BB- B B3 |1 \"C6/9\"z2 !accent!B6 | \"G7\"z4 z2 zB :|2\n\"C6/9\"z2 !accent!B6 | z8 ||\nP:B\n\"Gm7\"B B2 B- B B2 \"C7\"B- | B B2 B- B B2 B- | \"Fmaj7\"B8- | B4 z4 |\n\"D7\"B B2 B- B4 | B B2 B- B2 BB | \"Dm7\"B2 BB BB \"G7\"B2- | B4 z2 zB ||\nP:A\n\"C6/9\"B2 BB- B B2 B | B2 BB- B B3 | \"D7\"(3z2B2B2 (3B2B2B2- | B4 z2 zB |\n\"Dm7\"B2 BB- B B2 B | \"G7\"B2 BB- B B3 | \"C6/9\"z2 !accent!B6 | z8 |]\n"
+},
+{
+"id": "real-easy-book-c/070-song-for-my-father",
+"book": "The Real Easy Book (C)",
+"title": "Song For My Father",
+"pdf": "70",
+"form": "AAB 8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+17
+],
+"groups": [
+17
+],
+"text": "last bar: pickup eighths are in parentheses (for the repeat)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Song For My Father\nC:Horace Silver\nP:AAB\n%source Real Easy Book C p63 (pdf 70)\n%style (straight-eighth feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AAB 8+8+8\n%note bass-line staff not transcribed\nM:4/4\nL:1/8\nK:Fm\n%pickup\nB BB |:\nP:A\n\"Fm9\"BB BB BB BB- | BB BB BB BB- | \"Eb69\"B8- | B6 BB |\n\"Db69\"BB- B6 | \"C9\"z4 B3 B- | \"Fm9\"B8- |1 B4 zB BB :|2\n\"Fm9\"B4 zB BB ||\nP:B\n\"Eb69\"BB zB- B4- | B4 zB BB | \"Fm9\"BB zB- B4- | B4 zB BB |\n\"Eb69\"BB zB- \"Db69\"B4 | \"C7\"z4 B3 B- | \"Fm9\"B8- | B4 zB BB |]\n\n%unsure [bar 17] last bar: pickup eighths are in parentheses (for the repeat)"
+},
+{
+"id": "real-easy-book-c/072-sonnymoon-for-two",
+"book": "The Real Easy Book (C)",
+"title": "Sonnymoon For Two",
+"pdf": "72",
+"form": "12-bar blues",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sonnymoon For Two\nC:Sonny Rollins\n%source Real Easy Book C p65 (pdf 72)\n%style (medium swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues\nM:4/4\nL:1/8\nK:Bb\n|: \"Bb7\"z B3 B2 B2 | B2 B2 BB zB | zB BB- B2 BB | zB BB- B2 BB |\n\"Eb7\"z B3 B2 B2 | B2 B2 BB zB | \"Bb7\"zB BB- B2 BB | zB BB- B2 BB |\n\"F7\"z B3 B2 B2 | B2 B2 BB zB | \"Bb7\"zB BB- B2 BB | \"F7\"zB BB- B2 BB :|\n"
+},
+{
+"id": "real-easy-book-c/074-st-james-infirmary",
+"book": "The Real Easy Book (C)",
+"title": "St. James Infirmary",
+"pdf": "74",
+"form": "8 bars",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+8
+],
+"groups": [
+8
+],
+"text": "last two eighths are in parentheses (pickup for the repeat)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:St. James Infirmary\nC:Joe Primrose\n%source Real Easy Book C p67 (pdf 74)\n%style (slow swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 8 bars\nM:4/4\nL:1/8\nK:Dm\n%pickup\nBB |: \"Dm\"B2 BB \"A7\"B3 B | \"Dm\"B B3- B2 BB | B2 BB B3 B |\n\"A7\"B6 BB | \"Dm\"B3 B \"A7\"B3 B | \"Dm\"B B3- B2 BB | \"Bb7\"B3 B \"A7\"B3 B | \"Dm\"B6 BB :|\n\n%unsure [bar 8] last two eighths are in parentheses (pickup for the repeat)"
+},
+{
+"id": "real-easy-book-c/076-st-thomas",
+"book": "The Real Easy Book (C)",
+"title": "St. Thomas",
+"pdf": "76",
+"form": "16 bars",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:St. Thomas\nC:Sonny Rollins\n%source Real Easy Book C p69 (pdf 76)\n%style (straight-eighth feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars\nM:4/4\nL:1/8\nK:C\n\"C6/9\"z2 BB zB zB | \"A7\".B2 .B2 .B2 .B2 | \"Dm7\".B2 .B2 \"G7\".B2 .B2 | \"C6/9\"z8 |\n\"C6/9\"z2 BB zB zB | \"A7\".B2 .B2 .B2 .B2 | \"Dm7\".B2 .B2 \"G7\".B2 .B2 | \"C6/9\"z8 |\n\"Em7b5\"B4 B3 B | \"A7\"z8 | \"Dm7\"B4 B3 B | \"G7\"z8 |\n\"C7\"B4 B4 | \"F7\"B4 B4 | \"Dm7\".B2 .B2 \"G7\".B2 .B2 | \"C6/9\"z8 |]\n"
+},
+{
+"id": "real-easy-book-c/078-straight-life",
+"book": "The Real Easy Book (C)",
+"title": "Straight Life",
+"pdf": "78",
+"form": "24 bars",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+24
+],
+"groups": [
+24
+],
+"text": "last three eighths are in parentheses (pickup for the repeat); chord bar placement read from symbol positions"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Straight Life\nC:Freddie Hubbard\n%source Real Easy Book C p71 (pdf 78)\n%style (straight-eighth feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 24 bars\nM:4/4\nL:1/8\nK:F\n%pickup\nB BB- |: \"F7\"B3 B BB BB- | \"Eb7\"B3 B BB BB | \"F7\"B2 B6- |\n\"Eb7\"B4 zB BB- | \"F7\"B3 B BB BB- | \"Eb7\"B3 B BB BB | \"F7\"B2 B6 |\n\"Eb7\"z4 z2 zB | \"F7\"B2 B2 B2 BB | \"Eb7\"z4 z2 zB | \"F7\"B2 B2 B2 BB |\n\"Eb7\"z4 z2 zB | \"F7\"B2 B2 B2 B2 | \"Eb7\"B2 B2 B2 B2 | \"F7\"B2 B2 B2 BB |\n\"Eb7\"z2 zB- BB BB | \"F7\"B2 B2 z4 | \"Eb7\"zB BB- BB BB | \"F7\"B2 B2 z4 |\n\"Eb7\"zB BB- BB BB | \"F7\"B2 B2 z4 | \"Eb7\"BB BB B2 BB- | \"F7\"B8 | \"Eb7\"z4 zB BB :|\n\n%unsure [bar 24] last three eighths are in parentheses (pickup for the repeat); chord bar placement read from symbol positions"
+},
+{
+"id": "real-easy-book-c/080-tenor-madness",
+"book": "The Real Easy Book (C)",
+"title": "Tenor Madness",
+"pdf": "80",
+"form": "12-bar blues",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Tenor Madness\nC:Sonny Rollins\n%source Real Easy Book C p73 (pdf 80)\n%style (medium-fast swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues\nM:4/4\nL:1/8\nK:Bb\nB | \"Bb7\"z B2 B B2 zB | \"Eb7\"z B2 B B2 zB- | \"Bb7\"B B2 B BB BB |\nBB BB z2 zB | \"Eb7\"z B2 B B2 zB | z B2 B B2 zB | \"Bb7\"z B2 B BB BB |\nBB BB z2 zB | \"Cm7\"z B2 B BB BB | \"F7\"BB BB z2 zB | \"Bb7\"z B2 B BB BB | BB BB z4 |]\n"
+},
+{
+"id": "real-easy-book-c/082-trail-dust",
+"book": "The Real Easy Book (C)",
+"title": "Trail Dust",
+"pdf": "82",
+"form": "16 bars",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+16
+],
+"groups": [
+16
+],
+"text": "last-bar pickup notes are in parentheses (lead back to top)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Trail Dust\nC:Jim Rotondi\n%source Real Easy Book C p75 (pdf 82)\n%style (medium swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars\nM:4/4\nL:1/8\nK:F\nB B2 | \"Fmaj7\"BB BB- B4- | \"Bb7\"B4 B2 BB- | \"Fmaj7\"B8 |\n\"Bb7\"z4 zB B2 | \"Fmaj7\"BB BB- B4 | \"D7\"z4 B2 BB- | \"Gm7\"B8 |\n\"C7\"z8 | \"Abm7\"BB zB B4- | \"Db7\"B4 BB BB- | \"Abm7\"B8 |\n\"Db7\"z4 z2 zB | \"Gm7\"zB zB B4 | \"C7\"z4 (3BBB BB- | \"Fmaj7\"B8 | \"C7\"z4 zB B2 |]\n\n%unsure [bar 16] last-bar pickup notes are in parentheses (lead back to top)"
+},
+{
+"id": "real-easy-book-c/084-when-the-saints-go-marching-in",
+"book": "The Real Easy Book (C)",
+"title": "When The Saints Go Marching In",
+"pdf": "84",
+"form": "16 bars",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+16
+],
+"groups": [
+16
+],
+"text": "last three quarters printed in parentheses (pickup back to the repeat)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:When The Saints Go Marching In\nC:Traditional\n%source Real Easy Book C p77 (pdf 84)\n%style (medium swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars\nM:4/4\nL:1/8\nK:F\nB2 B2 B2 |: \"F\"B8- | B2 B2 B2 B2 | B8- |\nB2 B2 B2 B2 | \"F\"B4 B4 | B4 B4 | \"C7\"B8- |\nB2 z2 B2 B2 | \"F\"B6 B2 | \"F7\"B4 B2 B2 | \"Bb\"B2 B6- |\nB2 z2 B2 B2 | \"F\"B4 B4 | \"G7\"B4 \"C7\"B4 | \"F\"B8- | B2 \"(C7)\"B2 B2 B2 :|\n\n%unsure [bar 16] last three quarters printed in parentheses (pickup back to the repeat)"
+},
+{
+"id": "real-easy-book-c/086-work-song",
+"book": "The Real Easy Book (C)",
+"title": "Work Song",
+"pdf": "86",
+"form": "16 bars",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Work Song\nC:Nat Adderley\n%source Real Easy Book C p79 (pdf 86)\n%style (medium swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars\n%note2 Melody staff only; rhythm-section and bass staves (call and response hits) not transcribed.\nM:4/4\nL:1/8\nK:Fm\n|: \"Fm7\"z2 BB B B2 B- | B2 BB B2 B2 | z2 BB B B2 B- | B2 BB B2 z2 |\n\"Fm7\"z2 BB B B2 B- | B2 BB B2 B2 | \"C7\"z2 BB B B2 B- | B2 BB B2 z2 |\n\"Fm7\"z2 BB (3BBB BB- | B2 BB B2 B2 | \"Bb7\"z2 BB B B2 B- | B2 BB BB B2 |\n\"Fm7\"BB z2 z2 B2 | \"Bb7\"BB z2 zB BB | \"C7\"z B2 B (3BBB BB- | \"Fm7\"B8 :|\n"
+},
+{
+"id": "real-easy-book-c/088-yardbird-suite",
+"book": "The Real Easy Book (C)",
+"title": "Yardbird Suite",
+"pdf": "88",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Yardbird Suite\nC:Charlie Parker\nP:AABA\n%source Real Easy Book C p81 (pdf 88)\n%style (medium-fast swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\nM:4/4\nL:1/8\nK:C\nP:A\n|: \"C6\"z B3 B2 B2 | \"Bb7\"B3 B- BB BB- | \"C6\"B4 \"(Bb7)\"B3 B- | \"A7\"B2 zB BB BB |\n\"Dm7\"BB zB- B4 |1 \"G7\"z2 zB- BB BB- | \"C6\"B3 B- BB BB- | \"G7\"B4 z4 :|2\n\"G7\"z2 zB BB BB- | \"C6\"B4 z4 | \"B7b9\"z4 z2 B/B/B/B/ ||\nP:B\n\"Em7\"B3 B BB zB | \"B7b9\"zB- B4 z2 | \"Em7\"BB BB BB BB- | \"A7\"B4 z2 zB |\n\"Dm7\"B3 B zB BB | \"A7\"z B3 BB BB | \"D7\"B2 BB- B3 B | \"G7\"BB BB- B4 ||\nP:A\n\"C6\"z B3 B2 B2 | \"Bb7\"B3 B- BB BB- | \"C6\"B4 \"(Bb7)\"B3 B- | \"A7\"B2 BB- BB BB |\n\"D7\"z B3- B2 z2 | \"G7\"zB (3BBB B2 BB- | \"C6\"B4 z4 | \"G7\"z8 |]\n"
+},
+{
+"id": "real-easy-book-c/090-z-s-blues",
+"book": "The Real Easy Book (C)",
+"title": "Z's Blues",
+"pdf": "90",
+"form": "12-bar blues",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Z's Blues\nC:Eric Alexander\n%source Real Easy Book C p83 (pdf 90)\n%style (medium swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues\nM:4/4\nL:1/8\nK:Bb\nB | \"Bb7\"zB zB BB BB | \"F7\"zB zB BB BB | \"Bb7\"BB z2 z2 zB |\n\"E7\"BB BB BB BB | \"Eb7\"B2 zB zB zB | \"Eo7\"BB/B/ BB- B2 BB | \"Bb7\"BB/B/ BB- B2 BB- |\n\"G7b9\"BB BB BB BB | \"Cm7\"B2 zB zB zB | \"F7\"BB BB BB zB- | \"Bb7\"B8 | \"F7\"z8 |]\n"
 }
 ];
