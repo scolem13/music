@@ -16,8 +16,6 @@ K:C
 | Gsus | % | % | % |
 {end_of_grid}
 
-{comment: Segno}
-
 {comment: Verse}
 Oh, the [C]bells are [Em7]ringing [F]out to[G]day
 In a [C]joyous [Em7]Christmas [F]kind of [Gsus]way.
@@ -52,7 +50,13 @@ Ding Dong
 | Gsus | % | % |
 {end_of_grid}
 
-{comment: D.S. al Coda}
+{comment: Verse}
+# The second pass: Verse 1's first two lines, then the Coda takes over at "They're ringing".
+{start_of_grid}
+| C Em7 | F G | C Em7 | F Gsus |
+{end_of_grid}
+Oh, the [C]bells are [Em7]ringing [F]out to[G]day
+In a [C]joyous [Em7]Christmas [F]kind of [Gsus]way.
 
 {comment: Coda}
 {start_of_abc}
