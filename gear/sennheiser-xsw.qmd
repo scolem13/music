@@ -59,6 +59,9 @@ A scan finds channels nobody else in the building is using. Use it if Fix 1 stil
 2. On receiver 1: UP/DOWN to **SCAN**, press **SET** (pp. 49–50).
 3. Choose the **bank** and press **SET** to start. The receiver shows the next free frequency.
 4. Press **SET** to take it, or UP/DOWN to see the next free one. ON/OFF cancels and keeps the old frequency.
+   A scan **replaces** the receiver's channel with the free one it finds, so the channel you set with PRESET will change. That's
+   normal. The **bank** should be the one you chose in step 3. If the bank changed too, the bank wasn't picked before pressing SET.
+   Scan again and choose the bank first.
 5. **Sync pack 1** to receiver 1 (as in Fix 1, step 4), and **leave pack 1 on**.
 6. On receiver 2, scan the **same bank**. Pack 1 is on, so the scan skips its frequency. Take a free channel and sync pack 2.
 

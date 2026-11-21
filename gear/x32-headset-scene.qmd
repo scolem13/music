@@ -1,0 +1,87 @@
+---
+title: "X32 scene for the headset mics"
+description: "From a blank desk to a saved scene: the wireless headset mics on channels 7–12, with starting settings for gain, high-pass, EQ, gate and compression, and how to copy one channel's settings to the others."
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+---
+
+The headset mics come in through the [wireless rack](wireless-rack-x32.qmd) on **channels 7–12** (pack 1 → channel 7 … pack 6 →
+channel 12). This page sets up **one channel properly (7)**, copies it to 8–12, and saves everything as a **scene**.
+
+::: {.callout-warning}
+Button names and menu paths here are from memory of the X32 (firmware 4.x) and are **unverified**: check them against
+Behringer's X32 manual on the desk. The numbers are a sensible starting point for speech headsets, not rules. Use your ears.
+:::
+
+## 1. Start clean
+
+1. Press **VIEW** on the **Scenes** section (top right), and save what's on the desk now as a backup scene (e.g. "before headsets"),
+   so you can go back.
+2. Select channel 7 (its **SEL** button). Make sure nothing odd is left on it from last time. The quickest way is to load a
+   blank channel preset from the **Library** (step 6), or reset it in the channel's Utility menu.
+
+## 2. Channel 7, step by step
+
+Do these with **pack 7 switched on** and someone talking into the headset at their normal speaking level.
+
+| Step | Where | Starting setting | Why |
+|---|---|---|---|
+| Name and colour | **Config** page | "HS1" … "HS6", or the performer's name; one colour for all six | Easy to find on the scribble strips |
+| Phantom (+48V) | Config / Gain | **Off** | The receivers don't need it |
+| Gain | **GAIN** knob | Talking peaks around **−18 dBFS** (yellow-green, never red) | See [gain](../lessons/live-gain.qmd). Set the receiver's output level first, then the X32 gain |
+| High-pass (low cut) | Gain page, **LOW CUT** | **On, 100–120 Hz** | Removes breath pops, handling and stage rumble. Speech has nothing useful down there |
+| Gate | **GATE** | **Off** to start. If you need it: threshold just below quiet speech, range **−10 dB** (not full), attack fast, release ~**200 ms** | A full gate chops off words. A gentle "expander" style range is safer |
+| EQ | **EQ** | Flat, then: cut **−2 to −3 dB around 250–400 Hz** (boxiness), gentle **+2 dB around 3–5 kHz** if words are unclear | Headsets sit close to the mouth and sound muddy. Cut before you boost. See [EQ](../lessons/live-eq.qmd) |
+| Compressor | **DYNAMICS** | Ratio **3:1**, attack **10 ms**, release **100–150 ms** (or Auto), knee soft, threshold so loud speech gets **3–6 dB** of gain reduction, makeup gain to match | Evens out loud and quiet speakers. See [compression](../lessons/live-comp.qmd) |
+| Sends | Mix bus sends | Monitor buses as needed, **pre-fader** | Performers hear themselves however the main fader moves |
+| Main | **LR** on, fader at **0 dB** (unity) | | Then mix with the faders |
+| DCA / mute group | Config / Home | All six on one **DCA** (e.g. "Headsets") | One fader turns all the headsets up or down |
+
+Ring-out check: with all faders at their show positions, if a headset howls, pull **that** frequency down with a narrow EQ cut
+(see [feedback](../lessons/live-feedback.qmd)), not the gain.
+
+## 3. Copy channel 7 to channels 8–12
+
+**Yes, you can copy settings from one channel to another.** Two ways:
+
+**A. Copy / Paste (quickest)**
+
+1. Select channel 7 (**SEL**).
+2. Press **UTILITY** while the channel's screen is showing. Choose **Copy**. You can pick which parts to copy: tick EQ, dynamics,
+   gate, sends and so on, and **leave out the name and gain** (each person's voice needs its own gain).
+3. Select channel 8, press **UTILITY**, choose **Paste**.
+4. Repeat for 9, 10, 11, 12.
+
+**B. Channel preset (reusable next time)**
+
+1. Select channel 7, press **VIEW** on the Library / Utility screen and open the **Channel** library.
+2. **Save** it as "Headset".
+3. Select each of 8–12 and **Load** "Headset". Choose which parts to load the same way (leave out gain).
+
+The preset stays on the desk, so the next show you can load "Headset" onto any channel without starting again.
+
+In **X32-Edit** (on a laptop) you can also right-click a channel strip and copy / paste.
+
+After copying, **set each channel's gain on its own** with its performer talking (step 2, gain row), and rename 8–12.
+
+## 4. Save the scene
+
+1. Go to the **Scenes** screen (**VIEW** in the Scenes section).
+2. Pick an empty slot, **Save**, name it e.g. "Headsets 7-12".
+3. To bring it back later: Scenes → select it → **Load** (Go).
+
+Check **Safes** (scene safes) on that screen if there are channels you *don't* want the scene to change when it loads, for example
+a band on channels 1–6.
+
+## 5. Every show
+
+- [ ] Load the scene "Headsets 7-12".
+- [ ] Wireless on, one pack at a time: talk, check its channel meter.
+- [ ] Adjust gain per person (singers and quiet talkers are different).
+- [ ] Mix with the DCA.
+
+## Sources
+
+- Behringer, *X32 Digital Mixer User Manual* (check the Utility / Copy and Library sections for your firmware).
+- Starting values are general live-sound practice for speech, **unverified** against a specific source.
