@@ -1,0 +1,80 @@
+---
+title: "Wireless rack to the X32"
+description: "Step by step: carry the wireless mic rack, power it up, and patch each numbered receiver into the X32 through the XLR snake."
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+---
+
+The wireless rack holds the **Sennheiser EM-XSW 2 receivers**. Everything in the rack is **numbered**, and the numbers match:
+
+| Number on… | What it is |
+|---|---|
+| **Bodypack** (SK-XSW) | The transmitter the performer wears |
+| **Receiver** (EM-XSW 2) | The box in the rack with two antennas |
+| **XLR cable** | Runs from that receiver to the snake |
+| **Power adapter** | Powers that receiver. All of them plug into one power strip |
+
+**The one rule: same number goes with same number.** Pack 3 → receiver 3 → XLR 3 → adapter 3.
+
+## 1. Before you lift
+
+- [ ] Count the bodypacks. Every pack in the bag should have a receiver with the same number in the rack.
+- [ ] Put fresh **AA batteries** in each pack (or check they're charged).
+- [ ] Check that the power strip is **switched off** and its plug is pulled.
+
+## 2. Move the rack
+
+1. Tuck the loose XLR cables and the power strip's lead inside the rack so nothing drags on the floor.
+2. Lift with **two people**, one on each side, using the **handles**. Never lift by an antenna or a cable.
+3. Put it down **flat, on a table or the floor**, near the stage end of the snake.
+4. Point the **antennas up**, angled slightly left and right (Sennheiser manual p. 42). Don't put anything on top of the rack.
+5. Keep the rack where it can "see" the stage, so there's no wall or metal cabinet between the rack and the performers.
+
+## 3. Power
+
+1. Check that each **power adapter** goes into the **receiver with its number**. Push each one in firmly.
+2. Plug the power strip into the wall. Use a wall socket, not another power strip.
+3. Switch the power strip **on**.
+4. Switch on each receiver.
+
+## 4. XLR into the snake
+
+The **snake** is the thick cable with a box of numbered XLR sockets on the stage end. Its other end goes to the X32.
+
+1. **Mute the X32 first** (or pull the main fader down), so the plugging doesn't pop through the speakers.
+2. Plug each receiver's **XLR cable** into the **snake socket with the same number**: XLR 1 → snake 1, XLR 2 → snake 2, and so on.
+3. Push until it **clicks**. To unplug later, press the tab and then pull.
+4. If a snake socket is already in use (say drums are on 1–4), use the next free sockets. **Write down which receiver went in which
+   socket** on masking tape on the rack, and tell whoever is at the desk.
+
+<!-- Our snake socket N = X32 input N? Not checked: confirm on the desk and fix this line. -->
+On the X32, **snake socket N is channel N** (unless someone changed the routing). Wireless 1 shows up on channel 1, and so on.
+
+## 5. At the X32
+
+1. Turn on **phantom power (+48V)** on the wireless channels only if the desk usually has it on there. The receivers don't need it,
+   and it does them no harm, but leave it alone if you're unsure.
+2. Switch on **one bodypack at a time**. Talk into its mic.
+3. Look at the meter on the channel with **that pack's number**. It should move.
+4. Set the **gain** so your normal talking voice reaches about the middle of the meter, never into red.
+   See [gain](../lessons/live-gain.qmd).
+5. Bring up the fader. Then do the next pack.
+
+## If something's wrong
+
+| What you see | Try this |
+|---|---|
+| Receiver screen is dark | Is the power strip on? Is the adapter pushed in? Is it in the right number? |
+| Receiver on, meter on the X32 doesn't move | Check the XLR at both ends (it must click). Is it in the right snake socket? Is the X32 channel muted? |
+| Sound comes up on the wrong channel | The XLR is in the wrong snake socket, or the pack is in the wrong person's hands. Match the numbers again |
+| You hear one pack on two channels | Two receivers are on frequencies that are too close: [fix it here](sennheiser-xsw.qmd) |
+| Crackle or dropouts | Change the pack batteries. Point the antennas up. Move the rack so it can see the stage |
+
+## Packing up
+
+1. Pull the faders down or mute the wireless channels.
+2. Switch off the bodypacks and **take their batteries out**.
+3. Switch the power strip off, then unplug it from the wall.
+4. Unplug the XLRs from the snake (press the tab). Coil each cable and tuck it into the rack, but **leave it plugged into its receiver**.
+5. Carry the rack back with two people.

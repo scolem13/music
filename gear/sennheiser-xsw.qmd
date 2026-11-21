@@ -1,0 +1,92 @@
+---
+title: "Sennheiser XSW 2 wireless: two packs picking each other up"
+description: "The SK-XSW bodypack and EM-XSW 2 receiver: why two systems hear each other, and how to give each one its own frequency with Scan and Sync."
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+---
+
+We have **Sennheiser XS Wireless 2** sets: an **SK-XSW bodypack transmitter** (clips on the belt, mic plugs in) and an
+**EM-XSW 2 receiver** (the box with two antennas, cabled to the mixer). Each receiver listens to one frequency, and the
+bodypack sends on whatever frequency the receiver gave it.
+
+Page numbers below are from Sennheiser's *XS Wireless Series* instruction manual (v1.1, 05/2026). It covers the XSW 1 and the XSW 2.
+
+## The problem
+
+When two receivers sit on frequencies that are too close, receiver 1 also picks up pack 2, and you hear the wrong person
+(or both people) on one channel. Sennheiser's rule for running more than one system (p. 57):
+
+> "Only the factory-preset transmission frequencies within one frequency bank are intermodulation-free."
+> "Set the same channel bank for all receivers. Assign one channel from this channel bank to each receiver."
+
+So the fix is to put **both receivers in the same bank, on different channels**, and then sync each pack to its own receiver.
+Close frequencies usually come from a manual TUNE, two separate scans that ended up near each other, or two different banks.
+
+## Before you start
+
+- **Both systems must be the same frequency range** (p. 77). The letter is in the set's name, e.g. XSW 2-ME2-**A**. Check the
+  labels on the receiver and the pack; I haven't checked where the label shows it. Ranges (p. 81): A 548–572, GB 606–630,
+  B 614–638, C 630–662, BC 670–694, D 766–790 MHz (and others). If your two sets are **different** ranges, they can't land on the
+  same frequency, so the problem is something else (see [Still crosstalk?](#still-crosstalk)).
+- Each XSW 2 range has **8 banks of up to 12 preset channels** (p. 81).
+- Menu keys on the receiver (p. 49): **UP / DOWN** moves, **SET** opens or saves, **ON/OFF** is Escape (cancel).
+- Label the receivers and packs **1** and **2** with tape so they don't get mixed up.
+
+## Fix 1: same bank, different channels (fastest)
+
+Do it on **receiver 1**, then on **receiver 2**:
+
+1. Press UP/DOWN until the display shows **PRESET**, then press **SET** (p. 51).
+2. Pick the **bank** with UP/DOWN and press **SET**. Use the **same bank number on both receivers**.
+3. Pick the **channel** with UP/DOWN and press **SET**. Receiver 1 gets channel 1 and receiver 2 gets channel 2 (any two different
+   channels in that bank will do).
+4. **Sync the pack** (the frequency is stored only in the receiver until you sync, pp. 51–53, 77–78):
+   - Switch the matching bodypack on and hold it near its receiver.
+   - **Press and hold SYNC on the bodypack**. Its LED flashes red and green.
+   - While it flashes, **short-press SYNC on the receiver**.
+   - When the pack's LED turns steady green, the pair is linked (pp. 66, 79). The pack's display shows the bank, channel and frequency (p. 74).
+5. Check: the pack's display and the receiver's display should show the same bank and channel.
+
+Sync on these units goes over 2.4 GHz radio, not infrared (p. 81), so the two only need to be near each other. Do one pair at a
+time, with the other pack switched **off**, so the wrong pack doesn't take the sync.
+
+## Fix 2: scan for clear channels (best in a new room)
+
+A scan finds channels nobody else in the building is using. Use it if Fix 1 still gives noise or dropouts.
+
+1. **Switch off every bodypack** (p. 49: packs left on "are detected as unavailable frequencies").
+2. On receiver 1: UP/DOWN to **SCAN**, press **SET** (pp. 49–50).
+3. Choose the **bank** and press **SET** to start. The receiver shows the next free frequency.
+4. Press **SET** to take it, or UP/DOWN to see the next free one. ON/OFF cancels and keeps the old frequency.
+5. **Sync pack 1** to receiver 1 (as in Fix 1, step 4), and **leave pack 1 on**.
+6. On receiver 2, scan the **same bank**. Pack 1 is on, so the scan skips its frequency. Take a free channel and sync pack 2.
+
+Sennheiser's help article "XSW 2 Scan and Sync" adds a tip: turn the receiver's rear **SQ (squelch) knob down to about 7–8 o'clock**
+before scanning, and put it back to **12 o'clock** afterwards. If the scan finds nothing free, raise the squelch and scan again.
+
+## Still crosstalk?
+
+- **Two different banks.** The channels are only free of interference *within one bank*, so put both receivers in the same bank (p. 57).
+- **A pack synced to the wrong receiver.** Turn pack 2 off. If receiver 2 still shows signal, or receiver 1 goes quiet, the pair
+  is swapped. Sync again, one pair at a time.
+- **Noise when a pack is off.** Turn the **SQ knob** clockwise a little. The squelch mutes signals below a threshold (3–28 dBµV,
+  pp. 56, 85). Set it too high and the range gets shorter.
+- **Antennas.** Angle the two antennas slightly left and right (p. 42). Keep the receivers out of a closed metal rack, unless you
+  use the front-antenna kit (GA 2-XSW 2, p. 10).
+- **Something else on the air** (another room, a TV transmitter). Run Fix 2 so the scan finds clear channels.
+
+## What the manual doesn't cover
+
+These are general wireless practice, not from Sennheiser's manual, so treat them as **unverified**:
+
+- Keep the two receivers a little apart, and keep each pack a metre or more from the other receiver.
+- Don't stand a performer right on top of the receivers.
+
+The manual also has no keypad lock, user bank or minimum MHz spacing. Stick to the bank's preset channels.
+
+## Manuals
+
+- Sennheiser, *XS Wireless Series: XS Wireless 1 & XS Wireless 2, Instruction manual*, v1.1, 05/2026:
+  [PDF](https://docs.cloud.sennheiser.com/en-us/xsw/xsw_instruction_manual_05_2026_en.pdf).
+- Sennheiser Help, ["XSW 2 Scan and Sync"](https://help.sennheiser.com/hc/en-us/articles/23203678398226-XSW-2-Scan-and-Sync).

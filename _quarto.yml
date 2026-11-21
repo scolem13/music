@@ -526,6 +526,8 @@ website:
         - gear/using-a-mic.qmd
         - gear/modx.qmd
         - gear/modx-orchestra.qmd
+        - gear/sennheiser-xsw.qmd
+        - gear/wireless-rack-x32.qmd
     - id: mlt
       title: "MLT"
       style: docked
@@ -658,6 +660,8 @@ website:
           - gear/x32-drums-dca.qmd
           - gear/using-a-mic.qmd
           - gear/modx.qmd
+          - gear/sennheiser-xsw.qmd
+          - gear/wireless-rack-x32.qmd
 
 format:
   html:
