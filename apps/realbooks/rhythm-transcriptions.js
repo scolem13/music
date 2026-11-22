@@ -2034,6 +2034,20116 @@ window.RHYTHM_TRANSCRIPTIONS = [
 "abc": "X:1\nT:Total Eclipse of the Heart\nC:Jim Steinman\n%source The Ultimate Rock Pop Fake Book (Hal Leonard) printed pp484-485 (pdf 486-487)\n%style Rock Ballad\n%note Rhythms, chords, key signatures, repeats and lyrics only. Pitches NOT transcribed: every note is written as B. Written by a model from the page images; most dense sixteenth bars are reconstructed from the lyric layout and flagged %unsure. Verse 2 (\"Once upon a time there was light in my life\") and the instrumental bars are not given words.\nM:4/4\nL:1/16\nQ:1/4=66\nK:Db\n%intro: instrumental solo, played with the sung \"Turn around\" part; repeats three times (1st ending, 2nd/3rd ending below)\n|: \"Bbm\"z4 BBB-B BBBB BBBB | \"Ab\"BBBB- BBBB BBBB BBBB |\nw: Turn a- round * Ev- 'ry now and then I get a lit- tle bit lone- * ly and you're nev- er com- ing 'round. _ _ _\n\"Bbm\"z4 BBB-B BBBB BBBB | \"Ab\"BBBB- BBBB BBBB BBBB |\nw: Turn a- round * Ev- 'ry now and then I get a lit- tle bit tired * of lis- t'ning to the sound of my tears.\n\"Db\"z4 B3B BBBB BBBB | \"B\"BBBB- BBBB BBBB BBBB |\nw: Turn a- round * Ev- 'ry now and then I get a lit- tle bit ner- vous that the best of all the years have gone by.\n\"Db\"z4 B3B BBBB BBBB | \"B\"BBBB- BBBB BBBB BBBB |\nw: Turn a- round * Ev- 'ry now and then I get a lit- tle bit ter- ri- fied and then I see the look in your eyes.\n[K:E]\"E\"B3B B4 \"E/A\"B2B2 \"A\"B4- | [M:2/4]BBBB BBBB |\nw: Turn a- round * bright * eyes * Ev- 'ry now and then I fall a-\n|1 [M:4/4]\"E\"B3B B4 \"E/A\"B2B2 \"A\"B4- | [M:2/4]BBBB BBBB :|\nw: part. * * * _ _ * bright _ eyes * Ev- 'ry now and then I fall a-\n|2 [M:4/4]\"E\"B3B B4 \"E/A\"B2B2 \"A\"B2BB | [M:2/4]BBBB BBBB ||\nw: part. * * * * * _ * * * Ev- 'ry now and then I fall a- part,\n%verse (4 flats)\n[K:Ab][M:4/4]\"Ab\"B4 z2BB \"Fm\"B2BB- B2BB |\nw: and I need you now * to- night,\n\"Db\"z4 z2BB \"Eb7\"BBBB- BBB2 |\nw: and I need you more * than ev- er.\n\"Ab\"B4- z2zB \"Fm\"BBBB B2BB |\nw: And if you on- ly hold me tight,\n\"Db\"z4 z2BB \"Eb7\"BBBB- BBB2 |\nw: we'll be hold- ing on * for- ev- er.\n\"Ab\"B2Bz2zBB \"Fm\"BBB-B BBBB |\nw: And we'll on- ly be mak- ing it\n\"Db\"BBBz2BBB \"Eb7\"BBBB- BBB2 |\nw: right * 'cause we'll nev- er be wrong\n\"Db/F\"BBBB BBBB \"Eb/G\"B3B Bz2B |\nw: to- geth- er we can take it to the end of the line. Your\n\"Fm\"BBBB BBBB \"Bb\"BBBB- BBBB |\nw: love is like a shad- ow on me all of the time. *\n[M:2/4]z4 z2zB |\nw: I\n[M:4/4]\"Ab\"BBBB BBBB \"Eb/G\"BBBB BBz2 |\nw: don't know what to do and I'm al- ways in the dark.\n\"Fm\"BBBB BBBB \"Bb\"BBz2 BBB2 |\nw: We're liv- ing in a pow- der keg and giv- ing off sparks.\n[M:2/4]zBBB BBBB |\nw: I real- ly need you to- night.\n[M:4/4]\"Ab/C\"z4 z2BB \"Eb/Bb\"B-BBB \"Ab/C\"B2BB- |\nw: For- ev- er's gon- na start to- night,\n\"Db\"BBBz z2BB \"Eb7\"B-BBB BBBB |\nw: for- ev- er's gon- na start * to- night.\n\"Ab\"B4 BBBB \"Fm\"BBBB BBBB |\nw: Once up- on a time I was fall- ing in love, but *\n[M:2/4]\"C\"BBBB BBBB |\nw: now I'm on- ly fall- ing a- part.\n[M:4/4]\"Db\"z8 z4 z2\"Ab/C\"zB |\nw: There's\n\"Bbm7\"BBBB Bz2B \"Eb7b9\"BBBB- BBBB- |\nw: noth- ing I can do; a to- tal e- clipse of the heart. _\n\"Ab\"z4 z2zB \"Fm\"BBB-B BBBB |\n%(Instrumental)\n\"Db\"B4- B4 \"Eb7\"B2B2 \"Eb/G\"BBBB | \"Ab\"BBBB BBBB \"Fm\"BBBB B3B |\nw: Once up- on a time there was light in my life, but\n\"C\"BBBB BBBB \"Db\"z4 \"Ab/C\"z4 |\n%To Coda\nw: now there's on- ly love in the dark.\n\"Bbm\"BBBB Bz2B \"Eb7b9\"BBBB- BBBB- |\nw: Noth- ing I can say; a to- tal e- clipse of the heart. _\n\"Ab\"B4 z2zB \"Fm\"BBB-B BBBB |\n%(Instrumental)\nB2z2 B2z2 BBBB B4 ||\n%D.C. al Coda (back to the very beginning, play to \"To Coda\", then the coda)\n%CODA\n\"Bbm\"BBBB B3z \"Eb7b9\"BBBB- BBBB |\nw: Noth- ing I can say; a to- tal e- clipse of the heart. _\n|: \"Ab\"B8 \"Fm\"z8 | \"Db\"z4 z2zB \"Eb7\"BBBB \"Eb/G\"B-BBB :|\nw: * A to- tal e- clipse of the heart. _\n\n%unsure [bars 1-14] rhythm of every intro bar: 12 sixteenths after an assumed quarter rest in bar 1, the lone- tie and the last held syllable are read from beaming, not the notes\n%unsure [bars 3-4] same pattern assumed as bar 1-2; \"tired\" held\n%unsure [bars 5-6] Db bar: the first group looks dotted (eighth + sixteenth); B bar: dotted figures near the end\n%unsure [bars 7-8] same as the previous pair\n%unsure [bars 9-10] first bar split read from beaming only; the 2/4 bar sits under a meter change to 2/4\n%unsure [bars 13-14] 2nd/3rd ending: the E/A bar has a dotted figure; the printed key signature returns to flats (4/4) after the repeat sign, written here as the verse key\n%unsure [bar 16]\n%unsure [bar 17]\n%unsure [bar 18]\n%unsure [bar 19]\n%unsure [bar 20]\n%unsure [bar 21]\n%unsure [bar 22]\n%unsure [bar 23]\n%unsure [bar 25]\n%unsure [bar 26]\n%unsure [bar 28]\n%unsure [bar 29]\n%unsure [bar 30]\n%unsure [bar 31]\n%unsure [bar 33]\n%unsure [bars 34-35] instrumental bars, no lyrics\n%unsure [bar 36]\n%unsure [bar 37]\n%unsure [bar 38]\n%unsure [bar 39] instrumental, no lyrics\n%unsure [bar 39] this last bar before D.C. al Coda has no chord and a dotted figure\n%unsure [bars 41-42]\n%unsure [bars 41-42] Repeat ad lib. and fade"
 },
 {
+"id": "New_Real_Book_Volume2/012-afro-centric",
+"book": "The New Real Book Vol. 2",
+"title": "Afro-Centric",
+"pdf": "12",
+"form": "AB 26+26 (head twice before and after solos; solos on B)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+9,
+10,
+11,
+12
+],
+"groups": [
+9,
+10,
+11,
+12
+],
+"text": "harmonized horn soli (top line only); bars 21-26 are a horn fill, written as rests"
+},
+{
+"bars": [
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52
+],
+"groups": [
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52
+],
+"text": "solo section: 4-bar rests and rhythm slashes written as rests; after solos D.C. al Coda (the To Coda is at the end of A)"
+},
+{
+"bars": [
+53,
+54,
+55,
+56
+],
+"groups": [
+53,
+54,
+55,
+56
+],
+"text": "vamp, fill and fade"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Afro-Centric\nC:Joe Henderson\nP:AB\n%source New Real Book Volume 2 p1 (pdf 12)\n%style (Med.-Up Swinging Afro, quarter = 217)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 26+26 (head twice before and after solos; solos on B)\nM:C\nL:1/8\nK:Bb\nBB BB- |\nP:A\n|: \"Ebmaj7#11\"B4- B B3 | B3 B- B3 B- | B3 B- B4- | B4 BB BB- |\n\"Dm11\"B4- B B3 | B3 B- B2 B2- | B B3 B4- | B6 B2 |\n\"Ebmaj7#11\"\"(Cm11)\"z8 | z4 z2 BB | BB zB zB zB | zB zB zB \"Bbmaj7#11\"B2- |\n\"Bbmaj7#11\"B4- BB BB- | B8- | B8 | z B3- B2 BB- |\n\"Abmaj7#11\"B8- | BB BB- B2 BB- | B3 B- B4- | B8 |\n\"Gm7\"z8 | \"Abmaj7#11\"z8 | \"Gm7\"z8 | \"Abmaj7#11\"z8 |\n\"Am7b5\"z8 | \"Dmaj7#11\"z4 BB BB- :|\nP:B\n%solos\n|: \"Ebmaj7#11\"z8 | z8 | z8 | z8 |\n\"Dm11\"z8 | z8 | z8 | z8 |\n\"Ebmaj7#11\"\"(Cm11)\"z8 | z8 | z8 | z8 |\n\"Bbmaj7#11\"z8 | z8 | z8 | z8 |\n\"Abmaj7#11\"z8 | z8 | z8 | z8 |\n\"Gm7\"z8 | \"Abmaj7#11\"z8 | \"Gm7\"z8 | \"Abmaj7#11\"z8 |\n\"Am7b5\"z8 | \"Dmaj7#11\"z8 :|\n%coda\n|: \"Ebmaj7#11\"z8 | z8 | z8 | z8 :|\n\n%unsure [bars 9-12] harmonized horn soli (top line only); bars 21-26 are a horn fill, written as rests\n%unsure [bars 27-52] solo section: 4-bar rests and rhythm slashes written as rests; after solos D.C. al Coda (the To Coda is at the end of A)\n%unsure [bars 53-56] vamp, fill and fade"
+},
+{
+"id": "New_Real_Book_Volume2/12-afro-centric",
+"book": "The New Real Book Vol. 2",
+"title": "Afro-Centric",
+"pdf": "12",
+"form": "ABA 22+26 (head played twice before and after solos; B is solos, then D.C. al Coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred from section letters and the note \"Head is played twice before & after solos\""
+},
+{
+"bars": [
+9,
+10,
+11,
+12
+],
+"groups": [
+9,
+10,
+11,
+12
+],
+"text": "low-res scan; horn soli chord rhythms approximate"
+},
+{
+"bars": [
+13,
+14,
+15,
+16
+],
+"groups": [
+13,
+14,
+15,
+16
+],
+"text": "rhythms approximate"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21
+],
+"groups": [
+17,
+18,
+19,
+20,
+21
+],
+"text": "rhythms approximate; bar 21 appears empty, written as a rest"
+},
+{
+"bars": [
+22,
+23,
+24,
+25,
+26,
+27
+],
+"groups": [
+22,
+23,
+24,
+25,
+26,
+27
+],
+"text": "horn fill, written as rests"
+},
+{
+"bars": [
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53
+],
+"groups": [
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53
+],
+"text": "solo section printed as 4-bar repeats and slashes, written as rests"
+},
+{
+"bars": [
+54,
+55,
+56,
+57
+],
+"groups": [
+54,
+55,
+56,
+57
+],
+"text": "coda vamp, fill & fade (bar count of vamp approximate)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Afro-Centric\nC:Joe Henderson\nP:ABA\n%source New Real Book Vol 2 p? (pdf 12)\n%style (Med.-Up Swinging Afro, q=217)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABA 22+26 (head played twice before and after solos; B is solos, then D.C. al Coda)\n%unsure [form] form inferred from section letters and the note \"Head is played twice before & after solos\"\nM:4/4\nL:1/8\nK:Bb\nBB BB |:\nP:A\n\"Ebmaj7#11\"B4- B B3 | B3 B B2 B2 | B3 B- B4 | B4 BB BB- |\n\"Dm11\"B4 B B3 | B3 B- B2 B2- | B B3 B4- | B4 z2 !accent!B2 |\n\"Ebmaj7#11\"\"(Cm11)\"z8 | z4 z2 BB | BB zB zB zB | zB zB zB \"Bbmaj7#11\"B2- |\n\"Bbmaj7#11\"B4 BB BB- | B8- | B8 | z B3 B2 BB |\n\"Abmaj7#11\"B8- | BB BB- B2 BB | B3 B- B4- | B8 |\nz8 | \"Gm7\"z8 | \"Abmaj7#11\"z8 | \"Gm7\"z8 |\n\"Abmaj7#11\"z8 | \"Am7b5\"z8 | \"Dmaj7#11\"z4 BB B!coda!B :|\nP:B\n%solos\n|: \"Ebmaj7#11\"z8 | z8 | z8 | z8 |\n\"Dm11\"z8 | z8 | z8 | z8 |\n\"Ebmaj7#11\"\"(Cm11)\"z8 | z8 | z8 | z8 |\n\"Bbmaj7#11\"z8 | z8 | z8 | z8 |\n\"Abmaj7#11\"z8 | z8 | z8 | z8 |\n\"Gm7\"z8 | \"Abmaj7#11\"z8 | \"Gm7\"z8 | \"Abmaj7#11\"z8 |\n\"Am7b5\"z8 | \"Dmaj7#11\"z8 :|\n%coda\n|: \"Ebmaj7#11\"z8 | z8 | z8 | z8 :|\n\n%unsure [bars 9-12] low-res scan; horn soli chord rhythms approximate\n%unsure [bars 13-16] rhythms approximate\n%unsure [bars 17-21] rhythms approximate; bar 21 appears empty, written as a rest\n%unsure [bars 22-27] horn fill, written as rests\n%unsure [bars 28-53] solo section printed as 4-bar repeats and slashes, written as rests\n%unsure [bars 54-57] coda vamp, fill & fade (bar count of vamp approximate)"
+},
+{
+"id": "New_Real_Book_Volume2/013-after-the-rain",
+"book": "The New Real Book Vol. 2",
+"title": "After the Rain",
+"pdf": "13",
+"form": "A (repeated, with endings) B (open tenor fill), D.S. al Coda",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "rubato tune; some bar lines in row 1 are hard to place; melody at A is varied on each repeat"
+},
+{
+"bars": [
+5,
+6,
+7,
+8,
+9,
+10,
+20
+],
+"groups": [
+4,
+5,
+6,
+7,
+8,
+9,
+19
+],
+"text": "bar lines and rhythms in the first rows read approximately (rubato); bar 20 is a piano fill"
+},
+{
+"bars": [
+39,
+40
+],
+"groups": [
+38,
+39
+],
+"text": "tenor fill, indefinite length; D.S. al 2nd ending al Coda"
+},
+{
+"bars": [
+56,
+57,
+58,
+59
+],
+"groups": [
+55,
+56,
+57,
+58
+],
+"text": "sample fill after the fermata written as rests; last bar approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:After the Rain\nC:John Coltrane\nP:AB\n%source New Real Book Volume 2 p2 (pdf 13)\n%style (Freely; rubato throughout)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A (repeated, with endings) B (open tenor fill), D.S. al Coda\n%unsure [general] rubato tune; some bar lines in row 1 are hard to place; melody at A is varied on each repeat\nM:3/4\nL:1/8\nK:Bb\n%intro\n\"F7sus(b9)\"z6 | z6 | z6 | z2 B2 B2 ||\nP:A\n|: \"C/Bb\"B6- | B2 \"A/Bb\"B4 | \"Bbmaj7\"B6 | z2 zB BB |\n\"Ebmaj7/F\"B6- | B2 \"F7b9\"B4 | \"Bbmaj7\"B6 | z2 zB BB |\n\"Ebmaj7/F\"B6 | \"F7b9\"B4 B2 | \"Bb/F\"B6 | \"A/F\"B4 B2 |\n\"Ebm(maj7)\"B6 | \"F7sus(b9)\"B4 B2 | \"Bbmaj7\"B6- | B6 |\n\"Eb(add#11)/Bb\"B6- | B4 BB | \"Bbmaj7\"B2 B4- | B4 BB |\n\"Eb(add#11)/Bb\"B6- | B2 B2 B2 | \"Bbmaj7\"B2 B4- | B6 |\n\"Eb(add#11)/Bb\"B6- | B2 B2 B2 | \"Bbmaj7\"B2 B4- | B4 B2 |\n\"Eb(add#11)/Bb\"B6- | B2 B2 B2 |1 \"Bbmaj7\"B2 B4 | z2 B2 B2 :|2\n\"Bbmaj7\"B2 B4 | z2 B2 B2 ||\nP:B\n\"F7sus(b9)\"z6 | z2 B2 B2 |]\n%coda\n\"F7sus(b9)\"B6 | z2 zB BB | \"Bbmaj7\"B2 B4 | z4 (3BBB |\n\"F7sus(b9)\"B6 | z2 zB BB | \"Bbmaj7\"B6 | z2 zB BB |\n\"F7sus(b9)\"B6 | z2 zB BB | \"Bbmaj7\"B6 | z4 BB |\n\"F7sus(b9)\"B6 | \"(F9sus)\"z2 zB B3/2B/2 | \"Bbmaj7\"!fermata!B4- (3BBB | z6 |\nz6 | z6 | B4 z2 |]\n\n%unsure [bars 5-10, 20] bar lines and rhythms in the first rows read approximately (rubato); bar 20 is a piano fill\n%unsure [bars 39-40] tenor fill, indefinite length; D.S. al 2nd ending al Coda\n%unsure [bars 56-59] sample fill after the fermata written as rests; last bar approximate"
+},
+{
+"id": "New_Real_Book_Volume2/13-after-the-rain",
+"book": "The New Real Book Vol. 2",
+"title": "After the Rain",
+"pdf": "13",
+"form": "AB 32+2 (A repeated with 1st/2nd endings; B is an indefinite tenor fill, then D.S. al 2nd ending al Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred from section letters; book notes \"Melody at A is played with variation on each repeat\""
+},
+{
+"bars": [
+5,
+6,
+7,
+8
+],
+"groups": [
+4,
+5,
+6,
+7
+],
+"text": "low-res; rhythm of bars 6 and 8 approximate"
+},
+{
+"bars": [
+19,
+20
+],
+"groups": [
+18,
+19
+],
+"text": "piano sample fill under the held note omitted"
+},
+{
+"bars": [
+36,
+37,
+38,
+39
+],
+"groups": [
+35,
+36,
+37,
+38
+],
+"text": "ending notes after the rest are the tenor (ten.) line"
+},
+{
+"bars": [
+40,
+41
+],
+"groups": [
+39,
+40
+],
+"text": "\"tenor fill indef.\" bar written as a rest; D.S. al 2nd ending al Coda"
+},
+{
+"bars": [
+56,
+57,
+58,
+59,
+60
+],
+"groups": [
+55,
+56,
+57,
+58,
+59
+],
+"text": "\"sample fill\" with triplets; rhythms approximate from a low-res scan"
+},
+{
+"bars": [],
+"groups": [],
+"text": "separate \"sample tenor fill at B\" staff not transcribed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:After the Rain\nC:John Coltrane\nP:AB\n%source New Real Book Vol 2 p2 (pdf 13)\n%style (Freely; rubato throughout)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 32+2 (A repeated with 1st/2nd endings; B is an indefinite tenor fill, then D.S. al 2nd ending al Coda)\n%unsure [form] form inferred from section letters; book notes \"Melody at A is played with variation on each repeat\"\nM:3/4\nL:1/8\nK:Bb\n%intro\n\"F7sus(b9)\"z6 | z6 | z6 | z2 B2 B2 ||\nP:A\n|: !segno!\"C/Bb\"B6- | B2 B2 \"A/Bb\"B2 | \"Bbmaj7\"B6 | zB BB BB |\n\"Ebmaj7/F\"B4 B2 | \"F7b9\"B6 | \"Bbmaj7\"B6 | z2 zB BB |\n\"Ebmaj7/F\"B6 | \"F7b9\"B4 B2 | \"Bb/F\"B6 | \"A/F\"B4 B2 |\n\"Ebm(maj7)\"B6 | \"F7sus(b9)\"B4 B2 | \"Bbmaj7\"B6- | B6 |\n\"Eb(add#11)/Bb\"B6- | B4 B2 | z4 BB | \"Bbmaj7\"B2 B4- |\nB4 BB | \"Eb(add#11)/Bb\"B6- | B2 B2 B2 | \"Bbmaj7\"B2 B4- |\nB6 | \"Eb(add#11)/Bb\"B6- | B2 B2 B2 | \"Bbmaj7\"B2 B4 |\nB4 B2 | \"Eb(add#11)/Bb\"B6- | B2 B2 B2 |1 \"Bbmaj7\"B2 B4 |\nz2 B2 B2 :|2 \"Bbmaj7\"B2 B4 | z2 B2 !coda!B2 |]\nP:B\n\"F7sus(b9)\"z6 | z2 B2 B2 |]\n%coda\n\"F7sus(b9)\"B6 | z2 zB BB | \"Bbmaj7\"B6 | z4 (3BBB |\n\"F7sus(b9)\"B6 | z2 zB BB | \"Bbmaj7\"B6 | z2 zB BB |\n\"F7sus(b9)\"B6 | z2 zB BB | \"Bbmaj7\"B6 | z4 BB |\n\"F7sus(b9)\"B6 | z2 zB \"(F9sus)\"B3/2B/ | \"Bbmaj7\"!fermata!B2- (3BBB BB | BB (3BBB B2- |\n(3BBB (3BBB BB | (3BBB B2 B2- | B2 B2 z2 |]\n\n%unsure [bars 5-8] low-res; rhythm of bars 6 and 8 approximate\n%unsure [bars 19-20] piano sample fill under the held note omitted\n%unsure [bars 36-39] ending notes after the rest are the tenor (ten.) line\n%unsure [bars 40-41] \"tenor fill indef.\" bar written as a rest; D.S. al 2nd ending al Coda\n%unsure [bars 56-60] \"sample fill\" with triplets; rhythms approximate from a low-res scan\n%unsure [general] separate \"sample tenor fill at B\" staff not transcribed"
+},
+{
+"id": "New_Real_Book_Volume2/014-after-you-ve-gone",
+"book": "The New Real Book Vol. 2",
+"title": "After You've Gone",
+"pdf": "14",
+"form": "AB 8+8 (two verses of lyrics)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+15
+],
+"groups": [
+14
+],
+"text": "Am7 / Am7/G chord placement in the eighth-note run guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:After You've Gone\nC:Creamer & Layton\nP:AB\n%source New Real Book Volume 2 p3 (pdf 14)\n%style (Med. Ballad; also played as up-tempo swing, each bar 2 bars of swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+8 (two verses of lyrics)\nM:C\nL:1/8\nK:C\nP:A\n\"Fmaj7\"BB BB- B4 | \"Fm6\"zB BB \"Bb9\"B B3 | \"Cmaj7\"BB BB- B4 | \"Em7\"zB BB \"A9\"B B3 |\nw: Af-ter you've gone,_ and left me cry-ing, Af-ter you've gone,_ there's no de-ny-ing,\nw: Af-ter I'm gone,_ af-ter we break up, Af-ter I'm gone,_ you're gon-na wake up,\n\"D9\"B B2 B- B4 | \"G9\"B B2 B- B4 | \"C6\"zB BB BB BB | \"C7\"B B2 B- B4 ||\nw: you'll feel blue,_ you'll feel sad,_ you'll miss the dear-est pal you've ev-er had._\nw: you will find_ you were blind_ to let some-bod-y come and change your mind._\nP:B\n\"Fmaj7\"BB BB- B4 | \"Fm6\"zB BB \"Bb9\"B B3 | \"Cmaj7\"BB BB- B4 | \"Em7\"zB BB \"A9\"B B3 |\nw: There'll come a time,_ now don't for-get it, there'll come a time_ when you'll re-gret it,\nw: Af-ter the years_ we've been to-geth-er, their joy and tears,_ all kinds of weath-er,\n\"Dm7\"B4 \"A7\"B4 | \"Dm7\"BB BB- \"Fm6\"B2 \"Bb9\"B2 | \"Cmaj7\"zB BB \"Bm7\"BB \"E7\"BB | \"Am7\"BB \"Am7/G\"BB- \"F#o7\"B2 B2 |\nw: Some day, when you grow lone-_ ly, your heart will break like mine and you'll want me on-_ ly,\nw: Some day, blue and down heart-_ ed you'll long to be with me right back where you start-_ ed,\n\"C6/G\"BB BB- \"A7\"B4 | \"Dm7\"zB BB \"G7\"B2 B2 | \"C6\"BB- B6 | \"(C7)\"z8 |]\nw: Af-ter you've gone,_ Af-ter you've gone a-way._\nw: Af-ter I'm gone,_ Af-ter I'm gone a-way._\n\n%unsure [bar 15] Am7 / Am7/G chord placement in the eighth-note run guessed"
+},
+{
+"id": "New_Real_Book_Volume2/14-after-you-ve-gone",
+"book": "The New Real Book Vol. 2",
+"title": "After You've Gone",
+"pdf": "14",
+"form": "AB 9+11",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed (two verses)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "low-res scan; rhythms approximate throughout"
+},
+{
+"bars": [
+1,
+2
+],
+"groups": [
+0,
+1
+],
+"text": "\"gone\" held; bar 2 looks empty, written as a continued hold"
+},
+{
+"bars": [
+15,
+16,
+17
+],
+"groups": [
+14,
+15,
+16
+],
+"text": "chord placement approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:After You've Gone\nC:Creamer & Layton\nP:AB\n%source New Real Book Vol 2 p? (pdf 14)\n%style (Med. Ballad; also played as an up-tempo swing, each bar 2 bars of swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 9+11\n%unsure [general] lyrics are printed (two verses)\n%unsure [general] low-res scan; rhythms approximate throughout\nM:4/4\nL:1/8\nK:C\nP:A\n\"Fmaj7\"BB BB- B4- | B8 | \"Fm6\"zB BB \"Bb9\"B B3 | \"Cmaj7\"BB BB- B4 |\n\"Em7\"zB BB \"A9\"B B3 | \"D9\"B B2 B- B4 | \"G9\"B B2 B- B4 | \"C6\"zB BB BB BB |\n\"C7\"B B2 B- B4 ||\nP:B\n\"Fmaj7\"BB BB- B4 | \"Fm6\"zB BB \"Bb9\"B B3 | \"Cmaj7\"BB BB- B4 | \"Em7\"zB BB \"A9\"B B3 |\n\"Dm7\"B4 \"A7\"B4 | \"Dm7\"B2 BB B-\"Fm6\"B \"Bb9\"B2 | \"Cmaj7\"zB BB \"Bm7\"BB \"E7\"BB | \"Am7\"BB B\"G\"B- B\"F#o7\"B B2 |\n\"C6/G\"BB BB- \"A7\"B4 | \"Dm7\"zB BB B2 \"G7\"B2 | \"C6\"BB- B6 | \"(C7)\"z8 |]\n\n%unsure [bars 1-2] \"gone\" held; bar 2 looks empty, written as a continued hold\n%unsure [bars 15-17] chord placement approximate"
+},
+{
+"id": "New_Real_Book_Volume2/015-ain-t-misbehavin",
+"book": "The New Real Book Vol. 2",
+"title": "Ain't Misbehavin'",
+"pdf": "15",
+"form": "AABA 8+8+8+8 (printed letters A, B, C; C is the last A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+7,
+15
+],
+"groups": [
+6,
+14
+],
+"text": "ties added under the chord changes of the whole note"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Ain't Misbehavin'\nC:Thomas \"Fats\" Waller and Harry Brooks\nC:Lyric: Andy Razaf\nP:AABA\n%source New Real Book Volume 2 p4 (pdf 15)\n%style (Med.-Slow Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (printed letters A, B, C; C is the last A)\nM:C\nL:1/8\nK:G\nP:A\n\"D6\"zB BB \"B7\"B B3 | \"Em7\"zB BB \"A7\"B4 | \"D6\"zB BB \"F#7#5\"\"(D7)\"B B2 B | \"G6\"BB BB- \"Gm6\"BB B2 |\nw: No one to talk with, all by my-self, No one to walk with but I'm hap-py on_ the shelf,\n\"D6/F#\"zB BB \"B7\"B B3 | \"Em7\"zB BB \"A7\"B B2 B | \"F#7\"B4- \"B7\"B4- | \"E9\"B4 \"A7\"z4 ||\nw: Ain't mis-be-hav-in', I'm sav-in' my love for you._\nP:A\n\"D6\"zB BB \"B7\"B B3 | \"Em7\"zB BB \"A7\"B4 | \"D6\"zB BB \"F#7#5\"\"(D7)\"B B2 B | \"G6\"BB BB- \"Gm6\"BB B2 |\nw: I know for cer-tain the one I love, I'm through with flirt-in', it's just you I'm think-_ in' of,\n\"D6/F#\"zB BB \"B7\"B B3 | \"Em7\"zB BB \"A7\"B B2 B | \"D6\"B2- \"G6\"B2- \"Gm6\"B2- \"D6\"B2- | B4 \"F#7\"z4 ||\nw: Ain't mis-be-hav-in', I'm sav-in' my love for you.___\nP:B\n\"Bm\"z2 BB B B3 | \"G7\"z2 BB B B3 | \"E7\"z2 BB B B3 | \"B7\"z2 BB B B3 |\nw: Like Jack Hor-ner in the cor-ner, don't go no-where, what do I care?\n\"A6\"z2 B2 \"(F#7)\"B2 B2 | \"Bm7\"B2 B2 \"E7\"B2 B2 | \"A7\"B4 \"B7\"B4 | \"E9\"B4 \"A7\"B4 ||\nw: Your kiss-es are worth wait-in' for, be-lieve me.\nP:A\n\"D6\"zB BB \"B7\"B B3 | \"Em7\"zB BB \"A7\"B4 | \"D6\"zB BB \"F#7#5\"\"(D7)\"B B2 B | \"G6\"BB BB- \"Gm6\"BB B2 |\nw: I don't stay out late, don't care to go, I'm home a-bout eight, just me and my ra-_ di-o\n\"D6/F#\"zB BB \"B7\"B B3 | \"Em7\"zB BB \"A7\"B B2 B | \"D6\"B8 | \"(Bm7)\"z2 \"(Em7)\"z2 \"(A7)\"z4 |]\nw: Ain't mis-be-hav-in', I'm sav-in' my love for you.\n\n%unsure [bars 7, 15] ties added under the chord changes of the whole note"
+},
+{
+"id": "New_Real_Book_Volume2/15-ain-t-misbehavin",
+"book": "The New Real Book Vol. 2",
+"title": "Ain't Misbehavin'",
+"pdf": "15",
+"form": "AABA 8+8+8+8 (printed A, A, B, C; C is the last A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+},
+{
+"bars": [
+17,
+18,
+19,
+20
+],
+"groups": [
+16,
+17,
+18,
+19
+],
+"text": "the last dotted quarter may be followed by a rest or held; rest assumed"
+},
+{
+"bars": [
+31,
+32
+],
+"groups": [
+30,
+31
+],
+"text": "final chords in parentheses; exact placement approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Ain't Misbehavin'\nC:Thomas \"Fats\" Waller and Harry Brooks\nC:Lyric: Andy Razaf\nP:AABA\n%source New Real Book Vol 2 p4 (pdf 15)\n%style (Med.-Slow Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (printed A, A, B, C; C is the last A)\n%unsure [general] lyrics are printed\nM:4/4\nL:1/8\nK:D\nP:A\n\"D6\"zB BB \"B7\"B B3 | \"Em7\"zB BB \"A7\"B4 | \"D6\"zB BB \"(D7)\"\"F#7#5\"B B2 B | \"G6\"BB BB- \"Gm6\"BB B2 |\n\"D6/F#\"zB BB \"B7\"B B3 | \"Em7\"zB BB \"A7\"B B2 B | \"F#7\"B4- \"B7\"B4- | \"E9\"B4 \"A7\"z4 |\nP:A\n\"D6\"zB BB \"B7\"B B3 | \"Em7\"zB BB \"A7\"B4 | \"D6\"zB BB \"(D7)\"\"F#7#5\"B B2 B | \"G6\"BB BB- \"Gm6\"BB B2 |\n\"D6/F#\"zB BB \"B7\"B B3 | \"Em7\"zB BB \"A7\"B B2 B | \"D6\"B4- \"G6\"B2- \"Gm6\"B2- | \"D6\"B4 \"F#7\"z4 ||\nP:B\n\"Bm\"zB BB B3 z | \"G7\"zB BB B3 z | \"E7\"zB BB B3 z | \"B7\"zB BB B3 z |\n\"A6\"z2 B2 \"(F#7)\"B2 B2 | \"Bm7\"B2 B2 \"E7\"B2 B2 | \"A7\"B4 \"B7\"B4 | \"E9\"B4 \"A7\"B4 ||\nP:A\n\"D6\"zB BB \"B7\"B B3 | \"Em7\"zB BB \"A7\"B4 | \"D6\"zB BB \"(D7)\"\"F#7#5\"B B2 B | \"G6\"BB BB- \"Gm6\"BB B2 |\n\"D6/F#\"zB BB \"B7\"B B3 | \"Em7\"zB BB \"A7\"B B2 B | \"D6\"B4 \"(Bm7)\"B4 | \"(Em7)\"z4 \"(A7)\"z4 |]\n\n%unsure [bars 17-20] the last dotted quarter may be followed by a rest or held; rest assumed\n%unsure [bars 31-32] final chords in parentheses; exact placement approximate"
+},
+{
+"id": "New_Real_Book_Volume2/016-along-came-betty",
+"book": "The New Real Book Vol. 2",
+"title": "Along Came Betty",
+"pdf": "16",
+"form": "ABC 16+8+12, then shout chorus D 16, D.S. al Coda",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "solo on ABC with Till Cue ending; On Cue ending for last solo; then D (trumpet line), D.S. to B, al Coda"
+},
+{
+"bars": [
+8
+],
+"groups": [
+8
+],
+"text": "rhythm kicks printed above (8th rest, 8th, quarter rest, dotted quarter, 8th) for G#7 / (G#7#5) / G#m7; chord placement guessed on the whole note"
+},
+{
+"bars": [
+21,
+24
+],
+"groups": [
+21,
+24
+],
+"text": "F#m7b5 B7 kicks printed above the whole note; bar 24 is written in two voices (trp/ten), upper line used"
+},
+{
+"bars": [
+34,
+36
+],
+"groups": [
+34,
+36
+],
+"text": "Till Cue / On Cue endings: two-note trp/ten chords read as one note; On Cue bar 35 is slashes (rests here)"
+},
+{
+"bars": [
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52
+],
+"groups": [
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52
+],
+"text": "D section printed for trumpet and tenor on two staves; trumpet (top) rhythm used"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Along Came Betty\nC:Benny Golson\nP:ABCDBC\n%source New Real Book Vol 2 p5 (pdf 16)\n%style (Med. Swing, quarter = 110)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+12, then shout chorus D 16, D.S. al Coda\n%unsure [form] solo on ABC with Till Cue ending; On Cue ending for last solo; then D (trumpet line), D.S. to B, al Coda\nM:C\nL:1/8\nK:Bb\n\"(Bm7)\"z |\nP:A\n|: \"Cm7\"z4 B2 BB- | \"C#m7\"B4- \"F#7\"B4 | \"Cm7\"z2 zB- BB BB | \"C#m7\"B4- \"F#7\"B4 |\n\"Bmaj7\"zB BB BB (3BBB- | \"Bb7\"B8 | \"Amaj7\"zB BB B2 BB- | \"G#7\"B3- \"(G#7#5)\"B3- \"G#m7\"B2 |\n\"G#m7\"z4 B2 BB- | \"Am7\"B4- \"D7\"B4 | \"G#m7\"z2 zB- BB BB | \"Am7\"B6 \"D7\"BB- |\n\"Gmaj7\"B2 zB BB BB | \"B7\"(3B2B2B2 B3 B | \"Em7\"BB BB BB BB | \"A7\"B7 \"Dm9\"B- ||\nP:B\n!segno!\"Dm9\"BB BB B4 | \"G7\"zB BB BB BB | \"Bm7b5\"B4- \"E7\"BB BB | \"Am7\"BB BB \"Am7/G\"BB BB |\n\"F#m7b5\"B4- \"B7\"B4 | zB BB BB BB | \"Gm7\"B3 B- (3B2B2B2 | \"C7\"B6 z2 ||\nP:C\n\"Cm7\"z4 B2 BB- | \"C#m7\"B4- \"F#7\"B4 | \"Cm7\"z2 zB- BB BB | \"C#m7\"B6 \"F#7\"BB- |\n\"Dm7b5\"B8- | \"G7\"B3 B zB zB | \"Cm7b5\"B8 | !coda!\"F7#9\"B3 B (3B2B2B2 |1 \"Bbmaj7\"B8 | \"C#m7\"B4 \"F#7\"B4 :|2 \"Bbmaj7\"z8 | \"C#m7\"z4 z2 \"F#7\"B2 ||\nP:D\n\"Cm7\"BB z2 z2 B2 | \"C#m7\"BB z2 \"F#7\"z2 B2 | \"Cm7\"BB z2 zB BB | \"C#m7\"BB z2 \"F#7\"z2 B2 |\n\"Bmaj7\"BB z2 z4 | \"Bb7\"zB BB BB BB | \"Amaj7\"B2 z2 z4 | \"G#7\"z4 z2 B2 |\n\"G#m7\"BB z2 z2 B2 | \"Am7\"BB z2 \"D7\"z2 B2 | \"G#m7\"BB z2 zB BB | \"Am7\"BB z2 \"D7\"z4 |\n\"Gmaj7\"zB BB B2 B2 | \"B7\"B2 B2 B2 BB | \"Em7\"z8 | \"A7\"z4 z2 z\"Dm9\"B- |]\n%coda\n!coda!\"F7#9\"B3 B (3B2B2B2 | \"Bbmaj7\"B8- | !fermata!B8 |]\n\n%unsure [bar 8] rhythm kicks printed above (8th rest, 8th, quarter rest, dotted quarter, 8th) for G#7 / (G#7#5) / G#m7; chord placement guessed on the whole note\n%unsure [bars 21, 24] F#m7b5 B7 kicks printed above the whole note; bar 24 is written in two voices (trp/ten), upper line used\n%unsure [bars 34, 36] Till Cue / On Cue endings: two-note trp/ten chords read as one note; On Cue bar 35 is slashes (rests here)\n%unsure [bars 37-52] D section printed for trumpet and tenor on two staves; trumpet (top) rhythm used"
+},
+{
+"id": "New_Real_Book_Volume2/16-along-came-betty",
+"book": "The New Real Book Vol. 2",
+"title": "Along Came Betty",
+"pdf": "16",
+"form": "ABCDBC 16+8+10+16 (solo on ABC with 'Till cue' ending; 'On cue' ending to D, then D.S. (B) al Coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "order after solos inferred from \"D.S. al Coda\" at the end of D"
+},
+{
+"bars": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"groups": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"text": "low-res scan; eighth-note runs approximate, esp. bars 5, 14-15"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"text": "rhythms approximate; bar 24 has a trp/ten split, top line taken"
+},
+{
+"bars": [
+33,
+34,
+35,
+36
+],
+"groups": [
+33,
+34,
+35,
+36
+],
+"text": "'Till cue' ending (trp/ten half notes) and 'On cue' ending (slashes written as rests, then a kick)"
+},
+{
+"bars": [
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52
+],
+"groups": [
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52
+],
+"text": "D is a trp/ten soli on two staves; trumpet (top) rhythm taken, both staves mostly in rhythmic unison"
+},
+{
+"bars": [
+53,
+54,
+55
+],
+"groups": [
+53,
+54,
+55
+],
+"text": "trp/ten chord, held with fermata"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Along Came Betty\nC:Benny Golson\nP:ABCDBC\n%source New Real Book Vol 2 p5-6 (pdf 16-17)\n%style (Med. Swing, q=110)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCDBC 16+8+10+16 (solo on ABC with 'Till cue' ending; 'On cue' ending to D, then D.S. (B) al Coda)\n%unsure [form] order after solos inferred from \"D.S. al Coda\" at the end of D\nM:4/4\nL:1/8\nK:Bb\nz\"(Bm7)\"!accent!B |:\nP:A\n\"Cm7\"z4 B2 BB- | \"C#m7\"B4- \"F#7\"B4 | \"Cm7\"z2 zB- BB BB | \"C#m7\"B4- \"F#7\"B4 |\n\"Bmaj7\"zB BB BB (3BBB- | \"Bb7\"B8 | \"Amaj7\"zB BB BB BB- | \"G#7\"B4- \"(G#7#5)\"B2- \"G#m7\"B2 |\n\"G#m7\"z4 B2 BB- | \"Am7\"B4- \"D7\"B4 | \"G#m7\"z2 zB- BB BB | \"Am7\"B6 \"D7\"BB- |\n\"Gmaj7\"B2 zB- BB BB | \"B7\"(3B2B2B2 B3 B- | \"Em7\"BB BB BB B2 | \"A7\"B6 \"Dm9\"!accent!B2- ||\nP:B\n!segno!\"Dm9\"BB BB B4 | \"G7\"zB BB BB BB | \"Bm7b5\"B4- \"E7\"BB BB | \"Am7\"BB BB \"Am7/G\"BB BB |\n\"F#m7b5\"B4- \"B7\"B4 | zB BB BB BB | \"Gm7\"B3 B- (3B2B2B2 | \"C7\"B2- (3BBB B2 \"(Bm7)\"z2 ||\nP:C\n\"Cm7\"z4 B2 BB- | \"C#m7\"B4- \"F#7\"B4 | \"Cm7\"z2 zB- BB BB | \"C#m7\"B6 \"F#7\"BB- |\n\"Dm7b5\"B8 | \"G7\"B3 B zB zB | \"Cm7b5\"B8 | !coda!\"F7#9\"B3 B (3B2B2B2 |1 \"Bbmaj7\"B8 | \"C#m7\"B4 \"F#7\"B4 :|2 \"Bbmaj7\"z8 | \"C#m7\"z4 z2 \"F#7\"B2 ||\nP:D\n\"Cm7\"BB z2 z2 B2 | \"C#m7\"BB z2 \"F#7\"z2 B2 | \"Cm7\"BB z2 zB BB | \"C#m7\"BB z2 \"F#7\"z2 B2 |\n\"Bmaj7\"BB z2 z4 | \"Bb7\"zB BB BB BB | \"Amaj7\"B2 z2 z4 | \"G#7\"z4 z2 B2 |\n\"G#m7\"BB z2 z2 B2 | \"Am7\"BB z2 \"D7\"z2 B2 | \"G#m7\"BB z2 zB BB | \"Am7\"BB z2 \"D7\"z4 |\n\"Gmaj7\"zB BB B2 B2 | \"B7\"B2 B2 B2 BB | \"Em7\"z8 | \"A7\"z4 z2 z\"Dm9\"!accent!B |]\n%coda\n\"F7#9\"B3 B (3B2B2B2 | \"Bbmaj7\"B8- | !fermata!B8 |]\n\n%unsure [bars 5-16] low-res scan; eighth-note runs approximate, esp. bars 5, 14-15\n%unsure [bars 17-24] rhythms approximate; bar 24 has a trp/ten split, top line taken\n%unsure [bars 33-36] 'Till cue' ending (trp/ten half notes) and 'On cue' ending (slashes written as rests, then a kick)\n%unsure [bars 37-52] D is a trp/ten soli on two staves; trumpet (top) rhythm taken, both staves mostly in rhythmic unison\n%unsure [bars 53-55] trp/ten chord, held with fermata"
+},
+{
+"id": "New_Real_Book_Volume2/018-asa",
+"book": "The New Real Book Vol. 2",
+"title": "Asa (The Zoo Blues)",
+"pdf": "18",
+"form": "ABC 8+8+8 (C bars 5-8 repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "solo on ABC; after solos D.S., vamp and fade on C (no repeat). Intro on Manhattan Transfer version is twice as long."
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5
+],
+"groups": [
+0,
+1,
+2,
+3,
+4
+],
+"text": "intro written as two-note voicings (1st x tacet); 16th groupings read from print; 2nd ending bass kicks (Ebass Gbass Abass Bbass) not written"
+},
+{
+"bars": [
+8,
+9,
+12,
+13
+],
+"groups": [
+7,
+8,
+11,
+12
+],
+"text": "16th groupings and ties approximated from dense print"
+},
+{
+"bars": [
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21
+],
+"groups": [
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"text": "B section has two-voice bars (17-19) and kick rhythms above; upper line used, groupings approximate"
+},
+{
+"bars": [
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29
+],
+"groups": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28
+],
+"text": "C section 16th rhythms and ties approximated"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Asa (The Zoo Blues)\nC:Djavan\nP:ABC\n%source New Real Book Vol 2 p7 (pdf 18)\n%style (Med. Funk, quarter = 104)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 8+8+8 (C bars 5-8 repeated)\n%unsure [form] solo on ABC; after solos D.S., vamp and fade on C (no repeat). Intro on Manhattan Transfer version is twice as long.\nM:C\nL:1/8\nK:G\n%intro\n|: \"Em7\"z/B/z/B/ B2 z2 z3/2B/ | \"C13\"B/B/B Bz z2 \"B7#9#5\"BB/B/ | \"Em7\"z/B/z/B/ B2 z2 z3/2B/ |1 \"C13\"B/B/B Bz z2 \"B7#9#5\"BB/B/ :|2\n\"NC\"B/B/B Bz z2 zB/B/ ||\nP:A\n!segno!\"Em7\"B/B/B BB z2 zB/B/ | \"C13\"BB BB \"B7#9#5\"z4 | \"Em7\"z/B3/2 B/B/B B/B/B BB/B/- | \"Cmaj7\"B/B/B \"B7#9#5\"B/B3/2 z2 zB/B/ |\n\"Em7\"B/B/B BB z2 zB/B/ | \"C13\"BB BB \"B7#9#5\"z4 | \"Em7\"z/B3/2 B/B/B B/B/B BB/B/- | \"Cmaj7\"B/B/B B2 \"B7#9#5\"z4 ||\nP:B\n\"Am7\"z/B/B/B/ \"D9\"z/B/B \"E7#9\"BB BB | \"Am7\"BB \"D9\"B2 \"E7#9\"z4 | \"Am7\"z/B/B/B/ \"D9\"z/B/B \"E7#9\"BB BB | \"Am7\"B3 \"D9\"B- \"E7#9\"B2 z2 |\n\"Am7\"z/B/B/B/ \"D9\"(3BBB \"E7#9\"B3/2B/ B2- | \"Am7\"B/B/B- \"D9\"(3BBB \"E7#9\"B3/2B/- B2 | \"Am7\"z/B/B \"D9\"B/BB/ \"E7#9\"BB/B/ Bz/B/ | \"Am7\"B/B/B/B/ \"Am11\"z/B/z/B/- \"F#m11b5\"Bz \"B7#9#5\"zB/B/ ||\nP:C\n\"Em9\"BB BB z2 zB/B/ | \"C13\"BB BB B3/2B/- B3/2B/ | \"Am7\"B/B/B- B/B/B/B/- B/B3/2 z3/2B/ | \"C13\"B/B/B B/B/z/B/ \"B7#9#5\"B/B/B/B/- BB |: \"Em9\"BB BB z2 zB/B/ | \"C13\"BB BB B3/2B/- B2 | \"Am7\"B/B/B- B/B/B/B/ B2- B3/2B/ | \"F#m7b5\"B/B/B/B/- B/B/B/B/ \"B7#9#5\"B/B/B/B/- B2 :|\n\n%unsure [bars 1-5] intro written as two-note voicings (1st x tacet); 16th groupings read from print; 2nd ending bass kicks (Ebass Gbass Abass Bbass) not written\n%unsure [bars 8-9, 12-13] 16th groupings and ties approximated from dense print\n%unsure [bars 14-21] B section has two-voice bars (17-19) and kick rhythms above; upper line used, groupings approximate\n%unsure [bars 22-29] C section 16th rhythms and ties approximated"
+},
+{
+"id": "New_Real_Book_Volume2/18-asa",
+"book": "The New Real Book Vol. 2",
+"title": "Asa (The Zoo Blues)",
+"pdf": "18",
+"form": "ABC 8+8+10 (solo on ABC; after solos D.S., vamp & fade on C, no repeat)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "C is 5 bars + a repeated 5-bar vamp; book says \"Intro on Manhattan Transfer version is twice as long\""
+},
+{
+"bars": [],
+"groups": [],
+"text": "low-res scan of dense sixteenth-note funk lines; most rhythms approximate"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5
+],
+"groups": [
+0,
+1,
+2,
+3,
+4
+],
+"text": "intro horn kicks (1st x tacet); 2nd ending bass fill (E bass, G bass, A bass, B bass) written as rests, then melody pickup"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Asa (The Zoo Blues)\nC:Djavan\nP:ABC\n%source New Real Book Vol 2 p7 (pdf 18)\n%style (Med. Funk, q=104; as sung by Manhattan Transfer)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 8+8+10 (solo on ABC; after solos D.S., vamp & fade on C, no repeat)\n%unsure [form] C is 5 bars + a repeated 5-bar vamp; book says \"Intro on Manhattan Transfer version is twice as long\"\n%unsure [general] low-res scan of dense sixteenth-note funk lines; most rhythms approximate\nM:4/4\nL:1/8\nK:G\n%intro\n|: \"Em7\"z/BB/ B2 z2 z3/2B/ | \"C13\"B/B/B/B/ BB z2 z\"B7#9#5\"B/B/ | \"Em7\"z/B/z/B/ B2 z2 z3/2B/ |1 \"C13\"B/B/B/B/ BB z\"B7#9#5\"B/B/ BB :|2\n\"NC\"B/B/B/B/ BB z2 zB/B/ ||\nP:A\n!segno!\"Em7\"BB B2 BB zz/B/ | \"C13\"BB BB \"B7#9#5\"z4 | \"Em7\"z/B3/2 B/B/B B/B/B B/B/B- | \"Cmaj7\"B/B/B \"B7#9#5\"B/B3/2 zB/B/ Bz |\n\"Em7\"B/B/B BB zz B/B/B | \"C13\"BB BB \"B7#9#5\"z4 | \"Em7\"z/B3/2 B/B/B B/B/B B/B/B- | \"Cmaj7\"B/B/B B2 \"B7#9#5\"z4 ||\nP:B\n\"Am7\"z/B/B/B/ \"D9\"z/B/B/B/ \"E7#9\"BB BB | \"Am7\"B/B/B \"D9\"B2 \"E7#9\"z4 | \"Am7\"z/B/B/B/ \"D9\"z/B/B/B/ \"E7#9\"BB B2 | \"Am7\"B3/2\"D9\"B/ BB- \"E7#9\"B/B/B/B/ zB |\n\"Am7\"z/B/B/B/ \"D9\"(3BBB \"E7#9\"B/B/B/B/ B3/2B/ | \"Am7\"B/B/B B\"D9\"B (3BBB \"E7#9\"B2 | \"Am7\"z/B/B \"D9\"B/B/B \"E7#9\"B/B/B z/B/B | \"Am7\"B/B/B/B/ z/B/\"Am11\"z/B/ B\"F#m11b5\"z \"B7#9#5\"z/B/B ||\nP:C\n\"Em9\"BB BB z2 z/B/B/B/ | \"C13\"BB BB B3/2B/- B3/2B/ | \"Am7\"B/B/B- B/B/B- B/B/B- z3/2B/ | \"C13\"B/B/B B/B/z/B/ \"B7#9#5\"B/B/B/B/ B/B3/2- |\nB2 z2 zB B2 |: \"Em9\"BB BB z2 zB | \"C13\"BB BB B3/2B/- B2 | \"Am7\"B/B/B- B/B/B- B2 B3/2B/ |\n\"F#m7b5\"B/B/B/B/ B/B/B/B/- \"B7#9#5\"B/B/B/B/ B/B/B- | B4 B2 B2 :|\n\n%unsure [bars 1-5] intro horn kicks (1st x tacet); 2nd ending bass fill (E bass, G bass, A bass, B bass) written as rests, then melody pickup"
+},
+{
+"id": "New_Real_Book_Volume2/020-avance",
+"book": "The New Real Book Vol. 2",
+"title": "Avancé",
+"pdf": "19",
+"form": "intro 8, A 16 (repeated), B 8, C 8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "job listed pdf 20 but the tune starts on pdf 19 (p9). D.S. al Coda: piano solos on AA, melody returns at B; vamp, solo and fade at coda. Each bar subdivided 4+2 beats."
+},
+{
+"bars": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25
+],
+"groups": [
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"text": "A melody (top line); lower synth counter-melody (2nd x only) not written; long ties and pickups read from print"
+},
+{
+"bars": [
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33
+],
+"groups": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32
+],
+"text": "B section eighth groupings with grace notes approximated"
+},
+{
+"bars": [
+43,
+44,
+45,
+46
+],
+"groups": [
+42,
+43,
+44,
+45
+],
+"text": "alto solo vamp (slashes) written as rests; vamp, solo and fade"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Avancé\nC:Russell Ferrante\nP:ABC\n%source New Real Book Vol 2 p9-10 (pdf 19-20)\n%style (Med. Bossa, quarter = 154)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form intro 8, A 16 (repeated), B 8, C 8\n%unsure [form] job listed pdf 20 but the tune starts on pdf 19 (p9). D.S. al Coda: piano solos on AA, melody returns at B; vamp, solo and fade at coda. Each bar subdivided 4+2 beats.\nM:6/4\nL:1/8\nK:D\n%intro\n\"D(add#11)/F#\"B8- B2 BB- | \"C#m9/F#\"B6 BB- B B2 B- | \"Dmaj7/F#\"B8- B2 BB- | \"F#9sus\"B6 zB \"F#7#9#5\"B3 B |\n\"D(add#11)/F#\"B8- B2 BB- | \"C#m9/F#\"B6 BB- B B2 B- | \"Dmaj7/F#\"B8- B2 BB- | \"Dmaj7/E\"B4- B B2 \"E7b9#5\"B- B B2 B- ||\nP:A\n|: !segno!\"Fmaj7/A\"B8- B2 BB- | \"G#o7\"B8- B B2 B- | \"Gm7\"B8- B2 BB- | \"Gm7/C\"\"(C13#11)\"B8- B2 BB- |\n\"Gmaj7/B\"B8- B B2 B- | \"Bbo7\"B8- BB BB- | \"Ebmaj7\"B8- \"Ebmaj7#5\"B2 BB- | \"Ebmaj7(13)\"B8- \"Ebmaj7\"B B2 B- |\n\"Em9(maj7)\"B8- \"Em9\"B2 BB- | \"Cmaj7#11/E\"B8- B B2 B- | \"Cm9#5\"B8- \"Cm9\"(3B2B2B2 | \"B7/C\"B8 zB BB- |\n\"B13b9/C\"B12- | \"B13b9\"B8 \"B7b9\"z B2 B- | \"Dmaj7/E\"B12 |1 \"E7b9#5\"B8 z B2 B- :|2\n\"E7b9#5\"B12 ||\nP:B\n\"Gbmaj7#11/Bb\"zB BB BB BB BB B2- | \"Bbm6/9\"B6- BB- B B2 B- | \"Gbmaj7b5\"B6- BB- B B2 B- | \"F9sus\"B8- \"F7b9\"B4 |\n\"Dmaj7/E\"zB BB B2 \"E7#9#5\"BB BB BB | \"Gmaj7/A\"B6- B\"A7#5\"B- B2 B2 | \"Gb/Ab\"zB BB BB \"Ab7#9#5\"BB BB BB | \"Db9sus\"B6- BB- \"Db7#9#5\"B4 ||\nP:C\n\"D(add#11)/F#\"B8- B2 BB- | \"C#m9/F#\"B6 BB- B B2 B- | \"Dmaj7/F#\"B8- B2 BB- | \"F#9sus\"B6 zB \"F#7#9#5\"B3 B |\n\"D(add#11)/F#\"B8- B2 BB- | \"C#m9/F#\"B6 BB- B B2 B- | \"Dmaj7/F#\"B8- B2 BB- | !coda!\"Dmaj7/E\"B6 z2 \"E7b9#5\"z4 |]\n%coda\n!coda!\"F#9sus\"B6 zB \"F#7#9#5\"B3 B |: \"D(add#11)/F#\"z12 | \"C#m9/F#\"z12 | \"Dmaj7/F#\"z12 |\n\"F#9sus\"z8 \"F#7#9#5\"z4 :|\n\n%unsure [bars 9-25] A melody (top line); lower synth counter-melody (2nd x only) not written; long ties and pickups read from print\n%unsure [bars 26-33] B section eighth groupings with grace notes approximated\n%unsure [bars 43-46] alto solo vamp (slashes) written as rests; vamp, solo and fade"
+},
+{
+"id": "New_Real_Book_Volume2/20-avance",
+"book": "The New Real Book Vol. 2",
+"title": "Avancé",
+"pdf": "19",
+"form": "ABC 16+8+8 (intro, A with 1st/2nd endings, B, C; D.S. al Coda, piano solos on AA, melody returns at B; coda vamp)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "tune starts on pdf 19 (job listed pdf 20, which is page 2); synth counter-melody staff under A not transcribed"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25
+],
+"groups": [
+20,
+21,
+22,
+23,
+24
+],
+"text": "rhythms after the whole notes in bars 22 and 24 approximate; bars 21, 23 and 25 read as dotted whole notes to fill 6/4"
+},
+{
+"bars": [
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33
+],
+"groups": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32
+],
+"text": "dense eighth-note lines with grace notes; groupings in bars 26, 30, 32 approximate; bar 29 shown as whole note under slashes, extended to fill"
+},
+{
+"bars": [
+43,
+44,
+45,
+46
+],
+"groups": [
+42,
+43,
+44,
+45
+],
+"text": "alto solo vamp in slashes, written as rests (vamp, solo & fade)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Avancé\nC:Russell Ferrante\nP:ABC\n%source New Real Book Vol 2 p9-10 (pdf 19-20)\n%style (Med. Bossa, q=154)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8 (intro, A with 1st/2nd endings, B, C; D.S. al Coda, piano solos on AA, melody returns at B; coda vamp)\n%unsure [general] tune starts on pdf 19 (job listed pdf 20, which is page 2); synth counter-melody staff under A not transcribed\nM:6/4\nL:1/8\nK:D\n%intro\n\"Dadd#11/F#\"B8- B2 BB- | B6- \"C#m9/F#\"BB- B B2 B- | \"Dmaj7/F#\"B8- B2 BB- | \"F#9sus\"B6 zB B3 \"F#7#9#5\"B |\n\"Dadd#11/F#\"B8- B2 BB- | B6- \"C#m9/F#\"BB- B B2 B- | \"Dmaj7/F#\"B8- B2 BB- | \"Dmaj7/E\"B4- B B2 B- \"E7b9#5\"B B2 B |\nP:A\nK:C\n|: !segno!\"Fmaj7/A\"B8- B2 BB- | \"G#o7\"B8- B B2 B- | \"Gm7\"B8- B2 BB- | \"Gm7/C\"B8- \"(C13#11)\"B2 BB- |\n\"Gmaj7/B\"B8- B B2 B- | \"Bbo7\"B8- BB BB- | \"Ebmaj7\"B8- \"Ebmaj7#5\"B2 BB- | \"Ebmaj7(13)\"B8- B \"Ebmaj7\"B2 B- |\n\"Em9(maj7)\"B8- \"Em9\"B2 BB- | \"Cmaj7#11/E\"B8- B B2 B- | \"Cm9#5\"B8- \"Cm9\"(3B2B2B2 | \"B7/C\"B8 zB BB- |\n\"B13b9/C\"B12- | \"B13b9\"B8 z \"B7b9\"B2 B- | \"Dmaj7/E\"B12- |1 \"E7b9#5\"B8 z B2 B- :|2 \"E7b9#5\"B12 |\nP:B\n\"Gbmaj7#11/Bb\"zB BB BB BB BB B2- | \"Bbm6/9\"B6- BB- B B2 B | \"Gbmaj7b5\"B6- BB- B B2 B- | \"F9sus\"B8- \"F7b9\"B4 |\n\"Dmaj7/E\"zB BB \"E7#9#5\"BB BB BB BB | \"Gmaj7/A\"B6- B\"A7#5\"B- B2 B2 | \"Gb/Ab\"zB BB BB \"Ab7#9#5\"BB BB BB | \"Db9sus\"B6- B\"Db7#9#5\"B- B4 |\nP:C\n\"Dadd#11/F#\"B8- B2 BB- | B6- \"C#m9/F#\"BB- B B2 B- | \"Dmaj7/F#\"B8- B2 BB- | \"F#9sus\"B6 zB B3 \"F#7#9#5\"B |\n\"Dadd#11/F#\"B8- B2 BB- | B6- \"C#m9/F#\"BB- B B2 B- | \"Dmaj7/F#\"B8- B2 BB- | !coda!\"Dmaj7/E\"B6 z2 \"E7b9#5\"z4 |]\n%coda\n\"F#9sus\"B6 zB B3 \"F#7#9#5\"B |: \"Dadd#11/F#\"z12 | \"C#m9/F#\"z12 | \"Dmaj7/F#\"z12 |\n\"F#9sus\"z6 \"F#7#9#5\"z6 :|\n\n%unsure [bars 21-25] rhythms after the whole notes in bars 22 and 24 approximate; bars 21, 23 and 25 read as dotted whole notes to fill 6/4\n%unsure [bars 26-33] dense eighth-note lines with grace notes; groupings in bars 26, 30, 32 approximate; bar 29 shown as whole note under slashes, extended to fill\n%unsure [bars 43-46] alto solo vamp in slashes, written as rests (vamp, solo & fade)"
+},
+{
+"id": "New_Real_Book_Volume2/021-baby-it-s-cold-outside",
+"book": "The New Real Book Vol. 2",
+"title": "Baby, It's Cold Outside",
+"pdf": "21",
+"form": "16 bars repeated (1st/2nd endings), coda; solo on form",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "duet: only the top (she) staff is transcribed; the answering (he) staff and its lyrics are left out. Second-verse lyric printed as text under the tune not included."
+},
+{
+"bars": [
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31
+],
+"groups": [
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31
+],
+"text": "coda: top line is a two-note he/she chord over a horn line; last three bars are the horn line"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Baby, It's Cold Outside\nC:Frank Loesser\n%source New Real Book Vol 2 p11-12 (pdf 21-22)\n%style (Medium Slow Swing, quarter = 78)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars repeated (1st/2nd endings), coda; solo on form\n%unsure [general] duet: only the top (she) staff is transcribed; the answering (he) staff and its lyrics are left out. Second-verse lyric printed as text under the tune not included.\nM:C\nL:1/8\nK:F\nB |: \"F6\"BB BB- B4- | \"Dm7\"B4 z2 zB | \"Gm7\"BB \"C7\"BB- B4- | \"Gm7\"B4 \"C7\"z2 zB |\nw: I real-ly can't stay, _ _ I've got to go 'way, _ _ This\nw: * neigh-bors might think, _ _ Say, what's in that drink? _ _ I\n\"F6\"BB BB- B4- | B2 B2 \"Dm7\"B2 B2 | \"Cm7\"B8- | \"F7\"B4 z2 zB |\nw: eve-ning has been _ _ so ve-ry nice. _ My\nw: wish I knew how _ _ to break the spell. _ I\n\"Bb\"BB B2 \"Bb6\"B2 B2 | \"Bbmaj7\"B B3 \"Bb6\"z2 zB |1 \"Bbm\"BB BB \"Bbm6\"BB B2 | \"Bbm7\"B6 \"Eb9\"zB |\nw: moth-er will start to wor-ry and fath-er will be pac-ing the floor, So\nw: ought to say, \"No, no, no, sir.\" At\n\"F6\"BB B2 B2 B2 | \"Dm7\"B B3 z2 zB | \"G7\"BB BB BB B2 | \"C7\"B6 zB :|2\n\"Dm7\"BB BB \"G7\"BB B2 | \"Gm7\"B6 \"C7\"zB |\nw: real-ly I'd bet-ter scur-ry, Well, may-be just a half a drink more. The least I'm gon-na say that I've tried. I\n\"F6\"BB BB- B4- | \"Am7b5\"B4 \"D7\"BB BB- | \"G7\"B4 \"C7\"B4 | \"F6\"B6 \"(C7)\"zB |]\nw: real-ly can't stay, _ _ Ah, but it's cold _ out side. I\n%coda\n!coda!\"Am7b5\"B4 \"D7\"BB BB- | \"G7\"B8- | B8 | \"Bbm6\"B8- |\n\"Eb9\"B8 | \"F6\"B8 |\nw: _ Ah, but it's cold _ _ out _ side.\n\"Gm7\"B2 BB- \"G#o7\"(3BBB \"Gm7\"BB | \"E7#9#5\"(3z2B2\"A13\"B2 \"D7#9#5\"(3B2\"G13\"B2\"C7#9#5\"B2 | !fermata!\"F6/9\"B8 |]\n\n%unsure [bars 23-28, 29-31] coda: top line is a two-note he/she chord over a horn line; last three bars are the horn line"
+},
+{
+"id": "New_Real_Book_Volume2/21-baby-it-s-cold-outside",
+"book": "The New Real Book Vol. 2",
+"title": "Baby, It's Cold Outside",
+"pdf": "21",
+"form": "AA 16+16 (repeated 16-bar section with 1st/2nd endings; solo on form; coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no section letters printed; form inferred from the repeat and endings"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed (she/he duet, two verses plus a printed second-verse lyric); not copied"
+},
+{
+"bars": [],
+"groups": [],
+"text": "only the top (she) melody is transcribed; the answering (he) staff is skipped"
+},
+{
+"bars": [
+16
+],
+"groups": [
+16
+],
+"text": "\"break\" marked over this bar"
+},
+{
+"bars": [
+24,
+25,
+26,
+27,
+28,
+29,
+30
+],
+"groups": [
+24,
+25,
+26,
+27,
+28,
+29,
+30
+],
+"text": "coda bars 24-28 are two-note dyads in the melody staff over a horn line (horns not transcribed); bars 29-30 marked (horns)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Baby, It's Cold Outside\nC:Frank Loesser\nP:AA\n%source New Real Book Vol 2 p11-12 (pdf 21-22)\n%style (Medium Slow Swing, q=78)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AA 16+16 (repeated 16-bar section with 1st/2nd endings; solo on form; coda)\n%unsure [form] no section letters printed; form inferred from the repeat and endings\n%unsure [general] lyrics are printed (she/he duet, two verses plus a printed second-verse lyric); not copied\n%unsure [general] only the top (she) melody is transcribed; the answering (he) staff is skipped\nM:C\nL:1/8\nK:F\nB |:\nP:A\n\"F6\"BB BB- B4- | B4 z2 z\"Dm7\"B | \"Gm7\"BB B\"C7\"B- B4- | \"Gm7\"B4 \"C7\"z2 zB |\n\"F6\"BB BB- B4- | B2 B2 \"Dm7\"B2 B2 | \"Cm7\"B8 | \"F7\"B4 z2 zB |\n\"Bb\"BB B2 \"Bb6\"B2 B2 | \"Bbmaj7\"B B3 \"Bb6\"z2 zB |1 \"Bbm\"BB BB \"Bbm6\"BB BB | \"Bbm7\"B4- \"Eb9\"B2 zB |\n\"F6\"BB BB BB BB | \"Dm7\"B B3 z2 zB | \"G7\"BB BB BB B2 | \"C7\"B6 zB :|2\n\"Dm7\"BB BB \"G7\"BB B2 | \"Gm7\"B4- \"C7\"B2 zB | \"F6\"BB BB- !coda!B4- | \"Am7b5\"B4 \"D7\"BB BB- |\n\"G7\"B4 \"C7\"B4 | \"F6\"B6 \"(C7)\"zB |]\n%coda\n\"Am7b5\"B4 \"D7\"BB BB- | \"G7\"B8- | B8 | \"Bbm6\"B8- |\n\"Eb9\"B8 | \"F6\"B8 | \"Gm7\"B2 BB- \"G#o7\"(3BBB \"Gm7\"BB | \"E7#9#5\"(3z2B2\"A13\"B2 \"D7#9#5\"(3B2\"G13\"B2\"C7#9#5\"B2 |\n\"F6/9\"!fermata!B8 |]\n\n%unsure [bar 16] \"break\" marked over this bar\n%unsure [bars 24-30] coda bars 24-28 are two-note dyads in the melody staff over a horn line (horns not transcribed); bars 29-30 marked (horns)"
+},
+{
+"id": "New_Real_Book_Volume2/023-baja-bajo",
+"book": "The New Real Book Vol. 2",
+"title": "Baja Bajo",
+"pdf": "23",
+"form": "intro 8 (repeated), A 24, B 8 (repeated), Coda 1, Coda 2",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "D.C., play intro once, solo on AA (1st x stop time, 2nd without), then BB as written; to end last solo take Coda 1, then D.C. al Coda 2. Alternate melody for A bars 7-13 (1st x only) printed on p14 not written."
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "intro written in chord voicings; top-line rhythm read, rest values in bar 5 guessed to fill"
+},
+{
+"bars": [
+9,
+10,
+11,
+12,
+13,
+14
+],
+"groups": [
+8,
+9,
+10,
+11,
+12,
+13
+],
+"text": "stop time: kick rhythms printed above (B13, E7#9, A7#9#5) not written separately"
+},
+{
+"bars": [
+28
+],
+"groups": [
+27
+],
+"text": "read as a half-note triplet"
+},
+{
+"bars": [
+39,
+40
+],
+"groups": [
+38,
+39
+],
+"text": "Coda 1 / Coda 2 signs (on repeat) fall in these bars; D.S. al Coda One"
+},
+{
+"bars": [
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53
+],
+"groups": [
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52
+],
+"text": "Coda 1 is written in chord voicings; top-line rhythm read"
+},
+{
+"bars": [
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71
+],
+"groups": [
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70
+],
+"text": "Coda 2 rhythms (ties across bars, 8va b. section) approximated; drum solo vamp and fade at end"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Baja Bajo\nC:John Patitucci, Chick Corea\nP:AB\n%source New Real Book Vol 2 p13-14 (pdf 23-24)\n%style (Med.-Up Samba, half = 140)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form intro 8 (repeated), A 24, B 8 (repeated), Coda 1, Coda 2\n%unsure [form] D.C., play intro once, solo on AA (1st x stop time, 2nd without), then BB as written; to end last solo take Coda 1, then D.C. al Coda 2. Alternate melody for A bars 7-13 (1st x only) printed on p14 not written.\nM:C|\nL:1/8\nK:F\n%intro\n|: \"Dm11(maj7)\"\"(Dm)\"B8 | \"B7\"z B3- (3B2B2B2 | \"Bb7\"B3 B- B B2 \"A7\"B- | (3B2B2B2 BzBB |\n\"Dm\"B3 B zBBB | \"B13\"B3 B B2 BB | \"Bb13\"B2 BB- B B2 \"A13\"B- | B B2 B- B B2 B- :|\nP:A\n!segno!\"Dm\"B3 B z4 | B3 B zBzB- | \"B13\"B7 B | \"E7#9\"B3 z z2 z\"A7#9#5\"B- |\nB8- | B2 BB zBzB- | \"Dm7(11)\"B4- (3B2B2B2 | \"Bbmaj7/C\"B3 B- B B2 B- |\n\"Abmaj7/Bb\"B4 zBBB | \"A7\"B2 BB zBzB- | \"Abmaj7\"B4- (3B2B2B2 | \"Gbmaj7b5\"B4 B3 \"Fm(maj7)\"B- |\nB4 z4 | \"E7#9#5\"(3z2B2B2 B2 BB- | \"Am7\"B8 | z4 B2 BB- |\n\"E/C\"B7 \"F#/A#\"B- | B8 | \"G#/A\"B8 | \"F#/G\"(3B4-B4\"G#/F#\"B4- |\nB8- | B8- | B8- | B6 \"Dm\"BB ||\nP:B\n|: \"Dm\"B2 z2 z2 z\"B13#11#9\"B | z8 | \"NC\"z2 zB- B3 B | B2 BB B2 \"Dm\"BB |\n\"Dm\"B2 z2 z2 z\"B13#11#9\"B | z6 z\"NC\"B- | B3 B B3 B | B2 B2 B2 z\"Dm\"B- :|\n%coda 1\n\"NC\"B3 B- B2 BB | B2 zB B2 B2- | B6 \"A7#5\"B2- | B8 |\n\"G/Ab\"B8- | B6 \"Bb/Gb\"B2- | B4 \"C#/E\"B4- | B6 \"C/Db\"B2- |\nB4 \"Dm(maj7)\"B4- | B8- | B8- | B8- | B8 |]\n%coda 2\n\"NC\"B2 B2 B2 zB- | B2 BB B4- | B8- | B2 BB B B2 B |\nB3 B- B2 (3BBB | B3 B- B3 B | B3 B- B3 B | B3 B- B3 B |\nB3 B- B2 B2- | B B3 B3 B- | B2 B2- B B3 | B3 B- B2 B2- |\nB B3 B3 B- | B2 B2- B B3 | B3 B- B2 B2 | z4 z2 zB |\nB8- |: \"Dm\"z8 :|\n\n%unsure [bars 1-8] intro written in chord voicings; top-line rhythm read, rest values in bar 5 guessed to fill\n%unsure [bars 9-14] stop time: kick rhythms printed above (B13, E7#9, A7#9#5) not written separately\n%unsure [bar 28] read as a half-note triplet\n%unsure [bars 39-40] Coda 1 / Coda 2 signs (on repeat) fall in these bars; D.S. al Coda One\n%unsure [bars 41-53] Coda 1 is written in chord voicings; top-line rhythm read\n%unsure [bars 54-71] Coda 2 rhythms (ties across bars, 8va b. section) approximated; drum solo vamp and fade at end"
+},
+{
+"id": "New_Real_Book_Volume2/23-baja-bajo",
+"book": "The New Real Book Vol. 2",
+"title": "Baja Bajo",
+"pdf": "23",
+"form": "AABB 24+24+8+8 (intro repeated at very beginning only; solo on AA, 1st x with stop time, 2nd without; then BB; Coda 1, then D.C. al Coda 2)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A repeat inferred from \"solo on AA\"; the A ending barline is unclear"
+},
+{
+"bars": [],
+"groups": [],
+"text": "melody often in 2-3 note dyads (written as single B); piano intro voicings; alternate melody for bars 7-13 of A (1st x only) printed at foot of page, not transcribed"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "intro chord voicings (piano) read as single notes; triplet/tie groupings in bars 2 and 4 approximate"
+},
+{
+"bars": [
+9,
+10,
+11,
+12,
+13,
+14
+],
+"groups": [
+8,
+9,
+10,
+11,
+12,
+13
+],
+"text": "stop-time section (A, 1st x); bar 11 read as double-dotted half + eighth"
+},
+{
+"bars": [
+39,
+40
+],
+"groups": [
+38,
+39
+],
+"text": "bar 39 rhythm approximate (last two notes); Coda 1 sign in bar 39, Coda 2 sign in bar 40 (both \"on repeat\"); D.S. al Coda One"
+},
+{
+"bars": [
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52
+],
+"groups": [
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51
+],
+"text": "coda 1 is chords/dyads from bar 43 on; tie and chord placement approximate. Then D.C., play intro once, solo on AA, play BB, take Coda 1, then D.C. al Coda 2"
+},
+{
+"bars": [
+65,
+66,
+67
+],
+"groups": [
+64,
+65,
+66
+],
+"text": "8va bassa marking; final bar is drum solo vamp & fade"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Baja Bajo\nC:John Patitucci, Chick Corea\nP:AABB\n%source New Real Book Vol 2 p13-14 (pdf 23-24)\n%style (Med.-Up Samba, q=140)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABB 24+24+8+8 (intro repeated at very beginning only; solo on AA, 1st x with stop time, 2nd without; then BB; Coda 1, then D.C. al Coda 2)\n%unsure [form] A repeat inferred from \"solo on AA\"; the A ending barline is unclear\n%unsure [general] melody often in 2-3 note dyads (written as single B); piano intro voicings; alternate melody for bars 7-13 of A (1st x only) printed at foot of page, not transcribed\nM:C|\nL:1/8\nK:F\n%intro\n|: \"(Dm)\"\"Dm11(maj7)\"B8 | \"B7\"z B3- (3B2B2B2 | \"Bb7\"B3 B- B B2 \"A7\"B- | (3B2B2B2 B2 zB |\n\"Dm\"B3 B zBBB | \"B13\"B3 B B2 BB | \"Bb13\"B2 BB- B B2 \"A13\"B- | BBBB- B B2 B- :|\nP:A\n|: !segno!\"Dm\"B3 B z4 | B3 B zBzB- | \"B13\"B7 B | B3 \"E7#9\"z z2 z\"A7#9#5\"B- |\nB8- | B2 BB zBzB- | \"Dm7(11)\"B4- (3B2B2B2 | \"Bbmaj7/C\"B3 B- B B2 \"Abmaj7/Bb\"B- |\nB4 zBBB | \"A7\"B2 BB zBz\"Abmaj7\"B- | B4- (3B2B2B2 | \"Gbmaj7b5\"B4 B3 \"Fm(maj7)\"B- |\nB4 z4 | \"E7#9#5\"(3z2B2B2 B2 BB- | \"Am7\"B8 | z4 B2 BB- |\n\"E/C\"B7 \"F#/A#\"B- | B8 | \"G#/A\"B8 | \"F#/G\"(3B4B4\"G#/F#\"B4- |\nB8- | B8- | B8- | B6 \"Dm\"BB :|\nP:B\n|: \"Dm\"B2 z2 z2 z\"B13#11#9\"B | z8 | \"N.C.\"z2 zB- B3 B | B2 BB B2 \"Dm\"BB |\n\"Dm\"B2 z2 z2 z\"B13#11#9\"B | z4 z2 z\"N.C.\"B- | !coda!B3 B B3 B | !coda!B2 B2 B2 z\"Dm\"B- :|\n%coda 1\n\"N.C.\"B3 B- B2 BB | B2 zB B2 B2 | B6 \"A7#5\"B2- | B4 \"G/Ab\"B4- |\nB6 \"Bb/Gb\"B2- | B4 \"C#/E\"B4- | B6 \"C/Db\"B2- | B4 \"Dm(maj7)\"B4- |\nB8- | B8- | B8- | B8 |]\n%coda 2\n\"N.C.\"B2 B2 B2 zB- | B2 BB B4- | B8- | B2 BB B B2 B |\nB3 B- B2 (3BBB | B3 B- B3 B | B3 B- B3 B | B3 B- B3 B |\nB3 B- B2 B2 | B B3 B3 B- | B2 B2- B B3 | B3 B- B2 B2- |\nB B3 B3 B- | B2 B2- B B3 | B3 B- B2 B2 | z4 z2 zB- |\nB8 |: \"Dm\"z8 :|\n\n%unsure [bars 1-8] intro chord voicings (piano) read as single notes; triplet/tie groupings in bars 2 and 4 approximate\n%unsure [bars 9-14] stop-time section (A, 1st x); bar 11 read as double-dotted half + eighth\n%unsure [bars 39-40] bar 39 rhythm approximate (last two notes); Coda 1 sign in bar 39, Coda 2 sign in bar 40 (both \"on repeat\"); D.S. al Coda One\n%unsure [bars 41-52] coda 1 is chords/dyads from bar 43 on; tie and chord placement approximate. Then D.C., play intro once, solo on AA, play BB, take Coda 1, then D.C. al Coda 2\n%unsure [bars 65-67] 8va bassa marking; final bar is drum solo vamp & fade"
+},
+{
+"id": "New_Real_Book_Volume2/025-bass-blues",
+"book": "The New Real Book Vol. 2",
+"title": "Bass Blues",
+"pdf": "25",
+"form": "ABC 12+12+12; after solos play B then A (fine)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36
+],
+"groups": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36
+],
+"text": "solo changes (slashes) written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Bass Blues\nC:John Coltrane\nP:ABC\n%source New Real Book Vol 2 p15 (pdf 25)\n%style (Med. Swing, quarter = 166)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 12+12+12; after solos play B then A (fine)\nM:C\nL:1/8\nK:Bb\nB |\nP:A\n\"NC\"B B2 B- B B2 B | (3BBB BB- B3 B | BB z2 z4 | \"Bb7\"z4 z2 zB |\n\"NC\"B B2 B- B B2 B | (3BBB BB- B3 B | \"Bb7\"BB z2 z4 | z4 z2 zB |\n\"NC\"B B2 B- B B2 B | (3BBB BB- B3 B | B3 B z2 zB | \"B7\"B3 B z2 zB ||\nP:B\n\"Bb7\"B B2 B- B B2 B | \"Eb7\"(3BBB BB- B3 B | \"Bb7\"BB z2 z4 | z4 z2 zB |\n\"Eb7\"B B2 B- B B2 B | (3BBB BB- B3 B | \"Bb7\"BB z2 z4 | z4 z2 zB |\n\"Eb7\"B B2 B- B B2 B | (3BBB BB- B3 B | \"Bb7\"B3 B z2 zB | \"F7sus\"B3 B z4 ||\nP:C\n|: \"Bb6\"z8 | \"(Eb7)\"z8 | \"Bb6\"z8 | \"Bb7\"z8 |\n\"Eb7\"z8 | z8 | \"Bb6\"z8 | \"Bb6\"z4 \"C#o7\"z4 |\n\"Cm7\"z8 | \"Cm7\"z4 \"F7\"z4 | \"Bb6\"z8 | \"Cm7\"z4 \"F7\"z4 :|\n\n%unsure [bars 25-36] solo changes (slashes) written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/25-bass-blues",
+"book": "The New Real Book Vol. 2",
+"title": "Bass Blues",
+"pdf": "25",
+"form": "ABC 12+12+12 (A drums tacet, B add drums, C solos; after solos play B then A, fine)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36
+],
+"groups": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36
+],
+"text": "solo changes in slashes, written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Bass Blues\nC:John Coltrane\nP:ABCBA\n%source New Real Book Vol 2 p15 (pdf 25)\n%style (Med. Swing, q=166)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 12+12+12 (A drums tacet, B add drums, C solos; after solos play B then A, fine)\nM:C\nL:1/8\nK:Bb\nB ||\nP:A\n\"N.C.\"B B2 B- B B2 B | (3BBB BB- B3 B | BB z2 z4 | \"Bb7\"z4 z2 zB |\n\"N.C.\"B B2 B- B B2 B | (3BBB BB- B3 B | \"Bb7\"BB z2 z4 | z4 z2 zB |\n\"N.C.\"B B2 B- B B2 B | (3BBB BB- B3 B | B3 B z2 zB | \"B7\"B3 B z2 zB ||\nP:B\n\"Bb7\"B B2 B- B B2 B | \"Eb7\"(3BBB BB- B3 B | \"Bb7\"BB z2 z4 | z4 z2 zB |\n\"Eb7\"B B2 B- B B2 B | (3BBB BB- B3 B | \"Bb7\"BB z2 z4 | z4 z2 zB |\n\"Eb7\"B B2 B- B B2 B | (3BBB BB- B3 B | \"Bb7\"B3 B z2 zB | B3 B \"F7sus\"z4 ||\nP:C\n|: \"Bb6\"z8 | \"(Eb7)\"z8 | \"Bb6\"z8 | \"Bb7\"z8 |\n\"Eb7\"z8 | z8 | \"Bb6\"z8 | \"Bb6\"z4 \"C#o7\"z4 |\n\"Cm7\"z8 | \"Cm7\"z4 \"F7\"z4 | \"Bb6\"z8 | \"Cm7\"z4 \"F7\"z4 :|\n\n%unsure [bars 25-36] solo changes in slashes, written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/026-beauty-and-the-beast",
+"book": "The New Real Book Vol. 2",
+"title": "Beauty and the Beast",
+"pdf": "26",
+"form": "Intro-A-B-C 3+12+12+4",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the chart, not printed; D.S. to B, vamp & fade on C"
+},
+{
+"bars": [
+1,
+2
+],
+"groups": [
+0,
+1
+],
+"text": "sample piano comp written as rests with chords"
+},
+{
+"bars": [
+12,
+13,
+14
+],
+"groups": [
+11,
+12,
+13
+],
+"text": "like Intro: slashes written as rests with chords"
+},
+{
+"bars": [
+27
+],
+"groups": [
+26
+],
+"text": "sample sax fill: 16th groupings approximate"
+},
+{
+"bars": [
+28,
+29,
+30
+],
+"groups": [
+27,
+28,
+29
+],
+"text": "sop. solo vamp and on-cue bar are slashes, written as rests with chords"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Beauty and the Beast\nC:Wayne Shorter\nP:Intro A B C\n%source New Real Book Volume 2 p16 (pdf 26)\n%style (Med. Funk Ballad, quarter = 70)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form Intro-A-B-C 3+12+12+4\n%unsure [form] section lengths counted from the chart, not printed; D.S. to B, vamp & fade on C\nM:4/4\nL:1/8\nK:G\nP:Intro\n|: \"G13sus\"z8 |1 - 3z8 :|4 \"G13\"zB BB \"F#7#9\"BB B3/2B/2 ||\nP:A\n\"Bm7\"B8 | \"C#7#9#5\"zB BB \"F#7#9\"BB B3/2B/2 | \"Bm7\"B8 | \"Am7\"zB BB \"D13\"BB B3/2B/2 |\n\"Gm7\"B6 z/B3/2 | \"Fm7\"B3 B \"Bb13\"B4- | \"Ebmaj9\"B3 B B4 | \"D7alt\"z8 |\n\"G13sus\"z8 | z8 | z8 | \"G13\"zB BB \"F#7#9\"BB B3/2B/2 ||\nP:B\n!segno!\"Bm7\"B8 | \"C#7#9#5\"zB BB \"F#7#9\"BB B3/2B/2 | \"Bm7\"B8 | \"Am7\"zB BB \"D13\"BB B3/2B/2 |\n\"Gm7\"B6 z/B3/2 | \"Fm7\"B3 B \"Bb13\"B4- | \"Ebmaj9\"B3 B B4 | \"D7alt\"zB BB BB B3/2B/2 |\n\"C#m7\"B3 B- \"F#7\"B2 zB | \"Bm7\"B3 B- \"E7\"B2 zB | \"Am9b5\"B8 | \"D7alt\"BB/2B/2 B/2B/2B/2B/2 B/2B/2B/2B/2 B/2B/2B/2B/2 ||\nP:C\n|: \"G13sus\"z8 | z8 :| \"G13sus\"z8 | \"G13\"zB BB \"F#7#9\"BB B3/2B/2 |]\n\n%unsure [bars 1-2] sample piano comp written as rests with chords\n%unsure [bars 12-14] like Intro: slashes written as rests with chords\n%unsure [bar 27] sample sax fill: 16th groupings approximate\n%unsure [bars 28-30] sop. solo vamp and on-cue bar are slashes, written as rests with chords"
+},
+{
+"id": "New_Real_Book_Volume2/26-beauty-and-the-beast",
+"book": "The New Real Book Vol. 2",
+"title": "Beauty and the Beast",
+"pdf": "26",
+"form": "ABC 12+12+4 (intro vamp x4; D.S. to B, vamp & fade on C)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "book notes: G13sus sections are funkier; melodic rhythm is freely interpreted"
+},
+{
+"bars": [
+1,
+2
+],
+"groups": [
+0,
+1
+],
+"text": "sample piano comp chords (quarter-note hits), written as rests"
+},
+{
+"bars": [
+12,
+13,
+14
+],
+"groups": [
+11,
+12,
+13
+],
+"text": "G13sus vamp (like intro) in slashes, written as rests; drum fill/tacet cues"
+},
+{
+"bars": [
+27
+],
+"groups": [
+26
+],
+"text": "sample sax fill (16th-note run), grouping approximate"
+},
+{
+"bars": [
+28,
+29,
+30
+],
+"groups": [
+27,
+28,
+29
+],
+"text": "soprano solo vamp till cue (slashes), written as rests; D.S., vamp & fade on C"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Beauty and the Beast\nC:Wayne Shorter\nP:ABC\n%source New Real Book Vol 2 p16 (pdf 26)\n%style (Med. Funk Ballad, q=70)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 12+12+4 (intro vamp x4; D.S. to B, vamp & fade on C)\n%unsure [general] book notes: G13sus sections are funkier; melodic rhythm is freely interpreted\nM:C\nL:1/8\nK:G\n%intro\n|: \"G13sus\"z8 |1 - 3z8 :|4 \"G13\"zB BB \"F#7#9\"BB B3/2B/ ||\nP:A\n\"Bm7\"B8 | \"C#7#9#5\"zB BB \"F#7#9\"BB B3/2B/ | \"Bm7\"B8 | \"Am7\"zB BB \"D13\"BB B3/2B/ |\n\"Gm7\"B6 z/B3/2 | \"Fm7\"B3 B \"Bb13\"B4- | \"Ebmaj9\"B3 B B4 | \"D7alt\"B4 z4 |\n\"G13sus\"z8 | z8 | z8 | \"G13\"zB BB \"F#7#9\"BB B3/2B/ ||\nP:B\n!segno!\"Bm7\"B8 | \"C#7#9#5\"zB BB \"F#7#9\"BB B3/2B/ | \"Bm7\"B8 | \"Am7\"zB BB \"D13\"BB B3/2B/ |\n\"Gm7\"B6 z/B3/2 | \"Fm7\"B3 B \"Bb13\"B4- | \"Ebmaj9\"B3 B B4 | \"D7alt\"zB BB BB B3/2B/ |\n\"C#m7(11)\"B3 \"F#7\"B- B2 zB | \"Bm7(11)\"B3 \"E7\"B- B2 zB | \"Am9b5\"B8 | \"D7alt\"BB/B/ B/B/B/B/ B/B/B/B/ B/B/B/B/ ||\nP:C\n|: \"G13sus\"z8 | z8 :| \"G13sus\"z8 | \"G13\"zB BB \"F#7#9\"BB B3/2B/ |]\n\n%unsure [bars 1-2] sample piano comp chords (quarter-note hits), written as rests\n%unsure [bars 12-14] G13sus vamp (like intro) in slashes, written as rests; drum fill/tacet cues\n%unsure [bar 27] sample sax fill (16th-note run), grouping approximate\n%unsure [bars 28-30] soprano solo vamp till cue (slashes), written as rests; D.S., vamp & fade on C"
+},
+{
+"id": "New_Real_Book_Volume2/027-bessie-s-blues",
+"book": "The New Real Book Vol. 2",
+"title": "Bessie's Blues",
+"pdf": "27",
+"form": "ABC 12+12+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "bar counts per section counted, not printed; after solos D.C. al Coda"
+},
+{
+"bars": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36
+],
+"groups": [
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35
+],
+"text": "solo slashes written as rests with chords; after solos D.C. al Coda"
+},
+{
+"bars": [
+37,
+38,
+39
+],
+"groups": [
+36,
+37,
+38
+],
+"text": "last two bars: held note under a rhythm fill F7/A Bb6 Bo7 F7/C ... F9 (fermata) shown above the staff; fill rhythm not transcribed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Bessie's Blues\nC:John Coltrane\nP:ABC\n%source New Real Book Volume 2 p17 (pdf 27)\n%style (Med. Swing, quarter = 184)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 12+12+12\n%unsure [form] bar counts per section counted, not printed; after solos D.C. al Coda\nM:4/4\nL:1/8\nK:F\nP:A\n\"F7\"B2 BB z2 zB- | \"Bb7\"B2 BB B2 zB | \"F7\"BB B2 B2 BB | zB BB- B4 |\n\"Bb7\"z B2 B BB zB- | B3 B zB zB | \"F7\"BB B2 B2 BB | \"Eb7\"zB BB \"D7\"z2 BB- |\n\"C7\"B2 BB BB BB | \"Bb7\"BB BB BB BB- | \"F7\"B3 B BB z2 | \"F7\"z2 zB \"C7\"BB BB ||\nP:B\n\"F7\"B2 BB z2 zB- | \"Bb7\"B2 BB B2 zB | \"F7\"BB B2 B2 BB | zB BB- B4 |\n\"Bb7\"z B2 B BB zB- | B3 B zB zB | \"F7\"BB B2 B2 BB | \"Eb7\"zB BB \"D7\"z2 BB- |\n\"C7\"B2 BB BB BB | !coda!\"Bb7\"BB BB BB BB | \"F7\"B B2 B- B4 | \"F7\"z4 \"C7\"z4 ||\nP:C\n%solos\n|: \"F7\"z8 | \"Bb7\"z8 | \"F7\"z8 | z8 |\n\"Bb7\"z8 | z8 | \"F7\"z8 | \"Eb7\"z4 \"D7\"z4 |\n\"C7\"z8 | \"Bb7\"z8 | \"F7\"z8 | \"F7\"z4 \"C7\"z4 :|\n%coda\n!coda!\"Bb7\"BB BB BB BB- | B8- | B8 |]\n\n%unsure [bars 25-36] solo slashes written as rests with chords; after solos D.C. al Coda\n%unsure [bars 37-39] last two bars: held note under a rhythm fill F7/A Bb6 Bo7 F7/C ... F9 (fermata) shown above the staff; fill rhythm not transcribed"
+},
+{
+"id": "New_Real_Book_Volume2/27-bessie-s-blues",
+"book": "The New Real Book Vol. 2",
+"title": "Bessie's Blues",
+"pdf": "27",
+"form": "ABC 12+12+12 (head A B, solos on C; after solos D.C. al Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36
+],
+"groups": [
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35
+],
+"text": "solo changes in slashes, written as rests; after solos D.C. al Coda"
+},
+{
+"bars": [
+37,
+38,
+39
+],
+"groups": [
+36,
+37,
+38
+],
+"text": "rhythm-section hits over the held note (F7/A Bb6 Bo7 F7/C, then F9 with fermata) not transcribed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Bessie's Blues\nC:John Coltrane\nP:ABC\n%source New Real Book Vol 2 p17 (pdf 27)\n%style (Med. Swing, q=184)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 12+12+12 (head A B, solos on C; after solos D.C. al Coda)\nM:C\nL:1/8\nK:F\nP:A\n\"F7\"B2 BB z2 zB- | \"Bb7\"B2 BB B2 zB | \"F7\"BB B2 B2 BB | zB BB- B4 |\n\"Bb7\"z B2 B BB zB- | B3 B zB zB | \"F7\"BB B2 B2 BB | \"Eb7\"zB BB z2 \"D7\"BB- |\n\"C7\"B2 BB BB BB | \"Bb7\"BB BB BB BB- | \"F7\"B3 B BB z2 | \"F7\"z2 zB \"C7\"BB BB ||\nP:B\n\"F7\"B2 BB z2 zB- | \"Bb7\"B2 BB B2 zB | \"F7\"BB B2 B2 BB | zB BB- B4 |\n\"Bb7\"z B2 B BB zB- | B3 B zB zB | \"F7\"BB B2 B2 BB | \"Eb7\"zB BB z2 \"D7\"BB- |\n\"C7\"B2 BB BB BB | !coda!\"Bb7\"BB BB BB BB | \"F7\"B B2 B- B4 | \"F7\"z4 \"C7\"z4 ||\nP:C\n|: \"F7\"z8 | \"Bb7\"z8 | \"F7\"z8 | z8 |\n\"Bb7\"z8 | z8 | \"F7\"z8 | \"Eb7\"z4 \"D7\"z4 |\n\"C7\"z8 | \"Bb7\"z8 | \"F7\"z8 | \"F7\"z4 \"C7\"z4 :|\n%coda\n\"Bb7\"BB BB BB BB- | B8- | B8 |]\n\n%unsure [bars 25-36] solo changes in slashes, written as rests; after solos D.C. al Coda\n%unsure [bars 37-39] rhythm-section hits over the held note (F7/A Bb6 Bo7 F7/C, then F9 with fermata) not transcribed"
+},
+{
+"id": "New_Real_Book_Volume2/028-black-and-blue",
+"book": "The New Real Book Vol. 2",
+"title": "Black and Blue",
+"pdf": "28",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+28
+],
+"groups": [
+27
+],
+"text": "quarter-note triplet then half: durations guessed from spacing"
+},
+{
+"bars": [
+32
+],
+"groups": [
+31
+],
+"text": "turnaround slashes as rests; chord placement D6 C#m7b5 F#7 approximate"
+},
+{
+"bars": [],
+"groups": [],
+"text": "second lyric (three more verses) printed as text below, not set under notes; alt chords (Bb7 A7) shown as \"(Bb7)\" only"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Black and Blue\nC:Thomas \"Fats\" Waller and Harry Brooks; lyric Andy Razaf\nP:ABC\n%source New Real Book Volume 2 p18 (pdf 28)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\nM:4/4\nL:1/8\nK:D\nP:A\n\"Bm\"BB BB- B4 | \"Em7\"BB BB- B4 | \"Bm\"BB BB- B4 | \"E9\"BB BB- \"Eb9\"B4 |\nw: Cold, emp-ty bed, _ Springs hard as lead, _ Pains in my head, _ Feel like old Ned, _\n\"D6\"BB BB- \"B7\"B4- | \"Em7\"BB BB \"A9\"B2 B2 | \"Dmaj7\"B8 | \"C#m7b5\"z4 \"F#7\"z4 |\nw: What did I do _ _ to be so black and blue?\n\"Bm\"BB BB- B4 | \"Em7\"BB BB- B4 | \"Bm\"BB BB- B4 | \"E9\"BB BB- \"Eb9\"B4 |\nw: No joys for me, _ No com-pa-ny, _ E-ven the mouse _ ran from my house, _\n\"D6\"BB BB- \"B7\"B4- | \"Em7\"BB BB \"A7#5\"\"(Bb7)\"B2 B2 | \"D6\"B4- \"G7\"B4 | \"D6\"z8 ||\nw: All my life through _ _ I've been so black and blue.\nP:B\n\"Bb7\"B3 B- B4 | B3 B- B3 B | \"D6\"B2 B2 \"Em7\"B B2 B- | \"F#m7\"B4 \"D6\"B4 |\nw: I'm white _ in-side, _ but that don't help my case; _\n\"Bb7\"B3 B- B4 | B3 B- B4 | \"D6\"B2 B2 \"G7\"B2 B2 | \"C#m7b5\"B3 B- \"F#7\"B4 ||\nw: 'Cause I _ can't hide _ what is on my face. Oh, _\nP:C\n\"Bm\"BB BB- B4 | \"Em7\"BB BB- B4 | \"Bm\"BB BB- B4 | \"E9\"(3B2B2B2 \"Eb9\"B4 |\nw: I'm so for-lorn, _ Life's just a thorn, _ My heart is torn, _ Why was I born?\n\"D6\"BB BB- \"B7\"B4- | \"Em7\"BB BB \"A7#5\"\"(Bb7)\"B2 B2 | \"D6\"B4- \"G7\"B4 | \"D6\"z2 \"C#m7b5\"z4 \"F#7\"z2 |]\nw: What did I do _ _ to be so black and blue?\n\n%unsure [bar 28] quarter-note triplet then half: durations guessed from spacing\n%unsure [bar 32] turnaround slashes as rests; chord placement D6 C#m7b5 F#7 approximate\n%unsure [general] second lyric (three more verses) printed as text below, not set under notes; alt chords (Bb7 A7) shown as \"(Bb7)\" only"
+},
+{
+"id": "New_Real_Book_Volume2/28-black-and-blue",
+"book": "The New Real Book Vol. 2",
+"title": "Black and Blue",
+"pdf": "28",
+"form": "AABA 8+8+8+8 (printed A, A, B, C; C is the last A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed (plus a second lyric)"
+},
+{
+"bars": [
+5,
+6
+],
+"groups": [
+4,
+5
+],
+"text": "mix of eighths and quarters approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Black and Blue\nC:Thomas \"Fats\" Waller and Harry Brooks\nC:Lyric: Andy Razaf\nP:AABA\n%source New Real Book Vol 2 p18 (pdf 28)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (printed A, A, B, C; C is the last A)\n%unsure [general] lyrics are printed (plus a second lyric)\nM:4/4\nL:1/8\nK:D\nP:A\n\"Bm\"BB BB- B4 | \"Em7\"BB BB- B4 | \"Bm\"BB BB- B4 | \"E9\"BB BB- \"Eb9\"B4 |\n\"D6\"BB BB- \"B7\"B4 | \"Em7\"BB BB \"A9\"B2 B2 | \"Dmaj7\"B8 | \"C#m7b5\"z4 \"F#7\"z4 |\nP:A\n\"Bm\"BB BB- B4 | \"Em7\"BB BB- B4 | \"Bm\"BB BB- B4 | \"E9\"BB BB- \"Eb9\"B4 |\n\"D6\"BB BB- \"B7\"B4 | \"Em7\"BB BB \"(Bb7)\"\"A7#5\"B2 \"(A7)\"B2 | \"D6\"B4- \"G7\"B4 | \"D6\"z8 ||\nP:B\n\"Bb7\"B3 B- B4 | B3 B- B3 B | \"D6\"B2 B2 \"Em7\"B B2 B- | \"F#m7\"B4- \"D6\"B4 |\n\"Bb7\"B3 B- B4 | B3 B- B4 | \"D6\"B2 B2 \"G7\"B2 B2 | \"C#m7b5\"B3 B- \"F#7\"B4 ||\nP:A\n\"Bm\"BB BB- B4 | \"Em7\"BB BB- B4 | \"Bm\"BB BB- B4 | \"E9\"(3B2B2B2 \"Eb9\"B4 |\n\"D6\"BB BB- \"B7\"B4 | \"Em7\"BB BB \"(Bb7)\"\"A7#5\"B2 \"(A7)\"B2 | \"D6\"B4- \"G7\"B4 | \"D6\"z2 z2 \"C#m7b5\"z2 \"F#7\"z2 |]\n\n%unsure [bars 5-6] mix of eighths and quarters approximate"
+},
+{
+"id": "New_Real_Book_Volume2/029-black-coffee",
+"book": "The New Real Book Vol. 2",
+"title": "Black Coffee",
+"pdf": "29",
+"form": "ABCD 12+12+8+12",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+39
+],
+"groups": [
+39
+],
+"text": "Ebmaj7 Fm7 Gm7 all over one whole note; whole note split by ties to place them"
+},
+{
+"bars": [],
+"groups": [],
+"text": "job page was pdf 29 only; tune continues on pdf 30 (p20), included"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Black Coffee\nC:Paul Francis Webster and Sonny Burke\nP:ABCD\n%source New Real Book Volume 2 p19-20 (pdf 29-30)\n%style (Slow Bluesy Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 12+12+8+12\nM:4/4\nL:1/8\nK:Eb\nB |\nw: I'm\nP:A\n\"Eb7#9\"BB BB \"E7#9\"B B3 | \"Eb7#9\"BB BB \"E7#9\"B3 B | \"Eb7#9\"BB BB \"E7#9\"BB BB | \"Eb7#9\"BB BB \"A13\"B2 B2 |\nw: feel-in' might-y lone-some, have-n't slept a wink, I walk the floor and watch the door and in be-tween I drink black\n\"Ab7\"BB- B6 | \"Ab7\"(3z2B2B2 (3B2B2B2 | \"Eb7#9\"B4- \"E7#9\"B4- | \"Eb7#9\"B6 \"C7#9\"zB |\nw: cof-fee, _ Love's a hand-me-down broom. _ I'll\n\"Fm7\"BB BB B B3 | \"Bb9sus\"z2 BB B2 BB- | \"Eb7#9\"B4- \"E7#9\"B4- | \"Eb7#9\"B6 \"E7#9\"zB ||\nw: nev-er know a Sun-day in this week-day room. _ _ I'm\nP:B\n\"Eb7#9\"BB BB \"E7#9\"B B3 | \"Eb7#9\"BB BB \"E7#9\"B3 B | \"Eb7#9\"BB BB \"E7#9\"BB BB | \"Eb7#9\"BB BB \"A13\"B2 B2 |\nw: talk-in' to the shad-ows, One o'-clock to four, And Lord, how slow the mo-ments go when all I do is pour black\n\"Ab7\"BB- B6 | \"Ab7\"(3z2B2B2 (3B2B2B2 | \"Eb7#9\"B4- \"E7#9\"B4- | \"Eb7#9\"B6 \"C7#9\"zB |\nw: cof-fee, _ Since the blues caught my eye. _ I'm\n\"Fm7\"BB BB B B3 | \"Bb9sus\"zB BB B2 BB- | \"Eb7#9\"B4- \"E7#9\"B4- | \"Eb7#9\"B4 \"A9#11\"z2 BB ||\nw: hang-in' out on Mon-day my Sun-day dreams to dry. _ _ Now a\nP:C\n\"Abm7\"BB BB \"Db9\"B3 B | \"Ebm\"BB- B5 B | \"Fm7b5\"BB BB \"Bb7b9#5\"B2 B2 | \"Ebmaj7\"B4- B3 B |\nw: man is born to go a-lov-in', _ A wo-man's born to weep and fret. _ To\n\"F#m7\"BB BB \"B7\"B3 B | \"Emaj7\"BB- B4- \"C#m7\"BB | \"F#m7\"BB BB \"B7\"B3 B | \"Fm7\"(3BBB BB \"Bb7\"B3 B ||\nw: stay at home and tend her ov-en, _ _ and drown her past re-grets in cof-fee and cig-a-rettes. I'm\nP:D\n\"Eb7#9\"BB BB \"E7#9\"B B2 B | \"Eb7#9\"BB BB \"E7#9\"B3 B | \"Eb7#9\"BB BB \"E7#9\"BB BB | \"Eb7#9\"BB BB \"A13\"B2 B2 |\nw: moan-in' all the morn-in' and mourn-in' all the night, And in be-tween it's nic-o-tine and not much heart to fight, black\n\"Ab7\"BB- B6 | \"Ab7\"(3z2B2B2 (3B2B2B2 | \"Ebmaj7\"B4- \"Fm7\"B2- \"Gm7\"B2 | zB (3BBB \"C7b9#5\"B B2 B |\nw: cof-fee, _ Feel-in' low as the ground. _ _ It's driv-in' me cra-zy, this\n\"Fm7\"BB BB B B3 | \"Bb9sus\"zB BB B2 BB- | \"Eb7#9\"B4- \"E7#9\"B4- | \"Eb7#9\"B6 \"(E7#9)\"z2 |]\nw: wait-in' for my ba-by to may-be come a-round. _ _\n\n%unsure [bar 39] Ebmaj7 Fm7 Gm7 all over one whole note; whole note split by ties to place them\n%unsure [general] job page was pdf 29 only; tune continues on pdf 30 (p20), included"
+},
+{
+"id": "New_Real_Book_Volume2/29-black-coffee",
+"book": "The New Real Book Vol. 2",
+"title": "Black Coffee",
+"pdf": "29",
+"form": "ABCD 12+12+8+12",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "job listed pdf 29 only; the tune continues on pdf 30 (sections C and D)"
+},
+{
+"bars": [
+2,
+12
+],
+"groups": [
+2,
+12
+],
+"text": "chords printed as repeat signs (%), filled in from the previous bar"
+},
+{
+"bars": [
+6,
+18,
+38
+],
+"groups": [
+6,
+18,
+38
+],
+"text": "triplet rhythm of \"Love's a hand-me-down\" approximate"
+},
+{
+"bars": [
+32
+],
+"groups": [
+32
+],
+"text": "triplet placement approximate"
+},
+{
+"bars": [
+39,
+40
+],
+"groups": [
+39,
+40
+],
+"text": "rhythm approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Black Coffee\nC:Paul Francis Webster and Sonny Burke\nP:ABCD\n%source New Real Book Vol 2 p19-20 (pdf 29-30)\n%style (Slow Bluesy Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 12+12+8+12\n%unsure [general] lyrics are printed\n%unsure [general] job listed pdf 29 only; the tune continues on pdf 30 (sections C and D)\nM:4/4\nL:1/8\nK:Eb\nB ||\nP:A\n\"Eb7#9\"BB BB \"E7#9\"B B3 | \"Eb7#9\"BB BB \"E7#9\"B3 B | \"Eb7#9\"BB BB \"E7#9\"BB BB | \"Eb7#9\"BB BB \"A13\"B2 B2 |\n\"Ab7\"BB- B6 | \"Ab7\"z2 (3B2B2B2 (3BBB | \"Eb7#9\"B4- \"E7#9\"B4- | \"Eb7#9\"B6 \"C7#9\"zB |\n\"Fm7\"BB BB B B3 | \"Bb9sus\"z2 BB B2 BB- | \"Eb7#9\"B4- \"E7#9\"B4- | \"Eb7#9\"B6 \"E7#9\"zB ||\nP:B\n\"Eb7#9\"BB BB \"E7#9\"B B3 | \"Eb7#9\"BB BB \"E7#9\"B3 B | \"Eb7#9\"BB BB \"E7#9\"BB BB | \"Eb7#9\"BB BB \"A13\"B2 B2 |\n\"Ab7\"BB- B6 | \"Ab7\"z2 (3B2B2B2 (3BBB | \"Eb7#9\"B4- \"E7#9\"B4- | \"Eb7#9\"B6 \"C7#9\"zB |\n\"Fm7\"BB BB B B3 | \"Bb9sus\"zB BB B2 BB- | \"Eb7#9\"B4- \"E7#9\"B4- | \"Eb7#9\"B4 \"A9#11\"z2 BB ||\nP:C\n\"Abm7\"BB BB \"Db9\"B3 B | \"Ebm\"BB- B4 zB | \"Fm7b5\"BB BB \"Bb7b9#5\"B2 B2 | \"Ebmaj7\"B4- B3 B |\n\"F#m7\"BB BB \"B7\"B3 B | \"Emaj7\"BB- B2- \"C#m7\"B2 BB | \"F#m7\"BB BB \"B7\"B3 B | \"Fm7\"(3BBB BB \"Bb7\"B3 B ||\nP:D\n\"Eb7#9\"BB BB \"E7#9\"B B2 B | \"Eb7#9\"BB BB \"E7#9\"B3 B | \"Eb7#9\"BB BB \"E7#9\"BB BB | \"Eb7#9\"BB BB \"A13\"B2 B2 |\n\"Ab7\"BB- B6 | \"Ab7\"z2 (3B2B2B2 (3BBB | \"Ebmaj7\"B4- \"Fm7\"B4 | \"Gm7\"zB (3BBB \"C7b9#5\"B B2 B |\n\"Fm7\"BB BB B B3 | \"Bb9sus\"zB BB BB BB- | \"Eb7#9\"B4- \"E7#9\"B4- | \"Eb7#9\"B6 \"(E7#9)\"z2 |]\n\n%unsure [bars 2, 12] chords printed as repeat signs (%), filled in from the previous bar\n%unsure [bars 6, 18, 38] triplet rhythm of \"Love's a hand-me-down\" approximate\n%unsure [bar 32] triplet placement approximate\n%unsure [bars 39-40] rhythm approximate"
+},
+{
+"id": "New_Real_Book_Volume2/030-blues-for-alice",
+"book": "The New Real Book Vol. 2",
+"title": "Blues for Alice",
+"pdf": "31",
+"form": "Intro-A 4+12, solo on A, D.S. al Coda",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred from the chart (A is a 12-bar blues); only A is lettered"
+},
+{
+"bars": [],
+"groups": [],
+"text": "job said pdf 30-31 (p22); pdf 30 is the end of Black Coffee, tune is on pdf 31 only"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blues for Alice\nC:Charlie Parker\nP:Intro A\n%source New Real Book Volume 2 p22 (pdf 31)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form Intro-A 4+12, solo on A, D.S. al Coda\n%unsure [form] form inferred from the chart (A is a 12-bar blues); only A is lettered\n%unsure [general] job said pdf 30-31 (p22); pdf 30 is the end of Black Coffee, tune is on pdf 31 only\nM:4/4\nL:1/8\nK:G\nB |\n%intro\n\"G\"B2 B2 B3 \"Bb\"B | zB zB BB B2 | \"Eb\"B2 B2 B4 | \"Ab7b5\"z2 BB z2 zB- ||\nP:A\n|: !segno!\"G6\"B2 BB B2 BB | \"F#m7\"BB BB \"B7\"BB BB- | \"Em7\"B2 BB \"(A7)\"BB BB | \"Dm7\"(3BBB BB \"G7#5\"zB (3BBB |\n\"C6\"B2 BB BB zB | \"Cm7\"BB BB \"F7\"BB BB- | \"G6\"B2 BB B2 zB- | \"Bbm7\"B2 BB \"Eb7\"B2 zB |\n\"Am7\"(3B2B2B2 BB BB | \"D7\"BB BB B2 zB- | !coda!\"Bm7\"B2 BB \"Em7\"B2 zB- | \"Am7\"B2 BB \"D7\"B2 zB- :|\n%coda\n\"G6/9\"B2 BB B2 zB- | B2 BB B2 zB- | B2 BB B2 zB- | B2 BB B2 zB- |\nB2 BB B2 z2 | z8 |]\n%optional coda\n\"Bm7\"B2 BB \"Em7\"B2 zB- | \"Am7\"B2 BB \"D7\"B2 B\"Gmaj9\"B- | !fermata!B8 |]\n"
+},
+{
+"id": "New_Real_Book_Volume2/30-blues-for-alice",
+"book": "The New Real Book Vol. 2",
+"title": "Blues for Alice",
+"pdf": "31",
+"form": "A 12 (12-bar blues; solo on A; after solos D.S. al Coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "job listed pdf 30-31; the tune is on pdf 31 only"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+1,
+2,
+3,
+4
+],
+"text": "intro piano with drums; top line taken, bar 4 is alto & muted trp kick"
+},
+{
+"bars": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"groups": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"text": "low-res scan; eighth/triplet figures approximate"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22
+],
+"groups": [
+17,
+18,
+19,
+20,
+21,
+22
+],
+"text": "coda: repeated fading 1-bar figure over G6/9"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blues for Alice\nC:Charlie Parker\nP:A\n%source New Real Book Vol 2 p22 (pdf 31)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 12 (12-bar blues; solo on A; after solos D.S. al Coda)\n%unsure [general] job listed pdf 30-31; the tune is on pdf 31 only\nM:4/4\nL:1/8\nK:G\nB |\n%intro\n\"G\"B2 B2 \"Bb\"B2 B2 | zB zB B/B/B B2 | \"Eb\"B2 B2 B4 | \"Ab7b5\"z2 BB z2 zB- ||\nP:A\n|: !segno!\"G6\"B2 BB B2 BB | \"F#m7\"BB BB \"B7\"BB BB- | \"Em7\"B2 BB \"(A7)\"BB BB | \"Dm7\"(3BBB BB \"G7#5\"zB (3BBB |\n\"C6\"B2 BB BB zB | \"Cm7\"BB BB \"F7\"BB BB- | \"G6\"BB Bz B3 B- | \"Bbm7\"B2 BB \"Eb7\"B2 zB |\n\"Am7\"(3B2B2B2 BB BB | \"D7\"BB BB B2 zB- | !coda!\"Bm7\"B2 BB \"Em7\"B2 zB- | \"Am7\"B2 BB \"D7\"B2 zB- :|\n%coda\n\"G6/9\"!decrescendo(!B2 BB B2 zB- | B2 BB B2 zB- | B2 BB B2 zB- | B2 BB B2 zB- |\nB2 BB B2 z2 | z8 |]\n%optional coda\n\"Bm7\"B2 BB \"Em7\"B2 zB- | \"Am7\"B2 BB \"D7\"BB BB- | \"Gmaj9\"!fermata!B8 |]\n\n%unsure [bars 1-4] intro piano with drums; top line taken, bar 4 is alto & muted trp kick\n%unsure [bars 5-16] low-res scan; eighth/triplet figures approximate\n%unsure [bars 17-22] coda: repeated fading 1-bar figure over G6/9"
+},
+{
+"id": "New_Real_Book_Volume2/032-blues-for-yna-yna",
+"book": "The New Real Book Vol. 2",
+"title": "Blues for Yna Yna",
+"pdf": "32",
+"form": "Intro-A-B 5+20+4; solo on A, D.S. al Coda, coda vamp & fade",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the chart, not printed"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5
+],
+"groups": [
+0,
+1,
+2,
+3,
+4
+],
+"text": "intro is brass backing (top note) over organ fills; ending-2 trps & saxes figure rhythm approximate"
+},
+{
+"bars": [
+14,
+15,
+16,
+17
+],
+"groups": [
+13,
+14,
+15,
+16
+],
+"text": "chord D7#9 assumed to last bars 14-17 (only one symbol printed)"
+},
+{
+"bars": [
+26,
+27,
+28,
+29
+],
+"groups": [
+25,
+26,
+27,
+28
+],
+"text": "top line only; saxes lower line not transcribed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "the brass backing staff under A/B/coda (Am, AmMaj7 pattern) is not transcribed; vamp & fade on coda"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blues for Yna Yna\nC:Gerald Wilson\nP:Intro A B\n%source New Real Book Volume 2 p23-24 (pdf 32-33)\n%style (Med. Jazz Waltz, quarter = 111)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form Intro-A-B 5+20+4; solo on A, D.S. al Coda, coda vamp & fade\n%unsure [form] section lengths counted from the chart, not printed\nM:3/4\nL:1/8\nK:Am\n%intro\n|: \"Am\"z2 B4 | \"AmMaj7\"z2 B4 | \"Am7\"z2 B4 |1 \"AmMaj7\"z2 B4 :|2\n\"AmMaj7\"z2 (3zBB (3BBB |]\nP:A\n!segno!\"Am\"B6- | \"AmMaj7\"B6 | \"Am7\"z2 B2 (3B/B/B/B | \"Am6\"B2- (3BBB (3BBB |\n\"Am\"B6- | \"AmMaj7\"B6 | \"Am7\"z2 B2 (3B/B/B/B | \"Am6\"B4- BB |\n\"D7#9\"B6- | B4- BB | B6- | B2- (3BBB (3BBB |\n\"E7#9\"B6- | B4- BB | \"D7#9\"B6- | B2- (3BBB (3BBB |\n\"Am\"B6- | \"AmMaj7\"B6 | \"Am7\"z2 B2 (3B/B/B/B | !coda!\"Am6\"B2- (3BBB (3BBB ||\nP:B\n\"Am\"B6- | \"AmMaj7\"B6 | \"Am7\"z2 B2 BB | \"Am6\"B6 |]\n%coda\n|: !coda!\"Am\"B6- | \"AmMaj7\"B6 | \"Am7\"z2 B2 (3B/B/B/B | \"Am6\"B2- (3BBB (3BBB :|\n\n%unsure [bars 1-5] intro is brass backing (top note) over organ fills; ending-2 trps & saxes figure rhythm approximate\n%unsure [bars 14-17] chord D7#9 assumed to last bars 14-17 (only one symbol printed)\n%unsure [bars 26-29] top line only; saxes lower line not transcribed\n%unsure [general] the brass backing staff under A/B/coda (Am, AmMaj7 pattern) is not transcribed; vamp & fade on coda"
+},
+{
+"id": "New_Real_Book_Volume2/32-blues-for-yna-yna",
+"book": "The New Real Book Vol. 2",
+"title": "Blues for Yna Yna",
+"pdf": "32",
+"form": "AB 24+4 (solo on A; after solos D.S. al Coda; coda vamp & fade)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lower staff (brass background figures) not transcribed"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5
+],
+"groups": [
+0,
+1,
+2,
+3,
+4
+],
+"text": "intro is organ fills over a brass background (top note of chord); 2nd ending is trps & saxes"
+},
+{
+"bars": [
+8,
+12,
+20,
+28,
+36
+],
+"groups": [
+7,
+11,
+19,
+27,
+35
+],
+"text": "the sixteenth-triplet turn rhythm approximate"
+},
+{
+"bars": [
+30,
+31,
+32,
+33
+],
+"groups": [
+29,
+30,
+31,
+32
+],
+"text": "saxes trill/lower line not transcribed"
+},
+{
+"bars": [
+34,
+35,
+36,
+37
+],
+"groups": [
+33,
+34,
+35,
+36
+],
+"text": "coda vamp & fade, with saxes underneath"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blues for Yna Yna\nC:Gerald Wilson\nP:AB\n%source New Real Book Vol 2 p23-24 (pdf 32-33)\n%style (Med. Jazz Waltz, q=111)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 24+4 (solo on A; after solos D.S. al Coda; coda vamp & fade)\n%unsure [general] lower staff (brass background figures) not transcribed\nM:3/4\nL:1/8\nK:Am\n%intro\n|: \"Am\"z2 B4 | \"Am(maj7)\"z2 B4 | \"Am7\"z2 B4 |1 \"Am(maj7)\"z2 B4 :|2\n\"Am(maj7)\"z2 (3zBB (3BBB ||\nP:A\n!segno!\"Am\"B6- | \"Am(maj7)\"B6 | \"Am7\"z2 B2 (3B/B/B/B | \"Am6\"B2- (3BBB (3BBB |\n\"Am\"B6- | \"Am(maj7)\"B6 | \"Am7\"z2 B2 (3B/B/B/B | \"Am6\"B4- BB |\n\"D7#9\"B6- | B4- BB | B6- | B2- (3BBB (3BBB |\n\"Am\"B6- | \"Am(maj7)\"B6 | \"Am7\"z2 B2 (3B/B/B/B | \"Am6\"B4- BB |\n\"E7#9\"B6- | B4- BB | \"D7#9\"B6- | B2- (3BBB (3BBB |\n\"Am\"B6- | \"Am(maj7)\"B6 | \"Am7\"z2 B2 (3B/B/B/B | \"Am6\"B2- (3BBB !coda!(3BBB ||\nP:B\n\"Am\"B6- | \"Am(maj7)\"B6 | \"Am7\"z2 B2 BB | \"Am6\"B6 |]\n%coda\n|: \"Am\"B6- | \"Am(maj7)\"B6 | \"Am7\"z2 B2 (3B/B/B/B | \"Am6\"B2- (3BBB (3BBB :|\n\n%unsure [bars 1-5] intro is organ fills over a brass background (top note of chord); 2nd ending is trps & saxes\n%unsure [bars 8, 12, 20, 28, 36] the sixteenth-triplet turn rhythm approximate\n%unsure [bars 30-33] saxes trill/lower line not transcribed\n%unsure [bars 34-37] coda vamp & fade, with saxes underneath"
+},
+{
+"id": "New_Real_Book_Volume2/034-body-and-soul",
+"book": "The New Real Book Vol. 2",
+"title": "Body and Soul",
+"pdf": "34",
+"form": "ABC 16+8+8 (A is two 8-bar halves written out: AABA)",
+"bad": 2,
+"off": [
+17,
+25
+],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+8
+],
+"groups": [
+7
+],
+"text": "slashes show Eb6 then Gm7b5 (beat 3) and C7 (beat 4) over the whole note; last bar of C has the same as optional (Gm7b5 C7)"
+},
+{
+"bars": [
+24
+],
+"groups": [
+23
+],
+"text": "D7 Db7 C7 read as beats 1, 2, 3 (one chord per quarter)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Body and Soul\nC:Johnny Green (lyric by Edward Heyman, Robert Sour and Frank Eyton)\nP:ABC\n%source New Real Book Volume2 p25 (pdf 34)\n%style (Medium Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8 (A is two 8-bar halves written out: AABA)\nM:4/4\nL:1/8\nK:Eb\nP:A\n\"Fm7\"zB BB \"C7\"B2 B2 | \"Fm7\"B2 \"Bb9\"B6 | \"Ebmaj7\"zB BB \"Ab9\"B2 B2 | \"Gm7\"B2 B2 \"F#o7\"\"(F#m7)\"B2 \"(B7)\"B2 |\nw: My heart is sad and lone- ly, For you I sigh, for you, dear, on- ly,\n\"Fm7\"z2 B2 B B2 B | \"Dm7b5\"B4 \"G7\"B4 | \"Cm7\"zB BB \"Fm7\"B2 \"Bb7\"(3BBB | \"Eb6\"B4- \"Gm7b5\"B2- \"C7\"B2 |\nw: Why have- n't you seen it? I'm all for you, bod- y and soul.\n\"Fm7\"zB BB \"C7\"B2 B2 | \"Fm7\"B2 \"Bb9\"B6 | \"Ebmaj7\"zB BB \"Ab9\"B2 B2 | \"Gm7\"B2 B2 \"F#o7\"\"(F#m7)\"B2 \"(B7)\"B2 |\nw: I spend my days in long- ing and won- d'ring why it's me you're wrong- ing,\n\"Fm7\"z2 B2 B B2 B | \"Dm7b5\"B4 \"G7\"B4 | \"Cm7\"zB BB \"Fm7\"B2 \"Bb7\"(3BBB | \"Eb6\"B4 \"F#m7\"z2 \"B7\"z2 ||\nw: I tell you I mean it, I'm all for you, bod- y and soul.\n[K:E]P:B\"Emaj7\"z BB B\"F#m7\"B B2 B | \"G#m7\"B B2 B \"Am6\"B B2 B | \"G#m7\"B \"C#m7\"B2 B \"F#m7\"B2 \"B7\"BB- | \"Emaj7\"B8 |\nw: I can't be- lieve it, It's hard to con- ceive it, that you'd turn a- way ro- mance._\n[K:D]\"Em7\"zB BB \"A7\"B B2 B | \"F#m7\"B B2 B \"Fo7\"B B2 B | \"Em7\"B B2 B \"A7\"B B2 B | \"D7\"B2 \"Db7\"B2 \"C7\"B2 B2 ||\nw: Are you pre- tend- ing? It looks like the end- ing un- less I could have one more chance to prove, dear,\n[K:Eb]P:C\"Fm7\"z BB B \"C7\"B2 B2 | \"Fm7\"B2 \"Bb9\"B6 | \"Ebmaj7\"zB BB \"Ab9\"B2 B2 | \"Gm7\"B2 B2 \"F#o7\"\"(F#m7)\"B2 \"(B7)\"B2 |\nw: My life a wreck you're mak- ing, You know I'm yours for just the tak- ing,\n\"Fm7\"z2 B2 B B2 B | \"Dm7b5\"B4 \"G7\"B4 | \"Cm7\"zB BB \"Fm7\"B2 \"Bb7\"(3BBB | \"Eb6\"B4- \"(Gm7b5)\"B2- \"(C7)\"B2 |]\nw: I'd glad- ly sur- ren- der my- self to you, bod- y and soul.\n\n%unsure [bar 8] slashes show Eb6 then Gm7b5 (beat 3) and C7 (beat 4) over the whole note; last bar of C has the same as optional (Gm7b5 C7)\n%unsure [bar 24] D7 Db7 C7 read as beats 1, 2, 3 (one chord per quarter)"
+},
+{
+"id": "New_Real_Book_Volume2/34-body-and-soul",
+"book": "The New Real Book Vol. 2",
+"title": "Body and Soul",
+"pdf": "34",
+"form": "AABA 8+8+8+8 (printed A (16 bars), B, C; C is the last A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"text": "bridge eighth/quarter mix approximate (low-res scan)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Body and Soul\nC:Johnny Green\nC:Lyric: Edward Heyman, Robert Sour and Frank Eyton\nP:AABA\n%source New Real Book Vol 2 p25-26 (pdf 34-35)\n%style (Medium Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (printed A (16 bars), B, C; C is the last A)\n%unsure [general] lyrics are printed\nM:4/4\nL:1/8\nK:Db\nP:A\n\"Fm7\"zB BB \"C7\"B2 B2 | \"Fm7\"B2 \"Bb9\"B6 | \"Ebmaj7\"zB BB \"Ab9\"B2 B2 | \"Gm7\"B2 B2 \"F#o7\"\"(F#m7)\"B2 \"(B7)\"B2 |\n\"Fm7\"z2 B2 B B2 B | \"Dm7b5\"B4 \"G7\"B4 | \"Cm7\"zB BB \"Fm7\"B2 \"Bb7\"(3BBB | \"Eb6\"B4- \"Gm7b5\"B2- \"C7\"B2 ||\nP:A\n\"Fm7\"zB BB \"C7\"B2 B2 | \"Fm7\"B2 \"Bb9\"B6 | \"Ebmaj7\"zB BB \"Ab9\"B2 B2 | \"Gm7\"B2 B2 \"F#o7\"\"(F#m7)\"B2 \"(B7)\"B2 |\n\"Fm7\"z2 B2 B B2 B | \"Dm7b5\"B4 \"G7\"B4 | \"Cm7\"zB BB \"Fm7\"B2 \"Bb7\"(3BBB | \"Eb6\"B4 \"F#m7\"z2 \"B7\"z2 ||\nP:B\n[K:E]\"Emaj7\"zB BB \"F#m7\"B B2 B | \"G#m7\"B B2 B \"Am6\"B B2 B | \"G#m7\"B B2 \"C#m7\"B \"F#m7\"B2 \"B7\"BB- | \"Emaj7\"B8 |\n[K:D]\"Em7\"zB BB \"A7\"B B2 B | \"F#m7\"B B2 B \"Fo7\"B B2 B | \"Em7\"BB BB \"A7\"B B2 B | \"D7\"B2 \"Db7\"B2 \"C7\"B2 B2 ||\nP:A\n[K:Db]\"Fm7\"zB BB \"C7\"B2 B2 | \"Fm7\"B2 \"Bb9\"B6 | \"Ebmaj7\"zB BB \"Ab9\"B2 B2 | \"Gm7\"B2 B2 \"F#o7\"\"(F#m7)\"B2 \"(B7)\"B2 |\n\"Fm7\"z2 B2 B B2 B | \"Dm7b5\"B4 \"G7\"B4 | \"Cm7\"zB BB \"Fm7\"B2 \"Bb7\"(3BBB | \"Eb6\"B4- \"(Gm7b5)\"B2- \"(C7)\"B2 |]\n\n%unsure [bars 17-24] bridge eighth/quarter mix approximate (low-res scan)"
+},
+{
+"id": "New_Real_Book_Volume2/036-bolivia",
+"book": "The New Real Book Vol. 2",
+"title": "Bolivia",
+"pdf": "36",
+"form": "AB 16+16 (head played twice before and after solos; solo on AB; D.S. al Coda, play ABA before Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [
+4,
+5
+],
+"groups": [
+3,
+4
+],
+"text": "endings are printed 1.,2.,3. (play intro 4 times) and 4."
+},
+{
+"bars": [
+21
+],
+"groups": [
+20
+],
+"text": "break bar: B7alt on beat 1, coda sign \"on repeat\""
+},
+{
+"bars": [
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37
+],
+"groups": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36
+],
+"text": "15 bars of A7 (alto fills, 1st x no comping) printed as a multi-bar rest; bar 37 is rhythm slashes with a melody note on beat 4, slashes written as rests"
+},
+{
+"bars": [
+38,
+39,
+40,
+41,
+42
+],
+"groups": [
+37,
+38,
+39,
+40,
+41
+],
+"text": "coda vamp (rhythm slashes) written as rests; Gbmaj7 and Fmaj7 fermata notes are diamond fills"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Bolivia\nC:Cedar Walton\nP:AB\n%source New Real Book Volume2 p27 (pdf 36)\n%style (Med.-Up Swing, quarter = 222)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16 (head played twice before and after solos; solo on AB; D.S. al Coda, play ABA before Coda)\nM:4/4\nL:1/8\nK:C\n%intro\n|: \"(A7)\"z8 | z8 | z8 |1 z8 :|2\nz4 z2 \"^(alto w/ pn.)\"\"Gbmaj7\"B2 ||\nP:A\n|: !segno!\"Fmaj7\"B4 \"(C13sus)\"B3 \"B13sus\"B- | B6 \"B13\"B2 | \"Emaj7\"BB BB- B4- | B4- \"Bb13b9\"B2 zB |\n\"^(Latin)\"\"Amaj7\"B2 BB z B2 B | \"G#7#9#5\"z B2 B- B/B/B B2 | \"C#m7\"B2 BB z B2 B | \"Dmaj9#11\"z B2 B- B/B/B B2 |\n\"C#m7\"B2 BB z B2 B | \"C#m7/B\"z B2 B (3BBB B2- | \"Bbm7b5\"B8 | \"^(Swing)\"\"Am7\"z4 \"D7\"z2 zB |\n\"Gmaj7\"BB BB BB BB | \"C#13b9\"BB- B6 | \"Cmaj9\"B3 B BB- B2 | \"B7alt\"z8 |\nP:B\n\"^(alto fills)\"\"A7\"z8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z6 \"(Gbmaj7)\"B2 :|\n:!coda!\"A7\"z8 | z8 :| \"^(On cue)\"z8 | z4 \"Gbmaj7\"!fermata!B4 |\n\"Fmaj7\"!fermata!B8 |]\n\n%unsure [bars 4-5] endings are printed 1.,2.,3. (play intro 4 times) and 4.\n%unsure [bar 21] break bar: B7alt on beat 1, coda sign \"on repeat\"\n%unsure [bars 22-37] 15 bars of A7 (alto fills, 1st x no comping) printed as a multi-bar rest; bar 37 is rhythm slashes with a melody note on beat 4, slashes written as rests\n%unsure [bars 38-42] coda vamp (rhythm slashes) written as rests; Gbmaj7 and Fmaj7 fermata notes are diamond fills"
+},
+{
+"id": "New_Real_Book_Volume2/36-bolivia",
+"book": "The New Real Book Vol. 2",
+"title": "Bolivia",
+"pdf": "36",
+"form": "AB 16+16 (head played twice before and after solos; solo on AB; after solos D.S. al Coda, play ABA before taking Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "B is 15 bars of A7 (modal: D Dorian/G Mixolydian) plus a 1-bar alto/piano kick"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5
+],
+"groups": [
+0,
+1,
+2,
+3,
+4
+],
+"text": "intro rests; endings 1-3 vs 4 (alto w/ pn.) as printed"
+},
+{
+"bars": [
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"groups": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19
+],
+"text": "Latin section (bars 10-16), then Swing; staccato eighth/sixteenth figures approximate"
+},
+{
+"bars": [
+21
+],
+"groups": [
+20
+],
+"text": "\"break\" on B7alt; on repeat go to Coda"
+},
+{
+"bars": [
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37
+],
+"groups": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36
+],
+"text": "15-bar multirest of alto fills (1st x no comping) written as rests, then alto w/ pn kick"
+},
+{
+"bars": [
+38,
+39,
+40,
+41,
+42
+],
+"groups": [
+37,
+38,
+39,
+40,
+41
+],
+"text": "coda: vamp till cue (alto fills, slashes) written as rests; fermata fill notes"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Bolivia\nC:Cedar Walton\nP:AB\n%source New Real Book Vol 2 p27 (pdf 36)\n%style (Med.-Up Swing, q=222)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16 (head played twice before and after solos; solo on AB; after solos D.S. al Coda, play ABA before taking Coda)\n%unsure [form] B is 15 bars of A7 (modal: D Dorian/G Mixolydian) plus a 1-bar alto/piano kick\nM:4/4\nL:1/8\nK:C\n%intro\n|: \"(A7)\"z8 | z8 |1 z8 | z8 :|4\nz4 z2 \"Gbmaj7\"!accent!B2 ||\nP:A\n|: !segno!\"Fmaj7\"B4 \"(C13sus)\"B3 \"B13sus\"B- | B6 \"B13\"B2 | \"Emaj7\"BB BB- B4- | \"Bb13b9\"B6 zB |\n\"Amaj7\"B2 BB z B2 B | \"G#7#9#5\"zB BB- B/B/B B2 | \"C#m7\"B2 BB z B2 B | \"Dmaj9#11\"zB BB- B/B/B B2 |\n\"C#m7\"B2 BB z B2 B | \"C#m7/B\"z B2 B (3BBB B2- | \"Bbm7b5\"B8 | \"Am7\"z4 \"D7\"z2 zB |\n\"Gmaj7\"BB BB BB BB | \"C#13b9\"BB- B6 | \"Cmaj9\"B3 B BB- B2 | \"B7alt\"B2 z6 :|\nP:B\n|: \"A7\"z8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z4 z2 \"(Gbmaj7)\"!accent!B2 :|\n%coda\n|: \"A7\"z8 | z8 :| z8 | z4 \"Gbmaj7\"!fermata!B4 |\n\"Fmaj7\"!fermata!B8 |]\n\n%unsure [bars 1-5] intro rests; endings 1-3 vs 4 (alto w/ pn.) as printed\n%unsure [bars 10-20] Latin section (bars 10-16), then Swing; staccato eighth/sixteenth figures approximate\n%unsure [bar 21] \"break\" on B7alt; on repeat go to Coda\n%unsure [bars 22-37] 15-bar multirest of alto fills (1st x no comping) written as rests, then alto w/ pn kick\n%unsure [bars 38-42] coda: vamp till cue (alto fills, slashes) written as rests; fermata fill notes"
+},
+{
+"id": "New_Real_Book_Volume2/037-the-boy-next-door",
+"book": "The New Real Book Vol. 2",
+"title": "The Boy Next Door",
+"pdf": "37",
+"form": "AB 16+16 (whole tune repeated)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+11
+],
+"groups": [
+11
+],
+"text": "optional chords (G9/F E7b9) placed on beats 1 and 3 above Cmaj7"
+},
+{
+"bars": [
+32
+],
+"groups": [
+32
+],
+"text": "Dm7 and G7 in parentheses-group with (A7#9#5); G7 placed on beat 3 over the half rest"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Boy Next Door\nC:Hugh Martin, Ralph Blane\nP:AB\n%source New Real Book Volume2 p28 (pdf 37)\n%style (Med. Jazz Waltz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16 (whole tune repeated)\nM:3/4\nL:1/8\nK:C\nBB |:\nP:A\n\"Cmaj7\"B4 B2 | \"A7alt\"B4 B2 | \"Dm7\"B4 B2 | \"G13#11\"B4 B2 |\nw: How can I ig- nore the boy next door? I\n\"Cmaj7\"B4 B2 | \"Am9\"B3 B BB | \"D9\"B6- | B6 |\nw: love him more than I can say._\n\"Dm7\"z2 BB BB | \"G9\"B4 B2 | \"Cmaj7\"\"(G9/F)\"z2 BB \"(E7b9)\"BB | \"Am9\"B4 \"Am9/G\"B2 |\nw: Does- n't try to please me, Does- n't e- ven tease me,\n\"F#m7b5\"z2 BB BB | \"B7b9#5\"B4 B2 | \"E7#9\"\"(Em7)\"B4 \"A7#5\"\"(D#o7)\"B2 | \"D9\"\"(Dm7)\"B4 \"G13\"BB ||\nw: And he nev- er sees me glance his way. And though\nP:B\n\"Cmaj7\"B4 B2 | \"A7alt\"B4 B2 | \"Dm7\"B4 B2 | \"G13#11\"B4 B2 |\nw: I'm heart- sore, the boy next door Af-\n\"Cmaj7\"B4 \"G#o7\"B2 | \"Am9\"B3 B BB | \"D13\"B6- | \"D#o7\"B2 z2 B2 |\nw: fec- tion for me won't dis- play._ I\n\"Cmaj7/G\"B4 B2 | B2 B2 BB | \"F#m7b5\"\"(D9)\"B4 B2 | B2 B2 zB |\nw: just a- dore him, so I can't ig- nore him, The\n\"Ab13\"B6 | \"G13\"B6 | \"C6\"B4 \"(A7#9#5)\"B2 | \"Dm7\"z4 \"G7\"z2 :|\nw: boy next door.\n\n%unsure [bar 11] optional chords (G9/F E7b9) placed on beats 1 and 3 above Cmaj7\n%unsure [bar 32] Dm7 and G7 in parentheses-group with (A7#9#5); G7 placed on beat 3 over the half rest"
+},
+{
+"id": "New_Real_Book_Volume2/37-the-boy-next-door",
+"book": "The New Real Book Vol. 2",
+"title": "The Boy Next Door",
+"pdf": "37",
+"form": "AB 16+16",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+},
+{
+"bars": [
+11,
+15,
+16
+],
+"groups": [
+11,
+15,
+16
+],
+"text": "alternate chords in parentheses placed approximately"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Boy Next Door\nC:Hugh Martin, Ralph Blane\nP:AB\n%source New Real Book Vol 2 p27 (pdf 37)\n%style (Med. Jazz Waltz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16\n%unsure [general] lyrics are printed\nM:3/4\nL:1/8\nK:C\nBB |:\nP:A\n\"Cmaj7\"B4 B2 | \"A7alt\"B4 B2 | \"Dm7\"B4 B2 | \"G13#11\"B4 B2 |\n\"Cmaj7\"B4 B2 | \"Am9\"B3 B BB | \"D9\"B6- | B6 |\n\"Dm7\"z2 BB BB | \"G9\"B4 B2 | \"Cmaj7\"\"(G9/F)\"z2 BB \"(E7b9)\"BB | \"Am9\"B4 \"Am9/G\"B2 |\n\"F#m7b5\"z2 BB BB | \"B7b9#5\"B4 B2 | \"E7#9\"\"(Em7)\"B4 \"A7#5\"\"(D#o7)\"B2 | \"D9\"\"(Dm7)\"B4 \"G13\"BB ||\nP:B\n\"Cmaj7\"B4 B2 | \"A7alt\"B4 B2 | \"Dm7\"B4 B2 | \"G13#11\"B4 B2 |\n\"Cmaj7\"B4 \"G#o7\"B2 | \"Am9\"B3 B BB | \"D13\"B6- | \"D#o7\"B2 z2 B2 |\n\"Cmaj7/G\"B4 B2 | B2 B2 BB | \"F#m7b5\"\"(D9)\"B4 B2 | B2 B2 zB |\n\"Ab13\"B6 | \"G13\"B6 | \"C6\"B4 \"(A7#9#5)\"B2 | \"Dm7\"z3 \"G7\"z3 :|\n\n%unsure [bars 11, 15-16] alternate chords in parentheses placed approximately"
+},
+{
+"id": "New_Real_Book_Volume2/038-bye-bye-blackbird",
+"book": "The New Real Book Vol. 2",
+"title": "Bye Bye Blackbird",
+"pdf": "38",
+"form": "ABC 16+8+8 (solo on ABC; after solos D.S. al Coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [
+2,
+4
+],
+"groups": [
+2,
+4
+],
+"text": "chromatic chords (Bbm9 Bm9 Cm9 / Bm9 Bbm9 Am9) placed on the last three 8ths; intro is not repeated"
+},
+{
+"bars": [
+6,
+7,
+8
+],
+"groups": [
+6,
+7,
+8
+],
+"text": "intro bars 6-8 rhythm (16ths and ties) read from a dense line"
+},
+{
+"bars": [
+25
+],
+"groups": [
+25
+],
+"text": "(G9 F#9 F9) optional line printed over B bars 1-3; F#9 shown unbracketed but read as part of the optional group"
+},
+{
+"bars": [
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"groups": [
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"text": "coda is a \"sample trp. line\" with chords on a separate piano staff; 16th/sextuplet groupings in bar 46 trimmed to fit, chord placements in bars 47-48 approximate (Dm9 C#m9 Cm9 Bm9 printed with (maj7); \"Ab bass\" written as Ab/Ab)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Bye Bye Blackbird\nC:Ray Henderson (lyric: Mort Dixon; as played by Miles Davis)\nP:ABC\n%source New Real Book Volume2 p29 (pdf 38)\n%style (Med. Swing, quarter = 122)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8 (solo on ABC; after solos D.S. al Coda)\nM:4/4\nL:1/8\nK:G\n%intro\nB | \"Am9\"z B3 BB (3BBB | BB zB z\"Bbm9\"B \"Bm9\"B\"Cm9\"B | z B3 BB (3BBB |\n\"Cm9\"BB zB z\"Bm9\"B \"Bbm9\"B\"Am9\"B | \"Am9\"z B3 BB (3BBB | \"D9sus\"B2 BB \"D13sus\"B2 B/B/B- | B2 B2 BB zB |\nz2 zB \"D13b9\"z4 ||\nP:A\n|: !segno!\"Gmaj7\"B2 B2 B2 B2 | \"(Am7)\"B2 B2 \"(D7)\"B4 | \"Gmaj7\"B2 B2 B4 | \"Gmaj7\"\"(Am7)\"B2 B2 \"D9sus\"\"(D7)\"B4 |\nw: Pack up all my care and woe, Here I go sing- ing low,\n\"Gmaj7\"B8 | \"Bm7\"B4- \"E7b9\"B4 | \"Am7\"B4 B4- | B4 \"E7b9\"z4 |\nw: Bye, bye, black- bird._\n\"Am7\"B2 B2 B2 B2 | B2 B2 \"(E7#5)\"B4 | \"Am7\"B2 B2 B4 | \"D7\"B2 B2 B4 |\nw: Where some- bod- y waits for me, Sug- ar's sweet, so is she,\n\"Am7\"B8 | \"D13sus\"B4- \"D13b9\"B4 | \"G6\"B4 B4- | \"Am7\"B4- \"D13sus\"B2- \"D7b9\"B2 ||\nw: Bye bye, black- bird,_\nP:B\n\"Bm7b5\"\"(G9)\"B2 B2 B2 B2 | \"(F#9)\"B2 B2 B2 B2 | \"(F9)\"B8 | \"E7b9\"B8 |\nw: No one here can love and un- der- stand me,\n\"Am7\"B2 B2 B2 B2 | B2 B2 B2 B2 | \"Am7b5\"\"(Eb9)\"B8 | \"D13sus\"B4- \"D7b9\"B4 ||\nw: Oh, what hard luck sto- ries they all hand me.\nP:C\n\"Gmaj7\"B2 B2 B2 B2 | \"Am7\"B2 B2 \"D7\"B4 | \"Gmaj7\"B2 B2 B4 | \"Bm7b5\"B2 B2 \"E7b9\"B4 |\nw: Make my bed and light the light, I'll ar- rive late to- night\n\"Am7\"B4 B4- | \"D9sus\"B4 \"D7b9\"B4 | \"^solo break\"\"Gmaj7\"B2 z2 z4 | \"(Am7)\"z4 \"(D7)\"z4 :|\nw: black- bird,_ bye bye.\n%coda\n!coda!\"Am7\"z4 BB BB | \"D7\"B2 BB- BB BB- | \"Bm7b5\"B6 B2- | \"E7b9\"B4 z4 |\n\"Am7\"B3 B- BB B2- | \"D13b9\"BB/B/ B3/2B/ (6:4:6B/B/B/B/B/B/ BB | B-\"Dm9maj7\"B- \"C#m9maj7\"B2 \"Cm9maj7\"B- \"Bm9maj7\"B2- \"Bbm9\"B | !fermata!\"Am9\"B3- \"Ab/Ab\"B2- \"Gmaj9\"B3 |]\n\n%unsure [bars 2, 4] chromatic chords (Bbm9 Bm9 Cm9 / Bm9 Bbm9 Am9) placed on the last three 8ths; intro is not repeated\n%unsure [bars 6-8] intro bars 6-8 rhythm (16ths and ties) read from a dense line\n%unsure [bar 25] (G9 F#9 F9) optional line printed over B bars 1-3; F#9 shown unbracketed but read as part of the optional group\n%unsure [bars 41-48] coda is a \"sample trp. line\" with chords on a separate piano staff; 16th/sextuplet groupings in bar 46 trimmed to fit, chord placements in bars 47-48 approximate (Dm9 C#m9 Cm9 Bm9 printed with (maj7); \"Ab bass\" written as Ab/Ab)"
+},
+{
+"id": "New_Real_Book_Volume2/38-bye-bye-blackbird",
+"book": "The New Real Book Vol. 2",
+"title": "Bye Bye Blackbird",
+"pdf": "38",
+"form": "ABC 16+8+8 (intro; solo on ABC; after solos D.S. al Coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "chords in parentheses are optional (mostly for soloing); coda taken from instrumental version"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"text": "intro chord placement in bars 2 and 4 approximate; bars 6-7 rhythm approximate"
+},
+{
+"bars": [
+16
+],
+"groups": [
+16
+],
+"text": "chords over slashes on a held note"
+},
+{
+"bars": [
+25,
+26,
+27
+],
+"groups": [
+25,
+26,
+27
+],
+"text": "chord-repeat signs; (G9 ... F9) bracket read as alternates for bars 25-27"
+},
+{
+"bars": [
+39,
+40
+],
+"groups": [
+39,
+40
+],
+"text": "solo break over these bars"
+},
+{
+"bars": [
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"groups": [
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"text": "sample trumpet line; chords in bars 43-45 are rhythm-section hits; bars 47-48 chords are piano voicings under held notes (Ab = Ab bass), placement approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Bye Bye Blackbird\nC:Ray Henderson (music), Mort Dixon (lyric)\nP:ABC\n%source New Real Book Vol 2 p29-30 (pdf 38-39)\n%style (Med. Swing, q=122) (as played by Miles Davis)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8 (intro; solo on ABC; after solos D.S. al Coda)\n%unsure [general] lyrics are printed\n%unsure [general] chords in parentheses are optional (mostly for soloing); coda taken from instrumental version\nM:C\nL:1/8\nK:G\nB ||\n%intro\n\"Am9\"z B3 BB (3BBB | BB zB z\"Bbm9\"B \"Bm9\"B\"Cm9\"B | z B3 BB (3BBB | \"Cm9\"BB zB z\"Bm9\"B \"Bbm9\"B\"Am9\"B |\n\"Am9\"z B3 BB (3BBB | \"D9sus\"B2 BB \"D13sus\"B2 BB- | B2 B2 BB zB | \"D13b9\"z2 zB B4 ||\nP:A\n|: !segno!\"Gmaj7\"B2 B2 B2 B2 | \"(Am7)\"B2 B2 \"(D7)\"B4 | \"Gmaj7\"B2 B2 B4 | \"Gmaj7\"\"(Am7)\"B2 B2 \"D9sus\"\"(D7)\"B4 |\n\"Gmaj7\"B8 | \"Bm7\"B4- \"E7b9\"B4 | \"Am7\"B4 B4- | B4 \"E7b9\"z4 |\n\"Am7\"B2 B2 B2 B2 | B2 B2 \"(E7#5)\"B4 | \"Am7\"B2 B2 B4 | \"D7\"B2 B2 B4 |\n\"Am7\"B8 | \"D13sus\"B4- \"D13b9\"B4 | \"G6\"B4 B4- | \"Am7\"B4- \"D13sus\"B2- \"D7b9\"B2 ||\nP:B\n\"Bm7b5\"\"(G9)\"B2 B2 B2 B2 | \"F#9\"B2 B2 B2 B2 | \"(F9)\"B8 | \"E7b9\"B8 |\n\"Am7\"B2 B2 B2 B2 | B2 B2 B2 B2 | \"Am7b5\"\"(Eb9)\"B8 | \"D13sus\"B4 \"D7b9\"B4 ||\nP:C\n\"Gmaj7\"B2 B2 B2 B2 | \"Am7\"B2 B2 \"D7\"B4 | \"Gmaj7\"B2 B2 B4 | \"Bm7b5\"B2 B2 \"E7b9\"!coda!B4 |\n\"Am7\"B4 B4- | \"D9sus\"B4 \"D7b9\"B4 | \"Gmaj7\"B8 | \"(Am7)\"z4 \"(D7)\"z4 :|\n%coda\n\"Am7\"z4 BB BB- | \"D7\"B2 BB- B2 BB- | \"Bm7b5\"B6 \"E7b9\"B2- | B4 z4 |\n\"Am7\"B3 B- BB BB- | \"D13b9\"BB/B/ B3/2B/ (6:4B/B/B/B/B/B/ BB | B- \"Dm9(maj7)\"B2- \"C#m9(maj7)\"B \"Cm9(maj7)\"B- \"Bm9(maj7)\"B2- \"Bbm9\"B | \"Am9\"!fermata!B2- \"Ab\"B3- \"Gmaj9\"B3 |]\n\n%unsure [bars 1-8] intro chord placement in bars 2 and 4 approximate; bars 6-7 rhythm approximate\n%unsure [bar 16] chords over slashes on a held note\n%unsure [bars 25-27] chord-repeat signs; (G9 ... F9) bracket read as alternates for bars 25-27\n%unsure [bars 39-40] solo break over these bars\n%unsure [bars 41-48] sample trumpet line; chords in bars 43-45 are rhythm-section hits; bars 47-48 chords are piano voicings under held notes (Ab = Ab bass), placement approximate"
+},
+{
+"id": "New_Real_Book_Volume2/040-cafe",
+"book": "The New Real Book Vol. 2",
+"title": "Cafe",
+"pdf": "40",
+"form": "AABCDE 12+12+13+6+4 (intro 4x; E vamp till cue, then D.S.; after solos D.S., play head ABCD and fade)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the chart: A is 12 bars + 1st ending (8-bar rest), B (2nd ending) 12, C 13, D 6, E 4 + 2-bar vamp; form on record is very open"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro is rhythm slashes (gtr. comps, light fills), played 4 times; written as rests"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"text": "1st ending is an 8-bar multirest on Cmaj7/E"
+},
+{
+"bars": [
+44,
+45,
+46,
+47,
+48
+],
+"groups": [
+43,
+44,
+45,
+46,
+47
+],
+"text": "chord placement of the (omit3) slash chords over long notes approximate"
+},
+{
+"bars": [
+50,
+51,
+52,
+53,
+54,
+55
+],
+"groups": [
+49,
+50,
+51,
+52,
+53,
+54
+],
+"text": "letter D: long tied whole notes with chord rhythms printed above (dotted quarter / 8th / slashes); chord positions approximate; bars 54-55 simile and rest, A7#9 marked with an 8th push; D is indefinite in length"
+},
+{
+"bars": [
+56,
+57,
+58,
+59
+],
+"groups": [
+55,
+56,
+57,
+58
+],
+"text": "letter E is rhythm slashes (with an 8th push into bars 57 and 59), written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Cafe\nC:Egberto Gismonti\nP:AABCDE\n%source New Real Book Volume2 p31 (pdf 40)\n%style (Med. Bossa, quarter = 100)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABCDE 12+12+13+6+4 (intro 4x; E vamp till cue, then D.S.; after solos D.S., play head ABCD and fade)\n%unsure [form] section lengths counted from the chart: A is 12 bars + 1st ending (8-bar rest), B (2nd ending) 12, C 13, D 6, E 4 + 2-bar vamp; form on record is very open\nM:4/4\nL:1/8\nK:G\n%intro\n|: \"Cmaj7/E\"z8 | z8 | \"Em9\"z8 | z8 :|\nP:A\n|: !segno!\"Cmaj7/E\"z2 BB BB BB | B2 B2 B2 B2- | \"Em9\"B2 BB BB BB | B2 B2 B2 B2- |\n\"Cmaj7/E\"B2 BB BB BB | B2 B2 B2 B2- | \"F#m11\"B2 BB BB BB | B2 B2 B2 B2 |\n\"D9sus\"B3 B- B4- | \"B/D\"B3 B B3 B- | \"B/G\"B8- | \"B/C\"B8 |1 \"Cmaj7/E\"z8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 :|2\nP:B\n\"Em9\"z2 BB BB BB | B2 B2 B2 B2- | B2 BB BB BB | B2 B2 B2 B2- |\n\"Am9\"B2 BB BB BB | B2 B2 B2 B2- | \"F#m11\"B2 BB BB BB | B2 B2 B2 B2 |\n\"B/F\"B3 B- B4- | \"B/C\"B3 B \"D#/E\"B3 B- | \"E(addb9)\"\"(E/F)\"B8- | B4- \"Bmaj7\"B2- \"Bm7\"B2 ||\nP:C\n\"Emaj7\"z2 BB BB BB | B2 B2 B2 B2- | \"F#add9/A#\"B2 BB BB BB | \"Em9\"B2 B2 \"D#m9\"B2 B2- |\n\"Bm7\"B3 B BB BB | \"E7\"B2 B2 B2 B2- | \"Bbm7b5\"B4 z2 BB | \"Abmaj7(omit3)/E\"B3 B- B2 BB- |\n\"Am7\"B4- BB BB- | \"Gmaj7(omit3)/Eb\"B6 BB- | \"G#m7\"B4- BB BB- | B6 \"F#maj7(omit3)/D\"BB- |\n\"F#m7\"B4- BB BB- ||\nP:D\n\"Emaj7(omit3)/C\"B3- \"Gmaj7(omit3)/Eb\"B- \"Bbmaj7(omit3)/Gb\"B4- | B- \"C#maj7(omit3)/A\"B7- | \"C#maj7(omit3)/A\"B8- | B8 |\nz8 | \"A7#9(omit5)\"z8 ||\nP:E\n\"Amaj7(omit5)\"z8 | \"A7(omit5)\"z8 | \"Amaj7(omit5)/D\"z8 | \"A7(omit5)/D\"z8 |: \"^(instr. fills)\"\"Cmaj7#5/D\"B7 B- | \"Cmaj7/D\"B8 :|\n\n%unsure [bars 1-4] intro is rhythm slashes (gtr. comps, light fills), played 4 times; written as rests\n%unsure [bars 17-24] 1st ending is an 8-bar multirest on Cmaj7/E\n%unsure [bars 44-48] chord placement of the (omit3) slash chords over long notes approximate\n%unsure [bars 50-55] letter D: long tied whole notes with chord rhythms printed above (dotted quarter / 8th / slashes); chord positions approximate; bars 54-55 simile and rest, A7#9 marked with an 8th push; D is indefinite in length\n%unsure [bars 56-59] letter E is rhythm slashes (with an 8th push into bars 57 and 59), written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/40-cafe",
+"book": "The New Real Book Vol. 2",
+"title": "Café",
+"pdf": "40",
+"form": "ABCDE 12(+8)+12+13+6+6 (intro 4x; A with 1st ending 8 bars rest, 2nd ending leads to B; D indefinite; vamp till cue; on cue D.S.; solo on A (2nd ending) B C D E; after solos D.S., play head ABCD and fade)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form on record is very open; bar counts per section as printed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "A: 1st x voice, 2nd x soprano; book: chord in parentheses is optional"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "guitar comps and light fills in slashes (4x), written as rests"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"text": "1st ending is an 8-bar multi-measure rest"
+},
+{
+"bars": [
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49
+],
+"groups": [
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"text": "C runs 13 bars as printed (continues onto pdf 41)"
+},
+{
+"bars": [
+50,
+51,
+52,
+53,
+54,
+55
+],
+"groups": [
+49,
+50,
+51,
+52,
+53,
+54
+],
+"text": "D is indefinite (more free each solo); chord hits over held note placed approximately; bars 54-55 are rests with chord repeat signs"
+},
+{
+"bars": [
+56,
+57,
+58,
+59,
+60,
+61
+],
+"groups": [
+55,
+56,
+57,
+58,
+59,
+60
+],
+"text": "E in rhythm slashes, written as rests; final 2 bars instrumental fills, vamp till cue"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Café\nC:Egberto Gismonti\nP:ABCDE\n%source New Real Book Vol 2 p31-32 (pdf 40-41)\n%style (Med. Bossa, q=100)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCDE 12(+8)+12+13+6+6 (intro 4x; A with 1st ending 8 bars rest, 2nd ending leads to B; D indefinite; vamp till cue; on cue D.S.; solo on A (2nd ending) B C D E; after solos D.S., play head ABCD and fade)\n%unsure [form] form on record is very open; bar counts per section as printed\n%unsure [general] A: 1st x voice, 2nd x soprano; book: chord in parentheses is optional\nM:C\nL:1/8\nK:D\n%intro\n|: \"Cmaj7/E\"z8 | z8 | \"Em9\"z8 | z8 :|\nP:A\n|: !segno!\"Cmaj7/E\"z2 BB BB BB | B2 B2 B2 B2- | \"Em9\"B2 BB BB BB | B2 B2 B2 B2- |\n\"Cmaj7/E\"B2 BB BB BB | B2 B2 B2 B2- | \"F#m11\"B2 BB BB BB | B2 B2 B2 B2 |\n\"D9sus\"B3 B- B4- | \"B/D\"B3 B B3 B- | \"B/G\"B8- | \"B/C\"B8 |1 \"Cmaj7/E\"z8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 :|2\nP:B\n\"Em9\"z2 BB BB BB | B2 B2 B2 B2- | B2 BB BB BB | B2 B2 B2 B2- |\n\"Am9\"B2 BB BB BB | B2 B2 B2 B2- | \"F#m11\"B2 BB BB BB | B2 B2 B2 B2 |\n\"B/F\"B3 B- B4- | \"B/C\"B3 B \"D#/E\"B3 B- | \"E(addb9)\"\"(E/F)\"B8- | B4- \"Bmaj7\"B2- \"Bm7\"B2 ||\nP:C\n\"Emaj7\"z2 BB BB BB | B2 B2 B2 B2- | \"F#(add9)/A#\"B2 BB BB BB | \"Em9\"B2 B2 \"D#m9\"B2 B2- |\n\"Bm7\"B3 B BB BB | \"E7\"B2 B2 B2 B2- | \"Bbm7b5\"B4 z2 BB | \"Abmaj7(omit3)/E\"B3 B- B2 BB- |\n\"Am7\"B4- BB BB- | \"Gmaj7(omit3)/Eb\"B6 BB- | \"G#m7\"B4- BB BB- | \"F#maj7(omit3)/D\"B6 BB- |\n\"F#m7\"B4- BB BB- ||\nP:D\n\"Emaj7(omit3)/C\"B3- \"Gmaj7(omit3)/Eb\"B- \"Bbmaj7(omit3)/Gb\"B4- | \"C#maj7(omit3)/A\"B8- | \"C#maj7(omit3)/A\"B8- | B8 |\nz8 | z7 \"A7#9(omit5)\"z ||\nP:E\n\"Amaj7(omit5)\"z7 \"A7(omit5)\"z | z8 | \"Amaj7(omit5)/D\"z7 \"A7(omit5)/D\"z | z8 |: \"Cmaj7#5/D\"B7 \"Cmaj7/D\"B- | B8 :|\n\n%unsure [bars 1-4] guitar comps and light fills in slashes (4x), written as rests\n%unsure [bars 17-24] 1st ending is an 8-bar multi-measure rest\n%unsure [bars 37-49] C runs 13 bars as printed (continues onto pdf 41)\n%unsure [bars 50-55] D is indefinite (more free each solo); chord hits over held note placed approximately; bars 54-55 are rests with chord repeat signs\n%unsure [bars 56-61] E in rhythm slashes, written as rests; final 2 bars instrumental fills, vamp till cue"
+},
+{
+"id": "New_Real_Book_Volume2/042-capim",
+"book": "The New Real Book Vol. 2",
+"title": "Capim",
+"pdf": "42",
+"form": "ABC 16+22+8 (C: 4-bar vamp 4x then synth line, D.S. al Coda; coda vamp, fill and fade)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the chart (B runs 22 bars to the coda sign)"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro line is the top note of the synth voicing"
+},
+{
+"bars": [
+5,
+6,
+7,
+8
+],
+"groups": [
+4,
+5,
+6,
+7
+],
+"text": "rhythm-slash kicks (8th rest, 8th, quarter rest, quarter, 8th rest, 8th tied over), played 4x; written as rests"
+},
+{
+"bars": [
+38
+],
+"groups": [
+37
+],
+"text": "Bb bass / B bass printed as a quarter-triplet bass motion over the half note"
+},
+{
+"bars": [
+47,
+48,
+49,
+50
+],
+"groups": [
+46,
+47,
+48,
+49
+],
+"text": "C vamp is rhythm-slash kicks, played 4x; written as rests. Then synth line, D.S. al Coda"
+},
+{
+"bars": [
+55,
+56,
+57,
+58
+],
+"groups": [
+54,
+55,
+56,
+57
+],
+"text": "coda vamp (rhythm slashes), vamp, fill and fade; written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Capim\nC:Djavan (as sung by Manhattan Transfer)\nP:ABC\n%source New Real Book Volume2 p33 (pdf 42)\n%style (Med.-Slow Samba, half = 85)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+22+8 (C: 4-bar vamp 4x then synth line, D.S. al Coda; coda vamp, fill and fade)\n%unsure [form] section lengths counted from the chart (B runs 22 bars to the coda sign)\nM:2/2\nL:1/8\nK:F\n%intro\n|: \"Fmaj7/C\"B7 \"Ab(add9)/C\"B- | B8 | \"Bbmaj7/C\"B7 \"Gb/C\"B- | B8 :|\n:\"^(tenor fills)\"\"Fmaj7\"z8 | \"Fo7(addmaj7)\"z8 | \"Gm7/F\"z8 | \"Gb/C\"\"(C13)\"z8 :|\nP:A\n|: !segno!\"Fmaj7\"zBBB BBBB | \"Fo7(addmaj7)\"BBBB- BBBB | \"Gm7\"BBBB- BBBB | \"C7\"B2 B4 z2 |\n\"Fmaj7\"zBBB BBBB- | \"Fo7(addmaj7)\"B B2 B BB B2 | \"Gm7\"B B2 B B2 BB | \"C7\"BB B4 z2 |\n\"Fmaj7\"zBBB BBBB | \"Fo7(addmaj7)\"BBBB- BBBB | \"Gm7\"BBBB- BBBB | \"C7\"B2 B2- B2 z2 |\n\"Fmaj7\"zBBB BBBB- | \"Fo7(addmaj7)\"B B2 B BB B2 | \"Gm7\"B B2 B B2 BB | \"C7\"BB B2 zB B2- ||\nP:B\n\"Fmaj7\"B3 B- BBBB- | \"Fo7(addmaj7)\"B B3- BB B2 | \"Gm7\"z B3- BB z2 | \"C7\"(3z2B2B2 (3B2B2B2 |\n\"Eb9#11\"B8- | \"D9sus\"B4- \"D9\"B4 | \"Gmaj7\"BBBB B2 BB | \"C7\"BB B2 BB B2 |\n\"Fmaj7\"(3B2B2B2 \"Gm7\"(3B2B2B2 | \"Am7\"zBBB \"(Dm7)\"BB B2- | \"Bm7(11)\"B8 | \"Bb13\"z8 |\n\"A13sus\"zBBB (3B2B2B2 | (3B2B2B2 \"^Bb bass, B bass\"B4 | \"Cm9\"zBBB (3B2B2B2 | \"F13\"(3B2B2B2 B3 B |\n\"Bm7b5\"B7 B | \"E7#9\"B4 B2 B2- | \"A13\"B4 \"A9#5\"z2 BB- | \"D13sus\"B B2 B- BB B2- |\n\"Gmaj7\"B2 B2 B B3- | \"C7\"B8 :|\nP:C\n|: \"^(tenor fills)\"\"Fmaj7\"z8 | \"Fo7(addmaj7)\"z8 | \"Gm7\"z8 | \"Gb/C\"\"(C13)\"z8 :|\n:\"Fmaj7/C\"B7 \"Ab(add9)/C\"B- | B8 | \"Bbmaj7/C\"B7 \"Gb/C\"B- | B8 :|\n%coda\n|: !coda!\"^(tenor fills)\"\"Fmaj7\"z8 | \"Fo7(addmaj7)\"z8 | \"Gm7\"z8 | \"Gb/C\"\"(C13)\"z8 :|\n\n%unsure [bars 1-4] intro line is the top note of the synth voicing\n%unsure [bars 5-8] rhythm-slash kicks (8th rest, 8th, quarter rest, quarter, 8th rest, 8th tied over), played 4x; written as rests\n%unsure [bar 38] Bb bass / B bass printed as a quarter-triplet bass motion over the half note\n%unsure [bars 47-50] C vamp is rhythm-slash kicks, played 4x; written as rests. Then synth line, D.S. al Coda\n%unsure [bars 55-58] coda vamp (rhythm slashes), vamp, fill and fade; written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/42-capim",
+"book": "The New Real Book Vol. 2",
+"title": "Capim",
+"pdf": "42",
+"form": "ABC 16+22+4 (intro; A, B head; C tenor-fill vamp 4x then synth intro, D.S. al Coda; coda vamp, fill & fade)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "B section length counted as printed (22 bars, across pdf 42-43)"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "bars 1-4 top note of synth voicing; bars 5-8 tenor fills over rhythm-section hits (slashes), written as rests, 4x"
+},
+{
+"bars": [
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46
+],
+"groups": [
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45
+],
+"text": "triplet groupings approximate; bar 38 chords are Bb bass, B bass triplet hits; bar 46 C7 hits over held note"
+},
+{
+"bars": [
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54
+],
+"groups": [
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53
+],
+"text": "C is tenor fills over rhythm hits (rests), 4x; then synth intro figure; D.S. al Coda"
+},
+{
+"bars": [
+55,
+56,
+57,
+58
+],
+"groups": [
+54,
+55,
+56,
+57
+],
+"text": "coda vamp, fill & fade (tenor fills, written as rests)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Capim\nC:Djavan\nP:ABC\n%source New Real Book Vol 2 p33-34 (pdf 42-43)\n%style (Med.-Slow Samba, h=85) (as sung by Manhattan Transfer)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+22+4 (intro; A, B head; C tenor-fill vamp 4x then synth intro, D.S. al Coda; coda vamp, fill & fade)\n%unsure [form] B section length counted as printed (22 bars, across pdf 42-43)\nM:C|\nL:1/8\nK:F\n%intro\n|: \"Fmaj7/C\"B7 \"Ab(add9)/C\"B- | B8 | \"Bbmaj7/C\"B7 \"Gb/C\"B- | B8 :|\n:\"Fmaj7\"z7 \"Fo7(addmaj7)\"z | z8 | \"Gm7/F\"z7 \"Gb/C\"\"(C13)\"z | z8 :|\nP:A\n!segno!\"Fmaj7\"zBBB BBBB | \"Fo7(addmaj7)\"BBBB- BBBB | \"Gm7\"BBBB- BBBB | \"C7\"B2 B4 z2 |\n\"Fmaj7\"zBBB BBBB- | \"Fo7(addmaj7)\"B B2 B BB B2 | \"Gm7\"B B2 B B2 BB | \"C7\"BB B4 z2 |\n\"Fmaj7\"zBBB BBBB | \"Fo7(addmaj7)\"BBBB- BBBB | \"Gm7\"BBBB- BBBB | \"C7\"B2 B2- B2 z2 |\n\"Fmaj7\"zBBB BBBB- | \"Fo7(addmaj7)\"B B2 B BB B2 | \"Gm7\"B B2 B B2 BB | \"C7\"BB B2 zB B2- ||\nP:B\n\"Fmaj7\"B3 B- BBBB- | \"Fo7(addmaj7)\"B B3- BB B2 | \"Gm7\"z B3- BB z2 | \"C7\"(3z2B2B2 (3B2B2B2 |\n\"Eb9#11\"B8- | \"D9sus\"B4- \"D9\"B4 | \"Gmaj7\"BBBB B2 BB | \"C7\"BB B2 BB B2 |\n\"Fmaj7\"(3B2B2B2 \"Gm7\"(3B2B2B2 | \"Am7\"zBBB BB \"(Dm7)\"B2- | \"Bm7(11)\"B8 | \"Bb13\"z8 |\n\"A13sus\"zBBB (3B2B2B2 | (3B2B2B2 \"Bb\"\"B\"B4 | \"Cm9\"zBBB (3B2B2B2 | \"F13\"(3B2B2B2 B3 B |\n\"Bm7b5\"B7 B | \"E7#9\"B4 B2 B2- | \"A13\"B4 \"A9#5\"z2 BB- | \"D13sus\"B B2 B- BB B2- |\n\"Gmaj7\"B2 B2 B B3 | \"C7\"!coda!B8 :|\nP:C\n|: \"Fmaj7\"z7 \"Fo7(addmaj7)\"z | z8 | \"Gm7\"z7 \"Gb/C\"\"(C13)\"z | z8 :|\n:\"Fmaj7/C\"B7 \"Ab(add9)/C\"B- | B8 | \"Bbmaj7/C\"B7 \"Gb/C\"B- | B8 :|\n%coda\n|: \"Fmaj7\"z7 \"Fo7(addmaj7)\"z | z8 | \"Gm7\"z7 \"Gb/C\"\"(C13)\"z | z8 :|\n\n%unsure [bars 1-8] bars 1-4 top note of synth voicing; bars 5-8 tenor fills over rhythm-section hits (slashes), written as rests, 4x\n%unsure [bars 37-46] triplet groupings approximate; bar 38 chords are Bb bass, B bass triplet hits; bar 46 C7 hits over held note\n%unsure [bars 47-54] C is tenor fills over rhythm hits (rests), 4x; then synth intro figure; D.S. al Coda\n%unsure [bars 55-58] coda vamp, fill & fade (tenor fills, written as rests)"
+},
+{
+"id": "New_Real_Book_Volume2/044-casa-forte",
+"book": "The New Real Book Vol. 2",
+"title": "Casa Forte",
+"pdf": "44",
+"form": "ABCD 16+12+8+open; after solos D.C. al Coda",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "bar counts per section counted, not printed"
+},
+{
+"bars": [
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40
+],
+"groups": [
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40
+],
+"text": "top (voice/instr.) line only; a lower whole-note line on beat 1 of bars 33 and 37 not transcribed"
+},
+{
+"bars": [
+41
+],
+"groups": [
+41
+],
+"text": "solos on Bm indefinitely, then D.C. al Coda; alternate changes for B and C printed separately, not transcribed"
+},
+{
+"bars": [
+46,
+47
+],
+"groups": [
+46,
+47
+],
+"text": "drum fill, then accented Bm hit on beat 4"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Casa Forte\nC:Edu Lobo\nP:ABCD\n%source New Real Book Volume 2 p35-36 (pdf 44-45)\n%style (Fast Samba)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 16+12+8+open; after solos D.C. al Coda\n%unsure [form] bar counts per section counted, not printed\nM:C|\nL:1/8\nK:G\nB |\nP:A\n|: \"Fmaj9\"BBzB zBzB | zBzB zBzB | \"Em6/9\"B3 B- B4- | B4 z2 zB |\n\"Fmaj9\"BBzB zBzB | zBzB zBzB | \"Emaj9\"B8- | B4 z2 zB |\n\"D13sus\"BBzB B2 B2- | B3 B B3 B | \"C#13sus\"B4 B4- | B4 z2 zB |1 \"D13sus\"BBzB B2 B2- | B3 B B3 B | \"C#13sus\"B8 | z4 z2 zB :|2\n\"D13sus\"BBzB B2 B2- | B3 B B3 B | \"Fmaj7\"B8- | B8 ||\nP:B\n|: \"Em\"B8 | \"B7#5/D#\"B8 | \"G/D\"B8 | \"C#m7(11,omit5)\"B6 BB |\n\"C7\"BB B2 B2 BB | B2 B4 zB | \"Am/C\"BB B2 B2 BB | B2 B4 BB |\n\"Asus/E\"B8- | \"Gsus/E\"B8 | \"Asus/E\"z8 | \"Gsus/E\"z8 :|\nP:C\n|: \"Bm\"B3 B B2 B2- | \"F#7#5/A#\"B3 B B2 B2- | \"D/A\"B3 B B2 B2- | \"G#m7(11,omit5)\"B3 B \"F#7\"B2 B2- |\n\"Bm\"B3 B B2 B2- | \"F#7#5/A#\"B3 B B2 B2- | \"D/A\"B3 B B2 B2- | \"G#m7(11,omit5)\"B3 B \"F#7\"B2 !coda!B2- :|\nP:D\n\"Bm\"z8 |]\n%coda\n!coda!\"Bm\"B3 B B2 B2- | \"F#7#5/A#\"B3 B B2 B2- | \"D/A\"B3 B B2 B2- | \"G#m7(11,omit5)\"B3 B \"F#7\"B2 B2 |\nz8 | z4 z2 \"Bm\"!accent!B2 |]\n\n%unsure [bars 33-40] top (voice/instr.) line only; a lower whole-note line on beat 1 of bars 33 and 37 not transcribed\n%unsure [bar 41] solos on Bm indefinitely, then D.C. al Coda; alternate changes for B and C printed separately, not transcribed\n%unsure [bars 46-47] drum fill, then accented Bm hit on beat 4"
+},
+{
+"id": "New_Real_Book_Volume2/44-casa-forte",
+"book": "The New Real Book Vol. 2",
+"title": "Casa Forte",
+"pdf": "44",
+"form": "AABBCCD 16+16+12+12+4+4+indef (A with 1st/2nd endings; B, C repeated; D solos indef.; after solos D.C. al Coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "repeat counts for B and C taken from repeat signs; C is 4 bars played twice (voice, then instr.)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "alternate changes for B and C printed at foot of page, not transcribed; may also solo on Asus (indef.)"
+},
+{
+"bars": [
+33,
+34,
+35,
+36
+],
+"groups": [
+33,
+34,
+35,
+36
+],
+"text": "two voices: upper melody (transcribed) over a held whole note; 1st x voice, 2nd x instr."
+},
+{
+"bars": [
+37
+],
+"groups": [
+37
+],
+"text": "solos, indefinite length; after solos D.C. al Coda"
+},
+{
+"bars": [
+42,
+43
+],
+"groups": [
+42,
+43
+],
+"text": "drum fill, then final Bm hit"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Casa Forte\nC:Edu Lobo\nP:AABBCCD\n%source New Real Book Vol 2 p35-36 (pdf 44-45)\n%style (Fast Samba)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABBCCD 16+16+12+12+4+4+indef (A with 1st/2nd endings; B, C repeated; D solos indef.; after solos D.C. al Coda)\n%unsure [form] repeat counts for B and C taken from repeat signs; C is 4 bars played twice (voice, then instr.)\n%unsure [general] alternate changes for B and C printed at foot of page, not transcribed; may also solo on Asus (indef.)\nM:C|\nL:1/8\nK:G\nB |:\nP:A\n\"Fmaj9\"BBzB zBzB | zBzB zBzB | \"Em6/9\"B3 B- B4- | B4 z2 zB |\n\"Fmaj9\"BBzB zBzB | zBzB zBzB | \"Emaj9\"B8- | B4 z2 zB |\n\"D13sus\"BBzB B2 B2- | B3 B B3 B | \"C#13sus\"B4 B4- | B4 z2 zB |1 \"D13sus\"BBzB B2 B2- | B3 B B3 B | \"C#13sus\"B8 | z4 z2 zB :|2\n\"D13sus\"BBzB B2 B2- | B3 B B3 B | \"Fmaj7\"B8- | B8 ||\nP:B\n|: \"Em\"B8 | \"B7#5/D#\"B8 | \"G/D\"B8 | \"C#m11(omit5)\"B6 BB |\n\"C7\"BB B2 B2 BB | B2 B4 zB | \"Am/C\"BB B2 B2 BB | B2 B4 BB |\n\"Asus/E\"B8- | \"Gsus/E\"B8 | \"Asus/E\"z8 | \"Gsus/E\"z8 :|\nP:C\n|: \"Bm\"B3 B B2 B2- | \"F#7#5/A#\"B3 B B2 B2- | \"D/A\"B3 B B2 B2- | \"G#m11(omit5)\"B3 B \"F#7\"B2 B2- :|\nP:D\n\"Bm\"z8 |]\n%coda\n\"Bm\"B3 B B2 B2- | \"F#7#5/A#\"B3 B B2 B2- | \"D/A\"B3 B B2 B2- | \"G#m11(omit5)\"B3 B \"F#7\"B2 B2 |\nz8 | z4 z2 \"Bm\"!accent!B2 |]\n\n%unsure [bars 33-36] two voices: upper melody (transcribed) over a held whole note; 1st x voice, 2nd x instr.\n%unsure [bar 37] solos, indefinite length; after solos D.C. al Coda\n%unsure [bars 42-43] drum fill, then final Bm hit"
+},
+{
+"id": "New_Real_Book_Volume2/046-central-park-west",
+"book": "The New Real Book Vol. 2",
+"title": "Central Park West",
+"pdf": "46",
+"form": "ABC 10+10+10; after solos play B, then D.C. al Coda",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "bar counts per section counted, not printed"
+},
+{
+"bars": [
+7,
+8,
+9,
+10
+],
+"groups": [
+7,
+8,
+9,
+10
+],
+"text": "fill rhythms (rhythm-section kicks) printed above the staff not transcribed; 16th-note runs may be 32nds"
+},
+{
+"bars": [
+13
+],
+"groups": [
+13
+],
+"text": "triplet grouping read loosely from the scan"
+},
+{
+"bars": [
+17,
+18,
+19,
+20
+],
+"groups": [
+17,
+18,
+19,
+20
+],
+"text": "sample fill; rhythm approximate"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30
+],
+"groups": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30
+],
+"text": "solo slashes written as rests with chords"
+},
+{
+"bars": [
+31,
+32,
+33,
+34
+],
+"groups": [
+31,
+32,
+33,
+34
+],
+"text": "coda opens with a sample fill; triplet groupings approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Central Park West\nC:John Coltrane\nP:ABC\n%source New Real Book Volume 2 p37-38 (pdf 46-47)\n%style (Med. Ballad, quarter = 72)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 10+10+10; after solos play B, then D.C. al Coda\n%unsure [form] bar counts per section counted, not printed\nM:4/4\nL:1/8\nK:Db\n\"Ebm7\"B2 \"Ab7\"B2 ||\nP:A\n\"Dbmaj7\"B4- \"F#m7\"B2- \"B7\"B2- | \"Emaj7\"B4 \"Cm7\"B2 \"F7\"B2 | \"Bbmaj7\"B2 B2 \"Am7\"B2 \"D7\"B2 | \"Gmaj7\"B4 \"Ebm7\"B2 \"Ab7\"B2 |\n\"Dbmaj7\"B4- \"F#m7\"B2- \"B7\"B2- | \"Emaj7\"B4 \"Ebm7\"B3 \"Ab7\"B | \"Dbmaj7\"B4 z2 z/B/B/B/ | \"Ebm/Db\"B7 B/B/ |\n\"Dbmaj7\"B4 z2 z/B/B/B/ | \"Ebm/Db\"B4 \"Ebm7\"B2 \"Ab7\"B2 ||\nP:B\n\"Dbmaj7\"B3 B \"F#m7\"B2 \"B7\"B2 | \"Emaj7\"B4 \"Cm7\"B2 \"F7\"B2 | \"Bbmaj7\"B2- (3BBB \"Am7\"BB \"D7\"(3BBB- | \"Gmaj7\"B4 \"Ebm7\"B2 \"Ab7\"B2 |\n\"Dbmaj7\"B3 B/B/ \"F#m7\"B3/2\"B7\"B/ BB | \"Emaj7\"B3 B/B/ \"Ebm7\"B2 \"Ab7\"B2 | \"Dbmaj7\"B4 z2 (3BBB | \"Ebm/Db\"(3:2:2BB2-B4- BB |\n\"Dbmaj7\"B4 z2 zB | \"Ebm/Db\"B4 \"Ebm7\"B2 \"Ab7\"B2 ||\nP:C\n|: \"Dbmaj7\"z4 \"F#m7\"z2 \"B7\"z2 | \"Emaj7\"z4 \"Cm7\"z2 \"F7\"z2 | \"Bbmaj7\"z4 \"Am7\"z2 \"D7\"z2 | \"Gmaj7\"z4 \"Ebm7\"z2 \"Ab7\"z2 |\n\"Dbmaj7\"z4 \"F#m7\"z2 \"B7\"z2 | \"Emaj7\"z4 \"Ebm7\"z2 \"Ab7\"z2 | \"Dbmaj7\"z8 | \"Ebm/Db\"z8 |\n\"Dbmaj7\"z8 | \"Ebm/Db\"z4 \"Ebm7\"z2 \"Ab7\"z2 :|\n%coda\n!coda!\"Dbmaj7\"B2 z2 z2 (3zBB | \"Ebm/Db\"B6- (3BBB | \"Dbmaj7\"BB- B4 (3zBB | \"Ebm/Db\"(3:2:2BB2-B2 z2 (3zBB |\n\"Dbmaj7\"B6- (3BBB | \"Ebm/Db\"B4 z2 (3zBB | \"Dbmaj7\"B4 z2 BB | \"Ebm/Db\"B7 B |\n!fermata!\"Dbmaj7\"B8 |]\n\n%unsure [bars 7-10] fill rhythms (rhythm-section kicks) printed above the staff not transcribed; 16th-note runs may be 32nds\n%unsure [bar 13] triplet grouping read loosely from the scan\n%unsure [bars 17-20] sample fill; rhythm approximate\n%unsure [bars 21-30] solo slashes written as rests with chords\n%unsure [bars 31-34] coda opens with a sample fill; triplet groupings approximate"
+},
+{
+"id": "New_Real_Book_Volume2/46-central-park-west",
+"book": "The New Real Book Vol. 2",
+"title": "Central Park West",
+"pdf": "46",
+"form": "ABC 10+10+10 (soprano; solos on C; after solos play B first, then D.C. al Coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "book: melody is rather freely interpreted"
+},
+{
+"bars": [
+1,
+2
+],
+"groups": [
+1,
+2
+],
+"text": "whole note over rhythm slashes in bar 1 (and bar 5)"
+},
+{
+"bars": [
+7,
+8,
+9,
+10
+],
+"groups": [
+7,
+8,
+9,
+10
+],
+"text": "rhythm-section hits (Dbmaj7, Ebm/Db) above the staff not transcribed"
+},
+{
+"bars": [
+13,
+18
+],
+"groups": [
+13,
+18
+],
+"text": "triplet groupings approximate; bars 14 have glissandi; bars 17-20 sample fill"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30
+],
+"groups": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30
+],
+"text": "solo changes in slashes, written as rests; after solos play B first then D.C. al Coda"
+},
+{
+"bars": [
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39
+],
+"groups": [
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39
+],
+"text": "coda sample fill; triplet groupings approximate; rhythm-section hits above staff not transcribed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Central Park West\nC:John Coltrane\nP:ABCBA\n%source New Real Book Vol 2 p37-38 (pdf 46-47)\n%style (Med. Ballad, q=72)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 10+10+10 (soprano; solos on C; after solos play B first, then D.C. al Coda)\n%unsure [general] book: melody is rather freely interpreted\nM:C\nL:1/8\nK:C\n\"Ebm7\"B2 \"Ab7\"B2 ||\nP:A\n\"Dbmaj7\"B4- \"F#m7\"B2- \"B7\"B2 | \"Emaj7\"B4 \"Cm7\"B2 \"F7\"B2 | \"Bbmaj7\"B2 B2 \"Am7\"B2 \"D7\"B2 | \"Gmaj7\"B4 \"Ebm7\"B2 \"Ab7\"B2 |\n\"Dbmaj7\"B4- \"F#m7\"B2- \"B7\"B2 | \"Emaj7\"B4 \"Ebm7\"B3 \"Ab7\"B | \"Dbmaj7\"B4 z2 z/B/B/B/ | \"Ebm/Db\"B7 B/B/ |\n\"Dbmaj7\"B4 z2 z/B/B/B/ | \"Ebm/Db\"B4 \"Ebm7\"B2 \"Ab7\"B2 ||\nP:B\n\"Dbmaj7\"B3 B \"F#m7\"B2 \"B7\"B2 | \"Emaj7\"B4 \"Cm7\"B2 \"F7\"B2 | \"Bbmaj7\"B2- (3BBB \"Am7\"BB \"D7\"(3BBB- | \"Gmaj7\"B4 \"Ebm7\"B2 \"Ab7\"B2 |\n\"Dbmaj7\"B3 B/B/ \"F#m7\"B2 \"B7\"BB | \"Emaj7\"B3 B/B/ \"Ebm7\"B2 \"Ab7\"B2 | \"Dbmaj7\"B4 z2 (3BBB | \"Ebm/Db\"(3:2:2BB2-B4- BB |\n\"Dbmaj7\"B4 z2 zB | \"Ebm/Db\"B4 \"Ebm7\"B2 \"Ab7\"B2 ||\nP:C\n|: \"Dbmaj7\"z4 \"F#m7\"z2 \"B7\"z2 | \"Emaj7\"z4 \"Cm7\"z2 \"F7\"z2 | \"Bbmaj7\"z4 \"Am7\"z2 \"D7\"z2 | \"Gmaj7\"z4 \"Ebm7\"z2 \"Ab7\"z2 |\n\"Dbmaj7\"z4 \"F#m7\"z2 \"B7\"z2 | \"Emaj7\"z4 \"Ebm7\"z2 \"Ab7\"z2 | \"Dbmaj7\"z8 | \"Ebm/Db\"z8 |\n\"Dbmaj7\"z8 | \"Ebm/Db\"z4 \"Ebm7\"z2 \"Ab7\"z2 :|\n%coda\n\"Dbmaj7\"B2 z2 z2 (3zBB | \"Ebm/Db\"B6 (3BBB | \"Dbmaj7\"BB- B4 (3zBB | \"Ebm/Db\"(3:2:2BB2-B2 z2 (3zBB |\n\"Dbmaj7\"B6- (3BBB | \"Ebm/Db\"B4 z2 (3zBB | \"Dbmaj7\"B4 z2 BB | \"Ebm/Db\"B7 B |\n\"Dbmaj7\"!fermata!B8 |]\n\n%unsure [bars 1-2] whole note over rhythm slashes in bar 1 (and bar 5)\n%unsure [bars 7-10] rhythm-section hits (Dbmaj7, Ebm/Db) above the staff not transcribed\n%unsure [bars 13, 18] triplet groupings approximate; bars 14 have glissandi; bars 17-20 sample fill\n%unsure [bars 21-30] solo changes in slashes, written as rests; after solos play B first then D.C. al Coda\n%unsure [bars 31-39] coda sample fill; triplet groupings approximate; rhythm-section hits above staff not transcribed"
+},
+{
+"id": "New_Real_Book_Volume2/048-charmed-circle",
+"book": "The New Real Book Vol. 2",
+"title": "Charmed Circle",
+"pdf": "48",
+"form": "Intro-A-B-C-D-E 9+12+12+8+9+12; solos on ABC, then D C E D al fine",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "bar counts per section counted, not printed"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"text": "piano chords over F# pedal, no chord symbols; top note rhythm only"
+},
+{
+"bars": [
+10,
+11,
+12,
+13,
+22,
+23,
+24,
+25,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41
+],
+"groups": [
+9,
+10,
+11,
+12,
+21,
+22,
+23,
+24,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40
+],
+"text": "top voice only; lower held notes in the voicing not transcribed"
+},
+{
+"bars": [
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62
+],
+"groups": [
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61
+],
+"text": "piano/bass/horn figures; rhythm-section kicks printed above not transcribed; groupings approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Charmed Circle\nC:Cedar Walton\nP:Intro A B C D E\n%source New Real Book Volume 2 p39-40 (pdf 48-49)\n%style (Med. Samba, half = 120)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form Intro-A-B-C-D-E 9+12+12+8+9+12; solos on ABC, then D C E D al fine\n%unsure [form] bar counts per section counted, not printed\nM:C|\nL:1/8\nK:D\n%intro\n|: B8- | B4 B3 B- | B8- | B4 B2 B2 |\nB8- | B4 B2 B2- | B8- |1 B4 (3z2B2B2 :|2\nB8 ||\nP:A\n|: !segno!\"Gmaj7b5\"B6 BB | B2 B2 B2 B2 | \"F#7sus\"B2 BB- B4- | B4 \"F#7\"B4 :|\n\"E/F#\"B4 \"F/G\"B4 | \"D/E\"B4 \"B/C#\"B3 \"C/D\"B- | B8- | B8 |\n\"B13#11\"B4 \"C13#11\"B4 | \"A13#11\"B4 \"F#13#11\"B3 \"G13sus\"B- | B8- | B8 ||\nP:B\n|: \"Cmaj7b5\"B6 BB | B2 B2 B2 B2 | \"B7sus\"B2 BB- B4- | B4 \"B7\"B4 :|\n\"B13#11\"B4 \"C13#11\"B4 | \"A13#11\"B4 \"F#13#11\"B3 \"G13sus\"B- | B8- | B8 |\n\"E/F#\"B4 \"F/G\"B4 | \"D/E\"B4 \"B/C#\"B3 \"C/D\"B- | B8- | B8 ||\nP:C\n\"Gmaj7b5\"B6 BB | B2 B2 B2 B2 | \"F#7sus\"B2 BB- B4- | B4 \"F#7\"B4 |\n\"Gmaj7b5\"B6 BB | B2 B2 B2 B2 | \"F#7sus\"B2 BB- B4- | B4 \"F#7\"B4 ||\nP:D\n|: B8- | B4 B3 B- | B8- | B4 B2 B2 |\nB8- | B4 B2 B2- | B8- |1 B4 (3z2B2B2 :|2\n!fermata!B8 ||\nP:E\n|: \"D13\"B2 BB BBBB- | B2 BB B2 BB | \"C13#11\"B2 BB BBBB- | B2 BB B2 BB :|\n:\"D13\"B2 (3BBB (3BBBBB | BBBB BB B2 | \"C13#11\"B2 (3BBB (3BBBBB | BBBB BB B2 :|\n:\"D13\"B2 BB BBBB- | BB/B/BB BBBB | \"C13#11\"B2 BB BBBB- | BB/B/BB BBBB :|\n\n%unsure [bars 1-9] piano chords over F# pedal, no chord symbols; top note rhythm only\n%unsure [bars 10-13, 22-25, 34-41] top voice only; lower held notes in the voicing not transcribed\n%unsure [bars 51-62] piano/bass/horn figures; rhythm-section kicks printed above not transcribed; groupings approximate"
+},
+{
+"id": "New_Real_Book_Volume2/48-charmed-circle",
+"book": "The New Real Book Vol. 2",
+"title": "Charmed Circle",
+"pdf": "48",
+"form": "Intro ABCDE (A, B with repeated first 4 bars) 16+16+8+8+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "\"Solos on ABC. After solos, play DCED al fine.\" Intro and D are the same figure; D ends with fine"
+},
+{
+"bars": [],
+"groups": [],
+"text": "intro is piano chords over F# pedal (key signature 2 sharps); rhythm of top voice only"
+},
+{
+"bars": [
+5,
+6,
+7,
+8,
+9
+],
+"groups": [
+4,
+5,
+6,
+7,
+8
+],
+"text": "intro written with repeat; repeat placement approximate"
+},
+{
+"bars": [
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50
+],
+"groups": [
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49
+],
+"text": "D (piano w/ horns) same as intro; 2nd ending is the fine"
+},
+{
+"bars": [
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62
+],
+"groups": [
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61
+],
+"text": "E is a bass-line riff (pn. w/ bs., then horns); eighth groupings and cue accents approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Charmed Circle\nC:Cedar Walton\nP:ABCDE\n%source New Real Book Vol 2 p39 (pdf 48-49)\n%style (Med. Samba, half=120)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form Intro ABCDE (A, B with repeated first 4 bars) 16+16+8+8+12\n%unsure [form] \"Solos on ABC. After solos, play DCED al fine.\" Intro and D are the same figure; D ends with fine\nM:C|\nL:1/8\nK:C\n%intro\n\"^(F# pedal)\"B8- | B4 B3 B- | B8- | B4 B2 B2 :|\n\"^(F# pedal)\"B8- | B4 B2 B2- | B8- |1 B4 (3z2B2B2 :|2\nB8 ||\nP:A\n|: \"Gmaj7b5\"B6 BB | B2 B2 B2 B2 | \"F#7sus\"B2 BB- B4- | B4 \"F#7\"B4 :|\n\"E/F#\"B4 \"F/G\"B4 | \"D/E\"B4 \"B/C#\"B3 \"C/D\"B- | B8- | B8 |\n\"B13#11\"B4 \"C13#11\"B4 | \"A13#11\"B4 \"F#13#11\"B3 \"G13sus\"B- | B8- | B8 ||\nP:B\n|: \"Cmaj7b5\"B6 BB | B2 B2 B2 B2 | \"B7sus\"B2 BB- B4- | B4 \"B7\"B4 :|\n\"B13#11\"B4 \"C13#11\"B4 | \"A13#11\"B4 \"F#13#11\"B3 \"G13sus\"B- | B8- | B8 |\n\"E/F#\"B4 \"F/G\"B4 | \"D/E\"B4 \"B/C#\"B3 \"C/D\"B- | B8- | B8 ||\nP:C\n\"Gmaj7b5\"B6 BB | B2 B2 B2 B2 | \"F#7sus\"B2 BB- B4- | B4 \"F#7\"B4 |\n\"Gmaj7b5\"B6 BB | B2 B2 B2 B2 | \"F#7sus\"B2 BB- B4- | B4 \"F#7\"B4 ||\nP:D\n|: \"^(F# pedal)\"B8- | B4 B3 B- | B8- | B4 B2 B2 |\n\"^(F# pedal)\"B8- | B4 B2 B2- | B8- |1 B4 (3z2B2B2 :|2\n!fermata!B8 ||\nP:E\n|: \"D13\"B2 BB BBBB- | B2 BB B2 BB | \"C13#11\"B2 BB BBBB- | B2 BB B2 BB :|\n:\"D13\"B2 (3BBB (3BBBBB | BBBB BB B2 | \"C13#11\"B2 (3BBB (3BBBBB | BBBB BB B2 :|\n:\"D13\"B2 BB BBBB- | BB/B/BB BBBB | \"C13#11\"B2 BB BBBB- | BB/B/BB BBBB :|\n\n%unsure [general] intro is piano chords over F# pedal (key signature 2 sharps); rhythm of top voice only\n%unsure [bars 5-9] intro written with repeat; repeat placement approximate\n%unsure [bars 42-50] D (piano w/ horns) same as intro; 2nd ending is the fine\n%unsure [bars 51-62] E is a bass-line riff (pn. w/ bs., then horns); eighth groupings and cue accents approximate"
+},
+{
+"id": "New_Real_Book_Volume2/050-cherokee",
+"book": "The New Real Book Vol. 2",
+"title": "Cherokee",
+"pdf": "50",
+"form": "AABC 16+16+16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+51,
+52
+],
+"groups": [
+50,
+51
+],
+"text": "last two bars are a solo break"
+},
+{
+"bars": [
+53,
+54,
+55,
+56
+],
+"groups": [
+52,
+53,
+54,
+55
+],
+"text": "coda: Dm7 break, then bass walks under C6; final chord trp./ten."
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Cherokee\nC:Ray Noble\nP:AABC\n%source New Real Book Volume 2 p41 (pdf 50)\n%style (Fast Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+16+16\nM:C\nL:1/8\nK:C\nP:A\n|: \"C6\"B8 | B4 B4 | \"C7\"B8 | B8 |\n\"Fmaj7\"B8 | \"Fmaj7\"B4 B4 | \"Bb9\"B8 | B8 |\n\"C6\"z4 B4 | \"(Em7)\"B4 \"(A7)\"B4 | \"D9\"B8 | B8 |1 \"Dm7\"B8 | \"A7b9\"B4 B4 | \"Dm7\"B8 | \"G7#5\"B8 :|2\n\"Dm7\"B8 | \"G7\"B4 B4 | \"C6\"B8- | B8 ||\nP:B\n\"Ebm7\"B8- | \"Ab7\"B4 B4 | \"Dbmaj7\"B2 B2 B4- | B8 |\n\"C#m7\"B2 B2 B4- | \"F#7\"B4 B4 | \"Bmaj7\"B8- | B8 |\n\"Bm7\"B8- | \"E7\"B4 B4 | \"Amaj7\"B2 B2 B4- | B4 B4 |\n\"Am7\"B2 B2 B4- | \"D7\"B4 B4 | \"Dm7\"B8 | \"G7#5\"B8 ||\nP:C\n\"C6\"B8 | B4 B4 | \"C7\"B8 | B8 |\n\"Fmaj7\"B8 | \"Fmaj7\"B4 B4 | \"Bb9\"B8 | B8 |\n\"C6\"z4 B4 | \"(Em7)\"B4 \"(A7)\"B4 | \"D9\"B8 | B8 |\n!coda!\"Dm7\"B8 | \"G7\"B4 B4 | \"C6\"!accent!B2 z2 z4 | \"(Dm7)\"z4 \"(G7)\"z4 |]\n%coda\n!coda!\"Dm7\"zB BB BB BB | B2 BB zB B2 | \"C6\"zB BB BB BB | B2 BB zB \"C13#11\"!fermata!B2 |]\n\n%unsure [bars 51-52] last two bars are a solo break\n%unsure [bars 53-56] coda: Dm7 break, then bass walks under C6; final chord trp./ten."
+},
+{
+"id": "New_Real_Book_Volume2/50-cherokee",
+"book": "The New Real Book Vol. 2",
+"title": "Cherokee",
+"pdf": "50",
+"form": "AABC 16+16+16+16 (C is the last A with a coda; standard AABA)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+51,
+52
+],
+"groups": [
+50,
+51
+],
+"text": "solo break after the last note; parenthesized chords are optional"
+},
+{
+"bars": [
+53,
+54,
+55,
+56
+],
+"groups": [
+52,
+53,
+54,
+55
+],
+"text": "coda: bar 53 is a break, bars 55-56 bass walks; last note is trumpet/tenor fermata"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Cherokee\nC:Ray Noble\nP:AABC\n%source New Real Book Vol 2 p41 (pdf 50)\n%style (Fast Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+16+16 (C is the last A with a coda; standard AABA)\nM:C\nL:1/8\nK:C\nP:A\n|: \"C6\"B8 | B4 B4 | \"C7\"B8 | B8 |\n\"Fmaj7\"B8 | \"Fmaj7\"B4 B4 | \"Bb9\"B8 | B8 |\n\"C6\"z4 B4 | \"(Em7)\"B4 \"(A7)\"B4 | \"D9\"B8 | B8 |1 \"Dm7\"B8 | \"A7b9\"B4 B4 | \"Dm7\"B8 | \"G7#5\"B8 :|2\n\"Dm7\"B8 | \"G7\"B4 B4 | \"C6\"B8- | B8 ||\nP:B\n\"Ebm7\"B8- | \"Ab7\"B4 B4 | \"Dbmaj7\"B2 B2 B4- | B8 |\n\"C#m7\"B2 B2 B4- | \"F#7\"B4 B4 | \"Bmaj7\"B8- | B8 |\n\"Bm7\"B8- | \"E7\"B4 B4 | \"Amaj7\"B2 B2 B4- | B4 B4 |\n\"Am7\"B2 B2 B4- | \"D7\"B4 B4 | \"Dm7\"B8 | \"G7#5\"B8 ||\nP:C\n\"C6\"B8 | B4 B4 | \"C7\"B8 | B8 |\n\"Fmaj7\"B8 | \"Fmaj7\"B4 B4 | \"Bb9\"B8 | B8 |\n\"C6\"z4 B4 | \"(Em7)\"B4 \"(A7)\"B4 | \"D9\"B8 | B8 |\n!coda!\"Dm7\"B8 | \"G7\"B4 B4 | \"C6\"!accent!B2 z2 z4 | \"(Dm7)\"z4 \"(G7)\"z4 |]\n%coda\n!coda!\"Dm7\"zB BB BB BB | B2 BB zB B2 | \"C6\"zB BB BB BB | B2 BB zB \"C13#11\"!fermata!B2 |]\n\n%unsure [bars 51-52] solo break after the last note; parenthesized chords are optional\n%unsure [bars 53-56] coda: bar 53 is a break, bars 55-56 bass walks; last note is trumpet/tenor fermata"
+},
+{
+"id": "New_Real_Book_Volume2/051-a-child-is-born",
+"book": "The New Real Book Vol. 2",
+"title": "A Child Is Born",
+"pdf": "51",
+"form": "AB 16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+33,
+34
+],
+"groups": [
+32,
+33
+],
+"text": "optional 2 extra bars at the end of each chorus"
+},
+{
+"bars": [],
+"groups": [],
+"text": "coda sign has no \"to coda\" instruction printed; coda presumably taken at the end of the last chorus"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:A Child Is Born\nC:Thad Jones\nP:AB\n%source New Real Book Volume 2 p42 (pdf 51)\n%style (Waltz Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16\nM:3/4\nL:1/8\nK:C\nP:A\n|: \"Cmaj7\"B6 | \"Fm6/C\"B2 B2 B2 | \"Cmaj7\"B6 | \"Fm6/C\"B2 B2 B2 |\n\"Cmaj7\"B6 | \"Fm6/C\"B2 B2 \"C\"B2 | \"Bm7b5\"B6 | \"E7#9\"B6 |\n\"Am\"B6 | \"E7b9\"B2 B2 B2 | \"Am\"B6 | \"E7b9\"B2 B2 B2 |\n\"Am7\"B6 | \"D7\"B2 B2 B2 | \"Fmaj7/G\"B6 | \"G7\"B4- BB ||\nP:B\n\"Cmaj7\"B6 | \"Fm6/C\"B2 B2 B2 | \"Cmaj7\"B6 | \"Fm6/C\"B2 B2 B2 |\n\"Cmaj7\"B6 | \"E7#9#5\"B2 B2 B2 | \"Fmaj9\"B6 | \"Bb9\"B4 \"Dm7b5/Ab\"B2 |\n\"Cmaj7/G\"B6 | \"Fm6/Ab\"B2 B2 B2 | \"Am7\"B6 | \"D7\"B2 B2 B2 |\n\"Fmaj7/G\"B6 | \"G7\"B6 :| !coda!\"Cmaj7\"z6 | \"Fm6/C\"z6 |]\n%coda\n!coda!\"Cmaj7\"B6 | \"Fm6/C\"B2 B2 B2 | \"Cmaj7\"B6 | \"Fm6/C\"B2 B2 B2 |\n!fermata!\"Cmaj7\"B6 |]\n\n%unsure [bars 33-34] optional 2 extra bars at the end of each chorus\n%unsure [form] coda sign has no \"to coda\" instruction printed; coda presumably taken at the end of the last chorus"
+},
+{
+"id": "New_Real_Book_Volume2/51-a-child-is-born",
+"book": "The New Real Book Vol. 2",
+"title": "A Child Is Born",
+"pdf": "51",
+"form": "AB 16+16 (repeat; B ends with 2 optional extra bars before the repeat)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "repeat sign covers A and B together; last time to coda"
+},
+{
+"bars": [
+31,
+32
+],
+"groups": [
+30,
+31
+],
+"text": "optional 2 extra bars (rests) after the repeat"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:A Child Is Born\nC:Thad Jones\nP:ABAB\n%source New Real Book Vol 2 p42 (pdf 51)\n%style (Waltz Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16 (repeat; B ends with 2 optional extra bars before the repeat)\n%unsure [form] repeat sign covers A and B together; last time to coda\nM:3/4\nL:1/8\nK:C\nP:A\n|: \"Cmaj7\"B6 | \"Fm6/C\"B2 B2 B2 | \"Cmaj7\"B6 | \"Fm6/C\"B2 B2 B2 |\n\"Cmaj7\"B6 | \"Fm6/C\"B2 B2 \"C\"B2 | \"Bm7b5\"B6 | \"E7#9\"B6 |\n\"Am\"B6 | \"E7b9\"B2 B2 B2 | \"Am\"B6 | \"E7b9\"B2 B2 B2 |\n\"Am7\"B6 | \"D7\"B2 B2 B2 | \"Fmaj7/G\"B6 | \"G7\"B4- BB ||\nP:B\n\"Cmaj7\"B6 | \"Fm6/C\"B2 B2 B2 | \"Cmaj7\"B6 | \"Fm6/C\"B2 B2 B2 |\n\"Cmaj7\"B6 | \"E7#9#5\"B2 B2 B2 | \"Fmaj9\"B6 | \"Bb9\"B4 \"Dm7b5/Ab\"B2 |\n\"Cmaj7/G\"B6 | \"Fm6/Ab\"B2 B2 B2 | \"Am7\"B6 | \"D7\"B2 B2 B2 |\n\"Fmaj7/G\"B6 | \"G7\"B6 :| \"Cmaj7\"z6 | \"Fm6/C\"z6 |]\n%coda\n!coda!\"Cmaj7\"B6 | \"Fm6/C\"B2 B2 B2 | \"Cmaj7\"B6 | \"Fm6/C\"B2 B2 B2 |\n\"Cmaj7\"!fermata!B6 |]\n\n%unsure [bars 31-32] optional 2 extra bars (rests) after the repeat"
+},
+{
+"id": "New_Real_Book_Volume2/052-choices",
+"book": "The New Real Book Vol. 2",
+"title": "Choices",
+"pdf": "52",
+"form": "AAB 30+30+20 (printed \"Solo on form (AAB)\")",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "bar counts per section counted, not printed"
+},
+{
+"bars": [
+10,
+27
+],
+"groups": [
+9,
+26
+],
+"text": "quarter-note triplet figures; grouping of the last four notes approximate"
+},
+{
+"bars": [
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52
+],
+"groups": [
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51
+],
+"text": "Dmaj7#11 rhythm-section kicks printed above the staff not transcribed; last eighth is optional (parenthesised); solo on AAB, then D.S. al 2nd ending al fine"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Choices\nC:Mike Stern (as played by Michael Brecker)\nP:AAB\n%source New Real Book Volume 2 p43-44 (pdf 52-53)\n%style (Med. Straight 8th's, half = 89)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AAB 30+30+20 (printed \"Solo on form (AAB)\")\n%unsure [form] bar counts per section counted, not printed\nM:C|\nL:1/8\nK:D\n\"N.C.\"z4 z2 zB |\nP:A\n|: !segno!\"C#/D\"B8- | B4 B4- | B8- | B7 B |\n\"Amaj7#5/D\"B8- | B8- | B8- | B7 B |\n(3:2:2B4B2(3:2:4B2B2BB | \"Cm7\"B4 B4- | B8- | \"C#m7\"B8 |\nB4 B4- | \"(C#m7)\"B8- | B8 | z8 |\nz4 z2 zB | \"Bm7b5\"B8- | B4 \"C/Bb\"B4- | \"G#7sus\"B8- |\nB7 B | \"F#7sus\"B8- | B8- | B8- |\nB7 B | \"Fm(maj7)\"(3:2:2B4B2(3:2:4B2B2BB | \"E7#9\"B8- | B8- |\nB8 |1 z4 z2 zB :|2 \"E7#9\"B4 B4- ||\nP:B\n\"Am7\"B8 | B4 B4 | \"C/Ab\"B8- | B4 B4 |\n\"G/Eb\"B7 B | \"A/F\"B8- | B8- | B7 B |\n\"Gmaj7\"B4 B4- | B4 B4 | \"G#m7\"B8 | \"C#m7\"B4 B4- |\n\"Dmaj7#11\"B8- | B8 | z8 | z8 |\n\"Dmaj7#11\"z8 | z8 | z8 | z4 z2 zB |]\n\n%unsure [bars 10, 27] quarter-note triplet figures; grouping of the last four notes approximate\n%unsure [bars 45-52] Dmaj7#11 rhythm-section kicks printed above the staff not transcribed; last eighth is optional (parenthesised); solo on AAB, then D.S. al 2nd ending al fine"
+},
+{
+"id": "New_Real_Book_Volume2/52-choices",
+"book": "The New Real Book Vol. 2",
+"title": "Choices",
+"pdf": "52",
+"form": "AAB 28+28+20 (book: \"Solo on form (AAB). After solos, D.S. al 2nd ending al fine.\")",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the chart; key signature is 2 sharps"
+},
+{
+"bars": [
+10
+],
+"groups": [
+9
+],
+"text": "two quarter-note triplets; the last two notes may be eighths"
+},
+{
+"bars": [
+27
+],
+"groups": [
+26
+],
+"text": "same triplet reading as bar 10"
+},
+{
+"bars": [
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52
+],
+"groups": [
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51
+],
+"text": "cue rhythm marks over the rests (quarter hits) not transcribed; last bar has an optional Bb eighth pickup; fine at bar 49"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Choices\nC:Mike Stern\nP:AAB\n%source New Real Book Vol 2 p43-44 (pdf 52-53)\n%style (Med. Straight 8th's, half=89)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AAB 28+28+20 (book: \"Solo on form (AAB). After solos, D.S. al 2nd ending al fine.\")\n%unsure [form] section lengths counted from the chart; key signature is 2 sharps\nM:C|\nL:1/8\nK:D\n\"N.C.\"z4 z2 zB |\nP:A\n|: \"C#/D\"B8- | B4 B4- | B8- | B7 B |\n\"Amaj7#5/D\"B8- | B8- | B8- | B7 B |\n(3B4B2(3B2B2B2 | \"Cm7\"B4 B4- | B8- | \"C#m7\"B8 |\nB4 B4- | \"(C#m7)\"B8- | B8 | z8 |\nz4 z2 zB | \"Bm7b5\"B8- | B4 \"C/Bb\"B4- | \"G#7sus\"B8- |\nB7 B | \"F#7sus\"B8- | B8- | B8- |\nB7 B | \"Fm(maj7)\"(3B4B2(3B2B2B2 | \"E7#9\"B8- | B8- |\nB8 |1 z4 z2 zB :|2 \"E7#9\"B4 B4- ||\nP:B\n\"Am7\"B8- | B4 B4 | \"C/Ab\"B8- | B4 B4 |\n\"G/Eb\"B6 B2 | \"A/F\"B8- | \"A/F\"B8- | B7 B |\n\"Gmaj7\"B4 B4- | B4 B4 | \"G#m7\"B8 | \"C#m7\"B4 B4- |\n\"Dmaj7#11\"B8- | B8 | z8 | z8 |\n\"Dmaj7#11\"z8 | z8 | z8 | z8 |]\n\n%unsure [bar 10] two quarter-note triplets; the last two notes may be eighths\n%unsure [bar 27] same triplet reading as bar 10\n%unsure [bars 45-52] cue rhythm marks over the rests (quarter hits) not transcribed; last bar has an optional Bb eighth pickup; fine at bar 49"
+},
+{
+"id": "New_Real_Book_Volume2/055-chromazone",
+"book": "The New Real Book Vol. 2",
+"title": "Chromazone",
+"pdf": "54",
+"form": "ABCDEFGHI+Coda 4+4+4+5+9+11+25+10+25+Coda",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 11,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred from boxed letters and D.S. text: after I, D.S. play F, B, C, D al Coda; exact jump order and section bar counts guessed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "job page was pdf 55 but the tune starts on pdf 54 (printed p45); transcribed pdf 54-55"
+},
+{
+"bars": [
+3,
+4,
+5
+],
+"groups": [
+3,
+4,
+5
+],
+"text": "16th groupings of the second line read quickly from a busy scan"
+},
+{
+"bars": [
+11,
+12,
+13,
+14
+],
+"groups": [
+11,
+12,
+13,
+14
+],
+"text": "C section 32nd/16th groupings guessed so bars add up"
+},
+{
+"bars": [
+19,
+20
+],
+"groups": [
+19,
+20
+],
+"text": "F#7 bars: 16th/rest pattern approximated"
+},
+{
+"bars": [
+23,
+24,
+25,
+26,
+27,
+28,
+29
+],
+"groups": [
+23,
+24,
+25,
+26,
+27,
+28,
+29
+],
+"text": "E section rhythms approximated; last bar padded with a rest"
+},
+{
+"bars": [
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46
+],
+"groups": [
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46
+],
+"text": "F section: grace notes dropped, 16th-rest pickups and accent hits (Ab13 G7) approximated; last pickup only on the jump to G"
+},
+{
+"bars": [
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71
+],
+"groups": [
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71
+],
+"text": "solo section: multi-bar rests (16, 7) and slashes written as rests with chords"
+},
+{
+"bars": [
+19,
+80
+],
+"groups": [
+19,
+80
+],
+"text": "printed 2/4 bars (checker counts them short); bar 80 rhythm approximated"
+},
+{
+"bars": [
+82,
+83,
+84,
+85,
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97,
+98,
+99,
+100,
+101,
+102,
+103,
+104,
+105,
+106
+],
+"groups": [
+82,
+83,
+84,
+85,
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97,
+98,
+99,
+100,
+101,
+102,
+103,
+104,
+105,
+106
+],
+"text": "solo section: multi-bar rests written out as rests with chords"
+},
+{
+"bars": [
+107
+],
+"groups": [
+107
+],
+"text": "coda first bar rhythm approximated"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Chromazone\nC:Mike Stern\nP:ABCDEFGHIFBCD\n%source New Real Book Volume 2 p45-46 (pdf 54-55)\n%style (Med. Funk, quarter = 120)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCDEFGHI+Coda 4+4+4+5+9+11+25+10+25+Coda\n%unsure [form] form inferred from boxed letters and D.S. text: after I, D.S. play F, B, C, D al Coda; exact jump order and section bar counts guessed\n%unsure [general] job page was pdf 55 but the tune starts on pdf 54 (printed p45); transcribed pdf 54-55\nM:4/4\nL:1/8\nK:C\n%intro (gtr. & ten.)\nz/B/B/B/ |:\nP:A\n\"N.C.\"\"(Cm7)\"B/B/B z/B/B z/B/B/B/ B/B/B/B/ | B/B/B z/B/B/B/ B/B/B/B/ B/B/B/B/ | \"N.C.\"\"(Cm7)\"z/BB/ B/B/z/B/ B/B/B/B/ B/B/B/B/ |1 B/B/B/B/ B/B/B z2 z/B/B/B/ :|2\nB/B/B/B/ B/B/B/B/ B/B/B z/B/B/B/ |\nP:B\n|: \"N.C.\"\"(Cm7)\"(3B/B/B/B z/B/B z/B/B/B/ B/B/B/B/ | (3B/B/B/B z/B/B/B/ B/B/B/B/ B/B/B/B/ | \"N.C.\"\"(Cm7)\"z/BB/ B/B/z/B/ B/B/B/B/ B/B/B/B/ |1 B/B/B/B/ B/B/B z2 z/B/B/B/ :|2\nB/B/B/B/ B/B/B/B/ B/B/B/B/ B/B/B/B/ |\nP:C\n|: \"Ebm7\"B/B/B/B/ B/B/B/B/ B3/2B/ zB/B/ | B/4B/4B/4B/4B/4B/4B/4B/4 B/B/B/B/ B/B/B/B/ z/BB/ | z/B/B/B/ B/B/B/B/ B3/2B/ zB/B/ |1 \"Ebm7\"B/4B/4B/4B/4B/4B/4B/4B/4 B/B/B/B/ z/B/B/B/ z/B/B/B/ :|2\n\"Ebm7\"B/4B/4B/4B/4B/4B/4B/4B/4 B/B/B/B/ B/B/B/B/ B/B/B/B/ |\nP:D\n\"Cm7\"B/B/B z/B/B z/B/B/B/ B/B/B/B/ | B/B/B z/B/B/B/ B/B/B/B/ B/B/B/B/ | \"Cm7\"z/BB/ \"F7\"B/B/z/B/ \"Bb7\"B/B/B/B/ \"A7\"B/B/B/B/ | [M:2/4]\"Ab7\"B/B/B/B/ \"G7\"B/B/B/B/ |\n[M:4/4]\"F#7#9#5\"B/B/z/B/ B/B/z/B/ B/B/z/B/ B/B/z/B/ | !coda!B/B/z/B/ B/B/z/B/ B/B/z/B/ z/B/B |\nP:E\n\"Bm\"z/BB/ B3/2B/ z2 z/BB/ | z/BB/ BB B/B/B z/B/B/B/ | z/BB/ B2 \"A9sus\"B2 \"D/Bb\"B\"A13\"B | \"Eb/Ab\"B2 \"G7\"(3B/B/B/B/B/- \"F#7#5\"Bz/B/ B3/2B/ |\n\"Bm\"z/BB/ B3/2B/ z2 z/BB/ | z/BB/ BB B/B/B z/B/B/B/ | \"Bm\"z/BB/ B2 \"A9sus\"B\"D/Bb\"B \"Bm7\"B2 | \"C7\"B2 \"C#7\"(3B/B/B/B/B/ B/B/B/B/ B2- |\n\"D7\"B2 BB BB z2 | !segno!\nP:F\n\"G7\"z/B/z \"Ab7\"B/B/B/B/ \"A7#5\"z2 \"Bb7\"B/B/B/B/ | \"G7\"z/B/z \"Ab7\"BB \"A7#5\"z2 \"Bb7\"B/B/B/B/ | \"G7\"z/B/z \"Ab7\"B2 \"A7#5\"B2 \"Bbmaj7\"B2 | \"Bmaj7\"B2 \"C7#5\"B/B/B/B/ B/B/-\"F/Db\"B z/B/B3/4B/4 |\n\"G7\"z/B/B \"Ab7\"B/B/B/B/ \"A7#5\"z2 \"Bb7\"B/B/B/B/ | \"G7\"z/B/z \"Ab7\"BB \"A7#5\"z2 \"Bb7\"B/B/B/B/ | \"G7\"z/B/z \"Ab7\"B2 \"A7#5\"B2 \"Bbmaj7\"B2 | \"Bmaj7\"B2 \"C7#5\"(3B/B/B/B/B/ B/B/B/B/ B2- |\n\"Db7#5\"B4- \"D7#9#5\"B4- | \"Eb9\"B8- | \"D7#9\"B6 B2 | \"Eb9\"B8- |\n\"D7#9\"B6 B/B/B/B/ | z2 \"Eb9\"B6- | \"D7#9\"B6 B2 | \"Bbm7\"B4- \"A7#9#5\"B4- |\n\"Ab13\"B4 \"G7#9#5\"z2 \"F#m7\"z/B/B/B/ |\nP:G\n%Tenor solo\n|: \"F#m7\"z8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 |\n\"Am7\"z8 | z8 | z8 | z8 |\nz8 | z8 | z8 |1 \"Am7\"z8 :|2\n\"Am7\"z6 \"Ab7\"B/B/B/B/ |\nP:H\n\"G7\"z/B/z \"Ab7\"B/B/B/B/ \"A7#5\"z2 \"Bb7\"B/B/B/B/ | \"G7\"z/B/z \"Ab7\"BB \"A7#5\"z2 \"Bb7\"B/B/B/B/ | \"G7\"z/B/z \"Ab7\"B2 \"A7#5\"B2 \"Bbmaj7\"B2 | \"Bmaj7\"B2 \"C7#5\"B/B/B/B/ B/B/-\"F/Db\"B z/B/B3/4B/4 |\n\"G7\"z/B/B \"Ab7\"B/B/B/B/ \"A7#5\"z2 \"Bb7\"B/B/B/B/ | \"G7\"z/B/z \"Ab7\"BB \"A7#5\"z2 \"Bb7\"B/B/B/B/ | \"G7\"z/B/z \"Ab7\"B2 \"A7#5\"B2 \"Bbmaj7\"B2 | [M:2/4]\"Bmaj7\"z\"C7#5\"(3B/B/B/ B/B/B- |\n[M:4/4]\"Db7\"B8- | B8 |\nP:I\n%Guitar solo\n|: \"Cm7\"z8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 |\n\"Ebm7\"z8 | z8 | z8 | z8 |\nz8 | z8 | z8 |1 \"Ebm7\"z8 :|2\n\"Ebm7\"z6 \"Ab7\"B/B/B/B/ |\n%D.S., play F, B, C, D al Coda\n%coda\n\"F#7#9#5\"B/B/z/B/ B/B/z/B/ B/B/z/B/ B2 |: \"Cm7\"z8 | z8 | z8 | z8 :|\n%Vamp, solo & fade\n\n%unsure [bars 3-5] 16th groupings of the second line read quickly from a busy scan\n%unsure [bars 11-14] C section 32nd/16th groupings guessed so bars add up\n%unsure [bars 19-20] F#7 bars: 16th/rest pattern approximated\n%unsure [bars 23-29] E section rhythms approximated; last bar padded with a rest\n%unsure [bars 30-46] F section: grace notes dropped, 16th-rest pickups and accent hits (Ab13 G7) approximated; last pickup only on the jump to G\n%unsure [bars 47-71] solo section: multi-bar rests (16, 7) and slashes written as rests with chords\n%unsure [bars 19, 80] printed 2/4 bars (checker counts them short); bar 80 rhythm approximated\n%unsure [bars 82-106] solo section: multi-bar rests written out as rests with chords\n%unsure [bar 107] coda first bar rhythm approximated"
+},
+{
+"id": "New_Real_Book_Volume2/55-chromazone",
+"book": "The New Real Book Vol. 2",
+"title": "Chromazone",
+"pdf": "54",
+"form": "ABCDEFGHI with D.S./D.S.S. roadmap (see notes)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 9,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "G (tenor) and I (guitar) are solo sections; \"On D.S., D.S.S. al Coda\"; after I: \"D.S., play F, B, C, D al Coda\"; coda vamps on Cm7 and fades"
+},
+{
+"bars": [],
+"groups": [],
+"text": "dense 16th-note funk lines; many 16th/eighth groupings are approximate and should be checked against the page"
+},
+{
+"bars": [
+24
+],
+"groups": [
+24
+],
+"text": "printed 2/4 bar"
+},
+{
+"bars": [
+44,
+45,
+46
+],
+"groups": [
+44,
+45,
+46
+],
+"text": "8va line; chord placement in bar 43 squeezed (Db7#5, D7#9#5 on the tied notes)"
+},
+{
+"bars": [
+50,
+51
+],
+"groups": [
+50,
+51
+],
+"text": "cue hits (Bbm7, A7#9#5, Ab13, G7#9#5) over held note and rests not transcribed; F#m7 pickup is in parentheses (first time only)"
+},
+{
+"bars": [
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76
+],
+"groups": [
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76
+],
+"text": "tenor solo: 16 bars F#m7, 7 bars Am7 (printed as multi-bar rests), endings with slashes"
+},
+{
+"bars": [
+84,
+85
+],
+"groups": [
+84,
+85
+],
+"text": "bar 84 is a printed 2/4 bar; tie placement approximate"
+},
+{
+"bars": [
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97,
+98,
+99,
+100,
+101,
+102,
+103,
+104,
+105,
+106,
+107,
+108,
+109,
+110,
+111
+],
+"groups": [
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97,
+98,
+99,
+100,
+101,
+102,
+103,
+104,
+105,
+106,
+107,
+108,
+109,
+110,
+111
+],
+"text": "guitar solo: 16 bars Cm7, 7 bars Ebm7 (multi-bar rests); then D.S., play F, B, C, D al Coda"
+},
+{
+"bars": [
+112,
+113,
+114,
+115,
+116
+],
+"groups": [
+112,
+113,
+114,
+115,
+116
+],
+"text": "coda vamp, solo & fade (4-bar rest)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Chromazone\nC:Mike Stern\nP:ABCDEFGHI\n%source New Real Book Vol 2 p45-46 (pdf 54-55)\n%style (Med. Funk, q=120)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCDEFGHI with D.S./D.S.S. roadmap (see notes)\n%unsure [form] G (tenor) and I (guitar) are solo sections; \"On D.S., D.S.S. al Coda\"; after I: \"D.S., play F, B, C, D al Coda\"; coda vamps on Cm7 and fades\n%unsure [general] dense 16th-note funk lines; many 16th/eighth groupings are approximate and should be checked against the page\nM:C\nL:1/16\nK:C\nzBBB |\nP:A\n|: \"N.C.\"\"(Cm7)\"BBB2 zBB2 zBBB BBBB | BBBB BBBB BBBB BBBB | BBB2 zBB2 zBBB BBBB | BBBB BBBB BBBB BBBB |\n\"N.C.\"\"(Cm7)\"zB2B BBzB BBBB BBBB |1 BBBB BBB2 z4 zBBB :|2 BBBB BBBB BBB2 zBBB ||\nP:B\n|: \"N.C.\"\"(Cm7)\"(3BBBB2 zBB2 zBBB BBBB | BBBB BBBB BBBB BBBB | (3BBBB2 zBBB BBBB BBBB | BBBB BBBB BBBB BBBB |\n\"N.C.\"\"(Cm7)\"zB2B BBzB BBBB BBBB |1 BBBB BBB2 z4 zBBB :|2 BBBB BBBB BBBB BBBB ||\nP:C\n|: \"Ebm7\"BBBB BBBB B3z zBB2 | BBBB BBBB BBBB zB2B | zBBB BBBB B3z zBB2 |1 \"Ebm7\"BBBB BBBB zBBB zBBB :|2\n\"Ebm7\"BBBB BBBB BBBB zBBB ||\nP:D\n\"Cm7\"BBB2 zBB2 zBBB BBBB | BBBB BBBB BBBB BBBB | BBB2 zBB2 zBBB BBBB | \"Cm7\"zB2B \"F7\"BBBB \"Bb7\"BBBB \"A7\"BBBB |\n[M:2/4]\"Ab7\"BBBB \"G7\"BBBB | [M:4/4]\"F#7#9#5\"BBzB BBzB BBzB BBzB | !coda!BBzB BBzB BBzB B3B ||\nP:E\n\"Bm\"zB2B B3B z4 zB2B | zB2B B2B2 BBB2 zBBB | zB2B B2\"A9sus\"B2 \"D/Bb\"B4 \"A13\"B4 | \"Eb/Ab\"B4 \"G7\"(3BBBBB- \"F#7#5\"BBz2 zB2B |\n\"Bm\"zB2B B3B z4 zB2B | zB2B B2B2 BBB2 zBBB | \"Bm\"zB2B B4 \"A9sus\"B2\"D/Bb\"B2 \"Bm7\"B4 | \"C7\"B4 \"C#7\"(3BBBBB BBB2 B4- |\n\"D7\"B4 B2B2 B2B2 B4 ||\nP:F\n!segno!\"G7\"zBz2 \"Ab7\"BBBB \"A7#5\"B2z2 \"Bb7\"BBBB | \"G7\"zBz2 \"Ab7\"B2B2 \"A7#5\"z4 \"Bb7\"BBBB | \"G7\"zBz2 \"Ab7\"B4 \"A7#5\"B4 \"Bbmaj7\"B4 | \"Bmaj7\"B4 \"C7#5\"BBBB \"F/Db\"B4 zB2B |\n\"G7\"zB2B \"Ab7\"BBBB \"A7#5\"B2z2 \"Bb7\"BBBB | \"G7\"zBz2 \"Ab7\"B2B2 \"A7#5\"z4 \"Bb7\"BBBB | \"G7\"zBz2 \"Ab7\"B4 \"A7#5\"B4 \"Bbmaj7\"B4 | \"Bmaj7\"B4 \"C7#5\"(3BBBBB B4 \"Db7#5\"B2\"D7#9#5\"B2- |\nB8 \"Eb9\"B8- | \"D7#9\"B12 B4 | \"Eb9\"B16- | \"D7#9\"B12 BBBB |\n\"Eb9\"z4 B12- | \"D7#9\"B12 B4 | \"Bbm7\"B16- | \"A7#9#5\"B8 \"Ab13\"z2\"G7#9#5\"z2 \"F#m7\"zBBB ||\nP:G\n|: \"F#m7\"z16 | z16 | z16 | z16 |\nz16 | z16 | z16 | z16 |\nz16 | z16 | z16 | z16 |\nz16 | z16 | z16 | z16 |\n\"Am7\"z16 | z16 | z16 | z16 |\nz16 | z16 | z16 |1 \"Am7\"z16 :|2\n\"Am7\"z12 \"Ab7\"BBBB ||\nP:H\n\"G7\"zBz2 \"Ab7\"BBBB \"A7#5\"B2z2 \"Bb7\"BBBB | \"G7\"zBz2 \"Ab7\"B2B2 \"A7#5\"z4 \"Bb7\"BBBB | \"G7\"zBz2 \"Ab7\"B4 \"A7#5\"B4 \"Bbmaj7\"B4 | \"Bmaj7\"B4 \"C7#5\"BBBB \"F/Db\"B4 zB2B |\n\"G7\"zB2B \"Ab7\"BBBB \"A7#5\"B2z2 \"Bb7\"BBBB | \"G7\"zBz2 \"Ab7\"B2B2 \"A7#5\"z4 \"Bb7\"BBBB | \"G7\"zBz2 \"Ab7\"B4 \"A7#5\"B4 \"Bbmaj7\"B4 | [M:2/4]\"Bmaj7\"B4 \"C7#5\"(3BBBBB |\n[M:4/4]B4- \"Db7\"B12- | B16 ||\nP:I\n|: \"Cm7\"z16 | z16 | z16 | z16 |\nz16 | z16 | z16 | z16 |\nz16 | z16 | z16 | z16 |\nz16 | z16 | z16 | z16 |\n\"Ebm7\"z16 | z16 | z16 | z16 |\nz16 | z16 | z16 |1 \"Ebm7\"z16 :|2\n\"Ebm7\"z12 \"Ab7\"BBBB |]\n%coda\n!coda!\"F#7#9#5\"BBzB BBzB BBzB B4 |: \"Cm7\"z16 | z16 | z16 | z16 :|\n\n%unsure [bar 24] printed 2/4 bar\n%unsure [bars 44-46] 8va line; chord placement in bar 43 squeezed (Db7#5, D7#9#5 on the tied notes)\n%unsure [bars 50-51] cue hits (Bbm7, A7#9#5, Ab13, G7#9#5) over held note and rests not transcribed; F#m7 pickup is in parentheses (first time only)\n%unsure [bars 52-76] tenor solo: 16 bars F#m7, 7 bars Am7 (printed as multi-bar rests), endings with slashes\n%unsure [bars 84-85] bar 84 is a printed 2/4 bar; tie placement approximate\n%unsure [bars 87-111] guitar solo: 16 bars Cm7, 7 bars Ebm7 (multi-bar rests); then D.S., play F, B, C, D al Coda\n%unsure [bars 112-116] coda vamp, solo & fade (4-bar rest)"
+},
+{
+"id": "New_Real_Book_Volume2/056-clockwise",
+"book": "The New Real Book Vol. 2",
+"title": "Clockwise",
+"pdf": "56",
+"form": "AB 18+3 (A: 10 bars + 1st/2nd endings of 6 bars; B: 3 bars played 4 times)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred from boxed letters; solo on A, after solos D.C., play AB and ending"
+},
+{
+"bars": [
+23,
+24
+],
+"groups": [
+23,
+24
+],
+"text": "the F#maj7 / Gmaj7 trill is drawn across one bar with two dotted halves; written as two bars"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Clockwise\nC:Cedar Walton\nP:AB\n%source New Real Book Volume 2 p47 (pdf 56)\n%style (Med. Jazz Waltz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 18+3 (A: 10 bars + 1st/2nd endings of 6 bars; B: 3 bars played 4 times)\n%unsure [form] form inferred from boxed letters; solo on A, after solos D.C., play AB and ending\nM:3/4\nL:1/8\nK:C\nB |:\nP:A\n\"Gbmaj7\"B4- BB | \"C13b9\"B4- BB | \"Fmaj7\"B4- BB | \"B13b9\"B4- BB |\n\"Emaj7\"B4- BB | \"Bb13b9\"B4- BB | \"Ebmaj7\"B3 B3 | \"Gm7b5\"B3- \"C7b9b5\"B3 |\n\"Bmaj7\"z2 zB B/B/B/B/ | \"Bb7\"B4 B2 |1 \"Ebm7\"B2 BB- B2- | \"Ab13b9\"B4- BB |\n\"Gmaj7\"B4 (3BBB | \"Fm7\"B3- \"Bb7\"B3 | \"Ebmaj7\"B4 (3BBB | \"Abm7\"B4- B\"Db7\"B :|2\n\"Ebm\"B4 \"Ebm/Db\"B2 | \"Cm7\"B3- \"F7\"B3 | \"Bm7b5\"B2 B2 B2 | \"E7\"B2 B2 B2 |\n\"Amaj7\"B3 B BB | \"Gmaj7\"B6 ||\nP:B\n%4x's\n|: \"F#maj7\"B4 (3BBB | \"Gmaj7\"BB BB (3BBB | \"F#maj7\"!trill!B6- | \"Gmaj7\"B6 :|\n%Ending\n\"F#maj7#11\"!fermata!B6 |]\n\n%unsure [bars 23-24] the F#maj7 / Gmaj7 trill is drawn across one bar with two dotted halves; written as two bars"
+},
+{
+"id": "New_Real_Book_Volume2/56-clockwise",
+"book": "The New Real Book Vol. 2",
+"title": "Clockwise",
+"pdf": "56",
+"form": "AB 32+3 (A has 1st/2nd endings; B vamp played 4x)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "\"Solo on A; After solos, D.C., play AB and ending.\" Book note: at B, Gmaj7 may be played as G13; melody is freely interpreted"
+},
+{
+"bars": [
+8
+],
+"groups": [
+8
+],
+"text": "dotted half; C7b9b5 falls on beat 3 (slash)"
+},
+{
+"bars": [
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22
+],
+"groups": [
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22
+],
+"text": "second chords in bars 14, 16, 18 placed on beat 3 (tied note split)"
+},
+{
+"bars": [
+23,
+24,
+25,
+26
+],
+"groups": [
+23,
+24,
+25,
+26
+],
+"text": "B is played 4 times"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Clockwise\nC:Cedar Walton\nP:AB\n%source New Real Book Vol 2 p47 (pdf 56)\n%style (Med. Jazz Waltz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 32+3 (A has 1st/2nd endings; B vamp played 4x)\n%unsure [form] \"Solo on A; After solos, D.C., play AB and ending.\" Book note: at B, Gmaj7 may be played as G13; melody is freely interpreted\nM:3/4\nL:1/8\nK:C\nB |\nP:A\n|: \"Gbmaj7\"B4- BB | \"C13b9\"B4- BB | \"Fmaj7\"B4- BB | \"B13b9\"B4- BB |\n\"Emaj7\"B4- BB | \"Bb13b9\"B4- BB | \"Ebmaj7\"B3 B3 | \"Gm7b5\"B4- \"C7b9b5\"B2 |\n\"Bmaj7\"z2 zB B/B/B/B/ | \"Bb7\"B4 B2 |1 \"Ebm7\"B2 BB- B2- | \"Ab13b9\"B4- BB |\n\"Gmaj7\"B4 (3BBB | \"Fm7\"B4- \"Bb7\"B2 | \"Ebmaj7\"B4 (3BBB | \"Abm7\"B4- \"Db7\"BB :|2\n\"Ebm\"B4 \"Ebm/Db\"B2 | \"Cm7\"B4- \"F7\"B2 | \"Bm7b5\"B2 B2 B2 | \"E7\"B2 B2 B2 |\n\"Amaj7\"B3 B BB | \"Gmaj7\"B6 ||\nP:B\n|: \"F#maj7\"B4 (3BBB | \"Gmaj7\"BB BB (3BBB | \"F#maj7\"!trill!B6- | \"Gmaj7\"B6 :|\n%ending\n\"F#maj7#11\"!fermata!B6 |]\n\n%unsure [bar 8] dotted half; C7b9b5 falls on beat 3 (slash)\n%unsure [bars 11-22] second chords in bars 14, 16, 18 placed on beat 3 (tied note split)\n%unsure [bars 23-26] B is played 4 times"
+},
+{
+"id": "New_Real_Book_Volume2/057-cold-duck-time",
+"book": "The New Real Book Vol. 2",
+"title": "Cold Duck Time",
+"pdf": "57",
+"form": "A 12 (intro 4, A 12 repeated, coda 8)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred: intro repeated, A (only one letter) repeated, solos on A, D.S. al Coda (repeat before taking Coda)"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro: bass rhythm slashes only, written as rests with chords; bar 4 melody only on the 2nd time"
+},
+{
+"bars": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"groups": [
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15
+],
+"text": "grace notes and parenthesised octave notes dropped; piano fill/solo break bar 15 written as a rest"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26
+],
+"groups": [
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25
+],
+"text": "coda fills (pn. fill) written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Cold Duck Time\nC:Eddie Harris\nP:A\n%source New Real Book Volume 2 p48 (pdf 57)\n%style (Med. Rock/Gospel, quarter = 150)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 12 (intro 4, A 12 repeated, coda 8)\n%unsure [form] form inferred: intro repeated, A (only one letter) repeated, solos on A, D.S. al Coda (repeat before taking Coda)\nM:4/4\nL:1/8\nK:G\n%intro (1st x: bass only; 2nd x: add dr. & pn.)\n|: \"G7\"z8 | \"C7\"z8 | \"G7\"z8 | \"C7\"z3 B BB BB :| !segno!\nP:A\n|: \"G7\"z3 B BB BB | \"C7\"z3 B BB BB | \"G7\"zB zB B2 BB | \"C7\"B2 zB BB BB |\n\"G7\"z3 B BB BB | \"C7\"z3 B BB BB | \"G7\"zB zB B2 BB | \"C7\"B2 zB BB B\"Ebmaj7\"B- |\n\"Ebmaj7\"B7 B- | \"Fmaj9\"B7 \"G7\"!accent!B | z8 | z3 B BB BB :|\n%coda\n\"Ebmaj7\"B7 \"Fmaj9\"B- | B7 \"G7\"!accent!B | z8 | z3 B BB B\"Ebmaj7\"B- |\n\"Ebmaj7\"B7 \"Fmaj9\"B- | B7 \"G7\"B | z8 | z4 z3 \"Ebmaj7\"!accent!B- |\nB7 \"G7\"!accent!B- | B2 z2 z4 |]\n\n%unsure [bars 1-4] intro: bass rhythm slashes only, written as rests with chords; bar 4 melody only on the 2nd time\n%unsure [bars 5-16] grace notes and parenthesised octave notes dropped; piano fill/solo break bar 15 written as a rest\n%unsure [bars 17-26] coda fills (pn. fill) written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/57-cold-duck-time",
+"book": "The New Real Book Vol. 2",
+"title": "Cold Duck Time",
+"pdf": "57",
+"form": "A 12 (solo on A; D.S. al Coda after solos)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro: bass only 1st x; melody pickup in bar 4 2nd x only; grace-note low B ignored throughout"
+},
+{
+"bars": [
+15,
+16
+],
+"groups": [
+14,
+15
+],
+"text": "piano fill/solo break; coda taken on repeat"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Cold Duck Time\nC:Eddie Harris\nP:A\n%source New Real Book Vol 2 p48 (pdf 57)\n%style (Med. Rock/Gospel, q=150)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 12 (solo on A; D.S. al Coda after solos)\nM:4/4\nL:1/8\nK:G\n%intro\n|: \"G7\"z8 | \"C7\"z8 | \"G7\"z8 | \"C7\"z2 zB BB BB :|\nP:A\n|: \"G7\"z2 zB BB BB | \"C7\"z2 zB BB BB | \"G7\"zB zB B2 BB | \"C7\"B2 zB BB BB |\n\"G7\"z2 zB BB BB | \"C7\"z2 zB BB BB | \"G7\"zB zB B2 BB | \"C7\"B2 zB BB B\"Ebmaj7\"!coda!B- |\n\"Ebmaj7\"B7 B- | \"Fmaj9\"B7 \"G7\"!accent!B | z8 | z2 zB BB BB :|\n%coda\n\"Ebmaj7\"B7 \"Fmaj9\"B- | B7 \"G7\"!accent!B | z8 | z2 zB BB B\"Ebmaj7\"B- |\n\"Ebmaj7\"B7 \"Fmaj9\"B- | B7 \"G7\"B | z8 | z4 z2 z\"Ebmaj7\"!accent!B- |\nB7 \"G7\"!accent!B- | B2 z2 z4 |]\n\n%unsure [bars 1-4] intro: bass only 1st x; melody pickup in bar 4 2nd x only; grace-note low B ignored throughout\n%unsure [bars 15-16] piano fill/solo break; coda taken on repeat"
+},
+{
+"id": "New_Real_Book_Volume2/058-criss-cross",
+"book": "The New Real Book Vol. 2",
+"title": "Criss Cross",
+"pdf": "58",
+"form": "AABCDEFG 8+16+18+16+8+5+5",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 9,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred from boxed letters; play D twice to fine; solos on G, then D.S. (C) al Coda"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "intro: bass slashes written as rests with chords; last bar guitar pickup (2nd x only)"
+},
+{
+"bars": [
+16
+],
+"groups": [
+15
+],
+"text": "last bar: guitar chord (2nd x) written as melody"
+},
+{
+"bars": [
+48
+],
+"groups": [
+47
+],
+"text": "1st ending bar 2 is a guitar figure, written as melody"
+},
+{
+"bars": [
+65,
+66,
+67,
+68
+],
+"groups": [
+64,
+65,
+66,
+67
+],
+"text": "endings: 1st ending rhythm and 2nd ending band hits (written as rests) approximated; 2nd-ending last bar is a guitar figure"
+},
+{
+"bars": [
+77,
+78
+],
+"groups": [
+76,
+77
+],
+"text": "2nd ending: slash-notehead rhythm hits written as notes"
+},
+{
+"bars": [
+79,
+80,
+81,
+82,
+83
+],
+"groups": [
+78,
+79,
+80,
+81,
+82
+],
+"text": "F (endings printed 1.-4. and 5.): top voice of the piano part; the pickup 8th before F (end of previous bar) not written"
+},
+{
+"bars": [
+89,
+90,
+91,
+92,
+93
+],
+"groups": [
+88,
+89,
+90,
+91,
+92
+],
+"text": "coda: tie into the D bar is unclear; D bar written as a rest"
+},
+{
+"bars": [
+94,
+95,
+96,
+97,
+98,
+99,
+100,
+101,
+102,
+103
+],
+"groups": [
+93,
+94,
+95,
+96,
+97,
+98,
+99,
+100,
+101,
+102
+],
+"text": "brass hits written as melody; final gliss shown as a trill mark"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Criss Cross\nC:Ray Obiedo\nP:AABCDEFG\n%source New Real Book Volume 2 p49-50 (pdf 58-59)\n%style (Med. Salsa, half note = 126)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABCDEFG 8+16+18+16+8+5+5\n%unsure [form] form inferred from boxed letters; play D twice to fine; solos on G, then D.S. (C) al Coda\nM:C|\nL:1/8\nK:G\n%intro (bs.)\n|: \"Em7(11)\"z8 | z8 | \"D\"z8 | z8 |\n\"C6/9\"z8 | z8 | \"D\"z8 | z6 BB :|\nP:A\n|: \"Em\"BBzB BBzB | BBzB B4- | \"D7\"B4 z2 zB- | B B2 B- B B2 B |\n\"C7\"B3 B- B4- | B8 | \"D7\"B3 B- B4- | B4 z B2 B :|\nP:B\n|: \"Em\"BBzB BBzB | BBzB B4- | \"D7\"B4 z2 zB- | B B2 B- B B2 B |\n\"C7\"B3 B- B4- | B8 | \"D7\"B3 B- B4- | B4 z B2 B |\n\"Em\"BBzB BBzB | BBzB B4- | \"D7\"B4 z2 zB- | B B2 B- B B2 B |\n\"C7\"B3 B- B4- | B8 | \"Bsus\"z8 | \"B\"z4 zBBB || !segno!\nP:C\n\"Am7\"BBzB B4- | B8- | \"Bm7\"B8 | B4 B4 |\n\"Am7\"B3 B- B4- | B8- | \"Bm7\"B8- | B4 zBBB |\n\"Am7\"BBzB B4- | B8- | \"Bm7\"B8 | B4 B4 |\n\"Cmaj7\"B3 B- B4- | B8 |1 \"D7sus\"z8 | \"B7/D#\"z4 z B2 B :|2\n\"D7sus\"z8 | \"Db13\"z8 ||\nP:D\n|: \"Cmaj7\"z4 z2 zB | zBzB B4 | \"B7#9#5\"z4 z2 zB | zBzB B4 |\n\"Abmaj7/Bb\"z4 z2 zB | zBzB BBBB | \"Gmaj7/A\"B6 BB | \"Ab7#5\"B8 |\n\"G6/9\"z4 z2 zB | zBzB B4 | \"Fmaj7\"z4 z2 zB | zBzB BB B2- |\n\"C/D\"B8- | B8 |1 \"C/D\"BBBz \"D/E\"B- B3 | \"E/F#\"BBB\"Gb/Ab\"B z\"Ab/Bb\"B z2 :|2\n\"C/D\"z2 \"D/E\"z2 z4 | \"E/F#\"z2 \"B7#5\"z2 z B2 B ||\nP:E\n|: \"Em\"BBzB BBzB | BBzB B4- | \"D7\"B4 z2 zB- | B B2 B- B B2 B |\n\"C7\"B3 B- B4- | B8 |1 \"D7\"B3 B- B4- | B4 z B2 B :|2\n\"B7b9#5\"zBzB BBzB | \"Em\"B2 zB- B2 !accent!B2 ||\nP:F\n|: \"Em\"B B2 B B3 B- | \"D\"B B2 B- BBBB- | \"C\"B B2 B B3 B- |1 \"D\"B B2 B- BBBB- :|2\n\"Bm\"BB\"B7#9\"zB- B2 \"Em\"!accent!B2 ||\nP:G\n%Solos\n|: \"Em\"z8 | \"D7\"z8 | \"C7\"z8 |1 \"D7\"z8 :|2 \"B7\"z4 zBBB |]\n%Vamp & solo till cue. After solos, D.S. al Coda.\n%coda\n\"F#7#9\"B8 | \"B7#5\"B7 \"Em6/9\"B | zBzB z4 | z4 z2 zB- | \"D\"z8 |\n%Percussion solo (vamp till cue)\n|: \"Em\"z8 | \"D\"z8 :| \"Em\"z8 | \"D\"z4 zBzB |\n\"Em\"z8 | \"D\"z4 zBzB | \"Em\"zBzB z4 | \"D\"z8 |\n\"N.C.\"zB B6- | !trill!B8 |]\n\n%unsure [bars 1-8] intro: bass slashes written as rests with chords; last bar guitar pickup (2nd x only)\n%unsure [bar 16] last bar: guitar chord (2nd x) written as melody\n%unsure [bar 48] 1st ending bar 2 is a guitar figure, written as melody\n%unsure [bars 65-68] endings: 1st ending rhythm and 2nd ending band hits (written as rests) approximated; 2nd-ending last bar is a guitar figure\n%unsure [bars 77-78] 2nd ending: slash-notehead rhythm hits written as notes\n%unsure [bars 79-83] F (endings printed 1.-4. and 5.): top voice of the piano part; the pickup 8th before F (end of previous bar) not written\n%unsure [bars 89-93] coda: tie into the D bar is unclear; D bar written as a rest\n%unsure [bars 94-103] brass hits written as melody; final gliss shown as a trill mark"
+},
+{
+"id": "New_Real_Book_Volume2/58-criss-cross",
+"book": "The New Real Book Vol. 2",
+"title": "Criss Cross",
+"pdf": "58",
+"form": "ABCDEFG 8+14+16+16+8+4+5",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "sections as printed; D played twice to fine, D.S. (segno at C) al Coda after solos"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "intro is bass/rhythm slashes, written as rests; bar 8 guitar pickup 2nd x only"
+},
+{
+"bars": [
+49
+],
+"groups": [
+48
+],
+"text": "first ending rhythm crowded; tied note shortened to fit"
+},
+{
+"bars": [
+59,
+60
+],
+"groups": [
+58,
+59
+],
+"text": "second ending is rhythm-slash hits, written as notes"
+},
+{
+"bars": [
+61,
+62,
+63,
+64,
+65
+],
+"groups": [
+60,
+61,
+62,
+63,
+64
+],
+"text": "piano figure (two voices), top voice only, rhythm approximate"
+},
+{
+"bars": [
+66,
+67,
+68,
+69,
+70
+],
+"groups": [
+65,
+66,
+67,
+68,
+69
+],
+"text": "solo section slashes as rests; vamp till cue, then D.S. al Coda"
+},
+{
+"bars": [
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82,
+83,
+84,
+85,
+86
+],
+"groups": [
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82,
+83,
+84,
+85
+],
+"text": "percussion solo vamp then brass hits; last bar gliss"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Criss Cross\nC:Ray Obiedo\nP:ABCDEFG\n%source New Real Book Vol 2 p49-50 (pdf 58-59)\n%style (Med. Salsa, h=126)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCDEFG 8+14+16+16+8+4+5\n%unsure [form] sections as printed; D played twice to fine, D.S. (segno at C) al Coda after solos\nM:C|\nL:1/8\nK:G\n%intro\n|: \"Em7(11)\"z8 | z8 | \"D\"z8 | z8 |\n\"C6/9\"z8 | z8 | \"D\"z8 | z4 z B2 B :|\nP:A\n|: \"Em\"BBzB BBzB | BBzB B4- | \"D7\"B4 z2 zB- | B B2 B- B B2 B |\n\"C7\"B3 B- B4- | B8 | \"D7\"B3 B- B4- | B4 z B2 B :|\nP:B\n|: \"Em\"BBzB BBzB | BBzB B4- | \"D7\"B4 z2 zB- | B B2 B- B B2 B |\n\"C7\"B3 B- B4- | B8 | \"D7\"B3 B- B4- | B4 z B2 B |\n\"Em\"BBzB BBzB | BBzB B4- | \"D7\"B4 z2 zB- | B B2 B- B B2 B |\n\"C7\"B3 B- B4- | B8 | \"Bsus\"z8 | \"B\"z4 zBBB ||\nP:C\n!segno!\"Am7\"BBzB B4- | B8- | \"Bm7\"B8 | B4 B4 |\n\"Am7\"B3 B- B4- | B8- | \"Bm7\"B8- | B4 zBBB |\n\"Am7\"BBzB B4- | B8- | \"Bm7\"B8 | B4 B4 |\n\"Cmaj7\"B3 B- B4- | !coda!B8 |1 \"D7sus\"z8 | \"B7/D#\"z4 z B2 B :|2\n\"D7sus\"z8 | \"Db13\"z8 ||\nP:D\n|: \"Cmaj7\"z4 z2 zB | zBzB B4 | \"B7#9#5\"z4 z2 zB | zBzB B4 |\n\"Abmaj7/Bb\"z4 z2 zB | zBzB BBBB | \"Gmaj7/A\"B6 BB | \"Ab7#5\"B8 |\n\"G6/9\"z4 z2 zB | zBzB B4 | \"Fmaj7\"z4 z2 zB | zBzB BB B2- |\n\"C/D\"B8- | B8 |1 \"C/D\"BBBz \"D/E\"B- B3 | \"E/F#\"BBB\"Gb/Ab\"B z\"Ab/Bb\"B z2 :|2\n\"C/D\"z4 \"D/E\"z4 | \"E/F#\"z2 \"B7#5\"z2 z B2 B ||\nP:E\n|: \"Em\"BBzB BBzB | BBzB B4- | \"D7\"B4 z2 zB- | B B2 B- B B2 B |\n\"C7\"B3 B- B4- | B8 |1 \"D7\"B3 B- B4- | B4 z B2 B :|2\n\"B7b9#5\"zBzB BBzB | B2 zB- B2 \"Em\"!accent!B2 ||\nP:F\n|: \"Em\"B B2 B B3 B- | \"D\"B B2 B- B B2 B- | \"C\"B B2 B B3 B- |1 - 4\"D\"B B2 B- B B2 B- :|5\n\"Bm\"BB\"B7#9\"zB- B2 \"Em\"!accent!B2 ||\nP:G\n|: \"Em\"z8 | \"D7\"z8 | \"C7\"z8 | \"D7\"z8 :|\n\"B7\"z4 zBBB ||\n%coda\n\"F#7#9\"B8 | \"B7#5\"B7 \"Em6/9\"B | zBzB z4 | \"D\"z8 |: \"Em\"z8 | \"D\"z8 :| \"Em\"z8 | \"D\"z4 zBzB |\n\"Em\"z8 | \"D\"z4 zBzB | \"Em\"z8 | \"D\"z4 zBzB |\n\"Em\"zBzB z4 | \"D\"z8 | \"N.C.\"zB B6- | B8 |]\n\n%unsure [bars 1-8] intro is bass/rhythm slashes, written as rests; bar 8 guitar pickup 2nd x only\n%unsure [bar 49] first ending rhythm crowded; tied note shortened to fit\n%unsure [bars 59-60] second ending is rhythm-slash hits, written as notes\n%unsure [bars 61-65] piano figure (two voices), top voice only, rhythm approximate\n%unsure [bars 66-70] solo section slashes as rests; vamp till cue, then D.S. al Coda\n%unsure [bars 75-86] percussion solo vamp then brass hits; last bar gliss"
+},
+{
+"id": "New_Real_Book_Volume2/060-day-by-day",
+"book": "The New Real Book Vol. 2",
+"title": "Day by Day",
+"pdf": "60",
+"form": "AB 16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics printed in the book but not copied here (copyrighted song text); add w: lines from the source if wanted"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Day by Day\nC:Sammy Cahn, Axel Stordahl, Paul Weston\nP:AB\n%source New Real Book Volume 2 p52 (pdf 60)\n%style (Medium Swing; also played as a samba)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16\n%unsure [general] lyrics printed in the book but not copied here (copyrighted song text); add w: lines from the source if wanted\nM:C\nL:1/8\nK:A\nP:A\n\"Bm9\"B3 B B4- | \"(E9)\"B2 B2 B2 B2 | B2 B2 B3 B | \"Bm7\"B6 \"E7\"B2 |\n\"Amaj7\"B3 B B4- | \"D9\"B2 B2 (3B2B2B2 | \"C#m7\"B8- | \"F#9\"B6 B2 |\n\"Bm7\"B2 B2 B2 B2 | \"C#7\"B2 B2 B2 B2 | \"F#m\"B4 B4- | \"F#m(maj7)\"B6 \"F#m7\"B2 |\n\"F#m7\"B2 B2 B2 B2 | \"B9\"B2 B2 B2 B2 | \"Bm7\"B4 B4- | \"C#m7\"\"(G7)\"B2 B2 \"F#7\"B2 B2 ||\nP:B\n\"Bm9\"B3 B B4- | \"(E9)\"B2 B2 B2 B2 | B2 B2 B3 B | \"Bm7\"B6 \"E7\"B2 |\n\"Amaj7\"B3 B B4- | \"D9\"B2 B2 (3B2B2B2 | \"C#m7b5\"B8- | \"F#7\"B6 B2 |\n\"Bm7\"B3 B B4 | \"Dm7\"z2 B2 \"G7\"B2 B2 | \"Amaj7\"B4 \"G9#11\"B4 | \"F#7\"B6 B2 |\n\"Bm7\"B3 B B3 B | B4 \"E7\"B2 B2 | \"Amaj7\"B8 | \"(C#m7)\"z4 \"(F#7)\"z4 |]\n"
+},
+{
+"id": "New_Real_Book_Volume2/60-day-by-day",
+"book": "The New Real Book Vol. 2",
+"title": "Day By Day",
+"pdf": "60",
+"form": "AB 16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Day By Day\nC:Sammy Cahn, Axel Stordahl, Paul Weston\nP:AB\n%source New Real Book Vol 2 p52 (pdf 60)\n%style (Medium Swing; also played as a samba)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16\n%unsure [general] lyrics are printed\nM:C\nL:1/8\nK:A\nP:A\n\"Bm9\"B3 B B4- | \"(E9)\"B2 B2 B2 B2 | B2 B2 B3 B | \"Bm7\"B6 \"E7\"B2 |\n\"Amaj7\"B3 B B4- | \"D9\"B2 B2 (3B2B2B2 | \"C#m7\"B8- | \"F#9\"B6 B2 |\n\"Bm7\"B2 B2 B2 B2 | \"C#7\"B2 B2 B2 B2 | \"F#m\"B4 B4- | \"F#m(maj7)\"B6 \"F#m7\"B2 |\n\"F#m7\"B2 B2 B2 B2 | \"B9\"B2 B2 B2 B2 | \"Bm7\"B4 B4- | \"C#m7\"\"(G7)\"B2 B2 \"F#7\"B2 B2 ||\nP:B\n\"Bm9\"B3 B B4- | \"(E9)\"B2 B2 B2 B2 | B2 B2 B3 B | \"Bm7\"B6 \"E7\"B2 |\n\"Amaj7\"B3 B B4- | \"D9\"B2 B2 (3B2B2B2 | \"C#m7b5\"B8- | \"F#7\"B6 B2 |\n\"Bm7\"B3 B B4 | \"Dm7\"z2 \"G7\"B2 B2 B2 | \"Amaj7\"B4 \"G9#11\"B4 | \"F#7\"B6 B2 |\n\"Bm7\"B3 B B3 B | B4 \"E7\"B2 B2 | \"Amaj7\"B8 | \"(C#m7)\"z4 \"(F#7)\"z4 |]\n"
+},
+{
+"id": "New_Real_Book_Volume2/061-dear-lord",
+"book": "The New Real Book Vol. 2",
+"title": "Dear Lord",
+"pdf": "61",
+"form": "AB 32+32",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the page (A 32, B 32 incl. tenor fill); solo on form AB, after solos D.C. al Coda"
+},
+{
+"bars": [],
+"groups": [],
+"text": "tenor line transcribed as played with many triplets and scoops; scoops/grace notes dropped, triplet groupings approximated throughout"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32
+],
+"groups": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32
+],
+"text": "second half of A: 32nd/16th figures and triplet groupings approximated so bars add up"
+},
+{
+"bars": [
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64
+],
+"groups": [
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64
+],
+"text": "B section rhythms approximated; bar 64 tenor fill written as a rest"
+},
+{
+"bars": [
+65,
+66,
+67,
+68
+],
+"groups": [
+65,
+66,
+67,
+68
+],
+"text": "coda: rit./freely; bar 67 trill and last-bar sample tenor fill not transcribed (whole note written)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Dear Lord\nC:John Coltrane\nP:AB\n%source New Real Book Volume 2 p53-54 (pdf 61-62)\n%style (Med. Swing (w/ triplet undercurrent), quarter = 96, in 2)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 32+32\n%unsure [form] section lengths counted from the page (A 32, B 32 incl. tenor fill); solo on form AB, after solos D.C. al Coda\n%unsure [general] tenor line transcribed as played with many triplets and scoops; scoops/grace notes dropped, triplet groupings approximated throughout\nM:C\nL:1/8\nK:E\n%pickup (ten.)\nB3 B- |:\nP:A\n\"Emaj7\"B8- | B8- | B4 z4 | z2 zB (3B2B2B2 |\n\"F#m7\"BB- B6- | B8- | B4 z4 | z2 BB B3 B/B/ |\n\"Emaj7\"B3 B- B4- | B6 (3BBB | (3BBB- B4 z2 | z2 zB B2- (3BBB |\n\"C#m\"B8- | \"C#m(maj7)\"B6 (3BBB | \"C#m7\"(3B2B2B2 (3BBB BB | \"C#m6\"(3BBB- B2 z2 (3zBB |\n\"C#m\"B6 BB | \"C#m(maj7)\"BB BB (3BBB- (3BBB | \"C#m7\"B4- B B3 | \"C#m6\"z2 (3zBB (3BBB BB |\n\"F#m7\"!mordent!B8- | B8 | \"B9sus\"z2 zB (3BBB (3BBB | B3 B (3BBz z/B/B/B/ |\n\"B9sus\"B8- | B2 z2 z4 | \"B7#5\"z2 (3zBB B4- | (3BBB- (3BBB- (3BBB- (3BBB |\n\"Emaj7\"BB- B6 | \"C#m7\"z2 (3zBB- B3 B | \"F#m7\"B6 (3zBB | \"B9sus\"B2 (3BBB- \"B7\"(3B2B2B2 ||\nP:B\n\"Emaj7\"B B3- B4- | B2 zB (3BBB- B2 | B B3 z2 zB | (3B2B2B2 B-B (3BBB |\n\"F#m7\"BB- B6- | B4 (3zBB BB | (3BBB- (3BBB (3BBB BB | (3B2B2B2 zB (3BBB |\n\"Emaj7\"B3 B- B4- | B2 (3BBB B2- (3BBB | (3BBB- (3BBB B4 | z4 zB- (3BBB |\n\"Amaj7\"B8- | B6 (3BBB | (3BBB (3BBB B2- (3BBB | B4 z2 (3zBB |\n\"Amaj7\"(3B2B2B2 BB BB/B/ | B2- (3BBB B2- (3BBB | B B3 z4 | z2 (3zBB B/B/B/B/ B/B/B/B/ |\n\"G#m7\"B3 B- B4 | z2 zB B/B3/2- (3BBB | \"Amaj7\"B/B3/2- BB B4- | B4 zB- (3BBB |\n\"F#m7\"!mordent!(3B2B2B2 (3B2B2B2 | \"G#m7\"B2 B6 | \"Amaj7\"z2 zB- B2 (3BBB | !coda!\"B9sus\"B3 B B2 BB- |\n\"Cmaj7\"B4 z2 (3zBB | (3BBB- B2 !mordent!B3 B | \"Emaj7\"B4 z4 | \"B9sus\"z8 :|\n%coda\n\"B9sus\"B2 B/B3/2 \"B7\"B B2 B- | \"Cmaj7\"B8- | B4 zB BB | \"Emaj7\"!fermata!B8 |]\n\n%unsure [bars 21-32] second half of A: 32nd/16th figures and triplet groupings approximated so bars add up\n%unsure [bars 33-64] B section rhythms approximated; bar 64 tenor fill written as a rest\n%unsure [bars 65-68] coda: rit./freely; bar 67 trill and last-bar sample tenor fill not transcribed (whole note written)"
+},
+{
+"id": "New_Real_Book_Volume2/61-dear-lord",
+"book": "The New Real Book Vol. 2",
+"title": "Dear Lord",
+"pdf": "61",
+"form": "AB 31+31",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "bar counts per section counted from the page; solo on AB, D.C. al Coda; tenor line transcribed as played"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32
+],
+"groups": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32
+],
+"text": "triplet groupings in this tenor transcription approximated; bars 12, 16, 19, 23, 31 especially"
+},
+{
+"bars": [
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64
+],
+"groups": [
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64
+],
+"text": "triplet groupings approximated; bar 64 rhythm slashes (tenor fill) written as rests"
+},
+{
+"bars": [
+65,
+66,
+67,
+68,
+69,
+70,
+71
+],
+"groups": [
+65,
+66,
+67,
+68,
+69,
+70,
+71
+],
+"text": "coda played freely (rit.); last bars are a sample tenor fill, rhythm approximated to fit 4/4"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Dear Lord\nC:John Coltrane\nP:AB\n%source New Real Book Vol 2 p53-54 (pdf 61-62)\n%style (Med. Swing (w/ triplet undercurrent), q=96, in 2)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 31+31\n%unsure [form] bar counts per section counted from the page; solo on AB, D.C. al Coda; tenor line transcribed as played\nM:C\nL:1/8\nK:E\nB3 B |:\nP:A\n\"Emaj7\"B8- | B8- | B4 z4 | z2 zB (3B2B2B2 |\n\"F#m7\"BB- B6- | B8- | B4 z4 | z2 BB B3 B/B/ |\n\"Emaj7\"B3 B- B4- | B6 (3BBB | (3BBB- B4 z2 | z2 zB B2- (3BBB |\n\"C#m\"B8- | \"C#m(maj7)\"B6 (3BBB | \"C#m7\"(3B2B2B2 (3BBB BB | \"C#m6\"(3BBB- B2 z2 BB |\n\"C#m\"B6 BB | \"C#m(maj7)\"BB BB (3BBB (3BBB | \"C#m7\"B4- B B3 | \"C#m6\"z2 (3zBB (3BBB BB |\n\"F#m7\"B8- | B8 | \"B9sus\"z2 zB (3BBB (3BBB | B3 B (3BBB z/B/B/B/ |\n\"B9sus\"B8- | B2 z2 z4 | \"B7#5\"z2 (3zBB B4- | (3BBB BB (3BB-B (3BBB |\n\"Emaj7\"BB- B6 | \"C#m7\"z2 (3zBB !staccato!B3 B | \"F#m7\"B6 (3zBB | \"B9sus\"B2 (3BBB \"B7\"B2 BB ||\nP:B\n\"Emaj7\"B B3- B4- | B2 (3zBB B2- B2 | B B3 z2 zB | (3B2B2B2 B2- (3BBB |\n\"F#m7\"BB- B6- | B4 (3zBB BB | (3BBB- (3BBB (3BBB BB | (3:2:2BB2-B2 zB (3BBB |\n\"Emaj7\"B3 B- B4- | B2- (3BBB B2- (3BBB | (3BBB- (3BBB B4 | z4 zB- (3BBB |\n\"Amaj7\"B8- | B6 (3BBB | (3BBB (3BBB B2- (3BBB | B4 z2 (3zBB |\n\"Amaj7\"(3B2B2B2 BB BB/B/ | B2- (3BBB B2- (3BBB | B B3 z4 | z4 (3zBB B/B/B/B/ |\n\"G#m7\"B3 B- B4 | z2 zB B3/B/ (3BBB | \"Amaj7\"B/B3/ BB B4- | B4 zB- (3BBB |\n\"F#m7\"(3B2B2B2 (3B2B2B2 | \"G#m7\"B2 B6 | \"Amaj7\"z2 zB B2- (3BBB | !coda!\"B9sus\"B3 B B2 BB- |\n\"Cmaj7\"B4 z2 (3zBB | (3:2:2BB2-B2 B3 B | \"Emaj7\"B4 z4 | \"B9sus\"z8 :|\n%coda\n\"B9sus\"!rit!B2 B/B3/ \"B7\"B B2 B- | \"Cmaj7\"B8- | B4 zB BB | \"Emaj7\"B4- B/B/B3/B/B |\nB3/B/ BB/B/ B B3 | z/B/B/B/ B/B/B BB B2 | B6 !fermata!z2 |]\n\n%unsure [bars 1-32] triplet groupings in this tenor transcription approximated; bars 12, 16, 19, 23, 31 especially\n%unsure [bars 33-64] triplet groupings approximated; bar 64 rhythm slashes (tenor fill) written as rests\n%unsure [bars 65-71] coda played freely (rit.); last bars are a sample tenor fill, rhythm approximated to fit 4/4"
+},
+{
+"id": "New_Real_Book_Volume2/063-dee-song",
+"book": "The New Real Book Vol. 2",
+"title": "Dee Song",
+"pdf": "63",
+"form": "AB 20+20",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A is repeated, then B (solos) repeated, then D.C. al Coda; form letters printed, bar counts counted"
+},
+{
+"bars": [
+16
+],
+"groups": [
+15
+],
+"text": "last eighth is printed in parentheses (pickup back to the repeat)"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40
+],
+"groups": [
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39
+],
+"text": "solo section printed as rhythm slashes; written as rests with the chords"
+},
+{
+"bars": [
+46
+],
+"groups": [
+45
+],
+"text": "freely, rit.; two voices with a grace note, top-voice rhythm guessed so the bar adds up"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Dee Song\nC:Enrico Pieranunzi\nP:AB\n%source New Real Book Volume2 p55 (pdf 63)\n%style (Med. Straight 8th's/Latin, quarter = 170)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 20+20\n%unsure [form] A is repeated, then B (solos) repeated, then D.C. al Coda; form letters printed, bar counts counted\nM:4/4\nL:1/8\nK:C\nP:A\n|: \"Em7b5\"(3z2B2B2 B B2 B- | \"A7susb9\"B B2 B- \"A7b9\"B B2 B- | \"Dmaj7\"B8- | B2 z2 (3B2B2B2 |\n\"Bbm7\"B3 B- B4- | \"Eb13\"B4 (3z2B2B2 | \"Ebm7\"(3B2B2B2 B4- | \"Ab7\"B6 zB |\n\"Bm7\"B B2 B- B B2 B- | \"E7\"B B2 B- B B2 z | \"C#m7\"(3B2B2B2 B4- | \"F#m7\"B4 (3z2B2B2 |\n\"Ebm7\"B B2 B- B B2 B- | \"Ab7\"B B2 B- B B2 z | \"Gm7\"B B2 B- B B2 B- | \"C7\"B B2 B- B B2 B |\n\"Bm7\"B B2 B- B B2 B- | \"E7\"B B2 B- B B2 z | \"Em7\"(3B2B2B2 B4- | \"A7\"B8 :|\nP:B\n|: \"Em7b5\"z8 | \"A7\"z8 | \"Dmaj7\"z8 | \"Cm7\"z4 \"F7\"z4 |\n\"Bbm7\"z8 | \"Eb9\"z8 | \"Ebm7\"z8 | \"Ab9\"z8 |\n\"Bm7\"z8 | \"E9\"z8 | \"C#m7\"z8 | \"F#m7\"z4 \"Em7\"z4 |\n\"Ebm7\"z8 | \"Ab7\"z8 | \"Cm7\"z8 | \"F7\"z8 |\n\"Bm7\"z8 | \"E7\"z8 | \"Em7\"z8 | \"A7\"z8 :|\n%coda\n\"Em7\"(3B2B2B2 B4- | \"A7\"B8 | \"Ebm7b5\"(3z2B2B2 B2 B2 | \"Ab7\"B2 B2 B2 B2 |\n\"Dm7b5\"(3z2B2B2 B2 B2 | \"G7\"B2 B2 B3 B | \"C#m11\"!fermata!B8 |]\n\n%unsure [bar 16] last eighth is printed in parentheses (pickup back to the repeat)\n%unsure [bars 21-40] solo section printed as rhythm slashes; written as rests with the chords\n%unsure [bar 46] freely, rit.; two voices with a grace note, top-voice rhythm guessed so the bar adds up"
+},
+{
+"id": "New_Real_Book_Volume2/63-dee-song",
+"book": "The New Real Book Vol. 2",
+"title": "Dee Song",
+"pdf": "63",
+"form": "AB 20+20 (B is the solo section; D.C. al Coda after solos)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+16
+],
+"groups": [
+15
+],
+"text": "last eighth is a parenthesized optional note"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40
+],
+"groups": [
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39
+],
+"text": "solo section is rhythm slashes, written as rests"
+},
+{
+"bars": [
+43,
+44,
+45,
+46,
+47
+],
+"groups": [
+42,
+43,
+44,
+45,
+46
+],
+"text": "played freely; coda is in chords (top note only)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Dee Song\nC:Enrico Pieranunzi\nP:AB\n%source New Real Book Vol 2 p55-56 (pdf 63-64)\n%style (Med. Straight 8th's/Latin, q=170)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 20+20 (B is the solo section; D.C. al Coda after solos)\nM:C\nL:1/8\nK:C\nP:A\n|: \"Em7b5\"(3z2B2B2 B B2 B- | \"A7sus(b9)\"B B2 \"A7b9\"B- B B2 B- | \"Dmaj7\"B8- | B2 z2 (3B2B2B2 |\n\"Bbm7\"B3 B- B4- | \"Eb13\"B4 (3z2B2B2 | \"Ebm7\"(3B2B2B2 B4- | \"Ab7\"B6 zB |\n\"Bm7\"B B2 B- B B2 B- | \"E7\"B B2 B- B B2 z | \"C#m7\"(3B2B2B2 B4- | \"F#m7\"B4 (3z2B2B2 |\n\"Ebm7\"B B2 B- B B2 B- | \"Ab7\"B B2 B- B B2 z | \"Gm7\"B B2 B- B B2 B- | \"C7\"B B2 B- B B2 B |\n\"Bm7\"B B2 B- B B2 B- | \"E7\"B B2 B- B B2 z | !coda!\"Em7\"(3B2B2B2 B4- | \"A7\"B8 :|\nP:B\n|: \"Em7b5\"z8 | \"A7\"z8 | \"Dmaj7\"z8 | \"Cm7\"z4 \"F7\"z4 |\n\"Bbm7\"z8 | \"Eb9\"z8 | \"Ebm7\"z8 | \"Ab9\"z8 |\n\"Bm7\"z8 | \"E9\"z8 | \"C#m7\"z8 | \"F#m7\"z4 \"Em7\"z4 |\n\"Ebm7\"z8 | \"Ab7\"z8 | \"Cm7\"z8 | \"F7\"z8 |\n\"Bm7\"z8 | \"E7\"z8 | \"Em7\"z8 | \"A7\"z8 :|\n%coda\n\"Em7\"(3B2B2B2 B4- | \"A7\"B8 | \"Ebm7b5\"(3z2B2B2 B2 B2 | \"Ab7\"B2 B2 B2 B2 |\n\"Dm7b5\"(3z2B2B2 B2 B2 | \"G7\"B2 B2 !rit!B3 B | \"C#m11\"!fermata!B8 |]\n\n%unsure [bar 16] last eighth is a parenthesized optional note\n%unsure [bars 21-40] solo section is rhythm slashes, written as rests\n%unsure [bars 43-47] played freely; coda is in chords (top note only)"
+},
+{
+"id": "New_Real_Book_Volume2/065-delgado",
+"book": "The New Real Book Vol. 2",
+"title": "Delgado",
+"pdf": "65",
+"form": "AB 16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4,
+5
+],
+"groups": [
+0,
+1,
+2,
+3,
+4
+],
+"text": "intro line is marked (synth.) but it is the only line, so transcribed"
+},
+{
+"bars": [
+5
+],
+"groups": [
+4
+],
+"text": "second ending: eighth, eighth rest, then a diamond-head note; length guessed to fill the bar"
+},
+{
+"bars": [
+17
+],
+"groups": [
+16
+],
+"text": "chords printed over rhythm slashes on a held whole note; split by beat"
+},
+{
+"bars": [
+37
+],
+"groups": [
+36
+],
+"text": "last note is a diamond head; length guessed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "solo on form (AB); after solos D.S. al Coda; chord in parentheses used for solos; last 2 bars of solo form may be replaced by the intro"
+},
+{
+"bars": [
+38,
+39,
+40,
+41
+],
+"groups": [
+37,
+38,
+39,
+40
+],
+"text": "coda vamp marked (synth., behind fills); vamp, trade 4-bar fills and fade"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Delgado\nC:Eddie Gomez\nP:AB\n%source New Real Book Volume2 p57 (pdf 65)\n%style (Med. Bossa, quarter = 99)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16\nM:4/4\nL:1/8\nK:E\n%intro\n|: \"Dmaj9\"B2 BB- B B2 B- | \"C#7#9#5\"B B2 B B2 B2 | \"C13sus\"B2 BB- B B2 B- |1 \"C#7#9#5\"B B2 B B2 B2 :|2 \"C#7#9#5\"Bz B6 |\nP:A\n|: \"F#m(maj7)\"B2 BB- \"C#/E#\"B B2 B- | \"Bbm(maj7)\"B4- \"A/Bb\"B4 | \"B7b9\"B2 BB- \"B7susb9\"B B2 B- | \"C#+/C\"B4- \"A/C\"B4 |\n\"D#+/C#\"B2 BB- \"G/C#\"B B2 B- | \"Bm/C#\"B6 \"C#7b9\"B2 | \"F#(add9)\"B3 B- \"F#maj7#5\"B4 | \"Em/F#\"B4 \"F#7b9\"B4 |\n\"G/B\"B2 BB- B B2 B- | \"F#/A#\"B8 | \"G/A\"B2 BB- \"A7b9\"B B2 B- | \"Dmaj7\"B2- \"F#/D\"B2- \"Dmaj7\"B2- \"F#\"B2 |\n\"Bm(maj7)\"B2 BB- \"Bm7\"B B2 B- | \"Bb/C\"B4- \"C7\"B2 \"C7#5\"B2 | \"Fmaj7\"B6 BB- | \"Fmaj7\"B2 \"(C#7#9#5)\"\"C#7#9#5\"z2 z4 |\nP:B\n!segno!\"F#m(maj7)\"B2 BB- \"C#/E#\"B B2 B- | \"Bbm(maj7)\"B4- \"A/Bb\"B4 | \"B7b9\"B2 BB- \"B7susb9\"B B2 B- | \"C#+/C\"B4- \"A/C\"B4 |\n\"D#+/C#\"B2 BB- \"G/C#\"B B2 B- | \"Bm/C#\"B6 \"C#7b9\"B2 | \"F#(add9)\"B3 B- \"F#maj7#5\"B4 | \"Em/F#\"B4 \"F#7b9\"B4 |\n\"Bmaj9#11\"B2 BB- \"Bb9sus\"B B2 B- | \"A13sus\"B6 \"A13b9\"zB | \"Ebm(maj7)\"B2 BB- \"Ebm7\"B B2 B- | \"B7susb9\"B6 \"B7b9\"zB |\n\"Em(maj7)\"B2 BB- \"Em7\"B B2 B- | \"G/A\"B4 \"A13b9\"B4 | !coda!\"Dmaj9\"B2 BB- \"Gm6/9/D\"B B2 B- | \"Dmaj9\"Bz \"C#7#9#5\"B6 :|\n%coda\n|: \"Dmaj9\"B2 BB- B B2 B- | \"C#7#9#5\"B B2 B B2 B2 | \"C13sus\"B2 BB- B B2 B- | \"C#7#9#5\"B B2 B B2 B2 :|\n\n%unsure [bars 1-5] intro line is marked (synth.) but it is the only line, so transcribed\n%unsure [bar 5] second ending: eighth, eighth rest, then a diamond-head note; length guessed to fill the bar\n%unsure [bar 17] chords printed over rhythm slashes on a held whole note; split by beat\n%unsure [bar 37] last note is a diamond head; length guessed\n%unsure [general] solo on form (AB); after solos D.S. al Coda; chord in parentheses used for solos; last 2 bars of solo form may be replaced by the intro\n%unsure [bars 38-41] coda vamp marked (synth., behind fills); vamp, trade 4-bar fills and fade"
+},
+{
+"id": "New_Real_Book_Volume2/65-delgado",
+"book": "The New Real Book Vol. 2",
+"title": "Delgado",
+"pdf": "65",
+"form": "AB 16+16 (solo on AB; D.S. al Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4,
+5
+],
+"groups": [
+0,
+1,
+2,
+3,
+4
+],
+"text": "intro is a synth line"
+},
+{
+"bars": [
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21
+],
+"groups": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"text": "chord placement approximate where two chords share a bar"
+},
+{
+"bars": [
+38,
+39,
+40,
+41
+],
+"groups": [
+37,
+38,
+39,
+40
+],
+"text": "vamp, trade 4-bar fills and fade (synth behind fills)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Delgado\nC:Eddie Gomez\nP:AB\n%source New Real Book Vol 2 p57 (pdf 65)\n%style (Med. Bossa, q=99)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16 (solo on AB; D.S. al Coda)\nM:C\nL:1/8\nK:D\n%intro\n|: \"Dmaj9\"B2 BB- B B2 B- | \"C#7#9#5\"B B2 B B2 B2 | \"C13sus\"B2 BB- B B2 B- |1 \"C#7#9#5\"B B2 B B2 B2 :|2\n\"C#7#9#5\"Bz B6 ||\nP:A\n\"F#m(maj7)\"B2 BB- \"C#/E#\"B B2 B- | \"Bbm(maj7)\"B4- \"A/Bb\"B4 | \"B7b9\"B2 BB- \"B7sus(b9)\"B B2 B- | \"C#+/C\"B4 \"A/C\"B4 |\n\"D#+/C#\"B2 BB- \"G/C#\"B B2 B- | \"Bm/C#\"B6 \"C#7b9\"B2 | \"F#(add9)\"B3 B- \"F#maj7#5\"B4 | \"Em/F#\"B4 \"F#7b9\"B4 |\n\"G/B\"B2 BB- B B2 B- | \"F#/A#\"B8 | \"G/A\"B2 BB- \"A7b9\"B B2 B- | \"Dmaj7\"B4- \"F#/D\"B2 \"F#\"B2 |\n\"Bm(maj7)\"B2 BB- \"Bm7\"B B2 B- | \"Bb/C\"B4- \"C7\"B2 \"C7#5\"B2 | \"Fmaj7\"B6 BB- | \"(C#7#9#5)\"\"Fmaj7\"B2 \"C#7#9#5\"z2 z4 ||\nP:B\n!segno!\"F#m(maj7)\"B2 BB- \"C#/E#\"B B2 B- | \"Bbm(maj7)\"B4- \"A/Bb\"B4 | \"B7b9\"B2 BB- \"B7sus(b9)\"B B2 B- | \"C#+/C\"B4 \"A/C\"B4 |\n\"D#+/C#\"B2 BB- \"G/C#\"B B2 B- | \"Bm/C#\"B6 \"C#7b9\"B2 | \"F#(add9)\"B3 B- \"F#maj7#5\"B4 | \"Em/F#\"B4 \"F#7b9\"B4 |\n\"Bmaj9#11\"B2 BB- \"Bb9sus\"B B2 B- | \"A13sus\"B6 \"A13b9\"zB | \"Ebm(maj7)\"B2 BB- \"Ebm7\"B B2 B- | \"B7sus(b9)\"B6 \"B7b9\"zB |\n\"Em(maj7)\"B2 BB- \"Em7\"B B2 B- | \"G/A\"B4 \"A13b9\"B4 | !coda!\"Dmaj9\"B2 BB- \"Gm6/9/D\"B B2 B- | \"Dmaj9\"Bz \"C#7#9#5\"B6 :|\n%coda\n|: \"Dmaj9\"B2 BB- B B2 B- | \"C#7#9#5\"B B2 B B2 B2 | \"C13sus\"B2 BB- B B2 B- | \"C#7#9#5\"B B2 B B2 B2 :|\n\n%unsure [bars 1-5] intro is a synth line\n%unsure [bars 6-21] chord placement approximate where two chords share a bar\n%unsure [bars 38-41] vamp, trade 4-bar fills and fade (synth behind fills)"
+},
+{
+"id": "New_Real_Book_Volume2/066-detour-ahead",
+"book": "The New Real Book Vol. 2",
+"title": "Detour Ahead",
+"pdf": "66",
+"form": "ABC 16+8+10",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section bar counts counted from the page (A box covers 16 bars)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics printed in the book are not copied here; add them separately"
+},
+{
+"bars": [],
+"groups": [],
+"text": "changes from Bill Evans' \"Waltz for Debby\"; solos on this recording are double-time (head very slow)"
+},
+{
+"bars": [
+1,
+9,
+25
+],
+"groups": [
+0,
+8,
+24
+],
+"text": "three chords over a quarter and dotted half; chord placement by beat guessed"
+},
+{
+"bars": [
+33
+],
+"groups": [
+32
+],
+"text": "A7sus A7 over the last quarter; split guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Detour Ahead\nC:Lou Carter, Herb Ellis, John Frigo (as played by Bill Evans)\nP:ABC\n%source New Real Book Volume2 p58 (pdf 66)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+10\n%unsure [form] section bar counts counted from the page (A box covers 16 bars)\n%unsure [general] lyrics printed in the book are not copied here; add them separately\n%unsure [general] changes from Bill Evans' \"Waltz for Debby\"; solos on this recording are double-time (head very slow)\nM:4/4\nL:1/8\nK:D\nP:A\n\"Dmaj7\"B2 \"G#13\"B4- \"C#7#9#5\"B2 | B2 B4- BB | \"Gmaj7\"B\"F#m7\"B \"Bm\"BB B/B/ B3 | \"E7\"(3B2B2B2 \"Em7\"B2- \"A7\"B2 |\n\"Am7\"zB BB \"D7\"BB BB | \"Gmaj7\"B3 B \"C13\"B B3 | \"Dmaj7\"BB BB \"Bm7\"B B2 B | \"Bb13\"B4- \"Em7\"B2- \"A7\"B2 |\n\"Dmaj7\"B2 \"G#13\"B4- \"C#7#9#5\"B2 | B2 B4- BB | \"Gmaj7\"B\"F#m7\"B \"Bm\"BB B/B/ B3 | \"E7\"(3B2B2B2 \"Em7\"B2- \"A7\"B2 |\n\"Am7\"zB BB \"D7\"BB BB | \"Gmaj7\"B3 B \"C13\"B B3 | \"Dmaj7\"BB BB \"Bm7\"\"(Am7)\"B B2 B | \"G#m7b5\"B4 \"C#7\"z2 zB ||\nP:B\n\"F#m\"(3B2B2B2 B B2 B | \"C#7alt\"BB BB B B2 B | \"F#maj7\"B4 zB BB | \"G#m7b5\"B2 \"C#7\"B4 zB |\n\"F#m\"(3B2B2B2 B2 BB | \"C#7alt\"BB BB B3 B | \"F#maj7\"B2 B4 B2 | \"Eb13\"B2 B6 ||\nP:C\n\"Dmaj7\"B2 \"G#13\"B4- \"C#7#9#5\"B2 | B2 B4- BB | \"Gmaj7\"B\"F#m7\"B \"Bm\"BB B/B/ B3 | \"E7\"(3B2B2B2 \"Em7\"B2- \"A7\"B2 |\n\"Am7\"zB BB \"D7\"BB BB | \"Gmaj7\"B3 B \"C13\"B B3 | \"Dmaj7\"B2 \"F#7#9#5\"B6 | \"Bm7\"B2 B4 \"F9\"zB |\n\"E7\"B2 B4 \"A7sus\"B-\"A7\"B | \"Dmaj7\"B4- \"(A7#5)\"B4 |]\n\n%unsure [bars 1, 9, 25] three chords over a quarter and dotted half; chord placement by beat guessed\n%unsure [bar 33] A7sus A7 over the last quarter; split guessed"
+},
+{
+"id": "New_Real_Book_Volume2/66-detour-ahead",
+"book": "The New Real Book Vol. 2",
+"title": "Detour Ahead",
+"pdf": "66",
+"form": "AABC 8+8+8+10 (A written out twice)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed (not copied); as played by Bill Evans, changes from \"Waltz for Debby\"; solos double-time"
+},
+{
+"bars": [
+1,
+9
+],
+"groups": [
+0,
+8
+],
+"text": "G#13 and C#7#9#5 placed on beats 2 and 4 over the dotted half"
+},
+{
+"bars": [
+31,
+32,
+33
+],
+"groups": [
+30,
+31,
+32
+],
+"text": "C section is 10 bars; chord placement in bars 32-33 approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Detour Ahead\nC:Lou Carter, Herb Ellis, John Frigo\nP:AABC\n%source New Real Book Vol 2 p57 (pdf 66)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+10 (A written out twice)\n%unsure [general] lyrics are printed (not copied); as played by Bill Evans, changes from \"Waltz for Debby\"; solos double-time\nM:C\nL:1/8\nK:D\nP:A\n\"Dmaj7\"B2 \"G#13\"B4 \"C#7#9#5\"B2 | B2 B4- BB | \"Gmaj7\"BB \"F#m7\"BB \"Bm\"BB/B/ B2 | \"E7\"(3B2B2B2 \"Em7\"B2- \"A7\"B2 |\n\"Am7\"zB BB \"D7\"BB BB | \"Gmaj7\"B3 B \"C13\"B B3 | \"Dmaj7\"BB BB \"Bm7\"B B2 B | \"Bb13\"B4- \"Em7\"B2- \"A7\"B2 |\nP:A\n\"Dmaj7\"B2 \"G#13\"B4 \"C#7#9#5\"B2 | B2 B4- BB | \"Gmaj7\"BB \"F#m7\"BB \"Bm\"BB/B/ B2 | \"E7\"(3B2B2B2 \"Em7\"B2- \"A7\"B2 |\n\"Am7\"zB BB \"D7\"BB BB | \"Gmaj7\"B3 B \"C13\"B B3 | \"Dmaj7\"BB BB \"Bm7\"\"(Am7)\"B B2 B | \"G#m7b5\"B4 \"C#7\"z2 zB ||\nP:B\n\"F#m\"(3B2B2B2 B B2 B | \"C#7alt\"BB BB B B2 B | \"F#maj7\"B4 zB BB | \"G#m7b5\"B2 \"C#7\"B4 zB |\n\"F#m\"(3B2B2B2 B2 BB | \"C#7alt\"BB BB B3 B | \"F#maj7\"B2 B4 B2 | \"Eb13\"B2 B6 ||\nP:C\n\"Dmaj7\"B2 \"G#13\"B4 \"C#7#9#5\"B2 | B2 B4- BB | \"Gmaj7\"BB \"F#m7\"BB \"Bm\"BB/B/ B2 | \"E7\"(3B2B2B2 \"Em7\"B2- \"A7\"B2 |\n\"Am7\"zB BB \"D7\"BB BB | \"Gmaj7\"B3 B \"C13\"B B3 | \"Dmaj7\"B2 \"F#7#9#5\"B6 | \"Bm7\"B2 B4 \"F9\"zB |\n\"E7\"B2 \"A7sus\"B4 \"A7\"B2 | \"Dmaj7\"B4- \"(A7#5)\"B4 |]\n\n%unsure [bars 1, 9] G#13 and C#7#9#5 placed on beats 2 and 4 over the dotted half\n%unsure [bars 31-33] C section is 10 bars; chord placement in bars 32-33 approximate"
+},
+{
+"id": "New_Real_Book_Volume2/067-devil-may-care",
+"book": "The New Real Book Vol. 2",
+"title": "Devil May Care",
+"pdf": "67",
+"form": "ABC 16+16+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section bar counts counted from the page"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics printed in the book are not copied here; add them separately"
+},
+{
+"bars": [
+34
+],
+"groups": [
+33
+],
+"text": "three notes under a triplet bracket, middle one dotted; written as quarter, dotted eighth, sixteenth to fill the bar"
+},
+{
+"bars": [
+35
+],
+"groups": [
+34
+],
+"text": "Am F#m7b5 B7b9 over quarter-half-quarter; the next bar is also B7b9 E7b9 as printed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Devil May Care\nC:T. P. Kirk, Bob Dorough\nP:ABC\n%source New Real Book Volume2 p59 (pdf 67)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+16+12\n%unsure [form] section bar counts counted from the page\n%unsure [general] lyrics printed in the book are not copied here; add them separately\nM:4/4\nL:1/8\nK:C\nP:A\n\"Am\"B4 \"F#m7b5\"B2 B2 | \"B7b9\"B4 \"E7b9\"(3B2B2B2 | \"Am\"B3 B- \"F#m7b5\"B2 B2 | \"B7b9\"B4 \"E7b9\"(3B2B2B2 |\n\"Am\"(3B2B2B2 B4- | \"F#m7b5\"B4 BB BB- | \"F9#11\"B8- | \"E7b9\"B4 z4 |\n\"Am\"B3 B- \"F#m7b5\"B2 B2 | \"B7b9\"B4 \"E7b9\"(3B2B2B2 | \"Am\"\"(F#m7b5)\"B4 \"Am/G\"B B2 B- | \"F#o7\"\"(B7b9)\"B2 B2 \"Co7\"B2 B2 |\n\"Bm7(11b5)\"(3B2B2B2 B4- | \"E7b9#5\"B4 (3B2B2B2 | \"Am\"B8- | B4 \"Eb9\"z B2 B ||\nP:B\n\"Dm7\"B2 B2 B4- | \"G9\"B4 (3B2B2B2 | \"C6\"B2 B2 B4 | \"Ebo7\"z B3 B2 B2 |\n\"Dm7\"B2 B2 B4 | \"G9\"z2 zB- (3B2B2B2 | \"C\"B4- \"C+\"B4- | \"C6\"B4 \"Cmaj7\"z B3 |\n\"Cm7(11)\"BB BB- B4- | \"F7\"B3 B- B2 BB | \"Bbmaj7\"(3B2B2B2 B4- | B4 (3B2B2B2 |\n\"Bm7b5\"(3B2B2B2 (3B2B2B2 | \"E7b9\"B2 B2 B2 B2 | \"Amaj7\"B8 | \"F7\"z4 \"E7\"z4 ||\nP:C\n\"Am\"B2 zB- \"F#m7b5\"B2 BB- | \"B7b9\"B4 \"E7b9\"B2 B3/2B/2 | \"Am\"B2 \"F#m7b5\"B4 \"B7b9\"B2 | \"B7b9\"B4 \"E7b9\"(3B2B2B2 |\n\"Am\"(3B2B2B2 \"Am/G\"B4- | \"F#m7b5\"B2 B2 B2 B2 | \"F13#11\"(3B2B2B2 B4- | B2 B2 B2 B2 |\n\"Bm7(11b5)\"(3B2B2B2 B4- | \"E7b9#5\"B4 (3B2B2B2 | \"Am\"B4- \"(F#m7b5)\"B2- \"(B7b9)\"B2- | \"(E7b9)\"B4 z4 |]\n\n%unsure [bar 34] three notes under a triplet bracket, middle one dotted; written as quarter, dotted eighth, sixteenth to fill the bar\n%unsure [bar 35] Am F#m7b5 B7b9 over quarter-half-quarter; the next bar is also B7b9 E7b9 as printed"
+},
+{
+"id": "New_Real_Book_Volume2/67-devil-may-care",
+"book": "The New Real Book Vol. 2",
+"title": "Devil May Care",
+"pdf": "67",
+"form": "ABC 16+16+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed (not copied)"
+},
+{
+"bars": [
+34
+],
+"groups": [
+33
+],
+"text": "triplet is printed as quarter, dotted quarter, eighth under one 3 bracket; written as even triplet"
+},
+{
+"bars": [
+35,
+44
+],
+"groups": [
+34,
+43
+],
+"text": "chord placement approximate; bar 44 chords in parentheses are optional turnaround"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Devil May Care\nC:T. P. Kirk, Bob Dorough\nP:ABC\n%source New Real Book Vol 2 p59-60 (pdf 67-68)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+16+12\n%unsure [general] lyrics are printed (not copied)\nM:C\nL:1/8\nK:C\nP:A\n\"Am\"B4 \"F#m7b5\"B2 B2 | \"B7b9\"B4 \"E7b9\"(3B2B2B2 | \"Am\"B3 B- \"F#m7b5\"B2 B2 | \"B7b9\"B4 \"E7b9\"(3B2B2B2 |\n\"Am\"(3B2B2B2 B4- | \"F#m7b5\"B4 BB BB- | \"F9#11\"B8- | \"E7b9\"B4 z4 |\n\"Am\"B3 B- \"F#m7b5\"B2 B2 | \"B7b9\"B4 \"E7b9\"(3B2B2B2 | \"Am\"B4 \"Am/G\"B B2 B- | \"F#o7\"\"(F#m7b5)\"B2 B2 \"Co7\"\"(B7b9)\"B2 B2 |\n\"Bm7b5(11)\"(3B2B2B2 B4- | \"E7b9#5\"B4 (3B2B2B2 | \"Am\"B8- | B4 \"Eb9\"z B2 B ||\nP:B\n\"Dm7\"B2 B2 B4- | \"G9\"B4 (3B2B2B2 | \"C6\"B2 B2 B4 | \"Ebo7\"z B3 B2 B2 |\n\"Dm7\"B2 B2 B4 | \"G9\"z2 zB- (3B2B2B2 | \"C\"B4- \"C+\"B4- | \"C6\"B4 z \"Cmaj7\"B3 |\n\"Cm7(11)\"BB BB- B4- | \"F7\"B3 B- B2 BB | \"Bbmaj7\"(3B2B2B2 B4- | B4 (3B2B2B2 |\n\"Bm7b5\"(3B2B2B2 (3B2B2B2 | \"E7b9\"B2 B2 B2 B2 | \"Amaj7\"B8 | \"F7\"z4 \"E7\"z4 ||\nP:C\n\"Am\"B2 zB- \"F#m7b5\"B2 BB- | \"B7b9\"B4 \"E7b9\"(3B2B2B2 | \"Am\"B2 \"F#m7b5\"B4 B2 | \"B7b9\"B4 \"E7b9\"(3B2B2B2 |\n\"Am\"(3B2B2B2 \"Am/G\"B4- | \"F#m7b5\"B2 B2 B2 B2 | \"F13#11\"(3B2B2B2 B4- | B2 B2 B2 B2 |\n\"Bm7b5(11)\"(3B2B2B2 B4- | \"E7b9#5\"B4 (3B2B2B2 | \"Am\"B8- | B4 \"(F#m7b5)\"z\"(B7b9)\"z \"(E7b9)\"z2 |]\n\n%unsure [bar 34] triplet is printed as quarter, dotted quarter, eighth under one 3 bracket; written as even triplet\n%unsure [bars 35, 44] chord placement approximate; bar 44 chords in parentheses are optional turnaround"
+},
+{
+"id": "New_Real_Book_Volume2/069-django",
+"book": "The New Real Book Vol. 2",
+"title": "Django",
+"pdf": "69",
+"form": "ABBCDE 20+8+8+8+12+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "order inferred from \"Solo on BBCD; play E between solos; after last solo D.C. al fine\"; bar counts counted"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19
+],
+"text": "piano with vibes in chords; melody is the top note, rhythm of the chord stack written"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"groups": [
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47
+],
+"text": "solo sections (B, C, D) printed as rhythm slashes; written as rests with the chords"
+},
+{
+"bars": [
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56
+],
+"groups": [
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55
+],
+"text": "double time (quarter = half), chords in the staff; top-note rhythm written"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Django\nC:John Lewis (as played by the MJQ)\nP:ABBCDEA\n%source New Real Book Volume2 p61 (pdf 69)\n%style (Slow 4 (Straight 1/8's), quarter = 76; solos Med. Swing, quarter = 110)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABBCDE 20+8+8+8+12+8\n%unsure [form] order inferred from \"Solo on BBCD; play E between solos; after last solo D.C. al fine\"; bar counts counted\nM:4/4\nL:1/8\nK:Gm\nP:A\n\"Gm\"z2 B4 B2 | \"Cm\"B3 B B2 \"D7b9\"B2- | B2 B4 B2 | \"Gm\"B3 B B2 B2- |\n\"G7b9\"B2 B4 B2 | \"Cm\"B3 B B2 \"F7b9\"B2- | B2 B4 B2 | \"Bb\"B3 B B2 B2- |\n\"Eb\"B2 B4 \"Ebmaj7\"B2 | \"Am7b5\"B3 B B2 B2 | \"A7/G\"B3 B B2 B2 | \"D/F#\"B3 B B2 \"D\"B2- |\n\"Gm9(maj7)\"B2 B4 \"Gm\"B2- | B2 \"Gm7/C\"B4 \"Cm\"B2- | \"D+\"B2 B4 \"D7\"B2 | \"Co7/G\"B4 \"Gm\"B4 |\n\"Gm9(maj7)\"z2 B4 \"Gm\"B2- | B2 \"Gm7/C\"B4 \"Cm\"B2- | \"D+\"B2 B4 \"D7\"B2 | \"Co7/G\"B4 \"Gm\"!fine!B4 ||\nP:B\n|: \"Gm\"z4 \"Em7b5\"z4 | \"A7\"z4 \"D7\"z4 | \"G7b9\"z4 \"Cm7\"z4 | \"F7\"z4 \"Bb7\"z4 |1 \"Eb7\"z4 \"A7\"z4 | \"D7\"z8 :|2 \"Eb7\"z4 \"D7\"z4 | \"Gm6\"z8 ||\nP:C\n\"G7b9\"z8 | \"Cm6/G\"z8 | \"G7b9\"z8 | \"Cm6/G\"z8 |\n\"G7b9\"z8 | \"Cm6/G\"z8 | \"G7\"z4 \"Co7/G\"z4 | \"G7b9\"z8 ||\nP:D\n\"Cm\"z4 \"Am7b5\"z4 | \"D7\"z4 \"G7\"z4 | \"C7\"z4 \"Fm7\"z4 | \"Bb7\"z4 \"Eb7\"z4 |\n\"Ab7\"z8 | z8 | \"Eb7\"z8 | z8 |\n\"Ab7\"z8 | z8 | \"Eb7\"z8 | \"(D7)\"z8 |]\nP:E\n\"Gm9(maj7)\"z2 B4 \"Gm\"B2 | \"Gm7/C\"z2 B4 \"Cm\"B2 | \"D+\"z2 B4 \"D7\"B2 | \"Co7/G\"B4 \"Gm\"B4 |\n\"Gm9(maj7)\"z2 B4 \"Gm\"B2 | \"Gm7/C\"z2 B4 \"Cm\"B2 | \"D+\"z2 B4 \"D7\"B2 | \"Co7/G\"B4 \"Gm\"B4 |]\n\n%unsure [bars 1-20] piano with vibes in chords; melody is the top note, rhythm of the chord stack written\n%unsure [bars 21-48] solo sections (B, C, D) printed as rhythm slashes; written as rests with the chords\n%unsure [bars 49-56] double time (quarter = half), chords in the staff; top-note rhythm written"
+},
+{
+"id": "New_Real_Book_Volume2/69-django",
+"book": "The New Real Book Vol. 2",
+"title": "Django",
+"pdf": "69",
+"form": "A 20, solos BBCD 8+8+8+12, E 8 interlude",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "\"Solo on BBCD; Play E between solos. After last solo, D.C. al fine.\" E is double time, then back to B for next solo"
+},
+{
+"bars": [],
+"groups": [],
+"text": "A is piano with vibes in chords; melody is the top note (rhythm of the top voice)"
+},
+{
+"bars": [
+10,
+19,
+20
+],
+"groups": [
+9,
+18,
+19
+],
+"text": "chord placement approximate; rit. in bar 19"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"groups": [
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47
+],
+"text": "B, C, D are solo changes printed as slashes, written as rests (C over G pedal)"
+},
+{
+"bars": [
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56
+],
+"groups": [
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55
+],
+"text": "E is double time (quarter = half); chord hits"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Django\nC:John Lewis\nP:ABCDE\n%source New Real Book Vol 2 p61-62 (pdf 69-70)\n%style (Slow 4 (Straight 1/8's), q=76; solos Med. Swing, q=110)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 20, solos BBCD 8+8+8+12, E 8 interlude\n%unsure [form] \"Solo on BBCD; Play E between solos. After last solo, D.C. al fine.\" E is double time, then back to B for next solo\n%unsure [general] A is piano with vibes in chords; melody is the top note (rhythm of the top voice)\nM:C\nL:1/8\nK:Gm\nP:A\n\"Gm\"z2 B4 B2 | \"Cm\"B3 B B2 \"D7b9\"B2- | B2 B4 B2 | \"Gm\"B3 B B2 B2- |\n\"G7b9\"B2 B4 B2 | \"Cm\"B3 B B2 \"F7b9\"B2- | B2 B4 B2 | \"Bb\"B3 B B2 B2- |\n\"Eb\"B2 B4 B2 | \"Ebmaj7\"B3 B \"Am7b5\"B2 B2 | \"A7/G\"B3 B B2 B2 | \"D/F#\"B3 B \"D\"B2 B2- |\n\"Gm9(maj7)\"B2 B2 \"Gm\"B4- | \"Gm7/C\"B2 B4 \"Cm\"B2- | \"D+\"B2 B4 \"D7\"B2 | \"Co7/G\"B4 \"Gm\"B4 |\n\"Gm9(maj7)\"z2 B4 \"Gm\"B2- | \"Gm7/C\"B2 B4 \"Cm\"B2- | \"D+\"B2 B4 \"D7\"B2 | \"Co7/G\"B4 \"Gm\"B4 ||\nP:B\n|: \"Gm\"z4 \"Em7b5\"z4 | \"A7\"z4 \"D7\"z4 | \"G7b9\"z4 \"Cm7\"z4 | \"F7\"z4 \"Bb7\"z4 |1 \"Eb7\"z4 \"A7\"z4 | \"D7\"z8 :|2 \"Eb7\"z4 \"D7\"z4 | \"Gm6\"z8 ||\nP:C\n\"G7b9\"z8 | \"Cm6/G\"z8 | \"G7b9\"z8 | \"Cm6/G\"z8 |\n\"G7b9\"z8 | \"Cm6/G\"z8 | \"G7\"z4 \"Co7/G\"z4 | \"G7b9\"z8 ||\nP:D\n\"Cm\"z4 \"Am7b5\"z4 | \"D7\"z4 \"G7\"z4 | \"C7\"z4 \"Fm7\"z4 | \"Bb7\"z4 \"Eb7\"z4 |\n\"Ab7\"z8 | z8 | \"Eb7\"z8 | z8 |\n\"Ab7\"z8 | z8 | \"Eb7\"z8 | \"(D7)\"z8 |]\nP:E\n\"Gm9(maj7)\"z2 B4 \"Gm\"B2 | \"Gm7/C\"z2 B4 \"Cm\"B2 | \"D+\"z2 B4 \"D7\"B2 | \"Co7/G\"B4 \"Gm\"B4 |\n\"Gm9(maj7)\"z2 B4 \"Gm\"B2 | \"Gm7/C\"z2 B4 \"Cm\"B2 | \"D+\"z2 B4 \"D7\"B2 | \"Co7/G\"B4 \"Gm\"B4 |]\n\n%unsure [bars 10, 19-20] chord placement approximate; rit. in bar 19\n%unsure [bars 21-48] B, C, D are solo changes printed as slashes, written as rests (C over G pedal)\n%unsure [bars 49-56] E is double time (quarter = half); chord hits"
+},
+{
+"id": "New_Real_Book_Volume2/071-doce-presenca",
+"book": "The New Real Book Vol. 2",
+"title": "Doce Presenca",
+"pdf": "71",
+"form": "AABCD 8+8+8+8+5",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 8,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "order inferred from repeat, segno at B and \"D.S. al Coda\" after the D guitar solo; bar counts counted"
+},
+{
+"bars": [
+1,
+2
+],
+"groups": [
+0,
+1
+],
+"text": "intro printed as rhythm slashes, (etc.); written as rests with the chords"
+},
+{
+"bars": [
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10
+],
+"groups": [
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+"text": "dense sixteenth figures; groupings and ties read from the scan and adjusted so each bar adds up"
+},
+{
+"bars": [
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18
+],
+"groups": [
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17
+],
+"text": "sixteenth and triplet groupings simplified so bars add up; bar 17 written as straight eighths (has ties and sixteenths)"
+},
+{
+"bars": [
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26
+],
+"groups": [
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25
+],
+"text": "C is printed like A with small changes; groupings as for A"
+},
+{
+"bars": [
+27,
+28,
+29,
+30,
+31
+],
+"groups": [
+26,
+27,
+28,
+29,
+30
+],
+"text": "guitar solo over brass figures (accented hits); melody line is the brass, bar 28 is a repeat sign"
+},
+{
+"bars": [
+31
+],
+"groups": [
+30
+],
+"text": "Db(add9)/F, Gb/E, Eb7 placement over half, eighth, dotted quarter guessed; D.S. al Coda after (end solo)"
+},
+{
+"bars": [
+34,
+35
+],
+"groups": [
+33,
+34
+],
+"text": "bar 34 is a whole note (poco rit.) with four chords; last bar slashes then a fermata diamond note"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Doce Presenca\nC:Ivan Lins\nP:AABCDBC\n%source New Real Book Volume2 p63 (pdf 71)\n%style (Med. Pop Ballad, quarter = 62)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABCD 8+8+8+8+5\n%unsure [form] order inferred from repeat, segno at B and \"D.S. al Coda\" after the D guitar solo; bar counts counted\nM:4/4\nL:1/8\nK:Gb\n%intro\n|: \"Abm7\"z4 \"Cbmaj7/Db\"z2 \"Db9\"z2 | \"Gbmaj7\"z4 \"Ebm7\"z4 :|\nP:A\n|: \"Abm9\"zB/B/- BB/B/ \"Cbmaj7/Db\"B-B/B/ \"Db9\"BB/B/- | \"Gbmaj9\"BB/B/- BB/B/- B \"Ebm7\"B3 | \"Abm9\"z2 (3BBB \"Cbmaj7/Db\"BB/B/ \"Db9\"BB/B/- | \"Gbmaj9\"BB- (3BBB \"Fm11\"B2 \"Bb7b9#5\"B2 |\n\"Ebm(maj7)9/Bb\"B2 \"Ebm9\"(3BBB \"Ab13sus\"BB- \"Ab13b5\"!fermata!BB/B/ | \"Ebm(maj7)9/Bb\"B2 \"Ebm9\"BB \"Ab13sus\"BB- \"Ab13b5\"!fermata!B/B/B/B/ | \"Cbmaj7\"BB/B/- B\"Bbm7\"B/B/- B2 \"Abm7\"B\"Db9sus\"B- | \"Gbmaj7\"B4 \"Eb7#11b9\"z4 :|\nP:B\n!segno!\"Bm9\"B/B/B- B/B/B/B/- \"E7\"B2 zB/B/ | \"A13sus\"B/B/B- B/B/B/B/- \"A13\"B2 zB/B/ | \"Dmaj7\"B/B/B- BB \"C#m7(11)\"B/B/-B \"F#7b9\"(3BBB | \"Bm\"B4 \"Bm(maj7)\"z2 \"Bm7\"z2 |\n\"Abm7(11b5)\"B/B/B/B/- BB \"Dm6\"B-B \"Db7b9\"(3zBB | \"Gbmaj7\"BB- \"Bb7#5\"(3BBB B2 \"Ebm7\"z2 | \"Bbm7b5\"BB B-B BB BB | \"Eb9sus\"B4 \"Eb13b9\"z2 \"Eb7b9#5\"z2 ||\nP:C\n\"Abm9\"zB/B/- BB/B/ \"Cbmaj7/Db\"B-B/B/ \"Db9\"BB/B/- | \"Gbmaj9\"BB/B/- BB/B/- B\"Gb/E\"B \"Eb7#11b9\"B2 | \"Abm9\"z2 (3BBB \"Cbmaj7/Db\"BB/B/ \"Db9\"BB/B/- | \"Gbmaj9\"BB- (3BBB \"Fm11\"B2 \"Bb7b9#5\"B2 |\n\"Ebm(maj7)9/Bb\"B2 \"Ebm9\"(3BBB \"Ab13sus\"BB- \"Ab13b5\"!fermata!BB/B/ | \"Ebm(maj7)9/Bb\"B2 \"Ebm9\"BB \"Ab13sus\"BB- \"Ab13b5\"!fermata!B/B/B/B/ | \"Cbmaj7\"BB/B/- B\"Bbm7\"B/B/- B2 \"Abm7\"B\"Db9sus\"B- | !coda!\"Gbmaj7\"B4 \"Gb13sus\"z2 \"Gb13b5\"z2 ||\nP:D\n|: \"Cb\"B \"Db/Cb\"B3- B4 | B B3- B4 | \"Gb(add9)/Bb\"B \"Ebm11\"B2 \"Gb9\"B \"Cbmaj7\"B2 \"E9\"B\"Gbmaj9\"B- |1 B4 \"Gb13sus\"B2 \"Gb13b5\"B2 :|2\n\"Gbmaj9\"B4 \"Db(add9)/F\"z\"Gb/E\"B \"Eb7#11b9\"B2 |]\n%coda\n\"Gbmaj7\"B4 \"Gb13sus\"z2 \"Gb13b5\"(3BBB | \"Cbmaj7\"BB/B/- B\"Bbm7\"B/B/- B2 \"Abm7\"B\"Db9sus\"B- | \"Gbmaj7\"B2- \"Bmaj7\"B2- \"Emaj7\"B2- \"Amaj7\"B2 | \"Dmaj7\"z2 \"Gmaj7\"z2 \"Gbmaj13#11\"!fermata!B4 |]\n\n%unsure [bars 1-2] intro printed as rhythm slashes, (etc.); written as rests with the chords\n%unsure [bars 3-10] dense sixteenth figures; groupings and ties read from the scan and adjusted so each bar adds up\n%unsure [bars 11-18] sixteenth and triplet groupings simplified so bars add up; bar 17 written as straight eighths (has ties and sixteenths)\n%unsure [bars 19-26] C is printed like A with small changes; groupings as for A\n%unsure [bars 27-31] guitar solo over brass figures (accented hits); melody line is the brass, bar 28 is a repeat sign\n%unsure [bar 31] Db(add9)/F, Gb/E, Eb7 placement over half, eighth, dotted quarter guessed; D.S. al Coda after (end solo)\n%unsure [bars 34-35] bar 34 is a whole note (poco rit.) with four chords; last bar slashes then a fermata diamond note"
+},
+{
+"id": "New_Real_Book_Volume2/71-doce-presenca",
+"book": "The New Real Book Vol. 2",
+"title": "Doce Presenca",
+"pdf": "71",
+"form": "Intro, A 8, B 8, C 8, D (guitar solo) 4; D.S. (to B) al Coda",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A repeats; D is the guitar solo (brass figure), then D.S. al Coda; coda taken from the end of C"
+},
+{
+"bars": [],
+"groups": [],
+"text": "dense syncopated 16th-note vocal line; many groupings and ties approximate and should be checked against the page"
+},
+{
+"bars": [
+1,
+2
+],
+"groups": [
+0,
+1
+],
+"text": "intro rhythm slashes written as rests (\"etc.\")"
+},
+{
+"bars": [
+27,
+28,
+29,
+30,
+31
+],
+"groups": [
+26,
+27,
+28,
+29,
+30
+],
+"text": "guitar solo over brass figure; bar 28 is a printed one-bar repeat; then D.S. al Coda"
+},
+{
+"bars": [
+32,
+33,
+34,
+35
+],
+"groups": [
+31,
+32,
+33,
+34
+],
+"text": "coda; bar 34 whole note under four chords (poco rit.); bar 35 two slash beats written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Doce Presenca\nC:Ivan Lins\nP:ABCD\n%source New Real Book Vol 2 p63-64 (pdf 71-72)\n%style (Med. Pop Ballad, q=62)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form Intro, A 8, B 8, C 8, D (guitar solo) 4; D.S. (to B) al Coda\n%unsure [form] A repeats; D is the guitar solo (brass figure), then D.S. al Coda; coda taken from the end of C\n%unsure [general] dense syncopated 16th-note vocal line; many groupings and ties approximate and should be checked against the page\nM:C\nL:1/16\nK:Gb\n%intro\n|: \"Abm7\"z8 \"Cbmaj7/Db\"z4 \"Db9\"z4 | \"Gbmaj7\"z8 \"Ebm7\"z8 :|\nP:A\n|: \"Abm9\"z2BB- B2BB \"Cbmaj7/Db\"B2B2- \"Db9\"B2BB- | \"Gbmaj9\"B2BB- B2BB B4 \"Ebm7\"B4 | \"Abm9\"z4 (3B2B2B2 \"Cbmaj7/Db\"B2BB \"Db9\"B2BB- | \"Gbmaj9\"B2B2- (3B2B2B2 \"Fm11\"B4 \"Bb7b9#5\"B4 |\n\"Ebm9(maj7)/Bb\"B4- \"Ebm9\"(3B2B2B2 \"Ab13sus\"B2B2- \"Ab13b5\"!fermata!B2BB | \"Ebm9(maj7)/Bb\"B4 \"Ebm9\"B2B2 \"Ab13sus\"B2B2- \"Ab13b5\"BBBB | \"Cbmaj7\"B2BB- B2BB- \"Bbm7\"B4 \"Abm7\"B2\"Db9sus\"B2- | \"Gbmaj7\"B8 \"Eb7#11b9\"z8 :|\nP:B\n!segno!\"Bm9\"BBB2- BBB2- \"E7\"B4 z2(3BBB | \"A13sus\"BBB2- BBB2- B4 \"A13\"z2(3BBB | \"Dmaj7\"BBB2- B2BB- \"C#m7(11)\"B2BB- \"F#7b9\"(3B2B2B2 | \"Bm\"B8 \"Bm(maj7)\"z4 \"Bm7\"z4 |\n\"Abm7b5(11)\"B2BB- B2BB \"Dm6\"B2B2 \"Db7b9\"(3z2B2B2 | \"Gbmaj7\"B2B2- \"Bb7#5\"(3B2B2B2 \"Ebm7\"B4 z4 | \"Bbm7b5\"B2BB- BBB2- B2BB B2B2 | \"Eb9sus\"B8 \"Eb13b9\"z4 \"Eb7b9#5\"z4 ||\nP:C\n\"Abm9\"z2BB- B2BB \"Cbmaj7/Db\"B2B2- \"Db9\"B2BB- | \"Gbmaj9\"B2BB- B2BB- B\"Gb/E\"B \"Eb7#11b9\"B6 | \"Abm9\"z4 (3B2B2B2 \"Cbmaj7/Db\"B2BB \"Db9\"B2BB- | \"Gbmaj9\"B2B2- (3B2B2B2 \"Fm11\"B4 \"Bb7b9#5\"B4 |\n\"Ebm9(maj7)/Bb\"B4- \"Ebm9\"(3B2B2B2 \"Ab13sus\"B2B2- \"Ab13b5\"!fermata!B2BB | \"Ebm9(maj7)/Bb\"B4 \"Ebm9\"B2B2 \"Ab13sus\"B2B2- \"Ab13b5\"BBBB | \"Cbmaj7\"B2BB- B2BB- \"Bbm7\"B4 \"Abm7\"B2\"Db9sus\"B2- | !coda!\"Gbmaj7\"B8 \"Gb13sus\"z4 \"Gb13b5\"z4 ||\nP:D\n|: \"Cb\"!accent!B2 \"Db/Cb\"B6- B8 | B2 B6- B8 | \"Gb(add9)/Bb\"!accent!B2 \"Ebm11\"B4 \"Gb9\"!accent!B2 \"Cbmaj7\"B4 \"E9\"!accent!B2\"Gbmaj9\"B2- |1 B8 \"Gb13sus\"B4 \"Gb13b5\"B4 :|2\n\"Gbmaj9\"B8 \"Db(add9)/F\"\"Gb/E\"!accent!B2 \"Eb7#11b9\"B6 |]\n%coda\n!coda!\"Gbmaj7\"B8 \"Gb13sus\"z4 \"Gb13b5\"(3B2B2B2 | \"Cbmaj7\"B2BB- B2BB- \"Bbm7\"B4 \"Abm7\"B2\"Db9sus\"B2- | \"Gbmaj7\"B4- \"Bmaj7\"B4- \"Emaj7\"B4- \"Amaj7\"B4 | \"Dmaj7\"z4 \"Gmaj7\"z4 \"Gbmaj13#11\"!fermata!B8 |]\n\n%unsure [bars 1-2] intro rhythm slashes written as rests (\"etc.\")\n%unsure [bars 27-31] guitar solo over brass figure; bar 28 is a printed one-bar repeat; then D.S. al Coda\n%unsure [bars 32-35] coda; bar 34 whole note under four chords (poco rit.); bar 35 two slash beats written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/073-dogs-in-the-wine-shop",
+"book": "The New Real Book Vol. 2",
+"title": "Dogs in the Wine Shop",
+"pdf": "73",
+"form": "ABCDEFG (irregular sections; D.S. al Coda after G)",
+"bad": 2,
+"off": [
+32,
+50
+],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "P: order read from printed letters; solos repeat DEF, then G, D.S. to segno, coda after C"
+},
+{
+"bars": [],
+"groups": [],
+"text": "multi-bar rests Z8/Z15 etc. are tenor/synth fill bars"
+},
+{
+"bars": [
+23
+],
+"groups": [
+22
+],
+"text": "last beat printed as a 3-bracketed pair after an eighth rest; written as two 16ths"
+},
+{
+"bars": [],
+"groups": [],
+"text": "slash-rhythm bars written as rests with the chord"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Dogs in the Wine Shop\nC:Don Grolnick\nP:ABCDEFG\n%source New Real Book Vol 2 p65 (pdf 73)\n%style (Med. Latin/Straight 1/8's, q=202; as played by Michael Brecker)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCDEFG (irregular sections; D.S. al Coda after G)\n%unsure [form] P: order read from printed letters; solos repeat DEF, then G, D.S. to segno, coda after C\nM:3/4\nL:1/8\nK:C\nP:A\n\"B7sus(b9)\"B6- | B6 | \"B7#9#5/A\"B6- | B6 |\n\"A7#9#5/G\"B6- | B6 | \"D7alt/F#\"B6- | B6 |\n!segno!\"F#9sus\"B4 B2- | \"F#m9\"B2 B4 | \"C#sus(add9)\"B6 | B6 |\n\"F#m11\"B6 | B6 | \"C#m11\"B6- | B6 |\n\"Em(add9)\"z2 B4 | \"B7sus\"B4- B\"Em7\"B | (4:3:3\"Bm9\"B4B2\"A(add9)/B\"B2- | B6 |\n\"Ebm11\"Z8 | \"Fm11\"Z8 ||\nP:B\n\"Fm7(11)\"B2 z2 z2 | z2 z2 zB | \"Fm6/9\"B4 B2 | z6 |\nz2 z\"C7sus/F\"B z2 | z2 z2 zB/B/ | \"Fm7(11)\"B4 B2 | z6 |\n\"G7#9#5/F\"z6 | B2 B/B/B B-B B | B6- | B6 |\n\"Fm11\"Z8 | \"F7alt\"B6 | \"Ab/Bbm\"B6 | \"B/F#m\"B4 \"Db/Abm\"B2- |\nB6 | \"Gm11\"Z8 ||\nP:C\n\"Gm7(11)\"B2 z2 z2 | z2 z2 zB | \"Gm6/9\"B4 B2 | z6 |\nz2 z\"D7sus/G\"B z2 | z2 z2 zB/B/ | \"Gm7(11)\"B4 B2 | z6 |\n\"A7#9#5/G\"z6 | B2 B/B/B B-B B | B6- | \"(A7#9#5/G)\"B3 B2 B |\nB6- | B6 | \"Gm11\"Z15 | BB BB B-B |\n\"Cmaj7b5\"(4:3:3B4\"G(add9)/B\"B2B2 | \"Am11\"(4:3:3B6 BB | \"C#m11\"(4:3:3B2B2\"F#/G#m\"B4- | B6 |\n\"Fm11\"B6- | B6 | \"Fm11\"Z4 | \"Fm7(11)/C\"z6 |\nz6 ||\nP:D\n|: \"B7sus(b9)\"z6 | z6 | \"B7alt\"z6 | z6 |\n\"A7alt\"z6 | z6 | \"D7alt\"z6 | z6 |\n\"F#m9\"z6 | z6 | \"C#m9\"z6 | z6 |\n\"F#m9\"z6 | z6 | \"C#m9\"z6 | z6 |\n\"Em9\"z6 | z6 | \"Bm9\"z6 | z6 ||\nP:E\n\"Ebm11\"Z8 | \"Fm11\"Z8 | \"G7alt/F\"Z4 | \"Fm11\"Z4 |\n\"F7alt\"B6 | \"Ab/Bbm\"B6 | \"B/F#m\"B4 \"Db/Abm\"B2- | B6 ||\nP:F\n\"Gm11\"Z8 | \"A7alt/G\"Z4 | \"Gm11\"Z4 | \"Cmaj7b5\"(4:3:3B4\"G(add9)/B\"B2B2 |\n\"Am11\"(4:3:3B6 BB | \"C#m11\"(4:3:3B2B2\"F#/G#m\"B4- | B6 | \"Fm11\"Z6 |\n\"Fm7(11)/C\"z6 | z6 :|\nP:G\n\"Fm11\"Z12 | \"B7sus(b9)\"B6 | \"B7#9#5/A\"B6 | \"A7#9#5/G\"B6 | \"D7alt/F#\"B6 |]\n%coda\n!coda!\"Cmaj7b5\"(4:3:3B4\"G(add9)/B\"B2B2 | \"Am11\"(4:3:3B6 BB | \"C#m11\"(4:3:3B2B2\"F#/G#m\"B4- | !fermata!B6 |\n\"Fm11\"!fermata!B6 |]\n\n%unsure [general] multi-bar rests Z8/Z15 etc. are tenor/synth fill bars\n%unsure [bar 23] last beat printed as a 3-bracketed pair after an eighth rest; written as two 16ths\n%unsure [general] slash-rhythm bars written as rests with the chord"
+},
+{
+"id": "New_Real_Book_Volume2/73-dogs-in-the-wine-shop",
+"book": "The New Real Book Vol. 2",
+"title": "Dogs in the Wine Shop",
+"pdf": "73",
+"form": "Intro 8, A 22, B 26, C 34, solos DEF, G 16; D.S. al Coda",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "\"Solo on DEF; After solos, continue to G\"; G then D.S. al Coda. Meter printed 3/4 (6/8). On the recording the second chorus of tenor solo begins at bar 17 of E"
+},
+{
+"bars": [],
+"groups": [],
+"text": "long multi-bar rests (written out as z6 bars) are tenor and synth fills; cue rhythms over rests in B and C not transcribed"
+},
+{
+"bars": [
+9
+],
+"groups": [
+8
+],
+"text": "piano counter-line under this passage not transcribed"
+},
+{
+"bars": [
+98,
+99,
+100,
+101,
+102
+],
+"groups": [
+97,
+98,
+99,
+100,
+101
+],
+"text": "4-in-the-time-of-3 groupings written as (4:3:3; bar 98 is synth with tenor doubling bottom voice"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Dogs in the Wine Shop\nC:Don Grolnick\nP:ABCDEFG\n%source New Real Book Vol 2 p65-66 (pdf 73-74)\n%style (Med. Latin/Straight 1/8's, q=202)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form Intro 8, A 22, B 26, C 34, solos DEF, G 16; D.S. al Coda\n%unsure [form] \"Solo on DEF; After solos, continue to G\"; G then D.S. al Coda. Meter printed 3/4 (6/8). On the recording the second chorus of tenor solo begins at bar 17 of E\n%unsure [general] long multi-bar rests (written out as z6 bars) are tenor and synth fills; cue rhythms over rests in B and C not transcribed\nM:3/4\nL:1/8\nK:C\n%intro\n\"B7sus(b9)\"B6- | B6 | \"B7#9#5/A\"B6- | B6 |\n\"A7#9#5/G\"B6- | B6 | \"D7alt/F#\"B6- | B6 |\nP:A\n!segno!\"F#9sus\"B4 B2- | \"F#m9\"B2 B4 | \"C#sus(add9)\"B6 | B6 |\n\"F#m11\"B6 | B6 | \"C#m11\"B6- | B6 |\nz2 \"Em(add9)\"B4 | \"B7sus\"B4- B\"Em7\"B | \"Bm9\"(4:3:3B4B2B2- | \"A(add9)/B\"B6 |\n\"Ebm11\"z6 | z6 | z6 | z6 |\nz6 | z6 | z6 | z6 |\n\"Fm11\"z6 | z6 | z6 | z6 |\nz6 | z6 | z6 | z6 ||\nP:B\n\"Fm7(11)\"B2 z2 z2 | z2 z2 zB | \"Fm6/9\"B4 B2 | z6 |\nz2 z\"C7sus/F\"B z2 | z2 z2 (3zBB | \"Fm7(11)\"B4 B2 | z6 |\n\"G7#9#5/F\"z6 | B2 B/B/B- BB | B6- | B6 |\n\"Fm11\"z6 | z6 | z6 | z6 |\nz6 | z6 | z6 | z6 |\n\"F7alt\"B6 | \"Ab/Bbm\"B6 | \"B/F#m\"B4 \"Db/Abm\"B2- | B6 |\n\"Gm11\"z6 | z6 | z6 | z6 |\nz6 | z6 | z6 | z6 ||\nP:C\n\"Gm7(11)\"B2 z2 z2 | z2 z2 zB | \"Gm6/9\"B4 B2 | z6 |\nz2 z\"D7sus/G\"B z2 | z2 z2 (3zBB | \"Gm7(11)\"B4 B2 | z6 |\n\"A7#9#5/G\"z6 | B2 B/B/B- BB | B6- | \"(A7#9#5/G)\"B4 BB- |\nB6- | B6 | \"Gm11\"z6 | z6 |\nz6 | z6 | z6 | z6 |\nz6 | z6 | z6 | z6 |\nz6 | z6 | z6 | z6 |\nz6 | BB BB B-B | \"Cmaj7b5\"(4:3:3B4\"G(add9)/B\"B2B2 | \"Am11\"(4:3:3B6 BB |\n\"C#m11\"(4:3:3B2B2\"F#/G#m\"B4- | B6 | \"Fm11\"B6- | B6 |\n\"Fm11\"z6 | z6 | z6 | z6 |\n\"Fm7(11)/C\"z6 | z6 ||\nP:D\n|: \"B7sus(b9)\"z6 | z6 | \"B7alt\"z6 | z6 |\n\"A7alt\"z6 | z6 | \"D7alt\"z6 | z6 |\n\"F#m9\"z6 | z6 | \"C#m9\"z6 | z6 |\n\"F#m9\"z6 | z6 | \"C#m9\"z6 | z6 |\n\"Em9\"z6 | z6 | \"Bm9\"z6 | z6 ||\nP:E\n\"Ebm11\"z6 | z6 | z6 | z6 |\nz6 | z6 | z6 | z6 |\n\"Fm11\"z6 | z6 | z6 | z6 |\nz6 | z6 | z6 | z6 |\n\"G7alt/F\"z6 | z6 | z6 | z6 |\n\"Fm11\"z6 | z6 | z6 | z6 |\n\"F7alt\"B6 | \"Ab/Bbm\"B6 | \"B/F#m\"B4 \"Db/Abm\"B2- | B6 ||\nP:F\n\"Gm11\"z6 | z6 | z6 | z6 |\nz6 | z6 | z6 | z6 |\n\"A7alt/G\"z6 | z6 | z6 | z6 |\n\"Gm11\"z6 | z6 | z6 | z6 |\n\"Cmaj7b5\"(4:3:3B4\"G(add9)/B\"B2B2 | \"Am11\"(4:3:3B6 BB | \"C#m11\"(4:3:3B2B2\"F#/G#m\"B4- | B6 |\n\"Fm11\"z6 | z6 | z6 | z6 |\nz6 | z6 | \"Fm7(11)/C\"z6 | z6 :|\nP:G\n\"Fm11\"z6 | z6 | z6 | z6 |\nz6 | z6 | z6 | z6 |\nz6 | z6 | z6 | z6 |\n\"B7sus(b9)\"B6 | \"B7#9#5/A\"B6 | \"A7#9#5/G\"B6 | \"D7alt/F#\"B6 |]\n%coda\n!coda!\"Cmaj7b5\"(4:3:3B4\"G(add9)/B\"B2B2 | \"Am11\"(4:3:3B6 BB | \"C#m11\"(4:3:3B2B2\"F#/G#m\"B4- | !fermata!B6 |\n\"Fm11\"!fermata!B6 |]\n\n%unsure [bar 9] piano counter-line under this passage not transcribed\n%unsure [bars 98-102] 4-in-the-time-of-3 groupings written as (4:3:3; bar 98 is synth with tenor doubling bottom voice"
+},
+{
+"id": "New_Real_Book_Volume2/075-don-t-forget-the-poet",
+"book": "The New Real Book Vol. 2",
+"title": "Don't Forget the Poet",
+"pdf": "75",
+"form": "ABCDEF 8+8+6+6+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "order from printed letters: intro, A B C; solos on DEF; D.S. al Coda after solos"
+},
+{
+"bars": [
+7
+],
+"groups": [
+6
+],
+"text": "triplet grouping of the first beats guessed"
+},
+{
+"bars": [
+15
+],
+"groups": [
+14
+],
+"text": "two voices; upper line taken"
+},
+{
+"bars": [
+18
+],
+"groups": [
+17
+],
+"text": "first half is under a 4-bracket in the book; grouping guessed"
+},
+{
+"bars": [
+22
+],
+"groups": [
+21
+],
+"text": "count of repeated eighths guessed so the bar adds up"
+},
+{
+"bars": [],
+"groups": [],
+"text": "solo slash bars written as rests with the chords"
+},
+{
+"bars": [
+46,
+47,
+48
+],
+"groups": [
+45,
+46,
+47
+],
+"text": "repeat-bar marks of the intro figure written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Don't Forget the Poet\nC:Enrico Pieranunzi\nP:ABCDEF\n%source New Real Book Vol 2 p67 (pdf 75)\n%style (Med. Straight 8th's, q=118)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCDEF 8+8+6+6+8+8\n%unsure [form] order from printed letters: intro, A B C; solos on DEF; D.S. al Coda after solos\nM:6/4\nL:1/8\nK:C\n%intro\n|: \"Abm11\"B4- B\"Ebm9\"B- B6 | \"Abm11\"B4- B\"Ebm9\"B- B6 :|\nP:A\n!segno!\"Abm11\"B4- BB \"Ebm9\"B2- (3:2:3B2B2B2 | \"Abm9\"B2 \"Bbm7\"B2 \"Abm7\"B2 \"Ebm9\"B6 | (4:3:4z2\"Ab7#9\"B2\"G7#9\"B2\"G13b9\"B2 \"Cm9\"B2 BB BB | (4:3:4\"G7#9\"B2\"F#7#9\"B2z2\"F#13b9\"B2 \"Bm9\"B4 BB |\n\"Dm\"B2- (3:2:3B2B2B2 \"Am\"(4:3:4B2B2B2B2 | \"C#m\"B4 BB \"G#m\"(4:3:4B2B2B2B2 | \"Bbm7b5(11)\"B3 B BB \"Eb7#11b9\"(4:3:4B2B2B2B2 | \"Am7b5\"B3 B BB \"Ebmaj7\"(4:3:4B2\"D13b9\"B2B2B2 ||\nP:B\n\"Gm9\"B4- BB \"Ebmaj7#11\"B4 BB | \"Am7b5\"B2 B2 B2 \"Dsus\"B2- \"D\"B4 | \"Gmaj9\"B4- BB \"Bb13\"B2- (3:2:3B2B2B2 | \"Ebmaj7\"(3:2:3B2-B2B2 B2 \"Dsus\"B2- \"D\"B4 |\n\"Bm7\"z2 B2 BB \"F#m7\"B6 | \"Bbm7\"B2- (3:2:3B2B2B2 \"Fm7\"B4- BB/B/ | \"Dm7(add11)\"B4- BB/B/ \"Dbmaj7b5\"B2- (3:2:3B2B2B2 | \"Abmaj7/C\"B2 B2 B2 \"Gbmaj7/Bb\"(4:3:4B2B2B2B2 ||\nP:C\n\"Fmaj7/A\"B4- B\"Em9\"B B4 BB | \"Fmaj7/A\"B2 B2 \"Em9\"B2 B6 | z\"Fmaj7/A\"B zB zB- \"Em9\"BB- B4 | z\"Fmaj7/A\"B BB BB \"Em9\"BB B4 |: \"Abm11\"B4- B\"Ebm9\"B- B6 | \"Abm11\"B4- B\"Ebm9\"B- B6 :|\nP:D\n|: \"G7#9#5\"z6 \"Cm11\"z6 | \"F#7#9#5\"z6 \"Bm11\"z6 | \"Dm7\"z6 \"Am9\"z6 | \"C#m7\"z6 \"G#m9\"z6 |\n\"Bbm9b5\"z6 \"Eb7alt\"z6 | \"Am9b5\"z6 \"D7alt\"z6 ||\nP:E\n\"Gm9\"z6 \"Ebmaj7#11\"z6 | \"Am9b5\"z6 \"D7alt\"z6 | \"Gmaj9\"z6 \"Bb13\"z6 | \"Ebmaj9\"z6 \"Am7b5\"z3 \"D7\"z3 |\n\"Bm9\"z6 \"F#m11\"z6 | \"Bbm9\"z6 \"Fm11\"z6 | \"Dm7(add11)\"z6 \"Dbmaj7b5\"z6 | \"Abmaj7/C\"z6 \"Gbmaj7/Bb\"z6 ||\nP:F\n\"Fmaj7/A\"z6 \"Em11\"z6 | z12 | z12 | z12 |\n\"Abm11\"B4- B\"Ebm9\"B- B6 | z12 | z12 | z12 :|\n%coda\n!coda!z\"Fmaj7/A\"B B4 z\"Em9\"B B4 | z\"Fmaj7/A\"B B4 z\"Em9\"B B4 | zB B4 zB B4 | z\"Fmaj7/A\"B B4 z\"Em9\"B B3 B |\n\"G#m9\"!fermata!B12 |]\n\n%unsure [bar 7] triplet grouping of the first beats guessed\n%unsure [bar 15] two voices; upper line taken\n%unsure [bar 18] first half is under a 4-bracket in the book; grouping guessed\n%unsure [bar 22] count of repeated eighths guessed so the bar adds up\n%unsure [general] solo slash bars written as rests with the chords\n%unsure [bars 46-48] repeat-bar marks of the intro figure written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/75-don-t-forget-the-poet",
+"book": "The New Real Book Vol. 2",
+"title": "Don't Forget the Poet",
+"pdf": "75",
+"form": "Intro 2, A 8, B 8, C 4+2, solos DEF 6+8+8; D.S. al Coda",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "\"Solo on DEF; After solos, D.S. al Coda.\" Last 4 bars of F are played like the Intro to end each solo. Melody at the Coda is freely interpreted"
+},
+{
+"bars": [
+1,
+2
+],
+"groups": [
+0,
+1
+],
+"text": "diamond notes and slashes (rhythm figure), written as B"
+},
+{
+"bars": [
+7,
+8,
+9,
+10
+],
+"groups": [
+6,
+7,
+8,
+9
+],
+"text": "melody harmonized in parallel chords (top voice rhythm); grace notes omitted"
+},
+{
+"bars": [
+15,
+16,
+17,
+18
+],
+"groups": [
+14,
+15,
+16,
+17
+],
+"text": "bar 15 has two voices (top voice used); bars 17-18 groupings approximate; bar 18 chords harmonized"
+},
+{
+"bars": [
+19,
+20,
+21,
+22
+],
+"groups": [
+18,
+19,
+20,
+21
+],
+"text": "C melody in harmonized chords; eighth/tie placement approximate"
+},
+{
+"bars": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46
+],
+"groups": [
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45
+],
+"text": "solo changes printed as slashes, written as rests; bars 43-46 played like the intro"
+},
+{
+"bars": [
+47,
+48,
+49,
+50,
+51
+],
+"groups": [
+46,
+47,
+48,
+49,
+50
+],
+"text": "coda harmonized (top voice rhythm); bar 49 is a printed one-bar repeat, written as rest; rall. in bar 50"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Don't Forget the Poet\nC:Enrico Pieranunzi\nP:ABCDEF\n%source New Real Book Vol 2 p67-68 (pdf 75-76)\n%style (Med. Straight 8th's, q=118)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form Intro 2, A 8, B 8, C 4+2, solos DEF 6+8+8; D.S. al Coda\n%unsure [form] \"Solo on DEF; After solos, D.S. al Coda.\" Last 4 bars of F are played like the Intro to end each solo. Melody at the Coda is freely interpreted\nM:6/4\nL:1/8\nK:C\n%intro\n|: \"Abm11\"B4- B\"Ebm9\"B- B6 | \"Abm11\"B4- B\"Ebm9\"B- B6 :|\nP:A\n!segno!\"Abm11\"B4- BB \"Ebm9\"B2- (3B2B2B2 | \"Abm9\"B2 \"Bbm7\"B2 \"Abm7\"B2 \"Ebm9\"B6 | (4:3:4z2\"Ab7#9\"B2\"G7#9\"B2\"G13b9\"B2 \"Cm9\"B2 BB BB | (4:3:4\"G7#9\"B2\"F#7#9\"B2z2\"F#13b9\"B2 \"Bm9\"B4 BB |\n\"Dm\"B2- (3B2B2B2 \"Am\"(4:3:4B2B2B2B2 | \"C#m\"B4 BB \"G#m\"(4:3:4B2B2B2B2 | \"Bbm7b5(11)\"B3 B BB \"Eb7#11b9\"(4:3:4B2B2B2B2 | \"Am7b5\"B3 B BB \"Ebmaj7\"(4:3:4B2\"D13b9\"B2B2B2 ||\nP:B\n\"Gm9\"B4- BB \"Ebmaj7#11\"B4 BB | \"Am7b5\"B2 B2 B2 \"Dsus\"B2- \"D\"B4 | \"Gmaj9\"B4- BB \"Bb13\"B2- (3B2B2B2 | \"Ebmaj7\"(3B2-B2B2 B2 \"Dsus\"B2- \"D\"B4 |\n\"Bm7\"z2 B2 BB \"F#m7\"B6 | \"Bbm7\"B2 (3B2B2B2 \"Fm7\"B4- BB/B/ | \"Dm7(add11)\"B4- BB/B/ \"Dbmaj7b5\"(3B2B2B2 B2 | \"Abmaj7/C\"(4:3:4B2B2B2B2 \"Gbmaj7/Bb\"(4:3:4B2B2B2B2 ||\nP:C\n\"Fmaj7/A\"B4- BB \"Em9\"B4 BB | \"Fmaj7/A\"B2 B2 B2 \"Em9\"B6 | \"Fmaj7/A\"zB zB zB- BB- \"Em9\"B4 | \"Fmaj7/A\"zB BB BB BB \"Em9\"B4 |: \"Abm11\"B4- B\"Ebm9\"B- B6 | \"Abm11\"B4- B\"Ebm9\"B- B6 :|\nP:D\n|: \"G7#9#5\"z6 \"Cm11\"z6 | \"F#7#9#5\"z6 \"Bm11\"z6 | \"Dm7\"z6 \"Am9\"z6 | \"C#m7\"z6 \"G#m9\"z6 |\n\"Bbm9b5\"z6 \"Eb7alt\"z6 | \"Am9b5\"z6 \"D7alt\"z6 ||\nP:E\n\"Gm9\"z6 \"Ebmaj7#11\"z6 | \"Am9b5\"z6 \"D7alt\"z6 | \"Gmaj9\"z6 \"Bb13\"z6 | \"Ebmaj9\"z6 \"Am7b5\"z3 \"D7\"z3 |\n\"Bm9\"z6 \"F#m11\"z6 | \"Bbm9\"z6 \"Fm11\"z6 | \"Dm7(add11)\"z6 \"Dbmaj7b5\"z6 | \"Abmaj7/C\"z6 \"Gbmaj7/Bb\"z6 ||\nP:F\n\"Fmaj7/A\"z6 \"Em11\"z6 | z12 | z12 | z12 |\n\"Abm11\"z6 \"Ebm9\"z6 | z12 | z12 | z12 :|\n%coda\n!coda!\"Fmaj7/A\"zB B4 \"Em9\"zB B4 | \"Fmaj7/A\"zB B4 \"Em9\"zB B4 | z12 | \"Fmaj7/A\"zB B4 \"Em9\"zB B3 B |\n\"G#m9\"!fermata!B12 |]\n\n%unsure [bars 1-2] diamond notes and slashes (rhythm figure), written as B\n%unsure [bars 7-10] melody harmonized in parallel chords (top voice rhythm); grace notes omitted\n%unsure [bars 15-18] bar 15 has two voices (top voice used); bars 17-18 groupings approximate; bar 18 chords harmonized\n%unsure [bars 19-22] C melody in harmonized chords; eighth/tie placement approximate\n%unsure [bars 25-46] solo changes printed as slashes, written as rests; bars 43-46 played like the intro\n%unsure [bars 47-51] coda harmonized (top voice rhythm); bar 49 is a printed one-bar repeat, written as rest; rall. in bar 50"
+},
+{
+"id": "New_Real_Book_Volume2/077-the-duke",
+"book": "The New Real Book Vol. 2",
+"title": "The Duke",
+"pdf": "77",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "solos (D, E, F on pdf 77-78, chord slashes) not transcribed; after solos D.C. al Coda; an alternate melody for B bars 5-8 is printed on pdf 78"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"text": "triplet and tie placement guessed; G#/bass written as printed (bass note G#)"
+},
+{
+"bars": [
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17
+],
+"groups": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"text": "B section rhythms read from a small scan"
+},
+{
+"bars": [
+26,
+27,
+28,
+29,
+30,
+31,
+32
+],
+"groups": [
+25,
+26,
+27,
+28,
+29,
+30,
+31
+],
+"text": "coda read from a low-res render; rhythms and slash chords approximate, bar count not checked closely"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Duke\nC:Dave Brubeck\nP:AABC\n%source New Real Book Vol 2 p69 (pdf 77)\n%style (Med. Swing, in 2)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\n%unsure [general] solos (D, E, F on pdf 77-78, chord slashes) not transcribed; after solos D.C. al Coda; an alternate melody for B bars 5-8 is printed on pdf 78\nM:C\nL:1/8\nK:D\nP:A\n|: \"Dmaj7\"z B3 \"Gmaj7\"(3B2\"G#/bass\"B2B2 | \"F#m/A\"B2 \"Bm7\"BB- \"C#7\"B4 | \"F#m7\"zB BB \"Bm7\"B2 B2 | \"Em9\"B2 \"Gm7\"BB- \"C7\"B4 |\n\"Fmaj7\"zB BB \"Ebmaj7\"B B3 | \"Dm7\"B2 BB \"C#m7\"B4 | \"Cm7\"zB \"F7\"BB \"Bbmaj7\"B B3 |1 \"E7\"B2 BB \"Eb7\"B4 :|2\n\"E7\"B2 \"A7\"BB \"Dmaj7\"B4 ||\nP:B\n\"Gmaj7\"(3z2B2B2 \"F#m7\"\"(F#7#9)\"B3 B | \"E7\"B3 B \"Dmaj7\"B4 | \"Cm7\"(3z2B2B2 \"Bbmaj7\"B3 B | \"A7b9\"B4 zB \"Gm7\"B2 |\n\"Em7b5\"B2 \"A7\"B2 \"Dm7\"B4 | \"Dm7b5\"B2 \"G7\"B2 \"Cm7\"B4 | \"Bb/D\"B2 \"Cm7\"B2 \"Bb6\"B2 \"Am7b5\"B2 | \"Gm9\"B2 \"Fsus9\"B2 \"Eb13#11\"B4 ||\nP:C\n\"Dmaj7\"z B3 \"Gmaj7\"(3B2\"G#/bass\"B2B2 | \"F#m/A\"B2 \"Bm7\"BB- \"C#7\"B4 | \"F#m7\"zB BB \"Bm7\"B2 B2 | \"Em9\"B2 \"Gm7\"BB- \"C7\"B4 |\n\"Fmaj7\"zB BB \"Ebmaj7\"B B3 | \"Dm7\"B2 BB \"C#m7\"B4 | \"Cm7\"zB \"F7\"BB \"Bbmaj7\"B B3 | \"E7\"B2 \"A7\"BB \"Dmaj7\"B4 ||\n%coda\n\"F#m7/C#\"B3 B \"Dm7/F#\"B4 | \"Gm(maj7)/D\"B2 \"Gm6/Bb\"B2 B2 zB | \"F#m/A\"B2 B2 \"Em/G\"B2 B2 | \"D/F#\"B2 \"Bm\"B2 BB- B2 |\n\"F#m7/C#\"B2 \"Dmaj7/A\"BB \"Bm7/F#\"BB \"Gm6\"B2- | B2 B3 B \"D6/A\"B2 | B2 \"Gmaj7/A\"BB- \"Dbass\"B4 |]\n\n%unsure [bars 1-9] triplet and tie placement guessed; G#/bass written as printed (bass note G#)\n%unsure [bars 10-17] B section rhythms read from a small scan\n%unsure [bars 26-32] coda read from a low-res render; rhythms and slash chords approximate, bar count not checked closely"
+},
+{
+"id": "New_Real_Book_Volume2/77-the-duke",
+"book": "The New Real Book Vol. 2",
+"title": "The Duke",
+"pdf": "77",
+"form": "AABC 8+8+8+8 (solo on DDEF, D.C. al Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [
+1
+],
+"groups": [
+0
+],
+"text": "pickup-style piano notes in parentheses (pn.); chord split approximate"
+},
+{
+"bars": [
+5,
+7
+],
+"groups": [
+4,
+6
+],
+"text": "beamed group read as rest + 4 eighths; bar 5 top line of a two-note voicing"
+},
+{
+"bars": [
+14,
+15,
+16,
+17
+],
+"groups": [
+13,
+14,
+15,
+16
+],
+"text": "alternate melody for bars 5-8 of B printed separately, not transcribed"
+},
+{
+"bars": [
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50
+],
+"groups": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49
+],
+"text": "solo sections are slashes, written as rests"
+},
+{
+"bars": [
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58
+],
+"groups": [
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57
+],
+"text": "coda is top note of piano voicing; chord placement approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Duke\nC:Dave Brubeck\nP:AABCDDEF\n%source New Real Book Vol 2 p69-70 (pdf 77-78)\n%style (Med. Swing, in 2; solos in 4)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8 (solo on DDEF, D.C. al Coda)\nM:C\nL:1/8\nK:D\nP:A\n|: \"Dmaj7\"zB B2 \"Gmaj7\"(3B2\"G#bass\"B2B2 | \"F#m/A\"B2 \"Bm7\"B\"C#7\"B- B4 | \"F#m7\"zB BB \"(A/B)\"\"Bm7\"B2 B2 | \"Em9\"B2 \"Gm7\"BB- \"C7\"B4 |\n\"Fmaj7\"zB BB \"Ebmaj7\"B B3 | \"Dm7\"B2 \"C#m7\"BB- B4 | \"Cm7\"zB \"F7\"BB B \"Bbmaj7\"B3 |1 \"E7\"B2 BB- \"Eb7\"B4 :|2\n\"E7\"B2 \"A7\"BB- \"Dmaj7\"B4 ||\nP:B\n\"Gmaj7\"(3z2B2B2 \"F#m7\"\"(F#7#9)\"B3 B | \"E7\"B3 B \"Dmaj7\"B4 | \"Cm7\"(3z2B2B2 \"Bbmaj7\"B3 B | \"A7b9\"B3 B \"Gm7\"B4 |\n\"Em7b5\"B2 \"A7\"B2 \"Dm7\"B4 | \"Dm7b5\"B2 \"G7\"B2 \"Cm7\"B4 | \"Bb/D\"B2 \"Cm7\"B2 \"Bb6\"B2 \"Am7b5\"B2 | \"Gm9\"B2 \"F9sus\"B2 \"Eb13#11\"B4 ||\nP:C\n\"Dmaj7\"zB B2 \"Gmaj7\"(3B2\"G#bass\"B2B2 | \"F#m/A\"B2 \"Bm7\"B\"C#7\"B- B4 | \"F#m7\"zB BB \"(A/B)\"\"Bm7\"B2 B2 | \"Em9\"B2 \"Gm7\"BB- \"C7\"B4 |\n\"Fmaj7\"zB BB \"Ebmaj7\"B B3 | \"Dm7\"B2 \"C#m7\"BB- B4 | \"Cm7\"zB \"F7\"BB B \"Bbmaj7\"B3 | \"E7\"B2 \"A7\"BB- \"Dmaj7\"B4 ||\nP:D\n|: \"Dmaj7\"z4 \"G9#11\"z4 | \"Dmaj7\"z4 \"G#m7\"z2 \"C#7\"z2 | \"F#m7\"z4 \"Bm7\"z4 | \"Gm7\"z4 \"C7\"z4 |\n\"Fmaj7\"z4 \"Ebmaj7\"z4 | \"Dm7\"z4 \"C#m7\"z4 | \"Cm7\"z2 \"F7\"z2 \"Bbmaj7\"z4 |1 \"Em7b5\"z4 \"A7\"z4 :|2\n\"Em7b5\"z2 \"A7\"z2 \"Dmaj7\"z4 ||\nP:E\n\"Gmaj7\"z4 \"F#m7\"z4 | \"Em7/A\"z4 \"Dmaj7\"z4 | \"Ebmaj7\"\"(Cm7)\"z4 \"Dm7\"\"(Bbmaj7)\"z4 | \"Cm7/F\"\"(A7)\"z4 \"Bbmaj7\"\"(Gm7)\"z4 |\n\"Em7b5\"z2 \"A7\"z2 \"Dm7\"z4 | \"Dm7b5\"z2 \"G7\"z2 \"Cm7\"z4 | \"Bbmaj7/D\"z4 \"Bb6\"z4 | \"Gm7\"z4 \"Em7b5\"z2 \"A7\"z2 ||\nP:F\n\"Dmaj7\"z4 \"G9#11\"z4 | \"Dmaj7\"z4 \"G#m7\"z2 \"C#7\"z2 | \"F#m7\"z4 \"Bm7\"z4 | \"Gm7\"z4 \"C7\"z4 |\n\"Fmaj7\"z4 \"Ebmaj7\"z4 | \"Dm7\"z4 \"C#m7\"z4 | \"Cm7\"z2 \"F7\"z2 \"Bbmaj7\"z4 | \"Em7b5\"z2 \"A7\"z2 \"Dmaj7\"z4 |]\n%coda\n\"F#m7/A\"B B3 \"Dmaj7/F#\"B B3 | \"Gm(maj7)/D\"B B3 \"Gm6/Bb\"B2 zB | \"F#m/A\"BB \"Em/G\"BB \"D/F#\"B2 \"C#o7/E\"B2 | \"Bm/D\"B2 \"Bbo7/C#\"BB- \"Bm7\"B4 |\n\"F#m7/C#\"BB z2 \"Dmaj7/A\"BB z2 | \"Bm7/F#\"BB z2 \"Gm6\"B3 \"Bo7\"B | \"D6/A\"B2 \"D6/F#\"B2 \"G6\"B2 \"G6/B\"B2 | \"Gmaj7/A\"B2 \"A13b9/C#\"BB- \"D6\"B2 \"Dbass\"!fermata!B2 |]\n\n%unsure [bar 1] pickup-style piano notes in parentheses (pn.); chord split approximate\n%unsure [bars 5, 7] beamed group read as rest + 4 eighths; bar 5 top line of a two-note voicing\n%unsure [bars 14-17] alternate melody for bars 5-8 of B printed separately, not transcribed\n%unsure [bars 26-50] solo sections are slashes, written as rests\n%unsure [bars 51-58] coda is top note of piano voicing; chord placement approximate"
+},
+{
+"id": "New_Real_Book_Volume2/079-ecaroh",
+"book": "The New Real Book Vol. 2",
+"title": "Ecaroh",
+"pdf": "79",
+"form": "AABCD 24+24+16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 9,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "letters A-D printed; A has 1st/2nd endings and changes key to Eb at the 2nd ending; section lengths counted from the page"
+},
+{
+"bars": [],
+"groups": [],
+"text": "tune ends on pdf 80; pdf 81-82 not used. Solo on BCD, Coda One ends last solo, then D.S. al Coda Two"
+},
+{
+"bars": [
+1,
+2
+],
+"groups": [
+0,
+1
+],
+"text": "piano intro voicings (etc.); rhythm approximate"
+},
+{
+"bars": [
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26
+],
+"groups": [
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25
+],
+"text": "A section: whole-note ties and quarter/eighth groupings read from a small scan"
+},
+{
+"bars": [
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42
+],
+"groups": [
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41
+],
+"text": "B section rhythms approximate (ties into bars 27 and 34 unclear)"
+},
+{
+"bars": [
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50
+],
+"groups": [
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49
+],
+"text": "C section triplets and ties approximate"
+},
+{
+"bars": [
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58
+],
+"groups": [
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57
+],
+"text": "D section approximate; codas jump from bar 57"
+},
+{
+"bars": [
+59,
+60,
+61,
+62,
+63,
+64
+],
+"groups": [
+58,
+59,
+60,
+61,
+62,
+63
+],
+"text": "Coda One: bar 59 is solo slashes, hits rhythm approximate, drum fill bars written as rests"
+},
+{
+"bars": [
+65,
+66,
+67,
+68,
+69
+],
+"groups": [
+64,
+65,
+66,
+67,
+68
+],
+"text": "Coda Two sixteenth runs and bar count approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Ecaroh\nC:Horace Silver\nP:AABCD\n%source New Real Book Vol 2 p71 (pdf 79)\n%style (Med. Mambo, dotted quarter = 173; A starts Mambo then Swing; \"Mambo swings slightly\")\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABCD 24+24+16+8+8\n%unsure [form] letters A-D printed; A has 1st/2nd endings and changes key to Eb at the 2nd ending; section lengths counted from the page\n%unsure [general] tune ends on pdf 80; pdf 81-82 not used. Solo on BCD, Coda One ends last solo, then D.S. al Coda Two\nM:C\nL:1/8\nK:C\n%intro\n\"C7#9#5\"BB \"F7#9\"BB- \"C7#9#5\"BB \"F7#9\"BB | \"C7#9#5\"BB \"F7#9\"BB- \"C7#9#5\"BB \"F7#9\"BB |\nP:A\n|: \"C7#9#5\"B4- \"F7#9\"B4- | \"C7#9#5\"B3 B \"F7#9\"BB BB | \"C7#9#5\"BB BB \"F7#9\"B4- | \"C7#9#5\"B6 \"F7#9\"z2 |\n\"C#7#9#5\"B4- \"F#7#9\"B4- | \"C#7#9#5\"B3 B \"F#7#9\"BB BB | \"C#7#9#5\"BB BB \"F#7#9\"B4- | \"C#7#9#5\"B6 \"F#7#9\"z2 |\n%swing\n\"Bmaj7\"BB BB B4 | zB BB BB BB | \"E7#11\"BB BB B4 | zB BB BB BB |\n\"Ebmaj7\"B8 | \"Em7\"B4 \"A7#9#5\"B3 B- | \"Dmaj7\"B8 | \"Dm7\"B4 \"G7#9\"B3 \"G#7#9\"B- |\n\"G#7#9\"B4 z \"A7#9\"B3 | \"F#7#9\"B4 \"G7#9\"B4 | \"E7#9\"B2 \"F7#9\"B2 \"D7#9\"B2 \"Eb7#9\"B2 | \"C7#9\"B8 |\n\"C7#9\"B4 z \"C#7#9\"B3 | \"Bb7#9\"B4 z \"B7#9\"B3 | \"G#7#9\"B2 \"A7#9\"B2 \"F#7#9\"B2 \"G7#9\"B2 |1 \"E7#9\"B8 :|2\n\"E7#9\"B6 \"Ebmaj7\"BB || [K:Eb]\nP:B\n\"Ebmaj7\"zB BB BB BB | \"Ab7#11\"BB BB B4 | \"Ebmaj7\"zB BB BB BB | \"A7#11\"BB BB B4 |\n\"Abmaj7\"zB BB BB BB | \"Am7\"B2 B2 \"D7\"B2 B2 | \"G#m7\"B2 B2 \"C#7\"BB BB- | \"F#maj7\"B4 \"Fm7\"BB \"Bb7\"BB |\n\"Ebmaj7\"B2 BB BB BB | \"Ab7#11\"BB BB B4 | \"Ebmaj7\"zB BB BB BB | \"A7#11\"BB BB B4 |\n\"Abmaj7\"zB BB BB BB | \"Gm7b5\"B2 B2 \"C7#9\"B2 B2 | \"Fm7b5\"B2 \"Bb7#5\"BB- B4 | \"Ebmaj7\"BB B2 (3B2B2B2 ||\nP:C\n\"Bbm7\"BB zB- BB (3BBB | \"Eb7b9\"BB- B4 B2 | \"Abmaj7\"B2 B2 \"Bb7b5\"B2 B2 | \"C7b5\"B2 B2 \"Fm7\"B2 B2 |\n\"C#m7\"BB zB- BB (3BBB | \"F#7b9\"BB- B4 B2 | \"Bmaj7\"B2 B2 B2 B2 | \"Bb7alt\"BB BB BB BB ||\nP:D\n\"Ebmaj7\"B2 BB BB BB | \"Ab7#11\"BB BB B4 | \"Ebmaj7\"zB BB BB BB | \"A7#11\"BB BB B4 |\n\"Abmaj7\"zB BB BB BB | \"Gm7b5\"B2 B2 \"C7#9\"B2 B2 | \"Fm7b5\"B2 \"Bb7#5\"BB- B4 | \"Ebmaj7\"B2- \"Fm7\"BB \"Bb7\"BB B2 :|\n%coda1 (end last solo)\n\"Fm7b5\"z2 z2 \"Bb7#5\"z2 z2 | \"Ebmaj7\"zB \"F#7#9\"zB \"F7#9\"zB \"E7#9\"zB | \"Eb7#9\"B8 | z8 |\nz8 | z8 |]\n%coda2\n\"Fm7b5\"B2 \"Bb7#5\"BB- B4 | \"Ebm9\"B2- BB B/B/B/B/ B2- | B4- BB B/B/B/B/ | B8- | B2 z2 z4 |]\n\n%unsure [bars 1-2] piano intro voicings (etc.); rhythm approximate\n%unsure [bars 3-26] A section: whole-note ties and quarter/eighth groupings read from a small scan\n%unsure [bars 27-42] B section rhythms approximate (ties into bars 27 and 34 unclear)\n%unsure [bars 43-50] C section triplets and ties approximate\n%unsure [bars 51-58] D section approximate; codas jump from bar 57\n%unsure [bars 59-64] Coda One: bar 59 is solo slashes, hits rhythm approximate, drum fill bars written as rests\n%unsure [bars 65-69] Coda Two sixteenth runs and bar count approximate"
+},
+{
+"id": "New_Real_Book_Volume2/79-ecaroh",
+"book": "The New Real Book Vol. 2",
+"title": "Ecaroh",
+"pdf": "79",
+"form": "ABCD 28+16+8+8 (solo on BCD; Coda One ends last solo, then D.S. al Coda Two)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A bar count includes 1st/2nd endings"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "piano chord intro (top note rhythm), \"etc.\" continues the vamp"
+},
+{
+"bars": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12
+],
+"groups": [
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11
+],
+"text": "chord alternation within the mambo bars approximate"
+},
+{
+"bars": [
+37
+],
+"groups": [
+36
+],
+"text": "chord placement over the tie approximate"
+},
+{
+"bars": [
+54
+],
+"groups": [
+53
+],
+"text": "first note in parentheses (tied over from the previous bar)"
+},
+{
+"bars": [
+62,
+63,
+64,
+65,
+66,
+67
+],
+"groups": [
+61,
+62,
+63,
+64,
+65,
+66
+],
+"text": "Coda One: slash hits written as notes; last 3 bars drum fill, then D.S. al Coda Two"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Ecaroh\nC:Horace Silver\nP:ABCD\n%source New Real Book Vol 2 p71-72 (pdf 79-80)\n%style (Med. Mambo, q=173; A in mambo then swing, mambo swings slightly)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 28+16+8+8 (solo on BCD; Coda One ends last solo, then D.S. al Coda Two)\n%unsure [form] A bar count includes 1st/2nd endings\nM:C\nL:1/8\nK:C\n%intro\n\"C7#9#5\"B2 \"F7#9\"B2 B B2 B- | \"C7#9#5\"B B2 \"F7#9\"B BB BB | \"C7#9#5\"B2 \"F7#9\"B2 B B2 B- | \"C7#9#5\"B B2 \"F7#9\"B BB BB ||\nP:A\n|: \"C7#9#5\"B8- | \"F7#9\"B3 \"C7#9#5\"B \"F7#9\"BB BB | \"C7#9#5\"BB BB \"F7#9\"B4- | \"C7#9#5\"B6 \"F7#9\"z2 |\n\"C#7#9#5\"B8- | \"F#7#9\"B3 \"C#7#9#5\"B \"F#7#9\"BB BB | \"C#7#9#5\"BB BB \"F#7#9\"B4- | \"C#7#9#5\"B6 \"F#7#9\"z2 |\n\"Bmaj7\"BB BB B4 | zB BB BB BB | \"E7#11\"BB BB B4 | zB BB BB BB |\n\"Ebmaj7\"B8 | \"Em7\"B4 \"A7#9#5\"B3 B- | \"Dmaj7\"B8 | \"Dm7\"B4 \"G7#9\"B3 \"G#7#9\"B- |\nB4 z \"A7#9\"B3 | \"F#7#9\"B4 z \"G7#9\"B3 | \"E7#9\"B2 \"F7#9\"B2 \"D7#9\"B2 \"Eb7#9\"B2 | \"C7#9\"B8 |\n\"C7#9\"B4 z \"C#7#9\"B3 | \"Bb7#9\"B4 z \"B7#9\"B3 | \"G#7#9\"B2 \"A7#9\"B2 \"F#7#9\"B2 \"G7#9\"B2 |1 \"E7#9\"B8 :|2\n\"E7#9\"B6 BB ||\nP:B\nK:Eb\n|: \"Ebmaj7\"z2 BB BB BB | \"Ab7#11\"BB BB- B4 | \"Ebmaj7\"z2 BB BB BB | \"A7#11\"BB BB- B4 |\n\"Abmaj7\"z2 BB BB BB | \"Am7\"B2 B2 \"D7\"B2 B2 | \"G#m7\"B2 B2 \"C#7\"B2 BB- | \"F#maj7\"B4 \"Fm7\"BB \"Bb7\"BB |\n\"Ebmaj7\"!staccato!B2 BB BB BB | \"Ab7#11\"BB BB- B4 | \"Ebmaj7\"z2 BB BB BB | \"A7#11\"BB BB- B4 |\n\"Abmaj7\"z2 BB BB BB | \"Gm7b5\"B2 B2 \"C7#9\"B2 B2 | \"Fm7b5\"B2 B2 \"Bb7#5\"B2 BB- | \"Ebmaj7\"B4 BB (3BBB ||\nP:C\n\"Bbm7\"BB zB- BB (3BBB | \"Eb7b9\"BB- B4 B2 | \"Abmaj7\"B2 B2 \"Bb7b5\"B2 B2 | \"C7b5\"B2 B2 \"Fm7\"B2 B2 |\n\"C#m7\"BB zB- BB (3BBB | \"F#7b9\"BB- B4 B2 | \"Bmaj7\"B2 B2 B2 B2 | \"Bb7alt\"BB BB B2 BB- ||\nP:D\n\"Ebmaj7\"B2 BB BB BB | \"Ab7#11\"BB BB- B4 | \"Ebmaj7\"z2 BB BB BB | \"A7#11\"BB BB- B4 |\n\"Abmaj7\"z2 BB BB BB | \"Gm7b5\"B2 B2 \"C7#9\"B2 B2 | !coda!\"Fm7b5\"B2 B2 \"Bb7#5\"B2 BB- | \"Ebmaj7\"B4 \"Fm7\"BB \"Bb7\"BB :|\n%coda (Coda One)\n\"Fm7b5\"z4 \"Bb7#5\"z4 | \"Ebmaj7\"B2 z\"F#7#9\"B z\"F7#9\"B z\"E7#9\"B | \"Eb7#9\"B8 | z8 |\nz8 | z8 |]\n%coda (Coda Two)\n\"Fm7b5\"B2 B2 \"Bb7#5\"B2 BB- | \"Ebm9\"B4- BB/B/ B/B/B/B/ | B4- BB/B/ B/B/B/B/ | B8- | B2 z2 z4 |]\n\n%unsure [bars 1-4] piano chord intro (top note rhythm), \"etc.\" continues the vamp\n%unsure [bars 5-12] chord alternation within the mambo bars approximate\n%unsure [bar 37] chord placement over the tie approximate\n%unsure [bar 54] first note in parentheses (tied over from the previous bar)\n%unsure [bars 62-67] Coda One: slash hits written as notes; last 3 bars drum fill, then D.S. al Coda Two"
+},
+{
+"id": "New_Real_Book_Volume2/083-equinox",
+"book": "The New Real Book Vol. 2",
+"title": "Equinox",
+"pdf": "83",
+"form": "A 12 (minor blues)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "solo section B (12-bar, chord slashes with a printed comping rhythm) not transcribed; after solos D.S. al Coda, repeat before taking Coda"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro 3 times, then vamp 4 times; the pickup eighth is tenor, 4th time only"
+},
+{
+"bars": [
+16
+],
+"groups": [
+15
+],
+"text": "coda sign at beat 2; tie into the coda bar assumed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Equinox\nC:John Coltrane\nP:A\n%source New Real Book Vol 2 p75 (pdf 83)\n%style (Med. Latin, quarter = 118; Swinging Latin till end)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 12 (minor blues)\n%unsure [general] solo section B (12-bar, chord slashes with a printed comping rhythm) not transcribed; after solos D.S. al Coda, repeat before taking Coda\nM:C\nL:1/8\nK:Ebm\n%intro\n|: \"N.C.\"\"(Ebm)\"z8 | \"(Abm)\"z8 :| :\"N.C.\"\"(Ebm)\"z8 | z4 z2 zB :|\nP:A\n|: \"N.C.\"\"(Ebm)\"BB- B6- | B4 z2 zB | B3 B B4- | B4 z2 zB |\n\"Abm9\"BB- \"Abm6\"B6- | \"E(add#11)/G#\"B4 z2 zB | \"N.C.\"\"(Ebm)\"BB- B6- | B4 z4 |\n\"B13\"z B3 B2 B2 | \"Bb7sus4b9\"B3 B \"Bb7b9#5\"BB B2 | \"N.C.\"\"(Ebm)\"B3 B- B2 B2- | B2 z2 z2 zB :|\n%coda\n\"N.C.\"\"(Ebm)\"B2 z2 z4 | \"B13\"z B3 B2 B2 | \"Bb7sus4b9\"B3 B \"Bb7b9#5\"BB B2 | \"Ab/Eb\"B3 B- \"Bbm/Eb\"B2 \"Ebm(add9)\"\"(Ebm13)\"!fermata!B2 |]\n\n%unsure [bars 1-4] intro 3 times, then vamp 4 times; the pickup eighth is tenor, 4th time only\n%unsure [bar 16] coda sign at beat 2; tie into the coda bar assumed"
+},
+{
+"id": "New_Real_Book_Volume2/83-equinox",
+"book": "The New Real Book Vol. 2",
+"title": "Equinox",
+"pdf": "83",
+"form": "AB 12+12 (solo on B; D.S. al Coda, repeat before taking Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "first 2 bars 3x, next 2 bars 4x; pickup in bar 4 tenor 4th x only"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28
+],
+"groups": [
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27
+],
+"text": "solo section has a rhythmic comping figure in slashes (dotted-quarter hits), written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Equinox\nC:John Coltrane\nP:AB\n%source New Real Book Vol 2 p75 (pdf 83)\n%style (Med. Latin, q=118; Swinging Latin till end)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 12+12 (solo on B; D.S. al Coda, repeat before taking Coda)\nM:C\nL:1/8\nK:Ebm\n%intro\n|: \"N.C.\"\"(Ebm)\"z8 | \"(Abm)\"z8 :| :\"N.C.\"\"(Ebm)\"z8 | z4 z2 zB :|\nP:A\n|: \"N.C.\"\"(Ebm)\"BB B6- | B4 z2 zB | B3 B- B4- | B4 z2 zB |\n\"Abm9\"BB- \"Abm6/9\"B6- | \"E(add#11)/G#\"B4 z2 zB | \"N.C.\"\"(Ebm)\"BB- B6- | B4 z4 |\n\"B13\"z B3 !staccato!B2 !staccato!B2 | \"Bb7sus(b9)\"B3 B \"Bb7b9#5\"BB B2 | \"N.C.\"\"(Ebm)\"B3 B- B2 B2- | !coda!B2 z2 z2 zB :|\nP:B\n|: \"Ebm13\"z8 | z8 | z8 | z8 |\n\"Abm11\"z8 | z8 | \"Ebm13\"z8 | z6 \"B13sus\"z2 |\nz8 | \"Bb13b9\"z8 | \"Ebm13\"z8 | z8 :|\n%coda\n\"N.C.\"\"(Ebm)\"B2 z2 z4 | \"B13\"z B3 !staccato!B2 !staccato!B2 | \"Bb7sus(b9)\"B3 B \"Bb7b9#5\"BB B2 | \"Ab/Eb\"B3 B- \"Bbm/Eb\"B2 \"Ebm(add9)\"\"(Ebm13)\"!fermata!B2 |]\n\n%unsure [bars 1-4] first 2 bars 3x, next 2 bars 4x; pickup in bar 4 tenor 4th x only\n%unsure [bars 17-28] solo section has a rhythmic comping figure in slashes (dotted-quarter hits), written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/088-eternal-child",
+"book": "The New Real Book Vol. 2",
+"title": "Eternal Child",
+"pdf": "88",
+"form": "ABCD 13+8+10+21",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 9,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "order inferred from \"Solo on AB. After solos, D.C. al Coda\" (coda then leads into C and D); bar counts counted"
+},
+{
+"bars": [],
+"groups": [],
+"text": "A, B, C and the coda are dense dotted-16th / triplet lines, partly in two voices; only the top voice is written and many groupings are simplified so bars add up"
+},
+{
+"bars": [
+1,
+2,
+3
+],
+"groups": [
+0,
+1,
+2
+],
+"text": "two voices; dotted rhythms and triplets simplified"
+},
+{
+"bars": [
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13
+],
+"groups": [
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12
+],
+"text": "sixteenth groupings simplified so bars add up; bar 12 is a 2/4 bar with a quintuplet"
+},
+{
+"bars": [
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21
+],
+"groups": [
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"text": "dotted-16th groupings simplified so bars add up; solo on AB, after solos D.C. al Coda"
+},
+{
+"bars": [
+22,
+23,
+24,
+25,
+26,
+27
+],
+"groups": [
+21,
+22,
+23,
+24,
+25,
+26
+],
+"text": "coda, marked (gtr. & sax); groupings simplified"
+},
+{
+"bars": [
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37
+],
+"groups": [
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36
+],
+"text": "dense triplet and sixteenth figures (gtr. & sax, pn. in lower voice) simplified so bars add up"
+},
+{
+"bars": [
+38,
+39,
+42,
+46,
+50
+],
+"groups": [
+37,
+38,
+41,
+45,
+49
+],
+"text": "D melody held while the piano answers (bar 39) or sax added (bars 43, 47); held notes and entries simplified"
+},
+{
+"bars": [
+52,
+53,
+54,
+55,
+56,
+57,
+58
+],
+"groups": [
+51,
+52,
+53,
+54,
+55,
+56,
+57
+],
+"text": "rit.; two voices, bar 56 bass line in the lower voice, top voice written"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Eternal Child\nC:Chick Corea\nP:ABACD\n%source New Real Book Volume2 p79 (pdf 88)\n%style (Med. Latin, quarter = 128)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 13+8+10+21\n%unsure [form] order inferred from \"Solo on AB. After solos, D.C. al Coda\" (coda then leads into C and D); bar counts counted\n%unsure [general] A, B, C and the coda are dense dotted-16th / triplet lines, partly in two voices; only the top voice is written and many groupings are simplified so bars add up\nM:4/4\nL:1/8\nK:Em\nP:A\n|: \"Em\"(3zBB (3BBB- \"C/E\"B/B/B- BB/B/ | \"Em7\"B3/2B/- B/B/B \"Cmaj7\"B/B/B- \"B9sus\"B2- | B6 B/B/B/B/ | \"B7\"B3 B \"B7/A\"B2 \"Em/G\"B3/2B/- |\nB3/2B/- (3BBB \"B7/F#\"B/B/B- B/B/B | \"C/E\"B3/2B/- (3BBB \"Gmaj7/D\"B/B/B- \"F#7/C#\"B/B/B- | \"F#7/C#\"B6- (3BBB | !coda!\"Am/C\"B4 \"B7\"(3BBB \"C7/Bb\"B2- |\n\"Am7\"BB/B/- B/B/B \"Bbo7\"B-B BB | \"Gmaj7/B\"B/B/B- B/B/B \"Cm\"B-B BB | \"A7/C#\"B/B/B- B/B/B \"Cm/Eb\"B-B BB | [M:2/4]\"A7/E\"(5:4:5BBBBB |\n[M:4/4]\"B7/A\"B4 \"F7/A\"B4 |\nP:B\n\"Em/G\"(3zBB B/B/B \"B7/F#\"B/B/B- BB | \"Dm/F\"B3/2B/- (3BBB \"A/E\"B2 B2 | \"Am/E\"B3/2B/- (3BBB \"B7/D#\"B/B/B- B/B/B- | \"Gm(maj7)/D\"B2 (3BBB \"A/C#\"B2 B2- |\n\"Am/C\"B/B/B- B/B/B- B3/2B/- (3BBB | \"B7\"B/B/B B/B/B- B3/2B/- BB- | \"Em\"B8 | \"Cm/E\"B2 B2 B2 B2 :|\n%coda\n\"Am/C\"B4 \"B7\"(3BBB \"C7/Bb\"B2 | \"Am7\"z3/2B/ B/B/B \"Bbo7\"B-B/B/ BB | \"Gmaj7/B\"B/B/B- B/B/B \"Cm\"B-B z/B/B/B/ | \"A7/C#\"B/B/B- B/B/B \"Cm/Eb\"B3/2B/- B/B/B |\n[M:2/4]\"A7/E\"(5:4:5BBBBB | [M:4/4]\"Cm\"B2- (3BBB \"F7/A\"B4 ||\nP:C\n\"Em/G\"(3zBB (3BBB \"B7/F#\"B(3zBBB | \"Dm/F\"B/B/B B/B/B- \"A/E\"B3/2B/ B2 | \"Am/E\"(3zBB B/B/B \"B7/D#\"z/B/B- (3BBB | \"Gm(maj7)/D\"(3BBB (3BBB \"A/C#\"B4 |\n\"Am/C\"z3/2B/ (3zBB B/B/B- B/B/B- | \"B7\"B/B/B (3zzB B3/2B/- BB- | \"Am7\"z2 (3BBB B/B/B- B3/2B/ | \"Bbo7\"B/B/B- B/B/B- \"C#o7\"B3/2B/- B3/2B/ |\n\"Am/C\"z3/2B/- (3BBB B/B/B- B/B/B- | \"B7\"B/B/B (3zzB B/B/B- BB- ||\nP:D\n\"Em\"B4 (3BBB B2- | z4 z2 zB | \"Cmaj7/E\"B3 B- B4- | B8- |\n\"Em\"B8 | z2 zB B3 B/B/ | \"Dmaj7/E\"B3 B- B4- | B8- |\n\"Em\"B8 | z2 zB B3 B/B/ | \"Cmaj7/E\"B3 B- B4- | B8- |\n\"Em\"B8 | z4 B3 B/B/ | \"Bbmaj7#5\"B3 B- B2 B\"B/C\"B- | B8- |\nB7 B | \"A/Bb\"B3 B- B2 BB- | \"Gb\"B2 \"Ab\"B \"A\"B3 \"B\"B2 | \"C\"B4 \"D\"B4 |\n\"Em(maj7)\"!fermata!B8 |]\n\n%unsure [bars 1-3] two voices; dotted rhythms and triplets simplified\n%unsure [bars 4-13] sixteenth groupings simplified so bars add up; bar 12 is a 2/4 bar with a quintuplet\n%unsure [bars 14-21] dotted-16th groupings simplified so bars add up; solo on AB, after solos D.C. al Coda\n%unsure [bars 22-27] coda, marked (gtr. & sax); groupings simplified\n%unsure [bars 28-37] dense triplet and sixteenth figures (gtr. & sax, pn. in lower voice) simplified so bars add up\n%unsure [bars 38-39, 42, 46, 50] D melody held while the piano answers (bar 39) or sax added (bars 43, 47); held notes and entries simplified\n%unsure [bars 52-58] rit.; two voices, bar 56 bass line in the lower voice, top voice written"
+},
+{
+"id": "New_Real_Book_Volume2/88-eternal-child",
+"book": "The New Real Book Vol. 2",
+"title": "Eternal Child",
+"pdf": "88",
+"form": "AB 12+8 (solo on AB, D.C. al Coda); coda continues into C and D",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "dense 16th-note and triplet melody with inner voices; many beats simplified, inner voices omitted"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11
+],
+"text": "16th-note rhythms simplified; bar 11 is a 2/4 bar with an eighth-note quintuplet"
+},
+{
+"bars": [
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"groups": [
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19
+],
+"text": "16th-note rhythms simplified"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26
+],
+"groups": [
+20,
+21,
+22,
+23,
+24,
+25
+],
+"text": "coda rhythms simplified; grace notes omitted; bar 25 is a printed 2/4 bar (quintuplet)"
+},
+{
+"bars": [
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36
+],
+"groups": [
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35
+],
+"text": "16th-note rhythms and triplets simplified; gtr & sax line"
+},
+{
+"bars": [
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55
+],
+"groups": [
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54
+],
+"text": "D section: piano notes in bars 38 and 42; bars 51-54 chords as top note, lower voices omitted"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Eternal Child\nC:Chick Corea\nP:ABCD\n%source New Real Book Vol 2 p79-80 (pdf 88-89)\n%style (Med. Latin, q=128)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 12+8 (solo on AB, D.C. al Coda); coda continues into C and D\n%unsure [general] dense 16th-note and triplet melody with inner voices; many beats simplified, inner voices omitted\nM:C\nL:1/16\nK:Em\nP:A\n|: \"Em\"(3z2B2B2 (3B2B2B2- \"C/E\"BB2B- BB3 | \"Em7\"B3B- BB2B \"Cmaj7\"BB2B- B3\"B9sus\"B- | B12 BBBB | \"B7\"B3B \"B7/A\"B2B2 \"Em/G\"BB3- BB3- |\n(3B2B2B2 \"B7/F#\"BB2B- BB2B B4- | \"C/E\"B3B- (3B2B2B2 \"Gmaj7/D\"BB2B- BB2\"F#7/C#\"B- | \"F#7/C#\"B12 (3B2B2B2 | !coda!\"Am/C\"B4 \"B7\"(3B2B2B2 \"C7/Bb\"B4 B4- |\n\"Am7\"BBB2- BB2B \"Bbo7\"B2B2 B2B2 | \"Gmaj7/B\"BBB2- BB2B \"Cm\"B2-B2 B2B2 | \"A7/C#\"BB2B- BB2B \"Cm/Eb\"B4 B2B2 | [M:2/4]\"A7/E\"(5:4:5B2B2B2B2B2 |\n[M:4/4]\"B7/A\"B8 \"F7/A\"B8 ||\nP:B\n\"Em/G\"(3z2B2B2 BBB2- \"B7/F#\"B2B2 B2B2 | \"Dm/F\"B3B- (3B2B2B2 \"A/E\"B4 B4 | \"Am/E\"B3B- (3B2B2B2 \"B7/D#\"BBB2- BBB2- | \"Gm(maj7)/D\"B4 (3B2B2B2 \"A/C#\"B4 B4- |\n\"Am/C\"BB2B- BB2B- B3B- (3B2B2B2 | \"B7\"BB2B- BB2B- B3B- B2B2- | \"Em\"B16 | \"Cm/E\"B4 B4 B4 B4 :|\n%coda\n\"Am/C\"B4 \"B7\"(3B2B2B2 \"C7/Bb\"B4 B4 | \"Am7\"z3B B2B2 \"Bbo7\"B3B- BB2B | \"Gmaj7/B\"BB2B- BB2B \"Cm\"B4 zBBB | \"A7/C#\"BB2B- BB2B \"Cm/Eb\"B3B- B3B |\n[M:2/4]\"A7/E\"(5:4:5B2B2B2B2B2 | [M:4/4]\"Cm\"B4- (3B2B2B2 \"F7/A\"B8 ||\nP:C\n\"Em/G\"(3z2B2B2 (3B2B2B2- \"B7/F#\"B2B2 (3z2B2B2 | \"Dm/F\"BB2B BB2B- \"A/E\"B3B B4 | \"Am/E\"(3z2B2B2 BBBB \"B7/D#\"zB3- (3B2B2B2 | \"Gm(maj7)/D\"(3B2B2B2- (3B2B2B2 \"A/C#\"B4 B4 |\n\"Am/C\"z3B (3z2B2B2 BBBB- BBBB- | \"B7\"BBz2 (3z2B2B2 B3B- BB2B | \"Am7\"z4 (3B2B2B2 BBBB- BB3 | \"Bbo7\"BB2B- BB2B- \"C#o7\"B3B B3B |\n\"Am/C\"z3B (3B2B2B2 BBBB- BBBB- | \"B7\"BBz2 (3z2B2B2 BBBB- BB3- ||\nP:D\n\"Em\"B8 (3B2B2B2- B4- | B16 | \"Cmaj7/E\"B6 B2- B8- | B16- |\n\"Em\"B16 | z4 z2B2 B6 BB | \"Dmaj7/E\"B6 B2- B8- | B16- |\n\"Em\"B16 | z4 z2B2 B6 BB | \"Cmaj7/E\"B6 B2- B8- | B16- |\n\"Em\"B16 | z8 B6 BB | \"Bbmaj7#5\"B6 B2- B4 B2\"B/C\"B2- | !rit!B16- |\nB14 B2 | \"A/Bb\"B6 B2- B4 B2B2- | \"Gb\"B4 \"Ab\"B2 \"A\"B4 B2 \"B\"B4 | \"C\"B8 \"D\"B8 |\n\"Em(maj7)\"!fermata!B16 |]\n\n%unsure [bars 1-12] 16th-note rhythms simplified; bar 11 is a 2/4 bar with an eighth-note quintuplet\n%unsure [bars 13-20] 16th-note rhythms simplified\n%unsure [bars 21-26] coda rhythms simplified; grace notes omitted; bar 25 is a printed 2/4 bar (quintuplet)\n%unsure [bars 27-36] 16th-note rhythms and triplets simplified; gtr & sax line\n%unsure [bars 37-55] D section: piano notes in bars 38 and 42; bars 51-54 chords as top note, lower voices omitted"
+},
+{
+"id": "New_Real_Book_Volume2/090-exactly-like-you",
+"book": "The New Real Book Vol. 2",
+"title": "Exactly Like You",
+"pdf": "90",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section bar counts counted from the page"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics printed in the book are not copied here; add them separately"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Exactly Like You\nC:Jimmy McHugh (lyric: Dorothy Fields)\nP:ABC\n%source New Real Book Volume2 p82 (pdf 90)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [form] section bar counts counted from the page\n%unsure [general] lyrics printed in the book are not copied here; add them separately\nM:4/4\nL:1/8\nK:D\nP:A\n\"D6\"B2 B2 B2 B2 | B2 B6 | \"E9\"B2 B2 B2 B2 | B8 |\n\"A7\"\"(A7)\"B2 B2 \"(Ebo7)\"B2 B2 | \"(Em7)\"B2 B4 \"(A7)\"B2 | \"D6\"B2 B2 B2 B2- | \"Em7\"B4 \"A7\"z4 |\n\"D6\"B2 B2 B2 B2 | B2 B6 | \"E9\"B2 B2 B2 B2 | B8 |\n\"A7\"\"(A7)\"B2 B2 \"(Ebo7)\"B2 B2 | \"(Em7)\"B2 B4 \"(A7)\"B2 | \"D6\"B2 B2 B2 B2- | \"D7\"B2 B2 B2 B2 ||\nP:B\n\"Gmaj7\"B2 B2 B4- | \"C9\"B2 B2 BB BB | \"D6\"B2 B2 B4- | \"(Bm6/9)\"B2 B2 B2 B2 |\n\"Em7\"B2 B2 B4- | \"Gm6\"B2 B2 \"A7\"BB BB | \"F#m7\"B2 B2 \"Fo7\"B2 B2 | \"Em7\"B2 B2 \"A9\"B2 B2 ||\nP:C\n\"D6\"B2 B2 B2 B2 | B2 B6 | \"E9\"B2 B2 B2 B2 | B8 |\n\"A7\"\"(A7)\"B2 B2 \"(Ebo7)\"B2 B2 | \"(Em7)\"B2 B4 \"(A7)\"B2 | \"D6\"B2 B2 B2 B2- | \"(Em7)\"B4 \"(A7)\"z4 |]\n"
+},
+{
+"id": "New_Real_Book_Volume2/90-exactly-like-you",
+"book": "The New Real Book Vol. 2",
+"title": "Exactly Like You",
+"pdf": "90",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Exactly Like You\nC:Jimmy McHugh (lyric: Dorothy Fields)\nP:ABC\n%source New Real Book Vol 2 p82 (pdf 90)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [general] lyrics are printed\nM:C\nL:1/8\nK:D\nP:A\n\"D6\"B2 B2 B2 B2 | B2 B6 | \"E9\"B2 B2 B2 B2 | B8 |\n\"A7\"\"(A7)\"B2 B2 \"(Ebo7)\"B2 B2 | \"(Em7)\"B2 B4 \"(A7)\"B2 | \"D6\"B2 B2 B2 B2- | \"Em7\"B4 \"A7\"z4 |\n\"D6\"B2 B2 B2 B2 | B2 B6 | \"E9\"B2 B2 B2 B2 | B8 |\n\"A7\"\"(A7)\"B2 B2 \"(Ebo7)\"B2 B2 | \"(Em7)\"B2 B4 \"(A7)\"B2 | \"D6\"B2 B2 B2 B2- | \"D7\"B2 B2 B2 B2 ||\nP:B\n\"Gmaj7\"B2 B2 B4- | \"C9\"B2 B2 BB BB | \"D6\"B2 B2 B4- | \"(Bm6/9)\"B2 B2 B2 B2 |\n\"Em7\"B2 B2 B4- | \"Gm6\"B2 B2 \"A7\"BB BB | \"F#m7\"B2 B2 \"Fo7\"B2 B2 | \"Em7\"B2 B2 \"A9\"B2 B2 ||\nP:C\n\"D6\"B2 B2 B2 B2 | B2 B6 | \"E9\"B2 B2 B2 B2 | B8 |\n\"A7\"\"(A7)\"B2 B2 \"(Ebo7)\"B2 B2 | \"(Em7)\"B2 B4 \"(A7)\"B2 | \"D6\"B2 B2 B2 B2- | \"(Em7)\"B4 \"(A7)\"z4 |]\n"
+},
+{
+"id": "New_Real_Book_Volume2/091-expression",
+"book": "The New Real Book Vol. 2",
+"title": "Expression",
+"pdf": "91",
+"form": "ABC 15+12+open",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "C is open solos (indef.); after solos D.C. al fine (fine at end of B); bar counts counted"
+},
+{
+"bars": [],
+"groups": [],
+"text": "book says tenor line written as played, rhythms approximate only (no steady time); several bars hold more or fewer than four beats, so rhythms here are fitted to 4/4 and only roughly follow the page"
+},
+{
+"bars": [
+3,
+7,
+8,
+15
+],
+"groups": [
+2,
+6,
+7,
+14
+],
+"text": "bars with a \"fill\" written as slashes are shown as rests; bar 15 has an extended fill before the last four eighths"
+},
+{
+"bars": [
+1,
+2,
+10,
+13
+],
+"groups": [
+0,
+1,
+9,
+12
+],
+"text": "more notes than fit the bar in the free tenor line; groupings fitted to 4/4"
+},
+{
+"bars": [
+19,
+21
+],
+"groups": [
+18,
+20
+],
+"text": "bar 19 last note length guessed; bar 21 dotted quarter and eighth after the rest shortened to fit"
+},
+{
+"bars": [
+25,
+26
+],
+"groups": [
+24,
+25
+],
+"text": "extended fill written as rests; fine at end of bar 26"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Expression\nC:John Coltrane\nP:ABCAB\n%source New Real Book Volume2 p83 (pdf 91)\n%style (Freely)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 15+12+open\n%unsure [form] C is open solos (indef.); after solos D.C. al fine (fine at end of B); bar counts counted\n%unsure [general] book says tenor line written as played, rhythms approximate only (no steady time); several bars hold more or fewer than four beats, so rhythms here are fitted to 4/4 and only roughly follow the page\nM:4/4\nL:1/8\nK:C\nP:A\n\"Bbmaj7\"B2 B/B/B/B/ BB (3BBB | \"Gbmaj7\"(3BBB BB \"Fmaj7\"BB/B/ BB- | B z3 zB BB | \"Amaj7b5\"B6 BB |\n\"Dbmaj7\"B6 z2 | \"Dm7\"B2 BB B4 | \"A7b9#5\"B2 z4 BB | \"Dm7\"B2 z5 B |\n\"Abmaj7#11\"(3B2B2B2 B3 B/B/ | \"Bmaj7\"B/B/B/B/ B/B/B/B/ B2 BB | \"Cmaj7\"BB BB \"Amaj7\"BB BB | \"Cmaj7\"BB BB \"Amaj7\"BB BB |\n\"C#m7\"BB BB BB \"G#13\"B2 | \"Bmaj7\"(3B2B2B2 (3B2B2B2 | \"B7sus\"B/B/B/B/ B/B/B BB BB ||\nP:B\n\"Emaj7\"B2 B/B/B/B/ B/B/B/B/ B/B/B | \"Cmaj7\"B3/2B/ B/B/B/B/ BB/B/ BB | \"Em\"B6 B2 | \"Cmaj7\"B3/2B/ \"Fmaj7\"B/B/B/B/ BB B2 |\n\"Bbmaj7\"B2 B2 z\"Fmaj7\"B BB | \"Gm\"B4 z B2 B | \"Dmaj7\"B4 z2 BB | \"Bmaj7\"B4 z2 BB |\n\"Abmaj7b5\"B2 B4 B2 | \"Cmaj7\"(3BBB B4 B2 | \"G7sus\"B2 z6 | \"G(add9,omit3)\"!fine!z8 ||\nP:C\n%solos open (indef.)\n\n%unsure [bars 3, 7-8, 15] bars with a \"fill\" written as slashes are shown as rests; bar 15 has an extended fill before the last four eighths\n%unsure [bars 1-2, 10, 13] more notes than fit the bar in the free tenor line; groupings fitted to 4/4\n%unsure [bars 19, 21] bar 19 last note length guessed; bar 21 dotted quarter and eighth after the rest shortened to fit\n%unsure [bars 25-26] extended fill written as rests; fine at end of bar 26"
+},
+{
+"id": "New_Real_Book_Volume2/91-expression",
+"book": "The New Real Book Vol. 2",
+"title": "Expression",
+"pdf": "91",
+"form": "ABC (C is open solos; D.C. al fine)",
+"bad": 7,
+"off": [
+1,
+2,
+6,
+7,
+9,
+14,
+15
+],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "tenor line written as played with no steady time; printed bars are irregular in length, rhythms approximate only"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13
+],
+"text": "irregular free-time bars (bars 1, 2, 6, 7, 9, 14 run long); fills (slashes) written as rests"
+},
+{
+"bars": [
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26
+],
+"groups": [
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25
+],
+"text": "rhythms approximate; bar 15 runs long; bars 15 and 17 have mixed sixteenth groupings simplified; last 2 bars extended fill written as rests"
+},
+{
+"bars": [
+27
+],
+"groups": [
+26
+],
+"text": "solos open, indefinite length; after solos D.C. al fine"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Expression\nC:John Coltrane\nP:ABC\n%source New Real Book Vol 2 p83 (pdf 91)\n%style (Freely)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC (C is open solos; D.C. al fine)\n%unsure [general] tenor line written as played with no steady time; printed bars are irregular in length, rhythms approximate only\nM:C\nL:1/16\nK:C\nP:A\n\"Bbmaj7\"B8 B4 BBBB B2B2 B3B (3B4B4B4 | \"Gbmaj7\"(3B2B2B2 B2B2 \"Fmaj7\"B2BB B4- B4 z12 z2B2 B2B2 | \"Amaj7b5\"B12 B2B2 | \"Dbmaj7\"B12 z4 |\n\"Dm7\"B4 B2B2 B8 | \"A7b9#5\"B4 z16 z4 B2B2 | \"Dm7\"B8 z16 z2B2 | \"Abmaj7#11\"(3B4B4B4 B6 BB |\n\"Bmaj7\"BBBB BBBB BBBB B8 z2B2 B2B2 | \"Cmaj7\"B2B2 B2B2 \"Amaj7\"B2B2 B2B2 | \"Cmaj7\"B2B2 B2B2 \"Amaj7\"B2B2 B2B2 | \"C#m7\"B2B2 B2B2 \"G#13\"B8 |\n\"Bmaj7\"(3B4B4B4 (3B4B4B4 | \"B7sus\"BBBB BB B4 z16 z16 B2 B2B2 B2 ||\nP:B\n\"Emaj7\"B4 BBBB BBBB BB B4 | \"Cmaj7\"B3B BBBB B2BB B2B2 | \"Em\"B12 B4 | \"Cmaj7\"B3B \"Fmaj7\"BBBB B2B2 B2B2 |\n\"Bbmaj7\"B4 B4 z2B2 \"Fmaj7\"B2B2 | \"Gm\"B8 z4 B3B | \"Dmaj7\"B8 z4 B2B2 | \"Bmaj7\"B8 z4 B2B2 |\n\"Abmaj7b5\"B4 B8 B4 | \"Cmaj7\"(3B2B2B2 B8 B4 | \"G7sus\"B4 z12 | \"G(add9,omit3)\"z16 ||\nP:C\nz16 |]\n\n%unsure [bars 1-14] irregular free-time bars (bars 1, 2, 6, 7, 9, 14 run long); fills (slashes) written as rests\n%unsure [bars 15-26] rhythms approximate; bar 15 runs long; bars 15 and 17 have mixed sixteenth groupings simplified; last 2 bars extended fill written as rests\n%unsure [bar 27] solos open, indefinite length; after solos D.C. al fine"
+},
+{
+"id": "New_Real_Book_Volume2/092-falling-grace",
+"book": "The New Real Book Vol. 2",
+"title": "Falling Grace",
+"pdf": "92",
+"form": "AB 14+10",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section bar counts counted from the page; whole form repeated, then Ending"
+},
+{
+"bars": [
+25,
+26
+],
+"groups": [
+24,
+25
+],
+"text": "Ending, rit."
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Falling Grace\nC:Steve Swallow\nP:AB\n%source New Real Book Volume2 p84 (pdf 92)\n%style (Medium Swing (in 2))\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 14+10\n%unsure [form] section bar counts counted from the page; whole form repeated, then Ending\nM:4/4\nL:1/8\nK:C\nP:A\n|: \"Bbmaj7\"B8- | B4- (3B2B2B2 | \"E7/G#\"B4- B B2 B- | \"Am\"B6 B2 |\n\"Gm7\"(3B2B2B2- \"C7\"B4 | \"Fmaj7/A\"B2- (3BBB \"E7/G#\"B2- (3BBB | \"Am/G\"(3:2:2B4B2(3:2:2B4 B2 | \"D/F#\"(3:2:2B4B2B4- |\n\"Gmaj7\"(3:2:2B4B2-(3B2B2B2 | \"G#m7b5\"B4- B B2 B | \"C#7\"B2 BB- B B2 B- | \"F#m\"B8 |\n\"Bm7\"B2 BB- \"E7\"B B2 B- | \"Amaj7\"B6 B2 ||\nP:B\n\"Dm7\"B8- | \"D#o7\"(3:2:2B4B2(3B2B2B2 | \"Cmaj7/E\"(3B2B2B2- B4- | \"Fmaj7\"B2 B2 B B2 B |\n\"F#m7b5\"B8- | \"B7\"B2 BB zB zB- | \"Em7\"B4 \"Eb7\"B4 | \"Dm7\"z2 BB \"G7\"zB zB- |\n\"Cmaj7\"B4- (3B2B2B2 | \"Fmaj7\"B4- (3B2B2B2 :|\n%ending\n\"Bbmaj7\"B4- (3B2B2B2 | \"Ebmaj7\"!fermata!B8 |]\n\n%unsure [bars 25-26] Ending, rit."
+},
+{
+"id": "New_Real_Book_Volume2/92-falling-grace",
+"book": "The New Real Book Vol. 2",
+"title": "Falling Grace",
+"pdf": "92",
+"form": "AB 14+10",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+21
+],
+"groups": [
+20
+],
+"text": "Eb7 placed on beat 3 over the held whole note"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Falling Grace\nC:Steve Swallow\nP:AB\n%source New Real Book Vol 2 p84 (pdf 92)\n%style (Medium Swing (in 2))\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 14+10\nM:C\nL:1/8\nK:C\nP:A\n|: \"Bbmaj7\"B8- | B4- (3B2B2B2 | \"E7/G#\"B4- B B2 B | \"Am\"B6 B2 |\n\"Gm7\"(3B2B2B2- \"C7\"B4 | \"Fmaj7/A\"B2- (3BBB \"E7/G#\"B2- (3BBB | \"Am/G\"(3:2:2B4B2(3:2:2B4 B2 | \"D/F#\"(3:2:2B4B2B4- |\n\"Gmaj7\"(3:2:2B4B2-(3B2B2B2 | \"G#m7b5\"B4- B B2 B | \"C#7\"B2 BB- B B2 B- | \"F#m\"B8 |\n\"Bm7\"B2 BB- \"E7\"B B2 B- | \"Amaj7\"B6 B2 ||\nP:B\n\"Dm7\"B8- | \"D#o7\"(3:2:2B4B2(3B2B2B2 | \"Cmaj7/E\"(3B2B2B2- B4- | \"Fmaj7\"B2 B2 B B2 B |\n\"F#m7b5\"B8- | \"B7\"B2 BB zB zB- | \"Em7\"B4- \"Eb7\"B4 | \"Dm7\"z2 BB \"G7\"zB zB- |\n\"Cmaj7\"B4- (3B2B2B2 | \"Fmaj7\"B4- (3B2B2B2 :|\n%ending\n\"Bbmaj7\"B4- (3B2B2B2 | \"Ebmaj7\"!fermata!B8 |]\n\n%unsure [bar 21] Eb7 placed on beat 3 over the held whole note"
+},
+{
+"id": "New_Real_Book_Volume2/093-filthy-mcnasty",
+"book": "The New Real Book Vol. 2",
+"title": "Filthy McNasty",
+"pdf": "93",
+"form": "ABC 12+12+12",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "intro, A, B (solos, open repeat with On cue ending), C, D.S. to A, then Coda (intro figure); bar counts counted"
+},
+{
+"bars": [],
+"groups": [],
+"text": "melody played very non-legato by horns (staccato marks not written)"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"text": "stop time: chords are the piano hits on the lower staff, placed on the melody's rests by beat"
+},
+{
+"bars": [
+19,
+20
+],
+"groups": [
+19,
+20
+],
+"text": "horn chords (trp., ten.); top-voice rhythm; last eighth in parentheses (lead-in)"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33
+],
+"groups": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33
+],
+"text": "solos printed as rhythm slashes; written as rests with the chords; first ending \"Till cue\", second \"On cue\" (trp., ten.) to end last solo"
+},
+{
+"bars": [
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45
+],
+"groups": [
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45
+],
+"text": "two- and three-note horn voicings in C; top-voice rhythm; bar 44 chord hits over a tied note; bar 45 break, then D.S. al Coda"
+},
+{
+"bars": [
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53
+],
+"groups": [
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53
+],
+"text": "coda repeats the intro (stop time); last chord fermata, trp. and ten."
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Filthy McNasty\nC:Horace Silver\nP:ABCA\n%source New Real Book Volume2 p85 (pdf 93)\n%style (Med. Swing, quarter = 184)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 12+12+12\n%unsure [form] intro, A, B (solos, open repeat with On cue ending), C, D.S. to A, then Coda (intro figure); bar counts counted\n%unsure [general] melody played very non-legato by horns (staccato marks not written)\nM:4/4\nL:1/8\nK:C\nB |\n%intro\nBB/B/ BB z2 \"Bb13\"z2 | z2 \"B13\"z2 \"C13\"z2 zB | BB/B/ BB z2 \"F#13\"z2 | z2 \"G13\"z2 \"Ab13\"z2 zB |\n\"Em7b5\"BB/B/ BB \"A7b9#5\"zB/B/ BB | \"Dm7b5\"zB/B/ BB \"G7susb9\"zB/B/ BB | \"C7#9\"z2 \"Bb13\"z2 \"B13\"z\"C13\"z z2 | \"Bb13\"z2 \"B13\"z\"C13\"z z2 zB |\nP:A\n|: !segno!\"C7\"BB/B/ BB z2 zB | BB/B/ BB z2 zB | BB/B/ BB z2 zB | \"C7\"BB/B/ BB z2 zB |\n\"F7\"BB/B/ BB z2 zB | BB/B/ BB z2 zB | \"C7\"BB/B/ BB z2 zB | BB/B/ BB z\"Ab13\"B BB |\n\"G13\"BB BB- \"F#13\"BB BB | \"F13\"BB/B/ BB \"N.C.\"z4 | z2 B2 BB zB | zB z2 z2 !coda!zB :|\nP:B\n|: \"C7\"z8 | z8 | z8 | z8 |\n\"F7\"z8 | z8 | \"C7\"z8 | z8 |\n\"G7\"z8 | \"F7\"z8 | \"C7\"z8 |1 \"G7\"z8 :|2\n\"C7\"z4 zB BB ||\nP:C\n\"C7\"BB B2 B2 BB | zB z2 zB BB | BB B2 B2 BB | z4 zB BB |\n\"F7\"BB B2 B2 BB | zB z2 z2 zB | \"C7\"BB BB BB BB | B2 z2 z2 zB |\n\"G7\"(3BBB BB BB BB | \"F7\"BB BB B(3B/B/B/ BB | \"C7/E\"B\"F6\"B- \"F#o7\"B2- \"C6/G\"B4- | B2 z2 z2 zB |]\n%coda\nBB/B/ BB z2 \"Bb13\"z2 | z2 \"B13\"z2 \"C13\"z2 zB | BB/B/ BB z2 \"F#13\"z2 | z2 \"G13\"z2 \"Ab13\"z2 zB |\n\"Em7b5\"BB/B/ BB \"A7b9#5\"zB/B/ BB | \"Dm7b5\"zB/B/ BB \"G7susb9\"zB/B/ BB | \"C7#9\"z2 \"Bb13\"z2 \"B13\"z\"C13\"z z2 | \"Bb13\"z2 \"B13\"z\"C13\"z z2 \"C7#11#9\"!fermata!B2 |]\n\n%unsure [bars 1-8] stop time: chords are the piano hits on the lower staff, placed on the melody's rests by beat\n%unsure [bars 19-20] horn chords (trp., ten.); top-voice rhythm; last eighth in parentheses (lead-in)\n%unsure [bars 21-33] solos printed as rhythm slashes; written as rests with the chords; first ending \"Till cue\", second \"On cue\" (trp., ten.) to end last solo\n%unsure [bars 34-45] two- and three-note horn voicings in C; top-voice rhythm; bar 44 chord hits over a tied note; bar 45 break, then D.S. al Coda\n%unsure [bars 46-53] coda repeats the intro (stop time); last chord fermata, trp. and ten."
+},
+{
+"id": "New_Real_Book_Volume2/93-filthy-mcnasty",
+"book": "The New Real Book Vol. 2",
+"title": "Filthy McNasty",
+"pdf": "93",
+"form": "ABCA 12+12+12+12 (intro, head, blues solos, shout chorus, D.S. head, coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred from the section letters and D.S. al Coda"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"text": "intro chords are from the piano stop-time staff (top-note hits), placed on the melody's rests"
+},
+{
+"bars": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"groups": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"text": "sixteenth groupings guessed in places; last pickup is in parentheses"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33
+],
+"groups": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33
+],
+"text": "solo section is rhythm slashes, written as rests; take 2nd ending on cue to end last solo"
+},
+{
+"bars": [
+42,
+43,
+44,
+45
+],
+"groups": [
+42,
+43,
+44,
+45
+],
+"text": "dense runs: groupings in bars 42-43 guessed; chord placement in bar 44 approximate; bar 45 is a break; D.S. al Coda"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Filthy McNasty\nC:Horace Silver\nP:ABCA\n%source New Real Book Vol 2 p85-86 (pdf 93-94)\n%style (Med. Swing, q=184)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCA 12+12+12+12 (intro, head, blues solos, shout chorus, D.S. head, coda)\n%unsure [form] form inferred from the section letters and D.S. al Coda\nM:C\nL:1/8\nK:C\nB |\n%intro\nBB/B/ BB z2 \"Bb13\"z2 | z2 \"B13\"z2 \"C13\"z2 zB | BB/B/ BB z2 \"F#13\"z2 | z2 \"G13\"z2 \"Ab13\"z2 zB |\n\"Em7b5\"BB/B/ BB \"A7b9#5\"zB/B/ BB | \"Dm7b5\"zB/B/ BB \"G7susb9\"zB/B/ \"C7#9\"BB | z2 \"Bb13\"z2 \"B13\"z\"C13\"z z2 | \"Bb13\"z2 \"B13\"z\"C13\"z z2 zB ||\nP:A\n|: !segno!\"C7\"BB/B/ BB z2 zB | BB/B/ BB z2 zB | BB/B/ BB z2 zB | \"C7\"BB/B/ BB z2 zB |\n\"F7\"BB/B/ BB z2 zB | BB/B/ BB z2 zB | \"C7\"BB/B/ BB z2 zB | BB/B/ BB z\"Ab13\"B BB |\n\"G13\"BB BB- \"F#13\"BB BB | \"F13\"BB/B/ BB \"NC\"z4 | z2 B2 BB zB | zB z2 z2 z!coda!B :|\nP:B\n|: \"C7\"z8 | z8 | z8 | z8 |\n\"F7\"z8 | z8 | \"C7\"z8 | z8 |\n\"G7\"z8 | \"F7\"z8 | \"C7\"z8 |1 \"G7\"z8 :|2\n\"C7\"z4 zB BB ||\nP:C\n\"C7\"BB B2 B2 BB | zB z2 zB BB | BB B2 B2 BB | z4 zB BB |\n\"F7\"BB B2 B2 BB | zB z2 z2 zB | \"C7\"BB BB BB BB | B2 z2 z2 zB |\n\"G7\"(3BBB BB BB BB | \"F7\"BB BB B/B/(3B/B/B/ BB | \"C7/E\"BB- \"F6\"B2- \"F#o7\"B2- \"C6/G\"B2 | B2 z2 z2 zB |]\n%coda\nBB/B/ BB z2 \"Bb13\"z2 | z2 \"B13\"z2 \"C13\"z2 zB | BB/B/ BB z2 \"F#13\"z2 | z2 \"G13\"z2 \"Ab13\"z2 zB |\n\"Em7b5\"BB/B/ BB \"A7b9#5\"zB/B/ BB | \"Dm7b5\"zB/B/ BB \"G7susb9\"zB/B/ \"C7#9\"BB | z2 \"Bb13\"z2 \"B13\"z\"C13\"z z2 | \"Bb13\"z2 \"B13\"z\"C13\"z z2 \"C7#11#9\"!fermata!B2 |]\n\n%unsure [bars 1-8] intro chords are from the piano stop-time staff (top-note hits), placed on the melody's rests\n%unsure [bars 9-20] sixteenth groupings guessed in places; last pickup is in parentheses\n%unsure [bars 21-33] solo section is rhythm slashes, written as rests; take 2nd ending on cue to end last solo\n%unsure [bars 42-45] dense runs: groupings in bars 42-43 guessed; chord placement in bar 44 approximate; bar 45 is a break; D.S. al Coda"
+},
+{
+"id": "New_Real_Book_Volume2/095-five-hundred-miles-high",
+"book": "The New Real Book Vol. 2",
+"title": "500 Miles High",
+"pdf": "95",
+"form": "A 18",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "one lettered section; sing three verses, then solos on form; after solos sing verses 1 and 3, take Coda; to end each solo play last 5 bars of melody"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics (3 verses printed) are not copied here; add them separately"
+},
+{
+"bars": [],
+"groups": [],
+"text": "solos may move into double-time feel samba; on the recording the first verse is out of tempo for 13 bars"
+},
+{
+"bars": [
+4
+],
+"groups": [
+3
+],
+"text": "first beat printed as a dotted-quarter-like rest; read as quarter rest then two eighths"
+},
+{
+"bars": [
+18
+],
+"groups": [
+17
+],
+"text": "last quarter in parentheses (pickup into the next verse)"
+},
+{
+"bars": [
+19,
+20,
+21,
+22,
+23
+],
+"groups": [
+18,
+19,
+20,
+21,
+22
+],
+"text": "coda: second time slowly; bar 22 the N.C. figure is instrumental"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:500 Miles High\nC:Chick Corea (lyric: Neville Potter)\nP:A\n%source New Real Book Volume2 p87 (pdf 95)\n%style (Med. Latin, quarter = 148)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 18\n%unsure [form] one lettered section; sing three verses, then solos on form; after solos sing verses 1 and 3, take Coda; to end each solo play last 5 bars of melody\n%unsure [general] lyrics (3 verses printed) are not copied here; add them separately\n%unsure [general] solos may move into double-time feel samba; on the recording the first verse is out of tempo for 13 bars\nM:4/4\nL:1/8\nK:C\n\"(C#7#9#5)\"z4 z2 B2 |\nP:A\n|: \"F#m7\"B8 | z2 BB (3B2B2B2 | \"Am7\"B8 | \"Am7\"z2 BB (3B2B2B2 |\n\"Cmaj7\"B8- | B7 B | \"C#m7b5\"B2 BB- B4- | \"F#7#9\"B4- (3B2B2B2 |\n\"Bm7\"B8- | B6 BB | \"G#m7b5\"B2 BB- B4- | B4- (3B2B2B2 |\n\"Gm7\"B2 BB- B4 | \"(Gm7)\"z2 zB \"N.C.\"BB BB | !coda!\"Dm11\"B8- | B8 |\n\"C#7#9#5\"z8 | z4 z2 B2 :|\n%coda\n|: \"Dm11\"B8- | B8 | \"Bbmaj7\"z8 | \"N.C.\"z2 zB BB BB :|\n\"Dm11\"!fermata!B8 |]\n\n%unsure [bar 4] first beat printed as a dotted-quarter-like rest; read as quarter rest then two eighths\n%unsure [bar 18] last quarter in parentheses (pickup into the next verse)\n%unsure [bars 19-23] coda: second time slowly; bar 22 the N.C. figure is instrumental"
+},
+{
+"id": "New_Real_Book_Volume2/95-five-hundred-miles-high",
+"book": "The New Real Book Vol. 2",
+"title": "Five Hundred Miles High",
+"pdf": "95",
+"form": "A 18 (sing three verses, solos on form, verses 1 & 3, coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed (3 verses) and not copied"
+},
+{
+"bars": [
+7,
+8
+],
+"groups": [
+7,
+8
+],
+"text": "tie from bar 7 into bar 8 then quarter triplet; exact tie placement uncertain"
+},
+{
+"bars": [
+19,
+20,
+21,
+22
+],
+"groups": [
+19,
+20,
+21,
+22
+],
+"text": "bar 22 instrumental, slowly 2nd time; bars 19-20 have a grace-note fill in the band"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Five Hundred Miles High\nC:Chick Corea\nC:Lyric: Neville Potter\nP:A\n%source New Real Book Vol 2 p87 (pdf 95)\n%style (Med. Latin, q=148)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 18 (sing three verses, solos on form, verses 1 & 3, coda)\n%unsure [general] lyrics are printed (3 verses) and not copied\nM:C\nL:1/8\nK:C\n\"(C#7#9#5)\"B2 B2 |\nP:A\n|: \"F#m7\"B8 | z2 BB (3B2B2B2 | \"Am7\"B8 | \"Am7\"z2 BB (3B2B2B2 |\n\"Cmaj7\"B8- | B7 B | \"C#m7b5\"B2 BB- B4- | \"F#7#9\"B4- (3B2B2B2 |\n\"Bm7\"B8- | B6 BB | \"G#m7b5\"B2 BB- B4- | B4 (3B2B2B2 |\n\"Gm7\"B2 BB- B4 | \"(Gm7)\"z2 zB \"NC\"BB BB- | !coda!\"Dm11\"B8- | B8 |\n\"C#7#9#5\"z8 | z4 z2 B2 :|\n%coda\n|: \"Dm11\"B8- | B8 | \"Bbmaj7\"z8 | z2 zB \"NC\"BB BB :|\n\"Dm11\"!fermata!B8 |]\n\n%unsure [bars 7-8] tie from bar 7 into bar 8 then quarter triplet; exact tie placement uncertain\n%unsure [bars 19-22] bar 22 instrumental, slowly 2nd time; bars 19-20 have a grace-note fill in the band"
+},
+{
+"id": "New_Real_Book_Volume2/096-flamingo",
+"book": "The New Real Book Vol. 2",
+"title": "Flamingo",
+"pdf": "96",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics printed in the book but not copied here (copyrighted song text); add w: lines from the source if wanted"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Flamingo\nC:Ted Grouya (music), Ed Anderson (lyric)\nP:ABC\n%source New Real Book Volume 2 p88 (pdf 96)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [general] lyrics printed in the book but not copied here (copyrighted song text); add w: lines from the source if wanted\nM:C\nL:1/8\nK:G\nB2 ||\nP:A\n\"Gmaj7\"B3 B- \"(Em7)\"B4 | \"Am7\"z2 BB \"D7\"B2 BB | \"Gm7\"B8 | \"C9\"z2 BB B2 BB |\n\"Eb9\"B2 B6 | \"Am7\"z2 BB \"D7\"B2 BB | \"Gmaj7\"B4- \"E7\"B4- | \"Am7\"B4 \"D7\"z2 B2 |\n\"Gmaj7\"B3 B- \"(Em7)\"B4 | \"Am7\"z2 BB \"D7\"B2 BB | \"Gm7\"B8 | \"C9\"z2 BB B2 BB |\n\"Eb9\"B2 B6 | \"Am7\"z2 BB \"D7\"B2 BB | \"G6\"B4 \"Cm6\"B4 | \"Gmaj7\"z4 \"(Db13)\"z2 B2 ||\nP:B\n\"Cm7\"B8 | \"F9\"z2 BB B2 BB | \"Bbmaj7\"B3 B B4 | \"Bo7\"\"(Ab13)\"z2 BB- \"(G7)\"B2 BB |\n\"Cm7\"B3 B B4 | \"F9\"z2 B2 B2 BB | \"Am7(11)\"B8- | \"D7\"B4 z2 B2 ||\nP:C\n\"Gmaj7\"B3 B- \"(Em7)\"B4 | \"Am7\"z2 BB \"D7\"B2 BB | \"Gm7\"B8 | \"C9\"z2 BB B2 BB |\n\"Eb9\"B2 B6 | \"Am7\"z2 B2 \"D7\"(3B2B2B2 | \"Gmaj7\"B8 | \"(Em7)\"z2 \"(Am7)\"z2 \"(D7)\"z4 |]\n"
+},
+{
+"id": "New_Real_Book_Volume2/96-flamingo",
+"book": "The New Real Book Vol. 2",
+"title": "Flamingo",
+"pdf": "96",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed and not copied"
+},
+{
+"bars": [
+1,
+9,
+25
+],
+"groups": [
+1,
+9,
+25
+],
+"text": "(Em7) placed on beat 3 over the tied note"
+},
+{
+"bars": [
+32
+],
+"groups": [
+32
+],
+"text": "turnaround chord placement guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Flamingo\nC:Ted Grouya\nC:Lyric: Ed Anderson\nP:ABC\n%source New Real Book Vol 2 p88 (pdf 96)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [general] lyrics are printed and not copied\nM:C\nL:1/8\nK:G\nB2 |\nP:A\n\"Gmaj7\"B3 B- \"(Em7)\"B4 | \"Am7\"z2 BB \"D7\"B2 BB | \"Gm7\"B8 | \"C9\"z2 BB B2 BB |\n\"Eb9\"B2 B6 | \"Am7\"z2 BB \"D7\"B2 BB | \"Gmaj7\"B4- \"E7\"B4- | \"Am7\"B4 \"D7\"z2 B2 |\n\"Gmaj7\"B3 B- \"(Em7)\"B4 | \"Am7\"z2 BB \"D7\"B2 BB | \"Gm7\"B8 | \"C9\"z2 BB B2 BB |\n\"Eb9\"B2 B6 | \"Am7\"z2 BB \"D7\"B2 BB | \"G6\"B4- \"Cm6\"B4 | \"Gmaj7\"z4 \"(Db13)\"z2 B2 ||\nP:B\n\"Cm7\"B8 | \"F9\"z2 BB B2 BB | \"Bbmaj7\"B3 B B4 | \"Bo7\"\"(Ab13)\"z2 BB- B2 \"G7\"BB |\n\"Cm7\"B3 B B4 | \"F9\"z2 B2 B2 BB | \"Am7(11)\"B8- | \"D7\"B4 z2 B2 ||\nP:C\n\"Gmaj7\"B3 B- \"(Em7)\"B4 | \"Am7\"z2 BB \"D7\"B2 BB | \"Gm7\"B8 | \"C9\"z2 BB B2 BB |\n\"Eb9\"B2 B6 | \"Am7\"z2 B2 \"D7\"(3B2B2B2 | \"Gmaj7\"B8 | \"(Em7)\"z4 \"(Am7)\"z2 \"(D7)\"z2 |]\n\n%unsure [bars 1, 9, 25] (Em7) placed on beat 3 over the tied note\n%unsure [bar 32] turnaround chord placement guessed"
+},
+{
+"id": "New_Real_Book_Volume2/097-fly-me-to-the-moon",
+"book": "The New Real Book Vol. 2",
+"title": "Fly Me to the Moon",
+"pdf": "97",
+"form": "AB 16+16 (+ 6-bar coda ending)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "second ending: the coda (from the coda sign in bar 23) is an alternate ending; no D.S./jump text printed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics printed in the book but not copied here (copyrighted song text); add w: lines from the source if wanted"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Fly Me to the Moon\nC:Bart Howard\nP:AB\n%source New Real Book Volume 2 p90 (pdf 97)\n%style (Med. Swing; originally in 3/4)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16 (+ 6-bar coda ending)\n%unsure [form] second ending: the coda (from the coda sign in bar 23) is an alternate ending; no D.S./jump text printed\n%unsure [general] lyrics printed in the book but not copied here (copyrighted song text); add w: lines from the source if wanted\nM:C\nL:1/8\nK:D\nP:A\n\"Bm7\"B3 B B2 BB- | \"Em7\"B B3 B2 B2 | \"A7\"B3 B B2 BB- | \"Dmaj7\"B4- \"D7\"\"(D#m7 G#7)\"B4 |\n\"Gmaj7\"B3 B B2 BB- | \"C#m7b5\"B B3 B2 B2 | \"F#7\"B3 B B2 BB- | \"Bm7\"\"(B7/A)\"B6 \"B7\"B2 |\n\"Em7\"\"(E/G#)\"B B2 B- B4- | \"A7\"\"(Em/G)\"B4 B2 B2 | \"Dmaj7\"\"(F#m7)\"B8- | \"F#m7\"B6 \"B7\"B2 |\n\"Em7\"B B2 B- B4- | \"A7\"B2 B4 B2 | \"Dmaj7\"B3 B- B4- | \"C#m7b5\"B4 \"F#7\"z4 ||\nP:B\n\"Bm7\"B3 B B2 BB- | \"Em7\"B B3 B2 B2 | \"A7\"B3 B B2 BB- | \"Dmaj7\"B4- \"D7\"\"(D#m7 G#7)\"B4 |\n\"Gmaj7\"B3 B B2 BB- | \"C#m7b5\"B B3 B2 B2 | \"F#7\"B3 B B2 BB- | \"Bm7\"\"(B7/A)\"B6 \"B7\"B2 |\n\"Em7\"\"(E/G#)\"B B2 B- B4- | \"A7\"\"(Em/G)\"B2 B4 B2 | !coda!\"F#m7\"B8- | \"B7\"B6 B2 |\n\"Em7\"B B2 B- B4- | \"A7\"B4 B2 B2 | \"D6\"B8 | \"(C#m7b5)\"z4 \"(F#7)\"z4 |]\n%coda\n\"F#m7\"B8- | \"B7\"B6 B2 | \"Em7\"B B2 B- B4- | \"A7\"B4 B2 B2 |\n\"D6\"B8- | B8 |]\n"
+},
+{
+"id": "New_Real_Book_Volume2/97-fly-me-to-the-moon",
+"book": "The New Real Book Vol. 2",
+"title": "Fly Me to the Moon",
+"pdf": "97",
+"form": "AB 16+16 (originally in 3/4)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "coda sign at bar 27 with no printed D.S.; presumably take the coda on the last chorus"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed and not copied"
+},
+{
+"bars": [
+4,
+8,
+12,
+20,
+24,
+28
+],
+"groups": [
+3,
+7,
+11,
+19,
+23,
+27
+],
+"text": "second chord placed on beat 3 or 4 over the held note"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Fly Me to the Moon\nC:Bart Howard\nP:AB\n%source New Real Book Vol 2 p90 (pdf 97)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16 (originally in 3/4)\n%unsure [form] coda sign at bar 27 with no printed D.S.; presumably take the coda on the last chorus\n%unsure [general] lyrics are printed and not copied\nM:C\nL:1/8\nK:D\nP:A\n\"Bm7\"B3 B B2 BB- | \"Em7\"B B3 B2 B2 | \"A7\"B3 B B2 BB- | \"Dmaj7\"\"(D#m7)\"B4- \"D7\"\"(G#7)\"B4 |\n\"Gmaj7\"B3 B B2 BB- | \"C#m7b5\"B B3 B2 B2 | \"F#7\"B3 B B2 BB- | \"Bm7\"\"(B7/A)\"B6 \"B7\"B2 |\n\"Em7\"\"(E/G#)\"B B2 B- B4- | \"A7\"\"(Em/G)\"B4 B2 B2 | \"Dmaj7\"\"(F#m7)\"B8- | \"F#m7\"B6 \"B7\"B2 |\n\"Em7\"B B2 B- B4- | \"A7\"B2 B4 B2 | \"Dmaj7\"B3 B- B4- | \"C#m7b5\"B4 \"F#7\"z4 ||\nP:B\n\"Bm7\"B3 B B2 BB- | \"Em7\"B B3 B2 B2 | \"A7\"B3 B B2 BB- | \"Dmaj7\"\"(D#m7)\"B4- \"D7\"\"(G#7)\"B4 |\n\"Gmaj7\"B3 B B2 BB- | \"C#m7b5\"B B3 B2 B2 | \"F#7\"B3 B B2 BB- | \"Bm7\"\"(B7/A)\"B6 \"B7\"B2 |\n\"Em7\"\"(E/G#)\"B B2 B- B4- | \"A7\"\"(Em/G)\"B4 B2 B2 | !coda!\"F#m7\"B8- | \"B7\"B6 B2 |\n\"Em7\"B B2 B- B4- | \"A7\"B4 B2 B2 | \"D6\"B8 | \"(C#m7b5)\"z4 \"(F#7)\"z4 |]\n%coda\n\"F#m7\"B8- | \"B7\"B4 B2 B2 | \"Em7\"B B2 B- B4- | \"A7\"B4 B2 B2 |\n\"D6\"B8- | B8 |]\n\n%unsure [bars 4, 8, 12, 20, 24, 28] second chord placed on beat 3 or 4 over the held note"
+},
+{
+"id": "New_Real_Book_Volume2/098-forever",
+"book": "The New Real Book Vol. 2",
+"title": "Forever",
+"pdf": "98",
+"form": "ABCD 20+16+8+20",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred: intro, A B C, solo on ABC (till cue / on cue endings), D.S. (B) al Coda, then D vamp & fade"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "intro: string chords written as melody; last bar has a tenor 16th pickup over the held chord (written as quarter + 16ths)"
+},
+{
+"bars": [
+52,
+53
+],
+"groups": [
+51,
+52
+],
+"text": "endings (Gm9 triplet bracket in bar 51 printed over three 8ths, written as plain 8ths) marked Till cue / On cue; on-cue ending then D.S. al Coda"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Forever\nC:Eddie Gomez\nP:ABCD\n%source New Real Book Volume 2 p91-92 (pdf 98-99)\n%style (Med. Ballad, dotted quarter = 54)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 20+16+8+20\n%unsure [form] form inferred: intro, A B C, solo on ABC (till cue / on cue endings), D.S. (B) al Coda, then D vamp & fade\nM:6/8\nL:1/8\nK:G\n%intro (strings)\n\"Gm(add9)\"B3 B3 | B3 B3 | \"Ebmaj7#11\"B3 B3 | B3 B3 |\n\"Cm9\"B3 B3 | \"Ebmaj7/Bb\"B3 B3 | \"G/A\"B3 \"A\"B3 | \"G/A\"B3 \"F#/A\"B2 B/B/ |\nP:A\n|: \"Bm9\"B3- B2 B | \"Bm9(maj7)\"B6 | \"Bm9\"B3- B2 B | \"F#m7\"B3 \"B7b9\"B3 |\n\"Em(maj7)\"B3- \"Em7\"B2 B | \"A7b9\"B3- B2 B | \"Gm9(maj7)\"BBB- \"Gm9\"B3- | \"G/A\"B3 \"A7b9\"z2 B/B/ |\n\"Bm9\"B3- B2 B/B/ | \"Bm9(maj7)\"B6 | \"Bm9\"B3- B2 B/B/ | \"F#m7\"B3 \"B7b9\"B2 B/B/ |\n\"Emaj9\"B3- B2 B | \"C#m(maj7)\"B3- \"C#m7\"B2 B/B/ | \"Amaj9\"B3- B2 B | \"Cmaj7/G\"B3 \"C6/G\"B3 |\n\"Em(maj7)\"B3- \"Em7\"B2 B/B/ | \"A7b9\"B3- B2 B | \"Gm9(maj7)\"BBB- \"Gm9\"B3- | \"C13sus\"B3 \"C13b9\"z2 B/B/ || !segno!\nP:B\n\"Fmaj9\"B3- B2 B/B/ | \"Dm9\"B3- B2 B/B/ | \"G13#11\"B/B/ B2- B3- | B3 z2 B/B/ |\n\"Bbmaj9\"B3- B2 B/B/ | \"C13sus\"B3- \"C13b9\"B2 B | \"Fmaj9\"BBB- B3- | \"Ab13sus\"B3 \"Ab13b9\"z2 B/B/ |\n\"Dbmaj7\"B6 | \"Ab/C\"B3- B2 B/B/ | \"Bbm9\"B/B/ B2- B3- | \"Bbm9/Ab\"B3 z3/2B/B/B/ |\n\"Gm7b5\"B3- B2 B/B/ | \"C7sus4b9\"B3- \"C7b9#5\"B2 B | \"F9sus\"B2 B/B/ \"F9\"B3- | \"G/A\"B3 \"A7b9\"z2 B/B/ ||\nP:C\n\"Bm9\"B3- B2 B | \"Bm9(maj7)\"B3- B2 B/B/ | \"Bm9\"B3- B2 B | \"F#m7\"B3 \"B7b9\"B3 |\n\"Em(maj7)\"B3- \"Em7\"B2 B | \"A7b9\"B3- B2 B | \"Gm9(maj7)\"BBB- \"Gm9\"B3- |1 \"G/A\"B3 \"A7b9\"z3 :|2\n\"C13sus\"B3 \"C13b9\"zBB |]\n%coda\n\"C13sus\"B3 \"C13b9\"z2 B/B/ |:\nK:F\nP:D\n\"Dm9\"B3- B2 B | \"Dm9(maj7)\"B6 | \"Dm9\"B3- B2 B | \"Am7\"B3 \"D7b9\"B3 |\n\"Gm(maj7)\"B3- \"Gm7\"B2 B | \"C7b9\"B3- B2 B | \"Bbm9(maj7)\"BBB- \"Bbm9\"B3- | \"C13sus\"B3 \"C13b9\"z2 B/B/ |\n\"Dm9\"B3- B2 B/B/ | \"Dm9(maj7)\"B6 | \"Dm9\"B3- B2 B/B/ | \"Am7\"B3 \"D7b9\"B2 B/B/ |\n\"Gmaj9\"B3- B2 B | \"Em(maj7)\"B3- \"Em7\"B2 B/B/ | \"Cmaj9\"B3- B2 B | \"Ebmaj7/Bb\"B3 \"Eb6/Bb\"B3 |\n\"Gm(maj7)\"B3- \"Gm7\"B2 B/B/ | \"C7b9\"B3- B2 B | \"Bbm9(maj7)\"BBB- \"Bbm9\"B3- | \"C13sus\"B3 \"C13b9\"z2 B/B/ :|\n%Vamp & fade\n\n%unsure [bars 1-8] intro: string chords written as melody; last bar has a tenor 16th pickup over the held chord (written as quarter + 16ths)\n%unsure [bars 52-53] endings (Gm9 triplet bracket in bar 51 printed over three 8ths, written as plain 8ths) marked Till cue / On cue; on-cue ending then D.S. al Coda"
+},
+{
+"id": "New_Real_Book_Volume2/98-forever",
+"book": "The New Real Book Vol. 2",
+"title": "Forever",
+"pdf": "98",
+"form": "ABCD 20+16+8+20 (intro 8; solo on ABC; D.S. to B, coda into D, vamp & fade)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "order inferred from segno at B, \"Solo on ABC\", D.S. al Coda and the vamp at D"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "intro is a string part (chords written as single notes); last two sixteenths are tenor pickup"
+},
+{
+"bars": [
+36,
+40
+],
+"groups": [
+35,
+39
+],
+"text": "chord placement over the rests approximate; last-beat grouping of bar 40 guessed"
+},
+{
+"bars": [
+51
+],
+"groups": [
+50
+],
+"text": "eighths marked with a 3 bracket in the book; written as plain eighths (6/8)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "D section is a vamp & fade; melody played with some variation"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Forever\nC:Eddie Gomez\nP:ABCBCD\n%source New Real Book Vol 2 p91-92 (pdf 98-99)\n%style (Med. Ballad, dotted q=54)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 20+16+8+20 (intro 8; solo on ABC; D.S. to B, coda into D, vamp & fade)\n%unsure [form] order inferred from segno at B, \"Solo on ABC\", D.S. al Coda and the vamp at D\nM:6/8\nL:1/8\nK:D\n%intro\n\"Gmadd9\"B3 B3 | B3 B3 | \"Ebmaj7#11\"B3 B3 | B3 B3 |\n\"Cm9\"B3 B3 | \"Ebmaj7/Bb\"B3 B3 | \"G/A\"B3 \"A\"B3 | \"G/A\"B3 \"F#/A\"B2 B/B/ |\nP:A\n|: \"Bm9\"B3- B2 B | \"Bmmaj9\"B6 | \"Bm9\"B3- B2 B | \"F#m7\"B3 \"B7b9\"B3 |\n\"Emmaj7\"B3- \"Em7\"B2 B | \"A7b9\"B3- B2 B | \"Gmmaj9\"BBB- \"Gm9\"B3- | \"G/A\"B3 \"A7b9\"z2 B/B/ |\n\"Bm9\"B3- B2 B/B/ | \"Bmmaj9\"B6 | \"Bm9\"B3- B2 B/B/ | \"F#m7\"B3 \"B7b9\"B2 B/B/ |\n\"Emaj9\"B3- B2 B | \"C#mmaj7\"B3- \"C#m7\"B2 B/B/ | \"Amaj9\"B3- B2 B | \"Cmaj7/G\"B3 \"C6/G\"B3 |\n\"Emmaj7\"B3- \"Em7\"B2 B/B/ | \"A7b9\"B3- B2 B | \"Gmmaj9\"BBB- \"Gm9\"B3- | \"C13sus\"B3 \"C13b9\"z2 B/B/ ||\nP:B\n!segno!\"Fmaj9\"B3- B2 B/B/ | \"Dm9\"B3- B2 B/B/ | \"G13#11\"B/B/BB- B3- | B3 z2 B/B/ |\n\"Bbmaj9\"B3- B2 B/B/ | \"C13sus\"B3- \"C13b9\"B2 B | \"Fmaj9\"BBB- B3- | B3 \"Ab13sus\"z2 \"Ab13b9\"B/B/ |\n\"Dbmaj7\"B6 | \"Ab/C\"B3- B2 B/B/ | \"Bbm9\"B/B/BB- B3- | \"Bbm9/Ab\"B3 z3/2B/B/B/ |\n\"Gm7b5\"B3- B2 B/B/ | \"C7susb9\"B3- \"C7b9#5\"B2 B | \"F9sus\"B2 B/B/ \"F9\"B3- | \"G/A\"B3 \"A7b9\"z2 B/B/ ||\nP:C\n\"Bm9\"B3- B2 B | \"Bmmaj9\"B3- B2 B/B/ | \"Bm9\"B3- B2 B | \"F#m7\"B3 \"B7b9\"B3 |\n\"Emmaj7\"B3- \"Em7\"B2 B | \"A7b9\"B3- B2 B | \"Gmmaj9\"BBB- \"Gm9\"B3- |1 !coda!\"G/A\"B3 \"A7b9\"z3 :|2\n\"C13sus\"B3 \"C13b9\"zBB |]\n%coda\n\"C13sus\"B3 \"C13b9\"z2 B/B/ |\nP:D\nK:F\n|: \"Dm9\"B3- B2 B | \"Dmmaj9\"B6 | \"Dm9\"B3- B2 B | \"Am7\"B3 \"D7b9\"B3 |\n\"Gmmaj7\"B3- \"Gm7\"B2 B | \"C7b9\"B3- B2 B | \"Bbmmaj9\"BBB- \"Bbm9\"B3- | \"C13sus\"B3 \"C13b9\"z2 B/B/ |\n\"Dm9\"B3- B2 B/B/ | \"Dmmaj9\"B6 | \"Dm9\"B3- B2 B/B/ | \"Am7\"B3 \"D7b9\"B2 B/B/ |\n\"Gmaj9\"B3- B2 B | \"Emmaj7\"B3- \"Em7\"B2 B/B/ | \"Cmaj9\"B3- B2 B | \"Ebmaj7/Bb\"B3 \"Eb6/Bb\"B3 |\n\"Gmmaj7\"B3- \"Gm7\"B2 B/B/ | \"C7b9\"B3- B2 B | \"Bbmmaj9\"BBB- \"Bbm9\"B3- | \"C13sus\"B3 \"C13b9\"z2 B/B/ :|\n\n%unsure [bars 1-8] intro is a string part (chords written as single notes); last two sixteenths are tenor pickup\n%unsure [bars 36, 40] chord placement over the rests approximate; last-beat grouping of bar 40 guessed\n%unsure [bar 51] eighths marked with a 3 bracket in the book; written as plain eighths (6/8)\n%unsure [general] D section is a vamp & fade; melody played with some variation"
+},
+{
+"id": "New_Real_Book_Volume2/100-freedom-jazz-dance",
+"book": "The New Real Book Vol. 2",
+"title": "Freedom Jazz Dance",
+"pdf": "100",
+"form": "A 16",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "one lettered section; head played twice before and after solos (solos over C7 pedal), D.C. al Coda (take Coda after repeat)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "bass-staff rhythm hits not transcribed (chords placed on the melody); alternate changes for bars 9-12 printed below the tune are not included"
+},
+{
+"bars": [
+2,
+3
+],
+"groups": [
+2,
+3
+],
+"text": "the held note in bars 2-3 is in parentheses (optional/cue)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Freedom Jazz Dance\nC:Eddie Harris\nP:A\n%source New Real Book Volume 2 p94 (pdf 100)\n%style (Med. Funk/Rock)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 16\n%unsure [form] one lettered section; head played twice before and after solos (solos over C7 pedal), D.C. al Coda (take Coda after repeat)\n%unsure [general] bass-staff rhythm hits not transcribed (chords placed on the melody); alternate changes for bars 9-12 printed below the tune are not included\nM:C\nL:1/8\nK:C\nBB |:\nP:A\n\"N.C.\"BB BB BB BB | BB BB B2 \"C7\"B2- | B8 | z8 |\n\"N.C.\"zB BB BB BB | BB BB B2 \"C7\"z2 | z8 | z4 z2 zB |\n\"N.C.\"BB BB BB BB | BB BB BB BB | BB BB BB BB | (3BBB BB B2 \"C7#9\"!accent!B2 |\n\"C7#9\"z4 BB z2 | B3 B z2 B2 | z4 BB z2 | !coda!B3 B z2 BB :|\n%coda\n\"C7#9\"B3 B z4 |]\n\n%unsure [bars 2-3] the held note in bars 2-3 is in parentheses (optional/cue)"
+},
+{
+"id": "New_Real_Book_Volume2/101-friday-night-at-the-cadillac-club",
+"book": "The New Real Book Vol. 2",
+"title": "Friday Night at the Cadillac Club",
+"pdf": "101",
+"form": "A 24",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "one lettered section; head played twice before and after solos, solo on A, D.S. al fine"
+},
+{
+"bars": [],
+"groups": [],
+"text": "organ comp figure (middle staff) not transcribed: chords placed on the melody near where the organ hits fall; figures written 8th + 16th rest + 16th are played as a triplet (book note)"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro: organ rhythm only, written as rests with chords"
+},
+{
+"bars": [
+12,
+23,
+24
+],
+"groups": [
+11,
+22,
+23
+],
+"text": "triplet groupings in the Ab13sus / Bbmaj7#5/A bars read from the brackets; bar 24 chord placement approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Friday Night at the Cadillac Club\nC:Bob Berg\nP:A\n%source New Real Book Volume 2 p95-96 (pdf 101-102)\n%style (Med.-Up Shuffle, quarter = 190)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 24\n%unsure [form] one lettered section; head played twice before and after solos, solo on A, D.S. al fine\n%unsure [general] organ comp figure (middle staff) not transcribed: chords placed on the melody near where the organ hits fall; figures written 8th + 16th rest + 16th are played as a triplet (book note)\nM:C\nL:1/8\nK:D\n%intro (organ comp figure, 4x's)\n|: \"D13sus\"z2 \"D13\"z6 | \"C13sus\"z3 \"C13\"z5 | \"D13sus\"z3 \"D13\"z5 | \"C13sus\"z3 \"C13\"z \"D13sus\"z4 :| !segno!\nP:A\n|: \"D13\"zB Bz/B/ B2 BB | \"C13sus\"B2 \"C13\"BB z4 | \"D13sus\"zB Bz/B/ \"D13\"B2 B2 | \"Eb13sus\"BB BB \"Eb13\"BB B\"D13sus\"B |\n\"D13\"zB Bz/B/ B2 BB | \"C13sus\"BB BB \"C13\"z4 | \"D13sus\"zB Bz/B/ \"D13\"B2 B2 | \"Ab13sus\"(3zBB (3BBB \"Ab13\"(3zBB \"G13sus\"(3BBB |\n\"G13\"zB Bz/B/ B2 BB | \"F13sus\"B2 \"F13\"BB z2 zB- | \"E13sus\"(3B/B/B/B BB B2 \"E13\"B2 | \"Eb13sus\"BB BB \"Eb13\"BB B\"D13sus\"B |\n\"D13\"zB Bz/B/ B2 BB | \"Db13sus\"BB BB \"Db13\"z2 zB- | \"C13sus\"(3B/B/B/B BB B2 \"C13\"B2 | \"B7#9#5\"zB BB BB BB- |\n\"Gmaj7/A\"B3 B (3BBB- B2- | (3BBB (3BBB- B2 z2 | \"Bbmaj7#5/A\"(3zBB (3BBB (3BBB z2 | z2 (3BBB z\"A7#9#5\"!accent!B z\"D13\"!accent!B |\n\"D13\"zB Bz/B/ B2 BB | \"C13sus\"B2 \"C13\"BB z2 zB- | \"F13sus\"(3B/B/B/B BB B2 \"F13\"B2 | \"Eb13sus\"BB BB \"Eb13\"BB B\"D13sus\"B :|\n\n%unsure [bars 1-4] intro: organ rhythm only, written as rests with chords\n%unsure [bars 12, 23-24] triplet groupings in the Ab13sus / Bbmaj7#5/A bars read from the brackets; bar 24 chord placement approximate"
+},
+{
+"id": "New_Real_Book_Volume2/103-friends",
+"book": "The New Real Book Vol. 2",
+"title": "Friends",
+"pdf": "103",
+"form": "ABC 12+15+11",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the page; solo on form (ABC), after solos D.S. al Coda; head played twice before solos, once after"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "intro is an electric piano sample fill (8va, chords and single notes), rhythm of the top line written"
+},
+{
+"bars": [
+23,
+24
+],
+"groups": [
+22,
+23
+],
+"text": "bar 23 is a bracketed chord (cue); the kick in bar 24 (rest + accent) is for the head only, written as the held note"
+},
+{
+"bars": [
+47,
+48
+],
+"groups": [
+46,
+47
+],
+"text": "coda vamp: slashes written as rests with chords"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Friends\nC:Chick Corea\nP:ABC\n%source New Real Book Volume 2 p98 (pdf 103)\n%style (Med. Latin, half note = 94)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 12+15+11\n%unsure [form] section lengths counted from the page; solo on form (ABC), after solos D.S. al Coda; head played twice before solos, once after\nM:C|\nL:1/8\nK:D\n%intro (1st x: elec. pn. only; 2nd x: add bs. & dr.)\n|: \"D\"B2 zB z2 zB | \"G6/D\"B2 B2 B2 B2 | \"D\"B2 B2 zBzB | \"G6/D\"B2 BB B2 BB |\n\"D\"B2 B2 zBzB | \"G6/D\"zBzB B2 BB | \"D\"B2 BB BBBB | \"G6/D\"zBzB B2 BB :| !segno!\nP:A\n%flute\n|: \"Dmaj7\"B8 | \"Gmaj7/D\"B2 B2 B2 BB- | \"Dmaj7\"B8 | \"E9/D\"z2 B2 B3 B |\n\"Cmaj7/D\"B8 | z2 zB B2 BB- | \"Gm6/D\"B3 B- B4- | B3 B B3 B- |\n\"Dmaj7\"B8 | \"Gmaj7/D\"B2 B2 B2 BB- | \"Dmaj7\"B8 | \"E9/D\"(3z2B2B2 B2 B2 ||\nP:B\n\"F#maj7/C#\"B8 | \"Bmaj7/C#\"B2 B2 B2 BB- | \"F#maj7/C#\"B8 | \"Ab/C\"B8 |\n\"Emaj7/B\"B2 B2 B2 BB- | \"Gmaj7/B\"B4 B2 B2 | \"Cmaj7/B\"B8- | B2 B2 B2 B2 |\n\"Bbmaj7\"B8- | B2 B2 B2 B2 | \"Gmaj7\"B8- | B2 B2 B2 B2 |\n\"E6/9(add#11)\"B2 B2 B2 B2 | \"Gm6/D\"B8 | B4 B2 B2 ||\nP:C\n\"D/C\"B8- | B2 B2 B2 B2 | \"Bm(maj7)\"B4 B2 B2 | \"Gm6/D\"B8 | B2 B2 B2 BB- |\n%susp. time feel (bars 39-40, Gm6/D)\n\"Dmaj7\"B8 | \"Gmaj7/D\"B2 B2 B2 B2 | \"Bmaj7\"B8 | \"Bm7\"B2 B2 B2 B2 |\n\"Em7\"B8 | \"A7b9\"B8 :|\n%coda\n|: \"D\"z8 | \"G6/D\"z8 :|\n%Vamp, fill & fade\n\n%unsure [bars 1-8] intro is an electric piano sample fill (8va, chords and single notes), rhythm of the top line written\n%unsure [bars 23-24] bar 23 is a bracketed chord (cue); the kick in bar 24 (rest + accent) is for the head only, written as the held note\n%unsure [bars 47-48] coda vamp: slashes written as rests with chords"
+},
+{
+"id": "New_Real_Book_Volume2/104-geraldine",
+"book": "The New Real Book Vol. 2",
+"title": "Geraldine",
+"pdf": "104",
+"form": "ABCD 9+33+40+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A rubato (repeated); marimba vamp 3x; B repeated (1st x melody, 2nd x alto solo); C; D vamp and fade; bar counts counted"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"text": "rubato, alto with piano; some chord tones in a lower voice (bars 3, 5) not written; bar 3 F#m D/F# over a two-note group read as eighths, bar 7 sixteenths approximate"
+},
+{
+"bars": [
+10,
+11
+],
+"groups": [
+9,
+10
+],
+"text": "marimba patch 8va b., played 3 times"
+},
+{
+"bars": [
+12,
+13
+],
+"groups": [
+11,
+12
+],
+"text": "marimba continues to end of B with slight variation bars 21-24; bar 13 alto with piano 8va"
+},
+{
+"bars": [
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46
+],
+"groups": [
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45
+],
+"text": "1st x melody, 2nd x alto solo; bass and keyboards enter; last five bars printed as slashes and repeat signs (written as rests)"
+},
+{
+"bars": [
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79
+],
+"groups": [
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76,
+77,
+78
+],
+"text": "alto; dotted and tied eighth groupings read as printed, chord placement by beat guessed; bar 61 held note length fitted; bars 65-72 sample fill then melody"
+},
+{
+"bars": [
+80,
+81,
+82,
+83,
+84,
+85,
+86,
+87
+],
+"groups": [
+79,
+80,
+81,
+82,
+83,
+84,
+85,
+86
+],
+"text": "piano fills; vamp and fade"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Geraldine\nC:Russell Ferrante (as played by the Yellowjackets)\nP:ABCD\n%source New Real Book Volume2 p99 (pdf 104)\n%style (Rubato, quarter = 56 (alto & pn. only); then Med. Latin, half = 91 (drums enter))\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 9+33+40+8\n%unsure [form] A rubato (repeated); marimba vamp 3x; B repeated (1st x melody, 2nd x alto solo); C; D vamp and fade; bar counts counted\nM:4/4\nL:1/8\nK:C\nP:A\n|: \"Bbmaj7/D\"B2 \"C13\"BB \"Bb\"BB \"F/A\"BB | \"Gm9\"BB \"F(add9)/A\"BB \"Bbmaj9#11\"B2 \"Gm/Bb\"BB | \"Ebmaj7/G\"B2 \"D(add9)/G\"BB \"A7/G\"BB \"F#m\"B\"D/F#\"B | \"Absus/F\"zB B\"Gsus/F\"B B\"G7#5/F\"B \"G7/F\"B\"Em7/C/E\"B |\n\"Bbmaj7/D\"zB \"E(add11)/D\"BB \"Fmaj7/A\"B2 \"C(add9)/E\"BB | \"Dmaj7/F#\"BB B\"Bbmaj7/D\"B \"C#m9\"BB \"B(add9)/D#\"BB | \"E+\"B\"C#m7/E\"B \"F#m7\"B/B/B/B/ \"Gmaj7/B\"B3 B |1 \"Fmaj7/A\"BB \"Fmaj7#5/A\"BB \"Bb/C\"B3 B :|2\n\"Fmaj7/A\"BB \"Fmaj7#5/A\"BB \"Bb/C\"BB !fermata!B2 ||\nM:3/2\nK:Ab\n%intro (Med. Latin, marimba patch)\n|: \"(Fm)\"B3 B- B2 B2- B B3 | B3 B- B2 B2- B B3 :| \"(Fm)\"z12 | z4 B3 B- B B2 B- |\nP:B\n|: \"Bbm11\"B12- | B12- | B12 | z4 B3 B- B B2 B- |\n\"Fm9\"B2 B2- B8- | B12- | \"Fm9\"B12 | z4 B3 B- B B2 B- |\n\"Bbm11\"B12- | B12- | B12- | B12 |\n\"Fm9\"z12 | z4 z B2 B- B B2 B- | B12 | z4 B3 B- B B2 B- |\n\"Bbm11\"B12- | B8 B2 B2 | \"C13b9/Bb\"B12- | B8 B2 B2 |\n\"Abm9(maj7)\"B2 B2- B8- | B12- | \"Db13#11\"B12 | z8 z2 zB- |\n\"Fm9\"B2 B2- B8- | B12- | B12 | z12 |\n\"Fm9\"z12 | z12 | z12 | z12 | z12 :|\nP:C\nK:C\n\"Bbmaj7/D\"B3 \"F/A\"B- B B2 \"Bb(add9)\"B- B B2 \"Gm11\"B- | B \"C/E\"B2 B- B B2 \"F\"B- B B2 B- | \"Bbm11\"B12- | B12- |\n\"C13b9/Bb\"B12 | z8 z2 B2 | \"Ebmaj7/G\"B3 \"D(add9)/G\"B- B B2 \"A7/G\"B- B B3 | \"Absus/F\"B3 \"Gsus/F\"B- B B2 B- \"G7#5/F\"B B2 B- |\n\"Cm11\"B12- | B12 | \"Bbmaj7/D\"z \"E(add11)/D\"B2 B- B B2 \"Fmaj7/A\"B- \"C(add9)/E\"B3 B- | B B2 \"Dmaj7/F#\"B- B B2 \"Bbmaj7/D\"B- B B2 \"C#m9\"B- |\n\"C#m9\"B8 z \"B(add9)/D#\"B2 B- | B B2 \"E+\"B- B B2 \"C#m/E\"B- \"F#m7\"B B2 B- | \"Gmaj7b5/B\"BB \"Gmaj7/B\"B- B5 z B2 \"Fmaj7/A\"B- | \"Fmaj7/A\"B B2 \"Fmaj7#5/A\"B- B B2 \"Bb/C\"B- B B3 |\n\"Bbmaj7/D\"B3 \"F/A\"B- B B2 \"Bb(add9)\"B- B B2 \"Gm11\"B- | B \"C/E\"B2 B- B B2 \"F\"B- B B2 B- | \"Bbm11\"B3 B B4 z4 | z12 |\n\"C13b9/Bb\"z12 | z4 B3 B- B2 B2 | \"Abm9(maj7)\"B8 z4 | z2 zB B8 |\n\"Db13#11\"z2 zB B3 B B4 | z4 z2 zB- \"Fm9\"B2 B2- | B12 | z12 |\nz12 | \"Fm9\"z12 | z12 | z12 |\nz4 B3 B- B B2 B- ||\nP:D\nK:Ab\n|: \"Bbm11\"B12- | B12- | B12 | z4 B3 B- B B2 B- |\n\"Fm9\"B2 B2- B8- | B12- | B12 | z4 B3 B- B B2 B- :|\n\n%unsure [bars 1-9] rubato, alto with piano; some chord tones in a lower voice (bars 3, 5) not written; bar 3 F#m D/F# over a two-note group read as eighths, bar 7 sixteenths approximate\n%unsure [bars 10-11] marimba patch 8va b., played 3 times\n%unsure [bars 12-13] marimba continues to end of B with slight variation bars 21-24; bar 13 alto with piano 8va\n%unsure [bars 14-46] 1st x melody, 2nd x alto solo; bass and keyboards enter; last five bars printed as slashes and repeat signs (written as rests)\n%unsure [bars 47-79] alto; dotted and tied eighth groupings read as printed, chord placement by beat guessed; bar 61 held note length fitted; bars 65-72 sample fill then melody\n%unsure [bars 80-87] piano fills; vamp and fade"
+},
+{
+"id": "New_Real_Book_Volume2/106-gertrude-s-bounce",
+"book": "The New Real Book Vol. 2",
+"title": "Gertrude's Bounce",
+"pdf": "106",
+"form": "ABC 8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 8,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "intro, A (repeated), B, C; solos on DDEF; after solos D.S. al Coda One, then D.C. al Coda Two (vamp and fade); bar counts counted"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12
+],
+"text": "intro in two parts (trp. top staff, ten. lower staff, piano tacet); trumpet rhythm written, chords from the lower staff"
+},
+{
+"bars": [
+7
+],
+"groups": [
+6
+],
+"text": "coda sign 2 here; bar 8 marked (add piano)"
+},
+{
+"bars": [
+21,
+22
+],
+"groups": [
+20,
+21
+],
+"text": "first ending has a piano figure underneath; second ending last note marked (pn.)"
+},
+{
+"bars": [
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30
+],
+"groups": [
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29
+],
+"text": "tie and chord placement over held notes guessed; last three eighths of bar 30 marked (horns)"
+},
+{
+"bars": [
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63
+],
+"groups": [
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62
+],
+"text": "solos (D, E, F) printed as rhythm slashes; written as rests with the chords"
+},
+{
+"bars": [
+64
+],
+"groups": [
+63
+],
+"text": "Coda One: rhythm hits (dotted quarter; eighth tied to half) written as rests; then D.C. al Coda Two"
+},
+{
+"bars": [
+65,
+66
+],
+"groups": [
+64,
+65
+],
+"text": "vamp and fade; piano chord in bar 66"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Gertrude's Bounce\nC:Richie Powell (as played by Clifford Brown)\nP:ABCDDEF\n%source New Real Book Volume2 p101 (pdf 106)\n%style (Fast Bop, quarter = 244)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 8+8+8\n%unsure [form] intro, A (repeated), B, C; solos on DDEF; after solos D.S. al Coda One, then D.C. al Coda Two (vamp and fade); bar counts counted\nM:4/4\nL:1/8\nK:D\n%intro\n\"D\"BB B2 \"D7\"B2 B2 | \"G6\"BB B2 \"Gm6\"B3 B | \"D\"BB B2 B2 B2 | \"E7\"B4 \"A7\"B4 |\n\"D\"BB B2 \"D7\"B2 B2 | \"G6\"BB B2 \"Gm6\"B3 B | !coda!\"D\"BB B2 \"D/A\"B2 \"Bbo7\"B2 | \"Bm\"B4- \"Bm/A\"B4- |\n\"G#m7b5\"B4 \"Fo7\"B3 B | \"D(add9)/F#\"B2 BB \"D/F#\"B2 B2 | \"Em7\"B2 BB \"A7\"B2 B2 | \"Dm7\"B2 BB B2 B2 |\n\"G7\"B4 zB BB ||\nK:C\nP:A\n|: !segno!\"C6\"B2 B2 B3 B | \"Dm7\"BB BB \"G7\"z B3 | \"Em7\"BB B2 \"Am7\"B2 B2 | \"Dm7\"BB BB \"G7\"BB BB- |\n\"C9sus\"B3 B \"C7\"z2 zB | \"Fmaj7\"B2 BB \"Bb9\"zB z2 | \"Eb6\"zB BB z B3 |1 \"Dm7\"BB BB \"G7\"zB BB :|2\n\"Dm7\"B2 BB \"C6\"z2 B2 ||\nP:B\n\"Abmaj7\"B3 \"Gbmaj7#11\"B- B2 \"Fmaj7#11\"B2- | B2 \"Emaj7#11\"B2- B\"Ebmaj7#11\"B z2 | \"Dmaj7#11\"B6 \"Dbmaj7\"B2- | B8 |\n\"Amaj7\"B3 \"Gmaj7#11\"B- B2 \"Gbmaj7#11\"B2- | B2 \"Fmaj7#11\"B2- B\"Emaj7#11\"B z2 | \"Ebmaj7#11\"B6 \"Dbmaj7\"B2- | B4 zB BB ||\nP:C\n\"C6\"B2 B2 B3 B | \"Dm7\"BB BB \"G7\"z B3 | \"Em7\"BB B2 \"Am7\"B2 B2 | \"Dm7\"BB BB \"G7\"BB BB- |\n\"C9sus\"B3 B \"C7\"z2 zB | \"Fmaj7\"B2 BB \"Bb9\"zB z2 | \"Eb6\"zB BB z B3 | !coda!\"Dm7\"B2 BB \"C6\"z4 ||\nP:D\n|: \"C6\"z8 | \"Dm7\"z4 \"D#o7\"z4 | \"Em7\"z4 \"A7\"z4 | \"Dm7\"z4 \"G7\"z4 |\n\"C9sus\"z4 \"C7\"z4 | \"Fmaj7\"z4 \"Bb9\"z4 | \"Ebmaj7\"z8 |1 \"Dm7\"z4 \"G7\"z4 :|2\n\"Dm7\"z4 \"C6\"z4 ||\nP:E\n\"Abmaj7\"z8 | z8 | \"Dbmaj7\"z8 | z8 |\n\"Amaj7\"z8 | z8 | \"Dmaj7\"z8 | \"G7\"z8 ||\nP:F\n\"C6\"z8 | \"Dm7\"z4 \"D#o7\"z4 | \"Em7\"z4 \"A7\"z4 | \"Dm7\"z4 \"G7\"z4 |\n\"C9sus\"z4 \"C7\"z4 | \"Fmaj7\"z4 \"Bb9\"z4 | \"Ebmaj7\"z8 | \"Dm7\"z4 \"C6\"zB BB |]\n%coda One\n\"Em7\"z4 \"A7b5\"z4 |]\nK:D\n%coda Two\n|: \"D\"BB B2 B2 B2 | B8 :|\n\n%unsure [bars 1-13] intro in two parts (trp. top staff, ten. lower staff, piano tacet); trumpet rhythm written, chords from the lower staff\n%unsure [bar 7] coda sign 2 here; bar 8 marked (add piano)\n%unsure [bars 21-22] first ending has a piano figure underneath; second ending last note marked (pn.)\n%unsure [bars 23-30] tie and chord placement over held notes guessed; last three eighths of bar 30 marked (horns)\n%unsure [bars 39-63] solos (D, E, F) printed as rhythm slashes; written as rests with the chords\n%unsure [bar 64] Coda One: rhythm hits (dotted quarter; eighth tied to half) written as rests; then D.C. al Coda Two\n%unsure [bars 65-66] vamp and fade; piano chord in bar 66"
+},
+{
+"id": "New_Real_Book_Volume2/108-get-happy",
+"book": "The New Real Book Vol. 2",
+"title": "Get Happy",
+"pdf": "108",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section bar counts counted from the page"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics printed in the book are not copied here; add them separately"
+},
+{
+"bars": [],
+"groups": [],
+"text": "page 104 also prints three alternate versions of B (the third for solos only: G13 F13 Eb13 D13); not transcribed"
+},
+{
+"bars": [
+14
+],
+"groups": [
+14
+],
+"text": "F#o7 note printed with a bracketed second chord-tone voice; top rhythm written"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Get Happy\nC:Harold Arlen (lyric: Ted Koehler)\nP:ABC\n%source New Real Book Volume2 p103 (pdf 108)\n%style (Med (-Up) Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [form] section bar counts counted from the page\n%unsure [general] lyrics printed in the book are not copied here; add them separately\n%unsure [general] page 104 also prints three alternate versions of B (the third for solos only: G13 F13 Eb13 D13); not transcribed\nM:4/4\nL:1/8\nK:G\nB BB |\nP:A\n\"G6\"B B2 B B2 BB- | \"Am7\"B B3- \"D7\"BB BB | \"G6\"B B2 B \"E7#5\"B2 BB- | \"Am7\"B4- \"D7\"BB BB |\n\"G6\"B B2 B B2 BB- | \"C6\"B B3- \"C#o7\"B B2 B- | \"G6/D\"BB BB \"D7\"B2 BB- | \"G6\"B4- \"G7\"BB BB |\n\"C6\"B B2 B B2 BB- | \"Dm7\"B B3- \"G7\"BB BB | \"C6\"B B2 B \"A7#5\"B2 BB- | \"Dm7\"B4- \"G7\"BB BB |\n\"C6\"B B2 B B2 BB- | \"F6\"B B3- \"F#o7\"B B2 B- | \"C6/G\"BB BB \"G7\"B2 BB- | \"C6\"B6 \"D7\"B2 ||\nP:B\n\"Dm7\"B3 \"G7\"B- B B2 B | \"Cm7\"B3 \"F7\"B- B B2 B | \"Bm7\"B3 \"E7\"B- B B2 B | \"Am7\"B6 \"D7\"B2 |\n\"Dm7\"B4 \"G7\"B4 | \"Cm7\"B3 \"F7\"B- B4 | \"Bm7\"B2 B2 \"E7\"B B2 B- | \"Am7\"B4- \"D7\"BB BB ||\nP:C\n\"G6\"B B2 B B2 BB- | \"Am7\"B B3- \"D7\"BB BB | \"G6\"B B2 B \"E7#5\"B2 BB- | \"Am7\"B4- \"D7\"BB BB |\n\"G6\"B B2 B B2 BB- | \"C6\"B B3- \"C#o7\"B B2 B- | \"G6/D\"BB BB \"D7\"B2 BB- | \"G6\"B4 \"(Am7)\"z2 \"(D7)\"z2 |]\n\n%unsure [bar 14] F#o7 note printed with a bracketed second chord-tone voice; top rhythm written"
+},
+{
+"id": "New_Real_Book_Volume2/110-giant-steps",
+"book": "The New Real Book Vol. 2",
+"title": "Giant Steps",
+"pdf": "110",
+"form": "A 16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no section letters printed; one 16-bar form, head played twice before and after solos"
+},
+{
+"bars": [
+16
+],
+"groups": [
+15
+],
+"text": "2nd time: solo break"
+},
+{
+"bars": [
+17,
+18
+],
+"groups": [
+16,
+17
+],
+"text": "coda: rhythm section hits under bar 17; fermata then tenor fill"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Giant Steps\nC:John Coltrane\n%source New Real Book Volume2 p105 (pdf 110)\n%style (Fast Swing, quarter = 286 (tenor))\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 16\n%unsure [form] no section letters printed; one 16-bar form, head played twice before and after solos\nM:4/4\nL:1/8\nK:C\n|: \"Dbmaj7\"B4 \"E7\"B4 | \"Amaj7\"B4 \"C7\"B3 B- | \"Fmaj7\"B8 | \"Bm7\"B3 B- \"E7\"B4 |\n\"Amaj7\"B4 \"C7\"B4 | \"Fmaj7\"B4 \"Ab7\"B3 B- | \"Dbmaj7\"B8 | \"Gm7\"B4 \"C7\"B3 B- |\n\"Fmaj7\"B8 | \"Bm7\"B4 \"E7\"B3 B- | \"Amaj7\"B8 | \"Ebm7\"B4 \"Ab7\"B3 B- |\n\"Dbmaj7\"B8 | !coda!\"Gm7\"B4 \"C7\"B3 B- | \"Fmaj7\"B8 | \"Ebm7\"B3 B \"Ab7\"z4 :|\n%coda\n\"Gm7\"B4 \"C7\"B3 B- | \"Fmaj7\"!fermata!B8 |]\n\n%unsure [bar 16] 2nd time: solo break\n%unsure [bars 17-18] coda: rhythm section hits under bar 17; fermata then tenor fill"
+},
+{
+"id": "New_Real_Book_Volume2/111-got-a-match",
+"book": "The New Real Book Vol. 2",
+"title": "Got a Match?",
+"pdf": "111",
+"form": "A 16",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "one lettered section, played twice (1st x synth with bass, 2nd x synth); solo on A; after solos D.C. al Ending (play head twice)"
+},
+{
+"bars": [
+14,
+15,
+16
+],
+"groups": [
+14,
+15,
+16
+],
+"text": "chord voicings (two- and three-note) in the melody staff; top rhythm written; last eighth in parentheses"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"text": "ending: slash bars are piano fills (written as rests); rall. near the end"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Got a Match?\nC:Chick Corea\nP:A\n%source New Real Book Volume2 p106 (pdf 111)\n%style (Fast Swing, quarter = 302)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 16\n%unsure [form] one lettered section, played twice (1st x synth with bass, 2nd x synth); solo on A; after solos D.C. al Ending (play head twice)\nM:4/4\nL:1/8\nK:Em\nB- |\nP:A\n|: \"Em\"B2 BB B2 zB- | \"B7\"B2 BB B2 zB- | \"Em\"B2 BB BB BB | \"(E7)\"BB BB BB BB- |\n\"Am\"B2 BB B2 zB- | \"E7\"B2 BB B2 zB- | \"Am\"B2 BB BB BB | BB BB BB BB |\n\"F#m7\"zB BB \"B7\"BB BB | \"Gm7\"BB BB \"C7\"BB BB | \"F\"B2 BB BB BB | \"F#m7\"BB BB \"B7\"BB BB |\n\"Em\"BB BB BB BB | \"F#m7b5\"B4 \"B7\"B3 B- | \"Em\"B4 B2 B2- | \"(B7)\"B6 zB- :|\n%ending\n\"Em\"z8 | \"F#m7b5\"z4 \"B7\"z2 zB- | \"Em\"B4 B2 B2- | z8 |\n\"Em\"z8 | \"F#m7b5\"z4 \"B7\"z2 zB- | \"Em\"B4 \"D(add9,omit3)\"B2 \"E(add9,omit3)\"B2- | \"(Em)\"!fermata!B8 |]\n\n%unsure [bars 14-16] chord voicings (two- and three-note) in the melody staff; top rhythm written; last eighth in parentheses\n%unsure [bars 17-24] ending: slash bars are piano fills (written as rests); rall. near the end"
+},
+{
+"id": "New_Real_Book_Volume2/112-gregory-is-here",
+"book": "The New Real Book Vol. 2",
+"title": "Gregory Is Here",
+"pdf": "112",
+"form": "AABC 16+16+8+16",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "solo on form (AABC); after solos D.S. (segno at B) al Ending; bar counts counted"
+},
+{
+"bars": [],
+"groups": [],
+"text": "chords in parentheses are not used for solos; kicks at end of B are played during solos; page 108 (pdf 113) is a separate harmony (tenor) part, not transcribed"
+},
+{
+"bars": [
+12
+],
+"groups": [
+12
+],
+"text": "D9 with bracketed C/E, Fm, D7 rhythm kicks (eighth-tied, quarter, eighth-tied); chords placed by beat"
+},
+{
+"bars": [
+24,
+25
+],
+"groups": [
+24,
+25
+],
+"text": "rhythm kicks over Dm11 and G13, then drum fill into C"
+},
+{
+"bars": [
+52
+],
+"groups": [
+52
+],
+"text": "rit."
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Gregory Is Here\nC:Horace Silver\nP:AABC\n%source New Real Book Volume2 p107 (pdf 112)\n%style (Med. Latin, quarter = 168)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+8+16\n%unsure [form] solo on form (AABC); after solos D.S. (segno at B) al Ending; bar counts counted\n%unsure [general] chords in parentheses are not used for solos; kicks at end of B are played during solos; page 108 (pdf 113) is a separate harmony (tenor) part, not transcribed\nM:4/4\nL:1/8\nK:C\nz2 BB- |\nP:A\n|: \"Db13#11\"BB- B6 | z2 BB- B B2 B- | \"Dm11\"B8- | B4 z2 BB- |\n\"Db13#11\"BB- B6 | z2 BB- B B2 B- | \"Dm11\"B8- | B4 z2 BB- |\n\"Bm7(11b5)\"BB- B6 | \"E7b9\"z2 BB- B B2 B- | \"Am7\"B8- | \"D9\"\"(C/E)\"B4 \"(Fm)\"z2 \"(D7)\"BB- |\n\"Dm9\"BB- B6 | \"C#7#9\"z2 BB- B B2 B- | \"Cmaj9\"B8- |1 B4 z2 BB- :|2\nB4 z2 BB ||\nP:B\n!segno!\"Fm7\"B8- | \"Bb7\"B2 BB BB BB | \"Ebmaj7\"B8- | \"Cm7\"B2 BB BB BB |\n\"Fm7\"B8- | \"Bb7\"(3B2B2B2 (3B2B2B2 | \"Dm11\"B8- | \"G13\"B3 z z2 BB- ||\nP:C\n\"Db13#11\"BB- B6 | z2 BB- B B2 B- | \"Dm11\"B8- | B4 z2 BB- |\n\"Db13#11\"BB- B6 | z2 BB- B B2 B- | \"Dm11\"B8- | B4 z2 BB- |\n\"Bm7(11b5)\"BB- B6 | \"E7b9\"z2 BB- B B2 B- | \"Am7\"B8- | \"D9\"\"(C/E)\"B4 \"(Fm)\"z2 \"(D7)\"BB- |\n\"Dm9\"BB- B6 | \"C#7#9\"z2 BB- B B2 B- | \"Cmaj9\"B8- | B6 z2 |]\n%ending\n\"Dbmaj7\"B8- | B8 | \"Cmaj7\"B8- | B8 |\n\"Dbmaj7\"B8- | B8 | \"Cmaj7\"B8- | B8 |\n\"Dbmaj7\"B8- | B8 | \"Bmaj7\"B2 \"Cmaj7\"!fermata!B6 |]\n\n%unsure [bar 12] D9 with bracketed C/E, Fm, D7 rhythm kicks (eighth-tied, quarter, eighth-tied); chords placed by beat\n%unsure [bars 24-25] rhythm kicks over Dm11 and G13, then drum fill into C\n%unsure [bar 52] rit."
+},
+{
+"id": "New_Real_Book_Volume2/114-growing",
+"book": "The New Real Book Vol. 2",
+"title": "Growing",
+"pdf": "114",
+"form": "AABB 12+12+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 9,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form AABB taken from \"Solo on form (AABB)\"; section bar counts inferred"
+},
+{
+"bars": [
+1
+],
+"groups": [
+1
+],
+"text": "printed as a 7-bar multirest"
+},
+{
+"bars": [
+2
+],
+"groups": [
+2
+],
+"text": "slash rhythm then 16th pickup notes; grouping guessed"
+},
+{
+"bars": [
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+"groups": [
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+"text": "dense 16th syncopations; groupings simplified so bars add up"
+},
+{
+"bars": [
+13
+],
+"groups": [
+13
+],
+"text": "4-bar rest (funky) in the 1st ending"
+},
+{
+"bars": [
+14,
+15,
+16,
+17
+],
+"groups": [
+14,
+15,
+16,
+17
+],
+"text": "rhythm slashes written as rests"
+},
+{
+"bars": [
+19,
+20,
+21,
+22,
+23,
+24,
+25
+],
+"groups": [
+19,
+20,
+21,
+22,
+23,
+24,
+25
+],
+"text": "B-section 16th groupings approximate"
+},
+{
+"bars": [
+29,
+30,
+31
+],
+"groups": [
+29,
+30,
+31
+],
+"text": "fill slashes written as rests"
+},
+{
+"bars": [],
+"groups": [],
+"text": "after solos D.S., vamp and fade on B (first ending)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Growing\nC:John Patitucci\nP:AABB\n%source New Real Book Volume 2 p110 (pdf 114)\n%style (Med. Funk, quarter = 100)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABB 12+12+8+8\n%unsure [form] form AABB taken from \"Solo on form (AABB)\"; section bar counts inferred\nM:4/4\nL:1/8\nK:C\nz/ |\n%intro\n\"Ebm7\"Z7 | B2 B2 B2 z/BB/ |\nP:A\n|: \"C#m7b5\"BB/B/ z/BB/- \"Cmaj7\"B/BB/ B/B/B/B/ | \"G/B\"BB/B/ BB B2 z/B/B | \"Bb13\"BB/B/ BB- BB/B/ B2 | B2 \"Am7\"B/B/\"Cmaj7/D\"B/B/ z/B/ \"Bbmaj7/C\"B2 B/B/ |\n\"Gm7\"BB/B/ \"D/E\"B/B/z/B/ \"E7alt\"B2 zB/B/ | \"Fmaj9b5\"BB/B/ z/BB/- \"D/E\"B/BB/ BB/B/ | \"C/D\"B3 B/B/ \"G/A\"z/B/B \"D7#9#5\"B/B3/ | \"Fmaj7/G\"B6- (3BBB |\n\"Gbmaj13#11\"B6 (3BBB | \"G/Bb7\"B4 \"Gb/Bb7\"B7/ B/ |1 \"Ebm7\"Z4 :|2 \"Ebm7\"z8 |\nz8 | z8 | \"Ebm7\"z4 z/B/z/B/ Bz/B/- ||\nP:B\n|: \"Dbmaj7\"B8 | \"Dm7b5\"z4 \"G7#9#5\"z/B3/ B/B3/ | \"Cm11\"B8 | \"F#9sus\"z4 BB/B/- B/B/B/B/ |1 \"Bmaj7\"B8 | \"E9sus\"z2 z/B/B/B/ BB/B/- B/B/B/B/ | \"Amaj7\"B8 | \"Ebm7\"z2 B\"Ab7\"B/B/ z/B/z/B/ B2 :|2\n\"Bmaj7\"B6 (3BBB | \"F7b9#5\"B3 B/B/- \"Bb7#9#5\"B/B3/ B2- | \"Ebm7\"B8 | z8 |\nz8 | z8 |]\n\n%unsure [bar 1] printed as a 7-bar multirest\n%unsure [bar 2] slash rhythm then 16th pickup notes; grouping guessed\n%unsure [bars 3-9] dense 16th syncopations; groupings simplified so bars add up\n%unsure [bar 13] 4-bar rest (funky) in the 1st ending\n%unsure [bars 14-17] rhythm slashes written as rests\n%unsure [bars 19-25] B-section 16th groupings approximate\n%unsure [bars 29-31] fill slashes written as rests\n%unsure [general] after solos D.S., vamp and fade on B (first ending)"
+},
+{
+"id": "New_Real_Book_Volume2/115-harlem-nocturne",
+"book": "The New Real Book Vol. 2",
+"title": "Harlem Nocturne",
+"pdf": "115",
+"form": "ABC 16+18+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the boxed letters; B runs 18 bars (16 + two Am6 bars before C)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "the book prints lyrics; lyric text is not included in this file"
+},
+{
+"bars": [
+9
+],
+"groups": [
+8
+],
+"text": "break: band tacet from beat 2; alt chords (Am6 F9) printed over bars 7-8"
+},
+{
+"bars": [
+24,
+25
+],
+"groups": [
+23,
+24
+],
+"text": "break bars; vocalists may sing only the notes on beats 1-4; alt changes at bar 25: B7/A E7/G# A7/G D7/F# G7/F"
+},
+{
+"bars": [
+31,
+32
+],
+"groups": [
+30,
+31
+],
+"text": "break; alt changes: G13 F13 Eb13 Db13 | B13 A13 G13 F13"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Harlem Nocturne\nC:Earle Hagen (music), Dick Rogers (lyric)\nP:ABC\n%source New Real Book Volume 2 p111 (pdf 115)\n%style (Medium Swing Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+18+8\n%unsure [form] section lengths counted from the boxed letters; B runs 18 bars (16 + two Am6 bars before C)\n%unsure [general] the book prints lyrics; lyric text is not included in this file\nM:4/4\nL:1/8\nK:Am\n\"(Am)\"zB BB B2 BB- |\nP:A\n\"Am(maj7)\"B8- | \"Am7\"BB BB B2 BB- | \"Dm7\"BB B6- | \"Dm7\"BB BB B2 BB- |\n\"Dm(maj7)\"B8- | \"F13\"BB (3BBB \"B7\"B2 \"E7\"BB- | \"Am6\"\"(Am6)\"B8 | \"Am6\"\"(F9)\"zB BB B2 BB- |\n\"Am(maj7)\"B8- | \"Am7\"BB BB B2 BB- | \"Dm7\"BB B6- | BB BB B2 BB- |\n\"Dm(maj7)\"B8- | \"F13\"BB (3BBB \"B7\"B2 \"E7\"BB- | \"Am6\"\"(Am6)\"B8- | \"(F9)\"B2 z2 \"(Am6)\"z2 z\"G9\"B |\nP:B\n\"C9\"BB BB- \"Db9\"B3 B | \"C9\"BB BB- \"Db9\"B3 B | \"C9\"BB BB- \"Db9\"B2 BB | \"C9\"BB- B4 zB |\n\"F9\"BB BB- \"Gb9\"B3 B | \"F9\"BB BB- \"Gb9\"B3 B | \"G7\"BB BB BB BB | BB BB \"G7\"B3 B |\n\"C9\"BB BB- \"Db9\"B3 B | \"C9\"BB BB- \"Db9\"B2 BB | \"C9\"BB- B4 zB | \"F9\"BB BB- \"Gb9\"B3 B |\n\"F9\"BB BB- \"Gb9\"B3 B | \"G7\"BB BB BB BB | BB BB BB BB | \"Am6\"B8 |\n\"Am6\"zB BB B2 BB- |\nP:C\n\"Am(maj7)\"B8- | \"Am7\"BB BB B2 BB- | \"Dm7\"BB B6- | BB BB B2 BB- |\n\"Dm(maj7)\"B8- | \"F13\"BB (3BBB \"B7\"BB \"E7\"BB- | \"Am6\"B8 | \"(E7)\"z8 |]\n\n%unsure [bar 9] break: band tacet from beat 2; alt chords (Am6 F9) printed over bars 7-8\n%unsure [bars 24-25] break bars; vocalists may sing only the notes on beats 1-4; alt changes at bar 25: B7/A E7/G# A7/G D7/F# G7/F\n%unsure [bars 31-32] break; alt changes: G13 F13 Eb13 Db13 | B13 A13 G13 F13"
+},
+{
+"id": "New_Real_Book_Volume2/117-hi-fly",
+"book": "The New Real Book Vol. 2",
+"title": "Hi-Fly",
+"pdf": "117",
+"form": "ABCDEF 16+8+8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 8,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "order as printed: A B C, solos on ABC, then D (repeated), E bass solo, F, D.C. al Coda; Coda at bar 6 of C"
+},
+{
+"bars": [],
+"groups": [],
+"text": "tune runs pdf 117-118 only; alternate melody for letter B (pdf 118) not transcribed"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15
+],
+"text": "the e-A-A figure (dotted 16th look) written as two 16ths and an 8th"
+},
+{
+"bars": [
+21,
+22,
+23,
+24
+],
+"groups": [
+20,
+21,
+22,
+23
+],
+"text": "piano solo slashes written as rests"
+},
+{
+"bars": [
+36,
+39,
+40,
+41,
+42
+],
+"groups": [
+35,
+38,
+39,
+40,
+41
+],
+"text": "drum/piano fill bars written as rests"
+},
+{
+"bars": [
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50
+],
+"groups": [
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49
+],
+"text": "bass solo slashes written as rests"
+},
+{
+"bars": [
+58
+],
+"groups": [
+57
+],
+"text": "D.C. al Coda after this bar"
+},
+{
+"bars": [
+60
+],
+"groups": [
+59
+],
+"text": "straight 8ths, rit."
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Hi-Fly\nC:Randy Weston (as played by Cannonball Adderley)\nP:ABCDEF\n%source New Real Book Volume 2 p113 (pdf 117)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCDEF 16+8+8+8+8+8\n%unsure [form] order as printed: A B C, solos on ABC, then D (repeated), E bass solo, F, D.C. al Coda; Coda at bar 6 of C\n%unsure [general] tune runs pdf 117-118 only; alternate melody for letter B (pdf 118) not transcribed\nM:4/4\nL:1/8\nK:C\nP:A\n|: \"Em7\"BB B/B/B- B4 | \"A7\"z2 BB B/B/B- B2 | \"Dmaj7\"BB B/B/B- \"G7\"B4 | \"F#7#9\"\"(F#m7)\"z2 BB \"B7sus\"\"(Bm7)\"B/B/B- \"B7\"B2 |\n\"Dm7\"BB B/B/B- B4 | \"G9\"z2 BB B/B/B- BB | \"C6/9\"B6- (3BBB | \"Db13\"B8 |\n\"Em7\"BB B/B/B- B4 | \"A7\"z2 BB B/B/B- B2 | \"Dmaj7\"BB B/B/B- \"G7\"B4 | \"F#7#9\"\"(F#m7)\"z2 BB \"B7sus\"\"(Bm7)\"B/B/B- \"B7\"B2 |\n\"Dm7\"BB B/B/B- B4 | \"G9\"z2 BB B/B/B- BB | \"Em7b5\"B6- (3BBB | \"A7b9\"B6 zB ||\nP:B\n\"Dm7b5\"B2 (3BBB B B3 | \"G7\"z B3 (3B/B/B/B BB- | \"Em7\"\"(Cmaj7)\"B2 (3BBB BB zB- | \"A7b9\"B8 |\n\"Dm7b5\"z8 | \"G7\"z8 | \"F#m7\"z4 \"B7\"z4 | \"Fm7\"z4 \"Bb7\"z4 ||\nP:C\n\"Em7\"BB B/B/B- B4 | \"A7\"z2 BB B/B/B- B2 | \"Dmaj7\"BB B/B/B- \"G7\"B4 | \"F#7#9\"\"(F#m7)\"z2 BB \"B7sus\"\"(Bm7)\"B/B/B- \"B7\"B2 |\n\"Dm7\"BB B/B/B- B4 | !coda!\"G9\"z2 BB B/B/B- BB | \"C6/9\"B6- (3BBB | \"Db13\"B8 :|\nP:D\n|: \"Em7\"B3 B BB zB | \"A7\"z B3 BB BB | \"Dmaj7\"B3 B \"G7\"BB z\"F#7#9\"B | z8 |\n\"Dm7\"z B3 BB zB | \"G7\"z B3 BB B\"C6/9\"B |1 \"N.C.\"z8 | z8 :|2\n\"Em7b5\"z8 | \"A7b9\"z8 ||\nP:E\n\"Dm7b5\"z8 | \"G7\"z8 | \"Em7\"z8 | \"A7b9\"z8 |\n\"Dm7b5\"z8 | \"G7\"z8 | \"F#m7\"z4 \"B7\"z4 | \"Fm7\"z4 \"Bb7\"z4 ||\nP:F\n\"Em7\"B3 B BB zB | \"A7\"z B3 BB BB | \"Dmaj7\"B3 B \"G7\"BB z\"F#7#9\"B | z8 |\n\"Dm7\"z B3 BB zB | \"G7\"z B3 BB BB | \"C6/9\"z8 | \"Db13\"z4 B4 |]\n%coda\n\"G9\"z2 BB B/B/B- BB | \"C6/9\"B4 BB BB | !fermata!\"Db13\"B8 |]\n\n%unsure [bars 1-16] the e-A-A figure (dotted 16th look) written as two 16ths and an 8th\n%unsure [bars 21-24] piano solo slashes written as rests\n%unsure [bars 36, 39-42] drum/piano fill bars written as rests\n%unsure [bars 43-50] bass solo slashes written as rests\n%unsure [bar 58] D.C. al Coda after this bar\n%unsure [bar 60] straight 8ths, rit."
+},
+{
+"id": "New_Real_Book_Volume2/121-honeysuckle-rose",
+"book": "The New Real Book Vol. 2",
+"title": "Honeysuckle Rose",
+"pdf": "121",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "the book prints lyrics; lyric text is not included in this file"
+},
+{
+"bars": [
+3,
+4,
+11,
+12
+],
+"groups": [
+2,
+3,
+10,
+11
+],
+"text": "simile marks read as Am7 D7 repeated each bar"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Honeysuckle Rose\nC:Thomas Waller (music), Andy Razaf (lyric)\nP:ABC\n%source New Real Book Volume 2 p118 (pdf 121)\n%style (Medium (-Up) Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [general] the book prints lyrics; lyric text is not included in this file\nM:4/4\nL:1/8\nK:G\nP:A\n\"Am7\"BB BB \"D7\"B4 | \"Am7\"BB BB \"D7\"B4 | \"Am7\"BB BB \"D7\"B2 B2 | \"Am7\"B4 \"D7\"BB BB |\n\"G6\"B2 B2 \"G7/B\"B4- | \"C6\"B4 \"D7\"BB BB | \"G6\"B8 | \"C7\"z4 \"Bm7\"z2 \"E7\"z2 |\n\"Am7\"BB BB \"D7\"B4 | \"Am7\"BB BB \"D7\"B4 | \"Am7\"BB BB \"D7\"B2 B2 | \"Am7\"B4 \"D7\"BB BB |\n\"G6\"B2 B2 \"G7/B\"B4- | \"C6\"B4 \"D7\"BB BB | \"G6\"B4 \"(D7)\"z4 | \"G6\"z8 ||\nP:B\n\"G7\"B4 B4 | \"Dm7\"B4 \"G7\"B4 | \"C6\"z2 BB- BB B2 | B2 BB- B4 |\n\"A7\"B4 B4 | B4 B4 | \"D7\"z2 BB- BB B2 | B2 BB- B4 ||\nP:C\n\"Am7\"BB BB \"D7\"B4 | \"Am7\"\"(Bbm7)\"BB BB \"D7\"\"(Eb7)\"B4 | \"Am7\"BB BB \"D7\"B2 B2 | \"Am7\"B4 \"D7\"BB BB |\n\"G6\"B2 B2 \"G7/B\"B4- | \"C6\"B4 \"D7\"BB BB | \"G6\"B8 | \"(Bm7)\"z4 \"(E7)\"z4 |]\n\n%unsure [bars 3-4, 11-12] simile marks read as Am7 D7 repeated each bar"
+},
+{
+"id": "New_Real_Book_Volume2/122-horacescope",
+"book": "The New Real Book Vol. 2",
+"title": "Horacescope",
+"pdf": "122",
+"form": "ABC 16+16+16",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "printed title \"Horace Scope\"; order intro, A (repeated), B solos on BB, C, D.S. al Coda; bar counts inferred"
+},
+{
+"bars": [
+7,
+8
+],
+"groups": [
+7,
+8
+],
+"text": "drum fill"
+},
+{
+"bars": [
+20
+],
+"groups": [
+20
+],
+"text": "rest pattern before the pickup guessed"
+},
+{
+"bars": [
+26,
+27,
+28,
+29,
+30
+],
+"groups": [
+26,
+27,
+28,
+29,
+30
+],
+"text": "coda sign printed at B7 (bar 26); bars 29-30 solo break"
+},
+{
+"bars": [
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50
+],
+"groups": [
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50
+],
+"text": "solo section: slashes and rhythm hits written as rests; last time trp/ten pickup into C"
+},
+{
+"bars": [
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67
+],
+"groups": [
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67
+],
+"text": "C read from the top (trp.) staff of two; small scan, 16th groupings approximate. D.S. al Coda after bar 67"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Horacescope\nC:Horace Silver\nP:ABC\n%source New Real Book Volume 2 p119 (pdf 122)\n%style (Med. Swing, quarter = 186)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+16+16\n%unsure [form] printed title \"Horace Scope\"; order intro, A (repeated), B solos on BB, C, D.S. al Coda; bar counts inferred\nM:4/4\nL:1/8\nK:Eb\nBB- |\n%intro\n\"Eb7#9\"BB B4 B\"C7#9\"B- | BB BB BB B\"B7\"B- | BB B4 B\"Abm7\"B- | BB BB BB B\"C7#9\"B- |\nBB \"B7\"B4 B\"Abm/Bb\"B- | BB BB BB B\"Eb7#9\"B | \"N.C.\"z8 | z8 ||\nP:A\n|: !segno!\"Ebmaj7\"B2 zB BB BB- | \"F#m7\"B4 \"B7\"B4 | \"Fm7\"B2 zB BB BB- | \"Bbm7\"B4 \"Eb7\"B4 |\n\"Ebm7\"B2 zB BB B\"Bb7#5\"B- | B6 \"A13\"B2- | B6 \"A13\"B2- | B2 B\"Ab13\"B z2 B2 |\n\"Eb(add9)/G\"B3 B z2 zB | \"Cm7\"BB (3BBB BB BB | \"Fm7\"BB BB BB z2 | z4 \"Bb7#5\"z2 B\"Eb7#9\"B- |1 \"Eb7#9\"BB B4 B\"C7#9\"B- | BB BB BB B\"B7\"B- | BB B4 B\"Bb7#9#5\"B- | BB BB BB BB :|2\n\"Eb7#9\"BB B4 B\"C7#9\"B- | BB BB !coda!BB B\"B7\"B- | BB B4 B\"Abm/Bb\"B- | BB BB BB B\"Eb7#9\"B |\n\"N.C.\"\"(Eb6)\"z8 | z8 ||\nP:B\n|: \"Ebmaj7\"z8 | \"F#m7\"z4 \"B7\"z4 | \"Fm7\"z8 | \"Bbm7\"z4 \"Eb7\"z4 |\n\"Ebm7\"z8 | \"Bb7#9#5\"z8 | \"A13\"z8 | \"Ab13\"z8 |\n\"Eb(add9)/G\"z8 | \"C7#9\"z8 | \"Fm7\"z8 | \"Bb7#9#5\"z4 z2 z\"Eb7#9\"z- |1 \"Eb7#9\"z6 \"C7#9\"z2- | z6 \"B7\"z2- | z6 \"Bb7#9#5\"z2- | z8 :|2\n\"Eb7#9\"z6 \"C7#9\"z2- | z6 \"B7\"z2- | z6 \"Abm/Bb\"z2- | z4 \"(Ebmaj7)\"z4 ||\nP:C\n\"Ebmaj7\"z B3 B2 B2 | \"F#m7\"BB B\"B7\"B- B3 \"Fm7\"B- | B2 BB \"Bb7\"BB B2 | \"Bbm7\"BB B\"Eb7#11#9\"B BB z\"Ebm7\"B |\n\"Ebm7\"z B3 BB BB | \"Bb7#5\"BB BB z2 \"A13\"zB- | BB BB B2 z2 | \"Ab13\"BB BB B2 z2 |\n\"Eb(add9)/G\"z3 B BB B2 | \"C7#9\"(3BBB BB B2 B2 | \"Fm7\"z3 B BB BB | \"Bb7#9#5\"zB/B/ B/B/B/B/ BB B2- |\n\"Eb7#9\"B2 B/B/B/B/ B/B/B B\"C7#9\"B- | B2 B/B/B/B/ B/B/B B\"B7\"B- | B2 B/B/B/B/ B/B/B BB- |1 \"Bb7#9#5\"B6 \"Ebmaj7\"zB :|2 \"Bb7#9#5\"B4 z4 |]\n%coda\n\"B7\"BB B4 B\"Abm7\"B- | BB BB BB B\"C7#9\"B- | BB \"B7\"B4 B\"Abm/Bb\"B- | BB BB BB B\"Eb7#9\"B- | !fermata!B8 |]\n\n%unsure [bars 7-8] drum fill\n%unsure [bar 20] rest pattern before the pickup guessed\n%unsure [bars 26-30] coda sign printed at B7 (bar 26); bars 29-30 solo break\n%unsure [bars 31-50] solo section: slashes and rhythm hits written as rests; last time trp/ten pickup into C\n%unsure [bars 51-67] C read from the top (trp.) staff of two; small scan, 16th groupings approximate. D.S. al Coda after bar 67"
+},
+{
+"id": "New_Real_Book_Volume2/124-i-believe-in-you",
+"book": "The New Real Book Vol. 2",
+"title": "I Believe in You",
+"pdf": "124",
+"form": "AABC 16+16+8+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form read from boxed A (repeated, two verses), B and C; tune continues on pdf 125"
+},
+{
+"bars": [],
+"groups": [],
+"text": "the book prints lyrics (two verses at A); lyric text is not included in this file"
+},
+{
+"bars": [
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42
+],
+"groups": [
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41
+],
+"text": "B read from a small scan; simile bars 38 and 40 read as repeating the chord above"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I Believe in You\nC:Frank Loesser\nP:AABC\n%source New Real Book Volume 2 p121 (pdf 124)\n%style (Medium-Up Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+8+16\n%unsure [form] form read from boxed A (repeated, two verses), B and C; tune continues on pdf 125\n%unsure [general] the book prints lyrics (two verses at A); lyric text is not included in this file\nM:4/4\nL:1/8\nK:A\n\"(F#7)\"z2 B2 B2 B2 |\nP:A\n|: \"Bm\"B4 z4 | \"F#7/A#\"B4 z4 | \"Bm7\"B4 B2 B2 | \"G#7#9\"(3B2B2B2 (3B2B2B2 |\n\"C#m7\"B4 z4 | \"Dmaj7\"z8 | \"C#m7\"z8 | \"F#7\"z2 B2 B2 B2 |\n\"Bm\"B4 z4 | \"F#7/A#\"B4 z4 | \"Bm7\"B4 B2 B2 | \"G#7#9\"(3B2B2B2 (3B2B2B2 |\n\"C#maj7\"B4 z4 | \"D#m7\"z4 \"G#7\"z4 | \"C#maj7\"z8 | \"Bm7\"z2 B2 B2 B2 |\n\"E7\"B6 B2 | \"Amaj7\"B8- | \"C#m7\"B2 z2 \"F#7\"z4 | \"Bm7\"z4 B2 B2 |\n\"E7\"B6 B2 |1 \"A6\"B8 | \"F#7\"z2 B2 B2 B2 :|2 \"A6\"B8- |\n\"Cm7\"B2 z2 \"F7\"z4 ||\nP:B\n\"Bbmaj7\"B4 B2 B2 | \"Cm7\"B4 \"F7\"B2 B2 | \"Bbmaj7\"B2 B2 B4- | \"Db9\"B8 |\n\"Cm\"B2 B2 \"F7\"B4- | B6 B2 | \"Bbmaj7\"B8- | \"Dm7\"B2 z2 \"G7\"z4 |\n\"Cmaj7\"B4 B2 B2 | \"Dm7\"B4 \"G7\"B2 B2 | \"Cmaj7\"\"(Fmaj7)\"B2 B2 \"(Em7)\"B4- | \"(Dm7)\"B2 B2 \"(Cmaj7)\"B2 B2 |\n\"D7\"B8- | B4 B2 B2 | \"Bm7\"B4 \"E7\"B4 | \"C#m7\"z2 B2 \"F#7\"B2 B2 ||\nP:C\n\"Bm\"B4 z4 | \"F#7/A#\"B4 z4 | \"Bm7\"B4 B2 B2 | \"G#7#9\"(3B2B2B2 (3B2B2B2 |\n\"C#m7\"B4 z4 | \"Dmaj7\"z8 | \"C#m7\"z8 | \"F#7\"z2 B2 B2 B2 |\n\"Bm\"B4 z4 | \"F#7/A#\"B4 z4 | \"Bm7\"B4 B2 B2 | \"G#7#9\"(3B2B2B2 (3B2B2B2 |\n\"C#maj7\"B4 z4 | \"Dmaj7\"z8 | \"C#maj7\"z8 | \"Bm7\"z2 B2 B2 B2 |\n\"E7\"B6 B2 | \"Amaj7\"B8- | \"C#m7\"B2 z2 \"F#7\"z4 | \"Bm7\"z4 B2 B2 |\n\"E7\"B6 B2 | \"A6\"B8 | \"(C#m7)\"z4 \"(F#7)\"z4 |]\n\n%unsure [bars 27-42] B read from a small scan; simile bars 38 and 40 read as repeating the chord above"
+},
+{
+"id": "New_Real_Book_Volume2/126-i-hadn-t-anyone-till-you",
+"book": "The New Real Book Vol. 2",
+"title": "I Hadn't Anyone Till You",
+"pdf": "126",
+"form": "AB 16+16",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+},
+{
+"bars": [
+0
+],
+"groups": [
+0
+],
+"text": "pickup read as three eighths"
+},
+{
+"bars": [
+12
+],
+"groups": [
+12
+],
+"text": "chord placement (Em7, C#m7b5, F#7b9) over the tied half note estimated"
+},
+{
+"bars": [
+24
+],
+"groups": [
+24
+],
+"text": "pickup group into bar 25 read as three eighths"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I Hadn't Anyone Till You\nC:Ray Noble\nP:AB\n%source New Real Book Volume 2 p124 (pdf 126)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16\n%unsure [general] lyrics are printed in the book but not written here\nM:4/4\nL:1/8\nK:G\nB BB |\nP:A\n\"Am7\"B3 B B4- | B4 \"D13\"B4 | \"G6\"B8- | B4 \"(C7)\"z\"(Bm7)\"B \"(Em7)\"BB |\n\"Bm7\"B3 B B4- | \"E9\"B4 B4 | \"A9\"B8- | B4 zB BB |\n\"Am7\"B3 B B3 B | \"D7\"B2 \"F#m7b5\"B4 \"B7\"B2 | \"Em7\"B3 B \"B7\"B4- | \"Em7\"B4 \"C#m7b5\"z2 \"F#7b9\"B2 |\n\"Bmaj7\"B2 \"G#m7\"B2 B2 B2 | \"C#m7\"B2 B4 \"F#7\"B2 | \"B7\"B3 B \"E9\"B4 | \"A7\"B3 B \"D7\"BB BB ||\nP:B\n\"Am7\"B3 B B4- | B4 \"D13\"B4 | \"G6\"B8- | B4 \"(C7)\"z\"(Bm7)\"B \"(Em7)\"BB |\n\"Bm7\"B3 B B4- | \"E9\"B4 B4 | \"A9\"B8- | B4 \"Dm7\"zB \"G7\"BB |\n\"Cmaj7\"B3 B B3 B | \"F9sus\"\"(C#o7)\"B3 B \"F9\"B4 | \"Gmaj7\"B3 \"(Gmaj7/D)\"B \"F#7#5\"\"(D9#5)\"B3 B | \"Bm7b5\"BB B2 \"E7b9\"BB BB |\n\"Am7\"B3 B B4- | B4 \"D13\"B4 | \"G6\"B8- | B4 \"(E7)\"z4 |]\n\n%unsure [bar 0] pickup read as three eighths\n%unsure [bar 12] chord placement (Em7, C#m7b5, F#7b9) over the tied half note estimated\n%unsure [bar 24] pickup group into bar 25 read as three eighths"
+},
+{
+"id": "New_Real_Book_Volume2/127-i-thought-about-you",
+"book": "The New Real Book Vol. 2",
+"title": "I Thought About You",
+"pdf": "127",
+"form": "A 16 (1st/2nd endings), B piano-solo vamp, D.S. al Coda, tenor-solo vamp coda",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 12,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "only A and B are lettered; the form line is inferred from the endings, D.S. and coda signs"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro: 2 bars tacet (bass & drums only), then 2 bars of piano fills (slashes)"
+},
+{
+"bars": [
+5,
+6,
+7,
+8
+],
+"groups": [
+4,
+5,
+6,
+7
+],
+"text": "intro bass-line staff (tenor fills till A), not transcribed"
+},
+{
+"bars": [
+9,
+10,
+11,
+12
+],
+"groups": [
+8,
+9,
+10,
+11
+],
+"text": "intro synth-chord staff, written as rests with chords"
+},
+{
+"bars": [
+18
+],
+"groups": [
+17
+],
+"text": "grace note before the last 16th omitted"
+},
+{
+"bars": [
+25,
+26,
+27,
+28
+],
+"groups": [
+24,
+25,
+26,
+27
+],
+"text": "16th groupings in these bars read from a small scan; bar 28 is slashes (tenor fill)"
+},
+{
+"bars": [
+29,
+30,
+31,
+32
+],
+"groups": [
+28,
+29,
+30,
+31
+],
+"text": "printed as a 4-bar multirest"
+},
+{
+"bars": [
+33,
+34,
+35,
+36
+],
+"groups": [
+32,
+33,
+34,
+35
+],
+"text": "2nd ending entered at the segno; bar 36 one long note under four chords, chord beats spread evenly"
+},
+{
+"bars": [
+39,
+40
+],
+"groups": [
+38,
+39
+],
+"text": "coda sign before Dm7(11) (piano starts solo, tenor fill), 2 bars"
+},
+{
+"bars": [
+41,
+42,
+43,
+44
+],
+"groups": [
+40,
+41,
+42,
+43
+],
+"text": "piano solo over synth chord staff, vamp and solo till cue; written as rests with chords; D.S. al Coda after the On cue bar"
+},
+{
+"bars": [
+46,
+47,
+48,
+49
+],
+"groups": [
+45,
+46,
+47,
+48
+],
+"text": "coda: tenor solo vamp till cue over synth; On cue tenor sample fill, rit.; rhythm of last 3 bars read loosely"
+},
+{
+"bars": [
+13,
+23,
+37
+],
+"groups": [
+12,
+22,
+36
+],
+"text": "eighth-note triplets; check.py may count these bars as not full"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I Thought About You\nC:Jimmy Van Heusen\nC:Arr. by Jim Beard (as played by Bob Berg)\n%source New Real Book Volume 2 p125-126 (pdf 127-128)\n%style (Med. Funk/Latin, quarter = 80)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Book note: melody is freely interpreted.\nP:A\n%form A 16 (1st/2nd endings), B piano-solo vamp, D.S. al Coda, tenor-solo vamp coda\n%unsure [form] only A and B are lettered; the form line is inferred from the endings, D.S. and coda signs\nM:4/4\nL:1/8\nK:F\n%intro\n\"Dm7(11)\"z8 | z8 | \"Dm7(11)\"z8 | z8 |\n\"D\"z8 | z8 | \"Dm7(11)\"z8 | z8 |\n\"Dm9\"z4 \"Ebmaj7/D\"z4 | \"Dmaj7\"z4 \"Cmaj7/D\"z4 | \"Dm(add9)\"z8 | z8 ||\nP:A\n|: \"Dm7(11)\"zB- (3BBB B2- (3BBB | \"Gm7/D\"B6- B/B/B/B/ | \"Dm7\"B3/2B/- B3/2B/ B4- | \"D7#9\"B8 |\n\"Gm7\"z2 z/B/B/B/ B3/2B/- B3/2B/ | \"Em7b5\"B4- \"A7b9\"B2- B/B/B/B/- | \"Dm9\"B3/2B/ B3/2B/ B3 B/B/ | \"D7#9\"B8 |\n[1 \"Gm7(11)\"z3/2B/ BB/B/ B2- \"Db13sus\"B3/2B/ | \"Gb6\"B3 B/B/ B2 \"A7b9\"BB | \"Dm11\"(3BBB B6 | z4 z3/2B/ B/B/B/B/ |\n\"Bb6\"B3/2B/- B2 \"Am9\"BB- B3/2B/ | \"Gm9\"B3/2B/ BB \"Fmaj9\"BB/B/ B2 | \"Dm9\"z/B/B- B2 z4 | \"A7#5\"z4 \"A13#9\"z4 |\n\"Dm7(11)\"z8 | z8 | z8 | z8 :|\n[2 \"Gm11\"\"(Bbmaj9 on D.S.)\"B3 B/B/ \"Db13sus\"B7/2 B/ | \"Gbmaj7\"B3 B/B/ BB/B/ \"A7#5\"BB/B/ | \"Dm7\"B2 \"Cm9\"B2 \"Bbmaj7\"B2 \"Ab13\"B2 | \"G7\"B2- \"Db7\"B2- \"Bb7\"B2 \"E7\"z/B/B/B/ |\n\"Am7\"B/B/B (3BBB B2 \"Bbmaj9\"B3/2B/ | \"Em7b5\"B3 B/B/ \"A7#5\"B/B/B- B2 | !coda!\"Dm7(11)\"z8 | z8 ||\nP:B\n|: \"Dm9\"z4 \"Ebmaj7/D\"z4 | \"Dmaj7\"z4 \"Cmaj7/D\"z4 | \"Dm(add9)\"z8 |1 z8 :|2\n\"Dm(add9)\"z4 \"F7#9\"z4 |]\n%coda\n|: \"Dm11\"z8 |1 \"(A7b9#5)\"z8 :|2 \"Dm11\"z4 z3/2B/ B2- | B6 BB |\n\"N.C.\"B3/2B/ B/B/B- B/B/B/B/ B2 |]\n\n%unsure [bars 1-4] intro: 2 bars tacet (bass & drums only), then 2 bars of piano fills (slashes)\n%unsure [bars 5-8] intro bass-line staff (tenor fills till A), not transcribed\n%unsure [bars 9-12] intro synth-chord staff, written as rests with chords\n%unsure [bar 18] grace note before the last 16th omitted\n%unsure [bars 25-28] 16th groupings in these bars read from a small scan; bar 28 is slashes (tenor fill)\n%unsure [bars 29-32] printed as a 4-bar multirest\n%unsure [bars 33-36] 2nd ending entered at the segno; bar 36 one long note under four chords, chord beats spread evenly\n%unsure [bars 39-40] coda sign before Dm7(11) (piano starts solo, tenor fill), 2 bars\n%unsure [bars 41-44] piano solo over synth chord staff, vamp and solo till cue; written as rests with chords; D.S. al Coda after the On cue bar\n%unsure [bars 46-49] coda: tenor solo vamp till cue over synth; On cue tenor sample fill, rit.; rhythm of last 3 bars read loosely\n%unsure [bars 13, 23, 37] eighth-note triplets; check.py may count these bars as not full"
+},
+{
+"id": "New_Real_Book_Volume2/129-i-ll-be-around",
+"book": "The New Real Book Vol. 2",
+"title": "I'll Be Around",
+"pdf": "129",
+"form": "ABCD 16+16+16+16, then coda; D.S. al Coda (solo on C, vocal returns at D)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 8,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+},
+{
+"bars": [],
+"groups": [],
+"text": "book: to solo on complete form, play Intro changes in place of last 8 bars of D"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5
+],
+"groups": [
+0,
+1,
+2,
+3,
+4
+],
+"text": "intro synth top-note line; bar count and ties approximate, \"(2nd x)\" marking on bar 3"
+},
+{
+"bars": [
+18,
+19,
+20,
+21
+],
+"groups": [
+17,
+18,
+19,
+20
+],
+"text": "piano top note of voicings (whole note held under); rhythm approximate"
+},
+{
+"bars": [
+34,
+35
+],
+"groups": [
+33,
+34
+],
+"text": "rhythm of the tied notes over Ebmaj7-Abmaj13#11 approximate"
+},
+{
+"bars": [
+46,
+47,
+48,
+49,
+50,
+51
+],
+"groups": [
+45,
+46,
+47,
+48,
+49,
+50
+],
+"text": "rhythms around the F#m7b5-Cm6 bars approximate (small scan)"
+},
+{
+"bars": [
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73
+],
+"groups": [
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72
+],
+"text": "synth top-note line (last sung note held into bar 66); last x rit. at bar 61"
+},
+{
+"bars": [
+74,
+75,
+76,
+77,
+78,
+79
+],
+"groups": [
+73,
+74,
+75,
+76,
+77,
+78
+],
+"text": "coda synth line; endings printed 1,3,5 and 2,4,6 (vamp and fade)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I'll Be Around\nC:Alec Wilder\nC:arr. Dave Grusin (as sung by Chaka Khan)\nP:ABCD\n%source New Real Book Volume 2 p127-128 (pdf 129-130)\n%style (Med. Ballad, 1/8th notes swing, half note = 58)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 16+16+16+16, then coda; D.S. al Coda (solo on C, vocal returns at D)\n%unsure [general] lyrics are printed in the book but not written here\n%unsure [general] book: to solo on complete form, play Intro changes in place of last 8 bars of D\nM:C|\nL:1/8\nK:G\n%intro\n|: \"Gmaj7/D\"B7 \"Cmaj7/D\"B- | B8 | \"Ebmaj7/D\"B7 B- |1 \"F(add9)/D\"B8 :|2\n\"F(add9)/D\"B8 ||\nP:A\n\"Gmaj7/D\"B8 | \"Cmaj7/D\"B6 zB | \"B/D\"B8 | \"Cmaj7/D\"z4 (3B2B2B2 |\n\"Dmaj7\"B4 z4 | \"E7#9#5/D\"z2 zB B2 B2 | \"Cmaj7/D\"B4 z4 | \"Ab(addb9)/C\"z8 |\n\"Bm7\"B8 | \"Em7\"B6 zB | \"Am7\"B3 B B4 | \"D13sus(b9)\"z4 BB B2 |\n\"Cm(add11)/D\"z B3 \"Cm11\"B4 | \"Ebmaj7/Bb\"B4 \"F6/9/A\"B4 | \"Abmaj9\"z B3 \"Gm7\"B3 \"Eb/F\"B- | B2 \"Eb9sus\"B2- BB \"D7b9\"B2 ||\nP:B\n\"Gmaj7\"B8 | \"Am7\"B4 B2 B2 | \"Bm7\"B8 | \"Em7\"z4 \"Em7/D\"(3B2B2B2 |\n\"Cmaj7\"B4 z4 | \"Bm7\"z2 zB \"E7b9\"B2 B2 | \"F9sus\"B8- | \"F9\"B4 z4 |\n\"Bm7\"B8 | \"E7#9#5\"B6 zB | \"Am7\"B3 B B4 | \"D13sus(b9)\"z4 BB B2 |\n\"Ebmaj7\"z B3 \"Dm7\"B2 \"Cm7(11)\"B2- | B2 \"Bb9sus\"B2- B \"Abmaj13#11\"B3 | \"Gmaj7\"B8 | \"Em7\"z4 z3 B ||\nP:C\n!segno!\"Ebm7(11)\"B8 | \"Ab7\"z4 B4 | \"Dm7\"B8 | \"G7\"z4 z3 B |\n\"C#m7\"B2 B2 \"Dm7\"B2 B2 | \"Ab9\"B4 \"G7b9\"B4 | \"Cmaj7\"B8 | \"E7#9#5\"z4 z3 B |\n\"Abm7\"B8 | \"C7/G\"z4 B4 | \"F#m7b5\"B3 B BB B2- | \"B7#9#5\"B2 z2 z4 |\n\"B7/F#\"B2 BB B4 | \"Em\"B4- \"Em7/D\"BB/B/ B2 | \"C#m7b5\"B2 B2 B2 B2 | \"D9sus\"B3 B \"B13#9/C\"BB/B/- \"Cm6\"B2 ||\nP:D\n\"Bm7\"B8 | \"Em7\"B6 zB | \"Cmaj7\"B8 | \"B7#9#5\"z2 zB B3 B |\n\"Em7\"B8 | \"Dm7\"z2 zB B3 B | \"C#m7b5\"B8 | \"F#7#9#5\"z8 |\n\"B7#9#5\"B8 | \"E7#9\"B6 zB | \"Am7\"B8 | \"D13sus(b9)\"z4 B2 B2 |\n\"Gmaj7/D\"B6 z\"Cmaj7/D\"B- | B8 | \"Ebmaj7/D\"B7 \"F(add9)/D\"B- | B8 |\n\"Ebmaj7#5/D\"B6 z\"Cmaj7/D\"B- | B8 | \"Ebmaj7/F\"B7 \"G13\"B- | B8 |]\n%coda (a tempo)\n|: \"Ebmaj7#5/D\"B6 z\"Cmaj7/D\"B- | B8 |1 \"Ebmaj7/D\"B7 \"F(add9)/D\"B- | B8 :|2\n\"Ebmaj7/D\"B6 \"F#7#9\"B2- | B8 |]\n\n%unsure [bars 1-5] intro synth top-note line; bar count and ties approximate, \"(2nd x)\" marking on bar 3\n%unsure [bars 18-21] piano top note of voicings (whole note held under); rhythm approximate\n%unsure [bars 34-35] rhythm of the tied notes over Ebmaj7-Abmaj13#11 approximate\n%unsure [bars 46-51] rhythms around the F#m7b5-Cm6 bars approximate (small scan)\n%unsure [bars 66-73] synth top-note line (last sung note held into bar 66); last x rit. at bar 61\n%unsure [bars 74-79] coda synth line; endings printed 1,3,5 and 2,4,6 (vamp and fade)"
+},
+{
+"id": "New_Real_Book_Volume2/131-i-ll-be-around",
+"book": "The New Real Book Vol. 2",
+"title": "I'll Be Around",
+"pdf": "131",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A is printed as one 16-bar section (two 8-bar halves); form from the boxed letters"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+},
+{
+"bars": [],
+"groups": [],
+"text": "second, plain lead-sheet version; pdf 129-130 holds the Dave Grusin arrangement of the same tune"
+},
+{
+"bars": [
+4,
+7,
+8,
+12,
+15,
+16
+],
+"groups": [
+3,
+6,
+7,
+11,
+14,
+15
+],
+"text": "long notes under two or more chords; tie/chord placement estimated"
+},
+{
+"bars": [
+19
+],
+"groups": [
+18
+],
+"text": "D9sus and D7b9 both printed over the last quarter; split into eighths here"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I'll Be Around\nC:Alec Wilder\nP:ABC\n%source New Real Book Volume 2 p129 (pdf 131)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [form] A is printed as one 16-bar section (two 8-bar halves); form from the boxed letters\n%unsure [general] lyrics are printed in the book but not written here\n%unsure [general] second, plain lead-sheet version; pdf 129-130 holds the Dave Grusin arrangement of the same tune\nM:C\nL:1/8\nK:D\nP:A\n\"Dmaj7\"B4 \"Em7\"B2 B2 | \"F#m7\"B4 \"Gmaj7\"zB BB | \"A13\"B4 \"Bbo7\"zB BB | \"G6/B\"B4- \"A7\"B4 |\n\"Dmaj7\"B4 \"Bm7\"\"(F13)\"B2 B2 | \"Em7\"B2 B2 \"A13b9\"B4 | \"D6\"B4- \"Cm7\"B2- \"F7\"B2- | \"Bbmaj7\"B2 z2 \"Em7\"z2 \"A7\"z2 |\n\"Dmaj7\"B4 \"Em7\"B2 B2 | \"F#m7\"B4 \"Gmaj7\"zB BB | \"A13\"B4 \"Bbo7\"zB BB | \"G6/B\"B4- \"A7\"B4 |\n\"Dmaj7\"B4 \"Bm7\"B2 B2 | \"Em7\"B2 B2 \"A13b9\"B4 | \"D6\"B4- \"Em7\"B2- \"Eb9\"B2- | \"Dmaj7\"B2 z2 z2 B2 ||\nP:B\n\"Eb7/Bb\"\"(Abm7)\"B4 \"Am7\"B4 | \"D13\"B6 B2 | \"Eb7/Bb\"\"(Abm7)\"BB BB \"Am7\"B2 \"D9sus\"B\"D7b9\"B | \"Gmaj7\"B6 B2 |\n\"Bb7/F\"\"(Ebm7)\"B4 \"Em7\"B4 | \"Em9\"B4- \"A13\"B4 | \"Dmaj7\"B2 BB- \"Bm7\"\"(F13)\"BB BB | \"Em7\"B B2 B- \"A13b9\"B3 B ||\nP:C\n\"Dmaj7\"B4 \"Em7\"B2 B2 | \"F#m7\"B4 \"Gmaj7\"zB BB | \"A13\"\"(F#/A#)\"B4 \"Bbo7\"\"(Am7)\"zB BB | \"G6/B\"\"(G#m7b5)\"B6 \"A7\"\"(G13)\"B2 |\n\"Dmaj7\"\"(F#m7)\"B4 \"Bm7\"B2 B2 | \"Em7\"B2 B2 \"A13b9\"B4 | \"D6\"B4- \"(Cm7)\"B2- \"F7\"B2- | \"(Bbmaj7)\"B2 z2 \"(Em7)\"z2 \"(A7)\"z2 |]\n\n%unsure [bars 4, 7-8, 12, 15-16] long notes under two or more chords; tie/chord placement estimated\n%unsure [bar 19] D9sus and D7b9 both printed over the last quarter; split into eighths here"
+},
+{
+"id": "New_Real_Book_Volume2/132-i-ll-get-by",
+"book": "The New Real Book Vol. 2",
+"title": "I'll Get By",
+"pdf": "132",
+"form": "AB 14+14",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "bar counts read as printed (14 bars per lettered section)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+},
+{
+"bars": [
+2
+],
+"groups": [
+1
+],
+"text": "Em7 and A7 printed over the bar (tied half + half); A7 placed on beat 3"
+},
+{
+"bars": [
+15,
+16,
+28
+],
+"groups": [
+14,
+15,
+27
+],
+"text": "chord placement over the tied first half-bar in B and the parenthesised turnaround in the last bar estimated"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I'll Get By\nC:Fred E. Ahlert (lyric by Roy Turk)\nP:AB\n%source New Real Book Volume 2 p130 (pdf 132)\n%style (Medium Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 14+14\n%unsure [form] bar counts read as printed (14 bars per lettered section)\n%unsure [general] lyrics are printed in the book but not written here\nM:C\nL:1/8\nK:D\nP:A\n\"Dmaj7\"B2 B2 B4- | B4- \"Em7\"B2 \"A7\"B2 | \"Dmaj7\"B2 B2 B4- | \"C#m7\"B4 \"F#7\"B4 |\n\"Gmaj7\"B8- | B4 \"B7\"B4 | \"Em7\"B2 B2 B4- | \"E9\"B4 B4 |\n\"Em7\"B2 B2 B4- | \"A7\"B4 B4 | \"Em7\"B2 B2 B4- | B4 \"A7\"B4 |\n\"Dmaj7\"B2 B2 \"D#o7\"\"(F7)\"B4- | \"Em7\"\"(Bbmaj7)\"B4- \"A7\"B4 ||\nP:B\n\"Dmaj7\"B2 B2 B4- | B4- \"Em7\"B2 \"A7\"B2 | \"Dmaj7\"B2 B2 B4- | \"C#m7\"B4 \"F#7\"B4 |\n\"Gmaj7\"B8- | B4 \"B7\"B4 | \"Em7\"B2 B2 B4- | \"Gm6\"B4 B4 |\n\"Dmaj7\"B2 B2 B4- | \"B9\"B4 B4 | \"Em7\"B2 B2 B4- | B4 \"A7\"B4 |\n\"Dmaj7\"B8- | B4 \"(Fo7)\"z2 \"(Em7)\"z\"(A7)\"z |]\n\n%unsure [bar 2] Em7 and A7 printed over the bar (tied half + half); A7 placed on beat 3\n%unsure [bars 15-16, 28] chord placement over the tied first half-bar in B and the parenthesised turnaround in the last bar estimated"
+},
+{
+"id": "New_Real_Book_Volume2/133-ill-wind",
+"book": "The New Real Book Vol. 2",
+"title": "Ill Wind",
+"pdf": "133",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A is printed as one 16-bar lettered section"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+},
+{
+"bars": [
+5,
+13
+],
+"groups": [
+4,
+12
+],
+"text": "A7 printed over the last eighth; [bars 6, 14] G7b9 placement over the half note estimated"
+},
+{
+"bars": [
+17,
+18,
+21,
+22
+],
+"groups": [
+16,
+17,
+20,
+21
+],
+"text": "eighth/quarter syncopation in the bridge read from a small scan; bar 20 alternate turnaround (Em7 A7 Cm7 F7) stacked on one beat"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Ill Wind\nC:Harold Arlen (lyric by Ted Koehler)\nP:ABC\n%source New Real Book Volume 2 p131 (pdf 133)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [form] A is printed as one 16-bar lettered section\n%unsure [general] lyrics are printed in the book but not written here\nM:C\nL:1/8\nK:C\nP:A\n\"C6\"B8 | \"Bm7\"B2 B2 \"E7b5\"B3 B | \"Em7\"B4 \"A7\"B4 | \"Fm7\"B2 B2 \"Bb9\"B2 B2 |\n\"Em7\"B7 \"A7\"B | \"Dm7b5\"BB \"G7b9\"B4 B2 | \"C6\"B6 \"A7b9\"B2 | \"Dm7\"B4 \"G7\"B4 ||\n\"C6\"B8 | \"Bm7\"B2 B2 \"E7b5\"B3 B | \"Em7\"B4 \"A7\"B4 | \"Fm7\"B2 B2 \"Bb9\"B2 B2 |\n\"Em7\"B7 \"A7\"B | \"Dm7b5\"BB \"G7b9\"B4 B2 | \"C6\"B4- \"Bb13\"BB BB | \"C6\"B7 B ||\nP:B\n\"E7\"B B2 B \"F#m7\"B B2 B | \"Go7\"B B2 B \"E7/G#\"B B2 B | \"A13sus\"(3B2B2B2 B B3- | \"A13\"B6 \"(Em7)\"z\"(A7)\"B |\n\"E7\"B B2 B \"F#m7\"B B2 B | \"Go7\"B B2 B \"E7/G#\"B B2 B | \"A7\"B2 BB- \"Eb9#11\"B B2 B | \"Dm7b5\"B2 B2 \"G7\"B4 ||\nP:C\n\"C6\"B8 | \"Bm7\"B2 B2 \"E7b5\"B3 B | \"Em7\"B4 \"A7\"B4 | \"Fm7\"B2 B2 \"Bb9\"B2 B2 |\n\"Em7\"B7 \"A7\"B | \"Dm7b5\"BB \"G7b9\"B4 B2 | \"C6\"B6 \"Bb13\"B2 | \"C6\"B4- \"(Dm7)\"B2- \"(G7)\"B2 |]\n\n%unsure [bars 5, 13] A7 printed over the last eighth; [bars 6, 14] G7b9 placement over the half note estimated\n%unsure [bars 17-18, 21-22] eighth/quarter syncopation in the bridge read from a small scan; bar 20 alternate turnaround (Em7 A7 Cm7 F7) stacked on one beat"
+},
+{
+"id": "New_Real_Book_Volume2/134-illuminados",
+"book": "The New Real Book Vol. 2",
+"title": "Illuminados",
+"pdf": "134",
+"form": "AAB 4+4+8, D.S. al Coda",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 8,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred from boxed A and B with repeats; A is played twice, B has 1st/2nd endings, then D.S. to coda"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro is a synth line; note values read from a small scan"
+},
+{
+"bars": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12
+],
+"groups": [
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11
+],
+"text": "the triplet-plus-16th groupings in these phrases are simplified to plain 16ths/8ths so each bar adds up"
+},
+{
+"bars": [
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"groups": [
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19
+],
+"text": "triplet groupings simplified; the 1st-ending chords Db, Ab/Eb, Db/F placement guessed"
+},
+{
+"bars": [
+21,
+22,
+23
+],
+"groups": [
+20,
+21,
+22
+],
+"text": "voice scats over rhythm-section hits (slashes written as rests)"
+},
+{
+"bars": [
+24,
+25,
+26,
+27
+],
+"groups": [
+23,
+24,
+25,
+26
+],
+"text": "rhythm slashes written as rests; D.S. al Coda here"
+},
+{
+"bars": [
+28,
+29,
+30,
+31,
+32,
+33
+],
+"groups": [
+27,
+28,
+29,
+30,
+31,
+32
+],
+"text": "coda hits as rests; two 2-bar repeat signs written out as rest bars"
+},
+{
+"bars": [
+34,
+35
+],
+"groups": [
+33,
+34
+],
+"text": "piano fills vamp, fill and fade"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Illuminados\nC:Ivan Lins\nP:AAB\n%source New Real Book Volume 2 p132 (pdf 134)\n%style (Med. Pop Ballad, q=97)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AAB 4+4+8, D.S. al Coda\n%unsure [form] form inferred from boxed A and B with repeats; A is played twice, B has 1st/2nd endings, then D.S. to coda\nM:4/4\nL:1/8\nK:Db\n%intro\n\"Dbmaj7\"B \"Bbm7\"B2 B B2 BB- | \"F#m7\"BB B2 \"Ab7sus\"B B2 B | \"Dbmaj7\"B2 \"Bbm7\"BB BB B2 | \"F#m7\"B B2 B \"Ab7sus\"B2 BB |\nP:A\n|: \"Dbmaj7\"z2 z/B/B/B/ \"Bbm7\"BB/B/- B/B/B- | \"F#m7\"BB z2 \"Ab7sus\"z4 | \"Dbmaj7\"z2 z/B/B/B/ \"Bbm7\"BB/B/- B/B/B- | \"F#m7\"BB z2 \"Ab7sus\"z4 |\n\"Dbmaj7\"z2 z/B/B/B/ \"Bbm7\"BB/B/- B/B/B- | \"Ebm7\"BB z2 z4 | \"Gb/Ab\"z\"Ab/Gb\"z \"Fm11\"z/B/B/B/ \"F#m11\"BB/B/- B/B/B- | \"Ebm7(11)\"BB z2 \"Ab7sus\"z4 :|\nP:B\n|: \"Abm7\"z2 z/B/B/B/ \"Db7\"BB/B/- B/B/B- | \"Gbmaj7\"BB \"Ebm7\"z2 z4 | \"F#m7\"z2 z/B/B/B/ \"B7\"BB/B/- B/B/B- | \"Emaj7\"BB \"C#m7\"z2 z4 |\n\"Em7\"z2 z/B/B/B/ \"A7\"BB/B/- B/B/B- | \"Dmaj7\"B2 z/B/B/B/ BB/B/- B/B/B- | \"Ebm7(11)\"B2 z/B/B/B/ \"Ab7sus\"BB/B/ B2- |1 \"Db\"B \"Ab/Eb\"B3 \"Db/F\"z4 :|2\n\"Dbmaj7\"B B3 \"Bbm7\"z4 | \"F#m7\"z4 \"Ab7sus\"z4 | \"Db7\"z\"C7\"z \"B7\"zz z \"Bb7\"z3 | \"Eb9\"z3 \"Ab13sus\"z5 |\n\"Dbmaj7\"z3 \"Bbm7\"z5 | \"F#m7\"z3 \"Ab7sus\"z5 | \"Dbmaj7\"z3 \"Bbm7\"z5 | \"F#m7\"z3 \"Ab7sus\"z5 |]\n%coda\n\"Db7\"z\"C7\"z \"B7\"zz z \"Bb7\"z3 | \"Eb9\"z3 \"Ab13sus\"z5 | z8 | z8 |\nz8 | z8 |: \"Dbmaj7\"z3 \"Bbm7\"z5 | \"F#m7\"z3 \"Ab7sus\"z5 :|\n\n%unsure [bars 1-4] intro is a synth line; note values read from a small scan\n%unsure [bars 5-12] the triplet-plus-16th groupings in these phrases are simplified to plain 16ths/8ths so each bar adds up\n%unsure [bars 13-20] triplet groupings simplified; the 1st-ending chords Db, Ab/Eb, Db/F placement guessed\n%unsure [bars 21-23] voice scats over rhythm-section hits (slashes written as rests)\n%unsure [bars 24-27] rhythm slashes written as rests; D.S. al Coda here\n%unsure [bars 28-33] coda hits as rests; two 2-bar repeat signs written out as rest bars\n%unsure [bars 34-35] piano fills vamp, fill and fade"
+},
+{
+"id": "New_Real_Book_Volume2/135-i-m-glad-there-is-you",
+"book": "The New Real Book Vol. 2",
+"title": "I'm Glad There Is You",
+"pdf": "135",
+"form": "ABC 16+8+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+},
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "alternate chords (Bb13) Ebmaj7 Ab9(#11) printed above; only (Bb13) kept"
+},
+{
+"bars": [
+11,
+12,
+13,
+14
+],
+"groups": [
+10,
+11,
+12,
+13
+],
+"text": "tie and dotted values in this line read from a small scan"
+},
+{
+"bars": [
+31,
+32
+],
+"groups": [
+30,
+31
+],
+"text": "alternate chords (F13sus F13 E9sus E7#9) printed above these bars, not written"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I'm Glad There Is You\nC:Jimmy Dorsey & Paul Madeira\nP:ABC\n%source New Real Book Volume 2 p133 (pdf 135)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+12\n%unsure [general] lyrics are printed in the book but not written here\nM:4/4\nL:1/8\nK:G\nP:A\n\"Gmaj7\"B B2 B- B4 | B2 B2 BB BB | \"Gm7\"BB- B6 | \"(C13)\"B2 B2 BB BB |\n\"Am7\"BB- B6 | \"D7\"B2 B2 (3B2B2B2 | \"Bm7\"B4 \"(Bb13)\"\"E7\"B4 | \"Am7\"B4 \"D7\"B4 |\n\"Gmaj7\"B B2 B- \"Am7\"B4 | \"Bm7\"B2 B2 \"Bbo7\"BB BB | \"Am7\"BB- B6 | \"D9\"B2 B2 BB BB |\n\"Gmaj7\"BB- B2- \"F9#11\"B4- | \"E7b9\"B2 BB BB B2- | \"A13\"B8- | \"D9\"B2 B2 \"G9sus\"B2 \"G7\"B2 |\nP:B\n\"Cmaj9\"B4- BB BB | \"Cm7\"B2 B2 \"F9\"B2 B2 | \"Gmaj7\"B3 B- B4 | \"F#m7b5\"B2 B2 \"B7#5\"B2 B2 |\n\"Em7\"B4- BB BB | \"A13\"B2 B2 B2 B2 | \"Am7\"B8 | \"D7\"B8 |]\nP:C\n\"Gmaj7\"B B2 B- B4 | B2 B2 BB BB | \"Gm7\"B B2 B- B4 | \"(C13)\"B2 B2 BB BB |\n\"Am7\"B B2 B- B4 | \"D7\"B2 B2 \"D7/C\"(3B2B2B2 | \"Bm7b5\"B8 | \"E7\"B6 BB |\n\"Am7\"BB- B6 | \"D13sus\"z2 B2 BB \"D13\"B2 | \"Gmaj7\"B8 | \"(Em7)\"z4 \"(Am7)\"z2 \"(D7)\"z2 |]\n\n%unsure [bars 7-8] alternate chords (Bb13) Ebmaj7 Ab9(#11) printed above; only (Bb13) kept\n%unsure [bars 11-14] tie and dotted values in this line read from a small scan\n%unsure [bars 31-32] alternate chords (F13sus F13 E9sus E7#9) printed above these bars, not written"
+},
+{
+"id": "New_Real_Book_Volume2/136-impressions",
+"book": "The New Real Book Vol. 2",
+"title": "Impressions",
+"pdf": "136",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "book says solo on form (ABC); A 16 bars, B 8 bars (Fm7), C 8 bars back to Em7"
+},
+{
+"bars": [
+6,
+14
+],
+"groups": [
+5,
+13
+],
+"text": "book gives an alternate melody (all 8ths) for these bars and bar 6 of C"
+},
+{
+"bars": [],
+"groups": [],
+"text": "tenor part, sounds an octave lower; melody played with variation"
+},
+{
+"bars": [
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46
+],
+"groups": [
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45
+],
+"text": "coda: long tied notes and ending pickup grace notes simplified; last chord Em7"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Impressions\nC:John Coltrane\nP:ABC\n%source New Real Book Volume 2 p134 (pdf 136)\n%style (Fast Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [form] book says solo on form (ABC); A 16 bars, B 8 bars (Fm7), C 8 bars back to Em7\nM:4/4\nL:1/8\nK:D dor\nP:A\n\"Em7\"B8- | B4 BB BB- | B8 | z2 zB B2 B2 |\nB2 B2 B4 | B2 B2 B2 BB- | B8 | z4 B2 B2 |\nB8- | B4 BB BB- | B8 | z2 zB B2 B2 |\nB2 B2 B4 | B2 B2 B2 BB- | B8 | z4 B3 B- ||\nP:B\n\"Fm7\"B8- | B3 B B2 B2 | B4 B4 | B4 B3 B- |\nB4 B B3 | B2 B2 BB- B2- | B8 | z4 B4 ||\nP:C\n\"Em7\"B8- | B4 BB BB- | B8 | z2 zB B2 B2 |\nB2 B2 B4 | B2 B2 B2 BB- | !coda!B8 | z8 ||\n%coda\n\"Em7\"B8 | z4 B3 B- | B8 | z4 z2 B2 |\nB8 | z4 z2 B2 | B8 | z4 TB4- |\nB8- | B8- | B8- | B8- |\nB8- | !fermata!B8 |]\n\n%unsure [bars 6, 14] book gives an alternate melody (all 8ths) for these bars and bar 6 of C\n%unsure [general] tenor part, sounds an octave lower; melody played with variation\n%unsure [bars 33-46] coda: long tied notes and ending pickup grace notes simplified; last chord Em7"
+},
+{
+"id": "New_Real_Book_Volume2/137-in-the-wee-small-hours-of-the-morning",
+"book": "The New Real Book Vol. 2",
+"title": "In the Wee Small Hours of the Morning",
+"pdf": "137",
+"form": "AB 8+10",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "bar counts per section counted from the page (A 8 bars, B 10 bars)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+},
+{
+"bars": [],
+"groups": [],
+"text": "book gives four sets of alternate changes for the first two bars of A and B, and says the last 4 bars of B may be played as 2 bars; not written"
+},
+{
+"bars": [
+7,
+8
+],
+"groups": [
+7,
+8
+],
+"text": "the beamed 8ths across G#m7 and C#7 are hard to read; grouping guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:In the Wee Small Hours of the Morning\nC:David Mann & Bob Hilliard\nP:AB\n%source New Real Book Volume 2 p136 (pdf 137)\n%style (Medium Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+10\n%unsure [form] bar counts per section counted from the page (A 8 bars, B 10 bars)\n%unsure [general] lyrics are printed in the book but not written here\n%unsure [general] book gives four sets of alternate changes for the first two bars of A and B, and says the last 4 bars of B may be played as 2 bars; not written\nM:C|\nL:1/8\nK:D\nBB ||\nP:A\n\"Dmaj7\"B2 B2 \"D7\"B-BBB | \"Bm/D\"B2 B4 \"D+\"BB | \"Dmaj7\"B2 B2 \"D+\"BBBB | \"Em7\"B6 \"A7\"B2 |\n\"Em7\"B3 B \"A7\"B3 B | \"F#m7b5\"BBBB \"B7\"B3 B | \"G#m7\"BBBB B2 B2 | \"C#7\"B2 B2 B2 B2 |\n\"F#m7\"B2 \"B7\"B2 \"Em7\"B2 \"A7\"BB ||\nP:B\n\"Dmaj7\"B2 B2 \"D7\"BBBB | \"Bm/D\"B2 B4 \"D+\"BB | \"Dmaj7\"B3 B \"F#m7b5\"\"(D9)\"BBBB | \"B7\"\"(Gmaj7)\"B6 BB |\n\"G#m7b5\"\"(Em7)\"B2 B2 \"Gm6\"\"(F7)\"B-BBB | \"F#m7\"B2 B4 \"B7\"BB | \"Em7\"B2 B2 B2 B2 | \"Bb9#11\"B4 \"A13\"B4 |\n\"Dmaj7\"B8 | \"(Em7)\"z4 \"(A7)\"z4 |]\n\n%unsure [bars 7-8] the beamed 8ths across G#m7 and C#7 are hard to read; grouping guessed"
+},
+{
+"id": "New_Real_Book_Volume2/138-in-your-own-sweet-way",
+"book": "The New Real Book Vol. 2",
+"title": "In Your Own Sweet Way",
+"pdf": "138",
+"form": "AABC 8+8+8+10",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A has 1st/2nd endings; C runs 8 bars plus a 2-bar Fm tag before the repeat; tune fits on one page (pdf 139 not used)"
+},
+{
+"bars": [
+8
+],
+"groups": [
+8
+],
+"text": "1st ending pickup triplet (rest + two notes) read from a small scan"
+},
+{
+"bars": [
+10
+],
+"groups": [
+10
+],
+"text": "first B bar: dotted quarter / tied 8th grouping across F#m7 B7 Emaj7 guessed"
+},
+{
+"bars": [
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34
+],
+"groups": [
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34
+],
+"text": "coda in straight eighths with rit.; last two lines' rhythms and chord placement read from a small scan"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:In Your Own Sweet Way\nC:Dave Brubeck\nP:ABC\n%source New Real Book Volume 2 p137 (pdf 138)\n%style (Med. Swing, as played by Dave Brubeck)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+10\n%unsure [form] A has 1st/2nd endings; C runs 8 bars plus a 2-bar Fm tag before the repeat; tune fits on one page (pdf 139 not used)\nM:4/4\nL:1/8\nK:F\n\"(F6)\"(3z2B2B2 |:\nP:A\n\"Bm7\"\"(Bm7b5)\"B4 \"E7\"B4 | \"Am7\"B4 \"D7\"B4 | \"Dm7\"zB BB \"G7\"B2 B2 | \"C7\"B2 BB- \"Fmaj7\"B4 |\n\"Bbm7\"zB BB \"Eb7\"B2 B2 | \"Abmaj7\"B2 BB- \"Dbmaj7\"(3B2B2B2 | \"G7alt\"B4 \"Db7\"B4 |1 \"C7\"B4 \"F6\"(3z2B2B2 :|2\n\"C7\"B4 \"F6\"z2 B2 ||\nP:B\n\"F#m7\"B2 \"B7\"B3 \"Emaj7\"B- B2- | B8 | \"F#m7\"z2 B2 \"B7\"B2 B2 | \"Emaj7\"B2 BB- B4 |\n\"Em7\"z2 B2 \"A7\"B2 B2 | \"F#m7\"B2 BB- \"B7\"\"(F7)\"B2 B2 | \"Em7b5\"B4 \"Bb7\"B4 | \"A7\"B4 \"Dm7\"(3z2B2B2 ||\nP:C\n\"Bm7\"\"(Bm7b5)\"B4 \"E7\"B4 | \"Am7\"B4 \"D7\"B4 | \"Dm7\"zB BB \"G7\"B2 B2 | \"C7\"B2 BB- \"Fmaj7\"B4 |\n\"Bbm7\"zB BB \"Eb7\"B2 B2 | \"Abmaj7\"B2 BB- \"Dbmaj7\"(3B2B2B2 | \"G7alt\"B4 \"Db7\"B4 | \"C7\"B2 B2 B2 !coda!B2 |\n\"Fm\"B8- | B8 :|\n%coda\n\"Fm\"B3 B B3 B | \"G/F\"B3 B B3 B | \"F#7/F\"B3 B B3 B | \"F7b9\"B3 B B3 B |\n\"Bbm\"B3 B B2 B2 | \"C7\"B\"C9\"B \"B13\"B\"Bb13\"B \"A7#9#5\"B2 \"Abmaj7\"B2 | \"G7#11#9#5\"B4 \"Gbmaj9#11\"B4 | \"Fm9\"!fermata!B8 |]\n\n%unsure [bar 8] 1st ending pickup triplet (rest + two notes) read from a small scan\n%unsure [bar 10] first B bar: dotted quarter / tied 8th grouping across F#m7 B7 Emaj7 guessed\n%unsure [bars 27-34] coda in straight eighths with rit.; last two lines' rhythms and chord placement read from a small scan"
+},
+{
+"id": "New_Real_Book_Volume2/140-isfahan",
+"book": "The New Real Book Vol. 2",
+"title": "Isfahan",
+"pdf": "140",
+"form": "AB 16+16",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form AB 16+16 counted from boxed letters; repeat back to A, coda after B"
+},
+{
+"bars": [],
+"groups": [],
+"text": "book says melody incorporates embellishments from the original recording"
+},
+{
+"bars": [
+6,
+7
+],
+"groups": [
+6,
+7
+],
+"text": "Bb13b9 bar: tie and triplet grouping guessed so the bar adds up"
+},
+{
+"bars": [
+9,
+10,
+11,
+12,
+13
+],
+"groups": [
+9,
+10,
+11,
+12,
+13
+],
+"text": "triplet 8th figures simplified; each is an 8th, tied 8th, then a triplet"
+},
+{
+"bars": [
+28
+],
+"groups": [
+28
+],
+"text": "break"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Isfahan\nC:Duke Ellington & Billy Strayhorn\nP:AB\n%source New Real Book Volume 2 p140 (pdf 140)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16\n%unsure [form] form AB 16+16 counted from boxed letters; repeat back to A, coda after B\n%unsure [general] book says melody incorporates embellishments from the original recording\nM:4/4\nL:1/8\nK:Eb\nB (3BBB |:\nP:A\n\"Ebmaj7\"B6 B2 | \"Cmaj7\"B4 \"C7#5\"B4 | \"F9\"(3B2B2B2- B4 | z4 zB (3BBB |\n\"Bmaj7\"B6 B2 | \"Ebm6/Bb\"\"(F7b9)\"B4 \"Bb13b9\"BB- (3BBB | \"Ebmaj9\"B8 | z2 B2 B2 B2 |\n\"Am7b5\"BB- (3BBB \"D7b9\"BB- (3BBB | \"Gm6\"B8 | \"Bm7b5\"BB- (3BBB \"E7b9\"BB- (3BBB | \"Am6\"B8 |\n\"Am9b5\"B3 B BB- (3BBB | \"D7#9#5\"B4 B4 | \"Gmaj7\"B8 | \"Gbmaj7\"z4 \"Fmaj7\"zB \"Emaj7\"(3BBB ||\nP:B\n\"Ebmaj7\"B6 B2 | \"Cmaj7\"B4 \"C7#5\"B4 | \"F9\"(3B2B2B2- B4 | z4 zB (3BBB |\n\"Bmaj7\"B6 B2 | \"Ebm6/Bb\"\"(F7b9)\"B4 \"Bb13b9\"B2 B2 | \"Eb7#11b9\"B8 | z4 z2 B2 |\n\"Abmaj7\"B2 B2 B2 B2 | \"D7b9#5\"B4 B3 B | \"G7#11#9\"B4 B3 \"C7\"B | z4 zB (3BBB |\n\"F13\"B6 B2 | \"Bb13b9\"B4 \"Bb9#5\"B4 | \"Ebmaj13\"B8 | !coda!\"(Gmaj7)\"z2 \"(Gbmaj7)\"z2 \"(Fmaj7)\"z2 \"(Emaj7)\"z2 :|\n%coda\n\"Ebmaj13\"B4 zB (3BBB | \"F13\"B6 B2 | \"Bb13b9\"B4 \"Bb9#5\"B4 | \"Ebmaj13\"B8- | !fermata!B8 |]\n\n%unsure [bars 6-7] Bb13b9 bar: tie and triplet grouping guessed so the bar adds up\n%unsure [bars 9-13] triplet 8th figures simplified; each is an 8th, tied 8th, then a triplet\n%unsure [bar 28] break"
+},
+{
+"id": "New_Real_Book_Volume2/141-it-don-t-mean-a-thing-if-it-ain-t-got-that-swing",
+"book": "The New Real Book Vol. 2",
+"title": "It Don't Mean a Thing (If It Ain't Got That Swing)",
+"pdf": "141",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "book letters A (16 bars written out), B, C; played as AABA with C a repeat of A"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+},
+{
+"bars": [],
+"groups": [],
+"text": "book gives alternate changes for letter A and for bars 5-8 of C; not written"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:It Don't Mean a Thing (If It Ain't Got That Swing)\nC:Duke Ellington & Irving Mills\nP:AABA\n%source New Real Book Volume 2 p141 (pdf 141)\n%style (Fast Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\n%unsure [form] book letters A (16 bars written out), B, C; played as AABA with C a repeat of A\n%unsure [general] lyrics are printed in the book but not written here\n%unsure [general] book gives alternate changes for letter A and for bars 5-8 of C; not written\nM:4/4\nL:1/8\nK:Am\nB2 ||\nP:A\n\"Am\"B4 B2 B2 | \"Am(maj7)\"B4 B2 B2 | \"Am7\"B4 B B2 B- | \"Am6\"B8 |\n\"D7\"z2 BB- BB B2 | \"G7\"B B2 B B2 BB- | \"C6\"BB B2 B B2 B | \"E7#5\"B2 z2 z2 B2 |\nP:A\n\"Am\"B4 B2 B2 | \"Am(maj7)\"B4- B B2 B | \"Am7\"B2 B2 B2 B2 | \"Am6\"B8 |\n\"D7\"z2 BB- BB B2 | \"G7\"B B2 B B2 BB- | \"C6\"BB B2 B B2 B | B6 B2 ||\nP:B\n\"Gm7\"B2 B2 B B2 B- | \"C7\"B2 B2 B B3 | \"F6\"B8- | B6 B2 |\n\"Am7\"B3 B B B3 | \"D7\"B2 B2 B B3 | \"G7\"B8 | \"E7\"z4 z2 B2 ||\nP:A\n\"Am\"B4 B2 B2 | \"Am(maj7)\"B4 B2 B2 | \"Am7\"B4 B B2 B- | \"Am6\"B8 |\n\"D7\"z2 BB- BB B2 | \"G7\"B B2 B B2 BB- | \"C6\"BB B2 B B2 B | \"C6\"\"(E7#5)\"B2 z2 z4 |]\n"
+},
+{
+"id": "New_Real_Book_Volume2/142-it-s-only-a-paper-moon",
+"book": "The New Real Book Vol. 2",
+"title": "It's Only a Paper Moon",
+"pdf": "142",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "book letters A (16 bars written out), B, C; played as AABA"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+},
+{
+"bars": [
+5,
+6,
+7,
+8
+],
+"groups": [
+4,
+5,
+6,
+7
+],
+"text": "tied 8th groupings in this line read from a small scan"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:It's Only a Paper Moon\nC:Harold Arlen (music), Billy Rose & E.Y. Harburg (lyric)\nP:AABA\n%source New Real Book Volume 2 p142 (pdf 142)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\n%unsure [form] book letters A (16 bars written out), B, C; played as AABA\n%unsure [general] lyrics are printed in the book but not written here\nM:C|\nL:1/8\nK:A\nP:A\n\"Amaj7\"z B2 B \"F#7\"B B2 B | \"Bm7\"B2 BB- \"E7\"B4 | \"Bm7\"z B2 B \"E7\"B B2 B | \"Amaj7\"B2 BB- \"Bm7\"B2 \"E7\"B2 |\n\"Em7\"z B2 B \"A7\"B2 B2 | \"Dmaj7\"B2 BB- \"Bm7b5\"B2 BB- | \"E7\"B2 BB- B2 BB- | \"A6\"B4 \"Bm7\"z2 \"E7\"z2 |\nP:A\n\"Amaj7\"z B2 B \"F#7\"B B2 B | \"Bm7\"B2 BB- \"E7\"B4 | \"Bm7\"z B2 B \"E7\"B B2 B | \"Amaj7\"B2 BB- \"Bm7\"B2 \"E7\"B2 |\n\"Em7\"z B2 B \"A7\"B2 B2 | \"Dmaj7\"B2 BB- \"Bm7b5\"B2 BB- | \"E7\"B2 BB- B2 BB- | \"A6\"B4 \"A7\"z2 B2 ||\nP:B\n\"Dmaj7\"B4 \"D#o7\"B4 | \"Amaj7/E\"B6 \"F#7#5\"BB | \"Bm7(11)\"B3 B \"E13\"B3 B | \"A6\"B6 \"A7\"B2 |\n\"Dmaj7\"B4 \"D#o7\"B4 | \"Amaj7/E\"B6 BB | \"C#m7b5\"BB B2 \"F#7\"B2 BB | \"Bm7\"BB B2 \"E9\"B2 B2 ||\nP:A\n\"Amaj7\"z B2 B \"F#7\"B B2 B | \"Bm7\"B2 BB- \"E7\"B4 | \"Bm7\"z B2 B \"E7\"B B2 B | \"Amaj7\"B2 BB- \"Bm7\"B2 \"E7\"B2 |\n\"Em7\"z B2 B \"A7\"B2 B2 | \"Dmaj7\"B2 BB- \"Bm7b5\"B2 BB- | \"E7\"B2 BB- B2 BB- | \"A6\"B4 \"(Bm7)\"z2 \"(E7)\"z2 |]\n\n%unsure [bars 5-8] tied 8th groupings in this line read from a small scan"
+},
+{
+"id": "New_Real_Book_Volume2/143-it-s-the-talk-of-the-town",
+"book": "The New Real Book Vol. 2",
+"title": "It's the Talk of the Town",
+"pdf": "143",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "book letters A (16 bars written out), B, C; played as AABA"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+},
+{
+"bars": [
+15,
+16
+],
+"groups": [
+14,
+15
+],
+"text": "A13 bar 8th/triplet grouping and the pickup into B read from a small scan"
+},
+{
+"bars": [
+19,
+23,
+24
+],
+"groups": [
+18,
+22,
+23
+],
+"text": "triplet figures in these bars simplified to quarters"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:It's the Talk of the Town\nC:Jerry Livingston (music), Marty Symes & Al J. Neiburg (lyric)\nP:AABA\n%source New Real Book Volume 2 p143 (pdf 143-144)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\n%unsure [form] book letters A (16 bars written out), B, C; played as AABA\n%unsure [general] lyrics are printed in the book but not written here\nM:4/4\nL:1/8\nK:G\nP:A\n\"Gmaj7\"BB BB \"Bbo7\"B4 | \"Am7\"BB BB \"D7\"B4 | \"Gmaj7\"BB BB \"Dm7(11)\"B2 \"Db9b5\"B2 | \"Cmaj7\"BB BB \"F9\"B4 |\n\"Gmaj7\"z2 BB \"C#m7b5\"BB \"F#7\"BB | \"Cm7\"B2 \"F7\"B2 \"Bm7\"B2 \"E7\"B2 | \"A13\"z2 BB (3B2B2B2 | \"Am7\"B4 \"D7b9\"z4 |\nP:A\n\"Gmaj7\"BB BB \"Bbo7\"B4 | \"Am7\"BB BB \"D7\"B4 | \"Gmaj7\"BB BB \"Dm7(11)\"B2 \"Db9b5\"B2 | \"Cmaj7\"BB BB \"F9\"B4 |\n\"Gmaj7\"z2 BB \"C#m7b5\"BB \"F#7\"BB | \"Cm7\"B2 \"F7\"B2 \"Bm7\"B2 \"E7\"B2 | \"A13\"zB BB- \"D13\"(3B2B2B2 | \"Gmaj7\"B6 \"Dm7\"B\"Db9b5\"B ||\nP:B\n\"Cmaj7\"BB BB \"E7\"B B2 B | \"Am7\"B2 BB \"Bm7b5\"B \"E7\"B2 B | \"Am6\"B2 (3B2B2B2 B2 | \"F9\"B4 \"E7\"B4 |\n\"A7\"BB BB \"Em7\"B B3 | \"A7\"BB BB B B3 | \"Em7\"B2 B2 \"A9\"B B3 | \"Am7\"B2 B2 \"D9#5\"B4 ||\nP:A\n\"Gmaj7\"BB BB \"Bbo7\"B4 | \"Am7\"BB BB \"D7\"B4 | \"Gmaj7\"BB BB \"Dm7(11)\"B2 \"Db9b5\"B2 | \"Cmaj7\"BB BB \"F9\"B4 |\n\"Gmaj7\"z2 BB \"C#m7b5\"BB \"F#7\"BB | \"Cm7\"B2 \"F7\"B2 \"Bm7\"B2 \"E7\"B2 | \"A13\"z2 BB \"D13\"(3B2B2B2 | \"Gmaj7\"B4 \"(Am7)\"z2 \"(D7)\"z2 |]\n\n%unsure [bars 15-16] A13 bar 8th/triplet grouping and the pickup into B read from a small scan\n%unsure [bars 19, 23-24] triplet figures in these bars simplified to quarters"
+},
+{
+"id": "New_Real_Book_Volume2/145-it-s-you",
+"book": "The New Real Book Vol. 2",
+"title": "It's You",
+"pdf": "145",
+"form": "Intro, A 18, B 12, C vamp, D.S. al Coda",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred: intro 3x, A (segno at bar 9), B, C piano solo vamp till cue, D.S. al Coda (alto solo till 5th bar of B), coda vamps"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro rhythm slashes written as rests (gtr & dr; 3rd time add pn, bs, alto fills); 3x's ending bars lead into the alto pickup"
+},
+{
+"bars": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22
+],
+"groups": [
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21
+],
+"text": "dense 16th-note lines simplified from a small scan; groupings guessed so bars add up"
+},
+{
+"bars": [
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34
+],
+"groups": [
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33
+],
+"text": "16th figures simplified; bar 30 is an alto fill (rest); last bar leads to the coda sign"
+},
+{
+"bars": [
+35,
+36
+],
+"groups": [
+34,
+35
+],
+"text": "piano solo, vamp till cue, then D.S. al Coda"
+},
+{
+"bars": [
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56
+],
+"groups": [
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55
+],
+"text": "coda rhythm slashes written as rests (alto/piano fills); sample fill line and vamp & fade read from a small scan"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:It's You\nC:David Sanborn\nP:ABC\n%source New Real Book Volume 2 p145 (pdf 145-146)\n%style (Med. Bossa/Funk, q=91)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form Intro, A 18, B 12, C vamp, D.S. al Coda\n%unsure [form] form inferred: intro 3x, A (segno at bar 9), B, C piano solo vamp till cue, D.S. al Coda (alto solo till 5th bar of B), coda vamps\nM:4/4\nL:1/8\nK:Bb\n%intro\n|: \"Cm7\"z6 \"F7\"zz- | z8 :| \"Cm7\"z6 \"F7\"zz- | z4 zB/B/ BB |\nP:A\n\"Cm7\"B8 | \"F7\"z4 zB B/B/B- | \"Cm7\"B3 B- B4 | \"F7\"z4 z2 z/B/B/B/ |\n\"Bbmaj7\"(3B/B/B/B BB BB BB- | \"Eb13#11\"B2 z2 z2 zB | \"Gm7\"BB BB BB B/B/B- | \"F7#9#5\"B3 B B2 BB |\n!segno!\"Cm7\"z2 BB BB BB- | \"F7\"B2 z2 z4 | \"Cm7\"z2 BB BB B/B/\"F7\"B- | \"F7\"B4 zB (3B/B/B/B |\n\"Bbmaj7\"B3 B BB B/B/\"Eb13#11\"B- | B2 zB- \"F7#9#5\"B2 z\"D13sus\"B- | \"D13sus\"B8- | B2 BB BB BB |\n\"F#m11\"B8 | z4 zB/B/ BB ||\nP:B\n\"Am7\"BB BB- B4 | B3 B- BB BB- | \"Eb9#11\"B8 | z2 zB/B/ BB BB |\n\"Abmaj7\"(3B/B/B/B BB BB BB | \"Db13#11\"(3B/B/B/B BB BB BB | \"Abmaj7\"BB- B2 z4 | \"Db13#11\"z8 |\n\"Abmaj7\"(3B/B/B/B BB BB BB | \"Db13#11\"(3B/B/B/B BB BB BB | \"Abmaj7\"BB- B2 z/B/B/B/ \"G7b9\"BB | BB BB B2 B!coda!B ||\nP:C\n|: \"Cm7\"z8 | z8 :|\n%coda\n\"Cm7\"z6 \"F7\"zz- | z6 \"F7\"z2 | \"Cm7\"z6 \"F7\"zz- | z8 |\n\"Dm7\"z6 \"G7\"zz- | z8 | \"Dm7\"z6 \"G7\"zz- | z8 |\n\"Em7\"z6 \"A7\"zz- | z8 | \"Em7\"z6 \"A7\"zz- | z8 |\n\"Fm7\"B4 BB BB | \"Bb7\"BB BB B B2 B- | \"Fm7\"B2 z2 z4 | \"Abmaj7\"B2 B2 \"Gm7\"B2 BB |: \"Fm7\"B B3 z4 | \"Bb7\"z8 | \"Fm7\"z8 | \"Abmaj7\"z4 \"Gm7\"z4 :|\n\n%unsure [bars 1-4] intro rhythm slashes written as rests (gtr & dr; 3rd time add pn, bs, alto fills); 3x's ending bars lead into the alto pickup\n%unsure [bars 5-22] dense 16th-note lines simplified from a small scan; groupings guessed so bars add up\n%unsure [bars 23-34] 16th figures simplified; bar 30 is an alto fill (rest); last bar leads to the coda sign\n%unsure [bars 35-36] piano solo, vamp till cue, then D.S. al Coda\n%unsure [bars 37-56] coda rhythm slashes written as rests (alto/piano fills); sample fill line and vamp & fade read from a small scan"
+},
+{
+"id": "New_Real_Book_Volume2/147-i-ve-got-the-world-on-a-string",
+"book": "The New Real Book Vol. 2",
+"title": "I've Got the World On a String",
+"pdf": "147",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "book letters A (16 bars), B (8), C (8); A is effectively two 8-bar halves (AABA)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+},
+{
+"bars": [],
+"groups": [],
+"text": "book note: at faster tempos, changes on beats 2 and 4 may be omitted"
+},
+{
+"bars": [
+4,
+12
+],
+"groups": [
+4,
+12
+],
+"text": "the half note across Bm7 E9 Bbm7 Eb9 is split so each chord sits on its beat"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I've Got the World On a String\nC:Harold Arlen (music), Ted Koehler (lyric)\nP:ABC\n%source New Real Book Volume 2 p148 (pdf 147)\n%style (Med.-Slow Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [form] book letters A (16 bars), B (8), C (8); A is effectively two 8-bar halves (AABA)\n%unsure [general] lyrics are printed in the book but not written here\n%unsure [general] book note: at faster tempos, changes on beats 2 and 4 may be omitted\nM:4/4\nL:1/8\nK:G\nB BB ||\nP:A\n\"G6\"BB \"F7\"BB- \"E7\"\"(Bb7)\"B4 | \"Am7\"BB BB \"Cm6\"B B3 | \"Gmaj7\"BB BB \"C9#11\"BB BB- | \"Bm7\"B\"E9\"B- \"Bbm7\"B\"Eb9\"B \"Am7\"B4 |\n\"Am7\"B2 B2 \"D7\"B2 \"G#o7\"BB- | \"Am7\"B B3 \"D13\"B2 B2 | \"B7#5\"B4 \"E7#9\"B4 | \"Am7\"z4 \"D7\"zB BB |\n\"G6\"BB \"F7\"BB- \"E7\"\"(Bb7)\"B4 | \"Am7\"BB BB \"Cm6\"B B3 | \"Bm7\"BB BB \"C9#11\"B B2 B- | \"Bm7\"B\"E9\"B- \"Bbm7\"B\"Eb9\"B B4 |\n\"Am7\"B2 B2 \"D7\"B2 \"G#o7\"BB- | \"Am7\"B B3 \"D13\"B2 B2 | \"G6\"B4- \"C6\"B2- \"C#o7\"B2- | \"G6\"BB BB BB BB- |\nP:B\n\"F#m7\"B8 | \"B9\"zB BB BB BB- | \"E13\"B8 | zB BB BB BB |\n\"A9\"B8 | zB BB BB BB | \"Am9\"B8- | \"D13\"B4 zB BB ||\nP:C\n\"G6\"BB \"F7\"BB- \"E7\"\"(Bb7)\"B4 | \"Am7\"BB BB \"Cm6\"B B3 | \"Bm7\"BB BB \"C9\"B B2 B- | \"Bm7\"B\"E9\"B- \"Bbm7\"B\"Eb9\"B B4 |\n\"Am7\"B2 B2 \"E7\"B2 B2- | \"Am7\"B B3 \"D13\"B2 B2 | \"G6\"B8- | \"(E7#9)\"B4 \"Am7\"z2 \"D7\"z2 |]\n\n%unsure [bars 4, 12] the half note across Bm7 E9 Bbm7 Eb9 is split so each chord sits on its beat"
+},
+{
+"id": "New_Real_Book_Volume2/148-i-ve-got-your-number",
+"book": "The New Real Book Vol. 2",
+"title": "I've Got Your Number",
+"pdf": "148",
+"form": "ABC 16+16+10",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section bar counts counted from the page (A 16, B 16, C 10)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+},
+{
+"bars": [],
+"groups": [],
+"text": "book note: head generally played in 2, solos in 4"
+},
+{
+"bars": [
+6,
+22
+],
+"groups": [
+5,
+21
+],
+"text": "dotted quarter / tied 8th grouping in the Am7 half guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I've Got Your Number\nC:Cy Coleman (music), Carolyn Leigh (lyric)\nP:ABC\n%source New Real Book Volume 2 p149 (pdf 148-149)\n%style (Medium Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+16+10\n%unsure [form] section bar counts counted from the page (A 16, B 16, C 10)\n%unsure [general] lyrics are printed in the book but not written here\n%unsure [general] book note: head generally played in 2, solos in 4\nM:4/4\nL:1/8\nK:D\nP:A\n\"A7\"z B3 \"Em7\"B2 B2 | \"A7\"B3 B- \"Em7\"B4 | \"A7\"z B3 \"Em7\"B2 B2 | \"A7\"B3 B- B2 B2 |\n\"D7\"z B3 \"Am7\"B2 B2 | \"D7\"B3 B- \"Am7\"B B3 | \"D7\"z B3 \"Am7\"B2 B2 | \"D7\"B4 \"C7\"B4 |\n\"Bb7\"z B3 B2 B2 | \"Ebmaj7\"B2 BB- B4 | \"Cm7\"B2 BB- \"F9sus\"B4 | \"Bb6\"B2 BB- B4 |\n\"F#7\"z B3 B2 B2 | \"Bmaj7\"B2 BB- B4 | \"E9#11\"\"(G#m7)\"B2 BB- \"(C#9sus)\"B2 B2 | \"Cm7(11)\"B4 \"F9\"B4 ||\nP:B\n\"A7\"z B3 \"Em7\"B2 B2 | \"A7\"B3 B- \"Em7\"B4 | \"A7\"z B3 \"Em7\"B2 B2 | \"A7\"B3 B- B2 B2 |\n\"D7\"z B3 \"Am7\"B2 B2 | \"D7\"B3 B- \"Am7\"B B3 | \"D7\"z B3 \"Am7\"B2 B2 | \"D7\"B4 \"C7\"B4 |\n\"Bb7\"z B3 B2 B2 | \"Ebmaj7\"B2 BB- B4 | \"Cm7\"B2 BB- \"F9sus\"B4 | \"Dm7\"B2 BB- \"G7\"\"(Bb7)\"B4 |\n\"Cm7\"\"(Ebmaj7)\"z B3 \"F9sus\"B2 B2 | \"Bb6\"B2 BB- B2 B2 | \"Cm7\"\"(Gm7)\"B2 BB- \"F9sus\"\"(C7)\"B2 B2 | \"Fm7(11)\"B4 \"Bb9\"B4 ||\nP:C\n\"A7\"z B3 \"Em7\"B2 B2 | \"A7\"B3 B- \"Em7\"B4 | \"A7\"z B3 \"Em7\"B2 B2 | \"A7\"B3 B- \"Em7\"B2 B2 |\n\"A7\"z B3 \"Em7\"B2 B2 | \"A7\"B3 B- \"Em7\"B2 B2 | \"A7\"z B3 \"Em7\"B2 B2 | \"A7\"B3 B- B2 B2 |\n\"D6\"B8 | \"(Em7)\"z4 \"(A7)\"z4 |]\n\n%unsure [bars 6, 22] dotted quarter / tied 8th grouping in the Am7 half guessed"
+},
+{
+"id": "New_Real_Book_Volume2/150-i-ve-never-been-in-love-before",
+"book": "The New Real Book Vol. 2",
+"title": "I've Never Been in Love Before",
+"pdf": "150",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+17
+],
+"groups": [
+17
+],
+"text": "E chord placed on beat 3 (printed over slashes in the second half of the bar)"
+},
+{
+"bars": [
+30
+],
+"groups": [
+30
+],
+"text": "second note read as a half note (only one note visible after the half)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:I've Never Been in Love Before\nC:Frank Loesser\nP:ABC\n%source New_Real_Book_Volume2 p152 (pdf 150)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\nM:4/4\nL:1/8\nK:C\n\"(G7)\"B2 |\nP:A\n\"C6\"B6 \"Am7\"B2 | \"Dm7\"B2 B2 \"G7\"B3 B | \"Cmaj7\"B6 \"F7\"B2 | \"Em7\"B2 B2 \"A7\"B3 B |\n\"Dm7\"B6 B2 | \"Dm7\"B2 B2 \"G7\"B3 B | \"Cmaj7\"\"(Cmaj7)\"B4- \"(Eb13)\"B4 | \"Dm7\"\"(Abmaj7)\"B4 \"G7\"\"(Db13)\"B2 B2 |\n\"C6\"B6 \"Am7\"B2 | \"Dm7\"B2 B2 \"G7\"B3 B | \"Cmaj7\"B6 \"F7\"B2 | \"Em7\"B2 B2 \"A7\"B3 B |\n\"Dm7\"B6 B2 | \"Dm7\"B2 B2 \"G7\"B3 B | \"Cmaj7\"B8 | \"Gm7\"B2 B2 \"C7\"B2 B2 |\nP:B\n\"Fmaj7\"B4- \"E\"B2 B2 | \"Dm7\"B2 B2 \"G7\"B3 B | \"Cmaj7\"B6 B2 | \"Bm7b5\"B2 B2 \"E7#5\"B3 B |\n\"Am\"\"(Am)\"B4- \"(Am/G)\"B2 B2 | \"D9\"\"(F#m7b5)\"B2 B2 \"B7\"B3 B | \"Emaj7\"B8- | \"Dm7\"B2 B2 \"G7\"B2 B2 |\nP:C\n\"C6\"B6 \"Am7\"B2 | \"Dm7\"B2 B2 \"G7\"B3 B | \"Cmaj7\"B6 \"F7\"B2 | \"Em7\"B2 B2 \"A7\"B3 B |\n\"Dm7\"B6 B2 | \"Dm7\"B4 \"G7\"B4 | \"C6\"B8- | \"(Dm7)\"B4 \"(G7)\"z4 |]\n\n%unsure [bar 17] E chord placed on beat 3 (printed over slashes in the second half of the bar)\n%unsure [bar 30] second note read as a half note (only one note visible after the half)\n%unsure [general] lyrics are printed in the book but not written here"
+},
+{
+"id": "New_Real_Book_Volume2/151-jacob-s-ladder",
+"book": "The New Real Book Vol. 2",
+"title": "Jacob's Ladder",
+"pdf": "151",
+"form": "ABCDEF 8+4+8+16+8+5, solos on F, D between solos, D.S. al Coda",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 8,
+"flags": [
+{
+"bars": [
+9,
+10,
+11,
+12
+],
+"groups": [
+8,
+9,
+10,
+11
+],
+"text": "rhythm slashes written as rests with the chord on them"
+},
+{
+"bars": [
+13,
+14
+],
+"groups": [
+12,
+13
+],
+"text": "triplet groupings (16th triplets plus an eighth per beat) read from small print"
+},
+{
+"bars": [
+37
+],
+"groups": [
+36
+],
+"text": "printed as a 6-bar multirest (Z6)"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34
+],
+"groups": [
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33
+],
+"text": "chord placement approximate; horn background lines under bars 31-32 skipped"
+},
+{
+"bars": [
+48,
+49,
+50,
+51,
+52
+],
+"groups": [
+47,
+48,
+49,
+50,
+51
+],
+"text": "solo slashes written as rests with the chord on them; first ending is \"till cue\", second \"on cue\""
+},
+{
+"bars": [
+66
+],
+"groups": [
+65
+],
+"text": "printed as a 4-bar multirest (Z4), piano fill"
+},
+{
+"bars": [],
+"groups": [],
+"text": "form and section lengths inferred from the printed letters and road map"
+},
+{
+"bars": [],
+"groups": [],
+"text": "ending numbers 1-3 / 4 written as |1 and :|2"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Jacob's Ladder\nC:Cedar Walton\nP:ABCDEF\n%source New_Real_Book_Volume2 p153 (pdf 151)\n%style (Funky Latin, quarter = 178)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCDEF 8+4+8+16+8+5, solos on F, D between solos, D.S. al Coda\nM:4/4\nL:1/8\nK:G\nP:A\n%horns\n|: \"Em11\"B3 \"Dm11\"B zB z\"Em11\"B | z8 | \"Em11\"B3 \"Dm11\"B zB z\"Em11\"B | z8 |\n\"Am11\"B3 \"Gm11\"B zB z\"Am11\"B | z2 zB z\"Dm11\"B z\"Em11\"B- | B8- | B8 :|\nP:B\n%light piano comping\n|: \"Em7\"z8 | z8 :| z8 | z4 z\"F\"B \"F#\"B\"G7\"B |\nP:C\n|: \"G7\"z2 (3BBB (3B/B/B/B \"F#7\"(3B/B/B/B | \"B7#5\"(3B/B/B/B \"E7#9\"(3B/B/B/B \"Am7\"BB B\"Em7\"\"(Fmaj9)\"B- | B8- | \"Em7\"B8- |\nB8 | z8 |1 z4 z\"F\"B \"F#\"B\"G7\"B :|2 \"Em7\"z4 z2 zB |\nP:D\n%segno\n\"Em\"BB BB \"B/D#\"B2 BB- | \"Em/D\"B4 \"A/C#\"BB BB- | \"C\"B4 \"Bm7\"BB B\"Am7\"B- | B4 \"Gmaj7\"B2 z\"Fmaj7\"B- |\nB8- | B7 \"Em(add9,add11)\"B- | B8- | B6 BB |\n\"D13\"BB B\"G6/9\"B zB B\"Em7(11)\"B- | B2 BB \"Dm7(11)\"B2 BB | \"Cmaj7b5\"B8 | \"B7b5\"B2 zB BB B\"Am7\"B- |\nB4 \"D7\"B4- | \"G7\"B3 \"F#m7\"B z\"Fmaj7\"B z\"Em7\"B- | B8- | B8 | \"Em7\"Z6 |]\nP:E\n%horns\n|: \"Em11\"B3 \"Dm11\"B zB z\"Em11\"B | z8 | \"Em11\"B3 \"Dm11\"B zB z\"Em11\"B | z8 |\n\"Am11\"B3 \"Gm11\"B zB z\"Am11\"B | z2 z\"Dm11\"B zB z\"Em11\"B- | B8- | B8 :|\n%coda jump point\n\"Em7\"z8 | z4 z\"F\"B \"F#\"B\"G7\"B ||\nP:F\n%solos\n|: \"G7\"z8 | \"F#7b9\"z4 \"B7#5\"z2 BB- | \"Em7\"B2 z6 |1 z4 z\"F\"B \"F#\"B\"G7\"B :|2 \"Em7\"z8 |\n%solo continues (horns behind solo)\n|: \"G7\"BB z2 z4 | \"F#7\"BB z2 \"B7\"BB zB- |1 \"Em7\"B4 \"Bb7\"BB z2 | \"A7\"BB z\"D7\"B- B4 :|2\n\"Em7\"B8 | z4 z2 zB |]\n%play D between solos; after solos D.S. al Coda\n%coda (piano solo, horns behind)\n|: \"G7\"BB z2 z4 |1 \"F#7\"BB z2 \"B7\"BB zB- | \"Em7\"B4 \"Bb7\"BB z2 | \"A7\"BB z\"D7\"B- B4 :|2\n\"F#7\"BB z2 \"B7\"BB z\"Em7\"B- | \"Em7\"B8- | B8 | \"Em7\"Z4 |\nzB BB BB BB | BB BB \"F\"B\"F#\"B \"G7\"BB | \"G7\"z2 (3BBB (3B/B/B/B \"F#7\"(3B/B/B/B | \"B7#5\"(3B/B/B/B \"E7#9\"(3B/B/B/B \"Am7\"BB \"Fmaj9\"B\"Em(add11)\"B- | !fermata!B8 |]\n\n%unsure [bars 9-12] rhythm slashes written as rests with the chord on them\n%unsure [bars 13-14] triplet groupings (16th triplets plus an eighth per beat) read from small print\n%unsure [bar 37] printed as a 6-bar multirest (Z6)\n%unsure [bars 21-34] chord placement approximate; horn background lines under bars 31-32 skipped\n%unsure [bars 48-52] solo slashes written as rests with the chord on them; first ending is \"till cue\", second \"on cue\"\n%unsure [bar 66] printed as a 4-bar multirest (Z4), piano fill\n%unsure [form] form and section lengths inferred from the printed letters and road map\n%unsure [general] ending numbers 1-3 / 4 written as |1 and :|2"
+},
+{
+"id": "New_Real_Book_Volume2/153-jordu",
+"book": "The New Real Book Vol. 2",
+"title": "Jordu",
+"pdf": "153",
+"form": "AABA 8+8+8+8 head (A with 1st/2nd endings, B 8, C 8); solos on D D E F",
+"bad": 1,
+"off": [
+56
+],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [
+7
+],
+"groups": [
+6
+],
+"text": "triplet grouping (3 notes under a 3 bracket) then two eighths read from small print; same in bar 24"
+},
+{
+"bars": [
+26
+],
+"groups": [
+25
+],
+"text": "drum fill bar; coda sign sits at bar 25"
+},
+{
+"bars": [
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50
+],
+"groups": [
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49
+],
+"text": "solo slashes written as rests with the chord on them; chord positions in E and F read from rhythmic slashes"
+},
+{
+"bars": [
+51,
+52,
+53,
+54,
+55,
+56,
+57
+],
+"groups": [
+50,
+51,
+52,
+53,
+54,
+55,
+56
+],
+"text": "coda read from small print; chords on lower staff; bar 56 break rhythm guessed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "head is A (with endings) B C; form line inferred"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Jordu\nC:Duke Jordan\nP:ABCDDEF\n%source New_Real_Book_Volume2 p155 (pdf 153)\n%style (Med. Swing, quarter = 140; as played by Clifford Brown)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 head (A with 1st/2nd endings, B 8, C 8); solos on D D E F\nM:4/4\nL:1/8\nK:F\n%pickup (trp & ten)\nzB BB BB BB ||\nP:A\n|: \"E7\"B4 \"A7\"B3 \"Dm6\"B | zB BB BB BB | \"G7\"B4 \"C7\"B3 \"Fmaj7\"B | zB BB BB BB |\n\"E7\"B4 \"A7\"B3 \"Dm\"B | z4 (3BBB BB- | \"Bb7\"B8 |1 zB BB BB BB :|2\n\"Bb7\"z4 zB z\"A7\"B- ||\nP:B\n\"A7\"B2 BB \"D7\"B2 BB | \"G7\"B2 BB \"C7\"B2 BB | \"F7\"B2 BB \"Bb7\"B3 B | \"Eb6\"B4 zB z\"G7\"B- |\n\"G7\"B2 BB \"C7\"B2 BB | \"F7\"B2 BB \"Bb7\"B2 BB | \"Eb7\"B2 BB \"Ab7\"B3 B | \"Db6\"BB BB BB BB ||\nP:C\n\"E7\"B4 \"A7\"B3 \"Dm6\"B | zB BB BB BB | \"G7\"B4 \"C7\"B3 \"Fmaj7\"B | zB BB BB BB |\n\"E7\"B4 \"A7\"B3 \"Dm\"B | z4 (3BBB BB- | \"Bb7\"B8 | \"Bb7\"z8 ||\nP:D\n%solos\n|: \"E7\"z4 \"A7\"z4 | \"Dm6\"z8 | \"G7\"z4 \"C7\"z4 | \"Fmaj7\"z8 |\n\"E7\"z4 \"A7\"z4 | \"Dm6\"z8 | \"Bb7\"z8 | z8 :|\nP:E\n\"A7\"z4 \"D7\"z4 | \"G7\"z4 \"C7\"z4 | \"F7\"z4 \"Bb7\"z4 | \"Eb6\"z8 |\n\"G7\"z4 \"C7\"z4 | \"F7\"z4 \"Bb7\"z4 | \"Eb7\"z4 \"Ab7\"z4 | \"Db6\"z8 |\nP:F\n\"E7\"z4 \"A7\"z4 | \"Dm6\"z4 \"G7\"z4 | \"C7\"z4 \"Fmaj7\"z4 | z8 |\n\"E7\"z4 \"A7\"z4 | \"Dm6\"z8 | \"Bb7\"z8 | z8 |]\n%solo on DDEF; after solos D.C. al Coda (with pickups)\n%coda (trp top line; ten 8va b. lower line skipped)\n\"Bb7\"B4- \"A7\"B4 | \"D\"B4 \"G7\"(3B2B2B2 | \"C7\"B4- \"F7\"B4 | \"Bb7\"z4 \"Eb\"BB BB |\n\"E7\"B4- \"A7b5\"B4 | z2 zB (3B/B/B/B BB \"C#\"B- | \"D\"!fermata!B8 |]\n\n%unsure [bar 7] triplet grouping (3 notes under a 3 bracket) then two eighths read from small print; same in bar 24\n%unsure [bar 26] drum fill bar; coda sign sits at bar 25\n%unsure [bars 27-50] solo slashes written as rests with the chord on them; chord positions in E and F read from rhythmic slashes\n%unsure [bars 51-57] coda read from small print; chords on lower staff; bar 56 break rhythm guessed\n%unsure [form] head is A (with endings) B C; form line inferred"
+},
+{
+"id": "New_Real_Book_Volume2/155-juntos",
+"book": "The New Real Book Vol. 2",
+"title": "Juntos",
+"pdf": "155",
+"form": "AB 20+19 after intro",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11
+],
+"text": "intro guitar line: staccato eighth/quarter groupings read from small print"
+},
+{
+"bars": [
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32
+],
+"groups": [
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31
+],
+"text": "syncopations and ties read from small print"
+},
+{
+"bars": [
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51
+],
+"groups": [
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50
+],
+"text": "quarter-note triplets and ties read from small print; last three bars are melody whole note then hits (Em7/B, A7/E, Am7, D7 with grace-note pushes)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the page, not printed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "tune continues on pdf 156 (B section)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Juntos\nC:Ivan Lins\nP:AB\n%source New_Real_Book_Volume2 p157 (pdf 155)\n%style (Med. Funk/Pop Ballad, quarter = 147)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 20+19 after intro\nM:4/4\nL:1/8\nK:G\n%intro (gtr., in octaves)\n|: \"N.C.\"z4 z2 zB- | BB BB BB B2 | z4 z2 zB- | B2 BB B2 BB |\n\"N.C.\"z4 z2 zB- | BB BB BB BB | \"G/F\"BB B\"E7#9\"B- BB \"A9#11\"BB- | B2 \"D13sus\"BB B2 z2 :|\n\"N.C.\"z4 z2 zB- | BB BB BB B2 | z4 z2 zB- | B2 BB B2 B2 ||\nP:A\n%segno (voice)\n|: \"Gmaj7\"BB BB- \"G6\"B2 B2 | \"D9sus\"B3 B- \"D9\"(3B2B2B2 | \"Gmaj7\"B3 B \"G6\"B4- | \"D9sus\"B4 \"D9\"z2 BB |\n\"Gmaj7\"B B2 \"G6\"B- BB BB- | \"G13sus\"B2 BB- \"G9\"B2 BB- | \"Cmaj7\"B4 z2 BB- | \"C#m7b5\"(3B2B2B2 \"F#7#5\"B2 BB- |\n\"Bm7\"B8 | \"Em9\"z8 | \"Am7\"B B2 B B2 B2- | \"E9sus\"B B3- B4 |\n\"Am7\"B B2 B B2 B2- | \"E9sus\"B6 BB | \"Am7\"B B2 B B2 B2- | \"D9sus\"B B2 \"D9\"B- BB B2 |\n\"G9sus\"B4 (3z2B2B2 | \"G9\"B2 BB- BB B2- | \"C13sus\"B4- \"C13\"B4 | \"F9sus\"z4 \"F9\"z4 :|\nP:B\n\"Gmaj7\"B3 B (3z2B2B2 | \"Em7\"B B2 B- B2 BB- | \"Cmaj7/E\"B2 (3z2B2B2 B2 | \"D13sus\"B B2 B \"Cm9\"B2 BB- |\n\"Bm7\"B2 (3z2B2B2 B2 | \"Em7\"B B2 \"D\"B- BB BB- | \"C#m7\"B2 (3z2B2B2 B2 | \"F#9sus\"B2 BB- \"F#9\"B2 BB- |\n\"Bmaj7\"B3 B (3z2B2B2 | \"Bbm7(11)\"B2 BB- \"Eb7\"B2 BB- | \"Abmaj7\"B3 B- B4 | \"C13sus\"z B2 B- \"C13\"BB B2- |\n\"Fmaj7\"B2 B6 | \"Dm7\"B2 BB \"Cm7\"B-B B2- | \"Bm7\"B2 B2 (3z2B2B2 | \"E13\"B3 B- B2 \"Em7/B\"BB- |\n\"A7/E\"B8 | \"Am7\"z8 | \"D7\"z8 |]\n%fine. Solo on AAB; after solos D.S. al fine, then vamp and fade on intro (first 8 bars, guitar fills)\n\n%unsure [bars 1-12] intro guitar line: staccato eighth/quarter groupings read from small print\n%unsure [bars 13-32] syncopations and ties read from small print\n%unsure [bars 33-51] quarter-note triplets and ties read from small print; last three bars are melody whole note then hits (Em7/B, A7/E, Am7, D7 with grace-note pushes)\n%unsure [form] section lengths counted from the page, not printed\n%unsure [general] tune continues on pdf 156 (B section)"
+},
+{
+"id": "New_Real_Book_Volume2/157-killer-joe",
+"book": "The New Real Book Vol. 2",
+"title": "Killer Joe",
+"pdf": "157",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+10
+],
+"groups": [
+9
+],
+"text": "read as half note, quarter rest, two eighths (the rest is hard to see)"
+},
+{
+"bars": [
+30
+],
+"groups": [
+29
+],
+"text": "same reading as bar 10"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro and ending are piano chord hits (dotted quarter + eighth), written as melody rhythm"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Killer Joe\nC:Benny Golson\nP:AABC\n%source New_Real_Book_Volume2 p159 (pdf 157)\n%style (Med.-Slow Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:D\n%intro (piano; piano simile till B)\n\"D13\"B3 B z4 | \"C13\"B3 B z4 | \"D13\"B3 B z4 | \"C13\"B3 B z4 ||\nP:A\n%horns\n|: \"D13\"z4 B2 BB- | \"C13\"B8 | \"D13\"z4 B2 BB- | \"C13\"B8 |\n\"D13\"z4 B2 BB- | \"C13\"B4 z2 BB- | \"D13\"B8 | \"C13\"B8 :|\nP:B\n%half-time feel\n\"F#m7b5\"B8- | \"B7b9\"B4 B4 | \"Fm7\"B8- | \"Bb9\"B4 \"Bb13b9\"B4 |\n\"B13\"B8- | \"Ab/Bb\"B4 \"Bb7\"B4 | \"F#m7\"B8 | \"B13b9\"B8 ||\nP:C\n%orig. feel (piano as in intro)\n\"D13\"z4 B2 BB- | \"C13\"B8 | \"D13\"z4 B2 BB- | \"C13\"B8 |\n\"D13\"z4 B2 BB- | \"C13\"B4 z2 BB- | \"D13\"B8 | \"C13\"B8 |]\n%solo on AABC; solos swing throughout\n%ending\n|: \"D13\"B3 B z4 | \"C13\"B3 B z4 :|\n%vamp, fill and fade\n\n%unsure [bar 10] read as half note, quarter rest, two eighths (the rest is hard to see)\n%unsure [bar 30] same reading as bar 10\n%unsure [bars 1-4] intro and ending are piano chord hits (dotted quarter + eighth), written as melody rhythm"
+},
+{
+"id": "New_Real_Book_Volume2/158-let-s-fall-in-love",
+"book": "The New Real Book Vol. 2",
+"title": "Let's Fall in Love",
+"pdf": "158",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+18,
+22,
+29
+],
+"groups": [
+17,
+21,
+28
+],
+"text": "quarter-note triplets read from small print"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Let's Fall in Love\nC:Harold Arlen (music), Ted Koehler (lyric)\nP:ABC\n%source New_Real_Book_Volume2 p160 (pdf 158)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\nM:4/4\nL:1/8\nK:D\nP:A\n\"D6\"B4 \"Bm7\"B2 B2 | \"Em7\"B4 \"A7\"BB BB- | \"D6\"B4 \"Bm7\"B2 B2 | \"Em7\"B4 \"A7\"\"(Gm6)\"BB BB- |\n\"F#m7\"BB B2 \"Bm7\"BB BB- | \"Em7\"B4 \"A7\"BB BB- | \"F#7\"B3 B \"B7\"B4- | \"E9\"B4- \"A13\"B4 |\n\"D6\"B4 \"Bm7\"B2 B2 | \"Em7\"B4 \"A7\"BB BB- | \"D6\"B4 \"Bm7\"B2 B2 | \"Em7\"B4 \"A7\"\"(Gm6)\"BB BB- |\n\"F#m7\"BB B2 \"Bm7\"BB BB- | \"Em7\"B4 \"A7\"BB BB- | \"C#m7(11)\"B3 B \"F#7\"B4- | \"C#m7(11)\"B4- \"F#7\"B4 ||\nP:B\n\"Bm\"B4- \"Bm(maj7)\"B4 | \"Bm7\"(3B2B2B2 B2 BB | \"E13\"\"(E13)\"B4 \"(Bm9)\"B4- | \"(E13)\"B4 \"Fo7\"B4 |\n\"F#m7\"B4- \"Bm7\"B4 | \"Em7\"(3B2B2B2 \"A7\"B2 BB | \"F#m7\"\"(Fm7)\"B4 \"B7b9\"\"(Bb7)\"B4 | \"Em7\"B4 \"A7\"B4 ||\nP:C\n\"D6\"B4 \"Bm7\"B2 B2 | \"Em7\"B4 \"A7\"BB BB- | \"D6\"B4 \"Bm7\"B2 B2 | \"Em7\"B4 \"A7\"\"(Gm6)\"BB BB- |\n\"F#m7\"BB B2 \"Bm7\"(3B2B2B2 | \"Em7\"B4 \"A7\"BB BB- | \"D6\"B8- | \"(Bm7)\"B4 \"(Em7)\"z2 \"(A7)\"z2 |]\n\n%unsure [bars 18, 22, 29] quarter-note triplets read from small print\n%unsure [general] lyrics are printed in the book but not written here"
+},
+{
+"id": "New_Real_Book_Volume2/159-like-a-lover-o-cantador",
+"book": "The New Real Book Vol. 2",
+"title": "Like a Lover (O Cantador)",
+"pdf": "159",
+"form": "AABC 14+14+12+14",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [
+7,
+8,
+9,
+10
+],
+"groups": [
+6,
+7,
+8,
+9
+],
+"text": "alternate chords (Bb7b5), (A9sus), (Gmaj7), (D/F#), (Em7), (A7#5) printed above; placement approximate"
+},
+{
+"bars": [
+17
+],
+"groups": [
+16
+],
+"text": "rhythm of beats 3-4 read from a small scan"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed (verse 1, plus a 2nd verse in text) but not transcribed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "book also prints alternate changes for bars 1-4 of A and C (Dmaj7 D7 D6 Gm6/D Bm9 Ab7/C), not included"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Like a Lover (O Cantador)\nC:Dori Caymmi\nP:AABC\n%source New Real Book Volume 2 p161 (pdf 159)\n%style (Med. Bossa)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 14+14+12+14\nM:4/4\nL:1/8\nK:D\nP:A\n|: \"Dmaj7\"z2 BB B B2 B | \"A7sus\"B2 BB- B4 | \"Dmaj7\"z2 BB B B2 B | \"E/D\"B2 BB- B B2 B- |\n\"C#m7\"B4 \"F#m7\"z2 B2 | \"B13sus\"B2 BB- \"B9\"B B2 B- | \"Emaj7\"BB BB \"(Bb7b5)\"BB B2- | \"A13\"\"(A9sus)\"B2 BB- \"A7#5\"B B2 B- |\n\"Gmaj7\"\"(Gmaj7)\"B8 | \"A/G\"\"(D/F#)\"B4 \"(Em7)\"B \"(A7#5)\"B2 B- | \"Dmaj7\"B2 BB B B2 B | \"A7sus\"B2 BB- B2 BB- |\n\"Dmaj7\"B8 | \"A7sus\"z8 :|\nP:B\n\"Dmaj7\"z2 BB \"Gm6/D\"B B2 B | \"Dmaj7\"B2 BB- B B2 B- | \"E/D\"B2 BB B2 B2- | \"E/D\"B4 B B2 B- |\n\"C#m7\"B2 BB \"C#7b9\"B B2 B | \"F#m7\"B2 BB- BB B2 | \"G#m7b5\"B2 BB B2 B2- | \"C#13\"(3B2B2B2 \"C#7#5\"B B2 B- |\n\"F#m7\"B2 BB (3B2B2B2 | \"Bm7\"B2 BB- \"Am7\"BB \"E(add9)/G#\"B2- | B3 B B2 \"A7sus\"B2- | B8 ||\nP:C\n\"Dmaj7\"z2 BB B B2 B | \"A7sus\"B2 BB- B4 | \"Dmaj7\"z2 BB B B2 B | \"E/D\"B2 BB- B B2 B- |\n\"C#m7\"B4 \"F#m7\"z2 B2 | \"B13sus\"B2 BB- \"B9\"B B2 B- | \"Emaj7\"BB BB \"(Bb7b5)\"BB B2- | \"A13\"\"(A9sus)\"B2 BB- \"A7#5\"B B2 B- |\n\"Gmaj7\"\"(Gmaj7)\"B8 | \"A/G\"\"(D/F#)\"B4 \"(Em7)\"B \"(A7#5)\"B2 B- | \"Dmaj7\"B2 BB B B2 B | \"A7sus\"B2 BB- B2 BB- |\n\"Dmaj7\"B8 | \"A7sus\"z8 |]\n\n%unsure [bars 7-10] alternate chords (Bb7b5), (A9sus), (Gmaj7), (D/F#), (Em7), (A7#5) printed above; placement approximate\n%unsure [bar 17] rhythm of beats 3-4 read from a small scan\n%unsure [general] lyrics are printed (verse 1, plus a 2nd verse in text) but not transcribed\n%unsure [general] book also prints alternate changes for bars 1-4 of A and C (Dmaj7 D7 D6 Gm6/D Bm9 Ab7/C), not included"
+},
+{
+"id": "New_Real_Book_Volume2/161-like-father-like-son",
+"book": "The New Real Book Vol. 2",
+"title": "Like Father, Like Son",
+"pdf": "161",
+"form": "Intro ABCDE 13+17+12+11+15, solos on CDE, D.C. al Coda",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 10,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section bar counts and play order inferred (head = Intro A B; solos on C D E; D.C. al Coda)"
+},
+{
+"bars": [
+1,
+2
+],
+"groups": [
+0,
+1
+],
+"text": "intro vamp played 3x"
+},
+{
+"bars": [
+9,
+10
+],
+"groups": [
+8,
+9
+],
+"text": "repeated 3x"
+},
+{
+"bars": [
+33,
+37
+],
+"groups": [
+32,
+36
+],
+"text": "last-beat note values guessed so the bars add up"
+},
+{
+"bars": [
+37
+],
+"groups": [
+36
+],
+"text": "durations of the last two notes guessed"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28
+],
+"groups": [
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27
+],
+"text": "note values partly guessed (dotted-8th vs 8th) from the scan"
+},
+{
+"bars": [
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65
+],
+"groups": [
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64
+],
+"text": "solo sections C, D, E are printed as rhythm slashes; written as rests with chords"
+},
+{
+"bars": [
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72
+],
+"groups": [
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71
+],
+"text": "printed as an 8-bar multirest under Em7 (eighth = dotted quarter)"
+},
+{
+"bars": [
+81,
+82,
+83,
+84
+],
+"groups": [
+80,
+81,
+82,
+83
+],
+"text": "coda vamp & fade, printed as slashes"
+},
+{
+"bars": [],
+"groups": [],
+"text": "check.py measures every bar against M:6/8 and ignores inline [M:5/8]/[M:3/8]/[M:4/4] changes; its 27 flagged bars are those meter-change bars"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Like Father, Like Son\nC:Billy Childs\nP:ABCDE\n%source New Real Book Volume 2 p163 (pdf 161)\n%style (Bright 6/8 Swing (16th's swing), dotted quarter = 87)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form Intro ABCDE 13+17+12+11+15, solos on CDE, D.C. al Coda\n%unsure [form] section bar counts and play order inferred (head = Intro A B; solos on C D E; D.C. al Coda)\nM:6/8\nL:1/8\nK:C\n%intro\n|: \"F#m11\"B6- | [M:5/8]B2- B3 :| [M:6/8]B6- | \"G7#9#5\"B2 B4 ||\nP:A\n\"Cm9\"B3/2B/2z/B/2 \"Cm6\"BBB | [M:5/8]\"Cm9\"B/B/z/B/\"Cm6\"B BB | [M:6/8]\"Bm9\"B2- B/B/4B/4 \"Bm6\"BBB | \"Bm9\"B3- \"E13#11b9\"BBB |\n\"Bbmaj7#11\"B3/2B/2B \"F#m7\"BBB | \"Abmaj7#11\"B3/2B3/2 \"Cmaj7#11\"B3/2B/B/B/ | \"C#m7\"B3/2B/2B \"Fmaj7\"BB3/2B/ | \"Amaj7#11\"B3 z \"C#maj9\"B2 |: \"Cm11\"B6- | [M:5/8]B2- B3 :| [M:6/8]\"Cm11\"B6- | B2 \"C#7#9#5\"B4 ||\nP:B\n\"F#m9\"B3/2B/2z/B/2 \"F#m6\"BBB | [M:5/8]\"F#m9\"B/B/z/B/\"F#m6\"B BB | [M:6/8]\"Fm9\"B2- B/B/4B/4 \"Fm6\"BBB | \"Fm9\"B3- \"Bb13#11b9\"BBB |\n\"Emaj7#11\"B3/2B/2B \"Cm7\"BBB | \"Dmaj7#11\"B3/2B3/2 \"Gbmaj7#11\"B3/2B/B/B/ | \"Ab/Bb\"B3/2\"Bb/Ab\"B3/2 \"G13sus\"B3- | B6- |\nB6- | [M:3/8]B3 | [M:6/8]\"Dbmaj7/Gb\"B3/2\"Ebmaj7/Ab\"B3/2 \"Fmaj7/Bb\"B2 \"Bbmaj7/Eb\"B | \"Amaj7/D\"B3/2\"Dmaj7/E\"B3/2 \"Cmaj7/G\"B3/2\"Gmaj7/A\"B3/2 |\n\"Fm(maj7)\"B6- | [M:5/8]B2- B3- | [M:6/8]B6- | [M:5/8]B2 \"C#m(add9)\"B B\"Bbsus\"B |\n[M:6/8]\"Bm\"BBz/B/ \"G#m7(omit5)\"B3- | B6- | [M:3/8]B3 | [M:6/8]B2 B2 B2 |\n\"F#/G\"B6- | B3 \"G#9b5\"BBB | \"C#9#11\"B3 \"F#7/D\"B3/2\"F/G\"B3/2 | [M:5/8]\"Cm\"BB!fermata!B3/2\"C#m7b13\"B3/2 |\n[M:6/8]\"F#m11\"B6- | [M:5/8]B2- B3- | [M:6/8]B6- | B2 \"G7b9#5\"B4 ||\nP:C\n|: \"Cm9\"z3 z3 | z3 z3 | \"Bm9\"z3 z3 | \"Bm9\"z3 \"E7\"z3 |\n\"Bbmaj7\"z3 \"F#m7\"z3 | \"Abmaj7#11\"z3 \"Cmaj7\"z3 | \"C#m7\"z3 \"Fmaj7\"z3 | \"Amaj7#11\"z3 \"C#maj7\"z3 |\n\"Cm9\"z3 z3 | z3 z3 | z3 z3 | \"Cm9\"z3 \"C#7#9\"z3 ||\nP:D\n\"F#m7\"z3 z3 | z3 z3 | \"Fm7\"z3 z3 | \"Fm7\"z3 \"Bb7\"z3 |\n\"Emaj7#11\"z3 \"Cm7\"z3 | \"Dmaj7#11\"z3 \"Gbmaj7#11\"z3 | \"Ab/Bb\"z3/2\"Bb/Ab\"z3/2 \"G13sus\"z3 | \"G13sus\"z3 z3 |\nz3 z3 | \"Ab/Bb\"z3/2\"Bb/Ab\"z3/2 \"G13sus\"z3 | z3 \"B7#9\"z3 ||\nP:E\n[M:4/4]\"Em7\"z8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 |\n\"Gm7\"z8 | \"Am7\"z8 | \"Bm7\"z8 | \"C#m7\"z8 |\n\"Dm7\"z8 | z8 | z8 | \"G7\"\"(C#7 last x)\"z8 :|\n%coda\n|: \"F#m11\"z3 z3 | [M:5/8]z2 z3 | [M:6/8]z3 z3 | [M:5/8]z2 \"Am6/B\"z3 :|\n\n%unsure [bars 1-2] intro vamp played 3x\n%unsure [bars 9-10] repeated 3x\n%unsure [bars 33, 37] last-beat note values guessed so the bars add up\n%unsure [bar 37] durations of the last two notes guessed\n%unsure [bars 21-28] note values partly guessed (dotted-8th vs 8th) from the scan\n%unsure [bars 42-65] solo sections C, D, E are printed as rhythm slashes; written as rests with chords\n%unsure [bars 65-72] printed as an 8-bar multirest under Em7 (eighth = dotted quarter)\n%unsure [bars 81-84] coda vamp & fade, printed as slashes\n%unsure [general] check.py measures every bar against M:6/8 and ignores inline [M:5/8]/[M:3/8]/[M:4/4] changes; its 27 flagged bars are those meter-change bars"
+},
+{
+"id": "New_Real_Book_Volume2/163-like-sonny",
+"book": "The New Real Book Vol. 2",
+"title": "Like Sonny",
+"pdf": "163",
+"form": "AB 24+24, solos on B (swing), D.C. al Coda",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "bar counts per section counted from the print; head = A, solos on B, D.C. al Coda"
+},
+{
+"bars": [
+23,
+24
+],
+"groups": [
+22,
+23
+],
+"text": "the coda sign sits at bar 23 (Fmaj7); D.C. al Coda jumps there"
+},
+{
+"bars": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"groups": [
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47
+],
+"text": "solo section (swing) printed as rhythm slashes; written as rests with chords"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Like Sonny\nC:John Coltrane\nP:AB\n%source New Real Book Volume 2 p165 (pdf 163)\n%style (Med. Bossa, quarter = 154)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 24+24, solos on B (swing), D.C. al Coda\n%unsure [form] bar counts per section counted from the print; head = A, solos on B, D.C. al Coda\nM:4/4\nL:1/8\nK:C\nP:A\n\"Em7\"B/B/B/B/ B2- B3/2B/ B/B/B/B/ | B2- B3/2B/ B/B/B/B/ B3/2B/ | \"Gm7\"B/B/B/B/ B2- B3/2B/ B/B/B/B/ | \"Gm7\"B2- B3/2B/ B/B/B/B/ B3/2B/ |\n\"Bbm7\"B/B/B/B/ B2- B3/2B/ B/B/B/B/ | \"Bbm7\"B2- B3/2B/ \"C7#5\"B/B/B/B/ B/B/B/B/ | \"Fmaj7\"B3 B B2 BB- | B4 z4 |\n\"Bm7\"B/B/B/B/ B2- B3/2B/ B/B/B/B/ | \"Bm7\"B2- B3/2B/ B/B/B/B/ B/B/B/B/ | \"Gm7\"B/B/B/B/ B2- B3/2B/ B/B/B/B/ | B2- B3/2B/ B/B/B/B/ B/B/B/B/ |\n\"Ebm7\"B/B/B/B/ B2- B3/2B/ B/B/B/B/ | \"Ebm7\"\"(D7)\"B2- B3/2B/ \"Ab7\"B/B/B/B/ B/B/B/B/ | \"Dbmaj7\"B8- | \"Fm7\"B4 \"Bb7\"z4 |\n\"Em7\"B/B/B/B/ B2- B3/2B/ B/B/B/B/ | B2- B3/2B/ B/B/B/B/ B3/2B/ | \"Gm7\"B/B/B/B/ B2- B3/2B/ B/B/B/B/ | \"Gm7\"B2- B3/2B/ B/B/B/B/ B3/2B/ |\n\"Bbm7\"B/B/B/B/ B2- B3/2B/ B/B/B/B/ | \"Bbm7\"B2- B3/2B/ \"C7#5\"B/B/B/B/ B/B/B/B/ | \"Fmaj7\"B3 B B2 BB- | B4 z4 |]\nP:B\n|: \"Em7\"z8 | z8 | \"Gm7\"z8 | z8 |\n\"Bbm7\"z8 | \"Bbm7/C\"z4 \"C7#5\"z4 | \"Fmaj7\"z8 | z8 |\n\"Bm7\"z8 | z8 | \"Gm7\"z8 | z8 |\n\"Ebm7\"z8 | \"Ebm7\"\"(D7)\"z4 \"Ab7\"z4 | \"Dbmaj7\"z8 | \"Fm7\"z4 \"Bb7\"z4 |\n\"Em7\"z8 | z8 | \"Gm7\"z8 | z8 |\n\"Bbm7\"z8 | \"Bbm7/C\"z4 \"C7#5\"z4 | \"Fmaj7\"z8 | z8 :|\n%coda\n\"Fmaj7\"B2- B3/2B/ B2- B3/2B/ | B3/2B/ !fermata!B6 |]\n\n%unsure [bars 23-24] the coda sign sits at bar 23 (Fmaj7); D.C. al Coda jumps there\n%unsure [bars 25-48] solo section (swing) printed as rhythm slashes; written as rests with chords"
+},
+{
+"id": "New_Real_Book_Volume2/165-lisa",
+"book": "The New Real Book Vol. 2",
+"title": "Lisa",
+"pdf": "165",
+"form": "Intro A B 4+21+8 (A repeats with 1st/2nd endings; B repeats 4x), D.S. al 2nd ending al Coda",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section bar counts and play order inferred from the repeats and D.S./Coda markings"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro printed as slashes (alto fills); bar 4 hits read from a small scan"
+},
+{
+"bars": [
+24,
+26
+],
+"groups": [
+23,
+25
+],
+"text": "rhythm of the 8th-note figure and chord placement read from a small scan"
+},
+{
+"bars": [
+30,
+31,
+32,
+33
+],
+"groups": [
+29,
+30,
+31,
+32
+],
+"text": "B repeats 4x: endings printed 1-3 and 4; the alto-fills and Ab7 bars are slashes, written as rests"
+},
+{
+"bars": [],
+"groups": [],
+"text": "after B: D.S. al 2nd ending al Coda"
+},
+{
+"bars": [
+37,
+38,
+39,
+40
+],
+"groups": [
+36,
+37,
+38,
+39
+],
+"text": "coda alto solo, vamp & fade, printed as slashes"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Lisa\nC:David Sanborn\nP:AB\n%source New Real Book Volume 2 p168 (pdf 165)\n%style (Med. Funk Ballad, quarter = 92)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form Intro A B 4+21+8 (A repeats with 1st/2nd endings; B repeats 4x), D.S. al 2nd ending al Coda\n%unsure [form] section bar counts and play order inferred from the repeats and D.S./Coda markings\nM:4/4\nL:1/8\nK:Gb\n%intro\n|: \"Gbmaj7\"z8 | z8 | \"Gb/E\"z8 | \"Cmaj7b5\"B3 \"B/G\"B z2 \"D/Bb\"B2 :|\nP:A\n\"Gbmaj7\"z8 | zB BB- B B2 !segno!B- |: \"Fm7\"B B3 z4 | \"E7\"BB BB B2 B\"Ebm7\"B- |\n\"Ebm7\"BB B6 | z4 zB/B/ BB | \"Ab7\"BB BB- BB/B/ B/B/B- | B B3 z2 zB/B/ |\n\"Cbmaj7\"BB BB- BB BB- | BB BB- B2 zB/B/ |1 \"Ab7\"BB BB- BB BB- | BB BB- B2 zB/B/ |\n\"Cbmaj7\"BB BB- BB BB- | \"Ab9\"B2 \"Abm9\"BB \"G7#9\"B2 BB | \"Gbmaj7\"B/B/B- B6 | zB BB- BB \"Fm7\"BB- :|2\n\"Ab7\"BB BB- BB BB- | BB BB- B2 zB/B/ | \"Cbmaj7\"B3/2B/ B3/2B/ BB \"Ab9\"BB- | BB \"G7#9\"BB z B2 \"Cmaj7b5\"B- |\n\"Cmaj7b5\"B3 \"B/G\"B- B2 z2 | \"D/Bb\"z4 z2 B/B3/2 | \"Cmaj7b5\"B3 \"B/G\"B- B2 \"D/Bb\"z2 | z4 zB/B/ B\"Eb7#9\"B ||\nP:B\n|: \"Eb7#9\"B3 B- B4 | z8 |1 \"Ab7\"z8 | z8 :|2\n\"Ab7\"z8 | \"Abm9\"z/B3/2 BB \"G7#9\"BB B/B/B- | \"Gbmaj7\"B2 z2 z4 | zB BB- BB \"Fm7\"BB- |]\n%coda\n|: \"Eb7#9\"z8 | z8 | \"Ab7\"z8 | z8 :|\n\n%unsure [bars 1-4] intro printed as slashes (alto fills); bar 4 hits read from a small scan\n%unsure [bars 24, 26] rhythm of the 8th-note figure and chord placement read from a small scan\n%unsure [bars 30-33] B repeats 4x: endings printed 1-3 and 4; the alto-fills and Ab7 bars are slashes, written as rests\n%unsure [general] after B: D.S. al 2nd ending al Coda\n%unsure [bars 37-40] coda alto solo, vamp & fade, printed as slashes"
+},
+{
+"id": "New_Real_Book_Volume2/166-little-wind",
+"book": "The New Real Book Vol. 2",
+"title": "Little Wind",
+"pdf": "166",
+"form": "ABC 8+8+8 (A repeats, melody 2nd x only; B and C vamp till cue), D.C. play A, vamp & fade on B",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 8,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "play order inferred from the cue/D.C. text: A A B (vamp) C (vamp) A B (fade)"
+},
+{
+"bars": [
+5
+],
+"groups": [
+4
+],
+"text": "note values of beats 3-4 guessed so the bar adds up"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "synth melody 2nd time only (piano voicings on a second staff not transcribed)"
+},
+{
+"bars": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"groups": [
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15
+],
+"text": "piano solo, printed as slashes (synth holds a whole note in bar 9); vamp & solo till cue, then C"
+},
+{
+"bars": [
+17,
+18,
+19,
+20
+],
+"groups": [
+16,
+17,
+18,
+19
+],
+"text": "piano part only here, written as rests with chords on the piano hits (beat 3 and the and of 4)"
+},
+{
+"bars": [
+21,
+22,
+23,
+24
+],
+"groups": [
+20,
+21,
+22,
+23
+],
+"text": "synth part is rhythmically free (book's note); bar 24 rhythm guessed to match the others"
+},
+{
+"bars": [],
+"groups": [],
+"text": "C: 1st & 2nd x as written, 3rd and following x piano solo indef.; on the recording the first 4 bars of C are omitted before the D.C."
+},
+{
+"bars": [],
+"groups": [],
+"text": "section C is in 7/4 (inline [M:7/4]); check.py measures against M:4/4, so its 8 flagged bars are the 7/4 bars 17-24"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Little Wind\nC:Geri Allen\nP:ABCAB\n%source New Real Book Volume 2 p169 (pdf 166)\n%style (Medium Straight 8th's/Latin, half note = 195)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 8+8+8 (A repeats, melody 2nd x only; B and C vamp till cue), D.C. play A, vamp & fade on B\n%unsure [form] play order inferred from the cue/D.C. text: A A B (vamp) C (vamp) A B (fade)\nM:4/4\nL:1/8\nK:C\nP:A\n|: \"C(add9)/E\"B4 \"D(add9)/F#\"B4 | \"A7sus\"B3 B- \"Bm7\"B4 | \"Abmaj7sus/F\"B8- | \"Gbmaj7sus/F\"B2 B6 |\n\"C(add9)/E\"B4- \"D(add9)/F#\"B3 B- | \"A7sus\"B4 \"Bm7\"B4 | \"Abmaj7sus/G\"B8 | \"Gbmaj7sus/Ab\"B8 :|\nP:B\n|: \"C(add9)/E\"z4 \"D(add9)/F#\"z4 | \"A7sus\"z4 \"Bm7\"z4 | \"Abmaj7sus/F\"z8 | \"Gbmaj7sus/F\"z8 |\n\"C(add9)/E\"z4 \"D(add9)/F#\"z4 | \"A7sus\"z4 \"Bm7\"z4 | \"Abmaj7sus/G\"z8 | \"Gbmaj7sus/Ab\"z8 :|\nP:C\n|: z4 \"Abmaj7sus/F\"z3 z \"Gbmaj7sus/Bb\"z6 | z4 \"Bmaj7sus/F\"z3 z \"Gbmaj7sus/Ab\"z6 | z4 \"Abmaj7sus/F\"z3 z \"Gbmaj7sus/Bb\"z6 | z4 \"Bmaj7sus/F\"z3 z \"Gbmaj7sus/G\"z6 |\nB4- \"Abmaj7sus/F\"B2- B\"Gbmaj7sus/Bb\"B- B6 | B4- \"Bmaj7sus/F\"B2- B\"Gbmaj7sus/Ab\"B- B6 | B4- \"Abmaj7sus/F\"B2- B\"Gbmaj7sus/Bb\"B- B6 | B4- \"Bmaj7sus/F\"B2- B\"Dbmaj7sus/G\"B- B6 :|\n\n%unsure [bar 5] note values of beats 3-4 guessed so the bar adds up\n%unsure [bars 1-8] synth melody 2nd time only (piano voicings on a second staff not transcribed)\n%unsure [bars 9-16] piano solo, printed as slashes (synth holds a whole note in bar 9); vamp & solo till cue, then C\n%unsure [bars 17-20] piano part only here, written as rests with chords on the piano hits (beat 3 and the and of 4)\n%unsure [bars 21-24] synth part is rhythmically free (book's note); bar 24 rhythm guessed to match the others\n%unsure [general] C: 1st & 2nd x as written, 3rd and following x piano solo indef.; on the recording the first 4 bars of C are omitted before the D.C.\n%unsure [general] section C is in 7/4 (inline [M:7/4]); check.py measures against M:4/4, so its 8 flagged bars are the 7/4 bars 17-24"
+},
+{
+"id": "New_Real_Book_Volume2/168-loose-ends",
+"book": "The New Real Book Vol. 2",
+"title": "Loose Ends",
+"pdf": "168",
+"form": "A B 16+18 (A ends with a repeated 4-bar Em9 vamp and 1st ending; B is the 2nd ending), D.C. al 2nd ending",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section bar counts and play order inferred from the repeat and D.C. al 2nd ending markings"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10
+],
+"text": "triplet groupings and tie placements read from a small scan; several bars guessed so they add up"
+},
+{
+"bars": [
+12,
+13,
+14,
+15
+],
+"groups": [
+11,
+12,
+13,
+14
+],
+"text": "Em9 vamp with guitar fills (slashless empty bars written as rests)"
+},
+{
+"bars": [
+16,
+17,
+18,
+19
+],
+"groups": [
+15,
+16,
+17,
+18
+],
+"text": "1st ending; then D.C. al 2nd ending"
+},
+{
+"bars": [
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33
+],
+"groups": [
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32
+],
+"text": "2nd ending (B): rhythms read from a small scan, bars 30-31 especially; chords over a G# pedal and lower notes on D.C. (block voicings) reduced to the top line"
+},
+{
+"bars": [
+34,
+35,
+36,
+37
+],
+"groups": [
+33,
+34,
+35,
+36
+],
+"text": "coda Am9 vamp with guitar fills"
+},
+{
+"bars": [],
+"groups": [],
+"text": "book note: gtr. adds tenor on repeat & D.C."
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Loose Ends\nC:Mike Stern\nP:AB\n%source New Real Book Volume 2 p171 (pdf 168)\n%style (Med. Funk Shuffle, half note = 75, triplet shuffle feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A B 16+18 (A ends with a repeated 4-bar Em9 vamp and 1st ending; B is the 2nd ending), D.C. al 2nd ending\n%unsure [form] section bar counts and play order inferred from the repeat and D.C. al 2nd ending markings\nM:C|\nL:1/8\nK:C\nP:A\n\"Bmaj7/F\"(3B2B2B2- B4 | z2 \"Bbmaj7/F\"(3B2B2B2 \"Abmaj7/F\"B2 | \"Fmaj7\"B8- | B4 \"Ebm7\"(3B2B2B2 |\n\"F(add9)/A\"B4 \"G9sus\"z4 | (3z2B2B2 \"Bbmaj7/F\"B4 | \"Abmaj7/F\"(3z2B2B2 \"Fmaj7\"B4 | \"Dm7\"B4 \"Dbmaj7\"(3B2B2B2 |\n\"Abm7\"B8 | \"G7#5\"B2- B2 (3B2B2B2 | \"F#m7\"B3 B \"F7#9#5\"B3 B || |: \"Em9\"B8 |\nz8 | z8 | z8 :| \"Ebm9\"z B2 B- B B2 B |\n\"D7#11#9\"B2 B2 BB/B/ B2- | \"Db9sus\"B8 | \"Cm7(11)\"B8 |]\nP:B\n\"Ebm9\"z B2 B- B B2 B | \"D7#11#9\"B2 B2 BB/B/ B2- | \"Db9sus\"B8- | \"Gb13sus\"B8 |\n\"Cm7b5\"B3 B- B B2 B | \"Cbmaj7\"B2- B2 B4- | \"Bbm7(11)\"B8- | \"G7#5\"B8 |\n\"Amaj7\"z2 zB- B B2 B | \"C#m7/B\"BB-\"Amaj7\"BB \"G#m7b5\"B4- | B4 zBBB | \"Gm7\"BBBB B2 B2- |\n\"F#m7\"B3 B \"F7#9#5\"B3 B | \"Em9\"B3 B \"Bb7#9#5\"B3 B ||\n%coda\n|: \"Am9\"B8 | z8 | z8 | z8 :|\n\n%unsure [bars 1-11] triplet groupings and tie placements read from a small scan; several bars guessed so they add up\n%unsure [bars 12-15] Em9 vamp with guitar fills (slashless empty bars written as rests)\n%unsure [bars 16-19] 1st ending; then D.C. al 2nd ending\n%unsure [bars 20-33] 2nd ending (B): rhythms read from a small scan, bars 30-31 especially; chords over a G# pedal and lower notes on D.C. (block voicings) reduced to the top line\n%unsure [bars 34-37] coda Am9 vamp with guitar fills\n%unsure [general] book note: gtr. adds tenor on repeat & D.C."
+},
+{
+"id": "New_Real_Book_Volume2/170-loxodrome",
+"book": "The New Real Book Vol. 2",
+"title": "Loxodrome",
+"pdf": "170",
+"form": "A 23 bars (head), B solos",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "fill: slashes and a rest bar written as rests"
+},
+{
+"bars": [
+15,
+16
+],
+"groups": [
+14,
+15
+],
+"text": "fill: slashes and a rest bar written as rests"
+},
+{
+"bars": [
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44
+],
+"groups": [
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43
+],
+"text": "solo slashes written as rests with chords; Z8 are printed 8-bar repeats of the chord"
+},
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the page"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Loxodrome\nC:Eddie Gomez\nP:AB\n%source New_Real_Book_Volume2 p174 (pdf 170)\n%style (Bright Swing, quarter = 248; as played by Steps Ahead)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 23 bars (head), B solos\nM:4/4\nL:1/8\nK:C\nP:A\n%tenor\n\"Am7\"B4 (3B2B2B2 | \"F#7#5\"B4 B3 B- | \"F#/G\"B4 z2 zB | \"C#/A\"B4 (3z2B2B2 |\n\"C#/D\"B8- | \"Dmaj7\"B4 z2 z\"C7sus(b9)\"B- | B2 z6 | z8 |\n\"C(add9)/E\"B4- BB B\"Gbmaj7b5\"B- | B3 B- B4 | \"Db(add9)/F\"B4 z2 \"G#7#9#5/E\"BB- | B6 \"C#/A\"BB- |\n\"C#/A\"B8- | \"Amaj7b5\"B4 z2 z\"Dm7\"B- | B2 z6 | z8 |\n\"Bm7b5\"B6 BB | \"Dm7\"B2 B2 \"G7#5\"B2 BB- | \"C#m7\"B6 BB | \"Dm7\"B2 B2 \"G7#5\"B2 B\"Cm(maj7)\"B- |\n\"Cm(maj7)\"B7 \"Cm7\"B- | \"A/Bb\"B8- | B8 |]\n%fine (last time: rit. to end from bar 18)\nP:B\n%solos\n|: \"Am7\"z8 | \"F#7#5\"z8 | \"Gmaj7\"z8 | \"C#/A\"z8 |\n\"Dmaj7\"z8 | z8 | \"C7sus(b9)\"Z8 | \"Em7\"z8 |\n\"Gbmaj7b5\"z8 | \"Db(add9)/F\"z8 | \"G#7#9#5/E\"z8 | \"Amaj7\"z8 |\nz8 | \"Dm7\"Z8 | \"Bm7b5\"z8 | \"Dm7\"z4 \"G7#5\"z4 |\n\"Am7\"z8 | \"Dm7\"z4 \"G7#5\"z4 | \"Cm7\"z8 | \"A/Bb\"z8 | z8 :|\n%after solos D.C. al fine. Intro on record is one chorus played rubato.\n\n%unsure [bars 7-8] fill: slashes and a rest bar written as rests\n%unsure [bars 15-16] fill: slashes and a rest bar written as rests\n%unsure [bars 24-44] solo slashes written as rests with chords; Z8 are printed 8-bar repeats of the chord\n%unsure [form] section lengths counted from the page"
+},
+{
+"id": "New_Real_Book_Volume2/171-lullaby-of-the-leaves",
+"book": "The New Real Book Vol. 2",
+"title": "Lullaby of the Leaves",
+"pdf": "171",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+8,
+16
+],
+"groups": [
+7,
+15
+],
+"text": "second half of the bar: chords over a held note / rest; read as half (tied) then rest"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22
+],
+"groups": [
+16,
+17,
+18,
+19,
+20,
+21
+],
+"text": "eighth-triplet / straight-eighth pattern per beat read from small print"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Lullaby of the Leaves\nC:Bernice Petkere (music), Joe Young (lyric)\nP:AABA\n%source New_Real_Book_Volume2 p175 (pdf 171)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8\nM:4/4\nL:1/8\nK:Dm\nP:A\n\"Dm\"B3 B \"Bm7b5\"B3 B | \"E7\"B2 B2 \"A7#5\"B3 B | \"Am7\"B3 B \"D7\"B3 B | \"Gm7\"B2 B2 \"F9\"B2 B2 |\n\"Em7b5\"(3B2B2B2 B4 | \"A7#5\"(3B2B2B2 B2 B2 | \"Dm\"B8- | B4 \"Bb7\"z2 \"A7\"z2 |\nP:A\n\"Dm\"B3 B \"Bm7b5\"B3 B | \"E7\"B2 B2 \"A7#5\"B3 B | \"Am7\"B3 B \"D7\"B3 B | \"Gm7\"B2 B2 \"F9\"B2 B2 |\n\"Em7b5\"(3B2B2B2 B4 | \"A7#5\"(3B2B2B2 B2 B2 | \"Dm\"B8- | B6 zB |\nP:B\n\"Bb7\"\"(Gm7)\"(3BBB BB (3BBB BB | (3BBB BB (3BBB BB | \"D6\"B3 B \"A9sus\"B3 B | \"D6\"B4 \"D7\"z2 zB |\n\"Bb7\"\"(Gm7)\"(3BBB BB (3BBB BB | (3BBB BB (3BBB BB | \"D6\"B3 B \"B7\"B4 | \"Em7b5\"z2 B2 \"A7#5\"B2 B2 ||\nP:A\n\"Dm\"B3 B \"Bm7b5\"B3 B | \"E7\"B2 B2 \"A7#5\"B3 B | \"Am7\"B3 B \"D7\"B3 B | \"Gm7\"B2 B2 \"F9\"B2 B2 |\n\"Em7b5\"(3B2B2B2 B4 | \"A7#5\"(3B2B2B2 B2 B2 | \"Dm\"B8- | \"(Em7b5)\"B4 \"(A7)\"z4 |]\n\n%unsure [bars 8, 16] second half of the bar: chords over a held note / rest; read as half (tied) then rest\n%unsure [bars 17-22] eighth-triplet / straight-eighth pattern per beat read from small print\n%unsure [general] lyrics are printed in the book but not written here"
+},
+{
+"id": "New_Real_Book_Volume2/172-mahjong",
+"book": "The New Real Book Vol. 2",
+"title": "Mahjong",
+"pdf": "172",
+"form": "A 28 (8+8+4 swing+8)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [
+1,
+2
+],
+"groups": [
+0,
+1
+],
+"text": "intro slashes written as rests with the chord on them"
+},
+{
+"bars": [
+19,
+20,
+21,
+22
+],
+"groups": [
+18,
+19,
+20,
+21
+],
+"text": "swing bars: ties and the 16th pair in bar 21 read from small print; grace notes skipped"
+},
+{
+"bars": [
+31,
+32
+],
+"groups": [
+30,
+31
+],
+"text": "coda vamp slashes written as rests"
+},
+{
+"bars": [],
+"groups": [],
+"text": "section split inferred"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Mahjong\nC:Wayne Shorter\nP:A\n%source New_Real_Book_Volume2 p176 (pdf 172)\n%style (Med. Afro/Latin, quarter = 164)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 28 (8+8+4 swing+8)\nM:4/4\nL:1/8\nK:Bb\n%intro (8x's)\n|: \"G7sus\"z8 | \"F6/9\"z8 :|\nP:A\n%segno (ten.)\n|: \"G7sus\"B2 BB BB BB | \"F6/9\"BB B2 B2 B2 | \"G7sus\"B3 B- B4- | \"F6/9\"B8- |\n\"G7sus\"B8- | \"F6/9\"B8 | \"G7sus\"z8 | \"F6/9\"z8 |\n\"Ebmaj13\"B2 BB BB BB | \"F6/9\"BB B2 B2 B2 | \"Ebmaj13\"B2 BB B4- | \"F6/9\"B8- |\n\"Ebmaj13\"B8- | \"F6/9\"B8 | \"Ebmaj13\"z8 | \"F6/9\"z8 |\n%swing\n\"E7#9\"B3 B- B B2 B | \"Fm7\"B4- \"Bb7b9\"B2 B2 | \"Ebmaj7\"B2 zB/B/ BB BB | \"Ebm7\"B3 \"Ab7\"B- B2 z2 |\n%afro/latin\n\"G7sus\"B2 BB BB BB | \"F6/9\"BB B2 B2 B2 | \"G7sus\"B3 B- B4- | \"F6/9\"B8- |\n\"G7sus\"B8- | \"F6/9\"B8 | \"G7sus\"z8 | \"F6/9\"z8 :|\n%solo on A; after solos D.S. al Coda. Head is played twice before and after solos.\n%coda\n|: \"G7sus\"z8 | \"F6/9\"z8 :|\n%vamp, fill and fade\n\n%unsure [bars 1-2] intro slashes written as rests with the chord on them\n%unsure [bars 19-22] swing bars: ties and the 16th pair in bar 21 read from small print; grace notes skipped\n%unsure [bars 31-32] coda vamp slashes written as rests\n%unsure [form] section split inferred"
+},
+{
+"id": "New_Real_Book_Volume2/173-manha-de-carneval",
+"book": "The New Real Book Vol. 2",
+"title": "Manha de Carnaval",
+"pdf": "173",
+"form": "ABC 16+16+4",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+26,
+27,
+32
+],
+"groups": [
+26,
+27,
+32
+],
+"text": "bar 26 read as one held note across the chord change; bar 32 pickup rhythm (rest then two notes) guessed as rest + quarter"
+},
+{
+"bars": [],
+"groups": [],
+"text": "tune continues onto pdf 174 (letter C); lyrics are printed in the book but not written here"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Manha de Carnaval\nT:(A Day in the Life of a Fool)\nC:Luis Bonfa (music), Carl Sigmand (lyric)\nP:ABC\n%source New_Real_Book_Volume2 p177 (pdf 173)\n%style (Medium Bossa Nova)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+16+4\nM:4/4\nL:1/8\nK:Am\nB2 |\nP:A\n\"Am\"B4- (3B2B2B2 | \"Bm7b5\"B4 \"E7\"(3z2B2B2 | \"Am\"B8- | \"Bm7b5\"B6 \"E7\"B2 |\n\"Am\"B4- (3B2B2B2 | \"Dm7\"B4 \"G7\"(3B2B2B2 | \"Cmaj7\"B8- | \"A7b9\"B4 (3B2B2B2 |\n\"Dm7\"B3 B B4- | \"G7\"B4 (3B2B2B2 | \"Cmaj7\"B3 B \"(Gm7)\"B2- \"(C7)\"B2- | \"Fmaj7\"B4 (3B2B2B2 |\n\"Bm7b5\"B3 B B4- | \"E7\"B4 (3B2B2B2 | \"Am\"B8- | \"Bm7b5\"B4 \"E7\"z2 B2 |\nP:B\n\"Am\"B4- (3B2B2B2 | \"Bm7b5\"B4 \"E7\"(3B2B2B2 | \"Am\"B8- | B6 B2 |\n\"Em7b5\"B4- (3B2B2B2 | \"A7\"B4- (3B2B2B2 | \"Dm\"B8- | B4 z2 B2 |\n\"Dm7\"B4- (3B2B2B2 | \"Bm7b5\"B4- \"E7\"B4 | \"Am7\"z2 B2 \"(Gm7)\"(3B2B2\"(C7)\"B2 | \"Fmaj7\"B6 B2 |\n\"Bm7b5\"B8- | \"E7\"B4 (3B2B2B2 | \"Am\"B8- | \"(Bm7b5)\"B4 \"(E7)\"z2 B2 ||\nP:C\n\"Dm7\"(3B2B2B2 \"Am\"(3B2B2B2 | \"Dm7\"(3B2B2B2 \"Am\"(3B2B2B2 | \"Dm7\"(3B2B2B2 \"Em7\"(3B2B2B2 | \"Am\"\"(E7)\"B8 |]\n%Letter C may be repeated; C is omitted for solos (may be used as an interlude)\n\n%unsure [bars 26-27, 32] bar 26 read as one held note across the chord change; bar 32 pickup rhythm (rest then two notes) guessed as rest + quarter\n%unsure [general] tune continues onto pdf 174 (letter C); lyrics are printed in the book but not written here"
+},
+{
+"id": "New_Real_Book_Volume2/175-the-masquerade-is-over",
+"book": "The New Real Book Vol. 2",
+"title": "The Masquerade Is Over",
+"pdf": "175",
+"form": "ABCD 16+16+8+16",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+34,
+38
+],
+"groups": [
+34,
+38
+],
+"text": "quarter-half-quarter grouping and chord position read from small print"
+},
+{
+"bars": [],
+"groups": [],
+"text": "tune continues onto pdf 176 (C and D); lyrics are printed in the book but not written here"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Masquerade Is Over\nC:Allie Wrubel (music), Herb Magidson (lyric)\nP:ABCD\n%source New_Real_Book_Volume2 p179 (pdf 175)\n%style (Med. Ballad; also played with a medium swing feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 16+16+8+16\nM:4/4\nL:1/8\nK:F\nB2 |\nP:A\n\"Fmaj7\"B6 B2 | \"Em7b5\"B4- \"A7\"(3B2B2B2 | \"Dm7\"B6 \"G9\"B2 | \"Cm7\"B6 \"F9\"BB |\n\"Bbmaj7\"B6 B2 | \"Am7b5\"B4- \"D7\"(3B2B2B2 | \"G7\"B6 B2 | \"Gm7\"B6 \"C7\"BB |\n\"Fmaj7\"B4- BB BB | \"Cm7\"B6 \"F7\"B2 | \"Bbmaj7\"B4 B4 | \"Eb9\"z2 B2 B2 B2 |\n\"Am7\"B8 | \"D7\"z2 B2 B3 B | \"Gm7\"B8- | \"C7\"B6 B2 ||\nP:B\n\"Fmaj7\"B6 B2 | \"Em7b5\"B4- \"A7\"(3B2B2B2 | \"Dm7\"B6 \"G9\"B2 | \"Cm7\"B6 \"F9\"BB |\n\"Bbmaj7\"B6 B2 | \"Am7b5\"B4- \"D7\"(3B2B2B2 | \"G7\"B6 B2 | \"Gm7\"B6 \"C7\"BB |\n\"Fmaj7\"B4- BB BB | \"Cm7\"B6 \"F7\"B2 | \"Bbmaj7\"B4 B4 | \"Eb9\"z2 B2 B2 B2 |\n\"Am7\"B4- \"D7\"B4 | \"Gm7\"z2 B2 \"C13\"B2 B2 | \"F6\"B4- \"Eb9\"B4- | \"F6\"B6 \"D7#9#5\"B2 ||\nP:C\n\"Gm7\"BB BB \"C7\"B2 B2 | \"Am7\"B2 \"D7\"B4 B2 | \"Gm7\"BB BB \"C7\"B2 B2 | \"Fmaj7\"B6 B2 |\n\"Bm7b5\"B2 B2 \"E7\"B2 BB | \"Am7\"B2 B4 \"D9\"B2 | \"Dm7\"B4- \"G7\"(3B2B2B2 | \"Gm7\"B6 \"C7\"B2 ||\nP:D\n\"Fmaj7\"B6 B2 | \"Em7b5\"B4- \"A7\"(3B2B2B2 | \"Dm7\"B6 \"G9\"B2 | \"Cm7\"B6 \"F9\"BB |\n\"Bbmaj7\"B6 B2 | \"Am7b5\"B4- \"D7\"(3B2B2B2 | \"G7\"B6 B2 | \"Gm7\"B6 \"C7\"BB |\n\"Fmaj7\"B4- BB BB | \"Cm7\"B6 \"F7\"B2 | \"Bbmaj7\"B4 B4- | \"Eb9\"B2 B2 B2 B2 |\n\"Am7\"B4- \"D7\"B4 | \"Gm7\"z2 B2 \"C9sus\"B2 B2 | \"F6\"B8 | \"(Gm7)\"z4 \"(C7)\"z4 |]\n%alternate changes for bars 5-7 of A, B and D: Bm7 E7 | Am7 D7 | G#m7 C#7\n\n%unsure [bars 34, 38] quarter-half-quarter grouping and chord position read from small print\n%unsure [general] tune continues onto pdf 176 (C and D); lyrics are printed in the book but not written here"
+},
+{
+"id": "New_Real_Book_Volume2/177-mean-to-me",
+"book": "The New Real Book Vol. 2",
+"title": "Mean to Me",
+"pdf": "177",
+"form": "AABA 16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+6,
+14,
+29
+],
+"groups": [
+5,
+13,
+28
+],
+"text": "eighth groupings and ties read from small print"
+},
+{
+"bars": [],
+"groups": [],
+"text": "book letters A B C over 16+8+8; written as AABA since C repeats A"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed in the book but not written here"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Mean to Me\nC:Fred E. Ahlert, Roy Turk\nP:AABA\n%source New_Real_Book_Volume2 p181 (pdf 177)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 16+8+8\nM:4/4\nL:1/8\nK:G\nP:A\n\"Gmaj7\"B2 BB- \"G#o7\"B4 | \"Am7\"B3 B- \"D7\"\"(Bbo7)\"BB B2 | \"Gmaj7\"\"(Bm7)\"B2 BB- \"Dm7\"B2- \"G7\"B2 | \"Cmaj7\"B3 B- \"F9\"BB B2 |\n\"Gmaj7\"B2 BB- \"E7\"B4 | \"Am7\"BB BB- \"D7\"B2 B2 | \"G6\"B2 \"Em7\"B6 | \"A7\"BB BB- \"D7\"B4 |\n\"Gmaj7\"B2 BB- \"G#o7\"B4 | \"Am7\"B3 B- \"D7\"\"(Bbo7)\"BB B2 | \"Gmaj7\"\"(Bm7)\"B2 BB- \"Dm7\"B2- \"G7\"B2 | \"Cmaj7\"B3 B- \"F9\"BB B2 |\n\"Gmaj7\"B2 BB- \"E7\"B4 | \"Am7\"BB BB- \"D7\"B2 B2 | \"G6\"B2 \"C6\"B6 | \"G6\"z2 B2 \"Dm7\"B2 \"G7\"B2 ||\nP:B\n\"C6\"B4 B4 | \"D9\"z2 BB- \"G7\"BB B2 | \"C6\"B8- | \"F7\"B2 B2 \"E7\"B2 B2 |\n\"Am\"B4 B4 | \"F7\"z2 B2 \"E7\"B2 B2 | \"A9\"B3 B- BB B2 | \"D7\"B4 \"D7#5\"B4 ||\nP:A\n\"G6\"B2 BB- \"G#o7\"B4 | \"Am7\"B3 B- \"D7\"\"(Bbo7)\"BB B2 | \"Gmaj7\"\"(Bm7)\"B2 BB- \"Dm7\"B2- \"G7\"B2 | \"Cmaj7\"B3 B- \"F9\"BB B2 |\n\"Gmaj7\"B2 BB- \"E7\"BB B2 | \"Am7\"B6 \"D7\"B2 | \"G6\"B2- \"(Em7)\"B6 | \"(Am7)\"z4 \"(D7)\"z4 |]\n\n%unsure [bars 6, 14, 29] eighth groupings and ties read from small print\n%unsure [form] book letters A B C over 16+8+8; written as AABA since C repeats A\n%unsure [general] lyrics are printed in the book but not written here"
+},
+{
+"id": "New_Real_Book_Volume2/178-memories-of-you",
+"book": "The New Real Book Vol. 2",
+"title": "Memories of You",
+"pdf": "178",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+24
+],
+"groups": [
+23
+],
+"text": "read as half note + half rest under C7 slashes"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Memories of You\nC:Eubie Blake / Andy Razaf\nP:ABC\n%source New Real Book Vol 2 p182 (pdf 178)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\nM:4/4\nL:1/8\nK:F\nP:A\n\"Fmaj7\"B2 B2 \"F#o7\"B4 | \"Gm7\"B2 B2 \"G#o7\"B4 | \"Fmaj7/A\"B2 B2 \"Dm7\"B2 B2 | \"Bm7b5\"B4- \"Bbm6\"B4 |\nw: Wak-ing skies at sun-rise, Ev-'ry sun-set, too, _\n\"Fmaj7\"B2 B2 \"E7\"B4 | \"Eb13\"B2 B2 \"D7b9\"B4 | \"G7\"B2 B2 \"C9\"B2 B2 | \"F6\"B4- \"Gm7\"B2 \"C7\"z2 |\nw: Seems to be bring-ing me mem-o-ries of you. _\n\"Fmaj7\"B2 B2 \"F#o7\"B4 | \"Gm7\"B2 B2 \"G#o7\"B4 | \"Fmaj7/A\"B2 B2 \"Dm7\"B2 B2 | \"Bm7b5\"B4- \"Bbm6\"B4 |\nw: Here and there, ev-'ry-where, Scenes that we once knew, _\n\"Fmaj7\"B2 B2 \"E7\"B4 | \"Eb13\"B2 B2 \"D7b9\"B4 | \"G7\"B2 B2 \"C9\"B2 B2 | \"F6\"B4 \"Em7b5\"z2 \"A7\"z2 |\nw: And they all just re-call mem-o-ries of you.\nP:B\n\"Dm\"B2 B2 B2 B2 | \"Bb9\"B2 B2 B2 B2 | \"Dm\"B2 B2 B2 B2 | \"G9\"B4- \"A7\"B4 |\nw: How I wish I could for-get those hap-py yes-ter-years _\n\"Dm\"B2 B2 B2 B2 | \"G9sus\"B2 B2 \"G9\"B2 B2 | \"Gm7\"B8- | B4 \"C7\"z4 |\nw: that have left a ro-sa-ry of tears. _\nP:C\n\"Fmaj7\"B2 B2 \"F#o7\"B4 | \"Gm7\"B2 B2 \"G#o7\"B4 | \"Fmaj7/A\"B2 B2 \"Dm7\"B2 B2 | \"Bm7b5\"B4- \"Bbm6\"B4 |\nw: Your face beams in my dreams, Spite of all I do, _\n\"Fmaj7\"B2 B2 \"E7\"B4 | \"Eb13\"B2 B2 \"D7b9\"B4 | \"G7\"B2 B2 \"C9\"B2 B2 | \"F6\"B4- \"Gm7\"B2 \"C7\"z2 |]\nw: Ev-'ry-thing seems to bring mem-o-ries of you. _\n\n%unsure [bar 24] read as half note + half rest under C7 slashes"
+},
+{
+"id": "New_Real_Book_Volume2/179-midland",
+"book": "The New Real Book Vol. 2",
+"title": "Midland",
+"pdf": "179",
+"form": "AABC 16+16+20+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form text \"Solo on form (AABC)\" is printed; bar counts per section inferred (A has 1st/2nd endings)"
+},
+{
+"bars": [
+4
+],
+"groups": [
+3
+],
+"text": "pickup eighths marked \"2nd x (sop.)\": played the second time only"
+},
+{
+"bars": [
+37
+],
+"groups": [
+36
+],
+"text": "two voices printed (whole note under half rest, quarter rest, quarter note); read as half note + quarter rest + quarter"
+},
+{
+"bars": [],
+"groups": [],
+"text": "piano/bass cue notes in B section (Dbmaj7, Bbm7 bars) not transcribed; after solos D.S., play melody, vamp & fade on C (drums fill)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Midland\nC:Billy Childs\nP:AABC\n%source New Real Book Vol 2 p183 (pdf 179)\n%style (Med. Straight 8th's, quarter = 136; B section Bossa)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+20+8\n%unsure [form] form text \"Solo on form (AABC)\" is printed; bar counts per section inferred (A has 1st/2nd endings)\nM:4/4\nL:1/8\nK:F\n%intro\n|: \"Dm7\"z8 | z8 | \"Bbmaj7#11\"z8 | z4 BB BB- :|\nP:A\nS\"Dm7\"B7 B- | B8- | \"Bbmaj7#11\"B8 | z4 BB BB- |\n\"Dm7\"B7 B- | B8- | \"Bbmaj7#11\"B8 | z4 BB BB- |1 \"Gm7\"B7 B- | B8- | \"Ebmaj7#11\"B8 | z4 z2 zB/B/ |\n\"Em7\"B6 B\"Ebmaj7#11\"B- | B8- | \"Em7#11\"B8 | \"Eb7/A\"z4 BB BB- :|2\n\"Gm7\"B7 B- | B8- | \"Cm7\"B8 | z4 z2 zB/B/ |\n\"Abm11\"B6 B\"Gmaj7#11\"B- | B8- | \"Dmaj7#11/C#\"B8- | B4 (3B2B2B2 ||\nP:B\nK:C\n\"Em9\"B8- | B4- (3:2:4B2B2BB | \"Cm9\"B8- | \"F13\"B4- (3:2:4B2B2BB |\n\"Ebm9\"B8 | \"Ab7\"B4 B3 B | \"Dbmaj7\"B/B/B- B6- | \"Bbm7\"B4 z2 B2 |\n\"G13b9\"B4 \"G7#5b9\"z2 B2 | \"C7#9#5\"B4 B3 B | \"Fm7\"B/B/B- B6- | \"F#m9\"B4 BB BB- |\n\"C#m9\"B8 | \"F#m9\"B4 BB BB- | \"C#m9\"B7 \"Bb7#9#5\"B- | B3 B- BB BB- |\n\"Eb7#9#5\"B8- | \"Am9\"B4 \"Am9/G\"(3B2B2B2 | \"Fmaj7#11\"B8 | \"Em11b5\"B4- \"A7#11b9\"(3B2B2B2 ||\nP:C\nK:F\n\"Dm7\"!trill!B8- | B8 | \"Bbmaj7#11\"z8 | z8 |\n\"Dm7\"z8 | z8 | \"Bbmaj7#11\"z8 | \"(A7#5)\"z8 |]\n\n%unsure [bar 4] pickup eighths marked \"2nd x (sop.)\": played the second time only\n%unsure [bar 37] two voices printed (whole note under half rest, quarter rest, quarter note); read as half note + quarter rest + quarter\n%unsure [general] piano/bass cue notes in B section (Dbmaj7, Bbm7 bars) not transcribed; after solos D.S., play melody, vamp & fade on C (drums fill)"
+},
+{
+"id": "New_Real_Book_Volume2/181-mine-is-yours",
+"book": "The New Real Book Vol. 2",
+"title": "Mine Is Yours",
+"pdf": "181",
+"form": "ABABCD 16+22+16+22+14+18",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred from section letters and repeats (A-B repeated, C with 1st/2nd endings, D solo vamps); after solos D.S. al fine, no repeat of AB"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro is a piano part (pn.) on the melody staff"
+},
+{
+"bars": [
+19,
+20
+],
+"groups": [
+18,
+19
+],
+"text": "rhythm slashes printed above these bars; a grace note before bar 20 left out"
+},
+{
+"bars": [
+55,
+56
+],
+"groups": [
+54,
+55
+],
+"text": "2-bar solo break after the Fine note"
+},
+{
+"bars": [
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74
+],
+"groups": [
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73
+],
+"text": "solo section printed as rhythm slashes; D pedal bars are \"vamp till cue\""
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Mine Is Yours\nC:Bob Mintzer\nP:ABABCD\n%source New Real Book Vol 2 p185 (pdf 181)\n%style (Med. Funk, quarter = 186)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABABCD 16+22+16+22+14+18\n%unsure [form] form inferred from section letters and repeats (A-B repeated, C with 1st/2nd endings, D solo vamps); after solos D.S. al fine, no repeat of AB\nM:4/4\nL:1/8\nK:D\n%intro\n|: \"D(addb13)\"z2 zB- B4- | B8- | B8 | \"Gm6/D\"B2 B2 \"D(addb13)\"B4 :|\nP:A\n|: S\"D(addb13)\"z2 zB z2 zB | z2 zB B2 z2 | BB B2 z4 | \"Gm6/D\"z4 \"D(addb13)\"z4 |\nz2 zB z2 zB | z2 zB B2 z2 | \"D(addb13)\"zB \"F#(add9)/A#\"B2 z2 zB- | \"Am7(add13)\"BB BB- B4 |\n\"D(addb13)\"z4 B2 B2- | B3 B B2 zB- | BB B2 z4 | \"Gm6/D\"z4 \"D(addb13)\"z4 |\nz2 zB z2 zB | z2 zB B2 z2 | zB \"F#(add9)/A#\"B2 z4 | \"B7#5b9\"z2 zB B2 B2 ||\nP:B\n\"Em11\"z4 B2 B2- | B3 B B2 BB | \"Cm11\"BB BB BB B2 | z2 zB B2 z2 |\n\"F7#11#9b9\"z4 BB B2- | BB z2 B2 BB | \"Bb13sus\"B2 zB z2 zB | z2 zB B2 z2 |\n\"Bb13#11b9\"zB BB z4 | z8 | \"Eb13/Bb\"z2 B6- | B2 BB B4- |\nBB \"Abm9\"B2 z4 | \"F9#11\"z2 zB BB zB | \"Bb13sus\"B2 zB z2 zB | z2 zB B2 z2 |\n\"Bb13#11b9\"zB BB z4 | z8 | \"Eb13/Bb\"z2 B6- | B2 BB B4- |\nBB \"Abm9\"B2 z4 | \"F9#11\"z8 :|\nP:C\n|: \"N.C.\"BB BB- BB BB- | BB BB- BB BB- | B2 B2 B2 B2- | BB zB z2 zB |1 BB BB- BB BB- | BB BB- BB BB- | B2 B2 B2 B2- | BB zB z B3 :|2\nBB BB- BB BB- | BB BB- BB BB- | BB BB- BB BB- | (3B2B2B2 z2 \"D7alt\"!fermata!B2 |\nz8 | z8 ||\nP:D\n|: \"D\"z8 :| :\"Dmaj7\"z8 | z8 | \"Gm6/D\"z8 |\nz8 | \"Dm7\"z8 | z8 | \"Bbmaj7/D\"z8 |\nz8 :| :\"D\"z8 :| :\"Bbmaj7\"z8 | z8 |\n\"Gm9\"z8 | z8 | \"D/Eb\"z8 | z8 |\n\"Cm11\"z8 | z8 :|\n\n%unsure [bars 1-4] intro is a piano part (pn.) on the melody staff\n%unsure [bars 19-20] rhythm slashes printed above these bars; a grace note before bar 20 left out\n%unsure [bars 55-56] 2-bar solo break after the Fine note\n%unsure [bars 57-74] solo section printed as rhythm slashes; D pedal bars are \"vamp till cue\""
+},
+{
+"id": "New_Real_Book_Volume2/183-mo-joe",
+"book": "The New Real Book Vol. 2",
+"title": "Mo' Joe",
+"pdf": "183",
+"form": "AAB 16+16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred: A repeated with 1st/2nd endings, B is the solo section; after solos D.S., play AA, then D.C. al fine (intro ends at Fine)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "pdf 184-185 hold a two-staff \"Mo' Joe (Harmony)\" version, not transcribed"
+},
+{
+"bars": [
+11
+],
+"groups": [
+10
+],
+"text": "Fine on this held note (sfz)"
+},
+{
+"bars": [
+24
+],
+"groups": [
+23
+],
+"text": "16th/8th grouping of the opening run guessed so the bar adds up"
+},
+{
+"bars": [
+26,
+27,
+28
+],
+"groups": [
+25,
+26,
+27
+],
+"text": "drum fill under the held note"
+},
+{
+"bars": [
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45
+],
+"groups": [
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44
+],
+"text": "solo section printed as rhythm slashes"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Mo' Joe\nC:Joe Henderson\nP:AAB\n%source New Real Book Vol 2 p188 (pdf 183)\n%style (Fast Swing, quarter = 260)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AAB 16+16+16\n%unsure [form] form inferred: A repeated with 1st/2nd endings, B is the solo section; after solos D.S., play AA, then D.C. al fine (intro ends at Fine)\n%unsure [general] pdf 184-185 hold a two-staff \"Mo' Joe (Harmony)\" version, not transcribed\nM:4/4\nL:1/8\nK:Bb\n%intro\n\"Abmaj7b5\"zB BB z B2 \"Gm\"B- | B2 BB z4 | \"Abmaj7b5\"zB BB z B2 \"Gm\"B- | B2 BB z4 |\n\"Abmaj7b5\"zB \"Gm\"BB BB BB | \"F6/9\"BB B\"Ebmaj7\"B B2 B\"C/D\"B- | B4 \"Bb/C\"B2 \"C/D\"B2- | B\"Bb/C\"B z\"C/D\"B- B4 |\n\"Bb/C\"B2 \"C/D\"B2- B\"Bb/C\"B z\"C/D\"B- | B4 \"Bb/C\"B2 \"C/D\"B2 | \"D/Eb\"!fermata!B8- | B4 z2 BB ||\nP:A\n|: S\"Gm\"BB zB \"Fmaj7b5\"BB zB | \"Eb6/9\"B2 BB \"D7sus\"zB \"Cm7\"B2 | z8 | \"Am7b5\"z4 z2 BB |\n\"Cm7\"BB zB \"F7\"BB zB | \"Bbmaj7\"B2 BB \"Ebmaj7\"zB \"Amaj7b5\"B2- | B6 \"Emaj7b5\"B\"Ebmaj7b5\"B- | B6 zB |\n\"Cm7\"B4 \"F7\"B3 B- | \"Bbmaj7\"B3 B z \"Ebmaj7\"B3 | z2 \"Am7b5\"B2 \"D7#5\"B3 B | \"Em7b5\"B/B/B/B/ BB B2 zB |\n\"Cm7\"B3 \"B13\"B B3 \"Bbmaj7\"B- | B3 \"E13#11\"B- B4- | B8- |1 B4 z2 BB :|2\n\"(E13#11)\"B4 z4 ||\nP:B\n|: \"Gm\"z8 | z8 | \"Cm7\"z8 | z8 |\n\"Cm7\"z4 \"F7\"z4 | \"Bbmaj7\"z4 \"(Ebmaj7)\"z4 | \"Amaj7\"z8 | \"Ebmaj7\"z8 |\n\"Cm7\"z4 \"F7\"z4 | \"Bbmaj7\"z4 \"(Ebmaj7)\"z4 | \"Am7b5\"z4 \"D7\"z4 | \"Em7b5\"z8 |\n\"Cm7\"z4 \"B13\"z4 | \"Bbmaj7\"z4 \"(E7)\"z4 | \"Am7b5\"z4 \"D7\"z4 | \"Gm\"z8 :|\n\n%unsure [bar 11] Fine on this held note (sfz)\n%unsure [bar 24] 16th/8th grouping of the opening run guessed so the bar adds up\n%unsure [bars 26-28] drum fill under the held note\n%unsure [bars 30-45] solo section printed as rhythm slashes"
+},
+{
+"id": "New_Real_Book_Volume2/186-moment-s-notice",
+"book": "The New Real Book Vol. 2",
+"title": "Moment's Notice",
+"pdf": "186",
+"form": "ABC 22+16+22",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "bar counts per section counted from the print; solo on BC, after solos D.S. al Coda"
+},
+{
+"bars": [
+21,
+22
+],
+"groups": [
+20,
+21
+],
+"text": "piano fill marked over the rests"
+},
+{
+"bars": [
+59,
+60
+],
+"groups": [
+58,
+59
+],
+"text": "solo break (played every chorus); kicks not played for solos; melodic rhythm \"somewhat freely interpreted\" per the book"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Moment's Notice\nC:John Coltrane\nP:ABC\n%source New Real Book Vol 2 p191 (pdf 186)\n%style (Fast swing, quarter = 236)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 22+16+22\n%unsure [form] bar counts per section counted from the print; solo on BC, after solos D.S. al Coda\nM:4/4\nL:1/8\nK:F\nP:A\n\"F#m7\"z B3 \"B7\"B2 B2 | \"Gm7\"B3 B \"C7\"BB zB- | \"Fmaj7\"B8 | \"Bbm7\"z4 \"Eb7\"z4 |\n\"Em7\"z B3 \"A7\"B2 B2 | \"Fm7\"B3 B \"Bb7\"BB zB- | \"Ebmaj7\"B8 | \"Em7b5\"B4 \"A7\"B3 B- |\n\"Dm7\"B8 | \"Cm7\"B4- \"F7\"B4 | \"Bbmaj7\"B4 B4 | \"Eb9\"B4 B3 B- |\n\"A7\"B4 \"D7\"B3 B- | \"Gm7\"B3 B \"C7\"BB BB | \"F/C\"B8 | \"Gm/C\"B8 |\n\"Am/C\"B8 | \"Gm/C\"B8 | \"F/C\"B4 \"Gm/C\"B4 | \"Am/C\"B4 \"Gm/C\"B4 |\n\"F\"B2 z2 z4 | z8 ||\nP:B\n|: S\"F#m7\"z B3 \"B7\"B2 zB- | B2 \"Gm7\"B2 \"C7\"zB z2 | \"Fmaj7\"z B3 B2 B2 | \"Bbm7\"B3 \"Eb7\"B- B4 |\n\"Em7\"z B3 \"A7\"B2 zB- | B2 \"Fm7\"B2 \"Bb7\"zB z2 | \"Ebmaj7\"z B3 B2 B2 | \"Em7b5\"B4 \"A7\"B4 |\n\"Dm7\"B8 | \"Cm7\"B4- \"F7\"B4 | \"Bbmaj7\"B4 B4 | \"Eb9\"B4 B2 z2 |\n\"A7\"z B3 \"D7#5\"B4 | \"Bbm7\"B4 \"Eb7\"B3 B- | \"Abmaj7\"B3 B BB BB- | \"Gm7\"B3 \"C7\"B z4 ||\nP:C\n\"F#m7\"z B3 \"B7\"B2 zB- | B2 \"Gm7\"B2 \"C7\"zB z2 | \"Fmaj7\"z B3 B2 B2 | \"Bbm7\"B3 \"Eb7\"B- B4 |\n\"Em7\"z B3 \"A7\"B2 zB- | B2 \"Fm7\"B2 \"Bb7\"zB z2 | \"Ebmaj7\"z B3 B2 B2 | \"Em7b5\"B4 \"A7\"B4 |\n\"Dm7\"B8 | \"Cm7\"B4- \"F7\"B4 | \"Bbmaj7\"B4 B4 | \"Eb9\"B4 B3 B- |\n\"A7\"B4 \"D7\"z2 B2 | \"Gm7\"B4 \"C7\"B3 B- | \"F/C\"B8 | \"Gm/C\"B8 |\n\"Am/C\"B8 | \"Gm/C\"B8 | \"F/C\"B4 \"Gm/C\"B4 | \"Am/C\"B4 \"Gm/C\"B4 |\nO\"F\"B2 z2 z4 | z8 :|\n%coda\n\"F7#9\"!fermata!B8 |]\n\n%unsure [bars 21-22] piano fill marked over the rests\n%unsure [bars 59-60] solo break (played every chorus); kicks not played for solos; melodic rhythm \"somewhat freely interpreted\" per the book"
+},
+{
+"id": "New_Real_Book_Volume2/188-mood-indigo",
+"book": "The New Real Book Vol. 2",
+"title": "Mood Indigo",
+"pdf": "188",
+"form": "AB 16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "book prints an alternate \"original melody, bar 7 of A\" (4 quarters) below the tune; solo on AB, after solos D.C. al fine"
+},
+{
+"bars": [
+10
+],
+"groups": [
+9
+],
+"text": "first note read as a half tied into a quarter-note triplet so the bar adds up; a parenthesised cue note at the bar start left out"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Mood Indigo\nC:Duke Ellington, Irving Mills, Albany Bigard\nP:AB\n%source New Real Book Vol 2 p194 (pdf 188)\n%style (Med. Ballad (1/8's swing))\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16\n%unsure [general] book prints an alternate \"original melody, bar 7 of A\" (4 quarters) below the tune; solo on AB, after solos D.C. al fine\nM:4/4\nL:1/8\nK:C\nP:A\n\"C\"B4 B2 B2 | \"D9\"B8 | \"Gm\"B4 \"G9#5\"B4 | \"C\"B8 |\nw: You ain't been blue, No, no, no.\n\"C\"B4 B2 B2 | \"D9\"B8 | \"Ab7\"B2 B2 B2 B2 | \"G7\"B4 BB B2 |\nw: You ain't been blue till you've had that mood in-di-go.\n\"C\"z2 B2 B2 B2 | \"C7\"B4- (3B2B2B2 | \"F6\"B4 B2 B2 | \"Bb7\"B6 B2 |\nw: That feel-in' goes_ steal-in' down to my shoes, While\n\"C\"B4 B2 B2 | \"D9\"B8 | \"Gm\"B4 \"G9#5\"B4 | \"C\"B4- \"(G7)\"B4 ||\nw: I sit and sigh: \"Go 'long blues.\" _\nP:B\n\"C6\"z2 BB \"A7\"B3 B | \"D9\"BB BB- B4 | \"Dm7\"BB BB \"G7\"B2 B2 | \"C6\"B4- \"(Dm7)\"B2- \"(G7)\"B2 |\nw: Al-ways get that mood in-di-go_ since my ba-by said good-bye, _ _\n\"C6\"z2 BB \"A7\"B3 B | \"D9\"BB BB- B4 | \"Ab7\"BB BB B2 B2 | \"G7\"B8 |\nw: In the eve-ning when lights are low,_ I'm so lone-some I could cry.\n\"C\"zB BB B B2 B | \"C7\"BB BB- B4 | \"F6\"zB BB B3 B | \"Bb7\"BB BB- B B2 B |\nw: 'Cause there's no-bod-y who cares a-bout me,_ I'm just a soul who's blu-er than blue_ can be.\n\"C6\"z2 BB \"A7\"B3 B | \"D9\"BB BB- B4 | \"Dm7\"BB BB \"G7\"B2 B2 | \"C6\"B4 \"(G7)\"z4 |]\nw: When I get that mood in-di-go,_ I could lay me down and die.\n\n%unsure [bar 10] first note read as a half tied into a quarter-note triplet so the bar adds up; a parenthesised cue note at the bar start left out"
+},
+{
+"id": "New_Real_Book_Volume2/189-moonrays",
+"book": "The New Real Book Vol. 2",
+"title": "Moon Rays",
+"pdf": "189",
+"form": "AABC 16+16+16+16 head; solos on DDEF (16 each); shout chorus G H; D.S. al Coda to I J (Latin) and tag",
+"bad": 3,
+"off": [
+98,
+100,
+124
+],
+"first": 1,
+"unsure": 9,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "play order inferred from \"Solo on DDEF\", \"continue to letter G\", \"D.S. al Coda\""
+},
+{
+"bars": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"groups": [
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15
+],
+"text": "top voice of the written block chords taken as the rhythm; trumpet/tenor parts"
+},
+{
+"bars": [
+49,
+50
+],
+"groups": [
+48,
+49
+],
+"text": "last bars of C: rests and the accented swing pickup read from the scan"
+},
+{
+"bars": [
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66
+],
+"groups": [
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65
+],
+"text": "solo sections D, E, F printed as slashes; written as rests with chords (parenthesised chords are alternates)"
+},
+{
+"bars": [
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82
+],
+"groups": [
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81
+],
+"text": "shout chorus G (unison, then trumpet/tenor block chords): rhythms simplified from a dense scan; triplets and grace figures approximate"
+},
+{
+"bars": [
+83,
+84,
+85,
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97,
+98
+],
+"groups": [
+82,
+83,
+84,
+85,
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97
+],
+"text": "shout chorus H: rhythms simplified from a dense scan; then D.S. al Coda"
+},
+{
+"bars": [
+99,
+100,
+101,
+102,
+103,
+104,
+105,
+106,
+107,
+108,
+109,
+110,
+111,
+112,
+113,
+114,
+115,
+116,
+117,
+118,
+119,
+120,
+121,
+122,
+123,
+124,
+125,
+126,
+127,
+128,
+129,
+130
+],
+"groups": [
+98,
+99,
+100,
+101,
+102,
+103,
+104,
+105,
+106,
+107,
+108,
+109,
+110,
+111,
+112,
+113,
+114,
+115,
+116,
+117,
+118,
+119,
+120,
+121,
+122,
+123,
+124,
+125,
+126,
+127,
+128,
+129
+],
+"text": "coda: Latin; I and J repeat the B and A melody, then the tag to Fine"
+},
+{
+"bars": [
+131,
+132,
+133,
+134,
+135,
+136,
+137,
+138,
+139,
+140,
+141,
+142
+],
+"groups": [
+130,
+131,
+132,
+133,
+134,
+135,
+136,
+137,
+138,
+139,
+140,
+141
+],
+"text": "ending tag: bass hits and drum fill bars written as rests; rhythms approximate"
+},
+{
+"bars": [],
+"groups": [],
+"text": "trumpet plays melody throughout; block-chord bars reduced to their rhythm"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Moon Rays\nC:Horace Silver\nP:ABCDDEFGHIJ\n%source New Real Book Volume 2 p195 (pdf 189)\n%style (Med. Latin, quarter = 134; solos and shout chorus Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+16+16 head; solos on DDEF (16 each); shout chorus G H; D.S. al Coda to I J (Latin) and tag\n%unsure [form] play order inferred from \"Solo on DDEF\", \"continue to letter G\", \"D.S. al Coda\"\nM:4/4\nL:1/8\nK:F\nz6 B2 |\nP:A\n|: \"Bbmaj7/C\"B8- | B4 \"Bbo7/C\"B2 \"Abo7/C\"B2 | \"Fmaj7/C\"B8- | B6 B2 |\n\"Bmaj7/C\"B8- | B8 | \"Bbmaj7/C\"B8- | B6 B2 |\n\"Bbmaj7/C\"B6 \"Bm7b5\"B2 | \"Bbm(maj7)\"B4 \"Eb7/Bb\"B2 \"Bbm\"B2 | \"Am7b5\"B4 z2 B2 | \"D7b9#5\"B2 B2 B2 BB |\n\"Gm9\"B4 \"C7b9#5\"z2 B2 | \"Fmaj9\"B4- \"Bb13#11\"B4 |1 \"Fmaj9\"B4 \"Bb bass\"z2 B2 :|2 \"Fmaj9\"B2 z2 \"Bb bass\"z2 B2 ||\nP:B\n\"Dmaj7/E\"B8- | B4 \"Do7/E\"B2 \"Co7/E\"B2 | \"Amaj7/E\"B8- | B6 B2 |\n\"Ebmaj7/E\"B8- | B8 | \"Dmaj7/E\"B8- | B6 B2 |\n\"Dmaj7/E\"B6 \"D#m7b5\"B2 | \"Dm(maj7)\"B4 \"G7/D\"B2 \"Dm\"B2 | \"C#m7b5\"B4 z2 B2 | \"F#7b9#5\"B2 B2 B2 BB |\n\"Bm9\"B8 | \"E7b9#5\"z2 B4 BB | \"Am9\"B4 \"D13\"B4 | \"Gm9\"B4 \"C13\"B2 B2 ||\nP:C\n\"Bbmaj7/C\"B8- | B4 \"Bbo7/C\"B2 \"Abo7/C\"B2 | \"Fmaj7/C\"B8- | B6 B2 |\n\"Bmaj7/C\"B8- | B8 | \"Bbmaj7/C\"B8- | B6 B2 |\n\"Bbmaj7/C\"B6 \"Bm7b5\"B2 | \"Bbm(maj7)\"B4 \"Eb7/Bb\"B2 \"Bbm\"B2 | \"Am7b5\"B4 z2 B2 | \"D7b9#5\"B2 B2 B2 BB |\n\"Gm9\"B8 | \"C7b9#5\"z2 B4 BB | \"Fmaj9\"B4 \"Bb13#11\"z4 | \"Fmaj9\"z4 z2 \"Bb bass\"zB ||\nP:D\n|: \"Gm7\"z8 | \"C7\"z8 | \"Fmaj7\"z4 \"(Gm7)\"z4 | \"(Am7)\"z4 \"(D7)\"z4 |\n\"Abm7\"z4 \"Db7\"z4 | z8 | \"Gm7\"z8 | \"C7\"z8 |\n\"Gm7\"z8 | \"Bm7b5\"z4 \"Bbm7\"z4 | \"Am7\"z8 | \"Abm7\"z4 \"Db7\"z4 |\n\"Gm7\"z8 | \"C7\"z8 | \"Fmaj7\"z4 \"Bb13#11\"z4 | \"Fmaj7\"\"(Am7)\"z4 \"Bb13#11\"z4 :|\nP:E\n\"Bm7\"z8 | \"E7\"z8 | \"Amaj7\"z4 \"(Bm7)\"z4 | \"(C#m7)\"z4 \"(F#7)\"z4 |\n\"Cm7\"z4 \"F7\"z4 | z8 | \"Bm7\"z8 | \"E7\"z8 |\n\"Bm7\"z8 | \"Ebm7b5\"z4 \"Dm7\"z4 | \"C#m7\"z8 | \"Cm7\"z4 \"F7\"z4 |\n\"Bm7\"z8 | \"E7\"z8 | \"Am7\"z4 \"D7\"z4 | \"Gm7\"z4 \"C7\"z4 ||\nP:F\n\"Gm7\"z8 | \"C7\"z8 | \"Fmaj7\"z4 \"(Gm7)\"z4 | \"(Am7)\"z4 \"(D7)\"z4 |\n\"Abm7\"z4 \"Db7\"z4 | z8 | \"Gm7\"z8 | \"C7\"z8 |\n\"Gm7\"z8 | \"Bm7b5\"z4 \"Bbm7\"z4 | \"Am7\"z8 | \"Abm7\"z4 \"Db7\"z4 |\n\"Gm7\"z8 | \"C7\"z8 | \"Fmaj7\"z4 \"Bb13#11\"z4 | \"Fmaj7\"\"(Am7)\"z4 \"Bb13#11\"z4 ||\nP:G\n|: \"Gm11\"(3B/B/B/B BB B z2 | \"C7#5\"zB (3BBB (3BBB BB | \"Fmaj7\"(3B/B/B/B BB B B2 | \"Gm7\"B2 \"Am7\"z2 \"D7\"z2 B2 |\n\"Abm7\"B2 BB \"Db7\"BB z2 | \"Abm7\"z2 zB zB zB | \"Gm11\"BB BB B2 z2 | \"C13\"z8 |\n\"Gm7\"zB BB zB BB | \"Bm7b5\"BB BB \"Bbm7\"B2 \"Eb7/Bb\"B2 | \"Am7\"B2 B2 \"Am7b5\"BB BB | \"Abm7\"BB BB \"Db7\"B2 BB |\n\"Gm11\"BB BB B2 z2 | \"C7#5\"z2 (3BBB BB BB |1 \"Fmaj9\"z2 \"Bb13\"z2 \"Fmaj9\"z2 \"Bb13#11\"zB :|2 \"Fmaj9\"z2 \"Bb13#11\"zB B4 ||\nP:H\n\"Bm9\"B2 z2 zB B2 | \"E13sus\"B2 z2 zB B2 | \"Amaj7\"BB BB BB BB | B2 z2 zB B2 |\n\"Cm9\"B2 B6- | \"F13sus\"B4 zB B2 | \"Bm9\"(3B2B2B2 B4- | \"E13\"B8 |\n\"Bm7\"zB BB zB BB | \"D#m7b5\"BB \"Dm7\"BB \"G7/D\"B2 B2 | \"C#m7\"BB \"C#m7b5\"BB BB | \"Cm7\"BB BB \"F7\"B2 BB |\n\"Bm9\"BB BB B2 z2 | \"E7#5\"z2 BB BB BB | \"Am9\"B2 BB \"D13\"BB BB- | \"Gm9\"B2 BB \"C13\"z2 B2 |]\n%coda\n\"Fmaj9\"z4 \"Bb13#11\"z2 B2 ||\nP:I\n\"Dmaj7/E\"B8- | B4 \"Do7/E\"B2 \"Co7/E\"B2 | \"Amaj7/E\"B8- | B6 B2 |\n\"Ebmaj7/E\"B8- | B8 | \"Dmaj7/E\"B8- | B6 B2 |\n\"Dmaj7/E\"B6 \"D#m7b5\"B2 | \"Dm(maj7)\"B4 \"G7/D\"B2 \"Dm\"B2 | \"C#m7b5\"B4 z2 B2 | \"F#7b9#5\"B2 B2 B2 BB |\n\"Bm9\"B8 | \"E7b9#5\"z2 B4 BB | \"Am9\"B4 \"D13\"B4 | \"Gm9\"B4 \"C13\"B2 B2 ||\nP:J\n\"Bbmaj7/C\"B8- | B4 \"Bbo7/C\"B2 \"Abo7/C\"B2 | \"Fmaj7/C\"B8- | B6 B2 |\n\"Bmaj7/C\"B8- | B8 | \"Bbmaj7/C\"B8- | B6 B2 |\n\"Bbmaj7/C\"B6 \"Bm7b5\"B2 | \"Bbm(maj7)\"B4 \"Eb7/Bb\"B2 \"Bbm\"B2 | \"Am7b5\"B4 z2 B2 | \"D7b9#5\"B2 B2 B2 BB |\n\"Gm9\"B8 | \"C7b9#5\"z2 B4 BB | \"Fmaj9\"B4- \"Bb13#11\"B2 \"Fmaj9\"B2 | \"Bb bass\"z4 (3B2B2B2 |\n\"Fmaj9\"B4- \"Bb13#11\"B2 \"Fmaj9\"B2 | \"Bb bass\"B3 B B4 | \"Fmaj9\"B4- \"Bb13#11\"B2 \"Fmaj9\"B2 | \"Bb bass\"z2 B2 (3B2B2B2 |\n\"Fmaj9\"B4- \"Bb13#11\"B2 \"Fmaj9\"z2 | \"A bass\"zB- \"Bb13#11\"B6 | z8 | \"Bb bass\"z2 \"F bass\"z2 \"Bb bass\"z4 |]\n\n%unsure [bars 9-16] top voice of the written block chords taken as the rhythm; trumpet/tenor parts\n%unsure [bars 49-50] last bars of C: rests and the accented swing pickup read from the scan\n%unsure [bars 51-66] solo sections D, E, F printed as slashes; written as rests with chords (parenthesised chords are alternates)\n%unsure [bars 67-82] shout chorus G (unison, then trumpet/tenor block chords): rhythms simplified from a dense scan; triplets and grace figures approximate\n%unsure [bars 83-98] shout chorus H: rhythms simplified from a dense scan; then D.S. al Coda\n%unsure [bars 99-130] coda: Latin; I and J repeat the B and A melody, then the tag to Fine\n%unsure [bars 131-142] ending tag: bass hits and drum fill bars written as rests; rhythms approximate\n%unsure [general] trumpet plays melody throughout; block-chord bars reduced to their rhythm"
+},
+{
+"id": "New_Real_Book_Volume2/193-moontide",
+"book": "The New Real Book Vol. 2",
+"title": "Moontide",
+"pdf": "193",
+"form": "ABCD 8+8+16+8 (head); solos on EEFG (pdf 194), then D.C. al Coda",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the page; solo sections E, F, G (chords only, pdf 194) not written out"
+},
+{
+"bars": [
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+3,
+4,
+5,
+6,
+7,
+8
+],
+"text": "rhythms read from a low-resolution scan; triplet groupings in bar 6 and the last notes of bars 3, 5 guessed"
+},
+{
+"bars": [
+11,
+12,
+13,
+14,
+15,
+16
+],
+"groups": [
+11,
+12,
+13,
+14,
+15,
+16
+],
+"text": "note values in bars 11 and 15 guessed so the bars add up"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32
+],
+"groups": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32
+],
+"text": "rhythms in bars 19, 26, 29-32 (triplets, 16ths, ties) guessed from a low-resolution scan; lower (tenor) line in bars 25-28 skipped"
+},
+{
+"bars": [
+41,
+42
+],
+"groups": [
+41,
+42
+],
+"text": "coda is a vamp in rhythm slashes (\"Vamp, fill & fade\"), written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Moontide\nC:Randy Brecker\nP:ABCD\n%source New Real Book Vol 2 p199 (pdf 193)\n%style (Med. Straight 8th's/Latin, q=144)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+16+8 (head); solos on EEFG (pdf 194), then D.C. al Coda\n%unsure [form] section lengths counted from the page; solo sections E, F, G (chords only, pdf 194) not written out\nM:4/4\nL:1/8\nK:C\n\"C#m(add9)\"B |\nP:A\nB4- B \"Dm(add9)/C#\"B2 \"D#7/C#\"B | \"Dmaj7(omit5)/C#\"z B3- B B2 \"C#(add9)\"B | B6- \"Amaj7b5/C#\"B2- | B4- B B2 \"Bb/B\"B |\nB6 B/B/z | (3B2B2B2 (3B2B2B2 | \"C#(add9)\"BB BB B4- | B6 z\"C#m(add9)\"B ||\nP:B\n\"C#m(add9)\"B4- B \"Dm(add9)/C#\"B2 \"D#7/C#\"B | \"Dmaj7(omit5)/C#\"z B3- B B2 \"C#(add9)\"B | B6- \"E/F#\"B2 | \"Fm11\"z2 B4 BB |\n\"G#sus/E\"BB BB- BB BB | \"G#/A\"BB BB- BB BB | \"C#(add9)\"B/B/B B6- | B4 zB BB ||\nP:C\n\"Emaj7#5\"B8- | B4- B B2 \"A/G#\"B- | B3 B/B/ B/B/B \"Ab/D\"B2- | B4 zB BB |\n\"E+(add9)\"B8- | B6 B2- | \"Gbmaj7b5\"BB B6- | B6 z2 |\n\"C7b9b5\"B6 B2 | (3B2B2B2 (3B2B2B2 | \"Bmaj7b5\"B4- BB BB- | \"E/F\"B8 |\n\"Emaj7/Bb\"(3:2:2B4B2B2 B2 | (3B2B2B2 (3B2B2B2 | \"Eb/B\"B2 \"Dmaj7b5\"BB- B2 \"Amaj13#11\"B2- | B4 zB \"C#m(add9)\"B2 ||\nP:D\n\"C#m(add9)\"B4- B \"Dm(add9)/C#\"B2 \"D#7(omit5)/C#\"B | \"Dmaj7(omit5)/C#\"z B3- B B2 \"C#(add9)\"B | B6- \"E/F#\"B2 | \"Fm11\"z2 B4 BB |\n\"G#sus/E\"BB BB- BB BB | \"G#/A\"BB BB- BB BB | \"C#(add9)\"B/B/B B6- | B6 z2 |]\n%coda\n|: \"C#(add9)\"z8 | z8 :|\n\n%unsure [bars 3-8] rhythms read from a low-resolution scan; triplet groupings in bar 6 and the last notes of bars 3, 5 guessed\n%unsure [bars 11-16] note values in bars 11 and 15 guessed so the bars add up\n%unsure [bars 17-32] rhythms in bars 19, 26, 29-32 (triplets, 16ths, ties) guessed from a low-resolution scan; lower (tenor) line in bars 25-28 skipped\n%unsure [bars 41-42] coda is a vamp in rhythm slashes (\"Vamp, fill & fade\"), written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/197-more-love",
+"book": "The New Real Book Vol. 2",
+"title": "More Love",
+"pdf": "197",
+"form": "AABC 12+12+8+16 (with 2-bar intro)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred from the printed section letters (A repeated with 1st/2nd endings; C has no repeat)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed (verse 1 under the melody, verse 2 as text) but not written as w: lines; the book says the melody is sung with rhythmic freedom"
+},
+{
+"bars": [
+1,
+2
+],
+"groups": [
+0,
+1
+],
+"text": "intro triplet groupings guessed (synth fill, then vocal pickup \"I should have\")"
+},
+{
+"bars": [
+5,
+11,
+12
+],
+"groups": [
+4,
+10,
+11
+],
+"text": "16th/triplet groupings in bars 5, 11 and 12 guessed so the bars add up"
+},
+{
+"bars": [
+23,
+29
+],
+"groups": [
+22,
+28
+],
+"text": "rhythm of bar 23 (16ths) and the pickup notes in bar 29 guessed"
+},
+{
+"bars": [
+37
+],
+"groups": [
+36
+],
+"text": "rhythm slashes, written as rests"
+},
+{
+"bars": [
+45,
+46
+],
+"groups": [
+44,
+45
+],
+"text": "lower fill line under the last two bars skipped; key changes (Db, E) simplified to inline K: fields"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:More Love\nC:Jack Segal\nP:AABC\n%source New Real Book Vol 2 p203 (pdf 197)\n%style (Med. Pop Ballad, q=69)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 12+12+8+16 (with 2-bar intro)\n%unsure [form] form inferred from the printed section letters (A repeated with 1st/2nd endings; C has no repeat)\n%unsure [general] lyrics are printed (verse 1 under the melody, verse 2 as text) but not written as w: lines; the book says the melody is sung with rhythmic freedom\nM:4/4\nL:1/8\nK:F\n%intro\n\"Gm7\"z2 (3B2B2B2- B/B/B/B/ | \"C13sus\"(3B2B2B2 \"C13\"zB \"C9#5\"BB |:\nP:A\n\"Fmaj9\"BB BB \"F6\"BB BB | \"Em7b5\"BB BB \"A7b9#5\"BB BB | \"Dm9\"B/B/B \"G7b9#5\"B6 | \"Cm9\"z4 \"F7b9#5\"zB BB |\n\"Bbmaj9\"BB BB \"Bb6\"BB BB | \"Am7b5\"BB BB \"D7b9#5\"BB BB | \"Gm9\"B4- \"Gb9\"B4 | \"Fm9\"z4 \"E9#11\"z4 |\n\"Ebmaj7\"z2 (3BBB (3B2B2B2 | \"Dm7b5\"B3 B \"G7b9#5\"B2 (3BBB | \"Cm11\"B3 B \"F7#11b9\"B3 B | \"Bbm9\"B3 B \"Eb7#11b9\"B3 B |1 \"Abmaj7\"B3 B B4 | \"Gm7b5\"B3 B \"C7susb9\"B4- | \"C13\"B4 \"C9#5\"zB BB :|2 \"Abmaj7\"B3 B B4 |\n\"Am7b5\"B3 B \"D9\"B4 | \"Bm7b5\"B3 B B4- | \"E7b9\"B8 ||\nP:B\n\"Am9\"BB BB BB BB | \"D13sus\"BB BB (3B2B2B2 | \"C/G\"B3 B/B/ \"Gmaj7\"B3 B/B/ | \"Cmaj7\"B4- \"C7\"B4 |\n\"Fmaj7\"BB BB \"F6\"BB BB | \"Em7b5\"BB BB \"A7b9#5\"BB BB | \"Dm9\"B4- \"G13sus\"B4 | [K:Db]\"Abm9\"z2 \"Db13sus\"zB \"Db9#5\"BB B2 ||\nP:C\n\"Gbmaj9\"BB BB \"Gb6\"BB BB | \"Fm7b5\"BB BB \"Bb7b9#5\"BB BB | \"Ebm9\"B/B/B \"Ab9#5\"B6 | \"Dbm9\"z4 \"Gb9#5\"zB BB |\n\"Cbmaj9\"BB BB \"Cb6\"BB BB | \"Bbm7b5\"BB BB \"Eb7b9#5\"BB zB | \"Abm9\"B4- \"G9\"B4 | \"F#m9\"z4 \"B9b5\"z2 \"B9\"z2 |\n[K:E]\"Emaj7\"z2 BB B3 B | \"D#m7b5\"B3 B \"G#7b5\"B2 \"G#7\"(3BBB | \"C#m9\"B3 B \"F#7b5\"B3 \"F#7\"B | \"Bm9\"B3 B \"E7b5\"B3 \"E7\"B |\n\"Amaj7\"B3 B B4 | \"Bbm7b5\"B3 B \"Eb7#9\"B4 | \"Abmaj7\"B3 B \"Db13#11\"B4- | \"Cmaj7\"B8- | !fermata!B8 |]\n\n%unsure [bars 1-2] intro triplet groupings guessed (synth fill, then vocal pickup \"I should have\")\n%unsure [bars 5, 11-12] 16th/triplet groupings in bars 5, 11 and 12 guessed so the bars add up\n%unsure [bars 23, 29] rhythm of bar 23 (16ths) and the pickup notes in bar 29 guessed\n%unsure [bar 37] rhythm slashes, written as rests\n%unsure [bars 45-46] lower fill line under the last two bars skipped; key changes (Db, E) simplified to inline K: fields"
+},
+{
+"id": "New_Real_Book_Volume2/201-morning-sprite",
+"book": "The New Real Book Vol. 2",
+"title": "Morning Sprite",
+"pdf": "201",
+"form": "ABC 20+16+8 (plus 8-bar intro with endings, coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the page; solos on D, E, F (chords only, pdf 202) not written out; D.S. returns to A, coda from the 4th time through C"
+},
+{
+"bars": [],
+"groups": [],
+"text": "dense piano-style melody with grace notes and chord tones read from a low-resolution scan; many rhythms are best guesses so the bars add up"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+"text": "intro rhythms guessed (sample piano fill)"
+},
+{
+"bars": [
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29
+],
+"groups": [
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28
+],
+"text": "A section rhythms (grace notes, double stops, triplets) guessed; printed bar count may differ by one"
+},
+{
+"bars": [
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49
+],
+"groups": [
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"text": "B section rhythms guessed; bar 47 (triplets with 16ths) especially uncertain"
+},
+{
+"bars": [
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57
+],
+"groups": [
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56
+],
+"text": "piano solos around the melody here; rhythms guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Morning Sprite\nC:Chick Corea\nP:ABC\n%source New Real Book Vol 2 p207 (pdf 201)\n%style (Bright Latin/Samba, h=268; 1st x: pn. only, 2nd x: add bass & drums)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 20+16+8 (plus 8-bar intro with endings, coda)\n%unsure [form] section lengths counted from the page; solos on D, E, F (chords only, pdf 202) not written out; D.S. returns to A, coda from the 4th time through C\n%unsure [general] dense piano-style melody with grace notes and chord tones read from a low-resolution scan; many rhythms are best guesses so the bars add up\nM:4/4\nL:1/8\nK:C\n%intro\n|: \"Gb/Db\"B2 z\"Abm/Eb\"B z2 \"Db7/F\"zB | \"Abm/Gb\"z4 B2 B2 | \"Abm7\"B3 \"(Db)\"B- BB B2- | \"Gbmaj7\"B3 B B2 B2 |\n\"Gb/Db\"B2 z\"Abm/Eb\"B z2 \"Db7/F\"zB | \"Abm/Gb\"z4 B2 B2 |1 \"Abm7\"B2 \"(Db)\"BB BB zB | \"Gbmaj7\"BB BB BB z2 :|2\n\"Abm7\"B2 \"(Db)\"BB zB \"Gbmaj7\"B2- | B8 ||\nP:A\n!segno!\"Fm7\"B8 | \"Cmaj7/E\"zB BB BB BB | \"Ebm7\"B3 B BB B2 | \"Dm7\"B3 B B2 BB- |\n\"Dbm7\"B4 \"Cm7\"B4 | zB BB BB BB | \"B7\"B2- B3 B B2 | B3 B- B4 |\n\"Bb7\"B3 B- BB B2 | B3 B- BB B2- | \"Bbm7/Eb\"B4 \"Cbmaj7/Eb\"B4 | (3z2B2B2 (3B2B2B2 |\n\"Bb/Eb\"B3 B- B2 B2 | \"A/Eb\"B2- (3BBB BB \"Ab/Eb\"BB- | \"Ab/Eb\"B6 B/B/B | \"Abm/Eb\"B2- (3BBB B2 BB |\n\"Eb+\"B3 B- B4 | B4- B4 | \"Eb6b5\"z8 ||\nP:B\n%swing\n\"Dm7\"B8 | \"C/E\"zB BB BB BB | \"Fm7\"B B3- B4 | \"F#m7\"B2 \"Gm7\"B3 \"Cm7\"B3 |\n%Latin\n\"B7\"B3 B- \"Bb7\"B3 B | B3 B BB BB | \"A7\"B3 B- B3 B- | B8 |\n\"Ebmaj7\"B4- \"Dmaj7\"B4 | zB BB BB B\"Gm7/C\"B- | \"Gm7/C\"B2- B B3 B2 | \"Bmaj7\"B3 B B4 |\n\"Gmaj7/B\"B3 B B4 | \"Bbm7\"B3 B B3 B | \"A7#11\"B3 B B3 B | \"A7#11\"B8- |\n\"Ab7b9\"B3 B- B4 | \"E\"(3B2B2B2 z\"D\"B B-(3B/B/B/ | \"D7/C\"B4- (3B2B2B2 | \"Db7b9\"B4 B4 ||\nP:C\n|: \"Gb/Db\"B2 z\"Abm/Eb\"B z2 \"Db7/F\"zB | \"Abm/Gb\"z4 B4 | \"Abm7\"B3 \"(Db)\"B- B3 B | \"Gbmaj7\"B3 B- B4 |\n\"Gb/Db\"B2 z\"Abm/Eb\"B z2 \"Db7/F\"zB | \"Abm/Gb\"z4 B4 | \"Abm7\"!coda!B3 \"(Db)\"B- B3 B | \"Gbmaj7\"B2 B2 B4 :|\n%coda\n\"Abm7\"B2 z2 z2 z\"Gbmaj7\"B- | !fermata!B8 |]\n\n%unsure [bars 1-10] intro rhythms guessed (sample piano fill)\n%unsure [bars 11-29] A section rhythms (grace notes, double stops, triplets) guessed; printed bar count may differ by one\n%unsure [bars 30-49] B section rhythms guessed; bar 47 (triplets with 16ths) especially uncertain\n%unsure [bars 50-57] piano solos around the melody here; rhythms guessed"
+},
+{
+"id": "New_Real_Book_Volume2/203-mozambique",
+"book": "The New Real Book Vol. 2",
+"title": "Mozambique",
+"pdf": "203",
+"form": "AB 37+4 (8-bar intro; B is two vamped solo sections)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 8,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred: A melody (flute, \"E major scale till B\", no chord symbols), B solo vamps till cue, D.S. al Coda; solos are 24 bars each on the recording"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "intro is a printed 8-bar rest (Tacet)"
+},
+{
+"bars": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"groups": [
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15
+],
+"text": "16th groupings in bars 10 and 13 guessed"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"text": "bars 16-17 and 21-22 are kalimba fills (rests); triplet groupings guessed"
+},
+{
+"bars": [
+28
+],
+"groups": [
+27
+],
+"text": "on D.S. all tacet here"
+},
+{
+"bars": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45
+],
+"groups": [
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44
+],
+"text": "rhythms (16ths, ties, staccatos) read from a low-resolution scan and guessed so bars add up; bars 35-36 and 43-44 kalimba fills"
+},
+{
+"bars": [
+46,
+47,
+48,
+49
+],
+"groups": [
+45,
+46,
+47,
+48
+],
+"text": "solo vamps in rhythm slashes, written as rests (synth solo, then sax solo on cue); then D.S. al Coda"
+},
+{
+"bars": [
+50,
+51,
+52,
+53
+],
+"groups": [
+49,
+50,
+51,
+52
+],
+"text": "coda in E major; last two bars are a kalimba fill, vamp & fade"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Mozambique\nC:Eugenio Toussaint\nP:AB\n%source New Real Book Vol 2 p209 (pdf 203)\n%style (Med. Latin/Funk, q=104; as played by SACBE)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 37+4 (8-bar intro; B is two vamped solo sections)\n%unsure [form] form inferred: A melody (flute, \"E major scale till B\", no chord symbols), B solo vamps till cue, D.S. al Coda; solos are 24 bars each on the recording\nM:4/4\nL:1/8\nK:E\n%intro\nz8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 ||\nP:A\n!segno!B3 B- B2 (3zBB | B3/2B/- B/BB/- B/B3/2 B3/2B/- | B8- | B8 |\nB3/2B/- B6- | B8- | B8 | z8 |\nz8 | (3B2B2B2 (3B2B2B2 | (3B2B2B2 B4- | B8 |\nz8 | z8 | BB B2 z4 | z2 zB B3/2B/ z2 |\n(3BBB (3BBB- B4- | B8 | B3/2B/- BB B3/2B/ BB | z8 |\nB2 B/B/B/B/ B3/2B/ B2 | B3/2B/- B/BB/- B/B3/2 B3/2B/- | B8 | B/B/B/B/ BB- BB B2 |\n(3B2B2B2 B/BB/ B2- | B8 | z8 | z8 |\nB3/2B/- BB- BB BB | B/BB/ B/BB/ z/BB/- B2 | z8 | z8 |\nB3/2B/ B3/2B/ BB B2 | B3/2B/- B2 B3/2B/ B2 | B2 B3/2B/ B4 | z2 B6- |\n!coda!B8 ||\nP:B\n|: \"Bb6/9\"z8 | z8 :| :[K:G]\"G6/9\"z8 | z8 :|\n%coda\n[K:E]B8- | B8 |: z8 | z8 :|\n\n%unsure [bars 1-8] intro is a printed 8-bar rest (Tacet)\n%unsure [bars 9-16] 16th groupings in bars 10 and 13 guessed\n%unsure [bars 17-24] bars 16-17 and 21-22 are kalimba fills (rests); triplet groupings guessed\n%unsure [bar 28] on D.S. all tacet here\n%unsure [bars 25-45] rhythms (16ths, ties, staccatos) read from a low-resolution scan and guessed so bars add up; bars 35-36 and 43-44 kalimba fills\n%unsure [bars 46-49] solo vamps in rhythm slashes, written as rests (synth solo, then sax solo on cue); then D.S. al Coda\n%unsure [bars 50-53] coda in E major; last two bars are a kalimba fill, vamp & fade"
+},
+{
+"id": "New_Real_Book_Volume2/205-mr-p-c",
+"book": "The New Real Book Vol. 2",
+"title": "Mr. P.C.",
+"pdf": "205",
+"form": "AB 12+12 (minor blues; plus coda and a shout chorus used between solos)",
+"bad": 1,
+"off": [
+31
+],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred: A head, B solo chorus (slashes), D.C. al Coda after solos; shout chorus to be used between solos"
+},
+{
+"bars": [
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"text": "solo chorus in rhythm slashes, written as rests; after solos D.C. al Coda (repeat before taking Coda)"
+},
+{
+"bars": [
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43
+],
+"groups": [
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42
+],
+"text": "shout chorus rhythms guessed in places (ties, ghost notes in parentheses); bars 41-42 drum fill / sample fill"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Mr. P.C.\nC:John Coltrane\nP:AB\n%source New Real Book Vol 2 p212 (pdf 205)\n%style (Fast Swing, q=252)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 12+12 (minor blues; plus coda and a shout chorus used between solos)\n%unsure [form] form inferred: A head, B solo chorus (slashes), D.C. al Coda after solos; shout chorus to be used between solos\nM:4/4\nL:1/8\nK:F\nP:A\n|: \"Dm\"BB BB BB BB | B3 B BB zB | \"Dm\"B4 \"Am\"B3 \"Dm\"B- | B2 z2 z4 |\n\"Gm\"BB BB BB BB | B3 B BB zB | \"Dm\"B4 \"Am\"B3 \"Dm\"B- | B2 z2 BB BB |\n\"Bb7\"z B3- B3 B | \"A7#5\"z B2 B B2 B2 | !coda!\"Dm\"B4 \"Am\"B3 \"Dm\"B- | B2 z2 z4 :|\nP:B\n|: \"Dm6\"z8 | z8 | z8 | \"D7\"z8 |\n\"Gm6\"z8 | z8 | \"Dm6\"z8 | z8 |\n\"Bb7\"z8 | \"A7#5\"z8 | \"Dm6\"z8 | \"A7#5\"z8 :|\n%coda\n\"Dm\"B4 \"Am\"B3 \"Dm\"B- | B2 z2 zB BB | \"Bb7\"z B3- B3 B | \"A7#5\"z B2 B B2 B2 |\n\"Dm\"B4 \"Am\"B3 \"Dm\"B- | !fermata!B8 |]\n%shout chorus (use between solos)\n\"(A7#5)\"BB BB |: \"Dm7\"B4 BB zB- | B4 B2 \"G/D\"B2 | \"Dm7\"z2 B2 \"G/D\"BB zB- |\n\"Dm7\"B3 B BB z\"Gm7\"B- | \"Gm7\"B4 BB B2- | \"Gm6\"B2 BB \"Gm7\"BB z2 | \"Dm7\"z2 B2 \"G/D\"BB zB- |\n\"Dm7\"B3 B BB BB | \"Bb7\"B3 B BB B2- | \"A7#5\"BB BB B2 z2 | \"NC\"z8 | z4 \"(A7#5)\"BB BB :|\n\n%unsure [bars 13-24] solo chorus in rhythm slashes, written as rests; after solos D.C. al Coda (repeat before taking Coda)\n%unsure [bars 31-43] shout chorus rhythms guessed in places (ties, ghost notes in parentheses); bars 41-42 drum fill / sample fill"
+},
+{
+"id": "New_Real_Book_Volume2/206-my-ship",
+"book": "The New Real Book Vol. 2",
+"title": "My Ship",
+"pdf": "206",
+"form": "ABC 16+8+14",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "book prints alternate changes for bars 6 & 14 of A and bar 6 of C at the foot of pdf 207 (not transcribed)"
+},
+{
+"bars": [
+7,
+8
+],
+"groups": [
+7,
+8
+],
+"text": "Bbm(maj7) read as falling on beat 3 of bar 7 and Am7 on bar 8"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:My Ship\nC:Kurt Weill / Ira Gershwin\nP:ABC\n%source New Real Book Vol 2 p213 (pdf 206)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+14\n%unsure [general] book prints alternate changes for bars 6 & 14 of A and bar 6 of C at the foot of pdf 207 (not transcribed)\nM:4/4\nL:1/8\nK:G\nB2 ||\nw: My\nP:A\n\"G6/9\"B2 \"E7b9\"B2 B2 BB | \"A13\"B2 B2 \"D9sus\"B2 z\"D9\"B | \"G6/9\"B2 B2 \"E7#9\"B2 \"Dm7b5\"B2 | \"C#m7b5\"B6 \"C7\"BB |\nw: ship has sails that are made of silk, The decks are trimmed with gold, And of\n\"Bm11\"B2 B2 \"E7#9#5\"B2 BB | \"Am11\"B2 B2 \"Cm(maj7)\"B2 \"F9#11\"BB | \"Em11\"B4- \"Bbm(maj7)\"B4- | \"Am7\"B6 \"D7b9\"B2 |\nw: jam and spice there's a par-a-dise in the hold._ _ My\n\"G6/9\"B2 \"E7b9\"B2 B2 BB | \"A13\"B2 B2 \"D9sus\"B3 \"D9\"B | \"G6/9\"B2 B2 \"E7#9\"B2 \"Dm7b5\"B2 | \"C#m7b5\"B6 \"C7\"zB |\nw: ship's a-glow with a mil-lion pearls, and ru-bies fill each bin. The\n\"Bm11\"B2 B2 \"E7#9#5\"B2 BB | \"Am11\"B2 B2 \"Cm(maj7)\"B2 \"F9#11\"BB | \"Em11\"B4 \"Bbm(maj7)\"B4 | \"D9sus\"B4 \"G\"z2 BB ||\nw: sun sits high in a sap-phire sky when my ship comes in. I can\nP:B\n\"D9sus\"B2 B2 B3 B | B2 B2 B4 | \"Am7\"B2 B2 \"Cm6\"B2 B2 | \"Gmaj7\"B4- \"C#m7b5\"B2 \"F#7b9\"BB |\nw: wait the years till it ap-pears, One fine day one spring; _ But the\n\"Bm\"B2 B2 \"Em7\"B2 zB | \"Bm\"B2 B2 \"Em7\"B2 BB | \"Bm11\"B2 \"E13#11\"B2 \"A9sus\"B2 \"A13\"B2 | \"D9sus\"B6 \"D7#5\"B2 ||\nw: pearls and such, They won't mean much if there's miss-ing just one thing. I\nP:C\n\"G6/9\"B2 \"E7b9\"B2 B2 BB | \"A13\"B2 B2 \"D9sus\"B3 \"D9\"B | \"G6/9\"B2 B2 \"E7#9\"B2 \"Dm7b5\"B2 | \"C#m7b5\"B6 \"C7\"BB |\nw: do not care if that day ar-rives, That dream need nev-er be if the\n\"Bm11\"B2 B2 \"E7#9#5\"B2 BB | \"Am11\"B2 B2 \"Cm(maj7)\"B3 \"F9#11\"B | \"Em\"B3 B \"D7\"B3 B | \"Gmaj7\"B2- \"G#o7\"B2- \"Am7\"B2 \"D7\"BB |\nw: ship I sing does-n't al-so bring my own true love to me, _ _ If the\n\"Gmaj9\"B2 B2 \"Em\"\"(Db7b5)\"B2 BB | \"Cmaj9\"B2 B2 \"F13sus\"B2 \"F9\"B2 | \"Bm7\"B4 \"Bb13\"B4 | \"Am7\"\"(Am7b5)\"B4 \"D7b9\"B4 |\nw: ship I sing does-n't al-so bring my own true love to\n\"G6\"B8 | \"(Am7)\"z4 \"(D7)\"z4 |]\nw: me.\n\n%unsure [bars 7-8] Bbm(maj7) read as falling on beat 3 of bar 7 and Am7 on bar 8"
+},
+{
+"id": "New_Real_Book_Volume2/208-naima",
+"book": "The New Real Book Vol. 2",
+"title": "Naima",
+"pdf": "208",
+"form": "AABC 4+4+8+4",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "chord in parentheses is optional; Amaj7/F may also be played as Amaj7(#5)/F; Coda goes to the Ending"
+},
+{
+"bars": [
+11
+],
+"groups": [
+10
+],
+"text": "first note read as a dotted half tied into the triplet"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Naima\nC:John Coltrane\nP:AABC\n%source New Real Book Vol 2 p216 (pdf 208)\n%style (Med. Ballad, quarter = 57)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 4+4+8+4\n%unsure [general] chord in parentheses is optional; Amaj7/F may also be played as Amaj7(#5)/F; Coda goes to the Ending\nM:4/4\nL:1/8\nK:Bb\nP:A\n|: \"Ebmaj7/F\"B6- (3BBB | \"Fm9\"B8 | \"Bmaj7/F\"B4 \"Amaj7/F\"B2- (3BBB | \"Bbmaj7\"B8 :|\nP:B\n\"Dbmaj7/C\"B6- (3BBB | \"C13b9\"B6 (3zBB | \"Dbmaj7/C\"B6- (3BBB | \"C13b9\"B6 (3zBB |\n\"Emaj7#5/C\"B6 (3BBB | \"Dbmaj7/C\"B6 (3zBB | \"Bbmaj7/C\"B6- (3BBB | \"Fsus(addb9)/C\"B4- \"(Gbmaj7/C)\"B4 ||\nP:C\n\"Ebmaj7/F\"B6- (3BBB | \"Fm9\"B8 | O\"Bmaj7/F\"B4 \"Amaj7/F\"B2- (3BBB | \"Bbmaj7\"B8 |]\n%coda\nO\"Bmaj7/F\"B4 \"Amaj7/F\"B2- (3BBB | \"Bbmaj7\"B8 | \"Bmaj7/F\"B4 \"Amaj7/F\"B2- (3BBB | \"Bbmaj7\"B8 |\n\"Bmaj7/F\"B4 \"Amaj7/F\"B2- (3BBB | \"Bbmaj7\"B4 \"Ebmaj7\"B4 | \"Bbmaj7\"B4 \"Ebmaj7\"B4 | \"Bbmaj7\"B4 \"Ebmaj7\"B4 |\n\"Bbmaj7\"!fermata!B8 |]\n\n%unsure [bar 11] first note read as a dotted half tied into the triplet"
+},
+{
+"id": "New_Real_Book_Volume2/209-napanoch",
+"book": "The New Real Book Vol. 2",
+"title": "Napanoch",
+"pdf": "209",
+"form": "AB 16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "head is played twice; solo on A, B may be inserted on cue; after solos D.S. al Coda (repeat before taking Coda); B is a \"sample sax fill\""
+},
+{
+"bars": [],
+"groups": [],
+"text": "melody is freely interpreted; solos may also be over a G# minor tonality till cue; F/F#m chord optional for solos"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "intro is piano chord hits; each chord read as 2 bars (barline between hit bar and the held whole chord is unclear)"
+},
+{
+"bars": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"text": "G# pedal under the G/G# bars"
+},
+{
+"bars": [
+35
+],
+"groups": [
+34
+],
+"text": "nothing printed in the A9sus bar; read as a full-bar rest"
+},
+{
+"bars": [
+41,
+42,
+43,
+44
+],
+"groups": [
+40,
+41,
+42,
+43
+],
+"text": "coda (Slowly) is piano & sax chords"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Napanoch\nC:Dave Liebman\nP:AB\n%source New Real Book Vol 2 p217 (pdf 209)\n%style (Fast Swing, quarter = 284)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16\n%unsure [form] head is played twice; solo on A, B may be inserted on cue; after solos D.S. al Coda (repeat before taking Coda); B is a \"sample sax fill\"\n%unsure [general] melody is freely interpreted; solos may also be over a G# minor tonality till cue; F/F#m chord optional for solos\nM:4/4\nL:1/8\nK:C\n%intro\n|: \"G#m7(11)\"B2 z2 B2 zB- | B8 | \"A9sus\"B2 z2 B2 zB- | B8 |\n\"G#m7(11)\"B2 z2 B2 zB- | B8 | \"G9sus\"B2 z2 B2 zB- | B8 :|\nP:A\n|: S\"G/G#\"!trill!B4 B4 | z4 BB BB | B2 BB- B3 B | \"F/F#m\"B2 BB- B4 |\n\"G/G#\"!trill!B4 B4 | z4 BB BB | B2 BB- B3 B | \"F/F#m\"BB BB- B4 |\n\"G/G#\"!trill!B4 B4 | z4 BB BB | B2 BB- B3 B | \"F/F#m\"B2 BB- B4 |\n\"G/G#\"!trill!B4 B4 | z4 BB BB | B2 BB- B3 B | \"F/F#m\"BB BB- B4 ||\nP:B\n\"G#m7(11)\"B8- | B4 BB BB | \"A9sus\"B8- | B3 B BB BB |\n\"G#m7(11)\"B8- | B3 B BB BB | \"G9sus\"B4 B B2 B- | B3 B BB BB |\n\"G#m7(11)\"B8- | B3 B BB BB | \"A9sus\"z8 | z4 BB BB |\n\"G#m7(11)\"B8- | B3 B BB B\"G9sus\"B- | B3 B BB BB | BB BB BB B2 :|\n%coda\nO\"N.C.\"B4 B4 | B2 B2 B2 B2 | (3B4B4B4 | (3B4\"F/F#m\"B4!fermata!B4 |]\n\n%unsure [bars 1-8] intro is piano chord hits; each chord read as 2 bars (barline between hit bar and the held whole chord is unclear)\n%unsure [bars 9-24] G# pedal under the G/G# bars\n%unsure [bar 35] nothing printed in the A9sus bar; read as a full-bar rest\n%unsure [bars 41-44] coda (Slowly) is piano & sax chords"
+},
+{
+"id": "New_Real_Book_Volume2/211-the-natives-are-restless-tonight",
+"book": "The New Real Book Vol. 2",
+"title": "The Natives Are Restless Tonight",
+"pdf": "211",
+"form": "AB 24+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A (with 1st/2nd endings) runs into 8 slash bars where the first solo begins; B is the solo section; after solos D.C. al Coda (repeat before taking Coda); bar counts inferred"
+},
+{
+"bars": [],
+"groups": [],
+"text": "pdf 212 holds a \"(Harmony)\" version, not transcribed"
+},
+{
+"bars": [
+15
+],
+"groups": [
+14
+],
+"text": "Coda sign is marked \"on repeat\""
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21
+],
+"groups": [
+16,
+17,
+18,
+19,
+20
+],
+"text": "2nd ending to bar 21 is horn harmony (trp., ten.) with piano doubling; read as one rhythm"
+},
+{
+"bars": [
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29
+],
+"groups": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28
+],
+"text": "rhythm slashes; first solo begins here"
+},
+{
+"bars": [
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41
+],
+"groups": [
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40
+],
+"text": "solo section printed as rhythm slashes"
+},
+{
+"bars": [
+47,
+48,
+49,
+50
+],
+"groups": [
+46,
+47,
+48,
+49
+],
+"text": "the last bars (Slowly) are two-voice horn parts; top line rhythm used"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Natives Are Restless Tonight\nC:Horace Silver\nP:AB\n%source New Real Book Vol 2 p219 (pdf 211)\n%style (Fast Swing, quarter = 280)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 24+12\n%unsure [form] A (with 1st/2nd endings) runs into 8 slash bars where the first solo begins; B is the solo section; after solos D.C. al Coda (repeat before taking Coda); bar counts inferred\n%unsure [general] pdf 212 holds a \"(Harmony)\" version, not transcribed\nM:4/4\nL:1/8\nK:C\n%intro\n\"(Am)\"z8 | z8 | z8 | z4 z2 B2 ||\nP:A\n|: \"(Am)\"B2 B4 B2 | B4 B2 BB- | B8- | \"(Fmaj7b5)\"B8 |\n\"(Fmaj7b5)\"z2 BB BB BB | (3B2B2B2 (3B2B2B2 | \"(Am)\"B8- | B6 \"(B7b5)\"B2- |\n\"(B7b5)\"B2 BB B2 zB- | \"(Bb7b5)\"B2 BB B2 zB- | \"(Am)\"B8- |1 B6 B2 :|2\nB4 zB BB- | \"Am\"B7 B- | \"(Bm7b5)\"B2 BB \"E7#9\"BB zB- | \"Am\"B8- |\nB8 || \"Fmaj7\"z8 | z8 | \"Am\"z8 |\nz8 | \"B7b5\"z8 | \"Bb7b5\"z8 | \"Am\"z8 |\nz8 ||\nP:B\n|: \"Am\"z8 | z8 | z8 | z8 |\n\"Fmaj7\"z8 | z8 | \"Am\"z8 | z8 |\n\"B7b5\"z8 | \"Bb7b5\"z8 | \"Am\"z8 | z8 :|\n%coda\nO\"(Am)\"B6 \"(B7b5)\"B2- | B2 BB B2 zB- | \"(Bb7b5)\"B2 BB BB zB- | \"Am7\"B8- |\nB8- | \"Am7\"!fermata!B6 B2 | B2 B4 B2 | B4 B2 BB- |\n\"Am6\"!fermata!B8 |]\n\n%unsure [bar 15] Coda sign is marked \"on repeat\"\n%unsure [bars 17-21] 2nd ending to bar 21 is horn harmony (trp., ten.) with piano doubling; read as one rhythm\n%unsure [bars 22-29] rhythm slashes; first solo begins here\n%unsure [bars 30-41] solo section printed as rhythm slashes\n%unsure [bars 47-50] the last bars (Slowly) are two-voice horn parts; top line rhythm used"
+},
+{
+"id": "New_Real_Book_Volume2/213-natural-selection",
+"book": "The New Real Book Vol. 2",
+"title": "Natural Selection",
+"pdf": "213",
+"form": "AB 16+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "as played by Quest; head played twice before solos, once after; 1st x: pn., 2nd x: sop.; last 4 bars of B may be vamped to end solos; Gm9(maj7#5) may also be played as Gm(add9)"
+},
+{
+"bars": [
+28
+],
+"groups": [
+27
+],
+"text": "the notes after the half note are printed in parentheses (pickup back to the top)"
+},
+{
+"bars": [
+30,
+31,
+32
+],
+"groups": [
+29,
+30,
+31
+],
+"text": "Slowly from beat 3 of bar 30"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Natural Selection\nC:Richie Beirach\nP:AB\n%source New Real Book Vol 2 p222 (pdf 213)\n%style (Med. Swing, A in 2)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+12\n%unsure [general] as played by Quest; head played twice before solos, once after; 1st x: pn., 2nd x: sop.; last 4 bars of B may be vamped to end solos; Gm9(maj7#5) may also be played as Gm(add9)\nM:4/4\nL:1/8\nK:C\nP:A\n|: \"Cm7(11)\"B3 B B2 BB- | \"B7#9#5\"B4 (3B2B2B2 | \"Bb13sus\"B4 (3B2B2B2 | \"G7#9#5\"B4 B2 BB- |\n\"Abmaj7b5\"B3 B B2 BB- | \"Ebmaj7#5/D\"B3 B B2 BB- | \"B/G\"B4 (3B2B2B2 | \"F#7#9#5\"B3 B B2 BB- |\n\"Bm(add9)\"B4 (3B2B2B2 | \"Bb7#9#5\"B6 zB | \"Dmaj9/A\"B4 BB zB | \"G#m7b5(11)\"B6 zB |\n\"Gm(maj7)\"B4 (3B2B2B2 | \"Gbmaj7b5\"B6 BB- | \"Fm7(11)\"B4 z2 BB- | \"B9sus\"B4 z2 BB- ||\nP:B\n\"Bbmaj7\"B8- | \"F/A\"B4 BB zB | \"Eb/G\"B8- | \"Bbmaj7/F\"B4 BB zB |\n\"Ebmaj7\"B8 | \"D7#9#5\"z4 (3B2B2B2 | \"Ab13sus\"B8- | B6 zB |\n\"Gm9(maj7#5)\"B8- | \"Bb/Gb\"B4 BB zB | O\"Gm9(maj7#5)\"B8- | \"F#7#9#5\"B4 BB zB :|\n%coda\nO\"Gm9(maj7#5)\"B8- | \"F#7#9#5\"!fermata!B4 BB zB | \"Cm7(11)\"B3 B B2 BB- | \"B7#9#5\"!fermata!B8 |]\n\n%unsure [bar 28] the notes after the half note are printed in parentheses (pickup back to the top)\n%unsure [bars 30-32] Slowly from beat 3 of bar 30"
+},
+{
+"id": "New_Real_Book_Volume2/214-the-necessary-blonde",
+"book": "The New Real Book Vol. 2",
+"title": "The Necessary Blonde",
+"pdf": "214",
+"form": "ABCD 24+18+24+14",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 9,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred from section letters (A, B, C1, C2, D, then solos on E (4x) and F); bar counts per section inferred; C1 played before 2nd solo, D then D.S. al Coda"
+},
+{
+"bars": [],
+"groups": [],
+"text": "meter printed 3/4 (6/8); drums accent dotted quarters through much of the tune; as played by Scott Henderson, Gary Willis and Tribal Tech"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "intro is bass harmonics with piano; bars 9-16 piano comps (2-bar rests)"
+},
+{
+"bars": [
+40
+],
+"groups": [
+39
+],
+"text": "gtr. pickup notes"
+},
+{
+"bars": [
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74
+],
+"groups": [
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73
+],
+"text": "C1 is guitar (8va b.); rhythms and chord placement in this short-note passage read from a small scan; bars 63-66 guitar fill"
+},
+{
+"bars": [
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82
+],
+"groups": [
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81
+],
+"text": "C2: gtr. fills over the rests"
+},
+{
+"bars": [
+83,
+84,
+85,
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96
+],
+"groups": [
+82,
+83,
+84,
+85,
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95
+],
+"text": "D (gtr., loco) rhythms read from a small scan"
+},
+{
+"bars": [
+97,
+98,
+99,
+100,
+101,
+102,
+103,
+104,
+105,
+106,
+107,
+108,
+109,
+110,
+111,
+112,
+113,
+114,
+115,
+116,
+117,
+118,
+119,
+120,
+121,
+122
+],
+"groups": [
+96,
+97,
+98,
+99,
+100,
+101,
+102,
+103,
+104,
+105,
+106,
+107,
+108,
+109,
+110,
+111,
+112,
+113,
+114,
+115,
+116,
+117,
+118,
+119,
+120,
+121
+],
+"text": "solos on E (4x) and F (indef.), slashes; on cue 1st solo bars 119-120 (pn.), then play C1 before 2nd solo; on cue 2nd solo bars 121-122 (pn.), then play D, then D.S. al Coda"
+},
+{
+"bars": [
+123,
+124,
+125,
+126,
+127
+],
+"groups": [
+122,
+123,
+124,
+125,
+126
+],
+"text": "vamp & fill till cue (gtr. fills), then the last chord on cue"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Necessary Blonde\nC:Gary Willis\nP:ABCD\n%source New Real Book Vol 2 p223 (pdf 214)\n%style (Med. Straight 1/8's, quarter = 177)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 24+18+24+14\n%unsure [form] form inferred from section letters (A, B, C1, C2, D, then solos on E (4x) and F); bar counts per section inferred; C1 played before 2nd solo, D then D.S. al Coda\n%unsure [general] meter printed 3/4 (6/8); drums accent dotted quarters through much of the tune; as played by Scott Henderson, Gary Willis and Tribal Tech\nM:3/4\nL:1/8\nK:C\n%intro\n\"Fm7b5\"B6- | B3 B3 | \"E/Bb\"B6- | B3 B3 |\n\"Fmaj7b5\"B6- | B6 | \"Cbmaj7#5/Bb\"B6- | B6 |\n\"Fm9\"z6 | z6 | \"Bb13#11b9\"z6 | z6 |\n\"Fm9\"z6 | z6 | \"Bb13#11b9\"z6 | z6 ||\nP:A\nS\"Fm7b5\"B6- | B B2 B2 B | \"E/Bb\"B6- | B4 BB |\n\"Fmaj7#11#5\"B6- | B4- BB | \"Cbmaj7#5/Bb\"B6- | B6 |\n\"Fm9\"z6 | z6 | \"Bb13#11b9\"z6 | z4 BB |\n\"Ab13sus\"B2 B\"Eb6/9/G\"B- B2- | B \"Bm(add9)/F#\"B3- BB | \"Am11\"B6- | BB- \"Cmaj7#5/F#\"B4 |\n\"Fm9\"B6- | B6- | \"Bb13#11b9\"B6- | B6 |\n\"Fm9\"z6 | z6 | \"Bb13#11b9\"z6 | z2 zB- BB ||\nP:B\n\"Abm9\"B6- | B2 (3B2B2B2 | \"Cm9\"B6- | B2 (3B2B2B2 |\n\"F7#9#5\"B6- | B2 B4 | \"F#m9\"B6- | B2 zB BB |\n\"Bbm9\"B6- | B2 B3 B | \"Bm11\"B6- | B2 B3 B |\n\"Ebm11\"B6- | B B2 B- B2 | \"Dmaj7\"B6- | B6 |\n\"Bmaj7/C#\"z6 | \"Bmaj7#5/C#\"z6 ||\nP:C\n\"F#m9\"B2 z B2 \"G#o7(addb9)\"z | B2 z \"Amaj9\"B2 z | \"B13b9\"B2 z B2 \"C#7#9#5\"z | B2 z \"D#sus(addb9)\"B2 B |\n\"Fm11\"B2 z4 | z6 | z6 | z6 |\n\"F#m9\"B2 z B2 \"Em11\"z | B2 z \"D#7#9#5\"B2 z | \"C#m9\"B2 z \"Bm11\"B2 z | \"Emaj7#5/Bb\"B2 z B2 z |\n\"G#m9\"B2 zB \"F#m11\"B2 | z2 B \"Em6/9\"B2 z | \"B(add11)/D#\"B2 z \"C#m6\"B2 z | \"C13#11\"z2 B B2 B ||\n\"Fm9\"B6- | B6 | \"Bb13#11b9\"z6 | z6 |\nO\"Fm9\"z6 | z6 | \"Bb13#11b9\"z6 | z6 ||\nP:D\n\"Dm11\"B6 | z B2 B2 B | \"G7#9#5\"B6 | z2 B- B2 B |\n\"Abm9\"B6- | B2 B4 | \"F#7#9#5\"B3 B3 | \"Em9\"B3 B3 |\n\"D#7#9#5\"B3 B3 | \"Dm9\"B4- BB | \"Gm11b5\"B6- | B6- |\n\"C7#9#5\"B6- | B6 ||\n%solos\n|: \"Fm9\"z6 | z6 | \"Bb13#11b9\"z6 | z6 :|\n:\"Abm9\"z6 | z6 | \"Cm9\"z6 | z6 |\n\"F7#9#5\"z6 | z6 | \"F#m9\"z6 | z6 |\n\"Bbm9\"z6 | z6 | \"Bm11\"z6 | z6 |\n\"Ebm11\"z6 | z6 | \"Dmaj7\"z6 | z6 |\n\"Gmaj7#11\"z6 | z6 :| \"Bmaj7/C#\"zB z B3 | \"Bmaj7#5/C#\"zB z B3 ||\n\"Gmaj7/A\"z B2 B- B2 | \"Gmaj7#5/A\"B2 B2 B2 ||\n%coda\n|: O\"Fm9\"z6 | z6 | \"Bb13#11b9\"z6 | z6 :|\n\"Gm/Fo7\"!fermata!B6 |]\n\n%unsure [bars 1-8] intro is bass harmonics with piano; bars 9-16 piano comps (2-bar rests)\n%unsure [bar 40] gtr. pickup notes\n%unsure [bars 59-74] C1 is guitar (8va b.); rhythms and chord placement in this short-note passage read from a small scan; bars 63-66 guitar fill\n%unsure [bars 75-82] C2: gtr. fills over the rests\n%unsure [bars 83-96] D (gtr., loco) rhythms read from a small scan\n%unsure [bars 97-122] solos on E (4x) and F (indef.), slashes; on cue 1st solo bars 119-120 (pn.), then play C1 before 2nd solo; on cue 2nd solo bars 121-122 (pn.), then play D, then D.S. al Coda\n%unsure [bars 123-127] vamp & fill till cue (gtr. fills), then the last chord on cue"
+},
+{
+"id": "New_Real_Book_Volume2/216-never-alone",
+"book": "The New Real Book Vol. 2",
+"title": "Never Alone",
+"pdf": "216",
+"form": "AB 20+19 (4-bar intro; B is the tenor solo on chords, then D.S. al Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the page; the solo changes differ slightly from the head"
+},
+{
+"bars": [
+15,
+43,
+48
+],
+"groups": [
+14,
+42,
+47
+],
+"text": "printed 5/4 and 6/4 bars (the checker flags them against 4/4)"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro is bass only; tenor pickup 16th at end of bar 4"
+},
+{
+"bars": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15
+],
+"groups": [
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14
+],
+"text": "16th-note and triplet rhythms (quarter-note triplets in bars 7, 10, 13) simplified so bars add up"
+},
+{
+"bars": [
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"text": "rhythms guessed in bars 16-17; bars 21-24 are a low bass note then rests"
+},
+{
+"bars": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43
+],
+"groups": [
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42
+],
+"text": "tenor solo in rhythm slashes, written as rests; D.S. al Coda (end solo)"
+},
+{
+"bars": [
+44,
+45,
+46,
+47,
+48,
+49
+],
+"groups": [
+43,
+44,
+45,
+46,
+47,
+48
+],
+"text": "coda rhythms guessed; bar 48 is tenor + keyboard chords; last bar is a Bb bass vamp with tenor fills, vamp & fade"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Never Alone\nC:Michael Brecker\nP:AB\n%source New Real Book Vol 2 p225 (pdf 216)\n%style (Slow Ballad (1/16's swing), q=49)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 20+19 (4-bar intro; B is the tenor solo on chords, then D.S. al Coda)\n%unsure [form] section lengths counted from the page; the solo changes differ slightly from the head\n%unsure [bars 15, 43, 48] printed 5/4 and 6/4 bars (the checker flags them against 4/4)\nM:4/4\nL:1/8\nK:Bb\n%intro\n\"Bb bass\"z8 | z8 | z8 | z4 z2 z3/2B/ |\nP:A\n\"Bb\"B3 B/B/- B3 B/B/ | \"C/Bb\"B3 B/B/ \"D/Bb\"B3 B/B/ | \"Ab(add9)/C\"B2- BB/B/ \"F(add9)/A\"B2- BB/B/ | \"D/Bb\"B6 \"Gm/Bb\"z/B/B/B/ |\n\"Bbsus(add9)\"B3 B/B/- B3 \"Cbmaj7b5/Bb\"B/B/ | \"Bb13b9\"B2- (3BBB \"Ebm6/9(add11)/Bb\"B3 \"Eb\"B | \"Ab13sus\"B3 (3B/B/B/ \"Fm7(11)\"B2 \"F#m7(11)\"B2 | \"Eb bass\"B4 \"Eb13sus\"B/B/B B\"A13#9\"B |\n\"Dm11\"B2- BB/B/ \"A13\"B4 | \"Dm11\"z2 BB/B/ \"A13\"B3 B | [M:5/4]\"Fm(maj7)\"B2 zB \"E7#9#5\"BB B2 B2 | [M:4/4]!segno!\"Am7(13)\"B2 (3BBB \"A(add9)/C#\"B/B/B \"Abmaj7b5/C\"BB |\n\"F(add9)/A\"B2 \"D/A\"B2 \"(B7b5)\"(3BBB !fermata!BB | \"Bb\"B3 B/B/- B3 \"Eb/Bb\"B/B/ | \"A/Bb\"B2 B/B/ B3- B\"G/Bb\"B/B/ | \"Fm7(11)\"B2- BB/B/ \"Gbmaj7\"B2 \"Gb7#11\"!coda!zB |\n\"Bb bass\"B8 | z8 | z8 | z8 ||\nP:B\n|: \"Bb\"z8 | \"C/Bb\"z8 | \"D/Bb\"z8 | \"Ab(add9)/C\"z4 \"F(add9)/A\"z4 |\n\"D/Bb\"z4 \"Gm/Bb\"z4 | \"Bbsus(add9)\"z4 \"Cbmaj7b5/Bb\"z4 | \"Bb13b9\"z2 \"Ebm6/9(add11)/Bb\"z4 \"Eb\"z2 | \"Ab13sus\"z4 \"Fm7(11)\"z2 \"F#m7(11)\"z2 |\n\"Eb13sus\"z4 \"A13#9\"z4 | \"Dm11\"z4 \"A13\"z4 | z8 | \"Fm(maj7)\"z4 \"C7b9\"z4 |\n\"Fm(maj7)\"z4 \"E7#9#5\"z4 | \"Am11\"z4 \"E7#9#5\"z4 | \"Am11\"z4 \"A7#9#5\"z4 | \"Dm11\"z4 \"A13\"z4 |\nz8 | \"Fm(maj7)\"z4 \"C7b9\"z4 | [M:5/4]\"Fm(maj7)\"z4 \"E7#9#5\"z6 :|\n%coda\n[M:4/4]\"Bb bass\"B8 | z4 z2 z\"F(add9)/A\"B | \"Fm6/Ab\"B3 B \"Gm7/Bb/F\"BB \"E7b5\"BB | \"D/Eb\"BB BB \"Gb/D\"!fermata!B3 \"D7#9#5\"B/B/ |\n[M:6/4]\"Cbmaj7#11\"B4 \"Ab(add#11)/C\"B2 (3BBz \"Ebmaj7(13)\"B4 |: [M:4/4]\"Fm7\"B2 z2 z4 :|\n\n%unsure [bars 1-4] intro is bass only; tenor pickup 16th at end of bar 4\n%unsure [bars 5-15] 16th-note and triplet rhythms (quarter-note triplets in bars 7, 10, 13) simplified so bars add up\n%unsure [bars 16-24] rhythms guessed in bars 16-17; bars 21-24 are a low bass note then rests\n%unsure [bars 25-43] tenor solo in rhythm slashes, written as rests; D.S. al Coda (end solo)\n%unsure [bars 44-49] coda rhythms guessed; bar 48 is tenor + keyboard chords; last bar is a Bb bass vamp with tenor fills, vamp & fade"
+},
+{
+"id": "New_Real_Book_Volume2/218-never-will-i-marry",
+"book": "The New Real Book Vol. 2",
+"title": "Never Will I Marry",
+"pdf": "218",
+"form": "AB 32+24",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "only A and B are lettered; B is 8 new bars then a 16-bar return of the second half of A"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed under the melody but not written as w: lines"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Never Will I Marry\nC:Frank Loesser\nP:AB\n%source New Real Book Vol 2 p227 (pdf 218)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 32+24\n%unsure [form] only A and B are lettered; B is 8 new bars then a 16-bar return of the second half of A\n%unsure [general] lyrics are printed under the melody but not written as w: lines\nM:4/4\nL:1/8\nK:C\nP:A\n\"Fmaj7\"B6 B2 | BB- B6 | \"Em7\"B6 B2 | BB- B6 |\n\"Fmaj7\"B6 B2 | BB- B6 | \"Em7\"B4 B4 | \"Fmaj7\"B8 |\n\"Bbmaj7\"B6 B2 | B4 B4 | \"Bm7\"B6 \"E7\"B2 | \"Am7\"BB- B6 |\n\"F#m7\"B6 \"B7\"B2 | \"Emaj7\"B4- \"C#7\"B4 | \"F#m7\"B2 B4 \"B7\"B2 | \"Emaj7\"B6 \"(Gm7)\"B\"(C7)\"B |\n\"Fmaj7\"B6 B2 | BB- B6 | \"Em7\"B6 B2 | \"Am7\"B4 B4 |\n\"Dm7\"B6 B2 | B4 B4 | \"G9sus\"B4 B4 | \"C6\"B8 ||\nP:B\n\"Fmaj7\"z2 B2 B B3 | z2 B2 B2- B2 | \"Em7\"z2 B2 B B3 | z2 B2 B2- B2 |\n\"Fmaj7\"z2 B2 B B3 | z2 B2 B2- B2 | \"Em7\"z2 B2 B2 B2 | \"Am7\"z2 B2 B2 B2 |\n\"Bbmaj7\"B6 B2 | B4 B4 | \"Bm7\"B6 \"E7\"B2 | \"Am7\"BB- B6 |\n\"F#m7\"B6 \"B7\"B2 | \"Emaj7\"B4- \"C#7\"B4 | \"F#m7\"B2 B4 \"B7\"B2 | \"Emaj7\"B6 \"(Gm7)\"B\"(C7)\"B |\n\"Fmaj7\"B6 B2 | BB- B6 | \"Em7\"B6 B2 | \"Am7\"B4 B4 |\n\"Dm7\"B6 B2 | B4 B4 | \"G9sus\"B4 B4 | \"C6\"B8 |]\n"
+},
+{
+"id": "New_Real_Book_Volume2/220-nica-s-dream",
+"book": "The New Real Book Vol. 2",
+"title": "Nica's Dream",
+"pdf": "220",
+"form": "AABA 16+16+16+16, then C 8 (interlude between solos)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "head is AABA per the book's text (\"play head (AABA)\"); B is written with the D.S. to A's 3rd ending; solos on D, D, E, F (chords only, pdf 221) not written out"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "intro: trumpet hits with drum fills and a break; bars 5-8 are grace-note ghost hits written as rests"
+},
+{
+"bars": [
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"text": "grace notes dropped; rhythm of bar 22 guessed"
+},
+{
+"bars": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40
+],
+"groups": [
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39
+],
+"text": "B (swing) rhythms read from a low-resolution scan; bar 40 is a break; then D.S. al 3rd ending"
+},
+{
+"bars": [
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49
+],
+"groups": [
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"text": "3rd ending and C rhythms guessed; bars 48-49 are a solo break"
+},
+{
+"bars": [
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61
+],
+"groups": [
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60
+],
+"text": "coda: bars 58-60 are a break"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Nica's Dream\nC:Horace Silver\nP:AABAC\n%source New Real Book Vol 2 p229 (pdf 220)\n%style (Med.-Up Latin, h=124)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 16+16+16+16, then C 8 (interlude between solos)\n%unsure [form] head is AABA per the book's text (\"play head (AABA)\"); B is written with the D.S. to A's 3rd ending; solos on D, D, E, F (chords only, pdf 221) not written out\nM:C|\nL:1/8\nK:Eb\n%intro\n\"Fm9\"B2 z2 z2 \"Ebm9\"B2 | z4 \"Dbm9\"B2 z2 | \"G7#5\"B2 B2 B2 BB | BBBB z4 |\nB2 z2 \"Cm(maj7)\"z4 | \"Bbm(maj7)\"z8 | \"Cm(maj7)\"z8 | \"Bbm(maj7)\"z4 z2 B2 |\nP:A\n|: !segno!\"Cm(maj7)\"B8- | B3 B z B2 B | \"Bbm(maj7)\"B8- | B6 B2 |\n\"Cm(maj7)\"(3B2B2B2 B4- | B3 B z B2 B | \"Bbm7\"(3B2B2B2 B4 | \"Eb7\"B6 B2 |\n\"Bbm7\"B8- | \"Eb7\"B3 B z B2 B | \"Abmaj7\"B4- \"Eb9\"B4- | \"D7#9\"B8 |\n\"Db/G\"BBBB B4- | B2 \"G7#5\"B2 z2 zB | !coda!\"Cm(maj7)\"B8- |1 B6 B2 :|2\n\"Cm(maj7)\"B6 z2 ||\nP:B\n\"Bb9sus\"z2 B2 B3 B | \"Bb7sus(b9)\"B2 B4 \"Abo7\"B2 | \"Gm7\"B2 \"Fm7\"B2 \"Ebmaj7\"B2 \"Gm7\"BB- | \"C13b9\"B6 \"C7#5\"B2 |\n\"F9\"B2 BB z B2 B | \"Bb9sus\"B2 B4 \"Bb7b9\"B2 | \"Ebm9(maj7b5)\"B8 | \"F#m9\"BBBB \"B13\"B4 |\n\"Bb9sus\"z2 B2 B3 B | \"Bb7sus(b9)\"B2 B4 \"Abo7\"B2 | \"Gm7\"B2 \"Fm7\"B2 \"Ebmaj7\"B2 \"Gm7\"BB- | \"C13b9\"B6 \"C7#5\"B2 |\n\"F9\"B2 BB z B2 B | \"Bb9sus\"B2 B4 \"Bb7b9\"B2 | \"Ebm9(maj7b5)\"B6 \"G7b9#5\"BB | zBBB B2 BB |]\n%3rd ending\n\"Cm(maj7)\"B4 BBBB ||\nP:C\n\"Cm(maj7)\"BB- B6 | \"Bbm(maj7)\"BB- B6 | \"Abmaj7\"BB- B6 | \"Dm7b5\"BB- B6 |\n\"Db/G\"B8 | z2 BB BBBB | \"Cm\"B2 z2 z4 | z8 |]\n%coda\n\"Cm(maj7)\"B6 B2 | B6 B2 | \"Fm7\"B6 \"Bb7\"B2 | \"Ebmaj7\"B2 B2 B2 B2 |\n\"Dm7b5\"B8- | \"Db/G\"B8- | \"Dm7b5\"B8- | \"Db/G\"B8 |\n\"Db bass\"z8 | BBBB BBBB | B2 z2 z4 | \"Cm11\"!fermata!B8 |]\n\n%unsure [bars 1-8] intro: trumpet hits with drum fills and a break; bars 5-8 are grace-note ghost hits written as rests\n%unsure [bars 12-24] grace notes dropped; rhythm of bar 22 guessed\n%unsure [bars 25-40] B (swing) rhythms read from a low-resolution scan; bar 40 is a break; then D.S. al 3rd ending\n%unsure [bars 41-49] 3rd ending and C rhythms guessed; bars 48-49 are a solo break\n%unsure [bars 50-61] coda: bars 58-60 are a break"
+},
+{
+"id": "New_Real_Book_Volume2/224-night-dreamer",
+"book": "The New Real Book Vol. 2",
+"title": "Night Dreamer",
+"pdf": "224",
+"form": "A 16 (head played twice before and after solos; solo on A)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "single lettered section; form taken from the book's note \"Head is played twice before and after solos\""
+},
+{
+"bars": [
+1,
+2,
+3
+],
+"groups": [
+0,
+1,
+2
+],
+"text": "fermata whole-bar notes over a solo piano fill"
+},
+{
+"bars": [
+4,
+5,
+6,
+7
+],
+"groups": [
+3,
+4,
+5,
+6
+],
+"text": "piano vamp chords (written as B); bars 6-7 are a printed 2-bar repeat sign, written as rests"
+},
+{
+"bars": [
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"groups": [
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22
+],
+"text": "chord placement in bars 11, 15, 23 approximate (chords fall on the tied notes)"
+},
+{
+"bars": [
+24,
+25
+],
+"groups": [
+23,
+24
+],
+"text": "coda is rhythm slashes (vamp, fill & fade), written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Night Dreamer\nC:Wayne Shorter\nP:A\n%source New Real Book Vol 2 p234 (pdf 224)\n%style (Med. Jazz Waltz, q=128)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 16 (head played twice before and after solos; solo on A)\n%unsure [form] single lettered section; form taken from the book's note \"Head is played twice before and after solos\"\nM:3/4\nL:1/8\nK:A\n%intro\n\"F#m11\"!fermata!B6 | \"Am11\"!fermata!B6 | \"E7alt\"!fermata!B6 |: \"Amaj7\"z B3 \"Gm7\"B2 |\n\"Fmaj7\"z B3 \"E7#9#5\"B2 | \"Amaj7\"z3 \"Gm7\"z3 | \"Fmaj7\"z3 \"E7#9#5\"z3 ::\nP:A\n!segno!\"Amaj7\"B2 B2 \"Gm7\"B2 | \"Fmaj7\"B2 B2 \"E7#9#5\"B2 | \"Amaj7\"BB/B/ BB BB- | \"Gm7\"B2 \"Fmaj7\"B2- \"E7#9#5\"B2 |\n\"Amaj7\"B2 B2 \"Gm7\"B2 | \"Fmaj7\"B2 B2 \"E7#9#5\"B2 | \"Fm7\"BB/B/ BB BB- | B2- \"Bb9\"B4 |\n\"F#13sus\"B2 B3 B- | B3 B- BB/B/ | \"G13sus\"B2 B3 B- | B2 BB- BB/B/ |\n\"Amaj7\"B2 BB- \"Gm7\"B2 | \"Fmaj7\"B4 \"E7#9#5\"BB | \"Amaj7\"BB/B/ BB BB- | \"Gm7\"B2 \"Fmaj7\"B2- \"E7#9#5\"!coda!B2 :| :\n%coda\n\"Amaj7\"z3 \"Gm7\"z3 | \"Fmaj7\"z3 \"E7#9#5\"z3 :|\n\n%unsure [bars 1-3] fermata whole-bar notes over a solo piano fill\n%unsure [bars 4-7] piano vamp chords (written as B); bars 6-7 are a printed 2-bar repeat sign, written as rests\n%unsure [bars 8-23] chord placement in bars 11, 15, 23 approximate (chords fall on the tied notes)\n%unsure [bars 24-25] coda is rhythm slashes (vamp, fill & fade), written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/225-a-nightingale-sang-in-berkeley-square",
+"book": "The New Real Book Vol. 2",
+"title": "A Nightingale Sang in Berkeley Square",
+"pdf": "225",
+"form": "AABC 10+10+8+10",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the page (A and C end with a held note plus a bar's rest); the second A is written out, not repeated"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed under the melody but not written as w: lines"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28
+],
+"groups": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28
+],
+"text": "tie and dotted-note placement in the B section read from a low-resolution scan"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:A Nightingale Sang in Berkeley Square\nC:Manning Sherwin (music), Eric Maschwitz (lyric)\nP:AABC\n%source New Real Book Vol 2 p235 (pdf 225)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 10+10+8+10\n%unsure [form] section lengths counted from the page (A and C end with a held note plus a bar's rest); the second A is written out, not repeated\n%unsure [general] lyrics are printed under the melody but not written as w: lines\nM:4/4\nL:1/8\nK:F\nB |\nP:A\n\"Fmaj7\"B2 B2 \"Dm7\"B3 B | \"Am7\"B2 B2 \"Cm7\"B2 \"F7\"BB | \"Bbmaj7\"(3B2B2B2 \"Em7b5\"(3B2B2\"A7\"B2 | \"Dm\"B4 \"Bbm6\"BB B2 |\n\"Fmaj7/C\"B2 B2 \"Gm7\"B3 B | \"Fmaj7/A\"B2 B2 \"Bbm7\"B2 \"Eb9\"BB | \"Fmaj7\"BB B2 \"Dm7\"B2 B2 | \"Gm7\"B4 \"C7\"B4 |\n\"Fmaj7\"B2- \"Dm7\"B2- \"Gm7\"B2- \"C7\"B2 | z4 z2 zB ||\nP:A\n\"Fmaj7\"B2 B2 \"Dm7\"B3 B | \"Am7\"B2 B2 \"Cm7\"B2 \"F7\"BB | \"Bbmaj7\"(3B2B2B2 \"Em7b5\"(3B2B2\"A7\"B2 | \"Dm\"B6 \"Bbm6\"B2 |\n\"Fmaj7/C\"B2 B2 \"Gm7\"B3 B | \"Fmaj7/A\"B2 B2 \"Bbm7\"B3 \"Eb9\"B | \"Fmaj7\"BB B2 \"Dm7\"B2 B2 | \"Gm7\"B4 \"C7\"B4 |\n\"Fmaj7\"B8 | \"Bm7b5\"z4 \"E7\"z4 ||\nP:B\n[K:A]\"Amaj7\"zB BB \"F#m7\"BB BB | \"Bm7\"B B2 B- \"E7\"B3 B | \"C#m7\"B2 B2 \"Co7\"B3 B | \"Bm7\"B2 B2 \"E7\"B4 |\n\"Amaj7\"zB BB \"F#m7\"BB BB | \"Bm7\"B B2 B- \"E7\"B3 B | \"C#m7\"B2 B2 \"(Dm7)\"\"F#m7\"B3 B | \"Gm7\"B2 B2 \"C7\"B3 B ||\nP:C\n[K:F]\"Fmaj7\"B2 B2 \"Dm7\"B3 B | \"Am7\"B2 B2 \"Cm7\"B2 \"F7\"BB | \"Bbmaj7\"(3B2B2B2 \"Em7b5\"(3B2B2\"A7\"B2 | \"Dm\"B6 \"Bbm6\"B2 |\n\"Fmaj7/C\"B2 B2 \"Gm7\"B3 B | \"Fmaj7/A\"B2 B2 \"Bbm7\"B3 \"Eb9\"B | \"Fmaj7\"BB B2 \"Dm7\"B2 B2 | \"Gm7\"B4 \"C7\"B4 |\n\"Fmaj7\"B4 \"(Dm7)\"B4 | \"(Gm7)\"z4 \"(C7)\"z4 |]\n\n%unsure [bars 21-28] tie and dotted-note placement in the B section read from a low-resolution scan"
+},
+{
+"id": "New_Real_Book_Volume2/227-nightmood-lembra",
+"book": "The New Real Book Vol. 2",
+"title": "Nightmood (Lembra)",
+"pdf": "227",
+"form": "AABC 8+8+8+8 (plus ending)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A is repeated (second verse printed as text); form inferred from the section letters"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed (verse 1 under the melody, second verse and an alternate B lyric as text on pdf 228) but not written as w: lines"
+},
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "chords E9 and A9#5 placed on beat 3 of the held notes"
+},
+{
+"bars": [
+25,
+26,
+27,
+28,
+29
+],
+"groups": [
+24,
+25,
+26,
+27,
+28
+],
+"text": "ending (pdf 228): 2-bar vamp played 3 times, then a held note; lower accompaniment line skipped"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Nightmood (Lembra)\nC:Ivan Lins (music), David Richardson (Eng. lyric)\nP:AABC\n%source New Real Book Vol 2 p237 (pdf 227)\n%style (Med. Ballad; may also be played as a bossa nova)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8 (plus ending)\n%unsure [form] A is repeated (second verse printed as text); form inferred from the section letters\n%unsure [general] lyrics are printed (verse 1 under the melody, second verse and an alternate B lyric as text on pdf 228) but not written as w: lines\nM:4/4\nL:1/8\nK:D\nP:A\n|: \"Dmaj7\"BB- B6 | \"C#m7\"zB BB \"F#7\"BB BB | \"Bm7\"BB- B6 | \"G#m7\"zB BB \"C#7\"BB BB |\n\"F#m7\"BB- B6 | \"B9sus\"zB BB \"B9#5\"BB BB | \"E9sus\"BB- B2- \"E9\"B4 | \"A13sus\"BB- B2- \"A9#5\"B4 :|\nP:B\n\"D9sus\"BB- B6 | zB BB \"D9#5\"BB BB | \"Gm7\"BB- B6 | \"C9sus\"zB BB \"C9#5\"BB BB |\n\"Fm7\"BB- B6 | \"Bb9sus\"zB BB \"Bb9#5\"BB BB | \"Ebmaj7\"BB- B6 | \"Em7b5\"zB BB \"A7alt\"BB BB ||\nP:C\n\"Dmaj7\"BB- B6 | \"C#m7\"zB BB \"F#7\"BB BB | \"Bm7\"BB- B6 | \"G#m7\"zB BB \"C#7\"BB BB |\n\"F#m7\"BB- B6 | \"B9sus\"zB BB \"B9#5\"BB BB | \"E9sus\"BB- B4 \"E9\"zB | \"A13sus\"BB- B2- \"A9#5\"B4 ||\n%ending\n|: \"Dmaj7\"BB- B6 | \"Eb9#11\"z8 :| \"Dmaj7\"BB- B6- | \"(Eb9#11)\"B8- |\n\"Dmaj9#11\"!fermata!B8 |]\n\n%unsure [bars 7-8] chords E9 and A9#5 placed on beat 3 of the held notes\n%unsure [bars 25-29] ending (pdf 228): 2-bar vamp played 3 times, then a held note; lower accompaniment line skipped"
+},
+{
+"id": "New_Real_Book_Volume2/229-nutville",
+"book": "The New Real Book Vol. 2",
+"title": "Nutville",
+"pdf": "229",
+"form": "A 24, B (solos) 24",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "after solos D.C. al Coda (repeat before taking coda)"
+},
+{
+"bars": [
+20,
+21,
+22,
+23
+],
+"groups": [
+19,
+20,
+21,
+22
+],
+"text": "swing section; chords sit on the anticipated eighths"
+},
+{
+"bars": [
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47
+],
+"groups": [
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46
+],
+"text": "solo section is rhythm slashes, written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Nutville\nC:Horace Silver\nP:Intro AB\n%source New Real Book Vol 2 p239-240 (pdf 229-230)\n%style (Fast Latin, q=290)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 24, B (solos) 24\n%unsure [form] after solos D.C. al Coda (repeat before taking coda)\nM:C\nL:1/8\nK:Dm\n%intro\n\"(Dm)\"z8 | z8 | z8 | z4 B2 B2 ||\nP:A\n|: \"(Dm)\"B3 B B4- | B4 B4 | B8- | B4 B2 B2 |\nB3 B B4- | B2 B4 B2 | B8- | B8 |\n\"(Gm)\"z2 zB B2 B2 | B2 B2 B2 B2 | B3 B- B4- | \"(Eb)\"B4 B2 B2 |\n\"(Dm)\"B3 B B4- | B4 B4 | B8- | B6 z\"Bb13\"B- |\n\"Bb13\"B2 BB BB z\"A13\"B- | B2 BB BB z\"Ab13\"B- | B2 BB BB z\"G13\"B- | B2 BB BB z\"Bb13\"B- |\nB2 BB BB z\"A7#5\"B- | B2 BB B2 BB- | \"(Dm)\"B8- | !coda!B4 B2 B2 :|\nP:B\n|: \"Dm\"z8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 |\n\"Gm\"z8 | z8 | z8 | \"Eb7\"z8 |\n\"Dm\"z8 | z8 | z8 | z8 |\n\"Bb7\"z8 | \"A7\"z8 | \"Ab7\"z8 | \"G7\"z8 |\n\"Bb7\"z8 | \"A7#5\"B2 z2 z4 | \"Dm\"z8 | z8 :|\n%coda\n\"Dm\"B4 \"Ab\"(3B2\"G\"B2\"Eb\"B2 | \"Dm7\"B8- | B4 \"Dm7\"B2 \"Cm7\"B2 | \"Bbm7\"B8 |\n\"A7#5\"B8 | \"Dm11\"!fermata!B8 |]\n\n%unsure [bars 20-23] swing section; chords sit on the anticipated eighths\n%unsure [bars 24-47] solo section is rhythm slashes, written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/233-ode-to-the-doo-da-day",
+"book": "The New Real Book Vol. 2",
+"title": "Ode to the Doo Da Day",
+"pdf": "233",
+"form": "A 8, B 8, C 8, D 8 (solo), E 8, F 8 (solo vamp), G 8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "D.S. al Coda after B (repeat before taking coda, coda = last bar of A); after G, D.S., vamp & fade on B; order of letters after the coda inferred"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"text": "guitar arpeggiated chords in bars 1-2; rest is slashes with light piano fills, written as rests"
+},
+{
+"bars": [
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25
+],
+"groups": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"text": "slashes with tenor fills, written as rests"
+},
+{
+"bars": [
+26
+],
+"groups": [
+25
+],
+"text": "Dm7(11) printed at the start of the coda bar (tied over from A), G#7#9/D on beat 3"
+},
+{
+"bars": [
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45
+],
+"groups": [
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44
+],
+"text": "piano solo slashes, written as rests; endings 1,3 and 2,4"
+},
+{
+"bars": [
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62
+],
+"groups": [
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61
+],
+"text": "tenor solo slashes, written as rests; 1st ending vamp till cue, 2nd ending on cue"
+},
+{
+"bars": [
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70
+],
+"groups": [
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69
+],
+"text": "slashes with tenor fills, written as rests; then D.S., vamp & fade on B"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Ode to the Doo Da Day\nC:Jim Beard\nP:Intro AABA CDEFG\n%source New Real Book Vol 2 p243-244 (pdf 233-234)\n%style (Med. Funk, q=112) (As played by Michael Brecker)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 8, B 8, C 8, D 8 (solo), E 8, F 8 (solo vamp), G 8\n%unsure [form] D.S. al Coda after B (repeat before taking coda, coda = last bar of A); after G, D.S., vamp & fade on B; order of letters after the coda inferred\nM:C\nL:1/8\nK:C\n%intro\nB8 | !fermata!B8 | \"Am7(11)\"z8 | \"Dm7(11)/A\"z8 |\nz8 | \"Am7(11)\"z8 | z8 | \"Dm7(11)/A\"z8 |\n\"G#7#9/E\"z8 ||\nP:A\n|: !segno!\"Am7(11)\"z2 B2 zB BB | z8 | \"Dm7(11)/A\"zB z2 zB BB | z2 zB zB BB |\n\"Am7(11)\"z2 B6- | B4 z2 zB | \"Dm7(11)/A\"zB- B6- | !coda!BB z2 \"G#7#9/E\"B3/2B/4B/4 BB :|\nP:B\n\"A7#9\"z8 | z8 | \"G#7#9/A\"z8 | z8 |\n\"A7#9\"z8 | z8 | \"Bb7#9/A\"z8 | \"G#7#9/E\"z8 ||\n%coda\nBB z2 \"Dm7(11)\"\"G#7#9/D\"B3/2B/4B/4 BB ||\nP:C\n\"F#o7\"B7 B/B/ | \"Ebmaj9\"B7 B/B/ | \"Bbm6/9\"BB B6- | \"Db/Eb\"B8 |\n\"Eo7\"B6 \"C#o7\"(3BBB | \"Bbmaj9#11\"B6- (3BBB | \"Abm6/9\"B8- | B3 B \"E7#9#5\"B4 |]\nP:D\n|: \"Am7(11)\"z8 | \"Ab(add9)/C\"z4 \"Fm11\"z4 | \"Am7(11)\"z8 | \"Bb13#11b9\"z4 \"Ebmaj9\"z4 |\n\"Am7(11)\"z8 |1 \"B13\"z4 \"Emaj9\"z4 | \"Am7(11)\"z8 | \"G#7#9/E\"z8 :|2\n\"Db13\"z4 \"Gbmaj9\"z4 | \"Bbm7(11)\"z8 | \"A7#9/F\"z4 \"G#7#9/E\"z4 :|\nP:E\n\"Cmaj7/E\"B4- BB- B/B3/2 | \"Ebm(maj7)\"B7 B | \"Dbmaj7/F\"B3/2B/ B6- | B8 |\n\"Eb13\"B6- (3BBB | \"A9#11\"B3/2B/ B4- (3BBB | \"Bmaj9\"B4- BB- B/B3/2 | \"Bb13\"B4 \"E/D#\"B4 ||\nP:F\n|: \"Fmaj9\"z8 | \"Fm9\"z8 | \"Co7(addmaj7)\"z8 | \"Abm11\"z8 |\n\"Fmaj9\"z8 | \"Fm9\"z8 | \"Co7(addmaj7)\"z4 \"Cmaj9\"z4 |1 \"Cmaj9\"z4 \"Dm7\"z2 \"C/E\"z2 :|2\n\"Cmaj9\"z4 \"F\"z2 \"Em\"z2 |]\nP:G\n\"A7#9\"z8 | z8 | \"G#7#9/A\"z8 | z8 |\n\"A7#9\"z8 | z8 | \"Bb7#9/A\"z8 | \"G#7#9/E\"z8 |]\n\n%unsure [bars 1-9] guitar arpeggiated chords in bars 1-2; rest is slashes with light piano fills, written as rests\n%unsure [bars 18-25] slashes with tenor fills, written as rests\n%unsure [bar 26] Dm7(11) printed at the start of the coda bar (tied over from A), G#7#9/D on beat 3\n%unsure [bars 35-45] piano solo slashes, written as rests; endings 1,3 and 2,4\n%unsure [bars 54-62] tenor solo slashes, written as rests; 1st ending vamp till cue, 2nd ending on cue\n%unsure [bars 63-70] slashes with tenor fills, written as rests; then D.S., vamp & fade on B"
+},
+{
+"id": "New_Real_Book_Volume2/235-ole",
+"book": "The New Real Book Vol. 2",
+"title": "Olé",
+"pdf": "235",
+"form": "A 16, B 16, C 4 (solo vamp)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "after solos D.S., play AB, short solo on C, then D.S. al Coda (coda vamp till cue)"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro vamp till cue (bass only first 4x); soprano note in parentheses last time only"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36
+],
+"groups": [
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35
+],
+"text": "15-bar multirest with soprano fills, written out as rest bars"
+},
+{
+"bars": [
+37,
+38,
+39,
+40
+],
+"groups": [
+36,
+37,
+38,
+39
+],
+"text": "solo vamp (C# phrygian add 3), slashes written as rests"
+},
+{
+"bars": [
+41,
+42,
+43,
+44,
+45
+],
+"groups": [
+40,
+41,
+42,
+43,
+44
+],
+"text": "coda vamp till cue (printed as 4 slashes per bar), then fermata on cue"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Olé\nC:John Coltrane\nP:Intro ABC\n%source New Real Book Vol 2 p245 (pdf 235)\n%style (Med. Jazz Waltz, q=176)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 16, B 16, C 4 (solo vamp)\n%unsure [form] after solos D.S., play AB, short solo on C, then D.S. al Coda (coda vamp till cue)\nM:3/4\nL:1/8\nK:E\n%intro\n|: \"(C#)\"z6 | z6 | z6 | z2 z2 B2 :|\nP:A\n|: !segno!\"C#\"B3 B B2 | B4- BB | \"D/C#\"BB z2 z2 | z2 z2 zB |\n\"E/C#\"B4 BB | \"D/C#\"B4 BB | \"C#\"B2 BB- B2 | z2 z2 zB/B/ |\n\"C#\"B6- | B4 BB | \"D/C#\"B2 B\"C#\"B- B2 | z2 z2 BB |\n\"D/C#\"BB- B4 | \"E/C#\"BB- B4 | \"D\"B2 \"C#\"B4- | !coda!B6 ||\nP:B\n\"C#\"z6 | z6 | z6 | z6 |\nz6 | z6 | z6 | z6 |\nz6 | z6 | z6 | z6 |\nz6 | z6 | z6 | z2 z2 B2 :|\nP:C\n|: \"C#\"z6 | z6 | z6 | z6 :|\n%coda\n|: \"(C#)\"z6 | z6 | z6 | z6 :|\n\"C#\"!fermata!B6 |]\n\n%unsure [bars 1-4] intro vamp till cue (bass only first 4x); soprano note in parentheses last time only\n%unsure [bars 21-36] 15-bar multirest with soprano fills, written out as rest bars\n%unsure [bars 37-40] solo vamp (C# phrygian add 3), slashes written as rests\n%unsure [bars 41-45] coda vamp till cue (printed as 4 slashes per bar), then fermata on cue"
+},
+{
+"id": "New_Real_Book_Volume2/236-on-the-sunny-side-of-the-street",
+"book": "The New Real Book Vol. 2",
+"title": "On the Sunny Side of the Street",
+"pdf": "236",
+"form": "ABAC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "book letters A, B, C; the second A is written out (lettered C)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+},
+{
+"bars": [
+8
+],
+"groups": [
+8
+],
+"text": "four chords over a held note; the dotted half is split with ties so each chord sits on its beat"
+},
+{
+"bars": [
+20
+],
+"groups": [
+20
+],
+"text": "alternate chords (G7/D F#7/C# F7/C) are printed over beats 2-4; placement approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:On the Sunny Side of the Street\nC:Jimmy McHugh (music), Dorothy Fields (lyric)\nP:ABAC\n%source New Real Book Vol 2 p246 (pdf 236)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABAC 8+8+8+8\n%unsure [form] book letters A, B, C; the second A is written out (lettered C)\n%unsure [general] lyrics are printed\nM:C\nL:1/8\nK:D\n\"(A7)\"BB ||\nP:A\n\"D6\"B2 B2 B2 B2 | \"F#7\"B6 BB | \"Gmaj7\"B2 B2 B2 B2 | \"C#m7b5\"B4 \"F#7\"B4 |\n\"Bm7\"B2 B2 B2 B2 | \"E7\"B6 \"(Fo7)\"BB | \"Em7\"B2 BB- \"A7\"BB B2 | \"F#m7\"B2- \"B7\"B2- \"Em7\"B2 \"A7\"BB |\n\"D6\"B2 B2 B2 B2 | \"F#7\"B6 BB | \"Gmaj7\"B2 B2 B2 B2 | \"C#m7b5\"B4 \"F#7\"B4 |\n\"Bm7\"B2 B2 B2 B2 | \"E7\"B6 \"(Fo7)\"BB | \"Em7\"B2 BB- \"A7\"BB B2 | \"D6\"B2 B2 B2 B2 ||\nP:B\n\"Am7\"B4 B B2 B- | B4 \"D7\"B2 B2 | \"Gmaj7\"B4 \"D7\"B B2 B- | \"G6\"B6 \"(G7/D)\"\"(F#7/C#)\"\"(F7/C)\"B2 |\n\"Bm7\"B4 B B2 B- | \"E7\"B6 B2 | \"Em7\"B2 B2 z2 B2 | \"A9sus\"B2 B2 \"A7\"z2 BB ||\nP:C\n\"D6\"B2 B2 B2 B2 | \"F#7\"B6 BB | \"Gmaj7\"B2 B2 B2 B2 | \"C#m7b5\"B4 \"F#7\"B4 |\n\"Bm7\"B2 B2 B2 B2 | \"E7\"B6 \"(Fo7)\"BB | \"Em7\"B2 BB- \"A7\"BB B2 | \"D6\"B4 \"(A7)\"z4 |]\n\n%unsure [bar 8] four chords over a held note; the dotted half is split with ties so each chord sits on its beat\n%unsure [bar 20] alternate chords (G7/D F#7/C# F7/C) are printed over beats 2-4; placement approximate"
+},
+{
+"id": "New_Real_Book_Volume2/237-once-in-a-while",
+"book": "The New Real Book Vol. 2",
+"title": "Once in a While",
+"pdf": "237",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+},
+{
+"bars": [
+31,
+32
+],
+"groups": [
+30,
+31
+],
+"text": "last bar(s) cramped: whole note F6 then half rest with turnaround (Dm7 Gm7 C7); bar split guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Once in a While\nC:Michael Edwards (music), Bud Green (lyric)\nP:ABC\n%source New Real Book Vol 2 p247 (pdf 237)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [general] lyrics are printed\nM:C\nL:1/8\nK:F\nP:A\n\"Fmaj7\"(3B2B2B2 \"Bb13\"B4- | \"Fmaj7\"(3B2B2B2 (3B2B2B2 | \"Am7\"(3B2B2B2 \"E7#5\"B2 B2 | \"Am7\"B4- \"D9\"B4 |\n\"Gm7\"(3B2B2B2 \"D7\"B2 B2 | \"Gm7\"B4 \"C7\"(3B2B2B2 | \"Am7\"B4- \"D7\"B4- | \"Gm7\"B4- \"C7\"B4 |\n\"Fmaj7\"(3B2B2B2 \"Bb13\"B4- | \"Fmaj7\"(3B2B2B2 (3B2B2B2 | \"Am7\"(3B2B2B2 \"E7#5\"B2 B2 | \"Am7\"B4- \"D9\"B4 |\n\"Gm7\"(3B2B2B2 \"D7\"B2 B2 | \"Gm7\"B4 \"C7\"(3B2B2B2 | \"F6\"B4- \"Bbm7\"B4- | \"F6\"B4 \"Bm7\"z2 \"E7\"B2 ||\nP:B\n\"Amaj7\"B4 \"F#m7\"(3B2B2B2 | \"Bm7\"B2 B2- \"E7\"B4 | \"C#m7\"B4 \"Co7\"(3B2B2B2 | \"Bm7\"B6 \"E7\"B2 |\n\"Amaj7\"B4 \"F#m7\"(3B2B2B2 | \"Bm7\"B2 B4 \"E7\"B2 | \"A6\"B2 B2 \"D7b9\"B2 B2 | \"Gm7\"B4- \"C7\"B4 ||\nP:C\n\"Fmaj7\"(3B2B2B2 \"Bb13\"B4- | \"Fmaj7\"(3B2B2B2 (3B2B2B2 | \"Am7\"(3B2B2B2 \"E7#5\"B2 B2 | \"Am7\"B4- \"D9\"B4 |\n\"Gm7\"(3B2B2B2 \"D7\"B2 B2 | \"Gm7\"B4 \"C7\"(3B2B2B2 | \"F6\"B8 | \"(Dm7)\"z2 \"(Gm7)\"z2 \"(C7)\"z4 |]\n\n%unsure [bars 31-32] last bar(s) cramped: whole note F6 then half rest with turnaround (Dm7 Gm7 C7); bar split guessed"
+},
+{
+"id": "New_Real_Book_Volume2/238-peace",
+"book": "The New Real Book Vol. 2",
+"title": "Peace",
+"pdf": "238",
+"form": "A 10 (play head twice before solos, once after; fine at bar 10)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "tenor harmony staff and piano/rhythm-slash staff skipped; chords in parentheses are for solos"
+},
+{
+"bars": [
+6
+],
+"groups": [
+6
+],
+"text": "beamed run looks like 5 eighths before the triplet; the 5th written as a quarter to fill the bar"
+},
+{
+"bars": [
+9
+],
+"groups": [
+9
+],
+"text": "chord placement over the quarter-note triplet approximate"
+},
+{
+"bars": [
+3
+],
+"groups": [
+3
+],
+"text": "Dm7b5 and G7#9#5 both over the last quarter; note split with a tie"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Peace\nC:Horace Silver\nP:A\n%source New Real Book Vol 2 p248 (pdf 238)\n%style (Med. Ballad, q=50)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 10 (play head twice before solos, once after; fine at bar 10)\n%unsure [general] tenor harmony staff and piano/rhythm-slash staff skipped; chords in parentheses are for solos\nM:C\nL:1/8\nK:C\n(3zBB |:\nP:A\n\"Bm7b5\"(3B2B2B2 \"Bb7\"B2- (3BBB | \"Am7\"B/B/B- B2- \"D7b9\"B3 B | \"Dbmaj7\"B/B/B- B2 B2 \"Dm7b5\"B-\"G7#9#5\"B | \"Cmaj7\"B6 (3zBB |\n\"C#m7\"(3B2B2B2 \"F#7\"B2 (3zBB | \"Bmaj7\"BB BB \"G#m7\"B2- (3BBB | \"Fm7b5\"(3B2B2B2 \"Bb13\"B2 \"Bb7#5\"B2 | \"Ebmaj9\"B8 |\n\"D7#9#11\"\"(D9#11)\"(3B2\"D9#11\"B2B2 \"Db7#9#11\"\"(Db9#11)\"B2 \"Db9#11\"B2 | \"Cmaj9\"!fine!B6 (3zBB :|\n\n%unsure [bar 6] beamed run looks like 5 eighths before the triplet; the 5th written as a quarter to fill the bar\n%unsure [bar 9] chord placement over the quarter-note triplet approximate\n%unsure [bar 3] Dm7b5 and G7#9#5 both over the last quarter; note split with a tie"
+},
+{
+"id": "New_Real_Book_Volume2/239-peep",
+"book": "The New Real Book Vol. 2",
+"title": "Peep",
+"pdf": "239",
+"form": "ABCD 37+38+9+1 (tenor solo on B, D.S. al fine; piano solo on D, D.S. al Coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "order from the D.S./fine/coda directions; recording is preceded by 32 bars (drums, synth)"
+},
+{
+"bars": [
+32,
+33,
+34,
+35,
+36
+],
+"groups": [
+32,
+33,
+34,
+35,
+36
+],
+"text": "5-bar rest with tenor fills"
+},
+{
+"bars": [
+44,
+45,
+46
+],
+"groups": [
+44,
+45,
+46
+],
+"text": "glissandi between held notes; bar 45 rhythm approximate"
+},
+{
+"bars": [
+70,
+71,
+72,
+73,
+74
+],
+"groups": [
+70,
+71,
+72,
+73,
+74
+],
+"text": "5-bar rest, no fills"
+},
+{
+"bars": [
+76,
+77,
+78,
+79,
+80,
+81,
+82,
+83,
+84
+],
+"groups": [
+76,
+77,
+78,
+79,
+80,
+81,
+82,
+83,
+84
+],
+"text": "half-time funk with dense sixteenths; groupings and chord placement in bars 76-77 and the break (bar 83) approximate; bar 84 is in 2/4; bar 76 starts with a bass figure"
+},
+{
+"bars": [
+85
+],
+"groups": [
+85
+],
+"text": "piano solo, indefinite; after solo D.S. al Coda"
+},
+{
+"bars": [
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97,
+98,
+99,
+100,
+101,
+102,
+103,
+104,
+105,
+106,
+107,
+108,
+109
+],
+"groups": [
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97,
+98,
+99,
+100,
+101,
+102,
+103,
+104,
+105,
+106,
+107,
+108,
+109
+],
+"text": "coda is rhythm slashes and multi-bar rests (tenor fills till end), written as rests; vamp, fill & fade; bars 105-106 and 109 are in 12/8 (check.py counts them against 4/4)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Peep\nC:Michael Brecker\nP:ABCD\n%source New Real Book Vol 2 p249-250 (pdf 239-240)\n%style (Fast Swing, q=306)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 37+38+9+1 (tenor solo on B, D.S. al fine; piano solo on D, D.S. al Coda)\n%unsure [form] order from the D.S./fine/coda directions; recording is preceded by 32 bars (drums, synth)\nM:C\nL:1/8\nK:C\nB |\nP:A\n\"Ebmaj7#11/D\"BB B2 z4 | z4 z2 B2 | \"Dm69maj7\"B2 BB z4 | z4 BB BB |\n\"Dm9maj7b5\"B2 z2 z4 | z4 z2 B2 | \"Bbmaj9/D\"B3 B- B4 | z4 z2 B2 |\n\"C#/D\"B2 zB z2 B2 | \"Bbmaj7#5/D\"z4 z2 B2 | \"Dm69maj7\"B2 BB z4 | \"Dm69maj7\"z4 BB BB |\n\"Dm9maj7b5\"B2 z2 z4 | z4 z2 BB- | \"Dm11\"B4 z4 | z4 z2 zB |\n\"C#7#9#5\"BB B2 z4 | z4 z2 B2 | \"Cm13\"B2 BB z4 | z4 (3B2B2B2 |\n\"Gadd9/B\"z B3 z4 | \"Cm11\"B2 z2 z4 | z8 | \"C#7#9#5\"B2 BB zB B2 |\nz4 z2 B2 | \"Cm13\"B2 BB z4 | z4 (3B2B2B2 | \"Asus/B\"zB- B6 |\nz8 | \"Cm11\"B2 z2 z4 | z8 | \"F9sus\"z8 |\nz8 | z8 | z8 | z8 |\nz4 z2 zB ||\nP:B\n|: !segno!\"Ebmaj7#11/D\"BB B2 z4 | z4 z2 B2 | \"Dm69maj7\"B2 BB z4 | z4 BB BB |\n\"Dm9maj7b5\"B2 z2 z4 | z4 z2 B2 | \"Bbmaj9/D\"B3 B- B4- | B4 B4 |\n\"C#/D\"B6 B2 | \"Bbmaj7#5/D\"z4 z2 B2 | \"Dm69maj7\"B2 BB z4 | \"Dm69maj7\"z2 BB BB BB |\n\"Dm9maj7b5\"BB BB BB B2- | B4 B2 BB- | \"Dm11\"B6 z2 | z4 z2 zB |\n\"C#7#9#5\"BB B2 z4 | z4 z2 B2 | \"Cm13\"B2 BB z4 | z4 (3B2B2B2 |\n\"Gadd9/B\"zB- B6 | z8 | \"Cm11\"B2 z2 z4 | z8 |\n\"C#7#9#5\"B2 BB zB B2 | z4 z2 B2 | \"Cm13\"B2 BB z4 | z4 (3B2B2B2 |\n\"Asus/B\"zB- B6- | B8 | \"Cm11\"B2 z2 z4 | z8 |\n\"F9sus\"z8 | z8 | z8 | z8 |\nz8 | z4 z2 BB ||\nP:C\n\"Fadd#11/A\"B/B/B/B/ B2 \"Fmaj7#5/A\"B/B/B zB/B/ | B/B/B/B/ \"G7sus/D\"B/B/B/B/ B/B/B/B/ \"F/C#\"B2 | \"F13#9\"z4 !trill!B4 | z4 zB BB |\n\"Bb13sus\"B4 zB BB | \"Ab(add9)/C\"B3 B \"Eb13#11\"B4 | !coda!\"F13#9\"z4 z2 z/\"NC\"B/B/B/ |1 B/z/z/B/ B/B/B zB/B/ B/B/B/B/ :|2\n[M:2/4]\"NC\"(3B/B/B/B/B/ B/B/z ||\nP:D\n[M:4/4]\"F9sus\"z8 |]\n%coda\n\"F13#9\"z8 | z8 | z8 | z8 |\nz8 | z8 | z8 | z8 |\nz8 | \"Bb13sus\"z8 | \"Ab(add9)/C\"z4 \"Eb13#11\"z4 | \"F13#9\"z8 |\nz8 | z8 | z8 | z8 |\nz8 | \"Bb13sus\"z8 | \"Ab(add9)/C\"z4 \"Eb13#11\"z4 | [M:12/8]\"F13#9\"z12 |\nz12 | [M:4/4]\"Bb13sus\"z8 | \"Ab(add9)/C\"z4 \"Eb13#11\"z4 |: [M:12/8]\"F13#9\"z12 :|\n\n%unsure [bars 32-36] 5-bar rest with tenor fills\n%unsure [bars 44-46] glissandi between held notes; bar 45 rhythm approximate\n%unsure [bars 70-74] 5-bar rest, no fills\n%unsure [bars 76-84] half-time funk with dense sixteenths; groupings and chord placement in bars 76-77 and the break (bar 83) approximate; bar 84 is in 2/4; bar 76 starts with a bass figure\n%unsure [bar 85] piano solo, indefinite; after solo D.S. al Coda\n%unsure [bars 86-109] coda is rhythm slashes and multi-bar rests (tenor fills till end), written as rests; vamp, fill & fade; bars 105-106 and 109 are in 12/8 (check.py counts them against 4/4)"
+},
+{
+"id": "New_Real_Book_Volume2/241-perdido",
+"book": "The New Real Book Vol. 2",
+"title": "Perdido",
+"pdf": "241",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed and not copied"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Perdido\nC:Juan Tizol\nC:Lyric: H.J. Lengsfelder, Ervin Drake\nP:ABC\n%source New Real Book Vol 2 p251 (pdf 241)\n%style (Med. Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [general] lyrics are printed and not copied\nM:C\nL:1/8\nK:C\nB |\nP:A\n\"Dm7\"BB- B4 zB | \"G7\"B B2 B B B2 B | \"C6\"BB- B4 zB | \"Em7\"B B2 B \"A7\"B B2 B |\n\"Dm7\"BB- B4 zB | \"G7\"BB BB- B3 B | \"C6\"BB- B6 | \"Em7\"z4 \"A7\"z2 zB |\n\"Dm7\"BB- B4 zB | \"G7\"B B2 B B B2 B | \"C6\"BB- B4 zB | \"Em7\"B B2 B \"A7\"B B2 B |\n\"Dm7\"BB- B4 zB | \"G7\"BB BB- B3 B | \"C6\"BB- B6- | B4 z4 ||\nP:B\n\"E7\"B8 | (3B2B2B2 B2 BB- | \"A7\"B8 | BB- B6 |\n\"D7\"B8 | (3B2B2B2 B2 BB- | \"Dm7\"B8 | \"G7\"BB- B4 \"(A7)\"zB ||\nP:C\n\"Dm7\"BB- B4 zB | \"G7\"B B2 B B B2 B | \"C6\"BB- B4 zB | \"Em7\"B B2 B \"A7\"B B2 B |\n\"Dm7\"BB- B4 zB | \"G7\"BB BB- B3 B | \"C6\"BB- B6 | \"(Em7)\"z4 \"(A7)\"z4 |]\n"
+},
+{
+"id": "New_Real_Book_Volume2/242-peri-s-scope",
+"book": "The New Real Book Vol. 2",
+"title": "Peri's Scope",
+"pdf": "242",
+"form": "AB 24+24 (solos on B, then D.C. al Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "Dmaj7 and F#m7 are interchangeable throughout (book note)"
+},
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "bar 7 has a lower harmony voice; top line only"
+},
+{
+"bars": [
+23,
+24
+],
+"groups": [
+22,
+23
+],
+"text": "solo break"
+},
+{
+"bars": [
+2,
+4,
+10,
+12,
+18
+],
+"groups": [
+1,
+3,
+9,
+11,
+17
+],
+"text": "second chord placed on beat 3 of the whole note"
+},
+{
+"bars": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"groups": [
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47
+],
+"text": "solo changes are rhythm slashes, written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Peri's Scope\nC:Bill Evans\nP:AB\n%source New Real Book Vol 2 p252 (pdf 242)\n%style (Med.-Up Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 24+24 (solos on B, then D.C. al Coda)\n%unsure [general] Dmaj7 and F#m7 are interchangeable throughout (book note)\nM:C\nL:1/8\nK:D\nP:A\n\"Em7\"B4 \"A7\"B B2 B | \"Dmaj7\"B4- \"Bm7\"B4 | \"Em7\"zB (3BBB \"A7\"BB BB- | \"Dmaj7\"B4- \"Bm7\"B4 |\n\"Em7\"zB (3BBB \"A7\"BB BB- | \"Dmaj7\"B2 (3BBB BB BB | \"F#7\"B3 B- B4- | B8 |\n\"G6\"z B3 \"A7\"(3B2B2B2 | \"F#m7\"B4- \"Bm7\"B4 | \"Em7\"BB BB \"A7\"(3B2B2B2 | \"D9sus\"B4- \"D9\"B4 |\n\"Gmaj7\"B3 B- B2 B2- | \"C#7\"B B3 B3 B- | \"C7#5\"B2 B2- B B3 | \"B7#5\"B3 B- B2 BB- |\n\"Em7\"BB zB \"A7\"B2 B2 | \"F#m7\"B4- \"Bm7\"B4 | \"Em7\"BB BB \"A7\"BB BB- | \"F#m7b5\"B4 \"B7#5\"zB BB- |\n\"Em7\"B B3 \"F#\"B2 B2 | !coda!\"G6\"B2 B2 \"A13sus\"BB zB | \"Dmaj9\"z8 | z8 ||\nP:B\n|: \"Em7\"z4 \"A7\"z4 | \"F#m7\"z4 \"B7#5\"z4 | \"Em7\"z4 \"A7\"z4 | \"Dmaj7\"z4 \"B7#5\"z4 |\n\"Em7\"z4 \"A7\"z4 | \"Dmaj7\"z8 | \"F#7#5\"z8 | z8 |\n\"Gmaj7\"z4 \"A7\"z4 | \"F#m7\"z4 \"B7#5\"z4 | \"Em7\"z4 \"A7\"z4 | \"D9sus\"z4 \"D9\"z4 |\n\"Gmaj7\"z8 | \"C#7#5\"z8 | \"C13\"z8 | \"B7#5\"z8 |\n\"Em7\"z4 \"A7\"z4 | \"F#m7\"z4 \"B7#5\"z4 | \"Em7\"z4 \"A7\"z4 | \"F#m7b5\"\"(C13)\"z4 \"B7#5\"z4 |\n\"Em7\"z8 | \"A7\"z8 | \"Dmaj7\"z8 | \"Dmaj7\"z4 \"B7#5\"z4 :|\n%coda\n\"G6\"B2 B2 \"A13sus\"BB zB- | \"Dmaj9\"!fermata!B8 |]\n\n%unsure [bars 7-8] bar 7 has a lower harmony voice; top line only\n%unsure [bars 23-24] solo break\n%unsure [bars 2, 4, 10, 12, 18] second chord placed on beat 3 of the whole note\n%unsure [bars 25-48] solo changes are rhythm slashes, written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/243-power-play",
+"book": "The New Real Book Vol. 2",
+"title": "Power Play",
+"pdf": "243",
+"form": "AB 22+13 (intro 4x; sax solo vamp on B, piano solo on cue, D.S. al Coda; coda vamps for bass solo)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the printed multi-bar rests"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "intro played 4 times; bass fills from 2nd time; tenor & bass figure in bar 4 only the 4th time"
+},
+{
+"bars": [
+7,
+8,
+12,
+13
+],
+"groups": [
+6,
+7,
+11,
+12
+],
+"text": "half note glissandos into a whole note; F#7sus (dorian) may begin on the whole note"
+},
+{
+"bars": [
+15,
+16,
+17,
+18,
+21,
+22,
+25,
+26
+],
+"groups": [
+14,
+15,
+16,
+17,
+20,
+21,
+24,
+25
+],
+"text": "drum fills"
+},
+{
+"bars": [
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39
+],
+"groups": [
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38
+],
+"text": "sax solo vamp till cue, then piano solo vamp on B13sus till cue, then 3 bars and D.S. al Coda; slashes written as rests"
+},
+{
+"bars": [
+43,
+49
+],
+"groups": [
+42,
+48
+],
+"text": "bars in 2/4 (check.py counts them against 4/4); bass solo vamp & fade at the end"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Power Play\nC:Eddie Gomez, LeeAnn Ledgerwood\nP:AB\n%source New Real Book Vol 2 p253-254 (pdf 243-244)\n%style (Med. Funk, q=120)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 22+13 (intro 4x; sax solo vamp on B, piano solo on cue, D.S. al Coda; coda vamps for bass solo)\n%unsure [form] section lengths counted from the printed multi-bar rests\nM:C\nL:1/8\nK:A\n%intro\n|: \"F#m9\"z8 | z8 | \"B(add9)/F#\"\"(F#m9)\"z8 | z4 z/B/B/B/ B/B/z/B/ :|\nP:A\n!segno!\"Ab/A\"B3 \"F/E\"B- B4 | \"G/A\"B3 \"A/B\"B- B/B/B/B/ B/B/z/B/ | \"Bbmaj7/C\"B3 \"D9sus\"B- B4 | B8 |\n\"F#7sus\"z4 z/B/B/B/ B/B/z/B/ | \"Ab/A\"B3 \"F/E\"B- B4 | \"G/A\"B3 \"A/B\"B- B/B/B/B/ B/B/z/B/ | \"Bbmaj7/C\"B3 \"D9sus\"B- B4 |\nB8 | !coda!\"F#7sus\"z8 | \"NC\"z8 | z8 |\nz8 | z8 | \"D/C\"B2 B2 \"Eb9b5\"B2 B2 | \"Ab/B\"B2 \"F/B\"B2 \"F#m7\"B4 |\n\"NC\"z8 | z8 | \"D/C\"B2 B2 \"Eb9b5\"B2 B2 | \"Bbmaj7/C\"B8 |\n\"NC\"z8 | z8 ||\nP:B\n|: \"F#m9\"z8 | z8 | z8 | z8 |\n\"C13sus\"z8 | z8 | \"C13\"z8 | z8 :|\n:\"B13sus\"z8 | z8 :| \"F#m9\"z8 | z8 |\nz4 z/B/B/B/ B/B/z/B/ |]\n%coda\n\"F#m7\"B4- \"Gsusmaj7\"B4 | \"G#7b5\"z4 \"Gmaj7/A\"z4 | \"Bb7#9#5\"BB \"A7#9#5\"B-B/B/- B4 | [M:2/4]\"G#7#9#5\"B/B/B/B/ \"C#7#9\"BB/B/ |\n[M:4/4]\"F#m7\"z/B3/- B2- \"Gsusmaj7\"B4 | \"G#7b5\"z4 \"Gmaj7/A\"z4 | \"F#m7\"z4 \"Gsusmaj7\"z4 | \"G#7b5\"z4 \"Gmaj7/A\"z2 z/B/B/B/ |\n\"Bb7#9#5\"BB \"A7#9#5\"B-B/B/- B4 | [M:2/4]\"G#7#9#5\"B/B/B/B/ \"C#7#9\"BB/B/ | [M:4/4]\"F#m7\"z/B3/- B2- \"Gsusmaj7\"B4 | \"G#7b5\"z4 \"Gmaj7/A\"z4 |\n\"F#m7\"z4 \"Gsusmaj7\"z4 | \"G#7b5\"z4 \"Gmaj7/A\"z2 zB/B/ |: \"F#m7\"B2 B3/\"Gsusmaj7\"B/- B4 | \"G#7b5\"z4 \"Gmaj7/A\"z2 zB/B/ :|\n\n%unsure [bars 1-4] intro played 4 times; bass fills from 2nd time; tenor & bass figure in bar 4 only the 4th time\n%unsure [bars 7-8, 12-13] half note glissandos into a whole note; F#7sus (dorian) may begin on the whole note\n%unsure [bars 15-18, 21-22, 25-26] drum fills\n%unsure [bars 27-39] sax solo vamp till cue, then piano solo vamp on B13sus till cue, then 3 bars and D.S. al Coda; slashes written as rests\n%unsure [bars 43, 49] bars in 2/4 (check.py counts them against 4/4); bass solo vamp & fade at the end"
+},
+{
+"id": "New_Real_Book_Volume2/245-the-promise",
+"book": "The New Real Book Vol. 2",
+"title": "The Promise",
+"pdf": "245",
+"form": "AABCCDE 16+16+8+8+8+8+12 (solo on CCDE, then D.C. al Coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form from the repeat signs and \"Solo on CCDE\"; melody is played with great variation"
+},
+{
+"bars": [
+19
+],
+"groups": [
+19
+],
+"text": "rhythm after the triplet unclear"
+},
+{
+"bars": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"groups": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"text": "solo sections are rhythm slashes written as rests; E has three 2-bar repeat signs (6 bars) after Am7 and Bm7/A"
+},
+{
+"bars": [
+49,
+50,
+51,
+52
+],
+"groups": [
+49,
+50,
+51,
+52
+],
+"text": "rit.; tenor fill over the last fermata"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Promise\nC:John Coltrane\nP:AABCCDE\n%source New Real Book Vol 2 p256 (pdf 245)\n%style (Med. Afro/Swing, q=160)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABCCDE 16+16+8+8+8+8+12 (solo on CCDE, then D.C. al Coda)\n%unsure [form] form from the repeat signs and \"Solo on CCDE\"; melody is played with great variation\nM:C\nL:1/8\nK:C\nB2 |\nP:A\n|: \"Am7\"B8- | \"Bm7/A\"B2 BB BB BB | \"Am7\"B2 BB- BB BB- | \"Bm7/A\"B4 zB BB |\n\"Am7\"B2 B6 | \"Bm7/A\"B3 B/B/ BB B2- | \"Am7\"B3 B B/B/B/B/ B2- | \"Bm7/A\"B2 zB- B2 BB |\n\"G13\"B8 | z2 BB B2 BB- | \"E7#9\"B8 | z2 zB- B2 BB |\n\"G13\"B8 | z2 BB BB BB | \"E7#9\"B8 | z4 BB BB :|\nP:B\n\"Am7\"(3BBB- B6 | \"Bm7/A\"(3BBB- B6 | \"Am7\"(3BBB- B2 BB- B2 | !coda!\"Bm7/A\"(3BBB- B4- BB |\n\"Am7\"B B2 B- B2 BB- | \"Bm7/A\"BB BB- B3 B | \"Am7\"B2 BB- B4 | \"Bm7/A\"zB (3BBB B4 ||\nP:C\n|: \"Am7\"z8 | \"Bm7/A\"z8 | z8 | z8 |\n\"Am7\"z8 | \"Bm7/A\"z8 | z8 | z8 :|\nP:D\n\"G13\"z8 | z8 | \"E7#9\"z8 | z8 |\n\"G13\"z8 | z8 | \"E7#9\"z8 | z8 ||\nP:E\n\"Am7\"z8 | \"Bm7/A\"z8 | z8 | z8 |\nz8 | z8 | z8 | z8 |]\n%coda\n\"Bm7/A\"(3BBB- B6- | \"Am7\"B8- | \"Bm7/A\"B6 B2 | \"Am9maj7\"!fermata!B8 |]\n\n%unsure [bar 19] rhythm after the triplet unclear\n%unsure [bars 25-48] solo sections are rhythm slashes written as rests; E has three 2-bar repeat signs (6 bars) after Am7 and Bm7/A\n%unsure [bars 49-52] rit.; tenor fill over the last fermata"
+},
+{
+"id": "New_Real_Book_Volume2/246-quicksilver",
+"book": "The New Real Book Vol. 2",
+"title": "Quicksilver",
+"pdf": "246",
+"form": "AABC 16+16+16+16 (solo on AABC, D.C. al Coda; based on \"Lover Come Back to Me\")",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "chords in parentheses are used for solos (book note)"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36
+],
+"groups": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36
+],
+"text": "solo section is rhythm slashes, written as rests (last bar has the pickup into C)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Quicksilver\nC:Horace Silver\nP:AABC\n%source New Real Book Vol 2 p257-258 (pdf 246-247)\n%style (Fast Bop, q=268)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+16+16 (solo on AABC, D.C. al Coda; based on \"Lover Come Back to Me\")\n%unsure [general] chords in parentheses are used for solos (book note)\nM:C\nL:1/8\nK:Bb\nB2- |\nP:A\n|: \"Bb6\"B2 BB BB BB | BB BB BB zB- | \"Am7\"B2 BB BB BB | \"D7\"BB BB BB z2 |\n\"Gm\"zB BB BB BB | BB BB- BB BB | \"C7\"\"(Eo7)\"BB BB- BB BB | \"F7#9\"BB BB z4 |\n\"Bb6\"z2 BB BB BB | \"Dm7\"BB z2 \"G7\"z4 | \"Cm7\"z2 BB BB BB | \"F7\"BB z2 z4 |1 \"Bb6\"z2 B4 B2 | \"Cm7\"BB BB- \"F7\"B2 B2 | \"Dm7\"B2 B2 \"G7\"BB BB | \"Cm7\"z4 \"F7\"z2 B2- :|2\n\"Bb6\"z2 B2 B2 B2 | \"Cm7\"B2 B2 \"F7\"B2 B2 | \"Bb6\"BB BB- B2 BB- | \"Am7\"B4 \"D7\"z4 ||\nP:B\n\"Gm\"z8 | z8 | \"Am7\"z4 \"D7\"z4 | \"Gm\"z8 |\n\"Am7\"z8 | \"D7\"z8 | \"Bbm7\"z4 \"Eb7\"z4 | \"Am7\"z4 \"D7\"z4 |\n\"Gm\"z8 | z8 | \"Am7\"z4 \"D7\"z4 | \"Gm\"z8 |\n\"Gm7\"z8 | \"C7\"z8 | \"Cm7\"z8 | \"F7\"z4 z2 B2- ||\nP:C\n\"Bb6\"B2 BB BB BB | BB BB BB zB- | \"Am7\"B2 BB BB BB | \"D7\"BB BB BB z2 |\n\"Gm\"zB BB BB BB | BB BB- BB BB | \"Bo7\"B2 (3BBB BB BB | BB BB- B2 B2 |\n\"Cm7\"z2 BB BB BB | \"Dm7\"BB z2 \"G7\"z4 | \"Cm7\"z2 BB BB BB | \"F7\"BB z2 z4 |\n\"Bb6\"z2 BB BB BB | \"Cm7\"BB z2 \"F7\"z4 | !coda!\"Bb6\"z2 BB BB BB | \"Cm7\"BB z2 \"F7\"z4 |]\n%coda\n\"Bb6\"z2 BB BB BB | \"NC\"\"(Bb)\"BB z2 z4 |]\n\n%unsure [bars 21-36] solo section is rhythm slashes, written as rests (last bar has the pickup into C)"
+},
+{
+"id": "New_Real_Book_Volume2/248-quiet-girl",
+"book": "The New Real Book Vol. 2",
+"title": "Quiet Girl",
+"pdf": "248",
+"form": "A 22 (two endings), B 12, C 24 (solos), D 11 (solos)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 8,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "solo on CCD; after solos D.S. al 2nd ending al Coda; coda vamp, fill & fade"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5
+],
+"groups": [
+0,
+1,
+2,
+3,
+4
+],
+"text": "piano intro; chord placement within bars approximate"
+},
+{
+"bars": [
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46
+],
+"groups": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45
+],
+"text": "dense eighth-note lines; chord placement approximate; bars 23-24 and 45-46 may be a held note tied over two bars"
+},
+{
+"bars": [
+48,
+49
+],
+"groups": [
+47,
+48
+],
+"text": "16th groupings guessed; coda sign is before bar 56 (D.S. al 2nd ending al Coda jumps to the final vamp)"
+},
+{
+"bars": [
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72
+],
+"groups": [
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71
+],
+"text": "solo section rhythm slashes, written as rests"
+},
+{
+"bars": [
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82,
+83
+],
+"groups": [
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82
+],
+"text": "solo slashes written as rests"
+},
+{
+"bars": [
+84,
+85
+],
+"groups": [
+83,
+84
+],
+"text": "vamp, fill & fade"
+},
+{
+"bars": [
+5,
+27,
+51
+],
+"groups": [
+4,
+26,
+50
+],
+"text": "printed 3/4 bars (check.py may count them against 4/4)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Quiet Girl\nC:Billy Childs\nP:Intro AB CCD\n%source New Real Book Vol 2 p259-260 (pdf 248-249)\n%style (Med. Straight 8th's/Bossa, q=136)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 22 (two endings), B 12, C 24 (solos), D 11 (solos)\n%unsure [form] solo on CCD; after solos D.S. al 2nd ending al Coda; coda vamp, fill & fade\nM:C\nL:1/8\nK:C\n%intro\n\"Bb/Eb\"B4- B \"Dm/Eb\"B3 | \"Db/Eb\"B3 B- \"Eb6/9\"B4 | \"Bb/Eb\"z2 B2- B \"Dm/Eb\"B3 | \"Db/Eb\"B3 B- \"Eb6/9\"B4- | [M:3/4]B6 |\nP:A\n|: !segno!\"Cbmaj7/F\"BB BB- \"Cbmaj7(omit3)/Bb\"BB B\"Ebm9\"B- | BB BB- \"Ab(add9)/C\"B B2 B- | \"Fm11\"B4- \"D7#9\"B4- | \"Gm9\"B4 \"Bb/C\"zB \"Eb/Ab\"BB- |\n\"Eb/Ab\"B3 \"Bbmaj7#11/E\"B- B2 \"C/D\"BB- | \"F(add9,omit3)\"B4- BB BB | \"F/Bb\"BB B\"C/D\"B- B2 \"D/G\"BB- | B8 |\n\"A(add9)/C#\"z8 |1 \"F#pedal\"BB BB- BB BB- | BB BB- BB BB- | BB BB- BB BB- |\nB4- BB B\"Cmaj7#5/B\"B- | B8 | \"E/F\"z8 | \"Bmaj7#5/E\"BB BB- \"Bbm7\"BB BB- |\n\"E/D\"BB BB- B B2 \"Ab/Bb\"B- | \"Bb/Eb\"B4- \"Dm/Eb\"B4- | \"Db/Eb\"B4 \"Eb6/9\"B4 | \"Bb/Eb\"z4 \"Dm/Eb\"z4 |\n\"Db/Eb\"z4 \"Eb6/9\"z4 | [M:3/4]z6 :| |2 \"F#m\"BB \"E/B\"BB- BB \"G/F#\"BB- | BB \"Dm/A\"BB- BB \"Am/C\"BB- |\nBB BB- \"Cm/G\"BB B\"G#dim/B\"B- | B4- BB B\"Cmaj7#5/F\"B- | B8 | \"Am9(maj7)/B\"z8 |\n\"Bmaj7#5/E\"BB BB- \"Bbm7\"BB BB- | \"E/D\"BB BB- B B2 \"Ab/Bb\"B- | \"Bb/Eb\"B4- \"Dm/Eb\"B4- | \"Db/Eb\"B4 \"Eb6/9\"B4 |\n\"(Bb/Eb)\"z4 \"(Dm/Eb)\"z4 | \"(Db/Eb)\"z4 \"(Eb6/9)\"z4 ||\nP:B\n\"Gmaj7\"B3 \"Am\"B \"Em/B\"zB \"D/C\"zB- | B2 \"C/D\"B/B/B- BB B\"D/E\"B- | BB BB- \"A/G#\"B B2 \"B/E\"B- | \"B/C#\"B6 \"Abm7\"B/B/B- |\n\"Abm7\"BB BB- \"Ebm7\"B B2 \"Bbm7\"B- | B2 B/B/B- \"Gbmaj9\"BB BB- | \"Gbmaj9/Cb\"BB BB- \"Ab/Bb\"B B2 B- | \"Bb/C\"B4- \"Dm/C\"B4- |\n\"Db/C\"B4 \"Csus\"B4 | !coda!\"(Bb/C)\"z4 \"(Dm/C)\"z4 | \"(Db/C)\"z4 \"(Csus)\"z4 | [M:3/4]z6 ||\nP:C\n|: \"Fm7b5\"z4 \"Bb7#5\"z4 | \"Ebm7\"z4 \"C7#9#5\"z4 | \"Fm7\"z4 \"D7#9\"z4 | \"Gm7\"z4 \"C7sus\"\"(Amaj7)\"z4 |\n\"Abmaj7\"z4 \"E7#9#5\"z4 | \"Am7\"z4 \"Fmaj7/A\"z4 | \"Bbmaj7\"z4 \"D7sus\"z4 | \"Gmaj7\"z8 |\n\"C#7#9#5\"z8 | \"F#m7\"z8 | \"Bm7/F#\"z8 | \"F#m7\"z8 |\n\"Bm7/F#\"z8 | \"E/F\"z8 | \"B7#9#5\"z8 | \"Emaj7\"z4 \"Bbm7\"z4 |\n\"Dmaj7#11\"z4 \"Bb7sus\"z4 | \"Ebmaj7\"z8 | \"Eb7sus\"z8 | \"Ebmaj7\"z8 | \"Eb7sus\"z8 :|\nP:D\n\"Gmaj7\"z8 | \"Cmaj7\"z4 \"D7sus\"z4 | \"E7sus\"z4 \"B7sus\"\"(B7#5)\"z4 | \"Emaj7\"z4 \"C#m7\"z4 |\n\"Abm7\"z4 \"Ebm7\"z4 | \"Bbm7\"z4 \"Gbmaj7\"z4 | \"Cbmaj7\"z4 \"Bb7sus\"z4 | \"C7sus\"z8 |\n\"Dbmaj7/C\"z8 | \"C7sus\"z8 | \"Dbmaj7/C\"z8 |]\n%coda\n|: \"(Bb/C)\"z4 \"(Dm/C)\"z4 | \"(Db/C)\"z4 \"(Csus)\"z4 :|\n\n%unsure [bars 1-5] piano intro; chord placement within bars approximate\n%unsure [bars 6-46] dense eighth-note lines; chord placement approximate; bars 23-24 and 45-46 may be a held note tied over two bars\n%unsure [bars 48-49] 16th groupings guessed; coda sign is before bar 56 (D.S. al 2nd ending al Coda jumps to the final vamp)\n%unsure [bars 52-72] solo section rhythm slashes, written as rests\n%unsure [bars 73-83] solo slashes written as rests\n%unsure [bars 84-85] vamp, fill & fade\n%unsure [bars 5, 27, 51] printed 3/4 bars (check.py may count them against 4/4)"
+},
+{
+"id": "New_Real_Book_Volume2/250-a-quiet-place",
+"book": "The New Real Book Vol. 2",
+"title": "A Quiet Place",
+"pdf": "250",
+"form": "A 16, B 14, C 8, D 9",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 8,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lettered A-D; bar counts as read, no repeats printed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed; vocal-group voicings in places, top voice transcribed"
+},
+{
+"bars": [
+8
+],
+"groups": [
+7
+],
+"text": "B13 chord sits over the end of the held note"
+},
+{
+"bars": [
+15
+],
+"groups": [
+14
+],
+"text": "two voices (dotted half over quarters with a rest); top voice used"
+},
+{
+"bars": [
+24
+],
+"groups": [
+23
+],
+"text": "E9/B chord on beat 3 of a whole note; tie added"
+},
+{
+"bars": [
+31,
+32
+],
+"groups": [
+30,
+31
+],
+"text": "bar line placement of the tied half note and F9 chord approximate"
+},
+{
+"bars": [
+37,
+38
+],
+"groups": [
+36,
+37
+],
+"text": "vocal chords; top voice only"
+},
+{
+"bars": [
+46,
+47
+],
+"groups": [
+45,
+46
+],
+"text": "molto rit.; lower voice in bar 46 has its own rhythm (rest, quarters, eighths); top voice held"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:A Quiet Place\nC:Ralph Carmichael\nP:ABCD\n%source New Real Book Vol 2 p261-262 (pdf 250-251)\n%style (Medium Ballad) (As sung by Take 6)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 16, B 14, C 8, D 9\n%unsure [form] lettered A-D; bar counts as read, no repeats printed\n%unsure [general] lyrics are printed; vocal-group voicings in places, top voice transcribed\nM:C\nL:1/8\nK:E\nP:A\n\"E(add9)\"B4 \"E\"B2 B2 | \"G#/B#\"B3 \"G#9/B#\"B B4 | z2 \"C#m7\"B2 \"D#m7(11)\"B2 \"C#m7\"B2 | \"G#(add9)/B#\"B3 \"Bm7\"B \"Bb7#5\"B2 B2 |\n\"C#(add9)/A\"B6 \"Amaj7(13)\"\"B13/A\"B2 | \"G#m7\"B4 \"C#m7/B\"B4 | \"F#(add9)/A#\"B6 B2 | \"B13sus\"B2- B4 \"B13\"B2 |\n\"Bm7\"z2 B2 \"G9/B\"B2 B2 | \"E13sus\"B3 B \"G#7alt\"B4 | \"Amaj9\"B2 z2 B2 B2 | \"F#m11\"B3 \"F#m7\"B B2 \"Dmaj9\"B2 |\n\"C#m(add9)/B\"B4 z2 (3BBB | \"Bbm11\"B4 \"Eb7alt\"B4 | \"Ab/Eb\"B6 B2 | \"B13sus\"B4 \"B9#11\"B4 ||\nP:B\n\"Bm7\"z2 B2 \"B6/9\"B2 B2 | \"D#m7b5\"B3 B \"G#7alt\"B4 | \"C#m7\"z2 B2 B2 B2 | \"Bm7\"B3 B B2 \"Bb9#11\"B2 |\n\"Amaj9\"B4 z2 B2 | \"G#9sus\"B4 \"G#7b9\"B4 | \"C#m9\"B6 B2 | \"Bm7(11)\"B4 \"E9/B\"B4- |\n\"D9#11/A\"B2 z2 \"Amaj9\"B2 B2 | \"D13#11\"B3 B B2 z2 | \"C#13sus\"B4 B2 B2 | \"C#13sus\"B3 \"C#9\"B B2 B2 |\n\"F#m7(11)\"B2 B4 B2 | \"B9sus\"B2 B2 B2 \"B7b9\"B2 || [K:C]\nP:C\n\"Cmaj9\"z2 B4- \"D/C\"B2- | \"B13sus\"B3 B \"G13\"B2- \"F9\"B2- | \"Em9\"B2 B2 B2 B2 | \"G9sus\"BB B4 \"G13\"B2 |\n\"Cmaj9\"B4- \"F6/9\"B4- | \"Am/B\"B2 z2 \"B7\"B4 | \"Eb/Bb\"B8 | \"A9sus\"B4 \"A7b9b5\"B4 ||\nP:D\n\"Abmaj9\"B2 z2 B2 B2 | \"Db13#11\"B3 B B4 | \"C13sus\"B4 B2 B2 | \"C13sus\"B3 B \"B13sus\"B2 \"Bb13sus\"B2 |\n\"Ab9sus\"B2 \"Abmaj7\"B4 \"Gm7(11)\"B2 | \"Abm7(11)\"B2 \"Bb/C\"B2 \"Cb/Db\"B2 \"F7alt\"B2 | \"E13#11\"B4- \"D#9sus\"B2- \"D#7alt\"B2- | \"G#m7\"B2- \"Emaj7/G#\"B2- \"Amaj9\"B2- \"B9sus\"B2 |\n\"F#(add9)\"!fermata!B8 |]\n\n%unsure [bar 8] B13 chord sits over the end of the held note\n%unsure [bar 15] two voices (dotted half over quarters with a rest); top voice used\n%unsure [bar 24] E9/B chord on beat 3 of a whole note; tie added\n%unsure [bars 31-32] bar line placement of the tied half note and F9 chord approximate\n%unsure [bars 37-38] vocal chords; top voice only\n%unsure [bars 46-47] molto rit.; lower voice in bar 46 has its own rhythm (rest, quarters, eighths); top voice held"
+},
+{
+"id": "New_Real_Book_Volume2/252-rain-waltz",
+"book": "The New Real Book Vol. 2",
+"title": "Rain Waltz",
+"pdf": "252",
+"form": "A 16, B 16, C 20",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "solo on ABC; after solos D.S. al Coda; coda vamp & fade till cue"
+},
+{
+"bars": [],
+"groups": [],
+"text": "chords in parentheses are for solos"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "piano fills, 5 slashes per bar printed; written as rests; played 4 times"
+},
+{
+"bars": [
+20,
+21
+],
+"groups": [
+19,
+20
+],
+"text": "4-in-the-time-of-3 quarter groupings written as (4:3 tuplets"
+},
+{
+"bars": [
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56
+],
+"groups": [
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55
+],
+"text": "4-tuplets spanning bar lines approximated within single bars"
+},
+{
+"bars": [
+57,
+58,
+59,
+60,
+61
+],
+"groups": [
+56,
+57,
+58,
+59,
+60
+],
+"text": "coda slashes with harmonica fills, written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Rain Waltz\nC:Fred Hersch\nP:Intro ABC\n%source New Real Book Vol 2 p263-264 (pdf 252-253)\n%style (Med. Jazz Waltz, q=102)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 16, B 16, C 20\n%unsure [form] solo on ABC; after solos D.S. al Coda; coda vamp & fade till cue\n%unsure [general] chords in parentheses are for solos\nM:3/4\nL:1/8\nK:C\n%intro\n|: \"Fm13\"z6 | z6 | \"Gbmaj7#11/F\"z6 | z6 :|\nP:A\n!segno!\"Fm9\"z2 B4- | B4 (3BBB | \"Fm9(maj7b5)\"(3BBB B4- | B4 z2 |\n\"Fm9\"zB BB- B2 | B4 (3BBB | \"E7#9#5\"B2 BB- B2- | B4 B2 |\n\"Eb13sus\"B6- | B4 (3BBB | \"Eb7b9b5\"B2 BB- B2- | B3 B3 |\n\"C13sus\"B6- | B6- | \"C13b5\"B4 z2 | (4:3:4z2B2B2B2 ||\nP:B\n\"Fm9\"(4:3:3B2B2B4- | B4 (3BBB | \"Db13#11b9\"(3BBB B4- | B4 z2 |\n\"Bb13sus\"zB BB- B2 | B4 (3BBB | \"Bb13b5\"B2 BB- B2- | B4 B2 |\n\"Eb13sus\"B6- | B4 (3BBB | \"Eb7b9b5\"B2 BB- B2- | B3 B3 |\n\"Abmaj7#11\"B6- | B6 | \"(Abmaj7#11)\"z2 \"Ebm7(11)\"B2 \"Dm7\"B2 | \"Dbmaj7\"\"(Db13#11)\"B2 \"Cm7\"B2 \"B13sus\"B2 ||\nP:C\n\"Bb13sus\"(4:3:3B2B2B4- | B6- | B4 (3BBB | \"D(addb9)/Bb\"(3BBB B3 B |\n\"Ebmaj9/Bb\"B6- | (4:3:3B4B2B2 | \"C13b9\"(4:3:3B2B2 B4- | B4 B2 |\n\"B13sus\"B3 B3- | B4 BB | \"Bb7alt\"(4:3:3B2B2B4- | B4 BB- |\n\"Ebm13\"B6- | B6- | \"Emaj7#11/Eb\"B6- | !coda!B4 z2 |\n\"Ebm13\"z6 | z6 | \"E13b5\"z6 | z6 |]\n%coda\n|: \"Ebm13\"z6 | z6 | \"Emaj7#11/Eb\"z6 | z6 :|\n\"Ebm13\"!fermata!B6 |]\n\n%unsure [bars 1-4] piano fills, 5 slashes per bar printed; written as rests; played 4 times\n%unsure [bars 20-21] 4-in-the-time-of-3 quarter groupings written as (4:3 tuplets\n%unsure [bars 37-56] 4-tuplets spanning bar lines approximated within single bars\n%unsure [bars 57-61] coda slashes with harmonica fills, written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/254-remember-hymn",
+"book": "The New Real Book Vol. 2",
+"title": "Remember Hymn",
+"pdf": "254",
+"form": "AABBC 8+8+4+4+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form printed as AABBC; solo on form, after solos D.C. al fine (no repeats)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "guitar staff (slashes with a few written notes) skipped; melody staff only"
+},
+{
+"bars": [
+8
+],
+"groups": [
+7
+],
+"text": "F(omit3) bar is printed after the A repeat (played once, after the second A)"
+},
+{
+"bars": [
+17
+],
+"groups": [
+16
+],
+"text": "C section bar 5 melody rest; guitar plays a quarter-note line here"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Remember Hymn\nC:John Abercrombie\nP:AABBC\n%source New Real Book Vol 2 p266 (pdf 254)\n%style (Med. Ballad, rubato, q~65)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABBC 8+8+4+4+8\n%unsure [form] form printed as AABBC; solo on form, after solos D.C. al fine (no repeats)\n%unsure [general] guitar staff (slashes with a few written notes) skipped; melody staff only\nM:C\nL:1/8\nK:C\nP:A\n|: \"Dm\"B4 \"Am/C\"B4 | \"G#m/B\"B6 B2 | \"Ebm\"B4 \"Bbm/Db\"B4 | \"Cm\"B6 B2 |\n\"Fm\"B4 \"Cm/Eb\"B4 | \"Bbm/Db\"B4 \"Cm\"B4 | \"Bbm\"B4 \"Cm\"B4 :| \"F(omit3)\"B8 ||\nP:B\n|: \"G\"B3 B \"Ebm\"B3 B | \"Bm\"B3 B \"Gm\"B3 B | \"C/B\"B3 B \"G#m/B\"B3 B | \"C/B\"B3 B \"G#m/B\"B4 :|\nP:C\n\"Dm\"B4 \"Am/C\"B4 | \"G#m9(maj7)/B\"B2 B2 \"C#m9\"B3 B | \"Am11\"B2 B2 B4- | \"Fmaj7/G\"B4 \"C#m7/G\"B4 |\n\"Cm\"z8 | \"B13\"B4 \"D#m/E\"B4 | \"D/E\"(3B2B2B2 \"D#m/E\"B3 B | \"D/E\"!fine!B8 |]\n\n%unsure [bar 8] F(omit3) bar is printed after the A repeat (played once, after the second A)\n%unsure [bar 17] C section bar 5 melody rest; guitar plays a quarter-note line here"
+},
+{
+"id": "New_Real_Book_Volume2/255-rockin-chair",
+"book": "The New Real Book Vol. 2",
+"title": "Rockin' Chair",
+"pdf": "255",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Rockin' Chair\nC:Hoagy Carmichael\nP:ABC\n%source New Real Book Vol 2 p267 (pdf 255)\n%style (Med. (Slow) Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [general] lyrics are printed\nM:C\nL:1/8\nK:F\nP:A\n\"F6\"z2 B2 BB B2 | \"F9\"B2 B6 | \"Bbmaj7\"z2 B2 B2 B2 | \"Eb9\"B8 |\n\"F6\"z2 B2 B2 B2 | \"D7\"B4 B4 | \"G7\"B2 B2 B2 B2 | \"C7\"B8 |\n\"F6\"z2 \"A7\"B2 BB B2 | \"Dm\"B2 B6 | \"Bm7b5\"B4 \"E7\"B4 | \"Am\"B8 |\n\"G7\"z2 B2 BB B2 | B2 B4 BB | \"G7\"B2 BB \"C7\"B2 B2 | \"F6\"B8 ||\nP:B\n\"Bb9\"z2 B2 BB B2 | BB B6 | \"F6\"z2 B2 BB B2 | B8 |\n\"Bm7b5\"B2 B4 \"E7\"B2 | \"Am\"BB B4 BB | \"G9\"B2 BB BB B2 | \"C7\"B8 ||\nP:C\n\"F6\"z2 B2 BB B2 | \"F9\"B2 B6 | \"Bbmaj7\"z2 B2 BB B2 | \"Eb9\"B8 |\n\"F6\"z2 B2 B2 B2 | \"G7\"B4 \"C9sus\"\"(Gbmaj7)\"B4 | \"F6\"B8 | \"(Gm7)\"z4 \"(C7#5)\"z4 |]\n"
+},
+{
+"id": "New_Real_Book_Volume2/256-rosetta",
+"book": "The New Real Book Vol. 2",
+"title": "Rosetta",
+"pdf": "256",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Rosetta\nC:Earl Hines and Henri Wood\nP:ABC\n%source New Real Book Vol 2 p268 (pdf 256)\n%style (Medium-Up Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [general] lyrics are printed\nM:C\nL:1/8\nK:G\nB2 ||\nP:A\n\"G6\"B2 B6- | \"F#7\"B4 B2 B2 | \"F7\"B2 B6- | \"E7\"B4 B2 B2 |\n\"A7\"B2 B4 B2 | \"D7\"B2 B4 B2 | \"Bm7\"B4- \"E7\"B4- | \"Am7\"B6 \"D7\"B2 |\n\"G6\"B2 B6- | \"F#7\"B4 B2 B2 | \"F7\"B2 B6- | \"E7\"B4 B2 B2 |\n\"A7\"B2 B4 B2 | \"D7\"B2 B4 B2 | \"G6\"B8 | \"C#m7b5\"z4 \"F#7\"z4 ||\nP:B\n\"Bm\"B4 B2 B2 | \"C#m7b5\"B4 \"F#7\"B2 B2 | \"Bm\"B8- | \"Em7\"\"(Em7b5)\"B4 \"A7\"z4 |\n\"Dmaj7\"B4 \"Bm7\"B2 B2 | \"Em7\"B4 \"A7\"B2 B2 | \"Am7\"B8 | \"D7\"z4 z2 B2 ||\nP:C\n\"G6\"B2 B6- | \"F#7\"B4 B2 B2 | \"F7\"B2 B6- | \"E7\"B4 B2 B2 |\n\"A7\"B2 B4 B2 | \"D7\"B2 B4 B2 | \"G6\"B8 | \"(Am7)\"z4 \"(D7)\"z4 |]\n"
+},
+{
+"id": "New_Real_Book_Volume2/257-sailing-at-night",
+"book": "The New Real Book Vol. 2",
+"title": "Sailing at Night",
+"pdf": "257",
+"form": "ABC 16+16+16 (D.S., solo on AB, then D.S. al Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "play order inferred from \"D.S., solo on AB, then D.S. al Coda\""
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11
+],
+"text": "intro marked (synth.)"
+},
+{
+"bars": [
+16,
+23,
+24,
+25,
+26,
+27,
+28
+],
+"groups": [
+15,
+22,
+23,
+24,
+25,
+26,
+27
+],
+"text": "chord hit placements (G13sus, G13#11, C13sus) above rhythmic hits approximate; bars 27-28 rhythm approximate"
+},
+{
+"bars": [
+41,
+42,
+43,
+44
+],
+"groups": [
+40,
+41,
+42,
+43
+],
+"text": "last line rhythm dense; approximate"
+},
+{
+"bars": [
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60
+],
+"groups": [
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59
+],
+"text": "piano solo, half-time feel, rhythm slashes written as rests (bar 59 has a rhythmic hit)"
+},
+{
+"bars": [
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68
+],
+"groups": [
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67
+],
+"text": "vamp & fade with piano fill"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sailing at Night\nC:Don Grusin\nP:ABCAB\n%source New Real Book Vol 2 p269 (pdf 257-258)\n%style (Med. Funk Ballad, q=122)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+16+16 (D.S., solo on AB, then D.S. al Coda)\n%unsure [form] play order inferred from \"D.S., solo on AB, then D.S. al Coda\"\nM:C\nL:1/8\nK:Am\n%intro\n\"Am11(maj7)\"B4- B B2 B- | \"Am11\"B4- B B2 B- | \"D13\"B8 | \"E7#9b9#5\"z4 z B3 |\n\"Am11(maj7)\"B4- B B2 B- | \"Am11\"B4- B B2 B- | \"D13\"B8 | \"F/G\"B4 \"G/F\"B4 |\n\"Ab/E\"B8- | B8- | B8- | B4 zB BB- |\nP:A\n!segno!\"Am11(maj7)\"B2 BB- B B2 B- | \"Am11\"B4 zB BB | \"D13\"B2 BB z B2 B- | \"G13sus\"B4 \"G13#11\"BB BB- |\n\"C13sus\"B3 B z2 zB- | \"Bb13\"B4- B/B/B B2 | \"Cmaj9#5/F\"B8 | \"Fmaj9\"z4 \"E7#9b9#5\"zB BB- |\n\"Am11(maj7)\"B2 BB- B B2 B- | \"Am11\"B4 zB BB | \"D13\"B2 BB z \"Ab7\"B2 \"G13sus\"B- | B4 \"G13#11\"BB B\"C13sus\"B- |\nBB BB B2 B2 | \"Bb13\"B2 BB BB/B/ B2 | \"Cmaj9#5/F\"B8 | \"Fmaj9\"z2 zB/B/ (3B2B2B2 ||\nP:B\n\"Bb13sus\"B7 \"E7#9\"B- | B4 B B2 B- | \"Am9\"B8 | \"C13sus\"z4 \"C13b9\"z4 |\n\"Bb13sus\"B8 | \"E7#9\"B4 B B2 B- | \"Am9\"B8 | \"C13sus\"z4 \"C13b9\"z2 zB/B/ |\n\"Db13sus\"B7 \"G7#9\"B- | B4 B B2 B- | \"Cm9\"B8 | \"Eb13sus\"z4 \"Eb13\"z4 |\n\"Bb13sus\"B6 \"E7#9\"B2- | B2 BB zB zB- | \"Am9\"zB zB- BB/B/ BB | \"E9sus\"B4 \"E7#9#5\"z4 |]\nP:C\n\"Bbm7(11)\"z8 | \"Eb7\"z8 | \"Cm7(11)\"z8 | \"F7\"z8 |\n\"Ebm7(11)\"z8 | \"Ab7\"z8 | \"Dbmaj7\"z8 | z4 \"B13#11\"z4 |\n\"Bbm7(11)\"z8 | \"Eb7\"z8 | \"Cm7(11)\"z8 | \"F7\"z8 |\n\"Ebm7(11)\"z8 | \"C/E\"z8 | \"Bb6/F\"z4 \"F\"z4 | z4 \"E7#9#5\"z4 |]\n%coda\n|: \"Bb13sus\"B7 \"E7#9\"B- | B4 B B2 B- | \"Am9\"B8 | \"C13sus\"z4 \"C13b9\"z4 |\n\"Bb13sus\"B8 | \"E7#9\"B4 B B2 B- | \"Am9\"B8 | \"C13sus\"z4 \"C13b9\"z4 :|\n\n%unsure [bars 1-12] intro marked (synth.)\n%unsure [bars 16, 23-28] chord hit placements (G13sus, G13#11, C13sus) above rhythmic hits approximate; bars 27-28 rhythm approximate\n%unsure [bars 41-44] last line rhythm dense; approximate\n%unsure [bars 45-60] piano solo, half-time feel, rhythm slashes written as rests (bar 59 has a rhythmic hit)\n%unsure [bars 61-68] vamp & fade with piano fill"
+},
+{
+"id": "New_Real_Book_Volume2/259-sea-journey",
+"book": "The New Real Book Vol. 2",
+"title": "Sea Journey",
+"pdf": "259",
+"form": "ABCD 19+20+8+9",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the chart; C is a solo vamp till cue"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26
+],
+"groups": [
+20,
+21,
+22,
+23,
+24,
+25
+],
+"text": "piano fill under rests/slashes; last bar pickup is the vocal entry"
+},
+{
+"bars": [
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45
+],
+"groups": [
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44
+],
+"text": "A section runs 19 bars on the chart (as printed)"
+},
+{
+"bars": [
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73
+],
+"groups": [
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72
+],
+"text": "Samba solo vamp till cue (q=h), slashes written as rests; last two bars (flute, gtr & pn) last time only"
+},
+{
+"bars": [
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82
+],
+"groups": [
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81
+],
+"text": "1.-3. ending is 3 bars; 4th time ending; coda jump marked \"4th x\" at bar 77"
+},
+{
+"bars": [
+83,
+84,
+85,
+86
+],
+"groups": [
+82,
+83,
+84,
+85
+],
+"text": "Orig. Tempo; D.S. al Coda after these bars"
+},
+{
+"bars": [
+87,
+88,
+89,
+90
+],
+"groups": [
+86,
+87,
+88,
+89
+],
+"text": "Slower, q=188; last bar printed as quarter, quarter rest, half rest; rest padded to fill 6/4"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sea Journey\nC:Chick Corea\nP:ABCD\n%source New Real Book Vol 2 p271 (pdf 259-260)\n%style (Med. Latin, q=132; C: Samba, q=h)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note As played by Stanley Clarke. Entire form (Intro, ABCD) may be repeated more than once before going to Coda.\n%form ABCD 19+20+8+9\n%unsure [form] section lengths counted from the chart; C is a solo vamp till cue\nM:C\nL:1/8\nK:Bm\n%intro\n|: \"G6/9#11/B\"B3 B- B3 B- | B2 B2 B4 | B3 B- B3 B- | B2 \"Bm(add9,11)\"B2 B4 :|\n!segno!\"F#/G\"B3 B- B3 B- | B2 B2 B4 | B3 B- B3 B- | B2 \"E/F#\"B2 B4 |\n\"F#/G\"B3 B- B3 B- | B2 B2 B4- | B4 (3B2B2B2 | (3B2B2B2 B B2 B- |\n\"F#m7\"B8 | (3z2B2B2 (3B2B2B2- | \"Gmaj7\"B2 B6 | zB BB (3B2B2B2 |\n\"Gmaj7/A\"B2 B6 | (3z2B2B2 B B2 B- | \"G6/9/B\"B2 B6 | \"Bm\"B8 |\n\"G6/9/B\"z8 | \"Bm\"z8 | \"G6/9/B\"z8 | \"Bm\"z8 |\n\"G6/9/B\"z8 | \"Bm\"z4 z2 B2 ||\nP:A\n\"G6/9/B\"B7 B- | \"Bm\"B8- | \"G6/9/B\"B8 | \"Bm\"z4 z2 B2 |\n\"G6/9/B\"B3 B- B2 B2- | \"Bm\"B8- | \"G6/9/B\"B8 | \"Bm\"z4 z2 B2 |\n\"Esus\"B2 BB \"F#sus\"B2 B2 | \"Bsus\"B8 | z2 B2 B2 BB | \"Gmaj7/A\"B8 |\nz2 B2 B2 BB | \"G#m7b5\"B8 | z2 B2 B2 BB | \"Gmaj7\"B4- (3B2B2B2 |\nB2 B2 B3 B | \"F#7b9\"B B2 B- B4- | B4 B4 ||\nP:B\n\"G6/9/B\"B7 B- | \"Bm\"B8- | \"G6/9/B\"B8 | \"Bm\"z4 z2 B2 |\n\"G6/9/B\"B3 B- B2 B2- | \"Bm\"B8- | \"G6/9/B\"B8 | \"Bm\"z4 z2 B2 |\n\"Em7\"B2 BB \"Dmaj7#5\"B2 BB | \"Gmaj7\"B2 BB \"F#7b9\"B2 BB | \"Gmaj7\"B2 B6- | B8 |\n\"F#7\"B6 B2- | B4 B4 | \"Gmaj7\"B3 B- B4- | B6 B2 |\n\"F#m7\"B3 B B4- | \"B7\"B6 B2 | \"Emaj7\"B2 B2 \"D#m7\"B2 B2 | \"C#m9b5\"B4 \"F#7b9\"B3 B- ||\nP:C\n|: \"Bm\"z8 | z8 | \"Em6/B\"z8 | z8 |\nz8 | z8 | \"Bm\"z6 B2 | B3 B- B2 B2 :|\nP:D\n|: \"Bm\"z4 z2 B2 | B3 B- B2 B2 | \"Em6/B\"z4 z2 B2 | B3 B- B2 !coda!B2 |\n\"Em6/B\"z4 z2 B2 |1 B3 B- B2 B2 | \"Bm\"z4 z2 B2 | B3 B- B2 B2 :|2\n\"Em6/B\"B3 B- B2 \"G6/9#11/B\"B2 |: B3 B- B3 B- | B2 B2 B4 | B3 B- B3 B- |\nB2 \"Bm(add9,11)\"B2 B4 :|\n%coda\n\"N.C.\"(3z2B2B2 B B2 B- | B B2 B \"F#7\"B2 \"Bm\"!accent!B2 ||\nM:6/4\nz4 \"Em7\"B2 zB \"F#m7\"B2 \"Bm\"BB | !accent!B2 z2 z8 |]\n\n%unsure [bars 21-26] piano fill under rests/slashes; last bar pickup is the vocal entry\n%unsure [bars 27-45] A section runs 19 bars on the chart (as printed)\n%unsure [bars 66-73] Samba solo vamp till cue (q=h), slashes written as rests; last two bars (flute, gtr & pn) last time only\n%unsure [bars 74-82] 1.-3. ending is 3 bars; 4th time ending; coda jump marked \"4th x\" at bar 77\n%unsure [bars 83-86] Orig. Tempo; D.S. al Coda after these bars\n%unsure [bars 87-90] Slower, q=188; last bar printed as quarter, quarter rest, half rest; rest padded to fill 6/4"
+},
+{
+"id": "New_Real_Book_Volume2/261-senor-blues",
+"book": "The New Real Book Vol. 2",
+"title": "Senor Blues",
+"pdf": "261",
+"form": "AB 24+24, Ending C (solo on A; after solos D.S. al Ending)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the chart"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+1,
+2,
+3,
+4
+],
+"text": "4-bar repeat (pn. w/ bs. 8va), played 3x: 1st & 2nd x bass only, 3rd x add chords & drums"
+},
+{
+"bars": [
+5,
+6,
+7,
+8
+],
+"groups": [
+5,
+6,
+7,
+8
+],
+"text": "last two bars are a break (trp., ten.)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "melody written in harmonized horn voicings (trp., ten.); only rhythm kept"
+},
+{
+"bars": [
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76
+],
+"groups": [
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76
+],
+"text": "2nd ending is a 5-bar tacet rest, written out"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Senor Blues\nC:Horace Silver\nP:ABC\n%source New Real Book Vol 2 p273 (pdf 261-262)\n%style (Med. Latin 6/8, dotted q=100)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 24+24, Ending C (solo on A; after solos D.S. al Ending)\n%unsure [form] section lengths counted from the chart\nM:6/8\nL:1/8\nK:Fm\n%intro\nz |: \"Fm6/9\"z6 | z6 | z6 |\nz6 :| \"Fm6/9\"z6 | z6 | z2 z B B2 |\n(3B/B/B/Bz zBB ||\nP:A\n!segno!\"Fm6/9\"B3- B2 B | z6 | z3 B B2 | (3B/B/B/Bz zBB |\n\"Fm6/9\"B6- | B6 | z3 B B2 | (3B/B/B/Bz zBB |\n\"Db9#11\"B3- B2 B | z6 | z3 B B2 | (3B/B/B/Bz zBB |\n\"Fm6/9\"B6- | B6 | z3 BBB | z3 zBB |\n\"C7\"B3- B2 B | z6 | \"Bb13\"z3 B B2 | (3B/B/B/Bz zBB |\n\"Fm6/9\"B6- | B6 | z6 | zBB BBB |\nP:B\n\"Fm6/9\"B/B/ z2 z3 | z6 | z3 zBB | BBB BBB |\nB z2 z3 | z6 | \"Fm6/9\"z6 | zBB BBB |\n\"Db9#11\"B/B/ z2 z3 | z6 | z3 zBB | BBB BBB |\n\"Fm6/9\"B z2 z3 | z6 | z3 BBB | z3 zBB |\n\"C7\"B3- B2 B | z6 | \"Bb13\"z3 B B2 | (3B/B/B/Bz zBB |\n\"Fm6/9\"B6- | B6 | z6 | z6 |]\nP:C\n%ending\n|: \"Fm6/9\"B6- | B6 | z3 zBB | BBB BBB |\n\"Fm6/9\"B6- | B6 | z3 zBB | BBB BBB |\n\"Fm6/9\"B6- | B6 | z3 zBB | BBB BBB |\n\"Fm6/9\"B6- | B6 |1 z6 | z6 :|2\nz6 | z6 | z6 | z6 | z6 |]\n\n%unsure [bars 1-4] 4-bar repeat (pn. w/ bs. 8va), played 3x: 1st & 2nd x bass only, 3rd x add chords & drums\n%unsure [bars 5-8] last two bars are a break (trp., ten.)\n%unsure [general] melody written in harmonized horn voicings (trp., ten.); only rhythm kept\n%unsure [bars 57-76] 2nd ending is a 5-bar tacet rest, written out"
+},
+{
+"id": "New_Real_Book_Volume2/263-september-song",
+"book": "The New Real Book Vol. 2",
+"title": "September Song",
+"pdf": "263",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+},
+{
+"bars": [
+1
+],
+"groups": [
+0
+],
+"text": "full-bar pickup (quarter rest + 3 quarters)"
+},
+{
+"bars": [
+3,
+4,
+5
+],
+"groups": [
+2,
+3,
+4
+],
+"text": "triplet bracket over Abmaj7/Dbmaj7 chord rhythm (pushed chords), melody quarters; chord placement in bars 4-5 approximate"
+},
+{
+"bars": [
+25
+],
+"groups": [
+24
+],
+"text": "break"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:September Song\nC:Kurt Weill (lyric by Maxwell Anderson)\nP:ABC\n%source New Real Book Vol 2 p276 (pdf 263)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [general] lyrics are printed\nM:C\nL:1/8\nK:C\n%intro\nz2 B2 B2 B2 ||\nP:A\n\"F9\"B2 B2 B4 | z2 B2 \"Abmaj7\"B2 \"Dbmaj7\"B2 | \"Cmaj7\"B3 B- B4 | \"Dm7\"z2 \"Em7\"BB B2 \"Am7\"B2 |\n\"D9sus\"B8- | \"G7sus(b9)\"B2 B2 \"G7\"(3B2B2B2 | \"Cmaj7\"B3 B- \"G9sus\"B4 | \"Cmaj7\"z2 BB B2 B2 |\n\"F9\"B3 B- B4 | z2 BB \"Abmaj7\"B2 \"Dbmaj7\"B2 | \"Cmaj7\"B8 | \"Dm7\"z2 \"Em7\"B2 \"Am7\"BB B2 |\n\"D9sus\"B8- | \"G7sus(b9)\"B2 BB \"G7\"B2 B2 | \"Cmaj7\"B8- | \"(C7)\"\"Cmaj7\"B2 z2 B2 B2 ||\nP:B\n\"Fm6\"B2 BB B4- | B4 B2 B2 | \"F#o7\"B3 B B4- | B4 z2 zB |\n\"Fm6\"B4 B4 | z4 z2 zB | \"F#o7\"B4 B4 | \"Cmaj7/G\"z2 B2 B2 B2 ||\nP:C\n\"F9\"B3 B B4 | z2 B2 \"Abmaj7\"B2 \"Dbmaj7\"B2 | \"Cmaj7\"B8 | \"Dm7\"z2 \"Em7\"B2 \"Am7\"B2 B2 |\n\"D9sus\"B6 \"D9\"B2 | \"Fm7\"B4 \"Dbmaj7\"B4 | \"C6\"B8 | \"(G9sus)\"z4 \"Cmaj7\"z2 \"(C7)\"z2 |]\n\n%unsure [bar 1] full-bar pickup (quarter rest + 3 quarters)\n%unsure [bars 3-5] triplet bracket over Abmaj7/Dbmaj7 chord rhythm (pushed chords), melody quarters; chord placement in bars 4-5 approximate\n%unsure [bar 25] break"
+},
+{
+"id": "New_Real_Book_Volume2/264-seven-steps-to-heaven",
+"book": "The New Real Book Vol. 2",
+"title": "Seven Steps to Heaven",
+"pdf": "264",
+"form": "ABC 8+8+8 head, D 8 interlude; solos EEFG 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 8,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "order from \"Solo on EEFG. Play D between solos. After solos, play D, then D.S. al Coda\""
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+1,
+2,
+3,
+4
+],
+"text": "bars 1-2 bass only (2nd x add drums); bars 3-4 piano hits, 4x"
+},
+{
+"bars": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14
+],
+"groups": [
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14
+],
+"text": "stop time; bar 12 is a drum fill"
+},
+{
+"bars": [
+22
+],
+"groups": [
+22
+],
+"text": "piano hit"
+},
+{
+"bars": [
+24
+],
+"groups": [
+24
+],
+"text": "F#maj7 as printed (A section has F#m7)"
+},
+{
+"bars": [
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38
+],
+"groups": [
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38
+],
+"text": "piano hits; bars 33-36 are two printed 2-bar repeats written as rests; bars 37-38 solo break"
+},
+{
+"bars": [
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62
+],
+"groups": [
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62
+],
+"text": "solo changes (slashes) written as rests"
+},
+{
+"bars": [
+63,
+64,
+65,
+66,
+67
+],
+"groups": [
+63,
+64,
+65,
+66,
+67
+],
+"text": "coda: each repeat 4x; piano vamp till cue"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Seven Steps to Heaven\nC:Victor Feldman, Miles Davis\nP:ABCDEEFG\n%source New Real Book Vol 2 p277 (pdf 264-265)\n%style (Fast Swing, q=278)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note As played by Miles Davis. Chords in parentheses are optional.\n%form ABC 8+8+8 head, D 8 interlude; solos EEFG 8+8+8+8\n%unsure [form] order from \"Solo on EEFG. Play D between solos. After solos, play D, then D.S. al Coda\"\nM:C\nL:1/8\nK:G\n%intro\nz |: \"G13\"z8 | \"F13\"z8 :| :\"G13\"z2 B2 zB z2 | \"F13\"z2 B2 zB z2 :|\nP:A\n|: \"Gmaj7\"B2 z2 \"Cmaj7\"B2 z2 | \"F#m7\"B2 z2 \"B7\"B2 z2 | \"Em(maj7)\"B4 \"Bb13\"B3 \"A7\"B | z8 |\nz8 | z8 |1 \"F6\"B4 \"F#6\"B3 \"G6\"B | z8 :|2\n\"F6\"B4 \"F#6\"B3 \"G6\"B | z8 ||\nP:B\n\"Dmaj7\"BB BB zB BB- | \"Em7\"B2 BB \"A7\"B2 BB- | \"Dmaj7\"B8 | \"Gm7\"z4 z\"C7\"B BB- |\n\"Fmaj7\"B8 | \"Bbm7\"z4 z\"Eb7\"B BB- | \"Abmaj7\"B8 | \"(D7)\"B2 z2 z4 ||\nP:C\n\"Gmaj7\"B2 z2 \"Cmaj7\"B2 z2 | \"F#maj7\"B2 z2 \"B7\"B2 z2 | \"Em(maj7)\"B4 \"Bb13\"B3 \"A7\"B | z8 |\nz8 | z8 | \"F6\"B4 \"F#6\"B3 \"G6\"B | z8 ||\nP:D\n\"G13\"z2 B2 zB z2 | \"F13\"z2 B2 zB z2 | z8 | z8 |\nz8 | z8 | \"G13\"!accent!B2 z2 z4 | z8 ||\nP:E\n|: \"Gmaj7\"z8 | \"F#m7\"z4 \"B7\"z4 | \"Em7\"z4 \"(Bb7)\"z4 | \"A7\"z8 |\n\"Am7\"z8 | \"D7\"z8 | \"F6\"z4 \"F#6\"z4 | \"G6\"z8 :|\nP:F\n\"Dmaj7\"z8 | \"Em7\"z4 \"A7\"z4 | \"Dmaj7\"z8 | \"Gm7\"z4 \"C7\"z4 |\n\"Fmaj7\"z8 | \"Bbm7\"z4 \"Eb7\"z4 | \"Abmaj7\"z8 | \"Am7\"z4 \"D7\"z4 ||\nP:G\n\"Gmaj7\"z8 | \"F#m7\"z4 \"B7\"z4 | \"Em7\"z4 \"(Bb7)\"z4 | \"A7\"z8 |\n\"Am7\"z8 | \"D7\"z8 | \"F6\"z4 \"F#6\"z4 | \"G6\"z8 |]\n%coda\n|: \"F6\"B4 \"F#6\"B3 \"G6\"B | z8 :| :\"G13\"z2 B2 zB z2 | \"F13\"z2 B2 zB z2 :|\n\"G13\"!fermata!B8 |]\n\n%unsure [bars 1-4] bars 1-2 bass only (2nd x add drums); bars 3-4 piano hits, 4x\n%unsure [bars 5-14] stop time; bar 12 is a drum fill\n%unsure [bar 22] piano hit\n%unsure [bar 24] F#maj7 as printed (A section has F#m7)\n%unsure [bars 31-38] piano hits; bars 33-36 are two printed 2-bar repeats written as rests; bars 37-38 solo break\n%unsure [bars 39-62] solo changes (slashes) written as rests\n%unsure [bars 63-67] coda: each repeat 4x; piano vamp till cue"
+},
+{
+"id": "New_Real_Book_Volume2/266-silver-s-serenade",
+"book": "The New Real Book Vol. 2",
+"title": "Silver's Serenade",
+"pdf": "266",
+"form": "A 16 head, B 16 solos (after solos D.C. al Coda, repeat before taking Coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 5,
+"flags": [
+{
+"bars": [
+8
+],
+"groups": [
+8
+],
+"text": "pushed chord hits Bbm9-Bm9 over rests; rhythm of the hits approximate"
+},
+{
+"bars": [
+9,
+10,
+11,
+12
+],
+"groups": [
+9,
+10,
+11,
+12
+],
+"text": "ten. 8va b.; Cm9-C#m9-Dm9 hits on eighths, placement approximate"
+},
+{
+"bars": [
+13,
+14,
+15,
+16
+],
+"groups": [
+13,
+14,
+15,
+16
+],
+"text": "chord hits printed over tied/held notes; (E13) hit 1st x only"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32
+],
+"groups": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32
+],
+"text": "solo slashes written as rests"
+},
+{
+"bars": [
+33,
+34,
+35
+],
+"groups": [
+33,
+34,
+35
+],
+"text": "Freely; last bar rhythm approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Silver's Serenade\nC:Horace Silver\nP:AB\n%source New Real Book Vol 2 p279 (pdf 266)\n%style (Med. Swing (in 2), q=144)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 16 head, B 16 solos (after solos D.C. al Coda, repeat before taking Coda)\nM:C\nL:1/8\nK:F#m\n\"E13\"B2 |:\nP:A\n\"F#m9\"B8- | B \"Gm9\"B3 \"F#m9\"B2 \"Dm9\"B\"Cm9\"B- | B8- | B8 |\n\"Bm9\"B8- | B \"Cm9\"B3 \"Bm9\"B2 \"Gm9\"B\"Fm9\"B- | B8- | B6 \"Bbm9\"z\"Bm9\"B |\n\"Bm9\"z B3 B2 B2 | BB zB- \"Cm9\"B2 \"C#m9\"B\"Dm9\"B- | z B3 B2 BB | \"Db9\"B4- BB BB- |\n\"Cmaj9\"B4 \"Dm9\"z \"Em9\"z3 | zB z2 \"Fmaj9\"BB BB- | \"Bm7\"B8- | !coda!\"E7b9b5\"B6 \"(E13)\"B2 :|\nP:B\n|: \"F#m9\"z8 | z8 | \"Cm9\"z8 | z8 |\n\"Bm9\"z8 | z8 | \"Fm9\"z8 | z8 |\n\"Bm9\"z8 | z8 | \"Dm9\"z8 | \"Dm9\"z4 \"Db9\"z4 |\n\"Cmaj9\"z4 \"Dm9\"z4 | \"Em9\"z4 \"Fmaj9\"z4 | \"Bm9\"z8 | \"E13\"z8 :|\n%coda\n\"E7b9b5\"B6 z2 | \"A6/9\"z4 z2 !fermata!B2 | B/B/B/B/ B/B/B/B/ B/B/B/B/ !fermata!B2 |]\n\n%unsure [bar 8] pushed chord hits Bbm9-Bm9 over rests; rhythm of the hits approximate\n%unsure [bars 9-12] ten. 8va b.; Cm9-C#m9-Dm9 hits on eighths, placement approximate\n%unsure [bars 13-16] chord hits printed over tied/held notes; (E13) hit 1st x only\n%unsure [bars 17-32] solo slashes written as rests\n%unsure [bars 33-35] Freely; last bar rhythm approximate"
+},
+{
+"id": "New_Real_Book_Volume2/267-sing-me-softly-of-the-blues",
+"book": "The New Real Book Vol. 2",
+"title": "Sing Me Softly of the Blues",
+"pdf": "267",
+"form": "A 14 (solo on A; after solos play head to Ending)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [
+5
+],
+"groups": [
+4
+],
+"text": "bar 1 of A also prints a whole note in parentheses (end of head / start of solos)"
+},
+{
+"bars": [
+15
+],
+"groups": [
+14
+],
+"text": "slashes on beat 3 written as rest; D# D triplet chords placement approximate"
+},
+{
+"bars": [
+17
+],
+"groups": [
+16
+],
+"text": "triplet/tie lengths approximate"
+},
+{
+"bars": [
+19,
+20
+],
+"groups": [
+18,
+19
+],
+"text": "Ending, rit.; lower voice half notes ignored"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sing Me Softly of the Blues\nC:Carla Bley\nP:IntroA\n%source New Real Book Vol 2 p280 (pdf 267)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 14 (solo on A; after solos play head to Ending)\nM:C\nL:1/8\nK:B\n%intro\n\"G7\"(3BBB- B6 | \"C#7\"(3BBB- \"G7\"B6 | \"F#9sus\"z8 | \"F#7\"z4 (3B2B2B2 ||\nP:A\n|: \"B7\"B6 (3BBB | \"E7\"BB- B6 | \"B7\"B6 (3BBB | \"E7\"B6 zB |\n\"D7\"B4- \"Ab7b5\"B4 | \"G7\"(3BBB- B6 | \"C#7\"(3BBB- \"G7\"B6 | \"F#9sus\"z4 \"F#7\"(3B2B2B2 |\n\"B7\"B6 (3BBB | \"E7\"BB- B2 z2 \"D#\"(3z\"D\"BB | \"C#7\"z4 \"G7\"z4 | \"F#7\"(3BBB- B2- \"C7\"B2 zB |\n\"B7\"B4 \"A7\"B4 | \"G7\"B2 zB- \"F#7\"B2- (3BBB :|\n%coda\n\"B7\"B4 \"E7\"B4 | \"C#7\"z2 \"C7\"z2 \"B7\"!fermata!z4 |]\n\n%unsure [bar 5] bar 1 of A also prints a whole note in parentheses (end of head / start of solos)\n%unsure [bar 15] slashes on beat 3 written as rest; D# D triplet chords placement approximate\n%unsure [bar 17] triplet/tie lengths approximate\n%unsure [bars 19-20] Ending, rit.; lower voice half notes ignored"
+},
+{
+"id": "New_Real_Book_Volume2/268-skippy-ing",
+"book": "The New Real Book Vol. 2",
+"title": "Skippy-ing",
+"pdf": "268",
+"form": "AABA 14+14+16+12(?); solos on CCDE 16+16+16+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 8,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "head section lengths irregular; solo on CCDE, then D.C. al Coda Two playing AABA before coda"
+},
+{
+"bars": [],
+"groups": [],
+"text": "dotted-eighth figures are played as triplet swing per footnote"
+},
+{
+"bars": [
+1
+],
+"groups": [
+0
+],
+"text": "half note marked (pn.) at start, written as rest"
+},
+{
+"bars": [
+10
+],
+"groups": [
+9
+],
+"text": "marked (pn.), piano figure"
+},
+{
+"bars": [
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33
+],
+"groups": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32
+],
+"text": "'in 4' at B; D.C. al Coda One"
+},
+{
+"bars": [
+34,
+35,
+36,
+37
+],
+"groups": [
+33,
+34,
+35,
+36
+],
+"text": "last two bars are a solo break"
+},
+{
+"bars": [
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82,
+83,
+84,
+85,
+86,
+87,
+88,
+89
+],
+"groups": [
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82,
+83,
+84,
+85,
+86,
+87,
+88
+],
+"text": "solo sections C, D, E are slash chords, written as rests"
+},
+{
+"bars": [
+90,
+91,
+92,
+93,
+94,
+95,
+96
+],
+"groups": [
+89,
+90,
+91,
+92,
+93,
+94,
+95
+],
+"text": "chord placement in coda two follows the printed rhythm figures above the staff; bar 92 whole note split"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Skippy-ing\nC:Denny Zeitlin\nP:AABACCDE\n%source New Real Book Vol 2 p281-282 (pdf 268-269)\n%style (Med.-Fast Swing (in 2))\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 14+14+16+12(?); solos on CCDE 16+16+16+12\n%unsure [form] head section lengths irregular; solo on CCDE, then D.C. al Coda Two playing AABA before coda\n%unsure [general] dotted-eighth figures are played as triplet swing per footnote\nM:C\nL:1/8\nK:D\nP:A\n|: \"F#m7\"z4 B>B B>B | \"E6/9/B\"B8 | \"F#m7\"z4 B>B B>B | \"A/B\"B3 B- \"B13#11\"B4 |\n\"Dmaj7/E\"z4 B>B B>B | \"Em7/A\"B8 | \"Dmaj7/E\"z4 B>B B>B | \"Em7\"B3 B- \"A13b9\"B4 |\n\"Dmaj9\"z4 zB (3BBB | \"G13#11\"B2 B2 B2 B2 | \"C13#11\"B8 | \"B9\"z2 zB BB BB |\n!coda!\"Em9\"B7 \"Bb9#5\"B- | BB BB \"A9sus\"B2 B2 |1 \"Dmaj7\"B7 \"G#m7\"B- | BB BB- \"C#m7\"BB BB :|2\n\"Dmaj7\"B7 \"C#m7b5\"B- | BB BB- \"F#7#5\"BB BB- ||\nP:B\n\"Bm9(maj7)\"B3 B B B2 \"C13sus\"B- | B3 B \"C13\"B B3 | \"Fmaj7\"BB BB- B4- | B8 |\n\"Fm7\"BB BB- B4 | zB BB \"Bb7\"BB \"Ebmaj9\"BB- | B8 | \"E7#9#5/G#\"B2 BB- \"Abmaj9\"BB B2 |\n\"C#m9\"B3 B BB zB- | \"Eb13\"B3 B BB z2 | \"G/Ab\"BB zB z2 \"Abmaj7\"B2- | B8 |\n\"G#m7\"BB B2 B4- | B8 | \"Gm7\"BB B2 B4- | B6 \"F#m7\"z2 |]\n%coda one\n\"Em9\"B7 \"Bb9#5\"B- | BB BB \"A9sus\"B2 B2 | \"Dmaj7\"!fermata!B2 z2 z4 | z8 |]\nP:C\n|: \"F#m9\"z8 | z8 | z8 | \"B13#11\"z8 |\n\"Em9\"z8 | z8 | z8 | \"A7alt\"z8 |\n\"Dmaj7\"z8 | \"G9\"z8 | \"C13\"z8 | \"B7alt\"z8 |\n\"E7alt\"z8 | \"A7alt\"z8 |1 \"Dmaj7\"z8 | \"G#m7\"z4 \"C#7\"z4 :|2\n\"Dmaj7\"z8 | \"C#m7b5\"z4 \"F#7alt\"z4 ||\nP:D\n\"Bm7\"z8 | \"Gm7\"z4 \"C7\"z4 | \"Fmaj7\"z8 | z8 |\n\"Fm7\"z8 | \"Bb7\"z8 | \"Ebmaj7\"z8 | \"E7#9#11/G#\"z4 \"Abmaj9\"z4 |\n\"C#m7\"z8 | \"Eb7\"z8 | \"Abmaj7\"z8 | z8 |\n\"Abm7\"z8 | \"Db7\"z8 | \"Gm7\"z8 | \"C7\"z8 ||\nP:E\n\"F#m9\"z8 | z8 | z8 | \"B13#11\"z8 |\n\"Em9\"z8 | z8 | z8 | \"A7alt\"z8 |\n\"Dmaj7\"z8 | \"G9\"z8 | \"C13\"z8 | \"B7alt\"z8 |\n\"E7alt\"z8 | \"A7alt\"z8 | \"Dmaj7\"z8 | \"G#m7\"z4 \"C#7\"z4 |]\n%coda two\n\"Em9\"B7 \"A13sus\"B- | BB BB \"A9sus\"B2 B2 | \"Cm7\"B4 \"F7\"B2 \"Bbmaj7\"B2 | zB BB \"F/Eb\"B2 \"Eb\"B2 |\n\"F#m7\"B4 \"F7\"B2 \"Em7(11)\"B2- | B4 \"A9sus\"(3B2B2B2 | \"Dmaj9#11\"z4 B>B B>B | B4 !fermata!B4 |]\n\n%unsure [bar 1] half note marked (pn.) at start, written as rest\n%unsure [bar 10] marked (pn.), piano figure\n%unsure [bars 18-33] 'in 4' at B; D.C. al Coda One\n%unsure [bars 34-37] last two bars are a solo break\n%unsure [bars 38-89] solo sections C, D, E are slash chords, written as rests\n%unsure [bars 90-96] chord placement in coda two follows the printed rhythm figures above the staff; bar 92 whole note split"
+},
+{
+"id": "New_Real_Book_Volume2/270-so-many-stars",
+"book": "The New Real Book Vol. 2",
+"title": "So Many Stars",
+"pdf": "270",
+"form": "ABCD 14+14+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed (not copied)"
+},
+{
+"bars": [
+4
+],
+"groups": [
+4
+],
+"text": "alternate chord (Bbm7b5) printed over Eb7b9"
+},
+{
+"bars": [
+35,
+37
+],
+"groups": [
+35,
+37
+],
+"text": "alternates (Ab/Bb Bb/Ab) and (Db9) printed"
+},
+{
+"bars": [
+43,
+44
+],
+"groups": [
+43,
+44
+],
+"text": "last 2 bars may be vamped to end; (Abmaj7/Bb) alternate over Fm9"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:So Many Stars\nC:Sergio Mendes (lyric: Alan & Marilyn Bergman)\nP:ABCD\n%source New Real Book Vol 2 p283-284 (pdf 270-271)\n%style (Med. Bossa)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 14+14+8+8\n%unsure [general] lyrics are printed (not copied)\nM:C\nL:1/8\nK:Eb\nB2 ||\nP:A\n\"Abmaj7/Bb\"B4- BB BB | \"Bb13b9\"B4- BB BB | \"Bbm7\"B4- BB BB | \"Eb7b9\"B4 \"Eb13\"(3B2B2B2 |\n\"Abmaj7\"B3 B B4- | \"Db13\"B6 B2 | \"Gm\"B4- \"Eb/G\"BB BB | \"Gm6\"B4- \"Gm7\"BB BB |\n\"Gm(maj7)\"B2 BB- \"Gm7\"BB B2- | \"C7#9#5\"B4 (3B2B2B2 | \"Abmaj7/Bb\"B4- BB BB | \"Bb13b9\"B4- BB BB |\n\"Eb6/9\"B8- | \"(C9sus)\"B6 \"(C7#9#5)\"B2 ||\nP:B\n\"Abmaj7/Bb\"B4- BB BB | \"Bb13b9\"B4- BB BB | \"Bbm7\"B4- BB BB | \"Eb7b9\"B4 \"Eb13\"(3B2B2B2 |\n\"Abmaj7\"B3 B B4- | \"Db13\"B6 B2 | \"Gm\"B4- \"Eb/G\"BB BB | \"Gm6\"B4- \"Gm7\"BB BB |\n\"Gm(maj7)\"B2 BB- \"Gm7\"BB B2- | \"C7#9#5\"B4 (3B2B2B2 | \"Abmaj7/Bb\"B4- BB BB | \"Bb13b9\"B4- BB BB |\n\"Eb6/9\"B8- | \"(Abmaj7)\"B6 B2 ||\nP:C\n\"Am11\"B4- BB BB | \"Ab13#11\"B4- BB BB | \"Gm11\"B4- BB BB | \"C13b9\"B4- BB BB |\n\"Fm11\"B4- BB BB | \"Bb13b9\"B4- BB BB | \"G13\"B4- \"G7#5\"B4- | \"C9sus\"B4- \"C7b9#5\"BB BB ||\nP:D\n\"Abmaj7/Bb\"B4- BB BB | \"Bb13b9\"B4- BB BB | \"Gm9\"B4- BB BB | \"C7#5\"B4- (3B2B2B2 |\n\"Fm9\"B4- BB BB | \"Bb13b9\"B4- BB BB | \"Eb6/9\"B8- | \"(Db6/9)\"B8 |]\n\n%unsure [bar 4] alternate chord (Bbm7b5) printed over Eb7b9\n%unsure [bars 35, 37] alternates (Ab/Bb Bb/Ab) and (Db9) printed\n%unsure [bars 43-44] last 2 bars may be vamped to end; (Abmaj7/Bb) alternate over Fm9"
+},
+{
+"id": "New_Real_Book_Volume2/272-some-other-blues",
+"book": "The New Real Book Vol. 2",
+"title": "Some Other Blues",
+"pdf": "272",
+"form": "A 12 head, B 12 solos (blues)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+0
+],
+"groups": [
+0
+],
+"text": "pickup marked (ten.)"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28
+],
+"groups": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28
+],
+"text": "solo slashes written as rests; after solos D.C. al Coda"
+},
+{
+"bars": [
+29
+],
+"groups": [
+29
+],
+"text": "coda bar is 7 eighths as printed (dotted quarter, eighth, eighth rest, fermata dotted quarter)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Some Other Blues\nC:John Coltrane\nP:AB\n%source New Real Book Vol 2 p286 (pdf 272)\n%style (Med.-Up Swing, q=196)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 12 head, B 12 solos (blues)\nM:C\nL:1/8\nK:G\nB ||\nP:A\n|: \"G7\"BB BB BB BB | \"C9sus\"BB BB BB BB- | \"G7\"B4- BB BB- | \"Db7\"B2 z2 z4 |\n\"C7\"BB BB BB BB | \"F7\"BB BB BB BB- | \"Bb7\"B4- BB BB | \"Eb7\"z8 |1 \"D13\"!staccato!B2 BB BB BB | \"C13/D\"B2- !staccato!B2 B2 BB- | \"G7\"B4 !staccato!B2 !staccato!B2 | \"(D7)\"z4 z2 zB :|2\n\"D13\"!staccato!B2 BB BB BB | \"C13/D\"B2- !staccato!B2 B2 BB- | !coda!\"G7\"B3 B zB z2 | \"(D7)\"z8 ||\nP:B\n|: \"G7\"z8 | \"C7\"z8 | \"G7\"z8 | z8 |\n\"C7\"z8 | z8 | \"G7\"z8 | z8 |\n\"D7\"z8 | z8 | \"G7\"z8 | \"D7\"z8 :|\n%coda\n\"G7\"B3 B z !fermata!B3 |]\n\n%unsure [bar 0] pickup marked (ten.)\n%unsure [bars 17-28] solo slashes written as rests; after solos D.C. al Coda\n%unsure [bar 29] coda bar is 7 eighths as printed (dotted quarter, eighth, eighth rest, fermata dotted quarter)"
+},
+{
+"id": "New_Real_Book_Volume2/273-someone-to-light-up-my-life",
+"book": "The New Real Book Vol. 2",
+"title": "Someone to Light Up My Life",
+"pdf": "273",
+"form": "AB 34+34 (repeated), with lyric intro (verse)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A and B lettered, repeat sign around A-B; section lengths counted from the page"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed (not copied)"
+},
+{
+"bars": [
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73
+],
+"groups": [
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72
+],
+"text": "alternate changes printed for bars 1-8 of B: B9sus, B7b9, E/B, Eo7/B, Bmaj7, %, B9sus, B9"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Someone to Light Up My Life\nC:Antonio Carlos Jobim (English lyric: Gene Lees)\nP:IntroAB\n%source New Real Book Vol 2 p287-288 (pdf 273-274)\n%style (Med. Samba)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 34+34 (repeated), with lyric intro (verse)\n%unsure [form] A and B lettered, repeat sign around A-B; section lengths counted from the page\n%unsure [general] lyrics are printed (not copied)\nM:C|\nL:1/8\nK:B\n%intro\n\"F#9\"z2 B2 B2 B2 | B8- | B4 B2 B2 | (3:2:3B4B4B4 |\n\"G#/F#\"B4 B2 B2- | B8- | B8- | B8 |\n\"F#9\"z2 B2 B2 B2 | B8- | B4 B2 B2 | (3:2:3B4B4B4 |\n\"Bmaj7\"B4 B2 B2- | \"Fm7b5\"B8- | B8- | B8 |\n\"Bb13\"(3:2:3B4B4B4 | \"Bb7#5\"(3:2:2B8B4 | \"D#9\"B6 B2 | \"D#7b9\"B2 B2 B2 B2 |\n\"G#m(maj7)\"B8- | \"G#m7\"B2 B2 B2 B2 | \"E9#5\"B4 B4- | \"E9\"B4 B4 |\n\"Amaj7\"B8- | B4 B2 B2 | \"Bbm7b5\"B8- | \"Eb7b9\"B4 B4 |\n\"Abmaj7\"B8- | \"Ao7\"B8 | \"Bbm7\"z8 | \"C#m7\"z4 \"F#7b9\"z4 ||\nP:A\n|: \"Bmaj7\"B8- | (3:2:3B4B4B4 | \"A#m7b5\"B8- | \"D#7b9\"(3:2:3B4B4B4 |\n\"G#m(maj7)\"B8- | \"(C#9)\"\"G#m6\"(3:2:3B4B4B4 | \"F#m(maj7)\"B4 B4- | \"B9\"B8 |\n\"Emaj7\"B8- | (3:2:3B4B4B4 | \"D#m7b5\"B8- | \"G#7b9\"(3:2:3B4B4B4 |\n\"C#m7\"B8- | B8- | \"F#9\"B8- | B8 |\n\"F#13\"(3:2:3B4B4B4 | (3:2:3B4B4B4 | \"F#9#5\"B8- | B8 |\n\"Bmaj7\"(3:2:3B4B4B4 | (3:2:3B4B4B4 | \"(G#m7)\"B8- | B8 |\n\"Fm7b5\"(3:2:3B4B4B4 | (3:2:3B4B4B4 | \"Bb13\"B8- | \"Bb7#5\"B2 B4 B2 |\n\"D#m7\"(3:2:3B4B4B4 | \"Bm6\"(3:2:3B4B4B4 | \"Amaj7/C#\"(3:2:3B4B4B4 | \"F#7\"(3:2:3B4B4B4 ||\nP:B\n\"Bmaj7\"B8- | (3:2:3B4B4B4 | \"A#m7b5\"B8- | \"D#7b9\"(3:2:3B4B4B4 |\n\"G#m(maj7)\"B8- | \"(C#9)\"\"G#m6\"(3:2:3B4B4B4 | \"F#m(maj7)\"B4 B4- | \"B9\"B8 |\n\"Emaj7\"B8- | (3:2:3B4B4B4 | \"D#m7b5\"B8- | \"G#7b9\"(3:2:3B4B4B4 |\n\"Emaj7\"B8- | B8- | B8- | B8 |\n\"Fm7b5\"(3:2:3B4B4B4 | (3:2:3B4B4B4 | \"Em6\"B8- | B8 |\n\"B(add9)/D#\"(3:2:3B4B4B4 | (3:2:3B4B4B4 | \"D13sus\"B8- | \"D13\"B8 |\n\"C#7\"(3:2:3B4B4B4 | (3:2:3B4B4B4 | \"F#9sus\"(3:2:3B4B4B4 | \"F#7b9\"(3:2:3B4B4B4 |\n\"Bmaj7\"B8- | B8 | \"(C#m7)\"z8 | \"(F#7b9)\"z8 :|\n\n%unsure [bars 66-73] alternate changes printed for bars 1-8 of B: B9sus, B7b9, E/B, Eo7/B, Bmaj7, %, B9sus, B9"
+},
+{
+"id": "New_Real_Book_Volume2/275-song-for-my-father",
+"book": "The New Real Book Vol. 2",
+"title": "Song for My Father",
+"pdf": "275",
+"form": "AAB 8+8+8 (head twice; solo on AAB; after solos D.S. al Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "printed eighth-rest pickup omitted; intro pickup figure (trp. & ten.)"
+},
+{
+"bars": [
+5,
+6
+],
+"groups": [
+4,
+5
+],
+"text": "first two bars printed as one long dense bar; 16th-triplet placement approximate"
+},
+{
+"bars": [
+10
+],
+"groups": [
+9
+],
+"text": "alternate (C/D) over D7"
+},
+{
+"bars": [
+21
+],
+"groups": [
+20
+],
+"text": "last three eighths printed in parentheses (pickup back to A)"
+},
+{
+"bars": [
+24,
+25,
+26
+],
+"groups": [
+23,
+24,
+25
+],
+"text": "vamp till cue with piano fills, then G in bass on cue; written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Song for My Father\nC:Horace Silver\nP:AAB\n%source New Real Book Vol 2 p290 (pdf 275)\n%style (Med. Bossa, q=126)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AAB 8+8+8 (head twice; solo on AAB; after solos D.S. al Coda)\nM:C\nL:1/8\nK:Bb\n%intro\n\"N.C.(Gm7)\"z8 | z8 | z8 | z4 zB BB ||\nP:A\n|: !segno!\"Gm9\"(3B/B/B/B/B/ BB- (3B/B/B/B BB- | B(3B/B/B/ BB- B(3B/B/B/ BB- | \"F9\"B8- | B6 BB |\n\"Eb9\"BB- B6 | \"D7\"z4 B3 B- | \"Gm9\"B8- |1 B4 zB BB :|2\nB4 zB BB ||\nP:B\n\"F9\"BB zB- B4- | B4 zB BB | \"Gm9\"BB zB- B4- | B4 zB BB |\n\"F9\"BB zB- \"Eb9\"B4 | \"D7\"z4 B3 B- | !coda!\"Gm9\"B8- | B4 zB BB |]\n%coda\n\"Gm9\"B8- | B8 |: \"Gm9\"z8 | z8 :| \"G\"z8 |]\n\n%unsure [bars 1-4] printed eighth-rest pickup omitted; intro pickup figure (trp. & ten.)\n%unsure [bars 5-6] first two bars printed as one long dense bar; 16th-triplet placement approximate\n%unsure [bar 10] alternate (C/D) over D7\n%unsure [bar 21] last three eighths printed in parentheses (pickup back to A)\n%unsure [bars 24-26] vamp till cue with piano fills, then G in bass on cue; written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/276-sophisticated-lady",
+"book": "The New Real Book Vol. 2",
+"title": "Sophisticated Lady",
+"pdf": "276",
+"form": "AABA 8+8+8+8 (letters A=16 bars, B, C)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed (not copied); alternate tritone-sub changes printed for bars 1-4 and 9-13 of A and 1-4 of C"
+},
+{
+"bars": [
+3,
+11
+],
+"groups": [
+3,
+11
+],
+"text": "alternate (A7#9/Bb Bbmaj7) printed; [bar 8] alternate (Dbm7 Gb9)"
+},
+{
+"bars": [
+18,
+22
+],
+"groups": [
+18,
+22
+],
+"text": "eighth/quarter grouping approximate"
+},
+{
+"bars": [
+24
+],
+"groups": [
+24
+],
+"text": "alternate (Eb13) over Cm7"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sophisticated Lady\nC:Duke Ellington, Irving Mills, Mitchell Parish\nP:AABA\n%source New Real Book Vol 2 p291-292 (pdf 276-277)\n%style (Medium Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 8+8+8+8 (letters A=16 bars, B, C)\n%unsure [general] lyrics are printed (not copied); alternate tritone-sub changes printed for bars 1-4 and 9-13 of A and 1-4 of C\nM:C\nL:1/8\nK:Bb\n\"Dbm7\"B2 ||\nP:A\n\"Cm\"B4- \"Cm(maj7)\"B\"Cm\"B BB | \"Ab7\"B2 \"G7\"B2 \"Gb7\"B2 \"F7\"BB | \"Bbmaj7\"B4- BB BB | \"Bb7\"B2 \"A7\"B2 \"Ab7\"B2 \"G7\"BB |\n\"C7\"B4- BB BB | \"Cm7\"(3BBB B4 \"F13\"B2 | \"Dm7\"B6 B2 | \"G7b9\"B8 ||\nP:A\n\"Cm\"B4- \"Cm(maj7)\"B\"Cm7\"B BB | \"Ab7\"B2 \"G7\"B2 \"Gb7\"B2 \"F7\"BB | \"Bbmaj7\"B4- BB BB | \"Bb7\"B2 \"A7\"B2 \"Ab7\"B2 \"G7\"BB |\n\"C7\"B4- BB BB | \"Cm7\"(3BBB B4 \"F13\"B2 | \"Bb6\"BB B6 | \"Bm7b5\"z4 \"E7\"z4 ||\nP:B\n\"Amaj7\"z B2 B \"F#m7\"B2 BB- | \"Bm7\"BB B2 \"E7\"BB- BB | \"C#m7\"B2 \"F#7b9\"B6 | \"Bm7\"BB \"E7b9\"B6 |\n\"Amaj7\"z B2 B \"F#m7\"B2 BB- | \"Bm7\"BB B2 \"E7\"BB- BB | \"Amaj7\"B2 \"C#o7\"BB \"Dm7\"BB B2 | \"Cm7\"BB BB \"Dm7b5\"BB \"G7b9\"B2 ||\nP:A\n\"Cm\"B4- \"Cm(maj7)\"B\"Cm7\"B BB | \"Ab7\"B2 \"G7\"B2 \"Gb7\"B2 \"F7\"BB | \"Bbmaj7\"B4- BB BB | \"Bb7\"B2 \"A7\"B2 \"Ab7\"B2 \"G7\"BB |\n\"C7\"B4- BB BB | \"Cm7\"(3BBB B4 \"F13\"B2 | \"Bb6\"B8 | \"(Dm7b5)\"z4 \"(G7b9)\"z4 |]\n\n%unsure [bars 3, 11] alternate (A7#9/Bb Bbmaj7) printed; [bar 8] alternate (Dbm7 Gb9)\n%unsure [bars 18, 22] eighth/quarter grouping approximate\n%unsure [bar 24] alternate (Eb13) over Cm7"
+},
+{
+"id": "New_Real_Book_Volume2/278-spain",
+"book": "The New Real Book Vol. 2",
+"title": "Spain",
+"pdf": "278",
+"form": "ABC 18+13+24 (solos on C)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "complex roadmap: last x D.C. al Coda; solos on C, end each solo with melody at C then D.S. al 2nd ending; end last solo melody at C, D.S. 8 bars, D.C. al Coda"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+"text": "intro line is elec. pn. & flute 8va; chordal voicings reduced to one note"
+},
+{
+"bars": [
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31
+],
+"groups": [
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30
+],
+"text": "B played with bass 8va b. & elec. pn.; grace notes omitted"
+},
+{
+"bars": [
+32,
+46,
+50
+],
+"groups": [
+31,
+45,
+49
+],
+"text": "first bar has (pn. & fl.) figure; triplet brackets over the half-rest bars written as plain halves; elec. pn. fills ignored"
+},
+{
+"bars": [
+55
+],
+"groups": [
+54
+],
+"text": "note in parentheses used to end each solo"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Spain\nC:Chick Corea\nP:ABC\n%source New Real Book Vol 2 p293-294 (pdf 278-279)\n%style (Med. Samba, h=136)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 18+13+24 (solos on C)\n%unsure [form] complex roadmap: last x D.C. al Coda; solos on C, end each solo with melody at C then D.S. al 2nd ending; end last solo melody at C, D.S. 8 bars, D.C. al Coda\nM:C|\nL:1/8\nK:E\nP:A\n|: \"N.C.\"B2 BB BBBB | zBBB zB B2 | \"F#m11\"B3 B z2 B2- | \"(F#m11)\"B4 \"G#sus\"B3 B |\nz2 B6- | \"G#\"B4 z2 B2 | \"A\"B3 B- B2 B2 | B3 B- B2 B2 |\n\"G#7\"B3 B- B4- | B4 z2 B2 || !segno!\"F#m7\"B3 B- B2 B2 | \"B7\"B3 B- B2 B2 |\n\"Emaj7\"B2 BB- B4- | \"Amaj7\"B4 z B2 B | \"D#7\"(3B4B4B4 | \"G#7#9\"B4 B4 |\n\"C#sus\"B3 \"C#\"B- B4- | \"C#(add9)\"B6 z2 ||\nP:B\n\"N.C.\"B2 zB z2 zB | B2 BB B2 zB | z2 zB B2 z2 | B B2 B- BB B2 |\nB2 zB B2 BB | B2 BB B2 BB | zB B2- BBzB | B3 B- BB B2 |\nzBBB BBBB- | B B2 B z2 !coda!B2 |1 \"N.C.\"B4 B3 \"C#sus\"B- | B8- |\nB6 z2 :|2 \"N.C.\"B4 B3 \"Amaj7\"B- ||\nP:C\n\"Amaj7\"B8- | B8- | B8 | (3z2B2B2 (3B2B2B2 |\n\"G#7\"B3 B- B2 B2- | B8- | B8 | z4 B4 |\n\"F#m7\"B3 B- B2 B2- | B8- | \"B7\"B8 | (3z2B2B2 (3B2B2B2 |\n\"Emaj7\"B3 B- B2 B2- | B8 | \"Amaj7\"B2 BB- B4 | z4 B2 B2 |\n\"D#7\"B3 B- B2 B2- | B8 | \"G#7\"B8 | z4 B2 B2 |\n\"C#m\"B6 B2- | B8- | \"C#7\"B8- | B4 z2 B2 |]\n%coda\n\"Amaj7\"!fermata!B8 | \"E/C\"!fermata!B8 | \"C#sus(add9)\"!fermata!B8 |]\n\n%unsure [bars 1-10] intro line is elec. pn. & flute 8va; chordal voicings reduced to one note\n%unsure [bars 19-31] B played with bass 8va b. & elec. pn.; grace notes omitted\n%unsure [bars 32, 46, 50] first bar has (pn. & fl.) figure; triplet brackets over the half-rest bars written as plain halves; elec. pn. fills ignored\n%unsure [bar 55] note in parentheses used to end each solo"
+},
+{
+"id": "New_Real_Book_Volume2/280-spring-can-really-hang-you-up-the-most",
+"book": "The New Real Book Vol. 2",
+"title": "Spring Can Really Hang You Up the Most",
+"pdf": "280",
+"form": "AABC 16+16+8+8 (A repeated with 2nd lyric; solo on ABC; after solos D.S. al Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "verse ad lib; A is 16 bars with repeat, then B 8, C 8"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed (two verses of lyrics in A and B, not copied)"
+},
+{
+"bars": [
+10
+],
+"groups": [
+9
+],
+"text": "alternate (F#7#9#5) printed; chord placement approximate"
+},
+{
+"bars": [
+45
+],
+"groups": [
+44
+],
+"text": "tie/grouping approximate; C runs 10 bars as printed"
+},
+{
+"bars": [
+54,
+55
+],
+"groups": [
+53,
+54
+],
+"text": "A pedal optional; [bars 58-60] ad lib."
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Spring Can Really Hang You Up the Most\nC:Tommy Wolf (lyric: Fran Landesman)\nP:AABC\n%source New Real Book Vol 2 p295-296 (pdf 280-281)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+8+8 (A repeated with 2nd lyric; solo on ABC; after solos D.S. al Coda)\n%unsure [form] verse ad lib; A is 16 bars with repeat, then B 8, C 8\n%unsure [general] lyrics are printed (two verses of lyrics in A and B, not copied)\nM:C\nL:1/8\nK:D\n%verse\n\"Dmaj7\"BB BB \"C13\"BB BB | \"Dmaj7\"B8 | \"Dmaj7\"BB BB \"C13\"B2 B2 | \"Dmaj7\"B8 |\n\"Cm7\"BB BB \"Bbmaj7\"B4 | \"Abm7\"BB BB \"Gbmaj7\"B4 | \"Em7\"BB BB B3 \"Dmaj7\"B | \"Bm9\"B2 B6 |\n\"Em9\"BB BB \"A7\"B3 B | \"Dmaj7\"B2 B2- \"B7b9\"B4 | \"Em7(11)\"B2 B2 \"B7b9#5\"B2 B2 | \"E9\"B4- \"A13\"B4 ||\nP:A\n|: !segno!\"Dmaj7\"B2 BB- \"Cmaj9\"B3 B | \"Dmaj7\"B2 BB- \"Cmaj9\"BB B2 | \"Dmaj7\"BB \"Bm7\"BB \"Em7\"BB \"A7\"BB | \"F#m7\"B6 \"B7b9\"B2 |\n\"G#m7b5\"BB BB- \"Gm7\"BB BB | \"F#m7\"BB BB- B \"E7\"B3 | \"Em7\"BB BB \"A7\"BB BB | \"Dmaj7\"B4 \"Cmaj7\"B4 |\n\"Dmaj7\"B2 BB- \"Cmaj9\"B3 B | \"Dmaj7\"B2 BB- \"Cmaj9\"BB B2 | \"Dmaj7\"BB \"Bm7\"BB \"Em7\"BB \"A7\"BB | \"F#m7\"B6 \"B7b9\"B2 |\n\"G#m7b5\"BB BB- \"Gm7\"BB BB | \"F#m7\"BB BB- B \"E7\"B3 | \"Em7\"BB BB \"A7\"BB BB | \"Dmaj7\"B8 :|\nP:B\n\"Am7\"B3 B/B/ \"Dmaj7\"B3 B | \"Am7\"B B2 B/B/ \"Dmaj7\"B4 | \"Am7\"B3 B/B/ \"Dmaj7\"B3 B/B/ | \"Am7\"B B2 B/B/ \"Dmaj7\"B4 |\n\"Dm7\"B3 B/B/ \"Gmaj7\"B3 B | \"Dm7\"B B2 B/B/ \"Gmaj7\"B4 | \"Abm7\"(3B2B2\"Db7\"B2 \"Gbmaj7\"(3B2B2B2 | \"Bm7\"(3B2B2B2 \"E7\"B4 ||\nP:C\n\"Amaj7\"B2 BB- \"Gmaj9\"B3 B | \"Dmaj7\"B2 BB- \"Cmaj9\"BB B2 | \"Dmaj7\"BB \"Bm7\"BB \"Em7\"BB \"A7\"BB | \"F#m7\"B6 \"B7b9\"BB |\n\"G#m7b5\"B2 BB- \"Gm7\"B2 BB | !coda!\"F#m7\"BB BB B \"E7\"B3 | \"Em7\"BB BB \"A7\"BB BB | \"F#m7\"B4- \"B7b9\"B4 |\n\"Em7\"BB BB \"A7\"BB BB | \"Dmaj7\"B4 \"Cmaj7\"B4 |]\n%coda\n\"Fm7\"BB BB \"Bb7\"B B3 | \"Em7\"BB BB \"A7\"BB BB | \"F#m7\"B4- \"B7b9\"B4 | \"Em7\"B3 B \"Dmaj7\"B3 B |\n\"Em7\"B3 B \"Dmaj7\"B B3 | \"C#m7b5\"BB \"F#7b9\"BB \"Bm7\"BB BB | \"E13\"B6 BB | \"Em7\"B2 \"C9\"B2 B B2 B |\n\"F#m7\"BB BB B \"B7\"B3 | \"Em7(11)\"BB BB \"Ebmaj7\"BB BB | \"Dmaj7\"B8 |]\n\n%unsure [bar 10] alternate (F#7#9#5) printed; chord placement approximate\n%unsure [bar 45] tie/grouping approximate; C runs 10 bars as printed\n%unsure [bars 54-55] A pedal optional; [bars 58-60] ad lib."
+},
+{
+"id": "New_Real_Book_Volume2/282-stablemates",
+"book": "The New Real Book Vol. 2",
+"title": "Stablemates",
+"pdf": "282",
+"form": "ABC 14+8+14",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "last 4 bars of A and C are Latin, rest swing; breaks in bars 10, 22, 34; solos swing, no breaks; chords in parentheses at B used for solos"
+},
+{
+"bars": [
+19,
+20,
+21,
+22
+],
+"groups": [
+19,
+20,
+21,
+22
+],
+"text": "solo chords: (Abm7 Db7) (Gm7 C7) (F#m7 B7) (Fm7 Bb7)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Stablemates\nC:Benny Golson\nP:ABC\n%source New Real Book Vol 2 p297 (pdf 282)\n%style (Med. Swing, q=162)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 14+8+14\n%unsure [general] last 4 bars of A and C are Latin, rest swing; breaks in bars 10, 22, 34; solos swing, no breaks; chords in parentheses at B used for solos\nM:C\nL:1/8\nK:Eb\n(3z2B2B2 ||\nP:A\n\"F#m7\"B6 \"B7\"BB | \"Fm7\"z B3 \"Bb7\"B2 BB- | \"Ebmaj7\"B6 BB- | \"D7#5\"B6 BB- |\n\"Bbm7\"B4- (3B2B2B2 | \"Eb7\"B4 B3 B- | \"Abmaj7\"B4 (3z2B2B2 | \"Am7b5\"B2 BB- \"D7\"B2 BB- |\n\"Gm7\"B8 | \"C7#9#5\"z4 B2 BB- | \"Fm7\"B4- (3B2B2B2 | \"Bb7#5\"B4 B4 |\n\"Ebmaj7\"B8- | B8 ||\nP:B\n\"Gm7\"B3 B zB zB | \"Ab13\"B2 B4 B2 | \"A7#5\"B3 B zB zB | \"D7\"B6 B2 |\n\"Db7\"B7 B | \"C7\"z4 z2 B2 | \"B7\"B3 B- B2 B\"Bb7\"B | z4 (3z2B2B2 ||\nP:C\n\"F#m7\"B6 \"B7\"BB | \"Fm7\"z B3 \"Bb7\"B2 BB- | \"Ebmaj7\"B6 BB- | \"D7#5\"B6 BB- |\n\"Bbm7\"B4- (3B2B2B2 | \"Eb7\"B4 B3 B- | \"Abmaj7\"B4 (3z2B2B2 | \"Am7b5\"B2 BB- \"D7\"B2 BB- |\n\"Gm7\"B8 | \"C7#9#5\"z4 B2 BB- | \"Fm7\"B4- (3B2B2B2 | \"Bb7#5\"B4 B4 |\n\"Ebmaj7\"B8- | B8 |]\n\n%unsure [bars 19-22] solo chords: (Abm7 Db7) (Gm7 C7) (F#m7 B7) (Fm7 Bb7)"
+},
+{
+"id": "New_Real_Book_Volume2/283-the-star-crossed-lovers",
+"book": "The New Real Book Vol. 2",
+"title": "The Star-Crossed Lovers",
+"pdf": "283",
+"form": "ABC 8+8+6",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+4
+],
+"groups": [
+4
+],
+"text": "chords drawn as slashes over the dotted half"
+},
+{
+"bars": [
+12,
+13,
+14,
+15,
+16
+],
+"groups": [
+12,
+13,
+14,
+15,
+16
+],
+"text": "second (lower) voice ignored; (B13) alternate over bar 12"
+},
+{
+"bars": [
+21,
+22
+],
+"groups": [
+21,
+22
+],
+"text": "last bar optional (C7 F7 Bb7 A9b5) turnaround slashes, written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:The Star-Crossed Lovers\nC:Duke Ellington & Billy Strayhorn\nP:ABC\n%source New Real Book Vol 2 p298 (pdf 283)\n%style (Medium Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 8+8+6\nM:C\nL:1/8\nK:Eb\n\"A9b5\"BB ||\nP:A\n\"Abmaj7\"B4 \"A9b5\"(3B2B2B2 | \"Ebmaj7/Bb\"B4 \"Cm7\"(3B2B2B2 | \"Fm7\"B2 B2 \"Bb13\"B2 BB | \"Ebmaj7\"B4- B2 \"A7b5\"BB |\n\"Abmaj7\"B4 \"A9b5\"(3B2B2B2 | \"Ebmaj7/Bb\"B4 \"Cm7\"(3B2B2B2 | \"Am7b5\"B2 B2 \"D7b9\"B2 BB | \"Gm\"B6 BB ||\nP:B\n\"Fm7/Bb\"B2 BB \"Ebmaj7/Bb\"B2 B2 | \"Fm7/Bb\"B2 BB \"Ebmaj7/Bb\"B3 B | \"Fm7b5\"B2 BB \"Bb13\"B2 B2 | \"Fm7b5\"B2 BB- \"Bb13\"B4 |\n\"Eb7sus\"z2 BB B4 | \"Eb9sus\"BB \"Eb13b9\"B6 | \"Abmaj7\"z2 BB \"Ab7#9\"B4 | \"E/G#\"BB B2 \"Abm\"B2 \"Bb13\"BB ||\nP:C\n\"Ebmaj7\"B4 \"Eb9#5\"(3B2B2B2 | \"Abmaj7\"B4 \"F9\"(3B2B2B2 | \"Ebmaj7/Bb\"B4 B4 | \"Bb9sus\"B4 \"Gb(add9)/Bb\"B4 |\n\"Ebmaj7\"B4- \"(C7)\"B4 | \"F7\"z2 \"Bb7\"z2 \"A9b5\"z4 |]\n\n%unsure [bar 4] chords drawn as slashes over the dotted half\n%unsure [bars 12-16] second (lower) voice ignored; (B13) alternate over bar 12\n%unsure [bars 21-22] last bar optional (C7 F7 Bb7 A9b5) turnaround slashes, written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/284-stardust",
+"book": "The New Real Book Vol. 2",
+"title": "Stardust",
+"pdf": "284",
+"form": "AB 16+16 (verse/intro 16; solo on AB; after solos D.S. al fine)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed (not copied)"
+},
+{
+"bars": [
+41,
+42
+],
+"groups": [
+40,
+41
+],
+"text": "alternates (Db13 B13 Db13 B13) printed over Abmaj7 / Db13"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Stardust\nC:Hoagy Carmichael (lyric: Mitchell Parish)\nP:AB\n%source New Real Book Vol 2 p299-300 (pdf 284-285)\n%style (Medium Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16 (verse/intro 16; solo on AB; after solos D.S. al fine)\n%unsure [general] lyrics are printed (not copied)\nM:C\nL:1/8\nK:Eb\n%intro\n\"Ebmaj7\"zB BB BB BB | \"Ab9#11\"BB B6 | \"G7b9\"BB BB BB BB | \"C7\"B8 |\n\"Fm7\"z2 BB \"Bb7\"BB BB | \"Gm7\"(3B2B2B2 \"Cm7\"B4 | \"Am7\"B2 BB \"D7\"BB BB | \"Fm7\"B2 B2 \"Bb7\"B4 |\n\"Ebmaj7\"zB BB BB BB | \"Ab9#11\"BB B6 | \"G7b9\"BB BB BB BB | \"C7\"B8 |\n\"Fm7\"z2 BB \"Bb7\"BB BB | \"Gm7\"(3B2B2B2 \"Cm7\"B4 | \"Fm7\"zB BB \"Bb7\"BB BB | \"Ebmaj7\"B4 \"(Eb7#5)\"zB BB ||\nP:A\n|: !segno!\"Abmaj7\"B2 B2 B2 B2 | B2 B2 B2 B2 | \"Abm(maj7)\"B8 | \"Abm7\"BB BB \"Db7\"B3 B |\n\"Ebmaj7\"B2 B2 B4 | \"Gm7\"BB BB \"C7\"B4 | \"Fm7\"zB BB \"C7\"BB BB | \"Fm7\"B4- B B2 B |\n\"Bb7\"B2 B2 B4 | \"Fm7\"z B2 B \"Bb7\"BB BB | \"Ebmaj7\"B4 \"Fm7\"B2- \"F#o7\"B2- | \"Gm7\"B6 \"Cm7\"B2 |\n\"F9\"BB BB B2 B2 | \"Cm7\"BB BB- B \"F7\"B2 B | \"Bb7\"B2 B2 \"Fm7\"BB BB | \"Bb7\"B6 \"Eb7\"B2 ||\nP:B\n\"Abmaj7\"B2 B2 B2 B2 | B2 B2 B2 B2 | \"Abm(maj7)\"B8 | \"Abm7\"BB BB \"Db7\"B3 B |\n\"Ebmaj7\"B2 B2 B4 | \"Gm7\"BB BB \"C7\"B4 | \"Fm7\"zB BB \"C7\"BB BB | \"Fm7\"B4- B B2 B |\n\"Abmaj7\"B2 B2 B4- | \"Db13\"B6 BB | \"Ebmaj7\"B2 B2 \"Cm7\"B2 B2 | \"Gm7\"B6 \"C7\"B2 |\n\"Fm7\"BB BB B4- | \"Bb7\"BB BB BB BB | \"Ebmaj7\"!fine!B8 | \"(Bbm7)\"z4 \"(Eb7)\"z4 :|\n\n%unsure [bars 41-42] alternates (Db13 B13 Db13 B13) printed over Abmaj7 / Db13"
+},
+{
+"id": "New_Real_Book_Volume2/286-stargazer",
+"book": "The New Real Book Vol. 2",
+"title": "Stargazer",
+"pdf": "286",
+"form": "ABCD 16+8+16+8, E vamp (D.C., pn. solo on A, on cue continue to B 2nd ending, C, take Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 7,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the chart; play order from the printed text"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "1st x pn., 2nd x sop."
+},
+{
+"bars": [
+16
+],
+"groups": [
+15
+],
+"text": "two voices (c half over 4 sixteenths, then quarter); top voice taken"
+},
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"text": "harmonized (sop., trp.); bar 24 ends with a 10-note 32nd-note run, written as 4 sixteenths"
+},
+{
+"bars": [
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44
+],
+"groups": [
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43
+],
+"text": "melody over sustained lower voice; top voice rhythm taken; chord placement in bars 31-34, 42 approximate"
+},
+{
+"bars": [
+53
+],
+"groups": [
+52
+],
+"text": "trumpet solo, vamp & solo till cue"
+},
+{
+"bars": [
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75
+],
+"groups": [
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74
+],
+"text": "Fast q~150, C pedal till end, accel. to fermata; piano part (two voices), top voice rhythm taken; final bar pn. fill"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Stargazer\nC:Armen Donelian\nP:ABCD\n%source New Real Book Vol 2 p301 (pdf 286-287)\n%style (Med.-Slow Jazz Waltz, q=86)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 16+8+16+8, E vamp (D.C., pn. solo on A, on cue continue to B 2nd ending, C, take Coda)\n%unsure [form] section lengths counted from the chart; play order from the printed text\nM:3/4\nL:1/8\nK:Cm\nP:A\n|: \"G7alt/B\"B4- (3BBB | \"Abmaj7b5\"BB- B2- (3BBB | \"Bbmaj7/Gb\"B4- (3BBB | \"Ebm(addb13)\"B4 zB |\n\"Dbm7\"B4- \"Do7\"(3BBB | \"Abm/Cb\"BB- B2- (3BBB | \"Abmaj7\"B3 \"Bb7sus\"(2BB | \"Cm(add9,omit3)\"B4 zB |\n\"C7alt/E\"B4- (3BBB | \"Dbmaj7b5\"BB- B2- (3BBB | \"Ebmaj7/Cb\"B4- (3BBB | \"Abm(addb13)\"B4 zB |\n\"F#m7\"B4- \"F#o7\"(3BBB | \"Dbmaj7/F\"(2BB\"Eo7\"(2BB | \"Dm7b5\"B3 \"Db7b5\"(2BB | \"Abmaj7b5/C\"B4 \"Cm(add9,omit3)\"B2 ||\nP:B\n\"Em6/G\"B2 B2 z\"F#13#11b9\"B- | B3 B B/B/B/B/ | \"Dm6/F\"B2 B2 z\"E13#11b9\"B- | B6 |\n\"Cm6/Eb\"B2 B2 z\"D13#11b9\"B- | B3 B B/B/B/B/ |1 \"Dbmaj7\"B3 \"G7alt/B\"(2BB | \"Cm(add9,omit3)\"B4 B/B/B/B/ :|2\n\"Gb(omit3)\"B3 \"Ab(omit3)\"(2BB | \"Bbm(add9,omit3)\"B6- | B6 | z4 zB ||\nP:C\n\"Bbm(addb13)\"B4- (3BBB | BB- B2- (3BBB | \"Am/Bbm\"B4- (3BBB | B4- (3BBB |\n\"Abm7(add13)/Bb\"B4- (3BBB | BB- B2- (3BBB | \"Ebm6/Gb\"B2 B2 \"Bmaj7(omit3)\"B2 | \"A/Bbm\"B4 \"A\"(3zBB |\n\"Bb/Ab\"B4 \"Dbm/Ab\"B2 | \"Cm/G\"B2 B3 B | \"Bb/Gb\"B2 \"Dm/F\"B2 \"Eo7\"B2 | \"Ebo7\"B3 \"Eb\"B3 |\n\"Abm(maj7)\"B3 \"G7\"(2BB | \"Abmaj7b5\"(2BB\"Bbo7\"(2BB | \"Dm7b5\"B3 \"Db7b5\"(2BB | \"Abmaj7b5/C\"B4 \"Cm(add9,omit3)\"!coda!B2 ||\nP:D\n\"Em6/G\"B2 B2 z\"F#13#11b9\"B- | B3 B B/B/B/B/ | \"Dm6/F\"B2 B2 z\"E13#11b9\"B- | B6 |\n\"Cm6/Eb\"B2 B2 z\"D13#11b9\"B- | B3 B B/B/B/B/ | \"Dbmaj7\"B3 \"G7alt/B\"(2BB | \"Cm(add9,omit3)\"B6 ||\nP:E\n|: \"Cm\"z6 :|\n%coda\n|: \"Em6/G\"B2 B2 z\"F#13#11b9\"B- | B3 B B/B/B/B/ | \"Dm6/F\"B2 B2 z\"E13#11b9\"B- | B6 |\n\"Cm6/Eb\"B2 B2 z\"D13#11b9\"B- | B3 B B/B/B/B/ |1 \"Dbmaj7\"B3 \"G7alt/B\"(2BB | \"Cm(add9,omit3)\"B6 :|2\n\"Dbmaj7\"B3 \"C\"(2BB | \"Db/Cb\"B3 \"Ebm(add9)/Bb\"(2BB | \"Am7b5\"B3 \"G/Ab\"(2BB | \"Ab/G\"B3 \"Fm6\"(2BB ||\nM:2/4\n\"Cm(add9,omit3)\"B4- |\nM:4/4\nB2 BB BB BB | B2 BB B2 BB | B2 BB B2 BB | B2 BB B2 BB |\n(3BBB (3BBB (3BBB (3BBB | (3BBB (3BBB (3BBB (3BBB | (3BBB (3BBB (3BBB (3BBB | (3BBB (3BBB !fermata!B4 |\n\"Cm(omit3)\"!fermata!B8 |]\n\n%unsure [bars 1-4] 1st x pn., 2nd x sop.\n%unsure [bar 16] two voices (c half over 4 sixteenths, then quarter); top voice taken\n%unsure [bars 17-24] harmonized (sop., trp.); bar 24 ends with a 10-note 32nd-note run, written as 4 sixteenths\n%unsure [bars 29-44] melody over sustained lower voice; top voice rhythm taken; chord placement in bars 31-34, 42 approximate\n%unsure [bar 53] trumpet solo, vamp & solo till cue\n%unsure [bars 66-75] Fast q~150, C pedal till end, accel. to fermata; piano part (two voices), top voice rhythm taken; final bar pn. fill"
+},
+{
+"id": "New_Real_Book_Volume2/288-still",
+"book": "The New Real Book Vol. 2",
+"title": "Still",
+"pdf": "288",
+"form": "A 16",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "two voices (gtr. melody over held whole notes); top voice rhythm taken"
+},
+{
+"bars": [
+9,
+10,
+13,
+14
+],
+"groups": [
+9,
+10,
+13,
+14
+],
+"text": "fill bars: melody rests over held lower-voice whole/half notes (bars 13-14 written from the lower voice halves)"
+},
+{
+"bars": [
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"groups": [
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"text": "chords on % bars repeated from the previous bar"
+},
+{
+"bars": [
+17,
+18
+],
+"groups": [
+17,
+18
+],
+"text": "vamp, fill & fade over a held whole note (lower voice), written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Still\nC:John Abercrombie\nP:A\n%source New Real Book Vol 2 p304 (pdf 288)\n%style (Med. Straight 8th's Ballad, q=53)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Melody is freely interpreted. Form on record: indef. bass solo on A, melody, gtr. solo, melody, Ending.\n%form A 16\n%unsure [general] two voices (gtr. melody over held whole notes); top voice rhythm taken\nM:C\nL:1/8\nK:Eb\nz/B/4B/4 ||\nP:A\n\"C9sus\"B3 B \"Abmaj9/C\"B7/2 B/4B/4 | \"C9sus\"B3 B \"Abmaj9/C\"B7/2 B/ | \"C9sus\"B/B3/2- B2 \"Abmaj9/C\"B/B3/2- B2 | \"C9sus\"B/B3/2- B4 \"Abmaj9/C\"z3/2B/4B/4 |\n\"C9sus\"B3 B \"Abmaj9/C\"B7/2 B/4B/4 | \"C9sus\"B3 B \"Abmaj9/C\"B7/2 B/ | \"C9sus\"B/B3/2- B2 \"Abmaj9/C\"B/B3/2- B2 | \"C9sus\"B/B3/2- B6 |\n\"Gbmaj7/Cb\"z8 | \"Abmaj9(maj7)/Cb\"z4 z7/2 B/4B/4 | \"C9sus\"B3 B \"Abmaj9/C\"B7/2 B/ | \"C9sus\"B/B3/2- \"Abmaj9/C\"B6 |\n\"Bbmaj7/Eb\"B4 \"G/Eb\"B4 | \"Bb/Eb\"B4 \"G/Eb\"z7/2 B/4B/4 | \"C9sus\"B3 B \"Abmaj9/C\"B7/2 B/ | \"C9sus\"B/B3/2- \"Abmaj9/C\"B6 |]\n%ending\n|: \"C9sus\"z4 \"Abmaj9/C\"z4 | \"C9sus\"z4 \"Abmaj9/C\"z4 :|\n\n%unsure [bars 9-10, 13-14] fill bars: melody rests over held lower-voice whole/half notes (bars 13-14 written from the lower voice halves)\n%unsure [bars 2-16] chords on % bars repeated from the previous bar\n%unsure [bars 17-18] vamp, fill & fade over a held whole note (lower voice), written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/289-story-line",
+"book": "The New Real Book Vol. 2",
+"title": "Story Line",
+"pdf": "289",
+"form": "AB 24+28",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "dense improvised-style lines with 16ths and harmonized chords; top voice rhythm taken, many bars approximate"
+},
+{
+"bars": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"text": "16th-note groupings approximate in bars 12-13, 15, 18, 22-24"
+},
+{
+"bars": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40
+],
+"groups": [
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39
+],
+"text": "harmonized block chords; rhythm read from the top voice, bars 27, 31, 33-36 approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Story Line\nC:Bill Evans\nP:AB\n%source New Real Book Vol 2 p305 (pdf 289-290)\n%style (Med. Ballad, Ad lib., q~120-140)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Written melody is first of 3 improvised choruses; it is not repeated. Chords in parentheses are optional. Solo on AB.\n%form AB 24+28\n%unsure [general] dense improvised-style lines with 16ths and harmonized chords; top voice rhythm taken, many bars approximate\nM:C\nL:1/8\nK:D\nP:A\n\"D(add9)\"z2 B2 B2 B2 | \"D+(add9)\"z2 B2 B2 B2 | \"Am(maj7)/D\"B2 B2 B2 B2 | \"Am7/D\"B2 B2 B2 B2 |\n\"Gm7/D\"z2 B2 B2 B2 | B2 B2 B2 B2 | \"Dm9\"B2 B2 B2 B2- | B8 |\n\"Gm(maj7)/D\"\"(Ebmaj7/D)\"zB BB BB BB | \"Dm9(maj7)\"BB BB BB BB | \"Gm7/D\"BB BB BB BB | \"Am(maj7)/D\"B/B/B/B/ BB BB B!fermata!B |\n\"Gm7/D\"B3 B/B/ BB- B2 | \"Dm9(maj7)\"B2 BB BB BB | \"G#m7b5/D\"B3 B/B/ BB- B2 | \"Gm7/D\"BB BB BB (3BBB |\n\"D(add9)\"B3 B BB BB | \"Ab7b5/Db\"BB B2 B/B/B/B/ B/B/B/B/ | \"Gm7/D\"BB B6 | \"G#o7/D\"(3z2B2B2 (3B2B2B2 |\n\"Dmaj9\"B3 B B4 | \"Am7/D\"zB/B/ BB/B/ BB BB | \"Gm7/D\"BB BB BB B/B/B/B/ | \"Ebmaj7/D\"BB/B/ BB/B/ BB BB |\nP:B\n\"D(add9)\"z2 B2 B2 B2 | \"D+(add9)\"B2 BB BB BB | \"Am(maj7)/D\"BB BB B/B/B/B/ B2 | \"Am7/D\"B2 BB B4 |\n\"Gm7/D\"z2 BB B2 BB | B2 BB BB BB | \"Dm9\"B2 BB BB/B/ BB | BB BB BB BB |\n\"Gm(maj7)/D\"\"(Ebmaj7/D)\"z2 BB B2 B2 | \"Dm9(maj7)\"z2 BB BB BB | \"Gm7/D\"B2 BB BB BB | \"Am(maj7)/D\"B2 BB BB BB |\n\"Gm7/D\"B3 B B3 B | \"Dm9(maj7)\"B3 B B3 B | \"G#m7b5/D\"B3 B B3 B | \"Gm7/D\"B3 B B2 BB |\n\"C#o7(addA)\"z2 BB BB B2 | \"F6/9/C\"B4- (3B2B2B2 | \"Bm6\"B4- (3B2B2B2 | \"Gm6/Bb\"B4- (3B2B2B2 |\n\"Dmaj7/A\"z2 B2 B2 B2 | \"Ab7b5\"B6 B2 | \"Gm7\"B6 B2 | \"G#o7\"B6 B2 |\n\"Dmaj7/A\"B8 | \"(Bm(maj7))\"\"Ab7b5\"B8 | \"(Gm7/E)\"\"Gm7\"B8 | \"Ebmaj7/A\"B8 |]\n\n%unsure [bars 9-24] 16th-note groupings approximate in bars 12-13, 15, 18, 22-24\n%unsure [bars 25-40] harmonized block chords; rhythm read from the top voice, bars 27, 31, 33-36 approximate"
+},
+{
+"id": "New_Real_Book_Volume2/291-strollin",
+"book": "The New Real Book Vol. 2",
+"title": "Strollin'",
+"pdf": "291",
+"form": "AB 24+24 (Solo on B; after solos D.C. al Coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A and B are 16 bars with 8-bar 1st/2nd endings"
+},
+{
+"bars": [
+1
+],
+"groups": [
+1
+],
+"text": "melody (trp.)"
+},
+{
+"bars": [
+12
+],
+"groups": [
+12
+],
+"text": "chord hits (Bb13, Bb7#5, Ebmaj7) over a held whole note"
+},
+{
+"bars": [
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+20,
+21,
+22,
+23,
+24
+],
+"text": "coda sign printed at bar 23; tuplet in bar 20 is a 16th-note triplet"
+},
+{
+"bars": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"groups": [
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"text": "solo slashes written as rests; bar 25 has a pickup-resolution quarter note"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Strollin'\nC:Horace Silver\nP:AB\n%source New Real Book Vol 2 p307 (pdf 291-292)\n%style (Med. Swing (in 2), q=132)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note pdf 293 (p309) is a separate harmony (ten.) part, not transcribed.\n%form AB 24+24 (Solo on B; after solos D.C. al Coda)\n%unsure [form] A and B are 16 bars with 8-bar 1st/2nd endings\nM:C\nL:1/8\nK:Eb\nz z2 |:\nP:A\n\"Ebmaj7\"z2 zB BB zB | z B3 B2 B2 | \"F#m7\"B4- \"B7\"B2 BB- | \"Fm7\"B4- \"Bb7\"B2 z2 |\n\"Ebmaj7\"z2 zB BB zB | z B3 B2 B2 | \"Bbm7\"B4- \"Eb7\"B2 BB- | \"Am7\"B4- \"D7\"B2 BB- |1 \"Gm7\"B4 B2 B2 | \"C7#9#5\"B2 B4 B2 | \"Fm7\"B4 BB zB- | \"Bb13\"B4- \"Bb7#5\"B3 \"Ebmaj7\"B |\n\"Ebmaj7\"z2 zB BB zB | \"Cm11\"z B3- B2 \"C7#9#5\"BB- | \"F9#11\"B4- BB BB- | \"E7#9\"B6 z2 :|2\n\"Gm7\"B4 B2 B2 | \"Cm11\"B2 B4 \"C7#9#5\"BB- | \"F9#11\"B4- BB BB- | \"Abm7\"B2 (3B/B/B/B \"Db7\"B2 z2 |\n\"Gm7\"z B3 \"C7#9#5\"B2 B2 | \"Fm7\"BB BB \"Bb9sus\"z \"Bb13b9\"B3 | !coda!\"Eb6\"B2 z2 \"Gm7\"B4 | \"Fm7(11)\"BB BB z \"Bb13b9\"B3 ||\nP:B\n|: \"Ebmaj7\"B2 z2 z4 | z8 | \"F#m7\"z4 \"B7\"z4 | \"Fm7\"z4 \"Bb7\"z4 |\n\"Ebmaj7\"z8 | z8 | \"Bbm7\"z4 \"Eb7\"z4 | \"Am7\"z4 \"D7\"z4 |1 \"Gm7\"z8 | \"C7#9#5\"z8 | \"Fm7\"z8 | \"Bb7\"z8 |\n\"Ebmaj7\"z8 | \"Cm7\"z8 | \"F9#11\"z8 | \"E7#9\"z8 :|2\n\"Gm7\"z8 | \"Cm7\"z8 | \"F9#11\"z8 | \"Abm7\"z4 \"Db7\"z4 |\n\"Gm7\"z4 \"C7#5\"z4 | \"Fm7\"z4 \"Bb7\"z4 | \"Ebmaj7\"z4 \"C7#5\"z4 | \"Fm7\"z4 \"Bb7\"z4 |]\n%coda\n\"Eb6\"B2 z\"Ab13#11\"B- BB BB | \"Gm7\"z2 z\"C7#9#5\"B- BB \"Fm7\"BB | z2 z\"Bb7#9#5\"B- B3 \"D/Eb\"B- | !fermata!B8 |]\n\n%unsure [bar 1] melody (trp.)\n%unsure [bar 12] chord hits (Bb13, Bb7#5, Ebmaj7) over a held whole note\n%unsure [bars 20-24] coda sign printed at bar 23; tuplet in bar 20 is a 16th-note triplet\n%unsure [bars 25-48] solo slashes written as rests; bar 25 has a pickup-resolution quarter note"
+},
+{
+"id": "New_Real_Book_Volume2/294-summer-in-central-park",
+"book": "The New Real Book Vol. 2",
+"title": "Summer in Central Park",
+"pdf": "294",
+"form": "ABC 8+16+16",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+35
+],
+"groups": [
+35
+],
+"text": "last x: rit."
+},
+{
+"bars": [
+40
+],
+"groups": [
+40
+],
+"text": "for solos only: chord hits (Am7, D7) in the fine bar's turnaround, written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Summer in Central Park\nC:Horace Silver\nP:ABC\n%source New Real Book Vol 2 p310 (pdf 294)\n%style (Med. Jazz Waltz, q=134)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Emaj9 chords are played as E6/9 for solos. Chords in parentheses are used for solos.\n%form ABC 8+16+16\nM:3/4\nL:1/8\nK:G\nz ||\nP:A\n\"G6/9\"B2 B2 BB- | \"B7#9#5\"B4 BB- | \"Em9\"B4 BB- | \"A13\"B4 BB- |\n\"Eb6/9\"B4 BB- | \"Ab6/9\"B4 BB- | \"Am9\"B4 BB- | \"B13b9\"B4 BB- ||\nP:B\n\"Emaj9\"B6- | B6 | \"Em9\"z2 B3 B/B/ | B4 BB- |\n\"Emaj9\"B6- | B6 | \"Em9\"z2 B3 B/B/ | B4 BB- |\n\"Emaj9\"B6- | B6 | \"Em9\"z2 B3 B/B/ | B4 BB- |\n\"Emaj9\"B6- | B4 \"/G#\"B2 | \"Am7\"B2 B2 B2 | \"Ab7/D\"\"(D9)\"B2 B2 BB- ||\nP:C\n\"G6/9\"B2 B2 BB- | \"B7b9#5\"B4 BB- | \"Em9\"B4 BB- | \"A13\"B4 BB- |\n\"Eb6/9\"B4 BB- | \"Ab6/9\"B4 BB- | \"B6/9\"B4 BB- | \"E6/9\"B4 BB- |\n\"Eb6/9\"B6- | B6 | \"Am7\"B2 B2 B2 | \"Ab7/D\"\"(D9)\"B2 B2 BB- |\n\"Bb6/9\"B6- | \"Ab6/9\"B6- | \"G6/9\"!fine!B6 | \"Am7\"z4 \"D7\"z2 |]\n\n%unsure [bar 35] last x: rit.\n%unsure [bar 40] for solos only: chord hits (Am7, D7) in the fine bar's turnaround, written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/295-sweet-and-lovely",
+"book": "The New Real Book Vol. 2",
+"title": "Sweet and Lovely",
+"pdf": "295",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+},
+{
+"bars": [
+18,
+22
+],
+"groups": [
+17,
+21
+],
+"text": "first two notes read as 16ths"
+},
+{
+"bars": [
+23,
+24
+],
+"groups": [
+22,
+23
+],
+"text": "Bb9 and A7 placed on beat 4 over a held dotted half"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Sweet and Lovely\nC:Gus Arnheim, Harry Tobias, Jules Lemare\nP:ABC\n%source New Real Book Vol 2 p312 (pdf 295)\n%style (Medium Swing (also played as a ballad))\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [general] lyrics are printed\nM:C\nL:1/8\nK:D\nP:A\n\"Am7\"B6 B2 | \"D7\"B2 B6 | \"Am7\"BB BB BB BB- | \"D7\"B8 |\n\"G7\"B6 B2 | \"Cmaj7\"B2 \"F9\"B6 | \"Dmaj7\"BB BB \"A7\"BB BB- | \"D6/9\"B8 |\n\"Am7\"B6 B2 | \"D7\"B2 B6 | \"Am7\"BB BB BB BB- | \"D7\"B8 |\n\"G7\"B6 B2 | \"Cmaj7\"B2 \"F9\"B6 | \"Dmaj7\"BB BB \"A7\"BB BB- | \"D6/9\"B8 ||\nP:B\n\"Gm7\"BB BB \"C9\"BB BB | \"Dmaj7\"B/B/B- B6 | \"Gm7\"BB BB \"C9\"BB BB | \"Dmaj7\"B8 |\n\"Bbm7\"BB BB \"Eb9\"BB BB | \"Fmaj7\"B/B/B- B6 | \"Fm7\"BB B4- \"Bb9\"B2 | \"Em7\"BB B4- \"A7\"B2 ||\nP:C\n\"Am7\"B6 B2 | \"D7\"B2 B6 | \"Am7\"BB BB BB BB- | \"D7\"B8 |\n\"G7\"B6 B2 | \"Cmaj7\"B2 \"F9\"B6 | \"Dmaj7\"BB BB \"A7\"BB BB- | \"D6/9\"B8 |]\n\n%unsure [bars 18, 22] first two notes read as 16ths\n%unsure [bars 23-24] Bb9 and A7 placed on beat 4 over a held dotted half"
+},
+{
+"id": "New_Real_Book_Volume2/296-t-b-c-terminal-baggage-claim",
+"book": "The New Real Book Vol. 2",
+"title": "T.B.C. (Terminal Baggage Claim)",
+"pdf": "296",
+"form": "ABCDE 4+11+12+4+16, intro 4, coda vamp 4",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A played 8x; E melody twice, solos on E, melody at E once, D.S. al Coda"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "piano-only chord voicings written as notes"
+},
+{
+"bars": [
+5,
+6,
+7,
+8
+],
+"groups": [
+4,
+5,
+6,
+7
+],
+"text": "top staff is piano voicings (piano solos around melody); bass staff skipped"
+},
+{
+"bars": [
+35,
+36,
+37,
+38,
+39,
+40
+],
+"groups": [
+34,
+35,
+36,
+37,
+38,
+39
+],
+"text": "first ending marked 1.-3., second ending 4."
+},
+{
+"bars": [
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64
+],
+"groups": [
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63
+],
+"text": "printed 4-bar rests with piano fill; A9sus on cue, then D.S. al Coda"
+},
+{
+"bars": [
+55
+],
+"groups": [
+54
+],
+"text": "grace note omitted"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:T.B.C. (Terminal Baggage Claim)\nC:Chick Corea\nP:ABCDE\n%source New Real Book Vol 2 p313-314 (pdf 296-297)\n%style (Med. Straight 1/8's, q=160)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCDE 4+11+12+4+16, intro 4, coda vamp 4\n%unsure [form] A played 8x; E melody twice, solos on E, melody at E once, D.S. al Coda\nM:3/4\nL:1/8\nK:C\n%intro\n|: \"Bbm7\"B6 | \"Ebmaj7/Bb\"B6 | \"Bbm7\"B6 | \"Bbmaj7\"B6 :|\nP:A\n|: \"Bbm7\"B6 | \"Ebmaj7/Bb\"B6 | \"Bbm7\"B6 | \"Bbmaj7\"B6 :|\nP:B\n\"C/A\"B6 | \"D/A\"B6 | \"C/A\"B6 | \"D/A\"B6 |\n\"C/A\"B6 | \"D/A\"B6 | \"C/A\"B4 zB- | \"F#m7(11)\"B6- |\nB6- | B6 | \"D/E\"B\"F#m7\"B z \"G6/9\"B2 \"Am11\"B- |\nP:C\n|: \"Am11\"B6- | B6- | B6 | \"D/E\"B\"F#m7\"B z \"G\"B2 \"Fmaj7/A\"B- |\nB6- | B6- | B6 | \"D/E\"B\"F#m7\"B z \"G6/9\"B2 \"Am11\"B- :|\n\"Am11\"B6- | B6 | \"A/B\"B6 | \"B/C#\"B \"Eb6/9\"B2 \"Ebmaj7/F\"B2 \"Gbmaj7#11\"B- |\nB6- | B6 | \"A/B\"B6 |\nP:D\n|: \"Gmaj7/B\"B4- BB- | \"F#m7/B\"B6 |1 \"Em7/B\"B4- BB- | \"F#m7/B\"B6 :|2\n\"G/B\"B6 | \"A/C#\"B6 ||\nP:E\n|: \"D\"B B2 B2 B- | \"C/D\"B B3 z2 | \"D\"B B2 B2 B- | \"G/D\"BB B4 |\n\"D\"B B2 B2 B- | \"C/D\"B B3 z2 | \"Bb/D\"B2 B2 BB- | \"C/D\"B B3 z2 |\n\"D\"B B2 B2 B- | \"C/D\"B B3 zB | \"D\"B B2 B2 B- | \"G\"BB B4 |\n\"E\"B B2 B2 B- | \"F\"BB B2 z2 | \"F#\"B3 B- BB- | \"G\"B4 \"G7sus\"B2 |\n\"G7sus\"z6 | z6 | z6 | z6 :|\n\"A9sus\"z6 | z6 | z6 | z6 |]\n%coda\n|: \"Gmaj7/B\"B4- BB- | \"F#m7/B\"B6 | \"Em7/B\"B4- BB- | \"F#m7/B\"B6 :|\n\n%unsure [bars 1-4] piano-only chord voicings written as notes\n%unsure [bars 5-8] top staff is piano voicings (piano solos around melody); bass staff skipped\n%unsure [bars 35-40] first ending marked 1.-3., second ending 4.\n%unsure [bars 57-64] printed 4-bar rests with piano fill; A9sus on cue, then D.S. al Coda\n%unsure [bar 55] grace note omitted"
+},
+{
+"id": "New_Real_Book_Volume2/298-that-s-all",
+"book": "The New Real Book Vol. 2",
+"title": "That's All",
+"pdf": "298",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "second A is unlettered but repeats the A melody"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+},
+{
+"bars": [
+8
+],
+"groups": [
+8
+],
+"text": "Em7 A7 Dm7 G7 printed over a half note and two eighths; chord placement approximate"
+},
+{
+"bars": [
+32
+],
+"groups": [
+32
+],
+"text": "whole note; turnaround chords (Dm7 G7) placed on beats 3-4"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:That's All\nC:Alan Brandt and Bob Haymes\nP:AABC\n%source New Real Book Vol 2 p315-316 (pdf 298-299)\n%style (Medium Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\n%unsure [form] second A is unlettered but repeats the A melody\n%unsure [general] lyrics are printed\nM:C\nL:1/8\nK:C\n\"(G7)\"BB ||\nP:A\n\"Cmaj7\"BB BB \"Dm7\"BB BB | \"Em7\"BB- B4 \"Dm7\"B\"G7\"B | \"Cmaj7\"BB BB \"F9\"BB BB | \"Em7\"B6 \"A7\"B\"A7/G\"B |\n\"F#m7b5\"BB BB \"Fm7\"B3 B | \"C/E\"BB BB \"A7#9#5\"B3 B | \"Dm7\"B6 \"G7\"B2 | \"Em7\"B4 \"A7\"z2 \"Dm7\"B\"G7\"B |\n\"Cmaj7\"BB BB \"Dm7\"BB BB | \"Em7\"BB- B4 \"Dm7\"B\"G7\"B | \"Cmaj7\"BB BB \"F9\"BB BB | \"Em7\"B6 \"A7\"B\"A7/G\"B |\n\"F#m7b5\"BB BB \"Fm7\"B3 B | \"C/E\"BB BB \"A7#9#5\"B3 B | \"Dm7\"B6 \"G7\"B2 | \"C6\"B6 BB ||\nP:B\n\"Gm7\"B2 BB \"C7\"B2 BB | \"Am7\"B2 B4 \"Dm7\"BB | \"Gm7\"B2 BB \"C7\"B2 BB | \"Fmaj7\"B6 BB |\n\"Am7\"B2 BB \"D7\"B2 BB | \"Bm7\"B2 B4 \"Em7\"BB | \"Am7\"B2 BB \"D7\"B2 BB | \"G9sus\"B6 \"G7\"BB ||\nP:C\n\"Cmaj7\"BB BB \"Dm7\"BB BB | \"Em7\"BB- B4 \"Dm7\"B\"G7\"B | \"Cmaj7\"BB BB \"F9\"\"(B7#5)\"BB BB | \"Em7\"\"(Bb13)\"B6 \"A7\"B\"A7/G\"B |\n\"F#m7b5\"BB BB \"Fm7\"B3 B | \"C/E\"BB BB \"A7#9#5\"B3 B | \"Dm7\"B6 \"G7\"B2 | \"C6\"B4 \"(Dm7)\"B2- \"(G7)\"B2 |]\n\n%unsure [bar 8] Em7 A7 Dm7 G7 printed over a half note and two eighths; chord placement approximate\n%unsure [bar 32] whole note; turnaround chords (Dm7 G7) placed on beats 3-4"
+},
+{
+"id": "New_Real_Book_Volume2/300-them-there-eyes",
+"book": "The New Real Book Vol. 2",
+"title": "Them There Eyes",
+"pdf": "300",
+"form": "AB 16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+},
+{
+"bars": [
+3,
+4,
+19,
+20
+],
+"groups": [
+2,
+3,
+18,
+19
+],
+"text": "alternate chords (Bb6 F9) printed over % repeat signs"
+},
+{
+"bars": [
+29,
+30
+],
+"groups": [
+28,
+29
+],
+"text": "printed G7 with alternate (A7 Ab7 G7) above; placement of alternates approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Them There Eyes\nC:Maceo Pinkard, William Tracy and Doris Tauber\nP:AB\n%source New Real Book Vol 2 p317 (pdf 300)\n%style (Medium-Up Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16\n%unsure [general] lyrics are printed\nM:C\nL:1/8\nK:Bb\nP:A\n\"Bb6\"B2 BB BB B2 | B2 BB BB B2 | \"(Bb6)\"B4 \"(F9)\"B4 | B8 |\n\"Bb6\"B2 BB BB B2 | B2 BB \"G7\"BB B2 | \"C7\"B4 B4 | B8 |\n\"Cm7\"z2 B2 B2 B2 | \"F7\"z2 B2 B2 B2 | \"D7\"z2 B2 B2 B2 | \"Gm7\"B8 |\n\"C7\"z2 B2 B2 B2 | z2 B2 B2 B2 | \"F7\"BB BB B B2 B | B2 BB B2 z2 ||\nP:B\n\"Bb6\"B2 BB BB B2 | B2 BB BB B2 | \"(Bb6)\"B4 \"(F9)\"B4 | B8 |\n\"Bb7\"z2 B2 B2 B2 | B2 B2 B2 B2 | \"Ebmaj7\"B8- | B8 |\n\"Ebmaj7\"z2 B2 B2 B2 | \"Eo7\"z2 B2 B2 B2 | \"Bb6/F\"B2 BB BB BB | \"C7\"B2 BB \"F7\"B B3 |\n\"Bb6\"B2 BB \"(A7)\"BB B2 | \"Ab7\"\"G7\"B2 BB \"(G7)\"BB B2 | \"C7\"B4 \"F7\"B4 | \"Bb6\"B4 \"(F7)\"z4 |]\n\n%unsure [bars 3-4, 19-20] alternate chords (Bb6 F9) printed over % repeat signs\n%unsure [bars 29-30] printed G7 with alternate (A7 Ab7 G7) above; placement of alternates approximate"
+},
+{
+"id": "New_Real_Book_Volume2/301-there-is-no-greater-love",
+"book": "The New Real Book Vol. 2",
+"title": "There Is No Greater Love",
+"pdf": "301",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "printed letters A (16 bars), B (8), C (8)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:There Is No Greater Love\nC:Isham Jones / Marty Symes\nP:ABC\n%source New Real Book Vol 2 p318 (pdf 301)\n%style (Medium Swing, also played as a ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [form] printed letters A (16 bars), B (8), C (8)\n%unsure [general] lyrics are printed\nM:C\nL:1/8\nK:C\n\"(G7)\"z2 B2 B2 B2 ||\nP:A\n\"Cmaj7\"B2 B2 B3 B | \"F9\"B2 B2 B2 B2 | \"Bb9#11\"B8 | \"A7\"z2 B2 B2 B2 |\n\"D9\"B8- | B2 B2 B2 B2 | \"Dm7\"B8 | \"G7\"z2 B2 B2 B2 |\n\"Cmaj7\"B2 B2 B3 B | \"F9\"B2 B2 B2 B2 | \"Bb9#11\"B8 | \"A7\"z2 B2 B2 B2 |\n\"D9\"B2 B2 B2 B2 | \"Dm7\"B4 \"G7\"B4 | \"C6/9\"B8- | B8 ||\nP:B\n\"Bm7b5\"B2 B2 \"E7\"B2 B2 | \"Am6\"B8 | \"Bm7b5\"B2 B2 \"E7\"B2 B2 | \"Am6\"B8 |\n\"Bm7b5\"B2 B2 \"E7\"B2 B2 | \"Am7\"B2 B2 B2 B2 | \"D7\"B8 | \"G7\"z2 B2 B2 B2 ||\nP:C\n\"Cmaj7\"B2 B2 B3 B | \"F9\"B2 B2 B2 B2 | \"Bb9#11\"B8 | \"A7\"z2 B2 B2 B2 |\n\"D9\"B2 B2 B2 B2 | \"Dm7\"B4 \"G7\"B4 | \"C6/9\"B8 | \"(Dm7)\"z4 \"(G7)\"z4 |]\n"
+},
+{
+"id": "New_Real_Book_Volume2/302-three-hearts-dancing",
+"book": "The New Real Book Vol. 2",
+"title": "Three Hearts Dancing",
+"pdf": "302",
+"form": "AABCD 16+16+20+16 (D has two endings), then guitar solo vamp",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "D.C., solo on A (no repeat); play B, C, vamp & fade on D (first ending)"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15
+],
+"text": "gtr. tacet 1st x; tie/slur readings approximate"
+},
+{
+"bars": [
+29,
+30
+],
+"groups": [
+28,
+29
+],
+"text": "two-voice bars; rhythm of bar 30 guessed"
+},
+{
+"bars": [
+47,
+48,
+49,
+50,
+51
+],
+"groups": [
+46,
+47,
+48,
+49,
+50
+],
+"text": "number of tied bars at end of C approximate"
+},
+{
+"bars": [
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72
+],
+"groups": [
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71
+],
+"text": "two-voice riff writing; upper-voice notes over held chords omitted; rhythms approximate"
+},
+{
+"bars": [
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80
+],
+"groups": [
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79
+],
+"text": "guitar solo slashes written as rests"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Three Hearts Dancing\nC:Steve Erquiaga\nP:AABCD\n%source New Real Book Vol 2 p319-320 (pdf 302-303)\n%style (Medium Straight 8th's, q=106)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABCD 16+16+20+16 (D has two endings), then guitar solo vamp\n%unsure [form] D.C., solo on A (no repeat); play B, C, vamp & fade on D (first ending)\nM:3/4\nL:1/8\nK:Am\nP:A\n|: \"Am9/E\"B3 \"Am6/E\"B3- | B4 B/B/B/B/ | \"Em11\"B3 B3- | B6 |\n\"Cmaj7\"B3 \"B7/C\"B3- | B4- (3BBB | \"Am6\"B3 \"Am\"B3- | B3 B BB |\n\"F6\"B3 \"Fmaj7\"B3- | B4- BB/B/ | \"Dm6\"B3 \"Dm7\"B3- | \"(Dm7)\"B2 BB BB |\n\"G(add9)/B\"B3 \"Bm7b5\"B3- | B4- BB/B/ | \"Bb9#11\"B3 B3- | B6 :|\nP:B\n\"A9sus\"B3 B3- | B4- BB | \"A13b9\"B3 B3- | B3 B zB/B/ |\n\"Dm11\"B3 B3- | B6 | \"Dm9(omit3)/C\"B3 B3- | B6 |\n\"B13b9\"B3 B3- | B4- BB/B/ | \"E7#9#5\"B3 \"E9\"B3- | \"(E9)\"B4- BB |\n\"A9sus\"B2 BB zB | BB B3 B | \"Eb/A\"B2 (3B2B2B2 | B4- BB/B/ ||\nP:C\n\"Dm11\"B3 B3- | B6 | \"G13\"B3 B3- | B2 BB BB |\n\"Cmaj7#5\"B3 B3- | B4- (3BBB | \"F6\"B3 \"Fmaj7\"B3- | B6 |\n\"G(add9)/B\"B3 \"Bm7b5\"B3- | B4- BB/B/ | \"Bb9#11\"B3 B3- | B4- BB/B/ |\n\"Am\"B3 \"G/A\"B3- | B3 B/B/ BB | \"G/A\"B3 \"Am\"B3- | B6- |\nB6- | B6- | B6 ||\nP:D\n|: \"N.C.(Am)\"zB/B/ B/B/B B2 | B3 B z2 | B3 B zB | B/B/B B/B/B BB |\nzB zB z2 | \"N.C.(Am)\"B6 | B6 |1 B/B/B BB/B/ BB |\nzB/B/ B/B/B B2 | B3 B z2 | B3 B z2 | \"N.C.(Am)\"zB/B/ BB B/B/B |\nzB zB- B2 | z B2 B- B2 | B4- BB/B/ | B/B/B B/B/B BB :|2\n\"N.C.(Am)\"B/B/B/B/ B/B/B/B/ BB | zB/B/ B/B/B B2 | B3 B z2 | B3 B z2 |\nzB/B/ BB B/B/B ||\n%guitar solo\n\"Am7\"z6 | \"G6\"z6 | \"Fmaj9\"z6 | z6 |\n\"Em(omit3)\"z6 | z6 | z6 | z6 |]\n\n%unsure [bars 1-16] gtr. tacet 1st x; tie/slur readings approximate\n%unsure [bars 29-30] two-voice bars; rhythm of bar 30 guessed\n%unsure [bars 47-51] number of tied bars at end of C approximate\n%unsure [bars 52-72] two-voice riff writing; upper-voice notes over held chords omitted; rhythms approximate\n%unsure [bars 73-80] guitar solo slashes written as rests"
+},
+{
+"id": "New_Real_Book_Volume2/304-three-little-words",
+"book": "The New Real Book Vol. 2",
+"title": "Three Little Words",
+"pdf": "304",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "second A is unlettered but repeats the A melody"
+},
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Three Little Words\nC:Harry Ruby / Bert Kalmar\nP:AABC\n%source New Real Book Vol 2 p321 (pdf 304)\n%style (Medium (Fast) Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\n%unsure [form] second A is unlettered but repeats the A melody\n%unsure [general] lyrics are printed\nM:C\nL:1/8\nK:D\nP:A\n\"Dmaj7\"B2 B2 B2 B2- | B8- | B2 B2 B2 B2 | \"Fm7\"B2 B4 \"Bb9\"B2 |\n\"Em7\"B2 B2 B2 B2- | \"A7\"B8- | \"Em7\"B4 B4 | \"A7\"B4 B4 |\n\"Dmaj7\"B2 B2 B2 B2- | B8- | B2 B2 B2 B2 | \"Fm7\"B2 B4 \"Bb9\"B2 |\n\"Em7\"B2 B2 B2 B2- | \"A7\"B8- | \"Em7\"B4 B4 | \"A7\"B4 B4 ||\nP:B\n\"Am7\"B2 B2 B2 B2- | B2 B2 B2 B2 | \"D9sus\"B8 | \"D7\"B8 |\n\"Gmaj7\"B2 B2 B2 B2- | B2 B2 B2 B2 | \"C7\"B4 \"B7\"B4 | \"Bb7\"B4 \"A7\"B4 ||\nP:C\n\"Dmaj7\"B2 B2 B2 B2- | B8- | B2 B2 B2 B2 | \"Fm7\"B2 B4 \"Bb9\"B2 |\n\"Em7\"B2 B2 B2 B2- | \"A7\"B4 B4 | \"D6\"B8 | \"(Em7)\"z4 \"(A7)\"z4 |]\n"
+},
+{
+"id": "New_Real_Book_Volume2/305-til-there-was-you",
+"book": "The New Real Book Vol. 2",
+"title": "'Til There Was You",
+"pdf": "305",
+"form": "ABC 16+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics are printed"
+},
+{
+"bars": [
+7,
+8
+],
+"groups": [
+7,
+8
+],
+"text": "whole note tied into dotted half; printed chords Am7 Ab13 Gm7 C7 placed approximately"
+},
+{
+"bars": [
+15,
+24
+],
+"groups": [
+15,
+24
+],
+"text": "bar 15 whole note split for the chord change; bar 24 half note + 2 eighths printed, filled with a quarter rest"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:'Til There Was You\nC:Meredith Willson\nP:ABC\n%source New Real Book Vol 2 p322 (pdf 305)\n%style (Medium Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 16+8+8\n%unsure [general] lyrics are printed\nM:C\nL:1/8\nK:F\n\"(C7)\"BB ||\nP:A\n\"Fmaj7\"B6 BB | \"F#o7\"B6 BB | \"Gm7\"B2 B2 B3 B | \"Bbm7\"B2 \"Eb9\"B4 BB |\n\"Fmaj7\"B2 B2 \"Abo7\"(3B2B2B2 | \"Gm7\"B4 \"C7\"(3B2B2B2 | \"Am7\"B4- \"Ab13\"B4- | \"Gm7\"B4- \"C7\"B2 BB |\n\"Fmaj7\"B6 BB | \"F#o7\"B6 BB | \"Gm7\"B2 B2 B3 B | \"Bbm7\"B2 \"Eb9\"B4 BB |\n\"Fmaj7\"B2 B2 \"Abo7\"(3B2B2B2 | \"Gm7\"B4 \"C7\"(3B2B2B2 | \"Fmaj7\"B4 \"Bbm6\"B4 | \"Fmaj7\"z2 B2 B2 B2 ||\nP:B\n\"Bbmaj7\"B2 B4 B2 | \"Bo7\"B2 B2 (3B2B2B2 | \"Fmaj7\"B2 B4 B2 | \"D7\"B2 B4 B2 |\n\"Gm7\"B4 B2 B2 | \"G9\"B2 B4 B2 | \"Gm7\"B6 B2 | \"C7#5\"B4 z2 BB ||\nP:C\n\"Fmaj7\"B6 BB | \"F#o7\"B6 BB | \"Gm7\"B2 B2 B3 B | \"Bbm7\"B2 \"Eb9\"B4 BB |\n\"Fmaj7\"B2 B2 \"Abo7\"(3B2B2B2 | \"Gm7\"B4 \"C7\"(3B2B2B2 | \"Fmaj7\"B8 | \"(Gm7)\"z4 \"(C7)\"z4 |]\n\n%unsure [bars 7-8] whole note tied into dotted half; printed chords Am7 Ab13 Gm7 C7 placed approximately\n%unsure [bars 15, 24] bar 15 whole note split for the chord change; bar 24 half note + 2 eighths printed, filled with a quarter rest"
+},
+{
+"id": "New_Real_Book_Volume2/306-time-marches-on",
+"book": "The New Real Book Vol. 2",
+"title": "Time Marches On",
+"pdf": "306",
+"form": "ABC 8+8+8, coda in 15/16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "A: guitar solo vamp till cue; B: bass solo indef., then melody at C, vamp till cue, D.S. al Coda"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "top note of synth voicing; bars 7-8 are chord voicings"
+},
+{
+"bars": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"groups": [
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15
+],
+"text": "synth chord voicings written as notes; alternate (Eb/F) in bar 11 omitted"
+},
+{
+"bars": [
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+19,
+20,
+21,
+22,
+23
+],
+"text": "dense 16th-note funk line; rhythms approximate"
+},
+{
+"bars": [
+25,
+26,
+27,
+28
+],
+"groups": [
+24,
+25,
+26,
+27
+],
+"text": "printed 15/16 coda; tied chord vamps (guitar solo, then on cue E9sus vamp & fade)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Time Marches On\nC:John Scofield\nP:ABC\n%source New Real Book Vol 2 p323 (pdf 306)\n%style (Med. Reggae/Funk, q=87)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 8+8+8, coda in 15/16\n%unsure [form] A: guitar solo vamp till cue; B: bass solo indef., then melody at C, vamp till cue, D.S. al Coda\nM:C\nL:1/8\nK:C\nP:A\n|: \"C#m7b5\"B8 | \"C9\"B4 \"Bb9\"B\"C9\"B- B2 | \"B7#5\"B8 | \"A7\"B8 |\n\"F#7b9\"B8 | \"E7#9\"B8 | \"G/A\"B2- B3/\"F#(add9)/A#\"B/- B4 | \"A/B\"B2- B3/\"Ebmaj7b5\"B/- B4 :|\nP:B\n!segno!\"Eb/F\"B8- | B4 z2 \"F#9#11\"Bz/\"Eb/F\"B/- | B8- | B4 z2 \"F#9#11\"Bz/\"Eb/F\"B/- |\nB8- | B4 z2 \"F#9#11\"Bz/\"Eb/F\"B/- | B8 | !coda!\"(G(add9)/B)\"z8 ||\nP:C\n|: \"C#m7b5\"B3 B z2 z/B/z | \"C9\"B3 B z2 z/B/z | \"B7#5\"B3 B z2 z/B/z | \"A7\"z/B/B/B/ B/B/z/B/ B/B/B/z/ B/z/B/B/- |\n\"F#7b9\"B4 z/B/B/B/ B/B/B/B/ | \"E7#9\"B/B/z/B/ B/B/z/B/ B/z/B/B/ B/z/B/B/- | \"G/A\"B2 Bz/B/ \"F#/A#\"BB/B/ z/B/B | \"A/B\"B2 Bz/B/ \"B7#5/D#\"BB/B/ z/B/B :|\n%coda\n[M:15/16]\"G(add9)/B\"\"[B7alt]\"B7- B/- | B7 B/ |: B7 B/ :| :\"E9sus\"B7 B/ :|\n\n%unsure [bars 1-8] top note of synth voicing; bars 7-8 are chord voicings\n%unsure [bars 9-16] synth chord voicings written as notes; alternate (Eb/F) in bar 11 omitted\n%unsure [bars 20-24] dense 16th-note funk line; rhythms approximate\n%unsure [bars 25-28] printed 15/16 coda; tied chord vamps (guitar solo, then on cue E9sus vamp & fade)"
+},
+{
+"id": "New_Real_Book_Volume2/307-time-remembered",
+"book": "The New Real Book Vol. 2",
+"title": "Time Remembered",
+"pdf": "307",
+"form": "A 26 (repeated; ends at fine)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "book notes: solos swing (in 2); melodic rhythm is rather freely interpreted"
+},
+{
+"bars": [
+26
+],
+"groups": [
+25
+],
+"text": "last bar's notes are in parentheses (lead-back to the repeat)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Time Remembered\nC:Bill Evans\nP:A\n%source New Real Book Vol 2 p324 (pdf 307)\n%style (Med. Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 26 (repeated; ends at fine)\n%unsure [general] book notes: solos swing (in 2); melodic rhythm is rather freely interpreted\nM:C\nL:1/8\nK:C\nP:A\n|: \"C#m9\"B8- | \"Dmaj7#11\"B6 B2 | \"Gmaj7#11\"B2 B4 B2 | \"F#m9\"B2 B2 B4 |\n\"Bm9\"z4 \"Em9\"(3z2B2B2 | \"Am9\"B2 B2 B2 B2 | \"Fmaj7#11\"B6 B2- | \"Bbmaj7#11\"B6 z2 |\n\"Bm9\"z4 B2 B2- | \"Em9\"B2 B2 B2 B2 | \"Am9\"B6 B2- | \"Dm9\"B3 B BB BB |\n\"Gm11\"B6 B2 | \"F#m9\"B2 B2 B2 B2 | \"C#m9\"BB B6- | B8 |\n\"Fm9\"z2 B2 B2 B2 | \"Bm9\"BB B6 | \"Dm9\"z4 zB BB | \"Abm9\"BB B6 |\n\"C#m9\"z2 B2 B2 B2 | \"Am9\"B4- BB BB | \"Fmaj7#11\"B2 B2 B4- | \"Em9\"B2 B2 B2 B2 |\n\"Dm9\"!fine!B8- | B2 B2 B2 B2 :|\n\n%unsure [bar 26] last bar's notes are in parentheses (lead-back to the repeat)"
+},
+{
+"id": "New_Real_Book_Volume2/308-time-tracks",
+"book": "The New Real Book Vol. 2",
+"title": "Time Track",
+"pdf": "308",
+"form": "A 26, B 4 (2 endings), C 8 (2 endings), D 6, E 8, F 4+4 (endings), coda two, I 5",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 10,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "printed title is \"Time Track\"; road map: E synth solo 3x, D.S. al Coda One to F (solos), D.C. al Coda Two to I"
+},
+{
+"bars": [],
+"groups": [],
+"text": "very dense funk chart; many 16th-note rhythms approximated, grace notes omitted"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25
+],
+"text": "synth melody; triplet groupings and ties approximate"
+},
+{
+"bars": [
+28,
+30,
+31
+],
+"groups": [
+27,
+29,
+30
+],
+"text": "last 16th note figures approximate"
+},
+{
+"bars": [
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42
+],
+"groups": [
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41
+],
+"text": "dense 16th-note rhythms approximated; chord placement approximate"
+},
+{
+"bars": [
+43,
+44,
+45,
+46,
+47,
+48,
+49
+],
+"groups": [
+42,
+43,
+44,
+45,
+46,
+47,
+48
+],
+"text": "top line of two-voice chord figures (gtr. part below omitted); rhythms approximate"
+},
+{
+"bars": [
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57
+],
+"groups": [
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56
+],
+"text": "synth solo slashes (and background comp) written as rests; melody only in bars 51, 55 and 57"
+},
+{
+"bars": [
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67
+],
+"groups": [
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66
+],
+"text": "solo slashes written as rests; 8th ending line run approximate; D.C. al Coda Two"
+},
+{
+"bars": [
+68,
+69,
+70,
+71
+],
+"groups": [
+67,
+68,
+69,
+70
+],
+"text": "tuplets and ties approximate"
+},
+{
+"bars": [
+72,
+73,
+74,
+75,
+76,
+77,
+78
+],
+"groups": [
+71,
+72,
+73,
+74,
+75,
+76,
+77
+],
+"text": "ending: synth/guitar 16th-note chord figures, top line only; rhythms approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Time Track\nC:Chick Corea\nP:ABCDEFI\n%source New Real Book Vol 2 p325-326 (pdf 308-309)\n%style (Med. Funk, q=121; melody 8va on D.C.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 26, B 4 (2 endings), C 8 (2 endings), D 6, E 8, F 4+4 (endings), coda two, I 5\n%unsure [form] printed title is \"Time Track\"; road map: E synth solo 3x, D.S. al Coda One to F (solos), D.C. al Coda Two to I\n%unsure [general] very dense funk chart; many 16th-note rhythms approximated, grace notes omitted\nM:C\nL:1/8\nK:C\nP:A\n\"F#m7\"B4- (3BBB \"Dmaj7\"B3/B/- | B8 | \"D#m7\"B3 B B2- (3BBB | \"D7\"B3 B B2 \"Gm7\"B3/B/- |\n\"Gm7\"B4- (3BBB \"Ebmaj7\"B3/B/- | B8 | \"Em7\"B3 B B2- (3BBB | \"D#7\"B3 B B2 \"G#m7\"B3/B/- |\n\"G#m7\"B4- (3BBB \"Emaj7b5\"B3/B/- | B4- B2 (3BBB | \"C#m7\"B6 BB | \"C#m7/B\"B2- (3BBB B2 \"Amaj7\"B3/B/- |\n\"Amaj7\"B6 BB | \"E/G#\"(3B2B2B2 B2 B3/\"C/G\"B/- | B6 BB | B3 B B2 B3/B/- |\n\"F#m7\"B8 | \"F#m7\"B3 B B2 B3/B/- | \"Gbmaj7b5/F\"B6 BB | B3 B- B2- B3/\"Em7\"B/- |\nB6 BB | \"Em7\"B3 B B2 \"Eb9sus\"B3/B/- | !coda!B8- | B8- |\nB4 z4 | \"D9b5\"B4 \"Db9b5\"B3 \"Cm11\"B ||\nP:B\n|: \"(Cm11)\"z4 BB B3/B/- | \"F/G\"B2 \"Abmaj7b5\"B2 \"Ab/Bb\"B3/\"Cm11\"B/ z2 | \"Eb9sus\"z4 B4 |1 \"D9b5\"B4 \"Db9b5\"B3 \"Cm11\"B :|2\n\"D9b5\"B4 \"Db9b5\"B2 z/B/\"Cm11\"B/B/ |\nP:C\n|: \"Cm11\"z2 BB B3/B/- BB/B/ | Bz/\"F/G\"B/ B/B/B/\"Abmaj7b5\"B/- B/B/B/\"Ab/Bb\"B/ B/B/B/\"Cm11\"B/- | B3/B/ B2 B4- | \"Eb9sus\"B4 \"D9b5\"B/B/B/B/ \"Db9b5\"\"Cm11\"B/B/B/B/ |\n\"Cm11\"z2 BB B3/B/- BB/B/ |1 Bz/\"F/G\"B/ B/B/B/\"Abmaj7b5\"B/- B/B/B/\"Ab/Bb\"B/ B/B/B/\"Cm11\"B/- | B3 B/B/- B4 | \"Eb9sus\"z2 \"D9b5\"z3/B/ \"Db9b5\"B/B/B/B/ \"Cm11\"B2 :|2\nBz/\"F/G\"B/ B/B/B/ \"Abmaj7b5\"B2 \"Ab/Bb\"B/- \"Cm11\"B2- | BB B/B/B/B/ B3/\"Bbm7\"B/- BB | \"Abmaj7\"B/B/B B2- \"G7#9\"B2 B3/\"C#m7/F#\"B/- ||\nP:D\n!segno!\"C#m7/F#\"B4 z/B3/ B3/B/ | \"F#m7b5\"B4 z3/B/ z/B/z/B/ | \"C#m7/F#\"B4 z/B3/ B3/B/ | \"Bm7/F#\"BB3/\"Bmaj7\"B/- B3 B/B/B/B/ |\n\"Dmaj7\"B2 BB3/B/-B B\"C7/G\"B- | \"C7/G\"BB B\"Ebm7\"B- B3 \"Fm11\"B/\"Gm11\"B/- | B2 z/\"Abmaj7\"B/B/B/ \"Bbm7\"B/B/B/B/ \"Cm11\"B/B/B/B/ ||\nP:E\n|: \"Cm11\"z8 | z2 \"F/G\"B2 \"Abmaj7b5\"B2 \"Ab/Bb\"B3/\"Cm11\"B/ | \"Eb9sus\"z4 B4 | \"D9b5\"B4 \"Db9b5\"B3 \"Cm11\"B :|\n\"Cm11\"z8 | z2 \"F/G\"B2 \"Abmaj7b5\"B2 \"Ab/Bb\"B3/\"Cm11\"B/ | z4 \"Bbm7\"z4 | \"Abmaj7\"B2 B2 \"G7b9\"B2 B3/\"C#m7/F#\"B/ |]\nP:F\n|: \"Cm11\"z8 | \"F/G\"z2 \"Abmaj7b5\"z2 \"Ab/Bb\"z3/\"Cm11\"z/ z2 |1 \"Eb9sus\"z8 | \"D9b5\"z4 \"Db9b5\"z3/\"Cm11\"z/ z2 :|2\n\"Cm11\"z/B3/ z/B/B B3/\"Bbm7\"B/ z2 | BB/B/ B/B/B/B/ B/B/B/B/ B/B/B/B/- | \"Abm7\"BB/B/ BB B/B/B/B/ \"Dbm11\"BB/B/ | BB/B/ B/B/B/B/ \"C9sus\"B/B/B/B/ BB- |\n\"C9sus\"B2 z/B/B/B/ B/B/B/B/ B/B/B/B/ | \"D/C#\"B2- B3/B/ (6:4B/B/B/B/B/B/ (3BBB |]\n%coda two\n\"Eb9sus\"B4- (3B2B2B2 | B2 (3B2B2B2- BB | B/B/B/B/- B6 | \"D9b5\"B4 \"Db9b5\"B3 \"Cm11\"B ||\nP:I\n\"Cm11\"z4 BB B3/B/- | B2 \"F/G\"B2 \"Abmaj7b5\"B2 \"Ab/Bb\"B3/\"Cm11\"B/ | z/B/B/B/ B/B/B/B/ \"Ebsus\"B/B/B/B/ \"F#sus\"B/B/B/B/ | \"Asus\"B/B/B/B/ B/B/B/B/ \"Csus\"B/B/B/B/ B/B/B/B/ |\nB/B/B/B/ B/B/B/B/ B/B/B/B/ B/B/B/B/ | B/B/B/B/ B/B/B/B/ \"Cmaj7#5\"B/B/B/B/ \"Dmaj7b5\"B/z/B/\"Bbsus\"B/ | z3/\"Gbmaj7#5/D\"B/ z/\"Emaj7#5\"B/z3/\"Bbsus\"B/z z2 |]\n\n%unsure [bars 1-26] synth melody; triplet groupings and ties approximate\n%unsure [bars 28, 30, 31] last 16th note figures approximate\n%unsure [bars 32-42] dense 16th-note rhythms approximated; chord placement approximate\n%unsure [bars 43-49] top line of two-voice chord figures (gtr. part below omitted); rhythms approximate\n%unsure [bars 50-57] synth solo slashes (and background comp) written as rests; melody only in bars 51, 55 and 57\n%unsure [bars 58-67] solo slashes written as rests; 8th ending line run approximate; D.C. al Coda Two\n%unsure [bars 68-71] tuplets and ties approximate\n%unsure [bars 72-78] ending: synth/guitar 16th-note chord figures, top line only; rhythms approximate"
+},
+{
+"id": "New_Real_Book_Volume2/310-togetherness",
+"book": "The New Real Book Vol. 2",
+"title": "Togetherness",
+"pdf": "310",
+"form": "AB 23+4, intro 4 (4x)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "solo on AB; after solos D.S. (with pickups), play A, vamp & fade on B (4x)"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5
+],
+"groups": [
+0,
+1,
+2,
+3,
+4
+],
+"text": "piano intro, top line"
+},
+{
+"bars": [
+25,
+26
+],
+"groups": [
+24,
+25
+],
+"text": "two bars each show only a half note (second with a fall); filled with tie/rest"
+},
+{
+"bars": [
+28
+],
+"groups": [
+27
+],
+"text": "soprano line over piano, top line only"
+},
+{
+"bars": [
+29,
+30,
+31,
+32
+],
+"groups": [
+28,
+29,
+30,
+31
+],
+"text": "sop. fills; rhythm as in the intro"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Togetherness\nC:Jimmy Heath\nP:AB\n%source New Real Book Vol 2 p327 (pdf 310)\n%style (Med. Swing, q=220; 3rd & 4th x's: sop. doubles melody 8va b.)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 23+4, intro 4 (4x)\n%unsure [form] solo on AB; after solos D.S. (with pickups), play A, vamp & fade on B (4x)\nM:C\nL:1/8\nK:F\n%intro\n|: \"Fmaj7/C\"B4 B3 \"Gm7/C\"B- | B3 B B2 B2 | z2 \"Fmaj7/C\"B2 BB z\"Gm7/C\"B- |1 B3 B BB B2 :|2\n\"Gm7/C\"z2 zB BB BB ||\nP:A\n!segno!\"A7#9\"B8- | B4 zB z2 | \"C13b9\"B8- | B6 zB |\n\"A7#9\"BB zB- B B2 B- | B B2 B- B B3 | \"C13b9\"BB zB- B4 | z2 z\"F7#9\"B- B4 |\n\"D7#9\"B8- | B4 B3 B | \"F7#11#9\"B8 | z4 z2 zB |\n\"D7#9\"B B2 B- B B2 B- | B B2 B- B B2 B | \"F7#11#9\"zB- B6 | z4 B2 B2 |\n\"Bbmaj7\"B4 BB zB- | \"A7#9\"B3 B BB BB | \"Dm9\"B4 B2 BB- | \"G13#11\"B8- |\nB4 z4 | \"Gm7(11)\"B8 | \"C9sus\"zB BB BB BB ||\nP:B\n|: \"Fmaj7/C\"B4 B3 \"Gm7/C\"B- | B3 B B2 B2 | z2 \"Fmaj7/C\"B2 BB z\"Gm7/C\"B- | B3 B BB B2 :|\n\n%unsure [bars 1-5] piano intro, top line\n%unsure [bars 25-26] two bars each show only a half note (second with a fall); filled with tie/rest\n%unsure [bar 28] soprano line over piano, top line only\n%unsure [bars 29-32] sop. fills; rhythm as in the intro"
+},
+{
+"id": "New_Real_Book_Volume2/311-tristeza",
+"book": "The New Real Book Vol. 2",
+"title": "Tristeza",
+"pdf": "311",
+"form": "AABC 16+16+16+14 (book: \"Form is AABC\")",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "to end, vamp and fade on A (first ending only)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Tristeza\nC:Haroldo Lobo / Niltinho\nP:AABC\n%source New Real Book Vol 2 p328 (pdf 311)\n%style (Med. Samba, h=116)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 16+16+16+14 (book: \"Form is AABC\")\n%unsure [form] to end, vamp and fade on A (first ending only)\nM:C|\nL:1/8\nK:E\nB2 B2 |\nP:A\n|: \"Amaj7\"B8 | \"A6\"B8 | \"Am6\"z B3 B2 B2 | B4- B B2 B- |\n\"G#13b9\"B8 | \"G#7#5\"B8 | \"C#9sus\"z B3 B2 B2 | \"C#7#5b9\"B4- B B2 B- |\n\"F#13\"B8 | \"F#7#5\"B8 | \"B9sus\"z B3 B2 B2 | \"B7\"B3 B- B B2 B- |1 \"Emaj7\"B8 | \"E7\"z4 B2 B2 :|2 \"Emaj7\"B8 | \"B13\"z4 z2 BB- ||\nP:B\n\"E\"B4- B B2 B- | B8 | \"E+\"z4 B2 B2 | \"C#m/E\"B3 B- B B2 B- |\n\"F#m\"B8 | \"D/F#\"B8 | \"F#m6\"z4 B2 B2 | \"F#m7\"B3 B- B B2 B- |\n\"G#m7\"B8 | B8 | \"F#m7\"z4 B2 B2 | \"B7\"B3 B- B B2 B- |\n\"Emaj7\"B8- | B4 z4 | \"E7\"z B2 B- B B2 B- | B B2 B- B B2 B- ||\nP:C\n\"Amaj7\"B B2 B B2 B2- | \"A6\"B2 B6 | \"Am6\"z2 zB B B2 B- | B B2 B- B B2 B- |\n\"G#13b9\"B8- | \"G#7#5\"B4 z4 | \"C#9sus\"z B2 B- B B2 B- | \"C#7#5b9\"B B2 B- B B2 B- |\n\"F#13\"B B2 B- B B2 B- | \"F#7#5\"B3 B- B4 | \"B9sus\"z B3 B2 B2 | \"B7\"B3 B- B B2 B- |\n\"Emaj7\"B8 | \"E7\"z4 B2 B2 |]\n"
+},
+{
+"id": "New_Real_Book_Volume2/312-truth",
+"book": "The New Real Book Vol. 2",
+"title": "Truth",
+"pdf": "312",
+"form": "ABCDE 16+15+12+12+19 (letters A-D head, E solos double-time, D.S. al Coda)",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 10,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from the chart; D.S. returns to D, then coda"
+},
+{
+"bars": [
+3
+],
+"groups": [
+3
+],
+"text": "tied rhythm in second half approximate"
+},
+{
+"bars": [
+24
+],
+"groups": [
+24
+],
+"text": "tenor fill"
+},
+{
+"bars": [
+25,
+26,
+27,
+28,
+29
+],
+"groups": [
+25,
+26,
+27,
+28,
+29
+],
+"text": "rhythm slashes, written as rests"
+},
+{
+"bars": [
+30,
+31
+],
+"groups": [
+30,
+31
+],
+"text": "bar 30 diamond (harmonic) notes; bar 31 marked Freely, cut time"
+},
+{
+"bars": [
+44
+],
+"groups": [
+44
+],
+"text": "Orig. tempo; trumpets, lower voice also printed"
+},
+{
+"bars": [
+55,
+56
+],
+"groups": [
+55,
+56
+],
+"text": "double-time feel (swing); bar 56 slashes as rests"
+},
+{
+"bars": [
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75
+],
+"groups": [
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75
+],
+"text": "solo slashes as rests; bars 64-66 'till cue' vamp (bars 65-66 repeat signs)"
+},
+{
+"bars": [
+76,
+77,
+78,
+79
+],
+"groups": [
+76,
+77,
+78,
+79
+],
+"text": "on cue vamp, then trumpets pickup into D.S. al Coda"
+},
+{
+"bars": [
+80,
+81,
+82
+],
+"groups": [
+80,
+81,
+82
+],
+"text": "tenor cadenza over bar 81; bar 82 diamond note"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Truth\nC:Bob Mintzer\nP:ABCDE\n%source New Real Book Vol 2 p329-330 (pdf 312-313)\n%style (Med. Ballad, q=56)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCDE 16+15+12+12+19 (letters A-D head, E solos double-time, D.S. al Coda)\n%unsure [form] section lengths counted from the chart; D.S. returns to D, then coda\nM:4/4\nL:1/8\nK:G\n\"N.C.\"BB BB |\nP:A\n\"Cmaj7/D\"B3 B/B/ \"Gdim(addmaj7)/D\"BB- BB/B/ | \"G(add9)/D\"B3/2B/ B2 z2 (3zBB | \"Cmaj7/D\"B3 B/B/ \"Bbdim(addmaj7)/D\"BB/B/ BB | \"Gmaj9/D\"B3 B/B/ \"Em9\"BB BB |\n\"Cmaj7/D\"B3 B/B/ \"Gdim(addmaj7)/D\"B4 | \"B7#9#5\"B3 B/B/ \"Abmaj7/Bb\"B2 \"Gmaj7/A\"B3/2B/ | \"C(add9)/E\"B4 \"D/Eb\"B4- | B2 zB \"D/E\"BB BB |\n\"Cmaj7/D\"B3 B/B/ \"Gdim(addmaj7)/D\"B B2 B | \"G(add9)/D\"B2 B2 B2 B2 | \"Cmaj7/D\"B4 \"Bbdim(addmaj7)/D\"zB/B/ BB | \"Gmaj9/D\"B3 B/B/ \"G#m7b5\"B\"Am7\"B \"Bm7\"B\"E9sus\"B |\n\"Cmaj7/D\"B4 \"Gdim(addmaj7)/D\"B4 | \"B7#9#5\"B3 B/B/ \"Em9\"B2 z/B/B/B/ | \"A(add9)/C#\"B4 \"Cmaj7/D\"B4 | \"G(add9)\"B4 \"C13sus\"B3 B ||\nP:B\n\"Fmaj9/C\"B3 B/B/ \"Db(add#11)/C\"B3 B | \"Fmaj7/C\"B3 B/B/ \"E/C\"B3 B | \"Fmaj9\"B4 \"D7#9\"B2 B2 | \"D/Bb\"B4- \"A7#5\"B3 B/B/ |\n\"Dm7\"B3 B/B/ \"Db13sus\"B3 \"Db13\"B | \"Gbmaj9\"B3 B \"Ebm7\"B3 B/B/ | \"Abm7\"B4 \"Db13b9\"B3 B | \"D/E\"B B3- \"E6/9\"B4 |\n\"D/E\"z4 \"E6/9\"z4 | \"D/C#\"z4 \"C#m7\"z4 | \"Bm(add9)/C#\"z4 \"C#m7\"z4 | \"F/C#\"z8 |\n\"C#m7\"z4 \"C#m7(add11)\"z4 | \"F#sus\"B4 \"F#m\"!fermata!B4 | z4 \"C(add9)/E\"B2 B2 ||\nP:C\n\"D(add9)/F#\"B3 B/B/ \"Ab/B7\"B2 \"B7#5\"B2 | \"E7#9\"B4 \"A7#5\"B2 \"C/D\"B2- | !fermata!B4 \"C(add9)/E\"B2 B2 | \"D(add9)/F#\"B3 B/B/ \"Ab/B7\"B2 \"B7#5\"B2 |\n\"Em7\"B4 \"Eb7#9#5\"B4 | \"Db13#11\"B4 \"Bb13#11\"B4- | !fermata!B4 \"C(add9)/E\"B2 B2 | \"D(add9)/F#\"B3 B/B/ B2 \"B7#5\"B2 |\n\"Em7\"B4 \"Db13#11\"B4 | \"C13\"B4 \"B7#9#5\"B2 B2 | \"Em7\"B4 \"A13sus\"B2 \"A13\"B2 | \"C/D\"B4 \"D7\"!fermata!B3 B |\n\"N.C.\"BB BB \"D/E\"BB BB ||\nP:D\n!segno!\"Cmaj7/D\"B4 \"Gdim(addmaj7)/D\"B4 | \"G(add9)/D\"B2 B2 B2 B2 | \"Cmaj7/D\"B4 \"Bbdim(addmaj7)/D\"B4 | \"Gmaj9/D\"B4 \"G#m7b5\"B\"Am7\"B \"Bm7\"B\"E9sus\"B |\n\"Cmaj7/D\"B4 \"Gdim(addmaj7)/D\"B4 | \"B7#9#5\"B3 B/B/ \"Em7\"B2 \"Bm7\"B2 | \"A/C#\"B4 \"C13#11\"B4 | \"Bm7\"B2 z2 \"E7#9#5\"B2 B2 |\n\"Am11\"B4 \"B7#5\"B3 B | \"Em7\"B4 \"A13\"B3 B | \"Abmaj7b5/G\"B4 \"G(add9)\"z4 | \"Bbmaj7/C\"z4 \"C13b9\"z4 ||\nP:E\n|: \"Fmaj9/C\"z4 \"Db(add#11)/C\"z4 | \"Fmaj7/C\"z4 \"E/C\"z4 | \"Fmaj9\"z4 \"D7#9\"z4 | \"D/Bb\"z4 \"A7#5\"z4 |\n\"Dm7\"z4 \"Cbmaj7/Db\"z4 | \"Gbmaj9\"z4 \"Ebm9\"z4 | \"Abm9\"z4 \"Db13b9\"z4 | \"D/E\"z4 \"E6/9\"z4 |\nz8 | z8 | \"D/E\"z4 \"E7#9\"z4 | \"Cmaj7/D\"z4 \"Gdim(addmaj7)/D\"z4 |\n\"Gmaj7/D\"z8 | \"Cmaj7/D\"z4 \"Bbdim(addmaj7)/D\"z4 | \"Gmaj7/D\"z4 \"E7#9\"z4 | \"Cmaj7/D\"z4 \"Gdim(addmaj7)/D\"z4 |\n\"B7#9#5\"z4 \"Em7\"z4 | \"A/C#\"z4 \"C/D\"z4 | \"G(add9)\"z4 \"Bbmaj7/C\"z4 :| \"D/E\"z4 \"E6/9\"z4 |\nz8 | z8 | \"D/E\"z4 BB BB |]\n%coda\n\"Abmaj7b5/G\"!fermata!B8 | \"N.C.\"!fermata!z8 | \"G(add9)\"!fermata!B8 |]\n\n%unsure [bar 3] tied rhythm in second half approximate\n%unsure [bar 24] tenor fill\n%unsure [bars 25-29] rhythm slashes, written as rests\n%unsure [bars 30-31] bar 30 diamond (harmonic) notes; bar 31 marked Freely, cut time\n%unsure [bar 44] Orig. tempo; trumpets, lower voice also printed\n%unsure [bars 55-56] double-time feel (swing); bar 56 slashes as rests\n%unsure [bars 57-75] solo slashes as rests; bars 64-66 'till cue' vamp (bars 65-66 repeat signs)\n%unsure [bars 76-79] on cue vamp, then trumpets pickup into D.S. al Coda\n%unsure [bars 80-82] tenor cadenza over bar 81; bar 82 diamond note"
+},
+{
+"id": "New_Real_Book_Volume2/314-tunji",
+"book": "The New Real Book Vol. 2",
+"title": "Tunji",
+"pdf": "314",
+"form": "A 24 (tenor solos on A), B 24 (other solos), C ending",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 6,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form from text: tenor solos on A, then B for other solos, then C"
+},
+{
+"bars": [
+1,
+2
+],
+"groups": [
+0,
+1
+],
+"text": "piano intro figure, played 4 times"
+},
+{
+"bars": [
+11,
+12,
+13,
+14
+],
+"groups": [
+10,
+11,
+12,
+13
+],
+"text": "dense improvised runs; tuplet groupings approximate; bar 11 straight eighths"
+},
+{
+"bars": [
+18,
+19,
+20,
+21,
+22
+],
+"groups": [
+17,
+18,
+19,
+20,
+21
+],
+"text": "improvised elaboration; bar 22 nested triplet simplified"
+},
+{
+"bars": [
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50
+],
+"groups": [
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49
+],
+"text": "solo slashes and repeat bars written as rests"
+},
+{
+"bars": [
+51,
+52
+],
+"groups": [
+50,
+51
+],
+"text": "piano vamp till cue, drums solo around figure"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Tunji\nC:John Coltrane\nP:ABC\n%source New Real Book Vol 2 p332 (pdf 314)\n%style (Med. Swing, q=110)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 24 (tenor solos on A), B 24 (other solos), C ending\n%unsure [form] form from text: tenor solos on A, then B for other solos, then C\nM:4/4\nL:1/8\nK:E\n%intro\n|: \"(C#sus(add9))\"B2 zB- B4- | B8 :|\nP:A\n|: \"C#sus(add9)\"B B3 B B3 | B B3 BB zB- | B3 B- B4 | z8 |\nB B3 B B3 | B B3 BB zB- | BB- B6 | z2 zB- B2- (3BBB |\nB4 BB z2 | z2 z(3B/B/B/ (6:4B/B/B/B/B/B/ (6:4B/B/B/B/B/B/ | BB BB BB z2 | zB/4B/4B/4B/4 (3BBB BB (5:4B/B/B/B/B/ |\nB B3 B B3 | B B3 BB zB- | B4 z4 | z B3- (3BBB (3BBB |\nB4- (3BBB BB- | B3 B (3BBz z2 | (3zB2(3BBB (3BBB (3BBB- | BB (3BBB (3BBB B2 |\nB B3 B B3 | B B3 BB zB- | B8 | z8 :|\nP:B\n|: \"C#7\"z8 | z8 | \"(F#7)\"z8 | z8 |\n\"C#7\"z8 | z8 | z8 | z8 |\n\"F#7\"z8 | z8 | z8 | z8 |\n\"C#7\"z8 | z8 | z8 | z8 |\n\"G#7\"z8 | z8 | \"F#7\"z8 | z8 |\n\"C#7\"z8 | \"B7\"z8 | \"A7/E\"z8 | \"D7\"z8 :|\nP:C\n|: \"(C#sus(add9))\"B2 zB- B4- | B8 :| \"C#m11\"B B3 B B3 | \"G#7#9#5\"B B3 BB z\"C#7\"B- | !fermata!B8 |]\n\n%unsure [bars 1-2] piano intro figure, played 4 times\n%unsure [bars 11-14] dense improvised runs; tuplet groupings approximate; bar 11 straight eighths\n%unsure [bars 18-22] improvised elaboration; bar 22 nested triplet simplified\n%unsure [bars 27-50] solo slashes and repeat bars written as rests\n%unsure [bars 51-52] piano vamp till cue, drums solo around figure"
+},
+{
+"id": "New_Real_Book_Volume2/315-tunnel-vision",
+"book": "The New Real Book Vol. 2",
+"title": "Tunnel Vision",
+"pdf": "315",
+"form": "ABCDE + D.C. to A, coda 10+13+19+9+8",
+"bad": 1,
+"off": [
+12
+],
+"first": 1,
+"unsure": 9,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "section lengths counted from chart; D.C. al Coda, take coda on repeat of A"
+},
+{
+"bars": [],
+"groups": [],
+"text": "very dense 16th-note funk lines; rhythms throughout are a best reading, check against the page"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+"text": "16th syncopations and chord placements approximate; Cbmaj7/Db falls late in bar 4"
+},
+{
+"bars": [
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19
+],
+"groups": [
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18
+],
+"text": "bass melody; 16th rhythms approximate"
+},
+{
+"bars": [
+20,
+21,
+22,
+23
+],
+"groups": [
+19,
+20,
+21,
+22
+],
+"text": "bass fills over slashes and repeat bars, written as rests"
+},
+{
+"bars": [
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42
+],
+"groups": [
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41
+],
+"text": "guitar solo over synth rhythm hits (x noteheads, dotted-8th/16th pattern) written as rests; bar count and chord placement approximate"
+},
+{
+"bars": [
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51
+],
+"groups": [
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50
+],
+"text": "gtr & synth line (1st x solo continues, 2nd x play line); dotted rhythms approximate; bar 49 vamp indef."
+},
+{
+"bars": [
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59
+],
+"groups": [
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58
+],
+"text": "mallets, chordal; rhythms approximate"
+},
+{
+"bars": [
+60,
+61,
+62,
+63
+],
+"groups": [
+59,
+60,
+61,
+62
+],
+"text": "coda rhythms approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Tunnel Vision\nC:Gary Willis\nP:ABCDEA\n%source New Real Book Vol 2 p333-334 (pdf 315-316)\n%style (Med. Funk, q=102)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCDE + D.C. to A, coda 10+13+19+9+8\n%unsure [form] section lengths counted from chart; D.C. al Coda, take coda on repeat of A\n%unsure [general] very dense 16th-note funk lines; rhythms throughout are a best reading, check against the page\nM:4/4\nL:1/8\nK:C\nP:A\n|: \"Gm11\"B/BB/ \"Abmaj13\"Bz/B/ z/B/z/B/ B/B/z/B/ | \"Ebm9\"B3/2B/ \"D7#9#5\"Bz/B/ z/B/z/B/ \"Bm7\"z/B/B- | B3/2B/ \"D#7#9#5\"z/B/z/B/ \"Ebmaj7#5/A\"z/B/\"D7#9#5\"B/z/ \"Bb13sus\"z/B/-\"Ebmaj13\"B/B/- | \"(Ebmaj13)\"B3/2B/ \"G7#9#5\"z/B/z/B/ \"Gbmaj7/Ab\"B/B/z/B/ B/B/\"Cbmaj7/Db\"B/B/ |\nz3/2\"Em9\"B/ z/B/z/B/ \"Ebmaj9\"z/B/z/B/ \"F#m9\"B/B/!coda!\"Fmaj9\"B/B/- | \"(Fmaj9)\"B/BB/ \"A7#9#5\"BB \"Bbm9\"B/B3/2 \"Bm9\"B/B/-B | BB/B/- BB \"Ebm9\"B/B/B/B/ \"F#m9\"B/B/\"Dmaj7#5/E\"B/\"D13\"B/- | \"(D13)\"B/BB/ \"Bb7#9#5\"B/B/-B/B/ \"Am9\"B/B/B/B/- Bz/B/- |\n\"Gm9\"B8 | z8 :|\nP:B\nz3/2\"Gm9\"B/ B/B/B/B/ \"Amaj13\"B/B/-B/B/ B/B/-B/B/ | \"Em9\"B/B/B/B/ \"Eb7#9#5\"B2- Bz3/2\"E7#9#5\"B/B/B/ B/\"Ab/Bb\"B/- | \"(Ab/Bb)\"B/B/B/B/- \"Eb7#9#5\"B/BB/ \"B13sus\"z/B/B/B/ B/B/B/B/ | \"Emaj13\"B/B/B/B/- B3/2z/ \"Ab7#9#5\"z/z/\"Gmaj7/A\"z/B/ \"Cmaj7/D\"B/B/B/B/ |\n\"Cm11\"BB/B/- B/B/B/B/ \"Fm9\"B/B/B/B/- B/B/B/B/ | \"Emaj9\"B/B/B/B/- \"Gm7\"B2 z3/2\"Gbmaj9\"B/ \"Bb7#9#5\"B/B/B/\"Bm9\"B/- | \"(Bm9)\"B/B/B/B/- B/B/B/B/ \"Cm9\"B/B/B/B/- B/B/\"Bm9\"B/B/ | B/B/B/B/- \"Cm9\"B/B/z/B/ \"Em9\"B/B/B/B/ \"Gm9\"B/B/B/B/- |\n\"(Gm9)\"(3B/B/B/B \"Fmaj13\"B/B/B/B/ \"Ebmaj13#11\"B/B/B/B/ \"B7#9#5\"B/B/B/B/ | \"Abmaj7/Bb\"z8 | z8 | z8 |\nz8 ||\nP:C\n|: \"Bb6/9\"z4 \"F13/Bb\"z4 | z8 | \"Bb13b9/F\"z4 \"Bb13(omit3)\"z4 | \"Bb7#9#5\"z8 |\nz4 \"Abm11\"z4 | \"(Abm11)\"z8 | z4 \"Abm9\"z4 | z8 |\n\"Bb6/9\"z4 \"F13/Bb\"z4 | z4 \"Bb13b9\"z2 \"Bb13(omit3)\"z2 | \"(Bb13)\"z4 \"Bb7#9#5\"z4 | \"D(add9)/F#\"z4 \"Amaj7/B\"z4 |\n\"Bbm/B\"z4 \"Cm9\"z2 \"Abm9\"z2 | \"(Abm9)\"z8 | z8 | \"Eb6/9\"z2 \"Cm6/9\"z2 \"Bb13b9\"z2 \"Eb6/9(add11)\"z2 |\n\"(Eb6/9)\"z2 \"E13\"z2 \"A13\"z2 \"D6/9\"z2 | \"Dmaj7(#11,13)\"z8 | z8 :|\nP:D\n|: \"C#sus(b9)\"B3/2\"F#m7\"B/- B2- B3/2\"C#7(#9b9)sus\"B/- B3/2B/ | \"F#13(omit3)\"B2- B2 \"F13\"z3/2B/- \"Emaj9\"B3/2\"C#m11\"B/- | \"(C#m11)\"B3 \"C#7sus(b9)\"z/B/- B3/2\"F#m11\"B/- B3/2\"Em11\"B/- | B2- B2 \"C#m11\"z3/2B/- B3/2\"C#7sus(b9)\"B/- |\nB3/2\"F#m11\"B/- B3/2\"Em11\"B/- B3 z/B/- |1 \"Am11\"B8 | z8 :|2 \"Am11\"B8- |\nB8 ||\nP:E\n\"Cmaj7b5/E\"B3/2B/- B\"Gbmaj7b5\"B/B/- BB/B/- \"A9\"B2 | \"E(add9,add#11)\"B/B3/2- \"Cm7(11)\"B/B3/2 \"F#7sus\"B/B3/2 B3/2\"Gm7(11b5)\"B/- | \"C#m/Cb\"BB/B/- B\"Gb13/E\"B/B/- BB Bz | \"Fmaj7b5/A\"B/B/B/B/ \"G13\"B/B/-B/B/ B/B/B/B/- \"C7sus/F#13\"B/B3/2- |\nBB- Bz \"B13b9\"z/B/B \"E7#9#5\"B/B/-B/\"Abm13/Bb\"B/- | \"(Abm13/Bb)\"B2 z/\"Bbsus\"B/B \"Ebmaj7#5\"B/B/B/B/ \"Abm9(maj7)\"z/B/B/B/ | \"Cm7(11)\"B8- | B8 ||\n%coda\n\"(Fmaj9)\"B/BB/ \"A7#9#5\"BB \"Bbm9\"B/B/-B \"Bm9\"B/B/-\"C7#9#5\"B | \"Dm11/A\"B/BB/ \"Ebmaj7b5/G\"B/B/-B/B/ \"Emaj13\"B/B/B/B/ \"Fmaj7#5/A\"B/B/B/B/- | \"(Fmaj7#5/A)\"B/B/B/B/ \"F#m7(11)\"B2 z2 z3/2\"C#7sus\"B/ | z3/2\"Dmaj7b5\"B/ z2 z4 |]\n\n%unsure [bars 1-10] 16th syncopations and chord placements approximate; Cbmaj7/Db falls late in bar 4\n%unsure [bars 11-19] bass melody; 16th rhythms approximate\n%unsure [bars 20-23] bass fills over slashes and repeat bars, written as rests\n%unsure [bars 24-42] guitar solo over synth rhythm hits (x noteheads, dotted-8th/16th pattern) written as rests; bar count and chord placement approximate\n%unsure [bars 43-51] gtr & synth line (1st x solo continues, 2nd x play line); dotted rhythms approximate; bar 49 vamp indef.\n%unsure [bars 52-59] mallets, chordal; rhythms approximate\n%unsure [bars 60-63] coda rhythms approximate"
+},
+{
+"id": "New_Real_Book_Volume2/320-unless-it-s-you-orbit",
+"book": "The New Real Book Vol. 2",
+"title": "Unless It's You (a.k.a. Orbit)",
+"pdf": "320",
+"form": "A 24 (repeated; solo on A; then Ending)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+3,
+20,
+23
+],
+"groups": [
+2,
+19,
+22
+],
+"text": "triplet bracket read as covering rest + two quarters (quarter-note triplet over beats 3-4)"
+},
+{
+"bars": [],
+"groups": [],
+"text": "\"melody transcribed as played, rhythm freely interpreted\"; chords in parentheses are for solos"
+},
+{
+"bars": [
+32,
+33,
+34,
+35,
+36,
+37
+],
+"groups": [
+31,
+32,
+33,
+34,
+35,
+36
+],
+"text": "rit. al fine; slurs/ties across bars 32-34 read as ties, may be phrase slurs"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Unless It's You (a.k.a. Orbit)\nC:Bill Evans\nP:A\n%source New Real Book Vol 2 p339 (pdf 320)\n%style (Med. Swing (in 2), h=148)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form A 24 (repeated; solo on A; then Ending)\nM:C\nL:1/8\nK:C\nP:A\n|: \"Am6\"\"^(Am7)\"B4 \"F#7#5\"B3 B | \"Bm7\"B4- \"E7\"BB BB- | \"Amaj7\"B4 \"A7#5\"(3z2B2B2 | \"Dm7\"B4 \"G7\"B2 zB |\n\"Cmaj7\"B4 \"C7#5\"B2 B2 | \"Fm7\"B4 \"Bb7\"zB BB- | \"Ebmaj7\"B4 \"Eb7#5\"B3 B | \"Abm7\"B4 \"E7#5\"z B3 |\n\"Am7\"B4 \"C7\"B4 | \"Fmaj7\"B4 \"G#7#5\"zB z2 | \"C#m7\"B4 \"F7#5\"B4 | \"Bbm7\"B4 \"Db7\"z B2 B- |\n\"Gbmaj7\"B4 \"A7#5\"z2 B2 | \"Dm7\"B4 \"F#7#5\"B4 | \"Bm7\"B4 \"D7\"z2 B2 | \"Gmaj7\"B4 \"Bb7#5\"z2 zB |\n\"Ebm7\"B4 \"G7#5\"z B2 B- | \"Cm7\"B6 \"F7\"B2 | \"Bbmaj7\"B4 \"Ebmaj7\"B4 | \"Abmaj7\"B4 \"D7#5\"(3z2B2B2 |\n\"Gm7\"B4 \"C7\"z B3 | \"Fmaj7\"B6 \"Bbmaj7\"B2 | \"Ebmaj7\"B4 \"A7#9#5\"(3z2B2B2 | \"Dm6\"\"^(Dm7)\"B4 \"E7#9\"zB B2 :|\n%ending\n\"Am6\"B4 \"F#7#5\"B3 B | \"Bm7\"B4- \"E7\"BB BB- | \"Amaj7\"B4 \"A7#5\"B2 B2 | \"Dm7\"B4 \"G7\"B3 B |\n\"Cmaj7\"B4 \"C7#5\"zB BB- | \"Fm7\"B4 \"Bb7\"B2 B2 | \"Ebmaj7\"B4 \"Eb7#5\"(3z2B2B2 | \"G#m7\"B4 \"F#m13\"B4- |\n\"Emaj7\"B4 \"Dm9\"B4- | \"Cmaj7\"B4 \"Bbmaj9#11\"B4- | \"Am9\"B4 \"Abm13\"B4 | \"Gm7\"B4 \"Fm7\"B4 |\n\"Cm11\"!fermata!B8 |]\n\n%unsure [bars 3, 20, 23] triplet bracket read as covering rest + two quarters (quarter-note triplet over beats 3-4)\n%unsure [general] \"melody transcribed as played, rhythm freely interpreted\"; chords in parentheses are for solos\n%unsure [bars 32-37] rit. al fine; slurs/ties across bars 32-34 read as ties, may be phrase slurs"
+},
+{
 "id": "The_Colorado_Cookbook/012-a-night-in-tunisia",
 "book": "The Colorado Cookbook",
 "title": "A Night in Tunisia",
@@ -5233,6 +25343,135 @@ window.RHYTHM_TRANSCRIPTIONS = [
 "abc": "X:1\nT:Laura\nC:David Raskin\nP:ABCD\n%source The Colorado Cookbook p122 (pdf 125)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Upper-row alternate chords over held notes are given in parentheses.\n%form ABCD 8+8+8+8 (C repeats A)\nM:4/4\nL:1/8\nK:C\n|:\nP:A\n\"Am9\"B4 B4- | \"D7b9\"B2 BB (3B2B2B2 | \"Gmaj7\"B3 B \"C7\"B4- | \"Gmaj7\"\"(Bm7)\"B2- \"(E7)\"B2- \"(Am7)\"B2- \"(D7)\"B2 |\n\"Gm9\"B4 B4- | \"C7b9\"B2 BB (3B2B2B2 | \"Fmaj7\"B4- \"Bb7\"B4- | \"Fmaj7\"\"(Am7)\"B2- \"(D7)\"B2- \"(Gm7)\"B2- \"(C7)\"B2 ||\nP:B\n\"Fm7\"z2 B2 B4- | \"Bb7b9\"B2 B2 (3B2B2B2 | \"Ebmaj7\"B3 B B4- | \"Cm7\"B2 B2 B2 B2 |\n\"Am7b5\"B3 B \"D7b9\"B4- | B4 B4 | \"Gmaj7\"B8 | \"Bm7\"z2 B2 \"E7b9\"B2 B2 ||\nP:C\n\"Am9\"B4 B4- | \"D7b9\"B2 BB (3B2B2B2 | \"Gmaj7\"B3 B \"C7\"B4- | \"Gmaj7\"\"(Bm7)\"B2- \"(E7)\"B2- \"(Am7)\"B2- \"(D7)\"B2 |\n\"Gm9\"B4 B4- | \"C7b9\"B2 BB (3B2B2B2 | \"Fmaj7\"B4- \"Bb7\"B4- | \"Fmaj7\"\"(Am7)\"B2- \"(D7)\"B2- \"(Gm7)\"B2- \"(C7)\"B2 ||\nP:D\n\"Fm7\"z2 B2 B4- | \"G7b9\"B2 B2 (3B2B2B2 | \"Cmaj7\"B3 B B4- | \"D7\"B4 B2 B2 |\n\"Ebm7\"B4 \"Ab7b9\"B4 | \"Dm7\"z2 BB \"G9\"(3B2B2B2 |1 \"C6/9\"B8 | \"Bm7\"z4 \"E7b9\"z4 :|\n%to ending\n\"F#m7b5\"B4 \"B7b9\"B4 | \"Em7b5\"B4 \"A7#9\"B4 | \"Dm7\"B4 \"Dbmaj7\"B4 | \"Cmaj7\"!fermata!B8 |]\n\n%unsure [bar 30] bar 6 of D: the two notes on beat 2 read as eighths (could be 16ths)"
 },
 {
+"id": "The_Colorado_Cookbook/126-let-s-eat",
+"book": "The Colorado Cookbook",
+"title": "Let's Eat",
+"pdf": "126",
+"form": "ABCD 8+8+8+8 (D.C. al Coda after solos)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24
+],
+"groups": [
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23
+],
+"text": "section C has chords only, no melody printed; written as rests"
+},
+{
+"bars": [
+31,
+32
+],
+"groups": [
+30,
+31
+],
+"text": "last note and whole note are a bass & piano figure (bass clef) shown on the melody staff"
+},
+{
+"bars": [
+34
+],
+"groups": [
+33
+],
+"text": "drum fill over the rest before the final accented C-"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Let's Eat\nC:Steve Swallow\nP:ABCD\n%form ABCD 8+8+8+8 (D.C. al Coda after solos)\n%source The Colorado Cookbook p123 (pdf 126)\n%style (Med. Fast Latin)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Cm\nP:A\n\"Cm7\"B2 BB z B2 B | z \"Dm7\"B2 B \"G7\"B2 B2 | \"Cm7\"B2 BB z B2 B | z \"Dm7\"B2 B \"G7\"B2 zB |\n\"Cm7\"B2 BB z B2 B | z \"Dm7\"B2 B \"G7\"B2 B2 | \"Cm7\"B2 BB z B2 B | z \"Dm7\"B2 B \"G7\"B2 z2 |\nP:B\n\"Cm7\"B2 BB z B2 B | z \"Dm7\"B2 B \"G7\"B2 B2 | \"Cm7\"B2 BB z B2 B | z \"Dm7\"B2 B \"G7\"B2 zB |\n\"Cm7\"B2 BB z B2 B | z \"Dm7\"B2 B \"G7\"B2 B2 | \"Cm7\"B2 BB z B2 B | z \"Fm7\"B2 B \"Bb7\"B2 z2 |\nP:C\n\"Ebmaj7\"z8 | z8 | \"Eo7\"z8 | z8 |\n\"Fm7\"z8 | \"F#o7\"z8 | \"G7\"z8 | \"Do7\"z4 \"G7\"z4 |\nP:D\n\"Cm7\"B2 BB z B2 B | z \"Dm7\"B2 B \"G7\"B2 B2 | \"Cm7\"B2 BB z B2 B | z \"Dm7\"B2 B \"G7\"B2 zB |\n\"Cm7\"B2 BB z B2 B | z \"Dm7\"B2 B \"G7\"B2 B2 | \"Cm7\"B2 zB- B4- | B8 ||\n%solos (open), then D.C. al Coda\n%coda\n\"Dm7\"B2 BB z\"G7\"B z2 | z4 !accent!\"Cm7\"B2 z2 |]\n\n%unsure [bars 17-24] section C has chords only, no melody printed; written as rests\n%unsure [bars 31-32] last note and whole note are a bass & piano figure (bass clef) shown on the melody staff\n%unsure [bar 34] drum fill over the rest before the final accented C-"
+},
+{
+"id": "The_Colorado_Cookbook/127-like-no-other",
+"book": "The Colorado Cookbook",
+"title": "Like No Other",
+"pdf": "127",
+"form": "A 24 (repeated, then Ending Only)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no section letters printed; form read as one repeated 24-bar chorus"
+},
+{
+"bars": [
+9
+],
+"groups": [
+8
+],
+"text": "rhythm section hits (x noteheads, marked RHY) under the rests not written"
+},
+{
+"bars": [
+24
+],
+"groups": [
+23
+],
+"text": "printed bar adds to 7 eighths; last held note lengthened; final (B) eighth is the \"to ending only\" pickup"
+},
+{
+"bars": [
+25,
+26,
+27
+],
+"groups": [
+24,
+25,
+26
+],
+"text": "ritard; chord placement in the ending approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Like No Other\nC:Bob Gillis\n%form A 24 (repeated, then Ending Only)\n%unsure [form] no section letters printed; form read as one repeated 24-bar chorus\n%source The Colorado Cookbook p124 (pdf 127)\n%style (Loose Latin Feel (pseudo-calypso))\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:C|\nL:1/8\nK:C\n|: \"Dmaj7\"B3 B B B2 B- | \"B7\"B B2 B- B2 zB | \"Bb7\"B B2 B2 B2 B- | \"Ebmaj7\"B B3 z B2 B |\n\"C7#9b9\"B3 B B B2 B- | \"Fm7\"B B2 B- B3 B | \"F#7\"B3 B B B2 B- | \"B7\"BB- B6 |\n\"Esus4\"z4 zBBB | \"C#7\"B B2 B- B2 zB | \"C7\"B B2 B2 B2 B- | \"Fmaj7\"BB B2- B B2 B |\n\"D7#9b9\"B3 B B B2 B- | \"Gm\"B B2 \"Gm7/F\"B- B3 B | \"Em7b5\"B B2 B2 \"A7#9b9\"B2 B- | \"Dmaj7\"B6 zB |\n\"A7\"B B2 \"F#7b9/A#\"B2 B2 B- | \"Bm\"BB B2- \"Bm/A\"B3 B | \"G#m7b5\"B B2 \"C#7#9b9\"B2 B2 B- | \"F#m\"B B3- \"A7\"B2 zB |\n\"Dmaj7\"B3 \"C7#11\"B B B2 B- | \"B7\"B B2 B- B2 zB | \"Bb7\"B3 B B B2 B- | \"Em7b5\"B B2 B- \"A7\"B3 B :|\n%ending only\n\"Dmaj7\"B4 \"C7#11\"zBBB | \"B7\"B B2 B- B3 B/B/ | \"E7\"B B2 \"C#7#9\"B- B4- | !fermata!B8 |]\n\n%unsure [bar 9] rhythm section hits (x noteheads, marked RHY) under the rests not written\n%unsure [bar 24] printed bar adds to 7 eighths; last held note lengthened; final (B) eighth is the \"to ending only\" pickup\n%unsure [bars 25-27] ritard; chord placement in the ending approximate"
+},
+{
+"id": "The_Colorado_Cookbook/128-limehouse-blues",
+"book": "The Colorado Cookbook",
+"title": "Limehouse Blues",
+"pdf": "128",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "chords printed only in parentheses are written as \"(D7)\"/\"(B7)\" alternates with no main chord"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Limehouse Blues\nC:Phillip Braham\nP:ABCD\n%form ABCD 8+8+8+8\n%source The Colorado Cookbook p125 (pdf 128)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Ab\nP:A\n\"Db7\"B4 B2 B2 | \"(D7)\"B4 B2 B2 | \"Db7\"B4 B2 B2 | B8 |\n\"Bb7\"z2 B2 B2 B2 | \"(B7)\"B4 B2 B2 | \"Bb7\"B4 B2 B2 | B8 ||\nP:B\n\"Abmaj7\"z2 B2 B2 B2 | \"Dbmaj7\"B4 B2 B2 | \"Gm7\"B4 \"C7\"B2 B2 | \"Fm6\"B8 |\n\"Bb7\"z2 B2 B2 B2 | B2 B4 B2 | \"Eb7\"B4 B2 B2 | B4 \"(D7)\"B2 B2 ||\nP:C\n\"Db7\"B4 B2 B2 | \"(D7)\"B4 B2 B2 | \"Db7\"B4 B2 B2 | B8 |\n\"Bb7\"z2 B2 B2 B2 | \"(B7)\"B4 B2 B2 | \"Bb7\"B4 B2 B2 | \"Dbm7\"B4 \"Gb7\"B4 ||\nP:D\n\"Ab7\"z2 B2 \"G7\"B2 B2 | \"Gb7\"B2 B4 \"F7\"B2 | \"Bbm7\"B4 B2 B2 | B8 |\n\"Bbm7\"z2 B2 B2 B2 | \"Eb7\"B2 B4 B2 | \"Ab7\"B4 B2 B2 | \"(D7)\"B8 |]\n\n%unsure [general] chords printed only in parentheses are written as \"(D7)\"/\"(B7)\" alternates with no main chord"
+},
+{
 "id": "The_Colorado_Cookbook/129-little-sunflower",
 "book": "The Colorado Cookbook",
 "title": "Little Sunflower",
@@ -5294,6 +25533,157 @@ window.RHYTHM_TRANSCRIPTIONS = [
 "abc": "X:1\nT:Pfrancing\nC:Miles Davis\n%source The Colorado Cookbook p126 (pdf 129)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues (solos on F blues)\n%unsure [form] form inferred, no section letters printed\nM:4/4\nL:1/8\nK:F\nz4 zB (3BBB |: \"F7\"BB z2 zB (3BBB | BB z2 zB (3BBB | BB z2 zB (3BBB |\nBB z2 zB (3BBB | \"Bb7\"BB B2 zB (3BBB | BB B2 zB (3BBB | \"F7\"BB z2 z2 (3BBB |\n\"Ab7\"BB z2 zB (3BBB | \"Db7\"BB z2 zB (3BBB | \"C7#9\"BB z2 zB BB | \"F7\"B2 (3B/B/B/B BB B2 |1 \"F7\"B2 z2 zB (3BBB :|2 \"F7\"B2 z2 z4 |]\n\n%unsure [bars 11-12] bars 10-11 dense ending figure, grouping guessed"
 },
 {
+"id": "The_Colorado_Cookbook/130-locomotion",
+"book": "The Colorado Cookbook",
+"title": "Locomotion",
+"pdf": "130",
+"form": "AABA 12+12+8+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+9,
+10,
+11,
+12,
+13
+],
+"groups": [
+8,
+9,
+10,
+11,
+12
+],
+"text": "rhythm slashes (blowing bars) written as rests with chords"
+},
+{
+"bars": [
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21
+],
+"groups": [
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20
+],
+"text": "rhythm slashes written as rests with chords"
+},
+{
+"bars": [
+30,
+31,
+32,
+33
+],
+"groups": [
+29,
+30,
+31,
+32
+],
+"text": "rhythm slashes written as rests with chords"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Locomotion\nC:John Coltrane\nP:AABA\n%form AABA 12+12+8+12\n%source The Colorado Cookbook p127 (pdf 130)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Bb\nz4 z2 zB |\nP:A\n|: \"Bb7\"BB- B4- BB | BB z2 z2 zB | BB- B4- BB | BB BB z2 zB |\n\"Eb7\"BB- B4- BB | BB z2 z2 zB | \"Bb7\"BB- B4- BB | BB BB z4 |\n\"Cm7\"z8 | \"F7\"z8 | \"Bb7\"z8 |1 \"Cm7\"z4 \"F7\"z4 :|2\n\"Bb7\"z8 ||\nP:B\n\"Ab7\"z8 | z8 | \"G7\"z8 | z8 |\n\"Gb7\"z8 | z8 | \"F7\"z8 | z6 zB ||\nP:A\n\"Bb7\"BB- B4- BB | BB z2 z2 zB | BB- B4- BB | BB BB z2 zB |\n\"Eb7\"BB- B4- BB | BB z2 z2 zB | \"Bb7\"BB- B4- BB | BB BB z4 |\n\"Cm7\"z8 | \"F7\"z8 | \"Bb7\"z8 | z8 |]\n\n%unsure [bars 9-11, 12-13] rhythm slashes (blowing bars) written as rests with chords\n%unsure [bars 14-21] rhythm slashes written as rests with chords\n%unsure [bars 30-33] rhythm slashes written as rests with chords"
+},
+{
+"id": "The_Colorado_Cookbook/131-long-ago-far-away",
+"book": "The Colorado Cookbook",
+"title": "Long Ago (And Far Away)",
+"pdf": "131",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "lyrics not given in this book"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Long Ago (And Far Away)\nC:Jerome Kern\nP:ABCD\n%form ABCD 8+8+8+8\n%source The Colorado Cookbook p128 (pdf 131)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:F\nP:A\n\"Fmaj7\"B6 \"Dm7\"B2 | \"Gm7\"B2 B2 \"C7\"B2 B2 | \"Fmaj7\"B6 \"Dm7\"B2 | \"Gm7\"B2 B2 \"C7\"B2 B2 |\n\"Fmaj7\"B6 \"Dm7\"B2 | \"Gm7\"B6 \"C7\"B2 | \"Am7\"B2 B2 \"D7\"B2 B2 | \"Gm7\"B4 \"C7\"B4 ||\nP:B\n\"Abmaj7\"B6 \"Fm7\"B2 | \"Bbm7\"B2 B2 \"Eb7\"B2 B2 | \"Abmaj7\"B6 B2 | \"Dm7\"B2 B2 \"G7\"B2 B2 |\n\"Cmaj7\"B6 B2 | \"Am7\"B6 \"D7#9\"B2 | \"Gm7\"B8- | \"C7\"B6 z2 ||\nP:C\n\"Fmaj7\"B6 \"Dm7\"B2 | \"Gm7\"B2 B2 \"C7\"B2 B2 | \"Fmaj7\"B6 \"Dm7\"B2 | \"Gm7\"B2 B2 \"C7\"B2 B2 |\n\"Fmaj7\"B6 \"Dm7\"B2 | \"Gm7\"B6 \"C7\"B2 | \"Am7\"B2 B2 \"D7\"B2 B2 | \"Gm7\"B4 \"C7\"B4 ||\nP:D\n\"Cm7\"B6 B2 | \"F7\"B2 B2 B2 B2 | \"Bbmaj7\"B8 | \"Eb7\"z2 B2 B2 B2 |\n\"Am7\"B6 \"D7\"B2 | \"Gm7\"B2 B2 \"C7\"B2 B2 | \"Fmaj7\"B8- | \"Gm7\"B4 \"C7\"z4 |]\n\n%unsure [general] lyrics not given in this book"
+},
+{
+"id": "The_Colorado_Cookbook/132-love-for-sale",
+"book": "The Colorado Cookbook",
+"title": "Love For Sale",
+"pdf": "132",
+"form": "AABC 16+16+16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+31,
+32
+],
+"groups": [
+30,
+31
+],
+"text": "standard chords Gm7b5 | C7b9 written plain; the printed alternate (A7alt/Eb D7alt/Ab | Gm7b5 C7b9) in parentheses"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Love For Sale\nC:Cole Porter\nP:AABC\n%form AABC 16+16+16+16\n%source The Colorado Cookbook p129 (pdf 132)\n%style (Latin Feel; B section Swing Feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%note Book: choose chords in or out of parentheses before starting.\nM:4/4\nL:1/8\nK:Bb\nP:A\n|: \"Ebmaj7\"\"(Eb7)\"B8- | B6 B2 | \"Bbm\"\"(Bb7)\"B8- | B8 |\n\"Ebmaj7\"\"(Eb7)\"z2 BB B2 B2 | B2 B4 B2 | \"Bbm\"\"(Bb7)\"B8- | B8 |\n\"Ebm7\"z2 BB B2 B2 | \"Ab7\"B2 B2 B4 | \"Dbmaj7\"z2 BB B2 B2 | \"Gb7\"B2 B2 B4 |\n\"Cm7b5\"B8- | \"F7#9\"B6 B2 |1 \"Bbm\"B8- | B6 z2 :|2\n\"Bbmaj7\"\"(Bbm)\"B8- | \"Fm7\"B6 \"Bb7\"z2 ||\nP:B\n%swing feel\n\"Ebm7\"z2 BB B2 B2 | \"Ab7b9\"B2 B2 B4 | \"Dbmaj7\"z2 BB B2 B2 | \"Fm7\"B4- \"Bb7\"B4 |\n\"Ebm7\"z2 BB B2 B2 | \"Ab7\"B2 B2 B4 | \"Dbmaj7\"z2 BB B2 B2 | B8 |\n\"Fm7\"z2 BB B2 B2 | \"Bb7b9\"B2 B2 B4 | \"Ebm\"z2 B2 (3B2B2B2 | B2 B2 B4 |\n\"Gm7b5\"\"(A7alt/Eb)\"B4 \"(D7alt/Ab)\"B4 | \"C7b9\"\"(Gm7b5)\"B4 \"(C7b9)\"B4 | \"F#m7\"z2 BB B2 \"B7\"B2 | \"Fm7b5\"B4 \"Bb7b9\"B4 ||\nP:C\n%latin feel\n\"Ebmaj7\"\"(Eb7)\"B8- | B6 B2 | \"Bbm\"\"(Bb7)\"B8- | B8 |\n\"Ebmaj7\"\"(Eb7)\"z2 BB B2 B2 | B2 B4 B2 | \"Bbm\"\"(Bb7)\"B8- | B8 |\n\"Ebm7\"z2 BB B2 B2 | \"Ab7\"B2 B2 B4 | \"Db7\"z2 BB B2 B2 | \"Gb7\"B2 B2 B4 |\n\"Cm7b5\"B8- | \"F7#9\"B6 B2 | \"Bbm\"B8- | B4 z4 |]\n\n%unsure [bars 31-32] standard chords Gm7b5 | C7b9 written plain; the printed alternate (A7alt/Eb D7alt/Ab | Gm7b5 C7b9) in parentheses"
+},
+{
+"id": "The_Colorado_Cookbook/133-mamacita",
+"book": "The Colorado Cookbook",
+"title": "Mamacita",
+"pdf": "133",
+"form": "A 12 (head; solos on F blues; D.S. al Fine)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no form printed beyond one lettered 12-bar section"
+},
+{
+"bars": [
+1,
+2,
+3,
+4
+],
+"groups": [
+0,
+1,
+2,
+3
+],
+"text": "bass-clef bass line under the intro and head not transcribed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Mamacita\nC:Joe Henderson\nP:A\n%form A 12 (head; solos on F blues; D.S. al Fine)\n%unsure [form] no form printed beyond one lettered 12-bar section\n%source The Colorado Cookbook p130 (pdf 133)\n%style (Latin Jazz)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:F\n%intro (to A on cue)\n|: \"F9sus4\"z8 | z8 | z8 | z4 z2 z(B) :|\nP:A\n|: \"F9sus4\"B2 BB- B4- | B6 zB | B2 B2 BB BB- | \"F9\"B3 B B3 B |\n\"Bb9\"B2 BB BB BB- | B3 B z2 zB | \"F9sus4\"B2 BB BB BB- | B3 B z4 |\n\"C7#9\"B B3 B B3 | \"Bb7#9\"B B3 B B2 B | \"F9sus4\"B2 BB BB BB | \"C7#9\"z8 :|\n%solos on blues in F; after final solo D.S. al Fine (Fine on final time only)\n\n%unsure [bars 1-4] bass-clef bass line under the intro and head not transcribed"
+},
+{
 "id": "The_Colorado_Cookbook/134-marie-antoinette",
 "book": "The Colorado Cookbook",
 "title": "Marie Antoinette",
@@ -5316,6 +25706,764 @@ window.RHYTHM_TRANSCRIPTIONS = [
 ],
 "note": "Rhythms, chords and lyrics only.",
 "abc": "X:1\nT:Marie Antoinette\nC:Wayne Shorter\nP:AB\n%source The Colorado Cookbook p131 (pdf 134)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+8\nM:4/4\nL:1/8\nK:C\nz4 z B2 B ||\nP:A\n|: \"G7\"B2 B2 B2 B2 | \"C7\"B3 B- B3 B- | \"F#m7\"B3 \"B7\"B- B3 B- | \"Cm7\"B3 \"F7\"B- B3 B- |\n\"Bb7\"B3 B z4 | \"Bm7\"zB BB- \"E7\"B B2 B- | \"Ebmaj7\"B6 zB | \"Dm7b5\"(3BBB B2 \"G7b9\"(3BBB B2 ||\nP:B\n\"Am7b5\"\"(Cm)\"B6 z(3B/B/B/ | \"Ab7\"B3 B B B2 B- | \"Cm\"B4 zB (3BBB | \"Ab7\"B3 B B B2 B- |\n\"Cm\"B8 | \"Ab7\"z8 | \"Cm\"z8 |1 \"Am7\"z4 \"D7\"z B2 B :|2 \"Am7\"z4 \"D7\"z4 |]\n%note first chord of B: Am7b5 for the head, Cm for solos (as printed)\n\n%unsure [bar 7] bar 6 is written in two-note chords, shown as single notes"
+},
+{
+"id": "The_Colorado_Cookbook/135-mean-to-me",
+"book": "The Colorado Cookbook",
+"title": "Mean To Me",
+"pdf": "135",
+"form": "AABA 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "book letters A (repeated), B, C; C is the A section with a new ending, so read as AABA"
+},
+{
+"bars": [
+1
+],
+"groups": [
+0
+],
+"text": "pickup is written as a full bar (half rest, eighth rest, dotted quarter)"
+},
+{
+"bars": [
+12,
+13,
+16,
+17
+],
+"groups": [
+11,
+12,
+15,
+16
+],
+"text": "upper chord line printed above the main changes written as parenthesized alternates"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Mean To Me\nC:Fats Waller\nP:AABA\n%form AABA 8+8+8+8\n%unsure [form] book letters A (repeated), B, C; C is the A section with a new ending, so read as AABA\n%source The Colorado Cookbook p132 (pdf 135)\n%style (Two beat feel on head)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:F\nz4 z \"Gb9\"B3 |\nP:A\n|: \"Fmaj7\"B2 BB \"Ab7#11\"z4 | \"Gm7\"z B3 \"C7\"BB B2 | \"Fmaj7\"B2 BB \"B7#11\"z4 | \"Bbmaj7\"z B3 \"Eb7\"(3B2B2B2 |\n\"Am7\"B2 BB \"Ab7\"z4 | \"Gm7\"BB BB- B2 \"Gb7alt\"B2 |1 \"Fmaj7\"B3 B- \"D7#9\"B4 | \"Gm7\"z4 \"Gb9\"z B3 :|2\n\"Fmaj7\"B3 B- B4 | \"Cm7\"z2 B2 \"F7b9\"B2 B2 ||\nP:B\n\"Bbmaj7\"B3 B- B4 | \"C7\"\"(Am7)\"z B3 \"F7b9\"\"(D7)\"BB BB- | \"Bbmaj7\"\"(Gm7)\"B2- \"(C7)\"B2- \"(Fm7)\"B2- \"(Bb7)\"B2 | \"Eb7\"z2 B2 \"D7\"B2 B2 |\n\"Gm7\"B3 B- B4 | \"Eb7\"\"(E7#11)\"z B3 \"D7\"\"(A7#11)\"B2 B2 | \"G7\"\"(D7)\"B3 B z\"(G7)\"B B2 | \"Gm7\"B4 \"Gb9\"B4 ||\nP:A\n\"Fmaj7\"B2 BB \"Ab7#11\"z4 | \"Gm7\"z B3 \"C7\"BB B2 | \"Fmaj7\"B2 BB \"B7#11\"z4 | \"Bbmaj7\"z B3 \"Eb7\"(3B2B2B2 |\n\"Am7\"B2 BB \"Ab7\"z4 | \"Gm7\"BB BB- B2 \"Gb7alt\"B2 | \"Fmaj7\"B3 B- B4 | \"Gm7\"z4 \"C7\"z4 |]\n\n%unsure [bar 1] pickup is written as a full bar (half rest, eighth rest, dotted quarter)\n%unsure [bars 12-13, 16-17] upper chord line printed above the main changes written as parenthesized alternates"
+},
+{
+"id": "The_Colorado_Cookbook/136-meditation",
+"book": "The Colorado Cookbook",
+"title": "Meditation (Meditacao)",
+"pdf": "136",
+"form": "AABCD 16+16+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+33,
+34
+],
+"groups": [
+32,
+33
+],
+"text": "eighth-note ties and exact chord placement within the bar approximate"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Meditation (Meditacao)\nC:Antonio Carlos Jobim\nP:AABCD\n%form AABCD 16+16+8+8+8\n%source The Colorado Cookbook p133 (pdf 136)\n%style (Bossa Nova)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:C\nP:A\n|: \"Cmaj7\"B8- | B4 z B2 B- | \"F#m7/B\"B B2 B- B4- | \"B7b9\"B4- BB BB- |\n\"Cmaj7\"BB BB BB BB- | \"Dm7\"B B2 B2 \"Ebo7\"B2 B- | \"Em7\"B B2 B- B4- | \"A7#5\"B4 z4 |\n\"Dm\"B8- | B4 z B2 B- | \"Fm7\"B B2 B- B4- | \"Bb7\"B4 zB BB- |\n\"Em7\"BB BB BB BB- | \"A7#5\"B4 zB BB- | \"Dm7\"BB BB BB BB- | \"G7#5\"B8 :|\nP:B\n\"F#m7b5\"B8- | B4 z2 BB- | \"Fm7\"B B2 B- B4- | \"Bb7\"B4 z B2 B- |\n\"Em7\"B B2 B2 B2 B- | \"Ebo7\"B B2 B2 B2 B- | \"Dm7\"B8- | \"G7#5\"B4 z4 ||\nP:C\n\"Cmaj7\"B8- | B4 z B2 B- | \"F#m7/B\"B B2 B- B4- | \"B7b9\"B4- BB BB- |\n\"Cmaj7\"BB BB BB BB- | \"Dm7\"B B2 B2 \"Ebo7\"B2 B- | \"Em7\"B B2 B- B4- | \"A7#5\"B4 z4 ||\nP:D\n\"Dm\"B8- | B4 z B2 B- | \"Fm7\"B B2 B- B4- | \"Bb7\"B4 zB BB- |\n\"Em7\"BB BB- \"A7#5\"BB BB- | \"Dm7\"BB BB- \"G7b9\"BB BB- | \"Cmaj7\"B8- | B4 z4 |]\n\n%unsure [bars 33-34] eighth-note ties and exact chord placement within the bar approximate"
+},
+{
+"id": "The_Colorado_Cookbook/137-minority",
+"book": "The Colorado Cookbook",
+"title": "Minority",
+"pdf": "137",
+"form": "A 16 (head repeated; solos; D.C. al Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no section letters printed; one 16-bar chorus"
+},
+{
+"bars": [
+17
+],
+"groups": [
+16
+],
+"text": "final note printed as a diamond whole note; chord F-maj7 written Fm(maj7)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Minority\nC:Gigi Gryce\n%form A 16 (head repeated; solos; D.C. al Coda)\n%unsure [form] no section letters printed; one 16-bar chorus\n%source The Colorado Cookbook p134 (pdf 137)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Fm\n|: \"Fm\"B4- B3 B | \"Dm7b5\"z4 BB BB | \"Gm7\"B4 B3 B | \"C7b9\"B B2 B- B4 |\n\"Fm\"B4- B3 B | \"Dm7b5\"z4 BB BB | \"Cm7\"B4 B3 B | \"F7\"B B2 B- B4 |\n\"Bbm7\"z B2 z B3 B | \"Eb7\"B B2 B- B4 | \"Abm7\"z B2 z B3 B | \"Db7\"B B2 B- B4 |\n\"Gbm7\"B4 B3 B | \"Cb7\"z4 (3B2B2B2 | \"Gm7\"B4 B3 B | \"C7\"z4 BB BB :|\n%solos, then D.C. al Coda\n%coda\n\"Fm(maj7)\"!fermata!B8 |]\n\n%unsure [bar 17] final note printed as a diamond whole note; chord F-maj7 written Fm(maj7)"
+},
+{
+"id": "The_Colorado_Cookbook/138-miss-premise",
+"book": "The Colorado Cookbook",
+"title": "Miss Premise",
+"pdf": "138",
+"form": "AB 16+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no section letters printed; read as two 16-bar halves (second half starts like the first)"
+},
+{
+"bars": [
+1,
+4,
+6,
+9,
+12,
+17,
+20,
+25,
+27
+],
+"groups": [
+0,
+3,
+5,
+8,
+11,
+16,
+19,
+24,
+26
+],
+"text": "quarter-note quadruplets (bracket 4) over the 3/4 bar written as (4 tuplets; Fm7/Eb in bar 15 placed on beat 3 omitted"
+},
+{
+"bars": [
+22
+],
+"groups": [
+21
+],
+"text": "tie and chord placement in the eighth-note figure guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Miss Premise\nC:Bob Gillis\n%form AB 16+16\n%unsure [form] no section letters printed; read as two 16-bar halves (second half starts like the first)\n%source The Colorado Cookbook p135 (pdf 138)\n%style (In One)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:3/4\nL:1/8\nK:C\n\"Ebmaj7#11\"(4B2B2B2B2 | \"Gbmaj7#5#11\"B4- BB | \"Fm11\"B6 | \"C#m7\"(4B2B2\"F#7\"B2B2 |\n\"A7#11\"B6 | \"F#7\"(4B2B2\"Go7\"B2B2 | \"Abm7\"B6- | \"Abm7/Bb\"B6 |\n\"Bm7\"(4B2B2B2B2 | \"Bb7#9b9\"B4- BB | \"Fm7\"B3 \"Fm7/Eb\"B3 | \"Dm11\"(4:3:3B4\"Db7\"B2B2 |\n\"Cm7\"B3 \"Cm7/Bb\"B3 | \"Am7b5\"B4- \"D7/F#\"BB | \"Fm7\"B6- | \"Db13#11\"B6 ||\n\"Ebmaj7#11\"(4B2B2B2B2 | \"Gbmaj7#5#11\"B4- BB | \"Fm11\"B6 | \"C#m7\"(4B2B2\"F#7\"B2B2 |\n\"A7#11\"B6 | \"F#7\"zB B\"Go7\"B- BB | \"Abm7\"B6- | \"Am7\"B4- \"D7\"B2 |\n\"Gmaj7#11\"(4B2B2B2B2 | \"Eb7#9b9\"B4- BB | \"Dmaj7#11\"(4B2B2B2B2 | \"Bb7#9b9\"B4- BB |\n\"Fm7\"B3 \"Gm7\"B3 | \"Abmaj7\"B3 \"Dbmaj7#11\"B3 | \"Emaj7#11\"B6- | B6 |]\n\n%unsure [bars 1, 4, 6, 9, 12, 17, 20, 25, 27] quarter-note quadruplets (bracket 4) over the 3/4 bar written as (4 tuplets; Fm7/Eb in bar 15 placed on beat 3 omitted\n%unsure [bar 22] tie and chord placement in the eighth-note figure guessed"
+},
+{
+"id": "The_Colorado_Cookbook/139-moment-s-notice",
+"book": "The Colorado Cookbook",
+"title": "Moment's Notice",
+"pdf": "139",
+"form": "AA 16+16 (2nd ending into tag; solos; D.C. al Coda)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "only section A printed, repeated with 1st/2nd endings"
+},
+{
+"bars": [
+14
+],
+"groups": [
+13
+],
+"text": "tie pattern in the Ab-7 Db7 bar guessed to fill the bar"
+},
+{
+"bars": [
+23
+],
+"groups": [
+22
+],
+"text": "Ebmaj7 F-7 bar: whole note tied over, split so F-7 sits on beat 3"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Moment's Notice\nC:John Coltrane\nP:AA\n%form AA 16+16 (2nd ending into tag; solos; D.C. al Coda)\n%unsure [form] only section A printed, repeated with 1st/2nd endings\n%source The Colorado Cookbook p136 (pdf 139)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\nM:4/4\nL:1/8\nK:Eb\nP:A\n|: \"Em7\"z B3 \"A7\"B2 zB- | \"Fm7\"B3 B \"Bb7\"z2 B2 | \"Ebmaj7\"z B3 B2 B2 | \"Abm7\"B3 B- \"Db7\"B4 |\n\"Dm7\"z B3 \"G7\"B2 zB- | \"Ebm7\"B3 B \"Ab7\"z2 B2 | \"Dbmaj7\"z B3 B2 B2 | \"Dm7\"B4 \"G7\"B3 B- |\n\"Cm\"B8 | \"Bbm7\"B6 \"Eb7\"zB- | \"Abmaj7\"B4 B3 B- |1 \"Abm7\"B4 \"Db7\"B2 z2 |\n\"Gm\"z B3 B3 B- | \"Abm7\"B3 B- \"Db7\"B3 B- | \"Gbmaj7\"B3 B BB BB- | \"Fm7\"B3 B \"Bb7\"z4 :|2\n\"Abm7\"B3 B- \"Db7\"B3 B- | \"Gm7\"B6 \"C7\"B2 | \"Fm7\"B4 \"Bb7\"B3 B- ||\n%tag\n\"Ebmaj7\"B6- BB | \"Fm7\"B6 zB | \"Gm7\"B6- BB | \"Fm7\"B4 B2 BB- |\n\"Ebmaj7\"B4 \"Fm7\"B4 | \"Gm7\"BB BB \"Fm7\"BB BB | \"Eb\"B2 z2 z4 | z8 ||\n%solos, then D.C. al Coda\n%coda\n\"Fm7\"B3 B \"Bb7\"BB BB- | \"Ebmaj7\"B8 | \"Fm7\"B8 | \"Gm7\"B8 |\n\"Fm7\"B8 | \"Ebmaj7\"B4 \"Fm7\"B4 | \"Gm7\"B4 \"Fm7\"B4 | \"Eb7#9\"!fermata!B8 |]\n\n%unsure [bar 14] tie pattern in the Ab-7 Db7 bar guessed to fill the bar\n%unsure [bar 23] Ebmaj7 F-7 bar: whole note tied over, split so F-7 sits on beat 3"
+},
+{
+"id": "The_Colorado_Cookbook/140-mood-indigo",
+"book": "The Colorado Cookbook",
+"title": "Mood Indigo",
+"pdf": "140",
+"form": "ABCD 8+8+8+8",
+"bad": 1,
+"off": [
+25
+],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "letters A-D printed; B is 4 bars then a 4-bar return of A, kept under B"
+},
+{
+"bars": [
+28
+],
+"groups": [
+27
+],
+"text": "Eb7 placed on the 4th eighth; exact placement unclear"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Mood Indigo\nC:Duke Ellington & Barney Bigard\nP:ABCD\n%source The Colorado Cookbook p137 (pdf 140)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\n%unsure [form] letters A-D printed; B is 4 bars then a 4-bar return of A, kept under B\nM:4/4\nL:1/8\nK:Ab\nP:A\n\"Ab\"B4 B B2 B- | \"Bb7\"B8 | \"Bbm7\"B4 \"Eb7\"B4 | \"Ab\"B8 |\n\"Ab\"B4 B B2 B- | \"Bb7\"B8 | \"E7\"B B2 B B2 B2 | \"Eb7\"B4 BB B2 |\nP:B\n\"Ab7\"z2 B2 B2 B2 | \"Ebm7\"B2 B2- \"Ab7\"BB B2 | \"Db\"B4 B2 B2 | \"Gb7\"B6 \"Eb7\"B2 |\n\"Ab\"B4 B B2 B- | \"Bb7\"B8 | \"Bbm7\"B4 \"Eb7\"B4 | \"Ab\"B8 |\nP:C\n\"Ab\"z2 BB B3 B | \"Bb7\"BB BB B4 | \"Bbm7\"BB BB \"Eb7\"B2 B2 | \"Ab\"B2- \"F7\"B2- \"Bbm7\"B2- \"Eb7\"B2 |\n\"Ab\"z2 BB B3 B | \"Bb7\"BB BB B4 | \"Bb7\"BB BB \"Eb7\"B B2 B- | B8 |\nP:D\n\"Ab7\"zB BB BB B2 B | \"Ebm7\"BB BB \"Ab7\"B4 | \"Dbmaj7\"zB BB \"Db7\"B3 B | \"Db7\"BB B\"Eb7\"B B B2 B- |\n\"Ab\"B2 BB B3 B | \"Bb7\"BB BB B4 | \"Bbm7\"BB BB \"Eb7\"B2 B2 | \"Ab\"B2- \"F7\"B2 \"Bbm7\"z2 \"Eb7\"z2 |]\n\n%unsure [bar 28] Eb7 placed on the 4th eighth; exact placement unclear"
+},
+{
+"id": "The_Colorado_Cookbook/141-moonlight-in-vermont",
+"book": "The Colorado Cookbook",
+"title": "Moonlight in Vermont",
+"pdf": "141",
+"form": "AABC 6+6+8+6",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+8,
+9,
+12,
+13
+],
+"groups": [
+7,
+8,
+11,
+12
+],
+"text": "book prints standard changes with alternates above; alternates written in parentheses"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Moonlight in Vermont\nC:Karl Suessdorf\nP:AABC\n%source The Colorado Cookbook p138 (pdf 141)\n%style (Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 6+6+8+6\nM:4/4\nL:1/8\nK:Eb\nP:A\n|: \"Ebmaj7\"B2 B2 \"Cm7\"B2 B2 | \"Fm7\"B4 \"Bb7b9\"B4 | \"Ebmaj7\"B2 B2 \"Cm7\"B2 B2 | \"Db7#11\"BB B6 |\n\"Fm7\"B2 B2 \"Bb7b9\"B2 B2 | \"Ebmaj7\"B8 :|\nP:B\n\"Am7\"BB BB- B B2 \"D7\"B | \"Gmaj7\"\"(Bm7)\"B B2 B \"Em7\"\"(Bb7)\"B B2 B | \"Am7\"\"(Ebmaj7)\"BB B2 \"D7\"\"(Ab7)\"B2 BB | \"Gmaj7\"B8 |\n\"Bbm7\"BB BB- B B2 \"Eb7\"B | \"Abmaj7\"\"(Cm7)\"B B2 B \"Fm7\"\"(B7)\"B B2 B | \"Bbm7\"\"(Emaj7)\"BB B2 \"Eb7\"\"(A7)\"B2 BB | \"Abmaj7\"B4 \"Bb7b9\"B4 ||\nP:C\n\"Ebmaj7\"B2 B2 \"Cm7\"B2 B2 | \"Fm7\"B4 \"Bb7b9\"B4 | \"Ebmaj7\"B2 B2 \"Cm7\"B2 B2 | \"Db7#11\"BB B6 |\n\"Fm7\"B2 B2 \"Bb7\"B2 B2 | \"Eb6\"B8 |]\n%tag (use at end of head, not in solos)\n\"F7#11\"BB BB \"Fm7\"BB \"E7\"BB | \"Ebmaj7\"B8 |]\n\n%unsure [bars 8-9, 12-13] book prints standard changes with alternates above; alternates written in parentheses"
+},
+{
+"id": "The_Colorado_Cookbook/142-moontrane",
+"book": "The Colorado Cookbook",
+"title": "Moontrane",
+"pdf": "142",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 5,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "letters A, B, C printed; A has 1st/2nd endings; bar counts inferred"
+},
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+"text": "intro is two staves (chords plus bass); melody staff rhythm only"
+},
+{
+"bars": [
+9,
+10,
+11,
+12
+],
+"groups": [
+8,
+9,
+10,
+11
+],
+"text": "4-bar bass-clef vamp (rest-8th-tied figures) not transcribed; written as rests"
+},
+{
+"bars": [
+14,
+15,
+17
+],
+"groups": [
+13,
+14,
+16
+],
+"text": "triplet placement and tie lengths guessed from a small scan"
+},
+{
+"bars": [
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28
+],
+"groups": [
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27
+],
+"text": "B section: beamed eighth-note chords and ties guessed; bars 25-28 also have a bass staff, not transcribed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Moontrane\nC:Woody Shaw\nP:AABC\n%source The Colorado Cookbook p139 (pdf 142)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\n%unsure [form] letters A, B, C printed; A has 1st/2nd endings; bar counts inferred\nM:4/4\nL:1/8\nK:C\n%intro\nB2- BB/B/ \"Dmaj7\"B4- | B4 (3B2B2B2 | B2- BB/B/ \"Dmaj7\"B4- | B4 z4 |\n\"Gmaj7#11\"z2 B4- B2 | \"Fmaj7#11\"z2 B4- B2 | \"Ebmaj7#11\"z2 B4- B2 | \"Db7#9#5\"z8 |\n%vamp\n\"Bbmaj7#11\"z8 | z8 | \"Bbmaj7#11\"z8 | z8 |\nP:A\n|: \"Bbmaj7#11\"BB- B6- | B4- B2 (3BBB | \"Am\"B2- (3BBB B4- | B4 z2 B/B/B/B/ |\n\"Cm\"B2- (3BBB \"Dm\"B2 \"Eb7#9\"B2- | \"Fm\"B2 B4 B2 | \"Dmaj7#11\"B3 B B4- |1 \"Cm7\"zB BB \"F7\"BB BB :|2\n\"Fm7\"z2 BB \"Bb7\"BB B/B/B/B/ ||\nP:B\n\"Ebmaj7\"BB BB- BB BB- | BB BB BB B-B | B6 z2 | \"Am7b5\"z4 \"D7b9\"B3 B |\n\"Gm\"BB zB- \"Fm\"B4 | \"Bbm\"BB zB- \"Abm\"B4 | \"C#m\"BB zB- \"Bm\"B4- | B6 zB |\nP:C\n\"Bbmaj7#11\"BB- B6- | B4- B2 (3BBB | \"Am\"B2- (3BBB B4- | B4 z2 B/B/B/B/ |\n\"Cm\"B2- (3BBB \"Dm\"B2 \"Eb7#9\"B2- | \"Fm\"B2 B4 B2 | \"Dmaj7#11\"B3 B B4- | B8 |]\n\n%unsure [bars 1-8] intro is two staves (chords plus bass); melody staff rhythm only\n%unsure [bars 9-12] 4-bar bass-clef vamp (rest-8th-tied figures) not transcribed; written as rests\n%unsure [bars 14-15, 17] triplet placement and tie lengths guessed from a small scan\n%unsure [bars 21-28] B section: beamed eighth-note chords and ties guessed; bars 25-28 also have a bass staff, not transcribed"
+},
+{
+"id": "The_Colorado_Cookbook/143-morning",
+"book": "The Colorado Cookbook",
+"title": "Morning",
+"pdf": "143",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "letters A, B, C printed; second A ending is the first bar of B pickup area; counts inferred"
+},
+{
+"bars": [
+3
+],
+"groups": [
+2
+],
+"text": "E7 placed on the eighth rest at beat 3"
+},
+{
+"bars": [
+16
+],
+"groups": [
+15
+],
+"text": "second chord over beat 3 is smudged in the scan (hand-written over); guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Morning\nC:Clare Fischer\nP:AABC\n%source The Colorado Cookbook p140 (pdf 143)\n%style (Latin)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\n%unsure [form] letters A, B, C printed; second A ending is the first bar of B pickup area; counts inferred\nM:4/4\nL:1/8\nK:C\nz4 zB BB |\nP:A\n|: \"Bm7\"BB- \"E7\"B6- | \"Am7\"B4 \"D7\"zB BB | \"Bm7\"B2 BB \"E7\"z B2 B- | \"Am7\"B4 \"D7\"zB BB |\n\"Dm7\"B4- \"G7\"BB BB | \"Em7\"B4- \"A7\"BB BB | \"Bm7\"B3 B- \"E7\"B3 B- |1 \"Am7\"B4 \"D7\"zB BB :|2\n\"Am\"B8 ||\nP:B\n\"Dm7\"B2 B2 zB zB- | \"Gsus4\"z2 zB- BB BB | \"C6\"B2 B2 \"F7\"zB zB- | \"Em7\"z2 zB- \"A7alt\"BB BB |\n\"Dm7\"B2 B2 z B2 B- | \"Gsus4\"B3 B BB BB | \"Bb7\"B4 \"(Gm7)\"z B2 B | \"E7\"z4 zB BB ||\nP:C\n\"Bm7\"BB- \"E7\"B6- | \"Am7\"B4 \"D7\"zB BB | \"Bm7\"B2 BB \"E7\"z B2 B- | \"Am7\"B4 \"D7\"zB BB |\n\"Dm7\"B4- \"G7\"BB BB | \"Em7\"B4- \"A7\"BB BB | \"Bm7\"B3 B- \"E7\"B3 B- | \"Am\"B8 |]\n\n%unsure [bar 3] E7 placed on the eighth rest at beat 3\n%unsure [bar 16] second chord over beat 3 is smudged in the scan (hand-written over); guessed"
+},
+{
+"id": "The_Colorado_Cookbook/144-mr-p-c",
+"book": "The Colorado Cookbook",
+"title": "Mr. P.C.",
+"pdf": "144",
+"form": "12-bar minor blues",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no section letters; 12-bar blues read from the chords"
+},
+{
+"bars": [
+9
+],
+"groups": [
+8
+],
+"text": "tie length after the eighth rest guessed"
+},
+{
+"bars": [],
+"groups": [],
+"text": "page shared with Tenor Madness"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Mr. P.C.\nC:John Coltrane\n%source The Colorado Cookbook p141 (pdf 144)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar minor blues\n%unsure [form] no section letters; 12-bar blues read from the chords\nM:4/4\nL:1/8\nK:Cm\n|: \"Cm7\"BB BB BB BB | B3 B BB zB | B4 B3 B | z8 |\n\"Fm7\"BB BB BB BB | B3 B BB zB | \"Cm7\"B4 B3 B | z4 BB BB |\n\"Dm7b5\"z B2- B4 B | \"G7alt\"z B2 B B2 B2 | \"Cm7\"B4 B3 B | z8 :|\n\n%unsure [bar 9] tie length after the eighth rest guessed\n%unsure [general] page shared with Tenor Madness"
+},
+{
+"id": "The_Colorado_Cookbook/144-tenor-madness",
+"book": "The Colorado Cookbook",
+"title": "Tenor Madness",
+"pdf": "144",
+"form": "12-bar blues",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no section letters; 12-bar blues read from the chords"
+},
+{
+"bars": [],
+"groups": [],
+"text": "page shared with Mr. P.C.; first bar is a full-bar pickup (rests then one eighth)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Tenor Madness\nC:Sonny Rollins\n%source The Colorado Cookbook p141 (pdf 144)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues\n%unsure [form] no section letters; 12-bar blues read from the chords\nM:4/4\nL:1/8\nK:Bb\nz4 z2 zB |: \"Bb7\"z B2 B B2 zB | \"Eb7\"z B2 B B2 zB | \"Bb7\"z B2 B BB BB |\n\"Bb7\"BB BB z2 zB | \"Eb7\"z B2 B B2 zB | z B2 B B2 zB | \"Bb7\"z B2 B BB BB |\nBB BB z2 zB | \"Cm7\"z B2 B BB BB | \"F7\"BB BB z2 zB | \"Bb7\"z B2 B BB BB | BB BB \"F7\"z4 :|\n\n%unsure [general] page shared with Mr. P.C.; first bar is a full-bar pickup (rests then one eighth)"
+},
+{
+"id": "The_Colorado_Cookbook/145-ms-p-e-p",
+"book": "The Colorado Cookbook",
+"title": "Ms. P & P",
+"pdf": "145",
+"form": "ABC 8+8+8 (solo form printed: A B C)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "intro top staff is a chord pad over a bass-line staff; only the top staff rhythm written"
+},
+{
+"bars": [
+26
+],
+"groups": [
+25
+],
+"text": "chord placement of Eb7 and tie guessed"
+},
+{
+"bars": [
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28
+],
+"groups": [
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27
+],
+"text": "eighth-note groupings in the swing section read from a small scan"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Ms. P & P\nC:Ken Walker\nP:ABC\n%source The Colorado Cookbook p142 (pdf 145)\n%style (none printed; Swing at C)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 8+8+8 (solo form printed: A B C)\nM:4/4\nL:1/8\nK:Gb\n%intro\nz4 z2 B2 |: \"Eb13sus\"B8- | B4 z2 B2 | B8- |\nB4 z2 B2 | \"Db13sus\"B8- | B4 z2 B2 | B8- |1 B4 z2 B2 :|2 B4 B2 B2 ||\nP:A\n|: \"Eb13sus\"B8- | B2 z2 B2 B2 | B8 | B2 z2 B2 B2 |\n\"Db13sus\"B8- | B2 z2 B2 B2 | B8- | B2 z2 BB BB- ||\nP:B\n\"Eb13sus\"B8- | B2 z2 zB BB- | B8- | B2 z2 zB BB- |\n\"Db13sus\"B8- | B2 z2 zB BB- | B8- | B2 z2 z4 ||\nP:C\n\"Bm7\"z2 zB B B2 B | \"Dm7\"B2 BB \"G7\"B4 | \"Am7\"z2 zB B B2 B | \"Cm7\"B2 BB- \"F7\"B4 |\n\"Gm7\"z2 zB B B2 B | \"Bbm7\"B2 BB- \"Eb7\"B4 | \"Fm7\"z2 zB B B2 B |1 \"Abm7\"B2 \"Db7\"BB z B2 B :|2\n\"Abm7\"B2 B\"Db7\"B z4 |]\n\n%unsure [general] intro top staff is a chord pad over a bass-line staff; only the top staff rhythm written\n%unsure [bar 26] chord placement of Eb7 and tie guessed\n%unsure [bars 19-28] eighth-note groupings in the swing section read from a small scan"
+},
+{
+"id": "The_Colorado_Cookbook/146-muddy-in-the-bank",
+"book": "The Colorado Cookbook",
+"title": "Muddy in the Bank",
+"pdf": "146",
+"form": "ABC 8+8+10",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26
+],
+"groups": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25
+],
+"text": "eighth-note groupings (esp. bars 1, 5, 21) read from a small scan; adjusted to fill bars"
+},
+{
+"bars": [],
+"groups": [],
+"text": "after bar 26: Coda sign, then Solos, D.C. al Coda"
+},
+{
+"bars": [
+27,
+28,
+29
+],
+"groups": [
+26,
+27,
+28
+],
+"text": "coda eighth groupings and accented last notes read from a small scan; check.py flags one bar as not full though counts look right"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Muddy in the Bank\nC:Steve Swallow\nP:ABC\n%source The Colorado Cookbook p143 (pdf 146)\n%style (Medium Up)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABC 8+8+10\nM:4/4\nL:1/8\nK:Ab\nP:A\n\"Abmaj7\"B2 BB B2 BB- | \"Go7\"B2 B2 \"C7alt\"B2 B2 | \"Fm7\"B2 BB \"Bb7\"zB BB- | \"Ebmaj7\"B8 |\n\"Do7\"B2 BB \"G7alt\"B2 BB- | \"Cm7\"B2 B2 \"Ao7\"B2 B2 | \"Ab7#11\"B8- | \"G7b9\"B8 ||\nP:B\n\"Cm\"B2 BB zB BB- | \"Do7\"B2 B2 \"G7alt\"B2 B2 | \"Abmaj7#11\"B2 BB B2 BB- | \"Go7\"B2 B2 \"C7alt\"B2 B2 |\n\"Fm\"B4 \"Fm/Eb\"B4 | \"Do7\"B2 BB \"G7alt\"B2 BB- | \"Cm7\"B2 B2 \"Ao7\"B2 B2 | \"Ab7#11\"B8 ||\nP:C\n\"G7b13\"B2 zB- B4 | \"Gbmaj7\"B8 | \"F7b13\"B2 zB- B4 | \"Bbm\"B4 \"Bbm/Ab\"B4 |\n\"Go7\"B2 BB \"C7alt\"B2 BB- | \"Fm7\"B2 B2 \"Bb7\"B2 B2 | \"Ebmaj7\"B8 | \"Do7\"B2 BB \"G7alt\"B2 BB- |\n\"Cm7\"B4- \"B7\"B4- | \"Bbm7\"B4 \"Eb7\"B4 ||\n%coda\n\"Abmaj7\"B2 BB z B2 B- | \"Go7\"B2 B2 \"C7alt\"B2 B2 | \"Fm7\"B2 BB \"Bb7\"zB \"N.C.\"Bz B |]\n\n%unsure [bars 1-26] eighth-note groupings (esp. bars 1, 5, 21) read from a small scan; adjusted to fill bars\n%unsure [general] after bar 26: Coda sign, then Solos, D.C. al Coda\n%unsure [bars 27-29] coda eighth groupings and accented last notes read from a small scan; check.py flags one bar as not full though counts look right"
+},
+{
+"id": "The_Colorado_Cookbook/147-mumbles",
+"book": "The Colorado Cookbook",
+"title": "Mumbles",
+"pdf": "147",
+"form": "12-bar blues head + 12-bar stop-time section, then solos, D.C. al Fine",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form not lettered in the book; inferred"
+},
+{
+"bars": [
+3,
+7,
+11
+],
+"groups": [
+2,
+6,
+10
+],
+"text": "long note value (dotted quarter + eighth tied over) read from a small scan"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Mumbles\nC:Clark Terry\n%source The Colorado Cookbook p144 (pdf 147)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues head + 12-bar stop-time section, then solos, D.C. al Fine\n%unsure [form] form not lettered in the book; inferred\nM:4/4\nL:1/8\nK:Eb\n%pickup\nz2 BB BB B2 |: \"Eb7\"B2 z2 z4 | \"Ab7\"B2 BB BB BB | \"Eb7\"B3 B- B4 |\nz2 BB BB B2 | \"Ab7\"B2 z2 z4 | B2 BB BB BB | \"Eb7\"B3 B- B4 |\nz2 BB BB B2 | \"Fm7\"B2 z2 z4 | \"Bb7\"B2 BB BB BB | \"Eb7\"B3 B- B4 |1 z2 BB BB B2 :|2 z8 ||\n%stop time\n|: \"Eb7\"B2 z2 z4 | z8 | \"Eb7\"B2 z2 z4 | z8 |\n\"Ab7\"B2 z2 z4 | z8 | \"Eb7\"B2 z2 z4 | z8 |\n\"Fm7\"B2 z2 z4 | z8 | \"Eb7\"B2 z2 z4 | z8 :|\n%solos, D.C. al Fine\n\n%unsure [bars 3, 7, 11] long note value (dotted quarter + eighth tied over) read from a small scan"
+},
+{
+"id": "The_Colorado_Cookbook/148-my-baby-just-cares-for-me",
+"book": "The Colorado Cookbook",
+"title": "My Baby Just Cares for Me",
+"pdf": "148",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+31
+],
+"groups": [
+30
+],
+"text": "chord printed \"E△\", read as Ebmaj7 (key of Eb)"
+},
+{
+"bars": [
+29,
+30,
+31,
+32
+],
+"groups": [
+28,
+29,
+30,
+31
+],
+"text": "last bar note and chord \"(Eb final x only)\": first-time ending held note assumed tied into last bar"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:My Baby Just Cares for Me\nC:Walter Donaldson\nP:ABCD\n%source The Colorado Cookbook p145 (pdf 148)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:Eb\nP:A\n\"Ebmaj7\"z2 B2 BB B2 | \"Ab7#11\"B2 B2 B4 | \"Ebmaj7\"z2 B2 BB B2 | \"Ab7#11\"B2 B2 B4 |\n\"Ebmaj7/G\"z2 B2 BB B2 | \"Gbo7\"B6 B2 | \"Fm\"B8- | B8 ||\nP:B\n\"Do7\"z2 B2 BB B2 | \"G7\"B6 B2 | \"Cm\"B6 B2 | \"Do7\"B2 \"G7\"B6 |\n\"Cm\"z2 B2 BB B2 | \"F7#11\"B4 B4 | \"Fm7\"B4 B4 | \"Bb7\"B4 B4 ||\nP:C\n\"Ebmaj7\"z2 B2 BB B2 | \"Ab7#11\"B2 B2 B4 | \"Ebmaj7\"z2 B2 BB B2 | \"Ab7#11\"B2 B2 B4 |\n\"Go7\"z2 B2 BB B2 | \"Gbo7\"B4 B4 | \"Fm\"B8- | B8 ||\nP:D\n\"Abmaj7\"z2 B2 BB B2 | \"Ao7\"B6 \"D7\"B2 | \"Abm7\"B4- \"Db7\"B4 | \"Gm7\"B4- \"C7\"B4 |\n\"Fm7\"z2 B2 BB B2 | \"Bb7\"B4 B4 | \"Ebmaj7\"B8- | \"(Eb)\"B2 z2 z4 |]\n\n%unsure [bar 31] chord printed \"E△\", read as Ebmaj7 (key of Eb)\n%unsure [bars 29-32] last bar note and chord \"(Eb final x only)\": first-time ending held note assumed tied into last bar"
+},
+{
+"id": "The_Colorado_Cookbook/149-my-funny-valentine",
+"book": "The Colorado Cookbook",
+"title": "My Funny Valentine",
+"pdf": "149",
+"form": "ABCD 8+8+8+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+7,
+8,
+14,
+15,
+16
+],
+"groups": [
+6,
+7,
+13,
+14,
+15
+],
+"text": "placement of the alternate chords within the bar estimated from a small scan"
+},
+{
+"bars": [
+31,
+32
+],
+"groups": [
+30,
+31
+],
+"text": "chords printed C-7 F7b9 and Bb-7 Eb7b9 over these two bars; placed one pair per bar on beats 1 and 3"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:My Funny Valentine\nC:Richard Rodgers\nP:ABCD\n%source The Colorado Cookbook p146 (pdf 149)\n%style (none printed)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+12\n%note Standard changes in quotes; the book's printed alternate changes are given in parentheses.\nM:4/4\nL:1/8\nK:Eb\nP:A\n\"Cm\"B4 B2 B2 | \"CmMaj7/B\"B2 B2 B4 | \"Cm7/Bb\"B4 B2 B2 | \"Ao7\"B2 B2 B4 |\n\"Abmaj7#11\"B4 B2 B2 | \"Fm\"\"(Fm)\"B4 \"(F#m7)\"B2 \"(Bo7)\"B2 | \"Do7\"\"(Bbm7)\"B4- \"(Eb7)\"B4 | \"G7b9\"\"(Do7)\"B4 \"(G7b9)\"z4 ||\nP:B\n\"Cm\"B4 B2 B2 | \"CmMaj7/B\"B2 B2 B4 | \"Cm7/Bb\"B4 B2 B2 | \"Ao7\"B2 B2 B4 |\n\"Abmaj7#11\"B4 B2 B2 | \"Fm\"\"(Ao7)\"B2 \"(D7)\"B2 \"(Gm7)\"B2 \"(C7)\"B2 | \"Fo7\"\"(F#m7)\"B8- | \"Bb7b9\"\"(Fm7)\"B4 \"(Bb7b9)\"B2 B2 ||\nP:C\n\"Ebmaj7\"B2 zB- \"Fm/Eb\"B2 B2 | \"Ebmaj7\"B4 \"Fm/Eb\"B2 B2 | \"Ebmaj7\"B2 zB- \"Fm/Eb\"B2 B2 | \"Ebmaj7\"B4 \"Fm/Eb\"B2 B2 |\n\"Ebmaj7\"B2 zB- \"G7#9\"B2 B2 | \"Cm\"B4 \"Bbm\"B2 B2 | \"Abmaj7\"B8- | \"Do7\"B4 \"G7#9\"B4 ||\nP:D\n\"Cm\"B4 B2 B2 | \"CmMaj7/B\"B2 B2 B4 | \"Cm7/Bb\"B4 B2 B2 | \"Ao7\"B2 B2 B4 |\n\"Abmaj7#11\"B4 B2 B2 | \"Do7\"B2 B2 \"G7#9\"B4 | \"Cm7\"B4- \"F7b9\"B4- | \"Bbm7\"B4 \"Eb7b9\"B4 |\n\"Abmaj7\"B4 B2 B2 | \"Fm7\"B2 \"Bb7\"B2 B4 | \"Ebmaj7\"B8- | \"Do7\"B4 \"G7\"z4 |]\n\n%unsure [bars 7-8, 14-16] placement of the alternate chords within the bar estimated from a small scan\n%unsure [bars 31-32] chords printed C-7 F7b9 and Bb-7 Eb7b9 over these two bars; placed one pair per bar on beats 1 and 3"
+},
+{
+"id": "The_Colorado_Cookbook/150-my-old-flame",
+"book": "The Colorado Cookbook",
+"title": "My Old Flame",
+"pdf": "150",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "bar 7 prints 1X changes (E-11 A13) and 2X changes (A-11 D9); 2X given in parentheses"
+},
+{
+"bars": [
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16
+],
+"groups": [
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15
+],
+"text": "eighth/triplet groupings in the bridge read from a small scan; ties guessed so bars add up"
+},
+{
+"bars": [
+20
+],
+"groups": [
+19
+],
+"text": "four chords in the bar; rhythm (dotted half + two eighths) and chord placement estimated"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:My Old Flame\nC:Sam Coslow\nP:AABC\n%source The Colorado Cookbook p147 (pdf 150)\n%style (Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:G\nP:A\n|: \"Gmaj7\"B4 \"C13\"B4 | \"Bo7\"B6 \"E7b9\"B2 | \"Am\"BB BB- BB B2 | \"Cm7\"B6 \"F7b9\"BB |\n\"Gmaj7\"BB BB \"Cm7\"B2 \"F7\"BB | \"Bbmaj7\"BB BB \"Bbm7\"(3BBB- \"Eb7\"BB | \"Em11\"\"(2x: Am11)\"B4 \"A13\"\"(2x: D9)\"B4 |1 \"Am7\"B4 \"D7b9\"B2 z2 :|2\n\"Cm6\"B4 \"B7\"B2 z2 ||\nP:B\n\"Bbmaj7\"zB- BB \"Gm7\"BB BB | \"Ao7\"BB (3BBB- B3 \"D7b9\"B | \"G+7\"BB (3BBB- B\"Db9\"B BB- | \"C7#11\"B8 |\n\"Cm7\"BB (3BBB \"Cm7/F\"BB BB | \"Ao7\"B6 \"D7b9\"zB | \"Em11\"BB BB \"A13\"B3 B | \"Am11\"BB BB \"D7b9\"BB \"D7#9#5\"B2 ||\nP:C\n\"Gmaj7\"B4 \"C13\"B4 | \"Bo7\"B6 \"E7b9\"B2 | \"Am\"BB BB- BB B2 | \"Cm7\"B2 \"F7\"B2 \"Ao7\"B2 \"D7b9\"BB |\n\"Gmaj7\"BB BB \"C7\"B2 \"F7\"BB | \"Bbmaj7\"BB BB \"Bbm7\"(3BBB- \"Eb7\"BB | \"Am11\"B4 \"D7#9#5\"B4 | \"Gmaj7\"B6 z2 |]\n\n%unsure [general] bar 7 prints 1X changes (E-11 A13) and 2X changes (A-11 D9); 2X given in parentheses\n%unsure [bars 9-16] eighth/triplet groupings in the bridge read from a small scan; ties guessed so bars add up\n%unsure [bar 20] four chords in the bar; rhythm (dotted half + two eighths) and chord placement estimated"
 },
 {
 "id": "The_Colorado_Cookbook/151-my-one-and-only-love",
@@ -8358,6 +29506,717 @@ window.RHYTHM_TRANSCRIPTIONS = [
 ],
 "note": "Rhythms, chords and lyrics only.",
 "abc": "X:1\nT:Walkin'\nC:Miles Davis\n%source The Colorado Cookbook p255 (pdf 258)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 12-bar blues in F with intro; solos on F blues; intro may be used as ending\nM:4/4\nL:1/8\nK:F\n%intro\nB2 | \"^pedal C on 2 & 4\"BB- B2 B2 B2 | BB- B2 B2 B2 | BB- B2 B4- |\nB6 B2 | BB- B2 B2 B2 | BB- B2 B2 B2 | BB- B2 B4 |\n\"^time\"z2 zB B B2 B- |\nP:A\n|: \"F7\"B6 BB | \"Bb7\"z2 zB B B2 B- | \"F7\"B4 zB BB | z2 zB/B/ B B2 B- |\n\"Bb7\"B6 BB | z2 zB B B2 B- | \"F7\"B6 BB | z4 zB (3BBB |\n\"C7#9\"\"(Gm7)\"BB \"B7#9\"B2 z2 \"Bb7#9\"BB | \"A7#9\"\"(C7)\"B2 z2 \"Ab7#9\"BB \"G7#9\"BB | \"F7#9\"\"(F7)\"B6 BB |1 \"C7\"z2 zB B B2 B- :|2 \"C7\"z8 |]\n\n%unsure [bars 1-7] intro is in two-note voicings; one rhythm written, no chord symbols printed\n%unsure [bars 17-19] head chords written; solo changes (Gm7 | C7 | F7) in parentheses; exact chord placement in bars 17-18 approximate"
+},
+{
+"id": "The_Colorado_Cookbook/259-waltzing-matilda",
+"book": "The Colorado Cookbook",
+"title": "Waltzing Matilda",
+"pdf": "259",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "after C: SOLOS, D.C. al Coda; the To Coda sign is not printed in the tune, so the jump point is unclear (likely at Gm7 of last A)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Waltzing Matilda\nC:Traditional Australian\nP:AABC\n%source The Colorado Cookbook p256 (pdf 259)\n%style (Medium/Slow Samba or Afro Cuban Feel)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:C|\nL:1/8\nK:Eb\nP:A\n|: \"Ebmaj7\"B4 B2 B2 | \"Do7\"B3 B- \"G7\"B4 | \"Cm7\"B3 B \"Cm7/Bb\"B2 B2 | \"Ao7\"B2 BB \"D7b9\"z4 |\n\"Gm7\"z B3 B2 B2 |1 \"C7\"B3 B- B4 | \"Fm7\"B4 B2 BB | \"Bb7\"z4 B2 B2 :|2\n\"C7\"B4 B2 B2 | \"Fm7\"B4 \"Bb7\"B3 B- | \"Ebmaj7\"B8 ||\nP:B\n\"Ebmaj7\"B4 B2 B2 | \"Bbm7\"B3 B- \"Eb7\"B4 | \"Abmaj7\"B4 B2 B2 | \"Ao7\"B3 B- \"D7\"B4 |\n\"Gm7\"z B3 B2 B2 | \"C7\"B3 B- B4 | \"Fm7\"B4 B2 BB | \"Bb7\"z4 B2 B2 ||\nP:C\n\"Ebmaj7\"B4 B2 B2 | \"Do7\"B3 \"G7\"B z4 | \"Cm7\"z B2 B \"Cm7/Bb\"B2 B2 | \"Ao7\"B2 BB \"D7\"z4 |\n\"Gm7\"z B3 B2 B2 | \"C7\"B4 B2 B2 | \"Fm7\"B4 \"Bb7\"B3 \"Eb\"B | z8 ||\n%coda\n\"Gm7\"z B3 B2 B2 | \"C7\"B4 B2 B2 | \"Fm7\"B4 \"Bb7\"B3 \"Eb\"B | \"Ebmaj7\"z8 |\n\"Gm7\"z B3 B2 B2 | \"C7\"B4 B2 B2 | \"Fm7\"B4 \"Bb7\"B3 \"Eb\"B | z8 |]\n\n%unsure [general] after C: SOLOS, D.C. al Coda; the To Coda sign is not printed in the tune, so the jump point is unclear (likely at Gm7 of last A)"
+},
+{
+"id": "The_Colorado_Cookbook/260-waltz-for-ellington",
+"book": "The Colorado Cookbook",
+"title": "Waltz for Ellington",
+"pdf": "260",
+"form": "through-composed 58 bars (no section letters printed)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no section letters or repeats printed; 58 bars through-composed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Waltz for Ellington\nC:Jeff Jenkins\n%source The Colorado Cookbook p257 (pdf 260)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form through-composed 58 bars (no section letters printed)\n%unsure [form] no section letters or repeats printed; 58 bars through-composed\nM:3/4\nL:1/8\nK:Bb\n\"Gm7\"B B2 B- (3BBB | \"C7\"BB- B4 | \"Cm7/F\"z4 BB | \"F7\"B4 BB |\n\"Fm7\"BB- B4 | \"Bb7\"B2- BB- BB | \"Ebmaj7\"B2- BB- BB | \"Abmaj7\"BB- B4 |\n\"Dm7b5\"B4 zB | \"G7alt\"BB- B2- (3BBB | \"Cm7\"B3 B3 | \"Cm7/Bb\"B3 B3 |\n\"F/A\"B4 zB | \"D7alt\"(4:3:4B2B2B2B2 | \"Gmaj7\"B2- BB- BB | \"Em7\"B2 B2 B2 |\n\"Am7\"BB- B4- | \"D7\"B4 B2 | \"Gmaj7\"(4:3:4B2B2B2B2 | \"Em7\"B4 B2 |\n\"F#m7\"B6 | \"B7#11\"B6 | \"Emaj7\"B2- BB- BB | B2 B2 B2 |\n\"F#m7\"B6- | \"B7\"B6 | \"Emaj7\"B2- BB- BB | \"Amaj7\"B2 B2 B2 |\n\"D#m7b5\"B6- | \"G#7alt\"B2- BB- BB | \"C#m7\"B B2 B- (3BBB | \"C#m7/B\"BB- B4- |\n\"Bbm7b5\"B4 BB | \"Eb7alt\"BB BB BB | \"Abmaj7\"B4 B2 | \"F7alt\"B3 B3 |\n\"Bbm7\"B2- BB- BB | \"Eb7\"B4- (3BBB | \"Abmaj7\"B3 B3 | \"Fm7\"B3 \"Fm7/Eb\"B3 |\n\"Dm7b5\"B2- BB- BB | \"Dbm7\"(4:3:4B2B2\"Gb7#11\"B2B2 | \"Cm7\"B6 | \"F7alt\"B6 |\n\"Bbm7\"B6- | \"Eb7\"B2 B2 B2 | \"Cm7\"B3 B3 | \"Fm7\"B3 B3 |\n\"Dbm7\"B6 | \"Gb7#11\"B3 B3 | \"Cm7\"B6 | \"Bmaj7\"B6 |\n\"Emaj7\"B6 | \"Amaj7\"B6 | \"Abmaj9\"B6- | B6 |\n\"Am7b5\"z6 | \"D7alt\"z6 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/262-watch-what-happens",
+"book": "The Colorado Cookbook",
+"title": "Watch What Happens",
+"pdf": "262",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29
+],
+"groups": [
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28
+],
+"text": "last section is 12 bars (C 8 + 4-bar tag); form counted as C 8 with tag"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Watch What Happens\nC:Michel Legrand\nP:AABC\n%source The Colorado Cookbook p259 (pdf 262)\n%style (Bossa Nova)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Eb\nP:A\n|: \"Ebmaj7\"B3 B B4 | (3z2B2B2 (3B2B2B2 | \"F9#11\"B8 | (3z2B2B2 (3B2B2B2 |\n\"Fm7\"B8 | \"Bb7\"(3z2B2B2 (3B2B2B2 | \"Ebmaj7\"B4 \"Emaj7\"B4 |1 \"Fmaj7\"B4 \"Emaj7\"B4 :|2\n\"Fmaj7\"B4 \"F#maj7\"B4 ||\nP:B\n\"Gmaj7\"B8 | z2 BB BB BB | \"Gm7\"B3 B B4- | \"C7\"B4 B2 B2 |\n\"Fmaj7\"B3 B B4- | (3B2B2B2 (3B2B2B2 | \"Fm7\"B8- | \"Bb7\"B6 z2 ||\nP:C\n\"Ebmaj7\"B3 B B4 | (3z2B2B2 (3B2B2B2 | \"F9#11\"B8 | (3z2B2B2 (3B2B2B2 |\n\"Fm7\"B8 | \"Bb7\"(3z2B2B2 (3B2B2B2 | \"Ebmaj7\"B6 B2 | \"E6/9\"B2 B2 \"D6/9\"B B2 B- |\n\"Ebmaj7\"B6 B2 | \"E6/9\"B2 B2 \"D6/9\"B B2 B- | \"Ebmaj7\"B8- | \"Fm7\"B4 \"Bb7\"z4 |]\n\n%unsure [bars 18-29] last section is 12 bars (C 8 + 4-bar tag); form counted as C 8 with tag"
+},
+{
+"id": "The_Colorado_Cookbook/263-watermelon-man",
+"book": "The Colorado Cookbook",
+"title": "Watermelon Man",
+"pdf": "263",
+"form": "16-bar blues, repeated",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no section letters printed; 16 bars"
+},
+{
+"bars": [
+14
+],
+"groups": [
+13
+],
+"text": "break: rhythm section hits beat 1 then rests (\"BREAK\"), time resumes at bar 15"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Watermelon Man\nC:Herbie Hancock\n%source The Colorado Cookbook p260 (pdf 263)\n%style (Latin - Rock)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16-bar blues, repeated\n%unsure [form] no section letters printed; 16 bars\nM:4/4\nL:1/8\nK:F\n|: \"F7\"B8 | z2 BB B B2 B- | B8- | B4 z4 |\n\"Bb7\"B8 | z2 BB B B2 B- | \"F7\"B8- | B4 z4 |\n\"C7\"z2 BB B2 B2 | \"Bb7\"BB BB B2 B2 | \"C7\"z2 BB B2 B2 | \"Bb7\"BB BB B2 B2 |\n\"C7\"z2 BB B2 B2 | \"Bb7\"B2 BB B B2 B- | \"F7\"B8- | B4 z4 :|\n\n%unsure [bar 14] break: rhythm section hits beat 1 then rests (\"BREAK\"), time resumes at bar 15"
+},
+{
+"id": "The_Colorado_Cookbook/263-work-song",
+"book": "The Colorado Cookbook",
+"title": "Work Song",
+"pdf": "263",
+"form": "16 bars, repeated",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no section letters printed; 16 bars"
+},
+{
+"bars": [
+15
+],
+"groups": [
+14
+],
+"text": "dotted-8th/16ths grouping read from a small scan"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Work Song\nC:Nat Adderley\n%source The Colorado Cookbook p260 (pdf 263)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form 16 bars, repeated\n%unsure [form] no section letters printed; 16 bars\nM:4/4\nL:1/8\nK:Fm\n|: \"Fm\"z2 BB B B2 B- | B2 BB B2 B2 | \"Fm\"z2 BB B B2 B- | B2 BB B4 |\n\"Fm\"z2 BB B B2 B- | B2 BB B2 B2 | \"C7\"z2 BB B B2 B- | B2 BB B4 |\n\"Fm\"z2 B3/2B/2 (3BBB BB- | B2 BB B2 B2 | \"Fm\"z2 BB B B2 B- | B2 BB BB B2 |\n\"F7\"BB B2 z2 B2 | \"Bb7\"BB B2 zB BB | \"Db7\"z B2 B \"C7\"B3/2B/2 B/2B/2B- | \"Fm\"B8 :|\n\n%unsure [bar 15] dotted-8th/16ths grouping read from a small scan"
+},
+{
+"id": "The_Colorado_Cookbook/264-wave",
+"book": "The Colorado Cookbook",
+"title": "Wave",
+"pdf": "264",
+"form": "AABA 12+12+8+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+1
+],
+"groups": [
+0
+],
+"text": "pickup is a full 4/4 bar mostly rests (half rest, 8th rest, three 8ths)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Wave\nT:(Vou Te Contar)\nC:Antonio Carlos Jobim\nP:AABA\n%source The Colorado Cookbook p261 (pdf 264)\n%style (Bossa Nova)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABA 12+12+8+12\nM:4/4\nL:1/8\nK:D\nz4 zB BB |\nP:A\n|: \"Dmaj7\"B6 zB | \"Bbo7\"BB BB B B2 B- | \"Am7\"B8 | \"D7\"z2 BB z B2 B- |\n\"Gmaj7\"B B2 B B2 B2- | \"Gm7\"B2 BB z B2 B- | \"F#7\"B8 | \"B7\"zB BB B B2 B |\n\"Bm7\"zB BB- \"E7\"BB BB | \"Bb7\"BB BB \"A7#9\"B B2 B | \"Dm7\"z B3- \"G7\"B4- |1 \"Dm7\"B4 \"G7\"zB BB :|2\n\"Dm7\"B4- \"G7\"B4 ||\nP:B\n\"Gm7\"B4 (3B2B2B2 | \"C7\"B4 zB BB | \"Fmaj7\"B3 B B4- | \"Fmaj7\"B8 |\n\"Fm7\"B4- BB BB | \"Bb7\"B4 zB BB | \"Ebmaj7\"B3 B B4- | \"Eo7\"B4 \"A7b9\"zB BB ||\nP:A\n\"Dmaj7\"B6 zB | \"Bbo7\"BB BB B B2 B- | \"Am7\"B8 | \"D7\"z2 BB z B2 B- |\n\"Gmaj7\"B B2 B B2 B2- | \"Gm7\"B2 BB z B2 B- | \"F#7\"B8 | \"B7\"zB BB B B2 B |\n\"Bm7\"zB BB- \"E7\"BB BB | \"Bb7\"BB BB \"A7#9\"B B2 B | \"Dm7\"z B3- \"G7\"B4- | \"Dm7\"B4- \"G7\"B4 |]\n\n%unsure [bar 1] pickup is a full 4/4 bar mostly rests (half rest, 8th rest, three 8ths)"
+},
+{
+"id": "The_Colorado_Cookbook/265-weaver-of-dreams",
+"book": "The Colorado Cookbook",
+"title": "A Weaver of Dreams",
+"pdf": "265",
+"form": "AB 16+16 (1st/2nd endings)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "form inferred from repeat with endings; no section letters printed"
+},
+{
+"bars": [
+5,
+6,
+7,
+8
+],
+"groups": [
+4,
+5,
+6,
+7
+],
+"text": "alternative chords printed above (Bbm7 Eb7 | Am7 D7 | Abm7 Db7 | Gm7 C7); only first of each pair given in parentheses here"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:A Weaver of Dreams\nC:Victor Young\n%source The Colorado Cookbook p262 (pdf 265)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 16+16 (1st/2nd endings)\n%unsure [form] form inferred from repeat with endings; no section letters printed\nM:4/4\nL:1/8\nK:C\n|: \"Cmaj7\"B3 B BB B2 | B8 | \"Bm7b5\"B2 BB B2 BB | \"E7b9\"B2 B6 |\n\"Am7\"\"(Bbm7)\"B3 B BB B2 | \"D7\"\"(Ebm7)\"B8 | \"Gm7\"\"(Abm7)\"B2 BB B2 BB | \"C7\"\"(Gm7)\"B8 |\n\"Fmaj7\"B2 B2 B2 B2 | \"Bb7#11\"B2 B2 B2 B2 |1 \"Em7\"B2 BB B2 B2 | \"A7\"B8 |\n\"Am7\"B2 BB B2 B2 | \"D7\"B8 | \"Dm7\"B2 BB B2 B2 | \"G7\"B8 :|2\n\"Em7\"B6 \"A7\"B2 | \"Ebm7\"B6 \"Ab7\"B2 | \"Dm7\"B3 B BB B2 | \"G7\"B2 B2 B2 B2 |\n\"Cmaj7\"B8 | \"Dm7\"z4 \"G7\"z4 |]\n\n%unsure [bars 5-8] alternative chords printed above (Bbm7 Eb7 | Am7 D7 | Abm7 Db7 | Gm7 C7); only first of each pair given in parentheses here"
+},
+{
+"id": "The_Colorado_Cookbook/266-well-you-needn-t-monk-s-version",
+"book": "The Colorado Cookbook",
+"title": "Well You Needn't (Monk's Version)",
+"pdf": "266",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Well You Needn't (Monk's Version)\nC:Thelonious Monk\nP:AABC\n%source The Colorado Cookbook p263 (pdf 266)\n%style (Medium Up Tempo)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:F\nB |\nP:A\n|: \"Fmaj7\"BB B2 B2 BB | \"Gbmaj7\"BB z2 z2 zB | \"Fmaj7\"BB B2 B2 BB | \"Gbmaj7\"BB z2 z2 zB |\n\"Fmaj7\"BB B2 B2 BB | \"Gbmaj7\"BB z2 z2 zB | \"Fmaj7\"BB B2- BB BB |1 \"Fmaj7\"B6 zB :|2\n\"Fmaj7\"B6 zB ||\nP:B\n\"Db7\"BB B2- BB BB | B6 zB | \"D7\"BB B2- BB BB | B6 zB |\n\"Eb7\"BB BB \"E7\"BB BB | \"Eb7\"BB BB \"D7\"BB BB | \"Db7\"BB BB \"C7\"BB BB | \"B7\"BB BB \"C7\"z2 zB ||\nP:C\n\"Fmaj7\"BB B2 B2 BB | \"Gbmaj7\"BB z2 z2 zB | \"Fmaj7\"BB B2 B2 BB | \"Gbmaj7\"BB z2 z2 zB |\n\"Fmaj7\"BB B2 B2 BB | \"Gbmaj7\"BB z2 z2 zB | \"Fmaj7\"BB B2- BB BB | B6 z2 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/267-well-you-needn-t-miles-version",
+"book": "The Colorado Cookbook",
+"title": "Well You Needn't (Miles Version)",
+"pdf": "267",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 0,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Well You Needn't (Miles Version)\nC:Thelonious Monk\nP:AABC\n%source The Colorado Cookbook p264 (pdf 267)\n%style (Medium Up Tempo)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:F\nB |\nP:A\n|: \"Fmaj7\"BB B2 B2 BB | \"Gbmaj7\"BB z2 z2 zB | \"Fmaj7\"BB B2 B2 BB | \"Gbmaj7\"BB z2 z2 zB |\n\"Fmaj7\"BB B2 B2 BB | \"Gbmaj7\"BB z2 z2 zB | \"Fmaj7\"BB B2- BB BB |1 \"Fmaj7\"B6 zB :|2\n\"Fmaj7\"B6 zB ||\nP:B\n\"G7\"BB B2- BB BB | B6 zB | \"Ab7\"BB B2- BB BB | B6 zB |\n\"A7\"BB BB \"Bb7\"BB BB | \"B7\"BB BB \"Bb7\"BB BB | \"A7\"BB BB \"Ab7\"BB BB | \"G7\"BB BB \"Gb7\"z2 zB ||\nP:C\n\"Fmaj7\"BB B2 B2 BB | \"Gbmaj7\"BB z2 z2 zB | \"Fmaj7\"BB B2 B2 BB | \"Gbmaj7\"BB z2 z2 zB |\n\"Fmaj7\"BB B2 B2 BB | \"Gbmaj7\"BB z2 z2 zB | \"Fmaj7\"BB B2- BB BB | B6 z2 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/268-what-is-this-thing-called-love",
+"book": "The Colorado Cookbook",
+"title": "What Is This Thing Called Love",
+"pdf": "268",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:What Is This Thing Called Love\nC:Cole Porter\nP:AABC\n%source The Colorado Cookbook p265 (pdf 268)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:C\nz6 B2 |\nP:A\n|: \"Gm7b5\"B2 B2 B4- | \"C7b9\"B4 B4 | \"Fm\"B8 | z6 B2 |\n\"Dm7b5\"B2 B2 B4- | \"G7#9\"B4 B4 |1 \"Cmaj7\"B8 | z6 B2 :|2\n\"Cmaj7\"B8 | z6 B2 ||\nP:B\n\"Cm7\"B2 B2 B4- | \"F7\"B2 B2 (3B2B2B2 | \"Bbmaj7\"B8 | z6 B2 |\n\"Ab7#11\"B2 B2 B4- | B2 B2 (3B2B2B2 | \"G7#9\"B8 | z2 B2 B2 B2 ||\nP:C\n\"Gm7b5\"B2 B2 B4- | \"C7b9\"B4 B4 | \"Fm\"B8 | z6 B2 |\n\"Dm7b5\"B2 B2 B4- | \"G7#9\"B4 B4 | \"Cmaj7\"B8- | B4 z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/269-what-s-new",
+"book": "The Colorado Cookbook",
+"title": "What's New",
+"pdf": "269",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+8
+],
+"groups": [
+7
+],
+"text": "tie and grouping of the last C note read as eighths then a tied half; second A ending not obviously different"
+},
+{
+"bars": [
+26,
+27
+],
+"groups": [
+25,
+26
+],
+"text": "final bars written in two voices; rhythm of upper line read and chord placement over the tie guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:What's New\nC:Bob Haggart\nP:AABC\n%source The Colorado Cookbook p266 (pdf 269)\n%style (Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:C\nz6 \"G7b9\"B2 |\nP:A\n|: \"Cmaj7\"B4 \"F13\"B4 | \"Bbm9\"z2 (3BBB \"Eb7\"BB BB- | \"Abmaj7\"B8- | \"Dbmaj7\"B8 |\n\"Dm7b5\"BB BB \"G7#11\"B2 B2 | \"Cm\"B4 \"Am7b5\"B4 | \"Dm7b5\"zB BB \"G7#9#5\"B2 B2 | \"Cmaj7\"BB BB- \"Am7\"B4 |1 \"Dm7\"z4 \"G7b9\"B4 :|2 \"Gm7\"z4 \"C7b9\"B4 ||\nP:B\n\"Fmaj7\"B4 \"Bb13\"B4 | \"Ebm9\"z2 (3BBB \"Ab7\"BB BB- | \"Dbmaj7\"B4- \"Gbmaj7\"B4 | \"Gm7b5\"BB BB \"C7#11b9\"B2 B2 |\n\"Fm\"B4 \"Dm7b5\"B4 | \"Gm7b5\"zB BB \"C7#9\"B2 B2 | \"Fmaj7\"BB BB- \"F6\"B4 | \"Dm7b5\"BB BB- \"G7#9\"B2 B2 ||\nP:C\n\"Cmaj7\"B4 \"F13\"B4 | \"Bbm9\"z2 (3BBB \"Eb7\"BB BB- | \"Abmaj7\"B4- \"Dbmaj7\"B4 | \"Dm7b5\"BB BB \"G7#11b9\"B2 B2 |\n\"Cm\"B4 \"Am7b5\"B4 | \"Dm7b5\"zB BB \"G7#9#5\"B2 B2 | \"Cmaj7\"BB B2 BB- \"Am7\"B2- | \"Dm7\"B4 \"G7b9\"z4 |]\n\n%unsure [bar 8] tie and grouping of the last C note read as eighths then a tied half; second A ending not obviously different\n%unsure [bars 26-27] final bars written in two voices; rhythm of upper line read and chord placement over the tie guessed"
+},
+{
+"id": "The_Colorado_Cookbook/270-where-is-love",
+"book": "The Colorado Cookbook",
+"title": "Where Is Love",
+"pdf": "270",
+"form": "AAB 8+12 (solo form printed as A A B)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Where Is Love\nC:Lionel Bart\nP:AAB\n%source The Colorado Cookbook p267 (pdf 270)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AAB 8+12 (solo form printed as A A B)\nM:4/4\nL:1/8\nK:Bb\nP:A\n|: \"Bbmaj7\"BB BB \"Cm7\"B3 \"F7\"B | \"Dm7\"B2- \"Cm7\"B2- \"F7\"B4 | \"Bbmaj7\"BB BB \"Cm7\"B3 \"F7\"B | \"Dm7\"B4- \"G7b9\"B4 |\n\"Cm7\"BB BB \"Bbmaj7\"B3 \"Eb7\"B | \"Abmaj7\"B2 BB- \"Abm7\"B3 \"Db7\"B | \"Gbmaj7\"B2 BB- B2 B2 | \"Cm7\"B4- \"F7b9\"B4 :|\nP:B\n\"Bbmaj7\"BB BB \"Cm7\"B3 \"F7\"B | \"Bbmaj7\"B4- \"Bo7\"B4 | \"Cm7\"BB BB \"F7\"B3 B | \"Dm7\"B4- \"G7b9\"B4 |\n\"Cm7\"BB BB \"F7\"B3 B | \"Bbmaj7\"B2 B2 \"Bbm7\"B2- \"Eb7\"B2 | \"Abmaj7\"B2 B2 B4 | \"D7b9\"B2 \"Gmaj7\"B2 B4 |\n\"Dm7\"BB \"G7b9\"BB \"Cm7\"B4 | \"F7\"BB BB B2 B2 | \"Bbmaj7\"B8- | B6 z2 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/271-where-or-when",
+"book": "The Colorado Cookbook",
+"title": "Where or When",
+"pdf": "271",
+"form": "AABC 8+8+8+12",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Where or When\nC:Richard Rodgers\nP:AABC\n%source The Colorado Cookbook p268 (pdf 271)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+12\nM:4/4\nL:1/8\nK:Eb\nP:A\n|: \"Ebmaj7\"z2 B2 \"Cm7\"B2 B2 | \"Am7b5\"B2 B2 \"Ab7\"B2 B2 | \"Gm7\"B6 \"Fm7\"B2 | \"Ebmaj7\"B6 \"Eb7\"B2 |\n\"Abmaj7\"B2 BB BB BB | B2 B2 B4 | \"Abmaj7\"BB BB B2 B2 | \"Abm7\"B6 \"Db7\"B2 |1 \"Gm7\"B4- \"C7\"B4- | \"Fm7\"B6 \"Bb7\"z2 :|2 \"Ebmaj7\"B8- | \"Dm7b5\"B6 \"G7#5\"z2 ||\nP:B\n\"Cm\"B4 B2 B2 | \"Fm7\"B2 B2 B2 B2 | \"Dm7b5\"B4 B4- | \"G7b9\"B6 z2 |\n\"Cm\"B4 B2 B2 | \"Fm7\"B2 B2 B2 B2 | \"Cm11\"B4- \"F9\"B4- | \"Fm7\"B6 \"Bb7b9\"z2 ||\nP:C\n\"Ebmaj7\"z2 B2 \"Cm7\"B2 B2 | \"Am7b5\"B2 B2 \"Ab7\"B2 B2 | \"Gm7\"B6 B2 | \"Bbm9\"B6 \"Eb7#5\"B2 |\n\"Abmaj9\"B6 B2 | \"Gm7b5\"B6 \"C7b9\"B2 | \"Fm7\"B6 B2 | \"Gm7b5\"B6 \"C7b9\"B2 |\n\"Cm7\"B4 \"F7\"B4 | \"Fm7\"B4 \"Bb7\"B4 | \"Ebmaj7\"B8 | \"Fm7\"z4 \"Bb7\"z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/272-whisper-not",
+"book": "The Colorado Cookbook",
+"title": "Whisper Not",
+"pdf": "272",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+5,
+22
+],
+"groups": [
+4,
+21
+],
+"text": "16th-note triplet followed by an eighth read from small print"
+},
+{
+"bars": [],
+"groups": [],
+"text": "key signature is blank (tune in C minor); K:C as written"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Whisper Not\nC:Benny Golson\nP:AABC\n%source The Colorado Cookbook p269 (pdf 272)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:C\nz6 BB- |\nP:A\n|: \"Cm\"B4- \"Cm/Bb\"B2 BB- | \"Am7b5\"B6 \"D7b9\"BB- | \"Gm\"B6 \"Gm/F\"BB | \"Em7b5\"B6 \"A7b9\"(3B/B/B/B |\n\"Dm\"B2 BB- \"Bm7b5\"BB B2- | \"Em7\"B6 \"A7b9\"BB- | \"Dm\"B4 \"Em\"B4 |1 \"Fm\"B6 \"G7b9\"BB- :|2\n\"Fm\"B4 \"Bb7\"B4 ||\nP:B\n\"Am7b5\"z2 zB B3/2B/2 (3BBB- | \"D7b9\"B4 B2 BB- | \"Gm\"B4- (3B2B2B2 | \"Gm/F\"B4- (3B2B2B2 |\n\"Em7b5\"B4 zB BB | \"A7b9\"B6 B2 | \"Dm7b5\"B4 zB BB | \"G7b9\"B6 BB- ||\nP:C\n\"Cm\"B4- \"Cm/Bb\"B2 BB- | \"Am7b5\"B6 \"D7b9\"BB- | \"Gm\"B6 \"Gm/F\"BB | \"Em7b5\"B6 \"A7b9\"(3B/B/B/B |\n\"Dm\"B2 BB- \"Bm7b5\"BB B2- | \"Em7\"B6 \"A7b9\"BB- | \"Dm\"B4 \"Dm/C\"B4 | \"Ab7\"B4 \"G7#9\"B4 |]\n\n%unsure [bars 5, 22] 16th-note triplet followed by an eighth read from small print\n%unsure [general] key signature is blank (tune in C minor); K:C as written"
+},
+{
+"id": "The_Colorado_Cookbook/273-wish-for-now",
+"book": "The Colorado Cookbook",
+"title": "Wish for Now",
+"pdf": "273",
+"form": "through-composed 30 bars",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no section letters printed"
+},
+{
+"bars": [
+10,
+17
+],
+"groups": [
+9,
+16
+],
+"text": "triplet span and the 16th pair before bar 18 read from small print"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Wish for Now\nC:Bob Gillis\n%source The Colorado Cookbook p270 (pdf 273)\n%style (Loose Bossa)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form through-composed 30 bars\n%unsure [form] no section letters printed\nM:4/4\nL:1/8\nK:C\n\"Dm7\"B B2 B2 B2 B- | \"E7\"B B2 B- B3 B | \"F#m7b5\"B2 BB- BB BB- | \"Fm11\"B4- B3 B |\n\"Em7\"B3 \"Dm9\"B- B2 \"Bb7#11\"B2- | B8 | \"Bm7\"B B2 B2 B2 B- | \"C#7alt\"B B2 B B3 B |\n\"Dmaj7#11\"B2 BB- B4- | \"B7/D#\"(3B2B2B2 B3 B | \"A/E\"B2 BB- B B2 \"C#7alt/E#\"B- | B B2 B2 B2 \"F#m\"B- |\n\"F#m\"B8- | \"Gmaj7#11\"B8 | \"F#m\"BB BB- B B2 \"G7#11\"B- | B8 |\n\"F#m7\"z2 B4 \"F#m7/E\"zB/B/ | \"B13b9/D#\"B B2 B2 B2 \"Dm11\"B- | B8- | \"G7b9\"B8 |\n\"Abmaj7#11\"B B2 B2 B2 B- | \"Bbsus4\"B B2 B- B3 B | \"Cmaj7\"B B2 B2 B2 B- | \"Fmaj7#11\"B4 zB BB |\n\"F#m11\"B B2 \"F#m11/E\"B2 B2 \"Ebo7\"B- | B8- | \"Dm7\"B8 | \"Dm11\"z2 B4 zB |\n\"Am9\"B8- | B8 |]\n\n%unsure [bars 10, 17] triplet span and the 16th pair before bar 18 read from small print"
+},
+{
+"id": "The_Colorado_Cookbook/274-algo-bueno-woody-n-you",
+"book": "The Colorado Cookbook",
+"title": "Woody'n You (Algo Bueno)",
+"pdf": "274",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+9,
+13
+],
+"groups": [
+8,
+12
+],
+"text": "optional chords for solos (Am7 D7, Bm7 E7) printed above; given in parentheses"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Woody'n You (Algo Bueno)\nC:John Birks (Dizzy) Gillespie\nP:AABC\n%source The Colorado Cookbook p271 (pdf 274)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Db\nP:A\n|: \"Gm7b5\"z2 B2 B3 B | \"C7#9\"BB z2 z4 | \"Fm7b5\"z2 B2 B3 B | \"Bb7#9\"BB z2 z4 |\n\"Ebm7b5\"z2 B2 B3 B | \"Ab7#9\"BB z2 z2 BB | \"Dbmaj7\"BB BB B2 BB | BB z2 z4 :|\nP:B\n\"Abm7\"\"(Am7)\"B2 BB \"Db7\"\"(D7)\"B2 BB | \"Abm7\"B2 BB \"Db7\"B2 BB | \"Abm7\"BB BB \"Db7\"B B2 B | \"Gbmaj7\"B8 |\n\"Bbm7\"\"(Bm7)\"B2 BB \"Eb7\"\"(E7)\"B2 BB | \"Bbm7\"B2 BB \"Eb7\"B2 BB | \"Bbm7\"BB BB \"Eb7\"B B2 B | \"Ab7\"B8 ||\nP:C\n\"Gm7b5\"z2 B2 B3 B | \"C7#9\"BB z2 z4 | \"Fm7b5\"z2 B2 B3 B | \"Bb7#9\"BB z2 z4 |\n\"Ebm7b5\"z2 B2 B3 B | \"Ab7#9\"BB z2 z2 BB | \"Dbmaj7\"BB BB B2 BB | BB z2 z4 |]\n\n%unsure [bars 9, 13] optional chords for solos (Am7 D7, Bm7 E7) printed above; given in parentheses"
+},
+{
+"id": "The_Colorado_Cookbook/275-wrong-together",
+"book": "The Colorado Cookbook",
+"title": "Wrong Together",
+"pdf": "275",
+"form": "head 17 bars, solos, D.C. al Coda",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 4,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "no section letters printed"
+},
+{
+"bars": [
+5
+],
+"groups": [
+4
+],
+"text": "triplet grouping (rest, eighth, triplets with a tie) read from print"
+},
+{
+"bars": [
+10
+],
+"groups": [
+9
+],
+"text": "eighth rest plus two-note triplet read as (3 z B B"
+},
+{
+"bars": [
+15,
+16
+],
+"groups": [
+14,
+15
+],
+"text": "two voices; upper whole note tied into a dotted quarter, lower line quarters ignored"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Wrong Together\nC:Steve Swallow\n%source The Colorado Cookbook p272 (pdf 275)\n%style (Walking Ballad)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form head 17 bars, solos, D.C. al Coda\n%unsure [form] no section letters printed\nM:4/4\nL:1/8\nK:F\n|: \"Em9\"B3 B \"A7#11\"BB- (3BBB | \"Gm9\"B3 B \"C7#11\"B2 B2 | \"Fmaj7\"B3 B \"Bb7\"B2 B2 | \"Am7\"B4 \"D7\"B4 |\n\"Gm9\"z2 zB \"C7#11\"(3BBB- (3BBB | \"Bbm9\"BB- (3BBB \"Eb7#11\"B2 B2 | \"Abmaj7\"B6- B\"G7alt\"B | \"Cm9\"B3 B \"F7#11b9\"B2 B2 |\n\"Bbmaj7\"B4 \"A7alt\"B4 | \"Dm9\"z2 (3zBB \"G7#11\"B2 B2 | \"Cmaj7\"B6- B\"F7#11\"B | \"Em9\"B3 B \"A7#11\"BB- (3BBB |\n\"Gm9\"B3 B \"C7#11\"B2 B2 | \"Fmaj7\"B3 B \"Bb7#11\"B3 B | \"A7b13\"B4- \"D7b9\"B4- | \"Gm9\"B3 B \"Csus4\"B2 \"C7\"B2 ||\n\"Fmaj7\"B4 \"B7#11\"B4 :|\n%solos open, then D.C. al Coda\n%coda\n!coda!\"Am7\"B4- \"D7#11b9\"B4- | \"Dbmaj7\"B4- \"C7alt\"B4- | !fermata!\"Fmaj7\"B8 |]\n\n%unsure [bar 5] triplet grouping (rest, eighth, triplets with a tie) read from print\n%unsure [bar 10] eighth rest plus two-note triplet read as (3 z B B\n%unsure [bars 15-16] two voices; upper whole note tied into a dotted quarter, lower line quarters ignored"
+},
+{
+"id": "The_Colorado_Cookbook/276-yardbird-suite",
+"book": "The Colorado Cookbook",
+"title": "Yardbird Suite",
+"pdf": "276",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+7,
+8
+],
+"groups": [
+6,
+7
+],
+"text": "diamond-head notes after PLAY read as rhythm hits"
+},
+{
+"bars": [
+19
+],
+"groups": [
+18
+],
+"text": "sixteenth-note triplet pickup into B read from small print"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Yardbird Suite\nC:Charlie Parker\nP:AABC\n%source The Colorado Cookbook p273 (pdf 276)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:C\n%intro\nz B3 B2 B2 | B3 B zB BB- | B4 B3 B- | B2 BB zB BB |\nz B3- B4 | zB (3BBB B2 BB | z4 \"A7#9\"B4 | \"Dm7\"B4 \"G7#9\"B4 |\nP:A\n|: \"Cmaj7\"z B3 B2 B2 | \"Fm7\"B3 B \"Bb7\"zB BB- | \"C7\"B4 \"Bb7\"B3 B- | \"A7\"B3 B BB BB |\n\"D7\"B B2 B- B4 |1 \"G7\"z2 zB zB BB- | \"Em7\"B3 B \"A7\"zB BB- | \"Dm7\"B6 \"G7\"z2 :|2\n\"G7\"z2 zB BB BB- | \"Cmaj7\"B8 | \"Cmaj7\"z4 \"B7\"z2 (3B/B/B/B ||\nP:B\n\"Em\"B3 B B B2 B | \"F#m7b5\"zB \"B7#9\"B6 | \"Em7\"BB BB BB BB- | \"A7\"B4 z2 zB |\n\"Dm7\"B3 B zB BB | \"Em7b5\"z B3 \"A7#9\"BB BB | \"D7\"B B2 B- B3 B | \"Dm7\"BB BB \"G7\"z4 ||\nP:C\n\"Cmaj7\"z B3 B2 B2 | \"Fm7\"B3 B \"Bb7\"zB BB- | \"C7\"B4 \"Bb7\"B3 B- | \"A7\"B2 BB zB BB |\n\"D7\"z B3- B4 | \"Dm7\"zB (3BBB \"G7\"B2 BB | \"Cmaj7\"z4 \"A7#9\"z4 | \"Dm7\"z4 \"G7#9\"z4 |]\n\n%unsure [bars 7-8] diamond-head notes after PLAY read as rhythm hits\n%unsure [bar 19] sixteenth-note triplet pickup into B read from small print"
+},
+{
+"id": "The_Colorado_Cookbook/277-you-and-i-and-george",
+"book": "The Colorado Cookbook",
+"title": "You and I and George",
+"pdf": "277",
+"form": "AB 8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+14,
+17,
+18
+],
+"groups": [
+13,
+16,
+17
+],
+"text": "C#o7 bar read as half + two 8ths + rest; ending bars are chords (top note only), Csus4 tied into C/G"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:You and I and George\nC:Matt Dennis\nP:AB\n%source The Colorado Cookbook p274 (pdf 277)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 8+8\nM:4/4\nL:1/8\nK:C\nP:A\n\"C\"B3 B \"Cmaj7\"B3 B | \"C7\"B6 B2 | \"F\"B B3 \"F#o7\"B3 B | \"Cmaj7/G\"BB B6 |\nw: You and I and George went stroll-ing thru the park one day,\n\"Dm7\"B3 B \"G7\"B2 B2 | \"Cmaj7\"B4 \"C#o7\"zB BB | \"D7\"B6 B2 | \"Dm7\"B4 \"G7b9\"B4 ||\nw: and you held my hand as if to say I love you.\nP:B\n\"C\"B3 B \"Cmaj7\"B3 B | \"C7\"B6 B2 | \"F\"B3 B \"F#o7\"B2 B2 | \"Cmaj7/G\"BB B4 B2 |\nw: Then we pass'd a brook and George fell in and drown'd him-self and\n\"Dm7\"B B3 \"G7\"B3 B | \"Cmaj7\"B4 \"C#o7\"BB z2 | \"D7\"B6 B2 | \"Dm7\"B2 \"G7b9\"B4 B2 |\n\"Csus4\"B4- \"C/G\"B2 \"Gsus4\"B2 | \"C\"B8 |]\nw: float-ed out to sea, leav-ing you a-lone with me.\n\n%unsure [bars 14, 17-18] C#o7 bar read as half + two 8ths + rest; ending bars are chords (top note only), Csus4 tied into C/G"
+},
+{
+"id": "The_Colorado_Cookbook/278-you-go-to-my-head",
+"book": "The Colorado Cookbook",
+"title": "You Go to My Head",
+"pdf": "278",
+"form": "AABCD 8+8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+13,
+18
+],
+"groups": [
+12,
+17
+],
+"text": "chord placement of Fm7/Bb7 and of the four chords over the dotted half guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:You Go to My Head\nC:J. Fred Coots\nP:AABCD\n%source The Colorado Cookbook p275 (pdf 278)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABCD 8+8+8+8+8\nM:4/4\nL:1/8\nK:Eb\nz6 B2 |\nP:A\n|: \"Ebmaj7\"BB BB- B4 | \"Abm7\"z2 BB \"Db7\"BB BB | \"Gbmaj7\"BB BB- B4 | \"F7\"z2 BB \"Bb7\"BB BB |\n\"Ebm\"BB BB- B4 | \"F7\"z2 BB \"Bb7b9\"BB BB | \"Ebmaj7\"BB BB- B4 |1 \"Fm7\"z4 \"Bb7b9\"z2 B2 :|2\n\"Bbm7\"z4 \"Eb7\"z2 B2 ||\nP:B\n\"Abmaj7\"BB BB- B2 BB | \"D7b9\"BB BB- B2 BB | \"Ebmaj7\"B2 BB \"Fm7\"BB \"Bb7\"BB- | \"Ebmaj7\"B6 BB |\n\"Am7\"BB B2 \"D7b9\"B2 BB | \"Gmaj7\"BB B2 \"G#o7\"B2 BB | \"Am7\"B2 BB \"D7#9\"(3B2B2B2 | \"Gm7\"B2- \"Gbm7\"B2- \"Fm7\"B2 \"Bb7\"B2 ||\nP:C\n\"Ebmaj7\"BB BB- B4 | \"Abm7\"z2 BB \"Db7\"BB BB | \"Gbmaj7\"BB BB- B4 | \"F7\"z2 BB \"Bb7\"BB BB |\n\"Ebm\"BB BB- B4 | \"F7\"z2 BB \"Bb7\"BB BB | \"Ebmaj7\"BB BB- B4- | \"Bbm7\"B6 \"Eb7b9\"BB ||\nP:D\n\"Abmaj7\"B2 B2 B2 B2 | \"Db7\"B B2 B- B4 | \"Ebmaj7\"(3B2B2B2 (3B2B2B2 | \"Cm7\"(3B2B2B2 \"Gbo7\"(3B2B2B2 |\n\"Fm7\"B8 | \"Bb7b9\"z2 B2 (3B2B2B2 | \"Ebmaj7\"B8- | B4 z4 |]\n\n%unsure [bars 13, 18] chord placement of Fm7/Bb7 and of the four chords over the dotted half guessed"
+},
+{
+"id": "The_Colorado_Cookbook/279-you-ll-never-believe",
+"book": "The Colorado Cookbook",
+"title": "You'll Never Believe...",
+"pdf": "279",
+"form": "ABCD 12+8+8+16",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+13,
+14
+],
+"groups": [
+12,
+13
+],
+"text": "16th pickup into C7#11 read from a small scan"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:You'll Never Believe...\nC:Stefan Karlsson\nP:ABCD\n%source The Colorado Cookbook p276 (pdf 279)\n%style (Medium - Up Swing)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 12+8+8+16\nM:4/4\nL:1/8\nK:Eb\nP:A\n\"Ebmaj7\"z4 zB BB- | \"A7#11\"B2 B2 B2 BB- | \"Abmaj7\"B8 | \"Db7\"z8 |\n\"Ebmaj7\"z4 zB BB- | \"A7#11\"B2 B2 B2 BB- | \"Abmaj7\"B4- B3 B | \"Dm7b5\"B2 \"G7\"B2 B2 BB- |\n\"Cm7\"B4- B3 B | \"Cm7/Bb\"B2 B2 B2 B2 | \"Am7\"B8 | \"Abm7\"B4 \"Db7\"z4 ||\nP:B\n\"Gbmaj7\"z4 zB B/2B/2B- | \"C7#11\"B B3 B2 B2 | \"Cbmaj7\"B4- B3 B | \"Fm7b5\"B2 B2 \"Bb7\"B2 BB- |\n\"Ebm7\"B8- | \"Ebm7/Db\"B6 BB- | \"Cm7\"B8- | \"F7\"B4 z4 ||\nP:C\n\"Bbmaj7\"z4 BB BB | \"G7\"B2 BB- B2 BB- | \"Cm7\"B4 z2 zB | \"Am7b5\"B2 \"D7b9\"B2 B2 BB- |\n\"Gm7\"B4- B3 B | \"C7#11\"B4 zB BB- | \"Fm7\"B4- B3 B | \"Bb7\"B6 z2 ||\nP:D\n\"Ebmaj7\"z4 zB BB- | \"A7#11\"B2 B2 B2 BB- | \"Abmaj7\"B8 | \"Db7\"z8 |\n\"Ebmaj7\"z4 zB BB- | \"A7#11\"B2 B2 B2 BB- | \"Abmaj7\"B4- B3 B | \"Dm7b5\"B2 \"G7\"B2 B2 BB- |\n\"Cm7\"B4- B3 B | \"Cm7/Bb\"B2 B2 B2 B2 | \"Am7b5\"B4- \"D7\"B3 B | \"Abm7\"B2 B2 \"Db7\"B2 B2 |\n\"G7\"B6 \"C7\"B2 | \"Fm7\"B2 B2 \"Bb7\"B2 BB- | \"Emaj7\"B8- | B8 |]\n\n%unsure [bars 13-14] 16th pickup into C7#11 read from a small scan"
+},
+{
+"id": "The_Colorado_Cookbook/280-yours-is-my-heart-alone",
+"book": "The Colorado Cookbook",
+"title": "Yours Is My Heart Alone",
+"pdf": "280",
+"form": "ABCD 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 0,
+"flags": [],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Yours Is My Heart Alone\nC:Franz Lehar\nP:ABCD\n%source The Colorado Cookbook p277 (pdf 280)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABCD 8+8+8+8\nM:4/4\nL:1/8\nK:C\nP:A\n\"F#m7b5\"B8- | \"B7b9\"B4 B2 B2 | \"Em7\"B2 B2 B4 | \"A7\"z2 B2 B2 B2 |\n\"Dm7\"B8 | \"G7\"z2 B2 B2 B2 | \"Em7\"B4- \"A7\"B4- | \"Dm7\"B6 \"G7\"z2 ||\nP:B\n\"F#m7b5\"B8- | \"B7b9\"B4 B2 B2 | \"Em7\"B2 B2 B4 | \"A7\"z2 B2 B2 B2 |\n\"Am7\"B8 | \"D7\"z2 B2 B2 B2 | \"Dm7\"B8- | \"G7\"B6 z2 ||\nP:C\n\"Em7b5\"B8- | \"A7b9\"B4 B2 B2 | \"Dm\"B2 B2 B4- | B8 |\n\"Bb7\"B8- | B4 B2 B2 | \"Cmaj7\"(3B2B2B2 B4- | B8 ||\nP:D\n\"F#m7b5\"B8- | \"B7b9\"B4 B2 B2 | \"Em7\"B2 B2 B4 | \"A7\"z2 B2 B2 B2 |\n\"Dm7\"B2 B2 B2 B2 | \"G7\"B4 B4 | \"Cmaj7\"B8- | B4 z4 |]\n"
+},
+{
+"id": "The_Colorado_Cookbook/281-blues-minor",
+"book": "The Colorado Cookbook",
+"title": "Blues Minor",
+"pdf": "281",
+"form": "AABBCC 4+4+4+4+4+4 (head is a 12-bar minor blues, each 4-bar line repeated)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "melody is in two-note harmony (top line only kept); chords beyond the first of each line not printed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Blues Minor\nC:John Coltrane\nP:AABBCC\n%source The Colorado Cookbook p278 (pdf 281)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABBCC 4+4+4+4+4+4 (head is a 12-bar minor blues, each 4-bar line repeated)\nM:4/4\nL:1/8\nK:Cm\nP:A\n|: \"Fm\"BB B2 BB B2 | BB B2 BB B2 | B3 B- B4- | B8 :|\nP:B\n|: \"Bbm\"BB B2 BB B2 | BB B2 BB B2 | B3 B- B4- | B8 :|\nP:C\n|: \"Fm\"BB B2 BB B2 | BB B2 BB B2 | B3 B- B4- | B8 :|\n\n%unsure [general] melody is in two-note harmony (top line only kept); chords beyond the first of each line not printed"
+},
+{
+"id": "The_Colorado_Cookbook/281-zephyr",
+"book": "The Colorado Cookbook",
+"title": "Zephyr",
+"pdf": "281",
+"form": "AB 6+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 3,
+"flags": [
+{
+"bars": [],
+"groups": [],
+"text": "sections are 6 and 8 bars as printed (plus a pickup bar)"
+},
+{
+"bars": [
+3,
+5,
+8,
+11,
+14
+],
+"groups": [
+2,
+4,
+7,
+10,
+13
+],
+"text": "small \"RHY\" cue notes under the melody (rhythm-section hits) left out"
+},
+{
+"bars": [
+10
+],
+"groups": [
+9
+],
+"text": "Bbmaj7#5 bar only adds to 6/8 as printed; last quarter guessed"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Zephyr\nC:John McNeil\nP:AB\n%source The Colorado Cookbook p278 (pdf 281)\n%style (Moderately Slow)\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AB 6+8\n%unsure [form] sections are 6 and 8 bars as printed (plus a pickup bar)\nM:4/4\nL:1/8\nK:C\nz4 z2 (3zBB |\nP:A\n\"Am\"B4- BB (3BBB | \"Fm\"B4 BB BB- | \"Gbmaj7\"B6 (3zBB | \"Gbmaj7\"BB BB B2 BB- |\n\"Em/A\"B8- | B8 ||\nP:B\n\"Go7\"B4 B3 B- | \"Abm\"B2 B4- (3BBB | \"Bbmaj7#5\"B3 B B2 BB- | \"Cm\"B3 B B2 BB |\n\"Dmaj7\"z2 B6- | \"Dmaj7\"B8 | \"Gm/C\"B2 zB- B4- | \"Dm\"B8 |]\n\n%unsure [bars 3, 5, 8, 11, 14] small \"RHY\" cue notes under the melody (rhythm-section hits) left out\n%unsure [bar 10] Bbmaj7#5 bar only adds to 6/8 as printed; last quarter guessed"
+},
+{
+"id": "The_Colorado_Cookbook/282-christmas-song",
+"book": "The Colorado Cookbook",
+"title": "Christmas Song",
+"pdf": "282",
+"form": "AABC 8+8+8+8",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 2,
+"flags": [
+{
+"bars": [
+2,
+4
+],
+"groups": [
+1,
+3
+],
+"text": "chords split mid-note (tie added under C7, F-7, Bb7 and Db7)"
+},
+{
+"bars": [
+2,
+20,
+25
+],
+"groups": [
+1,
+19,
+24
+],
+"text": "the four quick chords over the GG/dotted-half and quarter/half bars placed by guess"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Christmas Song\nC:Mel Torme\nP:AABC\n%source The Colorado Cookbook p279 (pdf 282)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form AABC 8+8+8+8\nM:4/4\nL:1/8\nK:Eb\nP:A\n|: \"Ebmaj7\"B2 B2 \"Fm7\"BB BB | \"Gm7\"BB B2- \"C7\"B2- \"Fm7\"B-\"Bb7\"B | \"Ebmaj7\"B2 B2 \"Bbm7\"BB \"Eb7\"BB | \"Abmaj7\"B4- \"Db7\"B4 |\n\"Cm7\"B2 B2 \"Db7\"B2 BB | \"Cm7\"(3B2\"Cm7/Bb\"B2\"Am7\"B2 \"D7\"B3 B |1 \"Gmaj7\"B2 B2 \"Abm7\"BB \"Db7\"BB | \"Gbmaj7\"B4 \"Fm7\"BB \"Bb7\"BB :|2\n\"Gm7\"BB \"C7\"BB \"Fm7\"B2 \"Bb7\"B2 | \"Ebmaj7\"B4 zB BB ||\nP:B\n\"Bbm7\"B4- \"Eb7\"BB BB | \"Abmaj7\"B4 \"Cm7\"zB \"F7\"BB | \"Bbm7\"BB BB \"Eb7\"BB BB | \"Abmaj7\"B4 zB BB |\n\"Abm7\"BB B2- \"Db7\"BB BB | \"Gbmaj7\"B4- \"B7\"BB BB | \"Cm7\"BB BB \"F7\"(3B2B2B2 | \"Fm7\"B6 \"Bb7\"zB ||\nP:C\n\"Ebmaj7\"B2 B2 \"Fm7\"BB BB | \"Gm7\"BB B2- \"C7\"B2- \"Fm7\"B-\"Bb7\"B | \"Ebmaj7\"B2 B2 \"Bbm7\"BB \"Eb7\"BB | \"Abmaj7\"B6 \"Db7\"zB |\n\"Cm7\"B2 BB B2 \"Db7\"BB | \"Cm7\"(3B2\"Cm7/Bb\"B2\"Am7\"B2 \"D7\"B2 BB | \"Gm7\"B2 \"C7\"B2- \"Fm7\"B2 \"Bb7\"B2 | \"Eb6/9\"B8 |]\n\n%unsure [bars 2, 4] chords split mid-note (tie added under C7, F-7, Bb7 and Db7)\n%unsure [bars 2, 20, 25] the four quick chords over the GG/dotted-half and quarter/half bars placed by guess"
+},
+{
+"id": "The_Colorado_Cookbook/283-jingle-bells",
+"book": "The Colorado Cookbook",
+"title": "Jingle Bells",
+"pdf": "283",
+"form": "ABBC 16+8+8+4 (solos on B and C, D.C. al Fine)",
+"bad": 0,
+"off": [],
+"first": 1,
+"unsure": 1,
+"flags": [
+{
+"bars": [
+29,
+30,
+31,
+32,
+33
+],
+"groups": [
+28,
+29,
+30,
+31,
+32
+],
+"text": "rhythm slashes (no melody) written as rests; last bar is a whole-note diamond (Fine)"
+}
+],
+"note": "Rhythms, chords and lyrics only.",
+"abc": "X:1\nT:Jingle Bells\nC:J.S. Pierpont\nP:ABBC\n%source The Colorado Cookbook p280 (pdf 283)\n%style ()\n%note Rhythms, chords and lyrics only. Pitches NOT transcribed: every note is written as B.\n%form ABBC 16+8+8+4 (solos on B and C, D.C. al Fine)\nM:4/4\nL:1/8\nK:F\nP:A\n\"F\"B2 B2 B2 B2 | B4 z2 BB | B2 B2 B2 B2 | \"Bb\"B6 z2 |\n\"Bb\"B2 B2 B2 B2 | \"C7\"B6 z2 | B2 B2 B2 B2 | \"F\"B6 z2 |\n\"F\"B2 B2 B2 B2 | B6 z2 | B2 B2 B2 B2 | \"Bb\"B4 z2 B2 |\n\"Bb7\"B2 B2 \"Eb7\"B2 B2 | \"Am7\"B2 B2 \"D7\"B2 B2 | \"Gm7\"B2 B2 \"C7\"B2 B2 | \"Fmaj7\"B6 z2 ||\nP:B\n|: \"Fmaj7\"B2 B2 B4 | \"Eb7\"B2 B2 B4 | \"D7\"B2 B2 \"Db7\"B2 B2 | \"F#m7\"B6 \"B7\"z2 |1 \"Bbmaj7\"B2 B2 B2 B2 | \"Eb7\"B2 B2 B2 BB | \"D7\"B2 B2 \"G7\"B2 B2 | \"Db7\"B4 \"Gb7\"B4 :|2\n\"Bbmaj7\"B2 B2 \"Eb7\"B2 B2 | \"D7\"B2 B2 \"G7\"B2 BB | \"Gm7\"B2 B2 \"C7\"B2 B2 | \"Fmaj7\"B6 z2 ||\nP:C\n|: \"Gm7/C\"z8 | \"Fmaj7/C\"z8 | \"Gm7/C\"z8 |1 \"Fmaj7/C\"z8 :|2 \"Gb7/C\"B8 |]\n\n%unsure [bars 29-33] rhythm slashes (no melody) written as rests; last bar is a whole-note diamond (Fine)"
 },
 {
 "id": "real-easy-book-c/008-bags-groove",

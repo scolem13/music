@@ -24,6 +24,16 @@ function tune(title) {
 }
 sf.songs.forEach(s => { const t = fixTitle(s.title), x = tune(t); x.sf = s.vols; if (t !== s.title && !x.ocr) x.ocr = s.title; });
 
+// Extra parts the book prints (harmony / bass / counter), from the "%parts" line of the rhythm drafts in
+// ~/Downloads/realBooks/sher-rhythm/<index name>/<pdf page>-<slug>.abc; a "(Harmony)" index title counts as a harmony part
+const partsAt = {}, rhythmDir = path.join(require("os").homedir(), "Downloads/realBooks/sher-rhythm");
+if (fs.existsSync(rhythmDir)) for (const bk of fs.readdirSync(rhythmDir)) {
+  const d = path.join(rhythmDir, bk); if (!fs.statSync(d).isDirectory()) continue;
+  for (const f of fs.readdirSync(d).filter(f => /^\d+-.*\.abc$/.test(f))) {
+    const m = fs.readFileSync(path.join(d, f), "utf8").match(/^%parts\s+(.*)$/m); if (!m) continue;
+    const kinds = m[1].match(/\b(harmony|bass|counter)\b/g); if (kinds) partsAt[bk + ".json#" + parseInt(f)] = [...new Set(kinds)];
+  }
+}
 const idxDir = path.join(dir, "index"), used = [];
 if (fs.existsSync(idxDir)) for (const f of fs.readdirSync(idxDir).filter(f => f.endsWith(".json")).sort()) {
   let ix; try { ix = JSON.parse(fs.readFileSync(path.join(idxDir, f), "utf8")); } catch (e) { console.warn("skipped", f, e.message); continue; }
@@ -35,7 +45,8 @@ if (fs.existsSync(idxDir)) for (const f of fs.readdirSync(idxDir).filter(f => f.
     if (!e.title || !e.pdfPage) return;
     const x = tune(e.title);
     if (raw !== e.title && !x.ocr) x.ocr = raw;                                       // as the index read it (dir-songs caches are keyed by it)
-    x.at.push([b, e.pdfPage, e.page == null ? null : e.page, e.conf || "", e.composer || ""]);
+    const parts = /\(harmony\)/i.test(raw) ? ["harmony"] : partsAt[f + "#" + e.pdfPage];
+    x.at.push([b, e.pdfPage, e.page == null ? null : e.page, e.conf || "", e.composer || ""].concat(parts ? [parts] : []));
     if (!x.c && e.composer) x.c = e.composer;
     if (e.film && !(x.fm = x.fm || []).includes(e.film)) x.fm.push(e.film);
     if (e.artist && !(x.ar = x.ar || []).includes(e.artist)) x.ar.push(e.artist);   // performer(s) the books credit

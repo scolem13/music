@@ -16,7 +16,7 @@ import abcbars
 
 HOME = os.path.expanduser('~')
 BOOKS = {'realpop2-rhythm': 'The Real Pop Book Vol. 2', 'real-easy-book-c': 'The Real Easy Book (C)',
-         'The_Colorado_Cookbook': 'The Colorado Cookbook'}
+         'The_Colorado_Cookbook': 'The Colorado Cookbook', 'New_Real_Book_Volume2': 'The New Real Book Vol. 2'}
 
 
 def sources():

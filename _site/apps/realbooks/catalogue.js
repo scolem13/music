@@ -24,8 +24,8 @@
       a.textContent = t.t;
       if (t.aka || t.c || t.ar || t.fm) { const d = document.createElement("div"); d.className = "aka"; d.textContent = [t.ar && "recorded by " + t.ar.join(", "), t.fm && "from " + t.fm.join(", "), t.c, t.aka && "also " + t.aka.join("; ")].filter(Boolean).join(" · "); a.appendChild(d); }
       wh.className = "where";
-      t.at.forEach(([bi, pp, pg, conf]) => { const sp = document.createElement("span"), bk = D.books[bi]; if (bk.hand) sp.className = "hand";
-        sp.textContent = bk.title.replace(/^The /, "") + ", " + (pg != null ? pg : "pdf " + pp); sp.title = bk.file + " · PDF page " + pp + (conf ? " · " + conf + " confidence" : ""); wh.appendChild(sp); });
+      t.at.forEach(([bi, pp, pg, conf, , parts]) => { const sp = document.createElement("span"), bk = D.books[bi]; if (bk.hand) sp.className = "hand";
+        sp.textContent = bk.title.replace(/^The /, "") + ", " + (pg != null ? pg : "pdf " + pp) + (parts ? " + " + parts.join(", ") : ""); sp.title = bk.file + " · PDF page " + pp + (conf ? " · " + conf + " confidence" : ""); wh.appendChild(sp); });
       s.className = "hide-sm aka";
       (t.sf || []).forEach((v, i) => { const e = document.createElement(D.sfOwned[v] ? "b" : "span"); e.textContent = (i ? ", " : "") + String(v).padStart(2, "0") + (D.sfOwned[v] ? " ✓" : "");
         e.title = D.sfVols[v] + (D.sfOwned[v] ? " — I have this as a PDF: " + D.sfOwned[v].map(b => D.books[b].file).join(", ") : " — no PDF"); s.appendChild(e); });
