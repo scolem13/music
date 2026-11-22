@@ -44,3 +44,7 @@
   (keep the shared note, move the others to the nearest), RH fingers 1-3-5 / 1-2-5 (rule of thumb), LH roots, when to jump. Diagrams are
   `sh-shapes` (`_shape-kit.qmd`); the Inversion Picker `<div class="ip" data-prog>` is `apps/shared/lessons/inversion-picker.js` (rules in
   its header: Smoothest = fewest half steps, the first chord kept). Test `node tests/lessons/inversions-voice-leading.cdp.js` (`NEG=1` must fail).
+- Guitar Triads for Smooth Chord Changes (`lessons/guitar-voice-leading.qmd`, sidebar Guitar Technique after Chord Shapes by Hand): the guitar
+  twin of the inversions lesson, top-string triads (strings 3-2-1, or 4-3-2), shared note kept, open-chord anchor fingers. Triad Picker
+  `<div class="gvp" data-prog data-set="top|mid">` is `apps/shared/lessons/guitar-voice-picker.js` (rules in its header: every close triad up to
+  fret 15, Smoothest = fewest frets moved, the first shape kept). Test `node tests/lessons/guitar-voice-leading.cdp.js` (`NEG=1` must fail).

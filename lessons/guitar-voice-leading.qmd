@@ -1,0 +1,114 @@
+---
+title: "Guitar Triads for Smooth Chord Changes"
+toc: true
+toc-depth: 2
+description: "Choose the triad shape on the top strings that is nearest the last one: keep the shared note, move the other fingers a fret or two, and stay in one place on the neck. With a triad picker that counts how many frets your hand moves."
+instruments: [guitar]
+topics: [harmony]
+has: [fingering, interactive, notation]
+---
+
+[Guitar chord shapes by hand](chord-shapes-guitar-hand.qmd#g-b7) showed the three positions of a triad on the top three strings. This lesson is about **choosing between them**. If you play every chord with the root on the lowest string, the hand slides up and down the neck each time the chord changes. If you choose the shape nearest the one before, the hand stays in one place and only one or two fingers move. That is easier, easier to keep in time, and it sounds smoother. Musicians call it **voice leading**. It is the piano lesson [Inversions for smooth chord changes](inversions-voice-leading.qmd) on the fretboard: the numbers come out the same, because one fret is one half step.
+
+## Jumping: every chord in root position {#jumping}
+
+C – F – G – C on strings 3, 2 and 1, every chord with its root on string 3. Press **▶ Play in order** and watch the frets: the hand goes from the 5th fret to the 12th and back.
+
+<div class="sh-toggles"></div>
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="C xxx553@xxx341; F x-x-x-10-10-8@xxx341; G x-x-x-12-12-10@xxx341; C xxx553@xxx341"></div>
+
+It is the same shape three times, slid along the neck. That is easy to remember, but every finger moves on every change, 42 frets in all, and the slide from G back down to C is seven frets. In a song, that jump is where you lose the beat or hit the wrong fret.
+
+## Staying close: the two rules {#rules}
+
+To choose the shape of the next chord:
+
+1. **Keep the note the chords share.** If a note is in both chords and on the same string, the finger on it stays down.
+2. **Move every other finger to the nearest note of the new chord**, usually one or two frets away, on the same string.
+
+The same C – F – G – C, voice-led, all around the 5th fret:
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="C xxx553@xxx341; F/C xxx565@xxx132; G/B xxx433@xxx211; C xxx553@xxx341"></div>
+
+- C to F: **C** (string 3, fret 5) is in both chords and stays. E moves up a fret to F, G moves up two to A. F is now in second inversion (F/C).
+- F to G: no shared note, so each finger moves, but only a step: C down to B, F down to D, A down to G. G is now in first inversion (G/B).
+- G to C: **G** (string 1, fret 3) is shared and stays. B goes up to C, D goes up to E.
+
+Count it: the root-position version moves 42 frets in all, the voice-led one 12. The hand never leaves frets 3 to 6.
+
+**Practice:** play the voice-led version slowly, saying "stay, move, move" for each change. Then play the root-position version and feel the difference.
+
+## Fingers on the top strings {#fingers}
+
+Tick **Finger numbers** above the first diagram to see the fingers (1 = index … 4 = little). The fingerings here are the ones used in [Guitar chord shapes by hand](chord-shapes-guitar-hand.qmd#g-b7); treat them as a rule of thumb, as a teacher may prefer others.
+
+- **The shape with two notes at one fret** (C `xxx553`, G/B `xxx433`): one finger can lay across both, or use two fingers.
+- **Keep a held finger down while the others move.** The held note keeps ringing, and that is what makes the change sound connected.
+- **Slide a finger that stays on its string.** If a finger moves one or two frets along the same string, keep it touching the string: it is a guide to the next shape.
+- **Mute strings 6, 5 and 4.** Pick only the top three strings, or let the fretting fingers rest lightly on the low strings.
+
+## Open chords do it too {#open}
+
+Open chords have shared notes as well. C `x32010` to Am `x02210`: the C on string 2 (fret 1) and the E on string 4 (fret 2) are in both chords. With the usual fingers, index and middle stay where they are and only the ring finger moves, from string 5 to string 3.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="C x32010@x32010; Am x02210@x02310"></div>
+
+Before you change chords, look for the finger that can stay. Guitar teachers often call it an anchor finger (or a pivot finger).
+
+## Try it: the triad picker {#picker}
+
+Type chords or pick a progression. Under each chord, choose a shape: **Root / 1st / 2nd** and the fret it starts at. The numbers show the notes kept, the strings that change, the frets moved, and how far the hand moves along the neck. **Smoothest** keeps your first shape and picks the shapes that move the fingers least. Press a chord's label or a shape button to hear it.
+
+<div class="gvp" data-prog="C G Am F"></div>
+
+Things to try:
+
+- Press **All root position**, then **Smoothest**, and compare the totals.
+- Start C on a different shape (press **1st · fr 8** under C, `x-x-x-9-8-8`), then Smoothest: the whole progression moves up the neck but stays together.
+- Try **Am Dm E Am**. The E chord has a G♯: the voice-led shape puts it on string 3, a fret under the A it came from.
+- Switch **Strings** to 4-3-2 and try **G C D G**: the same idea, a little lower and warmer.
+
+## Let the bass have the root {#bass}
+
+A top-string triad in first or second inversion has a 3rd or 5th at the bottom. In a band that does not matter, because the bass player plays the root under you, and your small shapes leave room for the bass and the keyboard. On your own, play the root on string 5 or 6 first and then the triad, or use full open and barre chords when the song needs to sound big.
+
+## When to jump on purpose {#jumps}
+
+Smoothest is not always best. Sometimes you want a jump:
+
+- to make the chorus sound bigger, move up the neck to a higher shape;
+- if the shapes have crept too high or too low, jump back at the start of a phrase;
+- when a singer or a lead guitar is in the same range, move your shapes above or below them.
+
+The skill is to choose: small moves most of the time, a jump when it means something.
+
+## Play it in songs {#songs}
+
+[Pop changes for guitar](pop-changes-guitar.qmd) has progressions to try these shapes on. The Backing Track's guitar part *Voice-led triads* plays them this way: each chord the shape nearest the one before. Pick a song with two or three chords, find the note the chords share, and keep that finger down.
+
+```{=html}
+<style>
+.gvp { border: 1px solid var(--site-border, #ced4da); border-radius: .5rem; padding: .7rem .9rem; margin: .8rem 0 1.6rem; background: var(--site-surface-2, #f8f9fa); }
+.gvp button { border: 1px solid var(--site-border, #ced4da); border-radius: .4rem; background: var(--site-surface, #fff); color: inherit; padding: .3rem .7rem; cursor: pointer; }
+.gvp-top, .gvp-btns { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin-bottom: .5rem; }
+.gvp-top label { display: flex; gap: .4rem; align-items: center; margin: 0; }
+.gvp-in { width: 14rem; max-width: 100%; font-family: var(--font-mono, monospace); }
+.gvp-board { display: flex; flex-wrap: wrap; gap: .6rem; }
+.gvp-col { flex: 0 1 11rem; border: 1px solid var(--site-border, #ced4da); border-radius: .4rem; padding: .35rem .5rem; background: var(--site-surface, #fff); }
+.gvp-col svg { width: 100%; }
+.gvp-col.gvp-now { outline: 2px solid var(--site-accent, #2780e3); }
+.gvp-tab { font-family: var(--font-mono, monospace); font-size: .85rem; text-align: center; }
+.gvp-inv { display: flex; flex-wrap: wrap; gap: .25rem; margin: .25rem 0; }
+.gvp-inv button { padding: .1rem .35rem; font-size: .75rem; }
+.gvp-inv button.gvp-on { background: var(--site-accent, #2780e3); border-color: var(--site-accent, #2780e3); color: #fff; }
+.gvp-stat { font-size: .8rem; color: var(--site-ink-2, #6c757d); }
+.gvp-stat.gvp-good b { color: #2f9e44; } .gvp-stat.gvp-bad b { color: #e03131; }
+</style>
+```
+
+{{< include _shape-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/lessons/guitar-voice-picker.js"></script>
+```
