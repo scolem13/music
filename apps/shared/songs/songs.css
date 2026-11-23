@@ -694,3 +694,9 @@ body.gig-on > :not(#gig) { display: none !important; }   /* the page under it wo
 h1.title .gig-link { text-decoration: none; font-size: .8em; vertical-align: .05em; }
 #gig .gig-gbar.gig-one > .gig-meter + .gig-c { margin-left: .35em; }
 #gig .gig-beats .gig-q.gig-compact { padding: 0 .05em; justify-content: center; }
+/* 2026-11-23: quarters fill their half of the box (no floating top row, no gaps in the lines); taller rows, bigger names */
+#gig .gig-gbar.gig-four { align-items: stretch; gap: 0; font-size: 1em; }
+#gig .gig-grow { grid-auto-rows: 4.6rem; }
+#gig .gig-grid { font-size: 1.45rem; }
+#gig .gig-two .gig-q { font-size: 1em; }
+#gig .gig-q.gig-qstack { flex-direction: column; gap: 0; line-height: 1; }

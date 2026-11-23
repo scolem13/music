@@ -3434,6 +3434,8 @@ if (window.SONG_ID) (function () {
         if (!over()) return;
         [].forEach.call(p.querySelectorAll(".gig-c"), function (c) { c.firstChild.nodeValue = compact(c.firstChild.nodeValue); });
         p.classList.add("gig-compact");
+        p.classList.remove("gig-qstack");
+        if (over() && p.querySelectorAll(".gig-c").length > 1) p.classList.add("gig-qstack");   // two chords in one part: one above the other
         for (var f = 0.95; f >= 0.55 && over(); f -= 0.05) p.style.fontSize = f + "em";
       });
     });
