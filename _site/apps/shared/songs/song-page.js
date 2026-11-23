@@ -3350,37 +3350,58 @@ if (window.SONG_ID) (function () {
     var sec = chartData && chartData.sections && chartData.sections[head];
     return sec && sec.bars && sec.bars.length ? sec.bars : null;
   }
+  // A bar of the grid drawn after LilyPond's chord grids (Notation Reference, "Chord grids"): one chord fills the box;
+  // two, on the first and second half, share it across a diagonal (first top left, second bottom right); anything
+  // else is cut in quarters (top left, top right, bottom left, bottom right, by where each chord falls in the bar),
+  // a held quarter joined to the one before it. Rows have thin lines above and below so each box reads as one.
+  function chordSpan(c) {
+    var sl = c.indexOf("/");
+    return '<span class="gig-c" data-full="' + esc(c) + '">' + esc(sl > 0 ? c.slice(0, sl) : c) +
+           (sl > 0 ? '<span class="gig-bass">/' + esc(c.slice(sl + 1)) + "</span>" : "") + "</span>";
+  }
   function gridHtml(bars) {
     var rows = [], per = 4, last = "";
     for (var k = 0; k < bars.length; k += per) {
       rows.push('<div class="gig-grow">' + bars.slice(k, k + per).map(function (b) {
-        var cs = (b.c || []).filter(function (c) { return c && c !== "." && !/^\d+\/\d+$/.test(c); })
-                            .map(function (c) { return c === "%" ? last : c; });
-        var list = cs.length ? cs : last ? [last] : [];
-        if (cs.length) last = cs[cs.length - 1];
-        return '<span class="gig-gbar">' + list.map(function (c) {
-          var sl = c.indexOf("/");
-          return '<span class="gig-c" data-full="' + esc(c) + '">' + esc(sl > 0 ? c.slice(0, sl) : c) +
-                 (sl > 0 ? '<span class="gig-bass">/' + esc(c.slice(sl + 1)) + "</span>" : "") + "</span>";
-        }).join(" ") + "</span>";
+        var toks = (b.c || []).filter(function (c) { return c && !/^\d+\/\d+$/.test(c); })
+                              .map(function (c) { return c === "%" ? last || "." : c; });
+        if (!toks.length) toks = [last || "."];
+        var n = toks.length, q = [[], [], [], []];
+        toks.forEach(function (c, t) { if (c !== ".") q[Math.min(3, Math.floor(t * 4 / n))].push(c); });
+        var chords = toks.filter(function (c) { return c !== "."; });
+        if (chords.length) last = chords[chords.length - 1];
+        var used = q.map(function (x) { return x.length > 0; });
+        if (chords.length <= 1)
+          return '<span class="gig-gbar gig-one">' + (chords.length ? chordSpan(chords[0]) : "") + "</span>";
+        if (used[0] && !used[1] && used[2] && !used[3] && q[0].length === 1 && q[2].length === 1)
+          return '<span class="gig-gbar gig-two"><span class="gig-q gig-tl">' + chordSpan(q[0][0]) +
+                 '</span><span class="gig-q gig-br">' + chordSpan(q[2][0]) + "</span></span>";
+        var cells = "", spans = ["", "", "", ""];
+        if (!used[1] && used[0]) spans[0] = " gig-wide";          // a held quarter joins the one before it
+        if (!used[3] && used[2]) spans[2] = " gig-wide";
+        q.forEach(function (x, j) {
+          if (!x.length && ((j === 1 && used[0]) || (j === 3 && used[2]))) return;
+          cells += '<span class="gig-q gig-q' + j + spans[j] + '">' + x.map(chordSpan).join(" ") + "</span>";
+        });
+        return '<span class="gig-gbar gig-four">' + cells + "</span>";
       }).join("") + "</div>");
     }
     return '<div class="gig-grid">' + rows.join("") + "</div>";
   }
-  // A bar whose chords do not fit its box, in this order until they do: compact (slash bass small and low; maj7 → Δ7,
-  // m7b5 → ø7, dim → °, aug → +), then stacked (one chord a line, read top to bottom), then smaller type, to 55%.
+  // A bar (or a part of one) whose chords do not fit, in this order until they do: compact (slash bass small and
+  // low; maj7 → Δ7, m7b5 → ø7, dim → °, aug → +), then smaller type, to 55%.
   function compact(c) {
     return c.replace(/maj7/g, "Δ7").replace(/maj9/g, "Δ9").replace(/m7b5|m7♭5/g, "ø7").replace(/dim/g, "°").replace(/aug/g, "+").replace(/b(?=\d)/g, "♭").replace(/#(?=\d)/g, "♯");
   }
   function fitBars(root) {
     [].forEach.call(root.querySelectorAll(".gig-gbar"), function (bar) {
-      var over = function () { return bar.scrollWidth > bar.clientWidth + 1 || bar.scrollHeight > bar.clientHeight + 1; };
-      bar.className = "gig-gbar"; bar.style.fontSize = "";
+      var parts = [bar].concat([].slice.call(bar.querySelectorAll(".gig-q")));
+      var over = function () { return parts.some(function (p) { return p.scrollWidth > p.clientWidth + 1 || p.scrollHeight > p.clientHeight + 1; }); };
+      bar.classList.remove("gig-compact"); bar.style.fontSize = "";
       if (!over()) return;
       bar.classList.add("gig-compact");
       [].forEach.call(bar.querySelectorAll(".gig-c"), function (c) { c.firstChild.nodeValue = compact(c.firstChild.nodeValue); });
       if (!over()) return;
-      if (bar.querySelectorAll(".gig-c").length > 1) { bar.classList.add("gig-stack"); if (!over()) return; }
       for (var f = 0.95; f >= 0.55 && over(); f -= 0.05) bar.style.fontSize = f + "em";
     });
   }

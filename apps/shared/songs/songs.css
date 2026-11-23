@@ -649,3 +649,20 @@ body.gig-on > :not(#gig) { display: none !important; }   /* the page under it wo
 #gig .gig-gbar.gig-compact { gap: .2em; letter-spacing: -.03em; }
 #gig .gig-gbar.gig-stack { flex-direction: column; align-items: flex-start; gap: 0; line-height: 1.05; }
 #gig .gig-now > .gig-lyrics { flex: 1 1 0; min-height: 2.6rem; overflow: hidden; display: flex; flex-direction: column; gap: .15rem; }
+/* grid bars after LilyPond's chord grids (song-page.js gridHtml): one / two across a diagonal / quarters */
+#gig .gig-grid { --gline: color-mix(in srgb, var(--bs-body-color, #212529) 22%, transparent); }
+#gig .gig-grow { border-top: 1px solid var(--gline); }
+#gig .gig-grow:last-child { border-bottom: 1px solid var(--gline); }
+#gig .gig-gbar { position: relative; height: 3em; padding: 0; align-items: center; }
+#gig .gig-gbar.gig-one { padding: 0 .45em; }
+#gig .gig-gbar.gig-two { display: block;
+  background: linear-gradient(to bottom right, transparent calc(50% - .6px), var(--gline) calc(50% - .6px), var(--gline) calc(50% + .6px), transparent calc(50% + .6px)); }
+#gig .gig-two .gig-q { position: absolute; font-size: .85em; line-height: 1; white-space: nowrap; }
+#gig .gig-two .gig-tl { top: .2em; left: .3em; }
+#gig .gig-two .gig-br { bottom: .2em; right: .3em; }
+#gig .gig-gbar.gig-four { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; font-size: .8em; height: 3.75em; }
+#gig .gig-four .gig-q { display: flex; align-items: center; justify-content: center; gap: .25em; min-width: 0; overflow: hidden; white-space: nowrap; line-height: 1; }
+#gig .gig-four .gig-q0, #gig .gig-four .gig-q1 { border-bottom: 1px solid var(--gline); }
+#gig .gig-four .gig-q0:not(.gig-wide), #gig .gig-four .gig-q2:not(.gig-wide) { border-right: 1px solid var(--gline); }
+#gig .gig-four .gig-wide { grid-column: span 2; }
+#gig .gig-four .gig-q2 { grid-row: 2; }
