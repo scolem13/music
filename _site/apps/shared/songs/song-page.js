@@ -3317,8 +3317,9 @@ if (window.SONG_ID) (function () {
 })();
 // ==== gig view (&gig=1): a phone on a music stand, no sound ====
 // In the site's own theme (light / dark as the rest of the site). Section view: the song and its place in the set,
-// this section (name, the first line of words, its chord grid from the band's chart, and the notation where the song
-// file has a {start_of_abc}) and the next section (name, first line). Glance: every section on one screen (name, its
+// this section (name, the first line of words, and the notation where the song file has a {start_of_abc},
+// else its chord grid from the band's chart). The top and bottom bars (set, Glance, zoom, Pedal, prev / next song)
+// are folded away until the ⋯ in the corner is tapped and the next section (name, first line). Glance: every section on one screen (name, its
 // chords once each, first line), the current one marked, Fit / A− / A+ (localStorage songs-gig-zoom).
 // The pedal (MIDI block above calls window.carolNext), j / → / Space or a tap on the right half go on; k / ← or
 // the left half go back. Past the last section the next song in the programme opens, still in gig view.
@@ -3378,7 +3379,8 @@ if (window.SONG_ID) (function () {
   var i = q.get("at") === "end" ? Math.max(0, road.length - 1) : 0;
   var el = document.createElement("div");
   el.id = "gig";
-  el.innerHTML = '<div class="gig-top"><span class="gig-set"></span>' +
+  el.className = "gig-bare";            // the top and bottom bars folded away; the ⋯ in the corner shows them
+  el.innerHTML = '<button type="button" class="gig-more" title="Song list, Glance, zoom, pedal">⋯</button><div class="gig-top"><span class="gig-set"></span>' +
     '<button type="button" class="plain-button gig-mode">Glance</button>' +
     '<span class="gig-zoom" hidden><button type="button" class="plain-button" data-z="-1">A−</button><button type="button" class="plain-button" data-z="0">Fit</button><button type="button" class="plain-button" data-z="1">A+</button></span>' +
     '<button type="button" class="plain-button gig-pedal">Pedal</button><button type="button" class="plain-button gig-exit" title="Leave gig view">✕</button></div>' +
@@ -3388,6 +3390,9 @@ if (window.SONG_ID) (function () {
   document.body.appendChild(el);
   document.body.classList.add("gig-on");
   var midi = document.querySelector(".midi-status"); midi = midi && midi.parentNode;
+  el.querySelector(".gig-more").addEventListener("click", function () {
+    el.classList.toggle("gig-bare"); if (glance) drawAll();
+  });
   el.querySelector(".gig-pedal").addEventListener("click", function () {
     var box = el.querySelector(".gig-midi");
     if (midi && box.firstChild !== midi) box.appendChild(midi);
@@ -3420,8 +3425,8 @@ if (window.SONG_ID) (function () {
     var now = info(i), nx = road[i + 1] ? info(i + 1) : null;
     nowBox.innerHTML = '<div class="gig-name">' + esc(now.name) + ' <small>' + (i + 1) + "/" + road.length + "</small></div>" +
       (now.first ? '<div class="gig-first">' + now.first + "</div>" : "") +
-      (now.bars ? gridHtml(now.bars) : '<div class="gig-chords">' + now.chords.map(esc).join(" ") + "</div>") +
-      (now.abc ? '<div class="gig-abc"></div>' : "");
+      (now.abc ? '<div class="gig-abc"></div>'                   // the notation has the chords: no grid then
+       : now.bars ? gridHtml(now.bars) : '<div class="gig-chords">' + now.chords.map(esc).join(" ") + "</div>");
     if (now.abc && window.ABCJS) {
       try { window.ABCJS.renderAbc(nowBox.querySelector(".gig-abc"), now.abc,
               { responsive: "resize", paddingtop: 0, paddingbottom: 0, paddingleft: 0, paddingright: 0,

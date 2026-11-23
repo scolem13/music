@@ -627,3 +627,7 @@ body.gig-on > :not(#gig) { display: none !important; }   /* the page under it wo
 #gig .gig-bar a { font-size: 1rem; padding: 8px 4px; max-width: 48%; overflow-wrap: anywhere; }
 #gig .gig-bar a.gig-next-song { text-align: right; margin-left: auto; }
 #gig .gig-bar a:not([href]) { visibility: hidden; }
+#gig.gig-bare .gig-top, #gig.gig-bare .gig-bar, #gig.gig-bare .gig-midi { display: none; }
+#gig .gig-more { position: absolute; top: 4px; right: 6px; z-index: 1; background: none; border: 0; padding: 4px 10px;
+  font-size: 1.4rem; line-height: 1; color: inherit; opacity: .45; }
+#gig:not(.gig-bare) .gig-top { padding-right: 2.5rem; }

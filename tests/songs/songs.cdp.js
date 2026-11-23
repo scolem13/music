@@ -115,8 +115,10 @@ const NSONGS = Object.keys(DATA.songs).length + (process.env.NEG ? 1 : 0);
   await b.goto(U + "?id=o-hanukkah&prog=conrad-2026&gig=1");
   check("gig view up", await wait(`!!document.querySelector('#gig .gig-now .gig-name')`));
   check("gig: set place and first line", await ev(`/^4 \\/ 11/.test(document.querySelector('.gig-set').textContent) && /\\p{L}/u.test((document.querySelector('.gig-next .gig-first')||{}).textContent||'')`));
-  check("gig: chord grid from the band chart", await wait(`document.querySelectorAll('#gig .gig-now .gig-gbar').length === 8`));
-  check("gig: notation where the song has it", await wait(`!!document.querySelector('#gig .gig-abc svg')`));
+  check("gig: notation where the song has it, no grid then", await wait(`!!document.querySelector('#gig .gig-abc svg') && !document.querySelector('#gig .gig-now .gig-gbar')`));
+  check("gig: bars folded away", await ev(`!document.querySelector('#gig .gig-top').offsetHeight && !document.querySelector('#gig .gig-bar').offsetHeight`));
+  await ev(`document.querySelector('.gig-more').click()`);
+  check("gig: ⋯ shows the bars", await ev(`document.querySelector('#gig .gig-top').offsetHeight > 0 && document.querySelector('#gig .gig-bar').offsetHeight > 0`));
   check("gig: site background, not black", await ev(`getComputedStyle(document.getElementById('gig')).backgroundColor !== 'rgb(0, 0, 0)'`));
   if (process.env.SHOTS) await b.shot(process.env.SHOTS + "/gig-section.png", false);
   const n0 = await ev(`document.querySelector('.gig-now .gig-name').textContent`); await ev(`carolNext()`);
@@ -127,6 +129,10 @@ const NSONGS = Object.keys(DATA.songs).length + (process.env.NEG ? 1 : 0);
   await ev(`document.querySelector('.gig-zoom [data-z="1"]').click()`);
   check("glance zoom", await ev(`parseFloat(document.querySelector('.gig-all').style.fontSize) > 0`));
   await ev(`document.querySelector('.gig-zoom [data-z="0"]').click(); localStorage.removeItem('songs-gig-mode')`);
+  await b.goto(U + "?id=twelve-days-of-christmas&prog=conrad-2026&gig=1");
+  check("gig: chord grid where there is no notation", await wait(`document.querySelectorAll('#gig .gig-now .gig-gbar').length > 0 && !document.querySelector('#gig .gig-abc')`));
+  if (process.env.SHOTS) { await b.resize(800, 390); await b.sleep(300); await b.shot(process.env.SHOTS + "/gig-land.png", false); await b.resize(390, 800); }
+  await b.goto(U + "?id=o-hanukkah&prog=conrad-2026&gig=1"); await wait(`!!document.getElementById('gig')`);
   for (let k = 0; k < 40 && /o-hanukkah/.test(await ev(`location.search`)); k++) { await ev(`carolNext()`); await b.sleep(50); }
   check("gig: past the end, next song", await wait(`/id=jingle-bell-rock.*gig=1/.test(location.search) && !!document.getElementById('gig')`));
   check("no errors in gig view", errs().length === 0, errs().join(" | "));
