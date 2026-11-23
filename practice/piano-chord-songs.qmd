@@ -36,7 +36,7 @@ toc-depth: 2
 .pcs-big { font-size: 2rem; font-weight: 800; padding: .2rem .9rem; border-radius: .5rem; border: 3px solid var(--pcs-line); }
 .pcs-big.pcs-now { border-color: #1f8f83; background: #1f8f83; color: #fff; }
 .pcs-big.pcs-next { border-color: #e08a1e; color: #e08a1e; }
-.pcs-frame { width: 100%; height: 14rem; border: 0; display: block; }
+.pcs-frame { width: 60%; min-width: min(100%, 24rem); height: 9rem; border: 0; display: block; }
 .pcs-play { font-size: 1.1rem; font-weight: 700; padding: .55rem 1.2rem; background: var(--pcs-acc) !important; border-color: var(--pcs-acc) !important; color: #fff !important; }
 .pcs-score { padding: .5rem; }
 .pcs-walk { border: 1px solid var(--pcs-line); border-radius: .5rem; padding: .6rem .9rem; margin: .6rem 0 1rem; background: var(--site-surface-2, #f8f9fa); }

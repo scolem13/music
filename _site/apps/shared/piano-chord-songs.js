@@ -10,12 +10,13 @@
 // Jam card: the Chord Sheet's superimposed keyboard view (tools/chord-sheet.html?embed=super in a frame; one lane per
 //   chord over one row of keys, each chord a voice-led inversion of the one before, after the Music Will jam cards),
 //   piano, Standard voicing. While the band plays, the chord sounding now and the next one are coloured
-//   (now / next from the bar BandPlayer reports: info.src indexes TuneChart.parse(abc).bars).
+//   (now / next from the bar BandPlayer reports: info.src indexes TuneChart.parse(abc).bars). The card (Chord Sheet "JAM CARD")
+//   puts the chord now on the keys, the rest in lanes; posted only when now / next change. Frame at 60% width.
 // Playback: AbcPlay with the tune's chords on the band (opts.abc), "Hear" melody + band / band only / melody only,
 //   tempo slider (starts at 75% of the tune's Q:, slower for beginners).
 (function (global) {
   "use strict";
-  var LEVEL_KEY = "pcs-level", KEY_KEY = "pcs-key", el = {}, songs = [], cur = null, playing = null, frame = null, frameReady = false, pending = null;
+  var LEVEL_KEY = "pcs-level", KEY_KEY = "pcs-key", el = {}, songs = [], cur = null, playing = null, frame = null, frameReady = false, pending = null, lastCard = null;
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
   var ls = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
 
@@ -93,6 +94,7 @@
   function postCard(now, next) {
     if (!cur) return;
     var msg = { type: "super-embed", chords: cur.cardChords || cur.chords, comp: "piano", voicing: "standard", now: now, next: next };
+    var sig = JSON.stringify(msg); if (sig === lastCard) return; lastCard = sig;   // onBar fires every bar: post only changes
     if (!frameReady) { pending = msg; return; }
     frame.contentWindow.postMessage(msg, location.origin);
   }
@@ -102,7 +104,7 @@
     el.card.appendChild(frame);
     global.addEventListener("message", function (e) {
       if (e.origin !== location.origin || e.source !== frame.contentWindow || !e.data) return;
-      if (e.data.type === "super-embed-ready") { frameReady = true; if (pending) { frame.contentWindow.postMessage(pending, location.origin); pending = null; } }
+      if (e.data.type === "super-embed-ready") { frameReady = true; lastCard = null; if (pending) { frame.contentWindow.postMessage(pending, location.origin); pending = null; } }
       if (e.data.type === "super-embed-size" && e.data.h > 0) frame.style.height = e.data.h + "px";
     });
   }

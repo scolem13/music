@@ -464,6 +464,18 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
     <a class="dropdown-item" href="../gear/modx.html">
  <span class="dropdown-text">Yamaha MODX</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/sennheiser-xsw.html">
+ <span class="dropdown-text">Sennheiser XSW 2 wireless: two packs picking each other up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/wireless-rack-x32.html">
+ <span class="dropdown-text">Wireless rack to the X32</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/x32-headset-scene.html">
+ <span class="dropdown-text">X32 scene for the headset mics</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -1006,6 +1018,11 @@ html.embed-super #chord-sheet-root .super-card{border:0;padding:0;margin:0;box-s
 html.embed-super #chord-sheet-root .super-card svg{width:100%!important;height:auto!important;display:block}
 html.embed-super #chord-sheet-root .inst-section{margin:0;padding:0}
 html.embed-super #establish-tonality-btn{display:none!important}
+html.embed-super .jam-bar{display:flex;flex-wrap:wrap;gap:.3rem;align-items:center;font:12px system-ui,sans-serif;color:#6b665c;margin:0 0 6px}
+html.embed-super .jam-bar[hidden]{display:none}
+html.embed-super .jam-bar span{margin-left:.4rem;font-weight:600}
+html.embed-super .jam-bar button{border:1px solid #cfc9bd;background:#fff;border-radius:999px;padding:.1rem .55rem;font:inherit;color:#333;cursor:pointer}
+html.embed-super .jam-bar button[aria-pressed="true"]{background:#333;color:#fff;border-color:#333}
 #chord-sheet-root .diagram-card.is-voicing{outline:3px solid #1c5fa8;outline-offset:1px}
 #chord-sheet-root .btn[aria-pressed="true"]#btn-voice{background:#1c5fa8;color:#fff;border-color:#1c5fa8}
 @media print{#chord-sheet-root .diagram-card.is-voicing{outline:none}#chord-sheet-root #voice-note{display:none}}
@@ -2383,8 +2400,9 @@ function superChords(validTokens){
   const seen=new Set(),uniq=[];
   validTokens.forEach(t=>{if(getChord(t.chordId)&&!seen.has(t.token)){seen.add(t.token);uniq.push(t)}});
   let picked=uniq.filter(t=>superSel.includes(t.token));
-  if(uniq.length<=4)picked=uniq;else if(!picked.length)picked=uniq.slice(0,4);
-  picked=picked.slice(0,4);
+  const cap=/[?&]embed=super(&|$)/.test(location.search)?9:4;   // a jam card shows up to nine
+  if(uniq.length<=cap)picked=uniq;else if(!picked.length)picked=uniq.slice(0,cap);
+  picked=picked.slice(0,cap);
   superSel=picked.map(t=>t.token);
   return{uniq,picked};
 }
@@ -2456,7 +2474,113 @@ function hearChord(midis,inst){
   if(window.MusicAudio)MusicAudio.chord(midis,1.3);
 }
 function superPlay(el,midis){el.addEventListener('click',()=>hearChord(midis,null))}
+// ===== JAM CARD (the embedded view on keyboards: Piano Chord Songs, the Backing Track's side panel) =====
+// The chord sounding now is drawn ON the keys (labels low on the white keys, higher on the black ones); the
+// other chords sit in lanes above or below the keys. Every chord keeps its own colour (JAM_COLORS[k], k = its
+// place in the chord list) whether it is now, next or neither. The viewer chooses (strip above the card, kept
+// in localStorage 'jam-card-view'):
+//   show 'next'  one lane: the next chord;  'rows'  one lane per chord;
+//        'grid'  one lane, every key a 2x2 box (up to 4 chords) or 3x3 (5-9), chord k always in slot k
+//   place 'above' | 'below' the keys.
+// Chord changes redraw only this svg from the voicings worked out when the chords arrived (jamCache), so a
+// change mid-song costs one small drawing, not the whole sheet.
+const JAM_COLORS=['#2b9c90','#d6336c','#d98a00','#4c5fd5','#7a4fc2','#5a8f29','#c2552b','#1f7fb8','#8a6d3b'];
+let jamView={show:'next',place:'above'};
+try{const s=JSON.parse(localStorage.getItem('jam-card-view')||'null');if(s&&s.show)jamView=Object.assign(jamView,s)}catch(e){}
+let jamCache=null;
+function renderJamKeyboard(voiced){
+  jamCache=voiced;
+  const role=superRole||{now:-1,next:-1},now=role.now>=0?role.now:0,next=role.next>=0&&role.next!==now?role.next:-1;
+  const all=voiced.flatMap(v=>v.midis),{startMidi,endMidi,whites}=selectKeyboardRange(all);
+  const n=voiced.length,grid=n>4?3:2,show=jamView.show,below=jamView.place==='below';
+  const lanes=show==='rows'?voiced.map((v,k)=>k):show==='grid'?['grid']:[next];
+  const G=104,WW=40,KH=118,LH=show==='grid'?(grid===3?84:80):46,lanesH=LH*lanes.length;
+  const kbY=below?6:8+lanesH+6,laneY=below?kbY+KH+8:8,w=G+WW*whites.length+10,h=(below?laneY+lanesH:kbY+KH)+8;
+  const svg=createSvg(w,h);svg.style.width=w+'px';
+  svg.appendChild(svgEl('rect',{x:0,y:0,width:w,height:h,fill:'#fff'}));
+  const wx=new Map();whites.forEach((m,i)=>wx.set(m,G+WW*i));
+  const xOf=m=>isWhiteKey(m)?wx.get(m)+WW/2:wx.get(previousWhiteMidi(m-1))+WW;
+  const name=(v,x,y,size,col,extra)=>{const s=superLabel(v.t);const l=svgText(svg,(extra||'')+s,x,y,{'font-size':s.length>6?Math.round(size*0.8):size,'font-weight':800,'text-anchor':'end',fill:col,'class':'super-lane-label'});superPlay(l,v.midis);return l};
+  const label=(v,m,i)=>{const f=v.fingers[i];return superDotText(v.t,m,f&&f.finger)};
+  // lanes, with the key edges carried through them
+  lanes.forEach((k,r)=>{
+    const y=laneY+LH*r;
+    svg.appendChild(svgEl('rect',{x:G,y,width:WW*whites.length,height:LH,fill:k==='grid'||k<0?'#8a8578':JAM_COLORS[k],opacity:k===now?0.13:0.06}));
+    if(r)svg.appendChild(svgEl('line',{x1:0,y1:y,x2:w,y2:y,stroke:'#e3e0da','stroke-width':1}));
+  });
+  whites.forEach((m,i)=>svg.appendChild(svgEl('line',{x1:G+WW*i,y1:laneY,x2:G+WW*i,y2:laneY+lanesH,stroke:'#e3e0da','stroke-width':1})));
+  lanes.forEach((k,r)=>{
+    const y=laneY+LH*r,cy=y+LH/2;
+    if(k==='grid'){
+      // the chord names in the gutter, arranged like the slots in each box
+      const cw=(G-14)/grid,ch=LH/grid;
+      voiced.forEach((v,j)=>{const gx=6+cw*(j%grid+1)-3,gy=y+ch*Math.floor(j/grid)+ch*0.78;
+        const s=superLabel(v.t),l=svgText(svg,s,gx,gy,{'font-size':grid===3?Math.min(12,ch*0.8):Math.min(15,ch*0.72),'font-weight':j===now?900:700,'text-anchor':'end',fill:JAM_COLORS[j],'text-decoration':j===now?'underline':'none','class':'super-lane-label'});superPlay(l,v.midis)});
+      const S=grid===3?36:34,c=S/grid,spots=new Map();
+      voiced.forEach((v,j)=>v.midis.forEach((m,i)=>{if(!spots.has(m))spots.set(m,[]);spots.get(m).push({j,txt:label(v,m,i),root:mod12(m)===mod12(v.t.rootPc)})}));
+      spots.forEach((by,m)=>{
+        const x=xOf(m)-S/2,y0=isWhiteKey(m)?y+LH-S-3:y+3;   // black keys' boxes in the upper row, white keys' in the lower
+        svg.appendChild(svgEl('rect',{x,y:y0,width:S,height:S,rx:3,fill:'#fff',stroke:'#b9b3a7','stroke-width':1}));
+        by.forEach(b=>{const cx=x+c*(b.j%grid),cy2=y0+c*Math.floor(b.j/grid);
+          svg.appendChild(svgEl('rect',{x:cx+0.5,y:cy2+0.5,width:c-1,height:c-1,rx:2,fill:b.root?JAM_COLORS[b.j]:'#fff',stroke:JAM_COLORS[b.j],'stroke-width':b.j===now?1.8:1}));
+          svgText(svg,b.txt,cx+c/2,cy2+c*0.74,{'font-size':grid===3?9:12,'font-weight':800,fill:b.root?'#fff':JAM_COLORS[b.j]})});
+      });
+      return;
+    }
+    if(k<0){svgText(svg,'next: —',G-10,cy+5,{'font-size':13,'text-anchor':'end',fill:'#a9a39a'});return}
+    const v=voiced[k],col=JAM_COLORS[k],xs=v.midis.map(xOf);
+    svg.appendChild(svgEl('rect',{x:Math.min(...xs),y:cy-4,width:Math.max(...xs)-Math.min(...xs),height:8,fill:col,opacity:0.3}));
+    if(show==='next')svgText(svg,'next',G-10,y+12,{'font-size':10,'font-weight':700,'text-anchor':'end',fill:'#8a8578','letter-spacing':'.05em'});
+    name(v,G-10,cy+(show==='next'?12:6),show==='next'?17:18,col);
+    v.midis.forEach((m,i)=>{
+      const x=xOf(m),isRoot=mod12(m)===mod12(v.t.rootPc),black=!isWhiteKey(m),sz=black?24:28;
+      svg.appendChild(svgEl('rect',{x:x-sz/2,y:cy-sz/2,width:sz,height:sz,rx:3,fill:isRoot?col:'#fff',stroke:col,'stroke-width':black?3:2}));
+      const txt=label(v,m,i);svgText(svg,txt,x,cy+5,{'font-size':txt.length>2?10:14,'font-weight':800,fill:isRoot?'#fff':'#222'});
+    });
+  });
+  // the keys, and the chord sounding now on them
+  whites.forEach((m,i)=>{
+    svg.appendChild(svgEl('rect',{x:G+WW*i,y:kbY,width:WW,height:KH,fill:'#fff',stroke:COLORS.line,'stroke-width':1.2}));
+    if(mod12(m)===0)svgText(svg,'C',G+WW*i+WW/2,kbY+KH-5,{'font-size':9,fill:COLORS.softLine});
+  });
+  for(let m=startMidi;m<=endMidi;m++){
+    if(isWhiteKey(m))continue;
+    const lo=previousWhiteMidi(m-1),hi=nextWhiteMidi(m+1);
+    if(!wx.has(lo)||!wx.has(hi))continue;
+    svg.appendChild(svgEl('rect',{x:wx.get(lo)+WW-12,y:kbY,width:24,height:KH*0.62,fill:COLORS.blackKey,stroke:COLORS.line,'stroke-width':1.2}));
+  }
+  const v=voiced[now];
+  if(v){
+    const col=JAM_COLORS[now];
+    svgText(svg,'now',G-10,kbY+KH/2-16,{'font-size':10,'font-weight':700,'text-anchor':'end',fill:'#8a8578','letter-spacing':'.05em'});
+    name(v,G-10,kbY+KH/2+8,24,col);
+    v.midis.forEach((m,i)=>{
+      const x=xOf(m),isRoot=mod12(m)===mod12(v.t.rootPc),black=!isWhiteKey(m),sz=black?22:30,cy=black?kbY+KH*0.62-17:kbY+KH-28;
+      svg.appendChild(svgEl('rect',{x:x-sz/2,y:cy-sz/2,width:sz,height:sz,rx:sz/2,fill:isRoot?col:'#fff',stroke:col,'stroke-width':3}));
+      const txt=label(v,m,i);svgText(svg,txt,x,cy+5,{'font-size':txt.length>2?10:(black?13:16),'font-weight':800,fill:isRoot?'#fff':'#222'});
+    });
+  }
+  return svg;
+}
+// the strip of choices above the card
+function jamBar(){
+  const bar=document.createElement('div');bar.className='jam-bar';
+  const opt=(key,val,txt)=>`<button type="button" data-k="${key}" data-v="${val}" aria-pressed="${jamView[key]===val}">${txt}</button>`;
+  bar.innerHTML='<span>Show</span>'+opt('show','next','Next chord')+opt('show','rows','All, in rows')+opt('show','grid','All, one line')+
+    '<span>Lanes</span>'+opt('place','above','Above the keys')+opt('place','below','Below');
+  bar.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;jamView[b.dataset.k]=b.dataset.v;
+    try{localStorage.setItem('jam-card-view',JSON.stringify(jamView))}catch(e){}
+    bar.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(jamView[x.dataset.k]===x.dataset.v)));jamRedraw()});
+  return bar;
+}
+// redraw the jam card alone (a chord change or a view change); false when there is none to redraw
+function jamRedraw(){
+  const old=document.querySelector('#sheet-output .super-card svg');
+  if(!jamCache||!old)return false;
+  old.replaceWith(renderJamKeyboard(jamCache));return true;
+}
 function renderSuperKeyboard(voiced){
+  if(/[?&]embed=super(&|$)/.test(location.search))return renderJamKeyboard(voiced);
   const all=voiced.flatMap(v=>v.midis),{startMidi,endMidi,whites}=selectKeyboardRange(all);
   const G=104,WW=40,LH=50,top=8,kbY=top+LH*voiced.length+8,KH=118,w=G+WW*whites.length+10,h=kbY+KH+8;
   const svg=createSvg(w,h);svg.style.width=w+'px';
@@ -3132,11 +3256,19 @@ const EMBED_STYLES={
   guitar:{guide2:'pair:all',triad3:'set3:all',shell3:'set3:all',top3:'set3:0',mid3:'set3:1',triadvl:'vl:triadvl:0',uppervl:'vl:uppervl:0',bh:'drop2',open:'standard',auto:'standard'},
   keyboard:{bh:'drop2',sowhat:'standard',auto:'standard'}
 };
+// the frame's height: the card and, on keyboards, the strip of choices above it
+function embedSize(){
+  if(parent===window)return;
+  const out=document.getElementById('sheet-output'),bar=window.jamBarEl;
+  if(bar)bar.hidden=!jamCache;
+  const h=Math.ceil(out.getBoundingClientRect().height+(bar&&!bar.hidden?bar.getBoundingClientRect().height+6:0));
+  if(h>0)parent.postMessage({type:'super-embed-size',h:h+4},location.origin);
+}
 function embedStyle(instId,id){return(EMBED_STYLES[instId]&&EMBED_STYLES[instId][id])||id||'standard'}
 function embedSuper(d){
   const instId=d.comp==='guitar'?'guitar':'keyboard',other=instId==='guitar'?'keyboard':'guitar';
-  const sig=JSON.stringify([d.chords,d.comp,d.voicing]);
-  if(sig!==embedSig){
+  const sig=JSON.stringify([d.chords,d.comp,d.voicing]),fresh=sig!==embedSig;
+  if(fresh){
     embedSig=sig;
     document.getElementById('chords-textarea').value=(d.chords||[]).join(' ');
     parsedTokens=[];parseTextarea();
@@ -3151,10 +3283,11 @@ function embedSuper(d){
   }
   const picked=superChords(parsedTokens.filter(t=>t.valid)).picked,at=s=>s==null?-1:picked.findIndex(t=>t.token===s);
   const role={now:at(d.now),next:at(d.next)};
+  const was=JSON.stringify(superRole);
   superRole=(d.now==null&&d.next==null)?null:role;
-  clearTimeout(renderTimer);doRender();
-  const out=document.getElementById('sheet-output');
-  parent.postMessage({type:'super-embed-size',h:Math.ceil(out.getBoundingClientRect().height)+4},location.origin);
+  if(!fresh&&instId==='keyboard'){if(was!==JSON.stringify(superRole))jamRedraw();return}   // same chords: the card alone, no sheet render, no resize
+  jamCache=null;clearTimeout(renderTimer);doRender();
+  embedSize();
 }
 if(EMBED_SUPER){
   document.documentElement.classList.add('embed-super');
@@ -3163,10 +3296,11 @@ if(EMBED_SUPER){
     Array.from(el.parentElement.children).forEach(sib=>{if(sib!==el&&!/^(SCRIPT|STYLE|LINK)$/.test(sib.tagName))sib.style.display='none'});
     el.parentElement.style.padding='0';el.parentElement.style.margin='0';el.parentElement.style.maxWidth='none';el.parentElement.style.border='0';
   }
+  { const out=document.getElementById('sheet-output'),bar=jamBar();bar.hidden=true;out.parentElement.insertBefore(bar,out);window.jamBarEl=bar; }
   window.addEventListener('message',e=>{if(e.origin===location.origin&&e.source===parent&&e.data&&e.data.type==='super-embed')embedSuper(e.data)});
   window.addEventListener('load',()=>{if(parent!==window)parent.postMessage({type:'super-embed-ready'},location.origin)});
   // the drawing is as wide as the frame, so its height changes whenever the frame's width does (the page around it moved the diagram, or was resized)
-  if(window.ResizeObserver&&parent!==window)new ResizeObserver(es=>{const h=Math.ceil(es[0].contentRect.height);if(h>0)parent.postMessage({type:'super-embed-size',h:h+4},location.origin)}).observe(document.getElementById('sheet-output'));
+  if(window.ResizeObserver&&parent!==window){const ro=new ResizeObserver(()=>embedSize());ro.observe(document.getElementById('sheet-output'));ro.observe(window.jamBarEl)}
 }
 
 // ===== VOICINGS BY MIDI =====
