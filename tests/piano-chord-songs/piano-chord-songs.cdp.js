@@ -64,6 +64,12 @@ const U = "http://127.0.0.1:8571", NEG = !!process.env.NEG;
   check("Only shifts shows fewer fingers than All", nSh >= 1 && nSh < nAll, nSh + " of " + nAll);
   check("shifts known by PianoFingering.shifts", await ev(`PianoFingering.shifts(PianoFingering.notes('C G A G F', 'K:C'), [1,4,5,4,4]).join()`) === (NEG ? "x" : "false,false,false,false,true"));
   await ev(`(() => { const s = document.querySelector('.pcs-wview select'); s.value = 'marked'; s.dispatchEvent(new Event('change')); })(), 0`);
+  await ev(`(() => { const s = document.querySelector('.pcs-wread select'); s.value = 'keys'; s.dispatchEvent(new Event('change')); })(), 0`);
+  if (process.env.SHOT) { await ev(`document.querySelector('.pcs-wkeys').scrollIntoView(), 0`); await b.sleep(300); await b.shot(process.env.SHOT); }
+  check("keys view: fingers on the keys, no staff shown", await ev(`document.querySelectorAll('.pcs-keys .pcs-kf').length >= 2 && document.querySelector('.pcs-wscore').hidden && document.querySelectorAll('.pcs-seq .pcs-sq').length >= 4`));
+  await ev(`[...document.querySelectorAll('.pcs-wstep .pcs-wplay')].find(b => /Hear/.test(b.textContent)).click(), 0`);
+  check("playing lights a key and its finger", await wait(`!!document.querySelector('.pcs-keys .pcs-klit') && !!document.querySelector('.pcs-seq .pcs-klit')`, 60));
+  await ev(`AbcPlay.stop(), (() => { const s = document.querySelector('.pcs-wread select'); s.value = 'notes'; s.dispatchEvent(new Event('change')); })(), 0`);
   await ev(`document.querySelector('.pcs-wlen select').value = '1', document.querySelector('.pcs-wlen select').dispatchEvent(new Event('change')), 0`);
   check("1-bar pieces: 16 + all", await ev(`/of 17/.test(document.querySelector('.pcs-wcount').textContent)`), await ev(`document.querySelector('.pcs-wcount').textContent`));
   await ev(`document.querySelector('.pcs-wstep .pcs-wplay').click(), 0`);

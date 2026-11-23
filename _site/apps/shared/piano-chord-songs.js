@@ -158,6 +158,7 @@
           '<div class="pcs-wtabs"><button data-m="chords" class="pcs-on">1. Learn the chords</button><button data-m="tune">2. Learn the tune</button>' +
           '<label class="pcs-wlen">Piece size <select><option value="1">1 bar</option><option value="2" selected>2 bars</option><option value="4">4 bars</option></select></label>' +
           '<label class="pcs-wsys">Fingering <select></select></label>' +
+          '<label class="pcs-wread">Read <select><option value="notes">Notes on a staff</option><option value="keys">Fingers on the keys</option></select></label>' +
           '<label class="pcs-wview">Show <select><option value="all">All fingers</option><option value="marked">All, shifts marked</option><option value="shifts">Only shifts</option></select></label></div>' +
           '<div class="pcs-wstep"></div>' +
           '<div class="pcs-wnav"><button class="pcs-wback">◀ Back</button><span class="pcs-wcount"></span><button class="pcs-wnext">Next ▶</button></div></details>' +
@@ -206,7 +207,7 @@
   //   localStorage pcs-finger-sys. Under each piece "Your fingers" takes typed finger numbers one a note, as words are typed on the
   //   Notation page (apps/shared/under-notes.js: spaces, * skips a note, | jumps to the next bar, "11445" = one digit a note);
   //   they replace the system's (Least effort solves the rest around them), kept per tune over the whole tune in localStorage
-  //   pcs-fingers { tuneId: [finger | null by note] }. Show: all fingers, all with shifts (the finger last played another key: PianoFingering.shifts) bold orange, or only the shifts (and the first note); localStorage pcs-finger-view. A tied note keeps its finger.
+  //   pcs-fingers { tuneId: [finger | null by note] }. Show: all fingers, all with shifts (the finger last played another key: PianoFingering.shifts) bold orange, or only the shifts (and the first note); localStorage pcs-finger-view. Read: notes on a staff, or fingers on the keys (keysHtml: no notation; localStorage pcs-read). A tied note keeps its finger.
   var Walk = (function () {
     var w = {}, mode = "chords", at = 0, live = null;
     function header(abc) { return abc.split("\n").filter(function (l) { return /^\s*([A-Za-z]:|%%)/.test(l) && !/^\s*[wW]:/.test(l); }); }
@@ -241,7 +242,39 @@
       var perBar = st.bars.map(function (b, i) { return all.filter(function (x) { return !x.cont && x.bar === i; }).length; });
       // shifts are judged over the whole tune, so a piece's first note can be one
       var sh = PianoFingering.shifts(W.played, W.r.f).slice(off, off + n), only = view === "shifts" ? sh.map(function (x, i) { return x || i === 0; }) : null;
-      return { abc: frag(cur.abc, [PianoFingering.write(body, all, sub, { only: only })]), shifts: sh, only: only, off: off, n: n, perBar: perBar };
+      var played = all.filter(function (x) { return !x.cont; }), mids = W.played.map(function (x) { return x.midi; });
+      return { abc: frag(cur.abc, [PianoFingering.write(body, all, sub, { only: only })]), shifts: sh, only: only, off: off, n: n, perBar: perBar,
+        all: all, played: played, f: sub.f, lo: Math.min.apply(null, mids), hi: Math.max.apply(null, mids) };
+    }
+    // ---- notation-free reading: the piece's fingers drawn on the keys ----
+    // Keys: the whole tune's range (so the hand finds the same keyboard on every piece), a white key either side. Each key the
+    // piece plays carries its finger(s) (two when a finger shift gives it two, the shift one orange unless Show = All fingers);
+    // under the keys the fingers in order, bar by bar. While it plays the sounding key and its number light up (read from the
+    // hidden staff's abc-on, so it works with the band too).
+    var KEY_READ = "pcs-read", read = ls.get(KEY_READ) || "notes";
+    var isW = function (m) { return [0, 2, 4, 5, 7, 9, 11].indexOf(((m % 12) + 12) % 12) >= 0; };
+    var NAMES = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"];
+    function keysHtml(fg) {
+      var lo = fg.lo, hi = fg.hi; while (!isW(--lo)); while (!isW(++hi));
+      var whites = []; for (var m = lo; m <= hi; m++) if (isW(m)) whites.push(m);
+      var WW = 44, KH = 150, BH = 92, w = WW * whites.length, x = {}, svg = [];
+      whites.forEach(function (m, i) { x[m] = i * WW; });
+      var on = {}; fg.played.forEach(function (n, i) { var k = on[n.midi] = on[n.midi] || []; var sh = view !== "all" && fg.shifts[i];
+        if (!k.some(function (q) { return q.f === fg.f[i]; })) k.push({ f: fg.f[i], sh: sh }); else if (sh) k.forEach(function (q) { if (q.f === fg.f[i]) q.sh = true; }); });
+      var label = function (m, cx, top, black) {
+        var k = on[m]; if (!k) return "";
+        return k.map(function (q, j) { var cy = top - j * 30; return '<g class="pcs-kf' + (q.sh ? " pcs-kshift" : "") + '"><circle cx="' + cx + '" cy="' + cy + '" r="' + (black ? 12 : 14) + '"/><text x="' + cx + '" y="' + (cy + 6) + '">' + q.f + "</text></g>"; }).join("");
+      };
+      whites.forEach(function (m) { svg.push('<rect class="pcs-kw' + (on[m] ? " pcs-kused" : "") + '" data-m="' + m + '" x="' + x[m] + '" y="0" width="' + WW + '" height="' + KH + '"/>' +
+        '<text class="pcs-kname" x="' + (x[m] + WW / 2) + '" y="' + (KH - 6) + '">' + NAMES[m % 12] + "</text>"); });
+      for (var b = lo; b <= hi; b++) if (!isW(b) && x[b - 1] != null) svg.push('<rect class="pcs-kb' + (on[b] ? " pcs-kused" : "") + '" data-m="' + b + '" x="' + (x[b - 1] + WW - 13) + '" y="0" width="26" height="' + BH + '"/>');
+      whites.forEach(function (m) { svg.push(label(m, x[m] + WW / 2, KH - 36, false)); });
+      for (var c = lo; c <= hi; c++) if (!isW(c) && x[c - 1] != null) svg.push(label(c, x[c - 1] + WW, BH - 20, true));
+      var seq = fg.played.map(function (n, i) {
+        var hide = view === "shifts" && !(i === 0 || fg.shifts[i]);
+        return '<span class="pcs-sq' + (view !== "all" && fg.shifts[i] ? " pcs-kshift" : "") + '" data-i="' + i + '">' + (hide ? "·" : fg.f[i]) + "</span>" + (fg.played[i + 1] && fg.played[i + 1].bar !== n.bar ? '<span class="pcs-sbar">|</span>' : "");
+      }).join("");
+      return '<svg class="pcs-keys" viewBox="-1 -1 ' + (w + 2) + " " + (KH + 2) + '" style="max-width:' + (w + 2) + 'px">' + svg.join("") + "</svg>" + '<div class="pcs-seq">' + seq + "</div>";
     }
     function steps() {
       if (!cur) return [];
@@ -291,7 +324,8 @@
         cur.cardChords = null; postCard(null, null);
         var f = frag(cur.abc, st.bars), paper = document.createElement("div"); paper.className = "pcs-wscore site-paper";
         p(st.all ? "<b>All the pieces together.</b> Play the whole tune with the finger numbers." :
-          "<b>Bars " + (st.from + 1) + (st.bars.length > 1 ? "–" + (st.from + st.bars.length) : "") + "</b> of " + st.of + ". Right hand: the numbers are fingers (1 = thumb, 5 = little finger). Listen, then copy it.");
+          "<b>Bars " + (st.from + 1) + (st.bars.length > 1 ? "–" + (st.from + st.bars.length) : "") + "</b> of " + st.of + ". Right hand: the numbers are fingers (1 = thumb, 5 = little finger). " +
+          (read === "keys" ? "Put each finger on its key, then play the fingers in the order under the keyboard. " : "") + "Listen, then copy it.");
         box.appendChild(paper);
         var fg, v, moveP = p("");
         // colour the shift fingers: the drawn finger numbers come in note order
@@ -301,14 +335,27 @@
           if (t.length !== want.length) return;
           t.forEach(function (x, i) { x.classList.toggle("pcs-shift", view !== "all" && want[i]); });
         };
+        var keysBox = document.createElement("div"); keysBox.className = "pcs-wkeys"; box.insertBefore(keysBox, paper);
         var draw = function () {
           fg = fingered(st); v = null;
           try { v = ABCJS.renderAbc(paper, fg.abc, { responsive: "resize", add_classes: true, staffwidth: st.all ? 720 : 360 })[0]; } catch (e) {}
           mark();
+          paper.hidden = read === "keys"; keysBox.hidden = read !== "keys";
+          if (read === "keys") keysBox.innerHTML = keysHtml(fg);
           moveP.innerHTML = view === "all" || !fg.shifts.some(Boolean) ? "" : view === "shifts" ? "Only the first finger and the <b class=\"pcs-shift-t\">shifts</b> are shown: the other notes keep the finger they had." :
             "<b class=\"pcs-shift-t\">Orange</b> fingers shift: that finger last played a different key.";
         };
         draw();
+        // light the key and the finger that sound: the hidden staff's notes are lit by AbcPlay (abc-on), in note order
+        new MutationObserver(function () {
+          if (read !== "keys") return;
+          var els = paper.querySelectorAll(".abcjs-note"), k = -1, i = -1;
+          for (var q = 0; q < els.length && q < fg.all.length; q++) { if (!fg.all[q].cont) i++; if (els[q].classList.contains("abc-on")) { k = i; break; } }
+          [].forEach.call(keysBox.querySelectorAll(".pcs-klit"), function (e) { e.classList.remove("pcs-klit"); });
+          if (k < 0) return;
+          var m = fg.played[k].midi, key = keysBox.querySelector('[data-m="' + m + '"]'), sq = keysBox.querySelector('.pcs-sq[data-i="' + k + '"]');
+          if (key) key.classList.add("pcs-klit"); if (sq) sq.classList.add("pcs-klit");
+        }).observe(paper, { subtree: true, attributes: true, attributeFilter: ["class"] });
         // the player's own fingers, typed one a note as words are on the Notation page
         var ent = document.createElement("div"); ent.className = "pcs-wfing";
         ent.innerHTML = '<label>Your fingers <input type="text" spellcheck="false" autocomplete="off" placeholder="1 1 4 4 5 5 4"></label><span class="pcs-whint"></span><button type="button">Clear</button>' +
@@ -338,12 +385,14 @@
       w.sys = root.querySelector(".pcs-wsys select");
       PianoFingering.SYSTEMS.forEach(function (x) { var o = document.createElement("option"); o.value = x.id; o.textContent = x.label; w.sys.appendChild(o); });
       w.sys.value = sys; w.sys.addEventListener("change", function () { sys = w.sys.value; ls.set(SYS_KEY, sys); show(); });
+      w.read = root.querySelector(".pcs-wread select"); w.read.value = read;
+      w.read.addEventListener("change", function () { read = w.read.value; ls.set(KEY_READ, read); show(); });
       w.view = root.querySelector(".pcs-wview select"); w.view.value = view;
       w.view.addEventListener("change", function () { view = w.view.value; ls.set(VIEW_KEY, view); show(); });
       [].forEach.call(w.tabs.querySelectorAll("button"), function (b) { b.addEventListener("click", function () { w.setMode(b.dataset.m); }); });
     };
     w.setMode = function (m) { mode = m; at = 0; [].forEach.call(w.tabs.querySelectorAll("button"), function (x) { x.classList.toggle("pcs-on", x.dataset.m === m); });
-      w.len.parentNode.style.display = w.sys.parentNode.style.display = w.view.parentNode.style.display = m === "tune" ? "" : "none"; show(); };
+      w.len.parentNode.style.display = w.sys.parentNode.style.display = w.view.parentNode.style.display = w.read.parentNode.style.display = m === "tune" ? "" : "none"; show(); };
     w.reset = function () { if (w.step) w.setMode("chords"); };
     w.halt = halt; w.bars = bars; w.fingered = fingered;
     return w;

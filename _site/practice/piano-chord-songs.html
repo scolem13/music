@@ -892,7 +892,19 @@ document.addEventListener('DOMContentLoaded', async function () {
 .pcs-wtabs button { padding: .45rem .9rem; font-weight: 600; } .pcs-wtabs button.pcs-on { background: var(--pcs-acc); border-color: var(--pcs-acc); color: #fff; }
 .pcs-wlen { display: flex; gap: .4rem; align-items: center; margin: 0 0 0 auto; }
 .pcs-wnav button, .pcs-wplay { padding: .45rem 1rem; font-size: 1rem; } .pcs-wnav button:disabled { opacity: .4; }
-.pcs-wsys, .pcs-wview { display: flex; gap: .4rem; align-items: center; }
+.pcs-wkeys { margin: .4rem 0; }
+.pcs-keys { width: 100%; display: block; }
+.pcs-keys .pcs-kw { fill: #fff; stroke: #555; stroke-width: 1.2; }
+.pcs-keys .pcs-kb { fill: #222; stroke: #222; }
+.pcs-keys .pcs-kw.pcs-kused { fill: #eef6f5; }
+.pcs-keys .pcs-kw.pcs-klit { fill: #ffd8a8; } .pcs-keys .pcs-kb.pcs-klit { fill: #d9480f; }
+.pcs-keys .pcs-kname { font: 11px sans-serif; fill: #999; text-anchor: middle; }
+.pcs-keys .pcs-kf circle { fill: #2b7a6f; } .pcs-keys .pcs-kf text { font: 800 16px sans-serif; fill: #fff; text-anchor: middle; }
+.pcs-keys .pcs-kf.pcs-kshift circle { fill: #d9480f; }
+.pcs-seq { display: flex; flex-wrap: wrap; gap: .15rem .5rem; align-items: center; font: 700 1.5rem/1.3 var(--font-mono, monospace); margin: .5rem 0; }
+.pcs-seq .pcs-kshift { color: #d9480f; } .pcs-seq .pcs-sbar { color: #bbb; font-weight: 400; }
+.pcs-seq .pcs-klit { background: #ffd8a8; border-radius: .25rem; }
+.pcs-wread, .pcs-wsys, .pcs-wview { display: flex; gap: .4rem; align-items: center; }
 .pcs-wscore text.pcs-shift { fill: #d9480f; font-weight: 800; }
 .pcs-shift-t { color: #d9480f; }
 .pcs-wfing { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .4rem 0; }

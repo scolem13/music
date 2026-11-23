@@ -34,6 +34,7 @@ async function launch({ width = 1280, height = 900, args = [] } = {}) {
       const r = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: full, clip: full ? { x: 0, y: 0, width: cs.width, height: cs.height, scale: 1 } : undefined });
       fs.writeFileSync(file, Buffer.from(r.data, "base64")); return file; },
     sleep: ms => new Promise(r => setTimeout(r, ms)),
+    async shot(file) { const r = await send("Page.captureScreenshot", { format: "png" }); fs.writeFileSync(file, Buffer.from(r.data, "base64")); },
     async close() { try { ws.close(); } catch (e) {} proc.kill(); try { fs.rmSync(dir, { recursive: true, force: true }); } catch (e) {} }
   };
   return api;
