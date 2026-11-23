@@ -340,6 +340,9 @@
     "#pw-nav .is-on .pw-string{animation:pw-shimmer .18s linear infinite alternate}",
     "@keyframes pw-shimmer{from{transform:translateX(-.5px)}to{transform:translateX(.5px)}}",
     "#pw-nav .pw-ico{overflow:visible}",
+    "#pw-nav .pw-needle{transform-origin:12px 17px;transform-box:view-box}",
+    "#pw-nav .is-on .pw-needle{transition:transform .12s linear,opacity .2s}",
+    "#pw-nav .pw-needle.is-quiet{opacity:.4}",
     "@media (prefers-reduced-motion:reduce){#pw-nav .is-on .pw-string{animation:none}}",
     "@media (prefers-reduced-motion:reduce){#pw-nav .is-on .pw-pend,#pw-nav .is-on .pw-breathe{animation:none}}",
     ".pw-panel.pw-inline{position:static;width:auto;max-width:34rem;max-height:none;box-shadow:none;margin:1rem 0 1.4rem}",
@@ -410,9 +413,11 @@
       '<path d="M10.9 5h-1.6M10.9 8h-1.6M13.1 5h1.6M13.1 8h1.6"/></g><path class="pw-string" d="M12 3.5v16.5" stroke-width="1"/></svg>';
     return LIGHT + '<g class="pw-breathe"><path d="M2 12c2.5-7 5-7 7.5 0s5 7 7.5 0c1.2-3.4 2.6-5 5-5" stroke-width="1.8"/></g></svg>';
   }
-  // Tuner: three strobe rows of stripes, drifting while the tuner listens.
+  // Tuner: a needle meter (arc, ticks, needle on a pivot). While the tuner listens the needle reads the cents from the nearest note
+  // (event "tuner-panel-reading" from tuner-panel.js): straight up = in tune, the side ticks = 50 ¢ flat / sharp; no pitch = faint, upright.
   function tunerIcon() {
-    return LIGHT + '<rect x="3" y="4" width="18" height="16" rx="2.5"/><g class="pw-string" stroke-width="2.2"><path d="M6.5 8h2M11 8h2M15.5 8h2M6.5 12h2M11 12h2M15.5 12h2M6.5 16h2M11 16h2M15.5 16h2"/></g></svg>';
+    return LIGHT + '<path d="M3.5 17a8.5 8.5 0 0 1 17 0"/><path d="M12 8.5v1.6M6 11l1.1 1.1M18 11l-1.1 1.1"/>' +
+      '<g class="pw-needle"><path d="M12 17V8.6"/></g><circle cx="12" cy="17" r="1.3" fill="currentColor"/></svg>';
   }
   // Mixer: three faders
   function mixerIcon() {
@@ -753,8 +758,8 @@
   // The strobe tuner (tuner-panel.js, with pitch-detect.js, strobe-view.js and audio-check.js) is loaded the first time its button is pressed.
   var tunerState = 0;
   function buildTuner() {
-    var p = el("div", "pw-panel pw-wide"); p.id = "pw-tuner"; p.hidden = true; p.setAttribute("role", "dialog"); p.setAttribute("aria-label", "Strobe tuner");
-    p.innerHTML = '<div class="pw-head"><h2>Strobe tuner</h2><button class="pw-x" type="button" aria-label="Close">\u00d7</button></div><div id="pw-tuner-host"><p class="pw-note">Loading\u2026</p></div>';
+    var p = el("div", "pw-panel pw-wide"); p.id = "pw-tuner"; p.hidden = true; p.setAttribute("role", "dialog"); p.setAttribute("aria-label", "Tuner");
+    p.innerHTML = '<div class="pw-head"><h2>Tuner</h2><button class="pw-x" type="button" aria-label="Close">\u00d7</button></div><div id="pw-tuner-host"><p class="pw-note">Loading\u2026</p></div>';
     return p;
   }
   function openTuner() {
@@ -797,6 +802,13 @@
     }
     icons();
     window.addEventListener("tuner-panel-state", function (e) { if (navBtn.tuner) navBtn.tuner.classList.toggle("is-on", !!(e.detail && e.detail.running)); });
+    function needle(c) {                                     // c = cents from the nearest note, or null for no pitch
+      var n = navBtn.tuner && navBtn.tuner.querySelector(".pw-needle"); if (!n) return;
+      n.style.transform = c == null ? "" : "rotate(" + (Math.max(-50, Math.min(50, c)) * 0.9).toFixed(1) + "deg)";
+      n.classList.toggle("is-quiet", c == null);
+    }
+    window.addEventListener("tuner-panel-reading", function (e) { var d = e.detail || {}; needle(d.hz > 0 && isFinite(d.cents) ? d.cents : null); });
+    window.addEventListener("tuner-panel-state", function (e) { if (!(e.detail && e.detail.running)) { needle(null); var n = navBtn.tuner && navBtn.tuner.querySelector(".pw-needle"); if (n) n.classList.remove("is-quiet"); } });
     window.addEventListener("page-music-change", function () { Object.keys(panels).forEach(function (k) { if (panels[k]._sync) panels[k]._sync(); }); syncDrones(); });   // a page changed its tempo / key
     window.addEventListener("tonality-change", icons);                                  // a page (or the circle) changed the shared key
     window.addEventListener("storage", function (e) { if (/^tonal/.test(e.key || "")) icons(); });   // ... or another tab did

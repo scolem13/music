@@ -20,7 +20,7 @@ const URL = p => `http://127.0.0.1:8517/${p}.html`;
     var cn = AudioNode.prototype.connect; AudioNode.prototype.connect = function (d) { if (d instanceof AudioDestinationNode) __dest.push(this.constructor.name); return cn.apply(this, arguments); }; })()`;
   const set = (id, v) => ev(`(() => { var e = document.getElementById('pw-t-${id}'); e.value = ${JSON.stringify(v)}; e.dispatchEvent(new Event('change', { bubbles: true })); })()`);
   const S = () => ev(`TunerPanel.state()`);
-  const open = async () => { await ev(`document.querySelector('#pw-nav a[aria-label="Strobe tuner"]').click()`); for (let i = 0; i < 30 && !(await ev(`!!window.TunerPanel && !!TunerPanel.state()`)); i++) await b.sleep(100); };
+  const open = async () => { await ev(`document.querySelector('#pw-nav a[aria-label="Tuner"]').click()`); for (let i = 0; i < 30 && !(await ev(`!!window.TunerPanel && !!TunerPanel.state()`)); i++) await b.sleep(100); };
   const waitBands = async (ms = 2600) => { await b.sleep(ms); return (await S()).bands; };
   const go = () => ev(`document.getElementById('pw-t-go').click()`);
   const stop = async () => { if ((await S()).running) await go(); };
@@ -43,7 +43,7 @@ const URL = p => `http://127.0.0.1:8517/${p}.html`;
   // microphone: only on Start
   await go(); let heard = null; for (let i = 0; i < 40 && !(heard && heard.rms > 0.01); i++) { await b.sleep(150); heard = (await S()).last; }
   check("mic: Start opens it (fake device) and its beep reaches the analyser", await ev("__streams.length") === 1 && heard && heard.rms > 0.01, JSON.stringify(heard));
-  check("navbar button shows it is listening", await ev(`document.querySelector('#pw-nav a[aria-label="Strobe tuner"]').classList.contains('is-on')`));
+  check("navbar button shows it is listening", await ev(`document.querySelector('#pw-nav a[aria-label="Tuner"]').classList.contains('is-on')`));
   await go(); await b.sleep(200);
   check("mic: Stop ends the microphone's tracks", await ev("__streams[0].getTracks().every(t => t.readyState === 'ended')") && !(await S()).running);
   // settings persist
@@ -120,7 +120,7 @@ const URL = p => `http://127.0.0.1:8517/${p}.html`;
   b.errors.length = 0; b.failed.length = 0; await b.goto(URL("lessons/strobe-tuner")); await b.sleep(1200); await ev(hook);
   const r = await ev(`(() => ({ labs: document.querySelectorAll('.st-lab').length, canv: document.querySelectorAll('.st-lab canvas').length, tuners: SynthKit.widgets.filter(w => w.kind === 'tuner').length,
     fund: SynthKit.widgets.filter(w => w.kind === 'tuner').map(w => !!w.c.fund), secs: document.querySelectorAll('section.level2.ls-sec').length, toc: document.querySelectorAll('#TOC a').length,
-    links: ['sound-harmonics.html', 'tuning-systems.html'].map(h => !!document.querySelector('main a[href$="' + h + '"]')), nav: !!document.querySelector('#pw-nav a[aria-label="Strobe tuner"]') }))()`);
+    links: ['sound-harmonics.html', 'tuning-systems.html'].map(h => !!document.querySelector('main a[href$="' + h + '"]')), nav: !!document.querySelector('#pw-nav a[aria-label="Tuner"]') }))()`);
   check("lesson: six page widgets (seven canvases), two tuners (fund control only on the first), sections, jump bar, links to harmonics and tuning systems", r.labs === 6 && r.canv === 7 && r.tuners === 2 && r.fund[0] && !r.fund[1] && r.secs >= 9 && r.toc >= 9 && r.links.every(Boolean) && r.nav, JSON.stringify(r));
   check("lesson: no page errors or missing files", !noErr().length && !b.failed.filter(f => /\/(apps|lessons)\//.test(f)).length, noErr().join(" | ") + b.failed.join(" | "));
   const sid = await ev(`document.querySelector('.st-lab').closest('section.level2').id`);

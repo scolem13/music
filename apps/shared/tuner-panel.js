@@ -1,4 +1,4 @@
-// tuner-panel.js — the strobe tuner in the navbar (opened from practice-widgets.js, loaded the first time its button is pressed).
+// tuner-panel.js — the tuner in the navbar (always reads against the nearest 12-ET note; the old reference-note / tuning-system controls are hidden, still in the DOM) (opened from practice-widgets.js, loaded the first time its button is pressed).
 // Needs pitch-detect.js (the maths: PitchDetect.strobe, .refFreq, .mic), strobe-view.js (the drawing) and audio-tap.js (the page's sound).
 //
 //   TunerPanel.build(root) fills `root` (the panel's body) with the controls and the strobe. Returns { start, stop, running, state }.
@@ -22,10 +22,8 @@
     var running = false, mic = null, bank = null, fref = 440, last = null, error = "", testSource = null, extra = null, session = 0, view = null;
     root.innerHTML =
       '<div class="pw-row"><button class="pw-btn pw-main" type="button" id="pw-t-go" style="flex:1">Start</button></div>' +
-      '<span class="pw-lab">Reference note</span>' +
-      '<div class="pw-row"><select id="pw-t-note" aria-label="Note"></select><select id="pw-t-oct" aria-label="Octave"></select><input type="number" id="pw-t-a4" min="415" max="466" step="1" aria-label="A4 in Hz"><span class="pw-note" style="margin:0">Hz A4</span></div>' +
-      '<span class="pw-lab">Tuning system</span>' +
-      '<div class="pw-row"><select id="pw-t-sys" aria-label="Tuning system"></select><select id="pw-t-tonic" aria-label="Tonic for just intonation"></select><input type="number" id="pw-t-cents" min="-100" max="700" step="1" aria-label="Cents above the note"></div>' +
+      '<div hidden><select id="pw-t-note" aria-label="Note"></select><select id="pw-t-oct" aria-label="Octave"></select>' +
+      '<select id="pw-t-sys" aria-label="Tuning system"></select><select id="pw-t-tonic" aria-label="Tonic for just intonation"></select><input type="number" id="pw-t-cents" min="-100" max="700" step="1" aria-label="Cents above the note"></div>' +
       '<span class="pw-lab">Display</span>' +
       '<div class="pw-row"><select id="pw-t-view" aria-label="How the tuner is drawn" style="flex:1;min-width:0;max-width:100%"></select></div>' +
       '<span class="pw-lab">Listen to</span>' +
@@ -36,7 +34,8 @@
       '<div class="pw-row" style="align-items:baseline"><b id="pw-t-name" style="font-size:1.5rem;min-width:3.5ch">—</b><span id="pw-t-cents-read" class="pw-note" style="margin:0"></span><span id="pw-t-hz" class="pw-note" style="margin:0"></span></div>' +
       '<canvas id="pw-t-cv" style="width:100%;height:52px;display:block;margin-top:.4rem" role="img"></canvas>' +
       '<div class="pw-row" id="pw-t-bandsrow" style="margin-top:.4rem"><label class="pw-note" style="margin:0" for="pw-t-bands">Bands</label><select id="pw-t-bands" aria-label="Number of bands"></select></div>' +
-      '<p class="pw-note" id="pw-t-how"></p>';
+      '<p class="pw-note" id="pw-t-how"></p>' +
+      '<div class="pw-row"><label class="pw-note" style="margin:0" for="pw-t-a4">A4 =</label><input type="number" id="pw-t-a4" min="415" max="466" step="1" aria-label="A4 in Hz" style="width:5em"><span class="pw-note" style="margin:0">Hz</span></div>';
     function $(id) { return root.querySelector("#pw-t-" + id); }
     opts($("note"), SV.NOTES, S.note); opts($("oct"), [1, 2, 3, 4, 5, 6].map(function (o) { return [String(o), "Octave " + o]; }), String(S.oct));
     opts($("sys"), [["12et", "12-ET (the piano)"], ["ji", "Just, over a tonic"], ["31et", "31-ET"], ["cents", "Cents above the note"]], S.sys);
@@ -85,7 +84,7 @@
     function lookup() {
       var v = $("view").value || S.view, m = SV.MODES.filter(function (x) { return x[0] === v; })[0] || SV.MODES[0], cv = $("cv");
       S.view = m[0]; cv.style.height = (SV.HEIGHTS[m[0]] || 200) + "px"; $("bandsrow").hidden = m[0] !== "strobe";
-      cv.setAttribute("aria-label", m[1] + ". " + m[2]); $("how").textContent = m[0] === "strobe" ? STROBE_HOW : m[2] + " The cents are measured from the target above.";
+      cv.setAttribute("aria-label", m[1] + ". " + m[2]); $("how").textContent = m[0] === "strobe" ? STROBE_HOW : m[2] + " The cents are measured from the nearest note.";
     }
     $("view").addEventListener("change", function () { S.view = $("view").value; save(); lookup(); if (view) view.redraw(); });
 
@@ -94,7 +93,7 @@
       S.note = $("note").value; S.oct = $("oct").value; S.a4 = Math.max(415, Math.min(466, +$("a4").value || 440)); S.sys = $("sys").value; S.tonic = $("tonic").value;
       S.cents = +$("cents").value || 0; S.bands = +$("bands").value; save();
       var d = SV.describe({ note: S.note, oct: +S.oct, a4: S.a4, system: S.sys, tonic: S.tonic, cents: S.cents });
-      fref = d.fref; $("info").textContent = error || d.text;
+      fref = d.fref; $("info").textContent = error || "Shows the nearest note (12-ET, A4 = " + S.a4 + " Hz) and how many cents sharp or flat it is.";
       $("tonic").hidden = S.sys !== "ji"; $("cents").hidden = S.sys !== "cents";
       if (bank) { bank.n = S.bands; bank.setRef(fref); }
       lookup();
@@ -110,8 +109,13 @@
     // ---- listening ----
     function onFrame(r) {
       last = r;
-      if (r.hz > 0) { $("name").textContent = r.name; $("cents-read").textContent = SV.fmtC(r.cents) + " ¢"; $("hz").textContent = r.hz.toFixed(1) + " Hz, " + SV.fmtC(1200 * Math.log(r.hz / fref) / Math.LN2) + " ¢ from the target"; }
+      if (r.hz > 0 && r.midi != null) {                     // FOLLOW: the target is always the nearest 12-ET note to what is heard (G 20 ¢ sharp, not a very flat A)
+        var f = S.a4 * Math.pow(2, (r.midi - 69) / 12);
+        if (Math.abs(f - fref) > 0.01) { fref = f; if (bank) bank.setRef(fref); }
+      }
+      if (r.hz > 0) { $("name").textContent = r.name; $("cents-read").textContent = SV.fmtC(r.cents) + " ¢"; $("hz").textContent = r.hz.toFixed(1) + " Hz"; }
       else { $("name").textContent = "—"; $("cents-read").textContent = ""; $("hz").textContent = r.rms > 0.004 ? "no clear pitch" : "listening…"; }
+      try { global.dispatchEvent(new CustomEvent("tuner-panel-reading", { detail: { hz: r.hz, cents: r.cents, name: r.name } })); } catch (e) {}   // the navbar icon's needle
     }
     function fail(e, mine) {
       if (mine !== session) return;
