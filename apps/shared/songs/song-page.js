@@ -3356,12 +3356,33 @@ if (window.SONG_ID) (function () {
       rows.push('<div class="gig-grow">' + bars.slice(k, k + per).map(function (b) {
         var cs = (b.c || []).filter(function (c) { return c && c !== "." && !/^\d+\/\d+$/.test(c); })
                             .map(function (c) { return c === "%" ? last : c; });
-        var txt = cs.length ? cs.join(" ") : last;
+        var list = cs.length ? cs : last ? [last] : [];
         if (cs.length) last = cs[cs.length - 1];
-        return '<span class="gig-gbar">' + esc(txt) + "</span>";
+        return '<span class="gig-gbar">' + list.map(function (c) {
+          var sl = c.indexOf("/");
+          return '<span class="gig-c" data-full="' + esc(c) + '">' + esc(sl > 0 ? c.slice(0, sl) : c) +
+                 (sl > 0 ? '<span class="gig-bass">/' + esc(c.slice(sl + 1)) + "</span>" : "") + "</span>";
+        }).join(" ") + "</span>";
       }).join("") + "</div>");
     }
     return '<div class="gig-grid">' + rows.join("") + "</div>";
+  }
+  // A bar whose chords do not fit its box, in this order until they do: compact (slash bass small and low; maj7 → Δ7,
+  // m7b5 → ø7, dim → °, aug → +), then stacked (one chord a line, read top to bottom), then smaller type, to 55%.
+  function compact(c) {
+    return c.replace(/maj7/g, "Δ7").replace(/maj9/g, "Δ9").replace(/m7b5|m7♭5/g, "ø7").replace(/dim/g, "°").replace(/aug/g, "+").replace(/b(?=\d)/g, "♭").replace(/#(?=\d)/g, "♯");
+  }
+  function fitBars(root) {
+    [].forEach.call(root.querySelectorAll(".gig-gbar"), function (bar) {
+      var over = function () { return bar.scrollWidth > bar.clientWidth + 1 || bar.scrollHeight > bar.clientHeight + 1; };
+      bar.className = "gig-gbar"; bar.style.fontSize = "";
+      if (!over()) return;
+      bar.classList.add("gig-compact");
+      [].forEach.call(bar.querySelectorAll(".gig-c"), function (c) { c.firstChild.nodeValue = compact(c.firstChild.nodeValue); });
+      if (!over()) return;
+      if (bar.querySelectorAll(".gig-c").length > 1) { bar.classList.add("gig-stack"); if (!over()) return; }
+      for (var f = 0.95; f >= 0.55 && over(); f -= 0.05) bar.style.fontSize = f + "em";
+    });
   }
   function info(n) {
     var st = road[n], s = window.carolSong.section(st.head), h = s.querySelector("h2");
@@ -3450,6 +3471,7 @@ if (window.SONG_ID) (function () {
         if (box.getBoundingClientRect().height > room) draw(false);
       } else draw(false);
     }
+    fitBars(nowBox);
     var after = pos >= 0 && pos + 1 < order.length ? title(order[pos + 1]) : "end of the set";
     nextBox.innerHTML = nx
       ? '<div class="gig-name">' + esc(nx.name) + "</div>" +
@@ -3494,7 +3516,7 @@ if (window.SONG_ID) (function () {
   [nowBox, nextBox, all].forEach(function (z) {
     z.addEventListener("click", function (e) { step(e.clientX > window.innerWidth / 2 ? 1 : -1); });
   });
-  window.addEventListener("resize", function () { if (glance) drawAll(); });
+  window.addEventListener("resize", function () { if (glance) drawAll(); else fitBars(nowBox); });
   (function wait(n) {                       // the band numbers the verses ("Verse 1"); redraw when it is up
     if (window.carolBandChart) show(); else if (n < 400) setTimeout(function () { wait(n + 1); }, 250);
   })(0);
