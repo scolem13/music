@@ -631,3 +631,16 @@ body.gig-on > :not(#gig) { display: none !important; }   /* the page under it wo
 #gig .gig-more { position: absolute; top: 4px; right: 6px; z-index: 1; background: none; border: 0; padding: 4px 10px;
   font-size: 1.4rem; line-height: 1; color: inherit; opacity: .45; }
 #gig:not(.gig-bare) .gig-top { padding-right: 2.5rem; }
+/* 2026-11-23: the grid always shows in full, words small, next on a tinted strip, no section name in landscape */
+#gig .gig-now { justify-content: flex-start; padding-top: .4rem; }
+#gig .gig-now > * { flex: none; }
+#gig .gig-now .gig-abc { flex: 0 1 auto; }
+#gig .gig-first { font-size: .95rem; }
+#gig .gig-next .gig-first { font-size: .85rem; }
+#gig .ga-first { font-size: .7em; }
+#gig .gig-next { opacity: 1; margin: 0 -16px; padding: .35rem 16px;
+  background: color-mix(in srgb, var(--bs-body-color, #212529) 7%, var(--bs-body-bg, #fff));
+  color: color-mix(in srgb, var(--bs-body-color, #212529) 70%, transparent); border-top: 0; }
+#gig .gig-next .gig-name { font-size: 1.1rem; }
+#gig .gig-now { border-bottom: 0; }
+@media (orientation: landscape) { #gig .gig-now > .gig-name { display: none; } }

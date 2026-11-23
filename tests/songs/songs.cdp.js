@@ -114,8 +114,9 @@ const NSONGS = Object.keys(DATA.songs).length + (process.env.NEG ? 1 : 0);
   b.errors.length = 0; await b.resize(390, 800);
   await b.goto(U + "?id=o-hanukkah&prog=conrad-2026&gig=1");
   check("gig view up", await wait(`!!document.querySelector('#gig .gig-now .gig-name')`));
+  check("gig: the first section's notation drawn without moving", await wait(`!!document.querySelector('#gig .gig-abc svg')`));
   check("gig: set place and first line", await ev(`/^4 \\/ 11/.test(document.querySelector('.gig-set').textContent) && /\\p{L}/u.test((document.querySelector('.gig-next .gig-first')||{}).textContent||'')`));
-  check("gig: notation where the song has it, no grid then", await wait(`!!document.querySelector('#gig .gig-abc svg') && !document.querySelector('#gig .gig-now .gig-gbar')`));
+  check("gig: notation where the song has it, and the grid too", await wait(`!!document.querySelector('#gig .gig-abc svg') && document.querySelectorAll('#gig .gig-now .gig-gbar').length === 8`));
   check("gig: bars folded away", await ev(`!document.querySelector('#gig .gig-top').offsetHeight && !document.querySelector('#gig .gig-bar').offsetHeight`));
   await ev(`document.querySelector('.gig-more').click()`);
   check("gig: ⋯ shows the bars", await ev(`document.querySelector('#gig .gig-top').offsetHeight > 0 && document.querySelector('#gig .gig-bar').offsetHeight > 0`));
@@ -131,6 +132,12 @@ const NSONGS = Object.keys(DATA.songs).length + (process.env.NEG ? 1 : 0);
   await ev(`document.querySelector('.gig-zoom [data-z="0"]').click(); localStorage.removeItem('songs-gig-mode')`);
   await b.goto(U + "?id=twelve-days-of-christmas&prog=conrad-2026&gig=1");
   check("gig: chord grid where there is no notation", await wait(`document.querySelectorAll('#gig .gig-now .gig-gbar').length > 0 && !document.querySelector('#gig .gig-abc')`));
+  await b.resize(800, 390); await b.sleep(300);
+  check("gig: landscape drops the section name", await ev(`!document.querySelector('#gig .gig-now > .gig-name').offsetHeight`));
+  await b.goto(U + "?id=o-hanukkah&prog=conrad-2026&gig=1"); await wait(`!!document.querySelector('#gig .gig-abc svg')`); await ev(`carolNext()`); await b.sleep(400);
+  check("gig: landscape, the whole grid shows", await ev(`(g => g && g.getBoundingClientRect().bottom <= document.querySelector('#gig .gig-now').getBoundingClientRect().bottom + 1)(document.querySelector('#gig .gig-grid'))`));
+  if (process.env.SHOTS) await b.shot(process.env.SHOTS + "/gig-land-verse.png", false);
+  await b.resize(390, 800);
   if (process.env.SHOTS) { await b.resize(800, 390); await b.sleep(300); await b.shot(process.env.SHOTS + "/gig-land.png", false); await b.resize(390, 800); }
   await b.goto(U + "?id=o-hanukkah&prog=conrad-2026&gig=1"); await wait(`!!document.getElementById('gig')`);
   for (let k = 0; k < 40 && /o-hanukkah/.test(await ev(`location.search`)); k++) { await ev(`carolNext()`); await b.sleep(50); }
