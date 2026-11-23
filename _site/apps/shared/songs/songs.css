@@ -688,3 +688,6 @@ body.gig-on > :not(#gig) { display: none !important; }   /* the page under it wo
 #gig .gig-gbar, #gig .gig-gbar.gig-four { height: 3.75rem; }
 #gig .gig-q.gig-compact { letter-spacing: -.03em; }
 #gig .gig-beats .gig-q { padding: 0 .2em; }
+/* the row sets the height and every bar fills it, whatever size its type (2026-11-23: a phone showed uneven rows) */
+#gig .gig-grow { grid-auto-rows: 3.75rem; }
+#gig .gig-grow > .gig-gbar { height: auto !important; align-self: stretch; box-sizing: border-box; }
