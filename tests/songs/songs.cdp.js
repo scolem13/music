@@ -29,7 +29,7 @@ const NSONGS = Object.keys(DATA.songs).length + (process.env.NEG ? 1 : 0);
 
   b.errors.length = 0;
   await b.goto(U + "?id=winter-wonderland&prog=conrad-2026");
-  check("numbered title", await ev(`document.querySelector('h1.title').textContent`) === "2. Winter Wonderland");
+  check("numbered title", await ev(`document.querySelector('h1.title').firstChild.textContent`) === "2. Winter Wonderland");
   check("list gone, song in", await ev(`!document.getElementById('all-songs') && document.querySelectorAll('#song-body section.level2').length > 5`));
   check("lyrics classes", await ev(`document.body.classList.contains('lyrics') && document.body.classList.contains('has-chords')`));
   check("chords over words", await ev(`document.querySelectorAll('#song-body .ch').length > 20`));
@@ -109,7 +109,7 @@ const NSONGS = Object.keys(DATA.songs).length + (process.env.NEG ? 1 : 0);
   check("video: one grid chord lit", await ev(`document.querySelectorAll('.gch.now').length === 1`));
   check("solos on E7 only", await ev(`[...document.querySelectorAll('#solo-1 .gch')].every(c => c.textContent === 'E7')`));
   check("no errors with the video", errs().length === 0, errs().join(" | "));
-  check("gig view link on a song", await ev(`/gig=1/.test((document.querySelector('.gig-link a')||{}).href||'')`));
+  check("gig view link on a song", await ev(`/gig=1/.test((document.querySelector('h1.title a.gig-link')||{}).href||'')`));
   // Gig view (&gig=1): this section + next, pedal (carolNext) steps, past the end the next song in the set; Glance fits the song.
   b.errors.length = 0; await b.resize(390, 800);
   await b.goto(U + "?id=o-hanukkah&prog=conrad-2026&gig=1");

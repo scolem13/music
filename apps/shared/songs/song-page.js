@@ -77,6 +77,7 @@ function songPageRun() {
   String(song.classes || "lyrics").split(/\s+/).forEach(function (c) { if (c) document.body.classList.add(c); });
   var title = (at >= 0 ? (at + 1) + ". " : "") + song.title;
   var h1 = document.querySelector("h1.title"); if (h1) h1.textContent = title;
+  window.SONG_TITLE = title;               // the title as text (h1.title also holds the 📱 gig view link)
   [].slice.call(document.querySelectorAll("#title-block-header p.subtitle, #title-block-header .description")).forEach(function (el) { el.remove(); });
   document.title = song.title + " – Words & Chords";
   var box = document.getElementById("song-body");
@@ -113,10 +114,10 @@ function songPageRun() {
   nav.appendChild(p);
   // Gig view (block "gig view" below): the phone-on-a-stand screen, no sound.
   if (q.get("gig") !== "1") {
-    var gl = document.createElement("p"); gl.className = "gig-link";
-    var ga = document.createElement("a"); ga.textContent = "📱 Gig view (phone, pedal, at a glance)";
+    var ga = document.createElement("a"); ga.className = "gig-link"; ga.textContent = "📱";      // after the title
+    ga.title = "Gig view: phone on a stand, pedal, at a glance"; ga.setAttribute("aria-label", ga.title);
     var gq = new URLSearchParams(location.search); gq.set("gig", "1"); if (prog) gq.set("prog", prog.id); ga.href = "?" + gq.toString();
-    gl.appendChild(ga); box.insertBefore(gl, box.firstChild);
+    if (h1) { h1.appendChild(document.createTextNode(" ")); h1.appendChild(ga); } else box.insertBefore(ga, box.firstChild);
   }
   var secs = box.querySelectorAll("section.level2");
   (secs.length ? secs[secs.length - 1] : box).appendChild(nav);
@@ -1599,7 +1600,7 @@ window.carolTypeChoice = function () {
 
   function buildAbc(version) {
     var heading = document.querySelector('h1.title');
-    var lines = ['X:1', 'T:' + (heading ? heading.textContent.trim() : document.title), 'M:' + meterN + '/' + meterD,
+    var lines = ['X:1', 'T:' + (window.SONG_TITLE || (heading ? heading.textContent.trim() : document.title)), 'M:' + meterN + '/' + meterD,
                  'L:1/8', 'K:' + (chart.key || 'C')];
     var nowN = meterN, nowD = meterD;
     missing = [];
@@ -1851,7 +1852,7 @@ window.carolTypeChoice = function () {
     if (!abc) return;
     var heading = document.querySelector('h1.title');
     var d = { abc: abc.replace(/^T:\s*\d+\.\s*/m, 'T:'), have: c.have, total: c.total, tempo: tempo(), style: styleBox.value,
-              title: (heading ? heading.textContent : document.title).replace(/^\d+\.\s*/, '').trim() };
+              title: (window.SONG_TITLE || (heading ? heading.textContent : document.title)).replace(/^\d+\.\s*/, '').trim() };
     // The song's own file goes too, so the page can put its words under the notes and
     // hand the file back with the melody written in; and the melody it already has.
     var source = null;
@@ -2537,7 +2538,7 @@ window.carolTypeChoice = function () {
            written: others.length ? buildAbc(null) : null,
            tempo: tempo(), style: styleBox.value, hold: hold, setup: setup,
            fills: fillsBox.value, countIn: parseInt(countBox.value, 10),
-           title: (document.querySelector('h1.title') || {}).textContent || '' });
+           title: window.SONG_TITLE || (document.querySelector('h1.title') || {}).textContent || '' });
   }
   function findWindow() {
     var was = false, found = null, blank = false;
