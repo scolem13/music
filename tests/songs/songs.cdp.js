@@ -109,6 +109,24 @@ const NSONGS = Object.keys(DATA.songs).length + (process.env.NEG ? 1 : 0);
   check("video: one grid chord lit", await ev(`document.querySelectorAll('.gch.now').length === 1`));
   check("solos on E7 only", await ev(`[...document.querySelectorAll('#solo-1 .gch')].every(c => c.textContent === 'E7')`));
   check("no errors with the video", errs().length === 0, errs().join(" | "));
+  check("gig view link on a song", await ev(`/gig=1/.test((document.querySelector('.gig-link a')||{}).href||'')`));
+  // Gig view (&gig=1): this section + next, pedal (carolNext) steps, past the end the next song in the set; Glance fits the song.
+  b.errors.length = 0; await b.resize(390, 800);
+  await b.goto(U + "?id=o-hanukkah&prog=conrad-2026&gig=1");
+  check("gig view up", await wait(`!!document.querySelector('#gig .gig-now .gig-name')`));
+  check("gig: set place and first line", await ev(`/^4 \\/ 11/.test(document.querySelector('.gig-set').textContent) && /\\p{L}/u.test((document.querySelector('.gig-next .gig-first')||{}).textContent||'')`));
+  if (process.env.SHOTS) await b.shot(process.env.SHOTS + "/gig-section.png", false);
+  const n0 = await ev(`document.querySelector('.gig-now .gig-name').textContent`); await ev(`carolNext()`);
+  check("gig: pedal steps", await ev(`document.querySelector('.gig-now .gig-name').textContent`) !== n0);
+  await ev(`document.querySelector('.gig-mode').click()`);
+  check("glance fits the whole song", await ev(`(a => !a.hidden && a.querySelectorAll('.ga').length > 3 && a.scrollHeight <= a.clientHeight + 1)(document.querySelector('.gig-all'))`));
+  if (process.env.SHOTS) await b.shot(process.env.SHOTS + "/gig-glance.png", false);
+  await ev(`document.querySelector('.gig-zoom [data-z="1"]').click()`);
+  check("glance zoom", await ev(`parseFloat(document.querySelector('.gig-all').style.fontSize) > 0`));
+  await ev(`document.querySelector('.gig-zoom [data-z="0"]').click(); localStorage.removeItem('songs-gig-mode')`);
+  for (let k = 0; k < 40 && /o-hanukkah/.test(await ev(`location.search`)); k++) { await ev(`carolNext()`); await b.sleep(50); }
+  check("gig: past the end, next song", await wait(`/id=jingle-bell-rock.*gig=1/.test(location.search) && !!document.getElementById('gig')`));
+  check("no errors in gig view", errs().length === 0, errs().join(" | "));
   await b.close(); srv.close();
   console.log(fails ? fails + " failed" : "all passed"); process.exit(fails ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(1); });

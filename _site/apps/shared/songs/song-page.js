@@ -111,6 +111,13 @@ function songPageRun() {
   if (at >= 0 && at + 1 < order.length) p.appendChild(link(order[at + 1], name(order[at + 1]) + " &rarr;", "nav-next"));
   else if (prog) p.appendChild(link(null, prog.title + " &rarr;", "nav-next"));
   nav.appendChild(p);
+  // Gig view (block "gig view" below): the phone-on-a-stand screen, no sound.
+  if (q.get("gig") !== "1") {
+    var gl = document.createElement("p"); gl.className = "gig-link";
+    var ga = document.createElement("a"); ga.textContent = "📱 Gig view (phone, pedal, at a glance)";
+    var gq = new URLSearchParams(location.search); gq.set("gig", "1"); if (prog) gq.set("prog", prog.id); ga.href = "?" + gq.toString();
+    gl.appendChild(ga); box.insertBefore(gl, box.firstChild);
+  }
   var secs = box.querySelectorAll("section.level2");
   (secs.length ? secs[secs.length - 1] : box).appendChild(nav);
 })();
@@ -3307,6 +3314,130 @@ if (window.SONG_ID) (function () {
     h.classList.add("vid-seekable"); h.title = "Play the video from here (" + fmt(m.t) + ")";
     h.addEventListener("click", function () { if (!box.hidden) open(m.t); });
   });
+})();
+// ==== gig view (&gig=1): a phone on a music stand, no sound ====
+// One screen: the song and its place in the set, this section (name, its chords in order, the first line of words with
+// its chords) and the next one smaller. The pedal (MIDI block above: window.carolNext), j / → / Space or a tap on the
+// right half go on; k / ← or the left half go back. Past the last section the next song in the programme opens, still
+// in gig view; the bottom bar jumps songs. The Pedal button shows the MIDI panel (Connect / Learn) from the sidebar.
+(function () {
+  var q = new URLSearchParams(location.search);
+  if (q.get("gig") !== "1" || !window.carolSong || !window.SONG_ID) return;
+  var S = window.SONGS, id = window.SONG_ID;
+  var prog = S.programmes.filter(function (p) { return p.id === q.get("prog"); })[0]
+          || S.programmes.filter(function (p) { return p.songs.some(function (e) { return String(e).split("@")[0] === id; }); })[0];
+  var order = prog ? prog.songs.map(function (e) { return String(e).split("@")[0]; }) : [id];
+  var pos = order.indexOf(id);
+  function href(slug, end) {
+    return "?id=" + encodeURIComponent(slug) + (prog ? "&prog=" + encodeURIComponent(prog.id) : "") + "&gig=1" + (end ? "&at=end" : "");
+  }
+  var road = window.carolSong.road().filter(function (st) {
+    var s = window.carolSong.section(st.head); return s && s.querySelector(".cline .ln");
+  });
+  function esc(t) { return String(t).replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; }); }
+  function info(st) {
+    var s = window.carolSong.section(st.head), h = s.querySelector("h2");
+    var chords = [].map.call(s.querySelectorAll(".cline .ch"), function (c) { return c.textContent.trim(); }).filter(Boolean);
+    var ln = s.querySelector(".cline .ln"), first = "";
+    if (ln) [].forEach.call(ln.querySelectorAll(".cw"), function (cw) {
+      var ch = cw.querySelector(".ch"), words = cw.textContent.slice(ch ? ch.textContent.length : 0);
+      first += '<span class="gw">' + (ch ? '<b>' + esc(ch.textContent) + '</b>' : '<b>&nbsp;</b>') + esc(words || " ") + "</span>";
+    });
+    var lyric = ln && ln.querySelector(".cw:not(.bare)") && /\p{L}/u.test(ln.textContent.replace(/\b[A-G][#b♯♭]?\S*/g, ""));
+    return { name: h ? h.textContent.trim() : "", chords: chords, first: lyric ? first : "" };
+  }
+  var i = q.get("at") === "end" ? Math.max(0, road.length - 1) : 0;
+  var el = document.createElement("div");
+  el.id = "gig";
+  el.innerHTML = '<div class="gig-top"><span class="gig-set"></span><button type="button" class="gig-mode">Glance</button><span class="gig-zoom" hidden><button type="button" data-z="-1">A−</button><button type="button" data-z="0">Fit</button><button type="button" data-z="1">A+</button></span><button type="button" class="gig-pedal">Pedal</button><button type="button" class="gig-exit" title="Leave gig view">✕</button></div>' +
+    '<div class="gig-midi" hidden></div>' +
+    '<div class="gig-now"></div><div class="gig-next"></div><div class="gig-all" hidden></div>' +
+    '<div class="gig-bar"><a class="gig-prev-song"></a><a class="gig-next-song"></a></div>';
+  document.body.appendChild(el);
+  document.body.classList.add("gig-on");
+  var midi = document.querySelector(".midi-status"); midi = midi && midi.parentNode;
+  el.querySelector(".gig-pedal").addEventListener("click", function () {
+    var box = el.querySelector(".gig-midi");
+    if (midi && box.firstChild !== midi) box.appendChild(midi);
+    box.hidden = !box.hidden;
+  });
+  el.querySelector(".gig-exit").addEventListener("click", function () {
+    q.delete("gig"); q.delete("at"); location.search = q.toString();
+  });
+  var ps = el.querySelector(".gig-prev-song"), ns = el.querySelector(".gig-next-song");
+  if (pos > 0) { ps.href = href(order[pos - 1]); ps.textContent = "← " + (S.songs[order[pos - 1]] || {}).title; }
+  if (pos >= 0 && pos + 1 < order.length) { ns.href = href(order[pos + 1]); ns.textContent = (S.songs[order[pos + 1]] || {}).title + " →"; }
+  // At a glance: every section of the song on one screen (name, chords, first line), the current one lit.
+  // Zoom: Fit (the largest size that shows it all) or A− / A+ by hand, kept in localStorage songs-gig-zoom.
+  var glance = false, zoom = null, all = el.querySelector(".gig-all");
+  try { glance = localStorage.getItem("songs-gig-mode") === "glance"; zoom = parseFloat(localStorage.getItem("songs-gig-zoom")) || null; } catch (e) {}
+  function fit() {
+    var z = 2.2; all.style.fontSize = z + "rem";
+    while (z > 0.45 && (all.scrollHeight > all.clientHeight || all.scrollWidth > all.clientWidth)) { z -= 0.05; all.style.fontSize = z + "rem"; }
+    return z;
+  }
+  function drawAll() {
+    all.innerHTML = road.map(function (st, n) {
+      var f = info(st);
+      return '<div class="ga' + (n === i ? " on" : "") + '"><span class="ga-name">' + esc(f.name) + '</span> <span class="ga-ch">' +
+        f.chords.filter(function (c, k, a) { return c !== a[k - 1]; }).map(esc).join(" ") + "</span>" + (f.first ? ' <span class="ga-first">' + f.first + "</span>" : "") + "</div>";
+    }).join("");
+    if (zoom) all.style.fontSize = zoom + "rem"; else fit();
+    var on = all.querySelector(".on"); if (on && on.scrollIntoView) on.scrollIntoView({ block: "nearest" });
+  }
+  function mode() {
+    el.querySelector(".gig-now").hidden = el.querySelector(".gig-next").hidden = glance;
+    all.hidden = !glance; el.querySelector(".gig-zoom").hidden = !glance;
+    el.querySelector(".gig-mode").textContent = glance ? "Section" : "Glance";
+  }
+  el.querySelector(".gig-mode").addEventListener("click", function () {
+    glance = !glance; try { localStorage.setItem("songs-gig-mode", glance ? "glance" : "section"); } catch (e) {}
+    mode(); show();
+  });
+  [].forEach.call(el.querySelectorAll(".gig-zoom button"), function (b) {
+    b.addEventListener("click", function () {
+      var d = +b.dataset.z, cur = parseFloat(all.style.fontSize) || 1;
+      zoom = d ? Math.max(0.4, Math.min(3, cur + d * 0.1)) : null;
+      try { if (zoom) localStorage.setItem("songs-gig-zoom", zoom); else localStorage.removeItem("songs-gig-zoom"); } catch (e) {}
+      drawAll();
+    });
+  });
+  all.addEventListener("click", function (e) { step(e.clientX > window.innerWidth / 2 ? 1 : -1); });
+  window.addEventListener("resize", function () { if (glance) drawAll(); });
+  function show() {
+    if (glance) drawAll();
+    el.querySelector(".gig-set").textContent = (pos >= 0 ? (pos + 1) + " / " + order.length + " · " : "") + (S.songs[id] || {}).title;
+    var now = road[i] ? info(road[i]) : null, nx = road[i + 1] ? info(road[i + 1]) : null;
+    el.querySelector(".gig-now").innerHTML = now
+      ? '<div class="gig-name">' + esc(now.name) + ' <small>' + (i + 1) + "/" + road.length + '</small></div>' +
+        '<div class="gig-chords">' + now.chords.map(esc).join(" ") + "</div>" +
+        (now.first ? '<div class="gig-first">' + now.first + "</div>" : "")
+      : '<div class="gig-name">' + esc((S.songs[id] || {}).title) + "</div>";
+    var after = pos >= 0 && pos + 1 < order.length ? (S.songs[order[pos + 1]] || {}).title : "end of the set";
+    el.querySelector(".gig-next").innerHTML = nx
+      ? '<div class="gig-label">Next</div><div class="gig-name">' + esc(nx.name) + "</div>" +
+        (nx.first ? '<div class="gig-first">' + nx.first + "</div>" : "")
+      : '<div class="gig-label">Next song</div><div class="gig-name">' + esc(after) + "</div>";
+  }
+  function step(d) {
+    if (i + d >= road.length) { if (ns.href) location.href = ns.href; return; }
+    if (i + d < 0) { if (pos > 0) location.href = href(order[pos - 1], true); return; }
+    i += d; show();
+  }
+  window.carolNext = function () { step(1); };   // the MIDI pedal calls this
+  window.carolPrev = function () { step(-1); };
+  document.addEventListener("keydown", function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey || (e.target.matches && e.target.matches("input, textarea, select"))) return;
+    var k = e.key, d = (k === "j" || k === "ArrowRight" || k === "ArrowDown" || k === " " || k === "PageDown") ? 1
+                    : (k === "k" || k === "ArrowLeft" || k === "ArrowUp" || k === "PageUp") ? -1 : 0;
+    if (!d) return;
+    e.preventDefault(); e.stopImmediatePropagation(); step(d);
+  }, true);
+  [el.querySelector(".gig-now"), el.querySelector(".gig-next")].forEach(function (z) {
+    z.addEventListener("click", function (e) { step(e.clientX > window.innerWidth / 2 ? 1 : -1); });
+  });
+  try { navigator.wakeLock && navigator.wakeLock.request("screen"); document.addEventListener("visibilitychange", function () { if (!document.hidden && navigator.wakeLock) navigator.wakeLock.request("screen").catch(function () {}); }); } catch (e) {}
+  mode(); show();
 })();
 }
 if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", songPageRun); else songPageRun();
