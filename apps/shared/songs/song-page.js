@@ -3325,8 +3325,7 @@ if (window.SONG_ID) (function () {
 // chords once each, first line), the current one marked, Fit / A− / A+ (localStorage songs-gig-zoom).
 // The pedal (MIDI block above calls window.carolNext), j / → / Space or a tap on the right half go on; k / ← or
 // the left half go back. Past the last section the next song in the programme opens, still in gig view.
-// The grid: window.carolBandChart (the band block above) has its sections in road order, one run of bars per stop
-// of carolSong.road(), the first bar of each run carrying `section`; until it arrives the grid is left out.
+// The grid comes from the song's #band-chart data (see gridBars), not from the band, so it is there at once.
 (function () {
   var q = new URLSearchParams(location.search);
   if (q.get("gig") !== "1" || !window.carolSong || !window.SONG_ID) return;
@@ -3342,20 +3341,22 @@ if (window.SONG_ID) (function () {
   var road = window.carolSong.road();
   function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
-  // the band chart's bars, cut into one run per stop
-  var runs = null;
-  function chartRuns() {
-    var c = window.carolBandChart; if (!c || !c.bars) return null;
-    var out = [];
-    c.bars.forEach(function (b) { if (b.section || !out.length) out.push({ name: b.section || "", bars: [] }); out[out.length - 1].bars.push(b); });
-    return out.length === road.length ? out : null;
+  // The grid: the song's own chart (#band-chart, the JSON the band reads; sections by heading index, each grid bar
+  // {c: [chord or ".", ...]}), read here directly so it shows at once, band scripts loaded or not (on a phone they
+  // can take longer than anyone waits). A section with no grid of its own has no bars here.
+  var chartData = null;
+  try { chartData = JSON.parse((document.getElementById("band-chart") || {}).textContent || "null"); } catch (e) {}
+  function gridBars(head) {
+    var sec = chartData && chartData.sections && chartData.sections[head];
+    return sec && sec.bars && sec.bars.length ? sec.bars : null;
   }
   function gridHtml(bars) {
     var rows = [], per = 4, last = "";
     for (var k = 0; k < bars.length; k += per) {
       rows.push('<div class="gig-grow">' + bars.slice(k, k + per).map(function (b) {
-        var cs = (b.chords || []).map(function (c) { return c.sym; });
-        var txt = cs.length ? cs.join(" ") : (last ? "%" : "");
+        var cs = (b.c || []).filter(function (c) { return c && c !== "." && !/^\d+\/\d+$/.test(c); })
+                            .map(function (c) { return c === "%" ? last : c; });
+        var txt = cs.length ? cs.join(" ") : last;
         if (cs.length) last = cs[cs.length - 1];
         return '<span class="gig-gbar">' + esc(txt) + "</span>";
       }).join("") + "</div>");
@@ -3364,9 +3365,9 @@ if (window.SONG_ID) (function () {
   }
   function info(n) {
     var st = road[n], s = window.carolSong.section(st.head), h = s.querySelector("h2");
-    var run = runs && runs[n];
-    var chords = run ? [].concat.apply([], run.bars.map(function (b) { return (b.chords || []).map(function (c) { return c.sym; }); }))
-                     : [].map.call(s.querySelectorAll(".cline .ch"), function (c) { return c.textContent.trim(); });
+    var bars = gridBars(st.head);
+    var chords = bars ? [].concat.apply([], bars.map(function (b) { return (b.c || []).filter(function (c) { return c && c !== "." && c !== "%"; }); }))
+                      : [].map.call(s.querySelectorAll(".cline .ch"), function (c) { return c.textContent.trim(); });
     var ln = s.querySelector(".cline .ln"), first = "", lyric = false;
     if (ln) [].forEach.call(ln.querySelectorAll(".cw"), function (cw) {
       var ch = cw.querySelector(".ch"), words = cw.textContent.slice(ch ? ch.textContent.length : 0);
@@ -3374,8 +3375,9 @@ if (window.SONG_ID) (function () {
       first += '<span class="gw"><b>' + (ch ? esc(ch.textContent) : "&nbsp;") + "</b>" + esc(words || " ") + "</span>";
     });
     var abc = s.querySelector(".abc[data-abc]");
-    return { name: (run && run.name) || (h ? h.textContent.trim() : ""), chords: chords.filter(Boolean), first: lyric ? first : "",
-             bars: run ? run.bars : null, abc: abc ? abc.getAttribute("data-abc") : "" };
+    var named = window.carolBandChart && window.carolBandChart.bars.filter(function (b) { return b.section; })[n];   // "Verse 1", once the band is up
+    return { name: (named && named.section) || (h ? h.textContent.trim() : ""), chords: chords.filter(Boolean), first: lyric ? first : "",
+             bars: bars, abc: abc ? abc.getAttribute("data-abc") : "" };
   }
 
   var i = q.get("at") === "end" ? Math.max(0, road.length - 1) : 0;
@@ -3493,9 +3495,8 @@ if (window.SONG_ID) (function () {
     z.addEventListener("click", function (e) { step(e.clientX > window.innerWidth / 2 ? 1 : -1); });
   });
   window.addEventListener("resize", function () { if (glance) drawAll(); });
-  (function wait(n) {                       // the band's chart (grid) arrives after the page; redraw when it does
-    runs = chartRuns();
-    if (runs) show(); else if (n < 100) setTimeout(function () { wait(n + 1); }, 150);
+  (function wait(n) {                       // the band numbers the verses ("Verse 1"); redraw when it is up
+    if (window.carolBandChart) show(); else if (n < 400) setTimeout(function () { wait(n + 1); }, 250);
   })(0);
   try { if (navigator.wakeLock) { navigator.wakeLock.request("screen").catch(function () {});
     document.addEventListener("visibilitychange", function () { if (!document.hidden) navigator.wakeLock.request("screen").catch(function () {}); }); } } catch (e) {}
