@@ -634,7 +634,6 @@ body.gig-on > :not(#gig) { display: none !important; }   /* the page under it wo
 /* 2026-11-23: the grid always shows in full, words small, next on a tinted strip, no section name in landscape */
 #gig .gig-now { justify-content: flex-start; padding-top: .4rem; }
 #gig .gig-now > * { flex: none; }
-#gig .gig-now .gig-abc { flex: 0 1 auto; }
 #gig .gig-first { font-size: .95rem; }
 #gig .gig-next .gig-first { font-size: .85rem; }
 #gig .ga-first { font-size: .7em; }

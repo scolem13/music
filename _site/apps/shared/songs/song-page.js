@@ -3317,8 +3317,9 @@ if (window.SONG_ID) (function () {
 })();
 // ==== gig view (&gig=1): a phone on a music stand, no sound ====
 // In the site's own theme (light / dark as the rest of the site). Section view: the song and its place in the set,
-// this section (name, left out in landscape; its chord grid from the band's chart, always, never squeezed;
-// the first line of words, small; the notation where the song file has a {start_of_abc}, scrolling if it must) and
+// this section (name, left out in landscape; the first line of words, small, unless the notation has them; the
+// notation where the song file has a {start_of_abc}, two bars to a line in portrait when that fits, else the chord
+// grid from the band's chart) and
 // the next section's name and first line on a tinted strip. The top and bottom bars (set, Glance, zoom, Pedal, prev / next song)
 // are folded away until the ⋯ in the corner is tapped and the next section (name, first line). Glance: every section on one screen (name, its
 // chords once each, first line), the current one marked, Fit / A− / A+ (localStorage songs-gig-zoom).
@@ -3424,16 +3425,28 @@ if (window.SONG_ID) (function () {
   }
   function drawNow() {
     var now = info(i), nx = road[i + 1] ? info(i + 1) : null;
+    var sung = now.abc && /^w:/m.test(now.abc);    // the notation carries the words: no first line under it
     nowBox.innerHTML = '<div class="gig-name">' + esc(now.name) + ' <small>' + (i + 1) + "/" + road.length + "</small></div>" +
-      (now.bars ? gridHtml(now.bars) : '<div class="gig-chords">' + now.chords.map(esc).join(" ") + "</div>") +   // always
-      (now.first ? '<div class="gig-first">' + now.first + "</div>" : "") +
-      (now.abc ? '<div class="gig-abc"></div>' : "");
+      (now.first && !sung ? '<div class="gig-first">' + now.first + "</div>" : "") +
+      (now.abc ? '<div class="gig-abc"></div>'                   // the notation has the chords: no grid then
+       : now.bars ? gridHtml(now.bars) : '<div class="gig-chords">' + now.chords.map(esc).join(" ") + "</div>");
     if (now.abc && !window.ABCJS) {          // abcjs can arrive after the first draw: draw again once it is here
       var at0 = i; setTimeout(function () { if (at0 === i && !glance) drawNow(); }, 200);
     } else if (now.abc) {
-      try { window.ABCJS.renderAbc(nowBox.querySelector(".gig-abc"), now.abc,
-              { responsive: "resize", paddingtop: 0, paddingbottom: 0, paddingleft: 0, paddingright: 0,
-                visualTranspose: window.SongKey ? window.SongKey.shift : 0 }); } catch (e) {}
+      // Portrait: two bars to a line (abcjs wrap, words kept with their bars), bigger, when that still fits the
+      // room left; else (or in landscape) the lines as written.
+      var box = nowBox.querySelector(".gig-abc");
+      var draw = function (two) {
+        var o = { responsive: "resize", paddingtop: 0, paddingbottom: 0, paddingleft: 0, paddingright: 0,
+                  visualTranspose: window.SongKey ? window.SongKey.shift : 0 };
+        if (two) { o.staffwidth = 300; o.wrap = { minSpacing: 1.5, maxSpacing: 2.8, preferredMeasuresPerLine: 2 }; }
+        try { window.ABCJS.renderAbc(box, now.abc, o); } catch (e) {}
+      };
+      var room = nowBox.getBoundingClientRect().bottom - box.getBoundingClientRect().top;
+      if (window.innerHeight > window.innerWidth) {
+        draw(true);
+        if (box.getBoundingClientRect().height > room) draw(false);
+      } else draw(false);
     }
     var after = pos >= 0 && pos + 1 < order.length ? title(order[pos + 1]) : "end of the set";
     nextBox.innerHTML = nx
