@@ -1,0 +1,249 @@
+<title>Melody Fingering Lab</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,600;7..72,700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<script src="https://cdn.jsdelivr.net/npm/abcjs@6.4.4/dist/abcjs-basic-min.js"></script>
+<style>
+/* Layout: a workbench. Melody and the two fingerings on top (the thing being judged), rules as a long adjustable list below, your changes last. */
+:root{
+  --bg:#f6f5f1;--panel:#ffffff;--ink:#1d1c1a;--muted:#6a665d;--line:#dedad1;--accent:#2b7a6f;--accent-soft:#e3f0ed;--warn:#b5562b;--paper:#ffffff;
+  --f1:#2b7a6f;--f2:#3f63c9;--f3:#b07a00;--f4:#c2416a;--f5:#7b4fbf;
+  --display:"Literata",Georgia,serif;--body:"Source Sans 3",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171816;--panel:#21231f;--ink:#ecebe6;--muted:#a19d93;--line:#363833;--accent:#5fbfb0;--accent-soft:#1f3532;--warn:#e98a5c;--paper:#fbfaf7;
+  --f1:#5fbfb0;--f2:#86a2f0;--f3:#e0b04a;--f4:#ee7ea0;--f5:#b493ec;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#171816;--panel:#21231f;--ink:#ecebe6;--muted:#a19d93;--line:#363833;--accent:#5fbfb0;--accent-soft:#1f3532;--warn:#e98a5c;--paper:#fbfaf7;
+  --f1:#5fbfb0;--f2:#86a2f0;--f3:#e0b04a;--f4:#ee7ea0;--f5:#b493ec;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 var(--body)}
+.wrap{max-width:1100px;margin:0 auto;padding-block:28px 60px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:22px}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-size:2rem}h2{font-size:1.25rem}
+p{margin:0;max-width:68ch}
+.lede{color:var(--muted)}
+section{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:14px;min-width:0}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+label{font-weight:600;font-size:.9rem}
+select,input[type=number],textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:4px 8px}
+textarea{width:100%;font-family:var(--mono);font-size:.9rem;min-height:3.2em;resize:vertical;box-sizing:border-box}
+button{font:inherit;font-weight:600;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:6px;padding:5px 12px;cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.result{border:1px solid var(--line);border-radius:8px;padding:12px;display:grid;gap:8px;min-width:0}
+.result h3{margin:0;font-size:1rem;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.score{font-family:var(--mono);font-size:.85rem;color:var(--muted)}
+.paper{background:var(--paper);border-radius:6px;overflow-x:auto}
+.fingers{display:flex;flex-wrap:wrap;gap:4px}
+.fn{display:grid;justify-items:center;min-width:34px;padding:3px 2px;border-radius:6px;border:1px solid transparent;cursor:pointer;background:none;font-weight:400}
+.fn small{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.fn b{font-size:1.15rem;line-height:1.2}
+.fn.locked{border-color:var(--ink);background:var(--accent-soft)}
+.fn.sel{outline:2px solid var(--accent)}
+.fn .c{font-family:var(--mono);font-size:.68rem;color:var(--warn);min-height:1em}
+.f1{color:var(--f1)}.f2{color:var(--f2)}.f3{color:var(--f3)}.f4{color:var(--f4)}.f5{color:var(--f5)}
+.hint{font-size:.85rem;color:var(--muted)}
+.why{font-size:.9rem;background:var(--bg);border-radius:6px;padding:8px 10px;min-height:2.4em}
+.why ul{margin:4px 0 0;padding-left:1.2em}
+table{border-collapse:collapse;font-variant-numeric:tabular-nums}
+.tbl{overflow-x:auto}
+td,th{border-bottom:1px solid var(--line);padding:4px 6px;text-align:left;vertical-align:top}
+th{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+td input[type=number]{width:4.2em}
+.rules td:first-child{white-space:nowrap}
+.rules .desc{font-size:.88rem;color:var(--muted);max-width:60ch}
+.tag{font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:1px 6px;border-radius:4px;background:var(--accent-soft);color:var(--accent);margin-left:6px}
+.tag.site{background:transparent;border:1px solid var(--warn);color:var(--warn)}
+.changed{background:var(--accent-soft)}
+pre{font-family:var(--mono);font-size:.8rem;white-space:pre-wrap;background:var(--bg);padding:10px;border-radius:6px;margin:0;max-height:22em;overflow:auto}
+</style>
+
+<div class="wrap">
+<header style="display:grid;gap:8px">
+  <h1>Melody Fingering Lab</h1>
+  <p class="lede">Right-hand fingering for the tunes on Piano: Songs with 1, 2 or 3 Chords. Left: one of the page's fingering systems. Right: the cheapest fingering under the twelve rules of Parncutt, Sloboda, Clarke, Raekallio &amp; Desain (1997), with a few of the site's own for beginners. Type your own fingers, change weights and spans, and copy your changes back from the bottom.</p>
+</header>
+
+<section>
+  <div class="row">
+    <label for="preset">Melody</label>
+    <select id="preset"></select>
+    <span class="hint">Key of C. Notes in ABC: C D E (middle C up), c d e an octave higher, ^F sharp, _B flat, G, lower, c' higher, - ties, digits are lengths.</span>
+  </div>
+  <textarea id="abc" spellcheck="false" aria-label="Melody in ABC"></textarea>
+  <div style="display:grid;gap:6px">
+    <label for="mine">Your fingers</label>
+    <input id="mine" type="text" spellcheck="false" autocomplete="off" placeholder="1 1 4 4 5 5 4 | 4 4 3 3 2 2 1" style="font-family:var(--mono);font-size:1rem;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)">
+    <p class="hint"><b id="mineCount"></b> Typed the way words are typed on the Notation page: one finger a note, spaces between, <code>*</code> leaves a note to the system, <code>|</code> jumps to the next bar, <code>11445</code> is five notes. On the left yours replace the system's; on the right they are fixed and the rest is solved around them.</p>
+  </div>
+  <div class="two">
+    <div class="result">
+      <h3><label for="sys" style="font:inherit">System <select id="sys"></select></label> <span class="score" id="siteScore"></span></h3>
+      <div class="paper" id="sitePaper"></div>
+      <div class="fingers" id="siteFingers"></div>
+    </div>
+    <div class="result">
+      <h3>Least effort (the rules below) <span class="score" id="modelScore"></span></h3>
+      <div class="paper" id="modelPaper"></div>
+      <div class="fingers" id="modelFingers"></div>
+    </div>
+  </div>
+  <p class="hint">Points under each finger are what the rules below charge that note (the left side is scored by the same rules, for comparison). Click a note to see which rules.</p>
+  <div class="why" id="why">Pick a note to see which rules charged it.</div>
+</section>
+
+<section>
+  <h2>The systems</h2>
+  <div class="tbl"><table>
+    <tr><th>System</th><th>How it fingers</th></tr>
+    <tr><td>Home position</td><td class="desc">The thumb on the tune's lowest note, one finger a step. A tune six steps wide puts 4 on the 4th and 5th steps and 5 on the 6th (Twinkle: 1 1 4 4 5 5 4 | 4 4 3 3 2 2 1). Wider tunes are cut into pieces that fit, the hand moved to each piece's lowest note.</td></tr>
+    <tr><td>Scale fingers</td><td class="desc">Each note gets its finger in the right-hand major scale of the key (C: C D E F G A B = 1 2 3 1 2 3 4; Twinkle: 1 1 2 2 3 3 2 | 1 1 3 3 2 2 1). The scale table is written from memory and not yet checked against a scale book.</td></tr>
+    <tr><td>Five-finger positions</td><td class="desc">The page's first rule: five staff steps a position, the thumb on the lowest, a new position when the next note does not fit.</td></tr>
+    <tr><td>Least effort</td><td class="desc">The fingering with the fewest points under the rules below.</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>Rules</h2>
+  <p class="hint">Points are added for each fingering; the lowest total wins. Weight 0 turns a rule off. Rules 1–12 and their points are the paper's (Music Perception 14.4, pp. 349–360). Rules marked <span class="tag site">site</span> are not in the paper.</p>
+  <div class="tbl"><table class="rules" id="rules"></table></div>
+  <div class="row">
+    <label for="hand">Hand size</label>
+    <input type="range" id="hand" min="0.6" max="1" step="0.05" value="1" aria-describedby="handOut">
+    <span id="handOut" class="score">100%</span>
+    <span class="hint">Scales every span in the table below. The paper's table is for an adult pianist's hand; children's hands are smaller.</span>
+  </div>
+</section>
+
+<section>
+  <h2>Finger spans (semitones, right hand)</h2>
+  <p class="hint">Table 1 of the paper (p. 346). From finger f to finger g, f lower: a rising interval is positive. Negative minimums are the thumb passing under. Outside Min/Max practical the fingering is not allowed.</p>
+  <div class="tbl"><table id="spans"></table></div>
+</section>
+
+<section>
+  <h2>Your changes</h2>
+  <p class="hint">Everything you changed from the defaults, and the fingers you typed. Copy it and paste it back in the chat.</p>
+  <pre id="changes"></pre>
+  <div class="row"><button id="copy" type="button">Copy my changes</button><span id="copied" class="hint" role="status"></span></div>
+</section>
+</div>
+
+<script>
+/*MODULES*/
+</script>
+<script>
+"use strict";
+const PF=window.PianoFingering,UN=window.UnderNotes;
+const PRESETS=[
+ ["Twinkle, Twinkle","C C G G A A G2 | F F E E D D C2 | G G F F E E D2 | G G F F E E D2 | C C G G A A G2 | F F E E D D C2 |]"],
+ ["Ode to Joy","E E F G | G F E D | C C D E | E3/2 D/ D2 | E E F G | G F E D | C C D E | D3/2 C/ C2 |]"],
+ ["Frère Jacques","C D E C | C D E C | E F G2 | E F G2 | G/A/G/F/ E C | G/A/G/F/ E C | C G, C2 | C G, C2 |]"],
+ ["Mary Had a Little Lamb","E D C D | E E E2 | D D D2 | E G G2 | E D C D | E E E E | D D E D | C4 |]"],
+ ["Jump to the octave","C D E F | G F E D | C2 c2 |]"],
+ ["C scale, two octaves","C D E F G A B c d e f g a b c' b a g f e d c B A G F E D C |]"],
+ ["With B flat","F G A _B | c2 A2 | _B A G F | G2 C2 | F G A _B | c d c _B | A G F E | F4 |]"],
+ ["Wide leaps","C E G c | G E C2 | D F A d | A F D2 | C G c e | c G C2 |]"]
+];
+const COLS=["MinPrac","MinComf","MinRel","MaxRel","MaxComf","MaxPrac"],PAIRS=Object.keys(PF.SPANS),SPANS0=PF.SPANS;
+const RULES=[
+ {id:"stretch",n:"1. Stretch",d:"2 points per semitone beyond the comfortable span (MaxComf / MinComf) between two notes in a row."},
+ {id:"small",n:"2. Small span",d:"Per semitone under the relaxed span (MinRel): 1 with the thumb, 2 without. Charges passing the thumb under, and cramped fingers."},
+ {id:"large",n:"3. Large span",d:"Per semitone over the relaxed span (MaxRel): 1 with the thumb, 2 without."},
+ {id:"pcc",n:"4. Position-change count",d:"Over three notes, the first and third too far apart (or too close) for their fingers = the hand moved: 2 points for a full change (thumb in the middle, the middle note between, beyond the practical span), 1 for a half change."},
+ {id:"pcs",n:"5. Position-change size",d:"For the same three notes, 1 point per semitone the first-to-third interval is beyond the comfortable span: how far the hand travels."},
+ {id:"weak",n:"6. Weak finger",d:"1 point every time finger 4 or 5 is used."},
+ {id:"345",n:"7. Three-four-five",d:"1 point every time fingers 3, 4 and 5 play three notes in a row, any order."},
+ {id:"3to4",n:"8. Three to four",d:"1 point each time finger 3 is followed by finger 4."},
+ {id:"4black",n:"9. Four on black",d:"1 point when 3 and 4 play in a row with 3 on a white key and 4 on a black one."},
+ {id:"1black",n:"10. Thumb on black",d:"1 point when the thumb plays a black key; 2 more if the note before is white, 2 more if the note after is white."},
+ {id:"5black",n:"11. Five on black",d:"The fifth finger on a black key: 2 points if the note before is white, 2 more if the note after is white."},
+ {id:"pass",n:"12. Thumb passing",d:"Passing the thumb under or a finger over it: 1 point when both keys are the same colour; 3 when a finger on a white key passes to the thumb on a higher black key."},
+ {id:"repeat",n:"Repeated note keeps its finger",d:"Points for changing finger on a repeated note. The paper leaves repeated notes out; children usually keep the finger.",site:1},
+ {id:"anymove",n:"Every hand move",d:"Extra points for each change of hand position, to keep beginners in one position as long as possible.",site:1},
+ {id:"anypass",n:"Every thumb pass",d:"Extra points for each thumb-under or finger-over, which beginners have not learned yet.",site:1},
+ {id:"black15",n:"Thumb or 5 on black, flat",d:"Extra points for 1 or 5 on any black key, whatever comes before or after.",site:1}
+];
+RULES.forEach(r=>{r.w=r.w0=PF.WEIGHTS[r.id]});
+RULES.push({id:"impossible",n:"Same finger on another key, or wider than the practical span",hidden:1});
+const RN=Object.fromEntries(RULES.map(r=>[r.id,r.n]));
+let SP=JSON.parse(JSON.stringify(SPANS0)),hand=1,mine=[],sel=-1,cur=null,sys="home",mineEnt=null;
+const opts=extra=>Object.assign({weights:Object.fromEntries(RULES.filter(r=>!r.hidden).map(r=>[r.id,r.w])),spans:SP,hand,key:"K:C"},extra||{});
+const LET="CDEFGAB",NAT=[0,2,4,5,7,9,11];
+function nm(n){const l=LET[((n.step%7)+7)%7],o=Math.floor(n.step/7),d=n.midi-(12*(o+1)+NAT[LET.indexOf(l)]);return(d>0?"♯":d<0?"♭":"")+l+o}
+function fixed(){const f={};mine.forEach((x,i)=>{if(x)f[i]=x});return f}
+function render(id,abc){try{ABCJS.renderAbc(id,abc,{responsive:"resize",paddingtop:0,paddingbottom:0,staffwidth:560})}catch(e){document.getElementById(id).textContent="Could not draw: "+e.message}}
+function fingerRow(host,ns,F,ex){
+  host.innerHTML="";
+  ns.forEach((n,i)=>{
+    const b=document.createElement("button");b.type="button";b.className="fn"+(mine[i]?" locked":"")+(i===sel?" sel":"");
+    const c=Object.values(ex.per[i]).reduce((a,x)=>a+x,0);
+    b.innerHTML=`<small>${nm(n)}</small><b class="f${F[i]}">${F[i]||"·"}</b><span class="c">${isFinite(c)?(c?"+"+(+c.toFixed(1)):""):"✕"}</span>`;
+    b.title="Click to see what it costs";b.addEventListener("click",()=>{sel=i;update()});
+    host.appendChild(b);
+  });
+}
+function whyText(ns,i,L,R,exL,exR){
+  if(i<0||i>=ns.length)return "Pick a note to see which rules charged it.";
+  const list=ex=>{const e=Object.entries(ex.per[i]).filter(([,v])=>v);return e.length?"<ul>"+e.map(([k,v])=>`<li>${RN[k]}: ${isFinite(v)?+v.toFixed(2):"not playable"}</li>`).join("")+"</ul>":" nothing."};
+  return `<b>${nm(ns[i])}</b> (note ${i+1})${mine[i]?", your finger "+mine[i]:""}. ${label()}, finger ${L[i]}:${list(exL)} Least effort, finger ${R[i]}:${list(exR)}<span class="hint">Points for a pair go on its second note; for three notes in a row, on the third.</span>`;
+}
+const label=()=>PF.SYSTEMS.find(x=>x.id===sys).label;
+function update(){
+  const abc=document.getElementById("abc").value,all=PF.notes(abc,"K:C"),ns=all.filter(n=>!n.cont),M=PF.model(opts());
+  const L=PF.finger(all,sys,opts({fixed:fixed()})),R=PF.finger(all,"rules",opts({fixed:fixed()}));
+  const solved=M.solve(ns,fixed());
+  const exL=M.explain(ns,L.f),exR=solved?M.explain(ns,R.f):{per:ns.map(()=>({})),total:Infinity};
+  render("sitePaper","X:1\nL:1/4\nK:C\n"+PF.write(abc,all,L));render("modelPaper","X:1\nL:1/4\nK:C\n"+PF.write(abc,all,R));
+  const fmt=t=>isFinite(t)?(+t.toFixed(1))+" points":"not playable under the spans";
+  document.getElementById("siteScore").textContent=fmt(exL.total);
+  document.getElementById("modelScore").textContent=solved?fmt(exR.total):"no fingering fits your fingers";
+  fingerRow(document.getElementById("siteFingers"),ns,L.f,exL);
+  fingerRow(document.getElementById("modelFingers"),ns,R.f,exR);
+  document.getElementById("why").innerHTML=whyText(ns,sel,L.f,R.f,exL,exR);
+  cur={ns,L:L.f,R:R.f};
+  const k=mineEnt?mineEnt.tokens().length:0;
+  document.getElementById("mineCount").textContent=k?k+" fingers for "+ns.length+" notes"+(k>ns.length?": "+(k-ns.length)+" left over.":"."):"";
+  changes();
+}
+function rulesTable(){
+  const t=document.getElementById("rules");
+  t.innerHTML="<tr><th>Rule</th><th>Weight</th><th>What it charges</th></tr>"+RULES.filter(r=>!r.hidden).map(r=>
+    `<tr id="r-${r.id}"><td>${r.n}${r.site?'<span class="tag site">site</span>':""}</td><td><input type="number" id="w-${r.id}" min="0" max="10" step="0.5" value="${r.w}" aria-label="Weight of ${r.n}"></td><td class="desc">${r.d}</td></tr>`).join("");
+  RULES.filter(r=>!r.hidden).forEach(r=>document.getElementById("w-"+r.id).addEventListener("input",e=>{r.w=Math.max(0,+e.target.value||0);document.getElementById("r-"+r.id).classList.toggle("changed",r.w!==r.w0);update()}));
+}
+function spansTable(){
+  const t=document.getElementById("spans");
+  t.innerHTML="<tr><th>Fingers</th>"+COLS.map(c=>`<th>${c}</th>`).join("")+"</tr>"+PAIRS.map(p=>
+    "<tr><td>"+p+"</td>"+COLS.map((c,j)=>`<td><input type="number" id="s-${p}-${j}" step="1" value="${SP[p][j]}" aria-label="${p} ${c}"></td>`).join("")+"</tr>").join("");
+  PAIRS.forEach(p=>COLS.forEach((c,j)=>{const el=document.getElementById(`s-${p}-${j}`);el.addEventListener("input",()=>{const v=Number(el.value);if(el.value!==""&&Number.isFinite(v)){SP[p][j]=v;el.parentElement.classList.toggle("changed",v!==SPANS0[p][j]);update()}})}));
+}
+function changes(){
+  const lines=[`System on the left: ${label()}`];
+  const r=RULES.filter(x=>!x.hidden&&x.w!==x.w0);if(r.length){lines.push("Rule weights:");r.forEach(x=>lines.push(`  ${x.n}${x.site?" (site)":""}: ${x.w0} -> ${x.w}`))}
+  const s=[];PAIRS.forEach(p=>COLS.forEach((c,j)=>{if(SP[p][j]!==SPANS0[p][j])s.push(`  ${p} ${c}: ${SPANS0[p][j]} -> ${SP[p][j]}`)}));
+  if(s.length){lines.push("Spans:");lines.push(...s)}
+  if(hand!==1)lines.push(`Hand size: ${hand}`);
+  if(cur&&mine.some(Boolean)){
+    const pre=document.getElementById("preset");
+    lines.push(`Fingers I typed in "${pre.value==="custom"?"my melody":PRESETS[pre.value][0]}":`);
+    lines.push("  melody:       "+document.getElementById("abc").value.trim());
+    lines.push("  typed:        "+document.getElementById("mine").value.trim());
+    lines.push("  "+label()+": "+cur.L.join(" "));
+    lines.push("  least effort: "+cur.R.join(" "));
+  }
+  document.getElementById("changes").textContent=lines.join("\n");
+}
+const pre=document.getElementById("preset");
+pre.innerHTML=PRESETS.map((p,i)=>`<option value="${i}">${p[0]}</option>`).join("")+'<option value="custom">My own (type below)</option>';
+const sysSel=document.getElementById("sys");
+sysSel.innerHTML=PF.SYSTEMS.filter(x=>x.id!=="rules").map(x=>`<option value="${x.id}">${x.label}</option>`).join("");
+sysSel.addEventListener("change",()=>{sys=sysSel.value;update()});
+pre.addEventListener("change",()=>{if(pre.value!=="custom")document.getElementById("abc").value=PRESETS[pre.value][1];mineEnt.set("");mine=[];sel=-1;update()});
+document.getElementById("abc").addEventListener("input",()=>{pre.value="custom";update()});
+document.getElementById("hand").addEventListener("input",e=>{hand=+e.target.value;document.getElementById("handOut").textContent=Math.round(hand*100)+"%";update()});
+document.getElementById("copy").addEventListener("click",()=>{const t=document.getElementById("changes").textContent,o=document.getElementById("copied");
+  navigator.clipboard.writeText(t).then(()=>o.textContent="Copied.",()=>{const rg=document.createRange();rg.selectNodeContents(document.getElementById("changes"));const s=getSelection();s.removeAllRanges();s.addRange(rg);o.textContent="Selected: press Copy."})});
+const barsOf=()=>{const c=[];PF.notes(document.getElementById("abc").value,"K:C").filter(n=>!n.cont).forEach(n=>{c[n.bar]=(c[n.bar]||0)+1});return Array.from(c,x=>x||0)};
+document.getElementById("abc").value=PRESETS[0][1];
+mineEnt=UN.attach(document.getElementById("mine"),{single:true,unit:"fingers",bars:barsOf,onChange:t=>{mine=t.map(x=>/^[1-5]$/.test(x||"")?+x:null);update()}});
+rulesTable();spansTable();update();
+</script>

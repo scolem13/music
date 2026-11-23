@@ -13,6 +13,8 @@ toc-depth: 2
 <script src="/apps/shared/tune-chart.js?v=31"></script>
 <script src="/apps/tunes/tunes-object.js?v=3"></script>
 <script src="/apps/tunes/tune-quality.js"></script>
+<script src="/apps/shared/under-notes.js"></script>
+<script src="/apps/shared/piano-fingering.js"></script>
 <script src="/apps/shared/piano-chord-songs.js"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
 <style>
@@ -45,6 +47,11 @@ toc-depth: 2
 .pcs-wtabs button { padding: .45rem .9rem; font-weight: 600; } .pcs-wtabs button.pcs-on { background: var(--pcs-acc); border-color: var(--pcs-acc); color: #fff; }
 .pcs-wlen { display: flex; gap: .4rem; align-items: center; margin: 0 0 0 auto; }
 .pcs-wnav button, .pcs-wplay { padding: .45rem 1rem; font-size: 1rem; } .pcs-wnav button:disabled { opacity: .4; }
+.pcs-wsys { display: flex; gap: .4rem; align-items: center; }
+.pcs-wfing { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .4rem 0; }
+.pcs-wfing input { font-family: var(--font-mono, monospace); width: min(24rem, 100%); padding: .3rem .5rem; }
+.pcs-wfing p { flex-basis: 100%; margin: 0; }
+.pcs-whint { color: var(--pcs-mute); font-size: .88rem; }
 .pcs-wcount { color: var(--pcs-mute); min-width: 6rem; text-align: center; }
 .pcs-wstep .pcs-big { font-size: 1.4rem; }
 .pcs-wscore { padding: .4rem; max-width: 40rem; }

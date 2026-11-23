@@ -156,7 +156,8 @@
           '<a class="pcs-tunes" target="_self">Open in Tunes</a></div>' +
         '<details class="pcs-walk" open><summary>Step by step</summary>' +
           '<div class="pcs-wtabs"><button data-m="chords" class="pcs-on">1. Learn the chords</button><button data-m="tune">2. Learn the tune</button>' +
-          '<label class="pcs-wlen">Piece size <select><option value="1">1 bar</option><option value="2" selected>2 bars</option><option value="4">4 bars</option></select></label></div>' +
+          '<label class="pcs-wlen">Piece size <select><option value="1">1 bar</option><option value="2" selected>2 bars</option><option value="4">4 bars</option></select></label>' +
+          '<label class="pcs-wsys">Fingering <select></select></label></div>' +
           '<div class="pcs-wstep"></div>' +
           '<div class="pcs-wnav"><button class="pcs-wback">◀ Back</button><span class="pcs-wcount"></span><button class="pcs-wnext">Next ▶</button></div></details>' +
         '<h4 class="pcs-whole">The whole song</h4><div class="pcs-score site-paper"></div></div></div>';
@@ -199,9 +200,12 @@
   // "Learn the tune": the song cut into pieces of 1 / 2 / 4 bars (bars read off the ABC text: repeat signs and ending numbers
   //   dropped, so a repeated part is learned once). Each piece is drawn with finger numbers (ABC !1!..!5!) and can be heard alone
   //   or with the band; the last step puts all the pieces together.
-  // FINGERING is this site's rule of thumb, unverified against any method book: right hand, five-finger positions. Notes are taken
-  //   as staff steps (abcjs pitch, so C and C# share a step); a position covers 5 steps, the thumb on the lowest; a new position
-  //   starts when the next note no longer fits with the ones before it, and its first note says "move your hand". A tied note keeps its finger.
+  // FINGERING: apps/shared/piano-fingering.js (global PianoFingering), worked out over the whole tune so a piece's fingers match
+  //   the whole: "Fingering" menu = its SYSTEMS (Home position (default), Scale fingers, Five-finger positions, Least effort),
+  //   localStorage pcs-finger-sys. Under each piece "Your fingers" takes typed finger numbers one a note, as words are typed on the
+  //   Notation page (apps/shared/under-notes.js: spaces, * skips a note, | jumps to the next bar, "11445" = one digit a note);
+  //   they replace the system's (Least effort solves the rest around them), kept per tune over the whole tune in localStorage
+  //   pcs-fingers { tuneId: [finger | null by note] }. "move" over a note = the hand moves there. A tied note keeps its finger.
   var Walk = (function () {
     var w = {}, mode = "chords", at = 0, live = null;
     function header(abc) { return abc.split("\n").filter(function (l) { return /^\s*([A-Za-z]:|%%)/.test(l) && !/^\s*[wW]:/.test(l); }); }
@@ -215,25 +219,25 @@
       return h.filter(function (l) { return !/^\s*[KT]:/.test(l); }).concat([k, list.join(" | ") + " |]"]).join("\n");
     }
     function skipWs(t, i) { while (i < t.length && /\s/.test(t[i])) i++; return i; }
-    function fingered(abc, host) {
-      var v; try { v = ABCJS.renderAbc(host, abc, { add_classes: true })[0]; } catch (e) { return { abc: abc, moves: 0 }; }
-      var notes = [];
-      (v.lines || []).forEach(function (ln) { (ln.staff || []).forEach(function (st) { (st.voices || []).forEach(function (vo) { vo.forEach(function (e) {
-        if (e.el_type === "note" && !e.rest && e.pitches && e.pitches.length) notes.push({ p: e.pitches[e.pitches.length - 1].pitch, at: skipWs(abc, e.startChar), tie: e.pitches.some(function (x) { return x.endTie; }) });
-      }); }); }); });
-      var lo = null, hi = null, moves = 0;
-      notes.forEach(function (n, i) {
-        if (n.tie && i) { n.f = notes[i - 1].f; return; }
-        if (lo == null || Math.max(hi, n.p) - Math.min(lo, n.p) > 4) {   // a new five-finger position: from here, as far as the next notes fit
-          lo = hi = n.p; for (var j = i + 1; j < notes.length; j++) { var a = Math.min(lo, notes[j].p), b = Math.max(hi, notes[j].p); if (b - a > 4) break; lo = a; hi = b; }
-          if (i) { n.move = true; moves++; }
-        } else { lo = Math.min(lo, n.p); hi = Math.max(hi, n.p); }
-        n.f = n.p - lo + 1;
-      });
-      var out = abc; notes.slice().sort(function (a, b) { return b.at - a.at; }).forEach(function (n) {
-        if (n.f >= 1 && n.f <= 5) out = out.slice(0, n.at) + (n.move ? '"_move"' : "") + "!" + n.f + "!" + out.slice(n.at);
-      });
-      return { abc: out, moves: moves };
+    var SYS_KEY = "pcs-finger-sys", TYPED_KEY = "pcs-fingers", sys = ls.get(SYS_KEY) || "home";
+    function typedAll() { try { return JSON.parse(ls.get(TYPED_KEY) || "{}") || {}; } catch (e) { return {}; } }
+    function typed() { return (cur && typedAll()[cur.id]) || []; }
+    function setTyped(arr) { var t = typedAll(); while (arr.length && arr[arr.length - 1] == null) arr.pop(); if (arr.length) t[cur.id] = arr; else delete t[cur.id]; ls.set(TYPED_KEY, JSON.stringify(t)); }
+    function kLine() { return (header(cur.abc).filter(function (l) { return /^\s*K:/.test(l); })[0] || "K:C").trim(); }
+    // the whole tune's fingers (bars as the pieces cut them), with the typed ones in
+    function whole() {
+      var body = bars(cur.abc).join(" | "), all = PianoFingering.notes(body, kLine()), fixed = {};
+      typed().forEach(function (f, i) { if (f) fixed[i] = f; });
+      var r = PianoFingering.finger(all, sys, { key: kLine(), fixed: fixed }), played = all.filter(function (n) { return !n.cont; });
+      return { all: all, played: played, r: r };
+    }
+    // one piece (bars from .. from + count): its ABC with fingers, and where its notes sit in the whole tune
+    function fingered(st) {
+      var W = whole(), body = st.bars.join(" | "), all = PianoFingering.notes(body, kLine());
+      var off = W.played.filter(function (n) { return n.bar < st.from; }).length, n = all.filter(function (x) { return !x.cont; }).length;
+      var sub = { f: W.r.f.slice(off, off + n), move: W.r.move.slice(off, off + n) }; if (sub.move.length) sub.move[0] = false;
+      var perBar = st.bars.map(function (b, i) { return all.filter(function (x) { return !x.cont && x.bar === i; }).length; });
+      return { abc: frag(cur.abc, [PianoFingering.write(body, all, sub)]), moves: sub.move.filter(Boolean).length, off: off, n: n, perBar: perBar };
     }
     function steps() {
       if (!cur) return [];
@@ -285,13 +289,30 @@
         p(st.all ? "<b>All the pieces together.</b> Play the whole tune with the finger numbers." :
           "<b>Bars " + (st.from + 1) + (st.bars.length > 1 ? "–" + (st.from + st.bars.length) : "") + "</b> of " + st.of + ". Right hand: the numbers are fingers (1 = thumb, 5 = little finger). Listen, then copy it.");
         box.appendChild(paper);
-        var fg = fingered(f, paper), v;
-        try { v = ABCJS.renderAbc(paper, fg.abc, { responsive: "resize", add_classes: true, staffwidth: st.all ? 720 : 360 })[0]; } catch (e) {}
-        if (fg.moves) p("<i>“move”</i> = lift your hand to a new place: put the finger shown on that note.");
-        if (v) {
-          row.appendChild(button("▶ Hear it", function (b) { playV(v, { sound: "piano", qpm: +el.bpm.value }, b); }));
-          if (/"[A-G]/.test(f)) row.appendChild(button("▶ With the band", function (b) { playV(v, { abc: fg.abc, style: el.style.value || "pop", qpm: +el.bpm.value }, b); }));
-        }
+        var fg, v, moveP = p("");
+        var draw = function () {
+          fg = fingered(st); v = null;
+          try { v = ABCJS.renderAbc(paper, fg.abc, { responsive: "resize", add_classes: true, staffwidth: st.all ? 720 : 360 })[0]; } catch (e) {}
+          moveP.innerHTML = fg.moves ? "<i>“move”</i> = lift your hand to a new place: put the finger shown on that note." : "";
+        };
+        draw();
+        // the player's own fingers, typed one a note as words are on the Notation page
+        var ent = document.createElement("div"); ent.className = "pcs-wfing";
+        ent.innerHTML = '<label>Your fingers <input type="text" spellcheck="false" autocomplete="off" placeholder="1 1 4 4 5 5 4"></label><span class="pcs-whint"></span><button type="button">Clear</button>' +
+          '<p class="pcs-whint">One finger a note (1 = thumb), spaces between: <code>*</code> leaves a note to the system, <code>|</code> jumps to the next bar. Yours replace the system’s.</p>';
+        box.appendChild(ent);
+        var inp = ent.querySelector("input"), mine = typed().slice(fg.off, fg.off + fg.n);
+        while (mine.length && mine[mine.length - 1] == null) mine.pop();
+        inp.value = mine.length ? UnderNotes.format(mine) : "";
+        var save = function (tokens) {
+          var arr = typed().slice(); while (arr.length < fg.off + fg.n) arr.push(null);
+          for (var j = 0; j < fg.n; j++) { var t = tokens[j], d = t && /^[1-5]$/.test(t) ? +t : null; arr[fg.off + j] = d; }
+          setTyped(arr); draw();
+        };
+        UnderNotes.attach(inp, { notes: function () { return fg.n; }, bars: function () { return fg.perBar; }, single: true, unit: "fingers", hint: ent.querySelector("span.pcs-whint"), onChange: save });
+        ent.querySelector("button").addEventListener("click", function () { inp.value = ""; save([]); inp.dispatchEvent(new Event("input")); });
+        row.appendChild(button("▶ Hear it", function (b) { if (v) playV(v, { sound: "piano", qpm: +el.bpm.value }, b); }));
+        if (/"[A-G]/.test(f)) row.appendChild(button("▶ With the band", function (b) { if (v) playV(v, { abc: fg.abc, style: el.style.value || "pop", qpm: +el.bpm.value }, b); }));
       }
       box.appendChild(row);
     }
@@ -301,10 +322,13 @@
       w.back.addEventListener("click", function () { at--; show(); });
       w.next.addEventListener("click", function () { at++; show(); });
       w.len.addEventListener("change", function () { at = 0; show(); });
+      w.sys = root.querySelector(".pcs-wsys select");
+      PianoFingering.SYSTEMS.forEach(function (x) { var o = document.createElement("option"); o.value = x.id; o.textContent = x.label; w.sys.appendChild(o); });
+      w.sys.value = sys; w.sys.addEventListener("change", function () { sys = w.sys.value; ls.set(SYS_KEY, sys); show(); });
       [].forEach.call(w.tabs.querySelectorAll("button"), function (b) { b.addEventListener("click", function () { w.setMode(b.dataset.m); }); });
     };
     w.setMode = function (m) { mode = m; at = 0; [].forEach.call(w.tabs.querySelectorAll("button"), function (x) { x.classList.toggle("pcs-on", x.dataset.m === m); });
-      w.len.parentNode.style.display = m === "tune" ? "" : "none"; show(); };
+      w.len.parentNode.style.display = w.sys.parentNode.style.display = m === "tune" ? "" : "none"; show(); };
     w.reset = function () { if (w.step) w.setMode("chords"); };
     w.halt = halt; w.bars = bars; w.fingered = fingered;
     return w;
