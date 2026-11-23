@@ -3359,10 +3359,18 @@ if (window.SONG_ID) (function () {
     return '<span class="gig-c" data-full="' + esc(c) + '">' + esc(sl > 0 ? c.slice(0, sl) : c) +
            (sl > 0 ? '<span class="gig-bass">/' + esc(c.slice(sl + 1)) + "</span>" : "") + "</span>";
   }
+  // A time signature on the bar line where the meter changes (and on a section's first bar when it is not the
+  // song's), drawn stacked like a printed one: bar.m from the chart, the song's own from {time} (PAGE_MUSIC.meter).
+  function meterHtml(m) {
+    var p = String(m).split("/");
+    return '<span class="gig-meter" title="' + esc(m) + '"><i>' + esc(p[0]) + "</i><i>" + esc(p[1] || "") + "</i></span>";
+  }
   function gridHtml(bars) {
-    var rows = [], per = 4, last = "";
+    var rows = [], per = 4, last = "", meter = (window.PAGE_MUSIC && window.PAGE_MUSIC.meter) || "4/4";
     for (var k = 0; k < bars.length; k += per) {
       rows.push('<div class="gig-grow">' + bars.slice(k, k + per).map(function (b) {
+        var sig = b.m && b.m !== meter ? meterHtml(b.m) : "";
+        if (b.m) meter = b.m;
         var toks = (b.c || []).filter(function (c) { return c && !/^\d+\/\d+$/.test(c); })
                               .map(function (c) { return c === "%" ? last || "." : c; });
         if (!toks.length) toks = [last || "."];
@@ -3372,9 +3380,9 @@ if (window.SONG_ID) (function () {
         if (chords.length) last = chords[chords.length - 1];
         var used = q.map(function (x) { return x.length > 0; });
         if (chords.length <= 1)
-          return '<span class="gig-gbar gig-one">' + (chords.length ? chordSpan(chords[0]) : "") + "</span>";
+          return '<span class="gig-gbar gig-one">' + sig + (chords.length ? chordSpan(chords[0]) : "") + "</span>";
         if (used[0] && !used[1] && used[2] && !used[3] && q[0].length === 1 && q[2].length === 1)
-          return '<span class="gig-gbar gig-two"><span class="gig-q gig-tl">' + chordSpan(q[0][0]) +
+          return '<span class="gig-gbar gig-two">' + sig + '<span class="gig-q gig-tl">' + chordSpan(q[0][0]) +
                  '</span><span class="gig-q gig-br">' + chordSpan(q[2][0]) + "</span></span>";
         var cells = "", spans = ["", "", "", ""];
         if (!used[1] && used[0]) spans[0] = " gig-wide";          // a held quarter joins the one before it
@@ -3383,7 +3391,7 @@ if (window.SONG_ID) (function () {
           if (!x.length && ((j === 1 && used[0]) || (j === 3 && used[2]))) return;
           cells += '<span class="gig-q gig-q' + j + spans[j] + '">' + x.map(chordSpan).join(" ") + "</span>";
         });
-        return '<span class="gig-gbar gig-four">' + cells + "</span>";
+        return '<span class="gig-gbar gig-four">' + sig + cells + "</span>";
       }).join("") + "</div>");
     }
     return '<div class="gig-grid">' + rows.join("") + "</div>";
