@@ -630,6 +630,8 @@
 		function placePanels() {
 			const box = document.getElementById("tn-side"), side = document.getElementById("quarto-margin-sidebar"), root = document.getElementById("tunes-root");
 			const into = side && matchMedia("(min-width: 992px)").matches ? side : root;
+			// Quarto marks a TOC-less margin sidebar zindex-bottom (z-index -1 !important): behind the page, so nothing in it took clicks
+			if (side) side.classList.remove("zindex-bottom");
 			if (box.parentNode !== into) { if (into === side) side.insertBefore(box, side.firstChild); else root.appendChild(box); }
 		}
 		if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", placePanels); else placePanels();

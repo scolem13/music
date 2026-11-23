@@ -30,6 +30,7 @@ const U = "http://127.0.0.1:8564";
   check("the score is on white paper", await ev(`getComputedStyle(document.getElementById('paper')).backgroundColor === 'rgb(255, 255, 255)' && document.getElementById('paper').classList.contains('site-paper')`));
   await b.resize(1400, 900); await b.sleep(300);
   check("panels in the right sidebar at 1400px", await ev(`document.getElementById('tn-side').parentNode.id === 'quarto-margin-sidebar' && document.getElementById('tn-side').getBoundingClientRect().left > document.getElementById('paper').getBoundingClientRect().right - 1`));
+  check("the sidebar panels take clicks", await ev(`(() => { const el = document.querySelector('#tn-side select, #tn-side button'), r = el.getBoundingClientRect(); return el.contains(document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2)); })()`));
   check("no move-panel buttons", await ev(`!document.querySelector('.pc-tools, .tn-reset-cols')`));
   await ev(`document.querySelector('.sidebar-toggle-right').click(), 0`); await b.sleep(200);
   check("the navbar button folds the panels away", await ev(`document.getElementById('tn-side').getBoundingClientRect().width === 0`));

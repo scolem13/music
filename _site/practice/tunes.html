@@ -464,6 +464,18 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
     <a class="dropdown-item" href="../gear/modx.html">
  <span class="dropdown-text">Yamaha MODX</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/sennheiser-xsw.html">
+ <span class="dropdown-text">Sennheiser XSW 2 wireless: two packs picking each other up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/wireless-rack-x32.html">
+ <span class="dropdown-text">Wireless rack to the X32</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/x32-headset-scene.html">
+ <span class="dropdown-text">X32 scene for the headset mics</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -1456,6 +1468,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         function placePanels() {
             const box = document.getElementById("tn-side"), side = document.getElementById("quarto-margin-sidebar"), root = document.getElementById("tunes-root");
             const into = side && matchMedia("(min-width: 992px)").matches ? side : root;
+            // Quarto marks a TOC-less margin sidebar zindex-bottom (z-index -1 !important): behind the page, so nothing in it took clicks
+            if (side) side.classList.remove("zindex-bottom");
             if (box.parentNode !== into) { if (into === side) side.insertBefore(box, side.firstChild); else root.appendChild(box); }
         }
         if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", placePanels); else placePanels();

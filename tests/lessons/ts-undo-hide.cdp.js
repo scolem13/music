@@ -47,14 +47,26 @@ const U = "http://127.0.0.1:8562";
   await ev(`document.querySelector('.btp-ug').value = 'words of A'; document.querySelector('.btp-ug').dispatchEvent(new Event('input', { bubbles: true })), 0`);
   await b.sleep(800);
   await ev(`${P}.openMedia('/x/b.mp3', { media: '/x/b.mp3', title: 'Song B' }), 0`); await b.sleep(900);
-  check("a new recording starts blank", await ev(`document.querySelectorAll('.btp-log-rows li').length === 0 && document.querySelector('.btp-ug').value === '' && document.querySelector('.btp-title').value === 'Song B'`), "A had " + aRows);
+  // a new recording with notes on the page asks first; until answered the notes stay
+  check("a new recording asks what to do with the notes", await ev(`!!document.querySelector('.btp-switch-ask') && document.querySelectorAll('.btp-log-rows li').length === ${aRows}`));
+  await ev(`document.querySelector('.btp-switch-ask [data-a=fresh]').click(), 0`); await b.sleep(300);
+  check("Start blank: a new recording starts blank", await ev(`document.querySelectorAll('.btp-log-rows li').length === 0 && document.querySelector('.btp-ug').value === '' && document.querySelector('.btp-title').value === 'Song B'`), "A had " + aRows);
   await ev(`(() => { document.querySelector('.btp-paste-open').click(); document.querySelector('.btp-paste textarea').value = "00:05\\tB only"; document.querySelector('.btp-paste-go').click(); })()`);
   await b.sleep(800);
   await ev(`${P}.openMedia('/x/a.mp3', { media: '/x/a.mp3', title: 'Song A' }), 0`); await b.sleep(900);
+  await ev(`document.querySelector('.btp-switch-ask [data-a=fresh]').click(), 0`); await b.sleep(300);
   check("going back brings its notes and words back", await ev(`document.querySelectorAll('.btp-log-rows li').length === ${aRows} && document.querySelector('.btp-ug').value === 'words of A'`));
   check("Saved songs lists both", await ev(`document.querySelectorAll('#ts-library .tsn-lib-row').length === 2 && !!document.querySelector('#ts-library .tsn-lib-row.is-cur')`));
   await ev(`(() => { [...document.querySelectorAll('#ts-library .tsn-lib-row')].find(r => !r.classList.contains('is-cur')).querySelector('.tsn-lib-open').click(); })()`); await b.sleep(400);
   check("Open in the list loads B's notes", await ev(`[...document.querySelectorAll('.btp-log-rows li')].some(li => /B only/.test([...li.querySelectorAll('input, textarea')].map(i => i.value).join(' ')))`));
+  // Keep: the notes go on a new recording C too; Move: on to D, and C forgets them
+  await ev(`${P}.openMedia('/x/c.mp3', { media: '/x/c.mp3', title: 'Song C' }), 0`); await b.sleep(900);
+  const before = await ev(`document.querySelectorAll('.btp-log-rows li').length`);
+  await ev(`document.querySelector('.btp-switch-ask [data-a=keep]').click(), 0`); await b.sleep(900);
+  check("Keep: the notes stay on the new recording", before > 0 && await ev(`!document.querySelector('.btp-switch-ask') && document.querySelectorAll('.btp-log-rows li').length === ${before} && localStorage.getItem('tsn-current') === 'media:/x/c.mp3'`));
+  await ev(`${P}.openMedia('/x/d.mp3', { media: '/x/d.mp3', title: 'Song D' }), 0`); await b.sleep(900);
+  await ev(`document.querySelector('.btp-switch-ask [data-a=move]').click(), 0`); await b.sleep(900);
+  check("Move: on the new recording, gone from the old", await ev(`document.querySelectorAll('.btp-log-rows li').length === ${before} && !localStorage.getItem('tsn-lib:media:/x/c.mp3') && !!localStorage.getItem('tsn-lib:media:/x/d.mp3')`));
   await ev(`window.confirm = () => true, 0`);
   await ev(`document.querySelector('.tsn-lib-clear').click(), 0`); await b.sleep(300);
   check("Delete all keeps only the one on the page", await ev(`document.querySelectorAll('#ts-library .tsn-lib-row').length === 1`));

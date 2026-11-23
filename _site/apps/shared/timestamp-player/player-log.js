@@ -647,19 +647,57 @@
       openSong(copy, true, true);
       undoStack = []; lastState = stateNow();
     }
-    var libSaved = null;
+    var libSaved = null, asking = null;
+    // A different recording loaded by hand (file, link, drop) while the page has notes: ask what happens to them, instead of
+    // swapping them out at once. Start fresh / open its saved notes (these stay saved under the old recording), keep these on
+    // the new one (a copy: the old recording keeps its own), or move them (the old recording's saved copy deleted).
+    // Song files, imports and ?rec= set curKey themselves, so they never ask. Until answered the notes stay with the old one.
+    function askSwitch(k, now, kept) {
+      if (asking && asking.k === k) return;
+      if (asking) asking.box.remove();
+      var box = document.createElement('div'), old = curKey, oldName = (now.title || (old || '').replace(/^\w+:/, '').split('/').pop() || 'the last recording');
+      box.className = 'btp-switch-ask'; box.setAttribute('role', 'alertdialog');
+      box.innerHTML = '<p>A new recording is loaded. What should happen to the notes on the page (<b></b>)?</p><div class="btp-switch-btns">' +
+        '<button type="button" data-a="fresh"></button><button type="button" data-a="keep">Keep these notes on the new recording</button>' +
+        '<button type="button" data-a="move">Move them (forget them on the old one)</button></div>';
+      box.querySelector('b').textContent = oldName;
+      box.querySelector('[data-a=fresh]').textContent = kept ? 'Open its own saved notes' : 'Start with blank notes';
+      box.querySelector('[data-a=fresh]').title = 'The notes on the page stay saved under ' + oldName + ' (Saved songs)';
+      if (kept) box.querySelector('[data-a=keep]').title = 'Its own saved notes are replaced by these';
+      asking = { k: k, box: box };
+      (err && err.parentNode ? err.parentNode : log).insertBefore(box, err ? err.nextSibling : log.firstChild);
+      box.addEventListener('click', function (e) {
+        var b = e.target.closest('button[data-a]'); if (!b) return;
+        var a = api(), cur = libKey(a && a.source && a.source());
+        box.remove(); asking = null;
+        if (cur !== k) return;                           // the recording changed again meanwhile: the next tick asks about that one
+        switchTo(k, b.dataset.a, old);
+      });
+      box.querySelector('button').focus();
+    }
+    function switchTo(k, how, old) {
+      var kept = libGet(k);
+      if (how === 'fresh') {
+        if (kept) { loadInto(kept); say('Brought back your notes for ' + (kept.title || k.replace(/^\w+:/, '')) + '.'); }
+        else loadInto(BLANK);
+      } else {
+        if (how === 'move' && old) libDel(old);
+        if (old) say(how === 'move' ? 'The notes moved to this recording.' : 'The notes are kept on this recording too.');
+      }
+      var a = api(), t = a && a.source() && a.source().title, box = document.querySelector('.btp-title');
+      if (t && box && (!box.value || how === 'fresh')) { box.value = t; box.dispatchEvent(new Event('input', { bubbles: true })); }
+      setCur(k); libSaved = null;
+    }
     function libTick() {                                 // twice a second: follow the recording, keep the work
       var a = api(), k = libKey(a && a.source && a.source());
+      if (asking && k === curKey) { asking.box.remove(); asking = null; }   // back on the recording the notes belong to
       if (k && k !== curKey) {
         var now = JSON.parse(songFile());
         if (curKey) libPut(curKey, now);
-        var kept = libGet(k);
-        if (kept) { loadInto(kept); say('Brought back your notes for ' + (kept.title || k.replace(/^\w+:/, '')) + '.'); }
-        else if (curKey || !hasWork(now)) loadInto(BLANK);
-        var t = a.source().title, box = document.querySelector('.btp-title');
-        if (t && box && !box.value) { box.value = t; box.dispatchEvent(new Event('input', { bubbles: true })); }
         // (no key yet but work on the page: work done before the library existed, now this recording's)
-        setCur(k); libSaved = null;
+        if (curKey && hasWork(now)) { askSwitch(k, now, libGet(k)); return; }
+        switchTo(k, curKey || !hasWork(now) ? 'fresh' : 'keep', curKey);
+        return;
       }
       if (!curKey) return;
       var st; try { st = stateNow(); } catch (e) { return; }
