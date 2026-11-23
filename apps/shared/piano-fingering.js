@@ -10,9 +10,10 @@
 //   for the notes that are not tied on (notes.filter(n => !n.cont)). opts.fixed = { index: finger } overrides
 //   (finger numbers the player typed); with "rules" they are locks and the rest is solved around them.
 // Systems (SYSTEMS has the names shown to people):
-//   home      Home position: the thumb on the tune's lowest note, one finger a step. A tune six steps wide puts 4 on the
-//             4th and 5th steps and 5 on the 6th (the teacher's Twinkle: C C G G A A G = 1 1 4 4 5 5 4). Wider tunes
-//             are cut into pieces that fit, each with the hand moved to its lowest note.
+//   home      Home position: the thumb stays on the tune's lowest note, one finger a step (C..G = 1..5). A 6th step is
+//             reached with 5 while 4 shifts up to the 5th step, only in the run of notes that goes up there; elsewhere
+//             the 5th step is 5 again (the teacher's Twinkle: 11 44 55 4 | 44 33 22 1 | 5544332). Wider tunes are cut
+//             into pieces that fit, each with the hand moved to its lowest note.
 //   scale     Scale fingers: each note gets its finger in the right-hand major scale of the key signature (C major:
 //             C D E F G A B = 1 2 3 1 2 3 4; Twinkle = 1 1 2 2 3 3 2). A note outside the key takes its letter's finger.
 //             The table is the usual one from scale books, written here from memory: UNVERIFIED until checked
@@ -95,10 +96,19 @@
     return out;
   }
   function home(ns) {
+    // The thumb stays on the home note (the piece's lowest), C D E F G = 1 2 3 4 5. A 6th step (A over C) is reached by
+    // shifting the top of the hand, not the thumb: in a run of notes on the 5th and 6th steps that has a 6th in it, the
+    // 5th takes 4 and the 6th 5; anywhere else the 5th is 5 again. So Twinkle: 11 44 55 4 | 44 33 22 1 | 5544332.
     var f = [], move = [];
     fitPieces(ns, 5).forEach(function (p, k) {
-      var wide = p.hi - p.lo === 5;   // six steps: 4 covers the 4th and 5th, 5 the 6th
-      for (var i = p.from; i < p.to; i++) { var s = ns[i].step - p.lo; f[i] = wide ? [1, 2, 3, 4, 4, 5][s] : s + 1; move[i] = k > 0 && i === p.from; }
+      for (var i = p.from; i < p.to; i++) { f[i] = ns[i].step - p.lo + 1; move[i] = k > 0 && i === p.from; }
+      if (p.hi - p.lo < 5) return;
+      for (var r = p.from; r < p.to;) {
+        if (ns[r].step - p.lo < 4) { r++; continue; }
+        var e = r, six = false; while (e < p.to && ns[e].step - p.lo >= 4) { if (ns[e].step - p.lo === 5) six = true; e++; }
+        for (var j = r; j < e; j++) f[j] = ns[j].step - p.lo === 5 ? 5 : six ? 4 : 5;
+        r = e;
+      }
     });
     return { f: f, move: move };
   }

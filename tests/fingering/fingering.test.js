@@ -3,11 +3,11 @@
 const PF = require("../../apps/shared/piano-fingering.js"), UN = require("../../apps/shared/under-notes.js");
 let bad = 0; const ok = (c, m) => { console.log((c ? "ok   " : "FAIL ") + m); if (!c) bad++; };
 const NEG = process.env.NEG === "1";
-const tw = "C C G G A A G2 | F F E E D D C2 |]", ns = PF.notes(tw, "K:C");
+const tw = "C C G G A A G2 | F F E E D D C2 | G G F F E E D2 |]", ns = PF.notes(tw, "K:C");
 const f = s => PF.finger(ns, s, { key: "K:C" }).f.join(" ");
-ok(f("home") === (NEG ? "x" : "1 1 4 4 5 5 4 4 4 3 3 2 2 1"), "home position: " + f("home"));
-ok(f("scale") === "1 1 2 2 3 3 2 1 1 3 3 2 2 1", "scale fingers: " + f("scale"));
-ok(f("positions").split(" ").length === 14, "positions: " + f("positions"));
+ok(f("home") === (NEG ? "x" : "1 1 4 4 5 5 4 4 4 3 3 2 2 1 5 5 4 4 3 3 2"), "home position: " + f("home"));
+ok(f("scale") === "1 1 2 2 3 3 2 1 1 3 3 2 2 1 2 2 1 1 3 3 2", "scale fingers: " + f("scale"));
+ok(f("positions").split(" ").length === 21, "positions: " + f("positions"));
 ok(!/0|undefined/.test(f("rules")), "rules: " + f("rules"));
 ok(PF.finger(ns, "rules", { fixed: { 2: 5 } }).f[2] === 5, "a typed finger locks the rules");
 ok(PF.finger(ns, "scale", { fixed: { 0: 3 } }).f[0] === 3, "a typed finger overrides a system");
