@@ -3316,10 +3316,14 @@ if (window.SONG_ID) (function () {
   });
 })();
 // ==== gig view (&gig=1): a phone on a music stand, no sound ====
-// One screen: the song and its place in the set, this section (name, its chords in order, the first line of words with
-// its chords) and the next one smaller. The pedal (MIDI block above: window.carolNext), j / → / Space or a tap on the
-// right half go on; k / ← or the left half go back. Past the last section the next song in the programme opens, still
-// in gig view; the bottom bar jumps songs. The Pedal button shows the MIDI panel (Connect / Learn) from the sidebar.
+// In the site's own theme (light / dark as the rest of the site). Section view: the song and its place in the set,
+// this section (name, the first line of words, its chord grid from the band's chart, and the notation where the song
+// file has a {start_of_abc}) and the next section (name, first line). Glance: every section on one screen (name, its
+// chords once each, first line), the current one marked, Fit / A− / A+ (localStorage songs-gig-zoom).
+// The pedal (MIDI block above calls window.carolNext), j / → / Space or a tap on the right half go on; k / ← or
+// the left half go back. Past the last section the next song in the programme opens, still in gig view.
+// The grid: window.carolBandChart (the band block above) has its sections in road order, one run of bars per stop
+// of carolSong.road(), the first bar of each run carrying `section`; until it arrives the grid is left out.
 (function () {
   var q = new URLSearchParams(location.search);
   if (q.get("gig") !== "1" || !window.carolSong || !window.SONG_ID) return;
@@ -3328,28 +3332,56 @@ if (window.SONG_ID) (function () {
           || S.programmes.filter(function (p) { return p.songs.some(function (e) { return String(e).split("@")[0] === id; }); })[0];
   var order = prog ? prog.songs.map(function (e) { return String(e).split("@")[0]; }) : [id];
   var pos = order.indexOf(id);
+  function title(slug) { return (S.songs[slug] || {}).title || slug; }
   function href(slug, end) {
     return "?id=" + encodeURIComponent(slug) + (prog ? "&prog=" + encodeURIComponent(prog.id) : "") + "&gig=1" + (end ? "&at=end" : "");
   }
-  var road = window.carolSong.road().filter(function (st) {
-    var s = window.carolSong.section(st.head); return s && s.querySelector(".cline .ln");
-  });
-  function esc(t) { return String(t).replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; }); }
-  function info(st) {
-    var s = window.carolSong.section(st.head), h = s.querySelector("h2");
-    var chords = [].map.call(s.querySelectorAll(".cline .ch"), function (c) { return c.textContent.trim(); }).filter(Boolean);
-    var ln = s.querySelector(".cline .ln"), first = "";
+  var road = window.carolSong.road();
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  // the band chart's bars, cut into one run per stop
+  var runs = null;
+  function chartRuns() {
+    var c = window.carolBandChart; if (!c || !c.bars) return null;
+    var out = [];
+    c.bars.forEach(function (b) { if (b.section || !out.length) out.push({ name: b.section || "", bars: [] }); out[out.length - 1].bars.push(b); });
+    return out.length === road.length ? out : null;
+  }
+  function gridHtml(bars) {
+    var rows = [], per = 4, last = "";
+    for (var k = 0; k < bars.length; k += per) {
+      rows.push('<div class="gig-grow">' + bars.slice(k, k + per).map(function (b) {
+        var cs = (b.chords || []).map(function (c) { return c.sym; });
+        var txt = cs.length ? cs.join(" ") : (last ? "%" : "");
+        if (cs.length) last = cs[cs.length - 1];
+        return '<span class="gig-gbar">' + esc(txt) + "</span>";
+      }).join("") + "</div>");
+    }
+    return '<div class="gig-grid">' + rows.join("") + "</div>";
+  }
+  function info(n) {
+    var st = road[n], s = window.carolSong.section(st.head), h = s.querySelector("h2");
+    var run = runs && runs[n];
+    var chords = run ? [].concat.apply([], run.bars.map(function (b) { return (b.chords || []).map(function (c) { return c.sym; }); }))
+                     : [].map.call(s.querySelectorAll(".cline .ch"), function (c) { return c.textContent.trim(); });
+    var ln = s.querySelector(".cline .ln"), first = "", lyric = false;
     if (ln) [].forEach.call(ln.querySelectorAll(".cw"), function (cw) {
       var ch = cw.querySelector(".ch"), words = cw.textContent.slice(ch ? ch.textContent.length : 0);
-      first += '<span class="gw">' + (ch ? '<b>' + esc(ch.textContent) + '</b>' : '<b>&nbsp;</b>') + esc(words || " ") + "</span>";
+      if (/\p{L}/u.test(words)) lyric = true;
+      first += '<span class="gw"><b>' + (ch ? esc(ch.textContent) : "&nbsp;") + "</b>" + esc(words || " ") + "</span>";
     });
-    var lyric = ln && ln.querySelector(".cw:not(.bare)") && /\p{L}/u.test(ln.textContent.replace(/\b[A-G][#b♯♭]?\S*/g, ""));
-    return { name: h ? h.textContent.trim() : "", chords: chords, first: lyric ? first : "" };
+    var abc = s.querySelector(".abc[data-abc]");
+    return { name: (run && run.name) || (h ? h.textContent.trim() : ""), chords: chords.filter(Boolean), first: lyric ? first : "",
+             bars: run ? run.bars : null, abc: abc ? abc.getAttribute("data-abc") : "" };
   }
+
   var i = q.get("at") === "end" ? Math.max(0, road.length - 1) : 0;
   var el = document.createElement("div");
   el.id = "gig";
-  el.innerHTML = '<div class="gig-top"><span class="gig-set"></span><button type="button" class="gig-mode">Glance</button><span class="gig-zoom" hidden><button type="button" data-z="-1">A−</button><button type="button" data-z="0">Fit</button><button type="button" data-z="1">A+</button></span><button type="button" class="gig-pedal">Pedal</button><button type="button" class="gig-exit" title="Leave gig view">✕</button></div>' +
+  el.innerHTML = '<div class="gig-top"><span class="gig-set"></span>' +
+    '<button type="button" class="plain-button gig-mode">Glance</button>' +
+    '<span class="gig-zoom" hidden><button type="button" class="plain-button" data-z="-1">A−</button><button type="button" class="plain-button" data-z="0">Fit</button><button type="button" class="plain-button" data-z="1">A+</button></span>' +
+    '<button type="button" class="plain-button gig-pedal">Pedal</button><button type="button" class="plain-button gig-exit" title="Leave gig view">✕</button></div>' +
     '<div class="gig-midi" hidden></div>' +
     '<div class="gig-now"></div><div class="gig-next"></div><div class="gig-all" hidden></div>' +
     '<div class="gig-bar"><a class="gig-prev-song"></a><a class="gig-next-song"></a></div>';
@@ -3365,28 +3397,48 @@ if (window.SONG_ID) (function () {
     q.delete("gig"); q.delete("at"); location.search = q.toString();
   });
   var ps = el.querySelector(".gig-prev-song"), ns = el.querySelector(".gig-next-song");
-  if (pos > 0) { ps.href = href(order[pos - 1]); ps.textContent = "← " + (S.songs[order[pos - 1]] || {}).title; }
-  if (pos >= 0 && pos + 1 < order.length) { ns.href = href(order[pos + 1]); ns.textContent = (S.songs[order[pos + 1]] || {}).title + " →"; }
-  // At a glance: every section of the song on one screen (name, chords, first line), the current one lit.
-  // Zoom: Fit (the largest size that shows it all) or A− / A+ by hand, kept in localStorage songs-gig-zoom.
-  var glance = false, zoom = null, all = el.querySelector(".gig-all");
+  if (pos > 0) { ps.href = href(order[pos - 1]); ps.textContent = "← " + title(order[pos - 1]); }
+  if (pos >= 0 && pos + 1 < order.length) { ns.href = href(order[pos + 1]); ns.textContent = title(order[pos + 1]) + " →"; }
+
+  var glance = false, zoom = null, all = el.querySelector(".gig-all"), nowBox = el.querySelector(".gig-now"), nextBox = el.querySelector(".gig-next");
   try { glance = localStorage.getItem("songs-gig-mode") === "glance"; zoom = parseFloat(localStorage.getItem("songs-gig-zoom")) || null; } catch (e) {}
   function fit() {
     var z = 2.2; all.style.fontSize = z + "rem";
     while (z > 0.45 && (all.scrollHeight > all.clientHeight || all.scrollWidth > all.clientWidth)) { z -= 0.05; all.style.fontSize = z + "rem"; }
-    return z;
   }
   function drawAll() {
     all.innerHTML = road.map(function (st, n) {
-      var f = info(st);
+      var f = info(n);
       return '<div class="ga' + (n === i ? " on" : "") + '"><span class="ga-name">' + esc(f.name) + '</span> <span class="ga-ch">' +
-        f.chords.filter(function (c, k, a) { return c !== a[k - 1]; }).map(esc).join(" ") + "</span>" + (f.first ? ' <span class="ga-first">' + f.first + "</span>" : "") + "</div>";
+        f.chords.filter(function (c, k, a) { return c !== a[k - 1]; }).map(esc).join(" ") + "</span>" +
+        (f.first ? '<span class="ga-first">' + f.first + "</span>" : "") + "</div>";
     }).join("");
     if (zoom) all.style.fontSize = zoom + "rem"; else fit();
     var on = all.querySelector(".on"); if (on && on.scrollIntoView) on.scrollIntoView({ block: "nearest" });
   }
+  function drawNow() {
+    var now = info(i), nx = road[i + 1] ? info(i + 1) : null;
+    nowBox.innerHTML = '<div class="gig-name">' + esc(now.name) + ' <small>' + (i + 1) + "/" + road.length + "</small></div>" +
+      (now.first ? '<div class="gig-first">' + now.first + "</div>" : "") +
+      (now.bars ? gridHtml(now.bars) : '<div class="gig-chords">' + now.chords.map(esc).join(" ") + "</div>") +
+      (now.abc ? '<div class="gig-abc"></div>' : "");
+    if (now.abc && window.ABCJS) {
+      try { window.ABCJS.renderAbc(nowBox.querySelector(".gig-abc"), now.abc,
+              { responsive: "resize", paddingtop: 0, paddingbottom: 0, paddingleft: 0, paddingright: 0,
+                visualTranspose: window.SongKey ? window.SongKey.shift : 0 }); } catch (e) {}
+    }
+    var after = pos >= 0 && pos + 1 < order.length ? title(order[pos + 1]) : "end of the set";
+    nextBox.innerHTML = nx
+      ? '<div class="gig-label">Next</div><div class="gig-name">' + esc(nx.name) + "</div>" +
+        (nx.first ? '<div class="gig-first">' + nx.first + "</div>" : "")
+      : '<div class="gig-label">Next song</div><div class="gig-name">' + esc(after) + "</div>";
+  }
+  function show() {
+    el.querySelector(".gig-set").textContent = (pos >= 0 ? (pos + 1) + " / " + order.length + " · " : "") + title(id);
+    if (glance) drawAll(); else drawNow();
+  }
   function mode() {
-    el.querySelector(".gig-now").hidden = el.querySelector(".gig-next").hidden = glance;
+    nowBox.hidden = nextBox.hidden = glance;
     all.hidden = !glance; el.querySelector(".gig-zoom").hidden = !glance;
     el.querySelector(".gig-mode").textContent = glance ? "Section" : "Glance";
   }
@@ -3402,23 +3454,6 @@ if (window.SONG_ID) (function () {
       drawAll();
     });
   });
-  all.addEventListener("click", function (e) { step(e.clientX > window.innerWidth / 2 ? 1 : -1); });
-  window.addEventListener("resize", function () { if (glance) drawAll(); });
-  function show() {
-    if (glance) drawAll();
-    el.querySelector(".gig-set").textContent = (pos >= 0 ? (pos + 1) + " / " + order.length + " · " : "") + (S.songs[id] || {}).title;
-    var now = road[i] ? info(road[i]) : null, nx = road[i + 1] ? info(road[i + 1]) : null;
-    el.querySelector(".gig-now").innerHTML = now
-      ? '<div class="gig-name">' + esc(now.name) + ' <small>' + (i + 1) + "/" + road.length + '</small></div>' +
-        '<div class="gig-chords">' + now.chords.map(esc).join(" ") + "</div>" +
-        (now.first ? '<div class="gig-first">' + now.first + "</div>" : "")
-      : '<div class="gig-name">' + esc((S.songs[id] || {}).title) + "</div>";
-    var after = pos >= 0 && pos + 1 < order.length ? (S.songs[order[pos + 1]] || {}).title : "end of the set";
-    el.querySelector(".gig-next").innerHTML = nx
-      ? '<div class="gig-label">Next</div><div class="gig-name">' + esc(nx.name) + "</div>" +
-        (nx.first ? '<div class="gig-first">' + nx.first + "</div>" : "")
-      : '<div class="gig-label">Next song</div><div class="gig-name">' + esc(after) + "</div>";
-  }
   function step(d) {
     if (i + d >= road.length) { if (ns.href) location.href = ns.href; return; }
     if (i + d < 0) { if (pos > 0) location.href = href(order[pos - 1], true); return; }
@@ -3433,10 +3468,16 @@ if (window.SONG_ID) (function () {
     if (!d) return;
     e.preventDefault(); e.stopImmediatePropagation(); step(d);
   }, true);
-  [el.querySelector(".gig-now"), el.querySelector(".gig-next")].forEach(function (z) {
+  [nowBox, nextBox, all].forEach(function (z) {
     z.addEventListener("click", function (e) { step(e.clientX > window.innerWidth / 2 ? 1 : -1); });
   });
-  try { navigator.wakeLock && navigator.wakeLock.request("screen"); document.addEventListener("visibilitychange", function () { if (!document.hidden && navigator.wakeLock) navigator.wakeLock.request("screen").catch(function () {}); }); } catch (e) {}
+  window.addEventListener("resize", function () { if (glance) drawAll(); });
+  (function wait(n) {                       // the band's chart (grid) arrives after the page; redraw when it does
+    runs = chartRuns();
+    if (runs) show(); else if (n < 100) setTimeout(function () { wait(n + 1); }, 150);
+  })(0);
+  try { if (navigator.wakeLock) { navigator.wakeLock.request("screen").catch(function () {});
+    document.addEventListener("visibilitychange", function () { if (!document.hidden) navigator.wakeLock.request("screen").catch(function () {}); }); } } catch (e) {}
   mode(); show();
 })();
 }
