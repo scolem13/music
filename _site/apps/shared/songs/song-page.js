@@ -3378,7 +3378,8 @@ if (window.SONG_ID) (function () {
         if (!toks.length) toks = [last || "."];
         if (gridStyle() === "beats") {
           // Beats: the bar cut where its chords change, each part as wide as the beats it lasts (the grid's tokens
-          // share the bar evenly, so 3/4 "Em A7 ." = a third and two thirds); a bar that starts on a held beat
+          // share the bar evenly, so 3/4 "Em A7 ." = a third and two thirds; no part under a quarter of the bar, and the
+          // parts always add up to the bar, never spilling into the next); a bar that starts on a held beat
           // shows the chord carried over, faint.
           var segs = [], carried = last;
           toks.forEach(function (c, t) {
@@ -3386,11 +3387,15 @@ if (window.SONG_ID) (function () {
             else segs[segs.length - 1].w++;
           });
           var chords2 = toks.filter(function (c) { return c !== "."; });
+          // Three or more parts in a bar of four or more beats is too thin to read on a phone: that bar is drawn
+          // in quarters (two rows) instead, below. A 3/4 bar keeps its thirds.
+          if (!(segs.length >= 3 && toks.length >= 4)) {
           if (chords2.length) last = chords2[chords2.length - 1];
-          return '<span class="gig-gbar gig-beats" style="grid-template-columns:' + segs.map(function (g) { return "minmax(2.4ch, " + g.w + "fr)"; }).join(" ") + '">' + sig +
+          return '<span class="gig-gbar gig-beats" style="grid-template-columns:' + segs.map(function (g) { return "minmax(0, " + Math.max(g.w, toks.length / 4) + "fr)"; }).join(" ") + '">' + sig +
             segs.map(function (g) {
               return '<span class="gig-q' + (g.c ? "" : " gig-held") + '">' + (g.c ? chordSpan(g.c) : carried ? chordSpan(carried) : "") + "</span>";
             }).join("") + "</span>";
+          }
         }
         var n = toks.length, q = [[], [], [], []];
         toks.forEach(function (c, t) { if (c !== ".") q[Math.min(3, Math.floor(t * 4 / n))].push(c); });

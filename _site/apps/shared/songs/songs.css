@@ -683,7 +683,7 @@ body.gig-on > :not(#gig) { display: none !important; }   /* the page under it wo
 #gig .gig-beats .gig-q { display: flex; align-items: center; padding: 0 .3em; min-width: 0; overflow: hidden; white-space: nowrap; }
 #gig .gig-beats .gig-q + .gig-q { border-left: 1px solid var(--gline); }
 #gig .gig-beats .gig-held { opacity: .4; }
-#gig .gig-beats:has(> .gig-meter) > .gig-q:first-of-type { padding-left: .75em; }
+#gig .gig-meter + .gig-q { padding-left: .75em !important; }   /* room for a time signature on the bar line */
 /* box heights in rem so a bar whose type is made smaller (fitBars) keeps its row's height */
 #gig .gig-gbar, #gig .gig-gbar.gig-four { height: 3.75rem; }
 #gig .gig-q.gig-compact { letter-spacing: -.03em; }
@@ -692,3 +692,5 @@ body.gig-on > :not(#gig) { display: none !important; }   /* the page under it wo
 #gig .gig-grow { grid-auto-rows: 3.75rem; }
 #gig .gig-grow > .gig-gbar { height: auto !important; align-self: stretch; box-sizing: border-box; }
 h1.title .gig-link { text-decoration: none; font-size: .8em; vertical-align: .05em; }
+#gig .gig-gbar.gig-one > .gig-meter + .gig-c { margin-left: .35em; }
+#gig .gig-beats .gig-q.gig-compact { padding: 0 .05em; justify-content: center; }
