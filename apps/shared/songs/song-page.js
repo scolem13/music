@@ -3317,9 +3317,9 @@ if (window.SONG_ID) (function () {
 })();
 // ==== gig view (&gig=1): a phone on a music stand, no sound ====
 // In the site's own theme (light / dark as the rest of the site). Section view: the song and its place in the set,
-// this section (name, left out in landscape; the first line of words, small, unless the notation has them; the
-// notation where the song file has a {start_of_abc}, two bars to a line in portrait when that fits, else the chord
-// grid from the band's chart) and
+// this section (name, left out in landscape; the notation where the song file has a {start_of_abc}, two bars a line
+// in portrait when that fits, else the chord grid; below that as many lines of words, small, as fit, unless the
+// notation has the words) and
 // the next section's name and first line on a tinted strip. The top and bottom bars (set, Glance, zoom, Pedal, prev / next song)
 // are folded away until the ⋯ in the corner is tapped and the next section (name, first line). Glance: every section on one screen (name, its
 // chords once each, first line), the current one marked, Fit / A− / A+ (localStorage songs-gig-zoom).
@@ -3384,21 +3384,64 @@ if (window.SONG_ID) (function () {
       for (var f = 0.95; f >= 0.55 && over(); f -= 0.05) bar.style.fontSize = f + "em";
     });
   }
+  // The ABC rewritten two bars a line: each music line cut after every second bar line (bar lines read outside
+  // "chords" and !decorations!; an ending number stays with its bar line), a w: line under it cut the same way at its
+  // own | marks. null when that cannot be done safely (more than one voice, or words with no | marks): abcjs's own
+  // wrap is used then.
+  function cutBars(line) {
+    var out = [], cur = "", q = false, bang = false;
+    for (var k = 0; k < line.length; k++) {
+      var ch = line[k];
+      if (ch === '"' && !bang) q = !q; else if (ch === "!" && !q) bang = !bang;
+      if (!q && !bang && (ch === "|" || (ch === ":" && line[k + 1] === "|"))) {
+        while (k < line.length && /[|:\]]/.test(line[k])) cur += line[k++];
+        while (k < line.length && /[0-9,]/.test(line[k])) cur += line[k++];
+        k--; out.push(cur); cur = ""; continue;
+      }
+      cur += ch;
+    }
+    if (cur.trim()) out.push(cur);
+    return out;
+  }
+  function twoBars(abc) {
+    var lines = abc.split("\n"), out = [];
+    if (lines.some(function (l) { return /^V:/.test(l) || /\[V:/.test(l); })) return null;
+    for (var k = 0; k < lines.length; k++) {
+      var l = lines[k];
+      if (/^[A-Za-z]:/.test(l) || /^%/.test(l) || !l.trim()) { out.push(l); continue; }
+      var bars = cutBars(l), words = [];
+      var w = k + 1 < lines.length && /^w:/.test(lines[k + 1]) ? lines[k + 1].slice(2) : null;
+      if (w != null) {
+        words = w.split("|");
+        if (words.length < 2) return null;
+        k++;
+      }
+      for (var b = 0; b < bars.length; b += 2) {
+        out.push(bars.slice(b, b + 2).join(" ").trim());
+        if (w != null) out.push("w:" + words.slice(b, b + 2).join("|"));
+      }
+    }
+    return out.join("\n");
+  }
   function info(n) {
     var st = road[n], s = window.carolSong.section(st.head), h = s.querySelector("h2");
     var bars = gridBars(st.head);
     var chords = bars ? [].concat.apply([], bars.map(function (b) { return (b.c || []).filter(function (c) { return c && c !== "." && c !== "%"; }); }))
                       : [].map.call(s.querySelectorAll(".cline .ch"), function (c) { return c.textContent.trim(); });
-    var ln = s.querySelector(".cline .ln"), first = "", lyric = false;
-    if (ln) [].forEach.call(ln.querySelectorAll(".cw"), function (cw) {
-      var ch = cw.querySelector(".ch"), words = cw.textContent.slice(ch ? ch.textContent.length : 0);
-      if (/\p{L}/u.test(words)) lyric = true;
-      first += '<span class="gw"><b>' + (ch ? esc(ch.textContent) : "&nbsp;") + "</b>" + esc(words || " ") + "</span>";
-    });
+    var lines = [].map.call(s.querySelectorAll(".cline .ln"), function (ln) {   // every line, chords over the words
+      var html = "", lyric = false;
+      [].forEach.call(ln.querySelectorAll(".cw"), function (cw) {
+        var ch = cw.querySelector(".ch"), words = cw.textContent.slice(ch ? ch.textContent.length : 0);
+        if (/\p{L}/u.test(words)) lyric = true;
+        html += '<span class="gw"><b>' + (ch ? esc(ch.textContent) : "&nbsp;") + "</b>" + esc(words || " ") + "</span>";
+      });
+      return lyric ? html : "";
+    }).filter(Boolean);
+    var first = lines[0] || "", lyric = !!first;
     var abc = s.querySelector(".abc[data-abc]");
     var named = window.carolBandChart && window.carolBandChart.bars.filter(function (b) { return b.section; })[n];   // "Verse 1", once the band is up
     return { name: (named && named.section) || (h ? h.textContent.trim() : ""), chords: chords.filter(Boolean), first: lyric ? first : "",
-             bars: bars, abc: abc ? abc.getAttribute("data-abc") : "" };
+             lines: lines, bars: bars, abc: abc ? abc.getAttribute("data-abc") : "" };
   }
 
   var i = q.get("at") === "end" ? Math.max(0, road.length - 1) : 0;
@@ -3408,7 +3451,7 @@ if (window.SONG_ID) (function () {
   el.innerHTML = '<button type="button" class="gig-more" title="Song list, Glance, zoom, pedal">⋯</button><div class="gig-top"><span class="gig-set"></span>' +
     '<button type="button" class="plain-button gig-mode">Glance</button>' +
     '<span class="gig-zoom" hidden><button type="button" class="plain-button" data-z="-1">A−</button><button type="button" class="plain-button" data-z="0">Fit</button><button type="button" class="plain-button" data-z="1">A+</button></span>' +
-    '<button type="button" class="plain-button gig-pedal">Pedal</button><button type="button" class="plain-button gig-exit" title="Leave gig view">✕</button></div>' +
+    '<button type="button" class="plain-button gig-bars" title="Notation: two bars a line or as written">Bars</button><button type="button" class="plain-button gig-pedal">Pedal</button><button type="button" class="plain-button gig-exit" title="Leave gig view">✕</button></div>' +
     '<div class="gig-midi" hidden></div>' +
     '<div class="gig-now"></div><div class="gig-next"></div><div class="gig-all" hidden></div>' +
     '<div class="gig-bar"><a class="gig-prev-song"></a><a class="gig-next-song"></a></div>';
@@ -3417,6 +3460,16 @@ if (window.SONG_ID) (function () {
   var midi = document.querySelector(".midi-status"); midi = midi && midi.parentNode;
   el.querySelector(".gig-more").addEventListener("click", function () {
     el.classList.toggle("gig-bare"); if (glance) drawAll();
+  });
+  var BARS = "songs-gig-bars", MODES = ["auto", "2", "as"], LABEL = { auto: "Bars: auto", "2": "Bars: 2", as: "Bars: as written" };
+  function barsAll() { try { return JSON.parse(localStorage.getItem(BARS) || "{}") || {}; } catch (e) { return {}; } }
+  function barsMode() { return barsAll()[id] || "auto"; }
+  function barsLabel() { el.querySelector(".gig-bars").textContent = LABEL[barsMode()]; }
+  el.querySelector(".gig-bars").addEventListener("click", function () {
+    var all = barsAll(), next = MODES[(MODES.indexOf(barsMode()) + 1) % MODES.length];
+    if (next === "auto") delete all[id]; else all[id] = next;
+    try { localStorage.setItem(BARS, JSON.stringify(all)); } catch (e) {}
+    barsLabel(); if (!glance) drawNow();
   });
   el.querySelector(".gig-pedal").addEventListener("click", function () {
     var box = el.querySelector(".gig-midi");
@@ -3450,28 +3503,44 @@ if (window.SONG_ID) (function () {
     var now = info(i), nx = road[i + 1] ? info(i + 1) : null;
     var sung = now.abc && /^w:/m.test(now.abc);    // the notation carries the words: no first line under it
     nowBox.innerHTML = '<div class="gig-name">' + esc(now.name) + ' <small>' + (i + 1) + "/" + road.length + "</small></div>" +
-      (now.first && !sung ? '<div class="gig-first">' + now.first + "</div>" : "") +
       (now.abc ? '<div class="gig-abc"></div>'                   // the notation has the chords: no grid then
-       : now.bars ? gridHtml(now.bars) : '<div class="gig-chords">' + now.chords.map(esc).join(" ") + "</div>");
+       : now.bars ? gridHtml(now.bars) : '<div class="gig-chords">' + now.chords.map(esc).join(" ") + "</div>") +
+      (now.lines.length && !sung ? '<div class="gig-lyrics">' + now.lines.map(function (l) { return '<div class="gig-first">' + l + "</div>"; }).join("") + "</div>" : "");
     if (now.abc && !window.ABCJS) {          // abcjs can arrive after the first draw: draw again once it is here
       var at0 = i; setTimeout(function () { if (at0 === i && !glance) drawNow(); }, 200);
     } else if (now.abc) {
-      // Portrait: two bars to a line (abcjs wrap, words kept with their bars), bigger, when that still fits the
-      // room left; else (or in landscape) the lines as written.
-      var box = nowBox.querySelector(".gig-abc");
-      var draw = function (two) {
+      // Portrait: two bars to a line (twoBars, else abcjs wrap; words kept with their bars), drawn at the width that just fits the
+      // room left (a wider staffwidth = smaller on screen), as long as that is still bigger than the lines as written
+      // (staffwidth below WRITTEN); else, and in landscape, the lines as written. The ⋯ bar's "Bars" button overrides
+      // it per song (localStorage songs-gig-bars: {slug: "2" | "as"}).
+      var box = nowBox.querySelector(".gig-abc"), WRITTEN = 700;
+      var draw = function (sw) {
         var o = { responsive: "resize", paddingtop: 0, paddingbottom: 0, paddingleft: 0, paddingright: 0,
                   visualTranspose: window.SongKey ? window.SongKey.shift : 0 };
-        if (two) { o.staffwidth = 300; o.wrap = { minSpacing: 1.5, maxSpacing: 2.8, preferredMeasuresPerLine: 2 }; }
-        try { window.ABCJS.renderAbc(box, now.abc, o); } catch (e) {}
+        var src = now.abc;
+        if (sw) { o.staffwidth = sw; var cut = twoBars(now.abc); if (cut) src = cut; else o.wrap = { minSpacing: 1.5, maxSpacing: 2.8, preferredMeasuresPerLine: 2 }; }
+        try { window.ABCJS.renderAbc(box, src, o); } catch (e) {}
       };
-      var room = nowBox.getBoundingClientRect().bottom - box.getBoundingClientRect().top;
-      if (window.innerHeight > window.innerWidth) {
-        draw(true);
-        if (box.getBoundingClientRect().height > room) draw(false);
+      var lyr = nowBox.querySelector(".gig-lyrics");
+      var room = nowBox.getBoundingClientRect().bottom - box.getBoundingClientRect().top - 4 - (lyr ? 60 : 0);   // a line or two of words kept below
+      var want = barsMode(), two = want === "2" || (want === "auto" && window.innerHeight > window.innerWidth);
+      if (two) {
+        // widen the staff (smaller on screen) until it fits: a wider staff is also taller in its own units, so a few goes
+        var sw = 300, ok = false;     // two bars of notes need about this much; narrower draws no bigger
+        for (var go = 0; go < 6; go++) {
+          draw(sw);
+          var h = box.getBoundingClientRect().height;
+          if (h <= room) { ok = true; break; }
+          sw = Math.ceil(sw * h / room * 1.03);
+          if (sw >= WRITTEN && want !== "2") break;
+        }
+        if (!ok && want !== "2") draw(false);
       } else draw(false);
     }
     fitBars(nowBox);
+    var ly = nowBox.querySelector(".gig-lyrics");     // as many lines of words as fit below the grid / notation
+    if (ly) { var ls = ly.querySelectorAll(".gig-first");
+      for (var k = ls.length - 1; k > 0 && ly.scrollHeight > ly.clientHeight + 1; k--) ls[k].remove(); }
     var after = pos >= 0 && pos + 1 < order.length ? title(order[pos + 1]) : "end of the set";
     nextBox.innerHTML = nx
       ? '<div class="gig-name">' + esc(nx.name) + "</div>" +
@@ -3516,13 +3585,13 @@ if (window.SONG_ID) (function () {
   [nowBox, nextBox, all].forEach(function (z) {
     z.addEventListener("click", function (e) { step(e.clientX > window.innerWidth / 2 ? 1 : -1); });
   });
-  window.addEventListener("resize", function () { if (glance) drawAll(); else fitBars(nowBox); });
+  window.addEventListener("resize", function () { if (glance) drawAll(); else drawNow(); });
   (function wait(n) {                       // the band numbers the verses ("Verse 1"); redraw when it is up
     if (window.carolBandChart) show(); else if (n < 400) setTimeout(function () { wait(n + 1); }, 250);
   })(0);
   try { if (navigator.wakeLock) { navigator.wakeLock.request("screen").catch(function () {});
     document.addEventListener("visibilitychange", function () { if (!document.hidden) navigator.wakeLock.request("screen").catch(function () {}); }); } } catch (e) {}
-  mode(); show();
+  barsLabel(); mode(); show();
 })();
 }
 if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", songPageRun); else songPageRun();
