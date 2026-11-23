@@ -6,6 +6,7 @@
 //   [{ midi, step, at, cont, bar }]: at = index in body of the note (where !n! goes), cont = tied on from the note before
 //   (it keeps that finger and gets no number), step = staff step (7 a octave, C4 = 28), bar = bar index ("|" counted).
 //   Grace notes, decorations, chord symbols and quoted text are skipped; in a [chord] the top note is the melody.
+// PianoFingering.shifts(played, f) -> [bool]: the finger last played another key (shown bold / coloured, or alone).
 // PianoFingering.finger(notes, system, opts) -> { f: [finger per note], move: [true where the hand moves] }
 //   for the notes that are not tied on (notes.filter(n => !n.cont)). opts.fixed = { index: finger } overrides
 //   (finger numbers the player typed); with "rules" they are locks and the rest is solved around them.
@@ -259,17 +260,23 @@
     r.fixed = Object.keys(fixed).filter(function (i) { return fixed[i]; }).map(Number);
     return r;
   }
-  // put the fingers into the ABC body: "!n!" before each note that is not tied on, '"_move"' where the hand moves
+  // shifts: notes whose finger last played a different key (a finger shifting, or the hand moving to a new place);
+  // the first note is not one. -> [true | false] per played note
+  function shifts(ns, f) {
+    var last = {};
+    return f.map(function (g, i) { var was = last[g]; last[g] = ns[i].midi; return was != null && was !== ns[i].midi; });
+  }
+  // put the fingers into the ABC body: "!n!" before each note that is not tied on; opts.only = [bool by note] writes only those
   function write(body, all, r, opts) {
     var marks = [], j = 0;
-    all.forEach(function (n) { if (!n.cont) { marks.push({ at: n.at, f: r.f[j], move: r.move && r.move[j] }); j++; } });
+    all.forEach(function (n) { if (!n.cont) { marks.push({ at: n.at, f: r.f[j], k: j }); j++; } });
     var out = body;
     marks.sort(function (a, b) { return b.at - a.at; }).forEach(function (m) {
-      if (m.f >= 1 && m.f <= 5) out = out.slice(0, m.at) + (m.move && !(opts && opts.noMove) ? '"_move"' : "") + "!" + m.f + "!" + out.slice(m.at);
+      if (m.f >= 1 && m.f <= 5 && !(opts && opts.only && !opts.only[m.k])) out = out.slice(0, m.at) + "!" + m.f + "!" + out.slice(m.at);
     });
     return out;
   }
-  global.PianoFingering = { notes: notes, finger: finger, write: write, model: model, SYSTEMS: SYSTEMS, SPANS: SPANS, WEIGHTS: WEIGHTS, fifthsOf: fifthsOf,
+  global.PianoFingering = { notes: notes, finger: finger, write: write, shifts: shifts, model: model, SYSTEMS: SYSTEMS, SPANS: SPANS, WEIGHTS: WEIGHTS, fifthsOf: fifthsOf,
     systems: { home: home, scale: scale, positions: positions, rules: rules } };
   if (typeof module !== "undefined") module.exports = global.PianoFingering;
 })(typeof window !== "undefined" ? window : globalThis);

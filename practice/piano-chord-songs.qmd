@@ -47,7 +47,9 @@ toc-depth: 2
 .pcs-wtabs button { padding: .45rem .9rem; font-weight: 600; } .pcs-wtabs button.pcs-on { background: var(--pcs-acc); border-color: var(--pcs-acc); color: #fff; }
 .pcs-wlen { display: flex; gap: .4rem; align-items: center; margin: 0 0 0 auto; }
 .pcs-wnav button, .pcs-wplay { padding: .45rem 1rem; font-size: 1rem; } .pcs-wnav button:disabled { opacity: .4; }
-.pcs-wsys { display: flex; gap: .4rem; align-items: center; }
+.pcs-wsys, .pcs-wview { display: flex; gap: .4rem; align-items: center; }
+.pcs-wscore text.pcs-shift { fill: #d9480f; font-weight: 800; }
+.pcs-shift-t { color: #d9480f; }
 .pcs-wfing { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .4rem 0; }
 .pcs-wfing input { font-family: var(--font-mono, monospace); width: min(24rem, 100%); padding: .3rem .5rem; }
 .pcs-wfing p { flex-basis: 100%; margin: 0; }
