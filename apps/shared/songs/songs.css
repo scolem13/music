@@ -678,3 +678,13 @@ body.gig-on > :not(#gig) { display: none !important; }   /* the page under it wo
 #gig .gig-grow, #gig .gig-grow:last-child { border: 0; }
 #gig .gig-gbar { border-top: 1px solid var(--gline); border-bottom: 1px solid var(--gline); }
 #gig .gig-grow + .gig-grow .gig-gbar { margin-top: -1px; }
+/* grid style "beats" (song-page.js gridHtml): the bar cut where its chords change, widths by beats */
+#gig .gig-gbar.gig-beats { display: grid; padding: 0; }
+#gig .gig-beats .gig-q { display: flex; align-items: center; padding: 0 .3em; min-width: 0; overflow: hidden; white-space: nowrap; }
+#gig .gig-beats .gig-q + .gig-q { border-left: 1px solid var(--gline); }
+#gig .gig-beats .gig-held { opacity: .4; }
+#gig .gig-beats:has(> .gig-meter) > .gig-q:first-of-type { padding-left: .75em; }
+/* box heights in rem so a bar whose type is made smaller (fitBars) keeps its row's height */
+#gig .gig-gbar, #gig .gig-gbar.gig-four { height: 3.75rem; }
+#gig .gig-q.gig-compact { letter-spacing: -.03em; }
+#gig .gig-beats .gig-q { padding: 0 .2em; }

@@ -3350,7 +3350,8 @@ if (window.SONG_ID) (function () {
     var sec = chartData && chartData.sections && chartData.sections[head];
     return sec && sec.bars && sec.bars.length ? sec.bars : null;
   }
-  // A bar of the grid drawn after LilyPond's chord grids (Notation Reference, "Chord grids"): one chord fills the box;
+  // Grid style "beats" (default): see gridHtml. Style "quarters", the Grid button in the ⋯ bar:
+  // a bar of the grid drawn after LilyPond's chord grids (Notation Reference, "Chord grids"): one chord fills the box;
   // two, on the first and second half, share it across a diagonal (first top left, second bottom right); anything
   // else is cut in quarters (top left, top right, bottom left, bottom right, by where each chord falls in the bar),
   // a held quarter joined to the one before it. Rows have thin lines above and below so each box reads as one.
@@ -3374,6 +3375,22 @@ if (window.SONG_ID) (function () {
         var toks = (b.c || []).filter(function (c) { return c && !/^\d+\/\d+$/.test(c); })
                               .map(function (c) { return c === "%" ? last || "." : c; });
         if (!toks.length) toks = [last || "."];
+        if (gridStyle() === "beats") {
+          // Beats: the bar cut where its chords change, each part as wide as the beats it lasts (the grid's tokens
+          // share the bar evenly, so 3/4 "Em A7 ." = a third and two thirds); a bar that starts on a held beat
+          // shows the chord carried over, faint.
+          var segs = [], carried = last;
+          toks.forEach(function (c, t) {
+            if (c !== "." || !segs.length) segs.push({ c: c === "." ? null : c, w: 1 });
+            else segs[segs.length - 1].w++;
+          });
+          var chords2 = toks.filter(function (c) { return c !== "."; });
+          if (chords2.length) last = chords2[chords2.length - 1];
+          return '<span class="gig-gbar gig-beats" style="grid-template-columns:' + segs.map(function (g) { return "minmax(2.4ch, " + g.w + "fr)"; }).join(" ") + '">' + sig +
+            segs.map(function (g) {
+              return '<span class="gig-q' + (g.c ? "" : " gig-held") + '">' + (g.c ? chordSpan(g.c) : carried ? chordSpan(carried) : "") + "</span>";
+            }).join("") + "</span>";
+        }
         var n = toks.length, q = [[], [], [], []];
         toks.forEach(function (c, t) { if (c !== ".") q[Math.min(3, Math.floor(t * 4 / n))].push(c); });
         var chords = toks.filter(function (c) { return c !== "."; });
@@ -3403,14 +3420,16 @@ if (window.SONG_ID) (function () {
   }
   function fitBars(root) {
     [].forEach.call(root.querySelectorAll(".gig-gbar"), function (bar) {
-      var parts = [bar].concat([].slice.call(bar.querySelectorAll(".gig-q")));
-      var over = function () { return parts.some(function (p) { return p.scrollWidth > p.clientWidth + 1 || p.scrollHeight > p.clientHeight + 1; }); };
-      bar.classList.remove("gig-compact"); bar.style.fontSize = "";
-      if (!over()) return;
-      bar.classList.add("gig-compact");
-      [].forEach.call(bar.querySelectorAll(".gig-c"), function (c) { c.firstChild.nodeValue = compact(c.firstChild.nodeValue); });
-      if (!over()) return;
-      for (var f = 0.95; f >= 0.55 && over(); f -= 0.05) bar.style.fontSize = f + "em";
+      var qs = [].slice.call(bar.querySelectorAll(".gig-q")), parts = qs.length ? qs : [bar];
+      bar.classList.remove("gig-compact");
+      parts.forEach(function (p) {             // each part on its own: only what runs over is changed
+        var over = function () { return p.scrollWidth > p.clientWidth + 1 || p.scrollHeight > p.clientHeight + 1; };
+        p.style.fontSize = "";
+        if (!over()) return;
+        [].forEach.call(p.querySelectorAll(".gig-c"), function (c) { c.firstChild.nodeValue = compact(c.firstChild.nodeValue); });
+        p.classList.add("gig-compact");
+        for (var f = 0.95; f >= 0.55 && over(); f -= 0.05) p.style.fontSize = f + "em";
+      });
     });
   }
   // The ABC rewritten two bars a line: each music line cut after every second bar line (bar lines read outside
@@ -3480,7 +3499,7 @@ if (window.SONG_ID) (function () {
   el.innerHTML = '<button type="button" class="gig-more" title="Song list, Glance, zoom, pedal">⋯</button><div class="gig-top"><span class="gig-set"></span>' +
     '<button type="button" class="plain-button gig-mode">Glance</button>' +
     '<span class="gig-zoom" hidden><button type="button" class="plain-button" data-z="-1">A−</button><button type="button" class="plain-button" data-z="0">Fit</button><button type="button" class="plain-button" data-z="1">A+</button></span>' +
-    '<button type="button" class="plain-button gig-bars" title="Notation: two bars a line or as written">Bars</button><button type="button" class="plain-button gig-pedal">Pedal</button><button type="button" class="plain-button gig-exit" title="Leave gig view">✕</button></div>' +
+    '<button type="button" class="plain-button gig-gridstyle" title="Chord grid: bars cut by beats, or in quarters as LilyPond draws them">Grid</button><button type="button" class="plain-button gig-bars" title="Notation: two bars a line or as written">Bars</button><button type="button" class="plain-button gig-pedal">Pedal</button><button type="button" class="plain-button gig-exit" title="Leave gig view">✕</button></div>' +
     '<div class="gig-midi" hidden></div>' +
     '<div class="gig-now"></div><div class="gig-next"></div><div class="gig-all" hidden></div>' +
     '<div class="gig-bar"><a class="gig-prev-song"></a><a class="gig-next-song"></a></div>';
@@ -3494,6 +3513,13 @@ if (window.SONG_ID) (function () {
   function barsAll() { try { return JSON.parse(localStorage.getItem(BARS) || "{}") || {}; } catch (e) { return {}; } }
   function barsMode() { return barsAll()[id] || "auto"; }
   function barsLabel() { el.querySelector(".gig-bars").textContent = LABEL[barsMode()]; }
+  // Grid style: "beats" (default) or "quarters" (LilyPond-like), localStorage songs-gig-grid, the same for every song.
+  function gridStyle() { try { return localStorage.getItem("songs-gig-grid") === "quarters" ? "quarters" : "beats"; } catch (e) { return "beats"; } }
+  function gridLabel() { el.querySelector(".gig-gridstyle").textContent = gridStyle() === "quarters" ? "Grid: quarters" : "Grid: beats"; }
+  el.querySelector(".gig-gridstyle").addEventListener("click", function () {
+    try { localStorage.setItem("songs-gig-grid", gridStyle() === "quarters" ? "beats" : "quarters"); } catch (e) {}
+    gridLabel(); if (!glance) drawNow();
+  });
   el.querySelector(".gig-bars").addEventListener("click", function () {
     var all = barsAll(), next = MODES[(MODES.indexOf(barsMode()) + 1) % MODES.length];
     if (next === "auto") delete all[id]; else all[id] = next;
@@ -3620,7 +3646,7 @@ if (window.SONG_ID) (function () {
   })(0);
   try { if (navigator.wakeLock) { navigator.wakeLock.request("screen").catch(function () {});
     document.addEventListener("visibilitychange", function () { if (!document.hidden) navigator.wakeLock.request("screen").catch(function () {}); }); } } catch (e) {}
-  barsLabel(); mode(); show();
+  barsLabel(); gridLabel(); mode(); show();
 })();
 }
 if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", songPageRun); else songPageRun();
