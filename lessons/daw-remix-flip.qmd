@@ -1,0 +1,92 @@
+---
+title: "Remix Lab 7: Flip a Tune"
+toc: true
+toc-depth: 2
+description: "Keep the hook, change the groove, tempo and arrangement, and decide when it stops being the same song."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: [band, interactive]
+---
+
+**Guiding question: what has to stay the same for a listener to still say "that's the same tune", and what is free to change?**
+
+::: {.callout-note}
+**Unverified.** What a "remix" or a "flip" is, and who does it how, is described here as commonly taught, not from a source.
+The hook below is Beethoven's "Ode to Joy" (Symphony No. 9, public domain); the house groove, the chords (C, Am, Fm, Gm) and the
+arrangement are this site's own. A real remix of a copyrighted song needs the rights holders' permission, so use tunes in the public domain for school work.
+:::
+
+## Predict first
+
+Take a tune you know well. Write down what you would keep of it in a house remix (the melody? the words? the chords?) and what you would throw away. Predict:
+
+1. If I **keep the melody but change the chords**, will people still recognise it?
+2. If I **keep the chords but change the melody**?
+3. If I **change the tempo** by 30 BPM?
+
+## Try it: what carries the hook?
+
+1. Play the project and find the hook. At which bar does it first appear?
+2. Mute the hook: what is left? Is the groove enough to be "the tune"?
+3. Solo the hook. Which of its notes would you change (one only) to make it unrecognisable?
+4. Change the **tempo** to 100, then 140. At which speeds does the melody sound wrong, and at which does the groove?
+5. Move the hook up or down an octave. What changes, what doesn't?
+
+<div class="mdaw" data-id="remix-flip" data-preset="remixflip" data-show="transport tracks editor mixer band files"></div>
+
+## Flip it: change one thing at a time
+
+Save the project (**Save**) before each experiment so you can undo it. For each one, predict first and write the result.
+
+| Change | Prediction | Result |
+|---|---|---|
+| Swap the house drums for the techno ones (kick, off-beat hat, rolling bass) | | |
+| Change the chord progression to Am F C G | | |
+| Halve the hook's note lengths (double speed) | | |
+| Move the hook to the bass | | |
+| Drop the bass out for the drop | | |
+
+## Explain what you noticed
+
+Rank these from **most** to **least** important for recognising the tune: melody pitches, rhythm of the melody, chords, tempo, drum groove, instrument sound. Say how you decided.
+
+## Make your own
+
+Remix your own tune:
+
+1. Choose a short public-domain tune (the Tune Library has many).
+2. Say, in one sentence, **what you will keep** and **what you will change**.
+3. Make a 32-bar arrangement as in Lesson 5, with the hook in the breakdown and the drop.
+4. Bounce (export) the result and play it for a classmate. Can they name the tune?
+
+## Reflect
+
+- Where is the line between **remix** and **a new piece**?
+- Why might some producers prefer to remix a vocal rather than a melody played on an instrument? (Think about what a voice carries that a note does not.)
+
+## In other DAWs
+
+<div class="daw-map">
+
+| | BandLab | Ableton Live | Logic Pro |
+|---|---|---|---|
+| Change the tempo | Tempo in the transport | Tempo box (audio can be warped) | Tempo in the control bar |
+| Transpose a part | Edit in the MIDI editor | Select notes and move them | Select notes and move them |
+| Export | Download the mix | Export Audio/Video | Bounce |
+
+</div>
+
+*Menu names from memory, **not re-checked**: look each up in the manual.*
+
+## Next
+
+- [DAW 8: Your First Session in a Real DAW](daw-real.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}

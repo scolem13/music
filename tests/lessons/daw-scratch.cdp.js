@@ -285,5 +285,16 @@ const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.spl
     D.setPos(0); D.node.focus(); D.node.dispatchEvent(new KeyboardEvent('keydown', { key: 'g', bubbles: true, cancelable: true })); out.push(!!D.posIn); D.posIn.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
     return out.join(' | '); })()`);
   check("position readout: click opens a box, Esc cancels; 3.2.1 -> beat 9 (readout 3.2.1), 2.3 -> 6, 6 -> 20; a bad entry stays, shakes and says why; follows a 3/4 and a 6/8 bar; G opens it", ps === "true | true | true | true | false | 0 | 9 | true | 3.2.1 | 6 | 20 | 20 | true | true | true | true | 7 | 7 | true | true | 5.5 | 2.2.2 | true".replace("5.5", "5.75") || false, ps);
+  const dv = await ev(`(() => { ${KEY} const out = [];
+    D.change(() => { D.p.tracks = [{ name: 'Drums', inst: 'kit', vol: 0, pan: 0, mute: false, solo: false, clips: [{ start: 0, len: 4, notes: [{ t: 0, d: .25, m: 'kick', v: .8 }, { t: 0, d: .25, m: 'snare', v: .8 }, { t: 1, d: .25, m: 'kick', v: .8 }] }] }]; D.sel = { track: 0, clip: 0, slot: -1, notes: [] }; D.pos = 0; }); D.drumRow = null; D.renderAll();
+    const cv = D.node.querySelector('.mdaw-cv'), c = D.p.tracks[0].clips[0], r = cv.getBoundingClientRect(), g = D.rollGeom, cw = g.bpx * D.grid, H = r.height - 50;
+    const drag = (col, frac) => { const x = r.left + col * cw + cw / 2, y = r.top + H + 50 - frac * 44, o = { clientX: x, clientY: y, bubbles: true, pointerId: 1 };
+      cv.dispatchEvent(new PointerEvent('pointerdown', o)); document.dispatchEvent(new PointerEvent('pointermove', o)); document.dispatchEvent(new PointerEvent('pointerup', o)); };
+    out.push(r.height > H, D.undo.length); const u0 = D.undo.length;
+    drag(0, 1); out.push(c.notes[0].v === 1, c.notes[1].v === 1, c.notes[2].v === .8, D.undo.length === u0 + 1);
+    D.drumRow = 'snare'; drag(0, .3); out.push(c.notes[0].v === 1, Math.abs(c.notes[1].v - .3) < .05);
+    D.sel.notes = [0]; drag(0, .2); out.push(Math.abs(c.notes[0].v - .2) < .05, Math.abs(c.notes[1].v - .3) < .05);
+    D.undo.pop && 0; return out.join(' | '); })()`);
+  check("drum velocity lane: drag sets the column's hits; row last clicked limits it; a selection overrides; one undo step", /^true \| \d+ \| true \| true \| true \| true \| true \| true \| true \| true$/.test(dv), dv);
   await b.close(); srv.close(); console.log(fails ? fails + " failed" : "all passed"); process.exit(fails ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(1); });

@@ -1,0 +1,92 @@
+---
+title: "Remix Lab 4: Bass Line and Chord Stab"
+toc: true
+toc-depth: 2
+description: "A bass line that locks with the kick and a chord stab that leaves room: predict, change and listen."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: [band, interactive]
+---
+
+**Guiding question: how can a bass line and a few chords make a groove move without a melody?**
+
+::: {.callout-note}
+**Unverified.** That house bass lines are "syncopated" and techno bass lines "rolling" is a common description, not checked.
+The notes in the preset are this site's own (a four-chord loop, Am F C G), not a copy of any record.
+:::
+
+## Predict first
+
+1. The kick is on every beat. Should the **bass** play *with* the kick, *between* the kicks, or both? Predict how each will sound.
+2. If a chord is played on every beat, will it feel more or less *busy* than one played on a few off-beats? Why?
+3. Does the bass have to be a **melody**? How few notes can it use?
+
+## Try it: house bass
+
+Solo the **Bass** track and the **Kick** together.
+
+1. Look at the bass notes in the piano roll. How many different pitches (not counting octaves) does one bar use? How many notes does it have?
+2. Note which step each note starts on. Are they **on** the kick or **after** it? (Hint: count sixteenths.)
+3. Select every note in the clip and drag them up three rows (three semitones). Does it still sound like the same tune?
+4. Delete half the notes. Which notes can go, and which can't? Why?
+
+<div class="mdaw" data-id="remix-bass-house" data-preset="house" data-show="transport tracks editor mixer"></div>
+
+## Try it: techno bass
+
+Now the rolling bass of the techno loop. It plays *on the beats between the kick hits*: look at the steps, then **mute the kick**.
+
+1. Is the bass still enough to give you the beat? What does that tell you?
+2. Change the bass **octave**. A bass line that is too low disappears on a small speaker: which octave sounds clearest on your headphones or laptop?
+3. Shorten each note, then lengthen it. Which sounds more "pumping"?
+
+<div class="mdaw" data-id="remix-bass-techno" data-preset="techno" data-show="transport tracks editor mixer"></div>
+
+## Chord stabs
+
+A **stab** is a short chord hit. In the house loop the stabs are in the **Chord stabs** track. Change one thing at a time and predict the result:
+
+- Make each stab **longer** (a sustained chord). Does it fill the space the bass needs?
+- Move the stabs to the **beats** instead of the off-beats. Does the groove lose its lift?
+- Change a chord's **third** (lower it a half-step): is it minor now? How does the mood change?
+- Remove the third (leave root + fifth): a **power chord**. Is it happier or neutral?
+
+## Explain what you noticed
+
+Write a rule in your own words, each starting with "When ...": 1) a rule about where bass notes fall against the kick; 2) a rule about stab length; 3) a rule about how many chords you need.
+
+## Make your own
+
+Take your best groove from Lesson 2. Add a **four-bar bass line** using no more than three different notes, and a **stab** part of one chord per bar. Mix them so you can hear every layer (the mixer's level for each). Then write down: *which note did you choose first, and why?*
+
+## Reflect
+
+- What can a bass line say that a drum part cannot?
+- Where in your own music (or in a tune you know) is the bass doing what the house bass does?
+
+## In other DAWs
+
+<div class="daw-map">
+
+| | BandLab | Ableton Live | Logic Pro |
+|---|---|---|---|
+| Edit the notes | MIDI editor | MIDI note editor, one row a pitch | Piano Roll |
+| Fix the timing | Quantise in the editor | Quantize | **Quantize** menu, region inspector |
+| Transpose | In the editor | Select notes and move them up or down | Select notes and move them up or down |
+
+</div>
+
+*Menu names from memory, **not re-checked**: look each up in the manual.*
+
+## Next
+
+- [Remix Lab 5: Build an Arrangement](daw-remix-build.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}

@@ -1,0 +1,91 @@
+---
+title: "Remix Lab 2: Build the Groove"
+toc: true
+toc-depth: 2
+description: "Predict what each drum layer does, then build a four-on-the-floor groove from nothing and test it."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: [band, interactive]
+---
+
+**Guiding question: which drum hits are the smallest set that still makes people want to dance?**
+
+::: {.callout-note}
+**Unverified.** Which sounds and patterns are "typical" is from memory; the patterns are the usual ones in this site's
+own loops. Where the page says "the TR-808 or TR-909", that is the common textbook link between drum machines and dance
+music; it is **not yet checked** against a source.
+:::
+
+## Predict, then build
+
+Start with a blank bar and add layers one at a time. **Before each step, write your prediction** ("this will make it feel ...") and
+afterwards say if you were right.
+
+Steps are numbered 1 to 16 as in [DAW 2](daw-beat.qmd); `x` is a hit.
+
+| Layer | Pattern | Predict |
+|---|---|---|
+| Kick, four on the floor | `x...x...x...x...` | *What does it do to the pulse?* |
+| Clap (or snare) on 2 and 4 | `....x.......x...` | *Does it make it feel faster or slower?* |
+| Off-beat open hat | `..x...x...x...x.` | *Where does it make you want to move?* |
+| Closed hat sixteenths with ghosts | `g.xgg.xgg.xgg.xg` | *Does it fill the gaps or crowd the groove?* |
+| Shaker, accented every other | `xgxgxgxgxgxgxgxg` | *Is it brighter or warmer?* |
+
+## Try it: the groove lab
+
+1. Press Play. Click squares to **empty** the project: delete everything except the kick. Is it already a groove?
+2. Add the **clap**. Move it from beats 2 and 4 to beats 1 and 3. What happens to your foot?
+3. Add the **off-beat hat**. Slide it onto the beat (step 1, 5, 9, 13). It should now clash with the kick. How does that feel?
+4. Add sixteenth-note hats with **ghost notes** (Alt+click) and **accents** (Shift+click). *Which gives more lift: loud or quiet hits?*
+5. **Swing / feel.** Try the **Grid** menu's triplet setting and compare it with straight sixteenths. Which is more "house", which more "techno"?
+6. **Duplicate** the bar to eight, then make the **last bar a fill**: remove the kick on the last beat or add a snare roll.
+
+<div class="mdaw" data-id="remix-groove" data-preset="empty" data-show="transport tracks editor mixer"></div>
+
+## Explain what you noticed
+
+- Write the three layers you could **not** remove without breaking the groove, and say why.
+- *Which layer carries the beat, which the offbeat, and which only decoration?*
+- Why might a producer **take the kick out for a bar** before the drop? (You will use this in Lesson 4.)
+
+## Check against the two loops
+
+Open the [first lesson's](daw-remix-listen.qmd) house and techno loops. Your own groove: is it closer to one of them? What would you change to move it all the way?
+
+## Make your own
+
+Build **two** grooves (one house-ish, one techno-ish), each **four bars**, at a tempo you choose (say it and say why).
+Rename the tracks, save each as a separate project (**Save**) and write one sentence under each: *"This groove feels ... because ..."*
+
+## Reflect
+
+- Did anything you predicted turn out **wrong**? What did that teach you?
+- Which single hit would you add or delete to change the **mood**, not just the style?
+
+## In other DAWs
+
+<div class="daw-map">
+
+| | BandLab | Ableton Live | Logic Pro |
+|---|---|---|---|
+| Programme the drums | **Drum Machine** track | **Drum Rack** and the MIDI editor | **Step Sequencer** with a Drum Machine Designer kit |
+| Accents / ghost notes | Velocity per step | Velocity lane | Velocity edit mode |
+| Repeat a bar | **Alt/Option-drag** the region | **Cmd/Ctrl+D** | Edit → Repeat |
+
+</div>
+
+*Menu names from memory, **not re-checked**: look each up in the manual.*
+
+## Next
+
+- [Remix Lab 3: Subgenres of Techno](daw-remix-subgenres.qmd)
+- [Remix Lab 4: Bass and Chord Stabs](daw-remix-bass.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}

@@ -887,6 +887,19 @@ document.addEventListener('DOMContentLoaded', async function () {
         /* Layout "Pages across": the drawn systems cut into white pages in a horizontal strip, 1.3 pages in view (apps/shared/full-score.js's paged mode, simplified) */
         #paper.tn-across { width: 100%; max-width: 100%; box-sizing: border-box; background: none; box-shadow: none; padding: 0; display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x proximity; border: 0; }
         #paper.tn-across .tn-page { flex: 0 0 auto; box-sizing: border-box; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.25); padding: .6rem .5rem; scroll-snap-align: start; }
+        /* Show "Both": the score and the chord grid side by side on a wide screen (stacked when narrow); the grid stays in view */
+        @media (min-width: 900px) {
+            #tn-views.tn-both { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 1fr); gap: 1rem; align-items: start; }
+            #tn-views.tn-both > #tn-grid { position: sticky; top: 4.5rem; max-height: calc(100vh - 6rem); overflow: auto; }
+        }
+        #tn-views:not(.tn-both) > #tn-grid { margin-top: 1rem; }
+        /* Bar width: the drawing (#paper-in) is that share of the paper's width, so the paper scrolls sideways past 100% */
+        #paper:not(.tn-across) { overflow-x: auto; }
+        #paper-w { max-width: none; }
+        /* section labels (A, B, Verse ...) in a box, in a sans font, so they do not read as chord symbols (boxSections) */
+        #paper text.tn-sec-label { font-family: system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif !important; font-weight: 700; }
+        #paper rect.tn-sec-box { fill: #fff; stroke: #222; stroke-width: 1.1; }
+        .tn-side input[type=range] { flex: 1 1 8rem; min-width: 0; }
         #tn-nav { display: none; gap: .5rem; align-items: center; margin: .3rem 0; }
         #tn-nav.on { display: flex; }
         #tn-bar label { margin-right: .3rem; font-size: .8rem; opacity: .8; }
@@ -1072,6 +1085,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
         // clicking a note sounds it and makes its bar the "From bar"
         function tuneClick(abcElem, tuneNumber, classes, analysis, drag, mouseEvent) {
+            if (mouseEvent && mouseEvent.target) { const ne = mouseEvent.target.closest(".abcjs-note, .abcjs-rest"); if (ne) tnClickSeg = segOf(ne); }
             if (cur && mouseEvent && mouseEvent.target) {
                 const k = AbcPlay.barIndex(cur.v.setTiming(), mouseEvent.target.closest(".abcjs-note, .abcjs-rest") || mouseEvent.target);
                 if (k >= 0) { document.getElementById("tp-from").value = k + 1; paused = null; playBtn(); }
@@ -1209,6 +1223,8 @@ document.addEventListener('DOMContentLoaded', async function () {
             };
             if (/^w:/m.test(abcString)) abcOptions.minPadding = 7;
             document.getElementById("paper").style.display = "";   // drawn while shown (a hidden box has no width); tnGrid hides it again
+            tnViewClass();
+            lineOptions(abcString, abcOptions);
             layoutOptions(abcOptions);
 
             const wasPlaying = !!playing;
@@ -1216,7 +1232,8 @@ document.addEventListener('DOMContentLoaded', async function () {
             stopTune();
             if (userAction) document.getElementById("tp-from").value = 1;
             if (!fromEditor) editorFor();
-            const visualObj = ABCJS.renderAbc("paper", abcString, abcOptions)[0];
+            const visualObj = ABCJS.renderAbc(renderTarget(abcOptions), abcString, abcOptions)[0];
+            boxSections(document.getElementById("paper"));
             paginate();
             if (window.Works) Works.mount(document.getElementById("tune-works"), "tune", (/^%%id\s+(\S+)/m.exec(abc[currentTune]) || [])[1]);
             const resNone = () => { const n = document.querySelector(".tn-res-none"); if (n) n.hidden = !document.getElementById("tune-works").hidden || !document.getElementById("tune-recsync").hidden; };
@@ -1234,6 +1251,8 @@ document.addEventListener('DOMContentLoaded', async function () {
             about();
             openLinks(w0id);
             tnGrid();
+            if (userAction) tnClickSeg = null;
+            breaksHint();
             if (wasPlaying && !userAction) playTune();   // an option changed while playing: carry on with it
         }
 
@@ -1251,7 +1270,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             if (!on) return;
             paper.removeAttribute("style");   // the inline size abcjs leaves from a responsive drawing
             pageW = Math.max(260, Math.floor(paper.clientWidth / 1.3) - 16);
-            delete o.responsive; delete o.expandToWidest; o.wrap = { minSpacing: 1.4, maxSpacing: 2.7, preferredMeasuresPerLine: 4 }; o.oneSvgPerLine = true; o.staffwidth = pageW - 24; o.scale = 1;
+            delete o.responsive; delete o.expandToWidest; o.oneSvgPerLine = true; o.staffwidth = pageW - 24; o.scale = 1;
         }
         function pages() { return [...document.querySelectorAll("#paper > .tn-page")]; }
         function paginate() {
@@ -1339,11 +1358,147 @@ document.addEventListener('DOMContentLoaded', async function () {
             box.querySelector(".tn-to-dir").href = "/practice/tune-directory.html#" + encodeURIComponent(w ? w.id : id);
         }
 
+        // ---- Lines: "Bars a line" full bars on each line (a pickup is not counted: it starts the first line, as on the chord grid),
+        // or the ABC's own lines ("As written"); plus breaks added with Enter after clicking a note (a new line after that bar;
+        // Enter there again removes it), as RET does on the Notation page. Done with abcjs's lineBreaks option (the last measure
+        // of each line, counted as abcjs counts them: one per bar line, so a bar line before the first note makes an empty measure 0),
+        // which keeps w: words with their notes. Kept in localStorage: tunesLineEvery, tunesBreaks { tune: [measure, ...] }.
+        // Bar width (tunesBarW, 50-250 %): the drawing is that share of the paper's width at the same note size (Scroll down only).
+        let tnLineStarts = [], tnClickSeg = null;
+        const lsGet = (k, d) => { try { const v = localStorage.getItem(k); return v == null ? d : v; } catch (e) { return d; } };
+        const lsSet = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+        function lineEvery() { const v = parseInt(lsGet("tunesLineEvery", "4"), 10); return isNaN(v) ? 4 : v; }
+        function barW() { const v = parseInt(lsGet("tunesBarW", "100"), 10); return Math.max(50, Math.min(250, isNaN(v) ? 100 : v)); }
+        function tuneKey() { const t = abc[currentTune] || ""; return (/^%%id\s+(\S+)/m.exec(t) || [])[1] || ("t:" + ((/^T:\s*(.+)$/m.exec(t) || [])[1] || "").trim()); }
+        function allBreaks() { try { return JSON.parse(lsGet("tunesBreaks", "{}")) || {}; } catch (e) { return {}; } }
+        function myBreaks() { return allBreaks()[tuneKey()] || []; }
+        function setMyBreaks(list) { const a = allBreaks(); if (list.length) a[tuneKey()] = list.sort((x, y) => x - y); else delete a[tuneKey()]; lsSet("tunesBreaks", JSON.stringify(a)); }
+        // the tune's measures, section by section (a section = one run of music lines): [{ segs: [{ m, notes, len }], ends: [measure at the end of each written line] }]
+        function measuresOf(text) {
+            let t; try { t = ABCJS.parseOnly(text)[0]; } catch (e) { return null; }
+            if (!t || !t.lines || !t.deline) return null;
+            const mf = t.getMeterFraction ? t.getMeterFraction() : { num: 4, den: 4 }, full = mf.num / mf.den;
+            const secs = []; let sec = null, m = 0;
+            const walk = (voice, rec) => {
+                let mult = 1;
+                voice.forEach((el) => {
+                    if (el.el_type === "bar") { m++; return; }
+                    if (el.el_type !== "note" || !rec) return;
+                    if (el.startTriplet) mult = el.tripletMultiplier || 1;
+                    const g = rec[m] || (rec[m] = { m: m, notes: 0, len: 0 }); g.notes++; g.len += (el.duration || 0) * mult;
+                    if (el.endTriplet) mult = 1;
+                });
+            };
+            t.lines.forEach((ln) => {
+                if (!ln.staff) { sec = null; return; }
+                if (!sec) { sec = { rec: [], ends: [] }; secs.push(sec); m = 0; }
+                const v = ln.staff[0] && ln.staff[0].voices[0] || [];
+                walk(v, sec.rec);
+                const lastBar = v.length && v[v.length - 1].el_type === "bar";
+                sec.ends.push(lastBar ? m - 1 : m);
+            });
+            return { full: full, secs: secs.map((x) => ({ segs: x.rec.filter(Boolean), ends: x.ends, count: x.ends.length ? x.ends[x.ends.length - 1] + 1 : 0 })) };
+        }
+        function lineOptions(text, o) {
+            tnLineStarts = [];
+            const n = lineEvery(), mine = myBreaks(), info = measuresOf(text);
+            if (!info || (!n && !mine.length) || /^V:/m.test(text)) return;
+            let off = 0;
+            const breaks = info.secs.map((sec) => {
+                const out = [], segs = sec.segs, last = segs.length ? segs[segs.length - 1].m : -1;
+                const pick = segs.length > 1 && segs[0].len < info.full - 1e-6 ? segs[0].m : -1;
+                if (!n) {   // as written, plus the added breaks
+                    sec.ends.slice(0, -1).forEach((e) => out.push(e));
+                    mine.forEach((b) => { if (b - off >= 0 && b - off < last && out.indexOf(b - off) < 0) out.push(b - off); });
+                } else {
+                    let count = 0;
+                    segs.forEach((g) => {
+                        if (g.m !== pick) count++;
+                        if (g.m >= last) return;
+                        if (count >= n || mine.indexOf(g.m + off) >= 0) { out.push(g.m); count = 0; }
+                    });
+                }
+                out.sort((a, b) => a - b);
+                const starts = [off].concat(out.map((b) => b + 1 + off));
+                off += 100000;
+                return { out: out, starts: starts };
+            });
+            o.lineBreaks = breaks.map((b) => b.out);
+            // where each drawn line starts (for the clicked bar), in abcjs's own order of lines (a non-music line takes one)
+            let t; try { t = ABCJS.parseOnly(text)[0]; } catch (e) {}
+            let si = -1, inRun = false;
+            (t && t.lines || []).forEach((ln) => {
+                if (!ln.staff) { tnLineStarts.push(null); inRun = false; return; }
+                if (!inRun) { si++; inRun = true; (breaks[si] ? breaks[si].starts : []).forEach((s) => tnLineStarts.push(s)); }
+            });
+        }
+        // a drawn note's measure, as lineOptions counts them (null when not known)
+        function segOf(ne) {
+            const c = ne.getAttribute("class") || "", l = /abcjs-l(\d+)/.exec(c), m = /abcjs-m(\d+)/.exec(c);
+            if (!l || !m) return null;
+            const st = tnLineStarts.length ? tnLineStarts[+l[1]] : null;
+            return st == null ? null : st + (+m[1]);
+        }
+        function toggleBreak() {
+            if (tnClickSeg == null) return false;
+            const list = myBreaks(), i = list.indexOf(tnClickSeg);
+            if (i >= 0) list.splice(i, 1); else list.push(tnClickSeg);
+            setMyBreaks(list); breaksHint(); setTune(false); return true;
+        }
+        function breaksHint() {
+            const h = document.getElementById("tn-breaks-hint"), c = document.getElementById("tn-breaks-clear"), k = myBreaks().length;
+            if (h) h.textContent = k ? k + " line break" + (k > 1 ? "s" : "") + " added" : "Click a note, then Enter: a new line after its bar";
+            if (c) c.hidden = !k;
+        }
+        function renderTarget(o) {
+            const paper = document.getElementById("paper");
+            if (layoutMode() === "across") return paper;
+            const w = barW();
+            paper.innerHTML = '<div id="paper-w"><div id="paper-in"></div></div>';   // abcjs sets its own box's width, so the width goes on the outer one
+            paper.firstChild.style.width = w + "%"; const inner = paper.firstChild.firstChild;
+            if (w !== 100) o.staffwidth = Math.round(740 * w / 100);
+            return inner;
+        }
+        // section labels: a text annotation that is a section name (A, B2, A', Verse, Chorus 2 ...) gets a box and a sans font
+        const SECTION = /^(?:[A-H][1-9']?|(?:Intro|Verse|Chorus|Pre-?chorus|Bridge|Coda|Outro|Tag|Interlude|Solo|Head|Vamp|Ending|Refrain)(?:\s*\d+)?)$/i;
+        function boxSections(root) {
+            root.querySelectorAll("text.abcjs-annotation").forEach((t) => {
+                const s = t.textContent.trim(); if (!SECTION.test(s) || (s.length === 1 && s !== s.toUpperCase())) return;
+                t.classList.add("tn-sec-label");
+                let b; try { b = t.getBBox(); } catch (e) { return; } if (!b || !b.width) return;
+                const r = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                r.setAttribute("x", b.x - 3); r.setAttribute("y", b.y - 1); r.setAttribute("width", b.width + 6); r.setAttribute("height", b.height + 2); r.setAttribute("rx", 2);
+                r.setAttribute("class", "tn-sec-box"); t.parentNode.insertBefore(r, t);
+            });
+        }
+        function initLines() {
+            const ev = document.getElementById("tn-every"), bw = document.getElementById("tn-barw"), bwv = document.getElementById("tn-barw-v");
+            ev.value = String(lineEvery()); if (!ev.value) ev.value = "4";
+            ev.addEventListener("change", () => { lsSet("tunesLineEvery", ev.value); if (cur) setTune(false); });
+            const showW = () => { bwv.textContent = bw.value + "%"; };
+            bw.value = barW(); showW();
+            bw.addEventListener("input", showW);
+            bw.addEventListener("change", () => { lsSet("tunesBarW", bw.value); if (cur) setTune(false); });
+            bw.addEventListener("dblclick", () => { bw.value = 100; showW(); lsSet("tunesBarW", "100"); if (cur) setTune(false); });
+            document.getElementById("tn-breaks-clear").addEventListener("click", () => { setMyBreaks([]); breaksHint(); if (cur) setTune(false); });
+            document.addEventListener("keydown", (e) => {
+                if (e.key !== "Enter" || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+                if (/^(INPUT|TEXTAREA|SELECT|BUTTON|A|SUMMARY)$/.test(e.target.tagName) || e.target.isContentEditable) return;
+                if (toggleBreak()) e.preventDefault();
+            });
+            breaksHint();
+        }
+
         // Show: the score, the chord grid (TuneChart.render, as on the Backing Track page), or both. The grid is in its own paper box
         // (#tn-grid), in the Key menu's key, and lights the bar the band is playing. A tune with no chord symbols has no grid.
         let tnChart = null;
         function tnView() { let v = "score"; try { v = localStorage.getItem("tunesView") || "score"; } catch (e) {} return ["score", "grid", "both"].includes(v) ? v : "score"; }
+        function tnViewClass() {
+            const sel = document.getElementById("tn-show"), has = !!window.AbcPlay && AbcPlay.hasChords(abc[currentTune] || "");
+            const v = document.getElementById("tn-views"); if (v) v.classList.toggle("tn-both", has && sel.value === "both");
+        }
         function tnGrid() {
+            tnViewClass();
             const sel = document.getElementById("tn-show"), box = document.getElementById("tn-grid"), paper = document.getElementById("paper"); if (!sel || !box) return;
             const has = !!window.AbcPlay && AbcPlay.hasChords(abc[currentTune] || "");
             sel.querySelectorAll("option").forEach((o) => { if (o.value !== "score") o.disabled = !has; });
@@ -1382,8 +1537,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 <div id="tunes-root">
     <div id="tn-nav"><button type="button" id="tn-prev" aria-label="Previous page">‹</button><button type="button" id="tn-next" aria-label="Next page">›</button><span id="tn-pg" class="site-hint"></span></div>
+    <div id="tn-views">
         <div id="paper" class="site-paper"></div>
-    <div id="tn-grid" class="site-paper" hidden="" aria-label="Chord grid"></div>
+        <div id="tn-grid" class="site-paper" hidden="" aria-label="Chord grid"></div>
+    </div>
     <div class="tn-side" id="tn-side" role="complementary" aria-label="The tune and what goes with it">
         <details class="site-panel" id="tn-pick" open="">
             <summary>Tune</summary>
@@ -1392,8 +1549,11 @@ document.addEventListener('DOMContentLoaded', async function () {
                 <select id="tune-selector" aria-label="Tune" onchange="pickTune()"></select>
                 <button type="button" class="next">Next tune</button>
             </div>
-            <p class="tn-pick"><label for="tn-show">Show</label><select id="tn-show" aria-label="Show the score, the chord grid or both"><option value="score">Score</option><option value="grid">Chord grid</option><option value="both">Both</option></select> <span class="site-hint" id="tn-show-hint"></span></p>
+            <p class="tn-pick"><label for="tn-show">Show</label><select id="tn-show" aria-label="Show the score, the chord grid or both"><option value="score">Score</option><option value="grid">Chord grid</option><option value="both">Both, side by side</option></select> <span class="site-hint" id="tn-show-hint"></span></p>
             <p class="tn-pick"><label for="tn-layout">Layout</label><select id="tn-layout"><option value="down">Scroll down</option><option value="across">Pages across</option></select></p>
+            <p class="tn-pick"><label for="tn-every">Bars a line</label><select id="tn-every" title="Full bars on each line; a pickup is not counted"><option value="0">As written</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="6">6</option><option value="8">8</option></select></p>
+            <p class="tn-pick"><label for="tn-barw">Bar width</label><input type="range" id="tn-barw" min="50" max="250" step="10" value="100" title="Double-click: back to 100%"><span class="site-hint" id="tn-barw-v"></span></p>
+            <p class="tn-pick"><span class="site-hint" id="tn-breaks-hint"></span> <button type="button" id="tn-breaks-clear" hidden="">Clear line breaks</button></p>
             <p class="tn-open" id="tn-open"><a class="tn-to-notation" href="../tools/notation.html">✎ Open in Notation</a><a class="tn-to-band" href="../tools/backing-track.html">♫ Backing Track</a><a class="tn-to-dir" href="../practice/tune-directory.html">Tune Directory</a></p>
             <p class="site-hint">Click a note to hear it and to play from its bar.</p>
         </details>
@@ -1463,6 +1623,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         (function () { const sh = document.getElementById("tn-show"); sh.value = tnView(); sh.addEventListener("change", tnShow); })();
         load();
         initLayout();
+        initLines();
         // the panels into the site's right sidebar (it comes after <main>, so once the page is parsed); back under the score when narrow
         document.body.classList.add("tunes-page");
         function placePanels() {

@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-19T09:03",
+"generated": "2026-11-24T15:14",
 "terms": {
 "audiation": [
 {
@@ -7,40 +7,6 @@
 "course": "dp1",
 "title": "Baroque Research Feedback",
 "url": "https://classes.seancoleman.org/dp1/2026-09-28.html"
-}
-],
-"sonata": [
-{
-"date": "2026-10-08",
-"course": "dp1",
-"title": "Measure Numbers",
-"url": "https://classes.seancoleman.org/dp1/2026-10-08.html"
-},
-{
-"date": "2026-10-09",
-"course": "dp1",
-"title": "Sonata Form",
-"url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
-},
-{
-"date": "2026-12-11",
-"course": "dp1",
-"title": "Classical Style: Exploration and Creating Exercise",
-"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
-}
-],
-"sonata-form": [
-{
-"date": "2026-10-08",
-"course": "dp1",
-"title": "Measure Numbers",
-"url": "https://classes.seancoleman.org/dp1/2026-10-08.html"
-},
-{
-"date": "2026-10-09",
-"course": "dp1",
-"title": "Sonata Form",
-"url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
 }
 ],
 "allegro": [
@@ -57,18 +23,32 @@
 "url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
 }
 ],
-"phrase": [
+"sonata-form": [
+{
+"date": "2026-10-08",
+"course": "dp1",
+"title": "Measure Numbers",
+"url": "https://classes.seancoleman.org/dp1/2026-10-08.html"
+},
 {
 "date": "2026-10-09",
 "course": "dp1",
 "title": "Sonata Form",
 "url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
+}
+],
+"sonata": [
+{
+"date": "2026-10-08",
+"course": "dp1",
+"title": "Measure Numbers",
+"url": "https://classes.seancoleman.org/dp1/2026-10-08.html"
 },
 {
-"date": "2026-11-19",
+"date": "2026-10-09",
 "course": "dp1",
-"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
-"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
+"title": "Sonata Form",
+"url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
 },
 {
 "date": "2026-12-11",
@@ -215,7 +195,13 @@
 "url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
 }
 ],
-"cadence": [
+"phrase": [
+{
+"date": "2026-10-09",
+"course": "dp1",
+"title": "Sonata Form",
+"url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
+},
 {
 "date": "2026-11-19",
 "course": "dp1",
@@ -223,13 +209,21 @@
 "url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
 },
 {
-"date": "2026-12-04",
+"date": "2026-12-11",
 "course": "dp1",
-"title": "Formative 2: The First 16 Bars",
-"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-04-classical-composing-formative.html"
+"title": "Classical Style: Exploration and Creating Exercise",
+"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
 }
 ],
 "romantic-period": [
+{
+"date": "2026-11-19",
+"course": "dp1",
+"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
+"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
+}
+],
+"chromatic": [
 {
 "date": "2026-11-19",
 "course": "dp1",
@@ -249,14 +243,6 @@
 "course": "dp1",
 "title": "Classical Style: Exploration and Creating Exercise",
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
-}
-],
-"rubato": [
-{
-"date": "2026-11-19",
-"course": "dp1",
-"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
-"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
 }
 ],
 "half-cadence": [
@@ -293,14 +279,6 @@
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
 }
 ],
-"common-practice-period": [
-{
-"date": "2026-11-19",
-"course": "dp1",
-"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
-"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
-}
-],
 "authentic-perfect-cadence": [
 {
 "date": "2026-11-19",
@@ -315,7 +293,29 @@
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-04-classical-composing-formative.html"
 }
 ],
-"chromatic": [
+"common-practice-period": [
+{
+"date": "2026-11-19",
+"course": "dp1",
+"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
+"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
+}
+],
+"cadence": [
+{
+"date": "2026-11-19",
+"course": "dp1",
+"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
+"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
+},
+{
+"date": "2026-12-04",
+"course": "dp1",
+"title": "Formative 2: The First 16 Bars",
+"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-04-classical-composing-formative.html"
+}
+],
+"rubato": [
 {
 "date": "2026-11-19",
 "course": "dp1",
@@ -903,6 +903,14 @@
 "url": "https://classes.seancoleman.org/myp4/2026-09-28.html"
 }
 ],
+"voice-leading": [
+{
+"date": "2026-09-28",
+"course": "myp4",
+"title": "Blues in the Closet",
+"url": "https://classes.seancoleman.org/myp4/2026-09-28.html"
+}
+],
 "12-bar-blues": [
 {
 "date": "2026-09-28",
@@ -921,14 +929,6 @@
 "course": "myp4",
 "title": "Rock from the blues",
 "url": "https://classes.seancoleman.org/myp4/2026-11-17.html"
-}
-],
-"voice-leading": [
-{
-"date": "2026-09-28",
-"course": "myp4",
-"title": "Blues in the Closet",
-"url": "https://classes.seancoleman.org/myp4/2026-09-28.html"
 }
 ],
 "criterion-a": [
@@ -1291,7 +1291,7 @@
 "url": "https://classes.seancoleman.org/assessments/for-myp5/2026-10-30-summative-crit-d.html"
 }
 ],
-"area-of-inquiry": [
+"aoi-2": [
 {
 "date": "2026-11-27",
 "course": "dp1",
@@ -1299,7 +1299,7 @@
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-11-27-classical-writing-formative.html"
 }
 ],
-"aoi-2": [
+"area-of-inquiry": [
 {
 "date": "2026-11-27",
 "course": "dp1",
@@ -1327,14 +1327,6 @@
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
 }
 ],
-"dominant": [
-{
-"date": "2026-12-04",
-"course": "dp1",
-"title": "Formative 2: The First 16 Bars",
-"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-04-classical-composing-formative.html"
-}
-],
 "alberti-bass": [
 {
 "date": "2026-12-04",
@@ -1347,6 +1339,14 @@
 "course": "dp1",
 "title": "Classical Style: Exploration and Creating Exercise",
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
+}
+],
+"dominant": [
+{
+"date": "2026-12-04",
+"course": "dp1",
+"title": "Formative 2: The First 16 Bars",
+"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-04-classical-composing-formative.html"
 }
 ],
 "minuet": [

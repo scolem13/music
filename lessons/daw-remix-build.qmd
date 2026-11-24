@@ -1,0 +1,92 @@
+---
+title: "Remix Lab 5: Build an Arrangement"
+toc: true
+toc-depth: 2
+description: "Add and remove layers to make an intro, a build-up, a drop and a breakdown, and notice what each one does to the listener."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: [band, interactive]
+---
+
+**Guiding question: how can a track that is one loop all the way through still tell a story?**
+
+::: {.callout-note}
+**Unverified.** The section names (intro, breakdown, build-up, drop) are the usual DJ and producer words, used here as
+commonly taught; they are not checked against a source. The 32-bar project below is this site's own sketch.
+:::
+
+## Predict first
+
+Imagine eight bars of drums only, then bass joins, then everything drops out except the tune, then everything comes back at once.
+
+1. At which of those moments do you expect people to cheer? Why there?
+2. What do you think the **tension** is made of: something being added, removed, or going up in pitch?
+
+## Try it: take the arrangement apart
+
+The project is 32 bars of a house groove under a well-known hook (Beethoven's "Ode to Joy", which is in the public domain). It is built
+from **clips** you can see in the timeline: each one is eight bars.
+
+1. Listen to bars 1-8. What is there, and what is missing?
+2. Bars 9-16: what has been **added**? Which layer arrives first?
+3. Bars 17-24: what has been **taken away**? What is left, and which instrument carries the hook?
+4. Bars 25-32: what returned, and what has changed about the hook (hint: its register)?
+5. Draw a picture of the layers as a **block diagram** (time across, layers down) in your notebook. This is an *arrangement map*.
+
+<div class="mdaw" data-id="remix-build" data-preset="remixflip" data-show="transport tracks editor mixer"></div>
+
+## Test your ideas
+
+Change one thing and predict first:
+
+- **Mute the kick** in bars 17-24 only (it already is). Put it back: does the **return** feel bigger or smaller?
+- Add a **build-up** in bars 15-16: a snare roll that gets louder (draw the velocities rising), or a hat on every step. Does the tension rise?
+- Cut everything for **one beat** before the drop: a gap of silence. Is the drop louder when you do?
+- Move a clip. Can the breakdown come earlier, say at bar 13? What do the 8 / 16 bar phrases tell you about where to cut?
+
+## Explain what you noticed
+
+Fill the blanks in your own words:
+
+- A **breakdown** is when ... and it makes the listener feel ...
+- A **build-up** uses ... to ... until ...
+- A **drop** is the moment when ... , so the producer must have ... before it.
+- The rule "change something every ... bars" is useful because ...
+
+## Make your own
+
+Make a **64-bar arrangement** of your groove from Lessons 2 and 4 (use Duplicate on the clips): intro (16), build (8), drop (16), breakdown (8), build (8), drop (8). Mark the sections with clip names.
+Then ask a classmate to describe what they feel at each point **without** telling them your plan. Does it match?
+
+## Reflect
+
+- Which was more effective for you: **adding** layers or **removing** them? Why?
+- When might a drop *not* feel like a surprise? What would a producer do to avoid that?
+
+## In other DAWs
+
+<div class="daw-map">
+
+| | BandLab | Ableton Live | Logic Pro |
+|---|---|---|---|
+| Sections | Region names / colours | Locators | **Arrangement track** |
+| Duplicate / extend | **Alt/Option-drag** a region | **Cmd/Ctrl+D** | Edit → Repeat; Repeat Regions |
+| Volume rise (a build) | Volume automation | Automation envelope on the track | Automation curve |
+
+</div>
+
+*Menu names from memory, **not re-checked**: look each up in the manual.*
+
+## Next
+
+- [Remix Lab 6: Make a Remix, Step by Step](daw-remix-steps.qmd)
+- [Remix Lab 7: Flip a Tune](daw-remix-flip.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}

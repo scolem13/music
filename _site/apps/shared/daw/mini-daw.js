@@ -5,7 +5,7 @@
 //
 //   <div class="mdaw" data-id="daw-1" data-preset="beat" data-show="transport tracks editor mixer band files" data-bars="8"></div>
 //     data-id      the localStorage key the project is kept under ("mdaw:<id>"); Reset goes back to the preset
-//     data-preset  the project it starts with: empty | beat | song | keys | badmix | record | band (see PRESETS)
+//     data-preset  the project it starts with: empty | beat | song | keys | badmix | record | band | house | techno | remixflip (see PRESETS)
 //     data-show    which parts are shown: transport, tracks, editor, mixer, band, files, record (default all)
 // An "Audio (microphone)" track records sound (AudioCheck first, then the mic with no echo cancellation, so bleed is kept) into
 // audio clips; the recordings live in IndexedDB, the project only names them (see "recorded audio" below).
@@ -224,6 +224,20 @@
     var n = []; roots.forEach(function (r, i) { [0, 1.5, 2, 3].forEach(function (t, k) { n.push({ t: i * 4 + t, d: k === 1 ? 0.5 : 1, m: r, v: 0.75 }); }); });
     return { start: start, len: roots.length * 4, notes: n };
   }
+  // Remix Lab helpers: a 16-step pattern repeated for `bars` bars from bar `bar` (one drum piece); a clip is placed at start = bar * 4 beats
+  function padClip(bar, bars, pat, piece, v) { var n = []; for (var b = 0; b < bars; b++) steps(pat, piece, v).forEach(function (e) { e.t += b * 4; n.push(e); }); return { start: bar * 4, len: bars * 4, notes: n }; }
+  function houseBass(bar, bars, roots) {       // syncopated: sixteenths 0 3 6 10 14, the last an octave up; the root changes every two bars
+    roots = roots || [33, 29, 36, 31]; var n = []; for (var b = 0; b < bars; b++) { var r = roots[((b / 2) | 0) % roots.length];
+      [[0, 0], [3, 0], [6, 0], [10, 0], [14, 12]].forEach(function (x) { n.push({ t: b * 4 + x[0] / 4, d: 0.5, m: r + x[1], v: x[0] === 0 ? 0.9 : 0.7 }); }); }
+    return { start: bar * 4, len: bars * 4, notes: n };
+  }
+  function rollBass(bar, bars) {               // one note (A1), sixteenths, the off-beat ones louder
+    var n = []; for (var b = 0; b < bars; b++) for (var i = 0; i < 16; i++) n.push({ t: b * 4 + i / 4, d: 0.25, m: 33, v: i % 4 === 2 ? 0.9 : 0.55 }); return { start: bar * 4, len: bars * 4, notes: n };
+  }
+  function stabClip(bar, chords, per) {         // short chord on each off-beat eighth, a chord every `per` bars
+    var n = []; for (var b = 0; b < chords.length * per; b++) chords[(b / per) | 0].forEach(function (m) { [0.5, 1.5, 2.5, 3.5].forEach(function (t) { n.push({ t: b * 4 + t, d: 0.25, m: m, v: 0.6 }); }); });
+    return { start: bar * 4, len: chords.length * per * 4, notes: n };
+  }
   var C = [60, 64, 67], AM = [57, 60, 64], F = [53, 57, 60], G = [55, 59, 62];
   function track(name, inst, clips, extra) { return Object.assign({ name: name, inst: inst, vol: 0, pan: 0, mute: false, solo: false, clips: clips || [] }, extra || {}); }
   var PRESETS = {
@@ -268,6 +282,45 @@
       seq.forEach(function (x) { notes.push({ t: t, d: x[1], m: x[0], v: 0.6 }); t += x[1]; });
       return { tempo: 100, bars: 4, loop: { on: false, from: 0, to: 4 }, click: false, scenes: [], tracks: [track('Melody', 'piano', [{ start: 0, len: 16, notes: notes }])] };
     },
+    // Remix Lab (lessons on house / techno / flipping a tune): one DAW track a layer so each can be muted in the mixer. Written by us, tempi and
+    // patterns as commonly taught for the genres (124 bpm house, 130 bpm techno; not from a source, unverified). 16-char patterns: x = hit, X = accent, g = ghost.
+    house: function () {
+      var A = [57, 60, 64], F2 = [57, 60, 65], Cc = [55, 60, 64], Gc = [55, 59, 62], ch = [A, F2, Cc, Gc];                    // Am F C G, two bars each
+      return { tempo: 124, bars: 8, loop: { on: true, from: 0, to: 8 }, click: false, tracks: [
+        track('Kick', 'kit', [padClip(0, 8, 'x...x...x...x...', 'kick')]),
+        track('Clap', 'kit', [padClip(0, 8, '....x.......x...', 'clap')], { vol: -3 }),
+        track('Closed hat', 'kit', [padClip(0, 8, 'g.xgg.xgg.xgg.xg', 'hatClosed')], { vol: -8 }),
+        track('Open hat', 'kit', [padClip(0, 8, '..x...x...x...x.', 'hatOpen')], { vol: -8 }),
+        track('Bass', 'ebass', [houseBass(0, 8)], { vol: -2 }),
+        track('Chord stabs', 'hammond', [stabClip(0, ch, 2)], { vol: -8 })] };
+    },
+    techno: function () {
+      return { tempo: 130, bars: 8, loop: { on: true, from: 0, to: 8 }, click: false, tracks: [
+        track('Kick', 'kit', [padClip(0, 8, 'x...x...x...x...', 'kick')]),
+        track('Off-beat hat', 'kit', [padClip(0, 8, '..x...x...x...x.', 'hatOpen')], { vol: -7 }),
+        track('Shaker', 'kit', [padClip(0, 8, 'xgxgxgxgxgxgxgxg', 'tamb')], { vol: -12 }),
+        track('Ride', 'kit', [padClip(0, 8, 'x.x.x.x.x.x.x.x.', 'ride')], { vol: -14 }),
+        track('Rolling bass', 'ebass', [rollBass(0, 8)], { vol: -3 }),
+        track('Rim', 'kit', [padClip(0, 8, '.......g...x....', 'rim')], { vol: -8 }),
+        track('Cowbell', 'kit', [padClip(6, 2, '..............x.', 'cowbell')], { vol: -10 })] };
+    },
+    // the "Ode to Joy" hook (Beethoven, Symphony No. 9; public domain) over a house groove in C, 32 bars: bars 1-8 drums only, 9-16 groove + bass + stabs,
+    // 17-24 breakdown (hook and a soft pad), 25-32 drop (everything, hook an octave up). Each section is its own clip so students can move or mute it.
+    remixflip: function () {
+      var Cm = [60, 64, 67], Am2 = [57, 60, 64], Fm = [57, 60, 65], Gm = [55, 59, 62], ch = [Cm, Am2, Fm, Gm];
+      var p1 = [[64, 1], [64, 1], [65, 1], [67, 1], [67, 1], [65, 1], [64, 1], [62, 1], [60, 1], [60, 1], [62, 1], [64, 1], [64, 1.5], [62, 0.5], [62, 2]],
+        p2 = [[64, 1], [64, 1], [65, 1], [67, 1], [67, 1], [65, 1], [64, 1], [62, 1], [60, 1], [60, 1], [62, 1], [64, 1], [62, 1.5], [60, 0.5], [60, 2]];
+      function hook(start, up) { var t = 0, n = []; p1.concat(p2).forEach(function (x) { n.push({ t: t, d: x[1], m: x[0] + up, v: 0.7 }); t += x[1]; }); return { start: start * 4, len: 32, notes: n }; }
+      function bass4(start, bars) { return houseBass(start, bars, [36, 33, 29, 31]); }     // C Am F G
+      return { tempo: 124, bars: 32, loop: { on: false, from: 0, to: 8 }, click: false, tracks: [
+        track('Kick', 'kit', [padClip(0, 8, 'x...x...x...x...', 'kick'), padClip(8, 8, 'x...x...x...x...', 'kick'), padClip(24, 8, 'x...x...x...x...', 'kick')]),
+        track('Clap', 'kit', [padClip(8, 8, '....x.......x...', 'clap'), padClip(24, 8, '....x.......x...', 'clap')], { vol: -3 }),
+        track('Hats', 'kit', [padClip(0, 8, '..x...x...x...x.', 'hatClosed'), padClip(8, 8, 'g.xgg.xgg.xgg.xg', 'hatClosed'), padClip(24, 8, 'g.xgg.xgg.xgg.xg', 'hatClosed')], { vol: -8 }),
+        track('Bass', 'ebass', [bass4(8, 8), bass4(24, 8)], { vol: -2 }),
+        track('Chord stabs', 'hammond', [stabClip(8, ch, 2), stabClip(24, ch, 2)], { vol: -8 }),
+        track('Pad', 'rhodes', [{ start: 64, len: 32, notes: ch.reduce(function (a, c, i) { c.forEach(function (m) { a.push({ t: i * 8, d: 8, m: m, v: 0.45 }); }); return a; }, []) }], { vol: -8 }),
+        track('Hook', 'piano', [hook(16, 0), hook(24, 12)], { vol: -3 })] };
+    },
     band: function () { return { tempo: 100, bars: 16, loop: { on: false, from: 0, to: 4 }, click: false, tracks: [] }; }
   };
 
@@ -285,8 +338,23 @@
     meter.fftSize = 1024; auto.connect(pan); pan.connect(fader); fader.connect(meter); meter.connect(dest);     // (auto: the volume automation's level; 1 when the track has none)
     var strip = { input: input, auto: auto, pan: pan, fader: fader, meter: meter }, TS = global.MiniDaw && global.MiniDaw.TrackSound;
     if (buses && TS && TS.addInserts) TS.addInserts(ctx, strip, buses); else input.connect(auto);
+    // the drum kit's sub-mix (as the Backing Track's: BandPlayer.KIT_GROUPS): each group of pieces through a gain + meter into the strip
+    strip.kit = {}; input._kitIn = function (piece) { var g = kitGroupOf(piece); if (!g) return input;
+      var k = strip.kit[g.id]; if (!k) { k = strip.kit[g.id] = { gain: ctx.createGain(), meter: ctx.createAnalyser() }; k.meter.fftSize = 1024; k.gain.connect(k.meter); k.gain.connect(input);
+        if (strip.applyKit) strip.applyKit(); }
+      return k.gain; };
     return strip;
   }
+  var KIT_GROUPS_DEFAULT = [{ id: 'kick', label: 'Kick', pieces: ['kick'] }, { id: 'snare', label: 'Snare', pieces: ['snare', 'rim', 'clap'] },
+    { id: 'hat', label: 'Hi-hat', pieces: ['hatClosed', 'hatFoot', 'hatOpen', 'tamb'] }, { id: 'ride', label: 'Ride', pieces: ['ride', 'rideBell'] },
+    { id: 'crash', label: 'Crash', pieces: ['crash'] }, { id: 'toms', label: 'Toms', pieces: ['tomHi', 'tomMid', 'tomLo'] }];
+  function kitGroups() { return (global.BandPlayer && global.BandPlayer.KIT_GROUPS) || KIT_GROUPS_DEFAULT; }
+  function kitGroupOf(piece) { var gs = kitGroups(); for (var i = 0; i < gs.length; i++) if (gs[i].pieces.indexOf(piece) >= 0) return gs[i]; return null; }
+  // the level of one kit group on a track (tr.kitMix[id] = { vol dB, mute, solo }; solo acts among the kit's own groups)
+  function kitLevel(tr, id) { var km = tr.kitMix || {}, c = km[id] || {}, anySolo = Object.keys(km).some(function (k) { return km[k] && km[k].solo; });
+    return c.mute || (anySolo && !c.solo) ? 0 : dbToGain(c.vol || 0); }
+  function applyKitStrip(strip, tr) { if (!strip || !strip.kit) return; var t = strip.input.context.currentTime;
+    Object.keys(strip.kit).forEach(function (id) { strip.kit[id].gain.gain.setTargetAtTime(kitLevel(tr, id), t, 0.01); }); }
   function levelOf(an, buf) { an.getFloatTimeDomainData(buf); var p = 0; for (var i = 0; i < buf.length; i++) { var a = Math.abs(buf[i]); if (a > p) p = a; } return p; }
   function click(ctx, when, accent, dest) {
     var o = ctx.createOscillator(), g = ctx.createGain(); o.frequency.value = accent ? 1760 : 1175; o.type = 'square';
@@ -295,7 +363,7 @@
   }
   function playNote(b, tr, n, when, secs, dest) {
     if (instOf(tr.inst).synth) return global.MiniDaw.TrackSound && global.MiniDaw.TrackSound.playSynth ? global.MiniDaw.TrackSound.playSynth(tr, n, when, secs, dest) : null;
-    if (isDrum(tr)) return b.play(tr.inst, { piece: n.m, vel: n.v }, when, dest);
+    if (isDrum(tr)) return b.play(tr.inst, { piece: n.m, vel: n.v }, when, dest && dest._kitIn && tr.inst === 'kit' ? dest._kitIn(n.m) : dest);
     return b.play(tr.inst, { midi: n.m, vel: n.v, dur: secs }, when, dest);
   }
 
@@ -908,17 +976,17 @@
     this.clipLen.value = Meter.barsOfLen(this.p, c.start, c.len);
     var drum = isDrum(tr), G = this.grid, cols = Math.round(c.len / G), cw = Math.max(3, Math.round((G >= 1 ? 40 : G >= 0.5 ? 26 : 20) * this.zoom.rx)), rh = Math.max(drum ? 8 : 5, Math.round((drum ? 20 : 13) * this.zoom.ry));
     this.edTitle.textContent = (drum ? 'Step sequencer' : 'Piano roll') + ': ' + tr.name + (this.sel.slot >= 0 ? ', scene ' + (this.sel.slot + 1) + ' (' + ((this.p.scenes[this.sel.slot] || {}).name || '') + '), loops' : ', bar ' + (Meter.barAt(this.p, c.start).bar + 1) + ' (' + Meter.str(Meter.barAt(this.p, c.start).ts) + ')');
-    this.edHint.textContent = drum ? 'Click a square to put a hit there or take it away. Shift+click makes it an accent, Alt+click a ghost note. Brightness is velocity.'
+    this.edHint.textContent = drum ? 'Click a square to put a hit there or take it away. Shift+click makes it an accent, Alt+click a ghost note. Brightness is velocity. The bars under the grid are velocities: drag them (selected hits only if any are selected; else the hits in that column, only in the row you last clicked if there is one).'
       : 'Click an empty spot to write a note one grid step long; drag a note to move it, drag its right end to make it longer; Shift+click selects several; Delete removes; double-click a note to delete it. The bars under the notes are velocities: drag them.';
     if (this.vim && this.vim.on) this.vimDecor();
     var rows = drum ? rowsOf(tr).map(function (r) { return { key: r[0], label: r[1] }; }) : (function () {
       var ms = c.notes.map(function (n) { return n.m; }), base = /bass/.test(tr.inst) ? [28, 60] : [48, 84];
       var lo = Math.min.apply(null, ms.concat([base[0]])), hi = Math.max.apply(null, ms.concat([base[1]])), out = [];
       for (var m = hi; m >= lo; m--) out.push({ key: m, label: noteName(m), black: [1, 3, 6, 8, 10].indexOf(((m % 12) + 12) % 12) >= 0 }); return out; })();
-    var wrap = el('div', 'mdaw-rollwrap'), labels = el('div', 'mdaw-keys'), cv = el('canvas', 'mdaw-cv'), H = rows.length * rh, Wd = cols * cw, VH = drum ? 0 : 50;
+    var wrap = el('div', 'mdaw-rollwrap'), labels = el('div', 'mdaw-keys'), cv = el('canvas', 'mdaw-cv'), H = rows.length * rh, Wd = cols * cw, VH = 50;
     rows.forEach(function (r) { var k = el('div', 'mdaw-key' + (r.black ? ' mdaw-black' : ''), r.label); k.style.height = rh + 'px';
       k.onclick = function () { self.audition(tr, r.key); }; labels.appendChild(k); });
-    if (!drum) { var vk = el('div', 'mdaw-key mdaw-vlab', 'Velocity'); vk.style.height = VH + 'px'; labels.appendChild(vk); }
+    { var vk = el('div', 'mdaw-key mdaw-vlab', 'Velocity'); vk.style.height = VH + 'px'; labels.appendChild(vk); }
     var dpr = Math.min(global.devicePixelRatio || 1, 30000 / Math.max(1, Wd)); cv.width = Wd * dpr; cv.height = (H + VH) * dpr; cv.style.width = Wd + 'px'; cv.style.height = (H + VH) + 'px';
     var scroller = el('div', 'mdaw-rollscroll'); scroller.appendChild(cv); wrap.appendChild(labels); wrap.appendChild(scroller); roll.appendChild(wrap);
     var x = cv.getContext('2d'); x.scale(dpr, dpr);
@@ -933,18 +1001,29 @@
       x.globalAlpha = 0.25; x.fillStyle = line; rows.forEach(function (r, i) { x.fillRect(0, i * rh, Wd, 1); }); x.globalAlpha = 1;
       c.notes.forEach(function (n, i) { var ri = rowOf(n); if (ri < 0 || n.t >= c.len) return; var sel = self.sel.notes.indexOf(i) >= 0;
         x.fillStyle = sel ? acc : COLORS[self.sel.track % COLORS.length]; x.globalAlpha = 0.35 + 0.65 * n.v;
-        if (drum) x.fillRect(n.t * bpx + 2, ri * rh + 2, cw - 4, rh - 4);
+        if (drum) { var gh = n.v <= 0.4, ac = n.v >= 0.9, ins = gh ? Math.round(rh * 0.28) : 2;   // ghost = small square, accent = full cell with a ring
+          x.fillRect(n.t * bpx + ins, ri * rh + ins, Math.max(2, cw - 2 * ins), Math.max(2, rh - 2 * ins));
+          if (ac) { x.globalAlpha = 1; x.strokeStyle = ink; x.lineWidth = 1.5; x.strokeRect(n.t * bpx + 2.5, ri * rh + 2.5, cw - 5, rh - 5); } }
         else { x.fillRect(n.t * bpx + 1, ri * rh + 1, Math.max(3, Math.min(n.d, c.len - n.t) * bpx - 2), rh - 2); x.globalAlpha = 1; x.fillStyle = sel ? acc : ink; x.fillRect(n.t * bpx + 1, H + VH - n.v * (VH - 6), 3, n.v * (VH - 6)); }
         x.globalAlpha = 1; });
-      if (!drum) { x.fillStyle = line; x.fillRect(0, H, Wd, 1); }
+      x.fillStyle = line; x.fillRect(0, H, Wd, 1);
+      if (drum) { var lr = self.drumRow, ord = c.notes.map(function (n, i) { return i; }).filter(function (i) { return c.notes[i].t < c.len; }).sort(function (a, b) { return (c.notes[a].m === lr) - (c.notes[b].m === lr); });
+        ord.forEach(function (i) { var n = c.notes[i], sel = self.sel.notes.indexOf(i) >= 0; if (rowOf(n) < 0) return; x.globalAlpha = (lr == null || n.m === lr || sel) ? 1 : 0.4; x.fillStyle = sel ? acc : ink;
+          x.fillRect(n.t * bpx + 2, H + VH - n.v * (VH - 6), Math.max(3, cw - 4), n.v * (VH - 6)); }); x.globalAlpha = 1; }
     }
     draw(); this.redrawRoll = draw; this.rollGeom = { wrap: wrap, bpx: bpx, rh: rh, rowOf: rowOf };
+    // the playhead in the roll / step grid too (moved by setPos with the arrangement's; hidden outside an arrangement clip)
+    scroller.style.position = 'relative'; var rh2 = el('div', 'mdaw-head'); rh2.style.height = (H + VH) + 'px'; rh2.style.bottom = 'auto'; scroller.appendChild(rh2);
+    this.rollHead = { el: rh2, start: c.start, len: c.len, bpx: bpx, session: this.sel.slot >= 0 }; this.placeRollHead();
     cv.addEventListener('contextmenu', function (e) { e.preventDefault(); });
     cv.addEventListener('pointerdown', function (e) {
       var r = cv.getBoundingClientRect(), px = e.clientX - r.left, py = e.clientY - r.top, before = JSON.stringify(self.p), changed = false;
       self.node.focus({ preventScroll: true });
-      if (!drum && py > H) {    // velocity lane
+      if (py > H) {    // velocity lane (drums: selected hits, else the column's, in the last-clicked row if any)
         function setV(ev) { var qx = ev.clientX - r.left, v = clamp((H + VH - (ev.clientY - r.top)) / (VH - 6), 0.05, 1), hit = false;
+          if (drum) { var anySel = self.sel.notes.some(function (i) { return c.notes[i]; }), lrOk = self.drumRow != null && rows.some(function (q) { return q.key === self.drumRow; });
+            c.notes.forEach(function (n, i) { if (Math.abs(n.t * bpx + cw / 2 - qx) >= cw / 2 || n.t >= c.len) return;
+              if (anySel ? self.sel.notes.indexOf(i) < 0 : (lrOk && n.m !== self.drumRow)) return; n.v = v; changed = true; }); draw(); return; }
           c.notes.forEach(function (n, i) { if (Math.abs(n.t * bpx - qx) < 5 && (!self.sel.notes.length || self.sel.notes.indexOf(i) >= 0 || !hit)) { n.v = v; hit = changed = true; } }); draw(); }
         setV(e); var upV = function () { document.removeEventListener('pointermove', setV); document.removeEventListener('pointerup', upV); if (changed) { self.undo.push(before); self.redo = []; self.save(); self.renderTracks(); } };
         document.addEventListener('pointermove', setV); document.addEventListener('pointerup', upV); return;
@@ -952,7 +1031,7 @@
       var ri = Math.floor(py / rh), row = rows[ri]; if (!row) return; var t = px / bpx;
       var hitI = -1; c.notes.forEach(function (n, i) { if (n.m === row.key && n.t <= t + (drum ? G / 2 : 0) && t < n.t + (drum ? G / 2 + 0.01 : Math.max(n.d, G * 0.5))) hitI = i; });
       if (drum) {
-        var cell = Math.floor(t / G) * G;
+        var cell = Math.floor(t / G) * G; self.drumRow = row.key;
         if (hitI < 0) { hitI = -1; c.notes.forEach(function (n, i) { if (n.m === row.key && Math.abs(n.t - cell) < G / 2) hitI = i; }); }
         self.undo.push(before); self.redo = [];
         if (e.shiftKey || e.altKey) { var v = e.shiftKey ? 1 : 0.35; if (hitI >= 0) c.notes[hitI].v = v; else c.notes.push({ t: cell, d: G, m: row.key, v: v }); }
@@ -982,12 +1061,16 @@
 
   Daw.prototype.renderMixer = function () {
     var self = this, mx = this.mx; mx.innerHTML = ''; this.meterEls = [];
-    mx.appendChild(el('div', 'mdaw-sub', 'Mixer'));
     var row = el('div', 'mdaw-strips'); mx.appendChild(row);
-    function strip(name, obj, ti, color) {
-      var s = el('div', 'mdaw-strip'); if (color) s.style.borderTopColor = color;
-      s.appendChild(el('div', 'mdaw-sname', name + (ti >= 0 && autoPts(obj) ? ' (A)' : '')));
-      if (ti >= 0) { var pl = el('label', 'mdaw-pan'); pl.appendChild(el('span', null, 'Pan'));
+    this.kitOpen = this.kitOpen || {};
+    function strip(name, obj, ti, color, kit) {
+      var s = el('div', 'mdaw-strip' + (kit ? ' mdaw-kitstrip' : '')); if (color) s.style.borderTopColor = color;
+      if (kit) { obj = kit.obj; ti = kit.ti; }
+      if (!kit && ti >= 0 && obj.inst === 'kit') { var kb = btn(name + (self.kitOpen[ti] ? ' ▴' : ' ▾'), (self.kitOpen[ti] ? 'Hide' : 'Show') + ' the drum kit mix: a fader for each group of pieces', 'mdaw-kitbtn');
+        kb.setAttribute('aria-expanded', String(!!self.kitOpen[ti])); kb.onclick = function () { self.kitOpen[ti] = !self.kitOpen[ti]; self.renderMixer(); }; var kw = el('div', 'mdaw-sname'); kw.appendChild(kb); s.appendChild(kw); }
+      else s.appendChild(el('div', 'mdaw-sname', name + (!kit && ti >= 0 && autoPts(obj) ? ' (A)' : '')));
+      if (kit) { var tr0 = kit.tr; obj = tr0.kitMix = tr0.kitMix || {}; obj = obj[kit.id] = obj[kit.id] || { vol: 0 }; }
+      if (ti >= 0 && !kit) { var pl = el('label', 'mdaw-pan'); pl.appendChild(el('span', null, 'Pan'));
         var pan = el('input'); pan.type = 'range'; pan.min = -100; pan.max = 100; pan.value = Math.round(obj.pan * 100); pan.setAttribute('aria-label', 'Pan ' + name);
         var po = el('output', 'mdaw-num', panTxt(obj.pan)); pan.oninput = function () { obj.pan = +pan.value / 100; po.textContent = panTxt(obj.pan); self.applyMix(); };
         pan.onchange = function () { self.undo.push(JSON.stringify(self.p)); self.save(); }; pan.ondblclick = function () { pan.value = 0; pan.oninput(); pan.onchange(); };
@@ -995,19 +1078,21 @@
       else { var gp = el('div', 'mdaw-pan mdaw-ghost'); gp.appendChild(el('span', null, 'Pan')); var gi = el('input'); gi.type = 'range'; gp.appendChild(gi); gp.appendChild(el('output', 'mdaw-num', 'C')); s.appendChild(gp); }   // the master has no pan: an unseen one keeps its fader level with the others
       var mid = el('div', 'mdaw-fadwrap'), fad = el('input', 'mdaw-fader'); fad.type = 'range'; fad.min = -60; fad.max = 6; fad.step = 0.5; fad.value = obj.vol; fad.setAttribute('aria-label', 'Volume ' + name);
       var meter = el('div', 'mdaw-meter'), fill = el('div', 'mdaw-mfill'), peak = el('div', 'mdaw-mpeak'); meter.appendChild(fill); meter.appendChild(peak); mid.appendChild(fad); mid.appendChild(meter); s.appendChild(mid);
-      if (ti >= 0 && autoPts(obj)) { fad.disabled = true; fad.title = 'This track\'s level is volume automation: edit the points, or delete them to use the fader.'; }
+      if (!kit && ti >= 0 && autoPts(obj)) { fad.disabled = true; fad.title = 'This track\'s level is volume automation: edit the points, or delete them to use the fader.'; }
       var fo = el('output', 'mdaw-num', dbTxt(obj.vol)); s.appendChild(fo);
       fad.oninput = function () { obj.vol = +fad.value; fo.textContent = dbTxt(obj.vol); self.applyMix(); };
+      if (kit) fad.title = 'Level of the ' + name.toLowerCase() + ' within the kit; the track fader then sets the whole kit';
       fad.onchange = function () { self.undo.push(JSON.stringify(self.p)); self.save(); }; fad.ondblclick = function () { fad.value = 0; fad.oninput(); fad.onchange(); };
       if (ti >= 0) { var ms = el('div', 'mdaw-thline'), mb = btn('M', 'Mute ' + name, 'mdaw-ms' + (obj.mute ? ' mdaw-mute' : '')), sb = btn('S', 'Solo ' + name, 'mdaw-ms' + (obj.solo ? ' mdaw-solo' : ''));
         mb.onclick = function () { self.change(function () { obj.mute = !obj.mute; }); }; sb.onclick = function () { self.change(function () { obj.solo = !obj.solo; }); };
         ms.appendChild(mb); ms.appendChild(sb); s.appendChild(ms); }
       else { var gm = el('div', 'mdaw-thline mdaw-ghost'); gm.appendChild(btn('M', '', 'mdaw-ms')); gm.appendChild(btn('S', '', 'mdaw-ms')); s.appendChild(gm); }
       var clipLed = el('div', 'mdaw-clipled', 'CLIP'); clipLed.title = 'Lit when the level reached 0 dBFS. Click to reset.'; clipLed.onclick = function () { clipLed.classList.remove('mdaw-over'); }; s.appendChild(clipLed);
-      self.meterEls.push({ ti: ti, fill: fill, peak: peak, led: clipLed, hold: 0 });
+      self.meterEls.push({ ti: ti, kit: kit ? kit.id : null, fill: fill, peak: peak, led: clipLed, hold: 0 });
       row.appendChild(s);
     }
-    this.p.tracks.forEach(function (tr, ti) { strip(tr.name, tr, ti, COLORS[ti % COLORS.length]); });
+    this.p.tracks.forEach(function (tr, ti) { strip(tr.name, tr, ti, COLORS[ti % COLORS.length]);
+      if (tr.inst === 'kit' && self.kitOpen[ti]) kitGroups().forEach(function (g) { strip(g.label, null, ti, COLORS[ti % COLORS.length], { tr: tr, ti: ti, id: g.id }); }); });
     if (this.p.master == null) this.p.master = { vol: 0 };
     strip('Master', this.p.master, -1, null);
     mx.appendChild(el('p', 'mdaw-hint', 'Faders are in dB: 0 is as the instrument comes, −6 about half as loud to the ear… roughly. Double-click a fader or pan to put it back. The meters show the peak level; the master must stay out of the red CLIP.'));
@@ -1031,7 +1116,7 @@
       var pts = autoPts(tr);       // automation replaces the fader: the fader stays at 1 and the automation node carries the level (the level at the playhead when stopped)
       s.fader.gain.setTargetAtTime(on ? (pts ? 1 : dbToGain(tr.vol)) : 0, now, 0.01);
       if (!self.playing) s.auto.gain.setTargetAtTime(pts ? dbToGain(autoAt(pts, self.pos)) : 1, now, 0.01);
-      if (s.pan.pan) s.pan.pan.setTargetAtTime(tr.pan, now, 0.01); });
+      if (s.pan.pan) s.pan.pan.setTargetAtTime(tr.pan, now, 0.01); s.applyKit = function () { applyKitStrip(s, self.p.tracks[i]); }; s.applyKit(); });
     this.master.gain.setTargetAtTime(dbToGain((this.p.master || { vol: 0 }).vol), now, 0.01);
     if (this.applyTrackSound) this.applyTrackSound();
   };
@@ -1098,8 +1183,14 @@
     var b = this.beatAt(AC.currentTime); if (b >= this.anchors[0].b || this.anchors.length > 1) this.setPos(Math.max(0, b), true);
     requestAnimationFrame(function () { self.frame(); });
   };
+  Daw.prototype.placeRollHead = function () {
+    var h = this.rollHead; if (!h || !h.el.isConnected) return;
+    var t = h.session ? null : this.pos - h.start, show = t != null && t >= 0 && t <= h.len;
+    h.el.style.display = show ? '' : 'none'; if (show) h.el.style.left = (t * h.bpx) + 'px';
+  };
   Daw.prototype.setPos = function (b, live) {
     this.pos = b; var W = this.beatW(); if (this.head) this.head.style.left = (196 + b * W) + 'px';
+    this.placeRollHead();
     var w = Meter.where(this.p, b); this.posEl.textContent = w.bar + '.' + w.beat + '.' + w.sub;
   };
   Daw.prototype.stop = function (atEnd) {
@@ -1131,7 +1222,7 @@
     (function tick() { requestAnimationFrame(tick);
       if (self.mic && self.inFill) { var ip = levelOf(self.mic.an, self.buf), idb = ip > 0 ? 20 * Math.log10(ip) : -90; self.inFill.style.width = clamp((idb + 60) / 60, 0, 1) * 100 + '%'; self.inFill.classList.toggle('mdaw-hot', idb > -6); }
       if (!self.meterEls) return;
-      self.meterEls.forEach(function (m) { var an = m.ti < 0 ? self.masterMeter : self.strips[m.ti] && self.strips[m.ti].meter; if (!an) return;
+      self.meterEls.forEach(function (m) { var st = self.strips[m.ti], an = m.ti < 0 ? self.masterMeter : m.kit ? st && st.kit && st.kit[m.kit] && st.kit[m.kit].meter : st && st.meter; if (!an) return;
         var pk = levelOf(an, self.buf), db = pk > 0 ? 20 * Math.log10(pk) : -90, h = clamp((db + 60) / 66, 0, 1) * 100;
         m.fill.style.height = h + '%'; m.hold = Math.max(m.hold * 0.97, h); m.peak.style.bottom = m.hold + '%';
         m.fill.classList.toggle('mdaw-hot', db > -6); if (pk >= 0.999) m.led.classList.add('mdaw-over'); });
@@ -1383,7 +1474,7 @@
     this.say('Bouncing…');
     master.gain.value = dbToGain((p.master || { vol: 0 }).vol);
     b2.load(Object.keys(want)).then(function () {
-      p.tracks.forEach(function (tr) { var s = makeStrip(oc, master, buses); var ap = autoPts(tr); s.fader.gain.value = !tr.mute && (!anySolo || tr.solo) ? (ap ? 1 : dbToGain(tr.vol)) : 0; if (s.pan.pan) s.pan.pan.value = tr.pan;
+      p.tracks.forEach(function (tr) { var s = makeStrip(oc, master, buses); s.applyKit = function () { Object.keys(s.kit).forEach(function (id) { s.kit[id].gain.gain.value = kitLevel(tr, id); }); }; var ap = autoPts(tr); s.fader.gain.value = !tr.mute && (!anySolo || tr.solo) ? (ap ? 1 : dbToGain(tr.vol)) : 0; if (s.pan.pan) s.pan.pan.value = tr.pan;
         if (ap) { s.auto.gain.setValueAtTime(dbToGain(autoAt(ap, 0)), 0); for (var ab = 0.0625; ab <= Meter.total(p) + 0.0625; ab += 0.0625) s.auto.gain.linearRampToValueAtTime(dbToGain(autoAt(ap, ab)), 0.05 + ab * self.secPerBeat()); }
         var tsb = global.MiniDaw.TrackSound && global.MiniDaw.TrackSound.bounceTrack; if (tsb) tsb(self, b2, tr, s, 'pre');
         if (isAudio(tr)) { tr.clips.forEach(function (c) { self.startAudio(oc, c, Math.max(0, c.start), 0.05 + c.start * self.secPerBeat(), s.input, Meter.total(p)); }); return; }
@@ -1429,6 +1520,7 @@
     else if (mod && this.useClip && (k === 'v' || k === 'V')) { e.preventDefault(); this.paste(); }
     else if (mod && this.useZoom && (k === '=' || k === '+' || k === '-' || k === '_')) { e.preventDefault(); var ined = (e.target && e.target.closest && e.target.closest('.mdaw-editor')) || this.zoneEd;
       if (ined) { this.zoomStep('rx', k === '-' || k === '_' ? -1 : 1); if (e.shiftKey) this.zoomStep('ry', k === '-' || k === '_' ? -1 : 1); } else this.zoomStep('arr', k === '-' || k === '_' ? -1 : 1); }
+    else if (mod && (k === 'l' || k === 'L') && global.MiniDaw.Nav && this.clip && this.clip()) { e.preventDefault(); global.MiniDaw.Nav.loopClip(this); }      // Ableton: Cmd/Ctrl+L loops the selection
     else if (mod) return;
     else if (k === 'Delete' || k === 'Backspace') { e.preventDefault(); this.deleteSel(); }
     else if (this.keysOn) return;
@@ -1439,7 +1531,7 @@
     else if ((k === 's' || k === 'S') && !e.altKey && !(this.inSession && this.inSession())) { e.preventDefault(); this.split(); }
     else if (this.arrKey(e)) { e.preventDefault(); }
     else if (k === 'o' || k === 'O') { this.bLoop.click(); }
-    else if (k === 'c' || k === 'C') { this.bClick.click(); }
+    else if (k === 'c' || k === 'C' || k === 'm') { this.bClick.click(); }      // m = BandLab's metronome key (Shift+M stays mute)
     else if ((k === 'r' || k === 'R') && this.show.record) { this.record(); }
     else if (k === 'q' || k === 'Q') { this.quantize(1); }
   };

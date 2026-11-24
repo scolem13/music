@@ -1,0 +1,210 @@
+---
+title: "Remix Lab 6: Make Your Own Remix, Step by Step"
+toc: true
+toc-depth: 2
+description: "A house or techno remix in the site DAW, from the hook to a bounced WAV: questions first, then do, then check."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: [band, interactive]
+---
+
+You are going to make a **house or techno remix** of a tune. Every step starts with a **question**: answer it (in a
+sentence, in your notebook) *before* you touch the DAW. Then **do** it, then **check yourself**. Tick each step off
+below as you go; the ticks stay in this browser.
+
+<div class="mdaw" data-id="remix-steps" data-preset="remixflip" data-show="transport tracks editor mixer band files"></div>
+
+## Your checklist
+
+<div id="remix-steps-list" class="site-panel">
+<label><input type="checkbox" data-k="s1"> 1. Source chosen, hook found</label><br>
+<label><input type="checkbox" data-k="s2"> 2. Tempo and key set</label><br>
+<label><input type="checkbox" data-k="s3"> 3. Drums built</label><br>
+<label><input type="checkbox" data-k="s4"> 4. Bass added</label><br>
+<label><input type="checkbox" data-k="s5"> 5. Chords kept or re-harmonised</label><br>
+<label><input type="checkbox" data-k="s6"> 6. Arranged: intro / build / drop / breakdown / outro</label><br>
+<label><input type="checkbox" data-k="s7"> 7. Mixed</label><br>
+<label><input type="checkbox" data-k="s8"> 8. Bounced to WAV and shared</label><br>
+<label><input type="checkbox" data-k="s9"> 9. Reflection written</label>
+</div>
+
+<script>
+(function () {
+  var KEY = 'remix-steps', box = document.getElementById('remix-steps-list'), st = {};
+  try { st = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { st = {}; }
+  box.querySelectorAll('input[data-k]').forEach(function (c) {
+    c.checked = !!st[c.dataset.k];
+    c.addEventListener('change', function () {
+      st[c.dataset.k] = c.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {}
+    });
+  });
+})();
+</script>
+
+## Step 1: Choose the source and find its hook
+
+**Question first:** which four to eight bars of this tune would someone hum after hearing it once? Why those?
+
+**Do:**
+
+- Start from the DAW above (the `remixflip` preset: the Ode to Joy hook over a house groove), **or** bring your own tune in as MIDI:
+  on the [Backing Track](../tools/backing-track.qmd), **Export MIDI → Open in the DAW**; or press **Open MIDI** here and choose a `.mid` file
+  (Undo brings back what was there).
+- Play it through. Find the hook: the melody track, the bars that repeat. Mute everything else and loop just those bars.
+- Name the hook clip ("hook") so you can find it later.
+
+**Check yourself:** can you play the hook alone and still recognise the tune? If not, you picked the wrong bars.
+
+## Step 2: Set tempo and key
+
+**Question first:** the original is slower (or faster) than a dance track. What happens to the hook's feel if you play it at
+dance tempo? Should every note stay, or should some go?
+
+**Do:** set the tempo. House is often around 120–128 BPM and techno faster, roughly 125–140 (common ranges, *unverified*).
+Choose a key that sits well for the bass (low E to low A roots work in a small mix); move every note track by the same amount.
+
+**Check yourself:** does the hook still sound like itself at the new tempo? If it is too busy, shorten long runs to the main notes.
+
+## Step 3: Build the drums
+
+**Question first:** in house and techno the kick usually plays every beat (*four on the floor*). What fills the gaps between kicks?
+
+**Do:** on the drum track, kick on 1, 2, 3, 4; closed hi-hat on the off-beats (the "and"s); clap or snare on 2 and 4.
+Then add one thing that is yours: an open hat, a shaker on sixteenths, a ghost kick.
+Make an 8-bar drum clip and a busier 8-bar variation.
+
+**Check yourself:** take the melody out. Would someone nod their head to the drums alone for 16 bars? If it is boring, change one
+sound every 8 bars, not every bar.
+
+## Step 4: Add bass
+
+**Question first:** where are the kicks, and should the bass play *with* them or *between* them?
+
+**Do:** write a bass clip on the chord roots. Try off-beat bass (notes on the "and"s, between kicks: a classic house sound) and
+then a rolling sixteenth line (more techno). Keep the one you like. Low and short notes leave room for the kick.
+
+**Check yourself:** solo kick + bass. Do they blur into one low rumble? Shorten the bass notes or move them off the kick.
+
+## Step 5: Keep or re-harmonise the chords
+
+**Question first:** the original chords support the hook. Would a darker or more open set of chords change the mood in a way you want?
+
+**Do:** either keep the chords, or try a loop of minor chords under the hook (for example i–VI–III–VII in a minor key), checking that the
+hook's long notes are in each new chord. Use short stabs (one hit per beat or off-beat) rather than held chords for a house feel,
+or a single held pad for techno.
+
+**Check yourself:** play hook + chords. Any long hook note that clashes? Change that chord, or move the note.
+
+## Step 6: Arrange: intro, build, drop, breakdown, outro
+
+**Question first:** a DJ mixes your track into another one. What does the DJ need at the start and at the end?
+
+**Do:** lay sections out in blocks of 8 or 16 bars (dance music is counted in phrases like this so DJs can mix it):
+
+| Section | Bars | What plays |
+|---|---|---|
+| Intro | 16 | Drums only, then add hats; nothing melodic (DJ-friendly) |
+| Build | 8 | Bass and chords in; snare rolls or hats get busier; drop the kick in the last bar |
+| Drop | 16 | Everything: hook + full drums + bass |
+| Breakdown | 16 | Kick out; chords / pad and the hook alone; a new idea |
+| Build 2 + Drop 2 | 8 + 16 | As before, with one change (an extra layer, a new hook variation) |
+| Outro | 16 | Melody out, then bass out; drums alone to the end |
+
+Duplicate clips, mute or delete parts per section. Name sections with clip names or colours.
+
+**Check yourself:** count the bars of each section. Are they all multiples of 8? Does something change at every section start?
+
+## Step 7: Mix
+
+**Question first:** which two sounds matter most in a dance track at a party? Are they the loudest in your mix?
+
+**Do:**
+
+- Start with every fader down; bring up the kick first, then bass, then the rest, each until you can just hear it clearly.
+- Click the **Drums** strip's name in the mixer to open the drum sub-mixer: separate faders for Kick, Snare, Hat and the other pieces.
+  Pull the hats back, keep the kick strong.
+- Pan chords and extra percussion a little left or right; keep kick, bass and hook in the centre.
+- Watch the master meter: it should never hit the top.
+
+**Check yourself:** listen quietly. Can you still hear the kick, the bass and the hook? Then louder: does anything hurt?
+
+## Step 8: Bounce to WAV and share
+
+**Question first:** who is going to hear this, and on what (phone speaker, headphones, a PA)?
+
+**Do:** press **Bounce to WAV**. If the peak it reports is over 0 dBFS, pull the master down and bounce again. Also **Save project**
+(a `.json` you can open here later) and **Export MIDI** if you want to carry on in another DAW ([DAW 7](daw-export.qmd)).
+Name the file `title (your-name remix).wav` and share it the way your teacher asks.
+
+**Check yourself:** play the WAV on a phone speaker. Is the hook still there? (Bass often disappears on phones: that is normal; the hook should not.)
+
+## Remix ethics and copyright
+
+A remix uses someone else's music, so think before you share:
+
+- **In class, use public domain music or your own.** Beethoven's Ode to Joy (1824) is long out of copyright; the notes are free to use.
+  A *recording* of it may still belong to someone, which is why the site gives you MIDI notes, not a recording.
+- A pop song from the radio is almost certainly under copyright, both the song and the recording. Remixing it for yourself to learn
+  is one thing; posting it publicly is another, and most platforms may take it down or mute it.
+- **Giving credit is good manners but it is not permission.** Saying "original by X" does not, on its own, make a public remix legal
+  (this, and the rules on fair use, differ by country: *unverified* here; ask your teacher).
+- Always **credit** your source in the title or description: "Ode to Joy (Beethoven), remix by …".
+
+## Reflection and self-assessment
+
+Write three or four sentences for each:
+
+1. **The hook:** which bars did you choose, and how did you change them for a dance track?
+2. **Your choices:** name one thing in your remix that is *yours*, not from the preset or the original.
+3. **The arrangement:** where does the energy rise and fall? Did you hear it working, or does a section drag?
+4. **Listening:** compare your drop with one commercial house or techno track. One thing theirs does that yours does not?
+5. **Next time:** one thing you would change.
+
+Rate yourself 1–4 on each:
+
+| | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|
+| Hook | Not recognisable | Recognisable, unchanged | Fits the new tempo | Fits and has a new twist |
+| Groove | Drums or bass missing | Basic pattern | Kick and bass work together | Groove with variations by section |
+| Arrangement | One loop | Some sections | All sections, 8/16-bar blocks | Sections with clear builds and drops |
+| Mix | Clipping or buried parts | Most parts heard | Kick, bass, hook clear | Balanced, no clipping, uses panning and drum sub-mix |
+| Reflection | Missing | Describes | Explains choices | Explains and compares with real tracks |
+
+## In other DAWs
+
+<div class="daw-map">
+
+| | BandLab | Ableton Live | Logic Pro |
+|---|---|---|---|
+| Bring in a `.mid` | Import in the web Studio | Drag from the browser | File → Import → MIDI File |
+| Four-on-the-floor drums | Drum Machine / Beat Maker | Drum Rack with a MIDI clip | Step Sequencer or Drummer |
+| Sections | Region names / colours | Locators | Arrangement track |
+| Drum sub-mix | Each drum on its own track | Drum Rack chains | Drum Machine Designer outputs |
+| Bounce | Download → Mixdown As | Export Audio/Video | File → Bounce → Project or Section |
+
+</div>
+
+Menu names follow [DAW 7](daw-export.qmd) and [DAW 4](daw-arrange.qmd); the drum rows are *unverified*.
+
+## Next
+
+- [Remix Lab 7: Flip a Tune](daw-remix-flip.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"House Music." *Wikipedia*, [en.wikipedia.org/wiki/House_music](https://en.wikipedia.org/wiki/House_music). Not yet read (fetch failed 2026-11-24): four-on-the-floor kick, typical tempo.
+
+"Techno." *Wikipedia*, [en.wikipedia.org/wiki/Techno](https://en.wikipedia.org/wiki/Techno). Not yet read (fetch failed 2026-11-24): typical tempo.
+
+**For teachers**
+
+U.S. Copyright Office. "More Information on Fair Use." *Copyright.gov*, [www.copyright.gov/fair-use/](https://www.copyright.gov/fair-use/). Not yet read (fetch failed 2026-11-24): the four fair-use factors; credit alone does not make a use fair.
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}

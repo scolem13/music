@@ -1,0 +1,193 @@
+---
+title: "Remix Lab 3: Subgenres of Techno"
+toc: true
+toc-depth: 2
+description: "Detroit, acid, minimal, dub, hard / industrial and Berlin techno, with deep house and tech house beside them: predict what a change will do to the techno beat, then hear it."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: [band, interactive]
+---
+
+"Techno" is not one sound. Cities, clubs, machines and people each pulled it a different way, and DJs and fans named the results.
+This lesson is an **investigation**: for each subgenre you get a question, a few traits to listen for, names to look up, and one
+change to make to the techno beat below. **Write your prediction first**, then make the change and listen.
+
+::: {.callout-warning}
+## Facts on this page are unverified
+This page was written without being able to check its sources. Every date, name, place and tempo marked *(unverified)* is
+the usual story as commonly told, not yet checked against the sources listed under Works Cited. Treat them as leads to research,
+and checking them is part of the inquiry.
+:::
+
+## The beat you will change
+
+The DAW holds an eight-bar techno loop at 130 bpm: kick on every beat, open hat on the off-beats, shaker, ride, a rolling bass,
+a rim shot and a cowbell. Each sound is its own track, so you can mute, change notes and velocities, or change the tempo.
+Reset (in the DAW) brings it back between experiments.
+
+<div class="mdaw" data-id="daw-remix-subgenres" data-preset="techno" data-show="transport tracks editor mixer"></div>
+
+**Prediction log.** For each experiment write three lines: *I will change…*, *I predict it will sound…*, *It actually sounded…*.
+
+## Detroit techno
+
+**Guiding question:** what makes machine music sound *hopeful* or *futuristic* instead of cold?
+
+- **Where and when:** Detroit, mid-1980s *(unverified)*. Usually credited to three friends from Belleville, Michigan,
+  Juan Atkins, Derrick May and Kevin Saunderson *(unverified)*.
+- **Tempo:** roughly 120-135 bpm *(unverified)*.
+- **Listen for:** drum machines (often named: Roland TR-808 and TR-909, *unverified*), string-like synth chords, a melody over a
+  steady machine beat; a sense of space and future.
+- **Names to look up:** Juan Atkins / Model 500; Derrick May / Rhythim Is Rhythim; Kevin Saunderson / Inner City; Underground Resistance.
+
+**Try it in the DAW.** Add a new track on the Electric piano or Organ and write one long chord per two bars (for example A minor, then
+F major). *Predict:* does the beat feel more like a song, or less like techno? Then lower the tempo to 125.
+
+## Acid techno and acid house
+
+**Guiding question:** how can one bass line be the whole piece?
+
+- **Where and when:** acid house began in Chicago in the mid-1980s *(unverified)*; acid techno is a harder, faster cousin from the
+  1990s *(unverified)*.
+- **The machine:** the Roland TB-303 bass synth, its filter turned up so the line "squelches" *(unverified)*.
+- **Tempo:** acid house about 120-128, acid techno 130-150 *(unverified)*.
+- **Names to look up:** Phuture, "Acid Tracks"; Hardfloor; Josh Wink.
+
+**Try it in the DAW.** This DAW has no filter knob, so build the squelch out of notes: open the Rolling bass clip and make every
+sixteenth a note, jump some up an octave, and give them very different **velocities** (some loud accents, many quiet).
+Make a few notes overlap the next one (that is how a 303 "slides"). *Predict:* will it sound more like a melody or more like a rhythm?
+
+## Minimal techno
+
+**Guiding question:** how little can you keep and still make people dance?
+
+- **Where and when:** early-to-mid 1990s, linked to Detroit (Robert Hood) and to Richie Hawtin and Daniel Bell *(unverified)*;
+  later big in Berlin and Cologne *(unverified)*.
+- **Tempo:** about 120-130 bpm *(unverified)*.
+- **Listen for:** very few sounds, small changes over a long time, clicks and short percussion, lots of silence between hits.
+- **Names to look up:** Robert Hood, *Minimal Nation*; Plastikman; Ricardo Villalobos.
+
+**Try it in the DAW.** **Mute** the shaker, ride and cowbell. Delete half the bass notes. Then every 4 bars bring *one* thing back
+(unmute a track or add one rim hit). *Predict:* will it feel boring or hypnotic? How long before you notice a change?
+
+## Dub techno
+
+**Guiding question:** what does an echo add that another instrument cannot?
+
+- **Where and when:** Berlin, early 1990s, Basic Channel (Moritz von Oswald and Mark Ernestus) *(unverified)*, borrowing from
+  Jamaican dub's echo and reverb.
+- **Tempo:** about 115-125 bpm *(unverified)*.
+- **Listen for:** one short chord that repeats and fades into echoes, soft hiss, deep bass, a slow, foggy feel.
+- **Names to look up:** Basic Channel; Rhythm & Sound; Deepchord; Monolake.
+
+**Try it in the DAW.** There is no delay effect here, so **write the echo**: add a chord track, put one short chord on the *&* of
+beat 1, then copy it 3/16 later at half the velocity, and again at a quarter. Lower the tempo to 120 and mute the ride.
+*Predict:* does writing echoes by hand sound like a real delay? What gives it away?
+
+## Hard and industrial techno
+
+**Guiding question:** where is the line between loud and harsh, and why would a crowd want harsh?
+
+- **Where and when:** industrial techno is often traced to Birmingham, England, in the 1990s (Regis, Surgeon) *(unverified)*;
+  "hard techno" covers faster, heavier styles in many countries *(unverified)*.
+- **Tempo:** 135-150 bpm or faster *(unverified)*.
+- **Listen for:** distorted kicks, metallic noise, few or no chords, relentless energy.
+- **Names to look up:** Surgeon; Regis; Ancient Methods; Perc.
+
+**Try it in the DAW.** Raise the tempo to 145. Push the Kick track's fader up and make every kick full velocity; switch the bass track
+to **Electric guitar (distorted)**. Put the rim on every off-beat. *Predict:* which change makes it sound "industrial", the tempo or the sound?
+
+## Berlin / warehouse techno
+
+**Guiding question:** how can a *place* become part of a genre?
+
+- **Where and when:** after the Berlin Wall fell (1989), parties in empty buildings in the old East; clubs such as Tresor (1991)
+  and later Berghain (2004) *(all unverified)*.
+- **Tempo:** about 128-140 bpm *(unverified)*.
+- **Listen for:** long DJ sets, rolling bass, dark and steady grooves made for a big concrete room.
+- **Names to look up:** Ben Klock; Marcel Dettmann; Ellen Allien; the Tresor label.
+
+**Try it in the DAW.** Keep the beat at 132 and make it **longer**: duplicate clips to 32 bars and change only one thing every 8 bars.
+*Predict:* would this work in a three-minute song? Why does it work in a long night?
+
+## Contrast: deep house and tech house
+
+**Guiding question:** what has to change before techno turns into house?
+
+- **Deep house:** Chicago and New York, mid-1980s; Larry Heard (Mr. Fingers) usually named *(unverified)*. Slower (about 115-125, *unverified*),
+  warm jazz and soul chords, often vocals.
+  Look up: Mr. Fingers, "Can You Feel It"; Kerri Chandler.
+- **Tech house:** 1990s, mixing techno's machine sounds with house's swing and groove *(unverified)*; about 120-128 bpm *(unverified)*.
+  Look up: Terry Francis; Fisher; Green Velvet.
+
+**Try it in the DAW.** Lower the tempo to 122, add a clap on beats 2 and 4, and add a seventh chord (A C E G) on an Electric piano.
+For tech house instead, keep the drums but shift every other closed-hat hit a little later (swing). *Predict:* at which change did you
+start to hear house?
+
+## Sort the sounds
+
+Your teacher (or a partner) plays short clips, or you play each of your saved experiments. For each, decide which subgenre it is
+closest to and give **two pieces of evidence** (tempo, a sound, how busy it is).
+
+| Clue | Detroit | Acid | Minimal | Dub | Hard / industrial | Berlin | Deep house | Tech house |
+|---|---|---|---|---|---|---|---|---|
+| Tempo band | | | | | | | | |
+| Main sound | | | | | | | | |
+| How busy | | | | | | | | |
+| One name | | | | | | | | |
+
+Then line the subgenres up from **slowest to fastest** and from **fewest sounds to most**. Which two are closest? Which pair are opposites?
+
+## Reflect
+
+1. Which prediction was most wrong? What did you learn from it?
+2. Is a subgenre defined more by tempo, by sounds, by place, or by the people? Use one example.
+3. Pick one *(unverified)* fact on this page and check it: what did you find, and where?
+4. Write three moves that would turn your techno beat into a subgenre of your own. Give it a name.
+
+## In other DAWs
+
+<div class="daw-map">
+
+| | This DAW | BandLab | Ableton Live | Logic Pro |
+|---|---|---|---|---|
+| 303-style squelch | Notes, octave jumps and velocities | A synth with filter resonance and envelope | A synth's filter resonance + envelope; slides with overlapping notes | Retro Synth or ES2: filter resonance + envelope; glide |
+| Echo (dub) | Copy notes later and quieter | Delay effect | Delay / Echo effect | Tape Delay / Stereo Delay |
+| Distortion (industrial) | Distorted-guitar sound, louder kick | Distortion effect | Saturator / Roar | Distortion / ChromaVerb plug-ins |
+| Thinning out (minimal) | Mute, delete notes | Mute, delete | Mute, deactivate clips | Mute regions |
+
+</div>
+
+## Next
+
+- Next: [Bass line and chord stabs](daw-remix-bass.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Acid house." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Acid_house](https://en.wikipedia.org/wiki/Acid_house). To check: Roland TB-303, Phuture, Chicago. Not yet checked.
+
+"Deep house." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Deep_house](https://en.wikipedia.org/wiki/Deep_house). To check: Larry Heard, Chicago, chords. Not yet checked.
+
+"Detroit techno." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Detroit_techno](https://en.wikipedia.org/wiki/Detroit_techno). To check: Belleville Three, 1980s, Underground Resistance. Not yet checked.
+
+"Dub techno." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Dub_techno](https://en.wikipedia.org/wiki/Dub_techno). To check: Basic Channel, Berlin, 1990s. Not yet checked.
+
+"Industrial techno." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Industrial_techno](https://en.wikipedia.org/wiki/Industrial_techno). To check: Birmingham, Regis, Surgeon. Not yet checked.
+
+"Minimal techno." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Minimal_techno](https://en.wikipedia.org/wiki/Minimal_techno). To check: Robert Hood, Richie Hawtin, Daniel Bell. Not yet checked.
+
+"Tech house." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tech_house](https://en.wikipedia.org/wiki/Tech_house). To check: origins, tempo. Not yet checked.
+
+"Techno." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Techno](https://en.wikipedia.org/wiki/Techno). To check: tempo range, Berlin after 1989, Tresor. Not yet checked.
+
+**For teachers**
+
+"Berghain." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Berghain](https://en.wikipedia.org/wiki/Berghain). To check: opening year, Ostgut Ton. Not yet checked.
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}

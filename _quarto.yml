@@ -264,6 +264,13 @@ website:
             - lessons/daw-record.qmd
             - lessons/daw-export.qmd
             - lessons/daw-real.qmd
+            - lessons/daw-remix-listen.qmd
+            - lessons/daw-remix-groove.qmd
+            - lessons/daw-remix-subgenres.qmd
+            - lessons/daw-remix-bass.qmd
+            - lessons/daw-remix-build.qmd
+            - lessons/daw-remix-steps.qmd
+            - lessons/daw-remix-flip.qmd
         - section: "Sampling"
           contents:
             - lessons/sampling-what.qmd
@@ -272,6 +279,7 @@ website:
             - lessons/sampling-beat.qmd
             - lessons/sampling-flip.qmd
             - lessons/sampling-law.qmd
+            - lessons/sampling-records.qmd
         - section: "DJing"
           contents:
             - lessons/dj-gear.qmd

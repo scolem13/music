@@ -1,0 +1,115 @@
+---
+title: "Remix Lab 1: Listen and Notice"
+toc: true
+toc-depth: 2
+description: "What makes house sound like house and techno like techno? Mute layers, change the tempo and find out for yourself."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: [band, interactive]
+---
+
+**Guiding question: what do house and techno have in common, and what small things tell them apart?**
+
+::: {.callout-note}
+**Unverified.** The genre facts on this page (tempo ranges, which drum sounds, where and when) are the
+usual textbook answers written from memory. They are **not yet checked** against a source, and the project below is this
+site's own sketch, not a transcription of any record. Treat every number as "about" and let your ears overrule it.
+:::
+
+## Predict first
+
+Before you press Play, write down your answers in your notebook:
+
+1. A club track has to be danced to for hours. What would you keep **steady** in the drums, and what would you let **change**?
+2. Which drum do you think is the **loudest, most important** one, and on which beats does it fall?
+3. How fast do you think a dance track is: closer to 60, 90, 125 or 180 beats per minute?
+
+## Listen to the house loop
+
+Press **Play** (it loops eight bars). Every layer is its own track, so you can use the **mixer** to mute (M) or solo (S) it.
+
+1. **Solo the kick.** Tap your foot. On which beats does it hit? (This is called *four on the floor*.)
+2. Unmute the **clap**. Which beats? Is it the same as the snare in a rock beat?
+3. Add the **hats**. Is the hat *on* the beat with the kick or *between* the kicks (the off-beat, the "&" of each beat)? Which gives the groove its lift?
+4. Add the **bass**, then the **chord stabs**. Which layer tells you the *chords*? Which tells you the *beat*?
+5. Mute the kick only. What is lost?
+
+<div class="mdaw" data-id="remix-listen-house" data-preset="house" data-show="transport tracks editor mixer"></div>
+
+## Listen to the techno loop
+
+Same questions, a different project.
+
+1. Check the **tempo** box at the top. How does it compare with the house loop?
+2. Which layers are the same as in the house loop? Which are new (shaker, ride, rim, cowbell) and which are missing?
+3. Is there a **clap on 2 and 4**? What does the groove use instead?
+4. Is the bass a few **long** notes or many **short** ones? Which of the two feels more "driving"?
+
+<div class="mdaw" data-id="remix-listen-techno" data-preset="techno" data-show="transport tracks editor mixer"></div>
+
+## Explain what you noticed
+
+Fill in a table like this one (the answers for the *house* column are as the site's loop is written, not "the rules"):
+
+| | House loop | Techno loop | Same or different? |
+|---|---|---|---|
+| Tempo (BPM) | | | |
+| Kick pattern | | | |
+| Clap / snare | | | |
+| Hats / shakers | | | |
+| Bass | | | |
+| Chords | | | |
+
+Then answer in two or three sentences: *"If I only had the drums, how could I tell house from techno?"*
+
+## Loops, 4 / 8 / 16 bars
+
+Dance music is built from **loops**: a pattern that repeats. Count the bars before the chords repeat in the house loop
+(two bars a chord, four chords: how many bars is that?). Producers often change something every **4, 8 or 16 bars**
+so listeners can feel the "phrase" coming round. *Why do you think the changes come at those lengths?* (Hint: count the number of
+bars in a verse of a song you know.)
+
+## Background (unverified)
+
+- **House** is usually dated to Chicago in the early 1980s and **techno** to Detroit in the mid-1980s; both are made on drum machines and synthesisers.
+- Typical tempi are given as roughly **118-130 BPM for house** and **125-140 BPM for techno**; the ranges overlap, so tempo alone does not decide the genre.
+- Four-on-the-floor, off-beat hats, and a clap on 2 and 4 are standard in house; techno often leaves out the clap or uses fewer, harder sounds.
+- Suggested listening, by name only (find them yourself): Frankie Knuckles, "Your Love"; Marshall Jefferson, "Move Your Body"; Derrick May, "Strings of Life"; Juan Atkins / Model 500, "No UFOs". *Do the names fit the cities above? Check before you quote them.*
+
+## Make your own
+
+Without changing the tempo, **turn the house loop into something that feels like techno** by editing the steps (open a drum clip in the editor).
+Write down each change and *why*. Then do the opposite: turn the techno loop into house.
+
+## Reflect
+
+- What was the **smallest** change that changed the genre feel the most?
+- Which layer could you take away completely and still have a dance track? Which not?
+- What would you want to find out next?
+
+## In other DAWs
+
+<div class="daw-map">
+
+| | BandLab | Ableton Live | Logic Pro |
+|---|---|---|---|
+| Mute / solo a track | **M** / **S** on the track header | **Track Activator** (the number button) / **S** | **M** / **S** on the track header |
+| Tempo | The tempo in the transport bar | The tempo box at the top | The tempo in the control bar |
+| Loop a section | Drag the loop marker on the ruler | Loop brace in the arrangement | **Cycle** area on the ruler |
+
+</div>
+
+*These menu names are from memory and **not re-checked** against the current guides: look each one up in the manual before relying on it.*
+
+## Next
+
+- [Remix Lab 2: Build the Groove](daw-remix-groove.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}
