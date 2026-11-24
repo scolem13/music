@@ -69,6 +69,7 @@ button.ge-name:hover{color:var(--site-accent-dk);text-decoration:underline}
 <script src="/apps/shared/lessons/score.js?v=18"></script>
 <script src="/apps/shared/band/groove-library.js?v=2"></script>
 <script src="/apps/shared/band/ride-synth.js?v=1"></script>
+<script src="/apps/shared/daw/groove-bridge.js?v=1"></script>
 <script src="/apps/shared/band/groove-editor.js?v=2"></script>
 <script>
 window.__drumset = GrooveEditor.create(document.getElementById("drumset-b"));

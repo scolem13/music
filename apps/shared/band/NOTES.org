@@ -1444,3 +1444,9 @@ history pages.
   (the snippets have no octave clef): the site's reading. Searched and found NO notation for Smoke on the Water, Seven Nation Army,
   Every Breath You Take, Clocks (still from memory, marked).
 ** TODO Listen to the notation riffs; check the guitar / bass octave against the records
+
+* Drumset <-> DAW (agent, 2026-11-24)
+- =apps/shared/daw/groove-bridge.js= (GrooveBridge): "Open in the DAW" in the Drumset editor (localStorage =mdaw:groove=, new kit / conga tracks in the scratch pad, one undo step) and "Open in Drumset" on a selected DAW drum clip (BandGroove.fromEvents, grid 16 or triplet, <= 10 bars, velocity >= 0.9 accent, <= 0.4 ghost). Conversions are pure; test =tests/band/groove/t_bridge.js=.
+- Lossy on purpose: flam / drag / buzz become one plain hit, closed-after-open "+" becomes x, the hat foot lane becomes closed-hat hits, stacker / cowbell / clicks / bongos are dropped (the status says so).
+** VERIFY BY HAND: both buttons in a browser (the page test does not cover them), the hand-off with a DAW tab already open (it is taken on page load only), a project with clips in another meter.
+

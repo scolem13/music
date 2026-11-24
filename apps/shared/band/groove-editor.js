@@ -204,6 +204,7 @@
       var u = global.location.origin + global.location.pathname + B.stringify(g);
       (global.navigator.clipboard ? global.navigator.clipboard.writeText(u) : Promise.reject()).then(function (){ say("Link copied."); }, function (){ global.prompt("The address of this groove:", u); }); });
     var scribe = el("a", "ge-link", "Open in GrooveScribe"); scribe.target = "_blank"; scribe.rel = "noopener"; foot.appendChild(scribe);
+    if (global.GrooveBridge) button(foot, "Open in the DAW", "Send this groove to the DAW scratch pad as drum (and conga) tracks", function (){ say(global.GrooveBridge.openInDaw(g) ? "Opened the DAW; the groove comes in on new tracks." : "The browser would not keep the groove for the DAW."); });
     foot.appendChild(el("span", "ge-hint", "Click a cell to write a note, again to take it out. Right-click or hold a cell for the other marks of its row."));
 
     function say(t){ status.textContent = t || ""; }
