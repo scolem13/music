@@ -1,4 +1,9 @@
-// synth-compare.js — nine classic synths on one page that turn into each other (lessons/synth-compare.qmd).
+// synth-compare.js — fifteen synths on one page that turn into each other (lessons/synth-compare.qmd): the nine below, plus the
+// Prophet-6 (two digital effect slots, continuous oscillator shape, HP + LP) and five Moogs (Taurus, Voyager, Sub 37, Grandmother,
+// Memorymoog) sharing one ladder model (their filter differences are not measured); sources for those in the "SIX MORE" block.
+// "What if…" (PROFILES[id].whatif: {id, label, why, cite, eng(E)}): features an instrument lacks, applied by SC.engine(id, state,
+// mods) to the SOUND only; translate() and its report never see them, and the panel gets a dashed outline and a badge.
+// Widget: W.mods[id], W.setMod(id, mid, on), W.setMods(id, [ids]), W.whatif(id) -> [ids] (synth-library.js saves them as `whatif`).
 // <div class="scmp"></div> becomes: a "From" and a "To" picker over nine panels drawn after (not copied from) the Minimoog Model D,
 // Prophet-5, TB-303, Juno-60 (Juno-106 switch), ARP 2600, OB-Xa (+ SEM filter modes), MS-20, DX7 and PPG Wave; each editable, each
 // with its own sound (one AudioWorklet engine, one engine patch per synth), a translator that turns a patch on one into the nearest
@@ -1039,7 +1044,7 @@
 
   // Grandmother (semi-modular; one cord here: the high-pass utility between the mixer and the filter, as the manual's tip patches it)
   var GM_W = ["tri", "saw", "square", "narrow"];
-  PROFILES.grandmother = { id: "grandmother", name: "Grandmother", long: "after the Moog Grandmother (2018): semi-modular, with a spring reverb", voices: 1, book: "GM",
+  PROFILES.grandmother = { id: "grandmother", name: "Grandmother", long: "after the Moog Grandmother (manual ©2018): semi-modular, with a spring reverb", voices: 1, book: "GM",
     groups: [["Oscillators", "osc", [["o1Oct", "Osc 1 octave", "sel", ["32'", "16'", "8'", "4'"]], ["o1Wave", "Osc 1 wave", "sel", GM_W], ["o2Oct", "Osc 2 octave", "sel", ["16'", "8'", "4'", "2'"]],
         knob("o2Freq", "Osc 2 frequency", -7, 7, 0.01), ["o2Wave", "Osc 2 wave", "sel", GM_W], ["sync", "Sync", "s"]]],
       ["Mixer", "mix", [knob("m1", "Oscillator 1", 0, 10), knob("m2", "Oscillator 2", 0, 10), knob("mN", "Noise", 0, 10)]],
@@ -1720,6 +1725,46 @@
       s: { table: "organ", waveA: 30, waveB: 34, detB: 10, mixB: 50, lfoWave: 20, lfoRate: 15, cutoff: 40, emph: 10, e2A: 30, e2D: 40, e2S: 55, e2R: 40 } }
   ]);
 
+  // ---------- the Prophet-6 and the Moogs (recipes from their manuals where cited; numbers this page's) ----------
+  SC.EXAMPLES = SC.EXAMPLES.concat([
+    { id: "p6-pad-fx", from: "p6", name: "PWM pad through chorus and hall", src: "Prophet-6 Operation Manual pp. 16, 26-28", phrase: CHORDS, bpm: 70, wheel: 0,
+      say: "Pulse waves whose width the LFO sweeps (\"a great way to add movement and thickness ... especially when creating pad or string-like sounds\", p. 16), then Effect A chorus and Effect B hall in series (p. 27). Only the Prophet-6 has the effects built in: every other synth here loses them.",
+      s: { o1Shape: 2, o1Pw: 4, o2Shape: 2, o2Pw: 6, m1: 7, m2: 7, o2Fine: 8, lfoFreq: 3, lfoInit: 4, lfoShape: "tri", lfPw: true, lCut: 6.5, lRes: 1, lEnv: 1, aA: 5, aD: 6, aS: 10, aR: 6, fxOn: true, fxA: "cho", aP1: 3, aP2: 5, aMix: 5, fxB: "hal", bP1: 7, bP2: 4, bMix: 4 } },
+    { id: "p6-sync", from: "p6", name: "Sync sweep through Poly Mod", src: "Prophet-6 Operation Manual pp. 17, 33-34", phrase: LEAD, bpm: 100, wheel: 0,
+      say: "\"Use Poly Mod to sweep the pitch of Oscillator 1 when it is synced to generate the classic, hard-edged sync sound\" (p. 17): sync on, Poly Mod filter env → freq 1.",
+      s: { sync: true, o1Freq: 36, o1Shape: 1, m1: 9, pmFenv: 6, pmF1: true, lCut: 8, lRes: 2, lEnv: 2, fA: 0, fD: 6, fS: 2, fR: 4, uni: true, uniN: 1 } },
+    { id: "p6-gated", from: "p6", name: "Gated organ (LFO square on the amp)", src: "Prophet-6 Operation Manual p. 26", phrase: CHORDS, bpm: 90, wheel: 0,
+      say: "The manual's \"gated VCA\" tip: an organ-like sound, the VCA's env amount at zero, the LFO square to amp with the initial amount at 100% (p. 26).",
+      s: { o1Shape: 0.4, o2Shape: 1, o2Freq: 36, m1: 8, m2: 5, mSub: 4, lCut: 7, lEnv: 0, aAmt: 0, aS: 10, lfoShape: "square", lfoFreq: 5.5, lfoInit: 10, lfAmp: true } },
+    { id: "p6-unison", from: "p6", name: "Unison bass with distortion", src: "Prophet-6 Operation Manual pp. 41, 43", phrase: BASS, bpm: 110, wheel: 0,
+      say: "\"If you want to create an ultra heavy synth bass, try using Unison!\" (p. 43), with the analog distortion (p. 41) a little up and some slop (p. 18).",
+      s: { uni: true, uniN: 6, o1Freq: 12, o2Freq: 12, o2Fine: 10, m1: 8, m2: 8, mSub: 6, slop: 3, lCut: 3, lRes: 3, lEnv: 6, fD: 4, fS: 2, aD: 5, aS: 8, dist: 3 } },
+    { id: "taurus-bass", from: "taurus", name: "Pedal bass on the VARIABLE preset", src: "Taurus 205A Owner's Manual PDF pp. 3-6", phrase: BASS, bpm: 100, wheel: 0,
+      say: "Two sawtooth oscillators (PDF 6), BEAT detuning B (PDF 3), the filter contour opening and closing on each note, DECAY on (PDF 5). The three fixed presets' settings are not printed, so only VARIABLE is on this panel.",
+      s: { range: "LO", beat: 0.25, mixB: 8, cutoff: 3, emph: 3, cAmt: 6, cA: 0.5, cD: 4, lA: 0, lS: 8, decaySw: true, lD: 5 } },
+    { id: "voyager-hplp", from: "voyager", name: "HP/LP band-pass with spacing", src: "Voyager Old School User's Manual PDF p. 8", phrase: LEAD, bpm: 96, wheel: 0,
+      say: "HP/LP mode puts a high-pass and a low-pass in series, a band-pass; SPACING sets how far apart they are (PDF 8). Synths with one low-pass lose the band.",
+      s: { o1Wave: 1.4, o2Wave: 1, o2Freq: 0.08, m1: 8, m2: 7, mode: "hplp", cutoff: 6, space: 1.5, res: 4, fAmt: 2, fD: 5, fS: 4 } },
+    { id: "voyager-fm", from: "voyager", name: "Three oscillators, osc 3 on linear FM", src: "Voyager Old School User's Manual PDF p. 8", phrase: LEAD, bpm: 80, wheel: 0,
+      say: "The 3-1 FM switch lets oscillator 3 frequency-modulate oscillator 1 (PDF 8), like the Model D's osc 3 trick but without the mod wheel.",
+      s: { o1Wave: 0, m1: 9, o3Freq: 7, o3Wave: 0, m3: 0, linFm: true, cutoff: 7, fAmt: 1, fS: 8 } },
+    { id: "sub37-duo", from: "sub37", name: "Duo mode: two notes through one filter", src: "Subsequent 25 Owner's Manual PDF p. 9", phrase: [[48, 0, 1.8], [55, 0, 1.8], [50, 2, 1.8], [57, 2, 1.8]], bpm: 80, wheel: 0,
+      say: "Duo mode lets each oscillator play one of two keys, both through the one ladder filter (Subsequent 25 manual PDF 9; the same mode on the Sub 37). Here each note gets its own copy of the filter: the shared filter is not modelled (unverified approximation).",
+      s: { duo: true, o1Wave: 1, o2Wave: 1, m1: 8, m2: 8, cutoff: 5, res: 3, fAmt: 2, drive: 2, fD: 5, fS: 5 } },
+    { id: "sub37-drive", from: "sub37", name: "MultiDrive bass with the sub oscillator", src: "Subsequent 25 Owner's Manual PDF pp. 15-16, 19", phrase: BASS, bpm: 110, wheel: 0,
+      say: "The square sub oscillator an octave under osc 1 (PDF 15), the cutoff low and MultiDrive up (the manual's tutorial: cutoff to 320 Hz, MultiDrive to 9 o'clock, PDF 19).",
+      s: { o1Oct: "16'", o1Wave: 1, m1: 8, mSub: 7, cutoff: 4.2, res: 2, drive: 4, fAmt: 2.5, fD: 4, fS: 2, aD: 4, aS: 8 } },
+    { id: "gm-spring", from: "grandmother", name: "Pluck into the spring reverb", src: "Grandmother User's Manual PDF p. 21", phrase: BELLS, bpm: 80, wheel: 0,
+      say: "A short envelope in ENV mode, and the spring reverb MIX up (PDF 21). Only the Grandmother and the Prophet-6 have a reverb inside.",
+      s: { o1Wave: "saw", o2Wave: "tri", o2Oct: "8'", m1: 9, m2: 6, cutoff: 6, res: 3, envAmt: 3, a: 0, d: 4, s: 2, r: 4, rev: 6, vol: 8 } },
+    { id: "gm-hp", from: "grandmother", name: "The high-pass utility patched before the filter", src: "Grandmother User's Manual PDF p. 15", phrase: LEAD, bpm: 96, wheel: 0,
+      say: "The manual's tip: patch the MIXER OUTPUT into the High Pass Filter's INPUT and its OUTPUT into the filter (PDF 15). One cord: the switch on this panel.",
+      s: { o1Wave: "saw", m1: 8, hpOn: true, hpCut: 6, cutoff: 6, res: 4, envAmt: 2, d: 4, s: 6 } },
+    { id: "mm-brass", from: "memorymoog", name: "Three-oscillator poly brass with Voice Modulation", src: "Memorymoog Owner's Manual PDF pp. 15-17", phrase: CHORDS, bpm: 80, wheel: 0,
+      say: "Three saws a voice (PDF 16), the filter contour also bending oscillator 2 through Voice Modulation (PDF 15), six voices. Synths with two oscillators lose the third.",
+      s: { o1Saw: true, o2Saw: true, o2Freq: 0.1, o3Saw: true, o3Tri: false, o3Freq: -0.08, m1: 4, m2: 4, m3: 4, kb1: true, cutoff: 3.5, emph: 2, cAmt: 6, fA: 2, fD: 5, fS: 5, fR: 3, lA: 1, lS: 9, lR: 3, vmF: 1, vO2: true } }
+  ]);
+
   // ---------- the engine (AudioWorklet), as source text ----------
   function workletSource() {
     /* global sampleRate, registerProcessor, AudioWorkletProcessor, currentTime, ALG */
@@ -1761,7 +1806,7 @@
       this.note = -1; this.gate = 0; this.vel = 1; this.p = 60; this.tp = 60; this.ph = [0, 0, 0]; this.out = [0, 0, 0]; this.y = [0, 0, 0, 0];
       this.fe = 0; this.fs = 4; this.ae = 0; this.as = 4; this.e3 = 0; this.s3 = 4; this.d3 = 0; this.holdT = 0; this.last = 0; this.dr = [0, 0, 0]; this.drT = [0, 0, 0]; this.det = 0; this.age = 0;
       this.t = 0; this.slide = false; this.s1 = 0; this.s2 = 0; this.h1 = 0; this.h2 = 0; this.hp = 0; this.bst = 0; this.w = [false, false, false]; this.inc = [0, 0, 0];
-      this.oph = [0, 0, 0, 0, 0, 0]; this.oe = [0, 0, 0, 0, 0, 0]; this.ost = [4, 4, 4, 4, 4, 4]; this.fb = [0, 0];
+      this.d1 = 0; this.d2 = 0; this.fy = [0, 0, 0, 0]; this.oph = [0, 0, 0, 0, 0, 0]; this.oe = [0, 0, 0, 0, 0, 0]; this.ost = [4, 4, 4, 4, 4, 4]; this.fb = [0, 0];
     }
     // a real class: the browser's AudioWorkletProcessor cannot be called as a function
     var Proc = class extends AudioWorkletProcessor { constructor() { super(); init.call(this); } };
@@ -1769,7 +1814,7 @@
       var self = this; this.E = null; this.V = []; for (var i = 0; i < NV; i++) this.V.push(new Voice());
       this.held = []; this.wheel = 0; this.bendV = 0; this.lfoPh = 0; this.pk = [0, 0, 0, 0, 0, 0, 0]; this.rk = 0; this.rn = 0; this.seed = 22222; this.clock = 0;
       this.shV = 0; this.shPh = 0; this.shL = 0; this.lastLfoPh = 0; this.q = [];
-      this.dl = new Float32Array(4096); this.dw = 0; this.cph = 0;
+      this.dl = new Float32Array(4096); this.dw = 0; this.cph = 0; this.fxS = [];
       this.port.onmessage = function (e) { self.msg(e.data); };
     }
     Proc.prototype.rand = function () { this.seed = (this.seed * 1103515245 + 12345) & 0x7fffffff; return this.seed / 0x3fffffff - 1; };
@@ -1779,7 +1824,7 @@
       if (d.type === "patch") { this.E = d.E; return; }
       if (d.type === "wheel") { this.wheel = d.v; return; }
       if (d.type === "bend") { this.bendV = d.v; return; }
-      if (d.type === "panic") { this.held = []; for (i = 0; i < NV; i++) { this.V[i].gate = 0; this.V[i].as = 3; this.V[i].fs = 3; this.V[i].s3 = 3; this.V[i].holdT = 0; for (var j = 0; j < 6; j++) this.V[i].ost[j] = 3; } return; }
+      if (d.type === "panic") { this.held = []; this.fxS = []; for (i = 0; i < NV; i++) { this.V[i].gate = 0; this.V[i].as = 3; this.V[i].fs = 3; this.V[i].s3 = 3; this.V[i].holdT = 0; for (var j = 0; j < 6; j++) this.V[i].ost[j] = 3; } return; }
       if (!E) return;
       var nv = Math.max(1, Math.min(NV, E.voices));
       if (d.type === "on") {
@@ -1836,6 +1881,44 @@
       if (w.pulse) { var p2 = ph - pw; if (p2 < 0) p2 += 1; y += w.pulse * ((ph < pw ? 1 : -1) + blep(ph, dt) - blep(p2, dt)); }
       return y;
     }
+    function shapeVal(sh, ph, dt, pw) {   // continuous tri .. saw .. pulse (Prophet-6, Voyager, Subsequent)
+      sh = sh < 0 ? 0 : sh > 2 ? 2 : sh; var tri = 1 - 4 * Math.abs(ph - 0.5), saw = 2 * ph - 1 - blep(ph, dt);
+      if (sh <= 1) return tri * (1 - sh) + saw * sh;
+      var p2 = ph - pw; if (p2 < 0) p2 += 1; var pu = (ph < pw ? 1 : -1) + blep(ph, dt) - blep(p2, dt); return saw * (2 - sh) + pu * (sh - 1);
+    }
+    // the effects (Prophet-6 slots, Grandmother spring, what-if): this page's own simple designs, not the instruments' algorithms
+    var RV = { hal: [[1557, 1617, 1491, 1422], 0.9], roo: [[743, 811, 691, 857], 0.7], pla: [[523, 587, 631, 467], 0.5], spr: [[331, 389, 437, 293], 0.6] };
+    function fxRun(st, f, x, sr) {
+      var k = f.k;
+      if (st.k !== k) { for (var z in st) delete st[z]; st.k = k; }
+      if (k === "dist") { var g = 1 + f.a * 8; return ft(x * g) / (1 + f.a * 1.5); }
+      if (!st.buf) { st.buf = new Float32Array(Math.ceil(sr * 1.05) + 8); st.w = 0; st.ph = 0; st.lp = 0; st.ap = new Float32Array(12); st.fb = 0; }
+      var B = st.buf, L = B.length, y = 0, rp, i0, fr, v;
+      function tap(d) { rp = st.w - d; while (rp < 0) rp += L; i0 = rp | 0; fr = rp - i0; return B[i0 % L] + (B[(i0 + 1) % L] - B[i0 % L]) * fr; }
+      if (k === "bbd" || k === "ddl") {
+        var d = (0.02 + f.a * 0.98) * sr; if (k === "bbd") { st.ph += 0.4 / sr; if (st.ph > 1) st.ph -= 1; d *= 1 + 0.004 * Math.sin(6.2832 * st.ph); }
+        v = tap(d); if (k === "bbd") { st.lp += (v - st.lp) * 0.18; v = st.lp; }
+        var wv = x + v * f.b * 0.92; B[st.w] = k === "bbd" ? ft(wv) : wv; st.w = (st.w + 1) % L; y = v;
+      } else if (k === "cho") {
+        st.ph += (0.1 + f.a * 4) / sr; if (st.ph > 1) st.ph -= 1; B[st.w] = x;
+        y = tap((0.006 + (0.0005 + f.b * 0.004) * (1 - 4 * Math.abs(st.ph - 0.5))) * sr); st.w = (st.w + 1) % L;
+      } else if (k === "ph1" || k === "ph2") {
+        st.ph += (0.05 + f.a * 4) / sr; if (st.ph > 1) st.ph -= 1;
+        var fc = 200 * Math.pow(2, (0.5 + 0.5 * Math.sin(6.2832 * st.ph)) * (1 + f.b * 4.5)), t = Math.tan(Math.PI * Math.min(fc, sr * 0.45) / sr), c = (t - 1) / (t + 1), u = x + st.fb * (k === "ph1" ? 0.7 : 0.35);
+        for (var j = 0; j < 6; j++) { var o = c * u + st.ap[j]; st.ap[j] = u - c * o; u = o; }
+        st.fb = u; y = u;
+        return x * (1 - f.mix * 0.5) + y * f.mix * 0.5;   // dry + all-passed: the notches
+      } else {   // reverbs: four combs and two all-passes; "a" = time, "b" = early reflections (spring: tone)
+        var P = RV[k] || RV.hal, sc = sr / 48000; if (!st.c) { st.c = P[0].map(function (n) { return { b: new Float32Array(Math.round(n * sc * (1 + P[1]))), i: 0, l: 0 }; }); st.a = [new Float32Array(Math.round(225 * sc)), new Float32Array(Math.round(556 * sc))]; st.ai = [0, 0]; }
+        var gfb = 0.72 + f.a * 0.26, damp = k === "spr" ? 0.55 - f.b * 0.4 : k === "pla" ? 0.15 : 0.3, sum = 0;
+        for (var q = 0; q < 4; q++) { var C = st.c[q], out = C.b[C.i]; C.l = out * (1 - damp) + C.l * damp; C.b[C.i] = x + C.l * gfb; C.i = (C.i + 1) % C.b.length; sum += out; }
+        y = sum * 0.25;
+        for (q = 0; q < 2; q++) { var A = st.a[q], bo = A[st.ai[q]], ii = y + bo * 0.5; A[st.ai[q]] = ii; st.ai[q] = (st.ai[q] + 1) % A.length; y = bo - ii * 0.5; }
+        if (k !== "spr") { B[st.w] = x; y += tap(0.013 * sr) * f.b * 0.5 + tap(0.029 * sr) * f.b * 0.35; st.w = (st.w + 1) % L; }
+        y *= 1.4;
+      }
+      return x * (1 - f.mix * 0.5) + y * f.mix;
+    }
     function dxAmp(L) { return L <= 0 ? 0 : Math.pow(2, (L - 99) / 8); }
     Proc.prototype.fmVoice = function (v, E, pitch, dt) {   // six operators through the algorithm's buses
       var F = E.fm, alg = ALG[F.alg - 1], bus = [0, 0, 0], has = [true, false, false], out = 0, hz = 440 * Math.pow(2, (pitch - 69) / 12), fbA = F.fb ? Math.pow(2, F.fb - 7) * 2.2 : 0, mx = 0;
@@ -1891,7 +1974,7 @@
           var fe = env(v, "fe", "fs", E.fenv, E.fenv.lin, dt), ae = env(v, "ae", "as", E.aenv, E.aenv.lin, dt), e3 = 0;
           if (E.env3) { if (v.s3 === -1) { v.d3 -= dt; if (v.d3 <= 0) v.s3 = 0; } else e3 = env(v, "e3", "s3", E.env3, false, dt); }
           var ld = L.delay ? Math.min(1, v.t / L.delay) : 1, lvv = lv * ld;
-          var mod = { p0: 0, p1: 0, p2: 0, pw0: 0, pw1: 0, pw2: 0, cut: 0, hcut: 0, amp: 0, wt: 0 };
+          var mod = { p0: 0, p1: 0, p2: 0, pw0: 0, pw1: 0, pw2: 0, sh0: 0, sh1: 0, sh2: 0, cut: 0, hcut: 0, amp: 0, wt: 0 };
           for (k = 0; k < routes.length; k++) {
             var r = routes[k], sv = 0;
             for (var q = 0; q < r.src.length; q++) {
@@ -1908,6 +1991,10 @@
           var velA = E.aenv.vel ? 0.35 + 0.65 * v.vel : 1, acc = E.accent && v.vel >= 0.95 ? E.accent : 0;
           if (E.fm) {
             o2 = this.fmVoice(v, E, v.p + bend + mod.p0, dt) * ae * velA;
+            if (E.fmFilt) {   // the what-if filter: a ladder after the operators, opened by the amplitude envelope
+              var fq = v.fy, fcut = Math.min(sr * 0.42, E.fmFilt.cut * Math.pow(2, 2.5 * ae + (v.p - 60) / 24)), gf = 1 - Math.exp(-2 * Math.PI * fcut / sr), kf = 4.15 * E.fmFilt.res;
+              var fin = ft(o2 * 2 - kf * fq[3]); fq[0] += gf * (fin - ft(fq[0])); fq[1] += gf * (ft(fq[0]) - ft(fq[1])); fq[2] += gf * (ft(fq[1]) - ft(fq[2])); fq[3] += gf * (ft(fq[2]) - ft(fq[3])); o2 = fq[3] * 0.6;
+            }
             if (!v.gate && v.as === 3 && v.fmLive < 1e-4) v.as = 4;
           } else {
             var mix = 0, k2;
@@ -1926,12 +2013,13 @@
             for (k = 0; k < 3; k++) {
               var oo = E.osc[k]; if (!v.inc[k]) { v.out[k] = 0; continue; }
               var pw = Math.max(0.03, Math.min(0.97, oo.pw + (k === 0 ? mod.pw0 : k === 1 ? mod.pw1 : mod.pw2)));
-              v.out[k] = oo.wt ? wtVal(oo.wt.t, oo.wt.pos + mod.wt, v.ph[k]) : oscVal(oo, v.ph[k], v.inc[k], pw);
+              v.out[k] = oo.wt ? wtVal(oo.wt.t, oo.wt.pos + mod.wt, v.ph[k]) : oo.shape != null ? shapeVal(oo.shape + (k === 0 ? mod.sh0 : k === 1 ? mod.sh1 : mod.sh2), v.ph[k], v.inc[k], pw) : oscVal(oo, v.ph[k], v.inc[k], pw);
               if (oo.on) mix += v.out[k] * oo.lvl;
             }
             if (ring && ring.lvl) mix += ring.lvl * (ring.kind === "arp" ? (2 * v.ph[0] - 1) * sinT(v.ph[1]) : v.out[0] * (v.ph[1] < 0.5 ? 1 : -1));
             mix = mix * 0.45 + (E.noise.lvl ? (E.noise.red ? red * 1.5 : E.noise.pink ? pink * 2.2 : wn * 0.7) * E.noise.lvl * 0.6 : 0) + v.last * E.fb * 3.2;
             mix = ft(mix * 1.1) * 0.9;   // the mixer can overload (M 27, P 21): one soft curve for every synth
+            if (E.drive) mix = ft(mix * (1 + E.drive * 6)) * (0.9 - E.drive * 0.3);   // MultiDrive (S25 PDF 16): this page's curve
             if (hasHp) {
               var hc = E.hpf.cut * Math.pow(2, mod.hcut);
               if (E.hpf.kind === "svf") { if (hc > 0) mix = svf(v, "h1", "h2", mix, Math.max(8, hc), E.hpf.res || 0, "hp", E.hpf.hot, sr); }
@@ -1948,6 +2036,10 @@
               else if (model === "ssi") { inp = ft(1.2 * (mix - k4 * 1.02 * y[3]) + 1e-6 * this.rand()) / 1.2; y[0] += gco * (inp - y[0]); y[1] += gco * (y[0] - y[1]); y[2] += gco * (y[1] - y[2]); y[3] += gco * (y[2] - y[3]); comp = 1 + 0.45 * k4 / 4; }
               else { inp = mix - ft(k4 * 1.05 * y[3]) + 1e-6 * this.rand(); y[0] += gco * (ft(inp) - y[0]); y[1] += gco * (y[0] - y[1]); y[2] += gco * (y[1] - y[2]); y[3] += gco * (y[2] - y[3]); comp = 1 + 0.25 * k4 / 4; }
               yo = y[3] * comp;
+              if (E.dual && E.dual.sp) {   // Voyager: Dual LP (a second LP in parallel) or HP/LP (an HP in series), SPACING apart (VO PDF 8); the second filter is a 2-pole here
+                var c2 = Math.max(8, Math.min(sr * 0.42, cut * Math.pow(2, E.dual.mode === "hplp" ? -Math.abs(E.dual.sp) : E.dual.sp)));
+                yo = E.dual.mode === "hplp" ? svf(v, "d1", "d2", yo, c2, E.res * 0.5, "hp", false, sr) : 0.5 * (yo + svf(v, "d1", "d2", mix, c2, E.res * 0.7, "lp", false, sr));
+              } else if (E.dual && E.dual.mode === "hplp") yo = svf(v, "d1", "d2", yo, Math.max(8, cut * 0.5), 0, "hp", false, sr);
             }
             var gain = E.amp ? Math.max(0, Math.min(1.2, E.amp.init + E.amp.a * ae + E.amp.f * fe * fe + mod.amp)) : ae + mod.amp * ae;
             if (E.amp && !v.gate && v.as === 4 && v.fs !== 4 && E.amp.f > 0) v.as = 3;   // keep the voice while the ADSR still opens the VCA
@@ -1963,6 +2055,7 @@
           var ri = rp | 0, rf = rp - ri, dv = this.dl[ri & 4095] + (this.dl[(ri + 1) & 4095] - this.dl[ri & 4095]) * rf;
           this.dl[this.dw] = s0; this.dw = (this.dw + 1) & 4095; s0 = 0.62 * s0 + 0.62 * dv;
         }
+        if (E.fx) for (q = 0; q < E.fx.length; q++) { if (!this.fxS[q]) this.fxS[q] = {}; s0 = fxRun(this.fxS[q], E.fx[q], s0, sr); }
         out[i] = s0;
       }
       return true;
@@ -1994,6 +2087,7 @@
       if (E.hpf.kind === "svf") { var kh = 2 - 1.97 * Math.min(E.hpf.res || 0, 1.02), rh = 1 - wh * wh, ih = kh * wh; db += 20 * Math.log10(Math.max(1e-6, wh * wh / Math.sqrt(rh * rh + ih * ih))); }
       else db += 20 * Math.log10(Math.max(1e-6, wh / Math.sqrt(1 + wh * wh)));
     }
+    if (E.dual && E.dual.mode === "hplp") { var wd = f / Math.max(8, cut * Math.pow(2, -Math.abs(E.dual.sp || 1))), kd = 2 - 1.97 * Math.min(E.res * 0.5, 1.02), rd = 1 - wd * wd; db += 20 * Math.log10(Math.max(1e-6, wd * wd / Math.sqrt(rd * rd + kd * kd * wd * wd))); }
     return db;
   }
   SC.filterResponse = filterResponse;
@@ -2061,7 +2155,7 @@
   SC.citeText = citeText;
 
   SC.mount = function (host) {
-    var W = { host: host, st: {}, a: "moog", b: "prophet", from: "moog", notes: [], ex: SC.EXAMPLES[0], hear: "moog", wheel: 0, timers: [] };
+    var W = { host: host, st: {}, mods: {}, a: "moog", b: "prophet", from: "moog", notes: [], ex: SC.EXAMPLES[0], hear: "moog", wheel: 0, timers: [] };
     SC.IDS.forEach(function (id) { W.st[id] = full(id, {}); });
     W.st.moog = full("moog", SC.EXAMPLES[0].s);
     host.innerHTML = "";
@@ -2106,6 +2200,18 @@
         var turn = el("button", "btn btn-sm scmp-turn", "Turn into the " + PROFILES[other(id)].name + " ↓"); turn.dataset.from = id; head.appendChild(turn);
         var hear = el("button", "btn btn-sm btn-outline-secondary scmp-hear", "Keys play this"); hear.dataset.id = id; head.appendChild(hear);
         box.appendChild(head);
+        if (P.whatif) {   // "What if…": features the instrument lacks; sound only, the report keeps describing the real one
+          var wi = el("details", "scmp-wi"); wi.appendChild(el("summary", null, "What if…"));
+          wi.appendChild(el("p", "scmp-hint", "Add something the real " + P.name + " does not have. Only the sound changes: the translation report still describes the real instrument."));
+          P.whatif.forEach(function (m) {
+            var lab = el("label", "scmp-wim"), cb = el("input"); cb.type = "checkbox"; cb.checked = !!(W.mods[id] && W.mods[id][m.id]); cb.dataset.wi = m.id;
+            cb.onchange = function () { W.setMod(id, m.id, cb.checked); };
+            lab.appendChild(cb); lab.appendChild(el("strong", null, " " + m.label + ". ")); lab.appendChild(el("span", null, m.why + " "));
+            lab.appendChild(el("span", "scmp-cite", m.cite.map(citeText).join("; "))); wi.appendChild(lab);
+          });
+          box.appendChild(wi);
+          var badge = el("span", "scmp-wibadge", "What if — not the real instrument"); head.appendChild(badge);
+        }
         var grid = el("div", "scmp-groups"); ctlEl[id] = {};
         P.groups.forEach(function (g) {
           var fs = el("fieldset", "scmp-g scmp-g-" + g[1]); fs.appendChild(el("legend", null, g[0]));
@@ -2118,7 +2224,7 @@
         turn.onclick = function () { translate(id, true); var o = pan[other(id)]; if (o && o.box.scrollIntoView) o.box.scrollIntoView({ behavior: "smooth", block: "nearest" }); };
         hear.onclick = function () { setHear(id); };
         row.appendChild(box);
-        showAll(id);
+        showAll(id); markWi(id);
       });
       pickA.value = W.a; pickB.value = W.b;
       bA.textContent = "▶ " + PROFILES[W.a].name; bB.textContent = "▶ " + PROFILES[W.b].name;
@@ -2192,7 +2298,15 @@
       if (!quiet && pan[id]) { if (id === W.from) retranslate(); else pan[id].box.classList.add("scmp-hand"); }
       draw();
     }
-    function push(id) { send(id, { type: "patch", E: SC.engine(id, W.st[id]) }); }
+    function eng(id) { return SC.engine(id, W.st[id], W.mods[id]); }
+    function push(id) { send(id, { type: "patch", E: eng(id) }); }
+    function wiOn(id) { var m = W.mods[id] || {}; return Object.keys(m).filter(function (k) { return m[k]; }); }
+    function markWi(id) { if (pan[id]) pan[id].box.classList.toggle("scmp-whatif", wiOn(id).length > 0); }
+    W.whatif = wiOn;
+    W.setMod = function (id, mid, on) { if (!W.mods[id]) W.mods[id] = {}; W.mods[id][mid] = !!on; markWi(id); push(id); draw();
+      if (pan[id]) pan[id].box.querySelectorAll(".scmp-wi input").forEach(function (c) { c.checked = !!W.mods[id][c.dataset.wi]; }); };
+    W.setMods = function (id, list) { W.mods[id] = {}; (list || []).forEach(function (m) { W.mods[id][m] = true; }); markWi(id); push(id); draw();
+      if (pan[id]) pan[id].box.querySelectorAll(".scmp-wi input").forEach(function (c) { c.checked = !!W.mods[id][c.dataset.wi]; }); };
     var rtT = 0;
     function retranslate() { clearTimeout(rtT); rtT = setTimeout(function () { translate(W.from, false); }, 250); }
     // make `from` the starting point; if it is not on the page, it replaces the "From" synth
@@ -2242,7 +2356,7 @@
     // ---- the signal-flow diagram (generic: every synth's boxes from its profile's `flow`, or the Model D / Prophet ones) ----
     var flowHl = null;
     function flowSvg(id) {
-      var E = SC.engine(id, W.st[id]), s = W.st[id], P = PROFILES[id], lostSet = {}, isSrc = id === W.from;
+      var E = eng(id), s = W.st[id], P = PROFILES[id], lostSet = {}, isSrc = id === W.from;
       if (isSrc) W.notes.forEach(function (n) { if (n.cls === "lost") n.ctl.from.forEach(function (k) { lostSet[k] = 1; }); });
       var hlSet = {}; if (flowHl) (id === W.from ? flowHl.ctl.from : flowHl.ctl.to).forEach(function (k) { hlSet[k] = 1; });
       function box(x, y, w, h, label, keys, on) {
@@ -2275,7 +2389,7 @@
       var ak = id === "moog" ? ["lA", "lD", "lS"] : id === "prophet" ? ["aA", "aD", "aS", "aR"] : P.flow.aenv;
       svg += wire("M" + (fx + 76) + " 82 L400 82", true, false) + box(400, 62, 60, 40, "Amp", ak, true);
       var outX = 460;
-      if (P.flow && P.flow.fx) { svg += wire("M460 82 L470 82", true, false) + box(470, 62, 60, 40, "Chorus", P.flow.fx, !!E.chorus); outX = 530; }
+      if (P.flow && P.flow.fx) { svg += wire("M460 82 L470 82", true, false) + box(470, 62, 60, 40, P.flow.fxName || "Chorus", P.flow.fx, !!E.chorus || !!(E.fx && E.fx.length)); outX = 530; }
       svg += wire("M" + outX + " 82 L545 82", true, false) + '<text class="scf-t" x="545" y="96">out</text>';
       var fe = id === "moog" ? ["fA", "fD", "fS", "amount"] : id === "prophet" ? ["fA", "fD", "fS", "fR", "envAmt"] : P.flow.fenv;
       svg += box(fx, 130, 76, 26, id === "ms20" ? "EG 2" : id === "arp2600" ? "ADSR" : "Filter env", fe, true) + wire("M" + (fx + 38) + " 130 L" + (fx + 38) + " 102", E.env !== 0, anyLost(fe));
@@ -2323,14 +2437,14 @@
       var g = cvF.getContext("2d"), w = cvF.width, h = cvF.height; axes(cvF, g, "Hz", "dB");
       [100, 1000, 10000].forEach(function (f) { var x = 36 + (Math.log(f / 20) / Math.log(1000)) * (w - 46); g.fillText(f >= 1000 ? f / 1000 + "k" : f, x - 8, h - 12); });
       [W.a, W.b].forEach(function (id) {
-        var E = SC.engine(id, W.st[id]); g.strokeStyle = col(id); g.lineWidth = 2; g.beginPath();
+        var E = eng(id); g.strokeStyle = col(id); g.lineWidth = 2; g.beginPath();
         for (var x = 0; x <= w - 46; x += 2) { var f = 20 * Math.pow(1000, x / (w - 46)), db = filterResponse(E, f, 60), y = 8 + (12 - Math.max(-60, Math.min(12, db))) / 72 * (h - 32); x ? g.lineTo(36 + x, y) : g.moveTo(36 + x, y); }
         g.stroke();
         g.fillStyle = col(id); g.fillText(PROFILES[id].name + ": " + (E.fm ? "no filter" : (E.slope || 24) + " dB/oct " + (E.mode || "lp").toUpperCase() + (E.hpf && E.hpf.cut > 0 ? " + HPF" : "")), 44, id === W.a ? 22 : 36);
       });
       g = cvE.getContext("2d"); w = cvE.width; h = cvE.height; axes(cvE, g, "seconds (key up at 1)", "level");
       [W.a, W.b].forEach(function (id) {
-        var E = SC.engine(id, W.st[id]);
+        var E = eng(id);
         [[E.fenv, 1], [E.aenv, 2.6]].forEach(function (pr) {
           var pts = envPoints(pr[0], 1), T = 3; g.strokeStyle = col(id); g.lineWidth = pr[1]; g.beginPath();
           pts.forEach(function (p, i) { var x = 36 + p[0] / T * (w - 46), y = 8 + (1 - Math.min(1.05, p[1]) / 1.05) * (h - 32); i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.stroke();
@@ -2338,7 +2452,7 @@
       });
       g = cvD.getContext("2d"); w = cvD.width; h = cvD.height; axes(cvD, g, "level into the mixer", "out");
       [W.a, W.b].forEach(function (id) {
-        var E = SC.engine(id, W.st[id]), lv = E.osc.reduce(function (a, o) { return a + (o.on ? o.lvl : 0); }, 0) * 0.45 + E.noise.lvl * 0.4, fb = E.fb * 3.2;
+        var E = eng(id), lv = E.osc.reduce(function (a, o) { return a + (o.on ? o.lvl : 0); }, 0) * 0.45 + E.noise.lvl * 0.4, fb = E.fb * 3.2;
         g.strokeStyle = col(id); g.lineWidth = 2; g.beginPath();
         for (var x = 0; x <= w - 46; x += 2) {
           var u = (x / (w - 46) * 2 - 1) * Math.max(lv, 0.1) * 1.6, y0 = 0;

@@ -42,7 +42,7 @@ const LEVEL = (id, ms) => `new Promise(res => { const a = SynthCompare.widgets[0
   check("pointing at a line lights its control", await b.eval(`document.querySelector('.scmp-prophet [data-ctl=aSync]').classList.contains('scmp-hl')`));
   check("plots drawn", await b.eval(`[...document.querySelectorAll('.scmp-plot canvas')].slice(0, 3).every(c => { const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data; let n = 0; for (let i = 3; i < d.length; i += 4) if (d[i]) n++; return n > 500; })`));
   // nine synths: the pickers, every synth as "From" builds both panels, translates, and sounds through the worklet
-  check("From / To pickers list nine synths", await b.eval(`[...document.querySelectorAll('.scmp-pick')].map(s => s.options.length).join(',')`) === "9,9");
+  check("From / To pickers list all fifteen synths", await b.eval(`[...document.querySelectorAll('.scmp-pick')].map(s => s.options.length).join(',')`) === "15,15");
   const ids = await b.eval(`SynthCompare.IDS`); bad = [];
   for (const id of ids) {
     const to = id === "juno" ? "dx7" : "juno";
@@ -67,6 +67,29 @@ const LEVEL = (id, ms) => `new Promise(res => { const a = SynthCompare.widgets[0
     await new Promise(r => setTimeout(r, 500)); for (let i = 0; i < 8; i++) { a.getFloatTimeDomainData(d); for (const x of d) m = Math.max(m, Math.abs(x)); await new Promise(r => setTimeout(r, 40)); }
     v.noteOff(48); ac.close(); return m; })()`);
   check("SynthCompare.voice sounds on its own AudioContext", vl > 0.005, vl.toFixed(3));
+  // What if…: outline + badge, sound changes, the report does not, the patch file records it
+  const wi = await b.eval(`(async () => { const W = SynthCompare.widgets[0]; W.stop(); W.load('fat-bass');
+    const rep0 = [...document.querySelectorAll('.scmp-item')].map(i => i.className + i.textContent).join('|');
+    const box = document.querySelector('.scmp-moog'); const cb = box.querySelector('.scmp-wi input[data-wi=poly]'); cb.click();
+    await new Promise(r => setTimeout(r, 400));
+    const rep1 = [...document.querySelectorAll('.scmp-item')].map(i => i.className + i.textContent).join('|');
+    const on = box.classList.contains('scmp-whatif'), badge = getComputedStyle(box.querySelector('.scmp-wibadge')).display, outl = getComputedStyle(box).outlineStyle;
+    const L = SynthLibrary.libs[0]; const sel = document.querySelector('.slib-form select[name=synth]'); sel.value = 'moog'; const pf = L.patch();
+    cb.click(); await new Promise(r => setTimeout(r, 200));
+    return { same: rep0 === rep1, on, badge, outl, wi: pf.whatif, off: !box.classList.contains('scmp-whatif') }; })()`);
+  check("what-if: dashed outline and badge on, off again", wi.on && wi.badge !== "none" && wi.outl === "dashed" && wi.off, JSON.stringify(wi));
+  check("what-if: the report is unchanged", wi.same);
+  check("what-if: the saved patch lists it", Array.isArray(wi.wi) && wi.wi[0] === "poly", JSON.stringify(wi.wi));
+  const chord = async mods => b.eval(`(async () => { const W = SynthCompare.widgets[0]; W.stop(); W.pick('moog', 'prophet'); W.setMods('moog', ${JSON.stringify(mods)}); W.hear = 'moog';
+    await W.begin(); [48, 55, 60, 64].forEach(n => W.noteOn(n)); const v = await ${LEVEL("moog", 700)}; [48, 55, 60, 64].forEach(n => W.noteOff(n)); W.setMods('moog', []); return v; })()`);
+  const c1 = await chord([]), c6 = await chord(["poly"]);
+  check("what-if six voices: a chord is louder on the Model D", c6 > c1 * 1.3, c1.toFixed(3) + " → " + c6.toFixed(3));
+  // Prophet-6 effects in the browser: the delay keeps sounding after the key lifts
+  const tailOf = async fx => b.eval(`(async () => { const W = SynthCompare.widgets[0]; W.stop(); W.pick('p6', 'moog'); await new Promise(r => setTimeout(r, 300));
+    const st = Object.assign({}, W.st.p6, { aR: 0, fR: 0, fxOn: ${fx}, fxA: 'ddl', aP1: 3, aP2: 6, aMix: 9 }); for (const k in st) W.set('p6', k, st[k], true);
+    W.hear = 'p6'; await W.begin(); W.noteOn(60); await new Promise(r => setTimeout(r, 300)); W.noteOff(60); await new Promise(r => setTimeout(r, 250)); return ${LEVEL("p6", 400)}; })()`);
+  const t0 = await tailOf(false), t1 = await tailOf(true);
+  check("Prophet-6 delay heard after the note", t1 > 0.004 && t1 > t0 * 3, t0.toFixed(4) + " → " + t1.toFixed(4));
   const errs = b.errors.filter(e => !/supabase/i.test(e)); check("no page errors (the site-wide supabase notice aside)", errs.length === 0, errs.slice(0, 2).join(" | "));
   if (process.env.SHOT) { await b.eval(`SynthCompare.widgets[0].load('feedback'); window.scrollTo(0, document.querySelector('.scmp').getBoundingClientRect().top + scrollY - 60)`); await b.sleep(1500); await b.shot(process.env.SHOT, true); }
   await b.close(); srv.close(); console.log(fails ? fails + " failed" : "all passed"); process.exit(fails ? 1 : 0);

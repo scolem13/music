@@ -58,7 +58,7 @@ const slope = SC.filterResponse(E, f0 * 2, 60) - SC.filterResponse(E, f0 * 4, 60
 check("filter curve falls about 24 dB an octave", slope > 18 && slope < 27, slope.toFixed(1));
 // ---- nine synths: every pair translates, every note cites, every control named is real ----
 const IDS = SC.IDS;
-check("nine synths", IDS.length === 9 && IDS.every(id => SC.PROFILES[id]), IDS.join(","));
+check("fifteen synths", IDS.length === 15 && IDS.every(id => SC.PROFILES[id]), IDS.join(","));
 bad = []; let pairs = 0, notes = 0;
 for (const ex of SC.EXAMPLES) for (const to of IDS) {
   if (to === ex.from) continue; pairs++;
@@ -126,4 +126,47 @@ check("SynthCompare.voice is a function", typeof SC.voice === "function");
 const jb = SC.EXAMPLES.find(e => e.id === "juno-bass"), back2 = SC.translate(SC.translate(jb.s, "juno", "obxa").state, "obxa", "juno").state, jo = SC.full("juno", jb.s);
 const d2 = ["cutoff", "res", "range", "saw"].filter(k => typeof jo[k] === "number" ? Math.abs(jo[k] - back2[k]) > 0.3 : jo[k] !== back2[k]);
 check("Juno → OB-Xa → Juno keeps cutoff, resonance, range, saw", d2.length === 0, d2.map(k => k + " " + jo[k] + "→" + back2[k]).join(", "));
+// ---- the Prophet-6 and the Moog family ----
+for (const id of ["p6", "taurus", "voyager", "sub37", "grandmother", "memorymoog"]) {
+  const P = SC.PROFILES[id], keys = ids(id), miss = Object.keys(P.def).filter(k => !keys.has(k)), noDef = [...keys].filter(k => !(k in P.def));
+  check(id + ": profile complete (cap, apply, pg, fc, flow; every control has a default)", P.cap && P.apply && P.pg && P.fc && P.flow && P.book && !miss.length && !noDef.length, miss.concat(noDef).join(","));
+  check(id + ": has a worked example", SC.EXAMPLES.some(e => e.from === id));
+}
+// every pair of synths translates (each synth's default patch to every other), cited, no unknown keys
+bad = [];
+for (const a of IDS) for (const b of IDS) { if (a === b) continue; const r = SC.translate({}, a, b);
+  r.notes.forEach(n => { if (!n.cite.length || n.cite.some(c => !c.title)) bad.push(a + "→" + b + " " + n.what); });
+  for (const k in r.state) if (!(k in SC.PROFILES[b].def)) bad.push(a + "→" + b + " key " + k); }
+check("every pair of the fifteen translates with cited notes", bad.length === 0, bad.slice(0, 4).join("; "));
+// Prophet-6 effects are audible: a delay keeps sounding after the note
+function tail(id, st, mods) { const p = new P(); p.port.onmessage({ data: { type: "patch", E: SC.engine(id, st, mods) } }); p.port.onmessage({ data: { type: "on", note: 60, vel: .8 } });
+  const o = [[new Float32Array(128)]]; let a = 0, t = 0, nan = false;
+  for (let b = 0; b < 600; b++) { if (b === 80) p.port.onmessage({ data: { type: "off", note: 60 } }); p.process([], o); for (const x of o[0][0]) { if (!isFinite(x)) nan = true; if (b > 150) t += x * x; else a += x * x; } }
+  return { a, t, nan }; }
+const dry = tail("p6", { aR: 0, fR: 0 }), wet = tail("p6", { aR: 0, fR: 0, fxOn: true, fxA: "ddl", aP1: 3, aP2: 5, aMix: 8 }), rev = tail("p6", { aR: 0, fR: 0, fxOn: true, fxB: "hal", bP1: 8, bMix: 8 });
+check("Prophet-6: delay and reverb are heard after the note ends", !wet.nan && !rev.nan && wet.t > dry.t * 20 + 1e-6 && rev.t > dry.t * 20 + 1e-6, dry.t.toExponential(1) + " / " + wet.t.toExponential(1) + " / " + rev.t.toExponential(1));
+bad = []; for (const k of ["bbd", "ddl", "cho", "ph1", "ph2", "hal", "roo", "pla", "spr"]) { const r = tail("p6", { fxOn: true, fxB: k, bMix: 7 }); if (r.nan || r.a < 1e-4) bad.push(k); }
+check("Prophet-6: every effect type sounds without NaN", bad.length === 0, bad.join(","));
+check("Prophet-6 → Model D: effects are lost", SC.translate(SC.EXAMPLES.find(e => e.id === "p6-pad-fx").s, "p6", "moog").notes.some(n => n.cls === "lost" && /Effect/.test(n.what)));
+check("Juno chorus → Prophet-6: the chorus effect (approx)", SC.translate(SC.EXAMPLES.find(e => e.id === "juno-strings").s, "juno", "p6").notes.some(n => n.cls === "approx" && /chorus effect/i.test(n.what)));
+check("Sub 37 MultiDrive lost on the Juno", SC.translate(SC.EXAMPLES.find(e => e.id === "sub37-drive").s, "sub37", "juno").notes.some(n => n.cls === "lost" && /MultiDrive/.test(n.what)));
+check("Memorymoog → Prophet-5: the third oscillator is lost", SC.translate(SC.EXAMPLES.find(e => e.id === "mm-brass").s, "memorymoog", "prophet").notes.some(n => n.cls === "lost" && /one more/.test(n.what)));
+// ---- What if…: changes the sound, never the report ----
+bad = [];
+for (const id of IDS) for (const w of SC.PROFILES[id].whatif || []) {
+  if (!w.cite.length || !w.why) bad.push(id + "." + w.id + " uncited");
+  const ex = SC.EXAMPLES.find(e => e.from === id), notes = ex.phrase.slice(0, 3).map(x => x[0]);
+  const plain = SC.engine(id, ex.s), mod = SC.engine(id, ex.s, [w.id]);
+  if (JSON.stringify(plain) === JSON.stringify(mod)) bad.push(id + "." + w.id + " no engine change");
+  const r = render(id, ex.s, notes); const p = new P(); p.port.onmessage({ data: { type: "patch", E: mod } }); notes.forEach(n => p.port.onmessage({ data: { type: "on", note: n, vel: .8 } }));
+  const o = [[new Float32Array(128)]]; let s2 = 0, n2 = 0, nan = false; for (let b = 0; b < 300; b++) { p.process([], o); for (const x of o[0][0]) { if (!isFinite(x)) nan = true; s2 += x * x; n2++; } }
+  const rm = Math.sqrt(s2 / n2); if (nan || Math.abs(rm - r.rms) < 1e-4) bad.push(id + "." + w.id + " sound " + r.rms.toFixed(4) + "→" + rm.toFixed(4));
+  for (const to of IDS) if (to !== id) { const a1 = SC.translate(ex.s, id, to).notes.map(n => n.cls + n.what).join("|"); if (a1 !== SC.translate(ex.s, id, to).notes.map(n => n.cls + n.what).join("|")) bad.push(id + " unstable"); }
+}
+check("every what-if is cited and changes the sound (no NaN)", bad.length === 0, bad.slice(0, 4).join("; "));
+check("what-if ids exist for the Model D, Prophet-5, Juno, DX7, MS-20, Taurus", ["moog", "prophet", "juno", "dx7", "ms20", "taurus"].every(id => (SC.PROFILES[id].whatif || []).length));
+check("the engine without mods is the real instrument (no whatif field)", !("whatif" in SC.engine("moog", {})) && SC.engine("moog", {}, ["poly"]).voices === 6);
+const SL = require("../../apps/shared/lessons/synth-library.js");
+const pf = { kind: "synth-patch", version: 1, synth: "moog", state: { cutoff: 4 }, song: "x", source: { url: "https://www.youtube.com/watch?v=abc" } };
+check("patch files: whatif ids validated", SL.validate(Object.assign({ whatif: ["poly"] }, pf), SC.PROFILES).length === 0 && SL.validate(Object.assign({ whatif: ["nope"] }, pf), SC.PROFILES).length === 1);
 console.log(fails ? fails + " failed" : "all passed"); process.exit(fails ? 1 : 0);

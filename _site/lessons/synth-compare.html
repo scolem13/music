@@ -2222,6 +2222,9 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
   <li><a href="#what-only-the-ms-20-can-do" id="toc-what-only-the-ms-20-can-do" class="nav-link" data-scroll-target="#what-only-the-ms-20-can-do">What only the MS-20 can do</a></li>
   <li><a href="#what-only-the-dx7-can-do" id="toc-what-only-the-dx7-can-do" class="nav-link" data-scroll-target="#what-only-the-dx7-can-do">What only the DX7 can do</a></li>
   <li><a href="#what-only-the-ppg-wave-can-do" id="toc-what-only-the-ppg-wave-can-do" class="nav-link" data-scroll-target="#what-only-the-ppg-wave-can-do">What only the PPG Wave can do</a></li>
+  <li><a href="#what-only-the-prophet-6-can-do" id="toc-what-only-the-prophet-6-can-do" class="nav-link" data-scroll-target="#what-only-the-prophet-6-can-do">What only the Prophet-6 can do</a></li>
+  <li><a href="#the-moog-family" id="toc-the-moog-family" class="nav-link" data-scroll-target="#the-moog-family">The Moog family</a></li>
+  <li><a href="#what-if" id="toc-what-if" class="nav-link" data-scroll-target="#what-if">What if…</a></li>
   <li><a href="#why-they-differ" id="toc-why-they-differ" class="nav-link" data-scroll-target="#why-they-differ">Why they differ</a></li>
   <li><a href="#history-players-and-records" id="toc-history-players-and-records" class="nav-link" data-scroll-target="#history-players-and-records">History, players and records</a></li>
   <li><a href="#build-it-from-a-video" id="toc-build-it-from-a-video" class="nav-link" data-scroll-target="#build-it-from-a-video">Build it from a video</a></li>
@@ -2357,6 +2360,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 </div>
 <p><strong>How to use it.</strong> Pick an <strong>Example</strong>, then press <strong>▶ Model D</strong>, <strong>▶ Prophet-5</strong> or <strong>▶ One, then the other</strong>. Turn any knob on the top panel and the bottom one follows. <strong>Turn into the …</strong> makes the other synth the starting point. Point at a line of the report to light up the controls it is about on both panels. Coloured outlines on the panels show <span class="scmp-tag scmp-exact">the same</span>, <span class="scmp-tag scmp-approx">close</span> and <span class="scmp-tag scmp-lost">cannot be done</span>.</p>
+<p>The <strong>From</strong> and <strong>To</strong> pickers choose any two of the fifteen synths. A <strong>What if…</strong> menu on some panels adds a feature the real instrument lacks (see <a href="#what-if">What if…</a>); the panel is then outlined and badged, and the report still describes the real one.</p>
 </section>
 <section id="the-model-d-patch-sheets" class="level2">
 <h2 class="anchored" data-anchor-id="the-model-d-patch-sheets">The Model D patch sheets</h2>
@@ -2439,6 +2443,29 @@ document.addEventListener('DOMContentLoaded', async function () {
 <li>Into <strong>analog 24 dB filters</strong> (SSM 2044, PPG Wave 2.3 service manual p.&nbsp;5; Wikipedia). No owner’s manual was found, so the panel layout is this page’s (unverified).</li>
 </ul>
 </section>
+<section id="what-only-the-prophet-6-can-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-only-the-prophet-6-can-do">What only the Prophet-6 can do</h2>
+<ul>
+<li><strong>Two digital effects in series, inside the instrument.</strong> Effect A is a bucket-brigade or digital delay, a chorus or one of two phasers; Effect B can also be a hall, room, plate or spring reverb, because “reverb effects are only available as Effect B, since it’s the last stage” (Prophet-6 manual pp.&nbsp;26–27). Try <strong>PWM pad through chorus and hall</strong> and translate it: the effects are lost on everything but the Grandmother, which keeps only its spring. The effect sounds on this page are its own simple designs, not Sequential’s.</li>
+<li><strong>Oscillator shapes between the waves.</strong> Each shape knob moves smoothly from triangle to sawtooth to pulse, with “in-between” waves on the way (p.&nbsp;15), and Poly Mod can move oscillator 1’s shape (p.&nbsp;34).</li>
+<li><strong>A resonant 2-pole high-pass as well as the 4-pole low-pass,</strong> sharing one filter envelope, each with its own bipolar amount (pp.&nbsp;20–22), and <strong>Slop</strong>, a control for how far out of tune the voices drift (p.&nbsp;18).</li>
+</ul>
+</section>
+<section id="the-moog-family" class="level2">
+<h2 class="anchored" data-anchor-id="the-moog-family">The Moog family</h2>
+<p>Five more Moogs sit in the pickers. They share this page’s one ladder-filter model, so <strong>the filter differences between them are not measured and not modelled</strong>: what differs is the panel, the routing and the envelopes, each from its own manual.</p>
+<ul>
+<li><strong>Taurus</strong> (bass pedals): two sawtooth oscillators with BEAT to detune one, a 24 dB filter “flat to oscillation”, a filter contour of attack and decay, a loudness attack, sustain and DECAY switch, and glide (Taurus 205A manual PDF pp.&nbsp;3–6). Only the VARIABLE preset is on the panel; the three fixed presets’ settings are not printed.</li>
+<li><strong>Voyager:</strong> three oscillators whose waves turn smoothly from triangle to narrow pulse, sync and linear FM, and two filters: <strong>Dual LP</strong> (two low-passes side by side) or <strong>HP/LP</strong> (in series, a band-pass), with <strong>Spacing</strong> between them (Voyager Old School manual PDF p.&nbsp;8). Here the second filter is a 2-pole, this page’s simplification.</li>
+<li><strong>Sub 37:</strong> <strong>Duo mode</strong> plays two notes at once, one on each oscillator, through the one filter; <strong>MultiDrive</strong> overdrives the filter stage; a square sub-oscillator sits an octave under oscillator 1. These are cited from the <strong>Subsequent 25</strong> manual, the same family, because the Sub 37 manual could not be obtained. On this page each Duo note gets its own filter copy, so the shared-filter sound is not modelled (unverified approximation). The sequencer and arpeggiator are left out.</li>
+<li><strong>Grandmother:</strong> semi-modular, with a 1-pole high-pass utility that a cord can put before the filter, one ADSR, VCA modes ENV, KB RLS and DRONE, a real spring reverb tank and an LFO whose amounts come in through the mod wheel (Grandmother manual PDF pp.&nbsp;7, 15–23). The spring here is a digital stand-in.</li>
+<li><strong>Memorymoog:</strong> six voices of three oscillators each, waves that can be combined, Voice Modulation from the filter contour or oscillator 3, 100 programs (Memorymoog manual PDF pp.&nbsp;5, 14–17). Its mixer clips past 4 or 5 (p.&nbsp;17); here every mixer shares one soft curve.</li>
+</ul>
+</section>
+<section id="what-if" class="level2">
+<h2 class="anchored" data-anchor-id="what-if">What if…</h2>
+<p>Some panels have a <strong>What if…</strong> menu: features the real instrument does not have, or fixes for things players miss, such as six voices or a release stage on the Model D, a resonant filter on the DX7, a second oscillator on the Juno-60, an LFO on the Taurus (which the Taurus III later added). Each says where the lack is documented, or that the wish is “commonly said, unverified”. With one on, the panel gets a <strong>dashed orange outline</strong> and the badge <strong>What if — not the real instrument</strong>. Only the sound changes: the report still describes the real instrument, so its <em>the same / close / cannot</em> lines do not move, and a saved patch file lists the what-ifs separately (<code>whatif</code>).</p>
+</section>
 <section id="why-they-differ" class="level2">
 <h2 class="anchored" data-anchor-id="why-they-differ">Why they differ</h2>
 <p>The Model D manual calls it “a direct descendant of the Moog modular synthesizers”. In place of patch cables it uses colour-coded rocker switches: orange to connect modulation, blue to turn sounds on and off, white for performance features and black to choose between sources (Model D manual p.&nbsp;15). That made it fast to set up on stage, and it played one note. Dave Smith, who designed the Prophet-5, writes that he “had the notion that these new-ish things called microprocessors might be useful in designing … a fully programmable polyphonic synthesizer — the first of its kind” (Prophet-5 guide p.&nbsp;x). The 1981 technical manual describes a Z-80 microprocessor scanning the keys, sharing them out among five voices and keeping 40 programs in memory.</p>
@@ -2464,6 +2491,92 @@ document.addEventListener('DOMContentLoaded', async function () {
 <li><strong>Film:</strong> Vangelis, <em>Blade Runner</em> (1982); Brad Fiedel, <em>The Terminator</em> (1984, on a Prophet-10); John Carpenter.</li>
 </ul>
 </section>
+<section id="tb-303" class="level3">
+<h3 class="anchored" data-anchor-id="tb-303">TB-303</h3>
+<ul>
+<li><strong>Made:</strong> by Roland, designed by Tadao Kikumoto (who also designed the TR-909), released in 1981 at US$395 as a “computerised bass machine” to replace the bass guitar. A commercial failure, discontinued in 1984.</li>
+<li><strong>Styles:</strong> cheap second-hand units became a foundation of acid house, Chicago house and techno.</li>
+<li><strong>Players and records:</strong> Charanjit Singh, <em>Synthesizing: Ten Ragas to a Disco Beat</em> (1982). Orange Juice, “Rip It Up” (1983), the first UK top-ten single with it. Phuture, “Acid Tracks” (1987). Hardfloor, “Acperience” (1992); Josh Wink, “Higher State of Consciousness” and Daft Punk, “Da Funk” (1995); Fatboy Slim, “Everybody Needs a 303” (1996).</li>
+</ul>
+</section>
+<section id="juno-60" class="level3">
+<h3 class="anchored" data-anchor-id="juno-60">Juno-60</h3>
+<ul>
+<li><strong>Made:</strong> by Roland from 1982 to 1984, after the Juno-6 (May 1982, US$1,295); the Juno-60 (September 1982) added patch memory. Its digitally controlled oscillators stayed in tune; its chorus was meant to make up for the single oscillator.</li>
+<li><strong>Players and records:</strong> a-ha, “Take On Me”; George Michael, “A Different Corner”; Cyndi Lauper, “Time After Time”. Also Enya, Vince Clarke, Howard Jones, Eurythmics, Wham!, and Chicago house; later Metronomy.</li>
+</ul>
+</section>
+<section id="arp-2600" class="level3">
+<h3 class="anchored" data-anchor-id="arp-2600">ARP 2600</h3>
+<ul>
+<li><strong>Made:</strong> by ARP Instruments from 1971 to 1981, designed by a team led by Alan R. Pearlman with Dennis Colin; US$2,600. Semi-modular, marketed to schools and universities. Korg reissued it in 2020 (2600 FS) and 2022 (2600 M).</li>
+<li><strong>Players and records:</strong> Edgar Winter, Stevie Wonder (labelled in Braille), Pete Townshend, Joe Zawinul, Herbie Hancock. Tony Banks of Genesis from <em>A Trick of the Tail</em>. Black Sabbath, “Who Are You?” on <em>Sabbath Bloody Sabbath</em>. Ben Burtt made R2-D2’s voice with it. Michael Jackson, “Thriller” (1983); Nine Inch Nails, “The Becoming”.</li>
+</ul>
+</section>
+<section id="ob-xa" class="level3">
+<h3 class="anchored" data-anchor-id="ob-xa">OB-Xa</h3>
+<ul>
+<li><strong>Made:</strong> by Oberheim, released December 1980 after the OB-X; 4, 6 or 8 voices, split and layer, 2-pole or 4-pole filtering, Curtis chips. Wikipedia’s article names no players or records.</li>
+</ul>
+</section>
+<section id="ms-20" class="level3">
+<h3 class="anchored" data-anchor-id="ms-20">MS-20</h3>
+<ul>
+<li><strong>Made:</strong> by Korg from 1978 to 1983: semi-modular, monophonic, high-pass and low-pass filters in series, a patch panel. Reissued as the MS-20 Mini (2013), kits (2014, 2015) and the MS-20 FS (2020). Wikipedia’s article names no players or records.</li>
+</ul>
+</section>
+<section id="dx7" class="level3">
+<h3 class="anchored" data-anchor-id="dx7">DX7</h3>
+<ul>
+<li><strong>Made:</strong> by Yamaha in 1983, on John Chowning’s FM synthesis licensed from Stanford; presets by Dave Bristow and Gary Leuenberger. More than 200,000 sold, one of the best-selling synthesizers.</li>
+<li><strong>Players and records:</strong> Ryuichi Sakamoto; Prince, “When Doves Cry”; Tina Turner, “The Best”; Sade, “Smooth Operator”; Michael Jackson, “Smooth Criminal”. The “Bass 1” preset on a-ha’s “Take On Me” and Kenny Loggins’s “Danger Zone”; “Bass 2” on Berlin’s “Take My Breath Away”. “E Piano 1” on 40% of the US number-one singles of 1986. Brian Eno, <em>Apollo: Atmospheres and Soundtracks</em> (1983).</li>
+</ul>
+</section>
+<section id="ppg-wave" class="level3">
+<h3 class="anchored" data-anchor-id="ppg-wave">PPG Wave</h3>
+<ul>
+<li><strong>Made:</strong> by Palm Products GmbH (Wolfgang Palm), from 1981 to 1987: Wave 2, 2.2 and 2.3; US$7,000–10,000 at first.</li>
+<li><strong>Players:</strong> a-ha, Alphaville, David Bowie, Depeche Mode, Rush, Tears for Fears, Talk Talk, Ultravox, Thomas Dolby, Stevie Wonder and many more (Wikipedia’s list names no songs).</li>
+</ul>
+</section>
+<section id="prophet-6" class="level3">
+<h3 class="anchored" data-anchor-id="prophet-6">Prophet-6</h3>
+<ul>
+<li><strong>Made:</strong> released by Sequential in 2015 (Wikipedia, “Sequential (company)”). Its manual describes it as a six-voice analog polysynth with touches “that the original never had, such as stereo outputs, velocity and aftertouch sensitivity, dual digital effects, a high-pass filter, a polyphonic step sequencer, an arpeggiator, and of course, MIDI” (Prophet-6 manual).</li>
+</ul>
+</section>
+<section id="moog-taurus" class="level3">
+<h3 class="anchored" data-anchor-id="moog-taurus">Moog Taurus</h3>
+<ul>
+<li><strong>Made:</strong> designed by David Luce for Moog’s unreleased Constellation; Taurus I 1975–1981, Taurus II 1981–1983 (the Moog Rogue’s engine), Taurus III 2010–2012 (1,000 made).</li>
+<li><strong>Players and records:</strong> Genesis, Yes, Rush, Pink Floyd, Tool, Dream Theater, U2, the Police; Phil Collins, “I Don’t Care Anymore”; Harmonium on <em>Harmonium en tournée</em>.</li>
+</ul>
+</section>
+<section id="minimoog-voyager" class="level3">
+<h3 class="anchored" data-anchor-id="minimoog-voyager">Minimoog Voyager</h3>
+<ul>
+<li><strong>Made:</strong> designed by Robert Moog, released by Moog Music in 2002 (US$2,995; the first 600, signed, $3,495) and discontinued in 2015 after more than 14,000. The Old School version (2008–2009) had no touch pad and no MIDI. Wikipedia’s article names no records.</li>
+</ul>
+</section>
+<section id="moog-sub-37" class="level3">
+<h3 class="anchored" data-anchor-id="moog-sub-37">Moog Sub 37</h3>
+<ul>
+<li><strong>Made:</strong> by Moog Music from 2014, an analog signal path with digital modulators; the Subsequent 37 followed in 2017. Wikipedia’s article names no players or records.</li>
+</ul>
+</section>
+<section id="moog-grandmother" class="level3">
+<h3 class="anchored" data-anchor-id="moog-grandmother">Moog Grandmother</h3>
+<ul>
+<li><strong>Made:</strong> a semi-modular, 32-key two-oscillator monosynth by Moog Music, with circuits based on the Model 15 modular and the Minimoog; patches cannot be saved. Wikipedia’s article names no players or records.</li>
+</ul>
+</section>
+<section id="memorymoog" class="level3">
+<h3 class="anchored" data-anchor-id="memorymoog">Memorymoog</h3>
+<ul>
+<li><strong>Made:</strong> by Moog Music from 1982 to 1985, its last polyphonic synthesizer before the company’s 1987 bankruptcy: six voices of three oscillators, often described as six Minimoogs in one. The Memorymoog Plus added MIDI.</li>
+<li><strong>Players and records:</strong> Jan Hammer on <em>Miami Vice</em>; Geoff Downes on Asia’s <em>Alpha</em> (1983); Jon Lord on <em>Before I Forget</em> and with Whitesnake and Deep Purple; Space Art, <em>Trip in the Centre Head</em>; Jim Gilmore of Saga; David Bryan of Bon Jovi.</li>
+</ul>
+</section>
 </section>
 <section id="build-it-from-a-video" class="level2">
 <h2 class="anchored" data-anchor-id="build-it-from-a-video">Build it from a video</h2>
@@ -2486,6 +2599,7 @@ Loading the video list…
 <h2 class="anchored" data-anchor-id="what-is-checked-and-what-is-not">What is checked and what is not</h2>
 <p>Checked against the manuals: every control’s name, the waves and ranges each oscillator has, the filter types and their slope, envelope stages, LFO rates and shapes, which sources can modulate which targets, voices and unison, the pitch wheel ranges, glide, the Model D’s feedback path and its default low-note priority. Each line of the report names its page.</p>
 <p>This page’s own choices, not from the manuals: how the Prophet’s 0 to 10 knobs map to hertz, seconds and octaves; the curves between the Model D’s printed end points; the exact widths of the Model D’s “wide” and “narrow” pulses; the shape of its triangle-sawtooth wave; modulation depths; unison detune in cents; and how the three filters differ (one model with three settings, not simulations of the real circuits). Nobody has yet compared these sounds with the real instruments.</p>
+<p>For the Prophet-6 and the Moog family the same holds: knob curves, the effect algorithms (delays, chorus, phasers, reverbs, the distortion), the Voyager’s second filter, the Duo-mode filter and every “What if…” are this page’s own; the Sub 37 is cited from the Subsequent 25 manual; the Taurus and Memorymoog manuals are OCR’d scans; and the five Moogs share one filter model, so how their filters differ is not measured.</p>
 <link rel="stylesheet" href="../apps/shared/lessons/synth-compare.css">
 <script src="../apps/shared/lessons/sections.js"></script>
 <script src="../apps/shared/lessons/synth-compare.js"></script>
@@ -2495,6 +2609,15 @@ Loading the video list…
 <script src="../apps/shared/lessons/moog-sheet.js"></script>
 <!-- works-cited: written by scripts/works-cited.py -->
 <div class="works-cited">
+<p>“ARP 2600.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/ARP_2600">en.wikipedia.org/wiki/ARP_2600</a>. History section: makers, years, price, players and records.</p>
+<p>“Memorymoog.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Memorymoog">en.wikipedia.org/wiki/Memorymoog</a>. History section: years, voices, players.</p>
+<p>“Minimoog Voyager.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Minimoog_Voyager">en.wikipedia.org/wiki/Minimoog_Voyager</a>. History section.</p>
+<p>“Moog Grandmother.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Moog_Grandmother">en.wikipedia.org/wiki/Moog_Grandmother</a>. History section.</p>
+<p>“Moog Sub 37.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Moog_Sub_37">en.wikipedia.org/wiki/Moog_Sub_37</a>. History section.</p>
+<p>“Moog Taurus.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Moog_Taurus">en.wikipedia.org/wiki/Moog_Taurus</a>. History section; the Taurus III added an LFO (the page’s What if… on the Taurus).</p>
+<p>“Oberheim OB-Xa.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Oberheim_OB-Xa">en.wikipedia.org/wiki/Oberheim_OB-Xa</a>. History section.</p>
+<p>“Sequential (company).” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Sequential_(company)">en.wikipedia.org/wiki/Sequential_(company)</a>. The Prophet-6’s release in 2015.</p>
+<p>“Yamaha DX7.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Yamaha_DX7">en.wikipedia.org/wiki/Yamaha_DX7</a>. History section: FM licence, sales, presets and the records they are on.</p>
 <p><strong>For students</strong></p>
 <p>Korg. <em>ARP 2600 M Owner’s Manual</em>. Korg Inc., 2021, <a href="https://www.analoguehaven.com/korg/arp-2600-m/manual.pdf">www.analoguehaven.com/korg/arp-2600-m/manual.pdf</a>. Block diagram and every normalled connection: VCOs (pp.&nbsp;7-9), VCF (p.&nbsp;10), ADSR and AR (p.&nbsp;11), VCA (p.&nbsp;12), mixer and reverb (p.&nbsp;13), noise and voltage processors (p.&nbsp;14), sample and hold (p.&nbsp;15).</p>
 <p>Korg. <em>MS-20 Owner’s Manual</em>. Keio Electronic Laboratories, 1978, <a href="https://www.korg.com/us/support/download/manual/0/131/2441/">www.korg.com/us/support/download/manual/0/131/2441/</a>. VCOs, waveforms and ring modulator, high-pass and low-pass filters with peak up to self-oscillation (p.&nbsp;5); EG 1, EG 2 with hold, MG, the patch panel (pp.&nbsp;6-7). A scan, read by OCR.</p>
@@ -2503,12 +2626,18 @@ Loading the video list…
 <p>Roland. <em>Juno-60 Owner’s Manual</em>. Roland Corporation, Apr.&nbsp;1983, <a href="https://soundprogramming.net/manuals/Roland_Juno-60_Manual.pdf">soundprogramming.net/manuals/Roland_Juno-60_Manual.pdf</a>. Six voices and 56 patches (p.&nbsp;2); DCO with no portamento, PWM, sub-oscillator, noise (pp.&nbsp;12-13); HPF and VCF (p.&nbsp;14); VCA and envelope (p.&nbsp;16); LFO with delay (p.&nbsp;17); chorus I and II (p.&nbsp;22); specifications (p.&nbsp;32). A scan, read by OCR.</p>
 <p>Roland. <em>TB-303 Bass Line Owner’s Manual</em>. Roland Corporation, Dec.&nbsp;1981, <a href="https://soundprogramming.net/manuals/Roland_TB-303_Manual.pdf">soundprogramming.net/manuals/Roland_TB-303_Manual.pdf</a>. The tone control section: cutoff, resonance, env mod, decay, accent, waveform (p.&nbsp;34); writing accent and slide (p.&nbsp;40); specifications: two waveforms, pitch, length, accent and slide stored per step (p.&nbsp;89). A scan, read by OCR.</p>
 <p>Sequential. <em>Prophet-5 User’s Guide</em>. Version 1.0, Sequential LLC, Oct.&nbsp;2020, <a href="https://vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf">vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf</a>. Dave Smith’s foreword (p.&nbsp;x), oscillators and sync (pp.&nbsp;17-20), mixer (p.&nbsp;21), the Rev 1/2 and Rev 3 filters and envelopes (pp.&nbsp;22-30), LFO and wheel-mod (pp.&nbsp;31-33), Poly Mod (pp.&nbsp;34-35), vintage, wheels, glide, unison, chord memory, release, priority (pp.&nbsp;36-45), recipes (pp.&nbsp;46-52).</p>
+<p>Sequential. <em>Prophet-6 Operation Manual</em>. Version 1.0, Dave Smith Instruments, June 2015, <a href="https://analoguehaven.com/sequential/prophet-6/manual.pdf">analoguehaven.com/sequential/prophet-6/manual.pdf</a>. Printed page = PDF page - 10. Six voices; oscillators with continuously variable shape, sync, low freq (pp.&nbsp;15-17); slop (p.&nbsp;18); mixer and triangle sub octave (p.&nbsp;19); 4-pole LP and 2-pole HP (pp.&nbsp;20-23); envelopes (pp.&nbsp;22-26); two effect slots and their types (pp.&nbsp;26-28); LFO (pp.&nbsp;31-33); Poly Mod (pp.&nbsp;33-34); distortion (p.&nbsp;41); unison (p.&nbsp;43). Its recipes are the page’s Prophet-6 examples.</p>
 <p>Yamaha. <em>DX7 Digital Programmable Algorithm Synthesizer Operation Manual</em>. Yamaha Corporation, <a href="https://homepages.abdn.ac.uk/d.j.benson/pages/dx7/manuals/dx7-man.pdf">homepages.abdn.ac.uk/d.j.benson/pages/dx7/manuals/dx7-man.pdf</a>. 16-note polyphony and 32 memories (introduction); operators, carriers and modulators (p.&nbsp;23); 32 algorithms, carriers of algorithms 1, 5, 16 and 32 (p.&nbsp;24); feedback (p.&nbsp;25); envelopes (p.&nbsp;26); the first FM exercise (pp.&nbsp;34-35); glossary (p.&nbsp;62).</p>
 <p><strong>For teachers</strong></p>
 <p>ARP Instruments. <em>ARP 2600 Owner’s Manual</em>. ARP Instruments, Inc., 1971 (7th printing 1976), <a href="https://www.korg.com/us/support/download/manual/0/842/4469/">www.korg.com/us/support/download/manual/0/842/4469/</a>. The voltage-controlled filter falls off at 24 dB per octave (section 4.12). A scan, read by OCR.</p>
 <p>Jungleib, Stanley. <em>Prophet-5 Synthesizer Technical Manual</em>. 2nd ed., Sequential Circuits, Oct.&nbsp;1981, <a href="https://medias.audiofanzine.com/files/sequentialcircuitsprophet-5servicemanual-text-470674.pdf">medias.audiofanzine.com/files/sequentialcircuitsprophet-5servicemanual-text-470674.pdf</a>. For Revisions 3.0-3.2: the Z-80 microcomputer reads the keyboard and knobs and assigns voices; 40 programs in NV RAM (section 2).</p>
 <p>“Korg MS-20.” <em>Wikipedia</em>, <a href="https://en.wikipedia.org/wiki/Korg_MS-20">en.wikipedia.org/wiki/Korg_MS-20</a>. 1978-1983, monophonic, semi-modular, high-pass and low-pass filters in series; the 2014 kit’s two filter types.</p>
 <p>Levien, Raph. “fm_core.cc.” <em>Music Synthesizer for Android</em>, Google, Apache License 2.0, <a href="https://github.com/google/music-synthesizer-for-android/blob/master/app/src/main/jni/fm_core.cc">github.com/google/music-synthesizer-for-android/blob/master/app/src/main/jni/fm_core.cc</a>. The DX7’s 32 algorithms as a table of operator buses, used by the page’s engine; checked against the DX7 manual’s carrier counts, not diagram by diagram.</p>
+<p>Moog Music. <em>Grandmother User’s Manual</em>. Moog Music Inc., 2018, <a href="https://archive.org/details/MoogGrandmotherUsersManual">archive.org/details/MoogGrandmotherUsersManual</a>. Cited by PDF page: overview (PDF 7), glide (PDF 10), oscillators and sync (PDF 11-12), mixer and the high-pass tip (PDF 14-15), filter (PDF 16-17), envelope (PDF 18-19), VCA modes and spring reverb (PDF 21), modulation (PDF 23).</p>
+<p>Moog Music. <em>Memorymoog Owner’s Manual</em> (Model 345). Moog Music Inc., <a href="https://archive.org/details/synthmanual-moog-memorymoog-owners-manual">archive.org/details/synthmanual-moog-memorymoog-owners-manual</a>. A scan, read by OCR; cited by PDF page: six voices of three oscillators, 100 programs (PDF 5), mono and glide (PDF 9), LFO (PDF 14), Voice Modulation (PDF 15), oscillators (PDF 16), mixer and filter (PDF 17).</p>
+<p>Moog Music. <em>Minimoog Voyager Old School User’s Manual</em>. Moog Music Inc., <a href="https://archive.org/details/manualzilla-id-7334103">archive.org/details/manualzilla-id-7334103</a>. Cited by PDF page: three variable-waveform oscillators (PDF 6), sync, linear FM, Dual LP and HP/LP filters with spacing (PDF 8), mod busses and LFO (PDF 9), external input overdrive (PDF 11-12).</p>
+<p>Moog Music. <em>Subsequent 25 Owner’s Manual</em>. Moog Music Inc., <a href="https://www.adorama.com/col/productManuals/MGLPSSB00701.pdf">www.adorama.com/col/productManuals/MGLPSSB00701.pdf</a>. Cited for the Sub 37 / Subsequent 37 features the family shares (their own manual could not be obtained): Duo Mode, ladder filter (PDF 9), waves (PDF 13), sync (PDF 14), sub oscillator (PDF 15), MultiDrive (PDF 16), the tutorial’s cutoff 320 Hz and MultiDrive at 9 o’clock (PDF 19), LFO (PDF 20).</p>
+<p>Moog Music. <em>Taurus Model 205A Owner’s &amp; Service Manual</em>. Moog Music Inc., <a href="https://archive.org/details/moog_Moog_Taurus_Model_205A_Owners_Service_Manual">archive.org/details/moog_Moog_Taurus_Model_205A_Owners_Service_Manual</a>. A scan, read by OCR; cited by PDF page. Two oscillators and BEAT, presets, octave, glide, filter contour, loudness (PDF 3-5); specifications: sawtooth, 24 dB VCF, glide 0-0.5 s (PDF 6).</p>
 <p>“Oberheim Polyphonic Synthesizer.” <em>Wikipedia</em>, <a href="https://en.wikipedia.org/wiki/Oberheim_SEM">en.wikipedia.org/wiki/Oberheim_SEM</a>. The SEM’s two-pole filter as low-pass, band-pass, high-pass or notch; two VCOs per voice.</p>
 <p>PPG. <em>Wave 2.3 Service Manual</em>. Palm Products GmbH, <a href="https://emusic-diy.org/_media/ppgmanuals:wave23.pdf">emusic-diy.org/_media/ppgmanuals:wave23.pdf</a>. Eight voices, digital oscillators with wavetable EPROMs, SSM 2044 filters, panel pots reading 0-63 (PDF p.&nbsp;5). No owner’s manual was found. A scan, read by OCR.</p>
 <p>“PPG Wave.” <em>Wikipedia</em>, <a href="https://en.wikipedia.org/wiki/PPG_Wave">en.wikipedia.org/wiki/PPG_Wave</a>. Years of the Wave 2, 2.2 and 2.3; two oscillators a voice on the 2.2 and 2.3; SSM 2044 24 dB filters.</p>

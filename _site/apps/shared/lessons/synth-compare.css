@@ -105,3 +105,10 @@
 .scmp-cord input[type=range]{width:4.5rem}
 .scmp-x{background:transparent;border:1px solid #777;color:#eee;border-radius:3px;padding:0 .3rem;line-height:1.2}
 .scmp-pick{font-weight:600}
+/* What if… : features the real instrument lacks (sound only) */
+.scmp-wi{margin:.3rem 0 .4rem;font-size:.85rem}
+.scmp-wi summary{cursor:pointer;font-weight:600}
+.scmp-wim{display:block;margin:.25rem 0}
+.scmp-wibadge{display:none;margin-left:.4rem;padding:.05rem .45rem;border:1.5px dashed #d9822b;border-radius:.3rem;color:#d9822b;font-size:.75rem;font-weight:700}
+.scmp-panel.scmp-whatif{outline:3px dashed #d9822b;outline-offset:3px}
+.scmp-panel.scmp-whatif .scmp-wibadge{display:inline-block}

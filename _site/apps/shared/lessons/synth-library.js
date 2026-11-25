@@ -9,7 +9,8 @@
 // PATCH FILE (version 1):
 //   { kind: "synth-patch", version: 1, synth: "<PROFILES id>", state: {<key in PROFILES[synth].def>: value},
 //     song, artist, year, genre, source: { url, channel, title, at }, by, notes, made: ISO date,
-//     checked: true (teacher only: the settings were compared with the record), origin: "manual" (a manual's own recipe) }
+//     checked: true (teacher only: the settings were compared with the record), origin: "manual" (a manual's own recipe),
+//     whatif: [ids] (only when "What if…" features were on: not the real instrument; PROFILES[synth].whatif) }
 // Library: apps/shared/data/synth-patches/index.json = { patches: [{ file, synth, song, artist, year, genre, checked, origin }] },
 // one patch file each beside it. Assignments: assignments.json there = { videos: [{ synth, url, channel, title, songs:
 // [{ song, artist, at }] }] }, each confirmed to exist (title and channel from YouTube's oEmbed).
@@ -39,6 +40,8 @@
     if (!h) err.push("no source URL");
     else if (HOSTS.indexOf(h) < 0) err.push("source URL is not YouTube or a known site: " + h);
     if (o.year != null && o.year !== "" && !/^\d{4}$/.test(String(o.year))) err.push("year should be four digits");
+    if (o.whatif != null) { var WI = (P && P.whatif || []).map(function (w) { return w.id; });
+      if (!Array.isArray(o.whatif)) err.push("whatif should be a list"); else o.whatif.forEach(function (m) { if (WI.indexOf(m) < 0) err.push("no what-if " + m + " on the " + (P ? P.name : o.synth)); }); }
     return err;
   }
   function slug(s) { return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 40); }
@@ -66,6 +69,7 @@
       var full = SC.full(o.synth, o.state);
       W.st[o.synth] = full;
       for (var k in full) W.set(o.synth, k, full[k], true);
+      if (W.setMods) W.setMods(o.synth, o.whatif || []);
       W.translate(o.synth, true);
       say("Loaded " + o.song + (o.artist ? " (" + o.artist + ")" : "") + " on the " + name(o.synth) + ".");
       L.loaded = o; return true;
@@ -102,6 +106,8 @@
         source: { url: F.url.value.trim(), channel: F.channel.value.trim(), title: F.title.value.trim(), at: F.at.value.trim() },
         by: F.by.value.trim(), notes: F.notes.value.trim(), made: new Date().toISOString().slice(0, 10) };
     };
+    var patch0 = L.patch;   // what-if mods are kept apart from the real instrument's settings
+    L.patch = function () { var o = patch0(), m = W.whatif ? W.whatif(o.synth) : []; if (m.length) o.whatif = m; return o; };
     f.addEventListener("submit", function (ev) {
       ev.preventDefault(); var o = L.patch(), e = validate(o, PR);
       if (e.length) { say("Not saved: " + e.join("; ") + ".", true); return; }

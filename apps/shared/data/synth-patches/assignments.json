@@ -1,44 +1,686 @@
 {
- "note": "Patch-recreation videos for 'Build it from a video' (lessons/synth-compare.qmd). Each confirmed 2026-11-25: title and channel from YouTube's oEmbed, song times from the video's own description. Only videos made on (or for) that instrument.",
+ "note": "Patch-recreation videos for 'Build it from a video' (lessons/synth-compare.qmd). Each confirmed 2026-11-25: title and channel from YouTube's oEmbed, song times from the video's own description. Only videos made on (or for) that instrument. Videos for the TB-303 to the Memorymoog added 2026-11-25, each confirmed by oEmbed the same day; most give no song times.",
  "videos": [
-  { "synth": "moog", "url": "https://www.youtube.com/watch?v=opQSGvPQHL0", "channel": "Andy Whitmore", "title": "40 Famous Songs on a MiniMoog Model D: Reissue vs Vintage",
-    "note": "Each sound played on a vintage Model D and on the reissue",
-    "songs": [
-     { "song": "Flash Light", "artist": "Parliament", "at": "5:56" },
-     { "song": "Are 'Friends' Electric?", "artist": "Gary Numan", "at": "4:19" },
-     { "song": "Gimme! Gimme! Gimme!", "artist": "ABBA", "at": "1:02" },
-     { "song": "I Wish", "artist": "Stevie Wonder", "at": "6:44" },
-     { "song": "Rock With You", "artist": "Michael Jackson", "at": "5:00" },
-     { "song": "Axel F", "artist": "Harold Faltermeyer", "at": "1:37" } ] },
-  { "synth": "moog", "url": "https://www.youtube.com/watch?v=33gZwkSUZRs", "channel": "Reverb", "title": "Ep20: Synth Sounds of Minimoog: Parliament, Pink Floyd, Dr. Dre & More",
-    "songs": [
-     { "song": "Are Friends Electric?", "artist": "Gary Numan", "at": "3:53" },
-     { "song": "Nuthin' But a 'G' Thang", "artist": "Dr. Dre", "at": "6:36" },
-     { "song": "Smart Patrol", "artist": "Devo", "at": "10:02" },
-     { "song": "Shine On You Crazy Diamond", "artist": "Pink Floyd", "at": "15:06" } ] },
-  { "synth": "moog", "url": "https://www.youtube.com/watch?v=B81J3jvoNCc", "channel": "Rishabh Rajan", "title": "Michael Jackson - Thriller [MiniMoog Model D Tutorial]",
-    "note": "On the reissue",
-    "songs": [ { "song": "Thriller", "artist": "Michael Jackson", "at": "" } ] },
-  { "synth": "moog", "url": "https://www.youtube.com/watch?v=Nk_GFm1UJtE", "channel": "Rishabh Rajan", "title": "Sound Design: Herbie Hancock Chameleon Bass Line - Minimoog",
-    "note": "Built on a Minimoog; the presenter says the original was apparently an ARP Odyssey",
-    "songs": [ { "song": "Chameleon", "artist": "Herbie Hancock", "at": "" } ] },
-  { "synth": "prophet", "url": "https://www.youtube.com/watch?v=EKObRMIxmME", "channel": "Andy Whitmore", "title": "Prophet-5 Famous Riffs | Radiohead, D Train, Cameo & More!",
-    "note": "All sounds played on his Prophet-5",
-    "songs": [
-     { "song": "Everything In Its Right Place", "artist": "Radiohead", "at": "0:36" },
-     { "song": "Let's Go", "artist": "The Cars", "at": "1:04" },
-     { "song": "This Must Be the Place", "artist": "Talking Heads", "at": "1:23" },
-     { "song": "In the Air Tonight", "artist": "Phil Collins", "at": "1:44" },
-     { "song": "Run Like Hell", "artist": "Pink Floyd", "at": "2:11" },
-     { "song": "She's Strange", "artist": "Cameo", "at": "5:27" } ] },
-  { "synth": "prophet", "url": "https://www.youtube.com/watch?v=DvRv0TlMI5M", "channel": "Alex Ball", "title": "Prophet~5 Tutorial: Radiohead, Aphex Twin, Japan",
-    "note": "On a vintage Rev 3.2, with a breakdown of each patch",
-    "songs": [
-     { "song": "Everything In Its Right Place", "artist": "Radiohead", "at": "1:21" },
-     { "song": "Rhubarb", "artist": "Aphex Twin", "at": "3:53" },
-     { "song": "Ghosts", "artist": "Japan", "at": "7:13" } ] },
-  { "synth": "prophet", "url": "https://www.youtube.com/watch?v=8tirpIfEzqw", "channel": "Reverb", "title": "Ep6: Synth Sounds of Phil Collins \"In The Air Tonight\"",
-    "note": "The video's description does not name the synth; that it is a Prophet-5 (filtered brass, with chorus and delay) is from a summary of Reverb's article, which refused to load here: unverified",
-    "songs": [ { "song": "In the Air Tonight", "artist": "Phil Collins", "at": "" } ] }
+  {
+   "synth": "moog",
+   "url": "https://www.youtube.com/watch?v=opQSGvPQHL0",
+   "channel": "Andy Whitmore",
+   "title": "40 Famous Songs on a MiniMoog Model D: Reissue vs Vintage",
+   "note": "Each sound played on a vintage Model D and on the reissue",
+   "songs": [
+    {
+     "song": "Flash Light",
+     "artist": "Parliament",
+     "at": "5:56"
+    },
+    {
+     "song": "Are 'Friends' Electric?",
+     "artist": "Gary Numan",
+     "at": "4:19"
+    },
+    {
+     "song": "Gimme! Gimme! Gimme!",
+     "artist": "ABBA",
+     "at": "1:02"
+    },
+    {
+     "song": "I Wish",
+     "artist": "Stevie Wonder",
+     "at": "6:44"
+    },
+    {
+     "song": "Rock With You",
+     "artist": "Michael Jackson",
+     "at": "5:00"
+    },
+    {
+     "song": "Axel F",
+     "artist": "Harold Faltermeyer",
+     "at": "1:37"
+    }
+   ]
+  },
+  {
+   "synth": "moog",
+   "url": "https://www.youtube.com/watch?v=33gZwkSUZRs",
+   "channel": "Reverb",
+   "title": "Ep20: Synth Sounds of Minimoog: Parliament, Pink Floyd, Dr. Dre & More",
+   "songs": [
+    {
+     "song": "Are Friends Electric?",
+     "artist": "Gary Numan",
+     "at": "3:53"
+    },
+    {
+     "song": "Nuthin' But a 'G' Thang",
+     "artist": "Dr. Dre",
+     "at": "6:36"
+    },
+    {
+     "song": "Smart Patrol",
+     "artist": "Devo",
+     "at": "10:02"
+    },
+    {
+     "song": "Shine On You Crazy Diamond",
+     "artist": "Pink Floyd",
+     "at": "15:06"
+    }
+   ]
+  },
+  {
+   "synth": "moog",
+   "url": "https://www.youtube.com/watch?v=B81J3jvoNCc",
+   "channel": "Rishabh Rajan",
+   "title": "Michael Jackson - Thriller [MiniMoog Model D Tutorial]",
+   "note": "On the reissue",
+   "songs": [
+    {
+     "song": "Thriller",
+     "artist": "Michael Jackson",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "moog",
+   "url": "https://www.youtube.com/watch?v=Nk_GFm1UJtE",
+   "channel": "Rishabh Rajan",
+   "title": "Sound Design: Herbie Hancock Chameleon Bass Line - Minimoog",
+   "note": "Built on a Minimoog; the presenter says the original was apparently an ARP Odyssey",
+   "songs": [
+    {
+     "song": "Chameleon",
+     "artist": "Herbie Hancock",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "prophet",
+   "url": "https://www.youtube.com/watch?v=EKObRMIxmME",
+   "channel": "Andy Whitmore",
+   "title": "Prophet-5 Famous Riffs | Radiohead, D Train, Cameo & More!",
+   "note": "All sounds played on his Prophet-5",
+   "songs": [
+    {
+     "song": "Everything In Its Right Place",
+     "artist": "Radiohead",
+     "at": "0:36"
+    },
+    {
+     "song": "Let's Go",
+     "artist": "The Cars",
+     "at": "1:04"
+    },
+    {
+     "song": "This Must Be the Place",
+     "artist": "Talking Heads",
+     "at": "1:23"
+    },
+    {
+     "song": "In the Air Tonight",
+     "artist": "Phil Collins",
+     "at": "1:44"
+    },
+    {
+     "song": "Run Like Hell",
+     "artist": "Pink Floyd",
+     "at": "2:11"
+    },
+    {
+     "song": "She's Strange",
+     "artist": "Cameo",
+     "at": "5:27"
+    }
+   ]
+  },
+  {
+   "synth": "prophet",
+   "url": "https://www.youtube.com/watch?v=DvRv0TlMI5M",
+   "channel": "Alex Ball",
+   "title": "Prophet~5 Tutorial: Radiohead, Aphex Twin, Japan",
+   "note": "On a vintage Rev 3.2, with a breakdown of each patch",
+   "songs": [
+    {
+     "song": "Everything In Its Right Place",
+     "artist": "Radiohead",
+     "at": "1:21"
+    },
+    {
+     "song": "Rhubarb",
+     "artist": "Aphex Twin",
+     "at": "3:53"
+    },
+    {
+     "song": "Ghosts",
+     "artist": "Japan",
+     "at": "7:13"
+    }
+   ]
+  },
+  {
+   "synth": "prophet",
+   "url": "https://www.youtube.com/watch?v=8tirpIfEzqw",
+   "channel": "Reverb",
+   "title": "Ep6: Synth Sounds of Phil Collins \"In The Air Tonight\"",
+   "note": "The video's description does not name the synth; that it is a Prophet-5 (filtered brass, with chorus and delay) is from a summary of Reverb's article, which refused to load here: unverified",
+   "songs": [
+    {
+     "song": "In the Air Tonight",
+     "artist": "Phil Collins",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "tb303",
+   "url": "https://www.youtube.com/watch?v=sIBSN1_9Geo",
+   "channel": "Doctor Mix",
+   "title": "The Bass Line Of “I Feel Love” On A TB-303",
+   "note": "A TB-303 playing the sequenced bass line (the record's own bass was not a 303)",
+   "songs": [
+    {
+     "song": "I Feel Love",
+     "artist": "Donna Summer",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "tb303",
+   "url": "https://www.youtube.com/watch?v=1yE_T-DRkDE",
+   "channel": "Chris Jones",
+   "title": "DAFT PUNK 'DA FUNK' TB-303 / TB-03 / TB-3 / TD-3 PATTERN",
+   "note": "Pattern shown for the TB-303 and its clones",
+   "songs": [
+    {
+     "song": "Da Funk",
+     "artist": "Daft Punk",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "tb303",
+   "url": "https://www.youtube.com/watch?v=RozlLKQ5X5Q",
+   "channel": "DUCKTRONIC",
+   "title": "Mory Kante \"Yeke Yeke\" (Hardfloor Mix) – Roland TB-303 Pattern, MXR Distortion +, Behringer TD-3 ABL",
+   "note": "Roland TB-303 pattern",
+   "songs": [
+    {
+     "song": "Yeke Yeke (Hardfloor Mix)",
+     "artist": "Mory Kanté",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "tb303",
+   "url": "https://www.youtube.com/watch?v=P1ufKoVrDsE",
+   "channel": "DUCKTRONIC",
+   "title": "Shannon \"Let The Music Play\" – Roland TB-303 Pattern, TR-808, MC-202, Behringer TD-3",
+   "note": "Roland TB-303 pattern",
+   "songs": [
+    {
+     "song": "Let the Music Play",
+     "artist": "Shannon",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "juno",
+   "url": "https://www.youtube.com/watch?v=KzA9ZHBn06M",
+   "channel": "Andy Whitmore",
+   "title": "The Juno-106 Hit Machine | 15 Iconic Riffs",
+   "note": "15 riffs on a Juno-106; song times not given (watch for them)",
+   "songs": [
+    {
+     "song": "a song of your choice from the video",
+     "artist": "",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "juno",
+   "url": "https://www.youtube.com/watch?v=KRD58B7ywjg",
+   "channel": "Franck Choppin",
+   "title": "Yazoo - Don't Go (Roland Juno-106 Patches)",
+   "note": "Juno-106 patches",
+   "songs": [
+    {
+     "song": "Don't Go",
+     "artist": "Yazoo",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "juno",
+   "url": "https://www.youtube.com/watch?v=umdgKw9un7I",
+   "channel": "Nicolas Melis",
+   "title": "Roland Juno60 Famous Songs and Sounds",
+   "note": "Juno-60; song times not given (watch for them)",
+   "songs": [
+    {
+     "song": "a song of your choice from the video",
+     "artist": "",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "arp2600",
+   "url": "https://www.youtube.com/watch?v=jJ6ksxxmOqY",
+   "channel": "Nicolas Melis",
+   "title": "ARP 2600 Famous Songs and Sounds",
+   "note": "ARP 2600; song times not given (watch for them)",
+   "songs": [
+    {
+     "song": "a song of your choice from the video",
+     "artist": "",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "arp2600",
+   "url": "https://www.youtube.com/watch?v=I8dgXAynA5k",
+   "channel": "analoghell",
+   "title": "Stevie vs Arp 2600",
+   "note": "An ARP 2600 against Stevie Wonder's sounds; song times not given (watch for them)",
+   "songs": [
+    {
+     "song": "a song of your choice from the video",
+     "artist": "",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "obxa",
+   "url": "https://www.youtube.com/watch?v=KJjofa069gE",
+   "channel": "Steve S.",
+   "title": "Van Halen Jump Intro song 1984 (played on Oberheim OB-Xa)",
+   "note": "Played on an OB-Xa",
+   "songs": [
+    {
+     "song": "Jump",
+     "artist": "Van Halen",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "obxa",
+   "url": "https://www.youtube.com/watch?v=FeOjJ8x2iqU",
+   "channel": "synthartist69",
+   "title": "\"Van Halen Jump\"  on keyboard Oberheim OBXA",
+   "note": "Played on an OB-Xa",
+   "songs": [
+    {
+     "song": "Jump",
+     "artist": "Van Halen",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "obxa",
+   "url": "https://www.youtube.com/watch?v=IoCCtEL9Q-k",
+   "channel": "RetroSound",
+   "title": "Prince When Doves Cry - Vintage Synth Cover - Oberheim OB-Xa",
+   "note": "Oberheim OB-Xa",
+   "songs": [
+    {
+     "song": "When Doves Cry",
+     "artist": "Prince",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "ms20",
+   "url": "https://www.youtube.com/watch?v=I6iDk7WKbZs",
+   "channel": "Howie Ross",
+   "title": "Korg MS-20 Mini - Blue Monday / New Order recreated",
+   "note": "On the MS-20 mini (the 2013 reissue)",
+   "songs": [
+    {
+     "song": "Blue Monday",
+     "artist": "New Order",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "ms20",
+   "url": "https://www.youtube.com/watch?v=fYOFaaOi4JQ",
+   "channel": "Celia Tewey",
+   "title": "Recreating ‪@madonna‬ the Korg MS20 synth at @echolandstudios! 🎹 What’s your favorite Madonna song?",
+   "note": "Madonna sounds on an MS-20; song times not given (watch for them)",
+   "songs": [
+    {
+     "song": "a song of your choice from the video",
+     "artist": "",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "dx7",
+   "url": "https://www.youtube.com/watch?v=WiYa4oUxKR8",
+   "channel": "Power DX7",
+   "title": "Yamaha DX7 - 80’s Hits, a-ha Take On Me, Europe The Final Countdown, Mr Mister, Berlin, Madonna",
+   "note": "DX7",
+   "songs": [
+    {
+     "song": "Take On Me",
+     "artist": "a-ha",
+     "at": ""
+    },
+    {
+     "song": "The Final Countdown",
+     "artist": "Europe",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "dx7",
+   "url": "https://www.youtube.com/watch?v=rE5DFsxKx9c",
+   "channel": "Nicolas Melis",
+   "title": "Yamaha DX7 10 Famous Electric Piano Songs",
+   "note": "Ten electric-piano songs on a DX7; song times not given (watch for them)",
+   "songs": [
+    {
+     "song": "a song of your choice from the video",
+     "artist": "",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "dx7",
+   "url": "https://www.youtube.com/watch?v=BCwn26FePAo",
+   "channel": "Synths Stories",
+   "title": "Yamaha DX7 - Famous Sounds Demo",
+   "note": "DX7; song times not given (watch for them)",
+   "songs": [
+    {
+     "song": "a song of your choice from the video",
+     "artist": "",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "ppg",
+   "url": "https://www.youtube.com/watch?v=nhMUVDxtWpE",
+   "channel": "RetroSound",
+   "title": "The Sound of Talk Talk - Candy  | Vintage Synth Cover | PPG wave",
+   "note": "PPG Wave",
+   "songs": [
+    {
+     "song": "Candy",
+     "artist": "Talk Talk",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "ppg",
+   "url": "https://www.youtube.com/watch?v=cxRN_RHUwys",
+   "channel": "RetroSound",
+   "title": "Famous PPG Wave Synthesizer Sounds",
+   "note": "PPG Wave; song times not given (watch for them)",
+   "songs": [
+    {
+     "song": "a song of your choice from the video",
+     "artist": "",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "ppg",
+   "url": "https://www.youtube.com/watch?v=UjhA9sYmF2I",
+   "channel": "DominikK",
+   "title": "80s Michael Cretu Sound Recreated with PPG Wave",
+   "note": "Michael Cretu's sound on a PPG Wave; song times not given (watch for them)",
+   "songs": [
+    {
+     "song": "a song of your choice from the video",
+     "artist": "",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "p6",
+   "url": "https://www.youtube.com/watch?v=MOBeb_zbJAw",
+   "channel": "Koenraad Hendrik",
+   "title": "Prophet 6 - In The Air Tonight (Phil Collins)",
+   "note": "On a Prophet-6 (the record used a Prophet-5)",
+   "songs": [
+    {
+     "song": "In the Air Tonight",
+     "artist": "Phil Collins",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "p6",
+   "url": "https://www.youtube.com/watch?v=meiCTeKbA40",
+   "channel": "jami.m",
+   "title": "The Weeknd - Blinding Lights - intro pads, lead and bass on Prophet 6",
+   "note": "Pads, lead and bass on a Prophet-6",
+   "songs": [
+    {
+     "song": "Blinding Lights",
+     "artist": "The Weeknd",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "p6",
+   "url": "https://www.youtube.com/watch?v=bhOQzrpniJo",
+   "channel": "Lachlan Vines",
+   "title": "Blade Runner 2049 – Prophet 6",
+   "note": "Prophet-6",
+   "songs": [
+    {
+     "song": "Blade Runner 2049",
+     "artist": "Hans Zimmer and Benjamin Wallfisch",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "taurus",
+   "url": "https://www.youtube.com/watch?v=GnEg0wEJMDo",
+   "channel": "RetroSound",
+   "title": "Moog Taurus bass pedal synthesizer - sound design tutorial Rush \"Tom Sawyer\"",
+   "note": "Moog Taurus bass pedals",
+   "songs": [
+    {
+     "song": "Tom Sawyer",
+     "artist": "Rush",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "taurus",
+   "url": "https://www.youtube.com/watch?v=3qicNIas2wk",
+   "channel": "RetroSound",
+   "title": "Moog Taurus Bass Pedals in Genesis Songs and more - The Legendary Prog Rock Sound!",
+   "note": "Taurus pedals in Genesis songs; song times not given (watch for them)",
+   "songs": [
+    {
+     "song": "a song of your choice from the video",
+     "artist": "",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "taurus",
+   "url": "https://www.youtube.com/watch?v=wWXauqpkOr4",
+   "channel": "CliffJamz",
+   "title": "Genesis - Turn it On Again {Bass Cover} with Moog Taurus 3 Bass Pedals",
+   "note": "Taurus 3 pedals",
+   "songs": [
+    {
+     "song": "Turn It On Again",
+     "artist": "Genesis",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "taurus",
+   "url": "https://www.youtube.com/watch?v=bRbQD9TGY8U",
+   "channel": "Jamie Vale",
+   "title": "Genesis Taurus Bass Pedal Sessions 6. Dance On A Volcano (Intro)",
+   "note": "Taurus pedals",
+   "songs": [
+    {
+     "song": "Dance on a Volcano",
+     "artist": "Genesis",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "voyager",
+   "url": "https://www.youtube.com/watch?v=h8VwEu52Gow",
+   "channel": "Simone Temporali Channel",
+   "title": "Pink Floyd Lead Collection for Moog Voyager",
+   "note": "Pink Floyd leads on a Voyager; song times not given (watch for them)",
+   "songs": [
+    {
+     "song": "a song of your choice from the video",
+     "artist": "",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "voyager",
+   "url": "https://www.youtube.com/watch?v=IjbMZvEguA4",
+   "channel": "Bill Blake",
+   "title": "ELP | From The Beginning | Moog Voyager Synth Patch attempt.",
+   "note": "Voyager patch",
+   "songs": [
+    {
+     "song": "From the Beginning",
+     "artist": "Emerson, Lake & Palmer",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "sub37",
+   "url": "https://www.youtube.com/watch?v=zdStf7tc-KY",
+   "channel": "Plexis",
+   "title": "Deadmau5 - Bleed (Moog Sub 37 Cover)",
+   "note": "Sub 37",
+   "songs": [
+    {
+     "song": "Bleed",
+     "artist": "deadmau5",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "sub37",
+   "url": "https://www.youtube.com/watch?v=_iwNjqN6ZSE",
+   "channel": "Synth Sounds",
+   "title": "Rush - Tom Sawyer Synth Lead - Moog Sub 37 Synth Sounds",
+   "note": "Sub 37",
+   "songs": [
+    {
+     "song": "Tom Sawyer",
+     "artist": "Rush",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "sub37",
+   "url": "https://www.youtube.com/watch?v=tmV8M0lkCtI",
+   "channel": "Sonicwave",
+   "title": "Stranger Things Theme - Moog Sub 37",
+   "note": "Sub 37",
+   "songs": [
+    {
+     "song": "Stranger Things theme",
+     "artist": "Kyle Dixon and Michael Stein",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "grandmother",
+   "url": "https://www.youtube.com/watch?v=_aTban2j3UM",
+   "channel": "kleemannbeats",
+   "title": "How To Sound Like Yazoo on the Moog Grandmother",
+   "note": "Yazoo sounds on the Grandmother; song times not given (watch for them)",
+   "songs": [
+    {
+     "song": "a song of your choice from the video",
+     "artist": "",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "grandmother",
+   "url": "https://www.youtube.com/watch?v=3EGfufWOahk",
+   "channel": "kleemannbeats",
+   "title": "The Blade Runner Sound on the Moog Grandmother",
+   "note": "Grandmother",
+   "songs": [
+    {
+     "song": "Blade Runner",
+     "artist": "Vangelis",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "memorymoog",
+   "url": "https://www.youtube.com/watch?v=5AkP2ic_4-c",
+   "channel": "Dan Wentz",
+   "title": "MemoryMoog Plus #057 - Baba O'Riley Sequence Demo",
+   "note": "The sequence on a Memorymoog Plus",
+   "songs": [
+    {
+     "song": "Baba O'Riley",
+     "artist": "The Who",
+     "at": ""
+    }
+   ]
+  },
+  {
+   "synth": "memorymoog",
+   "url": "https://www.youtube.com/watch?v=_EzM5UHm3ZA",
+   "channel": "Doctor Mix",
+   "title": "The Memorymoog \"Popcorn\" Challenge!",
+   "note": "Memorymoog",
+   "songs": [
+    {
+     "song": "Popcorn",
+     "artist": "Hot Butter",
+     "at": ""
+    }
+   ]
+  }
  ]
 }

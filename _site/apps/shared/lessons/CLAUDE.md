@@ -65,8 +65,18 @@
   for the DAW later. Manuals (several OCR'd scans) in ~/Documents/Manuals/synths and `.../synths/new` (pages in the JS header;
   sources `scripts/sources/synth-compare.py`); knob curves, voicings and the PPG panel are the page's own, and nobody has compared
   the sound with the real instruments. Tests `node tests/lessons/synth-compare.test.js` (`NEG=1` must fail),
-  `tests/lessons/synth-compare.cdp.js` (after rendering). Planned: sequencer and drum machine pages on the same pattern, the
-  engines as DAW track sounds.
+  `tests/lessons/synth-compare.cdp.js` (after rendering). Planned: the engines as DAW track sounds.
+  2026-11-25, fifteen synths: + Prophet-6 (P6 manual, printed = PDF - 10: continuous shape, sub, Poly Mod incl. shape, 4-pole LP +
+  2-pole HP, two effect slots in series bbd/ddl/CHO/PH1/PH2 + HAL/rOO/PLA/SPr and distortion, slop, 6 voices; effects are the
+  worklet's own `fxRun` designs, not SynthKit's, so `voice()` carries them) and five Moogs on the one ladder model (filter
+  differences NOT measured, said on the page): Taurus 205A (OCR'd scan), Voyager (Old School manual: Dual LP / HP-LP + spacing),
+  Sub 37 (cited from the Subsequent 25 manual: the 37's could not be obtained; Duo mode = 2 voices, shared filter not modelled;
+  MultiDrive `E.drive`), Grandmother (HP utility as one cord switch, VCA modes, spring `fx`), Memorymoog (OCR'd scan; Voice Mod).
+  Manuals + text in `.../synths/new` (cited by PDF page). "What if…" mods: `PROFILES[id].whatif` ({id,label,why,cite,eng(E)}),
+  applied only by `SynthCompare.engine(id, state, mods)` (sound), never by translate (the report stays the real instrument's);
+  panel `.scmp-whatif` dashed outline + badge; widget `mods / setMod / setMods / whatif(id)`; synth-library saves `whatif: [ids]`.
+  History sections for every synth from Wikipedia only; 29 more oEmbed-checked videos in `assignments.json` (2-4 a synth). The
+  sequencer page keeps its own voice: it needs per-step cutoff locks, queue clearing and accent flags that `voice()` lacks.
 - Sound 26 student patches (`apps/shared/lessons/synth-library.js` + `.css`, mounted under each `.scmp` widget through its public API
   only; new synth ids in `SynthCompare.PROFILES` appear by themselves): "Save this patch" downloads a `kind: "synth-patch", version: 1`
   JSON (format in the header), "Open a patch file" validates and loads it into its panel and translates, the Library lists
