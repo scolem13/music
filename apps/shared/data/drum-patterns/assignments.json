@@ -1,0 +1,24 @@
+{
+ "about": "YouTube videos that rebuild a song's beat, for students to copy into the Drum Machines page and export as JSON. Each video confirmed to exist with YouTube oEmbed on 2026-11-25 (title and channel as YouTube gives them). Whether a video uses the real machine, a clone or software is as its title says, not checked.",
+ "videos": [
+  {"machine":"tr808","song":"Planet Rock","artist":"Afrika Bambaataa & the Soulsonic Force","title":"Afrika Bambaataa – Planet Rock Drum Pattern | Electro | Roland TR-808","channel":"Drum Patterns","url":"https://www.youtube.com/watch?v=mAliZTauDmg"},
+  {"machine":"tr808","song":"Sexual Healing","artist":"Marvin Gaye","title":"\"Sexual Healing\" 808 Drum Pattern Explained","channel":"Doctor Mix","url":"https://www.youtube.com/watch?v=fPlVy2PCw5o"},
+  {"machine":"tr808","song":"Sexual Healing","artist":"Marvin Gaye","title":"SynthMania quick tip #6 - Marvin Gaye's \"Sexual Healing\" Roland TR-808 pattern","channel":"SynthMania","url":"https://www.youtube.com/watch?v=XRCdLN-brkI"},
+  {"machine":"tr808","song":"Paul Revere","artist":"Beastie Boys","title":"808 Day Special: Recreating Beastie Boys' 'Paul Revere' Beat on Roland TR-8S! #808day","channel":"Diyanna Monet","url":"https://www.youtube.com/watch?v=ZMxjU3mOEkA","note":"played on a TR-8S, Roland's later digital model"},
+  {"machine":"tr808","song":"several","artist":"","title":"7 Super Famous TR-808 Patterns","channel":"Doctor Mix","url":"https://www.youtube.com/watch?v=97IuI4C3uQU"},
+  {"machine":"tr909","song":"Revolution 909","artist":"Daft Punk","title":"TR-909 ''Revolution 909'' pattern programming","channel":"SynthMania","url":"https://www.youtube.com/watch?v=xLCVNUj40I0"},
+  {"machine":"tr909","song":"Killer","artist":"Adamski ft. Seal","title":"Adamski ft. Seal - 'Killer' Deconstruction in Ableton + Adamski Interview","channel":"pointblank music school","url":"https://www.youtube.com/watch?v=KEdNgJsq68w","note":"in Ableton, not on a 909"},
+  {"machine":"tr909","song":"The Whistle Song","artist":"Frankie Knuckles","title":"How to program Frankie Knuckles' ''The Whistle Song'' TR-909 pattern","channel":"SynthMania","url":"https://www.youtube.com/watch?v=y8xGdaoweTg"},
+  {"machine":"tr909","song":"Take Me Home","artist":"Phil Collins","title":"Behind The Drums Ep 20 - Phil Collins \"Take Me Home\" Roland TR-909","channel":"Controlled Voltage Sound Labs","url":"https://www.youtube.com/watch?v=d5620K4QpFc"},
+  {"machine":"tr909","song":"several","artist":"","title":"Roland TR-909 Famous Patterns","channel":"Doctor Mix","url":"https://www.youtube.com/watch?v=LKiWt8IcMmM"},
+  {"machine":"linn","song":"Take On Me","artist":"A-ha","title":"Behind The Drums Ep 06 - A-ha \"Take On Me\" Linndrum with Yamaha DX7","channel":"Controlled Voltage Sound Labs","url":"https://www.youtube.com/watch?v=EBaFGwSLQl8"},
+  {"machine":"linn","song":"Drive","artist":"The Cars","title":"Behind The Drums Ep 16 - The Cars \"Drive\" Linndrum","channel":"Controlled Voltage Sound Labs","url":"https://www.youtube.com/watch?v=vpEsbPG_gPM"},
+  {"machine":"linn","song":"Relax","artist":"Frankie Goes to Hollywood","title":"Insane Reconstruction! Relax by Frankie Goes to Hollywood","channel":"Doctor Mix","url":"https://www.youtube.com/watch?v=TWt-t5lBIPI","note":"the whole track, not only the drums"},
+  {"machine":"linn","song":"several","artist":"","title":"Ten classic LinnDrum patterns","channel":"SynthMania","url":"https://www.youtube.com/watch?v=ofKyPTXt5co"},
+  {"machine":"mpc60","song":"Midnight in a Perfect World","artist":"DJ Shadow","title":"Deconstructing DJ Shadow - Midnight In a Perfect World","channel":"Karl Boltzmann","url":"https://www.youtube.com/watch?v=BIfyTM_Wt5k"},
+  {"machine":"mpc60","song":"Building Steam with a Grain of Salt","artist":"DJ Shadow","title":"I Deconstruct & Rebuild One of my Favourite Songs - DJ Shadow's Building Steam With a Grain of Salt","channel":"Karl Boltzmann","url":"https://www.youtube.com/watch?v=WpBuYVYQo8A"},
+  {"machine":"mpc60","song":"Runaway","artist":"Kanye West ft. Pusha T","title":"Remaking “Runaway” by Kanye West ft. Pusha T","channel":"lil soy sauce","url":"https://www.youtube.com/watch?v=luK0r0upBDA","note":"in software"},
+  {"machine":"mpc60","song":"(a classic hip-hop beat)","artist":"","title":"ANATOMY OF A BEAT: AKAI MPC60 - Immortal Hip Hop Classic","channel":"bizon33obroty","url":"https://www.youtube.com/watch?v=U0KEsy4OPY4"},
+  {"machine":"mpc60","song":"(J Dilla's unquantized feel)","artist":"J Dilla","title":"DILLA Drums UNLOCKED In 2 Minutes!","channel":"Everyone Produces","url":"https://www.youtube.com/watch?v=yH7Fc6zlS44"}
+ ]
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "synth-patch",
+  "version": 1,
+  "synth": "prophet",
+  "state": {
+    "uni": true,
+    "aSync": true,
+    "aFreq": 40,
+    "pmFA": true,
+    "pmFenv": 7,
+    "cutoff": 8,
+    "res": 2,
+    "envAmt": 3,
+    "fA": 4,
+    "fD": 7,
+    "fS": 4,
+    "fR": 5,
+    "aS": 10,
+    "aR": 4
+  },
+  "song": "Let's Go",
+  "artist": "The Cars",
+  "year": "1979",
+  "genre": "",
+  "source": {
+    "url": "https://vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf",
+    "channel": "Sequential",
+    "title": "Prophet-5 User's Guide pp. 51-52",
+    "at": "p. 51"
+  },
+  "by": "",
+  "notes": "The guide's \"Creating a Hard-Sync Lead\" recipe, which it names as the sound of \"Let's Go\" by the Cars. Not compared with the record. Oscillator A at 16 semitones above B is this page's reading of the guide's \"4\".",
+  "made": "2026-11-25",
+  "origin": "manual"
+}

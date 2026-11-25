@@ -52,3 +52,67 @@
   "Check my channel", `data-quiz` is the mystery-channel game, ⤓ WAV saves the raw source for the real desk. Live Sound 6 reuses
   synth-kit's `pa`. X32 ranges from the X32 user manual and Maillot's OSC protocol (`scripts/sources/live-sound.py`; annotated copies
   in ~/Documents/Manuals). Test: `node tests/lessons/live-kit.cdp.js` (after rendering the seven pages; about 3 minutes).
+- Sound 26, classic synths compared (`lessons/synth-compare.qmd`, sidebar after Sound 25): `<div class="scmp">` from
+  `apps/shared/lessons/synth-compare.js` + `.css`. Nine panels drawn after (not copied from) the Model D, Prophet-5, TB-303 (synth
+  part), Juno-60 (Juno-106 switch), ARP 2600 (normals + editable patch cords), OB-Xa (+ SEM LP/BP/HP/notch, unverified), MS-20 (HP +
+  LP in series, hot peaks, cords), DX7 (6 operators, 32 algorithms from MSFA, checked against the manual's carrier counts) and PPG
+  Wave (this page's own wavetables); "From" / "To" pickers for any pair. One AudioWorklet engine (worklet source in the file, loaded
+  as a Blob; the processor must be a real `class extends AudioWorkletProcessor`; up to 16 voices, 4-pole models, 12 dB SVF, HPF,
+  ring mod, S&H, chorus, accent / slide, FM, wavetables). `SynthCompare.translate(state, from, to)` -> settings + notes (exact /
+  approx / lost, each citing both synths' manual pages): Model D <-> Prophet-5 by their hand-written translator, every other pair
+  through the canonical description (`toCanon` = the engine patch) and each profile's `cap` + `apply`. `EXAMPLES` (cited recipes;
+  phrase steps may carry "a" accent / "s" slide), `SynthCompare.voice(ctx, id, state)` -> Promise of {node, noteOn, noteOff, set}
+  for the DAW later. Manuals (several OCR'd scans) in ~/Documents/Manuals/synths and `.../synths/new` (pages in the JS header;
+  sources `scripts/sources/synth-compare.py`); knob curves, voicings and the PPG panel are the page's own, and nobody has compared
+  the sound with the real instruments. Tests `node tests/lessons/synth-compare.test.js` (`NEG=1` must fail),
+  `tests/lessons/synth-compare.cdp.js` (after rendering). Planned: sequencer and drum machine pages on the same pattern, the
+  engines as DAW track sounds.
+- Sound 26 student patches (`apps/shared/lessons/synth-library.js` + `.css`, mounted under each `.scmp` widget through its public API
+  only; new synth ids in `SynthCompare.PROFILES` appear by themselves): "Save this patch" downloads a `kind: "synth-patch", version: 1`
+  JSON (format in the header), "Open a patch file" validates and loads it into its panel and translates, the Library lists
+  `apps/shared/data/synth-patches/index.json` (badges: student / `checked: true` by the teacher / `origin: "manual"`, seeded only with
+  the Prophet guide's "Let's Go" hard-sync recipe), and `<div class="slib-assign">` draws `assignments.json` ("Build it from a video":
+  YouTube videos confirmed by oEmbed, song times from their descriptions; each Build button fills the form). Teacher:
+  `node scripts/synth-patches/add.mjs <files...> [--check] [--checked]` validates, copies and rewrites the index (then re-render or copy
+  to `_site`). History sections use only the Wikipedia articles (`scripts/sources/synth-compare.py`). Tests
+  `node tests/lessons/synth-library.test.js` (`NEG=1` must fail), `tests/lessons/synth-library.cdp.js` (after rendering).
+- Classic drum machines compared (`lessons/drum-compare.qmd`, sidebar after Sound 26): `<div class="dcmp">` from
+  `apps/shared/lessons/drum-compare.js` + `.css`. TR-808 / TR-909 / LinnDrum / MPC60-style panels with each machine's own grid rules
+  (808 total-accent row and tom/conga switches; 909 per-voice + total accent, shuffle 1-7, flams, last step; Linn levels, error
+  correct incl. HI, timing A-F; MPC velocity, timing correct incl. OFF at 96 ppq, swing 50-75 %), one AudioWorklet engine (Blob, real
+  `class extends AudioWorkletProcessor`; the same source run offline for plots and tests via `DrumCompare.render`),
+  `DrumCompare.translate(state, to)` -> state + notes (exact / approx / lost with manual pages) through `canonical()` (hits in ticks),
+  timing plot, waveform / envelope / spectrum per voice, A/B playback with the grid lit. JSON `kind: "drum-pattern", version: 1`
+  export / import; videos to rebuild in `apps/shared/data/drum-patterns/assignments.json` (`<div class="dcmp-assign">`, oEmbed-checked).
+  `DrumCompare.voice(ctx, machine, kit)` -> `{ output, hit(voice, when, vel, accent), set, stop }` for a later DAW hookup (DAW not
+  wired). Manuals + extracted text in ~/Documents/Manuals/drums (808 service notes and intro sheet, 909 owner's manual, LinnDrum
+  owner's manual, MPC60 v3.1 manual; page offsets in the JS header). All sounds are stand-ins (808/909 after the circuit notes, 909
+  hats / Linn / MPC synthesised and bit-reduced), swing spacing between printed points and flam ms are the page's own; not listened
+  against real machines. Sources `scripts/sources/drum-compare.py`. Tests `node tests/lessons/drum-compare.test.js` (`NEG=1` must
+  fail), `tests/lessons/drum-compare.cdp.js` (after rendering).
+- Classic sequencers compared (`lessons/sequencer-compare.qmd`, sidebar after Sound 26): `<div class="sqc">` from
+  `apps/shared/lessons/sequencer-compare.js` + `.css`. Five machines, each with its own entry method: 960-style (3 rows × 8 knobs, X1/2/4,
+  Normal/Skip/Stop, 3rd-row timing; built from the Synthesizers.com Q960 sheet, no Moog 960 manual found), TB-303 (pitch mode then time
+  mode note/tie/rest, accent/slide, DOWN/UP, last step, TB-03 triplet grid), MC-202 (2 channels, step/gate at 24 a quarter, STEP/GATE
+  keys, accent ch 1, portamento on the second note), MC-4 (keypad, TB 120/96/48/24, CV-1/CV-2/step/gate on 4 channels), Elektron-style
+  after the Digitakt II (note/lock trigs, p-locks, COND/PROB/FILL, micro timing, speed, swing, loop shown). `SequencerCompare.translate(from,
+  to, data)` via `toCanon`/`fromCanon` (ticks, 480 a quarter) -> data + notes (exact/approx/lost, manual pages); `toEvents(machine, data)`
+  -> `[{t, note, vel, len, accent, slide, ch}]` in beats for a later DAW hookup (DAW not wired); piano roll / timing grid / lanes SVG;
+  own AudioWorklet voice (Blob, real class; `SynthCompare.voice` did not exist when built), A/B playback. JSON `kind: "sequence",
+  version: 1` export/import; videos in `apps/shared/data/sequences/assignments.json` (oEmbed-checked 2026-11-25, 4 a machine; the
+  analog list is other step sequencers). Manuals + text in ~/Documents/Manuals/sequencers (Roland scans cited by PDF page; extractor
+  is a Swift PDFKit script). Page's own: 303 range, MC-202 gate-key lengths, MC-4 CV-2 scale and gate 0 = rest, micro = 1/24 step,
+  swing formula, the voice; not listened against real machines. Sources `scripts/sources/sequencer-compare.py`. Tests
+  `node tests/lessons/sequencer-compare.test.js` (`NEG=1` must fail), `tests/lessons/sequencer-compare.cdp.js` (after rendering).
+- The Model D patch sheets (section "The Model D patch sheets" of `lessons/synth-compare.qmd`, `<div class="moog-sheets">`):
+  `apps/shared/lessons/moog-sheet.js` + `.css` (global MoogSheet) redraw the manual's sheets (pp. 55-76, 44 sounds; blanks pp. 77-79)
+  as SVG line art in its layout and colours (orange pointers, light-blue range / wave circles, rocker fills), for students who need
+  the page and the panel to look the same. Data `apps/shared/data/moog-sheets.json` (each control in the sheet's own units: cutoff
+  -5..5 with labels -4..4, tune -2.5..2.5, freq -8..8, time knobs as 0-10 positions on the printed 10 ms-10 s scale with a reading;
+  `unsure` lists hard readings, `null` = knob / switch left empty) was read from the PDF's pixels by a script (pointer angle of the
+  orange pixels round each knob centre, switch half colours, wheel thumb rows) and checked by redrawing it beside the page.
+  `MoogSheet.toState / fromState` convert to `SynthCompare.PROFILES.moog` state (cutoff + 5; times by the printed scale, log between
+  labels, ends from p. 80); `draw(host, entry, {interactive, onChange, large, contrast, section})`; picker, ▶ Play / Show on the panel
+  above (through `widgets[0].set / translate / phrase`), one part at a time, large print, high contrast, Save / Open, Print (sheet or
+  blank). Switch conventions (coloured half = pressed; osc 3 control and power: top = on) and the LFO push-pull symbol are this
+  page's reading. Tests `node tests/lessons/moog-sheet.test.js` (`NEG=1` must fail), `tests/lessons/moog-sheet.cdp.js` (after rendering).

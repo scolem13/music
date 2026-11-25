@@ -1,0 +1,25 @@
+/* The Model D patch sheets (moog-sheet.js). The sheet itself stays black on white, as in the manual, in both themes. */
+.ms-w { margin: 1rem 0 1.5rem; }
+.ms-bar, .ms-nav { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .4rem 0; }
+.ms-opts { display: flex; flex-wrap: wrap; gap: .8rem; margin-left: auto; font-size: .95rem; }
+.ms-btn { font: inherit; padding: .3rem .75rem; border: 1px solid #555; border-radius: 4px; background: #fff; color: #000; cursor: pointer; }
+.ms-btn:hover, .ms-btn:focus-visible { background: #fdebe0; }
+.ms-btn:disabled { opacity: .4; cursor: default; }
+.ms-play { background: #F58648; border-color: #c25a1f; font-weight: 600; }
+.ms-pick { font: inherit; max-width: 22rem; }
+.ms-openlab input { display: none; }
+.ms-secname { font-weight: 600; min-width: 14rem; text-align: center; }
+.ms-paper { background: #fff; border: 1px solid #ccc; padding: 4px; }
+.ms-svg { display: block; width: 100%; height: auto; user-select: none; touch-action: none; }
+.ms-svg .ms-ctl:focus { outline: none; }
+.ms-svg .ms-ctl:focus-visible > * { filter: drop-shadow(0 0 3px #1a73e8) drop-shadow(0 0 2px #1a73e8); }
+.ms-info, .ms-msg { font-size: .92rem; margin: .3rem 0; }
+.ms-noteslab { display: block; margin: .4rem 0; }
+.ms-notes { display: block; width: 100%; font: inherit; }
+.ms-print-sheet { display: none; }
+@media print {
+  html.ms-printing body > *:not(.ms-print-sheet) { display: none !important; }
+  html.ms-printing .ms-print-sheet { display: block !important; width: 100%; }
+  html.ms-printing .ms-print-sheet svg { width: 100%; height: auto; }
+  @page { size: landscape; margin: 10mm; }
+}

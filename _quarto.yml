@@ -232,6 +232,9 @@ website:
             - lessons/sound-stereo.qmd
             - lessons/sound-chain.qmd
             - lessons/sound-chiptune.qmd
+            - lessons/synth-compare.qmd
+            - lessons/sequencer-compare.qmd
+            - lessons/drum-compare.qmd
         - section: "Recording"
           contents:
             - lessons/rec-gain-staging.qmd

@@ -180,6 +180,9 @@ listing:
     - sound-stereo.qmd
     - sound-chain.qmd
     - sound-chiptune.qmd
+    - synth-compare.qmd
+    - sequencer-compare.qmd
+    - drum-compare.qmd
     - rec-gain-staging.qmd
     - rec-mics.qmd
     - rec-placement.qmd

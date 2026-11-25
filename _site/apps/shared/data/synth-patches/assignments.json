@@ -1,0 +1,44 @@
+{
+ "note": "Patch-recreation videos for 'Build it from a video' (lessons/synth-compare.qmd). Each confirmed 2026-11-25: title and channel from YouTube's oEmbed, song times from the video's own description. Only videos made on (or for) that instrument.",
+ "videos": [
+  { "synth": "moog", "url": "https://www.youtube.com/watch?v=opQSGvPQHL0", "channel": "Andy Whitmore", "title": "40 Famous Songs on a MiniMoog Model D: Reissue vs Vintage",
+    "note": "Each sound played on a vintage Model D and on the reissue",
+    "songs": [
+     { "song": "Flash Light", "artist": "Parliament", "at": "5:56" },
+     { "song": "Are 'Friends' Electric?", "artist": "Gary Numan", "at": "4:19" },
+     { "song": "Gimme! Gimme! Gimme!", "artist": "ABBA", "at": "1:02" },
+     { "song": "I Wish", "artist": "Stevie Wonder", "at": "6:44" },
+     { "song": "Rock With You", "artist": "Michael Jackson", "at": "5:00" },
+     { "song": "Axel F", "artist": "Harold Faltermeyer", "at": "1:37" } ] },
+  { "synth": "moog", "url": "https://www.youtube.com/watch?v=33gZwkSUZRs", "channel": "Reverb", "title": "Ep20: Synth Sounds of Minimoog: Parliament, Pink Floyd, Dr. Dre & More",
+    "songs": [
+     { "song": "Are Friends Electric?", "artist": "Gary Numan", "at": "3:53" },
+     { "song": "Nuthin' But a 'G' Thang", "artist": "Dr. Dre", "at": "6:36" },
+     { "song": "Smart Patrol", "artist": "Devo", "at": "10:02" },
+     { "song": "Shine On You Crazy Diamond", "artist": "Pink Floyd", "at": "15:06" } ] },
+  { "synth": "moog", "url": "https://www.youtube.com/watch?v=B81J3jvoNCc", "channel": "Rishabh Rajan", "title": "Michael Jackson - Thriller [MiniMoog Model D Tutorial]",
+    "note": "On the reissue",
+    "songs": [ { "song": "Thriller", "artist": "Michael Jackson", "at": "" } ] },
+  { "synth": "moog", "url": "https://www.youtube.com/watch?v=Nk_GFm1UJtE", "channel": "Rishabh Rajan", "title": "Sound Design: Herbie Hancock Chameleon Bass Line - Minimoog",
+    "note": "Built on a Minimoog; the presenter says the original was apparently an ARP Odyssey",
+    "songs": [ { "song": "Chameleon", "artist": "Herbie Hancock", "at": "" } ] },
+  { "synth": "prophet", "url": "https://www.youtube.com/watch?v=EKObRMIxmME", "channel": "Andy Whitmore", "title": "Prophet-5 Famous Riffs | Radiohead, D Train, Cameo & More!",
+    "note": "All sounds played on his Prophet-5",
+    "songs": [
+     { "song": "Everything In Its Right Place", "artist": "Radiohead", "at": "0:36" },
+     { "song": "Let's Go", "artist": "The Cars", "at": "1:04" },
+     { "song": "This Must Be the Place", "artist": "Talking Heads", "at": "1:23" },
+     { "song": "In the Air Tonight", "artist": "Phil Collins", "at": "1:44" },
+     { "song": "Run Like Hell", "artist": "Pink Floyd", "at": "2:11" },
+     { "song": "She's Strange", "artist": "Cameo", "at": "5:27" } ] },
+  { "synth": "prophet", "url": "https://www.youtube.com/watch?v=DvRv0TlMI5M", "channel": "Alex Ball", "title": "Prophet~5 Tutorial: Radiohead, Aphex Twin, Japan",
+    "note": "On a vintage Rev 3.2, with a breakdown of each patch",
+    "songs": [
+     { "song": "Everything In Its Right Place", "artist": "Radiohead", "at": "1:21" },
+     { "song": "Rhubarb", "artist": "Aphex Twin", "at": "3:53" },
+     { "song": "Ghosts", "artist": "Japan", "at": "7:13" } ] },
+  { "synth": "prophet", "url": "https://www.youtube.com/watch?v=8tirpIfEzqw", "channel": "Reverb", "title": "Ep6: Synth Sounds of Phil Collins \"In The Air Tonight\"",
+    "note": "The video's description does not name the synth; that it is a Prophet-5 (filtered brass, with chorus and delay) is from a summary of Reverb's article, which refused to load here: unverified",
+    "songs": [ { "song": "In the Air Tonight", "artist": "Phil Collins", "at": "" } ] }
+ ]
+}

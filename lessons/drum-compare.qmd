@@ -1,0 +1,153 @@
+---
+title: "Classic Drum Machines Compared"
+toc: true
+toc-depth: 2
+description: "A TR-808, TR-909, LinnDrum and MPC60, each rebuilt in the browser with its own step and timing rules: turn a beat on one into the others and see, line by line, what carries over, what changes and what is lost, with the manual page for each."
+instruments: [drums, other]
+topics: [sound]
+has: [interactive]
+---
+
+Four drum machines shaped most of the beats of the last forty-five years. The **Roland TR-808** (1980) and **TR-909** (1983)
+built their drums from circuits; the **LinnDrum** (1982) played recordings of real drums; the **Akai MPC60** (1988) played any
+sound you sampled into it, with timing you could leave exactly as you played it. On this page each one is rebuilt in the
+browser. Program a beat on one, turn it into another, and read what happened to every drum, knob and note:
+**the same**, **close** or **impossible**, and why.
+
+The panels are drawn after the real machines and are not copies; the names belong to their makers. Every fact about the
+machines comes from their manuals (cited with the page) or from Wikipedia. What the manuals do not say, such as how much a
+909 shuffle setting moves a note, is this page's own choice and is marked so. **The sounds are stand-ins**: the 808 and 909
+drums are synthesised after the circuit descriptions; the 909's sampled hats and cymbals, and every LinnDrum and MPC sound,
+are synthesised and then cut to the machine's bit depth and sample rate. Nobody has compared them with the real machines.
+
+## The machines
+
+<div class="dcmp"></div>
+
+**How to use it.** Pick an **Example**, then **▶ A**, **▶ B** or **▶ A, then B**. Click a step on panel A to add a hit;
+click again for an accent, a higher level, a louder velocity or (909) a flam ≀. Change machine with the menu on either
+panel. **Make this the starting point** turns the translation into the new source. Point at a line of the report to light
+up the rows and knobs it is about. Outlines show <span class="dcmp-key dcmp-exact">the same</span>,
+<span class="dcmp-key dcmp-approx">close</span> and <span class="dcmp-key dcmp-lost">cannot be done</span>.
+
+## Steps, accents and swing
+
+| | TR-808 | TR-909 | LinnDrum | MPC60 |
+|---|---|---|---|---|
+| Grid | 1-32 steps a measure, 16 by default (Service Notes p. 1; owner's manual) | 16ths or triplets, last step 1-16 (manual p. 24) | error correct 1/8 to 1/32 triplet, or HI = as played (p. 7) | timing correct 1/8 to 1/32 triplet, or OFF = 96 parts per quarter note (pp. 26, 43) |
+| Loudness | one accent row for the whole step, 0-10 dB (SN p. 1) | total accent, plus accents on bass drum, snare, toms and closed hat (p. 25) | 3 levels on snare, 2 on bass, hi-hat, cabasa, tambourine, ride (p. 1) | velocity; 16 Levels plays one sound at 16 velocities (pp. 21-22) |
+| Swing | none described | shuffle 1-7 on 16ths (p. 26) | timing A (straight) to F (shuffle), on 8ths or 16ths; E = perfect triplet (pp. 8-9) | Swing 50-75 %, 66 % = triplet (p. 44) |
+| Flam | no | 8 intervals on bass, snare, toms; first hit on the step (p. 26) | no | no (two notes) |
+
+The **timing plot** under the panels draws where every hit of A (above) and B (below) lands; a short line from a dot to the
+grid shows how far swing or hand-played timing has moved it. Try **MPC beat, swing 62 %** into the 909: all the late
+snares jump back onto the steps. The MPC manual itself suggests 54 % for 16th hi-hats and 62 % for a relaxed 16th swing
+(MPC60 manual p. 44). Roger Linn, who wrote the LinnDrum's timing settings, also wrote the MPC60 manual; its percentages
+are the clearest statement of what "swing" means on these machines: the share of each pair of notes given to the first.
+
+## Sounds and knobs
+
+- **TR-808.** Every drum is a circuit. The bass drum is a "bridged T-network" that rings when struck; with an accent its
+  time constant is halved for 4 ms, so it starts at twice its frequency, a "punchier crisp bass" (Service Notes p. 5). The
+  cowbell is two square-wave oscillators; the cymbal and hi-hats share six; a closed hat cuts the open one off (p. 6).
+  Toms and congas share circuits, chosen by a switch, so one pattern cannot use both a low tom and a low conga (p. 6).
+- **TR-909.** Bass drum with tune, attack and decay, snare with tune, tone and snappy, toms with tune and decay (manual
+  p. 8). Wikipedia: its crash, ride and hi-hats are 6-bit samples made by Atsushi Hoshiai; the rest are analog.
+- **LinnDrum.** Recordings of drums (8-bit, 28-35 kHz, Wikipedia). Only the snare, sidestick, toms and congas tune, by
+  about an octave, and the closed hi-hat has a decay knob; "all other drums are not tunable" (manual p. 1).
+- **MPC60.** Any sound sampled into it, 12-bit at 40 kHz (manual p. 15), with envelope, tuning and velocity settings for
+  each pad (p. 5).
+
+Under the panels, pick a **voice** to see its waveform, its loudness envelope and its spectrum on both machines.
+
+## TR-808: history, music, records
+
+Roland made the TR-808 from 1980 to 1983; it cost US$1,195. A team led by Tadao Kikumoto designed it, with Makoto Muroi,
+Hiro Nakamura (voice circuits) and Hisanori Matsuoka. It makes its sounds by analog synthesis, not samples. Users program
+up to 32 patterns, chain up to 768 measures and place accents on beats. It was a commercial failure; about 12,000 were
+made. It became a foundation of hip-hop and was used across electronic and dance music, Miami bass, Detroit techno and R&B.
+
+Records and players: Yellow Magic Orchestra played it live on "1000 Knives" at the Budokan in 1980 and used it on *BGM*
+(1981); Ryuichi Sakamoto's *B-2 Unit* and "Riot in Lagos"; Marvin Gaye's "Sexual Healing" (1982), the first US hit with
+the 808; Afrika Bambaataa & the Soulsonic Force's "Planet Rock" (1982); the Beastie Boys' "Paul Revere" (1986, a reversed
+808); Whitney Houston's "I Wanna Dance With Somebody" (1987); Kanye West's *808s & Heartbreak* (2008); Run-DMC, LL Cool J
+and Public Enemy (all from Wikipedia, "Roland TR-808").
+
+## TR-909: history, music, records
+
+Made 1983-85 at US$1,195, again led by Tadao Kikumoto. Its voices are analog except the crash, ride and hi-hats, 6-bit
+samples by Atsushi Hoshiai; it was Roland's first drum machine with samples and with MIDI. It chains up to 96 patterns
+into songs of up to 896 measures, with shuffle, flam and accents. About 10,000 were built and it was a commercial
+failure, but second-hand 909s became central to techno, house and acid house: Derrick May, Frankie Knuckles, Jeff Mills.
+Records: Adamski's "Killer" (1990), Daft Punk's "Revolution 909" (*Homework*, 1997), Björk's "Hunter" (1997), Radiohead's
+"Videotape" (2007) (Wikipedia, "Roland TR-909").
+
+## LinnDrum: history, music, records
+
+Linn Electronics made the LinnDrum from 1982 to 1985; Roger Linn designed it. It cost US$2,995 and about 5,000 were sold.
+It plays 8-bit samples at 28-35 kHz from 15 pads. Wikipedia gives 56 user and 42 preset patterns; the owner's manual read
+here numbers 49 patterns, those starting 1-5 preset (p. 2), so models or software versions may differ (unverified).
+Users included Trevor Horn (Sound On Sound's "Classic Tracks" on "Relax"), Mark Knopfler, George Michael, Naked Eyes and
+Stock Aitken Waterman (Wikipedia, "LinnDrum").
+
+## Akai MPC: history, music, records
+
+The MPC60 came out on 8 December 1988 at $5,000, designed by Roger Linn with David Cockerell's team at Akai, with a 4 x 4
+grid of pressure-sensitive pads. DJ Shadow made *Endtroducing* (1996) on an MPC60 MkII; J Dilla turned the quantize off
+for his off-kilter feel; Kanye West made *The College Dropout* (2004) and played "Runaway" live on an MPC2000XL (2010)
+(Wikipedia, "Akai MPC"). The later MPC3000 is not covered here: no manual for it has been read for this page.
+
+## Rebuild a beat from a video
+
+Watch one of the videos below, rebuild the beat on the matching machine, then **⤓ Export JSON**: fill in the song,
+artist, the video's address, channel and title and the time in the video where the beat is shown, and save the file.
+**⤒ Import JSON** opens a file again (yours or a classmate's) on its own machine; then turn it into the others. The file
+holds `kind: "drum-pattern"`, `version: 1`, the machine, its kit, the pattern, the song and the source. Each video was
+checked to exist on 25 November 2026; what each shows is as its title says.
+
+<div class="dcmp-assign"></div>
+
+## What is checked and what is not
+
+Checked against the manuals: each machine's instruments and knobs, step counts and scales, accents and levels, the 909's
+shuffle settings and flams, the LinnDrum's error-correct and timing settings (only A = straight and E = triplet as amounts),
+the MPC60's timing correct, swing percentages, 96 ppq and 16 Levels, and the 808's voice circuits as the service notes
+describe them. Each report line names its page.
+
+This page's own choices: every sound (synthesised stand-ins, including the 808 cymbal and cowbell frequencies); knob curves;
+how far 909 shuffle 2-7 and LinnDrum timing B, C, D and F move a note; the 909's flam intervals in ms; the 85 % velocity
+that becomes an accent; which 808 pre-scale gives triplets. Nobody has compared these sounds with the real machines.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/drum-compare.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/drum-compare.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Akai MPC." *Wikipedia*, [en.wikipedia.org/wiki/Akai_MPC](https://en.wikipedia.org/wiki/Akai_MPC). The MPC60's release and price, Linn and Cockerell, DJ Shadow, J Dilla, Kanye West.
+
+"Classic Tracks: Frankie Goes To Hollywood 'Relax'." *Sound On Sound*, [www.soundonsound.com/techniques/classic-tracks-frankie-goes-hollywood-relax](https://www.soundonsound.com/techniques/classic-tracks-frankie-goes-hollywood-relax). Cited by the Wikipedia LinnDrum article for Trevor Horn's use; not read for this page.
+
+"LinnDrum." *Wikipedia*, [en.wikipedia.org/wiki/LinnDrum](https://en.wikipedia.org/wiki/LinnDrum). Dates, price, sales, 8-bit samples, users.
+
+"Roland TR-808." *Wikipedia*, [en.wikipedia.org/wiki/Roland_TR-808](https://en.wikipedia.org/wiki/Roland_TR-808). History, makers, sales, music and records.
+
+"Roland TR-909." *Wikipedia*, [en.wikipedia.org/wiki/Roland_TR-909](https://en.wikipedia.org/wiki/Roland_TR-909). History, 6-bit samples, sales, music and records.
+
+**For teachers**
+
+Linn Electronics. *LinnDrum Owner's Manual*. Internet Archive, [archive.org/details/synthmanual-linndrum-owners-manual](https://archive.org/details/synthmanual-linndrum-owners-manual). Drums, dynamic levels, tuning (p. 1); patterns (p. 2); error correct (p. 7); timing A-F, E a perfect triplet shuffle (pp. 8-9).
+
+Linn, Roger, and David Battino. *MPC60 Software Version 3.1 Operator's Manual*. Roger Linn Design, 2002, [www.polynominal.com/akai-mpc60/akai-mpc60-manual.pdf](https://www.polynominal.com/akai-mpc60/akai-mpc60-manual.pdf). 12-bit samples at 40 kHz (p. 15), 16 Levels (pp. 21-22), 96 ppq (p. 26), timing correct and swing 50-75 % (pp. 43-44), specifications (p. 218).
+
+Roland Corporation. *TR-808 Rhythm Composer Owner's Manual* [introduction]. Internet Archive, [archive.org/details/manualsbase-id-576201](https://archive.org/details/manualsbase-id-576201). Writing a pattern: a measure of 16 steps, pre-scale, tap write.
+
+Roland Corporation. *TR-808 Service Notes*. 1st ed., 15 June 1981, 2nd printing 1983, Internet Archive, [archive.org/details/synthmanual-roland-tr-808-service-notes](https://archive.org/details/synthmanual-roland-tr-808-service-notes). Specifications: 1-32 steps a measure, 64 measures x 12 tracks, tempo 40-300, accent 0-10 dB (p. 1); the sound circuits: bridged T-network bass drum and its accent trick, snare, toms / congas, clap, cowbell, cymbal and hi-hats (pp. 5-6); knobs (p. 16).
+
+Roland Corporation. *TR-909 Rhythm Composer Owner's Manual*. Internet Archive, [archive.org/details/synthmanual-roland-tr-909-owners-manual](https://archive.org/details/synthmanual-roland-tr-909-owners-manual). Features (p. 5), sound controls (p. 8), scale and last step (p. 24), total and per-voice accent (p. 25), shuffle and flam (p. 26).
+:::
+<!-- /works-cited -->

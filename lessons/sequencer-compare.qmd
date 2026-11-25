@@ -1,0 +1,182 @@
+---
+title: "Classic Sequencers Compared"
+toc: true
+toc-depth: 2
+description: "An analog step sequencer, the TB-303, the MC-202, the MC-4 MicroComposer and an Elektron-style trig sequencer rebuilt side by side: program a line the way each machine wants it, turn it into another machine's line, and see what is kept, what changes and what is lost, with the manual page for each."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A sequencer remembers a line of notes and plays it back. The machines on this page all do that, but each one asks you to
+write the line in a different way: turning eight knobs, pressing a key for each pitch and then tapping in the rhythm,
+typing numbers, or lighting up sixteen buttons. How you enter a line changes which lines are easy to write. In practice it
+changes what music people made with each machine.
+
+Each machine is rebuilt here in the browser. The panels are drawn after the real ones and are not copies; the names belong
+to their makers. You can write a line on one machine and turn it into the nearest line on another. A report then tells
+you, for every part of the line, whether it is **the same**, **close** or **lost**, and why, with the manual page.
+Anything the manuals do not say is this page's own choice and is marked so.
+
+## The five sequencers
+
+<div class="sqc"></div>
+
+**How to use it.** Pick an **Example**, or choose the machines under **From** and **To**. Press **▶** to hear either machine,
+or one after the other. Edit the top panel and the bottom one follows. **⇅ Swap** makes the bottom machine the starting
+point. Point at a line of the report to light up the controls it is about on both panels. Coloured outlines show
+<span class="sqc-key" style="background:#2e9e6a">the same</span>, <span class="sqc-key" style="background:#d4a72c;color:#222">close</span> and
+<span class="sqc-key" style="background:#c8443a">lost</span>. Every machine plays the same simple voice (a saw or square wave
+into a low-pass filter). That way you hear the *sequence*, not five different synthesizers.
+
+## How each one is programmed
+
+- **The 960-style step sequencer** (after the Moog 960). There are 8 stages in 3 rows of knobs. Each knob sets a voltage,
+  and the oscillator moves the sequencer on one stage per cycle (Q960 data sheet pp. 1, 3). Row A here sets pitch at 1 volt
+  an octave. Row B goes to the filter. Row C can be switched to the clock: each volt doubles the speed, so a stage with a
+  higher row-C knob is shorter (p. 4). Each stage can be **Normal**, **Skip** or **Stop** (p. 3). Every stage starts the
+  envelope with the oscillator's pulse, which is on for 90 % of the cycle (pp. 3, 5). So there are no rests, and every note
+  has the same gate length.
+- **TB-303 pattern write.** You write the pitches first: in **PITCH MODE** you press the keys in order, with transpose
+  **DOWN** / **UP** for other octaves. Then you write the rhythm in **TIME MODE**, sixteen presses of note, tie or rest,
+  and no sound plays while you do it (TB-303 manual pp. 5, 14-15; the TB-03 manual names the three keys). Accent and slide
+  go on a note while you tap back through the pitches (pp. 40-43). The pitches are used in order by the *note* steps. Add
+  a rest and every pitch after it moves one note later. Try it on the panel.
+- **MC-202.** Two channels. Each note has a pitch, a **step time** (how long until the next note) and a **gate time** (how
+  long it sounds), counted 24 to a quarter note (MC-202 manual pp. 10, 15-16). Accent and portamento are stored with the
+  notes. Portamento is entered on the *second* of the two notes it joins (p. 29). On the 303, slide is marked on the
+  first.
+- **MC-4 MicroComposer.** You type numbers on a calculator keypad, one whole memory at a time: all the pitches (CV-1), then
+  all the step times, then all the gate times (MC-4 manual pp. 13-18). Pitches are numbers counting up the keyboard (p. 9).
+  The time base is 120 to a beat, so a 16th note is 30 (p. 10). There are four channels, each with CV-1, CV-2 and a gate.
+  CV-2 can drive "the VCF, the VCA, or any other" module (p. 11).
+- **Elektron-style trig sequencer** (after the Digitakt II). Sixteen trig keys a page. A **note trig** plays a note and a
+  **lock trig** only changes settings (Digitakt II manual p. 41). Hold a trig and turn a knob to **parameter-lock** that
+  setting on that step alone (p. 47). **Trig conditions** decide each time round whether a trig plays: `1:2` plays on the
+  first of every two loops, `1ST` only the first time, `PRE` if the last condition was true, and so on (p. 48). **Micro
+  timing** nudges a trig off its step (p. 45).
+
+## What carries over
+
+| From → To | Usually the same | Usually close | Usually lost |
+|---|---|---|---|
+| TB-303 → 960 | pitches | accents (as row-B filter voltage) | slides, rests, steps 9-16 |
+| 960 → TB-303 | even 16th rhythm, pitches set to a semitone | knobs between two semitones (rounded) | row-B filter values |
+| MC-202 → TB-303 | pitches, accents, slides | gate lengths (become whole steps) | channel 2 |
+| MC-4 → TB-303 | pitches on the 16th grid | triplets and swing (moved onto a grid) | CV-2, channels 2-4 |
+| MC-4 → MC-202 | step / gate idea, two channels | times rounded from 1/120 to 1/24 of a beat | channels 3-4, CV-2 |
+| Elektron → anything else | the loop you chose | micro timing, velocity | trig conditions, probability, parameter locks |
+
+The worked examples show each row. Change a few things and watch the report change.
+
+## Reading the pictures
+
+- **Piano roll**: what each machine actually plays, the *From* machine in outline and the *To* machine filled. A dashed or
+  coloured line between two notes is a slide or portamento. Thick bars are accents.
+- **Timing grid**: one beat, with a tick wherever each machine can start a note. The 303 has 4 (or the TB-03's triplet
+  grid), the MC-202 24, the MC-4 120 and the Elektron 4 plus micro-timing marks. The 960 has a shaded bar, because its
+  stage lengths come from turning knobs and are not counted. The dots are where this line's notes fall.
+- **Lanes**: for every note, its velocity, accent, slide, gate length as a share of the step, and the filter value (yellow
+  dots are lock trigs).
+
+## Analog step sequencers
+
+The Wikipedia article "Music sequencer", citing Pinch and Trocco, says analog sequencers were used for "repeated
+minimalistic phrases" in the music of Tangerine Dream and Giorgio Moroder, and later in trance. The Moog 960 here is
+rebuilt from the data sheet of the Synthesizers.com Q960, a module that its maker calls "functionally equivalent to the
+Moog 960" (p. 5). No Moog 960 manual was found.
+
+## MC-8 and MC-4: typing music in numbers
+
+According to Wikipedia ("Roland MC-8 Microcomposer"), Roland's MC-8 (1977) was the first microprocessor-based digital
+sequencer, and Yellow Magic Orchestra, from 1978, are its earliest known users. The MC-4 (1981, US$3,295) followed it
+("Roland MC-4 Microcomposer"). It used numeric entry with middle C as 24, a time base of 120 to a quarter (a 16th is 30)
+and four channels. Its memory was lost at power-off and saved to cassette or the MTR-100. Users named there include Vince
+Clarke on Yazoo's *Upstairs at Eric's* (1982) and Erasure's *Chorus* (1991). Clarke called it "a pig to program but well
+worth it". Also named are YMO, Kraftwerk, Tomita, the Human League and Depeche Mode.
+
+## TB-303: the bass line that failed, then became acid
+
+From Wikipedia ("Roland TB-303"): Roland released it in 1981. It was designed by Tadao Kikumoto, cost US$395, and was
+marketed to replace a bass guitar. It was a commercial failure and was discontinued in 1984. A saw or square wave goes into
+a 24 dB-per-octave low-pass filter, and it stores 64 patterns and 7 songs. It became the sound of **acid house**, and is
+also tied to **Chicago house** and **techno**. Records named in the article:
+
+- Charanjit Singh, *Synthesizing: Ten Ragas to a Disco Beat* (1982)
+- Bappi Lahiri's film songs of 1983: "Koi Lutera", "Aah Ha Oonh Hun", "Tum Tum Tumba"
+- Orange Juice, "Rip It Up" (1983); Ryo Kawasaki, *Lucky Lady* (1983)
+- Phuture, "Acid Tracks" (1987)
+- Hardfloor, "Acperience" (1992); Josh Wink, "Higher State of Consciousness" (1995)
+- Daft Punk, "Da Funk"; Fatboy Slim, "Everybody Needs a 303" (1996)
+
+## MC-202: the first groovebox
+
+From Wikipedia ("Roland MC-202"): Roland made it from 1983 to 1985 and it cost $595. It is called the first groovebox: a
+two-track sequencer with a built-in synth. Each note has pitch, length, gate, accent and slide. It saved to tape through a
+tape interface, and its successor was the MC-303 (1996).
+
+## Elektron-style sequencing
+
+This page says nothing about the history of Elektron's machines. Only their manual has been read, not a history source.
+What it rebuilds is the Digitakt II's way of entering a line: note and lock trigs, parameter locks, trig conditions,
+micro timing, length and speed. Speed 3/4X is how the manual suggests playing triplets, and 2X gives 32nd notes (p. 46).
+
+## Rebuild a line from a video
+
+Under the widget is a list of YouTube videos in which someone rebuilds a known song's sequence on one of these machines
+or a close relative. Each was checked to exist. Nobody has checked whether each video's line matches the record. No
+video of a Moog 960 itself was found, so the analog list uses other step sequencers.
+
+1. Press **Use** beside a video. It chooses that machine and fills in the song, artist and link.
+2. Rebuild the line by ear on the top panel. Write the time in the video where the line is heard in **At**.
+3. Press **⤓ Export**. The file is a small JSON record (`kind: "sequence"`, `version: 1`, the machine, its settings, the
+   song, the artist and the source). Hand it in, or **⤒ Import** it later to carry on.
+4. Turn it into another machine and write down what was lost.
+
+## What is checked and what is not
+
+Checked against the manuals, with pages in the report: how each machine enters notes, the stage, step and grid sizes, step
+and gate times, the MC-4's time base and channels, the 303's pitch and time memories, accent and slide or portamento,
+trig types, parameter locks, trig conditions, micro timing, speed and swing range. The Roland manuals are scans, cited by
+the PDF's page number.
+
+This page's own choices, not from the manuals: the 303's key range here (C2 to C5), the MC-202 gate keys' lengths (the
+table did not scan cleanly), the MC-4's CV-2 scale (0-100), treating gate 0 as a rest on the MC-4, micro timing in 1/24 of
+a step (the Digitakt manual does not give the size), how swing moves the off-beat 16ths, slide time, and the shared voice.
+The voice is not a model of any of these machines. Nobody has yet compared the playback with the real instruments.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/sequencer-compare.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/sequencer-compare.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Elektron. *Digitakt II User Manual*. Elektron Music Machines, 2024, [www.elektron.se/en/download-support-digitakt-ii](https://www.elektron.se/en/download-support-digitakt-ii). Note and lock trigs (41), micro timing (45), 128 steps, speed (45-46), parameter locks (47), trig conditions (48), FILL (49), TRIG page (53-54), swing (23).
+
+"Music sequencer." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Music_sequencer](https://en.wikipedia.org/wiki/Music_sequencer). Analog sequencers' "repeated minimalistic phrases", citing Pinch and Trocco.
+
+Roland Corporation. *TB-03 Owner's Manual*. Roland, 2016, [static.roland.com/assets/media/pdf/TB-03_eng03_W.pdf](https://static.roland.com/assets/media/pdf/TB-03_eng03_W.pdf). One sheet: Original mode reproduces the TB-303's pattern write; note / tie / rest, 16 steps, triplet grid, last step.
+
+"Roland MC-202." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Roland_MC-202](https://en.wikipedia.org/wiki/Roland_MC-202).
+
+"Roland MC-4 Microcomposer." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Roland_MC-4_Microcomposer](https://en.wikipedia.org/wiki/Roland_MC-4_Microcomposer).
+
+"Roland MC-8 Microcomposer." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Roland_MC-8_Microcomposer](https://en.wikipedia.org/wiki/Roland_MC-8_Microcomposer).
+
+"Roland TB-303." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Roland_TB-303](https://en.wikipedia.org/wiki/Roland_TB-303).
+
+**For teachers**
+
+Roland Corporation. *MC-202 MicroComposer Owner's Manual*. Roland, [1983], scan at Internet Archive, [archive.org/details/synthmanual-roland-mc-202-owners-manual](https://archive.org/details/synthmanual-roland-mc-202-owners-manual). PDF pages: features, 2 channels, 2600 steps, tape (5), step and gate time (10, 15-16), rests (17, 19), accent and portamento (29, 31).
+
+Roland Corporation. *MC-4 MicroComposer Owner's Manual*. Roland, [1981], scan at Internet Archive, [archive.org/details/synthmanual-roland-mc-4-owners-manual](https://archive.org/details/synthmanual-roland-mc-4-owners-manual). PDF pages: pitch numbers (9), time base, step and gate time (10), CV-1 / CV-2 / gate on four channels (11), entering a tune (13-18), cassette (19-24).
+
+Roland Corporation. *TB-303 Bass Line Owner's Manual*. Roland, [1982], scan at Internet Archive, [archive.org/details/synthmanual-roland-tb-303-owners-manual](https://archive.org/details/synthmanual-roland-tb-303-owners-manual). PDF pages: pitch, length of note, accent and slide in a pattern (4-5), sixteenth notes (5), 64 patterns (11), time mode (14-16), 7 tracks (23), writing accent and slide (40-43).
+
+Synthesizers.com. *Q960 Sequential Controller* [data sheet]. Sept. 2014, [shop.synthesizers.com/cdn/shop/files/q960data.pdf](https://shop.synthesizers.com/cdn/shop/files/q960data.pdf). A recreation of the Moog 960, "functionally equivalent" (p. 5): 8 stages x 3 rows (p. 1), stage modes and the 90 % oscillator pulse (p. 3), X1/X2/X4 ranges, stage 9, third-row timing (p. 4), Q962 for 24 stages (p. 2).
+:::
+<!-- /works-cited -->

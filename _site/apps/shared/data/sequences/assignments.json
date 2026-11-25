@@ -1,0 +1,36 @@
+{
+  "about": "Videos that rebuild a known song's sequence, for lessons/sequencer-compare.qmd (students rebuild the line on the page and export it as JSON). Each video was checked to exist on 2026-11-25 through YouTube's oEmbed endpoint (title and channel below are what it returned). Whether each video's line matches the record is not checked. The analog-step list is not of the Moog 960 itself: no video of a 960 recreating a song was found, so these are other step sequencers playing the kind of line a 960 plays.",
+  "checked": "2026-11-25",
+  "machines": {
+    "a960": [
+      { "song": "I Feel Love", "artist": "Donna Summer", "title": "Modular Test : I Feel Love", "channel": "A.S.M.O.", "url": "https://www.youtube.com/watch?v=6lZO-3Uz0ps" },
+      { "song": "I Feel Love", "artist": "Donna Summer", "title": "I FEEL LOVE - Recreated On Analogue Synths LIVE By Terry Miles", "channel": "Terry Miles", "url": "https://www.youtube.com/watch?v=lx9GGMVNIbY" },
+      { "song": "I Feel Love", "artist": "Donna Summer", "title": "MOOG GRANDMOTHER : Sequencing \"I feel Love\" x Donna Summer in 10 seconds", "channel": "REMOLOG : Painting With Sound", "url": "https://www.youtube.com/watch?v=kCHeCjQCDkY" },
+      { "song": "Tangram", "artist": "Tangerine Dream", "title": "RECREATING TANGERINE DREAM’S “TANGRAM” SEQUENCE IN VCV RACK", "channel": "SATURATA MODULAR", "url": "https://www.youtube.com/watch?v=VbUenml2sHw" }
+    ],
+    "tb303": [
+      { "song": "Acid Tracks", "artist": "Phuture", "title": "Phuture \"Acid Tracks\", \"Phuture Jacks\", \"Your Only Friend\" – Roland TB-303 Pattern, Behringer TD-3", "channel": "DUCKTRONIC", "url": "https://www.youtube.com/watch?v=7mX8wH6_IAA" },
+      { "song": "Acperience 1", "artist": "Hardfloor", "title": "Hardfloor \"Acperience I\" – Roland TB-303 Pattern, Behringer TD-3, ABL, Acid, Techno, House", "channel": "DUCKTRONIC", "url": "https://www.youtube.com/watch?v=jKzw7tZu6mc" },
+      { "song": "Higher State of Consciousness", "artist": "Josh Wink", "title": "JOSH WINK 'HIGHER STATE OF CONSCIOUSNESS' 303 PATTERN", "channel": "Chris Jones", "url": "https://www.youtube.com/watch?v=gGhFi0LNz0I" },
+      { "song": "Da Funk", "artist": "Daft Punk", "title": "DAFT PUNK 'DA FUNK' TB-303 / TB-03 / TB-3 / TD-3 PATTERN", "channel": "Chris Jones", "url": "https://www.youtube.com/watch?v=1yE_T-DRkDE" }
+    ],
+    "mc202": [
+      { "song": "Let the Music Play", "artist": "Shannon", "title": "Shannon \"Let The Music Play\" – Roland TB-303 Pattern, TR-808, MC-202, Behringer TD-3", "channel": "DUCKTRONIC", "url": "https://www.youtube.com/watch?v=P1ufKoVrDsE" },
+      { "song": "Prelude in C major (BWV 846)", "artist": "J. S. Bach", "title": "Johann Sebastian Bach \"Prelude in C Major\" on a Roland MC-202, SH-101, TR-606 – Data Cassette", "channel": "DUCKTRONIC", "url": "https://www.youtube.com/watch?v=Uwn9ph14K5A" },
+      { "song": "Prelude and Fugue No. 1 in C major", "artist": "J. S. Bach", "title": "Roland MC202  Bach Prelude and Fugue N.1 in C maj", "channel": "Synthguru", "url": "https://www.youtube.com/watch?v=yDNDMbRwODE" },
+      { "song": "Blade Runner (End Titles)", "artist": "Vangelis", "title": "MC-202 and DOTCOM - Blade Runner End Title", "channel": "marp barp", "url": "https://www.youtube.com/watch?v=Zbk59X-067M" }
+    ],
+    "mc4": [
+      { "song": "Rydeen (sequence)", "artist": "Yellow Magic Orchestra", "title": "ROLAND MC-4によるYMO RYDEEN(シーケンス）", "channel": "koymo1", "url": "https://www.youtube.com/watch?v=8qRUgWGQOwk" },
+      { "song": "Rydeen (melody)", "artist": "Yellow Magic Orchestra", "title": "ROLAND MC-4によるYMO RYDEEN（メロディ）", "channel": "koymo1", "url": "https://www.youtube.com/watch?v=3cV-fcbEYIg" },
+      { "song": "The Four Seasons", "artist": "Antonio Vivaldi", "title": "Vivaldi \"Four Seasons\" on the Colossus Synthesizer and Roland MC-4", "channel": "Analogue Solutions", "url": "https://www.youtube.com/watch?v=_0I3MrKUNcI" },
+      { "song": "The Four Seasons: Spring", "artist": "Antonio Vivaldi", "title": "Roland MC-4 Hack demo - Vivaldi Four Seasons, Spring Movement", "channel": "dnigrin", "url": "https://www.youtube.com/watch?v=KZt4NsietTc" }
+    ],
+    "elektron": [
+      { "song": "Blue Monday", "artist": "New Order", "title": "Blue Monday by New Order on the Digitakt", "channel": "ADDEND", "url": "https://www.youtube.com/watch?v=f06ajN7Oka8" },
+      { "song": "Blue Monday", "artist": "New Order", "title": "New Order Blue Monday (Cover) Digitakt song mode ⍼", "channel": "Yellow 13", "url": "https://www.youtube.com/watch?v=WuhPghN7Cd4" },
+      { "song": "Harder, Better, Faster, Stronger", "artist": "Daft Punk", "title": "DaftPunks' Harder Better Faster Stronger on Digitakt (Cover)", "channel": "JaNein", "url": "https://www.youtube.com/watch?v=ziABlpB1Zf8" },
+      { "song": "Climbing Up the Walls", "artist": "Radiohead", "title": "\"Climbing up the Walls\" // (Digitakt, Syntakt, MPC One) Radiohead Cover", "channel": "Dylan Paris", "url": "https://www.youtube.com/watch?v=PBPX_sZREsQ" }
+    ]
+  }
+}

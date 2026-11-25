@@ -1,0 +1,273 @@
+---
+title: "Sound 26: Classic Synths Compared"
+toc: true
+toc-depth: 2
+description: "A Minimoog Model D-style and a Prophet-5-style synth side by side: turn a patch on one into the other and see, setting by setting, what carries over, what changes and what cannot be done, with the manual page for each."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+Two of the most famous synthesizers ever made are close relatives. The **Minimoog Model D** (Moog, 1970) put a modular synth's
+oscillators, filter and envelopes behind fixed switches in a box you could take on stage. The **Prophet-5** (Sequential
+Circuits, 1978) did almost the same thing five times over, one voice per note, and added a microprocessor that remembered
+every knob. On this page each is rebuilt in the browser. You can turn a sound on one into the nearest sound on the other and
+read what happened to every setting: **the same**, **close** or **impossible**, and why.
+
+Both panels here are drawn after the real ones and are not copies; the names belong to their makers. Every fact about the
+real instruments comes from their manuals and is cited with its page. Anything the manuals do not say, such as how a
+Prophet knob numbered 0 to 10 maps to hertz, is this page's own choice and is marked so.
+
+## The two synths
+
+<div class="scmp"></div>
+
+**How to use it.** Pick an **Example**, then press **▶ Model D**, **▶ Prophet-5** or **▶ One, then the other**. Turn any
+knob on the top panel and the bottom one follows. **Turn into the …** makes the other synth the starting point. Point at a
+line of the report to light up the controls it is about on both panels. Coloured outlines on the panels show
+<span class="scmp-tag scmp-exact">the same</span>, <span class="scmp-tag scmp-approx">close</span> and
+<span class="scmp-tag scmp-lost">cannot be done</span>.
+
+## The Model D patch sheets
+
+The Model D manual ends with patch sheets: a drawing of the front panel for each sound, with orange pointers on the knobs,
+light-blue circles round the chosen range and wave, and the switches coloured on the side that is pressed (Moog Music,
+*Minimoog Model D* manual, pp. 55–76; blank sheets to copy on pp. 77–79). Below, each one is redrawn in the same layout.
+Pick a sheet, turn the knobs on it, press **▶ Play** to hear it on the Model D panel above, or **Show on the panel above** to
+compare it knob by knob. **One part at a time** shows a single section with **Back** and **Next**; **Large print** and
+**High contrast** make it easier to read. The readings were taken from the printed pages to the nearest half mark; the ones
+that were hard to read are listed under the sheet. Times on the contour knobs follow the printed scale (10 ms to 10 s); how
+the cutoff knob maps to hertz is this page's choice, as on the panel above.
+
+<div class="moog-sheets"></div>
+
+## What they share
+
+Both are **subtractive synths** ([Sound 7](sound-subtractive.qmd)). Oscillators make a wave full of harmonics, a mixer
+blends them, and a **4-pole, 24 dB-per-octave low-pass filter** takes harmonics away. One envelope moves the filter and
+another moves the loudness. On both, resonance can be turned up until the filter whistles by itself. So a plain bass or
+lead translates almost knob for knob: try **Fat bass** and look at how few red lines there are. The filter plot shows two
+curves with the same slope. The difference is in how they *sound* when pushed, because the filters are different
+circuits: the Moog **ladder**, and on the Prophet-5 either Dave Rossum's SSI 2140 (the sound of the first Prophets, "Rev
+1/2") or Doug Curtis's CEM 3320 ("Rev 3"). Flip the Prophet's **Rev** switch and listen.
+
+## What only the Model D can do
+
+- **Three oscillators on every note.** A Prophet voice has two. The **Lead in fifths and fourths** example (from the Model D
+  manual) tunes oscillator 2 a fifth up and oscillator 3 a fourth down, so each key plays a three-note chord. On the
+  Prophet-5 the third pitch is gone. Its **Chord memory** can hold such a stack, but only by playing it with several voices.
+- **Feeding its own output back in.** With nothing plugged into its external input, the Model D's output runs back into
+  its mixer. Turn that input up and the mixer **overloads**, which makes a growling, compressed sound. Watch the
+  **Mixer drive** plot bend over in **Overdriven bass**. The Prophet's mixer can also be driven hard, but it has no path
+  from its output back to its input.
+- **A spare oscillator as the modulator.** Oscillator 3 can leave the keyboard and run as a slow LFO, or at audio speed
+  for FM, while oscillators 1 and 2 sound. On the Prophet the only oscillator that can modulate is B, so once B is busy
+  sounding there is nothing left.
+
+## What only the Prophet-5 can do
+
+- **Chords.** Five voices, so five notes at once. Play **String pad** on both and the Model D keeps only the lowest
+  note, which is how a classic Model D chooses.
+- **Hard sync.** Oscillator A restarts every time oscillator B does. Sweeping A's pitch with the filter envelope through
+  Poly Mod gives the famous tearing lead (**Hard-sync lead**, from the Prophet's guide). The Model D has no sync.
+- **Moving pulse width.** The Prophet's pulse width is a knob that the LFO or Poly Mod can sweep, which gives the
+  chorused, shimmering tone of **Pulse-width-modulated strings**. The Model D's pulse widths are fixed positions of a
+  switch.
+- **Poly Mod.** Every voice's filter envelope or oscillator B can modulate its own oscillator A or filter. That is
+  sync sweeps and FM *in chords*. The Model D can do FM (**Oscillator 3 frequency-modulating oscillator 1**), but for one
+  note, with the depth on the mod wheel.
+- **Memory.** The Prophet stores its sounds as programs (the original held 40). A Model D sound exists only while the
+  knobs stay where they are.
+
+## What only the TB-303 can do
+
+- **Accent and slide on each step.** The TB-303's sequencer stores pitch, length, accent and slide for every step (TB-303
+  manual p. 89). An accented step is louder and brighter by as much as the ACCENT knob says (p. 34). A slide step glides into
+  the next one. Try **Acid line** and translate it: no other synth here has accent, so it becomes velocity at best.
+- **Almost nothing else.** One oscillator with two waveforms and five tone knobs (p. 34). The lesson goes the other way:
+  most patches from the other synths lose a great deal on the 303. Its filter is a 24 dB low-pass that does not whistle on
+  its own (Wikipedia; unverified).
+
+## What only the Juno-60 can do
+
+- **The chorus.** Chorus I, or the stronger II, is built in (Juno-60 manual p. 22). Every other synth here loses it in
+  **PWM strings with chorus II**.
+- **A sub-oscillator and a high-pass filter** next to one DCO (pp. 13-14). The Juno-106's HPF at 0 boosts the bass instead
+  (Juno-106 manual p. 18), and the 106 adds portamento, which the Juno-60's DCO does not have (Juno-60 p. 12; Juno-106 p. 23):
+  flip **Model** to 106.
+- **One envelope for everything.** Filter and loudness share one ADSR (p. 16), so patches from synths with two envelopes
+  lose one of them.
+
+## What only the ARP 2600 can do
+
+- **Patch cords on top of the normals.** Every input of the 2600 already has a connection inside, which a cord replaces
+  (2600 M manual pp. 5-15). VCO-2's sine reaches VCO-1, VCO-3 and the filter; sample-and-hold reaches every VCO. **Patch
+  cords** on the panel add routes the other synths have no names for.
+- **A ring modulator, sample-and-hold and three VCOs that can each be an LFO** (pp. 6-9, 15). Try **Ring-modulator bells**
+  and **Sample-and-hold bleeps**.
+- **Two envelopes of different kinds:** an ADSR and an AR, the VCA taking one linearly and the other exponentially (p. 12).
+
+## What only the OB-Xa can do
+
+- **A 2-pole filter as well as a 4-pole one.** The 4-POLE switch chooses 24 dB per octave (fuller), or 12 dB (brighter)
+  when it is off (OB-Xa manual p. 11). Translate **2-pole brass pad** and compare the slopes on the filter plot.
+- **Filter envelope on oscillator 2,** up to an octave, with sync (p. 10): **Sync lead**.
+- **The SEM's filter modes.** The SEM's filter could be low-pass, band-pass, high-pass or notch (Wikipedia; unverified).
+  The extra **SEM mode** switch is not on the OB-Xa. A band-pass patch is lost on every low-pass-only synth.
+
+## What only the MS-20 can do
+
+- **A resonant high-pass and low-pass filter in series**, each able to oscillate (MS-20 manual p. 5): **Screaming HP + LP**.
+  Only the Juno also has a high-pass filter, and its filter has no resonance.
+- **A patch panel, EG 1 with a delay, and EG 2 with a hold time** (pp. 6-7). Nothing else here delays a pitch sweep or holds a
+  note after the key lifts.
+
+## What only the DX7 can do
+
+- **FM.** Six sine-wave operators, each with its own envelope of four rates and four levels, wired into one of 32 algorithms
+  (DX7 manual pp. 23-26). The manual's first exercise sounds like "a saw-tooth wave which is going through a filter that has a
+  lot of resonance" with "no filters involved" (p. 35). That one translates. **Bell** and **Electric-piano-like tine** do not:
+  on every other synth the FM note in the report is red, and only an oscillator per carrier is left. This is the point of the
+  comparison.
+- **Sixteen voices** (PDF p. 4). Going the other way, the DX7 loses every filter, resonance and pulse-width setting, because
+  there is nothing to set.
+
+## What only the PPG Wave can do
+
+- **Wavetables.** Each oscillator steps through a table of 64 waves, and an envelope or the LFO can move it (Sound On Sound's
+  Wave 2.3 review): **Wavetable sweep by envelope**. Other synths keep one fixed wave. The page's four tables are its own,
+  not the PPG's.
+- Into **analog 24 dB filters** (SSM 2044, PPG Wave 2.3 service manual p. 5; Wikipedia). No owner's manual was found, so the
+  panel layout is this page's (unverified).
+
+## Why they differ
+
+The Model D manual calls it "a direct descendant of the Moog modular synthesizers". In place of patch cables it uses
+colour-coded rocker switches: orange to connect modulation, blue to turn sounds on and off, white for performance features
+and black to choose between sources (Model D manual p. 15). That made it fast to set up on stage, and it played one note.
+Dave Smith, who designed the Prophet-5, writes that he "had the notion that these new-ish things called microprocessors
+might be useful in designing … a fully programmable polyphonic synthesizer — the first of its kind" (Prophet-5 guide p. x).
+The 1981 technical manual describes a Z-80 microprocessor scanning the keys, sharing them out among five voices and keeping 40
+programs in memory.
+
+This page's own reading, not from either manual, is that a microprocessor and five copies of a voice explain most of the
+lists above. Two oscillators a voice rather than three kept five voices affordable, and Poly Mod put a modulating
+oscillator, like the Model D's third, back inside every voice.
+
+## History, players and records
+
+Facts in this section are from Wikipedia's articles on each synth and the sources they cite (listed below).
+
+### Minimoog Model D
+
+- **Made:** introduced in 1970, designed by Bill Hemsath and other engineers with Robert Moog; prototypes A to C came first
+  and the Model D in early 1970. Produced from 1970 to 1981, over 12,000 in 13 years. Reissued in 2016–17 and again in 2022.
+- **Firsts:** the first synthesizer sold in ordinary retail shops, and the first with a pitch wheel.
+- **Styles:** first popular in progressive rock and jazz, then disco, pop, rock, electronic music and funk.
+- **Players and records:** Sun Ra's *My Brother the Wind* (1970), perhaps its first recording. Rick Wakeman used five on stage;
+  Keith Emerson played one. Herbie Hancock, Chick Corea and Dick Hyman were early jazz users, and Stevie Wonder used it. The bass of
+  Parliament's "Flash Light". Kraftwerk's *Autobahn* (1974) and *The Man-Machine* (1978). In disco, ABBA and Giorgio Moroder. In
+  electronic music, Tangerine Dream, Klaus Schulze and Gary Numan.
+
+### Prophet-5
+
+- **Made:** designed by Dave Smith and John Bowen in 1977 and shown at the NAMM show in January 1978: the first polyphonic synth
+  with fully programmable memory. Rev 1 (182 made), Rev 2, and Rev 3 (almost 6,000, on CEM chips), made from 1978 to 1984; Rev 4
+  in 2020. It cost US$3,995 (Rev 1 and 2) and $4,595 (Rev 3).
+- **Players and records:** Greg Hawkes of the Cars on "Let's Go" (1979) and "Shake It Up" (1981). Phil Collins, "In the Air
+  Tonight" (1981). Japan, "Ghosts" (1982). Michael Jackson's *Thriller* (1982), Madonna's *Like a Virgin* (1984), Peter Gabriel's
+  *So* (1986), Radiohead's *Kid A*, including "Everything In Its Right Place". Kraftwerk took it on their 1981 *Computer World* tour;
+  Ryuichi Sakamoto used it on *Merry Christmas Mr. Lawrence* and with Yellow Magic Orchestra.
+- **Film:** Vangelis, *Blade Runner* (1982); Brad Fiedel, *The Terminator* (1984, on a Prophet-10); John Carpenter.
+
+## Build it from a video
+
+Each video below rebuilds a famous record's sound on the real instrument. Watch it, press **Build …** for the song (that fills in
+the form), set the panel the way the video does, listen, and press **Download the patch file**. Write in the notes what you had to
+guess: a video shows the knobs, but this page's knobs are not the real ones (see [What is checked](#what-is-checked-and-what-is-not)).
+Your teacher adds the files to the **Library** under the synths, marked *settings from the video (student)* until checked against
+the record. Use **Open a patch file** to load one again.
+
+<div class="slib-assign">Loading the video list…</div>
+
+## Reading the pictures
+
+- **Signal flow** (inside each panel): oscillators and noise into the mixer, then the filter and the amplifier, with the
+  modulation wires drawn and lit while they act. A wire or box drawn in **red** is a part of the starting patch that the
+  other synth cannot copy.
+- **Filter**: how loud each frequency comes out of each synth's filter with its current knobs, for middle C. The resonance
+  peak and the 24 dB slope are drawn from the engine's own filter model, simplified to a straight-line (linear) version,
+  so overload is not shown.
+- **Envelopes**: both synths' filter envelopes (thin lines) and loudness envelopes (thick lines) for a key held one
+  second. Flip the Prophet's **Rev** switch to see its envelope change from curved to almost straight, as the Prophet's
+  guide describes.
+- **Mixer drive**: what the mixer does to a signal as it gets louder. The line stays straight while the sound is clean,
+  then flattens at the top once the mixer overloads.
+- **Scope and spectrum**: the waves as they sound, and their harmonics.
+
+## What is checked and what is not
+
+Checked against the manuals: every control's name, the waves and ranges each oscillator has, the filter types and their
+slope, envelope stages, LFO rates and shapes, which sources can modulate which targets, voices and unison, the pitch wheel
+ranges, glide, the Model D's feedback path and its default low-note priority. Each line of the report names its page.
+
+This page's own choices, not from the manuals: how the Prophet's 0 to 10 knobs map to hertz, seconds and octaves; the
+curves between the Model D's printed end points; the exact widths of the Model D's "wide" and "narrow" pulses; the shape of
+its triangle-sawtooth wave; modulation depths; unison detune in cents; and how the three filters differ (one model with
+three settings, not simulations of the real circuits). Nobody has yet compared these sounds with the real instruments.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<link rel="stylesheet" href="/apps/shared/lessons/synth-library.css">
+<script src="/apps/shared/lessons/synth-library.js"></script>
+<link rel="stylesheet" href="/apps/shared/lessons/moog-sheet.css">
+<script src="/apps/shared/lessons/moog-sheet.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Korg. *ARP 2600 M Owner's Manual*. Korg Inc., 2021, [www.analoguehaven.com/korg/arp-2600-m/manual.pdf](https://www.analoguehaven.com/korg/arp-2600-m/manual.pdf). Block diagram and every normalled connection: VCOs (pp. 7-9), VCF (p. 10), ADSR and AR (p. 11), VCA (p. 12), mixer and reverb (p. 13), noise and voltage processors (p. 14), sample and hold (p. 15).
+
+Korg. *MS-20 Owner's Manual*. Keio Electronic Laboratories, 1978, [www.korg.com/us/support/download/manual/0/131/2441/](https://www.korg.com/us/support/download/manual/0/131/2441/). VCOs, waveforms and ring modulator, high-pass and low-pass filters with peak up to self-oscillation (p. 5); EG 1, EG 2 with hold, MG, the patch panel (pp. 6-7). A scan, read by OCR.
+
+Moog Music. *Minimoog Model D* [owner's manual, 2016 reissue]. Moog Music Inc., [cdn.inmusicbrands.com/Moog/Model%20D/Minimoog_Model_D_Manual.pdf](https://cdn.inmusicbrands.com/Moog/Model%20D/Minimoog_Model_D_Manual.pdf). Oscillators, waves and ranges (pp. 16-19), modulation (pp. 19-24), mixer and the external-input feedback (pp. 26-27, 33, 36), ladder filter, key tracking and contours (pp. 29-31), recipes (pp. 39-42), note priority (p. 47), specifications (p. 80); the patch sheets redrawn in "The Model D patch sheets" (pp. 55-76, 44 sounds; blank sheets pp. 77-79), read from the printed pages to the nearest half mark.
+
+Oberheim. *OB-Xa Operation Manual*. Oberheim Electronics, [soundprogramming.net/manuals/Oberheim_OB-Xa_Manual.pdf](https://soundprogramming.net/manuals/Oberheim_OB-Xa_Manual.pdf). Unison and the low-note rule (p. 8); the LFO, 0.1-20 Hz, sine / square / S&H (p. 9); oscillators, sync and F-ENV to oscillator 2 (p. 10); 2-pole 12 dB and 4-pole 24 dB filter (p. 11); envelopes (p. 12); 8 voices, split and double (p. 13). A scan, read by OCR.
+
+Roland. *Juno-60 Owner's Manual*. Roland Corporation, Apr. 1983, [soundprogramming.net/manuals/Roland_Juno-60_Manual.pdf](https://soundprogramming.net/manuals/Roland_Juno-60_Manual.pdf). Six voices and 56 patches (p. 2); DCO with no portamento, PWM, sub-oscillator, noise (pp. 12-13); HPF and VCF (p. 14); VCA and envelope (p. 16); LFO with delay (p. 17); chorus I and II (p. 22); specifications (p. 32). A scan, read by OCR.
+
+Roland. *TB-303 Bass Line Owner's Manual*. Roland Corporation, Dec. 1981, [soundprogramming.net/manuals/Roland_TB-303_Manual.pdf](https://soundprogramming.net/manuals/Roland_TB-303_Manual.pdf). The tone control section: cutoff, resonance, env mod, decay, accent, waveform (p. 34); writing accent and slide (p. 40); specifications: two waveforms, pitch, length, accent and slide stored per step (p. 89). A scan, read by OCR.
+
+Sequential. *Prophet-5 User's Guide*. Version 1.0, Sequential LLC, Oct. 2020, [vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf](https://vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf). Dave Smith's foreword (p. x), oscillators and sync (pp. 17-20), mixer (p. 21), the Rev 1/2 and Rev 3 filters and envelopes (pp. 22-30), LFO and wheel-mod (pp. 31-33), Poly Mod (pp. 34-35), vintage, wheels, glide, unison, chord memory, release, priority (pp. 36-45), recipes (pp. 46-52).
+
+Yamaha. *DX7 Digital Programmable Algorithm Synthesizer Operation Manual*. Yamaha Corporation, [homepages.abdn.ac.uk/d.j.benson/pages/dx7/manuals/dx7-man.pdf](https://homepages.abdn.ac.uk/d.j.benson/pages/dx7/manuals/dx7-man.pdf). 16-note polyphony and 32 memories (introduction); operators, carriers and modulators (p. 23); 32 algorithms, carriers of algorithms 1, 5, 16 and 32 (p. 24); feedback (p. 25); envelopes (p. 26); the first FM exercise (pp. 34-35); glossary (p. 62).
+
+**For teachers**
+
+ARP Instruments. *ARP 2600 Owner's Manual*. ARP Instruments, Inc., 1971 (7th printing 1976), [www.korg.com/us/support/download/manual/0/842/4469/](https://www.korg.com/us/support/download/manual/0/842/4469/). The voltage-controlled filter falls off at 24 dB per octave (section 4.12). A scan, read by OCR.
+
+Jungleib, Stanley. *Prophet-5 Synthesizer Technical Manual*. 2nd ed., Sequential Circuits, Oct. 1981, [medias.audiofanzine.com/files/sequentialcircuitsprophet-5servicemanual-text-470674.pdf](https://medias.audiofanzine.com/files/sequentialcircuitsprophet-5servicemanual-text-470674.pdf). For Revisions 3.0-3.2: the Z-80 microcomputer reads the keyboard and knobs and assigns voices; 40 programs in NV RAM (section 2).
+
+"Korg MS-20." *Wikipedia*, [en.wikipedia.org/wiki/Korg_MS-20](https://en.wikipedia.org/wiki/Korg_MS-20). 1978-1983, monophonic, semi-modular, high-pass and low-pass filters in series; the 2014 kit's two filter types.
+
+Levien, Raph. "fm_core.cc." *Music Synthesizer for Android*, Google, Apache License 2.0, [github.com/google/music-synthesizer-for-android/blob/master/app/src/main/jni/fm_core.cc](https://github.com/google/music-synthesizer-for-android/blob/master/app/src/main/jni/fm_core.cc). The DX7's 32 algorithms as a table of operator buses, used by the page's engine; checked against the DX7 manual's carrier counts, not diagram by diagram.
+
+"Oberheim Polyphonic Synthesizer." *Wikipedia*, [en.wikipedia.org/wiki/Oberheim_SEM](https://en.wikipedia.org/wiki/Oberheim_SEM). The SEM's two-pole filter as low-pass, band-pass, high-pass or notch; two VCOs per voice.
+
+PPG. *Wave 2.3 Service Manual*. Palm Products GmbH, [emusic-diy.org/_media/ppgmanuals:wave23.pdf](https://emusic-diy.org/_media/ppgmanuals:wave23.pdf). Eight voices, digital oscillators with wavetable EPROMs, SSM 2044 filters, panel pots reading 0-63 (PDF p. 5). No owner's manual was found. A scan, read by OCR.
+
+"PPG Wave." *Wikipedia*, [en.wikipedia.org/wiki/PPG_Wave](https://en.wikipedia.org/wiki/PPG_Wave). Years of the Wave 2, 2.2 and 2.3; two oscillators a voice on the 2.2 and 2.3; SSM 2044 24 dB filters.
+
+Roland. *Juno-106 Owner's Manual*. Roland Corporation, [soundprogramming.net/manuals/Roland_Juno-106_Manual.pdf](https://soundprogramming.net/manuals/Roland_Juno-106_Manual.pdf). 128 patches, portamento and MIDI (p. 1); the HPF at 0 boosts the bass (p. 18); portamento (p. 23); chorus I and II not at the same time (p. 29). A scan, read by OCR.
+
+"Roland Juno-60." *Wikipedia*, [en.wikipedia.org/wiki/Roland_Juno-60](https://en.wikipedia.org/wiki/Roland_Juno-60). A 24 dB-per-octave resonant low-pass and a non-resonant high-pass filter; the chorus buttons' rates of 0.4 and 0.6 Hz.
+
+"Roland TB-303." *Wikipedia*, [en.wikipedia.org/wiki/Roland_TB-303](https://en.wikipedia.org/wiki/Roland_TB-303). Sawtooth or square; a 24 dB-per-octave resonant low-pass filter that does not self-oscillate; 1981-1984.
+
+Sound On Sound. "PPG Wave 2.3 & Waveterm B" [review]. *Sound On Sound*, [www.soundonsound.com/reviews/ppg-wave-23-waveterm-b](https://www.soundonsound.com/reviews/ppg-wave-23-waveterm-b). 64 waves make a wavetable; 30 wavetables on the Wave 2.3.
+:::
+<!-- /works-cited -->

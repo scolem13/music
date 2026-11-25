@@ -1,0 +1,21 @@
+{
+ "note": "Written by scripts/synth-patches/add.mjs; do not edit by hand.",
+ "patches": [
+  {
+   "file": "prophet-the-cars-lets-go.json",
+   "synth": "prophet",
+   "song": "Let's Go",
+   "artist": "The Cars",
+   "year": "1979",
+   "genre": "",
+   "by": "",
+   "checked": false,
+   "origin": "manual",
+   "source": {
+    "url": "https://vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf",
+    "title": "Prophet-5 User's Guide pp. 51-52",
+    "channel": "Sequential"
+   }
+  }
+ ]
+}
