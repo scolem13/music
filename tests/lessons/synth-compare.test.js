@@ -158,9 +158,15 @@ for (const id of IDS) for (const w of SC.PROFILES[id].whatif || []) {
   const ex = SC.EXAMPLES.find(e => e.from === id), notes = ex.phrase.slice(0, 3).map(x => x[0]);
   const plain = SC.engine(id, ex.s), mod = SC.engine(id, ex.s, [w.id]);
   if (JSON.stringify(plain) === JSON.stringify(mod)) bad.push(id + "." + w.id + " no engine change");
-  const r = render(id, ex.s, notes); const p = new P(); p.port.onmessage({ data: { type: "patch", E: mod } }); notes.forEach(n => p.port.onmessage({ data: { type: "on", note: n, vel: .8 } }));
-  const o = [[new Float32Array(128)]]; let s2 = 0, n2 = 0, nan = false; for (let b = 0; b < 300; b++) { p.process([], o); for (const x of o[0][0]) { if (!isFinite(x)) nan = true; s2 += x * x; n2++; } }
-  const rm = Math.sqrt(s2 / n2); if (nan || Math.abs(rm - r.rms) < 1e-4) bad.push(id + "." + w.id + " sound " + r.rms.toFixed(4) + "→" + rm.toFixed(4));
+  // both renders with the same random seed (drift, noise), notes held then released, compared sample by sample
+  const wave = E => { let seed = 7; const keep = Math.random; Math.random = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    const p = new P(); p.port.onmessage({ data: { type: "patch", E } }); notes.forEach(n => p.port.onmessage({ data: { type: "on", note: n, vel: .8 } }));
+    const o = [[new Float32Array(128)]], out = [];
+    for (let b = 0; b < 500; b++) { if (b === 200) notes.forEach(n => p.port.onmessage({ data: { type: "off", note: n } })); p.process([], o); out.push(...o[0][0]); }
+    Math.random = keep; return out; };
+  const w0 = wave(plain), w1 = wave(mod); let dmax = 0, nan = false;
+  for (let i = 0; i < w0.length; i++) { if (!isFinite(w1[i])) nan = true; dmax = Math.max(dmax, Math.abs(w0[i] - w1[i])); }
+  if (nan || dmax < 1e-4) bad.push(id + "." + w.id + " sound differs by " + dmax.toExponential(1));
   for (const to of IDS) if (to !== id) { const a1 = SC.translate(ex.s, id, to).notes.map(n => n.cls + n.what).join("|"); if (a1 !== SC.translate(ex.s, id, to).notes.map(n => n.cls + n.what).join("|")) bad.push(id + " unstable"); }
 }
 check("every what-if is cited and changes the sound (no NaN)", bad.length === 0, bad.slice(0, 4).join("; "));
