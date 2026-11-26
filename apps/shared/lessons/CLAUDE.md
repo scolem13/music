@@ -126,3 +126,16 @@
   above (through `widgets[0].set / translate / phrase`), one part at a time, large print, high contrast, Save / Open, Print (sheet or
   blank). Switch conventions (coloured half = pressed; osc 3 control and power: top = on) and the LFO push-pull symbol are this
   page's reading. Tests `node tests/lessons/moog-sheet.test.js` (`NEG=1` must fail), `tests/lessons/moog-sheet.cdp.js` (after rendering).
+- Prophet-5 guide patches (`apps/shared/lessons/prophet-sheets.js`, global ProphetSheets, loaded after synth-compare.js on
+  `synth-compare.qmd` and `intro-prophet-5.qmd` via build.py `extra_js`): the Rev4 User's Guide has no patch charts or factory list,
+  so its ten tutorial recipes (Basic Program pp. 8/47, filter p. 23, filter env p. 26, amp env p. 30, bass p. 46 / pp. 47-49 / p. 49,
+  brass p. 50, strings p. 51, sync pp. 51-52; the Service Manual has none) are added to `EXAMPLES` as "Guide p. …" with a fit note
+  (exact = printed number on this panel's scale; approx = "turn up" / "slightly" / Freq "4", this page's value, unverified).
+  `quote` lines must be in the guide's text. Not the synth-patches format (that needs a song). Test
+  `node tests/lessons/prophet-sheets.test.js` (`NEG=1` must fail).
+- ARP 2600 manual patches (`apps/shared/lessons/arp-sheets.js`, global ArpSheets, loaded after synth-compare.js on `synth-compare.qmd`
+  and `intro-arp-2600.qmd` via build.py `extra_js`): eleven patches from chapter 5 of the 1971 owner's manual (5.101-5.1401, PDF pp.
+  54-89), read from its TEXT (the panel drawings are too small in the scan), each from the manual's 5.1 start settings (`BASE`), added
+  to `EXAMPLES` as "Manual 5.…" (flag `arpSheet`) with a fit note (exact / approx = words or hertz, this page's value, unverified /
+  lost = manual start button, clock-gated envelopes, inverter, LF range switch). `quote` lines must be in the manual's text. Test
+  `node tests/lessons/arp-sheets.test.js` (`NEG=1` must fail).

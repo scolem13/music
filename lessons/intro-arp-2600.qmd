@@ -84,12 +84,14 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 ## Next
 
 - [Classic Synths Compared](synth-compare.html?synth=arp2600): the ARP 2600 side by side with the others, with every setting checked against the manuals.
+- The 1971 owner's manual's own patches as starting patches: the **Example** menu over the panel lists them as "Manual 5.…" (the basic sawtooth, unison, tremolo by patch cord, AR and ADSR envelopes, a resonant sweep with vibrato, the ring modulator, sample and hold), each with how exactly this panel can follow it.
 
 ```{=html}
 <link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
 <link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
 <script src="/apps/shared/lessons/sections.js"></script>
 <script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/arp-sheets.js"></script>
 <script src="/apps/shared/lessons/intro-kit.js"></script>
 ```
 
@@ -103,7 +105,7 @@ Korg. *ARP 2600 M Owner's Manual*. Korg Inc., 2021, [www.analoguehaven.com/korg/
 
 **For teachers**
 
-ARP Instruments. *ARP 2600 Owner's Manual*. ARP Instruments, Inc., 1971 (7th printing 1976), [www.korg.com/us/support/download/manual/0/842/4469/](https://www.korg.com/us/support/download/manual/0/842/4469/). The voltage-controlled filter falls off at 24 dB per octave (section 4.12). A scan, read by OCR.
+ARP Instruments. *ARP 2600 Owner's Manual*. ARP Instruments, Inc., 1971 (7th printing 1976), [www.korg.com/us/support/download/manual/0/842/4469/](https://www.korg.com/us/support/download/manual/0/842/4469/). The voltage-controlled filter falls off at 24 dB per octave (section 4.12). Chapter 5's patches (5.1-5.1401, PDF pp. 54-89) are the ARP 2600 starting patches in the Example menu, read from its text (the panel drawings are too small to read). A scan, read by OCR.
 :::
 <!-- /works-cited -->
 

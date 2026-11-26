@@ -104,6 +104,8 @@ P["prophet-5"] = dict(kind="synth", wid="prophet", name="Prophet-5", short="Prop
        ("What was new about remembering the knobs?", ["Sounds could be saved and called back", "It made the synth louder", "It added drums", "It tuned itself to the radio"], 0, "Its microcomputer stores programs."),
        ("How many oscillators does each voice have?", ["One", "Two", "Three", "Six"], 1, "Oscillators A and B."),
        ("Unison means…", ["All voices stacked on one note", "Playing with a drummer", "No filter", "Only white keys"], 0, "Step 6.")],
+ extra_js=["prophet-sheets"],
+ extra_next="- The guide's own recipes as starting patches: the **Example** menu over the panel lists them as \"Guide p. …\" (the Basic Program, filter and envelope tutorials, bass, brass, strings, sync), each with how exactly this panel can follow it.",
  cites=["sequential-prophet-5-manual", "sequentialcircuitsprophet-5servicemanual", "Sequential_Prophet-5"])
 
 P["tb-303"] = dict(kind="synth", wid="tb303", name="Roland TB-303", short="TB-303", year="1981",
@@ -178,6 +180,8 @@ P["arp-2600"] = dict(kind="synth", wid="arp2600", name="ARP 2600", short="ARP 26
        ("Which part makes the random bleeps?", ["Sample and hold", "Reverb", "The keyboard", "The volume knob"], 0, "Steps 4-6."),
        ("A ring modulator is good for…", ["Bells and metal sounds", "A clean piano", "Silence", "Tuning"], 0, "Step 2."),
        ("Who was the ARP 2600 marketed to?", ["High schools and universities", "Only rock stars", "Churches", "Radio stations"], 0, "Wikipedia.")],
+ extra_js=["arp-sheets"],
+ extra_next="- The 1971 owner's manual's own patches as starting patches: the **Example** menu over the panel lists them as \"Manual 5.…\" (the basic sawtooth, unison, tremolo by patch cord, AR and ADSR envelopes, a resonant sweep with vibrato, the ring modulator, sample and hold), each with how exactly this panel can follow it.",
  cites=["arp-2600-m/manual", "korg.com/us/support/download/manual/0/842", "wiki/ARP_2600"])
 
 P["ob-xa"] = dict(kind="synth", wid="obxa", name="Oberheim OB-Xa", short="OB-Xa", year="1980",
@@ -672,6 +676,7 @@ def page(slug, p):
     o += ["", "```{=html}", '<link rel="stylesheet" href="/apps/shared/lessons/' + SCRIPT[k] + '.css">', '<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">',
           '<script src="/apps/shared/lessons/sections.js"></script>', '<script src="/apps/shared/lessons/' + SCRIPT[k] + '.js"></script>']
     if "sheet" in p["steps"][0]: o += ['<link rel="stylesheet" href="/apps/shared/lessons/moog-sheet.css">', '<script src="/apps/shared/lessons/moog-sheet.js"></script>']
+    o += ['<script src="/apps/shared/lessons/' + j + '.js"></script>' for j in p.get("extra_js", [])]
     o += ['<script src="/apps/shared/lessons/intro-kit.js"></script>', "```", ""]
     return "\n".join(o)
 

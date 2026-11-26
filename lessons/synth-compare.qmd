@@ -44,6 +44,10 @@ the cutoff knob maps to hertz is this page's choice, as on the panel above.
 
 <div class="moog-sheets"></div>
 
+## The Prophet-5 guide's patches
+
+The Prophet-5 Rev4 User's Guide prints no patch charts or factory list (its factory programs live only in the instrument). It does print recipes that start from the Basic Program and set knobs to numbers. Ten of them are in the **Example** menu at the top as "Guide p. …": the Basic Program, the filter and envelope tutorials, the synth bass (short, long and fatter), synth brass, the string pad and the hard-sync lead. Each says how well this panel follows it: *exact* where the guide prints a number this panel takes, *approx* where the guide only says "turn up" or "slightly" and the value is this page's guess (unverified). Controls the guide does not name keep the Basic Program, most of which the guide does not print.
+
 ## What they share
 
 Both are **subtractive synths** ([Sound 7](sound-subtractive.qmd)). Oscillators make a wave full of harmonics, a mixer
@@ -355,6 +359,8 @@ their filters differ is not measured.
 <link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
 <script src="/apps/shared/lessons/sections.js"></script>
 <script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/arp-sheets.js"></script>
+<script src="/apps/shared/lessons/prophet-sheets.js"></script>
 <link rel="stylesheet" href="/apps/shared/lessons/synth-library.css">
 <script src="/apps/shared/lessons/synth-library.js"></script>
 <link rel="stylesheet" href="/apps/shared/lessons/moog-sheet.css">
@@ -396,7 +402,7 @@ Roland. *Juno-60 Owner's Manual*. Roland Corporation, Apr. 1983, [soundprogrammi
 
 Roland. *TB-303 Bass Line Owner's Manual*. Roland Corporation, Dec. 1981, [soundprogramming.net/manuals/Roland_TB-303_Manual.pdf](https://soundprogramming.net/manuals/Roland_TB-303_Manual.pdf). The tone control section: cutoff, resonance, env mod, decay, accent, waveform (p. 34); writing accent and slide (p. 40); specifications: two waveforms, pitch, length, accent and slide stored per step (p. 89). A scan, read by OCR.
 
-Sequential. *Prophet-5 User's Guide*. Version 1.0, Sequential LLC, Oct. 2020, [vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf](https://vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf). Dave Smith's foreword (p. x), oscillators and sync (pp. 17-20), mixer (p. 21), the Rev 1/2 and Rev 3 filters and envelopes (pp. 22-30), LFO and wheel-mod (pp. 31-33), Poly Mod (pp. 34-35), vintage, wheels, glide, unison, chord memory, release, priority (pp. 36-45), recipes (pp. 46-52).
+Sequential. *Prophet-5 User's Guide*. Version 1.0, Sequential LLC, Oct. 2020, [vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf](https://vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf). Dave Smith's foreword (p. x), oscillators and sync (pp. 17-20), mixer (p. 21), the Rev 1/2 and Rev 3 filters and envelopes (pp. 22-30), LFO and wheel-mod (pp. 31-33), Poly Mod (pp. 34-35), vintage, wheels, glide, unison, chord memory, release, priority (pp. 36-45), recipes (pp. 46-52), used with the tutorials of pp. 8, 23, 26, 30 as starting patches (apps/shared/lessons/prophet-sheets.js).
 
 Sequential. *Prophet-6 Operation Manual*. Version 1.0, Dave Smith Instruments, June 2015, [analoguehaven.com/sequential/prophet-6/manual.pdf](https://analoguehaven.com/sequential/prophet-6/manual.pdf). Printed page = PDF page - 10. Six voices; oscillators with continuously variable shape, sync, low freq (pp. 15-17); slop (p. 18); mixer and triangle sub octave (p. 19); 4-pole LP and 2-pole HP (pp. 20-23); envelopes (pp. 22-26); two effect slots and their types (pp. 26-28); LFO (pp. 31-33); Poly Mod (pp. 33-34); distortion (p. 41); unison (p. 43). Its recipes are the page's Prophet-6 examples.
 
@@ -404,7 +410,7 @@ Yamaha. *DX7 Digital Programmable Algorithm Synthesizer Operation Manual*. Yamah
 
 **For teachers**
 
-ARP Instruments. *ARP 2600 Owner's Manual*. ARP Instruments, Inc., 1971 (7th printing 1976), [www.korg.com/us/support/download/manual/0/842/4469/](https://www.korg.com/us/support/download/manual/0/842/4469/). The voltage-controlled filter falls off at 24 dB per octave (section 4.12). A scan, read by OCR.
+ARP Instruments. *ARP 2600 Owner's Manual*. ARP Instruments, Inc., 1971 (7th printing 1976), [www.korg.com/us/support/download/manual/0/842/4469/](https://www.korg.com/us/support/download/manual/0/842/4469/). The voltage-controlled filter falls off at 24 dB per octave (section 4.12). Chapter 5's patches (5.1-5.1401, PDF pp. 54-89) are the ARP 2600 starting patches in the Example menu, read from its text (the panel drawings are too small to read). A scan, read by OCR.
 
 Jungleib, Stanley. *Prophet-5 Synthesizer Technical Manual*. 2nd ed., Sequential Circuits, Oct. 1981, [medias.audiofanzine.com/files/sequentialcircuitsprophet-5servicemanual-text-470674.pdf](https://medias.audiofanzine.com/files/sequentialcircuitsprophet-5servicemanual-text-470674.pdf). For Revisions 3.0-3.2: the Z-80 microcomputer reads the keyboard and knobs and assigns voices; 40 programs in NV RAM (section 2).
 

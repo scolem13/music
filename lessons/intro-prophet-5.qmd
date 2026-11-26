@@ -86,12 +86,14 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 ## Next
 
 - [Classic Synths Compared](synth-compare.html?synth=prophet): the Prophet-5 side by side with the others, with every setting checked against the manuals.
+- The guide's own recipes as starting patches: the **Example** menu over the panel lists them as "Guide p. …" (the Basic Program, filter and envelope tutorials, bass, brass, strings, sync), each with how exactly this panel can follow it.
 
 ```{=html}
 <link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
 <link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
 <script src="/apps/shared/lessons/sections.js"></script>
 <script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/prophet-sheets.js"></script>
 <script src="/apps/shared/lessons/intro-kit.js"></script>
 ```
 
@@ -99,7 +101,7 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 ::: {.works-cited}
 **For students**
 
-Sequential. *Prophet-5 User's Guide*. Version 1.0, Sequential LLC, Oct. 2020, [vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf](https://vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf). Dave Smith's foreword (p. x), oscillators and sync (pp. 17-20), mixer (p. 21), the Rev 1/2 and Rev 3 filters and envelopes (pp. 22-30), LFO and wheel-mod (pp. 31-33), Poly Mod (pp. 34-35), vintage, wheels, glide, unison, chord memory, release, priority (pp. 36-45), recipes (pp. 46-52).
+Sequential. *Prophet-5 User's Guide*. Version 1.0, Sequential LLC, Oct. 2020, [vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf](https://vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf). Dave Smith's foreword (p. x), oscillators and sync (pp. 17-20), mixer (p. 21), the Rev 1/2 and Rev 3 filters and envelopes (pp. 22-30), LFO and wheel-mod (pp. 31-33), Poly Mod (pp. 34-35), vintage, wheels, glide, unison, chord memory, release, priority (pp. 36-45), recipes (pp. 46-52), used with the tutorials of pp. 8, 23, 26, 30 as starting patches (apps/shared/lessons/prophet-sheets.js).
 
 "Sequential Prophet-5." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Sequential_Prophet-5](https://en.wikipedia.org/wiki/Sequential_Prophet-5). 1978, Dave Smith and John Bowen; "market leader and industry standard"; The Cars, Phil Collins, Thriller, Like a Virgin.
 
