@@ -21,7 +21,10 @@
 //   items: [ ... ] drawn in order (later on top) }
 // ITEMS (x, y, w, h in panel units; `a` = accent name; `k` = profile control key; `label` = the legend printed on the panel):
 //   { t: "section", x, y, w, h, label, a, head: 18 (heading strip height, 0 = none), vertical: true (label up the left side) }
+//      title: "top" | "border" (instead of a heading strip: the label centred inside the top edge, or centred ON the top border
+//      line with a gap behind it, as hardware panels print them; `size` = its font size; implies head 0)
 //   { t: "label", x, y, text, size, anchor: "start"|"middle"|"end", dim: true, rot: -90 }
+//   { t: "jack", x, y, r, label, size }   a patch point / socket drawn as decoration (never live)
 //   { t: "knob", k, x, y (centre), r, label, cap, a, fmt(v) -> text }          drag up / down, wheel, arrow keys, dbl-click = default
 //   { t: "hslider" | "vslider", k, x, y, w, h, label, a, fmt }                   Surge-style: drag along the slider
 //   { t: "switch", k, x, y, w, h, label, a }   a boolean key: click toggles (an LED-lit button)
@@ -43,7 +46,7 @@
 //   .theme() -> "light"|"dark"   .setTheme(t)   .view() / .setView("panel"|"simple") (localStorage `synth-face-view`)
 (function () {
   var FP = window.FaithfulPanel = window.FaithfulPanel || {};
-  FP.AVAILABLE = ["vital", "surge"];
+  FP.AVAILABLE = ["vital", "surge", "ppg", "p6", "taurus", "voyager", "sub37", "grandmother", "memorymoog", "moog", "prophet", "tb303", "juno", "arp2600", "obxa", "ms20", "dx7"];
   FP.LAYOUTS = FP.LAYOUTS || {};
   var NS = "http://www.w3.org/2000/svg", THEME_KEY = "panel-theme", VIEW_KEY = "synth-face-view";
   var BASE = {
@@ -176,8 +179,11 @@
       svg.appendChild(g);
       if (it.t === "section") {
         g.appendChild(S("rect", { x: it.x, y: it.y, width: it.w, height: it.h, rx: L.round != null ? L.round : 4, fill: "var(--fp-body)", stroke: "var(--fp-line)" }));
-        var hd = it.head == null ? 18 : it.head;
-        if (it.vertical) { g.appendChild(S("rect", { x: it.x, y: it.y, width: hd, height: it.h, rx: L.round != null ? L.round : 4, fill: "var(--fp-head)" }));
+        var hd = it.title ? 0 : it.head == null ? 18 : it.head;
+        if (it.title) { var fs = it.size || 11, tw = String(it.label || "").length * fs * 0.66 + 10, ty = it.title === "border" ? it.y + fs * 0.36 : it.y + fs + 4;
+          if (it.title === "border" && it.label) g.appendChild(S("rect", { x: it.x + it.w / 2 - tw / 2, y: it.y - fs / 2, width: tw, height: fs, fill: "var(--fp-bg)" }));
+          if (it.label) g.appendChild(T(it.x + it.w / 2, ty, it.label, { "font-size": fs, "font-weight": 700, "text-anchor": "middle", "letter-spacing": ".04em" })); }
+        if (it.title) { /* drawn above */ } else if (it.vertical) { g.appendChild(S("rect", { x: it.x, y: it.y, width: hd, height: it.h, rx: L.round != null ? L.round : 4, fill: "var(--fp-head)" }));
           if (it.label) g.appendChild(T(it.x + hd / 2 + 4, it.y + it.h / 2, it.label, { "font-size": 11, "font-weight": 700, "text-anchor": "middle", transform: "rotate(-90 " + (it.x + hd / 2 + 4) + " " + (it.y + it.h / 2) + ")" })); }
         else if (hd) { g.appendChild(S("rect", { x: it.x, y: it.y, width: it.w, height: hd, rx: L.round != null ? L.round : 4, fill: "var(--fp-head)" }));
           if (it.label) g.appendChild(T(it.x + 8, it.y + hd * 0.7, it.label, { "font-size": Math.min(12, hd * 0.62), "font-weight": 700, "letter-spacing": ".06em" })); }
@@ -187,6 +193,9 @@
       }
       if (it.t === "label") { g.appendChild(T(it.x, it.y, it.text, { "font-size": it.size || 9, "text-anchor": it.anchor || "middle", "font-weight": it.bold ? 700 : null, class: it.dim ? "fp-dim" : null,
         transform: it.rot ? "rotate(" + it.rot + " " + it.x + " " + it.y + ")" : null })); return; }
+      if (it.t === "jack") { var jr = it.r || 7; g.appendChild(S("circle", { cx: it.x, cy: it.y, r: jr, fill: "var(--fp-body)", stroke: "var(--fp-ink)", "stroke-width": 1.2 }));
+        g.appendChild(S("circle", { cx: it.x, cy: it.y, r: jr * 0.45, fill: "var(--fp-ink)" }));
+        if (it.label) g.appendChild(T(it.x, it.y + jr + (it.size || 7) + 2, it.label, { "font-size": it.size || 7, "text-anchor": "middle", class: "fp-dim" })); return; }
       if (it.t === "keys") { var n = it.n || 14, kw = it.w / n;
         for (var i = 0; i < n; i++) g.appendChild(S("rect", { x: it.x + i * kw, y: it.y, width: kw - 1, height: it.h, fill: "#f7f7f7", stroke: "#888" }));
         for (i = 0; i < n - 1; i++) if ([0, 1, 3, 4, 5].indexOf(i % 7) >= 0) g.appendChild(S("rect", { x: it.x + (i + 0.68) * kw, y: it.y, width: kw * 0.62, height: it.h * 0.6, fill: "#111" }));

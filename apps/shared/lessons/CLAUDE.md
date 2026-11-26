@@ -143,6 +143,6 @@
   one in its header) draws an instrument's real panel as SVG from `apps/shared/lessons/panels/<profile id>.js`, every control bound to
   a SynthCompare profile key (unbound = dimmed, "not modelled"); plain white / black background, Light / Dark toggle kept site-wide in
   localStorage `panel-theme`; Panel / Simple view (`synth-face-view`) in the compare widget's panel head for every id in
-  `FaithfulPanel.AVAILABLE` (now vital, surge; layout files load on first use). Loaded on synth-compare.qmd and every synth intro page
+  `FaithfulPanel.AVAILABLE` (every SynthCompare synth: 17; PPG layout is the page's own (no panel drawing in its manuals), OB-Xa / DX7 positions guessed inside measured sections; layout files load on first use). Loaded on synth-compare.qmd and every synth intro page
   (build.py). Vital boxes from its layout code at 1400 x 820, knobs inside approximate; Surge XT positions from SkinModel.cpp (sources
   `scripts/sources/synth-views.py`). The Model D keeps its own Real panel (MoogSheet). Test `node tests/lessons/faithful-panel.cdp.js` (`NEG=1` must fail).

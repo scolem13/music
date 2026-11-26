@@ -18,7 +18,15 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   await b.eval(`localStorage.removeItem('panel-theme'); localStorage.removeItem('synth-face-view')`);
   const ids = await b.eval(`FaithfulPanel.AVAILABLE`);
   const r = await b.eval(`Promise.all(FaithfulPanel.AVAILABLE.map(id => FaithfulPanel.load(id).then(L => [id, FaithfulPanel.check(L, SynthCompare.PROFILES[id]), FaithfulPanel.bound(L).length]).catch(e => [id, ['load failed'], 0])))`);
-  for (const [id, miss, n] of r) check(`${id}: every bound key is in the profile (${n} bound)`, miss.length === 0 && n > 10, miss.join(","));
+  for (const [id, miss, n] of r) check(`${id}: every bound key is in the profile (${n} bound)`, miss.length === 0 && n >= 8, miss.join(","));
+  // every layout mounts on its own and draws its live controls (the hardware layouts too: prophet, tb303, juno, arp2600, obxa, ms20, dx7)
+  for (const id of ids) {
+    const m = await b.eval(`(() => { try { const h = document.createElement('div'); document.body.appendChild(h); const P = SynthCompare.PROFILES['${id}'], st = Object.assign({}, P.def);
+      const M = FaithfulPanel.mount(h, { id: '${id}', profile: P, get: k => st[k], set: (k, v) => { st[k] = v; M.refresh(); } }); h.appendChild(M.el);
+      const live = M.el.querySelectorAll('[data-ctl]:not(.fp-off)').length; h.remove(); return live; } catch (e) { return 'ERR ' + e; } })()`);
+    if (!(await b.eval(`!!FaithfulPanel.LAYOUTS["${id}"]`))) continue;   // a layout that failed to load is reported above
+    check(`${id}: mounts and draws its live controls`, typeof m === "number" && m >= 8, m);
+  }
 
   for (const [slug, id, knobKey] of [["vital", "vital", "cut"], ["surge-xt", "surge", "cut"]]) {
     await b.goto(`http://127.0.0.1:${PORT}/lessons/intro-${slug}.html`); await b.sleep(1200);
@@ -61,7 +69,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   }
   // a synth with no layout keeps the plain panel
   await b.goto(`http://127.0.0.1:${PORT}/lessons/synth-compare.html`); await b.sleep(900);
-  check("Model D on the compare page: no faithful panel (Simple only)", await b.eval(`!document.querySelector('.scmp-moog .scmp-face')`));
+  check("Model D on the compare page: the faithful panel (MoogSheet's layout), Simple one click away", await b.eval(`!!document.querySelector('.scmp-moog .scmp-face svg.fp-svg') && !!document.querySelector('.scmp-moog .scmp-vw')`));
   console.log(fails ? `${fails} FAILED` : "all passed");
   await b.close(); srv.close(); process.exit(fails ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(1); });
