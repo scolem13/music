@@ -90,6 +90,7 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 <link rel="stylesheet" href="/apps/shared/lessons/drum-compare.css">
 <link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
 <script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
 <script src="/apps/shared/lessons/drum-compare.js"></script>
 <script src="/apps/shared/lessons/intro-kit.js"></script>
 ```
@@ -102,7 +103,7 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 
 **For teachers**
 
-Roland Corporation. *TR-909 Rhythm Composer Owner's Manual*. Internet Archive, [archive.org/details/synthmanual-roland-tr-909-owners-manual](https://archive.org/details/synthmanual-roland-tr-909-owners-manual). Features (p. 5), sound controls (p. 8), scale and last step (p. 24), total and per-voice accent (p. 25), shuffle and flam (p. 26).
+Roland Corporation. *TR-909 Rhythm Composer Owner's Manual*. Internet Archive, [archive.org/details/synthmanual-roland-tr-909-owners-manual](https://archive.org/details/synthmanual-roland-tr-909-owners-manual). Features (p. 5), sound controls (p. 8), scale and last step (p. 24), total and per-voice accent (p. 25), shuffle and flam (p. 26). Panel Description drawing p. 3: positions of the faithful TR-909 panel (panels/dm-tr909.js).
 :::
 <!-- /works-cited -->
 

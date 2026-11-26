@@ -92,6 +92,7 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 <link rel="stylesheet" href="/apps/shared/lessons/drum-compare.css">
 <link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
 <script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
 <script src="/apps/shared/lessons/drum-compare.js"></script>
 <script src="/apps/shared/lessons/intro-kit.js"></script>
 ```
@@ -104,7 +105,7 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 
 **For teachers**
 
-Roland Corporation. *TR-808 Rhythm Composer Owner's Manual* [introduction]. Internet Archive, [archive.org/details/manualsbase-id-576201](https://archive.org/details/manualsbase-id-576201). Writing a pattern: a measure of 16 steps, pre-scale, tap write.
+Roland Corporation. *TR-808 Rhythm Composer Owner's Manual* [introduction]. Internet Archive, [archive.org/details/manualsbase-id-576201](https://archive.org/details/manualsbase-id-576201). Writing a pattern: a measure of 16 steps, pre-scale, tap write. Panel photo pp. 2-3: positions of the faithful TR-808 panel (panels/dm-tr808.js).
 
 Roland Corporation. *TR-808 Service Notes*. 1st ed., 15 June 1981, 2nd printing 1983, Internet Archive, [archive.org/details/synthmanual-roland-tr-808-service-notes](https://archive.org/details/synthmanual-roland-tr-808-service-notes). Specifications: 1-32 steps a measure, 64 measures x 12 tracks, tempo 40-300, accent 0-10 dB (p. 1); the sound circuits: bridged T-network bass drum and its accent trick, snare, toms / congas, clap, cowbell, cymbal and hi-hats (pp. 5-6); knobs (p. 16).
 :::

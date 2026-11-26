@@ -726,6 +726,123 @@
     };
     function hasLock(t) { return ["note", "vel", "len", "cut", "micro", "cond", "prob", "fill", "porta"].some(function (k) { return t[k] != null && t[k] !== false; }); }
 
+    // ----- the faithful front panel (faithful-panel.js + panels/sq-<machine>.js), bound through this adapter -----
+    // Keys by machine. All: bpm, play, stop, disp, cur. a960: A:i B:i C:i, xA xB xC, mode:i, rate, rowC, step:i (click = skip / normal).
+    // tb303: key (semitone 0-12), mode (pitch | time), down, up, accent, slide (pitch mode: flags; time mode: note / tie / rest), back, next.
+    // mc202: kb (semitone from C2; with shift lit, step / gate keys), shift, ch, back, fwd, add, acc, po. mc4: kp (digit, "←", "ENTER"),
+    // col, ch, tb, cv2, back, fwd, add. elektron: step:i (on the shown page), lk:note|vel|len|prob|cut|micro, speed, swing, page,
+    // pages, micro-, micro+, deselect.
+    function faceAdapter(id, role) {
+      var d = W.data[id], ro = role !== "src", box = role === "src" ? pSrc : pDst;
+      function soft() { var H = box._fpH; if (H && H.m) H.m.refresh(); }
+      function after() { if (global.FaithfulPanel && FaithfulPanel.busy()) soft(); else changed(id); }
+      function T2(k) { return W["t" + k] || (W["t" + k] = { ch: 0, row: 0, col: 0, typed: "" }); }
+      function line(t) { return d.ch[t.ch] || []; }
+      var R = { bpm: ["bpm", "Tempo", "k", 30, 300, 1, 120], play: ["play", "", "s"], stop: ["stop", "", "s"], disp: ["disp", "", "t"], cur: ["cur", "", "t"] }, m;
+      function range(k) {
+        if (R[k]) return R[k];
+        if (id === "a960") {
+          if ((m = /^([ABC]):(\d)$/.exec(k))) return [k, "Row " + m[1] + " stage " + (+m[2] + 1), "k", 0, 2 * d["x" + m[1]], 0.01, 0];
+          if (/^x[ABC]$/.test(k)) return [k, "Range", "c", [1, 2, 4]];
+          if (/^mode:\d$/.test(k)) return [k, "Stage mode", "c", ["s", "n", "t"]];
+          if (/^step:\d$/.test(k)) return [k, "Stage", "t"];
+          if (k === "rate") return [k, "Clock", "k", 0.5, 30, 0.01, 8]; if (k === "rowC") return [k, "3rd row timing", "s"];
+        }
+        if (id === "tb303" && ["key", "mode", "down", "up", "accent", "slide", "back", "next"].indexOf(k) >= 0) return [k, k, "t"];
+        if (id === "mc202" && ["kb", "shift", "ch", "back", "fwd", "add", "acc", "po"].indexOf(k) >= 0) return [k, k, "t"];
+        if (id === "mc4") { if (k === "tb") return [k, "Time base", "c", [120, 96, 48, 24]]; if (k === "cv2") return [k, "CV-2", "c", ["cut", "vel"]];
+          if (["kp", "col", "ch", "back", "fwd", "add"].indexOf(k) >= 0) return [k, k, "t"]; }
+        if (id === "elektron") {
+          if (/^step:\d+$/.test(k)) return [k, "Trig", "t"];
+          var LK = { "lk:note": [24, 96, 1, 48], "lk:vel": [1, 127, 1, 100], "lk:len": [0.1, 8, 0.05, 1], "lk:prob": [0, 100, 1, 100], "lk:cut": [0, 1, 0.01, 0.5], "lk:micro": [-23, 23, 1, 0] };
+          if (LK[k]) return [k, k.slice(3).toUpperCase(), "k", LK[k][0], LK[k][1], LK[k][2], LK[k][3]];
+          if (k === "speed") return [k, "Speed", "k", 0, 6, 1, 4]; if (k === "swing") return [k, "Swing", "k", 50, 80, 1, 50];
+          if (["page", "pages", "micro-", "micro+", "deselect"].indexOf(k) >= 0) return [k, k, "t"];
+        }
+        return null;
+      }
+      var SPEEDS = [0.125, 0.25, 0.5, 0.75, 1, 1.5, 2];
+      function get(k) {
+        if (k === "bpm") return d.bpm; if (k === "play") return !!W.playing && W.playing[0] === id; if (k === "stop") return false;
+        if (k === "cur") return W.cur && W.cur.id === id ? W.cur.i : -1;
+        if (id === "a960") { if ((m = /^([ABC]):(\d)$/.exec(k))) return d[m[1]][+m[2]]; if ((m = /^mode:(\d)$/.exec(k))) return d.mode[+m[1]];
+          if ((m = /^step:(\d)$/.exec(k))) return { on: d.mode[+m[1]] !== "s" }; return d[k]; }
+        if (id === "tb303") { var t = W.t303 || (W.t303 = { mode: "pitch", cur: 0, oct: 0, acc: false, sl: false });
+          if (k === "mode") return t.mode; if (k === "down") return t.mode === "pitch" && t.oct === -1; if (k === "up") return t.mode === "pitch" && t.oct === 1;
+          if (k === "accent") return t.mode === "pitch" && t.acc; if (k === "slide") return t.sl; return null; }
+        if (id === "mc202") { var t2 = T2("mc202"), e = line(t2)[t2.row];
+          if (k === "shift") return !!W.shift202; if (k === "acc") return !!(e && e.acc); if (k === "po") return !!(e && e.po);
+          if (k === "disp") return "CH" + (t2.ch + 1) + "  STEP " + (t2.row + 1) + "/" + line(t2).length + "\n" + (e ? (e.n == null ? "REST" : nname(e.n)) + "  " + e.st + "  " + e.gt : "--"); return null; }
+        if (id === "mc4") { var t4 = T2("mc4"), e4 = line(t4)[t4.row];
+          if (k === "col") return t4.col || 0; if (k === "ch") return t4.ch; if (k === "tb" || k === "cv2") return d[k];
+          if (k === "disp") return t4.typed !== "" ? t4.typed : e4 ? String(e4[["cv1", "cv2", "st", "gt"][t4.col || 0]]) : "----"; return null; }
+        if (id === "elektron") { var te = W.tel || (W.tel = { sel: null, page: 0 }), tr = te.sel != null ? d.trigs[te.sel] : null;
+          if ((m = /^step:(\d+)$/.exec(k))) { var i = te.page * 16 + +m[1], x = d.trigs[i];
+            if (i >= d.steps) return { on: false, dim: true };
+            return x ? { on: true, acc: x.type === "l", text: (x.type === "l" ? "L" : "") + (hasLock(x) ? "•" : "") + (te.sel === i ? "◉" : "") } : { on: false, text: te.sel === i ? "◉" : "" }; }
+          if (k.indexOf("lk:") === 0) { var kk = k.slice(3), v = tr && tr[kk] != null ? tr[kk] : d.def[kk]; return v == null ? range(k)[6] : v; }
+          if (k === "speed") return SPEEDS.indexOf(d.speed); if (k === "swing") return d.swing;
+          if (k === "pages") { var n = Math.ceil(d.steps / 16), o = ""; for (var p2 = 0; p2 < n; p2++) o += p2 === te.page ? "■" : "□"; return o; }
+          if (k === "disp") return "TRIG " + (te.sel != null ? te.sel + 1 + (tr ? (tr.type === "l" ? " (lock)" : "") : " (none)") : "defaults") + "\nNOTE " + nname(get("lk:note")) + "  VEL " + get("lk:vel") + "\nLEN " + get("lk:len") + "  PROB " + get("lk:prob") + "%\nSPEED " + (["1/8", "1/4", "1/2", "3/4", "1", "3/2", "2"][SPEEDS.indexOf(d.speed)] || d.speed) + "X  SWING " + d.swing + "%\nPAGE " + (te.page + 1) + "/" + Math.ceil(d.steps / 16) + "  LEN " + d.steps;
+          return null; }
+        return null;
+      }
+      function set(k, v) {
+        if (ro) return;
+        if (k === "play") { W.play("src"); return setTimeout(soft, 150); } if (k === "stop") { stop(); return soft(); }
+        if (k === "bpm") { d.bpm = v; return after(); }
+        if (id === "a960") { if ((m = /^([ABC]):(\d)$/.exec(k))) { d[m[1]][+m[2]] = v; return after(); } if ((m = /^mode:(\d)$/.exec(k))) { d.mode[+m[1]] = v; return changed(id); }
+          if ((m = /^step:(\d)$/.exec(k))) { d.mode[+m[1]] = d.mode[+m[1]] === "s" ? "n" : "s"; return changed(id); }
+          if (/^x[ABC]$/.test(k)) { d[k] = v; return changed(id); } if (k === "rowC") { d.rowC = !d.rowC; return changed(id); } d[k] = v; return after(); }
+        if (id === "tb303") { var t = W.t303 || (W.t303 = { mode: "pitch", cur: 0, oct: 0, acc: false, sl: false });
+          if (k === "mode") { t.mode = v; t.cur = 0; return render(); }
+          if (k === "key") { if (t.mode !== "pitch") return; d.pitch[t.cur % 16] = { k: v, oct: t.oct, acc: t.acc, sl: t.sl }; t.cur = (t.cur + 1) % 16; changed(id); return preview(48 + v + 12 * t.oct); }
+          if (t.mode === "time" && (k === "down" || k === "up" || k === "accent")) { d.time[t.cur % d.last] = { down: "n", up: "t", accent: "r" }[k]; t.cur = (t.cur + 1) % d.last; return changed(id); }
+          if (k === "down" || k === "up") { var o = k === "up" ? 1 : -1; t.oct = t.oct === o ? 0 : o; return render(); }
+          if (k === "accent") { t.acc = !t.acc; return render(); } if (k === "slide") { t.sl = !t.sl; return render(); }
+          if (k === "back") { t.cur = (t.cur + 15) % 16; return render(); } if (k === "next") { t.cur = (t.cur + 1) % 16; return render(); } }
+        if (id === "mc202") { var t2 = T2("mc202"), L = line(t2), e = L[t2.row];
+          if (k === "shift") { W.shift202 = !W.shift202; return soft(); }
+          if (k === "ch") { t2.ch = (t2.ch + 1) % 2; t2.row = 0; return render(); }
+          if (k === "back") { t2.row = Math.max(0, t2.row - 1); return render(); } if (k === "fwd") { t2.row = Math.min(Math.max(0, L.length - 1), t2.row + 1); return render(); }
+          if (k === "add") { L.push(e ? clone(e) : { n: 48, st: 24, gt: 12, acc: false, po: false }); t2.row = L.length - 1; return changed(id); }
+          if (!e) return;
+          if (k === "acc" || k === "po") { e[k] = !e[k]; return changed(id); }
+          if (k === "kb") { if (W.shift202) { var WS = [0, 2, 4, 5, 7, 9, 11], wi = WS.indexOf(v), STL = [96, 48, 24, 12, 6, 16, 8], BL = [1, 3, 6, 8, 10], GT = [0, 0.25, 0.5, 0.9, 1], bi = BL.indexOf(v);
+              if (wi >= 0 && v < 12) { e.st = STL[wi]; e.gt = Math.max(1, Math.round(STL[wi] * (W.gate202 || 0.5))); return changed(id); }
+              if (bi >= 0) { W.gate202 = GT[bi]; e.gt = Math.round(e.st * GT[bi]); if (!GT[bi]) e.n = null; return changed(id); } return; }
+            e.n = 36 + v; changed(id); return preview(36 + v); } }
+        if (id === "mc4") { var t4 = T2("mc4"), L4 = line(t4), e4 = L4[t4.row];
+          if (k === "tb") { var f = +v / d.tb; d.ch.forEach(function (Ln) { Ln.forEach(function (x) { x.st = Math.round(x.st * f); x.gt = Math.round(x.gt * f); }); }); d.tb = +v; return changed(id); }
+          if (k === "cv2") { d.cv2 = v; return changed(id); }
+          if (k === "col") { t4.col = v; t4.row = 0; return render(); } if (k === "ch") { t4.ch = v; t4.row = 0; return render(); }
+          if (k === "back") { t4.row = Math.max(0, t4.row - 1); return render(); } if (k === "fwd") { t4.row = Math.min(Math.max(0, L4.length - 1), t4.row + 1); return render(); }
+          if (k === "add") { L4.push(e4 ? clone(e4) : { cv1: 24, cv2: 50, st: d.tb / 4, gt: d.tb / 8 }); t4.row = L4.length - 1; return changed(id); }
+          if (k === "kp") { if (v === "←") t4.typed = t4.typed.slice(0, -1);
+            else if (v === "ENTER") { if (e4 && t4.typed !== "") e4[["cv1", "cv2", "st", "gt"][t4.col || 0]] = +t4.typed; t4.typed = ""; t4.row = Math.min(L4.length - 1, t4.row + 1); return changed(id); }
+            else t4.typed = (t4.typed + v).slice(-4); return render(); } }
+        if (id === "elektron") { var te = W.tel || (W.tel = { sel: null, page: 0 }), tr = te.sel != null ? d.trigs[te.sel] : null;
+          if ((m = /^step:(\d+)$/.exec(k))) { var i = te.page * 16 + +m[1]; if (i >= d.steps) return;
+            if (v && v.alt) { te.sel = i; return render(); }
+            if (v && v.shift) d.trigs[i] = d.trigs[i] && d.trigs[i].type === "l" ? null : { type: "l", cut: 0.5 }; else d.trigs[i] = d.trigs[i] ? null : { type: "n" };
+            te.sel = d.trigs[i] ? i : null; return changed(id); }
+          if (k.indexOf("lk:") === 0) { var kk = k.slice(3);
+            if (tr) { if (tr.type === "l" && ["note", "vel", "len", "micro", "prob"].indexOf(kk) >= 0) return; tr[kk] = v; }
+            else if (["note", "vel", "len"].indexOf(kk) >= 0) d.def[kk] = v; else return;
+            return after(); }
+          if (k === "speed") { d.speed = SPEEDS[Math.round(v)]; return after(); } if (k === "swing") { d.swing = v; return after(); }
+          if (k === "page") { te.page = (te.page + 1) % Math.ceil(d.steps / 16); return render(); }
+          if (k === "deselect") { te.sel = null; return render(); }
+          if ((k === "micro-" || k === "micro+") && tr && tr.type === "n") { tr.micro = clamp((tr.micro || 0) + (k === "micro+" ? 1 : -1), -23, 23); return changed(id); } }
+      }
+      return { range: range, get: get, set: set, commit: function () { changed(id); } };
+    }
+    W.faceAdapter = faceAdapter;
+    function face(box, id, role) {
+      if (!global.FaithfulPanel || !FaithfulPanel.attachFace) return;
+      FaithfulPanel.attachFace(box, "sq-" + id, faceAdapter(id, role), { readonly: role !== "src", at: box.children[1], label: role === "src" ? "The machine:" : "The machine (translated, read-only):" });
+    }
+
     // ----- state, translation, drawing -----
     var lastT = null, handTo = false;
     function retranslate() { lastT = SQ.translate(W.src, W.dst, W.data[W.src]); W.data[W.dst] = lastT.data; W.notes = lastT.notes; handTo = false; }
@@ -739,8 +856,8 @@
       srcSel.value = W.src; dstSel.value = W.dst;
       bA.textContent = "▶ " + MACHINES[W.src].name; bB.textContent = "▶ " + MACHINES[W.dst].name; bAB.textContent = "▶ " + MACHINES[W.src].name + ", then " + MACHINES[W.dst].name;
       bExp.textContent = "⤓ Export " + MACHINES[W.src].name;
-      head(pSrc, W.src, "src"); B[W.src](pSrc, W.data[W.src]);
-      head(pDst, W.dst, "dst"); B[W.dst](pDst, W.data[W.dst]); if (handTo) pDst.classList.add("sqc-hand");
+      head(pSrc, W.src, "src"); B[W.src](pSrc, W.data[W.src]); face(pSrc, W.src, "src");
+      head(pDst, W.dst, "dst"); B[W.dst](pDst, W.data[W.dst]); face(pDst, W.dst, "dst"); if (handTo) pDst.classList.add("sqc-hand");
       // report
       rep.innerHTML = ""; var h = el("h3", "sqc-rh", MACHINES[W.src].name + " → " + MACHINES[W.dst].name + (handTo ? " (the translated panel was changed by hand)" : "")); rep.appendChild(h);
       var ul = el("ul", "sqc-items");
@@ -766,7 +883,13 @@
       fLanes.firstChild.innerHTML = '<div class="sqc-lt">' + MACHINES[W.src].name + "</div>" + SQ.lanesSVG(cs, W.src) + '<div class="sqc-lt">' + MACHINES[W.dst].name + "</div>" + SQ.lanesSVG(cd, W.dst);
     }
     // ----- playback: each machine's own events (already at its own resolution), two loops -----
-    function stop() { W.timers.forEach(clearTimeout); W.timers = []; voices.forEach(function (v) { v.port.postMessage({ type: "clear" }); v.port.postMessage({ type: "off", at: 0 }); }); W.playing = null; [bA, bB, bAB].forEach(function (b) { b.classList.remove("sqc-on"); }); }
+    function faceCur(id, pt) {   // the playing step on the panel: Elektron trigs and 960 stages (from the canonical line's own times)
+      var c = toCanon(id, W.data[id]), L = c.lines[0], i = -1, t = c.len ? pt % c.len : pt;
+      if (id === "elektron") { var sp = STEP16 / (W.data.elektron.speed || 1); i = Math.floor(t / sp) % W.data.elektron.steps; var pg = (W.tel || {}).page || 0; i = i - pg * 16; }
+      else if (id === "a960") L.forEach(function (n) { if (t >= n.t) i = n.stage; });
+      W.cur = { id: id, i: i }; [pSrc, pDst].forEach(function (b) { if (b._fpH && b._fpH.m) b._fpH.m.cur(b === pSrc && W.src === id ? i : -1); });
+    }
+    function stop() { W.cur = null; [pSrc, pDst].forEach(function (b) { if (b && b._fpH && b._fpH.m) b._fpH.m.cur(-1); }); W.timers.forEach(clearTimeout); W.timers = []; voices.forEach(function (v) { v.port.postMessage({ type: "clear" }); v.port.postMessage({ type: "off", at: 0 }); }); W.playing = null; [bA, bB, bAB].forEach(function (b) { b.classList.remove("sqc-on"); }); }
     function schedule(id, t0, loops) {
       var d = W.data[id], spb = 60 / d.bpm, end = t0;
       for (var lp = 0; lp < loops; lp++) {
@@ -793,7 +916,7 @@
         var t = ctx.currentTime + 0.08, t0 = t; W.playing = ids.slice();
         ids.forEach(function (id) { var e = schedule(id, t, 2); t = e + 0.4; });
         var total = (t - t0) * 1000, start = performance.now();
-        (function tick() { if (!W.playing) return; var el_ = (performance.now() - start) / 1000; draw(el_ * W.data[ids[0]].bpm / 60 * TPQ); if (el_ * 1000 < total) W.timers.push(setTimeout(tick, 120)); else stop(); })();
+        (function tick() { if (!W.playing) return; var el_ = (performance.now() - start) / 1000, pt = el_ * W.data[ids[0]].bpm / 60 * TPQ; draw(pt); faceCur(ids[0], pt); if (el_ * 1000 < total) W.timers.push(setTimeout(tick, 120)); else stop(); })();
       });
     }
     W.play = function (which) { var ids = which === "src" ? [W.src] : which === "dst" ? [W.dst] : [W.src, W.dst]; return play(ids); };

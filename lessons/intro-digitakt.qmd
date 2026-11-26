@@ -88,6 +88,7 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 <link rel="stylesheet" href="/apps/shared/lessons/sequencer-compare.css">
 <link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
 <script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
 <script src="/apps/shared/lessons/sequencer-compare.js"></script>
 <script src="/apps/shared/lessons/intro-kit.js"></script>
 ```
@@ -96,7 +97,7 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 ::: {.works-cited}
 "Elektron (company)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Elektron_(company)](https://en.wikipedia.org/wiki/Elektron_(company)). Gothenburg; Digitakt II 2024; parameter locks from the 2002 Machinedrum; users named.
 
-Elektron. *Digitakt II User Manual*. Elektron Music Machines, 2024, [www.elektron.se/en/download-support-digitakt-ii](https://www.elektron.se/en/download-support-digitakt-ii). Note and lock trigs (41), micro timing (45), 128 steps, speed (45-46), parameter locks (47), trig conditions (48), FILL (49), TRIG page (53-54), swing (23).
+Elektron. *Digitakt II User Manual*. Elektron Music Machines, 2024, [www.elektron.se/en/download-support-digitakt-ii](https://www.elektron.se/en/download-support-digitakt-ii). Note and lock trigs (41), micro timing (45), 128 steps, speed (45-46), parameter locks (47), trig conditions (48), FILL (49), TRIG page (53-54), swing (23). Front panel drawing p. 12: positions of the faithful Digitakt II panel (panels/sq-elektron.js).
 :::
 <!-- /works-cited -->
 

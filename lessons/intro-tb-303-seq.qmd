@@ -88,6 +88,7 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 <link rel="stylesheet" href="/apps/shared/lessons/sequencer-compare.css">
 <link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
 <script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
 <script src="/apps/shared/lessons/sequencer-compare.js"></script>
 <script src="/apps/shared/lessons/intro-kit.js"></script>
 ```
@@ -96,13 +97,13 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 ::: {.works-cited}
 **For students**
 
-Roland Corporation. *TB-03 Owner's Manual*. Roland, 2016, [static.roland.com/assets/media/pdf/TB-03_eng03_W.pdf](https://static.roland.com/assets/media/pdf/TB-03_eng03_W.pdf). One sheet: Original mode reproduces the TB-303's pattern write; note / tie / rest, 16 steps, triplet grid, last step.
+Roland Corporation. *TB-03 Owner's Manual*. Roland, 2016, [static.roland.com/assets/media/pdf/TB-03_eng03_W.pdf](https://static.roland.com/assets/media/pdf/TB-03_eng03_W.pdf). One sheet: Original mode reproduces the TB-303's pattern write; note / tie / rest, 16 steps, triplet grid, last step. Time mode keys DOWN = note, UP = tie, ACCENT = rest (used by the faithful panel).
 
 "Roland TB-303." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Roland_TB-303](https://en.wikipedia.org/wiki/Roland_TB-303).
 
 **For teachers**
 
-Roland Corporation. *TB-303 Bass Line Owner's Manual*. Roland, [1982], scan at Internet Archive, [archive.org/details/synthmanual-roland-tb-303-owners-manual](https://archive.org/details/synthmanual-roland-tb-303-owners-manual). PDF pages: pitch, length of note, accent and slide in a pattern (4-5), sixteenth notes (5), 64 patterns (11), time mode (14-16), 7 tracks (23), writing accent and slide (40-43).
+Roland Corporation. *TB-303 Bass Line Owner's Manual*. Roland, [1982], scan at Internet Archive, [archive.org/details/synthmanual-roland-tb-303-owners-manual](https://archive.org/details/synthmanual-roland-tb-303-owners-manual). PDF pages: pitch, length of note, accent and slide in a pattern (4-5), sixteenth notes (5), 64 patterns (11), time mode (14-16), 7 tracks (23), writing accent and slide (40-43). Panel drawing PDF p. 8: positions of the faithful TB-303 sequencer panel (panels/sq-tb303.js).
 
 "Roland TB-303." *Wikipedia*, [en.wikipedia.org/wiki/Roland_TB-303](https://en.wikipedia.org/wiki/Roland_TB-303). Sawtooth or square; a 24 dB-per-octave resonant low-pass filter that does not self-oscillate; 1981-1984.
 :::

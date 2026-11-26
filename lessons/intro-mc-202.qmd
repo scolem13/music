@@ -84,6 +84,7 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 <link rel="stylesheet" href="/apps/shared/lessons/sequencer-compare.css">
 <link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
 <script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
 <script src="/apps/shared/lessons/sequencer-compare.js"></script>
 <script src="/apps/shared/lessons/intro-kit.js"></script>
 ```
@@ -96,7 +97,7 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 
 **For teachers**
 
-Roland Corporation. *MC-202 MicroComposer Owner's Manual*. Roland, [1983], scan at Internet Archive, [archive.org/details/synthmanual-roland-mc-202-owners-manual](https://archive.org/details/synthmanual-roland-mc-202-owners-manual). PDF pages: features, 2 channels, 2600 steps, tape (5), step and gate time (10, 15-16), rests (17, 19), accent and portamento (29, 31).
+Roland Corporation. *MC-202 MicroComposer Owner's Manual*. Roland, [1983], scan at Internet Archive, [archive.org/details/synthmanual-roland-mc-202-owners-manual](https://archive.org/details/synthmanual-roland-mc-202-owners-manual). PDF pages: features, 2 channels, 2600 steps, tape (5), step and gate time (10, 15-16), rests (17, 19), accent and portamento (29, 31). Panel Descriptions drawing PDF p. 11: positions of the faithful MC-202 panel (panels/sq-mc202.js).
 :::
 <!-- /works-cited -->
 

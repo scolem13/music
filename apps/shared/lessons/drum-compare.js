@@ -657,13 +657,13 @@
   // accLevel, scale, len, shuffle, timing, swingGrid, swing, quant, play, stop, clear, disp (the display's text), cur (playing step).
   var SEL808 = ["acc", "kick", "snare", "ltom", "mtom", "htom", "rim", "clap", "cowbell", "cymbal", "ohh", "chh"];
   function faceAdapter(W, box, editable) {
-    var S = function () { return editable ? W.a : W.tr.state; }, M = MACHINES[S().machine], ui = W.ui || (W.ui = {}), uk = M.id + (editable ? "a" : "b");
+    var S = function () { return editable ? W.a : W.tr.state; }, M = MACHINES[S().machine], U = function () { return W.ui || (W.ui = {}); }, uk = M.id + (editable ? "a" : "b");
     var sels = M.id === "tr808" ? SEL808 : M.voices.map(function (v) { return v[0]; }).concat(M.accent === "total" ? ["acc"] : []);
-    function sel() { return ui[uk] || (sels.indexOf("kick") >= 0 ? "kick" : sels[0]); }
+    function sel() { return U()[uk] || (sels.indexOf("kick") >= 0 ? "kick" : sels[0]); }
     function rk(v) { if (v === "acc") return "acc"; var vv = voiceOf(M, v); return vv && vv[3] && vv[0] === v && S().sw[v] ? vv[3] : v; }
     function soft() { var H = box._fpH; if (H && H.m) H.m.refresh(); }
     function after() { if (global.FaithfulPanel && FaithfulPanel.busy()) soft(); else W.redraw(); }
-    function pr(k) { var m = /^p:(\w+)\.(\w+)$/.exec(k); return m ? [m[1], m[2]] : null; }
+    function pr(k) { var m = /^p:(\w+)\.(\w+)$/.exec(k); return m ? [m[1] === "sel" ? sel() : m[1], m[2], m[1] === "sel"] : null; }   // p:sel.<param> = the selected voice
     function nums(a, b) { var o = []; for (var i = a; i <= b; i++) o.push(i); return o; }
     return {
       range: function (k) {
@@ -672,7 +672,8 @@
         if (k === "sel") return [k, "Instrument", "c", sels];
         if ((m = /^step:(\d+)$/.exec(k))) return +m[1] < 16 ? [k, "Step " + (+m[1] + 1), "t"] : null;
         if (k === "p:hh.level") return M.id === "tr909" ? [k, "Hi-hat level", "k", 0, 10, 0.5, 8] : null;
-        if ((m = pr(k))) { var v = voiceOf(M, m[0]); return v && v[0] === m[0] && v[2].indexOf(m[1]) >= 0 ? [k, PNAME[m[1]], "k", 0, 10, 0.5, m[1] === "level" ? 8 : 5] : null; }
+        if ((m = pr(k)) && m[2]) return M.voices.some(function (v) { return v[2].indexOf(m[1]) >= 0; }) ? [k, PNAME[m[1]], "k", 0, 10, 0.5, m[1] === "level" ? 8 : 5] : null;
+        if (m) { var v = voiceOf(M, m[0]); return v && v[0] === m[0] && v[2].indexOf(m[1]) >= 0 ? [k, PNAME[m[1]], "k", 0, 10, 0.5, m[1] === "level" ? 8 : 5] : null; }
         if ((m = /^sw:(\w+)$/.exec(k))) { var v2 = voiceOf(M, m[1]); return v2 && v2[3] ? [k, "Switch", "s"] : null; }
         if (k === "bpm") return [k, "Tempo", "k", M.tempo ? M.tempo[0] : 30, M.tempo ? M.tempo[1] : 300, 1, 120];
         if (k === "accLevel") return M.accent === "total" ? [k, "Accent level", "k", 0, 10, 0.5, 6] : null;
@@ -704,14 +705,14 @@
       },
       set: function (k, v) {
         var m; if (!editable) return;
-        if (k === "sel") { ui[uk] = v; return soft(); }
+        if (k === "sel") { U()[uk] = v; return soft(); }
         if ((m = /^step:(\d+)$/.exec(k))) { var i = +m[1], r = rk(sel());
           if (r === "acc") W.a.acc[i] = !W.a.acc[i];
           else { W.a.rows[r] = W.a.rows[r] || []; for (var j = 0; j < 16; j++) if (!W.a.rows[r][j]) W.a.rows[r][j] = 0; W.a.rows[r][i] = cycle(M, r, W.a.rows[r][i]); }
           if (i >= W.a.len) W.a.len = Math.min(W.a.scale === 12 ? 12 : 16, i + 1);
           return W.redraw(); }
         if (k === "p:hh.level") { ["chh", "ohh"].forEach(function (c) { if (W.a.kit[c]) W.a.kit[c].level = v; }); return after(); }
-        if ((m = pr(k))) { W.a.kit[rk(m[0])][m[1]] = v; return after(); }
+        if ((m = pr(k))) { var kt = W.a.kit[rk(m[0])]; if (!kt || !(m[1] in kt)) return; kt[m[1]] = v; return after(); }
         if ((m = /^sw:(\w+)$/.exec(k))) { W.a.sw[m[1]] = !W.a.sw[m[1]]; return W.redraw(); }
         if (k === "play") { if (W.playing) W.stop(); else W.play(["a"]); return setTimeout(soft, 150); }
         if (k === "stop") { W.stop(); return soft(); }

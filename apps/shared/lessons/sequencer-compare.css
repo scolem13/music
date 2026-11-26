@@ -89,3 +89,9 @@
 .sqc-use{padding:0 .4rem;font-size:.7rem!important}
 .sqc-key{display:inline-block;font-family:var(--font-mono);font-size:.72rem;padding:0 .3rem;border-radius:3px;color:#fff}
 .sqc-top .sqc-lab{flex-wrap:wrap;max-width:100%}.sqc-top select{max-width:min(22rem,calc(100vw - 6rem))}
+
+/* faithful front panel (faithful-panel.js): in Panel view the controls the panel draws are hidden; memory tables stay */
+.sqc-panel.fp-panelview .sqc-960 > .sqc-row:not(:last-child),
+.sqc-panel.fp-panelview .sqc-303 > .sqc-row:first-child, .sqc-panel.fp-panelview .sqc-303 > .sqc-keys,
+.sqc-panel.fp-panelview .sqc-mc202 > .sqc-row, .sqc-panel.fp-panelview .sqc-mc4 > .sqc-row, .sqc-panel.fp-panelview .sqc-mc4 > .sqc-lcd,
+.sqc-panel.fp-panelview .sqc-trigs, .sqc-panel.fp-panelview .sqc-trigpage, .sqc-panel.fp-panelview .sqc-el > .sqc-row:not(:first-child):not(.sqc-trigpage) { display: none; }

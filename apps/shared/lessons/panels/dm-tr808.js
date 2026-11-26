@@ -5,7 +5,7 @@
 // are placed from the photo's blobs and the sheet's callouts, their exact spots guessed. Step-key colours (red, orange, yellow,
 // off-white in fours) are not visible in the grey photo: drawn from the well-known look of the machine, unverified.
 (function () {
-  var I = [], X = function (x) { return x - 40; }, Y = function (y) { return y - 60; };
+  var I = [], X = function (x) { return x - 130; }, Y = function (y) { return y - 200; };
   var COLS = [["acc", 555, "ACCENT"], ["kick", 655, "BASS DRUM"], ["snare", 755, "SNARE DRUM"], ["ltom", 855, "LOW TOM"], ["mtom", 955, "MID TOM"], ["htom", 1060, "HI TOM"],
     ["rim", 1160, "RIM SHOT"], ["clap", 1260, "HAND CLAP"], ["cowbell", 1360, "COW BELL"], ["cymbal", 1460, "CYMBAL"], ["ohh", 1555, "OPEN HIHAT"], ["chh", 1655, "CLSD HIHAT"]];
   var ALT = { ltom: "LOW CONGA", mtom: "MID CONGA", htom: "HI CONGA", rim: "CLAVES", clap: "MARACAS" };
@@ -17,7 +17,7 @@
   COLS.forEach(function (c, j) {
     if (j) I.push({ t: "section", x: X(c[1] - 50), y: Y(228), w: 0.5, h: 370, label: "", head: 0 });
     KN[c[0]].forEach(function (k, r) { if (!k[0]) return; I.push({ t: "knob", k: c[0] === "acc" ? k[0] : "p:" + c[0] + "." + k[0], x: X(c[1]), y: Y(270 + r * 110), r: 19, label: k[1], size: 8, noValue: true, cap: "#e8e8e8" }); });
-    if (ALT[c[0]]) { I.push({ t: "key", k: "sw:" + c[0], x: X(c[1] - 44), y: Y(478), w: 88, h: 24, label: ALT[c[0]], size: 7.5, cap: "#dcdcdc", aria: c[2] + " / " + ALT[c[0]] + " switch" }); }
+    if (ALT[c[0]]) { I.push({ t: "key", k: "sw:" + c[0], x: X(c[1] - 44), y: Y(478), w: 88, h: 24, label: ALT[c[0]], size: 7.5, aria: c[2] + " / " + ALT[c[0]] + " switch" }); }
     I.push({ t: "key", k: "sel", v: c[0], x: X(c[1] - 44), y: Y(563), w: 88, h: 24, label: c[2], size: 7.5 });
   });
   I.push({ t: "label", x: X(1250), y: Y(668), text: "Rhythm Composer  TR-808", size: 30 }); I.push({ t: "label", x: X(1400), y: Y(700), text: "Computer Controlled", size: 13 });
@@ -41,7 +41,7 @@
     I.push({ t: "label", x: X(x), y: Y(1002), text: String(i < 12 ? i + 1 : i - 11), size: 12 }); }
   I.push({ t: "key", x: X(1600), y: Y(770), w: 80, h: 34, label: "A   B", size: 8 }); I.push({ t: "label", x: X(1640), y: Y(762), text: "I/F VARIATION", size: 7 });
   I.push({ t: "key", x: X(1605), y: Y(885), w: 70, h: 70, label: "TAP", size: 10 });
-  FaithfulPanel.register({ id: "dm-tr808", name: "TR-808", w: 1700, h: 980, accent: "orange", knob: "cap",
+  FaithfulPanel.register({ id: "dm-tr808", name: "TR-808", w: 1600, h: 840, accent: "orange", knob: "cap",
     accents: { orange: "#ee8a2a" },
     colors: { light: { body: "#f2f2f0", line: "#333" }, dark: { body: "#161616", line: "#777" } },
     src: ["Roland TR-808 Introduction sheet, pp. 2-3: panel photo (positions measured) and the callouts for mode, instrument / track select, pre-scale, clear, start / stop, tap", "TR-808 Service Notes p. 16 (knob list)"],

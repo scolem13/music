@@ -88,6 +88,7 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 <link rel="stylesheet" href="/apps/shared/lessons/drum-compare.css">
 <link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
 <script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
 <script src="/apps/shared/lessons/drum-compare.js"></script>
 <script src="/apps/shared/lessons/intro-kit.js"></script>
 ```
@@ -100,7 +101,7 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 
 **For teachers**
 
-Linn, Roger, and David Battino. *MPC60 Software Version 3.1 Operator's Manual*. Roger Linn Design, 2002, [www.polynominal.com/akai-mpc60/akai-mpc60-manual.pdf](https://www.polynominal.com/akai-mpc60/akai-mpc60-manual.pdf). 12-bit samples at 40 kHz (p. 15), 16 Levels (pp. 21-22), 96 ppq (p. 26), timing correct and swing 50-75 % (pp. 43-44), specifications (p. 218).
+Linn, Roger, and David Battino. *MPC60 Software Version 3.1 Operator's Manual*. Roger Linn Design, 2002, [www.polynominal.com/akai-mpc60/akai-mpc60-manual.pdf](https://www.polynominal.com/akai-mpc60/akai-mpc60-manual.pdf). 12-bit samples at 40 kHz (p. 15), 16 Levels (pp. 21-22), 96 ppq (p. 26), timing correct and swing 50-75 % (pp. 43-44), specifications (p. 218). No panel drawing: the faithful MPC60 panel takes its parts from pp. 11-13, 18, 21-22, positions guessed.
 :::
 <!-- /works-cited -->
 

@@ -166,7 +166,7 @@
       var ad = { get: function (k) { return H.A.get(k); }, set: function (k, v) { if (!opt.readonly) H.A.set(k, v); }, range: function (k) { return H.A.range(k); } };
       H.ready = FP.load(lid).then(function () { H.m = FP.mount(H.div, { id: lid, adapter: ad, readonly: opt.readonly, commit: function () { H.A.commit && H.A.commit(); } }); return H.m; }); }
     H.A = A;
-    var act = document.activeElement, fk = act && H.div.contains(act) && act.dataset ? act.dataset.ctl : null;
+    var act = document.activeElement, fk = act && H.div.contains(act) && act.dataset ? act.dataset.ctl : (!act || act === document.body) && FP._last && H.m && FP._last.el === H.m.el && Date.now() - FP._last.t < 1500 ? FP._last.k : null;
     var seg = h("span", "sp-seg scmp-vw fp-vw"); seg.setAttribute("aria-label", "Panel view");
     [["panel", "Panel"], ["simple", "Simple"]].forEach(function (v) { var b = h("button", "sp-opt", v[1]); b.type = "button"; b.dataset.v = v[0]; b.onclick = function () { FP.setMview(v[0]); }; seg.appendChild(b); });
     var bar = h("div", "fp-hostbar"); bar.appendChild(h("span", "fp-hostlab", opt.label || "View")); bar.appendChild(seg);
@@ -272,8 +272,8 @@
         var kr = S("rect", { x: it.x, y: it.y, width: it.w, height: it.h, rx: 3, fill: it.cap || "var(--fp-head)", stroke: "var(--fp-line)", class: "fp-focus fp-ring" }); g.appendChild(kr);
         var lw = Math.min(14, it.w * .4), ledR = S("rect", { x: it.x + it.w / 2 - lw / 2, y: it.y + 4, width: lw, height: 5, rx: 1.5, fill: "#3a1010" });
         if (it.t === "step" || it.led) g.appendChild(ledR);
-        var kt = T(it.x + it.w / 2, it.below ? it.y + it.h + 11 : it.y + it.h / 2 + 5 + (it.t === "step" || it.led ? 3 : 0), it.label || "", { "font-size": it.size || 9, "text-anchor": "middle", "font-weight": 700, fill: it.cap && !it.below ? "#111" : null }); g.appendChild(kt);
-        var mk = it.t === "step" ? T(it.x + it.w / 2, it.y + it.h - 5, "", { "font-size": 10, "text-anchor": "middle", "font-weight": 700, fill: it.cap ? "#111" : null }) : null; if (mk) g.appendChild(mk);
+        var kt = T(it.x + it.w / 2, it.below ? it.y + it.h + 11 : it.y + it.h / 2 + 5 + (it.t === "step" || it.led ? 3 : 0), it.label || "", { "font-size": it.size || 9, "text-anchor": "middle", "font-weight": 700, style: it.cap && !it.below ? "fill:" + (/^#[0-3]/.test(it.cap) ? "#eee" : "#111") : null }); g.appendChild(kt);
+        var mk = it.t === "step" ? T(it.x + it.w / 2, it.y + it.h - 5, "", { "font-size": 10, "text-anchor": "middle", "font-weight": 700, style: it.cap ? "fill:#111" : null }) : null; if (mk) g.appendChild(mk);
         if (it.t === "step") { g.dataset.step = it.i; g.classList.add("fp-step"); }
         if (!ok) { inert(g, it); return; }
         g.setAttribute("tabindex", 0); g.setAttribute("class", "fp-c fp-click" + (it.t === "step" ? " fp-step" : "")); g.setAttribute("role", "button"); g.setAttribute("aria-label", it.aria || it.label || it.k);
@@ -284,7 +284,7 @@
         upd.push(function () { var v = o.get(it.k);
           if (it.t === "step") { var on = v && (v.on || v === true || v > 0); ledR.setAttribute("fill", on ? (v.acc ? "#ff2a1a" : "#e03a2f") : "#3a1010"); ledR.setAttribute("opacity", on && !v.acc && v.dim ? .6 : 1);
             mk.textContent = v && v.text || ""; g.setAttribute("aria-pressed", on ? "true" : "false"); }
-          else { var lit = boolKey ? !!v : v === it.v; ledR.setAttribute("fill", lit ? "#e03a2f" : "#3a1010"); if (!it.led && !it.cap) kr.setAttribute("fill", lit ? a : "var(--fp-head)"); if (!it.led && !it.cap) kt.setAttribute("fill", lit ? "#000" : "var(--fp-ink)"); g.setAttribute("aria-pressed", lit ? "true" : "false"); } });
+          else { var lit = boolKey ? !!v : v === it.v; ledR.setAttribute("fill", lit ? "#e03a2f" : "#3a1010"); if (!it.led && !it.cap) kr.setAttribute("fill", lit ? a : "var(--fp-head)"); if (!it.led && !it.cap) kt.style.fill = lit ? "#000" : ""; if (it.cap) { kr.setAttribute("stroke", lit ? a : "var(--fp-line)"); kr.setAttribute("stroke-width", lit ? 4 : 1); } g.setAttribute("aria-pressed", lit ? "true" : "false"); } });
         byKey[it.k] = byKey[it.k] || []; byKey[it.k].push(upd.length - 1); return;
       }
       if (it.t === "knob") {
@@ -347,6 +347,8 @@
     function setCur(i) { curStep = i == null ? -1 : i; [].forEach.call(svg.querySelectorAll(".fp-step"), function (e) { e.classList.toggle("fp-now", +e.dataset.step === curStep); }); }
     function refresh() { upd.forEach(function (f) { f(); }); if (A && A.range("cur")) setCur(o.get("cur")); }
     if (o.readonly) wrap.classList.add("fp-ro");
+    function rec(e) { var t = e.target && e.target.closest && e.target.closest("[data-ctl]"); if (t && e.type === "keydown") FP._last = { el: wrap, k: t.dataset.ctl, t: Date.now() }; }
+    svg.addEventListener("keydown", rec, true);
     if (A && A.onChange) A.onChange(refresh);   // every picture depends on several keys, so redraw all (cheap)
     paint(); refresh(); showPage();
     var ctl = {}; [].forEach.call(svg.querySelectorAll("[data-ctl]"), function (e) { ctl[e.dataset.ctl] = e; });

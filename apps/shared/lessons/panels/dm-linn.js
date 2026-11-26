@@ -18,7 +18,7 @@
     I.push({ t: "knob", k: "p:" + t[0] + "." + t[1], x: 1130 + (i % 4) * 90, y: 90 + Math.floor(i / 4) * 140, r: 22, label: t[2], size: 8, noValue: true, cap: "#d8d8d8" }); });
   I.push({ t: "section", x: 10, y: 350, w: 700, h: 300, label: "DRUMS", title: "border", size: 12 });
   VO.forEach(function (v, i) { var r = i < 8 ? 1 : 0, c = i % 8, x = 30 + c * 84, y = 390 + r * 120;
-    I.push({ t: "key", k: "sel", v: v[0], x: x, y: y, w: 66, h: 56, label: "", led: false, cap: "#e9e4d8" }); I.push({ t: "label", x: x + 33, y: y + 72, text: v[1], size: 8, bold: true }); });
+    I.push({ t: "key", k: "sel", v: v[0], x: x, y: y, w: 66, h: 56, label: "", led: false, cap: "#e9e4d8", aria: v[1] }); I.push({ t: "label", x: x + 33, y: y + 72, text: v[1], size: 8, bold: true }); });
   I.push({ t: "key", x: 600, y: 600, w: 90, h: 30, label: "PERCUSSION", size: 8 });
   I.push({ t: "section", x: 720, y: 350, w: 730, h: 300, label: "CREATE RHYTHM PATTERN / SONG", title: "border", size: 12 });
   I.push({ t: "lcd", k: "disp", x: 750, y: 380, w: 110, h: 54, size: 30, seg: true }); I.push({ t: "label", x: 805, y: 450, text: "PATTERN / TEMPO", size: 8 });

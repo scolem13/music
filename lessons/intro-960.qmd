@@ -89,6 +89,7 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 <link rel="stylesheet" href="/apps/shared/lessons/sequencer-compare.css">
 <link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
 <script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
 <script src="/apps/shared/lessons/sequencer-compare.js"></script>
 <script src="/apps/shared/lessons/intro-kit.js"></script>
 ```
@@ -103,7 +104,7 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 
 **For teachers**
 
-Synthesizers.com. *Q960 Sequential Controller* [data sheet]. Sept. 2014, [shop.synthesizers.com/cdn/shop/files/q960data.pdf](https://shop.synthesizers.com/cdn/shop/files/q960data.pdf). A recreation of the Moog 960, "functionally equivalent" (p. 5): 8 stages x 3 rows (p. 1), stage modes and the 90 % oscillator pulse (p. 3), X1/X2/X4 ranges, stage 9, third-row timing (p. 4), Q962 for 24 stages (p. 2).
+Synthesizers.com. *Q960 Sequential Controller* [data sheet]. Sept. 2014, [shop.synthesizers.com/cdn/shop/files/q960data.pdf](https://shop.synthesizers.com/cdn/shop/files/q960data.pdf). A recreation of the Moog 960, "functionally equivalent" (p. 5): 8 stages x 3 rows (p. 1), stage modes and the 90 % oscillator pulse (p. 3), X1/X2/X4 ranges, stage 9, third-row timing (p. 4), Q962 for 24 stages (p. 2). The faithful 960 panel uses the functions only; its positions come from the Behringer quick start guide.
 :::
 <!-- /works-cited -->
 

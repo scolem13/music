@@ -41,6 +41,16 @@
 // A control whose key is missing from the profile (or that has none) is drawn but inert: dimmed, tooltip "not modelled".
 // Knob / slider ranges, steps and defaults are the profile's own ([key, label, "k", min, max, step] in PROFILES[id].groups).
 //
+// OTHER HOSTS (drum machines, sequencers: 2026-11-26): mount(host, { id, adapter: { get(k), set(k, v), range(k), onChange(cb)? },
+//   readonly, commit() }) binds the same items to any host. range(k) -> [k, label, "k" (number) | "s" (boolean) | "c" (choice),
+//   min | [choices], max, step, default] or null (= not modelled, drawn dimmed). While a drag is held the host should only
+//   refresh; `commit` is called on pointer-up after a drag (FaithfulPanel.busy() is true during one). Extra items for them:
+//   { t: "step", k: "step:<i>", i, x, y, w, h, label, cap }  a step key with its LED; get(k) -> { on, acc, text } ; click -> set(k, {shift, alt})
+//      the playing step is lit by me.cur(i) (or get("cur") at refresh): an amber ring, the real machines' running light
+//   { t: "key", k, v, x, y, w, h, label, below: true, cap, led: true }  a button: click -> set(k, v); lit (LED / fill) while get(k) === v
+//      (or, for a boolean key with no v, while get(k) is true: click toggles)
+//   { t: "lcd", k, x, y, w, h, size, seg: true }  a display showing the text get(k) (lines split at "\n"; seg = LED digits)
+//   FaithfulPanel.checkAdapter(layout, adapter) -> [bound keys the adapter does not know]
 // API: FaithfulPanel.mount(host, { id, profile, get(key), set(key, value) }) -> { refresh(key?), el, layout, ctl: {key: element} }
 //   FaithfulPanel.load(id) -> Promise(layout)   .has(id)   .register(layout)   .check(layout, profile) -> [missing keys]
 //   .theme() -> "light"|"dark"   .setTheme(t)   .view() / .setView("panel"|"simple") (localStorage `synth-face-view`)
@@ -84,6 +94,8 @@
   function ctlMap(P) { var C = {}; (P && P.groups || []).forEach(function (g) { g[2].forEach(function (c) { C[c[0]] = c; }); }); return C; }
   FP.check = function (L, P) { var C = ctlMap(P), miss = [];
     L.items.forEach(function (it) { if (it.k && !C[it.k]) miss.push(it.k); }); return miss; };
+  FP.checkAdapter = function (L, A) { var miss = []; L.items.forEach(function (it) { if (it.k && !A.range(it.k)) miss.push(it.k); }); return miss; };
+  var busy = 0; FP.busy = function () { return busy > 0; };
   FP.bound = function (L) { return L.items.filter(function (it) { return it.k; }).map(function (it) { return it.k; }); };
 
   // ---------- styles (once) ----------
@@ -96,8 +108,10 @@
       ".fp-scroll{overflow-x:auto;max-width:100%}.fp-svg{display:block;width:100%;min-width:760px;height:auto;user-select:none;-webkit-user-select:none;touch-action:none}" +
       ".fp-svg text{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;fill:var(--fp-ink)}.fp-svg .fp-dim{fill:var(--fp-ink2)}" +
       ".fp-c{cursor:ns-resize;outline:none}.fp-c.fp-h{cursor:ew-resize}.fp-c.fp-click{cursor:pointer}.fp-c:focus-visible .fp-focus{stroke:var(--fp-ink);stroke-width:1.5;stroke-dasharray:3 2}" +
+      ".fp-ro .fp-c{pointer-events:none}.fp-step.fp-now .fp-ring{stroke:#ffb000;stroke-width:3}" +
       ".fp-off{opacity:.38;cursor:help}.fp-c.fp-hl .fp-focus,.fp-c.fp-lit .fp-focus{stroke:#e8a400;stroke-width:2.5}.fp-note{font-size:.75rem;color:var(--fp-ink2);margin:4px 2px 0}" +
-      ".scmp-vw{display:inline-flex;border:1px solid #999;border-radius:5px;overflow:hidden;margin-left:.4rem}.scmp-vw .sp-opt{all:unset;cursor:pointer;padding:.1rem .45rem;font-size:.78rem}.scmp-vw .sp-opt.sp-on{background:#333;color:#fff}.scmp-face[hidden],.scmp-groups[hidden]{display:none}";
+      ".scmp-vw{display:inline-flex;border:1px solid #999;border-radius:5px;overflow:hidden;margin-left:.4rem}.scmp-vw .sp-opt{all:unset;cursor:pointer;padding:.1rem .45rem;font-size:.78rem}.scmp-vw .sp-opt.sp-on{background:#333;color:#fff}.scmp-face[hidden],.scmp-groups[hidden]{display:none}" +
+      ".fp-hostbar{display:flex;align-items:center;gap:.3rem;font-size:.78rem;margin:.3rem 0 0}.fp-face[hidden]{display:none}";
     document.head.appendChild(st);
   }
 
@@ -135,10 +149,42 @@
     return out;
   }
 
+  // ---------- a panel inside a host that redraws itself (drum-compare.js, sequencer-compare.js) ----------
+  // FP.attachFace(box, layoutId, adapter, { readonly, at: element to insert before (else appended), label }) -> holder
+  //   Keeps one mounted panel per box + layout across the host's redraws (the host may empty the box: the same element is put
+  //   back, focus restored), adds a Panel / Simple switch (localStorage `machine-face-view`, Panel by default) and sets class
+  //   `fp-panelview` on the box in Panel view so the host's CSS can hide its plain controls. holder.m = the mount (once loaded),
+  //   holder.ready = Promise. The adapter may be replaced on every redraw (holder.A).
+  FP.MACHINES = ["dm-tr808", "dm-tr909", "dm-linn", "dm-mpc60", "sq-a960", "sq-tb303", "sq-mc202", "sq-mc4", "sq-elektron"];
+  var MVIEW = "machine-face-view";
+  FP.mview = function () { var v = null; try { v = localStorage.getItem(MVIEW); } catch (e) {} return v === "simple" ? "simple" : "panel"; };
+  FP.setMview = function (v) { try { localStorage.setItem(MVIEW, v); } catch (e) {} [].forEach.call(document.querySelectorAll(".fp-hostbox"), function (b) { b._fpApply && b._fpApply(); }); };
+  FP.attachFace = function (box, lid, A, opt) {
+    opt = opt || {}; css();
+    var cache = box._fpc || (box._fpc = {}), key = lid + (opt.readonly ? ":ro" : ""), H = cache[key];
+    if (!H) { H = cache[key] = { div: h("div", "fp-face"), m: null, A: A };
+      var ad = { get: function (k) { return H.A.get(k); }, set: function (k, v) { if (!opt.readonly) H.A.set(k, v); }, range: function (k) { return H.A.range(k); } };
+      H.ready = FP.load(lid).then(function () { H.m = FP.mount(H.div, { id: lid, adapter: ad, readonly: opt.readonly, commit: function () { H.A.commit && H.A.commit(); } }); return H.m; }); }
+    H.A = A;
+    var act = document.activeElement, fk = act && H.div.contains(act) && act.dataset ? act.dataset.ctl : (!act || act === document.body) && FP._last && H.m && FP._last.el === H.m.el && Date.now() - FP._last.t < 1500 ? FP._last.k : null;
+    var seg = h("span", "sp-seg scmp-vw fp-vw"); seg.setAttribute("aria-label", "Panel view");
+    [["panel", "Panel"], ["simple", "Simple"]].forEach(function (v) { var b = h("button", "sp-opt", v[1]); b.type = "button"; b.dataset.v = v[0]; b.onclick = function () { FP.setMview(v[0]); }; seg.appendChild(b); });
+    var bar = h("div", "fp-hostbar"); bar.appendChild(h("span", "fp-hostlab", opt.label || "View")); bar.appendChild(seg);
+    if (opt.at && opt.at.parentNode === box) { box.insertBefore(bar, opt.at); box.insertBefore(H.div, opt.at); } else { box.appendChild(bar); box.appendChild(H.div); }
+    box.classList.add("fp-hostbox");
+    box._fpApply = function () { var pv = FP.mview() === "panel"; box.classList.toggle("fp-panelview", pv); H.div.hidden = !pv;
+      [].forEach.call(seg.children, function (x) { x.classList.toggle("sp-on", x.dataset.v === (pv ? "panel" : "simple")); }); };
+    box._fpApply(); box._fpH = H;
+    if (H.m) { H.m.refresh(); if (fk) { var e = H.div.querySelector('[data-ctl="' + fk + '"]'); if (e) e.focus(); } }
+    return H;
+  };
+
   // ---------- mount ----------
   FP.mount = function (host, o) {
     css();
-    var L = FP.LAYOUTS[o.id], P = o.profile || (window.SynthCompare && SynthCompare.PROFILES[o.id]), C = ctlMap(P);
+    var L = FP.LAYOUTS[o.id], A = o.adapter, P = A ? null : o.profile || (window.SynthCompare && SynthCompare.PROFILES[o.id]), C = ctlMap(P);
+    if (A) { o = Object.assign({}, o, { get: A.get, set: A.set }); }
+    function rng(k) { return A ? A.range(k) : C[k]; }
     var wrap = h("div", "fp-w"), bar = h("div", "fp-bar"), tb = h("button", "fp-theme"); tb.type = "button";
     bar.appendChild(h("span", null, L.name + " panel")); bar.appendChild(tb); wrap.appendChild(bar);
     var scroll = h("div", "fp-scroll"), svg = S("svg", { viewBox: "0 0 " + L.w + " " + L.h, class: "fp-svg", role: "group", "aria-label": L.name + " control panel" });
@@ -149,8 +195,8 @@
     var upd = [], byKey = {}, me, tabs = [], page = L.page || null;
     function showPage() { [].forEach.call(svg.querySelectorAll("[data-page]"), function (e) { e.style.display = e.dataset.page === page ? "" : "none"; }); tabs.forEach(function (f) { f(); }); }
     function acc(it) { var n = it.a || L.accent; return (L.accents && L.accents[n]) || n || "#888"; }
-    function def(k) { return P.def && P.def[k] != null ? P.def[k] : null; }
-    function fmt(it, c, v) { if (it.fmt) return it.fmt(v); var hn = P.hint && P.hint(it.k, v); if (hn) return hn; if (c[2] === "k") { var st = c[5]; return st >= 1 ? String(Math.round(v)) : (+v).toFixed(st >= 0.1 ? 1 : st >= 0.01 ? 2 : 3); } return String(v); }
+    function def(k) { if (A) { var r = A.range(k); return r && r[6] != null ? r[6] : null; } return P && P.def && P.def[k] != null ? P.def[k] : null; }
+    function fmt(it, c, v) { if (it.fmt) return it.fmt(v); var hn = P && P.hint && P.hint(it.k, v); if (hn) return hn; if (c[2] === "k") { var st = c[5]; return st >= 1 ? String(Math.round(v)) : (+v).toFixed(st >= 0.1 ? 1 : st >= 0.01 ? 2 : 3); } return String(v); }
     function inert(g, it) { g.setAttribute("class", "fp-off"); var t = S("title"); t.textContent = (it.label || it.t) + ": not modelled"; g.appendChild(t); }
     function bindSlider(g, it, c, horiz, lenPx) {   // drag / wheel / keys for knobs and sliders
       g.setAttribute("tabindex", 0); g.setAttribute("role", "slider"); g.setAttribute("aria-label", it.label || c[1]);
@@ -158,10 +204,10 @@
       var span = c[4] - c[3], step = c[5] || span / 100, drag = null;
       function put(v) { o.set(it.k, clamp(Math.round(v / step) * step, c[3], c[4])); }
       function scale() { var r = svg.getBoundingClientRect(); return r.width ? L.w / r.width : 1; }
-      g.addEventListener("pointerdown", function (e) { e.preventDefault(); g.focus(); drag = { x: e.clientX, y: e.clientY, v: +o.get(it.k) }; try { g.setPointerCapture(e.pointerId); } catch (er) {} });
+      g.addEventListener("pointerdown", function (e) { e.preventDefault(); g.focus(); busy++; drag = { x: e.clientX, y: e.clientY, v: +o.get(it.k) }; try { g.setPointerCapture(e.pointerId); } catch (er) {} });
       g.addEventListener("pointermove", function (e) { if (!drag) return; var px = horiz ? (e.clientX - drag.x) : (drag.y - e.clientY), len = (lenPx || 150) / scale();
         put(drag.v + px / len * span * (e.shiftKey ? 0.1 : 1)); });
-      function up() { drag = null; } g.addEventListener("pointerup", up); g.addEventListener("pointercancel", up);
+      function up() { if (drag) { busy = Math.max(0, busy - 1); var ch = +o.get(it.k) !== drag.v; drag = null; if (ch && o.commit) o.commit(); } } g.addEventListener("pointerup", up); g.addEventListener("pointercancel", up);
       g.addEventListener("dblclick", function () { if (def(it.k) != null) o.set(it.k, def(it.k)); });
       g.addEventListener("wheel", function (e) { e.preventDefault(); put(+o.get(it.k) - Math.sign(e.deltaY) * step * (span / step > 60 ? 2 : 1)); }, { passive: false });
       g.addEventListener("keydown", function (e) { var d = { ArrowUp: 1, ArrowRight: 1, ArrowDown: -1, ArrowLeft: -1, PageUp: 10, PageDown: -10 }[e.key];
@@ -173,7 +219,7 @@
       return "M" + (cx + r * Math.cos(a0)).toFixed(2) + " " + (cy + r * Math.sin(a0)).toFixed(2) + "A" + r + " " + r + " 0 " + (f1 - f0 > 2 / 3 ? 1 : 0) + " 1 " + (cx + r * Math.cos(a1)).toFixed(2) + " " + (cy + r * Math.sin(a1)).toFixed(2); }
 
     L.items.forEach(function (it) {
-      var g = S("g"), c = it.k ? C[it.k] : null, a = acc(it);
+      var g = S("g"), c = it.k ? rng(it.k) : null, a = acc(it);
       if (it.k) g.dataset.ctl = it.k;
       if (it.page) g.dataset.page = it.page;
       svg.appendChild(g);
@@ -214,6 +260,33 @@
         upd.push(function () { inner.innerHTML = ""; drawDisplay(it, o.get, P).forEach(function (d, j) { inner.appendChild(S("path", { d: d, fill: "none", stroke: j ? "var(--fp-ink2)" : a, "stroke-width": 1.8, "stroke-linejoin": "round" })); }); });
         return; }
       var ok = !!c, focus;
+      if (it.t === "lcd") {
+        g.appendChild(S("rect", { x: it.x, y: it.y, width: it.w, height: it.h, rx: 3, fill: it.seg ? "#140404" : "var(--fp-screen)", stroke: "var(--fp-line)" }));
+        var lg = S("g"); g.appendChild(lg); var fs2 = it.size || 12;
+        if (!ok) { inert(g, it); return; }
+        upd.push(function () { lg.innerHTML = ""; String(o.get(it.k) == null ? "" : o.get(it.k)).split("\n").forEach(function (ln, j) {
+          lg.appendChild(T(it.x + (it.seg ? it.w / 2 : 6), it.y + 4 + fs2 * (j + 1), ln, { "font-size": fs2, "text-anchor": it.seg ? "middle" : "start", "font-family": "ui-monospace,Menlo,monospace", style: it.seg ? "fill:#ff3b2f" : null, "xml:space": "preserve" })); }); });
+        byKey[it.k] = byKey[it.k] || []; byKey[it.k].push(upd.length - 1); return;
+      }
+      if (it.t === "step" || it.t === "key") {
+        var kr = S("rect", { x: it.x, y: it.y, width: it.w, height: it.h, rx: 3, fill: it.cap || "var(--fp-head)", stroke: "var(--fp-line)", class: "fp-focus fp-ring" }); g.appendChild(kr);
+        var lw = Math.min(14, it.w * .4), ledR = S("rect", { x: it.x + it.w / 2 - lw / 2, y: it.y + 4, width: lw, height: 5, rx: 1.5, fill: "#3a1010" });
+        if (it.t === "step" || it.led) g.appendChild(ledR);
+        var kt = T(it.x + it.w / 2, it.below ? it.y + it.h + 11 : it.y + it.h / 2 + 5 + (it.t === "step" || it.led ? 3 : 0), it.label || "", { "font-size": it.size || 9, "text-anchor": "middle", "font-weight": 700, style: it.cap && !it.below ? "fill:" + (/^#[0-3]/.test(it.cap) ? "#eee" : "#111") : null }); g.appendChild(kt);
+        var mk = it.t === "step" ? T(it.x + it.w / 2, it.y + it.h - 5, "", { "font-size": 10, "text-anchor": "middle", "font-weight": 700, style: it.cap ? "fill:#111" : null }) : null; if (mk) g.appendChild(mk);
+        if (it.t === "step") { g.dataset.step = it.i; g.classList.add("fp-step"); }
+        if (!ok) { inert(g, it); return; }
+        g.setAttribute("tabindex", 0); g.setAttribute("class", "fp-c fp-click" + (it.t === "step" ? " fp-step" : "")); g.setAttribute("role", "button"); g.setAttribute("aria-label", it.aria || it.label || it.k);
+        var boolKey = it.t === "key" && it.v === undefined;
+        var press = function (e) { if (it.t === "step") o.set(it.k, { shift: !!(e && e.shiftKey), alt: !!(e && (e.altKey || e.button === 2)) }); else o.set(it.k, boolKey ? !o.get(it.k) : it.v); };
+        g.addEventListener("click", press); g.addEventListener("contextmenu", function (e) { if (it.t === "step") { e.preventDefault(); o.set(it.k, { alt: true }); } });
+        g.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); press(e); } });
+        upd.push(function () { var v = o.get(it.k);
+          if (it.t === "step") { var on = v && (v.on || v === true || v > 0); ledR.setAttribute("fill", on ? (v.acc ? "#ff2a1a" : "#e03a2f") : "#3a1010"); ledR.setAttribute("opacity", on && !v.acc && v.dim ? .6 : 1);
+            mk.textContent = v && v.text || ""; g.setAttribute("aria-pressed", on ? "true" : "false"); }
+          else { var lit = boolKey ? !!v : v === it.v; ledR.setAttribute("fill", lit ? "#e03a2f" : "#3a1010"); if (!it.led && !it.cap) kr.setAttribute("fill", lit ? a : "var(--fp-head)"); if (!it.led && !it.cap) kt.style.fill = lit ? "#000" : ""; if (it.cap) { kr.setAttribute("stroke", lit ? a : "var(--fp-line)"); kr.setAttribute("stroke-width", lit ? 4 : 1); } g.setAttribute("aria-pressed", lit ? "true" : "false"); } });
+        byKey[it.k] = byKey[it.k] || []; byKey[it.k].push(upd.length - 1); return;
+      }
       if (it.t === "knob") {
         var r = it.r || 14, cx = it.x, cy = it.y;
         g.appendChild(S("circle", { cx: cx, cy: cy, r: r + 7, fill: "transparent", class: "fp-focus", stroke: "none" }));
@@ -270,10 +343,16 @@
       for (var k in col) wrap.style.setProperty("--fp-" + k, col[k]);
       tb.textContent = t === "dark" ? "☀ Light" : "☾ Dark"; tb.setAttribute("aria-label", "Switch the panel to " + (t === "dark" ? "light" : "dark") + " mode"); }
     tb.addEventListener("click", function () { FP.setTheme(FP.theme() === "dark" ? "light" : "dark"); });
-    function refresh() { upd.forEach(function (f) { f(); }); }   // every picture depends on several keys, so redraw all (cheap)
+    var curStep = -1;
+    function setCur(i) { curStep = i == null ? -1 : i; [].forEach.call(svg.querySelectorAll(".fp-step"), function (e) { e.classList.toggle("fp-now", +e.dataset.step === curStep); }); }
+    function refresh() { upd.forEach(function (f) { f(); }); if (A && A.range("cur")) setCur(o.get("cur")); }
+    if (o.readonly) wrap.classList.add("fp-ro");
+    function rec(e) { var t = e.target && e.target.closest && e.target.closest("[data-ctl]"); if (t && e.type === "keydown") FP._last = { el: wrap, k: t.dataset.ctl, t: Date.now() }; }
+    svg.addEventListener("keydown", rec, true);
+    if (A && A.onChange) A.onChange(refresh);   // every picture depends on several keys, so redraw all (cheap)
     paint(); refresh(); showPage();
     var ctl = {}; [].forEach.call(svg.querySelectorAll("[data-ctl]"), function (e) { ctl[e.dataset.ctl] = e; });
-    me = { el: wrap, layout: L, refresh: refresh, paint: paint, ctl: ctl, svg: svg, page: function (p) { if (p) { page = p; showPage(); } return page; } };
+    me = { el: wrap, layout: L, refresh: refresh, cur: setCur, paint: paint, ctl: ctl, svg: svg, page: function (p) { if (p) { page = p; showPage(); } return page; } };
     mounted = mounted.filter(function (m) { return document.contains(m.el); }); mounted.push(me);
     return me;
   };

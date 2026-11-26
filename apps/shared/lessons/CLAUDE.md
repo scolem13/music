@@ -146,3 +146,12 @@
   `FaithfulPanel.AVAILABLE` (every SynthCompare synth: 17; PPG layout is the page's own (no panel drawing in its manuals), OB-Xa / DX7 positions guessed inside measured sections; layout files load on first use). Loaded on synth-compare.qmd and every synth intro page
   (build.py). Vital boxes from its layout code at 1400 x 820, knobs inside approximate; Surge XT positions from SkinModel.cpp (sources
   `scripts/sources/synth-views.py`). The Model D keeps its own Real panel (MoogSheet). Test `node tests/lessons/faithful-panel.cdp.js` (`NEG=1` must fail).
+  Drum machines and sequencers (2026-11-26): the same drawing bound to another host through an adapter `{get, set, range, onChange}`
+  (`FaithfulPanel.attachFace(box, layoutId, adapter, {readonly, at})`: one cached panel per box across the host's redraws, Panel /
+  Simple switch in localStorage `machine-face-view`, Panel default, class `fp-panelview` hides the plain controls; items `step`
+  (LED + playing ring via `me.cur(i)`), `key`, `lcd`). Adapters `DrumCompare.faceAdapter` and the sequencer widget's `W.faceAdapter`
+  (keys listed above each); layouts `panels/dm-{tr808,tr909,linn,mpc60}.js`, `panels/sq-{a960,tb303,mc202,mc4,elektron}.js`.
+  Measured: 909 (manual p. 3 drawing), 808 (intro sheet photo pp. 2-3; left block and key colours approximate), 960 (Behringer QSG p. 1),
+  TB-303 (as tb303.js), MC-202 (manual PDF p. 11), Digitakt II (manual p. 12; lower row approximate). Guessed: LinnDrum, MPC60 (no
+  drawings in their manuals; step strips are the page's own) and MC-4 (drawings too small). The B / To panel is read-only. Test
+  `node tests/lessons/machine-panels.cdp.js` (`NEG=1` must fail; `SHOT=<dir>` saves light + dark screenshots).
