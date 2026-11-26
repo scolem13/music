@@ -59,3 +59,6 @@
 .dcmp-meta input{max-width:12rem}
 .dcmp-json{width:100%;font-family:var(--font-mono);font-size:.75rem}
 .dcmp-key{display:inline-block;padding:0 .35rem;border-radius:4px;border:2px solid}
+
+/* faithful front panel (faithful-panel.js): in Panel view the grid and voice sliders are the panel's */
+.dcmp-panel.fp-panelview .dcmp-gw, .dcmp-panel.fp-panelview .dcmp-voices { display: none; }

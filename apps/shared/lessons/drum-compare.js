@@ -555,7 +555,7 @@
     W.stop = function () {
       W.playing = null; if (W.E) W.E.node.port.postMessage({ type: "stop" });
       host.querySelectorAll(".dcmp-now").forEach(function (x) { x.classList.remove("dcmp-now"); });
-      host.querySelectorAll(".dcmp-panel").forEach(function (x) { x.classList.remove("dcmp-live"); });
+      host.querySelectorAll(".dcmp-panel").forEach(function (x) { x.classList.remove("dcmp-live"); if (x._fpH && x._fpH.m) { x._fpH.m.cur(-1); x._fpH.m.refresh(); } }); W.cur = {};
       if (global.PlayBar && PlayBar.sounding) PlayBar.sounding("drum-compare", null);
     };
     W.analyser = function () { return W.E && W.E.analyser; };
@@ -572,6 +572,7 @@
     if (!cur) return;
     var st = cur.st, step = Math.floor((now - cur.at) / (stepTicks(st) / PPQ * 60 / st.bpm));
     var p = cur.w === "a" ? pa : pb; p.classList.add("dcmp-live");
+    W.cur = {}; W.cur[cur.w] = step; [pa, pb].forEach(function (q) { if (q._fpH && q._fpH.m) q._fpH.m.cur(q === p ? step : -1); });
     p.querySelectorAll('[data-step="' + step + '"]').forEach(function (x) { x.classList.add("dcmp-now"); });
   }
 
@@ -647,8 +648,82 @@
     });
     box.appendChild(vs);
     // mark controls named in the report
+    if (global.FaithfulPanel && FaithfulPanel.attachFace) FaithfulPanel.attachFace(box, "dm-" + M.id, faceAdapter(W, box, editable), { readonly: !editable, at: set, label: editable ? "The machine:" : "The machine (translated, read-only):" });
     W.tr.notes.forEach(function (n) { (editable ? n.ctl.from : n.ctl.to).forEach(function (id) { box.querySelectorAll('[data-ctl="' + id + '"]').forEach(function (e) { e.classList.add("dcmp-" + n.cls); }); }); });
   }
+  // ---------- the faithful front panel (faithful-panel.js + panels/dm-<machine>.js), bound through this adapter ----------
+  // Keys: sel (instrument / track being edited), step:<i> (that instrument's step i; click = the grid's own cycle), p:<voice>.<param>,
+  // p:hh.level (909: one HI HAT LEVEL for both hats), sw:<voice> (808 tom / conga, rim / claves, clap / maracas switches), bpm,
+  // accLevel, scale, len, shuffle, timing, swingGrid, swing, quant, play, stop, clear, disp (the display's text), cur (playing step).
+  var SEL808 = ["acc", "kick", "snare", "ltom", "mtom", "htom", "rim", "clap", "cowbell", "cymbal", "ohh", "chh"];
+  function faceAdapter(W, box, editable) {
+    var S = function () { return editable ? W.a : W.tr.state; }, M = MACHINES[S().machine], ui = W.ui || (W.ui = {}), uk = M.id + (editable ? "a" : "b");
+    var sels = M.id === "tr808" ? SEL808 : M.voices.map(function (v) { return v[0]; }).concat(M.accent === "total" ? ["acc"] : []);
+    function sel() { return ui[uk] || (sels.indexOf("kick") >= 0 ? "kick" : sels[0]); }
+    function rk(v) { if (v === "acc") return "acc"; var vv = voiceOf(M, v); return vv && vv[3] && vv[0] === v && S().sw[v] ? vv[3] : v; }
+    function soft() { var H = box._fpH; if (H && H.m) H.m.refresh(); }
+    function after() { if (global.FaithfulPanel && FaithfulPanel.busy()) soft(); else W.redraw(); }
+    function pr(k) { var m = /^p:(\w+)\.(\w+)$/.exec(k); return m ? [m[1], m[2]] : null; }
+    function nums(a, b) { var o = []; for (var i = a; i <= b; i++) o.push(i); return o; }
+    return {
+      range: function (k) {
+        var m;
+        if (k === "cur" || k === "disp") return [k, k, "t"];
+        if (k === "sel") return [k, "Instrument", "c", sels];
+        if ((m = /^step:(\d+)$/.exec(k))) return +m[1] < 16 ? [k, "Step " + (+m[1] + 1), "t"] : null;
+        if (k === "p:hh.level") return M.id === "tr909" ? [k, "Hi-hat level", "k", 0, 10, 0.5, 8] : null;
+        if ((m = pr(k))) { var v = voiceOf(M, m[0]); return v && v[0] === m[0] && v[2].indexOf(m[1]) >= 0 ? [k, PNAME[m[1]], "k", 0, 10, 0.5, m[1] === "level" ? 8 : 5] : null; }
+        if ((m = /^sw:(\w+)$/.exec(k))) { var v2 = voiceOf(M, m[1]); return v2 && v2[3] ? [k, "Switch", "s"] : null; }
+        if (k === "bpm") return [k, "Tempo", "k", M.tempo ? M.tempo[0] : 30, M.tempo ? M.tempo[1] : 300, 1, 120];
+        if (k === "accLevel") return M.accent === "total" ? [k, "Accent level", "k", 0, 10, 0.5, 6] : null;
+        if (k === "scale") return [k, "Scale", "c", [16, 12]];
+        if (k === "len") return [k, "Last step", "c", nums(1, S().scale === 12 ? 12 : 16).reverse()];
+        if (k === "shuffle") return M.swing === "shuffle" ? [k, "Shuffle", "c", nums(1, 7)] : null;
+        if (k === "timing") return M.swing === "timing" ? [k, "Timing", "c", "ABCDEF".split("")] : null;
+        if (k === "swingGrid") return M.swing === "timing" || M.swing === "percent" ? [k, "Swing on", "c", [8, 16]] : null;
+        if (k === "swing") return M.swing === "percent" ? [k, "Swing %", "k", 50, 75, 1, 50] : null;
+        if (k === "quant") return M.quant ? [k, "Timing correct", "c", M.quant] : null;
+        if (k === "play" || k === "stop" || k === "clear") return [k, k, "s"];
+        return null;
+      },
+      get: function (k) {
+        var st = S(), m;
+        if (k === "cur") return (W.cur || {})[editable ? "a" : "b"];
+        if (k === "sel") return sel();
+        if ((m = /^step:(\d+)$/.exec(k))) { var i = +m[1], r = rk(sel()), x = r === "acc" ? st.acc[i] : (st.rows[r] || [])[i];
+          if (!x) return { on: false };
+          var t = r === "acc" ? "" : M.accent === "levels" ? String(x.l || 1) : M.accent === "velocity" ? String(Math.round((x.v == null ? 0.75 : x.v) * 127)) : (x.a ? ">" : "") + (x.f ? "≀" : "");
+          return { on: true, acc: r === "acc" || !!x.a || (M.accent === "levels" && (x.l || 1) === (M.levels[r] || 1) && (M.levels[r] || 1) > 1) || (M.accent === "velocity" && x.v >= 0.95), text: t, dim: i >= st.len }; }
+        if (k === "p:hh.level") return (st.kit.chh || {}).level;
+        if ((m = pr(k))) return (st.kit[rk(m[0])] || {})[m[1]];
+        if ((m = /^sw:(\w+)$/.exec(k))) return !!st.sw[m[1]];
+        if (k === "play") return !!W.playing; if (k === "stop" || k === "clear") return false;
+        if (k === "disp") { if (M.id === "mpc60") return "== Play/Record ==\nBPM:" + st.bpm.toFixed(1) + "  " + (st.swing > 50 ? "Swing:" + st.swing + "%" : "") + "\nTiming correct: " + st.quant + "\nPad: " + vLabel(M, sel()) + "  Steps: " + st.len;
+          return String(Math.round(st.bpm)); }
+        return st[k];
+      },
+      set: function (k, v) {
+        var m; if (!editable) return;
+        if (k === "sel") { ui[uk] = v; return soft(); }
+        if ((m = /^step:(\d+)$/.exec(k))) { var i = +m[1], r = rk(sel());
+          if (r === "acc") W.a.acc[i] = !W.a.acc[i];
+          else { W.a.rows[r] = W.a.rows[r] || []; for (var j = 0; j < 16; j++) if (!W.a.rows[r][j]) W.a.rows[r][j] = 0; W.a.rows[r][i] = cycle(M, r, W.a.rows[r][i]); }
+          if (i >= W.a.len) W.a.len = Math.min(W.a.scale === 12 ? 12 : 16, i + 1);
+          return W.redraw(); }
+        if (k === "p:hh.level") { ["chh", "ohh"].forEach(function (c) { if (W.a.kit[c]) W.a.kit[c].level = v; }); return after(); }
+        if ((m = pr(k))) { W.a.kit[rk(m[0])][m[1]] = v; return after(); }
+        if ((m = /^sw:(\w+)$/.exec(k))) { W.a.sw[m[1]] = !W.a.sw[m[1]]; return W.redraw(); }
+        if (k === "play") { if (W.playing) W.stop(); else W.play(["a"]); return setTimeout(soft, 150); }
+        if (k === "stop") { W.stop(); return soft(); }
+        if (k === "clear") { var r2 = rk(sel()); if (r2 === "acc") W.a.acc = []; else W.a.rows[r2] = []; return W.redraw(); }
+        if (k === "scale") { W.a.scale = +v; W.a.len = +v; return W.redraw(); }
+        if (k === "quant") { W.a.quant = v; if (v !== "HI" && v !== "OFF") for (var c in W.a.rows) W.a.rows[c] = W.a.rows[c].map(function (x) { return x ? Object.assign({}, x, { o: 0 }) : 0; }); return W.redraw(); }
+        W.a[k] = v; after();
+      },
+      commit: function () { W.redraw(); }
+    };
+  }
+  DC.faceAdapter = faceAdapter;
   function cycle(M, c, x) {
     if (M.accent === "levels") { var n = M.levels[c] || 1; if (!x) return { l: 1 }; return (x.l || 1) < n ? { l: (x.l || 1) + 1, o: x.o || 0 } : 0; }
     if (M.accent === "velocity") { if (!x) return { v: 0.5 }; return x.v < 0.7 ? { v: 0.75, o: x.o || 0 } : x.v < 0.95 ? { v: 1, o: x.o || 0 } : 0; }

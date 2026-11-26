@@ -148,6 +148,7 @@ The voice is not a model of any of these machines. Nobody has yet compared the p
 ```{=html}
 <link rel="stylesheet" href="/apps/shared/lessons/sequencer-compare.css">
 <script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
 <script src="/apps/shared/lessons/sequencer-compare.js"></script>
 <script src="/apps/shared/lessons/intro-kit.js"></script>
 ```

@@ -768,7 +768,7 @@ def page(slug, p):
     o += ["```", "", "## Next", "", f"- [{cmpt}]({cmpf[:-4]}.html?{q}): {art}{p['short']} side by side with the others, with every setting checked against the manuals."]
     if p.get("extra_next"): o.append(p["extra_next"])
     o += ["", "```{=html}", '<link rel="stylesheet" href="/apps/shared/lessons/' + SCRIPT[k] + '.css">', '<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">',
-          '<script src="/apps/shared/lessons/sections.js"></script>'] + (['<script src="/apps/shared/lessons/faithful-panel.js"></script>'] if k == "synth" else []) + ['<script src="/apps/shared/lessons/' + SCRIPT[k] + '.js"></script>']
+          '<script src="/apps/shared/lessons/sections.js"></script>'] + ['<script src="/apps/shared/lessons/faithful-panel.js"></script>'] + ['<script src="/apps/shared/lessons/' + SCRIPT[k] + '.js"></script>']
     if "sheet" in p["steps"][0]: o += ['<link rel="stylesheet" href="/apps/shared/lessons/moog-sheet.css">', '<script src="/apps/shared/lessons/moog-sheet.js"></script>']
     o += ['<script src="/apps/shared/lessons/' + j + '.js"></script>' for j in p.get("extra_js", [])]
     o += ['<script src="/apps/shared/lessons/intro-kit.js"></script>', "```", ""]
