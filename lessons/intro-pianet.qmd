@@ -1,0 +1,125 @@
+---
+title: "Meet the Pianet"
+toc: true
+toc-depth: 2
+description: "A first look at the Hohner Pianet N: how it makes its sound, a guided tour on this site's physical model with its own panel, famous tracks with a starting setting, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Electric Pianos Compared](epiano-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Pianet is and when it was made.
+2. Learn how it makes its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Hear famous tracks and try a starting setting for each.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Pianet** was made by Hohner from **1962 to 1983**; the **N** from 1965 to 1968 and the N II until 1977 (Wikipedia, "Pianet").
+- There is no hammer. Each key lifts a **pad** off a tuned **reed**, and the reed springs free and vibrates (Wikipedia).
+- The N used leather-faced pads and a **variable-capacitance** (electrostatic) pickup; the later T used suction pads and an electromagnetic pickup (Wikipedia).
+
+## Its sound
+
+- Because the reed is plucked, not hit, the attack is soft, and the note dies quickly when the key comes up (Wikipedia: the reeds are damped as soon as the keys are released, said of the T).
+- The N has a **vibrato switch** beside the keys and a floor **volume pedal** (Wikipedia).
+- The pad's grip sets how far the reed is pulled before it lets go (this page's model).
+
+## The panel
+
+The Pianet's panel drawn after the real one (not a copy; no logos). Turn the knobs, flip the switches, play the keys below it,
+the computer keys or a MIDI keyboard. **Simple** shows every control as a slider, including the adjustments inside the instrument.
+The sound is this site's own physical model (see [how it is modelled](epiano-compare.qmd#how-each-one-is-modelled)); nobody has
+compared it with the real instrument. Facts come from the Wikipedia articles listed under Works Cited (read 2026-11-26). The service manuals were not read for these pages, so control legends and places that Wikipedia does not give are marked unverified.
+
+```{=html}
+<div class="ik-box" data-kind="epiano" data-id="pianet"><div class="epc" data-model="pianet" data-compact></div></div>
+```
+
+## A guided tour
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;pianet&quot;}" data-riff="soul">
+
+**The plain Pianet.** Listen: short, soft, bell-like notes.
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;pianet&quot;,&quot;vibOn&quot;:true}" data-riff="soul">
+
+**Vibrato switch on.** The level wobbles at one speed (this page's rate).
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;pianet&quot;,&quot;pad&quot;:9,&quot;gap&quot;:8}" data-riff="soft_hard">
+
+**A strong pad grip and the reed close to the pickup.** More bite on every note.
+
+</div>
+
+## Famous tracks
+
+Each video was checked on YouTube (oEmbed, 2026-11-26). Listen first, then press **▶** for a starting setting on the panel above.
+
+### "She's Not There" (The Zombies)
+
+[▶ The Zombies - She&#x27;s Not There (Mono Remastered) (Official Lyric Video)](https://www.youtube.com/watch?v=T6cLHNF5N8E) on YouTube (The Zombies Music).
+
+Wikipedia names it. The famous keyboard solo and the soft, clipped chords.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;pianet&quot;,&quot;pad&quot;:6}" data-riff="soul">
+
+**Starting setting** (Pianet): pad 6. Then change it until it sounds like the record to you.
+
+</div>
+
+### "These Eyes" (The Guess Who)
+
+[▶ The Guess Who - These Eyes (Official Audio)](https://www.youtube.com/watch?v=xcLdbsrSngA) on YouTube (TheGuessWhoVEVO).
+
+Wikipedia names it. Gentle chords under the verse.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;pianet&quot;,&quot;pad&quot;:4,&quot;vibOn&quot;:false}" data-riff="ballad">
+
+**Starting setting** (Pianet): pad 4, vibOn False. Then change it until it sounds like the record to you.
+
+</div>
+
+## Quiz
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>How does a Pianet reed start to sound?</b></p><ul><li>A pad lets go of it</li><li>A hammer hits it</li><li>A bow</li><li>Air</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>What pickup has the Pianet N?</b></p><ul><li>Variable capacitance (electrostatic)</li><li>Piezo</li><li>Magnetic only</li><li>None</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which band recorded &quot;She&#x27;s Not There&quot; with one?</b></p><ul><li>The Zombies</li><li>Queen</li><li>Genesis</li><li>The Doors</li></ul><p class="ik-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Electric Pianos Compared](epiano-compare.qmd): every model side by side, and what happens to a sound when you turn it into another.
+- [Meet the Rhodes](intro-rhodes.qmd)
+- [Meet the Wurlitzer](intro-wurlitzer.qmd)
+- [Meet the Clavinet](intro-clavinet.qmd)
+- [Meet the CP-70](intro-cp70.qmd)
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/epiano.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Pianet." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Pianet](https://en.wikipedia.org/wiki/Pianet). Pads lifting off reeds; N: leather pads, variable-capacitance pickup; T: suction pads, electromagnetic; models and years 1962-1983; vibrato switch, volume pedal; She's Not There, These Eyes.
+:::
+<!-- /works-cited -->
+

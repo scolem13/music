@@ -51,6 +51,8 @@
 //      (or, for a boolean key with no v, while get(k) is true: click toggles)
 //   { t: "lcd", k, x, y, w, h, size, seg: true }  a display showing the text get(k) (lines split at "\n"; seg = LED digits)
 //   FaithfulPanel.checkAdapter(layout, adapter) -> [bound keys the adapter does not know]
+// GUITARS (2026-11-26): layouts panels/gt-<id>.js bound to GuitarPickups.adapter (apps/shared/lessons/guitar-pickups.js); extra item
+//   { t: "shape", d: SVG path, fill / stroke: a colour token (bg body head ink ink2 line track screen wave) or a colour, sw, op, title }  decoration only
 // API: FaithfulPanel.mount(host, { id, profile, get(key), set(key, value) }) -> { refresh(key?), el, layout, ctl: {key: element} }
 //   FaithfulPanel.load(id) -> Promise(layout)   .has(id)   .register(layout)   .check(layout, profile) -> [missing keys]
 //   .theme() -> "light"|"dark"   .setTheme(t)   .view() / .setView("panel"|"simple") (localStorage `synth-face-view`)
@@ -155,6 +157,7 @@
   //   back, focus restored), adds a Panel / Simple switch (localStorage `machine-face-view`, Panel by default) and sets class
   //   `fp-panelview` on the box in Panel view so the host's CSS can hide its plain controls. holder.m = the mount (once loaded),
   //   holder.ready = Promise. The adapter may be replaced on every redraw (holder.A).
+  FP.GUITARS = ["gt-strat", "gt-tele", "gt-lespaul", "gt-sg"];
   FP.MACHINES = ["dm-tr808", "dm-tr909", "dm-linn", "dm-mpc60", "sq-a960", "sq-tb303", "sq-mc202", "sq-mc4", "sq-elektron"];
   var MVIEW = "machine-face-view";
   FP.mview = function () { var v = null; try { v = localStorage.getItem(MVIEW); } catch (e) {} return v === "simple" ? "simple" : "panel"; };
@@ -237,6 +240,8 @@
         if (it.a) g.appendChild(S("rect", { x: it.x, y: it.y, width: it.vertical ? 3 : it.w, height: it.vertical ? it.h : 2, fill: a }));
         return;
       }
+      if (it.t === "shape") { var tk = function (v) { return /^(bg|body|head|ink|ink2|line|track|screen|wave)$/.test(v) ? "var(--fp-" + v + ")" : v; };   // decoration (guitars: body, pickguard, pickups)
+        g.appendChild(S("path", { d: it.d, fill: tk(it.fill || "body"), stroke: tk(it.stroke || "line"), "stroke-width": it.sw || 1.2, opacity: it.op })); if (it.title) { var st2 = S("title"); st2.textContent = it.title; g.appendChild(st2); } return; }
       if (it.t === "label") { g.appendChild(T(it.x, it.y, it.text, { "font-size": it.size || 9, "text-anchor": it.anchor || "middle", "font-weight": it.bold ? 700 : null, class: it.dim ? "fp-dim" : null,
         transform: it.rot ? "rotate(" + it.rot + " " + it.x + " " + it.y + ")" : null })); return; }
       if (it.t === "jack") { var jr = it.r || 7; g.appendChild(S("circle", { cx: it.x, cy: it.y, r: jr, fill: "var(--fp-body)", stroke: "var(--fp-ink)", "stroke-width": 1.2 }));

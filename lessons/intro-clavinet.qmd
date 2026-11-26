@@ -1,0 +1,139 @@
+---
+title: "Meet the Clavinet"
+toc: true
+toc-depth: 2
+description: "A first look at the Hohner Clavinet D6: how it makes its sound, a guided tour on this site's physical model with its own panel, famous tracks with a starting setting, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Electric Pianos Compared](epiano-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Clavinet is and when it was made.
+2. Learn how it makes its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Hear famous tracks and try a starting setting for each.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Clavinet D6** came out in **1971** (Wikipedia, "Clavinet").
+- Each key drives a rubber pad against a tensioned **steel string**, which sounds against an anvil point; an **electromagnetic pickup** turns the string's motion into a signal (Wikipedia).
+- The other end of each string runs through **yarn**, which damps it as soon as the key is let go (Wikipedia). That is why it sounds so short and funky.
+
+## Its sound
+
+- Four tone rockers: **Brilliant** and **Treble** switch in a high-pass filter, **Medium** and **Soft** a low-pass filter (Wikipedia).
+- Two rockers marked **AB** and **CD** choose the pickups (Wikipedia). Each pickup hears the string at a different place, so each is a different tone; which position is which pickup here is this page's reading (unverified).
+- A **mute slider** on the right lays a damper on the strings (Wikipedia names it; how much it shortens the note is this page's).
+- Hit harder and the string sounds louder and brighter: there is no sustain pedal (this page's model).
+
+## The panel
+
+The Clavinet's panel drawn after the real one (not a copy; no logos). Turn the knobs, flip the switches, play the keys below it,
+the computer keys or a MIDI keyboard. **Simple** shows every control as a slider, including the adjustments inside the instrument.
+The sound is this site's own physical model (see [how it is modelled](epiano-compare.qmd#how-each-one-is-modelled)); nobody has
+compared it with the real instrument. Facts come from the Wikipedia articles listed under Works Cited (read 2026-11-26). The service manuals were not read for these pages, so control legends and places that Wikipedia does not give are marked unverified.
+
+```{=html}
+<div class="ik-box" data-kind="epiano" data-id="clav"><div class="epc" data-model="clav" data-compact></div></div>
+```
+
+## A guided tour
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;clav&quot;}" data-riff="funk">
+
+**Treble tab, upper pickup (C + A).** A sharp, bright funk riff.
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;clav&quot;,&quot;pa&quot;:&quot;B&quot;}" data-riff="funk">
+
+**Lower pickup (C + B).** The same riff: thinner and nasal, since the lower pickup sits nearer the string's end.
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;clav&quot;,&quot;pc&quot;:&quot;D&quot;,&quot;pa&quot;:&quot;B&quot;}" data-riff="funk">
+
+**Both pickups out of phase (D + B).** The low harmonics cancel: hollow and very thin.
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;clav&quot;,&quot;treb&quot;:false,&quot;soft&quot;:true}" data-riff="funk">
+
+**Soft tab.** A low-pass filter: round and dark.
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;clav&quot;,&quot;mute&quot;:7}" data-riff="funk">
+
+**Mute slider at 7.** Each note is cut short, like a muted guitar.
+
+</div>
+
+## Famous tracks
+
+Each video was checked on YouTube (oEmbed, 2026-11-26). Listen first, then press **▶** for a starting setting on the panel above.
+
+### "Use Me" (Bill Withers)
+
+[▶ Bill Withers - Use Me (Official Audio)](https://www.youtube.com/watch?v=NuYDKzky4z0) on YouTube (BillWithersVEVO).
+
+Wikipedia names it. A two-note groove that never lets go: short, damped notes.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;clav&quot;,&quot;soft&quot;:false,&quot;treb&quot;:true,&quot;mute&quot;:3}" data-riff="funk">
+
+**Starting setting** (Clavinet): soft False, treb True, mute 3. Then change it until it sounds like the record to you.
+
+</div>
+
+### "Higher Ground" (Stevie Wonder)
+
+[▶ Higher Ground](https://www.youtube.com/watch?v=1esf0efHbjM) on YouTube (Stevie Wonder - Topic).
+
+Wikipedia names it. A driving riff, thick and gritty (on the record also through effects: unverified).
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;clav&quot;,&quot;pc&quot;:&quot;D&quot;,&quot;pa&quot;:&quot;A&quot;,&quot;drive&quot;:6}" data-riff="funk">
+
+**Starting setting** (Clavinet): pc D, pa A, drive 6. Then change it until it sounds like the record to you.
+
+</div>
+
+## Quiz
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>What makes the sound of a Clavinet?</b></p><ul><li>A string struck against an anvil</li><li>A metal reed</li><li>A tine</li><li>A spring</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>What do Brilliant and Treble switch in?</b></p><ul><li>A high-pass filter</li><li>A low-pass filter</li><li>A tremolo</li><li>A second string</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>Why does a Clavinet note stop so fast?</b></p><ul><li>Yarn damps the string when the key is let go</li><li>The pickup turns off</li><li>The string breaks</li><li>A timer</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>What are the AB and CD rockers for?</b></p><ul><li>Choosing the pickups</li><li>Changing octave</li><li>Turning on vibrato</li><li>Tuning</li></ul><p class="ik-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Electric Pianos Compared](epiano-compare.qmd): every model side by side, and what happens to a sound when you turn it into another.
+- [Meet the Rhodes](intro-rhodes.qmd)
+- [Meet the Wurlitzer](intro-wurlitzer.qmd)
+- [Meet the CP-70](intro-cp70.qmd)
+- [Meet the Pianet](intro-pianet.qmd)
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/epiano.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Clavinet." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Clavinet](https://en.wikipedia.org/wiki/Clavinet). Pad, string and anvil, yarn damping, electromagnetic pickups; D6 (1971): Brilliant / Treble high-pass, Medium / Soft low-pass, AB and CD pickup rockers, mute slider; Use Me, Higher Ground.
+:::
+<!-- /works-cited -->
+

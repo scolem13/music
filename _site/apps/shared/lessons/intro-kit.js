@@ -28,6 +28,8 @@
     if (k === "synth") return window.SynthCompare && SynthCompare.widgets[0];
     if (k === "drum") return window.DrumCompare && DrumCompare.widgets[0];
     if (k === "seq") return window.SequencerCompare && SequencerCompare.widgets[0];
+    if (k === "organ") return window.OrganCompare && OrganCompare.widgets[0];   // organs (organ-compare.js): W.tour(dataset) sets and plays
+    if (k === "epiano") return window.EPiano && EPiano.widgets[0];
   }
   // ---------- compact view: hide everything that is about a second instrument ----------
   function compact() {
@@ -54,6 +56,7 @@
     var st = IK.steps[i], w = W(), me = id(); if (!st || !w) return Promise.resolve(false);
     IK.steps.forEach(function (s, j) { s.classList.toggle("ik-now", j === i); });
     var d = st.dataset;
+    if (kind() === "epiano") { w.stop(); if (d.set) w.setAll(JSON.parse(d.set)); return Promise.resolve(w.phrase(d.riff)).then(function () { return true; }); }   // electric pianos (epiano.js): data-set (may hold "model"), data-riff
     if (kind() === "synth") {
       w.stop();
       if (d.sheet) {
@@ -69,6 +72,7 @@
       return Promise.resolve(w.phrase([me])).then(function () { return true; });
     }
     if (kind() === "drum") { w.stop(); w.setA(drumState(JSON.parse(d.pat))); return Promise.resolve(w.play(["a"])).then(function () { return true; }); }
+    if (kind() === "organ") return Promise.resolve(w.tour(d)).then(function () { return true; });
     if (kind() === "seq") {
       w.stop(); w.src = me; if (w.dst === me) w.dst = me === "tb303" ? "a960" : "tb303";
       w.set(me, JSON.parse(d.seq)); return Promise.resolve(w.play("src")).then(function () { return true; });

@@ -1,0 +1,112 @@
+---
+title: "Meet the Vox Continental"
+toc: true
+toc-depth: 2
+description: "A first look at the Vox Continental combo organ: six drawbars, a transistor tone, one vibrato, a guided tour, famous records and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Organs Compared](organ-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Continental is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Vox Continental** is a transistor *combo organ*, first made in **1962** at the Jennings factory in Dartford, Kent (Wikipedia, "Vox Continental").
+- It has twelve oscillators, one for each note of the top octave; frequency dividers halve them for every octave below (Wikipedia).
+- Its keys are reverse-coloured: black naturals, white sharps, "as on a harpsichord" (Wikipedia).
+
+## Its sound
+
+- **Six drawbars**: four for the footages 16′, 8′, 4′ and **IV** (a mixture of higher pitches), two for the voices, flute and reed (Wikipedia).
+- The voice drawbars colour **every** footage at once.
+- One **vibrato**, "single-speed, single-intensity" (Wikipedia).
+- No percussion, no Leslie of its own, no second manual.
+
+## The panel
+
+This is the Continental panel from [Classic Organs Compared](organ-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel or the computer keys (a w s e d f t g y h u j k); **Keys play** picks the manual. Pull a drawbar or press a tab while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="organ" data-id="vox"><div class="ocmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads a registration and plays the same short phrase.
+
+```{=html}
+<div class="ik-step" data-ex="vox-bright" data-set="{&quot;d4&quot;:0,&quot;dIV&quot;:0,&quot;reed&quot;:0,&quot;flute&quot;:8}"><p><b>8′, flute only.</b> Listen: a soft, plain tone.</p></div>
+<div class="ik-step" data-ex="vox-bright" data-set="{&quot;d4&quot;:0,&quot;dIV&quot;:0,&quot;flute&quot;:0}"><p><b>8′, reed only.</b> Listen: buzzier, more nasal.</p></div>
+<div class="ik-step" data-ex="vox-bright" data-set="{&quot;dIV&quot;:0}"><p><b>Add the 4′.</b> Listen: brighter, an octave up added.</p></div>
+<div class="ik-step" data-ex="vox-bright"><p><b>Add IV.</b> The mixture adds high pitches. Listen: thin and cutting.</p></div>
+<div class="ik-step" data-ex="vox-lmf"><p><b>Vibrato on.</b> A blend of flute and reed with the vibrato: a starting point for "Light My Fire".</p></div>
+```
+
+## Build it from a record
+
+Each record below has a **Build it on the panel** button that loads a *starting* registration made on this page (not the player's documented setting), so you can listen to the record and change the panel by ear until it is close.
+
+```{=html}
+<div class="ocmp-tracks" data-organ="vox"></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Vox Continental":
+
+- The Animals, "The House of the Rising Sun" (Alan Price)
+- The Doors, "Light My Fire" (Ray Manzarek)
+- ? and the Mysterians, "96 Tears"
+- The Beatles, "I'm Down" (live) and "Think for Yourself"
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Light My Fire — The Doors (YouTube: “Light My Fire (2017 Remaster)”)](https://www.youtube.com/watch?v=qoX6AKuYWL8) (The Doors - Topic) ↗
+- [96 Tears — ? and the Mysterians (YouTube: “96 Tears (Mono)”)](https://www.youtube.com/watch?v=sjCMLU3Zil0) (? and The Mysterians - Topic) ↗
+- [Enola Gay — Orchestral Manoeuvres in the Dark (YouTube: “Orchestral Manoeuvres In The Dark - Enola Gay (Official Music Video)”)](https://www.youtube.com/watch?v=d5XJ2GiR6Bo) (OMDVEVO) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>How does the Continental make its notes?</b></p><ul><li>Top-octave oscillators divided down</li><li>Tonewheels</li><li>Pipes</li><li>Samples</li></ul><p class="ik-why">Twelve oscillators and frequency dividers.</p></div>
+<div class="ik-q" data-a="0"><p><b>What do the two right-hand drawbars do?</b></p><ul><li>Set the voice: flute and reed</li><li>Change the key</li><li>Speed up a Leslie</li><li>Add reverb</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>What is odd about its keys?</b></p><ul><li>Black naturals, white sharps</li><li>They are round</li><li>There are only 12</li><li>They are touch-sensitive</li></ul><p class="ik-why">Reverse-coloured.</p></div>
+<div class="ik-q" data-a="0"><p><b>How many vibrato speeds does it have?</b></p><ul><li>One</li><li>Three</li><li>Six</li><li>None</li></ul><p class="ik-why">Single speed, single intensity.</p></div>
+```
+
+## Next
+
+- [Classic Organs Compared](organ-compare.html?organ=vox): the Continental side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/organ-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/organ-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Vox Continental." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Vox_Continental](https://en.wikipedia.org/wiki/Vox_Continental). 1962, Dartford; twelve top-octave oscillators and dividers; six drawbars (16′ 8′ 4′ IV, flute, reed); single-speed single-intensity vibrato; 49 keys, reverse-coloured; records named.
+:::
+<!-- /works-cited -->
+

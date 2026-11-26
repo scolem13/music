@@ -1,0 +1,18 @@
+/* GuitarPickups widgets (apps/shared/lessons/guitar-pickups.js) */
+:root { --gt-bg: #fff; --gt-ink: #16181b; --gt-dim: #5b6168; --gt-line: #c4c8ce; --gt-hot: #b86e00; --gt-e: #2a62c9; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --gt-bg: #111; --gt-ink: #e8e8e8; --gt-dim: #9aa0a6; --gt-line: #3a3e43; --gt-hot: #ffb000; --gt-e: #7aa7ff; } }
+:root[data-theme="dark"] { --gt-bg: #111; --gt-ink: #e8e8e8; --gt-dim: #9aa0a6; --gt-line: #3a3e43; --gt-hot: #ffb000; --gt-e: #7aa7ff; }
+.gtp-w { border: 1px solid var(--gt-line); border-radius: 8px; padding: .5rem; margin: .6rem 0; }
+.gtp-head { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; margin-bottom: .3rem; }
+.gtp-bar, .gtp-opts { display: flex; flex-wrap: wrap; gap: .4rem .8rem; align-items: center; margin: .35rem 0; font-size: .85rem; }
+.gtp-bar button, .gtc-tr button, .gt-hear, .gt-try { font: inherit; font-size: .85rem; padding: .15rem .6rem; border: 1px solid var(--gt-line); border-radius: 5px; background: transparent; color: inherit; cursor: pointer; }
+.gtp-svg { width: 100%; max-width: 640px; height: auto; display: block; }
+.gtp-svg .gtp-bg { fill: var(--gt-bg); } .gtp-svg text { font-size: 9px; fill: var(--gt-dim); font-family: system-ui, sans-serif; }
+.gtp-svg .gtp-grid { stroke: var(--gt-line); stroke-width: .5; } .gtp-svg .gtp-h { stroke: var(--gt-hot); stroke-width: 2; } .gtp-svg .gtp-e { fill: none; stroke: var(--gt-e); stroke-width: 1.5; }
+.gtp-info { font-size: .82rem; color: var(--gt-dim); margin: .2rem 0; }
+.gtc-cols { display: grid; grid-template-columns: 1fr; gap: .6rem; } @media (min-width: 1700px) { .gtc-cols { grid-template-columns: 1fr 1fr; } }
+.gtc-tr { border: 1px dashed var(--gt-line); border-radius: 8px; padding: .5rem; display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.gtc-res { flex-basis: 100%; font-size: .9rem; } .gtc-q { padding: 0 .4rem; border-radius: 4px; border: 1px solid; } .gtc-exact { color: #2a8a3a; } .gtc-approx { color: var(--gt-hot); } .gtc-lost { color: #c03030; }
+.gt-step { margin: .5rem 0; } .gt-hear { margin-right: .5rem; }
+.gt-q li { cursor: pointer; } .gt-q li.gt-right { font-weight: 700; color: #2a8a3a; } .gt-q li.gt-wrong { text-decoration: line-through; color: #c03030; }
+.gt-tl li { margin: .3rem 0; } .gt-who, .gt-set { color: var(--gt-dim); font-size: .9em; }

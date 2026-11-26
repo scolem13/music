@@ -1,0 +1,111 @@
+---
+title: "Meet the pipe organ"
+toc: true
+toc-depth: 2
+description: "A first look at the pipe organ through a small, made-up two-manual instrument: stops, footages, principals, flutes, reeds and mixtures, couplers, a guided tour, famous recordings and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Organs Compared](organ-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the pipe organ is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- A **pipe organ** sounds by blowing wind through pipes; a **stop** turns on one **rank** of pipes, one pipe a key (Wikipedia, "Organ stop").
+- **This page's pipe organ is not a real instrument.** It is a small made-up stop list: a Great (lower manual), a Swell (upper manual, in a box with shutters) and a Pedal.
+- Combining stops is called **registration** (Wikipedia, "Organ stop").
+
+## Its sound
+
+- **Families**: principals (the organ's own sound), flutes, strings and reeds (Wikipedia).
+- **Footage**: 8′ is the pitch of the key, 16′ an octave lower, 4′ an octave higher; 2⅔′ and 1⅗′ are *mutations*, sounding a twelfth and a seventeenth above (Wikipedia).
+- A **mixture** sounds several high ranks at once, its number of ranks in Roman numerals (Wikipedia).
+- **Couplers** let one keyboard play another's stops; the **Swell box** is a pedal that opens its shutters (couplers and box: general knowledge, UNVERIFIED).
+
+## The panel
+
+This is the pipe organ panel from [Classic Organs Compared](organ-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel or the computer keys (a w s e d f t g y h u j k); **Keys play** picks the manual. Pull a drawbar or press a tab while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="organ" data-id="pipe"><div class="ocmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads a registration and plays chords on the Great, a tune on the Swell and a bass on the Pedal.
+
+```{=html}
+<div class="ik-step" data-ex="pipe-flutes"><p><b>Quiet flutes.</b> Gedackt 8′ and Spitzflöte 4′ on the Swell, Subbass 16′ in the pedal. Listen: soft, with a little breath (chiff) as notes start.</p></div>
+<div class="ik-step" data-ex="pipe-cornet"><p><b>A cornet.</b> Flutes at 8′, 4′, 2⅔′, 2′ and 1⅗′ together on the Swell: the mutations make one reedy solo sound from flutes.</p></div>
+<div class="ik-step" data-ex="pipe-plenum"><p><b>Principal chorus.</b> Principal 8′, Octave 4′, Fifteenth 2′ and Mixture IV on the Great, coupled to the pedal. Listen: bright and grand.</p></div>
+<div class="ik-step" data-ex="pipe-widor" data-set="{&quot;g_trp8&quot;:false,&quot;s_ob8&quot;:false,&quot;p_trb16&quot;:false}"><p><b>Full organ without reeds.</b> Everything coupled, but no reed stops.</p></div>
+<div class="ik-step" data-ex="pipe-widor"><p><b>Add the reeds.</b> Trumpet, Oboe and Trombone. Listen: the sound gets a brassy edge.</p></div>
+```
+
+## Build it from a record
+
+Each record below has a **Build it on the panel** button that loads a *starting* registration made on this page (not the player's documented setting), so you can listen to the record and change the panel by ear until it is close.
+
+```{=html}
+<div class="ocmp-tracks" data-organ="pipe"></div>
+```
+
+## Famous records
+
+Wikipedia, "Organ stop" does not name any records, so none are listed here yet.
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Toccata from Organ Symphony No. 5 — Charles-Marie Widor (composer, playing) (YouTube: “Ch. M. Widor plays his Toccata from V Symphony Op. 42 No. 1”)](https://www.youtube.com/watch?v=J8vz1D_L_OE) (GrandCorps) ↗
+- [Toccata (Widor) — Kalevi Kiviniemi (YouTube: “Kalevi Kiviniemi plays Widor's "Toccata" at St.Ouen, Rouen, France”)](https://www.youtube.com/watch?v=iZDp8hw7xUE) (kalevikiviniemi) ↗
+- [Toccata and Fugue in D minor, BWV 565 — J. S. Bach, played by Liene Andreta Kalnciema (YouTube: “J.S. Bach : Toccata and Fugue in D minor BWV 565 / Liene Andreta Kalnciema live at Riga Cathedral”)](https://www.youtube.com/watch?v=erXG9vnN-GI) (Liene Andreta Kalnciema) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>A stop marked 4′ sounds…</b></p><ul><li>An octave above the key</li><li>An octave below</li><li>At the key's pitch</li><li>Two octaves below</li></ul><p class="ik-why">Wikipedia, "Organ stop".</p></div>
+<div class="ik-q" data-a="0"><p><b>Which family imitates brass and reed instruments?</b></p><ul><li>Reeds</li><li>Principals</li><li>Flutes</li><li>Mixtures</li></ul><p class="ik-why">Reed stops.</p></div>
+<div class="ik-q" data-a="0"><p><b>Mixture IV means…</b></p><ul><li>Four ranks sound for each key</li><li>The fourth stop</li><li>Four keyboards</li><li>Four pedals</li></ul><p class="ik-why">Roman numeral = number of ranks.</p></div>
+<div class="ik-q" data-a="0"><p><b>Is this page&#x27;s pipe organ a real instrument?</b></p><ul><li>No: a made-up stop list</li><li>Yes: Saint-Sulpice</li><li>Yes: a Hammond</li><li>Yes: a theatre organ</li></ul><p class="ik-why">Said at the top of the page.</p></div>
+```
+
+## Next
+
+- [Classic Organs Compared](organ-compare.html?organ=pipe): the pipe organ side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/organ-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/organ-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Symphony for Organ No. 5 (Widor)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Symphony_for_Organ_No._5](https://en.wikipedia.org/wiki/Symphony_for_Organ_No._5). The Toccata is the finale; links the composer's own recording at Saint-Sulpice.
+
+**For students**
+
+"Organ stop." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Organ_stop](https://en.wikipedia.org/wiki/Organ_stop). Families (principal, flute, string, reed, hybrid); footages 16′ 8′ 4′, mutations 2⅔′ and 1⅗′; mixtures and their Roman numerals, breaking back; registration; reeds often lettered red.
+:::
+<!-- /works-cited -->
+

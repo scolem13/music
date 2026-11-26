@@ -1,0 +1,96 @@
+---
+title: "Electric Guitars Compared"
+toc: true
+toc-depth: 2
+description: "Stratocaster, Telecaster, Les Paul and SG side by side: their pickups and controls drawn and playable, a physical model of string and pickups through an amp, and settings translated from one guitar to another."
+instruments: [guitar]
+topics: [sound]
+has: [interactive, svg]
+---
+
+Four electric guitars, each with its real control layout. Pick any two, set one, and translate the setting to the other. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Learn how a magnetic pickup hears a string, and why its place on the string matters.
+2. Hear single coils and humbuckers, in-between positions and the tone and volume knobs.
+3. Translate a sound from one guitar to another and read what is lost.
+:::
+
+## How a pickup hears a string
+
+- A pickup is a magnet inside a coil of wire. The steel string moving over it makes a small voltage in the coil. The pickup hears how fast the string moves at that one spot.
+- A plucked string sounds many harmonics at once. Each harmonic has still points (nodes) along the string. A pickup sitting on a node does not hear that harmonic. So a pickup's place makes a **comb filter**: some harmonics strong, some missing (Tillman, 2002). Near the bridge it hears more high harmonics: brighter. Further away: warmer.
+- A pickup is not a point: it averages the string over its width, which softens the highest harmonics. A humbucker (two coils) is wider than a single coil (Tillman, 2002).
+- The coil's wire (its **inductance**) and the capacitance of the coil and the cable make a **resonance**, a small peak in the treble. More turns of wire: a lower peak (Wikipedia, "Pickup (music technology)"); with a normal cable most pickups peak between about 2 and 5 kHz (Lemme).
+- The **tone knob** joins a capacitor to the signal through a variable resistor: turned down, it lowers and flattens the peak. The **volume knob** turned part way puts resistance in front of the cable's capacitance, so some treble is lost as well as level.
+- Two pickups together add their combs; some harmonics cancel: the Strat's in-between "quack". Wired out of phase they subtract: the low harmonics cancel, a thin, nasal sound.
+- Single coils pick up mains hum; a humbucker's two coils get opposite hum and cancel it (Wikipedia, "Pickup (music technology)").
+
+## The guitars side by side
+
+Choose a guitar for each side. Click a selector, drag a knob (arrow keys work too) and press a ▶ button. The picture shows the harmonics of the open A string at the jack (bars) and the circuit alone (line). **Amp** sends the sound through the site's amp model (the one on [Gear 3](gear-amps.qmd)); **Strings: Band samples** plays the band's guitar samples through the circuit only (the samples already went through a pickup, so the place on the string is not changed). The ☀ / ☾ button switches every panel between a white and a black background.
+
+```{=html}
+<div class="gtc" data-a="strat" data-b="lespaul"></div>
+```
+
+## Translating between guitars
+
+**Translate** finds the setting on the other guitar that sounds most like this one: it tries every switch position and tone setting and compares the share of sound in third-octave bands for three open strings. The report says:
+
+- **exact**: the same kind of pickups in the same places, and almost the same sound;
+- **approx**: the closest setting, with notes on what differs (for example, a Strat's middle pickup on a Les Paul, which has none);
+- **lost**: nothing comes close.
+
+Try the Strat's position 2 to the Les Paul, or the Les Paul's out-of-phase what-if to the Strat.
+
+## What is this site's own
+
+- The string model, the pickup and pot values, the knob curves and every pickup distance except the Strat's are this site's estimates (marked unverified in the code, `apps/shared/lessons/guitar-pickups.js`). The Strat's distances are Tillman's.
+- The drawings are after photos, not measured drawings; no makers' logos.
+- Nobody has compared the sound with real guitars.
+
+## Meet each guitar
+
+- [Meet the Fender Stratocaster](intro-strat.qmd)
+- [Meet the Fender Telecaster](intro-tele.qmd)
+- [Meet the Gibson Les Paul](intro-les-paul.qmd)
+- [Meet the Gibson SG](intro-sg.qmd)
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/guitar-pickups.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/band/sounds.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Fender Stratocaster." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Fender_Stratocaster](https://en.wikipedia.org/wiki/Fender_Stratocaster). Three single coils, one volume, two tones (neck; middle + bridge), five-way from 1977, position 2, 25.5 in, Clapton's Layla.
+
+"Fender Telecaster." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Fender_Telecaster](https://en.wikipedia.org/wiki/Fender_Telecaster). Broadcaster 1950, two single coils, bridge wound hotter, 1967 wiring neck / both / bridge, 25.5 in.
+
+"Gibson Les Paul." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Gibson_Les_Paul](https://en.wikipedia.org/wiki/Gibson_Les_Paul). 1952; Seth Lover's humbuckers on Les Pauls from 1957; two volume, two tone, three-way; 24.75 in; Knopfler 1958 on Money for Nothing, Lukather 1959 in the Rosanna video.
+
+"Gibson SG." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Gibson_SG](https://en.wikipedia.org/wiki/Gibson_SG). 1961; a volume and tone per pickup; three-way; 24.75 in; Angus Young, Tony Iommi's 1964 SG Special on the early albums.
+
+Lemme, Helmuth E. W. "The Secrets of Electric Guitar Pickups." [buildyourguitar.com/resources/lemme/](https://buildyourguitar.com/resources/lemme/). Resonance of most pickups with a normal cable 2,000-5,000 Hz; inductance 1-10 H (not read directly: certificate expired 2026-11-26; unverified).
+
+"Pickup (music technology)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Pickup_(music_technology)](https://en.wikipedia.org/wiki/Pickup_(music_technology)). Single coils pick up hum; humbucker coils cancel it; self-capacitance + cable resonate with the inductance; more turns, lower resonance.
+
+Tillman, J. Donald. "Response Effects of Guitar Pickup Position and Width." 2000, updated 17 Oct. 2002. [www.till.com/articles/PickupResponse/index.html](https://www.till.com/articles/PickupResponse/index.html). Pickup point response sin(pi x F / (L F0)) = a comb filter; aperture term; Strat neck / middle / bridge 6.375 / 3.875 / 1.625 in, 1 in aperture; humbucker about 2.5 in; out-of-phase cancellation.
+
+**For teachers**
+
+Fletcher, Neville H., and Thomas D. Rossing. *The Physics of Musical Instruments*. 2nd ed., Springer, 1998. Plucked string: mode amplitudes sin(n pi beta) / n^2 (chapter 2; from memory, page not checked: unverified).
+:::
+<!-- /works-cited -->
+

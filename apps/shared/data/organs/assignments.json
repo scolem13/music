@@ -1,0 +1,149 @@
+{
+ "note": "Famous organ records for 'Build it' (lessons/organ-compare.qmd and the organ intro pages). Each checked 2026-11-26: title and channel from YouTube's oEmbed; most video ids from the songs' Wikipedia articles (their external links). The 'build' registrations are starting points made on this page, not the players' documented settings.",
+ "videos": [
+  {
+   "organ": "b3",
+   "url": "https://www.youtube.com/watch?v=0oox9bJaGJ8",
+   "title": "Booker T. & The MG's - Green Onions (Official Audio)",
+   "channel": "RHINO",
+   "song": "Green Onions",
+   "artist": "Booker T. & the M.G.'s",
+   "year": 1962,
+   "what": "Booker T. Jones on a Hammond (Wikipedia names him among famous Hammond players for this record). Listen for the short, percussive chords and the riff over a 12-bar blues.",
+   "build": "b3-greenonions",
+   "checked": "2026-11-26"
+  },
+  {
+   "organ": "b3",
+   "url": "https://www.youtube.com/watch?v=PHJRouEN-SY",
+   "title": "A Whiter Shade of Pale",
+   "channel": "Procol Harum - Topic",
+   "song": "A Whiter Shade of Pale",
+   "artist": "Procol Harum",
+   "year": 1967,
+   "what": "Matthew Fisher's Hammond line (Wikipedia, 'Hammond organ'). A smooth sustained registration over a slow-moving bass: no percussion bite.",
+   "build": "b3-whiter",
+   "checked": "2026-11-26"
+  },
+  {
+   "organ": "b3",
+   "url": "https://www.youtube.com/watch?v=z0vCwGUZe1I",
+   "title": "PROCOL HARUM - A Whiter Shade Of Pale - promo film #1 (Official Video)",
+   "channel": "FLY Records",
+   "song": "A Whiter Shade of Pale (promo film)",
+   "artist": "Procol Harum",
+   "year": 1967,
+   "what": "The same record with the band on film: watch the organist's hands stay on held chords.",
+   "build": "b3-whiter",
+   "checked": "2026-11-26"
+  },
+  {
+   "organ": "vox",
+   "url": "https://www.youtube.com/watch?v=qoX6AKuYWL8",
+   "title": "Light My Fire (2017 Remaster)",
+   "channel": "The Doors - Topic",
+   "song": "Light My Fire",
+   "artist": "The Doors",
+   "year": 1967,
+   "what": "Ray Manzarek on a Vox Continental (Wikipedia, 'Vox Continental'), with a Rhodes Piano Bass for the bass line. The long organ solo is the Continental's bright, buzzy tone.",
+   "build": "vox-lmf",
+   "checked": "2026-11-26"
+  },
+  {
+   "organ": "vox",
+   "url": "https://www.youtube.com/watch?v=sjCMLU3Zil0",
+   "title": "96 Tears (Mono)",
+   "channel": "? and The Mysterians - Topic",
+   "song": "96 Tears",
+   "artist": "? and the Mysterians",
+   "year": 1966,
+   "what": "Named among Continental records in Wikipedia, 'Vox Continental'. A thin, reedy two-chord riff, no percussion.",
+   "build": "vox-96",
+   "checked": "2026-11-26"
+  },
+  {
+   "organ": "vox",
+   "url": "https://www.youtube.com/watch?v=d5XJ2GiR6Bo",
+   "title": "Orchestral Manoeuvres In The Dark - Enola Gay (Official Music Video)",
+   "channel": "OMDVEVO",
+   "song": "Enola Gay",
+   "artist": "Orchestral Manoeuvres in the Dark",
+   "year": 1980,
+   "what": "Wikipedia: OMD used the Vox Jaguar, a cheaper relative of the Continental, on this record. Compare the same divide-down tone in a synth-pop setting.",
+   "build": "vox-enola",
+   "checked": "2026-11-26"
+  },
+  {
+   "organ": "farfisa",
+   "url": "https://www.youtube.com/watch?v=idJzMSKaHaw",
+   "title": "Incense And Peppermints",
+   "channel": "Strawberry Alarm Clock - Topic",
+   "song": "Incense and Peppermints",
+   "artist": "Strawberry Alarm Clock",
+   "year": 1967,
+   "what": "Wikipedia ('Farfisa'): the Farfisa is the main instrument on this record. Bright flute-and-string tabs with vibrato.",
+   "build": "far-incense",
+   "checked": "2026-11-26"
+  },
+  {
+   "organ": "farfisa",
+   "url": "https://www.youtube.com/watch?v=2uH5AhFh8UI",
+   "title": "Rock Lobster",
+   "channel": "The B-52's - Topic",
+   "song": "Rock Lobster",
+   "artist": "The B-52's",
+   "year": 1978,
+   "what": "Kate Pierson played a Compact Deluxe (Wikipedia, 'Farfisa'); that it is the organ on this track is UNVERIFIED.",
+   "build": "far-lobster",
+   "checked": "2026-11-26"
+  },
+  {
+   "organ": "farfisa",
+   "url": "https://www.youtube.com/watch?v=EOta1fulN1Y",
+   "title": "Astronomy Domine",
+   "channel": "Pink Floyd - Topic",
+   "song": "Astronomy Domine",
+   "artist": "Pink Floyd",
+   "year": 1967,
+   "what": "Richard Wright started on a Combo Compact (Wikipedia, 'Farfisa'); that it is the organ on this track is UNVERIFIED.",
+   "build": "far-domine",
+   "checked": "2026-11-26"
+  },
+  {
+   "organ": "pipe",
+   "url": "https://www.youtube.com/watch?v=J8vz1D_L_OE",
+   "title": "Ch. M. Widor plays his Toccata from V Symphony Op. 42 No. 1",
+   "channel": "GrandCorps",
+   "song": "Toccata from Organ Symphony No. 5",
+   "artist": "Charles-Marie Widor (composer, playing)",
+   "year": 1932,
+   "what": "The composer at Saint-Sulpice, Paris (linked from Wikipedia, 'Symphony for Organ No. 5'). Full organ: principals, mixtures and reeds coupled. The year is the usual date of this recording (UNVERIFIED).",
+   "build": "pipe-widor",
+   "checked": "2026-11-26"
+  },
+  {
+   "organ": "pipe",
+   "url": "https://www.youtube.com/watch?v=iZDp8hw7xUE",
+   "title": "Kalevi Kiviniemi plays Widor's \"Toccata\" at St.Ouen, Rouen, France",
+   "channel": "kalevikiviniemi",
+   "song": "Toccata (Widor)",
+   "artist": "Kalevi Kiviniemi",
+   "year": null,
+   "what": "The same piece on another big French organ (linked from Wikipedia). Compare the two rooms and reed choruses.",
+   "build": "pipe-widor",
+   "checked": "2026-11-26"
+  },
+  {
+   "organ": "pipe",
+   "url": "https://www.youtube.com/watch?v=erXG9vnN-GI",
+   "title": "J.S. Bach : Toccata and Fugue in D minor BWV 565 / Liene Andreta Kalnciema live at Riga Cathedral",
+   "channel": "Liene Andreta Kalnciema",
+   "song": "Toccata and Fugue in D minor, BWV 565",
+   "artist": "J. S. Bach, played by Liene Andreta Kalnciema",
+   "year": null,
+   "what": "A principal chorus with pedal; how this organist registers it is not documented here.",
+   "build": "pipe-565",
+   "checked": "2026-11-26"
+  }
+ ]
+}

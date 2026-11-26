@@ -271,7 +271,13 @@
     { id: '688600000', label: '68 8600 000: ballad', what: 'The 16′ and 4′ pulled back a little: warm and quiet under a singer.' },
     { id: '888888888', label: '88 8888 888: everything out', what: 'The full organ: loud, bright, used for a climax or a gospel shout.' },
     { id: '008080800', label: '00 8080 800: the odd pitches', what: 'The 8′ with the 5th and 3rd pitches above: reedy, like a clarinet.' },
-    { id: '838000000', label: '83 8000 000: with the 5⅓′ low', what: 'The quint under the note thinned out: darker than the default.' }
+    { id: '838000000', label: '83 8000 000: with the 5⅓′ low', what: 'The quint under the note thinned out: darker than the default.' },
+    // from HammondWiki, "Popular Drawbar Registrations" (attributions are the wiki's; scripts/sources/organ-for-pianists.py)
+    { id: '888000008', label: '88 8000 008: gospel', what: 'The default with the 1′ whistle on top (HammondWiki lists it as a gospel sound).' },
+    { id: '888630000', label: '88 8630 000: Booker T. Jones', what: 'HammondWiki\'s registration for Booker T. Jones, with 2nd-harmonic percussion.' },
+    { id: '848848448', label: '84 8848 448: Steve Winwood', what: 'One of two registrations HammondWiki gives for Steve Winwood: a lot of bars, the 5⅓′ pulled back.' },
+    { id: '800808000', label: '80 0808 000: Procol Harum', what: 'HammondWiki\'s registration for Matthew Fisher (Procol Harum): 16′, 8′ and 2′ with holes between.' },
+    { id: '800008888', label: '80 0008 888: "Errol Garner style"', what: 'The 16′ and the top four bars: thin and bright, for the block-chord "squabbling" style.' }
   ];
   function mkOrgan(node) {
     var S = global.BandSounds, P = global.BandPlayer, held = [], heldKeys = {};
@@ -283,13 +289,11 @@
     FEET.forEach(function (f, i) {
       var col = el('div', 'ao-bar ao-' + COLOUR[i]), inp = el('input'); inp.type = 'range'; inp.min = 0; inp.max = 8; inp.step = 1; inp.value = bars[i];
       inp.setAttribute('orient', 'vertical'); inp.setAttribute('aria-label', f + ' tonebar: ' + WHAT[i]);
-      var num = el('div', 'ao-num', String(bars[i])), lab = el('div', 'ao-feet', f);
+      var num = el('div', 'ao-num', String(bars[i])), lab = el('div', 'ao-feet', f); lab.setAttribute('data-num-edit', 'off');  // a footage, not a value to type
       inp.addEventListener('input', function () { bars[i] = +inp.value; num.textContent = inp.value; apply(); });
       col.appendChild(num); col.appendChild(inp); col.appendChild(lab); tb.appendChild(col); inputs.push({ inp: inp, num: num });
     });
     top.appendChild(tb);
-    // what the bars add up to: one line per pitch, its height the bar's level
-    var spec = el('div', 'ao-spec'); top.appendChild(spec);
     node.appendChild(top);
     var regRow = el('div', 'ao-row'), reg = el('select', 'form-select form-select-sm ao-reg'); reg.setAttribute('aria-label', 'Registration');
     reg.appendChild(new Option('Registrations…', ''));
@@ -298,6 +302,22 @@
     reg.addEventListener('change', function () { var r = REGS.filter(function (x) { return x.id === reg.value; })[0]; if (!r) return;
       bars = r.id.split('').map(Number); inputs.forEach(function (x, i) { x.inp.value = bars[i]; x.num.textContent = bars[i]; }); regWhat.textContent = r.what; apply(); });
     regRow.appendChild(el('label', 'ar-lbl', 'Start from')); regRow.appendChild(reg); node.appendChild(regRow); node.appendChild(regWhat);
+    // type or paste a whole registration: digits 0-8, spaces ignored; each digit sets the next bar as it is typed
+    var typed = el('input', 'form-control form-control-sm ao-type'); typed.type = 'text'; typed.inputMode = 'numeric'; typed.spellcheck = false;
+    typed.setAttribute('aria-label', 'Type or paste a registration, nine digits 0 to 8'); typed.placeholder = '88 8000 000';
+    function fmt(b) { var d = b.join(''); return d.slice(0, 2) + ' ' + d.slice(2, 6) + ' ' + d.slice(6); }
+    function showTyped() { if (document.activeElement !== typed) typed.value = fmt(bars); }
+    typed.addEventListener('input', function () {
+      var d = typed.value.replace(/[^0-9]/g, '').replace(/9/g, '8').slice(0, 9);
+      d.split('').forEach(function (c, i) { bars[i] = +c; inputs[i].inp.value = bars[i]; inputs[i].num.textContent = bars[i]; });
+      if (d.length) { apply(); reg.value = ''; regWhat.textContent = ''; }
+    });
+    typed.addEventListener('focus', function () { typed.select(); });
+    typed.addEventListener('blur', function () { typed.value = fmt(bars); });
+    typed.addEventListener('keydown', function (e) { e.stopPropagation(); if (e.key === 'Enter') typed.blur(); });
+    var typeRow = el('div', 'ao-row'); typeRow.appendChild(el('label', 'ar-lbl', 'Or type / paste')); typeRow.appendChild(typed);
+    typeRow.appendChild(el('span', 'ao-hint', 'Nine digits, e.g. 888000000 or 88 8000 000. Each digit sets the next bar.'));
+    node.appendChild(typeRow);
 
     // the keyboard: C3 to C5, and a chord to hold
     var kb = el('div', 'ao-keys'); kb.setAttribute('aria-label', 'Keyboard: hold a key to sound it');
@@ -382,20 +402,8 @@
     if (!(global.matchMedia && global.matchMedia('(prefers-reduced-motion: reduce)').matches)) requestAnimationFrame(frame);
     else rotor.querySelector('.ao-rpm').textContent = 'horn 48 rpm slow, 400 fast';
 
-    function apply() { S.setTonebars('hammond', bars); paintSpec(); }
-    function paintSpec() {
-      var base = 60, W = 300, H = 120, ns = 'http://www.w3.org/2000/svg';
-      var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="The pitches that sound for middle C, each as tall as its tonebar is pulled out">';
-      // a log-frequency axis from C2 to C8
-      function x(midi) { return 14 + (midi - 36) / 72 * (W - 28); }
-      for (var o = 36; o <= 108; o += 12) s += '<line x1="' + x(o) + '" x2="' + x(o) + '" y1="8" y2="' + (H - 18) + '" class="ao-grid"/><text x="' + x(o) + '" y="' + (H - 5) + '" class="ao-ax">C' + (o / 12 - 1) + '</text>';
-      STEP.forEach(function (st, i) {
-        var m = base + st, h = bars[i] ? (bars[i] / 8) * (H - 34) : 0, cls = 'ao-line ao-l' + COLOUR[i];
-        if (bars[i]) s += '<line x1="' + x(m) + '" x2="' + x(m) + '" y1="' + (H - 18) + '" y2="' + (H - 18 - h) + '" class="' + cls + '"/><text x="' + x(m) + '" y="' + (H - 21 - h) + '" class="ao-ax">' + FEET[i] + '</text>';
-      });
-      spec.innerHTML = s + '</svg><p class="ao-hint">What middle C sounds as: one line per tonebar pulled out, at its pitch, as tall as the bar is pulled.</p>';
-    }
-    paintSpec();
+    function apply() { S.setTonebars('hammond', bars); showTyped(); }
+    showTyped();
   }
   function pedalSvg() {
     var d = el('div', 'ao-pedal'); d.innerHTML = '<svg viewBox="0 0 80 84" width="80" height="84" aria-hidden="true"><rect x="8" y="70" width="64" height="8" rx="2" class="ao-base"/>'

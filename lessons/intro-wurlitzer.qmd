@@ -1,0 +1,145 @@
+---
+title: "Meet the Wurlitzer"
+toc: true
+toc-depth: 2
+description: "A first look at the Wurlitzer 200A: how it makes its sound, a guided tour on this site's physical model with its own panel, famous tracks with a starting setting, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Electric Pianos Compared](epiano-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Wurlitzer is and when it was made.
+2. Learn how it makes its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Hear famous tracks and try a starting setting for each.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Wurlitzer 200** came out in **1968**; it was the most popular Wurlitzer, about 88,000 built (Wikipedia, "Wurlitzer electronic piano").
+- The **200A** came in **1974** and was made until 1983, with a better shield against mains hum (Wikipedia).
+- Most Wurlitzers have **64 keys**. The 200 weighs 56 pounds without legs, with a 30-watt amplifier and two speakers facing the player (Wikipedia).
+
+## Its sound
+
+- The sound is made "by striking a metal reed with a felt hammer" (Wikipedia).
+- The reed moves near an **electrostatic pickup** held at 170 V DC; its motion changes the charge and makes the signal (Wikipedia).
+- The pickup is not even on both sides of the reed, so hard notes gain **even harmonics** and the amp pushes them further: the Wurli's reedy growl (this page's model).
+- Its vibrato knob is really a **tremolo** at one speed: only the depth changes (Wikipedia: "Vibrato (single speed)").
+
+## The panel
+
+The Wurlitzer's panel drawn after the real one (not a copy; no logos). Turn the knobs, flip the switches, play the keys below it,
+the computer keys or a MIDI keyboard. **Simple** shows every control as a slider, including the adjustments inside the instrument.
+The sound is this site's own physical model (see [how it is modelled](epiano-compare.qmd#how-each-one-is-modelled)); nobody has
+compared it with the real instrument. Facts come from the Wikipedia articles listed under Works Cited (read 2026-11-26). The service manuals were not read for these pages, so control legends and places that Wikipedia does not give are marked unverified.
+
+```{=html}
+<div class="ik-box" data-kind="epiano" data-id="wurli"><div class="epc" data-model="wurli" data-compact></div></div>
+```
+
+## A guided tour
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;wurli&quot;}" data-riff="soul">
+
+**The plain 200A.** Volume 7, Vibrato 0. Listen: thinner and reedier than a Rhodes.
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;wurli&quot;,&quot;gap&quot;:9,&quot;drive&quot;:6}" data-riff="soft_hard">
+
+**Reed close to the pickup, amp driven.** Soft to hard: listen for the growl on the hard hits.
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;wurli&quot;,&quot;vib&quot;:7}" data-riff="soul">
+
+**Vibrato 7.** The level goes up and down at one speed: a tremolo.
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;wurli&quot;,&quot;tone&quot;:2,&quot;drive&quot;:1}" data-riff="soul">
+
+**A dark, clean Wurli.** Speaker brightness 2 and little drive: closer to a soft ballad sound.
+
+</div>
+
+## Famous tracks
+
+Each video was checked on YouTube (oEmbed, 2026-11-26). Listen first, then press **▶** for a starting setting on the panel above.
+
+### "The Logical Song" (Supertramp)
+
+[▶ The Logical Song](https://www.youtube.com/watch?v=low6Coqrw9Y) on YouTube (Supertramp - Topic).
+
+Wikipedia names Supertramp's Wurlitzer on it. Bouncy, bright chords with a little bite.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;wurli&quot;,&quot;gap&quot;:6,&quot;drive&quot;:5,&quot;tone&quot;:6}" data-riff="soul">
+
+**Starting setting** (Wurlitzer): gap 6, drive 5, tone 6. Then change it until it sounds like the record to you.
+
+</div>
+
+### "Dreamer" (Supertramp)
+
+[▶ Dreamer](https://www.youtube.com/watch?v=7fdAFmtq-o8) on YouTube (Supertramp - Topic).
+
+Also named by Wikipedia. A fast repeated chord figure: hard hits that bark.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;wurli&quot;,&quot;gap&quot;:8,&quot;drive&quot;:6,&quot;hard&quot;:7}" data-riff="soft_hard">
+
+**Starting setting** (Wurlitzer): gap 8, drive 6, hard 7. Then change it until it sounds like the record to you.
+
+</div>
+
+### "You're My Best Friend" (Queen)
+
+[▶ Queen - You&#x27;re My Best Friend (Official Video)](https://www.youtube.com/watch?v=HaZpZQG2z10) on YouTube (Queen Official).
+
+John Deacon played the Wurlitzer (Wikipedia). A steady comping part under the voices.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;wurli&quot;,&quot;gap&quot;:5,&quot;drive&quot;:3}" data-riff="soul">
+
+**Starting setting** (Wurlitzer): gap 5, drive 3. Then change it until it sounds like the record to you.
+
+</div>
+
+## Quiz
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>What does the Wurlitzer&#x27;s hammer hit?</b></p><ul><li>A metal reed</li><li>A tine</li><li>A string</li><li>A bell</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>What kind of pickup does it have?</b></p><ul><li>Electrostatic</li><li>Magnetic</li><li>Piezo</li><li>A microphone</li></ul><p class="ik-why">Wikipedia: 170 V DC electrostatic pickup.</p></div>
+<div class="ik-q" data-a="0"><p><b>How many speeds has its vibrato?</b></p><ul><li>One</li><li>Two</li><li>Any</li><li>None: it has no vibrato</li></ul><p class="ik-why">Wikipedia: single speed.</p></div>
+<div class="ik-q" data-a="0"><p><b>When did the 200A come out?</b></p><ul><li>1974</li><li>1959</li><li>1990</li><li>1965</li></ul><p class="ik-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Electric Pianos Compared](epiano-compare.qmd): every model side by side, and what happens to a sound when you turn it into another.
+- [Meet the Rhodes](intro-rhodes.qmd)
+- [Meet the Clavinet](intro-clavinet.qmd)
+- [Meet the CP-70](intro-cp70.qmd)
+- [Meet the Pianet](intro-pianet.qmd)
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/epiano.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Wurlitzer Electronic Piano." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Wurlitzer_electronic_piano](https://en.wikipedia.org/wiki/Wurlitzer_electronic_piano). Felt hammer on a metal reed, electrostatic pickup at 170 V DC; 200 (1968, about 88,000), 200A (1974-1983), 64 keys, 56 lb, 30 W; single-speed vibrato; Supertramp and Queen.
+:::
+<!-- /works-cited -->
+

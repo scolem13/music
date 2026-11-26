@@ -1,0 +1,151 @@
+---
+title: "Meet the Rhodes"
+toc: true
+toc-depth: 2
+description: "A first look at the Fender Rhodes Mark I Stage 73: how it makes its sound, a guided tour on this site's physical model with its own panel, famous tracks with a starting setting, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Electric Pianos Compared](epiano-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Rhodes is and when it was made.
+2. Learn how it makes its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Hear famous tracks and try a starting setting for each.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Rhodes** is an electric piano. The **Mark I Stage** and **Suitcase** models are both dated **1970** (Wikipedia, "Rhodes piano").
+- The Stage has **73 keys**, weighs about 130 pounds and needs an outside amplifier; the Suitcase has its own amplifier and speakers (Wikipedia).
+- The Suitcase's "vibrato" is really a **tremolo** that "bounces the output signal" between two speakers: Wikipedia calls the label inaccurate, since vibrato means a change of pitch.
+
+## Its sound
+
+- "The hammers strike thin metal tines, which vibrate next to an electromagnetic pickup" (Wikipedia).
+- "The tone bar reinforces and extends the tine's vibrations" (Wikipedia): that is why a Rhodes note rings on.
+- The pickup works "like an electric guitar" (Wikipedia). Where the tine sits against the pickup changes the tone; hit harder and it **barks** (this page's model; the voicing numbers are unverified).
+- The attack has a short **bell**: the tine's higher modes, which die away quickly (this page's model).
+
+## The panel
+
+The Rhodes's panel drawn after the real one (not a copy; no logos). Turn the knobs, flip the switches, play the keys below it,
+the computer keys or a MIDI keyboard. **Simple** shows every control as a slider, including the adjustments inside the instrument.
+The sound is this site's own physical model (see [how it is modelled](epiano-compare.qmd#how-each-one-is-modelled)); nobody has
+compared it with the real instrument. Facts come from the Wikipedia articles listed under Works Cited (read 2026-11-26). The service manuals were not read for these pages, so control legends and places that Wikipedia does not give are marked unverified.
+
+```{=html}
+<div class="ik-box" data-kind="epiano" data-id="rhodes"><div class="epc" data-model="rhodes" data-compact></div></div>
+```
+
+## A guided tour
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;rhodes&quot;}" data-riff="ballad">
+
+**The plain Stage.** Default settings: Volume 7, Bass boost 5. Listen for the round, warm chord and the bell at each note's start.
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;rhodes&quot;,&quot;voice&quot;:1.5}" data-riff="soft_hard">
+
+**Pickup voicing close to the centre.** The tine sits nearly in the middle of the pickup (a service adjustment inside the piano). The same chord four times, soft to hard: listen for the hard ones turning gritty: the **bark**.
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;rhodes&quot;,&quot;voice&quot;:8}" data-riff="soft_hard">
+
+**Voicing far off centre.** The same four hits. Listen: cleaner and more bell-like even when hit hard.
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;rhodes&quot;,&quot;tbar&quot;:1}" data-riff="ballad">
+
+**Little tonebar sustain.** The notes die away sooner: the tonebar is what keeps a Rhodes ringing.
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;suitcase&quot;,&quot;vib&quot;:8,&quot;rate&quot;:4}" data-riff="ballad">
+
+**The Suitcase's "vibrato".** Intensity 8, Speed 4. On headphones the sound moves from ear to ear: a stereo tremolo, not vibrato.
+
+</div>
+
+## Famous tracks
+
+Each video was checked on YouTube (oEmbed, 2026-11-26). Listen first, then press **▶** for a starting setting on the panel above.
+
+### "Riders on the Storm" (The Doors)
+
+[▶ The Doors - Riders on the Storm (Official Audio)](https://www.youtube.com/watch?v=7G2-FPlvY58) on YouTube (The Doors).
+
+Ray Manzarek played a Mark I Stage 73 in the studio (Wikipedia). Soft, rainy chords and a jazzy line, with no bark.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;rhodes&quot;,&quot;voice&quot;:6,&quot;hard&quot;:3,&quot;bass&quot;:6,&quot;drive&quot;:1}" data-riff="ballad">
+
+**Starting setting** (Rhodes): voice 6, hard 3, bass 6, drive 1. Then change it until it sounds like the record to you.
+
+</div>
+
+### "Angela (Theme from Taxi)" (Bob James)
+
+[▶ Angela (Theme From Taxi)](https://www.youtube.com/watch?v=1RCKWBFt9MU) on YouTube (Bob James - Topic).
+
+Wikipedia names it among Rhodes recordings. A bell-like melody over chords: the tine's attack is the point.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;suitcase&quot;,&quot;vib&quot;:3,&quot;rate&quot;:3,&quot;hard&quot;:7}" data-riff="ballad">
+
+**Starting setting** (suitcase): vib 3, rate 3, hard 7. Then change it until it sounds like the record to you.
+
+</div>
+
+### "Just the Way You Are" (Billy Joel)
+
+[▶ Billy Joel - Just the Way You Are (Official Audio)](https://www.youtube.com/watch?v=HaA3YZ6QdJU) on YouTube (billyjoelVEVO).
+
+Wikipedia does not name this song; it is widely called a Rhodes record (unverified). Soft chords with a slow, gentle movement.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;suitcase&quot;,&quot;vib&quot;:4,&quot;rate&quot;:2.5,&quot;hard&quot;:3}" data-riff="ballad">
+
+**Starting setting** (suitcase): vib 4, rate 2.5, hard 3. Then change it until it sounds like the record to you.
+
+</div>
+
+## Quiz
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>What does a Rhodes hammer hit?</b></p><ul><li>A metal tine</li><li>A string</li><li>A reed</li><li>A drum skin</li></ul><p class="ik-why">Wikipedia: thin metal tines.</p></div>
+<div class="ik-q" data-a="0"><p><b>What does the tonebar do?</b></p><ul><li>Reinforces and extends the tine&#x27;s vibration</li><li>Changes the pitch</li><li>Turns it off</li><li>Adds echo</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>The Suitcase&#x27;s &quot;vibrato&quot; is really…</b></p><ul><li>A tremolo bouncing between two speakers</li><li>A pitch wobble</li><li>A reverb</li><li>A filter</li></ul><p class="ik-why">Wikipedia: the label is inaccurate.</p></div>
+<div class="ik-q" data-a="0"><p><b>What happens when you hit a Rhodes harder?</b></p><ul><li>It gets louder and can bark</li><li>It gets quieter</li><li>The pitch goes up an octave</li><li>Nothing</li></ul><p class="ik-why">Step 2.</p></div>
+```
+
+## Next
+
+- [Electric Pianos Compared](epiano-compare.qmd): every model side by side, and what happens to a sound when you turn it into another.
+- [Meet the Wurlitzer](intro-wurlitzer.qmd)
+- [Meet the Clavinet](intro-clavinet.qmd)
+- [Meet the CP-70](intro-cp70.qmd)
+- [Meet the Pianet](intro-pianet.qmd)
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/epiano.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Rhodes Piano." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Rhodes_piano](https://en.wikipedia.org/wiki/Rhodes_piano). Tines, tonebar, pickup; Mark I Stage and Suitcase (1970), 73 keys, about 130 lb; the Suitcase's tremolo between two speakers labelled vibrato; recordings (Riders on the Storm, Angela).
+:::
+<!-- /works-cited -->
+

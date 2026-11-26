@@ -1,0 +1,133 @@
+---
+title: "Meet the CP-70"
+toc: true
+toc-depth: 2
+description: "A first look at the Yamaha CP-70: how it makes its sound, a guided tour on this site's physical model with its own panel, famous tracks with a starting setting, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Electric Pianos Compared](epiano-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the CP-70 is and when it was made.
+2. Learn how it makes its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Hear famous tracks and try a starting setting for each.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Yamaha CP-70** (1976, 73 keys) and **CP-80** (1978, 88 keys) are electric grand pianos, made until 1985 (Wikipedia, "Yamaha CP-70").
+- They have a real piano action: "wooden keys to operate hammers that hit strings", but **no soundboard** (Wikipedia).
+- It was built for touring: the harp lifts off the keys, and the legs pack into the lid (Wikipedia).
+
+## Its sound
+
+- "The strings are amplified by piezo-electric pickups mounted on the harp casting" (Wikipedia), like an acoustic guitar's pickups.
+- The bass strings are much shorter than an acoustic piano's (Wikipedia). Short, thick strings are stiffer, so their overtones go sharp: a twangy bass (this page's model).
+- Two or three strings for most notes, never exactly in tune with each other: a slow **beating** that makes it shimmer (this page's model).
+- Its knobs here (Volume, a three-band EQ, Tremolo speed and depth) are from memory: **unverified**. Wikipedia names a graphic EQ on the later D models.
+
+## The panel
+
+The CP-70's panel drawn after the real one (not a copy; no logos). Turn the knobs, flip the switches, play the keys below it,
+the computer keys or a MIDI keyboard. **Simple** shows every control as a slider, including the adjustments inside the instrument.
+The sound is this site's own physical model (see [how it is modelled](epiano-compare.qmd#how-each-one-is-modelled)); nobody has
+compared it with the real instrument. Facts come from the Wikipedia articles listed under Works Cited (read 2026-11-26). The service manuals were not read for these pages, so control legends and places that Wikipedia does not give are marked unverified.
+
+```{=html}
+<div class="ik-box" data-kind="epiano" data-id="cp70"><div class="epc" data-model="cp70" data-compact></div></div>
+```
+
+## A guided tour
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;cp70&quot;}" data-riff="ballad">
+
+**The plain CP-70.** Listen: a piano, but brighter and thinner, with no wooden body to it.
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;cp70&quot;,&quot;detune&quot;:9}" data-riff="ballad">
+
+**Strings wider apart.** Unison spread 9: the chorus-like shimmer it is known for.
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;cp70&quot;,&quot;treble&quot;:8,&quot;mid&quot;:3,&quot;bass&quot;:6}" data-riff="ballad">
+
+**EQ: Treble 8, Middle 3, Bass 6.** The 1980s ballad sparkle.
+
+</div>
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;cp70&quot;,&quot;trem&quot;:6,&quot;rate&quot;:5}" data-riff="ballad">
+
+**Tremolo depth 6.** The level pulses (this control is unverified on the real panel).
+
+</div>
+
+## Famous tracks
+
+Each video was checked on YouTube (oEmbed, 2026-11-26). Listen first, then press **▶** for a starting setting on the panel above.
+
+### "That's All" (Genesis)
+
+[▶ Genesis - That&#x27;s All (Official Music Video)](https://www.youtube.com/watch?v=Vzyn60Zns-E) on YouTube (Genesis).
+
+Tony Banks's CP-70 (Wikipedia). A bouncing chord part, bright and percussive.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;cp70&quot;,&quot;treble&quot;:7,&quot;hard&quot;:6}" data-riff="soul">
+
+**Starting setting** (CP-70): treble 7, hard 6. Then change it until it sounds like the record to you.
+
+</div>
+
+### "In Your Eyes" (Peter Gabriel)
+
+[▶ Peter Gabriel - In Your Eyes](https://www.youtube.com/watch?v=kU8OJAOMbPg) on YouTube (Peter Gabriel).
+
+Wikipedia names it. Chords that ring and shimmer under the voice.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;cp70&quot;,&quot;detune&quot;:6,&quot;treble&quot;:6}" data-riff="ballad">
+
+**Starting setting** (CP-70): detune 6, treble 6. Then change it until it sounds like the record to you.
+
+</div>
+
+## Quiz
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>What does a CP-70 hammer hit?</b></p><ul><li>Strings</li><li>Tines</li><li>Reeds</li><li>Nothing: it is digital</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>What does it have instead of a soundboard?</b></p><ul><li>Piezo pickups</li><li>A magnetic pickup per key</li><li>A microphone</li><li>A speaker</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>How many keys has the CP-80?</b></p><ul><li>88</li><li>73</li><li>61</li><li>64</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>Why does a CP-70 shimmer?</b></p><ul><li>Its strings for one note are never exactly in tune</li><li>A chorus pedal is built in</li><li>The keys wobble</li><li>It has no strings</li></ul><p class="ik-why">This page&#x27;s model, step 2.</p></div>
+```
+
+## Next
+
+- [Electric Pianos Compared](epiano-compare.qmd): every model side by side, and what happens to a sound when you turn it into another.
+- [Meet the Rhodes](intro-rhodes.qmd)
+- [Meet the Wurlitzer](intro-wurlitzer.qmd)
+- [Meet the Clavinet](intro-clavinet.qmd)
+- [Meet the Pianet](intro-pianet.qmd)
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/epiano.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Yamaha CP-70." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Yamaha_CP-70](https://en.wikipedia.org/wiki/Yamaha_CP-70). Hammers on strings, no soundboard, piezo pickups on the harp; CP-70 (1976, 73 keys), CP-80 (1978, 88), to 1985; short bass strings; Genesis, Peter Gabriel.
+:::
+<!-- /works-cited -->
+

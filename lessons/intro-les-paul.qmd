@@ -1,0 +1,103 @@
+---
+title: "Meet the Gibson Les Paul"
+toc: true
+toc-depth: 2
+description: "A first look at the Gibson Les Paul: two humbuckers, two volume and two tone knobs, a Rhythm / Treble toggle, a guided tour of its sounds, famous tracks, and a short quiz."
+instruments: [guitar]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Electric Guitars Compared](guitar-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Les Paul is.
+2. Learn how its pickups make its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Listen to famous tracks.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Les Paul** was "first sold by the Gibson Guitar Corporation in 1952" (Wikipedia, "Gibson Les Paul").
+- Its **humbucker** pickups were designed by Seth Lover and "debuted on Les Pauls in 1957" (Wikipedia).
+- Four knobs (two volume, two tone) and a three-way switch (Wikipedia). Each pickup has its own volume and tone.
+- Scale 24.75 inches: a little shorter than a Fender (Wikipedia).
+
+## Its sound
+
+- A **humbucker** is two coils side by side, wound and magnetised opposite ways. Hum makes opposite voltages in the two coils and cancels; the string's signal adds (Wikipedia, "Pickup (music technology)").
+- Two coils are wider than one: they average the string over a longer stretch, which softens the high harmonics (Tillman, 2002).
+- More wire means a lower resonance: humbuckers sound fuller and darker than single coils.
+- In the middle position, turning **one** volume down changes the other pickup too: they share the output.
+
+## The controls
+
+The Les Paul's control area, drawn after the real one (positions approximate). Click the selector, drag a knob (or use the arrow keys), then press a ▶ button. The sound is this site's physical model of a plucked string through these pickups and this wiring, into an amp; nobody has compared it with a real guitar. The picture under the buttons shows the harmonics of the open A string at the jack (bars) and the circuit alone (line).
+
+```{=html}
+<div class="gtp" data-guitar="lespaul"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="gt-step" data-guitar="lespaul" data-set="{&quot;sel&quot;:&quot;rhythm&quot;}" data-play="lead"><p><b>Rhythm (neck).</b> Thick and warm.</p></div>
+<div class="gt-step" data-guitar="lespaul" data-set="{&quot;sel&quot;:&quot;treble&quot;}" data-play="riff"><p><b>Treble (bridge).</b> Brighter, with more bite. Turn the amp to <b>Crunch</b> or <b>Lead</b> and play it again.</p></div>
+<div class="gt-step" data-guitar="lespaul" data-set="{&quot;sel&quot;:&quot;both&quot;}" data-play="chord"><p><b>Both.</b> Fuller than each alone, a little hollow.</p></div>
+<div class="gt-step" data-guitar="lespaul" data-set="{&quot;sel&quot;:&quot;both&quot;,&quot;vol1&quot;:6}" data-play="chord"><p><b>Both, neck volume at 6.</b> The mix leans to the bridge pickup.</p></div>
+<div class="gt-step" data-guitar="lespaul" data-set="{&quot;sel&quot;:&quot;rhythm&quot;,&quot;tone1&quot;:0}" data-play="lead"><p><b>Neck, tone at 0.</b> Very dark: a "woman tone" kind of sound (the name is players' slang).</p></div>
+<div class="gt-step" data-guitar="lespaul" data-set="{&quot;sel&quot;:&quot;both&quot;,&quot;phase&quot;:true}" data-play="chord"><p><b>What if: neck out of phase.</b> Not on a stock Les Paul. The two pickups now subtract: the low harmonics cancel, a thin, nasal sound.</p></div>
+```
+
+## Famous tracks
+
+Videos checked on YouTube. Where the guitar is named in a source, it is given; **no source was found for any pickup setting**, so each setting is this site's guess (press **Try it** to hear the guess on the model).
+
+```{=html}
+<div class="gt-tracks" data-guitar="lespaul"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="gt-q" data-a="0"><p><b>Why does a humbucker cancel hum?</b></p><ul><li>Its two coils get opposite hum voltages</li><li>It has no magnet</li><li>It is made of wood</li><li>The amp removes it</li></ul><p class="gt-why">Wikipedia.</p></div>
+<div class="gt-q" data-a="1"><p><b>Who designed the humbucker for Gibson?</b></p><ul><li>Leo Fender</li><li>Seth Lover</li><li>Les Paul</li><li>Jimmy Page</li></ul><p class="gt-why">Wikipedia.</p></div>
+<div class="gt-q" data-a="1"><p><b>How many tone knobs does a Les Paul have?</b></p><ul><li>One</li><li>Two</li><li>Three</li></ul><p class="gt-why">One for each pickup.</p></div>
+```
+
+## Next
+
+- [Electric Guitars Compared](guitar-compare.html?a=lespaul&b=strat): the Les Paul side by side with the others, and settings translated between them.
+- [Gear 3: amps](gear-amps.qmd): the amp these guitars play through.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/guitar-pickups.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/band/sounds.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Gibson Les Paul." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Gibson_Les_Paul](https://en.wikipedia.org/wiki/Gibson_Les_Paul). 1952; Seth Lover's humbuckers on Les Pauls from 1957; two volume, two tone, three-way; 24.75 in; Knopfler 1958 on Money for Nothing, Lukather 1959 in the Rosanna video.
+
+Lemme, Helmuth E. W. "The Secrets of Electric Guitar Pickups." [buildyourguitar.com/resources/lemme/](https://buildyourguitar.com/resources/lemme/). Resonance of most pickups with a normal cable 2,000-5,000 Hz; inductance 1-10 H (not read directly: certificate expired 2026-11-26; unverified).
+
+"Pickup (music technology)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Pickup_(music_technology)](https://en.wikipedia.org/wiki/Pickup_(music_technology)). Single coils pick up hum; humbucker coils cancel it; self-capacitance + cable resonate with the inductance; more turns, lower resonance.
+
+Tillman, J. Donald. "Response Effects of Guitar Pickup Position and Width." 2000, updated 17 Oct. 2002. [www.till.com/articles/PickupResponse/index.html](https://www.till.com/articles/PickupResponse/index.html). Pickup point response sin(pi x F / (L F0)) = a comb filter; aperture term; Strat neck / middle / bridge 6.375 / 3.875 / 1.625 in, 1 in aperture; humbucker about 2.5 in; out-of-phase cancellation.
+:::
+<!-- /works-cited -->
+

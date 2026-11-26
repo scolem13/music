@@ -1,0 +1,97 @@
+---
+title: "Meet the Gibson SG"
+toc: true
+toc-depth: 2
+description: "A first look at the Gibson SG: two humbuckers, a volume and tone for each, a three-way switch, a guided tour, famous tracks, and a short quiz."
+instruments: [guitar]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Electric Guitars Compared](guitar-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the SG is.
+2. Learn how its pickups make its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Listen to famous tracks.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **SG** is a "solid-body electric guitar model introduced by Gibson in 1961", as a successor to the Les Paul (Wikipedia, "Gibson SG").
+- It has "a volume and a tone control for each individual pickup" and a three-way switch (Wikipedia).
+- Scale 24.75 inches, like the Les Paul (Wikipedia). Its body is thinner, with two horns.
+
+## Its sound
+
+- The same circuit as the Les Paul: two humbuckers, each with its own volume and tone.
+- Its neck joins the body further up, so the neck pickup is further from the bridge: nearer the string's middle (this page's estimate of the distance). It hears even fewer high harmonics: rounder.
+- Bridge pickup: the bite of AC/DC and early Black Sabbath records (players named in Wikipedia).
+
+## The controls
+
+The SG's control area, drawn after the real one (positions approximate). Click the selector, drag a knob (or use the arrow keys), then press a ▶ button. The sound is this site's physical model of a plucked string through these pickups and this wiring, into an amp; nobody has compared it with a real guitar. The picture under the buttons shows the harmonics of the open A string at the jack (bars) and the circuit alone (line).
+
+```{=html}
+<div class="gtp" data-guitar="sg"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="gt-step" data-guitar="sg" data-set="{&quot;sel&quot;:&quot;treble&quot;}" data-play="riff"><p><b>Treble (bridge).</b> Bright and biting. Try the <b>Lead</b> amp.</p></div>
+<div class="gt-step" data-guitar="sg" data-set="{&quot;sel&quot;:&quot;rhythm&quot;}" data-play="lead"><p><b>Rhythm (neck).</b> Rounder than a Les Paul's neck pickup in this model.</p></div>
+<div class="gt-step" data-guitar="sg" data-set="{&quot;sel&quot;:&quot;both&quot;}" data-play="chord"><p><b>Both.</b> Full chords.</p></div>
+```
+
+## Famous tracks
+
+Videos checked on YouTube. Where the guitar is named in a source, it is given; **no source was found for any pickup setting**, so each setting is this site's guess (press **Try it** to hear the guess on the model).
+
+```{=html}
+<div class="gt-tracks" data-guitar="sg"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="gt-q" data-a="1"><p><b>When did Gibson introduce the SG?</b></p><ul><li>1952</li><li>1961</li><li>1977</li></ul><p class="gt-why">Wikipedia.</p></div>
+<div class="gt-q" data-a="1"><p><b>How many pickups has an SG Standard?</b></p><ul><li>One</li><li>Two</li><li>Three</li></ul><p class="gt-why">Two humbuckers.</p></div>
+```
+
+## Next
+
+- [Electric Guitars Compared](guitar-compare.html?a=sg&b=lespaul): the SG side by side with the others, and settings translated between them.
+- [Gear 3: amps](gear-amps.qmd): the amp these guitars play through.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/guitar-pickups.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/band/sounds.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Gibson SG." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Gibson_SG](https://en.wikipedia.org/wiki/Gibson_SG). 1961; a volume and tone per pickup; three-way; 24.75 in; Angus Young, Tony Iommi's 1964 SG Special on the early albums.
+
+Lemme, Helmuth E. W. "The Secrets of Electric Guitar Pickups." [buildyourguitar.com/resources/lemme/](https://buildyourguitar.com/resources/lemme/). Resonance of most pickups with a normal cable 2,000-5,000 Hz; inductance 1-10 H (not read directly: certificate expired 2026-11-26; unverified).
+
+"Pickup (music technology)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Pickup_(music_technology)](https://en.wikipedia.org/wiki/Pickup_(music_technology)). Single coils pick up hum; humbucker coils cancel it; self-capacitance + cable resonate with the inductance; more turns, lower resonance.
+
+Tillman, J. Donald. "Response Effects of Guitar Pickup Position and Width." 2000, updated 17 Oct. 2002. [www.till.com/articles/PickupResponse/index.html](https://www.till.com/articles/PickupResponse/index.html). Pickup point response sin(pi x F / (L F0)) = a comb filter; aperture term; Strat neck / middle / bridge 6.375 / 3.875 / 1.625 in, 1 in aperture; humbucker about 2.5 in; out-of-phase cancellation.
+:::
+<!-- /works-cited -->
+

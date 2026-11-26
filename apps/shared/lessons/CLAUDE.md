@@ -155,3 +155,37 @@
   TB-303 (as tb303.js), MC-202 (manual PDF p. 11), Digitakt II (manual p. 12; lower row approximate). Guessed: LinnDrum, MPC60 (no
   drawings in their manuals; step strips are the page's own) and MC-4 (drawings too small). The B / To panel is read-only. Test
   `node tests/lessons/machine-panels.cdp.js` (`NEG=1` must fail; `SHOT=<dir>` saves light + dark screenshots).
+- Electric pianos (2026-11-26): `apps/shared/lessons/epiano.js` (global EPiano; header = models, controls, API): one physical / modal
+  engine, profiles rhodes (Mark I Stage 73), suitcase, wurli (200A), clav (D6), cp70, pianet (N); notes rendered once per
+  key / velocity / settings into AudioBuffers (`EPiano.render`, pure, runs in node), then drive / EQ / speaker / tremolo (Suitcase:
+  stereo pan) live; `EPiano.translate(st, from, to)` exact / approx / lost. `<div class="epc" data-model data-to data-compact>`; faithful
+  panels `panels/ep-<id>.js` through `FaithfulPanel.attachFace` (positions guessed, legends beyond Wikipedia unverified, no logos).
+  Pages `lessons/epiano-compare.qmd` + `intro-{rhodes,wurlitzer,clavinet,cp70,pianet}.qmd` written by
+  `python3 scripts/intro-instruments/epianos.py` (tour steps via intro-kit kind "epiano": `data-set` (defaults + these, may hold
+  `model`), `data-riff`); tracks `apps/shared/data/epianos/assignments.json` (oEmbed-checked 2026-11-26). Sources
+  `scripts/sources/epianos.py` (Wikipedia only; service manuals not read). Tests `node tests/lessons/epiano.test.js` (`NEG=1` must
+  fail), `tests/lessons/epiano.cdp.js` (after rendering; `SITE=<dir>`). Not listened against real instruments.
+- Electric guitars (2026-11-26): `apps/shared/lessons/guitar-pickups.js` + `.css` (global GuitarPickups; header = model, API, markup):
+  modal plucked string -> pickups (Tillman's comb + aperture per coil; humbucker = two coils; hum per coil, RWRP Strat middle) ->
+  complex nodal solve of coil L/R/C, tone and volume pots (audio taper), cable C, 1 Mohm amp, per mode frequency (pure, runs in node),
+  rendered to a buffer (or the band's "guitar" samples through an FIR of the circuit alone) into `SynthKit.fx("amp")`; AudioTap
+  registered. Guitars strat (5-way, vol, 2 tone), tele (3-way 1967 wiring), lespaul and sg (2 vol + 2 tone, toggle, "phase" = what-if
+  mod). `GuitarPickups.translate(from, st, to)` exact / approx / lost by third-octave band fingerprints. Panels `panels/gt-<id>.js`
+  through `FaithfulPanel.mount(el, {adapter: GuitarPickups.adapter(W)})`, new decoration item `shape` (in faithful-panel.js header).
+  Pages `lessons/guitar-compare.qmd` (`<div class="gtc">`, `?a=&b=`) + `intro-{strat,tele,les-paul,sg}.qmd` written by
+  `python3 scripts/intro-instruments/guitars.py`; tracks `apps/shared/data/guitars/tracks.json` (oEmbed-checked 2026-11-26; no
+  source for any pickup setting: all marked guesses). Sources `scripts/sources/guitars.py`; every L/R/C/pot value and every pickup
+  distance but the Strat's is the site's (unverified). Tests `node tests/lessons/guitar-pickups.test.js` (`NEG=1` must fail),
+  `tests/lessons/guitar-compare.cdp.js` (after rendering). Not listened against real guitars.
+- Organs (2026-11-26): `apps/shared/lessons/organ-compare.js` + `.css` (global OrganCompare; header = state keys, canonical, API): one
+  plain Web Audio engine (AudioTap-registered), profiles b3 (B-3/C-3 + Leslie 122: 2 drawbar sets a manual + pedal 16′/8′, preset keys
+  C cancel / C♯-A presets / A♯ B sets, percussion 2nd/3rd soft/normal fast/slow single-trigger and 1′ cut, V1-3/C1-3 per manual, Leslie
+  stop/slow/fast, drive, click; tonewheel ratios + foldback COPIED from the band's model, the band's `hammond` untouched), vox
+  (Continental: 16′ 8′ 4′ IV + flute/reed, one vibrato), farfisa (Combo Compact tabs, 4 vibratos, reverb) and pipe (GENERIC made-up
+  2 manuals + pedal, couplers, tremulant, swell box, room). `OrganCompare.translate(st, from, to)` through ranks (footage, dB, colour)
+  -> exact / approx / lost. Panels `panels/organ-<id>.js` via `FaithfulPanel.attachFace` (adapter keys `inv:` = drawbars drawn pulling
+  down, `pre:` = preset keys; positions guessed, no logos). Pages `lessons/organ-compare.qmd` + `intro-{b3,vox-continental,farfisa,
+  pipe-organ}.qmd` by `python3 scripts/intro-instruments/organs.py` (intro-kit kind "organ", `data-ex` + `data-set`); tracks
+  `apps/shared/data/organs/assignments.json` (oEmbed-checked 2026-11-26, "build" = guessed starting registrations). Sources
+  `scripts/sources/organs.py` (Wikipedia + XK-5 manual percussion + Blue3 preset table; no manual downloaded). Tests
+  `node tests/lessons/organ-compare.test.js` (`NEG=1` must fail), `tests/lessons/organ-compare.cdp.js` (after rendering). Not listened against real organs.

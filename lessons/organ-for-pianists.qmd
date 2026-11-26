@@ -1,0 +1,234 @@
+---
+title: "Organ for Piano Players (on the MODX+)"
+toc: true
+toc-depth: 2
+description: "You can play piano. Here is how to work an organ: drawbars, percussion, the swell pedal and the Leslie, set up on a Yamaha MODX+, with a sample lesson on Gimme Some Lovin'."
+instruments: [piano]
+topics: [pop, blues, jazz]
+has: [band, interactive, svg]
+---
+
+You already know where the notes are. What's new is that an organ is worked differently:
+your hands pick the notes, but your **feet and your left hand's spare moments** make the
+music louder, softer, calmer or wilder. This lesson shows you how, first on the organ
+on this page and then on the school's **Yamaha MODX+**.
+
+## 1. Five ways an organ is not a piano
+
+1. **No touch.** Hit a key hard or soft: it's the same volume. Don't waste energy
+   hammering it.
+2. **No decay.** A piano note fades away; an organ note stays at full volume until you
+   let go. So *when you let go* matters as much as when you press. Short notes need
+   you to lift on purpose.
+3. **No sustain pedal.** Holding notes is done with your fingers. Play legato by
+   finger-sliding, the way you would for a slow hymn, not with your right foot.
+4. **Your right foot plays volume.** It goes on the **swell pedal** (section 4).
+5. **You build the sound yourself** with the **drawbars** (section 2), and a spinning
+   speaker, the **Leslie**, gives it motion (section 5).
+
+A practical one: because notes don't fade, big piano chords with lots of notes get
+muddy fast. Organists often play **three or four notes** in the right hand and keep the
+left hand light or leave the bass to someone else.
+
+Try it on the organ below: press **Hold a chord**, then work the controls.
+
+<div class="ar-organ"></div>
+
+## 2. Drawbars: building the sound
+
+There are nine bars. Each one adds a pitch above or below the note you play, from 0
+(pushed in, silent) to 8 (pulled all the way out). You write a setting as nine digits in
+groups of 2, 4 and 3: **88 8000 000** means the first three are out and the rest are in.
+(The organ lesson [Arranging 4: The Organ](arrange-organ.qmd) explains what each bar is.)
+
+You don't need to invent settings. Players have favourites, and these are some that
+HammondWiki lists. They're all in the **Start from** menu above, or type or paste any setting into the
+**Or type / paste** box.
+
+| Setting | What it's for |
+|---|---|
+| **88 8000 000** | The standard jazz and blues sound. HammondWiki says the standard jazz settings "will make your organ sound like 90% of the recorded jazz material extant", and lists this one for Jimmy Smith. Start here. |
+| **88 8800 000** | Adds the 4′ so it cuts through a band. HammondWiki lists it for the first chorus of "Green Onions". |
+| **88 8000 008** | Gospel: the round sound with a whistle on top. |
+| **88 8630 000** | HammondWiki's setting for Booker T. Jones. |
+| **84 8848 448** and **88 8888 888** | The two HammondWiki gives for Steve Winwood. The second is every bar out. |
+| **80 0808 000** | Procol Harum ("A Whiter Shade of Pale"): a hollow, churchy sound. |
+| **68 8600 000** | Soft and warm, for a ballad. |
+
+**Rule of thumb:** more bars out, louder and brighter. Fewer, softer and rounder. The
+bars on the left give weight. The ones on the right give bite and sparkle.
+
+## 3. Percussion: the "ping"
+
+Many organs have a switch called **percussion**. It adds a short "ping" at the start of
+each note, a 2nd or 3rd harmonic that dies away fast. It's the bright, plucky attack you
+hear in jazz organ. What HammondWiki says about it:
+
+- It is **single-trigger**: it only pings when you press a key with **all other keys
+  up**. If you play legato (holding one note while you press the next), the next note
+  doesn't ping. To hear it on every note, play slightly **detached**.
+- On a real Hammond it only works on the **upper keyboard**, and it uses up the 1′
+  drawbar's contact, so that bar goes silent while percussion is on.
+- **"Four Up"** is the classic jazz setting: percussion **On, Soft, Fast, 3rd**. The name
+  comes from the four switches on a B-3 all being in the up position.
+
+The organ on this page doesn't model percussion yet. On the MODX+, organ Performances
+with "Perc" or "Percussion" in the name have it built in (section 6).
+
+## 4. The swell pedal: your volume
+
+The swell pedal is a volume pedal for your right foot. **Heel down** is quiet. **Toe
+down** is full. It never goes completely silent.
+
+When to move it:
+
+- **Into a big moment:** open it gradually over the bar or two before a chorus or a hit,
+  so the band arrives with you.
+- **After a big hit:** pull it back quickly so the next part has somewhere to grow.
+- **On a long chord:** lean into it, the way a singer swells a long note. A held organ
+  chord that doesn't move sounds dead. A small swell keeps it alive.
+- **Under a singer:** keep it low through the verse. The organ is "furniture" there.
+- **Don't pump it on every beat.** That just sounds like someone stepping on a pedal.
+
+## 5. The Leslie: slow and fast
+
+The Leslie is a speaker cabinet with a **spinning horn** (high notes) and a **spinning
+drum** (low notes). It has two speeds:
+
+- **Slow (chorale):** a gentle, wide sway. Your default.
+- **Fast (tremolo):** a shimmering, urgent swirl. For excitement.
+
+The magic is in the **change**. The horn speeds up in about a second and a half, and the
+heavy drum takes several seconds. That "wind-up" is a sound people listen for. So:
+
+- **Switch to fast for a lift:** at the end of a phrase going into a chorus, under a
+  solo, at a climax.
+- **Switch back to slow when the energy drops:** a new verse, a quiet bridge.
+- **A quick flick:** fast for half a bar on a held chord, then straight back to slow.
+- **Don't change speed every bar.** Save it, so it means something.
+
+Hold a chord on the organ at the top of the page and switch Slow → Fast → Slow. Listen
+for the wind-up and the wind-down.
+
+## 6. Setting up the MODX+
+
+The MODX+ doesn't have drawbars or a swell pedal you can see. You get them through its
+organ **Performances**, its controllers and a pedal.
+
+**Before class: plug in a pedal.** The swell pedal is a **Yamaha FC7** foot controller
+plugged into the **FOOT CONTROLLER [1]** jack on the back. (A sustain *footswitch* is a
+different thing: it only does on/off.)
+
+**Pick an organ sound:**
+
+1. Press **[CATEGORY]**, then choose **Organ**, then **Tone Wheel**. Those are the Hammond-style
+   sounds. ("Combo" is the 1960s Vox / Farfisa type. "Pipe" is church organ.)
+2. Good ones to start with: **The Basics**, **All 9 Bars!**, **Jazz Organ**, **The
+   Preacher**, **Overdriven Organ**. Some Performance names are drawbar settings, for example
+   **8.8.8.8.6.2.2.0.0**.
+
+**Find the Leslie switch.** On each Performance a controller is set to change the
+rotary speaker's speed. Usually it's **[ASSIGN 1]** / **[ASSIGN 2]** or the **mod wheel**. To check
+which one:
+
+1. Press **[EDIT]**, touch **Control**, then **Control Assign**.
+2. Look for the Destination **InsA SpdCtrl** or **InsB SpdCtrl** (the rotary speaker's speed). Its
+   **Source** is the button or wheel that does it. If there's none, you can add one: set
+   Source to **AsgnSw 1** and Destination to **Ins A SpdCtrl** (or B, whichever insert
+   effect is the Rotary Speaker).
+
+**Make the pedal the swell.** In the same Control area, the **Control Number** tab sets
+which message **Foot Ctrl 1** sends. For a volume pedal, set it to the Expression
+controller (**11**) and check the Part responds. If the pedal does nothing to the
+volume, it's set to something else. Ask your teacher before saving over a preset.
+
+**Drawbars on the MODX+:** many organ Performances put drawbar-like levels on the
+**knobs** or **sliders**. Move them while you hold a chord and listen. Once you have a
+sound you like, **[STORE]** it as a new Performance with your name on it, and don't
+overwrite the preset.
+
+*Checked against the MODX+ Owner's Manual and Reference Manual: the FC7 and the
+FOOT CONTROLLER jacks, Category Search, Control Assign and the Rotary Speaker's
+SpdCtrl. **Not checked on the keyboard:** which controller each preset uses for the
+Leslie, whether Foot Ctrl 1 defaults to Expression, and what the knobs do on each organ
+Performance. Try it and write what you find on the class sheet.*
+
+## 7. Sample lesson: "Gimme Some Lovin'"
+
+"Gimme Some Lovin'" (the Spencer Davis Group, 1966) was a Top 10 single in several
+countries. Its organ is played by **Steve Winwood**, who also sings it. It's a good song for
+learning the swell pedal and the Leslie, because it goes from riff to verse to chorus
+and back. That gives you places to build and places to pull back.
+
+*Which way Winwood moved the pedal and the Leslie on the record isn't written down here
+anywhere we've checked. The plan below is a **teaching plan**: what a pianist might do
+to make the song's shape clear. Students listen to the record and argue with it.*
+
+**Goal:** you decide where to swell and where to change Leslie speed, and you can say
+why.
+
+**1. Listen (10 min).** Play the recording. Students draw the song's shape as a line:
+up where it gets more intense, down where it calms. Mark the intro riff, the verses,
+the chorus, and the ending.
+
+**2. Set up (5 min).** On the MODX+: a Tone Wheel organ, FC7 in, and the Leslie switch
+found (section 6). A full, rock setting: try **88 8888 888** or Winwood's
+**84 8848 448** if the Performance lets you set bars. Leslie **slow**.
+
+**3. Map the controls onto the shape (10 min).** Before anyone plays, the class fills
+this in. Here is one answer to compare with:
+
+| Part of the song | Swell pedal | Leslie | Why |
+|---|---|---|---|
+| Intro riff | Open, near full | Slow | The riff has to punch, and slow keeps it clear |
+| Verse | Pull back about a third | Slow | Make room for the voice |
+| End of verse into the chorus | Open steadily over the last bar or two | **Switch to fast** on the last bar | The wind-up *is* the lift into the chorus |
+| Chorus | Full | Fast | Peak energy |
+| Back to the riff / next verse | Snap back a little | **Back to slow** at the start of the new section | The wind-down marks "new section" |
+| Ending | Full, then let the last chord swell | Fast on the last chord | Big finish |
+
+**4. Play it (15 min).** In pairs: one plays the riff and chords, the other works the
+pedal and the Leslie button. Then swap. Finally, one person does all of it. That's the
+real skill: your feet and a spare finger working while your hands keep the part going.
+
+**5. Check (5 min).** Record one take. Listen back and ask:
+
+- Can you *hear* the chorus coming before it arrives? (If not: start the swell earlier.)
+- Did the Leslie change sound like an event, or like noise? (If noise: you're changing
+  it too often.)
+- In the verse, could you hear the singer (or imagine one)? (If not: less pedal, fewer
+  notes.)
+
+**Extension:** take the same plan to a slow song (try **68 8600 000**, Leslie slow the
+whole way, the swell doing all the work). Or try a jazz blues with **88 8000 000** and
+"Four Up" percussion, played detached so every note pings.
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Yamaha Corporation. *MODX6+ / MODX7+ / MODX8+ Data List*. Yamaha. [usa.yamaha.com/files/download/other_assets/5/1583935/modx_plus_en_dl_a0.pdf](https://usa.yamaha.com/files/download/other_assets/5/1583935/modx_plus_en_dl_a0.pdf). Drum Kit Assign List: the key of every sound in Pop Latin Kit, Real Brushes Kit, Jazz Brushes Kit and Brush Kit (kit-to-table match read from the page layout).
+
+**For students**
+
+"Four Up." *HammondWiki*. [www.dairiki.org/HammondWiki/FourUp](https://www.dairiki.org/HammondWiki/FourUp). On, Soft, Fast, 3rd; the four tablets up.
+
+"Gimme Some Lovin'." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Gimme_Some_Lovin%27](https://en.wikipedia.org/wiki/Gimme_Some_Lovin%27).
+
+"Percussion." *HammondWiki*. [www.dairiki.org/HammondWiki/Percussion](https://www.dairiki.org/HammondWiki/Percussion). Single-trigger; upper manual and B preset only; takes the 9th drawbar's contact.
+
+"Popular Drawbar Registrations." *HammondWiki*, edited by Geoffrey T. Dairiki et al. [www.dairiki.org/HammondWiki/PopularDrawbarRegistrations](https://www.dairiki.org/HammondWiki/PopularDrawbarRegistrations). Registrations by player: Jimmy Smith 88 8000 000, Booker T 88 8630 000, Winwood 84 8848 448 / 88 8888 888, Green Onions, Procol Harum, gospel.
+
+"Standard Jazz Registrations." *HammondWiki*. [www.dairiki.org/HammondWiki/StandardJazzRegistrations](https://www.dairiki.org/HammondWiki/StandardJazzRegistrations). 88 8000 000 with Four Up; the '90%' quotation.
+
+**For teachers**
+
+"Errol Garner Style." *HammondWiki*. [www.dairiki.org/HammondWiki/ErrolGarnerStyle](https://www.dairiki.org/HammondWiki/ErrolGarnerStyle). 80 0008 888; block-chord 'squabbling'.
+
+Yamaha Corporation. *MODX+ Reference Manual*. Yamaha. [usa.yamaha.com/support/manuals/index.html](https://usa.yamaha.com/support/manuals/index.html). Rotary Speaker speed as Destination 'InsA/B SpdCtrl'; Foot Ctrl 1/2 control numbers.
+
+Yamaha Corporation. *MODX6+ / MODX7+ / MODX8+ Owner's Manual*. Yamaha. [usa.yamaha.com/support/manuals/index.html](https://usa.yamaha.com/support/manuals/index.html). FOOT CONTROLLER jacks and the FC7, Category Search, Control Assign / Control Number, [ASSIGN 1]/[ASSIGN 2].
+:::
+<!-- /works-cited -->
+
+{{< include _arrange-kit.qmd >}}

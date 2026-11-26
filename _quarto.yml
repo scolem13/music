@@ -146,6 +146,7 @@ website:
             - lessons/arrange-bass-drums.qmd
             - lessons/arrange-chords.qmd
             - lessons/arrange-organ.qmd
+            - lessons/organ-for-pianists.qmd
             - lessons/patterns/index.qmd
         - section: "Story Songs (Rock and Pop Ballads)"
           contents:
@@ -260,6 +261,28 @@ website:
                 - lessons/intro-mc-202.qmd
                 - lessons/intro-mc-4.qmd
                 - lessons/intro-digitakt.qmd
+            - section: "Electric pianos"
+              contents:
+                - lessons/epiano-compare.qmd
+                - lessons/intro-rhodes.qmd
+                - lessons/intro-wurlitzer.qmd
+                - lessons/intro-clavinet.qmd
+                - lessons/intro-cp70.qmd
+                - lessons/intro-pianet.qmd
+            - section: "Guitars"
+              contents:
+                - lessons/guitar-compare.qmd
+                - lessons/intro-strat.qmd
+                - lessons/intro-tele.qmd
+                - lessons/intro-les-paul.qmd
+                - lessons/intro-sg.qmd
+            - section: "Organs"
+              contents:
+                - lessons/organ-compare.qmd
+                - lessons/intro-b3.qmd
+                - lessons/intro-vox-continental.qmd
+                - lessons/intro-farfisa.qmd
+                - lessons/intro-pipe-organ.qmd
             - lessons/synth-compare.qmd
             - lessons/sequencer-compare.qmd
             - lessons/drum-compare.qmd

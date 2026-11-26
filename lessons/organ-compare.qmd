@@ -1,0 +1,99 @@
+---
+title: "Classic Organs Compared"
+toc: true
+toc-depth: 2
+description: "A Hammond B-3 with its Leslie, a Vox Continental, a Farfisa Combo Compact and a generic pipe organ side by side: turn a registration on one into the nearest one on another and read, rank by rank, what carries over, what changes and what cannot be done."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+Four organs that make their sound in three different ways. The **Hammond B-3** (1954) spins 91 metal tonewheels past pickups,
+so each pitch is close to a pure sine, and mixes nine of them per key with **drawbars**. The **Vox Continental** (1962) and the
+**Farfisa Combo Compact** (1964) are transistor *combo organs*: twelve oscillators for the top octave, divided down for every
+octave below, so every note is equal-tempered and the tone colours are fixed by circuits. A **pipe organ** blows wind through
+ranks of pipes, one rank a stop. The pipe organ here is **not any real instrument**: it is a small, made-up two-manual stop list.
+
+Every fact about the real instruments is cited at the foot of the page; anything else (voicings, levels, panel positions) is this
+page's own and is listed under each panel as "Not checked against the real instrument". Nobody has compared these sounds with the
+real organs.
+
+## The organs
+
+<div class="ocmp" data-from="b3" data-to="pipe"></div>
+
+**How to use it.** Pick **From** and **To**, choose an **Example**, then **▶ Play** (the first organ) or **▶ Play the translation**.
+Pull a drawbar or press a tab on the top panel: the bottom one follows, and the report says for each rank
+<span class="ocmp-exact">the same</span>, <span class="ocmp-approx">close</span> or <span class="ocmp-lost">cannot be done</span>.
+Play from the keys under the panel or the computer keys a w s e d f t g y h u j k; **Keys play** picks the manual. **Panel / Simple**
+switches the drawing for plain sliders; **☾ Dark / ☀ Light** changes the panel's background on every page.
+
+## How the four make sound
+
+- **Footage.** Every organ names its pitches by the length of an open pipe: 8′ is the note you press, 16′ an octave below, 4′ an
+  octave above, 2⅔′ a twelfth above (Wikipedia, "Organ stop"). A B-3 drawbar, a Vox drawbar, a Farfisa tab and a pipe-organ stop all
+  speak in footages, so the translation goes footage by footage.
+- **Tonewheels are not quite in tune with themselves.** On the B-3 the 2⅔′ and 1⅗′ come from other wheels in equal temperament, not
+  pure harmonics: the 1⅗′ of A4 sounds 2218 Hz, not 2200 (Electric Druid, via the band's organ notes). On the divide-down organs and
+  the pipe organ here every pitch is equal-tempered too, but of the key's own top-octave oscillator.
+- **Levels or switches.** Drawbars have nine positions (0 silent, each step about 3 dB); tabs and stops are only on or off. A level
+  that a tab cannot make becomes "close".
+- **Manuals.** The B-3 and the pipe organ have two manuals and pedals; the Vox and Farfisa have one manual. A registration's lower
+  manual and pedals have nowhere to go on a combo organ.
+- **Effects belong to the instrument.** The B-3's scanner vibrato / chorus (V1-V3, C1-C3), percussion and the Leslie's rotating horn
+  and drum; the Vox's single vibrato; the Farfisa's four vibrato settings and reverb; the pipe organ's tremulant and its building.
+
+## The B-3's switches
+
+- **Preset keys.** The reverse-coloured octave left of each manual: **C** cancels (silence), **C♯ to A** are presets wired inside the
+  organ, **A♯** and **B** switch to the two sets of drawbars (Wikipedia, "Hammond organ").
+- **Percussion** adds a decaying 2nd or 3rd harmonic to the start of a note, soft or normal, fast or slow; it works only on the upper
+  manual with preset key **B**, and silences the 1′ drawbar while on (Hammond XK-5 manual, which says this is the same as on the B-3 / C-3).
+  It is *single-trigger*: it sounds again only after every key is let go (Wikipedia).
+- **Leslie 122.** Slow (chorale) or fast (tremolo); horn and drum change speed at different rates. The speeds are measured figures from
+  a 147 (the band's organ notes); the speed-up times are one forum post.
+
+## Famous tracks
+
+YouTube recordings with what the organ does there, each checked by YouTube's oEmbed on 2026-11-26. **Build it on the panel** loads a
+starting registration: a guess made on this page, never the player's documented setting.
+
+<div class="ocmp-tracks"></div>
+
+## What is not modelled
+
+Tonewheel leakage between wheels and tapering, the Leslie cabinet's reflections and its amplifier, the B-3's pedal tone and the
+pedal-board range, the Continental's bass-octave switch on later models, Farfisa's other models (Mini Compact, Compact Duo, Deluxe),
+the pipe organ's wind (a shaky supply, pipes pulling each other's pitch), and any particular building.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/organ-compare.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/organ-compare.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Cherry Audio. "Blue3 Organ: Main." *Cherry Audio Documentation*. [docs.cherryaudio.com/cherry-audio/instruments/blue3/main](https://docs.cherryaudio.com/cherry-audio/instruments/blue3/main). An emulator's table of the B-3 factory presets; upper C-sharp to E agree with a second web page. Not a Hammond document: the other presets are unverified.
+
+Electric Druid. "Hammond tonewheel organ" (article, as cited in this site's apps/shared/band/ORGAN.md). *Electric Druid*. [electricdruid.net/?p=316](https://electricdruid.net/?p=316). Tonewheel ratios, foldback, drawbar steps, scanner rate, Leslie speeds: through apps/shared/band/ORGAN.md.
+
+Hammond Suzuki. "XK-5 Owner's Manual." *ManualsLib*. [www.manualslib.com/manual/1591989/Hammond-Xk-5.html?page=52](https://www.manualslib.com/manual/1591989/Hammond-Xk-5.html?page=52). Percussion: 2nd = the 4′ drawbar's pitch, 3rd = the 2⅔′; fast / slow decay; the 1′ drawbar inoperative while on; only with the B preset key and only on the upper manual, 'same as B-3/C-3'. Read as quoted in a search result, page not opened in full.
+
+"Symphony for Organ No. 5 (Widor)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Symphony_for_Organ_No._5](https://en.wikipedia.org/wiki/Symphony_for_Organ_No._5). The Toccata is the finale; links the composer's own recording at Saint-Sulpice.
+
+**For students**
+
+"Farfisa." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Farfisa](https://en.wikipedia.org/wiki/Farfisa). Combo Compact 1964, Compact series to 1969; twelve generator boards and dividers, germanium transistors, valve-driven reverb; the tab list by model; four vibrato settings; users and records.
+
+"Hammond organ." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Hammond_organ](https://en.wikipedia.org/wiki/Hammond_organ). B-3 / C-3 1954 to early 1975, harmonic percussion; 61-key manuals, 25-note pedalboard; reverse-coloured preset keys, C cancel, B and B-flat the drawbar sets; percussion 2nd / 3rd, soft / normal, single-trigger; V1-V3 C1-C3 per manual; Leslie 122; players and records.
+
+"Organ stop." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Organ_stop](https://en.wikipedia.org/wiki/Organ_stop). Families (principal, flute, string, reed, hybrid); footages 16′ 8′ 4′, mutations 2⅔′ and 1⅗′; mixtures and their Roman numerals, breaking back; registration; reeds often lettered red.
+
+"Vox Continental." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Vox_Continental](https://en.wikipedia.org/wiki/Vox_Continental). 1962, Dartford; twelve top-octave oscillators and dividers; six drawbars (16′ 8′ 4′ IV, flute, reed); single-speed single-intensity vibrato; 49 keys, reverse-coloured; records named.
+:::
+<!-- /works-cited -->
+

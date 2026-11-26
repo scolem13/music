@@ -1,0 +1,227 @@
+{
+ "note": "Famous tracks per guitar (lessons/guitar-compare.qmd, intro-strat / tele / les-paul / sg). Each video confirmed by YouTube oEmbed 2026-11-26 (title and channel from it). instrumentSrc = where the guitar is named (null = unverified); no source found for any pickup setting, so every settingSrc is null and the setting is this site's guess.",
+ "tracks": [
+  {
+   "guitar": "strat",
+   "artist": "Derek and the Dominos",
+   "song": "Layla",
+   "url": "https://www.youtube.com/watch?v=TngViNw2pOo",
+   "title": "Layla",
+   "channel": "Derek & The Dominos - Topic",
+   "player": "Eric Clapton",
+   "instrument": "a Stratocaster",
+   "instrumentSrc": "Wikipedia, \"Fender Stratocaster\" names Layla among his Stratocaster songs",
+   "setting": "bridge pickup, tone open (a guess)",
+   "settingSrc": null,
+   "state": {
+    "sel": "p1"
+   },
+   "play": "lead"
+  },
+  {
+   "guitar": "strat",
+   "artist": "The Jimi Hendrix Experience",
+   "song": "Purple Haze",
+   "url": "https://www.youtube.com/watch?v=WGoDaYjdfSg",
+   "title": "The Jimi Hendrix Experience - Purple Haze (Official Audio)",
+   "channel": "JimiHendrixVEVO",
+   "player": "Jimi Hendrix",
+   "instrument": "a Stratocaster",
+   "instrumentSrc": null,
+   "setting": "bridge pickup, amp crunchy (a guess)",
+   "settingSrc": null,
+   "state": {
+    "sel": "p1"
+   },
+   "play": "riff"
+  },
+  {
+   "guitar": "strat",
+   "artist": "Dire Straits",
+   "song": "Sultans of Swing",
+   "url": "https://www.youtube.com/watch?v=h0ffIJ7ZO4U",
+   "title": "Dire Straits - Sultans Of Swing (Official Music Video)",
+   "channel": "DireStraitsVEVO",
+   "player": "Mark Knopfler",
+   "instrument": "a Stratocaster",
+   "instrumentSrc": null,
+   "setting": "position 2 or 4, the in-between \"quack\" (often said, no source found)",
+   "settingSrc": null,
+   "state": {
+    "sel": "p4"
+   },
+   "play": "lead"
+  },
+  {
+   "guitar": "tele",
+   "artist": "Bruce Springsteen",
+   "song": "Born to Run",
+   "url": "https://www.youtube.com/watch?v=IxuThNgl3YA",
+   "title": "Bruce Springsteen - Born to Run (Official Video)",
+   "channel": "BruceSpringsteenVEVO",
+   "player": "Bruce Springsteen",
+   "instrument": "a Telecaster with an Esquire neck",
+   "instrumentSrc": "Guitar World, \"Bruce Springsteen's Born to Run Telecaster\" (the album cover guitar)",
+   "setting": "bridge pickup (a guess)",
+   "settingSrc": null,
+   "state": {
+    "sel": "bridge"
+   },
+   "play": "chord"
+  },
+  {
+   "guitar": "tele",
+   "artist": "Radiohead",
+   "song": "Creep",
+   "url": "https://www.youtube.com/watch?v=XFkzRNyygfk",
+   "title": "Radiohead - Creep",
+   "channel": "Radiohead",
+   "player": "Jonny Greenwood",
+   "instrument": "a Telecaster",
+   "instrumentSrc": null,
+   "setting": "the loud bursts: bridge pickup, high gain (a guess)",
+   "settingSrc": null,
+   "state": {
+    "sel": "bridge"
+   },
+   "play": "riff"
+  },
+  {
+   "guitar": "tele",
+   "artist": "The Clash",
+   "song": "London Calling",
+   "url": "https://www.youtube.com/watch?v=EfK-WX2pa8c",
+   "title": "The Clash - London Calling (Official Video)",
+   "channel": "theclashVEVO",
+   "player": "Joe Strummer",
+   "instrument": "a Telecaster",
+   "instrumentSrc": null,
+   "setting": "bridge pickup (a guess)",
+   "settingSrc": null,
+   "state": {
+    "sel": "bridge"
+   },
+   "play": "chord"
+  },
+  {
+   "guitar": "lespaul",
+   "artist": "Dire Straits",
+   "song": "Money for Nothing",
+   "url": "https://www.youtube.com/watch?v=wTP2RUD_cL0",
+   "title": "Dire Straits - Money For Nothing (Official Music Video)",
+   "channel": "DireStraitsVEVO",
+   "player": "Mark Knopfler",
+   "instrument": "a 1958 Les Paul",
+   "instrumentSrc": "Wikipedia, \"Gibson Les Paul\"",
+   "setting": "a mid-boosted, half-closed sound; pickup not stated (a guess: neck, tone down)",
+   "settingSrc": null,
+   "state": {
+    "sel": "rhythm",
+    "tone1": 4
+   },
+   "play": "riff"
+  },
+  {
+   "guitar": "lespaul",
+   "artist": "Toto",
+   "song": "Rosanna",
+   "url": "https://www.youtube.com/watch?v=qmOLtTGvsbM",
+   "title": "Toto - Rosanna (Official HD Video)",
+   "channel": "TotoVEVO",
+   "player": "Steve Lukather",
+   "instrument": "a 1959 Les Paul Standard (in the video)",
+   "instrumentSrc": "Wikipedia, \"Gibson Les Paul\"",
+   "setting": "bridge pickup (a guess)",
+   "settingSrc": null,
+   "state": {
+    "sel": "treble"
+   },
+   "play": "lead"
+  },
+  {
+   "guitar": "lespaul",
+   "artist": "Guns N' Roses",
+   "song": "Sweet Child O' Mine",
+   "url": "https://www.youtube.com/watch?v=1w7OgIMMRc4",
+   "title": "Guns N' Roses - Sweet Child O' Mine (Official Music Video)",
+   "channel": "GunsNRosesVEVO",
+   "player": "Slash",
+   "instrument": "a Les Paul",
+   "instrumentSrc": null,
+   "setting": "the intro: neck pickup (often said, no source found)",
+   "settingSrc": null,
+   "state": {
+    "sel": "rhythm"
+   },
+   "play": "lead"
+  },
+  {
+   "guitar": "lespaul",
+   "artist": "Led Zeppelin",
+   "song": "Whole Lotta Love",
+   "url": "https://www.youtube.com/watch?v=HQmmM_qwG4k",
+   "title": "Led Zeppelin - Whole Lotta Love (Official Music Video)",
+   "channel": "Led Zeppelin",
+   "player": "Jimmy Page",
+   "instrument": "a Les Paul",
+   "instrumentSrc": null,
+   "setting": "bridge pickup (a guess)",
+   "settingSrc": null,
+   "state": {
+    "sel": "treble"
+   },
+   "play": "riff"
+  },
+  {
+   "guitar": "sg",
+   "artist": "AC/DC",
+   "song": "Highway to Hell",
+   "url": "https://www.youtube.com/watch?v=l482T0yNkeo",
+   "title": "AC/DC - Highway to Hell (Official Video)",
+   "channel": "acdcVEVO",
+   "player": "Angus Young",
+   "instrument": "an SG",
+   "instrumentSrc": "Wikipedia, \"Gibson SG\" (his guitar in general, not this song)",
+   "setting": "bridge pickup (a guess)",
+   "settingSrc": null,
+   "state": {
+    "sel": "treble"
+   },
+   "play": "chord"
+  },
+  {
+   "guitar": "sg",
+   "artist": "AC/DC",
+   "song": "Back in Black",
+   "url": "https://www.youtube.com/watch?v=pAgnJDJN4VA",
+   "title": "AC/DC - Back In Black (Official 4K Video)",
+   "channel": "acdcVEVO",
+   "player": "Angus Young",
+   "instrument": "an SG",
+   "instrumentSrc": "Wikipedia, \"Gibson SG\" (his guitar in general, not this song)",
+   "setting": "bridge pickup (a guess)",
+   "settingSrc": null,
+   "state": {
+    "sel": "treble"
+   },
+   "play": "riff"
+  },
+  {
+   "guitar": "sg",
+   "artist": "Black Sabbath",
+   "song": "Paranoid",
+   "url": "https://www.youtube.com/watch?v=0qanF-91aJo",
+   "title": "BLACK SABBATH - \"Paranoid\" (Official Video)",
+   "channel": "Black Sabbath",
+   "player": "Tony Iommi",
+   "instrument": "his 1964 SG Special \"Monkey\"",
+   "instrumentSrc": "Wikipedia, \"Gibson SG\" (used on the early Sabbath albums)",
+   "setting": "bridge pickup (a guess)",
+   "settingSrc": null,
+   "state": {
+    "sel": "treble"
+   },
+   "play": "riff"
+  }
+ ]
+}

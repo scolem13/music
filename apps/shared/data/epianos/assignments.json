@@ -1,0 +1,192 @@
+{
+ "note": "Famous electric piano tracks. Each confirmed 2026-11-26 by YouTube's oEmbed (title and channel as it gave them). `start` = a starting setting on this site's model (EPiano), the page's own.",
+ "videos": [
+  {
+   "model": "rhodes",
+   "url": "https://www.youtube.com/watch?v=7G2-FPlvY58",
+   "title": "The Doors - Riders on the Storm (Official Audio)",
+   "channel": "The Doors",
+   "song": "Riders on the Storm",
+   "artist": "The Doors",
+   "does": "Ray Manzarek played a Mark I Stage 73 in the studio (Wikipedia). Soft, rainy chords and a jazzy line, with no bark.",
+   "start": {
+    "model": "rhodes",
+    "voice": 6,
+    "hard": 3,
+    "bass": 6,
+    "drive": 1
+   },
+   "riff": "ballad"
+  },
+  {
+   "model": "suitcase",
+   "url": "https://www.youtube.com/watch?v=1RCKWBFt9MU",
+   "title": "Angela (Theme From Taxi)",
+   "channel": "Bob James - Topic",
+   "song": "Angela (Theme from Taxi)",
+   "artist": "Bob James",
+   "does": "Wikipedia names it among Rhodes recordings. A bell-like melody over chords: the tine's attack is the point.",
+   "start": {
+    "model": "suitcase",
+    "vib": 3,
+    "rate": 3,
+    "hard": 7
+   },
+   "riff": "ballad"
+  },
+  {
+   "model": "suitcase",
+   "url": "https://www.youtube.com/watch?v=HaA3YZ6QdJU",
+   "title": "Billy Joel - Just the Way You Are (Official Audio)",
+   "channel": "billyjoelVEVO",
+   "song": "Just the Way You Are",
+   "artist": "Billy Joel",
+   "does": "Wikipedia does not name this song; it is widely called a Rhodes record (unverified). Soft chords with a slow, gentle movement.",
+   "start": {
+    "model": "suitcase",
+    "vib": 4,
+    "rate": 2.5,
+    "hard": 3
+   },
+   "riff": "ballad"
+  },
+  {
+   "model": "wurli",
+   "url": "https://www.youtube.com/watch?v=low6Coqrw9Y",
+   "title": "The Logical Song",
+   "channel": "Supertramp - Topic",
+   "song": "The Logical Song",
+   "artist": "Supertramp",
+   "does": "Wikipedia names Supertramp's Wurlitzer on it. Bouncy, bright chords with a little bite.",
+   "start": {
+    "model": "wurli",
+    "gap": 6,
+    "drive": 5,
+    "tone": 6
+   },
+   "riff": "soul"
+  },
+  {
+   "model": "wurli",
+   "url": "https://www.youtube.com/watch?v=7fdAFmtq-o8",
+   "title": "Dreamer",
+   "channel": "Supertramp - Topic",
+   "song": "Dreamer",
+   "artist": "Supertramp",
+   "does": "Also named by Wikipedia. A fast repeated chord figure: hard hits that bark.",
+   "start": {
+    "model": "wurli",
+    "gap": 8,
+    "drive": 6,
+    "hard": 7
+   },
+   "riff": "soft_hard"
+  },
+  {
+   "model": "wurli",
+   "url": "https://www.youtube.com/watch?v=HaZpZQG2z10",
+   "title": "Queen - You're My Best Friend (Official Video)",
+   "channel": "Queen Official",
+   "song": "You're My Best Friend",
+   "artist": "Queen",
+   "does": "John Deacon played the Wurlitzer (Wikipedia). A steady comping part under the voices.",
+   "start": {
+    "model": "wurli",
+    "gap": 5,
+    "drive": 3
+   },
+   "riff": "soul"
+  },
+  {
+   "model": "clav",
+   "url": "https://www.youtube.com/watch?v=NuYDKzky4z0",
+   "title": "Bill Withers - Use Me (Official Audio)",
+   "channel": "BillWithersVEVO",
+   "song": "Use Me",
+   "artist": "Bill Withers",
+   "does": "Wikipedia names it. A two-note groove that never lets go: short, damped notes.",
+   "start": {
+    "model": "clav",
+    "soft": false,
+    "treb": true,
+    "mute": 3
+   },
+   "riff": "funk"
+  },
+  {
+   "model": "clav",
+   "url": "https://www.youtube.com/watch?v=1esf0efHbjM",
+   "title": "Higher Ground",
+   "channel": "Stevie Wonder - Topic",
+   "song": "Higher Ground",
+   "artist": "Stevie Wonder",
+   "does": "Wikipedia names it. A driving riff, thick and gritty (on the record also through effects: unverified).",
+   "start": {
+    "model": "clav",
+    "pc": "D",
+    "pa": "A",
+    "drive": 6
+   },
+   "riff": "funk"
+  },
+  {
+   "model": "cp70",
+   "url": "https://www.youtube.com/watch?v=Vzyn60Zns-E",
+   "title": "Genesis - That's All (Official Music Video)",
+   "channel": "Genesis",
+   "song": "That's All",
+   "artist": "Genesis",
+   "does": "Tony Banks's CP-70 (Wikipedia). A bouncing chord part, bright and percussive.",
+   "start": {
+    "model": "cp70",
+    "treble": 7,
+    "hard": 6
+   },
+   "riff": "soul"
+  },
+  {
+   "model": "cp70",
+   "url": "https://www.youtube.com/watch?v=kU8OJAOMbPg",
+   "title": "Peter Gabriel - In Your Eyes",
+   "channel": "Peter Gabriel",
+   "song": "In Your Eyes",
+   "artist": "Peter Gabriel",
+   "does": "Wikipedia names it. Chords that ring and shimmer under the voice.",
+   "start": {
+    "model": "cp70",
+    "detune": 6,
+    "treble": 6
+   },
+   "riff": "ballad"
+  },
+  {
+   "model": "pianet",
+   "url": "https://www.youtube.com/watch?v=T6cLHNF5N8E",
+   "title": "The Zombies - She's Not There (Mono Remastered) (Official Lyric Video)",
+   "channel": "The Zombies Music",
+   "song": "She's Not There",
+   "artist": "The Zombies",
+   "does": "Wikipedia names it. The famous keyboard solo and the soft, clipped chords.",
+   "start": {
+    "model": "pianet",
+    "pad": 6
+   },
+   "riff": "soul"
+  },
+  {
+   "model": "pianet",
+   "url": "https://www.youtube.com/watch?v=xcLdbsrSngA",
+   "title": "The Guess Who - These Eyes (Official Audio)",
+   "channel": "TheGuessWhoVEVO",
+   "song": "These Eyes",
+   "artist": "The Guess Who",
+   "does": "Wikipedia names it. Gentle chords under the verse.",
+   "start": {
+    "model": "pianet",
+    "pad": 4,
+    "vibOn": false
+   },
+   "riff": "ballad"
+  }
+ ]
+}

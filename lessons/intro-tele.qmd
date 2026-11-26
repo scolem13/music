@@ -1,0 +1,103 @@
+---
+title: "Meet the Fender Telecaster"
+toc: true
+toc-depth: 2
+description: "A first look at the Fender Telecaster: two single-coil pickups, a three-way switch, one volume and one tone, a guided tour of its sounds, famous tracks, and a short quiz."
+instruments: [guitar]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Electric Guitars Compared](guitar-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Tele is.
+2. Learn how its pickups make its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Listen to famous tracks.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Telecaster** came out as the Broadcaster in **1950** and was renamed Telecaster in 1951 (Wikipedia, "Fender Telecaster").
+- "Most Telecasters have two single-coil pickups." The bridge pickup sits in a metal plate and has more windings, so it is louder (Wikipedia).
+- Controls: one volume, one tone and a three-way switch. Since 1967: neck alone, both, bridge alone (Wikipedia). The first Telecasters were wired differently.
+- Scale 25.5 inches, like the Stratocaster (Wikipedia).
+
+## Its sound
+
+- The **bridge** pickup: bright and twangy. More windings means more output and a lower resonance (Wikipedia, "Pickup (music technology)").
+- The **neck** pickup: warm and quiet.
+- **Both** together: the two combs add, a thinner, hollow sound.
+- Two single coils, so it can hum.
+
+## The controls
+
+The Tele's control area, drawn after the real one (positions approximate). Click the selector, drag a knob (or use the arrow keys), then press a ▶ button. The sound is this site's physical model of a plucked string through these pickups and this wiring, into an amp; nobody has compared it with a real guitar. The picture under the buttons shows the harmonics of the open A string at the jack (bars) and the circuit alone (line).
+
+```{=html}
+<div class="gtp" data-guitar="tele"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="gt-step" data-guitar="tele" data-set="{&quot;sel&quot;:&quot;bridge&quot;}" data-play="riff"><p><b>Bridge.</b> The classic twang.</p></div>
+<div class="gt-step" data-guitar="tele" data-set="{&quot;sel&quot;:&quot;both&quot;}" data-play="chord"><p><b>Both.</b> Listen: hollow, a little thin.</p></div>
+<div class="gt-step" data-guitar="tele" data-set="{&quot;sel&quot;:&quot;neck&quot;}" data-play="lead"><p><b>Neck.</b> Warm and soft.</p></div>
+<div class="gt-step" data-guitar="tele" data-set="{&quot;sel&quot;:&quot;bridge&quot;,&quot;tone&quot;:2}" data-play="riff"><p><b>Bridge, tone down to 2.</b> Darker, the twang rounded off.</p></div>
+```
+
+## Famous tracks
+
+Videos checked on YouTube. Where the guitar is named in a source, it is given; **no source was found for any pickup setting**, so each setting is this site's guess (press **Try it** to hear the guess on the model).
+
+```{=html}
+<div class="gt-tracks" data-guitar="tele"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="gt-q" data-a="1"><p><b>Which Telecaster pickup has more windings?</b></p><ul><li>Neck</li><li>Bridge</li></ul><p class="gt-why">Wikipedia.</p></div>
+<div class="gt-q" data-a="0"><p><b>What did the Telecaster first come out as?</b></p><ul><li>The Broadcaster</li><li>The Esquire</li><li>The Stratocaster</li><li>The Jaguar</li></ul><p class="gt-why">1950, the Broadcaster.</p></div>
+<div class="gt-q" data-a="1"><p><b>How many knobs on a modern Telecaster?</b></p><ul><li>One</li><li>Two</li><li>Four</li></ul><p class="gt-why">Volume and tone.</p></div>
+```
+
+## Next
+
+- [Electric Guitars Compared](guitar-compare.html?a=tele&b=lespaul): the Tele side by side with the others, and settings translated between them.
+- [Gear 3: amps](gear-amps.qmd): the amp these guitars play through.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/guitar-pickups.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/band/sounds.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Fender Telecaster." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Fender_Telecaster](https://en.wikipedia.org/wiki/Fender_Telecaster). Broadcaster 1950, two single coils, bridge wound hotter, 1967 wiring neck / both / bridge, 25.5 in.
+
+Guitar World. "Bruce Springsteen's Born to Run Telecaster: Mods and Mysteries." [www.guitarworld.com/artists/guitarists/bruce-springsteen-mods-mysteries-born-to-run-telecaster](https://www.guitarworld.com/artists/guitarists/bruce-springsteen-mods-mysteries-born-to-run-telecaster). The Born to Run cover guitar: a Telecaster with an Esquire neck (from a search summary; article not read in full).
+
+Lemme, Helmuth E. W. "The Secrets of Electric Guitar Pickups." [buildyourguitar.com/resources/lemme/](https://buildyourguitar.com/resources/lemme/). Resonance of most pickups with a normal cable 2,000-5,000 Hz; inductance 1-10 H (not read directly: certificate expired 2026-11-26; unverified).
+
+"Pickup (music technology)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Pickup_(music_technology)](https://en.wikipedia.org/wiki/Pickup_(music_technology)). Single coils pick up hum; humbucker coils cancel it; self-capacitance + cable resonate with the inductance; more turns, lower resonance.
+
+Tillman, J. Donald. "Response Effects of Guitar Pickup Position and Width." 2000, updated 17 Oct. 2002. [www.till.com/articles/PickupResponse/index.html](https://www.till.com/articles/PickupResponse/index.html). Pickup point response sin(pi x F / (L F0)) = a comb filter; aperture term; Strat neck / middle / bridge 6.375 / 3.875 / 1.625 in, 1 in aperture; humbucker about 2.5 in; out-of-phase cancellation.
+:::
+<!-- /works-cited -->
+

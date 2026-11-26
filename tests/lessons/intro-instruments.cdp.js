@@ -19,7 +19,7 @@ const slugs = process.argv.slice(2).length ? process.argv.slice(2) : fs.readdirS
     if (!fs.existsSync(file)) { check(`${slug}: rendered`, false, "no " + file); continue; }
     await b.goto(`http://127.0.0.1:${PORT}/lessons/intro-${slug}.html`); await b.sleep(900);
     const info = await b.eval(`(() => { const box = document.querySelector('.ik-box'); const k = box && box.dataset.kind, id = box && box.dataset.id;
-      const panels = [...box.querySelectorAll('.scmp-panel,.dcmp-panel,.sqc-panel')].filter(p => p.offsetParent !== null);
+      const panels = [...box.querySelectorAll('.scmp-panel,.dcmp-panel,.sqc-panel,.ocmp-panel')].filter(p => p.offsetParent !== null);
       return { k, id, shown: panels.length, mine: panels.every(p => k !== 'synth' || p.classList.contains('scmp-' + id)),
         steps: IntroKit.steps.length, plays: document.querySelectorAll('.ik-step .ik-play').length, qs: document.querySelectorAll('.ik-q').length,
         todo: /What you.ll do/.test(document.querySelector('.ik-do') ? document.querySelector('.ik-do').textContent : ''),

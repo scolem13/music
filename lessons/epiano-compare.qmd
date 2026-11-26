@@ -1,0 +1,239 @@
+---
+title: "Electric Pianos Compared"
+toc: true
+toc-depth: 2
+description: "The Fender Rhodes (Stage and Suitcase), Wurlitzer 200A, Clavinet D6, Yamaha CP-70 and Hohner Pianet as physical models with their own panels: play them, then turn a sound on one into another and read what carries over, what is close and what is lost."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+Five electric pianos, five ways of making a note: a struck **tine**, a struck **reed**, a struck **string** held on an anvil,
+real **piano strings**, and a plucked reed. Each is rebuilt here as a small physical model with its controls as on the real
+instrument. Facts come from the Wikipedia articles listed under Works Cited (read 2026-11-26). The service manuals were not read for these pages, so control legends and places that Wikipedia does not give are marked unverified.
+
+## The instruments
+
+| Instrument | How it makes a note |
+|---|---|
+| [Fender Rhodes Mark I Stage 73](intro-rhodes.qmd) | Hammer hits a **tine** + tonebar; magnetic pickup |
+| [Wurlitzer 200A](intro-wurlitzer.qmd) | Felt hammer hits a **reed**; electrostatic pickup |
+| [Hohner Clavinet D6](intro-clavinet.qmd) | Pad drives a **string** onto an anvil; two magnetic pickups |
+| [Yamaha CP-70](intro-cp70.qmd) | Piano hammers hit **strings**; piezo pickups, no soundboard |
+| [Hohner Pianet N](intro-pianet.qmd) | A pad lets go of a **reed**; capacitance pickup (N) |
+
+## Play and compare
+
+```{=html}
+<div class="ik-box" data-kind="epiano" data-id="rhodes"><div class="epc" data-model="rhodes" data-to="wurli"></div></div>
+```
+
+**How to use it.** Pick an instrument and a riff and press **▶ Play**, or play the keys. **Panel** shows the real controls;
+**Simple** shows every one as a slider, marked *on the panel*, *inside* (a service adjustment) or *this page's*.
+**Turn into it** moves the sound to another instrument and lists every setting:
+<span class="epc-tag epc-exact">the same</span>, <span class="epc-tag epc-approx">close</span> or
+<span class="epc-tag epc-lost">lost</span>.
+
+## How each one is modelled
+
+- **Rhodes:** the tine's motion is a few decaying vibrations (its fundamental, the tonebar's, and two short, high bending modes:
+  the bell). The pickup's magnetic field is strongest in the middle, so the output bends when the tine swings far: hit harder,
+  or set the tine near the pickup's centre, and the tone gets **bark**.
+- **Wurlitzer and Pianet:** a reed swinging nearer and further from a charged plate. The change is not the same on both sides,
+  so loud notes gain even harmonics. The Wurlitzer's amplifier adds more.
+- **Clavinet:** a string's harmonics, read by a pickup at one place along it. A pickup near the end hears more high harmonics.
+  Two pickups together, or one reversed against the other, add or cancel harmonics. The tabs are filters.
+- **CP-70:** two or three slightly mistuned strings per note, with sharpened overtones (stiff, short bass strings), and a pickup
+  under the bridge instead of a soundboard.
+- After the notes: amplifier drive, EQ, speaker, tremolo (on the Suitcase it pans left and right), volume.
+
+All of the numbers are this page's choices, not measurements.
+
+## Famous tracks
+
+### Rhodes
+
+### "Riders on the Storm" (The Doors)
+
+[▶ The Doors - Riders on the Storm (Official Audio)](https://www.youtube.com/watch?v=7G2-FPlvY58) on YouTube (The Doors).
+
+Ray Manzarek played a Mark I Stage 73 in the studio (Wikipedia). Soft, rainy chords and a jazzy line, with no bark.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;rhodes&quot;,&quot;voice&quot;:6,&quot;hard&quot;:3,&quot;bass&quot;:6,&quot;drive&quot;:1}" data-riff="ballad">
+
+**Starting setting** (Rhodes): voice 6, hard 3, bass 6, drive 1. Then change it until it sounds like the record to you.
+
+</div>
+
+### "Angela (Theme from Taxi)" (Bob James)
+
+[▶ Angela (Theme From Taxi)](https://www.youtube.com/watch?v=1RCKWBFt9MU) on YouTube (Bob James - Topic).
+
+Wikipedia names it among Rhodes recordings. A bell-like melody over chords: the tine's attack is the point.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;suitcase&quot;,&quot;vib&quot;:3,&quot;rate&quot;:3,&quot;hard&quot;:7}" data-riff="ballad">
+
+**Starting setting** (suitcase): vib 3, rate 3, hard 7. Then change it until it sounds like the record to you.
+
+</div>
+
+### "Just the Way You Are" (Billy Joel)
+
+[▶ Billy Joel - Just the Way You Are (Official Audio)](https://www.youtube.com/watch?v=HaA3YZ6QdJU) on YouTube (billyjoelVEVO).
+
+Wikipedia does not name this song; it is widely called a Rhodes record (unverified). Soft chords with a slow, gentle movement.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;suitcase&quot;,&quot;vib&quot;:4,&quot;rate&quot;:2.5,&quot;hard&quot;:3}" data-riff="ballad">
+
+**Starting setting** (suitcase): vib 4, rate 2.5, hard 3. Then change it until it sounds like the record to you.
+
+</div>
+
+### Wurlitzer
+
+### "The Logical Song" (Supertramp)
+
+[▶ The Logical Song](https://www.youtube.com/watch?v=low6Coqrw9Y) on YouTube (Supertramp - Topic).
+
+Wikipedia names Supertramp's Wurlitzer on it. Bouncy, bright chords with a little bite.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;wurli&quot;,&quot;gap&quot;:6,&quot;drive&quot;:5,&quot;tone&quot;:6}" data-riff="soul">
+
+**Starting setting** (Wurlitzer): gap 6, drive 5, tone 6. Then change it until it sounds like the record to you.
+
+</div>
+
+### "Dreamer" (Supertramp)
+
+[▶ Dreamer](https://www.youtube.com/watch?v=7fdAFmtq-o8) on YouTube (Supertramp - Topic).
+
+Also named by Wikipedia. A fast repeated chord figure: hard hits that bark.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;wurli&quot;,&quot;gap&quot;:8,&quot;drive&quot;:6,&quot;hard&quot;:7}" data-riff="soft_hard">
+
+**Starting setting** (Wurlitzer): gap 8, drive 6, hard 7. Then change it until it sounds like the record to you.
+
+</div>
+
+### "You're My Best Friend" (Queen)
+
+[▶ Queen - You&#x27;re My Best Friend (Official Video)](https://www.youtube.com/watch?v=HaZpZQG2z10) on YouTube (Queen Official).
+
+John Deacon played the Wurlitzer (Wikipedia). A steady comping part under the voices.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;wurli&quot;,&quot;gap&quot;:5,&quot;drive&quot;:3}" data-riff="soul">
+
+**Starting setting** (Wurlitzer): gap 5, drive 3. Then change it until it sounds like the record to you.
+
+</div>
+
+### Clavinet
+
+### "Use Me" (Bill Withers)
+
+[▶ Bill Withers - Use Me (Official Audio)](https://www.youtube.com/watch?v=NuYDKzky4z0) on YouTube (BillWithersVEVO).
+
+Wikipedia names it. A two-note groove that never lets go: short, damped notes.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;clav&quot;,&quot;soft&quot;:false,&quot;treb&quot;:true,&quot;mute&quot;:3}" data-riff="funk">
+
+**Starting setting** (Clavinet): soft False, treb True, mute 3. Then change it until it sounds like the record to you.
+
+</div>
+
+### "Higher Ground" (Stevie Wonder)
+
+[▶ Higher Ground](https://www.youtube.com/watch?v=1esf0efHbjM) on YouTube (Stevie Wonder - Topic).
+
+Wikipedia names it. A driving riff, thick and gritty (on the record also through effects: unverified).
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;clav&quot;,&quot;pc&quot;:&quot;D&quot;,&quot;pa&quot;:&quot;A&quot;,&quot;drive&quot;:6}" data-riff="funk">
+
+**Starting setting** (Clavinet): pc D, pa A, drive 6. Then change it until it sounds like the record to you.
+
+</div>
+
+### CP-70
+
+### "That's All" (Genesis)
+
+[▶ Genesis - That&#x27;s All (Official Music Video)](https://www.youtube.com/watch?v=Vzyn60Zns-E) on YouTube (Genesis).
+
+Tony Banks's CP-70 (Wikipedia). A bouncing chord part, bright and percussive.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;cp70&quot;,&quot;treble&quot;:7,&quot;hard&quot;:6}" data-riff="soul">
+
+**Starting setting** (CP-70): treble 7, hard 6. Then change it until it sounds like the record to you.
+
+</div>
+
+### "In Your Eyes" (Peter Gabriel)
+
+[▶ Peter Gabriel - In Your Eyes](https://www.youtube.com/watch?v=kU8OJAOMbPg) on YouTube (Peter Gabriel).
+
+Wikipedia names it. Chords that ring and shimmer under the voice.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;cp70&quot;,&quot;detune&quot;:6,&quot;treble&quot;:6}" data-riff="ballad">
+
+**Starting setting** (CP-70): detune 6, treble 6. Then change it until it sounds like the record to you.
+
+</div>
+
+### Pianet
+
+### "She's Not There" (The Zombies)
+
+[▶ The Zombies - She&#x27;s Not There (Mono Remastered) (Official Lyric Video)](https://www.youtube.com/watch?v=T6cLHNF5N8E) on YouTube (The Zombies Music).
+
+Wikipedia names it. The famous keyboard solo and the soft, clipped chords.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;pianet&quot;,&quot;pad&quot;:6}" data-riff="soul">
+
+**Starting setting** (Pianet): pad 6. Then change it until it sounds like the record to you.
+
+</div>
+
+### "These Eyes" (The Guess Who)
+
+[▶ The Guess Who - These Eyes (Official Audio)](https://www.youtube.com/watch?v=xcLdbsrSngA) on YouTube (TheGuessWhoVEVO).
+
+Wikipedia names it. Gentle chords under the verse.
+
+<div class="ik-step" data-set="{&quot;model&quot;:&quot;pianet&quot;,&quot;pad&quot;:4,&quot;vibOn&quot;:false}" data-riff="ballad">
+
+**Starting setting** (Pianet): pad 4, vibOn False. Then change it until it sounds like the record to you.
+
+</div>
+
+## Meet each one
+
+- [Meet the Rhodes](intro-rhodes.qmd)
+- [Meet the Wurlitzer](intro-wurlitzer.qmd)
+- [Meet the Clavinet](intro-clavinet.qmd)
+- [Meet the CP-70](intro-cp70.qmd)
+- [Meet the Pianet](intro-pianet.qmd)
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/epiano.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Clavinet." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Clavinet](https://en.wikipedia.org/wiki/Clavinet). Pad, string and anvil, yarn damping, electromagnetic pickups; D6 (1971): Brilliant / Treble high-pass, Medium / Soft low-pass, AB and CD pickup rockers, mute slider; Use Me, Higher Ground.
+
+"Pianet." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Pianet](https://en.wikipedia.org/wiki/Pianet). Pads lifting off reeds; N: leather pads, variable-capacitance pickup; T: suction pads, electromagnetic; models and years 1962-1983; vibrato switch, volume pedal; She's Not There, These Eyes.
+
+"Rhodes Piano." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Rhodes_piano](https://en.wikipedia.org/wiki/Rhodes_piano). Tines, tonebar, pickup; Mark I Stage and Suitcase (1970), 73 keys, about 130 lb; the Suitcase's tremolo between two speakers labelled vibrato; recordings (Riders on the Storm, Angela).
+
+"Wurlitzer Electronic Piano." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Wurlitzer_electronic_piano](https://en.wikipedia.org/wiki/Wurlitzer_electronic_piano). Felt hammer on a metal reed, electrostatic pickup at 170 V DC; 200 (1968, about 88,000), 200A (1974-1983), 64 keys, 56 lb, 30 W; single-speed vibrato; Supertramp and Queen.
+
+"Yamaha CP-70." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Yamaha_CP-70](https://en.wikipedia.org/wiki/Yamaha_CP-70). Hammers on strings, no soundboard, piezo pickups on the harp; CP-70 (1976, 73 keys), CP-80 (1978, 88), to 1985; short bass strings; Genesis, Peter Gabriel.
+:::
+<!-- /works-cited -->
+

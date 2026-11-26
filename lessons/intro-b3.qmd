@@ -1,0 +1,122 @@
+---
+title: "Meet the Hammond B-3"
+toc: true
+toc-depth: 2
+description: "A first look at the Hammond B-3 / C-3 organ and its Leslie speaker: drawbars, preset keys, percussion, vibrato and chorus, a guided tour, famous records and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Organs Compared](organ-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the B-3 is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Hammond B-3** and **C-3** came out in **1954**, with harmonic percussion, and were made until early **1975** (Wikipedia, "Hammond organ"). The C-3 is the same organ in a closed church-style cabinet (UNVERIFIED detail).
+- It is *electromechanical*: spinning **tonewheels** past pickups make the pitches, close to pure sine waves.
+- Two manuals of 61 keys and a pedalboard (Wikipedia).
+- It is usually played through a **Leslie speaker** such as the 122, which spins a horn and a drum (Wikipedia, "Hammond organ").
+
+## Its sound
+
+- **Drawbars** mix nine pitches of every key, from 16′ (an octave below) to 1′ (three octaves above). Pull one out to make it louder.
+- **Preset keys**: the reverse-coloured octave to the left. C silences the manual, A♯ and B pick the two drawbar sets, the others are presets (Wikipedia).
+- **Percussion** adds a quick 2nd or 3rd harmonic to the start of a note; only on the upper manual with preset B, and it silences the 1′ drawbar (Hammond XK-5 manual, "same as B-3/C-3").
+- **Vibrato and chorus**: six settings V1 V2 V3 C1 C2 C3, on or off for each manual (Wikipedia).
+- **Leslie**: slow (chorale) or fast (tremolo). The horn speeds up faster than the drum.
+
+## The panel
+
+This is the B-3 panel from [Classic Organs Compared](organ-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel or the computer keys (a w s e d f t g y h u j k); **Keys play** picks the manual. Pull a drawbar or press a tab while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="organ" data-id="b3"><div class="ocmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads a registration and plays the same short phrase: chords on the lower manual, a tune on the upper, a bass line on the pedals.
+
+```{=html}
+<div class="ik-step" data-ex="b3-flute"><p><b>A preset.</b> Preset key <b>C♯</b>, <i>Stopped Flute</i> (00 5320 000). Listen: soft and hollow.</p></div>
+<div class="ik-step" data-ex="b3-jazz" data-set="{&quot;perc&quot;:false,&quot;leslie&quot;:&quot;stop&quot;,&quot;vibU&quot;:false}"><p><b>Three drawbars.</b> Preset <b>B</b>, drawbars 88 8000 000, nothing else. Listen: a round, plain organ tone.</p></div>
+<div class="ik-step" data-ex="b3-jazz" data-set="{&quot;leslie&quot;:&quot;stop&quot;,&quot;vibU&quot;:false}"><p><b>Percussion.</b> Add <b>3rd harmonic, soft, fast</b> percussion. Listen for a click of pitch at the start of each melody note.</p></div>
+<div class="ik-step" data-ex="b3-jazz" data-set="{&quot;leslie&quot;:&quot;stop&quot;}"><p><b>Chorus C3.</b> Turn the scanner on for the upper manual on <b>C3</b>. Listen: a shimmer around each note.</p></div>
+<div class="ik-step" data-ex="b3-jazz"><p><b>Leslie slow.</b> The same with the Leslie on <b>chorale</b>. Listen: the sound moves round the room.</p></div>
+<div class="ik-step" data-ex="b3-full"><p><b>Everything out, Leslie fast.</b> All nine drawbars at 8 and the Leslie on <b>tremolo</b>, with some drive. Listen: loud, bright and spinning.</p></div>
+```
+
+## Build it from a record
+
+Each record below has a **Build it on the panel** button that loads a *starting* registration made on this page (not the player's documented setting), so you can listen to the record and change the panel by ear until it is close.
+
+```{=html}
+<div class="ocmp-tracks" data-organ="b3"></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Hammond organ":
+
+- Booker T. & the M.G.'s, "Green Onions"
+- Procol Harum, "A Whiter Shade of Pale" (Matthew Fisher)
+- The Spencer Davis Group, "Gimme Some Lovin'" (Steve Winwood)
+- Jimmy Smith, "Walk on the Wild Side"
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Green Onions — Booker T. & the M.G.'s (YouTube: “Booker T. & The MG's - Green Onions (Official Audio)”)](https://www.youtube.com/watch?v=0oox9bJaGJ8) (RHINO) ↗
+- [A Whiter Shade of Pale — Procol Harum (YouTube: “A Whiter Shade of Pale”)](https://www.youtube.com/watch?v=PHJRouEN-SY) (Procol Harum - Topic) ↗
+- [A Whiter Shade of Pale (promo film) — Procol Harum (YouTube: “PROCOL HARUM - A Whiter Shade Of Pale - promo film #1 (Official Video)”)](https://www.youtube.com/watch?v=z0vCwGUZe1I) (FLY Records) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>What makes the B-3&#x27;s pitches?</b></p><ul><li>Spinning tonewheels</li><li>Pipes and wind</li><li>A tape loop</li><li>Twelve transistor oscillators</li></ul><p class="ik-why">Tonewheels past pickups.</p></div>
+<div class="ik-q" data-a="0"><p><b>You pull a drawbar further out. What happens?</b></p><ul><li>Its pitch gets louder</li><li>It goes up an octave</li><li>The Leslie speeds up</li><li>Nothing</li></ul><p class="ik-why">Out = louder.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which preset key cancels the manual?</b></p><ul><li>C</li><li>B</li><li>A♯</li><li>F</li></ul><p class="ik-why">C is the cancel key (Wikipedia).</p></div>
+<div class="ik-q" data-a="0"><p><b>Percussion works…</b></p><ul><li>On the upper manual with preset B</li><li>On the pedals</li><li>On every preset</li><li>Only with the Leslie fast</li></ul><p class="ik-why">XK-5 manual, as on the B-3.</p></div>
+<div class="ik-q" data-a="0"><p><b>Leslie &#x27;tremolo&#x27; is…</b></p><ul><li>The fast speed</li><li>The slow speed</li><li>Stopped</li><li>A reverb</li></ul><p class="ik-why">Chorale slow, tremolo fast.</p></div>
+```
+
+## Next
+
+- [Classic Organs Compared](organ-compare.html?organ=b3): the B-3 side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/organ-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/organ-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Cherry Audio. "Blue3 Organ: Main." *Cherry Audio Documentation*. [docs.cherryaudio.com/cherry-audio/instruments/blue3/main](https://docs.cherryaudio.com/cherry-audio/instruments/blue3/main). An emulator's table of the B-3 factory presets; upper C-sharp to E agree with a second web page. Not a Hammond document: the other presets are unverified.
+
+Hammond Suzuki. "XK-5 Owner's Manual." *ManualsLib*. [www.manualslib.com/manual/1591989/Hammond-Xk-5.html?page=52](https://www.manualslib.com/manual/1591989/Hammond-Xk-5.html?page=52). Percussion: 2nd = the 4′ drawbar's pitch, 3rd = the 2⅔′; fast / slow decay; the 1′ drawbar inoperative while on; only with the B preset key and only on the upper manual, 'same as B-3/C-3'. Read as quoted in a search result, page not opened in full.
+
+**For students**
+
+"Hammond organ." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Hammond_organ](https://en.wikipedia.org/wiki/Hammond_organ). B-3 / C-3 1954 to early 1975, harmonic percussion; 61-key manuals, 25-note pedalboard; reverse-coloured preset keys, C cancel, B and B-flat the drawbar sets; percussion 2nd / 3rd, soft / normal, single-trigger; V1-V3 C1-C3 per manual; Leslie 122; players and records.
+:::
+<!-- /works-cited -->
+

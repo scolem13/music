@@ -1,0 +1,112 @@
+---
+title: "Meet the Farfisa Combo Compact"
+toc: true
+toc-depth: 2
+description: "A first look at the Farfisa Combo Compact organ: on/off voice tabs, vibrato and reverb, a guided tour, famous records and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Organs Compared](organ-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Farfisa is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Farfisa Combo Compact** came out in **1964**; the Compact series was made until 1969 (Wikipedia, "Farfisa").
+- Like the Vox it is a divide-down organ: twelve tone-generator boards and frequency dividers, with germanium transistors (Wikipedia).
+- Its reverb tank is valve-driven, so it is not fully transistorised (Wikipedia).
+
+## Its sound
+
+- **Voice tabs**, each on or off: 16′ bass and strings; 8′ flute, oboe, trumpet and strings; 4′ flute, piccolo and strings (Wikipedia).
+- No drawbars: a tab is either in or out, so levels come from which tabs you mix.
+- **Four vibrato settings** (Wikipedia; here light / heavy and slow / fast, an UNVERIFIED reading).
+- A **reverb** tab.
+
+## The panel
+
+This is the Farfisa panel from [Classic Organs Compared](organ-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel or the computer keys (a w s e d f t g y h u j k); **Keys play** picks the manual. Pull a drawbar or press a tab while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="organ" data-id="farfisa"><div class="ocmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads a set of tabs and plays the same short phrase.
+
+```{=html}
+<div class="ik-step" data-ex="far-flutes" data-set="{&quot;fl4&quot;:false,&quot;vib&quot;:&quot;off&quot;}"><p><b>Flute 8′ only.</b> Listen: a hollow, plain tone.</p></div>
+<div class="ik-step" data-ex="far-flutes" data-set="{&quot;vib&quot;:&quot;off&quot;}"><p><b>Add Flute 4′.</b> Listen: brighter, an octave added.</p></div>
+<div class="ik-step" data-ex="far-flutes"><p><b>Light fast vibrato.</b> Listen: the classic wobbly combo-organ sound.</p></div>
+<div class="ik-step" data-ex="far-lobster"><p><b>Oboe and trumpet.</b> Reed tabs instead of flutes. Listen: buzzy and nasal.</p></div>
+<div class="ik-step" data-ex="far-domine"><p><b>Heavy slow vibrato and reverb.</b> Listen: a wide, spacey sound.</p></div>
+```
+
+## Build it from a record
+
+Each record below has a **Build it on the panel** button that loads a *starting* registration made on this page (not the player's documented setting), so you can listen to the record and change the panel by ear until it is close.
+
+```{=html}
+<div class="ocmp-tracks" data-organ="farfisa"></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Farfisa":
+
+- Sam the Sham and the Pharaohs, "Wooly Bully" (1965)
+- Strawberry Alarm Clock, "Incense and Peppermints" (1967)
+- Pink Floyd (Richard Wright started on a Combo Compact)
+- Philip Glass, *Einstein on the Beach* (a Mini-Compact)
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Incense and Peppermints — Strawberry Alarm Clock (YouTube: “Incense And Peppermints”)](https://www.youtube.com/watch?v=idJzMSKaHaw) (Strawberry Alarm Clock - Topic) ↗
+- [Rock Lobster — The B-52's (YouTube: “Rock Lobster”)](https://www.youtube.com/watch?v=2uH5AhFh8UI) (The B-52's - Topic) ↗
+- [Astronomy Domine — Pink Floyd (YouTube: “Astronomy Domine”)](https://www.youtube.com/watch?v=EOta1fulN1Y) (Pink Floyd - Topic) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>How do you set a voice on the Combo Compact?</b></p><ul><li>Press its tab in or out</li><li>Pull a drawbar</li><li>Turn a knob</li><li>Patch a cable</li></ul><p class="ik-why">Tabs are on or off.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which part of it is NOT transistor?</b></p><ul><li>The reverb (valve-driven)</li><li>The tabs</li><li>The keys</li><li>The dividers</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which footages are on its tabs?</b></p><ul><li>16′, 8′ and 4′</li><li>Only 8′</li><li>32′ and 1′</li><li>2⅔′ and 1⅗′</li></ul><p class="ik-why">Wikipedia's tab list.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which record is named for its Farfisa?</b></p><ul><li>"Wooly Bully"</li><li>"Green Onions"</li><li>"Light My Fire"</li><li>"Toccata and Fugue"</li></ul><p class="ik-why">Sam the Sham on the Combo Compact.</p></div>
+```
+
+## Next
+
+- [Classic Organs Compared](organ-compare.html?organ=farfisa): the Farfisa side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/organ-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/organ-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Farfisa." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Farfisa](https://en.wikipedia.org/wiki/Farfisa). Combo Compact 1964, Compact series to 1969; twelve generator boards and dividers, germanium transistors, valve-driven reverb; the tab list by model; four vibrato settings; users and records.
+:::
+<!-- /works-cited -->
+
