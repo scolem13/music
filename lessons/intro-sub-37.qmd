@@ -1,0 +1,99 @@
+---
+title: "Meet the Moog Sub 37"
+toc: true
+toc-depth: 2
+description: "A first look at the Moog Sub 37 and Subsequent 37: two oscillators and a sub, MultiDrive, Duo mode, a guided tour, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Synths Compared](synth-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Sub 37 is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Sub 37** is an analog synth made by **Moog Music** from **2014**; the **Subsequent 37** followed in 2017 (Wikipedia, "Moog Sub 37").
+- Its own manual could not be found, so the panel follows the **Subsequent 25**, a smaller synth of the same family (Subsequent 25 manual).
+
+## Its sound
+
+- **Two oscillators** whose waves sweep from triangle to saw to square to narrow pulse (Subsequent 25 manual, PDF p. 13).
+- A **sub oscillator** one octave below oscillator 1 (manual, PDF p. 15).
+- **MultiDrive** overdrives the sound before the filter (manual, PDF p. 16).
+- **Duo mode** plays two notes at once through the one filter (manual, PDF p. 9).
+
+## The panel
+
+This is the Sub 37 panel from [Classic Synths Compared](synth-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard. Turn any knob while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="sub37"><div class="scmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads a worked example and changes one thing.
+
+```{=html}
+<div class="ik-step" data-ex="sub37-drive" data-set="{&quot;mSub&quot;:0,&quot;drive&quot;:0}"><p><b>One oscillator.</b> Sub and drive off. Listen: a plain bass.</p></div>
+<div class="ik-step" data-ex="sub37-drive" data-set="{&quot;drive&quot;:0}"><p><b>Add the sub.</b> Sub oscillator at 7. Listen: deeper.</p></div>
+<div class="ik-step" data-ex="sub37-drive"><p><b>MultiDrive.</b> Drive at 4. Listen: warmer and grittier.</p></div>
+<div class="ik-step" data-ex="sub37-duo" data-set="{&quot;duo&quot;:false}"><p><b>Mono.</b> Duo off: one note at a time.</p></div>
+<div class="ik-step" data-ex="sub37-duo"><p><b>Duo mode.</b> Two notes through one filter. Listen: two-note intervals.</p></div>
+```
+
+## Famous records
+
+Wikipedia, "Moog Sub 37" does not name any records, so none are listed here yet.
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Deadmau5 - Bleed (Moog Sub 37 Cover)](https://www.youtube.com/watch?v=zdStf7tc-KY) (Plexis) ↗
+- [Rush - Tom Sawyer Synth Lead - Moog Sub 37 Synth Sounds](https://www.youtube.com/watch?v=_iwNjqN6ZSE) (Synth Sounds) ↗
+- [Stranger Things Theme - Moog Sub 37](https://www.youtube.com/watch?v=tmV8M0lkCtI) (Sonicwave) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>Duo mode plays…</b></p><ul><li>Two notes through one filter</li><li>Two songs</li><li>Drums and bass</li><li>Only noise</li></ul><p class="ik-why">Manual PDF p. 9.</p></div>
+<div class="ik-q" data-a="0"><p><b>The sub oscillator is…</b></p><ul><li>One octave below oscillator 1</li><li>An octave above</li><li>A drum</li><li>A filter</li></ul><p class="ik-why">Manual PDF p. 15.</p></div>
+<div class="ik-q" data-a="0"><p><b>MultiDrive…</b></p><ul><li>Overdrives the sound</li><li>Adds reverb</li><li>Records audio</li><li>Changes tempo</li></ul><p class="ik-why">Manual PDF p. 16.</p></div>
+<div class="ik-q" data-a="2"><p><b>Which year did the Sub 37 come out?</b></p><ul><li>1970</li><li>1983</li><li>2014</li><li>2024</li></ul><p class="ik-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Classic Synths Compared](synth-compare.html?synth=sub37): the Sub 37 side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Moog Sub 37." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Moog_Sub_37](https://en.wikipedia.org/wiki/Moog_Sub_37). History section.
+
+**For teachers**
+
+Moog Music. *Subsequent 25 Owner's Manual*. Moog Music Inc., [www.adorama.com/col/productManuals/MGLPSSB00701.pdf](https://www.adorama.com/col/productManuals/MGLPSSB00701.pdf). Cited for the Sub 37 / Subsequent 37 features the family shares (their own manual could not be obtained): Duo Mode, ladder filter (PDF 9), waves (PDF 13), sync (PDF 14), sub oscillator (PDF 15), MultiDrive (PDF 16), the tutorial's cutoff 320 Hz and MultiDrive at 9 o'clock (PDF 19), LFO (PDF 20).
+:::
+<!-- /works-cited -->
+

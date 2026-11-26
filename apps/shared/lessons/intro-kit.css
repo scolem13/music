@@ -1,0 +1,30 @@
+/* intro-kit.css — "Meet the Instruments" lessons: the compare widget shown compact, tour steps, self-check quiz. */
+.ik-compact .ik-hide,
+.ik-compact .scmp-top, .ik-compact .scmp-say, .ik-compact .scmp-legend, .ik-compact .scmp-plots, .ik-compact .scmp-report,
+.ik-compact .scmp-turn, .ik-compact .scmp-hear, .ik-compact .scmp-flow, .ik-compact .scmp-assign, .ik-compact .slib,
+.ik-compact .dcmp-top, .ik-compact .dcmp-say, .ik-compact .dcmp-dst, .ik-compact .dcmp-report, .ik-compact .dcmp-plots, .ik-compact .dcmp-io,
+.ik-compact .dcmp-msel,
+.ik-compact .sqc-top, .ik-compact .sqc-say, .ik-compact .sqc-dst, .ik-compact .sqc-report, .ik-compact .sqc-pics, .ik-compact .sqc-voice,
+.ik-compact .sqc-file, .ik-compact .sqc-assign { display: none !important; }
+.ik-compact .scmp-panels, .ik-compact .dcmp-panels, .ik-compact .sqc-panels { display: block; grid-template-columns: 1fr; }
+.ik-box { margin: 1rem 0; max-width: 100%; overflow-x: auto; }
+.ik-step { border-left: 4px solid var(--site-line, #ccd); padding: .5rem .9rem; margin: .8rem 0; border-radius: 4px; }
+.ik-step.ik-now { border-left-color: var(--bs-primary, #2a6fdb); background: color-mix(in srgb, var(--bs-primary, #2a6fdb) 7%, transparent); }
+.ik-bar { display: flex; gap: .4rem; margin-bottom: .35rem; flex-wrap: wrap; }
+.ik-step p { margin: .2rem 0; }
+.ik-sheet { margin-top: .4rem; }
+.ik-paper { max-width: 100%; overflow-x: auto; background: #fff; }
+.ik-q { border: 1px solid var(--site-line, #ccd); border-radius: 6px; padding: .6rem .9rem; margin: .8rem 0; }
+.ik-q ul { list-style: none; padding-left: 0; margin: .3rem 0; }
+.ik-q li { margin: .3rem 0; }
+.ik-choice { text-align: left; white-space: normal; }
+.ik-choice.ik-right { background: #d9f2dd; border-color: #2e8540; color: #134d1f; }
+.ik-choice.ik-wrong { background: #fbe3e3; border-color: #b3261e; color: #6b130e; }
+.ik-fb { font-weight: 600; min-height: 1.4em; margin: .2rem 0; }
+.ik-fb-ok { color: #2e8540; } .ik-fb-no { color: #b3261e; }
+.ik-do { font-size: 1.05em; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .ik-choice.ik-right { background: #1d3b24; color: #cfeed6; }
+  :root:not([data-theme="light"]) .ik-choice.ik-wrong { background: #3f1d1b; color: #f6d0cd; }
+  :root:not([data-theme="light"]) .ik-fb-ok { color: #7fd48f; } :root:not([data-theme="light"]) .ik-fb-no { color: #f08a82; }
+}

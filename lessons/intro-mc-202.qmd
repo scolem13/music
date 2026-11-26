@@ -1,0 +1,102 @@
+---
+title: "Meet the Roland MC-202"
+toc: true
+toc-depth: 2
+description: "A first look at the Roland MC-202 MicroComposer: step time and gate time, accent and portamento on two channels, a guided tour, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Sequencers Compared](sequencer-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the MC-202 is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **MC-202** was made by **Roland** in **1983** (Wikipedia, "Roland MC-202").
+- Wikipedia: "It was the first groovebox." It has a small synth inside and a sequencer.
+- It has **2 channels**, holds about 2600 steps and can save to tape (MC-202 manual, p. 5).
+
+## Its sound
+
+- Each note has a **step time** (how long until the next note) and a **gate time** (how long the note sounds) (manual, p. 10).
+- A quarter note is **24**; the default step is 24 and gate 12 (manual, pp. 15-16).
+- A gate of 0 is a **rest** (manual, p. 19).
+- **Accent** and **portamento** (glide) are stored with the notes (manual, pp. 5, 29).
+
+## The panel
+
+This is the MC-202 panel from [Classic Sequencers Compared](sequencer-compare.qmd), drawn after the real one (not a copy). Change the steps on the panel. The tour's ▶ buttons play it. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="seq" data-id="mc202"><div class="sqc"></div></div>
+```
+
+## Guided tour
+
+Each step plays the same bass line and changes one thing. Numbers are in 24ths of a beat.
+
+```{=html}
+<div class="ik-step" data-seq="{&quot;bpm&quot;:112,&quot;ch&quot;:[[{&quot;n&quot;:36,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:36,&quot;st&quot;:6,&quot;gt&quot;:3,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:48,&quot;st&quot;:6,&quot;gt&quot;:3,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:46,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:43,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:39,&quot;st&quot;:6,&quot;gt&quot;:3,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:41,&quot;st&quot;:6,&quot;gt&quot;:3,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:43,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:36,&quot;st&quot;:24,&quot;gt&quot;:6,&quot;acc&quot;:false,&quot;po&quot;:false}],[]]}"><p><b>Short gates.</b> Every gate half the step. Listen: bouncy, detached notes.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:112,&quot;ch&quot;:[[{&quot;n&quot;:36,&quot;st&quot;:12,&quot;gt&quot;:11,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:36,&quot;st&quot;:6,&quot;gt&quot;:5,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:48,&quot;st&quot;:6,&quot;gt&quot;:5,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:46,&quot;st&quot;:12,&quot;gt&quot;:11,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:43,&quot;st&quot;:12,&quot;gt&quot;:11,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:39,&quot;st&quot;:6,&quot;gt&quot;:5,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:41,&quot;st&quot;:6,&quot;gt&quot;:5,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:43,&quot;st&quot;:12,&quot;gt&quot;:11,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:36,&quot;st&quot;:24,&quot;gt&quot;:23,&quot;acc&quot;:false,&quot;po&quot;:false}],[]]}"><p><b>Long gates.</b> Each gate almost as long as its step. Listen: smooth, joined notes.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:112,&quot;ch&quot;:[[{&quot;n&quot;:36,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:true,&quot;po&quot;:false},{&quot;n&quot;:36,&quot;st&quot;:6,&quot;gt&quot;:3,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:48,&quot;st&quot;:6,&quot;gt&quot;:3,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:46,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:43,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:true,&quot;po&quot;:false},{&quot;n&quot;:39,&quot;st&quot;:6,&quot;gt&quot;:3,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:41,&quot;st&quot;:6,&quot;gt&quot;:3,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:43,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:36,&quot;st&quot;:24,&quot;gt&quot;:6,&quot;acc&quot;:true,&quot;po&quot;:false}],[]]}"><p><b>Accents.</b> Notes 1, 5 and 9 accented. Listen: they punch.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:112,&quot;ch&quot;:[[{&quot;n&quot;:36,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:true,&quot;po&quot;:false},{&quot;n&quot;:36,&quot;st&quot;:6,&quot;gt&quot;:3,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:48,&quot;st&quot;:6,&quot;gt&quot;:5,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:46,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:false,&quot;po&quot;:true},{&quot;n&quot;:43,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:true,&quot;po&quot;:false},{&quot;n&quot;:39,&quot;st&quot;:6,&quot;gt&quot;:3,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:41,&quot;st&quot;:6,&quot;gt&quot;:5,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:43,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:false,&quot;po&quot;:true},{&quot;n&quot;:36,&quot;st&quot;:24,&quot;gt&quot;:6,&quot;acc&quot;:true,&quot;po&quot;:false}],[]]}"><p><b>Portamento.</b> Notes 4 and 8 glide in from the note before. Listen for the slides.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:112,&quot;ch&quot;:[[{&quot;n&quot;:36,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:true,&quot;po&quot;:false},{&quot;n&quot;:36,&quot;st&quot;:6,&quot;gt&quot;:3,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:48,&quot;st&quot;:6,&quot;gt&quot;:3,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:46,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:43,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:true,&quot;po&quot;:false},{&quot;n&quot;:39,&quot;st&quot;:6,&quot;gt&quot;:3,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:41,&quot;st&quot;:6,&quot;gt&quot;:3,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:43,&quot;st&quot;:12,&quot;gt&quot;:6,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:36,&quot;st&quot;:24,&quot;gt&quot;:6,&quot;acc&quot;:true,&quot;po&quot;:false}],[{&quot;n&quot;:67,&quot;st&quot;:48,&quot;gt&quot;:44,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:70,&quot;st&quot;:24,&quot;gt&quot;:22,&quot;acc&quot;:false,&quot;po&quot;:false},{&quot;n&quot;:72,&quot;st&quot;:24,&quot;gt&quot;:22,&quot;acc&quot;:false,&quot;po&quot;:true}]]}"><p><b>Channel 2.</b> A held line on the second channel above the bass. Listen: two parts at once.</p></div>
+```
+
+## Famous records
+
+Wikipedia, "Roland MC-202" does not name any records, so none are listed here yet.
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Shannon "Let The Music Play" – Roland TB-303 Pattern, TR-808, MC-202, Behringer TD-3](https://www.youtube.com/watch?v=P1ufKoVrDsE) (DUCKTRONIC) ↗
+- [Johann Sebastian Bach "Prelude in C Major" on a Roland MC-202, SH-101, TR-606 – Data Cassette](https://www.youtube.com/watch?v=Uwn9ph14K5A) (DUCKTRONIC) ↗
+- [Roland MC202  Bach Prelude and Fugue N.1 in C maj](https://www.youtube.com/watch?v=yDNDMbRwODE) (Synthguru) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>Gate time is…</b></p><ul><li>How long the note sounds</li><li>How long until the next note</li><li>The tempo</li><li>The volume</li></ul><p class="ik-why">Manual p. 10.</p></div>
+<div class="ik-q" data-a="0"><p><b>On the MC-202 a quarter note is…</b></p><ul><li>24</li><li>4</li><li>120</li><li>16</li></ul><p class="ik-why">Manual p. 15.</p></div>
+<div class="ik-q" data-a="0"><p><b>A gate of 0 is…</b></p><ul><li>A rest</li><li>The loudest note</li><li>A slide</li><li>An error</li></ul><p class="ik-why">Manual p. 19.</p></div>
+<div class="ik-q" data-a="0"><p><b>Wikipedia calls the MC-202 the first…</b></p><ul><li>Groovebox</li><li>Synthesizer</li><li>Drum machine</li><li>Computer</li></ul><p class="ik-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Classic Sequencers Compared](sequencer-compare.html?seq=mc202): the MC-202 side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/sequencer-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/sequencer-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Roland MC-202." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Roland_MC-202](https://en.wikipedia.org/wiki/Roland_MC-202). 1983; "the first groovebox"; names no records.
+
+**For teachers**
+
+Roland Corporation. *MC-202 MicroComposer Owner's Manual*. Roland, [1983], scan at Internet Archive, [archive.org/details/synthmanual-roland-mc-202-owners-manual](https://archive.org/details/synthmanual-roland-mc-202-owners-manual). PDF pages: features, 2 channels, 2600 steps, tape (5), step and gate time (10, 15-16), rests (17, 19), accent and portamento (29, 31).
+:::
+<!-- /works-cited -->
+

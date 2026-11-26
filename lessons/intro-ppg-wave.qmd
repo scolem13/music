@@ -1,0 +1,102 @@
+---
+title: "Meet the PPG Wave"
+toc: true
+toc-depth: 2
+description: "A first look at the PPG Wave: wavetables that move under an envelope or LFO, a guided tour, the artists who used it, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Synths Compared](synth-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the PPG Wave is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **PPG Wave** was "built by the German company Palm Products GmbH from 1981 to 1987" (Wikipedia, "PPG Wave").
+- Wolfgang Palm pioneered **wavetable synthesis**, the idea behind it (Wikipedia).
+- The Wave 2.3 has eight voices (PPG *Wave 2.3 Service Manual*, p. 5).
+
+## Its sound
+
+- A **wavetable** is a row of 64 different waves; the Wave 2.3 has 30 of them (Sound On Sound, "PPG Wave 2.3 & Waveterm B").
+- An envelope or LFO can **move through the table**, so the tone changes while a note plays.
+- After the digital waves comes an **analog filter**, the SSM 2044, 24 dB per octave (service manual, p. 5; Wikipedia).
+- The four tables on this page are the page's own, not the PPG's real ones.
+
+## The panel
+
+This is the PPG Wave panel from [Classic Synths Compared](synth-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard. Turn any knob while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="ppg"><div class="scmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads a worked example and changes one thing. Learn more in [Sound 9: Wavetable](sound-wavetable.qmd).
+
+```{=html}
+<div class="ik-step" data-ex="ppg-sweep" data-set="{&quot;envWave&quot;:0}"><p><b>One wave, standing still.</b> Envelope 1 does not move the wave. Listen: a steady tone.</p></div>
+<div class="ik-step" data-ex="ppg-sweep"><p><b>The envelope moves the wave.</b> <b>Env 1 → wave</b> at 50. Listen: each note changes colour as it plays.</p></div>
+<div class="ik-step" data-ex="ppg-sweep" data-set="{&quot;waveA&quot;:40,&quot;waveB&quot;:40,&quot;envWave&quot;:0}"><p><b>A different wave.</b> Start further along the table. Listen: a new tone.</p></div>
+<div class="ik-step" data-ex="ppg-pad" data-set="{&quot;lfoWave&quot;:0}"><p><b>A pad, no LFO.</b> Listen: smooth and still.</p></div>
+<div class="ik-step" data-ex="ppg-pad"><p><b>The LFO moves the wave.</b> <b>LFO → wave</b> at 20. Listen for a slow, glassy shimmer.</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "PPG Wave":
+
+- used by a-ha, Alphaville, Bronski Beat and David Bowie
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [The Sound of Talk Talk - Candy  | Vintage Synth Cover | PPG wave](https://www.youtube.com/watch?v=nhMUVDxtWpE) (RetroSound) ↗
+- [Famous PPG Wave Synthesizer Sounds](https://www.youtube.com/watch?v=cxRN_RHUwys) (RetroSound) ↗
+- [80s Michael Cretu Sound Recreated with PPG Wave](https://www.youtube.com/watch?v=UjhA9sYmF2I) (DominikK) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>A wavetable is…</b></p><ul><li>A row of different waves</li><li>A table for a drum kit</li><li>A mixing desk</li><li>A guitar effect</li></ul><p class="ik-why">Sound On Sound.</p></div>
+<div class="ik-q" data-a="0"><p><b>What makes the tone move during a note?</b></p><ul><li>An envelope or LFO moving through the table</li><li>Turning the volume</li><li>Changing the tempo</li><li>Nothing</li></ul><p class="ik-why">Steps 2 and 5.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which country was PPG from?</b></p><ul><li>Germany</li><li>Japan</li><li>USA</li><li>Brazil</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>Is the PPG&#x27;s filter digital or analog?</b></p><ul><li>Analog (SSM 2044)</li><li>Digital</li><li>It has no filter</li><li>Made of water</li></ul><p class="ik-why">Service manual p. 5.</p></div>
+```
+
+## Next
+
+- [Classic Synths Compared](synth-compare.html?synth=ppg): the PPG Wave side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+PPG. *Wave 2.3 Service Manual*. Palm Products GmbH, [emusic-diy.org/_media/ppgmanuals:wave23.pdf](https://emusic-diy.org/_media/ppgmanuals:wave23.pdf). Eight voices, digital oscillators with wavetable EPROMs, SSM 2044 filters, panel pots reading 0-63 (PDF p. 5). No owner's manual was found. A scan, read by OCR.
+
+"PPG Wave." *Wikipedia*, [en.wikipedia.org/wiki/PPG_Wave](https://en.wikipedia.org/wiki/PPG_Wave). Years of the Wave 2, 2.2 and 2.3; two oscillators a voice on the 2.2 and 2.3; SSM 2044 24 dB filters.
+
+Sound On Sound. "PPG Wave 2.3 & Waveterm B" [review]. *Sound On Sound*, [www.soundonsound.com/reviews/ppg-wave-23-waveterm-b](https://www.soundonsound.com/reviews/ppg-wave-23-waveterm-b). 64 waves make a wavetable; 30 wavetables on the Wave 2.3.
+:::
+<!-- /works-cited -->
+

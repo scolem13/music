@@ -1,0 +1,111 @@
+---
+title: "Meet the Roland TB-303"
+toc: true
+toc-depth: 2
+description: "A first look at the Roland TB-303 Bass Line: six knobs, accent and slide, a guided tour that builds an acid line knob by knob, the records it is on, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Synths Compared](synth-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the TB-303 is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **TB-303 Bass Line** was made by **Roland** and released in **1981** (Wikipedia, "Roland TB-303").
+- It was meant to play bass lines for guitarists practising alone. It sold badly at first.
+- But it "became a foundation of electronic dance music genres such as acid house" (Wikipedia).
+- It has a built-in **sequencer** too: see [Meet the TB-303 pattern mode](intro-tb-303-seq.qmd).
+
+## Its sound
+
+- **One oscillator**, sawtooth or square: a switch picks (TB-303 manual, p. 34).
+- **Six knobs**: Cut off freq, Resonance, Env mod, Decay, Accent and Tuning (manual, p. 34).
+- **Accent** and **slide** are stored on each step of a pattern (manual, p. 89).
+- Its filter is 24 dB per octave and does not whistle by itself (Wikipedia).
+
+## The panel
+
+This is the TB-303 panel from [Classic Synths Compared](synth-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard. Turn any knob while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="tb303"><div class="scmp"></div></div>
+```
+
+## Guided tour
+
+Every step plays the same acid line. Only the knobs change, one at a time.
+
+```{=html}
+<div class="ik-step" data-ex="303-acid" data-set="{&quot;cutoff&quot;:6,&quot;res&quot;:0,&quot;envMod&quot;:0,&quot;accent&quot;:0,&quot;decay&quot;:4}"><p><b>Plain.</b> Resonance, Env mod and Accent at 0. Listen: a plain buzzy saw bass.</p></div>
+<div class="ik-step" data-ex="303-acid" data-set="{&quot;cutoff&quot;:2,&quot;res&quot;:0,&quot;envMod&quot;:0,&quot;accent&quot;:0}"><p><b>Cut off freq down.</b> Turn the <b>Cut off freq</b> to 2. Listen: darker and softer.</p></div>
+<div class="ik-step" data-ex="303-acid" data-set="{&quot;cutoff&quot;:2,&quot;res&quot;:8,&quot;envMod&quot;:0,&quot;accent&quot;:0}"><p><b>Resonance up.</b> Turn <b>Resonance</b> to 8. Listen for a ringing, nasal tone.</p></div>
+<div class="ik-step" data-ex="303-acid" data-set="{&quot;cutoff&quot;:2,&quot;res&quot;:8,&quot;envMod&quot;:8,&quot;accent&quot;:0,&quot;decay&quot;:3}"><p><b>Env mod up.</b> Turn <b>Env mod</b> to 8. Listen: each note now starts bright and closes quickly: the "squelch".</p></div>
+<div class="ik-step" data-ex="303-acid" data-set="{&quot;cutoff&quot;:2,&quot;res&quot;:8,&quot;envMod&quot;:8,&quot;accent&quot;:0,&quot;decay&quot;:8}"><p><b>Decay longer.</b> Turn <b>Decay</b> to 8. Listen: each note stays bright for longer.</p></div>
+<div class="ik-step" data-ex="303-acid"><p><b>Accent.</b> The example's own settings with <b>Accent</b> at 8. Listen for the accented notes jumping out, and the slides gliding.</p></div>
+<div class="ik-step" data-ex="303-square"><p><b>Square wave.</b> Flip the waveform switch to square. Listen: hollower and softer.</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Roland TB-303":
+
+- Charanjit Singh, *Synthesizing: Ten Ragas to a Disco Beat* (1982)
+- Orange Juice, "Rip It Up" (1983)
+- Phuture, "Acid Tracks" (1987)
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [The Bass Line Of “I Feel Love” On A TB-303](https://www.youtube.com/watch?v=sIBSN1_9Geo) (Doctor Mix) ↗
+- [DAFT PUNK 'DA FUNK' TB-303 / TB-03 / TB-3 / TD-3 PATTERN](https://www.youtube.com/watch?v=1yE_T-DRkDE) (Chris Jones) ↗
+- [Mory Kante "Yeke Yeke" (Hardfloor Mix) – Roland TB-303 Pattern, MXR Distortion +, Behringer TD-3 ABL](https://www.youtube.com/watch?v=RozlLKQ5X5Q) (DUCKTRONIC) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="1"><p><b>Which knob makes each note start bright and close quickly?</b></p><ul><li>Tuning</li><li>Env mod</li><li>Volume</li><li>Accent</li></ul><p class="ik-why">Env mod sends the envelope to the filter.</p></div>
+<div class="ik-q" data-a="0"><p><b>What two things are stored on a step besides pitch?</b></p><ul><li>Accent and slide</li><li>Reverb and delay</li><li>Chords and lyrics</li><li>Drums and bass</li></ul><p class="ik-why">Manual p. 89.</p></div>
+<div class="ik-q" data-a="1"><p><b>How many waveforms does it have?</b></p><ul><li>One</li><li>Two: saw and square</li><li>Four</li><li>Sixty-four</li></ul><p class="ik-why">A switch picks saw or square.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which music grew up around the TB-303?</b></p><ul><li>Acid house</li><li>Baroque opera</li><li>Bluegrass</li><li>Barbershop</li></ul><p class="ik-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Classic Synths Compared](synth-compare.html?synth=tb303): the TB-303 side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Roland. *TB-303 Bass Line Owner's Manual*. Roland Corporation, Dec. 1981, [soundprogramming.net/manuals/Roland_TB-303_Manual.pdf](https://soundprogramming.net/manuals/Roland_TB-303_Manual.pdf). The tone control section: cutoff, resonance, env mod, decay, accent, waveform (p. 34); writing accent and slide (p. 40); specifications: two waveforms, pitch, length, accent and slide stored per step (p. 89). A scan, read by OCR.
+
+"Roland TB-303." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Roland_TB-303](https://en.wikipedia.org/wiki/Roland_TB-303).
+
+**For teachers**
+
+"Roland TB-303." *Wikipedia*, [en.wikipedia.org/wiki/Roland_TB-303](https://en.wikipedia.org/wiki/Roland_TB-303). Sawtooth or square; a 24 dB-per-octave resonant low-pass filter that does not self-oscillate; 1981-1984.
+:::
+<!-- /works-cited -->
+

@@ -1,0 +1,109 @@
+---
+title: "Meet the Yamaha DX7"
+toc: true
+toc-depth: 2
+description: "A first look at the Yamaha DX7: FM synthesis with six operators and no filter, a guided tour from a sine to a bell, the records it is on, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Synths Compared](synth-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the DX7 is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **DX7** was made by **Yamaha** and came out in **1983** (Wikipedia, "Yamaha DX7").
+- "The DX7 was the first commercially successful digital synthesizer" (Wikipedia).
+- It has **16 voices** and **32 memories** (DX7 manual, introduction).
+
+## Its sound
+
+- It uses **FM**: one sine wave (a *modulator*) wobbles the pitch of another (a *carrier*) very fast, which makes new harmonics (DX7 manual, p. 23).
+- It has **six operators** joined in one of **32 algorithms** (manual, p. 24).
+- There is **no filter**: the sound changes when a modulator's **output level** changes (manual, pp. 34-35).
+- Each operator has its own envelope of 4 rates and 4 levels (manual, p. 26).
+
+## The panel
+
+This is the DX7 panel from [Classic Synths Compared](synth-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard. Turn any knob while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="dx7"><div class="scmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads a worked example and changes one thing. Learn more about FM in [Sound 8: FM](sound-fm.qmd).
+
+```{=html}
+<div class="ik-step" data-ex="dx7-saw" data-set="{&quot;o2l&quot;:0}"><p><b>A sine wave.</b> Operator 1 alone (operator 2's level at 0). Listen: pure and plain.</p></div>
+<div class="ik-step" data-ex="dx7-saw" data-set="{&quot;o2l&quot;:70}"><p><b>Add a little FM.</b> Operator 2's <b>output level</b> to 70. Listen: brighter, buzzier.</p></div>
+<div class="ik-step" data-ex="dx7-saw"><p><b>More FM.</b> Operator 2 at 99, the manual's first exercise (pp. 34-35). Listen: like a sawtooth, with no filter at all.</p></div>
+<div class="ik-step" data-ex="dx7-bell"><p><b>A bell.</b> The modulator at 3.5 times the carrier's frequency. Listen: a bell, because the harmonics are not in a row.</p></div>
+<div class="ik-step" data-ex="dx7-ep"><p><b>An electric-piano-like tine.</b> Two stacks of operators. Listen for the "ding" at the start of each note.</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Yamaha DX7":
+
+- Prince, "When Doves Cry"
+- a-ha, "Take On Me" (the "Bass 1" preset)
+- Berlin, "Take My Breath Away" (the "Bass 2" preset)
+- Brian Eno, *Apollo: Atmospheres and Soundtracks*
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Yamaha DX7 - 80’s Hits, a-ha Take On Me, Europe The Final Countdown, Mr Mister, Berlin, Madonna](https://www.youtube.com/watch?v=WiYa4oUxKR8) (Power DX7) ↗
+- [Yamaha DX7 10 Famous Electric Piano Songs](https://www.youtube.com/watch?v=rE5DFsxKx9c) (Nicolas Melis) ↗
+- [Yamaha DX7 - Famous Sounds Demo](https://www.youtube.com/watch?v=BCwn26FePAo) (Synths Stories) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>In FM, the operator that changes another&#x27;s pitch is called…</b></p><ul><li>The modulator</li><li>The filter</li><li>The mixer</li><li>The drum</li></ul><p class="ik-why">Manual p. 23.</p></div>
+<div class="ik-q" data-a="0"><p><b>How does the DX7 make a sound brighter without a filter?</b></p><ul><li>Turn a modulator's output level up</li><li>Turn the reverb up</li><li>Play faster</li><li>It cannot</li></ul><p class="ik-why">Steps 1-3.</p></div>
+<div class="ik-q" data-a="2"><p><b>How many operators does it have?</b></p><ul><li>Two</li><li>Four</li><li>Six</li><li>Thirty-two</li></ul><p class="ik-why">32 is the number of algorithms.</p></div>
+<div class="ik-q" data-a="0"><p><b>What was the DX7 the first of?</b></p><ul><li>Commercially successful digital synths</li><li>Electric guitars</li><li>Drum machines</li><li>Radios</li></ul><p class="ik-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Classic Synths Compared](synth-compare.html?synth=dx7): the DX7 side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Yamaha DX7." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Yamaha_DX7](https://en.wikipedia.org/wiki/Yamaha_DX7). History section: FM licence, sales, presets and the records they are on.
+
+**For students**
+
+Yamaha. *DX7 Digital Programmable Algorithm Synthesizer Operation Manual*. Yamaha Corporation, [homepages.abdn.ac.uk/d.j.benson/pages/dx7/manuals/dx7-man.pdf](https://homepages.abdn.ac.uk/d.j.benson/pages/dx7/manuals/dx7-man.pdf). 16-note polyphony and 32 memories (introduction); operators, carriers and modulators (p. 23); 32 algorithms, carriers of algorithms 1, 5, 16 and 32 (p. 24); feedback (p. 25); envelopes (p. 26); the first FM exercise (pp. 34-35); glossary (p. 62).
+
+**For teachers**
+
+Levien, Raph. "fm_core.cc." *Music Synthesizer for Android*, Google, Apache License 2.0, [github.com/google/music-synthesizer-for-android/blob/master/app/src/main/jni/fm_core.cc](https://github.com/google/music-synthesizer-for-android/blob/master/app/src/main/jni/fm_core.cc). The DX7's 32 algorithms as a table of operator buses, used by the page's engine; checked against the DX7 manual's carrier counts, not diagram by diagram.
+:::
+<!-- /works-cited -->
+

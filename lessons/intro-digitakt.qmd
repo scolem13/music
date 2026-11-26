@@ -1,0 +1,102 @@
+---
+title: "Meet the Elektron-style trig sequencer (Digitakt II)"
+toc: true
+toc-depth: 2
+description: "A first look at an Elektron-style trig sequencer after the Digitakt II: trigs, parameter locks, micro timing, trig conditions, a guided tour, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Sequencers Compared](sequencer-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Elektron-style sequencer is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- **Elektron** is a company from Gothenburg, Sweden (Wikipedia, "Elektron (company)"). The **Digitakt II** came out in **2024** (Wikipedia).
+- Its sequencer has a row of steps; a step with a note on it is a **trig** (Digitakt II manual, p. 41).
+- **Parameter locks** let one step change a setting just for itself (manual, p. 47). Elektron started them on the 2002 Machinedrum (Wikipedia).
+- Elektron users named by Wikipedia include Thom Yorke, Sophie and Depeche Mode.
+
+## Its sound
+
+- A **note trig** plays a note; a **lock trig** changes settings without playing (manual, p. 41).
+- **Micro timing** pushes one trig a little early or late (manual, p. 45).
+- **Trig conditions** play a trig only on some loops, such as 1:2 = loops 1, 3, 5 … (manual, p. 48).
+- **Swing** runs from 51 % to 80 % (manual, p. 23).
+
+## The panel
+
+This is the Elektron-style sequencer panel from [Classic Sequencers Compared](sequencer-compare.qmd), drawn after the real one (not a copy). Change the steps on the panel. The tour's ▶ buttons play it. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="seq" data-id="elektron"><div class="sqc"></div></div>
+```
+
+## Guided tour
+
+Each step plays one bar twice (two loops) and adds one thing.
+
+```{=html}
+<div class="ik-step" data-seq="{&quot;bpm&quot;:122,&quot;steps&quot;:16,&quot;speed&quot;:1,&quot;swing&quot;:50,&quot;loop&quot;:1,&quot;fill&quot;:false,&quot;trigs&quot;:[{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:48,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:46,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:39,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:41,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:43,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null],&quot;def&quot;:{&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5}}"><p><b>Note trigs.</b> Nine trigs on 16 steps. Listen: a plain line.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:122,&quot;steps&quot;:16,&quot;speed&quot;:1,&quot;swing&quot;:50,&quot;loop&quot;:1,&quot;fill&quot;:false,&quot;trigs&quot;:[{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.2},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:48,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.9},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.3},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:46,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.7},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:39,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:41,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.8},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:43,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.4},null,null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.6},null],&quot;def&quot;:{&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5}}"><p><b>Parameter locks.</b> Each trig locks its own filter cutoff. Listen: every note a different brightness.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:122,&quot;steps&quot;:16,&quot;speed&quot;:1,&quot;swing&quot;:50,&quot;loop&quot;:1,&quot;fill&quot;:false,&quot;trigs&quot;:[{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:48,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:9,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:46,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:39,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:41,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:9,&quot;cut&quot;:0.5},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:43,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null],&quot;def&quot;:{&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5}}"><p><b>Micro timing.</b> Two trigs pushed late. Listen: a lazy, human feel.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:122,&quot;steps&quot;:16,&quot;speed&quot;:1,&quot;swing&quot;:50,&quot;loop&quot;:1,&quot;fill&quot;:false,&quot;trigs&quot;:[{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:48,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:46,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5,&quot;cond&quot;:&quot;1:2&quot;},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:39,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:41,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:43,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5,&quot;cond&quot;:&quot;1:2&quot;},null,null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null],&quot;def&quot;:{&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5}}"><p><b>Trig condition 1:2.</b> Two trigs play only on loop 1 of every 2. Listen: the second time round they are missing.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:122,&quot;steps&quot;:16,&quot;speed&quot;:1,&quot;swing&quot;:66,&quot;loop&quot;:1,&quot;fill&quot;:false,&quot;trigs&quot;:[{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:48,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:46,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:39,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:41,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:43,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null,null,{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},null],&quot;def&quot;:{&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5}}"><p><b>Swing 66 %.</b> Listen: the off-beat 16ths move late.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:122,&quot;steps&quot;:12,&quot;speed&quot;:1,&quot;swing&quot;:50,&quot;loop&quot;:1,&quot;fill&quot;:false,&quot;trigs&quot;:[{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:48,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:43,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:46,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:51,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:48,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:39,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:43,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5},{&quot;type&quot;:&quot;n&quot;,&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5,&quot;micro&quot;:0,&quot;cut&quot;:0.5}],&quot;def&quot;:{&quot;note&quot;:36,&quot;vel&quot;:100,&quot;len&quot;:0.5}}"><p><b>12 steps.</b> The track is only 12 steps long. Listen: a loop that does not fit 4/4 the usual way.</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Elektron (company)":
+
+- Elektron users named by Wikipedia: Panda Bear, Thom Yorke, Sophie, the Knife, Timbaland, Depeche Mode
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Blue Monday by New Order on the Digitakt](https://www.youtube.com/watch?v=f06ajN7Oka8) (ADDEND) ↗
+- [New Order Blue Monday (Cover) Digitakt song mode ⍼](https://www.youtube.com/watch?v=WuhPghN7Cd4) (Yellow 13) ↗
+- [DaftPunks' Harder Better Faster Stronger on Digitakt (Cover)](https://www.youtube.com/watch?v=ziABlpB1Zf8) (JaNein) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>A parameter lock…</b></p><ul><li>Changes a setting on one step only</li><li>Locks the machine</li><li>Stops the tempo</li><li>Saves to tape</li></ul><p class="ik-why">Manual p. 47.</p></div>
+<div class="ik-q" data-a="0"><p><b>Trig condition 1:2 plays on…</b></p><ul><li>Loops 1, 3, 5 …</li><li>Every loop</li><li>No loops</li><li>Only loop 2</li></ul><p class="ik-why">Manual p. 48.</p></div>
+<div class="ik-q" data-a="0"><p><b>Micro timing moves a trig…</b></p><ul><li>A little early or late</li><li>To another song</li><li>An octave up</li><li>Into the reverb</li></ul><p class="ik-why">Manual p. 45.</p></div>
+<div class="ik-q" data-a="0"><p><b>A lock trig…</b></p><ul><li>Changes settings without playing a note</li><li>Plays the loudest note</li><li>Ends the pattern</li><li>Is a drum</li></ul><p class="ik-why">Manual p. 41.</p></div>
+```
+
+## Next
+
+- [Classic Sequencers Compared](sequencer-compare.html?seq=elektron): the Elektron-style sequencer side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/sequencer-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/sequencer-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Elektron (company)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Elektron_(company)](https://en.wikipedia.org/wiki/Elektron_(company)). Gothenburg; Digitakt II 2024; parameter locks from the 2002 Machinedrum; users named.
+
+Elektron. *Digitakt II User Manual*. Elektron Music Machines, 2024, [www.elektron.se/en/download-support-digitakt-ii](https://www.elektron.se/en/download-support-digitakt-ii). Note and lock trigs (41), micro timing (45), 128 steps, speed (45-46), parameter locks (47), trig conditions (48), FILL (49), TRIG page (53-54), swing (23).
+:::
+<!-- /works-cited -->
+

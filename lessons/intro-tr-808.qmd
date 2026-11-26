@@ -1,0 +1,112 @@
+---
+title: "Meet the Roland TR-808"
+toc: true
+toc-depth: 2
+description: "A first look at the Roland TR-808 Rhythm Composer: its booming bass drum, claps and cowbell, a guided tour that builds a beat, the records it is on, and a short quiz."
+instruments: [drums, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Drum Machines Compared](drum-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the TR-808 is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **TR-808 Rhythm Composer** was made by **Roland** and released in **1980** (Wikipedia, "Roland TR-808").
+- Its sounds are not recordings. Each drum is a small **circuit** that makes the sound (TR-808 Service Notes, pp. 5-6).
+- Wikipedia: it "became one of the most influential inventions in popular music."
+
+## Its sound
+
+- The **bass drum** is a circuit that rings like a bell, then dies away. A long **Decay** makes the famous boom (service notes, pp. 5-6).
+- The **snare** mixes two ringing circuits with noise; **Snappy** sets how much noise (service notes, pp. 5-6).
+- The **hand clap** is filtered noise with a short burst and a longer tail (service notes, pp. 5-6).
+- Patterns are written in **steps**: 16 steps to a bar (TR-808 owner's manual).
+
+## The panel
+
+This is the TR-808 panel from [Classic Drum Machines Compared](drum-compare.qmd), drawn after the real one (not a copy). Click the squares of the grid to add or take away hits. The tour's ▶ buttons play it. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="drum" data-id="tr808"><div class="dcmp"></div></div>
+```
+
+## Guided tour
+
+Each step plays two bars of a beat. One thing is added or changed each time. Watch the lit step move along the grid.
+
+```{=html}
+<div class="ik-step" data-pat="{&quot;bpm&quot;:100,&quot;rows&quot;:{&quot;kick&quot;:&quot;x.......x.......&quot;},&quot;kit&quot;:{&quot;kick&quot;:{&quot;decay&quot;:3}}}"><p><b>Bass drum, short.</b> Bass drum on beats 1 and 3, <b>Decay</b> at 3. Listen: a tight thump.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:100,&quot;rows&quot;:{&quot;kick&quot;:&quot;x.......x.......&quot;},&quot;kit&quot;:{&quot;kick&quot;:{&quot;decay&quot;:9}}}"><p><b>Bass drum, long Decay.</b> Decay at 9. Listen for the long boom that rings like a note.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:100,&quot;rows&quot;:{&quot;kick&quot;:&quot;x.......x.....x.&quot;,&quot;snare&quot;:&quot;....x.......x...&quot;},&quot;kit&quot;:{&quot;kick&quot;:{&quot;decay&quot;:9},&quot;snare&quot;:{&quot;snappy&quot;:3}}}"><p><b>Add the snare.</b> Snare on 2 and 4, <b>Snappy</b> low. Listen: more tone than noise.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:100,&quot;rows&quot;:{&quot;kick&quot;:&quot;x.......x.....x.&quot;,&quot;snare&quot;:&quot;....x.......x...&quot;},&quot;kit&quot;:{&quot;kick&quot;:{&quot;decay&quot;:9},&quot;snare&quot;:{&quot;snappy&quot;:9}}}"><p><b>Snappy up.</b> Snappy at 9. Listen: the snare gets a bright, noisy rattle.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:100,&quot;rows&quot;:{&quot;kick&quot;:&quot;x.......x.....x.&quot;,&quot;clap&quot;:&quot;....x.......x...&quot;,&quot;chh&quot;:&quot;x.x.x.x.x.x.x.x.&quot;},&quot;kit&quot;:{&quot;kick&quot;:{&quot;decay&quot;:9}}}"><p><b>Clap and closed hi-hat.</b> The clap instead of the snare, hi-hats on every 8th note.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:112,&quot;rows&quot;:{&quot;kick&quot;:&quot;x.....x...x.....&quot;,&quot;clap&quot;:&quot;....x.......x...&quot;,&quot;chh&quot;:&quot;xxxxxxxxxxxxxxxx&quot;,&quot;cowbell&quot;:&quot;..x.....x.....x.&quot;,&quot;mconga&quot;:&quot;.......x.....x..&quot;},&quot;kit&quot;:{&quot;kick&quot;:{&quot;decay&quot;:8}}}"><p><b>Cowbell and conga: electro.</b> 16th-note hats, cowbell and a conga. Listen for the sound of early 1980s electro.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:112,&quot;rows&quot;:{&quot;kick&quot;:&quot;x.....x...x.....&quot;,&quot;clap&quot;:&quot;....x.......x...&quot;,&quot;chh&quot;:&quot;xxxxxxxxxxxxxxxx&quot;},&quot;acc&quot;:&quot;x...x...x...x...&quot;,&quot;accLevel&quot;:10,&quot;kit&quot;:{&quot;kick&quot;:{&quot;decay&quot;:8}}}"><p><b>Accent.</b> The 808 has one <b>accent</b> row for the whole step (service notes, p. 1). Listen: every beat is louder.</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Roland TR-808":
+
+- Marvin Gaye, "Sexual Healing" (1982)
+- Afrika Bambaataa and the Soulsonic Force, "Planet Rock" (1982)
+- Whitney Houston, "I Wanna Dance With Somebody (Who Loves Me)" (1987)
+- Kanye West, *808s & Heartbreak* (2008)
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Afrika Bambaataa – Planet Rock Drum Pattern | Electro | Roland TR-808](https://www.youtube.com/watch?v=mAliZTauDmg) (Drum Patterns) ↗
+- ["Sexual Healing" 808 Drum Pattern Explained](https://www.youtube.com/watch?v=fPlVy2PCw5o) (Doctor Mix) ↗
+- [SynthMania quick tip #6 - Marvin Gaye's "Sexual Healing" Roland TR-808 pattern](https://www.youtube.com/watch?v=XRCdLN-brkI) (SynthMania) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>How does the 808 make its drum sounds?</b></p><ul><li>With circuits</li><li>With recordings of real drums</li><li>With a microphone</li><li>With a guitar</li></ul><p class="ik-why">Service notes pp. 5-6.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which knob makes the bass drum boom for longer?</b></p><ul><li>Decay</li><li>Tempo</li><li>Snappy</li><li>Level</li></ul><p class="ik-why">Step 2.</p></div>
+<div class="ik-q" data-a="0"><p><b>Snappy changes how much ____ is in the snare.</b></p><ul><li>Noise</li><li>Bass</li><li>Reverb</li><li>Pitch</li></ul><p class="ik-why">Step 4.</p></div>
+<div class="ik-q" data-a="1"><p><b>How many steps are in a bar, usually?</b></p><ul><li>4</li><li>16</li><li>64</li><li>100</li></ul><p class="ik-why">Owner's manual.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which record is famous for the 808?</b></p><ul><li>"Sexual Healing"</li><li>"Für Elise"</li><li>"Greensleeves"</li><li>"Yesterday"</li></ul><p class="ik-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Classic Drum Machines Compared](drum-compare.html?machine=tr808): the TR-808 side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/drum-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/drum-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Roland TR-808." *Wikipedia*, [en.wikipedia.org/wiki/Roland_TR-808](https://en.wikipedia.org/wiki/Roland_TR-808). History, makers, sales, music and records.
+
+**For teachers**
+
+Roland Corporation. *TR-808 Rhythm Composer Owner's Manual* [introduction]. Internet Archive, [archive.org/details/manualsbase-id-576201](https://archive.org/details/manualsbase-id-576201). Writing a pattern: a measure of 16 steps, pre-scale, tap write.
+
+Roland Corporation. *TR-808 Service Notes*. 1st ed., 15 June 1981, 2nd printing 1983, Internet Archive, [archive.org/details/synthmanual-roland-tr-808-service-notes](https://archive.org/details/synthmanual-roland-tr-808-service-notes). Specifications: 1-32 steps a measure, 64 measures x 12 tracks, tempo 40-300, accent 0-10 dB (p. 1); the sound circuits: bridged T-network bass drum and its accent trick, snare, toms / congas, clap, cowbell, cymbal and hi-hats (pp. 5-6); knobs (p. 16).
+:::
+<!-- /works-cited -->
+

@@ -1,0 +1,108 @@
+---
+title: "Meet the Oberheim OB-Xa"
+toc: true
+toc-depth: 2
+description: "A first look at the Oberheim OB-Xa: eight voices, a 2- or 4-pole filter, sync and unison, a guided tour, the records it is on, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Synths Compared](synth-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the OB-Xa is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **OB-Xa** was made by **Oberheim** and "released in December 1980" (Wikipedia, "Oberheim OB-Xa").
+- It has up to **eight voices**, and can split the keyboard or double the voices (OB-Xa manual, p. 13).
+- It used Curtis chips for its oscillators and filters, which made it cheaper to build and fix than Oberheim's earlier synths (Wikipedia).
+
+## Its sound
+
+- **Two oscillators** a voice, with **sync** (OB-Xa manual, p. 10).
+- Its filter switches between **2-pole (12 dB)** and **4-pole (24 dB)** (manual, p. 11). 2-pole is brighter and softer.
+- **Unison** stacks the voices on one note (manual, p. 8).
+- Oberheim's older **SEM** module had a filter with low-pass, band-pass, high-pass and notch (Wikipedia, "Oberheim SEM"); the OB-Xa does not.
+
+## The panel
+
+This is the OB-Xa panel from [Classic Synths Compared](synth-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard. Turn any knob while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="obxa"><div class="scmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads a worked example and changes one thing.
+
+```{=html}
+<div class="ik-step" data-ex="ob-2pole" data-set="{&quot;pole4&quot;:true}"><p><b>4-pole brass pad.</b> The filter on 4-pole (24 dB). Listen: smooth and dark.</p></div>
+<div class="ik-step" data-ex="ob-2pole"><p><b>2-pole.</b> Flip to 2-pole (12 dB). Listen: brighter and more open: the famous Oberheim brass.</p></div>
+<div class="ik-step" data-ex="ob-sync" data-set="{&quot;uni&quot;:false,&quot;sync&quot;:false,&quot;fEnvO2&quot;:false}"><p><b>Two oscillators, no sync.</b> Oscillator 2 a fifth above. Listen: a plain lead.</p></div>
+<div class="ik-step" data-ex="ob-sync" data-set="{&quot;uni&quot;:false}"><p><b>Sync on.</b> Oscillator 2 synced, with the filter envelope moving its pitch (F-ENV → osc 2, manual p. 10). Listen for the tearing sweep.</p></div>
+<div class="ik-step" data-ex="ob-sync"><p><b>Unison.</b> Every voice on the same note. Listen: very big.</p></div>
+<div class="ik-step" data-ex="ob-sem-bp"><p><b>Not an OB-Xa: the SEM band-pass.</b> This filter mode is from the older SEM, not the OB-Xa. Listen: thin and nasal, low and high both cut.</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Oberheim OB-Xa":
+
+- Van Halen, "Jump" (1984)
+- also used by Miles Davis, Prince and Queen
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Van Halen Jump Intro song 1984 (played on Oberheim OB-Xa)](https://www.youtube.com/watch?v=KJjofa069gE) (Steve S.) ↗
+- ["Van Halen Jump"  on keyboard Oberheim OBXA](https://www.youtube.com/watch?v=FeOjJ8x2iqU) (synthartist69) ↗
+- [Prince When Doves Cry - Vintage Synth Cover - Oberheim OB-Xa](https://www.youtube.com/watch?v=IoCCtEL9Q-k) (RetroSound) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="2"><p><b>How many voices can an OB-Xa have?</b></p><ul><li>One</li><li>Four</li><li>Eight</li><li>Thirty-two</li></ul><p class="ik-why">Manual p. 13.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which filter setting is brighter?</b></p><ul><li>2-pole (12 dB)</li><li>4-pole (24 dB)</li><li>They sound the same</li><li>Neither</li></ul><p class="ik-why">Fewer poles take away less.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which famous song has the OB-Xa as its main part?</b></p><ul><li>Van Halen, "Jump"</li><li>"Happy Birthday"</li><li>Beethoven's Fifth</li><li>"Planet Rock"</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>Band-pass, high-pass and notch are modes of…</b></p><ul><li>The older SEM filter</li><li>The OB-Xa filter</li><li>The keyboard</li><li>The LFO</li></ul><p class="ik-why">Step 6.</p></div>
+```
+
+## Next
+
+- [Classic Synths Compared](synth-compare.html?synth=obxa): the OB-Xa side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Oberheim OB-Xa." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Oberheim_OB-Xa](https://en.wikipedia.org/wiki/Oberheim_OB-Xa). History section.
+
+**For students**
+
+Oberheim. *OB-Xa Operation Manual*. Oberheim Electronics, [soundprogramming.net/manuals/Oberheim_OB-Xa_Manual.pdf](https://soundprogramming.net/manuals/Oberheim_OB-Xa_Manual.pdf). Unison and the low-note rule (p. 8); the LFO, 0.1-20 Hz, sine / square / S&H (p. 9); oscillators, sync and F-ENV to oscillator 2 (p. 10); 2-pole 12 dB and 4-pole 24 dB filter (p. 11); envelopes (p. 12); 8 voices, split and double (p. 13). A scan, read by OCR.
+
+**For teachers**
+
+"Oberheim Polyphonic Synthesizer." *Wikipedia*, [en.wikipedia.org/wiki/Oberheim_SEM](https://en.wikipedia.org/wiki/Oberheim_SEM). The SEM's two-pole filter as low-pass, band-pass, high-pass or notch; two VCOs per voice.
+:::
+<!-- /works-cited -->
+

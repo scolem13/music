@@ -1,0 +1,109 @@
+---
+title: "Meet the analog step sequencer (Moog 960 style)"
+toc: true
+toc-depth: 2
+description: "A first look at the analog step sequencer after the Moog 960: three rows of eight knobs, stages that skip or stop, a guided tour of a Berlin School loop, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Sequencers Compared](sequencer-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the 960-style sequencer is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- An **analog step sequencer** plays a loop of **stages**. Each stage has a knob that sets a voltage, and the voltage sets the pitch.
+- The Moog 960 had **3 rows of 8 stages** (Synthesizers.com Q960 data sheet, p. 1; the Q960 is "functionally equivalent to the Moog 960", p. 5).
+- Analog sequencers made "repeated minimalistic phrases" (Wikipedia, "Music sequencer").
+- No Moog 960 manual was found, so this machine is built from the Q960 data sheet.
+
+## Its sound
+
+- The knobs send **1 volt per octave**: one volt higher is one octave up (Q960 sheet, p. 3).
+- Each stage can be **Normal**, **Skip** or **Stop** (Q960 sheet, p. 3).
+- A clock moves from stage to stage; turn it up and the loop runs faster.
+- On this page the sound is one shared simple voice, not a model of any Moog.
+
+## The panel
+
+This is the 960-style sequencer panel from [Classic Sequencers Compared](sequencer-compare.qmd), drawn after the real one (not a copy). Change the steps on the panel. The tour's ▶ buttons play it. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="seq" data-id="a960"><div class="sqc"></div></div>
+```
+
+## Guided tour
+
+Each step sets the eight knobs of row A (and the other rows) and plays the loop twice.
+
+```{=html}
+<div class="ik-step" data-seq="{&quot;bpm&quot;:120,&quot;base&quot;:36,&quot;A&quot;:[0,0,0,0,0,0,0,0],&quot;B&quot;:[1,1,1,1,1,1,1,1],&quot;C&quot;:[0,0,0,0,0,0,0,0],&quot;xA&quot;:1,&quot;xB&quot;:1,&quot;xC&quot;:1,&quot;mode&quot;:[&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;],&quot;rate&quot;:8,&quot;rowC&quot;:false,&quot;rowB&quot;:&quot;none&quot;}"><p><b>Every stage the same.</b> All eight knobs of row A at 0 volts. Listen: one note, eight times.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:120,&quot;base&quot;:36,&quot;A&quot;:[0,1,0.58,0.25,0,1.25,0.83,0.58],&quot;B&quot;:[1,1,1,1,1,1,1,1],&quot;C&quot;:[0,0,0,0,0,0,0,0],&quot;xA&quot;:1,&quot;xB&quot;:1,&quot;xC&quot;:1,&quot;mode&quot;:[&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;],&quot;rate&quot;:8,&quot;rowC&quot;:false,&quot;rowB&quot;:&quot;none&quot;}"><p><b>Turn the knobs.</b> Each stage set to a different voltage. Listen: a looping eight-note tune.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:120,&quot;base&quot;:36,&quot;A&quot;:[0,1,0.58,0.25,0,1.25,0.83,0.58],&quot;B&quot;:[1,1,1,1,1,1,1,1],&quot;C&quot;:[0,0,0,0,0,0,0,0],&quot;xA&quot;:1,&quot;xB&quot;:1,&quot;xC&quot;:1,&quot;mode&quot;:[&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;s&quot;,&quot;n&quot;,&quot;n&quot;,&quot;s&quot;,&quot;n&quot;],&quot;rate&quot;:8,&quot;rowC&quot;:false,&quot;rowB&quot;:&quot;none&quot;}"><p><b>Skip two stages.</b> Stages 4 and 7 set to <b>Skip</b>. Listen: the loop is now six notes long.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:120,&quot;base&quot;:36,&quot;A&quot;:[0,1,0.58,0.25,0,1.25,0.83,0.58],&quot;B&quot;:[1,1,1,1,1,1,1,1],&quot;C&quot;:[0,0,0,0,0,0,0,0],&quot;xA&quot;:1,&quot;xB&quot;:1,&quot;xC&quot;:1,&quot;mode&quot;:[&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;],&quot;rate&quot;:12,&quot;rowC&quot;:false,&quot;rowB&quot;:&quot;none&quot;}"><p><b>Faster clock.</b> The clock rate up. Listen: the same loop, quicker.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:120,&quot;base&quot;:36,&quot;A&quot;:[0,1,0.58,0.25,0,1.25,0.83,0.58],&quot;B&quot;:[1.6,0.4,0.8,0.4,1.6,0.4,1.0,0.4],&quot;C&quot;:[0,0,0,0,0,0,0,0],&quot;xA&quot;:1,&quot;xB&quot;:1,&quot;xC&quot;:1,&quot;mode&quot;:[&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;],&quot;rate&quot;:8,&quot;rowC&quot;:false,&quot;rowB&quot;:&quot;cut&quot;}"><p><b>Row B on the filter.</b> Row B now opens and closes the filter on each stage. Listen: some notes bright, some dark: the Berlin School sound.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:120,&quot;base&quot;:36,&quot;A&quot;:[0,0.58,1,0.83,0.58,0.42,0.25,0.17],&quot;B&quot;:[1,1,1,1,1,1,1,1],&quot;C&quot;:[0,1,1,0,1,1,2,2],&quot;xA&quot;:1,&quot;xB&quot;:1,&quot;xC&quot;:1,&quot;mode&quot;:[&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;],&quot;rate&quot;:3.3333333333333335,&quot;rowC&quot;:true,&quot;rowB&quot;:&quot;none&quot;}"><p><b>Row C on timing.</b> Each volt on row C doubles the clock for that stage (Q960 sheet, p. 4). Listen: long and short notes.</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Moog synthesizer" (which does not say which sequencer was used):
+
+- Donna Summer, "I Feel Love" (1977): almost all made with a Moog (Wikipedia, "Moog synthesizer")
+- Tangerine Dream used the Moog (Wikipedia, "Moog synthesizer")
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Modular Test : I Feel Love](https://www.youtube.com/watch?v=6lZO-3Uz0ps) (A.S.M.O.) ↗
+- [I FEEL LOVE - Recreated On Analogue Synths LIVE By Terry Miles](https://www.youtube.com/watch?v=lx9GGMVNIbY) (Terry Miles) ↗
+- [MOOG GRANDMOTHER : Sequencing "I feel Love" x Donna Summer in 10 seconds](https://www.youtube.com/watch?v=kCHeCjQCDkY) (REMOLOG : Painting With Sound) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>Each stage&#x27;s knob sets…</b></p><ul><li>A voltage, which sets the pitch</li><li>The tempo of the song</li><li>The reverb</li><li>The lyrics</li></ul><p class="ik-why">Q960 sheet p. 3.</p></div>
+<div class="ik-q" data-a="0"><p><b>A stage set to Skip…</b></p><ul><li>Is left out of the loop</li><li>Plays twice</li><li>Plays louder</li><li>Stops the machine</li></ul><p class="ik-why">Step 3.</p></div>
+<div class="ik-q" data-a="0"><p><b>One volt higher is…</b></p><ul><li>One octave up</li><li>One semitone up</li><li>Louder</li><li>Slower</li></ul><p class="ik-why">1 V per octave.</p></div>
+<div class="ik-q" data-a="1"><p><b>How many stages in a row?</b></p><ul><li>4</li><li>8</li><li>16</li><li>128</li></ul><p class="ik-why">Three rows of eight.</p></div>
+```
+
+## Next
+
+- [Classic Sequencers Compared](sequencer-compare.html?seq=a960): the 960-style sequencer side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/sequencer-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/sequencer-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Moog synthesizer." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Moog_synthesizer](https://en.wikipedia.org/wiki/Moog_synthesizer). I Feel Love (1977) made almost entirely with a Moog; Tangerine Dream. Does not describe the 960.
+
+"Music sequencer." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Music_sequencer](https://en.wikipedia.org/wiki/Music_sequencer). Analog sequencers' "repeated minimalistic phrases", citing Pinch and Trocco.
+
+**For teachers**
+
+Synthesizers.com. *Q960 Sequential Controller* [data sheet]. Sept. 2014, [shop.synthesizers.com/cdn/shop/files/q960data.pdf](https://shop.synthesizers.com/cdn/shop/files/q960data.pdf). A recreation of the Moog 960, "functionally equivalent" (p. 5): 8 stages x 3 rows (p. 1), stage modes and the 90 % oscillator pulse (p. 3), X1/X2/X4 ranges, stage 9, third-row timing (p. 4), Q962 for 24 stages (p. 2).
+:::
+<!-- /works-cited -->
+

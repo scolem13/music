@@ -1,0 +1,24 @@
+.md-w { --md-w: calc(100% / var(--md-n, 22)); margin: 1rem 0; }
+.md-bar { display: flex; flex-wrap: wrap; gap: .6rem 1rem; align-items: center; margin-bottom: .5rem; }
+.md-pick { max-width: 22rem; }
+.md-start { padding: .3rem .8rem; font-weight: 600; }
+.md-oct, .md-midi { font-size: .9em; color: #555; }
+.md-panel svg { width: 100%; height: auto; display: block; background: #fff; touch-action: none; }
+.md-kb { position: relative; height: 9rem; margin-top: .6rem; user-select: none; touch-action: none; background: #222; border-radius: 4px; overflow: hidden; }
+.md-key { position: absolute; top: 0; box-sizing: border-box; cursor: pointer; }
+.md-white { width: var(--md-w); height: 100%; background: #fafafa; border: 1px solid #333; border-radius: 0 0 4px 4px; }
+.md-black { width: calc(var(--md-w) * 0.64); height: 60%; background: #111; z-index: 1; border-radius: 0 0 3px 3px; }
+.md-white.md-down { background: #f7c98a; }
+.md-black.md-down { background: #c77a1c; }
+.md-help { font-size: .9em; color: #444; }
+.md-view { margin-left: auto; }
+.md-play { display: flex; gap: .5rem; align-items: stretch; margin-top: .6rem; }
+.md-play .md-kb { flex: 1; margin-top: 0; }
+.md-wheels { display: flex; gap: .4rem; }
+.md-wheel { display: flex; flex-direction: column; align-items: center; gap: .2rem; }
+.md-well { position: relative; width: 1.6rem; flex: 1; min-height: 7rem; background: repeating-linear-gradient(#333 0 3px, #222 3px 6px); border: 1px solid #000; border-radius: 4px; cursor: ns-resize; touch-action: none; }
+.md-well:focus-visible { outline: 2px solid #c77a1c; outline-offset: 2px; }
+.md-knob { position: absolute; left: -1px; right: -1px; height: 1.4rem; background: #eee; border: 1px solid #000; border-radius: 3px; box-shadow: inset 0 -3px 0 #bbb; }
+.md-wheel-pitch .md-well::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px solid #c77a1c; pointer-events: none; }
+.md-wlab { font-size: .75em; color: #555; }
+.md-rep { margin-top: .6rem; font-size: .85rem; } .md-rep li.md-lost { color: #a33; } .md-rep li.md-approx { color: #8a5a00; }

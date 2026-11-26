@@ -1,0 +1,99 @@
+---
+title: "Meet the Memorymoog"
+toc: true
+toc-depth: 2
+description: "A first look at the Memorymoog: six voices of three oscillators each, Moog's ladder filter on every voice, a guided tour, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Synths Compared](synth-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Memorymoog is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Memorymoog** was made by **Moog Music** from **1982** to 1985 (Wikipedia, "Memorymoog").
+- It has **six voices** and **100 programs** (Memorymoog manual, PDF p. 5).
+- It is often described as "six Minimoogs in one unit" (Wikipedia).
+
+## Its sound
+
+- Each voice has **three oscillators**, like the [Model D](intro-model-d.qmd) (manual, PDF p. 5).
+- Pulse, saw and triangle can be **mixed** on each oscillator (manual, PDF p. 16).
+- Every voice has a 24 dB **ladder filter** (manual, PDF p. 5; Wikipedia).
+- **Mono** mode stacks the voices on one note (manual, PDF p. 9).
+
+## The panel
+
+This is the Memorymoog panel from [Classic Synths Compared](synth-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard. Turn any knob while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="memorymoog"><div class="scmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads the poly brass example and changes one thing.
+
+```{=html}
+<div class="ik-step" data-ex="mm-brass" data-set="{&quot;m2&quot;:0,&quot;m3&quot;:0}"><p><b>One oscillator a voice.</b> Oscillators 2 and 3 off. Listen: thin chords.</p></div>
+<div class="ik-step" data-ex="mm-brass"><p><b>Three oscillators a voice.</b> Listen: rich, slightly detuned brass.</p></div>
+<div class="ik-step" data-ex="mm-brass" data-set="{&quot;cAmt&quot;:0}"><p><b>No filter contour.</b> Listen: flat, no swell.</p></div>
+<div class="ik-step" data-ex="mm-brass" data-set="{&quot;emph&quot;:6}"><p><b>Emphasis up.</b> Listen: a ringing edge.</p></div>
+<div class="ik-step" data-ex="mm-brass" data-set="{&quot;mono&quot;:true}"><p><b>Mono mode.</b> All voices on one note. Listen: huge, one note at a time.</p></div>
+```
+
+## Famous records
+
+Wikipedia, "Memorymoog" does not name any records, so none are listed here yet.
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [MemoryMoog Plus #057 - Baba O'Riley Sequence Demo](https://www.youtube.com/watch?v=5AkP2ic_4-c) (Dan Wentz) ↗
+- [The Memorymoog "Popcorn" Challenge!](https://www.youtube.com/watch?v=_EzM5UHm3ZA) (Doctor Mix) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="2"><p><b>How many oscillators does each Memorymoog voice have?</b></p><ul><li>One</li><li>Two</li><li>Three</li><li>Six</li></ul><p class="ik-why">Manual PDF p. 5.</p></div>
+<div class="ik-q" data-a="1"><p><b>How many voices?</b></p><ul><li>One</li><li>Six</li><li>Eight</li><li>Sixteen</li></ul><p class="ik-why">Manual PDF p. 5.</p></div>
+<div class="ik-q" data-a="0"><p><b>Mono mode…</b></p><ul><li>Stacks voices on one note</li><li>Turns it off</li><li>Plays drums</li><li>Adds reverb</li></ul><p class="ik-why">Manual PDF p. 9.</p></div>
+<div class="ik-q" data-a="0"><p><b>It is often called six of which synth in one?</b></p><ul><li>Minimoog</li><li>DX7</li><li>TB-303</li><li>Juno</li></ul><p class="ik-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Classic Synths Compared](synth-compare.html?synth=memorymoog): the Memorymoog side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Memorymoog." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Memorymoog](https://en.wikipedia.org/wiki/Memorymoog). History section: years, voices, players.
+
+**For teachers**
+
+Moog Music. *Memorymoog Owner's Manual* (Model 345). Moog Music Inc., [archive.org/details/synthmanual-moog-memorymoog-owners-manual](https://archive.org/details/synthmanual-moog-memorymoog-owners-manual). A scan, read by OCR; cited by PDF page: six voices of three oscillators, 100 programs (PDF 5), mono and glide (PDF 9), LFO (PDF 14), Voice Modulation (PDF 15), oscillators (PDF 16), mixer and filter (PDF 17).
+:::
+<!-- /works-cited -->
+

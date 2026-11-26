@@ -1,0 +1,106 @@
+---
+title: "Meet the Akai MPC60"
+toc: true
+toc-depth: 2
+description: "A first look at the Akai MPC60: a sampler you play with pads, swing, and timing correct on or off, a guided tour, the artists who used MPCs, and a short quiz."
+instruments: [drums, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Drum Machines Compared](drum-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the MPC60 is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **MPC60** was made by **Akai**, designed by **Roger Linn**, and released on **8 December 1988** (Wikipedia, "Akai MPC").
+- It is a **sampler**: you record any sound into it, then play it from **16 pads** (MPC60 manual, pp. 15, 18).
+- Wikipedia: its affordability "had a democratizing effect": people could make tracks without a studio.
+
+## Its sound
+
+- Samples are **12-bit at 40 kHz**, which gives a gritty sound (MPC60 manual, p. 15).
+- The pads feel how hard you hit: **velocity** (manual, p. 5).
+- **Swing** goes from 50 % (straight) to 75 %; 66 % is a triplet, and the manual suggests 54 % or 62 % (manual, p. 44).
+- **Timing correct** moves notes onto the grid; turned off, the notes stay where you played them (manual, p. 43).
+
+## The panel
+
+This is the MPC60 panel from [Classic Drum Machines Compared](drum-compare.qmd), drawn after the real one (not a copy). Click the squares of the grid to add or take away hits. The tour's ▶ buttons play it. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="drum" data-id="mpc60"><div class="dcmp"></div></div>
+```
+
+## Guided tour
+
+Each step plays two bars. Letters in the hi-hat row are softer (a) to harder (z) hits.
+
+```{=html}
+<div class="ik-step" data-pat="{&quot;bpm&quot;:92,&quot;rows&quot;:{&quot;kick&quot;:&quot;x......x..x.....&quot;,&quot;snare&quot;:&quot;....x.......x...&quot;,&quot;chh&quot;:&quot;x.x.x.x.x.x.x.x.&quot;}}"><p><b>On the grid.</b> Timing correct 1/16, swing 50 %. Listen: straight and tidy.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:92,&quot;rows&quot;:{&quot;kick&quot;:&quot;x......x..x.....&quot;,&quot;snare&quot;:&quot;....x.......x...&quot;,&quot;chh&quot;:&quot;t.h.t.h.t.h.t.h.&quot;}}"><p><b>Velocity.</b> Hard and soft hi-hats. Listen: the hats breathe.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:92,&quot;swing&quot;:54,&quot;rows&quot;:{&quot;kick&quot;:&quot;x......x..x.....&quot;,&quot;snare&quot;:&quot;....x.......x...&quot;,&quot;chh&quot;:&quot;t.h.t.h.t.h.t.h.&quot;}}"><p><b>Swing 54 %.</b> A little swing. Listen: it loosens.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:92,&quot;swing&quot;:62,&quot;rows&quot;:{&quot;kick&quot;:&quot;x......x..x.....&quot;,&quot;snare&quot;:&quot;....x.......x...&quot;,&quot;chh&quot;:&quot;t.h.t.h.t.h.t.h.&quot;}}"><p><b>Swing 62 %.</b> More swing, the manual's other suggestion. Listen: a hip-hop bounce.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:92,&quot;swing&quot;:62,&quot;quant&quot;:&quot;OFF&quot;,&quot;rows&quot;:{&quot;kick&quot;:[{&quot;v&quot;:1},0,0,0,0,0,0,{&quot;v&quot;:0.7,&quot;o&quot;:5},0,0,{&quot;v&quot;:0.9,&quot;o&quot;:-3},0,0,0,0,0],&quot;snare&quot;:[0,0,0,0,{&quot;v&quot;:0.95,&quot;o&quot;:7},0,0,0,0,0,0,0,{&quot;v&quot;:1,&quot;o&quot;:9},0,0,{&quot;v&quot;:0.45,&quot;o&quot;:4}],&quot;chh&quot;:&quot;t.h.t.h.t.h.t.h.&quot;}}"><p><b>Timing correct OFF.</b> The snare and some kicks are played a little late, by hand. Listen: lazy and loose. J Dilla is known for turning quantize off (Wikipedia).</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Akai MPC":
+
+- DJ Shadow, *Endtroducing* (1996), made on an MPC60 MKII
+- J Dilla, known for turning off the quantize
+- Kanye West, much of *The College Dropout* (2004), on an MPC (model not named)
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Deconstructing DJ Shadow - Midnight In a Perfect World](https://www.youtube.com/watch?v=BIfyTM_Wt5k) (Karl Boltzmann) ↗
+- [I Deconstruct & Rebuild One of my Favourite Songs - DJ Shadow's Building Steam With a Grain of Salt](https://www.youtube.com/watch?v=WpBuYVYQo8A) (Karl Boltzmann) ↗
+- [Remaking “Runaway” by Kanye West ft. Pusha T](https://www.youtube.com/watch?v=luK0r0upBDA) (lil soy sauce) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>A sampler plays…</b></p><ul><li>Sounds you recorded into it</li><li>Only built-in circuits</li><li>Only piano</li><li>Nothing</li></ul><p class="ik-why">Manual p. 15.</p></div>
+<div class="ik-q" data-a="0"><p><b>Swing 50 % means…</b></p><ul><li>Straight, no swing</li><li>A full triplet</li><li>Half speed</li><li>Half volume</li></ul><p class="ik-why">Manual p. 44.</p></div>
+<div class="ik-q" data-a="0"><p><b>Timing correct OFF keeps…</b></p><ul><li>Notes where you played them</li><li>Every note on the grid</li><li>Only the kick</li><li>The tempo at 50</li></ul><p class="ik-why">Manual p. 43.</p></div>
+<div class="ik-q" data-a="2"><p><b>How many pads does it have?</b></p><ul><li>4</li><li>8</li><li>16</li><li>88</li></ul><p class="ik-why">Manual p. 18.</p></div>
+```
+
+## Next
+
+- [Classic Drum Machines Compared](drum-compare.html?machine=mpc60): the MPC60 side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/drum-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/drum-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Akai MPC." *Wikipedia*, [en.wikipedia.org/wiki/Akai_MPC](https://en.wikipedia.org/wiki/Akai_MPC). The MPC60's release and price, Linn and Cockerell, DJ Shadow, J Dilla, Kanye West.
+
+**For teachers**
+
+Linn, Roger, and David Battino. *MPC60 Software Version 3.1 Operator's Manual*. Roger Linn Design, 2002, [www.polynominal.com/akai-mpc60/akai-mpc60-manual.pdf](https://www.polynominal.com/akai-mpc60/akai-mpc60-manual.pdf). 12-bit samples at 40 kHz (p. 15), 16 Levels (pp. 21-22), 96 ppq (p. 26), timing correct and swing 50-75 % (pp. 43-44), specifications (p. 218).
+:::
+<!-- /works-cited -->
+

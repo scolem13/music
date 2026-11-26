@@ -1,0 +1,99 @@
+---
+title: "Meet the Moog Grandmother"
+toc: true
+toc-depth: 2
+description: "A first look at the Moog Grandmother: a semi-modular synth with a spring reverb and patch points, a guided tour, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Synths Compared](synth-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Grandmother is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Grandmother** is an analog, **semi-modular**, 32-key synth by **Moog Music**, with circuits based on the Moog modular and the Minimoog (Wikipedia, "Moog Grandmother"). Its manual is dated 2018.
+- Semi-modular: it plays without cables, and patch cables can change the path (Wikipedia).
+- It cannot save sounds: you draw them on patch sheets instead (Wikipedia), like the [Model D](intro-model-d.qmd).
+
+## Its sound
+
+- **Two oscillators**: triangle, saw, square or narrow pulse (Grandmother manual, PDF pp. 11-12).
+- A **ladder low-pass filter**, 24 dB (manual, PDF pp. 16-17), and a separate 1-pole **high-pass** you can patch in (PDF p. 7, 15).
+- A real **spring reverb** inside (manual, PDF p. 21).
+- One ADSR envelope (manual, PDF pp. 18-19).
+
+## The panel
+
+This is the Grandmother panel from [Classic Synths Compared](synth-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard. Turn any knob while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="grandmother"><div class="scmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads a worked example and changes one thing.
+
+```{=html}
+<div class="ik-step" data-ex="gm-spring" data-set="{&quot;rev&quot;:0}"><p><b>A pluck, dry.</b> Reverb at 0. Listen: short and close.</p></div>
+<div class="ik-step" data-ex="gm-spring"><p><b>Spring reverb.</b> Reverb mix at 6. Listen: a splashy, boingy space.</p></div>
+<div class="ik-step" data-ex="gm-hp" data-set="{&quot;hpOn&quot;:false}"><p><b>Low-pass only.</b> Listen: full bass.</p></div>
+<div class="ik-step" data-ex="gm-hp"><p><b>High-pass patched in.</b> Listen: the low end is cut away.</p></div>
+<div class="ik-step" data-ex="gm-hp" data-set="{&quot;res&quot;:8}"><p><b>More resonance.</b> Listen: a ringing peak.</p></div>
+```
+
+## Famous records
+
+Wikipedia, "Moog Grandmother" does not name any records, so none are listed here yet.
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [How To Sound Like Yazoo on the Moog Grandmother](https://www.youtube.com/watch?v=_aTban2j3UM) (kleemannbeats) ↗
+- [The Blade Runner Sound on the Moog Grandmother](https://www.youtube.com/watch?v=3EGfufWOahk) (kleemannbeats) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>What is special about the Grandmother&#x27;s reverb?</b></p><ul><li>It is a real spring</li><li>It is digital</li><li>It is a room</li><li>It has none</li></ul><p class="ik-why">Manual PDF p. 21.</p></div>
+<div class="ik-q" data-a="0"><p><b>Can it save sounds?</b></p><ul><li>No: you draw them on sheets</li><li>Yes, 1000 of them</li><li>Only drums</li><li>Only on tape</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>Semi-modular means…</b></p><ul><li>It plays without cables, and cables can change it</li><li>It has no knobs</li><li>It needs a computer</li><li>It is a drum machine</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="1"><p><b>How many keys?</b></p><ul><li>25</li><li>32</li><li>61</li><li>88</li></ul><p class="ik-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Classic Synths Compared](synth-compare.html?synth=grandmother): the Grandmother side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Moog Grandmother." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Moog_Grandmother](https://en.wikipedia.org/wiki/Moog_Grandmother). History section.
+
+**For teachers**
+
+Moog Music. *Grandmother User's Manual*. Moog Music Inc., 2018, [archive.org/details/MoogGrandmotherUsersManual](https://archive.org/details/MoogGrandmotherUsersManual). Cited by PDF page: overview (PDF 7), glide (PDF 10), oscillators and sync (PDF 11-12), mixer and the high-pass tip (PDF 14-15), filter (PDF 16-17), envelope (PDF 18-19), VCA modes and spring reverb (PDF 21), modulation (PDF 23).
+:::
+<!-- /works-cited -->
+

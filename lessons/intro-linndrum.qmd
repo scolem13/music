@@ -1,0 +1,105 @@
+---
+title: "Meet the LinnDrum"
+toc: true
+toc-depth: 2
+description: "A first look at the LinnDrum: recordings of real drums, levels per drum, swing timing A to F, a guided tour, the artists who used it, and a short quiz."
+instruments: [drums, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Drum Machines Compared](drum-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the LinnDrum is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **LinnDrum** was made by **Linn Electronics**, designed by the American engineer **Roger Linn**, between **1982 and 1985** (Wikipedia, "LinnDrum").
+- Its sounds are **recordings of real drums**, stored in chips (Wikipedia).
+- It "sold far more units than the Linn LM-1 and its successor, the Linn 9000, combined" (Wikipedia).
+
+## Its sound
+
+- Some drums have **levels**: snare 3, and bass, hi-hat and others 2 (LinnDrum manual, p. 1).
+- Only snare, sidestick, toms and congas can be **tuned**; "all other drums are not tunable" (manual, p. 1).
+- **Timing A to F** adds swing: A is straight and E a perfect triplet shuffle (manual, pp. 8-9).
+- On this page the sounds are stand-ins made to sound like 8-bit samples; they are not the real recordings.
+
+## The panel
+
+This is the LinnDrum panel from [Classic Drum Machines Compared](drum-compare.qmd), drawn after the real one (not a copy). Click the squares of the grid to add or take away hits. The tour's ▶ buttons play it. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="drum" data-id="linn"><div class="dcmp"></div></div>
+```
+
+## Guided tour
+
+Each step plays two bars. Numbers in a step are the LinnDrum's levels.
+
+```{=html}
+<div class="ik-step" data-pat="{&quot;bpm&quot;:104,&quot;rows&quot;:{&quot;kick&quot;:&quot;2.....2.2.......&quot;,&quot;snare&quot;:&quot;....2.......2...&quot;,&quot;chh&quot;:&quot;2.2.2.2.2.2.2.2.&quot;}}"><p><b>A pop beat.</b> Bass, snare and 8th-note hi-hats, all at one level. Listen: real drum sounds, steady.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:104,&quot;rows&quot;:{&quot;kick&quot;:&quot;2.....2.2.......&quot;,&quot;snare&quot;:&quot;....3..1....3...&quot;,&quot;chh&quot;:&quot;2.1.2.1.2.1.2.1.&quot;}}"><p><b>Levels.</b> Loud and soft hi-hats, and a quiet snare between. Listen: more human.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:104,&quot;timing&quot;:&quot;D&quot;,&quot;swingGrid&quot;:8,&quot;rows&quot;:{&quot;kick&quot;:&quot;2.....2.2.......&quot;,&quot;snare&quot;:&quot;....3..1....3...&quot;,&quot;chh&quot;:&quot;2.1.2.1.2.1.2.1.&quot;}}"><p><b>Timing D.</b> Swing on the 8ths. Listen: it bounces.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:104,&quot;timing&quot;:&quot;E&quot;,&quot;swingGrid&quot;:8,&quot;rows&quot;:{&quot;kick&quot;:&quot;2.....2.2.......&quot;,&quot;snare&quot;:&quot;....3..1....3...&quot;,&quot;chh&quot;:&quot;2.1.2.1.2.1.2.1.&quot;}}"><p><b>Timing E.</b> The perfect triplet shuffle (manual p. 9). Listen: a full shuffle. The manual says many people prefer C or D.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:104,&quot;rows&quot;:{&quot;kick&quot;:&quot;2.....2.2.......&quot;,&quot;snare&quot;:&quot;....3.......3...&quot;,&quot;chh&quot;:&quot;2.2.2.2.2.2.2.2.&quot;},&quot;kit&quot;:{&quot;snare&quot;:{&quot;tune&quot;:2}}}"><p><b>Tune the snare down.</b> Snare <b>Tune</b> low. Listen: a deeper, fatter snare.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:104,&quot;rows&quot;:{&quot;kick&quot;:&quot;2.....2.2.......&quot;,&quot;snare&quot;:&quot;....3.......3...&quot;,&quot;chh&quot;:&quot;2.2.2.2.2.2.2.2.&quot;,&quot;tamb&quot;:&quot;....2.......2...&quot;,&quot;clap&quot;:&quot;....1.......1...&quot;}}"><p><b>Tambourine and claps.</b> Listen: the 1980s pop sound.</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "LinnDrum":
+
+- used by Trevor Horn, Mark Knopfler, George Michael and Naked Eyes
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Behind The Drums Ep 06 - A-ha "Take On Me" Linndrum with Yamaha DX7](https://www.youtube.com/watch?v=EBaFGwSLQl8) (Controlled Voltage Sound Labs) ↗
+- [Behind The Drums Ep 16 - The Cars "Drive" Linndrum](https://www.youtube.com/watch?v=vpEsbPG_gPM) (Controlled Voltage Sound Labs) ↗
+- [Insane Reconstruction! Relax by Frankie Goes to Hollywood](https://www.youtube.com/watch?v=TWt-t5lBIPI) (Doctor Mix) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>Where do LinnDrum sounds come from?</b></p><ul><li>Recordings of real drums</li><li>Circuits</li><li>A guitar</li><li>Voices</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>Timing A is…</b></p><ul><li>Straight (no swing)</li><li>A full triplet shuffle</li><li>Very fast</li><li>Silent</li></ul><p class="ik-why">Manual p. 8.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which LinnDrum drums can be tuned?</b></p><ul><li>Snare, sidestick, toms, congas</li><li>All of them</li><li>None</li><li>Only cymbals</li></ul><p class="ik-why">Manual p. 1.</p></div>
+<div class="ik-q" data-a="0"><p><b>Who designed it?</b></p><ul><li>Roger Linn</li><li>Robert Moog</li><li>Dave Smith</li><li>Ikutaro Kakehashi</li></ul><p class="ik-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Classic Drum Machines Compared](drum-compare.html?machine=linn): the LinnDrum side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/drum-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/drum-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"LinnDrum." *Wikipedia*, [en.wikipedia.org/wiki/LinnDrum](https://en.wikipedia.org/wiki/LinnDrum). Dates, price, sales, 8-bit samples, users.
+
+**For teachers**
+
+Linn Electronics. *LinnDrum Owner's Manual*. Internet Archive, [archive.org/details/synthmanual-linndrum-owners-manual](https://archive.org/details/synthmanual-linndrum-owners-manual). Drums, dynamic levels, tuning (p. 1); patterns (p. 2); error correct (p. 7); timing A-F, E a perfect triplet shuffle (pp. 8-9).
+:::
+<!-- /works-cited -->
+

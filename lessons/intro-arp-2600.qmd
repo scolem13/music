@@ -1,0 +1,109 @@
+---
+title: "Meet the ARP 2600"
+toc: true
+toc-depth: 2
+description: "A first look at the ARP 2600: a semi-modular synth with patch cords, a ring modulator and sample and hold, a guided tour, the records it is on, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Synths Compared](synth-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the ARP 2600 is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **ARP 2600** was made by **ARP Instruments** from **1971** to 1981 (Wikipedia, "ARP 2600").
+- It is **semi-modular**: its parts are already joined inside, but patch cords can join them in new ways (Wikipedia; ARP 2600 M manual, pp. 5-15).
+- It was "heavily marketed to high schools and universities" (Wikipedia): it was made for learning.
+
+## Its sound
+
+- **Three oscillators** (VCO-1, 2 and 3) (ARP 2600 M manual, pp. 7-9).
+- A **ring modulator** multiplies two waves and makes bell and metal sounds (manual, p. 14).
+- **Sample and hold** grabs a random voltage on each clock tick: the classic random "bleeps" (manual, p. 15).
+- Its filter falls off at 24 dB per octave (ARP 2600 owner's manual, 1971, section 4.12).
+
+## The panel
+
+This is the ARP 2600 panel from [Classic Synths Compared](synth-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard. Turn any knob while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="arp2600"><div class="scmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads a worked example and changes one thing.
+
+```{=html}
+<div class="ik-step" data-ex="arp-ring" data-set="{&quot;inRing&quot;:0,&quot;inV3&quot;:8}"><p><b>A plain wave.</b> VCO-3's sawtooth into the filter. Listen: a simple tone.</p></div>
+<div class="ik-step" data-ex="arp-ring"><p><b>The ring modulator.</b> The filter now hears the ring modulator instead. Listen for a bell: notes that do not sound quite in tune.</p></div>
+<div class="ik-step" data-ex="arp-ring" data-set="{&quot;f2&quot;:12}"><p><b>Move VCO-2.</b> VCO-2 a whole octave higher feeds the ring modulator. Listen: the bell's tone changes.</p></div>
+<div class="ik-step" data-ex="arp-sh" data-set="{&quot;res&quot;:0}"><p><b>Sample and hold.</b> A patch cord sends the S/H output to VCO-3's pitch. Listen for random pitches, one per clock tick.</p></div>
+<div class="ik-step" data-ex="arp-sh"><p><b>Add resonance.</b> The same patch with <b>Resonance</b> at 6. Listen: each random note rings.</p></div>
+<div class="ik-step" data-ex="arp-sh" data-set="{&quot;shRate&quot;:9}"><p><b>Faster clock.</b> S/H clock up to 9. Listen: the random notes come much faster.</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "ARP 2600":
+
+- Genesis, *A Trick of the Tail* and *...And Then There Were Three...* (Tony Banks)
+- Black Sabbath, "Who Are You?" on *Sabbath Bloody Sabbath* (Ozzy Osbourne)
+- Michael Jackson, "Thriller"
+- Nine Inch Nails, "The Becoming" (Flood)
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [ARP 2600 Famous Songs and Sounds](https://www.youtube.com/watch?v=jJ6ksxxmOqY) (Nicolas Melis) ↗
+- [Stevie vs Arp 2600](https://www.youtube.com/watch?v=I8dgXAynA5k) (analoghell) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>&quot;Semi-modular&quot; means…</b></p><ul><li>Joined inside, but patch cords can change it</li><li>It has no knobs</li><li>It plays only drums</li><li>It is a computer program</li></ul><p class="ik-why">Wikipedia; manual pp. 5-15.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which part makes the random bleeps?</b></p><ul><li>Sample and hold</li><li>Reverb</li><li>The keyboard</li><li>The volume knob</li></ul><p class="ik-why">Steps 4-6.</p></div>
+<div class="ik-q" data-a="0"><p><b>A ring modulator is good for…</b></p><ul><li>Bells and metal sounds</li><li>A clean piano</li><li>Silence</li><li>Tuning</li></ul><p class="ik-why">Step 2.</p></div>
+<div class="ik-q" data-a="0"><p><b>Who was the ARP 2600 marketed to?</b></p><ul><li>High schools and universities</li><li>Only rock stars</li><li>Churches</li><li>Radio stations</li></ul><p class="ik-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Classic Synths Compared](synth-compare.html?synth=arp2600): the ARP 2600 side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"ARP 2600." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/ARP_2600](https://en.wikipedia.org/wiki/ARP_2600). History section: makers, years, price, players and records.
+
+**For students**
+
+Korg. *ARP 2600 M Owner's Manual*. Korg Inc., 2021, [www.analoguehaven.com/korg/arp-2600-m/manual.pdf](https://www.analoguehaven.com/korg/arp-2600-m/manual.pdf). Block diagram and every normalled connection: VCOs (pp. 7-9), VCF (p. 10), ADSR and AR (p. 11), VCA (p. 12), mixer and reverb (p. 13), noise and voltage processors (p. 14), sample and hold (p. 15).
+
+**For teachers**
+
+ARP Instruments. *ARP 2600 Owner's Manual*. ARP Instruments, Inc., 1971 (7th printing 1976), [www.korg.com/us/support/download/manual/0/842/4469/](https://www.korg.com/us/support/download/manual/0/842/4469/). The voltage-controlled filter falls off at 24 dB per octave (section 4.12). A scan, read by OCR.
+:::
+<!-- /works-cited -->
+

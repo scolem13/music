@@ -2084,6 +2084,9 @@ Sundberg, Johan. *The Science of the Singing Voice*. Northern Illinois UP, 1987.
 "Supported Import and Export File Formats." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360036010533-Supported-Import-and-Export-File-Formats](https://help.bandlab.com/hc/en-us/articles/360036010533-Supported-Import-and-Export-File-Formats). 
 [Used in: [DAW 7: Bounce, Export and Taking It Further](lessons/daw-export.qmd), [DAW 8: Your First Session in a Real DAW](lessons/daw-real.qmd)]{.wc-used}
 
+Surge Synth Team. "Surge XT User Manual." *Surge XT*. [surge-synthesizer.github.io/manual-xt/](https://surge-synthesizer.github.io/manual-xt/). Classic oscillator Shape / Width 1 / Sub Mix / Sync / Unison; Mixer channels with M and S; Vintage and Legacy Ladder; Filter EG and Amp EG modes; LFO shapes; scene Volume / Pan / Width. 
+[Used in: [Play the Minimoog Model D](lessons/model-d.qmd)]{.wc-used}
+
 "Svara." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Swara](https://en.wikipedia.org/wiki/Swara). 
 [Used in: [Writing Music Down: Choosing the Right Notation](lessons/notation-choices.qmd) (for students)]{.wc-used}
 
@@ -2229,6 +2232,9 @@ Turabian, Kate L. *A Manual for Writers of Research Papers, Theses, and Disserta
 
 Tymoczko, Dmitri, analyst. Roman-numeral analyses of the Bach chorales and of Beethoven, Piano Sonata Op. 27 No. 2, in *When in Rome*. [github.com/MarkGotham/When-in-Rome/tree/master/Corpus](https://github.com/MarkGotham/When-in-Rome/tree/master/Corpus). The chorale's analysis; his readings of the Moonlight are quoted where they differ from Chen and Su's. 
 [Used in: [Bach: "O Haupt voll Blut und Wunden"](theory/analysed-scores/bach-o-haupt.qmd), [Beethoven: "Moonlight" Sonata, I](theory/analysed-scores/beethoven-moonlight-1.qmd), [Harmony by the Numbers](theory/analysed-scores/harmony-stats.qmd), [Modulation Finder](theory/analysed-scores/modulation-finder.qmd), [Analysed Scores Library](theory/analysed-scores/view.qmd), [Modulation: Practice for Chapter 22](theory/modulation.qmd) (for students)]{.wc-used}
+
+Tytell, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp](https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp). Oscillator level, transpose, tune, unison; filter cutoff in semitones 8-136, resonance, drive, key track; envelope times 0-2.378 quartic; LFO frequency. 
+[Used in: [Play the Minimoog Model D](lessons/model-d.qmd)]{.wc-used}
 
 United States Copyright Office. *Copyright Law of the United States*, Title 17, Chapter 1. [www.copyright.gov/title17/92chap1.html](https://www.copyright.gov/title17/92chap1.html). 
 [Used in: [DJ 7: Building a Set and Reading a Room](lessons/dj-set.qmd), [Sampling 6: Clearing Samples and the Law](lessons/sampling-law.qmd)]{.wc-used}

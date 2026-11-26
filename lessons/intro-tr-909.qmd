@@ -1,0 +1,108 @@
+---
+title: "Meet the Roland TR-909"
+toc: true
+toc-depth: 2
+description: "A first look at the Roland TR-909: punchy bass drum, sampled cymbals, shuffle and flam, a guided tour that builds a house beat, the records it is on, and a short quiz."
+instruments: [drums, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Drum Machines Compared](drum-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the TR-909 is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **TR-909** was made by **Roland** and came out in **1983** (Wikipedia, "Roland TR-909").
+- Its drums are circuits like the 808's, but its **hi-hats and cymbals are samples** (Wikipedia).
+- Wikipedia: "the 909, alongside the TB-303 synthesizer, influenced dance music such as techno, house and acid."
+
+## Its sound
+
+- The **bass drum** has **Attack** and **Decay** knobs (TR-909 manual, p. 8).
+- **Accent** can be set per drum, plus a total accent (manual, p. 25).
+- **Shuffle** has 7 settings that swing the beat; **flam** plays a drum twice, close together (manual, p. 26).
+- It has **MIDI** (manual, p. 5).
+
+## The panel
+
+This is the TR-909 panel from [Classic Drum Machines Compared](drum-compare.qmd), drawn after the real one (not a copy). Click the squares of the grid to add or take away hits. The tour's ▶ buttons play it. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="drum" data-id="tr909"><div class="dcmp"></div></div>
+```
+
+## Guided tour
+
+Each step plays two bars. One thing is added or changed each time.
+
+```{=html}
+<div class="ik-step" data-pat="{&quot;bpm&quot;:124,&quot;rows&quot;:{&quot;kick&quot;:&quot;x...x...x...x...&quot;},&quot;kit&quot;:{&quot;kick&quot;:{&quot;attack&quot;:2,&quot;decay&quot;:5}}}"><p><b>Four on the floor.</b> Bass drum on every beat, <b>Attack</b> low. Listen: round.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:124,&quot;rows&quot;:{&quot;kick&quot;:&quot;x...x...x...x...&quot;},&quot;kit&quot;:{&quot;kick&quot;:{&quot;attack&quot;:9,&quot;decay&quot;:5}}}"><p><b>Attack up.</b> Attack at 9. Listen: a sharper click on each kick.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:124,&quot;rows&quot;:{&quot;kick&quot;:&quot;x...x...x...x...&quot;,&quot;clap&quot;:&quot;....x.......x...&quot;,&quot;ohh&quot;:&quot;..x...x...x...x.&quot;},&quot;kit&quot;:{&quot;kick&quot;:{&quot;attack&quot;:7}}}"><p><b>Clap and open hi-hat.</b> Claps on 2 and 4, open hats between the beats. Listen: a house beat.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:124,&quot;rows&quot;:{&quot;kick&quot;:&quot;x...x...x...x...&quot;,&quot;clap&quot;:&quot;....x.......x...&quot;,&quot;ohh&quot;:&quot;..x...x...x...x.&quot;,&quot;chh&quot;:&quot;.x.x.x.x.x.x.x.x&quot;},&quot;kit&quot;:{&quot;kick&quot;:{&quot;attack&quot;:7}}}"><p><b>Closed hats, no shuffle.</b> Shuffle at 1 (none). Listen: straight.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:124,&quot;shuffle&quot;:4,&quot;rows&quot;:{&quot;kick&quot;:&quot;x...x...x...x...&quot;,&quot;clap&quot;:&quot;....x.......x...&quot;,&quot;ohh&quot;:&quot;..x...x...x...x.&quot;,&quot;chh&quot;:&quot;.x.x.x.x.x.x.x.x&quot;},&quot;kit&quot;:{&quot;kick&quot;:{&quot;attack&quot;:7}}}"><p><b>Shuffle 4.</b> The off-beat 16ths move late. Listen: it swings.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:124,&quot;rows&quot;:{&quot;kick&quot;:&quot;X...x...X...x...&quot;,&quot;chh&quot;:&quot;.x.x.x.x.x.x.x.x&quot;},&quot;kit&quot;:{&quot;kick&quot;:{&quot;attack&quot;:7}}}"><p><b>Per-drum accent.</b> Accents on the bass drum only, on beats 1 and 3. Listen: those kicks are louder.</p></div>
+<div class="ik-step" data-pat="{&quot;bpm&quot;:128,&quot;rows&quot;:{&quot;kick&quot;:&quot;x...x...x...x...&quot;,&quot;chh&quot;:&quot;x.x.x.x.x.x.x.x.&quot;,&quot;snare&quot;:[0,0,0,0,{&quot;v&quot;:0.75,&quot;a&quot;:true},0,0,0,0,0,{&quot;v&quot;:0.75,&quot;f&quot;:4},{&quot;v&quot;:0.75},{&quot;v&quot;:0.75,&quot;a&quot;:true,&quot;f&quot;:6},{&quot;v&quot;:0.75,&quot;f&quot;:2},{&quot;v&quot;:0.75,&quot;a&quot;:true},{&quot;v&quot;:0.75,&quot;a&quot;:true}]}}"><p><b>Flams.</b> A snare fill where some hits are flams: two hits close together. Listen for the "fl-am".</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Roland TR-909":
+
+- Hiroshi Sato, *Sailing Blaster* (1984)
+- Skinny Puppy, *Remission*
+- Adamski, "Killer" (1990)
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [TR-909 ''Revolution 909'' pattern programming](https://www.youtube.com/watch?v=xLCVNUj40I0) (SynthMania) ↗
+- [Adamski ft. Seal - 'Killer' Deconstruction in Ableton + Adamski Interview](https://www.youtube.com/watch?v=KEdNgJsq68w) (pointblank music school) ↗
+- [How to program Frankie Knuckles' ''The Whistle Song'' TR-909 pattern](https://www.youtube.com/watch?v=y8xGdaoweTg) (SynthMania) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>Which 909 sounds are samples?</b></p><ul><li>Hi-hats and cymbals</li><li>Bass drum</li><li>Snare</li><li>None</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>What does Shuffle do?</b></p><ul><li>Moves the off-beats late so it swings</li><li>Mixes up the order of drums</li><li>Makes it louder</li><li>Stops it</li></ul><p class="ik-why">Manual p. 26.</p></div>
+<div class="ik-q" data-a="0"><p><b>A flam is…</b></p><ul><li>Two hits very close together</li><li>A very long hit</li><li>A kind of cymbal</li><li>A tempo</li></ul><p class="ik-why">Manual p. 26.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which styles did the 909 shape?</b></p><ul><li>Techno and house</li><li>Country</li><li>Opera</li><li>Folk</li></ul><p class="ik-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Classic Drum Machines Compared](drum-compare.html?machine=tr909): the TR-909 side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/drum-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/drum-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Roland TR-909." *Wikipedia*, [en.wikipedia.org/wiki/Roland_TR-909](https://en.wikipedia.org/wiki/Roland_TR-909). History, 6-bit samples, sales, music and records.
+
+**For teachers**
+
+Roland Corporation. *TR-909 Rhythm Composer Owner's Manual*. Internet Archive, [archive.org/details/synthmanual-roland-tr-909-owners-manual](https://archive.org/details/synthmanual-roland-tr-909-owners-manual). Features (p. 5), sound controls (p. 8), scale and last step (p. 24), total and per-voice accent (p. 25), shuffle and flam (p. 26).
+:::
+<!-- /works-cited -->
+

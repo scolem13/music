@@ -1,0 +1,109 @@
+---
+title: "Meet the Roland Juno-60 and Juno-106"
+toc: true
+toc-depth: 2
+description: "A first look at Roland's Juno-60 and Juno-106: one oscillator a voice, the famous chorus, a guided tour, the records they are on, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Synths Compared](synth-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Juno is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Juno-60** was made by **Roland** and came out in **September 1982**; production ended in February 1984 (Wikipedia, "Roland Juno-60").
+- It has **six voices** and **56 patch memories** (Juno-60 manual, p. 2). The **Juno-106** that followed has 128 patches and MIDI (Juno-106 manual, p. 1).
+- Wikipedia says it "had an immediate impact in 1980s pop music".
+
+## Its sound
+
+- Each voice has **one oscillator** (a DCO), with saw, pulse, a **sub-oscillator** an octave down and noise (Juno-60 manual, pp. 12-13).
+- **PWM**: the pulse wave's width can move with the LFO, which sounds like a group of strings (manual, pp. 12-13).
+- The built-in **chorus** (I or II) makes one oscillator sound wide and thick (manual, p. 22). It became its signature sound (Wikipedia).
+- A **high-pass filter** and a low-pass filter (manual, p. 14).
+
+## The panel
+
+This is the Juno panel from [Classic Synths Compared](synth-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard. Turn any knob while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="juno"><div class="scmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads a worked example from the compare page and changes one thing.
+
+```{=html}
+<div class="ik-step" data-ex="juno-bass" data-set="{&quot;sub&quot;:false}"><p><b>Saw only.</b> One sawtooth oscillator. Listen: a simple bass.</p></div>
+<div class="ik-step" data-ex="juno-bass"><p><b>Add the sub-oscillator.</b> The <b>Sub osc</b> adds a square wave one octave down. Listen: much fuller and deeper.</p></div>
+<div class="ik-step" data-ex="juno-strings" data-set="{&quot;chorus&quot;:&quot;off&quot;,&quot;pwm&quot;:0,&quot;pwmMode&quot;:&quot;man&quot;}"><p><b>A plain pulse pad.</b> Pulse wave, chorus off, no PWM. Listen: thin and still.</p></div>
+<div class="ik-step" data-ex="juno-strings" data-set="{&quot;chorus&quot;:&quot;off&quot;}"><p><b>PWM by the LFO.</b> The pulse width now moves with the LFO. Listen for a slow shimmer.</p></div>
+<div class="ik-step" data-ex="juno-strings" data-set="{&quot;chorus&quot;:&quot;I&quot;}"><p><b>Chorus I.</b> Listen: the sound spreads out and gets wider.</p></div>
+<div class="ik-step" data-ex="juno-strings"><p><b>Chorus II.</b> The faster, deeper chorus. Listen: the classic thick Juno pad.</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Roland Juno-60":
+
+- a-ha, "Take On Me"
+- George Michael, "A Different Corner"
+- Cyndi Lauper, "Time After Time"
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [The Juno-106 Hit Machine | 15 Iconic Riffs](https://www.youtube.com/watch?v=KzA9ZHBn06M) (Andy Whitmore) ↗
+- [Yazoo - Don't Go (Roland Juno-106 Patches)](https://www.youtube.com/watch?v=KRD58B7ywjg) (Franck Choppin) ↗
+- [Roland Juno60 Famous Songs and Sounds](https://www.youtube.com/watch?v=umdgKw9un7I) (Nicolas Melis) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>How many oscillators does each Juno voice have?</b></p><ul><li>One</li><li>Two</li><li>Three</li><li>Six</li></ul><p class="ik-why">One DCO, plus a sub-oscillator.</p></div>
+<div class="ik-q" data-a="0"><p><b>What does the chorus do to the sound?</b></p><ul><li>Makes it wider and thicker</li><li>Makes it one note at a time</li><li>Adds drums</li><li>Turns it off</li></ul><p class="ik-why">Steps 5 and 6.</p></div>
+<div class="ik-q" data-a="0"><p><b>The sub-oscillator plays…</b></p><ul><li>One octave below</li><li>One octave above</li><li>A fifth above</li><li>Only noise</li></ul><p class="ik-why">Step 2.</p></div>
+<div class="ik-q" data-a="2"><p><b>How many voices does the Juno-60 have?</b></p><ul><li>One</li><li>Five</li><li>Six</li><li>Sixteen</li></ul><p class="ik-why">Manual p. 2.</p></div>
+```
+
+## Next
+
+- [Classic Synths Compared](synth-compare.html?synth=juno): the Juno side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Roland. *Juno-60 Owner's Manual*. Roland Corporation, Apr. 1983, [soundprogramming.net/manuals/Roland_Juno-60_Manual.pdf](https://soundprogramming.net/manuals/Roland_Juno-60_Manual.pdf). Six voices and 56 patches (p. 2); DCO with no portamento, PWM, sub-oscillator, noise (pp. 12-13); HPF and VCF (p. 14); VCA and envelope (p. 16); LFO with delay (p. 17); chorus I and II (p. 22); specifications (p. 32). A scan, read by OCR.
+
+**For teachers**
+
+Roland. *Juno-106 Owner's Manual*. Roland Corporation, [soundprogramming.net/manuals/Roland_Juno-106_Manual.pdf](https://soundprogramming.net/manuals/Roland_Juno-106_Manual.pdf). 128 patches, portamento and MIDI (p. 1); the HPF at 0 boosts the bass (p. 18); portamento (p. 23); chorus I and II not at the same time (p. 29). A scan, read by OCR.
+
+"Roland Juno-60." *Wikipedia*, [en.wikipedia.org/wiki/Roland_Juno-60](https://en.wikipedia.org/wiki/Roland_Juno-60). A 24 dB-per-octave resonant low-pass and a non-resonant high-pass filter; the chorus buttons' rates of 0.4 and 0.6 Hz.
+:::
+<!-- /works-cited -->
+

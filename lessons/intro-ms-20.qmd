@@ -1,0 +1,101 @@
+---
+title: "Meet the Korg MS-20"
+toc: true
+toc-depth: 2
+description: "A first look at the Korg MS-20: two screaming filters, a patch panel and a ring modulator, a guided tour, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Synths Compared](synth-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the MS-20 is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **MS-20** was made by **Korg** and released in **1978** (Wikipedia, "Korg MS-20").
+- It is monophonic and **semi-modular**: it works without cords, and a **patch panel** changes it (MS-20 manual, pp. 6-7).
+- Wikipedia: its "flexibility led to its resurgence during the analog revival of the late 1990s."
+
+## Its sound
+
+- **Two filters in a row**: a high-pass, then a low-pass (MS-20 manual, p. 5).
+- Each has a **Peak** knob that goes up to self-oscillation, so the filters scream (manual, p. 5).
+- VCO-2 can be a **ring modulator** for bells and clangs (manual, p. 5).
+- Two envelope generators: EG 1 (delay, attack, release) and EG 2 (hold, attack, decay, sustain, release) (manual, pp. 6-7).
+
+## The panel
+
+This is the MS-20 panel from [Classic Synths Compared](synth-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard. Turn any knob while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="ms20"><div class="scmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads a worked example and changes one thing.
+
+```{=html}
+<div class="ik-step" data-ex="ms20-hot" data-set="{&quot;hPeak&quot;:0,&quot;lPeak&quot;:0,&quot;hCut&quot;:0}"><p><b>Both peaks at 0.</b> A plain sawtooth through the filters. Listen: an ordinary lead.</p></div>
+<div class="ik-step" data-ex="ms20-hot" data-set="{&quot;hPeak&quot;:0,&quot;hCut&quot;:0}"><p><b>Low-pass Peak up.</b> The <b>low-pass Peak</b> to 8. Listen for a loud whistle on top.</p></div>
+<div class="ik-step" data-ex="ms20-hot" data-set="{&quot;hPeak&quot;:0}"><p><b>High-pass cutoff up.</b> The <b>high-pass</b> cuts the low end away. Listen: thinner.</p></div>
+<div class="ik-step" data-ex="ms20-hot"><p><b>High-pass Peak up too.</b> Both peaks high. Listen: the MS-20 scream.</p></div>
+<div class="ik-step" data-ex="ms20-ring"><p><b>The ring modulator.</b> VCO-2 on ring, with EG 1 sweeping the pitch. Listen for clanging bells.</p></div>
+```
+
+## Famous records
+
+Wikipedia, "Korg MS-20" does not name any records, so none are listed here yet.
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Korg MS-20 Mini - Blue Monday / New Order recreated](https://www.youtube.com/watch?v=I6iDk7WKbZs) (Howie Ross) ↗
+- [Recreating ‪@madonna‬ the Korg MS20 synth at @echolandstudios! 🎹 What’s your favorite Madonna song?](https://www.youtube.com/watch?v=fYOFaaOi4JQ) (Celia Tewey) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>The MS-20&#x27;s two filters are…</b></p><ul><li>High-pass then low-pass</li><li>Two reverbs</li><li>Two drums</li><li>Two keyboards</li></ul><p class="ik-why">Manual p. 5.</p></div>
+<div class="ik-q" data-a="0"><p><b>What does turning Peak right up do?</b></p><ul><li>The filter whistles by itself</li><li>The sound stops</li><li>It plays chords</li><li>It slows down</li></ul><p class="ik-why">Self-oscillation.</p></div>
+<div class="ik-q" data-a="0"><p><b>Where do patch cords go on the MS-20?</b></p><ul><li>The patch panel</li><li>The keyboard</li><li>The battery</li><li>Nowhere</li></ul><p class="ik-why">Manual pp. 6-7.</p></div>
+<div class="ik-q" data-a="1"><p><b>Which year did the MS-20 come out?</b></p><ul><li>1958</li><li>1978</li><li>2008</li><li>1998</li></ul><p class="ik-why">1978.</p></div>
+```
+
+## Next
+
+- [Classic Synths Compared](synth-compare.html?synth=ms20): the MS-20 side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Korg. *MS-20 Owner's Manual*. Keio Electronic Laboratories, 1978, [www.korg.com/us/support/download/manual/0/131/2441/](https://www.korg.com/us/support/download/manual/0/131/2441/). VCOs, waveforms and ring modulator, high-pass and low-pass filters with peak up to self-oscillation (p. 5); EG 1, EG 2 with hold, MG, the patch panel (pp. 6-7). A scan, read by OCR.
+
+**For teachers**
+
+"Korg MS-20." *Wikipedia*, [en.wikipedia.org/wiki/Korg_MS-20](https://en.wikipedia.org/wiki/Korg_MS-20). 1978-1983, monophonic, semi-modular, high-pass and low-pass filters in series; the 2014 kit's two filter types.
+:::
+<!-- /works-cited -->
+

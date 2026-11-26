@@ -1,0 +1,109 @@
+---
+title: "Meet the Minimoog Model D"
+toc: true
+toc-depth: 2
+description: "A first look at the Minimoog Model D: what it is, how it sounds, a guided tour of its knobs using the manual's own patch sheets, the records it is on, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Synths Compared](synth-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Model D is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Minimoog Model D** is a synthesizer made by **Moog Music**, first sold in **1970** (Wikipedia, "Minimoog").
+- Before it, synthesizers were big modular systems joined with patch cords. The Model D put the oscillators, filter and envelopes behind fixed switches in one box.
+- The composer David Borden said it "took the synthesizer out of the studio and put it into the concert hall" (quoted in Wikipedia, "Minimoog").
+- It plays **one note at a time**: it is a *monophonic* synth.
+
+## Its sound
+
+- It has **three oscillators** on every note, so one key can sound thick or even like a chord (Model D manual, pp. 16-19).
+- Its **ladder filter** takes away high harmonics at 24 dB per octave and can whistle when Emphasis is high (manual, pp. 29-31).
+- Its output can be fed back into its own mixer, which **overloads** it and makes a growl (manual, pp. 27, 36).
+- Two **contours** (envelopes) shape the filter and the loudness over time (manual, pp. 30-31).
+
+## The panel
+
+This is the Model D panel from [Classic Synths Compared](synth-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard. Turn any knob while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="moog"><div class="scmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads one of the manual's own patch sheets (Moog Music, *Minimoog Model D* manual, pp. 55-76) onto the panel and plays a short bass line. Open **Show the patch sheet** to see the page's drawing of that sheet.
+
+```{=html}
+<div class="ik-step" data-sheet="sub-bass"><p><b>One oscillator, one wave.</b> <i>Sub Bass</i> (p. 68) uses only Oscillator 1, on its lowest 32' range, with the soft <b>triangle</b> wave. Listen for a deep, round, plain tone.</p></div>
+<div class="ik-step" data-sheet="kraft-bass"><p><b>Three oscillators together.</b> <i>Kraft Bass</i> (p. 56) turns all three oscillators on in the <b>Mixer</b> and also the <b>External input</b> (the feedback). Listen for how much thicker and dirtier it is than step 1.</p></div>
+<div class="ik-step" data-sheet="soft-rez-bass"><p><b>Close the filter, add Emphasis.</b> <i>Soft Rez Bass</i> (p. 70) sets the <b>Cutoff</b> low and <b>Emphasis</b> to 5. Listen for a soft tone with a little "wow" ring at the start of each note.</p></div>
+<div class="ik-step" data-sheet="bubble-bass"><p><b>The filter contour.</b> <i>Bubble Bass</i> (p. 63) sets the cutoff right down and the contour <b>Amount</b> high, with a long filter decay. Listen for each note opening up and closing again: a "bubble".</p></div>
+<div class="ik-step" data-sheet="3-square-lead"><p><b>Glide.</b> <i>3-Square Lead</i> (p. 63) uses three square waves and turns <b>Glide</b> on. Listen for the pitch sliding from one note to the next.</p></div>
+<div class="ik-step" data-sheet="singing-wind"><p><b>Noise, no oscillators.</b> <i>Singing Wind</i> (p. 71) turns every oscillator off and the <b>Noise</b> on, with high Emphasis. Listen for wind that whistles at a pitch.</p></div>
+<div class="ik-step" data-sheet="hi-hat"><p><b>A short loudness contour.</b> <i>Hi-Hat</i> (p. 59) is noise with a very short <b>loudness decay</b>. Listen: a synth can make a drum sound too.</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Minimoog":
+
+- Sun Ra, *My Brother the Wind* (1970)
+- Kraftwerk, *Autobahn* (1974) and *The Man-Machine* (1978)
+- Parliament, "Flash Light"
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [40 Famous Songs on a MiniMoog Model D: Reissue vs Vintage](https://www.youtube.com/watch?v=opQSGvPQHL0) (Andy Whitmore) ↗
+- [Ep20: Synth Sounds of Minimoog: Parliament, Pink Floyd, Dr. Dre & More](https://www.youtube.com/watch?v=33gZwkSUZRs) (Reverb) ↗
+- [Michael Jackson - Thriller [MiniMoog Model D Tutorial]](https://www.youtube.com/watch?v=B81J3jvoNCc) (Rishabh Rajan) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="2"><p><b>How many oscillators does the Model D have on every note?</b></p><ul><li>One</li><li>Two</li><li>Three</li><li>Six</li></ul><p class="ik-why">Three oscillators, all on the same note (manual pp. 16-19).</p></div>
+<div class="ik-q" data-a="0"><p><b>How many notes can it play at once?</b></p><ul><li>One: it is monophonic</li><li>Five</li><li>Eight</li><li>Sixteen</li></ul><p class="ik-why">It plays one note at a time.</p></div>
+<div class="ik-q" data-a="1"><p><b>You turn the Cutoff knob down. What do you hear?</b></p><ul><li>Louder</li><li>Darker: fewer high harmonics</li><li>Higher pitch</li><li>An echo</li></ul><p class="ik-why">The low-pass filter takes away high harmonics.</p></div>
+<div class="ik-q" data-a="0"><p><b>What does Glide do?</b></p><ul><li>Slides the pitch from note to note</li><li>Adds reverb</li><li>Turns on the noise</li><li>Plays chords</li></ul><p class="ik-why">Step 5: the pitch slides.</p></div>
+<div class="ik-q" data-a="1"><p><b>Which year did the Model D first go on sale?</b></p><ul><li>1958</li><li>1970</li><li>1983</li><li>1999</li></ul><p class="ik-why">1970 (Wikipedia).</p></div>
+```
+
+## Next
+
+- [Classic Synths Compared](synth-compare.html?synth=moog): the Model D side by side with the others, with every setting checked against the manuals.
+- [The Model D patch sheets](synth-compare.qmd#the-model-d-patch-sheets): all 44 sheets from the manual, redrawn, to play and print.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<link rel="stylesheet" href="/apps/shared/lessons/moog-sheet.css">
+<script src="/apps/shared/lessons/moog-sheet.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Minimoog." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Minimoog](https://en.wikipedia.org/wiki/Minimoog). 1970, Moog Music; David Borden's "took the synthesizer out of the studio"; Sun Ra, Kraftwerk, Parliament.
+
+Moog Music. *Minimoog Model D* [owner's manual, 2016 reissue]. Moog Music Inc., [cdn.inmusicbrands.com/Moog/Model%20D/Minimoog_Model_D_Manual.pdf](https://cdn.inmusicbrands.com/Moog/Model%20D/Minimoog_Model_D_Manual.pdf). Oscillators, waves and ranges (pp. 16-19), modulation (pp. 19-24), mixer and the external-input feedback (pp. 26-27, 33, 36), ladder filter, key tracking and contours (pp. 29-31), recipes (pp. 39-42), note priority (p. 47), specifications (p. 80); the patch sheets redrawn in "The Model D patch sheets" (pp. 55-76, 44 sounds; blank sheets pp. 77-79), read from the printed pages to the nearest half mark.
+:::
+<!-- /works-cited -->
+

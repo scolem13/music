@@ -1,0 +1,110 @@
+---
+title: "Meet the TB-303's pattern mode"
+toc: true
+toc-depth: 2
+description: "A first look at programming the Roland TB-303: pitch mode, then time mode, then accents and slides, a guided tour that builds an acid line, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Sequencers Compared](sequencer-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the TB-303 pattern mode is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **TB-303** (Roland, 1981; Wikipedia, "Roland TB-303") has its own sequencer. A pattern is written in two passes.
+- First, **pitch mode**: press the notes in order. Then **time mode**: say for each step if it is a note, a tie or a rest (TB-303 manual, pp. 4-5, 15).
+- A pattern stores **pitch, length of note, accent and slide** (manual, pp. 4-5).
+- For its sound, see [Meet the TB-303](intro-tb-303.qmd).
+
+## Its sound
+
+- The basic unit is the **sixteenth note**; a pattern has up to 16 steps (manual, p. 5).
+- **Accent** makes a step louder and brighter; **slide** glides into the next note (manual, pp. 41-43).
+- It stores **64 patterns** and 7 tracks (manual, pp. 11, 23).
+- Here the voice is the page's own shared voice, not a model of the 303.
+
+## The panel
+
+This is the TB-303 pattern mode panel from [Classic Sequencers Compared](sequencer-compare.qmd), drawn after the real one (not a copy). Change the steps on the panel. The tour's ▶ buttons play it. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="seq" data-id="tb303"><div class="sqc"></div></div>
+```
+
+## Guided tour
+
+Each step plays the same notes and adds one thing.
+
+```{=html}
+<div class="ik-step" data-seq="{&quot;bpm&quot;:124,&quot;pitch&quot;:[{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:3,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:5,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:7,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:10,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:7,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:3,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false}],&quot;time&quot;:[&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;],&quot;last&quot;:16,&quot;trip&quot;:false}"><p><b>Pitch mode only.</b> Every step a note, no accents, no slides. Listen: a steady line of 16ths.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:124,&quot;pitch&quot;:[{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:3,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:5,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:7,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:10,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:7,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:3,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false}],&quot;time&quot;:[&quot;n&quot;,&quot;n&quot;,&quot;t&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;r&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;t&quot;,&quot;n&quot;,&quot;n&quot;,&quot;r&quot;,&quot;n&quot;],&quot;last&quot;:16,&quot;trip&quot;:false}"><p><b>Time mode: ties and rests.</b> Some steps are ties (the note held) or rests. Listen: the rhythm appears.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:124,&quot;pitch&quot;:[{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:true,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:3,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:5,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:true,&quot;sl&quot;:false},{&quot;k&quot;:7,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:10,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:7,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:3,&quot;oct&quot;:-1,&quot;acc&quot;:true,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false}],&quot;time&quot;:[&quot;n&quot;,&quot;n&quot;,&quot;t&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;r&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;t&quot;,&quot;n&quot;,&quot;n&quot;,&quot;r&quot;,&quot;n&quot;],&quot;last&quot;:16,&quot;trip&quot;:false}"><p><b>Accents.</b> Three notes accented. Listen: they jump out.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:124,&quot;pitch&quot;:[{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:true,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:3,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:true},{&quot;k&quot;:5,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:true,&quot;sl&quot;:false},{&quot;k&quot;:7,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:10,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:true},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:7,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:3,&quot;oct&quot;:-1,&quot;acc&quot;:true,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false}],&quot;time&quot;:[&quot;n&quot;,&quot;n&quot;,&quot;t&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;r&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;t&quot;,&quot;n&quot;,&quot;n&quot;,&quot;r&quot;,&quot;n&quot;],&quot;last&quot;:16,&quot;trip&quot;:false}"><p><b>Slides.</b> Two notes slide into the next. Listen for the glide: the acid line is done.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:124,&quot;pitch&quot;:[{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:true,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:3,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:true},{&quot;k&quot;:5,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:true,&quot;sl&quot;:false},{&quot;k&quot;:7,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:10,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:true},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:7,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:3,&quot;oct&quot;:-1,&quot;acc&quot;:true,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:-1,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false},{&quot;k&quot;:0,&quot;oct&quot;:0,&quot;acc&quot;:false,&quot;sl&quot;:false}],&quot;time&quot;:[&quot;n&quot;,&quot;n&quot;,&quot;t&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;r&quot;,&quot;n&quot;,&quot;n&quot;,&quot;n&quot;,&quot;t&quot;,&quot;n&quot;,&quot;n&quot;,&quot;r&quot;,&quot;n&quot;],&quot;last&quot;:8,&quot;trip&quot;:false}"><p><b>Last step at 8.</b> Only the first 8 steps play. Listen: a shorter loop.</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Roland TB-303":
+
+- Phuture, "Acid Tracks" (1987)
+- Charanjit Singh, *Synthesizing: Ten Ragas to a Disco Beat* (1982)
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Phuture "Acid Tracks", "Phuture Jacks", "Your Only Friend" – Roland TB-303 Pattern, Behringer TD-3](https://www.youtube.com/watch?v=7mX8wH6_IAA) (DUCKTRONIC) ↗
+- [Hardfloor "Acperience I" – Roland TB-303 Pattern, Behringer TD-3, ABL, Acid, Techno, House](https://www.youtube.com/watch?v=jKzw7tZu6mc) (DUCKTRONIC) ↗
+- [JOSH WINK 'HIGHER STATE OF CONSCIOUSNESS' 303 PATTERN](https://www.youtube.com/watch?v=gGhFi0LNz0I) (Chris Jones) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>In which order do you write a 303 pattern?</b></p><ul><li>Pitch mode, then time mode</li><li>Time mode, then pitch mode</li><li>Both at once</li><li>With a microphone</li></ul><p class="ik-why">Manual pp. 4-5.</p></div>
+<div class="ik-q" data-a="0"><p><b>Time mode says whether a step is…</b></p><ul><li>A note, tie or rest</li><li>Loud or soft</li><li>Major or minor</li><li>Fast or slow</li></ul><p class="ik-why">Manual p. 15.</p></div>
+<div class="ik-q" data-a="0"><p><b>A slide…</b></p><ul><li>Glides into the next note</li><li>Stops the pattern</li><li>Changes the drum</li><li>Adds reverb</li></ul><p class="ik-why">Step 4.</p></div>
+<div class="ik-q" data-a="0"><p><b>The basic step is a…</b></p><ul><li>Sixteenth note</li><li>Whole note</li><li>Half note</li><li>Bar</li></ul><p class="ik-why">Manual p. 5.</p></div>
+```
+
+## Next
+
+- [Classic Sequencers Compared](sequencer-compare.html?seq=tb303): the TB-303 pattern mode side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/sequencer-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/sequencer-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Roland Corporation. *TB-03 Owner's Manual*. Roland, 2016, [static.roland.com/assets/media/pdf/TB-03_eng03_W.pdf](https://static.roland.com/assets/media/pdf/TB-03_eng03_W.pdf). One sheet: Original mode reproduces the TB-303's pattern write; note / tie / rest, 16 steps, triplet grid, last step.
+
+"Roland TB-303." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Roland_TB-303](https://en.wikipedia.org/wiki/Roland_TB-303).
+
+**For teachers**
+
+Roland Corporation. *TB-303 Bass Line Owner's Manual*. Roland, [1982], scan at Internet Archive, [archive.org/details/synthmanual-roland-tb-303-owners-manual](https://archive.org/details/synthmanual-roland-tb-303-owners-manual). PDF pages: pitch, length of note, accent and slide in a pattern (4-5), sixteenth notes (5), 64 patterns (11), time mode (14-16), 7 tracks (23), writing accent and slide (40-43).
+
+"Roland TB-303." *Wikipedia*, [en.wikipedia.org/wiki/Roland_TB-303](https://en.wikipedia.org/wiki/Roland_TB-303). Sawtooth or square; a 24 dB-per-octave resonant low-pass filter that does not self-oscillate; 1981-1984.
+:::
+<!-- /works-cited -->
+

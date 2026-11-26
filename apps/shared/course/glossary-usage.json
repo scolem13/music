@@ -1,5 +1,5 @@
 {
-"generated": "2026-11-24T15:14",
+"generated": "2026-11-25T05:46",
 "terms": {
 "audiation": [
 {
@@ -7,6 +7,26 @@
 "course": "dp1",
 "title": "Baroque Research Feedback",
 "url": "https://classes.seancoleman.org/dp1/2026-09-28.html"
+}
+],
+"sonata": [
+{
+"date": "2026-10-08",
+"course": "dp1",
+"title": "Measure Numbers",
+"url": "https://classes.seancoleman.org/dp1/2026-10-08.html"
+},
+{
+"date": "2026-10-09",
+"course": "dp1",
+"title": "Sonata Form",
+"url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
+},
+{
+"date": "2026-12-11",
+"course": "dp1",
+"title": "Classical Style: Exploration and Creating Exercise",
+"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
 }
 ],
 "allegro": [
@@ -37,24 +57,12 @@
 "url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
 }
 ],
-"sonata": [
-{
-"date": "2026-10-08",
-"course": "dp1",
-"title": "Measure Numbers",
-"url": "https://classes.seancoleman.org/dp1/2026-10-08.html"
-},
+"arpeggio": [
 {
 "date": "2026-10-09",
 "course": "dp1",
 "title": "Sonata Form",
 "url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
-},
-{
-"date": "2026-12-11",
-"course": "dp1",
-"title": "Classical Style: Exploration and Creating Exercise",
-"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
 }
 ],
 "recapitulation": [
@@ -63,6 +71,26 @@
 "course": "dp1",
 "title": "Sonata Form",
 "url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
+}
+],
+"phrase": [
+{
+"date": "2026-10-09",
+"course": "dp1",
+"title": "Sonata Form",
+"url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
+},
+{
+"date": "2026-11-19",
+"course": "dp1",
+"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
+"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
+},
+{
+"date": "2026-12-11",
+"course": "dp1",
+"title": "Classical Style: Exploration and Creating Exercise",
+"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
 }
 ],
 "sentence": [
@@ -187,78 +215,6 @@
 "url": "https://classes.seancoleman.org/assessments/for-2728-myp1/2027-11-09-formative-timestamp-log.html"
 }
 ],
-"arpeggio": [
-{
-"date": "2026-10-09",
-"course": "dp1",
-"title": "Sonata Form",
-"url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
-}
-],
-"phrase": [
-{
-"date": "2026-10-09",
-"course": "dp1",
-"title": "Sonata Form",
-"url": "https://classes.seancoleman.org/dp1/2026-10-09.html"
-},
-{
-"date": "2026-11-19",
-"course": "dp1",
-"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
-"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
-},
-{
-"date": "2026-12-11",
-"course": "dp1",
-"title": "Classical Style: Exploration and Creating Exercise",
-"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
-}
-],
-"romantic-period": [
-{
-"date": "2026-11-19",
-"course": "dp1",
-"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
-"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
-}
-],
-"chromatic": [
-{
-"date": "2026-11-19",
-"course": "dp1",
-"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
-"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
-}
-],
-"classical-period": [
-{
-"date": "2026-11-19",
-"course": "dp1",
-"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
-"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
-},
-{
-"date": "2026-12-11",
-"course": "dp1",
-"title": "Classical Style: Exploration and Creating Exercise",
-"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
-}
-],
-"half-cadence": [
-{
-"date": "2026-11-19",
-"course": "dp1",
-"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
-"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
-},
-{
-"date": "2026-12-04",
-"course": "dp1",
-"title": "Formative 2: The First 16 Bars",
-"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-04-classical-composing-formative.html"
-}
-],
 "periods": [
 {
 "date": "2026-11-19",
@@ -277,6 +233,14 @@
 "course": "dp1",
 "title": "Classical Style: Exploration and Creating Exercise",
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
+}
+],
+"romantic-period": [
+{
+"date": "2026-11-19",
+"course": "dp1",
+"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
+"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
 }
 ],
 "authentic-perfect-cadence": [
@@ -301,7 +265,15 @@
 "url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
 }
 ],
-"cadence": [
+"chromatic": [
+{
+"date": "2026-11-19",
+"course": "dp1",
+"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
+"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
+}
+],
+"half-cadence": [
 {
 "date": "2026-11-19",
 "course": "dp1",
@@ -315,12 +287,40 @@
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-04-classical-composing-formative.html"
 }
 ],
+"classical-period": [
+{
+"date": "2026-11-19",
+"course": "dp1",
+"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
+"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
+},
+{
+"date": "2026-12-11",
+"course": "dp1",
+"title": "Classical Style: Exploration and Creating Exercise",
+"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
+}
+],
 "rubato": [
 {
 "date": "2026-11-19",
 "course": "dp1",
 "title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
 "url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
+}
+],
+"cadence": [
+{
+"date": "2026-11-19",
+"course": "dp1",
+"title": "The Classical Style: The Plan, a Little Romantic, Phrases and Cadences",
+"url": "https://classes.seancoleman.org/dp1/2026-11-19.html"
+},
+{
+"date": "2026-12-04",
+"course": "dp1",
+"title": "Formative 2: The First 16 Bars",
+"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-04-classical-composing-formative.html"
 }
 ],
 "relative-major-minor": [
@@ -895,14 +895,6 @@
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2027-05-20-cmm-process-video-half-draft.html"
 }
 ],
-"voicing": [
-{
-"date": "2026-09-28",
-"course": "myp4",
-"title": "Blues in the Closet",
-"url": "https://classes.seancoleman.org/myp4/2026-09-28.html"
-}
-],
 "voice-leading": [
 {
 "date": "2026-09-28",
@@ -929,6 +921,14 @@
 "course": "myp4",
 "title": "Rock from the blues",
 "url": "https://classes.seancoleman.org/myp4/2026-11-17.html"
+}
+],
+"voicing": [
+{
+"date": "2026-09-28",
+"course": "myp4",
+"title": "Blues in the Closet",
+"url": "https://classes.seancoleman.org/myp4/2026-09-28.html"
 }
 ],
 "criterion-a": [
@@ -1015,6 +1015,104 @@
 "course": "dp1",
 "title": "CMM: Process Video (Half Draft)",
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2027-05-20-cmm-process-video-half-draft.html"
+}
+],
+"statement-of-inquiry": [
+{
+"date": "2026-10-07",
+"course": "myp5",
+"title": "Writing the Draft Artistic Intention (Formative 2)",
+"url": "https://classes.seancoleman.org/myp5/2026-10-07.html"
+},
+{
+"date": "2026-10-08",
+"course": "myp4",
+"title": "Formative 1 Due: Choose One Idea and Add a Part",
+"url": "https://classes.seancoleman.org/myp4/2026-10-08.html"
+},
+{
+"date": "2026-10-08",
+"course": "myp5",
+"title": "Formative 2: Draft artistic intention",
+"url": "https://classes.seancoleman.org/assessments/for-myp5/2026-10-08-formative-2.html"
+},
+{
+"date": "2026-10-14",
+"course": "myp4",
+"title": "Survey, Stage 2 Clips and Writing Your Artistic Intention",
+"url": "https://classes.seancoleman.org/myp4/2026-10-14.html"
+},
+{
+"date": "2026-10-14",
+"course": "myp4",
+"title": "Formative 2: Draft artistic intention",
+"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-10-14-formative-2.html"
+},
+{
+"date": "2026-10-15",
+"course": "myp4",
+"title": "Write Artistic Intent in Class",
+"url": "https://classes.seancoleman.org/myp4/2026-10-15.html"
+},
+{
+"date": "2026-10-15",
+"course": "myp4",
+"title": "Formative 2: Draft artistic intention",
+"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-10-15-formative-2.html"
+},
+{
+"date": "2026-10-16",
+"course": "myp5",
+"title": "Summative: Criterion B (Developing)",
+"url": "https://classes.seancoleman.org/assessments/for-myp5/2026-10-16-summative-crit-b.html"
+},
+{
+"date": "2026-10-22",
+"course": "myp4",
+"title": "Summative: Criterion B (Developing)",
+"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-10-22-summative-crit-b.html"
+},
+{
+"date": "2026-10-30",
+"course": "myp5",
+"title": "Crit D Due: Closing the Practice ePortfolio",
+"url": "https://classes.seancoleman.org/myp5/2026-10-30.html"
+},
+{
+"date": "2026-11-17",
+"course": "myp5",
+"title": "Researching your genre",
+"url": "https://classes.seancoleman.org/myp5/2026-11-17.html"
+},
+{
+"date": "2026-11-18",
+"course": "myp5",
+"title": "Two protest songs",
+"url": "https://classes.seancoleman.org/myp5/2026-11-18.html"
+},
+{
+"date": "2026-11-25",
+"course": "myp4",
+"title": "Formative Ai: Genre snapshot + two song choices",
+"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-11-25-formative-crit-ai.html"
+},
+{
+"date": "2026-11-25",
+"course": "myp4",
+"title": "Peer review: Formative Ai",
+"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-11-25-peer-review-crit-ai.html"
+},
+{
+"date": "2026-12-01",
+"course": "myp4",
+"title": "Formative Aii: Critique draft",
+"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-12-01-formative-crit-aii.html"
+},
+{
+"date": "2026-12-15",
+"course": "myp4",
+"title": "Summative: Criterion A (Investigating)",
+"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-12-15-summative-crit-a.html"
 }
 ],
 "artistic-intention": [
@@ -1121,104 +1219,6 @@
 "url": "https://classes.seancoleman.org/myp4/2026-11-02.html"
 }
 ],
-"statement-of-inquiry": [
-{
-"date": "2026-10-07",
-"course": "myp5",
-"title": "Writing the Draft Artistic Intention (Formative 2)",
-"url": "https://classes.seancoleman.org/myp5/2026-10-07.html"
-},
-{
-"date": "2026-10-08",
-"course": "myp4",
-"title": "Formative 1 Due: Choose One Idea and Add a Part",
-"url": "https://classes.seancoleman.org/myp4/2026-10-08.html"
-},
-{
-"date": "2026-10-08",
-"course": "myp5",
-"title": "Formative 2: Draft artistic intention",
-"url": "https://classes.seancoleman.org/assessments/for-myp5/2026-10-08-formative-2.html"
-},
-{
-"date": "2026-10-14",
-"course": "myp4",
-"title": "Survey, Stage 2 Clips and Writing Your Artistic Intention",
-"url": "https://classes.seancoleman.org/myp4/2026-10-14.html"
-},
-{
-"date": "2026-10-14",
-"course": "myp4",
-"title": "Formative 2: Draft artistic intention",
-"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-10-14-formative-2.html"
-},
-{
-"date": "2026-10-15",
-"course": "myp4",
-"title": "Write Artistic Intent in Class",
-"url": "https://classes.seancoleman.org/myp4/2026-10-15.html"
-},
-{
-"date": "2026-10-15",
-"course": "myp4",
-"title": "Formative 2: Draft artistic intention",
-"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-10-15-formative-2.html"
-},
-{
-"date": "2026-10-16",
-"course": "myp5",
-"title": "Summative: Criterion B (Developing)",
-"url": "https://classes.seancoleman.org/assessments/for-myp5/2026-10-16-summative-crit-b.html"
-},
-{
-"date": "2026-10-22",
-"course": "myp4",
-"title": "Summative: Criterion B (Developing)",
-"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-10-22-summative-crit-b.html"
-},
-{
-"date": "2026-10-30",
-"course": "myp5",
-"title": "Crit D Due: Closing the Practice ePortfolio",
-"url": "https://classes.seancoleman.org/myp5/2026-10-30.html"
-},
-{
-"date": "2026-11-17",
-"course": "myp5",
-"title": "Researching your genre",
-"url": "https://classes.seancoleman.org/myp5/2026-11-17.html"
-},
-{
-"date": "2026-11-18",
-"course": "myp5",
-"title": "Two protest songs",
-"url": "https://classes.seancoleman.org/myp5/2026-11-18.html"
-},
-{
-"date": "2026-11-25",
-"course": "myp4",
-"title": "Formative Ai: Genre snapshot + two song choices",
-"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-11-25-formative-crit-ai.html"
-},
-{
-"date": "2026-11-25",
-"course": "myp4",
-"title": "Peer review: Formative Ai",
-"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-11-25-peer-review-crit-ai.html"
-},
-{
-"date": "2026-12-01",
-"course": "myp4",
-"title": "Formative Aii: Critique draft",
-"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-12-01-formative-crit-aii.html"
-},
-{
-"date": "2026-12-15",
-"course": "myp4",
-"title": "Summative: Criterion A (Investigating)",
-"url": "https://classes.seancoleman.org/assessments/for-myp4/2026-12-15-summative-crit-a.html"
-}
-],
 "blue-notes": [
 {
 "date": "2026-11-17",
@@ -1299,14 +1299,6 @@
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-11-27-classical-writing-formative.html"
 }
 ],
-"area-of-inquiry": [
-{
-"date": "2026-11-27",
-"course": "dp1",
-"title": "Formative 1: Why Is This Piece Typical of AOI 2?",
-"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-11-27-classical-writing-formative.html"
-}
-],
 "exploring-music-in-context": [
 {
 "date": "2026-11-27",
@@ -1325,6 +1317,14 @@
 "course": "dp1",
 "title": "Classical Style: Exploration and Creating Exercise",
 "url": "https://classes.seancoleman.org/assessments/for-dp1/2026-12-11-classical-exploration.html"
+}
+],
+"area-of-inquiry": [
+{
+"date": "2026-11-27",
+"course": "dp1",
+"title": "Formative 1: Why Is This Piece Typical of AOI 2?",
+"url": "https://classes.seancoleman.org/assessments/for-dp1/2026-11-27-classical-writing-formative.html"
 }
 ],
 "alberti-bass": [

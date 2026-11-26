@@ -1,0 +1,102 @@
+---
+title: "Meet the Moog Taurus"
+toc: true
+toc-depth: 2
+description: "A first look at the Moog Taurus bass pedals: a synth you play with your feet, a guided tour of its few knobs, the bands who used it, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Synths Compared](synth-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Taurus is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Taurus** is "a foot-operated analog synthesizer" by **Moog Music**; the Taurus I was made from **1975** to 1981 (Wikipedia, "Moog Taurus").
+- You play it on **pedals**, like an organ's, so your hands stay free for keyboards or guitar (Wikipedia).
+- The Taurus III of 2010 closely follows the first one (Wikipedia).
+
+## Its sound
+
+- **Two oscillators**, both sawtooth; **Beat** detunes the second one (Taurus 205A manual, PDF pp. 3, 6).
+- A 24 dB low-pass **filter** with its own contour: attack, decay and amount (manual, PDF pp. 3-6).
+- **Glide** slides from note to note (manual, PDF p. 5).
+- It plays one note at a time.
+
+## The panel
+
+This is the Taurus panel from [Classic Synths Compared](synth-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard. Turn any knob while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="taurus"><div class="scmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads the pedal-bass example and changes one knob.
+
+```{=html}
+<div class="ik-step" data-ex="taurus-bass" data-set="{&quot;beat&quot;:0,&quot;mixB&quot;:0}"><p><b>One oscillator.</b> Oscillator B off. Listen: a plain bass.</p></div>
+<div class="ik-step" data-ex="taurus-bass"><p><b>Add Beat.</b> Oscillator B on and slightly detuned. Listen: it wobbles and gets fatter.</p></div>
+<div class="ik-step" data-ex="taurus-bass" data-set="{&quot;cAmt&quot;:0}"><p><b>No filter contour.</b> Contour amount at 0. Listen: dull, no movement.</p></div>
+<div class="ik-step" data-ex="taurus-bass" data-set="{&quot;cAmt&quot;:9,&quot;emph&quot;:6}"><p><b>More contour and Emphasis.</b> Listen: each note opens with a "bwow".</p></div>
+<div class="ik-step" data-ex="taurus-bass" data-set="{&quot;glideOn&quot;:true,&quot;glide&quot;:6}"><p><b>Glide.</b> Listen: notes slide into each other.</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Moog Taurus":
+
+- used by Genesis, Yes, Rush, Tool and Dream Theater
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Moog Taurus bass pedal synthesizer - sound design tutorial Rush "Tom Sawyer"](https://www.youtube.com/watch?v=GnEg0wEJMDo) (RetroSound) ↗
+- [Moog Taurus Bass Pedals in Genesis Songs and more - The Legendary Prog Rock Sound!](https://www.youtube.com/watch?v=3qicNIas2wk) (RetroSound) ↗
+- [Genesis - Turn it On Again {Bass Cover} with Moog Taurus 3 Bass Pedals](https://www.youtube.com/watch?v=wWXauqpkOr4) (CliffJamz) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>How do you play a Taurus?</b></p><ul><li>With your feet, on pedals</li><li>With a bow</li><li>By blowing</li><li>With a mouse</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>What does Beat do?</b></p><ul><li>Detunes the second oscillator</li><li>Sets the tempo</li><li>Adds drums</li><li>Turns it off</li></ul><p class="ik-why">Manual PDF p. 3.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which kind of music is it most linked with?</b></p><ul><li>Progressive rock</li><li>Opera</li><li>Jazz trios</li><li>Folk</li></ul><p class="ik-why">Wikipedia.</p></div>
+<div class="ik-q" data-a="0"><p><b>Its waveform is…</b></p><ul><li>Sawtooth</li><li>Only sine</li><li>Wavetable</li><li>Sampled</li></ul><p class="ik-why">Manual PDF p. 6.</p></div>
+```
+
+## Next
+
+- [Classic Synths Compared](synth-compare.html?synth=taurus): the Taurus side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Moog Taurus." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Moog_Taurus](https://en.wikipedia.org/wiki/Moog_Taurus). History section; the Taurus III added an LFO (the page's What if… on the Taurus).
+
+**For teachers**
+
+Moog Music. *Taurus Model 205A Owner's & Service Manual*. Moog Music Inc., [archive.org/details/moog_Moog_Taurus_Model_205A_Owners_Service_Manual](https://archive.org/details/moog_Moog_Taurus_Model_205A_Owners_Service_Manual). A scan, read by OCR; cited by PDF page. Two oscillators and BEAT, presets, octave, glide, filter contour, loudness (PDF 3-5); specifications: sawtooth, 24 dB VCF, glide 0-0.5 s (PDF 6).
+:::
+<!-- /works-cited -->
+

@@ -1,0 +1,41 @@
+---
+title: "Play the Minimoog Model D"
+description: "The Model D's front panel, drawn as in its manual's patch sheets, wired to the site's Model D sound: turn the knobs and play."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+page-layout: full
+---
+
+## Play it
+
+::: {.model-d}
+:::
+
+## What this is
+
+- "As Vital" and "As Surge XT" show the same patch with those synths' module order and parameter names (from the Surge XT manual and Vital's source code); the list under the panel says which settings carry over exactly, roughly, or not at all. The sound is still the site's Model D.
+- The Simple panel is the site's teaching layout, the same for every synth: modules in the order the sound travels, each folds to a picture of what it does. The Real panel is the drawing from the Model D manual's patch sheets (Moog Music, 2016, pp. 55-79), so a patch on paper looks the same here.
+- Pick a starting patch: the manual's sheets are all in the list.
+- The sound is the site's model of the Model D, not a recording. Nobody has compared it with a real one yet.
+
+<link rel="stylesheet" href="/apps/shared/lessons/moog-sheet.css">
+<link rel="stylesheet" href="/apps/shared/lessons/model-d.css">
+<link rel="stylesheet" href="/apps/shared/lessons/synth-panel.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/moog-sheet.js"></script>
+<script src="/apps/shared/lessons/synth-panel.js"></script>
+<script src="/apps/shared/lessons/synth-views.js"></script>
+<script src="/apps/shared/lessons/model-d.js"></script>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Surge Synth Team. "Surge XT User Manual." *Surge XT*. [surge-synthesizer.github.io/manual-xt/](https://surge-synthesizer.github.io/manual-xt/). Classic oscillator Shape / Width 1 / Sub Mix / Sync / Unison; Mixer channels with M and S; Vintage and Legacy Ladder; Filter EG and Amp EG modes; LFO shapes; scene Volume / Pan / Width.
+
+Tytell, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp](https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp). Oscillator level, transpose, tune, unison; filter cutoff in semitones 8-136, resonance, drive, key track; envelope times 0-2.378 quartic; LFO frequency.
+:::
+<!-- /works-cited -->
+

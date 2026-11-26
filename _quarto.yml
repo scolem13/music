@@ -232,6 +232,32 @@ website:
             - lessons/sound-stereo.qmd
             - lessons/sound-chain.qmd
             - lessons/sound-chiptune.qmd
+            - section: "Meet the Instruments"
+              contents:
+                - lessons/intro-model-d.qmd
+                - lessons/intro-prophet-5.qmd
+                - lessons/intro-tb-303.qmd
+                - lessons/intro-juno.qmd
+                - lessons/intro-arp-2600.qmd
+                - lessons/intro-ob-xa.qmd
+                - lessons/intro-ms-20.qmd
+                - lessons/intro-dx7.qmd
+                - lessons/intro-ppg-wave.qmd
+                - lessons/intro-prophet-6.qmd
+                - lessons/intro-taurus.qmd
+                - lessons/intro-voyager.qmd
+                - lessons/intro-sub-37.qmd
+                - lessons/intro-grandmother.qmd
+                - lessons/intro-memorymoog.qmd
+                - lessons/intro-tr-808.qmd
+                - lessons/intro-tr-909.qmd
+                - lessons/intro-linndrum.qmd
+                - lessons/intro-mpc60.qmd
+                - lessons/intro-960.qmd
+                - lessons/intro-tb-303-seq.qmd
+                - lessons/intro-mc-202.qmd
+                - lessons/intro-mc-4.qmd
+                - lessons/intro-digitakt.qmd
             - lessons/synth-compare.qmd
             - lessons/sequencer-compare.qmd
             - lessons/drum-compare.qmd

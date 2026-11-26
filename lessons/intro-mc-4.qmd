@@ -1,0 +1,108 @@
+---
+title: "Meet the Roland MC-4 MicroComposer"
+toc: true
+toc-depth: 2
+description: "A first look at the Roland MC-4 MicroComposer: music typed in as numbers, a time base of 120 a beat, four CV channels, a guided tour, the records it is on, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Sequencers Compared](sequencer-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the MC-4 is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **MC-4 MicroComposer** was released by **Roland** in **1981** (Wikipedia, "Roland MC-4 Microcomposer").
+- Music is **typed in as numbers** on a keypad: a number for the pitch, the step time and the gate time (MC-4 manual, pp. 9-10).
+- Vince Clarke used it because, as Wikipedia puts it, "The whole theory behind programming with the MC-4 was better timing."
+- Its memory is lost when the power goes off, so songs are saved to cassette (manual, pp. 19, 22).
+
+## Its sound
+
+- Keys are **numbered** by counting up the keyboard (manual, p. 9).
+- The **time base** is 120 a beat, so a 16th note is **30** (manual, p. 10).
+- **CV-1** is the pitch; **CV-2** can go to the filter, the loudness or anything else (manual, p. 11).
+- It has **four channels** (manual, p. 11).
+
+## The panel
+
+This is the MC-4 panel from [Classic Sequencers Compared](sequencer-compare.qmd), drawn after the real one (not a copy). Change the steps on the panel. The tour's ▶ buttons play it. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="seq" data-id="mc4"><div class="sqc"></div></div>
+```
+
+## Guided tour
+
+Each step plays a line typed as numbers: pitch, CV-2, step and gate.
+
+```{=html}
+<div class="ik-step" data-seq="{&quot;bpm&quot;:104,&quot;tb&quot;:120,&quot;cv2&quot;:&quot;cut&quot;,&quot;ch&quot;:[[{&quot;cv1&quot;:0,&quot;cv2&quot;:40,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:3,&quot;cv2&quot;:40,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:7,&quot;cv2&quot;:40,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:10,&quot;cv2&quot;:40,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:12,&quot;cv2&quot;:60,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:10,&quot;cv2&quot;:60,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:7,&quot;cv2&quot;:60,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:3,&quot;cv2&quot;:60,&quot;st&quot;:30,&quot;gt&quot;:15}],[],[],[]]}"><p><b>16ths: step 30, gate 15.</b> Each note a 16th, sounding half its length. Listen: crisp.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:104,&quot;tb&quot;:120,&quot;cv2&quot;:&quot;cut&quot;,&quot;ch&quot;:[[{&quot;cv1&quot;:0,&quot;cv2&quot;:40,&quot;st&quot;:30,&quot;gt&quot;:28},{&quot;cv1&quot;:3,&quot;cv2&quot;:40,&quot;st&quot;:30,&quot;gt&quot;:28},{&quot;cv1&quot;:7,&quot;cv2&quot;:40,&quot;st&quot;:30,&quot;gt&quot;:28},{&quot;cv1&quot;:10,&quot;cv2&quot;:40,&quot;st&quot;:30,&quot;gt&quot;:28},{&quot;cv1&quot;:12,&quot;cv2&quot;:60,&quot;st&quot;:30,&quot;gt&quot;:28},{&quot;cv1&quot;:10,&quot;cv2&quot;:60,&quot;st&quot;:30,&quot;gt&quot;:28},{&quot;cv1&quot;:7,&quot;cv2&quot;:60,&quot;st&quot;:30,&quot;gt&quot;:28},{&quot;cv1&quot;:3,&quot;cv2&quot;:60,&quot;st&quot;:30,&quot;gt&quot;:28}],[],[],[]]}"><p><b>Gate 28.</b> Almost the whole step. Listen: smooth.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:104,&quot;tb&quot;:120,&quot;cv2&quot;:&quot;cut&quot;,&quot;ch&quot;:[[{&quot;cv1&quot;:0,&quot;cv2&quot;:40,&quot;st&quot;:40,&quot;gt&quot;:20},{&quot;cv1&quot;:3,&quot;cv2&quot;:40,&quot;st&quot;:40,&quot;gt&quot;:20},{&quot;cv1&quot;:7,&quot;cv2&quot;:40,&quot;st&quot;:40,&quot;gt&quot;:20},{&quot;cv1&quot;:10,&quot;cv2&quot;:40,&quot;st&quot;:40,&quot;gt&quot;:20},{&quot;cv1&quot;:12,&quot;cv2&quot;:60,&quot;st&quot;:40,&quot;gt&quot;:20},{&quot;cv1&quot;:10,&quot;cv2&quot;:60,&quot;st&quot;:40,&quot;gt&quot;:20}],[],[],[]]}"><p><b>Triplets: step 40.</b> 120 ÷ 3 = 40. Listen: three notes a beat.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:104,&quot;tb&quot;:120,&quot;cv2&quot;:&quot;cut&quot;,&quot;ch&quot;:[[{&quot;cv1&quot;:0,&quot;cv2&quot;:40,&quot;st&quot;:45,&quot;gt&quot;:30},{&quot;cv1&quot;:3,&quot;cv2&quot;:40,&quot;st&quot;:15,&quot;gt&quot;:10},{&quot;cv1&quot;:7,&quot;cv2&quot;:40,&quot;st&quot;:45,&quot;gt&quot;:30},{&quot;cv1&quot;:10,&quot;cv2&quot;:40,&quot;st&quot;:15,&quot;gt&quot;:10},{&quot;cv1&quot;:12,&quot;cv2&quot;:60,&quot;st&quot;:45,&quot;gt&quot;:30},{&quot;cv1&quot;:10,&quot;cv2&quot;:60,&quot;st&quot;:15,&quot;gt&quot;:10},{&quot;cv1&quot;:7,&quot;cv2&quot;:60,&quot;st&quot;:45,&quot;gt&quot;:30},{&quot;cv1&quot;:3,&quot;cv2&quot;:60,&quot;st&quot;:15,&quot;gt&quot;:10}],[],[],[]]}"><p><b>Swing: 45 + 15.</b> Long, short, long, short. Listen: it swings, exactly.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:104,&quot;tb&quot;:120,&quot;cv2&quot;:&quot;cut&quot;,&quot;ch&quot;:[[{&quot;cv1&quot;:0,&quot;cv2&quot;:20,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:3,&quot;cv2&quot;:30,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:7,&quot;cv2&quot;:40,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:10,&quot;cv2&quot;:50,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:12,&quot;cv2&quot;:60,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:10,&quot;cv2&quot;:70,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:7,&quot;cv2&quot;:80,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:3,&quot;cv2&quot;:90,&quot;st&quot;:30,&quot;gt&quot;:15}],[],[],[]]}"><p><b>CV-2 on the filter.</b> CV-2 rises note by note. Listen: the line gets brighter.</p></div>
+<div class="ik-step" data-seq="{&quot;bpm&quot;:104,&quot;tb&quot;:120,&quot;cv2&quot;:&quot;cut&quot;,&quot;ch&quot;:[[{&quot;cv1&quot;:0,&quot;cv2&quot;:40,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:3,&quot;cv2&quot;:40,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:7,&quot;cv2&quot;:40,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:10,&quot;cv2&quot;:40,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:12,&quot;cv2&quot;:60,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:10,&quot;cv2&quot;:60,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:7,&quot;cv2&quot;:60,&quot;st&quot;:30,&quot;gt&quot;:15},{&quot;cv1&quot;:3,&quot;cv2&quot;:60,&quot;st&quot;:30,&quot;gt&quot;:15}],[{&quot;cv1&quot;:27,&quot;cv2&quot;:50,&quot;st&quot;:240,&quot;gt&quot;:230}],[{&quot;cv1&quot;:31,&quot;cv2&quot;:50,&quot;st&quot;:240,&quot;gt&quot;:230}],[{&quot;cv1&quot;:36,&quot;cv2&quot;:50,&quot;st&quot;:120,&quot;gt&quot;:110},{&quot;cv1&quot;:38,&quot;cv2&quot;:50,&quot;st&quot;:120,&quot;gt&quot;:110}]]}"><p><b>Four channels.</b> Three more channels hold notes above. Listen: four parts.</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Roland MC-4 Microcomposer":
+
+- Yazoo, *Upstairs at Eric's* (1982) (Vince Clarke)
+- Erasure, *Chorus* (1991) (Vince Clarke)
+- also used by Kraftwerk, Depeche Mode, The Human League and Yellow Magic Orchestra
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [ROLAND MC-4によるYMO RYDEEN(シーケンス）](https://www.youtube.com/watch?v=8qRUgWGQOwk) (koymo1) ↗
+- [ROLAND MC-4によるYMO RYDEEN（メロディ）](https://www.youtube.com/watch?v=3cV-fcbEYIg) (koymo1) ↗
+- [Vivaldi "Four Seasons" on the Colossus Synthesizer and Roland MC-4](https://www.youtube.com/watch?v=_0I3MrKUNcI) (Analogue Solutions) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>How do you put music into the MC-4?</b></p><ul><li>Type numbers on a keypad</li><li>Sing into it</li><li>Draw with a pen</li><li>Play a guitar</li></ul><p class="ik-why">Manual pp. 9-10.</p></div>
+<div class="ik-q" data-a="0"><p><b>With a time base of 120, a 16th note is…</b></p><ul><li>30</li><li>120</li><li>16</li><li>60</li></ul><p class="ik-why">120 ÷ 4 = 30.</p></div>
+<div class="ik-q" data-a="0"><p><b>CV-1 controls…</b></p><ul><li>The pitch</li><li>The tempo</li><li>The lights</li><li>The tape</li></ul><p class="ik-why">Manual p. 11.</p></div>
+<div class="ik-q" data-a="0"><p><b>What happens to its memory when the power goes off?</b></p><ul><li>It is lost, so save to cassette</li><li>It is kept for ever</li><li>It plays louder</li><li>It prints</li></ul><p class="ik-why">Manual pp. 19, 22.</p></div>
+```
+
+## Next
+
+- [Classic Sequencers Compared](sequencer-compare.html?seq=mc4): the MC-4 side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/sequencer-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/sequencer-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Roland MC-4 Microcomposer." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Roland_MC-4_Microcomposer](https://en.wikipedia.org/wiki/Roland_MC-4_Microcomposer). 1981; Vince Clarke on Upstairs at Eric's and Chorus; "better timing".
+
+**For teachers**
+
+Roland Corporation. *MC-4 MicroComposer Owner's Manual*. Roland, [1981], scan at Internet Archive, [archive.org/details/synthmanual-roland-mc-4-owners-manual](https://archive.org/details/synthmanual-roland-mc-4-owners-manual). PDF pages: pitch numbers (9), time base, step and gate time (10), CV-1 / CV-2 / gate on four channels (11), entering a tune (13-18), cassette (19-24).
+:::
+<!-- /works-cited -->
+

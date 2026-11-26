@@ -48,3 +48,20 @@
   twin of the inversions lesson, top-string triads (strings 3-2-1, or 4-3-2), shared note kept, open-chord anchor fingers. Triad Picker
   `<div class="gvp" data-prog data-set="top|mid">` is `apps/shared/lessons/guitar-voice-picker.js` (rules in its header: every close triad up to
   fret 15, Smoothest = fewest frets moved, the first shape kept). Test `node tests/lessons/guitar-voice-leading.cdp.js` (`NEG=1` must fail).
+- Meet the Instruments (`lessons/intro-<id>.qmd`, 24 pages, sidebar part "Meet the Instruments" inside Sound Design, just before the
+  compare pages): a beginner's first stop per instrument (15 synths, 4 drum machines, 5 sequencers). Short sections, a "What you'll do"
+  list, what it is, its sound one idea a line, the compare page's widget shown compact (only its own panel), a guided tour (4-8 steps,
+  each ▶ sets a starting patch / pattern and plays it; the Model D tour uses the manual's patch sheets via MoogSheet), famous records
+  (only ones the cited Wikipedia article names), videos from `apps/shared/data/*/assignments.json`, a self-check quiz (instant
+  feedback, nothing recorded), Next = the compare page with `?synth=` / `?machine=` / `?seq=` pre-selecting it. All content lives in
+  `scripts/intro-instruments/build.py` (rerun it, then `python3 scripts/works-cited.py`); the kit `apps/shared/lessons/intro-kit.js` + `.css`
+  drives the widgets only through their public methods (formats in its header) and is also loaded on the three compare pages for the
+  pre-selection. Sources `scripts/sources/intro-instruments.py` (reuses the compare pages' manuals + Wikipedia, read 2026-11-25).
+  Rendering several files in one `quarto render` call fails here ("withBinaryFile: does not exist" on the 2nd file, also for old pages),
+  so render them one by one or the folder. Test `node tests/lessons/intro-instruments.cdp.js [slug ...]` (`NEG=1` must fail).
+- Play the Model D (`lessons/model-d.qmd`, not in the sidebar yet; `apps/shared/lessons/model-d.js`): Simple panel / Real panel switch
+  (localStorage `md-view`). The Simple panel is `apps/shared/lessons/synth-panel.js` (global SynthPanel, one teaching layout meant for
+  every synth: modules in signal order that fold to a picture, SVG wave icons, vertical sliders only, Beginner / All; spec format and
+  `SPECS.moog` in its header). Filter / envelope pictures are drawn from the knob numbers, schematic. Other synths: add a spec.
+  Pitch wheel (springs back, a fifth each way, M 24, 80) and mod wheel left of the keys, MIDI 0xE0 bend + CC1; engine `voice.bend(semis)` / `bendWheel(v)` for every synth.
+  Test `node tests/lessons/model-d.cdp.js` (`NEG=1` must fail).

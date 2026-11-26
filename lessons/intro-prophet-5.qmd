@@ -1,0 +1,111 @@
+---
+title: "Meet the Prophet-5"
+toc: true
+toc-depth: 2
+description: "A first look at the Sequential Prophet-5: five voices, memory for every knob, a guided tour of its sounds, the records it is on, and a short quiz."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Synths Compared](synth-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Prophet-5 is and when it was made.
+2. Learn its sound, one idea at a time.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Find records it is on.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Prophet-5** was made by **Sequential Circuits** (now Sequential), designed by Dave Smith and John Bowen, and first shipped in **1978** (Wikipedia, "Sequential Prophet-5").
+- It has **five voices**: you can play five notes at once, so it plays chords. It is *polyphonic*.
+- A small computer inside **remembers every knob**, so a sound can be saved and called back (Prophet-5 *Technical Manual*, section 2).
+- Wikipedia: "The Prophet-5 became a market leader and industry standard."
+
+## Its sound
+
+- Each voice has **two oscillators**, A and B (Prophet-5 User's Guide, pp. 17-18).
+- Oscillator A can be **synced** to B for a hard, cutting lead (guide, p. 18).
+- Its 4-pole low-pass filter comes in two versions, Rev 1/2 and Rev 3 (guide, pp. 22-24).
+- **Poly Mod** lets the filter envelope and oscillator B bend oscillator A for bell and metal sounds (guide, pp. 34-35).
+
+## The panel
+
+This is the Prophet-5 panel from [Classic Synths Compared](synth-compare.qmd), drawn after the real one (not a copy). Play it from the keys under the panel, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard. Turn any knob while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="prophet"><div class="scmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads one of the worked examples from the compare page (recipes from the Prophet-5 User's Guide) and plays it.
+
+```{=html}
+<div class="ik-step" data-ex="p5-bass"><p><b>A simple bass.</b> One oscillator, a short envelope. Listen for a clean, punchy low note.</p></div>
+<div class="ik-step" data-ex="p5-bass" data-set="{&quot;cutoff&quot;:2.5,&quot;res&quot;:6}"><p><b>Filter down, resonance up.</b> The same bass with the <b>Cutoff</b> lower and <b>Resonance</b> at 6. Listen for a darker sound with a ring on top.</p></div>
+<div class="ik-step" data-ex="p5-brass"><p><b>Chords.</b> Synth brass played as chords: five voices at once. Listen for the little pitch blip at the start of each chord.</p></div>
+<div class="ik-step" data-ex="p5-strings"><p><b>A pad.</b> Slow attack and release on the loudness envelope. Listen for notes that fade in and fade away.</p></div>
+<div class="ik-step" data-ex="p5-sync"><p><b>Sync.</b> Oscillator A synced to B, with the filter envelope moving A's pitch. Listen for a bright, tearing lead (this is the "Let's Go" recipe from the guide).</p></div>
+<div class="ik-step" data-ex="p5-unison"><p><b>Unison.</b> All five voices stacked on one note. Listen for a huge, thick bass.</p></div>
+```
+
+## Famous records
+
+Named in Wikipedia, "Sequential Prophet-5":
+
+- The Cars, "Let's Go" and "Shake It Up" (Greg Hawkes)
+- Phil Collins, "In the Air Tonight"
+- Michael Jackson, *Thriller*
+- Madonna, *Like a Virgin*
+
+## Videos
+
+Videos made on (or for) this instrument, from the list on the compare page. They open on YouTube.
+
+- [Prophet-5 Famous Riffs | Radiohead, D Train, Cameo & More!](https://www.youtube.com/watch?v=EKObRMIxmME) (Andy Whitmore) ↗
+- [Prophet~5 Tutorial: Radiohead, Aphex Twin, Japan](https://www.youtube.com/watch?v=DvRv0TlMI5M) (Alex Ball) ↗
+- [Ep6: Synth Sounds of Phil Collins "In The Air Tonight"](https://www.youtube.com/watch?v=8tirpIfEzqw) (Reverb) ↗
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="2"><p><b>How many notes can a Prophet-5 play at once?</b></p><ul><li>One</li><li>Three</li><li>Five</li><li>Sixteen</li></ul><p class="ik-why">Five voices.</p></div>
+<div class="ik-q" data-a="0"><p><b>What was new about remembering the knobs?</b></p><ul><li>Sounds could be saved and called back</li><li>It made the synth louder</li><li>It added drums</li><li>It tuned itself to the radio</li></ul><p class="ik-why">Its microcomputer stores programs.</p></div>
+<div class="ik-q" data-a="1"><p><b>How many oscillators does each voice have?</b></p><ul><li>One</li><li>Two</li><li>Three</li><li>Six</li></ul><p class="ik-why">Oscillators A and B.</p></div>
+<div class="ik-q" data-a="0"><p><b>Unison means…</b></p><ul><li>All voices stacked on one note</li><li>Playing with a drummer</li><li>No filter</li><li>Only white keys</li></ul><p class="ik-why">Step 6.</p></div>
+```
+
+## Next
+
+- [Classic Synths Compared](synth-compare.html?synth=prophet): the Prophet-5 side by side with the others, with every setting checked against the manuals.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Sequential. *Prophet-5 User's Guide*. Version 1.0, Sequential LLC, Oct. 2020, [vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf](https://vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf). Dave Smith's foreword (p. x), oscillators and sync (pp. 17-20), mixer (p. 21), the Rev 1/2 and Rev 3 filters and envelopes (pp. 22-30), LFO and wheel-mod (pp. 31-33), Poly Mod (pp. 34-35), vintage, wheels, glide, unison, chord memory, release, priority (pp. 36-45), recipes (pp. 46-52).
+
+"Sequential Prophet-5." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Sequential_Prophet-5](https://en.wikipedia.org/wiki/Sequential_Prophet-5). 1978, Dave Smith and John Bowen; "market leader and industry standard"; The Cars, Phil Collins, Thriller, Like a Virgin.
+
+**For teachers**
+
+Jungleib, Stanley. *Prophet-5 Synthesizer Technical Manual*. 2nd ed., Sequential Circuits, Oct. 1981, [medias.audiofanzine.com/files/sequentialcircuitsprophet-5servicemanual-text-470674.pdf](https://medias.audiofanzine.com/files/sequentialcircuitsprophet-5servicemanual-text-470674.pdf). For Revisions 3.0-3.2: the Z-80 microcomputer reads the keyboard and knobs and assigns voices; 40 programs in NV RAM (section 2).
+:::
+<!-- /works-cited -->
+

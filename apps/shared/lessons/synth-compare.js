@@ -1812,7 +1812,7 @@
     var Proc = class extends AudioWorkletProcessor { constructor() { super(); init.call(this); } };
     function init() {
       var self = this; this.E = null; this.V = []; for (var i = 0; i < NV; i++) this.V.push(new Voice());
-      this.held = []; this.wheel = 0; this.bendV = 0; this.lfoPh = 0; this.pk = [0, 0, 0, 0, 0, 0, 0]; this.rk = 0; this.rn = 0; this.seed = 22222; this.clock = 0;
+      this.held = []; this.wheel = 0; this.bendV = 0; this.bendS = 0; this.bendSm = 0; this.lfoPh = 0; this.pk = [0, 0, 0, 0, 0, 0, 0]; this.rk = 0; this.rn = 0; this.seed = 22222; this.clock = 0;
       this.shV = 0; this.shPh = 0; this.shL = 0; this.lastLfoPh = 0; this.q = [];
       this.dl = new Float32Array(4096); this.dw = 0; this.cph = 0; this.fxS = [];
       this.port.onmessage = function (e) { self.msg(e.data); };
@@ -1824,6 +1824,7 @@
       if (d.type === "patch") { this.E = d.E; return; }
       if (d.type === "wheel") { this.wheel = d.v; return; }
       if (d.type === "bend") { this.bendV = d.v; return; }
+      if (d.type === "bendSemi") { this.bendS = d.v; return; }   // SynthCompare.voice bend(semitones): any synth, whatever its E.bend
       if (d.type === "panic") { this.held = []; this.fxS = []; for (i = 0; i < NV; i++) { this.V[i].gate = 0; this.V[i].as = 3; this.V[i].fs = 3; this.V[i].s3 = 3; this.V[i].holdT = 0; for (var j = 0; j < 6; j++) this.V[i].ost[j] = 3; } return; }
       if (!E) return;
       var nv = Math.max(1, Math.min(NV, E.voices));
@@ -1953,7 +1954,9 @@
       if (!E) { for (i = 0; i < N; i++) out[i] = 0; return true; }
       var wheel = this.wheel, routes = E.routes, L = E.lfo, model = E.model, k4 = 4.15 * Math.min(E.res, model === "diode" ? 0.86 : 1.08), nv = Math.max(1, Math.min(NV, Math.max(E.voices, E.unison || 1)));
       var sync = E.sync === true ? { slave: 0, master: 1 } : E.sync, hasHp = E.hpf && (E.hpf.cut > 0 || E.hpf.boost), ring = E.ring;
+      var bendK = 1 - Math.exp(-dt / 0.004);   // pitch bend glides to its target in ~4 ms: no steps, no clicks
       for (i = 0; i < N; i++) {
+        this.bendSm += (this.bendV * (E.bend || 0) + this.bendS - this.bendSm) * bendK;
         this.lfoPh += L.hz * dt; var wrapL = false; if (this.lfoPh >= 1) { this.lfoPh -= 1; wrapL = true; }
         var ph = this.lfoPh, sk = L.skew || 0.5, tri = L.skew ? (ph < sk ? 2 * ph / sk - 1 : 1 - 2 * (ph - sk) / (1 - sk)) : 1 - 4 * Math.abs(ph - 0.5), lv = 0;
         if (L.tri) lv += tri; if (L.sine) lv += sinT(ph); if (L.sq) lv += L.uni ? (ph < 0.5 ? 1 : 0) : (ph < 0.5 ? 1 : -1); if (L.saw) lv += L.saw > 0 ? (L.uni ? ph : 2 * ph - 1) : 1 - 2 * ph;   // saw / square positive only on the Prophet (P 31)
@@ -1987,7 +1990,7 @@
             if (r.curve === "sq") gn *= gn;
             for (q = 0; q < r.dst.length; q++) mod[r.dst[q]] += sv * gn * r.amt;
           }
-          var bend = this.bendV * E.bend, o2;
+          var bend = this.bendSm, o2;
           var velA = E.aenv.vel ? 0.35 + 0.65 * v.vel : 1, acc = E.accent && v.vel >= 0.95 ? E.accent : 0;
           if (E.fm) {
             o2 = this.fmVoice(v, E, v.p + bend + mod.p0, dt) * ae * velA;
@@ -2112,7 +2115,10 @@
     if (!p) { var url = URL.createObjectURL(new Blob([SC.workletSource], { type: "text/javascript" })); p = ac.audioWorklet.addModule(url); if (modP) modP.set(ac, p); }
     return p;
   }
-  // SynthCompare.voice(ctx, synthId, state) -> Promise of { node, noteOn(n, vel, when), noteOff(n, when), set(state), wheel(v), panic() }.
+  // SynthCompare.voice(ctx, synthId, state) -> Promise of { node, noteOn(n, vel, when), noteOff(n, when), set(state), wheel(v), bend(semis),
+  // bendWheel(v), bendRange, panic() }. bend(semis) moves every sounding and later note by that many semitones (smoothed ~4 ms);
+  // bendWheel(v) = pitch wheel position -1..1 times bendRange (the synth's engine `bend`: Model D 7 = a fifth, M 24, 80;
+  // 2 for a synth whose engine has none, this page's).
   // `node` is an AudioWorkletNode (mono out) to connect anywhere; `when` is in the context's time (omit for now).
   SC.voice = function (ac, id, state) {
     return loadModule(ac).then(function () {
@@ -2122,7 +2128,10 @@
         set: function (s) { state = s; post({ type: "patch", E: SC.engine(id, s) }); },
         noteOn: function (note, vel, when) { post({ type: "on", note: note, vel: vel == null ? 0.8 : vel }, when); },
         noteOff: function (note, when) { post({ type: "off", note: note }, when); },
-        wheel: function (v) { post({ type: "wheel", v: v }); }, panic: function () { post({ type: "panic" }); } };
+        wheel: function (v) { post({ type: "wheel", v: v }); },
+        bend: function (semis) { post({ type: "bendSemi", v: +semis || 0 }); },
+        bendWheel: function (v) { o.bend((Math.max(-1, Math.min(1, +v || 0))) * o.bendRange); },
+        get bendRange() { return SC.engine(id, state || {}).bend || 2; }, panic: function () { post({ type: "panic" }); } };
       o.set(state || {});
       if (typeof AudioTap !== "undefined" && AudioTap.register) AudioTap.register(ac, n, "Synth Compare voice");
       return o;
