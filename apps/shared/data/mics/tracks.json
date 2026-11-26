@@ -1,0 +1,277 @@
+{
+ "note": "Famous uses per mic (lessons/mic-compare.qmd, intro-<mic>.qmd). Videos with a title/channel confirmed by YouTube oEmbed 2026-11-26; the rest are YouTube SEARCH links (no video checked). useSrc names the source tying mic and artist/record; null = unverified. Every place/state is this site's guess.",
+ "tracks": [
+  {
+   "mic": "sm57",
+   "artist": "The Beach Boys",
+   "song": "God Only Knows",
+   "url": "https://www.youtube.com/results?search_query=The+Beach+Boys+God+Only+Knows",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Shure SM57\": its forerunner the Unidyne 545 was used on Brian Wilson's vocals on Pet Sounds (an earlier model, not the SM57 itself)",
+   "src": "voice",
+   "place": {
+    "dist": 0.08,
+    "angle": 0
+   },
+   "state": {}
+  },
+  {
+   "mic": "sm57",
+   "artist": "Tom Waits",
+   "song": "(any studio vocal)",
+   "url": "https://www.youtube.com/results?search_query=Tom+Waits+%28any+studio+vocal%29",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Shure SM57\" lists Tom Waits among vocal users (no recording named)",
+   "src": "voice",
+   "place": {
+    "dist": 0.05,
+    "angle": 0
+   },
+   "state": {}
+  },
+  {
+   "mic": "sm57",
+   "artist": "(snare, any rock record)",
+   "song": "SM57 on snare",
+   "url": "https://www.youtube.com/results?search_query=%28snare%2C+any+rock+record%29+SM57+on+snare",
+   "title": null,
+   "channel": null,
+   "useSrc": null,
+   "src": "snare",
+   "place": {
+    "dist": 0.04,
+    "angle": 30
+   },
+   "state": {}
+  },
+  {
+   "mic": "sm58",
+   "artist": "Patti Smith",
+   "song": "(live, 2007)",
+   "url": "https://www.youtube.com/results?search_query=Patti+Smith+%28live%2C+2007%29",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Shure SM58\": a 2007 photo of Patti Smith with one (no recording named)",
+   "src": "voice",
+   "place": {
+    "dist": 0.02,
+    "angle": 0
+   },
+   "state": {}
+  },
+  {
+   "mic": "sm58",
+   "artist": "Robert Lockwood Jr.",
+   "song": "(live, 1982)",
+   "url": "https://www.youtube.com/results?search_query=Robert+Lockwood+Jr.+%28live%2C+1982%29",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Shure SM58\": a 1982 photo (no recording named)",
+   "src": "voice",
+   "place": {
+    "dist": 0.03,
+    "angle": 0
+   },
+   "state": {}
+  },
+  {
+   "mic": "sm58",
+   "artist": "(any live vocal)",
+   "song": "SM58 at the lips",
+   "url": "https://www.youtube.com/results?search_query=%28any+live+vocal%29+SM58+at+the+lips",
+   "title": null,
+   "channel": null,
+   "useSrc": null,
+   "src": "voice",
+   "place": {
+    "dist": 0.01,
+    "angle": 0
+   },
+   "state": {}
+  },
+  {
+   "mic": "u87",
+   "artist": "Neil Young",
+   "song": "Heart of Gold",
+   "url": "https://www.youtube.com/watch?v=Eh44QPT1mPE",
+   "title": "Neil Young - Heart Of Gold",
+   "channel": "clydeman (a fan upload)",
+   "useSrc": "Wikipedia, \"Neumann U 87\" names this recording",
+   "src": "voice",
+   "place": {
+    "dist": 0.25,
+    "angle": 0
+   },
+   "state": {}
+  },
+  {
+   "mic": "u87",
+   "artist": "Soft Cell",
+   "song": "Tainted Love",
+   "url": "https://www.youtube.com/watch?v=XZVpR3Pk-r8",
+   "title": "Soft Cell - Tainted Love (Official Music Video)",
+   "channel": "SoftCellVEVO",
+   "useSrc": "Wikipedia, \"Neumann U 87\" names this recording",
+   "src": "voice",
+   "place": {
+    "dist": 0.2,
+    "angle": 0
+   },
+   "state": {}
+  },
+  {
+   "mic": "u87",
+   "artist": "Don McLean",
+   "song": "American Pie",
+   "url": "https://www.youtube.com/results?search_query=Don+McLean+American+Pie",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Neumann U 87\" names this recording (video not checked)",
+   "src": "voice",
+   "place": {
+    "dist": 0.2,
+    "angle": 0
+   },
+   "state": {}
+  },
+  {
+   "mic": "r121",
+   "artist": "(guitar amp)",
+   "song": "R-121 on a guitar cab",
+   "url": "https://www.youtube.com/results?search_query=%28guitar+amp%29+R-121+on+a+guitar+cab",
+   "title": null,
+   "channel": null,
+   "useSrc": null,
+   "src": "guitar",
+   "place": {
+    "dist": 0.15,
+    "angle": 0
+   },
+   "state": {}
+  },
+  {
+   "mic": "r121",
+   "artist": "(drum room)",
+   "song": "R-121 as a room mic",
+   "url": "https://www.youtube.com/results?search_query=%28drum+room%29+R-121+as+a+room+mic",
+   "title": null,
+   "channel": null,
+   "useSrc": null,
+   "src": "snare",
+   "place": {
+    "dist": 1.5,
+    "angle": 0
+   },
+   "state": {}
+  },
+  {
+   "mic": "r121",
+   "artist": "(brass / voice)",
+   "song": "R-121 on a horn",
+   "url": "https://www.youtube.com/results?search_query=%28brass+%2F+voice%29+R-121+on+a+horn",
+   "title": null,
+   "channel": null,
+   "useSrc": null,
+   "src": "voice",
+   "place": {
+    "dist": 1.5,
+    "angle": 0
+   },
+   "state": {}
+  },
+  {
+   "mic": "md421",
+   "artist": "Udo Jürgens",
+   "song": "Merci, Chérie",
+   "url": "https://www.youtube.com/results?search_query=Udo+J%C3%BCrgens+Merci%2C+Ch%C3%A9rie",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Sennheiser MD 421\": used at the 1966 Eurovision performance (video not checked)",
+   "src": "voice",
+   "place": {
+    "dist": 0.15,
+    "angle": 0
+   },
+   "state": {}
+  },
+  {
+   "mic": "md421",
+   "artist": "George Harrison and friends",
+   "song": "The Concert for Bangladesh",
+   "url": "https://www.youtube.com/results?search_query=George+Harrison+and+friends+The+Concert+for+Bangladesh",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Sennheiser MD 421\": many MD 421s on the concert (video not checked)",
+   "src": "guitar",
+   "place": {
+    "dist": 0.05,
+    "angle": 0
+   },
+   "state": {}
+  },
+  {
+   "mic": "md421",
+   "artist": "(toms, any rock record)",
+   "song": "MD 421 on toms",
+   "url": "https://www.youtube.com/results?search_query=%28toms%2C+any+rock+record%29+MD+421+on+toms",
+   "title": null,
+   "channel": null,
+   "useSrc": null,
+   "src": "snare",
+   "place": {
+    "dist": 0.05,
+    "angle": 30
+   },
+   "state": {
+    "bass": "3"
+   }
+  },
+  {
+   "mic": "beta52",
+   "artist": "(kick drum)",
+   "song": "Beta 52A inside the kick",
+   "url": "https://www.youtube.com/results?search_query=%28kick+drum%29+Beta+52A+inside+the+kick",
+   "title": null,
+   "channel": null,
+   "useSrc": null,
+   "src": "kick",
+   "place": {
+    "dist": 0.1,
+    "angle": 0
+   },
+   "state": {}
+  },
+  {
+   "mic": "beta52",
+   "artist": "(kick drum)",
+   "song": "Beta 52A at the port",
+   "url": "https://www.youtube.com/results?search_query=%28kick+drum%29+Beta+52A+at+the+port",
+   "title": null,
+   "channel": null,
+   "useSrc": null,
+   "src": "kick",
+   "place": {
+    "dist": 0.03,
+    "angle": 0
+   },
+   "state": {}
+  },
+  {
+   "mic": "beta52",
+   "artist": "(kick drum)",
+   "song": "Beta 52A on bass cab",
+   "url": "https://www.youtube.com/results?search_query=%28kick+drum%29+Beta+52A+on+bass+cab",
+   "title": null,
+   "channel": null,
+   "useSrc": null,
+   "src": "guitar",
+   "place": {
+    "dist": 0.05,
+    "angle": 0
+   },
+   "state": {}
+  }
+ ]
+}

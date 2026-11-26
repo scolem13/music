@@ -1,0 +1,25 @@
+/* Mic widgets (apps/shared/lessons/mics.js) */
+:root { --mic-bg: #fff; --mic-ink: #16181b; --mic-dim: #5b6168; --mic-line: #c4c8ce; --mic-hot: #b86e00; --mic-e: #2a62c9; --mic-g: #2a8a3a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --mic-bg: #111; --mic-ink: #e8e8e8; --mic-dim: #9aa0a6; --mic-line: #3a3e43; --mic-hot: #ffb000; --mic-e: #7aa7ff; --mic-g: #6fd17f; } }
+:root[data-theme="dark"] { --mic-bg: #111; --mic-ink: #e8e8e8; --mic-dim: #9aa0a6; --mic-line: #3a3e43; --mic-hot: #ffb000; --mic-e: #7aa7ff; --mic-g: #6fd17f; }
+.mic-w { border: 1px solid var(--mic-line); border-radius: 8px; padding: .5rem; margin: .6rem 0; }
+.mic-head { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; margin-bottom: .3rem; }
+.mic-face { max-width: 520px; }
+.mic-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+.mic-roombox { flex: 2 1 260px; max-width: 420px; } .mic-polbox { flex: 1 1 130px; max-width: 170px; }
+.mic-room, .mic-polar, .mic-svg { width: 100%; height: auto; display: block; }
+.mic-svg { max-width: 640px; }
+.mic-bg { fill: var(--mic-bg); } .mic-room text, .mic-polar text, .mic-svg text { font-size: 9px; fill: var(--mic-dim); font-family: system-ui, sans-serif; }
+.mic-grid { stroke: var(--mic-line); stroke-width: 1; fill: none; }
+.mic-src { fill: var(--mic-hot); } .mic-dot circle { fill: var(--mic-e); cursor: grab; } .mic-aim { stroke: var(--mic-e); stroke-width: 3; }
+.mic-line { fill: none; stroke: var(--mic-hot); stroke-width: 2; } .mic-ref { fill: none; stroke: var(--mic-dim); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.mic-p1 { stroke: var(--mic-e); stroke-width: 1.5; } .mic-p2 { stroke: var(--mic-hot); stroke-width: 2; } .mic-p3 { stroke: var(--mic-g); stroke-width: 1.5; stroke-dasharray: 3 2; }
+.mic-bar, .mic-opts { display: flex; flex-wrap: wrap; gap: .4rem .8rem; align-items: center; margin: .35rem 0; font-size: .85rem; }
+.mic-bar button, .micc-tr button, .mic-hear, .mic-try { font: inherit; font-size: .85rem; padding: .15rem .6rem; border: 1px solid var(--mic-line); border-radius: 5px; background: transparent; color: inherit; cursor: pointer; }
+.mic-info { font-size: .85rem; color: var(--mic-dim); margin: .2rem 0; }
+.micc-cols { display: grid; grid-template-columns: 1fr; gap: .6rem; } @media (min-width: 900px) { .micc-cols { grid-template-columns: 1fr 1fr; } }
+.micc-tr { border: 1px dashed var(--mic-line); border-radius: 8px; padding: .5rem; display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.micc-res { flex-basis: 100%; font-size: .9rem; } .micc-q { padding: 0 .4rem; border-radius: 4px; border: 1px solid; } .micc-exact { color: var(--mic-g); } .micc-approx { color: var(--mic-hot); } .micc-lost { color: #c03030; }
+.mic-step { margin: .5rem 0; } .mic-hear { margin-right: .5rem; }
+.mic-q li { cursor: pointer; } .mic-q li.mic-right { font-weight: 700; color: var(--mic-g); } .mic-q li.mic-wrong { text-decoration: line-through; color: #c03030; }
+.mic-tl li { margin: .3rem 0; } .mic-who { color: var(--mic-dim); font-size: .9em; }

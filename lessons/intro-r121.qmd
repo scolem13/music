@@ -1,0 +1,105 @@
+---
+title: "Meet the Royer R-121"
+toc: true
+toc-depth: 2
+description: "A first look at the Royer R-121 ribbon mic: figure-8, a smooth top, the inverted rear lobe. Guitar amps, rooms, quiz."
+instruments: [voice, guitar, drums]
+topics: [recording]
+has: [interactive, svg]
+---
+
+A first stop before [Microphones Compared](mic-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Royer R-121 is.
+2. Learn how it hears: pattern, proximity, off axis.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Look up famous uses.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **R-121** is a **ribbon** mic from Royer Labs: a 2.5-micron aluminium ribbon between magnets, **figure-8**, passive (Royer).
+- **30-15,000 Hz ±3 dB**, **-47 dBV**, max SPL above **135 dB** (Royer): it takes a loud guitar amp.
+- Ribbons are typically bidirectional (Wikipedia, "Ribbon microphone").
+
+## How it hears
+
+- Front and back hear equally, the sides almost nothing; the **back is inverted**: mixed with a front mic it can cancel. Use **A + B** on the compare page to hear it.
+- Royer: the offset ribbon makes the **back brighter** close up (the amount here is the site's).
+- Close up, a directional mic gains **bass**: the **proximity effect** (Wikipedia, "Proximity effect (audio)"). Slide the distance and watch the low end of the graph rise.
+- The response graph is the maker's published chart **digitised approximately** (the charts are pictures; the points here follow their shape as remembered: unverified).
+
+## The mic
+
+The Royer R-121 drawn after photos (proportions approximate, no logos). Drag the blue mic in the room (or use the Distance slider; the wheel or Angle turns it), choose a source and a room, press **▶ Hear it**. Voice is generated (the band has no singer); snare and kick are the band's kit; the guitar is the site's amp model. Nobody has compared the sound with a real mic.
+
+```{=html}
+<div class="mic" data-mic="r121" data-src="guitar"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="mic-step" data-mic="r121" data-set="{}" data-place="{&quot;dist&quot;:0.15,&quot;angle&quot;:0}" data-src="guitar"><p><b>15 cm from the amp.</b> Smooth, dark top.</p></div>
+<div class="mic-step" data-mic="r121" data-set="{}" data-place="{&quot;dist&quot;:0.15,&quot;angle&quot;:180}" data-src="guitar"><p><b>Turned round.</b> The back: a little brighter, and inverted.</p></div>
+<div class="mic-step" data-mic="r121" data-set="{}" data-place="{&quot;dist&quot;:0.15,&quot;angle&quot;:90}" data-src="guitar"><p><b>Side on, 90°.</b> The null: almost nothing.</p></div>
+<div class="mic-step" data-mic="r121" data-set="{}" data-place="{&quot;dist&quot;:1.5,&quot;angle&quot;:0}" data-src="snare" data-room="room"><p><b>A room mic 1.5 m from the kit.</b></p></div>
+```
+
+## Famous uses
+
+Where a source ties the mic to the artist or record it is named; a link with a channel is a video checked on YouTube, the others are YouTube searches. **No source gives a placement**: **Try a guess** plays this site's guess.
+
+```{=html}
+<div class="mic-tracks" data-mic="r121"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="mic-q" data-a="2"><p><b>Where does a figure-8 not hear?</b></p><ul><li>Front</li><li>Back</li><li>Sides</li></ul><p class="mic-why"></p></div>
+<div class="mic-q" data-a="0"><p><b>What is odd about the rear lobe?</b></p><ul><li>It is inverted (opposite polarity)</li><li>It is louder</li><li>It is mono</li></ul><p class="mic-why">Wikipedia, "Microphone".</p></div>
+<div class="mic-q" data-a="1"><p><b>Does the R-121 need phantom power?</b></p><ul><li>Yes</li><li>No, it is passive</li></ul><p class="mic-why">Royer.</p></div>
+```
+
+## Next
+
+- [Microphones Compared](mic-compare.html?a=r121&b=sm57): this mic beside another, placement translated.
+- [Recording 2: Microphones and Phantom Power](rec-mics.qmd): types, patterns and phantom power.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/mics.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/band/sounds.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/pedals.js"></script>
+<script src="/apps/shared/lessons/amps.js"></script>
+<script src="/apps/shared/lessons/mics.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Microphone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Microphone](https://en.wikipedia.org/wiki/Microphone). Polar patterns as first-order sums: the cardioid = omni + figure-8, the figure-8's negative rear signal cancelling; ribbons' symmetric front and rear pickup.
+
+"R-121." *Royer Labs*, [royerlabs.com/r-121/](https://royerlabs.com/r-121/). Accessed 26 Nov. 2026. Figure-8 ribbon, passive; 30-15,000 Hz ±3 dB; -47 dBV; 300 ohm; max SPL >135 dB at 20 Hz; offset ribbon, back side brighter close up.
+
+"Ribbon microphone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ribbon_microphone](https://en.wikipedia.org/wiki/Ribbon_microphone). Typically bidirectional; Blumlein pair.
+
+**For students**
+
+"Proximity effect (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Proximity_effect_(audio)](https://en.wikipedia.org/wiki/Proximity_effect_(audio)). Bass rises close to a directional mic; caused by the ports; not a true omni, but not necessarily absent on a multipattern mic's summed omni.
+:::
+<!-- /works-cited -->
+

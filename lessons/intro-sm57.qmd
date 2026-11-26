@@ -1,0 +1,106 @@
+---
+title: "Meet the Shure SM57"
+toc: true
+toc-depth: 2
+description: "A first look at the Shure SM57: the dynamic cardioid on snares and guitar amps since 1965. Placement, proximity, famous uses, quiz."
+instruments: [voice, guitar, drums]
+topics: [recording]
+has: [interactive, svg]
+---
+
+A first stop before [Microphones Compared](mic-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Shure SM57 is.
+2. Learn how it hears: pattern, proximity, off axis.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Look up famous uses.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **SM57** came out in **1965** (Wikipedia, "Shure SM57"): a **dynamic** mic (a coil on a diaphragm in a magnet), **cardioid**.
+- Range **40-15,000 Hz** with a **presence rise** (Shure). Sensitivity **-56 dBV/Pa** (Wikipedia): quiet output, so it needs gain.
+- Its forerunner, the Unidyne 545, was on Brian Wilson's vocals on *Pet Sounds*; every US president since Johnson has spoken through one (Wikipedia).
+
+## How it hears
+
+- **Cardioid**: loudest in front, nearly deaf behind: aim its back at what you do not want (the hi-hat).
+- Close up, a directional mic gains **bass**: the **proximity effect** (Wikipedia, "Proximity effect (audio)"). Slide the distance and watch the low end of the graph rise.
+- The response graph is the maker's published chart **digitised approximately** (the charts are pictures; the points here follow their shape as remembered: unverified).
+- No published max SPL: a dynamic takes a snare or a loud amp at a few centimetres.
+
+## The mic
+
+The Shure SM57 drawn after photos (proportions approximate, no logos). Drag the blue mic in the room (or use the Distance slider; the wheel or Angle turns it), choose a source and a room, press **▶ Hear it**. Voice is generated (the band has no singer); snare and kick are the band's kit; the guitar is the site's amp model. Nobody has compared the sound with a real mic.
+
+```{=html}
+<div class="mic" data-mic="sm57" data-src="snare"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="mic-step" data-mic="sm57" data-set="{}" data-place="{&quot;dist&quot;:0.04,&quot;angle&quot;:0}" data-src="snare"><p><b>4 cm from the snare, on axis.</b> Punch and presence.</p></div>
+<div class="mic-step" data-mic="sm57" data-set="{}" data-place="{&quot;dist&quot;:0.04,&quot;angle&quot;:60}" data-src="snare"><p><b>Turned 60°.</b> Duller: off-axis colouration.</p></div>
+<div class="mic-step" data-mic="sm57" data-set="{}" data-place="{&quot;dist&quot;:0.3,&quot;angle&quot;:0}" data-src="snare"><p><b>30 cm away.</b> Less bass, more room.</p></div>
+<div class="mic-step" data-mic="sm57" data-set="{}" data-place="{&quot;dist&quot;:0.02,&quot;angle&quot;:0}" data-src="guitar"><p><b>2 cm from the amp's speaker.</b> The classic guitar sound.</p></div>
+<div class="mic-step" data-mic="sm57" data-set="{}" data-place="{&quot;dist&quot;:0.01,&quot;angle&quot;:0}" data-src="voice"><p><b>A voice at 1 cm.</b> Lots of proximity bass.</p></div>
+```
+
+## Famous uses
+
+Where a source ties the mic to the artist or record it is named; a link with a channel is a video checked on YouTube, the others are YouTube searches. **No source gives a placement**: **Try a guess** plays this site's guess.
+
+```{=html}
+<div class="mic-tracks" data-mic="sm57"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="mic-q" data-a="1"><p><b>What kind of mic is the SM57?</b></p><ul><li>Condenser</li><li>Dynamic</li><li>Ribbon</li></ul><p class="mic-why">Wikipedia.</p></div>
+<div class="mic-q" data-a="0"><p><b>What happens to the bass as you move closer?</b></p><ul><li>It rises</li><li>It falls</li><li>Nothing</li></ul><p class="mic-why">The proximity effect.</p></div>
+<div class="mic-q" data-a="2"><p><b>Where is a cardioid deafest?</b></p><ul><li>Front</li><li>Side</li><li>Back</li></ul><p class="mic-why"></p></div>
+```
+
+## Next
+
+- [Microphones Compared](mic-compare.html?a=sm57&b=md421): this mic beside another, placement translated.
+- [Recording 2: Microphones and Phantom Power](rec-mics.qmd): types, patterns and phantom power.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/mics.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/band/sounds.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/pedals.js"></script>
+<script src="/apps/shared/lessons/amps.js"></script>
+<script src="/apps/shared/lessons/mics.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Microphone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Microphone](https://en.wikipedia.org/wiki/Microphone). Polar patterns as first-order sums: the cardioid = omni + figure-8, the figure-8's negative rear signal cancelling; ribbons' symmetric front and rear pickup.
+
+"Shure SM57." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Shure_SM57](https://en.wikipedia.org/wiki/Shure_SM57). 1965; -56.0 dBV/Pa; 150 ohm rated (300 actual); Unidyne 545 on Pet Sounds vocals; vocal users incl. Tom Waits; every US president since LBJ.
+
+"SM57 Dynamic Instrument Microphone." *Shure*, [www.shure.com/en-US/products/microphones/sm57](https://www.shure.com/en-US/products/microphones/sm57). Accessed 26 Nov. 2026. Cardioid dynamic; 40-15,000 Hz; "contoured frequency response" with a presence rise.
+
+**For students**
+
+"Proximity effect (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Proximity_effect_(audio)](https://en.wikipedia.org/wiki/Proximity_effect_(audio)). Bass rises close to a directional mic; caused by the ports; not a true omni, but not necessarily absent on a multipattern mic's summed omni.
+:::
+<!-- /works-cited -->
+

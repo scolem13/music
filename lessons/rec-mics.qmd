@@ -14,7 +14,7 @@ changes how they sound, how loud a source they can take and how fragile they are
 ## Dynamic
 
 A thin diaphragm glued to a coil of wire, sitting in a magnet. Sound moves the coil, the magnet makes a
-current. The Shure SM57 and SM58 are the classic examples.
+current. The Shure SM57 and SM58 are the classic examples ([Microphones Compared](mic-compare.qmd): six classic mics drawn and playable).
 
 - **Tough**: dropped, rained on, shouted into, they keep working.
 - **Handles very loud sources**: snare, kick, guitar amps, brass close up.
@@ -152,15 +152,15 @@ puts it back) and lifts 4–6 kHz, where words are clear; a studio condenser sta
 
 <!-- works-cited: written by scripts/works-cited.py -->
 ::: {.works-cited}
+"Ribbon microphone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ribbon_microphone](https://en.wikipedia.org/wiki/Ribbon_microphone). Typically bidirectional; Blumlein pair.
+
 **For students**
 
 Brixen, Eddy Bøgh. "Proper Hand Placement on a Vocal Mic." *DPA Mic University*, DPA Microphones. [www.dpamicrophones.com/mic-university/audio-production/proper-hand-placement-on-a-vocal-mic/](https://www.dpamicrophones.com/mic-university/audio-production/proper-hand-placement-on-a-vocal-mic/).
 
 "Phantom power." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Phantom_power](https://en.wikipedia.org/wiki/Phantom_power).
 
-"Proximity effect (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Proximity_effect_(audio)](https://en.wikipedia.org/wiki/Proximity_effect_(audio)).
-
-"Ribbon microphone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ribbon_microphone](https://en.wikipedia.org/wiki/Ribbon_microphone).
+"Proximity effect (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Proximity_effect_(audio)](https://en.wikipedia.org/wiki/Proximity_effect_(audio)). Bass rises close to a directional mic; caused by the ports; not a true omni, but not necessarily absent on a multipattern mic's summed omni.
 
 Royer Labs. "Can Phantom Power Damage a Ribbon Mic?" *Royer Labs FAQ*. [royerlabs.com/faq/can-phantom-power-damage-a-ribbon-mic/](https://royerlabs.com/faq/can-phantom-power-damage-a-ribbon-mic/).
 

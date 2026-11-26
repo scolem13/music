@@ -1,0 +1,102 @@
+---
+title: "Meet the Sennheiser MD 421"
+toc: true
+toc-depth: 2
+description: "A first look at the Sennheiser MD 421: a dynamic cardioid with a five-step bass roll-off, on toms, amps and voices. Quiz."
+instruments: [voice, guitar, drums]
+topics: [recording]
+has: [interactive, svg]
+---
+
+A first stop before [Microphones Compared](mic-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Sennheiser MD 421 is.
+2. Learn how it hears: pattern, proximity, off axis.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Look up famous uses.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **MD 421**: a dynamic **cardioid**, **30-17,000 Hz ±3 dB** (Wikipedia, "Sennheiser MD 421").
+- A five-position **bass roll-off** ring from **M** (music) to **S** (speech) (Wikipedia).
+- Used at the 1966 Eurovision (Udo Jürgens) and in numbers on The Concert for Bangladesh (Wikipedia).
+
+## How it hears
+
+- Wikipedia: almost linear in the bass up to 1 kHz, then a smooth upper-mid rise.
+- The bass switch steps take away low end (step amounts here are the site's).
+- Close up, a directional mic gains **bass**: the **proximity effect** (Wikipedia, "Proximity effect (audio)"). Slide the distance and watch the low end of the graph rise.
+- The response graph is the maker's published chart **digitised approximately** (the charts are pictures; the points here follow their shape as remembered: unverified).
+
+## The mic
+
+The Sennheiser MD 421 drawn after photos (proportions approximate, no logos), with its switches: click them. Drag the blue mic in the room (or use the Distance slider; the wheel or Angle turns it), choose a source and a room, press **▶ Hear it**. Voice is generated (the band has no singer); snare and kick are the band's kit; the guitar is the site's amp model. Nobody has compared the sound with a real mic.
+
+```{=html}
+<div class="mic" data-mic="md421" data-src="snare"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="mic-step" data-mic="md421" data-set="{&quot;bass&quot;:&quot;M&quot;}" data-place="{&quot;dist&quot;:0.05,&quot;angle&quot;:30}" data-src="snare"><p><b>M, 5 cm, 30° (a tom).</b> Full.</p></div>
+<div class="mic-step" data-mic="md421" data-set="{&quot;bass&quot;:&quot;S&quot;}" data-place="{&quot;dist&quot;:0.05,&quot;angle&quot;:30}" data-src="snare"><p><b>S.</b> Most of the bass off.</p></div>
+<div class="mic-step" data-mic="md421" data-set="{&quot;bass&quot;:&quot;3&quot;}" data-place="{&quot;dist&quot;:0.03,&quot;angle&quot;:0}" data-src="guitar"><p><b>On the amp, step 3.</b></p></div>
+<div class="mic-step" data-mic="md421" data-set="{&quot;bass&quot;:&quot;M&quot;}" data-place="{&quot;dist&quot;:0.05,&quot;angle&quot;:0}" data-src="kick"><p><b>On the kick.</b></p></div>
+```
+
+## Famous uses
+
+Where a source ties the mic to the artist or record it is named; a link with a channel is a video checked on YouTube, the others are YouTube searches. **No source gives a placement**: **Try a guess** plays this site's guess.
+
+```{=html}
+<div class="mic-tracks" data-mic="md421"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="mic-q" data-a="0"><p><b>What does S mean on the bass ring?</b></p><ul><li>Speech: most cut</li><li>Super bass</li><li>Stereo</li></ul><p class="mic-why">Wikipedia.</p></div>
+<div class="mic-q" data-a="0"><p><b>What kind of mic?</b></p><ul><li>Dynamic cardioid</li><li>Ribbon</li><li>Condenser</li></ul><p class="mic-why"></p></div>
+```
+
+## Next
+
+- [Microphones Compared](mic-compare.html?a=md421&b=sm57): this mic beside another, placement translated.
+- [Recording 2: Microphones and Phantom Power](rec-mics.qmd): types, patterns and phantom power.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/mics.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/band/sounds.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/pedals.js"></script>
+<script src="/apps/shared/lessons/amps.js"></script>
+<script src="/apps/shared/lessons/mics.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Microphone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Microphone](https://en.wikipedia.org/wiki/Microphone). Polar patterns as first-order sums: the cardioid = omni + figure-8, the figure-8's negative rear signal cancelling; ribbons' symmetric front and rear pickup.
+
+"Sennheiser MD 421." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Sennheiser_MD_421](https://en.wikipedia.org/wiki/Sennheiser_MD_421). Cardioid dynamic, 30-17,000 Hz ±3 dB; five-step bass roll-off M to S; Merci, Chérie (1966 Eurovision); The Concert for Bangladesh.
+
+**For students**
+
+"Proximity effect (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Proximity_effect_(audio)](https://en.wikipedia.org/wiki/Proximity_effect_(audio)). Bass rises close to a directional mic; caused by the ports; not a true omni, but not necessarily absent on a multipattern mic's summed omni.
+:::
+<!-- /works-cited -->
+

@@ -296,6 +296,15 @@ website:
                 - lessons/intro-bassman.qmd
                 - lessons/intro-dual-rectifier.qmd
                 - lessons/intro-svt.qmd
+            - section: "Microphones"
+              contents:
+                - lessons/mic-compare.qmd
+                - lessons/intro-sm57.qmd
+                - lessons/intro-sm58.qmd
+                - lessons/intro-u87.qmd
+                - lessons/intro-r121.qmd
+                - lessons/intro-md421.qmd
+                - lessons/intro-beta52.qmd
             - section: "Basses"
               contents:
                 - lessons/bass-compare.qmd

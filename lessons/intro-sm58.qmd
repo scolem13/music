@@ -1,0 +1,104 @@
+---
+title: "Meet the Shure SM58"
+toc: true
+toc-depth: 2
+description: "A first look at the Shure SM58: the ball-grille dynamic vocal mic. Proximity, the bass roll-off, famous uses, quiz."
+instruments: [voice, guitar, drums]
+topics: [recording]
+has: [interactive, svg]
+---
+
+A first stop before [Microphones Compared](mic-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Shure SM58 is.
+2. Learn how it hears: pattern, proximity, off axis.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Look up famous uses.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **SM58**: a dynamic cardioid **vocal** mic, the SM57's capsule family behind a **ball grille** that keeps breath and pops off the diaphragm (Shure; Wikipedia, "Shure SM58").
+- Range **50-15,000 Hz**, "brightened midrange and bass rolloff" (Shure); **-54.5 dBV/Pa** (Wikipedia).
+- It is the stage vocal mic: Wikipedia shows Robert Lockwood Jr. (1982) and Patti Smith (2007) with one.
+
+## How it hears
+
+- The **bass roll-off** is built in because singers hold it close: the proximity effect puts the bass back.
+- Close up, a directional mic gains **bass**: the **proximity effect** (Wikipedia, "Proximity effect (audio)"). Slide the distance and watch the low end of the graph rise.
+- The response graph is the maker's published chart **digitised approximately** (the charts are pictures; the points here follow their shape as remembered: unverified).
+
+## The mic
+
+The Shure SM58 drawn after photos (proportions approximate, no logos). Drag the blue mic in the room (or use the Distance slider; the wheel or Angle turns it), choose a source and a room, press **▶ Hear it**. Voice is generated (the band has no singer); snare and kick are the band's kit; the guitar is the site's amp model. Nobody has compared the sound with a real mic.
+
+```{=html}
+<div class="mic" data-mic="sm58" data-src="voice"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="mic-step" data-mic="sm58" data-set="{}" data-place="{&quot;dist&quot;:0.01,&quot;angle&quot;:0}" data-src="voice"><p><b>At the lips.</b> Full, close, bassy.</p></div>
+<div class="mic-step" data-mic="sm58" data-set="{}" data-place="{&quot;dist&quot;:0.1,&quot;angle&quot;:0}" data-src="voice"><p><b>10 cm.</b> Thinner: the roll-off shows.</p></div>
+<div class="mic-step" data-mic="sm58" data-set="{}" data-place="{&quot;dist&quot;:0.05,&quot;angle&quot;:90}" data-src="voice"><p><b>Sung across it, 90°.</b> Duller and quieter.</p></div>
+<div class="mic-step" data-mic="sm58" data-set="{}" data-place="{&quot;dist&quot;:0.05,&quot;angle&quot;:0}" data-src="voice" data-room="hall"><p><b>In a big room.</b> The cardioid keeps the room down.</p></div>
+```
+
+## Famous uses
+
+Where a source ties the mic to the artist or record it is named; a link with a channel is a video checked on YouTube, the others are YouTube searches. **No source gives a placement**: **Try a guess** plays this site's guess.
+
+```{=html}
+<div class="mic-tracks" data-mic="sm58"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="mic-q" data-a="0"><p><b>Why the bass roll-off?</b></p><ul><li>Singers sing close, and proximity adds bass</li><li>To save battery</li><li>It has none</li></ul><p class="mic-why"></p></div>
+<div class="mic-q" data-a="1"><p><b>The SM58&#x27;s pattern?</b></p><ul><li>Omni</li><li>Cardioid</li><li>Figure-8</li></ul><p class="mic-why">Shure.</p></div>
+<div class="mic-q" data-a="1"><p><b>What is the ball grille for?</b></p><ul><li>Looks</li><li>Keeping breath and pops off the capsule</li><li>More bass</li></ul><p class="mic-why"></p></div>
+```
+
+## Next
+
+- [Microphones Compared](mic-compare.html?a=sm58&b=sm57): this mic beside another, placement translated.
+- [Recording 2: Microphones and Phantom Power](rec-mics.qmd): types, patterns and phantom power.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/mics.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/band/sounds.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/pedals.js"></script>
+<script src="/apps/shared/lessons/amps.js"></script>
+<script src="/apps/shared/lessons/mics.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Microphone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Microphone](https://en.wikipedia.org/wiki/Microphone). Polar patterns as first-order sums: the cardioid = omni + figure-8, the figure-8's negative rear signal cancelling; ribbons' symmetric front and rear pickup.
+
+"Shure SM58." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Shure_SM58](https://en.wikipedia.org/wiki/Shure_SM58). -54.5 dBV/Pa; proximity effect; photos of Robert Lockwood Jr (1982), Patti Smith (2007).
+
+"SM58 Vocal Microphone." *Shure*, [www.shure.com/en-US/products/microphones/sm58](https://www.shure.com/en-US/products/microphones/sm58). Accessed 26 Nov. 2026. Cardioid dynamic; 50-15,000 Hz; "brightened midrange and bass rolloff".
+
+**For students**
+
+"Proximity effect (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Proximity_effect_(audio)](https://en.wikipedia.org/wiki/Proximity_effect_(audio)). Bass rises close to a directional mic; caused by the ports; not a true omni, but not necessarily absent on a multipattern mic's summed omni.
+:::
+<!-- /works-cited -->
+

@@ -1,0 +1,108 @@
+---
+title: "Microphones Compared"
+toc: true
+toc-depth: 2
+description: "Shure SM57 and SM58, Neumann U 87 Ai, Royer R-121, Sennheiser MD 421 and Shure Beta 52A: response, polar pattern by frequency, proximity effect, off-axis colour, noise and max SPL, drawn and playable on a voice, a guitar amp, a snare and a kick; A/B two mics and translate a placement."
+instruments: [voice, guitar, drums]
+topics: [recording]
+has: [interactive, svg]
+---
+
+Six classic microphones, each drawn with its switches and placed in a small room. Pick any two, place one, hear both, and translate the placement to the other. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Learn what shapes a mic's sound: its response, its polar pattern, the proximity effect, off-axis colour, noise and overload.
+2. Hear two mics on the same source and the same placement, one after the other or added together.
+3. Translate a placement from one mic to another and see what carries over and what is lost.
+:::
+
+## What shapes a mic's sound
+
+- **Response**: each maker publishes a frequency-response chart. Those charts are pictures; this page's curves follow their shapes **approximately** (presence rises, bass roll-offs), from the published ranges and descriptions (Shure, Neumann, Royer, Wikipedia). Treat every point as unverified.
+- **Polar pattern**: how loud the mic hears from each direction. The common patterns are sums of an omni and a figure-8: cardioid half and half, supercardioid more figure-8 (Wikipedia, "Microphone"). Real mics widen in the bass and narrow in the treble: the small polar plot shows 125 Hz, 1 kHz and 8 kHz.
+- **The figure-8's back is inverted**: the rear lobe's signal has the opposite polarity (Wikipedia, "Microphone"). Alone you cannot hear it; added to another mic it cancels. Try **A + B together** with the R-121 turned round.
+- **Proximity effect**: closer than about 30 cm a directional mic gains bass; a true omni does not (Wikipedia, "Proximity effect (audio)"). The model uses the textbook spherical-wave term; real mics differ.
+- **Off axis**: a mic turned away gets quieter and duller, more so for a large diaphragm.
+- **Level**: sensitivity, self-noise and max SPL are from the spec sheets where published (the U 87's are Neumann's; dynamics and ribbons publish no self-noise, the figure here is an estimate). The readout under each mic says how loud the source is there, how far above the noise, and whether it overloads.
+
+## Two mics side by side
+
+Choose a mic for each side. Drag the blue mic in the room (or the Distance and Angle sliders), click the U 87's and MD 421's switches, press ▶. **A then B** plays A's source through both; **A + B together** adds them (phase matters). Sources: a generated voice (the band has no singer), the site's guitar amp ([Amps Compared](amp-compare.qmd)), and the band's snare and kick samples.
+
+```{=html}
+<div class="micc" data-a="sm57" data-b="u87"></div>
+```
+
+## Translating a placement
+
+**Translate** looks for the placement on the other mic (distance 1 cm-1 m, angle) whose curve is closest to this one's, after carrying over the switches it can:
+
+1. **Pattern**: kept if the other mic has it; otherwise the nearest, and the report says **pattern lost** (a fixed cardioid cannot be a figure-8). A source heard from behind on a figure-8 is lost on a cardioid.
+2. **Switches**: pad and low cut carry over where they exist; the MD 421's bass roll-off stands in for a low cut (approx), or the report says to cut it at the desk.
+3. **Tone**: the response at the new placement is compared with the old one from 60 Hz to 12 kHz.
+
+The report says **exact**, **approx** (with what is lost) or **lost**. Try the SM57 on the snare into the MD 421, the U 87 in figure-8 from behind into the SM57, the R-121 on the amp into the SM57.
+
+## What is this site's own
+
+- Every response point (the charts' shapes as remembered), the low-frequency widening and treble beaming, the proximity term's floor, the U 87's low-cut corner, the MD 421's roll-off steps, everything numeric about the Beta 52A, the source levels, the rooms and the dynamics' noise estimate are the site's (marked in `apps/shared/lessons/mics.js`). The U 87's pad as 10 dB is inferred from its max SPL with and without it.
+- The drawings are after photos, not measured; no makers' logos.
+- Nobody has compared the sound with real microphones.
+
+## Meet each mic
+
+- [Meet the Shure SM57](intro-sm57.qmd)
+- [Meet the Shure SM58](intro-sm58.qmd)
+- [Meet the Neumann U 87 Ai](intro-u87.qmd)
+- [Meet the Royer R-121](intro-r121.qmd)
+- [Meet the Sennheiser MD 421](intro-md421.qmd)
+- [Meet the Shure Beta 52A](intro-beta52.qmd)
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/mics.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/band/sounds.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/pedals.js"></script>
+<script src="/apps/shared/lessons/amps.js"></script>
+<script src="/apps/shared/lessons/mics.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Beta 52A Kick Drum Microphone." *Shure*, [www.shure.com/en-US/products/microphones/beta_52a](https://www.shure.com/en-US/products/microphones/beta_52a). Accessed 26 Nov. 2026. Supercardioid dynamic; response "shaped specifically for kick drums"; locking stand adapter, pneumatic shock mount. No numbers on the page.
+
+"Microphone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Microphone](https://en.wikipedia.org/wiki/Microphone). Polar patterns as first-order sums: the cardioid = omni + figure-8, the figure-8's negative rear signal cancelling; ribbons' symmetric front and rear pickup.
+
+"Neumann U 87." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Neumann_U_87](https://en.wikipedia.org/wiki/Neumann_U_87). 1967 successor of the U 67; U 87 A 1986; recordings incl. Heart of Gold, Tainted Love, American Pie.
+
+"R-121." *Royer Labs*, [royerlabs.com/r-121/](https://royerlabs.com/r-121/). Accessed 26 Nov. 2026. Figure-8 ribbon, passive; 30-15,000 Hz ±3 dB; -47 dBV; 300 ohm; max SPL >135 dB at 20 Hz; offset ribbon, back side brighter close up.
+
+"Ribbon microphone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ribbon_microphone](https://en.wikipedia.org/wiki/Ribbon_microphone). Typically bidirectional; Blumlein pair.
+
+"Sennheiser MD 421." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Sennheiser_MD_421](https://en.wikipedia.org/wiki/Sennheiser_MD_421). Cardioid dynamic, 30-17,000 Hz ±3 dB; five-step bass roll-off M to S; Merci, Chérie (1966 Eurovision); The Concert for Bangladesh.
+
+"Shure SM57." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Shure_SM57](https://en.wikipedia.org/wiki/Shure_SM57). 1965; -56.0 dBV/Pa; 150 ohm rated (300 actual); Unidyne 545 on Pet Sounds vocals; vocal users incl. Tom Waits; every US president since LBJ.
+
+"Shure SM58." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Shure_SM58](https://en.wikipedia.org/wiki/Shure_SM58). -54.5 dBV/Pa; proximity effect; photos of Robert Lockwood Jr (1982), Patti Smith (2007).
+
+"SM57 Dynamic Instrument Microphone." *Shure*, [www.shure.com/en-US/products/microphones/sm57](https://www.shure.com/en-US/products/microphones/sm57). Accessed 26 Nov. 2026. Cardioid dynamic; 40-15,000 Hz; "contoured frequency response" with a presence rise.
+
+"SM58 Vocal Microphone." *Shure*, [www.shure.com/en-US/products/microphones/sm58](https://www.shure.com/en-US/products/microphones/sm58). Accessed 26 Nov. 2026. Cardioid dynamic; 50-15,000 Hz; "brightened midrange and bass rolloff".
+
+"U 87 Ai." *Neumann*, [www.neumann.com/en-en/products/microphones/u-87-ai/](https://www.neumann.com/en-en/products/microphones/u-87-ai/). Accessed 26 Nov. 2026. Omni / cardioid / figure-8; 20 Hz-20 kHz; 20 / 28 / 22 mV/Pa; self-noise 15 / 12 / 14 dB-A; max SPL 117 dB, 127 dB with pad; switchable low cut and pad.
+
+**For students**
+
+"Proximity effect (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Proximity_effect_(audio)](https://en.wikipedia.org/wiki/Proximity_effect_(audio)). Bass rises close to a directional mic; caused by the ports; not a true omni, but not necessarily absent on a multipattern mic's summed omni.
+:::
+<!-- /works-cited -->
+

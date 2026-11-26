@@ -1,0 +1,107 @@
+---
+title: "Meet the Neumann U 87 Ai"
+toc: true
+toc-depth: 2
+description: "A first look at the Neumann U 87 Ai: the large-diaphragm studio condenser with three patterns, a pad and a low cut. Placement, famous recordings, quiz."
+instruments: [voice, guitar, drums]
+topics: [recording]
+has: [interactive, svg]
+---
+
+A first stop before [Microphones Compared](mic-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Neumann U 87 Ai is.
+2. Learn how it hears: pattern, proximity, off axis.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Look up famous uses.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **U 87** came in **1967** as the solid-state successor of the U 67; the **U 87 Ai** is the current version (Wikipedia, "Neumann U 87"; Neumann).
+- A **condenser** (needs +48 V phantom power) with a large dual-diaphragm capsule and three patterns: **omni, cardioid, figure-8** (Neumann).
+- Sensitivity **20 / 28 / 22 mV/Pa**, self-noise **15 / 12 / 14 dB-A**, max SPL **117 dB** (127 with the pad) (Neumann).
+- On Neil Young's "Heart of Gold", Soft Cell's "Tainted Love", Don McLean's "American Pie" (Wikipedia).
+
+## How it hears
+
+- Two cardioid diaphragms back to back: added, an **omni**; one subtracted, a **figure-8**, whose rear lobe is **inverted** (Wikipedia, "Microphone").
+- **Pad** lowers the level 10 dB so loud sources do not overload it; **Low cut** takes off rumble and proximity bass (corner here the site's).
+- Its "omni" is two cardioids summed, so it still has a little proximity effect (Wikipedia notes this for multipattern mics). The response graph is the maker's published chart **digitised approximately** (the charts are pictures; the points here follow their shape as remembered: unverified).
+
+## The mic
+
+The Neumann U 87 Ai drawn after photos (proportions approximate, no logos), with its switches: click them. Drag the blue mic in the room (or use the Distance slider; the wheel or Angle turns it), choose a source and a room, press **▶ Hear it**. Voice is generated (the band has no singer); snare and kick are the band's kit; the guitar is the site's amp model. Nobody has compared the sound with a real mic.
+
+```{=html}
+<div class="mic" data-mic="u87" data-src="voice"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="mic-step" data-mic="u87" data-set="{&quot;pattern&quot;:&quot;cardioid&quot;}" data-place="{&quot;dist&quot;:0.2,&quot;angle&quot;:0}" data-src="voice"><p><b>Cardioid, 20 cm.</b> The studio vocal.</p></div>
+<div class="mic-step" data-mic="u87" data-set="{&quot;pattern&quot;:&quot;omni&quot;}" data-place="{&quot;dist&quot;:0.2,&quot;angle&quot;:0}" data-src="voice" data-room="hall"><p><b>Omni in a big room.</b> More room in the sound.</p></div>
+<div class="mic-step" data-mic="u87" data-set="{&quot;pattern&quot;:&quot;fig8&quot;}" data-place="{&quot;dist&quot;:0.2,&quot;angle&quot;:180}" data-src="voice"><p><b>Figure-8, from behind.</b> As loud as the front, but inverted.</p></div>
+<div class="mic-step" data-mic="u87" data-set="{&quot;pattern&quot;:&quot;cardioid&quot;}" data-place="{&quot;dist&quot;:0.02,&quot;angle&quot;:0}" data-src="guitar"><p><b>2 cm from a loud amp.</b> Over max SPL: it distorts.</p></div>
+<div class="mic-step" data-mic="u87" data-set="{&quot;pattern&quot;:&quot;cardioid&quot;,&quot;pad&quot;:true}" data-place="{&quot;dist&quot;:0.02,&quot;angle&quot;:0}" data-src="guitar"><p><b>Pad on.</b> 10 dB more headroom.</p></div>
+<div class="mic-step" data-mic="u87" data-set="{&quot;pattern&quot;:&quot;cardioid&quot;,&quot;lowcut&quot;:true}" data-place="{&quot;dist&quot;:0.03,&quot;angle&quot;:0}" data-src="voice"><p><b>Low cut, close up.</b> Proximity bass taken off.</p></div>
+```
+
+## Famous uses
+
+Where a source ties the mic to the artist or record it is named; a link with a channel is a video checked on YouTube, the others are YouTube searches. **No source gives a placement**: **Try a guess** plays this site's guess.
+
+```{=html}
+<div class="mic-tracks" data-mic="u87"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="mic-q" data-a="0"><p><b>How does the U 87 make a figure-8?</b></p><ul><li>Two diaphragms, one subtracted</li><li>A ribbon inside</li><li>A software filter</li></ul><p class="mic-why"></p></div>
+<div class="mic-q" data-a="1"><p><b>What does the pad do?</b></p><ul><li>Cuts bass</li><li>Lowers the level so loud sources fit</li><li>Adds reverb</li></ul><p class="mic-why"></p></div>
+<div class="mic-q" data-a="0"><p><b>What does a condenser need?</b></p><ul><li>Phantom power</li><li>A battery always</li><li>Nothing</li></ul><p class="mic-why"></p></div>
+```
+
+## Next
+
+- [Microphones Compared](mic-compare.html?a=u87&b=r121): this mic beside another, placement translated.
+- [Recording 2: Microphones and Phantom Power](rec-mics.qmd): types, patterns and phantom power.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/mics.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/band/sounds.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/pedals.js"></script>
+<script src="/apps/shared/lessons/amps.js"></script>
+<script src="/apps/shared/lessons/mics.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Microphone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Microphone](https://en.wikipedia.org/wiki/Microphone). Polar patterns as first-order sums: the cardioid = omni + figure-8, the figure-8's negative rear signal cancelling; ribbons' symmetric front and rear pickup.
+
+"Neumann U 87." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Neumann_U_87](https://en.wikipedia.org/wiki/Neumann_U_87). 1967 successor of the U 67; U 87 A 1986; recordings incl. Heart of Gold, Tainted Love, American Pie.
+
+"U 87 Ai." *Neumann*, [www.neumann.com/en-en/products/microphones/u-87-ai/](https://www.neumann.com/en-en/products/microphones/u-87-ai/). Accessed 26 Nov. 2026. Omni / cardioid / figure-8; 20 Hz-20 kHz; 20 / 28 / 22 mV/Pa; self-noise 15 / 12 / 14 dB-A; max SPL 117 dB, 127 dB with pad; switchable low cut and pad.
+
+**For students**
+
+"Proximity effect (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Proximity_effect_(audio)](https://en.wikipedia.org/wiki/Proximity_effect_(audio)). Bass rises close to a directional mic; caused by the ports; not a true omni, but not necessarily absent on a multipattern mic's summed omni.
+:::
+<!-- /works-cited -->
+

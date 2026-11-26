@@ -224,3 +224,17 @@
   `scripts/sources/amps.py`; only the formula and the Bassman values are from a source read in full; other stack values from memory
   (unverified). Tests `node tests/lessons/amps.test.js` (`NEG=1` must fail), `tests/lessons/amp-compare.cdp.js` (after rendering;
   `SITE=<dir>`). Not listened against real amps.
+- Microphones (2026-11-26): `apps/shared/lessons/mics.js` + `.css` (global Mics; header = model, what is sourced, API, markup): pure
+  model in node of the SM57, SM58, U 87 Ai (omni / cardioid / figure-8, pad, low cut), Royer R-121, MD 421 (5-step bass roll-off) and
+  Beta 52A: on-axis curve (makers' charts digitised APPROXIMATELY from their shapes: unverified), first-order pattern a + (1-a)cos
+  widening in the bass and beaming in the treble, proximity by the spherical-wave term 1 + 1/(jkr) (source size 1.5 cm, site's),
+  figure-8 rear lobe as a sign (A + B cancels), sensitivity / self-noise / max SPL from spec sheets (dynamics' noise estimated), room
+  by random-energy efficiency. `Mics.H / db / level / render / translate` (pattern lost on a fixed mic, switches carried or mapped,
+  placement searched by curve). Placement widget (drag the mic, Distance / Angle, Source voice (generated) / guitar (Amps.render) /
+  snare / kick (the band's kit via BandSounds offline, generated fallback), Room), polar plot at 125 Hz / 1 kHz / 8 kHz. Drawings
+  `panels/mic-<id>.js` (FaithfulPanel adapter; U 87 front + back, seg pattern switch, pad / low-cut keys; no logos). Pages
+  `lessons/mic-compare.qmd` (`.micc` `?a=&b=`, A then B, A + B) + `intro-{sm57,sm58,u87,r121,md421,beta52}.qmd` by
+  `python3 scripts/intro-instruments/mics.py`; famous uses `apps/shared/data/mics/tracks.json` (2 oEmbed-checked videos, the rest
+  YouTube searches; placements guesses). Not rec-kit-mic.js (untouched; ideas only). Sources `scripts/sources/mics.py`. Tests
+  `node tests/lessons/mics.test.js` (`NEG=1` must fail), `node tests/lessons/mics.cdp.js` (harness page, no render; `RENDERED=1` for
+  the rendered pages). Not listened against real mics.
