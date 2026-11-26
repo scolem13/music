@@ -276,6 +276,24 @@ website:
                 - lessons/intro-tele.qmd
                 - lessons/intro-les-paul.qmd
                 - lessons/intro-sg.qmd
+            - section: "Pedals"
+              contents:
+                - lessons/pedal-compare.qmd
+                - lessons/intro-fuzz-face.qmd
+                - lessons/intro-big-muff.qmd
+                - lessons/intro-tube-screamer.qmd
+                - lessons/intro-cry-baby.qmd
+                - lessons/intro-phase-90.qmd
+                - lessons/intro-ce-2.qmd
+                - lessons/intro-dm-2.qmd
+                - lessons/intro-echoplex.qmd
+            - section: "Basses"
+              contents:
+                - lessons/bass-compare.qmd
+                - lessons/intro-p-bass.qmd
+                - lessons/intro-jazz-bass.qmd
+                - lessons/intro-stingray.qmd
+                - lessons/intro-rickenbacker-bass.qmd
             - section: "Organs"
               contents:
                 - lessons/organ-compare.qmd

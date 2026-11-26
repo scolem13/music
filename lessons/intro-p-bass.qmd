@@ -1,0 +1,98 @@
+---
+title: "Meet the Fender Precision Bass"
+toc: true
+toc-depth: 2
+description: "A first look at the Fender Precision Bass: one split-coil pickup, a volume and a tone knob, a guided tour of its sound, famous tracks, and a short quiz."
+instruments: [bass]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Electric Basses Compared](bass-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the P-Bass is.
+2. Learn how its pickups and controls make its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Listen to famous tracks.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Precision Bass** was first offered for sale in **October 1951** (Wikipedia, "Fender Precision Bass").
+- Fender chose a **34-inch scale** "after much trial and error"; it became the standard for full-scale electric basses (Wikipedia).
+- Its biggest change came in **1957**: a new **split-coil** pickup. It has stayed on Precision Basses ever since (Wikipedia).
+- Four strings, tuned E A D G, an octave below a guitar's lowest four.
+
+## Its sound
+
+- The first Precision pickup was a single coil, and Leo Fender did not like its hum (Wikipedia).
+- He split it into **two coils**, "wired out of phase with the magnets oriented with reverse polarities" (Wikipedia). Hum makes opposite voltages in the two halves and cancels; the strings' signal adds. It works like a humbucker.
+- Each half sits under **two strings** (E-A in one half, D-G in the other), so the two halves are at slightly different places on the string (which half is nearer the bridge: this page reads photos, unverified).
+- Two coils in series, a lot of wire: a low resonance, so a round, full, dark sound.
+- One volume, one tone. The tone knob only cuts treble: it is passive, with no battery.
+
+## The controls
+
+The P-Bass's control area, drawn after the real one (positions approximate). Drag a knob (or use the arrow keys), then press a ▶ button. The sound is this site's physical model of a plucked bass string through these pickups and this wiring, into an amp; nobody has compared it with a real bass. The picture under the buttons shows the harmonics of the open A string (55 Hz) at the jack (bars) and the circuit alone (line).
+
+```{=html}
+<div class="bsp" data-bass="pbass"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="bs-step" data-bass="pbass" data-set="{}" data-play="riff"><p><b>Everything up.</b> The plain P sound: round and full.</p></div>
+<div class="bs-step" data-bass="pbass" data-set="{&quot;tone&quot;:3}" data-play="riff"><p><b>Tone down to 3.</b> Darker, thumpier: an older soul and Motown kind of sound (a description, not a measured setting).</p></div>
+<div class="bs-step" data-bass="pbass" data-set="{&quot;tone&quot;:0}" data-play="pluck"><p><b>Tone at 0.</b> Very dark: almost only the low harmonics.</p></div>
+<div class="bs-step" data-bass="pbass" data-set="{&quot;vol&quot;:6}" data-play="riff"><p><b>Volume at 6.</b> Quieter and a little duller: the pot's resistance and the cable take treble away.</p></div>
+```
+
+## Famous tracks
+
+Videos checked on YouTube. Where the bass is named in a source, it is given; **no source was found for any setting**, so each setting is this site's guess (press **Try it** to hear the guess on the model).
+
+```{=html}
+<div class="bs-tracks" data-bass="pbass"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="bs-q" data-a="1"><p><b>When did the Precision Bass get its split-coil pickup?</b></p><ul><li>1951</li><li>1957</li><li>1972</li></ul><p class="gt-why">Wikipedia.</p></div>
+<div class="bs-q" data-a="0"><p><b>Why is the pickup split in two?</b></p><ul><li>To cancel hum</li><li>To make it louder only</li><li>To fit five strings</li></ul><p class="gt-why">The halves are wired out of phase with reversed magnets: hum cancels.</p></div>
+<div class="bs-q" data-a="2"><p><b>What is the P-Bass&#x27;s scale length?</b></p><ul><li>30 in</li><li>33.5 in</li><li>34 in</li></ul><p class="gt-why">34 in (Wikipedia).</p></div>
+```
+
+## Next
+
+- [Electric Basses Compared](bass-compare.html?a=pbass&b=jbass): the P-Bass side by side with the others, and settings translated between them.
+- [The Electric Bass](electric-bass.qmd): the instrument, the hands, tuning and the fretboard.
+- [Gear 3: amps](gear-amps.qmd): bass amps.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/guitar-pickups.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/band/sounds.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/bass-pickups.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Fender Precision Bass." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Fender_Precision_Bass](https://en.wikipedia.org/wiki/Fender_Precision_Bass). On sale October 1951; 34 in scale; split-coil pickup from 1957, coils wired out of phase with reversed magnets (hum-cancelling); Jamerson's 1962 Precision on Motown hits; signature models (Sting, Harris, Waters).
+:::
+<!-- /works-cited -->
+

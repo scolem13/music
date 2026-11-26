@@ -1,0 +1,232 @@
+{
+ "note": "Famous tracks per bass (lessons/bass-compare.qmd, intro-p-bass / jazz-bass / stingray / rickenbacker-bass). Each video confirmed by YouTube oEmbed 2026-11-26 (title and channel from it). instrumentSrc = where the bass is named (null = unverified); no source found for any setting, so every settingSrc is null and the setting is this site's guess.",
+ "tracks": [
+  {
+   "bass": "pbass",
+   "artist": "Marvin Gaye",
+   "song": "What's Going On",
+   "url": "https://www.youtube.com/watch?v=H-kA3UtBj4M",
+   "title": "Marvin Gaye - What's Going On",
+   "channel": "SuperWhoopass",
+   "player": "James Jamerson",
+   "instrument": "a Precision",
+   "instrumentSrc": "Wikipedia, \"Fender Precision Bass\": Jamerson played the Motown hits on his 1962 Precision (this song is not named there)",
+   "setting": "tone half way (a guess)",
+   "settingSrc": null,
+   "state": {
+    "tone": 5
+   },
+   "play": "riff"
+  },
+  {
+   "bass": "pbass",
+   "artist": "Iron Maiden",
+   "song": "The Trooper",
+   "url": "https://www.youtube.com/watch?v=X4bgXH3sJ2Q",
+   "title": "Iron Maiden - The Trooper (Official Video)",
+   "channel": "Iron Maiden",
+   "player": "Steve Harris",
+   "instrument": "a Precision",
+   "instrumentSrc": null,
+   "setting": "volume and tone full up (a guess)",
+   "settingSrc": null,
+   "state": {
+    "tone": 10
+   },
+   "play": "riff"
+  },
+  {
+   "bass": "pbass",
+   "artist": "The Police",
+   "song": "Every Breath You Take",
+   "url": "https://www.youtube.com/watch?v=OMOGaugKpzs",
+   "title": "The Police - Every Breath You Take (Official Music Video)",
+   "channel": "ThePoliceVEVO",
+   "player": "Sting",
+   "instrument": "a Precision",
+   "instrumentSrc": null,
+   "setting": "tone rolled back (a guess)",
+   "settingSrc": null,
+   "state": {
+    "tone": 4
+   },
+   "play": "pluck"
+  },
+  {
+   "bass": "pbass",
+   "artist": "Pink Floyd",
+   "song": "Money",
+   "url": "https://www.youtube.com/watch?v=-0kcet4aPpQ",
+   "title": "Pink Floyd - Money (Official Music Video)",
+   "channel": "Pink Floyd",
+   "player": "Roger Waters",
+   "instrument": "a Precision",
+   "instrumentSrc": null,
+   "setting": "tone full up (a guess)",
+   "settingSrc": null,
+   "state": {
+    "tone": 10
+   },
+   "play": "riff"
+  },
+  {
+   "bass": "jbass",
+   "artist": "Weather Report",
+   "song": "Teen Town",
+   "url": "https://www.youtube.com/watch?v=lSUk8bSVHYc",
+   "title": "Weather Report  - Teen Town",
+   "channel": "Typhoon72",
+   "player": "Jaco Pastorius",
+   "instrument": "his 1962 Jazz Bass",
+   "instrumentSrc": "Wikipedia, \"Fender Jazz Bass\" pictures him with his 1962 Jazz Bass in 1977 (the track is not named there)",
+   "setting": "bridge pickup up, neck down (a guess)",
+   "settingSrc": null,
+   "state": {
+    "vol1": 3,
+    "vol2": 10
+   },
+   "play": "lead"
+  },
+  {
+   "bass": "jbass",
+   "artist": "Miles Davis",
+   "song": "Tutu",
+   "url": "https://www.youtube.com/watch?v=0Jnqz62d9oM",
+   "title": "Tutu",
+   "channel": "Miles Davis - Topic",
+   "player": "Marcus Miller",
+   "instrument": "a Jazz Bass",
+   "instrumentSrc": "Wikipedia, \"Fender Jazz Bass\" names Miller for the both-pickups slap sound (the track is not named there)",
+   "setting": "both pickups full (a guess)",
+   "settingSrc": null,
+   "state": {
+    "vol1": 10,
+    "vol2": 10
+   },
+   "play": "riff"
+  },
+  {
+   "bass": "jbass",
+   "artist": "Red Hot Chili Peppers",
+   "song": "Give It Away",
+   "url": "https://www.youtube.com/watch?v=Mr_uHJPUlO8",
+   "title": "Red Hot Chili Peppers - Give It Away [Official Music Video]",
+   "channel": "Red Hot Chili Peppers",
+   "player": "Flea",
+   "instrument": "a Jazz Bass",
+   "instrumentSrc": null,
+   "setting": "both pickups full (a guess)",
+   "settingSrc": null,
+   "state": {
+    "vol1": 10,
+    "vol2": 10
+   },
+   "play": "riff"
+  },
+  {
+   "bass": "stingray",
+   "artist": "Queen",
+   "song": "Another One Bites the Dust",
+   "url": "https://www.youtube.com/watch?v=rY0WxgSXdEE",
+   "title": "Queen - Another One Bites the Dust (Official Video Remastered)",
+   "channel": "Queen Official",
+   "player": "John Deacon",
+   "instrument": "a StingRay",
+   "instrumentSrc": "Wikipedia, \"Music Man StingRay\": the bass line \"was notably played on one\"",
+   "setting": "bass up a little, treble flat (a guess)",
+   "settingSrc": null,
+   "state": {
+    "bass": 7,
+    "treble": 5
+   },
+   "play": "riff"
+  },
+  {
+   "bass": "stingray",
+   "artist": "Chic",
+   "song": "Le Freak",
+   "url": "https://www.youtube.com/watch?v=aXgSHL7efKg",
+   "title": "CHIC - Le Freak (Official Music Video)",
+   "channel": "RHINO",
+   "player": "Bernard Edwards",
+   "instrument": "a StingRay",
+   "instrumentSrc": "Wikipedia, \"Music Man StingRay\": its low-end thump on \"Le Freak\"",
+   "setting": "bass up, treble a little up (a guess)",
+   "settingSrc": null,
+   "state": {
+    "bass": 8,
+    "treble": 6
+   },
+   "play": "riff"
+  },
+  {
+   "bass": "stingray",
+   "artist": "The Brothers Johnson",
+   "song": "Stomp!",
+   "url": "https://www.youtube.com/watch?v=tPBDMihPRJA",
+   "title": "The Brothers Johnson - Stomp!",
+   "channel": "BrothersJohnsonVEVO",
+   "player": "Louis Johnson",
+   "instrument": "a StingRay",
+   "instrumentSrc": "Wikipedia, \"Music Man StingRay\" says he used one soon after 1976 (the song is not named there)",
+   "setting": "treble up for slap (a guess)",
+   "settingSrc": null,
+   "state": {
+    "bass": 7,
+    "treble": 8
+   },
+   "play": "riff"
+  },
+  {
+   "bass": "ric4003",
+   "artist": "Yes",
+   "song": "Roundabout",
+   "url": "https://www.youtube.com/watch?v=cPCLFtxpadE",
+   "title": "Roundabout (2008 Remaster)",
+   "channel": "Yes - Topic",
+   "player": "Chris Squire",
+   "instrument": "a Rickenbacker (a 4001)",
+   "instrumentSrc": "Wikipedia, \"Rickenbacker 4001\" on Squire's bright, twangy Rickenbacker tone (the song is not named there)",
+   "setting": "bridge pickup, tone full (a guess)",
+   "settingSrc": null,
+   "state": {
+    "sel": "bridge"
+   },
+   "play": "riff"
+  },
+  {
+   "bass": "ric4003",
+   "artist": "Motörhead",
+   "song": "Ace of Spades",
+   "url": "https://www.youtube.com/watch?v=3mbvWn1EY6g",
+   "title": "Motörhead – Ace Of Spades (Official Video)",
+   "channel": "Motörhead Official",
+   "player": "Lemmy",
+   "instrument": "a Rickenbacker",
+   "instrumentSrc": null,
+   "setting": "both pickups, everything up (a guess)",
+   "settingSrc": null,
+   "state": {
+    "sel": "both"
+   },
+   "play": "riff"
+  },
+  {
+   "bass": "ric4003",
+   "artist": "Rush",
+   "song": "Tom Sawyer",
+   "url": "https://www.youtube.com/watch?v=auLBLk4ibAk",
+   "title": "Rush - Tom Sawyer",
+   "channel": "RushVEVO",
+   "player": "Geddy Lee",
+   "instrument": "a Rickenbacker",
+   "instrumentSrc": null,
+   "setting": "both pickups (a guess)",
+   "settingSrc": null,
+   "state": {
+    "sel": "both"
+   },
+   "play": "riff"
+  }
+ ]
+}

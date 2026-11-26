@@ -1,0 +1,96 @@
+---
+title: "Meet the Echoplex EP-3"
+toc: true
+toc-depth: 2
+description: "A first look at the Echoplex: a tape loop and a sliding record head, with wow, flutter and tape saturation. Guided tour, famous tracks, quiz."
+instruments: [guitar]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Guitar Pedals Compared](pedal-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Echoplex EP-3 is.
+2. Learn how its circuit makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Listen to famous tracks.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- Mike Battle's **Echoplex** reached the market in **1959**; the solid-state **EP-3** came in **1970** and was made until 1991 (Wikipedia, "Echoplex").
+- Its idea: a loop of tape in a cartridge, with a **record head that slides**, so the delay changes without changing the tape speed (Wikipedia).
+- Eddie Van Halen played "Eruption" with an MXR Phase 90 and an Echoplex (Wikipedia).
+
+## How it makes its sound
+
+- The tape passes the record head, then the playback head: the gap between them is the delay. Slide the head away: a longer delay.
+- Tape does not move perfectly evenly: slow **wow** and fast **flutter** make the repeats waver in pitch (this model: 0.5 Hz and 7 Hz, the site's values).
+- Tape squashes loud signals (saturation) and loses the top and bottom on every pass: warm, worn repeats.
+- Repeats feeds the playback back to the record head; near full, it builds up.
+
+## The pedal
+
+The Echoplex EP-3's face, drawn after photos (positions approximate, no logos). Drag a knob (or use the arrow keys), click the footswitch to bypass, then press a ▶ button. The guitar is this site's pickup model (pick one, and its volume, below the buttons); the sound goes through the pedal model, then a clean amp. Nobody has compared it with a real pedal. The picture shows the waveform going in and coming out.
+
+```{=html}
+<div class="pdp" data-pedal="echoplex"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="pd-step" data-pedal="echoplex" data-set="{&quot;delay&quot;:2,&quot;repeats&quot;:2,&quot;echo&quot;:6}" data-play="riff"><p><b>Short delay.</b> Rockabilly-style slap.</p></div>
+<div class="pd-step" data-pedal="echoplex" data-set="{&quot;delay&quot;:6,&quot;repeats&quot;:5,&quot;echo&quot;:6}" data-play="pluck"><p><b>Longer, more repeats.</b> Listen for the waver.</p></div>
+<div class="pd-step" data-pedal="echoplex" data-set="{&quot;delay&quot;:9,&quot;repeats&quot;:9,&quot;echo&quot;:8}" data-play="pluck"><p><b>Repeats 9.</b> Building up on the tape.</p></div>
+<div class="pd-step" data-pedal="echoplex" data-set="{&quot;delay&quot;:4,&quot;repeats&quot;:3,&quot;echo&quot;:5}" data-play="lead"><p><b>On a lead line.</b></p></div>
+```
+
+## Famous tracks
+
+Videos checked on YouTube. Where a source ties the pedal to the record, it is given; otherwise it is marked unverified. **No source gives any setting**: **Try a guess** plays this site's guess.
+
+```{=html}
+<div class="pd-tracks" data-pedal="echoplex"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="pd-q" data-a="1"><p><b>How do you change an Echoplex&#x27;s delay?</b></p><ul><li>Change the tape speed</li><li>Slide the record head</li><li>Turn Rate</li></ul><p class="pd-why">Wikipedia.</p></div>
+<div class="pd-q" data-a="0"><p><b>What makes the repeats waver?</b></p><ul><li>Wow and flutter</li><li>The diodes</li><li>The LFO's depth</li></ul><p class="pd-why"></p></div>
+<div class="pd-q" data-a="1"><p><b>When did the EP-3 come out?</b></p><ul><li>1959</li><li>1970</li><li>1991</li></ul><p class="pd-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Guitar Pedals Compared](pedal-compare.html?a=echoplex&b=dm2): this pedal beside a similar one, settings translated, and a pedalboard to chain them.
+- [Electric Guitars Compared](guitar-compare.qmd): the guitars that feed these pedals.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/pedals.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/pedals.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Echoplex." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Echoplex](https://en.wikipedia.org/wiki/Echoplex). Mike Battle, 1959; moving record head sets the delay; EP-3 solid state 1970, made to 1991; Bolin's ray-gun on Spectrum.
+
+"Eruption (instrumental)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Eruption_(instrumental)](https://en.wikipedia.org/wiki/Eruption_(instrumental)). Played with an MXR Phase 90, an Echoplex, a Univox echo unit.
+:::
+<!-- /works-cited -->
+

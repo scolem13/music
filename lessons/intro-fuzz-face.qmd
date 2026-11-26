@@ -1,0 +1,99 @@
+---
+title: "Meet the Fuzz Face"
+toc: true
+toc-depth: 2
+description: "A first look at the Fuzz Face: two transistors, two knobs, and a fuzz that cleans up when you turn the guitar down. Guided tour, famous tracks, quiz."
+instruments: [guitar]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Guitar Pedals Compared](pedal-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Fuzz Face is.
+2. Learn how its circuit makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Listen to famous tracks.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Fuzz Face** came out in **1966**, made by **Arbiter** in London (Wikipedia, "Fuzz Face").
+- Two knobs: **Volume** and **Fuzz**. A round metal case with a footswitch.
+- Early ones used **germanium** transistors; from the late 1960s **silicon**, which Wikipedia says sounded harsher.
+
+## How it makes its sound
+
+- Two transistors give a lot of gain. The signal hits the top and bottom of what they can put out: the wave is squared off (**clipped**), which adds many new harmonics.
+- The clipping is not the same on top and bottom (*asymmetric*): that adds even harmonics too. In this page's model a bias does that (the site's reading of germanium fuzz).
+- Its input takes a lot of current from the guitar: a **low input impedance**, about 5-8 kΩ (ElectroSmash, from a search summary). So the guitar's own volume knob changes the sound: at 10, the pickup loses treble into that load; turned down, the knob's resistance isolates the pickup, less signal reaches the transistors and the fuzz **cleans up** (Wikipedia).
+- Put it first in the chain: after another pedal, that pedal drives it and the clean-up trick is gone (this page models that).
+
+## The pedal
+
+The Fuzz Face's face, drawn after photos (positions approximate, no logos). Drag a knob (or use the arrow keys), click the footswitch to bypass, then press a ▶ button. The guitar is this site's pickup model (pick one, and its volume, below the buttons); the sound goes through the pedal model, then a clean amp. Nobody has compared it with a real pedal. The picture shows the waveform going in and coming out.
+
+```{=html}
+<div class="pdp" data-pedal="fuzzface"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="pd-step" data-pedal="fuzzface" data-set="{&quot;fuzz&quot;:9,&quot;vol&quot;:7,&quot;gvol&quot;:10}" data-play="riff"><p><b>Fuzz 9, guitar volume 10.</b> Thick, squared-off fuzz.</p></div>
+<div class="pd-step" data-pedal="fuzzface" data-set="{&quot;fuzz&quot;:9,&quot;vol&quot;:7,&quot;gvol&quot;:6}" data-play="riff"><p><b>Same pedal, guitar volume 6.</b> Listen: much cleaner, brighter. Nothing on the pedal changed.</p></div>
+<div class="pd-step" data-pedal="fuzzface" data-set="{&quot;fuzz&quot;:9,&quot;vol&quot;:7,&quot;gvol&quot;:4}" data-play="chord"><p><b>Guitar volume 4.</b> Nearly clean chords.</p></div>
+<div class="pd-step" data-pedal="fuzzface" data-set="{&quot;fuzz&quot;:3,&quot;vol&quot;:8,&quot;gvol&quot;:10}" data-play="riff"><p><b>Fuzz 3.</b> Less gain: a gritty crunch.</p></div>
+<div class="pd-step" data-pedal="fuzzface" data-set="{&quot;fuzz&quot;:10,&quot;vol&quot;:6,&quot;gvol&quot;:10}" data-play="lead"><p><b>Fuzz 10.</b> Long sustain on a lead line.</p></div>
+```
+
+## Famous tracks
+
+Videos checked on YouTube. Where a source ties the pedal to the record, it is given; otherwise it is marked unverified. **No source gives any setting**: **Try a guess** plays this site's guess.
+
+```{=html}
+<div class="pd-tracks" data-pedal="fuzzface"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="pd-q" data-a="1"><p><b>What happens when you turn the guitar&#x27;s volume down into a Fuzz Face?</b></p><ul><li>It gets louder</li><li>The fuzz cleans up</li><li>Nothing</li><li>It turns off</li></ul><p class="pd-why">The low input impedance: the guitar's pot isolates the pickup and less signal drives the transistors.</p></div>
+<div class="pd-q" data-a="1"><p><b>Which knobs does it have?</b></p><ul><li>Drive, Tone, Level</li><li>Volume and Fuzz</li><li>Rate and Depth</li><li>Sustain, Tone, Volume</li></ul><p class="pd-why">Wikipedia.</p></div>
+<div class="pd-q" data-a="1"><p><b>What did the first ones use?</b></p><ul><li>Valves</li><li>Germanium transistors</li><li>An op-amp</li><li>A tape loop</li></ul><p class="pd-why">NKT275 or AC128 (Wikipedia).</p></div>
+```
+
+## Next
+
+- [Guitar Pedals Compared](pedal-compare.html?a=fuzzface&b=bigmuff): this pedal beside a similar one, settings translated, and a pedalboard to chain them.
+- [Electric Guitars Compared](guitar-compare.qmd): the guitars that feed these pedals.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/pedals.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/pedals.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+ElectroSmash. "Fuzz Face Analysis." [electrosmash.com/fuzz-face](https://electrosmash.com/fuzz-face). Input impedance 5.2-8.4 kOhm with the Fuzz pot (from a search summary: page unreachable 2026-11-26; unverified).
+
+"Fuzz Face." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Fuzz_Face](https://en.wikipedia.org/wiki/Fuzz_Face). 1966, Arbiter; germanium (NKT275 / AC128) then silicon; Volume and Fuzz; with the guitar's volume at 10 treble is lost, rolling it down stops that.
+
+"Purple Haze." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Purple_Haze](https://en.wikipedia.org/wiki/Purple_Haze). Octavia coupled with a Fuzz Face on the solo.
+:::
+<!-- /works-cited -->
+

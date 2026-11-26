@@ -1,0 +1,359 @@
+{
+ "note": "Famous tracks per pedal (lessons/pedal-compare.qmd, intro-<pedal>.qmd). Each video confirmed by YouTube oEmbed 2026-11-26 (title and channel from it). useSrc = where the pedal is tied to the recording (null = unverified). No source gives any setting: every state is this site's guess.",
+ "tracks": [
+  {
+   "pedal": "fuzzface",
+   "artist": "The Jimi Hendrix Experience",
+   "song": "Purple Haze",
+   "url": "https://www.youtube.com/watch?v=WGoDaYjdfSg",
+   "title": "The Jimi Hendrix Experience - Purple Haze (Official Audio)",
+   "channel": "JimiHendrixVEVO",
+   "player": "Jimi Hendrix",
+   "useSrc": "Wikipedia, \"Purple Haze\": the solo's Octavia \"coupled with a Fuzz Face\"",
+   "state": {
+    "fuzz": 9,
+    "vol": 7
+   },
+   "play": "riff"
+  },
+  {
+   "pedal": "fuzzface",
+   "artist": "The Jimi Hendrix Experience",
+   "song": "Fire",
+   "url": "https://www.youtube.com/watch?v=9m6SZhYt-d0",
+   "title": "JIMI HENDRIX - Fire (1967)",
+   "channel": "Captain Midnight",
+   "player": "Jimi Hendrix",
+   "useSrc": null,
+   "state": {
+    "fuzz": 7,
+    "vol": 6
+   },
+   "play": "riff"
+  },
+  {
+   "pedal": "fuzzface",
+   "artist": "The Jimi Hendrix Experience",
+   "song": "Foxey Lady",
+   "url": "https://www.youtube.com/watch?v=ThkRVTd-tPc",
+   "title": "Foxey Lady",
+   "channel": "Jimi Hendrix - Topic",
+   "player": "Jimi Hendrix",
+   "useSrc": null,
+   "state": {
+    "fuzz": 10,
+    "vol": 7
+   },
+   "play": "riff"
+  },
+  {
+   "pedal": "bigmuff",
+   "artist": "Pink Floyd",
+   "song": "Comfortably Numb",
+   "url": "https://www.youtube.com/watch?v=4FLjT5V5Hog",
+   "title": "Comfortably Numb",
+   "channel": "Pink Floyd - Topic",
+   "player": "David Gilmour",
+   "useSrc": "Wikipedia, \"Comfortably Numb\": \"He used a Big Muff distortion and delay effects on the solos\"",
+   "state": {
+    "sustain": 8,
+    "tone": 6,
+    "volume": 6
+   },
+   "play": "lead"
+  },
+  {
+   "pedal": "bigmuff",
+   "artist": "The Smashing Pumpkins",
+   "song": "Cherub Rock",
+   "url": "https://www.youtube.com/watch?v=q-KE9lvU810",
+   "title": "Smashing Pumpkins - Cherub Rock",
+   "channel": "SmashingPumpkinsVEVO",
+   "player": "Billy Corgan",
+   "useSrc": null,
+   "state": {
+    "sustain": 9,
+    "tone": 4,
+    "volume": 6
+   },
+   "play": "riff"
+  },
+  {
+   "pedal": "bigmuff",
+   "artist": "Depeche Mode",
+   "song": "Big Muff",
+   "url": "https://www.youtube.com/watch?v=y-ioGGoHr_Q",
+   "title": "Big Muff",
+   "channel": "Depeche Mode - Topic",
+   "player": "Martin Gore",
+   "useSrc": "Wikipedia, \"Big Muff\": the instrumental on Speak & Spell (1981) is named after the pedal (whether one is heard on it: unverified)",
+   "state": null,
+   "play": "riff"
+  },
+  {
+   "pedal": "ts808",
+   "artist": "Arctic Monkeys",
+   "song": "Brianstorm",
+   "url": "https://www.youtube.com/watch?v=30w8DyEJ__0",
+   "title": "Arctic Monkeys - Brianstorm (Official Video)",
+   "channel": "Domino Recording Co.",
+   "player": "Alex Turner",
+   "useSrc": "Wikipedia, \"Ibanez Tube Screamer\": Turner used one on Favourite Worst Nightmare (the album; this track not named)",
+   "state": {
+    "drive": 7,
+    "tone": 6,
+    "level": 6
+   },
+   "play": "riff"
+  },
+  {
+   "pedal": "ts808",
+   "artist": "Stevie Ray Vaughan & Double Trouble",
+   "song": "Pride and Joy",
+   "url": "https://www.youtube.com/watch?v=I3MTGhRC82s",
+   "title": "Stevie Ray Vaughan & Double Trouble - Pride and Joy (Official Audio)",
+   "channel": "stevierayvaughnVEVO",
+   "player": "Stevie Ray Vaughan",
+   "useSrc": null,
+   "state": {
+    "drive": 3,
+    "tone": 6,
+    "level": 8
+   },
+   "play": "riff"
+  },
+  {
+   "pedal": "ts808",
+   "artist": "Pink Floyd",
+   "song": "Comfortably Numb",
+   "url": "https://www.youtube.com/watch?v=4FLjT5V5Hog",
+   "title": "Comfortably Numb",
+   "channel": "Pink Floyd - Topic",
+   "player": "David Gilmour",
+   "useSrc": null,
+   "state": null,
+   "play": "riff"
+  },
+  {
+   "pedal": "crybaby",
+   "artist": "Cream",
+   "song": "Tales of Brave Ulysses",
+   "url": "https://www.youtube.com/watch?v=_o__bua-MiA",
+   "title": "Tales Of Brave Ulysses",
+   "channel": "Cream - Topic",
+   "player": "Eric Clapton",
+   "useSrc": "Wikipedia, \"Wah-wah pedal\" names the song with Clapton's wah",
+   "state": {
+    "mode": "rock",
+    "rate": 3
+   },
+   "play": "riff"
+  },
+  {
+   "pedal": "crybaby",
+   "artist": "The Jimi Hendrix Experience",
+   "song": "Voodoo Child (Slight Return)",
+   "url": "https://www.youtube.com/watch?v=C0XwPUFfFwE",
+   "title": "Voodoo Child (Slight Return)",
+   "channel": "Jimi Hendrix - Topic",
+   "player": "Jimi Hendrix",
+   "useSrc": "Wikipedia, \"Wah-wah pedal\": wah in the intro and solos",
+   "state": {
+    "mode": "rock",
+    "rate": 5
+   },
+   "play": "riff"
+  },
+  {
+   "pedal": "crybaby",
+   "artist": "Isaac Hayes",
+   "song": "Theme from Shaft",
+   "url": "https://www.youtube.com/watch?v=_pdZLODrRLQ",
+   "title": "Isaac Hayes - Theme From \"Shaft\" (Single Version) (Official Audio)",
+   "channel": "Stax Records",
+   "player": "Charles Pitts",
+   "useSrc": "Wikipedia, \"Wah-wah pedal\" names it with Charles Pitts on guitar",
+   "state": {
+    "mode": "rock",
+    "rate": 8
+   },
+   "play": "chord"
+  },
+  {
+   "pedal": "phase90",
+   "artist": "Van Halen",
+   "song": "Eruption",
+   "url": "https://www.youtube.com/watch?v=M4Czx8EWXb0",
+   "title": "Eruption (2015 Remaster)",
+   "channel": "Van Halen - Topic",
+   "player": "Eddie Van Halen",
+   "useSrc": "Wikipedia, \"Eruption (instrumental)\": played \"with an MXR Phase 90, an Echoplex, a Univox echo unit\"",
+   "state": {
+    "speed": 3
+   },
+   "play": "lead"
+  },
+  {
+   "pedal": "phase90",
+   "artist": "Van Halen",
+   "song": "Ain't Talkin' 'bout Love",
+   "url": "https://www.youtube.com/watch?v=qtwBFz6lfrY",
+   "title": "Ain't Talkin' 'Bout Love (2015 Remaster)",
+   "channel": "Van Halen - Topic",
+   "player": "Eddie Van Halen",
+   "useSrc": "Wikipedia, \"MXR\": the Phase 90 \"was used on the first two Van Halen albums\" (this track not named)",
+   "state": {
+    "speed": 2
+   },
+   "play": "riff"
+  },
+  {
+   "pedal": "phase90",
+   "artist": "Van Halen",
+   "song": "Atomic Punk",
+   "url": "https://www.youtube.com/watch?v=_2JTCd_lLOg",
+   "title": "Atomic Punk (2015 Remaster)",
+   "channel": "Van Halen - Topic",
+   "player": "Eddie Van Halen",
+   "useSrc": "Wikipedia, \"MXR\": the first two Van Halen albums (this track not named)",
+   "state": {
+    "speed": 4
+   },
+   "play": "riff"
+  },
+  {
+   "pedal": "ce2",
+   "artist": "The Smiths",
+   "song": "This Charming Man",
+   "url": "https://www.youtube.com/watch?v=cJRP3LRcUFg",
+   "title": "The Smiths - This Charming Man (Official Music Video)",
+   "channel": "The Smiths",
+   "player": "Johnny Marr",
+   "useSrc": "Guitar World names Marr as a CE-2 user (this record not named: unverified)",
+   "state": {
+    "rate": 3,
+    "depth": 5
+   },
+   "play": "chord"
+  },
+  {
+   "pedal": "ce2",
+   "artist": "The Police",
+   "song": "Walking on the Moon",
+   "url": "https://www.youtube.com/watch?v=zPwMdZOlPo8",
+   "title": "The Police - Walking On The Moon (Official Music Video)",
+   "channel": "ThePoliceVEVO",
+   "player": "Andy Summers",
+   "useSrc": null,
+   "state": {
+    "rate": 2,
+    "depth": 6
+   },
+   "play": "chord"
+  },
+  {
+   "pedal": "ce2",
+   "artist": "Pink Floyd",
+   "song": "Comfortably Numb",
+   "url": "https://www.youtube.com/watch?v=4FLjT5V5Hog",
+   "title": "Comfortably Numb",
+   "channel": "Pink Floyd - Topic",
+   "player": "David Gilmour",
+   "useSrc": "Guitar World says Gilmour moved to a CE-2 (this record not named: unverified)",
+   "state": null,
+   "play": "riff"
+  },
+  {
+   "pedal": "dm2",
+   "artist": "The Police",
+   "song": "Walking on the Moon",
+   "url": "https://www.youtube.com/watch?v=zPwMdZOlPo8",
+   "title": "The Police - Walking On The Moon (Official Music Video)",
+   "channel": "ThePoliceVEVO",
+   "player": "Andy Summers",
+   "useSrc": null,
+   "state": {
+    "rate": 4,
+    "echo": 6,
+    "intensity": 4
+   },
+   "play": "chord"
+  },
+  {
+   "pedal": "dm2",
+   "artist": "Pink Floyd",
+   "song": "Comfortably Numb",
+   "url": "https://www.youtube.com/watch?v=4FLjT5V5Hog",
+   "title": "Comfortably Numb",
+   "channel": "Pink Floyd - Topic",
+   "player": "David Gilmour",
+   "useSrc": "Wikipedia, \"Comfortably Numb\": \"delay effects on the solos\" (which delay: unverified)",
+   "state": {
+    "rate": 4,
+    "echo": 5,
+    "intensity": 3
+   },
+   "play": "lead"
+  },
+  {
+   "pedal": "dm2",
+   "artist": "The Smiths",
+   "song": "This Charming Man",
+   "url": "https://www.youtube.com/watch?v=cJRP3LRcUFg",
+   "title": "The Smiths - This Charming Man (Official Music Video)",
+   "channel": "The Smiths",
+   "player": "Johnny Marr",
+   "useSrc": null,
+   "state": null,
+   "play": "riff"
+  },
+  {
+   "pedal": "echoplex",
+   "artist": "Van Halen",
+   "song": "Eruption",
+   "url": "https://www.youtube.com/watch?v=M4Czx8EWXb0",
+   "title": "Eruption (2015 Remaster)",
+   "channel": "Van Halen - Topic",
+   "player": "Eddie Van Halen",
+   "useSrc": "Wikipedia, \"Eruption (instrumental)\": \"an Echoplex\"",
+   "state": {
+    "delay": 4,
+    "repeats": 3,
+    "echo": 5
+   },
+   "play": "lead"
+  },
+  {
+   "pedal": "echoplex",
+   "artist": "Billy Cobham",
+   "song": "Quadrant 4",
+   "url": "https://www.youtube.com/watch?v=unxshBHfVsY",
+   "title": "Billy Cobham - Quadrant 4",
+   "channel": "Chocolaphirax Groove",
+   "player": "Tommy Bolin",
+   "useSrc": "Wikipedia, \"Echoplex\": Bolin's \"ray-gun\" effect on Spectrum (this track not named)",
+   "state": {
+    "delay": 2,
+    "repeats": 8,
+    "echo": 7
+   },
+   "play": "lead"
+  },
+  {
+   "pedal": "echoplex",
+   "artist": "Queen",
+   "song": "Brighton Rock",
+   "url": "https://www.youtube.com/watch?v=TdUKi3_QntE",
+   "title": "Queen - Brighton rock",
+   "channel": "Tim Harvey",
+   "player": "Brian May",
+   "useSrc": null,
+   "state": {
+    "delay": 8,
+    "repeats": 2,
+    "echo": 8
+   },
+   "play": "lead"
+  }
+ ]
+}

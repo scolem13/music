@@ -1,0 +1,98 @@
+---
+title: "Meet the Phase 90"
+toc: true
+toc-depth: 2
+description: "A first look at the MXR Phase 90: four all-pass stages, two moving notches, one Speed knob. Guided tour, famous tracks, quiz."
+instruments: [guitar]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Guitar Pedals Compared](pedal-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Phase 90 is.
+2. Learn how its circuit makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Listen to famous tracks.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Phase 90** (1974) was **MXR**'s first pedal (Wikipedia, "MXR").
+- One knob: **Speed**. Pedals before 1981 had no LED (Wikipedia).
+- It "was used on the first two Van Halen albums" (Wikipedia).
+
+## How it makes its sound
+
+- An **all-pass** stage keeps every frequency's level but delays its phase: low frequencies a little, high ones more. Four in a row (ElectroSmash's outline, from a search summary).
+- Mix that with the dry signal: where the shifted copy is exactly opposite, the two cancel: a **notch**. Four stages give **two** notches.
+- An LFO (a slow wave) moves the stages, so the notches sweep up and down: the whoosh. **Speed** sets how fast.
+- Some versions feed part of the output back to the input, which sharpens the notches; which logo version had it is unverified here.
+
+## The pedal
+
+The Phase 90's face, drawn after photos (positions approximate, no logos). Drag a knob (or use the arrow keys), click the footswitch to bypass, then press a ▶ button. The guitar is this site's pickup model (pick one, and its volume, below the buttons); the sound goes through the pedal model, then a clean amp. Nobody has compared it with a real pedal. The picture shows the waveform going in and coming out.
+
+```{=html}
+<div class="pdp" data-pedal="phase90"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="pd-step" data-pedal="phase90" data-set="{&quot;speed&quot;:2}" data-play="chord"><p><b>Speed 2.</b> A slow sweep on chords.</p></div>
+<div class="pd-step" data-pedal="phase90" data-set="{&quot;speed&quot;:6}" data-play="riff"><p><b>Speed 6.</b> Faster, more like a rotating speaker.</p></div>
+<div class="pd-step" data-pedal="phase90" data-set="{&quot;speed&quot;:3,&quot;fb&quot;:&quot;off&quot;}" data-play="chord"><p><b>Feedback left out.</b> Softer notches: compare with the step before last.</p></div>
+<div class="pd-step" data-pedal="phase90" data-set="{&quot;speed&quot;:3}" data-play="lead"><p><b>On a lead line.</b></p></div>
+```
+
+## Famous tracks
+
+Videos checked on YouTube. Where a source ties the pedal to the record, it is given; otherwise it is marked unverified. **No source gives any setting**: **Try a guess** plays this site's guess.
+
+```{=html}
+<div class="pd-tracks" data-pedal="phase90"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="pd-q" data-a="1"><p><b>How many notches do four all-pass stages give, mixed with the dry signal?</b></p><ul><li>One</li><li>Two</li><li>Four</li></ul><p class="pd-why">Two.</p></div>
+<div class="pd-q" data-a="1"><p><b>What does Speed set?</b></p><ul><li>Delay time</li><li>The LFO's rate</li><li>Gain</li></ul><p class="pd-why">The sweep's speed.</p></div>
+<div class="pd-q" data-a="1"><p><b>When did the Phase 90 come out?</b></p><ul><li>1966</li><li>1974</li><li>1981</li></ul><p class="pd-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Guitar Pedals Compared](pedal-compare.html?a=phase90&b=ce2): this pedal beside a similar one, settings translated, and a pedalboard to chain them.
+- [Electric Guitars Compared](guitar-compare.qmd): the guitars that feed these pedals.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/pedals.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/pedals.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+ElectroSmash. "MXR Phase 90 Analysis." [electrosmash.com/mxr-phase90](https://electrosmash.com/mxr-phase90). Four phase-shifting stages, one LFO, two notches (outline from a search summary; unverified).
+
+"Eruption (instrumental)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Eruption_(instrumental)](https://en.wikipedia.org/wiki/Eruption_(instrumental)). Played with an MXR Phase 90, an Echoplex, a Univox echo unit.
+
+"MXR." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/MXR](https://en.wikipedia.org/wiki/MXR). Phase 90 1974, MXR's first pedal; used on the first two Van Halen albums; no LEDs before 1981.
+:::
+<!-- /works-cited -->
+

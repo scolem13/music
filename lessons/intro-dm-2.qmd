@@ -1,0 +1,98 @@
+---
+title: "Meet the Boss DM-2 Delay"
+toc: true
+toc-depth: 2
+description: "A first look at the Boss DM-2: an analog bucket-brigade delay whose repeats get darker each time. Guided tour, famous tracks, quiz."
+instruments: [guitar]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Guitar Pedals Compared](pedal-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Boss DM-2 Delay is.
+2. Learn how its circuit makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Listen to famous tracks.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **DM-2** was made from **1981** to 1984 (Guitar World).
+- Delay **20 to 300 ms** (Boss, on the DM-2W reissue's Standard mode).
+- Three knobs: **Repeat Rate** (clockwise = shorter), **Echo** (how loud the repeats are), **Intensity** (how many; fully left = one repeat) (Boss).
+
+## How it makes its sound
+
+- A bucket-brigade chip of many stages (4096 in the MN3005, from a seller's listing: unverified) delays the signal by stages ÷ (2 × clock rate). A long delay needs a slow clock, and a slow clock passes less treble: long delays are darker.
+- Each repeat goes round the chip again: through the filter again, so every repeat is darker than the one before (Guitar World: "darker and warmer").
+- Intensity near full: the repeats stop dying away and build into a howl (self-oscillation, Guitar World).
+
+## The pedal
+
+The Boss DM-2 Delay's face, drawn after photos (positions approximate, no logos). Drag a knob (or use the arrow keys), click the footswitch to bypass, then press a ▶ button. The guitar is this site's pickup model (pick one, and its volume, below the buttons); the sound goes through the pedal model, then a clean amp. Nobody has compared it with a real pedal. The picture shows the waveform going in and coming out.
+
+```{=html}
+<div class="pdp" data-pedal="dm2"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="pd-step" data-pedal="dm2" data-set="{&quot;rate&quot;:7,&quot;echo&quot;:6,&quot;intensity&quot;:2}" data-play="pluck"><p><b>Short slapback.</b> One note, a quick repeat.</p></div>
+<div class="pd-step" data-pedal="dm2" data-set="{&quot;rate&quot;:2,&quot;echo&quot;:6,&quot;intensity&quot;:5}" data-play="pluck"><p><b>Long delay, more repeats.</b> Listen: each repeat darker.</p></div>
+<div class="pd-step" data-pedal="dm2" data-set="{&quot;rate&quot;:4,&quot;echo&quot;:5,&quot;intensity&quot;:0}" data-play="riff"><p><b>Intensity 0.</b> Just one repeat.</p></div>
+<div class="pd-step" data-pedal="dm2" data-set="{&quot;rate&quot;:3,&quot;echo&quot;:8,&quot;intensity&quot;:10}" data-play="pluck"><p><b>Intensity 10.</b> It runs away (turn your speakers down).</p></div>
+<div class="pd-step" data-pedal="dm2" data-set="{&quot;rate&quot;:4,&quot;echo&quot;:5,&quot;intensity&quot;:3}" data-play="lead"><p><b>On a lead line.</b></p></div>
+```
+
+## Famous tracks
+
+Videos checked on YouTube. Where a source ties the pedal to the record, it is given; otherwise it is marked unverified. **No source gives any setting**: **Try a guess** plays this site's guess.
+
+```{=html}
+<div class="pd-tracks" data-pedal="dm2"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="pd-q" data-a="0"><p><b>Why are a DM-2&#x27;s long delays darker?</b></p><ul><li>A slower clock passes less treble</li><li>The battery</li><li>A tone knob</li></ul><p class="pd-why"></p></div>
+<div class="pd-q" data-a="1"><p><b>What does Intensity set?</b></p><ul><li>The delay time</li><li>How many repeats</li><li>The level of the dry sound</li></ul><p class="pd-why">Boss.</p></div>
+<div class="pd-q" data-a="1"><p><b>Longest delay of the original?</b></p><ul><li>30 ms</li><li>300 ms</li><li>3 s</li></ul><p class="pd-why">Boss.</p></div>
+```
+
+## Next
+
+- [Guitar Pedals Compared](pedal-compare.html?a=dm2&b=echoplex): this pedal beside a similar one, settings translated, and a pedalboard to chain them.
+- [Electric Guitars Compared](guitar-compare.qmd): the guitars that feed these pedals.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/pedals.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/pedals.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Boss. "DM-2W Delay." [www.boss.info/products/dm-2w/](https://www.boss.info/products/dm-2w/). Standard mode = the original DM-2's 20-300 ms.
+
+"Classic Gear: Boss DM-2." *Guitar World*. [www.guitarworld.com/features/classic-gear-boss-dm-2](https://www.guitarworld.com/features/classic-gear-boss-dm-2). 1981-1984; BBD repeats darker and warmer; high Intensity self-oscillates.
+
+"Comfortably Numb." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Comfortably_Numb](https://en.wikipedia.org/wiki/Comfortably_Numb). Gilmour used a Big Muff distortion and delay effects on the solos.
+:::
+<!-- /works-cited -->
+

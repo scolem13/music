@@ -1,0 +1,96 @@
+---
+title: "Meet the Cry Baby wah"
+toc: true
+toc-depth: 2
+description: "A first look at the Cry Baby wah: a resonant band-pass filter swept by your foot. Guided tour, famous tracks, quiz."
+instruments: [guitar]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Guitar Pedals Compared](pedal-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Cry Baby wah is.
+2. Learn how its circuit makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Listen to famous tracks.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The wah pedal was made by **Brad Plunkett** at Warwick Electronics / Thomas Organ in **1966** and sold from February 1967; **Cry Baby** was the name for America (Wikipedia, "Wah-wah pedal").
+- One control: the **treadle**. Rock it with your foot. Press the toe down hard to switch it on or off.
+
+## How it makes its sound
+
+- Inside, an inductor and a capacitor make a **resonance**: a narrow peak of frequencies made louder (a *band-pass*). The treadle turns a pot that moves the peak (Wikipedia; ElectroSmash, from a search summary).
+- Heel down: the peak is low (about 400 Hz in this model), a dark "oo". Toe down: high (about 2.2 kHz), a bright "ee". Rocking between them says "wah".
+- Parked half way, it is a fixed filter: a nasal sound some players use on purpose.
+- This page cannot feel your foot, so it can rock the treadle for you, or move it with how loud you play.
+
+## The pedal
+
+The Cry Baby wah's face, drawn after photos (positions approximate, no logos). Drag a knob (or use the arrow keys), click the footswitch to bypass, then press a ▶ button. The guitar is this site's pickup model (pick one, and its volume, below the buttons); the sound goes through the pedal model, then a clean amp. Nobody has compared it with a real pedal. The picture shows the waveform going in and coming out.
+
+```{=html}
+<div class="pdp" data-pedal="crybaby"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="pd-step" data-pedal="crybaby" data-set="{&quot;mode&quot;:&quot;rock&quot;,&quot;rate&quot;:3}" data-play="riff"><p><b>Rocking slowly.</b> The classic "wah".</p></div>
+<div class="pd-step" data-pedal="crybaby" data-set="{&quot;mode&quot;:&quot;rock&quot;,&quot;rate&quot;:8}" data-play="chord"><p><b>Rocking fast on chords.</b> The funk "wacka".</p></div>
+<div class="pd-step" data-pedal="crybaby" data-set="{&quot;mode&quot;:&quot;foot&quot;,&quot;pos&quot;:0}" data-play="lead"><p><b>Heel down.</b> Dark.</p></div>
+<div class="pd-step" data-pedal="crybaby" data-set="{&quot;mode&quot;:&quot;foot&quot;,&quot;pos&quot;:10}" data-play="lead"><p><b>Toe down.</b> Bright and piercing.</p></div>
+<div class="pd-step" data-pedal="crybaby" data-set="{&quot;mode&quot;:&quot;env&quot;}" data-play="riff"><p><b>Moved by your playing.</b> Loud notes push the peak up (an auto-wah: the page's, not the pedal's).</p></div>
+```
+
+## Famous tracks
+
+Videos checked on YouTube. Where a source ties the pedal to the record, it is given; otherwise it is marked unverified. **No source gives any setting**: **Try a guess** plays this site's guess.
+
+```{=html}
+<div class="pd-tracks" data-pedal="crybaby"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="pd-q" data-a="1"><p><b>What does the treadle move?</b></p><ul><li>The volume</li><li>The peak of a band-pass filter</li><li>The delay time</li></ul><p class="pd-why">Wikipedia.</p></div>
+<div class="pd-q" data-a="0"><p><b>Who made the first wah?</b></p><ul><li>Brad Plunkett</li><li>Leo Fender</li><li>Mike Battle</li></ul><p class="pd-why">Wikipedia.</p></div>
+<div class="pd-q" data-a="1"><p><b>Heel down sounds…</b></p><ul><li>bright</li><li>dark</li></ul><p class="pd-why">The peak is low.</p></div>
+```
+
+## Next
+
+- [Guitar Pedals Compared](pedal-compare.html?a=crybaby&b=phase90): this pedal beside a similar one, settings translated, and a pedalboard to chain them.
+- [Electric Guitars Compared](guitar-compare.qmd): the guitars that feed these pedals.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/pedals.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/pedals.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+ElectroSmash. "Cry Baby GCB-95 Analysis." [electrosmash.com/crybaby-gcb-95](https://electrosmash.com/crybaby-gcb-95). A pot tunes a fixed L and C (from a search summary; unverified); resonance near 2.1 kHz from an LTspice write-up found by search.
+
+"Wah-wah pedal." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Wah-wah_pedal](https://en.wikipedia.org/wiki/Wah-wah_pedal). Plunkett, Warwick Electronics / Thomas Organ, 1966, sold Feb 1967; Cry Baby name; band-pass swept by the treadle; Tales of Brave Ulysses, Voodoo Child, Theme from Shaft.
+:::
+<!-- /works-cited -->
+

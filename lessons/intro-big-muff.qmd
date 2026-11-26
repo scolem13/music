@@ -1,0 +1,98 @@
+---
+title: "Meet the Big Muff Pi"
+toc: true
+toc-depth: 2
+description: "A first look at the Big Muff Pi: two clipping stages in a row and a tone control that scoops the mids. Guided tour, famous tracks, quiz."
+instruments: [guitar]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Guitar Pedals Compared](pedal-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Big Muff Pi is.
+2. Learn how its circuit makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Listen to famous tracks.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Big Muff Pi** came out in **1969**, made by **Electro-Harmonix** of New York (Wikipedia, "Big Muff").
+- Three knobs: **Volume**, **Tone** and **Sustain** (the gain). The first version put them in a triangle.
+- Four transistor stages: an input booster, two clipping stages, a tone stack, an output booster (Wikipedia).
+
+## How it makes its sound
+
+- Each clipping stage has two diodes in its feedback: they stop the wave growing past about 0.6 V, a *soft* clip. Two in a row: the second clips what the first already clipped, so the sound is very compressed and sustains for a long time.
+- The **tone stack** mixes a low-pass and a high-pass. At noon both are partly down around **1 kHz**: a **mid scoop** (Wikipedia: less midrange; ~1 kHz from a student report found by search). Turn Tone left for the low-pass (dark), right for the high-pass (thin).
+- The output booster makes up the level the tone stack loses.
+
+## The pedal
+
+The Big Muff Pi's face, drawn after photos (positions approximate, no logos). Drag a knob (or use the arrow keys), click the footswitch to bypass, then press a ▶ button. The guitar is this site's pickup model (pick one, and its volume, below the buttons); the sound goes through the pedal model, then a clean amp. Nobody has compared it with a real pedal. The picture shows the waveform going in and coming out.
+
+```{=html}
+<div class="pdp" data-pedal="bigmuff"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="pd-step" data-pedal="bigmuff" data-set="{&quot;sustain&quot;:7,&quot;tone&quot;:5}" data-play="chord"><p><b>Sustain 7, Tone noon.</b> The classic: thick, scooped.</p></div>
+<div class="pd-step" data-pedal="bigmuff" data-set="{&quot;sustain&quot;:7,&quot;tone&quot;:0}" data-play="riff"><p><b>Tone fully left.</b> The low-pass alone: dark and woolly.</p></div>
+<div class="pd-step" data-pedal="bigmuff" data-set="{&quot;sustain&quot;:7,&quot;tone&quot;:10}" data-play="riff"><p><b>Tone fully right.</b> The high-pass alone: thin and fizzy.</p></div>
+<div class="pd-step" data-pedal="bigmuff" data-set="{&quot;sustain&quot;:10,&quot;tone&quot;:6}" data-play="lead"><p><b>Sustain 10.</b> A lead note that lasts and lasts.</p></div>
+<div class="pd-step" data-pedal="bigmuff" data-set="{&quot;sustain&quot;:2,&quot;tone&quot;:5}" data-play="riff"><p><b>Sustain 2.</b> Still fuzzy: the two clipping stages have their own gain.</p></div>
+```
+
+## Famous tracks
+
+Videos checked on YouTube. Where a source ties the pedal to the record, it is given; otherwise it is marked unverified. **No source gives any setting**: **Try a guess** plays this site's guess.
+
+```{=html}
+<div class="pd-tracks" data-pedal="bigmuff"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="pd-q" data-a="1"><p><b>What does the Big Muff&#x27;s tone stack do at noon?</b></p><ul><li>Boosts the mids</li><li>Scoops the mids</li><li>Removes the bass only</li><li>Nothing</li></ul><p class="pd-why">Low-pass + high-pass blended: a dip around 1 kHz.</p></div>
+<div class="pd-q" data-a="2"><p><b>Which knob sets the gain?</b></p><ul><li>Volume</li><li>Tone</li><li>Sustain</li></ul><p class="pd-why">Wikipedia.</p></div>
+<div class="pd-q" data-a="1"><p><b>How many clipping stages?</b></p><ul><li>One</li><li>Two</li><li>Four</li></ul><p class="pd-why">Two, each with a diode pair in its feedback.</p></div>
+```
+
+## Next
+
+- [Guitar Pedals Compared](pedal-compare.html?a=bigmuff&b=fuzzface): this pedal beside a similar one, settings translated, and a pedalboard to chain them.
+- [Electric Guitars Compared](guitar-compare.qmd): the guitars that feed these pedals.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/pedals.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/pedals.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Big Muff." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Big_Muff](https://en.wikipedia.org/wiki/Big_Muff). 1969, Electro-Harmonix; Volume, Sustain, Tone; four transistor stages: input booster, two clipping stages with diodes in feedback, tone stack blending low- and high-pass (mid cut), output booster; Depeche Mode's "Big Muff".
+
+"Comfortably Numb." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Comfortably_Numb](https://en.wikipedia.org/wiki/Comfortably_Numb). Gilmour used a Big Muff distortion and delay effects on the solos.
+
+ElectroSmash. "Big Muff Pi Analysis." [electrosmash.com/big-muff-pi-analysis](https://electrosmash.com/big-muff-pi-analysis). Not read (unreachable); tone stack scoop near 1 kHz from a student report found by search: unverified.
+:::
+<!-- /works-cited -->
+

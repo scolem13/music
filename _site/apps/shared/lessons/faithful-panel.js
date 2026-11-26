@@ -53,6 +53,8 @@
 //   FaithfulPanel.checkAdapter(layout, adapter) -> [bound keys the adapter does not know]
 // GUITARS (2026-11-26): layouts panels/gt-<id>.js bound to GuitarPickups.adapter (apps/shared/lessons/guitar-pickups.js); extra item
 //   { t: "shape", d: SVG path, fill / stroke: a colour token (bg body head ink ink2 line track screen wave) or a colour, sw, op, title }  decoration only
+// PEDALS (2026-11-26): layouts panels/pd-<id>.js bound to Pedals.adapter (apps/shared/lessons/pedals.js); extra item
+//   { t: "led", k, x, y, r, label, color }  an LED lit while get(k) is true (the footswitch is a { t: "key", k: "on" } with no v)
 // API: FaithfulPanel.mount(host, { id, profile, get(key), set(key, value) }) -> { refresh(key?), el, layout, ctl: {key: element} }
 //   FaithfulPanel.load(id) -> Promise(layout)   .has(id)   .register(layout)   .check(layout, profile) -> [missing keys]
 //   .theme() -> "light"|"dark"   .setTheme(t)   .view() / .setView("panel"|"simple") (localStorage `synth-face-view`)
@@ -244,6 +246,9 @@
         g.appendChild(S("path", { d: it.d, fill: tk(it.fill || "body"), stroke: tk(it.stroke || "line"), "stroke-width": it.sw || 1.2, opacity: it.op })); if (it.title) { var st2 = S("title"); st2.textContent = it.title; g.appendChild(st2); } return; }
       if (it.t === "label") { g.appendChild(T(it.x, it.y, it.text, { "font-size": it.size || 9, "text-anchor": it.anchor || "middle", "font-weight": it.bold ? 700 : null, class: it.dim ? "fp-dim" : null,
         transform: it.rot ? "rotate(" + it.rot + " " + it.x + " " + it.y + ")" : null })); return; }
+      if (it.t === "led") { var lr0 = it.r || 5, ledC = S("circle", { cx: it.x, cy: it.y, r: lr0, fill: "#3a1010", stroke: "var(--fp-line)" }); g.appendChild(ledC);   // pedals: an LED lit while get(k) is true
+        if (it.label) g.appendChild(T(it.x, it.y + lr0 + 9, it.label, { "font-size": it.size || 7, "text-anchor": "middle", class: "fp-dim" }));
+        if (!c) return; upd.push(function () { ledC.setAttribute("fill", o.get(it.k) ? (it.color || "#ff2a1a") : "#3a1010"); }); byKey[it.k] = byKey[it.k] || []; byKey[it.k].push(upd.length - 1); return; }
       if (it.t === "jack") { var jr = it.r || 7; g.appendChild(S("circle", { cx: it.x, cy: it.y, r: jr, fill: "var(--fp-body)", stroke: "var(--fp-ink)", "stroke-width": 1.2 }));
         g.appendChild(S("circle", { cx: it.x, cy: it.y, r: jr * 0.45, fill: "var(--fp-ink)" }));
         if (it.label) g.appendChild(T(it.x, it.y + jr + (it.size || 7) + 2, it.label, { "font-size": it.size || 7, "text-anchor": "middle", class: "fp-dim" })); return; }

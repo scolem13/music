@@ -1,0 +1,121 @@
+---
+title: "Guitar Pedals Compared"
+toc: true
+toc-depth: 2
+description: "Fuzz Face, Big Muff, Tube Screamer, Cry Baby wah, Phase 90, CE-2 chorus, DM-2 and Echoplex delays: circuit-informed models with their faces drawn and playable, settings translated between similar pedals, and a pedalboard to chain them."
+instruments: [guitar]
+topics: [sound]
+has: [interactive, svg]
+---
+
+Eight classic guitar pedals, each drawn as a playable face. Pick any two, set one, and translate the setting to the other; then build a chain on the pedalboard. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Learn what happens inside a fuzz, an overdrive, a wah, a phaser, a chorus and a delay.
+2. Hear two similar pedals side by side and translate a setting from one to the other.
+3. Build a pedalboard: reorder the chain and hear why the order matters.
+:::
+
+## What the circuits do
+
+- **Fuzz and overdrive** amplify the signal until it is squared off (*clipped*), which adds harmonics. The **Fuzz Face** clips hard and lop-sided, and its low input impedance makes it clean up when you turn the guitar down (Wikipedia, "Fuzz Face"). The **Big Muff** clips twice in a row and scoops the mids with its tone stack (Wikipedia, "Big Muff"). The **Tube Screamer** clips softly in an op-amp's feedback and only above the low notes: the mid hump (Wikipedia, "Ibanez Tube Screamer").
+- A **wah** is a resonant band-pass filter moved by your foot (Wikipedia, "Wah-wah pedal").
+- A **phaser** shifts the phase of a copy through all-pass stages and mixes it back: moving notches. The **Phase 90** has four stages (ElectroSmash, from a search summary).
+- A **chorus** mixes in a copy delayed by a few milliseconds, the delay wobbling: the **CE-2** uses a bucket-brigade chip (Guitar World).
+- A **delay** repeats the sound later. The **DM-2**'s bucket-brigade repeats get darker each time (Guitar World); the **Echoplex** uses a tape loop and a sliding record head (Wikipedia, "Echoplex").
+- The numbers inside every model (gains, filter corners, ranges) are this site's estimates unless the code's header says otherwise (`apps/shared/lessons/pedals.js`).
+
+## Two pedals side by side
+
+Choose a pedal for each side. Drag a knob (arrow keys work too), click a footswitch to bypass, press a ▶ button. The guitar is the site's pickup model ([Electric Guitars Compared](guitar-compare.qmd)); its **Guitar volume** slider matters most for the Fuzz Face. The picture shows the waveform in and out. The ☀ / ☾ button switches every face between a white and a black background.
+
+```{=html}
+<div class="pdc" data-a="fuzzface" data-b="bigmuff"></div>
+```
+
+## Translating between pedals
+
+**Translate** finds the setting on the other pedal that sounds most like this one. For fuzz and overdrive it plays a test chord through both and compares the share of sound in third-octave bands, the peak-to-average ratio and the level; for modulation and delay it matches rate, depth, delay time, repeats and mix. The report says:
+
+- **exact**: the same kind of pedal and almost the same numbers;
+- **approx**: the closest setting, with notes on what is lost or gained (the Fuzz Face's guitar-volume clean-up, the Big Muff's mid scoop, the Echoplex's wow and flutter…);
+- **lost**: a different kind of pedal (a wah into an overdrive), or nothing close.
+
+Try the Fuzz Face into the Big Muff, the Tube Screamer into the Fuzz Face, or the Echoplex at its longest into the DM-2.
+
+## The pedalboard
+
+The chain runs left to right: guitar → pedals → amp. Drag a pedal by its card (or use ← →) to move it, ✕ to remove it, **+ Add** for another, the footswitch on each face to bypass it. **Translate to** swaps a pedal for another, keeping the sound as close as it can, and says what changed.
+
+Things to try: put the wah before and after the fuzz (before: the fuzz squares off a moving filter; after: the wah filters a fuzz); put the delay before the fuzz (the repeats get distorted together, a mess) and after it (clean repeats of a fuzzy note); move the Fuzz Face behind another pedal and turn the guitar down (no clean-up any more: the first pedal now drives it).
+
+```{=html}
+<div class="pdb" data-chain="crybaby,fuzzface,phase90,dm2"></div>
+```
+
+## What is this site's own
+
+- Each model follows the circuit's shape (which stages, where the clipping and filters sit), but almost every value is this site's estimate, marked unverified in the code. The ElectroSmash analyses could not be read when this was built; what came from them is from search summaries.
+- The faces are drawn after photos, not measured drawings; no makers' logos.
+- Nobody has compared the sound with real pedals.
+
+## Meet each pedal
+
+- [Meet the Fuzz Face](intro-fuzz-face.qmd)
+- [Meet the Big Muff Pi](intro-big-muff.qmd)
+- [Meet the Tube Screamer TS808](intro-tube-screamer.qmd)
+- [Meet the Cry Baby wah](intro-cry-baby.qmd)
+- [Meet the Phase 90](intro-phase-90.qmd)
+- [Meet the Boss CE-2 Chorus](intro-ce-2.qmd)
+- [Meet the Boss DM-2 Delay](intro-dm-2.qmd)
+- [Meet the Echoplex EP-3](intro-echoplex.qmd)
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/pedals.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/pedals.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Big Muff." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Big_Muff](https://en.wikipedia.org/wiki/Big_Muff). 1969, Electro-Harmonix; Volume, Sustain, Tone; four transistor stages: input booster, two clipping stages with diodes in feedback, tone stack blending low- and high-pass (mid cut), output booster; Depeche Mode's "Big Muff".
+
+"Boss CE-2 Chorus Pedal History." *Guitar World*. [www.guitarworld.com/gear/guitar-pedals/boss-ce-2-chorus-pedal-history](https://www.guitarworld.com/gear/guitar-pedals/boss-ce-2-chorus-pedal-history). Late 1979; MN3007 BBD; Rate and Depth only; users Honeyman-Scott (live), Gilmour, Marr, Duffy, Fripp.
+
+Boss. "DM-2W Delay." [www.boss.info/products/dm-2w/](https://www.boss.info/products/dm-2w/). Standard mode = the original DM-2's 20-300 ms.
+
+"Classic Gear: Boss DM-2." *Guitar World*. [www.guitarworld.com/features/classic-gear-boss-dm-2](https://www.guitarworld.com/features/classic-gear-boss-dm-2). 1981-1984; BBD repeats darker and warmer; high Intensity self-oscillates.
+
+"Echoplex." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Echoplex](https://en.wikipedia.org/wiki/Echoplex). Mike Battle, 1959; moving record head sets the delay; EP-3 solid state 1970, made to 1991; Bolin's ray-gun on Spectrum.
+
+ElectroSmash. "Big Muff Pi Analysis." [electrosmash.com/big-muff-pi-analysis](https://electrosmash.com/big-muff-pi-analysis). Not read (unreachable); tone stack scoop near 1 kHz from a student report found by search: unverified.
+
+ElectroSmash. "Cry Baby GCB-95 Analysis." [electrosmash.com/crybaby-gcb-95](https://electrosmash.com/crybaby-gcb-95). A pot tunes a fixed L and C (from a search summary; unverified); resonance near 2.1 kHz from an LTspice write-up found by search.
+
+ElectroSmash. "Fuzz Face Analysis." [electrosmash.com/fuzz-face](https://electrosmash.com/fuzz-face). Input impedance 5.2-8.4 kOhm with the Fuzz pot (from a search summary: page unreachable 2026-11-26; unverified).
+
+ElectroSmash. "MXR Phase 90 Analysis." [electrosmash.com/mxr-phase90](https://electrosmash.com/mxr-phase90). Four phase-shifting stages, one LFO, two notches (outline from a search summary; unverified).
+
+ElectroSmash. "Tube Screamer Analysis." [electrosmash.com/tube-screamer-analysis](https://electrosmash.com/tube-screamer-analysis). Clipping stage with a high-pass and low-pass in the feedback loop (outline only from a search summary; values unverified).
+
+"Eruption (instrumental)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Eruption_(instrumental)](https://en.wikipedia.org/wiki/Eruption_(instrumental)). Played with an MXR Phase 90, an Echoplex, a Univox echo unit.
+
+"Fuzz Face." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Fuzz_Face](https://en.wikipedia.org/wiki/Fuzz_Face). 1966, Arbiter; germanium (NKT275 / AC128) then silicon; Volume and Fuzz; with the guitar's volume at 10 treble is lost, rolling it down stops that.
+
+"Ibanez Tube Screamer." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ibanez_Tube_Screamer](https://en.wikipedia.org/wiki/Ibanez_Tube_Screamer). TS808 1979, Susumu Tamura, JRC4558; Drive, Tone, Level; boosts mids and cuts bass; Turner on Favourite Worst Nightmare.
+
+"MXR." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/MXR](https://en.wikipedia.org/wiki/MXR). Phase 90 1974, MXR's first pedal; used on the first two Van Halen albums; no LEDs before 1981.
+
+"Wah-wah pedal." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Wah-wah_pedal](https://en.wikipedia.org/wiki/Wah-wah_pedal). Plunkett, Warwick Electronics / Thomas Organ, 1966, sold Feb 1967; Cry Baby name; band-pass swept by the treadle; Tales of Brave Ulysses, Voodoo Child, Theme from Shaft.
+:::
+<!-- /works-cited -->
+

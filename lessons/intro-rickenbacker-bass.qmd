@@ -1,0 +1,98 @@
+---
+title: "Meet the Rickenbacker 4003"
+toc: true
+toc-depth: 2
+description: "A first look at the Rickenbacker 4001 / 4003 bass: two single coils, a volume and tone each, a three-way switch, a guided tour, famous tracks, and a short quiz."
+instruments: [bass]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Electric Basses Compared](bass-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Rickenbacker is.
+2. Learn how its pickups and controls make its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Listen to famous tracks.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **4001** came out in **November 1961**; the **4003** followed in **1980**, almost the same but with a new truss rod for roundwound strings (Wikipedia, "Rickenbacker 4001").
+- Two single-coil pickups: a "toaster top" at the neck and a "horseshoe" at the bridge, later "Hi-Gain" pickups (Wikipedia).
+- A volume and tone for each pickup and a three-position switch (Wikipedia).
+- Scale **33.5 in**, a little shorter than a Fender's 34 in. From 1968, a **Rick-O-Sound** stereo jack sends each pickup out on its own (Wikipedia; not modelled here).
+
+## Its sound
+
+- The bridge pickup sits very near the bridge: a bright, biting, twangy sound.
+- Chris Squire used roundwound strings on his for "a bright, twangy bass tone" (Wikipedia).
+- The neck pickup is far from the bridge: round and deep.
+- Two single coils, so it can hum (whether its pickups cancel hum together: unverified; this page says not).
+
+## The controls
+
+The Rickenbacker's control area, drawn after the real one (positions approximate). Drag a knob (or use the arrow keys), then press a ▶ button. The sound is this site's physical model of a plucked bass string through these pickups and this wiring, into an amp; nobody has compared it with a real bass. The picture under the buttons shows the harmonics of the open A string (55 Hz) at the jack (bars) and the circuit alone (line).
+
+```{=html}
+<div class="bsp" data-bass="ric4003"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="bs-step" data-bass="ric4003" data-set="{&quot;sel&quot;:&quot;bridge&quot;}" data-play="riff"><p><b>Bridge.</b> The twangy, biting Rickenbacker sound.</p></div>
+<div class="bs-step" data-bass="ric4003" data-set="{&quot;sel&quot;:&quot;neck&quot;}" data-play="riff"><p><b>Neck.</b> Deep and round.</p></div>
+<div class="bs-step" data-bass="ric4003" data-set="{&quot;sel&quot;:&quot;both&quot;}" data-play="riff"><p><b>Both.</b> Fuller; some harmonics cancel.</p></div>
+<div class="bs-step" data-bass="ric4003" data-set="{&quot;sel&quot;:&quot;both&quot;,&quot;vol1&quot;:5}" data-play="riff"><p><b>Both, neck volume at 5.</b> The blend leans to the bridge.</p></div>
+<div class="bs-step" data-bass="ric4003" data-set="{&quot;sel&quot;:&quot;bridge&quot;,&quot;tone2&quot;:3}" data-play="riff"><p><b>Bridge, tone at 3.</b> The bite softened.</p></div>
+```
+
+## Famous tracks
+
+Videos checked on YouTube. Where the bass is named in a source, it is given; **no source was found for any setting**, so each setting is this site's guess (press **Try it** to hear the guess on the model).
+
+```{=html}
+<div class="bs-tracks" data-bass="ric4003"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="bs-q" data-a="2"><p><b>When did the 4003 come out?</b></p><ul><li>1961</li><li>1968</li><li>1980</li></ul><p class="gt-why">Wikipedia.</p></div>
+<div class="bs-q" data-a="0"><p><b>What is Rick-O-Sound?</b></p><ul><li>A stereo output</li><li>A fuzz</li><li>A pickup</li></ul><p class="gt-why">Each pickup on its own output (from 1968).</p></div>
+<div class="bs-q" data-a="0"><p><b>What is its scale length?</b></p><ul><li>33.5 in</li><li>34 in</li><li>35 in</li></ul><p class="gt-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Electric Basses Compared](bass-compare.html?a=ric4003&b=pbass): the Rickenbacker side by side with the others, and settings translated between them.
+- [The Electric Bass](electric-bass.qmd): the instrument, the hands, tuning and the fretboard.
+- [Gear 3: amps](gear-amps.qmd): bass amps.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/guitar-pickups.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/band/sounds.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/bass-pickups.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Rickenbacker 4001." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Rickenbacker_4001](https://en.wikipedia.org/wiki/Rickenbacker_4001). 4001 November 1961, 4003 1980 (truss rod for roundwounds); 33.5 in; toaster neck + horseshoe bridge pickups, later Hi-Gain; extra volume and tone, three-position switch; Ric-O-Sound 1968; Squire's bright twangy tone, Lemmy, Geddy Lee.
+:::
+<!-- /works-cited -->
+

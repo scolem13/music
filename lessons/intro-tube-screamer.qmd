@@ -1,0 +1,97 @@
+---
+title: "Meet the Tube Screamer TS808"
+toc: true
+toc-depth: 2
+description: "A first look at the Ibanez Tube Screamer TS808: soft clipping in an op-amp's feedback, the mid hump, and why the bass stays clean. Guided tour, famous tracks, quiz."
+instruments: [guitar]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Guitar Pedals Compared](pedal-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Tube Screamer TS808 is.
+2. Learn how its circuit makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Listen to famous tracks.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **TS808** came out in **1979**, designed by **Susumu Tamura** at Nisshin for Ibanez, with a **JRC4558** op-amp (Wikipedia, "Ibanez Tube Screamer").
+- Three knobs: **Drive** (gain), **Tone** and **Level** (Wikipedia).
+- It "boosts midrange frequencies and cuts bass" so a guitar stays clear in a band (Wikipedia, in other words).
+
+## How it makes its sound
+
+- The clipping stage is an op-amp with two diodes in its **feedback**. The diodes only let the extra (amplified) part grow to about 0.6 V; that is added to the clean signal. So it clips softly, and you still hear the note.
+- In the feedback there is also a resistor and capacitor that only pass the **mids and highs** (a high-pass near 720 Hz in the schematic values this page uses, unverified). The low notes get almost no gain: the bass stays clean, the mids drive the diodes: the **mid hump**.
+- Drive turns the gain from about 12 to about 118 times in this model. A small capacitor across the feedback cuts the highest treble more as Drive goes up.
+- Players often put it in front of an already crunchy amp: it pushes the amp with the mids.
+
+## The pedal
+
+The Tube Screamer TS808's face, drawn after photos (positions approximate, no logos). Drag a knob (or use the arrow keys), click the footswitch to bypass, then press a ▶ button. The guitar is this site's pickup model (pick one, and its volume, below the buttons); the sound goes through the pedal model, then a clean amp. Nobody has compared it with a real pedal. The picture shows the waveform going in and coming out.
+
+```{=html}
+<div class="pdp" data-pedal="ts808"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="pd-step" data-pedal="ts808" data-set="{&quot;drive&quot;:2,&quot;tone&quot;:5,&quot;level&quot;:8}" data-play="riff"><p><b>Drive 2.</b> A light edge. Listen how the low notes stay clean.</p></div>
+<div class="pd-step" data-pedal="ts808" data-set="{&quot;drive&quot;:8,&quot;tone&quot;:5,&quot;level&quot;:6}" data-play="riff"><p><b>Drive 8.</b> More clipping, still a clear note.</p></div>
+<div class="pd-step" data-pedal="ts808" data-set="{&quot;drive&quot;:8,&quot;tone&quot;:1,&quot;level&quot;:6}" data-play="lead"><p><b>Tone 1.</b> Darker: the tone stage's low-pass alone.</p></div>
+<div class="pd-step" data-pedal="ts808" data-set="{&quot;drive&quot;:8,&quot;tone&quot;:9,&quot;level&quot;:6}" data-play="lead"><p><b>Tone 9.</b> Brighter.</p></div>
+<div class="pd-step" data-pedal="ts808" data-set="{&quot;drive&quot;:5,&quot;tone&quot;:5,&quot;level&quot;:7}" data-play="chord"><p><b>A chord.</b> Compare with the Fuzz Face on the compare page: there the low strings fuzz too.</p></div>
+```
+
+## Famous tracks
+
+Videos checked on YouTube. Where a source ties the pedal to the record, it is given; otherwise it is marked unverified. **No source gives any setting**: **Try a guess** plays this site's guess.
+
+```{=html}
+<div class="pd-tracks" data-pedal="ts808"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="pd-q" data-a="1"><p><b>Why does the bass stay clean in a Tube Screamer?</b></p><ul><li>There is no bass</li><li>The gain is only above about 720 Hz</li><li>The battery is low</li><li>The Tone knob</li></ul><p class="pd-why">The high-pass in the feedback leg.</p></div>
+<div class="pd-q" data-a="1"><p><b>Where are the clipping diodes?</b></p><ul><li>After the pedal</li><li>In the op-amp's feedback</li><li>In the guitar</li></ul><p class="pd-why">So the clipped part adds to the clean signal: soft clipping.</p></div>
+<div class="pd-q" data-a="0"><p><b>Which op-amp chip is in the TS808?</b></p><ul><li>JRC4558</li><li>555</li><li>LM386</li></ul><p class="pd-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Guitar Pedals Compared](pedal-compare.html?a=ts808&b=fuzzface): this pedal beside a similar one, settings translated, and a pedalboard to chain them.
+- [Electric Guitars Compared](guitar-compare.qmd): the guitars that feed these pedals.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/pedals.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/pedals.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+ElectroSmash. "Tube Screamer Analysis." [electrosmash.com/tube-screamer-analysis](https://electrosmash.com/tube-screamer-analysis). Clipping stage with a high-pass and low-pass in the feedback loop (outline only from a search summary; values unverified).
+
+"Ibanez Tube Screamer." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ibanez_Tube_Screamer](https://en.wikipedia.org/wiki/Ibanez_Tube_Screamer). TS808 1979, Susumu Tamura, JRC4558; Drive, Tone, Level; boosts mids and cuts bass; Turner on Favourite Worst Nightmare.
+:::
+<!-- /works-cited -->
+

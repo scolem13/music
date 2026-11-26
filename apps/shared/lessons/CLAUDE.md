@@ -189,3 +189,23 @@
   `apps/shared/data/organs/assignments.json` (oEmbed-checked 2026-11-26, "build" = guessed starting registrations). Sources
   `scripts/sources/organs.py` (Wikipedia + XK-5 manual percussion + Blue3 preset table; no manual downloaded). Tests
   `node tests/lessons/organ-compare.test.js` (`NEG=1` must fail), `tests/lessons/organ-compare.cdp.js` (after rendering). Not listened against real organs.
+- Electric basses (2026-11-26): `apps/shared/lessons/bass-pickups.js` adds P (split coil), Jazz 60s / 70s, StingRay 2- / 3-band
+  (active preamp), Rickenbacker 4003 to `GuitarPickups` (`GP.add`, `GP.BASS_IDS`; "BASSES" block in guitar-pickups.js header),
+  panels `panels/bs-*.js`, page `lessons/bass-compare.qmd`, intro pages by `scripts/intro-instruments/basses.py`, tracks
+  `apps/shared/data/basses/tracks.json`, sources `scripts/sources/basses.py`. Component values, pickup distances (but the J spacing),
+  preamp numbers and track settings unverified. Tests `node tests/lessons/bass-pickups.test.js` (`NEG=1` must fail), `tests/lessons/bass-compare.cdp.js`.
+- Guitar pedals (2026-11-26): `apps/shared/lessons/pedals.js` + `.css` (global Pedals; header = each model, what is sourced, API, markup):
+  pure per-sample models in node (fuzzface: biased asymmetric clip, low input impedance loading the guitar's volume pot = clean-up,
+  `Pedals.loading`; bigmuff: booster + 2 diode stages + LP/HP blend scoop; ts808: gain 1 + (51k+Drive)/4.7k above a 720 Hz high-pass,
+  diodes in feedback added to the dry; crybaby: swept band-pass, foot / rocking / envelope; phase90: 4 all-pass + dry, feedback
+  switch; ce2: BBD few-ms delay, triangle LFO; dm2: 20-300 ms, BBD bandwidth N/4T darkening each repeat, Intensity 0 = one repeat,
+  self-oscillates; echoplex: tape loop, wow / flutter, saturation). Not SynthKit.fx (its distortion / chorus / phaser / delay untouched);
+  input = `GuitarPickups.render` at full volume, the guitar volume slider applied by `Pedals.run(chain, x, sr, {gvol})`, out through
+  `SynthKit.fx("amp")`. `Pedals.translate(from, st, to)` exact / approx / lost (drives by band fingerprints of a test chord, others by
+  rate / depth / time / repeats; different kinds = lost; hand notes per pair). Faces `panels/pd-<id>.js` via `FaithfulPanel.mount`
+  with `Pedals.adapter`; new item `led` in faithful-panel.js. Pedalboard `<div class="pdb" data-chain>` (drag / ← → reorder, bypass,
+  Translate to, + Add). Pages `lessons/pedal-compare.qmd` (`.pdc` `?a=&b=`, `.pdb`) + `intro-{fuzz-face,big-muff,tube-screamer,
+  cry-baby,phase-90,ce-2,dm-2,echoplex}.qmd` by `python3 scripts/intro-instruments/pedals.py`; tracks `apps/shared/data/pedals/tracks.json`
+  (oEmbed-checked 2026-11-26; `useSrc` null = unverified; settings guesses). Sources `scripts/sources/pedals.py` (Wikipedia + Guitar
+  World + Boss; ElectroSmash unreachable, used only via search summaries). Tests `node tests/lessons/pedals.test.js` (`NEG=1` must
+  fail), `tests/lessons/pedal-compare.cdp.js` (after rendering; `SITE=<dir>`). Not listened against real pedals.
