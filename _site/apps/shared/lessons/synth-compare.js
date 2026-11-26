@@ -2435,6 +2435,16 @@
       bAB = el("button", "btn btn-sm btn-outline-secondary", "▶ One, then the other"), bStop = el("button", "btn btn-sm btn-outline-secondary", "■ Stop");
     [bA, bB, bAB, bStop].forEach(function (b) { top.appendChild(b); });
     var wheelL = el("label", "scmp-lab", "Mod wheel "), wheelR = el("input"); wheelR.type = "range"; wheelR.min = 0; wheelR.max = 1; wheelR.step = 0.01; wheelR.value = 0; wheelL.appendChild(wheelR); top.appendChild(wheelL);
+    // example octave: "auto" lifts phrases that start below G2 (bass lines) an octave, for small speakers; kept site-wide
+    var octL = el("label", "scmp-lab", "Example octave "), octSel = el("select", "scmp-oct"); octSel.setAttribute("aria-label", "Example octave");
+    [["auto", "Auto (bass up for small speakers)"], ["-1", "−1"], ["0", "As written"], ["1", "+1"], ["2", "+2"]].forEach(function (o) { var e = el("option", null, o[1]); e.value = o[0]; octSel.appendChild(e); });
+    try { octSel.value = localStorage.getItem("scmp-ex-oct") || "auto"; } catch (e) { octSel.value = "auto"; }
+    octSel.onchange = function () { try { localStorage.setItem("scmp-ex-oct", octSel.value); } catch (e) {} };
+    octL.appendChild(octSel); top.appendChild(octL);
+    W.exShift = function (phrase) {
+      if (octSel.value !== "auto") return 12 * +octSel.value;
+      var lo = Math.min.apply(null, phrase.map(function (p) { return p[0]; })); return lo < 43 ? 12 : 0;
+    };
     host.appendChild(top);
     var say = el("p", "scmp-say"); host.appendChild(say);
     var row = el("div", "scmp-panels"); host.appendChild(row);
@@ -2479,6 +2489,16 @@
           grid.appendChild(fs);
         });
         box.appendChild(grid);
+        var FPn = window.FaithfulPanel, fpo = null;
+        if (FPn && FPn.has(id)) {   // the drawing of the real panel (faithful-panel.js), "Simple" = the grouped knobs above
+          var face = el("div", "scmp-face"), seg = el("div", "sp-seg scmp-vw"); seg.setAttribute("aria-label", "Panel view"); box.insertBefore(face, grid);
+          var showV = function () { var v = FPn.view(); face.hidden = v !== "panel"; grid.hidden = v === "panel"; [].forEach.call(seg.children, function (b) { b.classList.toggle("sp-on", b.dataset.v === v); }); };
+          [["panel", "Panel"], ["simple", "Simple"]].forEach(function (v) { var b = el("button", "sp-opt", v[1]); b.type = "button"; b.dataset.v = v[0];
+            b.onclick = function () { FPn.setView(v[0]); document.querySelectorAll(".scmp-face").forEach(function (f) { var p = f.parentNode; f.hidden = v[0] !== "panel"; var g = p.querySelector(".scmp-groups"); if (g) g.hidden = v[0] === "panel"; var sg = p.querySelector(".scmp-vw"); if (sg) [].forEach.call(sg.children, function (x) { x.classList.toggle("sp-on", x.dataset.v === v[0]); }); }); }; seg.appendChild(b); });
+          head.appendChild(seg); showV();
+          FPn.load(id).then(function () { if (!pan[id] || pan[id].box !== box) return;
+            pan[id].fp = FPn.mount(face, { id: id, profile: P, get: function (k) { return W.st[id][k]; }, set: function (k, v) { set(id, k, v); } }); }).catch(function () { face.hidden = true; grid.hidden = false; });
+        }
         var views = el("div", "scmp-views"), flow = el("div", "scmp-flow"); views.appendChild(flow); box.appendChild(views);
         pan[id] = { box: box, flow: flow, turn: turn, hear: hear };
         turn.onclick = function () { translate(id, true); var o = pan[other(id)]; if (o && o.box.scrollIntoView) o.box.scrollIntoView({ behavior: "smooth", block: "nearest" }); };
@@ -2550,11 +2570,11 @@
       else if (c[2] === "cords") drawCords(id, w);
       else w.querySelector("select").value = v;
     }
-    function showAll(id) { for (var k in W.st[id]) show(id, k); }
+    function showAll(id) { for (var k in W.st[id]) show(id, k); if (pan[id] && pan[id].fp) pan[id].fp.refresh(); }
     function set(id, key, v, quiet) {
       var c = ctlDef(id, key); if (!c) return;
       if (c[2] === "k") { v = Math.max(c[3], Math.min(c[4], Math.round(v / c[5]) * c[5])); v = Math.round(v * 100) / 100; }
-      W.st[id][key] = v; show(id, key); push(id);
+      W.st[id][key] = v; show(id, key); push(id); if (pan[id] && pan[id].fp) pan[id].fp.refresh();
       if (!quiet && pan[id]) { if (id === W.from) retranslate(); else pan[id].box.classList.add("scmp-hand"); }
       draw();
     }
@@ -2752,10 +2772,11 @@
       return begin(ids).then(function () {
         var ex = W.ex, beat = 60 / (ex.bpm || 100) * 1000, len = 0, t0 = 0;
         ex.phrase.forEach(function (p) { len = Math.max(len, p[1] + p[2]); });
+        var sh = W.exShift(ex.phrase), phr = ex.phrase.map(function (p) { return [p[0] + sh].concat(p.slice(1)); });
         ids.forEach(function (id) {
           var btn = ids.length > 1 ? bAB : id === W.a ? bA : bB;
           W.timers.push(setTimeout(function () { btn.classList.add("scmp-playing"); [W.a, W.b].forEach(function (x) { if (pan[x]) pan[x].box.classList.toggle("scmp-live", x === id); }); }, t0));
-          ex.phrase.forEach(function (p) {
+          phr.forEach(function (p) {
             var fl = p[3] || "", vel = /a/.test(fl) ? 1 : 0.8, off = (p[1] + p[2] + (/s/.test(fl) ? 0.08 : 0)) * beat - (/s/.test(fl) ? 0 : 15);
             W.timers.push(setTimeout(function () { send(id, { type: "on", note: p[0], vel: vel }); if (keyEls[p[0]]) keyEls[p[0]].classList.add("scmp-down"); }, t0 + p[1] * beat));
             W.timers.push(setTimeout(function () { send(id, { type: "off", note: p[0] }); if (keyEls[p[0]]) keyEls[p[0]].classList.remove("scmp-down"); }, t0 + off));

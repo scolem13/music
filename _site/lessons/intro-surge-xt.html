@@ -2387,7 +2387,6 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
   <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
   <li><a href="#check-yourself" id="toc-check-yourself" class="nav-link" data-scroll-target="#check-yourself">Check yourself</a></li>
   <li><a href="#next" id="toc-next" class="nav-link" data-scroll-target="#next">Next</a></li>
-  <li><a href="#works-cited" id="toc-works-cited" class="nav-link" data-scroll-target="#works-cited">Works Cited</a></li>
   </ul>
 </nav>
     </div>
@@ -2604,13 +2603,15 @@ document.addEventListener('DOMContentLoaded', async function () {
 <link rel="stylesheet" href="../apps/shared/lessons/synth-compare.css">
 <link rel="stylesheet" href="../apps/shared/lessons/intro-kit.css">
 <script src="../apps/shared/lessons/sections.js"></script>
+<script src="../apps/shared/lessons/faithful-panel.js"></script>
 <script src="../apps/shared/lessons/synth-compare.js"></script>
 <script src="../apps/shared/lessons/intro-kit.js"></script>
-</section>
-<section id="works-cited" class="level2">
-<h2 class="anchored" data-anchor-id="works-cited">Works Cited</h2>
 <!-- works-cited: written by scripts/works-cited.py -->
 <div class="works-cited">
+<p>Surge Synth Team. “SkinModel.cpp.” <em>Surge XT</em>, GitHub repository surge-synthesizer/surge. <a href="https://github.com/surge-synthesizer/surge/blob/main/src/common/SkinModel.cpp">github.com/surge-synthesizer/surge/blob/main/src/common/SkinModel.cpp</a>. Default-skin position of every control (oscillator, scene, mixer, filters, Filter EG, Amp EG, FX, LFO, header).</p>
+<p>Tytel, Matt. “default.vitalskin.” <em>Vital</em>, GitHub repository mtytel/vital. <a href="https://github.com/mtytel/vital/blob/main/default.vitalskin">github.com/mtytel/vital/blob/main/default.vitalskin</a>. Knob section height 71, padding 4 / 10, modulation button width 68; background, body and accent colours.</p>
+<p>Tytel, Matt. “full_interface.cpp,” “synthesis_interface.cpp” and “modulation_interface.cpp.” <em>Vital</em>, GitHub repository mtytel/vital. <a href="https://github.com/mtytel/vital/tree/main/src/interface/editor_sections">github.com/mtytel/vital/tree/main/src/interface/editor_sections</a>. Section bounds of the main window at the default 1400 x 820 (synth_constants.h): header 48, macro column, oscillators, sample, two filters, envelopes : LFOs : random = 3 : 4 : 2, voice and portamento strip, keyboard.</p>
+<p><strong>For students</strong></p>
 <p>Surge Synth Team. <em>Surge XT</em>. <a href="https://surge-synthesizer.github.io/">surge-synthesizer.github.io/</a>. Download page.</p>
 <p>Surge Synth Team. “Surge XT User Manual.” <em>Surge XT</em>. <a href="https://surge-synthesizer.github.io/manual-xt/">surge-synthesizer.github.io/manual-xt/</a>. Released as open source by Claes Johanson in September 2018; Classic oscillator (Shape, Width 1, Sub Mix); mixer with ring 1x2 / 2x3 and noise; filter types; FEG &gt; F1, Keytrack &gt; F1; Filter and Amp EG; LFO shapes and rate range; Play Mode; Bend Depth; installing.</p>
 </div>

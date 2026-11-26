@@ -108,14 +108,19 @@ Click an answer. You will see at once if it is right. Nothing is saved or sent.
 <link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
 <link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
 <script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
 <script src="/apps/shared/lessons/synth-compare.js"></script>
 <script src="/apps/shared/lessons/intro-kit.js"></script>
 ```
 
-## Works Cited
-
 <!-- works-cited: written by scripts/works-cited.py -->
 ::: {.works-cited}
+Surge Synth Team. "SkinModel.cpp." *Surge XT*, GitHub repository surge-synthesizer/surge. [github.com/surge-synthesizer/surge/blob/main/src/common/SkinModel.cpp](https://github.com/surge-synthesizer/surge/blob/main/src/common/SkinModel.cpp). Default-skin position of every control (oscillator, scene, mixer, filters, Filter EG, Amp EG, FX, LFO, header).
+
+Tytel, Matt. "default.vitalskin." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/default.vitalskin](https://github.com/mtytel/vital/blob/main/default.vitalskin). Knob section height 71, padding 4 / 10, modulation button width 68; background, body and accent colours.
+
+Tytel, Matt. "full_interface.cpp," "synthesis_interface.cpp" and "modulation_interface.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/tree/main/src/interface/editor_sections](https://github.com/mtytel/vital/tree/main/src/interface/editor_sections). Section bounds of the main window at the default 1400 x 820 (synth_constants.h): header 48, macro column, oscillators, sample, two filters, envelopes : LFOs : random = 3 : 4 : 2, voice and portamento strip, keyboard.
+
 **For students**
 
 Tytel, Matt. "README." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital#readme](https://github.com/mtytel/vital#readme). "A spectral warping wavetable synthesizer"; GPLv3 source; "the free version of Vital"; download at vital.audio after making an account.

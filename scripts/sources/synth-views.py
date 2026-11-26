@@ -10,3 +10,16 @@ SOURCES = [
     web('Surge Synth Team. "Surge XT User Manual." *Surge XT*. URL.', "https://surge-synthesizer.github.io/manual-xt/", P,
         note="Classic oscillator Shape / Width 1 / Sub Mix / Sync / Unison; Mixer channels with M and S; Vintage and Legacy Ladder; Filter EG and Amp EG modes; LFO shapes; scene Volume / Pan / Width."),
 ]
+
+# The faithful Vital and Surge XT panels (apps/shared/lessons/faithful-panel.js, panels/vital.js, panels/surge.js), read 2026-11-26.
+PF = ["lessons/intro-vital.qmd", "lessons/intro-surge-xt.qmd", "lessons/synth-compare.qmd"]
+SOURCES += [
+    web('Tytel, Matt. "full_interface.cpp," "synthesis_interface.cpp" and "modulation_interface.cpp." *Vital*, GitHub repository mtytel/vital. URL.',
+        "https://github.com/mtytel/vital/tree/main/src/interface/editor_sections", PF,
+        note="Section bounds of the main window at the default 1400 x 820 (synth_constants.h): header 48, macro column, oscillators, sample, two filters, envelopes : LFOs : random = 3 : 4 : 2, voice and portamento strip, keyboard."),
+    web('Tytel, Matt. "default.vitalskin." *Vital*, GitHub repository mtytel/vital. URL.', "https://github.com/mtytel/vital/blob/main/default.vitalskin", PF,
+        note="Knob section height 71, padding 4 / 10, modulation button width 68; background, body and accent colours."),
+    web('Surge Synth Team. "SkinModel.cpp." *Surge XT*, GitHub repository surge-synthesizer/surge. URL.',
+        "https://github.com/surge-synthesizer/surge/blob/main/src/common/SkinModel.cpp", PF,
+        note="Default-skin position of every control (oscillator, scene, mixer, filters, Filter EG, Amp EG, FX, LFO, header)."),
+]
