@@ -1,0 +1,103 @@
+---
+title: "Meet the tanpura"
+toc: true
+toc-depth: 2
+description: "A first look at the tanpura: four drone strings, Pa / Ma / Ni tunings, the jawari bridge and its cotton thread, the looping drone. Famous uses, quiz."
+instruments: [other]
+topics: [gear]
+has: [interactive, svg]
+---
+
+A first stop before [World and Acoustic Instruments Compared](world-instruments-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the tanpura is.
+2. Learn how it makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Look up famous uses.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- A long-necked lute with **four strings** and **no frets**: the strings are always plucked at full length (Wikipedia, "Tanpura").
+- It plays no melody: it holds the **drone** under a singer or player. Usual tuning **Pa-sa-sa-Sa** (5-8-8-1); **Ma** for ragas without Pa; **Dha** or **Ni** for ragas without Pa and shuddha Ma (Wikipedia).
+- These are living traditions with their own teachers, names and ways of playing. The site's sound is a sketch from a few physics ideas, not the instrument; anything not from a source named on this page is marked unverified.
+
+## How it sounds
+
+- **Jawari**: the string grazes a wide, curved bridge; as its swing dies, the touching point creeps up the bridge's slope, and that makes a long, moving buzz of overtones (Wikipedia, "Tanpura", "Sitar"). Here the upper partials **grow** while the lowest ones fade: the opposite of a guitar string. The amounts are the site's.
+- A **cotton thread** (juari, jiva) between string and bridge moves the touching place and changes which overtones sing (Wikipedia). Turn **Thread** and listen.
+- The four strings are plucked one after another, over and over (here 1-2-3-4 and a rest; the spacing is the site's, unverified).
+
+## Play it
+
+Drawn after photos (proportions approximate, no logos). **Click the drawing** to play it, or use the buttons; turn the knobs. The grid under it shows the partials over time. The sound is the site's model, not recordings; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="wi" data-item="tanpura"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="wi-step" data-item="tanpura" data-set="{}" data-hit="s2"><p><b>One sa string.</b> The buzz grows after the pluck.</p></div>
+<div class="wi-step" data-item="tanpura" data-set="{&quot;thread&quot;:0.05}" data-hit="s2"><p><b>Thread near the front.</b> A lower band of overtones.</p></div>
+<div class="wi-step" data-item="tanpura" data-set="{&quot;thread&quot;:0.95}" data-hit="s2"><p><b>Thread moved back.</b> A higher band.</p></div>
+<div class="wi-step" data-item="tanpura" data-set="{&quot;jawari&quot;:0}" data-hit="s2"><p><b>No jawari.</b> Plain.</p></div>
+<div class="wi-step" data-item="tanpura" data-set="{}" data-hit="cycle"><p><b>One cycle of the four strings.</b></p></div>
+<div class="wi-step" data-item="tanpura" data-set="{}" data-hit="drone"><p><b>The drone, looping</b> (stops after 12 s, or press ■ Stop).</p></div>
+```
+
+## Famous uses
+
+Where a source ties the instrument to the record or player it is named; the links are YouTube searches (no video checked).
+
+```{=html}
+<div class="wi-tracks" data-item="tanpura"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="wi-q" data-a="0"><p><b>The usual tanpura tuning?</b></p><ul><li>Pa-sa-sa-Sa</li><li>Sa-Re-Ga-Ma</li><li>All four on Ni</li></ul><p class="wi-why">Wikipedia, "Tanpura".</p></div>
+<div class="wi-q" data-a="0"><p><b>For a raga without Pa, the first string goes to…</b></p><ul><li>Ma</li><li>Re</li><li>It is removed</li></ul><p class="wi-why">Wikipedia.</p></div>
+<div class="wi-q" data-a="0"><p><b>What does the cotton thread change?</b></p><ul><li>Where the string touches the bridge: the overtones</li><li>The pitch by an octave</li></ul><p class="wi-why"></p></div>
+```
+
+## Next
+
+- [World and Acoustic Instruments Compared](world-instruments-compare.html?a=tanpura&b=sitar): this one beside another, settings translated.
+- [Ragas](ragas.qmd): the six ragas whose notes the frets and sympathetic strings use here.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/world-instruments.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/world-instruments.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Sitar." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Sitar](https://en.wikipedia.org/wiki/Sitar). 18-21 strings, 6-7 played over curved movable frets, the rest sympathetic (tarb); two bridges; the wide rounded bridge and jawari; main string a fourth above Sa; Kharaj Pancham tuning; meend up to about seven semitones; instrumental style typically 13 sympathetic strings; Norwegian Wood, Love You To, Within You Without You, Paint It Black.
+
+"Tanpura." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tanpura](https://en.wikipedia.org/wiki/Tanpura). Four strings, 5-8-8-1 (Pa-sa-sa-Sa), Ma for ragas without Pa, Dha or Ni for ragas without Pa and shuddha Ma (Marwa, Hindol); jivari: the curved bridge, grazing contact creeping up the slope over 3-10 s; the cotton thread shifts it; Miraj and Tanjore styles; electronic tanpuras.
+
+**For students**
+
+"Love You To." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Love_You_To](https://en.wikipedia.org/wiki/Love_You_To). Sitar, tabla and tambura; the first Beatles song fully in the Indian classical style.
+
+"Tomorrow Never Knows." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tomorrow_Never_Knows](https://en.wikipedia.org/wiki/Tomorrow_Never_Knows). A C drone on tambura.
+
+"Within You Without You." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Within_You_Without_You](https://en.wikipedia.org/wiki/Within_You_Without_You). Sitar, tambura, dilruba, tabla; three tamburas giving a dense jivari (Hannan).
+:::
+<!-- /works-cited -->
+

@@ -254,3 +254,19 @@
   oEmbed-checked; useSrc from Wikipedia where one ties player and gear). Sources `scripts/sources/drumkits.py` (Wikipedia only; model
   numbers, snare specs, kit shells unverified). Tests `node tests/lessons/drumkits.test.js` (`NEG=1` must fail),
   `node tests/lessons/drumkits.cdp.js` (harness, no render; `RENDERED=1 [SITE=]` for the rendered pages; errors read from CDP). Not listened against real drums.
+- World and acoustic instruments (2026-11-26): `apps/shared/lessons/world-instruments.js` + `.css` (global WorldInst; header = models,
+  what is sourced, API, markup): pure models in node. Sitar / tanpura: plucked-string partials with a jawari sketch (a band of upper
+  partials fed as the fundamental decays, so brightness grows; the tanpura's cotton thread moves the band; not a contact simulation),
+  sitar 19 movable frets on the raga's just notes (the six ragas of lessons/ragas.qmd, `WorldInst.RAGAS`, same notes as tuning-kit.js),
+  13 taraf strings tuned to the raga driven by partial matches (`sympathy`), meend glide, chikari / jod / kharaj; tanpura Pa / Ma / Ni /
+  Dha tunings, pluck cycle, and `WorldInst.drone({sa, tuning, jawari, thread, tempo, gain}) -> {stop, set}` for any page. Tenor pan:
+  29 note areas in fourths and fifths, tuned partials 1:2:3 (`oct` / `twelfth` cents), strike place, stick, octave neighbour. Kalimba
+  (17, alternating from a low centre) and mbira dzavadzimu (22, three registers): cantilever modes 1 / 6.27 / 17.55, neighbours, buzzers
+  (amplitude-gated rattle), deze resonance, tunings Nyamaropa / Katsanzaira / Mavembe / major. `WorldInst.translate`: sitar <-> tanpura,
+  kalimba <-> mbira (exact / approx / lost); other pairs `skipped: true` with a note. Drawings `panels/wi-<id>.js` (layout `build(st)`
+  redrawn on raga / tuning change, `controls`; clicks hit-tested on `zones` by `WorldInst.zoneAt`). Pages
+  `lessons/world-instruments-compare.qmd` (two `.wic`, `?a=&b=` for the first) + `intro-{sitar,tanpura,steel-pan,kalimba,mbira}.qmd`
+  by `python3 scripts/intro-instruments/world.py`; tracks `apps/shared/data/world-instruments/tracks.json` (YouTube searches only, none
+  oEmbed-checked; useSrc from Wikipedia where one ties the instrument to the record). Sources `scripts/sources/world-instruments.py`
+  (Wikipedia only; acoustics papers not read). Tests `node tests/lessons/world-instruments.test.js` (`NEG=1` must fail),
+  `node tests/lessons/world-instruments.cdp.js` (harness, no render; `RENDERED=1 [SITE=]` for the rendered pages). Not listened against real instruments.

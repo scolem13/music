@@ -1,0 +1,264 @@
+---
+title: "Rap Flow 1: How Rap Flow Works, and How It Changed"
+toc: true
+toc-depth: 2
+description: "What music theorists mean by flow: syllables on a 16-box grid, where the rhymes and accents land, sentences across the bar line, triplet flow, on and off the beat. Hear each one over a beat, then build your own."
+instruments: [voice, drums, other]
+topics: [hard-to-research, rhythm, notation, listening, research]
+has: [interactive, notation]
+---
+
+**Flow** is how a rapper fits words to the beat. Kyle Adams, a music theorist, defines it as "all of the ways
+in which a rapper uses rhythm and articulation in his/her lyrical delivery" (Adams [1]). This lesson covers the
+rhythm side: where the syllables, accents and rhymes land in the bar. It also covers what researchers have found
+about how flow changed between the late 1970s and today.
+
+The reading list for this lesson, with notes on what each source covers and how much of it was read for this
+page, is [Rap Flow 2: Reading list](rap-flow-reading.qmd).
+
+::: {.rf-note}
+**About the examples.** Every pattern on this page was made up for this page to show a technique that a source
+describes. None of them is a transcription of a record, and the made-up lines are not quotations. Each pattern
+says which source it follows. The sound is a click for each syllable (higher for rhymes, louder for accents)
+over a simple drum loop.
+:::
+
+## What you'll do
+
+- Read a **flow grid**, the 16-box chart that rappers and researchers both use.
+- Hear the steady, on-the-beat style of early rap, then the busier styles that followed.
+- Hear rhymes that make a cross-rhythm against the beat, and sentences that run across the bar line.
+- Hear **triplet flow**, and the difference between rapping on the grid and off it.
+- Weigh what the research says about whether rap got "more complex".
+- Build a flow of your own.
+
+## The grid: 16 boxes to a bar
+
+Most rap is in 4/4. Each beat splits into four sixteenths, so a bar has sixteen places a syllable can land.
+Counted aloud that's *1 e & a 2 e & a 3 e & a 4 e & a*. Adams draws his charts this way: one row per bar, one
+box per sixteenth, the syllables written in their boxes (Adams, note 2). Mitchell Ohriner points out that rap
+teachers and rappers use the same picture. Rakim describes drawing sixteen dots per bar, and Paul Edwards's
+*How to Rap* says a stressed syllable should fall on each of the four beats (Ohriner [1.3]–[1.4]).
+
+How to read the grids below:
+
+- A box with **•** has a syllable. A bold **●** is an accented one.
+- **Coloured** boxes rhyme. The same colour means the same rhyme sound.
+- The staff under the grid shows the same rhythm on one line, as a drum part would be written. Rhymes are
+  lettered above the notes and accents are marked >.
+
+## Early rap: square and on the beat
+
+Adams contrasts Kurtis Blow's "Basketball" (1984) with a 1995 verse by RZA. In "Basketball" the rhythm is
+"square, regular", the beat is never split finer than a sixteenth, and the rhymes come in couplets in
+predictable places (Adams [3]). A rhymed couplet on the **fourth beat** was a trademark of early-1980s rappers
+(Adams [4]). Sentences also tend to match the bars: one sentence per bar, or a 1 + 1 + 2 pattern over four bars
+(Adams [24]).
+
+<div class="rf" data-title="Square flow, rhyme on beat 4 (after Adams [3]–[4]; made-up words)" data-bpm="96"
+  data-bars="X.x.X.x.XxxxA... | X.x.X.x.XxxxA..."
+  data-words="I step to the mic and rock the place the crowd jumps up all o ver the space"></div>
+
+Every beat has a stressed syllable, the rhyme lands on beat 4, and each line fills exactly one bar.
+
+Adams warns against using this as a ranking. Early rappers were often improvising, and they needed "rhythmic
+formulae into which they could plug their syllables" (Adams [33]). He calls flow complexity a matter of style,
+not a "yardstick" for judging rappers (Adams [35]).
+
+### The beat-4 rhyme never went away
+
+Nathaniel Condit-Schultz's MCFlow corpus transcribes 124 Billboard rap tracks from 1980 to 2015. As Robert
+Komaniecki reports its results, the typical pace is about 4.5 syllables per second, about a quarter of stressed
+syllables rhyme, and rhymed syllables land on **beat 4** more often than anywhere else (Komaniecki [1.2]).
+
+At 90 BPM a beat lasts two-thirds of a second, so 4.5 syllables per second works out to about three syllables
+per beat. (That arithmetic is this page's. The MCFlow paper itself was not read for this page.)
+
+## Getting busier: rhymes against the beat
+
+Adams's 2002 example, Blackalicious's "Blazing Arrow", has almost no empty boxes. In twelve bars of steady
+sixteenths, "only five sixteenth-note beats do not have attacks" (Adams [11]). The interest comes from the
+rhymes. They come in **three-sixteenth units**, three to a line, and the first and last syllable of each unit
+rhyme (Adams [13]). Groups of three sixteenths don't line up with beats of four, so the rhymes make a
+cross-rhythm against the beat. In later bars the units move to start at other points in the bar (Adams [15]).
+
+<div class="rf" data-title="Steady sixteenths, rhymes in 3-sixteenth units (after Adams [11]–[15]; not his transcription)" data-bpm="88"
+  data-bars="AxaAxaAxaxxxxxxx | AxaAxaAxaxxxxxxx | xxAxaAxaAxaxxxxx | xxAxaAxaAxaxxxxx"></div>
+
+Count along. In bars 1–2 the rhyme groups start on the beat. In bars 3–4 they start an eighth note later, so the
+same rhythm feels different against the drums.
+
+## Accents against the beat: 4 against 3
+
+In Dr. Dre's verse on N.W.A.'s "100 Miles and Runnin'" (1990), Adams finds most accents on the beat or halfway
+between beats. One bar is the exception: it puts four accents across the last three beats, a 4-against-3
+pattern (Adams [30]–[31]). Four evenly spaced accents across three beats come out one every three sixteenths.
+
+<div class="rf" data-title="Four accents over three beats, then back on the beat (after Adams [30]–[31])" data-bpm="92"
+  data-bars="X.x.X.x.X.x.A... | x.x.XxxXxxXxxXx. | X.x.X.x.X.x.A... | x.x.XxxXxxXxxA.."></div>
+
+## Sentences across the bar line
+
+The third technique on Adams's list is how well a rapper's sentences line up with the bars (Adams [8]). When a
+sentence runs on past a bar line, that's **enjambment**, which Adams defines as "a syntactic connection that
+overrides a metrical boundary" (Adams [4]). In MF DOOM's "All Caps" (2004), only 11 of 20 bars end with the end
+of a sentence, and only five lines are exactly one bar long (Adams [24]). Most end-rhymes still land around beat
+4, but the internal rhymes move around unpredictably (Adams [22]). Adams says the drums mark the meter clearly
+enough that the voice doesn't have to (Adams [25]).
+
+<div class="rf" data-title="Phrases that start and stop mid-bar, rhymes off the beat (after Adams [22]–[25])" data-bpm="90"
+  data-bars="..xxxxAx.xxxxxbx | xxx.xaxx..xxBxxx | x..xxxxAxxx.xxxx | xbxx.xx.xaxx...."></div>
+
+Compare this with the first example. There, every line started on beat 1 and ended on beat 4. Here, the gaps
+between phrases fall in the middle of bars, and the rhymes land on the off-beats.
+
+## Triplet flow
+
+Triplet flow splits each beat into **three** instead of four. Ben Duinker calls it "one of the most aurally
+salient features of contemporary hip hop" and links it to Atlanta trap music, with its "sparse, slow beats". He
+names Cardi B, Kendrick Lamar, Drake, Big Sean and Young Thug as rappers who use it (Duinker, abstract). He
+argues that rappers of the late 1980s and early 1990s provided the "stylistic blueprint" for its later spread.
+His reference list includes Bone Thugs-n-Harmony and Three 6 Mafia from the mid-1990s, and Migos's "Versace"
+(2013). He defines three kinds of triplet flow: mixed, phrasal and total. (Only the abstract and reference list
+were read here, so the details of those three kinds aren't given.) Ohriner also notes triplet flow as the
+recognised exception to the 16-box grid, "now commonly associated" with Atlanta (Ohriner [1.5]).
+
+<div class="rf" data-title="Triplet flow: 12 boxes to a bar, over a half-time trap beat (made up for this page)" data-bpm="72" data-beat="trap"
+  data-bars="t:xxaxxaxxaxx. | t:xxaxxaxxa... | t:xxbxxbxxbxx. | t:xxbxxbxxb..."></div>
+
+Switch the beat to boom-bap and back. The same triplets feel different over the two drum patterns.
+
+## On the grid, or off it
+
+The grids assume every syllable lands exactly in a box. Ohriner measured real recordings and found that this
+isn't always true. He separates two kinds of delivery (Ohriner [1.5], [2.1]–[2.5]):
+
+- **Music-rhythmic** delivery has syllables close to the sixteenth-note grid, with lengths near a quarter of a
+  beat.
+- **Speech-rhythmic** delivery has lengths that vary like speech, often slowing down across a phrase.
+
+He measures how far a rapper sits from the grid. In one line of Kendrick Lamar's "Momma" the delivery is
+music-rhythmic but about a sixteenth **behind the beat**. Another line is speech-rhythmic and speeds up, then
+slows down (Ohriner [3.3]–[3.6]).
+
+<div class="rf" data-title="The same phrase on the grid, then pulled off it (the slider is a sketch of Ohriner's description, not his measurements)" data-bpm="90" data-drift="0"
+  data-bars="..xxxxxxxxxxxxxx | xxxxxxa......... | ..xxxxxxxxxxxxxx | xxxxxxa........."></div>
+
+Play it with the slider at 0, then at about 0.5. The syllables are the same, but they start late and slow down
+through each phrase, more like talking than drumming.
+
+## Did rap get more complex?
+
+Many writers have claimed that rap flow became steadily more complex. Adam Krims described a move from
+"old-school" flow in the early to mid-1980s to "new-school" flow from the mid-1990s. The new style had more
+internal and off-beat rhymes, more syncopation, and "violations of meter" (Krims, as Adams [6] quotes him). Krims
+also named three styles: *sung*, *percussion-effusive* and *speech-effusive* (Adams [6]).
+
+Adam Waller tested this claim. He transcribed 45 verses from 1979 to 2009, one per artist, from Grandmaster
+Flash and Sugarhill Gang to Young Jeezy and Cam'ron (Waller, Fig. 4.1, p. 110). He scored each verse with models
+of syncopation and rhythmic repetition that he had checked against listeners' ratings of complexity. His
+findings:
+
+- In every model, complexity rose from the mid-1980s (at the latest) through the 1990s, and the verses from that
+  period agreed closely with each other (Waller, p. 127).
+- At or within a couple of years of **2000**, the rise stopped and turned toward *less* complexity
+  (Waller, p. 128).
+- After 2000, the verses spread much more widely. Some of the most complex verses in his set come from that
+  period, such as Aesop Rock and DOOM. He concludes that recent rap is best understood as "fragmentation of the
+  genre into a wider variety of styles" (Waller, pp. 128–129).
+- So the idea of a steady rise in complexity "is unsustainable" (Waller, p. 128). The commonly cited increase
+  "has some validity, but is more complicated than is often suggested" (Waller, p. 130).
+
+Komaniecki tracks a different change: who raps together. In the 1980s and early 1990s, groups like Run-D.M.C.,
+the Beastie Boys and A Tribe Called Quest dominated, and group members often shared one unified flow. Later, the
+usual set-up became a solo artist with guest rappers (Komaniecki [0.4], section 2).
+
+Pitch has changed too. Komaniecki describes a range from "the imprecise and exaggerated declamatory features of
+speech" in early rap to "carefully-pitched singing" in modern flows (Komaniecki, "Vocal Pitch", abstract).
+
+### A rough timeline
+
+The dates come from the sources above. Where a source gives a range, the range is shown. This is a summary of
+those sources, not a full history.
+
+| When | What changes in the flow | Source |
+|---|---|---|
+| Late 1970s – mid-1980s | Square rhythms, couplet rhymes on beat 4, one sentence per bar ("old school") | Adams [3]–[4], [24]; Krims in Adams [6] |
+| 1980s – early 1990s | Groups with unified flows (Run-D.M.C., De La Soul) | Komaniecki section 2 |
+| Mid-1980s – 1990s | Complexity rises: off-beat and internal rhymes, syncopation, enjambment ("new school", speech-effusive) | Waller p. 127; Krims in Adams [6] |
+| Late 1980s – mid-1990s | Triplet rhythms in some rappers' flows, the "blueprint" for triplet flow | Duinker, abstract |
+| Around 2000 | The rise in complexity stops; styles spread out | Waller pp. 128–129 |
+| 2010s | Triplet flow everywhere, tied to trap's slow, sparse beats | Duinker, abstract |
+| 2010s | Solo rappers with features rather than groups | Komaniecki [0.4] |
+
+## Build a flow
+
+Click a box to cycle it through: empty → syllable → accent → rhyme *a* → rhyme *b* → empty. Then press Play.
+
+<div class="rf" data-edit data-title="Your flow" data-bpm="90"
+  data-bars="................ | ................ | ................ | ................"></div>
+
+Things to try:
+
+1. Write a square, old-school couplet: a stressed syllable on every beat and the rhyme on beat 4.
+2. Keep the same rhymes, but start each line on the *a* of beat 4 in the bar before.
+3. Fill a bar with sixteenths and add rhymes every three boxes. Where do they land in the next bar?
+4. Write a line of your own over the grid. Clap the beat and say it until the syllables sit in their boxes.
+
+## Check yourself
+
+1. What are the three *metrical* techniques of flow on Adams's list that this page shows?
+2. Why do rhymes in groups of three sixteenths feel like they are pulling against the beat?
+3. What is enjambment, and what does Adams say lets rappers get away with it?
+4. What is the difference between Ohriner's music-rhythmic and speech-rhythmic delivery?
+5. Waller found the rise in complexity stopped around 2000. What happened to the verses after that?
+6. Why does Adams refuse to use flow as a "yardstick" for rappers?
+
+<details><summary>Answers</summary>
+
+1. Where the rhymes go, where the accents go, and how well sentences line up with bars. The fourth on his list
+   is the number of syllables per beat (Adams [8]).
+2. Three doesn't divide four. The groups start in a different place in each beat, so the rhyme pattern lines
+   up with the beat only every three beats.
+3. A sentence running on past a bar line. The drum beat marks the meter clearly enough that the voice doesn't
+   have to (Adams [25]).
+4. Music-rhythmic delivery sits close to the sixteenth grid with even lengths. Speech-rhythmic delivery has
+   uneven, speech-like lengths, often slowing down across a phrase.
+5. On average they moved toward less complexity, but they spread out much more: some very complex verses and
+   some simple ones.
+6. Early rappers were often improvising and may not have aimed for complex flow. A simple flow can be a style,
+   not a failing (Adams [33]–[35]).
+
+</details>
+
+```{=html}
+<style>
+.rf-note{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+</style>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/lessons/rap-flow.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Adams, Kyle. "On the Metrical Techniques of Flow in Rap Music." *Music Theory Online*, vol. 15, no. 5, Oct. 2009, [www.mtosmt.org/issues/mto.09.15.5/mto.09.15.5.adams.php](https://www.mtosmt.org/issues/mto.09.15.5/mto.09.15.5.adams.php). Read in full (not the example images). Definition [1], [6]; the techniques [8]; Basketball vs Wu-Gambinos [3]-[4]; Blazing Arrow [10]-[15]; All Caps [16]-[25]; 100 Miles and Runnin' [26]-[32]; history [33]-[35]; grid fn. 2.
+
+Duinker, Ben. "Good Things Come in Threes: Triplet Flow in Recent Hip-Hop Music." *Popular Music*, vol. 38, no. 3, 2019, pp. 423–456, [doi.org/10.1017/S026114301900028X](https://doi.org/10.1017/S026114301900028X). Abstract and reference list only (paywalled): mixed, phrasal and total triplet flow; late-1980s / early-1990s blueprint; a 50-song mini-corpus.
+
+Komaniecki, Robert. "Analyzing Collaborative Flow in Rap Music." *Music Theory Online*, vol. 23, no. 4, Dec. 2017, [mtosmt.org/issues/mto.17.23.4/mto.17.23.4.komaniecki.pdf](https://mtosmt.org/issues/mto.17.23.4/mto.17.23.4.komaniecki.pdf). Read in full. Groups in the 1980s and early 90s, solo artists with guests later [0.4]; Condit-Schultz's norms quoted [1.2]; unified flow in early groups section 2.
+
+Ohriner, Mitchell. "Lyric, Rhythm, and Non-alignment in the Second Verse of Kendrick Lamar's 'Momma'." *Music Theory Online*, vol. 25, no. 1, Mar. 2019, [www.mtosmt.org/ojs/index.php/mto/article/view/658/64](https://www.mtosmt.org/ojs/index.php/mto/article/view/658/64). Read to [3.9]. The 16-position grid in rap teaching [1.3]-[1.4]; speech-rhythmic vs music-rhythmic [1.5], [2.1]-[2.5]; behind the beat [3.3]-[3.6].
+
+**For teachers**
+
+Condit-Schultz, Nathaniel. "MCFlow: A Digital Corpus of Rap Transcriptions." *Empirical Musicology Review*, vol. 11, no. 2, 2016, [emusicology.org/index.php/EMR/article/view/4961](https://emusicology.org/index.php/EMR/article/view/4961). Not read (the site refuses automated reads). Its numbers here are as Komaniecki 2017 [1.2] reports them: 124 Billboard tracks 1980-2015, about 4.5 syllables a second, about a quarter of stressed syllables rhymed, rhymes most often on beat 4.
+
+Komaniecki, Robert. "Vocal Pitch in Rap Flow." *Intégral*, vol. 34, 2021, pp. 25–45, [theory.esm.rochester.edu/integral/?p=5664](https://theory.esm.rochester.edu/integral/?p=5664). Abstract and sections 1-2.2 read; five pitch techniques from rhyme strengthening to sung verses.
+
+Krims, Adam. *Rap Music and the Poetics of Identity*. Cambridge UP, 2000. Not read; cited as Adams 2009 [6] and Waller 2016 (p. 111) quote it: sung, percussion-effusive and speech-effusive flow; old school to new school.
+
+Waller, Adam. *Rhythm and Flow in Hip-Hop Music: A Corpus Study*. 2016. University of Rochester, Eastman School of Music, PhD dissertation. [urresearch.rochester.edu/institutionalPublicationPublicView.action?institutionalItemId=31805](https://urresearch.rochester.edu/institutionalPublicationPublicView.action?institutionalItemId=31805). Chapter 4 read: 45 verses 1979-2009 from the Anthology of Rap (Fig. 4.1, p. 110); complexity rises to about 2000, then falls and spreads out (pp. 127-130).
+:::
+<!-- /works-cited -->

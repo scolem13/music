@@ -34,6 +34,9 @@ listing:
     - tagg-glossary.qmd
     - grooves-songs.qmd
     - grooves-learning.qmd
+    - hard-to-research.qmd
+    - rap-flow.qmd
+    - rap-flow-reading.qmd
     - hihat-grooves.qmd
     - congas-basics.qmd
     - watermelon-congas.qmd
@@ -252,6 +255,12 @@ listing:
     - intro-hi-hats.qmd
     - intro-china.qmd
     - intro-splash.qmd
+    - world-instruments-compare.qmd
+    - intro-sitar.qmd
+    - intro-tanpura.qmd
+    - intro-steel-pan.qmd
+    - intro-kalimba.qmd
+    - intro-mbira.qmd
     - bass-compare.qmd
     - intro-p-bass.qmd
     - intro-jazz-bass.qmd
@@ -365,6 +374,7 @@ listing:
   <button type="button" data-topic="sampling">Sampling</button>
   <button type="button" data-topic="dj">DJing</button>
   <button type="button" data-topic="gear">Gear and care</button>
+  <button type="button" data-topic="hard-to-research">Mysteriously hard to research</button>
 </div>
 <div class="ll-pick" id="ll-has" role="group" aria-label="Has">
   <button type="button" data-has="all">Anything</button>

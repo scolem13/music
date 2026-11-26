@@ -1,0 +1,100 @@
+---
+title: "Meet the mbira dzavadzimu"
+toc: true
+toc-depth: 2
+description: "A first look at the Shona mbira dzavadzimu: 22 keys in three registers, Nyamaropa tuning, bottle-cap buzzers, the deze resonator. Famous uses, quiz."
+instruments: [other]
+topics: [gear]
+has: [interactive, svg]
+---
+
+A first stop before [World and Acoustic Instruments Compared](world-instruments-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the mbira dzavadzimu is.
+2. Learn how it makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Look up famous uses.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **mbira** is the instrument of the **Shona** people of Zimbabwe; the mbira dzavadzimu ("voice of the ancestors") is played at ceremonies (bira) and social gatherings and is held sacred (Wikipedia, "Mbira").
+- **22-28 keys** on a hardwood board (gwariva) in **three registers**: two on the left, one on the right; **bottle caps or shells** (machachara) buzz; it is often played inside a **deze**, a calabash resonator (Wikipedia). In 2020 the craft of making and playing mbira/sansi in Malawi and Zimbabwe went on UNESCO's list (Wikipedia).
+- These are living traditions with their own teachers, names and ways of playing. The site's sound is a sketch from a few physics ideas, not the instrument; anything not from a source named on this page is marked unverified.
+
+## How it sounds
+
+- **Tunings** differ from family to family and do not sit on the piano's grid; **Nyamaropa** is close to Mixolydian, Katsanzaira to Dorian, Mavembe to Phrygian (Wikipedia). The site plays equal-tempered versions (unverified as mbira tunings).
+- The **buzzers** rattle only while the board swings hard (a contact noise), so the buzz follows each pluck; the **deze** adds a low resonance and a longer ring (the site's amounts).
+- Mbira music is often two interlocking parts, kushaura and kutsinhira (Wikipedia).
+
+## Play it
+
+Drawn after photos (proportions approximate, no logos). **Click the drawing** to play it, or use the buttons; turn the knobs. The grid under it shows the partials over time. The sound is the site's model, not recordings; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="wi" data-item="mbira"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="wi-step" data-item="mbira" data-set="{}" data-hit="tine:3"><p><b>A left-hand bass key, buzzers on, in the deze.</b></p></div>
+<div class="wi-step" data-item="mbira" data-set="{&quot;buzz&quot;:false}" data-hit="tine:3"><p><b>Buzzers off.</b></p></div>
+<div class="wi-step" data-item="mbira" data-set="{&quot;deze&quot;:false}" data-hit="tine:3"><p><b>Out of the deze.</b></p></div>
+<div class="wi-step" data-item="mbira" data-set="{}" data-hit="tine:16"><p><b>A right-hand key.</b></p></div>
+<div class="wi-step" data-item="mbira" data-set="{&quot;tuning&quot;:&quot;katsanzaira&quot;}" data-hit="tine:10"><p><b>Katsanzaira tuning.</b></p></div>
+```
+
+## Famous uses
+
+Where a source ties the instrument to the record or player it is named; the links are YouTube searches (no video checked).
+
+```{=html}
+<div class="wi-tracks" data-item="mbira"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="wi-q" data-a="0"><p><b>Whose instrument is the mbira dzavadzimu?</b></p><ul><li>The Shona of Zimbabwe</li><li>Trinidad's steelbands</li></ul><p class="wi-why">Wikipedia, "Mbira".</p></div>
+<div class="wi-q" data-a="0"><p><b>The machachara are…</b></p><ul><li>Buzzers (bottle caps, shells)</li><li>The keys</li></ul><p class="wi-why">Wikipedia.</p></div>
+<div class="wi-q" data-a="0"><p><b>The deze is…</b></p><ul><li>A calabash resonator</li><li>A tuning</li></ul><p class="wi-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [World and Acoustic Instruments Compared](world-instruments-compare.html?a=mbira&b=kalimba): this one beside another, settings translated.
+- [Tuning systems](tuning-systems.qmd): tunings that are not the piano's.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/world-instruments.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/world-instruments.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Lamellophone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Lamellophone](https://en.wikipedia.org/wiki/Lamellophone). Plucked tines; many African names (mbira, likembe, kalimba, sanza); marimbula.
+
+"Mbira." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Mbira](https://en.wikipedia.org/wiki/Mbira). Shona instrument of Zimbabwe; lamellophone; Hugh Tracey's kalimba (late 1950s) after the nyunga nyunga; inharmonic overtones strongest in the attack; adjacent tines vibrate; lowest notes in the centre is common; tunings not on the Western grid; Nyamaropa ~Mixolydian, Katsanzaira ~Dorian, Mavembe ~Phrygian; mbira dzavadzimu 22-28 keys, three registers (two left, one right); bottle-cap buzzers (machachara); deze calabash resonator; Nhema Musasa; UNESCO 2020.
+
+**For students**
+
+"Dumisani Maraire." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Dumisani_Maraire](https://en.wikipedia.org/wiki/Dumisani_Maraire). Nyunga nyunga mbira player; 1-15 number notation; Chemutengure.
+
+"Stella Chiweshe." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Stella_Chiweshe](https://en.wikipedia.org/wiki/Stella_Chiweshe). Known internationally for mbira dzavadzimu; learned 1966-69 against taboos and colonial bans.
+:::
+<!-- /works-cited -->
+

@@ -1,0 +1,96 @@
+---
+title: "Mysteriously Hard to Research"
+toc: true
+toc-depth: 2
+description: "Topics that scholars write about in journals but that are hard to find with an ordinary search: what they are, who has written on them, and which have lessons here. Starts with rap flow."
+instruments: [other]
+topics: [hard-to-research, research]
+has: []
+---
+
+Some music topics are everywhere in everyday listening, and there's careful research on them, but an ordinary
+web search almost never finds it. You get fan forums, "how to" videos and opinion pieces. The scholarship is in
+**music theory and popular music journals**, under names you wouldn't think to search for. "Flow" is easy to
+search, but who would search for "metrical techniques" or "microtiming" or "SRDC"?
+
+Each lesson in this section takes one such topic. It reads the research, says how much of each source was
+actually read, and turns the findings into something you can hear and try.
+
+## Lessons so far
+
+- [Rap Flow 1: How Rap Flow Works, and How It Changed](rap-flow.qmd): flow grids, rhyme and accent placement,
+  triplet flow, on and off the beat, and whether rap really got "more complex".
+- [Rap Flow 2: Reading List](rap-flow-reading.qmd): the sources behind it.
+
+## How to find this kind of research yourself
+
+- **Search the journals directly.** *Music Theory Online* (mtosmt.org) is free, and so are *Intégral* and
+  *Empirical Musicology Review*. *Popular Music*, the *Journal of Popular Music Studies* and *Music Theory
+  Spectrum* are often in a school or university library.
+- **Use the scholars' words.** Try "corpus study", "metrical", "microtiming", "timbre", "form" or
+  "analysis" with the genre name, rather than "how to".
+- **Follow the reference lists.** One good article leads to the five before it. Rap Flow started from Adams
+  (2009) and grew from there.
+- **Look for dissertations.** University repositories often have full PhD dissertations free, like Waller's on
+  rap flow.
+
+## Topics waiting for a lesson
+
+::: {.htr-warn}
+**Not checked yet.** The names and titles below were written from memory as starting points. None has been
+looked up or read for this site yet, so treat each one as a lead, not a citation. Each will be checked when its
+lesson is written, the same way Rap Flow's sources were.
+:::
+
+### Rhythm and groove
+
+These are the closest to Rap Flow. The flow grid and its on/off-the-grid slider would carry over.
+
+| Topic | What it is | Leads (unchecked) | Why it's hard to find |
+|---|---|---|---|
+| **Microtiming and "pocket"** | How far ahead of or behind the beat players sit in funk, J Dilla-style hip-hop and swing | Anne Danielsen (*Musical Rhythm in the Age of Digital Reproduction*; the RITMO centre, Oslo); work on swing ratios | Students search "groove" or "pocket" and get gear reviews |
+| **The EDM build-up and drop** | How dance tracks build tension and release it | Mark Butler, *Unlocking the Groove*; Solberg on the drop | Producers' tutorials drown out the analysis |
+| **Metal rhythm and djent** | Odd groupings over a steady 4/4 (Meshuggah) | Jonathan Pieslak on Meshuggah | Searches return guitar lessons |
+| **Clave and timeline patterns** | The rhythm a whole groove is organised around | Godfried Toussaint, *The Geometry of Musical Rhythm* | The maths side is in computer science journals |
+
+### Form and harmony in popular music
+
+| Topic | What it is | Leads (unchecked) | Why it's hard to find |
+|---|---|---|---|
+| **Pop song form** | Verse, prechorus, chorus; the "SRDC" phrase (statement, restatement, departure, conclusion) | Trevor de Clercq, Drew Nobile, Jay Summach; John Covach on rock form | The terms are the scholars' own, so a normal search misses them |
+| **Rock harmony that isn't textbook harmony** | Melody and chords that don't follow common-practice rules; modal and pentatonic rock | David Temperley ("melodic-harmonic divorce"), Christopher Doll, *Hearing Harmony*; Nicole Biamonte; the de Clercq–Temperley RS200 corpus | Textbooks teach Bach's rules; this work explains why rock breaks them |
+| **Loops versus progressions** | Repeating chord loops as their own kind of harmony | Mark Spicer; Richard Cohn | Overlaps with the site's Everyday Tonality lessons |
+
+### Voice, timbre and the studio
+
+| Topic | What it is | Leads (unchecked) | Why it's hard to find |
+|---|---|---|---|
+| **Timbre and the singing voice** | How vocal sound itself is analysed | Kate Heidemann on vocal timbre; Megan Lavengood on 1980s synth sounds; Zachary Wallmark, *Nothing but Noise* | "Timbre" is a word students rarely search |
+| **Auto-Tune as style** | Pitch correction used on purpose, as a sound | Ragnhild Brøvig-Hanssen and Anne Danielsen, *Digital Signatures*; Catherine Provenzano | Searches return plugin tutorials |
+| **Sampling as composition** | How beat-makers think about choosing and flipping samples | Joseph Schloss, *Making Beats*; Justin Williams | Legal cases and gear crowd it out |
+
+### Genres
+
+| Topic | What it is | Leads (unchecked) | Why it's hard to find |
+|---|---|---|---|
+| **K-pop** | Song form and genre-switching inside one song | Articles in *Music Theory Online* and *Popular Music* | Fan writing far outnumbers analysis |
+| **Reggaeton and dembow** | The dembow rhythm and where it came from | Wayne Marshall; Raquel Rivera and Deborah Pacini Hernandez (eds.), *Reggaeton* | Much of the history is in ethnomusicology |
+| **Video game music** | Loops, music that changes with the game, chiptune limits | Tim Summers; Elizabeth Medina-Gray (modular music); the *Journal of Sound and Music in Games* | A young field, in its own journals |
+| **Film music's "Hollywood harmony"** | The chord moves behind the epic, heroic and uncanny sounds of film scores | Frank Lehman, *Hollywood Harmony* | Students know the sound but not its name |
+| **Minimalism and phase music** | Reich's and Glass's processes | Richard Cohn, John Roeder, Ian Quinn | Analysis sits in theory journals |
+| **Musical theatre songs** | The "I want" song and other song types | Paul Laird; Jack Viertel, *The Secret Life of the American Musical* (written for a general reader) | Mostly in books, not online |
+
+### Which next
+
+The best candidates for the next lessons, in order:
+
+1. **Microtiming and pocket.** It reuses the flow grid, and the research is strong.
+2. **The EDM drop.** Students hear it every day.
+3. **Pop song form.** There's plenty of free *Music Theory Online* writing, and it links to Pop Themes.
+4. **Rock harmony.** The RS200 corpus is already on the site.
+
+```{=html}
+<style>
+.htr-warn{border-left:3px solid #e67700;padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+</style>
+```

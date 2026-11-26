@@ -1,0 +1,17 @@
+/* World and acoustic instrument widgets (apps/shared/lessons/world-instruments.js) */
+:root { --wi-bg: #fff; --wi-ink: #16181b; --wi-dim: #5b6168; --wi-line: #c4c8ce; --wi-hot: #b86e00; --wi-g: #2a8a3a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --wi-bg: #111; --wi-ink: #e8e8e8; --wi-dim: #9aa0a6; --wi-line: #3a3e43; --wi-hot: #ffb000; --wi-g: #6fd17f; } }
+:root[data-theme="dark"] { --wi-bg: #111; --wi-ink: #e8e8e8; --wi-dim: #9aa0a6; --wi-line: #3a3e43; --wi-hot: #ffb000; --wi-g: #6fd17f; }
+.wi-w { border: 1px solid var(--wi-line); border-radius: 8px; padding: .5rem; margin: .6rem 0; min-width: 0; }
+.wi-head { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; margin-bottom: .3rem; }
+.wi-face { max-width: 700px; } .wi-face svg { cursor: pointer; } .wi-face .fp-svg { max-width: 100%; min-width: 260px; height: auto; }
+.wi-bar { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin: .35rem 0; font-size: .85rem; }
+.wi-bar button, .wic-tr button, .wi-hear { font: inherit; font-size: .85rem; padding: .15rem .6rem; border: 1px solid var(--wi-line); border-radius: 5px; background: transparent; color: inherit; cursor: pointer; }
+.wi-svg { width: 100%; height: auto; display: block; max-width: 640px; } .wi-bg { fill: var(--wi-bg); } .wi-cell { fill: var(--wi-hot); } .wi-svg text { font-size: 9px; fill: var(--wi-dim); font-family: system-ui, sans-serif; }
+.wi-info { font-size: .85rem; color: var(--wi-dim); margin: .2rem 0; }
+.wic-cols { display: grid; grid-template-columns: 1fr; gap: .6rem; } @media (min-width: 1000px) { .wic-cols { grid-template-columns: 1fr 1fr; } } .wic-cols > div { min-width: 0; }
+.wic-tr { border: 1px dashed var(--wi-line); border-radius: 8px; padding: .5rem; display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.wic-res { flex-basis: 100%; font-size: .9rem; } .wic-q { padding: 0 .4rem; border-radius: 4px; border: 1px solid; } .wic-exact { color: var(--wi-g); } .wic-approx { color: var(--wi-hot); } .wic-lost { color: #c03030; }
+.wi-step { margin: .5rem 0; } .wi-hear { margin-right: .5rem; } .wi-why { color: var(--wi-dim); }
+.wi-q li { cursor: pointer; } .wi-q li.wi-right { font-weight: 700; color: var(--wi-g); } .wi-q li.wi-wrong { text-decoration: line-through; color: #c03030; }
+.wi-tl li { margin: .3rem 0; } .wi-who { color: var(--wi-dim); font-size: .9em; }

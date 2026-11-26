@@ -1,0 +1,95 @@
+---
+title: "Meet the steel pan (tenor)"
+toc: true
+toc-depth: 2
+description: "A first look at the tenor steel pan: note areas in fourths and fifths, tuned partials at 1:2:3, strike place and stick. Click a note to play. Famous uses, quiz."
+instruments: [other]
+topics: [gear]
+has: [interactive, svg]
+---
+
+A first stop before [World and Acoustic Instruments Compared](world-instruments-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the steel pan (tenor) is.
+2. Learn how it makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Look up famous uses.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- From **Trinidad and Tobago**, developed in the 1930s-40s out of Carnival percussion (tamboo bamboo); made from 55-gallon oil drums from about 1947; the national instrument (Wikipedia, "Steelpan").
+- The tenor (lead) pan's notes are laid out in **fourths and fifths**, Anthony Williams's arrangement, now the standard for lead pans (Wikipedia). The ring order and range drawn here (a low-C tenor, 29 notes) are unverified: makers differ.
+- These are living traditions with their own teachers, names and ways of playing. The site's sound is a sketch from a few physics ideas, not the instrument; anything not from a source named on this page is marked unverified.
+
+## How it sounds
+
+- Each note is a shaped area of the steel; the **bigger** the area, the **lower** the note (Wikipedia).
+- Tuners tune not only the note but its **overtones**: fundamental, second and third partial (Wikipedia: Bertie Marshall and Alan Gervais). Here those are at **1 : 2 : 3** (the note, its octave, the octave and a fifth).
+- A stroke near the edge of the area brings out the upper partials; a harder stick tip is brighter (the site's amounts).
+
+## Play it
+
+Drawn after photos (proportions approximate, no logos). **Click the drawing** to play it, or use the buttons; turn the knobs. The grid under it shows the partials over time. The sound is the site's model, not recordings; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="wi" data-item="tenorpan"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="wi-step" data-item="tenorpan" data-set="{}" data-hit="note:0"><p><b>C4, centre.</b></p></div>
+<div class="wi-step" data-item="tenorpan" data-set="{&quot;place&quot;:&quot;edge&quot;}" data-hit="note:0"><p><b>Near the edge.</b> More octave and twelfth.</p></div>
+<div class="wi-step" data-item="tenorpan" data-set="{&quot;oct&quot;:30}" data-hit="note:0"><p><b>Octave tuned 30 cents sharp.</b> It sounds sour: why tuners tune partials.</p></div>
+<div class="wi-step" data-item="tenorpan" data-set="{&quot;stick&quot;:&quot;hard&quot;}" data-hit="note:12"><p><b>C5, hard stick.</b></p></div>
+<div class="wi-step" data-item="tenorpan" data-set="{}" data-hit="note:1"><p><b>G4: the next area round the ring is a fifth up.</b></p></div>
+```
+
+## Famous uses
+
+Where a source ties the instrument to the record or player it is named; the links are YouTube searches (no video checked).
+
+```{=html}
+<div class="wi-tracks" data-item="tenorpan"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="wi-q" data-a="0"><p><b>Where does the steelpan come from?</b></p><ul><li>Trinidad and Tobago</li><li>Jamaica</li><li>Ghana</li></ul><p class="wi-why">Wikipedia, "Steelpan".</p></div>
+<div class="wi-q" data-a="0"><p><b>A pan note&#x27;s tuned partials here are at…</b></p><ul><li>1 : 2 : 3</li><li>1 : 2.76 : 5.4</li></ul><p class="wi-why"></p></div>
+<div class="wi-q" data-a="0"><p><b>Bigger note area:</b></p><ul><li>Lower note</li><li>Higher note</li></ul><p class="wi-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [World and Acoustic Instruments Compared](world-instruments-compare.html?a=tenorpan&b=kalimba): this one beside another, settings translated.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/world-instruments.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/world-instruments.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Steelpan." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Steelpan](https://en.wikipedia.org/wiki/Steelpan). Trinidad and Tobago, 1930s-40s, from tamboo bamboo; national instrument; 55-gallon drums from about 1947; TASPO 1951; Anthony Williams's fourths and fifths layout, standard for lead pans; overtone tuning (fundamental, second, third partial) by Bertie Marshall and Alan Gervais; bigger area lower; tuned with hammers and strobe tuners.
+
+**For students**
+
+"Ellie Mannette." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ellie_Mannette](https://en.wikipedia.org/wiki/Ellie_Mannette). Trinidadian pan maker and player, "father of the modern steel drum"; sank the drum's top; 1999 National Heritage Fellowship.
+:::
+<!-- /works-cited -->
+

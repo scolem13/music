@@ -63,6 +63,11 @@ website:
           contents:
             - lessons/grooves-songs.qmd
             - lessons/grooves-learning.qmd
+        - section: "Mysteriously Hard to Research"
+          contents:
+            - lessons/hard-to-research.qmd
+            - lessons/rap-flow.qmd
+            - lessons/rap-flow-reading.qmd
         - section: "Pop and Rock"
           contents:
             - lessons/first-rock-song.qmd
@@ -323,6 +328,14 @@ website:
                 - lessons/intro-hi-hats.qmd
                 - lessons/intro-china.qmd
                 - lessons/intro-splash.qmd
+            - section: "World and acoustic"
+              contents:
+                - lessons/world-instruments-compare.qmd
+                - lessons/intro-sitar.qmd
+                - lessons/intro-tanpura.qmd
+                - lessons/intro-steel-pan.qmd
+                - lessons/intro-kalimba.qmd
+                - lessons/intro-mbira.qmd
             - section: "Basses"
               contents:
                 - lessons/bass-compare.qmd

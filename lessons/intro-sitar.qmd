@@ -1,0 +1,103 @@
+---
+title: "Meet the sitar"
+toc: true
+toc-depth: 2
+description: "A first look at the sitar: movable frets, the jawari bridge buzz, sympathetic strings tuned to the raga, meend. Click the drawing to play. Famous uses, quiz."
+instruments: [other]
+topics: [gear]
+has: [interactive, svg]
+---
+
+A first stop before [World and Acoustic Instruments Compared](world-instruments-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the sitar is.
+2. Learn how it makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Look up famous uses.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- A long-necked lute of **Hindustani** (North Indian) classical music, known from the 18th century (Wikipedia, "Sitar").
+- **6-7 played strings** run over **curved, movable frets**; the rest (often **13** on the instrumental style) are **sympathetic strings** (tarb, taraf) under the frets (Wikipedia).
+- The main string is tuned a fourth above Sa; drone strings (chikari) give Sa and Pa (Wikipedia: the "Kharaj Pancham" tuning). The player retunes for each raga.
+- These are living traditions with their own teachers, names and ways of playing. The site's sound is a sketch from a few physics ideas, not the instrument; anything not from a source named on this page is marked unverified.
+
+## How it sounds
+
+- **Jawari**: the string grazes a wide, curved bridge; as its swing dies, the touching point creeps up the bridge's slope, and that makes a long, moving buzz of overtones (Wikipedia, "Tanpura", "Sitar"). Here the upper partials **grow** while the lowest ones fade: the opposite of a guitar string. The amounts are the site's.
+- **Sympathetic strings** ring by themselves when a played note matches one of them (or one of its overtones): here 13 tuned to the raga's notes (which notes, in what order: the site's choice, unverified).
+- **Meend**: pulling the main string sideways over a fret bends the note up, up to about seven semitones (Wikipedia).
+
+## Play it
+
+Drawn after photos (proportions approximate, no logos). **Click the drawing** to play it, or use the buttons; turn the knobs. The grid under it shows the partials over time. The sound is the site's model, not recordings; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="wi" data-item="sitar"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="wi-step" data-item="sitar" data-set="{}" data-hit="fret:3"><p><b>A fretted note, jawari on.</b> Listen to the buzz bloom.</p></div>
+<div class="wi-step" data-item="sitar" data-set="{&quot;jawari&quot;:0}" data-hit="fret:3"><p><b>Jawari off.</b> A plain, guitar-like pluck that only gets duller.</p></div>
+<div class="wi-step" data-item="sitar" data-set="{&quot;taraf&quot;:false}" data-hit="jod"><p><b>Sa, sympathetic strings damped.</b></p></div>
+<div class="wi-step" data-item="sitar" data-set="{}" data-hit="jod"><p><b>Sa, sympathetic strings free.</b> The shimmer after the pluck.</p></div>
+<div class="wi-step" data-item="sitar" data-set="{&quot;meend&quot;:3}" data-hit="fret:3"><p><b>Meend.</b> The same fret, the string pulled up three semitones.</p></div>
+<div class="wi-step" data-item="sitar" data-set="{}" data-hit="taraf"><p><b>Strum the taraf.</b> The raga's notes, all at once.</p></div>
+<div class="wi-step" data-item="sitar" data-set="{&quot;raga&quot;:&quot;malkauns&quot;}" data-hit="fret:5"><p><b>Raga Malkauns.</b> The frets move (look at the drawing).</p></div>
+```
+
+## Famous uses
+
+Where a source ties the instrument to the record or player it is named; the links are YouTube searches (no video checked).
+
+```{=html}
+<div class="wi-tracks" data-item="sitar"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="wi-q" data-a="1"><p><b>What are the taraf?</b></p><ul><li>The frets</li><li>Sympathetic strings under the frets</li><li>The gourds</li></ul><p class="wi-why">Wikipedia, "Sitar".</p></div>
+<div class="wi-q" data-a="0"><p><b>What does the curved bridge (jawari) do to the sound over time?</b></p><ul><li>Upper overtones bloom while the note dies</li><li>Nothing</li><li>It makes it duller faster</li></ul><p class="wi-why"></p></div>
+<div class="wi-q" data-a="1"><p><b>Meend is…</b></p><ul><li>A drum stroke</li><li>Pulling the string to bend the note</li><li>A tuning peg</li></ul><p class="wi-why"></p></div>
+```
+
+## Next
+
+- [World and Acoustic Instruments Compared](world-instruments-compare.html?a=sitar&b=tanpura): this one beside another, settings translated.
+- [Ragas](ragas.qmd): the six ragas whose notes the frets and sympathetic strings use here.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/world-instruments.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/world-instruments.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Sitar." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Sitar](https://en.wikipedia.org/wiki/Sitar). 18-21 strings, 6-7 played over curved movable frets, the rest sympathetic (tarb); two bridges; the wide rounded bridge and jawari; main string a fourth above Sa; Kharaj Pancham tuning; meend up to about seven semitones; instrumental style typically 13 sympathetic strings; Norwegian Wood, Love You To, Within You Without You, Paint It Black.
+
+"Tanpura." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tanpura](https://en.wikipedia.org/wiki/Tanpura). Four strings, 5-8-8-1 (Pa-sa-sa-Sa), Ma for ragas without Pa, Dha or Ni for ragas without Pa and shuddha Ma (Marwa, Hindol); jivari: the curved bridge, grazing contact creeping up the slope over 3-10 s; the cotton thread shifts it; Miraj and Tanjore styles; electronic tanpuras.
+
+**For students**
+
+"Love You To." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Love_You_To](https://en.wikipedia.org/wiki/Love_You_To). Sitar, tabla and tambura; the first Beatles song fully in the Indian classical style.
+
+"Within You Without You." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Within_You_Without_You](https://en.wikipedia.org/wiki/Within_You_Without_You). Sitar, tambura, dilruba, tabla; three tamburas giving a dense jivari (Hannan).
+:::
+<!-- /works-cited -->
+

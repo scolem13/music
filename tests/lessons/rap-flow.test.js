@@ -11,7 +11,7 @@ if (process.env.NEG) pats.push(["NEG", "x.x.x.x.x.x.x.x.x"]);
 function len(bar) {
   let tot = 0;
   for (const beat of bar.trim().split(/\s+/)) {
-    const tr = beat.match(/^\(3:2:\d+(.*)$/), body = tr ? tr[1] : beat;
+    const tr = beat.match(/^\(3(?::2:\d+)?(.*)$/), body = tr ? tr[1] : beat;
     let s = 0; for (const t of body.replace(/"[^"]*"|![^!]*!/g, "").matchAll(/[Bz](\d*)/g)) s += t[1] ? +t[1] : 1;
     tot += tr ? s * 2 / 3 : s;
   }

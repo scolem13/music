@@ -40,6 +40,11 @@
     var per = b.trip ? 3 : 4, out = [];
     for (var beat = 0; beat < 4; beat++) {
       var cells = b.cells.slice(beat * per, beat * per + per), toks = [], i = 0;
+      if (b.trip) {   // one eighth-note triplet per cell (abcjs draws merged triplet values badly); an empty beat is a quarter rest
+        if (!cells.some(isOn)) { out.push("z4"); continue; }
+        out.push("(3" + cells.map(function (c) { return isOn(c) ? (rhyme(c) ? '"^' + rhyme(c) + '"' : "") + (accent(c) ? "!>!" : "") + "B2" : "z2"; }).join(""));
+        continue;
+      }
       while (i < per) {
         var c = cells[i], len = 1;
         if (isOn(c)) { while (i + len < per && cells[i + len] === "-") len++; }

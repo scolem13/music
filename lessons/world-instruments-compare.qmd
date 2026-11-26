@@ -1,0 +1,85 @@
+---
+title: "World and Acoustic Instruments Compared"
+toc: true
+toc-depth: 2
+description: "Sitar, tanpura, tenor steel pan, kalimba and Shona mbira on simple physical models: the jawari bridge buzz, sympathetic strings tuned to the raga, meend, the tanpura's cotton thread and drone, the pan's tuned partials at 1:2:3, tines, buzzers and the deze. Click the drawings to play; A/B two and translate a tuning where it means something."
+instruments: [other]
+topics: [gear]
+has: [interactive, svg]
+---
+
+Five instruments from four traditions, each drawn and played from a simple physical model. Pick any two, play one, hear both, and translate a tuning where that makes sense. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Learn what shapes each sound: a curved bridge, sympathetic strings, tuned overtones, a clamped tine, buzzers.
+2. Click a drawing to play a fret, a string, a note area or a tine; turn its knobs.
+3. Translate a tuning (sitar and tanpura, kalimba and mbira) and see what carries over and what is lost; for other pairs the page says why it skips.
+:::
+
+These are living traditions with their own teachers, names and ways of playing. The sounds here are sketches from a few physics ideas, not the instruments; anything not from a source in the Works Cited is marked unverified.
+
+## What shapes each sound
+
+- **Jawari (sitar, tanpura)**: the string grazes a wide, curved bridge; as its swing dies the touching point creeps up the bridge's slope over seconds, making a long, moving buzz of overtones (Wikipedia, "Tanpura", "Sitar"). On the tanpura a **cotton thread** moves the touching place (Wikipedia). Here the upper partials grow as the note fades (the site's sketch, not a contact simulation).
+- **Sympathetic strings (sitar)**: strings under the frets that ring when a played note matches them (Wikipedia, "Sitar"); here 13 tuned to the raga's notes (which notes and their order: unverified). The frets are movable (Wikipedia); here they sit on the raga's notes, using the six ragas of [Ragas](ragas.qmd).
+- **Meend (sitar)**: pulling the string sideways over the curved fret bends the note up, up to about seven semitones (Wikipedia).
+- **Steel pan**: each note area is tuned with its overtones (fundamental, second and third partial: Wikipedia, "Steelpan"); here at 1 : 2 : 3. Bigger area, lower note. Lead pans are laid out in **fourths and fifths** (Anthony Williams: Wikipedia).
+- **Tines (kalimba, mbira)**: a clamped bar's overtones are inharmonic and die fast, leaving an almost pure tone (Wikipedia, "Mbira"). The mbira's **buzzers** (machachara) and **deze** (calabash resonator) are part of its sound (Wikipedia).
+
+## Two side by side
+
+Choose an instrument for each side. **Click the drawing**, or use the buttons. The grid under each shows the partials (up) over time (across): with jawari the upper rows grow. The tanpura's **▶ Drone** loops until stopped.
+
+```{=html}
+<div class="wic" data-a="sitar" data-b="tanpura"></div>
+```
+
+## The pan and the tines
+
+```{=html}
+<div class="wic" data-a="tenorpan" data-b="kalimba"></div>
+```
+
+## Translating a tuning
+
+- **Sitar → tanpura**: Sa and the jawari amount carry over; the first string follows the raga (Pa; Ma if the raga has no Pa; Ni or Dha if it has neither Pa nor shuddha Ma: Wikipedia, "Tanpura"). The melody, frets, meend and sympathetic strings are lost. **Tanpura → sitar**: Sa carries over; a raga is chosen that fits the drone (approx: many fit).
+- **Kalimba ↔ mbira**: the tonic and tuning carry over (both are retuned by moving keys); the number of keys and the layout differ, so every note moves place (approx); buzzers and the deze are lost going to the kalimba.
+- **Any other pair**: skipped, and the page says so. A steel note and a plucked string share only a pitch, and moving a pitch is not a translation.
+
+## What is this site's own
+
+- Every number of the models (the jawari band and its gain, the thread's range, the taraf coupling and bandwidth, the pan's untuned modes, strike and stick amounts, the buzz threshold, the deze resonance), the taraf tuning, the sitar's fret count, the tenor pan's ring order and range, the kalimba's first side, the mbira's key order and its equal-tempered tunings. The drawings are after photos, not measured.
+- Nobody has compared the sound with the real instruments.
+
+## Meet each one
+
+- [Meet the sitar](intro-sitar.qmd) · [Meet the tanpura](intro-tanpura.qmd) · [Meet the steel pan (tenor)](intro-steel-pan.qmd) · [Meet the kalimba](intro-kalimba.qmd) · [Meet the mbira dzavadzimu](intro-mbira.qmd)
+- Tunings beyond the piano's: [Tuning systems](tuning-systems.qmd)
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/world-instruments.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/world-instruments.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Lamellophone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Lamellophone](https://en.wikipedia.org/wiki/Lamellophone). Plucked tines; many African names (mbira, likembe, kalimba, sanza); marimbula.
+
+"Mbira." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Mbira](https://en.wikipedia.org/wiki/Mbira). Shona instrument of Zimbabwe; lamellophone; Hugh Tracey's kalimba (late 1950s) after the nyunga nyunga; inharmonic overtones strongest in the attack; adjacent tines vibrate; lowest notes in the centre is common; tunings not on the Western grid; Nyamaropa ~Mixolydian, Katsanzaira ~Dorian, Mavembe ~Phrygian; mbira dzavadzimu 22-28 keys, three registers (two left, one right); bottle-cap buzzers (machachara); deze calabash resonator; Nhema Musasa; UNESCO 2020.
+
+"Sitar." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Sitar](https://en.wikipedia.org/wiki/Sitar). 18-21 strings, 6-7 played over curved movable frets, the rest sympathetic (tarb); two bridges; the wide rounded bridge and jawari; main string a fourth above Sa; Kharaj Pancham tuning; meend up to about seven semitones; instrumental style typically 13 sympathetic strings; Norwegian Wood, Love You To, Within You Without You, Paint It Black.
+
+"Steelpan." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Steelpan](https://en.wikipedia.org/wiki/Steelpan). Trinidad and Tobago, 1930s-40s, from tamboo bamboo; national instrument; 55-gallon drums from about 1947; TASPO 1951; Anthony Williams's fourths and fifths layout, standard for lead pans; overtone tuning (fundamental, second, third partial) by Bertie Marshall and Alan Gervais; bigger area lower; tuned with hammers and strobe tuners.
+
+"Tanpura." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tanpura](https://en.wikipedia.org/wiki/Tanpura). Four strings, 5-8-8-1 (Pa-sa-sa-Sa), Ma for ragas without Pa, Dha or Ni for ragas without Pa and shuddha Ma (Marwa, Hindol); jivari: the curved bridge, grazing contact creeping up the slope over 3-10 s; the cotton thread shifts it; Miraj and Tanjore styles; electronic tanpuras.
+:::
+<!-- /works-cited -->
+

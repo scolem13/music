@@ -1,0 +1,97 @@
+---
+title: "Meet the kalimba"
+toc: true
+toc-depth: 2
+description: "A first look at the kalimba: Hugh Tracey's design after the nyunga nyunga, tines from a low centre alternating left and right, inharmonic overtones. Famous uses, quiz."
+instruments: [other]
+topics: [gear]
+has: [interactive, svg]
+---
+
+A first stop before [World and Acoustic Instruments Compared](world-instruments-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the kalimba is.
+2. Learn how it makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Look up famous uses.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- Metal **tines** on a board or box, plucked with the thumbs: a **lamellophone** (Wikipedia, "Mbira").
+- The name and design are **Hugh Tracey**'s (late 1950s), modelled on the Zimbabwean **mbira nyunga nyunga**; it spread the instrument outside Africa (Wikipedia). It is not the mbira, and the mbira is much older.
+- 17 tines here, in a major scale, **lowest in the centre**, going up **alternately left and right** (lowest-in-the-centre is common: Wikipedia; which side first: unverified).
+
+## How it sounds
+
+- A tine is a clamped bar: its overtones are at about **6.3** and **17.5** times the note, **inharmonic**; they are strongest at the attack and die fast, leaving an almost pure tone (Wikipedia, "Mbira").
+- Neighbouring tines vibrate a little too (Wikipedia). Shorter tine: higher note (here the lengths are drawn from the pitch).
+
+## Play it
+
+Drawn after photos (proportions approximate, no logos). **Click the drawing** to play it, or use the buttons; turn the knobs. The grid under it shows the partials over time. The sound is the site's model, not recordings; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="wi" data-item="kalimba"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="wi-step" data-item="kalimba" data-set="{}" data-hit="tine:0"><p><b>The centre tine: the lowest.</b></p></div>
+<div class="wi-step" data-item="kalimba" data-set="{}" data-hit="tine:1"><p><b>One to the left: the next note up.</b></p></div>
+<div class="wi-step" data-item="kalimba" data-set="{}" data-hit="tine:2"><p><b>One to the right: the next.</b></p></div>
+<div class="wi-step" data-item="kalimba" data-set="{&quot;buzz&quot;:true}" data-hit="tine:0"><p><b>With a buzzer.</b> (An mbira has them; this is a what-if.)</p></div>
+<div class="wi-step" data-item="kalimba" data-set="{&quot;tuning&quot;:&quot;nyamaropa&quot;}" data-hit="tine:6"><p><b>Retuned to Nyamaropa.</b> The seventh note drops.</p></div>
+```
+
+## Famous uses
+
+Where a source ties the instrument to the record or player it is named; the links are YouTube searches (no video checked).
+
+```{=html}
+<div class="wi-tracks" data-item="kalimba"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="wi-q" data-a="0"><p><b>Who designed and named the kalimba?</b></p><ul><li>Hugh Tracey</li><li>Maurice White</li></ul><p class="wi-why">Wikipedia, "Mbira".</p></div>
+<div class="wi-q" data-a="0"><p><b>Where is the lowest tine?</b></p><ul><li>In the centre</li><li>On the far left</li></ul><p class="wi-why"></p></div>
+<div class="wi-q" data-a="0"><p><b>A tine&#x27;s overtones are…</b></p><ul><li>Inharmonic and short</li><li>Exact harmonics that ring longest</li></ul><p class="wi-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [World and Acoustic Instruments Compared](world-instruments-compare.html?a=kalimba&b=mbira): this one beside another, settings translated.
+- [Tuning systems](tuning-systems.qmd): tunings that are not the piano's.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/world-instruments.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/world-instruments.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Lamellophone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Lamellophone](https://en.wikipedia.org/wiki/Lamellophone). Plucked tines; many African names (mbira, likembe, kalimba, sanza); marimbula.
+
+"Mbira." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Mbira](https://en.wikipedia.org/wiki/Mbira). Shona instrument of Zimbabwe; lamellophone; Hugh Tracey's kalimba (late 1950s) after the nyunga nyunga; inharmonic overtones strongest in the attack; adjacent tines vibrate; lowest notes in the centre is common; tunings not on the Western grid; Nyamaropa ~Mixolydian, Katsanzaira ~Dorian, Mavembe ~Phrygian; mbira dzavadzimu 22-28 keys, three registers (two left, one right); bottle-cap buzzers (machachara); deze calabash resonator; Nhema Musasa; UNESCO 2020.
+
+**For students**
+
+"Earth, Wind & Fire." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Earth,_Wind_%26_Fire](https://en.wikipedia.org/wiki/Earth,_Wind_%26_Fire). Known for its kalimba sound; "Kalimba Story"; Kalimba Productions.
+:::
+<!-- /works-cited -->
+

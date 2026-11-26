@@ -1,0 +1,140 @@
+{
+ "note": "Famous uses per world instrument (lessons/world-instruments-compare.qmd, intro-*.qmd). All are YouTube SEARCH links, none oEmbed-checked (no video id came from a source). useSrc names the source tying the instrument to the record or player; null = unverified.",
+ "tracks": [
+  {
+   "item": "sitar",
+   "artist": "The Beatles",
+   "song": "Norwegian Wood (This Bird Has Flown)",
+   "url": "https://www.youtube.com/results?search_query=The+Beatles+Norwegian+Wood+%28This+Bird+Has+Flown%29",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Sitar\" (George Harrison played sitar on it)"
+  },
+  {
+   "item": "sitar",
+   "artist": "The Beatles",
+   "song": "Love You To",
+   "url": "https://www.youtube.com/results?search_query=The+Beatles+Love+You+To",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Sitar\" and Wikipedia, \"Love You To\""
+  },
+  {
+   "item": "sitar",
+   "artist": "The Rolling Stones",
+   "song": "Paint It Black",
+   "url": "https://www.youtube.com/results?search_query=The+Rolling+Stones+Paint+It+Black",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Sitar\" (Brian Jones used a sitar)"
+  },
+  {
+   "item": "tanpura",
+   "artist": "The Beatles",
+   "song": "Within You Without You",
+   "url": "https://www.youtube.com/results?search_query=The+Beatles+Within+You+Without+You",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Within You Without You\" (tambura drone; three tamburas, \"pulsating jivari\", after Michael Hannan)"
+  },
+  {
+   "item": "tanpura",
+   "artist": "The Beatles",
+   "song": "Tomorrow Never Knows",
+   "url": "https://www.youtube.com/results?search_query=The+Beatles+Tomorrow+Never+Knows",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Tomorrow Never Knows\" (a C drone on tambura)"
+  },
+  {
+   "item": "tanpura",
+   "artist": "The Beatles",
+   "song": "Love You To",
+   "url": "https://www.youtube.com/results?search_query=The+Beatles+Love+You+To",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Love You To\" (sitar, tabla and tambura)"
+  },
+  {
+   "item": "tenorpan",
+   "artist": "Ellie Mannette",
+   "song": "steel pan",
+   "url": "https://www.youtube.com/results?search_query=Ellie+Mannette+steel+pan",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Ellie Mannette\" names him the \"father of the modern steel drum\"; the search is for his playing, no recording named"
+  },
+  {
+   "item": "tenorpan",
+   "artist": "Trinidad Panorama",
+   "song": "steelband",
+   "url": "https://www.youtube.com/results?search_query=Trinidad+Panorama+steelband",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "tenorpan",
+   "artist": "Lord Kitchener",
+   "song": "Pan in A Minor",
+   "url": "https://www.youtube.com/results?search_query=Lord+Kitchener+Pan+in+A+Minor",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "kalimba",
+   "artist": "Earth, Wind & Fire",
+   "song": "Kalimba Story",
+   "url": "https://www.youtube.com/results?search_query=Earth%2C+Wind+%26+Fire+Kalimba+Story",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Earth, Wind & Fire\" (the band's kalimba sound; Maurice White)"
+  },
+  {
+   "item": "kalimba",
+   "artist": "Hugh Tracey",
+   "song": "kalimba",
+   "url": "https://www.youtube.com/results?search_query=Hugh+Tracey+kalimba",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Mbira\" (Tracey designed and sold the kalimba); no recording named"
+  },
+  {
+   "item": "kalimba",
+   "artist": "Earth, Wind & Fire",
+   "song": "Evil",
+   "url": "https://www.youtube.com/results?search_query=Earth%2C+Wind+%26+Fire+Evil",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "mbira",
+   "artist": "Stella Chiweshe",
+   "song": "mbira dzavadzimu",
+   "url": "https://www.youtube.com/results?search_query=Stella+Chiweshe+mbira+dzavadzimu",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Stella Chiweshe\" (known for mbira dzavadzimu); no recording named"
+  },
+  {
+   "item": "mbira",
+   "artist": "Dumisani Maraire",
+   "song": "Chemutengure",
+   "url": "https://www.youtube.com/results?search_query=Dumisani+Maraire+Chemutengure",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Dumisani Maraire\" (notated Chemutengure on the nyunga nyunga mbira)"
+  },
+  {
+   "item": "mbira",
+   "artist": "mbira dzavadzimu",
+   "song": "Nhemamusasa",
+   "url": "https://www.youtube.com/results?search_query=mbira+dzavadzimu+Nhemamusasa",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Mbira\" (names the piece \"Nhema Musasa\"); the search finds performances, none checked"
+  }
+ ]
+}
