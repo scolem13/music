@@ -209,3 +209,18 @@
   (oEmbed-checked 2026-11-26; `useSrc` null = unverified; settings guesses). Sources `scripts/sources/pedals.py` (Wikipedia + Guitar
   World + Boss; ElectroSmash unreachable, used only via search summaries). Tests `node tests/lessons/pedals.test.js` (`NEG=1` must
   fail), `tests/lessons/pedal-compare.cdp.js` (after rendering; `SITE=<dir>`). Not listened against real pedals.
+- Amps (2026-11-26): `apps/shared/lessons/amps.js` + `.css` (global Amps; header = signal path, what is sourced, API, markup): pure
+  per-sample models in node of the Twin Reverb (AB763 Vibrato channel: bright, stack before the volume, spring reverb, opto tremolo),
+  AC30 Top Boost (stack without Middle, hot-biased EL84s, no NFB, Cut, vib / trem), Marshall 1959 Plexi and Bassman 5F6-A (jumpered
+  channels, cathode follower, Presence), Mesa Dual Rectifier (2 cascaded stages, master, Raw / Vintage / Modern, silicon / tube
+  rectifier) and Ampeg SVT (shelves + 5-position mid + Ultra Lo / Hi). Tone stack = Yeh & Smith 2006 closed form (`Amps.stackCoef`,
+  `stackH`) + their bilinear transform; the test checks it against its own nodal solve of the components (1e-14). Push-pull power
+  stage with bias and sag (`Amps.power`), cabinet filters `Amps.CABS` (site's curves). Input = GuitarPickups (guitars + basses) through
+  `Pedals.run` ("Pedals in front": a pedal, or the page's `.pdb`). `Amps.translate` = drive (compression of a 12 dB step) then tone
+  (`Amps.curve` 80 Hz-8 kHz) -> exact / approx / lost + lost features. Panels `panels/amp-<id>.js` (FaithfulPanel adapter; panel
+  colour as a top band, unbound `n_` / `vib_` / `normal_` knobs dimmed). Pages `lessons/amp-compare.qmd` (`.ampc` `?a=&b=`, `.pdb`) +
+  `intro-{twin-reverb,ac30,plexi,bassman,dual-rectifier,svt}.qmd` by `python3 scripts/intro-instruments/amps.py`; tracks
+  `apps/shared/data/amps/tracks.json` (oEmbed-checked 2026-11-26; useSrc ties the player, not the record; settings guesses). Sources
+  `scripts/sources/amps.py`; only the formula and the Bassman values are from a source read in full; other stack values from memory
+  (unverified). Tests `node tests/lessons/amps.test.js` (`NEG=1` must fail), `tests/lessons/amp-compare.cdp.js` (after rendering;
+  `SITE=<dir>`). Not listened against real amps.

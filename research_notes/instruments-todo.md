@@ -5,7 +5,7 @@ compare page, Meet the Instruments lessons, famous tracks (oEmbed-checked), sour
 Done one at a time, in this order (2026-11-26):
 
 - [x] Pedals (2026-11-26, pedals.js, pedal-compare.qmd): fuzz (Fuzz Face, Big Muff), overdrive (Tube Screamer), wah, phaser (Phase 90), chorus (CE-2), delay (Echoplex, DM-2), pedalboard chain
-- [ ] Amps: Fender Twin, Vox AC30, Marshall Plexi, Mesa, Ampeg SVT (guitar + bass)
+- [x] Amps (2026-11-26, amps.js, amp-compare.qmd): Fender Twin Reverb, Vox AC30 Top Boost, Marshall Plexi, Fender Bassman 5F6-A, Mesa Dual Rectifier, Ampeg SVT (bass); pedals in front
 - [ ] Microphones: SM57, SM58, U87, a ribbon; polar patterns, proximity
 - [ ] Drum kits and cymbals: snares (Ludwig, DW, Gretsch...), cymbals (Zildjian K vs A...)
 - [ ] World and acoustic: sitar + tanpura (jawari, sympathetic strings), steel pan, kalimba / mbira

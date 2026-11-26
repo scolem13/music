@@ -1,0 +1,335 @@
+{
+ "note": "Famous tracks per amp (lessons/amp-compare.qmd, intro-<amp>.qmd). Each video confirmed by YouTube oEmbed 2026-11-26 (title and channel from it). useSrc ties the PLAYER or band to the amp (Wikipedia); no source here ties these exact recordings to the amp, and none gives a setting: every state is this site's guess. null = unverified.",
+ "tracks": [
+  {
+   "amp": "twin",
+   "artist": "Dire Straits",
+   "song": "Sultans of Swing",
+   "url": "https://www.youtube.com/watch?v=h0ffIJ7ZO4U",
+   "title": "Dire Straits - Sultans Of Swing (Official Music Video)",
+   "channel": "DireStraitsVEVO",
+   "player": "Mark Knopfler",
+   "useSrc": "Wikipedia, \"Fender Twin Reverb\": Mark Knopfler is among the Twin's users (ties the player to this amp, not this record)",
+   "state": {
+    "volume": 4,
+    "treble": 7,
+    "middle": 4,
+    "bass": 4,
+    "reverb": 2
+   },
+   "play": "lead"
+  },
+  {
+   "amp": "twin",
+   "artist": "The Beatles",
+   "song": "Get Back",
+   "url": "https://www.youtube.com/watch?v=IKJqecxswCA",
+   "title": "Get Back (Remastered 2009)",
+   "channel": "The Beatles - Topic",
+   "player": "George Harrison / John Lennon",
+   "useSrc": "Wikipedia, \"Fender Twin Reverb\": the Beatles used 1968 Twin Reverbs (the AC568 silverface circuit, not the blackface AB763 modelled here)",
+   "state": {
+    "volume": 5,
+    "treble": 6,
+    "middle": 5,
+    "bass": 5,
+    "reverb": 1
+   },
+   "play": "riff"
+  },
+  {
+   "amp": "twin",
+   "artist": "Grateful Dead",
+   "song": "Sugar Magnolia",
+   "url": "https://www.youtube.com/watch?v=j9zoM28TByQ",
+   "title": "Grateful Dead - Sugar Magnolia (Official Audio)",
+   "channel": "Grateful Dead",
+   "player": "Jerry Garcia",
+   "useSrc": "Wikipedia, \"Fender Twin Reverb\": Jerry Garcia is among the Twin's users (ties the player to this amp, not this record)",
+   "state": {
+    "volume": 4,
+    "treble": 6,
+    "middle": 5,
+    "bass": 4,
+    "reverb": 3
+   },
+   "play": "lead"
+  },
+  {
+   "amp": "ac30",
+   "artist": "Queen",
+   "song": "Brighton Rock",
+   "url": "https://www.youtube.com/watch?v=BUt_7TQCWtU",
+   "title": "Queen - Brighton Rock (Official Lyric Video)",
+   "channel": "Queen Official",
+   "player": "Brian May",
+   "useSrc": "Wikipedia, \"Vox AC30\": Brian May paired an AC30 with a treble booster (ties the player to this amp, not this record)",
+   "state": {
+    "volume": 9,
+    "treble": 7,
+    "bass": 4,
+    "cut": 2
+   },
+   "play": "lead"
+  },
+  {
+   "amp": "ac30",
+   "artist": "U2",
+   "song": "Where the Streets Have No Name",
+   "url": "https://www.youtube.com/watch?v=WfunypXsBO4",
+   "title": "Where The Streets Have No Name (Remastered)",
+   "channel": "U2 - Topic",
+   "player": "The Edge",
+   "useSrc": "Wikipedia, \"Vox AC30\": the Edge combined AC30s with delay pedals (ties the player to this amp, not this record)",
+   "state": {
+    "volume": 6,
+    "treble": 7,
+    "bass": 4,
+    "cut": 3
+   },
+   "play": "riff"
+  },
+  {
+   "amp": "ac30",
+   "artist": "The Shadows",
+   "song": "Apache",
+   "url": "https://www.youtube.com/watch?v=7TwULx_wDiI",
+   "title": "The Shadows - Apache (1960) 4K",
+   "channel": "Classic Hits Studio",
+   "player": "Hank Marvin",
+   "useSrc": "Wikipedia, \"Vox AC30\": Hank Marvin was the first artist to play the AC30 (ties the player to this amp, not this record)",
+   "state": {
+    "volume": 4,
+    "treble": 6,
+    "bass": 5,
+    "cut": 3
+   },
+   "play": "lead"
+  },
+  {
+   "amp": "plexi",
+   "artist": "The Jimi Hendrix Experience",
+   "song": "Voodoo Child (Slight Return)",
+   "url": "https://www.youtube.com/watch?v=L7UMubmfbH0",
+   "title": "Voodoo Child (Slight Return)",
+   "channel": "Jimi Hendrix - Topic",
+   "player": "Jimi Hendrix",
+   "useSrc": "Wikipedia, \"Marshall Amplification\": Hendrix bought Marshalls from 1966 and was widely credited with the Marshall stack (ties the player to this amp, not this record)",
+   "state": {
+    "vol1": 9,
+    "vol2": 6,
+    "treble": 7,
+    "middle": 7,
+    "bass": 5,
+    "presence": 6
+   },
+   "play": "lead"
+  },
+  {
+   "amp": "plexi",
+   "artist": "Cream",
+   "song": "Sunshine of Your Love",
+   "url": "https://www.youtube.com/watch?v=f3y8jf01UY8",
+   "title": "Sunshine Of Your Love",
+   "channel": "Cream - Topic",
+   "player": "Eric Clapton",
+   "useSrc": "Wikipedia, \"Marshall Amplification\": Cream used Marshall stacks; Clapton is named among the early players (ties the player to this amp, not this record)",
+   "state": {
+    "vol1": 8,
+    "vol2": 7,
+    "treble": 5,
+    "middle": 6,
+    "bass": 6,
+    "presence": 4
+   },
+   "play": "riff"
+  },
+  {
+   "amp": "plexi",
+   "artist": "Led Zeppelin",
+   "song": "Whole Lotta Love",
+   "url": "https://www.youtube.com/watch?v=HibBnC6SVk8",
+   "title": "Led Zeppelin - Whole Lotta Love (Official Audio)",
+   "channel": "Led Zeppelin",
+   "player": "Jimmy Page",
+   "useSrc": "Wikipedia, \"Marshall Amplification\": Jimmy Page is named among the players who established the brand (ties the player to this amp, not this record)",
+   "state": {
+    "vol1": 7,
+    "vol2": 5,
+    "treble": 6,
+    "middle": 7,
+    "bass": 4,
+    "presence": 5
+   },
+   "play": "riff"
+  },
+  {
+   "amp": "bassman",
+   "artist": "Buddy Holly & The Crickets",
+   "song": "That'll Be the Day",
+   "url": "https://www.youtube.com/watch?v=9mDGcxbAusg",
+   "title": "Buddy Holly & The Crickets \"That'll Be The Day\" on The Ed Sullivan Show",
+   "channel": "The Ed Sullivan Show",
+   "player": "Buddy Holly",
+   "useSrc": "Wikipedia, \"Fender Bassman\": the Bassman's power attracted early rock and roll guitarists such as Buddy Holly (ties the player to this amp, not this record)",
+   "state": {
+    "vol1": 5,
+    "vol2": 3,
+    "treble": 6,
+    "middle": 5,
+    "bass": 4,
+    "presence": 5
+   },
+   "play": "riff"
+  },
+  {
+   "amp": "bassman",
+   "artist": "Buddy Holly",
+   "song": "Rave On",
+   "url": "https://www.youtube.com/watch?v=0IUV-QxwlRM",
+   "title": "Buddy Holly - Rave on!",
+   "channel": "NicholasBeadle",
+   "player": "Buddy Holly",
+   "useSrc": "Wikipedia, \"Fender Bassman\": Buddy Holly (ties the player to this amp, not this record)",
+   "state": {
+    "vol1": 6,
+    "vol2": 3,
+    "treble": 6,
+    "middle": 5,
+    "bass": 4,
+    "presence": 5
+   },
+   "play": "riff"
+  },
+  {
+   "amp": "bassman",
+   "artist": "Dire Straits",
+   "song": "Sultans of Swing",
+   "url": "https://www.youtube.com/watch?v=h0ffIJ7ZO4U",
+   "title": "Dire Straits - Sultans Of Swing (Official Music Video)",
+   "channel": "DireStraitsVEVO",
+   "player": "Mark Knopfler",
+   "useSrc": null,
+   "state": {
+    "vol1": 4,
+    "vol2": 2,
+    "treble": 7,
+    "middle": 4,
+    "bass": 3,
+    "presence": 6
+   },
+   "play": "lead"
+  },
+  {
+   "amp": "rect",
+   "artist": "Foo Fighters",
+   "song": "Everlong",
+   "url": "https://www.youtube.com/watch?v=eBG7P-K-r1Y",
+   "title": "Foo Fighters - Everlong (Official HD Video)",
+   "channel": "foofightersVEVO",
+   "player": "Dave Grohl",
+   "useSrc": "Wikipedia, \"Mesa Boogie\": Foo Fighters are named among Rectifier users (the band, not this record)",
+   "state": {
+    "gain": 6,
+    "master": 5,
+    "treble": 6,
+    "middle": 4,
+    "bass": 6,
+    "presence": 5,
+    "mode": "modern"
+   },
+   "play": "chord"
+  },
+  {
+   "amp": "rect",
+   "artist": "Tool",
+   "song": "Schism",
+   "url": "https://www.youtube.com/watch?v=80RtBeB61LE",
+   "title": "TOOL - Schism (Official Audio)",
+   "channel": "TOOLVEVO",
+   "player": "Adam Jones",
+   "useSrc": "Wikipedia, \"Mesa Boogie\": Tool are named among Rectifier users (the band, not this record)",
+   "state": {
+    "gain": 5,
+    "master": 5,
+    "treble": 6,
+    "middle": 5,
+    "bass": 6,
+    "presence": 5,
+    "mode": "vintage"
+   },
+   "play": "riff"
+  },
+  {
+   "amp": "rect",
+   "artist": "Soundgarden",
+   "song": "Black Hole Sun",
+   "url": "https://www.youtube.com/watch?v=3mbBbFH9fAg",
+   "title": "Soundgarden - Black Hole Sun",
+   "channel": "SoundgardenVEVO",
+   "player": "Kim Thayil / Chris Cornell",
+   "useSrc": "Wikipedia, \"Mesa Boogie\": Soundgarden are named among Rectifier users (the band, not this record)",
+   "state": {
+    "gain": 4,
+    "master": 5,
+    "treble": 5,
+    "middle": 5,
+    "bass": 6,
+    "presence": 4,
+    "mode": "vintage"
+   },
+   "play": "chord"
+  },
+  {
+   "amp": "svt",
+   "artist": "The Rolling Stones",
+   "song": "Midnight Rambler (Get Yer Ya-Ya's Out!)",
+   "url": "https://www.youtube.com/watch?v=EN2cWWUHa5g",
+   "title": "Midnight Rambler (Get Yer Ya Ya's Out)",
+   "channel": "Max Simon",
+   "player": "Bill Wyman (bass)",
+   "useSrc": "Wikipedia, \"Ampeg SVT\": on the Stones' 1969 US tour all guitars and basses went through the SVT prototypes (this album was recorded on that tour: from the album's own history, unverified here)",
+   "state": {
+    "volume": 5,
+    "bass": 6,
+    "middle": 5,
+    "treble": 5
+   },
+   "play": "riff"
+  },
+  {
+   "amp": "svt",
+   "artist": "The Rolling Stones",
+   "song": "Jumpin' Jack Flash (live)",
+   "url": "https://www.youtube.com/watch?v=yvzpNnjFNk4",
+   "title": "Jumpin' Jack Flash (Live)",
+   "channel": "The Rolling Stones - Topic",
+   "player": "Bill Wyman (bass)",
+   "useSrc": "Wikipedia, \"Ampeg SVT\": the 1969 tour (as above)",
+   "state": {
+    "volume": 5,
+    "bass": 7,
+    "middle": 4,
+    "treble": 5
+   },
+   "play": "riff"
+  },
+  {
+   "amp": "svt",
+   "artist": "The Rolling Stones",
+   "song": "Honky Tonk Women (live)",
+   "url": "https://www.youtube.com/watch?v=yeAku11zS6w",
+   "title": "9 - \"Honky Tonk Women\"  - Get Yer Ya-Ya's Out",
+   "channel": "Stones Fan Channel",
+   "player": "Bill Wyman (bass)",
+   "useSrc": "Wikipedia, \"Ampeg SVT\": the 1969 tour (as above)",
+   "state": {
+    "volume": 4,
+    "bass": 6,
+    "middle": 5,
+    "treble": 4
+   },
+   "play": "riff"
+  }
+ ]
+}

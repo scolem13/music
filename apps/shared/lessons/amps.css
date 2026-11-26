@@ -1,0 +1,19 @@
+/* Amp widgets (apps/shared/lessons/amps.js) */
+:root { --amp-bg: #fff; --amp-ink: #16181b; --amp-dim: #5b6168; --amp-line: #c4c8ce; --amp-hot: #b86e00; --amp-e: #2a62c9; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --amp-bg: #111; --amp-ink: #e8e8e8; --amp-dim: #9aa0a6; --amp-line: #3a3e43; --amp-hot: #ffb000; --amp-e: #7aa7ff; } }
+:root[data-theme="dark"] { --amp-bg: #111; --amp-ink: #e8e8e8; --amp-dim: #9aa0a6; --amp-line: #3a3e43; --amp-hot: #ffb000; --amp-e: #7aa7ff; }
+.amp-w { border: 1px solid var(--amp-line); border-radius: 8px; padding: .5rem; margin: .6rem 0; }
+.amp-head { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; margin-bottom: .3rem; }
+.amp-face { max-width: 860px; }
+.amp-bar, .amp-opts { display: flex; flex-wrap: wrap; gap: .4rem .8rem; align-items: center; margin: .35rem 0; font-size: .85rem; }
+.amp-bar button, .ampc-tr button, .amp-hear, .amp-try { font: inherit; font-size: .85rem; padding: .15rem .6rem; border: 1px solid var(--amp-line); border-radius: 5px; background: transparent; color: inherit; cursor: pointer; }
+.amp-svg { width: 100%; max-width: 640px; height: auto; display: block; }
+.amp-svg .amp-bg { fill: var(--amp-bg); } .amp-svg text { font-size: 9px; fill: var(--amp-dim); font-family: system-ui, sans-serif; }
+.amp-svg .amp-line { fill: none; stroke: var(--amp-hot); stroke-width: 2; } .amp-svg .amp-grid { stroke: var(--amp-line); stroke-width: 1; }
+.amp-info { font-size: .85rem; color: var(--amp-dim); margin: .2rem 0; }
+.ampc-cols { display: grid; grid-template-columns: 1fr; gap: .6rem; } @media (min-width: 900px) { .ampc-cols { grid-template-columns: 1fr 1fr; } }
+.ampc-tr { border: 1px dashed var(--amp-line); border-radius: 8px; padding: .5rem; display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.ampc-res, .ampc-res2 { flex-basis: 100%; font-size: .9rem; } .ampc-q { padding: 0 .4rem; border-radius: 4px; border: 1px solid; } .ampc-exact { color: #2a8a3a; } .ampc-approx { color: var(--amp-hot); } .ampc-lost { color: #c03030; }
+.amp-step { margin: .5rem 0; } .amp-hear { margin-right: .5rem; }
+.amp-q li { cursor: pointer; } .amp-q li.amp-right { font-weight: 700; color: #2a8a3a; } .amp-q li.amp-wrong { text-decoration: line-through; color: #c03030; }
+.amp-tl li { margin: .3rem 0; } .amp-who { color: var(--amp-dim); font-size: .9em; }

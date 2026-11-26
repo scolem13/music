@@ -1,0 +1,104 @@
+---
+title: "Meet the Fender Twin Reverb"
+toc: true
+toc-depth: 2
+description: "A first look at the blackface Fender Twin Reverb: 85 clean watts, the Fender tone stack, spring reverb and tremolo. Guided tour, famous tracks, quiz."
+instruments: [guitar]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Amps Compared](amp-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the Fender Twin Reverb is.
+2. Learn how its circuit makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Listen to famous tracks.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- The **Twin Reverb** got its built-in spring reverb in **1963**, in the black-panel ("blackface") look Fender used until 1967; the circuit is called **AB763** (Wikipedia, "Fender Twin Reverb").
+- **85 watts** into 4 Ω from four **6L6GC** valves, a solid-state rectifier, two 12" speakers (Wikipedia).
+- Two channels, **Normal** and **Vibrato**, each with Volume, Treble, Middle, Bass and a **Bright** switch; the Vibrato channel adds Reverb, Speed and Intensity (Wikipedia). This page models the Vibrato channel.
+- It is known above all for its **clean** sound and its reverb (Wikipedia).
+
+## How it makes its sound
+
+- On a Fender the tone stack comes **straight after the first valve**, before the Volume knob. The **tone stack** (Treble, Middle, Bass) is a passive network of three capacitors and resistors: it can only cut. This page computes its curve exactly from the component values, with the formula Yeh and Smith published in 2006 (checked there against a circuit simulator); the graph under the panel shows it.
+- The **Bright** switch is a small capacitor across the Volume knob: treble skips past it. It matters most with the volume low (Wikipedia: below about 6).
+- Big power, a solid-state rectifier and negative feedback give **headroom**: the Twin stays clean very loud. In this model the supply barely sags.
+- **Reverb**: the signal shakes a metal spring in a tank (made by Hammond / Accutronics); a pickup at the other end hears the delayed, chirpy echoes.
+- Fender called it **vibrato**, but it is **tremolo** (volume going up and down): a neon bulb flashing on a light-dependent resistor (Wikipedia).
+
+## The amp
+
+The Fender Twin Reverb's control panel, drawn after photos (positions approximate, no logos). Drag a knob (or use the arrow keys), click a switch, then press a ▶ button. The guitar is this site's pickup model; **Pedals in front** puts one of the site's pedal models before the amp. Nobody has compared the sound with a real amp. The graph shows the tone controls and the cabinet (the valves' distortion is left out of it).
+
+```{=html}
+<div class="amp" data-amp="twin"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="amp-step" data-amp="twin" data-set="{&quot;volume&quot;:3,&quot;treble&quot;:6,&quot;middle&quot;:5,&quot;bass&quot;:4}" data-play="chord"><p><b>Volume 3.</b> Clean chords, lots of headroom.</p></div>
+<div class="amp-step" data-amp="twin" data-set="{&quot;volume&quot;:3,&quot;bright&quot;:true}" data-play="chord"><p><b>Bright on.</b> More sparkle at low volume.</p></div>
+<div class="amp-step" data-amp="twin" data-set="{&quot;volume&quot;:3,&quot;treble&quot;:7,&quot;middle&quot;:2,&quot;bass&quot;:5}" data-play="riff"><p><b>Middle down to 2.</b> The scooped Fender clean.</p></div>
+<div class="amp-step" data-amp="twin" data-set="{&quot;volume&quot;:4,&quot;reverb&quot;:7}" data-play="pluck"><p><b>Reverb 7.</b> Listen to the tail after the note.</p></div>
+<div class="amp-step" data-amp="twin" data-set="{&quot;volume&quot;:4,&quot;intensity&quot;:7,&quot;speed&quot;:6}" data-play="chord"><p><b>Intensity 7.</b> Tremolo: the level pulses.</p></div>
+<div class="amp-step" data-amp="twin" data-set="{&quot;volume&quot;:10}" data-play="riff"><p><b>Volume 10.</b> Even now it only starts to break up.</p></div>
+```
+
+## Famous tracks
+
+Videos checked on YouTube. Where a source ties the player or band to the amp, it is given (no source here ties the exact recording); otherwise it is marked unverified. **No source gives any setting**: **Try a guess** plays this site's guess.
+
+```{=html}
+<div class="amp-tracks" data-amp="twin"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="amp-q" data-a="1"><p><b>What is the Twin&#x27;s &quot;vibrato&quot; really?</b></p><ul><li>Pitch vibrato</li><li>Tremolo (volume)</li><li>A chorus</li></ul><p class="amp-why">Wikipedia: a neon + light-dependent resistor bug pulses the volume.</p></div>
+<div class="amp-q" data-a="0"><p><b>Why does it stay clean so loud?</b></p><ul><li>85 W, solid-state rectifier, headroom</li><li>It has no tone stack</li><li>It uses EL84s</li></ul><p class="amp-why"></p></div>
+<div class="amp-q" data-a="0"><p><b>When does the Bright switch matter most?</b></p><ul><li>Volume low</li><li>Volume at 10</li><li>Never</li></ul><p class="amp-why">Wikipedia: below about 6.</p></div>
+```
+
+## Next
+
+- [Amps Compared](amp-compare.html?a=twin&b=ac30): this amp beside another, settings translated.
+- [Guitar Pedals Compared](pedal-compare.qmd): the pedals that go in front.
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/amps.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-kit.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/guitar-pickups.js"></script>
+<script src="/apps/shared/lessons/bass-pickups.js"></script>
+<script src="/apps/shared/lessons/pedals.js"></script>
+<script src="/apps/shared/lessons/amps.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Fender Twin Reverb." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Fender_Twin_Reverb](https://en.wikipedia.org/wiki/Fender_Twin_Reverb). Blackface 1963-67, AB763, 85 W into 4 ohm, four 6L6GC, solid-state rectifier, Normal and Vibrato channels, bright switch, spring reverb (Hammond / Accutronics), "vibrato" = tremolo by a neon + LDR bug; users incl. Knopfler, Garcia, the Beatles (1968, AC568).
+
+"Spring reverb." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Spring_reverb](https://en.wikipedia.org/wiki/Spring_reverb). Hammond's 1939 patent; Accutronics Type 4 / Type 8 units.
+
+Yeh, David T., and Julius O. Smith. "Discretization of the '59 Fender Bassman Tone Stack." *Proceedings of the 9th International Conference on Digital Audio Effects (DAFx-06)*, Montreal, 2006. [ccrma.stanford.edu/~dtyeh/papers/yeh06_dafx.pdf](https://ccrma.stanford.edu/~dtyeh/papers/yeh06_dafx.pdf). Eqn. 1: the closed-form transfer function in the Treble / Middle / Bass pot positions, checked against SPICE in the paper; bilinear discretisation (2.3); Bassman values C1 250 pF, C2 = C3 20 nF, R1 250k, R2 1M, R3 25k, R4 56k.
+:::
+<!-- /works-cited -->
+

@@ -287,6 +287,15 @@ website:
                 - lessons/intro-ce-2.qmd
                 - lessons/intro-dm-2.qmd
                 - lessons/intro-echoplex.qmd
+            - section: "Amps"
+              contents:
+                - lessons/amp-compare.qmd
+                - lessons/intro-twin-reverb.qmd
+                - lessons/intro-ac30.qmd
+                - lessons/intro-plexi.qmd
+                - lessons/intro-bassman.qmd
+                - lessons/intro-dual-rectifier.qmd
+                - lessons/intro-svt.qmd
             - section: "Basses"
               contents:
                 - lessons/bass-compare.qmd
