@@ -56,6 +56,11 @@
           onChange: function (vs) { cur = V.toMoog(vs, cur); send(); } });
         rep.appendChild(h("summary", null, "How this Model D patch fits " + V.name + ": " + ["exact", "approx", "lost"].map(function (k) { return tv.report.filter(function (r) { return r.how === k; }).length + " " + k; }).join(", ")));
         var ul = h("ul"); tv.report.forEach(function (r) { ul.appendChild(h("li", "md-" + r.how, r.label + ": " + r.how + (r.note ? " (" + r.note + ")" : ""))); }); rep.appendChild(ul); panel.appendChild(rep);
+        var go = h("p", "md-go"), sid = view === "vital" ? "vital" : "surge", slug = view === "vital" ? "vital" : "surge-xt";
+        go.appendChild(document.createTextNode("This view still plays the Model D. To hear " + V.name + " itself (on this site's model of it): "));
+        var a1 = h("a", null, "Meet " + V.name); a1.href = "/lessons/intro-" + slug + ".html"; go.appendChild(a1); go.appendChild(document.createTextNode(" · "));
+        var a2 = h("a", null, "this patch's starting point turned into " + V.name + " on the compare page"); a2.href = "/lessons/synth-compare.html?synth=moog&to=" + sid; go.appendChild(a2);
+        panel.appendChild(go);
       } else if (view === "simple") sp = window.SynthPanel.mount(panel, { spec: window.SynthPanel.SPECS.moog, state: cur, def: SC.PROFILES.moog.def, store: "moog",
         analyser: function () { return an; }, onChange: function (s) { cur = s; send(); } });
       else { entry.sheet = MS.fromState(cur); MS.draw(panel, entry, { interactive: true, large: true, onChange: function (n) { var pv = n.wheel && n.wheel.pitch; entry = n; cur = MS.toState(n.sheet); send(); if (typeof pv === "number" && pv !== pitchV) setBend(pv); } }); }

@@ -1,0 +1,124 @@
+---
+title: "Meet Surge XT"
+toc: true
+toc-depth: 2
+description: "A first, step-by-step look at Surge XT, a free open-source software synth: make a first sound, shape it, build a bass, a pad and a lead on this site's beginner Surge XT panel, then install the real plug-in and copy the patch across."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+A first stop before [Classic Synths Compared](synth-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what Surge XT is: a free software synth.
+2. Learn its sound, one idea at a time.
+3. Take the guided tour, one **▶ Hear step** at a time: a first sound, shaping it, a bass, a pad and a lead.
+4. Install the real Surge XT (free) and copy your patch across, setting by setting.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- **Surge XT** is a *software synthesizer* that runs inside a music program (a DAW) as a plug-in.
+- It was "originally released as 'Surge' as open source by creator Claes Johanson in September 2018" and is now kept by the **Surge Synth Team**, "a group of volunteers" (Surge XT User Manual).
+- It is **open source**: anyone can read and build its code, and the installer is a free download from surge-synthesizer.github.io (manual, *Installing Surge XT*).
+
+## Its sound
+
+- Its **Classic** oscillator has a **Shape** knob: -100 % is a pulse, 0 % a saw, 100 % a "dual saw"; **Width 1** sets the pulse's duty cycle and **Sub Mix** blends in a sub-oscillator (manual, Classic oscillator).
+- Its **mixer** has three oscillators, ring modulation 1×2 and 2×3, and noise (manual, Mixer).
+- It has many **filter types**: 12 and 24 dB low-, high-, band-pass and notch, and two ladder filters, Legacy and Vintage (manual, Filter Types).
+- A **Filter EG** and an **Amp EG** (ADSR) shape each note; LFOs can be sine, triangle, square, sawtooth, noise or sample-and-hold (manual).
+- This page's Surge XT is a **beginner panel**: two Classic oscillators (sub on Osc 1 only), the mixer, one filter, two envelopes, one LFO, three effects. The real plug-in has far more.
+
+## The panel
+
+This is this site's beginner Surge XT panel: the real plug-in's names and ranges for a few of its controls, played by this site's own sound engine (not the plug-in's code), so it is close but not the same. Play it from the keys under the panel, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard. Turn any knob while you play. The sound is this site's own model; nobody has compared it with the real instrument.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="surge"><div class="scmp"></div></div>
+```
+
+## Guided tour
+
+Each step loads a starting patch made on this page (not one of Surge XT's own patches) and plays it. After each step, turn one knob on the panel and listen again.
+
+```{=html}
+<div class="ik-step" data-ex="surge-first"><p><b>Make a first sound.</b> Oscillator 1 is a Classic saw (<b>Shape</b> 0 %), full in the mixer, the <b>Vintage Ladder</b> filter open. Listen: bright and buzzy. Now drag <b>Shape</b> to -100 %: it turns into a hollow pulse.</p></div>
+<div class="ik-step" data-ex="surge-first" data-set="{&quot;cut&quot;:0,&quot;res&quot;:50}"><p><b>Shape it with the filter.</b> <b>Cutoff</b> down to 440 Hz (0 semitones from A 440) and <b>Resonance</b> at 50 %. Listen: darker, with a ring on top.</p></div>
+<div class="ik-step" data-ex="surge-pwm"><p><b>Shape it with the LFO.</b> A pulse (<b>Shape</b> -100 %) whose <b>Width 1</b> LFO 1 moves up and down. Listen: chords that seem to move and thicken.</p></div>
+<div class="ik-step" data-ex="surge-bass"><p><b>A bass.</b> A pulse with the <b>Sub Mix</b> at 40 %, the Vintage Ladder nearly closed and the <b>Filter EG</b> opening it on each note (<b>FEG &gt; F1</b>), <b>Mono</b> play mode with portamento. Listen for the deep sub under each note.</p></div>
+<div class="ik-step" data-ex="surge-pad"><p><b>A pad.</b> Two saws a few cents apart through <b>LP 12 dB</b>, a slow <b>Amp EG</b> attack and release, chorus and reverb. Listen: wide chords that swell in.</p></div>
+<div class="ik-step" data-ex="surge-lead"><p><b>A lead.</b> Osc 2 a pulse seven semitones up (a fifth), <b>Mono</b> with portamento, the LFO on pitch for vibrato and a delay. Hold a note to hear the vibrato.</p></div>
+```
+
+## Get the real Surge XT (free)
+
+1. Go to **surge-synthesizer.github.io** and download the installer for your computer (manual: "Download the Surge XT installer from https://surge-synthesizer.github.io").
+2. Install it. On Windows it installs as a VST3 and a CLAP plug-in, among others (manual, *Installing Surge XT*); the macOS and Linux formats are listed there too.
+3. Open your DAW, make a new instrument track and choose **Surge XT** as its instrument. Play a key: you should hear its starting patch.
+4. If you hear nothing, check that the track is armed or selected and that the DAW's audio output is your speakers or headphones.
+
+## Copy the patch across
+
+Make a sound on the panel above (a tour step, then your own changes). Then:
+
+1. Press **Show the settings to copy** below. Each row is one control of the panel above, as it is now. **This page** is the number on this site's panel; **In the plug-in** is what the real plug-in should show for it, where this page knows how to work that out (the conversion laws are this page's reading of the plug-in's source or manual and are unverified, so trust your ears more than the numbers).
+2. In Surge XT, start from a plain patch (an *Init* patch in the patch browser; name unverified). Make Oscillators 1 and 2 **Classic** and set **Shape**, **Width 1**, **Sub Mix** (Osc 1), **Octave**, **Pitch** and **Keytrack**.
+3. In the **Mixer**, set Osc 1, Osc 2, **Ring 1×2** and **Noise**; mute Osc 3 if this page's patch has no third oscillator.
+4. Set **Filter 1**'s type, **Cutoff**, **Resonance**, **FEG > F1** and **Keytrack > F1**.
+5. Set the **Filter EG** and **Amp EG** (attack, decay, sustain, release).
+6. Set **LFO 1**'s shape and rate, then route it to pitch, cutoff or Width 1 as in the table (see the manual's *Modulation* section for how).
+7. Set **Play Mode**, **Portamento** and **Bend Depth**, then the chorus, delay and reverb effects.
+8. Play the same notes on both. They will not sound the same: this page's oscillators, filters and effects are its own, not Surge's code. Change the plug-in until it sounds right to you, then **save the patch**.
+
+```{=html}
+<div class="ik-copy" data-id="surge"></div>
+```
+
+## Famous records
+
+The Surge XT manual does not name any records, so none are listed here yet.
+
+## Videos
+
+No videos have been chosen for this one yet.
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>On the Classic oscillator, Shape at -100 % is…</b></p><ul><li>A pulse</li><li>A sine</li><li>Noise</li><li>Off</li></ul><p class="ik-why">Manual: -100 % = pulse, 0 % = saw, 100 % = dual saw.</p></div>
+<div class="ik-q" data-a="0"><p><b>Sub Mix at 100 % means…</b></p><ul><li>Only the sub-oscillator</li><li>Only the main oscillator</li><li>Ring modulation</li><li>Silence</li></ul><p class="ik-why">Manual: 0 % = only main, 100 % = only sub.</p></div>
+<div class="ik-q" data-a="0"><p><b>Who keeps Surge XT going today?</b></p><ul><li>The Surge Synth Team, volunteers</li><li>One big company</li><li>Nobody</li><li>Moog Music</li></ul><p class="ik-why">Manual, Getting Started.</p></div>
+<div class="ik-q" data-a="0"><p><b>What does FEG &gt; F1 do?</b></p><ul><li>Lets the Filter EG move Filter 1's cutoff</li><li>Adds reverb</li><li>Picks the oscillator type</li><li>Changes the octave</li></ul><p class="ik-why">Manual: FEG mod amount to Filter 1.</p></div>
+```
+
+## Next
+
+- [Classic Synths Compared](synth-compare.html?synth=surge): Surge XT side by side with the others, with every setting checked against the manuals.
+- [Meet Vital](intro-vital.qmd): the other free software synth on this site.
+- [The Model D page](model-d.qmd): its **As Surge XT** view shows one Model D patch in Surge's names.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Surge Synth Team. *Surge XT*. [surge-synthesizer.github.io/](https://surge-synthesizer.github.io/). Download page.
+
+Surge Synth Team. "Surge XT User Manual." *Surge XT*. [surge-synthesizer.github.io/manual-xt/](https://surge-synthesizer.github.io/manual-xt/). Released as open source by Claes Johanson in September 2018; Classic oscillator (Shape, Width 1, Sub Mix); mixer with ring 1x2 / 2x3 and noise; filter types; FEG > F1, Keytrack > F1; Filter and Amp EG; LFO shapes and rate range; Play Mode; Bend Depth; installing.
+:::
+<!-- /works-cited -->
+

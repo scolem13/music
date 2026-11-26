@@ -635,6 +635,97 @@ P["memorymoog"] = dict(kind="synth", wid="memorymoog", name="Memorymoog", short=
        ("It is often called six of which synth in one?", ["Minimoog", "DX7", "TB-303", "Juno"], 0, "Wikipedia.")],
  cites=["memorymoog-owners-manual", "wiki/Memorymoog"])
 
+# ======================= FREE SOFTWARE SYNTHS (beginner panels; facts from Vital's source / site and the Surge XT manual, read 2026-11-26) =======================
+SOFT_TODO = lambda n: [f"1. Read what {n} is: a free software synth.", "2. Learn its sound, one idea at a time.",
+    "3. Take the guided tour, one **▶ Hear step** at a time: a first sound, shaping it, a bass, a pad and a lead.",
+    f"4. Install the real {n} (free) and copy your patch across, setting by setting.", "5. Check yourself with a short quiz."]
+SOFT_PANEL = lambda n: (f"This is this site's beginner {n} panel: the real plug-in's names and ranges for a few of its controls, played by this site's own "
+    "sound engine (not the plug-in's code), so it is close but not the same.")
+COPY_HOW = ("Each row is one control of the panel above, as it is now. **This page** is the number on this site's panel; **In the plug-in** is "
+            "what the real plug-in should show for it, where this page knows how to work that out (the conversion laws are this page's reading "
+            "of the plug-in's source or manual and are unverified, so trust your ears more than the numbers).")
+P["vital"] = dict(kind="synth", wid="vital", name="Vital", short="Vital", year="2020", art="", todo=SOFT_TODO("Vital"), panel_how=SOFT_PANEL("Vital"),
+ desc="A first, step-by-step look at Vital, a free wavetable software synth: make a first sound, shape it, build a bass, a pad and a lead on this site's beginner Vital panel, then install the real plug-in and copy the patch across.",
+ what=["**Vital** is a *software synthesizer*: a program, not a box with keys. It runs inside a music program (a DAW) as a *plug-in*.",
+       "Its source code calls it \"a spectral warping wavetable synthesizer\" (Vital README, github.com/mtytel/vital). It is by **Matt Tytel**, named in that README; first released in 2020 (unverified).",
+       "There is a **free version**: the README speaks of \"the free version of Vital\", and vital.audio lists *Basic* with 75 presets and 25 wavetables, beside paid tiers *Plus* and *Pro*.",
+       "Its source code is open, under the GPLv3 licence (README)."],
+ sound=["Each oscillator plays a **wavetable**: a row of single-cycle waves. The **Wave frame** knob picks a place along the row, so one knob can morph the tone (Vital source, synth_parameters.cpp: \"Wave Frame\").",
+        "It has three oscillators (unverified count) and a **Sample** slot; on this page the Sample slot holds noise (a guess).",
+        "Its filter has eight **models** (Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phaser) and **styles** such as 12 dB and 24 dB (Vital source, synth_strings.h). This page plays only three of them, with its own filters.",
+        "You **modulate** a knob by dragging an envelope or LFO onto it (vital.audio: \"drag and drop\").",
+        "This page's Vital is a **beginner panel**: three oscillators on one basic-shapes table (sine, triangle, square, saw), one filter, two envelopes, one LFO, three effects. The real plug-in has far more."],
+ tour_intro="Each step loads a starting patch made on this page (not one of Vital's own presets) and plays it. After each step, turn one knob on the panel and listen again.",
+ steps=[dict(ex="vital-first", t="**Make a first sound.** Oscillator 1 is on, **Wave frame** at 256 (the saw end of the table), the filter open. Listen: a bright, buzzy tone. Now drag **Wave frame** down to 0: the sound turns into a soft sine."),
+        dict(ex="vital-first", set={"cut": 70, "res": 45}, t="**Shape it with the filter.** The same sound with **Cutoff** down to 70 semitones and **Resonance** at 45 %. Listen: darker, with a ring on top. Cutoff takes away high harmonics; resonance boosts the ones near the cutoff."),
+        dict(ex="vital-morph", t="**Shape it with the wavetable.** **Env 2 → wave frame** at 256: on every note envelope 2 moves the wave from sine towards saw. Listen: the tone brightens along each note with no filter sweep. This is what a wavetable synth does best."),
+        dict(ex="vital-bass", t="**A bass.** A saw an octave down with a sine two octaves down under it, a **24dB Ladder** filter nearly closed, **Env 2 → cutoff** opening it on each note, **Polyphony 1** and a little **portamento**. Listen for the low weight and the \"wow\" at each note's start."),
+        dict(ex="vital-pad", t="**A pad.** Two oscillators a few cents apart (**Tune** -8 and +8), between triangle and square, a slow **attack** and **release** on envelope 1, **LFO 1 → wave frame** moving slowly, chorus and reverb. Listen: chords that swell in and shimmer."),
+        dict(ex="vital-lead", t="**A lead.** Saw plus a brighter wave an octave up, **Unison voices** 4, the LFO giving vibrato, portamento and a delay. Play it from the keys and hold a note to hear the vibrato.")],
+ extra=[("Get the real Vital (free)", [
+          "1. Go to **vital.audio**, make an account and download Vital (the README: \"Create an account and download Vital at vital.audio\"). Choose the free *Basic* version.",
+          "2. Install it. vital.audio lists Windows 10 and higher, macOS 10.15 and higher, and Ubuntu Linux 18.04 and above; the plug-in formats it installs are listed on its download page (not checked here).",
+          "3. Open your DAW (for example GarageBand, Logic, Ableton Live or Reaper), make a new instrument track and choose **Vital** as its instrument. Play a key: you should hear its starting sound.",
+          "4. If you hear nothing, check that the track is armed or selected and that the DAW's audio output is your speakers or headphones."]),
+        ("Copy the patch across", [
+          "Make a sound on the panel above (a tour step, then your own changes). Then:", "",
+          "1. Press **Show the settings to copy** below. " + COPY_HOW,
+          "2. In Vital, on each oscillator: switch it on, choose a basic-shapes wavetable (Vital's factory *Basic Shapes*, name unverified), then set **Wave Frame**, **Transpose**, **Tune** and **Level**.",
+          "3. Switch **Filter 1** on (it starts off: its *on* switch defaults to off in Vital's source), then set **Model**, **Style**, **Blend**, **Cutoff**, **Resonance**, **Drive** and **Key Track**. Send the oscillators you use into Filter 1.",
+          "4. Set **Envelope 1** (in Vital it shapes the loudness: our reading, unverified) and **Envelope 2**. Drag Envelope 2 onto the **Cutoff** knob, then set how far it moves it; do the same for the wave frame if this page's patch uses it.",
+          "5. Set **LFO 1**'s shape and frequency, and drag it onto pitch, cutoff or wave frame as in the table.",
+          "6. Turn on **Chorus**, **Delay** and **Reverb** in Vital's effects if the table has them, and set their mix.",
+          "7. Play the same notes on both. They will not sound the same: this page's oscillators, filters and effects are its own, not Vital's code. Change the plug-in until it sounds right to you, then **save the preset**.",
+          "", "```{=html}", '<div class="ik-copy" data-id="vital"></div>', "```"])],
+ records=[], rec_src="Vital's own site",
+ quiz=[("What does the Wave frame knob do?", ["Picks a place in the wavetable, changing the wave", "Changes the volume", "Adds echo", "Picks the filter model"], 0, "A wavetable is a row of waves; Wave Frame picks one (synth_parameters.cpp)."),
+       ("How do you make an LFO move a knob in Vital?", ["Drag the LFO onto the knob", "Type a code", "Plug in a cable", "It cannot"], 0, "vital.audio: drag and drop modulation."),
+       ("Which part takes away high harmonics?", ["The filter (Cutoff)", "The LFO", "The delay", "Polyphony"], 0, "Step 2."),
+       ("Is there a free version of Vital?", ["Yes, Basic", "No, it is only sold", "Only on phones", "Only as hardware"], 0, "The README speaks of \"the free version of Vital\"; vital.audio lists Basic.")],
+ extra_next="- [Meet Surge XT](intro-surge-xt.qmd): the other free software synth on this site.\n- [The Model D page](model-d.qmd): its **As Vital** view shows one Model D patch in Vital's names.",
+ cites=["synth_parameters.cpp", "synth_strings.h", "mtytel/vital#readme", "https://vital.audio/)"])
+
+P["surge-xt"] = dict(kind="synth", wid="surge", name="Surge XT", short="Surge XT", year="2018", art="", todo=SOFT_TODO("Surge XT"), panel_how=SOFT_PANEL("Surge XT"),
+ desc="A first, step-by-step look at Surge XT, a free open-source software synth: make a first sound, shape it, build a bass, a pad and a lead on this site's beginner Surge XT panel, then install the real plug-in and copy the patch across.",
+ what=["**Surge XT** is a *software synthesizer* that runs inside a music program (a DAW) as a plug-in.",
+       "It was \"originally released as 'Surge' as open source by creator Claes Johanson in September 2018\" and is now kept by the **Surge Synth Team**, \"a group of volunteers\" (Surge XT User Manual).",
+       "It is **open source**: anyone can read and build its code, and the installer is a free download from surge-synthesizer.github.io (manual, *Installing Surge XT*)."],
+ sound=["Its **Classic** oscillator has a **Shape** knob: -100 % is a pulse, 0 % a saw, 100 % a \"dual saw\"; **Width 1** sets the pulse's duty cycle and **Sub Mix** blends in a sub-oscillator (manual, Classic oscillator).",
+        "Its **mixer** has three oscillators, ring modulation 1×2 and 2×3, and noise (manual, Mixer).",
+        "It has many **filter types**: 12 and 24 dB low-, high-, band-pass and notch, and two ladder filters, Legacy and Vintage (manual, Filter Types).",
+        "A **Filter EG** and an **Amp EG** (ADSR) shape each note; LFOs can be sine, triangle, square, sawtooth, noise or sample-and-hold (manual).",
+        "This page's Surge XT is a **beginner panel**: two Classic oscillators (sub on Osc 1 only), the mixer, one filter, two envelopes, one LFO, three effects. The real plug-in has far more."],
+ tour_intro="Each step loads a starting patch made on this page (not one of Surge XT's own patches) and plays it. After each step, turn one knob on the panel and listen again.",
+ steps=[dict(ex="surge-first", t="**Make a first sound.** Oscillator 1 is a Classic saw (**Shape** 0 %), full in the mixer, the **Vintage Ladder** filter open. Listen: bright and buzzy. Now drag **Shape** to -100 %: it turns into a hollow pulse."),
+        dict(ex="surge-first", set={"cut": 0, "res": 50}, t="**Shape it with the filter.** **Cutoff** down to 440 Hz (0 semitones from A 440) and **Resonance** at 50 %. Listen: darker, with a ring on top."),
+        dict(ex="surge-pwm", t="**Shape it with the LFO.** A pulse (**Shape** -100 %) whose **Width 1** LFO 1 moves up and down. Listen: chords that seem to move and thicken."),
+        dict(ex="surge-bass", t="**A bass.** A pulse with the **Sub Mix** at 40 %, the Vintage Ladder nearly closed and the **Filter EG** opening it on each note (**FEG > F1**), **Mono** play mode with portamento. Listen for the deep sub under each note."),
+        dict(ex="surge-pad", t="**A pad.** Two saws a few cents apart through **LP 12 dB**, a slow **Amp EG** attack and release, chorus and reverb. Listen: wide chords that swell in."),
+        dict(ex="surge-lead", t="**A lead.** Osc 2 a pulse seven semitones up (a fifth), **Mono** with portamento, the LFO on pitch for vibrato and a delay. Hold a note to hear the vibrato.")],
+ extra=[("Get the real Surge XT (free)", [
+          "1. Go to **surge-synthesizer.github.io** and download the installer for your computer (manual: \"Download the Surge XT installer from https://surge-synthesizer.github.io\").",
+          "2. Install it. On Windows it installs as a VST3 and a CLAP plug-in, among others (manual, *Installing Surge XT*); the macOS and Linux formats are listed there too.",
+          "3. Open your DAW, make a new instrument track and choose **Surge XT** as its instrument. Play a key: you should hear its starting patch.",
+          "4. If you hear nothing, check that the track is armed or selected and that the DAW's audio output is your speakers or headphones."]),
+        ("Copy the patch across", [
+          "Make a sound on the panel above (a tour step, then your own changes). Then:", "",
+          "1. Press **Show the settings to copy** below. " + COPY_HOW,
+          "2. In Surge XT, start from a plain patch (an *Init* patch in the patch browser; name unverified). Make Oscillators 1 and 2 **Classic** and set **Shape**, **Width 1**, **Sub Mix** (Osc 1), **Octave**, **Pitch** and **Keytrack**.",
+          "3. In the **Mixer**, set Osc 1, Osc 2, **Ring 1×2** and **Noise**; mute Osc 3 if this page's patch has no third oscillator.",
+          "4. Set **Filter 1**'s type, **Cutoff**, **Resonance**, **FEG > F1** and **Keytrack > F1**.",
+          "5. Set the **Filter EG** and **Amp EG** (attack, decay, sustain, release).",
+          "6. Set **LFO 1**'s shape and rate, then route it to pitch, cutoff or Width 1 as in the table (see the manual's *Modulation* section for how).",
+          "7. Set **Play Mode**, **Portamento** and **Bend Depth**, then the chorus, delay and reverb effects.",
+          "8. Play the same notes on both. They will not sound the same: this page's oscillators, filters and effects are its own, not Surge's code. Change the plug-in until it sounds right to you, then **save the patch**.",
+          "", "```{=html}", '<div class="ik-copy" data-id="surge"></div>', "```"])],
+ records=[], rec_src="The Surge XT manual",
+ quiz=[("On the Classic oscillator, Shape at -100 % is…", ["A pulse", "A sine", "Noise", "Off"], 0, "Manual: -100 % = pulse, 0 % = saw, 100 % = dual saw."),
+       ("Sub Mix at 100 % means…", ["Only the sub-oscillator", "Only the main oscillator", "Ring modulation", "Silence"], 0, "Manual: 0 % = only main, 100 % = only sub."),
+       ("Who keeps Surge XT going today?", ["The Surge Synth Team, volunteers", "One big company", "Nobody", "Moog Music"], 0, "Manual, Getting Started."),
+       ("What does FEG > F1 do?", ["Lets the Filter EG move Filter 1's cutoff", "Adds reverb", "Picks the oscillator type", "Changes the octave"], 0, "Manual: FEG mod amount to Filter 1.")],
+ extra_next="- [Meet Vital](intro-vital.qmd): the other free software synth on this site.\n- [The Model D page](model-d.qmd): its **As Surge XT** view shows one Model D patch in Surge's names.",
+ cites=["manual-xt", "https://surge-synthesizer.github.io/)"])
+
 COMPARE = dict(synth=("synth-compare.qmd", "Classic Synths Compared"), drum=("drum-compare.qmd", "Classic Drum Machines Compared"), seq=("sequencer-compare.qmd", "Classic Sequencers Compared"))
 SCRIPT = dict(synth="synth-compare", drum="drum-compare", seq="sequencer-compare")
 CLS = dict(synth="scmp", drum="dcmp", seq="sqc")
@@ -645,23 +736,26 @@ PLAYHOW = dict(synth="Play it from the keys under the panel, the computer keys (
 def page(slug, p):
     k = p["kind"]; cmpf, cmpt = COMPARE[k]
     q = p.get("compare_q") or ("synth=" + p["wid"] if k == "synth" else "machine=" + p["wid"])
-    o = ["---", 'title: "Meet ' + (p["name"] if p["name"].startswith("the ") else "the " + p["name"]) + '"', "toc: true", "toc-depth: 2",
+    art = p.get("art", "the ")
+    o = ["---", 'title: "Meet ' + (p["name"] if p["name"].startswith("the ") else art + p["name"]) + '"', "toc: true", "toc-depth: 2",
          f'description: "{p["desc"]}"', f'instruments: [{"drums" if k == "drum" else "piano"}, other]', "topics: [sound]", "has: [interactive, svg]", "---", "",
          f'A first stop before [{cmpt}]({cmpf}). Short sections, one idea each. Click a heading to fold or open it.', "",
-         "::: {.ik-do}", "**What you'll do**", "",
-         f"1. Read what the {p['short']} is and when it was made.", "2. Learn its sound, one idea at a time.",
+         "::: {.ik-do}", "**What you'll do**", ""] + (p.get("todo") or [
+         f"1. Read what {art}{p['short']} is and when it was made.", "2. Learn its sound, one idea at a time.",
          f"3. Take a guided tour: press each **▶ Hear step** button and listen for one change.", "4. Find records it is on.",
-         "5. Check yourself with a short quiz.", ":::", "", "## What it is", ""]
+         "5. Check yourself with a short quiz."]) + [":::", "", "## What it is", ""]
     o += ["- " + s for s in p["what"]] + ["", "## Its sound", ""] + ["- " + s for s in p["sound"]]
     o += ["", "## The panel", "",
-          f"This is the {p['short']} panel from [{cmpt}]({cmpf}), drawn after the real one (not a copy). {PLAYHOW[k]} The sound is this site's own model; nobody has compared it with the real instrument.", "",
+          (p.get("panel_how") or f"This is the {p['short']} panel from [{cmpt}]({cmpf}), drawn after the real one (not a copy).") + f" {PLAYHOW[k]} The sound is this site's own model; nobody has compared it with the real instrument.", "",
           "```{=html}", f'<div class="ik-box" data-kind="{k}" data-id="{p["wid"]}"><div class="{CLS[k]}"></div></div>', "```", "",
           "## Guided tour", "", p["tour_intro"], "", "```{=html}"]
     for s in p["steps"]:
         a = (f' data-sheet="{s["sheet"]}"' if "sheet" in s else "") + (f' data-ex="{s["ex"]}"' if "ex" in s else "") + \
             (f' data-set="{J(s["set"])}"' if s.get("set") else "") + (f' data-pat="{J(s["pat"])}"' if "pat" in s else "") + (f' data-seq="{J(s["seq"])}"' if "seq" in s else "")
         o.append(f'<div class="ik-step"{a}><p>{md(s["t"])}</p></div>')
-    o += ["```", "", "## Famous records", ""]
+    o += ["```", ""]
+    for h, lines in p.get("extra", []): o += ["## " + h, ""] + lines + [""]
+    o += ["## Famous records", ""]
     if p["records"]: o += [f"Named in {p['rec_src']}:", ""] + ["- " + r for r in p["records"]]
     else: o += [f"{p['rec_src']} does not name any records, so none are listed here yet."]
     o += ["", "## Videos", ""]
@@ -671,7 +765,7 @@ def page(slug, p):
     o += ["", "## Check yourself", "", "Click an answer. You will see at once if it is right. Nothing is saved or sent.", "", "```{=html}"]
     for qq, ch, a, why in p["quiz"]:
         o.append(f'<div class="ik-q" data-a="{a}"><p><b>{html.escape(qq)}</b></p><ul>' + "".join(f"<li>{md(c)}</li>" for c in ch) + f'</ul><p class="ik-why">{md(why)}</p></div>')
-    o += ["```", "", "## Next", "", f"- [{cmpt}]({cmpf[:-4]}.html?{q}): the {p['short']} side by side with the others, with every setting checked against the manuals."]
+    o += ["```", "", "## Next", "", f"- [{cmpt}]({cmpf[:-4]}.html?{q}): {art}{p['short']} side by side with the others, with every setting checked against the manuals."]
     if p.get("extra_next"): o.append(p["extra_next"])
     o += ["", "```{=html}", '<link rel="stylesheet" href="/apps/shared/lessons/' + SCRIPT[k] + '.css">', '<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">',
           '<script src="/apps/shared/lessons/sections.js"></script>', '<script src="/apps/shared/lessons/' + SCRIPT[k] + '.js"></script>']

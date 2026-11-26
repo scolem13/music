@@ -11,8 +11,11 @@
 //       seq:  data-seq='{machine data, as SequencerCompare.blank(id)}'   (W.src = id; W.set(id, data); W.play("src"))
 //   <div class="ik-q" data-a="<index of right answer>"><p>question</p><ul><li>choice</li>...</ul><p class="ik-why">why</p></div>
 //     a self-check question: click a choice, it says right / try again at once; nothing is recorded.
-// Compare pages: with this file loaded, ?synth=<id> / ?machine=<id> / ?seq=<id> picks that instrument in the compare widget.
-// API: IntroKit.steps (the step elements), IntroKit.play(i) -> Promise, IntroKit.level(ms) -> Promise of the peak level heard.
+// Compare pages: with this file loaded, ?synth=<id> / ?machine=<id> / ?seq=<id> picks that instrument in the compare widget
+//   (?synth=<from>&to=<id> also sets the "To" synth).
+//   <div class="ik-copy" data-id="vital"></div>  "Copy the patch across": a button that lists every setting of the panel as it is now,
+//     group by group, with the real plug-in's reading where the profile has a hint() (SynthCompare.PROFILES[id].hint).
+// API: IntroKit.copy(i) opens the i-th copy table. IntroKit.steps (the step elements), IntroKit.play(i) -> Promise, IntroKit.level(ms) -> Promise of the peak level heard.
 (function () {
   "use strict";
   var IK = { steps: [] };
@@ -129,6 +132,21 @@
       });
     } else IK.ready = Promise.resolve();
     document.querySelectorAll(".ik-q").forEach(quiz);
+    document.querySelectorAll(".ik-copy").forEach(copyBox);
+  }
+  // ---------- copy the patch across: the panel's settings as a table ----------
+  function copyBox(c) {
+    var sid = c.dataset.id, b = el("button", "btn btn-sm btn-outline-primary ik-copy-btn", "Show the settings to copy"), out = el("div", "ik-copy-out"); b.type = "button";
+    c.appendChild(b); c.appendChild(out);
+    b.onclick = function () {
+      var w = W(), P = window.SynthCompare && SynthCompare.PROFILES[sid]; if (!w || !P) return;
+      var st = SynthCompare.full(sid, w.st[sid]), tb = el("table", "table table-sm ik-copy-t"), hd = el("tr");
+      ["Section", "Setting", "This page", "In the plug-in"].forEach(function (x) { hd.appendChild(el("th", null, x)); }); tb.appendChild(hd);
+      P.groups.forEach(function (g) { g[2].forEach(function (k) { var v = st[k[0]], tr = el("tr");
+        var shown = typeof v === "boolean" ? (v ? "on" : "off") : String(v), hint = P.hint ? P.hint(k[0], v) : "";
+        [g[0], k[1], shown, hint || shown].forEach(function (x) { tr.appendChild(el("td", null, x)); }); tb.appendChild(tr); }); });
+      out.innerHTML = ""; out.appendChild(tb); b.textContent = "Show them again (after changing the panel)";
+    };
   }
   // compare pages: ?synth= / ?machine= / ?seq=
   function preselect() {
@@ -136,6 +154,7 @@
     if ((v = q.get("synth")) && window.SynthCompare && SynthCompare.widgets[0] && SynthCompare.PROFILES[v]) {
       var w = SynthCompare.widgets[0], ex = SynthCompare.EXAMPLES.filter(function (x) { return x.from === v; })[0];
       if (ex) w.load(ex.id); else w.pick(v, partner(v));
+      var to = q.get("to"); if (to && to !== v && SynthCompare.PROFILES[to]) w.pick(v, to);
       scrollTo(".scmp");
     }
     if ((v = q.get("machine")) && window.DrumCompare && DrumCompare.widgets[0] && DrumCompare.MACHINES[v]) {
@@ -148,5 +167,6 @@
   function scrollTo(sel) { var e = document.querySelector(sel); if (e && e.scrollIntoView) setTimeout(function () { e.scrollIntoView({ block: "start" }); }, 300); }
   function go() { setTimeout(init, 0); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go); else go();
+  IK.copy = function (i) { var c = document.querySelectorAll(".ik-copy-btn")[i || 0]; if (c) c.click(); return !!c; };
   window.IntroKit = IK;
 })();

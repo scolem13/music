@@ -28,3 +28,8 @@
   :root:not([data-theme="light"]) .ik-choice.ik-wrong { background: #3f1d1b; color: #f6d0cd; }
   :root:not([data-theme="light"]) .ik-fb-ok { color: #7fd48f; } :root:not([data-theme="light"]) .ik-fb-no { color: #f08a82; }
 }
+/* "Copy the patch across" (Vital, Surge XT): the panel's settings as a table */
+.ik-copy { margin: .5rem 0 1rem; }
+.ik-copy-out { max-height: 30rem; overflow: auto; margin-top: .5rem; }
+.ik-copy-t { font-size: .85rem; }
+.ik-copy-t td:nth-child(n+3) { font-variant-numeric: tabular-nums; white-space: nowrap; }

@@ -58,7 +58,7 @@ const slope = SC.filterResponse(E, f0 * 2, 60) - SC.filterResponse(E, f0 * 4, 60
 check("filter curve falls about 24 dB an octave", slope > 18 && slope < 27, slope.toFixed(1));
 // ---- nine synths: every pair translates, every note cites, every control named is real ----
 const IDS = SC.IDS;
-check("fifteen synths", IDS.length === 15 && IDS.every(id => SC.PROFILES[id]), IDS.join(","));
+check("seventeen synths", IDS.length === 17 && IDS.every(id => SC.PROFILES[id]), IDS.join(","));
 bad = []; let pairs = 0, notes = 0;
 for (const ex of SC.EXAMPLES) for (const to of IDS) {
   if (to === ex.from) continue; pairs++;
@@ -82,6 +82,34 @@ for (const ex of SC.EXAMPLES) for (const id of IDS) {
 check("every example sounds on all nine synths, no NaN", bad.length === 0, bad.slice(0, 6).join("; "));
 bad = IDS.filter(id => { const r = render(id, {}, [60]); return r.nan || r.rms < 0.004; });
 check("every synth's own default sounds", bad.length === 0, bad.join(","));
+// ---- Vital and Surge XT ----
+const SR = 48000;
+function wave(id, st, note, blocks) {   // the raw output of one held note
+  const p = new P(); p.port.onmessage({ data: { type: "patch", E: SC.engine(id, st) } }); p.port.onmessage({ data: { type: "on", note, vel: .8 } });
+  const out = [[new Float32Array(128)]], all = []; for (let b = 0; b < (blocks || 200); b++) { p.process([], out); all.push(...out[0][0]); } return all.slice(all.length / 2);
+}
+const bright = a => { let d = 0, e = 0; for (let i = 1; i < a.length; i++) { d += (a[i] - a[i - 1]) ** 2; e += a[i] ** 2; } return Math.sqrt(d / e); };
+const xings = a => { let n = 0; for (let i = 1; i < a.length; i++) if (a[i - 1] < 0 && a[i] >= 0) n++; return n; };
+const open = { cut: 136, res: 0, e1A: 0, e1S: 100, e2S: 100 };
+const vSine = bright(wave("vital", Object.assign({}, open, { o1Frame: 0 }), 48)), vSaw = bright(wave("vital", Object.assign({}, open, { o1Frame: 256 }), 48));
+check("Vital: wave frame 256 (saw) brighter than frame 0 (sine)", vSaw > vSine * 2, vSine.toFixed(4) + " vs " + vSaw.toFixed(4));
+const sxOpen = { cut: 67, res: 0, aA: -10, aS: 100, fType: "LP 12 dB" };
+const xMain = xings(wave("surge", Object.assign({}, sxOpen, { o1Shape: -100, o1W: 50 }), 60)), xSub = xings(wave("surge", Object.assign({}, sxOpen, { o1Shape: -100, o1W: 50, o1Sub: 100 }), 60));
+check("Surge XT: Sub Mix 100 % sounds an octave down", Math.abs(xMain / xSub - 2) < 0.15, xMain + " / " + xSub);
+const ring = render("surge", Object.assign({}, sxOpen, { m1: 0, m2: 0, r12: 100, o2Pitch: 7 }), [60]);
+check("Surge XT: ring 1×2 alone sounds", !ring.nan && ring.rms > 0.004, ring.rms.toFixed(4));
+const exS = id => SC.EXAMPLES.find(e => e.id === id);
+const v2p = SC.translate(exS("vital-morph").s, "vital", "ppg"), p2v = SC.translate(exS("ppg-sweep").s, "ppg", "vital"), v2m = SC.translate(exS("vital-morph").s, "vital", "moog");
+check("Vital → PPG keeps the envelope on the wave; → Model D loses it", v2p.state.envWave > 0 && !v2p.notes.some(n => n.cls === "lost" && /wavetable/.test(n.what)) && v2m.notes.some(n => n.cls === "lost" && /wavetable/.test(n.what)));
+check("PPG → Vital keeps the envelope on the wave frame", p2v.state.e2Frame > 0, p2v.state.e2Frame);
+const m2s = SC.translate(exS("fifths-lead").s, "moog", "surge");
+check("Model D's third oscillator lost on the Surge XT panel, and the note says the real plug-in has more", m2s.notes.some(n => n.cls === "lost" && /beginner Surge XT panel/.test(n.why)));
+check("Surge XT ring lost on the Prophet-5", SC.translate(Object.assign({}, exS("surge-first").s, { r12: 60 }), "surge", "prophet").notes.some(n => n.cls === "lost" && /Ring/.test(n.what)));
+check("Model D → Surge XT / Vital: one voice is exact (Mono / polyphony 1)", ["surge", "vital"].every(t => SC.translate(exS("fat-bass").s, "moog", t).notes.some(n => n.what === "One voice" && n.cls === "exact")));
+const vb = SC.translate(SC.translate(exS("vital-bass").s, "vital", "surge").state, "surge", "vital").state, vo = SC.full("vital", exS("vital-bass").s);
+const vd = ["cut", "res", "e1S", "e2Cut", "o1Tr", "o2Tr", "poly"].filter(k => Math.abs(vo[k] - vb[k]) > (k === "cut" ? 0.6 : 1.5));
+check("Vital bass survives Vital → Surge XT → Vital (cutoff, resonance, envelopes, tuning, voices)", vd.length === 0, vd.map(k => k + " " + vo[k] + "→" + vb[k]).join(", "));
+check("Vital and Surge XT hints read the real plug-ins' units", SC.PROFILES.vital.hint("e1A", 1) === "1.00 s" && /Hz/.test(SC.PROFILES.surge.hint("cut", 0)) && SC.PROFILES.surge.hint("o1Shape", -100) === "pulse");
 // the DX7: 32 algorithms; the manual's carrier counts (DX7 manual p. 24)
 check("DX7: 32 algorithms of 6 operators", SC.DX_ALG.length === 32 && SC.DX_ALG.every(a => a.length === 6));
 const cc = n => SC.dxCarriers(n).length;

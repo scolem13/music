@@ -62,4 +62,18 @@ SOURCES = [
     wiki("Moog Sub 37", "Moog_Sub_37", P, note="History section."),
     wiki("Moog Grandmother", "Moog_Grandmother", P, note="History section."),
     wiki("Memorymoog", "Memorymoog", P, note="History section: years, voices, players."),
+    # Vital and Surge XT (read 2026-11-26; what is unverified is listed in synth-compare.js, "TWO FREE SOFTWARE SYNTHS")
+    web('Tytel, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. URL.',
+        "https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp", P, who="teacher",
+        note="Oscillator on, transpose, tune, level, wave frame, unison; filter cutoff 8-136 semitones, resonance, drive 0-20 dB, blend 0-2, key track; envelope times 0-2.378; LFO frequency -7..9; polyphony; portamento."),
+    web('Tytel, Matt. "synth_strings.h." *Vital*, GitHub repository mtytel/vital. URL.',
+        "https://github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h", P, who="teacher",
+        note="Filter styles (12dB, 24dB, Notch Blend, Notch Spread, B/P/N) and models (Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phaser)."),
+    web('Tytel, Matt. "README." *Vital*, GitHub repository mtytel/vital. URL.', "https://github.com/mtytel/vital#readme", P, who="student",
+        note="\"A spectral warping wavetable synthesizer\"; GPLv3 source; \"the free version of Vital\"; download at vital.audio after making an account."),
+    web('Vital Audio. *Vital: Spectral Warping Wavetable Synth*. URL.', "https://vital.audio/", P, who="student",
+        note="Drag-and-drop modulation; the Basic tier (75 presets, 25 wavetables), Plus and Pro; Windows 10+, macOS 10.15+, Ubuntu 18.04+."),
+    web('Surge Synth Team. "Surge XT User Manual." *Surge XT*. URL.', "https://surge-synthesizer.github.io/manual-xt/", P, who="student",
+        note="Released as open source by Claes Johanson in September 2018; Classic oscillator (Shape, Width 1, Sub Mix); mixer with ring 1x2 / 2x3 and noise; filter types; FEG > F1, Keytrack > F1; Filter and Amp EG; LFO shapes and rate range; Play Mode; Bend Depth; installing."),
+    web('Surge Synth Team. *Surge XT*. URL.', "https://surge-synthesizer.github.io/", P, who="student", note="Download page."),
 ]

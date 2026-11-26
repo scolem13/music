@@ -1803,6 +1803,18 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../lessons/intro-vital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Meet Vital</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/intro-surge-xt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Meet Surge XT</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../lessons/intro-tr-808.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Meet the Roland TR-808</span></a>
   </div>
@@ -2380,6 +2392,7 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
   <li><a href="#what-only-the-ppg-wave-can-do" id="toc-what-only-the-ppg-wave-can-do" class="nav-link" data-scroll-target="#what-only-the-ppg-wave-can-do">What only the PPG Wave can do</a></li>
   <li><a href="#what-only-the-prophet-6-can-do" id="toc-what-only-the-prophet-6-can-do" class="nav-link" data-scroll-target="#what-only-the-prophet-6-can-do">What only the Prophet-6 can do</a></li>
   <li><a href="#the-moog-family" id="toc-the-moog-family" class="nav-link" data-scroll-target="#the-moog-family">The Moog family</a></li>
+  <li><a href="#two-free-software-synths-vital-and-surge-xt" id="toc-two-free-software-synths-vital-and-surge-xt" class="nav-link" data-scroll-target="#two-free-software-synths-vital-and-surge-xt">Two free software synths: Vital and Surge XT</a></li>
   <li><a href="#what-if" id="toc-what-if" class="nav-link" data-scroll-target="#what-if">What if…</a></li>
   <li><a href="#why-they-differ" id="toc-why-they-differ" class="nav-link" data-scroll-target="#why-they-differ">Why they differ</a></li>
   <li><a href="#history-players-and-records" id="toc-history-players-and-records" class="nav-link" data-scroll-target="#history-players-and-records">History, players and records</a></li>
@@ -2516,7 +2529,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 </div>
 <p><strong>How to use it.</strong> Pick an <strong>Example</strong>, then press <strong>▶ Model D</strong>, <strong>▶ Prophet-5</strong> or <strong>▶ One, then the other</strong>. Turn any knob on the top panel and the bottom one follows. <strong>Turn into the …</strong> makes the other synth the starting point. Point at a line of the report to light up the controls it is about on both panels. Coloured outlines on the panels show <span class="scmp-tag scmp-exact">the same</span>, <span class="scmp-tag scmp-approx">close</span> and <span class="scmp-tag scmp-lost">cannot be done</span>.</p>
-<p>The <strong>From</strong> and <strong>To</strong> pickers choose any two of the fifteen synths. A <strong>What if…</strong> menu on some panels adds a feature the real instrument lacks (see <a href="#what-if">What if…</a>); the panel is then outlined and badged, and the report still describes the real one.</p>
+<p>The <strong>From</strong> and <strong>To</strong> pickers choose any two of the seventeen synths. A <strong>What if…</strong> menu on some panels adds a feature the real instrument lacks (see <a href="#what-if">What if…</a>); the panel is then outlined and badged, and the report still describes the real one.</p>
 </section>
 <section id="the-model-d-patch-sheets" class="level2">
 <h2 class="anchored" data-anchor-id="the-model-d-patch-sheets">The Model D patch sheets</h2>
@@ -2620,6 +2633,16 @@ document.addEventListener('DOMContentLoaded', async function () {
 <li><strong>Sub 37:</strong> <strong>Duo mode</strong> plays two notes at once, one on each oscillator, through the one filter; <strong>MultiDrive</strong> overdrives the filter stage; a square sub-oscillator sits an octave under oscillator 1. These are cited from the <strong>Subsequent 25</strong> manual, the same family, because the Sub 37 manual could not be obtained. On this page each Duo note gets its own filter copy, so the shared-filter sound is not modelled (unverified approximation). The sequencer and arpeggiator are left out.</li>
 <li><strong>Grandmother:</strong> semi-modular, with a 1-pole high-pass utility that a cord can put before the filter, one ADSR, VCA modes ENV, KB RLS and DRONE, a real spring reverb tank and an LFO whose amounts come in through the mod wheel (Grandmother manual PDF pp.&nbsp;7, 15–23). The spring here is a digital stand-in.</li>
 <li><strong>Memorymoog:</strong> six voices of three oscillators each, waves that can be combined, Voice Modulation from the filter contour or oscillator 3, 100 programs (Memorymoog manual PDF pp.&nbsp;5, 14–17). Its mixer clips past 4 or 5 (p.&nbsp;17); here every mixer shares one soft curve.</li>
+</ul>
+</section>
+<section id="two-free-software-synths-vital-and-surge-xt" class="level2">
+<h2 class="anchored" data-anchor-id="two-free-software-synths-vital-and-surge-xt">Two free software synths: Vital and Surge XT</h2>
+<p>Two of the seventeen are not hardware: <strong>Vital</strong> and <strong>Surge XT</strong> are free software synths that run as plug-ins in a DAW. Here each is a <strong>beginner panel</strong>: a few of the real plug-in’s controls, with its own names and ranges (Vital’s source code, <code>synth_parameters.cpp</code> and <code>synth_strings.h</code>; the Surge XT User Manual), played by this page’s engine.</p>
+<ul>
+<li><strong>Vital:</strong> three oscillators that read a <strong>wavetable</strong> (a row of waves; <strong>Wave frame</strong> picks one). Here every oscillator reads one table of this page’s own, sine → triangle → square → saw, after Vital’s <em>Basic Shapes</em> (name and order unverified). Envelope 2 and LFO 1 can move the wave frame, as on the PPG Wave; the other synths have no wavetable, so a Vital patch reaches them as the nearest fixed wave. One filter (12 dB, 24 dB or notch; blend low · band · high), two envelopes, chorus, delay and reverb.</li>
+<li><strong>Surge XT:</strong> two <strong>Classic</strong> oscillators (Shape: pulse · saw · dual saw; Width 1; Sub Mix on Osc 1), a mixer with ring modulation 1×2 and noise, Filter 1 (Vintage Ladder, 12 / 24 dB low-pass, band-pass, high-pass, notch), Filter EG, Amp EG, one LFO. The dual saw is played as one saw, and the real third oscillator is left out.</li>
+<li>What the beginner panel lacks is marked <em>cannot be done</em> in the report, with a reminder that the real plug-in may well have it.</li>
+<li>Beginner lessons, each ending with how to install the free plug-in and copy the patch across: <a href="../lessons/intro-vital.html">Meet Vital</a> and <a href="../lessons/intro-surge-xt.html">Meet Surge XT</a>. The <a href="../lessons/model-d.html">Model D page</a>’s <strong>As Vital</strong> and <strong>As Surge XT</strong> views show one Model D patch in each plug-in’s names.</li>
 </ul>
 </section>
 <section id="what-if" class="level2">
@@ -2790,6 +2813,10 @@ Loading the video list…
 <p>Roland. <em>TB-303 Bass Line Owner’s Manual</em>. Roland Corporation, Dec.&nbsp;1981, <a href="https://soundprogramming.net/manuals/Roland_TB-303_Manual.pdf">soundprogramming.net/manuals/Roland_TB-303_Manual.pdf</a>. The tone control section: cutoff, resonance, env mod, decay, accent, waveform (p.&nbsp;34); writing accent and slide (p.&nbsp;40); specifications: two waveforms, pitch, length, accent and slide stored per step (p.&nbsp;89). A scan, read by OCR.</p>
 <p>Sequential. <em>Prophet-5 User’s Guide</em>. Version 1.0, Sequential LLC, Oct.&nbsp;2020, <a href="https://vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf">vintageking.com/cdn/shop/files/sequential-prophet-5-manual.pdf</a>. Dave Smith’s foreword (p.&nbsp;x), oscillators and sync (pp.&nbsp;17-20), mixer (p.&nbsp;21), the Rev 1/2 and Rev 3 filters and envelopes (pp.&nbsp;22-30), LFO and wheel-mod (pp.&nbsp;31-33), Poly Mod (pp.&nbsp;34-35), vintage, wheels, glide, unison, chord memory, release, priority (pp.&nbsp;36-45), recipes (pp.&nbsp;46-52), used with the tutorials of pp.&nbsp;8, 23, 26, 30 as starting patches (apps/shared/lessons/prophet-sheets.js).</p>
 <p>Sequential. <em>Prophet-6 Operation Manual</em>. Version 1.0, Dave Smith Instruments, June 2015, <a href="https://analoguehaven.com/sequential/prophet-6/manual.pdf">analoguehaven.com/sequential/prophet-6/manual.pdf</a>. Printed page = PDF page - 10. Six voices; oscillators with continuously variable shape, sync, low freq (pp.&nbsp;15-17); slop (p.&nbsp;18); mixer and triangle sub octave (p.&nbsp;19); 4-pole LP and 2-pole HP (pp.&nbsp;20-23); envelopes (pp.&nbsp;22-26); two effect slots and their types (pp.&nbsp;26-28); LFO (pp.&nbsp;31-33); Poly Mod (pp.&nbsp;33-34); distortion (p.&nbsp;41); unison (p.&nbsp;43). Its recipes are the page’s Prophet-6 examples.</p>
+<p>Surge Synth Team. <em>Surge XT</em>. <a href="https://surge-synthesizer.github.io/">surge-synthesizer.github.io/</a>. Download page.</p>
+<p>Surge Synth Team. “Surge XT User Manual.” <em>Surge XT</em>. <a href="https://surge-synthesizer.github.io/manual-xt/">surge-synthesizer.github.io/manual-xt/</a>. Released as open source by Claes Johanson in September 2018; Classic oscillator (Shape, Width 1, Sub Mix); mixer with ring 1x2 / 2x3 and noise; filter types; FEG &gt; F1, Keytrack &gt; F1; Filter and Amp EG; LFO shapes and rate range; Play Mode; Bend Depth; installing.</p>
+<p>Tytel, Matt. “README.” <em>Vital</em>, GitHub repository mtytel/vital. <a href="https://github.com/mtytel/vital#readme">github.com/mtytel/vital#readme</a>. “A spectral warping wavetable synthesizer”; GPLv3 source; “the free version of Vital”; download at vital.audio after making an account.</p>
+<p>Vital Audio. <em>Vital: Spectral Warping Wavetable Synth</em>. <a href="https://vital.audio/">vital.audio/</a>. Drag-and-drop modulation; the Basic tier (75 presets, 25 wavetables), Plus and Pro; Windows 10+, macOS 10.15+, Ubuntu 18.04+.</p>
 <p>Yamaha. <em>DX7 Digital Programmable Algorithm Synthesizer Operation Manual</em>. Yamaha Corporation, <a href="https://homepages.abdn.ac.uk/d.j.benson/pages/dx7/manuals/dx7-man.pdf">homepages.abdn.ac.uk/d.j.benson/pages/dx7/manuals/dx7-man.pdf</a>. 16-note polyphony and 32 memories (introduction); operators, carriers and modulators (p.&nbsp;23); 32 algorithms, carriers of algorithms 1, 5, 16 and 32 (p.&nbsp;24); feedback (p.&nbsp;25); envelopes (p.&nbsp;26); the first FM exercise (pp.&nbsp;34-35); glossary (p.&nbsp;62).</p>
 <p><strong>For teachers</strong></p>
 <p>ARP Instruments. <em>ARP 2600 Owner’s Manual</em>. ARP Instruments, Inc., 1971 (7th printing 1976), <a href="https://www.korg.com/us/support/download/manual/0/842/4469/">www.korg.com/us/support/download/manual/0/842/4469/</a>. The voltage-controlled filter falls off at 24 dB per octave (section 4.12). Chapter 5’s patches (5.1-5.1401, PDF pp.&nbsp;54-89) are the ARP 2600 starting patches in the Example menu, read from its text (the panel drawings are too small to read). A scan, read by OCR.</p>
@@ -2808,6 +2835,8 @@ Loading the video list…
 <p>“Roland Juno-60.” <em>Wikipedia</em>, <a href="https://en.wikipedia.org/wiki/Roland_Juno-60">en.wikipedia.org/wiki/Roland_Juno-60</a>. A 24 dB-per-octave resonant low-pass and a non-resonant high-pass filter; the chorus buttons’ rates of 0.4 and 0.6 Hz.</p>
 <p>“Roland TB-303.” <em>Wikipedia</em>, <a href="https://en.wikipedia.org/wiki/Roland_TB-303">en.wikipedia.org/wiki/Roland_TB-303</a>. Sawtooth or square; a 24 dB-per-octave resonant low-pass filter that does not self-oscillate; 1981-1984.</p>
 <p>Sound On Sound. “PPG Wave 2.3 &amp; Waveterm B” [review]. <em>Sound On Sound</em>, <a href="https://www.soundonsound.com/reviews/ppg-wave-23-waveterm-b">www.soundonsound.com/reviews/ppg-wave-23-waveterm-b</a>. 64 waves make a wavetable; 30 wavetables on the Wave 2.3.</p>
+<p>Tytel, Matt. “synth_parameters.cpp.” <em>Vital</em>, GitHub repository mtytel/vital. <a href="https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp">github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp</a>. Oscillator on, transpose, tune, level, wave frame, unison; filter cutoff 8-136 semitones, resonance, drive 0-20 dB, blend 0-2, key track; envelope times 0-2.378; LFO frequency -7..9; polyphony; portamento.</p>
+<p>Tytel, Matt. “synth_strings.h.” <em>Vital</em>, GitHub repository mtytel/vital. <a href="https://github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h">github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h</a>. Filter styles (12dB, 24dB, Notch Blend, Notch Spread, B/P/N) and models (Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phaser).</p>
 </div>
 <!-- /works-cited -->
 

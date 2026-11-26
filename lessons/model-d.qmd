@@ -33,9 +33,13 @@ page-layout: full
 
 <!-- works-cited: written by scripts/works-cited.py -->
 ::: {.works-cited}
-Surge Synth Team. "Surge XT User Manual." *Surge XT*. [surge-synthesizer.github.io/manual-xt/](https://surge-synthesizer.github.io/manual-xt/). Classic oscillator Shape / Width 1 / Sub Mix / Sync / Unison; Mixer channels with M and S; Vintage and Legacy Ladder; Filter EG and Amp EG modes; LFO shapes; scene Volume / Pan / Width.
+**For students**
 
-Tytell, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp](https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp). Oscillator level, transpose, tune, unison; filter cutoff in semitones 8-136, resonance, drive, key track; envelope times 0-2.378 quartic; LFO frequency.
+Surge Synth Team. "Surge XT User Manual." *Surge XT*. [surge-synthesizer.github.io/manual-xt/](https://surge-synthesizer.github.io/manual-xt/). Released as open source by Claes Johanson in September 2018; Classic oscillator (Shape, Width 1, Sub Mix); mixer with ring 1x2 / 2x3 and noise; filter types; FEG > F1, Keytrack > F1; Filter and Amp EG; LFO shapes and rate range; Play Mode; Bend Depth; installing.
+
+**For teachers**
+
+Tytel, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp](https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp). Oscillator on, transpose, tune, level, wave frame, unison; filter cutoff 8-136 semitones, resonance, drive 0-20 dB, blend 0-2, key track; envelope times 0-2.378; LFO frequency -7..9; polyphony; portamento.
 :::
 <!-- /works-cited -->
 

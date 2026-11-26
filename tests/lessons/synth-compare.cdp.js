@@ -42,7 +42,7 @@ const LEVEL = (id, ms) => `new Promise(res => { const a = SynthCompare.widgets[0
   check("pointing at a line lights its control", await b.eval(`document.querySelector('.scmp-prophet [data-ctl=aSync]').classList.contains('scmp-hl')`));
   check("plots drawn", await b.eval(`[...document.querySelectorAll('.scmp-plot canvas')].slice(0, 3).every(c => { const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data; let n = 0; for (let i = 3; i < d.length; i += 4) if (d[i]) n++; return n > 500; })`));
   // nine synths: the pickers, every synth as "From" builds both panels, translates, and sounds through the worklet
-  check("From / To pickers list all fifteen synths", await b.eval(`[...document.querySelectorAll('.scmp-pick')].map(s => s.options.length).join(',')`) === "15,15");
+  check("From / To pickers list all seventeen synths", await b.eval(`[...document.querySelectorAll('.scmp-pick')].map(s => s.options.length).join(',')`) === "17,17");
   const ids = await b.eval(`SynthCompare.IDS`); bad = [];
   for (const id of ids) {
     const to = id === "juno" ? "dx7" : "juno";

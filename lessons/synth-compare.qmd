@@ -28,7 +28,7 @@ line of the report to light up the controls it is about on both panels. Coloured
 <span class="scmp-tag scmp-exact">the same</span>, <span class="scmp-tag scmp-approx">close</span> and
 <span class="scmp-tag scmp-lost">cannot be done</span>.
 
-The **From** and **To** pickers choose any two of the fifteen synths. A **What if…** menu on some panels adds a feature the real
+The **From** and **To** pickers choose any two of the seventeen synths. A **What if…** menu on some panels adds a feature the real
 instrument lacks (see [What if…](#what-if)); the panel is then outlined and badged, and the report still describes the real one.
 
 ## The Model D patch sheets
@@ -180,6 +180,24 @@ not measured and not modelled**: what differs is the panel, the routing and the 
 - **Memorymoog:** six voices of three oscillators each, waves that can be combined, Voice Modulation from the filter contour or
   oscillator 3, 100 programs (Memorymoog manual PDF pp. 5, 14–17). Its mixer clips past 4 or 5 (p. 17); here every mixer shares
   one soft curve.
+
+## Two free software synths: Vital and Surge XT
+
+Two of the seventeen are not hardware: **Vital** and **Surge XT** are free software synths that run as plug-ins in a DAW. Here each
+is a **beginner panel**: a few of the real plug-in's controls, with its own names and ranges (Vital's source code,
+`synth_parameters.cpp` and `synth_strings.h`; the Surge XT User Manual), played by this page's engine.
+
+- **Vital:** three oscillators that read a **wavetable** (a row of waves; **Wave frame** picks one). Here every oscillator reads
+  one table of this page's own, sine → triangle → square → saw, after Vital's *Basic Shapes* (name and order unverified). Envelope 2
+  and LFO 1 can move the wave frame, as on the PPG Wave; the other synths have no wavetable, so a Vital patch reaches them as the
+  nearest fixed wave. One filter (12 dB, 24 dB or notch; blend low · band · high), two envelopes, chorus, delay and reverb.
+- **Surge XT:** two **Classic** oscillators (Shape: pulse · saw · dual saw; Width 1; Sub Mix on Osc 1), a mixer with ring
+  modulation 1×2 and noise, Filter 1 (Vintage Ladder, 12 / 24 dB low-pass, band-pass, high-pass, notch), Filter EG, Amp EG, one LFO.
+  The dual saw is played as one saw, and the real third oscillator is left out.
+- What the beginner panel lacks is marked *cannot be done* in the report, with a reminder that the real plug-in may well have it.
+- Beginner lessons, each ending with how to install the free plug-in and copy the patch across:
+  [Meet Vital](intro-vital.qmd) and [Meet Surge XT](intro-surge-xt.qmd). The [Model D page](model-d.qmd)'s **As Vital** and
+  **As Surge XT** views show one Model D patch in each plug-in's names.
 
 ## What if…
 
@@ -406,6 +424,14 @@ Sequential. *Prophet-5 User's Guide*. Version 1.0, Sequential LLC, Oct. 2020, [v
 
 Sequential. *Prophet-6 Operation Manual*. Version 1.0, Dave Smith Instruments, June 2015, [analoguehaven.com/sequential/prophet-6/manual.pdf](https://analoguehaven.com/sequential/prophet-6/manual.pdf). Printed page = PDF page - 10. Six voices; oscillators with continuously variable shape, sync, low freq (pp. 15-17); slop (p. 18); mixer and triangle sub octave (p. 19); 4-pole LP and 2-pole HP (pp. 20-23); envelopes (pp. 22-26); two effect slots and their types (pp. 26-28); LFO (pp. 31-33); Poly Mod (pp. 33-34); distortion (p. 41); unison (p. 43). Its recipes are the page's Prophet-6 examples.
 
+Surge Synth Team. *Surge XT*. [surge-synthesizer.github.io/](https://surge-synthesizer.github.io/). Download page.
+
+Surge Synth Team. "Surge XT User Manual." *Surge XT*. [surge-synthesizer.github.io/manual-xt/](https://surge-synthesizer.github.io/manual-xt/). Released as open source by Claes Johanson in September 2018; Classic oscillator (Shape, Width 1, Sub Mix); mixer with ring 1x2 / 2x3 and noise; filter types; FEG > F1, Keytrack > F1; Filter and Amp EG; LFO shapes and rate range; Play Mode; Bend Depth; installing.
+
+Tytel, Matt. "README." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital#readme](https://github.com/mtytel/vital#readme). "A spectral warping wavetable synthesizer"; GPLv3 source; "the free version of Vital"; download at vital.audio after making an account.
+
+Vital Audio. *Vital: Spectral Warping Wavetable Synth*. [vital.audio/](https://vital.audio/). Drag-and-drop modulation; the Basic tier (75 presets, 25 wavetables), Plus and Pro; Windows 10+, macOS 10.15+, Ubuntu 18.04+.
+
 Yamaha. *DX7 Digital Programmable Algorithm Synthesizer Operation Manual*. Yamaha Corporation, [homepages.abdn.ac.uk/d.j.benson/pages/dx7/manuals/dx7-man.pdf](https://homepages.abdn.ac.uk/d.j.benson/pages/dx7/manuals/dx7-man.pdf). 16-note polyphony and 32 memories (introduction); operators, carriers and modulators (p. 23); 32 algorithms, carriers of algorithms 1, 5, 16 and 32 (p. 24); feedback (p. 25); envelopes (p. 26); the first FM exercise (pp. 34-35); glossary (p. 62).
 
 **For teachers**
@@ -441,5 +467,9 @@ Roland. *Juno-106 Owner's Manual*. Roland Corporation, [soundprogramming.net/man
 "Roland TB-303." *Wikipedia*, [en.wikipedia.org/wiki/Roland_TB-303](https://en.wikipedia.org/wiki/Roland_TB-303). Sawtooth or square; a 24 dB-per-octave resonant low-pass filter that does not self-oscillate; 1981-1984.
 
 Sound On Sound. "PPG Wave 2.3 & Waveterm B" [review]. *Sound On Sound*, [www.soundonsound.com/reviews/ppg-wave-23-waveterm-b](https://www.soundonsound.com/reviews/ppg-wave-23-waveterm-b). 64 waves make a wavetable; 30 wavetables on the Wave 2.3.
+
+Tytel, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp](https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp). Oscillator on, transpose, tune, level, wave frame, unison; filter cutoff 8-136 semitones, resonance, drive 0-20 dB, blend 0-2, key track; envelope times 0-2.378; LFO frequency -7..9; polyphony; portamento.
+
+Tytel, Matt. "synth_strings.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h](https://github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h). Filter styles (12dB, 24dB, Notch Blend, Notch Spread, B/P/N) and models (Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phaser).
 :::
 <!-- /works-cited -->

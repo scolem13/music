@@ -31,7 +31,8 @@
         var adv = /\*$/.test(t); t = t.replace(/\*$/, ""); var ic = t.split("@"), lab = ic[0].split(":"), k = lab[0], c = C[k];
         if (!c) throw new Error("SynthPanel spec " + id + ": no control " + k);
         var o = { k: k, label: lab[1] || c[1], adv: adv };
-        if (c[2] === "k") { o.kind = "slider"; o.min = c[3]; o.max = c[4]; o.step = c[5]; if (k === "cutoff" && c[4] === 10) o.fmt = hz; }
+        if (c[2] === "k") { o.kind = "slider"; o.min = c[3]; o.max = c[4]; o.step = c[5]; if (k === "cutoff" && c[4] === 10) o.fmt = hz;
+          if (P.hint && P.hint(k, c[3]) !== "") o.fmt = function (v) { return P.hint(k, v); }; }   // Vital / Surge XT: the plug-in's own reading
         else if (c[2] === "s") { o.kind = "toggle"; if (ic[1]) { o.icon = ic[1]; o.iconName = NAMES[ic[1]] || ic[1]; o.label = ""; } }
         else if (c[2] === "sel") { var wv = c[3].every(function (v) { return SP.WAVES[v]; });
           o.kind = wv ? "waves" : "choice"; o.opts = c[3].map(function (v) { return wv ? [v, v, NAMES[v] || v] : [v, v]; }); }
@@ -186,6 +187,31 @@
       { id: "fenv", name: "Filter contour", pic: "env:fA,fD,fS,fR", items: ["fA:Attack", "fD:Decay", "fS:Sustain", "fR:Release"] },
       { id: "aenv", name: "Loudness contour", pic: "env:lA,lD,lS,lR", items: ["lA:Attack", "lD:Decay", "lS:Sustain", "lR:Release"] },
       { id: "out", name: "Output", sum: function (s) { return "volume " + s.vol; }, items: ["vol", "mono*", "glideOn*", "glide*"] }]);
+    // Vital and Surge XT: beginner panels; the readings shown are the real plug-ins' (laws unverified: synth-compare.js "TWO FREE SOFTWARE SYNTHS")
+    function hzOf(s) { return SC.PROFILES[s].hint; }
+    make("vital", [
+      { id: "osc", name: "Oscillators", sum: function (s) { var h = hzOf("vital"); return [1, 2, 3].filter(function (n) { return s["o" + n + "On"]; }).map(function (n) { return n + ": " + h("o" + n + "Frame", s["o" + n + "Frame"]); }).join(" · ") || "off"; }, items: [
+        { group: "Osc 1", items: ["o1On", "o1Frame", "o1Lvl", "o1Tr*", "o1Tune*"] },
+        { group: "Osc 2", adv: true, items: ["o2On", "o2Frame", "o2Lvl", "o2Tr", "o2Tune"] },
+        { group: "Osc 3", adv: true, items: ["o3On", "o3Frame", "o3Lvl", "o3Tr", "o3Tune"] },
+        { group: "Sample (noise)", adv: true, items: ["smpOn", "smp"] }] },
+      { id: "flt", name: "Filter 1", sum: function (s) { return s.fStyle + " · " + hzOf("vital")("cut", s.cut) + " · res " + s.res + "%"; }, items: ["cut", "res", "fStyle", "fBlend*", "fModel*", "drive*", "key*"] },
+      { id: "aenv", name: "Envelope 1 (amp)", sum: function (s) { var h = hzOf("vital"); return "A " + h("e1A", s.e1A) + " · D " + h("e1D", s.e1D) + " · S " + s.e1S + "% · R " + h("e1R", s.e1R); }, items: ["e1A", "e1D", "e1S", "e1R"] },
+      { id: "fenv", name: "Envelope 2", sum: function (s) { return "→ cutoff " + s.e2Cut + " st · → frame " + s.e2Frame; }, items: ["e2Cut", "e2Frame*", "e2A", "e2D", "e2S", "e2R"] },
+      { id: "lfo", name: "LFO 1", adv: true, sum: function (s) { return s.lfoShape + " · " + hzOf("vital")("lfoRate", s.lfoRate); }, items: ["lfoShape", "lfoRate", "lfoPitch", "lfoCut", "lfoFrame"] },
+      { id: "fx", name: "Effects", adv: true, sum: function (s) { return "chorus " + s.fxCho + " · delay " + s.fxDly + " · reverb " + s.fxRev; }, items: ["fxCho", "fxDly", "fxRev"] },
+      { id: "out", name: "Voice", sum: function (s) { return s.poly + " voices · volume " + s.vol + "%"; }, items: ["vol", "poly*", "uni*", "glide*"] }]);
+    make("surge", [
+      { id: "osc", name: "Oscillators (Classic)", sum: function (s) { var h = hzOf("surge"); return "1: " + h("o1Shape", s.o1Shape) + (s.m2 > 0 ? " · 2: " + h("o2Shape", s.o2Shape) : ""); }, items: [
+        { group: "Osc 1", items: ["o1Shape", "o1W", "o1Sub", "o1Oct*", "o1Pitch*"] },
+        { group: "Osc 2", adv: true, items: ["o2Shape", "o2W", "o2Oct", "o2Pitch", "o2Kbd"] }] },
+      { id: "mix", name: "Mixer", sum: function (s) { return "1: " + s.m1 + "% · 2: " + s.m2 + "% · noise " + s.n + "%"; }, items: ["m1", "m2*", "r12*", "n*"] },
+      { id: "flt", name: "Filter 1", sum: function (s) { return s.fType + " · " + hzOf("surge")("cut", s.cut) + " · res " + s.res + "%"; }, items: ["fType", "cut", "res", "feg", "key*"] },
+      { id: "fenv", name: "Filter EG", sum: function (s) { var h = hzOf("surge"); return "A " + h("fA", s.fA) + " · D " + h("fD", s.fD) + " · S " + s.fS + "%"; }, items: ["fA", "fD", "fS", "fR"] },
+      { id: "aenv", name: "Amp EG", sum: function (s) { var h = hzOf("surge"); return "A " + h("aA", s.aA) + " · D " + h("aD", s.aD) + " · S " + s.aS + "%"; }, items: ["aA", "aD", "aS", "aR"] },
+      { id: "lfo", name: "LFO 1", adv: true, sum: function (s) { return s.lfoShape + " · " + hzOf("surge")("lfoRate", s.lfoRate); }, items: ["lfoShape", "lfoRate", "lfoPitch", "lfoCut", "lfoW"] },
+      { id: "fx", name: "Effects", adv: true, sum: function (s) { return "chorus " + s.fxCho + " · delay " + s.fxDly + " · reverb " + s.fxRev; }, items: ["fxCho", "fxDly", "fxRev"] },
+      { id: "out", name: "Scene", sum: function (s) { return s.play + " · volume " + s.vol + "%"; }, items: ["vol", "play", "uni*", "glide*", "bend*"] }]);
     return true;
   }
   if (!build()) window.addEventListener("load", build);

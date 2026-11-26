@@ -1,6 +1,10 @@
-// synth-compare.js — fifteen synths on one page that turn into each other (lessons/synth-compare.qmd): the nine below, plus the
+// synth-compare.js — seventeen synths on one page that turn into each other (lessons/synth-compare.qmd): the nine below, plus the
 // Prophet-6 (two digital effect slots, continuous oscillator shape, HP + LP) and five Moogs (Taurus, Voyager, Sub 37, Grandmother,
-// Memorymoog) sharing one ladder model (their filter differences are not measured); sources for those in the "SIX MORE" block.
+// Memorymoog) sharing one ladder model (their filter differences are not measured); sources for those in the "SIX MORE" block;
+// and two free software synths as beginner panels, Vital (wavetable oscillators on the engine's fifth, basic-shapes table) and
+// Surge XT (Classic oscillators with sub, ring 1x2): sources and what is unverified in the "TWO FREE SOFTWARE SYNTHS" block.
+// cap.panel (Vital, Surge XT) is added to every "lost" note on that target: the real plug-in may have what the beginner panel lacks.
+// PROFILES[id].hint(key, value) (Vital, Surge XT) gives the real plug-in's reading of a value, for copying a patch across.
 // "What if…" (PROFILES[id].whatif: {id, label, why, cite, eng(E)}): features an instrument lacks, applied by SC.engine(id, state,
 // mods) to the SOUND only; translate() and its report never see them, and the panel gets a dashed outline and a badge.
 // Widget: W.mods[id], W.setMod(id, mid, on), W.setMods(id, [ids]), W.whatif(id) -> [ids] (synth-library.js saves them as `whatif`).
@@ -1165,6 +1169,205 @@
     s.mono = I.voices === 1; s.glideOn = I.glide > 0; if (I.glide > 0) s.glide = r1(clamp(expInv(I.glide, 0.005, 5), 0, 10)); s.vol = r1(c.vol * 10);
   };
 
+
+  // =====================================================================================================================
+  // TWO FREE SOFTWARE SYNTHS: Vital and Surge XT, each as a beginner-sized panel (the real plug-ins have far more on them)
+  // =====================================================================================================================
+  // VT = Vital source code (github.com/mtytel/vital, read 2026-11-26): src/common/synth_parameters.cpp: oscillator on, transpose
+  //      -48..48, tune -1..1 (x100 = cents), level 0-1 (quadratic), wave frame 0..(frames - 1), unison voices 1-16; filter cutoff
+  //      8-136 semitones (default 60), resonance 0-1, drive 0-20 dB, blend 0-2, key track -1..1; envelope attack / decay / release
+  //      0-2.37842 (quartic; defaults 0.1495 / 1.0 / 0.5476), sustain 0-1; LFO frequency -7..9 (exponential, default 1);
+  //      polyphony from 1 (default 8); portamento time -10..4 (exponential); reverb, delay, chorus and the other effects' parameters.
+  //      src/interface/look_and_feel/synth_strings.h: filter styles 12dB, 24dB, Notch Blend, Notch Spread, B/P/N; models Analog,
+  //      Dirty, Ladder, Digital, Diode, Formant, Comb, Phaser. README: GPLv3 source; "the free version of Vital"; "Create an account
+  //      and download Vital at vital.audio". VW = vital.audio (read 2026-11-26): a wavetable synth, drag-and-drop modulation, the
+  //      free tier "Basic" with 75 presets and 25 wavetables, Windows 10+, macOS 10.15+, Ubuntu 18.04+.
+  //      OUR READINGS, UNVERIFIED: seconds = value^4 (2.37842^4 = 32 s); LFO Hz = 2^value; portamento seconds = 2^value; blend
+  //      0 low-pass, 1 band-pass, 2 high-pass; amplitude = level^2; 257 wave frames (0-256); the "Notch" style here stands for Notch
+  //      Blend. This page's wavetable (sine -> triangle -> square -> saw over the frames, after Vital's "Basic Shapes" table: name and
+  //      frame order unverified) is the engine's fifth table. The Sample slot carries noise (Vital has no noise oscillator; that the
+  //      sample is noise is a guess). Vital's filter models are not modelled: Ladder plays this page's ladder, the others its CEM-style
+  //      4-pole or state-variable 2-pole. Unison here stacks voices on ONE note (this page's engine); the real Vital's unison stays
+  //      polyphonic, one stack per note.
+  // SX = Surge XT User Manual (surge-synthesizer.github.io/manual-xt, for Surge XT 1.3, read 2026-11-26): released as "Surge" as open
+  //      source by Claes Johanson in September 2018, kept by the Surge Synth Team; Classic oscillator Shape -100 % pulse, 0 % saw,
+  //      100 % dual saw, Width 1 duty cycle, Sub Mix "0% = only main, 100% = only sub", Sync 0-60 semitones, Unison Voices; Pitch &
+  //      Octave, Keytrack; mixer Osc 1-3, Ring Modulation 1x2 and 2x3 ("multiplying the raw output of two oscillators"), Noise; filters
+  //      12 dB and 24 dB low / high / band-pass / notch, Legacy and Vintage Ladder; FEG > F1, Keytrack > F1 ("At 100% keytrack, the
+  //      filter frequency follows the pitch"); Filter EG and Amp EG ADSR; LFO shapes Sine, Triangle, Square, Sawtooth, Noise, S&H;
+  //      LFO rate "Ranges from -7 to 9"; Play Mode Poly / Mono (latest note by default); Portamento; Bend Depth 0-24 semitones.
+  //      SW = surge-synthesizer.github.io (download page). UNVERIFIED (not printed): cutoff as semitones from A 440 (-65..+67), EG
+  //      times as log2 seconds (-10..5), LFO Hz = 2^rate, portamento seconds = 2^value, the sub one octave down with the main
+  //      oscillator's shape, the polyphony limit of 16 here. The dual saw (Shape above 0) is drawn as one saw: this page's engine has
+  //      no dual saw. This panel shows two of Surge's three oscillators, one Classic each, and the sub only on Osc 1.
+  Object.assign(C, { VT: "Vital source code", VW: "Vital website", SX: "Surge XT User Manual", SW: "Surge XT website" });
+  var VT_TAB = 4;   // the engine's fifth wavetable: this page's basic shapes
+  var VT_FR = { sine: 0, tri: 85, pulse: 171, saw: 256 };   // the frames of the four shapes (0, 1/3, 2/3 and all of 256)
+  var VT_PANEL = "on this page's beginner Vital panel; the real Vital routes almost any source to any knob by dragging (Vital website) and has more oscillator, filter and effect settings";
+  var SX_PANEL = "on this page's beginner Surge XT panel; the real Surge XT has three oscillators of several types (wavetable, FM, sine …), oscillator sync, a scene high-pass, filter feedback and a modulation matrix, so it may well do this (Surge XT User Manual)";
+  function v4(t) { return Math.round(clamp(Math.pow(Math.max(t, 0), 0.25), 0, 2.37842) * 1000) / 1000; }   // seconds -> Vital's 0-2.378 (value^4 = s)
+  function vEnv(a, d, ss, r) { return { a: Math.max(0.0005, Math.pow(a, 4)), d: Math.max(0.002, Math.pow(d, 4)), s: ss / 100, r: Math.max(0.003, Math.pow(r, 4)), lin: false }; }
+  function lg2(x) { return Math.log(x) / Math.LN2; }
+  function nearShape(o) {   // a canonical oscillator -> the nearest of sine / tri / pulse / saw
+    if (o.wt) { var t = o.wt.t, p = o.wt.pos; if (t === VT_TAB) return ["sine", "tri", "pulse", "saw"][clamp(Math.round(p / 63 * 3), 0, 3)];
+      return t === 1 ? "pulse" : t === 3 ? (p < 32 ? "pulse" : "saw") : t === 0 && p < 4 ? "sine" : "saw"; }
+    return hasW(o, "pulse") ? "pulse" : hasW(o, "sine") ? "sine" : hasW(o, "tri") ? "tri" : "saw";
+  }
+  function softFx(cho, dly, rev) {   // three effect mixes (0-100) as the engine's effect list
+    var L = []; if (cho > 0) L.push({ k: "cho", a: 0.35, b: 0.5, mix: cho / 100 }); if (dly > 0) L.push({ k: "ddl", a: 0.35, b: 0.35, mix: dly / 100 }); if (rev > 0) L.push({ k: "hal", a: 0.6, b: 0.4, mix: rev / 100 });
+    return L;
+  }
+  function softFxIn(I, s) {
+    (I.fx || []).forEach(function (f) { var m = Math.round(clamp(f.mix * 100, 0, 100));
+      if (f.k === "cho") s.fxCho = m; else if (f.k === "ddl" || f.k === "bbd") s.fxDly = m; else if (/^(hal|roo|pla|spr)$/.test(f.k)) s.fxRev = m; });
+  }
+  var SOFT_FX = ["Effects", "fx", [knob("fxCho", "Chorus mix", 0, 100, 1), knob("fxDly", "Delay mix", 0, 100, 1), knob("fxRev", "Reverb mix", 0, 100, 1)]];
+
+  // ---- Vital ----
+  function vtGroup(n) { var p = "o" + n; return ["Oscillator " + n, p, [[p + "On", "On", "s"], knob(p + "Frame", "Wave frame", 0, 256, 1), knob(p + "Tr", "Transpose", -48, 48, 1),
+    knob(p + "Tune", "Tune (cents)", -100, 100, 1), knob(p + "Lvl", "Level (%)", 0, 100, 1)]]; }
+  function vtEnv(e, name) { return [name, e, [knob(e + "A", "Attack", 0, 2.37842, 0.001), knob(e + "D", "Decay", 0, 2.37842, 0.001), knob(e + "S", "Sustain (%)", 0, 100, 1), knob(e + "R", "Release", 0, 2.37842, 0.001)]]; }
+  PROFILES.vital = { id: "vital", name: "Vital", long: "after Vital (Matt Tytel's free wavetable synth plug-in): a beginner's panel of three wavetable oscillators, one filter, two envelopes, one LFO", voices: 8, book: "VT",
+    groups: [vtGroup(1), vtGroup(2), vtGroup(3), ["Sample (noise)", "smp", [["smpOn", "On", "s"], knob("smp", "Level (%)", 0, 100, 1)]],
+      ["Filter 1", "flt", [["fModel", "Model", "sel", ["Analog", "Ladder", "Digital"]], ["fStyle", "Style", "sel", ["12dB", "24dB", "Notch"]], knob("fBlend", "Blend (low · band · high)", 0, 2, 0.01),
+        knob("cut", "Cutoff (semitones)", 8, 136, 0.1), knob("res", "Resonance (%)", 0, 100, 1), knob("drive", "Drive (dB)", 0, 20, 0.1), knob("key", "Key track (%)", 0, 100, 1)]],
+      vtEnv("e1", "Envelope 1 (amp)"), vtEnv("e2", "Envelope 2"), ["Env 2 routes", "e2m", [knob("e2Cut", "Env 2 → cutoff (semitones)", -48, 48, 0.5), knob("e2Frame", "Env 2 → wave frame", -256, 256, 1)]],
+      ["LFO 1", "lfo", [["lfoShape", "Shape", "sel", ["tri", "sine", "saw", "square"]], knob("lfoRate", "Frequency (2^x Hz)", -7, 9, 0.01), knob("lfoPitch", "LFO 1 → pitch (semitones)", 0, 12, 0.1),
+        knob("lfoCut", "LFO 1 → cutoff (semitones)", 0, 48, 0.5), knob("lfoFrame", "LFO 1 → wave frame", 0, 256, 1)]],
+      SOFT_FX, ["Voice", "voice", [knob("poly", "Polyphony", 1, 16, 1), knob("uni", "Unison voices", 1, 8, 1), knob("glide", "Portamento time (2^x s)", -10, 4, 0.1), knob("vol", "Volume (%)", 0, 100, 1)]]],
+    def: { o1On: true, o1Frame: 256, o1Tr: 0, o1Tune: 0, o1Lvl: 71, o2On: false, o2Frame: 256, o2Tr: 0, o2Tune: 0, o2Lvl: 71, o3On: false, o3Frame: 256, o3Tr: 0, o3Tune: 0, o3Lvl: 71,
+      smpOn: false, smp: 50, fModel: "Analog", fStyle: "12dB", fBlend: 0, cut: 100, res: 20, drive: 0, key: 0,
+      e1A: 0.1495, e1D: 1, e1S: 100, e1R: 0.5476, e2A: 0.1495, e2D: 1, e2S: 100, e2R: 0.5476, e2Cut: 0, e2Frame: 0,
+      lfoShape: "tri", lfoRate: 1, lfoPitch: 0, lfoCut: 0, lfoFrame: 0, fxCho: 0, fxDly: 0, fxRev: 0, poly: 8, uni: 1, glide: -10, vol: 70 },
+    pg: { _: ["VT", "synth_parameters.cpp"], slope: ["VT", "synth_strings.h"], mods: ["VW", "vital.audio"], memory: ["VW", "vital.audio"], wt: ["VW", "vital.audio"], noise: ["VT", "synth_parameters.cpp"] },
+    fc: { osc0: ["o1On", "o1Frame", "o1Tr", "o1Tune", "o1Lvl"], osc1: ["o2On", "o2Frame", "o2Tr", "o2Tune", "o2Lvl"], osc2: ["o3On", "o3Frame", "o3Tr", "o3Tune", "o3Lvl"],
+      wt: ["o1Frame", "o2Frame", "o3Frame", "e2Frame", "lfoFrame"], noise: ["smpOn", "smp"], filter: ["fModel", "fStyle", "fBlend", "cut", "res", "e2Cut"], drive: ["drive"], kbd: ["key"],
+      env: ["e1A", "e1D", "e1S", "e1R", "e2A", "e2D", "e2S", "e2R"], lfo: ["lfoShape", "lfoRate"], mods: ["lfoPitch", "lfoCut", "lfoFrame", "e2Cut", "e2Frame"],
+      fx: ["fxCho", "fxDly", "fxRev"], chorus: ["fxCho"], glide: ["glide"], vol: ["vol"], voices: ["poly", "uni"], memory: [] },
+    cap: { voices: 16, unison: true, oscN: 3, waves: [["wt", "sine", "tri", "pulse", "saw"], ["wt", "sine", "tri", "pulse", "saw"], ["wt", "sine", "tri", "pulse", "saw"]], multi: false, pw: "square",
+      tune: ["free", "free", "free"], kbdOff: [], noise: ["white"], sub: false, ring: false, fb: false, sync: false, filters: [["lp", 12], ["lp", 24], ["bp", 12], ["hp", 12], ["notch", 12]], hpf: false,
+      selfOsc: true, kbd: "free", envs: "adsr2", lfo: ["tri", "sine", "saw", "sq"], lfoHz: [1 / 128, 512], lfoDelay: false, mods: ["lfo>pitch", "lfo>cut", "lfo>wt", "env>cut", "env>wt"],
+      glide: true, bend: [2, 2], chorus: false, fx: ["cho", "ddl", "hal"], drive: true, fm: false, wt: true, memory: "any number of", vel: false, accent: false, mono: "Polyphony set to 1", panel: VT_PANEL },
+    flow: { osc: [["Osc 1", ["o1On", "o1Frame", "o1Lvl"]], ["Osc 2", ["o2On", "o2Frame", "o2Lvl"]], ["Osc 3", ["o3On", "o3Frame", "o3Lvl"]]], noise: ["smpOn", "smp"], filter: ["cut", "res", "fStyle"],
+      fenv: ["e2A", "e2D", "e2S", "e2R", "e2Cut"], aenv: ["e1A", "e1D", "e1S", "e1R"], lfo: ["lfoRate", "lfoShape"], fx: ["fxCho", "fxDly", "fxRev"], fxName: "Effects" },
+    hint: function (k, v) {   // the real plug-in's own reading of a value, for copying the patch across (laws unverified, see VT above)
+      if (/^e[12][ADR]$/.test(k)) { var t = Math.pow(v, 4); return t < 1 ? Math.round(t * 1000) + " ms" : t.toFixed(2) + " s"; }
+      if (k === "cut") { var f = 440 * Math.pow(2, (v - 69) / 12); return f < 1000 ? Math.round(f) + " Hz" : (f / 1000).toFixed(2) + " kHz"; }
+      if (k === "lfoRate") return Math.pow(2, v).toFixed(2) + " Hz"; if (k === "glide") return v <= -9.95 ? "off" : Math.pow(2, v).toFixed(3) + " s";
+      if (/Frame$/.test(k) && /^o\d/.test(k)) return ["sine", "triangle", "square", "saw"][clamp(Math.round(v / 256 * 3), 0, 3)] + "-ish";
+      return ""; } };
+  function engVital(s) {
+    s = full("vital", s);
+    var o = [1, 2, 3].map(function (n) { var p = "o" + n, L = s[p + "Lvl"] / 100;
+      return { on: !!s[p + "On"] && L > 0, lvl: L * L * 1.4, waves: {}, wt: { t: VT_TAB, pos: clamp(s[p + "Frame"], 0, 256) / 256 * 63 }, pw: 0.5, oct: 0, semis: s[p + "Tr"] + s[p + "Tune"] / 100, kbd: true }; });
+    var b = s.fBlend, mode = s.fStyle === "Notch" ? "notch" : b < 0.5 ? "lp" : b < 1.5 ? "bp" : "hp", f24 = s.fStyle === "24dB" && mode === "lp";
+    var sh = s.lfoShape, L = { hz: Math.pow(2, s.lfoRate), tri: sh === "tri" ? 1 : 0, sine: sh === "sine" ? 1 : 0, saw: sh === "saw" ? 1 : 0, sq: sh === "square" ? 1 : 0, uni: false }, R = [], ls = [["lfo", 1]];
+    if (s.lfoPitch > 0) R.push({ id: "lfoPitch", src: ls, dst: ["p0", "p1", "p2"], amt: s.lfoPitch, gain: "fixed" });
+    if (s.lfoCut > 0) R.push({ id: "lfoCut", src: ls, dst: ["cut"], amt: s.lfoCut / 12, gain: "fixed" });
+    if (s.lfoFrame > 0) R.push({ id: "lfoFrame", src: ls, dst: ["wt"], amt: s.lfoFrame / 256 * 63 / 2, gain: "fixed" });
+    if (s.e2Frame) R.push({ id: "e2Frame", src: [["fenv", 1]], dst: ["wt"], amt: s.e2Frame / 256 * 63, gain: "fixed" });
+    return base("vital", { voices: s.uni > 1 ? 1 : s.poly, unison: s.uni > 1 ? s.uni : 1, uniDet: 10, prio: "last", legato: s.poly === 1 && s.uni <= 1, osc: o,
+      noise: { lvl: s.smpOn ? s.smp / 100 : 0, pink: false }, model: f24 ? (s.fModel === "Ladder" ? "ladder" : "cem") : "svf", mode: mode, slope: f24 ? 24 : 12,
+      cut: 440 * Math.pow(2, (s.cut - 69) / 12), res: s.res / 100, drive: s.drive > 0 ? (Math.pow(10, s.drive / 20) - 1) / 6 : 0, env: s.e2Cut / 12, kbd: s.key / 100,
+      fenv: vEnv(s.e2A, s.e2D, s.e2S, s.e2R), aenv: Object.assign({ vel: 0 }, vEnv(s.e1A, s.e1D, s.e1S, s.e1R)), lfo: L, routes: R,
+      glide: s.glide > -9.95 ? Math.pow(2, s.glide) : 0, bend: 2, drift: 0, fx: softFx(s.fxCho, s.fxDly, s.fxRev), vol: s.vol / 100 });
+  }
+  PROFILES.vital.apply = function (c, s, I) {
+    [1, 2, 3].forEach(function (n) { s["o" + n + "On"] = false; });
+    I.osc.slice(0, 3).forEach(function (o, i) { var p = "o" + (i + 1), w = o.wt;
+      s[p + "On"] = true; s[p + "Frame"] = w && w.t === VT_TAB ? Math.round(w.pos / 63 * 256) : VT_FR[nearShape(o)];
+      var tr = clamp(Math.round(o.semis), -48, 48); s[p + "Tr"] = tr; s[p + "Tune"] = clamp(Math.round((o.semis - tr) * 100), -100, 100);
+      s[p + "Lvl"] = Math.round(clamp(Math.sqrt(o.lvl / 1.4) * 100, 0, 100)); });
+    if (I.noise) { s.smpOn = true; s.smp = Math.round(clamp(I.noise.lvl * 100, 0, 100)); }
+    var f = I.filter; s.fStyle = f.mode === "notch" ? "Notch" : f.mode === "lp" && f.slope === 24 ? "24dB" : "12dB"; s.fBlend = { lp: 0, bp: 1, hp: 2, notch: 0 }[f.mode] || 0;
+    s.fModel = /^(ladder|diode)$/.test(c.model) ? "Ladder" : "Analog"; s.cut = r1(clamp(69 + 12 * lg2(Math.max(f.cut, 1) / 440), 8, 136)); s.res = Math.round(clamp(f.res, 0, 1) * 100);
+    s.e2Cut = Math.round(clamp(f.env * 12, -48, 48) * 2) / 2; s.key = Math.round(clamp(f.kbd, 0, 1) * 100);
+    var dr = I.drive || c.drive; s.drive = dr ? r1(clamp(20 * Math.log(1 + 6 * dr) / Math.LN10, 0, 20)) : 0;
+    s.e1A = v4(I.aenv.a); s.e1D = v4(I.aenv.d); s.e1S = Math.round(I.aenv.s * 100); s.e1R = v4(I.aenv.r);
+    s.e2A = v4(I.fenv.a); s.e2D = v4(I.fenv.d); s.e2S = Math.round(I.fenv.s * 100); s.e2R = v4(I.fenv.r);
+    if (I.lfo) { s.lfoRate = Math.round(clamp(lg2(I.lfo.hz), -7, 9) * 100) / 100; s.lfoShape = { tri: "tri", sine: "sine", saw: "saw", sq: "square", sh: "tri" }[I.lfo.shape] || "tri"; }
+    var lp = mk(I, "lfo>pitch"), lc = mk(I, "lfo>cut"), lw = mk(I, "lfo>wt"), ew = mk(I, "env>wt");
+    if (lp) s.lfoPitch = r1(clamp(lp.amt, 0, 12)); if (lc) s.lfoCut = Math.round(clamp(lc.amt * 12, 0, 48) * 2) / 2;
+    if (lw) s.lfoFrame = Math.round(clamp(lw.amt * 2 / 63 * 256, 0, 256)); if (ew) s.e2Frame = Math.round(clamp(ew.amt / 63 * 256, -256, 256));
+    softFxIn(I, s);
+    s.uni = I.unison > 1 ? clamp(I.unison, 1, 8) : 1; s.poly = clamp(I.voices || 1, 1, 16);
+    s.glide = I.glide > 0 ? r1(clamp(lg2(I.glide), -10, 4)) : -10; s.vol = Math.round(clamp(c.vol * 100, 0, 100));
+  };
+
+  // ---- Surge XT ----
+  function sxWaves(sh) { var x = clamp(sh, -100, 100) / 100; return x < 0 ? { saw: 1 + x, pulse: -x } : { saw: 1 }; }
+  function sxEnv(a, d, ss, r) { return { a: Math.pow(2, a), d: Math.pow(2, d), s: ss / 100, r: Math.pow(2, r), lin: false }; }
+  function sxT(t) { return r1(clamp(lg2(Math.max(t, 0.001)), -10, 5)); }
+  var SX_F = ["Vintage Ladder", "LP 24 dB", "LP 12 dB", "BP 12 dB", "HP 12 dB", "Notch 12 dB"];
+  function sxEg(e, name) { return [name, e, [knob(e + "A", "Attack (2^x s)", -10, 5, 0.1), knob(e + "D", "Decay (2^x s)", -10, 5, 0.1), knob(e + "S", "Sustain (%)", 0, 100, 1), knob(e + "R", "Release (2^x s)", -10, 5, 0.1)]]; }
+  PROFILES.surge = { id: "surge", name: "Surge XT", long: "after Surge XT (the Surge Synth Team's free, open-source synth plug-in): a beginner's panel of two Classic oscillators, the mixer, one filter, two envelopes, one LFO", voices: 16, book: "SX",
+    groups: [["Oscillator 1 (Classic)", "o1", [knob("o1Shape", "Shape (pulse · saw · dual saw)", -100, 100, 1), knob("o1W", "Width 1 (%)", 0, 100, 1), knob("o1Sub", "Sub Mix (%)", 0, 100, 1), knob("o1Oct", "Octave", -3, 3, 1), knob("o1Pitch", "Pitch (semitones)", -7, 7, 0.01)]],
+      ["Oscillator 2 (Classic)", "o2", [knob("o2Shape", "Shape (pulse · saw · dual saw)", -100, 100, 1), knob("o2W", "Width 1 (%)", 0, 100, 1), knob("o2Oct", "Octave", -3, 3, 1), knob("o2Pitch", "Pitch (semitones)", -7, 7, 0.01), ["o2Kbd", "Keytrack", "s"]]],
+      ["Mixer", "mix", [knob("m1", "Osc 1 (%)", 0, 100, 1), knob("m2", "Osc 2 (%)", 0, 100, 1), knob("r12", "Ring 1×2 (%)", 0, 100, 1), knob("n", "Noise (%)", 0, 100, 1)]],
+      ["Filter 1", "flt", [["fType", "Type", "sel", SX_F], knob("cut", "Cutoff (semitones from A 440)", -65, 67, 0.1), knob("res", "Resonance (%)", 0, 100, 1), knob("feg", "FEG > F1 (semitones)", -48, 48, 0.5), knob("key", "Keytrack > F1 (%)", 0, 100, 1)]],
+      sxEg("f", "Filter EG"), sxEg("a", "Amp EG"),
+      ["LFO 1", "lfo", [["lfoShape", "Shape", "sel", ["sine", "tri", "square", "saw", "sh"]], knob("lfoRate", "Rate (2^x Hz)", -7, 9, 0.01), knob("lfoPitch", "LFO 1 → pitch (semitones)", 0, 12, 0.1),
+        knob("lfoCut", "LFO 1 → cutoff (semitones)", 0, 48, 0.5), knob("lfoW", "LFO 1 → Width 1 (%)", 0, 45, 1)]],
+      SOFT_FX, ["Scene", "scene", [["play", "Play mode", "sel", ["Poly", "Mono"]], knob("uni", "Unison voices", 1, 8, 1), knob("glide", "Portamento (2^x s)", -10, 3, 0.1), knob("bend", "Bend depth", 0, 24, 1), knob("vol", "Volume (%)", 0, 100, 1)]]],
+    def: { o1Shape: 0, o1W: 50, o1Sub: 0, o1Oct: 0, o1Pitch: 0, o2Shape: 0, o2W: 50, o2Oct: 0, o2Pitch: 0, o2Kbd: true, m1: 100, m2: 0, r12: 0, n: 0,
+      fType: "Vintage Ladder", cut: 30, res: 20, feg: 0, key: 0, fA: -8, fD: -1, fS: 100, fR: -3, aA: -8, aD: -1, aS: 100, aR: -3,
+      lfoShape: "sine", lfoRate: 0, lfoPitch: 0, lfoCut: 0, lfoW: 0, fxCho: 0, fxDly: 0, fxRev: 0, play: "Poly", uni: 1, glide: -10, bend: 2, vol: 70 },
+    pg: { _: ["SX", "Getting Started"], voices: ["SX", "Play Mode"], osc: ["SX", "Classic"], sub: ["SX", "Classic"], pw: ["SX", "Classic"], noise: ["SX", "Mixer"], ring: ["SX", "Mixer"],
+      filter: ["SX", "Filter Types"], slope: ["SX", "Filter Types"], kbd: ["SX", "Keytrack"], env: ["SX", "Envelope Generators"], lfo: ["SX", "Shapes"], mods: ["SX", "Modulation"],
+      glide: ["SX", "Portamento"], bend: ["SX", "Bend Depth"], memory: ["SX", "Managing Patches"], fx: ["SX", "Effects"], chorus: ["SX", "Effects"] },
+    fc: { osc0: ["o1Shape", "o1W", "o1Oct", "o1Pitch", "m1"], osc1: ["o2Shape", "o2W", "o2Oct", "o2Pitch", "o2Kbd", "m2"], sub: ["o1Sub"], noise: ["n"], ring: ["r12"], pw: ["o1W", "o2W"],
+      filter: ["fType", "cut", "res", "feg"], kbd: ["key"], env: ["fA", "fD", "fS", "fR", "aA", "aD", "aS", "aR"], lfo: ["lfoShape", "lfoRate"], mods: ["lfoPitch", "lfoCut", "lfoW"],
+      fx: ["fxCho", "fxDly", "fxRev"], chorus: ["fxCho"], glide: ["glide"], bend: ["bend"], vol: ["vol"], voices: ["play", "uni"], memory: [] },
+    cap: { voices: 16, unison: true, oscN: 2, waves: [["saw", "pulse"], ["saw", "pulse"]], multi: true, pw: "knob", tune: ["free", "free"], kbdOff: [1], noise: ["white"], sub: true, ring: true,
+      fb: false, sync: false, filters: [["lp", 24], ["lp", 12], ["bp", 12], ["hp", 12], ["notch", 12]], hpf: false, selfOsc: true, kbd: "free", envs: "adsr2", lfo: ["sine", "tri", "sq", "saw", "sh"],
+      lfoHz: [1 / 128, 512], lfoDelay: false, mods: ["lfo>pitch", "lfo>cut", "lfo>pw", "sh>pitch", "sh>cut", "sh>pw"], glide: true, bend: [0, 24], chorus: false, fx: ["cho", "ddl", "hal"],
+      drive: false, fm: false, wt: false, memory: "any number of", vel: false, accent: false, mono: "Mono play mode", panel: SX_PANEL },
+    flow: { osc: [["Osc 1", ["o1Shape", "o1W", "m1"]], ["Osc 2", ["o2Shape", "o2W", "m2"]], ["Sub", ["o1Sub"]]], noise: ["n"], ring: ["r12"], filter: ["fType", "cut", "res"],
+      fenv: ["fA", "fD", "fS", "fR", "feg"], aenv: ["aA", "aD", "aS", "aR"], lfo: ["lfoRate", "lfoShape"], fx: ["fxCho", "fxDly", "fxRev"], fxName: "Effects" },
+    hint: function (k, v) {   // the real plug-in's display of a value (laws unverified, see SX above)
+      if (/^[fa][ADR]$/.test(k)) { var t = Math.pow(2, v); return t < 1 ? Math.round(t * 1000) + " ms" : t.toFixed(2) + " s"; }
+      if (k === "cut") { var f = 440 * Math.pow(2, v / 12); return f < 1000 ? Math.round(f) + " Hz" : (f / 1000).toFixed(2) + " kHz"; }
+      if (k === "lfoRate") return Math.pow(2, v).toFixed(2) + " Hz"; if (k === "glide") return v <= -9.95 ? "off" : Math.pow(2, v).toFixed(3) + " s";
+      if (/^o\dShape$/.test(k)) return v <= -50 ? "pulse" : v < 50 ? "saw" : "dual saw";
+      return ""; } };
+  function engSurge(s) {
+    s = full("surge", s);
+    var sub = s.o1Sub / 100, l1 = s.m1 / 100, l2 = s.m2 / 100, ring = s.r12 > 0;
+    var o1 = { on: l1 > 0 && sub < 1, run: ring, lvl: l1 * (1 - sub), waves: sxWaves(s.o1Shape), pw: clamp(s.o1W / 100, 0.03, 0.97), oct: s.o1Oct, semis: s.o1Pitch, kbd: true },
+      o2 = { on: l2 > 0, run: ring, lvl: l2, waves: sxWaves(s.o2Shape), pw: clamp(s.o2W / 100, 0.03, 0.97), oct: s.o2Oct, semis: s.o2Pitch, kbd: !!s.o2Kbd },
+      os = { on: l1 > 0 && sub > 0, lvl: l1 * sub, waves: sxWaves(s.o1Shape), pw: o1.pw, oct: s.o1Oct - 1, semis: s.o1Pitch, kbd: true, sub: true };
+    var ft = s.fType, mode = /^BP/.test(ft) ? "bp" : /^HP/.test(ft) ? "hp" : /^Notch/.test(ft) ? "notch" : "lp", f24 = ft === "Vintage Ladder" || ft === "LP 24 dB";
+    var sh = s.lfoShape, L = { hz: Math.pow(2, s.lfoRate), sine: sh === "sine" ? 1 : 0, tri: sh === "tri" ? 1 : 0, saw: sh === "saw" ? 1 : 0, sq: sh === "square" ? 1 : 0, uni: false }, R = [], ls = [[sh === "sh" ? "shL" : "lfo", 1]];
+    if (s.lfoPitch > 0) R.push({ id: "lfoPitch", src: ls, dst: ["p0", "p1", "p2"], amt: s.lfoPitch, gain: "fixed" });
+    if (s.lfoCut > 0) R.push({ id: "lfoCut", src: ls, dst: ["cut"], amt: s.lfoCut / 12, gain: "fixed" });
+    if (s.lfoW > 0) R.push({ id: "lfoW", src: ls, dst: ["pw0", "pw1", "pw2"], amt: s.lfoW / 100, gain: "fixed" });
+    var mono = s.play === "Mono";
+    return base("surge", { voices: mono || s.uni > 1 ? 1 : 16, unison: s.uni > 1 ? s.uni : 1, uniDet: 10, prio: "last", legato: mono, osc: [o1, o2, os],
+      noise: { lvl: s.n / 100, pink: false }, ring: ring ? { lvl: s.r12 / 100, kind: "mul" } : null,
+      model: ft === "Vintage Ladder" ? "ladder" : f24 ? "cem" : "svf", mode: mode, slope: f24 ? 24 : 12, cut: 440 * Math.pow(2, s.cut / 12), res: s.res / 100, env: s.feg / 12, kbd: s.key / 100,
+      fenv: sxEnv(s.fA, s.fD, s.fS, s.fR), aenv: Object.assign({ vel: 0 }, sxEnv(s.aA, s.aD, s.aS, s.aR)), lfo: L, routes: R,
+      glide: s.glide > -9.95 ? Math.pow(2, s.glide) : 0, bend: s.bend, drift: 0, fx: softFx(s.fxCho, s.fxDly, s.fxRev), vol: s.vol / 100 });
+  }
+  PROFILES.surge.apply = function (c, s, I) {
+    s.m1 = 0; s.m2 = 0;
+    I.osc.slice(0, 2).forEach(function (o, i) { var p = "o" + (i + 1), sp = hasW(o, "pulse"), sw = hasW(o, "saw") || hasW(o, "wt");
+      s[p + "Shape"] = sp && sw ? -50 : sp ? -100 : 0; if (sp) s[p + "W"] = Math.round(clamp(o.pw * 100, 3, 97));
+      var oc = clamp(Math.round(o.semis / 12), -3, 3); s[p + "Oct"] = oc; s[p + "Pitch"] = Math.round(clamp(o.semis - oc * 12, -7, 7) * 100) / 100;
+      if (i === 1) s.o2Kbd = o.kbd !== false; s["m" + (i + 1)] = Math.round(clamp(o.lvl * 100, 0, 100)); });
+    if (I.sub && s.m1 + I.sub * 100 > 0) { var tot = s.m1 / 100 + I.sub; s.o1Sub = Math.round(clamp(I.sub / tot * 100, 0, 100)); s.m1 = Math.round(clamp(tot * 100, 0, 100)); }
+    if (I.noise) s.n = Math.round(clamp(I.noise.lvl * 100, 0, 100)); if (I.ring) s.r12 = Math.round(clamp(I.ring * 100, 0, 100));
+    var f = I.filter; s.fType = f.mode === "bp" ? "BP 12 dB" : f.mode === "hp" ? "HP 12 dB" : f.mode === "notch" ? "Notch 12 dB" : f.slope === 24 ? (/^(ladder|diode)$/.test(c.model) ? "Vintage Ladder" : "LP 24 dB") : "LP 12 dB";
+    s.cut = r1(clamp(12 * lg2(Math.max(f.cut, 1) / 440), -65, 67)); s.res = Math.round(clamp(f.res, 0, 1) * 100); s.feg = Math.round(clamp(f.env * 12, -48, 48) * 2) / 2; s.key = Math.round(clamp(f.kbd, 0, 1) * 100);
+    s.fA = sxT(I.fenv.a); s.fD = sxT(I.fenv.d); s.fS = Math.round(I.fenv.s * 100); s.fR = sxT(I.fenv.r);
+    s.aA = sxT(I.aenv.a); s.aD = sxT(I.aenv.d); s.aS = Math.round(I.aenv.s * 100); s.aR = sxT(I.aenv.r);
+    if (I.lfo) { s.lfoRate = Math.round(clamp(lg2(I.lfo.hz), -7, 9) * 100) / 100; s.lfoShape = { tri: "tri", sine: "sine", saw: "saw", sq: "square", sh: "sh" }[I.lfo.shape] || "tri"; }
+    var lp = mk(I, "lfo>pitch") || mk(I, "sh>pitch"), lc = mk(I, "lfo>cut") || mk(I, "sh>cut"), lw = mk(I, "lfo>pw") || mk(I, "sh>pw");
+    if (lp) s.lfoPitch = r1(clamp(lp.amt, 0, 12)); if (lc) s.lfoCut = Math.round(clamp(lc.amt * 12, 0, 48) * 2) / 2; if (lw) s.lfoW = Math.round(clamp(lw.amt * 100, 0, 45));
+    softFxIn(I, s);
+    s.play = I.voices === 1 && !(I.unison > 1) ? "Mono" : "Poly"; s.uni = I.unison > 1 ? clamp(I.unison, 1, 8) : 1;
+    s.glide = I.glide > 0 ? r1(clamp(lg2(I.glide), -10, 3)) : -10; if (I.bend) s.bend = clamp(Math.round(I.bend), 0, 24); s.vol = Math.round(clamp(c.vol * 100, 0, 100));
+  };
+
   // =====================================================================================================================
   // WHAT IF … : features an instrument lacks, kept apart from the real thing. They change only the SOUND (SynthCompare.engine's third
   // argument); the panel state, the translation and its report keep describing the real instrument. Each says where the lack is
@@ -1207,7 +1410,7 @@
     return d;
   }
   var ENG = { moog: engMoog, prophet: engProphet, tb303: eng303, juno: engJuno, arp2600: engArp, obxa: engOb, ms20: engMs20, dx7: engDx7, ppg: engPpg,
-    p6: engP6, taurus: engTaurus, voyager: engVoyager, sub37: engSub37, grandmother: engGrand, memorymoog: engMemory };
+    p6: engP6, taurus: engTaurus, voyager: engVoyager, sub37: engSub37, grandmother: engGrand, memorymoog: engMemory, vital: engVital, surge: engSurge };
   // SC.engine(id, state, mods): mods = { whatifId: true } (or a list of ids) changes the SOUND only; translate() never passes it.
   SC.engine = function (id, s, mods) {
     var E = base(id, ENG[id](s)), W = PROFILES[id].whatif || [], on = Array.isArray(mods) ? mods : Object.keys(mods || {}).filter(function (k) { return mods[k]; });
@@ -1267,6 +1470,7 @@
   function translateCanon(c, T) {
     var S = PROFILES[c.src], P = PROFILES[T], cap = P.cap, sc = S.cap, N = [], I = {}, SN = "the " + S.name, TN = "the " + P.name, st = full(T, {});
     function nt(cls, what, why, feat, extra, from, to) {
+      if (cls === "lost" && cap.panel) why += " (" + cap.panel + ")";
       note(N, cls, what, why, [pc(c.src, feat), pc(T, feat)].concat(extra || []), from || S.fc[feat] || [], to || P.fc[feat] || []);
     }
     function cap1(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
@@ -1284,6 +1488,7 @@
       I.unison = cap.unison ? Math.min(c.unison, cap.voices) : 1;
       nt("approx", "Unison: " + c.unison + " voices on one note", cap.unison ? "Both can stack voices on one key; the detune between them is this page's guess on both." : cap1(TN) + " has no unison mode: one voice plays, and the stacked thickness is gone." , "voices");
     } else if (cap.voices === 1) nt("exact", "One voice", "Both play one note at a time.", "voices");
+    else if (cap.mono) nt("exact", "One voice", "Both can play one note at a time: " + TN + " in its " + cap.mono + ".", "voices");
     else nt("approx", "One voice", cap1(SN) + " plays one note at a time; " + TN + " is polyphonic" + (cap.unison ? " (its unison mode is off here)" : " and has no mono mode") + ", so play one note at a time, and glides and legato behave differently.", "voices");
     // --- the sound sources ---
     I.osc = []; I.noise = null; I.ring = 0; I.sub = 0;
@@ -1304,15 +1509,17 @@
     src.forEach(function (o, i) {
       var lbl = o.fmNote ? "carrier operator " + o.fmNote.op.n : "oscillator " + (c.osc.indexOf(o) + 1), from = o.fmNote ? S.fc.fm : S.fc["osc" + c.osc.indexOf(o)];
       if (i >= nOsc) { nt("lost", cap1(lbl) + " (one more than " + TN + " has)", cap1(SN) + " sounds " + src.length + " sources on each note; " + TN + " has " + cap.oscN + (cap.oscN === 1 ? " oscillator" : " oscillators") + " a voice, so this one is left out.", "osc", [], from, []); return; }
-      var to = P.fc["osc" + i] || [], have = wavesOf(o), allowed = cap.fm && !c.fm ? ["saw", "pulse", "tri", "sine"] : cap.waves[i] || [], pick = [];
+      var basic = o.wt && o.wt.t === VT_TAB && T !== "vital", to = P.fc["osc" + i] || [], have = basic ? [nearShape(o)] : wavesOf(o), allowed = cap.fm && !c.fm ? ["saw", "pulse", "tri", "sine"] : cap.waves[i] || [], pick = [];
       have.forEach(function (w) { if (allowed.indexOf(w) >= 0) pick.push(w); });
       var cls = pick.length === have.length && (have.length < 2 || cap.multi) ? "exact" : "approx";
       if (!cap.multi && pick.length > 1) pick = [pick.indexOf("saw") >= 0 ? "saw" : pick[0]];
       if (!pick.length) { var near = null; have.forEach(function (w) { (NEAR[w] || []).forEach(function (x) { if (!near && allowed.indexOf(x) >= 0) near = x; }); }); pick = [near || allowed[0]]; cls = "approx"; }
-      if (o.fmNote || (cap.fm && !c.fm)) cls = "approx";
-      var info = { src: o, waves: pick, pw: o.pw, semis: o.oct * 12 + o.semis, kbd: o.kbd, lvl: Math.min(1, o.lvl), wt: o.wt };
+      if (o.fmNote || (cap.fm && !c.fm) || basic || (o.wt && T === "vital" && o.wt.t !== VT_TAB)) cls = "approx";
+      var info = { src: o, waves: pick, pw: basic ? 0.5 : o.pw, semis: o.oct * 12 + o.semis, kbd: o.kbd, lvl: Math.min(1, o.lvl), wt: basic ? null : o.wt };
       I.osc[i] = info;
-      var why = o.fmNote ? "Ratio " + (Math.round(ratioOf(o.fmNote.op) * 100) / 100) + " becomes the pitch; its modulator at level " + o.fmNote.mod + " becomes a " + WNAME[pick[0]] + " (the brighter the modulation, the brighter the wave: DX 35)."
+      var why = basic ? "Vital's oscillator reads a wavetable; on this page its table runs sine, triangle, square, saw (after Vital's Basic Shapes, unverified), so wave frame " + Math.round(o.wt.pos / 63 * 256) + " is nearest a " + WNAME[have[0]] + (pick[0] === have[0] ? ", which " + TN + " has." : "; " + TN + " offers " + allowed.map(function (w) { return WNAME[w]; }).join(", ") + ", so a " + WNAME[pick[0]] + " stands in.")
+        : o.wt && T === "vital" && o.wt.t !== VT_TAB ? "Vital can load any wavetable, but this page's Vital has only its basic-shapes table, so the " + WNAME[nearShape(o)] + " nearest this wave stands in (the PPG's own tables are not copied either)."
+        : o.fmNote ? "Ratio " + (Math.round(ratioOf(o.fmNote.op) * 100) / 100) + " becomes the pitch; its modulator at level " + o.fmNote.mod + " becomes a " + WNAME[pick[0]] + " (the brighter the modulation, the brighter the wave: DX 35)."
         : have[0] === "wt" ? "A wavetable oscillator steps through a table of 64 waves (SOS); " + TN + " has fixed waves, so the nearest, a " + WNAME[pick[0]] + ", stands in for wave " + Math.round(o.wt.pos) + "."
         : pick[0] === "wt" ? "The " + have.map(function (w) { return WNAME[w]; }).join(" + ") + " becomes the nearest wave in this page's wavetables (the PPG's own tables are not copied)."
         : cap.fm && !c.fm ? "There are no waveforms to pick on the DX7, only sine-wave operators: a carrier and its modulator imitate the " + WNAME[have[0]] + " (DX 35, 62)."
@@ -1346,7 +1553,7 @@
       else { I.noise = { lvl: c.noise.lvl, col: cap.noise.indexOf(col) >= 0 ? col : "white" }; nt(cap.noise.indexOf(col) >= 0 ? "exact" : "approx", "Noise (" + col + ")", cap.noise.indexOf(col) >= 0 ? "Both have " + col + " noise." : cap1(TN) + "'s noise is " + cap.noise.join(" / ") + " only; filter it for a darker colour.", "noise"); }
     }
     if (c.ring && c.ring.lvl > 0) {
-      if (cap.ring) { I.ring = c.ring.lvl; nt("approx", "Ring modulator", "Both have one. Its inputs differ: " + (c.ring.kind === "arp" ? "VCO-1 saw and VCO-2 sine on the ARP (A2 6)" : "VCO-1 and VCO-2 on the MS-20 (K2 5)") + "; " + (cap.cords ? "the nearest normalled inputs are used." : "the nearest is used."), "ring"); }
+      if (cap.ring) { I.ring = c.ring.lvl; nt("approx", "Ring modulator", "Both have one. Its inputs differ: " + (c.ring.kind === "arp" ? "VCO-1 saw and VCO-2 sine on the ARP (A2 6)" : c.ring.kind === "mul" ? "oscillators 1 and 2 multiplied on Surge XT (SX, Mixer)" : "VCO-1 and VCO-2 on the MS-20 (K2 5)") + "; " + (cap.cords ? "the nearest normalled inputs are used." : "the nearest is used."), "ring"); }
       else nt("lost", "Ring modulator", "It multiplies two oscillators, giving sums and differences of their frequencies: the clangorous, metallic sound (K2 5). " + cap1(TN) + " has no ring modulator.", "ring");
       if (!cap.ring && !I.osc.length) {   // nothing else sounds: let the ring modulator's two inputs play as oscillators
         [0, 1].forEach(function (i) { var o = c.osc[i]; if (i >= cap.oscN) return; var w = c.ring.kind === "arp" ? (i ? "sine" : "saw") : wavesOf(o)[0] || "pulse", al = cap.waves[i] || [];
@@ -1428,14 +1635,15 @@
     if (c.chorus && !cap.chorus && (cap.fx || []).indexOf("cho") >= 0) { I.fx.push({ k: "cho", a: c.chorus === 2 ? 0.45 : 0.3, b: c.chorus === 2 ? 0.7 : 0.45, mix: 0.5 }); nt("approx", "Chorus " + ["", "I", "II"][c.chorus] + " → the chorus effect", "The Juno's chorus is part of its analog circuit (J6 22); " + TN + "'s chorus is one of its digital effects. Rates and depths are this page's.", "chorus", [pc(T, "fx")]); }
     else if (c.chorus) nt(cap.chorus ? "exact" : "lost", "Chorus " + ["", "I", "II"][c.chorus], cap.chorus ? "Both." : "The Juno's built-in chorus (I, or the stronger II, J6 22) widens and thickens every note. " + cap1(TN) + " has none; an external chorus pedal does it.", "chorus");
     (c.fx || []).forEach(function (f) {
-      var nm = FXN[f.k] || f.k, have = (cap.fx || []).indexOf(f.k) >= 0, rev = /^(hal|roo|pla|spr)$/.test(f.k), near = !have && rev && (cap.fx || []).filter(function (k) { return /^(hal|roo|pla|spr)$/.test(k); })[0];
+      var nm = FXN[f.k] || f.k, have = (cap.fx || []).indexOf(f.k) >= 0, rev = /^(hal|roo|pla|spr)$/.test(f.k), dly = /^(bbd|ddl)$/.test(f.k), near = !have && (rev || dly) && (cap.fx || []).filter(function (k) { return rev ? /^(hal|roo|pla|spr)$/.test(k) : /^(bbd|ddl)$/.test(k); })[0];
       if (f.k === "dist" && cap.drive) { I.drive = f.a; nt("approx", "Distortion → MultiDrive", "The Prophet-6's distortion comes after the filter (P6 41); " + TN + "'s drive is inside the filter stage, so it grows with resonance and cutoff. Amounts are this page's.", "drive", [cite("P6", 41)]); return; }
       if (f.k === "cho" && cap.chorus && !have) { I.chorus = f.b > 0.6 ? 2 : 1; nt("approx", "Chorus effect → the Juno's chorus", "The nearest of the Juno's two chorus settings (J6 22).", "chorus"); return; }
-      if (have || near) { I.fx.push(have ? f : { k: near, a: f.a, b: f.b, mix: f.mix }); nt(have ? "exact" : "approx", "Effect: " + nm, have ? "Both have it built in; times and depths are this page's." : cap1(TN) + "'s only reverb is its " + FXN[near] + ".", "fx", [pc(c.src, "fx"), pc(T, "fx")]); return; }
+      if (have || near) { I.fx.push(have ? f : { k: near, a: f.a, b: f.b, mix: f.mix }); nt(have ? "exact" : "approx", "Effect: " + nm, have ? "Both have it built in; times and depths are this page's." : cap1(TN) + "'s only " + (rev ? "reverb" : "delay") + " is its " + FXN[near] + ".", "fx", [pc(c.src, "fx"), pc(T, "fx")]); return; }
       nt("lost", "Effect: " + nm, cap1(SN) + " has a built-in " + nm + (f.k === "dist" ? " (P6 41)" : " (P6 26-28)") + "; " + TN + " has none: a pedal or the mixing desk does it.", "fx", [pc(c.src, f.k === "dist" ? "drive" : "fx")]);
     });
     if (c.drive > 0) { if (cap.drive) I.drive = c.drive; else if ((cap.fx || []).indexOf("dist") >= 0) I.fx.push({ k: "dist", a: c.drive, b: 0, mix: 1 });
-      nt(cap.drive ? "exact" : (cap.fx || []).indexOf("dist") >= 0 ? "approx" : "lost", "MultiDrive", cap.drive ? "Both drive the filter stage." : (cap.fx || []).indexOf("dist") >= 0 ? cap1(TN) + "'s distortion stands in; it comes after the filter (P6 41), not inside it." : "MultiDrive overdrives the filter stage (S25 PDF 16); " + TN + " has nothing for it but running its mixer hot.", "drive", [cite("S25", "PDF 16")]); }
+      var dn = c.src === "sub37" ? "MultiDrive" : "Filter drive", dw = c.src === "sub37" ? "MultiDrive overdrives the filter stage (S25 PDF 16)" : cap1(SN) + "'s Drive pushes the sound harder into its filter";
+      nt(cap.drive ? "exact" : (cap.fx || []).indexOf("dist") >= 0 ? "approx" : "lost", dn, cap.drive ? "Both drive the filter stage; amounts are this page's." : (cap.fx || []).indexOf("dist") >= 0 ? cap1(TN) + "'s distortion stands in; it comes after the filter (P6 41), not inside it." : dw + "; " + TN + " has nothing for it but running its mixer hot.", "drive", c.src === "sub37" ? [cite("S25", "PDF 16")] : []); }
     if (c.velF || (c.aenv && c.aenv.vel)) nt(cap.vel ? "exact" : "lost", "Velocity", cap.vel ? "Both respond to how hard the key is played." : cap1(TN) + "'s keyboard does not sense velocity here.", "vel");
     if (sc.memory && !cap.memory) nt("lost", "Stored programs", cap1(SN) + " stores its sounds (" + sc.memory + " memories); " + TN + "'s sound is set by hand on the panel and is gone when the knobs move.", "memory");
     else if (!sc.memory && cap.memory) nt("exact", "Stored programs", cap1(TN) + " can store this sound (" + cap.memory + " memories); " + SN + " cannot.", "memory");
@@ -1765,6 +1973,45 @@
       s: { o1Saw: true, o2Saw: true, o2Freq: 0.1, o3Saw: true, o3Tri: false, o3Freq: -0.08, m1: 4, m2: 4, m3: 4, kb1: true, cutoff: 3.5, emph: 2, cAmt: 6, fA: 2, fD: 5, fS: 5, fR: 3, lA: 1, lS: 9, lR: 3, vmF: 1, vO2: true } }
   ]);
 
+  // ---------- Vital and Surge XT: beginner patches (this page's settings; parameter names from Vital's source and the Surge XT manual) ----------
+  var MELODY = [[60, 0, .5], [62, .5, .5], [64, 1, .5], [67, 1.5, .5], [64, 2, 1], [60, 3, 1]];
+  SC.EXAMPLES = SC.EXAMPLES.concat([
+    { id: "vital-first", from: "vital", name: "First sound: one saw, filter open", src: "Vital synth_parameters.cpp", phrase: MELODY, bpm: 100, wheel: 0,
+      say: "Oscillator 1 on its last wave frame (a saw in this page's table), the filter high, the envelopes near Vital's own defaults. Every other synth can play this.",
+      s: { o1On: true, o1Frame: 256, o1Lvl: 71, cut: 110, res: 10, e1A: 0.15, e1D: 1, e1S: 100, e1R: 0.55 } },
+    { id: "vital-morph", from: "vital", name: "Shape it: envelope 2 sweeps the wave frame", src: "Vital synth_parameters.cpp", phrase: LEAD, bpm: 96, wheel: 0,
+      say: "Envelope 2 moves the wave frame from sine towards saw on every note, so the tone brightens without the filter. Only the wavetable synths (Vital, PPG) can do this.",
+      s: { o1On: true, o1Frame: 0, o1Lvl: 75, e2Frame: 256, e2A: 0.55, e2D: 0.9, e2S: 30, e2R: 0.5, cut: 120, res: 0, e1S: 90 } },
+    { id: "vital-bass", from: "vital", name: "Bass: sine under a saw, 24 dB ladder", src: "Vital synth_parameters.cpp", phrase: BASS, bpm: 110, wheel: 0,
+      say: "Oscillator 1 a saw, oscillator 2 a sine an octave down for weight, a 24 dB Ladder filter closed and opened by envelope 2, one voice with a little portamento.",
+      s: { o1On: true, o1Frame: 256, o1Tr: -12, o1Lvl: 75, o2On: true, o2Frame: 0, o2Tr: -24, o2Lvl: 70, fModel: "Ladder", fStyle: "24dB", cut: 52, res: 35, e2Cut: 30, e2A: 0, e2D: 0.6, e2S: 10, e2R: 0.3,
+        e1A: 0, e1D: 0.8, e1S: 80, e1R: 0.3, poly: 1, glide: -5, drive: 4 } },
+    { id: "vital-pad", from: "vital", name: "Pad: two detuned waves, slow envelope, LFO on the frame", src: "Vital synth_parameters.cpp", phrase: PAD, bpm: 60, wheel: 0,
+      say: "Two oscillators a few cents apart, between triangle and square, the LFO slowly moving the wave frame, a slow attack and release, chorus and reverb.",
+      s: { o1On: true, o1Frame: 110, o1Tune: -8, o1Lvl: 65, o2On: true, o2Frame: 140, o2Tune: 8, o2Lvl: 65, cut: 92, res: 15, e1A: 1.05, e1D: 1.2, e1S: 85, e1R: 1.2,
+        lfoShape: "sine", lfoRate: -2, lfoFrame: 60, fxCho: 40, fxRev: 35, poly: 8 } },
+    { id: "vital-lead", from: "vital", name: "Lead: unison saws, vibrato, delay", src: "Vital synth_parameters.cpp", phrase: LEAD, bpm: 100, wheel: 0,
+      say: "Unison stacks voices on each note (here they stack on one note: this page's engine); the LFO adds vibrato, portamento slides between notes, the delay repeats them.",
+      s: { o1On: true, o1Frame: 256, o1Lvl: 72, o2On: true, o2Frame: 200, o2Tr: 12, o2Lvl: 45, uni: 4, glide: -4, cut: 98, res: 25, e2Cut: 12, e2D: 0.8, e2S: 40,
+        lfoShape: "sine", lfoRate: 2.4, lfoPitch: 0.3, fxDly: 30 } },
+    { id: "surge-first", from: "surge", name: "First sound: one Classic saw", src: "Surge XT User Manual, Classic oscillator", phrase: MELODY, bpm: 100, wheel: 0,
+      say: "The Classic oscillator at Shape 0 % (a saw, SX), Osc 1 full in the mixer, the Vintage Ladder open. Every other synth can play this.",
+      s: { o1Shape: 0, m1: 100, cut: 36, res: 10, fType: "Vintage Ladder", aA: -8, aD: -1, aS: 100, aR: -3 } },
+    { id: "surge-pwm", from: "surge", name: "Shape it: a pulse whose width the LFO moves", src: "Surge XT User Manual, Classic oscillator", phrase: CHORDS, bpm: 80, wheel: 0,
+      say: "Shape at -100 % makes the Classic oscillator a pulse and Width 1 sets its duty cycle (SX); LFO 1 sweeps the width for a moving, chorus-like tone.",
+      s: { o1Shape: -100, o1W: 35, m1: 90, lfoShape: "tri", lfoRate: -0.5, lfoW: 25, cut: 30, res: 10, aA: -4, aR: -1.5 } },
+    { id: "surge-bass", from: "surge", name: "Bass: pulse with the sub, ladder and Filter EG", src: "Surge XT User Manual, Classic oscillator and Filter EG", phrase: BASS, bpm: 110, wheel: 0,
+      say: "Sub Mix brings in the sub-oscillator (SX; one octave down here, unverified), the Vintage Ladder opens with the Filter EG on each note, Mono play mode.",
+      s: { o1Shape: -60, o1W: 45, o1Sub: 40, o1Oct: -1, m1: 95, fType: "Vintage Ladder", cut: -12, res: 35, feg: 36, fA: -10, fD: -2.2, fS: 15, fR: -3, aA: -10, aD: -1, aS: 85, aR: -4, play: "Mono", glide: -6 } },
+    { id: "surge-pad", from: "surge", name: "Pad: two saws, LP 12 dB, slow Amp EG", src: "Surge XT User Manual, Mixer and Envelope Generators", phrase: PAD, bpm: 60, wheel: 0,
+      say: "Two Classic saws a few cents apart through a gentle 12 dB low-pass, a slow attack and release, chorus and reverb.",
+      s: { o1Shape: 0, m1: 75, o2Shape: 0, o2Pitch: 0.08, m2: 75, fType: "LP 12 dB", cut: 18, res: 15, aA: 0, aD: 0.5, aS: 85, aR: 0.8, fxCho: 45, fxRev: 40 } },
+    { id: "surge-lead", from: "surge", name: "Lead: a fifth on Osc 2, vibrato, delay", src: "Surge XT User Manual, Classic oscillator and Portamento", phrase: LEAD, bpm: 100, wheel: 0,
+      say: "Osc 2 seven semitones up (Pitch, SX), Mono with portamento, the LFO on pitch for vibrato and the delay effect.",
+      s: { o1Shape: 0, m1: 85, o2Shape: -100, o2W: 30, o2Pitch: 7, m2: 50, fType: "LP 24 dB", cut: 26, res: 30, feg: 12, fD: -1, fS: 40, play: "Mono", glide: -4.5,
+        lfoShape: "sine", lfoRate: 2.4, lfoPitch: 0.3, fxDly: 30 } }
+  ]);
+
   // ---------- the engine (AudioWorklet), as source text ----------
   function workletSource() {
     /* global sampleRate, registerProcessor, AudioWorkletProcessor, currentTime, ALG */
@@ -1773,11 +2020,11 @@
     function blep(t, dt) { if (t < dt) { t /= dt; return t + t - t * t - 1; } if (t > 1 - dt) { t = (t - 1) / dt; return t * t + t + t + 1; } return 0; }
     var SIN = new Float32Array(4097); for (var si = 0; si <= 4096; si++) SIN[si] = Math.sin(2 * Math.PI * si / 4096);
     function sinT(ph) { ph -= Math.floor(ph); var x = ph * 4096, i = x | 0, f = x - i; return SIN[i] + (SIN[i + 1] - SIN[i]) * f; }
-    // wavetables: this page's own four tables of 64 waves (not the PPG's), additive, 40 harmonics at most
+    // wavetables: this page's own four tables of 64 waves (not the PPG's) and a fifth of basic shapes for Vital, additive, 40 harmonics at most
     var WT = null;
     function makeTables() {
       var T = [], t, w, h, i;
-      for (t = 0; t < 4; t++) {
+      for (t = 0; t < 5; t++) {
         var tab = [];
         for (w = 0; w < 64; w++) {
           var a = new Float32Array(TS + 1), x = w / 63;
@@ -1786,7 +2033,11 @@
             if (t === 0) amp = h <= 1 + x * 39 ? 1 / h : 0;
             else if (t === 1) { var d = 0.5 - 0.45 * x; amp = 2 * Math.sin(Math.PI * h * d) / (Math.PI * h); }
             else if (t === 2) { var c = 2 + x * 26; amp = Math.exp(-Math.pow((h - c) / 2.5, 2)) + (h === 1 ? 0.5 : 0); }
-            else amp = h <= 12 ? (h % 2 ? 1 / h : x / h) : 0;
+            else if (t === 3) amp = h <= 12 ? (h % 2 ? 1 / h : x / h) : 0;
+            else {   // Vital-style basic shapes (this page's): sine -> triangle -> square -> saw across the 64 waves
+              var seg = Math.min(2, Math.floor(x * 3)), u = x * 3 - seg, sh4 = [h === 1 ? 1 : 0, h % 2 ? (((h - 1) / 2) % 2 ? -1 : 1) * 8 / (Math.PI * Math.PI * h * h) : 0, h % 2 ? 4 / (Math.PI * h) : 0, 2 / (Math.PI * h)];
+              amp = sh4[seg] + (sh4[seg + 1] - sh4[seg]) * u;
+            }
             if (amp) for (i = 0; i <= TS; i++) a[i] += amp * SIN[(h * i * 16) & 4095];
           }
           var mx = 0; for (i = 0; i <= TS; i++) mx = Math.max(mx, Math.abs(a[i])); if (mx) for (i = 0; i <= TS; i++) a[i] /= mx;
@@ -2019,7 +2270,7 @@
               v.out[k] = oo.wt ? wtVal(oo.wt.t, oo.wt.pos + mod.wt, v.ph[k]) : oo.shape != null ? shapeVal(oo.shape + (k === 0 ? mod.sh0 : k === 1 ? mod.sh1 : mod.sh2), v.ph[k], v.inc[k], pw) : oscVal(oo, v.ph[k], v.inc[k], pw);
               if (oo.on) mix += v.out[k] * oo.lvl;
             }
-            if (ring && ring.lvl) mix += ring.lvl * (ring.kind === "arp" ? (2 * v.ph[0] - 1) * sinT(v.ph[1]) : v.out[0] * (v.ph[1] < 0.5 ? 1 : -1));
+            if (ring && ring.lvl) mix += ring.lvl * (ring.kind === "arp" ? (2 * v.ph[0] - 1) * sinT(v.ph[1]) : ring.kind === "mul" ? v.out[0] * v.out[1] : v.out[0] * (v.ph[1] < 0.5 ? 1 : -1));
             mix = mix * 0.45 + (E.noise.lvl ? (E.noise.red ? red * 1.5 : E.noise.pink ? pink * 2.2 : wn * 0.7) * E.noise.lvl * 0.6 : 0) + v.last * E.fb * 3.2;
             mix = ft(mix * 1.1) * 0.9;   // the mixer can overload (M 27, P 21): one soft curve for every synth
             if (E.drive) mix = ft(mix * (1 + E.drive * 6)) * (0.9 - E.drive * 0.3);   // MultiDrive (S25 PDF 16): this page's curve
@@ -2160,7 +2411,7 @@
     return nodes[id];
   }
   function send(id, m) { if (nodes[id]) nodes[id].port.postMessage(m); }
-  function citeText(x) { return x.book === "WP" || x.book === "SOS" ? x.title + ", \"" + x.page + "\"" : /^PDF /.test(String(x.page)) ? x.title + ", PDF p. " + String(x.page).slice(4) : /^\d+\.\d+$/.test(String(x.page)) ? x.title + " section " + x.page : x.title + " p. " + x.page; }
+  function citeText(x) { return /^(WP|SOS|VT|VW|SX|SW)$/.test(x.book) ? x.title + ", \"" + x.page + "\"" : /^PDF /.test(String(x.page)) ? x.title + ", PDF p. " + String(x.page).slice(4) : /^\d+\.\d+$/.test(String(x.page)) ? x.title + " section " + x.page : x.title + " p. " + x.page; }
   SC.citeText = citeText;
 
   SC.mount = function (host) {
