@@ -1,0 +1,90 @@
+---
+title: "Meet the hi-hats"
+toc: true
+toc-depth: 2
+description: "A first look at the hi-hats: closed, half, open, foot. Famous uses, quiz."
+instruments: [drums]
+topics: [gear]
+has: [interactive, svg]
+---
+
+A first stop before [Cymbals Compared](cymbal-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the hi-hats is.
+2. Learn how it makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Look up famous uses.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- Two cymbals, 13-15", on a pedal stand: **open**, **closed** and **pedal** (foot) sounds (Wikipedia, "Hi-hat").
+
+## How it sounds
+
+- A cymbal has many long, **inharmonic** partials (unverified: no physics text read for this page). Bigger is louder and longer; heavier is louder with more cut (Wikipedia, "Cymbal").
+- Closed: very short; open: long; the foot alone: the "chick".
+
+## Play it
+
+Drawn after photos (proportions approximate, no logos). **Click the drawing** to strike it, or use the buttons; turn the knobs and press the keys. The sound is the site's model (head modes, wires, partials), not recordings; nobody has compared it with the real thing.
+
+```{=html}
+<div class="dk" data-item="hats"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="dk-step" data-item="hats" data-set="{&quot;pedal&quot;:&quot;closed&quot;}" data-hit="hats:bow"><p><b>Closed.</b></p></div>
+<div class="dk-step" data-item="hats" data-set="{&quot;pedal&quot;:&quot;half&quot;}" data-hit="hats:bow"><p><b>Half open.</b> Sizzle.</p></div>
+<div class="dk-step" data-item="hats" data-set="{&quot;pedal&quot;:&quot;open&quot;}" data-hit="hats:bow"><p><b>Open.</b></p></div>
+<div class="dk-step" data-item="hats" data-set="{&quot;pedal&quot;:&quot;foot&quot;}" data-hit="hats:bow"><p><b>Foot.</b> The chick.</p></div>
+```
+
+## Famous uses
+
+Where a source ties the player to this kind of drum or cymbal it is named; the links are YouTube searches (no video checked).
+
+```{=html}
+<div class="dk-tracks" data-item="hats"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="dk-q" data-a="0"><p><b>The foot sound is called…</b></p><ul><li>Chick</li><li>Crash</li></ul><p class="dk-why"></p></div>
+```
+
+## Next
+
+- [Cymbals Compared](cymbal-compare.html?a=hats&b=aride): this one beside another, settings translated.
+- [Gear 9: Drum Kit Setup and Care](gear-drums.qmd).
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/drumkits.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/drumkits.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Cymbal." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Cymbal](https://en.wikipedia.org/wiki/Cymbal). Bigger: louder, longer sustain; heavier: louder, more cut; bell bronze the traditional alloy; B8 = 8 % tin malleable bronze, Paiste's "2002" alloy.
+
+"Zildjian." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Zildjian](https://en.wikipedia.org/wiki/Zildjian). Founded Constantinople 1623; alloy recipe secret; K Zildjian made in the US from 1975, relaunched with Elvin Jones and Tony Williams.
+
+**For students**
+
+"Hi-hat." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Hi-hat](https://en.wikipedia.org/wiki/Hi-hat). Two 13-15" cymbals on a pedal stand; open, closed, pedal (foot) sounds.
+:::
+<!-- /works-cited -->
+

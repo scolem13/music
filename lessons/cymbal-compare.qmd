@@ -1,0 +1,81 @@
+---
+title: "Cymbals Compared"
+toc: true
+toc-depth: 2
+description: "Zildjian A and K rides, a Paiste 2002 crash, an A crash, hi-hats (closed / half / open / foot), a china and a splash on one modal model of long inharmonic partials: size, weight, alloy, hammering. Click to strike the bell, bow or edge; A/B two and translate."
+instruments: [drums]
+topics: [gear]
+has: [interactive, svg]
+---
+
+Seven cymbals drawn from above and played from one model. Click the bell, the bow or the edge; choke it; pick two and compare. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Learn what shapes a cymbal's sound: size, weight, alloy, hammering and lathing, where you hit it.
+2. Hear a dark K beside a bright 2002, a ride beside a crash, the hi-hat's four sounds.
+3. Translate between cymbals and see what is lost (the hi-hat's pedal has nowhere to go on a ride).
+:::
+
+## What shapes a cymbal's sound
+
+- **Partials**: many, long and inharmonic. The model has about seventy, rising faster than a harmonic series, each decaying faster the higher it is (the law and the numbers are the site's: unverified).
+- **Size and weight**: bigger is louder with longer sustain; heavier is louder with more cut (Wikipedia, "Cymbal").
+- **Alloy**: bell bronze for Zildjian's A and K (Wikipedia, "Cymbal"; the exact recipe is secret, Wikipedia "Zildjian"); 8 % tin B8, Paiste's "2002 bronze" (Wikipedia, "Paiste").
+- **Dark and bright**: the K's hand-hammering is called dark, the 2002 bright. Here that is how fast the partials' loudness falls with frequency (and how much it scatters): the spectral centroid is lower for the K. The words are the makers' and drummers'; the numbers are the site's.
+- **Where you hit it**: the bow pings, the bell rings, the edge washes and "blooms" as the energy climbs into the high partials.
+- **Hi-hats**: closed, half, open, and the foot alone (Wikipedia, "Hi-hat"). **China**: trashy (Wikipedia, "China cymbal"). **Splash**: small and short (Wikipedia, "Splash cymbal").
+
+## Two side by side
+
+```{=html}
+<div class="dkc" data-cat="cymbal" data-a="kride" data-b="aride"></div>
+```
+
+## Translating
+
+Between two cymbals of the same type the choke carries over and the report gives the brightness difference (centroid of the partials); between types it says what changes; from the hi-hats the pedal is **lost**.
+
+## What is this site's own
+
+- Every number of the model, the colours and the lathing rings of the drawings (no logos). Nobody has compared the sound with real cymbals.
+
+## Meet each one
+
+- [Meet the Zildjian A ride](intro-a-ride.qmd) · [Meet the Zildjian K ride](intro-k-ride.qmd) · [Meet the Paiste 2002 crash](intro-2002-crash.qmd) · [Meet the crash](intro-crash.qmd)
+- [Meet the hi-hats](intro-hi-hats.qmd) · [Meet the china](intro-china.qmd) · [Meet the splash](intro-splash.qmd)
+- Drums: [Drum Kits Compared](drum-kit-compare.qmd)
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/drumkits.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/drumkits.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"China cymbal." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/China_cymbal](https://en.wikipedia.org/wiki/China_cymbal). Bright, crisp, explosive: "trash cymbal"; mounted bell up or down.
+
+"Crash cymbal." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Crash_cymbal](https://en.wikipedia.org/wiki/Crash_cymbal). Accents; short wash.
+
+"Cymbal." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Cymbal](https://en.wikipedia.org/wiki/Cymbal). Bigger: louder, longer sustain; heavier: louder, more cut; bell bronze the traditional alloy; B8 = 8 % tin malleable bronze, Paiste's "2002" alloy.
+
+"Paiste." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Paiste](https://en.wikipedia.org/wiki/Paiste). CuSn8 "2002 bronze" (B8) from 1965, the 2002 series; unlathed RUDE 1980; Stewart Copeland and the splash.
+
+"Ride cymbal." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ride_cymbal](https://en.wikipedia.org/wiki/Ride_cymbal). Most common 20" (18-22"); sustained shimmer; bell.
+
+"Splash cymbal." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Splash_cymbal](https://en.wikipedia.org/wiki/Splash_cymbal). Most common 8" then 10"; Ringo Starr, Stewart Copeland.
+
+"Zildjian." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Zildjian](https://en.wikipedia.org/wiki/Zildjian). Founded Constantinople 1623; alloy recipe secret; K Zildjian made in the US from 1975, relaunched with Elvin Jones and Tony Williams.
+
+**For students**
+
+"Hi-hat." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Hi-hat](https://en.wikipedia.org/wiki/Hi-hat). Two 13-15" cymbals on a pedal stand; open, closed, pedal (foot) sounds.
+:::
+<!-- /works-cited -->

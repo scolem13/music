@@ -1,0 +1,86 @@
+---
+title: "Meet the splash cymbal"
+toc: true
+toc-depth: 2
+description: "A first look at the splash cymbal: small, quick. Famous uses, quiz."
+instruments: [drums]
+topics: [gear]
+has: [interactive, svg]
+---
+
+A first stop before [Cymbals Compared](cymbal-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the splash cymbal is.
+2. Learn how it makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Look up famous uses.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- Small: most often **8"** then **10"** (Wikipedia, "Splash cymbal"); Stewart Copeland brought it back in the early 1980s (Wikipedia, "Paiste").
+
+## How it sounds
+
+- A cymbal has many long, **inharmonic** partials (unverified: no physics text read for this page). Bigger is louder and longer; heavier is louder with more cut (Wikipedia, "Cymbal").
+- Small and thin: high and short.
+
+## Play it
+
+Drawn after photos (proportions approximate, no logos). **Click the drawing** to strike it, or use the buttons; turn the knobs and press the keys. The sound is the site's model (head modes, wires, partials), not recordings; nobody has compared it with the real thing.
+
+```{=html}
+<div class="dk" data-item="splash"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="dk-step" data-item="splash" data-set="{}" data-hit="splash:edge"><p><b>Splash.</b></p></div>
+<div class="dk-step" data-item="splash" data-set="{&quot;choke&quot;:true}" data-hit="splash:edge"><p><b>Choked.</b></p></div>
+```
+
+## Famous uses
+
+Where a source ties the player to this kind of drum or cymbal it is named; the links are YouTube searches (no video checked).
+
+```{=html}
+<div class="dk-tracks" data-item="splash"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="dk-q" data-a="0"><p><b>Who brought the splash back?</b></p><ul><li>Stewart Copeland</li><li>Elvin Jones</li></ul><p class="dk-why">Wikipedia.</p></div>
+```
+
+## Next
+
+- [Cymbals Compared](cymbal-compare.html?a=splash&b=acrash): this one beside another, settings translated.
+- [Gear 9: Drum Kit Setup and Care](gear-drums.qmd).
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/drumkits.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/drumkits.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Cymbal." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Cymbal](https://en.wikipedia.org/wiki/Cymbal). Bigger: louder, longer sustain; heavier: louder, more cut; bell bronze the traditional alloy; B8 = 8 % tin malleable bronze, Paiste's "2002" alloy.
+
+"Paiste." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Paiste](https://en.wikipedia.org/wiki/Paiste). CuSn8 "2002 bronze" (B8) from 1965, the 2002 series; unlathed RUDE 1980; Stewart Copeland and the splash.
+
+"Splash cymbal." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Splash_cymbal](https://en.wikipedia.org/wiki/Splash_cymbal). Most common 8" then 10"; Ringo Starr, Stewart Copeland.
+:::
+<!-- /works-cited -->
+

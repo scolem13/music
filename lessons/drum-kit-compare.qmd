@@ -1,0 +1,80 @@
+---
+title: "Drum Kits Compared"
+toc: true
+toc-depth: 2
+description: "Four snares (Ludwig Supraphonic, Ludwig Black Beauty, a maple snare, a piccolo) and three kits (jazz 18/12/14, rock 22/12/16, a dead funk kit) on one modal model: head modes, shell, heads, snare wires and throw-off, strike position, muffling, kick port. Click the drawings to play; A/B two and translate a tuning."
+instruments: [drums]
+topics: [gear]
+has: [interactive, svg]
+---
+
+Four snare drums and three drum kits, each drawn and played from one physical model. Pick any two, tune one, hear both, and translate the tuning to the other. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Learn what shapes a drum's sound: the head's modes, where you hit it, the shell, the heads, the snare wires, muffling.
+2. Click a drawing to strike the centre, the edge or the rim; tune it with its keys; throw the snares off.
+3. Translate a tuning from one drum or kit to another and see what carries over and what is lost.
+:::
+
+## What shapes a drum's sound
+
+- **Modes**: an ideal round head vibrates at the zeros of the Bessel functions (Wikipedia, "Vibrations of a circular membrane"): 1, 1.59, 2.14, 2.30… times the lowest, not a harmonic series. The air in the shell pulls these closer together (physics texts say so; none read for this page, so the amount is the site's: unverified).
+- **Pitch**: tighter is higher; wider is lower at the same tension. A 14" snare's batter is usually tuned 220-349 Hz, its bottom head a fifth or so higher (Wikipedia, "Drum tuning").
+- **Where you hit it**: the centre sounds mostly the round modes; the edge many more (more ring); a rimshot adds the rim's crack; a cross-stick is the rim alone.
+- **Snare wires**: they rattle on the bottom head; the throw-off lifts them and the drum sounds like a tom (Wikipedia, "Snare drum"). The strainer knob sets how tight they are.
+- **Shell and heads**: metal shells ring, wood is warmer, a two-ply or calf-style head is shorter and fatter (drummers' lore; the numbers are the site's).
+- **Muffling and the port**: muffles deaden ring and overtones (Wikipedia, "Drum kit"); a hole in the kick's front head (about 6") gives a less round, shorter boom (Wikipedia, "Drum tuning").
+
+## Two side by side
+
+Choose a snare or kit for each side. **Click a drum** in the drawing (centre / edge / rim), or use the buttons; **▶ Groove** plays a short beat. The spectrum under each shows the last hit and its centroid (higher = brighter).
+
+```{=html}
+<div class="dkc" data-cat="snare" data-a="supraphonic" data-b="blackbeauty"></div>
+```
+
+## Translating a tuning
+
+**Translate** carries the tuning over by pitch: each drum's lowest mode is matched on the other drum (if it can reach it), and the wires, strainer, muffling, head and port go with it. The report says **exact**, **approx** (shell, size or depth differ) or **lost** (more than 4 semitones out of reach). A snare can go into a kit's snare stand and back. Try the rock kit into the jazz kit: the 18" kick cannot get down to the 22"'s boom.
+
+## What is this site's own
+
+- Every number of the model (pitch bases, decay times, shell partials, wire noise, strike radii, the air-loading exponent), the four snares' sizes, lugs and finishes, the kits' shells and cymbal choices. The drawings are after photos, not measured; no makers' logos.
+- Nobody has compared the sound with real drums.
+
+## Meet each one
+
+- [Meet the Ludwig Supraphonic](intro-supraphonic.qmd) · [Meet the Ludwig Black Beauty](intro-black-beauty.qmd) · [Meet a maple wood snare](intro-maple-snare.qmd) · [Meet the piccolo snare](intro-piccolo-snare.qmd)
+- [Meet the jazz kit](intro-jazz-kit.qmd) · [Meet the rock kit](intro-rock-kit.qmd) · [Meet the funk / studio "dead" kit](intro-funk-kit.qmd)
+- Cymbals: [Cymbals Compared](cymbal-compare.qmd)
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/drumkits.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/drumkits.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Drum kit." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Drum_kit](https://en.wikipedia.org/wiki/Drum_kit). Usual sizes (22" bass drum most common; 12"/13" toms, 14"/16" floor), hi-hat, ride 20", crash 16"; muffles deaden ring and overtones.
+
+"Drum tuning." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Drum_tuning](https://en.wikipedia.org/wiki/Drum_tuning). 14" snare batter 220-349 Hz, resonant head 330-391 Hz, most often a fifth above; bass drum front head port about 6", less "round"; muffling.
+
+"Gretsch." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Gretsch](https://en.wikipedia.org/wiki/Gretsch). Founded 1883 in Brooklyn; a drum company first (the article's drum section is empty: the round-badge era is not described there).
+
+"Ludwig Drums." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ludwig_Drums](https://en.wikipedia.org/wiki/Ludwig_Drums). Founded 1909; Ringo Starr on Ed Sullivan 1964; notable artists list (Al Jackson Jr., Clyde Stubblefield, Carlton Barrett, John Bonham, Joe Morello, Roger Taylor, Mick Fleetwood...).
+
+"Snare drum." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Snare_drum](https://en.wikipedia.org/wiki/Snare_drum). Two heads, snares on the bottom head, a lever on the strainer throws them off (then it sounds like a tom); rimshots; kit snares 14" x 5-8"; piccolo 13-14" across, about 4" or less, higher.
+
+"Vibrations of a circular membrane." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Vibrations_of_a_circular_membrane](https://en.wikipedia.org/wiki/Vibrations_of_a_circular_membrane). Modes of an ideal drum head at the zeros of the Bessel functions J_m.
+
+"Vistalite." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Vistalite](https://en.wikipedia.org/wiki/Vistalite). Ludwig's acrylic drums, from 1972, popularised by John Bonham; reissued 2001 (amber Bonham replica).
+:::
+<!-- /works-cited -->

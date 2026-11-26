@@ -1,0 +1,383 @@
+{
+ "note": "Famous uses per drum / cymbal (lessons/drum-kit-compare.qmd, cymbal-compare.qmd, intro-*.qmd). All are YouTube SEARCH links (no video checked: oEmbed needs a video id and none was found by a source). useSrc names the source tying player and gear; null = unverified.",
+ "tracks": [
+  {
+   "item": "supraphonic",
+   "artist": "Booker T. & the M.G.'s",
+   "song": "Green Onions",
+   "url": "https://www.youtube.com/results?search_query=Booker+T.+%26+the+M.G.%27s+Green+Onions",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Ludwig Drums\", lists Al Jackson Jr. among Ludwig players (the drum on this record: unverified)"
+  },
+  {
+   "item": "supraphonic",
+   "artist": "James Brown",
+   "song": "Funky Drummer",
+   "url": "https://www.youtube.com/results?search_query=James+Brown+Funky+Drummer",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Ludwig Drums\", lists Clyde Stubblefield among Ludwig players (the drum on this record: unverified)"
+  },
+  {
+   "item": "supraphonic",
+   "artist": "Bob Marley and the Wailers",
+   "song": "Exodus",
+   "url": "https://www.youtube.com/results?search_query=Bob+Marley+and+the+Wailers+Exodus",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Ludwig Drums\", lists Carlton Barrett among Ludwig players (the drum on this record: unverified)"
+  },
+  {
+   "item": "blackbeauty",
+   "artist": "Led Zeppelin",
+   "song": "When the Levee Breaks",
+   "url": "https://www.youtube.com/results?search_query=Led+Zeppelin+When+the+Levee+Breaks",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Ludwig Drums\", lists John Bonham among Ludwig players (the drum on this record: unverified)"
+  },
+  {
+   "item": "blackbeauty",
+   "artist": "Queen",
+   "song": "We Will Rock You",
+   "url": "https://www.youtube.com/results?search_query=Queen+We+Will+Rock+You",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Ludwig Drums\", lists Roger Taylor among Ludwig players (the drum on this record: unverified)"
+  },
+  {
+   "item": "blackbeauty",
+   "artist": "Fleetwood Mac",
+   "song": "Go Your Own Way",
+   "url": "https://www.youtube.com/results?search_query=Fleetwood+Mac+Go+Your+Own+Way",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Ludwig Drums\", lists Mick Fleetwood among Ludwig players (the drum on this record: unverified)"
+  },
+  {
+   "item": "maple",
+   "artist": "Steely Dan",
+   "song": "Aja",
+   "url": "https://www.youtube.com/results?search_query=Steely+Dan+Aja",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "maple",
+   "artist": "Toto",
+   "song": "Rosanna",
+   "url": "https://www.youtube.com/results?search_query=Toto+Rosanna",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "maple",
+   "artist": "Michael Jackson",
+   "song": "Billie Jean",
+   "url": "https://www.youtube.com/results?search_query=Michael+Jackson+Billie+Jean",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "piccolo",
+   "artist": "Rush",
+   "song": "Tom Sawyer",
+   "url": "https://www.youtube.com/results?search_query=Rush+Tom+Sawyer",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "piccolo",
+   "artist": "Stewart Copeland / The Police",
+   "song": "Driven to Tears",
+   "url": "https://www.youtube.com/results?search_query=Stewart+Copeland+%2F+The+Police+Driven+to+Tears",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "piccolo",
+   "artist": "Dream Theater",
+   "song": "Pull Me Under",
+   "url": "https://www.youtube.com/results?search_query=Dream+Theater+Pull+Me+Under",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "jazz",
+   "artist": "John Coltrane",
+   "song": "A Love Supreme",
+   "url": "https://www.youtube.com/results?search_query=John+Coltrane+A+Love+Supreme",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "jazz",
+   "artist": "Art Blakey and the Jazz Messengers",
+   "song": "Moanin'",
+   "url": "https://www.youtube.com/results?search_query=Art+Blakey+and+the+Jazz+Messengers+Moanin%27",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "jazz",
+   "artist": "Dave Brubeck Quartet",
+   "song": "Take Five",
+   "url": "https://www.youtube.com/results?search_query=Dave+Brubeck+Quartet+Take+Five",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Ludwig Drums\", lists Joe Morello among Ludwig players (the drum on this record: unverified)"
+  },
+  {
+   "item": "rock",
+   "artist": "Led Zeppelin",
+   "song": "Achilles Last Stand",
+   "url": "https://www.youtube.com/results?search_query=Led+Zeppelin+Achilles+Last+Stand",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Vistalite\": Vistalites were popularised by John Bonham (that this record used one: unverified)"
+  },
+  {
+   "item": "rock",
+   "artist": "Led Zeppelin",
+   "song": "Kashmir",
+   "url": "https://www.youtube.com/results?search_query=Led+Zeppelin+Kashmir",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Vistalite\": popularised by John Bonham (which kit on this record: unverified)"
+  },
+  {
+   "item": "rock",
+   "artist": "Led Zeppelin",
+   "song": "The Ocean",
+   "url": "https://www.youtube.com/results?search_query=Led+Zeppelin+The+Ocean",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Vistalite\": popularised by John Bonham (which kit on this record: unverified)"
+  },
+  {
+   "item": "funk",
+   "artist": "Bill Withers",
+   "song": "Ain't No Sunshine",
+   "url": "https://www.youtube.com/results?search_query=Bill+Withers+Ain%27t+No+Sunshine",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "funk",
+   "artist": "Al Green",
+   "song": "Let's Stay Together",
+   "url": "https://www.youtube.com/results?search_query=Al+Green+Let%27s+Stay+Together",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "funk",
+   "artist": "Steely Dan",
+   "song": "Peg",
+   "url": "https://www.youtube.com/results?search_query=Steely+Dan+Peg",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "aride",
+   "artist": "Led Zeppelin",
+   "song": "Rock and Roll",
+   "url": "https://www.youtube.com/results?search_query=Led+Zeppelin+Rock+and+Roll",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "aride",
+   "artist": "AC/DC",
+   "song": "Back in Black",
+   "url": "https://www.youtube.com/results?search_query=AC%2FDC+Back+in+Black",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "aride",
+   "artist": "The Police",
+   "song": "Walking on the Moon",
+   "url": "https://www.youtube.com/results?search_query=The+Police+Walking+on+the+Moon",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "kride",
+   "artist": "Miles Davis",
+   "song": "Four & More",
+   "url": "https://www.youtube.com/results?search_query=Miles+Davis+Four+%26+More",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Zildjian\": Tony Williams helped relaunch the K series in 1980 (cymbals on this 1964 record: unverified)"
+  },
+  {
+   "item": "kride",
+   "artist": "John Coltrane",
+   "song": "Crescent",
+   "url": "https://www.youtube.com/results?search_query=John+Coltrane+Crescent",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Zildjian\": Elvin Jones helped relaunch the K series in 1980 (cymbals on this 1964 record: unverified)"
+  },
+  {
+   "item": "kride",
+   "artist": "The Tony Williams Lifetime",
+   "song": "Emergency!",
+   "url": "https://www.youtube.com/results?search_query=The+Tony+Williams+Lifetime+Emergency%21",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Zildjian\": Tony Williams worked on the K relaunch (cymbals on this record: unverified)"
+  },
+  {
+   "item": "p2002",
+   "artist": "Led Zeppelin",
+   "song": "Good Times Bad Times",
+   "url": "https://www.youtube.com/results?search_query=Led+Zeppelin+Good+Times+Bad+Times",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "p2002",
+   "artist": "Rush",
+   "song": "YYZ",
+   "url": "https://www.youtube.com/results?search_query=Rush+YYZ",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "p2002",
+   "artist": "Deep Purple",
+   "song": "Highway Star",
+   "url": "https://www.youtube.com/results?search_query=Deep+Purple+Highway+Star",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "acrash",
+   "artist": "Nirvana",
+   "song": "Smells Like Teen Spirit",
+   "url": "https://www.youtube.com/results?search_query=Nirvana+Smells+Like+Teen+Spirit",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "acrash",
+   "artist": "Foo Fighters",
+   "song": "Everlong",
+   "url": "https://www.youtube.com/results?search_query=Foo+Fighters+Everlong",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "acrash",
+   "artist": "The Who",
+   "song": "Won't Get Fooled Again",
+   "url": "https://www.youtube.com/results?search_query=The+Who+Won%27t+Get+Fooled+Again",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "hats",
+   "artist": "Bee Gees",
+   "song": "Stayin' Alive",
+   "url": "https://www.youtube.com/results?search_query=Bee+Gees+Stayin%27+Alive",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "hats",
+   "artist": "Michael Jackson",
+   "song": "Billie Jean",
+   "url": "https://www.youtube.com/results?search_query=Michael+Jackson+Billie+Jean",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "hats",
+   "artist": "The Meters",
+   "song": "Cissy Strut",
+   "url": "https://www.youtube.com/results?search_query=The+Meters+Cissy+Strut",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "china",
+   "artist": "Slipknot",
+   "song": "Duality",
+   "url": "https://www.youtube.com/results?search_query=Slipknot+Duality",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "china",
+   "artist": "System of a Down",
+   "song": "Chop Suey!",
+   "url": "https://www.youtube.com/results?search_query=System+of+a+Down+Chop+Suey%21",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "china",
+   "artist": "Tool",
+   "song": "Schism",
+   "url": "https://www.youtube.com/results?search_query=Tool+Schism",
+   "title": null,
+   "channel": null,
+   "useSrc": null
+  },
+  {
+   "item": "splash",
+   "artist": "The Police",
+   "song": "Message in a Bottle",
+   "url": "https://www.youtube.com/results?search_query=The+Police+Message+in+a+Bottle",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Splash cymbal\" and \"Paiste\": Stewart Copeland brought the splash back in the early 1980s"
+  },
+  {
+   "item": "splash",
+   "artist": "The Police",
+   "song": "Every Breath You Take",
+   "url": "https://www.youtube.com/results?search_query=The+Police+Every+Breath+You+Take",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Splash cymbal\": Stewart Copeland (that a splash is on this record: unverified)"
+  },
+  {
+   "item": "splash",
+   "artist": "The Beatles",
+   "song": "(Ringo Starr's splash)",
+   "url": "https://www.youtube.com/results?search_query=The+Beatles+%28Ringo+Starr%27s+splash%29",
+   "title": null,
+   "channel": null,
+   "useSrc": "Wikipedia, \"Splash cymbal\": drummers such as Ringo Starr used splashes (no record named)"
+  }
+ ]
+}

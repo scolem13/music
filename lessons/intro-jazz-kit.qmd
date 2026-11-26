@@ -1,0 +1,92 @@
+---
+title: "Meet the jazz kit (18 / 12 / 14)"
+toc: true
+toc-depth: 2
+description: "A first look at a jazz kit: 18 / 12 / 14, tuned high and open, ride and hi-hat foot. Click the drums to play. Famous uses, quiz."
+instruments: [drums]
+topics: [gear]
+has: [interactive, svg]
+---
+
+A first stop before [Drum Kits Compared](drum-kit-compare.qmd). Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Read what the jazz kit (18 / 12 / 14) is.
+2. Learn how it makes its sound.
+3. Take a guided tour: press each **▶ Hear step** button and listen for one change.
+4. Look up famous uses.
+5. Check yourself with a short quiz.
+:::
+
+## What it is
+
+- A small kit: **18" bass drum, 12" tom, 14" floor tom**, tuned high and open, in the style of the Gretsch "round badge" kits (style only; Wikipedia, "Gretsch", says little about its drums).
+- A conventional small kit (Wikipedia, "Drum kit"): bass drum, snare, hi-hat, toms, ride. Sizes, lugs and finish here are from memory (unverified); every number of the sound model is the site's.
+
+## How it sounds
+
+- Smaller drums sound **higher** at the same tension (a membrane's pitch falls as it gets wider).
+- No port, no muffling: the kick sings like a big tom.
+
+## Play it
+
+Drawn after photos (proportions approximate, no logos). **Click the drawing** to strike it, or use the buttons; turn the knobs and press the keys. The sound is the site's model (head modes, wires, partials), not recordings; nobody has compared it with the real thing.
+
+```{=html}
+<div class="dk" data-item="jazz"></div>
+```
+
+## Guided tour
+
+```{=html}
+<div class="dk-step" data-item="jazz" data-set="{}" data-hit="groove"><p><b>The groove.</b> Ride, hi-hat foot, a feathered kick.</p></div>
+<div class="dk-step" data-item="jazz" data-set="{}" data-hit="kick:centre"><p><b>The 18" kick, tuned high.</b></p></div>
+<div class="dk-step" data-item="jazz" data-set="{}" data-hit="ride:bow"><p><b>The ride (a K).</b></p></div>
+<div class="dk-step" data-item="jazz" data-set="{}" data-hit="floor:edge"><p><b>Floor tom, edge.</b></p></div>
+```
+
+## Famous uses
+
+Where a source ties the player to this kind of drum or cymbal it is named; the links are YouTube searches (no video checked).
+
+```{=html}
+<div class="dk-tracks" data-item="jazz"></div>
+```
+
+## Check yourself
+
+Click an answer. Nothing is saved or sent.
+
+```{=html}
+<div class="dk-q" data-a="0"><p><b>Bigger drum, same tension: pitch…</b></p><ul><li>Lower</li><li>Higher</li></ul><p class="dk-why"></p></div>
+<div class="dk-q" data-a="0"><p><b>A jazz kick is usually…</b></p><ul><li>Small and open</li><li>Big and muffled</li></ul><p class="dk-why"></p></div>
+```
+
+## Next
+
+- [Drum Kits Compared](drum-kit-compare.html?a=jazz&b=rock): this one beside another, settings translated.
+- [Gear 9: Drum Kit Setup and Care](gear-drums.qmd).
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<link rel="stylesheet" href="/apps/shared/lessons/drumkits.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/drumkits.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Drum kit." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Drum_kit](https://en.wikipedia.org/wiki/Drum_kit). Usual sizes (22" bass drum most common; 12"/13" toms, 14"/16" floor), hi-hat, ride 20", crash 16"; muffles deaden ring and overtones.
+
+"Drum tuning." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Drum_tuning](https://en.wikipedia.org/wiki/Drum_tuning). 14" snare batter 220-349 Hz, resonant head 330-391 Hz, most often a fifth above; bass drum front head port about 6", less "round"; muffling.
+
+"Gretsch." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Gretsch](https://en.wikipedia.org/wiki/Gretsch). Founded 1883 in Brooklyn; a drum company first (the article's drum section is empty: the round-badge era is not described there).
+
+"Vibrations of a circular membrane." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Vibrations_of_a_circular_membrane](https://en.wikipedia.org/wiki/Vibrations_of_a_circular_membrane). Modes of an ideal drum head at the zeros of the Bessel functions J_m.
+:::
+<!-- /works-cited -->
+

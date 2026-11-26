@@ -238,3 +238,19 @@
   YouTube searches; placements guesses). Not rec-kit-mic.js (untouched; ideas only). Sources `scripts/sources/mics.py`. Tests
   `node tests/lessons/mics.test.js` (`NEG=1` must fail), `node tests/lessons/mics.cdp.js` (harness page, no render; `RENDERED=1` for
   the rendered pages). Not listened against real mics.
+- Drum kits and cymbals (2026-11-26): `apps/shared/lessons/drumkits.js` + `.css` (global DrumKits; header = model, what is sourced,
+  API, markup): pure modal model in node. Drums: Bessel-zero head modes (air loading ratio^0.92, site's), pitch ∝ 1/diameter ×
+  tension, strike radius weights |J_m| (centre / edge / rimshot / cross-stick), resonant head, heads, shell partials by material,
+  snare wires as band-passed noise with strainer tension + throw-off, muffling, kick port. Cymbals: ~70 inharmonic partials, tilt /
+  scatter by series (A, K dark, 2002 bright, china), size / weight decay, bow / bell / edge with bloom, wash, hi-hat pedal closed /
+  half / open / foot, choke. Items: snares supraphonic, blackbeauty, maple, piccolo; kits jazz (18/12/14), rock (22/12/16 acrylic),
+  funk (dead); cymbals aride, kride, p2002, acrash, hats, china, splash. `DrumKits.translate` (pitch matched by the (0,1) mode;
+  out of reach > 4 semitones = lost; snare <-> kit snare slot; hats -> others = pedal lost; cymbal brightness by centroid). Drawings
+  `panels/dk-<id>.js` (snare top + side view with throw-off key and strainer knob; kit from above) and `panels/cy-<id>.js`, built
+  with `DrumKits.draw`; clicks hit-tested against the layout's `zones` (`DrumKits.zoneAt`). Pages `lessons/drum-kit-compare.qmd`
+  (`.dkc data-cat="snare"`, snares + kits, `?a=&b=`), `lessons/cymbal-compare.qmd` (`.dkc data-cat="cymbal"`), and
+  `intro-{supraphonic,black-beauty,maple-snare,piccolo-snare,jazz-kit,rock-kit,funk-kit,a-ride,k-ride,2002-crash,crash,hi-hats,china,splash}.qmd`
+  by `python3 scripts/intro-instruments/drumkits.py`; tracks `apps/shared/data/drumkits/tracks.json` (YouTube searches only, none
+  oEmbed-checked; useSrc from Wikipedia where one ties player and gear). Sources `scripts/sources/drumkits.py` (Wikipedia only; model
+  numbers, snare specs, kit shells unverified). Tests `node tests/lessons/drumkits.test.js` (`NEG=1` must fail),
+  `node tests/lessons/drumkits.cdp.js` (harness, no render; `RENDERED=1 [SITE=]` for the rendered pages; errors read from CDP). Not listened against real drums.

@@ -305,6 +305,24 @@ website:
                 - lessons/intro-r121.qmd
                 - lessons/intro-md421.qmd
                 - lessons/intro-beta52.qmd
+            - section: "Drum kits and cymbals"
+              contents:
+                - lessons/drum-kit-compare.qmd
+                - lessons/intro-supraphonic.qmd
+                - lessons/intro-black-beauty.qmd
+                - lessons/intro-maple-snare.qmd
+                - lessons/intro-piccolo-snare.qmd
+                - lessons/intro-jazz-kit.qmd
+                - lessons/intro-rock-kit.qmd
+                - lessons/intro-funk-kit.qmd
+                - lessons/cymbal-compare.qmd
+                - lessons/intro-a-ride.qmd
+                - lessons/intro-k-ride.qmd
+                - lessons/intro-2002-crash.qmd
+                - lessons/intro-crash.qmd
+                - lessons/intro-hi-hats.qmd
+                - lessons/intro-china.qmd
+                - lessons/intro-splash.qmd
             - section: "Basses"
               contents:
                 - lessons/bass-compare.qmd
