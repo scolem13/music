@@ -303,6 +303,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
  <span class="dropdown-text">Accompaniment Styles</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../tools/walking-bass.html">
+ <span class="dropdown-text">Walking Bass Generator</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../tools/drumset.html">
  <span class="dropdown-text">Drumset</span></a>
   </li>  
@@ -321,6 +325,18 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../tools/polyrhythm.html">
  <span class="dropdown-text">Polyrhythm</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/rhythm-library.html">
+ <span class="dropdown-text">Rhythm Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/mode-library.html">
+ <span class="dropdown-text">Mode &amp; Raga Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/alt-notation.html">
+ <span class="dropdown-text">Sargam, Swara and Jianpu</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">Chords and harmony</li>
@@ -462,6 +478,14 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
     <a class="dropdown-item" href="../gear/x32-headset-scene.html">
  <span class="dropdown-text">X32 scene for the headset mics</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/x32-guitar-vocals-computer.html">
+ <span class="dropdown-text">X32: Guitar, Vocal Effects and a Computer</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/ur22mkii.html">
+ <span class="dropdown-text">UR22mkII: Guitar, Vocal Effects and a Computer</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -530,6 +554,12 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
   <div class="sidebar-item-container"> 
   <a href="../lessons/blues-bass.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Blues for Bass: From Roots to a Walking Line</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/walking-bass-lines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Walking Bass Lines: Approach Notes, Scales and Enclosures</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -2911,6 +2941,7 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
   <li><a href="#its-sound" id="toc-its-sound" class="nav-link" data-scroll-target="#its-sound">Its sound</a></li>
   <li><a href="#the-panel" id="toc-the-panel" class="nav-link" data-scroll-target="#the-panel">The panel</a></li>
   <li><a href="#guided-tour" id="toc-guided-tour" class="nav-link" data-scroll-target="#guided-tour">Guided tour</a></li>
+  <li><a href="#what-the-real-vital-can-do-that-this-page-cant" id="toc-what-the-real-vital-can-do-that-this-page-cant" class="nav-link" data-scroll-target="#what-the-real-vital-can-do-that-this-page-cant">What the real Vital can do that this page can’t</a></li>
   <li><a href="#get-the-real-vital-free" id="toc-get-the-real-vital-free" class="nav-link" data-scroll-target="#get-the-real-vital-free">Get the real Vital (free)</a></li>
   <li><a href="#copy-the-patch-across" id="toc-copy-the-patch-across" class="nav-link" data-scroll-target="#copy-the-patch-across">Copy the patch across</a></li>
   <li><a href="#famous-records" id="toc-famous-records" class="nav-link" data-scroll-target="#famous-records">Famous records</a></li>
@@ -3063,7 +3094,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <h2 class="anchored" data-anchor-id="its-sound">Its sound</h2>
 <ul>
 <li>Each oscillator plays a <strong>wavetable</strong>: a row of single-cycle waves. The <strong>Wave frame</strong> knob picks a place along the row, so one knob can morph the tone (Vital source, synth_parameters.cpp: “Wave Frame”).</li>
-<li>It has three oscillators (unverified count) and a <strong>Sample</strong> slot; on this page the Sample slot holds noise (a guess).</li>
+<li>It has three oscillators and a <strong>Sample</strong> slot (Vital source, synth_constants.h and synth_parameters.cpp); on this page the Sample slot holds noise (a guess).</li>
 <li>Its filter has eight <strong>models</strong> (Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phaser) and <strong>styles</strong> such as 12 dB and 24 dB (Vital source, synth_strings.h). This page plays only three of them, with its own filters.</li>
 <li>You <strong>modulate</strong> a knob by dragging an envelope or LFO onto it (vital.audio: “drag and drop”).</li>
 <li>This page’s Vital is a <strong>beginner panel</strong>: three oscillators on one basic-shapes table (sine, triangle, square, saw), one filter, two envelopes, one LFO, three effects. The real plug-in has far more.</li>
@@ -3083,6 +3114,81 @@ document.addEventListener('DOMContentLoaded', async function () {
 <div class="ik-step" data-ex="vital-bass"><p><b>A bass.</b> A saw an octave down with a sine two octaves down under it, a <b>24dB Ladder</b> filter nearly closed, <b>Env 2 → cutoff</b> opening it on each note, <b>Polyphony 1</b> and a little <b>portamento</b>. Listen for the low weight and the "wow" at each note's start.</p></div>
 <div class="ik-step" data-ex="vital-pad"><p><b>A pad.</b> Two oscillators a few cents apart (<b>Tune</b> -8 and +8), between triangle and square, a slow <b>attack</b> and <b>release</b> on envelope 1, <b>LFO 1 → wave frame</b> moving slowly, chorus and reverb. Listen: chords that swell in and shimmer.</p></div>
 <div class="ik-step" data-ex="vital-lead"><p><b>A lead.</b> Saw plus a brighter wave an octave up, <b>Unison voices</b> 4, the LFO giving vibrato, portamento and a delay. Play it from the keys and hold a note to hear the vibrato.</p></div>
+</section>
+<section id="what-the-real-vital-can-do-that-this-page-cant" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-real-vital-can-do-that-this-page-cant">What the real Vital can do that this page can’t</h2>
+<p>The panel above is a <strong>beginner</strong> Vital: the knobs that are not dimmed are the ones this page plays (<strong>Show ▾ → Only working controls</strong> hides the rest). Counts for the real plug-in are from its source code (synth_constants.h and synth_parameters.cpp, read 2026-11-27).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>The real Vital</th>
+<th>This page</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Modulation</strong></td>
+<td>Drag any of 6 envelopes, 8 LFOs, 4 random LFOs, 4 macros, velocity or the wheels onto <strong>any</strong> knob; up to 64 connections, each with its own amount, and (per the source, read in part) bipolar, stereo, curve and bypass settings</td>
+<td><strong>No assigning.</strong> Five fixed routes only: Env 2 → cutoff, Env 2 → wave frame, LFO 1 → pitch, LFO 1 → cutoff, LFO 1 → wave frame. Env 1 always shapes the loudness</td>
+</tr>
+<tr class="even">
+<td><strong>Wavetables</strong></td>
+<td>Any wavetable: load your own (.wav, .flac, .vitaltable); 257 frames per table</td>
+<td>One table (sine → triangle → square → saw), the frame knob only</td>
+</tr>
+<tr class="odd">
+<td><strong>Oscillators</strong></td>
+<td>3 oscillators, each with spectral morph, distortion (warp), unison up to 16 with stack styles, stereo spread, phase and routing to either filter, both, the effects or straight out</td>
+<td>3 oscillators: on, frame, transpose, tune, level; unison up to 8; all go into the one filter</td>
+</tr>
+<tr class="even">
+<td><strong>Sampler</strong></td>
+<td>Plays a .wav or .flac sample, looped or keytracked</td>
+<td>Noise only (a stand-in)</td>
+</tr>
+<tr class="odd">
+<td><strong>Filters</strong></td>
+<td>2 filters + a filter effect; 8 models (Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phase) and their styles; formant and comb settings; filter-to-filter routing</td>
+<td>1 filter, 3 models, this site’s own filter code</td>
+</tr>
+<tr class="even">
+<td><strong>Envelopes</strong></td>
+<td>6, each with delay, hold and curved attack / decay / release</td>
+<td>2 plain ADSRs</td>
+</tr>
+<tr class="odd">
+<td><strong>LFOs</strong></td>
+<td>8 LFOs (shapes saved as .vitallfo files), tempo sync, fade-in, delay, smoothing, stereo, keytrack; plus 4 random LFOs</td>
+<td>1 LFO, 4 fixed shapes, free rate</td>
+</tr>
+<tr class="even">
+<td><strong>Macros</strong></td>
+<td>4 macro knobs, each assignable</td>
+<td>None</td>
+</tr>
+<tr class="odd">
+<td><strong>Effects</strong></td>
+<td>9: chorus, multiband compressor, delay, distortion, 3-band EQ, filter, flanger, phaser, reverb, in <strong>any order</strong>, each fully adjustable</td>
+<td>3: chorus, delay, reverb, mix only, fixed order</td>
+</tr>
+<tr class="even">
+<td><strong>Voices</strong></td>
+<td>Up to 32 notes, voice priority, legato, portamento slope / force / scale, pitch bend up to 48 semitones, MPE, 4 oversampling settings, stereo routing</td>
+<td>Up to 16 notes, glide time only</td>
+</tr>
+<tr class="odd">
+<td><strong>The sound</strong></td>
+<td>Vital’s own code</td>
+<td>This site’s own engine with Vital’s names and ranges: close, not the same</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="get-the-real-vital-free" class="level2">
 <h2 class="anchored" data-anchor-id="get-the-real-vital-free">Get the real Vital (free)</h2>
@@ -3141,6 +3247,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p>Surge Synth Team. “SkinModel.cpp.” <em>Surge XT</em>, GitHub repository surge-synthesizer/surge. <a href="https://github.com/surge-synthesizer/surge/blob/main/src/common/SkinModel.cpp">github.com/surge-synthesizer/surge/blob/main/src/common/SkinModel.cpp</a>. Default-skin position of every control (oscillator, scene, mixer, filters, Filter EG, Amp EG, FX, LFO, header).</p>
 <p>Tytel, Matt. “default.vitalskin.” <em>Vital</em>, GitHub repository mtytel/vital. <a href="https://github.com/mtytel/vital/blob/main/default.vitalskin">github.com/mtytel/vital/blob/main/default.vitalskin</a>. Knob section height 71, padding 4 / 10, modulation button width 68; background, body and accent colours.</p>
 <p>Tytel, Matt. “full_interface.cpp,” “synthesis_interface.cpp” and “modulation_interface.cpp.” <em>Vital</em>, GitHub repository mtytel/vital. <a href="https://github.com/mtytel/vital/tree/main/src/interface/editor_sections">github.com/mtytel/vital/tree/main/src/interface/editor_sections</a>. Section bounds of the main window at the default 1400 x 820 (synth_constants.h): header 48, macro column, oscillators, sample, two filters, envelopes : LFOs : random = 3 : 4 : 2, voice and portamento strip, keyboard.</p>
+<p>Tytel, Matt. “synth_constants.h.” <em>Vital</em>, GitHub repository mtytel/vital. <a href="https://github.com/mtytel/vital/blob/main/src/common/synth_constants.h">github.com/mtytel/vital/blob/main/src/common/synth_constants.h</a>. kNumOscillators 3, kNumFilters 2, kNumEnvelopes 6, kNumLfos 8, kNumRandomLfos 4, kNumMacros 4, kMaxModulationConnections 64, kMaxPolyphony 33 (32 playing), effects chorus / compressor / delay / distortion / EQ / filter / flanger / phaser / reverb, filter models Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phase.</p>
 <p><strong>For students</strong></p>
 <p>Tytel, Matt. “README.” <em>Vital</em>, GitHub repository mtytel/vital. <a href="https://github.com/mtytel/vital#readme">github.com/mtytel/vital#readme</a>. “A spectral warping wavetable synthesizer”; GPLv3 source; “the free version of Vital”; download at vital.audio after making an account.</p>
 <p>Vital Audio. <em>Vital: Spectral Warping Wavetable Synth</em>. <a href="https://vital.audio/">vital.audio/</a>. Drag-and-drop modulation; the Basic tier (75 presets, 25 wavetables), Plus and Pro; Windows 10+, macOS 10.15+, Ubuntu 18.04+.</p>

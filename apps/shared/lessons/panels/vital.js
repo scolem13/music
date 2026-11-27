@@ -17,14 +17,14 @@
   I.push({ t: "display", x: 940, y: 8, w: 200, h: 34, draw: "wave:o1Frame", a: "osc" });
   k("vol", 1180, 24, "", "osc", 12, { noValue: true }); I.push({ t: "label", x: 1215, y: 28, text: "VOLUME", size: 9, anchor: "start" });
   // macro column and wheels
-  sec(10, 48, 68, 696, "", null, { head: 0 });
+  sec(10, 48, 68, 696, "", null, { head: 0, name: "Macros" });
   [1, 2, 3, 4].forEach(function (n) { k(null, 44, 48 + 60 + (n - 1) * 150, "MACRO " + n, "osc", 17); });
-  sec(10, 745, 68, 71, "", null, { head: 0 });
+  sec(10, 745, 68, 71, "", null, { head: 0, name: "Logo / settings" });
   I.push({ t: "button", x: 18, y: 752, w: 22, h: 56, label: "P" }, { t: "button", x: 48, y: 752, w: 22, h: 56, label: "M" });
   // ---- VOICE page: oscillators, sample, filters ----
   [0, 1, 2].forEach(function (i) {
     var y = 48 + i * 140, p = "o" + (i + 1);
-    sec(x0, y, 704, 136, "", "osc", { head: 32, vertical: true, page: "voice" });
+    sec(x0, y, 704, 136, "", "osc", { head: 32, vertical: true, page: "voice", name: "Osc " + (i + 1) });
     I.push({ t: "label", x: x0 + 18, y: y + 74, text: "OSC " + (i + 1), size: 11, bold: true, rot: -90, page: "voice" });
     I.push({ t: "switch", k: p + "On", x: x0 + 3, y: y + 4, w: 26, h: 18, label: "", a: "osc", page: "voice" });
     I.push({ t: "button", x: x0 + 40, y: y + 6, w: 230, h: 18, label: "Basic Shapes", page: "voice" });
@@ -39,7 +39,7 @@
     row1.forEach(function (c, j) { k(c[0], x0 + 384 + j * 64, y + 34, c[1], "osc", 14, { page: "voice" }); });
     row2.forEach(function (c, j) { k(c[0], x0 + 384 + j * 64, y + 94, c[1], "osc", 14, { page: "voice" }); });
   });
-  sec(x0, 468, 704, 70, "", "osc", { head: 32, vertical: true, page: "voice" });
+  sec(x0, 468, 704, 70, "", "osc", { head: 32, vertical: true, page: "voice", name: "Sample" });
   I.push({ t: "label", x: x0 + 18, y: 503, text: "SMP", size: 11, bold: true, rot: -90, page: "voice" });
   I.push({ t: "switch", k: "smpOn", x: x0 + 3, y: 472, w: 26, h: 18, label: "", a: "osc", page: "voice" });
   I.push({ t: "button", x: x0 + 40, y: 474, w: 230, h: 18, label: "White Noise", page: "voice" });
@@ -67,7 +67,7 @@
   });
   // ---- modulation area (always shown, as in the plug-in) ----
   var MX = 802;
-  sec(MX, 48, 68, 213, "", null, { head: 0 }); ["ENV 1", "ENV 2", "ENV 3"].forEach(function (s, j) { I.push({ t: "button", x: MX + 4, y: 54 + j * 68, w: 60, h: 62, label: s, on: j < 2, a: "env" }); });
+  sec(MX, 48, 68, 213, "", null, { head: 0, name: "Envelope tabs" }); ["ENV 1", "ENV 2", "ENV 3"].forEach(function (s, j) { I.push({ t: "button", x: MX + 4, y: 54 + j * 68, w: 60, h: 62, label: s, on: j < 2, a: "env" }); });
   [["e1", "ENVELOPE 1", MX + 72], ["e2", "ENVELOPE 2", MX + 72 + 260]].forEach(function (e) { var p = e[0], X = e[2];
     sec(X, 48, 256, 213, e[1], "env");
     I.push({ t: "display", x: X + 6, y: 74, w: 244, h: 100, draw: "env:" + p + "A," + p + "D," + p + "S," + p + "R", a: "env" });
@@ -75,19 +75,19 @@
   });
   k("e2Cut", MX + 72 + 260 + 60, 248, "", "env", 7, { noValue: true }); I.push({ t: "label", x: MX + 72 + 260 + 72, y: 251, text: "→ cutoff", size: 8, anchor: "start" });
   k("e2Frame", MX + 72 + 260 + 160, 248, "", "env", 7, { noValue: true }); I.push({ t: "label", x: MX + 72 + 260 + 172, y: 251, text: "→ frame", size: 8, anchor: "start" });
-  sec(MX, 265, 68, 284, "", null, { head: 0 }); ["LFO 1", "LFO 2", "LFO 3", "LFO 4"].forEach(function (s, j) { I.push({ t: "button", x: MX + 4, y: 271 + j * 69, w: 60, h: 63, label: s, on: j === 0, a: "lfo" }); });
+  sec(MX, 265, 68, 284, "", null, { head: 0, name: "LFO tabs" }); ["LFO 1", "LFO 2", "LFO 3", "LFO 4"].forEach(function (s, j) { I.push({ t: "button", x: MX + 4, y: 271 + j * 69, w: 60, h: 63, label: s, on: j === 0, a: "lfo" }); });
   sec(MX + 72, 265, 516, 284, "LFO 1", "lfo");
   I.push({ t: "display", x: MX + 78, y: 291, w: 400, h: 170, draw: "lfo:lfoShape", a: "lfo" });
   I.push({ t: "select", k: "lfoShape", x: MX + 486, y: 300, w: 96, h: 20, label: "SHAPE", names: { tri: "Triangle", sine: "Sine", saw: "Saw", square: "Square" } });
   k("lfoRate", MX + 534, 360, "FREQUENCY", "lfo", 18); k(null, MX + 534, 428, "FADE IN", "lfo", 12);
   [[null, "MODE"], [null, "SYNC"], ["lfoPitch", "→ PITCH"], ["lfoCut", "→ CUTOFF"], ["lfoFrame", "→ FRAME"], [null, "SMOOTH"]].forEach(function (c, j) { k(c[0], MX + 110 + j * 70, 494, c[1], "lfo", 12); });
-  sec(MX, 553, 68, 143, "", null, { head: 0 }); ["RAND 1", "RAND 2"].forEach(function (s, j) { I.push({ t: "button", x: MX + 4, y: 559 + j * 68, w: 60, h: 62, label: s }); });
+  sec(MX, 553, 68, 143, "", null, { head: 0, name: "Random tabs" }); ["RAND 1", "RAND 2"].forEach(function (s, j) { I.push({ t: "button", x: MX + 4, y: 559 + j * 68, w: 60, h: 62, label: s }); });
   sec(MX + 72, 553, 240, 143, "RANDOM 1", "lfo"); I.push({ t: "display", x: MX + 78, y: 580, w: 160, h: 108, draw: function () { return []; } });
   sec(1118, 553, 272, 143, "KEYBOARD MODS", null);
   ["NOTE", "VELOCITY", "LIFT", "AFTERTOUCH", "SLIDE", "STEREO", "RANDOM", "PITCH WH"].forEach(function (s, j) { I.push({ t: "button", x: 1122 + (j % 4) * 67, y: 580 + Math.floor(j / 4) * 56, w: 63, h: 50, label: s, size: 7.5 }); });
   sec(802, 700, 312, 71, "VOICE", null, { head: 0 });
   [["poly", "VOICES"], [null, "VEL TRK"], [null, "SPREAD"], [null, "STEREO"]].forEach(function (c, j) { k(c[0], 874 + j * 72, 728, c[1], "osc", 12); });
-  sec(1118, 700, 272, 71, "", null, { head: 0 });
+  sec(1118, 700, 272, 71, "", null, { head: 0, name: "Portamento" });
   [["glide", "GLIDE"], [null, "SLOPE"], [null, "LEGATO"]].forEach(function (c, j) { k(c[0], 1160 + j * 80, 728, c[1], "osc", 12); });
   I.push({ t: "keys", x: 88, y: 781, w: 1302, h: 35, n: 52 });
 

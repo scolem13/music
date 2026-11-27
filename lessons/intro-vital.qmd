@@ -30,7 +30,7 @@ A first stop before [Classic Synths Compared](synth-compare.qmd). Short sections
 ## Its sound
 
 - Each oscillator plays a **wavetable**: a row of single-cycle waves. The **Wave frame** knob picks a place along the row, so one knob can morph the tone (Vital source, synth_parameters.cpp: "Wave Frame").
-- It has three oscillators (unverified count) and a **Sample** slot; on this page the Sample slot holds noise (a guess).
+- It has three oscillators and a **Sample** slot (Vital source, synth_constants.h and synth_parameters.cpp); on this page the Sample slot holds noise (a guess).
 - Its filter has eight **models** (Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phaser) and **styles** such as 12 dB and 24 dB (Vital source, synth_strings.h). This page plays only three of them, with its own filters.
 - You **modulate** a knob by dragging an envelope or LFO onto it (vital.audio: "drag and drop").
 - This page's Vital is a **beginner panel**: three oscillators on one basic-shapes table (sine, triangle, square, saw), one filter, two envelopes, one LFO, three effects. The real plug-in has far more.
@@ -55,6 +55,24 @@ Each step loads a starting patch made on this page (not one of Vital's own prese
 <div class="ik-step" data-ex="vital-pad"><p><b>A pad.</b> Two oscillators a few cents apart (<b>Tune</b> -8 and +8), between triangle and square, a slow <b>attack</b> and <b>release</b> on envelope 1, <b>LFO 1 → wave frame</b> moving slowly, chorus and reverb. Listen: chords that swell in and shimmer.</p></div>
 <div class="ik-step" data-ex="vital-lead"><p><b>A lead.</b> Saw plus a brighter wave an octave up, <b>Unison voices</b> 4, the LFO giving vibrato, portamento and a delay. Play it from the keys and hold a note to hear the vibrato.</p></div>
 ```
+
+## What the real Vital can do that this page can't
+
+The panel above is a **beginner** Vital: the knobs that are not dimmed are the ones this page plays (**Show ▾ → Only working controls** hides the rest). Counts for the real plug-in are from its source code (synth_constants.h and synth_parameters.cpp, read 2026-11-27).
+
+| | The real Vital | This page |
+|---|---|---|
+| **Modulation** | Drag any of 6 envelopes, 8 LFOs, 4 random LFOs, 4 macros, velocity or the wheels onto **any** knob; up to 64 connections, each with its own amount, and (per the source, read in part) bipolar, stereo, curve and bypass settings | **No assigning.** Five fixed routes only: Env 2 → cutoff, Env 2 → wave frame, LFO 1 → pitch, LFO 1 → cutoff, LFO 1 → wave frame. Env 1 always shapes the loudness |
+| **Wavetables** | Any wavetable: load your own (.wav, .flac, .vitaltable); 257 frames per table | One table (sine → triangle → square → saw), the frame knob only |
+| **Oscillators** | 3 oscillators, each with spectral morph, distortion (warp), unison up to 16 with stack styles, stereo spread, phase and routing to either filter, both, the effects or straight out | 3 oscillators: on, frame, transpose, tune, level; unison up to 8; all go into the one filter |
+| **Sampler** | Plays a .wav or .flac sample, looped or keytracked | Noise only (a stand-in) |
+| **Filters** | 2 filters + a filter effect; 8 models (Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phase) and their styles; formant and comb settings; filter-to-filter routing | 1 filter, 3 models, this site's own filter code |
+| **Envelopes** | 6, each with delay, hold and curved attack / decay / release | 2 plain ADSRs |
+| **LFOs** | 8 LFOs (shapes saved as .vitallfo files), tempo sync, fade-in, delay, smoothing, stereo, keytrack; plus 4 random LFOs | 1 LFO, 4 fixed shapes, free rate |
+| **Macros** | 4 macro knobs, each assignable | None |
+| **Effects** | 9: chorus, multiband compressor, delay, distortion, 3-band EQ, filter, flanger, phaser, reverb, in **any order**, each fully adjustable | 3: chorus, delay, reverb, mix only, fixed order |
+| **Voices** | Up to 32 notes, voice priority, legato, portamento slope / force / scale, pitch bend up to 48 semitones, MPE, 4 oversampling settings, stereo routing | Up to 16 notes, glide time only |
+| **The sound** | Vital's own code | This site's own engine with Vital's names and ranges: close, not the same |
 
 ## Get the real Vital (free)
 
@@ -120,6 +138,8 @@ Surge Synth Team. "SkinModel.cpp." *Surge XT*, GitHub repository surge-synthesiz
 Tytel, Matt. "default.vitalskin." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/default.vitalskin](https://github.com/mtytel/vital/blob/main/default.vitalskin). Knob section height 71, padding 4 / 10, modulation button width 68; background, body and accent colours.
 
 Tytel, Matt. "full_interface.cpp," "synthesis_interface.cpp" and "modulation_interface.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/tree/main/src/interface/editor_sections](https://github.com/mtytel/vital/tree/main/src/interface/editor_sections). Section bounds of the main window at the default 1400 x 820 (synth_constants.h): header 48, macro column, oscillators, sample, two filters, envelopes : LFOs : random = 3 : 4 : 2, voice and portamento strip, keyboard.
+
+Tytel, Matt. "synth_constants.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_constants.h](https://github.com/mtytel/vital/blob/main/src/common/synth_constants.h). kNumOscillators 3, kNumFilters 2, kNumEnvelopes 6, kNumLfos 8, kNumRandomLfos 4, kNumMacros 4, kMaxModulationConnections 64, kMaxPolyphony 33 (32 playing), effects chorus / compressor / delay / distortion / EQ / filter / flanger / phaser / reverb, filter models Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phase.
 
 **For students**
 

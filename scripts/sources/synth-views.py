@@ -23,3 +23,16 @@ SOURCES += [
         "https://github.com/surge-synthesizer/surge/blob/main/src/common/SkinModel.cpp", PF,
         note="Default-skin position of every control (oscillator, scene, mixer, filters, Filter EG, Amp EG, FX, LFO, header)."),
 ]
+
+# "What the real Vital can do that this page can't" on lessons/intro-vital.qmd (scripts/intro-instruments/build.py), read 2026-11-27.
+# synth_parameters.cpp was read to about line 470 of 621 (the tail of the oscillator list and the modulation-connection fields
+# came through as a summary); counts below are from the constants file, which was read whole.
+PL = ["lessons/intro-vital.qmd"]
+SOURCES += [
+    web('Tytel, Matt. "synth_constants.h." *Vital*, GitHub repository mtytel/vital. URL.',
+        "https://github.com/mtytel/vital/blob/main/src/common/synth_constants.h", PL,
+        note="kNumOscillators 3, kNumFilters 2, kNumEnvelopes 6, kNumLfos 8, kNumRandomLfos 4, kNumMacros 4, kMaxModulationConnections 64, kMaxPolyphony 33 (32 playing), effects chorus / compressor / delay / distortion / EQ / filter / flanger / phaser / reverb, filter models Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phase."),
+    web('Tytel, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. URL.',
+        "https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp", PL,
+        note="unison_voices 1-16; polyphony 1-32; envelope delay / hold and attack / decay / release power; LFO sync, fade, delay, smooth, stereo; sample_on and the sampler's loop / keytrack; effect_chain_order (any order); pitch_bend_range 0-48; mpe_enabled; oversampling 4 settings."),
+]

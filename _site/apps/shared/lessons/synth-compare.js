@@ -2575,7 +2575,8 @@
       var c = ctlDef(id, key); if (!c) return;
       if (c[2] === "k") { v = Math.max(c[3], Math.min(c[4], Math.round(v / c[5]) * c[5])); v = Math.round(v * 100) / 100; }
       W.st[id][key] = v; show(id, key); push(id); if (pan[id] && pan[id].fp) pan[id].fp.refresh();
-      if (!quiet && pan[id]) { if (id === W.from) retranslate(); else pan[id].box.classList.add("scmp-hand"); }
+      if (!quiet && pan[id]) { if (id === W.from) retranslate(); else pan[id].box.classList.add("scmp-hand");
+        if (W.hear !== id && (id === W.a || id === W.b)) setHear(id); }   // the keys play the synth whose knob is turning: you hear it move (2026-11-27)
       draw();
     }
     function eng(id) { return SC.engine(id, W.st[id], W.mods[id]); }
@@ -2588,7 +2589,10 @@
     W.setMods = function (id, list) { W.mods[id] = {}; (list || []).forEach(function (m) { W.mods[id][m] = true; }); markWi(id); push(id); draw();
       if (pan[id]) pan[id].box.querySelectorAll(".scmp-wi input").forEach(function (c) { c.checked = !!W.mods[id][c.dataset.wi]; }); };
     var rtT = 0;
-    function retranslate() { clearTimeout(rtT); rtT = setTimeout(function () { translate(W.from, false); }, 250); }
+    // while a knob turns, the translation follows every 80 ms (it waited for 250 ms of stillness, so the other synth only changed on release)
+    var rtLast = 0;
+    function retranslate() { clearTimeout(rtT); var now = Date.now(), go = function () { rtLast = Date.now(); translate(W.from, false); };
+      if (now - rtLast >= 80) go(); else rtT = setTimeout(go, 80 - (now - rtLast)); }
     // make `from` the starting point; if it is not on the page, it replaces the "From" synth
     function translate(from, animate) {
       if (from !== W.a && from !== W.b) { W.a = from; buildPanels(); }

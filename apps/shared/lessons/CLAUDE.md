@@ -298,3 +298,10 @@
   any panel's Presets menu, grouped by family (id prefix -> page, `FAMILIES`), each with its settings, Download / Delete, Export all /
   Import (`kind: "instrument-presets"`, merge by name). Save also writes `fp-presets-meta:<id>` = { name, page }. Test
   `node tests/tools/instrument-presets.cdp.js` (`NEG=1` must fail).
+- Show ▾ and sound while turning (2026-11-27): every faithful panel's bar has Show ▾ = "Only working controls" (hides controls the
+  model does not play (fp-off), decoration buttons / jacks and sections left with nothing working; gaps close by merged spans, page-aware)
+  + each top-level section on / off (label, or the section item's `name`; Vital's oscillator rows etc. named in panels/vital.js).
+  synth-compare.js: turning a knob makes the keys play that synth, and the translation follows every 80 ms (it waited for 250 ms of
+  stillness, so the other synth only changed on release). Meet Vital has "What the real Vital can do that this page can't" (a table
+  from synth_constants.h / synth_parameters.cpp, sources in scripts/sources/synth-views.py; written by scripts/intro-instruments/build.py).
+  Test `node tests/lessons/panel-show.cdp.js` (`NEG=1` must fail).

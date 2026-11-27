@@ -20,7 +20,8 @@
 //   coloured cap and a pointer; item `cap` picks the cap colour) ,
 //   items: [ ... ] drawn in order (later on top) }
 // ITEMS (x, y, w, h in panel units; `a` = accent name; `k` = profile control key; `label` = the legend printed on the panel):
-//   { t: "section", x, y, w, h, label, a, head: 18 (heading strip height, 0 = none), vertical: true (label up the left side) }
+//   { t: "section", x, y, w, h, label, a, head: 18 (heading strip height, 0 = none), vertical: true (label up the left side),
+//      name: "Osc 1" (what the Show menu calls a section with no printed label) }
 //      title: "top" | "border" (instead of a heading strip: the label centred inside the top edge, or centred ON the top border
 //      line with a gap behind it, as hardware panels print them; `size` = its font size; implies head 0)
 //   { t: "label", x, y, text, size, anchor: "start"|"middle"|"end", dim: true, rot: -90 }
@@ -440,7 +441,9 @@
 //   A part moves with its section (the smallest section whose box holds the part's centre). Hiding a section hides its parts and
 //   closes the gap: whatever lies to its right on the same band moves left by its width + the gap that followed it. The drawing's
 //   box (viewBox) shrinks to what is still shown, so the rest grows to fill the width.
-// STORED: { size, it: { <part id>: { dx, dy, s, hide } } }, part id = type|key|value|label + "#n" for repeats (so edits survive
+// SHOW ▾ (bar): "Only working controls" (E.working: hides controls the model does not play, decoration buttons / jacks, and sections left
+//   with nothing working; gaps close) and each top-level section on / off in one click.
+// STORED: { size, working, it: { <part id>: { dx, dy, s, hide } } }, part id = type|key|value|label + "#n" for repeats (so edits survive
 //   new parts added to a layout, not a renamed label).
 // API: PanelLayout.attach(me, { id }) -> handle { edits(), set(id, patch), reset(), editing(), edit(on), hidden(key), box(i) }
 //   me.layoutEdits = handle; me.onLayout = [fn] called after each change (panel-keys.js redraws its letters).
@@ -478,18 +481,38 @@
     var SECS = P.filter(function (p) { return p.it.t === "section"; });
     P.forEach(function (p) { if (p.it.t === "section" || !p.b && !BOXLESS[p.it.t]) return;
       var cx, cy; if (p.b) { cx = p.b.x + p.b.w / 2; cy = p.b.y + p.b.h / 2; } else { try { var bb = p.g.getBBox(); cx = bb.x + bb.width / 2; cy = bb.y + bb.height / 2; } catch (e) { return; } }
-      var best = null; SECS.forEach(function (s) { var b = s.b; if (cx >= b.x && cx <= b.x + b.w && cy >= b.y && cy <= b.y + b.h && (!best || b.w * b.h < best.b.w * best.b.h)) best = s; });
+      var best = null; SECS.forEach(function (s) { var b = s.b; if (s.it.page && p.it.page !== s.it.page) return;   // a section only holds parts on its own page
+        if (cx >= b.x && cx <= b.x + b.w && cy >= b.y && cy <= b.y + b.h && (!best || b.w * b.h < best.b.w * best.b.h)) best = s; });
       if (best) { p.sec = best; best.kids.push(p); } });
-    SECS.forEach(function (s) { SECS.forEach(function (o) { if (o !== s && !s.sec && o.b.w * o.b.h > s.b.w * s.b.h && s.b.x >= o.b.x && s.b.x + s.b.w <= o.b.x + o.b.w && s.b.y >= o.b.y && s.b.y + s.b.h <= o.b.y + o.b.h) s.sec = o; }); });
+    SECS.forEach(function (s) { SECS.forEach(function (o) { if (o.it.page && s.it.page !== o.it.page) return; if (o !== s && !s.sec && o.b.w * o.b.h > s.b.w * s.b.h && s.b.x >= o.b.x && s.b.x + s.b.w <= o.b.x + o.b.w && s.b.y >= o.b.y && s.b.y + s.b.h <= o.b.y + o.b.h) s.sec = o; }); });
     var editing = false, sel = null, ov = null, tools = null, auto = {};
     function ed(p) { return E.it[p.id] || {}; }
-    function hidden(p) { for (var q = p; q; q = q.sec) if (ed(q).hide) return true; return false; }
+    // "Only working controls" (E.working): a control the model does not play (drawn dimmed, class fp-off, "not modelled") goes, and so does a
+    // section left with no working control or display in it, and a printed button / jack (decoration)
+    var DECOR = { button: 1, jack: 1 };
+    function inert(p) { return p.it.t !== "section" && (p.g.getAttribute("class") || "").indexOf("fp-off") >= 0 || DECOR[p.it.t] && !p.it.go; }
+    function live(p) { return p.it.k && !inert(p) || p.it.t === "keys" || p.it.go; }   // a display alone does not keep a section (it only pictures knobs)
+    function deadSec(p) { return p.it.t === "section" && !p.kids.some(function (q) { return q.it.t === "section" ? !deadSec(q) : live(q); }); }
+    function off(p) { return ed(p).hide || E.working && (inert(p) || deadSec(p)); }
+    function hidden(p) { for (var q = p; q; q = q.sec) if (off(q)) return true; return false; }
     // gap closing: each hidden top-level part (a section, or a part in no section) moves what is right of it on its band
-    function autoShift() { auto = {}; var tops = P.filter(function (p) { return !p.sec && p.b; });
-      tops.forEach(function (H) { if (!ed(H).hide) return; var hb = H.b, gap = 30;
-        tops.forEach(function (o) { if (o !== H && o.b.x >= hb.x + hb.w - 1 && o.b.y < hb.y + hb.h && o.b.y + o.b.h > hb.y) gap = Math.min(gap, o.b.x - hb.x - hb.w); });
-        gap = Math.max(0, gap);
-        tops.forEach(function (o) { if (o !== H && o.b.x >= hb.x + hb.w - 1 && o.b.y < hb.y + hb.h && o.b.y + o.b.h > hb.y) auto[o.id] = (auto[o.id] || 0) - hb.w - gap; }); }); }
+    function autoShift() { auto = {};   // per part: the hidden spans to its left on its band (merged, so a stacked column counts once), minus what a shown section still uses
+      var tops = P.filter(function (p) { return !p.sec && p.b; });
+      function samePage(a, b) { return !a.it.page || !b.it.page || a.it.page === b.it.page; }
+      function band(a, b) { return a.b.y < b.b.y + b.b.h && a.b.y + a.b.h > b.b.y; }
+      tops.forEach(function (o) {
+        var spans = [], keep = [];
+        tops.forEach(function (H) { if (H === o || !samePage(H, o) || !band(H, o) || H.b.x + H.b.w > o.b.x + 1) return;
+          if (off(H)) { var nx = o.b.x; tops.forEach(function (q) { if (q !== H && samePage(q, H) && band(q, H) && q.b.x >= H.b.x + H.b.w - 1) nx = Math.min(nx, q.b.x); });
+            spans.push([H.b.x, Math.max(H.b.x + H.b.w, Math.min(nx, H.b.x + H.b.w + 30))]); }
+          else keep.push([H.b.x, H.b.x + H.b.w]); });
+        if (!spans.length) return;
+        spans.sort(function (a, b) { return a[0] - b[0]; }); var m = [];
+        spans.forEach(function (sp) { var l = m[m.length - 1]; if (l && sp[0] <= l[1]) l[1] = Math.max(l[1], sp[1]); else m.push(sp.slice()); });
+        var tot = 0; m.forEach(function (sp) { var len = sp[1] - sp[0];
+          keep.forEach(function (k) { len -= Math.max(0, Math.min(sp[1], k[1]) - Math.max(sp[0], k[0])); }); tot += Math.max(0, len); });
+        if (tot) auto[o.id] = -tot; });
+    }
     function own(p) { var e = ed(p), b = p.b, s = e.s || 1, dx = (e.dx || 0) + (auto[p.id] || 0), dy = e.dy || 0;
       var cx = b ? b.x + b.w / 2 : 0, cy = b ? b.y + b.h / 2 : 0; return { dx: dx, dy: dy, s: b ? s : 1, cx: cx, cy: cy }; }
     function chain(p) { var c = []; for (var q = p; q; q = q.sec) c.unshift(q); return c; }   // outermost first
@@ -497,7 +520,7 @@
       return "translate(" + (o.dx + o.cx) + " " + (o.dy + o.cy) + ") scale(" + o.s + ") translate(" + (-o.cx) + " " + (-o.cy) + ")"; }).join(" ").trim(); }
     function mapPt(p, x, y) { var c = chain(p); for (var i = c.length - 1; i >= 0; i--) { var o = own(c[i]); x = (x - o.cx) * o.s + o.cx + o.dx; y = (y - o.cy) * o.s + o.cy + o.dy; } return [x, y]; }
     function eff(p) { if (!p.b) return null; var a = mapPt(p, p.b.x, p.b.y), z = mapPt(p, p.b.x + p.b.w, p.b.y + p.b.h); return { x: a[0], y: a[1], w: z[0] - a[0], h: z[1] - a[1] }; }
-    function anyEdit() { for (var k in E.it) { var e = E.it[k]; if (e.hide || e.dx || e.dy || (e.s && e.s !== 1)) return true; } return false; }
+    function anyEdit() { if (E.working) return true; for (var k in E.it) { var e = E.it[k]; if (e.hide || e.dx || e.dy || (e.s && e.s !== 1)) return true; } return false; }
     function apply() {
       autoShift();
       P.forEach(function (p) { var t = tr(p); if (t) p.g.setAttribute("transform", t); else p.g.removeAttribute("transform"); if (hidden(p)) p.g.setAttribute("data-pl-hide", ""); else p.g.removeAttribute("data-pl-hide"); });   // not style.display: tabbed panels page with that
@@ -510,7 +533,7 @@
       me.bg.setAttribute("x", vb.x); me.bg.setAttribute("y", vb.y); me.bg.setAttribute("width", vb.w); me.bg.setAttribute("height", vb.h);
       svg.style.width = Math.round(E.size * 100) + "%"; svg.style.minWidth = Math.round((L.w > 900 ? 760 : 260) * E.size * Math.min(1, vb.w / L.w)) + "px";   // wide synth panels keep a floor (they scroll); narrow drawings (drums, cymbals) may shrink into a column
       sizeIn.value = Math.round(E.size * 100); sizeOut.textContent = Math.round(E.size * 100) + "%";
-      if (editing) overlay(); if (!dragging) renderTools();
+      if (editing) overlay(); if (!dragging) renderTools(); if (typeof drawShow === "function" && sb) drawShow();
       (me.onLayout || []).forEach(function (f) { try { f(); } catch (e) {} });
     }
     function change(p, patch) { var e = E.it[p.id] = Object.assign({}, E.it[p.id] || {}, patch);
@@ -525,7 +548,21 @@
     sDn.onclick = function () { setSize(E.size - 0.1); }; sUp.onclick = function () { setSize(E.size + 0.1); }; sizeOut.onclick = function () { setSize(1); };
     me.setSize = setSize;
     var eb = h("button", null, "Edit layout"); eb.type = "button"; eb.addEventListener("click", function () { edit(!editing); });
-    me.bar.appendChild(sz); me.bar.appendChild(eb);
+    // Show ▾: "Only working controls" + each top-level section on / off with one click (the parts people hide most: Osc 3, Filter 2, effects…)
+    var shw = h("span", "fp-pre"), sb = h("button", "fp-pre-b"), pop = h("div", "fp-pre-pop"); sb.type = "button"; pop.hidden = true; shw.appendChild(sb); shw.appendChild(pop);
+    function sname(p) { return String(p.it.label || p.it.name || "Section").replace(/\s+/g, " ").replace(/^./, function (c) { return c; }); }
+    // every top-level section with a printed label or a layout `name` (a section item's `name` = what the Show menu calls an unlabelled box);
+    // on a panel with pages, the page's name in front
+    function drawShow() { var tops = P.filter(function (p) { return p.it.t === "section" && !p.sec && (p.it.label || p.it.name); }), nh = tops.filter(function (p) { return ed(p).hide; }).length;
+      sb.textContent = "Show" + (E.working ? ": working only" : nh ? ": " + (tops.length - nh) + " of " + tops.length : "") + " ▾"; pop.innerHTML = "";
+      function it(text, on, fn, cls) { var b = h("button", cls || null, (on ? "☑ " : "☐ ") + text); b.type = "button"; b.setAttribute("aria-pressed", on ? "true" : "false"); b.onclick = function (e) { e.stopPropagation(); fn(); drawShow(); }; pop.appendChild(b); }
+      it("Only working controls (hide what this page does not play)", !!E.working, function () { E.working = !E.working; save(id, E); apply(); }, "fp-pre-act");
+      pop.appendChild(h("div", "fp-pre-empty", "Sections:"));
+      tops.forEach(function (p) { it((p.it.page ? p.it.page.toUpperCase() + " · " : "") + sname(p), !ed(p).hide, function () { change(p, { hide: !ed(p).hide }); }); });
+      var all = h("button", "fp-pre-act", "Show everything again"); all.type = "button"; all.onclick = function (e) { e.stopPropagation(); E.working = false; tops.forEach(function (p) { if (ed(p).hide) { var x = E.it[p.id]; delete x.hide; if (!x.dx && !x.dy && (!x.s || x.s === 1)) delete E.it[p.id]; } }); save(id, E); apply(); drawShow(); }; pop.appendChild(all); }
+    sb.onclick = function (e) { e.stopPropagation(); pop.hidden = !pop.hidden; if (!pop.hidden) drawShow(); };
+    document.addEventListener("click", function (e) { if (!shw.contains(e.target)) pop.hidden = true; });
+    me.bar.appendChild(shw); me.bar.appendChild(sz); me.bar.appendChild(eb);
     tools = h("div", "pl-tools"); tools.hidden = true; me.bar.parentNode.insertBefore(tools, me.bar.nextSibling);
 
     function name(p) { var it = p.it; return (it.t === "section" ? "Section " : "") + (it.label || it.text || it.k || it.t) + (it.v != null && it.t === "key" ? " " + it.v : ""); }
@@ -580,6 +617,7 @@
     var H = { edits: function () { return JSON.parse(JSON.stringify(E)); }, editing: function () { return editing; }, edit: edit, parts: P,
       set: function (pid, patch) { var p = P.filter(function (q) { return q.id === pid; })[0]; if (p) change(p, patch); return !!p; },
       reset: function () { E = { size: 1, it: {} }; save(id, E); apply(); },
+      working: function (on) { if (on != null) { E.working = !!on; save(id, E); apply(); } return !!E.working; },
       hidden: function (key) { return P.some(function (p) { return p.it.k === key; }) && P.filter(function (p) { return p.it.k === key; }).every(hidden); } };
     me.layoutEdits = H; me.onLayout = me.onLayout || [];
     apply(); return H;
