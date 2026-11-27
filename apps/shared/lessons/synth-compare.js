@@ -1227,6 +1227,16 @@
   function vtGroup(n) { var p = "o" + n; return ["Oscillator " + n, p, [[p + "On", "On", "s"], knob(p + "Frame", "Wave frame", 0, 256, 1), knob(p + "Tr", "Transpose", -48, 48, 1),
     knob(p + "Tune", "Tune (cents)", -100, 100, 1), knob(p + "Lvl", "Level (%)", 0, 100, 1)]]; }
   function vtEnv(e, name) { return [name, e, [knob(e + "A", "Attack", 0, 2.37842, 0.001), knob(e + "D", "Decay", 0, 2.37842, 0.001), knob(e + "S", "Sustain (%)", 0, 100, 1), knob(e + "R", "Release", 0, 2.37842, 0.001)]]; }
+  // Vital's assignable modulation (2026-11-27): 8 slots of source -> destination x amount (-100..100 %). Sources are this engine's own
+  // (Env 1 = loudness envelope, Env 2 = the filter envelope, Env 3, LFO 1, LFO 2, Random = sample and hold at its rate, velocity, mod
+  // wheel, note = keyboard position). 100 % = this page's full range of the destination (pitch 48 semitones, frame the whole table,
+  // level +100 %, cutoff the knob's 128 semitones, volume full): a reading of Vital's "amount as a share of the knob's range", unverified.
+  var VT_MSRC = ["—", "Env 1", "Env 2", "Env 3", "LFO 1", "LFO 2", "Random", "Velocity", "Mod wheel", "Note"];
+  var VT_MDST = ["—", "Osc 1 pitch", "Osc 2 pitch", "Osc 3 pitch", "All pitch", "Osc 1 frame", "Osc 2 frame", "Osc 3 frame", "All frames", "Osc 1 level", "Osc 2 level", "Osc 3 level", "Cutoff", "Volume"];
+  var VT_SRC = { "Env 1": "aenv", "Env 2": "fenv", "Env 3": "env3", "LFO 1": "lfo", "LFO 2": "lfo2", "Random": "sh", "Velocity": "vel", "Mod wheel": "modw", "Note": "kbd" };
+  var VT_DST = { "Osc 1 pitch": [["p0"], 48], "Osc 2 pitch": [["p1"], 48], "Osc 3 pitch": [["p2"], 48], "All pitch": [["p0", "p1", "p2"], 48],
+    "Osc 1 frame": [["wt0"], 63], "Osc 2 frame": [["wt1"], 63], "Osc 3 frame": [["wt2"], 63], "All frames": [["wt"], 63],
+    "Osc 1 level": [["lv0"], 1], "Osc 2 level": [["lv1"], 1], "Osc 3 level": [["lv2"], 1], "Cutoff": [["cut"], 128 / 12], "Volume": [["amp"], 1] };
   PROFILES.vital = { id: "vital", name: "Vital", long: "after Vital (Matt Tytel's free wavetable synth plug-in): a beginner's panel of three wavetable oscillators, one filter, two envelopes, one LFO", voices: 8, book: "VT",
     groups: [vtGroup(1), vtGroup(2), vtGroup(3), ["Sample (noise)", "smp", [["smpOn", "On", "s"], knob("smp", "Level (%)", 0, 100, 1)]],
       ["Filter 1", "flt", [["fModel", "Model", "sel", ["Analog", "Ladder", "Digital"]], ["fStyle", "Style", "sel", ["12dB", "24dB", "Notch"]], knob("fBlend", "Blend (low · band · high)", 0, 2, 0.01),
@@ -1234,11 +1244,17 @@
       vtEnv("e1", "Envelope 1 (amp)"), vtEnv("e2", "Envelope 2"), ["Env 2 routes", "e2m", [knob("e2Cut", "Env 2 → cutoff (semitones)", -48, 48, 0.5), knob("e2Frame", "Env 2 → wave frame", -256, 256, 1)]],
       ["LFO 1", "lfo", [["lfoShape", "Shape", "sel", ["tri", "sine", "saw", "square"]], knob("lfoRate", "Frequency (2^x Hz)", -7, 9, 0.01), knob("lfoPitch", "LFO 1 → pitch (semitones)", 0, 12, 0.1),
         knob("lfoCut", "LFO 1 → cutoff (semitones)", 0, 48, 0.5), knob("lfoFrame", "LFO 1 → wave frame", 0, 256, 1)]],
+      vtEnv("e3", "Envelope 3"), ["LFO 2", "lfo2", [["lfo2Shape", "Shape", "sel", ["tri", "sine", "saw", "square"]], knob("lfo2Rate", "Frequency (2^x Hz)", -7, 9, 0.01)]],
+      ["Random", "rnd", [knob("rndRate", "Random rate (2^x Hz)", -7, 9, 0.01)]],
+      ["Modulation matrix", "mtx", [1, 2, 3, 4, 5, 6, 7, 8].reduce(function (a, n) { return a.concat([["m" + n + "s", "Slot " + n + " source", "sel", VT_MSRC], ["m" + n + "d", "Slot " + n + " destination", "sel", VT_MDST], knob("m" + n + "a", "Slot " + n + " amount (%)", -100, 100, 1)]); }, [])],
       SOFT_FX, ["Voice", "voice", [knob("poly", "Polyphony", 1, 16, 1), knob("uni", "Unison voices", 1, 8, 1), knob("glide", "Portamento time (2^x s)", -10, 4, 0.1), knob("vol", "Volume (%)", 0, 100, 1)]]],
     def: { o1On: true, o1Frame: 256, o1Tr: 0, o1Tune: 0, o1Lvl: 71, o2On: false, o2Frame: 256, o2Tr: 0, o2Tune: 0, o2Lvl: 71, o3On: false, o3Frame: 256, o3Tr: 0, o3Tune: 0, o3Lvl: 71,
       smpOn: false, smp: 50, fModel: "Analog", fStyle: "12dB", fBlend: 0, cut: 100, res: 20, drive: 0, key: 0,
       e1A: 0.1495, e1D: 1, e1S: 100, e1R: 0.5476, e2A: 0.1495, e2D: 1, e2S: 100, e2R: 0.5476, e2Cut: 0, e2Frame: 0,
-      lfoShape: "tri", lfoRate: 1, lfoPitch: 0, lfoCut: 0, lfoFrame: 0, fxCho: 0, fxDly: 0, fxRev: 0, poly: 8, uni: 1, glide: -10, vol: 70 },
+      lfoShape: "tri", lfoRate: 1, lfoPitch: 0, lfoCut: 0, lfoFrame: 0, fxCho: 0, fxDly: 0, fxRev: 0, poly: 8, uni: 1, glide: -10, vol: 70,
+      e3A: 0.1495, e3D: 1, e3S: 100, e3R: 0.5476, lfo2Shape: "sine", lfo2Rate: 0, rndRate: 2,
+      m1s: "—", m1d: "—", m1a: 0, m2s: "—", m2d: "—", m2a: 0, m3s: "—", m3d: "—", m3a: 0, m4s: "—", m4d: "—", m4a: 0,
+      m5s: "—", m5d: "—", m5a: 0, m6s: "—", m6d: "—", m6a: 0, m7s: "—", m7d: "—", m7a: 0, m8s: "—", m8d: "—", m8a: 0 },
     pg: { _: ["VT", "synth_parameters.cpp"], slope: ["VT", "synth_strings.h"], mods: ["VW", "vital.audio"], memory: ["VW", "vital.audio"], wt: ["VW", "vital.audio"], noise: ["VT", "synth_parameters.cpp"] },
     fc: { osc0: ["o1On", "o1Frame", "o1Tr", "o1Tune", "o1Lvl"], osc1: ["o2On", "o2Frame", "o2Tr", "o2Tune", "o2Lvl"], osc2: ["o3On", "o3Frame", "o3Tr", "o3Tune", "o3Lvl"],
       wt: ["o1Frame", "o2Frame", "o3Frame", "e2Frame", "lfoFrame"], noise: ["smpOn", "smp"], filter: ["fModel", "fStyle", "fBlend", "cut", "res", "e2Cut"], drive: ["drive"], kbd: ["key"],
@@ -1256,6 +1272,12 @@
       if (k === "lfoRate") return Math.pow(2, v).toFixed(2) + " Hz"; if (k === "glide") return v <= -9.95 ? "off" : Math.pow(2, v).toFixed(3) + " s";
       if (/Frame$/.test(k) && /^o\d/.test(k)) return ["sine", "triangle", "square", "saw"][clamp(Math.round(v / 256 * 3), 0, 3)] + "-ish";
       return ""; } };
+  PROFILES.vital.mod = { src: VT_MSRC, dst: VT_MDST };
+  function vtMatrix(s) { var R = [];
+    for (var n = 1; n <= 8; n++) { var sr = VT_SRC[s["m" + n + "s"]], d = VT_DST[s["m" + n + "d"]], a = +s["m" + n + "a"] || 0;
+      if (sr && d && a) R.push({ id: "m" + n, src: [[sr, 1]], dst: d[0], amt: a / 100 * d[1], gain: "fixed" }); }
+    return R; }
+  function vtUses(s, src) { for (var n = 1; n <= 8; n++) if (s["m" + n + "s"] === src && s["m" + n + "d"] !== "—" && +s["m" + n + "a"]) return true; return false; }
   function engVital(s) {
     s = full("vital", s);
     var o = [1, 2, 3].map(function (n) { var p = "o" + n, L = s[p + "Lvl"] / 100;
@@ -1266,10 +1288,13 @@
     if (s.lfoCut > 0) R.push({ id: "lfoCut", src: ls, dst: ["cut"], amt: s.lfoCut / 12, gain: "fixed" });
     if (s.lfoFrame > 0) R.push({ id: "lfoFrame", src: ls, dst: ["wt"], amt: s.lfoFrame / 256 * 63 / 2, gain: "fixed" });
     if (s.e2Frame) R.push({ id: "e2Frame", src: [["fenv", 1]], dst: ["wt"], amt: s.e2Frame / 256 * 63, gain: "fixed" });
+    R = R.concat(vtMatrix(s));
+    var e3 = vtUses(s, "Env 3") ? Object.assign({ delay: 0 }, vEnv(s.e3A, s.e3D, s.e3S, s.e3R)) : null;
     return base("vital", { voices: s.uni > 1 ? 1 : s.poly, unison: s.uni > 1 ? s.uni : 1, uniDet: 10, prio: "last", legato: s.poly === 1 && s.uni <= 1, osc: o,
       noise: { lvl: s.smpOn ? s.smp / 100 : 0, pink: false }, model: f24 ? (s.fModel === "Ladder" ? "ladder" : "cem") : "svf", mode: mode, slope: f24 ? 24 : 12,
       cut: 440 * Math.pow(2, (s.cut - 69) / 12), res: s.res / 100, drive: s.drive > 0 ? (Math.pow(10, s.drive / 20) - 1) / 6 : 0, env: s.e2Cut / 12, kbd: s.key / 100,
-      fenv: vEnv(s.e2A, s.e2D, s.e2S, s.e2R), aenv: Object.assign({ vel: 0 }, vEnv(s.e1A, s.e1D, s.e1S, s.e1R)), lfo: L, routes: R,
+      fenv: vEnv(s.e2A, s.e2D, s.e2S, s.e2R), aenv: Object.assign({ vel: 0 }, vEnv(s.e1A, s.e1D, s.e1S, s.e1R)), lfo: L, routes: R, env3: e3,
+      lfo2: vtUses(s, "LFO 2") ? { hz: Math.pow(2, s.lfo2Rate), shape: s.lfo2Shape } : null, shHz: vtUses(s, "Random") ? Math.pow(2, s.rndRate) : 0,
       glide: s.glide > -9.95 ? Math.pow(2, s.glide) : 0, bend: 2, drift: 0, fx: softFx(s.fxCho, s.fxDly, s.fxRev), vol: s.vol / 100 });
   }
   PROFILES.vital.apply = function (c, s, I) {
@@ -2211,6 +2236,8 @@
         this.lfoPh += L.hz * dt; var wrapL = false; if (this.lfoPh >= 1) { this.lfoPh -= 1; wrapL = true; }
         var ph = this.lfoPh, sk = L.skew || 0.5, tri = L.skew ? (ph < sk ? 2 * ph / sk - 1 : 1 - 2 * (ph - sk) / (1 - sk)) : 1 - 4 * Math.abs(ph - 0.5), lv = 0;
         if (L.tri) lv += tri; if (L.sine) lv += sinT(ph); if (L.sq) lv += L.uni ? (ph < 0.5 ? 1 : 0) : (ph < 0.5 ? 1 : -1); if (L.saw) lv += L.saw > 0 ? (L.uni ? ph : 2 * ph - 1) : 1 - 2 * ph;   // saw / square positive only on the Prophet (P 31)
+        var l2v = 0; if (E.lfo2) { this.lfo2Ph = (this.lfo2Ph || 0) + E.lfo2.hz * dt; if (this.lfo2Ph >= 1) this.lfo2Ph -= 1; var p2 = this.lfo2Ph, s2 = E.lfo2.shape;
+          l2v = s2 === "sine" ? sinT(p2) : s2 === "saw" ? 2 * p2 - 1 : s2 === "square" ? (p2 < 0.5 ? 1 : -1) : 1 - 4 * Math.abs(p2 - 0.5); }
         var wn = this.rand(), b0 = this.pk;
         if (wrapL) this.shL = wn;
         if (E.shHz) { this.shPh += E.shHz * dt; if (this.shPh >= 1) { this.shPh -= 1; this.shV = wn; } }
@@ -2228,13 +2255,14 @@
           var fe = env(v, "fe", "fs", E.fenv, E.fenv.lin, dt), ae = env(v, "ae", "as", E.aenv, E.aenv.lin, dt), e3 = 0;
           if (E.env3) { if (v.s3 === -1) { v.d3 -= dt; if (v.d3 <= 0) v.s3 = 0; } else e3 = env(v, "e3", "s3", E.env3, false, dt); }
           var ld = L.delay ? Math.min(1, v.t / L.delay) : 1, lvv = lv * ld;
-          var mod = { p0: 0, p1: 0, p2: 0, pw0: 0, pw1: 0, pw2: 0, sh0: 0, sh1: 0, sh2: 0, cut: 0, hcut: 0, amp: 0, wt: 0 };
+          var mod = { p0: 0, p1: 0, p2: 0, pw0: 0, pw1: 0, pw2: 0, sh0: 0, sh1: 0, sh2: 0, cut: 0, hcut: 0, amp: 0, wt: 0, wt0: 0, wt1: 0, wt2: 0, lv0: 0, lv1: 0, lv2: 0 };
           for (k = 0; k < routes.length; k++) {
             var r = routes[k], sv = 0;
             for (var q = 0; q < r.src.length; q++) {
               var nm = r.src[q][0], wgt = r.src[q][1]; if (!wgt) continue;
               sv += wgt * (nm === "lfo" ? lvv : nm === "lfoSq" ? (ph < 0.5 ? 1 : -1) * ld : nm === "noise" ? wn : nm === "noiseMod" ? mnoise : nm === "fenv" ? fe : nm === "fenvrev" ? -fe : nm === "aenv" ? ae
                 : nm === "env3" ? e3 : nm === "env3rev" ? -e3 : nm === "sh" ? this.shV : nm === "shL" ? this.shL * ld : nm === "kbd" ? (v.p - 60) / 12
+                : nm === "vel" ? v.vel : nm === "modw" ? wheel : nm === "lfo2" ? l2v   // 2026-11-27 for Vital's assignable modulation
                 : nm === "osc3" || nm === "osc2" ? v.out[2] : nm === "osc1" ? v.out[1] : nm === "osc0" ? v.out[0] : nm === "sine1" ? sinT(v.ph[1]) : nm === "sq0" ? (v.ph[0] < 0.5 ? 1 : -1) : 0);
             }
             var gn = r.gain === "wheel" ? wheel : r.gain === "init" ? Math.min(1, r.init + wheel) : 1;
@@ -2267,8 +2295,8 @@
             for (k = 0; k < 3; k++) {
               var oo = E.osc[k]; if (!v.inc[k]) { v.out[k] = 0; continue; }
               var pw = Math.max(0.03, Math.min(0.97, oo.pw + (k === 0 ? mod.pw0 : k === 1 ? mod.pw1 : mod.pw2)));
-              v.out[k] = oo.wt ? wtVal(oo.wt.t, oo.wt.pos + mod.wt, v.ph[k]) : oo.shape != null ? shapeVal(oo.shape + (k === 0 ? mod.sh0 : k === 1 ? mod.sh1 : mod.sh2), v.ph[k], v.inc[k], pw) : oscVal(oo, v.ph[k], v.inc[k], pw);
-              if (oo.on) mix += v.out[k] * oo.lvl;
+              v.out[k] = oo.wt ? wtVal(oo.wt.t, Math.max(0, Math.min(63, oo.wt.pos + mod.wt + (k === 0 ? mod.wt0 : k === 1 ? mod.wt1 : mod.wt2))), v.ph[k]) : oo.shape != null ? shapeVal(oo.shape + (k === 0 ? mod.sh0 : k === 1 ? mod.sh1 : mod.sh2), v.ph[k], v.inc[k], pw) : oscVal(oo, v.ph[k], v.inc[k], pw);
+              if (oo.on) mix += v.out[k] * oo.lvl * Math.max(0, 1 + (k === 0 ? mod.lv0 : k === 1 ? mod.lv1 : mod.lv2));
             }
             if (ring && ring.lvl) mix += ring.lvl * (ring.kind === "arp" ? (2 * v.ph[0] - 1) * sinT(v.ph[1]) : ring.kind === "mul" ? v.out[0] * v.out[1] : v.out[0] * (v.ph[1] < 0.5 ? 1 : -1));
             mix = mix * 0.45 + (E.noise.lvl ? (E.noise.red ? red * 1.5 : E.noise.pink ? pink * 2.2 : wn * 0.7) * E.noise.lvl * 0.6 : 0) + v.last * E.fb * 3.2;

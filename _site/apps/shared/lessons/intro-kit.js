@@ -5,6 +5,7 @@
 //   <div class="ik-step" data-...>text</div>  a tour step; the kit puts a "▶ Hear step N" button in front of it which sets the
 //     instrument to the step's starting patch / pattern and plays it:
 //       synth: data-ex="<SynthCompare example id>" data-set='{"key": value, ...}'   (W.load, W.set(id, k, v, true), W.phrase([id]))
+//              data-page="matrix" opens the faithful panel on that page (FaithfulPanel me.page)
 //       Model D: data-sheet="<moog-sheets.json id>" (MoogSheet.toState; the sheet is drawn under the step with MoogSheet.draw)
 //       drum: data-pat='{"bpm":..,"rows":{"kick":"x...x..."},"kit":{},"shuffle":..}' ('.' rest, x hit, X accented hit,
 //             1-3 LinnDrum level, a-z MPC velocity soft..hard)   (W.setA(state), W.play(["a"]))
@@ -69,6 +70,7 @@
       }
       var set = d.set ? JSON.parse(d.set) : {}; for (var k2 in set) w.set(me, k2, set[k2], true);
       compact();
+      if (d.page) { var fw = box().querySelector(".scmp-" + me + " .fp-w"); if (fw && fw._fp) fw._fp.page(d.page); }   // data-page: open the panel on that page (Vital: voice | fx | matrix)
       return Promise.resolve(w.phrase([me])).then(function () { return true; });
     }
     if (kind() === "drum") { w.stop(); w.setA(drumState(JSON.parse(d.pat))); return Promise.resolve(w.play(["a"])).then(function () { return true; }); }

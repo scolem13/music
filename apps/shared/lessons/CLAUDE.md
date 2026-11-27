@@ -306,3 +306,9 @@
   stillness, so the other synth only changed on release). Meet Vital has "What the real Vital can do that this page can't" (a table
   from synth_constants.h / synth_parameters.cpp, sources in scripts/sources/synth-views.py; written by scripts/intro-instruments/build.py).
   Test `node tests/lessons/panel-show.cdp.js` (`NEG=1` must fail).
+- Vital's assignable modulation (2026-11-27): 8 matrix slots in PROFILES.vital (m1s/m1d/m1a..m8s/m8d/m8a; VT_MSRC sources Env 1-3,
+  LFO 1-2, Random, Velocity, Mod wheel, Note; VT_MDST destinations osc pitch / frame / level, all, cutoff, volume; amounts -100..100 %
+  of this page's range, unverified as Vital's law) -> engine routes (vtMatrix); new engine sources vel / modw / lfo2 and destinations
+  wt0-2 / lv0-2 (other synths unaffected). Panel: MATRIX tab + Env 3 / LFO 2 / Random; drag ENV 1-3, LFO 1-2, RAND 1, NOTE, VELOCITY
+  onto a knob (FaithfulPanel `modsrc` + layout dropMod / modDest / modded, knobs ringed). intro-kit steps take `data-page`. Real Vital's
+  interface, read from its source: research_notes/vital-ui-facts.md. Test `node tests/lessons/vital-matrix.cdp.js` (`NEG=1` must fail).

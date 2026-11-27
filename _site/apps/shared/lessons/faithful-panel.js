@@ -56,6 +56,8 @@
 //   { t: "shape", d: SVG path, fill / stroke: a colour token (bg body head ink ink2 line track screen wave) or a colour, sw, op, title }  decoration only
 // PEDALS (2026-11-26): layouts panels/pd-<id>.js bound to Pedals.adapter (apps/shared/lessons/pedals.js); extra item
 //   { t: "led", k, x, y, r, label, color }  an LED lit while get(k) is true (the footswitch is a { t: "key", k: "on" } with no v)
+// MODULATION BY DRAGGING (2026-11-27): an item with `modsrc: "LFO 1"` (a button) can be dragged onto a knob; LAYOUT.dropMod(src, key,
+//   get, set) -> message, LAYOUT.modDest(key) -> bool (knobs lit while dragging), LAYOUT.modded(get) -> [keys] (ringed). Vital uses it.
 // PRESETS (2026-11-27): every writable panel has a Presets menu (save / load / overwrite / delete, default settings), kept per layout
 //   in localStorage `fp-presets:<layout id>` (presetMenu below; me.presets). LAYOUT.init = { key: value } is set at mount and after a
 //   preset loads (the B3 holds both manuals on their B set this way).
@@ -124,6 +126,8 @@
       ".fp-ro .fp-c{pointer-events:none}.fp-step.fp-now .fp-ring{stroke:#ffb000;stroke-width:3}" +
       ".fp-off{opacity:.38;cursor:help}.fp-c.fp-hl .fp-focus,.fp-c.fp-lit .fp-focus{stroke:#e8a400;stroke-width:2.5}.fp-note{font-size:.75rem;color:var(--fp-ink2);margin:4px 2px 0}" +
       ".scmp-vw{display:inline-flex;border:1px solid #999;border-radius:5px;overflow:hidden;margin-left:.4rem}.scmp-vw .sp-opt{all:unset;cursor:pointer;padding:.1rem .45rem;font-size:.78rem}.scmp-vw .sp-opt.sp-on{background:#333;color:#fff}.scmp-face[hidden],.scmp-groups[hidden]{display:none}" +
+      ".fp-modsrc{cursor:grab}.fp-modsrc:hover rect{stroke:#e0a030;stroke-width:2}.fp-ghost rect{fill:#e0a030;opacity:.92}.fp-ghost text{fill:#000}" +
+      ".fp-modok{filter:drop-shadow(0 0 4px #e0a030)}.fp-modded{filter:drop-shadow(0 0 3px #aa88ff) drop-shadow(0 0 2px #aa88ff)}.fp-flash{color:#c07a00;font-weight:600}" +
       ".fp-pre{position:relative}.fp-pre-pop{position:absolute;z-index:30;left:0;top:1.6rem;min-width:16rem;max-height:22rem;overflow:auto;background:var(--fp-bg);color:var(--fp-ink);border:1px solid var(--fp-line);border-radius:5px;padding:4px;box-shadow:0 4px 14px rgba(0,0,0,.25)}" +
       ".fp-pre-pop[hidden]{display:none}.fp-pre-row{display:flex;gap:2px}.fp-pre-pop button{display:block;width:100%;text-align:left;margin:1px 0;white-space:pre}.fp-pre-row .fp-pre-x{width:auto;flex:none}" +
       ".fp-pre-cur{font-weight:700}.fp-pre-act{font-style:italic}.fp-pre-empty{font-size:.72rem;color:var(--fp-ink2);padding:2px 4px}" +
@@ -316,7 +320,8 @@
         tabs.push(function () { var on = page === it.go; gb.setAttribute("fill", on ? a : "var(--fp-head)"); gt.setAttribute("fill", on ? "#000" : "var(--fp-ink)"); g.setAttribute("aria-selected", on ? "true" : "false"); });
         return; }
       if (it.t === "button") { g.appendChild(S("rect", { x: it.x, y: it.y, width: it.w, height: it.h, rx: 3, fill: it.on ? a : "var(--fp-head)", stroke: "var(--fp-line)" }));
-        g.appendChild(T(it.x + it.w / 2, it.y + it.h / 2 + 3.5, it.label || "", { "font-size": it.size || 9.5, "text-anchor": "middle", fill: it.on ? "#000" : null })); return; }
+        g.appendChild(T(it.x + it.w / 2, it.y + it.h / 2 + 3.5, it.label || "", { "font-size": it.size || 9.5, "text-anchor": "middle", fill: it.on ? "#000" : null }));
+        if (it.modsrc && L.dropMod && !o.readonly) modDrag(g, it); return; }
       if (it.t === "display") { it._L = L;
         g.appendChild(S("rect", { x: it.x, y: it.y, width: it.w, height: it.h, rx: 3, fill: "var(--fp-screen)", stroke: "var(--fp-line)" }));
         var inner = S("g", { transform: "translate(" + it.x + " " + it.y + ")" }); g.appendChild(inner);
@@ -403,21 +408,43 @@
       if (ok) { byKey[it.k] = byKey[it.k] || []; byKey[it.k].push(upd.length - 1); }
     });
 
+    // MODULATION BY DRAGGING (2026-11-27, Vital's gesture): a button with `modsrc` is dragged onto a knob; the layout's
+    // dropMod(src, key, get, set) -> message makes the connection (or says why not); modDest(key) lights the knobs that can take one,
+    // modded(get) -> [keys] marks the knobs already modulated (a ring in the source colour).
+    var flashEl = null;
+    function flash(msg) { if (!msg) return; if (!flashEl) { flashEl = h("span", "fp-flash"); bar.appendChild(flashEl); } flashEl.textContent = msg; clearTimeout(flashEl._t); flashEl._t = setTimeout(function () { flashEl.textContent = ""; }, 4000); }
+    function svgPt(e) { var pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; var m = svg.getScreenCTM(); return m ? pt.matrixTransform(m.inverse()) : pt; }
+    function modDrag(g, it) {
+      g.setAttribute("class", "fp-modsrc"); g.setAttribute("tabindex", 0); g.setAttribute("role", "button");
+      g.setAttribute("aria-label", it.modsrc + ": drag onto a knob to modulate it"); var tt = S("title"); tt.textContent = "Drag " + it.modsrc + " onto a knob to modulate it"; g.appendChild(tt);
+      g.addEventListener("pointerdown", function (e) { e.preventDefault(); e.stopPropagation(); try { g.setPointerCapture(e.pointerId); } catch (er) {}
+        var ghost = S("g", { class: "fp-ghost" }), gr = S("rect", { rx: 4, height: 18, width: it.modsrc.length * 7 + 14 }), gt = T(0, 0, it.modsrc, { "font-size": 11, "font-weight": 700 });
+        ghost.appendChild(gr); ghost.appendChild(gt); svg.appendChild(ghost);
+        var ok = [].filter.call(svg.querySelectorAll("[data-ctl]"), function (el) { return L.modDest && L.modDest(el.dataset.ctl); }); ok.forEach(function (el) { el.classList.add("fp-modok"); });
+        function place(ev) { var p = svgPt(ev); gr.setAttribute("x", p.x + 8); gr.setAttribute("y", p.y - 22); gt.setAttribute("x", p.x + 15); gt.setAttribute("y", p.y - 9); }
+        place(e);
+        function mv(ev) { place(ev); }
+        function up(ev) { g.removeEventListener("pointermove", mv); g.removeEventListener("pointerup", up); ghost.remove(); ok.forEach(function (el) { el.classList.remove("fp-modok"); });
+          var el = document.elementFromPoint(ev.clientX, ev.clientY), t = el && el.closest && el.closest("[data-ctl]");
+          if (t && svg.contains(t)) { flash(L.dropMod(it.modsrc, t.dataset.ctl, o.get, o.set)); refresh(); if (o.commit) o.commit(); } }
+        g.addEventListener("pointermove", mv); g.addEventListener("pointerup", up); });
+    }
     function paint() { var t = FP.theme(), col = Object.assign({}, BASE[t], L.colors && L.colors[t]); wrap.dataset.theme = t;
       for (var k in col) wrap.style.setProperty("--fp-" + k, col[k]);
       tb.textContent = t === "dark" ? "☀ Light" : "☾ Dark"; tb.setAttribute("aria-label", "Switch the panel to " + (t === "dark" ? "light" : "dark") + " mode"); }
     tb.addEventListener("click", function () { FP.setTheme(FP.theme() === "dark" ? "light" : "dark"); });
     var curStep = -1;
     function setCur(i) { curStep = i == null ? -1 : i; [].forEach.call(svg.querySelectorAll(".fp-step"), function (e) { e.classList.toggle("fp-now", +e.dataset.step === curStep); }); }
-    function refresh() { upd.forEach(function (f) { f(); }); if (A && A.range("cur")) setCur(o.get("cur")); }
+    function refresh() { upd.forEach(function (f) { f(); }); if (A && A.range("cur")) setCur(o.get("cur"));
+      if (L.modded) { var mk = L.modded(o.get) || []; [].forEach.call(svg.querySelectorAll("[data-ctl]"), function (el) { el.classList.toggle("fp-modded", mk.indexOf(el.dataset.ctl) >= 0); }); } }
     if (o.readonly) wrap.classList.add("fp-ro");
     function rec(e) { var t = e.target && e.target.closest && e.target.closest("[data-ctl]"); if (t && e.type === "keydown") FP._last = { el: wrap, k: t.dataset.ctl, t: Date.now() }; }
     svg.addEventListener("keydown", rec, true);
     if (A && A.onChange) A.onChange(refresh);   // every picture depends on several keys, so redraw all (cheap)
     paint(); refresh(); showPage();
     var ctl = {}; [].forEach.call(svg.querySelectorAll("[data-ctl]"), function (e) { ctl[e.dataset.ctl] = e; });
-    me = { el: wrap, layout: L, refresh: refresh, cur: setCur, paint: paint, ctl: ctl, svg: svg, bar: bar, bg: bg, drawn: drawn, page: function (p) { if (p) { page = p; showPage(); } return page; } };
-    mounted = mounted.filter(function (m) { return document.contains(m.el); }); mounted.push(me);
+    me = { el: wrap, layout: L, refresh: refresh, _get: o.get, _set: o.set, flash: flash, cur: setCur, paint: paint, ctl: ctl, svg: svg, bar: bar, bg: bg, drawn: drawn, page: function (p) { if (p) { page = p; showPage(); } return page; } };
+    mounted = mounted.filter(function (m) { return document.contains(m.el); }); mounted.push(me); wrap._fp = me;
     if (L.init && !o.readonly) Object.keys(L.init).forEach(function (k) { if (rng(k) && o.get(k) !== L.init[k]) o.set(k, L.init[k]); });
     if (!o.readonly) presetMenu(me, L, o, rng);
     // size, and moving / resizing / hiding parts: PanelLayout, at the end of this file
