@@ -241,6 +241,61 @@
     ".epc-rep{list-style:none;padding:0;margin:.4rem 0;font-size:.85rem}.epc-rep li{margin:.15rem 0}.epc-tag{display:inline-block;min-width:4.5em;font-size:.72rem;border-radius:3px;padding:0 .3em;margin-right:.4em;text-align:center;color:#000}" +
     ".epc-exact{background:#7ed39b}.epc-approx{background:#f3cf68}.epc-lost{background:#f19a9a}.epc[data-compact] .epc-model,.epc[data-compact] .epc-tr{display:none}";
   function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+  // ---------- SAMPLED (default, 2026-11-27) ----------
+  // The notes start from recordings, not from the model: the same soundfont the backing band plays (MusyngKite, via BandSounds'
+  // CDN; one sample every 3 semitones, repitched), then each instrument's own controls shape them in JS before the live circuit.
+  //   rhodes, suitcase  electric_piano_1 (the band's "rhodes" / "wurli" samples too). voice = pickup bark (drive rising with touch),
+  //                     hard = brightness, tbar = sustain.
+  //   wurli             electric_piano_1 shaped as the band's "wurli" (low cut 130 Hz, mid push 950 Hz, drive by gap): the soundfont
+  //                     has no Wurlitzer, so this is a tine piano made reedy, not a reed recording.
+  //   clav              clavinet. Tabs = high-pass / low-pass as in the model, rockers = a tilt (A+C bright ... D+B thin), mute = decay.
+  //   cp70              electric_grand_piano (GM's "electric grand", the CP-70 / CP-80 kind). detune = a second copy a few cents off,
+  //                     hard = brightness, piezo = upper-mid lift.
+  //   pianet            electric_piano_1 made short and thin (high-pass, fast decay): no Pianet recording, a stand-in.
+  // Velocity: one sample layer, so touch = level + a darker low-pass when soft (as BandSounds' tone) + drive where the instrument barks.
+  // The amounts are this page's; nobody has compared them with the real instruments. EP.SAMPLED = false goes back to the model.
+  EP.SAMPLED = true; EP.SF = "https://cdn.jsdelivr.net/gh/paulrosen/midi-js-soundfonts/MusyngKite/";
+  EP.SAMPLE_SET = { rhodes: "electric_piano_1", suitcase: "electric_piano_1", wurli: "electric_piano_1", pianet: "electric_piano_1", clav: "clavinet", cp70: "electric_grand_piano" };
+  var SNOTE = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"], SLO = 22, SHI = 106, SSTEP = 3;
+  EP.sampleNotes = function () { var o = []; for (var m = SLO; m <= SHI; m += SSTEP) o.push(m); return o; };
+  EP.sampleName = function (m) { return SNOTE[m % 12] + (Math.floor(m / 12) - 1); };
+  EP.SAMPLES = {};   // EP.SAMPLES[set][midi] = Float32Array (mono, at the rate it was decoded at; EP.SAMPLES[set].sr)
+  function biq(y, sr, type, f, gdb, q) { var w = 2 * Math.PI * Math.min(f, sr * 0.45) / sr, cs = Math.cos(w), sn = Math.sin(w), al = sn / (2 * (q || 0.707)), A = Math.pow(10, (gdb || 0) / 40), b0, b1, b2, a0, a1, a2;
+    if (type === "lp") { b0 = (1 - cs) / 2; b1 = 1 - cs; b2 = b0; a0 = 1 + al; a1 = -2 * cs; a2 = 1 - al; }
+    else if (type === "hp") { b0 = (1 + cs) / 2; b1 = -(1 + cs); b2 = b0; a0 = 1 + al; a1 = -2 * cs; a2 = 1 - al; }
+    else { b0 = 1 + al * A; b1 = -2 * cs; b2 = 1 - al * A; a0 = 1 + al / A; a1 = -2 * cs; a2 = 1 - al / A; }   // peak
+    b0 /= a0; b1 /= a0; b2 /= a0; a1 /= a0; a2 /= a0; var x1 = 0, x2 = 0, y1 = 0, y2 = 0;
+    for (var i = 0; i < y.length; i++) { var x = y[i], o = b0 * x + b1 * x1 + b2 * x2 - a1 * y1 - a2 * y2; x2 = x1; x1 = x; y2 = y1; y1 = o; y[i] = o; } }
+  function nearest(set, m) { var best = null; for (var k in set) { if (k === "sr") continue; if (best == null || Math.abs(k - m) < Math.abs(best - m)) best = +k; } return best; }
+  // pure: render one note from samples (null if the set is not loaded). st values on the panel's 0..10 scales.
+  EP.renderSampled = function (id, st, m, vel, sr) { var set = EP.SAMPLES[EP.SAMPLE_SET[id]]; if (!set) return null; var k = nearest(set, m); if (k == null) return null;
+    var x = set[k], ratio = Math.pow(2, (m - k) / 12) * set.sr / sr, q = function (key, d) { var v = st[key]; return (v == null ? d : +v) / 10; };
+    var sus = id === "pianet" ? 0.35 : id === "clav" ? 1 - 0.75 * q("mute", 0) : id === "rhodes" || id === "suitcase" ? 0.6 + 0.8 * q("tbar", 6) : 1,
+      dur = Math.min(x.length / ratio, sr * (id === "pianet" ? 1.6 : 7) * sus), n = Math.max(1, Math.floor(dur)), y = new Float32Array(n);
+    for (var i = 0; i < n; i++) { var p = i * ratio, j = p | 0, f = p - j; y[i] = j + 1 < x.length ? x[j] * (1 - f) + x[j + 1] * f : 0; }
+    if (id === "cp70" && q("detune", 5) > 0.02) { var r2 = ratio * Math.pow(2, (2 + 6 * q("detune", 5)) / 1200); for (var u = 0; u < n; u++) { var p2 = u * r2, j2 = p2 | 0; if (j2 + 1 < x.length) y[u] = 0.6 * y[u] + 0.4 * (x[j2] + (p2 - j2) * (x[j2 + 1] - x[j2])); } }
+    var hard = q("hard", 5), bright = 900 + 9000 * Math.pow(vel, 1.5) * (0.5 + hard);
+    biq(y, sr, "lp", bright, 0, 0.6);
+    var drv = 0;
+    if (id === "rhodes" || id === "suitcase") drv = 3 * q("voice", 4) * vel * vel;
+    if (id === "wurli") { biq(y, sr, "hp", 130, 0, 0.7); biq(y, sr, "pk", 950, 4 + 6 * q("gap", 5), 1.1); drv = (1 + 4 * q("gap", 5)) * vel; }
+    if (id === "pianet") { biq(y, sr, "hp", 220, 0, 0.7); biq(y, sr, "pk", 1400, 3 + 5 * q("gap", 5), 1); drv = 1.5 * vel; }
+    if (id === "clav") { if (st.brill) biq(y, sr, "hp", 900, 0, 0.7); if (st.treb) biq(y, sr, "hp", 300, 0, 0.7); if (st.med) biq(y, sr, "lp", 3500, 0, 0.7); if (st.soft) biq(y, sr, "lp", 1500, 0, 0.7);
+      var tilt = { AC: 4, BC: -2, AD: 2, BD: -6 }[(st.pa || "A") + (st.pc || "C")]; biq(y, sr, "pk", 2500, tilt, 0.5); if (st.pa === "B" && st.pc === "D") biq(y, sr, "hp", 600, 0, 0.7); }
+    if (id === "cp70") biq(y, sr, "pk", 2200, 8 * q("piezo", 5) - 2, 0.8);
+    var gain = 0.25 + 0.75 * vel;
+    if (drv > 0.05) { var g = 1 + drv, tg = Math.tanh(g); for (var d = 0; d < n; d++) y[d] = Math.tanh(g * y[d]) / tg; }
+    var fo = Math.min(n - 1, Math.round(sr * 0.08)); for (var v = 0; v < n; v++) { y[v] *= gain; if (v >= n - fo) y[v] *= (n - 1 - v) / fo; }
+    return y; };
+  // browser: fetch + decode one sample set (cached); resolves true / false
+  var setLoads = {};
+  EP.loadSamples = function (id, ctx) { var name = EP.SAMPLE_SET[id]; if (!name) return Promise.resolve(false); if (setLoads[name]) return setLoads[name];
+    if (!G.fetch || !ctx) return Promise.resolve(false); var set = { sr: ctx.sampleRate };
+    setLoads[name] = Promise.all(EP.sampleNotes().map(function (m) { return fetch(EP.SF + name + "-mp3/" + EP.sampleName(m) + ".mp3").then(function (r) { if (!r.ok) throw new Error(r.status); return r.arrayBuffer(); })
+        .then(function (ab) { return new Promise(function (res, rej) { ctx.decodeAudioData(ab, res, rej); }); }).then(function (b) { var L = b.getChannelData(0), R = b.numberOfChannels > 1 ? b.getChannelData(1) : L, mono = new Float32Array(L.length); for (var i = 0; i < L.length; i++) mono[i] = (L[i] + R[i]) / 2; set[m] = mono; }, function () {}); }))
+      .then(function () { if (Object.keys(set).length < 10) return false; EP.SAMPLES[name] = set; return true; });
+    return setLoads[name]; };
+
   EP.mount = function (div) {
     if (div._ep) return div._ep;
     if (!document.getElementById("epc-css")) { var s = el("style"); s.id = "epc-css"; s.textContent = CSS; document.head.appendChild(s); }
@@ -251,7 +306,10 @@
     Object.keys(EP.RIFFS).forEach(function (r) { var o = el("option", null, EP.RIFFS[r].name); o.value = r; rsel.appendChild(o); });
     var vl = el("label", null, "Touch "), vr = el("input"); vr.type = "range"; vr.min = 5; vr.max = 100; vr.value = 70; vr.oninput = function () { W.vel = vr.value / 100; }; vl.appendChild(vr);
     var midi = el("button", "btn btn-sm btn-outline-secondary", "MIDI in");
-    [msel, rsel, play, stop, vl, midi].forEach(function (x) { bar.appendChild(x); });
+    var src = el("button", "btn btn-sm btn-outline-secondary epc-src", ""); src.type = "button"; src.title = "Notes from recorded samples (the backing band's soundfont) or from this page's physical model";
+    var srcLabel = function () { document.querySelectorAll(".epc-src").forEach(function (b) { b.textContent = "Sound: " + (EP.SAMPLED ? "samples" : "model"); b.setAttribute("aria-pressed", EP.SAMPLED ? "true" : "false"); }); };
+    src.onclick = function () { EP.SAMPLED = !EP.SAMPLED; srcLabel(); };
+    [msel, rsel, play, stop, vl, midi, src].forEach(function (x) { bar.appendChild(x); }); srcLabel();
     var face = el("div", "epc-face"), simple = el("div", "epc-simple"), keys = el("div", "epc-keys"), tr = el("div", "epc-tr"), note = el("p", "epc-w");
     div.innerHTML = ""; [bar, face, keys, note, tr].forEach(function (x) { div.appendChild(x); }); face.appendChild(simple);
     note.textContent = "Keys: click, or the computer keys a w s e d f t g y h u j k (z / x = octave down / up), or a MIDI keyboard. The sound is this site's own model; nobody has compared it with the real instrument.";
@@ -315,7 +373,7 @@
       N.lp.connect(N.gl); N.lp.connect(N.gr); N.gl.connect(N.mg, 0, 0); N.gr.connect(N.mg, 0, 1); N.mg.connect(N.out); N.out.connect(N.an); N.an.connect(c.destination);
       N.lfo.connect(N.dl); N.lfo.connect(N.dr); N.dl.connect(N.gl.gain); N.dr.connect(N.gr.gain); N.lfo.start();
       if (G.AudioTap && AudioTap.register) try { AudioTap.register(c, N.out, "Electric pianos"); } catch (e) {}
-      W.circuit(); return c;
+      W.circuit(); EP.loadSamples(W.id, c); return c;
     };
     W.circuit = function () {
       if (!W.ctx) return; var o = EP.circuit(W.id, W.st), N = W.n, t = W.ctx.currentTime, d = o.drive;
@@ -326,7 +384,8 @@
     };
     function buf(m, vel) {
       var vb = Math.round(clamp(vel, 0.05, 1) * 12), rk = RENDER_KEYS[W.id].map(function (k) { return W.st[k]; }).join(","), key = W.id + "|" + m + "|" + vb + "|" + rk;
-      if (!W.cache[key]) { var y = EP.render(W.id, W.st, m, vb / 12, W.ctx.sampleRate), b = W.ctx.createBuffer(1, y.length, W.ctx.sampleRate); b.getChannelData(0).set(y); W.cache[key] = b;
+      if (EP.SAMPLED && EP.SAMPLES[EP.SAMPLE_SET[W.id]]) key = "S|" + key;
+      if (!W.cache[key]) { var y = (EP.SAMPLED && EP.renderSampled(W.id, W.st, m, vb / 12, W.ctx.sampleRate)) || EP.render(W.id, W.st, m, vb / 12, W.ctx.sampleRate), b = W.ctx.createBuffer(1, y.length, W.ctx.sampleRate); b.getChannelData(0).set(y); W.cache[key] = b;
         var ks = Object.keys(W.cache); if (ks.length > 400) delete W.cache[ks[0]]; }
       return W.cache[key];
     }
@@ -351,7 +410,7 @@
     W.analyser = function () { W.audio(); return W.n.an; };
     W.set = function (k, v) { if (!ctl(W.id, k)) return; W.st[k] = v; W.circuit(); syncSimple(); if (W.face && W.face.m) W.face.m.refresh(); };
     W.setAll = function (o) { W.setModel(o.model && EP.PROFILES[o.model] ? o.model : W.id); for (var k in o) if (k !== "model" && ctl(W.id, k)) W.st[k] = o[k]; W.circuit(); syncSimple(); if (W.face && W.face.m) W.face.m.refresh(); };
-    W.setModel = function (id, st) { W.stop(); W.id = id; W.st = Object.assign(EP.defaults(id), st || {}); msel.value = id; if (tsel.value === id) tsel.value = id === "rhodes" ? "wurli" : "rhodes";
+    W.setModel = function (id, st) { W.stop(); W.id = id; if (W.ctx) EP.loadSamples(id, W.ctx); W.st = Object.assign(EP.defaults(id), st || {}); msel.value = id; if (tsel.value === id) tsel.value = id === "rhodes" ? "wurli" : "rhodes";
       drawSimple(); drawFace(); W.circuit(); };
     msel.value = W.id; drawSimple(); drawFace(); drawKeys();
     return W;

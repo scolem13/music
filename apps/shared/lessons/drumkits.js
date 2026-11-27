@@ -28,6 +28,8 @@
 //   muffling  shortens every mode's decay and takes off upper modes (0 = open, 1 = a towel / pillow; Wikipedia, "Drum kit": muffles
 //          deaden ring and overtones). Kick port: a hole in the front head (Wikipedia, "Drum tuning": about 6", less "round"): here
 //          a shorter boom and more beater click (site's amounts).
+// CYMBALS ARE RECORDINGS by default (2026-11-27; see "cymbals, recorded" below: SM Drums, Zildjian A; "Cymbals: model" switches
+//   back). The model below is the fallback and the other choice.
 // THE MODEL: a cymbal
 //   partials  ~70 inharmonic partials f_k = f0 (k+1)^1.4 (seeded jitter), f0 ∝ 1 / size (site's law and constants): long, dense,
 //          inharmonic. Loudness per partial (f / 1 kHz)^-tilt with a seeded scatter: tilt and scatter set by the series.
@@ -169,6 +171,37 @@
     var fo = Math.min(y.length - 1, Math.round(sr * 0.25)); for (var v = 0; v < fo; v++) y[y.length - 1 - v] *= v / fo;
     return y; };
 
+  // ---------- cymbals, recorded ----------
+  // RECORDED (default once loaded): real recordings instead of the partials above. Source: SM Drums (Scott McLean; "free royalty
+  // free use by anyone for anything", per the authors' site as quoted on KVR), whose manual lists "A Zildjian series" cymbals:
+  // 20" Ping and 17" Thin rides, 13/15/16/17" crashes, 14" New Beat hats, a Wuhan 15" china. Files: cymbal-samples/<group>-<1..3>.m4a
+  // (three hit strengths, mono, tails trimmed at -84 dB). The A entries are those recordings nearly as they are; the K, the 2002,
+  // the splash and the 18" sizes are the nearest recording shaped (speed for size and weight, a treble shelf for the series, a
+  // shorter ring): site's settings, not recordings of those cymbals.
+  M.RECORDED = true; M.SAMPLES = {};   // M.SAMPLES[group] = [Float32Array x3] at the sample rate render asks for (set by the loader)
+  M.SAMPLE_GROUPS = ["ride20-bow", "ride20-bell", "ride17-bow", "crash16-edge", "crash13-edge", "china", "hat-closed", "hat-loose", "hat-open", "hat-foot"];
+  var SHELF = { A: 0, K: -6, "2002": 4, china: 0 };   // dB above ~2.5 kHz, against the recorded A (site's)
+  M.cymSampleFor = function (spec, cs, strike, vel) { cs = cs || {}; var t = spec.type, g, rec = spec.size, layer = vel < 0.45 ? 0 : vel < 0.75 ? 1 : 2, T = 1;
+    if (t === "hats") { g = "hat-" + ({ closed: "closed", half: "loose", open: "open", foot: "foot" }[cs.pedal || "closed"]); rec = 14; if (strike === "edge") layer = 2; }
+    else if (t === "china") { g = "china"; rec = 15; }
+    else if (t === "ride") { g = strike === "bell" ? "ride20-bell" : "ride20-bow"; rec = 20; if (strike === "edge") layer = 2; }
+    else if (t === "splash") { g = "crash13-edge"; rec = 13; T = 0.35; }
+    else { g = strike === "bell" ? "ride20-bell" : "crash16-edge"; rec = strike === "bell" ? 20 : 16; if (strike === "bow") layer = Math.max(0, layer - 1); }
+    var rate = Math.min(1.45, Math.max(0.7, Math.pow(rec / spec.size, 0.8) * Math.pow(spec.weight, 0.3)));
+    if (spec.hammer) T *= 0.85;
+    return { group: g, layer: layer, rate: rate, shelf: SHELF[spec.series] || 0, T: T * (M.SERIES[spec.series].T || 1) }; };
+  M.cymRenderRecorded = function (spec, cs, strike, sr, o) { o = o || {}; cs = cs || {}; strike = strike || (spec.type === "crash" || spec.type === "splash" || spec.type === "china" ? "edge" : "bow");
+    var vel = o.vel == null ? 0.8 : o.vel, P = M.cymSampleFor(spec, cs, strike, vel), set = M.SAMPLES[P.group]; if (!set || !set[P.layer]) return null;
+    var x = set[P.layer], n = Math.min(Math.floor((x.length - 1) / P.rate), Math.round(sr * (o.dur || 9))), y = new Float32Array(n), gain = 0.3 * vel / [0.35, 0.65, 0.9][P.layer];
+    for (var i = 0; i < n; i++) { var p = i * P.rate, j = p | 0, f = p - j; y[i] = (x[j] * (1 - f) + x[j + 1] * f) * gain; }   // speed = size
+    if (P.shelf) { var a = Math.exp(-TAU * 2500 / sr), lp = 0, k = Math.pow(10, P.shelf / 20) - 1; for (var q = 0; q < n; q++) { lp = (1 - a) * y[q] + a * lp; y[q] += k * (y[q] - lp); } }
+    if (P.T < 1) { var tau = sr * 1.2 * P.T; for (var u = 0; u < n; u++) y[u] *= Math.exp(-u / tau); }   // a shorter ring
+    if (cs.choke) { var c0 = Math.round(sr * 0.2); for (var v = c0; v < n; v++) y[v] *= Math.exp(-(v - c0) / sr / 0.04); }
+    var fo = Math.min(n - 1, Math.round(sr * 0.25)); for (var w = 0; w < fo; w++) y[n - 1 - w] *= w / fo;
+    return y; };
+  var cymRenderModel = M.cymRender;
+  M.cymRender = function (spec, cs, strike, sr, o) { var y = M.RECORDED ? M.cymRenderRecorded(spec, cs, strike, sr, o) : null; return y || cymRenderModel(spec, cs, strike, sr, o); };
+
   M.hit = function (id, st, part, strike, sr) { var I = M.ITEMS[id]; st = M.clean(id, st);
     if (I.cat === "snare") return M.drumRender(I.drum, st, strike || "centre", sr);
     if (I.cat === "cymbal") return M.cymRender(I, st, strike, sr);
@@ -283,6 +316,16 @@
       if (global.AudioTap) global.AudioTap.register(ctx, master, "DrumKits"); }
     if (ctx.state === "suspended") ctx.resume(); return ctx; }
   M.ctx = function () { return ac(); };
+  // the cymbal recordings: fetched once, decoded and resampled to SR; until they arrive (or if they fail) cymbals use the model
+  var sampleLoad = null; M.SAMPLE_BASE = "/apps/shared/lessons/cymbal-samples/";
+  M.loadSamples = function () { if (sampleLoad) return sampleLoad; var OAC = global.OfflineAudioContext || global.webkitOfflineAudioContext; if (!OAC || !global.fetch) return (sampleLoad = Promise.resolve(false));
+    var dec = new OAC(1, 1, SR);
+    sampleLoad = Promise.all(M.SAMPLE_GROUPS.map(function (g) { return Promise.all([1, 2, 3].map(function (i) {
+        return fetch(M.SAMPLE_BASE + g + "-" + i + ".m4a").then(function (r) { if (!r.ok) throw new Error(r.status); return r.arrayBuffer(); })
+          .then(function (ab) { return dec.decodeAudioData(ab); }).then(function (b) { return b.getChannelData(0); }); })).then(function (set) { M.SAMPLES[g] = set; }); }))
+      .then(function () { CACHE = {}; return true; }, function (e) { if (global.console) console.warn("DrumKits: cymbal recordings not loaded, using the model", e); return false; });
+    return sampleLoad; };
+  M.setRecorded = function (on) { M.RECORDED = !!on; CACHE = {}; };
   M.stop = function () { playing.forEach(function (s) { try { s.stop(); } catch (e) {} }); playing = []; if (global.PlayBar && PlayBar.sounding) PlayBar.sounding("drumkits", null); };
   function buf(y) { var c = ac(), b = c.createBuffer(1, y.length, SR), d = b.getChannelData(0); for (var i = 0; i < y.length; i++) d[i] = y[i]; return b; }
   function hitBuf(W, part, strike, extra) { var st = W.st, key = W.id + "|" + part + "|" + strike + "|" + JSON.stringify(st) + (extra || ""); if (!CACHE[key]) { var y = M.hit(W.id, st, part, strike, SR); CACHE[key] = { y: y, b: buf(y) }; } return CACHE[key]; }
@@ -326,7 +369,9 @@
       parts.forEach(function (P) { var g = h("span", "dk-grp"); g.appendChild(h("span", "dk-gl", (P[0] === "tom1" ? "tom" : P[0] === W.id ? I.short : P[0]) + ":"));
         P[1].forEach(function (s) { var b = h("button", "dk-hit", s === "cross" ? "cross-stick" : s === "rim" ? "rimshot" : s); b.type = "button"; b.dataset.part = P[0]; b.dataset.strike = s; b.onclick = function () { W.hit(P[0], s); }; g.appendChild(b); }); bar.appendChild(g); });
       var gb = h("button", "dk-groove", I.cat === "cymbal" ? "▶ Let it ring" : "▶ Groove"); gb.type = "button"; gb.onclick = function () { if (I.cat === "cymbal") W.hit(W.id, I.type === "crash" || I.type === "splash" || I.type === "china" ? "edge" : "bow"); else M.groove(W); }; bar.appendChild(gb);
-      var sb = h("button", "dk-stop", "■ Stop"); sb.type = "button"; sb.onclick = M.stop; bar.appendChild(sb); }
+      var sb = h("button", "dk-stop", "■ Stop"); sb.type = "button"; sb.onclick = M.stop; bar.appendChild(sb);
+      if (I.cat !== "snare") { var rb = h("button", "dk-rec", ""); rb.type = "button"; rb.title = "Cymbals: real recordings (SM Drums, Zildjian A) or the site's model";
+        rb.onclick = function () { M.setRecorded(!M.RECORDED); recLabels(); }; bar.appendChild(rb); recLabels(); } }
     function info() { var I = W.I; inf.textContent = M.summary(W.id, W.st) + ". " + (I.cat === "cymbal" ? M.SERIES[I.series].name + ", " + I.size + "\"" : I.cat === "snare" ? M.SHELLS[I.drum.shell].name + " shell, " + I.drum.d + " x " + I.drum.depth + "\", " + M.HEADS[W.st.head].name.toLowerCase() + " head" : I.maker) + ". Click the drawing to strike it" + (I.cat === "cymbal" ? " (bell / bow / edge)" : " (centre / edge / rim)") + "."; el.dataset.item = W.id; el.dataset.cat = I.cat; }
     W.hit = function (part, strike) { var y = M.play(W, part, strike); plot(pl, W, y); el.dataset.last = part + ":" + strike; return y; };
     W.set = function (k, v) { W.st = M.clean(W.id, setK(W.st, k, v)); W._notify(); info(); if (o.onChange) o.onChange(W); };
@@ -360,7 +405,8 @@
         li.appendChild(document.createTextNode(t.channel ? " ↗ (" + t.channel + "). " : " ↗ (a YouTube search: no video checked). "));
         li.appendChild(h("span", "dk-who", t.useSrc ? "Source: " + t.useSrc + "." : "That this drum / cymbal is on the record: unverified (no source found).")); ul.appendChild(li); });
       el.innerHTML = ""; el.appendChild(ul); el.dataset.n = list.length; }).catch(function () { el.textContent = "(the track list did not load)"; }); }
-  M.init = function () { document.querySelectorAll(".dk[data-item]").forEach(function (e) { M.mount(e, { item: e.dataset.item }); });
+  function recLabels() { document.querySelectorAll(".dk-rec").forEach(function (b) { b.textContent = "Cymbals: " + (M.RECORDED ? "recorded" : "model"); b.setAttribute("aria-pressed", M.RECORDED ? "true" : "false"); }); }
+  M.init = function () { M.loadSamples(); document.querySelectorAll(".dk[data-item]").forEach(function (e) { M.mount(e, { item: e.dataset.item }); });
     document.querySelectorAll(".dkc").forEach(function (e) { M.compare(e); });
     steps(); document.querySelectorAll(".dk-q").forEach(quiz); document.querySelectorAll(".dk-tracks").forEach(tracks); };
   global.DrumKits = M;

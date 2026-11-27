@@ -49,6 +49,9 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   check("cymbal drawings", await b.eval(`document.querySelectorAll('${c} .dk-face svg.fp-svg').length`) === 2);
   check("click the cymbal bell -> bell", (await clickAt(`${c} .dkc-a`, 150, 135)).endsWith(":bell"));
   check("click the cymbal edge -> edge", (await clickAt(`${c} .dkc-a`, 150 + 105, 135)).endsWith(":edge"));
+  check("cymbal recordings load (30 files) and replace the model", await b.eval(`DrumKits.loadSamples().then(ok => ok && DrumKits.SAMPLE_GROUPS.every(g => (DrumKits.SAMPLES[g] || []).filter(x => x && x.length > 3000).length === 3))`), "SM Drums m4a files missing or undecodable");
+  check("recorded ride differs from the model and rings > 3 s", await b.eval(`(() => { const r = DrumKits.cymRenderRecorded(DrumKits.ITEMS.aride, {}, 'bow', 32000); return !!r && r.length > 96000; })()`));
+  check("Cymbals: recorded / model toggle", await b.eval(`(() => { const t = document.querySelector('${c} .dk-rec'); t.click(); const off = DrumKits.RECORDED === false && /model/.test(t.textContent); t.click(); return off && DrumKits.RECORDED === true; })()`));
   await b.eval(`document.querySelector('${c} .dkc-go').click()`);
   check("Translate K -> A: approx with a brightness note", await b.eval(`document.querySelector('${c}').dataset.quality`) === "approx" && await b.eval(`[...document.querySelectorAll('${c} .dkc-res li')].some(l => /Brighter|Darker/.test(l.textContent))`));
   await b.eval(`DrumKits.stop()`);

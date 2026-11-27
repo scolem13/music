@@ -27,4 +27,5 @@ SOURCES = [
     wiki("Crash cymbal", "Crash_cymbal", Y + I(["crash", "2002-crash"]), note="Accents; short wash."),
     wiki("China cymbal", "China_cymbal", Y + I(["china"]), note="Bright, crisp, explosive: \"trash cymbal\"; mounted bell up or down."),
     wiki("Splash cymbal", "Splash_cymbal", Y + I(["splash"]), note="Most common 8\" then 10\"; Ringo Starr, Stewart Copeland."),
+    web("McLean, Scott, et al. \"SM Drums (Deeply Sampled Free Drums).\" SFZ edition, sfzinstruments, GitHub, accessed 27 Nov. 2026.", "https://github.com/sfzinstruments/SMDrums", Y + C + I(CY + K), note="The cymbal recordings the pages play (cymbal-samples/*.m4a). Its manual: \"A Zildjian series\" cymbals, 14\" New Beat hats, 20\" Ping and 17\" Thin rides, 13/15/16/17\" crashes, a Wuhan 15\" china. Terms, the authors' site as quoted on KVR: free royalty free use by anyone for anything."),
 ]

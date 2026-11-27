@@ -28,6 +28,8 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
     await b.eval(`EPiano.widgets[0].setModel('rhodes')`); await b.sleep(300);
     // a key and a riff make sound
     await b.eval(`EPiano.widgets[0].noteOn(60, 0.8)`); check("a key sounds", (await level(500)) > 0.02); await b.eval(`EPiano.widgets[0].noteOff(60)`);
+    for (const id of ["rhodes", "clav", "cp70"]) check(`${id}: the band's soundfont samples load and make the note`, await b.eval(`(() => { const W = EPiano.widgets[0]; return EPiano.loadSamples('${id}', W.audio()).then(ok => { const y = ok && EPiano.renderSampled('${id}', EPiano.defaults('${id}'), 60, 0.7, W.ctx.sampleRate); let p = 0; if (y) for (const v of y) p = Math.max(p, Math.abs(v)); return ok && p > 0.05; }); })()`));
+    check("Sound: samples / model toggle", await b.eval(`(() => { const t = document.querySelector('.epc-src'); t.click(); const off = !EPiano.SAMPLED && /model/.test(t.textContent); t.click(); return off && EPiano.SAMPLED; })()`));
     await b.eval(`void EPiano.widgets[0].phrase('ballad')`); check("the riff sounds", (await level(900)) > 0.02); await b.eval(`EPiano.widgets[0].stop()`);
     // drag Volume down
     const v0 = await b.eval(`EPiano.widgets[0].st.vol`);
