@@ -1,27 +1,30 @@
-// Jazz Bass (1970s) control area, for FaithfulPanel + GuitarPickups.adapter (basses: apps/shared/lessons/bass-pickups.js). Drawn front-on, neck to
-// the left, bridge to the right, 40 units an inch from the bridge. Pickup distances, body, pickguard and knob positions are this site's
-// drawing after photos (approximate); no logos.
-(function () {
-  var PX = 40, BR = 780, X = function (d) { return BR - d * PX; }, YS = [150, 180, 210, 240];
-  function poles(x, ys) { return ys.map(function (y) { return { t: "shape", d: "M" + (x - 4) + " " + y + " a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0", fill: "#8d8f93", stroke: "#555", sw: .6 }; }); }
-  function coil(x, y0, y1, w, fill, title) { return { t: "shape", d: "M" + (x - w / 2) + " " + y0 + " h" + w + " V" + y1 + " h-" + w + " Z", fill: fill, stroke: "ink2", title: title }; }
-  var common = [
-    { t: "shape", d: "M30 60 C200 20 420 30 540 60 C660 20 840 40 880 150 C900 220 890 300 850 340 C780 400 600 380 520 350 C400 390 200 400 80 340 C20 300 10 120 30 60 Z", fill: "body", stroke: "ink2", sw: 2, title: "Body" },
-    { t: "shape", d: "M" + (BR + 20) + " 128 h44 v134 h-44 Z", fill: "#c9cbce", stroke: "ink2", title: "Bridge and saddles" },
-    { t: "label", x: BR + 42, y: 280, text: "Bridge", size: 9, dim: true },
-    { t: "shape", d: "M0 150 H" + (BR + 40) + " M0 180 H" + (BR + 40) + " M0 210 H" + (BR + 40) + " M0 240 H" + (BR + 40), fill: "none", stroke: "ink2", sw: 1.4, op: .7, title: "Strings (E A D G, E at the top here)" }];
-  var xn = X(6.3), xb = X(2.3);
-  var items = [{ t: "shape", d: "M120 90 C300 60 520 70 640 100 L720 300 C600 350 300 360 140 320 Z", fill: "#f7f7f4", stroke: "ink2", op: .95, title: "Pickguard" },
-    coil(xn, 136, 254, 24, "#202124", "Neck single coil"), coil(xb, 136, 254, 24, "#202124", "Bridge single coil (reverse wound, reverse polarity)")]
-    .concat(poles(xn, [144, 156, 174, 186, 204, 216, 234, 246]), poles(xb, [144, 156, 174, 186, 204, 216, 234, 246]), [
-    { t: "label", x: xn, y: 278, text: "Neck", size: 10 }, { t: "label", x: xb, y: 278, text: "Bridge", size: 10 },
-    { t: "label", x: (xn + xb) / 2, y: 120, text: "pickups 4 in apart", size: 9, dim: true },
-    { t: "shape", d: "M640 300 l200 -20 v44 l-200 20 Z", fill: "#c9cbce", stroke: "ink2", op: .8, title: "Control plate (chrome)" },
-    { t: "knob", k: "vol1", x: 680, y: 318, r: 15, label: "Neck vol", cap: "#2a2a2a" },
-    { t: "knob", k: "vol2", x: 740, y: 312, r: 15, label: "Bridge vol", cap: "#2a2a2a" },
-    { t: "knob", k: "tone", x: 800, y: 306, r: 15, label: "Tone", cap: "#2a2a2a" },
-    { t: "jack", x: 855, y: 270, r: 9, label: "Output" },
-    { t: "label", x: 50, y: 40, text: "JAZZ BASS-STYLE CONTROLS", size: 11, anchor: "start", bold: true }]);
-  FaithfulPanel.register({ id: "bs-jbass70", name: "Jazz Bass (1970s)", w: 900, h: 400, knob: "cap", accent: "sel", accents: { sel: "#e8a400" }, items: common.concat(items),
-    src: ["Controls (a volume per pickup + master tone, late 1961 on) and pickup spacing 3.6 in to late 1970, 4 in after: Wikipedia, \"Fender Jazz Bass\""], approx: "The spacing is sourced; the neck pickup's distance from the bridge, the body and the knobs are this page's drawing (approximate)." });
+// Jazz Bass (1970s), the whole body front-on at one scale (28 units an inch), neck to the left (a stub with frets at the 34 in scale), E
+// string at the top, for FaithfulPanel + GuitarPickups.adapter (basses: apps/shared/lessons/bass-pickups.js): offset-waist body (about
+// 19.5 x 13 in, the site's reading of photos), two single coils 4 in apart (sourced), chrome control plate with two volumes and a tone.
+// The neck pickup's distance, the outline and the knob places are this site's drawing after photos (approximate); no logos.
+(function () { var BX = 12 + 21.5 * 28;
+  var G = GuitarPickups.drawing(28, BX, 250), X = G.X, Y = G.Y, ES = [-1.08, -0.36, 0.36, 1.08];
+  function poles(d, es) { return { t: "shape", d: es.map(function (e) { return G.dot(d, e, 3.2); }).join(" "), fill: "#8d8f93", stroke: "#555", sw: .6 }; }
+  function coil(d, e0, e1, w, fill, title) { return { t: "shape", d: G.rect(d + w / 2, d - w / 2, e0, e1), fill: fill, stroke: "ink2", title: title }; }
+  var xn = 6.3, xb = 2.3, EP = [-1.26, -0.9, -0.54, -0.18, 0.18, 0.54, 0.9, 1.26];
+  var items = [{ t: "shape", d: G.outline([[-3.7, -0.4], [-3.2, -3.6], [-1.8, -5.5], [0.4, -6.2], [2.6, -5.8], [4.6, -4.7], [6.8, -4.5], [9.6, -5.3], [12.8, -5.7], [16.0, -5.0], [15.9, -4.0], [14.2, -3.1], [13.1, -1.9], [12.8, -1.2], [12.8, 1.2], [13.5, 2.1], [14.2, 3.1], [14.3, 4.0], [13.3, 4.6], [11.2, 4.7], [9.6, 4.9], [7.6, 6.0], [4.6, 6.75], [1.2, 6.9], [-1.8, 6.2], [-3.4, 4.0]]), fill: "body", stroke: "ink2", sw: 2, title: "Body (offset waist; about 19.5 x 13 in)" },
+    { t: "shape", d: G.outline([[12.8, -1.3], [13.6, -2.4], [13.0, -3.6], [10.4, -4.2], [7.6, -3.9], [5.4, -2.9], [4.1, -1.7], [4.1, 1.6], [4.9, 2.6], [7.0, 3.2], [9.6, 3.6], [12.0, 3.2], [13.2, 2.2], [12.8, 1.3]]), fill: "#f7f7f4", stroke: "ink2", title: "Pickguard" }]
+    .concat(G.neck(10.45, 21.5, 2.3, 1.75, 34, "#d8b47a", "#4a2e1e"), [
+    { t: "shape", d: G.rect(0.9, -2.0, -1.55, 1.55), fill: "#c9cbce", stroke: "ink2", title: "Bridge plate" },
+    { t: "shape", d: ES.map(function (e) { return G.rect(0.25, -0.45, e - 0.22, e + 0.22); }).join(" "), fill: "#e3e5e8", stroke: "ink2", sw: .6, title: "Four saddles" },
+    coil(xn, -1.55, 1.55, 0.6, "#202124", "Neck single coil"), coil(xb, -1.55, 1.55, 0.6, "#202124", "Bridge single coil (reverse wound, reverse polarity)"),
+    poles(xn, EP), poles(xb, EP),
+    G.strings(4, 0.72, -0.4, 21.5, 1.5),
+    { t: "label", x: X(xn), y: Y(-1.85), text: "Neck", size: 10 }, { t: "label", x: X(xb), y: Y(-1.85), text: "Bridge pickup", size: 10 },
+    { t: "label", x: X((xn + xb) / 2), y: Y(-2.35), text: "4 in apart", size: 9, dim: true },
+    { t: "shape", d: G.outline([[2.8, 3.55], [3.05, 3.95], [2.8, 4.35], [-3.0, 5.0], [-3.35, 4.55], [-3.0, 4.15]]), fill: "#c9cbce", stroke: "ink2", title: "Control plate (chrome)" },
+    { t: "knob", k: "vol1", x: X(2.1), y: Y(3.98), r: 14, label: "Neck vol", cap: "#2a2a2a" },
+    { t: "knob", k: "vol2", x: X(0.4), y: Y(4.2), r: 14, label: "Bridge vol", cap: "#2a2a2a" },
+    { t: "knob", k: "tone", x: X(-1.3), y: Y(4.42), r: 14, label: "Tone", cap: "#2a2a2a" },
+    { t: "jack", x: X(-2.75), y: Y(4.6), r: 7, label: "Output" },
+    { t: "label", x: 12, y: 22, text: "JAZZ BASS-STYLE (1970S)", size: 12, anchor: "start", bold: true },
+    { t: "label", x: 12, y: Y(1.55) + 6, text: "← neck (to the headstock)", size: 9, anchor: "start", dim: true }]);
+  FaithfulPanel.register({ id: "bs-jbass70", name: "Jazz Bass (1970s)", w: 12 + 21.5 * 28 + 3.7 * 28 + 16, h: 470, knob: "cap", accent: "sel", accents: { sel: "#e8a400" }, items: items,
+    src: ["Controls (a volume per pickup + master tone, late 1961 on) and pickup spacing 3.6 in to late 1970, 4 in after: Wikipedia, \"Fender Jazz Bass\""],
+    approx: "Whole body at one scale (28 units an inch). The pickup spacing is sourced; the neck pickup's distance from the bridge, the outline (about 19.5 x 13 in) and the knobs are this site's drawing (approximate)." });
 })();

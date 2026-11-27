@@ -244,6 +244,32 @@
   GP.summary = function (id, st) { var G = GP.GUITARS[id]; st = GP.clean(id, st); var hasSel = G.controls[0][0] === "sel", bits = [G.short + (hasSel ? " " + (G.controls[0][1].replace(/selector|toggle/, "").trim()) + " " + GP.posLabel(id, st.sel) : "")];
     G.controls.slice(hasSel ? 1 : 0).forEach(function (c) { if (c[2] === "k") bits.push(c[1] + " " + (+st[c[0]]).toFixed(0)); else if (c[0] === "phase" && st.phase) bits.push("neck out of phase"); }); return bits.join(", "); };
 
+  // Panel drawing helpers (panels/gt-*.js, bs-*.js): one scale for the whole instrument. GP.drawing(S, BX, CY): S units an inch,
+  // BX = x of the bridge saddles, CY = y of the string centre line; positions in inches: d towards the neck from the saddles, e towards
+  // the treble side (down the drawing, the side the controls are on). outline([[d, e], ...]) = a smooth closed curve through the
+  // points (Catmull-Rom); poly = straight sides; neck(...) = a neck stub running off the left edge with frets at the scale length.
+  GP.drawing = function (S, BX, CY) { var X = function (d) { return +(BX - d * S).toFixed(1); }, Y = function (e) { return +(CY + e * S).toFixed(1); };
+    function pt(p) { return [BX - p[0] * S, CY + p[1] * S]; } function f(v) { return v.toFixed(1); }
+    var D = { S: S, X: X, Y: Y,
+      outline: function (pts) { var P = pts.map(pt), n = P.length, d = "M" + f(P[0][0]) + " " + f(P[0][1]);
+        for (var i = 0; i < n; i++) { var p0 = P[(i - 1 + n) % n], p1 = P[i], p2 = P[(i + 1) % n], p3 = P[(i + 2) % n];
+          d += " C" + f(p1[0] + (p2[0] - p0[0]) / 6) + " " + f(p1[1] + (p2[1] - p0[1]) / 6) + " " + f(p2[0] - (p3[0] - p1[0]) / 6) + " " + f(p2[1] - (p3[1] - p1[1]) / 6) + " " + f(p2[0]) + " " + f(p2[1]); }
+        return d + " Z"; },
+      poly: function (pts) { return pts.map(function (p, i) { var q = pt(p); return (i ? "L" : "M") + f(q[0]) + " " + f(q[1]); }).join(" ") + " Z"; },
+      rect: function (d0, d1, e0, e1) { return D.poly([[d0, e0], [d1, e0], [d1, e1], [d0, e1]]); },
+      dot: function (d, e, r) { var x = X(d) - r, y = Y(e); return "M" + f(x) + " " + f(y) + " a" + r + " " + r + " 0 1 0 " + 2 * r + " 0 a" + r + " " + r + " 0 1 0 " + -2 * r + " 0"; },
+      // neck from the body joint dj to the left edge dl; width wj there and wl at dl; frets of a `scale`-inch scale; fill = wood colour
+      neck: function (dj, dl, wj, wl, scale, fill, board) { var it = [{ t: "shape", d: D.poly([[dj, -wj / 2], [dl, -wl / 2], [dl, wl / 2], [dj, wj / 2]]), fill: fill, stroke: "ink2", sw: 1.2, title: "Neck (runs on to the headstock, off the drawing)" }];
+        var fr = "", dots = ""; for (var n = 1; n <= 24; n++) { var x = scale * Math.pow(2, -n / 12); if (x > dj && x < dl) { var w = wj + (wl - wj) * (x - dj) / (dl - dj); fr += "M" + X(x) + " " + Y(-w / 2) + " V" + Y(w / 2) + " ";
+            var xm = scale * (Math.pow(2, -n / 12) + Math.pow(2, -(n - 1) / 12)) / 2; if (xm > dj && xm < dl) { if ([3, 5, 7, 9, 15, 17, 19, 21].indexOf(n) >= 0) dots += D.dot(xm, 0, 3) + " "; if (n === 12) dots += D.dot(xm, -w / 4, 3) + " " + D.dot(xm, w / 4, 3) + " "; } } }
+        if (board) it.push({ t: "shape", d: D.poly([[dj, -wj / 2 + .04], [dl, -wl / 2 + .04], [dl, wl / 2 - .04], [dj, wj / 2 - .04]]), fill: board, stroke: "none", title: "Fingerboard" });
+        if (fr) it.push({ t: "shape", d: fr, fill: "none", stroke: "#b9b9b9", sw: 1.6, title: "Frets (at the scale length's positions)" });
+        if (dots) it.push({ t: "shape", d: dots, fill: "#e8e4d8", stroke: "#777", sw: .5, title: "Position markers" });
+        return it; },
+      strings: function (n, sp, dTo, dFrom, sw) { var d = ""; for (var i = 0; i < n; i++) { var e = (i - (n - 1) / 2) * sp; d += "M" + X(dFrom) + " " + Y(e) + " H" + X(dTo) + " "; }
+        return { t: "shape", d: d, fill: "none", stroke: "ink2", sw: sw || .8, op: .75, title: "Strings (lowest at the top here)" }; } };
+    return D; };
+
   if (typeof module !== "undefined" && module.exports) { module.exports = GP; }
   if (typeof document === "undefined") { global.GuitarPickups = GP; return; }
 

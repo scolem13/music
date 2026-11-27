@@ -15,8 +15,8 @@
 //                   not a position starts that section, otherwise Esc first.
 //   nudge           R j / k = down / up as in vim; L mirrored: f = j (down), d = k (up); with Shift a coarse step. "Up" = more sound (drawbars: pulled out further).
 //   digits          set the grabbed control: drawbars 0-8 exactly; other small whole-number ranges = that number; knobs 0-9 = tenths,
-//                   switches 0 / 1, choices 1..n. With nothing grabbed a digit loads snapshot n; Shift + digit saves one
-//                   (localStorage `panel-keys-snap:<layout id>`).
+//                   switches 0 / 1, choices 1..n. With nothing grabbed a digit loads preset n of the panel's Presets menu;
+//                   Shift + digit saves the panel into slot n.
 //   Esc             let go of the control, then leave the section.   Backspace = undo (each change).   ? = the key list.
 //   hold keys       from the layout (B3: Space held = Leslie fast, let go = back; Shift + Space = latch slow / fast).
 // LAYOUT: FaithfulPanel layout field  keys: { groups: [{ k: "u", name, ctl: [keys] | function (get) -> [keys] }],
@@ -61,11 +61,12 @@
     var span = r[4] - r[3], st = r[5] || 0, flip = /^inv:/.test(k);
     if (st >= 1 && span <= 9) return setv(p, k, clampStep(flip ? -d : r[3] + d, r));
     setv(p, k, clampStep(flip ? r[4] - span * d / 10 : r[3] + span * d / 10, r)); }
-  function snapKey(p) { return "panel-keys-snap:" + p.id; }
-  function snap(p, n, save) { var all = {}; try { all = JSON.parse(localStorage.getItem(snapKey(p)) || "{}"); } catch (e) {}
-    if (save) { var d = {}; window.FaithfulPanel.bound(p.layout).forEach(function (k) { if (p.range(k)) d[k] = p.get(k); }); all[n] = d; try { localStorage.setItem(snapKey(p), JSON.stringify(all)); } catch (e) {} flash(p, "Saved snapshot " + n); return; }
-    var s = all[n]; if (!s) return flash(p, "No snapshot " + n + " (Shift + " + n + " saves one)");
-    Object.keys(s).sort(function (a, b) { return /^pre:/.test(b) - /^pre:/.test(a); }).forEach(function (k) { if (p.range(k)) setv(p, k, s[k]); }); flash(p, "Loaded snapshot " + n); }
+  // snapshots = the panel's Presets menu (faithful-panel.js): digit n loads preset n, Shift + n saves the panel into slot n
+  function snap(p, n, save) { var Pm = p.me.presets; if (!Pm) return flash(p, "This panel has no presets");
+    var i = (n || 10) - 1, e = Pm.list()[i];
+    if (save) { Pm.save(e ? e.name : "Snapshot " + n, i); return flash(p, "Saved preset " + n); }
+    if (!e) return flash(p, "No preset " + n + " (Shift + " + n + " saves one)");
+    Pm.load(i); flash(p, "Loaded preset " + n + ": " + e.name); }
   function label(p, k) { var it = p.layout.items.filter(function (x) { return x.k === k; })[0], r = p.range(k); return (it && it.label) || (r && r[1]) || k; }
   function shownVal(p, k) { var v = p.get(k), it = p.layout.items.filter(function (x) { return x.k === k; })[0]; if (it && it.fmt) return it.fmt(v); if (typeof v === "number") return String(+v.toFixed(2)); return String(v); }
 
@@ -148,7 +149,7 @@
   function helpHtml(p) { var h = PK.HANDS[hand], rows = [];
     groups(p).forEach(function (g) { rows.push("<tr><th><kbd>" + g.k + "</kbd></th><td>" + esc(g.name) + "</td><td>" + ctls(p, g).map(function (k, j) { return "<kbd>" + esc(h.pos[j]) + "</kbd> " + esc(label(p, k)); }).join(" ") + "</td></tr>"); });
     (p.layout.keys.hold || []).forEach(function (x) { rows.push("<tr><th><kbd>" + esc(x.code.replace(/^Key/, "")) + "</kbd></th><td colspan=2>" + esc(x.name) + "</td></tr>"); });
-    rows.push("<tr><th><kbd>0</kbd>–<kbd>9</kbd></th><td colspan=2>nothing grabbed: load snapshot · Shift: save snapshot</td></tr>");
+    rows.push("<tr><th><kbd>0</kbd>–<kbd>9</kbd></th><td colspan=2>nothing grabbed: load preset n · Shift: save into slot n</td></tr>");
     return "<table class='pk-help'>" + rows.join("") + "</table>"; }
   function flash(p, m) { if (p.strip) { p.strip._flash = { m: m, t: Date.now() + 2500 }; setTimeout(function () { renderStrip(p); }, 2600); } }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }

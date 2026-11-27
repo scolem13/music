@@ -36,7 +36,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   check("Translate A -> B gives a quality and notes; wires carried", /exact|approx|lost/.test(q) && await b.eval(`document.querySelectorAll('.dkc-res li').length`) > 0 && await b.eval(`${g}.b.st.wires`) === false, q);
   await b.eval(`(() => { const s = document.querySelector('.dkc-b .dk-pick'); s.value = 'rock'; s.dispatchEvent(new Event('change')); })()`); await b.sleep(700);
   check("menu swaps to a kit drawing (kick port key)", await b.eval(`!!document.querySelector('.dkc-b [data-ctl="kick.port"]')`));
-  await clickAt(".dkc-b", 260, 50); check("click the kick in the kit", await b.eval(`document.querySelector('.dkc-b').dataset.last`) === "kick:centre");
+  await clickAt(".dkc-b", 320, 222); check("click the kick in the kit (in front of the drummer, 2026-11-27 drawing)", await b.eval(`document.querySelector('.dkc-b').dataset.last`) === "kick:centre");
   const t0 = await b.eval(`document.querySelector('.dkc-a .fp-w').dataset.theme`);
   await b.eval(`document.querySelector('.dkc-a .fp-theme').click()`);
   check("Light / Dark repaints", await b.eval(`[...document.querySelectorAll('.fp-w')].every(w => w.dataset.theme !== '${t0}')`));

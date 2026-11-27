@@ -248,6 +248,23 @@
       if (china) it.push({ t: "shape", d: circ(cx, cy, r * 0.9), fill: "none", stroke: "#5a4010", sw: 1.4, title: "turned-up edge (china)" });
       it.push({ t: "shape", d: circ(cx, cy, r * 0.22), fill: "#c09a40", stroke: "ink", sw: 0.8, title: title + " bell" }, { t: "shape", d: circ(cx, cy, 2.5), fill: "#333", stroke: "none", title: "stand and felt" }); return it; }
   };
+  // A kit from above at one scale (S units an inch; drummer at the bottom, as in a top-down photo): kick lying on its side in
+  // front (a rectangle: diameter wide, shell depth deep, batter towards the drummer), rack tom over the kick on the left, snare
+  // between the knees, hi-hats to its left, floor tom to the right, ride over the floor tom, crash over the hi-hats, throne below.
+  // o = { S, kick: [diameter, depth, finish], tom, floor, snare, hats, ride, crash: diameters, names: { ride, crash } } -> { items, zones }
+  // Placement is the site's (a usual right-handed set-up, after photos), sizes the kit's nominal ones.
+  M.draw.kit = function (o) { var S = o.S || 6, cx = 280, k = o.kick, kw = k[0] * S, kd = k[1] * S, ky1 = 238, ky0 = ky1 - kd, kx = cx - kw / 2, D = M.draw, R = function (d) { return d * S / 2; }, it = [], z = [];
+    var P = { tom: [cx - 42, ky0 + 34], snare: [188, 292], hats: [86, 262], floor: [398, 296], ride: [446, 150], crash: [104, 118] };
+    it.push({ t: "shape", d: circ(cx + 2, 372, 30), fill: "none", stroke: "ink2", sw: 1, title: "Throne (where the drummer sits)" }, { t: "label", x: cx + 2, y: 376, text: "drummer", size: 9, dim: true },
+      { t: "shape", d: "M" + kx + " " + ky0 + " h" + kw + " v" + kd + " h-" + kw + " Z", fill: k[2], stroke: "ink", sw: 1.4, title: "Bass drum " + k[0] + " x " + k[1] + "\" (seen from above, lying on its side): click to play" },
+      { t: "shape", d: "M" + (kx - 3) + " " + ky0 + " v" + kd + " M" + (kx + kw + 3) + " " + ky0 + " v" + kd, fill: "none", stroke: "#b8bcc2", sw: 5, title: "Bass drum hoops" },
+      { t: "label", x: kx + kw - 6, y: ky1 - 8, text: "KICK " + k[0] + "\"", size: 9, anchor: "end", bold: true });
+    z.push({ part: "kick", kind: "kick", x: kx, y: ky0, w: kw, h: kd });
+    [["tom", "tom1", "Tom", 6], ["floor", "floor", "Floor tom", 8], ["snare", "snare", "Snare", 10]].forEach(function (d) { var p = P[d[0]], r = R(o[d[0]]);
+      it = it.concat(D.head(p[0], p[1], r, d[3], "#999", d[2] + " " + o[d[0]] + "\"")); z.push({ part: d[1], kind: "drum", cx: p[0], cy: p[1], r: r }); });
+    [["hats", "hats", "Hi-hats"], ["ride", "ride", (o.names || {}).ride || "Ride"], ["crash", "crash", (o.names || {}).crash || "Crash"]].forEach(function (d) { var p = P[d[0]], r = R(o[d[0]]);
+      it = it.concat(D.cym(p[0], p[1], r, "#d8b45a", d[2] + " " + o[d[0]] + "\"")); z.push({ part: d[1], kind: "cymbal", cx: p[0], cy: p[1], r: r, top: true }); });
+    return { items: it, zones: z }; };
   function circ(cx, cy, r) { return "M" + (cx - r).toFixed(1) + " " + cy + " a" + r + " " + r + " 0 1 0 " + (2 * r).toFixed(1) + " 0 a" + r + " " + r + " 0 1 0 " + (-2 * r).toFixed(1) + " 0 Z"; }
   M.zoneAt = function (L, x, y) { var Z = L.zones || [], best = null;
     Z.forEach(function (z) { var hit = false, rr = 0; if (z.kind === "kick") { hit = x >= z.x && x <= z.x + z.w && y >= z.y && y <= z.y + z.h; rr = 0; } else { var d = Math.hypot(x - z.cx, y - z.cy); hit = d <= z.r + (z.kind === "drum" ? 6 : 0); rr = d / z.r; }
@@ -296,6 +313,8 @@
     el.innerHTML = s + '<path d="' + d + '" class="dk-line"/><line x1="' + xc + '" x2="' + xc + '" y1="0" y2="' + Ht + '" class="dk-cen"/><text x="6" y="12">Spectrum of the last hit (first 0.6 s, dB, 60 dB range). Dashed: its centroid ' + Math.round(c) + ' Hz (higher = brighter).</text></svg>'; }
   function face(host, W) { host.innerHTML = ""; if (!global.FaithfulPanel) { host.textContent = "(panel script missing)"; return; } var pid = (W.I.cat === "cymbal" ? "cy-" : "dk-") + W.id;
     FaithfulPanel.load(pid).then(function (L) { W.L = L || FaithfulPanel.LAYOUTS && FaithfulPanel.LAYOUTS[pid]; W.face = FaithfulPanel.mount(host, { id: pid, adapter: W.A }); var root = W.face.el || host;
+      // the panel Size control writes an inline min-width of 760px meant for synth panels; a drum or cymbal is drawn to fit its column
+      var fit = function () { var sv = root.querySelector && root.querySelector("svg.fp-svg"); if (sv) sv.style.minWidth = "260px"; }; fit(); if (W.face) (W.face.onLayout = W.face.onLayout || []).push(fit);
       root.addEventListener("click", function (e) { if (e.target.closest && e.target.closest(".fp-c")) return; var svg = e.target.closest && e.target.closest("svg.fp-svg"); if (!svg || !root.contains(svg)) return; var r = svg.getBoundingClientRect(), vb = svg.viewBox.baseVal, L2 = W.L || FaithfulPanel.LAYOUTS[pid];
         var z = M.zoneAt(L2, (e.clientX - r.left) * vb.width / r.width + vb.x, (e.clientY - r.top) * vb.height / r.height + vb.y); if (z) W.hit(z.part, z.strike); }); }).catch(function () { host.textContent = "(drawing failed to load)"; }); }
   M.mount = function (el, o) { o = o || {}; var W = { id: M.ITEMS[o.item] ? o.item : "supraphonic" }; W.I = M.ITEMS[W.id]; W.st = M.clean(W.id, o.state); W.A = M.adapter(W); M.widgets.push(W);

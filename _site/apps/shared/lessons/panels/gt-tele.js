@@ -1,25 +1,32 @@
-// Fender Telecaster control area (FaithfulPanel + GuitarPickups.adapter): the neck pickup under a chrome cover in the pickguard, the
-// slanted bridge pickup in the metal bridge plate, a control plate with the 3-way lever, Volume and Tone. Distances from the bridge
-// (neck 6.3 in, bridge 1.45 in) and all positions are this site's estimates after photos (approximate); no logo.
+// Fender Telecaster, the whole body front-on at one scale (36 units an inch), neck to the left (a stub with frets at the 25.5 in
+// scale), bass strings at the top, for FaithfulPanel + GuitarPickups.adapter: the slab single-cutaway body (about 15.75 x 12.75 in),
+// the neck pickup under a chrome cover in the pickguard, the slanted bridge pickup in the metal bridge plate, the chrome control plate
+// with the 3-way lever, Volume and Tone, the jack in the lower edge. Distances from the bridge (neck 6.3 in, bridge 1.45 in), the
+// outline and all positions are this site's estimates after photos (approximate); no logo.
 (function () {
-  var PX = 60, BR = 720, X = function (d) { return BR - d * PX; };
-  var items = [
-    { t: "shape", d: "M40 50 C220 10 420 20 540 50 C660 15 840 30 880 140 C900 220 890 300 850 345 C770 410 600 385 520 360 C400 400 200 410 80 350 C20 300 15 130 40 50 Z", fill: "body", stroke: "ink2", sw: 2, title: "Body" },
-    { t: "shape", d: "M70 80 C220 50 380 60 470 80 L470 330 C330 370 180 370 90 330 C60 290 55 120 70 80 Z", fill: "#111111", stroke: "ink2", title: "Pickguard (black, as before 1955)" },
-    { t: "shape", d: "M" + (X(6.3) - 22) + " 118 h44 v150 h-44 Z", fill: "#c9cbce", stroke: "ink2", title: "Neck pickup (chrome cover)" },
-    { t: "label", x: X(6.3), y: 290, text: "Neck", size: 10 },
-    { t: "shape", d: "M560 95 H800 V295 H560 Z", fill: "#c9cbce", stroke: "ink2", title: "Bridge plate" },
-    { t: "shape", d: "M" + (X(1.45) - 28) + " 114 l40 0 l10 160 l-40 0 Z", fill: "#1b1b1b", stroke: "ink2", title: "Bridge pickup (slanted, in the bridge plate)" },
-    { t: "label", x: X(1.45), y: 312, text: "Bridge", size: 10 },
-    { t: "shape", d: "M0 140 H780 M0 166 H780 M0 192 H780 M0 218 H780 M0 244 H780 M0 270 H780", fill: "none", stroke: "ink2", sw: .7, op: .7, title: "Strings" },
-    { t: "shape", d: "M590 330 L870 300 a14 14 0 0 1 4 28 L594 358 a14 14 0 0 1 -4 -28 Z", fill: "#c9cbce", stroke: "ink2", title: "Control plate" },
-    { t: "seg", k: "sel", x: 600, y: 336, w: 96, h: 16, opts: [["neck", "N"], ["both", "B"], ["bridge", "Br"]] },
-    { t: "label", x: 648, y: 372, text: "3-way: neck / both / bridge", size: 8.5, dim: true },
-    { t: "knob", k: "vol", x: 750, y: 328, r: 13, label: "Volume", cap: "#d9dbde" },
-    { t: "knob", k: "tone", x: 830, y: 318, r: 13, label: "Tone", cap: "#d9dbde" },
-    { t: "jack", x: 870, y: 230, r: 9, label: "Output (on the side)" },
-    { t: "label", x: 60, y: 34, text: "TELECASTER-STYLE CONTROLS", size: 11, anchor: "start", bold: true }];
-  FaithfulPanel.register({ id: "gt-tele", name: "Telecaster", w: 900, h: 400, knob: "cap", accent: "sel", accents: { sel: "#e8a400" }, items: items,
+  var G = GuitarPickups.drawing(36, 570, 262), X = G.X, Y = G.Y;
+  var body = [[-4.0, 0], [-3.9, -3.6], [-3.0, -5.6], [-1.0, -6.3], [2.5, -6.2], [5.5, -5.7], [8.0, -5.5], [10.6, -4.9], [11.4, -3.7], [11.2, -2.3],
+    [10.2, -1.1], [10.2, 1.1], [9.4, 1.7], [8.3, 2.7], [7.6, 3.9], [6.8, 5.1], [5.3, 6.0], [3.0, 6.4], [0, 6.45], [-2.5, 6.1], [-3.7, 4.6]];
+  var guard = [[10.2, -1.2], [10.9, -2.5], [10.1, -3.6], [7.6, -4.1], [4.6, -3.7], [2.7, -2.4], [2.7, 2.0], [3.6, 2.6], [5.6, 3.0], [7.4, 2.9], [8.6, 2.2], [9.8, 1.4], [10.2, 1.2]];
+  var items = [{ t: "shape", d: G.outline(body), fill: "body", stroke: "ink2", sw: 2, title: "Body (slab, single cutaway; about 15.75 x 12.75 in)" }]
+    .concat([
+    { t: "shape", d: G.outline(guard), fill: "#f7f7f4", stroke: "ink2", title: "Pickguard (white; black on the early-1950s ones)" }], G.neck(7.35, 15.5, 2.05, 1.98, 25.5, "#e2c48e", "#e2c48e"), [
+    { t: "shape", d: G.rect(6.3 + 0.38, 6.3 - 0.38, -1.4, 1.4), fill: "#c9cbce", stroke: "ink2", title: "Neck pickup (chrome cover)" },
+    { t: "label", x: X(6.3), y: Y(-1.62), text: "Neck", size: 10 },
+    { t: "shape", d: G.poly([[2.6, -1.65], [-1.2, -1.65], [-1.45, -1.3], [-1.45, 1.3], [-1.2, 1.65], [2.6, 1.65]]), fill: "#c9cbce", stroke: "ink2", title: "Bridge plate (pickup and three saddles)" },
+    { t: "shape", d: G.poly([[1.45 + 0.37 + 0.12, -1.38], [1.45 - 0.37 + 0.12, -1.38], [1.45 - 0.37 - 0.12, 1.38], [1.45 + 0.37 - 0.12, 1.38]]), fill: "#1b1b1b", stroke: "ink2", title: "Bridge pickup (slanted, in the bridge plate)" },
+    { t: "shape", d: [-1, 0, 1].map(function (i) { return G.rect(0.25, -0.35, i * 0.82 - 0.36, i * 0.82 + 0.36); }).join(" "), fill: "#e3e5e8", stroke: "ink2", sw: .6, title: "Three saddles" },
+    { t: "label", x: X(1.45), y: Y(-1.9), text: "Bridge", size: 10 },
+    G.strings(6, 0.41, -0.6, 15.5),
+    { t: "shape", d: G.outline([[2.0, 3.0], [2.15, 3.35], [2.0, 3.7], [-3.4, 3.75], [-3.6, 3.4], [-3.4, 3.05]]), fill: "#c9cbce", stroke: "ink2", title: "Control plate (chrome)" },
+    { t: "seg", k: "sel", x: X(1.95), y: Y(3.4) - 8, w: 82, h: 16, opts: [["neck", "N"], ["both", "B"], ["bridge", "Br"]] },
+    { t: "label", x: X(1.95) + 41, y: Y(3.4) + 30, text: "3-way lever", size: 9, dim: true },
+    { t: "knob", k: "vol", x: X(-1.35), y: Y(3.4), r: 15, label: "Volume", cap: "#d9dbde" },
+    { t: "knob", k: "tone", x: X(-2.75), y: Y(3.4), r: 15, label: "Tone", cap: "#d9dbde" },
+    { t: "jack", x: X(-1.2), y: Y(6.0), r: 8, label: "Output (in the edge)" },
+    { t: "label", x: 12, y: 22, text: "TELECASTER-STYLE", size: 12, anchor: "start", bold: true },
+    { t: "label", x: 12, y: Y(1.6), text: "← neck (to the headstock)", size: 9, anchor: "start", dim: true }]);
+  FaithfulPanel.register({ id: "gt-tele", name: "Telecaster", w: 740, h: 530, knob: "cap", accent: "sel", accents: { sel: "#e8a400" }, items: items,
     src: ["Controls and the 1967 wiring (neck / both / bridge): Wikipedia, \"Fender Telecaster\""],
-    approx: "Positions and pickup distances are this page's drawing after photos (approximate). Earlier Telecasters (1950-1967) were wired differently: not modelled." });
+    approx: "Whole body at one scale (36 units an inch). The outline (about 15.75 x 12.75 in), positions and pickup distances are this site's drawing after photos (approximate). Earlier Telecasters (1950-1967) were wired differently: not modelled." });
 })();

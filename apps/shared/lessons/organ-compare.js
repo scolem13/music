@@ -432,7 +432,8 @@
     head.appendChild(lab("Example", exSel)); head.appendChild(play); if (!only) head.appendChild(playB); head.appendChild(stop); head.appendChild(lab("Keys play", manSel));
     box.appendChild(head);
     var pA = el("div", "ocmp-panel"), rep = el("div", "ocmp-report"), pB = el("div", "ocmp-panel ocmp-b"), kb = el("div", "ocmp-kb");
-    box.appendChild(pA); box.appendChild(kb); if (!only) { box.appendChild(rep); box.appendChild(pB); }
+    var msBox = el("div", "ocmp-midi");
+    box.appendChild(pA); box.appendChild(msBox); box.appendChild(kb); if (!only) { box.appendChild(rep); box.appendChild(pB); }
     function ctx() { if (!W.ctx) { var AC = window.AudioContext || window.webkitAudioContext; W.ctx = new AC(); } if (W.ctx.state === "suspended") W.ctx.resume(); return W.ctx; }
     function voice(m) { var c = ctx(); if (!W.v[m]) { W.v[m] = OC.voice(c, m, W.st[m]); W.v[m].output.connect(c.destination); } return W.v[m]; }
     W.analyser = function () { voice(W.a); return W.v[W.a].analyser; };
@@ -441,8 +442,8 @@
     function fillMan() { manSel.innerHTML = ""; P[W.a].manuals.forEach(function (mn) { var o = el("option", null, (P[W.a].manNames || {})[mn] || mn); o.value = mn; manSel.appendChild(o); }); }
     function adapter(m, ro) {
       var get = function (kk) { return W.st[m][kk]; };
-      return { get: function (kk) { if (/^inv:/.test(kk)) return -W.st[m][kk.slice(4)]; if (/^pre:/.test(kk)) return W.st[m][kk.slice(4)]; return get(kk); },
-        set: function (kk, v) { if (ro) return; if (/^inv:/.test(kk)) { kk = kk.slice(4); v = -v; } else if (/^pre:/.test(kk)) kk = kk.slice(4); W.set(m, kk, v); },
+      return { get: function (kk) { if (/^inv:/.test(kk)) return -W.st[m][kk.slice(4)] || 0; if (/^pre:/.test(kk)) return W.st[m][kk.slice(4)]; return get(kk); },
+        set: function (kk, v) { if (ro) return; if (/^inv:/.test(kk)) { kk = kk.slice(4); v = -v || 0; } else if (/^pre:/.test(kk)) kk = kk.slice(4); W.set(m, kk, v); },
         range: function (kk) { var base = kk.replace(/^(inv|pre):/, ""), r = OC.range(m, base); if (!r) return null;
           if (/^inv:/.test(kk)) return [kk, r[1], "k", -r[4], -r[3], 1, -r[6]]; return r; } };
     }
@@ -482,7 +483,14 @@
       rep.appendChild(tb); refreshPanel(pB, W.b);
     }
     W.set = function (m, kk, v) { W.st[m][kk] = v; if (W.v[m]) W.v[m].set(W.st[m]); refreshPanel(m === W.a ? pA : pB, m); if (m === W.a) report(); };
-    W.pick = function (a, b) { W.stop(); W.a = a; if (b) W.b = b; selA.value = W.a; selB.value = W.b; panel(pA, W.a, false); if (!only) panel(pB, W.b, true); fillEx(); fillMan(); report(); };
+    W.pick = function (a, b) { W.stop(); W.a = a; if (b) W.b = b; selA.value = W.a; selB.value = W.b; panel(pA, W.a, false); if (!only) panel(pB, W.b, true); fillEx(); fillMan(); report(); if (W.split) W.split.refresh(); };
+    // one MIDI keyboard split into the organ's manuals (pedal / lower / upper): midi-split.js, loaded with the widget
+    (function () { var src = (document.querySelector('script[src*="organ-compare.js"]') || {}).src || "/apps/shared/lessons/organ-compare.js";
+      function go() { W.split = MidiSplit.mount(msBox, { id: function () { return "organ-" + W.a; },
+        zones: function () { var mn = P[W.a].manuals.slice(), order = ["pedal", "lower", "upper"]; mn.sort(function (x, y) { return order.indexOf(x) - order.indexOf(y); });
+          return mn.map(function (k) { return { k: k, name: ((P[W.a].manNames || {})[k] || k).replace(/^./, function (c) { return c.toUpperCase(); }) }; }); },
+        onNote: function (k, midi, vel, on) { if (on) voice(W.a).noteOn(midi, k); else if (W.v[W.a]) W.v[W.a].noteOff(midi, k); } }); }
+      if (window.MidiSplit) go(); else { var sc = document.createElement("script"); sc.src = src.replace(/organ-compare\.js.*$/, "midi-split.js"); sc.onload = go; document.head.appendChild(sc); } })();
     W.load = function (id) { var ex = OC.EXAMPLES.filter(function (x) { return x.id === id; })[0]; if (!ex) return false;
       if (ex.from !== W.a) W.pick(ex.from, W.b === ex.from ? W.a : W.b);
       W.st[W.a] = OC.full(W.a, ex.s); W.ex = ex; if (W.v[W.a]) W.v[W.a].set(W.st[W.a]); refreshPanel(pA, W.a); report(); exSel.value = id;

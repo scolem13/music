@@ -1,28 +1,32 @@
-// StingRay (3-band) control area, for FaithfulPanel + GuitarPickups.adapter (basses: apps/shared/lessons/bass-pickups.js). Drawn front-on, neck to
-// the left, bridge to the right, 40 units an inch from the bridge. Pickup distances, body, pickguard and knob positions are this site's
-// drawing after photos (approximate); no logos.
-(function () {
-  var PX = 40, BR = 780, X = function (d) { return BR - d * PX; }, YS = [150, 180, 210, 240];
-  function poles(x, ys) { return ys.map(function (y) { return { t: "shape", d: "M" + (x - 4) + " " + y + " a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0", fill: "#8d8f93", stroke: "#555", sw: .6 }; }); }
-  function coil(x, y0, y1, w, fill, title) { return { t: "shape", d: "M" + (x - w / 2) + " " + y0 + " h" + w + " V" + y1 + " h-" + w + " Z", fill: fill, stroke: "ink2", title: title }; }
-  var common = [
-    { t: "shape", d: "M30 60 C200 20 420 30 540 60 C660 20 840 40 880 150 C900 220 890 300 850 340 C780 400 600 380 520 350 C400 390 200 400 80 340 C20 300 10 120 30 60 Z", fill: "body", stroke: "ink2", sw: 2, title: "Body" },
-    { t: "shape", d: "M" + (BR + 20) + " 128 h44 v134 h-44 Z", fill: "#c9cbce", stroke: "ink2", title: "Bridge and saddles" },
-    { t: "label", x: BR + 42, y: 280, text: "Bridge", size: 9, dim: true },
-    { t: "shape", d: "M0 150 H" + (BR + 40) + " M0 180 H" + (BR + 40) + " M0 210 H" + (BR + 40) + " M0 240 H" + (BR + 40), fill: "none", stroke: "ink2", sw: 1.4, op: .7, title: "Strings (E A D G, E at the top here)" }];
-  var x = X(4.0);
-  var items = [{ t: "shape", d: "M120 90 C300 60 520 70 640 100 L700 300 C600 350 300 360 140 320 Z", fill: "#f7f7f4", stroke: "ink2", op: .95, title: "Pickguard" },
-    { t: "shape", d: "M" + (x - 38) + " 130 h76 v130 h-76 Z", fill: "#202124", stroke: "ink2", title: "Humbucker (two coils in parallel)" }]
-    .concat(poles(x - 16, YS), poles(x + 16, YS), [
-    { t: "label", x: x, y: 282, text: "Humbucker", size: 10 },
-    { t: "shape", d: "M610 296 h250 v48 h-250 Z", fill: "#c9cbce", stroke: "ink2", op: .8, title: "Control plate" },
-    { t: "knob", k: "vol", x: 640, y: 320, r: 15, label: "Volume", cap: "#d9d9d9" },
-    { t: "knob", k: "treble", x: 700, y: 320, r: 15, label: "Treble", cap: "#d9d9d9" },
-    { t: "knob", k: "mid", x: 760, y: 320, r: 15, label: "Mid", cap: "#d9d9d9" },
-    { t: "knob", k: "bass", x: 820, y: 320, r: 15, label: "Bass", cap: "#d9d9d9" },
-    { t: "label", x: 620, y: 290, text: "ACTIVE PREAMP (9 V)", size: 8.5, anchor: "start", dim: true },
-    { t: "jack", x: 870, y: 260, r: 9, label: "Output" },
-    { t: "label", x: 50, y: 40, text: "STINGRAY-STYLE CONTROLS (3-BAND)", size: 11, anchor: "start", bold: true }]);
-  FaithfulPanel.register({ id: "bs-stingray3", name: "StingRay (3-band)", w: 900, h: 400, knob: "cap", accent: "sel", accents: { sel: "#e8a400" }, items: common.concat(items),
-    src: ["Humbucker nearer the bridge, coils in parallel, active 9 V preamp, bass + treble then a mid band: Wikipedia, \"Music Man StingRay\""], approx: "Positions and knob order are this page's drawing after photos (approximate, unverified)." });
+// StingRay (3-band), the whole body front-on at one scale (28 units an inch), neck to the left (a stub with frets at the 34 in scale), E
+// string at the top, for FaithfulPanel + GuitarPickups.adapter (basses: apps/shared/lessons/bass-pickups.js): rounded double-cutaway
+// body with short horns (about 18 x 13.5 in, the site's reading of photos), oval pickguard, one large humbucker near the bridge, the
+// chrome control plate of the active preamp. Positions and knob order are this site's drawing after photos (approximate); no logos.
+(function () { var BX = 12 + 20.5 * 28;
+  var G = GuitarPickups.drawing(28, BX, 250), X = G.X, Y = G.Y, ES = [-1.08, -0.36, 0.36, 1.08];
+  function poles(d, es) { return { t: "shape", d: es.map(function (e) { return G.dot(d, e, 3.2); }).join(" "), fill: "#8d8f93", stroke: "#555", sw: .6 }; }
+  function coil(d, e0, e1, w, fill, title) { return { t: "shape", d: G.rect(d + w / 2, d - w / 2, e0, e1), fill: fill, stroke: "ink2", title: title }; }
+  var x = 4.0;
+  var items = [{ t: "shape", d: G.outline([[-3.4, 0], [-3.2, -3.5], [-1.9, -5.8], [0.8, -6.6], [3.6, -6.3], [6.0, -5.4], [8.4, -5.2], [10.8, -5.7], [13.2, -5.6], [14.9, -4.7], [14.6, -3.6], [13.3, -2.8], [12.6, -1.7], [12.4, -1.2], [12.4, 1.2], [13.0, 2.2], [13.6, 3.3], [13.4, 4.2], [12.2, 4.7], [10.2, 5.0], [8.2, 5.4], [6.0, 6.3], [3.4, 6.8], [0.4, 6.8], [-2.0, 5.9], [-3.2, 3.6]]), fill: "body", stroke: "ink2", sw: 2, title: "Body (about 18 x 13.5 in)" },
+    { t: "shape", d: G.outline([[12.4, -1.3], [12.6, -2.6], [11.0, -3.6], [8.0, -3.9], [5.2, -3.4], [2.8, -2.2], [2.4, 0], [2.8, 2.2], [5.2, 3.3], [8.0, 3.6], [11.0, 3.3], [12.6, 2.4], [12.4, 1.3]]), fill: "#f7f7f4", stroke: "ink2", title: "Pickguard" }]
+    .concat(G.neck(10.45, 20.5, 2.4, 1.85, 34, "#d8b47a", "#d8b47a"), [
+    { t: "shape", d: G.rect(1.0, -2.2, -1.6, 1.6), fill: "#c9cbce", stroke: "ink2", title: "Bridge (strings through the body)" },
+    { t: "shape", d: ES.map(function (e) { return G.rect(0.25, -0.45, e - 0.22, e + 0.22); }).join(" "), fill: "#e3e5e8", stroke: "ink2", sw: .6, title: "Four saddles" },
+    { t: "shape", d: G.rect(x + 1.1, x - 1.1, -1.85, 1.85), fill: "#202124", stroke: "ink2", title: "Humbucker (two coils in parallel)" },
+    poles(x + 0.45, ES), poles(x - 0.45, ES),
+    G.strings(4, 0.72, -0.4, 20.5, 1.5),
+    { t: "label", x: X(x), y: Y(-2.1), text: "Humbucker", size: 10 },
+    { t: "label", x: X(-0.6), y: Y(-1.85), text: "Bridge", size: 9, dim: true },
+    { t: "shape", d: G.outline([[3.0, 3.35], [3.3, 3.8], [3.0, 4.25], [-3.3, 4.95], [-3.6, 4.5], [-3.3, 4.05]]), fill: "#c9cbce", stroke: "ink2", title: "Control plate (active preamp, 9 V battery behind)" },
+    { t: "knob", k: "vol", x: X(2.2), y: Y(3.8), r: 14, label: "Volume", cap: "#d9d9d9" },
+    { t: "knob", k: "treble", x: X(0.6), y: Y(4.0), r: 14, label: "Treble", cap: "#d9d9d9" },
+    { t: "knob", k: "mid", x: X(-1.0), y: Y(4.2), r: 14, label: "Mid", cap: "#d9d9d9" },
+    { t: "knob", k: "bass", x: X(-2.6), y: Y(4.4), r: 14, label: "Bass", cap: "#d9d9d9" },
+    { t: "label", x: X(-0.30000000000000004), y: Y(2.95), text: "ACTIVE PREAMP (9 V)", size: 8.5, dim: true },
+    { t: "jack", x: X(-1.2), y: Y(5.95), r: 7, label: "Output (in the edge)" },
+    { t: "label", x: 12, y: 22, text: "STINGRAY-STYLE (3-BAND)", size: 12, anchor: "start", bold: true },
+    { t: "label", x: 12, y: Y(1.55) + 6, text: "← neck (to the headstock)", size: 9, anchor: "start", dim: true }]);
+  FaithfulPanel.register({ id: "bs-stingray3", name: "StingRay (3-band)", w: 12 + 20.5 * 28 + 3.4 * 28 + 16, h: 470, knob: "cap", accent: "sel", accents: { sel: "#e8a400" }, items: items,
+    src: ["Humbucker nearer the bridge, coils in parallel, active 9 V preamp, bass + treble then a mid band: Wikipedia, \"Music Man StingRay\""],
+    approx: "Whole body at one scale (28 units an inch). The outline (about 18 x 13.5 in), positions and knob order are this site's drawing after photos (approximate, unverified)." });
 })();

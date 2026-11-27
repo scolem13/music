@@ -55,6 +55,9 @@
 //   { t: "shape", d: SVG path, fill / stroke: a colour token (bg body head ink ink2 line track screen wave) or a colour, sw, op, title }  decoration only
 // PEDALS (2026-11-26): layouts panels/pd-<id>.js bound to Pedals.adapter (apps/shared/lessons/pedals.js); extra item
 //   { t: "led", k, x, y, r, label, color }  an LED lit while get(k) is true (the footswitch is a { t: "key", k: "on" } with no v)
+// PRESETS (2026-11-27): every writable panel has a Presets menu (save / load / overwrite / delete, default settings), kept per layout
+//   in localStorage `fp-presets:<layout id>` (presetMenu below; me.presets). LAYOUT.init = { key: value } is set at mount and after a
+//   preset loads (the B3 holds both manuals on their B set this way).
 // LAYOUT EDITS (2026-11-27): every panel gets a Size slider and "Edit layout" (move / resize / hide sections and single parts,
 //   hidden sections close their gap), kept per layout in localStorage: the PanelLayout block at the end of this file (its header).
 //   me.drawn = [{ it, g }] in item order, me.bar, me.bg are for it.
@@ -120,6 +123,9 @@
       ".fp-ro .fp-c{pointer-events:none}.fp-step.fp-now .fp-ring{stroke:#ffb000;stroke-width:3}" +
       ".fp-off{opacity:.38;cursor:help}.fp-c.fp-hl .fp-focus,.fp-c.fp-lit .fp-focus{stroke:#e8a400;stroke-width:2.5}.fp-note{font-size:.75rem;color:var(--fp-ink2);margin:4px 2px 0}" +
       ".scmp-vw{display:inline-flex;border:1px solid #999;border-radius:5px;overflow:hidden;margin-left:.4rem}.scmp-vw .sp-opt{all:unset;cursor:pointer;padding:.1rem .45rem;font-size:.78rem}.scmp-vw .sp-opt.sp-on{background:#333;color:#fff}.scmp-face[hidden],.scmp-groups[hidden]{display:none}" +
+      ".fp-pre{position:relative}.fp-pre-pop{position:absolute;z-index:30;left:0;top:1.6rem;min-width:16rem;max-height:22rem;overflow:auto;background:var(--fp-bg);color:var(--fp-ink);border:1px solid var(--fp-line);border-radius:5px;padding:4px;box-shadow:0 4px 14px rgba(0,0,0,.25)}" +
+      ".fp-pre-pop[hidden]{display:none}.fp-pre-row{display:flex;gap:2px}.fp-pre-pop button{display:block;width:100%;text-align:left;margin:1px 0;white-space:pre}.fp-pre-row .fp-pre-x{width:auto;flex:none}" +
+      ".fp-pre-cur{font-weight:700}.fp-pre-act{font-style:italic}.fp-pre-empty{font-size:.72rem;color:var(--fp-ink2);padding:2px 4px}" +
       ".fp-hostbar{display:flex;align-items:center;gap:.3rem;font-size:.78rem;margin:.3rem 0 0}.fp-face[hidden]{display:none}";
     document.head.appendChild(st);
   }
@@ -189,6 +195,42 @@
     return H;
   };
 
+  // ---------- presets: a menu in every (writable) panel's bar, kept per layout in localStorage `fp-presets:<layout id>` ----------
+  // [{ name, v: { key: value } }] over every bound key the host knows; loading sets preset-choice keys (pre:) first. Built from
+  // buttons only (no <select> / <input>: host widgets treat any form control in their box as theirs). me.presets = { list(), save(name, i?),
+  // load(i), remove(i), defaults() } (panel-keys.js digits use slots 1-9).
+  function presetMenu(me, L, o, rng) {
+    var key = "fp-presets:" + L.id, cur = null;
+    function list() { try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; } }
+    function store(a) { try { localStorage.setItem(key, JSON.stringify(a)); } catch (e) {} }
+    function keys() { var seen = {}; return FP.bound(L).filter(function (k) { if (seen[k] || !rng(k)) return false; seen[k] = 1; return true; }); }
+    function snap() { var v = {}; keys().forEach(function (k) { v[k] = o.get(k); }); return v; }
+    function apply(v) { Object.keys(v).sort(function (a, b) { return /^pre:/.test(b) - /^pre:/.test(a); }).forEach(function (k) { if (rng(k) && o.get(k) !== v[k]) o.set(k, v[k]); });
+      if (L.init) Object.keys(L.init).forEach(function (k) { if (rng(k) && o.get(k) !== L.init[k]) o.set(k, L.init[k]); }); me.refresh(); if (o.commit) o.commit(); }
+    var P = me.presets = {
+      list: list,
+      save: function (name, i) { var a = list(), e = { name: name || "Preset " + (a.length + 1), v: snap() }; if (i != null && i < a.length) a[i] = e; else if (i != null) { while (a.length < i) a.push(null); a[i] = e; } else a.push(e); store(a); cur = e.name; draw(); return e; },
+      load: function (i) { var e = list()[i]; if (!e) return false; apply(e.v); cur = e.name; draw(); return true; },
+      remove: function (i) { var a = list(); a.splice(i, 1); store(a); draw(); },
+      defaults: function () { var v = {}; keys().forEach(function (k) { var r = rng(k); if (r && r[6] != null) v[k] = r[6]; }); apply(v); cur = null; draw(); } };
+    var wrap = h("span", "fp-pre"), btn = h("button", "fp-pre-b"), pop = h("div", "fp-pre-pop"); btn.type = "button"; pop.hidden = true;
+    btn.setAttribute("aria-haspopup", "true"); wrap.appendChild(btn); wrap.appendChild(pop); me.bar.appendChild(wrap);
+    function item(text, fn, cls) { var b = h("button", cls || null, text); b.type = "button"; b.onclick = function (e) { e.stopPropagation(); fn(); }; return b; }
+    function draw() { btn.textContent = "Presets: " + (cur || "—") + " ▾"; pop.innerHTML = "";
+      var a = list();
+      a.forEach(function (e, i) { if (!e) return; var row = h("div", "fp-pre-row");
+        row.appendChild(item((i < 9 ? (i + 1) + "  " : "    ") + e.name, function () { P.load(i); pop.hidden = true; }, "fp-pre-name" + (e.name === cur ? " fp-pre-cur" : "")));
+        row.appendChild(item("⟳", function () { if (confirm("Overwrite “" + e.name + "” with the panel as it is now?")) P.save(e.name, i); }, "fp-pre-x"));
+        row.appendChild(item("✕", function () { if (confirm("Delete the preset “" + e.name + "”?")) P.remove(i); }, "fp-pre-x"));
+        pop.appendChild(row); });
+      if (!a.filter(Boolean).length) pop.appendChild(h("div", "fp-pre-empty", "No presets yet."));
+      pop.appendChild(item("＋ Save as a new preset…", function () { var n = prompt("Name for this preset:", "Preset " + (a.length + 1)); if (n) { P.save(n.trim()); } }, "fp-pre-act"));
+      pop.appendChild(item("Back to the default settings", function () { P.defaults(); pop.hidden = true; }, "fp-pre-act"));
+      pop.appendChild(h("div", "fp-pre-empty", "Kept in this browser. ⟳ overwrite · ✕ delete. With panel keys: 1-9 load, Shift + 1-9 save.")); }
+    btn.onclick = function (e) { e.stopPropagation(); pop.hidden = !pop.hidden; if (!pop.hidden) draw(); };
+    document.addEventListener("click", function (e) { if (!wrap.contains(e.target)) pop.hidden = true; });
+    draw();
+  }
   // a helper script next to this one, loaded once; fn runs when its global exists
   FP.script = function (file, glob, fn) { if (window[glob]) return fn(); var s0 = document.querySelector('script[data-fp-src="' + file + '"]');
     if (!s0) { s0 = document.createElement("script"); s0.src = BASEURL + file; s0.dataset.fpSrc = file; document.head.appendChild(s0); }
@@ -374,6 +416,8 @@
     var ctl = {}; [].forEach.call(svg.querySelectorAll("[data-ctl]"), function (e) { ctl[e.dataset.ctl] = e; });
     me = { el: wrap, layout: L, refresh: refresh, cur: setCur, paint: paint, ctl: ctl, svg: svg, bar: bar, bg: bg, drawn: drawn, page: function (p) { if (p) { page = p; showPage(); } return page; } };
     mounted = mounted.filter(function (m) { return document.contains(m.el); }); mounted.push(me);
+    if (L.init && !o.readonly) Object.keys(L.init).forEach(function (k) { if (rng(k) && o.get(k) !== L.init[k]) o.set(k, L.init[k]); });
+    if (!o.readonly) presetMenu(me, L, o, rng);
     // size, and moving / resizing / hiding parts: PanelLayout, at the end of this file
     FP.script("panel-layout.js", "PanelLayout", function () { PanelLayout.attach(me, { id: L.id + (o.readonly ? ":ro" : "") }); });
     if (L.keys && !o.readonly) {   // computer-key control: apps/shared/lessons/panel-keys.js, loaded on first use
@@ -463,7 +507,7 @@
         if (u) vb = { x: u.x - 8, y: u.y - 8, w: u.x2 - u.x + 16, h: u.y2 - u.y + 16 }; }
       svg.setAttribute("viewBox", [vb.x, vb.y, vb.w, vb.h].map(function (v) { return +v.toFixed(2); }).join(" "));
       me.bg.setAttribute("x", vb.x); me.bg.setAttribute("y", vb.y); me.bg.setAttribute("width", vb.w); me.bg.setAttribute("height", vb.h);
-      svg.style.width = Math.round(E.size * 100) + "%"; svg.style.minWidth = Math.round(760 * E.size * Math.min(1, vb.w / L.w)) + "px";
+      svg.style.width = Math.round(E.size * 100) + "%"; svg.style.minWidth = Math.round((L.w > 900 ? 760 : 260) * E.size * Math.min(1, vb.w / L.w)) + "px";   // wide synth panels keep a floor (they scroll); narrow drawings (drums, cymbals) may shrink into a column
       sizeIn.value = Math.round(E.size * 100); sizeOut.textContent = Math.round(E.size * 100) + "%";
       if (editing) overlay(); if (!dragging) renderTools();
       (me.onLayout || []).forEach(function (f) { try { f(); } catch (e) {} });

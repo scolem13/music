@@ -26,7 +26,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
     // find the mounted panel object: FaithfulPanel keeps it on the face box
     const getLE = `(() => { const box = document.querySelector('.ocmp-panel:not(.ocmp-b)'); const Hh = box._fpH; return Hh && Hh.m && Hh.m.layoutEdits; })()`;
     const has = await b.eval(`(() => { const box = document.querySelector('.ocmp-panel:not(.ocmp-b)'); const m = box._fpH && box._fpH.m; return { le: !!(m && m.layoutEdits), size: !!m.el.querySelector('.pl-size button'), btn: [...m.el.querySelectorAll('.fp-bar button')].some(x => /Edit layout/.test(x.textContent)), vb: m.svg.getAttribute('viewBox') }; })()`);
-    check("Size slider and Edit layout on the panel, drawing box unchanged with no edits", has.le && has.size && has.btn && has.vb === "0 0 " + (await b.eval(`FaithfulPanel.LAYOUTS['organ-b3'].w`)) + " 368", JSON.stringify(has));
+    check("Size slider and Edit layout on the panel, drawing box unchanged with no edits", has.le && has.size && has.btn && has.vb === "0 0 " + (await b.eval(`FaithfulPanel.LAYOUTS['organ-b3'].w`)) + " " + (await b.eval(`FaithfulPanel.LAYOUTS["organ-b3"].h`)), JSON.stringify(has));
     const M = `document.querySelector('.ocmp-panel:not(.ocmp-b)')._fpH.m`;
     const w0 = await b.eval(`${M}.svg.getBoundingClientRect().width`);
     await b.eval(`${M}.setSize(1.5)`); await b.sleep(100);
@@ -34,7 +34,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
     check("Size 150 % makes the drawing 1.5 times as wide (scrolls)", Math.abs(w1 / w0 - 1.5) < 0.05, w0.toFixed(0) + " -> " + w1.toFixed(0));
     await b.eval(`${M}.setSize(1)`);
     // hide the VIBRATO section: its parts go, the A♯ drawbars move left by its width + gap, the drawing narrows
-    const before = await b.eval(`(() => { const m = ${M}; const p = m.layoutEdits.parts.find(q => q.it.t === 'section' && /UPPER · A/.test(q.it.label)); return { x: p.g.getBoundingClientRect().x, vb: m.svg.getAttribute('viewBox') }; })()`);
+    const before = await b.eval(`(() => { const m = ${M}; const p = m.layoutEdits.parts.find(q => q.it.t === 'section' && q.it.label === "UPPER"); return { x: p.g.getBoundingClientRect().x, vb: m.svg.getAttribute('viewBox') }; })()`);
     await b.eval(`(() => { const m = ${M}; const v = m.layoutEdits.parts.find(q => q.it.t === 'section' && q.it.label === 'VIBRATO'); m.layoutEdits.set(v.id, { hide: true }); })()`); await b.sleep(80);
     const after = await b.eval(`(() => { const m = ${M}; const p = m.layoutEdits.parts.find(q => q.it.t === 'section' && /LESLIE/.test(q.it.label)), sw = m.layoutEdits.parts.find(q => q.it.k === 'vibU');
       return { tr: p.g.getAttribute('transform'), vb: m.svg.getAttribute('viewBox'), swHidden: sw.g.hasAttribute('data-pl-hide') && getComputedStyle(sw.g).display === 'none', kh: m.layoutEdits.hidden('vibU') }; })()`);
@@ -70,9 +70,9 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
     // reload: edits are kept
     await b.goto(`http://127.0.0.1:${PORT}/lessons/organ-compare.html`); await b.sleep(800); await b.eval(`OrganCompare.widgets[0].pick('b3','pipe')`); await b.sleep(1500);
     const kept = await b.eval(`(() => { const m = ${M}; const e = m.layoutEdits.edits(); return { n: Object.keys(e.it).length, vb: m.svg.getAttribute('viewBox') }; })()`);
-    check("edits kept across a reload", kept.n >= 3 && true && kept.vb !== "0 0 " + (await b.eval(`FaithfulPanel.LAYOUTS['organ-b3'].w`)) + " 368", JSON.stringify(kept));
+    check("edits kept across a reload", kept.n >= 3 && true && kept.vb !== "0 0 " + (await b.eval(`FaithfulPanel.LAYOUTS['organ-b3'].w`)) + " " + (await b.eval(`FaithfulPanel.LAYOUTS["organ-b3"].h`)), JSON.stringify(kept));
     await b.eval(`${M}.layoutEdits.reset()`);
-    check("reset puts the drawing back", (await b.eval(`${M}.svg.getAttribute('viewBox')`)) === "0 0 " + (await b.eval(`FaithfulPanel.LAYOUTS['organ-b3'].w`)) + " 368");
+    check("reset puts the drawing back", (await b.eval(`${M}.svg.getAttribute('viewBox')`)) === "0 0 " + (await b.eval(`FaithfulPanel.LAYOUTS['organ-b3'].w`)) + " " + (await b.eval(`FaithfulPanel.LAYOUTS["organ-b3"].h`)));
     const errs = b.errors.filter(e => !/supabase/i.test(e)); check("no page errors (the site-wide supabase one aside)", errs.length === 0, errs.slice(0, 3).join(" | "));
   }
   await b.close(); srv.close(); console.log(fails ? fails + " failed" : "all ok"); process.exit(fails ? 1 : 0);
