@@ -202,7 +202,8 @@
   function presetMenu(me, L, o, rng) {
     var key = "fp-presets:" + L.id, cur = null;
     function list() { try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { return []; } }
-    function store(a) { try { localStorage.setItem(key, JSON.stringify(a)); } catch (e) {} }
+    function store(a) { try { localStorage.setItem(key, JSON.stringify(a));   // + who it is and where it lives, for tools/instrument-presets.qmd
+      localStorage.setItem("fp-presets-meta:" + L.id, JSON.stringify({ name: L.name, page: location.pathname, t: Date.now() })); } catch (e) {} }
     function keys() { var seen = {}; return FP.bound(L).filter(function (k) { if (seen[k] || !rng(k)) return false; seen[k] = 1; return true; }); }
     function snap() { var v = {}; keys().forEach(function (k) { v[k] = o.get(k); }); return v; }
     function apply(v) { Object.keys(v).sort(function (a, b) { return /^pre:/.test(b) - /^pre:/.test(a); }).forEach(function (k) { if (rng(k) && o.get(k) !== v[k]) o.set(k, v[k]); });
