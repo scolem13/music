@@ -55,6 +55,8 @@
 //   { t: "shape", d: SVG path, fill / stroke: a colour token (bg body head ink ink2 line track screen wave) or a colour, sw, op, title }  decoration only
 // PEDALS (2026-11-26): layouts panels/pd-<id>.js bound to Pedals.adapter (apps/shared/lessons/pedals.js); extra item
 //   { t: "led", k, x, y, r, label, color }  an LED lit while get(k) is true (the footswitch is a { t: "key", k: "on" } with no v)
+// KEYS (2026-11-27): a layout may carry `keys` (section leaders, positions, hold keys): the panel is then also driven from the
+//   computer keys with one hand while the other plays MIDI (apps/shared/lessons/panel-keys.js, its header; loaded on first use).
 // API: FaithfulPanel.mount(host, { id, profile, get(key), set(key, value) }) -> { refresh(key?), el, layout, ctl: {key: element} }
 //   FaithfulPanel.load(id) -> Promise(layout)   .has(id)   .register(layout)   .check(layout, profile) -> [missing keys]
 //   .theme() -> "light"|"dark"   .setTheme(t)   .view() / .setView("panel"|"simple") (localStorage `synth-face-view`)
@@ -364,6 +366,11 @@
     var ctl = {}; [].forEach.call(svg.querySelectorAll("[data-ctl]"), function (e) { ctl[e.dataset.ctl] = e; });
     me = { el: wrap, layout: L, refresh: refresh, cur: setCur, paint: paint, ctl: ctl, svg: svg, page: function (p) { if (p) { page = p; showPage(); } return page; } };
     mounted = mounted.filter(function (m) { return document.contains(m.el); }); mounted.push(me);
+    if (L.keys && !o.readonly) {   // computer-key control: apps/shared/lessons/panel-keys.js, loaded on first use
+      var pk = function () { me.keys = PanelKeys.attach(me, { id: L.id, get: o.get, set: o.set, range: rng, layout: L }); };
+      if (window.PanelKeys) pk(); else { var s0 = document.querySelector('script[data-panel-keys]');
+        if (!s0) { s0 = document.createElement("script"); s0.src = BASEURL + "panel-keys.js"; s0.dataset.panelKeys = "1"; document.head.appendChild(s0); }
+        s0.addEventListener("load", pk); } }
     return me;
   };
 })();

@@ -39,5 +39,16 @@
     colors: { light: { body: "#efe7da" }, dark: { body: "#241d17" } },
     src: ["Wikipedia, 'Hammond organ' (preset keys, drawbar sets)", "Hammond XK-5 manual on B-3 percussion"],
     approx: "Arrangement after descriptions of the B-3; positions and the switch blocks are this page's own (no measured drawing). Drawbars: lower handle = pulled out = louder. Leslie switch lives on a half-moon or pedal in real rigs.",
+    // computer-key control (panel-keys.js): drawbars of the set the manual's preset key picks (A♯ or B; B when a factory preset is down),
+    // then that manual's preset choice as the 10th position
+    keys: { groups: [
+      { k: "u", name: "Upper drawbars", ctl: function (g) { var st = g("pre:upre") === "A#" ? "uA" : "uB"; return dbs(st).concat("pre:upre"); } },
+      { k: "l", name: "Lower drawbars", ctl: function (g) { var st = g("pre:lpre") === "A#" ? "lA" : "lB"; return dbs(st).concat("pre:lpre"); } },
+      { k: "b", name: "Bass pedal drawbars", ctl: ["inv:p.0", "inv:p.1"] },
+      { k: "p", name: "Percussion", ctl: ["perc", "percVol", "percDec", "percH"] },
+      { k: "v", name: "Vibrato / chorus", ctl: ["vib", "vibU", "vibL"] },
+      { k: "s", name: "Speaker (Leslie, amp, swell)", ctl: ["leslie", "drive", "click", "swell"] } ],
+      hold: [{ code: "Space", key: "leslie", on: "fast", off: "slow", name: "held = Leslie fast, let go = back · Shift + Space = latch chorale / tremolo" }] },
     items: I });
+  function dbs(st) { var a = []; for (var i = 0; i < 9; i++) a.push("inv:" + st + "." + i); return a; }
 })();
