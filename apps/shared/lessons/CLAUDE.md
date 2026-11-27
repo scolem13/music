@@ -158,8 +158,9 @@
 - Electric pianos (2026-11-26): `apps/shared/lessons/epiano.js` (global EPiano; header = models, controls, API): one physical / modal
   engine, profiles rhodes (Mark I Stage 73), suitcase, wurli (200A), clav (D6), cp70, pianet (N). NOTES START FROM SAMPLES by default (2026-11-27,
   `EP.SAMPLED`, "Sound: samples / model" button): the band's MusyngKite soundfont (electric_piano_1 for rhodes / suitcase / wurli / pianet,
-  clavinet, electric_grand_piano for cp70), shaped by each instrument's inside controls in `EP.renderSampled` (header "SAMPLED"; wurli and pianet
-  are shaped tine samples, no recordings of them); the model is the fallback; notes rendered once per
+  electric_grand_piano for cp70), shaped by each instrument's inside controls in `EP.renderSampled` (header "SAMPLED"; pianet = shaped tine
+  samples). wurli and clav play their OWN multisamples (`epiano-samples/<set>/manifest.json` + m4a, built by `python3 scripts/epiano-samples.py`):
+  Greg Sullivan's Wurlitzer EP200 (CC-BY 3.0, 4 layers) and Stevie Clavinet (licence UNKNOWN, owner's risk, 3 layers); the model is the fallback; notes rendered once per
   key / velocity / settings into AudioBuffers (`EPiano.render`, pure, runs in node), then drive / EQ / speaker / tremolo (Suitcase:
   stereo pan) live; `EPiano.translate(st, from, to)` exact / approx / lost. `<div class="epc" data-model data-to data-compact>`; faithful
   panels `panels/ep-<id>.js` through `FaithfulPanel.attachFace` (positions guessed, legends beyond Wikipedia unverified, no logos).

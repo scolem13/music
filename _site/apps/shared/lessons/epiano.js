@@ -255,7 +255,14 @@
   // Velocity: one sample layer, so touch = level + a darker low-pass when soft (as BandSounds' tone) + drive where the instrument barks.
   // The amounts are this page's; nobody has compared them with the real instruments. EP.SAMPLED = false goes back to the model.
   EP.SAMPLED = true; EP.SF = "https://cdn.jsdelivr.net/gh/paulrosen/midi-js-soundfonts/MusyngKite/";
-  EP.SAMPLE_SET = { rhodes: "electric_piano_1", suitcase: "electric_piano_1", wurli: "electric_piano_1", pianet: "electric_piano_1", clav: "clavinet", cp70: "electric_grand_piano" };
+  EP.SAMPLE_SET = { rhodes: "electric_piano_1", suitcase: "electric_piano_1", wurli: "own:wurli", pianet: "electric_piano_1", clav: "own:clav", cp70: "electric_grand_piano" };
+  // "own:<set>" = a multisampled recording of that instrument (apps/shared/lessons/epiano-samples/<set>/manifest.json, built by
+  // scripts/epiano-samples.py from the set's SFZ: zones with key ranges, velocity layers, tuning and level fixes):
+  //   wurli  Greg Sullivan's Wurlitzer EP200 (1999; SFZ by kinwie), CC-BY 3.0, 4 velocity layers. An EP200, not the 200A.
+  //   clav   "Stevie Clavinet" (jlearman; Clavinet D6 recordings via Lithalean / Zynthian), 3 velocity layers. LICENCE UNKNOWN:
+  //          served at the site owner's choice (2026-11-27).
+  // The soundfont tine samples are the fallback for both while these load or if they fail.
+  EP.OWN_BASE = "/apps/shared/lessons/epiano-samples/";
   var SNOTE = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"], SLO = 22, SHI = 106, SSTEP = 3;
   EP.sampleNotes = function () { var o = []; for (var m = SLO; m <= SHI; m += SSTEP) o.push(m); return o; };
   EP.sampleName = function (m) { return SNOTE[m % 12] + (Math.floor(m / 12) - 1); };
@@ -268,28 +275,43 @@
     for (var i = 0; i < y.length; i++) { var x = y[i], o = b0 * x + b1 * x1 + b2 * x2 - a1 * y1 - a2 * y2; x2 = x1; x1 = x; y2 = y1; y1 = o; y[i] = o; } }
   function nearest(set, m) { var best = null; for (var k in set) { if (k === "sr") continue; if (best == null || Math.abs(k - m) < Math.abs(best - m)) best = +k; } return best; }
   // pure: render one note from samples (null if the set is not loaded). st values on the panel's 0..10 scales.
-  EP.renderSampled = function (id, st, m, vel, sr) { var set = EP.SAMPLES[EP.SAMPLE_SET[id]]; if (!set) return null; var k = nearest(set, m); if (k == null) return null;
-    var x = set[k], ratio = Math.pow(2, (m - k) / 12) * set.sr / sr, q = function (key, d) { var v = st[key]; return (v == null ? d : +v) / 10; };
+  function zoneFor(set, m, vel) { var v = Math.round(vel * 127), best = null, bd = 1e9;
+    set.zones.forEach(function (z) { if (!z.data) return; var d = (m < z.lo ? z.lo - m : m > z.hi ? m - z.hi : 0) * 200 + (v < z.vlo ? z.vlo - v : v > z.vhi ? v - z.vhi : 0); if (d < bd) { bd = d; best = z; } }); return best; }
+  EP.renderSampled = function (id, st, m, vel, sr) { var name = EP.SAMPLE_SET[id], set = EP.SAMPLES[name], own = false, x, ratio, zg = 1;
+    if (!set && name.indexOf("own:") === 0) { set = EP.SAMPLES.electric_piano_1; }   // fallback while the recording loads
+    else if (set && set.zones) own = true;
+    if (!set) return null;
+    if (own) { var z = zoneFor(set, m, vel); if (!z) return null; x = z.data; ratio = Math.pow(2, (m - z.key + z.tune / 100) / 12) * set.sr / sr; zg = Math.pow(10, z.vol / 20) * 1.8; }
+    else { var k = nearest(set, m); if (k == null) return null; x = set[k]; ratio = Math.pow(2, (m - k) / 12) * set.sr / sr; }
+    var q = function (key, d) { var v = st[key]; return (v == null ? d : +v) / 10; };
     var sus = id === "pianet" ? 0.35 : id === "clav" ? 1 - 0.75 * q("mute", 0) : id === "rhodes" || id === "suitcase" ? 0.6 + 0.8 * q("tbar", 6) : 1,
       dur = Math.min(x.length / ratio, sr * (id === "pianet" ? 1.6 : 7) * sus), n = Math.max(1, Math.floor(dur)), y = new Float32Array(n);
     for (var i = 0; i < n; i++) { var p = i * ratio, j = p | 0, f = p - j; y[i] = j + 1 < x.length ? x[j] * (1 - f) + x[j + 1] * f : 0; }
     if (id === "cp70" && q("detune", 5) > 0.02) { var r2 = ratio * Math.pow(2, (2 + 6 * q("detune", 5)) / 1200); for (var u = 0; u < n; u++) { var p2 = u * r2, j2 = p2 | 0; if (j2 + 1 < x.length) y[u] = 0.6 * y[u] + 0.4 * (x[j2] + (p2 - j2) * (x[j2 + 1] - x[j2])); } }
-    var hard = q("hard", 5), bright = 900 + 9000 * Math.pow(vel, 1.5) * (0.5 + hard);
+    var hard = q("hard", 5), bright = own ? 4000 + 14000 * hard : 900 + 9000 * Math.pow(vel, 1.5) * (0.5 + hard);
     biq(y, sr, "lp", bright, 0, 0.6);
     var drv = 0;
     if (id === "rhodes" || id === "suitcase") drv = 3 * q("voice", 4) * vel * vel;
-    if (id === "wurli") { biq(y, sr, "hp", 130, 0, 0.7); biq(y, sr, "pk", 950, 4 + 6 * q("gap", 5), 1.1); drv = (1 + 4 * q("gap", 5)) * vel; }
+    if (id === "wurli" && own) drv = 1.2 * q("gap", 5) * vel;   // the recording already barks; gap adds a little more
+    else if (id === "wurli") { biq(y, sr, "hp", 130, 0, 0.7); biq(y, sr, "pk", 950, 4 + 6 * q("gap", 5), 1.1); drv = (1 + 4 * q("gap", 5)) * vel; }
     if (id === "pianet") { biq(y, sr, "hp", 220, 0, 0.7); biq(y, sr, "pk", 1400, 3 + 5 * q("gap", 5), 1); drv = 1.5 * vel; }
     if (id === "clav") { if (st.brill) biq(y, sr, "hp", 900, 0, 0.7); if (st.treb) biq(y, sr, "hp", 300, 0, 0.7); if (st.med) biq(y, sr, "lp", 3500, 0, 0.7); if (st.soft) biq(y, sr, "lp", 1500, 0, 0.7);
       var tilt = { AC: 4, BC: -2, AD: 2, BD: -6 }[(st.pa || "A") + (st.pc || "C")]; biq(y, sr, "pk", 2500, tilt, 0.5); if (st.pa === "B" && st.pc === "D") biq(y, sr, "hp", 600, 0, 0.7); }
     if (id === "cp70") biq(y, sr, "pk", 2200, 8 * q("piezo", 5) - 2, 0.8);
-    var gain = 0.25 + 0.75 * vel;
+    var gain = (own ? 0.7 : 0.25 + 0.75 * vel) * zg;
     if (drv > 0.05) { var g = 1 + drv, tg = Math.tanh(g); for (var d = 0; d < n; d++) y[d] = Math.tanh(g * y[d]) / tg; }
     var fo = Math.min(n - 1, Math.round(sr * 0.08)); for (var v = 0; v < n; v++) { y[v] *= gain; if (v >= n - fo) y[v] *= (n - 1 - v) / fo; }
     return y; };
   // browser: fetch + decode one sample set (cached); resolves true / false
   var setLoads = {};
+  function decodeMono(ctx, ab) { return new Promise(function (res, rej) { ctx.decodeAudioData(ab, res, rej); }).then(function (b) { var L = b.getChannelData(0), R = b.numberOfChannels > 1 ? b.getChannelData(1) : L, o = new Float32Array(L.length); for (var i = 0; i < L.length; i++) o[i] = (L[i] + R[i]) / 2; return o; }); }
+  function loadOwn(name, ctx) { var dir = EP.OWN_BASE + name.slice(4) + "/";
+    return fetch(dir + "manifest.json").then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (man) { var cache = {};
+      return Promise.all(man.zones.map(function (z) { if (!cache[z.f]) cache[z.f] = fetch(dir + z.f).then(function (r) { if (!r.ok) throw new Error(r.status); return r.arrayBuffer(); }).then(function (ab) { return decodeMono(ctx, ab); });
+        return cache[z.f].then(function (d) { z.data = d; }, function () {}); })).then(function () { var n = man.zones.filter(function (z) { return z.data; }).length; if (n < man.zones.length * 0.8) return false; EP.SAMPLES[name] = { sr: ctx.sampleRate, zones: man.zones, name: man.name }; return true; }); }); }
   EP.loadSamples = function (id, ctx) { var name = EP.SAMPLE_SET[id]; if (!name) return Promise.resolve(false); if (setLoads[name]) return setLoads[name];
+    if (name.indexOf("own:") === 0) { if (!G.fetch || !ctx) return Promise.resolve(false); EP.loadSamples("rhodes", ctx);
+      setLoads[name] = loadOwn(name, ctx).then(function (ok) { return ok; }, function () { return false; }); return setLoads[name]; }
     if (!G.fetch || !ctx) return Promise.resolve(false); var set = { sr: ctx.sampleRate };
     setLoads[name] = Promise.all(EP.sampleNotes().map(function (m) { return fetch(EP.SF + name + "-mp3/" + EP.sampleName(m) + ".mp3").then(function (r) { if (!r.ok) throw new Error(r.status); return r.arrayBuffer(); })
         .then(function (ab) { return new Promise(function (res, rej) { ctx.decodeAudioData(ab, res, rej); }); }).then(function (b) { var L = b.getChannelData(0), R = b.numberOfChannels > 1 ? b.getChannelData(1) : L, mono = new Float32Array(L.length); for (var i = 0; i < L.length; i++) mono[i] = (L[i] + R[i]) / 2; set[m] = mono; }, function () {}); }))
@@ -384,7 +406,7 @@
     };
     function buf(m, vel) {
       var vb = Math.round(clamp(vel, 0.05, 1) * 12), rk = RENDER_KEYS[W.id].map(function (k) { return W.st[k]; }).join(","), key = W.id + "|" + m + "|" + vb + "|" + rk;
-      if (EP.SAMPLED && EP.SAMPLES[EP.SAMPLE_SET[W.id]]) key = "S|" + key;
+      var sn = EP.SAMPLE_SET[W.id]; if (EP.SAMPLED) key = (EP.SAMPLES[sn] ? "S|" : sn.indexOf("own:") === 0 && EP.SAMPLES.electric_piano_1 ? "F|" : "") + key;
       if (!W.cache[key]) { var y = (EP.SAMPLED && EP.renderSampled(W.id, W.st, m, vb / 12, W.ctx.sampleRate)) || EP.render(W.id, W.st, m, vb / 12, W.ctx.sampleRate), b = W.ctx.createBuffer(1, y.length, W.ctx.sampleRate); b.getChannelData(0).set(y); W.cache[key] = b;
         var ks = Object.keys(W.cache); if (ks.length > 400) delete W.cache[ks[0]]; }
       return W.cache[key];

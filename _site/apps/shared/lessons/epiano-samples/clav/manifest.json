@@ -1,0 +1,907 @@
+{
+"name": "Stevie Clavinet (jlearman; Lithalean / Zynthian Clavinet D6 recordings)",
+"licence": "unknown (owner accepted the risk)",
+"source": "https://github.com/jlearman/stevie-clavinet",
+"zones": [
+{
+"key": 30,
+"lo": 0,
+"hi": 30,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_f_0.m4a"
+},
+{
+"key": 32,
+"lo": 31,
+"hi": 32,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_g_0.m4a"
+},
+{
+"key": 34,
+"lo": 33,
+"hi": 34,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_a_0.m4a"
+},
+{
+"key": 36,
+"lo": 35,
+"hi": 36,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_c1.m4a"
+},
+{
+"key": 38,
+"lo": 37,
+"hi": 38,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_d1.m4a"
+},
+{
+"key": 40,
+"lo": 39,
+"hi": 40,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_e1.m4a"
+},
+{
+"key": 42,
+"lo": 41,
+"hi": 42,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_f_1.m4a"
+},
+{
+"key": 44,
+"lo": 43,
+"hi": 44,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_g_1.m4a"
+},
+{
+"key": 46,
+"lo": 45,
+"hi": 46,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_a_1.m4a"
+},
+{
+"key": 48,
+"lo": 47,
+"hi": 48,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_c2.m4a"
+},
+{
+"key": 50,
+"lo": 49,
+"hi": 50,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_d2.m4a"
+},
+{
+"key": 52,
+"lo": 51,
+"hi": 52,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_e2.m4a"
+},
+{
+"key": 54,
+"lo": 53,
+"hi": 54,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_f_2.m4a"
+},
+{
+"key": 56,
+"lo": 55,
+"hi": 56,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_g_2.m4a"
+},
+{
+"key": 58,
+"lo": 57,
+"hi": 58,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_a_2.m4a"
+},
+{
+"key": 60,
+"lo": 59,
+"hi": 60,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_c3.m4a"
+},
+{
+"key": 62,
+"lo": 61,
+"hi": 62,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_d3.m4a"
+},
+{
+"key": 64,
+"lo": 63,
+"hi": 64,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_e3.m4a"
+},
+{
+"key": 66,
+"lo": 65,
+"hi": 66,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_f_3.m4a"
+},
+{
+"key": 68,
+"lo": 67,
+"hi": 68,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_g_3.m4a"
+},
+{
+"key": 70,
+"lo": 69,
+"hi": 70,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_a_3.m4a"
+},
+{
+"key": 72,
+"lo": 71,
+"hi": 72,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_c4.m4a"
+},
+{
+"key": 74,
+"lo": 73,
+"hi": 74,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_d4.m4a"
+},
+{
+"key": 76,
+"lo": 75,
+"hi": 76,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_e4.m4a"
+},
+{
+"key": 78,
+"lo": 77,
+"hi": 78,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_f_4.m4a"
+},
+{
+"key": 80,
+"lo": 79,
+"hi": 80,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_g_4.m4a"
+},
+{
+"key": 82,
+"lo": 81,
+"hi": 82,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_a_4.m4a"
+},
+{
+"key": 84,
+"lo": 83,
+"hi": 84,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_c5.m4a"
+},
+{
+"key": 86,
+"lo": 85,
+"hi": 86,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_d5.m4a"
+},
+{
+"key": 88,
+"lo": 87,
+"hi": 127,
+"vlo": 0,
+"vhi": 54,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet54_e5.m4a"
+},
+{
+"key": 30,
+"lo": 0,
+"hi": 30,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_f_0.m4a"
+},
+{
+"key": 32,
+"lo": 31,
+"hi": 32,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_g_0.m4a"
+},
+{
+"key": 34,
+"lo": 33,
+"hi": 34,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_a_0.m4a"
+},
+{
+"key": 36,
+"lo": 35,
+"hi": 36,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_c1.m4a"
+},
+{
+"key": 38,
+"lo": 37,
+"hi": 38,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_d1.m4a"
+},
+{
+"key": 40,
+"lo": 39,
+"hi": 40,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_e1.m4a"
+},
+{
+"key": 42,
+"lo": 41,
+"hi": 42,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_f_1.m4a"
+},
+{
+"key": 44,
+"lo": 43,
+"hi": 44,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_g_1.m4a"
+},
+{
+"key": 46,
+"lo": 45,
+"hi": 46,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_a_1.m4a"
+},
+{
+"key": 48,
+"lo": 47,
+"hi": 48,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_c2.m4a"
+},
+{
+"key": 50,
+"lo": 49,
+"hi": 50,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_d2.m4a"
+},
+{
+"key": 52,
+"lo": 51,
+"hi": 52,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_e2.m4a"
+},
+{
+"key": 54,
+"lo": 53,
+"hi": 54,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_f_2.m4a"
+},
+{
+"key": 56,
+"lo": 55,
+"hi": 56,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_g_2.m4a"
+},
+{
+"key": 58,
+"lo": 57,
+"hi": 58,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_a_2.m4a"
+},
+{
+"key": 60,
+"lo": 59,
+"hi": 60,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_c3.m4a"
+},
+{
+"key": 62,
+"lo": 61,
+"hi": 62,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_d3.m4a"
+},
+{
+"key": 64,
+"lo": 63,
+"hi": 64,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_e3.m4a"
+},
+{
+"key": 66,
+"lo": 65,
+"hi": 66,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_f_3.m4a"
+},
+{
+"key": 68,
+"lo": 67,
+"hi": 68,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_g_3.m4a"
+},
+{
+"key": 70,
+"lo": 69,
+"hi": 70,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_a_3.m4a"
+},
+{
+"key": 72,
+"lo": 71,
+"hi": 72,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_c4.m4a"
+},
+{
+"key": 74,
+"lo": 73,
+"hi": 74,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_d4.m4a"
+},
+{
+"key": 76,
+"lo": 75,
+"hi": 76,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_e4.m4a"
+},
+{
+"key": 78,
+"lo": 77,
+"hi": 78,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_f_4.m4a"
+},
+{
+"key": 80,
+"lo": 79,
+"hi": 80,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_g_4.m4a"
+},
+{
+"key": 82,
+"lo": 81,
+"hi": 82,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_a_4.m4a"
+},
+{
+"key": 84,
+"lo": 83,
+"hi": 84,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_c5.m4a"
+},
+{
+"key": 86,
+"lo": 85,
+"hi": 86,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_d5.m4a"
+},
+{
+"key": 88,
+"lo": 87,
+"hi": 127,
+"vlo": 55,
+"vhi": 83,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet83_e5.m4a"
+},
+{
+"key": 30,
+"lo": 0,
+"hi": 30,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_f_0.m4a"
+},
+{
+"key": 32,
+"lo": 31,
+"hi": 32,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_g_0.m4a"
+},
+{
+"key": 34,
+"lo": 33,
+"hi": 34,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_a_0.m4a"
+},
+{
+"key": 36,
+"lo": 35,
+"hi": 36,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_c1.m4a"
+},
+{
+"key": 38,
+"lo": 37,
+"hi": 38,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_d1.m4a"
+},
+{
+"key": 40,
+"lo": 39,
+"hi": 40,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_e1.m4a"
+},
+{
+"key": 42,
+"lo": 41,
+"hi": 42,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_f_1.m4a"
+},
+{
+"key": 44,
+"lo": 43,
+"hi": 44,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_g_1.m4a"
+},
+{
+"key": 46,
+"lo": 45,
+"hi": 46,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_a_1.m4a"
+},
+{
+"key": 48,
+"lo": 47,
+"hi": 48,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_c2.m4a"
+},
+{
+"key": 50,
+"lo": 49,
+"hi": 50,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_d2.m4a"
+},
+{
+"key": 52,
+"lo": 51,
+"hi": 52,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_e2.m4a"
+},
+{
+"key": 54,
+"lo": 53,
+"hi": 54,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_f_2.m4a"
+},
+{
+"key": 56,
+"lo": 55,
+"hi": 56,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_g_2.m4a"
+},
+{
+"key": 58,
+"lo": 57,
+"hi": 58,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_a_2.m4a"
+},
+{
+"key": 60,
+"lo": 59,
+"hi": 60,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_c3.m4a"
+},
+{
+"key": 62,
+"lo": 61,
+"hi": 62,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_d3.m4a"
+},
+{
+"key": 64,
+"lo": 63,
+"hi": 64,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_e3.m4a"
+},
+{
+"key": 66,
+"lo": 65,
+"hi": 66,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_f_3.m4a"
+},
+{
+"key": 68,
+"lo": 67,
+"hi": 68,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_g_3.m4a"
+},
+{
+"key": 70,
+"lo": 69,
+"hi": 70,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_a_3.m4a"
+},
+{
+"key": 72,
+"lo": 71,
+"hi": 72,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_c4.m4a"
+},
+{
+"key": 74,
+"lo": 73,
+"hi": 74,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_d4.m4a"
+},
+{
+"key": 76,
+"lo": 75,
+"hi": 76,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_e4.m4a"
+},
+{
+"key": 78,
+"lo": 77,
+"hi": 78,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_f_4.m4a"
+},
+{
+"key": 80,
+"lo": 79,
+"hi": 80,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_g_4.m4a"
+},
+{
+"key": 82,
+"lo": 81,
+"hi": 82,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_a_4.m4a"
+},
+{
+"key": 84,
+"lo": 83,
+"hi": 84,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_c5.m4a"
+},
+{
+"key": 86,
+"lo": 85,
+"hi": 86,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_d5.m4a"
+},
+{
+"key": 88,
+"lo": 87,
+"hi": 127,
+"vlo": 84,
+"vhi": 127,
+"tune": 0,
+"vol": 0,
+"f": "Clavinet127_e5.m4a"
+}
+]
+}
