@@ -5,7 +5,7 @@ FaithfulPanel.register({ id: "ep-rhodes", name: "Rhodes Mark I Stage 73", w: 140
   src: ["Layout from memory of photos of the instrument; not measured."], approx: "Knob places and legends guessed (unverified). Only the two name-rail knobs are on the real Stage; the amp is separate.",
   items: [
     { t: "section", x: 10, y: 10, w: 1380, h: 80, label: "", head: 0 },
-    { t: "knob", k: "vol", x: 70, y: 50, r: 22, label: "VOLUME", cap: "#202020" },
-    { t: "knob", k: "bass", x: 150, y: 50, r: 22, label: "BASS BOOST", cap: "#202020" },
+    { t: "knob", k: "vol", x: 70, y: 40, r: 19, label: "VOLUME", cap: "#202020" },
+    { t: "knob", k: "bass", x: 150, y: 40, r: 19, label: "BASS BOOST", cap: "#202020" },
     { t: "label", x: 700, y: 56, text: "MARK I  STAGE  73", size: 14, dim: true },
     { t: "keys", x: 10, y: 100, w: 1380, h: 150, n: 43 } ] });

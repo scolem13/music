@@ -273,7 +273,7 @@
 - Panel keys (2026-11-27): `apps/shared/lessons/panel-keys.js` (global PanelKeys; keys and layout format in its header) drives any
   FaithfulPanel whose layout has `keys` from ONE hand of the computer keyboard while the other plays MIDI: modes Piano (default, the
   page's QWERTY piano) / Panel · left hand (`) / right hand (\), site-wide in localStorage `panel-keys-hand`, event `panel-keys-mode`
-  for the band / DAW / notation to opt in later; section leaders by name, positions on the free hand's home + top rows, z x / , .
+  for the band / DAW / notation to opt in later; section leaders by name, positions on the free hand around the nudge keys, j k (left mirrored f d)
   nudge, digits set (drawbars 0-8), Shift+digit snapshots, Backspace undo, hold keys. First layout: organ-b3. Test
   `node tests/lessons/panel-keys.cdp.js` (`NEG=1` must fail).
 

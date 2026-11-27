@@ -38,14 +38,14 @@ const codeOf = k => CODE[k] || (/^\d$/.test(k) ? "Digit" + k : "Key" + k.toUpper
     check("left: u a 3 sets upper B drawbar 16′ to 3", (await st("uB.0")) === 3, await st("uB.0"));
     await press(["s", "8"]);
     check("left: s (position 2) 8 sets 5⅓′ to 8", (await st("uB.1")) === 8, await st("uB.1"));
-    await press(["x"]); const a1 = await st("uB.1"); await press(["z"]); await press(["z"]);
-    check("z / x nudge down / up (clamped at 8)", a1 === 8 && (await st("uB.1")) === 6, a1 + " -> " + (await st("uB.1")));
+    await press(["d"]); const a1 = await st("uB.1"); await press(["f"]); await press(["f"]);
+    check("left d / f (mirrored k / j) nudge down / up (clamped at 8)", a1 === 8 && (await st("uB.1")) === 6, a1 + " -> " + (await st("uB.1")));
     await press(["Backspace"]);
     check("Backspace undoes the nudges", (await st("uB.1")) === 8, await st("uB.1"));
     const lay = await b.eval(`(() => { const L = document.querySelector('.ocmp-panel:not(.ocmp-b) .pk-layer'); return L ? { lead: L.querySelectorAll('.pk-lead').length, pos: L.querySelectorAll('.pk-pos').length, ring: L.querySelectorAll('.pk-ring').length, strip: document.querySelector('.pk-strip').textContent } : null; })()`);
     check("letters on the panel: 6 leaders, positions, one ring; the strip names the control", lay && lay.lead === 6 && lay.pos >= 30 && lay.ring === 1 && /Upper drawbars/.test(lay.strip), JSON.stringify(lay));
-    await press(["Escape", "Escape", "p", "s", "x"]);
-    check("Esc Esc then p s x: percussion volume steps on", (await st("percVol")) !== undefined && (await b.eval(`PanelKeys.state().grab`)) === "percVol", await st("percVol"));
+    await press(["Escape", "Escape", "p", "s", "d"]);
+    check("Esc Esc then p s d: percussion volume steps on", (await st("percVol")) !== undefined && (await b.eval(`PanelKeys.state().grab`)) === "percVol", await st("percVol"));
     await press(["Escape", "Escape", "s", "a"]); await b.eval(`OrganCompare.widgets[0].set('b3','leslie','slow')`);
     await down(" "); await b.sleep(60); const held = await st("leslie"); await up(" "); await b.sleep(60);
     check("Space held = Leslie fast, let go = back", held === "fast" && (await st("leslie")) === "slow", held + " / " + (await st("leslie")));
@@ -54,8 +54,8 @@ const codeOf = k => CODE[k] || (/^\d$/.test(k) ? "Digit" + k : "Key" + k.toUpper
     check("Shift + 5 saves, 5 loads the snapshot", (await st("uB.0")) === 3, await st("uB.0"));
     await press(["`"]); await press(["\\"]);
     check("\\ = right hand", (await b.eval(`PanelKeys.mode()`)) === "R");
-    await press(["u", "j", "7"]);
-    check("right: u j 7 sets 5⅓′ to 7", (await st("uB.1")) === 7, await st("uB.1"));
+    await press(["u", "l", "7", "k", "j"]);
+    check("right: u l 7 (k up, j down) sets 5⅓′ to 7", (await st("uB.1")) === 7, await st("uB.1"));
     await press(["Escape", "Escape", "\\"]);
     check("\\ again = back to Piano", (await b.eval(`PanelKeys.mode()`)) === "piano");
     if (process.env.SHOT) { await press(["`", "u", "d"]); await b.shot(process.env.SHOT); await press(["Escape", "Escape", "`"]); }

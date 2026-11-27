@@ -10,8 +10,8 @@
   function vs(k, x, y, label, more) { I.push(Object.assign({ t: "vslider", k: k, x: x, y: y, w: 20, h: 84, label: label, a: OR }, more || {})); }
   function btn(x, y, w, h, label, more) { I.push(Object.assign({ t: "button", x: x, y: y, w: w, h: h, label: label, size: Math.min(9, h - 3) }, more || {})); }
   // sections (drawn first)
-  sec(2, 60, 148, 340, "OSCILLATOR"); sec(152, 60, 146, 340, "SCENE · MIXER"); sec(302, 60, 298, 203, "FILTERS"); sec(602, 60, 152, 125, "SCENE OUTPUT");
-  sec(602, 186, 152, 77, "FILTER 2"); sec(302, 265, 452, 135, ""); sec(756, 60, 155, 340, "FX"); sec(2, 402, 909, 72, "MODULATION"); sec(2, 476, 909, 91, "");
+  I.push({ t: "section", x: 2, y: 60, w: 148, h: 340, label: "", head: 0 }); sec(152, 60, 146, 340, "SCENE · MIXER"); sec(302, 60, 298, 203, "FILTERS"); sec(602, 60, 152, 125, "SCENE OUTPUT");
+  I.push({ t: "section", x: 602, y: 186, w: 152, h: 77, label: "", head: 0 }, { t: "label", x: 749, y: 236, text: "FILTER 2", size: 7, bold: true, rot: -90 }); sec(302, 265, 452, 135, ""); sec(756, 60, 155, 340, "FX"); sec(2, 402, 909, 72, "MODULATION"); sec(2, 476, 909, 91, "");
   // header: global.active_scene, scene_mode, patch browser, status, fx bypass, character, VU, global volume
   btn(7, 12, 20, 42, "A", { on: true, a: OR }); btn(27, 12, 20, 42, "B");
   btn(54, 12, 40, 42, "Single");
@@ -23,7 +23,7 @@
   hs("vol", 760, 29, "Global Volume");
   // oscillator: osc.select tabs pick which oscillator the column shows (pages o1 / o2 / o3)
   [1, 2, 3].forEach(function (n) { I.push({ t: "button", go: "o" + n, x: 66 + (n - 1) * 25, y: 69, w: 25, h: 13, label: String(n), size: 9, a: OR }); });
-  I.push({ t: "label", x: 8, y: 79, text: "Osc", size: 9, anchor: "start" });
+  I.push({ t: "label", x: 7, y: 78, text: "OSCILLATOR", size: 8, bold: true, anchor: "start" });
   function oscWave(p) { return function (get, w, h) { var sh = +get(p + "Shape") || 0, wd = (+get(p + "W") || 50) / 100, d = "", n = 140;
     for (var i = 0; i <= n; i++) { var ph = i / n * 2 % 1, saw = 1 - 2 * ph, pu = ph < Math.max(.02, Math.min(.98, wd)) ? 1 : -1, v = sh < 0 ? saw * (1 + sh / 100) + pu * (-sh / 100) : saw;
       d += (i ? "L" : "M") + (4 + i / n * (w - 8)).toFixed(1) + " " + (h / 2 - v * (h / 2 - 10)).toFixed(1); } return [d]; }; }
@@ -61,7 +61,7 @@
   // scene output (scene.output.panel 606, 78), FEG (459, 267), AEG (609, 267)
   [[null, "Volume"], [null, "Pan"], [null, "Width"], [null, "Send FX 1"], [null, "Send FX 2"]].forEach(function (c, j) { hs(c[0], 606, 78 + j * 21, c[1]); });
   [["f", 459, "Filter EG"], ["a", 609, "Amp EG"]].forEach(function (e) { var X = e[1];
-    I.push({ t: "label", x: X + 4, y: 263, text: e[2], size: 8, anchor: "start", dim: true });
+    I.push({ t: "label", x: X + 4, y: 261.5, text: e[2], size: 7, anchor: "start", dim: true });
     btn(X + 4, 267, 20, 18, "⌒", { size: 9 }); btn(X + 24, 267, 20, 18, "⌒", { size: 9 }); btn(X + 65, 267, 20, 18, "⌒", { size: 9 }); btn(X + 93, 267, 34, 18, "Digi", { size: 8 });
     ["A", "D", "S", "R"].forEach(function (s, j) { vs(e[0] + s, X + j * 20, 301, s); });
     I.push({ t: "display", x: X + 84, y: 290, w: 60, h: 60, draw: "env:" + e[0] + "A," + e[0] + "D," + e[0] + "S," + e[0] + "R", a: OR });
@@ -70,8 +70,8 @@
   // FX (fx.selector 760, 74; fx.param.panel 763, 224); this page's three effect mixes stand in the slots' places
   I.push({ t: "display", x: 760, y: 74, w: 139, h: 57, draw: function () { return []; }, label: "A1 A2 B1 B2 S1 S2 G1 G2" });
   hs(null, 763, 141, "FX1 Return"); hs(null, 763, 162, "FX2 Return");
-  btn(765, 194, 133, 18, "Chorus · Delay · Reverb"); btn(766, 212, 95, 12, "Default", { size: 8 });
-  [["fxCho", "Chorus mix"], ["fxDly", "Delay mix"], ["fxRev", "Reverb mix"], [null, "Time"], [null, "Feedback"], [null, "Low Cut"], [null, "High Cut"], [null, "Width"]].forEach(function (c, j) { I.push({ t: "hslider", k: c[0], x: 763, y: 224 + j * 20, w: 140, h: 20, label: c[1], a: OR }); });
+  btn(765, 194, 133, 18, "Chorus · Delay · Reverb"); btn(766, 212, 95, 10, "Default", { size: 7 });
+  [["fxCho", "Chorus mix"], ["fxDly", "Delay mix"], ["fxRev", "Reverb mix"], [null, "Time"], [null, "Feedback"], [null, "Low Cut"], [null, "High Cut"], [null, "Width"]].forEach(function (c, j) { I.push({ t: "hslider", k: c[0], x: 763, y: 224 + j * 21, w: 140, h: 22, label: c[1], a: OR }); });
   // modulation sources (controls.modulation.panel 3, 402); the routing sliders stand for Surge's drag-to-route modulation
   ["LFO 1", "LFO 2", "LFO 3", "LFO 4", "LFO 5", "LFO 6", "S-LFO 1", "Filter EG", "Amp EG", "Velocity", "Keytrack", "Mod Wheel"].forEach(function (s, j) { btn(8 + j * 64, 420, 60, 16, s, { size: 8, on: j === 0, a: OR }); });
   hs("lfoPitch", 8, 444, "LFO 1 → Pitch"); hs("lfoCut", 158, 444, "LFO 1 → Cutoff"); hs("lfoW", 308, 444, "LFO 1 → Width 1");

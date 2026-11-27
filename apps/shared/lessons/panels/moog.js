@@ -19,14 +19,14 @@
   I.push({ t: "section", x: x(203), y: y(799), w: 202 * S, h: 337 * S, head: 0 });
   // printed legends (MoogSheet's static labels)
   [["TUNE", 310, 448], ["GLIDE", 257, 563], ["MODULATION MIX", 364, 563], ["OSC. 3", 228, 708, 9], ["FILTER EG", 287, 708, 9], ["NOISE", 336, 708, 9], ["LFO", 393, 708, 9],
-    ["OSCILLATOR", 426, 476], ["MODULATION", 426, 487], ["RANGE", 518, 392], ["OSCILLATOR–1", 625, 392, 12.5], ["FREQUENCY", 625, 404, 9.5], ["WAVEFORM", 733, 392],
-    ["OSCILLATOR–2", 625, 500, 12.5], ["OSCILLATOR–3", 625, 609, 12.5], ["OSC. 3", 449, 610, 8.5], ["CONTROL", 449, 620, 8.5],
+    ["OSCILLATOR", 397, 471, 8], ["MODULATION", 397, 480, 8], ["RANGE", 518, 392], ["OSCILLATOR–1", 625, 392, 12.5], ["FREQUENCY", 625, 404, 9.5], ["WAVEFORM", 733, 392],
+    ["OSCILLATOR–2", 625, 500, 12.5], ["OSCILLATOR–3", 625, 614, 12.5], ["OSC. 3", 446, 597, 7.5], ["CONTROL", 446, 606, 7.5],
     ["VOLUME", 841, 392], ["EXTERNAL", 1056, 438], ["INPUT VOLUME", 1056, 449], ["OVERLOAD", 1133, 480], ["NOISE VOLUME", 1056, 562], ["WHITE", 1133, 562], ["PINK", 1133, 612],
-    ["FILTER", 1210, 422, 8.5], ["MODULATION", 1210, 432, 8.5], ["KEYBOARD", 1210, 524, 8.5], ["CONTROL", 1210, 534, 8.5], ["1", 1170, 494, 11], ["2", 1170, 544, 11],
+    ["FILTER", 1183, 420, 7], ["MODULATION", 1183, 429, 7], ["KEYBOARD", 1183, 520, 7], ["CONTROL", 1183, 528, 7], ["1", 1149, 501, 11], ["2", 1149, 551, 11],
     ["CUTOFF  FREQUENCY", 1302, 392], ["FILTER", 1410, 380, 13], ["EMPHASIS", 1410, 393], ["AMOUNT", 1518, 382], ["OF CONTOUR", 1518, 393],
     ["ATTACK TIME", 1302, 503], ["DECAY TIME", 1410, 503], ["SUSTAIN LEVEL", 1518, 503], ["LOUDNESS CONTOUR", 1410, 611, 13.5],
     ["ATTACK TIME", 1302, 625], ["DECAY TIME", 1410, 625], ["SUSTAIN LEVEL", 1518, 625],
-    ["VOLUME", 1626, 392], ["MAIN OUTPUT", 1717, 392], ["A – 440", 1626, 528], ["VOLUME", 1626, 626], ["PHONES", 1717, 619], ["POWER", 1806, 611],
+    ["VOLUME", 1626, 392], ["MAIN OUTPUT", 1717, 392], ["A – 440", 1626, 528], ["VOLUME", 1626, 626], ["PHONES", 1717, 619], ["POWER", 1802, 611, 8],
     ["LFO RATE", 254, 812], ["GLIDE", 343, 812], ["DECAY", 343, 875], ["PITCH", 280, 1102, 12.5], ["MOD.", 381, 1102, 12.5]].forEach(function (l) { lab(l[0], l[1], l[2], l[3] || 10); });
   // knobs (MoogSheet K)
   k(null, 310, 507); k("glide", 256, 615); k("modMix", 364, 615);
@@ -39,7 +39,7 @@
   // rocker switches (MoogSheet SW; orange = modulation / keyboard, blue = mixer and output, dark = sources)
   rock("oscMod", 398, 498, "or"); rock("m1On", 921, 444, "bl"); rock("extOn", 921, 498, "bl"); rock("m2On", 921, 552, "bl"); rock("nOn", 921, 606, "bl"); rock("m3On", 921, 659, "bl", 27, 20);
   rock("filtMod", 1183, 444, "or"); rock("kb1", 1183, 494, "or"); rock("kb2", 1183, 544, "or");
-  rock(null, 1690, 444, "bl"); rock(null, 1597, 552, "bl"); rock(null, 1797, 641, "dk", 19, 27);
+  rock(null, 1690, 444, "bl"); rock(null, 1601, 552, "bl"); rock(null, 1797, 641, "dk", 19, 27);
   I.push({ t: "seg", k: "nCol", x: x(1105), y: y(568), w: 38 * S + 10, h: 22, opts: [["white", "W"], ["pink", "P"]], size: 7, a: "bl" });
   rock("o3Kbd", 439, 641, "or", 19, 27);
   I.push({ t: "seg", k: "src1", x: x(201), y: y(660), w: 54 * S + 22, h: 38 * S, opts: [["osc3", "OSC3"], ["fenv", "F.EG"]], size: 6, a: "dk" });

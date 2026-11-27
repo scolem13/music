@@ -10,10 +10,10 @@
 // KEYS (L = left hand, R = right hand):
 //   section leader  one letter, the same for both hands, named for what it is (B3: u upper drawbars, l lower, b bass pedal,
 //                   p percussion, v vibrato, s speaker / Leslie). Shown on the panel beside the section.
-//   position        the controls of the section in panel order on the free hand's keys:  L a s d f g q w e r t   R h j k l ; y u i o p
-//                   (home row first). Pressing one grabs that control (ringed). Inside a section its positions win; a letter that is
+//   position        the controls of the section in panel order on the free hand's keys:  L a s g q w e r t c v   R h l ; y u i o p n m
+//                   (the home row around the nudge keys first). Pressing one grabs that control (ringed). Inside a section its positions win; a letter that is
 //                   not a position starts that section, otherwise Esc first.
-//   nudge           L z / x   R , / .   = down / up; with Shift a coarse step. "Up" = more sound (drawbars: pulled out further).
+//   nudge           R j / k = down / up as in vim; L mirrored: f = j (down), d = k (up); with Shift a coarse step. "Up" = more sound (drawbars: pulled out further).
 //   digits          set the grabbed control: drawbars 0-8 exactly; other small whole-number ranges = that number; knobs 0-9 = tenths,
 //                   switches 0 / 1, choices 1..n. With nothing grabbed a digit loads snapshot n; Shift + digit saves one
 //                   (localStorage `panel-keys-snap:<layout id>`).
@@ -26,8 +26,8 @@
 (function () {
   if (window.PanelKeys) return;
   var PK = window.PanelKeys = {}, NS = "http://www.w3.org/2000/svg", HKEY = "panel-keys-hand";
-  PK.HANDS = { L: { pos: "asdfgqwert", down: "KeyZ", up: "KeyX", dn: "z", upn: "x", on: "Backquote", onn: "`" },
-               R: { pos: "hjkl;yuiop", down: "Comma", up: "Period", dn: ",", upn: ".", on: "Backslash", onn: "\\" } };
+  PK.HANDS = { L: { pos: "asgqwertcv", down: "KeyF", up: "KeyD", dn: "f", upn: "d", on: "Backquote", onn: "`" },
+               R: { pos: "hl;yuiopnm", down: "KeyJ", up: "KeyK", dn: "j", upn: "k", on: "Backslash", onn: "\\" } };
   var hand = null; try { hand = localStorage.getItem(HKEY); } catch (e) {} if (hand !== "L" && hand !== "R") hand = null;
   var list = [], cur = null, sec = null, grab = null, undo = [], help = false, held = {};
   PK.hand = function () { return hand; };
@@ -42,7 +42,7 @@
   function target() { live(); if (cur && list.indexOf(cur) >= 0 && shown(cur)) return cur; return list.filter(shown)[0] || null; }
   function groups(p) { return p.layout.keys.groups; }
   function gOf(p, k) { return groups(p).filter(function (g) { return g.k === k; })[0]; }
-  function ctls(p, g) { var c = typeof g.ctl === "function" ? g.ctl(p.get) : g.ctl; return c.filter(function (k) { return p.range(k); }).slice(0, 10); }
+  function ctls(p, g) { var c = typeof g.ctl === "function" ? g.ctl(p.get) : g.ctl; return c.filter(function (k) { return p.range(k) && !(p.me.layoutEdits && p.me.layoutEdits.hidden(k)); }).slice(0, 10); }
   function charOf(code, key) { var m = /^Key([A-Z])$/.exec(code); if (m) return m[1].toLowerCase(); if (code === "Semicolon") return ";"; return key; }
 
   // ---- values ----
@@ -73,7 +73,7 @@
   window.addEventListener("keydown", function (e) {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     var t = e.target || {}; if (/INPUT|SELECT|TEXTAREA/.test(t.tagName || "") || t.isContentEditable) return;
-    var p = target(); if (!p) return;
+    var p = target(); if (!p || p.me.editing) return;
     var H = PK.HANDS, code = e.code;
     if (code === H.L.on || code === H.R.on) { var nh = code === H.L.on ? "L" : "R"; PK.setHand(hand === nh ? null : nh); return stop(e); }
     if (!hand) return;
@@ -97,23 +97,34 @@
   function stop(e) { e.preventDefault(); e.stopPropagation(); }
 
   // ---- drawing: letters on the panel and a strip under it ----
-  function box(p, k) { var els = p.me.svg.querySelectorAll('[data-ctl="' + k.replace(/"/g, '\\"') + '"]'), b = null;
-    [].forEach.call(els, function (el) { var r; try { r = el.getBBox(); } catch (e) { return; } if (!r.width) return;
-      b = b ? { x: Math.min(b.x, r.x), y: Math.min(b.y, r.y), x2: Math.max(b.x2, r.x + r.width), y2: Math.max(b.y2, r.y + r.height) } : { x: r.x, y: r.y, x2: r.x + r.width, y2: r.y + r.height }; });
+  function box(p, k) { return boxOf(p, p.me.svg.querySelectorAll('[data-ctl="' + k.replace(/"/g, '\\"') + '"]')); }
+  function secBox(p, k) {   // the section a control sits in (FaithfulPanel's PanelLayout knows), else null
+    var LE = p.me.layoutEdits, part = LE && LE.parts.filter(function (q) { return q.it.k === k; })[0];
+    return part && part.sec ? boxOf(p, [part.sec.g]) : null; }
+  function boxOf(p, els) { var b = null;
+    var root = p.me.svg.getScreenCTM(); if (!root) return null; root = root.inverse();
+    [].forEach.call(els, function (el) { var r, m; try { r = el.getBBox(); m = el.getScreenCTM(); } catch (e) { return; } if (!r.width || !m || el.closest("[data-pl-hide]")) return;
+      m = root.multiply(m);   // the part's own box in panel units, after any move / resize from panel-layout.js
+      [[r.x, r.y], [r.x + r.width, r.y + r.height]].forEach(function (c) { var x = m.a * c[0] + m.c * c[1] + m.e, y = m.b * c[0] + m.d * c[1] + m.f;
+        b = b ? { x: Math.min(b.x, x), y: Math.min(b.y, y), x2: Math.max(b.x2, x), y2: Math.max(b.y2, y) } : { x: x, y: y, x2: x, y2: y }; }); });
     return b; }
-  function badge(gr, x, y, text, cls) { var w = 6 + text.length * 7.5, g = S("g", { class: "pk-b " + cls });
-    g.appendChild(S("rect", { x: x, y: y, width: w, height: 13, rx: 3 })); var t = S("text", { x: x + w / 2, y: y + 10, "text-anchor": "middle" }); t.textContent = text; g.appendChild(t); gr.appendChild(g); return w; }
+  var BH = 11;   // badge height in panel units: small, so it sits in the gap above a control and not on its legend
+  function badge(gr, x, y, text, cls) { var w = 4 + text.length * 6.2, g = S("g", { class: "pk-b " + cls });
+    g.appendChild(S("rect", { x: x, y: y, width: w, height: BH, rx: 2.5 })); var t = S("text", { x: x + w / 2, y: y + 8.5, "text-anchor": "middle" }); t.textContent = text; g.appendChild(t); gr.appendChild(g); return w; }
   function drawOne(p) {
     var svg = p.me.svg, old = svg.querySelector(".pk-layer"); if (old) old.remove();
     p.me.el.classList.toggle("pk-on", !!hand && p === target());
     renderStrip(p);
     if (!hand || p !== target() || !shown(p)) return;
     var gr = S("g", { class: "pk-layer" }), h = PK.HANDS[hand];
-    groups(p).forEach(function (g) { var cs = ctls(p, g), u = null, on = sec === g.k;
-      cs.forEach(function (k, j) { var b = box(p, k); if (!b) return; u = u ? { x: Math.min(u.x, b.x), y: Math.min(u.y, b.y) } : { x: b.x, y: b.y };
-        badge(gr, (b.x + b.x2) / 2 - 6.75, b.y2 - 15, h.pos[j], on ? "pk-pos pk-act" : "pk-pos");
+    groups(p).forEach(function (g) { var cs = ctls(p, g), on = sec === g.k, first = null;
+      cs.forEach(function (k, j) { var b = box(p, k); if (!b) return; if (!first) first = { k: k, b: b };
+        var wide = b.x2 - b.x > 2.5 * (b.y2 - b.y);   // a wide control (a row of choices): on its top-left corner, clear of the legend above it
+        badge(gr, wide ? b.x - 4 : (b.x + b.x2) / 2 - 5.1, wide ? b.y - BH + 4 : b.y - BH - 1, h.pos[j], on ? "pk-pos pk-act" : "pk-pos");   // else centred just above
         if (grab === k && on) gr.appendChild(S("rect", { class: "pk-ring", x: b.x - 3, y: b.y - 3, width: b.x2 - b.x + 6, height: b.y2 - b.y + 6, rx: 4 })); });
-      if (u) badge(gr, u.x - 2, Math.max(0, u.y - 16), g.k, on ? "pk-lead pk-act" : "pk-lead"); });
+      if (!first) return;
+      var sb = secBox(p, first.k);   // the leader on its section's top-left corner (across the border, clear of a centred title), else left of the first control
+      if (sb) badge(gr, sb.x - 4, sb.y - BH / 2, g.k, on ? "pk-lead pk-act" : "pk-lead"); else badge(gr, first.b.x - 14, first.b.y - BH - 1, g.k, on ? "pk-lead pk-act" : "pk-lead"); });
     svg.appendChild(gr);
   }
   function renderStrip(p) {
@@ -144,7 +155,7 @@
   function draw() { live().forEach(drawOne); }
 
   function css() { if (document.getElementById("pk-css")) return; var st = document.createElement("style"); st.id = "pk-css";
-    st.textContent = ".pk-layer{pointer-events:none}.pk-b rect{fill:var(--fp-bg);stroke:var(--fp-ink2);opacity:.85}.pk-b text{font:700 9.5px ui-monospace,Menlo,monospace;fill:var(--fp-ink2)}" +
+    st.textContent = ".pk-layer{pointer-events:none}.pk-b rect{fill:var(--fp-bg);stroke:var(--fp-ink2);opacity:.85}.pk-b text{font:700 8.5px ui-monospace,Menlo,monospace;fill:var(--fp-ink2)}" +
       ".pk-lead rect{stroke:var(--fp-ink)}.pk-lead text{fill:var(--fp-ink)}.pk-act rect{fill:#e0a030;stroke:#e0a030;opacity:1}.pk-act text{fill:#000}" +
       ".pk-ring{fill:none;stroke:#e0a030;stroke-width:2.5}.pk-strip{font-size:.85rem;padding:.3rem .5rem;margin:.2rem 0;border:1px solid var(--fp-line,#ccc);border-radius:4px;line-height:1.7}" +
       ".pk-strip kbd{font-size:.75rem;padding:0 .3rem;margin:0 .1rem;border:1px solid #999;border-radius:3px;background:rgba(127,127,127,.12)}.fp-w.pk-on .pk-strip{border-color:#e0a030}" +
@@ -159,6 +170,7 @@
     me.el.addEventListener("pointerdown", pick, true); me.el.addEventListener("focusin", pick);
     // the panel may be hidden at mount (Simple view): draw once it has a size
     if (window.ResizeObserver) new ResizeObserver(function () { drawOne(p); }).observe(me.svg); else setTimeout(function () { drawOne(p); }, 0);
+    me.onLayout = me.onLayout || []; me.onLayout.push(function () { drawOne(p); });
     var r0 = me.refresh; me.refresh = function () { r0.apply(me, arguments); if (p.strip && grab) renderStrip(p); };
     drawOne(p); return p;
   };

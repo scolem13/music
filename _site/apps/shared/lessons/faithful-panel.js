@@ -55,6 +55,9 @@
 //   { t: "shape", d: SVG path, fill / stroke: a colour token (bg body head ink ink2 line track screen wave) or a colour, sw, op, title }  decoration only
 // PEDALS (2026-11-26): layouts panels/pd-<id>.js bound to Pedals.adapter (apps/shared/lessons/pedals.js); extra item
 //   { t: "led", k, x, y, r, label, color }  an LED lit while get(k) is true (the footswitch is a { t: "key", k: "on" } with no v)
+// LAYOUT EDITS (2026-11-27): every panel gets a Size slider and "Edit layout" (move / resize / hide sections and single parts,
+//   hidden sections close their gap), kept per layout in localStorage: the PanelLayout block at the end of this file (its header).
+//   me.drawn = [{ it, g }] in item order, me.bar, me.bg are for it.
 // KEYS (2026-11-27): a layout may carry `keys` (section leaders, positions, hold keys): the panel is then also driven from the
 //   computer keys with one hand while the other plays MIDI (apps/shared/lessons/panel-keys.js, its header; loaded on first use).
 // API: FaithfulPanel.mount(host, { id, profile, get(key), set(key, value) }) -> { refresh(key?), el, layout, ctl: {key: element} }
@@ -186,6 +189,10 @@
     return H;
   };
 
+  // a helper script next to this one, loaded once; fn runs when its global exists
+  FP.script = function (file, glob, fn) { if (window[glob]) return fn(); var s0 = document.querySelector('script[data-fp-src="' + file + '"]');
+    if (!s0) { s0 = document.createElement("script"); s0.src = BASEURL + file; s0.dataset.fpSrc = file; document.head.appendChild(s0); }
+    s0.addEventListener("load", function () { if (window[glob]) fn(); }); };
   // ---------- mount ----------
   FP.mount = function (host, o) {
     css();
@@ -225,8 +232,9 @@
     function arc(cx, cy, r, f0, f1) { var a0 = (-135 + 270 * f0 - 90) * Math.PI / 180, a1 = (-135 + 270 * f1 - 90) * Math.PI / 180;
       return "M" + (cx + r * Math.cos(a0)).toFixed(2) + " " + (cy + r * Math.sin(a0)).toFixed(2) + "A" + r + " " + r + " 0 " + (f1 - f0 > 2 / 3 ? 1 : 0) + " 1 " + (cx + r * Math.cos(a1)).toFixed(2) + " " + (cy + r * Math.sin(a1)).toFixed(2); }
 
+    var drawn = [];
     L.items.forEach(function (it) {
-      var g = S("g"), c = it.k ? rng(it.k) : null, a = acc(it);
+      var g = S("g"), c = it.k ? rng(it.k) : null, a = acc(it); drawn.push({ it: it, g: g });
       if (it.k) g.dataset.ctl = it.k;
       if (it.page) g.dataset.page = it.page;
       svg.appendChild(g);
@@ -364,13 +372,171 @@
     if (A && A.onChange) A.onChange(refresh);   // every picture depends on several keys, so redraw all (cheap)
     paint(); refresh(); showPage();
     var ctl = {}; [].forEach.call(svg.querySelectorAll("[data-ctl]"), function (e) { ctl[e.dataset.ctl] = e; });
-    me = { el: wrap, layout: L, refresh: refresh, cur: setCur, paint: paint, ctl: ctl, svg: svg, page: function (p) { if (p) { page = p; showPage(); } return page; } };
+    me = { el: wrap, layout: L, refresh: refresh, cur: setCur, paint: paint, ctl: ctl, svg: svg, bar: bar, bg: bg, drawn: drawn, page: function (p) { if (p) { page = p; showPage(); } return page; } };
     mounted = mounted.filter(function (m) { return document.contains(m.el); }); mounted.push(me);
+    // size, and moving / resizing / hiding parts: PanelLayout, at the end of this file
+    FP.script("panel-layout.js", "PanelLayout", function () { PanelLayout.attach(me, { id: L.id + (o.readonly ? ":ro" : "") }); });
     if (L.keys && !o.readonly) {   // computer-key control: apps/shared/lessons/panel-keys.js, loaded on first use
-      var pk = function () { me.keys = PanelKeys.attach(me, { id: L.id, get: o.get, set: o.set, range: rng, layout: L }); };
-      if (window.PanelKeys) pk(); else { var s0 = document.querySelector('script[data-panel-keys]');
-        if (!s0) { s0 = document.createElement("script"); s0.src = BASEURL + "panel-keys.js"; s0.dataset.panelKeys = "1"; document.head.appendChild(s0); }
-        s0.addEventListener("load", pk); } }
+      FP.script("panel-keys.js", "PanelKeys", function () { me.keys = PanelKeys.attach(me, { id: L.id, get: o.get, set: o.set, range: rng, layout: L }); }); }
     return me;
+  };
+})();
+
+// ===== PanelLayout (was panel-layout.js; here so it is ready at the first mount: a late load raced the panels' redraws) =====
+// PanelLayout: size, move, resize and hide the parts of any FaithfulPanel, kept per layout in the browser.
+// Part of faithful-panel.js; nothing in a layout file changes.
+//
+// SIZE: the panel's bar has Size − 100 % + (50-250 % in 10 % steps, click the number for 100 %; localStorage `fp-layout:<layout id>`.size). The panel scrolls sideways when wider
+//   than the page.
+// EDIT LAYOUT (button in the bar): every section and every part gets an outline; the controls stop working until Done.
+//   mouse: click = select, drag = move, drag the square handle = resize (about the part's centre);
+//   keys:  arrows move (Shift: 10), + / - resize, H or Delete hides, P selects the section the part is in, Esc lets go.
+//   toolbar: Bigger / Smaller / Hide / Section / Reset this; "Hidden" lists what is hidden (pick one to show it again); Reset all.
+//   A part moves with its section (the smallest section whose box holds the part's centre). Hiding a section hides its parts and
+//   closes the gap: whatever lies to its right on the same band moves left by its width + the gap that followed it. The drawing's
+//   box (viewBox) shrinks to what is still shown, so the rest grows to fill the width.
+// STORED: { size, it: { <part id>: { dx, dy, s, hide } } }, part id = type|key|value|label + "#n" for repeats (so edits survive
+//   new parts added to a layout, not a renamed label).
+// API: PanelLayout.attach(me, { id }) -> handle { edits(), set(id, patch), reset(), editing(), edit(on), hidden(key), box(i) }
+//   me.layoutEdits = handle; me.onLayout = [fn] called after each change (panel-keys.js redraws its letters).
+(function () {
+  if (window.PanelLayout) return;
+  var PL = window.PanelLayout = {}, NS = "http://www.w3.org/2000/svg", BOXLESS = { shape: 1 };
+  function S(tag, at) { var e = document.createElementNS(NS, tag); for (var a in at) if (at[a] != null) e.setAttribute(a, at[a]); return e; }
+  function h(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function css() { if (document.getElementById("pl-css")) return; var st = document.createElement("style"); st.id = "pl-css";
+    st.textContent = ".pl-size{display:inline-flex;align-items:center;gap:.25rem}.pl-size span{min-width:2.6rem;text-align:center;cursor:pointer}" +
+      ".pl-tools{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;font-size:.8rem;margin:0 0 4px;padding:4px 6px;border:1px dashed #e0a030;border-radius:4px}" +
+      ".pl-tools button,.pl-tools select{font:inherit;background:var(--fp-body);color:var(--fp-ink);border:1px solid var(--fp-line);border-radius:4px;padding:1px 7px;cursor:pointer}" +
+      ".pl-tools .pl-name{font-weight:700;min-width:9rem}.fp-bar .pl-on{background:#e0a030;color:#000;border-color:#e0a030}" +
+      ".pl-ov rect.pl-t{fill:transparent;stroke:#e0a030;stroke-width:1;stroke-dasharray:3 3;cursor:move;pointer-events:all}.pl-ov rect.pl-sec{stroke-opacity:.55}" +
+      ".pl-ov rect.pl-sel{stroke-width:2.5;stroke-dasharray:none;fill:rgba(224,160,48,.12)}.pl-ov rect.pl-hd{fill:#e0a030;cursor:nwse-resize;pointer-events:all}" +
+      ".fp-svg [data-pl-hide]{display:none}.fp-w.pl-editing .fp-svg > g:not(.pl-ov){pointer-events:none}";
+    document.head.appendChild(st); }
+
+  function baseBox(it) {
+    if (BOXLESS[it.t]) return null;
+    if (it.t === "knob") { var r = it.r || 14; return { x: it.x - r - 4, y: it.y - r - 4, w: 2 * r + 8, h: 2 * r + 22 }; }
+    if (it.t === "jack" || it.t === "led") { var q = it.r || (it.t === "jack" ? 7 : 5); return { x: it.x - q - 2, y: it.y - q - 2, w: 2 * q + 4, h: 2 * q + 16 }; }
+    if (it.t === "label") { if (it.rot) return null; var fs = it.size || 9, w = String(it.text || "").length * fs * 0.56 + 4, an = it.anchor || "middle";
+      return { x: an === "start" ? it.x - 2 : an === "end" ? it.x - w + 2 : it.x - w / 2, y: it.y - fs, w: w, h: fs + 3 }; }
+    if (it.w != null && it.h != null) return { x: it.x, y: it.y, w: it.w, h: it.h };
+    return null; }
+  function load(id) { try { return JSON.parse(localStorage.getItem("fp-layout:" + id) || "null") || { size: 1, it: {} }; } catch (e) { return { size: 1, it: {} }; } }
+  function save(id, E) { try { localStorage.setItem("fp-layout:" + id, JSON.stringify(E)); } catch (e) {} }
+
+  PL.attach = function (me, opt) {
+    css(); var id = opt.id, E = load(id); E.it = E.it || {}; E.size = E.size || 1;
+    var L = me.layout, svg = me.svg, P = [], seen = {};
+    me.drawn.forEach(function (d, i) { var it = d.it, base = [it.t, it.k || "", it.v == null ? "" : it.v, it.label || it.text || ""].join("|"), n = seen[base] = (seen[base] || 0) + 1;
+      P.push({ i: i, it: it, g: d.g, id: base + "#" + n, b: baseBox(it), sec: null, kids: [] }); });
+    var SECS = P.filter(function (p) { return p.it.t === "section"; });
+    P.forEach(function (p) { if (p.it.t === "section" || !p.b && !BOXLESS[p.it.t]) return;
+      var cx, cy; if (p.b) { cx = p.b.x + p.b.w / 2; cy = p.b.y + p.b.h / 2; } else { try { var bb = p.g.getBBox(); cx = bb.x + bb.width / 2; cy = bb.y + bb.height / 2; } catch (e) { return; } }
+      var best = null; SECS.forEach(function (s) { var b = s.b; if (cx >= b.x && cx <= b.x + b.w && cy >= b.y && cy <= b.y + b.h && (!best || b.w * b.h < best.b.w * best.b.h)) best = s; });
+      if (best) { p.sec = best; best.kids.push(p); } });
+    SECS.forEach(function (s) { SECS.forEach(function (o) { if (o !== s && !s.sec && o.b.w * o.b.h > s.b.w * s.b.h && s.b.x >= o.b.x && s.b.x + s.b.w <= o.b.x + o.b.w && s.b.y >= o.b.y && s.b.y + s.b.h <= o.b.y + o.b.h) s.sec = o; }); });
+    var editing = false, sel = null, ov = null, tools = null, auto = {};
+    function ed(p) { return E.it[p.id] || {}; }
+    function hidden(p) { for (var q = p; q; q = q.sec) if (ed(q).hide) return true; return false; }
+    // gap closing: each hidden top-level part (a section, or a part in no section) moves what is right of it on its band
+    function autoShift() { auto = {}; var tops = P.filter(function (p) { return !p.sec && p.b; });
+      tops.forEach(function (H) { if (!ed(H).hide) return; var hb = H.b, gap = 30;
+        tops.forEach(function (o) { if (o !== H && o.b.x >= hb.x + hb.w - 1 && o.b.y < hb.y + hb.h && o.b.y + o.b.h > hb.y) gap = Math.min(gap, o.b.x - hb.x - hb.w); });
+        gap = Math.max(0, gap);
+        tops.forEach(function (o) { if (o !== H && o.b.x >= hb.x + hb.w - 1 && o.b.y < hb.y + hb.h && o.b.y + o.b.h > hb.y) auto[o.id] = (auto[o.id] || 0) - hb.w - gap; }); }); }
+    function own(p) { var e = ed(p), b = p.b, s = e.s || 1, dx = (e.dx || 0) + (auto[p.id] || 0), dy = e.dy || 0;
+      var cx = b ? b.x + b.w / 2 : 0, cy = b ? b.y + b.h / 2 : 0; return { dx: dx, dy: dy, s: b ? s : 1, cx: cx, cy: cy }; }
+    function chain(p) { var c = []; for (var q = p; q; q = q.sec) c.unshift(q); return c; }   // outermost first
+    function tr(p) { return chain(p).map(function (q) { var o = own(q); if (!o.dx && !o.dy && o.s === 1) return "";
+      return "translate(" + (o.dx + o.cx) + " " + (o.dy + o.cy) + ") scale(" + o.s + ") translate(" + (-o.cx) + " " + (-o.cy) + ")"; }).join(" ").trim(); }
+    function mapPt(p, x, y) { var c = chain(p); for (var i = c.length - 1; i >= 0; i--) { var o = own(c[i]); x = (x - o.cx) * o.s + o.cx + o.dx; y = (y - o.cy) * o.s + o.cy + o.dy; } return [x, y]; }
+    function eff(p) { if (!p.b) return null; var a = mapPt(p, p.b.x, p.b.y), z = mapPt(p, p.b.x + p.b.w, p.b.y + p.b.h); return { x: a[0], y: a[1], w: z[0] - a[0], h: z[1] - a[1] }; }
+    function anyEdit() { for (var k in E.it) { var e = E.it[k]; if (e.hide || e.dx || e.dy || (e.s && e.s !== 1)) return true; } return false; }
+    function apply() {
+      autoShift();
+      P.forEach(function (p) { var t = tr(p); if (t) p.g.setAttribute("transform", t); else p.g.removeAttribute("transform"); if (hidden(p)) p.g.setAttribute("data-pl-hide", ""); else p.g.removeAttribute("data-pl-hide"); });   // not style.display: tabbed panels page with that
+      var vb = { x: 0, y: 0, w: L.w, h: L.h };
+      if (anyEdit()) { var u = null; P.forEach(function (p) { if (hidden(p) || p.it.t === "section" && p.sec) return; var b = eff(p);
+          if (!b && BOXLESS[p.it.t]) { try { var bb = p.g.getBBox(); if (bb.width) { var a = mapPt(p, bb.x, bb.y), z = mapPt(p, bb.x + bb.width, bb.y + bb.height); b = { x: a[0], y: a[1], w: z[0] - a[0], h: z[1] - a[1] }; } } catch (e) {} }
+          if (!b) return; u = u ? { x: Math.min(u.x, b.x), y: Math.min(u.y, b.y), x2: Math.max(u.x2, b.x + b.w), y2: Math.max(u.y2, b.y + b.h) } : { x: b.x, y: b.y, x2: b.x + b.w, y2: b.y + b.h }; });
+        if (u) vb = { x: u.x - 8, y: u.y - 8, w: u.x2 - u.x + 16, h: u.y2 - u.y + 16 }; }
+      svg.setAttribute("viewBox", [vb.x, vb.y, vb.w, vb.h].map(function (v) { return +v.toFixed(2); }).join(" "));
+      me.bg.setAttribute("x", vb.x); me.bg.setAttribute("y", vb.y); me.bg.setAttribute("width", vb.w); me.bg.setAttribute("height", vb.h);
+      svg.style.width = Math.round(E.size * 100) + "%"; svg.style.minWidth = Math.round(760 * E.size * Math.min(1, vb.w / L.w)) + "px";
+      sizeIn.value = Math.round(E.size * 100); sizeOut.textContent = Math.round(E.size * 100) + "%";
+      if (editing) overlay(); if (!dragging) renderTools();
+      (me.onLayout || []).forEach(function (f) { try { f(); } catch (e) {} });
+    }
+    function change(p, patch) { var e = E.it[p.id] = Object.assign({}, E.it[p.id] || {}, patch);
+      if (!e.hide && !e.dx && !e.dy && (!e.s || e.s === 1)) delete E.it[p.id]; save(id, E); apply(); }
+
+    // ---- bar: size + edit button ----
+    // no <input> here: the host widgets treat any input in their box as one of their own controls (it broke their pages / steps)
+    var sz = h("span", "pl-size"), sDn = h("button", null, "−"), sUp = h("button", null, "+"), sizeOut = h("span"), sizeIn = {};
+    sDn.type = sUp.type = "button"; sDn.setAttribute("aria-label", "Smaller panel"); sUp.setAttribute("aria-label", "Bigger panel"); sizeOut.title = "Click: back to 100 %";
+    sz.appendChild(document.createTextNode("Size")); sz.appendChild(sDn); sz.appendChild(sizeOut); sz.appendChild(sUp);
+    function setSize(v) { E.size = Math.max(0.5, Math.min(2.5, Math.round(v * 20) / 20)); save(id, E); apply(); }
+    sDn.onclick = function () { setSize(E.size - 0.1); }; sUp.onclick = function () { setSize(E.size + 0.1); }; sizeOut.onclick = function () { setSize(1); };
+    me.setSize = setSize;
+    var eb = h("button", null, "Edit layout"); eb.type = "button"; eb.addEventListener("click", function () { edit(!editing); });
+    me.bar.appendChild(sz); me.bar.appendChild(eb);
+    tools = h("div", "pl-tools"); tools.hidden = true; me.bar.parentNode.insertBefore(tools, me.bar.nextSibling);
+
+    function name(p) { var it = p.it; return (it.t === "section" ? "Section " : "") + (it.label || it.text || it.k || it.t) + (it.v != null && it.t === "key" ? " " + it.v : ""); }
+    function renderTools() { if (!editing) { tools.hidden = true; return; } tools.hidden = false; tools.innerHTML = "";
+      var nm = h("span", "pl-name", sel ? name(sel) : "Click a part or a section"); tools.appendChild(nm);
+      function btn(t, f, dis) { var b = h("button", null, t); b.type = "button"; b.disabled = !!dis; b.onclick = f; tools.appendChild(b); }
+      btn("Bigger (+)", function () { scale(1.1); }, !sel || !sel.b); btn("Smaller (−)", function () { scale(1 / 1.1); }, !sel || !sel.b);
+      btn("Hide (H)", function () { var p = sel; sel = null; change(p, { hide: true }); }, !sel);
+      btn("Section (P)", function () { if (sel && sel.sec) { sel = sel.sec; apply(); } }, !sel || !sel.sec);
+      btn("Reset this", function () { delete E.it[sel.id]; save(id, E); apply(); }, !sel);
+      var hid = P.filter(function (p) { return ed(p).hide; });
+      var hs = h("select"); hs.appendChild(h("option", null, "Hidden (" + hid.length + ")")); hid.forEach(function (p) { var o = h("option", null, "Show " + name(p)); o.value = p.id; hs.appendChild(o); });
+      hs.disabled = !hid.length; hs.onchange = function () { var p = P.filter(function (q) { return q.id === hs.value; })[0]; if (p) { sel = p; change(p, { hide: false }); } }; tools.appendChild(hs);
+      btn("Reset all", function () { if (!confirm("Put every part of this panel back where the drawing has it?")) return; E.it = {}; sel = null; save(id, E); apply(); });
+      btn("Done", function () { edit(false); });
+      tools.appendChild(h("span", "fp-dim", " drag to move · drag ■ to resize · arrows / + − / H / P / Esc")); }
+    function scale(f) { if (!sel || !sel.b) return; var s = (ed(sel).s || 1) * f; change(sel, { s: Math.max(0.3, Math.min(4, +s.toFixed(3))) }); }
+    function toPanel(e) { var m = svg.getScreenCTM(); if (!m) return [0, 0]; var pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; pt = pt.matrixTransform(m.inverse()); return [pt.x, pt.y]; }
+    function scaleOf(p) { var s = 1; for (var q = p.sec; q; q = q.sec) s *= own(q).s; return s; }   // a move inside a scaled section is in its units
+    // outlines: one rect per part, kept between redraws (a drag must not lose the element it started on); drags follow the window
+    var rects = {}, hd = null, dragging = null;
+    function follow(onMove) { dragging = onMove; function up() { window.removeEventListener("pointermove", mv); window.removeEventListener("pointerup", up); dragging = null; save(id, E); apply(); }
+      function mv(ev) { onMove(ev); } window.addEventListener("pointermove", mv); window.addEventListener("pointerup", up); }
+    function overlay() {
+      if (!ov) { ov = S("g", { class: "pl-ov" }); rects = {}; hd = null; } svg.appendChild(ov);   // keep it on top
+      var order = P.filter(function (p) { return p.b && !hidden(p); }).sort(function (a, b) { return (b.it.t === "section") - (a.it.t === "section") || b.b.w * b.b.h - a.b.w * a.b.h; }), live = {};
+      order.forEach(function (p) { var b = eff(p), r = rects[p.id]; live[p.id] = 1;
+        if (!r) { r = rects[p.id] = S("rect", {}); var t = S("title"); t.textContent = name(p); r.appendChild(t); r.dataset.pid = p.id;
+          r.addEventListener("pointerdown", function (e) { e.preventDefault(); e.stopPropagation(); sel = p; var a = toPanel(e), e0 = ed(p), d0 = { dx: e0.dx || 0, dy: e0.dy || 0 }, k = scaleOf(p);
+            follow(function (ev) { var q = toPanel(ev); E.it[p.id] = Object.assign({}, E.it[p.id] || {}, { dx: +(d0.dx + (q[0] - a[0]) / k).toFixed(1), dy: +(d0.dy + (q[1] - a[1]) / k).toFixed(1) }); apply(); }); apply(); }); }
+        r.setAttribute("class", "pl-t" + (p.it.t === "section" ? " pl-sec" : "") + (p === sel ? " pl-sel" : ""));
+        r.setAttribute("x", b.x); r.setAttribute("y", b.y); r.setAttribute("width", Math.max(2, b.w)); r.setAttribute("height", Math.max(2, b.h));
+        ov.appendChild(r); });   // re-appending keeps the stacking order
+      Object.keys(rects).forEach(function (k) { if (!live[k]) { rects[k].remove(); delete rects[k]; } });
+      if (!hd) { hd = S("rect", { class: "pl-hd", width: 10, height: 10 });
+        hd.addEventListener("pointerdown", function (e) { e.preventDefault(); e.stopPropagation(); var p = sel; if (!p) return; var c = mapPt(p, p.b.x + p.b.w / 2, p.b.y + p.b.h / 2), a = toPanel(e), d0 = Math.hypot(a[0] - c[0], a[1] - c[1]) || 1, s0 = ed(p).s || 1;
+          follow(function (ev) { var q = toPanel(ev), d = Math.hypot(q[0] - c[0], q[1] - c[1]); E.it[p.id] = Object.assign({}, E.it[p.id] || {}, { s: +Math.max(0.3, Math.min(4, s0 * d / d0)).toFixed(3) }); apply(); }); }); }
+      if (sel && sel.b && !hidden(sel)) { var sb = eff(sel); hd.setAttribute("x", sb.x + sb.w - 5); hd.setAttribute("y", sb.y + sb.h - 5); ov.appendChild(hd); } else if (hd.parentNode) hd.remove(); }
+    function edit(on) { editing = !!on; me.editing = editing; if (!editing) { sel = null; if (ov) { ov.remove(); ov = null; rects = {}; hd = null; } }
+      me.el.classList.toggle("pl-editing", editing); eb.classList.toggle("pl-on", editing); eb.textContent = editing ? "Done editing" : "Edit layout"; apply(); }
+    window.addEventListener("keydown", function (e) { if (!editing || !document.contains(me.el) || e.metaKey || e.ctrlKey || e.altKey) return;
+      var t = e.target || {}; if (/INPUT|SELECT|TEXTAREA/.test(t.tagName || "")) return;
+      var k = e.key, st = e.shiftKey ? 10 : 2, mvs = { ArrowLeft: [-st, 0], ArrowRight: [st, 0], ArrowUp: [0, -st], ArrowDown: [0, st] }[k];
+      if (k === "Escape") { if (sel) { sel = null; apply(); } else edit(false); }
+      else if (!sel) return;
+      else if (mvs) { var e0 = ed(sel), q = scaleOf(sel); change(sel, { dx: (e0.dx || 0) + mvs[0] / q, dy: (e0.dy || 0) + mvs[1] / q }); }
+      else if (k === "+" || k === "=") scale(1.1); else if (k === "-" || k === "_") scale(1 / 1.1);
+      else if (k === "h" || k === "H" || k === "Delete" || k === "Backspace") { var p = sel; sel = null; change(p, { hide: true }); }
+      else if ((k === "p" || k === "P") && sel.sec) { sel = sel.sec; apply(); }
+      else return;
+      e.preventDefault(); e.stopPropagation(); }, true);
+    var H = { edits: function () { return JSON.parse(JSON.stringify(E)); }, editing: function () { return editing; }, edit: edit, parts: P,
+      set: function (pid, patch) { var p = P.filter(function (q) { return q.id === pid; })[0]; if (p) change(p, patch); return !!p; },
+      reset: function () { E = { size: 1, it: {} }; save(id, E); apply(); },
+      hidden: function (key) { return P.some(function (p) { return p.it.k === key; }) && P.filter(function (p) { return p.it.k === key; }).every(hidden); } };
+    me.layoutEdits = H; me.onLayout = me.onLayout || [];
+    apply(); return H;
   };
 })();

@@ -51,10 +51,10 @@
     I.push({ t: "select", k: on ? "fModel" : null, x: X + 90, y: 551, w: 110, h: 17, label: "", text: "Analog", page: "voice" });
     I.push({ t: "select", k: on ? "fStyle" : null, x: X + 206, y: 551, w: 80, h: 17, label: "", text: "12dB", page: "voice" });
     I.push({ t: "display", x: X + 8, y: 576, w: 200, h: 110, draw: on ? "filter:cut,res" : "filter:x,y", a: "flt", page: "voice" });
-    k(on ? "cut" : null, X + 248, 606, "CUTOFF", "flt", 20, { page: "voice" });
-    k(on ? "res" : null, X + 248, 666, "RESONANCE", "flt", 16, { page: "voice" });
-    [[on ? "drive" : null, "DRIVE"], [on ? "fBlend" : null, "BLEND"], [on ? "key" : null, "KEY TRK"], [null, "MIX"]].forEach(function (c, j) { k(c[0], X + 32 + j * 56, 712, c[1], "flt", 12, { page: "voice" }); });
-    ["OSC1", "OSC2", "OSC3", "SMP"].forEach(function (s, j) { I.push({ t: "button", x: X + 8 + j * 48, y: 748, w: 44, h: 16, label: s, size: 8, on: on, a: "flt", page: "voice" }); });
+    k(on ? "cut" : null, X + 248, 600, "CUTOFF", "flt", 20, { page: "voice" });
+    k(on ? "res" : null, X + 248, 676, "RESONANCE", "flt", 16, { page: "voice" });
+    [[on ? "drive" : null, "DRIVE"], [on ? "fBlend" : null, "BLEND"], [on ? "key" : null, "KEY TRK"], [null, "MIX"]].forEach(function (c, j) { k(c[0], X + 32 + j * 56, 703, c[1], "flt", 12, { page: "voice" }); });
+    ["OSC1", "OSC2", "OSC3", "SMP"].forEach(function (s, j) { I.push({ t: "button", x: X + 8 + j * 48, y: 753, w: 44, h: 14, label: s, size: 8, on: on, a: "flt", page: "voice" }); });
   });
   // ---- EFFECTS page: Vital's nine effects in two columns ----
   var FX = [["CHORUS", "fxCho"], ["COMPRESSOR"], ["DELAY", "fxDly"], ["DISTORTION"], ["PHASER"], ["FLANGER"], ["REVERB", "fxRev"], ["EQ"], ["FILTER"]];
@@ -73,8 +73,8 @@
     I.push({ t: "display", x: X + 6, y: 74, w: 244, h: 100, draw: "env:" + p + "A," + p + "D," + p + "S," + p + "R", a: "env" });
     [[null, "DELAY"], [p + "A", "ATTACK"], [null, "HOLD"], [p + "D", "DECAY"], [p + "S", "SUSTAIN"], [p + "R", "RELEASE"]].forEach(function (c, j) { k(c[0], X + 22 + j * 42, 196, c[1], "env", 11, { size: 7.5 }); });
   });
-  k("e2Cut", MX + 72 + 260 + 60, 240, "", "env", 8, { noValue: true }); I.push({ t: "label", x: MX + 72 + 260 + 72, y: 243, text: "→ cutoff", size: 8, anchor: "start" });
-  k("e2Frame", MX + 72 + 260 + 160, 240, "", "env", 8, { noValue: true }); I.push({ t: "label", x: MX + 72 + 260 + 172, y: 243, text: "→ frame", size: 8, anchor: "start" });
+  k("e2Cut", MX + 72 + 260 + 60, 248, "", "env", 7, { noValue: true }); I.push({ t: "label", x: MX + 72 + 260 + 72, y: 251, text: "→ cutoff", size: 8, anchor: "start" });
+  k("e2Frame", MX + 72 + 260 + 160, 248, "", "env", 7, { noValue: true }); I.push({ t: "label", x: MX + 72 + 260 + 172, y: 251, text: "→ frame", size: 8, anchor: "start" });
   sec(MX, 265, 68, 284, "", null, { head: 0 }); ["LFO 1", "LFO 2", "LFO 3", "LFO 4"].forEach(function (s, j) { I.push({ t: "button", x: MX + 4, y: 271 + j * 69, w: 60, h: 63, label: s, on: j === 0, a: "lfo" }); });
   sec(MX + 72, 265, 516, 284, "LFO 1", "lfo");
   I.push({ t: "display", x: MX + 78, y: 291, w: 400, h: 170, draw: "lfo:lfoShape", a: "lfo" });
@@ -86,7 +86,7 @@
   sec(1118, 553, 272, 143, "KEYBOARD MODS", null);
   ["NOTE", "VELOCITY", "LIFT", "AFTERTOUCH", "SLIDE", "STEREO", "RANDOM", "PITCH WH"].forEach(function (s, j) { I.push({ t: "button", x: 1122 + (j % 4) * 67, y: 580 + Math.floor(j / 4) * 56, w: 63, h: 50, label: s, size: 7.5 }); });
   sec(802, 700, 312, 71, "VOICE", null, { head: 0 });
-  [["poly", "VOICES"], [null, "VEL TRK"], [null, "SPREAD"], [null, "STEREO"]].forEach(function (c, j) { k(c[0], 850 + j * 72, 728, c[1], "osc", 12); });
+  [["poly", "VOICES"], [null, "VEL TRK"], [null, "SPREAD"], [null, "STEREO"]].forEach(function (c, j) { k(c[0], 874 + j * 72, 728, c[1], "osc", 12); });
   sec(1118, 700, 272, 71, "", null, { head: 0 });
   [["glide", "GLIDE"], [null, "SLOPE"], [null, "LEGATO"]].forEach(function (c, j) { k(c[0], 1160 + j * 80, 728, c[1], "osc", 12); });
   I.push({ t: "keys", x: 88, y: 781, w: 1302, h: 35, n: 52 });
