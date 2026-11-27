@@ -40,9 +40,11 @@
 //   BandSounds.getEQ(name) -> the bands (the flat default when none are set); BandSounds.EQ_DEFAULT
 //
 //   BandSounds.setTonebars(name, "888000000" | [9 levels 0..8] | null)   a tonewheel organ's nine tonebars; held notes change too
+//   BandSounds.watchControl(fn) -> unwatch   fn(inst, control, value, when, glide, ctx) as each control is scheduled (see below)
 //   BandSounds.getTonebars(name) -> [9 levels], or null for an instrument that is not a tonewheel organ
 //   BandSounds.setControl(name, control, value)   a control of the instrument's chain, set by hand: "leslie" = "slow" | "fast" |
-//       "stop", "swell" = 0..1 (the pedal), "click" = 0..1 (key click, from the next note). bank.control(name, control, value, when, glide) is the same at a time on the
+//       "stop", "swell" = 0..1 (the pedal), "click" = 0..1 (key click, from the next note), "perc" true|false, "percH" "2nd"|"3rd",
+//       "percDec" "fast"|"slow", "percVol" "normal"|"soft" (harmonic percussion, from the next note). bank.control(name, control, value, when, glide) is the same at a time on the
 //       bank's clock, which is how the player works the pedal and the switch while the band plays.
 //
 //   bank.setDest(destNode, { bars, leslie, swell, click } | null)   the SAME controls for ONE destination only (a DAW track whose notes go to
@@ -159,9 +161,9 @@
       // A tonewheel organ, upper manual: nine tonebars, key click, C3 chorus, swell pedal, a little tube drive and a rotary
       // speaker. Everything about it, with the sources, is in ORGAN.md. Not velocity-sensitive: the pedal does the dynamics.
       hammond:{ family: "piano", label: "Tonewheel organ (tonebars, Leslie)", synth: "tonewheel", tonebars: "888000000", click: 0.5, gain: 0.11, release: 0.012, zones: [],
-                chain: [{ name: "Vibrato and chorus (C3)", scanner: 6.87, depth: 0.45, mix: 0.5 }, { name: "Swell pedal: quietest", swell: -24 }, { name: "Input gain", level: 1 },
+                chain: [{ name: "Vibrato and chorus (C3)", scanner: 6.87, depth: 0.45, mix: 0.5 }, { name: "Swell pedal: quietest", swell: -24, bass: 7 }, { name: "Input gain", level: 1 },
                         { name: "Tube drive", drive: 1.5, bias: 0.05 },
-                        { name: "Rotary speaker", leslie: 800, slow: 0.8, fast: 6.67, horn: 0.5, drum: 0.3, doppler: 0.25, width: 1 }, { name: "Output level", level: ORGAN_POST }] },
+                        { name: "Rotary speaker", leslie: 800, slow: 0.8, fast: 6.67, horn: 0.5, drum: 0.3, doppler: 0.25, width: 1, hornPeak: 0, hornHz: 2500 }, { name: "Output level", level: ORGAN_POST }] },
       // for hymns: the piano's voicings on a church organ (level a first guess; the samples are a few seconds long, so very long chords fade)
       organ:  { family: "piano", label: "Church organ", gain: 1.3, release: 0.18,
                 zones: soundfontZones(sf, "church_organ", 36, 84, 3) },
@@ -376,7 +378,10 @@
     eqLive = eqLive.filter(function (fn){ return fn(name); });           // (a bank whose context has closed drops out)
   }
   // ---- a tonewheel organ's tonebars, and controls set by hand (the Leslie switch, the swell pedal) ----
-  var barSet = {}, ctlSet = {};
+  var barSet = {}, ctlSet = {}, ctlWatch = [];
+  // BandSounds.watchControl(fn) -> unwatch: fn(inst, name, value, when, glide, ctx) for every control a bank schedules (the band's
+  // organist moving the pedal and the switch, and settings by hand), at the time it is SCHEDULED; `when` is in ctx time. For pictures.
+  function watchControl(fn){ ctlWatch.push(fn); return function (){ ctlWatch = ctlWatch.filter(function (x){ return x !== fn; }); }; }
   function barsOf(x){ var a = typeof x === "string" ? x.replace(/[^0-8]/g, "").split("") : (x || []); var out = []; for (var i = 0; i < 9; i++) out.push(clamp(Math.round(+a[i] || 0), 0, 8)); return out; }
   function getTonebars(name){ var d = buildDefs("")[name]; return d && d.synth === "tonewheel" ? (barSet[name] || barsOf(d.tonebars)).slice() : null; }
   function setTonebars(name, bars){ if (!getTonebars(name)) return; if (bars == null) delete barSet[name]; else barSet[name] = barsOf(bars); eqLive = eqLive.filter(function (fn){ return fn(name, "bars"); }); }
@@ -427,6 +432,8 @@
     var defsP = null, defs = null, ready = {}, loading = {}, rr = {}, live = new Set(), ringing = {};
     var destSet = typeof WeakMap === "function" ? new WeakMap() : null;      // destination node -> { bars, leslie, swell, click } (setDest)
     function destOpt(dest, key){ var o = destSet && dest && destSet.get(dest); return o && o[key] != null ? o[key] : undefined; }
+    function percOf(inst, dest){ function k(n, d){ var v = destOpt(dest, n); if (v == null) v = getControl(inst, n); return v == null ? d : v; }
+      return { on: !!k("perc", false), h: k("percH", "3rd"), dec: k("percDec", "fast"), vol: k("percVol", "soft") }; }
     function barsFor(inst, dest){ var b = destOpt(dest, "bars"); return b ? barsOf(b) : getTonebars(inst); }
 
     // An instrument's channel strip: its amp chain, then the mixer's five EQ bands. Built the first time the
@@ -457,11 +464,12 @@
     }
     eqLive.push(function (name, what, control, value){ if (ctx.state === "closed") return false;
       if (what === "bars"){ voices.forEach(function (v){ if (v.inst === name) v.bars(); }); return true; }
-      if (what === "ctl"){ control2(name, control, value, ctx.currentTime, 0.05); return true; }
+      if (what === "ctl"){ if (control === "perc") voices.forEach(function (v){ if (v.inst === name) v.bars(); }); control2(name, control, value, ctx.currentTime, 0.05); return true; }
       strips.forEach(function (s){ if (s.inst === name){ tuneEQ(s); tuneAmp(s); } }); return true; });
     // a control of an instrument's chain, at a time: the swell pedal's position, the rotary speaker's speed
     function control2(inst, name, value, when, glide, dest){
       if (global.BandModx && !dest) global.BandModx.control(inst, name, value, when, ctx);
+      if (!dest) ctlWatch.forEach(function (fn){ try { fn(inst, name, value, Math.max(when || 0, ctx.currentTime), glide || 0, ctx); } catch (e) {} });
       strips.forEach(function (s){ if (dest ? s.dest === dest && (inst == null || s.inst === inst) : s.inst === inst) s.amp.forEach(function (n){ if (n.ctl) n.ctl(name, value, Math.max(when || 0, ctx.currentTime), glide || 0); }); });
     }
     // The scanner vibrato: a delay swept up and back by a triangle wave (the scanner runs along a delay line and returns);
@@ -480,9 +488,10 @@
     function swellStage(s, inst, dest){
       var g = ctx.createGain(), sh = ctx.createBiquadFilter(), spec = s, pos = destOpt(dest, "swell"); if (typeof pos !== "number") pos = getControl(inst, "swell"); sh.type = "lowshelf"; sh.frequency.value = 160; g.connect(sh);
       if (typeof pos !== "number") pos = 0.7;
-      function put(t, glide){ var tc = Math.max(0.012, (glide || 0) / 3); g.gain.setTargetAtTime(Math.pow(10, spec.swell * (1 - pos) / 20), t, tc); sh.gain.setTargetAtTime(7 * (1 - pos), t, tc); }
+      function bassDb(){ return spec.bass == null ? 7 : spec.bass; }   // dB of bass lift with the pedal closed (a guess; 2026-11-27 A/B page gear/organ-mud.html)
+      function put(t, glide){ var tc = Math.max(0.012, (glide || 0) / 3); g.gain.setTargetAtTime(Math.pow(10, spec.swell * (1 - pos) / 20), t, tc); sh.gain.setTargetAtTime(bassDb() * (1 - pos), t, tc); }
       var h = { _in: g, _out: sh, set: function (x, t){ spec = x; put(t, 0.05); }, ctl: function (name, v, t, glide){ if (name !== "swell") return; pos = clamp(+v || 0, 0, 1); put(t, glide); } };
-      g.gain.value = Math.pow(10, spec.swell * (1 - pos) / 20); sh.gain.value = 7 * (1 - pos); return h;
+      g.gain.value = Math.pow(10, spec.swell * (1 - pos) / 20); sh.gain.value = bassDb() * (1 - pos); return h;
     }
     // The rotary speaker: the sound is split at the crossover into a horn and a drum that turn at their own speeds. Each is
     // heard by two microphones on opposite sides: as the rotor turns towards one, that side gets louder and its pitch
@@ -490,7 +499,7 @@
     function leslieStage(s, inst, dest){
       var inp = ctx.createGain(), out = ctx.createChannelMerger(2), lo = ctx.createBiquadFilter(), hi = ctx.createBiquadFilter(), spec = s, speed = destOpt(dest, "leslie") || getControl(inst, "leslie") || "slow";
       // (the two halves of the crossover add up flat: Q 0.5 each, which these filters want in dB, and the upper half turned over)
-      var flip = ctx.createGain(); flip.gain.value = -1;
+      var flip = ctx.createGain(); flip.gain.value = -1; var pk = ctx.createBiquadFilter(); pk.type = "peaking"; pk.Q.value = 1.2;   // pk: the horn's presence peak (hornPeak dB at hornHz; 0 = none, as before)
       lo.type = "lowpass"; hi.type = "highpass"; lo.Q.value = hi.Q.value = -6.02; inp.connect(lo); inp.connect(flip); flip.connect(hi);
       function hzOf(which){ return which === "fast" ? spec.fast : which === "stop" ? 0 : spec.slow; }
       function rotor(src, ratio){
@@ -499,9 +508,9 @@
           src.connect(d); d.connect(g); g.connect(out, 0, ch); osc.connect(dm); dm.connect(d.delayTime); osc.connect(gm); gm.connect(g.gain); r.sides.push({ d: d, g: g, dm: dm, gm: gm, sign: sign }); });
         return r;
       }
-      var horn = rotor(hi, 1), drum = rotor(lo, 0.85);
+      hi.connect(pk); var horn = rotor(pk, 1), drum = rotor(lo, 0.85);
       function tune(t){
-        lo.frequency.setTargetAtTime(spec.leslie, t, 0.03); hi.frequency.setTargetAtTime(spec.leslie, t, 0.03);
+        lo.frequency.setTargetAtTime(spec.leslie, t, 0.03); hi.frequency.setTargetAtTime(spec.leslie, t, 0.03); pk.frequency.setTargetAtTime(spec.hornHz || 2500, t, 0.03); pk.gain.setTargetAtTime(spec.hornPeak || 0, t, 0.03);
         [[horn, spec.horn, spec.doppler], [drum, spec.drum, spec.doppler * 0.4]].forEach(function (x){ var w = clamp(spec.width == null ? 1 : spec.width, 0, 1), depth = clamp(x[1] || 0, 0, 0.95), dop = Math.max(0, x[2] || 0) / 1000;
           x[0].sides.forEach(function (sd){ sd.d.delayTime.setTargetAtTime(dop + 0.0003, t, 0.03); sd.dm.gain.setTargetAtTime(sd.sign * dop * w, t, 0.03);
             sd.g.gain.setTargetAtTime(1 - depth / 2, t, 0.03); sd.gm.gain.setTargetAtTime(sd.sign * w * depth / 2, t, 0.03); }); });
@@ -523,11 +532,22 @@
     function tonewheel(inst, def, spec, t, out, dest){
       var f = 440 * Math.pow(2, (spec.midi - 69) / 12), g = ctx.createGain(), level = (def.gain || 1) * (spec.gain == null ? 1 : Math.max(0, spec.gain));
       var oA = ctx.createOscillator(), oB = ctx.createOscillator(), oC = ctx.createOscillator(), gC = ctx.createGain(), v = { inst: inst, src: oA, g: g, t: t, dest: dest };
-      function bars(){ var p = tonewheelParts(spec.midi, barsFor(inst, dest)); oA.setPeriodicWave(waveOf(p.A)); oB.setPeriodicWave(waveOf(p.B));
+      // Harmonic percussion (B-3 / C-3, ORGAN.md "Percussion"): controls "perc" (true = on), "percH" "2nd" | "3rd", "percDec" "fast" | "slow",
+      // "percVol" "normal" | "soft". While on, the 1' tonebar is silent; "normal" lowers the tonebars 3 dB. Single-trigger: only a note struck
+      // with no other key of this organ held sounds it (keys of one chord struck together all do). UNVERIFIED: the decay times and levels.
+      var pc = percOf(inst, dest);
+      function bars(){ var pp = percOf(inst, dest), b = barsFor(inst, dest); if (pp.on) b[8] = 0; var p = tonewheelParts(spec.midi, b); oA.setPeriodicWave(waveOf(p.A)); oB.setPeriodicWave(waveOf(p.B));
         oC.frequency.value = f * TW_THIRD * Math.pow(2, p.C.shift); gC.gain.setTargetAtTime(p.C.amp, Math.max(t, ctx.currentTime), 0.01); }
       oA.frequency.value = f / 2; oB.frequency.value = f * TW_FIFTH; gC.gain.value = 0; v.bars = bars; bars();
       oA.connect(g); oB.connect(g); oC.connect(gC); gC.connect(g); g.connect(out);
+      if (pc.on && pc.vol === "normal") level *= Math.pow(10, -3 / 20);
       g.gain.value = 0; g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(level, t + 0.003);
+      var oP = null, held = false; voices.forEach(function (o){ if (o.inst === inst && o.dest === dest && o.t < t - 0.005 && o.end > t) held = true; });
+      if (pc.on && !held){
+        oP = ctx.createOscillator(); var gP = ctx.createGain(), dec = pc.dec === "slow" ? 1.0 : 0.2, lv = pc.vol === "soft" ? 0.3 : 0.95;
+        oP.frequency.value = f * (pc.h === "3rd" ? 2 * TW_FIFTH : 2); oP.connect(gP); gP.connect(g);
+        gP.gain.setValueAtTime(lv, t); gP.gain.setTargetAtTime(0, t + 0.003, dec / 3); v.perc = true;
+      }
       // key click: the nine contacts of a key do not close together. A few milliseconds of noise as the note starts.
       var click = destOpt(dest, "click"); if (typeof click !== "number") click = getControl(inst, "click"); if (typeof click !== "number") click = def.click == null ? 0.5 : def.click;
       if (click > 0){
@@ -537,7 +557,7 @@
       }
       var end = spec.dur != null ? t + Math.max(0.03, spec.dur) : t + 8, rel = spec.release != null ? spec.release : (def.release || 0.012);
       g.gain.setTargetAtTime(0, end, rel / 3);
-      [oA, oB, oC].forEach(function (o){ o.start(t); o.stop(end + rel * 2 + 0.02); });
+      v.end = end; [oA, oB, oC].concat(oP ? [oP] : []).forEach(function (o){ o.start(t); o.stop(end + rel * 2 + 0.02); });
       live.add(v); voices.add(v);
       oA.onended = function (){ live.delete(v); voices.delete(v); try { g.disconnect(); } catch (e) {} };
       return v;
@@ -670,7 +690,7 @@
 
   global.BandSounds = {
     create: create, define: define, failures: failures, fetchBuffer: fetchBuffer, resolveBase: resolveBase, pieces: PIECES.slice(),
-    family: family, sounds: sounds, setEQ: setEQ, getEQ: getEQ, setAmp: setAmp, getAmp: getAmp, stageKind: stageKind, setTonebars: setTonebars, getTonebars: getTonebars, setControl: setControl, getControl: getControl, tonewheelParts: tonewheelParts, EQ_DEFAULT: EQ_DEFAULT, EQ_TYPES: EQ_TYPES, soundfontZones: soundfontZones, soundfontKit: soundfontKit, pickZones: pickZones, noteName: noteName
+    family: family, sounds: sounds, setEQ: setEQ, getEQ: getEQ, setAmp: setAmp, getAmp: getAmp, stageKind: stageKind, setTonebars: setTonebars, getTonebars: getTonebars, setControl: setControl, getControl: getControl, watchControl: watchControl, tonewheelParts: tonewheelParts, EQ_DEFAULT: EQ_DEFAULT, EQ_TYPES: EQ_TYPES, soundfontZones: soundfontZones, soundfontKit: soundfontKit, pickZones: pickZones, noteName: noteName
   };
   // The MODX (modx.js), once switched on from its page: loaded from beside this file on every band page
   try {

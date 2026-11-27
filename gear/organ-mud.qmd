@@ -1,0 +1,77 @@
+---
+title: "Organ: Muddy or Clear? (A/B)"
+description: "Four switches on the band's tonewheel organ, one possible cause of mud each, to find by ear which ones matter."
+toc: true
+---
+
+The band's tonewheel organ was said to sound muddy next to other clonewheels. Each switch below turns one fix on or off.
+A loop of comping chords plays over a bass line, as in the band. Switch one thing at a time and listen. All the "after"
+values are first guesses (2026-11-27); nobody has listened yet.
+
+## The switches
+
+<div id="om" class="site-panel">
+<p><button id="om-play">▶ Play loop</button> <button id="om-stop">■ Stop</button>
+<label><input type="checkbox" id="om-bass" checked> bass line under it</label>
+<label>Leslie <select id="om-les"><option>slow</option><option>fast</option></select></label>
+<label>Swell <input type="range" id="om-sw" min="0" max="1" step="0.01" value="0.6"> <span id="om-swv">0.60</span></label></p>
+<table class="table">
+<thead><tr><th>On</th><th>Fix</th><th>Before</th><th>After</th></tr></thead>
+<tbody>
+<tr><td><input type="checkbox" id="f-reg"></td><td>Registration with the 4′ in</td><td>888000000</td><td>888400000</td></tr>
+<tr><td><input type="checkbox" id="f-sw"></td><td>Less bass lift as the swell closes</td><td>7 dB</td><td>2 dB</td></tr>
+<tr><td><input type="checkbox" id="f-dr"></td><td>Less tube drive</td><td>1.5</td><td>0.9</td></tr>
+<tr><td><input type="checkbox" id="f-hn"></td><td>Horn presence peak</td><td>none</td><td>+4 dB at 2.5 kHz</td></tr>
+</tbody></table>
+<p><button id="om-all">All on</button> <button id="om-none">All off</button></p>
+</div>
+
+## What each one is
+
+- **Registration.** 16′, 5⅓′ and 8′ full and nothing higher sits in the bass player's range and the low mids. Adding the 4′ gives the chords an edge.
+- **Swell bass lift.** The pedal model lifts 160 Hz by up to 7 dB as it closes (a guess in ORGAN.md). The band's organist keeps it between 0.48 and 0.90.
+- **Drive.** The tube stage distorts dense low chords into low intermodulation.
+- **Horn peak.** A real Leslie horn has a presence peak; ours was flat above the 800 Hz crossover.
+
+Settings here last only while the page is open; when we know which fixes help, they go into the organ's definition in `apps/shared/band/sounds.js`.
+
+<script src="/apps/shared/band/sounds.js"></script>
+<script>
+(function () {
+  var O = "hammond", ctx = null, bank = null, timer = null, base = BandSounds.getAmp(O), $ = function (id) { return document.getElementById(id); };
+  // ii–V–I–vi in C, organ an octave up as in the band (ORGAN.md "Register"); one chord a bar, 2.4 s a bar
+  var CH = [[62, 65, 69, 72], [59, 62, 65, 67], [60, 64, 67, 71], [57, 60, 64, 67]], BS = [38, 43, 36, 33], BAR = 2.4;
+  function apply() {
+    BandSounds.setTonebars(O, $("f-reg").checked ? "888400000" : "888000000");
+    BandSounds.setAmp(O, base.map(function (s) {
+      var c = Object.assign({}, s);
+      if (s.swell != null) c.bass = $("f-sw").checked ? 2 : 7;
+      if (s.drive != null) c.drive = $("f-dr").checked ? 0.9 : 1.5;
+      if (s.leslie != null) c.hornPeak = $("f-hn").checked ? 4 : 0;
+      return c;
+    }));
+    BandSounds.setControl(O, "swell", +$("om-sw").value); BandSounds.setControl(O, "leslie", $("om-les").value);
+    if (bank) { bank.control(O, "swell", +$("om-sw").value, ctx.currentTime, 0.05); bank.control(O, "leslie", $("om-les").value, ctx.currentTime); }
+    $("om-swv").textContent = (+$("om-sw").value).toFixed(2);
+  }
+  function loop(t0) {
+    for (var b = 0; b < 4; b++) {
+      var t = t0 + b * BAR;
+      CH[b].forEach(function (m) { bank.play(O, { midi: m + 12, dur: BAR * 0.92 }, t); });
+      if ($("om-bass").checked) [0, 1, 2, 3].forEach(function (q) { bank.play("bass", { midi: BS[b] + (q === 2 ? 7 : 0), vel: 0.75, dur: BAR / 4 * 0.9 }, t + q * BAR / 4); });
+    }
+    timer = setTimeout(function () { loop(t0 + 4 * BAR); }, (t0 + 4 * BAR - ctx.currentTime - 0.3) * 1000);
+  }
+  $("om-play").onclick = function () {
+    if (timer) return;
+    ctx = ctx || new AudioContext(); if (window.AudioTap) AudioTap.register(ctx);
+    bank = bank || BandSounds.create(ctx);
+    bank.load([O, "bass"]).then(function () { apply(); loop(ctx.currentTime + 0.1); });
+  };
+  $("om-stop").onclick = function () { clearTimeout(timer); timer = null; if (bank) bank.stopAll(); };
+  ["f-reg", "f-sw", "f-dr", "f-hn", "om-sw", "om-les"].forEach(function (id) { $(id).oninput = $(id).onchange = apply; });
+  $("om-all").onclick = function () { ["f-reg", "f-sw", "f-dr", "f-hn"].forEach(function (id) { $(id).checked = true; }); apply(); };
+  $("om-none").onclick = function () { ["f-reg", "f-sw", "f-dr", "f-hn"].forEach(function (id) { $(id).checked = false; }); apply(); };
+  apply();
+})();
+</script>
