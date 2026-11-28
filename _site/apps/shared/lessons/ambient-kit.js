@@ -128,6 +128,44 @@
     var g = c.createGain(), f = mtof(m); g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v * .25, t + .04); g.gain.exponentialRampToValueAtTime(.0005, t + dur); g.connect(out);
     [[1, 1], [3, .12], [4.01, .06]].forEach(function (p) { var o = c.createOscillator(), og = c.createGain(); o.frequency.value = f * p[0]; og.gain.value = p[1]; o.connect(og); og.connect(g); o.start(t); o.stop(t + dur + .05); });
   }
+  // ---- Energy: one knob that moves many settings, after the MODX Super Knob (each assigned parameter has its own From and To; the
+  // knob sweeps every one of them at once, and the controls themselves move so you can see what it is doing). From = where the
+  // setting was when Energy was last at 0 (move a control with Energy at 0 to change it); To is typed in the table.
+  var ENERGY = [   // key, To at full energy
+    ["density", 2.6], ["pace", 4], ["noise", .75], ["echo", .7], ["fb", .9], ["drive", .85], ["bright", 9000],
+    ["chimes", .9], ["cymbals", .8], ["drone", .8], ["verb", .8]
+  ];
+  function energyPanel(w) {
+    var box = el("details", "amb-en"); box.open = true; box.appendChild(el("summary", "", "Energy: one knob, many settings (like the MODX Super Knob)"));
+    var top = el("div", "sk-ctls"); box.appendChild(top); w.body.appendChild(box);
+    var tbl = el("table", "amb-en-t"), head = el("tr"); ["On", "Setting", "From", "To", "Now"].forEach(function (h) { head.appendChild(el("th", "", h)); }); tbl.appendChild(head); box.appendChild(tbl);
+    var rows = {}, driving = false;
+    w.energy = { rows: rows, map: ENERGY };
+    ENERGY.forEach(function (e) {
+      var k = e[0], c = w.c[k], tr = el("tr"), on = el("input"), fr = el("input"), to = el("input"), bar = el("span", "amb-en-bar"), fill = el("span");
+      on.type = "checkbox"; on.checked = true; [fr, to].forEach(function (x) { x.type = "number"; x.step = "any"; x.className = "amb-en-n"; });
+      var o = c.input, lo = k === "bright" ? 600 : +o.min, hi = k === "bright" ? 18000 : +o.max;
+      fr.value = round(c.value); to.value = e[1]; bar.appendChild(fill);
+      [on, el("span", "", c.el.querySelector(".sk-cl").textContent), fr, to, bar].forEach(function (x) { var td = el("td"); td.appendChild(x); tr.appendChild(td); });
+      tbl.appendChild(tr); rows[k] = { on: on, from: fr, to: to, fill: fill, lo: lo, hi: hi };
+      // a control moved by hand while Energy is at 0 becomes the new From
+      c.input.addEventListener("input", function () { if (!driving && w.P.energy < .005) fr.value = round(c.value); paint(k); });
+      [on, fr, to].forEach(function (x) { x.addEventListener("change", function () { sweep(w.P.energy); }); });
+    });
+    function round(v) { return Math.round(v * 1000) / 1000; }
+    function paint(k) { var r = rows[k], v = w.c[k].value, f = k === "bright" ? Math.log(v / r.lo) / Math.log(r.hi / r.lo) : (v - r.lo) / (r.hi - r.lo); r.fill.style.width = Math.max(0, Math.min(100, f * 100)) + "%"; }
+    function sweep(E) {
+      driving = true;
+      ENERGY.forEach(function (e) { var k = e[0], r = rows[k]; if (!r.on.checked) return; var a = +r.from.value, b = +r.to.value;
+        var v = k === "bright" ? a * Math.pow(b / a, E) : a + (b - a) * E;   // brightness sweeps in octaves, the rest in a straight line
+        w.c[k].set(v); paint(k); });
+      driving = false;
+    }
+    w.num("energy", { label: "Energy", min: 0, max: 1, step: .005, value: 0, fmt: function (v) { return v < .02 ? "calm" : v < .35 ? "stirring" : v < .7 ? "busy" : v < .9 ? "loud" : "noise"; }, on: sweep }, top);
+    w.c.energy.el.classList.add("amb-en-knob");
+    w.energy.resetFrom = function () { ENERGY.forEach(function (e) { rows[e[0]].from.value = round(w.c[e[0]].value); paint(e[0]); }); };
+    setTimeout(function () { ENERGY.forEach(function (e) { paint(e[0]); }); }, 0);
+  }
   function Ambient(host) {
     var w = K.Base(host, "Ambient Generator"), run = null;
     w.knobView && w.knobView();
@@ -139,7 +177,8 @@
     w.pick("inst", "Loop notes on", [["piano", "Piano (samples)"], ["rhodes", "Electric piano (samples)"], ["flute", "Flute (samples)"], ["tubular", "Tubular bells (recorded)"], ["glock", "Glockenspiel (recorded)"], ["celesta", "Celesta (recorded)"], ["crotale", "Crotales (recorded)"], ["vibes", "Vibraphone (recorded)"], ["bell", "Synth bell"]], "piano", null, function () { if (run) run.inst(); });
     w.num("loops", { label: "Tape loops", min: 1, max: 9, step: 1, value: 7, fmt: function (v) { return v + (v === 1 ? " loop" : " loops"); }, on: function () { if (run) run.rebuild(); } });
     w.num("spread", { label: "Loop lengths", min: 0, max: 1, step: .01, value: 1, fmt: function (v) { return v < .05 ? "all equal (a pulse)" : v < .5 ? "close" : "far apart (never lines up)"; }, on: function () { if (run) run.rebuild(); } });
-    w.num("density", { label: "Notes per loop", min: .2, max: 1, step: .01, value: .9, fmt: fmtPct, on: function () { if (run) run.rebuild(); } });
+    w.num("density", { label: "Notes per loop", min: .2, max: 3, step: .01, value: .9, fmt: fmtPct, on: function () { if (run) run.rebuildSoon(); } });
+    w.num("pace", { label: "Loop speed", min: 1, max: 6, step: .01, value: 1, fmt: function (v) { return v < 1.05 ? "as recorded" : "x" + v.toFixed(1); }, on: function () { if (run) run.rebuildSoon(); } });
     w.pick("dtype", "Drone", [["saw", "Detuned saws"], ["pad", "Wavetable pad (scanning)"]], "saw", null, function () { if (run) run.retune(); });
     w.num("chimes", { label: "Wind chimes", min: 0, max: 1, step: .01, value: 0, fmt: function (v) { return v < .02 ? "off" : v < .4 ? "now and then" : v < .75 ? "often" : "a windy day"; } });
     w.num("drone", { label: "Drone level", min: 0, max: 1, step: .01, value: .15, fmt: fmtPct });
@@ -147,6 +186,11 @@
     w.num("verb", { label: "Reverb", min: 0, max: 1, step: .01, value: .5, fmt: fmtPct });
     w.num("decay", { label: "Reverb length", min: 1, max: 10, step: .1, value: 6, fmt: fmtS });
     w.num("echo", { label: "Tape echo", min: 0, max: .8, step: .01, value: .25, fmt: fmtPct });
+    w.num("fb", { label: "Echo feedback", min: .2, max: .97, step: .01, value: .4, fmt: fmtPct });
+    w.num("drive", { label: "Drive", min: 0, max: 1, step: .01, value: 0, fmt: function (v) { return v < .02 ? "clean" : fmtPct(v); } });
+    w.num("bright", { label: "Brightness", min: 600, max: 18000, log: true, value: 18000, fmt: fmtHz });
+    w.num("cymbals", { label: "Cymbal swells", min: 0, max: 1, step: .01, value: 0, fmt: function (v) { return v < .02 ? "off" : fmtPct(v); } });
+    energyPanel(w);
     // the noise bed's own controls (same 10-band EQ as the Noise widget)
     var nb = el("details", "amb-nb"), sum = el("summary", "", "Noise bed: colour, swell and the 10-band EQ"); nb.appendChild(sum); w.body.appendChild(nb);
     var nctl = el("div", "sk-ctls"); nb.appendChild(nctl);
@@ -158,9 +202,11 @@
     var ring = el("canvas", "sk-plot amb-rings"); ring.setAttribute("aria-label", "The tape loops: each ring is one loop, a dot is a note, the hand is the playhead"); w.body.appendChild(ring);
     w.view = K.viewer(w.body, { ms: 20, overlay: curveOverlay(w) });
     w.preset = function (p) {
+      if (w.c.energy) w.c.energy.set(0);
+      ["pace", "fb", "drive", "bright", "cymbals"].forEach(function (k) { if (!(k in p.set)) w.c[k].set({ pace: 1, fb: .4, drive: 0, bright: 18000, cymbals: 0 }[k]); });
       for (var k in p.set) if (w.c[k]) w.c[k].set(p.set[k]);
       if (p.color) w.c.color.set(p.color); w.c.swell.set(p.swell != null ? p.swell : .3); if (p.eq) w.setEq(p.eq);
-      if (run) run.rebuild();
+      if (w.energy) w.energy.resetFrom(); if (run) run.rebuild();
     };
     w.presetList = AMB_PRESETS;
     w.apply = function (k, v) {
@@ -170,6 +216,9 @@
       if (k === "verb") { run.wet.gain.setTargetAtTime(v * 1.4, t, .2); run.dry.gain.setTargetAtTime(1 - v * .6, t, .2); }
       if (k === "decay") run.rev.set({ decay: v });
       if (k === "echo") run.echoG.gain.setTargetAtTime(v, t, .2);
+      if (k === "fb") run.setFb(v);
+      if (k === "drive") run.setDrive(v);
+      if (k === "bright") run.mlp.frequency.setTargetAtTime(v, t, .15);
       if ((k === "swell" || k === "rate") && run.bed.swell) run.bed.swell(w.P.swell, w.P.rate);
     };
     function scaleNotes() {   // the notes the loops choose from: two octaves of the scale from the key's F3–E4 octave up
@@ -183,7 +232,7 @@
     function makeLoops() {
       var notes = scaleNotes(), R = rnd(+w.P.key * 31 + w.P.mode.length * 7 + 1), L = [], base = 19;
       for (var i = 0; i < w.P.loops; i++) {
-        var len = base + w.P.spread * (i * 2.37 + R() * 1.9) * (i % 2 ? 1.3 : 1), n = Math.max(1, Math.round(w.P.density * (1 + R() * 1.6))), ev = [];
+        var len = (base + w.P.spread * (i * 2.37 + R() * 1.9) * (i % 2 ? 1.3 : 1)) / (w.P.pace || 1), n = Math.max(1, Math.round(w.P.density * (1 + R() * 1.6))), ev = [];
         for (var j = 0; j < n; j++) ev.push({ at: (j + R() * .6) * len / n, m: notes[Math.floor(R() * notes.length)], v: .45 + R() * .35 });
         L.push({ len: len, ev: ev });
       }
@@ -191,13 +240,21 @@
     }
     w.onStart = function (c, out) {
       var bus = c.createGain(), dry = c.createGain(), wet = c.createGain(), echoG = c.createGain(), droneG = c.createGain(), noiseG = c.createGain(), comp = c.createDynamicsCompressor();
-      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = .05; comp.release.value = .5; comp.connect(out);
-      var rev = SK.fx("reverb", c, { decay: w.P.decay, pre: 40, damp: 5000, early: .2, size: 1 }), dly = SK.fx("delay", c, { time: 1700, fb: .4, tone: 1800, wow: .5, pp: "1" }), ehp = c.createBiquadFilter();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = .05; comp.release.value = .5; 
+      // energy's parts: drive (tanh, harder as it rises, level kept roughly even), a master low-pass (Brightness) and a limiter, so
+      // high feedback and drive can pile up without running away
+      var src = c.createGain(), drv = c.createWaveShaper(), dmk = c.createGain(), mlp = c.createBiquadFilter(), lim = c.createDynamicsCompressor();
+      mlp.type = "lowpass"; mlp.Q.value = -3; mlp.frequency.value = w.P.bright; lim.threshold.value = -4; lim.knee.value = 0; lim.ratio.value = 20; lim.attack.value = .003; lim.release.value = .25;
+      comp.connect(mlp); mlp.connect(lim); lim.connect(out);
+      function setDrive(v) { var k = 1 + v * 14, n = 2049, a = new Float32Array(n); for (var i = 0; i < n; i++) { var x = i / (n - 1) * 2 - 1; a[i] = v < .01 ? x : Math.tanh(k * x) / Math.tanh(k); } drv.curve = a; drv.oversample = "4x"; dmk.gain.setTargetAtTime(1 / (1 + v * 2.2), c.currentTime, .1); }
+      setDrive(w.P.drive); src.connect(drv); drv.connect(dmk); dmk.connect(bus);
+      var rev = SK.fx("reverb", c, { decay: w.P.decay, pre: 40, damp: 5000, early: .2, size: 1 }), dP = { time: 1700, fb: w.P.fb, tone: 1800, wow: .5, pp: "1" }, dly = SK.fx("delay", c, dP), ehp = c.createBiquadFilter();
       ehp.type = "highpass"; ehp.frequency.value = 150;   // long, dark echoes (Frippertronics-like); the right line repeats later (2.3 s) so they blur rather than tick
       if (dly.n && dly.n.lines[1]) dly.n.lines[1].d.delayTime.value = 2.3;
       bus.connect(dry); dry.connect(comp); bus.connect(rev.input); rev.output.connect(wet); wet.connect(comp); bus.connect(ehp); ehp.connect(echoG); echoG.connect(dly.input); dly.output.connect(rev.input); dly.output.connect(comp);
       dry.gain.value = 1 - w.P.verb * .6; wet.gain.value = w.P.verb * 1.4; echoG.gain.value = w.P.echo; droneG.gain.value = w.P.drone * .5; noiseG.gain.value = w.P.noise;
-      droneG.connect(bus); noiseG.connect(rev.input); noiseG.connect(comp);
+      droneG.connect(src);
+      function setFb(v) { dly.set({ fb: v }); } noiseG.connect(src);   // the noise bed goes through Drive too (Energy turns it into grit)
       var bed = noiseBed(c, noiseG, w.P), bank = null, dead = false, t0 = c.currentTime + .3, loops = makeLoops(), drone = [];
       // the drone: root and fifth (and the octave), three detuned saws each through a slowly opening and closing low-pass
       function droneOn() {
@@ -238,8 +295,8 @@
       function useBank() { bank = null; bset = null; if (w.P.inst === "bell") return;
         if (BELLS[w.P.inst]) { var k = w.P.inst; bellSet(c, k).then(function (b) { if (!dead && w.P.inst === k) bset = b; }).catch(function () {}); return; } var want = w.P.inst; loadBank(c).then(function (b) { return b.load([want]).then(function () { if (!dead && w.P.inst === want && b.has(want)) bank = b; }); }).catch(function () {}); }
       useBank();
-      function play(e, t) { if (BELLS[w.P.inst]) { if (bset) bset.play(bus, e.m, t, e.v); else bell(c, bus, e.m, t, e.v, 7); e.lit = t; return; }
-        if (bank) bank.play(w.P.inst, { midi: e.m, vel: e.v, dur: w.P.inst === "flute" ? 3 : 4 }, t, bus); else bell(c, bus, e.m, t, e.v, 7); e.lit = t; }
+      function play(e, t) { if (BELLS[w.P.inst]) { if (bset) bset.play(src, e.m, t, e.v); else bell(c, src, e.m, t, e.v, 7); e.lit = t; return; }
+        if (bank) bank.play(w.P.inst, { midi: e.m, vel: e.v, dur: w.P.inst === "flute" ? 3 : 4 }, t, src); else bell(c, src, e.m, t, e.v, 7); e.lit = t; }
       // the scheduler: each loop's next note time is worked out from t0 and the loop's own length
       var next = loops.map(function () { return 0; }), cyc = loops.map(function () { return 0; });
       // wind chimes: a recorded gust now and then, panned somewhere, a little faster or slower; how often follows the slider
@@ -250,15 +307,28 @@
         var name = "chimes-" + CHIMES[Math.floor(Math.random() * CHIMES.length)];
         fetchBuf(c, name).then(function (b) { if (dead) return; var s = c.createBufferSource(), g = c.createGain(), pn = c.createStereoPanner();
           s.buffer = b; s.playbackRate.value = .85 + Math.random() * .3; pn.pan.value = Math.random() * 1.6 - .8; g.gain.value = .25 + .35 * w.P.chimes;
-          s.connect(g); g.connect(pn); pn.connect(bus); s.start(); s.onended = function () { pn.disconnect(); }; }).catch(function () {});
+          s.connect(g); g.connect(pn); pn.connect(src); s.start(); s.onended = function () { pn.disconnect(); }; }).catch(function () {});
+      }
+      // cymbal swells: a recorded crash played backwards (it rises into the hit) or forwards, now and then; from the Drum Kits' recordings
+      var nextCym = c.currentTime + 3, cymRev = {};
+      function cymbal(now) {
+        if (w.P.cymbals < .02 || now < nextCym) return; nextCym = now + (5 + Math.random() * 18) * (1.1 - w.P.cymbals);
+        var name = ["crash16-edge-", "crash13-edge-", "hat-open-", "china-"][Math.floor(Math.random() * (w.P.cymbals > .6 ? 4 : 2))] + (1 + Math.floor(Math.random() * 3));
+        var get = cymRev[name] || (cymRev[name] = fetch("/apps/shared/lessons/cymbal-samples/" + name + ".m4a").then(function (r) { if (!r.ok) throw 0; return r.arrayBuffer(); })
+          .then(function (a) { return new Promise(function (res, rej) { c.decodeAudioData(a, res, rej); }); })
+          .then(function (b) { var r2 = c.createBuffer(b.numberOfChannels, b.length, b.sampleRate); for (var ch = 0; ch < b.numberOfChannels; ch++) { var d = b.getChannelData(ch), o = r2.getChannelData(ch); for (var i = 0; i < d.length; i++) o[i] = d[d.length - 1 - i]; } return [b, r2]; }));
+        get.then(function (pair) { if (dead) return; var s = c.createBufferSource(), g = c.createGain(), pn = c.createStereoPanner();
+          s.buffer = pair[Math.random() < .7 ? 1 : 0]; s.playbackRate.value = .6 + Math.random() * .5; pn.pan.value = Math.random() * 1.4 - .7; g.gain.value = .2 + .4 * w.P.cymbals;
+          s.connect(g); g.connect(pn); pn.connect(src); s.start(); s.onended = function () { pn.disconnect(); }; }).catch(function () {});
       }
       function tick() {
-        if (dead) return; var now = c.currentTime; gust(now); if (pad) padScan(now);
+        if (dead) return; var now = c.currentTime; gust(now); cymbal(now); if (pad) padScan(now);
         loops.forEach(function (L, i) {
           for (;;) { var e = L.ev[next[i]], t = t0 + cyc[i] * L.len + e.at; if (t > now + .2) break; if (t >= now - .05) play(e, t); next[i]++; if (next[i] >= L.ev.length) { next[i] = 0; cyc[i]++; } }
         });
       }
       var iv = setInterval(tick, 50); tick();
+      var rbT = 0;
       function rebuild() { loops = makeLoops(); t0 = c.currentTime + .1; next = loops.map(function () { return 0; }); cyc = loops.map(function () { return 0; }); }
       // the rings
       var raf = 0;
@@ -280,7 +350,7 @@
       }
       draw();
       run = { bed: bed, dry: dry, wet: wet, echoG: echoG, droneG: droneG, noiseG: noiseG, rev: rev,
-        rebuild: rebuild, retune: function () { droneOn(); rebuild(); }, inst: useBank };
+        rebuild: rebuild, rebuildSoon: function () { clearTimeout(rbT); rbT = setTimeout(function () { if (!dead) rebuild(); }, 400); }, setFb: setFb, setDrive: setDrive, mlp: mlp, retune: function () { droneOn(); rebuild(); }, inst: useBank };
       return function () {
         dead = true; clearInterval(iv); cancelAnimationFrame(raf); run = null; bed.stop(); drone.forEach(function (d) { d.stop(); }); if (bank && bank.stopAll) bank.stopAll();
         setTimeout(function () { rev.stop(); dly.stop(); try { comp.disconnect(); } catch (e) {} }, 300);
@@ -294,7 +364,12 @@
     ".amb-band{display:flex;flex-direction:column;align-items:center;font-family:var(--font-mono);font-size:.7rem;margin:0}" +
     ".amb-band input{writing-mode:vertical-lr;direction:rtl;height:120px;width:22px;accent-color:var(--site-accent-dk)}" +
     ".amb-band .amb-bf{color:var(--site-ink-2)}.amb-nb{margin:.4rem 0}.amb-nb summary{cursor:pointer;font-family:var(--font-display)}" +
-    ".sk-plot.amb-rings{height:260px;max-width:420px}";
+    ".sk-plot.amb-rings{height:260px;max-width:420px}" +
+    ".amb-en{margin:.5rem 0}.amb-en summary{cursor:pointer;font-family:var(--font-display)}.amb-en-knob .sk-cl{font-weight:700}" +
+    ".amb-en-t{border-collapse:collapse;font-size:.82rem;margin:.3rem 0}.amb-en-t th,.amb-en-t td{padding:2px 6px;text-align:left}" +
+    ".amb-en-n{width:5.5em;font-family:var(--font-mono);font-size:.8rem}" +
+    ".amb-en-bar{display:inline-block;width:90px;height:8px;border:1px solid var(--site-ink-2);border-radius:4px;overflow:hidden;vertical-align:middle}" +
+    ".amb-en-bar span{display:block;height:100%;background:var(--site-accent);transition:width .1s}";
   document.head.appendChild(css);
   SK.kinds.noiseeq = NoiseEq; SK.kinds.ambient = Ambient;
 })();

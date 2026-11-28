@@ -39,6 +39,18 @@ const RMS = `(w => { const a = w.view && w.view.an; if (!a) return 0; const d = 
     check(`ambient ${inst} + ${dtype} drone + chimes: sounds, sample served, no errors`, lv > .001 && got && !b.errors.filter(e => !/supabaseUrl/.test(e)).length, "rms " + lv.toFixed(4) + " " + b.errors.join(" | "));
     await b.eval(`SynthKit.widgets.find(w => w.kind === "ambient").stop()`); await b.sleep(300);
   }
+  // Energy (super knob): at 1 every assigned setting reaches its To, the sound gets louder and brighter, nothing runs away
+  { b.errors.length = 0; const W = `SynthKit.widgets.find(w => w.kind === "ambient")`;
+    await b.eval(`(w => { w.preset(w.presetList[0]); w.start(); })(${W})`); let calm = 0, hot = 0, peak = 0;
+    for (let k = 0; k < 15; k++) { await b.sleep(200); calm = Math.max(calm, await b.eval(`${RMS}(${W})`)); }
+    await b.eval(`${W}.c.energy.set(${process.env.NEG ? 0 : 1})`);
+    for (let k = 0; k < 30; k++) { await b.sleep(200); const v = await b.eval(`${RMS}(${W})`); hot = Math.max(hot, v); }
+    const moved = await b.eval(`(w => w.energy.map.every(e => Math.abs(w.c[e[0]].value - e[1]) / Math.max(1, Math.abs(e[1])) < .05))(${W})`);
+    check("Energy 1 moves every assigned control to its To", moved);
+    check("Energy 1 is louder than Energy 0 and stays under clipping", hot > calm * 1.5 && hot < .9, `rms calm ${calm.toFixed(3)}, energy ${hot.toFixed(3)}`);
+    await b.eval(`${W}.c.energy.set(0)`); const back = await b.eval(`(w => Math.abs(w.c.density.value - .9) < .01 && Math.abs(w.c.fb.value - .4) < .01)(${W})`);
+    check("Energy back to 0 returns each control to its From", back);
+    await b.eval(`${W}.stop()`); check("Energy: no page errors", !b.errors.filter(e => !/supabaseUrl/.test(e)).length, b.errors.join(" | ")); }
   // the tape echo dies away at every frequency: a 2.2 kHz burst into the delay at fb 0.5, tone 2800 (the old loop gain there was 1.03)
   const echo = await b.eval(`(async () => { const c = new OfflineAudioContext(1, 48000 * 12, 48000), o = c.createOscillator(), g = c.createGain();
     o.frequency.value = 2200; g.gain.setValueAtTime(.3, 0); g.gain.setValueAtTime(0, .15); o.connect(g); o.start(0);
