@@ -90,5 +90,6 @@ body.sk-has-bar{padding-bottom:4.5rem}
 <script src="/apps/shared/pitch-detect.js?v=2"></script>
 <script src="/apps/shared/strobe-view.js?v=1"></script>
 <script src="/apps/shared/lessons/diagrams.js?v=5"></script>
+<script src="/apps/shared/noise.js"></script>
 <script src="/apps/shared/lessons/synth-kit.js?v=13"></script>
 ```

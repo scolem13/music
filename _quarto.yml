@@ -238,6 +238,7 @@ website:
             - lessons/sound-stereo.qmd
             - lessons/sound-chain.qmd
             - lessons/sound-chiptune.qmd
+            - lessons/sound-ambient.qmd
             - section: "Meet the Instruments"
               contents:
                 - lessons/intro-model-d.qmd
@@ -621,6 +622,7 @@ website:
           contents:
             - tools/scales.qmd
             - tools/scale-patterns.qmd
+            - tools/ambient.qmd
             - tools/part-reader.qmd
             - tools/classical-themes.qmd
             - tools/pop-themes.qmd

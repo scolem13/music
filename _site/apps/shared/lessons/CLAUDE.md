@@ -156,7 +156,11 @@
   drawings in their manuals; step strips are the page's own) and MC-4 (drawings too small). The B / To panel is read-only. Test
   `node tests/lessons/machine-panels.cdp.js` (`NEG=1` must fail; `SHOT=<dir>` saves light + dark screenshots).
 - Electric pianos (2026-11-26): `apps/shared/lessons/epiano.js` (global EPiano; header = models, controls, API): one physical / modal
-  engine, profiles rhodes (Mark I Stage 73), suitcase, wurli (200A), clav (D6), cp70, pianet (N); notes rendered once per
+  engine, profiles rhodes (Mark I Stage 73), suitcase, wurli (200A), clav (D6), cp70, pianet (N). NOTES START FROM SAMPLES by default (2026-11-27,
+  `EP.SAMPLED`, "Sound: samples / model" button): the band's MusyngKite soundfont (electric_piano_1 for rhodes / suitcase / wurli / pianet,
+  electric_grand_piano for cp70), shaped by each instrument's inside controls in `EP.renderSampled` (header "SAMPLED"; pianet = shaped tine
+  samples). wurli and clav play their OWN multisamples (`epiano-samples/<set>/manifest.json` + m4a, built by `python3 scripts/epiano-samples.py`):
+  Greg Sullivan's Wurlitzer EP200 (CC-BY 3.0, 4 layers) and Stevie Clavinet (licence UNKNOWN, owner's risk, 3 layers); the model is the fallback; notes rendered once per
   key / velocity / settings into AudioBuffers (`EPiano.render`, pure, runs in node), then drive / EQ / speaker / tremolo (Suitcase:
   stereo pan) live; `EPiano.translate(st, from, to)` exact / approx / lost. `<div class="epc" data-model data-to data-compact>`; faithful
   panels `panels/ep-<id>.js` through `FaithfulPanel.attachFace` (positions guessed, legends beyond Wikipedia unverified, no logos).
@@ -244,7 +248,9 @@
   snare wires as band-passed noise with strainer tension + throw-off, muffling, kick port. Cymbals: ~70 inharmonic partials, tilt /
   scatter by series (A, K dark, 2002 bright, china), size / weight decay, bow / bell / edge with bloom, wash, hi-hat pedal closed /
   half / open / foot, choke. Items: snares supraphonic, blackbeauty, maple, piccolo; kits jazz (18/12/14), rock (22/12/16 acrylic),
-  funk (dead); cymbals aride, kride, p2002, acrash, hats, china, splash. `DrumKits.translate` (pitch matched by the (0,1) mode;
+  funk (dead); cymbals aride, kride, p2002, acrash, hats, china, splash. Cymbals SOUND from recordings by default (2026-11-27): SM Drums (public-domain-style terms; manual: Zildjian A, Wuhan china), 10 groups x 3
+  strengths in `cymbal-samples/*.m4a` (1.8 MB), mapped and shaped per item by `cymSampleFor` (speed = size / weight, treble shelf = series:
+  K / 2002 / splash / 18" are shaped A recordings, not those cymbals); "Cymbals: recorded / model" button; model = fallback. `DrumKits.translate` (pitch matched by the (0,1) mode;
   out of reach > 4 semitones = lost; snare <-> kit snare slot; hats -> others = pedal lost; cymbal brightness by centroid). Drawings
   `panels/dk-<id>.js` (snare top + side view with throw-off key and strainer knob; kit from above) and `panels/cy-<id>.js`, built
   with `DrumKits.draw`; clicks hit-tested against the layout's `zones` (`DrumKits.zoneAt`). Pages `lessons/drum-kit-compare.qmd`
@@ -289,3 +295,20 @@
   drawbar set per manual (B) + pedal and no preset octave (`init` holds upre / lpre on B). `apps/shared/lessons/midi-split.js` (global
   MidiSplit): one MIDI keyboard split into zones with handles / Learn / octave per zone (localStorage `midi-split:<id>`), on the organ
   widget under the panel (pedal / lower / upper by the organ's manuals). Test `node tests/lessons/organ-split.cdp.js` (`NEG=1` must fail).
+- Instrument Presets page (`tools/instrument-presets.qmd`, `apps/shared/lessons/preset-book.js`, global PresetBook): every preset saved from
+  any panel's Presets menu, grouped by family (id prefix -> page, `FAMILIES`), each with its settings, Download / Delete, Export all /
+  Import (`kind: "instrument-presets"`, merge by name). Save also writes `fp-presets-meta:<id>` = { name, page }. Test
+  `node tests/tools/instrument-presets.cdp.js` (`NEG=1` must fail).
+- Show ▾ and sound while turning (2026-11-27): every faithful panel's bar has Show ▾ = "Only working controls" (hides controls the
+  model does not play (fp-off), decoration buttons / jacks and sections left with nothing working; gaps close by merged spans, page-aware)
+  + each top-level section on / off (label, or the section item's `name`; Vital's oscillator rows etc. named in panels/vital.js).
+  synth-compare.js: turning a knob makes the keys play that synth, and the translation follows every 80 ms (it waited for 250 ms of
+  stillness, so the other synth only changed on release). Meet Vital has "What the real Vital can do that this page can't" (a table
+  from synth_constants.h / synth_parameters.cpp, sources in scripts/sources/synth-views.py; written by scripts/intro-instruments/build.py).
+  Test `node tests/lessons/panel-show.cdp.js` (`NEG=1` must fail).
+- Vital's assignable modulation (2026-11-27): 8 matrix slots in PROFILES.vital (m1s/m1d/m1a..m8s/m8d/m8a; VT_MSRC sources Env 1-3,
+  LFO 1-2, Random, Velocity, Mod wheel, Note; VT_MDST destinations osc pitch / frame / level, all, cutoff, volume; amounts -100..100 %
+  of this page's range, unverified as Vital's law) -> engine routes (vtMatrix); new engine sources vel / modw / lfo2 and destinations
+  wt0-2 / lv0-2 (other synths unaffected). Panel: MATRIX tab + Env 3 / LFO 2 / Random; drag ENV 1-3, LFO 1-2, RAND 1, NOTE, VELOCITY
+  onto a knob (FaithfulPanel `modsrc` + layout dropMod / modDest / modded, knobs ringed). intro-kit steps take `data-page`. Real Vital's
+  interface, read from its source: research_notes/vital-ui-facts.md. Test `node tests/lessons/vital-matrix.cdp.js` (`NEG=1` must fail).

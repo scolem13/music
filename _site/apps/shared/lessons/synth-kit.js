@@ -103,7 +103,9 @@
       setFreq: function (x, t) { saw.frequency.setValueAtTime(x, t || c.currentTime); dl.delayTime.setValueAtTime(w / x, t || c.currentTime); } };
   }
   var bufs = typeof WeakMap === "function" ? new WeakMap() : null;       // context -> { kind: buffer } (a buffer is made for each context, never shared by accident)
+  if (!window.SiteNoise && typeof document !== "undefined" && !document.querySelector('script[src^="/apps/shared/noise.js"]')) { var nzs = document.createElement("script"); nzs.src = "/apps/shared/noise.js"; document.head.appendChild(nzs); }   // the noise model (noise.js: why short noise loops pulsed)
   function noiseBufFor(c, kind) {
+    if (window.SiteNoise) return SiteNoise.buffer(c, kind);                      // 23 s, seamless (noise.js); the 3 s loop below pulsed
     var cache = bufs && bufs.get(c); if (!cache) { cache = {}; if (bufs) bufs.set(c, cache); } if (cache[kind]) return cache[kind]; var rnd = FXV.prng(kind === "pink" ? 2 : kind === "brown" ? 3 : 1);
     var n = c.sampleRate * 3, b = c.createBuffer(1, n, c.sampleRate), d = b.getChannelData(0), b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0, last = 0;
     for (var i = 0; i < n; i++) {
@@ -115,7 +117,7 @@
     return (cache[kind] = b);
   }
   function noiseBuf(kind) { return noiseBufFor(ac(), kind); }
-  function noiseSrcFor(c, kind, rnd) { var s = c.createBufferSource(); s.buffer = noiseBufFor(c, kind || "white"); s.loop = true; s.loopStart = (rnd || Math.random)(); return s; }
+  function noiseSrcFor(c, kind, rnd) { if (window.SiteNoise) return SiteNoise.source(c, kind || "white"); var s = c.createBufferSource(); s.buffer = noiseBufFor(c, kind || "white"); s.loop = true; s.loopStart = (rnd || Math.random)(); return s; }
   function noiseSrc(kind) { return noiseSrcFor(ac(), kind); }
 
   // ---------- one-shot sounds the sources are made of ----------

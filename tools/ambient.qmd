@@ -1,0 +1,20 @@
+---
+title: "Ambient Generator"
+description: "Endless ambient music: a drone, tape loops of unequal length, a noise bed through a 10-band EQ, long reverb and tape echo."
+---
+
+{{< include ../lessons/_synth-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/lessons/ambient-kit.js"></script>
+```
+
+How it works and where it comes from: [Sound 27: Ambient music](../lessons/sound-ambient.qmd).
+
+## Generator
+
+<div class="sk" data-w="ambient" data-preset="Airport (tape loops)"></div>
+
+## Noise with a 10-band EQ
+
+<div class="sk" data-w="noiseeq" data-preset="Rain on a roof"></div>

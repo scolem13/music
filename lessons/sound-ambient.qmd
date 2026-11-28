@@ -1,0 +1,131 @@
+---
+title: "Sound 27: Ambient music"
+toc: true
+toc-depth: 2
+description: "Where ambient music came from (Satie, drones, tape loops, Eno, the chill-out room) and how it is made: drones, loops of unequal length, noise shaped with EQ, long reverb and tape echo. Ends with an Ambient Generator."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
+---
+
+{{< include _synth-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/lessons/ambient-kit.js"></script>
+```
+
+Most music asks you to listen. **Ambient music** lets you choose. Brian Eno, who gave it its name,
+wrote in the notes to *Music for Airports* that it "must be able to accommodate many levels of
+listening attention without enforcing one in particular; it must be as ignorable as it is
+interesting." That one sentence explains most of the production tricks on this page: no strong beat
+to grab you, no melody that demands to be followed, and a sound that keeps changing so slowly that
+it never quite repeats.
+
+**How to use the page.** Read the history first, then try each technique in its own widget. The
+last section puts them all together in the **Ambient Generator**; it also has its own page,
+[Ambient Generator](../tools/ambient.qmd).
+
+## A short history
+
+**Furniture music (1917).** Erik Satie coined *musique d'ameublement*, "furniture music", in 1917:
+music meant to sit in the background of a room like the furniture. A set was played in Paris in 1920
+as intermission music.
+
+**Drones and tape (the 1960s).** La Monte Young built music from sustained tones held for a very long
+time; Eno later called him "the daddy of us all". In 1962 the San Francisco Tape Music Center brought
+together composers who worked with tape recorders, among them Pauline Oliveros, Terry Riley and Steve
+Reich. Repeating patterns, drones and calm consonant harmony from this minimal music all fed into
+ambient. Oliveros later (1988) coined **deep listening** after recording in an underground cistern
+with a reverb some 45 seconds long.
+
+**Berlin (the 1970s).** German electronic musicians, Tangerine Dream and Klaus Schulze among them (the
+"Berlin School"), made long pieces from looping sequencer patterns and synthesizer washes.
+
+**Eno names it (1975–1979).** In January 1975 Eno was in bed after a car accident. A friend put on a
+record of eighteenth-century harp music; it was far too quiet, it was raining outside, and he could
+not get up to turn it up. He heard the music as part of the room. (The friend, Judy Nylon, remembers
+it differently.) The same year he made *Discreet Music*: a synthesizer playing two short phrases of
+**different lengths**, through an EQ and an echo, recorded on one tape machine and played back on a
+second machine whose output fed back into the first, so every phrase came round again, softer, on
+top of the new ones. *Ambient 1: Music for Airports* (released February 1979) was the first album
+he put out under the label "ambient". It was made from **tape loops of different lengths**: in
+"2/1" each loop held a sung note, and Eno started them all running and, in his words, "let them
+configure in the way they chose to configure". Because the loop lengths do not divide into each
+other, the notes keep landing in new combinations.
+
+**The chill-out room (around 1990).** In British dance culture, the quiet room away from the main
+floor, the **chill-out room**, played ambient, dub and slow beats. By the early 1990s the Orb, Aphex
+Twin and others were being called *ambient house* or *ambient techno*; Aphex Twin's *Selected Ambient
+Works Volume II* came out in 1994.
+
+## The techniques
+
+| Technique | What it does | Where you've met it on this site |
+|---|---|---|
+| **Drone** | one or two held notes (root and fifth) underneath everything, so there is never a chord change to wait for | [Ragas](ragas.qmd) (the tanpura) |
+| **Loops of unequal length** | short phrases that repeat, each at its own length, so they line up differently every time round | this page |
+| **Slow change** | filters and levels that move over tens of seconds, too slowly to hear as a movement | [LFOs](sound-lfo.qmd) |
+| **Long reverb** | puts every note in a huge space; notes overlap into a wash | [Reverb](sound-reverb.qmd) |
+| **Tape echo** | each note comes back softer and darker, a little out of tune | [Delay](sound-delay.qmd) |
+| **Shaped noise** | rain, wind, surf or tape hiss as a bed under the notes | [Noise](sound-noise.qmd), below |
+| **Soft attacks, safe scales** | no sharp starts; pentatonic or Lydian notes that never clash, whatever lands together | [Envelopes](sound-envelopes.qmd) |
+
+## Noise you can shape
+
+Noise has energy at every frequency, so an **equaliser** can carve almost any texture out of it. This
+one has ten bands, an octave apart from 31 Hz to 16 kHz, like a graphic EQ on a mixing desk. Push a
+band up (+) to bring that part of the noise forward, pull it down (−) to take it away. The pink line
+on the spectrum is the curve you've drawn.
+
+<div class="sk" data-w="noiseeq"></div>
+
+- **Rain on a roof**: cut the lows, lift 2–8 kHz. **Distant surf**: the opposite, plus a slow swell.
+- **Wind** is a hump in the middle (250 Hz–1 kHz) that rises and falls.
+- **Tape hiss** is just the top: a sound ambient producers sometimes *add* back, for warmth.
+
+This noise never repeats. (Earlier versions of the site's noise were a few seconds of noise played on
+a loop; the ear catches the repeat as a soft "whoosh" every two or three seconds. See
+[Noise](sound-noise.qmd).)
+
+## Loops of unequal length
+
+Try the generator below with only the loops: turn **Drone** and **Noise bed** to 0. Each ring is one
+loop; a dot is a note; the bright mark is the playhead going round. Now drag **Loop lengths** to *all
+equal*: every loop comes round together and you hear a steady pulse, like a song. Drag it back to *far
+apart*: the notes keep finding new neighbours, and the music never quite repeats. That is the
+*Music for Airports* method.
+
+## The Ambient Generator
+
+<div class="sk" data-w="ambient" data-preset="Airport (tape loops)"></div>
+
+- **Key** and **Scale**: the notes the loops choose from. Pentatonic and Lydian have no notes that
+  clash badly, so any notes that happen to land together sound fine.
+- **Tape loops**, **Loop lengths**, **Notes per loop**: how many loops, how different their lengths
+  are (from 19 seconds to about 45), and how busy each one is.
+- **Drone**: root, fifth and octave on detuned sawtooth waves, each behind a low-pass filter that opens
+  and closes over half a minute or more.
+- **Noise bed**: open *Noise bed* for its colour, swell and the same 10-band EQ as above.
+- **Reverb** and **Reverb length**, **Tape echo**: the space. The echo feeds the reverb, as it would
+  on a studio desk.
+
+## Try this
+
+1. Start *Airport*. Wait a full minute without touching anything. Do you hear the same moment twice?
+2. Turn **Reverb** to 0. What happens to the mood? Bring it back slowly.
+3. Choose *Rain room*, open the noise bed and move the **8k** band. When does the rain stop sounding
+   like rain and start sounding like hiss?
+4. Make your own: choose a key, scale and instrument, set the loops, and describe what you made in
+   one sentence that Eno might have written.
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Ambient 1: Music for Airports." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ambient_1:_Music_for_Airports](https://en.wikipedia.org/wiki/Ambient_1:_Music_for_Airports). Released February 1979 (liner notes dated 1978); first Eno album under the label ambient; tape loops of keyboards and voices at differing lengths; 2/1: vocal loops of disparate lengths, Eno started them running and let them configure.
+
+"Ambient music." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ambient_music](https://en.wikipedia.org/wiki/Ambient_music). Eno popularised the term with Music for Airports; the liner-note quotation 'as ignorable as it is interesting'; La Monte Young and drone; San Francisco Tape Music Center (1962); Oliveros, deep listening (1988); Berlin School, Tangerine Dream, Klaus Schulze; ambient house, the Orb, Aphex Twin, chill-out rooms; Selected Ambient Works Volume II (1994).
+
+"Discreet Music." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Discreet_Music](https://en.wikipedia.org/wiki/Discreet_Music). 1975; Synthi AKS sequencer, two phrases of different lengths, graphic EQ, echo, two tape machines in a delay loop; the harp record played too quietly after Eno's accident (Judy Nylon disputes it).
+
+"Furniture music." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Furniture_music](https://en.wikipedia.org/wiki/Furniture_music). Term coined by Erik Satie in 1917; second set premiered 1920 in Paris as intermission music.
+:::
+<!-- /works-cited -->

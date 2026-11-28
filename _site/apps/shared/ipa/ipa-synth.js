@@ -49,8 +49,8 @@
     osc.frequency.value = cur.pitch;
     var vib = ctx.createOscillator(), vibAmt = ctx.createGain(); vib.frequency.value = 5.3; vibAmt.gain.value = cur.pitch * cur.vib;
     vib.connect(vibAmt); vibAmt.connect(osc.frequency);
-    var len = ctx.sampleRate, buf = ctx.createBuffer(1, len, ctx.sampleRate), d = buf.getChannelData(0);
-    for (var i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+    var buf = window.SiteNoise ? SiteNoise.buffer(ctx, "white") : null;          // 23 s, seamless (noise.js); a 1 s loop pulsed
+    if (!buf) { var len = ctx.sampleRate, d; buf = ctx.createBuffer(1, len, ctx.sampleRate); d = buf.getChannelData(0); for (var i = 0; i < len; i++) d[i] = Math.random() * 2 - 1; }
     var noise = ctx.createBufferSource(); noise.buffer = buf; noise.loop = true;
     var breath = ctx.createGain(); breath.gain.value = 0.04; noise.connect(breath);
     var src = ctx.createGain(); osc.connect(src); breath.connect(src);

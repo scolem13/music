@@ -88,7 +88,9 @@
 
   // ---------- generated sources ----------
   var noiseBuf = null, drumBuf = null;
+  if (!window.SiteNoise && typeof document !== "undefined" && !document.querySelector('script[src^="/apps/shared/noise.js"]')) { var nzs = document.createElement("script"); nzs.src = "/apps/shared/noise.js"; document.head.appendChild(nzs); }   // the noise model (noise.js: why short noise loops pulsed)
   function getNoise(c) {
+    if (window.SiteNoise) return SiteNoise.buffer(c, "pink");                    // 23 s, seamless (noise.js); the 2 s loop below pulsed
     if (noiseBuf && noiseBuf.sampleRate === c.sampleRate) return noiseBuf;
     var n = c.sampleRate * 2, b = c.createBuffer(1, n, c.sampleRate), d = b.getChannelData(0), b0 = 0, b1 = 0, b2 = 0;
     for (var i = 0; i < n; i++) { var x = Math.random() * 2 - 1; b0 = 0.99765 * b0 + x * 0.099046; b1 = 0.963 * b1 + x * 0.2965164; b2 = 0.57 * b2 + x * 1.0526913; d[i] = (b0 + b1 + b2 + x * 0.1848) * 0.12; }

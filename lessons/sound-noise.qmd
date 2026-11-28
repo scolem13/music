@@ -30,6 +30,13 @@ buttons. Noise is loud for its size: start with the volume low.
 Watch the spectrum as you switch. White is flat, pink tilts down gently, brown tilts down steeply.
 The oscilloscope never settles into a shape, because noise never repeats.
 
+## Shape it with a 10-band EQ
+
+The same noise through ten octave bands, 31 Hz to 16 kHz. Push a band up to bring that part forward; the presets are
+starting points for rain, surf, wind and hiss. The [ambient lesson](sound-ambient.qmd) uses it as a bed under its tape loops.
+
+<div class="sk" data-w="noiseeq"></div>
+
 ## Sounds made from noise
 
 Noise on its own is not very musical. Its use comes from **shaping** it: a [filter](sound-filter.qmd)
@@ -70,3 +77,8 @@ Reid, Gordon. "Synth Secrets: Synthesizing Drums: The Snare Drum." *Sound On Sou
 <!-- /works-cited -->
 
 {{< include _synth-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/lessons/ambient-kit.js"></script>
+```
+
