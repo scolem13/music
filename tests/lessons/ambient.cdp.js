@@ -14,7 +14,7 @@ const RMS = `(w => { const a = w.view && w.view.an; if (!a) return 0; const d = 
     const ws = await b.eval(`SynthKit.widgets.map(w => w.kind)`);
     check(pg + ": widgets built", ws.length && !(await b.eval(`[...document.querySelectorAll('div.sk')].some(d => /failed|Unknown/.test(d.textContent.slice(0,80)))`)), ws.join(","));
     for (let i = 0; i < ws.length; i++) {
-      if (!/noiseeq|ambient/.test(ws[i])) continue;
+      if (!/noiseeq|ambient|modal/.test(ws[i])) continue;
       await b.eval(`SynthKit.widgets[${i}].start()`); let lv = 0;
       for (let k = 0; k < 15; k++) { await b.sleep(200); lv = Math.max(lv, await b.eval(`${RMS}(SynthKit.widgets[${i}])`)); }
       check(`${pg}[${i}] ${ws[i]}: makes sound`, lv > 0.001, "rms " + lv.toFixed(4));
@@ -29,14 +29,14 @@ const RMS = `(w => { const a = w.view && w.view.an; if (!a) return 0; const d = 
     }
     const errs = b.errors.filter(e => !/supabaseUrl/.test(e)); check(pg + ": no page errors", !errs.length, errs.join(" | "));
   }
-  // the generator's new voices (2026-11-28): recorded bells load and sound, the wind-chime layer and the wavetable pad run
+  // the modelled voices (bass bars, chime tubes), the modelled wind-chime gusts and the wavetable pad sound; no bell recordings are fetched
   await b.goto("http://127.0.0.1:8517/tools/ambient.html"); await b.sleep(800);
-  for (const [inst, dtype] of [["tubular", "pad"], ["celesta", "saw"], ["crotale", "pad"]]) {
+  for (const [inst, dtype] of [["cbell", "pad"], ["mbar", "pad"], ["wbar", "saw"], ["chime", "pad"]]) {
     b.errors.length = 0;
     await b.eval(`(w => { w.c.inst.set("${inst}"); w.c.dtype.set("${dtype}"); w.c.chimes.set(1); w.c.density.set(1); w.start(); })(SynthKit.widgets.find(w => w.kind === "ambient"))`);
     let lv = 0; for (let k = 0; k < 20; k++) { await b.sleep(200); lv = Math.max(lv, await b.eval(`${RMS}(SynthKit.widgets.find(w => w.kind === "ambient"))`)); }
-    const got = await b.eval(`fetch("/apps/shared/lessons/bell-samples/${inst === "crotale" ? "crotale-C6" : inst === "celesta" ? "celesta-c5" : "tubular-C4"}.m4a").then(r => r.ok)`);
-    check(`ambient ${inst} + ${dtype} drone + chimes: sounds, sample served, no errors`, lv > .001 && got && !b.errors.filter(e => !/supabaseUrl/.test(e)).length, "rms " + lv.toFixed(4) + " " + b.errors.join(" | "));
+    const got = await b.eval(`!performance.getEntriesByType("resource").some(r => /bell-samples/.test(r.name))`);
+    check(`ambient ${inst} + ${dtype} drone + modelled chimes: sounds, no samples fetched, no errors`, lv > .001 && got && !b.errors.filter(e => !/supabaseUrl/.test(e)).length, "rms " + lv.toFixed(4) + " " + b.errors.join(" | "));
     await b.eval(`SynthKit.widgets.find(w => w.kind === "ambient").stop()`); await b.sleep(300);
   }
   // Energy (super knob): at 1 every assigned setting reaches its To, the sound gets louder and brighter, nothing runs away
@@ -60,7 +60,7 @@ const RMS = `(w => { const a = w.view && w.view.an; if (!a) return 0; const d = 
     await b.sleep(1600); const end = await b.eval(`(w => ({ v: w.P.verb, g: w.gliding(), n: Object.keys(w.cued()).length }))(${W})`);
     check("Go glides over the Transition time", mid > .55 && mid < .85 && Math.abs(end.v - .9) < .01 && !end.g && !end.n, `mid ${mid.toFixed(2)}, end ${JSON.stringify(end)}`);
     await b.eval(`(w => { w.c.cue.set("now"); w.c.chimes.set(1); w.c.chLevel.set(2); w.c.cymbals.set(1); w.c.cyLevel.set(2); w.c.cyRev.set(1); })(${W})`);
-    const menus = await b.eval(`(w => w.P.chimeSet.length === 8 && w.P.cymSet.length === 4 && w.P.chLevel === 2 && w.P.cyRev === 1)(${W})`);
+    const menus = await b.eval(`(w => typeof w.P.chTune === "string" && w.P.chLow === 45 && w.P.cymSet.length === 4 && w.P.chLevel === 2 && w.P.cyRev === 1)(${W})`);
     check("chime and cymbal menus set their values", menus);
     await b.sleep(1500); await b.eval(`${W}.stop()`); check("cue and menus: no page errors", !b.errors.filter(e => !/supabaseUrl/.test(e)).length, b.errors.join(" | ")); }
   // Record take -> Open in DAW: a 6 s take with a cue glide, the stems and notes reach the DAW page as a new project

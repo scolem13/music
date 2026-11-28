@@ -317,6 +317,30 @@
   envelope Flat gives the trick away, partials plotted) and `tritone` (Deutsch's paradox: random pair, Up/Down, answers on the
   pitch-class circle; `play(pc)`, `answers()`). Facts from Wikipedia only (`scripts/sources/shepard.py`). Test
   `node tests/lessons/shepard.cdp.js` (`NEG=1` must fail). Not listened to by a person yet.
+- Ambient Generator takes (2026-11-28): "Record take" / "Open in DAW" (`takeUI` in ambient-kit.js; header comment there):
+  one AudioWorklet with 8 inputs (master `lim`, `notesB`, `chimeB`, `cymB`, droneG, noiseG, reverb and echo returns), mono at half
+  rate, 5 min cap; notes / gusts / swells / setting changes logged (`w.take`). `w.takeProject()` builds a 60 bpm project (1 beat
+  = 1 s): note track per loop (piano / rhodes, else syn-fm; flute syn-sub), stems as audio tracks (all but Master muted), a muted
+  "⚙ setting" track per changed setting whose vol automation draws it (-40..0 dB). Stems go straight into IndexedDB "mini-daw" /
+  "takes"; the project via localStorage "mdaw:handoff-project", opened by `takeProjectHandoff` in mini-daw.js. Test in ambient.cdp.js.
+- Ambient Generator cues and menus (2026-11-28): Changes = Cued: `w.apply` stores a moved control in `cued` and puts `w.P[k]` back
+  to `live[k]` (the slider keeps the new value; the scheduler, which reads `w.P`, keeps the old); `w.go()` glides numbers over
+  Transition (smoothstep, 100 ms steps, brightness in octaves), STEP keys (scale, inst, loops...) change at once. Chime / cymbal
+  menus: `chimeSet` / `cymSet` checkboxes, Level / Speed / Varies / Width (`ch*`, `cy*`; cymbals also Backwards %).
+- Ambient Generator Energy (2026-11-28): one "Energy" knob after the MODX Super Knob, `ENERGY` in ambient-kit.js = [key, To];
+  the table shows On / From / To / Now per setting, and the knob sets the real controls (they move). From = the control's value
+  when Energy was last 0 (hand moves at 0 update it; presets reset Energy and From). Brightness sweeps in octaves, the rest linearly.
+  New settings it drives: Loop speed, Echo feedback (to .97), Drive (tanh, 4x oversampled, noise bed goes through it), Brightness
+  (master low-pass), Cymbal swells (Drum Kits' recordings, 70% reversed). A limiter (-4 dB, 20:1) after the compressor.
+- Ambient Generator voices (2026-11-28, revised the same day): NO bell or chime recordings on the site (the owner's decision: the
+  only samples kept are the Drum Kits' cymbals, used by Cymbal swells). Loop notes can play modelled bass bars (metal / wood) and
+  chime tubes, and the wind-chime gusts are modelled tubes tuned to the key (`MODAL` / `VOICES` in ambient-kit.js; numbers and
+  sources in its comment, `scripts/sources/ambient-models.py`, research in `research_notes/bell-chime-samples/MODELS.md`).
+  The bell model needs more work and is not in the generator. The collected recordings (bells, chimes, marimba) stay local in
+  `research_notes/bell-chime-samples/` (audio git-ignored) for listening and for setting the models; the listening page is a
+  private artifact. Drum Kits' cymbals remain. Drone = saws or a wavetable pad (four of `SK.wtFrames()` cross-faded). The shared
+  tape delay's `satCurve` has unity small-signal gain and its tone low-pass Q -3 (before, the echoes at 2-2.5 kHz never died);
+  test checks a 2.2 kHz burst is 40 dB down by 10 s. Ambient echo: 1.5 s / 2.3 s ping-pong, fb .4, tone 1800, 150 Hz HP send.
 - Noise and ambient (2026-11-27): `apps/shared/noise.js` (global `SiteNoise`; NOT `Noise`, a name another script takes) is the site's
   noise model: `source(ctx, kind)` = a looped 23 s buffer, filters warmed, end cross-faded into the start, random start;
   `stream(ctx, kind)` = an AudioWorklet that never repeats (buffer until it loads); `eq(ctx, gains)` = 10 octave peaking bands

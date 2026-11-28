@@ -842,6 +842,7 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
    
   <ul>
   <li><a href="#generator" id="toc-generator" class="nav-link active" data-scroll-target="#generator">Generator</a></li>
+  <li><a href="#bells-chimes-and-bass-bars" id="toc-bells-chimes-and-bass-bars" class="nav-link" data-scroll-target="#bells-chimes-and-bass-bars">Bells, chimes and bass bars</a></li>
   <li><a href="#noise-with-a-10-band-eq" id="toc-noise-with-a-10-band-eq" class="nav-link" data-scroll-target="#noise-with-a-10-band-eq">Noise with a 10-band EQ</a></li>
   <li><a href="#works-cited" id="toc-works-cited" class="nav-link" data-scroll-target="#works-cited">Works Cited</a></li>
   </ul>
@@ -1067,8 +1068,15 @@ body.sk-has-bar{padding-bottom:4.5rem}
 
 </div>
 <p><strong>Energy</strong> is one knob that moves many settings at once, like the Super Knob on a Yamaha MODX. The table under it shows each one: where it starts (From, which is wherever that setting was when Energy was last at 0), where it ends up at full Energy (To, which you can type), and where it is now. As you turn Energy up, the loops get busier and faster, the echo feeds back towards the edge, drive turns the noise and bells to grit, and cymbal swells and chimes pile up. A limiter stops it all from running away. Untick a row to leave that setting alone.</p>
-<p><strong>Changes: Cued</strong> holds back what you change while it plays. The slider shows the new value but the sound keeps the old one until you press <strong>Go</strong>. Then every cued setting glides to its new value over the <strong>Transition</strong> time, the way a DJ or a live-electronics player moves from one scene to the next. Scale, key, instrument and the loops’ shape change at the start of the glide. Turning Energy while cued works the same way. The <strong>Wind chimes</strong> and <strong>Cymbal swells</strong> menus choose which recordings play, how loud, how fast (higher or lower) and how wide.</p>
+<p><strong>Changes: Cued</strong> holds back what you change while it plays. The slider shows the new value but the sound keeps the old one until you press <strong>Go</strong>. Then every cued setting glides to its new value over the <strong>Transition</strong> time, the way a DJ or a live-electronics player moves from one scene to the next. Scale, key, instrument and the loops’ shape change at the start of the glide. Turning Energy while cued works the same way. The <strong>Wind chimes</strong> menu sets up the chime tubes, which are modelled, not recorded: how they’re tuned (to the generator’s key), how long the longest tube is (bass, baritone or tenor), how hard the striker is, how long they ring, how loud and how wide. The <strong>Cymbal swells</strong> menu chooses which of the Drum Kits’ cymbal recordings play, how loud, how fast, how wide and how many play backwards. <strong>Loop notes on</strong> can also play modelled church bells (still being worked on), bass bars (metal or wood) or chime tubes. None of these are recordings. Each is built from its partials, using published measurements of real instruments where there are any.</p>
 <p><strong>● Record take</strong> records what you hear for up to five minutes, then <strong>Open in the DAW</strong> opens it in the <a href="../tools/daw.html">DAW scratch pad</a> as a new project. You get one note track per tape loop, so you can see the loops drifting apart on the piano roll. You also get an audio track for what you heard (Master) and one for each part: loop notes, chimes, cymbals, drone, noise, reverb and echo. Solo a part to hear it alone. Each setting you changed gets its own muted track, whose volume line shows the setting over time.</p>
+</section>
+<section id="bells-chimes-and-bass-bars" class="level2">
+<h2 class="anchored" data-anchor-id="bells-chimes-and-bass-bars">Bells, chimes and bass bars</h2>
+<p>The instruments the generator can use, on their own. <strong>Strike</strong> plays one note; <strong>▶ Play</strong> lets each one play by itself: the bell tolls, the chime tubes play gusts on a pentatonic set, the bars play a bass pattern. All of them are built from their partials, not recorded. The chime tube and the bars follow published measurements; the church bell is still being worked on.</p>
+<div class="sk" data-w="modal">
+
+</div>
 </section>
 <section id="noise-with-a-10-band-eq" class="level2">
 <h2 class="anchored" data-anchor-id="noise-with-a-10-band-eq">Noise with a 10-band EQ</h2>
@@ -1080,10 +1088,12 @@ body.sk-has-bar{padding-bottom:4.5rem}
 <h2 class="anchored" data-anchor-id="works-cited">Works Cited</h2>
 <!-- works-cited: written by scripts/works-cited.py -->
 <div class="works-cited">
-<p>Membeth. “Windglockenspiel.Koshi.ogg”; stephan, “Windchime.ogg”. Wikimedia Commons, CC0 / public domain. A Koshi chime and a wind chime in a breeze, used as wind-chime gusts.</p>
-<p>stamperadam. Celesta samples, CC0, via Sonatina Symphonic Orchestra (Mattias Westlund). Freesound. Celesta C4-C6 (hard strikes), CC0 per the Sonatina README.</p>
-<p>University of Iowa Electronic Music Studios. <i>Musical Instrument Samples</i>: crotales and vibraphone (2012). theremin.music.uiowa.edu. Crotales C6-C8 and vibraphone C4-E5, ff; the site says the samples may be used for any projects without restrictions.</p>
-<p>Versilian Studios. <i>VSCO 2 Community Edition</i>. CC0 1.0, GitHub, github.com/sgossner/VSCO-2-CE. Tubular bells (C4 G4 C5 F5), glockenspiel (G4-C7) and metal wind-chime sweeps and gust used in the Ambient Generator; CC0.</p>
+<p>“Composite Marimba Bars.” US Patent 4,411,187. Marimba decay about 2 s at C3 to 1/50 s at C7; vibraphone 30 s at the low end to about 6 s at the high end.</p>
+<p>Hite, Lee. “Design Decisions.” leehite.org. Strike the end for most overtones; dead centre misses the first overtone; metal strikers give more overtones, softer ones a cleaner tone.</p>
+<p>Hite, Lee. <i>Tubular Bell Chimes: Do-It-Yourself Compendium</i>. 2022. Free-free tube ratios x2.76, 5.40, 8.93, 13.34, 18.64 (p.&nbsp;56); sustain mainly the fundamental, 1st overtone about 2 s for a 2-inch aluminium chime at 272.5 Hz (p.&nbsp;57); a C2 chime sounds about like C5 (pp.&nbsp;15-16); hang point 22.42% (pp.&nbsp;26, 56).</p>
+<p>Kirkby, David. “Physics of Music, Lecture 14.” University of California, Irvine. Mallet contact time T damps frequencies above about 2/T; vibraphone 1:4; resonators reinforce odd harmonics.</p>
+<p>McCarthy, Jim. “Marimbas: Exploring the Depths.” Percussion Clinic Adelaide, 1994. Overtones 1 and 2 decay in about 1/2 and 1/7 of the fundamental’s time (Bork and Meyer); a low resonator takes about 0.7 s to build up.</p>
+<p>Rossing, Thomas D., Junehee Yoo, and Andrew Morrison. “Acoustics of Percussion Instruments: An Update.” <i>Acoustical Science and Technology</i>, vol.&nbsp;25, no. 6, 2004, pp.&nbsp;406-412. Marimba bars tuned 1:4:10 (the 4th harmonic held for the first 3-3.5 octaves, the 10th for 2).</p>
 </div>
 <!-- /works-cited -->
 

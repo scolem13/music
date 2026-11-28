@@ -532,6 +532,9 @@ Collins, Karen. *Game Sound: An Introduction to the History, Theory, and Practic
 "Comping." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Comping](https://en.wikipedia.org/wiki/Comping). 
 [Used in: [Arranging 3: Guitar and Keyboards](lessons/arrange-chords.qmd), [Blues for Guitar: From Roots to Shell Chords](lessons/blues-guitar.qmd), [Blues for Piano: From Roots to Rootless Voicings](lessons/blues-piano.qmd) (for students)]{.wc-used}
 
+"Composite Marimba Bars." US Patent 4,411,187. Marimba decay about 2 s at C3 to 1/50 s at C7; vibraphone 30 s at the low end to about 6 s at the high end. 
+[Used in: [Ambient Generator](tools/ambient.qmd) (for teachers)]{.wc-used}
+
 Condit-Schultz, Nathaniel. "MCFlow: A Digital Corpus of Rap Transcriptions." *Empirical Musicology Review*, vol. 11, no. 2, 2016, [emusicology.org/index.php/EMR/article/view/4961](https://emusicology.org/index.php/EMR/article/view/4961). Not read (the site refuses automated reads). Its numbers here are as Komaniecki 2017 [1.2] reports them: 124 Billboard tracks 1980-2015, about 4.5 syllables a second, about a quarter of stressed syllables rhymed, rhymes most often on beat 4. 
 [Used in: [Rap Flow 2: Reading List](lessons/rap-flow-reading.qmd), [Rap Flow 1: How Rap Flow Works, and How It Changed](lessons/rap-flow.qmd) (for teachers)]{.wc-used}
 
@@ -1096,6 +1099,12 @@ Hines, Earl. *Selected Piano Solos, 1928–1941*. Edited by Jeffrey Taylor, A-R 
 "Hirajōshi scale." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Hirajōshi_scale](https://en.wikipedia.org/wiki/Hirajōshi_scale). Three versions in three sets of sources, one interval pattern. 
 [Used in: [Mode & Raga Library](tools/mode-library.qmd)]{.wc-used}
 
+Hite, Lee. "Design Decisions." leehite.org. Strike the end for most overtones; dead centre misses the first overtone; metal strikers give more overtones, softer ones a cleaner tone. 
+[Used in: [Ambient Generator](tools/ambient.qmd) (for teachers)]{.wc-used}
+
+Hite, Lee. <i>Tubular Bell Chimes: Do-It-Yourself Compendium</i>. 2022. Free-free tube ratios x2.76, 5.40, 8.93, 13.34, 18.64 (p. 56); sustain mainly the fundamental, 1st overtone about 2 s for a 2-inch aluminium chime at 272.5 Hz (p. 57); a C2 chime sounds about like C5 (pp. 15-16); hang point 22.42% (pp. 26, 56). 
+[Used in: [Ambient Generator](tools/ambient.qmd) (for teachers)]{.wc-used}
+
 "Horn." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 176-89. Scan pages checked: history, instrument family p. 176; selecting players and parts diagram p. 183; assembly, posture, hand position p. 184; notes on posture and embouchure p. 185; daily care p. 186; oiling and greasing p. 187; stringing a rotary valve p. 188; Horn Fingering Chart (written pitch, treble clef, F3-C6: F-horn fingering on top, B-flat horn in brackets, 'use either on a double horn', switch at G-sharp4/A-flat4) p. 189. The Tone Production Problems and Remedies table is read from the scan's printed p. 169 (trumpet chapter). No tuning section for horn in the pages seen. Retold in the page's own words; the lever picture is traced from a three-lever template (horn.ai), the thumb lever is the page's own. Printed page numbers of the chart page and of the pages with clipped headers are unverified. 
 [Used in: [The French Horn](lessons/horn.qmd), [Horn Patterns by Ear](practice/horn-patterns-by-ear.qmd) (for teachers)]{.wc-used}
 
@@ -1406,6 +1415,9 @@ Kelley, Robin D. G. *Thelonious Monk: The Life and Times of an American Original
 Kippen, James R. "Hindustani Tala." *The Garland Encyclopedia of World Music*, vol. 5, *South Asia: The Indian Subcontinent*, edited by Alison Arnold, Garland, 2000, pp. 110-37. Terms (110-12), tintal, rupak, ektal, jhaptal (112, 124-26), cautal, tivra, sultal, dhamar (116-17), tilvara, aracautal, dadra, kaharva, jhumra, dipchandi (126-27), tihai (129). 
 [Used in: [Rhythm Library](tools/rhythm-library.qmd)]{.wc-used}
 
+Kirkby, David. "Physics of Music, Lecture 14." University of California, Irvine. Mallet contact time T damps frequencies above about 2/T; vibraphone 1:4; resonators reinforce odd harmonics. 
+[Used in: [Ambient Generator](tools/ambient.qmd) (for teachers)]{.wc-used}
+
 Koch, Greg. *Hal Leonard Guitar Method: Blues Guitar*. Hal Leonard, 2002. B.B. King's "butterfly" vibrato.
 
 Kodály, Zoltán. *Tänze aus Galanta für Orchester*. Universal Edition, 1934. Kodály's preface (pp. XI, XIII): the Galánta band, the Vienna dance books, the published description of the form. 
@@ -1559,6 +1571,9 @@ Mauleón, Rebeca. *Salsa Guidebook for Piano and Ensemble*. Sher Music, 1993.
 "Mbira." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Mbira](https://en.wikipedia.org/wiki/Mbira). Shona instrument of Zimbabwe; lamellophone; Hugh Tracey's kalimba (late 1950s) after the nyunga nyunga; inharmonic overtones strongest in the attack; adjacent tines vibrate; lowest notes in the centre is common; tunings not on the Western grid; Nyamaropa ~Mixolydian, Katsanzaira ~Dorian, Mavembe ~Phrygian; mbira dzavadzimu 22-28 keys, three registers (two left, one right); bottle-cap buzzers (machachara); deze calabash resonator; Nhema Musasa; UNESCO 2020. 
 [Used in: [Meet the kalimba](lessons/intro-kalimba.qmd), [Meet the mbira dzavadzimu](lessons/intro-mbira.qmd), [World and Acoustic Instruments Compared](lessons/world-instruments-compare.qmd)]{.wc-used}
 
+McCarthy, Jim. "Marimbas: Exploring the Depths." Percussion Clinic Adelaide, 1994. Overtones 1 and 2 decay in about 1/2 and 1/7 of the fundamental's time (Bork and Meyer); a low resonator takes about 0.7 s to build up. 
+[Used in: [Ambient Generator](tools/ambient.qmd) (for teachers)]{.wc-used}
+
 McCoy, Scott. *Your Voice: An Inside View*. Inside View Press, 2004. Later editions 2012 and 2019. 
 [Used in: [Classical Singing: Breath, Pure Vowels and Legato](lessons/voice-classical.qmd), [Jazz Singing: Swing, Scat and the Changes](lessons/voice-jazz.qmd), [Pop Singing: Speech, Mix, Runs and the Mic](lessons/voice-pop.qmd), [Formants: What Makes a Vowel](lessons/vowel-formants.qmd) (for teachers)]{.wc-used}
 
@@ -1573,9 +1588,6 @@ McLeod, Kembrew, and Peter DiCola. *Creative License: The Law and Culture of Dig
 
 Melamed, Daniel R., editor. *Bach Studies 2*. Cambridge UP, 1995. Ritornello structure (p. 168, as cited by the pack). 
 [Used in: [Bach: Brandenburg Concerto No. 2](theory/analysed-scores/brandenburg-2.qmd) (for teachers)]{.wc-used}
-
-Membeth. "Windglockenspiel.Koshi.ogg"; stephan, "Windchime.ogg". Wikimedia Commons, CC0 / public domain. A Koshi chime and a wind chime in a breeze, used as wind-chime gusts. 
-[Used in: [Sound 27: Ambient music](lessons/sound-ambient.qmd), [Ambient Generator](tools/ambient.qmd) (for teachers)]{.wc-used}
 
 "Memorymoog." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Memorymoog](https://en.wikipedia.org/wiki/Memorymoog). History section: years, voices, players. 
 [Used in: [Meet the Memorymoog](lessons/intro-memorymoog.qmd), [Sound 26: Classic Synths Compared](lessons/synth-compare.qmd)]{.wc-used}
@@ -2215,6 +2227,9 @@ Rossing, Thomas D. "Acoustics of Timpani." Lay-language paper, 131st Meeting of 
 Rossing, Thomas D., F. Richard Moore, and Paul A. Wheeler. *The Science of Sound*. 3rd ed., Addison-Wesley, 2002. 
 [Used in: [Harmonics on Guitar: Natural, Tapped and Pinch](lessons/guitar-harmonics.qmd), [Tuning 1: Your Ear Is the Tuner](lessons/guitar-tuning-ear.qmd), [Tuning 3: Tuners and Their Limits](lessons/guitar-tuning-tuners.qmd), [How a Strobe Tuner Works](lessons/strobe-tuner.qmd), [Tuning Systems: Just Intonation and Equal Temperament](lessons/tuning-systems.qmd) (for teachers)]{.wc-used}
 
+Rossing, Thomas D., Junehee Yoo, and Andrew Morrison. "Acoustics of Percussion Instruments: An Update." <i>Acoustical Science and Technology</i>, vol. 25, no. 6, 2004, pp. 406-412. Marimba bars tuned 1:4:10 (the 4th harmonic held for the first 3-3.5 octaves, the 10th for 2). 
+[Used in: [Ambient Generator](tools/ambient.qmd) (for teachers)]{.wc-used}
+
 Rossing, Thomas D. *Science of Percussion Instruments*. World Scientific, 2000. Not read directly; cited via [21] and [22]. 
 [Used in: [Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums](lessons/inharmonicity.qmd)]{.wc-used}
 
@@ -2450,9 +2465,6 @@ Sárosi, Bálint. "Instrumental Folk Music in Kodály's Works." (as cited by the
 
 Stambaugh, Laura A. "When Repetition Isn't the Best Practice Strategy: Effects of Blocked and Random Practice Schedules." *Journal of Research in Music Education*, vol. 58, no. 4, 2011, pp. 368–83. Abstract read. 
 [Used in: [Chunk Practice](tools/chunk-practice.qmd) (for teachers)]{.wc-used}
-
-stamperadam. Celesta samples, CC0, via Sonatina Symphonic Orchestra (Mattias Westlund). Freesound. Celesta C4-C6 (hard strikes), CC0 per the Sonatina README. 
-[Used in: [Sound 27: Ambient music](lessons/sound-ambient.qmd), [Ambient Generator](tools/ambient.qmd) (for teachers)]{.wc-used}
 
 "Stand by Me (Lied)." *Wikipedia (German)*, Wikimedia Foundation. Music example (LilyPond) read 2026-11-04 by scripts/riffs/lily2fig.mjs: the band's standByMe riff. 
 [Used in: [Fills, Riffs and Licks: Answering the Singer](lessons/fills-riffs.qmd) (for students)]{.wc-used}
@@ -2845,9 +2857,6 @@ United States Copyright Office. *Copyright Registration for Sound Recordings* (C
 United States Copyright Office. "U.S. Copyright Office Fair Use Index." [www.copyright.gov/fair-use/](https://www.copyright.gov/fair-use/). 
 [Used in: [Sampling 6: Clearing Samples and the Law](lessons/sampling-law.qmd)]{.wc-used}
 
-University of Iowa Electronic Music Studios. <i>Musical Instrument Samples</i>: crotales and vibraphone (2012). theremin.music.uiowa.edu. Crotales C6-C8 and vibraphone C4-E5, ff; the site says the samples may be used for any projects without restrictions. 
-[Used in: [Sound 27: Ambient music](lessons/sound-ambient.qmd), [Ambient Generator](tools/ambient.qmd) (for teachers)]{.wc-used}
-
 U.S. Copyright Office. "More Information on Fair Use." *Copyright.gov*, [www.copyright.gov/fair-use/](https://www.copyright.gov/fair-use/). Not yet read (fetch failed 2026-11-24): the four fair-use factors; credit alone does not make a use fair. 
 [Used in: [Remix Lab 6: Make Your Own Remix, Step by Step](lessons/daw-remix-steps.qmd) (for teachers)]{.wc-used}
 
@@ -2865,9 +2874,6 @@ U.S. Copyright Office. "More Information on Fair Use." *Copyright.gov*, [www.cop
 
 Vail, Mark. *The Hammond Organ: Beauty in the B*. 2nd ed., Backbeat Books, 2002. 
 [Used in: [Arranging 4: The Organ](lessons/arrange-organ.qmd) (for teachers)]{.wc-used}
-
-Versilian Studios. <i>VSCO 2 Community Edition</i>. CC0 1.0, GitHub, github.com/sgossner/VSCO-2-CE. Tubular bells (C4 G4 C5 F5), glockenspiel (G4-C7) and metal wind-chime sweeps and gust used in the Ambient Generator; CC0. 
-[Used in: [Sound 27: Ambient music](lessons/sound-ambient.qmd), [Ambient Generator](tools/ambient.qmd) (for teachers)]{.wc-used}
 
 "Vibrations of a circular membrane." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Vibrations_of_a_circular_membrane](https://en.wikipedia.org/wiki/Vibrations_of_a_circular_membrane). Modes of an ideal drum head at the zeros of the Bessel functions J_m. 
 [Used in: [Drum Kits Compared](lessons/drum-kit-compare.qmd), [Meet Ludwig Black Beauty](lessons/intro-black-beauty.qmd), [Meet the funk / studio "dead" kit](lessons/intro-funk-kit.qmd), [Meet the jazz kit (18 / 12 / 14)](lessons/intro-jazz-kit.qmd), [Meet a maple wood snare](lessons/intro-maple-snare.qmd), [Meet the piccolo snare](lessons/intro-piccolo-snare.qmd), [Meet the rock kit (22 / 12 / 16)](lessons/intro-rock-kit.qmd), [Meet Ludwig Supraphonic](lessons/intro-supraphonic.qmd)]{.wc-used}

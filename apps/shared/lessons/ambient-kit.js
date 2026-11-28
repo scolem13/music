@@ -83,9 +83,9 @@
     { name: "Drone and fifths", set: { dtype: "pad", chimes: 0, inst: "bell", mode: "lydian", key: "2", loops: 3, spread: .6, drone: .8, noise: .15, verb: .6, decay: 8, echo: .1, density: .5 }, color: "brown", eq: [4, 6, 3, 0, -3, -6, -9, -12, -15, -18] },
     { name: "Rain room", set: { dtype: "saw", chimes: 0, inst: "rhodes", mode: "dorian", key: "9", loops: 5, spread: .8, drone: .3, noise: .6, verb: .45, decay: 4, echo: .35, density: .7 }, color: "pink", eq: [-18, -12, -6, -2, 0, 2, 4, 5, 3, -2] },
     { name: "Shoreline", set: { dtype: "pad", chimes: .35, inst: "flute", mode: "pent", key: "7", loops: 4, spread: 1, drone: .4, noise: .7, verb: .55, decay: 7, echo: .2, density: .6 }, color: "pink", eq: [-6, 2, 5, 4, 1, -3, -7, -10, -14, -18], swell: .8 },
-    { name: "Night", set: { dtype: "pad", chimes: .15, inst: "tubular", mode: "aeolian", key: "4", loops: 6, spread: .9, drone: .5, noise: .2, verb: .7, decay: 10, echo: .4, density: .4 }, color: "brown", eq: [0, 3, 2, 0, -3, -6, -9, -12, -15, -18] },
-    { name: "Chime garden", set: { dtype: "pad", chimes: .7, inst: "celesta", mode: "pent", key: "2", loops: 4, spread: 1, drone: .3, noise: .35, verb: .6, decay: 7, echo: .15, density: .5 }, color: "pink", eq: [-18, -10, -2, 4, 8, 4, -4, -10, -16, -18], swell: .6 },
-    { name: "Glass and metal", set: { dtype: "pad", chimes: .25, inst: "crotale", mode: "lydian", key: "7", loops: 6, spread: 1, drone: .35, noise: .1, verb: .7, decay: 9, echo: .3, density: .5 }, color: "pink", eq: [-18, -12, -6, -3, 0, 0, 0, -2, -6, -12] }
+    { name: "Night", set: { dtype: "pad", chimes: .15, inst: "mbar", mode: "aeolian", key: "4", loops: 6, spread: .9, drone: .5, noise: .2, verb: .7, decay: 10, echo: .4, density: .4 }, color: "brown", eq: [0, 3, 2, 0, -3, -6, -9, -12, -15, -18] },
+    { name: "Chime garden", set: { dtype: "pad", chimes: .7, inst: "chime", mode: "pent", key: "2", loops: 4, spread: 1, drone: .3, noise: .35, verb: .6, decay: 7, echo: .15, density: .5 }, color: "pink", eq: [-18, -10, -2, 4, 8, 4, -4, -10, -16, -18], swell: .6 },
+    { name: "Glass and metal", set: { dtype: "pad", chimes: .25, inst: "wbar", mode: "lydian", key: "7", loops: 6, spread: 1, drone: .35, noise: .1, verb: .7, decay: 9, echo: .3, density: .5 }, color: "pink", eq: [-18, -12, -6, -3, 0, 0, 0, -2, -6, -12] }
   ];
   function loadBank(c) {
     var have = window.BandSounds ? Promise.resolve() : new Promise(function (res, rej) {
@@ -94,34 +94,47 @@
       sc.addEventListener("load", res); sc.addEventListener("error", rej); });
     return have.then(function () { if (!loadBank.b || loadBank.c !== c) { loadBank.b = BandSounds.create(c); loadBank.c = c; } return loadBank.b; });
   }
-  // ---- recorded bells and chimes (bell-samples/, 3.7 MB; sources in scripts/sources/ambient-bells.py, staging and licences in
-  // research_notes/bell-chime-samples/SOURCES.md). Pitched sets: the nearest recorded note, sped up or slowed down. Pitches are as the
-  // files are named (glockenspiel and crotales are named at the pitch they sound, as far as the sets say: unverified by ear).
-  var BELL_BASE = "/apps/shared/lessons/bell-samples/", NOTE = { c: 0, d: 2, e: 4, f: 5, g: 7, a: 9, b: 11 };
-  function nm(s) { var m = /^([a-g])(s?)(\d)$/i.exec(s); return 12 * (+m[3] + 1) + NOTE[m[1].toLowerCase()] + (m[2] ? 1 : 0); }
-  var BELLS = {
-    tubular: { file: "tubular-", notes: ["C4", "G4", "C5", "F5"], gain: .9 },
-    glock: { file: "glock-", notes: ["G4", "C5", "G5", "C6", "G6", "C7"], gain: .7, oct: 1 },
-    celesta: { file: "celesta-", notes: ["c4", "c5", "e5", "gs5", "c6"], gain: .8 },
-    crotale: { file: "crotale-", notes: ["C6", "E6", "G6", "C7", "E7", "G7", "C8"], gain: .5, oct: 2 },
-    vibes: { file: "vibes-", notes: ["C4", "G4", "C5", "E5"], gain: .8 }
+  // ---- modelled chimes and bars (2026-11-28; no recordings). Additive modal synthesis: one sine per partial, each with its own level and
+  // ring time (T60). Numbers from published measurements where they exist, else estimates (both listed in the sources and in
+  // research_notes/bell-chime-samples/MODELS.md). Wind-chime tube: free-free ratios 1, 2.756, 5.404, 8.933, 13.34 (Hite, Compendium
+  // p. 56); the fundamental carries the sustain, the 1st overtone about 2 s at 272 Hz, the next fades fast (p. 57); long tubes barely
+  // radiate their fundamental (a C2 chime sounds about like C5, pp. 15-16: modelled as weak radiation below 250 Hz, an estimate).
+  // Bars: carved 1 : 4 : 10 (Rossing, Yoo and Morrison 2004); wood 2 s at C3 falling to 1/50 s at C7, metal 30 s low to 6 s high
+  // (US 4,411,187); overtones ring 1/2 and 1/7 of the fundamental's time (Bork and Meyer, via McCarthy 1994); a resonator adds up to
+  // 10 dB to the fundamental and builds up slowly in low notes (McCarthy). Mallet / striker contact time tc damps partials above about
+  // 2/tc (Kirkby, lecture 14). The bell model is not here yet: it needs more work.
+  function contact(f, tc) { var x = f * tc / 2; return 1 / (1 + x * x * x * x); }
+  function partial(c, out, f, a, T60, t, att) {
+    if (f > c.sampleRate * .45 || a < 1e-4) return; var g = c.createGain(), o = c.createOscillator(); att = att || .003;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(a, t + att); g.gain.setTargetAtTime(0, t + att, T60 / 6.9);
+    o.frequency.value = f; o.connect(g); g.connect(out); o.start(t); o.stop(t + att + T60 * 1.2 + .05); o.onended = function () { g.disconnect(); };
+  }
+  var MODAL = {
+    chime: function (c, out, f1, t, v, hard, ring) {
+      var tc = .004 - .003 * (hard == null ? .35 : hard), T1 = 20 * Math.pow(220 / f1, .5) * (ring || 1);
+      [1, 2.756, 5.404, 8.933, 13.34].forEach(function (r, k) { var fr = f1 * r, rad = Math.min(1, Math.pow(fr / 250, 1.5));
+        var T = k === 0 ? T1 : k === 1 ? Math.min(T1, 2 * Math.pow(272 / f1, .5) * (ring || 1)) : T1 * Math.pow(1 / r, 1.4);
+        partial(c, out, fr, v * .3 * [1, .55, .35, .22, .12][k] * rad * contact(fr, tc), T, t); });
+    },
+    bar: function (c, out, f0, t, v, metal, hard, ring) {
+      var tc = .008 - .006 * (hard == null ? .3 : hard), T = metal ? Math.min(40, 30 * Math.pow(175 / f0, .77)) * .8 : (f0 > 131 ? 2 * Math.pow(131 / f0, 1.66) : 2 * Math.pow(131 / f0, .6)) * 1.3;
+      T *= ring || 1; var att = f0 < 200 ? .25 : .06;
+      [1, 4, 10, 17.5].forEach(function (r, k) { partial(c, out, f0 * r, v * .35 * [2.5, .5, .25, .1][k] * contact(f0 * r, tc), T * [1, .5, 1 / 7, 1 / 12][k], t, k ? .003 : att); });
+    }
   };
-  var bufs = typeof WeakMap === "function" ? new WeakMap() : null;
-  function fetchBuf(c, name) {
-    var m = bufs.get(c); if (!m) { m = {}; bufs.set(c, m); }
-    return m[name] || (m[name] = fetch(BELL_BASE + name + ".m4a").then(function (r) { if (!r.ok) throw new Error(r.status); return r.arrayBuffer(); })
-      .then(function (a) { return new Promise(function (res, rej) { c.decodeAudioData(a, res, rej); }); }));
-  }
-  function bellSet(c, kind) {   // -> Promise of { play(out, midi, t, vel) }
-    var S = BELLS[kind];
-    return Promise.all(S.notes.map(function (n) { return fetchBuf(c, S.file + n); })).then(function (bs) {
-      var roots = S.notes.map(nm);
-      return { play: function (out, m, t, v) {
-        m += 12 * (S.oct || 0); var best = 0; roots.forEach(function (r, i) { if (Math.abs(r - m) < Math.abs(roots[best] - m)) best = i; });
-        var s = c.createBufferSource(), g = c.createGain(); s.buffer = bs[best]; s.playbackRate.value = Math.pow(2, (m - roots[best]) / 12);
-        g.gain.value = v * S.gain; s.connect(g); g.connect(out); s.start(t); s.onended = function () { g.disconnect(); }; } };
-    });
-  }
+  // church bell (work in progress: it needs more work, the owner says). Partial ratios to the prime as measured on the Westminster Abbey
+  // tenor (Hibbert); tierce often loudest, quint very quiet (Hibbert); a C3 carillon bell's low modes ring about 100 s (Rau et al.,
+  // DAFx-19); clapper contact 1-1.4 ms; doublets about 1.2 cents apart (Hibbert). The other levels and the 1/frequency ring-time
+  // scaling are estimates. The note played is the strike note: the prime is an octave below it.
+  var BELLP = [[.501, .7, 1.7], [1, .6, 1], [1.187, 1, .84], [1.499, .15, .67], [2, .85, .5], [2.49, .12, .4], [2.54, .1, .39], [2.58, .1, .39], [2.79, .08, .36], [2.998, .35, .33], [4.13, .3, .24], [5.36, .2, .19], [6.69, .12, .15], [8.05, .08, .12], [9.53, .05, .1]];
+  MODAL.bell = function (c, out, nom, t, v, hard, warble) {
+    var f0 = nom / 2, h = hard == null ? .55 : hard, tc = .0034 - .0022 * h, T = 100 * (129 / f0), cents = warble == null ? 1.2 : warble;
+    BELLP.forEach(function (p) { var f = f0 * p[0], a = v * .16 * p[1] * contact(f, tc) * (f > 1500 && f < 3000 ? 1 + .6 * h : 1), sp = f * cents * Math.LN2 / 1200 * (.6 + .8 * Math.random());
+      partial(c, out, f - sp / 2, a, Math.min(240, T * p[2]), t); partial(c, out, f + sp / 2, a, Math.min(240, T * p[2]), t); });
+  };
+  var VOICES = { cbell: { oct: -12, play: function (c, o, m, t, v) { MODAL.bell(c, o, mtof(m), t, v); } }, mbar: { oct: -12, play: function (c, o, m, t, v) { MODAL.bar(c, o, mtof(m), t, v, true); } },
+    wbar: { oct: -12, play: function (c, o, m, t, v) { MODAL.bar(c, o, mtof(m), t, v, false); } },
+    chime: { oct: -12, play: function (c, o, m, t, v) { MODAL.chime(c, o, mtof(m), t, v); } } };
   // a soft bell, for when there are no samples (or "Synth bell" is chosen): two sines a fifth and two octaves up, slow fade
   function bell(c, out, m, t, v, dur) {
     var g = c.createGain(), f = mtof(m); g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v * .25, t + .04); g.gain.exponentialRampToValueAtTime(.0005, t + dur); g.connect(out);
@@ -242,7 +255,7 @@
     w.body.insertBefore(pr, w.ctls);
     w.pick("key", "Key", KEYS, "5", null, function () { if (run) run.retune(); });
     w.pick("mode", "Scale", [["major", "Major"], ["lydian", "Lydian (♯4: floating)"], ["pent", "Major pentatonic"], ["dorian", "Dorian"], ["aeolian", "Natural minor"], ["minpent", "Minor pentatonic"]], "major", null, function () { if (run) run.retune(); });
-    w.pick("inst", "Loop notes on", [["piano", "Piano (samples)"], ["rhodes", "Electric piano (samples)"], ["flute", "Flute (samples)"], ["tubular", "Tubular bells (recorded)"], ["glock", "Glockenspiel (recorded)"], ["celesta", "Celesta (recorded)"], ["crotale", "Crotales (recorded)"], ["vibes", "Vibraphone (recorded)"], ["bell", "Synth bell"]], "piano", null, function () { if (run) run.inst(); });
+    w.pick("inst", "Loop notes on", [["piano", "Piano (samples)"], ["rhodes", "Electric piano (samples)"], ["flute", "Flute (samples)"], ["cbell", "Church bells (model, in progress)"], ["mbar", "Bass metal bars (model)"], ["wbar", "Bass wooden bars (model)"], ["chime", "Chime tubes (model)"], ["bell", "Synth bell"]], "piano", null, function () { if (run) run.inst(); });
     w.num("loops", { label: "Tape loops", min: 1, max: 9, step: 1, value: 7, fmt: function (v) { return v + (v === 1 ? " loop" : " loops"); }, on: function () { if (run) run.rebuild(); } });
     w.num("spread", { label: "Loop lengths", min: 0, max: 1, step: .01, value: 1, fmt: function (v) { return v < .05 ? "all equal (a pulse)" : v < .5 ? "close" : "far apart (never lines up)"; }, on: function () { if (run) run.rebuild(); } });
     w.num("density", { label: "Notes per loop", min: .2, max: 3, step: .01, value: .9, fmt: fmtPct, on: function () { if (run) run.rebuildSoon(); } });
@@ -258,21 +271,22 @@
     w.num("drive", { label: "Drive", min: 0, max: 1, step: .01, value: 0, fmt: function (v) { return v < .02 ? "clean" : fmtPct(v); } });
     w.num("bright", { label: "Brightness", min: 600, max: 18000, log: true, value: 18000, fmt: fmtHz });
     w.num("cymbals", { label: "Cymbal swells", min: 0, max: 1, step: .01, value: 0, fmt: function (v) { return v < .02 ? "off" : fmtPct(v); } });
-    // the chime and cymbal menus: which recordings, how loud, how far from their recorded pitch and speed, how wide
+    // the chime and cymbal menus: the chimes are modelled tubes (their tuning, size and striker); the cymbals are the Drum Kits' recordings
     function soundMenu(title, cls, key, names, on, rows) {
       var d = el("details", "amb-nb " + cls); d.appendChild(el("summary", "", title)); w.body.appendChild(d);
-      var ck = el("div", "amb-ck"); d.appendChild(ck); w.P[key] = names.filter(function (n, i) { return on[i]; }).map(function (n) { return n[0]; });
+      var ck = el("div", "amb-ck"); d.appendChild(ck); if (!names) { var ctl0 = el("div", "sk-ctls"); d.appendChild(ctl0); rows.forEach(function (r) { r[2] ? w.pick(r[0], r[1].label, r[2], r[1].value, ctl0) : w.num(r[0], r[1], ctl0); }); return; }
+      w.P[key] = names.filter(function (n, i) { return on[i]; }).map(function (n) { return n[0]; });
       names.forEach(function (n, i) { var lb = el("label"), x = el("input"); x.type = "checkbox"; x.checked = !!on[i]; x.value = n[0];
         x.addEventListener("change", function () { w.P[key] = [].slice.call(ck.querySelectorAll("input:checked")).map(function (y) { return y.value; }); });
         lb.appendChild(x); lb.appendChild(document.createTextNode(" " + n[1])); ck.appendChild(lb); });
       var ctl = el("div", "sk-ctls"); d.appendChild(ctl); rows.forEach(function (r) { w.num(r[0], r[1], ctl); });
     }
-    soundMenu("Wind chimes: which recordings, level, speed, width", "amb-chm", "chimeSet",
-      [["asc1", "Sweep up"], ["desc1", "Sweep down"], ["fastAsc1", "Fast sweep"], ["slowAsc1", "Slow sweep up"], ["slowDesc1", "Slow sweep down"], ["random", "Random gust"], ["koshi", "Koshi chime"], ["breeze", "In a breeze"]],
-      [1, 1, 1, 1, 1, 1, 1, 1], [
+    soundMenu("Wind chimes: a set of modelled tubes, their tuning, size and striker", "amb-chm", "chimeSet", null, null, [
+        ["chTune", { label: "Tubes tuned to", value: "0,2,4,7,9" }, [["0,2,4,7,9", "Major pentatonic"], ["0,3,5,7,10", "Minor pentatonic"], ["0,7,12,16,19", "Open fifths"], ["0,2,7,9,14", "Sus (no third)"]]],
+        ["chLow", { label: "Longest tube", min: 36, max: 64, step: 1, value: 45, fmt: function (v) { return ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"][v % 12] + (Math.floor(v / 12) - 1) + (v < 48 ? " (bass)" : v < 55 ? " (baritone)" : " (tenor)"); } }],
+        ["chHard", { label: "Striker", min: 0, max: 1, step: .01, value: .35, fmt: function (v) { return v < .3 ? "soft (wood)" : v < .7 ? "medium" : "hard (metal)"; } }],
+        ["chRing", { label: "Ring length", min: .3, max: 2.5, step: .01, value: 1, fmt: function (v) { return "x" + v.toFixed(2); } }],
         ["chLevel", { label: "Level", min: 0, max: 2, step: .01, value: 1, fmt: fmtPct }],
-        ["chSpeed", { label: "Speed (pitch)", min: .5, max: 1.5, step: .01, value: 1, fmt: function (v) { return "x" + v.toFixed(2); } }],
-        ["chVary", { label: "Speed varies by", min: 0, max: .5, step: .01, value: .15, fmt: function (v) { return "±" + Math.round(v * 100) + "%"; } }],
         ["chWidth", { label: "Stereo width", min: 0, max: 1, step: .01, value: .8, fmt: fmtPct }]]);
     soundMenu("Cymbal swells: which cymbals, backwards or forwards, level, speed, width", "amb-cym", "cymSet",
       [["crash16-edge", "16\" crash"], ["crash13-edge", "13\" crash"], ["hat-open", "Open hi-hat"], ["china", "China"], ["ride20-bow", "20\" ride (bow)"], ["ride20-bell", "20\" ride (bell)"], ["ride17-bow", "17\" ride"]],
@@ -419,25 +433,24 @@
           d.gs.forEach(function (g, k) { g.gain.setTargetAtTime(Math.max(0, 1 - Math.abs(pos - k)), now, .3); }); });
       }
       droneOn();
-      var bset = null;
-      function useBank() { bank = null; bset = null; if (w.P.inst === "bell") return;
-        if (BELLS[w.P.inst]) { var k = w.P.inst; bellSet(c, k).then(function (b) { if (!dead && w.P.inst === k) bset = b; }).catch(function () {}); return; } var want = w.P.inst; loadBank(c).then(function (b) { return b.load([want]).then(function () { if (!dead && w.P.inst === want && b.has(want)) bank = b; }); }).catch(function () {}); }
+      function useBank() { bank = null; if (w.P.inst === "bell" || VOICES[w.P.inst]) return; var want = w.P.inst; loadBank(c).then(function (b) { return b.load([want]).then(function () { if (!dead && w.P.inst === want && b.has(want)) bank = b; }); }).catch(function () {}); }
       useBank();
       function play(e, t, li) { if (w.take && w.take.on) w.take.note(li, e.m, e.v, t, w.P.inst);
-        if (BELLS[w.P.inst]) { if (bset) bset.play(notesB, e.m, t, e.v); else bell(c, notesB, e.m, t, e.v, 7); e.lit = t; return; }
+        if (VOICES[w.P.inst]) { var V = VOICES[w.P.inst]; V.play(c, notesB, e.m + V.oct, t, e.v); e.lit = t; return; }
         if (bank) bank.play(w.P.inst, { midi: e.m, vel: e.v, dur: w.P.inst === "flute" ? 3 : 4 }, t, notesB); else bell(c, notesB, e.m, t, e.v, 7); e.lit = t; }
       // the scheduler: each loop's next note time is worked out from t0 and the loop's own length
       var next = loops.map(function () { return 0; }), cyc = loops.map(function () { return 0; });
-      // wind chimes: a recorded gust now and then, panned somewhere, a little faster or slower; how often follows the slider
+      // wind chimes: now and then a gust sets the modelled tubes ringing, a handful of strikes over a few seconds; how often follows the slider.
+      // The tubes are tuned to the key: the longest tube is the key's note nearest "Longest tube".
       var nextGust = c.currentTime + 4;
       function gust(now) {
         if (w.P.chimes < .02) { nextGust = now + 2; return; } if (now < nextGust) return;
         nextGust = now + (8 + Math.random() * 30) * (1.15 - w.P.chimes);
-        var set = w.P.chimeSet && w.P.chimeSet.length ? w.P.chimeSet : null; if (!set) return;
-        var name = "chimes-" + set[Math.floor(Math.random() * set.length)];
-        fetchBuf(c, name).then(function (b) { if (dead) return; var s = c.createBufferSource(), g = c.createGain(), pn = c.createStereoPanner();
-          s.buffer = b; s.playbackRate.value = Math.max(.1, w.P.chSpeed * (1 + (Math.random() * 2 - 1) * w.P.chVary)); pn.pan.value = (Math.random() * 2 - 1) * w.P.chWidth; g.gain.value = (.25 + .35 * w.P.chimes) * w.P.chLevel;
-          s.connect(g); g.connect(pn); pn.connect(chimeB); s.start(); if (w.take && w.take.on) w.take.event("chime", name, s, pn); s.onended = function () { pn.disconnect(); }; }).catch(function () {});
+        var set = String(w.P.chTune || "0,2,4,7,9").split(",").map(Number), key = (+w.P.key - 5 + 12) % 12, low = w.P.chLow - ((w.P.chLow - key) % 12 + 12) % 12;
+        var tt = now + .05, end = now + 2 + Math.random() * 5 * (.5 + w.P.chimes), lvl = (.25 + .35 * w.P.chimes) * w.P.chLevel;
+        while (tt < end) { var m = low + set[Math.floor(Math.random() * set.length)], pn = c.createStereoPanner(); pn.pan.value = (Math.random() * 2 - 1) * w.P.chWidth; pn.connect(chimeB);
+          MODAL.chime(c, pn, mtof(m), tt, lvl * (.35 + .65 * Math.random()), w.P.chHard, w.P.chRing); (function (p, d) { setTimeout(function () { try { p.disconnect(); } catch (x) {} }, d); })(pn, (tt - now + 60) * 1000);
+          if (w.take && w.take.on) w.take.event("chime", "tube " + m, { playbackRate: { value: 1 } }, pn); tt += (.15 + Math.random() * 1.1) / (.4 + w.P.chimes); }
       }
       // cymbal swells: a recorded crash played backwards (it rises into the hit) or forwards, now and then; from the Drum Kits' recordings
       var nextCym = c.currentTime + 3, cymRev = {};
@@ -493,6 +506,31 @@
     return w;
   }
 
+  // ---- the models on their own: <div class="sk" data-w="modal"> strike a church bell, a chime tube or a bass bar, or let it play
+  // (bell: tolls; chimes: gusts on a pentatonic set; bars: a bass ostinato)
+  function Modal(host) {
+    var w = K.Base(host, "Bells, chimes and bass bars (models)"), out = null, iv = 0;
+    w.knobView && w.knobView();
+    w.pick("model", "Instrument", [["bell", "Church bell (in progress)"], ["chime", "Chime tube"], ["mbar", "Bass metal bar"], ["wbar", "Bass wooden bar"]], "chime");
+    w.num("note", { label: "Note", min: 24, max: 72, step: 1, value: 45, fmt: function (v) { return ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"][v % 12] + (Math.floor(v / 12) - 1) + " (" + Math.round(mtof(v)) + " Hz)"; } });
+    w.num("hard", { label: "Strike", min: 0, max: 1, step: .01, value: .4, fmt: function (v) { return v < .3 ? "soft" : v < .7 ? "medium" : "hard"; } });
+    w.num("ring", { label: "Ring length", min: .3, max: 2.5, step: .01, value: 1, fmt: function (v) { return "x" + v.toFixed(2); } });
+    w.P.level = 1;
+    function strike(c, o, m, t, v) { var f = mtof(m), P = w.P;
+      if (P.model === "bell") MODAL.bell(c, o, f, t, v, P.hard); else if (P.model === "chime") MODAL.chime(c, o, f, t, v, P.hard, P.ring); else MODAL.bar(c, o, f, t, v, P.model === "mbar", P.hard, P.ring); }
+    button(w.tools, "Strike", function () { if (!w.running) w.start(); setTimeout(function () { if (out) strike(SK.ac(), out, w.P.note, SK.ac().currentTime + .02, 1); }, 60); }, "btn-outline-primary");
+    w.view = K.viewer(w.body, { ms: 20 });
+    w.onStart = function (c, o) {
+      out = c.createGain(); out.gain.value = .9; out.connect(o); var next = c.currentTime + .1, i = 0;
+      iv = setInterval(function () { var now = c.currentTime, P = w.P; if (now + .3 < next) return;
+        if (P.model === "bell") { strike(c, out, P.note, next, .8 + .2 * Math.random()); next += 3.2; }
+        else if (P.model === "chime") { var set = [0, 2, 4, 7, 9]; strike(c, out, P.note + set[Math.floor(Math.random() * 5)], next, .35 + .65 * Math.random()); next += .15 + Math.random() * 1.2; }
+        else { var seq = [0, 7, 12, 7, 0, 5, 10, 5]; strike(c, out, P.note - 12 + seq[i++ % 8], next, i % 4 === 1 ? 1 : .75); next += .6; } }, 50);
+      return function () { clearInterval(iv); var g = out; out = null; setTimeout(function () { try { g.disconnect(); } catch (e) {} }, 8000); };
+    };
+    return w;
+  }
+
   var css = document.createElement("style");
   css.textContent = ".amb-eq{display:grid;grid-template-columns:repeat(10,minmax(2.2rem,1fr));gap:2px;max-width:560px;margin:.4rem 0}" +
     ".amb-band{display:flex;flex-direction:column;align-items:center;font-family:var(--font-mono);font-size:.7rem;margin:0}" +
@@ -508,5 +546,5 @@
     ".amb-en-bar{display:inline-block;width:90px;height:8px;border:1px solid var(--site-ink-2);border-radius:4px;overflow:hidden;vertical-align:middle}" +
     ".amb-en-bar span{display:block;height:100%;background:var(--site-accent);transition:width .1s}";
   document.head.appendChild(css);
-  SK.kinds.noiseeq = NoiseEq; SK.kinds.ambient = Ambient;
+  SK.kinds.noiseeq = NoiseEq; SK.kinds.ambient = Ambient; SK.kinds.modal = Modal;
 })();
