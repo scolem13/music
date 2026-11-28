@@ -1809,7 +1809,20 @@
   var all = [];
   // a hand-off: localStorage "mdaw:handoff" = { at, name, midi (base64) }, opened by the first DAW with the Files row, within ten minutes
   var HANDOFF = 'mdaw:handoff';
+  // a whole project handed over (the Ambient Generator's "Open in DAW"): localStorage "mdaw:handoff-project" = { at, name, project };
+  // its recordings are already in IndexedDB "mini-daw" / "takes". Opened as a new project by the first DAW with Projects, else in place.
+  function takeProjectHandoff() {
+    var h = store('mdaw:handoff-project'); if (!h || !h.project) return; var d = null;
+    for (var i = 0; i < all.length; i++) if (all[i].show.files) { d = all[i]; break; }
+    if (!d) return; store('mdaw:handoff-project', null); if (Date.now() - (h.at || 0) > 10 * 60 * 1000) return;
+    var p = Meter.norm(Object.assign(PRESETS.empty(), h.project));
+    if (d.projects) { store(d.storeKey, d.p); var e = Projects.add(Projects.kvLocal, d.id, d.pIndex, h.name || 'Handed over', p, Date.now()); d.openProject(e.key); }
+    else { d.change(function () { d.p = p; d.fixSel(); }); d.loadTakes(); }
+    d.say('Opened ' + (h.name || 'the project') + (h.project.notes ? '. ' + h.project.notes : '.'));
+    setTimeout(function () { d.node.scrollIntoView({ block: 'start' }); }, 300);
+  }
   function takeHandoff() {
+    takeProjectHandoff();
     var h = store(HANDOFF); if (!h || !h.midi) return; var d = null;
     for (var i = 0; i < all.length; i++) if (all[i].show.files) { d = all[i]; break; }
     if (!d) return; store(HANDOFF, null);

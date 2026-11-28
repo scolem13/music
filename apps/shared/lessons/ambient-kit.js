@@ -165,6 +165,75 @@
     w.energy.resetFrom = function () { ENERGY.forEach(function (e) { rows[e[0]].from.value = round(w.c[e[0]].value); paint(e[0]); }); };
     setTimeout(function () { ENERGY.forEach(function (e) { paint(e[0]); }); }, 0);
   }
+  // ---- Record take -> Open in DAW (2026-11-28). While a take records, every loop note, chime gust, cymbal swell and settings change
+  // is logged, and eight stems (master as heard, loop notes, chimes, cymbals, drone, noise, reverb and echo returns) are captured
+  // by one AudioWorklet at half the sample rate, mono, so five minutes is about 90 MB. "Open in DAW" writes the stems into the
+  // DAW's own recordings store (IndexedDB "mini-daw" / "takes", the schema mini-daw.js's putTake uses), and hands the DAW page a
+  // project (localStorage "mdaw:handoff-project", read by MiniDaw's takeHandoff): 60 bpm so one beat is one second, a note track
+  // per tape loop, an audio track per stem (all but Master muted: Master is what you heard; solo a stem to hear it alone), and a
+  // muted "setting" track per changed setting whose volume line draws the setting (0 dB = top of its range, -40 dB = bottom).
+  var TAKE_MAX = 300, REC_WORKLET = "registerProcessor('amb-take',class extends AudioWorkletProcessor{constructor(o){super();this.n=o.numberOfInputs;this.b=[];this.k=0;this.on=true;for(var i=0;i<this.n;i++)this.b.push(new Float32Array(8192));this.port.onmessage=e=>{if(e.data==='stop'){this.flush();this.on=false;}};}" +
+    "flush(){if(!this.k)return;this.port.postMessage(this.b.map(a=>a.slice(0,this.k)));this.k=0;}" +
+    "process(ins){for(var i=0;i<this.n;i++){var ch=ins[i],a=this.b[i],L=ch&&ch[0],R=ch&&ch[1]||L;if(!L){for(var j=0;j<64;j++)a[this.k+j]=0;continue;}for(var j=0;j<64;j++)a[this.k+j]=(L[2*j]+R[2*j]+L[2*j+1]+R[2*j+1])/4;}this.k+=64;if(this.k>=8192)this.flush();return this.on;}});";
+  function idbPut(id, data, rate) {
+    return new Promise(function (res, rej) { var r = indexedDB.open("mini-daw", 1); r.onupgradeneeded = function () { r.result.createObjectStore("takes"); };
+      r.onsuccess = function () { var t = r.result.transaction("takes", "readwrite"); t.objectStore("takes").put({ data: data, rate: rate }, id); t.oncomplete = res; t.onerror = function () { rej(t.error); }; }; r.onerror = function () { rej(r.error); }; });
+  }
+  var DAW_INST = { piano: "piano", rhodes: "rhodes", flute: "syn-sub" };
+  function takeUI(w, getRun) {
+    var box = el("div", "amb-take"); w.body.insertBefore(box, w.ctls);
+    var recB = button(box, "● Record take", function () { w.take && w.take.on ? w.take.finish() : w.recordTake(); }, "btn-outline-danger"),
+      dawB = button(box, "Open in DAW ↗", function () { w.openTake(); }, "btn-outline-primary"), msg = el("span", "amb-take-n", ""); box.appendChild(msg);
+    dawB.disabled = true;
+    w.recordTake = function () {
+      var run = getRun(); if (!run) { w.start(); setTimeout(w.recordTake, 400); return; }
+      var c = run.ctx, T = run.taps(), url = URL.createObjectURL(new Blob([REC_WORKLET], { type: "application/javascript" }));
+      var tk = w.take = { on: true, t0: c.currentTime, rate: c.sampleRate / 2, names: T.map(function (x) { return x[0]; }), chunks: T.map(function () { return []; }), notes: [], events: [], changes: [],
+        start: {}, loops: run.loopsNow().map(function (L) { return L.len; }), inst: w.P.inst, node: null };
+      Object.keys(w.P).forEach(function (k) { if (typeof w.P[k] === "number") tk.start[k] = w.P[k]; });
+      tk.note = function (li, m, v, t, inst) { tk.notes.push({ li: li, m: m, v: v, t: Math.max(0, t - tk.t0), inst: inst }); };
+      tk.event = function (kind, name, s, pn) { tk.events.push({ t: c.currentTime - tk.t0, kind: kind, name: name, rate: s.playbackRate.value, pan: pn.pan.value }); };
+      tk.change = function (k, v) { if (typeof v !== "number") { tk.changes.push({ t: c.currentTime - tk.t0, k: k, v: v }); return; } var last = null; for (var i = tk.changes.length - 1; i >= 0; i--) if (tk.changes[i].k === k) { last = tk.changes[i]; break; }
+        var t = c.currentTime - tk.t0; if (last && t - last.t < .25 && i === tk.changes.length - 1) { last.v = v; return; } tk.changes.push({ t: t, k: k, v: v }); };
+      tk.finish = function () { if (!tk.on) return; tk.on = false; tk.dur = c.currentTime - tk.t0; clearInterval(tk.iv); if (tk.node) { tk.node.port.postMessage("stop"); setTimeout(function () { try { tk.node.disconnect(); } catch (e) {} }, 300); }
+        recB.textContent = "● Record take"; dawB.disabled = false; setTimeout(function () { msg.textContent = "Take: " + fmtS(tk.dur) + ", " + tk.notes.length + " notes, " + tk.events.length + " chimes and swells, " + tk.changes.length + " setting changes. Open it in the DAW."; }, 350); };
+      c.audioWorklet.addModule(url).then(function () {
+        if (!tk.on) return; var n = new AudioWorkletNode(c, "amb-take", { numberOfInputs: T.length, numberOfOutputs: 0, channelCount: 2, channelCountMode: "explicit" });
+        tk.node = n; T.forEach(function (x, i) { x[1].connect(n, 0, i); }); tk.t0 = c.currentTime;
+        n.port.onmessage = function (e) { e.data.forEach(function (a, i) { tk.chunks[i].push(a); }); };
+      }).catch(function (e) { msg.textContent = "This browser cannot record a take: " + e.message; tk.on = false; });
+      recB.textContent = "■ Stop take"; dawB.disabled = true;
+      tk.iv = setInterval(function () { var d = c.currentTime - tk.t0; msg.textContent = "Recording " + fmtS(d) + " of at most " + fmtS(TAKE_MAX) + " · " + tk.notes.length + " notes"; if (d >= TAKE_MAX) tk.finish(); }, 500);
+    };
+    w.takeProject = function () {   // -> { project, stems: [{ id, data, rate }] }
+      var tk = w.take; if (!tk || tk.on) return null; var beats = Math.ceil(tk.dur), bars = Math.max(1, Math.ceil(beats / 4)), id0 = "amb" + Date.now().toString(36), tracks = [], stems = [];
+      var loopsUsed = {}; tk.notes.forEach(function (n) { (loopsUsed[n.li] = loopsUsed[n.li] || []).push(n); });
+      Object.keys(loopsUsed).sort(function (a, b) { return a - b; }).forEach(function (li) { var ns = loopsUsed[li], inst = DAW_INST[ns[0].inst] || "syn-fm";
+        tracks.push({ name: "Loop " + (+li + 1) + (tk.loops[li] ? " (" + tk.loops[li].toFixed(1) + " s)" : "") + " · " + ns[0].inst, inst: inst, vol: -6, pan: 0, mute: true, solo: false,
+          clips: [{ start: 0, len: bars * 4, notes: ns.map(function (n) { return { t: n.t, d: Math.min(4, bars * 4 - n.t), m: n.m, v: n.v }; }) }] }); });
+      tk.names.forEach(function (nm, i) {
+        var parts = tk.chunks[i], len = parts.reduce(function (a, p) { return a + p.length; }, 0), data = new Float32Array(len), o = 0; parts.forEach(function (p) { data.set(p, o); o += p.length; });
+        var pk = 0; for (var j = 0; j < data.length; j++) if (Math.abs(data[j]) > pk) pk = Math.abs(data[j]); if (i > 0 && pk < 1e-4) return;   // a stem that stayed silent is left out
+        var tid = id0 + "-" + i; stems.push({ id: tid, data: data, rate: tk.rate });
+        tracks.push({ name: nm, inst: "audio", vol: 0, pan: 0, mute: i > 0, solo: false, clips: [{ start: 0, len: len / tk.rate, take: tid, off: 0, gain: 0, nudge: 0, notes: [] }] });
+      });
+      var by = {}; tk.changes.forEach(function (ch) { if (typeof ch.v === "number") (by[ch.k] = by[ch.k] || []).push(ch); });
+      Object.keys(by).forEach(function (k) { var c0 = w.c[k], inp = c0 && c0.input; if (!inp) return; var lo = k === "bright" ? 600 : +inp.min, hi = k === "bright" ? 18000 : +inp.max;
+        var f = function (v) { return Math.max(0, Math.min(1, k === "bright" ? Math.log(v / lo) / Math.log(hi / lo) : (v - lo) / (hi - lo || 1))); };
+        var label = c0.el.querySelector(".sk-cl") ? c0.el.querySelector(".sk-cl").textContent : k, pts = [{ t: 0, v: -40 * (1 - f(tk.start[k] != null ? tk.start[k] : by[k][0].v)) }];
+        by[k].forEach(function (ch) { pts.push({ t: Math.min(beats, ch.t), v: -40 * (1 - f(ch.v)) }); });
+        tracks.push({ name: "⚙ " + label + " (a setting: its line, not a sound)", inst: "audio", vol: 0, pan: 0, mute: true, solo: false, clips: [], auto: { vol: pts } }); });
+      var marks = tk.changes.filter(function (ch) { return typeof ch.v !== "number"; }).map(function (ch) { return fmtS(ch.t) + " " + ch.k + " → " + ch.v; });
+      return { project: { tempo: 60, bars: bars, ts: [4, 4], loop: { on: false, from: 0, to: 4 }, click: false, tracks: tracks, notes: "Ambient Generator take, " + new Date().toLocaleString() + ". " + tk.events.length + " chime gusts and cymbal swells. " + (marks.length ? "Switched: " + marks.join("; ") : "") }, stems: stems };
+    };
+    w.openTake = function () {
+      var r = w.takeProject(); if (!r) return; msg.textContent = "Saving the take for the DAW…";
+      Promise.all(r.stems.map(function (s) { return idbPut(s.id, s.data, s.rate); })).then(function () {
+        try { localStorage.setItem("mdaw:handoff-project", JSON.stringify({ at: Date.now(), name: "Ambient take " + new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }), project: r.project })); } catch (e) { throw new Error("the browser would not keep the project (" + e.message + ")"); }
+        msg.textContent = "Opened in the DAW (a new tab)."; window.open("/tools/daw.html", "_blank");
+      }).catch(function (e) { msg.textContent = "Could not hand the take to the DAW: " + e.message; });
+    };
+  }
   function Ambient(host) {
     var w = K.Base(host, "Ambient Generator"), run = null;
     w.knobView && w.knobView();
@@ -232,6 +301,7 @@
       if (w.energy) w.energy.resetFrom(); if (run) run.rebuild();
     };
     w.presetList = AMB_PRESETS;
+    takeUI(w, function () { return run; });
     // ---- cued changes: with Changes = Cued, moving a control while it plays only marks it (the slider shows the new value, the
     // sound keeps the old); Go glides every cued setting there over the Transition time. Keys that rebuild the loops or swap
     // sounds (scale, key, instrument, drone type, loop count / lengths / notes / speed) change at the start of the glide.
@@ -266,7 +336,7 @@
       live[k] = v; realApply(k, v);
     };
     var realApply = function (k, v) {
-      if (!run) return; var t = SK.ac().currentTime;
+      if (!run) return; if (w.take && w.take.on) w.take.change(k, v); var t = SK.ac().currentTime;
       if (k === "drone") run.droneG.gain.setTargetAtTime(v * .5, t, .3);
       if (k === "noise") run.noiseG.gain.setTargetAtTime(v, t, .3);
       if (k === "verb") { run.wet.gain.setTargetAtTime(v * 1.4, t, .2); run.dry.gain.setTargetAtTime(1 - v * .6, t, .2); }
@@ -304,6 +374,7 @@
       mlp.type = "lowpass"; mlp.Q.value = -3; mlp.frequency.value = w.P.bright; lim.threshold.value = -4; lim.knee.value = 0; lim.ratio.value = 20; lim.attack.value = .003; lim.release.value = .25;
       comp.connect(mlp); mlp.connect(lim); lim.connect(out);
       function setDrive(v) { var k = 1 + v * 14, n = 2049, a = new Float32Array(n); for (var i = 0; i < n; i++) { var x = i / (n - 1) * 2 - 1; a[i] = v < .01 ? x : Math.tanh(k * x) / Math.tanh(k); } drv.curve = a; drv.oversample = "4x"; dmk.gain.setTargetAtTime(1 / (1 + v * 2.2), c.currentTime, .1); }
+      var notesB = c.createGain(), chimeB = c.createGain(), cymB = c.createGain(); [notesB, chimeB, cymB].forEach(function (g) { g.connect(src); });
       setDrive(w.P.drive); src.connect(drv); drv.connect(dmk); dmk.connect(bus);
       var rev = SK.fx("reverb", c, { decay: w.P.decay, pre: 40, damp: 5000, early: .2, size: 1 }), dP = { time: 1700, fb: w.P.fb, tone: 1800, wow: .5, pp: "1" }, dly = SK.fx("delay", c, dP), ehp = c.createBiquadFilter();
       ehp.type = "highpass"; ehp.frequency.value = 150;   // long, dark echoes (Frippertronics-like); the right line repeats later (2.3 s) so they blur rather than tick
@@ -352,8 +423,9 @@
       function useBank() { bank = null; bset = null; if (w.P.inst === "bell") return;
         if (BELLS[w.P.inst]) { var k = w.P.inst; bellSet(c, k).then(function (b) { if (!dead && w.P.inst === k) bset = b; }).catch(function () {}); return; } var want = w.P.inst; loadBank(c).then(function (b) { return b.load([want]).then(function () { if (!dead && w.P.inst === want && b.has(want)) bank = b; }); }).catch(function () {}); }
       useBank();
-      function play(e, t) { if (BELLS[w.P.inst]) { if (bset) bset.play(src, e.m, t, e.v); else bell(c, src, e.m, t, e.v, 7); e.lit = t; return; }
-        if (bank) bank.play(w.P.inst, { midi: e.m, vel: e.v, dur: w.P.inst === "flute" ? 3 : 4 }, t, src); else bell(c, src, e.m, t, e.v, 7); e.lit = t; }
+      function play(e, t, li) { if (w.take && w.take.on) w.take.note(li, e.m, e.v, t, w.P.inst);
+        if (BELLS[w.P.inst]) { if (bset) bset.play(notesB, e.m, t, e.v); else bell(c, notesB, e.m, t, e.v, 7); e.lit = t; return; }
+        if (bank) bank.play(w.P.inst, { midi: e.m, vel: e.v, dur: w.P.inst === "flute" ? 3 : 4 }, t, notesB); else bell(c, notesB, e.m, t, e.v, 7); e.lit = t; }
       // the scheduler: each loop's next note time is worked out from t0 and the loop's own length
       var next = loops.map(function () { return 0; }), cyc = loops.map(function () { return 0; });
       // wind chimes: a recorded gust now and then, panned somewhere, a little faster or slower; how often follows the slider
@@ -365,7 +437,7 @@
         var name = "chimes-" + set[Math.floor(Math.random() * set.length)];
         fetchBuf(c, name).then(function (b) { if (dead) return; var s = c.createBufferSource(), g = c.createGain(), pn = c.createStereoPanner();
           s.buffer = b; s.playbackRate.value = Math.max(.1, w.P.chSpeed * (1 + (Math.random() * 2 - 1) * w.P.chVary)); pn.pan.value = (Math.random() * 2 - 1) * w.P.chWidth; g.gain.value = (.25 + .35 * w.P.chimes) * w.P.chLevel;
-          s.connect(g); g.connect(pn); pn.connect(src); s.start(); s.onended = function () { pn.disconnect(); }; }).catch(function () {});
+          s.connect(g); g.connect(pn); pn.connect(chimeB); s.start(); if (w.take && w.take.on) w.take.event("chime", name, s, pn); s.onended = function () { pn.disconnect(); }; }).catch(function () {});
       }
       // cymbal swells: a recorded crash played backwards (it rises into the hit) or forwards, now and then; from the Drum Kits' recordings
       var nextCym = c.currentTime + 3, cymRev = {};
@@ -378,12 +450,12 @@
           .then(function (b) { var r2 = c.createBuffer(b.numberOfChannels, b.length, b.sampleRate); for (var ch = 0; ch < b.numberOfChannels; ch++) { var d = b.getChannelData(ch), o = r2.getChannelData(ch); for (var i = 0; i < d.length; i++) o[i] = d[d.length - 1 - i]; } return [b, r2]; }));
         get.then(function (pair) { if (dead) return; var s = c.createBufferSource(), g = c.createGain(), pn = c.createStereoPanner();
           s.buffer = pair[Math.random() < w.P.cyRev ? 1 : 0]; s.playbackRate.value = Math.max(.1, w.P.cySpeed * (1 + (Math.random() * 2 - 1) * w.P.cyVary)); pn.pan.value = (Math.random() * 2 - 1) * w.P.cyWidth; g.gain.value = (.2 + .4 * w.P.cymbals) * w.P.cyLevel;
-          s.connect(g); g.connect(pn); pn.connect(src); s.start(); s.onended = function () { pn.disconnect(); }; }).catch(function () {});
+          s.connect(g); g.connect(pn); pn.connect(cymB); s.start(); if (w.take && w.take.on) w.take.event(s.buffer === pair[1] ? "cymbal (backwards)" : "cymbal", name, s, pn); s.onended = function () { pn.disconnect(); }; }).catch(function () {});
       }
       function tick() {
         if (dead) return; var now = c.currentTime; gust(now); cymbal(now); if (pad) padScan(now);
         loops.forEach(function (L, i) {
-          for (;;) { var e = L.ev[next[i]], t = t0 + cyc[i] * L.len + e.at; if (t > now + .2) break; if (t >= now - .05) play(e, t); next[i]++; if (next[i] >= L.ev.length) { next[i] = 0; cyc[i]++; } }
+          for (;;) { var e = L.ev[next[i]], t = t0 + cyc[i] * L.len + e.at; if (t > now + .2) break; if (t >= now - .05) play(e, t, i); next[i]++; if (next[i] >= L.ev.length) { next[i] = 0; cyc[i]++; } }
         });
       }
       var iv = setInterval(tick, 50); tick();
@@ -408,9 +480,12 @@
         g.fillStyle = ink; g.font = "11px sans-serif"; g.fillText(loops.map(function (L) { return L.len.toFixed(1); }).join(" · ") + " s", 6, H - 6);
       }
       draw();
-      run = { bed: bed, dry: dry, wet: wet, echoG: echoG, droneG: droneG, noiseG: noiseG, rev: rev,
+      var take = null;
+      function taps() { return [["Master (as heard)", lim], ["Loop notes", notesB], ["Wind chimes", chimeB], ["Cymbal swells", cymB], ["Drone", droneG], ["Noise bed", noiseG], ["Reverb return", rev.output], ["Echo return", dly.output]]; }
+      run = { taps: taps, setTake: function (t) { take = t; }, loopsNow: function () { return loops; }, ctx: c, bed: bed, dry: dry, wet: wet, echoG: echoG, droneG: droneG, noiseG: noiseG, rev: rev,
         rebuild: rebuild, rebuildSoon: function () { clearTimeout(rbT); rbT = setTimeout(function () { if (!dead) rebuild(); }, 400); }, setFb: setFb, setDrive: setDrive, mlp: mlp, retune: function () { droneOn(); rebuild(); }, inst: useBank };
       return function () {
+        if (w.take && w.take.on) w.take.finish();
         dead = true; clearInterval(iv); cancelAnimationFrame(raf); run = null; bed.stop(); drone.forEach(function (d) { d.stop(); }); if (bank && bank.stopAll) bank.stopAll();
         setTimeout(function () { rev.stop(); dly.stop(); try { comp.disconnect(); } catch (e) {} }, 300);
       };
@@ -424,6 +499,7 @@
     ".amb-band input{writing-mode:vertical-lr;direction:rtl;height:120px;width:22px;accent-color:var(--site-accent-dk)}" +
     ".amb-band .amb-bf{color:var(--site-ink-2)}.amb-nb{margin:.4rem 0}.amb-nb summary{cursor:pointer;font-family:var(--font-display)}" +
     ".sk-plot.amb-rings{height:260px;max-width:420px}" +
+    ".amb-take{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:.3rem 0}.amb-take-n{font-size:.82rem;color:var(--site-ink-2)}" +
     ".amb-cue{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:.3rem 0}.amb-cue .sk-c{min-width:12rem}.amb-cue-n{font-size:.82rem;color:var(--site-ink-2)}" +
     ".amb-ck{display:flex;flex-wrap:wrap;gap:.2rem 1rem;font-size:.85rem;margin:.3rem 0}" +
     ".amb-en{margin:.5rem 0}.amb-en summary{cursor:pointer;font-family:var(--font-display)}.amb-en-knob .sk-cl{font-weight:700}" +

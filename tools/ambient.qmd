@@ -19,6 +19,8 @@ How it works and where it comes from: [Sound 27: Ambient music](../lessons/sound
 
 **Changes: Cued** holds back what you change while it plays. The slider shows the new value but the sound keeps the old one until you press **Go**. Then every cued setting glides to its new value over the **Transition** time, the way a DJ or a live-electronics player moves from one scene to the next. Scale, key, instrument and the loops' shape change at the start of the glide. Turning Energy while cued works the same way. The **Wind chimes** and **Cymbal swells** menus choose which recordings play, how loud, how fast (higher or lower) and how wide.
 
+**● Record take** records what you hear for up to five minutes, then **Open in the DAW** opens it in the [DAW scratch pad](daw.qmd) as a new project. You get one note track per tape loop, so you can see the loops drifting apart on the piano roll. You also get an audio track for what you heard (Master) and one for each part: loop notes, chimes, cymbals, drone, noise, reverb and echo. Solo a part to hear it alone. Each setting you changed gets its own muted track, whose volume line shows the setting over time.
+
 ## Noise with a 10-band EQ
 
 <div class="sk" data-w="noiseeq" data-preset="Rain on a roof"></div>

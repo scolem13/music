@@ -63,6 +63,21 @@ const RMS = `(w => { const a = w.view && w.view.an; if (!a) return 0; const d = 
     const menus = await b.eval(`(w => w.P.chimeSet.length === 8 && w.P.cymSet.length === 4 && w.P.chLevel === 2 && w.P.cyRev === 1)(${W})`);
     check("chime and cymbal menus set their values", menus);
     await b.sleep(1500); await b.eval(`${W}.stop()`); check("cue and menus: no page errors", !b.errors.filter(e => !/supabaseUrl/.test(e)).length, b.errors.join(" | ")); }
+  // Record take -> Open in DAW: a 6 s take with a cue glide, the stems and notes reach the DAW page as a new project
+  { b.errors.length = 0; const W = `SynthKit.widgets.find(w => w.kind === "ambient")`;
+    await b.goto("http://127.0.0.1:8517/tools/ambient.html"); await b.sleep(800);
+    await b.eval(`(w => { w.preset(w.presetList.find(p => p.name === "Chime garden")); w.c.density.set(3); w.c.pace.set(6); w.start(); })(${W})`); await b.sleep(500);
+    await b.eval(`${W}.recordTake()`); await b.sleep(1500); await b.eval(`${W}.c.drive.set(.6)`); await b.sleep(4500); await b.eval(`${W}.take.finish()`); await b.sleep(600);
+    const tp = await b.eval(`(w => { const r = w.takeProject(); return { tracks: r.project.tracks.map(t => t.name + "|" + t.inst + "|" + (t.mute ? "m" : "") + "|" + (t.clips[0] && t.clips[0].notes ? t.clips[0].notes.length : "") + "|" + (t.auto ? t.auto.vol.length : "")), stems: r.stems.map(s => s.id + ":" + s.data.length + ":" + s.rate), peak: r.stems[0].data.reduce((a, x) => Math.max(a, Math.abs(x)), 0) }; })(${W})`);
+    const hasLoops = tp.tracks.some(t => /^Loop \d/.test(t) && +t.split("|")[3] > 0), hasMaster = /Master/.test(tp.tracks.join()), hasSetting = tp.tracks.some(t => /Drive/.test(t) && +t.split("|")[4] >= 2);
+    const stemLen = tp.stems.length && +tp.stems[0].split(":")[1] / +tp.stems[0].split(":")[2];
+    check("take: note tracks per loop, master + stems, a Drive setting line", hasLoops && hasMaster && hasSetting && tp.stems.length >= 4, tp.tracks.join(" ; "));
+    check("take: master stem is about as long as the take and not silent", Math.abs(stemLen - 6) < 1 && tp.peak > .01, "len " + (+stemLen).toFixed(2) + " s, peak " + tp.peak.toFixed(3));
+    await b.eval(`(w => { w.stop(); const open = window.open; window.open = () => null; w.openTake(); window.open = open; })(${W})`); await b.sleep(1500);
+    await b.goto("http://127.0.0.1:8517/tools/daw.html"); await b.sleep(3000);
+    const d = await b.eval(`(() => { const cur = JSON.parse(localStorage.getItem("mdaw:daw-scratch:current") || "null"), p = cur && JSON.parse(localStorage.getItem(cur) || "null"); return p ? { n: p.tracks.length, tempo: p.tempo, audio: p.tracks.filter(t => t.inst === "audio" && t.clips.length).length } : null; })()`);
+    check("DAW opens the take as a new project with its audio tracks", d && d.n === tp.tracks.length && d.tempo === 60 && d.audio === tp.stems.length, JSON.stringify(d));
+    check("take and DAW: no page errors", !b.errors.filter(e => !/supabaseUrl/.test(e)).length, b.errors.join(" | ")); }
   // the tape echo dies away at every frequency: a 2.2 kHz burst into the delay at fb 0.5, tone 2800 (the old loop gain there was 1.03)
   const echo = await b.eval(`(async () => { const c = new OfflineAudioContext(1, 48000 * 12, 48000), o = c.createOscillator(), g = c.createGain();
     o.frequency.value = 2200; g.gain.setValueAtTime(.3, 0); g.gain.setValueAtTime(0, .15); o.connect(g); o.start(0);

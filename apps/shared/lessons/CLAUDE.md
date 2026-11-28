@@ -317,6 +317,12 @@
   envelope Flat gives the trick away, partials plotted) and `tritone` (Deutsch's paradox: random pair, Up/Down, answers on the
   pitch-class circle; `play(pc)`, `answers()`). Facts from Wikipedia only (`scripts/sources/shepard.py`). Test
   `node tests/lessons/shepard.cdp.js` (`NEG=1` must fail). Not listened to by a person yet.
+- Ambient Generator takes (2026-11-28): "Record take" / "Open in DAW" (`takeUI` in ambient-kit.js; header comment there):
+  one AudioWorklet with 8 inputs (master `lim`, `notesB`, `chimeB`, `cymB`, droneG, noiseG, reverb and echo returns), mono at half
+  rate, 5 min cap; notes / gusts / swells / setting changes logged (`w.take`). `w.takeProject()` builds a 60 bpm project (1 beat
+  = 1 s): note track per loop (piano / rhodes, else syn-fm; flute syn-sub), stems as audio tracks (all but Master muted), a muted
+  "⚙ setting" track per changed setting whose vol automation draws it (-40..0 dB). Stems go straight into IndexedDB "mini-daw" /
+  "takes"; the project via localStorage "mdaw:handoff-project", opened by `takeProjectHandoff` in mini-daw.js. Test in ambient.cdp.js.
 - Ambient Generator cues and menus (2026-11-28): Changes = Cued: `w.apply` stores a moved control in `cued` and puts `w.P[k]` back
   to `live[k]` (the slider keeps the new value; the scheduler, which reads `w.P`, keeps the old); `w.go()` glides numbers over
   Transition (smoothstep, 100 ms steps, brightness in octaves), STEP keys (scale, inst, loops...) change at once. Chime / cymbal
