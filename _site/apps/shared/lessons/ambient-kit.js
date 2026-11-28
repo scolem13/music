@@ -127,12 +127,37 @@
   // DAFx-19); clapper contact 1-1.4 ms; doublets about 1.2 cents apart (Hibbert). The other levels and the 1/frequency ring-time
   // scaling are estimates. The note played is the strike note: the prime is an octave below it.
   var BELLP = [[.501, .7, 1.7], [1, .6, 1], [1.187, 1, .84], [1.499, .15, .67], [2, .85, .5], [2.49, .12, .4], [2.54, .1, .39], [2.58, .1, .39], [2.79, .08, .36], [2.998, .35, .33], [4.13, .3, .24], [5.36, .2, .19], [6.69, .12, .15], [8.05, .08, .12], [9.53, .05, .1]];
-  MODAL.bell = function (c, out, nom, t, v, hard, warble) {
-    var f0 = nom / 2, h = hard == null ? .55 : hard, tc = .0034 - .0022 * h, T = 100 * (129 / f0), cents = warble == null ? 1.2 : warble;
-    BELLP.forEach(function (p) { var f = f0 * p[0], a = v * .16 * p[1] * contact(f, tc) * (f > 1500 && f < 3000 ? 1 + .6 * h : 1), sp = f * cents * Math.LN2 / 1200 * (.6 + .8 * Math.random());
-      partial(c, out, f - sp / 2, a, Math.min(240, T * p[2]), t); partial(c, out, f + sp / 2, a, Math.min(240, T * p[2]), t); });
+  // temple bells (research_notes/bell-chime-samples/BELLS-RESEARCH.md). Struck from outside by a wooden log: a soft, long contact
+  // (5-15 ms: an estimate, nothing measured) that still excites modes up to about 800 Hz (Kim and Kim 1997). Rows: [ratio to the lowest
+  // mode, level, T60 at the reference pitch (s), doublet split at the reference pitch (Hz)]. Korean: the Divine Bell of King Seongdeok,
+  // hum pair 64.06 / 64.38-64.50 Hz split 0.32-0.37 Hz (Kim and Lee 2025; Kim and Kim 1997), 168.3-168.75 Hz split 0.08-0.13 (the
+  // sources differ), then 190.1 (1.26), 228.3 (0.32), 282.6 (0.66) and a cluster at 346-350 Hz (Cho et al. 2023, Table 1, as read);
+  // after about 10 s only the hum is left (1997), the 168 Hz tone lasts about 20 s (2025). Japanese: the Mii-dera bonsho, 109, 216, 253,
+  // 320 / 323, 350, 409, 466 / 477, 567 Hz, and a weak 47 Hz mode heard inside the bell; at 13 s only 109 and 216 Hz remain (Sakurai
+  // et al. 2020). Every level, every T60 and the Japanese splits are estimates. Vietnamese: nothing measured; their shape is near-
+  // cylindrical like Chinese and Japanese bells (Vietnam National Museum of History), so it starts from the Japanese table until the
+  // owner's recording of a Vietnamese temple bell sets it.
+  var TEMPLE = {
+    korean: { ref: 64.35, rows: [[1, 1, 75, .34], [2.62, .8, 28, .1], [2.95, .6, 12, 1.26], [3.55, .55, 10, .32], [4.39, .45, 8, .66], [5.4, .35, 6, .5], [5.43, .3, 6, .4]] },
+    japanese: { ref: 109, rows: [[.43, .15, 60, .05], [1, 1, 45, .2], [1.98, .8, 35, .25], [2.32, .45, 10, .3], [2.95, .35, 8, .2], [2.96, .3, 8, .2], [3.21, .3, 7, .3], [3.75, .25, 6, .3], [4.28, .2, 5, .3], [4.38, .18, 5, .3], [5.2, .14, 4, .3]] }
   };
-  var VOICES = { cbell: { oct: -12, play: function (c, o, m, t, v) { MODAL.bell(c, o, mtof(m), t, v); } }, mbar: { oct: -12, play: function (c, o, m, t, v) { MODAL.bar(c, o, mtof(m), t, v, true); } },
+  MODAL.bell = function (c, out, nom, t, v, hard, warble, type, beat) {
+    var h = hard == null ? .55 : hard, depth = beat == null ? .5 : beat;
+    if (type && type !== "western") {
+      var B = TEMPLE[type === "vietnamese" ? "japanese" : type] || TEMPLE.korean, f1 = nom, sc = f1 / B.ref, tc = .015 - .01 * h;
+      B.rows.forEach(function (r) { var f = f1 * r[0], a = v * .2 * r[1] * contact(f, tc), T = Math.min(240, r[2] / Math.pow(sc, .8)), sp = r[3] * sc;
+        partial(c, out, f - sp / 2, a, T, t, .006); partial(c, out, f + sp / 2, a * (1 - .8 * depth), T, t, .006); });   // unequal lines: the beat is stronger in some directions (Kim and Lee 2025)
+      var n = Math.round(c.sampleRate * .08), b = c.createBuffer(1, n, c.sampleRate), d = b.getChannelData(0); for (var i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / n, 4);
+      var s0 = c.createBufferSource(), lp = c.createBiquadFilter(), g0 = c.createGain(); s0.buffer = b; lp.type = "lowpass"; lp.frequency.value = 500 + 900 * h; g0.gain.value = v * .12 * (.4 + h); s0.connect(lp); lp.connect(g0); g0.connect(out); s0.start(t);   // the log's thud
+      return;
+    }
+    var f0 = nom / 2, tc2 = .0034 - .0022 * h, T0 = 100 * (129 / f0), cents = warble == null ? 1.2 : warble;
+    BELLP.forEach(function (p) { var f = f0 * p[0], a = v * .16 * p[1] * contact(f, tc2) * (f > 1500 && f < 3000 ? 1 + .6 * h : 1), sp = f * cents * Math.LN2 / 1200 * (.6 + .8 * Math.random());
+      partial(c, out, f - sp / 2, a, Math.min(240, T0 * p[2]), t); partial(c, out, f + sp / 2, a, Math.min(240, T0 * p[2]), t); });
+  };
+  var VOICES = { kbell: { oct: -24, play: function (c, o, m, t, v) { MODAL.bell(c, o, mtof(m), t, v, .5, null, "korean"); } },
+    jbell: { oct: -24, play: function (c, o, m, t, v) { MODAL.bell(c, o, mtof(m), t, v, .5, null, "japanese"); } },
+    cbell: { oct: -12, play: function (c, o, m, t, v) { MODAL.bell(c, o, mtof(m), t, v); } }, mbar: { oct: -12, play: function (c, o, m, t, v) { MODAL.bar(c, o, mtof(m), t, v, true); } },
     wbar: { oct: -12, play: function (c, o, m, t, v) { MODAL.bar(c, o, mtof(m), t, v, false); } },
     chime: { oct: -12, play: function (c, o, m, t, v) { MODAL.chime(c, o, mtof(m), t, v); } } };
   // a soft bell, for when there are no samples (or "Synth bell" is chosen): two sines a fifth and two octaves up, slow fade
@@ -255,7 +280,7 @@
     w.body.insertBefore(pr, w.ctls);
     w.pick("key", "Key", KEYS, "5", null, function () { if (run) run.retune(); });
     w.pick("mode", "Scale", [["major", "Major"], ["lydian", "Lydian (♯4: floating)"], ["pent", "Major pentatonic"], ["dorian", "Dorian"], ["aeolian", "Natural minor"], ["minpent", "Minor pentatonic"]], "major", null, function () { if (run) run.retune(); });
-    w.pick("inst", "Loop notes on", [["piano", "Piano (samples)"], ["rhodes", "Electric piano (samples)"], ["flute", "Flute (samples)"], ["cbell", "Church bells (model, in progress)"], ["mbar", "Bass metal bars (model)"], ["wbar", "Bass wooden bars (model)"], ["chime", "Chime tubes (model)"], ["bell", "Synth bell"]], "piano", null, function () { if (run) run.inst(); });
+    w.pick("inst", "Loop notes on", [["piano", "Piano (samples)"], ["rhodes", "Electric piano (samples)"], ["flute", "Flute (samples)"], ["cbell", "Church bells (model, in progress)"], ["kbell", "Korean temple bells (model)"], ["jbell", "Japanese temple bells (model)"], ["mbar", "Bass metal bars (model)"], ["wbar", "Bass wooden bars (model)"], ["chime", "Chime tubes (model)"], ["bell", "Synth bell"]], "piano", null, function () { if (run) run.inst(); });
     w.num("loops", { label: "Tape loops", min: 1, max: 9, step: 1, value: 7, fmt: function (v) { return v + (v === 1 ? " loop" : " loops"); }, on: function () { if (run) run.rebuild(); } });
     w.num("spread", { label: "Loop lengths", min: 0, max: 1, step: .01, value: 1, fmt: function (v) { return v < .05 ? "all equal (a pulse)" : v < .5 ? "close" : "far apart (never lines up)"; }, on: function () { if (run) run.rebuild(); } });
     w.num("density", { label: "Notes per loop", min: .2, max: 3, step: .01, value: .9, fmt: fmtPct, on: function () { if (run) run.rebuildSoon(); } });
@@ -511,19 +536,21 @@
   function Modal(host) {
     var w = K.Base(host, "Bells, chimes and bass bars (models)"), out = null, iv = 0;
     w.knobView && w.knobView();
-    w.pick("model", "Instrument", [["bell", "Church bell (in progress)"], ["chime", "Chime tube"], ["mbar", "Bass metal bar"], ["wbar", "Bass wooden bar"]], "chime");
+    w.pick("model", "Instrument", [["bell", "Church bell (in progress)"], ["kbell", "Korean temple bell"], ["jbell", "Japanese temple bell"], ["vbell", "Vietnamese temple bell (for now, the Japanese model)"], ["chime", "Chime tube"], ["mbar", "Bass metal bar"], ["wbar", "Bass wooden bar"]], "chime");
     w.num("note", { label: "Note", min: 24, max: 72, step: 1, value: 45, fmt: function (v) { return ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"][v % 12] + (Math.floor(v / 12) - 1) + " (" + Math.round(mtof(v)) + " Hz)"; } });
     w.num("hard", { label: "Strike", min: 0, max: 1, step: .01, value: .4, fmt: function (v) { return v < .3 ? "soft" : v < .7 ? "medium" : "hard"; } });
     w.num("ring", { label: "Ring length", min: .3, max: 2.5, step: .01, value: 1, fmt: function (v) { return "x" + v.toFixed(2); } });
+    w.num("beat", { label: "Temple-bell beat", min: 0, max: 1, step: .01, value: .5, fmt: function (v) { return v < .2 ? "faint (listener in line with the strike)" : v < .7 ? "clear" : "deep"; } });
     w.P.level = 1;
     function strike(c, o, m, t, v) { var f = mtof(m), P = w.P;
-      if (P.model === "bell") MODAL.bell(c, o, f, t, v, P.hard); else if (P.model === "chime") MODAL.chime(c, o, f, t, v, P.hard, P.ring); else MODAL.bar(c, o, f, t, v, P.model === "mbar", P.hard, P.ring); }
+      var BT = { bell: "western", kbell: "korean", jbell: "japanese", vbell: "vietnamese" };
+      if (BT[P.model]) MODAL.bell(c, o, f, t, v, P.hard, null, BT[P.model], P.beat); else if (P.model === "chime") MODAL.chime(c, o, f, t, v, P.hard, P.ring); else MODAL.bar(c, o, f, t, v, P.model === "mbar", P.hard, P.ring); }
     button(w.tools, "Strike", function () { if (!w.running) w.start(); setTimeout(function () { if (out) strike(SK.ac(), out, w.P.note, SK.ac().currentTime + .02, 1); }, 60); }, "btn-outline-primary");
     w.view = K.viewer(w.body, { ms: 20 });
     w.onStart = function (c, o) {
       out = c.createGain(); out.gain.value = .9; out.connect(o); var next = c.currentTime + .1, i = 0;
       iv = setInterval(function () { var now = c.currentTime, P = w.P; if (now + .3 < next) return;
-        if (P.model === "bell") { strike(c, out, P.note, next, .8 + .2 * Math.random()); next += 3.2; }
+        if (/bell/.test(P.model)) { strike(c, out, P.note, next, .8 + .2 * Math.random()); next += P.model === "bell" ? 3.2 : 12; }
         else if (P.model === "chime") { var set = [0, 2, 4, 7, 9]; strike(c, out, P.note + set[Math.floor(Math.random() * 5)], next, .35 + .65 * Math.random()); next += .15 + Math.random() * 1.2; }
         else { var seq = [0, 7, 12, 7, 0, 5, 10, 5]; strike(c, out, P.note - 12 + seq[i++ % 8], next, i % 4 === 1 ? 1 : .75); next += .6; } }, 50);
       return function () { clearInterval(iv); var g = out; out = null; setTimeout(function () { try { g.disconnect(); } catch (e) {} }, 8000); };

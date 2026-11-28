@@ -31,7 +31,7 @@ const RMS = `(w => { const a = w.view && w.view.an; if (!a) return 0; const d = 
   }
   // the modelled voices (bass bars, chime tubes), the modelled wind-chime gusts and the wavetable pad sound; no bell recordings are fetched
   await b.goto("http://127.0.0.1:8517/tools/ambient.html"); await b.sleep(800);
-  for (const [inst, dtype] of [["cbell", "pad"], ["mbar", "pad"], ["wbar", "saw"], ["chime", "pad"]]) {
+  for (const [inst, dtype] of [["cbell", "pad"], ["kbell", "saw"], ["jbell", "pad"], ["mbar", "pad"], ["wbar", "saw"], ["chime", "pad"]]) {
     b.errors.length = 0;
     await b.eval(`(w => { w.c.inst.set("${inst}"); w.c.dtype.set("${dtype}"); w.c.chimes.set(1); w.c.density.set(1); w.start(); })(SynthKit.widgets.find(w => w.kind === "ambient"))`);
     let lv = 0; for (let k = 0; k < 20; k++) { await b.sleep(200); lv = Math.max(lv, await b.eval(`${RMS}(SynthKit.widgets.find(w => w.kind === "ambient"))`)); }

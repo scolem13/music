@@ -336,7 +336,9 @@
   only samples kept are the Drum Kits' cymbals, used by Cymbal swells). Loop notes can play modelled bass bars (metal / wood) and
   chime tubes, and the wind-chime gusts are modelled tubes tuned to the key (`MODAL` / `VOICES` in ambient-kit.js; numbers and
   sources in its comment, `scripts/sources/ambient-models.py`, research in `research_notes/bell-chime-samples/MODELS.md`).
-  The bell model needs more work and is not in the generator. The collected recordings (bells, chimes, marimba) stay local in
+  Bells: `MODAL.bell(c, out, f, t, v, hard, warble, type, beat)`, type western (Westminster tenor; in progress) / korean (King
+  Seongdeok) / japanese (Mii-dera) / vietnamese (= japanese until the owner records a Vietnamese temple bell in WA); TEMPLE rows are
+  [ratio, level, T60, split Hz at the ref pitch]; levels and T60s are estimates (research_notes/bell-chime-samples/BELLS-RESEARCH.md). The collected recordings (bells, chimes, marimba) stay local in
   `research_notes/bell-chime-samples/` (audio git-ignored) for listening and for setting the models; the listening page is a
   private artifact. Drum Kits' cymbals remain. Drone = saws or a wavetable pad (four of `SK.wtFrames()` cross-faded). The shared
   tape delay's `satCurve` has unity small-signal gain and its tone low-pass Q -3 (before, the echoes at 2-2.5 kHz never died);
