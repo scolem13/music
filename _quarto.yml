@@ -34,6 +34,7 @@ website:
             - lessons/blues-melody.qmd
             - lessons/blues-changes.qmd
             - lessons/blues-bass.qmd
+            - lessons/walking-bass-lines.qmd
             - lessons/blues-guitar.qmd
             - lessons/funk-guitar.qmd
             - lessons/blues-piano.qmd
@@ -239,6 +240,7 @@ website:
             - lessons/sound-chain.qmd
             - lessons/sound-chiptune.qmd
             - lessons/sound-ambient.qmd
+            - lessons/sound-shepard.qmd
             - section: "Meet the Instruments"
               contents:
                 - lessons/intro-model-d.qmd
@@ -267,6 +269,18 @@ website:
                 - lessons/intro-mc-202.qmd
                 - lessons/intro-mc-4.qmd
                 - lessons/intro-digitakt.qmd
+            - section: "Vital, step by step"
+              contents:
+                - lessons/vital-01-window.qmd
+                - lessons/vital-02-oscillators.qmd
+                - lessons/vital-03-filter.qmd
+                - lessons/vital-04-envelopes.qmd
+                - lessons/vital-05-modulation.qmd
+                - lessons/vital-06-lfos.qmd
+                - lessons/vital-07-playing.qmd
+                - lessons/vital-08-effects.qmd
+                - lessons/vital-09-voices.qmd
+                - lessons/vital-10-real-thing.qmd
             - section: "Electric pianos"
               contents:
                 - lessons/epiano-compare.qmd
@@ -606,11 +620,17 @@ website:
           contents:
             - tools/backing-track.qmd
             - tools/accomp-styles.qmd
+            - tools/walking-bass.qmd
             - tools/drumset.qmd
             - tools/sequencers.qmd
+            - tools/instrument-presets.qmd
+            - tools/ambient.qmd
             - tools/daw.qmd
             - tools/arranger.qmd
             - tools/polyrhythm.qmd
+            - tools/rhythm-library.qmd
+            - tools/mode-library.qmd
+            - tools/alt-notation.qmd
         - section: "Chords and harmony"
           contents:
             - tools/chord-library.qmd
@@ -622,7 +642,6 @@ website:
           contents:
             - tools/scales.qmd
             - tools/scale-patterns.qmd
-            - tools/ambient.qmd
             - tools/part-reader.qmd
             - tools/classical-themes.qmd
             - tools/pop-themes.qmd
@@ -661,6 +680,8 @@ website:
         - gear/sennheiser-xsw.qmd
         - gear/wireless-rack-x32.qmd
         - gear/x32-headset-scene.qmd
+        - gear/x32-guitar-vocals-computer.qmd
+        - gear/ur22mkii.qmd
     - id: mlt
       title: "MLT"
       style: docked
@@ -686,6 +707,7 @@ website:
         - teacher/session-builder.qmd
         - teacher/report.qmd
         - teacher/realpop-transcriptions.qmd
+        - teacher/wanted-pdfs.qmd
         - section: "LSA"
           contents:
             - teacher/lsa-directory.qmd
@@ -746,11 +768,15 @@ website:
           - tools/backing-track.qmd
           - styles/index.qmd
           - tools/accomp-styles.qmd
+          - tools/walking-bass.qmd
           - tools/drumset.qmd
           - tools/sequencers.qmd
           - tools/daw.qmd
           - tools/arranger.qmd
           - tools/polyrhythm.qmd
+          - tools/rhythm-library.qmd
+          - tools/mode-library.qmd
+          - tools/alt-notation.qmd
           - text: "---"
           - text: "Chords and harmony"
           - tools/chord-library.qmd
@@ -796,6 +822,8 @@ website:
           - gear/sennheiser-xsw.qmd
           - gear/wireless-rack-x32.qmd
           - gear/x32-headset-scene.qmd
+          - gear/x32-guitar-vocals-computer.qmd
+          - gear/ur22mkii.qmd
 
 format:
   html:

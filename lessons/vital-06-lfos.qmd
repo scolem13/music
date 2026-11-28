@@ -1,0 +1,124 @@
+---
+title: "Vital 6: LFOs and Random"
+toc: true
+toc-depth: 2
+description: "LFOs move a knob over and over; Random moves it unpredictably. Shape and rate on this site's LFO 1, LFO 2 and Random, then the real Vital's eight drawable LFOs, modes, sync and four random styles."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+Lesson 6 of 10 in *Vital, step by step*: everything you need to feel at home in the real Vital plug-in. Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Learn what an LFO is, and its shape and rate.
+2. Hear vibrato, a trill-like jump, a sweep and a slow morph.
+3. Use LFO 2 and Random through the matrix.
+4. Find the real Vital's LFO modes, tempo sync and random styles.
+5. Check yourself.
+:::
+
+## What an LFO is
+
+- An **LFO** (*low-frequency oscillator*) is an oscillator too slow to hear as a note. You do not listen to it; it moves a knob up and down for you, again and again.
+- Its **shape** is how it moves: a *sine* or *triangle* glides smoothly, a *saw* ramps and jumps back, a *square* flips between two places.
+- Its **rate** (FREQUENCY) is how fast. On this page, as in Vital, it runs from -7 to 9 (Vital source, synth_parameters.cpp); this page reads that as 2 to the power of the number in hertz (times a second): 0 = once a second, 1 = twice, 3 = 8 times (unverified).
+
+## LFO 1, LFO 2 and Random here
+
+- **LFO 1** has three fixed routes under it: **→ PITCH** (vibrato), **→ CUTOFF** and **→ FRAME**. Or drag its button onto a knob.
+- **LFO 2** and **RANDOM 1** are on the MATRIX tab and work through slots only.
+- **Random** here jumps to a new random level at each tick of its rate (*sample and hold*). It is this page's own random; Vital's has four styles (below).
+
+## The panel
+
+This site's beginner Vital panel: the real plug-in's names and ranges for a few controls, played by this site's own sound engine (not Vital's code), so it is close but not the same. Play it from the keys under it, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard (**Use MIDI**). Dimmed controls are not modelled; **Show ▾ → Only working controls** hides them.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="vital"><div class="scmp"></div></div>
+```
+
+## Step by step
+
+Each step loads a starting patch made on this page (not one of Vital's presets) and plays it. Listen for the one thing it names, then turn the knob it names.
+
+```{=html}
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;lfoShape&quot;:&quot;sine&quot;,&quot;lfoRate&quot;:2.5,&quot;lfoPitch&quot;:0.4}" data-page="voice"><p><b>Vibrato.</b> LFO 1: sine, rate 2.5 (about 6 times a second), <b>→ PITCH</b> 0.4 semitones. Listen for the singer-like wobble. Raise → PITCH to 2 for a seasick wobble, then back.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;lfoShape&quot;:&quot;square&quot;,&quot;lfoRate&quot;:2,&quot;lfoPitch&quot;:5}" data-page="voice"><p><b>A square jumps.</b> LFO 1: <b>square</b>, rate 2, → PITCH 5 semitones: the pitch flips between two notes, like a trill. Change SHAPE to triangle: it slides between them instead.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;lfoShape&quot;:&quot;saw&quot;,&quot;lfoRate&quot;:1.5,&quot;lfoCut&quot;:30,&quot;cut&quot;:70,&quot;res&quot;:40}" data-page="voice"><p><b>A saw on the cutoff.</b> LFO 1: <b>saw</b>, rate 1.5, <b>→ CUTOFF</b> 30, cutoff 70. Each cycle the filter sweeps one way and snaps back. Listen for the repeating "yow".</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;lfoShape&quot;:&quot;tri&quot;,&quot;lfoRate&quot;:-1,&quot;lfoFrame&quot;:200,&quot;o1Frame&quot;:128}" data-page="voice"><p><b>A slow morph.</b> LFO 1: triangle, rate -1 (once every two seconds), <b>→ FRAME</b> 200, the frame in the middle. Hold a note and hear it morph between soft and bright.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;lfoShape&quot;:&quot;sine&quot;,&quot;lfoRate&quot;:2.4,&quot;lfoPitch&quot;:0.3,&quot;m1s&quot;:&quot;LFO 2&quot;,&quot;m1d&quot;:&quot;Cutoff&quot;,&quot;m1a&quot;:30,&quot;lfo2Shape&quot;:&quot;square&quot;,&quot;lfo2Rate&quot;:2,&quot;cut&quot;:70,&quot;res&quot;:30}" data-page="matrix"><p><b>LFO 2 as well.</b> LFO 1 gives vibrato; slot 1 sends <b>LFO 2</b> (square, rate 2) to the cutoff at 30 %. Two LFOs at two speeds. Change LFO 2's FREQUENCY on the MATRIX tab.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;m1s&quot;:&quot;Random&quot;,&quot;m1d&quot;:&quot;Cutoff&quot;,&quot;m1a&quot;:35,&quot;rndRate&quot;:3,&quot;cut&quot;:72,&quot;res&quot;:30}" data-page="matrix"><p><b>Random.</b> Slot 1: <b>Random → Cutoff</b>, 35 %, rate 3. The cutoff jumps to a new place 8 times a second, never in a pattern. Turn RATE down to 0 for one jump a second.</p></div>
+```
+
+## In the real Vital
+
+What is different in the plug-in and exactly where to find it. Every line names the file of Vital's source code (github.com/mtytel/vital) it was read from; "(unverified)" means it was not confirmed.
+
+- **Eight LFOs**, LFO 1 to 8, one shown at a time (Vital source, synth_constants.h; modulation_interface.cpp).
+- **You draw the shape.** Each LFO is a line editor: double-click empty space to add a point, double-click a point to remove it, drag points to move them, drag a curve handle to bend a line (Vital source, line_editor.cpp). Right-click for Copy, Paste, Flip, Import LFO, Export LFO, Save to LFOs (Vital source, line_editor.cpp). Shapes are saved as `.vitallfo` files and loaded from the name box above the editor (Vital source, synth_constants.h; lfo_section.cpp). The shape a new LFO starts with is not in the notes (unverified).
+- **MODE** (how it starts and repeats): Trigger, Sync, Envelope, Sustain Envelope, Loop Point, Loop Hold; it starts on Trigger (Vital source, synth_strings.h; synth_parameters.cpp).
+- **FREQUENCY and sync:** next to FREQUENCY you choose Seconds, Tempo, Tempo Dotted, Tempo Triplets or Keytrack. A new LFO starts on **Tempo**, so its speed is a note length such as 1/4 that follows the song's tempo (Vital source, synth_strings.h; synth_parameters.cpp). This page's LFO is free-running in hertz; choose Seconds in Vital to match it.
+- **More:** DELAY (wait before it starts), STEREO, and a FADE IN / SMOOTH control (Vital source, lfo_section.cpp).
+- **Four randoms:** RANDOM 1 to 4, each with a STYLE: **Perlin**, **Sample & Hold**, **Sine Interpolate**, **Lorenz Attractor**; it starts on Perlin (Vital source, synth_constants.h; synth_strings.h; synth_parameters.cpp). This page's Random is closest to Sample & Hold. Each also has FREQUENCY, STEREO and SYNC (Vital source, random_section.cpp).
+- **Using them:** drag the LFO or RANDOM button onto a knob, exactly as in lesson 5.
+
+## Try it in the real Vital
+
+Open Vital in your DAW (see [Meet Vital](intro-vital.qmd) to install it) and do these in order.
+
+- [ ] Initialize the preset. Drag **LFO 1** onto OSC 1's WAVE FRAME. Listen.
+- [ ] In LFO 1's editor, double-click to add a point and drag it. Hear the movement change.
+- [ ] Set LFO 1's sync to **Seconds** and turn FREQUENCY. Then try **Tempo** and pick 1/8.
+- [ ] Change MODE to **Envelope** and play: it runs once per note.
+- [ ] Click RANDOM 1, set STYLE to **Sample & Hold** and drag it onto CUTOFF (with FILTER 1 on).
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>What does an LFO do?</b></p><ul><li>Moves a knob up and down over and over</li><li>Plays the melody</li><li>Saves the preset</li><li>Adds echo</li></ul><p class="ik-why">It is a slow oscillator used to move other controls.</p></div>
+<div class="ik-q" data-a="0"><p><b>Vibrato is an LFO on…</b></p><ul><li>Pitch</li><li>Volume only</li><li>Reverb</li><li>Polyphony</li></ul><p class="ik-why">Step 1.</p></div>
+<div class="ik-q" data-a="0"><p><b>A square-shaped LFO on pitch sounds like…</b></p><ul><li>Jumps between two notes</li><li>A smooth glide</li><li>Silence</li><li>A chord</li></ul><p class="ik-why">Step 2.</p></div>
+<div class="ik-q" data-a="0"><p><b>A new LFO in the real Vital is synced to…</b></p><ul><li>Tempo (note lengths)</li><li>Seconds</li><li>Keytrack</li><li>Nothing</li></ul><p class="ik-why">LFO "sync" defaults to Tempo (synth_parameters.cpp).</p></div>
+<div class="ik-q" data-a="0"><p><b>Which is one of the real Vital&#x27;s random styles?</b></p><ul><li>Perlin</li><li>Sawtooth</li><li>Reverb</li><li>Ladder</li></ul><p class="ik-why">Perlin, Sample &amp; Hold, Sine Interpolate, Lorenz Attractor (synth_strings.h).</p></div>
+```
+
+## Previous and next
+
+::: {.vl-nav}
+- Previous: [Vital 5: Modulation, drag and drop](vital-05-modulation.qmd)
+- Next: [Vital 7: Playing it: velocity, mod wheel, note](vital-07-playing.qmd)
+:::
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Tytel, Matt. "full_interface.cpp," "synthesis_interface.cpp" and "modulation_interface.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/tree/main/src/interface/editor_sections](https://github.com/mtytel/vital/tree/main/src/interface/editor_sections). Section bounds of the main window at the default 1400 x 820 (synth_constants.h): header 48, macro column, oscillators, sample, two filters, envelopes : LFOs : random = 3 : 4 : 2, voice and portamento strip, keyboard.
+
+Tytel, Matt. "lfo_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/lfo_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/lfo_section.cpp). LFO n: line editor, LFO browser, MODE, FREQUENCY and sync, DELAY, STEREO, smooth / fade, paint.
+
+Tytel, Matt. "line_editor.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_components/line_editor.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_components/line_editor.cpp). Adding, moving and removing LFO points; paint mode.
+
+Tytel, Matt. "random_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/random_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/random_section.cpp). RANDOM n: STYLE, FREQUENCY, STEREO, SYNC.
+
+Tytel, Matt. "synth_constants.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_constants.h](https://github.com/mtytel/vital/blob/main/src/common/synth_constants.h). kNumOscillators 3, kNumFilters 2, kNumEnvelopes 6, kNumLfos 8, kNumRandomLfos 4, kNumMacros 4, kMaxModulationConnections 64, kMaxPolyphony 33 (32 playing), effects chorus / compressor / delay / distortion / EQ / filter / flanger / phaser / reverb, filter models Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phase.
+
+**For teachers**
+
+Tytel, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp](https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp). Oscillator on, transpose, tune, level, wave frame, unison; filter cutoff 8-136 semitones, resonance, drive 0-20 dB, blend 0-2, key track; envelope times 0-2.378; LFO frequency -7..9; polyphony; portamento.
+
+Tytel, Matt. "synth_strings.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h](https://github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h). Filter styles (12dB, 24dB, Notch Blend, Notch Spread, B/P/N) and models (Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phaser).
+:::
+<!-- /works-cited -->

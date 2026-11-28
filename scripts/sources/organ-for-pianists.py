@@ -8,7 +8,7 @@ SOURCES = [
     web('"Popular Drawbar Registrations." *HammondWiki*, edited by Geoffrey T. Dairiki et al. URL.', HW + "PopularDrawbarRegistrations", PA, who="student",
         note="Registrations by player: Jimmy Smith 88 8000 000, Booker T 88 8630 000, Winwood 84 8848 448 / 88 8888 888, Green Onions, Procol Harum, gospel."),
     web('"Standard Jazz Registrations." *HammondWiki*. URL.', HW + "StandardJazzRegistrations", P, who="student", note="88 8000 000 with Four Up; the '90%' quotation."),
-    web('"Percussion." *HammondWiki*. URL.', HW + "Percussion", P, who="student", note="Single-trigger; upper manual and B preset only; takes the 9th drawbar's contact."),
+    web('"Percussion." *HammondWiki*. URL.', HW + "Percussion", PA, who="student", note="Single-trigger; upper manual and B preset only; takes the 9th drawbar's contact."),
     web('"Four Up." *HammondWiki*. URL.', HW + "FourUp", P, who="student", note="On, Soft, Fast, 3rd; the four tablets up."),
     web('"Errol Garner Style." *HammondWiki*. URL.', HW + "ErrolGarnerStyle", PA, who="teacher", note="80 0008 888; block-chord 'squabbling'."),
     web('Yamaha Corporation. *MODX6+ / MODX7+ / MODX8+ Owner\'s Manual*. Yamaha. URL.', "https://usa.yamaha.com/support/manuals/index.html", P, who="teacher",

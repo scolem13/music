@@ -9,5 +9,5 @@
     { t: "knob", k: "jawari", x: 560, y: 212, r: 13, label: "JAWARI" }, { t: "knob", k: "meend", x: 620, y: 212, r: 13, label: "MEEND" },
     { t: "switch", k: "taraf", x: 20, y: 256, w: 150, h: 20, label: "TARAF RINGING" },
     { t: "seg", k: "string", x: 190, y: 256, w: 200, h: 20, opts: [["main", "main"], ["jod", "jod"], ["chikari", "chikari"]] }, { t: "label", x: 290, y: 292, text: "BUTTON STRING (the drawing plays whatever you click)", size: 7, dim: true }],
-  src: ["Wikipedia, \"Sitar\" (strings, frets, two bridges, gourds, Kharaj Pancham tuning)", "Photos of instrumental-style sitars"],
+  src: ["Garland vol. 5 (2000), pp. 334-35 (about 20 movable frets, 13 sympathetic strings)", "Wikipedia, \"Sitar\" (strings, frets, two bridges, gourds, Kharaj Pancham tuning)", "Photos of instrumental-style sitars"],
   approx: "Top-view schematic; fret places from the raga's just cents, string routes and proportions the site's; no logos." }); })();

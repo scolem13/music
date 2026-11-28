@@ -70,7 +70,7 @@
       }
       var set = d.set ? JSON.parse(d.set) : {}; for (var k2 in set) w.set(me, k2, set[k2], true);
       compact();
-      if (d.page) { var fw = box().querySelector(".scmp-" + me + " .fp-w"); if (fw && fw._fp) fw._fp.page(d.page); }   // data-page: open the panel on that page (Vital: voice | fx | matrix)
+      if (d.page && window.FaithfulPanel && FaithfulPanel.keepPage) FaithfulPanel.keepPage(me, d.page);   // data-page: open the panel on that page (Vital: voice | fx | matrix)
       return Promise.resolve(w.phrase([me])).then(function () { return true; });
     }
     if (kind() === "drum") { w.stop(); w.setA(drumState(JSON.parse(d.pat))); return Promise.resolve(w.play(["a"])).then(function () { return true; }); }

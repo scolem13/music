@@ -33,6 +33,8 @@
   var bass = [
     { id:"walk", label:"Walking", feel:"swing", tags:["Jazz","Swing","Blues"],
       desc:"One note on every beat (four quarter notes in 4/4, three in 3/4, dotted quarters in 12/8): the root on beat 1 when the chord changes, chord tones and scale steps in between, and an approach note on beat 4 that leads into the next bar." },
+    { id:"walkdev", label:"Walking with devices", feel:"swing", tags:["Jazz","Swing","Blues","Organ"],
+      desc:"A walking line that now and then builds a whole bar from one device: a chromatic run into the next root (F G A\u266d A into B\u266d), a scale run down from the root with a chromatic last step, one leap of a 4th to a 6th, or an enclosure (the note above the next root, then the note below it). Some beats split into two swung eighths with a ghost note, and some bars start with a triplet falling down the chord. After PianoGroove's walking bass handout for organists." },
     { id:"arp", label:"Chord tones (learning to walk)", feel:"any", tags:["Jazz","Swing","Blues"],
       desc:"The chord spelled out, one note on every beat: root, 3rd, 5th, 7th, the same in every bar. When a bar has two chords, each gets its root and one more note. A step between playing roots and walking." },
     { id:"two", label:"Two-feel", feel:"swing", tags:["Jazz","Swing"],
@@ -308,7 +310,7 @@
   // which styles each entry belongs in
   var FITS = {
     congas: { tumbao:"montuno chacha boogaloo", tumbao2:"montuno chacha boogaloo", opens:"montuno chacha boogaloo", slapopen:"montuno chacha boogaloo", heeltoe:"montuno chacha boogaloo" },
-    bass: { walk:"swing ballad", arp:"swing ballad boogaloo boogie", two:"swing ballad stride", boogie:"boogie jump", shufflebox:"chicago jump boogie", funk16:"funk16 boogaloo", boogieOct:"boogie jump", yancey:"boogie", riff:"boogaloo", riffwalk:"boogaloo", roots:"rock pop folk reggae strum hymn carol emo", alt:"folk calypso reggae train strum carol waltz prine stride ragtime", polka:"freylekhs folk", held:"hymn carol pop", halves:"carol hymn pop strum easyballad strumballad", eighths:"rock emo", dotted:"strum pop rock emo", octaves:"dance", motown:"motown", twelve8:"doowop slowblues rock68",
+    bass: { walk:"swing ballad", walkdev:"swing ballad", arp:"swing ballad boogaloo boogie", two:"swing ballad stride", boogie:"boogie jump", shufflebox:"chicago jump boogie", funk16:"funk16 boogaloo", boogieOct:"boogie jump", yancey:"boogie", riff:"boogaloo", riffwalk:"boogaloo", roots:"rock pop folk reggae strum hymn carol emo", alt:"folk calypso reggae train strum carol waltz prine stride ragtime", polka:"freylekhs folk", held:"hymn carol pop", halves:"carol hymn pop strum easyballad strumballad", eighths:"rock emo", dotted:"strum pop rock emo", octaves:"dance", motown:"motown", twelve8:"doowop slowblues rock68",
             bossa:"bossa", tango:"tango", tumbao:"montuno chacha", chacha:"chacha", tresillo:"dance rock reggaeton",
             sowhat:"swing", killerjoe:"swing boogaloo", songfather:"bossa", footprints:"swing", allblues:"swing", chameleon:"boogaloo rock", maiden:"boogaloo bossa", takefive:"swing" },
     comp: { auto:"swing ballad boogaloo", charleston:"swing ballad", reverse:"swing", garland:"swing", offbeats:"swing", four:"swing boogie jump chicago", stabs:"boogaloo", stride:"stride ragtime", strideTenths:"stride ragtime", boogie:"boogie jump",

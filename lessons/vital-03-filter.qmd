@@ -1,0 +1,129 @@
+---
+title: "Vital 3: The filter"
+toc: true
+toc-depth: 2
+description: "What Vital's filter does: model and style, cutoff, resonance, drive, blend and key track, by ear on this site's panel, then the real plug-in's two filters and how oscillators reach them."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+Lesson 3 of 10 in *Vital, step by step*: everything you need to feel at home in the real Vital plug-in. Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Learn what a filter does and what cutoff and resonance mean.
+2. Hear 12 dB and 24 dB, low-pass, band-pass and high-pass.
+3. Add drive and key tracking.
+4. Learn the real Vital's two filters and how the oscillators get into them.
+5. Check yourself.
+:::
+
+## What a filter does
+
+- A **filter** takes away part of the sound. Most often it takes away the high, bright part, like putting your hand over your mouth while you sing.
+- **Cutoff** is where it starts cutting. Low cutoff = dark and muffled; high cutoff = bright. In Vital it runs from 8 to 136, in semitones (piano keys) (Vital source, synth_parameters.cpp).
+- **Resonance** boosts the sound right at the cutoff. A little sounds sharper; a lot makes a whistling ring.
+
+## Model and style
+
+- The **model** is the kind of filter circuit it copies; the **style** is how steep it cuts. The real Vital shows them together as *Model : Style*, for example **Analog : 12dB** (Vital source, filter_section.cpp).
+- **12dB** cuts gently, **24dB** cuts more steeply (darker, more "synth").
+- This page plays three models (Analog, Ladder, Digital) and three styles (12dB, 24dB, Notch) with its own filter code, not Vital's.
+
+## Blend, drive, key track
+
+- **Blend** (0 to 2) moves the filter between keeping the lows, the middle and the highs. On this page 0 = low-pass (keeps lows), 1 = band-pass (keeps a middle band), 2 = high-pass (keeps highs): this site's reading of Vital's code (unverified).
+- **Drive** (0 to 20 dB) pushes the sound harder into the filter, for grit (Vital source, synth_parameters.cpp).
+- **Key track** (KEY TRK) moves the cutoff with the note you play, so high notes stay as bright as low ones.
+
+## The panel
+
+This site's beginner Vital panel: the real plug-in's names and ranges for a few controls, played by this site's own sound engine (not Vital's code), so it is close but not the same. Play it from the keys under it, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard (**Use MIDI**). Dimmed controls are not modelled; **Show ▾ → Only working controls** hides them.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="vital"><div class="scmp"></div></div>
+```
+
+## Step by step
+
+Each step loads a starting patch made on this page (not one of Vital's presets) and plays it. Listen for the one thing it names, then turn the knob it names.
+
+```{=html}
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;cut&quot;:60,&quot;res&quot;:10}" data-page="voice"><p><b>Cutoff down.</b> The saw with <b>CUTOFF</b> at 60. Listen: muffled. Drag CUTOFF slowly up to 120 while you play: the sound opens up.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;cut&quot;:70,&quot;res&quot;:70}" data-page="voice"><p><b>Resonance up.</b> <b>CUTOFF</b> 70, <b>RESONANCE</b> 70 %. Listen for the whistle on top of each note. Now move CUTOFF: the whistle moves with it.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;cut&quot;:75,&quot;res&quot;:30,&quot;fModel&quot;:&quot;Ladder&quot;,&quot;fStyle&quot;:&quot;24dB&quot;}" data-page="voice"><p><b>24 dB Ladder.</b> The style is <b>24dB</b>, the model <b>Ladder</b>, cutoff 75. Listen: darker and rounder than 12 dB. Switch the style back to 12dB to compare.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;fBlend&quot;:1,&quot;cut&quot;:80,&quot;res&quot;:30}" data-page="voice"><p><b>Blend.</b> <b>BLEND</b> at 1 (band-pass), cutoff 80: the lows and highs are gone, a nasal middle is left. Turn BLEND to 2: now only the highs, thin and fizzy.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;drive&quot;:12,&quot;cut&quot;:85,&quot;res&quot;:40}" data-page="voice"><p><b>Drive.</b> <b>DRIVE</b> 12 dB with some resonance. Listen for grit and a louder, rougher tone. Turn DRIVE to 0 to compare.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;key&quot;:100,&quot;cut&quot;:66,&quot;res&quot;:20}" data-page="voice"><p><b>Key track.</b> <b>KEY TRK</b> 100 %, cutoff 66. The melody's high notes stay bright. Set KEY TRK to 0 and play high and low keys: now the high notes go dull.</p></div>
+```
+
+## In the real Vital
+
+What is different in the plug-in and exactly where to find it. Every line names the file of Vital's source code (github.com/mtytel/vital) it was read from; "(unverified)" means it was not confirmed.
+
+- **Two filters.** FILTER 1 and FILTER 2 on the VOICE tab, plus a FILTER effect on the EFFECTS tab (Vital source, synthesis_interface.cpp; effects_interface.cpp).
+- **Off at the start.** Each filter has an **on** switch, and in a new Init Preset both are off (Vital source, synth_parameters.cpp). Switch FILTER 1 on before turning its knobs, or you will hear no change.
+- **What goes in.** Under each filter are buttons **OSC1**, **OSC2**, **OSC3** and **SMP** (the sample) that choose what it filters, and **FIL2** on filter 1 (FIL1 on filter 2) to run one filter into the other (Vital source, filter_section.cpp).
+- **The trap.** At the start filter 1 takes OSC 1 and filter 2 takes OSC 2 (Vital source, synth_parameters.cpp), and OSC 3 goes straight to the effects (Vital source, oscillator_section.cpp). To filter all three with Filter 1, set each oscillator's DESTINATION to *Filter 1* (Vital source, oscillator_section.cpp).
+- **All the models.** Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phaser. Analog, Dirty, Ladder and Digital have styles 12dB, 24dB, Notch Blend, Notch Spread and B/P/N; Diode has Low Shelf and Low Cut; Comb has six styles; Phaser has Positive and Negative (Vital source, synth_strings.h; filter_section.cpp). Click the MODE box: each model opens a list of its styles; the arrows step through them all (Vital source, filter_section.cpp).
+- **Knobs that change.** With Comb, DRIVE becomes CUT; with Formant you get PEAK, SPREAD and an X / Y pad instead of cutoff and resonance (Vital source, filter_section.cpp). Formant's style list is not settled in the notes (unverified).
+- **Starting values.** Cutoff 60, resonance 50 %, mix 100 %, Analog : 12dB (Vital source, synth_parameters.cpp). There is also a **MIX** knob (filtered against dry) and the cutoff can be shown in Hz (Vital source, filter_section.cpp).
+
+## Try it in the real Vital
+
+Open Vital in your DAW (see [Meet Vital](intro-vital.qmd) to install it) and do these in order.
+
+- [ ] Initialize the preset. Switch **FILTER 1** on.
+- [ ] Drag CUTOFF down and up while playing. Then raise RESONANCE.
+- [ ] Click the MODE box and choose **Ladder**, then **24dB**.
+- [ ] Turn OSC 2 on. Is it filtered? Check the **OSC2** button under FILTER 1, or set OSC 2's DESTINATION to Filter 1.
+- [ ] Try the Comb model and listen to how different it is.
+- [ ] Turn DRIVE up and listen for grit.
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>Turning Cutoff down makes the sound…</b></p><ul><li>Darker and more muffled</li><li>Louder</li><li>Higher in pitch</li><li>Echo</li></ul><p class="ik-why">The filter takes away the highs above the cutoff.</p></div>
+<div class="ik-q" data-a="0"><p><b>What does Resonance do?</b></p><ul><li>Boosts the sound at the cutoff, up to a whistle</li><li>Adds voices</li><li>Changes the wavetable</li><li>Makes notes longer</li></ul><p class="ik-why">Step 2.</p></div>
+<div class="ik-q" data-a="0"><p><b>You turn Filter 1&#x27;s cutoff in a new Init Preset and nothing changes. Why?</b></p><ul><li>The filter starts switched off</li><li>The cutoff knob is broken</li><li>You need the MATRIX tab</li><li>Filters only work on chords</li></ul><p class="ik-why">Filter on defaults to 0 (synth_parameters.cpp).</p></div>
+<div class="ik-q" data-a="0"><p><b>In the real Vital, how does OSC 2 get into Filter 1?</b></p><ul><li>The OSC2 button under Filter 1, or OSC 2's destination set to Filter 1</li><li>It always does</li><li>Through the reverb</li><li>It cannot</li></ul><p class="ik-why">filter_section.cpp input buttons; oscillator_section.cpp destination.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which is steeper?</b></p><ul><li>24dB</li><li>12dB</li><li>They are the same</li><li>Neither cuts anything</li></ul><p class="ik-why">24 dB per octave cuts more than 12.</p></div>
+```
+
+## Previous and next
+
+::: {.vl-nav}
+- Previous: [Vital 2: Oscillators and wavetables](vital-02-oscillators.qmd)
+- Next: [Vital 4: Envelopes](vital-04-envelopes.qmd)
+:::
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Tytel, Matt. "effects_interface.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/effects_interface.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/effects_interface.cpp). The nine effects, each with an on switch; the drag-to-reorder effect list.
+
+Tytel, Matt. "filter_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/filter_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/filter_section.cpp). FILTER 1 / 2: on switch, OSC1 / OSC2 / OSC3 / SMP / FIL inputs, MODE (model : style), cutoff, resonance, drive, blend, key track, mix.
+
+Tytel, Matt. "full_interface.cpp," "synthesis_interface.cpp" and "modulation_interface.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/tree/main/src/interface/editor_sections](https://github.com/mtytel/vital/tree/main/src/interface/editor_sections). Section bounds of the main window at the default 1400 x 820 (synth_constants.h): header 48, macro column, oscillators, sample, two filters, envelopes : LFOs : random = 3 : 4 : 2, voice and portamento strip, keyboard.
+
+Tytel, Matt. "oscillator_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/oscillator_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/oscillator_section.cpp). OSC 1-3: wavetable name and browser, pencil (editor), 3D / 2D / SP view, PITCH / UNISON / PHASE groups, LEVEL, PAN, spectral morph, distortion, destination.
+
+**For teachers**
+
+Tytel, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp](https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp). Oscillator on, transpose, tune, level, wave frame, unison; filter cutoff 8-136 semitones, resonance, drive 0-20 dB, blend 0-2, key track; envelope times 0-2.378; LFO frequency -7..9; polyphony; portamento.
+
+Tytel, Matt. "synth_strings.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h](https://github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h). Filter styles (12dB, 24dB, Notch Blend, Notch Spread, B/P/N) and models (Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phaser).
+:::
+<!-- /works-cited -->

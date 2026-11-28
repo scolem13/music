@@ -15,16 +15,23 @@
 //          centred on kc(t) = kc0 + 6 (1 - A(t)) (A = the fundamental's envelope, 1 -> 0) is fed energy, gain 1 + 30 J (1 - A) e^-((k-kc)/w)^2, and their decay lengthened (the 0.006 k^2 damping term x (1 - J)),
 //          so the upper partials grow while the fundamental decays: brightness rises over time, not falls (an ordinary plucked
 //          string gets duller). J = jawari amount (0 = a sharp-edged bridge, like a guitar's).
+//   tanpura Garland vol. 5, p. 332 (Hindustani): a long-necked unfretted lute, a gourd, a platform bridge with a rounded surface and
+//          threads under the strings, "a sound rich in overtones"; typically four or five strings, tuned to the tonic and the fourth
+//          or fifth degree; p. 355 (Karnatak): four strings Pa-Sa-Sa-low Sa (G-c-c-C), plucked in that order, often long-short-short-long,
+//          unrelated to tempo or tala; a silk jiva thread; descended from the tambur (p. 310, Garland) and a drone in 17th-century paintings (p. 332).
 //   thread  (tanpura juari / jiva) Wikipedia ("Tanpura"): a cotton thread between string and bridge shifts the grazing contact
 //          to another place on the bridge and changes the harmonic content. Here: thread 0..1 moves kc0 from partial 5 to 21.
-//   sympathetic strings (sitar taraf / tarb)  Wikipedia ("Sitar"): 11-13 or so strings under the frets that resonate in sympathy
+//   sympathetic strings (sitar taraf / tarb)  Garland vol. 5, p. 334: thirteen on the standard sitar, under the frets on a small bridge of
+//          their own; Wikipedia ("Sitar"): 11-13 or so strings under the frets that resonate in sympathy
 //          with the played strings; the player retunes for each raga. Here: 13 taraf strings tuned to the raga's notes upward from
 //          Sa (which notes, in what order: the site's choice, unverified; players differ). Each is driven by how closely any of its
 //          partials meets a partial of the played note: e = sum_k sum_j a_k exp(-((f_k - j f_t) / bw)^2), bw = 0.35 % (about 6
 //          cents); it then rings slowly up and long (T 3 s) on the small bridge (also given a little jawari: unverified).
 //   meend   Wikipedia ("Sitar"): pulling the main string sideways over the curved frets raises the pitch, up to about seven
-//          semitones. Here the pitch rises along a smooth curve after the pluck to `meend` semitones (0-7).
-//   frets   Wikipedia ("Sitar"): curved, raised frets, movable for fine tuning. Here 19 frets on the main string (tuned to Ma,
+//          semitones; Garland vol. 5, p. 334: portamentos of up to a fifth on each fret, and p. 191: some sitarists reach a minor
+//          sixth (the site stops at seven semitones = a fifth). Here the pitch rises along a smooth curve after the pluck to `meend` semitones (0-7).
+//   frets   Wikipedia ("Sitar"): curved, raised frets, movable for fine tuning. Garland vol. 5 (2000), p. 334: the standard sitar has twenty arched
+//          metal frets tied on with nylon thread, movable to different scale positions. Here 20 frets on the main string (tuned to Ma,
 //          a fourth above Sa, Wikipedia), 7 per octave, each on the raga's version of that svara (komal / shuddha / tivra; a class
 //          the raga leaves out sits on its shuddha place and is drawn dim), just-intonation cents as in tuning-kit.js.
 //   strings  sitar (Wikipedia, "Kharaj Pancham" tuning): main (baaj) Ma, jod Sa, kharaj low Sa and low Pa, chikari high Sa,
@@ -80,7 +87,7 @@
     mavembe: { name: "Mavembe (close to Phrygian)", st: [0, 1, 3, 5, 7, 8, 10] }, major: { name: "Major (the kalimba's usual)", st: [0, 2, 4, 5, 7, 9, 11] } };
   M.TONIC = { C: 261.63, D: 293.66, E: 329.63, F: 349.23, G: 196.0, A: 220.0, Bb: 233.08 };
   M.ITEMS = {
-    sitar: { kind: "sitar", name: "Sitar", short: "Sitar", about: "Long-necked lute of Hindustani music: 6-7 played strings over curved movable frets, 11-13 sympathetic strings under them, a gourd body, a wide curved bridge (jawari)", finish: "#9a5b2e",
+    sitar: { kind: "sitar", name: "Sitar", short: "Sitar", about: "Long-necked lute of Hindustani music: 6-7 played strings over about 20 curved movable frets, usually 13 sympathetic strings under them, a gourd body, a wide curved bridge (jawari)", finish: "#9a5b2e",
       st: { raga: "yaman", sa: "C#", jawari: 0.7, taraf: true, meend: 0, string: "main" } },
     tanpura: { kind: "tanpura", name: "Tanpura", short: "Tanpura", about: "Four unfretted strings plucked at full length, over and over: the drone under a singer or player; a curved bridge with a cotton thread", finish: "#b57a3e",
       st: { tuning: "P", sa: "C#", jawari: 0.8, thread: 0.45, tempo: 60 } },
@@ -115,7 +122,7 @@
   function hz(sa, c) { return sa * Math.pow(2, c / 1200); }
   M.frets = function (st) { var R = M.RAGAS[st.raga], pick = {}; ORDER.forEach(function (c) { pick[c] = { k: c === "M" ? "M" : c, used: false }; });
     R.notes.forEach(function (n) { var c = CLASS[n]; if (!pick[c].used) pick[c] = { k: n, used: true }; });
-    var out = [], start = M.SW.M; for (var oct = 0; out.length < 19; oct++) ORDER.forEach(function (c) { var p = pick[c], cents = M.SW[p.k] + 1200 * oct - start; if (cents > 0 && out.length < 19) out.push({ k: p.k, cents: cents, used: p.used, oct: oct }); });
+    var out = [], start = M.SW.M; for (var oct = 0; out.length < 20; oct++) ORDER.forEach(function (c) { var p = pick[c], cents = M.SW[p.k] + 1200 * oct - start; if (cents > 0 && out.length < 20) out.push({ k: p.k, cents: cents, used: p.used, oct: oct }); });
     return out; };
   M.taraf = function (id, st) { st = M.clean(id, st); var sa = M.SA[st.sa], R = M.RAGAS[st.raga].notes.slice().sort(function (a, b) { return M.SW[a] - M.SW[b]; }), out = [];
     for (var oct = 0; out.length < 13; oct++) R.forEach(function (n) { if (out.length < 13) out.push(hz(sa, M.SW[n] + 1200 * oct)); }); return out; };

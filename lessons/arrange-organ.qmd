@@ -14,7 +14,9 @@ sounds for as long as you hold it, and the sound is built by the player from nin
 pitches. Then it goes through a chorus, a volume pedal, and a speaker that spins.
 
 The organ on this page is the band's own: nothing is recorded, every note is built from
-the same parts as the real instrument. (How it's built and where the numbers come from:
+the same parts as the real instrument. For the whole B-3 console drawn as the real one is laid out
+(both manuals, preset keys, pedal tonebars), see [Meet the Hammond B-3](intro-b3.qmd) and
+[Classic Organs Compared](organ-compare.qmd). (How it's built and where the numbers come from:
 `apps/shared/band/ORGAN.md`. It's a model, so some of its levels are informed guesses.)
 Everything you set here is also what the organ plays in the band at the bottom of the page.
 
@@ -40,7 +42,7 @@ is about 3 dB. A registration is written as the nine numbers in three groups:
 Try this:
 
 - Start from **00 8000 000**: the note alone, nearly a pure tone. Pull out the **4′**,
-  then the **2′**, and watch the pitches stack up on the right.
+  then the **2′**, and listen to the pitches stack up.
 - Pull out the **1⅗′** alone over the 8′. That's the 3rd, two octaves up. The organ's 3rd
   and 5ths are slightly out of tune with a pure harmonic, because they come from tonewheels
   tuned to the keyboard. That's part of the sound.
@@ -79,13 +81,34 @@ and a half; the heavy drum takes about five. Switch from Slow to Fast on a held 
 and listen to it wind up, then switch back and hear it wind down. The picture spins at
 the model's speeds.
 
-## 6. The organ in the band
+## 6. Percussion
+
+The B-3 has one more trick, on the upper manual: **percussion**. Switch it on and each note
+starts with an extra tone that rings and dies away, like a struck bell. It's the "ping" at
+the start of each note in a lot of jazz organ.
+
+- **Second** or **Third**: the extra tone is the 4′ pitch (an octave up) or the 2⅔′ (a 12th up).
+- **Fast** or **Slow**: how quickly it dies away.
+- **Soft** or **Normal**: how loud it is. On Normal the tonebars drop a little to make room.
+
+Percussion is **single-trigger**: it only sounds on a note played after every key has come
+up. Play legato, one key held into the next, and there's no ping; play detached and every
+note gets one. And while percussion is on, the **1′** tonebar is silent (it gives up its
+contact on the key), so the panel greys it out.
+
+Try **88 8000 000**, percussion on, Third, Fast, Soft, chorus C3: a jazz organ sound. Then play a line legato and then detached, and hear the ping come and go.
+
+## 7. The organ in the band
 
 Here the organ comps in three styles. Unless you've taken them over above, the band's
 organist works the pedal and switch by itself: the pedal follows how hard the band is
 playing and opens into each new phrase, and the Leslie goes fast at the end of a phrase
 that leads into a chorus. In swing, the speaker stays slow until the very end. Untick
 **Let the band's organist…** above (or just move the control) to take them over.
+
+Under each example a swell pedal and a Leslie show what the organist is doing as you hear it:
+the pedal rocks and its bar fills as it opens, and the rotors wind up and down. The same moves
+show on the pedal and the Leslie switch up in the organ above.
 
 Soul jazz, organ comping a boogaloo:
 
@@ -99,7 +122,7 @@ Ballad, long organ chords under a slow song (try **68 8600 000** and a low pedal
 
 <div class="ar-demo" data-style="ballad" data-chart="Cmaj7|Am7|Dm7|G7" data-tempo="66" data-comp="hammond" data-staves="comp bass"></div>
 
-## 7. Try it
+## 8. Try it
 
 - Set **00 8000 000**, chorus **Off**, Leslie **Stop**. That's a plain electronic tone.
   Now put back the chorus, then the Leslie on Slow, then pull out the 16′ and 5⅓′. Each
@@ -113,15 +136,23 @@ Ballad, long organ chords under a slow song (try **68 8600 000** and a low pedal
 
 <!-- works-cited: written by scripts/works-cited.py -->
 ::: {.works-cited}
+Hammond Suzuki. "XK-5 Owner's Manual." *ManualsLib*. [www.manualslib.com/manual/1591989/Hammond-Xk-5.html?page=52](https://www.manualslib.com/manual/1591989/Hammond-Xk-5.html?page=52). Percussion: 2nd = the 4′ drawbar's pitch, 3rd = the 2⅔′; fast / slow decay; the 1′ drawbar inoperative while on; only with the B preset key and only on the upper manual, 'same as B-3/C-3'. Read as quoted in a search result, page not opened in full.
+
 **For students**
 
-"Hammond organ." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Hammond_organ](https://en.wikipedia.org/wiki/Hammond_organ).
+"Hammond organ." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Hammond_organ](https://en.wikipedia.org/wiki/Hammond_organ). B-3 / C-3 1954 to early 1975, harmonic percussion; 61-key manuals, 25-note pedalboard; reverse-coloured preset keys, C cancel, B and B-flat the drawbar sets; percussion 2nd / 3rd, soft / normal, single-trigger; V1-V3 C1-C3 per manual; Leslie 122; players and records.
 
 "The Hammond Story." Hammond Organ Company. [hammondorganco.com/the-hammond-story](https://hammondorganco.com/the-hammond-story). Manufacturer's history page.
 
 "Leslie speaker." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Leslie_speaker](https://en.wikipedia.org/wiki/Leslie_speaker).
 
+"Percussion." *HammondWiki*. [www.dairiki.org/HammondWiki/Percussion](https://www.dairiki.org/HammondWiki/Percussion). Single-trigger; upper manual and B preset only; takes the 9th drawbar's contact.
+
+"Popular Drawbar Registrations." *HammondWiki*, edited by Geoffrey T. Dairiki et al. [www.dairiki.org/HammondWiki/PopularDrawbarRegistrations](https://www.dairiki.org/HammondWiki/PopularDrawbarRegistrations). Registrations by player: Jimmy Smith 88 8000 000, Booker T 88 8630 000, Winwood 84 8848 448 / 88 8888 888, Green Onions, Procol Harum, gospel.
+
 **For teachers**
+
+"Errol Garner Style." *HammondWiki*. [www.dairiki.org/HammondWiki/ErrolGarnerStyle](https://www.dairiki.org/HammondWiki/ErrolGarnerStyle). 80 0008 888; block-chord 'squabbling'.
 
 Vail, Mark. *The Hammond Organ: Beauty in the B*. 2nd ed., Backbeat Books, 2002.
 :::

@@ -10,6 +10,8 @@ Guides for the equipment in our room. Most of them are about the **Behringer X32
 
 - [Drums on one fader: DCA groups and mute groups](x32-drums-dca.qmd): put every drum mic on one fader,
   and mute the whole kit with one button.
+- [Guitar, vocal effects and a computer](x32-guitar-vocals-computer.qmd): a guitar through a DI or the built-in
+  amp simulator, a processed vocal chain, and Ableton on Windows over the X-USB card (recording, virtual soundcheck, plug-ins as effects).
 - The Live Sound lessons teach the X32 channel strip itself:
   [gain](../lessons/live-gain.qmd), [EQ](../lessons/live-eq.qmd), [gates](../lessons/live-gate.qmd),
   [compression](../lessons/live-comp.qmd), [feedback](../lessons/live-feedback.qmd),
@@ -22,6 +24,11 @@ Guides for the equipment in our room. Most of them are about the **Behringer X32
 - [Play the band on the MODX](modx.qmd#play-the-band-on-the-modx): the site's backing band plays its bass, keys, guitar or drums
   on the MODX, steered from the browser; with percussion auditions on its kits and a whole-band A/B of site and MODX sounds.
 - [MODX Orchestra](modx-orchestra.qmd): sixteen Parts for playing the full scores on the MODX, with voices to try for each (set up for later).
+
+## Steinberg UR22mkII
+
+- [UR22mkII: guitar, vocal effects and a computer](ur22mkii.qmd): guitar straight into the Hi-Z input,
+  vocals through Ableton plug-ins, Windows set-up, direct vs. computer monitoring, latency, loopback.
 
 ## Speaking
 

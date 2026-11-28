@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../tools/chord-library.html" rel="next">
+<link href="../tools/rhythm-library.html" rel="next">
 <link href="../tools/arranger.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -318,6 +318,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
  <span class="dropdown-text">Accompaniment Styles</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../tools/walking-bass.html">
+ <span class="dropdown-text">Walking Bass Generator</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../tools/drumset.html">
  <span class="dropdown-text">Drumset</span></a>
   </li>  
@@ -336,6 +340,18 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../tools/polyrhythm.html">
  <span class="dropdown-text">Polyrhythm</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/rhythm-library.html">
+ <span class="dropdown-text">Rhythm Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/mode-library.html">
+ <span class="dropdown-text">Mode &amp; Raga Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/alt-notation.html">
+ <span class="dropdown-text">Sargam, Swara and Jianpu</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">Chords and harmony</li>
@@ -477,6 +493,14 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
     <a class="dropdown-item" href="../gear/x32-headset-scene.html">
  <span class="dropdown-text">X32 scene for the headset mics</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/x32-guitar-vocals-computer.html">
+ <span class="dropdown-text">X32: Guitar, Vocal Effects and a Computer</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/ur22mkii.html">
+ <span class="dropdown-text">UR22mkII: Guitar, Vocal Effects and a Computer</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -531,6 +555,12 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../tools/walking-bass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Walking Bass Generator</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../tools/drumset.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Drumset</span></a>
   </div>
@@ -539,6 +569,18 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
   <div class="sidebar-item-container"> 
   <a href="../tools/sequencers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sequencers &amp; Arpeggiators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tools/instrument-presets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instrument Presets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tools/ambient.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ambient Generator</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -557,6 +599,24 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
   <div class="sidebar-item-container"> 
   <a href="../tools/polyrhythm.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Polyrhythm</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tools/rhythm-library.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rhythm Library</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tools/mode-library.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mode &amp; Raga Library</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tools/alt-notation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sargam, Swara and Jianpu</span></a>
   </div>
 </li>
       </ul>
@@ -949,7 +1009,7 @@ section.poly-closed > :not(h2){display:none}
 <h2 class="anchored" data-anchor-id="how-to-use-it">How to use it</h2>
 <ul>
 <li><strong>Layers.</strong> Each layer is a number (that many even hits per cycle) or a pattern: <code>x</code> a hit, <code>X</code> an accent, <code>.</code> a rest. <code>x.x.xx.x.x.x</code> is the 12-pulse bell pattern; <code>x..x..x...x.x...</code> is son clave.</li>
-<li><strong>Beat.</strong> The tempo counts the hits of the layer marked <em>beat</em>. For a pattern it counts the pattern’s main beats (12 pulses are four beats of three; 16 pulses four beats of four).</li>
+<li><strong>Beat.</strong> The tempo counts the hits of the layer marked <em>beat</em>. For a pattern it counts the pattern’s main beats (12 pulses are four beats of three; 16 pulses four beats of four: Toussaint 42-43).</li>
 <li><strong>Polymeter.</strong> Ticked, every step of every layer is the same length, so a 5-step riff against a 4-step bar drifts and lines up again only after 20 steps. Unticked, each layer is stretched over one cycle: a polyrhythm.</li>
 <li><strong>Mute.</strong> Click a layer’s name to mute it, then clap or play that layer yourself.</li>
 </ul>
@@ -960,6 +1020,7 @@ section.poly-closed > :not(h2){display:none}
 <!-- works-cited: written by scripts/works-cited.py -->
 <div class="works-cited">
 <p>“Polyrhythm.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Polyrhythm">en.wikipedia.org/wiki/Polyrhythm</a>. Unverified: definitions, 3:2 and 4:3, cross-rhythm. Not yet re-read.</p>
+<p>Toussaint, Godfried T. <em>The Geometry of Musical Rhythm: What Makes a “Good” Rhythm Good?</em> 2nd ed., CRC Press, 2020. Read 2026-11-27. Tresillo [3-3-2] and its use in Cuba, New Orleans second-line drumming and rockabilly, p.&nbsp;12; wooden claves, p.&nbsp;17; gankogui double bell, p.&nbsp;19; clave son [3-3-4-2-4] (onsets 0, 3, 6, 10, 12 of 16), pp.&nbsp;24-25; clave rumba [3-4-3-2-4], p.&nbsp;28; 12-pulse bell patterns [2-2-1-2-2-2-1] (bembe) and [2-2-3-2-3] (fume-fume), both called the standard pattern, pp.&nbsp;41-42; four beats of four or three, pp.&nbsp;42-43; the four regular divisions of twelve in 12-pulse polyrhythmic music, p.&nbsp;86; Desmond K. Tai’s name “standard pattern”, Ewe dances that use it and the Cuban bembe, p.&nbsp;69; bembe against four, six and three beats, and clave son 3-2 / 2-3, p.&nbsp;72.</p>
 </div>
 <!-- /works-cited -->
 
@@ -1476,8 +1537,8 @@ section.poly-closed > :not(h2){display:none}
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../tools/chord-library.html" class="pagination-link" aria-label="Chord Library">
-        <span class="nav-page-text">Chord Library</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../tools/rhythm-library.html" class="pagination-link" aria-label="Rhythm Library">
+        <span class="nav-page-text">Rhythm Library</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

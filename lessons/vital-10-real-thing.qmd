@@ -1,0 +1,170 @@
+---
+title: "Vital 10: From this page to the real Vital"
+toc: true
+toc-depth: 2
+description: "Build three full sounds (a bass, a pad, a lead) step by step on this site's panel, then rebuild each in the real Vital from Init Preset, setting by setting with the Copy the patch across table, and save them."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+Lesson 10 of 10 in *Vital, step by step*: everything you need to feel at home in the real Vital plug-in. Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Build a bass, a pad and a lead on this site's panel.
+2. Rebuild each one in the real Vital, starting from Init Preset.
+3. Use **Copy the patch across** for the numbers.
+4. Save each as a preset.
+5. Tick off the "I can find…" checklist.
+:::
+
+## The plan
+
+- Build a sound here, press **Show the settings to copy**, and copy it into Vital one setting at a time. Then make the same sound in Vital by ear, because the two will not sound exactly the same.
+- Do it three times: a **bass**, a **pad** and a **lead**. Each one uses what you learned in lessons 2-9.
+
+## The panel
+
+This site's beginner Vital panel: the real plug-in's names and ranges for a few controls, played by this site's own sound engine (not Vital's code), so it is close but not the same. Play it from the keys under it, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard (**Use MIDI**). Dimmed controls are not modelled; **Show ▾ → Only working controls** hides them.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="vital"><div class="scmp"></div></div>
+```
+
+## Step by step
+
+Each step loads a starting patch made on this page (not one of Vital's presets) and plays it. Listen for the one thing it names, then turn the knob it names.
+
+```{=html}
+<div class="ik-step" data-ex="vital-bass" data-set="{&quot;e1S&quot;:60}" data-page="voice"><p><b>Sound 1: the bass.</b> A saw an octave down and a sine two octaves down (lesson 2), a <b>24dB Ladder</b> filter nearly closed (lesson 3), <b>Env 2 → cutoff</b> opening it on each note (lesson 4), <b>VOICES 1</b> and a little <b>GLIDE</b> (lesson 9), some <b>DRIVE</b>. Listen for the weight and the "wow" at each note. Make one change of your own.</p></div>
+<div class="ik-step" data-ex="vital-pad" data-set="{&quot;m1s&quot;:&quot;LFO 2&quot;,&quot;m1d&quot;:&quot;Cutoff&quot;,&quot;m1a&quot;:10,&quot;lfo2Shape&quot;:&quot;sine&quot;,&quot;lfo2Rate&quot;:-2,&quot;e1A&quot;:0.9}" data-page="voice"><p><b>Sound 2: the pad.</b> Two oscillators 16 cents apart (lesson 2), a slow <b>ATTACK</b> and <b>RELEASE</b> (lesson 4), <b>LFO 1 → frame</b> (lesson 6), and a slow <b>LFO 2</b> on the cutoff through slot 1 (lesson 5), with chorus and reverb (lesson 8). Listen for the swell and the slow shimmer.</p></div>
+<div class="ik-step" data-ex="vital-lead" data-set="{&quot;m1s&quot;:&quot;Velocity&quot;,&quot;m1d&quot;:&quot;Cutoff&quot;,&quot;m1a&quot;:20,&quot;fxRev&quot;:20}" data-page="voice"><p><b>Sound 3: the lead.</b> A saw and a brighter wave an octave up, <b>UNISON</b> 4 (lesson 2), vibrato from <b>LFO 1 → pitch</b> (lesson 6), <b>GLIDE</b> (lesson 9), <b>Velocity → cutoff</b> in slot 1 for a MIDI keyboard (lesson 7), delay and a little reverb (lesson 8).</p></div>
+<div class="ik-step" data-ex="vital-first" data-page="voice"><p><b>Your own.</b> Start again from the first sound and build a sound of your own. Then copy it across the same way.</p></div>
+```
+
+## Copy the patch across
+
+After each step above (and your own changes), press the button below. Each row is one control of the panel as it is now. **This page** is the number on this site's panel; **In the plug-in** is what Vital should show, where this page can work it out (its laws are this site's reading of Vital's code and unverified, so trust your ears more than the numbers).
+
+```{=html}
+<div class="ik-copy" data-id="vital"></div>
+```
+
+## Rebuild it in Vital, setting by setting
+
+1. **Start clean.** Menu (three lines) → **Initialize Preset**. The name reads *Init Preset* (Vital source, synth_preset_selector.cpp). Only OSC 1 is on; the filters and effects are off (Vital source, synth_parameters.cpp).
+2. **Oscillators.** For each oscillator the table lists: switch it on and set **WAVE FRAME**, **TRANSPOSE**, **TUNE** and **LEVEL** (Vital source, oscillator_section.cpp). This page's waves are sine, triangle, square and saw; load a wavetable that has those (Vital's *Basic Shapes*, name unverified) or pick the nearest wave by ear.
+3. **Send every oscillator to Filter 1.** Set OSC 2's and OSC 3's **DESTINATION** to *Filter 1*: at the start OSC 2 goes to Filter 2 and OSC 3 to the effects (Vital source, oscillator_section.cpp; synth_parameters.cpp). This page sends all three into its one filter.
+4. **Filter 1.** Switch it **on** (it starts off), then set MODE (model : style), CUTOFF, RESONANCE, DRIVE, BLEND and KEY TRK (Vital source, filter_section.cpp; synth_parameters.cpp).
+5. **Envelopes.** Set ENVELOPE 1's ATTACK, DECAY, SUSTAIN, RELEASE (on this page Envelope 1 is the loudness; that it is in Vital too is our reading, unverified). Set ENVELOPE 2 the same way.
+6. **Modulations.** For each fixed route and each matrix slot in the table, drag the source button onto the knob, then set the amount (Vital source, modulation_manager.cpp). For *Env 2 → cutoff*, drag **ENV 2** onto Filter 1's CUTOFF.
+7. **LFOs.** Set LFO 1's sync to **Seconds** (it starts on Tempo) before you set its FREQUENCY (Vital source, synth_strings.h; synth_parameters.cpp). Draw the shape or load one from the LFO name box (Vital source, lfo_section.cpp).
+8. **Effects.** On the EFFECTS tab, switch on CHORUS, DELAY or REVERB if the table has them, and set MIX (Vital source, effects_interface.cpp).
+9. **Voices.** VOICES, GLIDE in the bottom strip; UNISON voices on each oscillator (Vital source, voice_section.cpp; portamento_section.cpp; oscillator_section.cpp).
+10. **Listen and fix by ear.** Play the same notes on both. Change Vital until it sounds right to you.
+11. **Save.** Click **Save** by the preset name. Type a NAME, your name as AUTHOR, pick a STYLE (Bass, Pad or Lead), add COMMENTS such as "made in lesson 10", and press **Save** (Vital source, save_section.cpp; synth_strings.h). It is saved as a `.vital` file in your user presets folder (Vital source, synth_constants.h; load_save.cpp). Open the preset browser and find it by name.
+
+## I can find…
+
+Tick each one when you can find it in the real Vital without help. The boxes are only for you; nothing is saved.
+
+- [ ] The four tabs: VOICE, EFFECTS, MATRIX, ADVANCED (lesson 1)
+- [ ] The preset name, the preset browser, Initialize Preset and Save (lesson 1)
+- [ ] An oscillator's on switch, WAVE FRAME, TRANSPOSE, TUNE, LEVEL, UNISON and DESTINATION (lesson 2)
+- [ ] The wavetable name, the pencil (editor) and the 3D / 2D / SP button (lesson 2)
+- [ ] Filter 1's on switch, its OSC inputs, MODE, CUTOFF and RESONANCE (lesson 3)
+- [ ] ENVELOPE 1 and 2, and their DELAY and HOLD knobs (lesson 4)
+- [ ] How to drag a source onto a knob, and how to change its amount (lesson 5)
+- [ ] The MATRIX tab's SOURCE, AMOUNT and DESTINATION columns (lesson 5)
+- [ ] LFO 1's editor, MODE and sync (Seconds / Tempo), and RANDOM 1's STYLE (lesson 6)
+- [ ] VELOCITY, NOTE and the mod wheel as sources; Learn MIDI Assignment; the MACRO knobs (lesson 7)
+- [ ] The EFFECTS list: switching an effect on and dragging it to a new place (lesson 8)
+- [ ] VOICES, GLIDE, LEGATO, and NOTE PRIORITY on the ADVANCED tab (lesson 9)
+
+## In the real Vital
+
+What is different in the plug-in and exactly where to find it. Every line names the file of Vital's source code (github.com/mtytel/vital) it was read from; "(unverified)" means it was not confirmed.
+
+- **What will differ.** The real Vital's oscillators, filters and effects are its own code; this page's are not (Vital README; this site's engine). Expect the same idea, not the same sound.
+- **What this page leaves out**, all in the real one: the sample slot's own sounds, a second filter, six envelopes with delay / hold / curves, eight drawn LFOs, four macros, 64 connections with bipolar / stereo / curve settings, nine effects in any order, 32 voices (Vital source, synth_constants.h; modulation_matrix.cpp; effects_interface.cpp).
+- **Help.** There is no manual on vital.audio; questions and bug reports go to the forum, forum.vital.audio (Vital README; vital.audio).
+
+## Try it in the real Vital
+
+Open Vital in your DAW (see [Meet Vital](intro-vital.qmd) to install it) and do these in order.
+
+- [ ] Rebuild the bass in Vital from Init Preset with the table. Save it as *My bass*, style Bass.
+- [ ] Rebuild the pad. Save it as *My pad*, style Pad.
+- [ ] Rebuild the lead. Save it as *My lead*, style Lead.
+- [ ] Open the preset browser, search for *My* and load each one.
+- [ ] Play one of your sounds in a DAW project with a drum loop.
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>What should you do first when rebuilding a sound in Vital?</b></p><ul><li>Menu → Initialize Preset</li><li>Turn on every effect</li><li>Set VOICES to 32</li><li>Open the wavetable editor</li></ul><p class="ik-why">A clean start: Init Preset (synth_preset_selector.cpp).</p></div>
+<div class="ik-q" data-a="0"><p><b>You copied every number but OSC 2 is not filtered. Why?</b></p><ul><li>At the start OSC 2 goes to Filter 2: set its destination to Filter 1</li><li>The table is wrong</li><li>Filters only take OSC 3</li><li>You must save first</li></ul><p class="ik-why">Defaults: osc 2 → Filter 2 (synth_parameters.cpp).</p></div>
+<div class="ik-q" data-a="0"><p><b>Your LFO&#x27;s speed does not match the table&#x27;s Hz. What do you check?</b></p><ul><li>The LFO's sync: set it to Seconds, not Tempo</li><li>The reverb</li><li>The preset name</li><li>Polyphony</li></ul><p class="ik-why">LFO sync starts on Tempo (synth_parameters.cpp).</p></div>
+<div class="ik-q" data-a="0"><p><b>Which fields does Vital&#x27;s save box have?</b></p><ul><li>Name, Author, Style, Comments</li><li>Only a name</li><li>Tempo and key</li><li>Email and password</li></ul><p class="ik-why">save_section.cpp.</p></div>
+<div class="ik-q" data-a="0"><p><b>Will the copied sound be exactly the same?</b></p><ul><li>No: this page's engine is its own, so fix it by ear</li><li>Yes, exactly</li><li>Only on Windows</li><li>Only with a MIDI keyboard</li></ul><p class="ik-why">This site's engine is not Vital's code.</p></div>
+```
+
+## Previous and next
+
+::: {.vl-nav}
+- Previous: [Vital 9: Voices: polyphony, unison, glide](vital-09-voices.qmd)
+- Next: [Classic Synths Compared](synth-compare.qmd): Vital side by side with the other synths.
+:::
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Tytel, Matt. "effects_interface.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/effects_interface.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/effects_interface.cpp). The nine effects, each with an on switch; the drag-to-reorder effect list.
+
+Tytel, Matt. "filter_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/filter_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/filter_section.cpp). FILTER 1 / 2: on switch, OSC1 / OSC2 / OSC3 / SMP / FIL inputs, MODE (model : style), cutoff, resonance, drive, blend, key track, mix.
+
+Tytel, Matt. "lfo_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/lfo_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/lfo_section.cpp). LFO n: line editor, LFO browser, MODE, FREQUENCY and sync, DELAY, STEREO, smooth / fade, paint.
+
+Tytel, Matt. "load_save.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/load_save.cpp](https://github.com/mtytel/vital/blob/main/src/common/load_save.cpp). Preset file folders (Presets, Wavetables, User ...).
+
+Tytel, Matt. "modulation_manager.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/modulation_manager.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/modulation_manager.cpp). Targets light up; hover connects at once (preview); release keeps it; starting amount; a modifier key makes it bipolar; 64 limit; amount knob menu.
+
+Tytel, Matt. "modulation_matrix.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/modulation_matrix.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/modulation_matrix.cpp). MODULATION MATRIX columns # SOURCE BIPOLAR STEREO MORPH AMOUNT DESTINATION; 12 rows shown; destination sub-menus.
+
+Tytel, Matt. "oscillator_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/oscillator_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/oscillator_section.cpp). OSC 1-3: wavetable name and browser, pencil (editor), 3D / 2D / SP view, PITCH / UNISON / PHASE groups, LEVEL, PAN, spectral morph, distortion, destination.
+
+Tytel, Matt. "portamento_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/portamento_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/portamento_section.cpp). GLIDE, SLOPE, OCTAVE SCALE, ALWAYS GLIDE, LEGATO.
+
+Tytel, Matt. "save_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/save_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/save_section.cpp). The save box: NAME, AUTHOR, STYLE, COMMENTS; Save, Overwrite, Cancel.
+
+Tytel, Matt. "synth_constants.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_constants.h](https://github.com/mtytel/vital/blob/main/src/common/synth_constants.h). kNumOscillators 3, kNumFilters 2, kNumEnvelopes 6, kNumLfos 8, kNumRandomLfos 4, kNumMacros 4, kMaxModulationConnections 64, kMaxPolyphony 33 (32 playing), effects chorus / compressor / delay / distortion / EQ / filter / flanger / phaser / reverb, filter models Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phase.
+
+Tytel, Matt. "synth_preset_selector.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_components/synth_preset_selector.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_components/synth_preset_selector.cpp). "Init Preset" and the * for a changed preset; the menu (Browse Presets, Save Preset, Initialize Preset ...).
+
+Tytel, Matt. "voice_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/voice_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/voice_section.cpp). VOICES (polyphony), VEL TRK, BEND.
+
+**For students**
+
+Tytel, Matt. "README." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital#readme](https://github.com/mtytel/vital#readme). "A spectral warping wavetable synthesizer"; GPLv3 source; "the free version of Vital"; download at vital.audio after making an account.
+
+Vital Audio. *Vital: Spectral Warping Wavetable Synth*. [vital.audio/](https://vital.audio/). Drag-and-drop modulation; the Basic tier (75 presets, 25 wavetables), Plus and Pro; Windows 10+, macOS 10.15+, Ubuntu 18.04+.
+
+**For teachers**
+
+Tytel, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp](https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp). Oscillator on, transpose, tune, level, wave frame, unison; filter cutoff 8-136 semitones, resonance, drive 0-20 dB, blend 0-2, key track; envelope times 0-2.378; LFO frequency -7..9; polyphony; portamento.
+
+Tytel, Matt. "synth_strings.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h](https://github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h). Filter styles (12dB, 24dB, Notch Blend, Notch Spread, B/P/N) and models (Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phaser).
+:::
+<!-- /works-cited -->

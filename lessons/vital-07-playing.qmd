@@ -1,0 +1,139 @@
+---
+title: "Vital 7: Playing it: velocity, mod wheel, note"
+toc: true
+toc-depth: 2
+description: "Make Vital answer your playing: how hard you press (velocity), the mod wheel, and which note you play, on this site's panel; then MIDI learn, the wheels, macros and MPE in the real plug-in."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+Lesson 7 of 10 in *Vital, step by step*: everything you need to feel at home in the real Vital plug-in. Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Learn the keyboard sources: velocity, mod wheel, note.
+2. Make high notes brighter with Note.
+3. Make soft playing quieter or darker with Velocity (needs a MIDI keyboard).
+4. Put the mod wheel on the wave frame.
+5. Learn MIDI learn and the macros in the real Vital.
+:::
+
+## The keyboard as a source
+
+- **Velocity** is how hard (fast) you press a key, from soft to hard. A MIDI keyboard sends it with every note.
+- The **mod wheel** is a wheel or lever beside the keys of most MIDI keyboards. You push it up while you play.
+- **Note** is which key you play: low keys give a low value, high keys a high one. Use it to make high notes brighter or quieter.
+- Each is a **modulation source**, just like an LFO: drag it onto a knob (lesson 5).
+
+## On this page
+
+- **NOTE** and **VELOCITY** are buttons in KEYBOARD MODS: drag them onto a knob. The **Mod wheel** is a source in the MATRIX tab's source boxes.
+- The on-screen keys and the computer keys always play at the same strength, and the steps do too. To hear velocity, press **Use MIDI** and play a MIDI keyboard.
+- This page has no on-screen mod wheel: use your MIDI keyboard's wheel (it sends controller 1), or the **Mod wheel** slider on [Classic Synths Compared](synth-compare.html?synth=vital).
+
+## The panel
+
+This site's beginner Vital panel: the real plug-in's names and ranges for a few controls, played by this site's own sound engine (not Vital's code), so it is close but not the same. Play it from the keys under it, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard (**Use MIDI**). Dimmed controls are not modelled; **Show ▾ → Only working controls** hides them.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="vital"><div class="scmp"></div></div>
+```
+
+## Step by step
+
+Each step loads a starting patch made on this page (not one of Vital's presets) and plays it. Listen for the one thing it names, then turn the knob it names.
+
+```{=html}
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;m1s&quot;:&quot;Note&quot;,&quot;m1d&quot;:&quot;Cutoff&quot;,&quot;m1a&quot;:10,&quot;cut&quot;:60,&quot;res&quot;:20}" data-page="matrix"><p><b>Note → cutoff.</b> Slot 1: <b>Note → Cutoff</b>, 10 %, the cutoff at 60. The melody's high notes come out brighter than the low ones. Play the lowest and highest keys to hear the difference; set the amount to -10 % to turn it round.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;m1s&quot;:&quot;Velocity&quot;,&quot;m1d&quot;:&quot;Volume&quot;,&quot;m1a&quot;:60,&quot;vol&quot;:40}" data-page="matrix"><p><b>Velocity → volume.</b> Slot 1: <b>Velocity → Volume</b>, 60 %, the volume low. The step plays every note at the same strength, so you hear one level. Press <b>Use MIDI</b> and play softly, then hard: hard notes are much louder.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;m1s&quot;:&quot;Velocity&quot;,&quot;m1d&quot;:&quot;Cutoff&quot;,&quot;m1a&quot;:30,&quot;cut&quot;:55,&quot;res&quot;:25}" data-page="matrix"><p><b>Velocity → cutoff.</b> Slot 1: <b>Velocity → Cutoff</b>, 30 %, the cutoff low. On a MIDI keyboard, hard notes are brighter, like a real instrument. Try 60 % for a bigger difference.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;m1s&quot;:&quot;Mod wheel&quot;,&quot;m1d&quot;:&quot;Osc 1 frame&quot;,&quot;m1a&quot;:100,&quot;o1Frame&quot;:0}" data-page="matrix"><p><b>Mod wheel → wave frame.</b> Slot 1: <b>Mod wheel → Osc 1 frame</b>, 100 %, the frame at 0 (a sine). With the wheel down you hear the soft sine. Push your MIDI keyboard's mod wheel up while holding a note: the wave turns into a saw.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;m1s&quot;:&quot;Note&quot;,&quot;m1d&quot;:&quot;Osc 1 frame&quot;,&quot;m1a&quot;:-30,&quot;o1Frame&quot;:200}" data-page="matrix"><p><b>Note → frame.</b> Slot 1: <b>Note → Osc 1 frame</b>, -30 %, the frame at 200. Low notes are bright and buzzy, high notes softer, so the top of the keyboard does not get harsh.</p></div>
+```
+
+## In the real Vital
+
+What is different in the plug-in and exactly where to find it. Every line names the file of Vital's source code (github.com/mtytel/vital) it was read from; "(unverified)" means it was not confirmed.
+
+- **Keyboard sources:** NOTE, VELOCITY, LIFT (the speed you let go of a key, unverified), OCT NOTE (the note within its octave) in one row, PRESSURE (aftertouch: pressing down on a held key), SLIDE, STEREO and RANDOM in the other (Vital source, modulation_interface.cpp). Drag them like any source.
+- **The wheels:** a pitch wheel and a mod wheel are drawn beside the on-screen keyboard (Vital source, bend_section.cpp), and both are modulation sources, *Mod Wheel* and *Pitch Wheel* in the matrix's source menu (Vital source, synth_voice_handler.cpp; modulation_matrix.cpp). Drag the mod wheel's source onto a knob, or pick *Mod Wheel* in a matrix row.
+- **VEL TRK** in the VOICE strip (velocity tracking, -1 to 1, starting at 0) and **BEND** (pitch-bend range, 0 to 48 semitones, starting at 2) (Vital source, voice_section.cpp; synth_parameters.cpp).
+- **MIDI learn:** right-click a knob → **Learn MIDI Assignment**, then move a knob or slider on your MIDI controller: the very next control-change message is tied to it and saved at once (Vital source, synth_slider.cpp; midi_manager.cpp). Right-click again → **Clear MIDI Assignment** to undo. Only control-change messages work this way, not notes or pitch bend (Vital source, midi_manager.cpp). Modulation amount knobs can be learned too (Vital source, modulation_manager.cpp).
+- **Macros:** four MACRO knobs on the left. Each is a knob you turn and a source you drag onto other knobs, so one macro can move several things at once; the pencil renames it (Vital source, macro_knob_section.cpp). MIDI-learn a macro to play it from your controller.
+- **MPE:** the ADVANCED tab has **MPE ENABLED** for MPE keyboards that send per-note pressure and slide (Vital source, master_controls_interface.cpp; vital.audio).
+- **Computer keys:** the source sets the keys `awsedftgyhujkolp;'`, with `z` and `x` for octave down and up (Vital source, synth_constants.h). Whether they play in your DAW depends on the DAW (unverified).
+
+## Try it in the real Vital
+
+Open Vital in your DAW (see [Meet Vital](intro-vital.qmd) to install it) and do these in order.
+
+- [ ] Connect a MIDI keyboard in your DAW. Play softly and hard.
+- [ ] Drag **VELOCITY** onto FILTER 1's CUTOFF (filter on). Play softly and hard again.
+- [ ] Drag **NOTE** onto CUTOFF. Play low and high.
+- [ ] Open the MATRIX tab and set a row's source to **Mod Wheel**, destination OSC 1 wave frame. Push the wheel.
+- [ ] Right-click a knob → **Learn MIDI Assignment**, then turn a knob on your controller.
+- [ ] Drag MACRO 1's button onto two different knobs. Turn MACRO 1.
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>What does velocity measure?</b></p><ul><li>How hard you press a key</li><li>Which key you press</li><li>How long you hold it</li><li>The tempo</li></ul><p class="ik-why">Velocity = how hard (fast) the key goes down.</p></div>
+<div class="ik-q" data-a="0"><p><b>Why does the step for Velocity → Volume sound at one level?</b></p><ul><li>The steps and on-screen keys always play at the same strength</li><li>Velocity is broken</li><li>Volume cannot be modulated</li><li>The filter is off</li></ul><p class="ik-why">Use a MIDI keyboard to hear velocity.</p></div>
+<div class="ik-q" data-a="0"><p><b>Note → cutoff at a positive amount makes…</b></p><ul><li>High notes brighter</li><li>Low notes brighter</li><li>Every note the same</li><li>Only chords brighter</li></ul><p class="ik-why">Step 1.</p></div>
+<div class="ik-q" data-a="0"><p><b>How do you MIDI-learn a knob in the real Vital?</b></p><ul><li>Right-click it → Learn MIDI Assignment, then move a controller knob</li><li>Double-click it</li><li>Drag it to the matrix</li><li>Hold Shift and play a note</li></ul><p class="ik-why">synth_slider.cpp; midi_manager.cpp.</p></div>
+<div class="ik-q" data-a="0"><p><b>What is a macro in Vital?</b></p><ul><li>A knob that is also a source you can drag onto other knobs</li><li>A kind of filter</li><li>A saved preset</li><li>An effect</li></ul><p class="ik-why">macro_knob_section.cpp.</p></div>
+```
+
+## Previous and next
+
+::: {.vl-nav}
+- Previous: [Vital 6: LFOs and Random](vital-06-lfos.qmd)
+- Next: [Vital 8: Effects](vital-08-effects.qmd)
+:::
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Tytel, Matt. "bend_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/bend_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/bend_section.cpp). Pitch wheel and mod wheel next to the keyboard.
+
+Tytel, Matt. "full_interface.cpp," "synthesis_interface.cpp" and "modulation_interface.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/tree/main/src/interface/editor_sections](https://github.com/mtytel/vital/tree/main/src/interface/editor_sections). Section bounds of the main window at the default 1400 x 820 (synth_constants.h): header 48, macro column, oscillators, sample, two filters, envelopes : LFOs : random = 3 : 4 : 2, voice and portamento strip, keyboard.
+
+Tytel, Matt. "macro_knob_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/macro_knob_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/macro_knob_section.cpp). MACRO 1-4 knobs, each also a modulation source.
+
+Tytel, Matt. "master_controls_interface.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/master_controls_interface.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/master_controls_interface.cpp). Advanced tab: MPE ENABLED, NOTE PRIORITY, VOICE OVERRIDE, TUNING; OVERSAMPLING.
+
+Tytel, Matt. "midi_manager.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/midi_manager.cpp](https://github.com/mtytel/vital/blob/main/src/common/midi_manager.cpp). MIDI learn: the next control-change message is bound to the armed control and saved.
+
+Tytel, Matt. "modulation_manager.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/modulation_manager.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/modulation_manager.cpp). Targets light up; hover connects at once (preview); release keeps it; starting amount; a modifier key makes it bipolar; 64 limit; amount knob menu.
+
+Tytel, Matt. "modulation_matrix.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/modulation_matrix.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/modulation_matrix.cpp). MODULATION MATRIX columns # SOURCE BIPOLAR STEREO MORPH AMOUNT DESTINATION; 12 rows shown; destination sub-menus.
+
+Tytel, Matt. "synth_constants.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_constants.h](https://github.com/mtytel/vital/blob/main/src/common/synth_constants.h). kNumOscillators 3, kNumFilters 2, kNumEnvelopes 6, kNumLfos 8, kNumRandomLfos 4, kNumMacros 4, kMaxModulationConnections 64, kMaxPolyphony 33 (32 playing), effects chorus / compressor / delay / distortion / EQ / filter / flanger / phaser / reverb, filter models Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phase.
+
+Tytel, Matt. "synth_slider.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_components/synth_slider.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_components/synth_slider.cpp). Knob gestures: double-click = default, fine drag, Alt-click to type a value; right-click menu incl. Learn MIDI Assignment.
+
+Tytel, Matt. "synth_voice_handler.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/synthesis/modules/synth_voice_handler.cpp](https://github.com/mtytel/vital/blob/main/src/synthesis/modules/synth_voice_handler.cpp). The modulation sources: note, velocity, aftertouch, mod wheel, pitch wheel, lfo, env, random, macro ...
+
+Tytel, Matt. "voice_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/voice_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/voice_section.cpp). VOICES (polyphony), VEL TRK, BEND.
+
+**For students**
+
+Vital Audio. *Vital: Spectral Warping Wavetable Synth*. [vital.audio/](https://vital.audio/). Drag-and-drop modulation; the Basic tier (75 presets, 25 wavetables), Plus and Pro; Windows 10+, macOS 10.15+, Ubuntu 18.04+.
+
+**For teachers**
+
+Tytel, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp](https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp). Oscillator on, transpose, tune, level, wave frame, unison; filter cutoff 8-136 semitones, resonance, drive 0-20 dB, blend 0-2, key track; envelope times 0-2.378; LFO frequency -7..9; polyphony; portamento.
+:::
+<!-- /works-cited -->

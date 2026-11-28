@@ -15,7 +15,7 @@
 // histories and the LinnStrument default row interval are from memory and NOT yet checked against a source (the lesson says so).
 //   raga       a raga from six (Yaman Bhairav Bhupali Todi Malkauns Khamaj): swaras in 5-limit just intonation, ascent and descent written out,
 //              a grid of which notes go up / down / both with vadi and samvadi, a drone, "as a plain scale" (what a raga adds), just vs piano
-//              together, a slide (meend) and a wobble (andolan). Raga facts from memory: unverified (the lessons/ragas page says so).
+//              together, a slide (meend) and a wobble (andolan). Checked 2026-11-27 against Garland vol. 5 (see the comment above RAGAS): the general ideas, the Bhairav / Todi / Bhupali notes, Khamaj's two Nis, drone Ma for a raga with no Pa; the rest is unverified.
 //   unevenfret a 12-fret neck whose frets can be dragged; placements equal / rule of 18 / just / meantone / Pythagorean / Werckmeister III;
 //              cents and mm (25.5 in scale) from equal under each fret; both together fret by fret.
 //   tunesong   a tune from the site's collection (loaded on demand, searchable) with every note moved into a tuning (12 / 19 / 22 / 31 / 53-TET,
@@ -410,19 +410,24 @@
   var SW = { S: 0, r: ratioC(16, 15), R: ratioC(9, 8), g: ratioC(6, 5), G: ratioC(5, 4), M: ratioC(4, 3), "M#": ratioC(45, 32), P: ratioC(3, 2), d: ratioC(8, 5), D: ratioC(5, 3), n: ratioC(16, 9), N: ratioC(15, 8) };
   var SW_ORDER = ["S", "r", "R", "g", "G", "M", "M#", "P", "d", "D", "n", "N"];
   var SW_NAME = { S: "Sa", r: "re (komal)", R: "Re", g: "ga (komal)", G: "Ga", M: "Ma", "M#": "Ma (tivra)", P: "Pa", d: "dha (komal)", D: "Dha", n: "ni (komal)", N: "Ni" };
+  // Garland Encyclopedia vol. 5 (Ruckert & Widdess, "Hindustani Raga", pp. 66-82; Wade p. 181) CONFIRMS: Bhairav Sa re Ga ma Pa dha Ni both ways, a dawn raga; Todi
+  // thaat Sa re ga Ma Pa dha Ni; Bhupali Sa Re Ga Pa Dha, between Kalyan and Bilaval thaats; Kalyan thaat (Yaman Kalyan); Khamaj has Ni up, komal ni down; vadi / samvadi
+  // are in many ragas a 4th or 5th apart; the drone's Pa is replaced by Ma or Ni when the raga has no Pa (so Malkauns: drone "M").
+  // NOT in Garland, so UNVERIFIED: every ascent / descent not listed above, every vadi / samvadi, every time of day except Bhairav's, andolan on Bhairav / Todi
+  // (Garland describes andolan only for Darbari Kanada), and the notes' descriptions in `note`.
   var RAGAS = {
-    yaman: { name: "Yaman", asc: "N, R G M# D N S'", desc: "S' N D P M# G R S", vadi: "G", sam: "N", time: "early evening",
+    yaman: { name: "Yaman", asc: "N, R G M# D N S'", desc: "S' N D P M# G R S", vadi: "G", sam: "N", time: "early evening (unverified)",
              note: "Tivra Ma, all other notes shuddha. It is usually begun from the low Ni, not from Sa, and Pa is often passed over going up: the ascent skips and the descent does not." },
-    bhairav: { name: "Bhairav", asc: "S r G M P d N S'", desc: "S' N d P M G r S", vadi: "d", sam: "r", time: "early morning",
-               note: "Komal re and komal dha with shuddha Ga and Ni. Both komal notes are given a slow, wide swing (andolan). The same seven notes up and down, but they are not 'a scale': they are used in different phrases and given different weights." },
-    bhupali: { name: "Bhupali", asc: "S R G P D S'", desc: "S' D P G R S", vadi: "G", sam: "D", time: "early night",
+    bhairav: { name: "Bhairav", asc: "S r G M P d N S'", desc: "S' N d P M G r S", vadi: "d", sam: "r", time: "early morning (dawn: confirmed)",
+               note: "Komal re and komal dha with shuddha Ga and Ni (confirmed). Both komal notes are given a slow, wide swing (andolan; unverified). The same seven notes up and down, but they are not 'a scale': they are used in different phrases and given different weights." },
+    bhupali: { name: "Bhupali", asc: "S R G P D S'", desc: "S' D P G R S", vadi: "G", sam: "D", time: "early night (unverified)",
                note: "Five notes, no Ma and no Ni. On the piano it is a major pentatonic; the Ga is the pure 5:4, about 14 cents below the piano's." },
-    todi: { name: "Todi", asc: "S r g M# P d N S'", desc: "S' N d P M# g r S", vadi: "d", sam: "g", time: "late morning",
-            note: "Komal re, ga and dha with tivra Ma: seven notes with the most 'bent' character. The komal Ga is given a slow oscillation." },
-    malkauns: { name: "Malkauns", asc: "S g M d n S'", desc: "S' n d M g S", vadi: "M", sam: "S", time: "midnight",
-                note: "Five notes, no Re and no Pa. The same notes up and down, but the music revolves around Ma and Sa, not around the ends of a scale." },
-    khamaj: { name: "Khamaj", asc: "S G M P D N S'", desc: "S' n D P M G R S", vadi: "G", sam: "N", time: "late evening",
-              note: "The clearest case where ascent and descent differ: going up it leaves out Re and uses shuddha Ni; coming down it adds Re and uses komal ni. Two different Nis in one raga." }
+    todi: { name: "Todi", asc: "S r g M# P d N S'", desc: "S' N d P M# g r S", vadi: "d", sam: "g", time: "late morning (unverified)",
+            note: "Komal re, ga and dha with tivra Ma: seven notes with the most 'bent' character. The komal Ga is given a slow oscillation (unverified). The scale is confirmed." },
+    malkauns: { name: "Malkauns", asc: "S g M d n S'", desc: "S' n d M g S", vadi: "M", sam: "S", time: "midnight (unverified)", drone: "M",
+                note: "Five notes, no Re and no Pa. The same notes up and down, but the music revolves around Ma and Sa, not around the ends of a scale (all unverified). With no Pa, its drone here is Sa and Ma (Garland: Ma or Ni replaces Pa)." },
+    khamaj: { name: "Khamaj", asc: "S G M P D N S'", desc: "S' n D P M G R S", vadi: "G", sam: "N", time: "late evening (unverified)",
+              note: "A clear case where ascent and descent differ: shuddha Ni going up, komal ni coming down (confirmed: two Nis in one raga); the omitted Re going up is unverified." }
   };
   function parseSw(str) { return str.split(/\s+/).map(function (t) { var up = /'$/.test(t), lo = /,$/.test(t), k = t.replace(/['\,]$/, ""); return { k: k, c: SW[k] + (up ? 1200 : lo ? -1200 : 0), tok: t }; }); }
   var DRONE_KEY = "S";
@@ -431,7 +436,7 @@
     w.playLabel = "▶ Play"; w.playBtn.remove();
     w.pick("raga", "Raga", Object.keys(RAGAS).map(function (k) { return [k, RAGAS[k].name]; }), "yaman", null, function () { rebuild(); });
     w.pick("root", "Sa", ROOTS.map(function (r) { return [r[0], r[1] + "4"]; }), "C", null, function () { rebuild(); });
-    w.pick("drone", "Drone", [["on", "Sa and Pa (tanpura-like)"], ["off", "None"]], "on");
+    w.pick("drone", "Drone", [["on", "Sa and Pa (Ma for Malkauns; tanpura-like)"], ["off", "None"]], "on");
     var row = el("div", "sk-presets");
     button(row, "▶ Ascent, then descent", function () { play("raga"); });
     button(row, "▶ As a plain scale (the same notes both ways, piano tuning)", function () { play("scale"); });
@@ -464,7 +469,7 @@
     }
     var timer = null;
     w.onStart = function () { return function () { clearTimeout(timer); }; };
-    function dronePlay(c, t, dur) { if (w.P.drone !== "on") return; var sa = cf(r0() - 1200), pa = sa * 1.5; [sa, pa, sa * 2].forEach(function (f, i) { rich(c, w.out, f, t, dur, [.12, .09, .07][i]); }); }
+    function dronePlay(c, t, dur) { if (w.P.drone !== "on") return; var sa = cf(r0() - 1200), pa = sa * (cur.R.drone === "M" ? 4 / 3 : 1.5); [sa, pa, sa * 2].forEach(function (f, i) { rich(c, w.out, f, t, dur, [.12, .09, .07][i]); }); }
     function glide(c, f1, f2, t, dur, v) { var o = c.createOscillator(), g = c.createGain(); o.frequency.setValueAtTime(f1, t); o.frequency.setValueAtTime(f1, t + dur * .25); o.frequency.exponentialRampToValueAtTime(f2, t + dur * .7); g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + .03); g.gain.setValueAtTime(v, t + dur - .08); g.gain.linearRampToValueAtTime(0, t + dur); o.connect(g); g.connect(w.out); o.start(t); o.stop(t + dur + .05); }
     function wobble(c, f, t, dur, v, cents, hz) { var o = c.createOscillator(), g = c.createGain(), l = c.createOscillator(), lg = c.createGain(); o.frequency.value = f; l.frequency.value = hz; lg.gain.value = f * (Math.pow(2, cents / 1200) - 1); l.connect(lg); lg.connect(o.frequency);
       g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + .05); g.gain.setValueAtTime(v, t + dur - .1); g.gain.linearRampToValueAtTime(0, t + dur); o.connect(g); g.connect(w.out); o.start(t); l.start(t); o.stop(t + dur + .05); l.stop(t + dur + .05); }

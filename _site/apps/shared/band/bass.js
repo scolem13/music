@@ -25,6 +25,22 @@
 // the beats in between are found by a small scored search that prefers steps and arpeggio
 // thirds, chord tones on the strong beat, and lines that keep their direction. The best few
 // lines are chosen between at random, so choruses differ but stay in the idiom.
+//
+// WALKING DEVICES (opt-in: ctx.opts.walkDevices, or the line "walkdev", which turns them all on). After the
+// PianoGroove handout "Walking Bass Line Theory" (lessons/walking-bass-lines.qmd transcribes it). In a 4/4 bar
+// with one chord, followed by a known chord, the bar may be built by one device instead of the search:
+//   chromatic  root, then three (or two) semitones running into the next root      F G Ab A | Bb
+//   scalar     root, then down or up the chord's scale, the last step chromatic     F Eb D C | Bb ;  Bb Ab G Gb | F
+//   jump       one leap of a 4th to a 6th inside the bar, then an approach note     F G A D | C ;  C Eb E F | Bb
+//   enclosure  the next root's upper neighbour (semitone or scale step) and the semitone below it   C A Bb Ab | A
+// and any walked bar may take two ornaments:
+//   ghost      a beat split into two swung eighths, the second a ghost note (soft, short: ghost:true on the event)
+//   triplet    beat 1 as a triplet falling down the chord (root, 5th, 3rd below), beat 2 below it   F C A F
+// walkDevices = { amount 0..1 (the share of bars a device builds), chromatic, scalar, jump, enclosure (weights),
+// ghost, triplet (0..1, how often) }. Events a device made carry device:"<name>". Unset, nothing here runs and
+// no random numbers are drawn, so every other line plays exactly as before.
+// A FIXED LINE (ctx.opts.bassLine = { bars: [[{ pos, dur, midi, vel, ghost? }], ...] }, one list per form bar): played as
+// written instead of anything above, when its length is the form's (the Walking Bass Generator's "send to the band").
 
 (function (global) {
   var LO = 28, HI = 55, MID = 40.5;                     // E1..G3, centred around the open-string register
@@ -214,6 +230,91 @@
   // what a tune's line gives way to after the first chorus when opts.figures === "head"
   var AFTER = { sowhat: "walk", killerjoe: "walk", songfather: "bossa", footprints: "walk", allblues: "walk", chameleon: "riff", maiden: "bossa", takefive: "walk" };
 
+
+  var DEV_DEFAULT = { amount: 0.6, chromatic: 1, scalar: 1, jump: 1, enclosure: 1, ghost: 0.5, triplet: 0.3 };
+  var DEV_KINDS = ["chromatic", "scalar", "jump", "enclosure"];
+  function devOpts(o){
+    if (!o) return null;
+    if (o.walkDevices) return o.walkDevices;
+    return o.bassFeel === "walkdev" ? DEV_DEFAULT : null;
+  }
+  // a line [s, b2, b3, b4] into target t is playable: in range, no repeated note, no leap past a 6th, an approach the bar line accepts
+  function devOk(line, t){
+    for (var i = 0; i < line.length; i++){
+      if (!inRange(line[i])) return false;
+      if (i && (line[i] === line[i - 1] || Math.abs(line[i] - line[i - 1]) > 9)) return false;
+    }
+    var a = Math.abs(t - line[line.length - 1]);
+    return inRange(t) && (a === 1 || a === 2 || a === 5 || a === 7);
+  }
+  // the next scale note above (dir 1) or below (dir -1) n
+  function scaleStep(c, n, dir){ for (var k = 1; k <= 3; k++){ var x = n + dir * k; if (inScale(c, x)) return x; } return null; }
+  var DEV_BUILD = {
+    chromatic: function (c, s, ts){
+      var out = [];
+      ts.forEach(function (t){ [-1, 1].forEach(function (a){
+        var run = [s, t + 3 * a, t + 2 * a, t + a];
+        if (Math.abs(run[1] - s) <= 5 && devOk(run, t)) out.push({ line: run, t: t, score: 2 });
+        // two chromatic notes after a chord tone
+        c.tones.forEach(function (iv){ withPc(mod12(c.root + iv)).forEach(function (x){
+          var r2 = [s, x, t + 2 * a, t + a], d1 = Math.abs(x - s), d2 = Math.abs(x - r2[2]);
+          if (d1 >= 2 && d1 <= 7 && d2 >= 1 && d2 <= 4 && devOk(r2, t)) out.push({ line: r2, t: t, score: 1.5 - 0.1 * d2 });
+        }); });
+      }); });
+      return out;
+    },
+    scalar: function (c, s, ts){
+      var out = [];
+      [-1, 1].forEach(function (dir){
+        var b2 = scaleStep(c, s, dir), b3 = b2 != null ? scaleStep(c, b2, dir) : null; if (b3 == null) return;
+        ts.forEach(function (t){
+          var g = (t - b3) * dir, b4 = null;
+          if (g === 2 || g === 3) b4 = t - dir;                                  // the last step chromatic, as the handout's Gb into F
+          else if (g === 4){ var m = scaleStep(c, b3, dir); if (m != null && (t - m) * dir > 0) b4 = m; }
+          if (b4 == null) return;
+          var l = [s, b2, b3, b4]; if (devOk(l, t)) out.push({ line: l, t: t, score: 2 + (dir < 0 ? 0.3 : 0) });
+        });
+      });
+      return out;
+    },
+    jump: function (c, s, ts){
+      var out = [];
+      ts.forEach(function (t){
+        [t - 1, t + 1, t - 2, t + 2].forEach(function (b4){
+          if (Math.abs(b4 - t) === 2 && !inScale(c, b4)) return;
+          for (var b2 = s - 9; b2 <= s + 9; b2++){
+            if (b2 === s || !inScale(c, b2)) continue;
+            for (var b3 = b2 - 9; b3 <= b2 + 9; b3++){
+              if (!inScale(c, b3) && Math.abs(b3 - b4) !== 1) continue;
+              var ivs = [Math.abs(b2 - s), Math.abs(b3 - b2), Math.abs(b4 - b3)];
+              var leaps = ivs.filter(function (d){ return d >= 5; }).length;
+              if (leaps !== 1 || ivs.some(function (d){ return d === 0 || d === 6; })) continue;
+              var l = [s, b2, b3, b4]; if (!devOk(l, t)) continue;
+              var sc = (isTone(c, b2) ? 0.6 : 0) + (isTone(c, b3) ? 0.6 : 0) - 0.05 * Math.abs(b3 - MID);
+              out.push({ line: l, t: t, score: sc });
+            }
+          }
+        });
+      });
+      return out;
+    },
+    enclosure: function (c, s, ts){
+      var out = [];
+      ts.forEach(function (t){
+        [[t + 1, t - 1], [t + 2, t - 1], [t - 1, t + 1], [t - 2, t + 1]].forEach(function (p){
+          if (Math.abs(p[0] - t) === 2 && !inScale(c, p[0])) return;
+          for (var b2 = s - 7; b2 <= s + 7; b2++){
+            if (b2 === s || !inScale(c, b2)) continue;
+            var d2 = Math.abs(p[0] - b2); if (d2 < 1 || d2 > 5) continue;
+            var l = [s, b2, p[0], p[1]]; if (!devOk(l, t)) continue;
+            out.push({ line: l, t: t, score: (isTone(c, b2) ? 1 : 0) + (p[0] > t ? 0.3 : 0) - 0.1 * d2 });
+          }
+        });
+      });
+      return out;
+    }
+  };
+
   function create(o){
     var rng = (o && o.rng) || Math.random;
     var st;
@@ -306,7 +407,74 @@
       return out;
     }
 
+
+    // ---- walking devices (see WALKING DEVICES at the top) ----
+    function wpick(weights){ var sum = 0, k; for (k in weights) sum += weights[k]; var r = rng() * sum; for (k in weights){ r -= weights[k]; if (r <= 0) return k; } return k; }
+    function devBar(ctx, d){
+      if (ctx.compound || ctx.beats !== 4) return null;
+      var segs = segmentsOf(ctx); if (segs.length !== 1 || !segs[0].chord) return null;
+      var next = firstChord(ctx.nextChords); if (!next) return null;
+      var w = {}, any = false; DEV_KINDS.forEach(function (k){ var x = +d[k] || 0; if (x > 0){ w[k] = x; any = true; } });
+      if (!any || rng() >= (d.amount == null ? 0.6 : +d.amount)) return null;
+      var c = segs[0].chord, s = startNote(c, true);
+      var ts = withPc(next.bass).filter(function (t){ return Math.abs(t - s) <= 9; });
+      var kind = wpick(w), order = [kind].concat(DEV_KINDS.filter(function (k){ return k !== kind && w[k]; }));
+      for (var i = 0; i < order.length; i++){
+        var cs = DEV_BUILD[order[i]](c, s, ts).map(function (o){ return { line: o.line.concat([o.t]), score: o.score + rangePen(o.t) * 0.5 + rangePen(o.line[2]) * 0.5 }; });
+        var res = pick(cs);
+        if (!res) continue;
+        var ev = [];
+        for (var b = 0; b < 4; b++){ ev.push({ pos: b, dur: 0.95, midi: res.line[b], vel: vel(b === 0 ? 0.84 : 0.79), device: order[i] }); played(res.line[b]); }
+        st.offRoot = false; aim(res.line[4], next);
+        return ev;
+      }
+      return null;
+    }
+    // ghost notes and a triplet on beat 1, on any walked bar in a simple meter
+    function devOrn(ev, ctx, d){
+      if (ctx.compound) return ev;
+      var c = global.BandHarmony.chordAt(ctx.chords, 0);
+      var tr = +d.triplet || 0;
+      if (tr > 0 && rng() < 0.35 * tr && c && c.third != null && ev.length >= 3 && ev[0].pos === 0 && ev[1].pos === 1 && mod12(ev[0].midi) === c.bass){
+        var a = ev[0].midi, n2 = a - (12 - (c.fifth != null ? c.fifth : 7)), n3 = a - (12 - c.third);
+        var d1 = Math.abs(ev[1].midi - n3);
+        if (inRange(n3) && d1 >= 1 && d1 <= 7){
+          ev.splice(0, 1, { pos: 0, dur: 0.3, midi: a, vel: vel(0.84), triplet: true, straight: true, device: "triplet" },
+                          { pos: 1 / 3, dur: 0.3, midi: n2, vel: vel(0.7), triplet: true, straight: true, device: "triplet" },
+                          { pos: 2 / 3, dur: 0.3, midi: n3, vel: vel(0.72), triplet: true, straight: true, device: "triplet" });
+        }
+      }
+      var gh = +d.ghost || 0;
+      if (gh > 0 && rng() < 0.5 * gh){
+        var ks = [];
+        for (var k = 0; k + 1 < ev.length; k++) if (ev[k].pos >= 1 && ev[k].pos === Math.floor(ev[k].pos) && ev[k + 1].pos === ev[k].pos + 1) ks.push(k);
+        if (!ks.length && ev.length && ev[ev.length - 1].pos === ctx.beats - 1 && ev[ev.length - 1].pos >= 1) ks.push(ev.length - 1);
+        if (ks.length){
+          var j = rng() < 0.5 ? ks[ks.length - 1] : ks[Math.floor(rng() * ks.length)], e = ev[j];
+          var after = j + 1 < ev.length ? ev[j + 1].midi : (st.pending ? st.pending.midi : e.midi), r = rng(), g;
+          if (r < 0.5 || !inRange(after - 1) || after - 1 === e.midi) g = e.midi;              // the same note again, ghosted
+          else if (r < 0.75 && inRange(e.midi - 12) && e.midi - 12 >= LO + 2) g = e.midi - 12;  // dropped an octave
+          else g = after - 1;                                                                // a semitone under the next note
+          e.dur = 0.45;
+          ev.splice(j + 1, 0, { pos: e.pos + 0.5, dur: 0.3, midi: g, vel: vel(0.36), ghost: true, device: "ghost" });
+        }
+      }
+      return ev;
+    }
+    // a fixed line (opts.bassLine) for this form bar, or null
+    function fixedBar(ctx){
+      var fx = ctx.opts && ctx.opts.bassLine;
+      if (!fx || !fx.bars || fx.bars.length !== ctx.length || ctx.index == null || ctx.index < 0) return null;
+      var b = fx.bars[ctx.index]; if (!b) return null;
+      var ev = b.filter(function (e){ return e && e.pos < ctx.beats && inRange(e.midi); }).map(function (e){
+        var o = { pos: e.pos, dur: e.dur, midi: e.midi, vel: e.vel == null ? 0.8 : e.vel }; if (e.ghost) o.ghost = true; if (e.pos % 1 && Math.abs(e.pos * 3 - Math.round(e.pos * 3)) < 1e-6 && e.pos % 0.5) o.straight = true; return o; });
+      ev.forEach(function (e){ played(e.midi); }); st.pending = null; st.offRoot = false;
+      return ev;
+    }
+
     function walk(ctx){
+      var dv = devOpts(ctx.opts), db = dv ? devBar(ctx, dv) : null;
+      if (db) return devOrn(db, ctx, dv);
       var segs = segmentsOf(ctx), ev = [], next = firstChord(ctx.nextChords), target = null, i = 0;
       while (i < segs.length){
         if (!segs[i].chord){ i++; continue; }
@@ -329,6 +497,7 @@
       aim(target, next);
       if (ctx.compound) ev = pickups(ev, ctx);
       else if (vary(ctx)) ev = ornaments(ev, ctx, vary(ctx));
+      if (dv) ev = devOrn(ev, ctx, dv);
       return ev;
     }
     // 12/8 and 6/8: some notes are cut short and struck again on the beat's last eighth ("dum, da-dum")
@@ -554,6 +723,7 @@
     function bar(ctx){
       if (!ctx || !ctx.chords || !ctx.chords.length){ st.pending = null; return []; }     // N.C.: rest
       if (ctx.stop) return stopBar(ctx);
+      var fx = fixedBar(ctx); if (fx) return fx;
       if (ctx.opts && ctx.opts.bassFeel === "riffwalk") return walksNow(ctx) ? walk(ctx) : riff(ctx);
       if (ctx.opts && ctx.opts.bassFeel === "riff") return riff(ctx);
       var feel = ctx.opts && ctx.opts.bassFeel;
@@ -563,7 +733,7 @@
       // How much it walks (opts.walk, 0..1; unset = as the line says): the share of two-bar spans that walk, the rest being in two.
       // The band's level leans it: more walking when it is playing up. 0 and 1 are absolute.
       var w = ctx.opts && ctx.opts.walk;
-      if (w != null && (feel === "two" || feel === "walk" || !feel)){
+      if (w != null && (feel === "two" || feel === "walk" || feel === "walkdev" || !feel)){
         w = Math.max(0, Math.min(1, +w || 0));
         if (w > 0 && w < 1){ var ph = ctx.phrase ? ctx.phrase.bar : ctx.index;
           if (st.walkOn == null || ph % 2 === 0) st.walkOn = rng() < Math.max(0.05, Math.min(0.95, w + ((ctx.intensity == null ? 0.5 : ctx.intensity) - 0.5) * 0.5));
@@ -583,5 +753,5 @@
     return { bar: bar, ending: ending, reset: reset };
   }
 
-  global.BandBass = { create: create, LO: LO, HI: HI, LINES: LINES, AFTER: AFTER };
+  global.BandBass = { create: create, LO: LO, HI: HI, LINES: LINES, AFTER: AFTER, DEVICES: DEV_DEFAULT };
 })(typeof window !== "undefined" ? window : globalThis);

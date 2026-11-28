@@ -1,0 +1,240 @@
+---
+title: "X32: Guitar, Vocal Effects and a Computer"
+description: "Plug an electric guitar into the X32 (DI box, the built-in amp simulator, or a modeller), build a processed vocal chain, and connect a Windows computer with Ableton over the X-USB card."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<style>
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem;margin:1rem 0 1.4rem}
+.chain .b{border:2px solid currentColor;border-radius:.45rem;padding:.35rem .6rem;font-weight:600;font-size:.92rem;line-height:1.2;text-align:center}
+.chain .b small{display:block;font-weight:400;opacity:.75;font-size:.78rem}
+.chain .b.desk{background:rgba(60,120,220,.12)}
+.chain .b.pc{background:rgba(220,140,40,.14)}
+.chain .b.opt{border-style:dashed}
+.chain .a{font-size:1.2rem;opacity:.7}
+.chain-label{font-weight:600;margin:.8rem 0 -.6rem}
+</style>
+```
+
+Page numbers are from the Behringer *X32 Preliminary User Manual* (see Works Cited). The manual covers firmware 2.x,
+so newer firmware may add things it doesn't mention.
+
+## Electric guitar into the X32
+
+### Why not plug it straight in?
+
+The 32 inputs on the back are **mic preamps**. Their input impedance is **10 kΩ** balanced (p. 69), and the six
+**Aux In** jacks are 20/40 kΩ line inputs. A passive guitar pickup wants a load many times higher than that. On a 10 kΩ input its treble
+goes, its level drops, and it sounds thin and dull. **The X32 has no instrument (Hi‑Z) input.**
+
+**Use a DI box.** It takes the guitar's high‑impedance signal and sends a balanced mic‑level signal down an XLR cable
+into a preamp. This is the same as plugging in a mic. Pedals can go between the guitar and the DI.
+
+```{=html}
+<div class="chain">
+  <div class="b">Guitar</div><div class="a">→</div>
+  <div class="b opt">Pedals<small>optional</small></div><div class="a">→</div>
+  <div class="b">DI box<small>¼″ in, XLR out</small></div><div class="a">→</div>
+  <div class="b">Snake / XLR input</div><div class="a">→</div>
+  <div class="b desk">X32 channel<small>gain, EQ, comp</small></div>
+</div>
+```
+
+Active DIs need phantom power (+48 V on that channel) or a battery. Passive DIs need neither.
+
+### Three ways to get a tone
+
+```{=html}
+<p class="chain-label">1 · Clean, on the desk alone</p>
+<div class="chain">
+  <div class="b">Guitar → DI</div><div class="a">→</div>
+  <div class="b desk">Channel EQ + compressor</div><div class="a">→</div>
+  <div class="b desk">FX send: reverb / delay / chorus</div>
+</div>
+<p class="chain-label">2 · The X32's own amp simulator</p>
+<div class="chain">
+  <div class="b">Guitar → DI</div><div class="a">→</div>
+  <div class="b desk">Channel insert<small>FX slot set to “Insert”</small></div><div class="a">→</div>
+  <div class="b desk">Guitar Amp<small>SansAmp‑style, cab sim</small></div><div class="a">→</div>
+  <div class="b desk">EQ, sends</div>
+</div>
+<p class="chain-label">3 · An amp modeller in front of the desk</p>
+<div class="chain">
+  <div class="b">Guitar</div><div class="a">→</div>
+  <div class="b">Modeller<small>Helix, Tonex, Boss GT…</small></div><div class="a">→</div>
+  <div class="b">XLR / line out</div><div class="a">→</div>
+  <div class="b desk">X32 channel</div>
+</div>
+```
+
+1. **Clean.** The guitar goes through a DI with channel EQ and compression, plus some reverb on an FX send. It
+   works for clean jazz, funk and acoustic‑style parts, but gives no distortion.
+2. **The built‑in amp.** The effects rack has a **Stereo / Dual Guitar Amp** "modeled after the Tech 21 SansAmp",
+   which "allows an electric guitar player to sound great without using an amp on stage" (p. 25). Its controls are
+   Preamp, Buzz, Punch, Crunch, Drive, Low, High and Level, and a **Cabinet** simulation you can switch off. There is
+   also a **Tube Stage** for milder overdrive. To use it:
+   1. Choose an empty FX slot. Slots 5–8 can only be inserts (p. 19).
+   2. In the FX screen, set the slot's source to **Insert** and load **Dual Guitar Amp**. The "Dual" version is two
+      mono amps, so one slot can serve two guitars.
+   3. Select the guitar channel. On its **Config** page, use the 6th encoder to pick the insert, for example
+      **Ins FX5L**, then press the encoder to connect it (p. 31).
+3. **A modeller.** A floor modeller or amp‑in‑a‑pedal does the amp and cabinet itself and sends a finished tone into
+   the desk. Most have an XLR or balanced line output, so they need no DI. Turn off the modeller's cab sim only if a
+   real cabinet is also being miked.
+
+With a real amp on stage, you can still mic the amp's speaker (an SM57 close to the cone), take a DI split before
+the amp, or both.
+
+## Processed vocals
+
+### What the desk does
+
+```{=html}
+<div class="chain">
+  <div class="b">Mic</div><div class="a">→</div>
+  <div class="b desk">Gain<small>+48 V for condensers</small></div><div class="a">→</div>
+  <div class="b desk">Low cut</div><div class="a">→</div>
+  <div class="b desk">Gate</div><div class="a">→</div>
+  <div class="b desk">EQ</div><div class="a">→</div>
+  <div class="b desk">Compressor</div><div class="a">→</div>
+  <div class="b desk opt">Insert<small>de‑esser, pitch</small></div><div class="a">→</div>
+  <div class="b desk">FX sends<small>reverb, delay</small></div>
+</div>
+```
+
+Every channel has a **gate, a compressor and a parametric EQ**. See [gates](../lessons/live-gate.qmd),
+[EQ](../lessons/live-eq.qmd) and [compression](../lessons/live-comp.qmd). The effects rack (60 effects, p. 60)
+holds most vocal effects:
+
+| Effect | X32 effect | How to use it |
+|---|---|---|
+| Reverb | Hall, Plate, Rich Plate, Room, Chamber, Vintage… | On an **FX send**, so several voices share it |
+| Echo / slapback | Stereo Delay, 3‑Tap Delay, Rhythm Delay | On an FX send, timed to the song by tapping the tempo |
+| Doubling | **Dual / Stereo Pitch** with a few cents of detune and a short delay (p. 25) | Insert, or a send for a subtle effect |
+| Octave up or down | Dual / Stereo Pitch (±1 octave), Suboctaver | Insert. Fixed interval only |
+| Taming "s" sounds | **Dual / Stereo DeEsser** | Insert |
+| Warmth / grit | Tube Stage, Exciter, Enhancer | Insert, used lightly |
+| Radio / telephone voice | Channel EQ: cut below ~400 Hz and above ~3 kHz | No effect slot needed |
+
+### What the desk can't do
+
+The manual lists no **pitch correction (Auto‑Tune)**, no **harmoniser** that follows the key, and no
+**vocoder**. The pitch shifter moves the voice by a fixed interval, so a harmony a third above goes out of key
+on some notes. For these, add one of:
+
+- **A vocal processor** (for example a TC‑Helicon VoiceLive) between the mic and the desk, or on the channel's
+  insert through an Aux Out and Aux In.
+- **The computer** (next section).
+
+## A Windows computer with Ableton
+
+### The X‑USB card
+
+The standard expansion card in the X32 is the **X‑USB**: one USB 2.0 cable carries **32 channels each way**
+between the desk and a computer, at 44.1 or 48 kHz, 24‑bit (p. 37–42). It also does MIDI and DAW control
+(Mackie Control / HUI).
+
+**Windows:** install the **X32 ASIO driver** from behringer.com (run `Setup.exe`, p. 40). In Ableton, go to
+**Options → Preferences → Audio**, then choose Driver Type **ASIO** and the X‑USB device, and turn on the input
+and output channels you need. **Mac:** no driver is needed (Core Audio).
+
+```{=html}
+<div class="chain">
+  <div class="b desk">X32 inputs 1–32</div><div class="a">⇄</div>
+  <div class="b desk">X‑USB card<small>32 × 32, USB 2.0</small></div><div class="a">⇄</div>
+  <div class="b pc">Windows PC<small>X32 ASIO driver</small></div><div class="a">⇄</div>
+  <div class="b pc">Ableton Live</div>
+</div>
+```
+
+On the desk, two routing screens set what goes where:
+
+- **Routing → Card Out** chooses what goes *to* the computer, in banks of 8. **Local 1–8** sends the preamps on
+  channels 1–8 (p. 54).
+- **Routing → Home** chooses what each channel *listens to*, again in banks of 8: the local preamps or **Card
+  1–8 … 25–32**, which are the computer's outputs (p. 54). Aux In 1–4 can also take Card 1–4 (p. 52).
+
+### Four things to do with it
+
+**1. Record every channel.** Set Card Out to Local 1–32. In Ableton, arm a track per input. A whole band is then
+on separate tracks for mixing later. The desk's own USB‑stick recorder only makes a **stereo** 16‑bit WAV
+(p. 36), so use the card for multitrack.
+
+**2. Virtual soundcheck.** Record the band once. Afterwards, switch Routing → Home to the **Card** banks and play
+the recording back through the same channels to practise the mix with no band in the room. When a channel listens
+to the card, its gain knob becomes a ±12 dB trim (p. 39). Save two scenes, **"preamps"** and **"DAW"**, so the
+switch is one recall (p. 39). This is a good way for students to practise the [sound check](../lessons/live-soundcheck.qmd).
+
+**3. Ableton as an effects rack.** Send a channel to the computer, process it in Ableton, and bring it back on a
+spare channel:
+
+```{=html}
+<div class="chain">
+  <div class="b">Guitar / vocal</div><div class="a">→</div>
+  <div class="b desk">Ch 5 preamp</div><div class="a">→</div>
+  <div class="b desk">Card Out 5</div><div class="a">→</div>
+  <div class="b pc">Ableton track<small>input 5, monitor In</small></div><div class="a">→</div>
+  <div class="b pc">Plug‑ins<small>amp sim, Auto‑Tune, vocoder</small></div><div class="a">→</div>
+  <div class="b pc">Output 25</div><div class="a">→</div>
+  <div class="b desk">Ch 25<small>source Card 25–32</small></div>
+</div>
+```
+
+Pull channel 5's fader down, or take it out of the mix, so you hear only the processed return on channel 25. In
+Ableton, set the track's **Monitor** to **In**, its input to the X‑USB input, and its output to the return channel.
+Possible plug‑ins:
+
+- Guitar: Ableton's **Amp** and **Cabinet** (in Suite), Neural DSP, AmpliTube, Guitar Rig.
+- Vocals: Auto‑Tune or other pitch correction, a harmoniser, Ableton's **Vocoder**.
+
+**4. Backing tracks and a click.** Ableton plays stems out of separate card outputs into their own channels, so
+each one has a fader. Send the **click** to an output that goes only to the drummer's monitor or in‑ear mix, never
+to the main L/R.
+
+### Latency: the catch
+
+The desk itself is quick: input to output takes **0.8 ms** (p. 69). Going through the computer adds a round trip.
+The manual gives **about 14 ms** for the X‑USB, "depending on system performance and application" (p. 42). A
+performer hears their own voice or guitar late. Below about 10 ms most people don't notice, but past 15–20 ms it
+feels like playing in an echo.
+
+- In the X‑USB control panel (Settings) and in Ableton, set the **ASIO buffer** as low as the computer allows
+  without clicks. Try 64, then 128 samples.
+- Use few, light plug‑ins on the live tracks. Some amp sims and pitch correctors add a "lookahead" delay, so use
+  their low‑latency mode.
+- Recording, virtual soundcheck and backing tracks don't care about latency. Only *live processing that a performer
+  hears* does.
+- For the lowest delay on a guitar, use the X32's own Guitar Amp or a modeller pedal and keep the computer for
+  recording.
+
+## Quick reference
+
+| I want… | Do this |
+|---|---|
+| A guitar into the desk | DI box → XLR input. Never a plain ¼″‑to‑XLR adapter |
+| Distorted guitar with no amp | Insert the X32 **Guitar Amp** effect, or use a modeller pedal |
+| A thicker vocal | Pitch effect with a few cents of detune (doubling), plus a plate reverb on a send |
+| Auto‑Tune, a harmoniser or a vocoder | A vocal processor, or Ableton through the X‑USB card |
+| To record the whole band | X‑USB card, Card Out = Local 1–32, a track per input in Ableton |
+| To practise mixing with no band | Virtual soundcheck: Routing → Home → Card, or recall a "DAW" scene |
+
+See also: [the UR22mkII interface](ur22mkii.qmd) for a smaller setup with one or two inputs.
+
+## Works Cited
+
+```{=html}
+<script src="/apps/shared/lessons/sections.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Behringer. *X32 Digital Mixer Preliminary User Manual*. Music Tribe, [media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf](https://media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf). XLR input 10 kΩ bal., Aux In 40 kΩ (p. 69); 60 effects incl. Guitar Amp after the Tech 21 SansAmp, Pitch, DeEsser (pp. 25, 60); FX 5-8 insert only, inserting an FX (pp. 19, 31); X-USB 32x32, ASIO driver, ~14 ms round trip (pp. 37-42); Card routing and virtual soundcheck (pp. 39, 52-54); USB stick 16-bit stereo WAV (p. 36); 0.8 ms I/O latency (p. 69).
+
+"DI unit." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/DI_unit](https://en.wikipedia.org/wiki/DI_unit). Why a guitar pickup into a low-impedance mic input loses level and treble; what a DI box does.
+:::
+<!-- /works-cited -->
+

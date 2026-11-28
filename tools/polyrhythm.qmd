@@ -15,7 +15,7 @@ description: "Play two to four rhythms at once: even divisions (3 against 2, 4 a
 - **Layers.** Each layer is a number (that many even hits per cycle) or a pattern: `x` a hit, `X` an accent, `.` a rest.
   `x.x.xx.x.x.x` is the 12-pulse bell pattern; `x..x..x...x.x...` is son clave.
 - **Beat.** The tempo counts the hits of the layer marked *beat*. For a pattern it counts the pattern's main beats
-  (12 pulses are four beats of three; 16 pulses four beats of four).
+  (12 pulses are four beats of three; 16 pulses four beats of four: Toussaint 42-43).
 - **Polymeter.** Ticked, every step of every layer is the same length, so a 5-step riff against a 4-step bar drifts and
   lines up again only after 20 steps. Unticked, each layer is stretched over one cycle: a polyrhythm.
 - **Mute.** Click a layer's name to mute it, then clap or play that layer yourself.
@@ -28,6 +28,8 @@ The lessons that use this player are in the **Polyrhythm** part of the Lessons s
 <!-- works-cited: written by scripts/works-cited.py -->
 ::: {.works-cited}
 "Polyrhythm." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Polyrhythm](https://en.wikipedia.org/wiki/Polyrhythm). Unverified: definitions, 3:2 and 4:3, cross-rhythm. Not yet re-read.
+
+Toussaint, Godfried T. *The Geometry of Musical Rhythm: What Makes a "Good" Rhythm Good?* 2nd ed., CRC Press, 2020. Read 2026-11-27. Tresillo [3-3-2] and its use in Cuba, New Orleans second-line drumming and rockabilly, p. 12; wooden claves, p. 17; gankogui double bell, p. 19; clave son [3-3-4-2-4] (onsets 0, 3, 6, 10, 12 of 16), pp. 24-25; clave rumba [3-4-3-2-4], p. 28; 12-pulse bell patterns [2-2-1-2-2-2-1] (bembe) and [2-2-3-2-3] (fume-fume), both called the standard pattern, pp. 41-42; four beats of four or three, pp. 42-43; the four regular divisions of twelve in 12-pulse polyrhythmic music, p. 86; Desmond K. Tai's name "standard pattern", Ewe dances that use it and the Cuban bembe, p. 69; bembe against four, six and three beats, and clave son 3-2 / 2-3, p. 72.
 :::
 <!-- /works-cited -->
 

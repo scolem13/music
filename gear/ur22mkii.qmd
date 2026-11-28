@@ -1,0 +1,171 @@
+---
+title: "UR22mkII: Guitar, Vocal Effects and a Computer"
+description: "The Steinberg UR22mkII two-input USB interface: plugging in an electric guitar (Hi-Z on input 2), getting processed vocals through Ableton, setting it up on Windows, and keeping latency low."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<style>
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem;margin:1rem 0 1.4rem}
+.chain .b{border:2px solid currentColor;border-radius:.45rem;padding:.35rem .6rem;font-weight:600;font-size:.92rem;line-height:1.2;text-align:center}
+.chain .b small{display:block;font-weight:400;opacity:.75;font-size:.78rem}
+.chain .b.desk{background:rgba(60,120,220,.12)}
+.chain .b.pc{background:rgba(220,140,40,.14)}
+.chain .b.opt{border-style:dashed}
+.chain .a{font-size:1.2rem;opacity:.7}
+.chain-label{font-weight:600;margin:.8rem 0 -.6rem}
+</style>
+```
+
+The **UR22mkII** is a small two‑input USB audio interface. It's the simple setup for one singer and one guitar
+into a computer, where the [X32](x32-guitar-vocals-computer.qmd) is the big one. Page numbers are from
+Steinberg's *UR22mkII Operation Manual* (see Works Cited).
+
+| Part | What it is |
+|---|---|
+| **MIC/LINE 1** and **2** | Combo jacks. XLR is for a mic, ¼″ is for a line‑level source (p. 3) |
+| **HI‑Z** switch | **Input 2 only**: for plugging a guitar or bass straight in (p. 3) |
+| **+48V** | Phantom power for condenser mics. **One switch for both inputs** (p. 6) |
+| **MIX** knob | Blends what you hear: the inputs directly (INPUT) or the computer (DAW). It doesn't change what gets recorded (p. 4) |
+| **OUTPUT** / **PHONES** | Speaker level and headphone level, set separately (p. 4) |
+| **MIDI IN / OUT** | For a keyboard or synth (p. 5) |
+| **POWER SOURCE** | USB bus power, or a 5 V adapter (needed on an iPad, p. 5) |
+
+**There are no effects inside the UR22mkII.** Unlike the X32 (and unlike Steinberg's bigger UR models with
+dspMixFx), it has no reverb, amp sim or EQ. Every effect happens on the computer.
+
+## Electric guitar into the UR22mkII
+
+```{=html}
+<div class="chain">
+  <div class="b">Guitar</div><div class="a">→</div>
+  <div class="b opt">Pedals<small>optional</small></div><div class="a">→</div>
+  <div class="b">¼″ mono (TS) cable</div><div class="a">→</div>
+  <div class="b desk">MIC/LINE 2<small>HI‑Z on</small></div><div class="a">→</div>
+  <div class="b pc">Ableton<small>amp sim</small></div>
+</div>
+```
+
+1. Plug the guitar into **input 2** with an ordinary **mono (TS) guitar cable**. Steinberg says a balanced (TRS)
+   plug "will not work correctly" with Hi‑Z on (p. 3).
+2. Press **HI‑Z** in. No DI box is needed. This is the input type the X32 doesn't have.
+3. Play your loudest and turn **GAIN 2** up until the **PEAK** light just flickers, then back off a little. PEAK
+   lights 3 dB before clipping (p. 3).
+4. A clean DI'd guitar sounds dry and thin until it goes through an **amp simulator** on the computer (below).
+
+Two guitars? Only input 2 has Hi‑Z. Put the second guitar through a DI box into input 1's XLR, or use an amp
+modeller's line output into input 1.
+
+An **amp modeller** pedal (Helix, Tonex, Boss GT…) already makes a finished tone. Plug its output into a
+¼″ input with **HI‑Z off** (line level), and no amp sim is needed on the computer.
+
+## Processed vocals
+
+```{=html}
+<div class="chain">
+  <div class="b">Mic</div><div class="a">→</div>
+  <div class="b desk">MIC/LINE 1 XLR<small>+48V for condensers</small></div><div class="a">→</div>
+  <div class="b pc">Ableton track<small>EQ, comp, de‑esser, Auto‑Tune, reverb</small></div><div class="a">→</div>
+  <div class="b desk">PHONES / OUTPUT</div>
+</div>
+```
+
+All the processing is plug‑ins on the vocal track: EQ Eight, Compressor, a de‑esser, reverb and delay, pitch
+correction, a harmoniser or the Vocoder. You hear the processed voice only if you turn the **MIX** knob toward
+**DAW**, because the INPUT side is the dry voice straight from the preamp.
+
+**Turning +48V on or off:** turn the output and headphone levels down first. It switches both inputs at once.
+
+## Setting up on Windows with Ableton
+
+1. Install the **Yamaha Steinberg USB Driver** from Steinberg's website **before** plugging in. Use a USB 2.0 A‑to‑B
+   cable, no longer than 3 m.
+2. Plug in. With bus power, the POWER SOURCE switch is on **USB2.0** (p. 5).
+3. In Ableton: **Options → Preferences → Audio**, then choose Driver Type **ASIO** and device **Yamaha Steinberg USB
+   ASIO**.
+4. Click **Input Config** and turn on **1/2** as mono inputs (or a stereo pair), and turn on outputs **1/2**.
+5. Set the sample rate to **44.1 or 48 kHz**. The interface goes up to 192 kHz (p. 7), but higher rates cost
+   computer power for no audible gain in class.
+6. On each track, set **Audio From** → Ext. In → **1** (vocal) or **2** (guitar). Arm the track to record.
+
+On a Mac it uses the same driver. On an **iPad** no driver is needed, but it needs a camera adapter and a 5 V power
+supply, and loopback doesn't work (pp. 5, 7, 11).
+
+## Two ways to monitor
+
+```{=html}
+<p class="chain-label">A · Direct (MIX toward INPUT): no delay, no effects</p>
+<div class="chain">
+  <div class="b">Mic / guitar</div><div class="a">→</div>
+  <div class="b desk">UR22 preamp</div><div class="a">→</div>
+  <div class="b desk">MIX knob</div><div class="a">→</div>
+  <div class="b">Headphones</div>
+</div>
+<p class="chain-label">B · Through the computer (MIX to DAW, track monitor on): effects, small delay</p>
+<div class="chain">
+  <div class="b">Mic / guitar</div><div class="a">→</div>
+  <div class="b desk">UR22 preamp</div><div class="a">→</div>
+  <div class="b pc">USB → Ableton plug‑ins → USB</div><div class="a">→</div>
+  <div class="b">Headphones</div>
+</div>
+```
+
+- **A: direct.** Use it to record a clean take of a singer who wants no effects in their ears. Turn Ableton's track
+  monitor **Off** so you don't hear yourself twice. The direct signal is **mono**, with inputs 1 and 2 mixed together
+  (p. 4).
+- **B: through the computer.** You need this to hear an amp sim or Auto‑Tune while playing. Turn MIX fully to
+  **DAW** and set the track's **Monitor** to **In** (or Auto).
+- Don't use both at once. You hear a dry and a delayed copy together, which sounds phasey.
+
+## Latency
+
+Route B adds a round trip through the computer. Steinberg publishes no figure. The driver's control panel shows the
+input and output latency for the buffer you pick. Buffers run from **64 to 2048 samples** at 44.1/48 kHz (p. 8).
+
+- Start at **64** and go up to **128** only if you hear clicks or crackles.
+- Freeze or turn off heavy plug‑ins on other tracks while someone records through an amp sim.
+- Plug‑ins with "lookahead", such as some limiters and high‑quality pitch correction, add delay. Use their
+  low‑latency or live mode.
+- Playing back, mixing and exporting don't care about latency, so a large buffer is fine then.
+
+## Loopback: streaming and recording a lesson
+
+The driver has a **Loopback** setting (Windows and Mac): it mixes the mic and guitar with whatever the computer is
+playing and sends the mix back to the computer as one input (pp. 7–8). Use it to stream or screen‑record a lesson
+with a backing track and your voice on one input. With Loopback on, **turn off monitoring in Ableton**, or the
+sound feeds back into itself as a loud noise (pp. 7–8).
+
+## Quick reference
+
+| I want… | Do this |
+|---|---|
+| Guitar straight in | Input 2, mono cable, **HI‑Z on**, amp sim in Ableton |
+| A condenser mic | Input 1 XLR, **+48V** on (both inputs get it) |
+| To sing with reverb or Auto‑Tune in my ears | MIX → DAW, track Monitor In, buffer 64–128 |
+| To sing a clean take with no delay | MIX → INPUT, track Monitor Off |
+| A backing track and voice into a stream | Driver **Loopback** on, Ableton monitoring off |
+| More than two inputs | Use the [X32 and its X‑USB card](x32-guitar-vocals-computer.qmd#a-windows-computer-with-ableton) |
+
+## Works Cited
+
+```{=html}
+<script src="/apps/shared/lessons/sections.js"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"DI unit." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/DI_unit](https://en.wikipedia.org/wiki/DI_unit). Why a guitar pickup into a low-impedance mic input loses level and treble; what a DI box does.
+
+Steinberg. *UR22mkII Operation Manual*. Steinberg Media Technologies, 2015, [download.steinberg.net/downloads_hardware/UR22mkII/UR22mkII_documentation/ur22mkii_en_om_a0.pdf](https://download.steinberg.net/downloads_hardware/UR22mkII/UR22mkII_documentation/ur22mkii_en_om_a0.pdf). Hi-Z on input 2, unbalanced plug, PEAK 3 dB below clipping (p. 3); MIX knob, mono direct monitor (p. 4); +48V for both (p. 6); power source (p. 5); sample rates, loopback, buffer sizes (pp. 7-8); iPad (p. 11).
+
+**For teachers**
+
+Steinberg. *UR22mkII Getting Started*. Steinberg Media Technologies, 2015, [download.steinberg.net/downloads_hardware/UR22mkII/UR22mkII_documentation/ur22mkii_en_gs_a0.pdf](https://download.steinberg.net/downloads_hardware/UR22mkII/UR22mkII_documentation/ur22mkii_en_gs_a0.pdf). Driver installation, Cubase AI download.
+:::
+<!-- /works-cited -->
+

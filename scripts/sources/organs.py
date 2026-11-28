@@ -7,7 +7,7 @@ _C = "lessons/organ-compare.qmd"
 _I = lambda s: ["lessons/intro-%s.qmd" % s, _C]
 SOURCES = [
     wiki("Hammond organ", "Hammond_organ", _I("b3"), who="student", note="B-3 / C-3 1954 to early 1975, harmonic percussion; 61-key manuals, 25-note pedalboard; reverse-coloured preset keys, C cancel, B and B-flat the drawbar sets; percussion 2nd / 3rd, soft / normal, single-trigger; V1-V3 C1-C3 per manual; Leslie 122; players and records."),
-    web('Hammond Suzuki. "XK-5 Owner\'s Manual." *ManualsLib*. URL.', "https://www.manualslib.com/manual/1591989/Hammond-Xk-5.html?page=52", _I("b3"),
+    web('Hammond Suzuki. "XK-5 Owner\'s Manual." *ManualsLib*. URL.', "https://www.manualslib.com/manual/1591989/Hammond-Xk-5.html?page=52", _I("b3") + ["lessons/arrange-organ.qmd"],
         note="Percussion: 2nd = the 4′ drawbar's pitch, 3rd = the 2⅔′; fast / slow decay; the 1′ drawbar inoperative while on; only with the B preset key and only on the upper manual, 'same as B-3/C-3'. Read as quoted in a search result, page not opened in full."),
     web('Cherry Audio. "Blue3 Organ: Main." *Cherry Audio Documentation*. URL.', "https://docs.cherryaudio.com/cherry-audio/instruments/blue3/main", _I("b3"),
         note="An emulator's table of the B-3 factory presets; upper C-sharp to E agree with a second web page. Not a Hammond document: the other presets are unverified."),

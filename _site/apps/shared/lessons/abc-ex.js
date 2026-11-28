@@ -19,7 +19,7 @@
 // Put two examples in a <div class="ax-pair"> to set them side by side (stacked on a phone).
 // Needs abcjs and soundfont.js (getSoundfontUrl). ▶ plays the band's samples (abc-play.js); data-sound picks one (default piano),
 // data-bpm the tempo (else Q:, else abcjs's default). With chord symbols the band plays them with the melody (data-style, a
-// BandCatalog style, default pop), and a "▶ Chords" button plays only the chords, held on the piano.
+// BandCatalog style, default pop; data-bass="off" silences the band's bass, for examples that are bass lines), and a "▶ Chords" button plays only the chords, held on the piano.
 // With window.AX_PARTS = true (the Backing Track's chart habits): clicking a note or rest plays from the start of its measure
 // (or jumps there while playing), and an example with more than one V: voice gets "Show" checkboxes, one per part: a hidden
 // part is still heard (the full tune plays, the shown parts light up).
@@ -52,7 +52,7 @@
     abcPlay().then(function (AP) {
       if (playing !== me) return;
       var h = AP.play(ex.playTune || (hid ? ex.fullTune : ex.tune), { transpose: extra || 0, light: !ex.playTune, fromBar: fromBar || 0, lightTune: hid ? ex.tune : null, sound: ex.host.getAttribute("data-sound") || "piano",
-        abc: ex.playTune ? ex.playAbc : ex.abc, style: ex.host.getAttribute("data-style") || "pop",
+        abc: ex.playTune ? ex.playAbc : ex.abc, style: ex.host.getAttribute("data-style") || "pop", bass: ex.host.getAttribute("data-bass") === "off" ? false : undefined,
         qpm: +ex.host.getAttribute("data-bpm") || 0, onEnd: function () { if (playing === me) stop(); } });
       me.synth.stop = function () { h.stop(); };
     }).catch(function () { if (playing === me) stop(); });

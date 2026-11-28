@@ -36,7 +36,9 @@ The part that holds the ensemble together is usually an iron bell (in Ewe music 
 <div class="poly" data-layers="x.x.xx.x.x.x;4" data-names="Bell;Four beats" data-sounds="bell;kick" data-bpm="60" data-beat="1"></div>
 
 The pattern is uneven on purpose: long and short gaps (2 2 1 2 2 2 1). Players and listeners use it as the
-reference for where every other part goes, the way a jazz drummer's ride cymbal works.
+reference for where every other part goes, the way a jazz drummer's ride cymbal works. Among the Ewe it is the
+bell of dances such as agbekor and agbadza (Toussaint 69). The name "standard pattern" has also been given to a
+five-stroke bell with gaps 2 2 3 2 3 (Toussaint 41).
 
 **Try it.** Mute the bell and clap it against the four beats. Then mute the beats and step them while the bell
 plays.
@@ -57,11 +59,15 @@ A useful exercise from many teachers: keep the four beats with your feet, clap t
 Start very slowly. When it feels stable, change which part you clap. The goal is to hear each part as a
 line in its own right, not as an off-beat of something else.
 
-## Unverified, to check
+## Checked and not checked
 
-The facts on this page are from memory and have not yet been checked against a source: the name
-*gankogui*, the term "standard pattern" (usually credited to A. M. Jones), and the dancers' four-beat step.
-They are listed in the sources file as unverified.
+Checked against Toussaint (*The Geometry of Musical Rhythm*, 2020): the double bell *gankogui* (19), the seven-stroke
+pattern and its gaps (41), the name "standard pattern", which the master drummer Desmond K. Tai gave it (69), and
+twelve pulses holding both four beats of three and three beats of four (42-43, 86). I removed the claim that the
+name is usually credited to A. M. Jones, which the book does not say.
+
+Still unverified: the dancers' four-beat step, that this Ewe example reaches Togo as well as Ghana, and that the music
+"feels like 12/8 and 3/4 at the same time".
 
 Next: [Clave and 6/8 in Afro-Cuban Music](poly-afro-cuban.qmd).
 
@@ -74,6 +80,8 @@ Next: [Clave and 6/8 in Afro-Cuban Music](poly-afro-cuban.qmd).
 **For students**
 
 "Polyrhythm." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Polyrhythm](https://en.wikipedia.org/wiki/Polyrhythm). Unverified: definitions, 3:2 and 4:3, cross-rhythm. Not yet re-read.
+
+Toussaint, Godfried T. *The Geometry of Musical Rhythm: What Makes a "Good" Rhythm Good?* 2nd ed., CRC Press, 2020. Read 2026-11-27. Tresillo [3-3-2] and its use in Cuba, New Orleans second-line drumming and rockabilly, p. 12; wooden claves, p. 17; gankogui double bell, p. 19; clave son [3-3-4-2-4] (onsets 0, 3, 6, 10, 12 of 16), pp. 24-25; clave rumba [3-4-3-2-4], p. 28; 12-pulse bell patterns [2-2-1-2-2-2-1] (bembe) and [2-2-3-2-3] (fume-fume), both called the standard pattern, pp. 41-42; four beats of four or three, pp. 42-43; the four regular divisions of twelve in 12-pulse polyrhythmic music, p. 86; Desmond K. Tai's name "standard pattern", Ewe dances that use it and the Cuban bembe, p. 69; bembe against four, six and three beats, and clave son 3-2 / 2-3, p. 72.
 :::
 <!-- /works-cited -->
 

@@ -40,6 +40,7 @@
 //                        bar = the same bar counted as opts.fromBar counts, -1 in the count-in: resume a paused tune with it);
 //   opts.drums = false   the band without drums;  opts.bandOpts  extra BandPlayer options merged over the style's (e.g. { voicing });
 //   opts.melody = false  the chords alone (the tune's notes are drawn but not played).
+//   opts.bass = false    the band's bass player silent (the tune IS a bass line: lessons/walking-bass-lines.qmd).
 // MELODY AGAINST THE BAND (bug fixed 2026-10-28, MLT/DMTI pages): the band's beat and every melody note's position come from
 // msBar, so msBar must be measured at the tempo given to setTiming: v.millisecondsPerMeasure(bpm) with that same bpm. Called bare it
 // returns the tune's own Q: (or abcjs's default), and with opts.qpm set (a tempo slider) the melody stretched against the band and a
@@ -173,6 +174,7 @@
       if (opts.bandOpts) o = Object.assign(o, opts.bandOpts);
       if (opts.drums === false) { o = Object.assign(o, { groove: "none", fills: "none" }); vol.drums = 0; }
       if (opts.melody === false) o.melody = false;
+      if (opts.bass === false) vol.bass = 0;
       if (chordsOnly) { o = Object.assign(o, { compRhythm: "pad", groove: "none", melody: false, fills: "none" }); vol = { bass: 0, comp: 1, drums: 0 }; }
       var at = null, done = false;
       var fb = Math.max(0, (opts.fromBar | 0) - k0);

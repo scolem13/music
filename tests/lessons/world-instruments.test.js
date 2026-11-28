@@ -21,7 +21,7 @@ check("sympathy: a played Sa drives the Sa taraf string far more than a quarter-
 const tOn = M.tarafRender("sitar", st, sa, sr, 2.5), tOff = M.tarafRender("sitar", st, sa * Math.pow(2, 0.5 / 12), sr, 2.5), tail = y => rms(y.subarray(Math.round(1.5 * sr), Math.round(2.4 * sr)));
 check("sympathetic strings ring after a matching note (tail energy)", tail(tOn) > 5 * tail(tOff) + 1e-9, tail(tOn).toExponential(1) + " vs " + tail(tOff).toExponential(1));
 const fr = M.frets(st);
-check("19 frets; Yaman has tivra Ma, not shuddha", fr.length === 19 && fr.some(f => f.k === "M#") && !fr.some(f => f.k === "M" && f.used));
+check("20 frets; Yaman has tivra Ma, not shuddha", fr.length === 20 && fr.some(f => f.k === "M#") && !fr.some(f => f.k === "M" && f.used));
 check("Bhupali: Ma and Ni frets unused", M.frets(M.clean("sitar", { raga: "bhupali" })).filter(f => !f.used).every(f => f.k === "M" || f.k === "N"));
 check("meend raises the pitch (partial energy moves to the pulled pitch)", (() => { const y = M.stringRender(200, { dur: 1.5, jawari: 0, meend: 3 }, sr), up = 200 * Math.pow(2, 3 / 12); return M.gz(y, sr, up, 0.9, 1.3) > 5 * M.gz(y, sr, 200, 0.9, 1.3); })());
 check("tanpura tunings: Pa 3/4, Ma 2/3 of sa", M.TAN.P.r === 0.75 && Math.abs(M.TAN.M.r - 2 / 3) < 1e-9);

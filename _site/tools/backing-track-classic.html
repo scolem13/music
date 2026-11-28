@@ -315,6 +315,10 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
  <span class="dropdown-text">Accompaniment Styles</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../tools/walking-bass.html">
+ <span class="dropdown-text">Walking Bass Generator</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../tools/drumset.html">
  <span class="dropdown-text">Drumset</span></a>
   </li>  
@@ -333,6 +337,18 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../tools/polyrhythm.html">
  <span class="dropdown-text">Polyrhythm</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/rhythm-library.html">
+ <span class="dropdown-text">Rhythm Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/mode-library.html">
+ <span class="dropdown-text">Mode &amp; Raga Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/alt-notation.html">
+ <span class="dropdown-text">Sargam, Swara and Jianpu</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">Chords and harmony</li>
@@ -473,6 +489,14 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../gear/x32-headset-scene.html">
  <span class="dropdown-text">X32 scene for the headset mics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/x32-guitar-vocals-computer.html">
+ <span class="dropdown-text">X32: Guitar, Vocal Effects and a Computer</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/ur22mkii.html">
+ <span class="dropdown-text">UR22mkII: Guitar, Vocal Effects and a Computer</span></a>
   </li>  
     </ul>
   </li>
@@ -1109,6 +1133,11 @@ document.addEventListener('DOMContentLoaded', async function () {
         <div class="bt-field"><label for="bt-swell" title="Automatic: the pedal follows how hard the band is playing, opens through the last bar of each phrase and into a chorus, and is pulled back after a stop.">Swell pedal</label>
           <select id="bt-swell"><option value="auto">Automatic</option><option value="hand">By hand</option></select></div>
         <div class="bt-field"><label for="bt-click">Key click <output id="bt-click-out"></output></label><input type="range" id="bt-click" min="0" max="100" value="50"></div>
+        <div class="bt-field"><label for="bt-perc" title="Harmonic percussion, as on the B-3: a decaying 2nd (4′) or 3rd (2⅔′) harmonic on each note struck with no other key held. While it is on the 1′ tonebar is silent; Normal lowers the tonebars a little. Decay times and levels are this site's guesses.">Percussion</label>
+          <select id="bt-perc"><option value="off">Off</option><option value="on">On</option></select></div>
+        <div class="bt-field bt-perc-f"><label for="bt-perc-h">Harmonic</label><select id="bt-perc-h"><option value="2nd">Second</option><option value="3rd">Third</option></select></div>
+        <div class="bt-field bt-perc-f"><label for="bt-perc-dec">Decay</label><select id="bt-perc-dec"><option value="fast">Fast</option><option value="slow">Slow</option></select></div>
+        <div class="bt-field bt-perc-f"><label for="bt-perc-vol">Volume</label><select id="bt-perc-vol"><option value="soft">Soft</option><option value="normal">Normal</option></select></div>
         <div class="bt-field" id="bt-swell-pos-f" hidden=""><label for="bt-swell-pos">Pedal <output id="bt-swell-out"></output></label><input type="range" id="bt-swell-pos" min="0" max="100" value="70"></div>
       </div>
       <div class="bt-tonebars" id="bt-tonebars" role="group" aria-label="The nine tonebars, 0 (in) to 8 (out)"></div>
@@ -2152,7 +2181,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     voiceMove: $("bt-vmove").value, extend: extendChoice(), figures: $("bt-figs").value,
     octave: { bass: parseInt($("bt-oct-bass").value, 10) || 0, comp: parseInt($("bt-oct-comp").value, 10) || 0, comp2: parseInt($("bt-oct-comp2").value, 10) || 0 },
     compSound: c.sound || c.inst, bassSound: $("bt-bass-sound").value, rideSound: $("bt-ride-sound").value, stops: stopBars(), fills: $("bt-fills").value, melody: !(remote && remote.mute) && !melRec && melHear(), push: $("bt-push").checked, endChoke: $("bt-endchoke").checked, lift: liftBars().concat(chorusBars()), halfBars: liftBars("bt-half"), boom: (parseInt($("bt-boom").value, 10) || 0) / 100,
-    full: !!styleRow().full, calm: !!styleRow().calm, halfRhythm: styleRow().halfRhythm || null }; }                 // (what only the style says: whole triads, calm bars at cadences, and its piano in bars of half time)
+    full: !!styleRow().full, calm: !!styleRow().calm, halfRhythm: styleRow().halfRhythm || null, walkDevices: wbDev, bassLine: wbLine }; }                 // (what only the style says: whole triads, calm bars at cadences, and its piano in bars of half time)
   function styleRow(){ var id = $("bt-style").value, r = null; STYLES.forEach(function(x){ if (x.id === id) r = x; }); return r || {}; }
   // only the sample sets the menus ask for are loaded
   function neededSounds(){ var out = menuSounds(); function add(n){ if (out.indexOf(n) < 0) out.push(n); }
@@ -2203,12 +2232,13 @@ document.addEventListener('DOMContentLoaded', async function () {
                     ["006600000", "Soft pad: 8\u2032 and 4\u2032 (00 6600 000)"], ["800000888", "Low and whistling (80 0000 888)"], ["888888888", "Full organ (88 8888 888)"]];
   function organSound(){ var c = compDef(), s2 = secondDef(), a = c.sound || c.inst, b = s2 ? (s2.sound || s2.inst) : null; return BandSounds.getTonebars(a) ? a : b && BandSounds.getTonebars(b) ? b : null; }
   function organSaved(){ try { return JSON.parse(localStorage.getItem(ORGAN_KEY) || "{}") || {}; } catch (e) { return {}; } }
-  function organStore(){ try { localStorage.setItem(ORGAN_KEY, JSON.stringify({ bars: BandSounds.getTonebars("hammond").join(""), leslie: $("bt-leslie").value, swell: $("bt-swell").value, pos: $("bt-swell-pos").value, click: $("bt-click").value })); } catch (e) {} }
+  function organStore(){ try { localStorage.setItem(ORGAN_KEY, JSON.stringify({ bars: BandSounds.getTonebars("hammond").join(""), leslie: $("bt-leslie").value, swell: $("bt-swell").value, pos: $("bt-swell-pos").value, click: $("bt-click").value, perc: [$("bt-perc").value, $("bt-perc-h").value, $("bt-perc-dec").value, $("bt-perc-vol").value] })); } catch (e) {} }
   function organOpts(){ return { leslie: $("bt-leslie").value, swell: $("bt-swell").value === "auto" ? "auto" : (parseInt($("bt-swell-pos").value, 10) || 0) / 100 }; }
   function organShow(){
     var bars = BandSounds.getTonebars("hammond"); bars.forEach(function(b, i){ $("bt-tb-" + i).value = b; $("bt-tb-o" + i).textContent = b; });
     var reg = bars.join(""); $("bt-tb-preset").value = TB_PRESETS.some(function(p){ return p[0] === reg; }) ? reg : "";
     $("bt-swell-pos-f").hidden = $("bt-swell").value === "auto"; $("bt-swell-out").textContent = $("bt-swell-pos").value + "%"; $("bt-click-out").textContent = $("bt-click").value + "%";
+    var pOn = $("bt-perc").value === "on"; Array.prototype.forEach.call(document.querySelectorAll("#bt-organ .bt-perc-f"), function(f){ f.hidden = !pOn; });
   }
   function organSync(){ $("bt-organ").hidden = !organSound(); }
   function organInit(){
@@ -2218,6 +2248,10 @@ document.addEventListener('DOMContentLoaded', async function () {
     fill($("bt-tb-preset"), [{ id: "", label: "As set below" }].concat(TB_PRESETS.map(function(p){ return { id: p[0], label: p[1] }; })));
     if (sv.bars) BandSounds.setTonebars("hammond", sv.bars);
     if (sv.leslie) $("bt-leslie").value = sv.leslie; if (sv.swell) $("bt-swell").value = sv.swell; if (sv.pos != null) $("bt-swell-pos").value = sv.pos; if (sv.click != null) $("bt-click").value = sv.click;
+    if (sv.perc) ["bt-perc", "bt-perc-h", "bt-perc-dec", "bt-perc-vol"].forEach(function(id, i){ if (sv.perc[i]) $(id).value = sv.perc[i]; });
+    function percSet(){ BandSounds.setControl("hammond", "perc", $("bt-perc").value === "on"); BandSounds.setControl("hammond", "percH", $("bt-perc-h").value);
+      BandSounds.setControl("hammond", "percDec", $("bt-perc-dec").value); BandSounds.setControl("hammond", "percVol", $("bt-perc-vol").value); }
+    ["bt-perc", "bt-perc-h", "bt-perc-dec", "bt-perc-vol"].forEach(function(id){ $(id).addEventListener("change", function(){ percSet(); organShow(); organStore(); }); }); percSet();
     function clickSet(){ BandSounds.setControl("hammond", "click", (parseInt($("bt-click").value, 10) || 0) / 100); }
     $("bt-click").addEventListener("input", function(){ clickSet(); organShow(); organStore(); }); clickSet();
     function hand(){                                                 // set by hand: heard at once, and the band's organist leaves it alone
@@ -2494,7 +2528,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     sideIdle();
   }
   // pins are fixed pitches, so they stop applying once the key or the changes move
+  // the Walking Bass Generator's devices (opts.walkDevices) and its exact line (opts.bassLine, fixed pitches over fixed changes)
+  var wbDev = null, wbLine = null;
+  function clearWalkLine(why){
+    if (!wbLine) return;
+    wbLine = null; if (player) player.setOpts(bandOpts());
+    pinNote("The walking bass line from the Walking Bass Generator was dropped because " + (why || "the changes moved") + ". The bassist walks on its own again" + (wbDev ? ", with the same devices." : "."), false, true);
+  }
   function clearPins(why){
+    clearWalkLine(why);
     if (!pins) return;
     pins = null; pinAuto = {}; if (player) player.setOpts(bandOpts());
     pinNote(why ? "Pinned voicings cleared because " + why + ". The band is choosing its own voicings again." : "Pinned voicings cleared. The band is choosing its own voicings again.", false, true);
@@ -2503,7 +2545,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   function readHandoff(){
     var raw = null, h = null;
     try { raw = localStorage.getItem("bandHandoff"); h = raw ? JSON.parse(raw) : null; } catch (e) { h = null; }
-    if (!h || (h.from !== "chord-sheet" && h.from !== "chord-entry")) return null;
+    if (!h || (h.from !== "chord-sheet" && h.from !== "chord-entry" && h.from !== "walking-bass")) return null;
     try { localStorage.removeItem("bandHandoff"); } catch (e) {}
     if (h.v !== 1 || typeof h.abc !== "string" || !(Date.now() - h.at < HANDOFF_MAX_AGE) || !(h.at - Date.now() < HANDOFF_MAX_AGE)) return { stale: true };
     return h;
@@ -2538,13 +2580,28 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
   function allowedFeel(f){ return unlocked() || styleDef().feel === f; }
   function loadHandoff(){
-    var q = /[?&]from=(chord-sheet|chord-entry)(&|$)/.exec(location.search); if (!q) return;
+    var q = /[?&]from=(chord-sheet|chord-entry|walking-bass)(&|$)/.exec(location.search); if (!q) return;
     var h = readHandoff();
     try { history.replaceState(null, "", location.pathname + location.hash); } catch (e) {}
     if (!h) return;
     if (h.stale || !applyAbc(h.abc, false)){
-      pinNote("The voicings from Chord Sheet didn't come through (they expire after ten minutes). Send them again from Chord Sheet.", false, true); return; }
+      pinNote(q[1] === "walking-bass" ? "The line from the Walking Bass Generator didn't come through (it expires after ten minutes). Send it again." : "The voicings from Chord Sheet didn't come through (they expire after ten minutes). Send them again from Chord Sheet.", false, true); return; }
     $("bt-changes").value = "custom";
+    if (h.from === "walking-bass"){                                       // a line (or its devices) from the Walking Bass Generator
+      $("bt-unlock").checked = false; setStyle(STYLES.some(function(x){ return x.id === h.style; }) ? h.style : "swing");
+      var want = h.bass === "two" ? "two" : "walkdev";
+      if (!Array.prototype.some.call($("bt-bass").options, function(o){ return o.value === want; })){ $("bt-unlock").checked = true; rebuild(false); }
+      $("bt-bass").value = want; blendNote("bass");
+      if (h.tempo){ $("bt-tempo-n").value = h.tempo; var bpm2 = tempo(); $("bt-tempo-n").value = bpm2; $("bt-tempo").value = bpm2; player.setTempo(bpm2); }
+      if (h.choruses){ var cs = $("bt-choruses"); if (Array.prototype.some.call(cs.options, function(o){ return o.value === String(h.choruses); })) cs.value = String(h.choruses); player.setChoruses && player.setChoruses(parseInt(cs.value, 10)); }
+      wbDev = h.devices && typeof h.devices === "object" ? h.devices : null;
+      var nb = (parsedC.playOrder || parsedC.bars).length;
+      wbLine = h.mode === "exact" && h.line && Array.isArray(h.line.bars) && h.line.bars.length === BandHarmony.buildForm(parsedC, 0).length ? { bars: h.line.bars } : null;
+      pinNote(wbLine ? "Playing the exact walking line from the Walking Bass Generator (" + h.line.bars.length + " bars, every chorus written out as one form). Editing the changes or the key drops it."
+        : h.mode === "exact" ? "Loaded the changes from the Walking Bass Generator, but its line did not fit them (" + nb + " bars), so the bassist walks with its devices."
+        : "Loaded the changes from the Walking Bass Generator. The bassist walks with its devices" + (wbDev ? " (device bars " + Math.round((wbDev.amount || 0) * 100) + "%)." : "."), false, true);
+      player.setInstruments(neededSounds()); player.setOpts(bandOpts()); return;
+    }
     if (h.from === "chord-entry"){                                        // changes (and maybe voicings) played in on the Chord Entry page
       if (h.style && STYLES.some(function(x){ return x.id === h.style; })){ $("bt-unlock").checked = false; setStyle(h.style); player.setInstruments(neededSounds()); }
       if (h.tempo){ $("bt-tempo-n").value = h.tempo; var bpm = tempo(); $("bt-tempo-n").value = bpm; $("bt-tempo").value = bpm; player.setTempo(bpm); }
@@ -2783,6 +2840,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   $("bt-tempo-n").addEventListener("change", function(){ var t = tempo(); $("bt-tempo-n").value = t; $("bt-tempo").value = t; player.setTempo(t); });
   $("bt-key").addEventListener("change", function(){
     // pinned voicings move with the key: the same shapes, up or down by the smaller distance
+    clearWalkLine("you changed the key");
     var was = pins, from = parsedC ? parsedC.keyPc : 0, auto = pinAuto;
     pins = null;
     var text = abc; try { text = AbcTranspose.transpose(abc, $("bt-key").value); } catch (e) {}

@@ -21,22 +21,22 @@ The **tresillo** divides eight pulses 3 + 3 + 2:
 <div class="poly" data-layers="x..x..x.;2" data-names="Tresillo;Two beats" data-sounds="wood;kick" data-bpm="70" data-beat="1"></div>
 
 It is not an even polyrhythm (the three notes are not equal), but it is heard as three against the two beats,
-and it is everywhere from Cuban son to New Orleans and pop.
+and it is found in Cuba, in the second-line drumming of New Orleans funeral marches and in 1950s rockabilly (Toussaint 12).
 
 ## Son clave
 
-Son clave is two bars: a tresillo-like "three side" and a "two side".
+Son clave is a cycle of sixteen pulses (gaps 3 3 4 2 4, onsets at 0, 3, 6, 10 and 12) in two halves: a tresillo-like "three side" and a "two side" (Toussaint 24-25).
 
 `x . . x . . x . | . . x . x . . .`  (3-2)
 
 <div class="poly" data-layers="x..x..x...x.x...;4" data-names="Son clave 3-2;Four beats" data-sounds="wood;kick" data-bpm="80" data-beat="1"></div>
 
-Played starting from the second half it is **2-3 clave**. Which side comes first is fixed by the song, and
-the other parts are written to fit it.
+Started from the second half it is **2-3 clave**; the two are also called the forward and reverse claves (Toussaint 72).
+Which side comes first is fixed by the song, and the other parts are written to fit it.
 
 ## Rumba clave
 
-Rumba clave moves the last note of the three side one pulse later, which pulls harder against the beat:
+Rumba clave (gaps 3 4 3 2 4; Toussaint 28) moves the last note of the three side one pulse later, which pulls harder against the beat:
 
 <div class="poly" data-layers="x..x...x..x.x...;x..x..x...x.x...;4" data-names="Rumba clave;Son clave;Four beats" data-sounds="wood;hi;kick" data-bpm="80" data-beat="2"></div>
 
@@ -44,8 +44,8 @@ Mute one clave at a time to hear the one note that differs.
 
 ## 6/8: the bell against four
 
-In Afro-Cuban 6/8 styles (often called *bembé*), the bell plays the same 12-pulse pattern as in the
-[West African lesson](poly-west-africa.qmd), and the band moves between feeling four beats and six.
+In the Afro-Cuban *bembé*, the bell plays the same 12-pulse pattern as in the
+[West African lesson](poly-west-africa.qmd) (Toussaint 69), and it can be heard against four beats, six or three (Toussaint 72).
 
 <div class="poly" data-layers="x.x.xx.x.x.x;4;6" data-names="6/8 bell;Four beats;Six (dotted)" data-sounds="bell;kick;wood" data-bpm="60" data-beat="1"></div>
 
@@ -58,9 +58,12 @@ a hemiola.
 2. Step four beats and clap the 6/8 bell.
 3. In the [Polyrhythm tool](../tools/polyrhythm.qmd), type your own variation of clave and hear it against four.
 
-## Unverified, to check
+## Checked and not checked
 
-From memory, not yet checked: the term *bembé* for the 6/8 style, and tresillo's spread into New Orleans music.
+Checked against Toussaint (*The Geometry of Musical Rhythm*, 2020): the tresillo and where it is used, son and rumba clave
+and their gaps, 3-2 and 2-3, and that the bembé uses the 12-pulse bell. Still unverified: that the bembé is a "6/8 style"
+as such, that Afro-Cuban music grew from West African and Spanish traditions, and that the order of the two sides is
+fixed by the song.
 
 Next: [Polyrhythm in Jazz](poly-jazz.qmd).
 
@@ -72,9 +75,11 @@ Next: [Polyrhythm in Jazz](poly-jazz.qmd).
 
 **For students**
 
-"Clave (rhythm)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Clave_(rhythm)](https://en.wikipedia.org/wiki/Clave_(rhythm)). Unverified: son and rumba clave, 3-2 / 2-3, tresillo. Not yet re-read.
+"Clave (rhythm)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Clave_(rhythm)](https://en.wikipedia.org/wiki/Clave_(rhythm)). Son and rumba clave grids, 3-2 / 2-3 and tresillo confirmed in Toussaint 2026-11-27; which side starts a song is unverified. Page not yet re-read.
 
 "Polyrhythm." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Polyrhythm](https://en.wikipedia.org/wiki/Polyrhythm). Unverified: definitions, 3:2 and 4:3, cross-rhythm. Not yet re-read.
+
+Toussaint, Godfried T. *The Geometry of Musical Rhythm: What Makes a "Good" Rhythm Good?* 2nd ed., CRC Press, 2020. Read 2026-11-27. Tresillo [3-3-2] and its use in Cuba, New Orleans second-line drumming and rockabilly, p. 12; wooden claves, p. 17; gankogui double bell, p. 19; clave son [3-3-4-2-4] (onsets 0, 3, 6, 10, 12 of 16), pp. 24-25; clave rumba [3-4-3-2-4], p. 28; 12-pulse bell patterns [2-2-1-2-2-2-1] (bembe) and [2-2-3-2-3] (fume-fume), both called the standard pattern, pp. 41-42; four beats of four or three, pp. 42-43; the four regular divisions of twelve in 12-pulse polyrhythmic music, p. 86; Desmond K. Tai's name "standard pattern", Ewe dances that use it and the Cuban bembe, p. 69; bembe against four, six and three beats, and clave son 3-2 / 2-3, p. 72.
 :::
 <!-- /works-cited -->
 

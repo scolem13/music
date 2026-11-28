@@ -1,0 +1,190 @@
+---
+title: "Mode & Raga Library"
+toc: true
+description: "Ragas, melakartas, maqamat, pathet, Japanese and church modes and jazz chord-scales, each split into what is fixed (like a clave), what is chosen from a pool (like bebop alterations), where it leans, and what is left free; every card plays, and every note comes from a cited source."
+---
+
+The [Rhythm Library](rhythm-library.qmd) collects patterns that repeat exactly: play son clave backwards and it is no longer son clave.
+Melody systems are different. Some parts work like that clave, and others work like the alterations on a bebop dominant, where the
+player picks ♭9 or ♯9 tonight and something else tomorrow. Each card below sorts a mode's features into four kinds:
+
+| | What it means | Like… |
+|---|---|---|
+| **Fixed** | Change it and it is no longer this mode. | the clave: one pattern, kept exactly |
+| **Chosen** | The tradition gives a set; the player picks from it each time. | bebop alterations: any of ♭9 ♯9 ♯11 ♭13 |
+| **Leans on** | Weight and habit: stressed notes, usual endings. A centre, not a rule. | the backbeat on 2 and 4 |
+| **Free** | Left to the musician: the tunes, the ornaments, the order of ideas. | a solo |
+
+## Strict and chosen, tradition by tradition
+
+| Tradition | Fixed | Chosen | Leans on | Free |
+|---|---|---|---|---|
+| Hindustani rāg | the notes, the way up and the way down (āroh / avaroh), crooked (vakra) paths, special intonation | (little: each rāg's notes and turns are set) | vādī and saṁvādī, stressed and passing notes | the tunes ("an infinite number"), ornaments, the order of the performance |
+| Karnatak mela | all seven notes, stepwise, the same both ways: a rule that fixes all 72 | | | compositions, improvisation |
+| Karnatak janya rāga | which notes are left out, where it turns back | | | |
+| Arabic maqām | the lower jins and the ghammaz | the upper jins (Rast: Upper Rast or Nahawand) | intonation (quarter tones are notation, not pitch) | modulation, the path (sayr) |
+| Javanese pathet | the gamelan's own tuning | | stressed tones, avoided endings | the elaborating parts |
+| Japanese in / yo | the five notes | auxiliary notes, used or not | the nuclear tones a fourth apart | |
+| Church modes | the final and the range | | the reciting tone | the chant |
+| Jazz | the bebop scale's passing note, so chord tones land on the beat | alterations on 7alt; which scale over a dominant | | the line |
+
+Choose a tonic, a sound and a tempo here; every ▶ on the page uses them. Rāgs and maqāmat play over a drone (Sa and Pa, or Sa
+and Ma when the rāg has no Pa, as Garland describes); jazz cards play their chord on the piano. A 🎲 picks from a pool for you.
+
+<div class="ml-bar">
+<input id="ml-q" type="search" class="form-control" placeholder="Search a name, place or time (e.g. dawn, Hijaz)">
+<select id="ml-kind" class="form-select"><option value="">Any card</option><option value="chosen">Cards with a pool to choose from</option><option value="lean">Cards with leanings</option></select>
+<label>Tonic <select id="ml-tonic" class="form-select"><option value="-1">C</option><option value="0" selected>C♯</option><option value="1">D</option><option value="2">D♯</option><option value="3">E</option><option value="4">F</option><option value="6">G</option><option value="8">A</option></select></label>
+<label>Sound <select id="ml-inst" class="form-select"><option value="flute">Flute</option><option value="violin">Violin</option><option value="clarinet">Clarinet</option><option value="asax">Alto sax</option><option value="vibes">Vibes</option></select></label>
+<label>Tempo <select id="ml-tempo" class="form-select"><option value="70">Slow</option><option value="100" selected>Medium</option><option value="150">Fast</option></select></label>
+<label>Drone <select id="ml-drone" class="form-select"><option value="on">On</option><option value="off">Off</option></select></label>
+<button id="ml-stop" class="btn btn-sm btn-outline-secondary">■ Stop</button>
+</div>
+
+## Hindustani rāg
+
+A rāg "is not a tune … it is not a scale, because numerous ragas can be based on the same scale" (Ruckert and Widdess 67).
+Its āroh and avaroh are often different, "since different pitches may appear in ascending and descending contexts", and may
+leave strict scale order (*vakra*, crooked). Performers know a rāg mainly by its phrases: the *calan* ("way of moving") and the
+*pakaḍ* ("catch", the phrase that sums it up). Playing another rāg's phrase by accident "is regarded as a gross error" (68-69).
+
+The 23 below are Garland's Figure 6 (80-81), exactly as printed, grouped as there: dawn and sunset rāgs (sandhiprakāś), the
+bilāval family (major-scale tones), the āsāvarī family (natural-minor tones), four with one outline in different forms of the
+notes, and three for the rainy season. Lower case = komal (flat), *M* = tīvra Ma (sharp 4th); a dot above or below = the upper or
+lower register; a gap = a breath in the printed line. The notes are tuned in pure ratios against the drone, as on the
+[Ragas](../lessons/ragas.qmd) lesson; Garland says real intonation "cannot be reduced to a rigid system" (67).
+
+<div id="ml-hind" class="ml-list"></div>
+
+## Karnatak rāga
+
+Venkatamakhi (17th century) set three rules for a parent (*mela*) rāga: all seven notes going up and coming down, in stepwise
+order, with the same intervals both ways (Kassebaum 97). With two forms of Ma and six ways each to fill Ri–Ga and Dha–Ni, the rule
+gives 72 melas, and each is completely fixed by it. Derived (*janya*) rāgas leave notes out, turn back, or add notes from outside.
+Musicians "do not study the system directly": they learn rāgas from compositions (97).
+
+<div id="ml-karn" class="ml-list"></div>
+
+### Build any of the 72
+
+The numbering here (Ma, then Ri–Ga pair, then Dha–Ni pair) is worked out from the rule; only mela 29's name is checked.
+
+<div id="ml-mela"></div>
+
+## Arabic maqām
+
+A *jins* is "a maqam scale fragment of 3, 4 or 5 notes". A maqām starts with one jins on its tonic, which names its family, and
+continues with another from the *ghammaz*, "the most important note of melodic emphasis (besides the tonic)" (MaqamWorld). For
+many maqāmat MaqamWorld names two possible upper ajnas: that is the **chosen** part. The quarter-tone numbers are notation:
+Wikipedia says the 24-tone system "does not affect the actual precise intonation of the notes performed". The cents here are that
+notation, not a performer's tuning.
+
+<div id="ml-maqam" class="ml-list"></div>
+
+## Javanese pathet
+
+Each tuning has three pathet: slendro nem, sanga and manyura, and pélog lima, nem and barang. These are the "tonic", the
+"dominant" and the avoided notes from Wikipedia's table. It adds that the avoided notes are "rare as seleh" (phrase endings).
+Nothing is fixed about the pitches across gamelans: "no two gamelan sets will have exactly the same tuning" (Lindsay, via
+Wikipedia). Within one gamelan, though, every instrument shares them, so the tuning is fixed for the players.
+
+<div id="ml-pathet" class="ml-list"></div>
+
+## Japanese scales
+
+<div id="ml-japan" class="ml-list"></div>
+
+## Church modes
+
+A mode in plainchant is set by its *final* and its range. Each authentic mode has a plagal partner on the same final, a fourth
+lower. Psalm verses are chanted on the *reciting tone*.
+
+<div id="ml-church" class="ml-list"></div>
+
+## Jazz: bebop and chord-scales
+
+These are the opposite cases. The bebop scale's added passing note is placed so that "the primary chord tones … continuously fall
+on the on-beats" (Wikipedia, "Bebop scale"): that placement is fixed, like a clave. An altered dominant is a pool: the alterations
+of a "G7alt" are "left to the artistic discretion of the comping musician" (Wikipedia, "Altered chord").
+
+<div id="ml-jazz" class="ml-list"></div>
+
+## Not here yet
+
+- **Turkish makam, Persian dastgāh**: no source read yet. The Garland volume on the Middle East is the next place to look.
+- **Maqām notes and paths as MaqamWorld draws them**: its scales, ascents and descents, and *sayr* are images, not text, so only
+  the structure in its prose is here. Saba's measured cents (160, 140 and 95 for its first steps, Wikipedia) are not used yet.
+- **Pakaḍ phrases for each rāg**: Garland gives no pakaḍ for these rāgs. Vādī and saṁvādī are left out for the same reason
+  (sources for both: `scripts/sources/ragas.py`).
+- **Pūrvīkalyāṇī** and other janya rāgas in Kassebaum's Figure 6: the notes in the scan are not yet read.
+- **Melakarta names** other than 29: not checked.
+- **Pathet and time of night**: Wikipedia gives only the order through a wayang.
+- **Gamaka**: Karnatak ornaments are part of the notes themselves, and these plain players do not play them.
+
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/playbar.js"></script>
+<script src="/apps/shared/band/sounds.js"></script>
+<script src="/apps/shared/mode-library.js"></script>
+<script src="/apps/shared/section-fold.js"></script>
+<style>
+.ml-bar{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:1rem 0}.ml-bar input[type=search]{flex:1 1 16rem}.ml-bar select{width:auto;display:inline-block}
+.ml-bar label{display:flex;gap:.3rem;align-items:center;font-size:.9rem}
+.ml-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(26rem,1fr));gap:1rem}
+.ml-card{border:1px solid var(--bs-border-color);border-radius:.5rem;padding:.75rem}
+.ml-card h3{margin:0 0 .25rem;font-size:1.15rem}.ml-card p{margin:.3rem 0;font-size:.92rem}
+.ml-aka,.ml-where,.ml-src,.ml-note{font-size:.8rem!important;color:var(--bs-secondary-color)}.ml-note{font-style:italic}
+.ml-meter{display:flex;gap:.25rem;flex-wrap:wrap}
+.ml-k{display:inline-block;font-size:.72rem;font-weight:600;padding:0 .4rem;border-radius:.25rem;border:1px solid}
+.ml-fixed{background:#1f3b5a;color:#fff;border-color:#1f3b5a}
+.ml-chosen{background:transparent;color:#b5641b;border:1px dashed #b5641b}
+.ml-lean{background:#eef3ee;color:#3d6b45;border-color:#9bbf9f}
+.ml-free{background:transparent;color:var(--bs-secondary-color);border-color:var(--bs-border-color)}
+.ml-feat{margin:.45rem 0;padding:.35rem .5rem;border-left:4px solid var(--bs-border-color);font-size:.9rem}
+.ml-f-fixed{border-left-color:#1f3b5a}.ml-f-chosen{border-left:4px dashed #b5641b}.ml-f-lean{border-left-color:#9bbf9f}
+.ml-seq{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;margin:.25rem 0}
+.ml-notes{display:flex;flex-wrap:wrap;gap:.15rem}.ml-n{font-family:var(--font-mono,monospace);font-size:.82rem;padding:0 .2rem;border-radius:.2rem}
+.ml-gap{color:var(--bs-secondary-color);padding:0 .2rem}.ml-n.ml-on{background:#ffd76a;color:#000}
+.ml-opts{display:flex;flex-direction:column;gap:.1rem;margin:.2rem 0 0 .5rem}.ml-opt{font-size:.85rem;margin-right:.6rem}
+.ml-out{font-size:.85rem;color:#b5641b}
+@media (max-width:600px){.ml-list{grid-template-columns:1fr}}
+</style>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Acoustic scale." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Acoustic_scale](https://en.wikipedia.org/wiki/Acoustic_scale). Lydian dominant over 7#11.
+
+"Altered chord." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Altered_chord](https://en.wikipedia.org/wiki/Altered_chord). 7alt; alterations left to the comping musician.
+
+"Altered scale." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Altered_scale](https://en.wikipedia.org/wiki/Altered_scale).
+
+"Arabic maqam." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Arabic_maqam](https://en.wikipedia.org/wiki/Arabic_maqam). Quarter tones as notation, not precise intonation; modulation.
+
+"Bebop scale." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Bebop_scale](https://en.wikipedia.org/wiki/Bebop_scale). Passing note placed so chord tones fall on the beats; David Baker's name.
+
+"Chord-scale system." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Chord-scale_system](https://en.wikipedia.org/wiki/Chord-scale_system).
+
+Farraj, Johnny, and Sami Abu Shumays. *Maqam World*, [www.maqamworld.com/en/](https://www.maqamworld.com/en/). Accessed 27 Nov. 2026. Maqam pages Rast, Bayati, Hijaz, Saba, Nahawand, Kurd (lower jins, ghammaz, upper ajnas); jins pages (sizes, Hijaz's second played smaller than notated).
+
+"Hirajōshi scale." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Hirajōshi_scale](https://en.wikipedia.org/wiki/Hirajōshi_scale). Three versions in three sets of sources, one interval pattern.
+
+"In scale." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/In_scale](https://en.wikipedia.org/wiki/In_scale).
+
+Kassebaum, Gayathri Rajapur. "Karnatak Raga." *The Garland Encyclopedia of World Music*, vol. 5, *South Asia: The Indian Subcontinent*, edited by Alison Arnold, Garland, 2000, pp. 89-109. Pp. 97-98: Venkatamakhi's 72 melas and the three rules for a parent raga; janya ragas; Fig. 6 Madhyamavati.
+
+"Mode (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Mode_(music)](https://en.wikipedia.org/wiki/Mode_(music)). Church modes: finals, reciting tones, authentic and plagal ranges.
+
+"Octatonic scale." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Octatonic_scale](https://en.wikipedia.org/wiki/Octatonic_scale). Half-whole diminished in dominant harmony.
+
+"Pathet." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Pathet](https://en.wikipedia.org/wiki/Pathet). Table of tonic, dominant and avoided tones; Hood's cadences 'largely disproven'.
+
+"Pelog." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Pelog](https://en.wikipedia.org/wiki/Pelog). 9-TET subset as a rough approximation (Surjodiningrat); tones of each pathet.
+
+Ruckert, George, and Richard Widdess. "Hindustani Raga." *The Garland Encyclopedia of World Music*, vol. 5, *South Asia: The Indian Subcontinent*, edited by Alison Arnold, Garland, 2000, pp. 64-88. Pp. 67-69 (a raga neither tune nor scale; aroh / avaroh, vakra; vadi / samvadi and their limits; calan, pakad; a wrong raga's phrase a gross error; drone Ma or Ni when no Pa), p. 75 and Fig. 4 (Darbari's straight descent a violation; Jaunpuri), Fig. 6 pp. 80-81 (23 ragas' aroh and avaroh), pp. 81-82 (andolan).
+
+"Slendro." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Slendro](https://en.wikipedia.org/wiki/Slendro). Roughly equal steps; no two gamelans alike (Lindsay).
+
+"Yo scale." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Yo_scale](https://en.wikipedia.org/wiki/Yo_scale).
+:::
+<!-- /works-cited -->

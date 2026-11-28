@@ -1,6 +1,6 @@
 # TODO
 
-A map of what is open, gathered from the notes below on 2026-11-06. It does not copy them: each section names the file that
+A map of what is open, gathered from the notes below on 2026-11-06, refreshed 2026-11-27. It does not copy them: each section names the file that
 holds the detail, so fix the item there and tick it here. Items marked (waiting) need something from the teacher.
 
 ## Band (`apps/shared/band/NOTES.org`, `#+TODO: TODO DECIDE | DONE`)
@@ -26,7 +26,7 @@ Search the file for `TODO` / `DECIDE`; about 90 open items. The groups:
    one page or several, progress storage, Mullen's videos). Hearing Harmony, Bass Lines by Ear, Odd Progression Out and
    Blues Changes by Ear already exist, so check which steps are already covered before starting.
 
-## MLT Books (`CLAUDE.md` MLT Books entry, `research_notes/mlt-lesson-builder-plan.md`)
+## MLT Books (`apps/shared/mlt/CLAUDE.md`, `research_notes/mlt-lesson-builder-plan.md`)
 - Books to enter next: JRI Recorder, DMTI 1-3, Music Play, later JRI Elementary (new files `jri-lsa.js`, `litmus.js`,
   `musicplay.js` just landed, uncommitted before the last push - check how far each is).
 - Three DMTI units wait for DMTI's own tunes (`todo` in `apps/shared/mlt/books/dmti.js`) (waiting).
@@ -100,3 +100,17 @@ code into the model, which drops what it can't hold. To clear, cheapest first (e
   (old copy probably Vol. I only). Real Easy Book 1 (3 Horn) is the indexed `real-easy-book-c` in its 3-horn version: skip it. Started 2026-11-17 and stopped part-way: four index files in
   `apps/realbooks/index/` (TV Fake Book 170 entries, Real Easy 2/3 101/63, World's Greatest 207) may be incomplete, so check
   them before use.
+
+## Added 2026-11-27 (work since 2026-11-20 not mapped before)
+- **Other to-do files** not gathered above: `apps/shared/daw/TODO.md` (vim velocity editing steps 2-4, automation lanes,
+  31-EDO, Session view; CC 7 export untested in Live / Logic), `research_notes/mlt-transcribe/TODO.md` (+ `todo-*.tsv` queues
+  for JRI-K and Music Play), plan files `research_notes/*-plan.md` (dmti-generation, bimmuda, realbooks not mapped above).
+- **Instruments / gear** (`research_notes/instruments-todo.md`): pedals, amps, mics, drum kits / cymbals, world instruments and
+  basses all ticked 2026-11-26. Left: listening, since the models are new: the organ mud A/B switches (2026-11-27, defaults
+  unchanged until someone decides by ear); the claims marked unverified in each model's header, to be cited in `scripts/sources/`.
+- **Uncommitted on 2026-11-27**: edits to organ-b3 / sitar / tanpura panels, `world-instruments.js`, `tuning-kit.js`,
+  `polyrhythm.js`, `abc-play.js`, `bass.js`, `arrange-kit.js` and many `_site` files (some `_site/course`, `_site/gear` pages
+  deleted): check and commit or render.
+- **Real books**: New Real Book 2 pdf pp. 312-328 drafts are in review on `/teacher/` (2026-11-22); Real Pop drafts likewise.
+- **Words & Chords gig view** (`&gig=1`, 2026-11-23): built in many rounds; not yet tried on a real phone on a stand (as far as
+  the notes say).

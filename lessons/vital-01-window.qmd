@@ -1,0 +1,157 @@
+---
+title: "Vital 1: The Vital window"
+toc: true
+toc-depth: 2
+description: "Find your way round Vital's window: the four tabs, the preset name, Init Preset and Save, the volume and the oscilloscope, and where the oscillators, filters, envelopes and LFOs live."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+Lesson 1 of 10 in *Vital, step by step*: everything you need to feel at home in the real Vital plug-in. Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Learn the four tabs at the top of Vital.
+2. Find the preset name, Init Preset and Save.
+3. Find where each part of the synth lives.
+4. Press each **▶ Hear step** on this site's panel and open each tab.
+5. Check yourself with a short quiz.
+:::
+
+## A synth in a window
+
+- **Vital** is a *software synth*: a program that makes sounds. It runs inside a music program (a *DAW*, a digital audio workstation) as a *plug-in*.
+- Everything is in one window. Some parts are always there; others change when you pick a *tab* (a button that switches what the middle of the window shows).
+- This lesson is a map. The next nine lessons fill it in, one part at a time.
+
+## The four tabs
+
+- At the top are four tabs, in this order: **VOICE**, **EFFECTS**, **MATRIX**, **ADVANCED** (Vital source, header_section.cpp).
+- **VOICE** shows the oscillators, the sample and the filters. **EFFECTS** shows the effects. **MATRIX** shows the list of modulations. **ADVANCED** shows the "master controls" (Vital source, full_interface.cpp).
+- An *oscillator* makes the raw sound. A *filter* takes some of it away. *Effects* (echo, reverb ...) are added at the end. *Modulation* means one part moving a knob for you.
+
+## The top strip
+
+- The **preset name** sits in the middle of the top strip, with arrows to step to the previous or next preset. A *preset* is a saved sound. Click the name to open the **preset browser**, a list of all your presets (Vital source, synth_preset_selector.cpp).
+- An empty sound shows the name **Init Preset**. A `*` in front of the name means you have changed it since it was loaded (Vital source, synth_preset_selector.cpp).
+- Next to the name are a **Save** button and a **Menu** button (three lines) (Vital source, header_section.cpp).
+- To the right: **VOLUME**, with meters that show how loud the sound is, and an **oscilloscope**, a little screen that draws the wave you hear (Vital source, volume_section.cpp; header_section.cpp).
+
+## What stays on screen
+
+- Under every tab you keep the **envelopes**, **LFOs**, **random** sources and **keyboard** sources on the right, the **voice** and **portamento** strip, and the keyboard along the bottom (Vital source, full_interface.cpp). That they never hide under any tab is read from the code, not checked in the plug-in (unverified).
+- The envelopes, LFOs and randoms each have numbered tab buttons down their left side, and one is shown at a time: **ENVELOPE 1**, **LFO 1**, **RANDOM 1** (Vital source, modulation_interface.cpp).
+- Down the far left are four **MACRO** knobs (Vital source, macro_knob_section.cpp). Lesson 7 uses them.
+
+## This site's panel and the real one
+
+- The panel below is drawn after the real window, at its default size of 1400 × 820, from Vital's layout code. The knobs inside each box are placed by this site, not measured.
+- **Dimmed** controls are drawn but do nothing here: they are *not modelled*. Choose **Show ▾ → Only working controls** in the panel's bar to hide them, and the panel gets much simpler. Choose it again to bring them back.
+- **Size −  +** in the bar makes the panel bigger or smaller. **Presets ▾** saves and loads your own sounds on this page (in this browser only).
+- The VOICE, EFFECTS and MATRIX tabs work on this panel. ADVANCED and the preset browser do not.
+
+## The panel
+
+This site's beginner Vital panel: the real plug-in's names and ranges for a few controls, played by this site's own sound engine (not Vital's code), so it is close but not the same. Play it from the keys under it, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard (**Use MIDI**). Dimmed controls are not modelled; **Show ▾ → Only working controls** hides them.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="vital"><div class="scmp"></div></div>
+```
+
+## Step by step
+
+Each step loads a starting patch made on this page (not one of Vital's presets) and plays it. Listen for the one thing it names, then turn the knob it names.
+
+```{=html}
+<div class="ik-step" data-ex="vital-first" data-page="voice"><p><b>The VOICE tab.</b> One oscillator, the filter open. Look at <b>OSC 1</b> on the left: its wave screen shows a saw. Play a few keys, then click <b>EFFECTS</b> at the top of the panel and back to <b>VOICE</b>.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;fxRev&quot;:35}" data-page="fx"><p><b>The EFFECTS tab.</b> The same sound with <b>Reverb mix</b> at 35 %. The step opened the EFFECTS tab: find the REVERB box and its <b>MIX</b> knob. Listen for the room around each note, then turn MIX to 0 and back.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;m1s&quot;:&quot;LFO 1&quot;,&quot;m1d&quot;:&quot;Cutoff&quot;,&quot;m1a&quot;:40,&quot;cut&quot;:72,&quot;lfoRate&quot;:1}" data-page="matrix"><p><b>The MATRIX tab.</b> LFO 1 is moving the filter's cutoff (slot 1: <b>LFO 1 → Cutoff</b>, 40 %). Listen for the slow "wah". The step opened the MATRIX tab: find slot 1, its source, its destination and its amount.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;vol&quot;:35}" data-page="voice"><p><b>The volume.</b> The same first sound with <b>VOLUME</b> at 35 %. Find the VOLUME knob at the top right of the panel and turn it back up to 70. The sound gets louder but does not change colour.</p></div>
+<div class="ik-step" data-ex="vital-pad" data-page="voice"><p><b>Only working controls.</b> A pad. Open <b>Show ▾</b> in the panel's bar and tick <b>Only working controls</b>. The dimmed knobs disappear. What is left is everything this page can play. Untick it to see the full window again.</p></div>
+```
+
+## In the real Vital
+
+What is different in the plug-in and exactly where to find it. Every line names the file of Vital's source code (github.com/mtytel/vital) it was read from; "(unverified)" means it was not confirmed.
+
+- **Tabs.** The same four tabs: VOICE, EFFECTS, MATRIX, ADVANCED (Vital source, header_section.cpp). ADVANCED holds voice settings, oversampling and display options (Vital source, master_controls_interface.cpp).
+- **Preset browser.** Click the preset name. The tabs are replaced by **PRESET BROWSER** with an **X** to close it (Vital source, full_interface.cpp). It has columns Name, Style, Author and Date, a star for favourites, a **Search** box and style buttons; **Escape** closes it (Vital source, preset_browser.cpp).
+- **Menu.** The three-line button: Browse Presets, Save Preset, Open External Preset, Export Preset, Import Bank, Export Bank, **Initialize Preset**, Load Tuning File ... (Vital source, synth_preset_selector.cpp). Right-clicking the preset name opens the same menu.
+- **Init Preset.** *Initialize Preset* puts every control back to its starting value (Vital source, synth_preset_selector.cpp). In that starting sound only oscillator 1 is on and the filters and effects are off (Vital source, synth_parameters.cpp).
+- **Save.** The Save button opens a box with **NAME**, **AUTHOR**, **STYLE** and **COMMENTS** and the buttons Save, Overwrite and Cancel (Vital source, save_section.cpp). Styles: Bass, Lead, Keys, Pad, Percussion, Sequence, Experiment, SFX, Template (Vital source, synth_strings.h). Presets are `.vital` files (Vital source, synth_constants.h).
+- **Oscilloscope.** A button on it switches it to a *spectrogram*, a picture of the sound's harmonics (Vital source, header_section.cpp).
+- **Counts.** 3 oscillators, 1 sample, 2 filters, 6 envelopes, 8 LFOs, 4 randoms, 4 macros, up to 64 modulations (Vital source, synth_constants.h). This page has 3, 1 (noise), 1, 3, 2, 1, 0 and 8.
+- **Names.** The free source code builds a synth called "Vial", and the code can be newer or older than the plug-in you download, so a few names on screen may differ (Vital README).
+
+## Try it in the real Vital
+
+Open Vital in your DAW (see [Meet Vital](intro-vital.qmd) to install it) and do these in order.
+
+- [ ] Open Vital in your DAW. Read the preset name at the top.
+- [ ] Click **VOICE**, **EFFECTS**, **MATRIX** and **ADVANCED** in turn. Say what each one shows.
+- [ ] Click the preset name to open the browser. Find the Search box. Press Escape to close it.
+- [ ] Open the Menu (three lines) and choose **Initialize Preset**. The name should read *Init Preset*.
+- [ ] Play a key and watch the oscilloscope. Click the button on it to see the spectrogram.
+- [ ] Find ENVELOPE 1, LFO 1 and RANDOM 1 on the right.
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>Which tab shows the oscillators and filters?</b></p><ul><li>VOICE</li><li>EFFECTS</li><li>MATRIX</li><li>ADVANCED</li></ul><p class="ik-why">VOICE shows the oscillators, sample and filters (full_interface.cpp).</p></div>
+<div class="ik-q" data-a="0"><p><b>What does a * in front of the preset name mean?</b></p><ul><li>You have changed the sound since loading it</li><li>The preset is a favourite</li><li>The preset is broken</li><li>It is a factory preset</li></ul><p class="ik-why">synth_preset_selector.cpp adds * when the preset is modified.</p></div>
+<div class="ik-q" data-a="0"><p><b>How do you get a clean, empty sound to start from?</b></p><ul><li>Menu → Initialize Preset</li><li>Turn the volume to 0</li><li>Open the MATRIX tab</li><li>Double-click the oscilloscope</li></ul><p class="ik-why">Initialize Preset loads the starting values (synth_preset_selector.cpp); the name shows Init Preset.</p></div>
+<div class="ik-q" data-a="0"><p><b>On this site&#x27;s panel, what does a dimmed knob mean?</b></p><ul><li>This page does not play it</li><li>It is turned off</li><li>It is broken in Vital</li><li>It is a modulation</li></ul><p class="ik-why">Dimmed = drawn but not modelled. Show ▾ → Only working controls hides them.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which part stays on screen under every tab?</b></p><ul><li>The envelopes and LFOs</li><li>The oscillators</li><li>The effects</li><li>The modulation matrix</li></ul><p class="ik-why">The modulation area stays (full_interface.cpp; read from the code).</p></div>
+```
+
+## Previous and next
+
+::: {.vl-nav}
+- Previous: [Meet Vital](intro-vital.qmd)
+- Next: [Vital 2: Oscillators and wavetables](vital-02-oscillators.qmd)
+:::
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Tytel, Matt. "full_interface.cpp," "synthesis_interface.cpp" and "modulation_interface.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/tree/main/src/interface/editor_sections](https://github.com/mtytel/vital/tree/main/src/interface/editor_sections). Section bounds of the main window at the default 1400 x 820 (synth_constants.h): header 48, macro column, oscillators, sample, two filters, envelopes : LFOs : random = 3 : 4 : 2, voice and portamento strip, keyboard.
+
+Tytel, Matt. "header_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/header_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/header_section.cpp). The four tabs VOICE, EFFECTS, MATRIX, ADVANCED; logo, preset selector, volume, oscilloscope / spectrogram.
+
+Tytel, Matt. "macro_knob_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/macro_knob_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/macro_knob_section.cpp). MACRO 1-4 knobs, each also a modulation source.
+
+Tytel, Matt. "master_controls_interface.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/master_controls_interface.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/master_controls_interface.cpp). Advanced tab: MPE ENABLED, NOTE PRIORITY, VOICE OVERRIDE, TUNING; OVERSAMPLING.
+
+Tytel, Matt. "preset_browser.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/preset_browser.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/preset_browser.cpp). Preset browser columns, search, style buttons, keys.
+
+Tytel, Matt. "save_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/save_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/save_section.cpp). The save box: NAME, AUTHOR, STYLE, COMMENTS; Save, Overwrite, Cancel.
+
+Tytel, Matt. "synth_constants.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_constants.h](https://github.com/mtytel/vital/blob/main/src/common/synth_constants.h). kNumOscillators 3, kNumFilters 2, kNumEnvelopes 6, kNumLfos 8, kNumRandomLfos 4, kNumMacros 4, kMaxModulationConnections 64, kMaxPolyphony 33 (32 playing), effects chorus / compressor / delay / distortion / EQ / filter / flanger / phaser / reverb, filter models Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phase.
+
+Tytel, Matt. "synth_preset_selector.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_components/synth_preset_selector.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_components/synth_preset_selector.cpp). "Init Preset" and the * for a changed preset; the menu (Browse Presets, Save Preset, Initialize Preset ...).
+
+Tytel, Matt. "volume_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/volume_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/volume_section.cpp). VOLUME slider and peak meters.
+
+**For students**
+
+Tytel, Matt. "README." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital#readme](https://github.com/mtytel/vital#readme). "A spectral warping wavetable synthesizer"; GPLv3 source; "the free version of Vital"; download at vital.audio after making an account.
+
+**For teachers**
+
+Tytel, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp](https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp). Oscillator on, transpose, tune, level, wave frame, unison; filter cutoff 8-136 semitones, resonance, drive 0-20 dB, blend 0-2, key track; envelope times 0-2.378; LFO frequency -7..9; polyphony; portamento.
+
+Tytel, Matt. "synth_strings.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h](https://github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h). Filter styles (12dB, 24dB, Notch Blend, Notch Spread, B/P/N) and models (Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phaser).
+:::
+<!-- /works-cited -->

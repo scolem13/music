@@ -1,0 +1,99 @@
+---
+title: "Sargam, Swara and Jianpu"
+toc: true
+description: "Any tune from the collection, or ABC you type, drawn as Hindustani sargam in a tāl grid, Carnatic swara notation against a tāḷa, or Chinese jianpu, next to the staff."
+---
+
+This page rewrites a melody in three notations that name **scale degrees** instead of fixed pitches: Hindustani sargam (in the
+style of Bhatkhande's notation), Carnatic swara notation, and Chinese jianpu. [Writing Music Down](../lessons/notation-choices.qmd)
+explains each one with a single hand-drawn example. Here you can try them on any tune.
+
+## Try a tune
+
+<div class="site-panel an-ctl">
+<label>Tune <input id="an-q" class="form-control form-control-sm" list="an-list" placeholder="Search the tune collection…"></label>
+<datalist id="an-list"></datalist>
+<label>Notation <select id="an-sys" class="form-select form-select-sm">
+<option value="hindustani">Hindustani sargam</option><option value="carnatic">Carnatic swara</option><option value="jianpu">Jianpu</option></select></label>
+<label id="an-tala-l">Tāl <select id="an-tala" class="form-select form-select-sm"></select></label>
+<label>Sa / 1 = <select id="an-sa" class="form-select form-select-sm"></select></label>
+</div>
+
+<div class="site-paper"><div id="an-out"></div></div>
+
+<details class="an-staff"><summary>The staff and the ABC</summary>
+<div id="an-staff"></div>
+<textarea id="an-abc" class="form-control" rows="7" spellcheck="false"></textarea>
+<p class="site-hint">Edit the ABC and the notation redraws.</p>
+</details>
+
+## What this version leaves out
+
+- **Ornaments.** Gamaka, mīnd and andolan are what make a rāga a rāga. ABC has no way to write them, so none are drawn. In
+  both traditions they are learned by ear from a teacher.
+- **Fitting a tune to a tāl.** A Western or Chinese tune doesn't belong to a tāl. The page just counts the beats of the time
+  signature into the cycle you choose (a bar of 4/4 is four mātrās), so a pickup lands before sam. This shows how the
+  notation looks. It is not how either tradition would set the tune.
+- **Sa.** Sa is the tune's home note, so in a minor tune Ga and Dha are komal. Jianpu's 1 is do of the key signature, so a
+  minor tune sits on 6.
+- **Repeats** are not written out. **Chords, lyrics and grace notes** are dropped, and a chord keeps only its first note. The
+  beat is always the bottom number of the time signature, so 6/8 counts six beats, not two.
+- The tāl shapes come from the [Rhythm Library](rhythm-library.qmd), which cites its sources.
+
+<style>
+.an-ctl{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;align-items:end;margin-bottom:1rem}
+.an-ctl label{display:flex;flex-direction:column;font-size:.85rem;gap:.2rem}
+#an-q{min-width:16rem}
+#an-out{padding:.6rem .8rem}
+.an-staff{margin-top:1rem}
+#an-abc{font-family:var(--font-mono);font-size:.85rem;margin-top:.5rem}
+</style>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/abc-core.js"></script>
+<script src="/apps/shared/alt-notation.js"></script>
+<script src="/apps/shared/section-fold.js"></script>
+<script>
+(function () {
+  var MO = "X:1\nT:Mò Lì Huā (first phrase)\nM:2/4\nL:1/8\nK:F\nA2 Ac | df fd | c2 cd | c4 |]\n";
+  var $ = function (id) { return document.getElementById(id); }, PC = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"];
+  var sys = $("an-sys"), tala = $("an-tala"), sa = $("an-sa"), abcBox = $("an-abc"), tunes = {}, saTouched = false;
+  PC.forEach(function (n, i) { sa.add(new Option(n, i)); });
+  function talas() {
+    var L = AltNotation.TALAS[sys.value], keep = tala.value; tala.innerHTML = "";
+    $("an-tala-l").style.display = L.length ? "" : "none";
+    L.forEach(function (t) { tala.add(new Option(t.name, t.id)); });
+    var r = AltNotation.read(abcBox.value);
+    tala.value = L.some(function (t) { return t.id === keep; }) && keep ? keep : AltNotation.defaultTala(sys.value, r.barBeats);
+  }
+  function draw() {
+    var abc = abcBox.value, r = AltNotation.read(abc);
+    if (!saTouched) sa.value = sys.value === "jianpu" ? r.doPc : r.tonic;
+    try { AltNotation.render($("an-out"), abc, { system: sys.value, tala: tala.value, sa: +sa.value }); }
+    catch (e) { $("an-out").textContent = "Could not read this ABC: " + e.message; }
+    if (window.ABCJS) ABCJS.renderAbc("an-staff", abc, { responsive: "resize" });
+  }
+  function setTune(abc) { abcBox.value = abc; saTouched = false; tala.value = ""; talas(); draw(); }
+  sys.onchange = function () { saTouched = false; talas(); draw(); };
+  tala.onchange = draw;
+  sa.onchange = function () { saTouched = true; draw(); };
+  abcBox.oninput = draw;
+  $("an-q").onchange = function () { var t = tunes[this.value]; if (t) { setTune(t.abc); history.replaceState(null, "", "?tune=" + encodeURIComponent(t.id)); } };
+  setTune(MO);
+  var s = document.createElement("script"); s.src = "/apps/tunes/tunes-object.js";
+  s.onload = function () {
+    var obj = new Function("return typeof tunesObject !== 'undefined' ? tunesObject : null")(), dl = $("an-list"), want = new URLSearchParams(location.search).get("tune");
+    if (!obj) return;
+    Object.keys(obj).forEach(function (k) {
+      String(obj[k]).split(/\n(?=X:)/).forEach(function (abc) {
+        var t = /^T:(.*)$/m.exec(abc), id = /^%%id\s+(\S+)/m.exec(abc);
+        if (!t || !/^K:/m.test(abc) || !AltNotation.read(abc).notes.length) return;
+        var title = t[1].trim(); if (tunes[title]) title += " (" + k + ")";
+        tunes[title] = { abc: abc.trim() + "\n", id: id ? id[1] : title };
+        dl.appendChild(new Option(title));
+        if (want && id && id[1] === want) { $("an-q").value = title; setTune(abc.trim() + "\n"); }
+      });
+    });
+  };
+  document.head.appendChild(s);
+})();
+</script>

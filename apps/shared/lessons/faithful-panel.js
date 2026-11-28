@@ -73,6 +73,8 @@
   var FP = window.FaithfulPanel = window.FaithfulPanel || {};
   FP.AVAILABLE = ["vital", "surge", "ppg", "p6", "taurus", "voyager", "sub37", "grandmother", "memorymoog", "moog", "prophet", "tb303", "juno", "arp2600", "obxa", "ms20", "dx7"];
   FP.LAYOUTS = FP.LAYOUTS || {};
+  var PAGE_KEPT = {};   // layout id -> open tab, kept across remounts
+  FP.keepPage = function (id, p) { PAGE_KEPT[id] = p; [].forEach.call(document.querySelectorAll(".fp-w"), function (w) { if (w._fp && w._fp.layout.id === id) w._fp.page(p); }); };
   var NS = "http://www.w3.org/2000/svg", THEME_KEY = "panel-theme", VIEW_KEY = "synth-face-view";
   var BASE = {
     dark: { bg: "#000000", body: "#1b1d20", head: "#2a2d31", ink: "#e8e8e8", ink2: "#9aa0a6", line: "#3a3e43", track: "#3a3e43", screen: "#0b0c0e", wave: "#e8e8e8" },
@@ -254,7 +256,7 @@
     if (L.approx) wrap.appendChild(h("p", "fp-note", L.approx));
     host.innerHTML = ""; host.appendChild(wrap);
     var bg = S("rect", { x: 0, y: 0, width: L.w, height: L.h, fill: "var(--fp-bg)" }); svg.appendChild(bg);
-    var upd = [], byKey = {}, me, tabs = [], page = L.page || null;
+    var upd = [], byKey = {}, me, tabs = [], page = (L.id && PAGE_KEPT[L.id]) || L.page || null;   // a redraw keeps the open tab (a lesson step opens one, then the widget remounts)
     function showPage() { [].forEach.call(svg.querySelectorAll("[data-page]"), function (e) { e.style.display = e.dataset.page === page ? "" : "none"; }); tabs.forEach(function (f) { f(); }); }
     function acc(it) { var n = it.a || L.accent; return (L.accents && L.accents[n]) || n || "#888"; }
     function def(k) { if (A) { var r = A.range(k); return r && r[6] != null ? r[6] : null; } return P && P.def && P.def[k] != null ? P.def[k] : null; }
@@ -316,7 +318,7 @@
         return; }
       if (it.t === "button" && it.go) { var gb = S("rect", { x: it.x, y: it.y, width: it.w, height: it.h, rx: 3, stroke: "var(--fp-line)", class: "fp-focus" }), gt = T(it.x + it.w / 2, it.y + it.h / 2 + 3.5, it.label, { "font-size": it.size || 9.5, "text-anchor": "middle", "font-weight": 700 });
         g.appendChild(gb); g.appendChild(gt); g.setAttribute("class", "fp-c fp-click"); g.setAttribute("tabindex", 0); g.setAttribute("role", "tab"); g.setAttribute("aria-label", it.label + " page");
-        var goF = function () { page = it.go; showPage(); }; g.addEventListener("click", goF); g.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); goF(); } });
+        var goF = function () { page = it.go; if (L.id) PAGE_KEPT[L.id] = page; showPage(); }; g.addEventListener("click", goF); g.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); goF(); } });
         tabs.push(function () { var on = page === it.go; gb.setAttribute("fill", on ? a : "var(--fp-head)"); gt.setAttribute("fill", on ? "#000" : "var(--fp-ink)"); g.setAttribute("aria-selected", on ? "true" : "false"); });
         return; }
       if (it.t === "button") { g.appendChild(S("rect", { x: it.x, y: it.y, width: it.w, height: it.h, rx: 3, fill: it.on ? a : "var(--fp-head)", stroke: "var(--fp-line)" }));
@@ -443,7 +445,7 @@
     if (A && A.onChange) A.onChange(refresh);   // every picture depends on several keys, so redraw all (cheap)
     paint(); refresh(); showPage();
     var ctl = {}; [].forEach.call(svg.querySelectorAll("[data-ctl]"), function (e) { ctl[e.dataset.ctl] = e; });
-    me = { el: wrap, layout: L, refresh: refresh, _get: o.get, _set: o.set, flash: flash, cur: setCur, paint: paint, ctl: ctl, svg: svg, bar: bar, bg: bg, drawn: drawn, page: function (p) { if (p) { page = p; showPage(); } return page; } };
+    me = { el: wrap, layout: L, refresh: refresh, _get: o.get, _set: o.set, flash: flash, cur: setCur, paint: paint, ctl: ctl, svg: svg, bar: bar, bg: bg, drawn: drawn, page: function (p) { if (p) { page = p; if (L.id) PAGE_KEPT[L.id] = p; showPage(); } return page; } };
     mounted = mounted.filter(function (m) { return document.contains(m.el); }); mounted.push(me); wrap._fp = me;
     if (L.init && !o.readonly) Object.keys(L.init).forEach(function (k) { if (rng(k) && o.get(k) !== L.init[k]) o.set(k, L.init[k]); });
     if (!o.readonly) presetMenu(me, L, o, rng);

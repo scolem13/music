@@ -1,0 +1,234 @@
+---
+title: "Rhythm Library"
+toc: true
+description: "Named timelines and cycles to hear and play along with: son and rumba clave (3-2, 2-3, 12/8), Toussaint's six 4/4 and ten 12/8 bell patterns, tresillo, habanera, cinquillo, baqueteo, and their rotations, each from a cited source."
+---
+
+{{< include ../lessons/_poly-kit.qmd >}}
+
+A timeline is a short pattern, often on a bell or claves, that repeats through a whole piece and keeps the band together.
+Further down are the metric cycles of India (Hindustani tāl, Carnatic tāḷa) and of Chinese opera, which are kept by hand gestures and drum strokes rather than one bell part.
+Every grid below comes from a source (named on its card): `x` is a stroke, `.` a silent pulse. *Gaps* counts the pulses from
+each stroke to the next. Each card plays the pattern (wood) over the main beats (kick); click a layer's name to mute it and clap it yourself.
+
+<div class="rl-bar">
+<input id="rl-q" type="search" class="form-control" placeholder="Search a name, place or grid (e.g. Ghana, x..x)">
+<select id="rl-pulses" class="form-select"><option value="">Any length</option><option value="16">16 pulses (4/4)</option><option value="12">12 pulses (12/8)</option><option value="8">8 pulses</option></select>
+</div>
+
+## The six 4/4 timelines (Toussaint)
+
+Godfried Toussaint (2002) compared six five-stroke timelines in sixteen pulses. Three come from Africa (Shiko, Soukous, Gahu)
+and three from the Americas (son, rumba, bossa nova); each differs from son clave by moving one or two strokes a pulse.
+
+<div id="rl-four" class="rl-list"></div>
+
+## Claves: 2-3, 3-2 and 12/8 forms
+
+<div id="rl-clave" class="rl-list"></div>
+
+## Tresillo and its family
+
+Eight pulses: one bar of 2/4 in sixteenths (or 4/4 in eighths).
+
+<div id="rl-cells" class="rl-list"></div>
+
+## The ten 12/8 bell patterns (Toussaint)
+
+Toussaint (2003) collected ten seven-stroke bell patterns in twelve pulses; all are rearrangements of five gaps of 2 and two of 1.
+
+<div id="rl-twelve" class="rl-list"></div>
+
+## Shiko rotations and Arabic drum timelines
+
+The same five strokes started from a different note give a different named rhythm.
+
+<div id="rl-shiko" class="rl-list"></div>
+
+## Brazilian bells and surdo
+
+Two bars of 2/4 in sixteenths, copied from the list in Wikipedia's "Clave (rhythm)" article (L low bell, H high bell, O open
+surdo, X muffled surdo; each sound is its own layer in the player). The article gives no source for the list, so treat it as
+one transcription among several. "3:2" and "2:3" say which bar has three strokes, as with Cuban clave.
+
+<div id="rl-brazil" class="rl-list"></div>
+
+## Hindustani tāl (North India)
+
+A *tāl* is a cycle of a fixed number of *mātrās* (beats), split into *vibhāgs* (sections); one cycle is an *āvartan*
+(Kippen 112; Clayton 43). The first mātrā is the **sam** (marked X). Each vibhāg starts with a hand gesture: a **clap**
+(*tālī*, numbered 2, 3 …) or a **wave** (*khālī*, "empty", marked 0) (Kippen 112). On tabla or pakhavaj the cycle is played as a
+**theka**, a fixed pattern of strokes (*bols*); for Kippen the pattern, not the clapping, "is the primary description of a
+tala" (111), and for Clayton a tāl is the two together (60). Thekas vary between players and with tempo (Kippen 116).
+
+Things the textbooks simplify:
+
+- Khālī is not simply "unaccented": Kippen finds "far too many examples" against that (112). The rule that khālī bols drop the
+  bass stroke (dhin becomes tin) holds for jhaptāl and rūpak; in tīntāl the tin tin sounds a mātrā late, and the rule is "a
+  relatively recent development" (Clayton 62-66).
+- There is no fixed tempo (*lay*). Clayton measured vocal performances from about 10 mātrās a minute (slow *vilambit*) to
+  500 (fast *drut*); below about 30 a minute clapping stops working and listeners follow the theka (62, 84-86).
+- A **tihāī** is a phrase played three times to end on sam (Kippen 129; Clayton 168).
+
+Thekas below are Kippen's (Garland, 2000), checked against Clayton's table (Ex. 5.1) and Courtney; each card notes where they
+differ. The player gives the claps, the waves and every mātrā: mute the claps and keep them yourself.
+
+<div id="rl-hindustani" class="rl-list"></div>
+
+## Carnatic tāḷa (South India)
+
+A Carnatic tāḷa is built from three parts (*aṅgas*), each shown with the hand (*kriyas*; Nelson 139-40):
+
+- **Anudrutam** (U): one beat, "a solitary clap".
+- **Drutam** (O): two beats, "a clap followed by a wave of the hand" (palm turned up).
+- **Laghu** (l): "a clap followed by counts on the fingers", from the pinkie (pinkie, ring, middle, index, thumb, then the
+  pinkie again for 7 and 9). Its length is its *jāti*: tisra 3, chatusra 4, khanda 5, misra 7, sankirna 9.
+
+Seven families (the *suladi* tāḷas) times five jātis give 35 tāḷas, from 3 beats (tisra Eka) to 29 (sankirna Dhruva). Each beat
+is then split into a *gati* (*nadai*): 4 pulses by default (*ta ka di mi*), or 3, 5, 7 or 9. Nelson: of the 35 "only five are
+in common use": khanda Aṭa (14), misra Jhampa (10), chatusra Triputa = Ādi (8), Rūpaka (6, almost always counted as 3) and tisra
+Eka (3) (141). The chāpu tāḷas sit outside the scheme. Tempo stays steady while the music gets denser, unlike Hindustani
+music, which speeds up (148). A **mora** is a phrase stated three times with gaps, ending on a set point, like the tihāī; a
+**korvai** is a longer composition ending in a mora; **eḍuppu** is where the song starts in the cycle, often on or just after
+the first beat (146, 155-56).
+
+| Tāḷa | Aṅgas | Tisra (3) | Chatusra (4) | Khanda (5) | Misra (7) | Sankeerna (9) |
+|---|---|---|---|---|---|---|
+| Dhruva | l O l l | 11 | 14 | 17 | 23 | 29 |
+| Matya | l O l | 8 | 10 | 12 | 16 | 20 |
+| Rupaka | O l | 5 | 6 | 7 | 9 | 11 |
+| Jhampa | l U O | 6 | 7 | 8 | 10 | 12 |
+| Triputa | l O O | 7 | 8 | 9 | 11 | 13 |
+| Ata | l l O O | 10 | 12 | 14 | 18 | 22 |
+| Eka | l | 3 | 4 | 5 | 7 | 9 |
+
+<div id="rl-carnatic" class="rl-list"></div>
+
+### Build any of the 35
+
+<div id="rl-build"></div>
+
+## Chinese opera: ban and yan
+
+In jingju (Beijing opera), "every metered metrical type provides a pattern of accented beats (*ban*) and unaccented beats
+(*yan*, lit. 'eyes')" (Wichmann 59). The conductor plays both the wooden clapper (*ban*) and the small clapper-drum (*bangu*):
+the clapper is struck "firmly on every accented beat"; on unaccented beats the conductor *may* strike the drum with one stick,
+or touch the clapper lightly (238). Gongche notation writes the two as marks beside the notes (。 ban, 、 yan) without note lengths.
+
+Each section of an aria is set in a **banshi** ("accented-beat style"). Wichmann counts six metered types, three free ones, and
+*huilong*, which only follows daoban (59-70); most have an xipi and an erhuang version (70). Her Fig. 7 (66) writes the
+metered ones as X (ban) and O (yan):
+
+| Banshi | Pattern | Metre | Tempo and feel (Wichmann) |
+|---|---|---|---|
+| 慢板 manban, slow | X O O O | 4/4 | Slowest; "relatively peaceful, introspective situations" (61) |
+| 快三眼 kuaisanyan, fast three eyes | X O O O | 4/4 | About twice as fast as manban; introspective or plain narration (62-63) |
+| 原板 yuanban, primary | X O X O | 2/4 | About 72 beats a minute, "like a healthy resting heart"; narration, facts, explanation (59-61) |
+| 二六 erliu, two-six | X O X O | 2/4 (fast two-six 1/4) | Faster than yuanban; "a sense of excitement or anticipation" (64-65) |
+| 流水 liushui, flowing water | X X X X | 1/4 | Excitement approaching that of kuaiban (64-65) |
+| 快板 kuaiban, fast | X X X X | 1/4 | Fastest; "highly animated", excitement or anticipation (62) |
+| 散板 sanban, dispersed | free | none | Moderate; "less tense, more gentle" (67) |
+| 导板 daoban, lead | free | none | From slower than manban up; often one line; "sudden grief, extreme unhappy surprise" (68-69) |
+| 回龙 huilong, undulating dragon | after daoban | takes the next type's | Metered (68) |
+| 摇板 yaoban | free singing | 1/4 band | Sung freely over liushui's single-beat percussion: "exterior calm and interior tension" (69-70) |
+
+In xipi the first syllable of a line starts on a yan and the last on a ban; in erhuang both start on a ban (72-73).
+
+The percussion, "the four major pieces", is drum and clapper, large gong, small gong and cymbals (233, 239), playing more than
+a hundred named passages (*luogu dian*, "gong and drum points"). Players say each stroke as a syllable (240): **kuang** large
+gong; **cang** large gong with small gong and cymbals; **tai** (dei) small gong; **qi** (qie) cymbals; **da** drum, right stick;
+**zha** clapper, firm; **yi** clapper, light. Wichmann prints the passages in her own letter notation; one scene opener,
+*Charging Head* (Chong tou), is da, a drum roll, then cang cei repeated, ending cang cei cang (261).
+
+<div id="rl-chinese" class="rl-list"></div>
+
+## Not here yet
+
+- **African 4/4 bells, Afro-Brazilian bells (Wikipedia "Bell pattern"), kadodo, afrekete and Abakuá bells**: shown there
+  only as staff images, with no grid or counts in the text.
+- **Songo and cáscara**: Wikipedia shows them only as images; its sources are Peñalosa, *Rumba Quinto* (2010, pp. 141-44),
+  and Changuito, *A Master's Approach to Timbales* (1998), not read for this page.
+- **Second line**: Wikipedia's article prints no rhythm and cites nothing for its drumming.
+- **Samba (full batucada), partido alto as a guitar / pandeiro pattern**: only the bell lines above have a written grid.
+- **Chinese percussion passages as players**: Wichmann prints them in her own letter notation, not yet turned into players.
+- **Partido alto, cáscara, songo, second line, kadodo, afrekete, Abakuá**: not in Toussaint's book either; Peñalosa's books are the next place to look.
+
+<script src="/apps/shared/rhythm-library.js"></script>
+<style>
+.rl-bar{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}.rl-bar input{flex:1 1 16rem}.rl-bar select{flex:0 0 auto;width:auto}
+.rl-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(26rem,1fr));gap:1rem}
+.rl-card{border:1px solid var(--bs-border-color);border-radius:.5rem;padding:.75rem}
+.rl-card h3{margin:0 0 .25rem;font-size:1.15rem}.rl-card p{margin:.3rem 0;font-size:.92rem}
+.rl-aka,.rl-src{font-size:.8rem;color:var(--bs-secondary-color)}
+.rl-grid code{font-size:1.05rem;letter-spacing:.12em}.rl-grid span{font-size:.8rem;color:var(--bs-secondary-color)}
+.rl-card .poly{margin:.5rem 0 0}
+.rl-bols td{vertical-align:top;padding:0 .5rem 0 0;border-right:1px solid var(--bs-border-color)}.rl-bols span{display:inline-block;margin-right:.35rem;font-size:.9rem}
+.rl-mark{font-size:.75rem;font-weight:bold;color:var(--bs-secondary-color)}.rl-bols{margin:.3rem 0;display:block;overflow-x:auto}
+.rl-kriya{display:flex;flex-wrap:wrap;gap:.25rem;margin:.3rem 0}.rl-kriya span{border:1px solid var(--bs-border-color);border-radius:.25rem;padding:0 .3rem;font-size:.8rem}
+.rl-bar label{display:flex;gap:.3rem;align-items:center}
+@media (max-width:600px){.rl-list{grid-template-columns:1fr}}
+</style>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Adi tala." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Adi_tala](https://en.wikipedia.org/wiki/Adi_tala).
+
+"Bell pattern." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Bell_pattern](https://en.wikipedia.org/wiki/Bell_pattern). The 12/8 standard pattern: 1, 1a, 2&, 2a, 3&, 4, 4a.
+
+"Bo Diddley beat." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Bo_Diddley_beat](https://en.wikipedia.org/wiki/Bo_Diddley_beat). Same onsets as 3-2 son clave (grid from the staff notation).
+
+Caro Repetto, Rafael, Ajay Srinivasamurthy, Sankalp Gulati, and Xavier Serra. "Jingju Music: Concepts and Computational Tools for Its Analysis." Tutorial, 15th International Society for Music Information Retrieval Conference, Taipei, 27 Oct. 2014, slides, [compmusic.upf.edu/system/files/static_files/2-JingjuTutorial-Introduction_0.pdf](http://compmusic.upf.edu/system/files/static_files/2-JingjuTutorial-Introduction_0.pdf). Banshi table (metre, tempo, expressive function); percussion instruments and syllables from the rhythm-analysis slides.
+
+"Cinquillo." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Cinquillo](https://en.wikipedia.org/wiki/Cinquillo). Cinquillo and baqueteo; Carpentier vs Manuel on its arrival in Cuba.
+
+Clayton, Martin. *Time in Indian Music: Rhythm, Metre, and Form in North Indian Rag Performance*. Oxford UP, 2000. Terms (43-44), Ex. 5.1 common tals (58-59), khali bols (62-66), tempo (75-87), tihai (168).
+
+"Contradanza." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Contradanza](https://en.wikipedia.org/wiki/Contradanza). Habanera rhythm, La Pimienta (1836).
+
+Courtney, David. "Index of Tals." *Chandrakantha.com*, [web.archive.org/web/2016/http://chandrakantha.com/tala_taal/index.html](https://web.archive.org/web/2016/http://chandrakantha.com/tala_taal/index.html). Accessed 27 Nov. 2026 (archived copies, 2010-16). Tintal, jhaptal, ektal, rupak, dadra, kaharva, dhammar, jhumra, dipchandi, chautal: vibhags, claps / waves, uses, and thekas reprinted from his *Learning the Tabla*.
+
+"Dadra." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Dadra](https://en.wikipedia.org/wiki/Dadra).
+
+"Dhamar (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Dhamar_(music)](https://en.wikipedia.org/wiki/Dhamar_(music)).
+
+"Ektal." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ektal](https://en.wikipedia.org/wiki/Ektal). Theka with Tu Na and Kat Tin.
+
+"Gongche notation." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Gongche_notation](https://en.wikipedia.org/wiki/Gongche_notation). Rhythm marks: 。 ban (strong beat), 、 yan (weaker beat).
+
+"Guban (instrument)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Guban_(instrument)](https://en.wikipedia.org/wiki/Guban_(instrument)). The ban (clapper) marks the strong beats, the drum the weaker beats.
+
+"Jhaptal." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Jhaptal](https://en.wikipedia.org/wiki/Jhaptal).
+
+"Keherwa." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Keherwa](https://en.wikipedia.org/wiki/Keherwa).
+
+Kippen, James R. "Hindustani Tala." *The Garland Encyclopedia of World Music*, vol. 5, *South Asia: The Indian Subcontinent*, edited by Alison Arnold, Garland, 2000, pp. 110-37. Terms (110-12), tintal, rupak, ektal, jhaptal (112, 124-26), cautal, tivra, sultal, dhamar (116-17), tilvara, aracautal, dadra, kaharva, jhumra, dipchandi (126-27), tihai (129).
+
+Nelson, David Paul. "Karnatak Tala." *The Garland Encyclopedia of World Music*, vol. 5, *South Asia: The Indian Subcontinent*, edited by Alison Arnold, Garland, 2000, pp. 138-57. Kriyas and angas (139-40), the five common talas and rupaka in three (141-42), kalai (143-44), capu talas Fig. 5 (144), eduppu, mora, korvai (146, 155-56).
+
+Panyam, Sriram. "Common Talas." *Notations Library Documentation*, [panyam.github.io/notations/examples/common-talas](https://panyam.github.io/notations/examples/common-talas). Misra chapu 3+2+2 = 7, khanda chapu 2+3 = 5.
+
+"Peking opera." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Peking_opera](https://en.wikipedia.org/wiki/Peking_opera). The gu and ban player directs the ensemble; xipi and erhuang.
+
+"Rupak Tala." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Rupak_Tala](https://en.wikipedia.org/wiki/Rupak_Tala). Marks X 2 3.
+
+"Tala (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tala_(music)](https://en.wikipedia.org/wiki/Tala_(music)). Hindustani terms (sam, tali, khali, theka, laya); Carnatic angas and kriyas, jatis, nadai syllables, the 35 suladi talas, common talas, chapu counts.
+
+"Teentaal." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Teentaal](https://en.wikipedia.org/wiki/Teentaal). Theka (third vibhag dha tin tin ta).
+
+Toussaint, Godfried. "A Mathematical Analysis of African, Brazilian, and Cuban *Clave* Rhythms." *Bridges: Mathematical Connections in Art, Music, and Science*, Towson University, 2002, pp. 157-68, [archive.bridgesmathart.org/2002/bridges2002-157.pdf](https://archive.bridgesmathart.org/2002/bridges2002-157.pdf). Fig. 3 and section 2: Shiko, son, soukous, rumba, bossa nova, gahu; 2-3 forms; Timint, Kromanti, Kassa, Baladi / Wahda wa Noss / Saidi as Shiko rotations.
+
+Toussaint, Godfried. "Classification and Phylogenetic Analysis of African Ternary Rhythm Timelines." *Bridges: Mathematical Connections in Art, Music, and Science*, University of Granada, 2003, pp. 25-36, [archive.bridgesmathart.org/2003/bridges2003-25.pdf](https://archive.bridgesmathart.org/2003/bridges2003-25.pdf). Fig. 3 and section 2: the ten 12/8 bell patterns and where each is used.
+
+"Tresillo (rhythm)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tresillo_(rhythm)](https://en.wikipedia.org/wiki/Tresillo_(rhythm)). Tresillo, Charleston, habanera (grids from the staff notation).
+
+Wichmann, Elizabeth. *Listening to Theatre: The Aural Dimension of Beijing Opera*. U of Hawaii P, 1991. Pp. 59-73 (ban and yan, the banshi, Fig. 7, xipi / erhuang line starts), 233-61 (percussion, stroke syllables Fig. 24, passages).
+
+**For students**
+
+"Clave (rhythm)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Clave_(rhythm)](https://en.wikipedia.org/wiki/Clave_(rhythm)). Son and rumba clave grids, 3-2 / 2-3 and tresillo confirmed in Toussaint 2026-11-27; which side starts a song is unverified. Page not yet re-read.
+
+Toussaint, Godfried T. *The Geometry of Musical Rhythm: What Makes a "Good" Rhythm Good?* 2nd ed., CRC Press, 2020. Read 2026-11-27. Tresillo [3-3-2] and its use in Cuba, New Orleans second-line drumming and rockabilly, p. 12; wooden claves, p. 17; gankogui double bell, p. 19; clave son [3-3-4-2-4] (onsets 0, 3, 6, 10, 12 of 16), pp. 24-25; clave rumba [3-4-3-2-4], p. 28; 12-pulse bell patterns [2-2-1-2-2-2-1] (bembe) and [2-2-3-2-3] (fume-fume), both called the standard pattern, pp. 41-42; four beats of four or three, pp. 42-43; the four regular divisions of twelve in 12-pulse polyrhythmic music, p. 86; Desmond K. Tai's name "standard pattern", Ewe dances that use it and the Cuban bembe, p. 69; bembe against four, six and three beats, and clave son 3-2 / 2-3, p. 72.
+:::
+<!-- /works-cited -->

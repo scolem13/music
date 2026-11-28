@@ -208,6 +208,7 @@
       w.tabs = el('div', 'ar-tools ar-tabs'); w.tabs.setAttribute('role', 'group'); w.tabs.setAttribute('aria-label', 'Show');
       w.grid = el('div', 'ar-grid'); node.appendChild(w.tabs); node.appendChild(w.grid); buildGrid(w);
     }
+    if (d.comp === 'hammond' || d.second === 'hammond') organistStrip(w);
     w.ahead = true;   // a demo writes the whole pass out before it sounds (a quiz does not: it would give the answer away)
     w.staff = el('div', 'ar-staff'); w.staff.appendChild(el('p', 'ar-hint', 'Press Play: what the band will play is written out here, a whole time through, before it plays it.'));
     node.appendChild(w.staff);
@@ -355,7 +356,7 @@
     function group(title, kids) { var g = el('fieldset', 'ao-group'); g.appendChild(el('legend', '', title)); kids.forEach(function (k) { g.appendChild(k); }); ctl.appendChild(g); return g; }
     function seg(name, opts, value, fn) {
       var r = el('div', 'ao-seg'); r.setAttribute('role', 'radiogroup'); r.setAttribute('aria-label', name);
-      opts.forEach(function (o) { var b = el('button', 'btn btn-sm btn-outline-secondary', o[1]); b.type = 'button'; b.setAttribute('role', 'radio');
+      opts.forEach(function (o) { var b = el('button', 'btn btn-sm btn-outline-secondary', o[1]); b.type = 'button'; b.setAttribute('role', 'radio'); b.dataset.v = o[0];
         function sel() { Array.prototype.forEach.call(r.children, function (x) { var on = x === b; x.classList.toggle('ar-on', on); x.setAttribute('aria-checked', String(on)); }); }
         b.addEventListener('click', function () { sel(); fn(o[0]); }); r.appendChild(b); if (o[0] === value) sel(); else b.setAttribute('aria-checked', 'false'); });
       return r;
@@ -382,25 +383,28 @@
     lesCb.addEventListener('change', function () { organHand.leslie = lesCb.checked ? null : speed; if (now) refresh(now); });
     group('Leslie speaker', [rotor, lesSeg, lesAuto, el('p', 'ao-hint', 'Above 800 Hz the sound goes to a spinning horn, below it to a spinning drum. As each turns toward you it gets louder and its pitch rises a little. The horn changes speed in about a second and a half; the heavy drum takes about five.')]);
 
+    // harmonic percussion (B-3 / C-3): a decaying 2nd or 3rd harmonic at the start of a note; ORGAN.md "Percussion"
+    function pc(k, d) { var v = S.getControl('hammond', k); return v == null ? d : v; }
+    function percSet(k, v) { S.setControl('hammond', k, v); paintPerc(); }
+    var percOn = seg('Percussion', [['off', 'Off'], ['on', 'On']], pc('perc', false) ? 'on' : 'off', function (v) { percSet('perc', v === 'on'); });
+    var percH = seg('Harmonic', [['2nd', 'Second (4′)'], ['3rd', 'Third (2⅔′)']], pc('percH', '3rd'), function (v) { percSet('percH', v); });
+    var percDec = seg('Decay', [['fast', 'Fast'], ['slow', 'Slow']], pc('percDec', 'fast'), function (v) { percSet('percDec', v); });
+    var percVol = seg('Volume', [['soft', 'Soft'], ['normal', 'Normal']], pc('percVol', 'soft'), function (v) { percSet('percVol', v); });
+    function paintPerc() { var on = !!pc('perc', false); inputs[8].inp.parentNode.classList.toggle('ao-dead', on);
+      inputs[8].inp.title = on ? 'Silent while percussion is on, as on the B-3' : ''; }
+    group('Percussion', [percOn, percH, percDec, percVol, el('p', 'ao-hint', 'A second tone that rings at the start of a note and dies away: the 4′ pitch (second) or the 2⅔′ (third). It only sounds on a note played after every key is up, so a legato line gets none and detached chords all get it. While it is on, the 1′ tonebar is silent, and on Normal the tonebars drop a little.')]);
+    paintPerc();
+
     var click = el('input', 'form-range'); click.type = 'range'; click.min = 0; click.max = 1; click.step = 0.05; var c0 = S.getControl('hammond', 'click'); click.value = typeof c0 === 'number' ? c0 : 0.5;
     click.setAttribute('aria-label', 'Key click'); click.addEventListener('input', function () { S.setControl('hammond', 'click', +click.value); });
     group('Key click', [click, el('p', 'ao-hint', 'A key closes nine contacts, never quite together: a short tick at the start of each note. Players came to like it.')]);
     node.appendChild(ctl);
 
-    // spin the picture at the model's own speeds, easing as the real rotors do
-    var ang = { h: 0, d: 0 }, rate = { h: 0.8, d: 0.68 }, last = 0;
-    var target = function () { var f = speed === 'fast' ? 6.67 : speed === 'stop' ? 0 : 0.8; return { h: f, d: f * 0.85 }; };
-    function frame(t) {
-      var dt = last ? Math.min(0.1, (t - last) / 1000) : 0; last = t; var g = target();
-      rate.h += (g.h - rate.h) * (1 - Math.exp(-dt / (g.h > rate.h ? 0.5 : 0.8))); rate.d += (g.d - rate.d) * (1 - Math.exp(-dt / (g.d > rate.d ? 1.8 : 2.2)));
-      ang.h = (ang.h + 360 * rate.h * dt) % 360; ang.d = (ang.d + 360 * rate.d * dt) % 360;
-      rotor.querySelector('.ao-horn').setAttribute('transform', 'rotate(' + ang.h.toFixed(1) + ' 60 34)');
-      rotor.querySelector('.ao-drum').setAttribute('transform', 'rotate(' + ang.d.toFixed(1) + ' 60 104)');
-      rotor.querySelector('.ao-rpm').textContent = 'horn ' + Math.round(rate.h * 60) + ' rpm · drum ' + Math.round(rate.d * 60) + ' rpm';
-      requestAnimationFrame(frame);
-    }
-    if (!(global.matchMedia && global.matchMedia('(prefers-reduced-motion: reduce)').matches)) requestAnimationFrame(frame);
-    else rotor.querySelector('.ao-rpm').textContent = 'horn 48 rpm slow, 400 fast';
+    spin(rotor, function () { return speed; });
+    // while the band plays, the pedal and the switch above follow the band's organist (unless a hand is on them)
+    watchOrganist(function (ctl, v, glide) {
+      if (ctl === 'swell' && organHand.swell == null) glideTo(+swell.value, v, glide, function (x) { swell.value = x; paintPedal(); });
+      if (ctl === 'leslie' && organHand.leslie == null) { speed = v; paintSeg(lesSeg, v); } });
 
     function apply() { S.setTonebars('hammond', bars); showTyped(); }
     showTyped();
@@ -408,6 +412,52 @@
   function pedalSvg() {
     var d = el('div', 'ao-pedal'); d.innerHTML = '<svg viewBox="0 0 80 84" width="80" height="84" aria-hidden="true"><rect x="8" y="70" width="64" height="8" rx="2" class="ao-base"/>'
       + '<g class="ao-plate"><rect x="14" y="58" width="56" height="10" rx="3" class="ao-shoe"/></g><circle cx="20" cy="70" r="4" class="ao-pivot"/></svg>'; return d;
+  }
+  function paintSeg(r, v) { Array.prototype.forEach.call(r.querySelectorAll('button'), function (b, i) { var on = b.dataset.v === v; b.classList.toggle('ar-on', on); b.setAttribute('aria-checked', String(on)); }); }
+  // spin a rotor picture at the model's own speeds, easing as the real rotors do (horn ~1.5 s, drum ~5 s)
+  function spin(rotor, speedOf) {
+    var rpm = rotor.querySelector('.ao-rpm');
+    if (global.matchMedia && global.matchMedia('(prefers-reduced-motion: reduce)').matches) { var p = function () { rpm.textContent = 'Leslie: ' + speedOf(); setTimeout(p, 250); }; p(); return; }
+    var ang = { h: 0, d: 0 }, rate = { h: 0.8, d: 0.68 }, last = 0;
+    function frame(t) {
+      var dt = last ? Math.min(0.1, (t - last) / 1000) : 0; last = t; var sp = speedOf(), f = sp === 'fast' ? 6.67 : sp === 'stop' ? 0 : 0.8, g = { h: f, d: f * 0.85 };
+      rate.h += (g.h - rate.h) * (1 - Math.exp(-dt / (g.h > rate.h ? 0.5 : 0.8))); rate.d += (g.d - rate.d) * (1 - Math.exp(-dt / (g.d > rate.d ? 1.8 : 2.2)));
+      ang.h = (ang.h + 360 * rate.h * dt) % 360; ang.d = (ang.d + 360 * rate.d * dt) % 360;
+      rotor.querySelector('.ao-horn').setAttribute('transform', 'rotate(' + ang.h.toFixed(1) + ' 60 34)');
+      rotor.querySelector('.ao-drum').setAttribute('transform', 'rotate(' + ang.d.toFixed(1) + ' 60 104)');
+      rpm.textContent = 'horn ' + Math.round(rate.h * 60) + ' rpm · drum ' + Math.round(rate.d * 60) + ' rpm';
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+  // fn(ctl, value, glide seconds) at the moment the band's organist's move is HEARD (BandSounds.watchControl gives it when scheduled)
+  var watchers = [], watching = false;
+  function watchOrganist(fn) {
+    watchers.push(fn); if (watching || !global.BandSounds.watchControl) return; watching = true;
+    global.BandSounds.watchControl(function (inst, ctl, v, when, glide, ctx) {
+      if (inst !== 'hammond' || !now || (ctl !== 'swell' && ctl !== 'leslie')) return;
+      var w = now; setTimeout(function () { if (now !== w) return; watchers.forEach(function (f) { f(ctl, v, glide, w); }); }, Math.max(0, (when - ctx.currentTime) * 1000));
+    });
+  }
+  function glideTo(from, to, secs, put) {
+    if (!(secs > 0.02)) { put(to); return; }
+    var t0 = performance.now(); (function step() { var k = Math.min(1, (performance.now() - t0) / (secs * 1000)); put(from + (to - from) * k); if (k < 1) requestAnimationFrame(step); })();
+  }
+  // a demo with the organ: the swell pedal and the Leslie, as the band's organist works them (or as set by hand above)
+  function organistStrip(w) {
+    var box = el('div', 'ao-strip'), S = global.BandSounds, pos = S.getControl('hammond', 'swell'), sp = S.getControl('hammond', 'leslie') || 'slow';
+    if (typeof pos !== 'number') pos = 0.7;
+    var pedal = pedalSvg(), rotor = rotorSvg(), meter = el('div', 'ao-meter'), bar = el('span'), txt = el('div', 'ao-stxt');
+    meter.appendChild(bar);
+    function paint() { pedal.querySelector('.ao-plate').setAttribute('transform', 'rotate(' + (-22 + 22 * pos) + ' 20 70)'); bar.style.width = Math.round(pos * 100) + '%';
+      txt.textContent = (organHand.swell == null ? 'Pedal (band): ' : 'Pedal (yours): ') + Math.round(pos * 100) + '% · ' + (organHand.leslie == null ? 'Leslie (band): ' : 'Leslie (yours): ') + sp; }
+    var left = el('div', 'ao-sleft'); left.appendChild(el('div', 'ao-slbl', 'Swell pedal')); left.appendChild(pedal); left.appendChild(meter);
+    var right = el('div', 'ao-sleft'); right.appendChild(el('div', 'ao-slbl', 'Leslie')); right.appendChild(rotor);
+    box.appendChild(left); box.appendChild(right); box.appendChild(txt); w.el.appendChild(box);
+    spin(rotor, function () { return sp; });
+    watchOrganist(function (ctl, v, glide, who) { if (who !== w) return;
+      if (ctl === 'swell') glideTo(pos, v, glide, function (x) { pos = x; paint(); }); else { sp = v; paint(); } });
+    paint();
   }
   // "Notation" in the bottom bar: off hides every staff on the page (the demos' and any abc-ex example's). Remembered.
   var demos = [];

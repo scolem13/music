@@ -1,0 +1,140 @@
+---
+title: "Vital 2: Oscillators and wavetables"
+toc: true
+toc-depth: 2
+description: "How Vital's three oscillators make sound: the wavetable and its wave frame, transpose and tune, level, and unison, on this site's panel and then in the real plug-in."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+Lesson 2 of 10 in *Vital, step by step*: everything you need to feel at home in the real Vital plug-in. Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Learn what a wavetable and a wave frame are.
+2. Move the wave frame and hear the tone change.
+3. Stack two and three oscillators, in tune and a little out of tune.
+4. Hear unison.
+5. Find the same controls, and more, in the real Vital.
+:::
+
+## Oscillators
+
+- An **oscillator** makes the raw sound: a wave that repeats very fast. How fast it repeats is the *pitch*; the wave's *shape* is the *tone* (bright, soft, hollow ...).
+- Vital has three: **OSC 1**, **OSC 2**, **OSC 3** (Vital source, oscillator_section.cpp; synth_constants.h). Each has an on switch at its top left.
+
+## Wavetables and the wave frame
+
+- A *wavetable* is a row of single waves, one after another, called *frames*. Vital's tables have 257 frames, numbered 0 to 256 (Vital source, synth_constants.h).
+- **Wave frame** picks which frame plays. Turn it and the wave morphs from one shape to the next (Vital source, synth_parameters.cpp).
+- On this page each oscillator has one table: sine at frame 0, triangle near 85, square near 171, saw at 256. It is modelled on Vital's *Basic Shapes* table; that name and the frame order are this site's guess (unverified).
+- A *sine* is the softest wave, a single pure tone. A *saw* is the brightest and buzziest. *Triangle* and *square* sit between them; the square sounds hollow.
+
+## Pitch and level
+
+- **Transpose** moves the oscillator in semitones (a semitone = one piano key), -48 to +48; 12 is one octave (Vital source, synth_parameters.cpp).
+- **Tune** moves it in *cents*, hundredths of a semitone. Two oscillators a few cents apart *beat*: you hear a slow wobble, which makes the sound thick.
+- **Level** is how loud each oscillator is. A new oscillator starts at about 71 % (Vital source, synth_parameters.cpp).
+
+## Unison
+
+- **Unison** plays several copies of the oscillator at once, each slightly out of tune, for a big, wide sound. Vital allows 1 to 16 voices per oscillator (Vital source, synth_parameters.cpp).
+- On this page one **Unison** knob is shared by all three oscillators, up to 8, and while it is above 1 the panel plays one note at a time (this page's engine). The real Vital keeps playing chords with unison on (unverified).
+
+## The panel
+
+This site's beginner Vital panel: the real plug-in's names and ranges for a few controls, played by this site's own sound engine (not Vital's code), so it is close but not the same. Play it from the keys under it, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard (**Use MIDI**). Dimmed controls are not modelled; **Show ▾ → Only working controls** hides them.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="vital"><div class="scmp"></div></div>
+```
+
+## Step by step
+
+Each step loads a starting patch made on this page (not one of Vital's presets) and plays it. Listen for the one thing it names, then turn the knob it names.
+
+```{=html}
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;o1Frame&quot;:0}" data-page="voice"><p><b>A sine.</b> Oscillator 1 on <b>Wave frame 0</b>. Listen: a soft, pure tone like a whistle. Now drag <b>FRAME</b> slowly up to 256 while a note plays.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;o1Frame&quot;:171}" data-page="voice"><p><b>Triangle and square.</b> Frame 171: the square, hollow like a clarinet. Turn <b>FRAME</b> to 85 for the triangle (softer) and then to 256 for the saw (brightest).</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;o2On&quot;:true,&quot;o2Frame&quot;:0,&quot;o2Tr&quot;:12,&quot;o2Lvl&quot;:50}" data-page="voice"><p><b>Two oscillators, an octave apart.</b> OSC 2 is on: a sine, <b>TRANSPOSE</b> +12, <b>LEVEL</b> 50 %. Listen for a sweet whistle on top of the saw. Switch OSC 2 off and on with its switch to hear what it adds.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;o2On&quot;:true,&quot;o2Frame&quot;:256,&quot;o1Tune&quot;:-10,&quot;o2Tune&quot;:10}" data-page="voice"><p><b>A little out of tune.</b> OSC 1 and OSC 2 are both saws, <b>TUNE</b> -10 and +10 cents. Listen for the slow wobble (beating). Set both TUNE knobs to 0: the wobble stops and the sound gets thinner.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;o2On&quot;:true,&quot;o2Frame&quot;:256,&quot;o2Tune&quot;:7,&quot;o3On&quot;:true,&quot;o3Tr&quot;:-12,&quot;o3Frame&quot;:171,&quot;o3Lvl&quot;:60}" data-page="voice"><p><b>All three.</b> OSC 3 adds a square an octave down (<b>TRANSPOSE</b> -12, frame 171). Listen for the weight underneath. Turn OSC 3's <b>LEVEL</b> down to 0 and up again.</p></div>
+<div class="ik-step" data-ex="vital-lead" data-page="voice"><p><b>Unison.</b> A lead with <b>UNISON</b> at 4: four copies of each oscillator, spread in pitch. Listen to the width. Turn UNISON to 1 (thin) and to 8 (huge).</p></div>
+```
+
+## In the real Vital
+
+What is different in the plug-in and exactly where to find it. Every line names the file of Vital's source code (github.com/mtytel/vital) it was read from; "(unverified)" means it was not confirmed.
+
+- **The wavetable's name** is at the top of each oscillator's display. Click it to open a wavetable browser; the arrows beside it step through the wavetables (Vital source, oscillator_section.cpp). After *Initialize* the name reads **Init** (Vital source, oscillator_section.cpp); what that starting wave looks like is not in the notes (unverified).
+- **The pencil** at the display's bottom-right opens the **wavetable editor**, where you can draw and build your own tables (Vital source, oscillator_section.cpp; wavetable_edit_section.cpp).
+- **3D / 2D / SP.** A small button at the display's bottom-left switches the picture between 3D, 2D and SP (the spectrum) (Vital source, oscillator_section.cpp; synth_strings.h).
+- **Moving the frame.** Drag up and down on the display, or use the mouse wheel over it, or the vertical WAVE FRAME slider beside it (Vital source, wavetable_3d.cpp).
+- **Your own sounds.** Drag one audio file onto the display. Where you drop it chooses how it is turned into a wavetable: top part **WAVETABLE**, middle **VOCODE**, bottom **PITCH SPLICE** (Vital source, wavetable_3d.cpp).
+- **Spectral morph** (the left menu under the display) changes the wave's harmonics: Vocode, Formant Scale, Harmonic Stretch, Inharmonic Stretch, Smear, Random Amplitudes, Low Pass, High Pass, Phase Disperse, Shepard Tone, Spectral Time Skew (Vital source, synth_strings.h).
+- **Distortion** (the right menu) bends the wave: Sync, Formant, Quantize, Bend, Squeeze, Pulse, and FM or RM from another oscillator or the sample (Vital source, synth_strings.h). Each has an amount knob. This page does neither.
+- **PITCH, UNISON, PHASE, LEVEL, PAN.** Transpose and tune are in the PITCH group; hold **Shift** while dragging transpose to move in octaves. UNISON has voices (1-16), detune and detune power (Vital source, oscillator_section.cpp).
+- **Stacks.** On the ADVANCED tab each oscillator's **STACK** menu turns unison into chords: Unison, Center Drop 12, Center Drop 24, Octave, 2x Octave, Power Chord, 2x Power Chord, Major Chord, Minor Chord, Harmonics, Odd Harmonics (Vital source, synth_strings.h; oscillator_advanced_section.cpp).
+- **Where it goes.** Each oscillator has a DESTINATION: Filter 1, Filter 2, Filter 1+2, Effects or Direct Out. At the start OSC 1 goes to Filter 1, OSC 2 to Filter 2 and OSC 3 to Effects (Vital source, oscillator_section.cpp; synth_parameters.cpp). Lesson 3 explains why that matters.
+
+## Try it in the real Vital
+
+Open Vital in your DAW (see [Meet Vital](intro-vital.qmd) to install it) and do these in order.
+
+- [ ] Initialize the preset. Play a key: only OSC 1 is on.
+- [ ] Drag up and down on OSC 1's display. Watch the frame number and listen.
+- [ ] Click the wavetable name and load a different wavetable. Step through a few with the arrows.
+- [ ] Switch the view button between 3D, 2D and SP.
+- [ ] Turn OSC 2 on and set its TRANSPOSE to +12 (hold Shift while dragging).
+- [ ] Set UNISON voices to 4 on OSC 1 and listen.
+- [ ] Click the pencil, look at the editor, and close it with its X.
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>What does the Wave frame control pick?</b></p><ul><li>Which wave in the wavetable plays</li><li>The volume</li><li>The filter model</li><li>How many voices play</li></ul><p class="ik-why">A wavetable is a row of frames; Wave Frame picks one (synth_parameters.cpp).</p></div>
+<div class="ik-q" data-a="0"><p><b>Two oscillators a few cents apart make…</b></p><ul><li>A slow wobble (beating) and a thicker sound</li><li>An echo</li><li>Silence</li><li>A higher octave</li></ul><p class="ik-why">Step 4.</p></div>
+<div class="ik-q" data-a="0"><p><b>How far is Transpose +12?</b></p><ul><li>One octave</li><li>One semitone</li><li>Twelve cents</li><li>Half a step</li></ul><p class="ik-why">12 semitones = an octave.</p></div>
+<div class="ik-q" data-a="0"><p><b>In the real Vital, how do you open the wavetable editor?</b></p><ul><li>Click the pencil on the oscillator's display</li><li>Double-click the volume</li><li>Open the MATRIX tab</li><li>Right-click the keyboard</li></ul><p class="ik-why">oscillator_section.cpp: the pencil opens the editor.</p></div>
+<div class="ik-q" data-a="0"><p><b>Where does OSC 3 go in a fresh Init Preset?</b></p><ul><li>To the Effects, not to a filter</li><li>To Filter 1</li><li>To Filter 2</li><li>Nowhere: it is broken</li></ul><p class="ik-why">Defaults: osc 1 → Filter 1, osc 2 → Filter 2, osc 3 → Effects (synth_parameters.cpp).</p></div>
+```
+
+## Previous and next
+
+::: {.vl-nav}
+- Previous: [Vital 1: The Vital window](vital-01-window.qmd)
+- Next: [Vital 3: The filter](vital-03-filter.qmd)
+:::
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Tytel, Matt. "oscillator_advanced_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/oscillator_advanced_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/oscillator_advanced_section.cpp). Advanced tab per oscillator: STACK (unison stack styles) and other options.
+
+Tytel, Matt. "oscillator_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/oscillator_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/oscillator_section.cpp). OSC 1-3: wavetable name and browser, pencil (editor), 3D / 2D / SP view, PITCH / UNISON / PHASE groups, LEVEL, PAN, spectral morph, distortion, destination.
+
+Tytel, Matt. "synth_constants.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_constants.h](https://github.com/mtytel/vital/blob/main/src/common/synth_constants.h). kNumOscillators 3, kNumFilters 2, kNumEnvelopes 6, kNumLfos 8, kNumRandomLfos 4, kNumMacros 4, kMaxModulationConnections 64, kMaxPolyphony 33 (32 playing), effects chorus / compressor / delay / distortion / EQ / filter / flanger / phaser / reverb, filter models Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phase.
+
+Tytel, Matt. "wavetable_3d.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_components/wavetable_3d.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_components/wavetable_3d.cpp). Dragging the wavetable display moves the frame; dropping an audio file: WAVETABLE / VOCODE / PITCH SPLICE; right-click menu.
+
+Tytel, Matt. "wavetable_edit_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/wavetable_edit_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/wavetable_edit_section.cpp). The wavetable editor and its menu.
+
+**For teachers**
+
+Tytel, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp](https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp). Oscillator on, transpose, tune, level, wave frame, unison; filter cutoff 8-136 semitones, resonance, drive 0-20 dB, blend 0-2, key track; envelope times 0-2.378; LFO frequency -7..9; polyphony; portamento.
+
+Tytel, Matt. "synth_strings.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h](https://github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h). Filter styles (12dB, 24dB, Notch Blend, Notch Spread, B/P/N) and models (Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phaser).
+:::
+<!-- /works-cited -->

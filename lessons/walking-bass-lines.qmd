@@ -1,0 +1,172 @@
+---
+title: "Walking Bass Lines: Approach Notes, Scales and Enclosures"
+toc: true
+toc-depth: 2
+description: "Five organ walking bass lines over an F blues (ghost-note approaches, chromatic approach, scale runs, interval jumps, enclosures), transcribed from a PianoGroove handout, each played with the band."
+instruments: [bass, piano, organ]
+topics: [jazz, blues, harmony, reading]
+has: [band, notation]
+---
+
+```{=html}
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script>window.AX_NO_VOICE = true; window.AX_CAPTIONS = true;</script>
+<script src="/apps/shared/lessons/abc-ex.js"></script>
+<script src="/apps/shared/lessons/sections.js"></script>
+```
+
+::: {.callout-note}
+**Source.** The examples on this page are transcribed from the PianoGroove handout
+*Walking Bass Line Theory: Lesson Notation & Graphics*
+([www.pianogroove.com](https://www.pianogroove.com)), from its lesson on organ walking bass.
+They are copied here for teaching in this class only. The explanations are written for this
+site; go to PianoGroove for the full lesson.
+:::
+
+A **walking bass line** moves one note to every beat, four to the bar, and keeps going
+from chord to chord. The organist plays it with the left hand (or the pedals) while the
+right hand comps or solos. All five lines here are over a blues in F, written in the bass
+clef, and swung.
+
+**How to read the examples.** Notes marked **gh** are *ghost notes*: in the handout they
+are printed in brackets. A ghost note is barely played: touched, felt more than heard,
+so the eighth before it sounds like a little push into the next beat. Each ▶ plays the
+line with the band (the band's own bass player sits out, so the line you hear is the one
+written; it is played on the band's piano). "▶ Chords" plays only the chords.
+
+## 1. Ghost-note approaches
+
+The whole 12-bar blues, walking almost all the way in quarter notes. Three things decorate
+it. At the end of bars 1, 6 and 9 the last beat is split into two eighths: B♮ then a
+ghost B♭ (bar 6 starts with F and a ghost F). The B♮ is a half step *below* C, the note
+the next bar wants, so the ghost just fills the beat. Bars 3 and 10 open with a quick
+eighth-note **triplet** down the chord (F C A, then C G E) before landing on the root an
+octave lower. Bar 8 ends with a triplet D A A♭ that slides down a half step into G for
+the Gm7 of bar 9.
+
+<div class="abc-ex" data-bpm="132" data-style="swing" data-bass="off" data-width="640">
+<script type="text/plain">
+T:Example 1: with ghost-note approaches
+M:4/4
+L:1/8
+Q:1/4=132
+K:F clef=bass
+"F7"F,2 A,,2 _B,,2 =B,,"^gh"_B,, | C,2 D,2 _E,2 =E,2 | "F7"(3F,C,A,, F,,2 C,"^gh"F,, =B,,2 | "Cm7"C,2 C,2 "F7"=B,,2 _B,,2 |
+"Bb7"_B,,2 D,2 _E,2 =E,2 | F,"^gh"F, A,,2 _B,,2 =B,,"^gh"_B,, | "F7"C,2 C,2 _B,,2 _B,,2 | "Am7b5"A,,2 _E,"^gh"A,, "D7"D,2 (3D,A,,_A,, |
+"Gm7"G,,2 A,,2 _B,,2 =B,,"^gh"_B,, | "C7"(3C,G,,E,, C,,2 D,,2 E,,"^gh"D,, | "F7"F,,4 z4 | z8 |]
+</script>
+</div>
+
+## 2. Chromatic approach
+
+Only the first five bars are written out (the handout leaves the rest as slashes for you
+to fill in; the band keeps the chords going). Listen for half steps. In bar 1, F G A♭ A
+climbs chromatically from G into B♭, the root of the next bar. Bar 2 does the same thing
+higher up: E♭ E♮ leads into F. In bar 3, D D♭ slides down into C for the Cm7. In bar 4,
+C G♭ F walks *down* by half step onto the F of F7, then B♮ is a half step below the B♭
+of bar 5.
+
+<div class="abc-ex" data-bpm="132" data-style="swing" data-bass="off" data-width="640">
+<script type="text/plain">
+T:Example 2: with chromatic approach
+M:4/4
+L:1/8
+Q:1/4=132
+K:F clef=bass
+"F7"F,,2 G,,2 _A,,2 =A,,2 | "Bb7"_B,,2 D,2 _E,2 =E,2 | "F7"F,2 A,,2 D,2 _D,2 | "Cm7"C,2 _G,,2 "F7"F,,2 =B,,2 |
+"Bb7"_B,,2 z6 | z8 | "F7"z8 | "Am7b5"z4 "D7"z4 |]
+</script>
+</div>
+
+## 3. Scalar approach
+
+Here the line runs down and up the scale that goes with each chord. Bar 1 walks straight
+down from F: F E♭ D C (the F7 chord's scale has E♭, not E). Bar 2 does the same from
+B♭: B♭ A♭ G, then G♭ a half step above F. Bar 3 climbs F A B♭ B♮ into C, and bar 4 C G A♭
+B♮ ends with the same half step into B♭.
+
+<div class="abc-ex" data-bpm="132" data-style="swing" data-bass="off" data-width="640">
+<script type="text/plain">
+T:Example 3: with scalar approach
+M:4/4
+L:1/8
+Q:1/4=132
+K:F clef=bass
+"F7"F,2 _E,2 D,2 C,2 | "Bb7"_B,,2 _A,,2 G,,2 _G,,2 | "F7"F,,2 A,,2 _B,,2 =B,,2 | "Cm7"C,2 G,,2 "F7"_A,,2 =B,,2 |
+"Bb7"_B,,2 z6 | z8 | "F7"z8 | "Am7b5"z4 "D7"z4 |]
+</script>
+</div>
+
+## 4. Interval jump approach
+
+Bars 1 and 2 are the scale runs of example 3. The new idea is the **leap**: in bar 3 the
+line climbs F G A and then jumps up a fourth to D, which leads down a step to the C of
+bar 4. In bar 4 it jumps the other way, from C down a sixth to E♭, then climbs by half steps,
+E♭ E♮ F, so beat 4 is the root of the F7, a fourth below the B♭ of bar 5. A jump
+changes register quickly, which is useful when the line is about to run out of room.
+Bar 5 brings back the B♭ D E♭ E♮ of example 2.
+
+<div class="abc-ex" data-bpm="132" data-style="swing" data-bass="off" data-width="640">
+<script type="text/plain">
+T:Example 4: interval jump approach
+M:4/4
+L:1/8
+Q:1/4=132
+K:F clef=bass
+"F7"F,2 _E,2 D,2 C,2 | "Bb7"_B,,2 _A,,2 G,,2 _G,,2 | "F7"F,,2 G,,2 A,,2 D,2 | "Cm7"C,2 _E,,2 "F7"=E,,2 F,,2 |
+"Bb7"_B,,2 D,2 _E,2 =E,2 | F,2 z6 | "F7"z8 | "Am7b5"z4 "D7"z4 |]
+</script>
+</div>
+
+## 5. Enclosures
+
+An **enclosure** surrounds a target note: one note above it and one below (or the other
+way round) before landing on it, the way a right-hand bebop line does. Bar 2 ends C, then
+G♭ a half step above F, and the line drops to the F of bar 3. Bar 4's G♭ F B♮ and bar 7's B♭ A♭ (around A of bar 8) work the same way.
+Bar 8 is A E♭ D A♭: D7 is reached, then A♭ a half step above G for Gm7. Bar 9 is the busiest
+bar: G, then A B♭ D♭ each followed by a ghost G, so the line climbs while the G keeps
+sounding underneath like a pedal. D♭ is a half step above C, the root of bar 10.
+
+<div class="abc-ex" data-bpm="132" data-style="swing" data-bass="off" data-width="640">
+<script type="text/plain">
+T:Example 5: with enclosures
+M:4/4
+L:1/8
+Q:1/4=132
+K:F clef=bass
+"F7"F,,2 A,,2 _B,,2 =B,,2 | C,2 D,2 C,2 _G,,2 | F,,2 A,,2 _B,,2 =B,,2 | "Cm7"C,2 _G,,2 "F7"F,,2 =B,,2 |
+"Bb7"_B,,2 D,2 _E,2 =E,2 | F,2 A,,2 _B,,2 =B,,2 | "F7"C,2 A,,2 _B,,2 _A,,2 | "Am7b5"A,,2 _E,,2 "D7"D,,2 _A,,2 |
+"Gm7"G,,2 A,,"^gh"G,, _B,,"^gh"G,, _D,"^gh"G,, | "C7"C,2 _B,,2 _G,,2 E,,2 | "F7"F,,2 A,,2 _B,,2 =B,,2 | C,2 z6 |]
+</script>
+</div>
+
+## Practice tips
+
+These are the handout's suggestions, in our words.
+
+- **Aim at chord tones.** Find the root (or 3rd, or 5th) the next bar wants and get there
+  from a half step above or below on beat 4.
+- **Know the scale of each chord.** A scale that fits the chord gives you notes that walk
+  smoothly; run up or down it between chord tones.
+- **Borrow enclosures from the right hand.** The above-and-below patterns of bebop
+  melody lines work just as well in the left hand.
+- **Study and transcribe.** Learn these five lines, then write out what jazz organists
+  play. The handout names Richard "Groove" Holmes, Jimmy Smith, Jimmy McGriff, Jack McDuff,
+  Charles Earland and Shirley Scott, and, more recently, Tony Monaco, Larry Goldings,
+  Joey DeFrancesco, Pat Bianchi, Mike LeDonne, Jared Gold and Brian Charette.
+
+## Try it with the band
+
+- [Walking Bass](/tools/walking-bass.html): make new walking lines and hear them.
+- [Backing Track with "Walking with devices"](/tools/backing-track.html?bass=walkdev): the
+  band's bass player walks using these devices; turn the bass off and play your own line.
+- See also [Blues for Bass](blues-bass.qmd) and [Organ for Pianists](organ-for-pianists.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+PianoGroove. "Walking Bass Line Theory: Lesson Notation & Graphics." PDF handout, *PianoGroove*, n.d. [www.pianogroove.com](https://www.pianogroove.com). Examples 1-5 (F blues, organ walking bass), the practice tips and the list of organists.
+:::
+<!-- /works-cited -->

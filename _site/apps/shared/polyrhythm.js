@@ -69,6 +69,7 @@
     });
   }
 
+  // Bell, son clave, rumba clave and tresillo grids checked against Toussaint, The Geometry of Musical Rhythm (2020), pp. 12, 24-25, 28, 41 (2026-11-27).
   var PRESETS = [
     { name: "2 against 3 (hemiola)", layers: "3;2", sounds: "hi;lo" },
     { name: "3 against 4", layers: "4;3", sounds: "lo;hi" },

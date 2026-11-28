@@ -1,0 +1,126 @@
+---
+title: "Vital 8: Effects"
+toc: true
+toc-depth: 2
+description: "Chorus, delay and reverb on this site's Vital panel, by ear, then the real Vital's nine effects, how to switch them on, reorder them, and the distortion types."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+Lesson 8 of 10 in *Vital, step by step*: everything you need to feel at home in the real Vital plug-in. Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Learn what chorus, delay and reverb do.
+2. Hear each one alone, then all three.
+3. Learn the real Vital's nine effects and their order.
+4. Check yourself.
+:::
+
+## What effects do
+
+- **Effects** change the finished sound, after the oscillators, filter and envelopes.
+- **Chorus** plays slightly delayed, slightly wobbling copies of the sound with it: wider and shimmering.
+- **Delay** repeats the sound a moment later: echoes.
+- **Reverb** adds the sound of a room or hall around it.
+- **Mix** is how much effect you hear against the plain (dry) sound: 0 % = none.
+
+## On this page
+
+- The EFFECTS tab has Vital's nine boxes, but only **CHORUS**, **DELAY** and **REVERB** work, and only their **MIX** knob. The order is fixed: chorus, then delay, then reverb.
+- The effects are this site's own, not Vital's.
+
+## The panel
+
+This site's beginner Vital panel: the real plug-in's names and ranges for a few controls, played by this site's own sound engine (not Vital's code), so it is close but not the same. Play it from the keys under it, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard (**Use MIDI**). Dimmed controls are not modelled; **Show ▾ → Only working controls** hides them.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="vital"><div class="scmp"></div></div>
+```
+
+## Step by step
+
+Each step loads a starting patch made on this page (not one of Vital's presets) and plays it. Listen for the one thing it names, then turn the knob it names.
+
+```{=html}
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;fxCho&quot;:50}" data-page="fx"><p><b>Chorus.</b> <b>CHORUS MIX</b> 50 %. Listen: the saw gets wider and shimmers. Turn MIX to 0 and back.</p></div>
+<div class="ik-step" data-ex="vital-lead" data-set="{&quot;fxDly&quot;:45}" data-page="fx"><p><b>Delay.</b> The lead with <b>DELAY MIX</b> 45 %. Listen to the repeats after each note, most after the last one. Turn MIX to 0: the notes stop dead.</p></div>
+<div class="ik-step" data-ex="vital-pad" data-set="{&quot;fxRev&quot;:60,&quot;fxCho&quot;:0}" data-page="fx"><p><b>Reverb.</b> The pad with <b>REVERB MIX</b> 60 % and no chorus. Listen to the hall round the chord, and the tail after it ends.</p></div>
+<div class="ik-step" data-ex="vital-pad" data-set="{&quot;fxRev&quot;:0,&quot;fxCho&quot;:0,&quot;fxDly&quot;:0}" data-page="fx"><p><b>Dry.</b> The same pad with every effect at 0. Compare it with step 3: flat and close.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;fxCho&quot;:40,&quot;fxDly&quot;:30,&quot;fxRev&quot;:30}" data-page="fx"><p><b>All three.</b> Chorus 40 %, delay 30 %, reverb 30 %. Turn each MIX down in turn and say which one you miss most.</p></div>
+```
+
+## In the real Vital
+
+What is different in the plug-in and exactly where to find it. Every line names the file of Vital's source code (github.com/mtytel/vital) it was read from; "(unverified)" means it was not confirmed.
+
+- **Nine effects:** CHORUS, COMPRESSOR, DELAY, DISTORTION, EQ, FILTER, FLANGER, PHASER, REVERB (Vital source, effects_interface.cpp; synth_constants.h).
+- **All off at the start:** each has an **on** switch and every one is off in a new preset (Vital source, synth_parameters.cpp). The EFFECTS tab shows only the ones you switch on (Vital source, effects_interface.cpp).
+- **The order:** a list on the left of the EFFECTS tab; drag items up and down to change the order the sound goes through them, and switch each on or off there (Vital source, effects_interface.cpp). Which order a new preset starts with is not settled in the notes (unverified).
+- **Many knobs each:** CHORUS has VOICES, FREQUENCY, DEPTH, FEEDBACK, MIX, DELAY 1, DELAY 2, CUTOFF, SPREAD (Vital source, chorus_section.cpp). DELAY has MODE, FREQUENCY, FEEDBACK, MIX, CUTOFF, SPREAD (Vital source, delay_section.cpp). REVERB has TIME, PRE LOW CUT, PRE HIGH CUT, CUTOFF, GAIN, CHORUS AMT, CHORUS FRQ, DELAY, SIZE, MIX (Vital source, reverb_section.cpp).
+- **Delay styles:** Mono, Stereo, Ping Pong, Mid Ping Pong; its time can follow the song's tempo (Vital source, synth_strings.h). A new delay's mix is about 33 % and its feedback 50 % (Vital source, synth_parameters.cpp).
+- **Distortion types:** Soft Clip, Hard Clip, Linear Fold, Sine Fold, Bit Crush, Down Sample, with its own filter before or after (None, Pre, Post) (Vital source, synth_strings.h; distortion_section.cpp).
+- **The rest:** the COMPRESSOR has Multiband, Low Band, High Band and Single Band modes; the EQ has LOW, BAND and HIGH bands (Vital source, synth_strings.h). FLANGER and PHASER sweep the sound; the FILTER effect is a third filter (Vital source, effects_interface.cpp).
+
+## Try it in the real Vital
+
+Open Vital in your DAW (see [Meet Vital](intro-vital.qmd) to install it) and do these in order.
+
+- [ ] Initialize the preset and open the **EFFECTS** tab.
+- [ ] Switch **REVERB** on in the list on the left and turn its MIX.
+- [ ] Switch **DELAY** on. Try MODE **Ping Pong** and listen in headphones.
+- [ ] Switch **DISTORTION** on and step through its TYPE.
+- [ ] Drag REVERB above DELAY in the list. Does it sound different?
+- [ ] Switch **CHORUS** on and turn VOICES.
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>Which effect makes echoes?</b></p><ul><li>Delay</li><li>Chorus</li><li>Reverb</li><li>EQ</li></ul><p class="ik-why">Delay repeats the sound a moment later.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which effect adds the sound of a room?</b></p><ul><li>Reverb</li><li>Delay</li><li>Compressor</li><li>Distortion</li></ul><p class="ik-why">Step 3.</p></div>
+<div class="ik-q" data-a="0"><p><b>What does Mix 0 % mean?</b></p><ul><li>No effect is heard</li><li>Full effect</li><li>The effect is louder</li><li>The effect is reversed</li></ul><p class="ik-why">Mix = effect against the dry sound.</p></div>
+<div class="ik-q" data-a="0"><p><b>How many effects does the real Vital have?</b></p><ul><li>9</li><li>3</li><li>6</li><li>64</li></ul><p class="ik-why">effects_interface.cpp; synth_constants.h.</p></div>
+<div class="ik-q" data-a="0"><p><b>How do you change the order of effects in the real Vital?</b></p><ul><li>Drag them in the list on the left of the EFFECTS tab</li><li>You cannot</li><li>In the preset browser</li><li>Right-click the volume</li></ul><p class="ik-why">effects_interface.cpp: the drag-and-drop effect order.</p></div>
+```
+
+## Previous and next
+
+::: {.vl-nav}
+- Previous: [Vital 7: Playing it: velocity, mod wheel, note](vital-07-playing.qmd)
+- Next: [Vital 9: Voices: polyphony, unison, glide](vital-09-voices.qmd)
+:::
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Tytel, Matt. "chorus_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/chorus_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/chorus_section.cpp). CHORUS labels: VOICES, FREQUENCY, DEPTH, FEEDBACK, MIX, DELAY 1, DELAY 2, CUTOFF, SPREAD.
+
+Tytel, Matt. "delay_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/delay_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/delay_section.cpp). DELAY labels: MODE, FREQUENCY, FEEDBACK, MIX, CUTOFF, SPREAD.
+
+Tytel, Matt. "distortion_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/distortion_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/distortion_section.cpp). DISTORTION labels: TYPE, FILTER, DRIVE, MIX, CUTOFF, RESONANCE, BLEND.
+
+Tytel, Matt. "effects_interface.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/effects_interface.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/effects_interface.cpp). The nine effects, each with an on switch; the drag-to-reorder effect list.
+
+Tytel, Matt. "reverb_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/reverb_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/reverb_section.cpp). REVERB labels: TIME, PRE LOW CUT, PRE HIGH CUT, CUTOFF, GAIN, CHORUS AMT, CHORUS FRQ, DELAY, SIZE, MIX.
+
+Tytel, Matt. "synth_constants.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_constants.h](https://github.com/mtytel/vital/blob/main/src/common/synth_constants.h). kNumOscillators 3, kNumFilters 2, kNumEnvelopes 6, kNumLfos 8, kNumRandomLfos 4, kNumMacros 4, kMaxModulationConnections 64, kMaxPolyphony 33 (32 playing), effects chorus / compressor / delay / distortion / EQ / filter / flanger / phaser / reverb, filter models Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phase.
+
+**For teachers**
+
+Tytel, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp](https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp). Oscillator on, transpose, tune, level, wave frame, unison; filter cutoff 8-136 semitones, resonance, drive 0-20 dB, blend 0-2, key track; envelope times 0-2.378; LFO frequency -7..9; polyphony; portamento.
+
+Tytel, Matt. "synth_strings.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h](https://github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h). Filter styles (12dB, 24dB, Notch Blend, Notch Spread, B/P/N) and models (Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phaser).
+:::
+<!-- /works-cited -->

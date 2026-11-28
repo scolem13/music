@@ -1,0 +1,116 @@
+---
+title: "Sound 28: Shepard tones"
+toc: true
+toc-depth: 2
+description: "The sound that rises forever and never gets higher: how a Shepard tone is built (sine waves an octave apart under a fixed loudness curve), Risset's gliding version, the tritone paradox, and where you have heard it in film, games and records."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
+---
+
+{{< include _synth-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/lessons/shepard-kit.js"></script>
+```
+
+Play the widget below and listen. The note climbs, step after step, for as long as you let it run,
+yet it never gets any higher. This is a **Shepard tone**, named after the psychologist Roger Shepard,
+who wrote about it in 1964. The BBC once called it "a musical barber's pole": the stripes keep
+rising, and the pole stays where it is.
+
+**How to use the page.** Play the first widget, then read how it works and try the *Flat* loudness
+curve to see the trick. The second widget is a listening test you can do with a partner.
+
+## Hear it
+
+<div class="sk" data-w="shepard" data-preset="Endless staircase"></div>
+
+- **Motion**: *Steps* is the **Shepard scale**, one semitone at a time. *Glide* is the continuous
+  version made later by the composer Jean-Claude Risset, called the **Shepard–Risset glissando**.
+- **Direction**: up, down, or hold still. Holding still shows that it is only one chord, really.
+- **Octaves in the stack**: how many sine waves are sounding.
+
+## How the trick works
+
+A Shepard tone is not one note but a stack of **sine waves exactly an octave apart**: a C1, C2, C3,
+C4 and so on, all sounding together. Your ear hears the stack as one note, C.
+
+Now move every sine wave up one semitone, together. The note is now C♯. Keep going. After twelve
+steps each sine wave has gone up an octave, so the stack is back where it started, a pile of Cs. The
+note has gone up twelve times and arrived where it began.
+
+What stops you from noticing is the **loudness curve**. It stays still while the sine waves move
+through it. It is a bell shape across the frequency range: sine waves near the middle are loud, those
+near the very bottom and very top are almost silent. So the highest sine wave fades out as it climbs,
+and at the same moment a new, quiet one fades in at the bottom. You never hear one leave or one
+arrive. In the plot, each bar is one sine wave and its height is how loud it is.
+
+**Give the trick away.** Choose the preset *Give it away* (or set **Loudness curve** to *Flat*). Now
+every sine wave is equally loud, and every octave you hear the top one vanish and a bass note appear
+from nowhere. Switch back to *Bell* and the join disappears.
+
+Shepard found that the exact shape does not matter much: almost any smooth curve that tapers off to
+silence at the low and high ends works as well as the bell he used. Short gaps between the steps are
+said to make the illusion stronger than notes that run together. Compare *Steps* and *Glide* to see
+which fools you more.
+
+## Which way did it go? The tritone paradox
+
+Play two Shepard tones **half an octave apart** (a tritone, such as C then F♯). Going up six
+semitones and going down six semitones land on the same note, so the pair could be heard either way.
+Shepard expected the pair to flip, like an optical illusion that switches as you stare at it.
+
+In 1986 the music psychologist **Diana Deutsch** found something stranger. Each listener tends to hear
+the same pairs the same way: one person hears C → F♯ go up and G → C♯ go down, while someone else
+hears the opposite. What decides it is *which notes* are played, and the answer seems to depend
+partly on the language or dialect a person grew up speaking. Listeners from the south of England and
+from California, for example, tended to hear them in opposite ways.
+
+<div class="sk" data-w="tritone"></div>
+
+Answer at least a dozen pairs. Each note on the circle is coloured by what you heard when the pair
+**started** on it. Many listeners find the circle splits into two halves: one half heard going up,
+the other going down. Compare your circle with a classmate's.
+
+## Where you've heard it
+
+- **Pink Floyd, "Echoes"** (*Meddle*, 1971): the ending rises as a Shepard tone, made by feeding back
+  between two tape recorders sharing one tape.
+- **The THX "Deep Note"** (introduced 1983), the sound before films in THX cinemas, uses one in its
+  opening.
+- **Super Mario 64** (1996): the music on the endless staircase in Peach's Castle uses a slightly
+  changed Shepard scale, a sound that never ends for stairs that never end.
+- **Christopher Nolan's films**: in *The Dark Knight* (2008) the Batpod's engine was a Shepard tone, so
+  it seemed to speed up forever instead of changing gear. *Dunkirk* (2017) uses one to make the tension
+  feel as if it is always rising.
+- **Franz Ferdinand, "Always Ascending"** (2018): a rising Shepard tone runs through the whole song.
+- **Composers** have used it too: James Tenney's *For Ann (rising)* is made entirely of a
+  slowly changing Shepard glissando, and the end of Karlheinz Stockhausen's *Hymnen* has several falling ones.
+
+The "riser" in dance music, the sweep that builds before a drop, uses the same idea: press *Riser*
+in the widget.
+
+## Try this
+
+1. Run *Endless staircase* for a full minute. Stop it and hum the last note. Is it higher than the
+   first note? Now play a C on a piano: is your hum near it?
+2. Set **Octaves in the stack** to 3. Does the illusion still work? What about 10?
+3. With *Glide* and a slow speed, try to follow one sine wave in the plot with your ear. Can you hear
+   it fade out at the top?
+4. Make a 20-second riser for a song in your DAW: a Shepard glide under a drum fill. Where should it
+   stop?
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Shepard tone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Shepard_tone](https://en.wikipedia.org/wiki/Shepard_tone). Named after Roger Shepard (JASA, December 1964); sine waves separated by octaves under a raised-cosine loudness curve; any smooth tapering curve works as well (Shepard); short gaps make it more convincing [citation needed on the page]; 'a musical barber's pole' (BBC Bang Goes the Theory); Risset's continuous version; examples: Echoes (Meddle, 1971), THX Deep Note (1983), Super Mario 64 (1996), The Dark Knight (2008) Batpod, Dunkirk (2017), Always Ascending (2018), Tenney For Ann (rising), Stockhausen Hymnen.
+
+"Tritone paradox." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tritone_paradox](https://en.wikipedia.org/wiki/Tritone_paradox). Pairs of Shepard tones a tritone apart heard as ascending by some and descending by others; Shepard (1963) expected an ambiguous, Necker-cube-like figure; Diana Deutsch (1986) found judgments depend on the tones' positions on the pitch-class circle, and vary with language or dialect (south of England vs California).
+
+**For teachers**
+
+"Jean-Claude Risset." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Jean-Claude_Risset](https://en.wikipedia.org/wiki/Jean-Claude_Risset). French composer, computer-music pioneer (1938-2016); created the continuous Risset scale (Shepard-Risset glissando) after Shepard's discrete scale.
+:::
+<!-- /works-cited -->

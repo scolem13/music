@@ -1,0 +1,128 @@
+---
+title: "Vital 9: Voices: polyphony, unison, glide"
+toc: true
+toc-depth: 2
+description: "How many notes Vital plays at once and how notes join: polyphony for chords, one voice for a bass, glide (portamento) and unison, then the real plug-in's legato, note priority and unison stacks."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+Lesson 9 of 10 in *Vital, step by step*: everything you need to feel at home in the real Vital plug-in. Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Learn what polyphony, mono, glide and unison mean.
+2. Hear a pad with 8 voices and with 1.
+3. Make a mono bass glide.
+4. Learn where the real Vital keeps these settings.
+5. Check yourself.
+:::
+
+## Voices
+
+- A **voice** is one note the synth can play. **Polyphony** is how many at once. Pads and chords need many; a bass line or a solo needs one.
+- With **polyphony 1** the synth is *mono*: a new note cuts off the old one. That is often what you want for a bass.
+- This page plays up to 16 voices. The real Vital's VOICES runs from 1 to 32 and starts at 8 (Vital source, voice_section.cpp; synth_parameters.cpp).
+
+## Glide
+
+- **Glide** (also called *portamento*) slides the pitch from one note to the next instead of jumping.
+- On this page and in Vital the knob runs from -10 to 4; -10 is off (Vital source, synth_parameters.cpp). This page reads it as 2 to the power of the number in seconds: -5 = 0.03 s, -2 = 0.25 s (unverified).
+
+## Unison
+
+- **Unison** (lesson 2) stacks copies of each note. On this page, unison above 1 also makes the panel mono (its engine); the real Vital's unison is per oscillator and still plays chords (unverified).
+
+## The panel
+
+This site's beginner Vital panel: the real plug-in's names and ranges for a few controls, played by this site's own sound engine (not Vital's code), so it is close but not the same. Play it from the keys under it, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard (**Use MIDI**). Dimmed controls are not modelled; **Show ▾ → Only working controls** hides them.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="vital"><div class="scmp"></div></div>
+```
+
+## Step by step
+
+Each step loads a starting patch made on this page (not one of Vital's presets) and plays it. Listen for the one thing it names, then turn the knob it names.
+
+```{=html}
+<div class="ik-step" data-ex="vital-pad" data-set="{&quot;poly&quot;:8}" data-page="voice"><p><b>Eight voices.</b> The pad with <b>VOICES</b> 8: a five-note chord. Listen to all the notes together.</p></div>
+<div class="ik-step" data-ex="vital-pad" data-set="{&quot;poly&quot;:1}" data-page="voice"><p><b>One voice.</b> The same pad with <b>VOICES</b> 1. Only one note of the chord is left. Mono is wrong for a pad; set VOICES back to 8.</p></div>
+<div class="ik-step" data-ex="vital-bass" data-page="voice"><p><b>A mono bass.</b> <b>VOICES</b> 1, <b>GLIDE</b> -5 (a short slide). Listen to how the notes join, with a tiny slide into each one.</p></div>
+<div class="ik-step" data-ex="vital-bass" data-set="{&quot;glide&quot;:-2}" data-page="voice"><p><b>A longer glide.</b> <b>GLIDE</b> -2 (about a quarter of a second). Now you clearly hear the slide between notes, like a fretless bass. Try -1, then -10 (off).</p></div>
+<div class="ik-step" data-ex="vital-lead" data-page="voice"><p><b>Unison.</b> The lead with <b>UNISON</b> 4. Turn it to 8 for a huge stack, then to 1. Notice the panel plays one note at a time while unison is on (this page only).</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;glide&quot;:-3,&quot;poly&quot;:8}" data-page="voice"><p><b>Glide on a polyphonic sound.</b> The first sound with <b>GLIDE</b> -3 and 8 voices. Each new note slides from the last one played. Compare with GLIDE -10.</p></div>
+```
+
+## In the real Vital
+
+What is different in the plug-in and exactly where to find it. Every line names the file of Vital's source code (github.com/mtytel/vital) it was read from; "(unverified)" means it was not confirmed.
+
+- **VOICE strip** (bottom, under every tab): **VOICES** (polyphony 1-32, starts at 8), VEL TRK and BEND (Vital source, voice_section.cpp; synth_parameters.cpp; synth_constants.h).
+- **PORTAMENTO strip:** **GLIDE** (the time; starts at its lowest = off), **SLOPE** (the shape of the slide), and buttons **OCTAVE SCALE**, **ALWAYS GLIDE** and **LEGATO** (Vital source, portamento_section.cpp; synth_parameters.cpp). In most synths *legato* means notes played joined do not restart the envelopes, and *always glide* slides even between separate notes; what Vital's buttons do exactly is not in the notes (unverified).
+- **ADVANCED tab, VOICE box:** **NOTE PRIORITY** (which note wins when voices run out: Newest, Oldest, Highest, Lowest, Round Robin; starts on Round Robin) and **VOICE OVERRIDE** (Kill or Steal; starts on Kill) (Vital source, master_controls_interface.cpp; synth_strings.h; synth_parameters.cpp).
+- **Unison per oscillator:** each OSC has its own UNISON voices (1-16), detune and detune power (Vital source, oscillator_section.cpp; synth_parameters.cpp).
+- **Stacks:** the ADVANCED tab's **STACK** per oscillator: Unison, Center Drop 12, Center Drop 24, Octave, 2x Octave, Power Chord, 2x Power Chord, Major Chord, Minor Chord, Harmonics, Odd Harmonics (Vital source, synth_strings.h; oscillator_advanced_section.cpp). A *Power Chord* stack plays a root and fifth from one key.
+
+## Try it in the real Vital
+
+Open Vital in your DAW (see [Meet Vital](intro-vital.qmd) to install it) and do these in order.
+
+- [ ] Initialize the preset. Play a chord: you hear all its notes (VOICES 8).
+- [ ] Set **VOICES** to 1 and play the chord again.
+- [ ] With VOICES 1, raise **GLIDE** and play a bass line.
+- [ ] Switch **LEGATO** on and play joined notes, then separate notes. Listen for what changes.
+- [ ] On OSC 1 set UNISON voices to 5. Open ADVANCED and set OSC 1's **STACK** to *Power Chord*.
+- [ ] On ADVANCED, set NOTE PRIORITY to *Highest* with VOICES 1 and hold two keys.
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>What is polyphony?</b></p><ul><li>How many notes can play at once</li><li>How loud the synth is</li><li>How fast the LFO is</li><li>The filter's slope</li></ul><p class="ik-why">One voice = one note.</p></div>
+<div class="ik-q" data-a="0"><p><b>A bass line often uses…</b></p><ul><li>Voices 1 (mono) with a little glide</li><li>32 voices and long reverb</li><li>No oscillators</li><li>Only the sample</li></ul><p class="ik-why">Step 3.</p></div>
+<div class="ik-q" data-a="0"><p><b>What does glide do?</b></p><ul><li>Slides the pitch from one note to the next</li><li>Makes notes louder</li><li>Adds echoes</li><li>Changes the wavetable</li></ul><p class="ik-why">Portamento = glide.</p></div>
+<div class="ik-q" data-a="0"><p><b>Where is NOTE PRIORITY in the real Vital?</b></p><ul><li>The ADVANCED tab</li><li>The EFFECTS tab</li><li>Under the filter</li><li>In the preset browser</li></ul><p class="ik-why">master_controls_interface.cpp.</p></div>
+<div class="ik-q" data-a="0"><p><b>Which is a real Vital unison stack?</b></p><ul><li>Power Chord</li><li>Ping Pong</li><li>Ladder</li><li>Perlin</li></ul><p class="ik-why">kUnisonStackNames (synth_strings.h).</p></div>
+```
+
+## Previous and next
+
+::: {.vl-nav}
+- Previous: [Vital 8: Effects](vital-08-effects.qmd)
+- Next: [Vital 10: From this page to the real Vital](vital-10-real-thing.qmd)
+:::
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Tytel, Matt. "master_controls_interface.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/master_controls_interface.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/master_controls_interface.cpp). Advanced tab: MPE ENABLED, NOTE PRIORITY, VOICE OVERRIDE, TUNING; OVERSAMPLING.
+
+Tytel, Matt. "oscillator_advanced_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/oscillator_advanced_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/oscillator_advanced_section.cpp). Advanced tab per oscillator: STACK (unison stack styles) and other options.
+
+Tytel, Matt. "oscillator_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/oscillator_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/oscillator_section.cpp). OSC 1-3: wavetable name and browser, pencil (editor), 3D / 2D / SP view, PITCH / UNISON / PHASE groups, LEVEL, PAN, spectral morph, distortion, destination.
+
+Tytel, Matt. "portamento_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/portamento_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/portamento_section.cpp). GLIDE, SLOPE, OCTAVE SCALE, ALWAYS GLIDE, LEGATO.
+
+Tytel, Matt. "synth_constants.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_constants.h](https://github.com/mtytel/vital/blob/main/src/common/synth_constants.h). kNumOscillators 3, kNumFilters 2, kNumEnvelopes 6, kNumLfos 8, kNumRandomLfos 4, kNumMacros 4, kMaxModulationConnections 64, kMaxPolyphony 33 (32 playing), effects chorus / compressor / delay / distortion / EQ / filter / flanger / phaser / reverb, filter models Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phase.
+
+Tytel, Matt. "voice_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/voice_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/voice_section.cpp). VOICES (polyphony), VEL TRK, BEND.
+
+**For teachers**
+
+Tytel, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp](https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp). Oscillator on, transpose, tune, level, wave frame, unison; filter cutoff 8-136 semitones, resonance, drive 0-20 dB, blend 0-2, key track; envelope times 0-2.378; LFO frequency -7..9; polyphony; portamento.
+
+Tytel, Matt. "synth_strings.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h](https://github.com/mtytel/vital/blob/main/src/interface/look_and_feel/synth_strings.h). Filter styles (12dB, 24dB, Notch Blend, Notch Spread, B/P/N) and models (Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phaser).
+:::
+<!-- /works-cited -->

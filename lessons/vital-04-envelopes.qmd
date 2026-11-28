@@ -1,0 +1,127 @@
+---
+title: "Vital 4: Envelopes"
+toc: true
+toc-depth: 2
+description: "Envelopes shape a sound over time: attack, decay, sustain and release by ear, Envelope 1 on the loudness, Envelope 2 on the cutoff and the wave frame, Envelope 3 through the matrix, and the real Vital's six envelopes."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+Lesson 4 of 10 in *Vital, step by step*: everything you need to feel at home in the real Vital plug-in. Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Learn what attack, decay, sustain and release mean.
+2. Shape the loudness with Envelope 1: a swell and a pluck.
+3. Move the filter and the wave frame with Envelope 2.
+4. Use Envelope 3 through the matrix.
+5. Find the real Vital's six envelopes.
+:::
+
+## What an envelope is
+
+- An **envelope** is a shape over time that starts when you press a key and ends after you let go. It moves something for you: the loudness, the cutoff, the wave frame.
+- It has four parts, written **ADSR**:
+  - **Attack**: how long it takes to rise when you press the key.
+  - **Decay**: how long it takes to fall to the sustain level.
+  - **Sustain**: the level it holds while the key stays down (a level, not a time).
+  - **Release**: how long it takes to fade after you let go.
+
+## Times in Vital
+
+- Vital's attack, decay and release knobs run from 0 to about 2.378 (Vital source, synth_parameters.cpp). They are not seconds: this page reads the knob value to the power 4 as seconds (1.0 = 1 s, 2.378 = 32 s), a reading of the code (unverified).
+- So small moves near 0 are tiny times, and the same move near the top is many seconds.
+
+## Which envelope does what
+
+- On this page **Envelope 1** always shapes the loudness. In the real Vital, Envelope 1 controls the loudness at the start too, but that is not stated in the files read (unverified).
+- **Envelope 2** has two fixed routes here: **→ cutoff** and **→ frame** (the small knobs under it).
+- **Envelope 3** is on the MATRIX tab and does nothing until a matrix slot uses it.
+
+## The panel
+
+This site's beginner Vital panel: the real plug-in's names and ranges for a few controls, played by this site's own sound engine (not Vital's code), so it is close but not the same. Play it from the keys under it, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard (**Use MIDI**). Dimmed controls are not modelled; **Show ▾ → Only working controls** hides them.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="vital"><div class="scmp"></div></div>
+```
+
+## Step by step
+
+Each step loads a starting patch made on this page (not one of Vital's presets) and plays it. Listen for the one thing it names, then turn the knob it names.
+
+```{=html}
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;e1A&quot;:0.9,&quot;e1R&quot;:1.0}" data-page="voice"><p><b>A slow swell.</b> Envelope 1 <b>ATTACK</b> 0.9 (about 0.7 s) and <b>RELEASE</b> 1.0. Listen: each note fades in and rings on after it ends. Turn ATTACK down to 0 for a sharp start.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;e1A&quot;:0,&quot;e1D&quot;:0.5,&quot;e1S&quot;:0,&quot;e1R&quot;:0.3}" data-page="voice"><p><b>A pluck.</b> <b>SUSTAIN</b> 0 %, <b>DECAY</b> 0.5, <b>ATTACK</b> 0. Each note starts loud and dies away even while the key is held, like a plucked string. Raise DECAY to 0.9 for a longer ring.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;e1D&quot;:0.7,&quot;e1S&quot;:40}" data-page="voice"><p><b>Decay to a sustain.</b> <b>DECAY</b> 0.7, <b>SUSTAIN</b> 40 %. Hold a key: it starts loud, then settles to a quieter level and stays. Move SUSTAIN up and down while holding a key.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;cut&quot;:50,&quot;res&quot;:35,&quot;e2Cut&quot;:36,&quot;e2A&quot;:0,&quot;e2D&quot;:0.6,&quot;e2S&quot;:0,&quot;e2R&quot;:0.3}" data-page="voice"><p><b>Envelope 2 on the cutoff.</b> The filter is nearly closed (cutoff 50), and <b>Env 2 → cutoff</b> at +36 opens it at the start of each note: a "blip". Make Envelope 2's DECAY longer (0.9) for a slower "wow".</p></div>
+<div class="ik-step" data-ex="vital-morph" data-page="voice"><p><b>Envelope 2 on the wave frame.</b> <b>Env 2 → frame</b> at 256 moves OSC 1 from sine to saw on every note: brighter as the note goes on, with no filter at all. Make Envelope 2's ATTACK shorter and listen again.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;m1s&quot;:&quot;Env 3&quot;,&quot;m1d&quot;:&quot;Osc 1 pitch&quot;,&quot;m1a&quot;:6,&quot;e3A&quot;:0,&quot;e3D&quot;:0.45,&quot;e3S&quot;:0,&quot;e3R&quot;:0.3}" data-page="matrix"><p><b>Envelope 3 through the matrix.</b> Slot 1: <b>Env 3 → Osc 1 pitch</b>, 6 %. Envelope 3 has no sustain and a short decay, so each note starts a little high and drops: a "zap". Turn Envelope 3's DECAY up on the MATRIX tab for a slower drop.</p></div>
+```
+
+## In the real Vital
+
+What is different in the plug-in and exactly where to find it. Every line names the file of Vital's source code (github.com/mtytel/vital) it was read from; "(unverified)" means it was not confirmed.
+
+- **Six envelopes:** ENVELOPE 1 to 6, one shown at a time; click the numbered buttons on the left of the envelope area to switch (Vital source, synth_constants.h; modulation_interface.cpp).
+- **Six knobs, not four:** **DELAY**, ATTACK, **HOLD**, DECAY, SUSTAIN, RELEASE (Vital source, envelope_section.cpp). DELAY waits before the attack starts; HOLD keeps the top level for a while before the decay.
+- **Curves:** attack, decay and release can each be bent into a curve, not only a straight line (Vital source, envelope_section.cpp).
+- **Drag the picture:** drag the points of the envelope graph left and right for times and the sustain point up and down for the level; drag a curve handle up or down to bend it, double-click it to straighten it; the mouse wheel zooms (Vital source, envelope_editor.cpp).
+- **Starting values:** attack 0.1495, decay 1.0, sustain 100 %, release 0.5476 on the knob's own scale (Vital source, synth_parameters.cpp). The seconds those mean are not in the notes (unverified).
+- **Any envelope, anywhere:** in the real Vital you drag the **ENV 2** button (or any ENV button) onto any knob (lesson 5). This page's fixed *→ cutoff* and *→ frame* knobs stand in for that.
+
+## Try it in the real Vital
+
+Open Vital in your DAW (see [Meet Vital](intro-vital.qmd) to install it) and do these in order.
+
+- [ ] Initialize the preset. Click ENVELOPE 1 and drag its ATTACK point to the right. Play: the sound fades in.
+- [ ] Drag the sustain point down to the bottom for a pluck.
+- [ ] Bend the decay curve by dragging its handle; double-click the handle to straighten it.
+- [ ] Click ENV 2 and look at its knobs: DELAY, ATTACK, HOLD, DECAY, SUSTAIN, RELEASE.
+- [ ] Lesson 5 shows how to drag ENV 2 onto the cutoff.
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>Which part of an envelope is a level, not a time?</b></p><ul><li>Sustain</li><li>Attack</li><li>Decay</li><li>Release</li></ul><p class="ik-why">Sustain is the level held while the key is down.</p></div>
+<div class="ik-q" data-a="0"><p><b>A plucked sound has…</b></p><ul><li>Short attack, no sustain</li><li>Long attack, full sustain</li><li>No release at all</li><li>Only release</li></ul><p class="ik-why">Step 2.</p></div>
+<div class="ik-q" data-a="0"><p><b>Envelope 2 → cutoff makes each note…</b></p><ul><li>Open the filter and close it again</li><li>Louder for ever</li><li>Change wavetable</li><li>Play an octave up</li></ul><p class="ik-why">Step 4.</p></div>
+<div class="ik-q" data-a="0"><p><b>How many envelopes does the real Vital have?</b></p><ul><li>6</li><li>2</li><li>3</li><li>64</li></ul><p class="ik-why">kNumEnvelopes = 6 (synth_constants.h).</p></div>
+<div class="ik-q" data-a="0"><p><b>Which two knobs does the real Vital&#x27;s envelope have that this page&#x27;s does not?</b></p><ul><li>Delay and Hold</li><li>Cutoff and Resonance</li><li>Rate and Shape</li><li>Mix and Drive</li></ul><p class="ik-why">envelope_section.cpp: DELAY, ATTACK, HOLD, DECAY, SUSTAIN, RELEASE.</p></div>
+```
+
+## Previous and next
+
+::: {.vl-nav}
+- Previous: [Vital 3: The filter](vital-03-filter.qmd)
+- Next: [Vital 5: Modulation, drag and drop](vital-05-modulation.qmd)
+:::
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Tytel, Matt. "envelope_editor.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_components/envelope_editor.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_components/envelope_editor.cpp). Dragging the envelope graph's points and curves; zoom.
+
+Tytel, Matt. "envelope_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/envelope_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/envelope_section.cpp). ENVELOPE n: DELAY, ATTACK, HOLD, DECAY, SUSTAIN, RELEASE and the curve controls.
+
+Tytel, Matt. "full_interface.cpp," "synthesis_interface.cpp" and "modulation_interface.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/tree/main/src/interface/editor_sections](https://github.com/mtytel/vital/tree/main/src/interface/editor_sections). Section bounds of the main window at the default 1400 x 820 (synth_constants.h): header 48, macro column, oscillators, sample, two filters, envelopes : LFOs : random = 3 : 4 : 2, voice and portamento strip, keyboard.
+
+Tytel, Matt. "synth_constants.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_constants.h](https://github.com/mtytel/vital/blob/main/src/common/synth_constants.h). kNumOscillators 3, kNumFilters 2, kNumEnvelopes 6, kNumLfos 8, kNumRandomLfos 4, kNumMacros 4, kMaxModulationConnections 64, kMaxPolyphony 33 (32 playing), effects chorus / compressor / delay / distortion / EQ / filter / flanger / phaser / reverb, filter models Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phase.
+
+**For teachers**
+
+Tytel, Matt. "synth_parameters.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp](https://github.com/mtytel/vital/blob/main/src/common/synth_parameters.cpp). Oscillator on, transpose, tune, level, wave frame, unison; filter cutoff 8-136 semitones, resonance, drive 0-20 dB, blend 0-2, key track; envelope times 0-2.378; LFO frequency -7..9; polyphony; portamento.
+:::
+<!-- /works-cited -->

@@ -5,7 +5,7 @@ Backing Track page. Written 2026-10-10. **Nobody has listened to it.** Every lev
 source (linked) or is a first guess, and the two are kept apart so the guesses are easy to find and change.
 
 What was asked for: all nine tonebars, the upper manual only, the C3 chorus, and a band that works the swell pedal and
-the Leslie speed by itself. Not built: percussion, the lower manual, bass pedals, the other vibrato settings.
+the Leslie speed by itself. Not built: the lower manual, bass pedals, the other vibrato settings.
 
 ## How far to trust the sources
 
@@ -83,9 +83,21 @@ tonebars, a registration menu, Leslie (Automatic / Slow / Fast / Stopped), Swell
 The chorus, the pedal's range, the drive and the speaker's own numbers are in Mixer → *Tone (EQ)*, in the organ's amp.
 Settings are kept in the browser (`localStorage.btOrgan`, and `btAmp` for the amp).
 
+## Percussion (added 2026-11-27)
+
+Controls `perc` (true / false), `percH` "2nd" | "3rd", `percDec` "fast" | "slow", `percVol` "normal" | "soft" (BandSounds.setControl,
+or setDest for one destination). From sources (Hammond XK-5 manual, "same as B-3/C-3", and HammondWiki "Percussion", both in
+`scripts/sources/organs.py` / `organ-for-pianists.py`): 2nd = the 4′ pitch, 3rd = the 2⅔′ (here the tempered fifth wheel, an octave
+up); fast / slow decay; the 1′ tonebar silent while on; single-trigger (a note struck with no other key of the organ held; keys of
+one chord struck together within 5 ms all sound it). **Guesses** (the same as `organ-compare.js`, so the two organs agree): decay
+time constant 0.2 s / 3 (fast) and 1 s / 3 (slow), level 0.95 (normal) or 0.3 (soft, about 10 dB down) of a full tonebar, Normal
+lowers the tonebars 3 dB. The percussion is a sine, not a wheel's own waveform, and is not affected by the tonebars' foldback.
+The band's organist never switches it: it is set by hand on the lesson page and in Mixer → Organ. Test `node tests/lessons/arrange-organ.cdp.js`
+(also the organist strips under the lesson's band demos, fed by `BandSounds.watchControl`).
+
 ## Not modelled
 
-- Percussion, the lower manual, pedals, V1 to V3 and C1, C2.
+- The lower manual, pedals, V1 to V3 and C1, C2.
 - Tapering (each wheel's own level across the keyboard), which a commenter on [Electric Druid][druid] calls the main reason for the instrument's scream.
 - Leakage between neighbouring wheels at other pitches; contact bounce note by note.
 - The cabinet: no reflections, no horn tone, one tube stage for both rotors.

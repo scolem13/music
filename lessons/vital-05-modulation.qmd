@@ -1,0 +1,133 @@
+---
+title: "Vital 5: Modulation, drag and drop"
+toc: true
+toc-depth: 2
+description: "Vital's big idea: drag a source (an envelope, LFO or the keyboard) onto any knob to make it move. Try it on this site's panel, read the slots on the MATRIX tab, use negative amounts, then learn the real plug-in's exact steps."
+instruments: [piano, other]
+topics: [sound]
+has: [interactive, svg]
+---
+
+Lesson 5 of 10 in *Vital, step by step*: everything you need to feel at home in the real Vital plug-in. Short sections, one idea each. Click a heading to fold or open it.
+
+::: {.ik-do}
+**What you'll do**
+
+1. Learn what a modulation source, destination and amount are.
+2. Drag a source onto a knob on this site's panel.
+3. Read and change the slot on the MATRIX tab, including negative amounts.
+4. Learn exactly how dragging works in the real Vital.
+5. Check yourself.
+:::
+
+## Source, destination, amount
+
+- **Modulation** means one part of the synth turning a knob for you, over and over or on every note.
+- The part that does the moving is the **source** (an envelope, an LFO, the keyboard). The knob it moves is the **destination**. How far it moves it is the **amount**.
+- One source → one destination at one amount is one **connection**.
+
+## Drag and drop on this page
+
+- The source buttons are on the right of the panel: **ENV 1-3**, **LFO 1-2**, **RAND 1**, and **NOTE** and **VELOCITY** in KEYBOARD MODS.
+- Press on one, drag it onto a knob that can take it (wave frame, transpose / tune, level, cutoff or volume), and let go. The panel fills the next free **slot** at 50 % and puts a ring on the knob. A message says which slot it used.
+- This page has 8 slots. A control that cannot take modulation here says so (the real Vital can modulate it).
+
+## The MATRIX tab and negative amounts
+
+- The **MATRIX** tab lists the 8 slots: source → destination, and **AMT** (amount) from -100 % to +100 %. Click a box to step through its choices; Shift-click goes back.
+- A **negative** amount moves the knob the other way: Env 2 at -40 % on the cutoff closes the filter on each note instead of opening it.
+- 100 % here means the destination's whole range on this page (this site's reading of how Vital counts amounts, unverified).
+
+## The panel
+
+This site's beginner Vital panel: the real plug-in's names and ranges for a few controls, played by this site's own sound engine (not Vital's code), so it is close but not the same. Play it from the keys under it, the computer keys (a w s e d f t g y h u j k) or a MIDI keyboard (**Use MIDI**). Dimmed controls are not modelled; **Show ▾ → Only working controls** hides them.
+
+```{=html}
+<div class="ik-box" data-kind="synth" data-id="vital"><div class="scmp"></div></div>
+```
+
+## Step by step
+
+Each step loads a starting patch made on this page (not one of Vital's presets) and plays it. Listen for the one thing it names, then turn the knob it names.
+
+```{=html}
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;m1s&quot;:&quot;LFO 1&quot;,&quot;m1d&quot;:&quot;Cutoff&quot;,&quot;m1a&quot;:40,&quot;cut&quot;:72,&quot;lfoRate&quot;:1}" data-page="voice"><p><b>A dropped connection.</b> This is what you get after dragging <b>LFO 1</b> onto <b>CUTOFF</b>, at 40 %: the cutoff sweeps up and down. Listen for the slow wah. Now try it yourself: drag <b>LFO 2</b> onto OSC 1's <b>LEVEL</b> and listen.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;m1s&quot;:&quot;LFO 1&quot;,&quot;m1d&quot;:&quot;Cutoff&quot;,&quot;m1a&quot;:40,&quot;cut&quot;:72,&quot;lfoRate&quot;:1}" data-page="matrix"><p><b>Read it on the MATRIX tab.</b> The same connection, shown in slot 1. Click its <b>AMT</b> knob and drag it up to 80 %: a deeper sweep. Drag it to 10 %: barely moving.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;m1s&quot;:&quot;Env 2&quot;,&quot;m1d&quot;:&quot;Cutoff&quot;,&quot;m1a&quot;:30,&quot;cut&quot;:50,&quot;res&quot;:30,&quot;e2A&quot;:0,&quot;e2D&quot;:0.6,&quot;e2S&quot;:0}" data-page="matrix"><p><b>Envelope 2 through a slot.</b> Slot 1: <b>Env 2 → Cutoff</b>, +30 %, the cutoff low. Each note opens the filter. This is the same as Env 2's fixed → cutoff knob, made with a slot instead.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;m1s&quot;:&quot;Env 2&quot;,&quot;m1d&quot;:&quot;Cutoff&quot;,&quot;m1a&quot;:-30,&quot;cut&quot;:110,&quot;res&quot;:30,&quot;e2A&quot;:0,&quot;e2D&quot;:0.6,&quot;e2S&quot;:0}" data-page="matrix"><p><b>Negative.</b> The same slot at <b>-30 %</b> with the cutoff high (110). Now each note starts dark and gets brighter as the envelope falls back. Drag AMT between -30 and +30 and compare.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;m1s&quot;:&quot;LFO 1&quot;,&quot;m1d&quot;:&quot;Osc 1 frame&quot;,&quot;m1a&quot;:60,&quot;o1Frame&quot;:128,&quot;lfoRate&quot;:0}" data-page="matrix"><p><b>A moving wave.</b> Slot 1: <b>LFO 1 → Osc 1 frame</b>, 60 %, the frame in the middle. The tone morphs back and forth on its own. Drag <b>ENV 1</b> onto <b>TUNE</b> of OSC 1 next, then look at slot 2.</p></div>
+<div class="ik-step" data-ex="vital-first" data-set="{&quot;m1s&quot;:&quot;LFO 1&quot;,&quot;m1d&quot;:&quot;All pitch&quot;,&quot;m1a&quot;:1,&quot;lfoRate&quot;:2.4,&quot;m2s&quot;:&quot;Env 2&quot;,&quot;m2d&quot;:&quot;Cutoff&quot;,&quot;m2a&quot;:25,&quot;cut&quot;:60,&quot;res&quot;:25,&quot;e2A&quot;:0,&quot;e2D&quot;:0.7,&quot;e2S&quot;:10}" data-page="matrix"><p><b>Two at once.</b> Slot 1 gives vibrato (<b>LFO 1 → All pitch</b>, 1 %), slot 2 opens the filter on each note (<b>Env 2 → Cutoff</b>, 25 %). One sound, two connections. Set slot 1's source to <b>—</b> to switch it off.</p></div>
+```
+
+## In the real Vital
+
+What is different in the plug-in and exactly where to find it. Every line names the file of Vital's source code (github.com/mtytel/vital) it was read from; "(unverified)" means it was not confirmed.
+
+- **The sources** are small buttons: ENV 1-6, LFO 1-8, RANDOM 1-4, a button under each MACRO knob, and the keyboard sources NOTE, VELOCITY, LIFT, OCT NOTE, PRESSURE, SLIDE, STEREO, RANDOM (Vital source, modulation_interface.cpp; macro_knob_section.cpp). An unused one shows drag arrows when you point at it (Vital source, modulation_button.cpp).
+- **The exact drag:** (1) press on a source button and drag out of it: a line follows the pointer and every knob that can take it lights up (Vital source, modulation_button.cpp; modulation_manager.cpp). (2) Move over a knob: the connection is made at once so you can *hear it before you commit*; move off and it goes away again (Vital source, modulation_manager.cpp; vital.audio). (3) Let go over the knob to keep it (Vital source, modulation_manager.cpp).
+- **Starting amount:** the room left above the knob's setting, but at least 25 % (Vital source, modulation_manager.cpp). Turn the mouse wheel while dragging to change it (Vital source, modulation_manager.cpp).
+- **Both ways (bipolar):** hold any modifier key (Shift, Ctrl, Alt or Cmd) while you drag and the connection moves the knob both up and down around its setting (Vital source, modulation_manager.cpp). A normal (unipolar) one moves it up only.
+- **Changing the amount later:** click the source button. Small amount knobs appear beside every knob it moves; drag one (Vital source, modulation_button.cpp; modulation_manager.cpp). Clicking a modulated knob selects its source too (Vital source, modulation_manager.cpp). What the ring round a modulated knob looks like is not in the notes (unverified).
+- **Right-click an amount knob:** Remove, Bypass, Make Bipolar, Make Stereo, Learn MIDI Assignment, Enter Value. Double-click it to remove the connection (Vital source, modulation_manager.cpp). Right-click a source button: *Disconnect from ...* for each connection (Vital source, modulation_button.cpp).
+- **64 connections** at most; when all are used, dragging does not start (Vital source, modulation_manager.cpp; synth_constants.h).
+- **The MATRIX tab** is titled MODULATION MATRIX, with columns **#**, **SOURCE**, **BIPOLAR**, **STEREO**, **MORPH**, **AMOUNT**, **DESTINATION**; 12 rows show at once and it scrolls (Vital source, modulation_matrix.cpp). The # button switches a row off (bypass); STEREO reads L/R; MORPH bends the connection's curve, edited in a MOD REMAP box below (Vital source, modulation_matrix.cpp). Click a heading to sort by it (Vital source, modulation_matrix.cpp).
+
+## Try it in the real Vital
+
+Open Vital in your DAW (see [Meet Vital](intro-vital.qmd) to install it) and do these in order.
+
+- [ ] Initialize the preset and switch FILTER 1 on (lesson 3).
+- [ ] Drag **LFO 1** out of its button. Watch the knobs light up. Hover over CUTOFF and listen, move off, then come back and let go.
+- [ ] Click LFO 1's button. Find the small amount knob near CUTOFF and drag it.
+- [ ] Drag **ENV 2** onto CUTOFF while holding Shift. Is it bipolar now?
+- [ ] Open the **MATRIX** tab and find your two rows. Read SOURCE, AMOUNT and DESTINATION.
+- [ ] Right-click an amount knob and choose **Remove**.
+
+## Check yourself
+
+Click an answer. You will see at once if it is right. Nothing is saved or sent.
+
+```{=html}
+<div class="ik-q" data-a="0"><p><b>In &quot;LFO 1 → Cutoff&quot;, which is the source?</b></p><ul><li>LFO 1</li><li>Cutoff</li><li>The amount</li><li>The matrix</li></ul><p class="ik-why">The source moves the destination.</p></div>
+<div class="ik-q" data-a="0"><p><b>In the real Vital, what happens while you hover a dragged source over a knob, before letting go?</b></p><ul><li>The connection is made for now, so you can hear it</li><li>Nothing</li><li>The knob resets</li><li>The preset is saved</li></ul><p class="ik-why">modulation_manager.cpp; vital.audio: a preview before committing.</p></div>
+<div class="ik-q" data-a="0"><p><b>How do you make a bipolar connection while dragging?</b></p><ul><li>Hold a modifier key such as Shift</li><li>Drag twice</li><li>Use the right mouse button</li><li>You cannot</li></ul><p class="ik-why">Any modifier down makes it bipolar (modulation_manager.cpp).</p></div>
+<div class="ik-q" data-a="0"><p><b>A negative amount on cutoff does what?</b></p><ul><li>Moves the cutoff down instead of up</li><li>Silences the sound</li><li>Changes the LFO shape</li><li>Doubles the volume</li></ul><p class="ik-why">Step 4.</p></div>
+<div class="ik-q" data-a="0"><p><b>How many connections can the real Vital have?</b></p><ul><li>64</li><li>8</li><li>4</li><li>Unlimited</li></ul><p class="ik-why">kMaxModulationConnections = 64 (synth_constants.h). This page has 8.</p></div>
+<div class="ik-q" data-a="0"><p><b>Where can you see every connection as a list?</b></p><ul><li>The MATRIX tab</li><li>The EFFECTS tab</li><li>The preset browser</li><li>The oscilloscope</li></ul><p class="ik-why">modulation_matrix.cpp.</p></div>
+```
+
+## Previous and next
+
+::: {.vl-nav}
+- Previous: [Vital 4: Envelopes](vital-04-envelopes.qmd)
+- Next: [Vital 6: LFOs and Random](vital-06-lfos.qmd)
+:::
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/lessons/synth-compare.css">
+<link rel="stylesheet" href="/apps/shared/lessons/intro-kit.css">
+<script src="/apps/shared/lessons/sections.js"></script>
+<script src="/apps/shared/lessons/faithful-panel.js"></script>
+<script src="/apps/shared/lessons/synth-compare.js"></script>
+<script src="/apps/shared/lessons/intro-kit.js"></script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Tytel, Matt. "full_interface.cpp," "synthesis_interface.cpp" and "modulation_interface.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/tree/main/src/interface/editor_sections](https://github.com/mtytel/vital/tree/main/src/interface/editor_sections). Section bounds of the main window at the default 1400 x 820 (synth_constants.h): header 48, macro column, oscillators, sample, two filters, envelopes : LFOs : random = 3 : 4 : 2, voice and portamento strip, keyboard.
+
+Tytel, Matt. "macro_knob_section.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/macro_knob_section.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/macro_knob_section.cpp). MACRO 1-4 knobs, each also a modulation source.
+
+Tytel, Matt. "modulation_button.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_components/modulation_button.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_components/modulation_button.cpp). Dragging a modulation source out of its button starts a connection; click selects it; right-click Disconnect.
+
+Tytel, Matt. "modulation_manager.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/modulation_manager.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/modulation_manager.cpp). Targets light up; hover connects at once (preview); release keeps it; starting amount; a modifier key makes it bipolar; 64 limit; amount knob menu.
+
+Tytel, Matt. "modulation_matrix.cpp." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/interface/editor_sections/modulation_matrix.cpp](https://github.com/mtytel/vital/blob/main/src/interface/editor_sections/modulation_matrix.cpp). MODULATION MATRIX columns # SOURCE BIPOLAR STEREO MORPH AMOUNT DESTINATION; 12 rows shown; destination sub-menus.
+
+Tytel, Matt. "synth_constants.h." *Vital*, GitHub repository mtytel/vital. [github.com/mtytel/vital/blob/main/src/common/synth_constants.h](https://github.com/mtytel/vital/blob/main/src/common/synth_constants.h). kNumOscillators 3, kNumFilters 2, kNumEnvelopes 6, kNumLfos 8, kNumRandomLfos 4, kNumMacros 4, kMaxModulationConnections 64, kMaxPolyphony 33 (32 playing), effects chorus / compressor / delay / distortion / EQ / filter / flanger / phaser / reverb, filter models Analog, Dirty, Ladder, Digital, Diode, Formant, Comb, Phase.
+
+**For students**
+
+Vital Audio. *Vital: Spectral Warping Wavetable Synth*. [vital.audio/](https://vital.audio/). Drag-and-drop modulation; the Basic tier (75 presets, 25 wavetables), Plus and Pro; Windows 10+, macOS 10.15+, Ubuntu 18.04+.
+:::
+<!-- /works-cited -->

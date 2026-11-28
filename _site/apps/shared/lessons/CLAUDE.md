@@ -312,3 +312,18 @@
   wt0-2 / lv0-2 (other synths unaffected). Panel: MATRIX tab + Env 3 / LFO 2 / Random; drag ENV 1-3, LFO 1-2, RAND 1, NOTE, VELOCITY
   onto a knob (FaithfulPanel `modsrc` + layout dropMod / modDest / modded, knobs ringed). intro-kit steps take `data-page`. Real Vital's
   interface, read from its source: research_notes/vital-ui-facts.md. Test `node tests/lessons/vital-matrix.cdp.js` (`NEG=1` must fail).
+- Shepard tones (2026-11-28): `lessons/sound-shepard.qmd` (Sound 28) + `apps/shared/lessons/shepard-kit.js` (load after synth-kit):
+  kinds `shepard` (octave-spaced sines under a fixed raised-cosine bell on log frequency, steps or Risset glide, up/down/hold,
+  envelope Flat gives the trick away, partials plotted) and `tritone` (Deutsch's paradox: random pair, Up/Down, answers on the
+  pitch-class circle; `play(pc)`, `answers()`). Facts from Wikipedia only (`scripts/sources/shepard.py`). Test
+  `node tests/lessons/shepard.cdp.js` (`NEG=1` must fail). Not listened to by a person yet.
+- Noise and ambient (2026-11-27): `apps/shared/noise.js` (global `SiteNoise`; NOT `Noise`, a name another script takes) is the site's
+  noise model: `source(ctx, kind)` = a looped 23 s buffer, filters warmed, end cross-faded into the start, random start;
+  `stream(ctx, kind)` = an AudioWorklet that never repeats (buffer until it loads); `eq(ctx, gains)` = 10 octave peaking bands
+  31 Hz-16 kHz ±18 dB; `response(freqs, dBs)`. Noise used to PULSE because it was a 1-3 s buffer on a loop (synth-kit 3 s,
+  rec-kit-mic 2 s pink starting from zeroed filters, ipa-synth 1 s): the ear hears the repeat. synth-kit, rec-kit-mic and ipa-synth
+  now use it (they load it if missing); one-shot hits (turntables, polyrhythm, ride-synth, rec-kit-level) were left alone.
+  `apps/shared/lessons/ambient-kit.js` adds synth-kit kinds `noiseeq` (noise + 10-band EQ + swell, presets) and `ambient` (Ambient
+  Generator: drone, tape loops of unequal length drawn as rings, noise bed, SK.fx reverb + delay, BandSounds piano / rhodes / flute or a
+  synth bell). Pages `lessons/sound-ambient.qmd` (Sound 27, history from Wikipedia: `scripts/sources/ambient.py`), `tools/ambient.qmd`,
+  and the EQ on `sound-noise.qmd`. Test `node tests/lessons/ambient.cdp.js` (`NEG=1` must fail). Not listened to.
