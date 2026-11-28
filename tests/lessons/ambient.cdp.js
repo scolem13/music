@@ -51,6 +51,18 @@ const RMS = `(w => { const a = w.view && w.view.an; if (!a) return 0; const d = 
     await b.eval(`${W}.c.energy.set(0)`); const back = await b.eval(`(w => Math.abs(w.c.density.value - .9) < .01 && Math.abs(w.c.fb.value - .4) < .01)(${W})`);
     check("Energy back to 0 returns each control to its From", back);
     await b.eval(`${W}.stop()`); check("Energy: no page errors", !b.errors.filter(e => !/supabaseUrl/.test(e)).length, b.errors.join(" | ")); }
+  // cued changes: a cued slider changes nothing until Go, then glides there over the Transition time; the menus' settings reach the sound
+  { b.errors.length = 0; const W = `SynthKit.widgets.find(w => w.kind === "ambient")`;
+    await b.eval(`(w => { w.preset(w.presetList[0]); w.start(); w.c.cue.set("cued"); w.c.trans.set(2); w.c.verb.set(.9); w.c.drone.set(.9); })(${W})`); await b.sleep(400);
+    const held = await b.eval(`(w => ({ n: Object.keys(w.cued()).length, P: w.P.verb }))(${W})`);
+    check("Cued: moving two sliders cues them and the sound keeps the old value", held.n === 2 && Math.abs(held.P - .5) < .01, JSON.stringify(held));
+    await b.eval(`${W}.go()`); await b.sleep(1000); const mid = await b.eval(`${W}.P.verb`);
+    await b.sleep(1600); const end = await b.eval(`(w => ({ v: w.P.verb, g: w.gliding(), n: Object.keys(w.cued()).length }))(${W})`);
+    check("Go glides over the Transition time", mid > .55 && mid < .85 && Math.abs(end.v - .9) < .01 && !end.g && !end.n, `mid ${mid.toFixed(2)}, end ${JSON.stringify(end)}`);
+    await b.eval(`(w => { w.c.cue.set("now"); w.c.chimes.set(1); w.c.chLevel.set(2); w.c.cymbals.set(1); w.c.cyLevel.set(2); w.c.cyRev.set(1); })(${W})`);
+    const menus = await b.eval(`(w => w.P.chimeSet.length === 8 && w.P.cymSet.length === 4 && w.P.chLevel === 2 && w.P.cyRev === 1)(${W})`);
+    check("chime and cymbal menus set their values", menus);
+    await b.sleep(1500); await b.eval(`${W}.stop()`); check("cue and menus: no page errors", !b.errors.filter(e => !/supabaseUrl/.test(e)).length, b.errors.join(" | ")); }
   // the tape echo dies away at every frequency: a 2.2 kHz burst into the delay at fb 0.5, tone 2800 (the old loop gain there was 1.03)
   const echo = await b.eval(`(async () => { const c = new OfflineAudioContext(1, 48000 * 12, 48000), o = c.createOscillator(), g = c.createGain();
     o.frequency.value = 2200; g.gain.setValueAtTime(.3, 0); g.gain.setValueAtTime(0, .15); o.connect(g); o.start(0);

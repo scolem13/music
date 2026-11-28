@@ -106,7 +106,6 @@
     crotale: { file: "crotale-", notes: ["C6", "E6", "G6", "C7", "E7", "G7", "C8"], gain: .5, oct: 2 },
     vibes: { file: "vibes-", notes: ["C4", "G4", "C5", "E5"], gain: .8 }
   };
-  var CHIMES = ["asc1", "desc1", "fastAsc1", "slowAsc1", "slowDesc1", "random", "koshi", "breeze"];
   var bufs = typeof WeakMap === "function" ? new WeakMap() : null;
   function fetchBuf(c, name) {
     var m = bufs.get(c); if (!m) { m = {}; bufs.set(c, m); }
@@ -190,6 +189,30 @@
     w.num("drive", { label: "Drive", min: 0, max: 1, step: .01, value: 0, fmt: function (v) { return v < .02 ? "clean" : fmtPct(v); } });
     w.num("bright", { label: "Brightness", min: 600, max: 18000, log: true, value: 18000, fmt: fmtHz });
     w.num("cymbals", { label: "Cymbal swells", min: 0, max: 1, step: .01, value: 0, fmt: function (v) { return v < .02 ? "off" : fmtPct(v); } });
+    // the chime and cymbal menus: which recordings, how loud, how far from their recorded pitch and speed, how wide
+    function soundMenu(title, cls, key, names, on, rows) {
+      var d = el("details", "amb-nb " + cls); d.appendChild(el("summary", "", title)); w.body.appendChild(d);
+      var ck = el("div", "amb-ck"); d.appendChild(ck); w.P[key] = names.filter(function (n, i) { return on[i]; }).map(function (n) { return n[0]; });
+      names.forEach(function (n, i) { var lb = el("label"), x = el("input"); x.type = "checkbox"; x.checked = !!on[i]; x.value = n[0];
+        x.addEventListener("change", function () { w.P[key] = [].slice.call(ck.querySelectorAll("input:checked")).map(function (y) { return y.value; }); });
+        lb.appendChild(x); lb.appendChild(document.createTextNode(" " + n[1])); ck.appendChild(lb); });
+      var ctl = el("div", "sk-ctls"); d.appendChild(ctl); rows.forEach(function (r) { w.num(r[0], r[1], ctl); });
+    }
+    soundMenu("Wind chimes: which recordings, level, speed, width", "amb-chm", "chimeSet",
+      [["asc1", "Sweep up"], ["desc1", "Sweep down"], ["fastAsc1", "Fast sweep"], ["slowAsc1", "Slow sweep up"], ["slowDesc1", "Slow sweep down"], ["random", "Random gust"], ["koshi", "Koshi chime"], ["breeze", "In a breeze"]],
+      [1, 1, 1, 1, 1, 1, 1, 1], [
+        ["chLevel", { label: "Level", min: 0, max: 2, step: .01, value: 1, fmt: fmtPct }],
+        ["chSpeed", { label: "Speed (pitch)", min: .5, max: 1.5, step: .01, value: 1, fmt: function (v) { return "x" + v.toFixed(2); } }],
+        ["chVary", { label: "Speed varies by", min: 0, max: .5, step: .01, value: .15, fmt: function (v) { return "±" + Math.round(v * 100) + "%"; } }],
+        ["chWidth", { label: "Stereo width", min: 0, max: 1, step: .01, value: .8, fmt: fmtPct }]]);
+    soundMenu("Cymbal swells: which cymbals, backwards or forwards, level, speed, width", "amb-cym", "cymSet",
+      [["crash16-edge", "16\" crash"], ["crash13-edge", "13\" crash"], ["hat-open", "Open hi-hat"], ["china", "China"], ["ride20-bow", "20\" ride (bow)"], ["ride20-bell", "20\" ride (bell)"], ["ride17-bow", "17\" ride"]],
+      [1, 1, 1, 1, 0, 0, 0], [
+        ["cyLevel", { label: "Level", min: 0, max: 2, step: .01, value: 1, fmt: fmtPct }],
+        ["cyRev", { label: "Backwards", min: 0, max: 1, step: .01, value: .7, fmt: function (v) { return Math.round(v * 100) + "% of them"; } }],
+        ["cySpeed", { label: "Speed (pitch)", min: .3, max: 1.5, step: .01, value: .85, fmt: function (v) { return "x" + v.toFixed(2); } }],
+        ["cyVary", { label: "Speed varies by", min: 0, max: .5, step: .01, value: .25, fmt: function (v) { return "±" + Math.round(v * 100) + "%"; } }],
+        ["cyWidth", { label: "Stereo width", min: 0, max: 1, step: .01, value: .7, fmt: fmtPct }]]);
     energyPanel(w);
     // the noise bed's own controls (same 10-band EQ as the Noise widget)
     var nb = el("details", "amb-nb"), sum = el("summary", "", "Noise bed: colour, swell and the 10-band EQ"); nb.appendChild(sum); w.body.appendChild(nb);
@@ -209,7 +232,40 @@
       if (w.energy) w.energy.resetFrom(); if (run) run.rebuild();
     };
     w.presetList = AMB_PRESETS;
+    // ---- cued changes: with Changes = Cued, moving a control while it plays only marks it (the slider shows the new value, the
+    // sound keeps the old); Go glides every cued setting there over the Transition time. Keys that rebuild the loops or swap
+    // sounds (scale, key, instrument, drone type, loop count / lengths / notes / speed) change at the start of the glide.
+    // Not cued: the noise EQ bands and colour, and the chime and cymbal checkboxes (they act at once).
+    var live = {}, cued = {}, gliding = false, glideT = 0, STEP = ["key", "mode", "inst", "dtype", "loops", "spread", "density", "pace"];
+    var cueBox = el("div", "amb-cue"); w.body.insertBefore(cueBox, w.ctls);
+    w.pick("cue", "Changes", [["now", "Immediate"], ["cued", "Cued (press Go)"]], "now", cueBox, function (v) { if (v === "now") w.go(); });
+    w.num("trans", { label: "Transition", min: 0, max: 120, step: .5, value: 8, fmt: fmtS }, cueBox);
+    var goB = button(cueBox, "Go", function () { w.go(); }, "btn-primary amb-go"), cancelB = button(cueBox, "Cancel", function () { w.cancelCue(); }, "btn-outline-secondary"), cueN = el("span", "amb-cue-n", ""); cueBox.appendChild(cueN);
+    function label(k) { var c = w.c[k], l = c && c.el && c.el.querySelector(".sk-cl"); return l ? l.textContent : k; }
+    function showCue() { var ks = Object.keys(cued), n = ks.length; cueN.textContent = gliding ? "moving…" : n ? n + (n === 1 ? " change" : " changes") + " cued: " + ks.map(label).join(", ") : ""; goB.disabled = !n; cancelB.disabled = !n; }
+    showCue();
+    w.cued = function () { return Object.assign({}, cued); };
+    w.gliding = function () { return gliding; };
+    w.go = function () {
+      var ks = Object.keys(cued); if (!ks.length) return; var T = w.P.trans, from = {}, to = cued; cued = {};
+      ks.forEach(function (k) { from[k] = live[k]; if (STEP.indexOf(k) >= 0 || typeof to[k] !== "number") { w.P[k] = live[k] = to[k]; realApply(k, to[k]); stepKey(k); } });
+      var nums = ks.filter(function (k) { return STEP.indexOf(k) < 0 && typeof to[k] === "number"; });
+      if (!nums.length || T <= 0) { nums.forEach(function (k) { w.P[k] = live[k] = to[k]; realApply(k, to[k]); }); showCue(); return; }
+      var t0 = performance.now(); gliding = true; showCue(); clearInterval(glideT);
+      glideT = setInterval(function () {
+        var f = Math.min(1, (performance.now() - t0) / (T * 1000)), e = f * f * (3 - 2 * f);   // ease in and out
+        nums.forEach(function (k) { var a = from[k], b = to[k], v = k === "bright" ? a * Math.pow(b / a, e) : a + (b - a) * e; w.P[k] = live[k] = v; realApply(k, v); });
+        if (f >= 1) { clearInterval(glideT); gliding = false; showCue(); }
+      }, 100);
+    };
+    w.cancelCue = function () { var ks = Object.keys(cued); cued = {}; ks.forEach(function (k) { var c = w.c[k]; if (c && c.set) c.set(live[k]); w.P[k] = live[k]; }); showCue(); };
+    function stepKey(k) { if (!run) return; if (k === "key" || k === "mode" || k === "dtype") run.retune(); else if (k === "inst") run.inst(); else run.rebuildSoon(); }
     w.apply = function (k, v) {
+      if (k === "cue" || k === "trans") return;
+      if (w.P.cue === "cued" && run && !gliding && k in live) { cued[k] = v; w.P[k] = live[k]; showCue(); return; }
+      live[k] = v; realApply(k, v);
+    };
+    var realApply = function (k, v) {
       if (!run) return; var t = SK.ac().currentTime;
       if (k === "drone") run.droneG.gain.setTargetAtTime(v * .5, t, .3);
       if (k === "noise") run.noiseG.gain.setTargetAtTime(v, t, .3);
@@ -239,6 +295,7 @@
       return L;
     }
     w.onStart = function (c, out) {
+      live = {}; Object.keys(w.P).forEach(function (k) { if (typeof w.P[k] !== "object") live[k] = w.P[k]; }); cued = {}; setTimeout(showCue, 0);
       var bus = c.createGain(), dry = c.createGain(), wet = c.createGain(), echoG = c.createGain(), droneG = c.createGain(), noiseG = c.createGain(), comp = c.createDynamicsCompressor();
       comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = .05; comp.release.value = .5; 
       // energy's parts: drive (tanh, harder as it rises, level kept roughly even), a master low-pass (Brightness) and a limiter, so
@@ -304,21 +361,23 @@
       function gust(now) {
         if (w.P.chimes < .02) { nextGust = now + 2; return; } if (now < nextGust) return;
         nextGust = now + (8 + Math.random() * 30) * (1.15 - w.P.chimes);
-        var name = "chimes-" + CHIMES[Math.floor(Math.random() * CHIMES.length)];
+        var set = w.P.chimeSet && w.P.chimeSet.length ? w.P.chimeSet : null; if (!set) return;
+        var name = "chimes-" + set[Math.floor(Math.random() * set.length)];
         fetchBuf(c, name).then(function (b) { if (dead) return; var s = c.createBufferSource(), g = c.createGain(), pn = c.createStereoPanner();
-          s.buffer = b; s.playbackRate.value = .85 + Math.random() * .3; pn.pan.value = Math.random() * 1.6 - .8; g.gain.value = .25 + .35 * w.P.chimes;
+          s.buffer = b; s.playbackRate.value = Math.max(.1, w.P.chSpeed * (1 + (Math.random() * 2 - 1) * w.P.chVary)); pn.pan.value = (Math.random() * 2 - 1) * w.P.chWidth; g.gain.value = (.25 + .35 * w.P.chimes) * w.P.chLevel;
           s.connect(g); g.connect(pn); pn.connect(src); s.start(); s.onended = function () { pn.disconnect(); }; }).catch(function () {});
       }
       // cymbal swells: a recorded crash played backwards (it rises into the hit) or forwards, now and then; from the Drum Kits' recordings
       var nextCym = c.currentTime + 3, cymRev = {};
       function cymbal(now) {
         if (w.P.cymbals < .02 || now < nextCym) return; nextCym = now + (5 + Math.random() * 18) * (1.1 - w.P.cymbals);
-        var name = ["crash16-edge-", "crash13-edge-", "hat-open-", "china-"][Math.floor(Math.random() * (w.P.cymbals > .6 ? 4 : 2))] + (1 + Math.floor(Math.random() * 3));
+        var set = w.P.cymSet && w.P.cymSet.length ? w.P.cymSet : null; if (!set) return;
+        var name = set[Math.floor(Math.random() * set.length)] + "-" + (1 + Math.floor(Math.random() * 3));
         var get = cymRev[name] || (cymRev[name] = fetch("/apps/shared/lessons/cymbal-samples/" + name + ".m4a").then(function (r) { if (!r.ok) throw 0; return r.arrayBuffer(); })
           .then(function (a) { return new Promise(function (res, rej) { c.decodeAudioData(a, res, rej); }); })
           .then(function (b) { var r2 = c.createBuffer(b.numberOfChannels, b.length, b.sampleRate); for (var ch = 0; ch < b.numberOfChannels; ch++) { var d = b.getChannelData(ch), o = r2.getChannelData(ch); for (var i = 0; i < d.length; i++) o[i] = d[d.length - 1 - i]; } return [b, r2]; }));
         get.then(function (pair) { if (dead) return; var s = c.createBufferSource(), g = c.createGain(), pn = c.createStereoPanner();
-          s.buffer = pair[Math.random() < .7 ? 1 : 0]; s.playbackRate.value = .6 + Math.random() * .5; pn.pan.value = Math.random() * 1.4 - .7; g.gain.value = .2 + .4 * w.P.cymbals;
+          s.buffer = pair[Math.random() < w.P.cyRev ? 1 : 0]; s.playbackRate.value = Math.max(.1, w.P.cySpeed * (1 + (Math.random() * 2 - 1) * w.P.cyVary)); pn.pan.value = (Math.random() * 2 - 1) * w.P.cyWidth; g.gain.value = (.2 + .4 * w.P.cymbals) * w.P.cyLevel;
           s.connect(g); g.connect(pn); pn.connect(src); s.start(); s.onended = function () { pn.disconnect(); }; }).catch(function () {});
       }
       function tick() {
@@ -365,6 +424,8 @@
     ".amb-band input{writing-mode:vertical-lr;direction:rtl;height:120px;width:22px;accent-color:var(--site-accent-dk)}" +
     ".amb-band .amb-bf{color:var(--site-ink-2)}.amb-nb{margin:.4rem 0}.amb-nb summary{cursor:pointer;font-family:var(--font-display)}" +
     ".sk-plot.amb-rings{height:260px;max-width:420px}" +
+    ".amb-cue{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:.3rem 0}.amb-cue .sk-c{min-width:12rem}.amb-cue-n{font-size:.82rem;color:var(--site-ink-2)}" +
+    ".amb-ck{display:flex;flex-wrap:wrap;gap:.2rem 1rem;font-size:.85rem;margin:.3rem 0}" +
     ".amb-en{margin:.5rem 0}.amb-en summary{cursor:pointer;font-family:var(--font-display)}.amb-en-knob .sk-cl{font-weight:700}" +
     ".amb-en-t{border-collapse:collapse;font-size:.82rem;margin:.3rem 0}.amb-en-t th,.amb-en-t td{padding:2px 6px;text-align:left}" +
     ".amb-en-n{width:5.5em;font-family:var(--font-mono);font-size:.8rem}" +

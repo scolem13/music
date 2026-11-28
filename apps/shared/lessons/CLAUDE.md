@@ -317,6 +317,10 @@
   envelope Flat gives the trick away, partials plotted) and `tritone` (Deutsch's paradox: random pair, Up/Down, answers on the
   pitch-class circle; `play(pc)`, `answers()`). Facts from Wikipedia only (`scripts/sources/shepard.py`). Test
   `node tests/lessons/shepard.cdp.js` (`NEG=1` must fail). Not listened to by a person yet.
+- Ambient Generator cues and menus (2026-11-28): Changes = Cued: `w.apply` stores a moved control in `cued` and puts `w.P[k]` back
+  to `live[k]` (the slider keeps the new value; the scheduler, which reads `w.P`, keeps the old); `w.go()` glides numbers over
+  Transition (smoothstep, 100 ms steps, brightness in octaves), STEP keys (scale, inst, loops...) change at once. Chime / cymbal
+  menus: `chimeSet` / `cymSet` checkboxes, Level / Speed / Varies / Width (`ch*`, `cy*`; cymbals also Backwards %).
 - Ambient Generator Energy (2026-11-28): one "Energy" knob after the MODX Super Knob, `ENERGY` in ambient-kit.js = [key, To];
   the table shows On / From / To / Now per setting, and the knob sets the real controls (they move). From = the control's value
   when Energy was last 0 (hand moves at 0 update it; presets reset Energy and From). Brightness sweeps in octaves, the rest linearly.

@@ -17,6 +17,8 @@ How it works and where it comes from: [Sound 27: Ambient music](../lessons/sound
 
 **Energy** is one knob that moves many settings at once, like the Super Knob on a Yamaha MODX. The table under it shows each one: where it starts (From, which is wherever that setting was when Energy was last at 0), where it ends up at full Energy (To, which you can type), and where it is now. As you turn Energy up, the loops get busier and faster, the echo feeds back towards the edge, drive turns the noise and bells to grit, and cymbal swells and chimes pile up. A limiter stops it all from running away. Untick a row to leave that setting alone.
 
+**Changes: Cued** holds back what you change while it plays. The slider shows the new value but the sound keeps the old one until you press **Go**. Then every cued setting glides to its new value over the **Transition** time, the way a DJ or a live-electronics player moves from one scene to the next. Scale, key, instrument and the loops' shape change at the start of the glide. Turning Energy while cued works the same way. The **Wind chimes** and **Cymbal swells** menus choose which recordings play, how loud, how fast (higher or lower) and how wide.
+
 ## Noise with a 10-band EQ
 
 <div class="sk" data-w="noiseeq" data-preset="Rain on a roof"></div>
