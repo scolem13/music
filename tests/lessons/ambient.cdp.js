@@ -29,6 +29,23 @@ const RMS = `(w => { const a = w.view && w.view.an; if (!a) return 0; const d = 
     }
     const errs = b.errors.filter(e => !/supabaseUrl/.test(e)); check(pg + ": no page errors", !errs.length, errs.join(" | "));
   }
+  // the generator's new voices (2026-11-28): recorded bells load and sound, the wind-chime layer and the wavetable pad run
+  await b.goto("http://127.0.0.1:8517/tools/ambient.html"); await b.sleep(800);
+  for (const [inst, dtype] of [["tubular", "pad"], ["celesta", "saw"], ["crotale", "pad"]]) {
+    b.errors.length = 0;
+    await b.eval(`(w => { w.c.inst.set("${inst}"); w.c.dtype.set("${dtype}"); w.c.chimes.set(1); w.c.density.set(1); w.start(); })(SynthKit.widgets.find(w => w.kind === "ambient"))`);
+    let lv = 0; for (let k = 0; k < 20; k++) { await b.sleep(200); lv = Math.max(lv, await b.eval(`${RMS}(SynthKit.widgets.find(w => w.kind === "ambient"))`)); }
+    const got = await b.eval(`fetch("/apps/shared/lessons/bell-samples/${inst === "crotale" ? "crotale-C6" : inst === "celesta" ? "celesta-c5" : "tubular-C4"}.m4a").then(r => r.ok)`);
+    check(`ambient ${inst} + ${dtype} drone + chimes: sounds, sample served, no errors`, lv > .001 && got && !b.errors.filter(e => !/supabaseUrl/.test(e)).length, "rms " + lv.toFixed(4) + " " + b.errors.join(" | "));
+    await b.eval(`SynthKit.widgets.find(w => w.kind === "ambient").stop()`); await b.sleep(300);
+  }
+  // the tape echo dies away at every frequency: a 2.2 kHz burst into the delay at fb 0.5, tone 2800 (the old loop gain there was 1.03)
+  const echo = await b.eval(`(async () => { const c = new OfflineAudioContext(1, 48000 * 12, 48000), o = c.createOscillator(), g = c.createGain();
+    o.frequency.value = 2200; g.gain.setValueAtTime(.3, 0); g.gain.setValueAtTime(0, .15); o.connect(g); o.start(0);
+    const fx = SynthKit.fx("delay", c, { time: 720, fb: ${process.env.NEG ? 1 : 0.5}, tone: 2800, wow: 0, pp: "0" }); g.connect(fx.input); fx.output.connect(c.destination);
+    const d = (await c.startRendering()).getChannelData(0), rms = (a, z) => { let s = 0; for (let i = a * 48000; i < z * 48000; i++) s += d[i] * d[i]; return Math.sqrt(s / ((z - a) * 48000)); };
+    return 20 * Math.log10(rms(10, 12) / rms(.6, 2.2)); })()`);
+  check("tape echo at 2.2 kHz has died away 40 dB by 10 s", echo < -40, echo.toFixed(1) + " dB");
   // the old loops repeated every 1-3 s (correlation 1.0 at that lag); the new buffer: none at those lags, and the loop seam is smooth
   const r = await b.eval(`(() => { const c = new OfflineAudioContext(1, 48000, 48000), out = {};
     for (const k of ["white", "pink", "brown"]) { const d = SiteNoise.buffer(c, k).getChannelData(0), N = 48000;

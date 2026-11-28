@@ -79,11 +79,13 @@
   var MODES = { lydian: [0, 2, 4, 6, 7, 9, 11], major: [0, 2, 4, 5, 7, 9, 11], pent: [0, 2, 4, 7, 9], dorian: [0, 2, 3, 5, 7, 9, 10], aeolian: [0, 2, 3, 5, 7, 8, 10], minpent: [0, 3, 5, 7, 10] };
   var KEYS = [["0", "C"], ["2", "D"], ["3", "E♭"], ["4", "E"], ["5", "F"], ["7", "G"], ["8", "A♭"], ["9", "A"], ["10", "B♭"]];
   var AMB_PRESETS = [
-    { name: "Airport (tape loops)", set: { inst: "piano", mode: "major", key: "5", loops: 7, spread: 1, drone: .15, noise: .05, verb: .5, decay: 6, echo: .25, density: .9 }, color: "pink", eq: [-18, -12, -6, -3, 0, 0, 0, -2, -6, -12] },
-    { name: "Drone and fifths", set: { inst: "bell", mode: "lydian", key: "2", loops: 3, spread: .6, drone: .8, noise: .15, verb: .6, decay: 8, echo: .1, density: .5 }, color: "brown", eq: [4, 6, 3, 0, -3, -6, -9, -12, -15, -18] },
-    { name: "Rain room", set: { inst: "rhodes", mode: "dorian", key: "9", loops: 5, spread: .8, drone: .3, noise: .6, verb: .45, decay: 4, echo: .35, density: .7 }, color: "pink", eq: [-18, -12, -6, -2, 0, 2, 4, 5, 3, -2] },
-    { name: "Shoreline", set: { inst: "flute", mode: "pent", key: "7", loops: 4, spread: 1, drone: .4, noise: .7, verb: .55, decay: 7, echo: .2, density: .6 }, color: "pink", eq: [-6, 2, 5, 4, 1, -3, -7, -10, -14, -18], swell: .8 },
-    { name: "Night", set: { inst: "bell", mode: "aeolian", key: "4", loops: 6, spread: .9, drone: .5, noise: .2, verb: .7, decay: 10, echo: .4, density: .4 }, color: "brown", eq: [0, 3, 2, 0, -3, -6, -9, -12, -15, -18] }
+    { name: "Airport (tape loops)", set: { dtype: "saw", chimes: 0, inst: "piano", mode: "major", key: "5", loops: 7, spread: 1, drone: .15, noise: .05, verb: .5, decay: 6, echo: .25, density: .9 }, color: "pink", eq: [-18, -12, -6, -3, 0, 0, 0, -2, -6, -12] },
+    { name: "Drone and fifths", set: { dtype: "pad", chimes: 0, inst: "bell", mode: "lydian", key: "2", loops: 3, spread: .6, drone: .8, noise: .15, verb: .6, decay: 8, echo: .1, density: .5 }, color: "brown", eq: [4, 6, 3, 0, -3, -6, -9, -12, -15, -18] },
+    { name: "Rain room", set: { dtype: "saw", chimes: 0, inst: "rhodes", mode: "dorian", key: "9", loops: 5, spread: .8, drone: .3, noise: .6, verb: .45, decay: 4, echo: .35, density: .7 }, color: "pink", eq: [-18, -12, -6, -2, 0, 2, 4, 5, 3, -2] },
+    { name: "Shoreline", set: { dtype: "pad", chimes: .35, inst: "flute", mode: "pent", key: "7", loops: 4, spread: 1, drone: .4, noise: .7, verb: .55, decay: 7, echo: .2, density: .6 }, color: "pink", eq: [-6, 2, 5, 4, 1, -3, -7, -10, -14, -18], swell: .8 },
+    { name: "Night", set: { dtype: "pad", chimes: .15, inst: "tubular", mode: "aeolian", key: "4", loops: 6, spread: .9, drone: .5, noise: .2, verb: .7, decay: 10, echo: .4, density: .4 }, color: "brown", eq: [0, 3, 2, 0, -3, -6, -9, -12, -15, -18] },
+    { name: "Chime garden", set: { dtype: "pad", chimes: .7, inst: "celesta", mode: "pent", key: "2", loops: 4, spread: 1, drone: .3, noise: .35, verb: .6, decay: 7, echo: .15, density: .5 }, color: "pink", eq: [-18, -10, -2, 4, 8, 4, -4, -10, -16, -18], swell: .6 },
+    { name: "Glass and metal", set: { dtype: "pad", chimes: .25, inst: "crotale", mode: "lydian", key: "7", loops: 6, spread: 1, drone: .35, noise: .1, verb: .7, decay: 9, echo: .3, density: .5 }, color: "pink", eq: [-18, -12, -6, -3, 0, 0, 0, -2, -6, -12] }
   ];
   function loadBank(c) {
     var have = window.BandSounds ? Promise.resolve() : new Promise(function (res, rej) {
@@ -91,6 +93,35 @@
       if (!sc) { sc = document.createElement("script"); sc.src = "/apps/shared/band/sounds.js?v=23"; document.head.appendChild(sc); }
       sc.addEventListener("load", res); sc.addEventListener("error", rej); });
     return have.then(function () { if (!loadBank.b || loadBank.c !== c) { loadBank.b = BandSounds.create(c); loadBank.c = c; } return loadBank.b; });
+  }
+  // ---- recorded bells and chimes (bell-samples/, 3.7 MB; sources in scripts/sources/ambient-bells.py, staging and licences in
+  // research_notes/bell-chime-samples/SOURCES.md). Pitched sets: the nearest recorded note, sped up or slowed down. Pitches are as the
+  // files are named (glockenspiel and crotales are named at the pitch they sound, as far as the sets say: unverified by ear).
+  var BELL_BASE = "/apps/shared/lessons/bell-samples/", NOTE = { c: 0, d: 2, e: 4, f: 5, g: 7, a: 9, b: 11 };
+  function nm(s) { var m = /^([a-g])(s?)(\d)$/i.exec(s); return 12 * (+m[3] + 1) + NOTE[m[1].toLowerCase()] + (m[2] ? 1 : 0); }
+  var BELLS = {
+    tubular: { file: "tubular-", notes: ["C4", "G4", "C5", "F5"], gain: .9 },
+    glock: { file: "glock-", notes: ["G4", "C5", "G5", "C6", "G6", "C7"], gain: .7, oct: 1 },
+    celesta: { file: "celesta-", notes: ["c4", "c5", "e5", "gs5", "c6"], gain: .8 },
+    crotale: { file: "crotale-", notes: ["C6", "E6", "G6", "C7", "E7", "G7", "C8"], gain: .5, oct: 2 },
+    vibes: { file: "vibes-", notes: ["C4", "G4", "C5", "E5"], gain: .8 }
+  };
+  var CHIMES = ["asc1", "desc1", "fastAsc1", "slowAsc1", "slowDesc1", "random", "koshi", "breeze"];
+  var bufs = typeof WeakMap === "function" ? new WeakMap() : null;
+  function fetchBuf(c, name) {
+    var m = bufs.get(c); if (!m) { m = {}; bufs.set(c, m); }
+    return m[name] || (m[name] = fetch(BELL_BASE + name + ".m4a").then(function (r) { if (!r.ok) throw new Error(r.status); return r.arrayBuffer(); })
+      .then(function (a) { return new Promise(function (res, rej) { c.decodeAudioData(a, res, rej); }); }));
+  }
+  function bellSet(c, kind) {   // -> Promise of { play(out, midi, t, vel) }
+    var S = BELLS[kind];
+    return Promise.all(S.notes.map(function (n) { return fetchBuf(c, S.file + n); })).then(function (bs) {
+      var roots = S.notes.map(nm);
+      return { play: function (out, m, t, v) {
+        m += 12 * (S.oct || 0); var best = 0; roots.forEach(function (r, i) { if (Math.abs(r - m) < Math.abs(roots[best] - m)) best = i; });
+        var s = c.createBufferSource(), g = c.createGain(); s.buffer = bs[best]; s.playbackRate.value = Math.pow(2, (m - roots[best]) / 12);
+        g.gain.value = v * S.gain; s.connect(g); g.connect(out); s.start(t); s.onended = function () { g.disconnect(); }; } };
+    });
   }
   // a soft bell, for when there are no samples (or "Synth bell" is chosen): two sines a fifth and two octaves up, slow fade
   function bell(c, out, m, t, v, dur) {
@@ -105,11 +136,13 @@
     w.body.insertBefore(pr, w.ctls);
     w.pick("key", "Key", KEYS, "5", null, function () { if (run) run.retune(); });
     w.pick("mode", "Scale", [["major", "Major"], ["lydian", "Lydian (♯4: floating)"], ["pent", "Major pentatonic"], ["dorian", "Dorian"], ["aeolian", "Natural minor"], ["minpent", "Minor pentatonic"]], "major", null, function () { if (run) run.retune(); });
-    w.pick("inst", "Loop notes on", [["piano", "Piano (samples)"], ["rhodes", "Electric piano (samples)"], ["flute", "Flute (samples)"], ["bell", "Synth bell"]], "piano", null, function () { if (run) run.inst(); });
+    w.pick("inst", "Loop notes on", [["piano", "Piano (samples)"], ["rhodes", "Electric piano (samples)"], ["flute", "Flute (samples)"], ["tubular", "Tubular bells (recorded)"], ["glock", "Glockenspiel (recorded)"], ["celesta", "Celesta (recorded)"], ["crotale", "Crotales (recorded)"], ["vibes", "Vibraphone (recorded)"], ["bell", "Synth bell"]], "piano", null, function () { if (run) run.inst(); });
     w.num("loops", { label: "Tape loops", min: 1, max: 9, step: 1, value: 7, fmt: function (v) { return v + (v === 1 ? " loop" : " loops"); }, on: function () { if (run) run.rebuild(); } });
     w.num("spread", { label: "Loop lengths", min: 0, max: 1, step: .01, value: 1, fmt: function (v) { return v < .05 ? "all equal (a pulse)" : v < .5 ? "close" : "far apart (never lines up)"; }, on: function () { if (run) run.rebuild(); } });
     w.num("density", { label: "Notes per loop", min: .2, max: 1, step: .01, value: .9, fmt: fmtPct, on: function () { if (run) run.rebuild(); } });
-    w.num("drone", { label: "Drone", min: 0, max: 1, step: .01, value: .15, fmt: fmtPct });
+    w.pick("dtype", "Drone", [["saw", "Detuned saws"], ["pad", "Wavetable pad (scanning)"]], "saw", null, function () { if (run) run.retune(); });
+    w.num("chimes", { label: "Wind chimes", min: 0, max: 1, step: .01, value: 0, fmt: function (v) { return v < .02 ? "off" : v < .4 ? "now and then" : v < .75 ? "often" : "a windy day"; } });
+    w.num("drone", { label: "Drone level", min: 0, max: 1, step: .01, value: .15, fmt: fmtPct });
     w.num("noise", { label: "Noise bed", min: 0, max: 1, step: .01, value: .05, fmt: fmtPct });
     w.num("verb", { label: "Reverb", min: 0, max: 1, step: .01, value: .5, fmt: fmtPct });
     w.num("decay", { label: "Reverb length", min: 1, max: 10, step: .1, value: 6, fmt: fmtS });
@@ -159,15 +192,18 @@
     w.onStart = function (c, out) {
       var bus = c.createGain(), dry = c.createGain(), wet = c.createGain(), echoG = c.createGain(), droneG = c.createGain(), noiseG = c.createGain(), comp = c.createDynamicsCompressor();
       comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = .05; comp.release.value = .5; comp.connect(out);
-      var rev = SK.fx("reverb", c, { decay: w.P.decay, pre: 40, damp: 5000, early: .2, size: 1 }), dly = SK.fx("delay", c, { time: 720, fb: .5, tone: 2800, wow: .5, pp: "1" });
-      bus.connect(dry); dry.connect(comp); bus.connect(rev.input); rev.output.connect(wet); wet.connect(comp); bus.connect(echoG); echoG.connect(dly.input); dly.output.connect(rev.input); dly.output.connect(comp);
+      var rev = SK.fx("reverb", c, { decay: w.P.decay, pre: 40, damp: 5000, early: .2, size: 1 }), dly = SK.fx("delay", c, { time: 1700, fb: .4, tone: 1800, wow: .5, pp: "1" }), ehp = c.createBiquadFilter();
+      ehp.type = "highpass"; ehp.frequency.value = 150;   // long, dark echoes (Frippertronics-like); the right line repeats later (2.3 s) so they blur rather than tick
+      if (dly.n && dly.n.lines[1]) dly.n.lines[1].d.delayTime.value = 2.3;
+      bus.connect(dry); dry.connect(comp); bus.connect(rev.input); rev.output.connect(wet); wet.connect(comp); bus.connect(ehp); ehp.connect(echoG); echoG.connect(dly.input); dly.output.connect(rev.input); dly.output.connect(comp);
       dry.gain.value = 1 - w.P.verb * .6; wet.gain.value = w.P.verb * 1.4; echoG.gain.value = w.P.echo; droneG.gain.value = w.P.drone * .5; noiseG.gain.value = w.P.noise;
       droneG.connect(bus); noiseG.connect(rev.input); noiseG.connect(comp);
       var bed = noiseBed(c, noiseG, w.P), bank = null, dead = false, t0 = c.currentTime + .3, loops = makeLoops(), drone = [];
       // the drone: root and fifth (and the octave), three detuned saws each through a slowly opening and closing low-pass
       function droneOn() {
-        drone.forEach(function (d) { d.g.gain.setTargetAtTime(0, c.currentTime, 1.5); setTimeout(function () { d.stop(); }, 6000); }); drone = [];
+        drone.forEach(function (d) { d.g.gain.setTargetAtTime(0, c.currentTime, 1.5); setTimeout(function () { d.stop(); }, 6000); }); drone = []; pad = null;
         var root = 41 + ((+w.P.key - 5 + 12) % 12);
+        if (w.P.dtype === "pad" && SK.wtFrames) return padOn(root);
         [[root, .5], [root + 7, .3], [root + 12, .2]].forEach(function (p, i) {
           var g = c.createGain(), lp = c.createBiquadFilter(), lfo = c.createOscillator(), lg = c.createGain(), os = [];
           lp.type = "lowpass"; lp.frequency.value = 500; lp.Q.value = .5; lfo.frequency.value = .03 + i * .017; lg.gain.value = 350; lfo.connect(lg); lg.connect(lp.frequency); lfo.start();
@@ -176,14 +212,48 @@
           drone.push({ g: g, stop: function () { os.concat([lfo]).forEach(function (o) { try { o.stop(); } catch (e) {} }); g.disconnect(); } });
         });
       }
+      // the wavetable pad: each drone note on four frames of the site's wavetable (Vital's idea: a wave that slowly turns into
+      // another), cross-faded by the scheduler tick along a slow position that never quite repeats
+      var pad = null;
+      function padOn(root) {
+        var fr = SK.wtFrames(), pick = [0, 1, 4, 6].map(function (i) { return Math.min(i, fr.length - 1); }), all = [];
+        var waves = pick.map(function (i) { return c.createPeriodicWave(new Float32Array(fr[i][1].length), fr[i][1]); });
+        [[root, .5], [root + 7, .3], [root + 12, .2], [root + 19, .08]].forEach(function (p, j) {
+          var g = c.createGain(), lp = c.createBiquadFilter(), gs = [];
+          lp.type = "lowpass"; lp.frequency.value = 1400; lp.Q.value = .3;
+          waves.forEach(function (wv, k) { var o = c.createOscillator(), og = c.createGain(); o.setPeriodicWave(wv); o.frequency.value = mtof(p[0]); o.detune.value = (k - 1.5) * 4 + j;
+            og.gain.value = k ? 0 : 1; o.connect(og); og.connect(lp); o.start(); all.push(o); gs.push(og); });
+          g.gain.setValueAtTime(0, c.currentTime); g.gain.setTargetAtTime(p[1] * .16, c.currentTime, 3); lp.connect(g); g.connect(droneG);
+          drone.push({ g: g, gs: gs, ph: j * 1.7, stop: function () { all.forEach(function (o) { try { o.stop(); } catch (e) {} }); g.disconnect(); } });
+        });
+        pad = true;
+      }
+      function padScan(now) {
+        drone.forEach(function (d) { if (!d.gs) return;
+          var pos = 1.5 + 1.5 * Math.sin(now * .021 + d.ph) * Math.cos(now * .0067 + d.ph * .5);   // 0..3 across the four frames
+          d.gs.forEach(function (g, k) { g.gain.setTargetAtTime(Math.max(0, 1 - Math.abs(pos - k)), now, .3); }); });
+      }
       droneOn();
-      function useBank() { bank = null; if (w.P.inst === "bell") return; var want = w.P.inst; loadBank(c).then(function (b) { return b.load([want]).then(function () { if (!dead && w.P.inst === want && b.has(want)) bank = b; }); }).catch(function () {}); }
+      var bset = null;
+      function useBank() { bank = null; bset = null; if (w.P.inst === "bell") return;
+        if (BELLS[w.P.inst]) { var k = w.P.inst; bellSet(c, k).then(function (b) { if (!dead && w.P.inst === k) bset = b; }).catch(function () {}); return; } var want = w.P.inst; loadBank(c).then(function (b) { return b.load([want]).then(function () { if (!dead && w.P.inst === want && b.has(want)) bank = b; }); }).catch(function () {}); }
       useBank();
-      function play(e, t) { if (bank) bank.play(w.P.inst, { midi: e.m, vel: e.v, dur: w.P.inst === "flute" ? 3 : 4 }, t, bus); else bell(c, bus, e.m, t, e.v, 7); e.lit = t; }
+      function play(e, t) { if (BELLS[w.P.inst]) { if (bset) bset.play(bus, e.m, t, e.v); else bell(c, bus, e.m, t, e.v, 7); e.lit = t; return; }
+        if (bank) bank.play(w.P.inst, { midi: e.m, vel: e.v, dur: w.P.inst === "flute" ? 3 : 4 }, t, bus); else bell(c, bus, e.m, t, e.v, 7); e.lit = t; }
       // the scheduler: each loop's next note time is worked out from t0 and the loop's own length
       var next = loops.map(function () { return 0; }), cyc = loops.map(function () { return 0; });
+      // wind chimes: a recorded gust now and then, panned somewhere, a little faster or slower; how often follows the slider
+      var nextGust = c.currentTime + 4;
+      function gust(now) {
+        if (w.P.chimes < .02) { nextGust = now + 2; return; } if (now < nextGust) return;
+        nextGust = now + (8 + Math.random() * 30) * (1.15 - w.P.chimes);
+        var name = "chimes-" + CHIMES[Math.floor(Math.random() * CHIMES.length)];
+        fetchBuf(c, name).then(function (b) { if (dead) return; var s = c.createBufferSource(), g = c.createGain(), pn = c.createStereoPanner();
+          s.buffer = b; s.playbackRate.value = .85 + Math.random() * .3; pn.pan.value = Math.random() * 1.6 - .8; g.gain.value = .25 + .35 * w.P.chimes;
+          s.connect(g); g.connect(pn); pn.connect(bus); s.start(); s.onended = function () { pn.disconnect(); }; }).catch(function () {});
+      }
       function tick() {
-        if (dead) return; var now = c.currentTime;
+        if (dead) return; var now = c.currentTime; gust(now); if (pad) padScan(now);
         loops.forEach(function (L, i) {
           for (;;) { var e = L.ev[next[i]], t = t0 + cyc[i] * L.len + e.at; if (t > now + .2) break; if (t >= now - .05) play(e, t); next[i]++; if (next[i] >= L.ev.length) { next[i] = 0; cyc[i]++; } }
         });

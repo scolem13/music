@@ -317,6 +317,13 @@
   envelope Flat gives the trick away, partials plotted) and `tritone` (Deutsch's paradox: random pair, Up/Down, answers on the
   pitch-class circle; `play(pc)`, `answers()`). Facts from Wikipedia only (`scripts/sources/shepard.py`). Test
   `node tests/lessons/shepard.cdp.js` (`NEG=1` must fail). Not listened to by a person yet.
+- Ambient Generator voices (2026-11-28): recorded bells in `bell-samples/` (3.7 MB: VSCO 2 CE tubular / glock / chimes CC0, Iowa
+  crotales / vibes, stamperadam celesta CC0, two Commons chimes; nearest note re-pitched; pitches as the files are named, unverified by ear),
+  a "Wind chimes" gust layer, Drone = saws or a wavetable pad (four of `SK.wtFrames()` cross-faded by the tick). The shared tape delay's
+  `satCurve` now has unity small-signal gain and its tone low-pass Q -3: before, loop gain at 2-2.5 kHz was 1.01-1.03, so those echoes
+  never died (the "harsh high repeats"); test `tests/lessons/ambient.cdp.js` checks a 2.2 kHz burst is 40 dB down by 10 s. The ambient
+  echo itself: 1.7 / 2.3 s ping-pong, fb .4, tone 1800, 150 Hz high-pass on the send. 78 more files (bowls, rin, church bells,
+  Sonatina chimes) wait in `research_notes/bell-chime-samples/` (raw/ is 137 MB: don't commit it). Nobody has listened yet.
 - Noise and ambient (2026-11-27): `apps/shared/noise.js` (global `SiteNoise`; NOT `Noise`, a name another script takes) is the site's
   noise model: `source(ctx, kind)` = a looped 23 s buffer, filters warmed, end cross-faded into the start, random start;
   `stream(ctx, kind)` = an AudioWorklet that never repeats (buffer until it loads); `eq(ctx, gains)` = 10 octave peaking bands

@@ -1109,7 +1109,7 @@
     var g = 1 / Math.sqrt(sum / 2 + 1e-9) * 2.4; for (var c3 = 0; c3 < 2; c3++) { var d3 = b.getChannelData(c3); for (var q2 = 0; q2 < len; q2++) d3[q2] *= g; }
     return b;
   }
-  function satCurve(c) { var sh = c.createWaveShaper(), n = 1025, a = new Float32Array(n); for (var i = 0; i < n; i++) a[i] = Math.tanh((i / (n - 1) * 2 - 1) * 1.5) / Math.tanh(1.5); sh.curve = a; return sh; }
+  function satCurve(c) { var sh = c.createWaveShaper(), n = 1025, a = new Float32Array(n); for (var i = 0; i < n; i++) a[i] = Math.tanh((i / (n - 1) * 2 - 1) * 1.5) / 1.5; sh.curve = a; return sh; }   // unity gain for quiet signals (was / tanh(1.5) = x1.66: with the tone filter's bump the feedback grew past 1 near 2-2.5 kHz and those echoes never died, 2026-11-28)
   function ch(P, prev, k) { return P[k] !== prev[k]; }
 
   // each builder: make(c, P, o) -> { input, output, n (the parts, for the widgets' drawings), t0?, update(P, prev), stop? }
@@ -1177,7 +1177,7 @@
       lfo.frequency.value = .6; flut.frequency.value = 7; lfo.connect(lg); flut.connect(fg); lfo.start(); flut.start();
       for (var i = 0; i < (P.pp === "1" ? 2 : 1); i++) {
         var d = c.createDelay(2), lp = c.createBiquadFilter(), fb = c.createGain(), pan = c.createStereoPanner();
-        d.delayTime.value = P.time / 1000; lp.frequency.value = P.tone; fb.gain.value = P.fb; pan.pan.value = P.pp === "1" ? (i ? .8 : -.8) : 0;
+        d.delayTime.value = P.time / 1000; lp.frequency.value = P.tone; lp.Q.value = -3;   /* no resonant bump in the loop */ fb.gain.value = P.fb; pan.pan.value = P.pp === "1" ? (i ? .8 : -.8) : 0;
         lg.connect(d.delayTime); fg.connect(d.delayTime); d.connect(lp); lp.connect(pan); pan.connect(out); var s1 = satCurve(c); lp.connect(s1); s1.connect(fb);
         lines.push({ d: d, lp: lp, fb: fb });
       }
@@ -1263,6 +1263,7 @@
   };
   var FX_REBUILD = { chorus: ["voices"], phaser: ["stages", "rate"], delay: ["pp"], tremolo: ["what"] };
   var FX_KINDS = Object.keys(FXB);
+  SK.wtFrames = wtFrames; SK.wtBlend = wtBlend;   // the wavetable frames, for the Ambient Generator's pad
   SK.fx = function (kind, c, params, opts) {
     if (!FXB[kind]) throw new Error("SynthKit.fx: unknown effect " + kind);
     opts = opts || {}; var P = fxClean(kind, params), inp = c.createGain(), out = c.createGain(), inner = null, h = { kind: kind, input: inp, output: out, P: P, n: null, t0: null }, dead = false;
