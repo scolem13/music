@@ -317,6 +317,13 @@
   envelope Flat gives the trick away, partials plotted) and `tritone` (Deutsch's paradox: random pair, Up/Down, answers on the
   pitch-class circle; `play(pc)`, `answers()`). Facts from Wikipedia only (`scripts/sources/shepard.py`). Test
   `node tests/lessons/shepard.cdp.js` (`NEG=1` must fail). Not listened to by a person yet.
+- Ambient Generator loops, LFOs, stops (2026-11-28): `w.P.loopInst[i]` / `w.P.loopOct[i]` (table `w.renderLoops`, `w.setLoop(i, inst,
+  oct)`; "same" = Loop notes on; "dvoice" = `droneVoice`, attack / hold / release / filter / wave dv*); `oct` moves all loops. Bell
+  types `WBELL` (Westminster, Taylor, Eijsbouts, Both 1591, van den Ghein 1615, Bourlet 1679, Mears 1859; ratios from Hibbert /
+  Lehr tables, BELLS-RESEARCH.md) via `btype`. LFOs `l0..l2` t(arget) s(hape) r(ate, s per cycle) d(epth), summed per target in
+  `lfos()` each tick; targets cutoff (drone + drone-voice low-passes, ±2.5 oct), scan (pad position ±1.5 frames), bright, drone,
+  noise, echo, verb, pan. Stops: `w.stop` wraps Base's (`w.hardStop`); `stopMode` fade (src ramps to 0 over stopT, then quiet) / ring
+  (quiet at once, drone + noise fade 2 s); then `waitSilence` stops when the output stays under -80 dB for 1 s (5 min cap). Tested.
 - Ambient Generator takes (2026-11-28): "Record take" / "Open in DAW" (`takeUI` in ambient-kit.js; header comment there):
   one AudioWorklet with 8 inputs (master `lim`, `notesB`, `chimeB`, `cymB`, droneG, noiseG, reverb and echo returns), mono at half
   rate, 5 min cap; notes / gusts / swells / setting changes logged (`w.take`). `w.takeProject()` builds a 60 bpm project (1 beat

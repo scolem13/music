@@ -141,9 +141,27 @@
     korean: { ref: 64.35, rows: [[1, 1, 75, .34], [2.62, .8, 28, .1], [2.95, .6, 12, 1.26], [3.55, .55, 10, .32], [4.39, .45, 8, .66], [5.4, .35, 6, .5], [5.43, .3, 6, .4]] },
     japanese: { ref: 109, rows: [[.43, .15, 60, .05], [1, 1, 45, .2], [1.98, .8, 35, .25], [2.32, .45, 10, .3], [2.95, .35, 8, .2], [2.96, .3, 8, .2], [3.21, .3, 7, .3], [3.75, .25, 6, .3], [4.28, .2, 5, .3], [4.38, .18, 5, .3], [5.2, .14, 4, .3]] }
   };
+  // Western bell types: hum, prime, tierce, quint, nominal as ratios to the prime, worked out from the tables of hum-relative ratios
+  // in Hibbert, "Basic Principles of Bell Tuning" (Taylor 1980s, Mears 1859) and Lehr's Tables II and V on Hibbert's site (Thomas Both
+  // 1591, van den Ghein 1615, Bourlet 1679, Eijsbouts 1955); `up` replaces upper partials where those tables give them (van den Ghein
+  // I-5 3.15 and I-6 4.37 of nominal/2; Eijsbouts I-5 2.99, I-6 4.15, I-7 5.40, I-8 6.78); the rest are Westminster's, scaled with
+  // the nominal. Old bells: "the hum is often a tone or more sharp ... the prime often a tone or more flat" (Hibbert).
+  var WBELL = {
+    westminster: { r: [.501, 1, 1.187, 1.499, 2], label: "Westminster Abbey tenor (tuned)" },
+    taylor: { r: [.5, 1, 1.185, 1.505, 2], label: "Taylor, 1980s (true-harmonic)" },
+    eijsbouts: { r: [.5, 1, 1.2, 1.5, 2], up: { 9: 2.99, 10: 4.15, 11: 5.4, 12: 6.78 }, label: "Eijsbouts carillon bell, 1955" },
+    both: { r: [.568, 1, 1.352, 1.705, 2.278], label: "Thomas Both, 1591" },
+    ghein: { r: [.49, 1, 1.176, 1.392, 1.961], up: { 9: 3.088, 10: 4.284 }, label: "van den Ghein, 1615" },
+    bourlet: { r: [.485, 1, 1.267, 1.535, 1.98], label: "Bourlet, 1679" },
+    mears: { r: [.613, 1, 1.331, 1.767, 2.196], label: "Mears, 1859 (old style: sharp hum, flat prime)" }
+  };
+  function bellRows(kind) {
+    var W = WBELL[kind] || WBELL.westminster, k = W.r[4] / 2;
+    return BELLP.map(function (p, i) { var r = i < 5 ? W.r[i] : (W.up && W.up[i]) || p[0] * k; return [r, p[1], p[2]]; });
+  }
   MODAL.bell = function (c, out, nom, t, v, hard, warble, type, beat) {
     var h = hard == null ? .55 : hard, depth = beat == null ? .5 : beat;
-    if (type && type !== "western") {
+    if (type === "korean" || type === "japanese" || type === "vietnamese") {
       var B = TEMPLE[type === "vietnamese" ? "japanese" : type] || TEMPLE.korean, f1 = nom, sc = f1 / B.ref, tc = .015 - .01 * h;
       B.rows.forEach(function (r) { var f = f1 * r[0], a = v * .2 * r[1] * contact(f, tc), T = Math.min(240, r[2] / Math.pow(sc, .8)), sp = r[3] * sc;
         partial(c, out, f - sp / 2, a, T, t, .006); partial(c, out, f + sp / 2, a * (1 - .8 * depth), T, t, .006); });   // unequal lines: the beat is stronger in some directions (Kim and Lee 2025)
@@ -151,13 +169,13 @@
       var s0 = c.createBufferSource(), lp = c.createBiquadFilter(), g0 = c.createGain(); s0.buffer = b; lp.type = "lowpass"; lp.frequency.value = 500 + 900 * h; g0.gain.value = v * .12 * (.4 + h); s0.connect(lp); lp.connect(g0); g0.connect(out); s0.start(t);   // the log's thud
       return;
     }
-    var f0 = nom / 2, tc2 = .0034 - .0022 * h, T0 = 100 * (129 / f0), cents = warble == null ? 1.2 : warble;
-    BELLP.forEach(function (p) { var f = f0 * p[0], a = v * .16 * p[1] * contact(f, tc2) * (f > 1500 && f < 3000 ? 1 + .6 * h : 1), sp = f * cents * Math.LN2 / 1200 * (.6 + .8 * Math.random());
+    var rows = bellRows(type && type.indexOf("w-") === 0 ? type.slice(2) : "westminster"), f0 = nom / rows[4][0], tc2 = .0034 - .0022 * h, T0 = 100 * (129 / f0), cents = warble == null ? 1.2 : warble;
+    rows.forEach(function (p) { var f = f0 * p[0], a = v * .16 * p[1] * contact(f, tc2) * (f > 1500 && f < 3000 ? 1 + .6 * h : 1), sp = f * cents * Math.LN2 / 1200 * (.6 + .8 * Math.random());
       partial(c, out, f - sp / 2, a, Math.min(240, T0 * p[2]), t); partial(c, out, f + sp / 2, a, Math.min(240, T0 * p[2]), t); });
   };
   var VOICES = { kbell: { oct: -24, play: function (c, o, m, t, v) { MODAL.bell(c, o, mtof(m), t, v, .5, null, "korean"); } },
     jbell: { oct: -24, play: function (c, o, m, t, v) { MODAL.bell(c, o, mtof(m), t, v, .5, null, "japanese"); } },
-    cbell: { oct: -12, play: function (c, o, m, t, v) { MODAL.bell(c, o, mtof(m), t, v); } }, mbar: { oct: -12, play: function (c, o, m, t, v) { MODAL.bar(c, o, mtof(m), t, v, true); } },
+    cbell: { oct: -12, play: function (c, o, m, t, v, P) { MODAL.bell(c, o, mtof(m), t, v, .55, null, "w-" + (P && P.btype || "westminster")); } }, mbar: { oct: -12, play: function (c, o, m, t, v) { MODAL.bar(c, o, mtof(m), t, v, true); } },
     wbar: { oct: -12, play: function (c, o, m, t, v) { MODAL.bar(c, o, mtof(m), t, v, false); } },
     chime: { oct: -12, play: function (c, o, m, t, v) { MODAL.chime(c, o, mtof(m), t, v); } } };
   // a soft bell, for when there are no samples (or "Synth bell" is chosen): two sines a fifth and two octaves up, slow fade
@@ -281,7 +299,9 @@
     w.pick("key", "Key", KEYS, "5", null, function () { if (run) run.retune(); });
     w.pick("mode", "Scale", [["major", "Major"], ["lydian", "Lydian (♯4: floating)"], ["pent", "Major pentatonic"], ["dorian", "Dorian"], ["aeolian", "Natural minor"], ["minpent", "Minor pentatonic"]], "major", null, function () { if (run) run.retune(); });
     w.pick("inst", "Loop notes on", [["piano", "Piano (samples)"], ["rhodes", "Electric piano (samples)"], ["flute", "Flute (samples)"], ["cbell", "Church bells (model, in progress)"], ["kbell", "Korean temple bells (model)"], ["jbell", "Japanese temple bells (model)"], ["mbar", "Bass metal bars (model)"], ["wbar", "Bass wooden bars (model)"], ["chime", "Chime tubes (model)"], ["bell", "Synth bell"]], "piano", null, function () { if (run) run.inst(); });
-    w.num("loops", { label: "Tape loops", min: 1, max: 9, step: 1, value: 7, fmt: function (v) { return v + (v === 1 ? " loop" : " loops"); }, on: function () { if (run) run.rebuild(); } });
+    w.pick("btype", "Church bell type", [["westminster", "Westminster Abbey tenor (tuned)"], ["taylor", "Taylor, 1980s"], ["eijsbouts", "Eijsbouts carillon, 1955"], ["both", "Thomas Both, 1591"], ["ghein", "van den Ghein, 1615"], ["bourlet", "Bourlet, 1679"], ["mears", "Mears, 1859 (old style)"]], "westminster");
+    w.num("oct", { label: "Loop octave", min: -3, max: 2, step: 1, value: 0, fmt: function (v) { return v === 0 ? "as written (F3 up)" : (v > 0 ? "+" : "") + v + (Math.abs(v) === 1 ? " octave" : " octaves"); } });
+    w.num("loops", { label: "Tape loops", min: 1, max: 9, step: 1, value: 7, fmt: function (v) { return v + (v === 1 ? " loop" : " loops"); }, on: function () { if (w.renderLoops) w.renderLoops(); if (run) run.rebuild(); } });
     w.num("spread", { label: "Loop lengths", min: 0, max: 1, step: .01, value: 1, fmt: function (v) { return v < .05 ? "all equal (a pulse)" : v < .5 ? "close" : "far apart (never lines up)"; }, on: function () { if (run) run.rebuild(); } });
     w.num("density", { label: "Notes per loop", min: .2, max: 3, step: .01, value: .9, fmt: fmtPct, on: function () { if (run) run.rebuildSoon(); } });
     w.num("pace", { label: "Loop speed", min: 1, max: 6, step: .01, value: 1, fmt: function (v) { return v < 1.05 ? "as recorded" : "x" + v.toFixed(1); }, on: function () { if (run) run.rebuildSoon(); } });
@@ -321,6 +341,42 @@
         ["cySpeed", { label: "Speed (pitch)", min: .3, max: 1.5, step: .01, value: .85, fmt: function (v) { return "x" + v.toFixed(2); } }],
         ["cyVary", { label: "Speed varies by", min: 0, max: .5, step: .01, value: .25, fmt: function (v) { return "±" + Math.round(v * 100) + "%"; } }],
         ["cyWidth", { label: "Stereo width", min: 0, max: 1, step: .01, value: .7, fmt: fmtPct }]]);
+    // ---- per-loop instruments and octaves; the drone voice; slow LFOs (after Vital: several at once, each with a target and an amount)
+    var INSTS = [["same", "(as Loop notes on)"], ["dvoice", "Drone voice"], ["piano", "Piano"], ["rhodes", "Electric piano"], ["flute", "Flute"], ["cbell", "Church bell"], ["kbell", "Korean temple bell"], ["jbell", "Japanese temple bell"], ["mbar", "Bass metal bar"], ["wbar", "Bass wooden bar"], ["chime", "Chime tube"], ["bell", "Synth bell"]];
+    w.P.loopInst = []; w.P.loopOct = [];
+    var lt = el("details", "amb-nb amb-lt"); lt.appendChild(el("summary", "", "Loops: an instrument and an octave for each loop")); w.body.appendChild(lt);
+    var ltBox = el("div", "amb-ltb"); lt.appendChild(ltBox);
+    w.renderLoops = function () {
+      ltBox.innerHTML = ""; var n = w.P.loops;
+      for (var i = 0; i < n; i++) (function (i) {
+        var row = el("div", "amb-ltr"), si = document.createElement("select"), so = document.createElement("select");
+        row.appendChild(el("span", "amb-ltn", "Loop " + (i + 1)));
+        INSTS.forEach(function (o) { var op = document.createElement("option"); op.value = o[0]; op.textContent = o[1]; si.appendChild(op); }); si.value = w.P.loopInst[i] || "same";
+        [-2, -1, 0, 1, 2].forEach(function (o) { var op = document.createElement("option"); op.value = o; op.textContent = o === 0 ? "same octave" : (o > 0 ? "+" : "") + o + " oct"; so.appendChild(op); }); so.value = w.P.loopOct[i] || 0;
+        si.setAttribute("aria-label", "Loop " + (i + 1) + " instrument"); so.setAttribute("aria-label", "Loop " + (i + 1) + " octave");
+        si.onchange = function () { w.P.loopInst[i] = si.value; if (run) run.inst(); }; so.onchange = function () { w.P.loopOct[i] = +so.value; };
+        row.appendChild(si); row.appendChild(so); ltBox.appendChild(row);
+      })(i);
+    };
+    w.setLoop = function (i, inst, oct) { w.P.loopInst[i] = inst; if (oct != null) w.P.loopOct[i] = oct; w.renderLoops(); if (run) run.inst(); };
+    var dv = el("details", "amb-nb"); dv.appendChild(el("summary", "", "Drone voice: a drone-like note with its own envelope, for loops set to it")); w.body.appendChild(dv);
+    var dvc = el("div", "sk-ctls"); dv.appendChild(dvc);
+    w.pick("dvWave", "Wave", [["saw", "Detuned saws"], ["pad", "Wavetable (scanned)"]], "pad", dvc);
+    w.num("dvA", { label: "Attack", min: .05, max: 20, log: true, value: 3, fmt: fmtS }, dvc);
+    w.num("dvH", { label: "Hold", min: 0, max: 30, step: .1, value: 4, fmt: fmtS }, dvc);
+    w.num("dvR", { label: "Release", min: .3, max: 40, log: true, value: 8, fmt: fmtS }, dvc);
+    w.num("dvCut", { label: "Filter", min: 150, max: 8000, log: true, value: 1200, fmt: fmtHz }, dvc);
+    w.num("dvLvl", { label: "Level", min: 0, max: 2, step: .01, value: 1, fmt: fmtPct }, dvc);
+    var LT = [["off", "Off"], ["cutoff", "Drone filters"], ["scan", "Wavetable scan"], ["bright", "Brightness"], ["drone", "Drone level"], ["noise", "Noise level"], ["echo", "Echo send"], ["verb", "Reverb"], ["pan", "Drone-voice pan"]];
+    var lf = el("details", "amb-nb amb-lfo"); lf.appendChild(el("summary", "", "LFOs: slow movement for filters, the wavetable scan and levels")); w.body.appendChild(lf);
+    var lfoView = el("canvas", "sk-plot amb-lfov"); lfoView.setAttribute("aria-label", "The three LFOs over the last minute"); lf.appendChild(lfoView);
+    [0, 1, 2].forEach(function (i) {
+      var rowc = el("div", "sk-ctls amb-lfor"); rowc.appendChild(el("span", "amb-ltn", "LFO " + (i + 1))); lf.appendChild(rowc);
+      w.pick("l" + i + "t", "Moves", LT, ["cutoff", "scan", "off"][i], rowc);
+      w.pick("l" + i + "s", "Shape", [["sine", "Sine"], ["tri", "Triangle"], ["drift", "Drift (smooth random)"], ["ramp", "Rise"]], ["sine", "tri", "drift"][i], rowc);
+      w.num("l" + i + "r", { label: "One cycle every", min: 2, max: 600, log: true, value: [40, 97, 230][i], fmt: function (v) { return v < 60 ? Math.round(v) + " s" : (v / 60).toFixed(1) + " min"; } }, rowc);
+      w.num("l" + i + "d", { label: "Amount", min: 0, max: 1, step: .01, value: [.5, .6, .4][i], fmt: fmtPct }, rowc);
+    });
     energyPanel(w);
     // the noise bed's own controls (same 10-band EQ as the Noise widget)
     var nb = el("details", "amb-nb"), sum = el("summary", "", "Noise bed: colour, swell and the 10-band EQ"); nb.appendChild(sum); w.body.appendChild(nb);
@@ -340,7 +396,7 @@
       if (w.energy) w.energy.resetFrom(); if (run) run.rebuild();
     };
     w.presetList = AMB_PRESETS;
-    takeUI(w, function () { return run; });
+    takeUI(w, function () { return run; }); w.renderLoops();
     // ---- cued changes: with Changes = Cued, moving a control while it plays only marks it (the slider shows the new value, the
     // sound keeps the old); Go glides every cued setting there over the Transition time. Keys that rebuild the loops or swap
     // sounds (scale, key, instrument, drone type, loop count / lengths / notes / speed) change at the start of the glide.
@@ -349,6 +405,15 @@
     var cueBox = el("div", "amb-cue"); w.body.insertBefore(cueBox, w.ctls);
     w.pick("cue", "Changes", [["now", "Immediate"], ["cued", "Cued (press Go)"]], "now", cueBox, function (v) { if (v === "now") w.go(); });
     w.num("trans", { label: "Transition", min: 0, max: 120, step: .5, value: 8, fmt: fmtS }, cueBox);
+    var stopBox = el("div", "amb-cue"); w.body.insertBefore(stopBox, w.ctls);
+    w.pick("stopMode", "Stop", [["hard", "Hard stop"], ["fade", "Gradual stop"], ["ring", "Stop and ring"]], "hard", stopBox);
+    w.num("stopT", { label: "Wind-down", min: 1, max: 180, log: true, value: 20, fmt: fmtS }, stopBox);
+    var hardStop = w.stop;
+    // Hard stop: everything at once. Gradual: everything winds down to silence over Wind-down, then the reverb and the rings run out
+    // before it really stops. Stop and ring: no new sounds at once (the drone and noise fade in 2 s), the rings and the reverb play out.
+    // Pressing ■ again while it winds down stops it at once.
+    w.stop = function (force) { if (force === true || !run || run.stopping || w.P.stopMode === "hard") return hardStop.call(w); run.windDown(w.P.stopMode, w.P.stopT); };
+    w.hardStop = function () { return hardStop.call(w); };
     var goB = button(cueBox, "Go", function () { w.go(); }, "btn-primary amb-go"), cancelB = button(cueBox, "Cancel", function () { w.cancelCue(); }, "btn-outline-secondary"), cueN = el("span", "amb-cue-n", ""); cueBox.appendChild(cueN);
     function label(k) { var c = w.c[k], l = c && c.el && c.el.querySelector(".sk-cl"); return l ? l.textContent : k; }
     function showCue() { var ks = Object.keys(cued), n = ks.length; cueN.textContent = gliding ? "moving…" : n ? n + (n === 1 ? " change" : " changes") + " cued: " + ks.map(label).join(", ") : ""; goB.disabled = !n; cancelB.disabled = !n; }
@@ -370,7 +435,7 @@
     w.cancelCue = function () { var ks = Object.keys(cued); cued = {}; ks.forEach(function (k) { var c = w.c[k]; if (c && c.set) c.set(live[k]); w.P[k] = live[k]; }); showCue(); };
     function stepKey(k) { if (!run) return; if (k === "key" || k === "mode" || k === "dtype") run.retune(); else if (k === "inst") run.inst(); else run.rebuildSoon(); }
     w.apply = function (k, v) {
-      if (k === "cue" || k === "trans") return;
+      if (k === "cue" || k === "trans" || k === "stopMode" || k === "stopT" || /^(l\d[tsrd]|dv\w+|oct|btype)$/.test(k)) return;
       if (w.P.cue === "cued" && run && !gliding && k in live) { cued[k] = v; w.P[k] = live[k]; showCue(); return; }
       live[k] = v; realApply(k, v);
     };
@@ -430,15 +495,15 @@
         if (w.P.dtype === "pad" && SK.wtFrames) return padOn(root);
         [[root, .5], [root + 7, .3], [root + 12, .2]].forEach(function (p, i) {
           var g = c.createGain(), lp = c.createBiquadFilter(), lfo = c.createOscillator(), lg = c.createGain(), os = [];
-          lp.type = "lowpass"; lp.frequency.value = 500; lp.Q.value = .5; lfo.frequency.value = .03 + i * .017; lg.gain.value = 350; lfo.connect(lg); lg.connect(lp.frequency); lfo.start();
+          lp.type = "lowpass"; lp.frequency.value = 500; lp.Q.value = .5; var lpBase = 500; lfo.frequency.value = .03 + i * .017; lg.gain.value = 350; lfo.connect(lg); lg.connect(lp.frequency); lfo.start();
           [-9, 0, 8].forEach(function (dt) { var o = c.createOscillator(); o.type = "sawtooth"; o.frequency.value = mtof(p[0]); o.detune.value = dt; o.connect(lp); o.start(); os.push(o); });
           g.gain.setValueAtTime(0, c.currentTime); g.gain.setTargetAtTime(p[1] * .12, c.currentTime, 2); lp.connect(g); g.connect(droneG);
-          drone.push({ g: g, stop: function () { os.concat([lfo]).forEach(function (o) { try { o.stop(); } catch (e) {} }); g.disconnect(); } });
+          drone.push({ g: g, lp: lp, base: lpBase, stop: function () { os.concat([lfo]).forEach(function (o) { try { o.stop(); } catch (e) {} }); g.disconnect(); } });
         });
       }
       // the wavetable pad: each drone note on four frames of the site's wavetable (Vital's idea: a wave that slowly turns into
       // another), cross-faded by the scheduler tick along a slow position that never quite repeats
-      var pad = null;
+      var pad = null, scanOff = 0;
       function padOn(root) {
         var fr = SK.wtFrames(), pick = [0, 1, 4, 6].map(function (i) { return Math.min(i, fr.length - 1); }), all = [];
         var waves = pick.map(function (i) { return c.createPeriodicWave(new Float32Array(fr[i][1].length), fr[i][1]); });
@@ -448,21 +513,71 @@
           waves.forEach(function (wv, k) { var o = c.createOscillator(), og = c.createGain(); o.setPeriodicWave(wv); o.frequency.value = mtof(p[0]); o.detune.value = (k - 1.5) * 4 + j;
             og.gain.value = k ? 0 : 1; o.connect(og); og.connect(lp); o.start(); all.push(o); gs.push(og); });
           g.gain.setValueAtTime(0, c.currentTime); g.gain.setTargetAtTime(p[1] * .16, c.currentTime, 3); lp.connect(g); g.connect(droneG);
-          drone.push({ g: g, gs: gs, ph: j * 1.7, stop: function () { all.forEach(function (o) { try { o.stop(); } catch (e) {} }); g.disconnect(); } });
+          drone.push({ g: g, gs: gs, lp: lp, base: 1400, ph: j * 1.7, stop: function () { all.forEach(function (o) { try { o.stop(); } catch (e) {} }); g.disconnect(); } });
         });
         pad = true;
       }
       function padScan(now) {
         drone.forEach(function (d) { if (!d.gs) return;
-          var pos = 1.5 + 1.5 * Math.sin(now * .021 + d.ph) * Math.cos(now * .0067 + d.ph * .5);   // 0..3 across the four frames
+          var pos = Math.max(0, Math.min(3, 1.5 + 1.5 * Math.sin(now * .021 + d.ph) * Math.cos(now * .0067 + d.ph * .5) + scanOff));   // 0..3 across the four frames; the LFOs aimed at the scan add scanOff
           d.gs.forEach(function (g, k) { g.gain.setTargetAtTime(Math.max(0, 1 - Math.abs(pos - k)), now, .3); }); });
       }
       droneOn();
-      function useBank() { bank = null; if (w.P.inst === "bell" || VOICES[w.P.inst]) return; var want = w.P.inst; loadBank(c).then(function (b) { return b.load([want]).then(function () { if (!dead && w.P.inst === want && b.has(want)) bank = b; }); }).catch(function () {}); }
+      var SAMPLED = { piano: 1, rhodes: 1, flute: 1 };
+      function instOf(li) { var x = w.P.loopInst[li]; return x && x !== "same" ? x : w.P.inst; }
+      function useBank() { var want = []; for (var i = 0; i < 9; i++) { var x = instOf(i); if (SAMPLED[x] && want.indexOf(x) < 0) want.push(x); } if (!want.length) return;
+        loadBank(c).then(function (b) { return b.load(want).then(function () { if (!dead) bank = b; }); }).catch(function () {}); }
       useBank();
-      function play(e, t, li) { if (w.take && w.take.on) w.take.note(li, e.m, e.v, t, w.P.inst);
-        if (VOICES[w.P.inst]) { var V = VOICES[w.P.inst]; V.play(c, notesB, e.m + V.oct, t, e.v); e.lit = t; return; }
-        if (bank) bank.play(w.P.inst, { midi: e.m, vel: e.v, dur: w.P.inst === "flute" ? 3 : 4 }, t, notesB); else bell(c, notesB, e.m, t, e.v, 7); e.lit = t; }
+      function play(e, t, li) {
+        var inst = instOf(li), m = e.m + 12 * ((w.P.oct || 0) + (w.P.loopOct[li] || 0)); if (w.take && w.take.on) w.take.note(li, m, e.v, t, inst); e.lit = t;
+        if (inst === "dvoice") return droneVoice(m, t, e.v);
+        if (VOICES[inst]) { var V = VOICES[inst]; return V.play(c, notesB, m + V.oct, t, e.v, w.P); }
+        if (SAMPLED[inst] && bank && bank.has(inst)) return bank.play(inst, { midi: m, vel: e.v, dur: inst === "flute" ? 3 : 4 }, t, notesB);
+        bell(c, notesB, m, t, e.v, 7); }
+      // the drone voice: the drone's sound (detuned saws, or the scanned wavetable) as a note with its own attack, hold and release,
+      // through a low-pass the LFOs can move; panned by the LFO aimed at "Drone-voice pan"
+      var dvs = [], dvWaves = null;
+      function droneVoice(m, t, v) {
+        var A = w.P.dvA, H = w.P.dvH, R = w.P.dvR, g = c.createGain(), lp = c.createBiquadFilter(), pn = c.createStereoPanner(), os = [], f = mtof(m), lvl = v * .09 * w.P.dvLvl;
+        lp.type = "lowpass"; lp.Q.value = .4; lp.frequency.value = w.P.dvCut; g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(lvl, t + A); g.gain.setValueAtTime(lvl, t + A + H); g.gain.setTargetAtTime(0, t + A + H, R / 4.6);
+        if (w.P.dvWave === "pad" && SK.wtFrames) { if (!dvWaves) { var fr = SK.wtFrames(); dvWaves = [1, 4].map(function (i) { var x = fr[Math.min(i, fr.length - 1)][1]; return c.createPeriodicWave(new Float32Array(x.length), x); }); }
+          dvWaves.forEach(function (wv, k) { var o = c.createOscillator(); o.setPeriodicWave(wv); o.frequency.value = f; o.detune.value = k ? 5 : -5; o.connect(lp); os.push(o); }); }
+        else [-8, 0, 7].forEach(function (dt) { var o = c.createOscillator(); o.type = "sawtooth"; o.frequency.value = f; o.detune.value = dt; o.connect(lp); os.push(o); });
+        lp.connect(g); g.connect(pn); pn.connect(notesB); var end = t + A + H + R * 1.5 + .1; os.forEach(function (o) { o.start(t); o.stop(end); });
+        var d = { lp: lp, pn: pn, end: end }; dvs.push(d); os[0].onended = function () { dvs.splice(dvs.indexOf(d), 1); try { pn.disconnect(); } catch (x) {} };
+      }
+      // ---- the LFOs (after Vital's): each a slow shape aimed at one target; several can aim at the same one and add up
+      var lph = [Math.random(), Math.random(), Math.random()], ldr = [[0, Math.random() * 2 - 1, Math.random() * 2 - 1], [0, Math.random() * 2 - 1, Math.random() * 2 - 1], [0, Math.random() * 2 - 1, Math.random() * 2 - 1]], lastT = c.currentTime, lhist = [];
+      function lfoVal(i) { var ph = lph[i], sh = w.P["l" + i + "s"];
+        if (sh === "tri") return 1 - 4 * Math.abs(ph - .5); if (sh === "ramp") return ph * 2 - 1;
+        if (sh === "drift") { var a = ldr[i][1], b = ldr[i][2], x = ph * ph * (3 - 2 * ph); return a + (b - a) * x; }
+        return Math.sin(2 * Math.PI * ph); }
+      function lfos(now) {
+        var dt = Math.max(0, now - lastT); lastT = now; var mod = {}, vals = [];
+        for (var i = 0; i < 3; i++) { lph[i] += dt / Math.max(1, w.P["l" + i + "r"]); if (lph[i] >= 1) { lph[i] -= 1; ldr[i] = [0, ldr[i][2], Math.random() * 2 - 1]; }
+          var v = lfoVal(i); vals.push(v); var tg = w.P["l" + i + "t"]; if (tg && tg !== "off") mod[tg] = (mod[tg] || 0) + v * w.P["l" + i + "d"]; }
+        lhist.push(vals); if (lhist.length > 1200) lhist.shift();
+        var tt = now, ex = function (m) { return Math.pow(2, 2.5 * (m || 0)); };
+        drone.forEach(function (d) { if (d.lp) d.lp.frequency.setTargetAtTime(d.base * ex(mod.cutoff), tt, .2); });
+        dvs.forEach(function (d) { d.lp.frequency.setTargetAtTime(w.P.dvCut * ex(mod.cutoff), tt, .2); d.pn.pan.setTargetAtTime(Math.max(-1, Math.min(1, mod.pan || 0)), tt, .3); });
+        scanOff = (mod.scan || 0) * 1.5;
+        if ("bright" in mod) mlp.frequency.setTargetAtTime(Math.max(120, Math.min(20000, w.P.bright * ex(mod.bright))), tt, .2);
+        if (!run || !run.stopping) {
+          if ("drone" in mod) droneG.gain.setTargetAtTime(Math.max(0, w.P.drone * .5 * (1 + mod.drone)), tt, .3);
+          if ("noise" in mod) noiseG.gain.setTargetAtTime(Math.max(0, w.P.noise * (1 + mod.noise)), tt, .3);
+        }
+        if ("echo" in mod) echoG.gain.setTargetAtTime(Math.max(0, w.P.echo * (1 + mod.echo)), tt, .3);
+        if ("verb" in mod) wet.gain.setTargetAtTime(Math.max(0, w.P.verb * 1.4 * (1 + mod.verb)), tt, .3);
+        if (lf.open && lhist.length % 4 === 0) drawLfos();
+      }
+      function drawLfos() {
+        var r = window.devicePixelRatio || 1, W = lfoView.clientWidth, H = lfoView.clientHeight; if (!W) return; if (lfoView.width !== W * r) { lfoView.width = W * r; lfoView.height = H * r; }
+        var g = lfoView.getContext("2d"), cs = getComputedStyle(document.body), cols = [cs.getPropertyValue("--site-accent") || "#3fc2b4", cs.getPropertyValue("--site-accent-dk") || "#2a8", cs.getPropertyValue("--site-ink-2") || "#888"];
+        g.setTransform(r, 0, 0, r, 0, 0); g.clearRect(0, 0, W, H);
+        for (var i = 0; i < 3; i++) { if (w.P["l" + i + "t"] === "off") continue; g.strokeStyle = cols[i]; g.lineWidth = 1.6; g.beginPath();
+          lhist.forEach(function (v, k) { var x = W * k / 1199, y = H / 2 - v[i] * w.P["l" + i + "d"] * (H / 2 - 4); k ? g.lineTo(x, y) : g.moveTo(x, y); }); g.stroke(); }
+        g.fillStyle = cols[2]; g.font = "11px sans-serif"; g.fillText("the last minute", 6, H - 6);
+      }
       // the scheduler: each loop's next note time is worked out from t0 and the loop's own length
       var next = loops.map(function () { return 0; }), cyc = loops.map(function () { return 0; });
       // wind chimes: now and then a gust sets the modelled tubes ringing, a handful of strikes over a few seconds; how often follows the slider.
@@ -491,7 +606,7 @@
           s.connect(g); g.connect(pn); pn.connect(cymB); s.start(); if (w.take && w.take.on) w.take.event(s.buffer === pair[1] ? "cymbal (backwards)" : "cymbal", name, s, pn); s.onended = function () { pn.disconnect(); }; }).catch(function () {});
       }
       function tick() {
-        if (dead) return; var now = c.currentTime; gust(now); cymbal(now); if (pad) padScan(now);
+        if (dead) return; var now = c.currentTime; lfos(now); if (pad) padScan(now); if (quiet) return; gust(now); cymbal(now);
         loops.forEach(function (L, i) {
           for (;;) { var e = L.ev[next[i]], t = t0 + cyc[i] * L.len + e.at; if (t > now + .2) break; if (t >= now - .05) play(e, t, i); next[i]++; if (next[i] >= L.ev.length) { next[i] = 0; cyc[i]++; } }
         });
@@ -518,9 +633,21 @@
         g.fillStyle = ink; g.font = "11px sans-serif"; g.fillText(loops.map(function (L) { return L.len.toFixed(1); }).join(" · ") + " s", 6, H - 6);
       }
       draw();
+      // ---- stopping gently
+      var quiet = false, an2 = c.createAnalyser(); an2.fftSize = 2048; lim.connect(an2);
+      function windDown(mode, T) {
+        run.stopping = mode; var now = c.currentTime; w.playBtn.textContent = mode === "fade" ? "■ Winding down… (stop now)" : "■ Ringing out… (stop now)";
+        if (mode === "fade") { src.gain.setValueAtTime(src.gain.value, now); src.gain.linearRampToValueAtTime(0, now + T); setTimeout(function () { quiet = true; waitSilence(); }, T * 1000); }
+        else { quiet = true; [droneG, noiseG].forEach(function (g) { g.gain.cancelScheduledValues(now); g.gain.setValueAtTime(g.gain.value, now); g.gain.linearRampToValueAtTime(0, now + 2); }); setTimeout(waitSilence, 2200); }
+      }
+      function waitSilence() {   // the reverb and the rings run out: stop when the output has stayed below -80 dB for a second (at most 5 minutes)
+        var buf = new Float32Array(an2.fftSize), calm = 0, t0w = Date.now(), iv2 = setInterval(function () {
+          if (dead) return clearInterval(iv2); an2.getFloatTimeDomainData(buf); var sq = 0; for (var i = 0; i < buf.length; i++) sq += buf[i] * buf[i];
+          calm = Math.sqrt(sq / buf.length) < 1e-4 ? calm + 1 : 0; if (calm >= 4 || Date.now() - t0w > 300000) { clearInterval(iv2); w.hardStop(); } }, 250);
+      }
       var take = null;
       function taps() { return [["Master (as heard)", lim], ["Loop notes", notesB], ["Wind chimes", chimeB], ["Cymbal swells", cymB], ["Drone", droneG], ["Noise bed", noiseG], ["Reverb return", rev.output], ["Echo return", dly.output]]; }
-      run = { taps: taps, setTake: function (t) { take = t; }, loopsNow: function () { return loops; }, ctx: c, bed: bed, dry: dry, wet: wet, echoG: echoG, droneG: droneG, noiseG: noiseG, rev: rev,
+      run = { windDown: windDown, stopping: false, taps: taps, setTake: function (t) { take = t; }, loopsNow: function () { return loops; }, ctx: c, bed: bed, dry: dry, wet: wet, echoG: echoG, droneG: droneG, noiseG: noiseG, rev: rev,
         rebuild: rebuild, rebuildSoon: function () { clearTimeout(rbT); rbT = setTimeout(function () { if (!dead) rebuild(); }, 400); }, setFb: setFb, setDrive: setDrive, mlp: mlp, retune: function () { droneOn(); rebuild(); }, inst: useBank };
       return function () {
         if (w.take && w.take.on) w.take.finish();
@@ -540,10 +667,11 @@
     w.num("note", { label: "Note", min: 24, max: 72, step: 1, value: 45, fmt: function (v) { return ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"][v % 12] + (Math.floor(v / 12) - 1) + " (" + Math.round(mtof(v)) + " Hz)"; } });
     w.num("hard", { label: "Strike", min: 0, max: 1, step: .01, value: .4, fmt: function (v) { return v < .3 ? "soft" : v < .7 ? "medium" : "hard"; } });
     w.num("ring", { label: "Ring length", min: .3, max: 2.5, step: .01, value: 1, fmt: function (v) { return "x" + v.toFixed(2); } });
+    w.pick("btype", "Church bell type", [["westminster", "Westminster Abbey tenor (tuned)"], ["taylor", "Taylor, 1980s"], ["eijsbouts", "Eijsbouts carillon, 1955"], ["both", "Thomas Both, 1591"], ["ghein", "van den Ghein, 1615"], ["bourlet", "Bourlet, 1679"], ["mears", "Mears, 1859 (old style)"]], "westminster");
     w.num("beat", { label: "Temple-bell beat", min: 0, max: 1, step: .01, value: .5, fmt: function (v) { return v < .2 ? "faint (listener in line with the strike)" : v < .7 ? "clear" : "deep"; } });
     w.P.level = 1;
     function strike(c, o, m, t, v) { var f = mtof(m), P = w.P;
-      var BT = { bell: "western", kbell: "korean", jbell: "japanese", vbell: "vietnamese" };
+      var BT = { bell: "w-" + (w.P.btype || "westminster"), kbell: "korean", jbell: "japanese", vbell: "vietnamese" };
       if (BT[P.model]) MODAL.bell(c, o, f, t, v, P.hard, null, BT[P.model], P.beat); else if (P.model === "chime") MODAL.chime(c, o, f, t, v, P.hard, P.ring); else MODAL.bar(c, o, f, t, v, P.model === "mbar", P.hard, P.ring); }
     button(w.tools, "Strike", function () { if (!w.running) w.start(); setTimeout(function () { if (out) strike(SK.ac(), out, w.P.note, SK.ac().currentTime + .02, 1); }, 60); }, "btn-outline-primary");
     w.view = K.viewer(w.body, { ms: 20 });
@@ -564,6 +692,8 @@
     ".amb-band input{writing-mode:vertical-lr;direction:rtl;height:120px;width:22px;accent-color:var(--site-accent-dk)}" +
     ".amb-band .amb-bf{color:var(--site-ink-2)}.amb-nb{margin:.4rem 0}.amb-nb summary{cursor:pointer;font-family:var(--font-display)}" +
     ".sk-plot.amb-rings{height:260px;max-width:420px}" +
+    ".amb-ltb{display:grid;gap:.25rem;margin:.3rem 0}.amb-ltr{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;font-size:.85rem}.amb-ltn{font-family:var(--font-mono);font-size:.8rem;min-width:4.5rem}" +
+    ".amb-lfor{align-items:center;border-top:1px solid var(--site-rule,#ddd);padding-top:.3rem}.sk-plot.amb-lfov{height:90px;max-width:560px}" +
     ".amb-take{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:.3rem 0}.amb-take-n{font-size:.82rem;color:var(--site-ink-2)}" +
     ".amb-cue{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:.3rem 0}.amb-cue .sk-c{min-width:12rem}.amb-cue-n{font-size:.82rem;color:var(--site-ink-2)}" +
     ".amb-ck{display:flex;flex-wrap:wrap;gap:.2rem 1rem;font-size:.85rem;margin:.3rem 0}" +

@@ -78,6 +78,23 @@ const RMS = `(w => { const a = w.view && w.view.an; if (!a) return 0; const d = 
     const d = await b.eval(`(() => { const cur = JSON.parse(localStorage.getItem("mdaw:daw-scratch:current") || "null"), p = cur && JSON.parse(localStorage.getItem(cur) || "null"); return p ? { n: p.tracks.length, tempo: p.tempo, audio: p.tracks.filter(t => t.inst === "audio" && t.clips.length).length } : null; })()`);
     check("DAW opens the take as a new project with its audio tracks", d && d.n === tp.tracks.length && d.tempo === 60 && d.audio === tp.stems.length, JSON.stringify(d));
     check("take and DAW: no page errors", !b.errors.filter(e => !/supabaseUrl/.test(e)).length, b.errors.join(" | ")); }
+  // per-loop instruments (a drone voice among them), loop octave, LFOs, and the three stop modes
+  { b.errors.length = 0; const W = `SynthKit.widgets.find(w => w.kind === "ambient")`;
+    await b.goto("http://127.0.0.1:8517/tools/ambient.html"); await b.sleep(800);
+    await b.eval(`(w => { w.preset(w.presetList[0]); w.c.loops.set(3); w.c.density.set(3); w.c.pace.set(6); w.c.oct.set(-1); w.setLoop(0, "dvoice", 0); w.setLoop(1, "kbell", -1); w.setLoop(2, "w" + "bar", 1);
+      w.c.btype.set("mears"); w.c.l0t.set("bright"); w.c.l0r.set(2); w.c.l0d.set(1); w.c.dvA.set(.1); w.c.dvH.set(.5); w.c.dvR.set(1); w.start(); })(${W})`);
+    let lv = 0, f = []; for (let k = 0; k < 20; k++) { await b.sleep(200); lv = Math.max(lv, await b.eval(`${RMS}(${W})`)); }
+    const rows = await b.eval(`document.querySelectorAll(".amb-ltr").length`);
+    check("per-loop instruments with a drone voice, loop octave -1, a Mears bell: sounds, one row per loop", lv > .001 && rows === 3, "rms " + lv.toFixed(4) + ", rows " + rows);
+    await b.eval(`${W}.c.stopMode.set("fade"); ${W}.c.stopT.set(1.5); ${W}.stop()`); await b.sleep(300);
+    const winding = await b.eval(`${W}.running && /Winding/.test(${W}.playBtn.textContent)`);
+    let stopped = false; for (let k = 0; k < 80 && !stopped; k++) { await b.sleep(500); stopped = !(await b.eval(`${W}.running`)); }
+    check("gradual stop winds down, then stops by itself after the tail", winding && stopped, "winding " + winding + ", stopped " + stopped);
+    await b.eval(`${W}.c.stopMode.set("ring"); ${W}.start()`); await b.sleep(2000); await b.eval(`${W}.stop()`); await b.sleep(300);
+    const ringing = await b.eval(`${W}.running && /Ringing/.test(${W}.playBtn.textContent)`); await b.eval(`${W}.stop()`); await b.sleep(300);
+    check("stop and ring keeps it running to ring out; pressing again stops at once", ringing && !(await b.eval(`${W}.running`)), "ringing " + ringing);
+    await b.eval(`${W}.c.stopMode.set("hard"); ${W}.setLoop(0, "same"); ${W}.setLoop(1, "same"); ${W}.setLoop(2, "same"); ${W}.c.oct.set(0); ${W}.c.l0t.set("cutoff")`);
+    check("loops, LFOs and stops: no page errors", !b.errors.filter(e => !/supabaseUrl/.test(e)).length, b.errors.join(" | ")); }
   // the tape echo dies away at every frequency: a 2.2 kHz burst into the delay at fb 0.5, tone 2800 (the old loop gain there was 1.03)
   const echo = await b.eval(`(async () => { const c = new OfflineAudioContext(1, 48000 * 12, 48000), o = c.createOscillator(), g = c.createGain();
     o.frequency.value = 2200; g.gain.setValueAtTime(.3, 0); g.gain.setValueAtTime(0, .15); o.connect(g); o.start(0);
